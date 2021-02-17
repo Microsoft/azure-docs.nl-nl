@@ -4,12 +4,12 @@ description: Bewaak de prestaties van een website zonder de website opnieuw te i
 ms.topic: conceptual
 ms.date: 08/26/2019
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 53dbcc341fdd4bc194d34d40cdd2a975df496376
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 79e14c171adde89c43c5ea82a60db39133157293
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186300"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576444"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Web-apps tijdens runtime instrumenteren met Application Insights zonder code koppelen
 
@@ -93,7 +93,7 @@ Dit zijn enkele stappen die u kunt uitvoeren om te controleren of de installatie
 
 - Controleer of het applicationInsights.config-bestand aanwezig is in de doel-app-map en uw iKey bevat.
 
-- Als u vermoedt dat er gegevens ontbreken, kunt u een query uitvoeren in [Analytics](../log-query/log-analytics-tutorial.md) om alle Cloud rollen weer te geven die momenteel telemetrie verzenden.
+- Als u vermoedt dat er gegevens ontbreken, kunt u een query uitvoeren in [Analytics](../logs/log-analytics-tutorial.md) om alle Cloud rollen weer te geven die momenteel telemetrie verzenden.
   ```Kusto
   union * | summarize count() by cloud_RoleName, cloud_RoleInstance
   ```
@@ -320,9 +320,9 @@ Voor toepassingen die bij het compileren al zijn geïnstrumenteerd:
 
 Uw telemetrie weergeven:
 
-* [Verken de metrische gegevens](../platform/metrics-charts.md) om de prestaties en het gebruik te bewaken
+* [Verken de metrische gegevens](../essentials/metrics-charts.md) om de prestaties en het gebruik te bewaken
 * [Doorzoek gebeurtenissen en logboeken][diagnostic] om problemen te analyseren
-* [Gebruik analyses](../log-query/log-query-overview.md) voor meer geavanceerde query's
+* [Gebruik analyses](../logs/log-query-overview.md) voor meer geavanceerde query's
 
 Meer telemetrie toevoegen:
 

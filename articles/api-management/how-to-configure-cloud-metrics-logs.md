@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 04/30/2020
 ms.author: apimpm
-ms.openlocfilehash: 3bbfd167e89ae1b5f9b7de1df5fd1cb72c720cb6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c420c62e6f8f09a2b29398590cdb4ad410e5d296
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86254523"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574061"
 ---
 # <a name="configure-cloud-metrics-and-logs-for-azure-api-management-self-hosted-gateway"></a>Metrische gegevens en logboeken voor de Cloud configureren voor Azure API Management zelf-hostende gateway
 
@@ -49,7 +49,7 @@ Hier volgt een voor beeld van een configuratie:
 
 De zelf-hostende Gateway verzendt momenteel de volgende metrische gegevens via Azure Monitor:
 
-| Gegevens  | Beschrijving |
+| Metrisch  | Beschrijving |
 | ------------- | ------------- |
 | Aanvragen  | Aantal API-aanvragen in de periode |
 | Duur van gateway aanvragen | Aantal milliseconden vanaf het moment dat de gateway de aanvraag ontving tot het moment dat het antwoord volledig werd verzonden |
@@ -59,7 +59,7 @@ De zelf-hostende Gateway verzendt momenteel de volgende metrische gegevens via A
 
 De zelf-hostende Gateway verzendt momenteel geen [Diagnostische logboeken](./api-management-howto-use-azure-monitor.md#activity-logs) naar de Cloud. Het is echter mogelijk om [lokaal logboeken te configureren en persistent](how-to-configure-local-metrics-logs.md) te maken, waarbij de zelf-hostende gateway wordt geïmplementeerd. 
 
-Als er een gateway is geïmplementeerd in de [Azure Kubernetes-service](https://azure.microsoft.com/services/kubernetes-service/), kunt u [Azure monitor voor containers](../azure-monitor/insights/container-insights-overview.md) inschakelen om logboeken te verzamelen van uw containers en deze weer geven in log Analytics. 
+Als er een gateway is geïmplementeerd in de [Azure Kubernetes-service](https://azure.microsoft.com/services/kubernetes-service/), kunt u [Azure monitor voor containers](../azure-monitor/containers/container-insights-overview.md) inschakelen om logboeken te verzamelen van uw containers en deze weer geven in log Analytics. 
 
 
 ## <a name="next-steps"></a>Volgende stappen

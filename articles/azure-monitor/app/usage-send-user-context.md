@@ -6,12 +6,12 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 01/03/2019
 ms.reviewer: abgreg;mbullwin
-ms.openlocfilehash: 46b7479df6d087915cfe81895a786a528da6b9bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 021c76bcd03bbe35eabec5611fe0cc1e2c7c4427
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87327902"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100583338"
 ---
 # <a name="send-user-context-ids-to-enable-usage-experiences-in-azure-application-insights"></a>Gebruikers context-Id's verzenden om gebruiks ervaringen in Azure-toepassing Insights in te scha kelen
 
@@ -22,7 +22,7 @@ Met Application Insights kunt u uw gebruikers bewaken en volgen via een aantal h
 - [Gebruikers, sessies, gebeurtenissen](./usage-segmentation.md)
 - [Trechters](./usage-funnels.md)
 - [Retentie](./usage-retention.md) Cohorten
-- [Werkmappen](../platform/workbooks-overview.md)
+- [Werkmappen](../visualize/workbooks-overview.md)
 
 Application Insights moet een ID voor elke gebruiker of sessie hebben om bij te houden wat een gebruiker heeft geduurd. Neem de volgende Id's op in elke aangepaste gebeurtenis of pagina weergave.
 
@@ -30,7 +30,7 @@ Application Insights moet een ID voor elke gebruiker of sessie hebben om bij te 
 - Sessies: Neem de sessie-ID op.
 
 > [!NOTE]
-> Dit is een geavanceerd artikel met een overzicht van de hand matige stappen voor het bijhouden van gebruikers activiteiten met Application Insights. Bij veel webtoepassingen **kunnen deze stappen niet worden**uitgevoerd, omdat de standaard sdk's aan de server zijde in combi natie met de [client/browser-side java script SDK](./website-monitoring.md), vaak voldoende zijn om automatisch gebruikers activiteiten bij te houden. Als u naast de SDK aan de server zijde nog geen [bewaking aan client zijde](./website-monitoring.md) hebt geconfigureerd, moet u dat eerst doen en testen om te controleren of de analyse hulpprogramma's van het gebruikers gedrag zoals verwacht worden uitgevoerd.
+> Dit is een geavanceerd artikel met een overzicht van de hand matige stappen voor het bijhouden van gebruikers activiteiten met Application Insights. Bij veel webtoepassingen **kunnen deze stappen niet worden** uitgevoerd, omdat de standaard sdk's aan de server zijde in combi natie met de [client/browser-side java script SDK](./website-monitoring.md), vaak voldoende zijn om automatisch gebruikers activiteiten bij te houden. Als u naast de SDK aan de server zijde nog geen [bewaking aan client zijde](./website-monitoring.md) hebt geconfigureerd, moet u dat eerst doen en testen om te controleren of de analyse hulpprogramma's van het gebruikers gedrag zoals verwacht worden uitgevoerd.
 
 ## <a name="choosing-user-ids"></a>Gebruikers-Id's kiezen
 
@@ -133,6 +133,6 @@ namespace MvcWebRole.Telemetry
     - [Overzicht van gebruik](usage-overview.md)
     - [Gebruikers, sessies en gebeurtenissen](usage-segmentation.md)
     - [Trechters](usage-funnels.md)
-    - [Bewaartermijn](usage-retention.md)
-    - [Werkmappen](../platform/workbooks-overview.md)
+    - [Bewaar](usage-retention.md)
+    - [Werkmappen](../visualize/workbooks-overview.md)
 

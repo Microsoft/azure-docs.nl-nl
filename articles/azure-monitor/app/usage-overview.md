@@ -3,12 +3,12 @@ title: Gebruiks analyse met Azure-toepassing Insights | Micro soft docs
 description: Inzicht in uw gebruikers en wat ze met uw app doen.
 ms.topic: conceptual
 ms.date: 03/25/2019
-ms.openlocfilehash: 633d35ec16f5eb9de664421c38cd4c824dc240cf
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 0888b6743a10c9934ab85a6f2b3b637b857f643a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233845"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100583405"
 ---
 # <a name="usage-analysis-with-application-insights"></a>Gebruiksanalyse met Application Insights
 
@@ -38,7 +38,7 @@ De beste ervaring wordt verkregen door Application Insights te installeren in de
 
     Raadpleeg het [naslag artikel over Java script SDK](./javascript.md)voor meer informatie over geavanceerde configuraties voor het controleren van websites.
 
-3. **Mobiele app-code:** Gebruik de App Center SDK voor het verzamelen van gebeurtenissen uit uw app en verzend vervolgens kopieën van deze gebeurtenissen naar Application Insights voor analyse door [deze hand leiding te volgen](../learn/mobile-center-quickstart.md).
+3. **Mobiele app-code:** Gebruik de App Center SDK voor het verzamelen van gebeurtenissen uit uw app en verzend vervolgens kopieën van deze gebeurtenissen naar Application Insights voor analyse door [deze hand leiding te volgen](../app/mobile-center-quickstart.md).
 
 4. **Telemetrie ophalen:** Voer uw project gedurende enkele minuten uit in de foutopsporingsmodus en zoek vervolgens naar resultaten op de Blade overzicht in Application Insights.
 
@@ -177,8 +177,8 @@ Alle nieuwe TelemetryClients voegen automatisch de eigenschaps waarde toe die u 
 ## <a name="next-steps"></a>Volgende stappen
    - [Gebruikers, sessies, gebeurtenissen](usage-segmentation.md)
    - [Trechters](usage-funnels.md)
-   - [Bewaartermijn](usage-retention.md)
+   - [Bewaar](usage-retention.md)
    - [Gebruikersstromen](usage-flows.md)
-   - [Werkmappen](../platform/workbooks-overview.md)
+   - [Werkmappen](../visualize/workbooks-overview.md)
    - [Gebruikers context toevoegen](usage-send-user-context.md)
 

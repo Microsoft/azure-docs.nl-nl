@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/02/2019
-ms.openlocfilehash: f9213f36ec33939c3df3b56d21822aa3b6a17c03
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 360a9730025dc24eda93868903fcd356c37d06ef
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98945616"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576333"
 ---
 # <a name="query-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Azure Monitor logboeken voor het controleren van HDInsight-clusters doorzoeken
 
@@ -122,9 +122,9 @@ De eerste stap bij het maken van een waarschuwing is het aanroepen van een query
 
     ![Waarschuwing voor verwijderen van HDInsight-Azure Monitor logboeken](media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-edit-alert.png)
 
-Zie [metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../azure-monitor/platform/alerts-metric.md)voor meer informatie.
+Zie [metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../azure-monitor/alerts/alerts-metric.md)voor meer informatie.
 
 ## <a name="see-also"></a>Zie ook
 
-* [Aan de slag met logboekquery’s in Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
-* [Aangepaste weer gaven maken met behulp van de weer gave designer in Azure Monitor](../azure-monitor/platform/view-designer.md)
+* [Aan de slag met logboekquery’s in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
+* [Aangepaste weer gaven maken met behulp van de weer gave designer in Azure Monitor](../azure-monitor/visualize/view-designer.md)

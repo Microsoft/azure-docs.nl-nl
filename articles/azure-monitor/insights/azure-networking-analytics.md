@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/21/2018
-ms.openlocfilehash: 19370eee9d9fa524de9beeaa85a15521580bd8e6
-ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
+ms.openlocfilehash: cdb43bd8b91881905b1734d0c0b36c33fb27d232
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97707687"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577514"
 ---
 # <a name="azure-networking-monitoring-solutions-in-azure-monitor"></a>Azure-netwerk bewakings oplossingen in Azure Monitor
 
@@ -113,11 +113,11 @@ Met de netwerk Insights-werkmap kunt u profiteren van de nieuwste mogelijkheden 
 
 * Gecentraliseerde console voor bewaking en probleem oplossing met zowel [metrische](../insights/network-insights-overview.md#resource-health-and-metrics) als logboek gegevens.
 
-* Flexibel canvas ter ondersteuning van het maken van aangepaste, uitgebreide [Visualisaties](../platform/workbooks-overview.md#visualizations).
+* Flexibel canvas ter ondersteuning van het maken van aangepaste, uitgebreide [Visualisaties](../visualize/workbooks-overview.md#visualizations).
 
-* De mogelijkheid om [werkmap sjablonen](../platform/workbooks-overview.md#workbooks-versus-workbook-templates) te gebruiken en te delen met bredere community.
+* De mogelijkheid om [werkmap sjablonen](../visualize/workbooks-overview.md#workbooks-versus-workbook-templates) te gebruiken en te delen met bredere community.
 
-Raadpleeg voor meer informatie over de mogelijkheden van de nieuwe werkmap oplossing [werkmappen-overzicht](../platform/workbooks-overview.md)
+Raadpleeg voor meer informatie over de mogelijkheden van de nieuwe werkmap oplossing [werkmappen-overzicht](../visualize/workbooks-overview.md)
 
 ## <a name="migrating-from-azure-gateway-analytics-solution-to-azure-monitor-workbooks"></a>Migreren van Azure gateway Analytics-oplossing naar Azure Monitor-werkmappen
 
@@ -129,7 +129,7 @@ Raadpleeg voor meer informatie over de mogelijkheden van de nieuwe werkmap oplos
 > [!NOTE]
 > Alle gegevens in het verleden zijn al beschikbaar in de werkmap en de diagnostische instellingen voor het punt zijn oorspronkelijk ingeschakeld. Er is geen gegevens overdracht vereist.
 
-2. Open de [standaard-Insights-werkmap](#accessing-azure-application-gateway-analytics-via-azure-monitor-network-insights) voor uw Application Gateway-resource. Alle bestaande inzichten die worden ondersteund door de Application Gateway Analytics-oplossing, zijn al aanwezig in de werkmap. U kunt dit uitbreiden door aangepaste [Visualisaties](../platform/workbooks-overview.md#visualizations) toe te voegen op basis van de metriek & logboek gegevens.
+2. Open de [standaard-Insights-werkmap](#accessing-azure-application-gateway-analytics-via-azure-monitor-network-insights) voor uw Application Gateway-resource. Alle bestaande inzichten die worden ondersteund door de Application Gateway Analytics-oplossing, zijn al aanwezig in de werkmap. U kunt dit uitbreiden door aangepaste [Visualisaties](../visualize/workbooks-overview.md#visualizations) toe te voegen op basis van de metriek & logboek gegevens.
 
 3. Wanneer u al uw metrische gegevens en logboek inzichten kunt zien, kunt u de oplossing voor Azure gateway Analytics verwijderen uit uw werk ruimte, maar u hebt de oplossingen ook van de pagina Solution resource.
 
@@ -232,5 +232,5 @@ Gegevens die vóór de wijziging zijn verzameld, zijn niet zichtbaar in de nieuw
 [!INCLUDE [log-analytics-troubleshoot-azure-diagnostics](../../../includes/log-analytics-troubleshoot-azure-diagnostics.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
-* Gebruik [logboek query's in azure monitor](../log-query/log-query-overview.md) om gedetailleerde Azure Diagnostics-gegevens weer te geven.
+* Gebruik [logboek query's in azure monitor](../logs/log-query-overview.md) om gedetailleerde Azure Diagnostics-gegevens weer te geven.
 

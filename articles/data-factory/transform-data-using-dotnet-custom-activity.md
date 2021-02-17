@@ -7,12 +7,12 @@ ms.author: abnarain
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/26/2018
-ms.openlocfilehash: ec1e7c77c44cf1969e472a6e7288d1af5d6640e1
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: ab49c294fb8923c9a1a47af016e5224a8bba846c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100374793"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576355"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Use custom activities in an Azure Data Factory pipeline (Aangepaste activiteiten gebruiken in een Azure Data Factory-pijplijn)
 
@@ -35,6 +35,9 @@ Zie de volgende artikelen als u geen ervaring hebt met Azure Batch-service:
 * [Azure batch basis principes](../batch/batch-technical-overview.md) voor een overzicht van de Azure batch-service.
 * De cmdlet [New-AzBatchAccount](/powershell/module/az.batch/New-azBatchAccount) om een Azure batch-account (of) te maken [Azure Portal](../batch/batch-account-create-portal.md) het Azure batch-account te maken met behulp van Azure Portal. Zie het artikel over het [beheren van Azure batch-account met](/archive/blogs/windowshpc/using-azure-powershell-to-manage-azure-batch-account) behulp van Power shell voor gedetailleerde instructies voor het gebruik van de cmdlet.
 * De cmdlet [New-AzBatchPool](/powershell/module/az.batch/New-AzBatchPool) om een Azure batch groep te maken.
+
+> [!IMPORTANT]
+> Bij het maken van een nieuwe Azure Batch pool moet ' VirtualMachineConfiguration ' worden gebruikt en niet ' CloudServiceConfiguration '. Raadpleeg de [richt lijnen](https://docs.microsoft.com/azure/batch/batch-pool-cloud-service-to-virtual-machine-configuration)voor de migratie van Azure batch voor groepen voor meer informatie. 
 
 ## <a name="azure-batch-linked-service"></a>Azure Batch gekoppelde service
 

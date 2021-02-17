@@ -5,16 +5,16 @@ services: automation
 ms.subservice: update-management
 ms.date: 07/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: a2226f55c829afa4316a92888d16f6dc68e1f931
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 2e94191e80d39e28d7ff0ffc9aa22b522fda68c1
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183597"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576029"
 ---
 # <a name="migrate-azure-monitor-logs-update-deployments-to-azure-portal"></a>Update-implementaties van Azure Monitor-logboeken migreren naar Azure Portal
 
-De portal van operations management suite (OMS) wordt [afgeschaft](../azure-monitor/platform/oms-portal-transition.md). Alle functionaliteit die beschikbaar was in de OMS-portal voor Updatebeheer is beschikbaar in het Azure Portal via Azure Monitor Logboeken. In dit artikel vindt u de informatie die u nodig hebt om naar het Azure Portal te migreren.
+De portal van operations management suite (OMS) wordt [afgeschaft](../azure-monitor/logs/oms-portal-transition.md). Alle functionaliteit die beschikbaar was in de OMS-portal voor Updatebeheer is beschikbaar in het Azure Portal via Azure Monitor Logboeken. In dit artikel vindt u de informatie die u nodig hebt om naar het Azure Portal te migreren.
 
 ## <a name="key-information"></a>Belangrijke informatie
 
@@ -41,7 +41,7 @@ De portal van operations management suite (OMS) wordt [afgeschaft](../azure-moni
 
 ## <a name="recreate-existing-deployments"></a>Bestaande implementaties opnieuw maken
 
-Alle update-implementaties die in de OMS-Portal zijn gemaakt, hebben een [opgeslagen zoek opdracht](../azure-monitor/platform/computer-groups.md) ook wel een computer groep genoemd, met dezelfde naam als de update-implementatie die bestaat. De opgeslagen zoek actie bevat de lijst met computers die zijn gepland in de update-implementatie.
+Alle update-implementaties die in de OMS-Portal zijn gemaakt, hebben een [opgeslagen zoek opdracht](../azure-monitor/logs/computer-groups.md) ook wel een computer groep genoemd, met dezelfde naam als de update-implementatie die bestaat. De opgeslagen zoek actie bevat de lijst met computers die zijn gepland in de update-implementatie.
 
 :::image type="content" source="media/migrate-oms-update-deployments/oms-deployment.png" alt-text="Scherm afbeelding van de pagina update-implementaties met de velden naam en servers gemarkeerd.":::
 
@@ -59,7 +59,7 @@ Voer de volgende stappen uit om deze bestaande opgeslagen zoek opdracht te gebru
     | --- | --- |
     |Naam |Unieke naam voor het identificeren van de update-implementatie. |
     |Besturingssysteem| Selecteer **Linux** of **Windows**.|
-    |Bij te werken machines |Selecteer een opgeslagen zoek opdracht, geïmporteerde groep of machine kiezen in de vervolg keuzelijst en selecteer afzonderlijke machines. Als u **Computers** selecteert, wordt de gereedheid van de computer weergegeven in de kolom **GEREEDHEID VOOR UPDATE-AGENT**.</br> Zie [Computergroepen in Azure Monitorlogboeken](../azure-monitor/platform/computer-groups.md) voor meer informatie over de verschillende manieren waarop u computergroepen kunt maken in Azure Monitor-logboeken |
+    |Bij te werken machines |Selecteer een opgeslagen zoek opdracht, geïmporteerde groep of machine kiezen in de vervolg keuzelijst en selecteer afzonderlijke machines. Als u **Computers** selecteert, wordt de gereedheid van de computer weergegeven in de kolom **GEREEDHEID VOOR UPDATE-AGENT**.</br> Zie [Computergroepen in Azure Monitorlogboeken](../azure-monitor/logs/computer-groups.md) voor meer informatie over de verschillende manieren waarop u computergroepen kunt maken in Azure Monitor-logboeken |
     |Updateclassificaties|Selecteer alle update classificaties die u nodig hebt. CentOS biedt geen ondersteuning voor dit out-of-Box.|
     |Updates die moeten worden uitgesloten|Voer de updates in die moeten worden uitgesloten. Voer voor Windows het KB-artikel in zonder het voor voegsel **KB** . Voor Linux voert u de pakket naam in of gebruikt u een Joker teken.  |
     |Instellingen voor planning|Selecteer het tijdstip waarop u wilt beginnen en selecteer vervolgens **een of meer keren of** **terugkerend** voor het terugkeer patroon. | 

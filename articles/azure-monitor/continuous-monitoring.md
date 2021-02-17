@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/12/2018
-ms.openlocfilehash: 1892afde42ccbcf1c28b7d6a757875772ee3ac5d
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 89ce214ef9686d2704878304b8b324871ad9473f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905601"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579496"
 ---
 # <a name="continuous-monitoring-with-azure-monitor"></a>Doorlopende bewaking met Azure Monitor
 
@@ -28,22 +28,22 @@ U moet bewaking inschakelen voor al uw webtoepassingen en-services om de beschik
 - [Azure DevOps projects](../devops-project/overview.md) bieden u een vereenvoudigde ervaring met uw bestaande code en git-opslag plaats, of u kunt kiezen uit een van de voorbeeld toepassingen om een doorlopende integratie (CI) en continue levering (cd)-pijp lijn te maken naar Azure.
 - Door [doorlopende bewaking in uw DevOps-release pijplijn](./app/continuous-monitoring.md) kunt u uw implementatie op basis van bewakings gegevens dekoppelen of terugdraaien.
 - Met [status monitor](./app/monitor-performance-live-website-now.md) kunt u een live .net-app op Windows met Azure-toepassing inzichten instrumenteren zonder dat u uw code hoeft te wijzigen of opnieuw te implementeren.
-- Als u toegang hebt tot de code voor uw toepassing, schakelt u volledige controle in met [Application Insights](./app/app-insights-overview.md) door de Azure monitor Application Insights SDK voor [.net](./app/asp-net.md), [.net core](./app/asp-net-core.md), [Java](./app/java-get-started.md), [Node.js](./learn/nodejs-quick-start.md)of [andere programmeer talen](./app/platforms.md)te installeren. Hiermee kunt u aangepaste gebeurtenissen, metrische gegevens of pagina weergaven opgeven die relevant zijn voor uw toepassing en uw bedrijf.
+- Als u toegang hebt tot de code voor uw toepassing, schakelt u volledige controle in met [Application Insights](./app/app-insights-overview.md) door de Azure monitor Application Insights SDK voor [.net](./app/asp-net.md), [.net core](./app/asp-net-core.md), [Java](./app/java-get-started.md), [Node.js](./app/nodejs-quick-start.md)of [andere programmeer talen](./app/platforms.md)te installeren. Hiermee kunt u aangepaste gebeurtenissen, metrische gegevens of pagina weergaven opgeven die relevant zijn voor uw toepassing en uw bedrijf.
 
 
 
 ## <a name="enable-monitoring-for-your-entire-infrastructure"></a>Bewaking inschakelen voor uw hele infra structuur
 Toepassingen zijn alleen betrouwbaar als de onderliggende infra structuur. Als u bewaking hebt ingeschakeld in uw hele infra structuur, kunt u de volledige waarneming optimaal benutten en kunt u gemakkelijker een mogelijke hoofd oorzaak ontdekken wanneer er iets mislukt. Azure Monitor helpt u bij het volgen van de status en prestaties van uw volledige hybride infra structuur, inclusief bronnen zoals Vm's, containers, opslag en netwerk.
 
-- U krijgt automatisch [platform metrieken, activiteiten logboeken en Diagnostische logboeken](platform/data-sources.md) van uw Azure-resources zonder configuratie.
-- Schakel diep gaande bewaking in voor Vm's met [Azure monitor voor VM's](insights/vminsights-overview.md).
--  Schakel diep gaande bewaking in voor AKS-clusters met [Azure monitor voor containers](insights/container-insights-overview.md).
+- U krijgt automatisch [platform metrieken, activiteiten logboeken en Diagnostische logboeken](agents/data-sources.md) van uw Azure-resources zonder configuratie.
+- Schakel diep gaande bewaking in voor Vm's met [Azure monitor voor VM's](vm/vminsights-overview.md).
+-  Schakel diep gaande bewaking in voor AKS-clusters met [Azure monitor voor containers](containers/container-insights-overview.md).
 - Voeg [bewakings oplossingen](./monitor-reference.md) toe voor verschillende toepassingen en services in uw omgeving.
 
 
 [Infra structuur als code](/azure/devops/learn/what-is-infrastructure-as-code) is het beheer van de infra structuur in een beschrijvende model, waarbij dezelfde versie wordt gebruikt als voor de DevOps teams voor de bron code. Het voegt de betrouw baarheid en schaal baarheid aan uw omgeving toe en maakt het u mogelijk vergelijk bare processen te gebruiken waarmee uw toepassingen worden beheerd.
 
--  Gebruik [Resource Manager-sjablonen](./samples/resource-manager-workspace.md) om bewaking in te scha kelen en waarschuwingen in te stellen voor een grote set resources.
+-  Gebruik [Resource Manager-sjablonen](./logs/resource-manager-workspace.md) om bewaking in te scha kelen en waarschuwingen in te stellen voor een grote set resources.
 - Gebruik [Azure Policy](../governance/policy/overview.md) om verschillende regels voor uw resources af te dwingen. Dit zorgt ervoor dat deze resources compatibel blijven met uw bedrijfs standaarden en service overeenkomsten. 
 
 
@@ -58,28 +58,28 @@ Continue integratie/continue implementatie biedt u de mogelijkheid om automatisc
 
 - Gebruik [Azure-pijp lijnen](/azure/devops/pipelines) om continue implementatie te implementeren en uw hele proces te automatiseren vanuit code doorvoer naar productie op basis van uw CI/cd-tests.
 - Gebruik [kwaliteits poorten](/azure/devops/pipelines/release/approvals/gates) om de bewaking te integreren in uw pre-implementatie of na de implementatie. Dit zorgt ervoor dat u voldoet aan de belangrijkste status/prestatie meters (Kpi's), omdat uw toepassingen van dev naar productie worden verplaatst en eventuele verschillen in de infrastructuur omgeving of schaal geen negatieve invloed hebben op uw Kpi's.
-- [Onderhoud afzonderlijke bewakings instanties](./app/separate-resources.md) tussen uw verschillende implementatie omgevingen, zoals dev, test, Canarische en productie. Op deze manier zorgt u ervoor dat verzamelde gegevens relevant zijn voor de bijbehorende toepassingen en infra structuur. Als u gegevens tussen omgevingen moet correleren, kunt u gebruikmaken [van grafieken met meerdere bronnen in Metrics Explorer](./platform/metrics-charts.md) of [query's voor meerdere resources maken in azure monitor](log-query/cross-workspace-query.md).
+- [Onderhoud afzonderlijke bewakings instanties](./app/separate-resources.md) tussen uw verschillende implementatie omgevingen, zoals dev, test, Canarische en productie. Op deze manier zorgt u ervoor dat verzamelde gegevens relevant zijn voor de bijbehorende toepassingen en infra structuur. Als u gegevens tussen omgevingen moet correleren, kunt u gebruikmaken [van grafieken met meerdere bronnen in Metrics Explorer](./essentials/metrics-charts.md) of [query's voor meerdere resources maken in azure monitor](logs/cross-workspace-query.md).
 
 
 ## <a name="create-actionable-alerts-with-actions"></a>Met acties actie bare waarschuwingen maken
 Een kritiek aspect van bewaking is het proactief om beheerders op de hoogte te stellen van eventuele actuele en voorspelde problemen. 
 
-- Maak [waarschuwingen in azure monitor](./platform/alerts-overview.md) op basis van Logboeken en metrische gegevens om voorspel bare fout statussen te identificeren. Het is belang rijk om ervoor te zorgen dat alle waarschuwingen kunnen betekenen dat ze werkelijke kritieke voor waarden vertegenwoordigen en om te voor komen dat er valse positieven worden gereduceerd. Gebruik [Dynamische drempel waarden](platform/alerts-dynamic-thresholds.md) voor het automatisch berekenen van basis lijnen op metrische gegevens in plaats van uw eigen statische drempels te definiëren. 
-- Definieer acties voor waarschuwingen voor het gebruik van de meest efficiënte manier om uw beheerders op de hoogte te stellen. Beschik bare [acties voor meldingen](platform/action-groups.md#create-an-action-group-by-using-the-azure-portal) zijn SMS, e-mails, Push meldingen of telefoon gesprekken.
-- Gebruik geavanceerde acties om [verbinding te maken met uw ITSM-hulp programma](platform/itsmc-overview.md) of andere systemen voor waarschuwings beheer via [webhooks](platform/activity-log-alerts-webhook.md).
+- Maak [waarschuwingen in azure monitor](./alerts/alerts-overview.md) op basis van Logboeken en metrische gegevens om voorspel bare fout statussen te identificeren. Het is belang rijk om ervoor te zorgen dat alle waarschuwingen kunnen betekenen dat ze werkelijke kritieke voor waarden vertegenwoordigen en om te voor komen dat er valse positieven worden gereduceerd. Gebruik [Dynamische drempel waarden](alerts/alerts-dynamic-thresholds.md) voor het automatisch berekenen van basis lijnen op metrische gegevens in plaats van uw eigen statische drempels te definiëren. 
+- Definieer acties voor waarschuwingen voor het gebruik van de meest efficiënte manier om uw beheerders op de hoogte te stellen. Beschik bare [acties voor meldingen](alerts/action-groups.md#create-an-action-group-by-using-the-azure-portal) zijn SMS, e-mails, Push meldingen of telefoon gesprekken.
+- Gebruik geavanceerde acties om [verbinding te maken met uw ITSM-hulp programma](alerts/itsmc-overview.md) of andere systemen voor waarschuwings beheer via [webhooks](alerts/activity-log-alerts-webhook.md).
 - Scenario's herstellen die in waarschuwingen zijn geïdentificeerd, evenals [Azure Automation runbooks](../automation/automation-webhooks.md) of [Logic apps](/connectors/custom-connectors/create-webhook-trigger) die vanuit een waarschuwing kunnen worden gestart met behulp van webhooks. 
-- Gebruik automatisch [schalen](./learn/tutorial-autoscale-performance-schedule.md) om uw reken resources dynamisch te verhogen en te verlagen op basis van de verzamelde metrische gegevens.
+- Gebruik automatisch [schalen](./autoscale/tutorial-autoscale-performance-schedule.md) om uw reken resources dynamisch te verhogen en te verlagen op basis van de verzamelde metrische gegevens.
 
 ## <a name="prepare-dashboards-and-workbooks"></a>Dash boards en werkmappen voorbereiden
 Zorg ervoor dat uw ontwikkeling en bewerkingen toegang hebben tot dezelfde telemetrie en hulpprogram ma's voor het weer geven van patronen in uw hele omgeving en om uw gemiddelde tijd te minimaliseren (MTTD) en de gemiddelde tijd om te herstellen (MTTR).
 
-- Bereid [aangepaste Dash boards](./learn/tutorial-app-dashboards.md) voor op basis van algemene metrische gegevens en logboeken voor de verschillende rollen in uw organisatie. Dash boards kunnen gegevens van alle Azure-resources combi neren.
-- [Werkmappen](./platform/workbooks-overview.md) voorbereiden om te zorgen voor kennis delen tussen ontwikkeling en bewerkingen. Deze kunnen worden voor bereid als dynamische rapporten met metrische grafieken en logboek query's, of zelfs als richt lijnen voor probleem oplossing die door ontwikkel aars worden ondersteund om de ondersteuning of bewerkingen van klanten te helpen bij het verwerken van basis problemen.
+- Bereid [aangepaste Dash boards](./app/tutorial-app-dashboards.md) voor op basis van algemene metrische gegevens en logboeken voor de verschillende rollen in uw organisatie. Dash boards kunnen gegevens van alle Azure-resources combi neren.
+- [Werkmappen](./visualize/workbooks-overview.md) voorbereiden om te zorgen voor kennis delen tussen ontwikkeling en bewerkingen. Deze kunnen worden voor bereid als dynamische rapporten met metrische grafieken en logboek query's, of zelfs als richt lijnen voor probleem oplossing die door ontwikkel aars worden ondersteund om de ondersteuning of bewerkingen van klanten te helpen bij het verwerken van basis problemen.
 
 ## <a name="continuously-optimize"></a>Continu optimaliseren
  Bewaking is een van de fundamentele aspecten van de populaire build-Measure-leer filosofie, waarmee u uw Kpi's en gebruikers gedrags gegevens voortdurend kunt bijhouden en deze vervolgens kunt optimaliseren door plannings iteraties. Azure Monitor helpt u metrische gegevens en logboeken te verzamelen die relevant zijn voor uw bedrijf en om zo nodig nieuwe gegevens punten in de volgende implementatie toe te voegen.
 
-- Gebruik hulpprogram ma's in Application Insights om het [gedrag van eind gebruikers en betrokkenheid](./learn/tutorial-users.md)bij te houden.
+- Gebruik hulpprogram ma's in Application Insights om het [gedrag van eind gebruikers en betrokkenheid](./app/tutorial-users.md)bij te houden.
 - Gebruik [impact analyse](./app/usage-impact.md) om u te helpen bepalen op welke gebieden u zich wilt richten op belang rijke kpi's.
 
 

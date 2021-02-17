@@ -7,12 +7,12 @@ ms.reviewer: maghan
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 04/30/2018
-ms.openlocfilehash: 486f12c29c473d46e3aff73abe747f8aa5a2ef8d
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: c728654e868bcb8213e6a4039fa1e2e169b0078c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100380403"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576381"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-azure-portal-and-powershell"></a>Azure Data Factory pijp lijnen bewaken en beheren met behulp van de Azure Portal en Power shell
 > [!div class="op_single_selector"]
@@ -28,7 +28,7 @@ In dit artikel wordt beschreven hoe u uw pijp lijnen kunt bewaken, beheren en fo
 > De bewakings & beheer toepassing biedt een betere ondersteuning voor het bewaken en beheren van uw gegevens pijplijnen en het oplossen van problemen. Zie [Data Factory pijp lijnen bewaken en beheren met behulp van de app voor bewaking en beheer](data-factory-monitor-manage-app.md)voor meer informatie over het gebruik van de toepassing. 
 
 > [!IMPORTANT]
-> Azure Data Factory versie 1 maakt nu gebruik van de nieuwe [Azure monitor-infra structuur voor waarschuwingen](../../azure-monitor/platform/alerts-metric.md). De oude infra structuur voor waarschuwingen is afgeschaft. Als gevolg hiervan werken de bestaande waarschuwingen die zijn geconfigureerd voor gegevens fabrieken van versie 1 niet meer. Uw bestaande waarschuwingen voor v1-gegevens fabrieken worden niet automatisch gemigreerd. U moet deze waarschuwingen opnieuw maken op de nieuwe infra structuur voor waarschuwingen. Meld u aan bij de Azure Portal en selecteer **monitor** om nieuwe waarschuwingen te maken over metrische gegevens (zoals mislukte uitvoeringen of geslaagde uitvoeringen) voor uw data-fabrieken van versie 1.
+> Azure Data Factory versie 1 maakt nu gebruik van de nieuwe [Azure monitor-infra structuur voor waarschuwingen](../../azure-monitor/alerts/alerts-metric.md). De oude infra structuur voor waarschuwingen is afgeschaft. Als gevolg hiervan werken de bestaande waarschuwingen die zijn geconfigureerd voor gegevens fabrieken van versie 1 niet meer. Uw bestaande waarschuwingen voor v1-gegevens fabrieken worden niet automatisch gemigreerd. U moet deze waarschuwingen opnieuw maken op de nieuwe infra structuur voor waarschuwingen. Meld u aan bij de Azure Portal en selecteer **monitor** om nieuwe waarschuwingen te maken over metrische gegevens (zoals mislukte uitvoeringen of geslaagde uitvoeringen) voor uw data-fabrieken van versie 1.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 

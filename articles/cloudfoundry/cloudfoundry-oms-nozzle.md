@@ -11,12 +11,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/22/2017
 ms.author: ningk
-ms.openlocfilehash: fde0afcd37cd464b0b87e5ccd257d4a7a684eeb0
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9fafa9bd014a44fdd0098ef2364375c3f9672bea
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96021585"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571071"
 ---
 # <a name="deploy-azure-log-analytics-nozzle-for-cloud-foundry-system-monitoring"></a>Azure Log Analytics-spuit voor Cloud Foundry systeem bewaking implementeren
 
@@ -191,7 +191,7 @@ De *' Cloud Foundry. omsview '* is een preview-versie van de Cloud Foundry OMS-w
 
 ### <a name="2-create-alert-rules"></a>2. waarschuwings regels maken
 
-U kunt [de waarschuwingen maken](../azure-monitor/platform/alerts-overview.md)en zo nodig de query's en drempel waarden aanpassen. De volgende waarschuwingen worden aanbevolen:
+U kunt [de waarschuwingen maken](../azure-monitor/alerts/alerts-overview.md)en zo nodig de query's en drempel waarden aanpassen. De volgende waarschuwingen worden aanbevolen:
 
 | Zoekquery                                                                  | Waarschuwing genereren op basis van | Description                                                                       |
 | ----------------------------------------------------------------------------- | ----------------------- | --------------------------------------------------------------------------------- |

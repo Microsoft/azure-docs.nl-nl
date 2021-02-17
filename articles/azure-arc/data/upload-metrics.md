@@ -10,12 +10,12 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 zone_pivot_groups: client-operating-system-macos-and-linux-windows-powershell
-ms.openlocfilehash: f319f912520a69a0c68f89a3d4178f63cc45ca1f
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: d7c611f1cdb5e3294e38f87c0534003813e50388
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97356545"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575688"
 ---
 # <a name="upload-metrics-to-azure-monitor"></a>Gegevens uploaden naar Azure Monitor
 
@@ -126,7 +126,7 @@ Voor het uploaden van metrische gegevens voor uw Azure Arc enabled SQL Managed i
    >[!NOTE]
    >Wacht mini maal 30 minuten nadat de Azure Arc-gegevens exemplaren zijn gemaakt voor de eerste upload.
    >
-   >Zorg ervoor dat `upload` de gegevens direct worden verwijderd nadat `export` Azure monitor alleen metrische gegevens voor de laatste 30 minuten accepteert. [Meer informatie](../../azure-monitor/platform/metrics-store-custom-rest-api.md#troubleshooting).
+   >Zorg ervoor dat `upload` de gegevens direct worden verwijderd nadat `export` Azure monitor alleen metrische gegevens voor de laatste 30 minuten accepteert. [Meer informatie](../../azure-monitor/essentials/metrics-store-custom-rest-api.md#troubleshooting).
 
 
 Als er fouten worden weer gegeven met de melding ' fout bij het ophalen van metrische gegevens ' tijdens het exporteren, controleert u of de gegevensverzameling is ingesteld op `true` door de volgende opdracht uit te voeren:
@@ -199,7 +199,7 @@ Maken, lezen, bijwerken en verwijderen (ruwe) bewerkingen op Azure Arc-gegevens 
 
 Tijdens de preview-periode vindt dit proces een nacht. De algemene richt lijnen zijn het gebruik slechts één keer per dag te uploaden. Wanneer gebruiks gegevens binnen dezelfde periode van 24 uur meerdere keren worden geëxporteerd en geüpload, wordt alleen de resource-inventaris bijgewerkt in Azure Portal, maar niet het resource gebruik.
 
-Voor het uploaden van metrische gegevens accepteert Azure monitor alleen de laatste 30 minuten aan data ([meer informatie](../../azure-monitor/platform/metrics-store-custom-rest-api.md#troubleshooting)). De richt lijnen voor het uploaden van metrische gegevens is het uploaden van de metrieken onmiddellijk na het maken van het export bestand, zodat u de volledige gegevensset in Azure Portal kunt weer geven. Als u bijvoorbeeld de metrische gegevens van 2:00 uur hebt geëxporteerd en de upload opdracht hebt uitgevoerd om 2:50 uur. Omdat Azure Monitor alleen gegevens voor de afgelopen 30 minuten accepteert, worden er mogelijk geen gegevens in de portal weer gegeven. 
+Voor het uploaden van metrische gegevens accepteert Azure monitor alleen de laatste 30 minuten aan data ([meer informatie](../../azure-monitor/essentials/metrics-store-custom-rest-api.md#troubleshooting)). De richt lijnen voor het uploaden van metrische gegevens is het uploaden van de metrieken onmiddellijk na het maken van het export bestand, zodat u de volledige gegevensset in Azure Portal kunt weer geven. Als u bijvoorbeeld de metrische gegevens van 2:00 uur hebt geëxporteerd en de upload opdracht hebt uitgevoerd om 2:50 uur. Omdat Azure Monitor alleen gegevens voor de afgelopen 30 minuten accepteert, worden er mogelijk geen gegevens in de portal weer gegeven. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

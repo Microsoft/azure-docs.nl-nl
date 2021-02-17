@@ -4,12 +4,12 @@ description: In deze quickstart krijgt u informatie over het instellen van clien
 ms.topic: quickstart
 ms.date: 08/19/2020
 ms.custom: mvc
-ms.openlocfilehash: 959beeac004c71fb4593740d3c1685771638e40c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 0a30fb12e93058690fbd7611ae64fc0a7dd96f64
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88611327"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100583437"
 ---
 # <a name="quickstart-start-monitoring-your-website-with-azure-monitor-application-insights"></a>Quickstart: Uw website bewaken met Azure Monitor Application Insights
 
@@ -137,5 +137,5 @@ Als u van plan bent om met extra quickstarts of zelfstudies te werken, moet u ge
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Prestatieproblemen zoeken en diagnoses uitvoeren](../log-query/log-query-overview.md)
+> [Prestatieproblemen zoeken en diagnoses uitvoeren](../logs/log-query-overview.md)
 

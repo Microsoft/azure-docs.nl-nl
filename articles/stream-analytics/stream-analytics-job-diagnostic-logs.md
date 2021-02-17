@@ -7,12 +7,12 @@ ms.service: stream-analytics
 ms.topic: troubleshooting
 ms.custom: contperf-fy21q1
 ms.date: 06/18/2020
-ms.openlocfilehash: 56c7ad49fc9af3ca4f30aa5309623c31e9db7385
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 93d881419c4854b8e46608e150b55072267e0347
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98011115"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574416"
 ---
 # <a name="troubleshoot-azure-stream-analytics-by-using-resource-logs"></a>Problemen met Azure Stream Analytics oplossen met behulp van resource logboeken
 
@@ -24,9 +24,9 @@ Het wordt ten zeerste aanbevolen om resource Logboeken in te scha kelen voor all
 
 Stream Analytics biedt twee typen logboeken:
 
-* [Activiteiten logboeken](../azure-monitor/platform/platform-logs-overview.md) (altijd aan), die inzicht geven in bewerkingen die worden uitgevoerd op taken.
+* [Activiteiten logboeken](../azure-monitor/essentials/platform-logs-overview.md) (altijd aan), die inzicht geven in bewerkingen die worden uitgevoerd op taken.
 
-* [Bron logboeken](../azure-monitor/platform/platform-logs-overview.md) (configureerbaar), die uitgebreid inzicht bieden in alles wat er gebeurt met een taak. Bron logboeken worden gestart wanneer de taak wordt gemaakt en beëindigd wanneer de taak wordt verwijderd. Ze omvatten gebeurtenissen wanneer de taak wordt bijgewerkt en terwijl deze wordt uitgevoerd.
+* [Bron logboeken](../azure-monitor/essentials/platform-logs-overview.md) (configureerbaar), die uitgebreid inzicht bieden in alles wat er gebeurt met een taak. Bron logboeken worden gestart wanneer de taak wordt gemaakt en beëindigd wanneer de taak wordt verwijderd. Ze omvatten gebeurtenissen wanneer de taak wordt bijgewerkt en terwijl deze wordt uitgevoerd.
 
 > [!NOTE]
 > U kunt services zoals Azure Storage, Azure Event Hubs en Azure Monitor Logboeken gebruiken om niet-conforme gegevens te analyseren. Er worden kosten in rekening gebracht op basis van het prijs model voor deze services.

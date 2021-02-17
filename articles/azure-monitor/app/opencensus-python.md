@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 09/24/2020
 ms.reviewer: mbullwin
 ms.custom: devx-track-python
-ms.openlocfilehash: 1e6376cd8389a4f1f0defebce0a2c7b6d0f9deed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f50628395526783face11fcb1438e2716135b640
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91323262"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584033"
 ---
 # <a name="set-up-azure-monitor-for-your-python-application"></a>Azure Monitor instellen voor uw python-toepassing
 
@@ -33,7 +33,7 @@ python -m pip install opencensus-ext-azure
 > [!NOTE]
 > De `python -m pip install opencensus-ext-azure` opdracht gaat ervan uit dat u een `PATH` omgevings variabele hebt ingesteld voor uw python-installatie. Als u deze variabele niet hebt geconfigureerd, moet u het volledige mappad opgeven waar uw python-uitvoerbaar bestand zich bevindt. Het resultaat is een opdracht die er als volgt uitziet: `C:\Users\Administrator\AppData\Local\Programs\Python\Python37-32\python.exe -m pip install opencensus-ext-azure` .
 
-De SDK gebruikt drie Azure Monitor Exporters voor het verzenden van verschillende soorten telemetrie naar Azure Monitor. Ze zijn Trace, metrische gegevens en Logboeken. Zie [het overzicht van het gegevens platform](../platform/data-platform.md)voor meer informatie over deze typen telemetrie. Gebruik de volgende instructies om deze typen telemetrie via de drie Exporters te verzenden.
+De SDK gebruikt drie Azure Monitor Exporters voor het verzenden van verschillende soorten telemetrie naar Azure Monitor. Ze zijn Trace, metrische gegevens en Logboeken. Zie [het overzicht van het gegevens platform](../data-platform.md)voor meer informatie over deze typen telemetrie. Gebruik de volgende instructies om deze typen telemetrie via de drie Exporters te verzenden.
 
 ## <a name="telemetry-type-mappings"></a>Toewijzingen van het type telemetrie
 
@@ -261,7 +261,7 @@ Zie voor meer informatie over het wijzigen van bijgehouden telemetrie voordat de
     if __name__ == "__main__":
         main()
     ```
-1. Door de code herhaaldelijk uit te voeren, wordt u gevraagd om **Enter**te selecteren. Er wordt een metriek gemaakt om het aantal keren dat de **invoer** is geselecteerd bij te houden. Bij elke vermelding wordt de waarde verhoogd en wordt de metrische informatie weer gegeven in de-console. De informatie bevat de huidige waarde en het huidige tijds tempel waarop de metriek is bijgewerkt.
+1. Door de code herhaaldelijk uit te voeren, wordt u gevraagd om **Enter** te selecteren. Er wordt een metriek gemaakt om het aantal keren dat de **invoer** is geselecteerd bij te houden. Bij elke vermelding wordt de waarde verhoogd en wordt de metrische informatie weer gegeven in de-console. De informatie bevat de huidige waarde en het huidige tijds tempel waarop de metriek is bijgewerkt.
 
     ```output
     Press enter.
@@ -438,7 +438,7 @@ Zoals u ziet, zijn er drie verschillende Azure Monitor Exporters die ondersteuni
 Elke exporteur accepteert dezelfde argumenten voor de configuratie, door gegeven via de constructors. U kunt hier de details van deze informatie bekijken:
 
 - `connection_string`: De connection string die wordt gebruikt om verbinding te maken met uw Azure Monitor resource. Krijgt voor rang op `instrumentation_key` .
-- `enable_standard_metrics`: Gebruikt voor `AzureMetricsExporter` . Geeft de export functie de metrische gegevens van het [prestatie meter item](../platform/app-insights-metrics.md#performance-counters) automatisch naar Azure monitor verzenden. Wordt standaard ingesteld op `True` .
+- `enable_standard_metrics`: Gebruikt voor `AzureMetricsExporter` . Geeft de export functie de metrische gegevens van het [prestatie meter item](../essentials/app-insights-metrics.md#performance-counters) automatisch naar Azure monitor verzenden. Wordt standaard ingesteld op `True` .
 - `export_interval`: Wordt gebruikt om de frequentie in seconden van het exporteren op te geven.
 - `instrumentation_key`: De instrumentatie sleutel die wordt gebruikt om verbinding te maken met uw Azure Monitor-resource.
 - `logging_sampling_rate`: Gebruikt voor `AzureLogHandler` . Geeft een sampling frequentie [0, 1.0] voor het exporteren van Logboeken. De standaard waarde is 1,0.
@@ -458,7 +458,7 @@ In de lijst onder **actief**:
 - Voor telemetrie die met de export functie voor metrische gegevens van Azure Monitor worden verzonden, worden verzonden metrische gegevens weer gegeven onder `customMetrics` .
 - Voor telemetrie die wordt verzonden met de export functie van de Azure Monitor logboeken, worden logboeken weer gegeven onder `traces` . Uitzonde ringen worden weer gegeven onder `exceptions` .
 
-Zie [Logboeken in azure monitor](../platform/data-platform-logs.md)voor meer gedetailleerde informatie over het gebruik van query's en Logboeken.
+Zie [Logboeken in azure monitor](../logs/data-platform-logs.md)voor meer gedetailleerde informatie over het gebruik van query's en Logboeken.
 
 ## <a name="learn-more-about-opencensus-for-python"></a>Meer informatie over opentellingen voor python
 
@@ -473,11 +473,11 @@ Zie [Logboeken in azure monitor](../platform/data-platform-logs.md)voor meer ged
 * [Binnenkomende aanvragen bijhouden](./opencensus-python-dependency.md)
 * [Lopende aanvragen bijhouden](./opencensus-python-request.md)
 * [Toepassings overzicht](./app-map.md)
-* [End-to-end prestatie bewaking](../learn/tutorial-performance.md)
+* [End-to-end prestatie bewaking](../app/tutorial-performance.md)
 
 ### <a name="alerts"></a>Waarschuwingen
 
 * [Beschikbaarheidstests](./monitor-web-app-availability.md): maak tests om ervoor te zorgen dat uw site zichtbaar is op internet.
 * [Slimme diagnostische gegevens](./proactive-diagnostics.md): deze tests worden automatisch uitgevoerd, zodat u niets hoeft te doen om ze in te stellen. Deze geeft aan of een app een ongebruikelijk aantal mislukte aanvragen heeft.
-* [Metrische waarschuwingen](../platform/alerts-log.md): Stel waarschuwingen in om u te waarschuwen als een metriek een drempel waarde overschrijdt. U kunt deze instellen op aangepaste metrische gegevens die u in uw app codeert.
+* [Metrische waarschuwingen](../alerts/alerts-log.md): Stel waarschuwingen in om u te waarschuwen als een metriek een drempel waarde overschrijdt. U kunt deze instellen op aangepaste metrische gegevens die u in uw app codeert.
 

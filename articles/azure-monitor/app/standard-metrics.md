@@ -5,12 +5,12 @@ services: azure-monitor
 ms.topic: reference
 ms.date: 07/03/2019
 ms.subservice: application-insights
-ms.openlocfilehash: 8da719f399c0c49efd478f05a0114d85233c880f
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 0a18088fa434efa76007607c067feec107bdae57
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98732625"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572354"
 ---
 # <a name="application-insights-standard-metrics"></a>Application Insights standaard metrische gegevens
 
@@ -273,4 +273,4 @@ Het aantal trace-instructies dat is geregistreerd met de TrackTrace () Applicati
 ## <a name="next-steps"></a>Volgende stappen
 
 * Meer informatie over [metrische gegevens op basis van een logboek en vooraf geaggregeerde metrieken](./pre-aggregated-metrics-log-metrics.md).
-* [Op logboek gebaseerde metrische query's en definities](../platform/app-insights-metrics.md).
+* [Op logboek gebaseerde metrische query's en definities](../essentials/app-insights-metrics.md).

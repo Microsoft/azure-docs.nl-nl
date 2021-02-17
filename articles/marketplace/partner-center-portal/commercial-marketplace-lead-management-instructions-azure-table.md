@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: trkeya
 ms.author: trkeya
 ms.date: 08/25/2020
-ms.openlocfilehash: 71b9c96c1855180106f7dfa9a31f0ee8b06ceb67
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 3c8b9444344e5bae414145e2b3367c265114a423
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347860"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586847"
 ---
 # <a name="use-azure-table-storage-to-manage-commercial-marketplace-leads"></a>Azure-tabel opslag gebruiken om leads voor commerciële Marketplace te beheren
 
@@ -203,3 +203,7 @@ Selecteer de knop **valideren** om te controleren of u verbinding hebt gemaakt m
 >U moet de configuratie van de rest van de aanbieding volt ooien en publiceren voordat u leads voor de aanbieding kunt ontvangen.
 
 Wanneer leads worden gegenereerd, stuurt micro soft leads naar de Azure-tabel. Als u een stroom hebt geconfigureerd, wordt er ook een e-mail bericht verzonden naar het e-mail adres dat u hebt geconfigureerd.
+
+## <a name="next-steps"></a>Volgende stappen
+
+- [Veelgestelde vragen over Lead beheer en probleem oplossing](../lead-management-faq.md)

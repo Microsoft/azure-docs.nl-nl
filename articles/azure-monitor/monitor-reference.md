@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 08/15/2020
-ms.openlocfilehash: 08d30fb72398c4b43422eb21f132d5fddd5502b7
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 153b153399bd430b4688d4790a3dd5785c545012
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96853137"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579401"
 ---
 # <a name="what-is-monitored-by-azure-monitor"></a>Wat wordt er bewaakt door Azure Monitor?:
 In dit artikel worden de verschillende toepassingen en services beschreven die door Azure Monitor worden bewaakt. 
@@ -26,12 +26,12 @@ Inzichten bieden een aangepaste bewakings ervaring voor bepaalde toepassingen en
 | Inzicht | Beschrijving |
 |:---|:---|
 | [Application Insights](app/app-insights-overview.md) | Uitbreid bare APM-service (Application Performance Management) voor het bewaken van uw Live Web-app op elk platform. |
-| [Azure Monitor voor containers](insights/container-insights-overview.md) | Bewaakt de prestaties van container werkbelastingen die zijn geïmplementeerd op Azure Container Instances of beheerde Kubernetes-clusters die worden gehost op de Azure Kubernetes-service (AKS). |
+| [Azure Monitor voor containers](containers/container-insights-overview.md) | Bewaakt de prestaties van container werkbelastingen die zijn geïmplementeerd op Azure Container Instances of beheerde Kubernetes-clusters die worden gehost op de Azure Kubernetes-service (AKS). |
 | [Azure Monitor voor Cosmos DB](insights/cosmosdb-insights-overview.md) | Biedt een overzicht van de algemene prestaties, fouten, capaciteit en operationele status van al uw Azure Cosmos DB resources in een uniforme interactieve ervaring. |
 | [Azure Monitor voor netwerken (preview-versie)](insights/network-insights-overview.md) | Biedt een uitgebreid overzicht van de status en metrische gegevens voor al uw netwerk bronnen. De geavanceerde zoek functie helpt u bij het identificeren van bron afhankelijkheden, het inschakelen van scenario's zoals het identificeren van resources die als host fungeren voor uw website, door eenvoudigweg te zoeken naar de naam van uw website. |
 [Azure Monitor voor resource groepen (preview-versie)](insights/resource-group-insights.md) |  Sorteren en diagnose eventuele problemen die uw afzonderlijke bronnen ondervinden, terwijl u context biedt voor de status en prestaties van de resource groep als geheel. |
 | [Azure Monitor voor opslag](insights/storage-insights-overview.md) | Biedt uitgebreide bewaking van uw Azure Storage-accounts door een uniforme weer gave te bieden van de prestaties, capaciteit en beschik baarheid van uw Azure Storage services. |
-| [Azure Monitor voor virtuele machines](insights/vminsights-overview.md) | Bewaakt uw Azure virtual machines (VM) en virtuele-machine schaal sets op schaal. De service analyseert de prestaties en status van uw Windows- en Linux-VM's en bewaakt hun processen en afhankelijkheden van andere resources en externe processen. |
+| [Azure Monitor voor virtuele machines](vm/vminsights-overview.md) | Bewaakt uw Azure virtual machines (VM) en virtuele-machine schaal sets op schaal. De service analyseert de prestaties en status van uw Windows- en Linux-VM's en bewaakt hun processen en afhankelijkheden van andere resources en externe processen. |
 | [Azure Monitor voor Key Vault (preview-versie)](./insights/key-vault-insights-overview.md) | Biedt uitgebreide bewaking van uw sleutel kluizen door een uniforme weer gave te bieden van uw Key Vault aanvragen, prestaties, fouten en latentie. |
 | [Azure Monitor voor Azure-cache voor redis (preview-versie)](insights/redis-cache-insights-overview.md) |  Biedt een geïntegreerde, interactieve weer gave van de algehele prestaties, fouten, capaciteit en operationele status. |
 
@@ -40,11 +40,11 @@ Inzichten bieden een aangepaste bewakings ervaring voor bepaalde toepassingen en
 
 Oplossingen zijn gebaseerd op logboek query's en weer gaven die zijn aangepast voor een bepaalde toepassing of service. Ze verzamelen en analyseren alleen logboeken en worden na verloop van tijd afgeschaft om inzicht te krijgen in de voor keuren.
 
-| Oplossing | Beschrijving |
+| Oplossing | Description |
 |:---|:---|
 | [Status van agent](insights/solution-agenthealth.md) | Analyseer de status en configuratie van Log Analytics agents. |
-| [Waarschuwingsbeheer](platform/alert-management-solution.md) | Analyseer waarschuwingen die zijn verzameld van System Center Operations Manager, nagios of zabbix. |
-| [Servicetoewijzing](insights/service-map.md) | Detecteert automatisch toepassings onderdelen op Windows-en Linux-systemen en wijst de communicatie tussen services toe. |
+| [Waarschuwingsbeheer](insights/alert-management-solution.md) | Analyseer waarschuwingen die zijn verzameld van System Center Operations Manager, nagios of zabbix. |
+| [Servicetoewijzing](vm/service-map.md) | Detecteert automatisch toepassings onderdelen op Windows-en Linux-systemen en wijst de communicatie tussen services toe. |
 
 
 
@@ -111,7 +111,7 @@ De volgende tabel geeft een lijst van Azure-Services en de gegevens die ze in Az
 |ExpressRoute | Ja | Ja | Nee |  |
 |Firewall | Ja | Ja | Nee |  |
 |Front Door | Ja | Ja | Nee |  |
-|Functies | Ja | Ja | Nee |  |
+|Functions | Ja | Ja | Nee |  |
 |HDInsight | Nee | Ja | Nee |  |
 |HPC Cache | Nee | Nee | Nee |  |
 |Information Protection | Nee | Ja | Nee |  |
@@ -119,7 +119,7 @@ De volgende tabel geeft een lijst van Azure-Services en de gegevens die ze in Az
 |IoT Central | Nee | Nee | Nee |  |
 |IoT Hub | Ja | Ja | Nee |  |
 |Key Vault | Ja | Ja | [Ja](./insights/key-vault-insights-overview.md) |  |
-|Kubernetes Service (AKS) | Nee | Nee | [Ja](insights/container-insights-overview.md)  |  |
+|Kubernetes Service (AKS) | Nee | Nee | [Ja](containers/container-insights-overview.md)  |  |
 |Load Balancer | Ja | Nee | Nee |  |
 |Logic Apps | Ja | Ja | Nee |  |
 |Machine Learning Service | Nee | Nee | Nee |  |
@@ -163,8 +163,8 @@ De volgende tabel geeft een lijst van Azure-Services en de gegevens die ze in Az
 |TINA | Nee | Nee | Nee |  |
 |Traffic Manager | Ja | Ja | Nee |  |
 |Universeel afdrukken | Nee | Nee | Nee |  |
-|Virtuele-machineschaalsets | Nee | Ja | [Ja](insights/vminsights-overview.md) | De agent die is vereist om het gast besturingssysteem en de werk stromen te bewaken. |
-|Virtual Machines | Ja | Ja | [Ja](insights/vminsights-overview.md) | De agent die is vereist om het gast besturingssysteem en de werk stromen te bewaken. |
+|Virtuele-machineschaalsets | Nee | Ja | [Ja](vm/vminsights-overview.md) | De agent die is vereist om het gast besturingssysteem en de werk stromen te bewaken. |
+|Virtual Machines | Ja | Ja | [Ja](vm/vminsights-overview.md) | De agent die is vereist om het gast besturingssysteem en de werk stromen te bewaken. |
 |Virtual Network | Ja | Ja | [Ja](insights/network-insights-overview.md) |  |
 |Virtual Network-NSG-stroom logboeken | Nee | Ja | Nee |  |
 |VPN Gateway | Ja | Ja | Nee |  |
@@ -173,21 +173,21 @@ De volgende tabel geeft een lijst van Azure-Services en de gegevens die ze in Az
 ## <a name="virtual-machine-agents"></a>Virtuele machine-agents
 De volgende tabel geeft een lijst van de agents die gegevens kunnen verzamelen van het gast besturingssysteem van virtuele machines en te bewaken gegevens verzenden. Elke agent kan verschillende gegevens verzamelen en deze naar metrieken of Logboeken in Azure Monitor verzenden. 
 
-Zie [overzicht van Azure monitor-agents](platform/agents-overview.md) voor meer informatie over de gegevens die elke agent kan verzamelen.
+Zie [overzicht van Azure monitor-agents](agents/agents-overview.md) voor meer informatie over de gegevens die elke agent kan verzamelen.
 
 | Agent |  Metrische gegevens | Logboeken |
 |:---|:---|:---|:---|
-| [Azure Monitor-agent (preview)](platform/azure-monitor-agent-overview.md) | Ja | Ja |
-| [Log Analytics-agent](platform/log-analytics-agent.md) | Nee | Ja|
-| [Diagnostische extensie](platform/diagnostics-extension-overview.md) | Ja | Nee |
-| [Telegraf-agent](platform/collect-custom-metrics-linux-telegraf.md) | Ja | Nee |
-| [Agent voor afhankelijkheden](insights/vminsights-enable-overview.md) | Nee | Ja |
+| [Azure Monitor-agent (preview)](agents/azure-monitor-agent-overview.md) | Ja | Ja |
+| [Log Analytics-agent](agents/log-analytics-agent.md) | Nee | Ja|
+| [Diagnostische extensie](agents/diagnostics-extension-overview.md) | Ja | Nee |
+| [Telegraf-agent](essentials/collect-custom-metrics-linux-telegraf.md) | Ja | Nee |
+| [Agent voor afhankelijkheden](vm/vminsights-enable-overview.md) | Nee | Ja |
 
 
 ## <a name="product-integrations"></a>Product integraties
 De services en oplossingen in de volgende tabel slaan hun gegevens op in een Log Analytics-werk ruimte, zodat deze kunnen worden geanalyseerd met andere logboek gegevens die worden verzameld door Azure Monitor.
 
-| Product/service | Beschrijving |
+| Product/service | Description |
 |:---|:---|
 | [Azure Automation](../automation/index.yml) | Updates van het besturings systeem beheren en wijzigingen bijhouden op Windows-en Linux-computers. Zie [Wijzigingen bijhouden](../automation/change-tracking/overview.md) en [updatebeheer](../automation/update-management/overview.md). |
 | [Azure Information Protection ](/azure/information-protection/) | U kunt documenten en e-mail berichten classificeren en optioneel beveiligen. Zie [centrale rapportage voor Azure Information Protection](/azure/information-protection/reports-aip#configure-a-log-analytics-workspace-for-the-reports). |
@@ -196,11 +196,11 @@ De services en oplossingen in de volgende tabel slaan hun gegevens op in een Log
 | [Microsoft Intune](/intune/) | Een diagnostische instelling maken om logboeken naar Azure Monitor te verzenden. Zie [logboek gegevens naar opslag, Event hubs of log Analytics verzenden in intune (preview)](/intune/fundamentals/review-logs-using-azure-monitor).  |
 | Netwerk  | [Netwerkprestatiemeter](insights/network-performance-monitor.md) -Controleer de netwerk verbinding en prestaties voor service-en toepassings eindpunten.<br>[Azure-toepassing gateway](insights/azure-networking-analytics.md#azure-application-gateway-analytics) -logboeken en metrische gegevens van Azure-toepassing gateway analyseren.<br>[Traffic Analytics](../network-watcher/traffic-analytics.md) -Network Watcher netwerk beveiligings groep (NSG) stroom logboeken analyseren om inzicht te krijgen in de verkeers stroom in uw Azure-Cloud. |
 | [Office 365](insights/solution-office-365.md) | Uw Office 365-omgeving bewaken. Bijgewerkte versie met verbeterde onboarding beschikbaar via Azure Sentinel. |
-| [SQL Analytics](insights/azure-sql.md) | Bewaak de prestaties van Azure SQL-data bases en SQL Managed instances op schaal en op meerdere abonnementen. |
+| [SQL-analyse](insights/azure-sql.md) | Bewaak de prestaties van Azure SQL-data bases en SQL Managed instances op schaal en op meerdere abonnementen. |
 | [Surface Hub](insights/surface-hubs.md) | De status en het gebruik van Surface Hub apparaten bijhouden. |
-| [System Center Operations Manager](/system-center/scom) | Gegevens verzamelen van Operations Manager agents door hun beheer groep te verbinden met Azure Monitor. Zie [Operations Manager verbinding maken met Azure monitor](platform/om-agents.md)<br> Evalueer het risico en de status van uw System Center Operations Manager-beheer groep met [Operations Manager-beoordelings](insights/scom-assessment.md) oplossing. |
+| [System Center Operations Manager](/system-center/scom) | Gegevens verzamelen van Operations Manager agents door hun beheer groep te verbinden met Azure Monitor. Zie [Operations Manager verbinding maken met Azure monitor](agents/om-agents.md)<br> Evalueer het risico en de status van uw System Center Operations Manager-beheer groep met [Operations Manager-beoordelings](insights/scom-assessment.md) oplossing. |
 | [Micro soft teams-kamers](/microsoftteams/room-systems/azure-monitor-deploy) | Geïntegreerd, end-to-end-beheer van micro soft teams-apparaten. |
-| [Visual Studio App Center](/appcenter/) | Bouw, test en distribueer toepassingen en controleer hun status en gebruik. Zie [beginnen met het analyseren van uw mobiele app met app Center en Application Insights](learn/mobile-center-quickstart.md). |
+| [Visual Studio App Center](/appcenter/) | Bouw, test en distribueer toepassingen en controleer hun status en gebruik. Zie [beginnen met het analyseren van uw mobiele app met app Center en Application Insights](app/mobile-center-quickstart.md). |
 | Windows | [Windows Update naleving](/windows/deployment/update/update-compliance-get-started) : Evalueer de upgrades van uw Windows-bureau blad.<br>[Desktop Analytics](/configmgr/desktop-analytics/overview) : integreert met Configuration Manager om inzicht en intelligentie te bieden, zodat u meer weloverwogen beslissingen kunt nemen over de update gereedheids van uw Windows-clients. |
 
 
@@ -208,23 +208,23 @@ De services en oplossingen in de volgende tabel slaan hun gegevens op in een Log
 ## <a name="other-solutions"></a>Andere oplossingen
 Andere oplossingen zijn beschikbaar voor het bewaken van verschillende toepassingen en services, maar actieve ontwikkeling is gestopt en is mogelijk niet beschikbaar in alle regio's. Deze worden gedekt door de Azure Log Analytics gegevens opname service level agreement.
 
-| Oplossing | Beschrijving |
+| Oplossing | Description |
 |:---|:---|
 | [Active Directory status controle](insights/ad-assessment.md) | Het risico en de status van uw Active Directory omgevingen evalueren. |
 | [Replicatie status van Active Directory](insights/ad-replication-status.md) | Bewaakt uw Active Directory-omgeving regel matig voor replicatie fouten. |
-| [Activiteiten logboek analyse](platform/activity-log.md#activity-log-analytics-monitoring-solution) | Vermeldingen in het activiteiten logboek weer geven. |
+| [Activiteiten logboek analyse](essentials/activity-log.md#activity-log-analytics-monitoring-solution) | Vermeldingen in het activiteiten logboek weer geven. |
 | [DNS-analyse (preview-versie)](insights/dns-analytics.md) | Verzamelt, analyseert en correleert Windows DNS analytic-en audit logboeken en andere gerelateerde gegevens van uw DNS-servers. |
 | [Cloud Foundry](../cloudfoundry/cloudfoundry-oms-nozzle.md) | Verzamel, Bekijk en analyseer uw Cloud Foundry systeem status-en prestatie gegevens over meerdere implementaties. |
-| [Containers](insights/containers.md) | Docker-en Windows-container-hosts weer geven en beheren. |
+| [Containers](containers/containers.md) | Docker-en Windows-container-hosts weer geven en beheren. |
 | [Evaluaties op aanvraag](/services-hub/health/getting_started_with_on_demand_assessments) | De beschik baarheid, de beveiliging en de prestaties van uw on-premises, hybride en Cloud micro soft-technologie omgevingen beoordelen en optimaliseren. |
 | [SQL-status controle](insights/sql-assessment.md) | Het risico en de status van uw SQL Server omgevingen evalueren.  |
 | [Bedradingsgegevens](insights/wire-data.md) | Geconsolideerde netwerk-en prestatie gegevens die zijn verzameld van met Windows verbonden en Linux verbonden computers met de Log Analytics-agent. |
 
 ## <a name="third-party-integration"></a>Integratie van derden
 
-| Oplossing | Beschrijving |
+| Oplossing | Description |
 |:---|:---|
-| [ITSM](platform/itsmc-overview.md) | Met de IT Service Management-connector (ITSMC) kunt u Azure verbinden met een ondersteund ITSM-product/service (IT-servicebeheer).  |
+| [ITSM](alerts/itsmc-overview.md) | Met de IT Service Management-connector (ITSMC) kunt u Azure verbinden met een ondersteund ITSM-product/service (IT-servicebeheer).  |
 
 
 ## <a name="resources-outside-of-azure"></a>Bronnen buiten Azure
@@ -233,15 +233,15 @@ Azure Monitor kunt gegevens verzamelen van resources buiten Azure met behulp van
 | Resource | Methode |
 |:---|:---|
 | Toepassingen | Bewaak webtoepassingen buiten Azure met Application Insights. Zie [Wat is Application Insights?](./app/app-insights-overview.md). |
-| Virtuele machines | Gebruik agents om gegevens te verzamelen van het gast besturingssysteem van virtuele machines in andere Cloud omgevingen of on-premises. Zie [overzicht van Azure monitor agents](platform/agents-overview.md). |
-| REST API-client | Er zijn afzonderlijke Api's beschikbaar voor het schrijven van gegevens naar Azure Monitor logboeken en meet waarden van een REST API-client. Zie [logboek gegevens naar Azure monitor verzenden met de http data collector-API](platform/data-collector-api.md) voor logboeken en [aangepaste metrische gegevens voor een Azure-resource naar het Azure monitor metrische archief verzenden met behulp van een rest API](platform/metrics-store-custom-rest-api.md) voor metrieken. |
+| Virtuele machines | Gebruik agents om gegevens te verzamelen van het gast besturingssysteem van virtuele machines in andere Cloud omgevingen of on-premises. Zie [overzicht van Azure monitor agents](agents/agents-overview.md). |
+| REST API-client | Er zijn afzonderlijke Api's beschikbaar voor het schrijven van gegevens naar Azure Monitor logboeken en meet waarden van een REST API-client. Zie [logboek gegevens naar Azure monitor verzenden met de http data collector-API](logs/data-collector-api.md) voor logboeken en [aangepaste metrische gegevens voor een Azure-resource naar het Azure monitor metrische archief verzenden met behulp van een rest API](essentials/metrics-store-custom-rest-api.md) voor metrieken. |
 
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het [Azure monitor-gegevens platform waarin de logboeken en gegevens worden opgeslagen die door inzichten en oplossingen zijn verzameld](platform/data-platform.md).
-- Voltooi een [zelf studie over het bewaken van een Azure-resource](learn/tutorial-resource-logs.md).
-- Voltooi een [zelf studie over het schrijven van een logboek query voor het analyseren van gegevens in azure monitor logboeken](learn/tutorial-resource-logs.md).
-- Voltooi een [zelf studie over het maken van een metrische grafiek voor het analyseren van gegevens in azure monitor meet waarden](learn/tutorial-metrics-explorer.md).
+- Meer informatie over het [Azure monitor-gegevens platform waarin de logboeken en gegevens worden opgeslagen die door inzichten en oplossingen zijn verzameld](/data-platform.md).
+- Voltooi een [zelf studie over het bewaken van een Azure-resource](essentials/tutorial-resource-logs.md).
+- Voltooi een [zelf studie over het schrijven van een logboek query voor het analyseren van gegevens in azure monitor logboeken](essentials/tutorial-resource-logs.md).
+- Voltooi een [zelf studie over het maken van een metrische grafiek voor het analyseren van gegevens in azure monitor meet waarden](essentials/tutorial-metrics-explorer.md).
 

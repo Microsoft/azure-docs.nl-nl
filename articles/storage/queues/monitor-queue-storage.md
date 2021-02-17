@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: storage
 ms.subservice: queues
 ms.custom: monitoring, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 18991f83bfb365d1ced141fa44267502671854b8
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: bb9eb2e91fb29849f27e7aba9bc4794698bf0b0b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97588291"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570038"
 ---
 # <a name="monitoring-azure-queue-storage"></a>Azure Queue Storage controleren
 
@@ -32,7 +32,7 @@ De **overzichts** pagina in de Azure portal voor elke Queue Storage Resource bev
 
 Azure Queue Storage maakt bewakings gegevens door gebruik te maken van [Azure monitor](../../azure-monitor/overview.md). Dit is een volledige stack monitoring-service in Azure. Azure Monitor biedt een volledige set functies voor het bewaken van uw Azure-resources en bronnen in andere Clouds en on-premises.
 
-Begin met het [bewaken van Azure-resources met Azure monitor](../../azure-monitor/insights/monitor-azure-resource.md) waarin het volgende wordt beschreven:
+Begin met het [bewaken van Azure-resources met Azure monitor](../../azure-monitor/essentials/monitor-azure-resource.md) waarin het volgende wordt beschreven:
 
 - Wat is Azure Monitor?
 - Kosten die zijn gekoppeld aan bewaking
@@ -44,7 +44,7 @@ In de volgende secties vindt u een beschrijving van de specifieke gegevens die z
 
 ## <a name="monitoring-data"></a>Bewakingsgegevens
 
-Azure Queue Storage verzamelt hetzelfde soort bewakings gegevens als andere Azure-resources, die worden beschreven in [gegevens van Azure-resources bewaken](../../azure-monitor/insights/monitor-azure-resource.md#monitoring-data).
+Azure Queue Storage verzamelt hetzelfde soort bewakings gegevens als andere Azure-resources, die worden beschreven in [gegevens van Azure-resources bewaken](../../azure-monitor/essentials/monitor-azure-resource.md#monitoring-data).
 
 Zie [azure Queue Storage monitoring-gegevens referentie](monitor-queue-storage-reference.md) voor gedetailleerde informatie over metrische gegevens en logboeken die zijn gemaakt door Azure Queue Storage.
 
@@ -68,7 +68,7 @@ Als u bron logboeken wilt verzamelen, moet u een diagnostische instelling maken.
 
 U kunt een diagnostische instelling maken met behulp van de Azure Portal, Power shell, de Azure CLI of een Azure Resource Manager sjabloon.
 
-Zie voor algemene instructies de [Diagnostische instelling maken voor het verzamelen van platform logboeken en metrische gegevens in azure](../../azure-monitor/platform/diagnostic-settings.md).
+Zie voor algemene instructies de [Diagnostische instelling maken voor het verzamelen van platform logboeken en metrische gegevens in azure](../../azure-monitor/essentials/diagnostic-settings.md).
 
 > [!NOTE]
 > Azure Storage-Logboeken in Azure Monitor bevinden zich in de open bare preview en is beschikbaar voor preview-tests in alle open bare Cloud regio's. Met deze preview-versie kunt u logboeken maken voor blobs (waaronder Azure Data Lake Storage Gen2), bestanden, wacht rijen en tabellen. Deze functie is beschikbaar voor alle opslag accounts die zijn gemaakt met het Azure Resource Manager-implementatie model. Zie [overzicht van opslag accounts](../common/storage-account-overview.md).
@@ -110,7 +110,7 @@ Als u ervoor kiest om uw logboeken te archiveren in een opslag account, betaalt 
 2. Selecteer in de vervolg keuzelijst **opslag account** het opslag account waarnaar u de logboeken wilt archiveren, klik op de knop **OK** en selecteer vervolgens de knop **Opslaan** .
 
    > [!NOTE]
-   > Zie [Azure-resource logboeken archiveren](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage) om te begrijpen wat de vereisten zijn voor het opslag account voordat u een opslag account als export doel kiest.
+   > Zie [Azure-resource logboeken archiveren](../../azure-monitor/essentials/resource-logs.md#send-to-azure-storage) om te begrijpen wat de vereisten zijn voor het opslag account voordat u een opslag account als export doel kiest.
 
 #### <a name="stream-logs-to-azure-event-hubs"></a>Logboeken streamen naar Azure Event Hubs
 
@@ -164,7 +164,7 @@ Hier volgt een voorbeeld:
 
 `Set-AzDiagnosticSetting -ResourceId /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/mystorageaccount/queueServices/default -StorageAccountId /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/myloggingstorageaccount -Enabled $true -Category StorageWrite,StorageDelete`
 
-Zie [Azure-resource logboeken archiveren via Azure PowerShell](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage)voor een beschrijving van elke para meter.
+Zie [Azure-resource logboeken archiveren via Azure PowerShell](../../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)voor een beschrijving van elke para meter.
 
 #### <a name="stream-logs-to-an-event-hub"></a>Logboeken streamen naar een Event Hub
 
@@ -180,7 +180,7 @@ Hier volgt een voorbeeld:
 
 `Set-AzDiagnosticSetting -ResourceId /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/mystorageaccount/queueServices/default -EventHubAuthorizationRuleId /subscriptions/20884142-a14v3-4234-5450-08b10c09f4/resourceGroups/myresourcegroup/providers/Microsoft.EventHub/namespaces/myeventhubnamespace/authorizationrules/RootManageSharedAccessKey -Enabled $true -Category StorageDelete`
 
-Zie [gegevens streamen naar Event hubs via Power shell-cmdlets](../../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs)voor een beschrijving van elke para meter.
+Zie [gegevens streamen naar Event hubs via Power shell-cmdlets](../../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs)voor een beschrijving van elke para meter.
 
 #### <a name="send-logs-to-log-analytics"></a>Logboeken naar Log Analytics verzenden
 
@@ -194,7 +194,7 @@ Hier volgt een voorbeeld:
 
 `Set-AzDiagnosticSetting -ResourceId /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/mystorageaccount/queueServices/default -WorkspaceId /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.OperationalInsights/workspaces/my-analytic-workspace -Enabled $true -Category StorageDelete`
 
-Zie [Azure-resource logboeken streamen naar log Analytics werk ruimte in azure monitor](../../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace)voor meer informatie.
+Zie [Azure-resource logboeken streamen naar log Analytics werk ruimte in azure monitor](../../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace)voor meer informatie.
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
@@ -226,7 +226,7 @@ Hier volgt een voorbeeld:
 
 `az monitor diagnostic-settings create --name setting1 --storage-account mystorageaccount --resource /subscriptions/938841be-a40c-4bf4-9210-08bcf06c09f9/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/myloggingstorageaccount/queueServices/default --resource-group myresourcegroup --logs '[{"category": StorageWrite, "enabled": true, "retentionPolicy": {"days": 90, "enabled": true}}]'`
 
-Zie [resource logboeken archiveren via de Azure cli](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage)voor een beschrijving van elke para meter.
+Zie [resource logboeken archiveren via de Azure cli](../../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)voor een beschrijving van elke para meter.
 
 #### <a name="stream-logs-to-an-event-hub"></a>Logboeken streamen naar een Event Hub
 
@@ -242,7 +242,7 @@ Hier volgt een voorbeeld:
 
 `az monitor diagnostic-settings create --name setting1 --event-hub myeventhub --event-hub-rule /subscriptions/938841be-a40c-4bf4-9210-08bcf06c09f9/resourceGroups/myresourcegroup/providers/Microsoft.EventHub/namespaces/myeventhubnamespace/authorizationrules/RootManageSharedAccessKey --resource /subscriptions/938841be-a40c-4bf4-9210-08bcf06c09f9/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/myloggingstorageaccount/queueServices/default --logs '[{"category": StorageDelete, "enabled": true }]'`
 
-Zie [gegevens streamen naar Event hubs via Azure cli](../../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs)voor een beschrijving van elke para meter.
+Zie [gegevens streamen naar Event hubs via Azure cli](../../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs)voor een beschrijving van elke para meter.
 
 #### <a name="send-logs-to-log-analytics"></a>Logboeken naar Log Analytics verzenden
 
@@ -256,17 +256,17 @@ Hier volgt een voorbeeld:
 
 `az monitor diagnostic-settings create --name setting1 --workspace /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.OperationalInsights/workspaces/my-analytic-workspace --resource /subscriptions/938841be-a40c-4bf4-9210-08bcf06c09f9/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/myloggingstorageaccount/queueServices/default --logs '[{"category": StorageDelete, "enabled": true ]'`
 
- Zie [Azure-resource logboeken streamen naar log Analytics werk ruimte in azure monitor](../../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace)voor meer informatie.
+ Zie [Azure-resource logboeken streamen naar log Analytics werk ruimte in azure monitor](../../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace)voor meer informatie.
 
 # <a name="template"></a>[Sjabloon](#tab/template)
 
-Zie [Diagnostische instelling voor Azure Storage](../../azure-monitor/samples/resource-manager-diagnostic-settings.md#diagnostic-setting-for-azure-storage)als u een Azure Resource Manager sjabloon wilt weer geven waarmee een diagnostische instelling wordt gemaakt.
+Zie [Diagnostische instelling voor Azure Storage](../../azure-monitor/essentials/resource-manager-diagnostic-settings.md#diagnostic-setting-for-azure-storage)als u een Azure Resource Manager sjabloon wilt weer geven waarmee een diagnostische instelling wordt gemaakt.
 
 ---
 
 ## <a name="analyzing-metrics"></a>Metrische gegevens analyseren
 
-U kunt de metrische gegevens voor Azure Storage met metrische gegevens uit andere Azure-Services analyseren met behulp van Azure Metrics Explorer. Open Metrics Explorer door **metrische gegevens** te kiezen in het menu **Azure monitor** . Zie aan de slag [met Azure Metrics Explorer](../../azure-monitor/platform/metrics-getting-started.md)voor meer informatie over het gebruik van dit hulp programma.
+U kunt de metrische gegevens voor Azure Storage met metrische gegevens uit andere Azure-Services analyseren met behulp van Azure Metrics Explorer. Open Metrics Explorer door **metrische gegevens** te kiezen in het menu **Azure monitor** . Zie aan de slag [met Azure Metrics Explorer](../../azure-monitor/essentials/metrics-getting-started.md)voor meer informatie over het gebruik van dit hulp programma.
 
 In dit voor beeld ziet u hoe **trans acties** worden weer gegeven op account niveau.
 
@@ -280,10 +280,10 @@ Zie [metrische dimensies](monitor-queue-storage-reference.md#metrics-dimensions)
 
 De metrische gegevens voor Azure Queue Storage zijn in deze naam ruimten:
 
-- Micro soft. Storage/Storage accounts
+- Microsoft.Storage/storageAccounts
 - Micro soft. Storage/Storage accounts/queueServices
 
-Zie [Azure monitor ondersteunde metrische gegevens](../../azure-monitor/platform/metrics-supported.md)voor een lijst met alle Azure monitor metrische gegevens over ondersteuning, waaronder Azure Queue Storage.
+Zie [Azure monitor ondersteunde metrische gegevens](../../azure-monitor/essentials/metrics-supported.md)voor een lijst met alle Azure monitor metrische gegevens over ondersteuning, waaronder Azure Queue Storage.
 
 ### <a name="accessing-metrics"></a>Toegang tot metrische gegevens
 
@@ -526,22 +526,22 @@ Logboeken die naar een Event Hub worden verzonden, worden niet als een bestand o
 
 ![Auditlogboeken](media/monitor-queue-storage/event-hub-log.png)
 
-U kunt logboek gegevens die naar uw Event Hub worden verzonden, openen en lezen met behulp van beveiligings informatie en hulpprogram ma's voor gebeurtenis beheer en controle. Zie [Wat kan ik doen met de bewakings gegevens die worden verzonden naar mijn Event hub?](../../azure-monitor/platform/stream-monitoring-data-event-hubs.md#partner-tools-with-azure-monitor-integration)voor meer informatie.
+U kunt logboek gegevens die naar uw Event Hub worden verzonden, openen en lezen met behulp van beveiligings informatie en hulpprogram ma's voor gebeurtenis beheer en controle. Zie [Wat kan ik doen met de bewakings gegevens die worden verzonden naar mijn Event hub?](../../azure-monitor/essentials/stream-monitoring-data-event-hubs.md#partner-tools-with-azure-monitor-integration)voor meer informatie.
 
 ### <a name="accessing-logs-in-a-log-analytics-workspace"></a>Logboeken openen in een Log Analytics-werk ruimte
 
 U kunt logboeken die zijn verzonden naar een Log Analytics-werk ruimte openen met behulp van Azure Monitor-logboek query's.
 
-Zie [aan de slag met log Analytics in azure monitor](../../azure-monitor/log-query/log-analytics-tutorial.md)voor meer informatie.
+Zie [aan de slag met log Analytics in azure monitor](../../azure-monitor/logs/log-analytics-tutorial.md)voor meer informatie.
 
 De gegevens worden opgeslagen in de `StorageQueueLogs` tabel.
 
 #### <a name="sample-kusto-queries"></a>Voor beeld van Kusto-query's
 
-Hier volgen enkele query's die u kunt invoeren in de **Zoek** balk van het logboek om uw wacht rijen te bewaken. Deze query's werken met de [nieuwe taal](../../azure-monitor/log-query/log-query-overview.md).
+Hier volgen enkele query's die u kunt invoeren in de **Zoek** balk van het logboek om uw wacht rijen te bewaken. Deze query's werken met de [nieuwe taal](../../azure-monitor/logs/log-query-overview.md).
 
 > [!IMPORTANT]
-> Wanneer u **Logboeken** selecteert in het menu van de resource groep voor het opslag account, wordt log Analytics geopend met het query bereik dat is ingesteld op de huidige resource groep. Dit betekent dat logboek query's alleen gegevens uit die resource groep bevatten. Als u een query wilt uitvoeren die gegevens uit andere resources of gegevens uit andere Azure-Services bevat, selecteert u **Logboeken** in het **Azure monitor** menu. Zie de [logboek query bereik en het tijds bereik in Azure Monitor Log Analytics](../../azure-monitor/log-query/scope.md) voor meer informatie.
+> Wanneer u **Logboeken** selecteert in het menu van de resource groep voor het opslag account, wordt log Analytics geopend met het query bereik dat is ingesteld op de huidige resource groep. Dit betekent dat logboek query's alleen gegevens uit die resource groep bevatten. Als u een query wilt uitvoeren die gegevens uit andere resources of gegevens uit andere Azure-Services bevat, selecteert u **Logboeken** in het **Azure monitor** menu. Zie de [logboek query bereik en het tijds bereik in Azure Monitor Log Analytics](../../azure-monitor/logs/scope.md) voor meer informatie.
 
 Gebruik deze query's om uw Azure Storage-accounts te bewaken:
 
@@ -607,5 +607,5 @@ Nee. Reken instanties ondersteunen metrische gegevens op schijven. Zie [metrisch
 ## <a name="next-steps"></a>Volgende stappen
 
 - Voor een verwijzing naar de logboeken en metrische gegevens die zijn gemaakt door Azure Queue Storage raadpleegt u de [Naslag informatie voor azure Queue Storage monitoring](monitor-queue-storage-reference.md).
-- Zie [Azure-resources bewaken met Azure monitor](../../azure-monitor/insights/monitor-azure-resource.md)voor meer informatie over het bewaken van Azure-resources.
+- Zie [Azure-resources bewaken met Azure monitor](../../azure-monitor/essentials/monitor-azure-resource.md)voor meer informatie over het bewaken van Azure-resources.
 - Zie [Azure Storage metrische gegevens migratie](../common/storage-metrics-migration.md)voor meer informatie over de migratie van metrische gegevens.

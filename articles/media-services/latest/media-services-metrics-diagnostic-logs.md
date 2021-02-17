@@ -13,26 +13,26 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/02/2020
 ms.author: inhenkel
-ms.openlocfilehash: 35b0d9c2937024341be6183ac1438b7c4500d6ef
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: cd8c6ca67a1e475279cba8ccc3f4cb8cc7412d66
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954983"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590779"
 ---
 # <a name="monitor-media-services-metrics-and-diagnostic-logs-with-azure-monitor"></a>Media Services metrische gegevens en Diagnostische logboeken met Azure Monitor bewaken
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-Met [Azure monitor](../../azure-monitor/overview.md) kunt u metrische gegevens en Diagnostische logboeken bewaken die u helpen begrijpen hoe uw apps worden uitgevoerd. Alle gegevens die worden verzameld door Azure Monitor kunnen in twee fundamentele typen worden ingedeeld: metrische gegevens en logboeken. U kunt Media Services Diagnostische logboeken bewaken en waarschuwingen en meldingen maken voor de verzamelde metrische gegevens en Logboeken. U kunt de metrische gegevens visualiseren en analyseren met behulp van [Metrics Explorer](../../azure-monitor/platform/metrics-getting-started.md). U kunt logboeken naar [Azure Storage](https://azure.microsoft.com/services/storage/)verzenden, ze streamen naar [Azure Event hubs](https://azure.microsoft.com/services/event-hubs/), ze exporteren naar [log Analytics](https://azure.microsoft.com/services/log-analytics/)of services van derden gebruiken.
+Met [Azure monitor](../../azure-monitor/overview.md) kunt u metrische gegevens en Diagnostische logboeken bewaken die u helpen begrijpen hoe uw apps worden uitgevoerd. Alle gegevens die worden verzameld door Azure Monitor kunnen in twee fundamentele typen worden ingedeeld: metrische gegevens en logboeken. U kunt Media Services Diagnostische logboeken bewaken en waarschuwingen en meldingen maken voor de verzamelde metrische gegevens en Logboeken. U kunt de metrische gegevens visualiseren en analyseren met behulp van [Metrics Explorer](../../azure-monitor/essentials/metrics-getting-started.md). U kunt logboeken naar [Azure Storage](https://azure.microsoft.com/services/storage/)verzenden, ze streamen naar [Azure Event hubs](https://azure.microsoft.com/services/event-hubs/), ze exporteren naar [log Analytics](https://azure.microsoft.com/services/log-analytics/)of services van derden gebruiken.
 
-Zie [Azure monitor metrische gegevens](../../azure-monitor/platform/data-platform.md) en [Azure monitor Diagnostische logboeken](../../azure-monitor/platform/platform-logs-overview.md)voor een gedetailleerd overzicht.
+Zie [Azure monitor metrische gegevens](../../azure-monitor/data-platform.md) en [Azure monitor Diagnostische logboeken](../../azure-monitor/essentials/platform-logs-overview.md)voor een gedetailleerd overzicht.
 
 In dit onderwerp worden ondersteunde [Media Services metrische gegevens](#media-services-metrics) en [Media Services Diagnostische logboeken](#media-services-diagnostic-logs)beschreven.
 
 ## <a name="media-services-metrics"></a>Media Services metrische gegevens
 
-Metrische gegevens worden op gezette tijden verzameld, ongeacht of de waarde wordt gewijzigd. Ze zijn handig voor waarschuwingen omdat ze regel matig kunnen worden bemonsterd en een waarschuwing snel kan worden geactiveerd met relatief eenvoudige logica. Zie [metrische waarschuwingen maken, weer geven en beheren met Azure monitor](../../azure-monitor/platform/alerts-metric.md)voor meer informatie over het maken van metrische gegevens.
+Metrische gegevens worden op gezette tijden verzameld, ongeacht of de waarde wordt gewijzigd. Ze zijn handig voor waarschuwingen omdat ze regel matig kunnen worden bemonsterd en een waarschuwing snel kan worden geactiveerd met relatief eenvoudige logica. Zie [metrische waarschuwingen maken, weer geven en beheren met Azure monitor](../../azure-monitor/alerts/alerts-metric.md)voor meer informatie over het maken van metrische gegevens.
 
 Media Services biedt ondersteuning voor het bewaken van metrische gegevens voor de volgende resources:
 
@@ -89,7 +89,7 @@ Zie [Media Services metrische gegevens bewaken](media-services-metrics-howto.md)
 
 ## <a name="media-services-diagnostic-logs"></a>Diagnostische logboeken Media Services
 
-Diagnostische logboeken bieden uitgebreide en frequente gegevens over de werking van een Azure-resource. Zie [logboek gegevens van uw Azure-resources verzamelen en gebruiken](../../azure-monitor/platform/platform-logs-overview.md)voor meer informatie.
+Diagnostische logboeken bieden uitgebreide en frequente gegevens over de werking van een Azure-resource. Zie [logboek gegevens van uw Azure-resources verzamelen en gebruiken](../../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie.
 
 Media Services ondersteunt de volgende Diagnostische logboeken:
 
@@ -116,7 +116,7 @@ Zie [Diagnostische logboeken van media service bewaken](media-services-diagnosti
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Logboek gegevens van uw Azure-resources verzamelen en gebruiken](../../azure-monitor/platform/platform-logs-overview.md)
-* [Metrische waarschuwing maken, bekijken en beheren met Azure Monitor](../../azure-monitor/platform/alerts-metric.md)
+* [Logboek gegevens van uw Azure-resources verzamelen en gebruiken](../../azure-monitor/essentials/platform-logs-overview.md)
+* [Metrische waarschuwing maken, bekijken en beheren met Azure Monitor](../../azure-monitor/alerts/alerts-metric.md)
 * [Media Services metrische gegevens controleren](media-services-metrics-howto.md)
 * [Diagnostische logboeken van Media Services bewaken](media-services-diagnostic-logs-howto.md)

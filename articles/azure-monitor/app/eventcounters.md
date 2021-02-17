@@ -4,12 +4,12 @@ description: Bewaak systeem-en aangepaste .NET/.NET core-EventCounters in Applic
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a9af36f3c81ee52b41a8eed875c1a286b95bf838
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d1ae0937c25a68798acd87fe8b2a0a54aa765b35
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91803640"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579528"
 ---
 # <a name="eventcounters-introduction"></a>EventCounters-Inleiding
 
@@ -88,14 +88,14 @@ Er kan ook een soort gelijke benadering worden gebruikt voor de WorkerService-SD
 
 ## <a name="event-counters-in-metric-explorer"></a>Gebeurtenis tellers in metrische Explorer
 
-Als u metrische gegevens van Event Counter wilt weer geven in de [metrische Explorer](../platform/metrics-charts.md), selecteert u Application Insights resource en kiest u metrische gegevens op basis van een logboek als metrische naam ruimte. Vervolgens worden event Counter-metrische gegevens weer gegeven onder aangepaste categorie.
+Als u metrische gegevens van Event Counter wilt weer geven in de [metrische Explorer](../essentials/metrics-charts.md), selecteert u Application Insights resource en kiest u metrische gegevens op basis van een logboek als metrische naam ruimte. Vervolgens worden event Counter-metrische gegevens weer gegeven onder aangepaste categorie.
 
 > [!div class="mx-imgBorder"]
 > ![Gebeurtenis tellers die zijn gerapporteerd in Application Insights metrische gegevens Verkenner](./media/event-counters/metrics-explorer-counter-list.png)
 
 ## <a name="event-counters-in-analytics"></a>Gebeurtenis tellers in Analytics
 
-U kunt ook rapporten over gebeurtenis tellers in [Analytics](../log-query/log-query-overview.md)zoeken en weer geven in de tabel **customMetrics** .
+U kunt ook rapporten over gebeurtenis tellers in [Analytics](../logs/log-query-overview.md)zoeken en weer geven in de tabel **customMetrics** .
 
 Voer bijvoorbeeld de volgende query uit om te zien welke tellers worden verzameld en beschikbaar zijn voor het uitvoeren van query's:
 
@@ -121,7 +121,7 @@ customMetrics
 Net als bij andere telemetrie heeft **customMetrics** ook een kolom `cloud_RoleInstance` die de identiteit aangeeft van het exemplaar van de hostserver waarop uw app wordt uitgevoerd. De bovenstaande query toont de item waarde per exemplaar en kan worden gebruikt om de prestaties van verschillende server instanties te vergelijken.
 
 ## <a name="alerts"></a>Waarschuwingen
-Net als bij andere metrische gegevens kunt u [een waarschuwing instellen](../platform/alerts-log.md) om u te waarschuwen als een gebeurtenis teller buiten een limiet valt die u opgeeft. Open het deel venster waarschuwingen en klik op waarschuwing toevoegen.
+Net als bij andere metrische gegevens kunt u [een waarschuwing instellen](../alerts/alerts-log.md) om u te waarschuwen als een gebeurtenis teller buiten een limiet valt die u opgeeft. Open het deel venster waarschuwingen en klik op waarschuwing toevoegen.
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 

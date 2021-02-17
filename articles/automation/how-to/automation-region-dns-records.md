@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 11/25/2020
 ms.topic: conceptual
-ms.openlocfilehash: b4b8f48afc75c0a96937575bdad5bb884d0cb4d8
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 8630afa7410aad81a7a3c61540fc74702fc6481c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183716"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575993"
 ---
 # <a name="dns-records-for-azure-regions-used-by-azure-automation"></a>DNS-records voor Azure-regio's die worden gebruikt door Azure Automation
 
@@ -21,7 +21,7 @@ De [Azure Automation](../automation-intro.md) -service gebruikt een aantal DNS-r
 * Webhooks
 
 >[!NOTE]
->De registratie van Linux-Hybrid Runbook Worker mislukt met de nieuwe records, tenzij dit versie 1.6.10.2 of hoger is. U moet een upgrade uitvoeren naar een nieuwere versie van de [log Analytics-agent voor Linux](../../azure-monitor/platform/agent-linux.md) zodat de machine een bijgewerkte versie van de werknemersrol kan ontvangen en deze nieuwe records kan gebruiken. Bestaande machines blijven werken zonder dat er problemen zijn.  
+>De registratie van Linux-Hybrid Runbook Worker mislukt met de nieuwe records, tenzij dit versie 1.6.10.2 of hoger is. U moet een upgrade uitvoeren naar een nieuwere versie van de [log Analytics-agent voor Linux](../../azure-monitor/agents/agent-linux.md) zodat de machine een bijgewerkte versie van de werknemersrol kan ontvangen en deze nieuwe records kan gebruiken. Bestaande machines blijven werken zonder dat er problemen zijn.  
 
 ## <a name="dns-records-per-region"></a>DNS-records per regio
 
@@ -76,7 +76,7 @@ Ter ondersteuning van een [persoonlijke koppeling](../../private-link/private-li
 | Verenigd Koninkrijk Zuid |`https://<accountId>.webhook.uks.azure-automation.net`<br>`https://<accountId>.agentsvc.uks.azure-automation.net`<br>`https://<accountId>.jrds.uks.azure-automation.net` |
 | Frankrijk - centraal |`https://<accountId>.webhook.fc.azure-automation.net`<br>`https://<accountId>.agentsvc.fc.azure-automation.net`<br>`https://<accountId>.jrds.fc.azure-automation.net` |
 | Zuid-Afrika - noord |`https://<accountId>.webhook.san.azure-automation.net`<br>`https://<accountId>.agentsvc.san.azure-automation.net`<br>`https://<accountId>.jrds.san.azure-automation.net` |
-| Brazil South |`https://<accountId>.webhook.brs.azure-automation.net`<br>`https://<accountId>.agentsvc.brs.azure-automation.net`<br>`https://<accountId>.jrds.brs.azure-automation.net` |
+| Brazilië - zuid |`https://<accountId>.webhook.brs.azure-automation.net`<br>`https://<accountId>.agentsvc.brs.azure-automation.net`<br>`https://<accountId>.jrds.brs.azure-automation.net` |
 | China - noord |`https://<accountId>.webhook.bjb.azure-automation.cn`<br>`https://<accountId>.agentsvc.bjb.azure-automation.cn`<br>`https://<accountId>.jrds.bjb.azure-automation.cn` |
 | China - noord 2 |`https://<accountId>.webhook.bjs2.azure-automation.cn`<br>`https://<accountId>.agentsvc.bjs2.azure-automation.cn`<br>`https://<accountId>.jrds.bjs2.azure-automation.cn` |
 | China - oost 2 |`https://<accountId>.webhook.sha2.azure-automation.cn`<br>`https://<accountId>.agentsvc.sha2.azure-automation.cn`<br>`https://<accountId>.jrds.sha2.azure-automation.cn` |

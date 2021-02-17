@@ -5,18 +5,18 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020, devx-track-azurecli, devx-track-azurepowershell
 ms.date: 05/13/2020
-ms.openlocfilehash: 5f849248021de3c17b69517d214f6f3fd6e4ee3a
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: b81a2021cabefd9587d448aa236e7e87bc254741
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98945638"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590816"
 ---
 # <a name="use-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Azure Monitor-logboeken gebruiken om HDInsight-clusters te bewaken
 
 Meer informatie over het inschakelen van Azure Monitor logboeken voor het bewaken van Hadoop-cluster bewerkingen in HDInsight. En het toevoegen van een HDInsight-bewakings oplossing.
 
-[Azure monitor-logboeken](../azure-monitor/log-query/log-query-overview.md) is een Azure Monitor service die uw Cloud-en on-premises omgevingen bewaakt. De bewaking is om hun Beschik baarheid en prestaties te behouden. Hiermee worden gegevens verzameld die zijn gegenereerd door resources in uw Cloud, on-premises omgevingen en andere controle Programma's. De gegevens worden gebruikt om analyses uit te voeren in meerdere bronnen.
+[Azure monitor-logboeken](../azure-monitor/logs/log-query-overview.md) is een Azure Monitor service die uw Cloud-en on-premises omgevingen bewaakt. De bewaking is om hun Beschik baarheid en prestaties te behouden. Hiermee worden gegevens verzameld die zijn gegenereerd door resources in uw Cloud, on-premises omgevingen en andere controle Programma's. De gegevens worden gebruikt om analyses uit te voeren in meerdere bronnen.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -24,7 +24,7 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een Log Analytics-werkruimte. U kunt deze werk ruimte zien als een unieke Azure Monitor-logboek omgeving met een eigen gegevensopslag plaats, gegevens bronnen en oplossingen. Zie [een log Analytics-werk ruimte maken](../azure-monitor/learn/quick-collect-azurevm.md#create-a-workspace)voor instructies.
+* Een Log Analytics-werkruimte. U kunt deze werk ruimte zien als een unieke Azure Monitor-logboek omgeving met een eigen gegevensopslag plaats, gegevens bronnen en oplossingen. Zie [een log Analytics-werk ruimte maken](../azure-monitor/vm/quick-collect-azurevm.md#create-a-workspace)voor instructies.
 
 * Een Azure HDInsight-cluster. Op dit moment kunt u Azure Monitor-Logboeken gebruiken met de volgende HDInsight-cluster typen:
 
@@ -144,7 +144,7 @@ Omdat het cluster een gloed nieuw cluster is, worden in het rapport geen activit
 
 ## <a name="configuring-performance-counters"></a>Prestatie meter items configureren
 
-Azure monitor biedt ondersteuning voor het verzamelen en analyseren van prestatie gegevens voor de knoop punten in uw cluster. Zie [Linux-prestatie gegevens bronnen in azure monitor](../azure-monitor/platform/data-sources-performance-counters.md#linux-performance-counters)voor meer informatie.
+Azure monitor biedt ondersteuning voor het verzamelen en analyseren van prestatie gegevens voor de knoop punten in uw cluster. Zie [Linux-prestatie gegevens bronnen in azure monitor](../azure-monitor/agents/data-sources-performance-counters.md#linux-performance-counters)voor meer informatie.
 
 ## <a name="cluster-auditing"></a>Cluster controle
 

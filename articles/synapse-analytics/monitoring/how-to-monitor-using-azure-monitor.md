@@ -9,12 +9,12 @@ ms.subservice: monitoring
 ms.date: 11/30/2020
 ms.author: mahi
 ms.reviewer: mahi
-ms.openlocfilehash: eb74137e515bff7a432367e75b4208490b1243c0
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 33cd19f7bb1881b17f1ca9080a9634162014808a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98681384"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574293"
 ---
 # <a name="use-azure-monitor-with-your-azure-synapse-analytics-workspace"></a>Azure Monitor gebruiken met uw Azure Synapse Analytics-werk ruimte
 
@@ -28,7 +28,7 @@ Zie [Overzicht van Azure Monitor](../../azure-monitor/overview.md) voor meer inf
 
 Met monitor kunt u inzicht krijgen in de prestaties en status van uw Azure-workloads. Het belangrijkste type monitor gegevens is de metriek. dit wordt ook wel het prestatie meter item genoemd. Metrische gegevens worden verzonden door de meeste Azure-resources. Monitor biedt verschillende manieren om deze metrische gegevens te configureren en te gebruiken voor bewaking en probleem oplossing.
 
-Als u toegang wilt krijgen tot deze metrische gegevens, voltooit u de instructies in [Azure monitor data platform](../../azure-monitor/platform/data-platform.md).
+Als u toegang wilt krijgen tot deze metrische gegevens, voltooit u de instructies in [Azure monitor data platform](../../azure-monitor/data-platform.md).
 
 ### <a name="workspace-level-metrics"></a>Metrische gegevens op werkruimte niveau
 
@@ -103,7 +103,7 @@ Meld u aan bij de Azure Portal en selecteer **monitor**  >  **waarschuwingen** o
 
 Dit zijn de logboeken die worden gegenereerd door Azure Synapse Analytics-werk ruimten:
 
-| Naam van Log Analytics tabel | Naam van logboek categorie                 | Beschrijving |
+| Naam van Log Analytics tabel | Naam van logboek categorie                 | Description |
 |-------------------------------|-------------------------------------------------|-------------|
 | SynapseGatewayApiRequests     | GatewayApiRequests             | API-aanvragen van Azure Synapse gateway. |
 | SynapseRbacOperations         | SynapseRbacOperations          | Azure Synapse (SRBAC)-bewerkingen op basis van op rollen gebaseerde toegangs beheer. |
@@ -112,7 +112,7 @@ Dit zijn de logboeken die worden gegenereerd door Azure Synapse Analytics-werk r
 
 Dit zijn de logboeken die worden gegenereerd door toegewezen SQL-groepen:
 
-| Naam van Log Analytics tabel        | Naam van logboek categorie             | Beschrijving |
+| Naam van Log Analytics tabel        | Naam van logboek categorie             | Description |
 |----------------------|--------------------------------------|-------------|
 | SynapseSqlPoolExecRequests  | ExecRequests | Informatie over SQL-aanvragen/-query's in een door Azure Synapse toegewezen SQL-groep.
 | SynapseSqlPoolDmsWorkers    | DmsWorkers   | Informatie over werk nemers die de DMS-stappen in een door Azure Synapse toegewezen SQL-pool volt ooien.
@@ -131,7 +131,7 @@ Raadpleeg de volgende informatie voor meer informatie over deze logboeken:
 
 Hier volgt het logboek dat wordt verzonden door Apache Spark Pools:
 
-| Naam van Log Analytics tabel               | Naam van logboek categorie              | Beschrijving                 |
+| Naam van Log Analytics tabel               | Naam van logboek categorie              | Description                 |
 |-----------------------------|---------------------------------------|-----------------------------|
 | SynapseBigDataPoolApplicationsEnded | BigDataPoolAppsEnded | Informatie over beëindigde Apache Spark-toepassingen |
 
@@ -171,7 +171,7 @@ Diagnostische instellingen voor uw werk ruimte, toegewezen SQL-groep of Apache S
 1. Geef een naam op voor de instelling, selecteer **verzenden naar log Analytics** en selecteer een werk ruimte in **log Analytics werk ruimte**.
 
     > [!NOTE]
-    > Omdat een Azure-logboek tabel niet meer dan 500 kolommen kan bevatten, raden we u **ten zeerste** aan de _resource-specifieke modus_ te selecteren. Zie [log Analytics bekende beperkingen](../../azure-monitor/platform/resource-logs.md#column-limit-in-azurediagnostics)voor meer informatie.
+    > Omdat een Azure-logboek tabel niet meer dan 500 kolommen kan bevatten, raden we u **ten zeerste** aan de _resource-specifieke modus_ te selecteren. Zie [log Analytics bekende beperkingen](../../azure-monitor/essentials/resource-logs.md#column-limit-in-azurediagnostics)voor meer informatie.
 
 1. Selecteer **Opslaan**.
 

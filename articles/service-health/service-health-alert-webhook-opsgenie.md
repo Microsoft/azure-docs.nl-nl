@@ -3,12 +3,12 @@ title: Azure service Health-waarschuwingen verzenden met OpsGenie met behulp van
 description: Krijg persoonlijke meldingen over service status gebeurtenissen aan uw OpsGenie-exemplaar.
 ms.topic: conceptual
 ms.date: 06/10/2019
-ms.openlocfilehash: 112774cb1f9e16b08225471e8dbc1bb79b1bd37d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d8867d442d0c7fe563f6429fc1ff4edb212737c5
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86529094"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594596"
 ---
 # <a name="send-azure-service-health-alerts-with-opsgenie-using-webhooks"></a>Azure service Health-waarschuwingen verzenden met OpsGenie met behulp van webhooks
 
@@ -27,9 +27,9 @@ Dit artikel laat u zien hoe u Azure service Health-waarschuwingen kunt instellen
 
 1.  Geef een **naam** op voor de waarschuwing en stel het veld **toegewezen aan team in** .
 
-1.  Vul de andere velden in, zoals **ontvangers**, **ingeschakeld**en **waarschuwingen onderdrukken**.
+1.  Vul de andere velden in, zoals **ontvangers**, **ingeschakeld** en **waarschuwingen onderdrukken**.
 
-1.  Kopieer de integratie- **URL**en sla deze op. deze moet al zijn `apiKey` toegevoegd aan het einde.
+1.  Kopieer de integratie- **URL** en sla deze op. deze moet al zijn `apiKey` toegevoegd aan het einde.
 
     ![De integratie-URL in OpsGenie](./media/webhook-alerts/opsgenie-integration-url.png)
 
@@ -67,7 +67,7 @@ Dit artikel laat u zien hoe u Azure service Health-waarschuwingen kunt instellen
 1. Selecteer **Opslaan** wanneer u klaar bent om de actie groep bij te werken.
 
 ## <a name="testing-your-webhook-integration-via-an-http-post-request"></a>Uw integratie van webhooks testen via een HTTP POST-aanvraag
-1. Maak de service status Payload die u wilt verzenden. U kunt een voor beeld van een service Health-webhook Payload vinden op [webhooks voor Azure-activiteiten logboek waarschuwingen](../azure-monitor/platform/activity-log-alerts-webhook.md).
+1. Maak de service status Payload die u wilt verzenden. U kunt een voor beeld van een service Health-webhook Payload vinden op [webhooks voor Azure-activiteiten logboek waarschuwingen](../azure-monitor/alerts/activity-log-alerts-webhook.md).
 
 1. Maak als volgt een HTTP POST-aanvraag:
 
@@ -83,7 +83,7 @@ Dit artikel laat u zien hoe u Azure service Health-waarschuwingen kunt instellen
 1. Ga naar [OpsGenie](https://www.opsgenie.com/) om te bevestigen dat de integratie is ingesteld.
 
 ## <a name="next-steps"></a>Volgende stappen
-- Meer informatie over het [configureren van webhook-meldingen voor bestaande probleem beheersystemen](service-health-alert-webhook-guide.md).
-- Controleer het [webhook-schema](../azure-monitor/platform/activity-log-alerts-webhook.md)van de waarschuwing voor het activiteiten logboek. 
-- Meer informatie over [service status meldingen](./service-notifications.md).
-- Meer informatie over [actiegroepen](../azure-monitor/platform/action-groups.md).
+- Meer informatie over het [configureren van webhookmeldingen voor bestaande problematische beheersystemen](service-health-alert-webhook-guide.md).
+- Bekijk het [webhookschema voor waarschuwingen voor het activiteitenlogboek](../azure-monitor/alerts/activity-log-alerts-webhook.md). 
+- Meer informatie over [servicestatusmeldingen](./service-notifications.md).
+- Meer informatie over [actiegroepen](../azure-monitor/alerts/action-groups.md).

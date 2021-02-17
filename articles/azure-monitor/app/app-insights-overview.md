@@ -4,12 +4,12 @@ description: Dit is een service waarmee u de prestaties van toepassingen kunt be
 ms.topic: overview
 ms.date: 06/03/2019
 ms.custom: mvc
-ms.openlocfilehash: f00eea37c43fba10e0a89498dd81366630852db7
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: ac6b6f2b47df0bce9ae164c83df54adfdf00b184
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91371375"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575712"
 ---
 # <a name="what-is-application-insights"></a>Wat is Application Insights?
 Application Insights, een functie van [Azure Monitor](../overview.md), is een uitbreidbare APM-service (Application Performance Management) voor ontwikkelaars en DevOps-professionals. Hiermee kunt u uw livetoepassingen controleren. De service detecteert automatisch afwijkingen in prestaties en bevat krachtige analysehulpmiddelen om u te helpen bij het vaststellen van problemen en te begrijpen wat gebruikers daadwerkelijk doen met uw app.  De service is bedoeld om u te helpen de prestaties en bruikbaarheid van uw apps continu te verbeteren. Het werkt voor apps op uiteenlopende platforms, waaronder .NET, Node.js, Java en Python, on-premises, of in een hybride of openbare cloud gehost. De service kan ook worden geïntegreerd met uw DevOps-proces en bevat verbindingspunten naar verschillende hulpmiddelen voor ontwikkelaars. Gebruik de service voor het controleren en analyseren van telemetrie van mobiele apps door Application Insights te integreren met Visual Studio App Center.
@@ -49,15 +49,15 @@ Er zijn tal van manieren om uw gegevens te verkennen. Lees de volgende artikelen
 
 |  |  |
 | --- | --- |
-| [**Slimme detectie en handmatige waarschuwingen**](./proactive-diagnostics.md)<br/>Stel automatische waarschuwingen in die worden afgestemd op de normale telemetriepatronen van uw app en worden geactiveerd wanneer er zich iets voordoet dat buiten het normale patroon valt. U kunt ook [waarschuwingen instellen](../platform/alerts-log.md) voor bepaalde niveaus van aangepaste functies of standaardfuncties voor het verzamelen van metrische gegevens. |![Voorbeeld van een waarschuwing](./media/app-insights-overview/alerts-tn.png) |
+| [**Slimme detectie en handmatige waarschuwingen**](./proactive-diagnostics.md)<br/>Stel automatische waarschuwingen in die worden afgestemd op de normale telemetriepatronen van uw app en worden geactiveerd wanneer er zich iets voordoet dat buiten het normale patroon valt. U kunt ook [waarschuwingen instellen](../alerts/alerts-log.md) voor bepaalde niveaus van aangepaste functies of standaardfuncties voor het verzamelen van metrische gegevens. |![Voorbeeld van een waarschuwing](./media/app-insights-overview/alerts-tn.png) |
 | [**Overzicht van de toepassing**](./app-map.md)<br/>Verken de onderdelen van uw app met belangrijke metrische gegevens en waarschuwingen. |![Overzicht van de toepassing](./media/app-insights-overview/appmap-tn.png)  |
 | [**Profiler**](./profiler.md)<br/>Inspecteer de uitvoeringsprofielen van voorbeeldaanvragen. |![Schermopname toont de uitvoeringsprofielen van voorbeeldaanvragen.](./media/app-insights-overview/profiler.png) |
 | [**Gebruiksanalyse**](./usage-overview.md)<br/>Analyseer de segmentatie en retentie van gebruikers.|![Retentie-informatie](./media/app-insights-overview/retention.png) |
 | [**Diagnostische zoekactie naar gegevens van bepaalde items**](./diagnostic-search.md)<br/>U kunt zoeken naar gebeurtenissen, zoals aanvragen, uitzonderingen, afhankelijkheidsaanroepen, logboektraceringen en paginaweergaven en deze gegevens ook filteren.  |![Zoeken in telemetrie](./media/app-insights-overview/search-tn.png) |
-| [**Metrics Explorer voor cumulatieve gegevens**](../platform/metrics-charts.md)<br/>Verken, filter en segmenteer cumulatieve gegevens, zoals aantallen aanvragen, fouten en uitzonderingen, reactietijden en paginalaadtijden. |![Metrische gegevens](./media/app-insights-overview/metrics-tn.png) |
+| [**Metrics Explorer voor cumulatieve gegevens**](../essentials/metrics-charts.md)<br/>Verken, filter en segmenteer cumulatieve gegevens, zoals aantallen aanvragen, fouten en uitzonderingen, reactietijden en paginalaadtijden. |![Metrische gegevens](./media/app-insights-overview/metrics-tn.png) |
 | [**Dashboards**](./overview-dashboard.md)<br/>Combineer gegevens van meerdere resources tot een mash-up en deel deze met anderen. Ideaal voor toepassingen met meerdere onderdelen en om continu weer te geven in de teamkamer. |![Voorbeelden van dashboards](./media/app-insights-overview/dashboard-tn.png) |
 | [**Live Metrics Stream**](./live-stream.md)<br/>Wanneer u een nieuwe build implementeert, kunt u kijken naar deze 'near-realtime' prestatie-indicatoren om te controleren of dat alles naar verwachting werkt. |![Voorbeeld van metrische livegegevens](./media/app-insights-overview/live-metrics-tn.png) |
-| [**Analytics**](../log-query/log-query-overview.md)<br/>Beantwoord moeilijke vragen over de prestaties en het gebruik van uw app met behulp van deze krachtige querytaal. |![Voorbeeld van Analytics](./media/app-insights-overview/analytics-tn.png) |
+| [**Analytics**](../logs/log-query-overview.md)<br/>Beantwoord moeilijke vragen over de prestaties en het gebruik van uw app met behulp van deze krachtige querytaal. |![Voorbeeld van Analytics](./media/app-insights-overview/analytics-tn.png) |
 | [**Visual Studio**](./visual-studio.md)<br/>Bekijk prestatiegegevens in de code. Ga naar de code vanuit stack-traces.|![Schermopname toont uitzonderingsdetails in Visual Studio en een voorbeeld van het gebruik van code uit stack-traces.](./media/app-insights-overview/visual-studio-tn.png) |
 | [**Snapshot Debugger**](./snapshot-debugger.md)<br/>Spoor fouten op in momentopnamen van live activiteiten, inclusief parameterwaarden.|![Visual Studio](./media/app-insights-overview/snapshot.png) |
 | [**Power BI**](./export-power-bi.md)<br/>Integreer metrische gegevens over het gebruik van de toepassing met andere business intelligence.| ![Power BI](./media/app-insights-overview/power-bi.png)|
@@ -105,7 +105,7 @@ Er zijn verschillende manieren om van start te gaan. Begin op de manier die voor
   * [Python](./opencensus-python.md)
   * [Andere platforms](./platforms.md)
 * **[Instrumenteer uw webpagina’s](./javascript.md)** voor paginaweergaven, AJAX-aanroepen en andere telemetrie op de clientzijde.
-* **[Analyseer het gebruik van uw mobiele app](../learn/mobile-center-quickstart.md)** door de service te integreren met Visual Studio App Center.
+* **[Analyseer het gebruik van uw mobiele app](../app/mobile-center-quickstart.md)** door de service te integreren met Visual Studio App Center.
 * **[Beschikbaarheidstests](./monitor-web-app-availability.md)** - ping uw website regelmatig vanaf onze servers.
 
 ## <a name="next-steps"></a>Volgende stappen
@@ -137,12 +137,12 @@ Gebruik tijdens het ontwikkelen:
 
 <!--Link references-->
 
-[android]: ../learn/mobile-center-quickstart.md
+[android]: ../app/mobile-center-quickstart.md
 [azure]: ../../insights-perf-analytics.md
 [client]: ./javascript.md
 [desktop]: ./windows-desktop.md
 [greenbrown]: ./asp-net.md
-[ios]: ../learn/mobile-center-quickstart.md
+[ios]: ../app/mobile-center-quickstart.md
 [java]: ./java-get-started.md
 [knowUsers]: app-insights-web-track-usage.md
 [platforms]: ./platforms.md

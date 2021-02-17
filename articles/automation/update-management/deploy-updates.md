@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 1b5ced7038f692046d1ce4ba2f4599cae3962510
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: fb81d38b066e1abb54664225daa6840d895e9ace
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98632458"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575884"
 ---
 # <a name="how-to-deploy-updates-and-review-results"></a>Updates implementeren en resultaten bekijken
 
@@ -59,7 +59,7 @@ Als u een nieuwe update-implementatie wilt plannen, voert u de volgende stappen 
     > [!NOTE]
     > Deze optie is niet beschikbaar als u een Azure-VM of een Arc-server hebt geselecteerd. De machine is automatisch gericht op de geplande implementatie.
 
-6. Selecteer in de regio **computers die u wilt bijwerken** een opgeslagen zoek opdracht, een geïmporteerde groep of kies **machines** in het vervolg keuzemenu en selecteer afzonderlijke machines. Met deze optie kunt u de gereedheid van de Log Analytics-agent voor elke machine bekijken. Zie [Computergroepen in Azure Monitorlogboeken](../../azure-monitor/platform/computer-groups.md) voor meer informatie over de verschillende manieren waarop u computergroepen kunt maken in Azure Monitor-logboeken. U kunt Maxi maal 1000 computers in een geplande update-implementatie toevoegen.
+6. Selecteer in de regio **computers die u wilt bijwerken** een opgeslagen zoek opdracht, een geïmporteerde groep of kies **machines** in het vervolg keuzemenu en selecteer afzonderlijke machines. Met deze optie kunt u de gereedheid van de Log Analytics-agent voor elke machine bekijken. Zie [Computergroepen in Azure Monitorlogboeken](../../azure-monitor/logs/computer-groups.md) voor meer informatie over de verschillende manieren waarop u computergroepen kunt maken in Azure Monitor-logboeken. U kunt Maxi maal 1000 computers in een geplande update-implementatie toevoegen.
 
     > [!NOTE]
     > Deze optie is niet beschikbaar als u een Azure-VM of een Arc-server hebt geselecteerd. De machine is automatisch gericht op de geplande implementatie.

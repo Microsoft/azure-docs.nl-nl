@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/24/2018
-ms.openlocfilehash: 09651ed5c7472c12d82108fdbd450cca6e84349f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 0efc8105295ca7f97e6f465071c31b193173c5cd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447084"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588740"
 ---
 # <a name="introduction-to-a-multitenant-saas-app-that-uses-the-database-per-tenant-pattern-with-azure-sql-database"></a>Inleiding tot een multi tenant SaaS-app die gebruikmaakt van het data base-per-Tenant patroon met Azure SQL Database
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -46,7 +46,7 @@ Nadat u de app hebt geïmplementeerd, moet u de volgende zelf studies voor het m
 |[De Wingtip SaaS-toepassing implementeren en verkennen](./saas-dbpertenant-get-started-deploy.md)|  Implementeer en verken de Wingtip SaaS-toepassing met uw Azure-abonnement. |
 |[Tenants inrichten en catalogiseren](./saas-dbpertenant-provision-and-catalog.md)| Meer informatie over hoe de toepassing verbinding maakt met tenants met behulp van een catalogus database en hoe de catalogus tenants aan hun gegevens toewijst. |
 |[Prestaties bewaken en beheren](./saas-dbpertenant-performance-monitoring.md)| Meer informatie over het gebruik van controle functies van SQL Database en het instellen van waarschuwingen wanneer prestatie drempels worden overschreden. |
-|[Bewaken met Azure Monitor-logboeken](./saas-dbpertenant-log-analytics.md) | Meer informatie over het gebruik van [Azure monitor logboeken](../../azure-monitor/log-query/log-query-overview.md) voor het bewaken van grote hoeveel heden resources in meerdere groepen. |
+|[Bewaken met Azure Monitor-logboeken](./saas-dbpertenant-log-analytics.md) | Meer informatie over het gebruik van [Azure monitor logboeken](../../azure-monitor/logs/log-query-overview.md) voor het bewaken van grote hoeveel heden resources in meerdere groepen. |
 |[Een individuele tenant terugzetten](./saas-dbpertenant-restore-single-tenant.md)| Meer informatie over hoe u een Tenant database herstelt naar een eerder tijdstip. Meer informatie over het herstellen naar een parallelle data base, waardoor de bestaande Tenant database online blijft. |
 |[Tenant database schema beheren](saas-tenancy-schema-management.md)| Meer informatie over het bijwerken van schema en het bijwerken van referentie gegevens in alle Tenant databases. |
 |[Met cross-Tenant gedistribueerde query's uitvoeren](saas-tenancy-cross-tenant-reporting.md) | Maak een ad hoc Analytics-Data Base en voer realtime gedistribueerde query's uit op alle tenants.  |

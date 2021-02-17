@@ -7,12 +7,12 @@ ms.subservice: monitoring
 ms.date: 08/20/2019
 ms.author: sarn
 ms.topic: how-to
-ms.openlocfilehash: e3e44019d09927ff700e74b713a1b02136fedbc1
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: a5e280fb562bf9bb36d0d729e5f494bd23776ec7
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98702267"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570124"
 ---
 # <a name="monitor-scheduled-events-for-your-azure-vms"></a>Geplande gebeurtenissen voor uw virtuele Azure-machines bewaken
 
@@ -25,7 +25,7 @@ In dit artikel laten we zien hoe u geplande gebeurtenissen kunt gebruiken om te 
 
 Scheduled Events is beschikbaar als onderdeel van de [Azure-instance metadata service](instance-metadata-service.md)die beschikbaar is op elke virtuele machine van Azure. Klanten kunnen Automation schrijven om een query uit te voeren op het eind punt van hun virtuele machines om geplande onderhouds meldingen te vinden en oplossingen te doen, zoals het opslaan van de status en de virtuele machine uit de rotatie halen. Het is raadzaam om Automation te bouwen om de Scheduled Events te registreren, zodat u een audit logboek van Azure-onderhouds gebeurtenissen kunt hebben. 
 
-In dit artikel wordt stapsgewijs uitgelegd hoe u onderhouds Scheduled Events vastlegt op Log Analytics. Vervolgens worden enkele basis meldings acties geactiveerd, zoals het verzenden van een e-mail naar uw team en het verkrijgen van een historisch overzicht van alle gebeurtenissen die van invloed zijn op uw virtuele machines. Voor de gebeurtenissen aggregatie en automatisering worden [log Analytics](../../azure-monitor/learn/quick-create-workspace.md)gebruikt, maar u kunt elke bewakings oplossing gebruiken om deze logboeken te verzamelen en automatisering te activeren.
+In dit artikel wordt stapsgewijs uitgelegd hoe u onderhouds Scheduled Events vastlegt op Log Analytics. Vervolgens worden enkele basis meldings acties geactiveerd, zoals het verzenden van een e-mail naar uw team en het verkrijgen van een historisch overzicht van alle gebeurtenissen die van invloed zijn op uw virtuele machines. Voor de gebeurtenissen aggregatie en automatisering worden [log Analytics](../../azure-monitor/logs/quick-create-workspace.md)gebruikt, maar u kunt elke bewakings oplossing gebruiken om deze logboeken te verzamelen en automatisering te activeren.
 
 ![Diagram waarin de levens cyclus van gebeurtenissen wordt weer gegeven](./media/notifications/events.png)
 
@@ -35,7 +35,7 @@ Voor dit voor beeld moet u een [virtuele Windows-machine maken in een beschikbaa
 
 Verwijder de groeps resource groep niet aan het einde van de zelf studie.
 
-U moet ook [een log Analytics-werk ruimte maken](../../azure-monitor/learn/quick-create-workspace.md) die we gaan gebruiken om informatie te verzamelen van de virtuele machines in de beschikbaarheidsset.
+U moet ook [een log Analytics-werk ruimte maken](../../azure-monitor/logs/quick-create-workspace.md) die we gaan gebruiken om informatie te verzamelen van de virtuele machines in de beschikbaarheidsset.
 
 ## <a name="set-up-the-environment"></a>De omgeving instellen
 
@@ -132,7 +132,7 @@ Hiermee wordt de [micro soft Monitoring Agent](../extensions/oms-windows.md) op 
 ## <a name="creating-an-alert-rule-with-azure-monitor"></a>Een waarschuwings regel maken met Azure Monitor 
 
 
-Zodra de gebeurtenissen naar Log Analytics zijn gepusht, kunt u de volgende [query](../../azure-monitor/log-query/log-analytics-tutorial.md) uitvoeren om de plannings gebeurtenissen te zoeken.
+Zodra de gebeurtenissen naar Log Analytics zijn gepusht, kunt u de volgende [query](../../azure-monitor/logs/log-analytics-tutorial.md) uitvoeren om de plannings gebeurtenissen te zoeken.
 
 1. Selecteer aan de bovenkant van de pagina **Logboeken** en plak het volgende in het tekstvak:
 

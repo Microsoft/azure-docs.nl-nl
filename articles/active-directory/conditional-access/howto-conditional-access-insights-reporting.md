@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c2364eae0d04da8f8e6fe38ae80db7adb8666ce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae802038626a1fbf8d533800a0b8eb43c4565e8c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89049414"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574176"
 ---
 # <a name="conditional-access-insights-and-reporting"></a>Inzichten en rapportage voor voorwaardelijke toegang
 
@@ -43,7 +43,7 @@ Gebruikers hebben ook een van de volgende Log Analytics werkruimte rollen nodig:
 
 Als u geen Azure AD-Logboeken hebt geïntegreerd met Azure Monitor-logboeken, moet u de volgende stappen uitvoeren voordat de werkmap wordt geladen:  
 
-1. [Een log Analytics-werk ruimte maken in azure monitor](../../azure-monitor/learn/quick-create-workspace.md).
+1. [Een log Analytics-werk ruimte maken in azure monitor](../../azure-monitor/logs/quick-create-workspace.md).
 1. [Integreer Azure AD-logboeken met Azure monitor-logboeken](../reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md).
 
 ## <a name="how-it-works"></a>Uitleg 
@@ -51,7 +51,7 @@ Als u geen Azure AD-Logboeken hebt geïntegreerd met Azure Monitor-logboeken, mo
 Voor toegang tot de werkmap inzichten en rapportage:  
 
 1. Meld u aan bij **Azure Portal**.
-1. Blader naar **Azure Active Directory**  >  **Security**  >  **Conditional Access**  >  **inzichten en rapportage**voor voorwaardelijke toegang van de beveiliging.
+1. Blader naar **Azure Active Directory**  >    >    >  **inzichten en rapportage** voor voorwaardelijke toegang van de beveiliging.
 
 ### <a name="get-started-select-parameters"></a>Aan de slag: para meters selecteren 
 
@@ -108,7 +108,7 @@ Een beleid voor voorwaardelijke toegang configureren in de modus alleen rapport:
 1. Blader naar **Azure Active Directory**  >  **beveiligings**  >  **voorwaardelijke toegang**.
 1. Selecteer een bestaand beleid of maak een nieuw beleid.
 1. Stel onder **beleid inschakelen** de modus voor **alleen rapport** in.
-1. Selecteer **Opslaan**
+1. Selecteer **Opslaan**.
 
 > [!TIP]
 > Als u de **beleids status inschakelen** van een bestaand beleid **van aan aan** **rapporteert,** wordt bestaande beleids afdwinging uitgeschakeld. 
@@ -146,11 +146,11 @@ Wanneer het volume van de aanmeldingen de query capaciteit van Log Analytics ove
 
 ### <a name="can-i-save-my-parameter-selections"></a>Kan ik mijn parameter selecties opslaan?  
 
-U kunt de opties voor de para meters boven aan de werkmap opslaan door naar **Azure Active Directory**-  >  **werkmappen**  >  **voorwaardelijke toegang inzicht en rapportage**te gaan. Hier vindt u de werkmap sjabloon, waar u de werkmap kunt bewerken en een kopie opslaat in uw werk ruimte, met inbegrip van de parameter selecties, in **mijn rapporten** of **gedeelde rapporten**. 
+U kunt de opties voor de para meters boven aan de werkmap opslaan door naar **Azure Active Directory**-  >  **werkmappen**  >  **voorwaardelijke toegang inzicht en rapportage** te gaan. Hier vindt u de werkmap sjabloon, waar u de werkmap kunt bewerken en een kopie opslaat in uw werk ruimte, met inbegrip van de parameter selecties, in **mijn rapporten** of **gedeelde rapporten**. 
 
 ### <a name="can-i-edit-and-customize-the-workbook-with-additional-queries"></a>Kan ik de werkmap bewerken en aanpassen met aanvullende query's? 
 
-U kunt de werkmap bewerken en aanpassen door naar **Azure Active Directory**-  >  **werkmappen**  >  **voorwaardelijke toegang inzicht en rapportage**te gaan. Hier vindt u de werkmap sjabloon, waar u de werkmap kunt bewerken en een kopie opslaat in uw werk ruimte, met inbegrip van de parameter selecties, in **mijn rapporten** of **gedeelde rapporten**. Klik op **bewerken** boven aan de werkmap om te beginnen met het bewerken van de query's.  
+U kunt de werkmap bewerken en aanpassen door naar **Azure Active Directory**-  >  **werkmappen**  >  **voorwaardelijke toegang inzicht en rapportage** te gaan. Hier vindt u de werkmap sjabloon, waar u de werkmap kunt bewerken en een kopie opslaat in uw werk ruimte, met inbegrip van de parameter selecties, in **mijn rapporten** of **gedeelde rapporten**. Klik op **bewerken** boven aan de werkmap om te beginnen met het bewerken van de query's.  
  
 ## <a name="next-steps"></a>Volgende stappen
 

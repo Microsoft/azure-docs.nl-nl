@@ -11,12 +11,12 @@ author: MarkusVi
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2bdf3a763dc71eb842496775b6cc91b8ca39b4b3
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.openlocfilehash: ca84fa57cb3a26337038275d1b7491154915c90e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96343838"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574377"
 ---
 # <a name="tutorial-configure-the-log-analytics-wizard"></a>Zelfstudie: De wizard Log Analytics configureren
 
@@ -41,7 +41,7 @@ In deze zelfstudie leert u het volgende:
 
 Raak ermee vertrouwd met behulp van deze artikelen:
 
-- [Zelfstudie: Resourcelogboeken van een Azure-resource verzamelen en analyseren](../../azure-monitor/learn/tutorial-resource-logs.md)
+- [Zelfstudie: Resourcelogboeken van een Azure-resource verzamelen en analyseren](../../azure-monitor/essentials/tutorial-resource-logs.md)
 
 - [Activiteitenlogboeken met Log Analytics integreren](./howto-integrate-activity-logs-with-log-analytics.md)
 
@@ -49,7 +49,7 @@ Raak ermee vertrouwd met behulp van deze artikelen:
 
 - [KQL-snelzoekgids](/azure/data-explorer/kql-quick-reference)
 
-- [Azure Monitor-werkmappen](../../azure-monitor/platform/workbooks-overview.md)
+- [Azure Monitor-werkmappen](../../azure-monitor/visualize/workbooks-overview.md)
 
 
 

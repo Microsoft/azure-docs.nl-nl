@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 537847d84b417814bddb16cf5b961bdb221af488
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 44faaa6f05a325c2c64040938a1c9d0eb3e864e7
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98740445"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574162"
 ---
 # <a name="manage-administrative-units-in-azure-active-directory"></a>Beheer eenheden in Azure Active Directory beheren
 
@@ -38,7 +38,7 @@ Voor gedetailleerdere administratieve controle in Azure Active Directory (Azure 
     ![Scherm afbeelding van de koppeling ' toestemming geven aan beheerder voor Graph Explorer '.](./media/admin-units-manage/select-graph-explorer.png)
 
 
-1. De preview-versie van Azure AD Power shell gebruiken.
+1. Gebruik [Azure AD Power shell](https://www.powershellgallery.com/packages/AzureAD/).
 
 ## <a name="add-an-administrative-unit"></a>Een beheer eenheid toevoegen
 
@@ -58,7 +58,7 @@ U kunt een administratieve eenheid toevoegen met behulp van de Azure Portal of P
 
 ### <a name="use-powershell"></a>PowerShell gebruiken
 
-Installeer Azure AD Power shell (preview) voordat u probeert de volgende opdrachten uit te voeren:
+Installeer [Azure AD Power shell](https://www.powershellgallery.com/packages/AzureAD/) voordat u probeert de volgende opdrachten uit te voeren:
 
 ```powershell
 Connect-AzureAD
@@ -100,7 +100,7 @@ Remove-AzureADMSAdministrativeUnit -ObjectId $delau.ObjectId
 
 U kunt de waarden tussen aanhalings tekens, zoals vereist voor de specifieke omgeving, wijzigen.
 
-### <a name="use-the-graph-api"></a>De Graph API gebruiken
+### <a name="use-the-graph-api"></a>Met behulp van de Graph API
 
 ```http
 HTTP request

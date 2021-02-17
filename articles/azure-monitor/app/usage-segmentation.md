@@ -6,12 +6,12 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 01/24/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: d11b12ba37d543ec21985c52c4ffb3399bfc56d1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5d1076239938988119d8a9838d0e060d70a22082
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87323516"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100583364"
 ---
 # <a name="users-sessions-and-events-analysis-in-application-insights"></a>Gebruikers, sessies en gebeurtenissen analyse in Application Insights
 
@@ -41,10 +41,10 @@ Verken verschillende groepen gebruikers door de query opties boven aan het hulp 
 * Wie heeft gebruikt: Kies aangepaste gebeurtenissen en pagina weergaven.
 * Tijdens: Kies een tijds bereik.
 * Op: Kies hoe de gegevens moeten worden gebuckd op basis van een bepaalde tijd of door een andere eigenschap zoals browser of plaats.
-* Splitsen op: Kies een eigenschap waarmee u de gegevens wilt splitsen of segmenteren. 
-* Filters toevoegen: de query beperken tot bepaalde gebruikers, sessies of gebeurtenissen op basis van hun eigenschappen, zoals browser of plaats. 
- 
-## <a name="saving-and-sharing-reports"></a>Rapporten opslaan en delen 
+* Splitsen op: Kies een eigenschap waarmee u de gegevens wilt splitsen of segmenteren. 
+* Filters toevoegen: de query beperken tot bepaalde gebruikers, sessies of gebeurtenissen op basis van hun eigenschappen, zoals browser of plaats. 
+ 
+## <a name="saving-and-sharing-reports"></a>Rapporten opslaan en delen 
 U kunt gebruikers rapporten opslaan, alleen persoonlijk aan u in de sectie Mijn rapporten, of delen met iedereen die toegang heeft tot deze Application Insights resource in de sectie gedeelde rapporten.
 
 Een koppeling naar een rapport gebruikers, sessies of gebeurtenissen delen; Klik op **delen** in de werk balk en kopieer de koppeling.
@@ -60,8 +60,8 @@ De sectie **aan uw gebruikers voldoen** bevat informatie over vijf voorbeeld geb
 - Begin met het verzenden van [aangepaste gebeurtenissen](./api-custom-events-metrics.md#trackevent) of [pagina weergaven](./api-custom-events-metrics.md#page-views)om gebruiks ervaringen in te scha kelen.
 - Als u al aangepaste gebeurtenissen of pagina weergaven verzendt, kunt u de gebruiks hulpprogramma's verkennen om te leren hoe gebruikers uw service gebruiken.
     - [Trechters](usage-funnels.md)
-    - [Bewaartermijn](usage-retention.md)
+    - [Bewaar](usage-retention.md)
     - [Gebruikersstromen](usage-flows.md)
-    - [Werkmappen](../platform/workbooks-overview.md)
+    - [Werkmappen](../visualize/workbooks-overview.md)
     - [Gebruikers context toevoegen](usage-send-user-context.md)
 

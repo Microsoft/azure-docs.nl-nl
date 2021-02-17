@@ -3,12 +3,12 @@ title: Veelgestelde vragen over Azure Resource Health
 description: Overzicht van Azure Resource Health
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.openlocfilehash: a5ad8867b110039e4dcc34b20c8a61fccfd39eaf
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: dc24688d8393b7a13e8c93d3f4d0171cce4c213c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032861"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570059"
 ---
 # <a name="azure-resource-health-faq"></a>Veelgestelde vragen over Azure Resource Health
 Meer informatie over de antwoorden op veelgestelde vragen over Azure Resource Health.
@@ -46,7 +46,7 @@ Ja, wanneer een bron niet beschikbaar is, Resource Health de hoofd oorzaak in ee
 In de portal worden door de gebruiker gestarte acties weer gegeven met behulp van een blauw meldings pictogram, terwijl geplande en niet-geplande gebeurtenissen worden weer gegeven met een rood waarschuwings pictogram. Meer informatie vindt u in het [overzicht van resource Health](Resource-health-overview.md).  
 
 ## <a name="can-i-integrate-resource-health-with-my-monitoring-tools"></a>Kan Ik Resource Health integreren met mijn controle hulpprogramma's?
-Resource Health [ondersteunt](resource-health-alert-arm-template-guide.md) waarschuwingen op basis van activiteiten Logboeken. Waarschuwingen voor activiteiten Logboeken gebruiken [actie groepen](../azure-monitor/platform/action-groups.md) om gebruikers ervan op de hoogte te stellen dat een waarschuwing is geactiveerd. Actie groepen bieden ondersteuning voor diverse meldings kanalen, zoals e-mail, SMS-, webhook-en ITSM-acties.
+Resource Health [ondersteunt](resource-health-alert-arm-template-guide.md) waarschuwingen op basis van activiteiten Logboeken. Waarschuwingen voor activiteiten Logboeken gebruiken [actie groepen](../azure-monitor/alerts/action-groups.md) om gebruikers ervan op de hoogte te stellen dat een waarschuwing is geactiveerd. Actie groepen bieden ondersteuning voor diverse meldings kanalen, zoals e-mail, SMS-, webhook-en ITSM-acties.
 
 ## <a name="where-do-i-find-resource-health"></a>Waar vind Ik Resource Health?
 Nadat u zich hebt aangemeld bij de Azure Portal, zijn er meerdere manieren om toegang te krijgen tot Resource Health:

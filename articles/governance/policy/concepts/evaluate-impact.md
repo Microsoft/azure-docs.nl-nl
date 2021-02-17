@@ -3,12 +3,12 @@ title: De impact van een nieuwe Azure Policy definitie evalueren
 description: Inzicht in het proces dat moet worden gevolgd wanneer een nieuwe beleids definitie wordt geïntroduceerd in uw Azure-omgeving.
 ms.date: 10/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9d73d703c38dce1335a471bfad9171d8b30a83c5
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: cf52d25aa846388bc387430913a733d5206df82e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91873864"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590805"
 ---
 # <a name="evaluate-the-impact-of-a-new-azure-policy-definition"></a>De impact van een nieuwe Azure Policy definitie evalueren
 
@@ -35,10 +35,10 @@ Daarom moeten uw beleids definities net zo nauw keurig worden gedefinieerd en zi
 
 Voordat u nieuwe of bijgewerkte resources met de nieuwe beleids definitie gaat beheren, is het raadzaam om te zien hoe een beperkte subset van bestaande resources, zoals een test resource groep, wordt geëvalueerd. Gebruik de [afdwingings modus](./assignment-structure.md#enforcement-mode) _uitgeschakeld_ (DoNotEnforce) op uw beleids toewijzing om te voor komen dat het [effect](./effects.md) van trigger-of activiteiten logboek vermeldingen wordt gemaakt.
 
-Met deze stap kunt u de nalevings resultaten van het nieuwe beleid evalueren op bestaande resources zonder dat dit van invloed is op de werk stroom. Controleer of er geen compatibele resources zijn gemarkeerd als niet-compatibel (fout_positief_) en dat alle resources die u verwacht niet-compatibel zijn, correct zijn gemarkeerd.
+Met deze stap kunt u de nalevings resultaten van het nieuwe beleid evalueren op bestaande resources zonder dat dit van invloed is op de werk stroom. Controleer of er geen compatibele resources zijn gemarkeerd als niet-compatibel (fout _positief_) en dat alle resources die u verwacht niet-compatibel zijn, correct zijn gemarkeerd.
 Nadat de eerste subset van resources op de verwachte manier wordt gevalideerd, wordt de evaluatie van alle bestaande resources langzaam uitgebreid.
 
-Door bestaande resources op deze manier te evalueren, kunt u niet-compatibele resources herstellen voordat de volledige implementatie van het nieuwe beleid wordt toegepast. Deze opschoning kan hand matig of via een [herstel taak](../how-to/remediate-resources.md) worden uitgevoerd als het effect van de beleids definitie _DeployIfNotExists_is.
+Door bestaande resources op deze manier te evalueren, kunt u niet-compatibele resources herstellen voordat de volledige implementatie van het nieuwe beleid wordt toegepast. Deze opschoning kan hand matig of via een [herstel taak](../how-to/remediate-resources.md) worden uitgevoerd als het effect van de beleids definitie _DeployIfNotExists_ is.
 
 ## <a name="audit-new-or-updated-resources"></a>Nieuwe of bijgewerkte resources controleren
 
@@ -63,7 +63,7 @@ Wijzigingen in het bereik (niveau of uitsluitingen) moeten volledig worden geval
 
 ## <a name="monitor-your-policy-and-compliance"></a>Uw beleid en naleving controleren
 
-Het implementeren en toewijzen van de beleids definitie is niet de laatste stap. Bewaak voortdurend het [compatibiliteits](../how-to/get-compliance-data.md) niveau van resources naar uw nieuwe beleids definitie en Setup die geschikt is [Azure monitor waarschuwingen en meldingen](../../../azure-monitor/platform/alerts-overview.md) voor wanneer niet-compatibele apparaten worden geïdentificeerd. Het is ook raadzaam om de beleids definitie en gerelateerde toewijzingen te evalueren volgens een geplande basis voor het valideren van de beleids definitie, het bedrijfs beleid en de vereisten voor naleving. U moet beleids regels verwijderen als u deze niet meer nodig hebt. Beleids regels moeten ook van tijd tot tijd worden bijgewerkt, omdat de onderliggende Azure-resources worden ontwikkeld en nieuwe eigenschappen en mogelijkheden kunnen worden toegevoegd.
+Het implementeren en toewijzen van de beleids definitie is niet de laatste stap. Bewaak voortdurend het [compatibiliteits](../how-to/get-compliance-data.md) niveau van resources naar uw nieuwe beleids definitie en Setup die geschikt is [Azure monitor waarschuwingen en meldingen](../../../azure-monitor/alerts/alerts-overview.md) voor wanneer niet-compatibele apparaten worden geïdentificeerd. Het is ook raadzaam om de beleids definitie en gerelateerde toewijzingen te evalueren volgens een geplande basis voor het valideren van de beleids definitie, het bedrijfs beleid en de vereisten voor naleving. U moet beleids regels verwijderen als u deze niet meer nodig hebt. Beleids regels moeten ook van tijd tot tijd worden bijgewerkt, omdat de onderliggende Azure-resources worden ontwikkeld en nieuwe eigenschappen en mogelijkheden kunnen worden toegevoegd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

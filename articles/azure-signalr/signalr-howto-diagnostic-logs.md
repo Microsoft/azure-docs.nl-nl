@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.author: wanl
-ms.openlocfilehash: 5ad40ca051677ced0c6d8b5c35e8563272ff598f
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 5650ff0e039d1e9211b8d0013726e101efdfab78
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183971"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572251"
 ---
 # <a name="resource-logs-for-azure-signalr-service"></a>Resource logboeken voor de Azure signalerings service
 
@@ -20,8 +20,8 @@ In deze zelf studie wordt beschreven welke resource logboeken voor de Azure sign
 ## <a name="prerequisites"></a>Vereisten
 Als u resource logboeken wilt inschakelen, moet u uw logboek gegevens ergens opslaan. In deze zelf studie wordt gebruikgemaakt van Azure Storage en Log Analytics.
 
-* [Azure Storage](../azure-monitor/platform/resource-logs.md#send-to-azure-storage) : Hiermee behoudt u de bron logboeken voor beleids controle, statische analyses of back-up.
-* [Log Analytics](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace) : een flexibel hulp programma voor logboek zoeken en analyse waarmee onbewerkte logboeken kunnen worden geanalyseerd die door een Azure-resource zijn gegenereerd.
+* [Azure Storage](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage) : Hiermee behoudt u de bron logboeken voor beleids controle, statische analyses of back-up.
+* [Log Analytics](../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace) : een flexibel hulp programma voor logboek zoeken en analyse waarmee onbewerkte logboeken kunnen worden geanalyseerd die door een Azure-resource zijn gegenereerd.
 
 ## <a name="set-up-resource-logs-for-an-azure-signalr-service"></a>Resource logboeken instellen voor een Azure signalerings service
 
@@ -50,7 +50,7 @@ Bron logboeken zijn standaard uitgeschakeld. Voer de volgende stappen uit om res
 
 Nieuwe instellingen worden in ongeveer 10 minuten van kracht. Daarna worden logboeken weer gegeven in het geconfigureerde archief doel in het deel venster **Diagnostische logboeken** .
 
-Zie [overzicht van Azure-resource logboeken](../azure-monitor/platform/platform-logs-overview.md)voor meer informatie over het configureren van diagnostische gegevens.
+Zie [overzicht van Azure-resource logboeken](../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie over het configureren van diagnostische gegevens.
 
 ### <a name="resource-logs-categories"></a>Categorieën resource logboeken
 
@@ -122,7 +122,7 @@ Ga als volgt te werk om resource logboeken weer te geven:
 
     ![Menu-item Log Analytics](./media/signalr-tutorial-diagnostic-logs/log-analytics-menu-item.png)
 
-2. Voer een `SignalRServiceDiagnosticLogs` tijds bereik in en selecteer dit om een query uit te voeren op resource Logboeken. Zie [aan de slag met log Analytics in azure monitor](../azure-monitor/log-query/log-analytics-tutorial.md) voor geavanceerde query's.
+2. Voer een `SignalRServiceDiagnosticLogs` tijds bereik in en selecteer dit om een query uit te voeren op resource Logboeken. Zie [aan de slag met log Analytics in azure monitor](../azure-monitor/logs/log-analytics-tutorial.md) voor geavanceerde query's.
 
     ![Log Analytics van de query aanmelden](./media/signalr-tutorial-diagnostic-logs/query-log-in-log-analytics.png)
 

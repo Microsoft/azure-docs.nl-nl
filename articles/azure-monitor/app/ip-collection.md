@@ -4,12 +4,12 @@ description: Meer informatie over hoe IP-adressen en geolocatie worden verwerkt 
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 3a8969d5d0df2fdacf78815c6f47c7c6bfa73a37
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 91b3aa07720e39aa8aeeceb9c35e38205e7d7c76
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100521914"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584082"
 ---
 # <a name="geolocation-and-ip-address-handling"></a>Verwerking van geolocatie en IP-adres
 
@@ -30,7 +30,7 @@ Dit gedrag is inherent aan het ontwerp om onnodig verzamelen van persoons gegeve
 
 De standaard waarde is het verzamelen van IP-adressen. We bieden nog steeds de flexibiliteit om dit gedrag te negeren. We raden echter aan te verifiëren dat de verzameling geen nalevings vereisten of lokale voor Schriften onderbreekt. 
 
-Raadpleeg de [richt lijnen voor persoonlijke gegevens](../platform/personal-data-mgmt.md)voor meer informatie over het afhandelen van persoonlijke gegevens in Application Insights.
+Raadpleeg de [richt lijnen voor persoonlijke gegevens](../logs/personal-data-mgmt.md)voor meer informatie over het afhandelen van persoonlijke gegevens in Application Insights.
 
 ## <a name="storing-ip-address-data"></a>IP-adres gegevens opslaan
 
@@ -245,6 +245,6 @@ Als er wordt getest van localhost en de waarde voor `customDimensions_client-ip`
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over het [verzamelen van persoonlijke gegevens](../platform/personal-data-mgmt.md) in Application Insights.
+* Meer informatie over het [verzamelen van persoonlijke gegevens](../logs/personal-data-mgmt.md) in Application Insights.
 
 * Meer informatie over hoe [IP-adres verzameling](https://apmtips.com/posts/2016-07-05-client-ip-address/) in Application Insights werkt. (In dit artikel is een oudere externe blog post geschreven door een van onze technici. Het huidige standaard gedrag waarbij het IP-adres wordt vastgelegd `0.0.0.0` , wordt voorgezet, maar het gaat in op meer gedetailleerde informatie over de mechanismen van de ingebouwde `ClientIpHeaderTelemetryInitializer` .)

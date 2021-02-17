@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: azfuncdf
-ms.openlocfilehash: 4714b9330c4a9d9cd390a58f814e3cdb4b591038
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 62cc5e1762a2a54b26cbebae5aa7cfbf64204ba5
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168138"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584615"
 ---
 # <a name="diagnostics-in-durable-functions-in-azure"></a>Diagnostische gegevens in Durable Functions in Azure
 
@@ -20,7 +20,7 @@ Er zijn verschillende opties voor het vaststellen van problemen met [Durable fun
 
 [Application Insights](../../azure-monitor/app/app-insights-overview.md) is de aanbevolen methode voor het uitvoeren van diagnostische gegevens en bewaking in azure functions. Hetzelfde geldt voor Durable Functions. Zie [Azure functions bewaken](../functions-monitoring.md)voor een overzicht van het gebruik van Application Insights in uw functie-app.
 
-De Azure Functions duurzame extensie levert ook *gebeurtenissen* op waarmee u de end-to-end-uitvoering van een indeling kunt volgen. Deze tracerings gebeurtenissen kunnen worden gevonden en opgevraagd met behulp van het hulp programma [Application Insights Analytics](../../azure-monitor/log-query/log-query-overview.md) in de Azure Portal.
+De Azure Functions duurzame extensie levert ook *gebeurtenissen* op waarmee u de end-to-end-uitvoering van een indeling kunt volgen. Deze tracerings gebeurtenissen kunnen worden gevonden en opgevraagd met behulp van het hulp programma [Application Insights Analytics](../../azure-monitor/logs/log-query-overview.md) in de Azure Portal.
 
 ### <a name="tracking-data"></a>Gegevens bijhouden
 
@@ -29,13 +29,13 @@ Elke levens cyclus gebeurtenis van een indelings instantie zorgt ervoor dat een 
 * **hubName**: de naam van de taak hub waarin uw Orchestrations worden uitgevoerd.
 * **AppName**: de naam van de functie-app. Dit veld is handig wanneer u meerdere functie-apps hebt die hetzelfde Application Insights exemplaar delen.
 * naam **sleuf**: de [implementatie site](../functions-deployment-slots.md) waarin de huidige functie-app wordt uitgevoerd. Dit veld is handig wanneer u implementatie sleuven gebruikt voor het versie nummer van uw Orchestrations.
-* Rolnaam: de naam van **de functie Orchestrator**of de activiteit.
+* Rolnaam: de naam van **de functie Orchestrator** of de activiteit.
 * **functionType**: het type functie, zoals **Orchestrator** of **Activity**.
 * **instanceId**: de unieke id van het Orchestration-exemplaar.
 * **status**: de uitvoerings status van de levens cyclus van het exemplaar. Geldige waarden zijn:
   * **Gepland**: de functie is gepland om te worden uitgevoerd, maar is nog niet gestart.
   * **Gestart**: de functie is gestart, maar is nog niet gewacht of voltooid.
-  * In **afwachting**van: de Orchestrator heeft een aantal werk gepland en wacht tot deze is voltooid.
+  * In **afwachting** van: de Orchestrator heeft een aantal werk gepland en wacht tot deze is voltooid.
   * **Luis teren**: de Orchestrator luistert naar een externe gebeurtenis melding.
   * **Voltooid**: de functie is voltooid.
   * **Mislukt**: de functie is mislukt met een fout.
@@ -159,7 +159,7 @@ Bij het bekijken van de logboeken die worden gegenereerd door de DTFx, is het be
 * **DurableTask. core**: bevat informatie over de uitvoering van Orchestration en het plannen op laag niveau.
 * **DurableTask. opslag**: bevat informatie met betrekking tot interacties met Azure Storage artefacten, waaronder de interne wacht rijen, blobs en opslag tabellen die worden gebruikt voor het opslaan en ophalen van de interne Orchestrator-status.
 
-U kunt deze logboeken inschakelen door de `logging/logLevel` sectie van dehost.jsvan uw functie-app ** bij** te werken in het bestand. In het volgende voor beeld ziet u hoe u waarschuwings-en fout logboeken inschakelt van zowel `DurableTask.Core` en `DurableTask.AzureStorage` :
+U kunt deze logboeken inschakelen door de `logging/logLevel` sectie van dehost.jsvan uw functie-app **bij** te werken in het bestand. In het volgende voor beeld ziet u hoe u waarschuwings-en fout logboeken inschakelt van zowel `DurableTask.Core` en `DurableTask.AzureStorage` :
 
 ```json
 {

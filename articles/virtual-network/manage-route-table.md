@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/19/2020
 ms.author: kumud
-ms.openlocfilehash: a8c38f4e84a6a653c3a4d887c82340409fc363af
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 642a9a9f798492d85ee2a9784a1fe5ad4f854d58
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98220589"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574117"
 ---
 # <a name="create-change-or-delete-a-route-table"></a>Een route tabel maken, wijzigen of verwijderen
 
@@ -85,7 +85,7 @@ Ga naar de [Azure-portal](https://portal.azure.com) om uw virtuele netwerk te be
 
 Voor meer informatie over algemene Azure-instellingen raadpleegt u de volgende informatie:
 
-- [Activiteitenlogboek](../azure-monitor/platform/platform-logs-overview.md)
+- [Activiteitenlogboek](../azure-monitor/essentials/platform-logs-overview.md)
 - [Toegangsbeheer (IAM)](../role-based-access-control/overview.md)
 - [Tags](../azure-resource-manager/management/tag-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - [Vergrendelingen](../azure-resource-manager/management/lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
@@ -333,7 +333,7 @@ Na een korte wacht tijd geeft Azure u het type van de volgende hop en de ID van 
 
 Om taken uit te voeren op route tabellen en routes, moet uw account worden toegewezen aan de [rol netwerk bijdrager](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) of aan een [aangepaste rol](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) waaraan de juiste acties in de volgende tabel worden toegewezen:
 
-| Actie                                                          |   Naam                                                  |
+| Bewerking                                                          |   Name                                                  |
 |--------------------------------------------------------------   |   -------------------------------------------           |
 | Micro soft. Network/routeTables/lezen                              |   Een route tabel lezen                                    |
 | Micro soft. Network/routeTables/schrijven                             |   Een route tabel maken of bijwerken                        |

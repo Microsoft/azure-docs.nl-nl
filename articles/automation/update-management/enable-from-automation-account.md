@@ -6,12 +6,12 @@ ms.subservice: update-management
 ms.date: 11/09/2020
 ms.topic: conceptual
 ms.custom: mvc
-ms.openlocfilehash: 06a29cd07a870e7553d599b5f719943acb259c2a
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 089d5d70d8ad8060455e5c1bee45e0bee4a12fae
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054920"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575846"
 ---
 # <a name="enable-update-management-from-an-automation-account"></a>Updatebeheer inschakelen vanaf een Automation-account
 
@@ -24,7 +24,8 @@ In dit artikel wordt beschreven hoe u uw Automation-account kunt gebruiken om de
 
 * Azure-abonnement. Als u nog geen abonnement hebt, kunt u [uw voordelen als MSDN-abonnee activeren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) of u aanmelden voor een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * [Automation-account](../automation-security-overview.md) voor het beheren van computers.
-* Een [virtuele machine van Azure](../../virtual-machines/windows/quick-create-portal.md)of een VM of server die is geregistreerd bij servers waarop Arc is ingeschakeld. Voor niet-Azure-Vm's of-servers moet de [log Analytics-agent](../../azure-monitor/platform/log-analytics-agent.md) voor Windows of Linux geïnstalleerd zijn en worden gerapporteerd aan de werk ruimte die is gekoppeld aan het Automation-account updatebeheer is ingeschakeld in. Het is raadzaam om de Log Analytics-agent voor Windows of Linux te installeren door eerst uw computer te verbinden met [servers met Azure-Arc](../../azure-arc/servers/overview.md)en vervolgens Azure Policy te gebruiken om de implementatie van [log Analytics agent toe te wijzen aan het ingebouwde beleid voor *Linux* of *Windows* Azure Arc-machines](../../governance/policy/samples/built-in-policies.md#monitoring) . Als u van plan bent om de machines met Azure Monitor voor VM's te bewaken, moet u in plaats daarvan het Azure Monitor voor VM's-initiatief [inschakelen](../../governance/policy/samples/built-in-initiatives.md#monitoring) .
+* Een [virtuele machine van Azure](../../virtual-machines/windows/quick-create-portal.md)of een VM of server die is geregistreerd bij servers waarop Arc is ingeschakeld. Voor niet-Azure-Vm's of-servers moet de [log Analytics-agent](../../azure-monitor/agents/log-analytics-agent.md) voor Windows of Linux geïnstalleerd zijn en worden gerapporteerd aan de werk ruimte die is gekoppeld aan het Automation-account updatebeheer is ingeschakeld in. Het is raadzaam om de Log Analytics-agent voor Windows of Linux te installeren door eerst uw computer te verbinden met [servers met Azure-Arc](../../azure-arc/servers/overview.md)en vervolgens Azure Policy te gebruiken om de implementatie van [log Analytics agent toe te wijzen aan het ingebouwde beleid voor *Linux* of *Windows* Azure Arc-machines](../../governance/policy/samples/built-in-policies.md#monitoring) . Als u van plan bent om de machines met Azure Monitor voor VM's te bewaken, moet u in plaats daarvan het Azure Monitor voor VM's-initiatief [inschakelen](../../governance/policy/samples/built-in-initiatives.md#monitoring) .
+
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
@@ -54,7 +55,7 @@ Voor computers of servers die buiten Azure worden gehost, met inbegrip van de se
 
 1. Selecteer **Updatebeheer** onder **Updatebeheer** in uw Automation-account.
 
-2. Selecteer **niet-Azure-machine toevoegen**. Met deze actie wordt een nieuw browser venster geopend met [instructies voor het installeren en configureren van de log Analytics-agent voor Windows](../../azure-monitor/platform/log-analytics-agent.md) , zodat de computer kan beginnen met het rapporteren van updatebeheer. Als u een machine inschakelt die momenteel wordt beheerd door Operations Manager, is een nieuwe agent niet vereist. De werkruimte gegevens worden toegevoegd aan de agent configuratie.
+2. Selecteer **niet-Azure-machine toevoegen**. Met deze actie wordt een nieuw browser venster geopend met [instructies voor het installeren en configureren van de log Analytics-agent voor Windows](../../azure-monitor/agents/log-analytics-agent.md) , zodat de computer kan beginnen met het rapporteren van updatebeheer. Als u een machine inschakelt die momenteel wordt beheerd door Operations Manager, is een nieuwe agent niet vereist. De werkruimte gegevens worden toegevoegd aan de agent configuratie.
 
 ## <a name="enable-machines-in-the-workspace"></a>Computers in de werk ruimte inschakelen
 

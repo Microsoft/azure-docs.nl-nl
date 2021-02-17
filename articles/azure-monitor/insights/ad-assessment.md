@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/10/2019
-ms.openlocfilehash: 3c86b21c5e0533ab6a1a3c64dc601eb8bb573547
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 069f70d27bd7e721be2bf82f6ef64ce9c531ab8e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87318093"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577565"
 ---
 # <a name="optimize-your-active-directory-environment-with-the-active-directory-health-check-solution-in-azure-monitor"></a>De Active Directory-omgeving optimaliseren met behulp van Active Directory-statuscontrole in Azure Monitor
 
@@ -46,9 +46,9 @@ Nadat u de oplossing hebt toegevoegd en een controle is voltooid, wordt de samen
 
 Voor het uitvoeren van de status controle op uw domein controllers die lid zijn van het domein dat moet worden geëvalueerd, is voor elke domein controller in dat domein een agent en connectiviteit met Azure Monitor een van de volgende ondersteunde methoden vereist:
 
-1. Installeer de [log Analytics-agent voor Windows](../platform/agent-windows.md) als de domein controller niet al wordt bewaakt door System Center 2016-Operations Manager of Operations Manager 2012 R2.
+1. Installeer de [log Analytics-agent voor Windows](../agents/agent-windows.md) als de domein controller niet al wordt bewaakt door System Center 2016-Operations Manager of Operations Manager 2012 R2.
 2. Als het wordt bewaakt met System Center 2016-Operations Manager of Operations Manager 2012 R2 en de beheer groep is niet geïntegreerd met Azure Monitor, kan de domein controller meerdere locaties hebben met Azure Monitor om gegevens te verzamelen en door te sturen naar de service en nog steeds door Operations Manager worden bewaakt.  
-3. Als uw Operations Manager-beheer groep is geïntegreerd met de service, moet u de domein controllers voor het verzamelen van gegevens door de service toevoegen volgens de stappen onder door [agents beheerde computers toevoegen](../platform/om-agents.md#connecting-operations-manager-to-azure-monitor) nadat u de oplossing in uw werk ruimte hebt ingeschakeld.  
+3. Als uw Operations Manager-beheer groep is geïntegreerd met de service, moet u de domein controllers voor het verzamelen van gegevens door de service toevoegen volgens de stappen onder door [agents beheerde computers toevoegen](../agents/om-agents.md#connecting-operations-manager-to-azure-monitor) nadat u de oplossing in uw werk ruimte hebt ingeschakeld.  
 
 De agent op uw domein controller die aan een Operations Manager-beheer groep rapporteert, verzamelt gegevens, stuurt deze door naar de toegewezen beheer server en wordt vervolgens rechtstreeks van een beheer server naar Azure Monitor verzonden.  De gegevens worden niet naar de Operations Manager-data bases geschreven.  
 
@@ -215,5 +215,5 @@ De resultaten kunnen vervolgens naar Excel worden geëxporteerd voor verdere con
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Gebruik [Azure monitor-logboek query's](../log-query/log-query-overview.md) om te leren hoe u gedetailleerde gegevens over AD health checks en aanbevelingen kunt analyseren.
+Gebruik [Azure monitor-logboek query's](../logs/log-query-overview.md) om te leren hoe u gedetailleerde gegevens over AD health checks en aanbevelingen kunt analyseren.
 

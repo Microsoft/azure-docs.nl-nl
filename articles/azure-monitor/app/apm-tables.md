@@ -3,16 +3,16 @@ title: Op werkruimte gebaseerd resourceschema van Azure Monitor Application Insi
 description: Meer informatie over de nieuwe tabel structuur en het schema voor Azure Monitor resources op basis van Application Insights werk ruimte.
 ms.topic: conceptual
 ms.date: 05/09/2020
-ms.openlocfilehash: e63d4a680ad76ccd6895aed53f3276a5775b1226
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: ef9d22cd2b45679928ee54778b2a521ea9ecab03
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100385962"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575603"
 ---
 # <a name="workspace-based-resource-changes"></a>Wijzigingen van resources op basis van werk ruimten
 
-Vóór de introductie van [Application Insights resources op basis van een werk ruimte](create-workspace-resource.md), zijn Application Insights gegevens gescheiden van andere logboek gegevens opgeslagen in azure monitor. Beide zijn gebaseerd op Azure Data Explorer en gebruiken dezelfde Kusto query language (KQL). Dit wordt beschreven in de [Logboeken van Azure monitor](../platform/data-platform-logs.md).
+Vóór de introductie van [Application Insights resources op basis van een werk ruimte](create-workspace-resource.md), zijn Application Insights gegevens gescheiden van andere logboek gegevens opgeslagen in azure monitor. Beide zijn gebaseerd op Azure Data Explorer en gebruiken dezelfde Kusto query language (KQL). Dit wordt beschreven in de [Logboeken van Azure monitor](../logs/data-platform-logs.md).
 
 Met Application Insights resources-gegevens op basis van een werk ruimte worden opgeslagen in een Log Analytics-werk ruimte met andere bewakings gegevens en toepassings gegevens. Dit vereenvoudigt uw configuratie, zodat u gemakkelijker gegevens kunt analyseren over meerdere oplossingen en de mogelijkheden van werk ruimten kunt benutten.
 
@@ -464,6 +464,6 @@ Verouderde tabel: traceringen
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Metrische gegevens verkennen](../platform/metrics-charts.md)
-* [Analytics-query's schrijven](../log-query/log-query-overview.md)
+* [Metrische gegevens verkennen](../essentials/metrics-charts.md)
+* [Analytics-query's schrijven](../logs/log-query-overview.md)
 

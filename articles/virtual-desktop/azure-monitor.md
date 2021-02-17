@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 12/01/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: e0be6decf28fcbb2edacd5019f567d26403b1f31
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: e9da1071686dafa003a5a49d0864b77644493344
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96466814"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594459"
 ---
 # <a name="use-azure-monitor-for-windows-virtual-desktop-to-monitor-your-deployment-preview"></a>Gebruik Azure Monitor voor virtuele Windows-Bureau bladen om uw implementatie te bewaken (preview-versie)
 
@@ -51,7 +51,7 @@ U kunt Azure Monitor voor Windows virtueel bureau blad openen met een van de vol
 
 - Zoek en selecteer **Windows virtueel bureau blad** in het Azure Portal en selecteer vervolgens **inzichten**.
 
-- Zoek en selecteer **Azure monitor** in de Azure Portal. Selecteer **Insights-hub** onder **inzichten** en selecteer **Other** onder andere **Windows virtueel bureau blad** om het dash board te openen op de pagina Azure monitor.
+- Zoek en selecteer **Azure monitor** in de Azure Portal. Selecteer **Insights-hub** onder **inzichten** en selecteer  onder andere **Windows virtueel bureau blad** om het dash board te openen op de pagina Azure monitor.
 
 Wanneer u Azure Monitor voor Windows virtueel bureau blad hebt geopend, selecteert u een of meer van de selectie vakjes met het naam **abonnement**, de **resource groep**, de **hostgroep** en het **tijds bereik** op basis van de omgeving die u wilt bewaken.
 
@@ -98,7 +98,7 @@ Meer informatie over het inschakelen van diagnostische gegevens voor alle object
 
 ## <a name="configure-log-analytics"></a>Log Analytics configureren
 
-Als u Azure Monitor voor Windows virtueel bureau blad wilt gebruiken, hebt u ook ten minste één Log Analytics werk ruimte nodig om gegevens te verzamelen uit de omgeving die u wilt bewaken en deze aan de werkmap te leveren. Als u al een hebt ingesteld, gaat u verder met het [instellen van prestatie meter items](#set-up-performance-counters). Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/learn/quick-create-workspace.md)om een nieuwe log Analytics-werk ruimte in te stellen voor het Azure-abonnement met uw virtuele Windows-desktop omgeving.
+Als u Azure Monitor voor Windows virtueel bureau blad wilt gebruiken, hebt u ook ten minste één Log Analytics werk ruimte nodig om gegevens te verzamelen uit de omgeving die u wilt bewaken en deze aan de werkmap te leveren. Als u al een hebt ingesteld, gaat u verder met het [instellen van prestatie meter items](#set-up-performance-counters). Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/logs/quick-create-workspace.md)om een nieuwe log Analytics-werk ruimte in te stellen voor het Azure-abonnement met uw virtuele Windows-desktop omgeving.
 
 >[!NOTE]
 >Er gelden standaard kosten voor gegevens opslag voor Log Analytics. We raden u aan om het model voor betalen naar gebruik te kiezen en aan te passen wanneer u uw implementatie schaalt en meer gegevens in beslag neemt. Zie [Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/)voor meer informatie.
@@ -107,7 +107,7 @@ Als u Azure Monitor voor Windows virtueel bureau blad wilt gebruiken, hebt u ook
 
 U moet specifieke prestatie meter items voor de verzameling inschakelen in het bijbehorende steekproef interval in de werk ruimte Log Analytics. Deze prestatie meter items zijn de enige items die u nodig hebt om het virtuele bureau blad van Windows te bewaken. U kunt alle andere uitschakelen om kosten te besparen.
 
-Als u de prestatie meter items al hebt ingeschakeld en wilt verwijderen, volgt u de instructies in [prestatie meter items configureren](../azure-monitor/platform/data-sources-performance-counters.md) om de prestatie meter items opnieuw te configureren. In het artikel wordt beschreven hoe u items toevoegt, maar u kunt ze ook op dezelfde locatie verwijderen.
+Als u de prestatie meter items al hebt ingeschakeld en wilt verwijderen, volgt u de instructies in [prestatie meter items configureren](../azure-monitor/agents/data-sources-performance-counters.md) om de prestatie meter items opnieuw te configureren. In het artikel wordt beschreven hoe u items toevoegt, maar u kunt ze ook op dezelfde locatie verwijderen.
 
 Als u prestatie meter items nog niet hebt ingesteld, gaat u als volgt te werk om ze te configureren voor Azure Monitor voor virtuele Windows-bureau blad:
 
@@ -128,7 +128,7 @@ U kunt ook nieuwe prestatie meter items toevoegen na de initiële configuratie w
 >[!NOTE]
 >De prestatie meter items voor de invoer vertraging zijn alleen compatibel met Windows 10 RS5 en hoger, of Windows Server 2019 en hoger.
 
-Zie [prestatie meter items configureren](../azure-monitor/platform/data-sources-performance-counters.md)voor meer informatie over het hand matig toevoegen van prestatie meter items die nog niet zijn ingeschakeld voor verzameling.
+Zie [prestatie meter items configureren](../azure-monitor/agents/data-sources-performance-counters.md)voor meer informatie over het hand matig toevoegen van prestatie meter items die nog niet zijn ingeschakeld voor verzameling.
 
 ### <a name="set-up-windows-events"></a>Windows-gebeurtenissen instellen
 
@@ -171,7 +171,7 @@ De Log Analytics-agent installeren:
 
 ## <a name="optional-configure-alerts"></a>Optioneel: waarschuwingen configureren
 
-U kunt Azure Monitor voor Windows virtueel bureau blad configureren om u te waarschuwen als er ernstige Azure Monitor waarschuwingen optreden binnen het geselecteerde abonnement. Volg hiervoor de instructies in [reageren op gebeurtenissen met Azure monitor-waarschuwingen](../azure-monitor/learn/tutorial-response.md).
+U kunt Azure Monitor voor Windows virtueel bureau blad configureren om u te waarschuwen als er ernstige Azure Monitor waarschuwingen optreden binnen het geselecteerde abonnement. Volg hiervoor de instructies in [reageren op gebeurtenissen met Azure monitor-waarschuwingen](../azure-monitor/alerts/tutorial-response.md).
 
 ## <a name="diagnostic-and-usage-data"></a>Diagnostische en gebruiks gegevens
 

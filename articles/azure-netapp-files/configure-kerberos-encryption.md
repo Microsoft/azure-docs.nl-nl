@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 11/09/2020
 ms.author: b-juche
-ms.openlocfilehash: 69168060cbce4a904c53d7f79895e909c8c42e01
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: b7e40eb936a6151f0f31c34c5a8030153a87f08c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935220"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571092"
 ---
-# <a name="configure-nfsv41-kerberos-encryption-for-azure-netapp-files"></a>NFSv 4.1 Kerberos-versleuteling voor Azure NetApp Files configureren
+# <a name="configure-nfsv41-kerberos-encryption-for-azure-netapp-files"></a>NFSv4.1 Kerberos-versleuteling configureren voor Azure NetApp Files
 
 Azure NetApp Files ondersteunt NFS-client versleuteling in Kerberos-modi (krb5, krb5i en krb5p) met AES-256-versleuteling. In dit artikel worden de vereiste configuraties voor het gebruik van een NFSv 4.1-volume met Kerberos-versleuteling beschreven.
 
@@ -57,7 +57,7 @@ De volgende vereisten zijn van toepassing op NFSv 4.1 client Encryption:
 
 ## <a name="configure-the-azure-portal"></a>Azure Portal configureren 
 
-1.  Volg de instructies in [een Active Directory verbinding maken](azure-netapp-files-create-volumes-smb.md#create-an-active-directory-connection).  
+1.  Volg de instructies in [een Active Directory verbinding maken](create-active-directory-connections.md).  
 
     Voor Kerberos moet u ten minste één computer account maken in Active Directory. De account gegevens die u opgeeft, worden gebruikt voor het maken van de accounts voor zowel SMB- *als* Nfsv 4.1 Kerberos-volumes. De computer wordt automatisch gemaakt tijdens het maken van het volume.
 
@@ -175,5 +175,5 @@ Prestatie-impact van krb5p:
 * [Problemen met NFSv 4.1 Kerberos volume oplossen](troubleshoot-nfsv41-kerberos-volumes.md)
 * [Veelgestelde vragen over Azure NetApp Files](azure-netapp-files-faqs.md)
 * [Een NFS-volume maken voor Azure NetApp Files](azure-netapp-files-create-volumes.md)
-* [Een Active Directory verbinding maken](azure-netapp-files-create-volumes-smb.md#create-an-active-directory-connection)
+* [Een Active Directory verbinding maken](create-active-directory-connections.md)
 * [Een NFS-client voor Azure NetApp Files configureren](configure-nfs-clients.md) 

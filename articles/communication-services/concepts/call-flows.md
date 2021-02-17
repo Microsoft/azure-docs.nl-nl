@@ -9,14 +9,14 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 410f8ab4de0d93262647cbc07e0792cd39f7a844
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: 79382dde5780827d7b0393858fe8896c5da1b56d
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99593634"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100559444"
 ---
-# <a name="call-flows"></a>Aanroepstromen
+# <a name="call-flow-basics"></a>Basis principes van oproep stroom
 
 [!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
@@ -76,6 +76,14 @@ Als de clientbibliotheek geen UDP voor media kan gebruiken vanwege beperkingen o
 
 :::image type="content" source="./media/call-flows/about-voice-group-calls-2.png" alt-text="Diagram waarop de TCP-mediaprocesstroom binnen Communication Services wordt weergegeven.":::
 
+### <a name="case-5-communication-services-client-library-and-microsoft-teams-in-a-scheduled-teams-meeting"></a>Case 5: client bibliotheek van communicatie Services en micro soft-teams in een geplande teams vergadering
+
+De signaal stroom via de signalerings controller. Media stromen via de media processor. De signalerings controller en de media processor worden gedeeld tussen communicatie Services en micro soft-teams. 
+
+:::image type="content" source="./media/call-flows/teams-communication-services-meeting.png" alt-text="Diagram met de client bibliotheek van de communicatie Services en de team van de teams in een geplande teams vergadering.":::
+
+
+
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
@@ -85,3 +93,4 @@ De volgende documenten zijn mogelijk interessant voor u:
 
 - Meer informatie over [oproeptypen](../concepts/voice-video-calling/about-call-types.md)
 - Meer informatie over [Client-serverarchitectuur](./client-and-server-architecture.md)
+- Meer informatie over [topologieën voor oproep stromen](./detailed-call-flows.md)

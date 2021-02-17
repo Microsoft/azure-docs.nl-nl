@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/20/2020
 ms.author: jushiman
-ms.openlocfilehash: fecd707d96b03eef4f093c0b256e32f11bb8a3f7
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 84987b12657a37264d3a1ca67fdc423ed8085662
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99095853"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100557913"
 ---
 # <a name="dcsv2-series"></a>DCsv2-serie
 
@@ -21,15 +21,15 @@ De DCsv2-serie kan u helpen de vertrouwelijkheid en integriteit van uw gegevens 
 
 Voor beelden van use cases zijn: vertrouwelijk delen van gegevens, fraude detectie, anti-Money witwassen, Block Chain, analyse van vertrouwelijk gebruik, intelligentie analyse en vertrouwelijke machine learning.
 
-[Premium Storage](premium-storage-performance.md): ondersteund *<br>
-[Premium Storage caching](premium-storage-performance.md): ondersteund<br>
-[Livemigratie](maintenance-and-updates.md): niet ondersteund<br>
-[Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
-[Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 2<br>
-[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Premium Storage](premium-storage-performance.md): ondersteund *<br> 
+ [Premium Storage caching](premium-storage-performance.md): ondersteunde <br> 
+ [Livemigratie](maintenance-and-updates.md): niet-ondersteunde updates voor het <br> 
+ [geheugen](maintenance-and-updates.md): niet ondersteund ondersteuning voor het <br> 
+ [genereren van vm's](generation-2.md): generatie 2 <br> 
+ [versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund (* vereist een minimum van 4 vCPU *) <br>
 [Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): ondersteund <br>
 
-* Met uitzonde ring van Standard_DC8_v2
+* Met uitzonde ring van Standard_DC8_v2 <br>
 
 | Grootte             | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | Max. aantal gegevensschijven | Maximale doorvoer voor schijven met caching en tijdelijke opslag: IOPS / MBps (cachegrootte in GiB) | Maximum aantal Nic's/verwachte netwerk bandbreedte (MBps) | EPC-geheugen (MiB) |
 |------------------|------|-------------|------------------------|----------------|-------------------------------------------------------------------------|----------------------------------------------|---------------------|

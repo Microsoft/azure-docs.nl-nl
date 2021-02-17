@@ -13,12 +13,12 @@ ms.date: 04/10/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 2b8577af2c8a6296ae6f4f090e8ff233e51ee6fb
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 64107c3f667dd7e59fcf6d191e83457029b3a277
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99583922"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546343"
 ---
 # <a name="migrating-applications-to-msalnet"></a>Toepassingen migreren naar MSAL.NET
 
@@ -59,7 +59,7 @@ Het is ook mogelijk in MSAL.NET om toegang te krijgen tot v 1.0-resources. Zie d
 
 - ADAL.NET maakt gebruik van [AuthenticationContext](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/AuthenticationContext:-the-connection-to-Azure-AD) als de weer gave van uw verbinding met de beveiligings token service (STS) of autorisatie server, via een instantie. In tegens telling tot MSAL.NET is ontworpen rond [client toepassingen](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Client-Applications). Het biedt twee afzonderlijke klassen: `PublicClientApplication` en `ConfidentialClientApplication`
 
-- Tokens ophalen: ADAL.NET en MSAL.NET hebben dezelfde authenticatie aanroepen ( `AcquireTokenAsync` en  `AcquireTokenSilentAsync` voor ADAL.net en `AcquireTokenInteractive` en `AcquireTokenSilent` in MSAL.net), maar met andere vereiste para meters. Een verschil is het feit dat u in MSAL.NET niet langer hoeft in te geven `ClientID` van uw toepassing in elke AcquireTokenXX-oproep. De is inderdaad `ClientID` slechts eenmaal ingesteld bij het bouwen van de ( `IPublicClientApplication` of `IConfidentialClientApplication` ).
+- Tokens ophalen: ADAL.NET en MSAL.NET hebben dezelfde authenticatie aanroepen ( `AcquireTokenAsync` en `AcquireTokenSilentAsync` voor ADAL.net en `AcquireTokenInteractive` en `AcquireTokenSilent` in MSAL.net), maar met andere vereiste para meters. Een verschil is het feit dat u in MSAL.NET niet langer hoeft in te geven `ClientID` van uw toepassing in elke AcquireTokenXX-oproep. De is inderdaad `ClientID` slechts eenmaal ingesteld bij het bouwen van de ( `IPublicClientApplication` of `IConfidentialClientApplication` ).
 
 ### <a name="iaccount-not-iuser"></a>IAccount niet IUser
 
@@ -170,7 +170,7 @@ Als u tokens wilt verkrijgen voor een toepassing die v 1.0-tokens accepteert (bi
 Bijvoorbeeld, om toegang te krijgen tot de naam van de gebruiker een v 1.0 Web-API die de URI van de App-ID is `ResourceId` , wilt u het volgende gebruiken:
 
 ```csharp
-var scopes = new [] {  ResourceId+"/user_impersonation"};
+var scopes = new [] { ResourceId+"/user_impersonation" };
 ```
 
 Als u wilt lezen en schrijven met MSAL.NET Azure Active Directory met behulp van de Microsoft Graph-API ( https://graph.microsoft.com/) , maakt u een lijst met bereiken zoals in het volgende code fragment:
@@ -205,7 +205,7 @@ Als u bijvoorbeeld een token wilt verkrijgen voor alle statische bereiken van ee
 
 ```csharp
 ResourceId = "someAppIDURI";
-var scopes = new [] {  ResourceId+"/.default"};
+var scopes = new [] { ResourceId+"/.default" };
 ```
 
 ### <a name="scopes-to-request-in-the-case-of-client-credential-flow--daemon-app"></a>Bereiken die moeten worden aangevraagd in het geval van een client referentie stroom/daemon-app

@@ -12,12 +12,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 02/01/2021
 ms.author: juliako
-ms.openlocfilehash: c0d332c00635444ab4d694e46486a498b43137f2
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: a6b1fc5adba166aa15a786d3440be1eca7f0a260
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99427652"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100560511"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Release opmerkingen bij Azure Media Services Video Indexer
 
@@ -67,7 +67,7 @@ U kunt zich aanmelden en aanmelden met een van deze providers: Azure AD, micro s
 > [!NOTE]
 > De Video Indexer accounts die zijn verbonden met LinkedIn en Facebook, zijn na 2021 1 maart niet toegankelijk. 
 > 
-> U moet een e-mail bericht van Azure AD, micro soft of Google [uitnodigen](invite-users.md) voor het video indexer-account, zodat u nog steeds toegang hebt.<br/>
+> U moet een e-mail bericht van Azure AD, micro soft of Google [uitnodigen](invite-users.md) voor het video indexer-account, zodat u nog steeds toegang hebt. U kunt een extra eigenaar van ondersteunde providers toevoegen, zoals wordt beschreven in [uitnodigen](invite-users.md). <br/>
 > U kunt ook een betaald account maken en de gegevens migreren.
 
 ## <a name="august-2020"></a>Augustus 2020

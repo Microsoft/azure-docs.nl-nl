@@ -1,5 +1,5 @@
 ---
-title: Aangepaste modellen beheren
+title: DTDL-modellen beheren
 titleSuffix: Azure Digital Twins
 description: Zie een model maken, bewerken en verwijderen in azure Digital Apparaatdubbels.
 author: baanders
@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: c193565035435b29f77177086c535fae0903ccd4
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: be8f4ba8552521d25992d7c3a405dc2628fbbb85
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737775"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100560815"
 ---
 # <a name="manage-azure-digital-twins-models"></a>Azure Digital Apparaatdubbels-modellen beheren
 

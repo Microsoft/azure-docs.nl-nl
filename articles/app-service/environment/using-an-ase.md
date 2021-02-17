@@ -4,15 +4,15 @@ description: Meer informatie over het maken, publiceren en schalen van apps in e
 author: ccompy
 ms.assetid: a22450c4-9b8b-41d4-9568-c4646f4cf66b
 ms.topic: article
-ms.date: 5/10/2020
+ms.date: 9/22/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: e4653419d974db2e597111487c64682c75ffc40b
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: e8cc42500b9d8bfc507683b5cc96c7b12f95909b
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97826017"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548451"
 ---
 # <a name="use-an-app-service-environment"></a>Een App Service-omgeving gebruiken
 
@@ -161,7 +161,7 @@ Zonder extra wijzigingen werken op internet gebaseerde CI-systemen zoals GitHub 
 
 De publicatie-eindpunten voor apps in een ILB AS-omgeving maken gebruik van het domein waarmee de ILB AS-omgeving is gemaakt. U kunt dit zien in het publicatie Profiel van de app en in het deel venster van de app-Portal (in **overzichts**  >  **kernen** en ook in **Eigenschappen**).
 
-## <a name="storage"></a>Opslag
+## <a name="storage"></a>Storage
 
 Een ASE heeft 1 TB opslag ruimte voor alle apps in de ASE. Een App Service plan in de geïsoleerde prijs-SKU heeft een limiet van 250 GB. In een ASE wordt 250 GB aan opslag ruimte toegevoegd per App Service de limiet van 1 TB te plannen. U kunt meer App Service plannen hebben dan slechts vier, maar er is geen opslag meer toegevoegd dan de limiet van 1 TB.
 

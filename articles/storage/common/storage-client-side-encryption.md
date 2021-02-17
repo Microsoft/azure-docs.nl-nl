@@ -5,22 +5,24 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 11/10/2020
+ms.date: 02/16/2021
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5f2d3ba12fa65beb7156e056c23e44b028cbb520
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: eb1891b7201d8e1d3d18b0e01817ee943ae6341f
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445061"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548179"
 ---
 # <a name="client-side-encryption-and-azure-key-vault-for-microsoft-azure-storage"></a>Client-Side versleuteling en Azure Key Vault voor Microsoft Azure Storage
+
 [!INCLUDE [storage-selector-client-side-encryption-include](../../../includes/storage-selector-client-side-encryption-include.md)]
 
 ## <a name="overview"></a>Overzicht
+
 De [Azure Storage-client bibliotheek voor .net](/dotnet/api/overview/azure/storage) biedt ondersteuning voor het versleutelen van gegevens in client toepassingen voordat u ze uploadt naar Azure Storage en gegevens ontsleutelt tijdens het downloaden van de client. De bibliotheek ondersteunt ook integratie met [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) voor sleutel beheer van het opslag account.
 
 Zie [Microsoft Azure Storage blobs versleutelen en ontsleutelen met behulp van Azure Key Vault](../blobs/storage-encrypt-decrypt-blobs-key-vault.md)voor een stapsgewijze zelf studie die u helpt bij het versleutelen van blobs met versleuteling aan client zijde en Azure Key Vault.
@@ -28,20 +30,23 @@ Zie [Microsoft Azure Storage blobs versleutelen en ontsleutelen met behulp van A
 Zie [versleuteling aan client zijde met Java voor Microsoft Azure Storage](storage-client-side-encryption-java.md)voor versleuteling aan de client zijde met Java.
 
 ## <a name="encryption-and-decryption-via-the-envelope-technique"></a>Versleuteling en ontsleuteling via de envelop techniek
+
 De versleutelings processen en ontsleuteling volgen de envelop techniek.
 
 ### <a name="encryption-via-the-envelope-technique"></a>Versleuteling via de envelop techniek
+
 Versleuteling via de envelop techniek werkt op de volgende manier:
 
 1. De Azure Storage-client bibliotheek genereert een coderings sleutel voor inhoud (CEK). Dit is een eenmalige symmetrische sleutel.
 2. Gebruikers gegevens worden versleuteld met behulp van deze CEK.
 3. De CEK wordt vervolgens verpakt (versleuteld) met behulp van de versleutelingssleutel voor sleutel (KEK). De KEK wordt geïdentificeerd aan de hand van een sleutel-id en kan een asymmetrisch sleutel paar of een symmetrische sleutel zijn en kan lokaal worden beheerd of opgeslagen in azure-sleutel kluizen.
-   
+
     De Storage-client bibliotheek zelf heeft nooit toegang tot KEK. De bibliotheek roept de sleutel terugloop algoritme aan die wordt verschaft door Key Vault. Gebruikers kunnen ervoor kiezen om aangepaste providers te gebruiken voor sleutel terugloop/uitpakken, indien gewenst.
 
 4. De versleutelde gegevens worden vervolgens geüpload naar de Azure Storage-service. De ingepakte sleutel en enkele extra versleutelings meta gegevens worden opgeslagen als meta gegevens (op een blob) of worden geïnterpoleerd met de versleutelde gegevens (wachtrij berichten en tabel entiteiten).
 
 ### <a name="decryption-via-the-envelope-technique"></a>Ontsleuteling via de envelop techniek
+
 Ontsleuteling via de envelop techniek werkt op de volgende manier:
 
 1. De client bibliotheek gaat ervan uit dat de gebruiker de Key Encryption Key (KEK) lokaal of in azure-sleutel kluizen beheert. De gebruiker hoeft geen kennis te hebben van de specifieke sleutel die voor versleuteling is gebruikt. In plaats daarvan kan een Key resolver waarmee verschillende sleutel-id's worden omgezet in sleutels, worden ingesteld en gebruikt.
@@ -50,17 +55,17 @@ Ontsleuteling via de envelop techniek werkt op de volgende manier:
 4. De versleutelings sleutel voor inhoud (CEK) wordt vervolgens gebruikt om de versleutelde gebruikers gegevens te ontsleutelen.
 
 ## <a name="encryption-mechanism"></a>Versleutelings mechanisme
+
 De Storage-client bibliotheek gebruikt [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) om gebruikers gegevens te versleutelen. Met name de [CBC-modus (Cipher Block Chaining)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher-block_chaining_.28CBC.29) met AES. Elke service werkt enigszins anders, dus we bespreken deze hier.
 
 ### <a name="blobs"></a>Blobs
+
 De client bibliotheek ondersteunt momenteel alleen versleuteling van hele blobs. Voor down loads worden zowel volledige als bereik downloads ondersteund.
 
 Tijdens het versleutelen genereert de client bibliotheek een wille keurige initialisatie vector (IV) van 16 bytes, samen met een wille keurige inhouds versleutelings sleutel (CEK) van 32 bytes en voert u een envelop versleuteling van de BLOB-gegevens uit met deze gegevens. De verpakte CEK en andere versleutelings-meta gegevens worden vervolgens opgeslagen als blob-meta gegevens, samen met de versleutelde Blob in de service.
 
 > [!WARNING]
 > Als u uw eigen meta gegevens voor de BLOB bewerkt of uploadt, moet u ervoor zorgen dat deze meta gegevens behouden blijven. Als u nieuwe meta gegevens zonder deze meta gegevens uploadt, gaan de verpakte CEK, IV en andere meta gegevens verloren en kan de inhoud van de BLOB niet meer worden opgehaald.
-> 
-> 
 
 Bij het downloaden van een volledige blob is de ingepakte CEK gewrappt en gebruikt in combi natie met de IV (opgeslagen als blob-meta gegevens in dit geval) om de ontsleutelde gegevens te retour neren aan de gebruikers.
 
@@ -69,6 +74,7 @@ Als u een wille keurig bereik in de versleutelde BLOB downloadt, moet u het bere
 Alle BLOB-typen (blok-blobs, pagina-blobs en toevoeg-blobs) kunnen worden versleuteld/ontsleuteld met dit schema.
 
 ### <a name="queues"></a>Wachtrijen
+
 Omdat wachtrij berichten een wille keurige indeling hebben, definieert de client bibliotheek een aangepaste indeling die de initialisatie vector (IV) en de versleutelde inhouds versleutelings sleutel (CEK) bevat in de bericht tekst.
 
 Tijdens het versleutelen genereert de client bibliotheek een wille keurige IV van 16 bytes samen met een wille keurige CEK van 32 bytes en wordt een envelop versleuteling van de bericht tekst van de wachtrij uitgevoerd met behulp van deze gegevens. De verpakte CEK en andere versleutelings-meta gegevens worden vervolgens toegevoegd aan het versleutelde bericht in de wachtrij. Dit gewijzigde bericht (hieronder weer gegeven) wordt opgeslagen op de service.
@@ -80,17 +86,14 @@ Tijdens het versleutelen genereert de client bibliotheek een wille keurige IV va
 Tijdens de ontsleuteling wordt de ingepakte sleutel geëxtraheerd uit het wachtrij bericht en genest. De IV wordt ook geëxtraheerd uit het wachtrij bericht en gebruikt samen met de niet-ingepakte sleutel voor het ontsleutelen van de wachtrij bericht gegevens. Houd er rekening mee dat de meta gegevens van de versleutelings functie klein zijn (minder dan 500 bytes), dus wanneer het telt voor de limiet van 64 kB voor een wachtrij bericht, moet de impact kunnen worden beheerd. Houd er rekening mee dat het versleutelde bericht base64-gecodeerd is, zoals wordt weer gegeven in het bovenstaande code fragment, waarmee de grootte van het bericht dat wordt verzonden, ook kan worden uitgebreid.
 
 ### <a name="tables"></a>Tabellen
+
 > [!NOTE]
 > De Table service wordt alleen ondersteund in de Azure Storage-client bibliotheek via versie 9. x.
-> 
-> 
 
 De client bibliotheek ondersteunt versleuteling van entiteits eigenschappen voor INSERT-en Replace-bewerkingen.
 
 > [!NOTE]
 > Samen voegen wordt momenteel niet ondersteund. Omdat een subset van eigenschappen mogelijk eerder is versleuteld met een andere sleutel, worden de nieuwe eigenschappen gebundeld en worden de meta gegevens bijgewerkt als gevolg van gegevens verlies. Samen voegen vereist het maken van extra service aanroepen om de vooraf bestaande entiteit van de service te lezen of een nieuwe sleutel per eigenschap te gebruiken, die beide niet geschikt zijn om prestatie redenen.
-> 
-> 
 
 Tabel gegevens versleuteling werkt als volgt:  
 
@@ -104,30 +107,32 @@ Houd er rekening mee dat alleen teken reeks eigenschappen kunnen worden versleut
 Voor tabellen, naast het versleutelings beleid, moeten gebruikers de eigenschappen opgeven die moeten worden versleuteld. U kunt dit doen door ofwel een [EncryptProperty]-kenmerk op te geven (voor POCO-entiteiten die zijn afgeleid van TableEntity) of een Encryption resolver in de aanvraag opties. Een Encryption resolver is een gemachtigde die een partitie sleutel, een rij-en een eigenschaps naam gebruikt en een Booleaanse waarde retourneert die aangeeft of die eigenschap moet worden versleuteld. Tijdens de versleuteling gebruikt de client bibliotheek deze gegevens om te bepalen of een eigenschap moet worden versleuteld tijdens het schrijven naar de kabel. De gemachtigde biedt ook de mogelijkheid van logica om te bepalen hoe eigenschappen worden versleuteld. (Bijvoorbeeld als X, vervolgens versleutelings eigenschap A; anders eigenschappen A en B versleutelen.) Houd er rekening mee dat deze informatie niet hoeft te worden verstrekt tijdens het lezen of doorzoeken van entiteiten.
 
 ### <a name="batch-operations"></a>Batch bewerkingen
+
 In batch-bewerkingen wordt dezelfde KEK gebruikt voor alle rijen in die batch bewerking omdat de client bibliotheek slechts één Options-object (en dus één beleid/KEK) per batch-bewerking toestaat. In de-client bibliotheek wordt echter intern een nieuwe wille keurige steek proef en wille keurige CEK per rij in de batch gegenereerd. Gebruikers kunnen er ook voor kiezen om verschillende eigenschappen te versleutelen voor elke bewerking in de batch door dit gedrag te definiëren in de versleutelings conflict Oplosser.
 
 ### <a name="queries"></a>Query's
+
 > [!NOTE]
 > Omdat de entiteiten zijn versleuteld, kunt u geen query's uitvoeren die filteren op een versleutelde eigenschap.  Als u probeert, zijn de resultaten onjuist, omdat de service probeert versleutelde gegevens te vergelijken met niet-versleutelde gegevens.
-> 
-> 
+>
 > Als u query bewerkingen wilt uitvoeren, moet u een sleutel conflict Oplosser opgeven waarmee alle sleutels in de resultatenset kunnen worden omgezet. Als een entiteit in het query resultaat niet kan worden omgezet naar een provider, wordt een fout gegenereerd door de client bibliotheek. Voor elke query die projecties aan de server zijde uitvoert, voegt de client bibliotheek de speciale eigenschappen van de meta gegevens voor versleuteling (_ClientEncryptionMetadata1 en _ClientEncryptionMetadata2) standaard toe aan de geselecteerde kolommen.
 
 ## <a name="azure-key-vault"></a>Azure Key Vault
+
 Met Azure Sleutelkluis kunt u de cryptografische sleutels en geheimen beveiligen die door cloudtoepassingen en -services worden gebruikt. Met behulp van Azure Key Vault kunnen gebruikers sleutels en geheimen versleutelen (zoals verificatie sleutels, sleutels voor opslag accounts, sleutels voor gegevens versleuteling,. PFX-bestanden en wacht woorden) met behulp van sleutels die worden beveiligd door Hardware Security modules (Hsm's). Zie [Wat is Azure Key Vault?](../../key-vault/general/overview.md) voor meer informatie.
 
 De Storage-client bibliotheek gebruikt de Key Vault interfaces in de kern bibliotheek om een gemeen schappelijk Framework te bieden in azure voor het beheren van sleutels. Gebruikers kunnen gebruikmaken van Key Vault bibliotheken voor alle extra voor delen die ze bieden, zoals handige functionaliteit rond eenvoudige en naadloze symmetrische/RSA-lokale en Cloud sleutel providers, evenals hulp bij aggregatie en caching.
 
 ### <a name="interface-and-dependencies"></a>Interface en afhankelijkheden
 
-# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 Er zijn twee vereiste pakketten voor de integratie van Key Vault:
 
 * Azure. Core bevat de `IKeyEncryptionKey` en- `IKeyEncryptionKeyResolver` interfaces. De Storage-client bibliotheek voor .NET definieert deze al als een afhankelijkheid.
 * Azure. Security. keys (v4. x) bevat de Key Vault REST-client, evenals cryptografische clients die worden gebruikt met versleuteling aan de client zijde.
 
-# <a name="net-v11"></a>[.NET-V11](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 Er zijn drie Key Vault pakketten:
 
@@ -146,19 +151,19 @@ Key Vault is ontworpen voor hoogwaardige hoofd sleutels en beperkings limieten p
 3. Gebruik de caching-resolver als invoer bij het maken van het versleutelings beleid.
 
 ## <a name="best-practices"></a>Aanbevolen procedures
+
 Ondersteuning voor versleuteling is alleen beschikbaar in de Storage-client bibliotheek voor .NET. Windows Phone en Windows Runtime ondersteunen momenteel geen versleuteling.
 
 > [!IMPORTANT]
 > Houd rekening met de volgende belang rijke punten wanneer versleuteling aan de client zijde wordt gebruikt:
-> 
+>
 > * Bij het lezen van of schrijven naar een versleutelde BLOB gebruikt u hele BLOB-upload opdrachten en bereik/hele BLOB-Download opdrachten. Vermijd het schrijven naar een versleutelde blob met behulp van protocol bewerkingen zoals put blok keren, blokkerings lijst plaatsen, schrijf pagina's, pagina's wissen of blok toevoegen. anders is het mogelijk dat u de versleutelde BLOB beschadigd en onleesbaar maakt.
 > * Voor tabellen bestaat een soort gelijke beperking. Zorg ervoor dat u geen versleutelde eigenschappen bijwerkt zonder de versleutelings meta gegevens bij te werken.
 > * Als u meta gegevens op de versleutelde BLOB instelt, kunt u de meta gegevens voor versleuteling overschrijven die vereist zijn voor ontsleuteling, omdat het instellen van meta gegevens geen additief is. Dit geldt ook voor moment opnamen. Vermijd het opgeven van meta gegevens tijdens het maken van een moment opname van een versleutelde blob. Als meta gegevens moeten worden ingesteld, moet u eerst de **FetchAttributes** -methode aanroepen om de huidige versleutelings-meta gegevens op te halen en te voor komen dat er gelijktijdige schrijf bewerkingen worden uitgevoerd terwijl de meta gegevens worden ingesteld.
 > * Schakel de eigenschap **RequireEncryption** in de standaard opties voor aanvragen in voor gebruikers die alleen moeten werken met versleutelde gegevens. Zie hieronder voor meer informatie.
->
->
 
 ## <a name="client-api--interface"></a>Client-API/-interface
+
 Gebruikers kunnen alleen een sleutel, alleen een resolver of beide opgeven. Sleutels worden geïdentificeerd met behulp van een sleutel-id en bieden de logica voor het verpakken/uitpakken. Resolvers worden gebruikt voor het omzetten van een sleutel tijdens het ontsleutelen. Hiermee wordt een methode voor het oplossen van conflicten gedefinieerd die een sleutel retourneert met een sleutel-id. Dit biedt gebruikers de mogelijkheid om te kiezen tussen meerdere sleutels die worden beheerd op meerdere locaties.
 
 * Voor versleuteling wordt de sleutel altijd gebruikt en wordt er een fout veroorzaakt door het ontbreken van een sleutel.
@@ -167,13 +172,13 @@ Gebruikers kunnen alleen een sleutel, alleen een resolver of beide opgeven. Sleu
   * De Key resolver wordt aangeroepen als deze is opgegeven om de sleutel op te halen. Als de resolver is opgegeven maar geen toewijzing voor de sleutel-id heeft, wordt er een fout gegenereerd.
 
 ### <a name="requireencryption-mode-v11-only"></a>RequireEncryption-modus (alleen V11)
-Gebruikers kunnen eventueel een bewerkings modus inschakelen, waarbij alle uploads en down loads moeten worden versleuteld. In deze modus wordt geprobeerd gegevens te uploaden zonder versleutelings beleid of gegevens te downloaden die niet zijn versleuteld op de service, mislukt de client. De eigenschap **RequireEncryption** van het object aanvraag opties bepaalt dit gedrag. Als uw toepassing alle objecten versleutelt die zijn opgeslagen in Azure Storage, kunt u de eigenschap **RequireEncryption** instellen voor de standaard aanvraag opties voor het object service-client. Stel bijvoorbeeld **CloudBlobClient. DefaultRequestOptions. RequireEncryption** in op **True** om versleuteling te vereisen voor alle BLOB-bewerkingen die via dat client object worden uitgevoerd.
 
+Gebruikers kunnen eventueel een bewerkings modus inschakelen, waarbij alle uploads en down loads moeten worden versleuteld. In deze modus wordt geprobeerd gegevens te uploaden zonder versleutelings beleid of gegevens te downloaden die niet zijn versleuteld op de service, mislukt de client. De eigenschap **RequireEncryption** van het object aanvraag opties bepaalt dit gedrag. Als uw toepassing alle objecten versleutelt die zijn opgeslagen in Azure Storage, kunt u de eigenschap **RequireEncryption** instellen voor de standaard aanvraag opties voor het object service-client. Stel bijvoorbeeld **CloudBlobClient. DefaultRequestOptions. RequireEncryption** in op **True** om versleuteling te vereisen voor alle BLOB-bewerkingen die via dat client object worden uitgevoerd.
 
 ### <a name="blob-service-encryption"></a>Versleuteling Blob service
 
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
-# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
 Maak een **ClientSideEncryptionOptions** -object en stel dit in op client maken met **SpecializedBlobClientOptions**. U kunt geen versleutelings opties per API instellen. Alle overige worden intern door de client bibliotheek verwerkt.
 
 ```csharp
@@ -197,7 +202,7 @@ BlobClientOptions options = new SpecializedBlobClientOptions() { ClientSideEncry
 // Client-side encryption options are passed from service to container clients, and container to blob clients.
 // Attempting to construct a BlockBlobClient, PageBlobClient, or AppendBlobClient from a BlobContainerClient
 // with client-side encryption options present will throw, as this functionality is only supported with BlobClient.
-BlobClient blob = new BlobServiceClient(connectionString, options).GetBlobContainerClient("myContainer").GetBlobClient("myBlob");
+BlobClient blob = new BlobServiceClient(connectionString, options).GetBlobContainerClient("my-container").GetBlobClient("myBlob");
 
 // Upload the encrypted contents to the blob.
 blob.Upload(stream);
@@ -222,8 +227,9 @@ ClientSideEncryptionOptions encryptionOptions;
 BlobClient clientSideEncryptionBlob = plaintextBlob.WithClientSideEncryptionOptions(encryptionOptions);
 ```
 
-# <a name="net-v11"></a>[.NET-V11](#tab/dotnet11)
-Maak een **BlobEncryptionPolicy** -object en stel dit in de aanvraag opties in (per API of op client niveau met behulp van **DefaultRequestOptions** ). Alle overige worden intern door de client bibliotheek verwerkt.
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
+
+Maak een **BlobEncryptionPolicy** -object en stel dit in de aanvraag opties in (per API of op client niveau met behulp van **DefaultRequestOptions**). Alle overige worden intern door de client bibliotheek verwerkt.
 
 ```csharp
 // Create the IKey used for encryption.
@@ -246,7 +252,9 @@ blob.DownloadToStream(outputStream, null, options, null);
 ---
 
 ### <a name="queue-service-encryption"></a>Versleuteling Queue-service
-# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
+
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
+
 Maak een **ClientSideEncryptionOptions** -object en stel dit in op client maken met **SpecializedQueueClientOptions**. U kunt geen versleutelings opties per API instellen. Alle overige worden intern door de client bibliotheek verwerkt.
 
 ```csharp
@@ -323,8 +331,9 @@ QueueMessage[] messages = queue.ReceiveMessages(maxMessages: 5).Value;
 Debug.Assert(messages.Length == 4)
 ```
 
-# <a name="net-v11"></a>[.NET-V11](#tab/dotnet11)
-Maak een **QueueEncryptionPolicy** -object en stel dit in de aanvraag opties in (per API of op client niveau met behulp van **DefaultRequestOptions** ). Alle overige worden intern door de client bibliotheek verwerkt.
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
+
+Maak een **QueueEncryptionPolicy** -object en stel dit in de aanvraag opties in (per API of op client niveau met behulp van **DefaultRequestOptions**). Alle overige worden intern door de client bibliotheek verwerkt.
 
 ```csharp
 // Create the IKey used for encryption.
@@ -344,6 +353,7 @@ Maak een **QueueEncryptionPolicy** -object en stel dit in de aanvraag opties in 
 ---
 
 ### <a name="table-service-encryption-v11-only"></a>Versleuteling Table service (alleen V11)
+
 Naast het maken van een versleutelings beleid en het instellen ervan op aanvraag opties, moet u een **EncryptionResolver** opgeven in **TableRequestOptions** of het kenmerk [EncryptProperty] instellen voor de entiteit.
 
 #### <a name="using-the-resolver"></a>De resolver gebruiken
@@ -383,6 +393,7 @@ Naast het maken van een versleutelings beleid en het instellen ervan op aanvraag
 ```
 
 #### <a name="using-attributes"></a>Kenmerken gebruiken
+
 Zoals hierboven vermeld, als de entiteit TableEntity implementeert, kunnen de eigenschappen worden gedecoreerd met het kenmerk [EncryptProperty] in plaats van de **EncryptionResolver** op te geven.
 
 ```csharp
@@ -391,9 +402,11 @@ Zoals hierboven vermeld, als de entiteit TableEntity implementeert, kunnen de ei
 ```
 
 ## <a name="encryption-and-performance"></a>Versleuteling en prestaties
+
 Houd er rekening mee dat het versleutelen van uw opslag gegevens resulteert in extra prestatie overhead. De inhouds sleutel en IV moeten worden gegenereerd, de inhoud zelf moet worden versleuteld en aanvullende meta gegevens moeten worden geformatteerd en geüpload. Deze overhead is afhankelijk van de hoeveelheid gegevens die wordt versleuteld. Klanten wordt aangeraden hun toepassingen altijd te testen tijdens de ontwikkeling van de prestaties.
 
 ## <a name="next-steps"></a>Volgende stappen
+
 * [Zelf studie: blobs in Microsoft Azure Storage versleutelen en ontsleutelen met behulp van Azure Key Vault](../blobs/storage-encrypt-decrypt-blobs-key-vault.md)
 * De [Azure Storage-client bibliotheek voor .net NuGet-pakket](https://www.nuget.org/packages/WindowsAzure.Storage) downloaden
 * Down load de NuGet [core](https://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/)-, [client](https://www.nuget.org/packages/Microsoft.Azure.KeyVault/)-en [Extensions](https://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) -pakketten van Azure Key Vault  

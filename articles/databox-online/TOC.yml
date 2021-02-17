@@ -239,13 +239,13 @@
         - name: Certificaten beheren
           items:
             - name: Vereisten
-              href: azure-stack-edge-j-series-certificate-requirements.md
+              href: azure-stack-edge-gpu-certificate-requirements.md
             - name: Uw eigen meenemen
-              href: azure-stack-edge-j-series-manage-certificates.md
+              href: azure-stack-edge-gpu-manage-certificates.md
             - name: Maken via het hulpprogramma Gereedheidscontrole voor Azure Stack
-              href: azure-stack-edge-j-series-create-certificates-tool.md
+              href: azure-stack-edge-gpu-create-certificates-tool.md
             - name: Certificaatfouten oplossen
-              href: azure-stack-edge-j-series-certificate-troubleshooting.md
+              href: azure-stack-edge-gpu-certificate-troubleshooting.md
         - name: Edge-rekenproces beheren
           href: azure-stack-edge-j-series-manage-compute.md
         - name: Edge-containerregister beheren

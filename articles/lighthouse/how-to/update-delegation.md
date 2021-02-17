@@ -1,14 +1,14 @@
 ---
 title: Een delegatie bijwerken
 description: Meer informatie over het bijwerken van een delegering voor een klant die eerder is geboardd naar Azure Lighthouse.
-ms.date: 12/03/2020
+ms.date: 02/16/2021
 ms.topic: how-to
-ms.openlocfilehash: eec5d1f2d34e8e3c9e0ded59cb111624b1981873
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: f0ed5222cdbac3d0e4d193941c2a6f233d15938c
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98791336"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555769"
 ---
 # <a name="update-a-delegation"></a>Een delegatie bijwerken
 
@@ -48,7 +48,7 @@ Als u de aanbieding bijwerkt om autorisaties alleen aan te passen en dezelfde **
 Het verwijderen van de toegang tot de overdracht kan worden uitgevoerd door een gebruiker in de Tenant beheren die de rol voor het [verwijderen van beheerde services voor registratie toewijzing](../../role-based-access-control/built-in-roles.md#managed-services-registration-assignment-delete-role) in de oorspronkelijke overdracht heeft gekregen. Als er geen gebruiker in uw Tenant voor beheer deze rol heeft, kunt u de klant vragen om de [toegang tot de aanbieding te verwijderen in de Azure Portal](view-manage-service-providers.md#add-or-remove-service-provider-offers).
 
 > [!TIP]
-> Als u de vorige delegatie hebt verwijderd volgens de bovenstaande stappen en nog steeds niet de nieuwe ARM-sjabloon kunt implementeren, moet u [de registratie definitie mogelijk volledig verwijderen](/powershell/module/az.managedservices/remove-azmanagedservicesdefinition). Dit kan worden gedaan door elke gebruiker met de rol eigenaar in de Tenant van de klant.  
+> Als u de vorige delegatie hebt verwijderd volgens de bovenstaande stappen en nog steeds niet de nieuwe ARM-sjabloon kunt implementeren, moet u [de registratie definitie mogelijk volledig verwijderen](/powershell/module/az.managedservices/remove-azmanagedservicesdefinition). Dit kan worden gedaan door elke gebruiker met een rol die de `Microsoft.Authorization/roleAssignments/write` machtiging heeft, zoals de [eigenaar](../../role-based-access-control/built-in-roles.md#owner), in de Tenant van de klant.  
 
 ## <a name="deploy-the-arm-template"></a>De ARM-sjabloon implementeren
 

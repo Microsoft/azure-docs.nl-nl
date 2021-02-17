@@ -2,52 +2,32 @@
 title: Configuraties implementeren met behulp van GitOps in Kubernetes-cluster met Arc (preview)
 services: azure-arc
 ms.service: azure-arc
-ms.date: 02/09/2021
+ms.date: 02/15/2021
 ms.topic: article
 author: mlearned
 ms.author: mlearned
 description: GitOps gebruiken voor het configureren van een Azure Arc enabled Kubernetes-cluster (preview)
 keywords: GitOps, Kubernetes, K8s, azure, Arc, Azure Kubernetes service, AKS, containers
-ms.openlocfilehash: 072bfc8c243eb9b69e06366961019b88b67e0941
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 3cadcdf80abd997ec10aeb9521680944d455898f
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100392235"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100560165"
 ---
-# <a name="deploy-configurations-using-gitops-on-arc-enabled-kubernetes-cluster-preview"></a>Configuraties implementeren met behulp van GitOps in Kubernetes-cluster met Arc (preview)
+# <a name="deploy-configurations-using-gitops-on-an-arc-enabled-kubernetes-cluster-preview"></a>Configuraties implementeren met behulp van GitOps op een Kubernetes-cluster met Arc-functionaliteit (preview)
 
-Ten aanzien van Kubernetes is GitOps de praktijk van het declareren van de gewenste status van Kubernetes cluster configuraties (implementaties, naam ruimten, enzovoort) in een Git-opslag plaats. Deze verklaring wordt gevolgd door een polling en pull-gebaseerde implementatie van deze cluster configuraties met behulp van een operator. 
-
-In dit artikel wordt beschreven hoe u GitOps-werk stromen op Azure-Kubernetes-clusters hebt ingesteld.
-
-De verbinding tussen uw cluster en een Git-opslag plaats wordt gemaakt als een `Microsoft.KubernetesConfiguration/sourceControlConfigurations` uitbreidings resource in azure Resource Manager. De `sourceControlConfiguration` resource-eigenschappen geven aan waar en hoe Kubernetes resources van Git naar uw cluster moeten stromen. De `sourceControlConfiguration` gegevens worden in de rest van een Azure Cosmos DB-Data Base opgeslagen als versleuteld, om de vertrouwelijkheid van gegevens te garanderen.
-
-De `config-agent` uitvoering in uw cluster is verantwoordelijk voor:
-* Het bijhouden van nieuwe of bijgewerkte `sourceControlConfiguration` uitbreidings resources op de Azure Arc enabled Kubernetes-resource.
-* Implementeer een stroom operator om de Git-opslag plaats voor elk te bekijken `sourceControlConfiguration` .
-* Het Toep assen van updates die zijn aangebracht in een `sourceControlConfiguration` . 
-
-U kunt meerdere `sourceControlConfiguration` resources maken op hetzelfde Azure Arc-Kubernetes-cluster om multitenancy te krijgen. Beperk implementaties tot binnen de respectieve naam ruimten door elk te maken `sourceControlConfiguration` met een ander `namespace` bereik.
-
-De Git-opslag plaats kan het volgende bevatten:
-* YAML: manifesten met een beschrijving van alle geldige Kubernetes-resources, waaronder naam ruimten, ConfigMaps, implementaties, DaemonSets, enzovoort. 
-* Helm-grafieken voor het implementeren van toepassingen. 
-
-Een gemeen schappelijke reeks scenario's is het definiëren van een basislijn configuratie voor uw organisatie, zoals algemene Azure-rollen en-bindingen, bewakings-of logboek registratie agenten of cluster-brede Services.
-
-Hetzelfde patroon kan worden gebruikt om een grotere verzameling clusters te beheren, die kan worden geïmplementeerd in heterogene omgevingen. U hebt bijvoorbeeld één opslag plaats die de basislijn configuratie voor uw organisatie definieert, die van toepassing is op meerdere Kubernetes-clusters tegelijk. [Azure Policy kunt](use-azure-policy.md) het maken van een `sourceControlConfiguration` met een specifieke set para meters automatiseren op alle Kubernetes-resources van Azure-arc in een bereik (abonnement of resource groep).
-
-Door loop de volgende stappen voor informatie over het Toep assen van een set configuraties met `cluster-admin` Scope.
+In dit artikel wordt beschreven hoe u configuraties toepast op een Azure Arc enabled Kubernetes-cluster. Een conceptueel overzicht van deze informatie vindt u [hier](./conceptual-configurations.md).
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Controleer of er een bestaand Kubernetes-verbonden Azure-Arc-cluster is ingeschakeld. Als u een verbonden cluster nodig hebt, gaat u naar de [Snelstartgids een Azure-Kubernetes-cluster verbinden](./connect-cluster.md).
+* Controleer of er een bestaand Kubernetes-verbonden Azure-Arc-cluster is ingeschakeld. Als u een verbonden cluster nodig hebt, gaat u naar de [Snelstartgids een Azure-Kubernetes-cluster verbinden](./connect-cluster.md).
+
+* Controleer de [configuraties en GitOps met Arc for Kubernetes-artikel](./conceptual-configurations.md) om inzicht te krijgen in de voor delen en architectuur van deze functie.
 
 ## <a name="create-a-configuration"></a>Een configuratie maken
 
 De [voor beeld-opslag plaats](https://github.com/Azure/arc-k8s-demo) die in dit artikel wordt gebruikt, is gestructureerd rond de persoon van een cluster operator die een paar naam ruimten wil inrichten, een gemeen schappelijke werk belasting moet implementeren en een bepaalde specifieke configuratie voor het team moet bieden. Met deze opslag plaats worden de volgende resources op het cluster gemaakt:
-
 
 * **Naam ruimten:** `cluster-config` , `team-a` , `team-b`
 * **Implementatie:**`cluster-config/azure-vote`

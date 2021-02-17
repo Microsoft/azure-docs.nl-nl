@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: tutorial
 ms.date: 10/13/2020
 ms.author: cherylmc
-ms.openlocfilehash: a7937745e839b54d9ee7b6f056d10ff627e191d3
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
-ms.translationtype: HT
+ms.openlocfilehash: 54aca389ea56594b004212c1479d5cc2568a2527
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92327328"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100560884"
 ---
 # <a name="tutorial-configure-bastion-and-connect-to-a-windows-vm-through-a-browser"></a>Zelfstudie: Een Azure Bastion configureren en verbinding maken met een Windows-VM via een browser
 
@@ -46,31 +46,31 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
 Deze sectie helpt u bij het maken van het Bastion-object in uw VNet. Dit is vereist om een beveiligde verbinding te maken met een VM in het VNet.
 
-1. Selecteer op uw **Start** pagina de optie **+ Een resource maken** .
+1. Selecteer op uw **Start** pagina de optie **+ Een resource maken**.
 1. Typ op de pagina **Nieuw** de tekst **Bastion** in het zoekvak en selecteer **Enter** om naar de zoekresultaten te gaan. Controleer in het resultaat voor **Bastion** of de uitgever Microsoft is.
-1. Selecteer **Maken** .
+1. Selecteer **Maken**.
 1. Configureer op de pagina **Een bastion maken** een nieuwe Bastion-resource.
 
    :::image type="content" source="./media/tutorial-create-host-portal/bastion-basics.png" alt-text="Een Bastion-host maken" lightbox="./media/tutorial-create-host-portal/bastion-basics.png":::
 
-    * **Abonnement** : Het Azure-abonnement dat u wilt gebruiken voor het maken van een nieuwe Bastion-resource.
+    * **Abonnement**: Het Azure-abonnement dat u wilt gebruiken voor het maken van een nieuwe Bastion-resource.
     * **Resourcegroep:** De Azure-resourcegroep waarin de nieuwe Bastion-resource wordt gemaakt. Als u geen bestaande resourcegroep hebt, kunt u een nieuwe maken.
-    * **Naam** : De naam van de nieuwe Bastion-resource.
-    * **Regio** : De openbare Azure-regio waarin de resource wordt gemaakt.
-    * **Virtueel netwerk** : Het virtuele netwerk waarin de Bastion-resource wordt gemaakt. U kunt tijdens dit proces een nieuw virtueel netwerk maken in de portal of een bestaand virtueel netwerk gebruiken. Als u een bestaand virtueel netwerk gebruikt, zorg er dan voor dat het bestaande virtuele netwerk voldoende vrije adresruimte heeft om te voldoen aan de vereisten van het Bastion-subnet. Als uw virtuele netwerk niet in de vervolgkeuzelijst wordt weergegeven, controleer dan of u de juiste resourcegroep hebt geselecteerd.
-    * **Subnet** : Wanneer u een virtueel netwerk hebt gemaakt of geselecteerd, wordt het subnetveld weergegeven. Het subnet in het virtuele netwerk waar de nieuwe Bastion-host wordt geïmplementeerd. Het subnet wordt toegewezen aan de Bastion-host. Selecteer **Subnetconfiguratie beheren** en maak het Azure Bastion-subnet. Selecteer **+Subnet** en maak een subnet met behulp van de volgende richtlijnen:
+    * **Naam**: De naam van de nieuwe Bastion-resource.
+    * **Regio**: De openbare Azure-regio waarin de resource wordt gemaakt.
+    * **Virtueel netwerk**: Het virtuele netwerk waarin de Bastion-resource wordt gemaakt. U kunt tijdens dit proces een nieuw virtueel netwerk maken in de portal of een bestaand virtueel netwerk gebruiken. Als u een bestaand virtueel netwerk gebruikt, zorg er dan voor dat het bestaande virtuele netwerk voldoende vrije adresruimte heeft om te voldoen aan de vereisten van het Bastion-subnet. Als uw virtuele netwerk niet in de vervolgkeuzelijst wordt weergegeven, controleer dan of u de juiste resourcegroep hebt geselecteerd.
+    * **Subnet**: Wanneer u een virtueel netwerk hebt gemaakt of geselecteerd, wordt het subnetveld weergegeven. Het subnet in het virtuele netwerk waar de nieuwe Bastion-host wordt geïmplementeerd. Het subnet wordt toegewezen aan de Bastion-host. Selecteer **Subnetconfiguratie beheren** en maak het Azure Bastion-subnet. Selecteer **+Subnet** en maak een subnet met behulp van de volgende richtlijnen:
 
          * Het subnet moet **AzureBastionSubnet** heten.
          * Het subnet moet minstens /27 of groter zijn.
 
       U hoeft geen aanvullende velden in te vullen. Selecteer **OK** en selecteer aan de bovenkant van de pagina **Een bastion maken** om terug te gaan naar de configuratiepagina van Bastion.
-    * **Openbaar IP-adres** : Het openbare IP-adres van de Bastion-resource waarop RDP/SSH wordt geopend (via poort 443). Maak een nieuw openbaar IP-adres. Het openbare IP-adres moet zich in dezelfde regio bevinden als de Bastion-resource die u aan het maken bent. Dit IP-adres heeft niets te maken met de VM's waarmee u verbinding wilt maken. Het is het openbare IP-adres voor de Bastion-hostresource.
-    * **Openbare IP-adresnaam** : De naam van de resource voor het openbare IP-adres. Voor deze zelfstudie kunt u de standaardwaarden laten staan.
-    * **Openbaar IP-adres SKU** : Deze instelling wordt standaard vooraf ingevuld met **Standaard** . Azure Bastion gebruikt/ondersteunt alleen de Standard Public IP SKU.
-    * **Toewijzing** : Deze instelling wordt standaard vooraf ingevuld met **Statisch** .
+    * **Openbaar IP-adres**: Het openbare IP-adres van de Bastion-resource waarop RDP/SSH wordt geopend (via poort 443). Maak een nieuw openbaar IP-adres. Het openbare IP-adres moet zich in dezelfde regio bevinden als de Bastion-resource die u aan het maken bent. Dit IP-adres heeft niets om te doen met een van de virtuele machines waarmee u verbinding wilt maken. Het is het openbare IP-adres voor de Bastion-hostresource.
+    * **Openbare IP-adresnaam**: De naam van de resource voor het openbare IP-adres. Voor deze zelfstudie kunt u de standaardwaarden laten staan.
+    * **Openbaar IP-adres SKU**: Deze instelling wordt standaard vooraf ingevuld met **Standaard**. Azure Bastion gebruikt/ondersteunt alleen de Standard Public IP SKU.
+    * **Toewijzing**: Deze instelling wordt standaard vooraf ingevuld met **Statisch**.
 
-1. Wanneer u klaar bent met het opgeven van de instellingen, klikt u op **Bekijken + maken** . Hierdoor worden de waarden gevalideerd. Zodra de validatie is geslaagd, kunt u de Bastion-resource maken.
-1. Selecteer **Maken** .
+1. Wanneer u klaar bent met het opgeven van de instellingen, klikt u op **Bekijken + maken**. Hierdoor worden de waarden gevalideerd. Zodra de validatie is geslaagd, kunt u de Bastion-resource maken.
+1. Selecteer **Maken**.
 1. Er wordt een bericht weergegeven met de melding dat uw implementatie aan de gang is. De status wordt op deze pagina weergegeven terwijl de resources worden gemaakt. Het maken en implementeren van de Bastion-resource duurt ongeveer 5 minuten.
 
 ## <a name="connect-to-a-vm"></a>Verbinding maken met een VM
@@ -82,8 +82,8 @@ Deze sectie helpt u bij het maken van het Bastion-object in uw VNet. Dit is vere
 Als u deze toepassing verder niet gaat gebruiken, verwijdert u de resources met behulp van de volgende stappen:
 
 1. Typ de naam van uw resourcegroep in het **zoekvak** bovenaan de portal. Wanneer u uw resourcegroep in de zoekresultaten ziet, selecteert u deze.
-1. Selecteer **Resourcegroep verwijderen** .
-1. Voer de naam van uw resourcegroep in voor **TYP DE NAAM VAN DE RESOURCEGROEP:** en selecteer **Verwijderen** .
+1. Selecteer **Resourcegroep verwijderen**.
+1. Voer de naam van uw resourcegroep in voor **TYP DE NAAM VAN DE RESOURCEGROEP:** en selecteer **Verwijderen**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

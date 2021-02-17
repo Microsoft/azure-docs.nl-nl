@@ -4,12 +4,12 @@ description: Informatie over de managementgroepen, hoe hun machtigingen werken e
 ms.date: 01/22/2021
 ms.topic: overview
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: e86501527ff68319fc8d2e942e7ffa977dcecbe6
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 547f26717bfb516bbcf531af1418c812e4cbc63b
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736319"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100560201"
 ---
 # <a name="what-are-azure-management-groups"></a>Wat zijn Azure-beheergroepen?
 
@@ -184,7 +184,7 @@ Als u een beheergroep of een abonnement wilt verplaatsen om het/deze een onderli
 Als u de verplaatsing wilt uitvoeren, hebt u het volgende nodig: 
 
 - Schrijfmachtigingen voor beheergroepen en roltoewijzingen voor het onderliggende abonnement of de beheergroep.
-  - Voorbeeld van een ingebouwde rol **Eigenaar**
+  - Voor beeld van ingebouwde rol **eigenaar**
 - Schrijftoegang voor de beheergroep op de beoogde bovenliggende beheergroep.
   - Voorbeeld van een ingebouwde rol: **Eigenaar**, **Inzender**, **Inzender beheergroep**
 - Schrijftoegang voor de beheergroep op de bestaande bovenliggende beheergroep.

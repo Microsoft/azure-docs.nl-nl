@@ -3,12 +3,12 @@ title: Uw omgeving instellen voor de operator blauw drukken
 description: Meer informatie over het configureren van uw Azure-omgeving voor gebruik met de blauw druk-operator Azure ingebouwde rol.
 ms.date: 02/05/2021
 ms.topic: how-to
-ms.openlocfilehash: 0e0f6680ab39481a480919af10fadc0f7103a1fb
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: b43a33f4bac92903bd07454041d11850f217d480
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99591598"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100558727"
 ---
 # <a name="configure-your-environment-for-a-blueprint-operator"></a>Uw omgeving configureren voor een Blueprint Operator
 
@@ -22,7 +22,7 @@ De eerste stap is het verlenen van de rol van de **blauw druk-operator** aan het
 
 1. Aanbevelingen [Een beveiligings groep maken en leden toevoegen](../../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md)
 
-1. [Een roltoewijzing](../../../role-based-access-control/role-assignments-portal.md#add-a-role-assignment) van de **operator voor blauw** drukken toevoegen aan het account of de beveiligings groep
+1. De [Azure-rol](../../../role-based-access-control/role-assignments-portal.md) van de **blauw druk-operator** toewijzen aan het account of de beveiligings groep
 
 ## <a name="user-assign-managed-identity"></a>Door gebruiker beheerde identiteit toewijzen
 
@@ -32,7 +32,7 @@ Een definitie van een blauw druk kan door het systeem toegewezen of door de gebr
 
 1. Ken de door de gebruiker toegewezen beheerde identiteit toe aan alle rollen of machtigingen die vereist zijn voor de definitie van de blauw druk voor het beoogde bereik.
 
-1. [Voeg een roltoewijzing](../../../role-based-access-control/role-assignments-portal.md#add-a-role-assignment) van de **operator Managed Identity** toe aan het account of de beveiligings groep. Bereik de roltoewijzing aan de nieuwe door de gebruiker toegewezen beheerde identiteit.
+1. [Wijs de Azure-rol](../../../role-based-access-control/role-assignments-portal.md) van de **operator Managed Identity** toe aan het account of de beveiligings groep. Bereik de roltoewijzing aan de nieuwe door de gebruiker toegewezen beheerde identiteit.
 
 1. Wijs als de **blauw druk-operator** [een blauw druk toe](../create-blueprint-portal.md#assign-a-blueprint) die gebruikmaakt van de nieuwe door de gebruiker toegewezen beheerde identiteit.
 

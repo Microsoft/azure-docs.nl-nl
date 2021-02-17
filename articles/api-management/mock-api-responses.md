@@ -5,14 +5,14 @@ author: vladvino
 ms.service: api-management
 ms.custom: mvc
 ms.topic: tutorial
-ms.date: 09/30/2020
+ms.date: 02/09/2021
 ms.author: apimpm
-ms.openlocfilehash: 231ce9d946a2fb6650f25d90aaa423d1c95fb106
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
-ms.translationtype: HT
+ms.openlocfilehash: 75727d139242e1b537505d2ed907ae20fc5479f8
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930710"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100547238"
 ---
 # <a name="tutorial-mock-api-responses"></a>Zelfstudie: Gesimuleerde antwoorden van een API
 
@@ -53,11 +53,13 @@ De stappen in deze sectie laten zien hoe u een lege API zonder back-end maakt.
 1. Zorg ervoor dat **Managed** (Beheerd) is geselecteerd in **Gateways**.
 1. Selecteer **Maken**.
 
-    :::image type="content" source="media/mock-api-responses/03-mock-api-responses-01-create-test-api.png" alt-text="Gesimuleerd API-antwoord":::
+    :::image type="content" source="media/mock-api-responses/03-mock-api-responses-01-create-test-api.png" alt-text="Een lege API maken":::
 
 ## <a name="add-an-operation-to-the-test-api"></a>Een bewerking aan de test-API toevoegen
 
 Een API stelt een of meer bewerkingen beschikbaar. In deze sectie voegt u een bewerking toe aan de lege API die u hebt gemaakt. Bij het aanroepen van de bewerking na het voltooien van de stappen in deze sectie, treedt een fout op. Na voltooiing van de stappen in de sectie [Antwoordsimulatie inschakelen](#enable-response-mocking) krijgt u geen foutmeldingen meer.
+
+### <a name="portal"></a>[Portal](#tab/azure-portal)
 
 1. Selecteer de API die u in de vorige stap hebt gemaakt.
 1. Klik op **+ Bewerking toevoegen**.
@@ -65,7 +67,7 @@ Een API stelt een of meer bewerkingen beschikbaar. In deze sectie voegt u een be
 
      | Instelling             | Waarde                             | Beschrijving                                                                                                                                                                                   |
     |---------------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | **Display name** (Weergavenaam)    | *Test call* (Testaanroep)                       | De naam die wordt weergegeven in de [ontwikkelaarsportal](api-management-howto-developer-portal.md).                                                                                                                                       |
+    | **Weergavenaam**    | *Test call* (Testaanroep)                       | De naam die wordt weergegeven in de [ontwikkelaarsportal](api-management-howto-developer-portal.md).                                                                                                                                       |
     | **URL** (HTTP-woord) | GET                               | Selecteer een van de vooraf gedefinieerde HTTP-woorden.                                                                                                                                         |
     | **URL**             | */test*                           | Een URL-pad voor de API.                                                                                                                                                                       |
     | **Deschription** (Beschrijving)     |                                   |  Optionele beschrijving van de bewerking, die wordt gebruikt om de ontwikkelaars die gebruikmaken van deze API in de ontwikkelaarsportal van documentatie te voorzien.                                                    |
@@ -77,7 +79,7 @@ Een API stelt een of meer bewerkingen beschikbaar. In deze sectie voegt u een be
 1. Voer in het tekstvak **Sample** (Voorbeeld) `{ "sampleField" : "test" }` in.
 1. Selecteer **Save** (Opslaan).
 
-:::image type="content" source="media/mock-api-responses/03-mock-api-responses-02-add-operation.png" alt-text="Gesimuleerd API-antwoord" border="false":::
+:::image type="content" source="media/mock-api-responses/03-mock-api-responses-02-add-operation.png" alt-text="API-bewerking toevoegen" border="false":::
 
 Hoewel dit niet vereist is voor dit voorbeeld, kunnen er op andere tabbladen aanvullende instellingen voor een API-bewerking worden geconfigureerd, waaronder:
 
@@ -87,6 +89,39 @@ Hoewel dit niet vereist is voor dit voorbeeld, kunnen er op andere tabbladen aan
 |**Query**     |  Voeg queryparameters toe. Naast het invoeren van een naam en beschrijving, kunt u waarden opgeven die worden toegewezen aan een queryparameter. Een van de waarden kan worden gemarkeerd als standaardwaarde (optioneel).        |
 |**Aanvraag**     |  Definieer aanvraaginhoudstypen, voorbeelden en schema's.       |
 
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Als u Azure CLI wilt gaan gebruiken:
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+Als u een bewerking wilt toevoegen aan uw test-API, voert u de opdracht [AZ APIM API Operation Create](/cli/azure/apim/api/operation#az_apim_api_operation_create) uit:
+
+```azurecli
+az apim api operation create --resource-group apim-hello-word-resource-group \
+    --display-name "Test call" --api-id test-api --method GET \
+    --url-template /test --service-name apim-hello-world 
+```
+
+Voer de opdracht [AZ APIM API Operation List](/cli/azure/apim/api/operation#az_apim_api_operation_list) uit om al uw bewerkingen voor een API weer te geven:
+
+```azurecli
+az apim api operation list --resource-group apim-hello-word-resource-group \
+    --api-id test-api --service-name apim-hello-world --output table
+```
+
+Als u een bewerking wilt verwijderen, gebruikt u de opdracht [AZ APIM API bewerking delete](/cli/azure/apim/api/operation#az_apim_api_operation_delete) . Haal de bewerkings-ID uit de vorige opdracht.
+
+```azurecli
+az apim api operation delete --resource-group apim-hello-word-resource-group \
+    --api-id test-api --operation-id 00000000000000000000000000000000 \
+    --service-name apim-hello-world
+```
+
+Bewaar deze bewerking voor gebruik in de rest van dit artikel.
+
+---
+
 ## <a name="enable-response-mocking"></a>Antwoordsimulatie inschakelen
 
 1. Selecteer de API die u in de stap [Een test-API maken](#create-a-test-api) hebt gemaakt.
@@ -94,15 +129,15 @@ Hoewel dit niet vereist is voor dit voorbeeld, kunnen er op andere tabbladen aan
 1. Zorg ervoor dat in het venster aan de rechterkant het tabblad **Design** (Ontwerp) is geselecteerd.
 1. Selecteer het venster **Inbound processing** (Binnenkomende verwerking) **+ Add policy** (Beleid toevoegen).
 
-    :::image type="content" source="media/mock-api-responses/03-mock-api-responses-03-enable-mocking.png" alt-text="Gesimuleerd API-antwoord" border="false":::
+    :::image type="content" source="media/mock-api-responses/03-mock-api-responses-03-enable-mocking.png" alt-text="Verwerkingsbeleid toevoegen" border="false":::
 
 1. Selecteer **Mock responses** (Gesimuleerde antwoorden) uit de galerie.
 
-    :::image type="content" source="media/mock-api-responses/mock-responses-policy-tile.png" alt-text="Gesimuleerd API-antwoord" border="false":::
+    :::image type="content" source="media/mock-api-responses/mock-responses-policy-tile.png" alt-text="Tegel Beleid voor gesimuleerde antwoorden" border="false":::
 
 1. Typ **200 OK, application/json** in het tekstvak **API Management response**. Deze selectie geeft aan dat uw API het voorbeeldantwoord moet retourneren dat u hebt gedefinieerd in de vorige sectie.
 
-    :::image type="content" source="media/mock-api-responses/mock-api-responses-set-mocking.png" alt-text="Gesimuleerd API-antwoord":::
+    :::image type="content" source="media/mock-api-responses/mock-api-responses-set-mocking.png" alt-text="Gesimuleerd antwoord instellen":::
 
 1. Selecteer **Save** (Opslaan).
 
@@ -115,15 +150,15 @@ Hoewel dit niet vereist is voor dit voorbeeld, kunnen er op andere tabbladen aan
 1. Selecteer het tabblad **Testen**.
 1. Zorg ervoor dat de **Testaanroep**-API is geselecteerd. Selecteer **Verzenden** om een testaanroep uit te voeren.
 
-   :::image type="content" source="media/mock-api-responses/03-mock-api-responses-04-test-mocking.png" alt-text="Gesimuleerd API-antwoord":::
+   :::image type="content" source="media/mock-api-responses/03-mock-api-responses-04-test-mocking.png" alt-text="De gesimuleerde API testen":::
 
 1. Het **HTTP-antwoord** geeft de JSON weer die is opgegeven als een voorbeeld in de eerste sectie van de zelfstudie.
 
-    :::image type="content" source="media/mock-api-responses/mock-api-responses-test-response.png" alt-text="Gesimuleerd API-antwoord":::
+    :::image type="content" source="media/mock-api-responses/mock-api-responses-test-response.png" alt-text="HTTP-antwoord simuleren":::
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u het volgende geleerd:
+In deze zelfstudie heeft u het volgende geleerd:
 
 > [!div class="checklist"]
 > * Een test-API maken

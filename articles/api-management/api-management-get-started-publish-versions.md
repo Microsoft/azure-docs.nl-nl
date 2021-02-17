@@ -5,14 +5,14 @@ author: vladvino
 ms.service: api-management
 ms.custom: mvc
 ms.topic: tutorial
-ms.date: 10/30/2020
+ms.date: 02/10/2021
 ms.author: apimpm
-ms.openlocfilehash: 4a107b4cc0dbf0b0845211ca64691fb0e792a47c
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
-ms.translationtype: HT
+ms.openlocfilehash: f6ea02c32ec7fcb694d63f29c63c3880a7cfff9e
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97679097"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546649"
 ---
 # <a name="tutorial-publish-multiple-versions-of-your-api"></a>Zelfstudie: Meerdere versies van uw API publiceren 
 
@@ -87,6 +87,32 @@ Bijvoorbeeld om de versie toe te voegen aan het **Onbeperkt** product:
 1. Klik op **Selecteren**.
 
 :::image type="content" source="media/api-management-getstarted-publish-versions/08-add-multiple-versions-03-add-version-product.png" alt-text="Versie toevoegen aan het product":::
+
+## <a name="use-version-sets"></a>Versie sets gebruiken
+
+Wanneer u meerdere versies maakt, maakt de Azure Portal een *versieset* die een set versies voor één logische API vertegenwoordigt. Selecteer de naam van een API met meerdere versies. De **versieset** van de Azure portal wordt weer gegeven. U kunt de **naam** en **Beschrijving** van een virtuele set aanpassen.
+
+U kunt rechtstreeks met versie sets communiceren met behulp van de Azure CLI:
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+Als u alle versie sets wilt weer geven, voert u de opdracht [AZ APIM API versionset List](/cli/azure/apim/api/versionset#az_apim_api_versionset_list) uit:
+
+```azurecli
+az apim api versionset list --resource-group apim-hello-word-resource-group \
+    --service-name apim-hello-world --output table
+```
+
+Wanneer de Azure Portal een versieset voor u maakt, wordt er een alfanumerieke naam toegewezen, die wordt weer gegeven in de kolom **naam** van de lijst. Gebruik deze naam in andere Azure CLI-opdrachten.
+
+Als u details wilt weer geven over een versieset, voert u de opdracht [AZ APIM API versionset show](/api/versionset#az_apim_api_versionset_show) uit:
+
+```azurecli
+az apim api versionset show --resource-group apim-hello-word-resource-group \
+    --service-name apim-hello-world --version-set-id 00000000000000000000000
+```
+
+Zie voor meer informatie over versie sets [versies in Azure API Management](api-management-versions.md#how-versions-are-represented).
 
 ## <a name="browse-the-developer-portal-to-see-the-version"></a>Blader door de portal voor ontwikkelaars om de versie te zien
 

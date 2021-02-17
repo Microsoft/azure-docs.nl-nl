@@ -11,16 +11,16 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-multiple
 ms.devlang: multiple
 ms.topic: article
-ms.date: 11/13/2019
+ms.date: 02/12/2021
 ms.author: sethm
-ms.reviewer: jowargo
+ms.reviewer: thsomasu
 ms.lastreviewed: 11/13/2019
-ms.openlocfilehash: 9d476b1db645ed1f91b62fcf11464f7077a8fb3c
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: e34fbdca51e7680a80c768e49bae891cb56dfa9d
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491423"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546445"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Push meldingen met Azure Notification Hubs: veelgestelde vragen
 
@@ -34,16 +34,16 @@ Azure Notification Hubs heeft twee resource niveaus: hubs en naam ruimten. Een h
 
 De meest recente prijs informatie vindt u op de pagina met [Notification hubs prijzen] . Notification Hubs wordt in rekening gebracht op het niveau van de naam ruimte. (Zie ' wat is de resource structuur van Notification Hubs? ' voor de definitie van een naam ruimte. Notification Hubs biedt drie lagen:
 
-* **Gratis** : deze laag is een goed uitgangs punt voor het verkennen van push mogelijkheden. Het wordt niet aanbevolen voor productie-apps. U krijgt 500-apparaten en 1.000.000 pushes per naam ruimte per maand, zonder service level agreement SLA-garantie.
-* **Basis** : deze laag (of de Standard-laag) wordt aanbevolen voor kleinere productie-apps. U krijgt 200.000-apparaten en 10.000.000 pushes per naam ruimte per maand als basis lijn.
-* **Standaard** : deze laag wordt aanbevolen voor middel grote tot grootschalige productie-apps. U krijgt 10.000.000-apparaten en 10.000.000 pushes per naam ruimte per maand als basis lijn. Inclusief uitgebreide telemetrie (aanvullende gegevens over de geleverde push status).
+* **Gratis**: deze laag is een goed uitgangs punt voor het verkennen van push mogelijkheden. Het wordt niet aanbevolen voor productie-apps. U krijgt 500-apparaten en 1.000.000 pushes per naam ruimte per maand, zonder service level agreement SLA-garantie.
+* **Basis**: deze laag (of de Standard-laag) wordt aanbevolen voor kleinere productie-apps. U krijgt 200.000-apparaten en 10.000.000 pushes per naam ruimte per maand als basis lijn.
+* **Standaard**: deze laag wordt aanbevolen voor middel grote tot grootschalige productie-apps. U krijgt 10.000.000-apparaten en 10.000.000 pushes per naam ruimte per maand als basis lijn. Inclusief uitgebreide telemetrie (aanvullende gegevens over de geleverde push status).
 
 Functies van de Standard-laag:
 
-* **Uitgebreide telemetrie** : u kunt notification hubs per bericht-telemetrie gebruiken om Push aanvragen en platform Notification System feedback voor fout opsporing bij te houden.
+* **Uitgebreide telemetrie**: u kunt notification hubs per bericht-telemetrie gebruiken om Push aanvragen en platform Notification System feedback voor fout opsporing bij te houden.
 * **Multitenancy: u** kunt werken met platform Notification System referenties op een niveau van de naam ruimte. Met deze optie kunt u eenvoudig tenants splitsen in hubs binnen dezelfde naam ruimte.
-* **Geplande push** : u kunt plannen dat er op elk moment meldingen worden verzonden.
-* **Bulk bewerkingen** : Hiermee schakelt u de functionaliteit voor het exporteren/importeren van gegevens in, zoals wordt beschreven in het document [registraties exporteren/importeren] .
+* **Geplande push**: u kunt plannen dat er op elk moment meldingen worden verzonden.
+* **Bulk bewerkingen**: Hiermee schakelt u de functionaliteit voor het exporteren/importeren van gegevens in, zoals wordt beschreven in het document [registraties exporteren/importeren] .
 
 ### <a name="what-is-the-notification-hubs-sla"></a>Wat is de Notification Hubs SLA?
 
@@ -103,6 +103,10 @@ De PNS garandeert geen SLA voor het leveren van meldingen. De meeste push meldin
 
 Vanwege de aard van push meldingen (deze worden geleverd door een extern platform-specifieke PNS), is er geen latentie garantie. Normaal gesp roken worden de meeste push meldingen binnen een paar minuten bezorgd.
 
+### <a name="where-does-azure-notification-hubs-store-data"></a>Waar worden gegevens opgeslagen in azure Notification Hubs?
+
+In azure Notification Hubs worden klant registratie gegevens opgeslagen in de regio die door de klant is geselecteerd. Notification Hubs biedt nood herstel na een meta gegevens (de Notification Hubs naam, de connection string en andere belang rijke informatie). Voor alle regio's behalve Brazilië-zuid en Zuidoost-Azië wordt de back-up van de meta gegevens gehost in een andere regio (meestal de Azure-gekoppelde regio). Voor de regio's Brazilië-zuid en Zuidoost-Azië worden back-ups in dezelfde regio opgeslagen om de locatie-vereisten voor deze regio's aan te passen.
+
 ### <a name="what-do-i-need-to-consider-when-designing-a-solution-with-namespaces-and-notification-hubs"></a>Wat moet ik overwegen bij het ontwerpen van een oplossing met naam ruimten en notification hubs?
 
 #### <a name="mobile-appenvironment"></a>Mobiele app/omgeving
@@ -151,7 +155,7 @@ Alle verbindingen, van de afzender naar de Azure-Notification Hubs naar de PNS, 
 
 Als u gevoelige nettoladingen wilt verzenden, kunt u het beste een beveiligd push patroon gebruiken. De afzender levert een ping-melding met een bericht-id aan het apparaat zonder de gevoelige nettolading. Wanneer de app op het apparaat de payload ontvangt, roept de app een beveiligde API rechtstreeks aan om de bericht gegevens op te halen. Ga voor een hand leiding voor het implementeren van dit patroon naar de pagina [veilige push-zelf studie van Notification hubs] .
 
-## <a name="operations"></a>Bewerkingen
+## <a name="operations"></a>Operations
 
 ### <a name="what-support-is-provided-for-disaster-recovery"></a>Welke ondersteuning wordt geboden voor herstel na nood gevallen?
 
@@ -197,7 +201,7 @@ U kunt ook programmatisch toegang krijgen tot metrische gegevens. Raadpleeg voor
 > [!NOTE]
 > Geslaagde meldingen betekenen gewoon dat push meldingen zijn bezorgd bij de externe PNS (bijvoorbeeld APNs voor iOS en macOS of FCM voor Android-apparaten). Het is de verantwoordelijkheid van de PNS om de meldingen te leveren aan doel apparaten. Normaal gesp roken worden door de PNS geen metrische gegevens over levering aan derden blootgesteld.  
 
-[Azure Portal]: https://portal.azure.com
+[Azure-portal]: https://portal.azure.com
 [Notification Hubs prijzen]: https://azure.microsoft.com/pricing/details/notification-hubs/
 [Notification Hubs SLA]: https://azure.microsoft.com/support/legal/sla/
 [REST API's voor Notification Hubs]: /previous-versions/azure/reference/dn530746(v=azure.100)

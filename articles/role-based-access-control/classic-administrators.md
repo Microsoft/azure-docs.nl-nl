@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 11/30/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 4c758dca9f6020fd948ad8c3a8cdf014306e8ae7
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: b61636d6048f63ae962d4f755a29c02e6785d5e1
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96343987"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100557530"
 ---
 # <a name="azure-classic-subscription-administrators"></a>Klassieke abonnementsbeheerders van Azure
 
@@ -38,7 +38,7 @@ In dit artikel wordt beschreven hoe u de Co-Administrator-en service beheerders 
 
     Co-Administrators kan alleen worden toegewezen aan het abonnements bereik.
 
-1. Klik op **Toegangsbeheer (IAM)** .
+1. Klik op **Toegangsbeheer (IAM)**.
 
 1. Klik op het tabblad **klassieke beheerders** .
 
@@ -71,7 +71,7 @@ Gast gebruikers aan wie de rol Co-Administrator is toegewezen, kunnen enkele ver
 
 U verwacht dat gebruiker B alles kan beheren. De reden hiervoor is dat de Microsoft-account wordt toegevoegd aan het abonnement als gast gebruiker in plaats van een lid van een gebruiker. Gast gebruikers hebben een andere standaard machtiging in azure AD, vergeleken met gebruikers van leden. Gebruikers kunnen bijvoorbeeld andere gebruikers in azure AD en gast gebruikers lezen. Gebruikers van leden kunnen nieuwe service-principals in azure AD en gast gebruikers registreren.
 
-Als een gast gebruiker deze taken moet kunnen uitvoeren, is een mogelijke oplossing om de specifieke Azure AD-rollen toe te wijzen die de gast gebruiker nodig heeft. In het vorige scenario kunt u bijvoorbeeld de rol van [Directory lezers](../active-directory/roles/permissions-reference.md#directory-readers) toewijzen om andere gebruikers te lezen en de rol [toepassings ontwikkelaar](../active-directory/roles/permissions-reference.md#application-developer) toe te wijzen om service-principals te kunnen maken. Zie [Wat zijn de standaard machtigingen voor gebruikers in azure Active Directory?](../active-directory/fundamentals/users-default-permissions.md)voor meer informatie over lid-en gast gebruikers en de bijbehorende machtigingen. Voor meer informatie over het verlenen van toegang voor gast gebruikers raadpleegt [u Azure-roltoewijzingen voor externe gast gebruikers toevoegen of verwijderen met behulp van de Azure Portal](role-assignments-external-users.md).
+Als een gast gebruiker deze taken moet kunnen uitvoeren, is een mogelijke oplossing om de specifieke Azure AD-rollen toe te wijzen die de gast gebruiker nodig heeft. In het vorige scenario kunt u bijvoorbeeld de rol van [Directory lezers](../active-directory/roles/permissions-reference.md#directory-readers) toewijzen om andere gebruikers te lezen en de rol [toepassings ontwikkelaar](../active-directory/roles/permissions-reference.md#application-developer) toe te wijzen om service-principals te kunnen maken. Zie [Wat zijn de standaard machtigingen voor gebruikers in azure Active Directory?](../active-directory/fundamentals/users-default-permissions.md)voor meer informatie over lid-en gast gebruikers en de bijbehorende machtigingen. Zie voor meer informatie over het verlenen van toegang voor gast gebruikers [Azure-rollen toewijzen aan externe gast gebruikers met behulp van de Azure Portal](role-assignments-external-users.md).
 
 Houd er rekening mee dat de [ingebouwde rollen van Azure](../role-based-access-control/built-in-roles.md) verschillen van de [Azure AD-functies](../active-directory/roles/permissions-reference.md). De ingebouwde rollen verlenen geen toegang tot Azure AD. Zie [inzicht krijgen in de verschillende rollen](../role-based-access-control/rbac-and-directory-admin-roles.md)voor meer informatie.
 
@@ -83,7 +83,7 @@ Zie [Wat zijn de standaard machtigingen voor gebruikers in azure Active Director
 
 1. Open [Abonnementen](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) en selecteer een abonnement.
 
-1. Klik op **Toegangsbeheer (IAM)** .
+1. Klik op **Toegangsbeheer (IAM)**.
 
 1. Klik op het tabblad **klassieke beheerders** .
 
@@ -103,7 +103,7 @@ Volg deze stappen om de service beheerder in de Azure Portal te wijzigen.
 
 1. Zorg ervoor dat uw scenario wordt ondersteund door de [beperkingen voor het wijzigen van de service beheerder](#limitations-for-changing-the-service-administrator)te controleren.
 
-1. Meld u als accountbeheerder aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u als accountbeheerder aan bij [Azure Portal](https://portal.azure.com).
 
 1. Open **Cost Management en facturering** en selecteer een abonnement.
 
@@ -151,5 +151,5 @@ Volg deze stappen om de account beheerder weer te geven.
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Inzicht in de verschillende rollen](../role-based-access-control/rbac-and-directory-admin-roles.md)
-* [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure-portal](../role-based-access-control/role-assignments-portal.md)
+* [Azure-rollen toewijzen met behulp van de Azure Portal](../role-based-access-control/role-assignments-portal.md)
 * [Azure-abonnementsbeheerders toevoegen of wijzigen](../cost-management-billing/manage/add-change-subscription-administrator.md)

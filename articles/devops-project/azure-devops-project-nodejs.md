@@ -3,22 +3,19 @@ title: Een CI/CD-pijplijn maken voor een PWA met GatsbyJS en Azure DevOps Starte
 description: Ontdek hoe u een progressieve web-app (PWA) voor Node.js maakt met behulp van GatsbyJS en de vereenvoudigde DevOps Starter-ontwikkelervaring.
 ms.prod: devops
 ms.technology: devops-cicd
-services: vsts
 documentationcenter: vs-devops-build
-author: arob98
-manager: angrobe
+author: mijacobs
+ms.author: mijacobs
 ms.workload: web
-ms.tgt_pltfrm: na
 ms.topic: quickstart
 ms.date: 03/24/2020
-ms.author: angrobe
 ms.custom: mvc, devx-track-js
-ms.openlocfilehash: 6cffa6065f0e1cefc31223553a42a7a78c1dbea8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: d6d8a10dffa3801fe343b3b479265fac5612b021
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91856208"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556559"
 ---
 # <a name="create-a-cicd-pipeline-in-azure-pipelines-for-nodejs-with-azure-devops-starter"></a>Een CI/CD-pijplijn in Azure Pipelines maken voor Node.js met Azure DevOps Starter
 
@@ -73,7 +70,7 @@ In DevOps Starter wordt een CI/CD-pijplijn gemaakt in Azure Pipelines. U kunt ee
 
     ![Azure DevOps-dashboard](_img/azure-devops-project-nodejs/devops-projects-dashboard.png) 
 
-1. Vanuit uw Azure DevOps-project kunt u teamleden uitnodigen om samen te werken, en een kanbanbord maken om uw werk bij te houden. Klik [hier](/azure/devops/user-guide/what-is-azure-devops?view=azure-devops) voor meer informatie.
+1. Vanuit uw Azure DevOps-project kunt u teamleden uitnodigen om samen te werken, en een kanbanbord maken om uw werk bij te houden. Klik [hier](/azure/devops/user-guide/what-is-azure-devops) voor meer informatie.
 
 ![Overzicht van Azure DevOps](_img/azure-devops-project-nodejs/azure-devops-overview.png)
 
@@ -195,4 +192,4 @@ U kunt Azure App Service en gerelateerde resources die u hebt gemaakt, verwijder
 De build- en release-pijplijnen worden automatisch gemaakt wanneer u het CI/CD-proces configureert. U kunt deze build- en release-pijplijnen desgewenst wijzigen in overeenstemming met de behoeften van uw team. Voor meer informatie over de CI/CD-pijplijn raadpleegt u:
 
 > [!div class="nextstepaction"]
-> [CD-proces aanpassen](/azure/devops/pipelines/release/define-multistage-release-process?view=vsts)
+> [CD-proces aanpassen](/azure/devops/pipelines/release/define-multistage-release-process)

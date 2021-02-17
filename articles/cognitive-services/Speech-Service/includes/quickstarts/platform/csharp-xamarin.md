@@ -11,12 +11,12 @@ ms.topic: include
 ms.date: 10/15/2020
 ms.author: erhopf
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 3f441e2f89d0f85a7a4e2fff5490fed5e2879506
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.openlocfilehash: 8c941f0c96c127a46bb0b888d0500223ebcd9be2
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96188233"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100552907"
 ---
 In deze handleiding leest u hoe u de [Speech-SDK](~/articles/cognitive-services/speech-service/speech-sdk.md) installeert voor [Xamarin](/xamarin/get-started/what-is-xamarin), een opensource-platform voor het bouwen van moderne en prestatiegerichte toepassingen voor iOS, Android en Windows met .NET. Als u enkel de pakketnaam nodig hebt om zelf aan de slag te gaan, voer dan `Install-Package Microsoft.CognitiveServices.Speech` uit in de NuGet-console.
 
@@ -26,6 +26,7 @@ In deze handleiding leest u hoe u de [Speech-SDK](~/articles/cognitive-services/
 
 Voor deze snelstart zijn de volgende zaken vereist:
 
+* In Windows hebt u het [Microsoft Visual C++ Redistributable for Visual Studio 2019](https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0) voor uw platform nodig. Bij een eerste installatie is mogelijk een herstart vereist.
 * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
 
 ## <a name="create-a-visual-studio-project-and-install-the-speech-sdk"></a>Een Visual Studio-project maken en de Speech-SDK installeren

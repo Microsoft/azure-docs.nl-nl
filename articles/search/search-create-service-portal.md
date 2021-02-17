@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 02/15/2021
-ms.openlocfilehash: 3be043af7b057c47f360ce36db6bb7c3afd80638
-ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
+ms.openlocfilehash: 7149233782815deebebde53767a3c654ac2321bb
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/16/2021
-ms.locfileid: "100535345"
+ms.locfileid: "100547754"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-service-in-the-portal"></a>Quickstart: Een Azure Cognitive Search-service maken in de portal
 
@@ -83,22 +83,19 @@ Vereisten voor servicenaam:
 
 ## <a name="choose-a-location"></a>Een locatie kiezen
 
-Azure Cognitive Search is beschikbaar in de meeste regio’s. De lijst met ondersteunde regio’s kunt u vinden op de [pagina met prijzen](https://azure.microsoft.com/pricing/details/search/).
+Azure Cognitive Search is beschikbaar in de meeste regio's, zoals beschreven op de [pagina met prijzen](https://azure.microsoft.com/pricing/details/search/).
 
-> [!Note]
-> India - centraal en VAE - noord zijn momenteel niet beschikbaar voor nieuwe services. Voor services die al beschikbaar zijn in die regio’s, kunt u zonder beperkingen opschalen en wordt uw service volledig ondersteund in die regio. De beperkingen zijn tijdelijk en alleen beperkt tot nieuwe services. We zullen deze opmerking verwijderen wanneer de beperkingen niet meer van toepassing zijn.
->
-> Dubbele versleuteling is alleen beschikbaar in bepaalde regio's. Zie [Dubbele versleuteling](search-security-overview.md#double-encryption) voor meer informatie.
+Als u meerdere Azure-Services gebruikt, kiest u in het algemeen een regio die ook als host fungeert voor uw gegevens of toepassings service. Zo minimaliseert of vermijdt u bandbreedtekosten voor uitgaande gegevens (er zijn geen kosten voor uitgaande gegevens wanneer services zich in dezelfde regio bevinden).
 
-### <a name="requirements"></a>Vereisten
+Klanten met BCDR-vereisten (bedrijfscontinuïteit en herstel na noodgevallen) moeten hun services in [regioparen](../best-practices-availability-paired-regions.md#azure-regional-pairs) maken. Als u bijvoorbeeld werkzaam bent in Noord-Amerika, kiest u wellicht VS - oost en VS - west, of VS - noord-centraal en VS - zuid-centraal, voor elke service.
 
- Als u AI-verrijking gebruikt, maakt u uw zoekservice in dezelfde regio als Cognitive Services. *Co-locatie van Azure Cognitive Search en Cognitive Services in dezelfde regio is een vereiste voor AI-verrijking*.
+De volgende functies zijn alleen beschikbaar in bepaalde regio's:
 
- Klanten met BCDR-vereisten (bedrijfscontinuïteit en herstel na noodgevallen) moeten hun services in [regioparen](../best-practices-availability-paired-regions.md#azure-regional-pairs) maken. Als u bijvoorbeeld werkzaam bent in Noord-Amerika, kiest u wellicht VS - oost en VS - west, of VS - noord-centraal en VS - zuid-centraal, voor elke service.
+* AI-verrijking vereist dat Cognitive Services zich in dezelfde regio bevinden als Azure Cognitive Search. Kies de [regio voor Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/) eerste (de lijst is kleiner) en kies vervolgens dezelfde regio voor de zoek service.
 
-### <a name="recommendations"></a>Aanbevelingen
+* Dubbele versleuteling is alleen beschikbaar in bepaalde regio's. Zie [Double Encryption](search-security-overview.md#double-encryption) (Engelstalig) voor meer informatie.
 
-Als u meerdere Azure-services gebruikt, kiest u een regio die ook uw gegevens- of toepassingsservice host. Zo minimaliseert of vermijdt u bandbreedtekosten voor uitgaande gegevens (er zijn geen kosten voor uitgaande gegevens wanneer services zich in dezelfde regio bevinden).
+* Ondersteuning voor beschikbaarheids zone wordt aangeboden in specifieke regio's, op Services die zijn gemaakt na specifieke datums. Zie voor meer informatie ["Beschikbaarheidszones" in schaal voor prestaties](search-performance-optimization.md#availability-zones).
 
 ## <a name="choose-a-pricing-tier"></a>Kies een prijscategorie
 

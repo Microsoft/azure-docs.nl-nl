@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/22/2018
 ms.author: genli
-ms.openlocfilehash: d4736515d8e011ce1e72c51ecb3ce1cfd2e1e1cd
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 5c8bd335832a950385f88f13dc31eb7f6159f831
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978523"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548128"
 ---
 #  <a name="an-internal-error-occurs-when-you-try-to-connect-to-an-azure-vm-through-remote-desktop"></a>Er treedt een interne fout op wanneer u via Extern bureaublad probeert te verbinden met een Azure-VM
 
@@ -120,8 +120,8 @@ Als u wilt beginnen, maakt u verbinding met de [seriële console en opent u een 
 2. Als u het certificaat niet kunt vernieuwen met behulp van deze methode, probeert u het zelf-ondertekende RDP-certificaat op afstand te vernieuwen:
 
     1. Voer vanuit een werkende VM die verbinding heeft met de virtuele machine die problemen ondervindt, **MMC** in het vak **uitvoeren** in om micro soft Management console te openen.
-    2. Selecteer **module toevoegen/verwijderen**in het menu **bestand** , selecteer **certificaten**en selecteer vervolgens **toevoegen**.
-    3. Selecteer **computer accounts**, selecteer **een andere computer**en voeg vervolgens het IP-adres van de probleem-VM toe.
+    2. Selecteer **module toevoegen/verwijderen** in het menu **bestand** , selecteer **certificaten** en selecteer vervolgens **toevoegen**.
+    3. Selecteer **computer accounts**, selecteer **een andere computer** en voeg vervolgens het IP-adres van de probleem-VM toe.
     4. Ga naar de map **externe Desktop\Certificates** , klik met de rechter muisknop op het certificaat en selecteer **verwijderen**.
     5. Start in een Power shell-exemplaar van de seriële console de Extern bureaublad Configuration-service opnieuw:
 
@@ -134,7 +134,7 @@ Als u wilt beginnen, maakt u verbinding met de [seriële console en opent u een 
 3. Stel de machtiging voor de map MachineKeys opnieuw in.
 
     ```powershell
-    remove-module psreadline icacls
+    remove-module psreadline 
 
     md c:\temp
 
@@ -266,7 +266,7 @@ Voer het volgende script uit om dump logboek en seriële console in te scha kele
     REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server" /v Enabled /t REG_DWO
     ```
 
-3. Als de sleutel niet bestaat of de waarde ervan **0**is, schakelt u het protocol in door de volgende scripts uit te voeren:
+3. Als de sleutel niet bestaat of de waarde ervan **0** is, schakelt u het protocol in door de volgende scripts uit te voeren:
 
     ```console
     REM Enable TLS 1.0, TLS 1.1 and TLS 1.2

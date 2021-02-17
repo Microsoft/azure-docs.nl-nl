@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 11/25/2014
 ms.author: gwallace
 ms.custom: devx-track-java
-ms.openlocfilehash: cad25990d0ba7e27f4a90adc587f0c8a0a2c551a
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: fdaa2eeef58599cbff8dbf7daa34f9a30f31b9cb
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95521067"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548757"
 ---
 # <a name="how-to-make-a-phone-call-using-twilio-in-a-java-application-on-azure"></a>Een telefoon gesprek doen met behulp van Twilio in een Java-toepassing in azure
 In het volgende voor beeld ziet u hoe u Twilio kunt gebruiken om een aanroep te doen van een webpagina die wordt gehost in Azure. De resulterende toepassing vraagt de gebruiker om telefoon gesprek waarden, zoals wordt weer gegeven in de volgende scherm afbeelding.
@@ -32,7 +32,7 @@ U moet de volgende stappen uitvoeren om de code in dit onderwerp te gebruiken:
    De code in dit onderwerp is geschreven met behulp van het vooraf gemaakte TwilioJava-3.3.8-with-dependencies JAR.
 3. Voeg het JAR toe aan uw Java-build-pad.
 4. Als u een eclips gebruikt om deze Java-toepassing te maken, neemt u het Twilio JAR op in het toepassings implementatie bestand (WAR) met behulp van de implementatie-assembly functie van eclips. Als u geen gebruik maakt van eclips om deze Java-toepassing te maken, moet u ervoor zorgen dat het Twilio JAR deel uitmaakt van dezelfde Azure-rol als uw Java-toepassing en dat deze wordt toegevoegd aan het pad naar de klasse van uw toepassing.
-5. Zorg ervoor dat uw cacerts-basis archief het certificaat van de Equifax Secure Certificate Authority bevat met MD5-vinger afdruk 67: CB: 9D: C0:13:24:8 bis: 82:9B: B2:17:1E: D1:1B: EC: D4 (het serie nummer is 35: de: F4: CF en de SHA1-vinger afdruk is D2:32:09: AD: 23: D3:14:23::................ Dit is het certificaat van de certificerings instantie (CA) voor de [https://api.twilio.com][twilio_api_service] service, die wordt aangeroepen wanneer u Twilio-api's gebruikt. Zie [een certificaat toevoegen aan het certificaat archief van de Java-ca][add_ca_cert]voor meer informatie over het toevoegen van dit CA-certificaat aan de CAcert-opslag van uw JDK.
+5. Zorg ervoor dat uw cacerts-basis archief het certificaat van de Equifax Secure Certificate Authority bevat met MD5-vinger afdruk 67: CB: 9D: C0:13:24:8 bis: 82:9B: B2:17:1E: D1:1B: EC: D4 (het serie nummer is 35: de: F4: CF en de SHA1-vinger afdruk is D2:32:09: AD: 23: D3:14:23::................ Dit is het certificaat van de certificerings instantie (CA) voor de [https://api.twilio.com][twilio_api_service] service, die wordt aangeroepen wanneer u Twilio-api's gebruikt.
 
 Daarnaast wordt de informatie over het maken van [een Hallo wereld-toepassing met behulp van de Azure-Toolkit voor eclipse][azure_java_eclipse_hello_world], of met andere technieken voor het hosten van Java-toepassingen in azure, ook nadrukkelijk aanbevolen.
 
@@ -193,7 +193,6 @@ Zie voor meer informatie over Twilio [https://www.twilio.com/docs][twilio_docs] 
 
 ## <a name="see-also"></a>Zie ook
 * [Twilio gebruiken voor spraak-en SMS-mogelijkheden in Java][howto_twilio_voice_sms_java]
-* [Een certificaat toevoegen aan het certificaat archief van de Java-CA][add_ca_cert]
 
 [twilio_pricing]: https://www.twilio.com/pricing
 [try_twilio]: https://www.twilio.com/try-twilio
@@ -203,7 +202,6 @@ Zie voor meer informatie over Twilio [https://www.twilio.com/docs][twilio_docs] 
 [twimlet_message_url]: https://twimlets.com/message
 [twiml]: https://www.twilio.com/docs/api/twiml
 [twilio_api_service]: https://api.twilio.com
-[add_ca_cert]: /azure/developer/java/sdk/java-sdk-add-certificate-ca-store
 [azure_java_eclipse_hello_world]: /java/azure/eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app
 [howto_twilio_voice_sms_java]: partner-twilio-java-how-to-use-voice-sms.md
 [howto_blob_storage_java]: https://www.windowsazure.com/develop/java/how-to-guides/blob-storage/

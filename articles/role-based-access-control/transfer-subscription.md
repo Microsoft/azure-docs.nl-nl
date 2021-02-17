@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 12/10/2020
 ms.author: rolyon
-ms.openlocfilehash: 81224b5e16f3bca5da641bbb2e9c82dd59000e79
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 5a4be6052e72c27ad83b5af64f1acb3ad8d4e3be
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185883"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555902"
 ---
 # <a name="transfer-an-azure-subscription-to-a-different-azure-ad-directory"></a>Een Azure-abonnement overdragen naar een andere Azure AD-adres lijst
 
@@ -299,7 +299,7 @@ In deze stap brengt u het abonnement over van de bron directory naar de doel dir
     az account set --subscription "Contoso"
     ```
 
-### <a name="create-custom-roles"></a>Aangepaste rollen maken
+### <a name="create-custom-roles"></a>Aangepast rollen maken
         
 - Gebruik [AZ Role definition Create](/cli/azure/role/definition#az_role_definition_create) om elke aangepaste rol te maken op basis van de bestanden die u eerder hebt gemaakt. Zie [aangepaste Azure-rollen maken of bijwerken met behulp van Azure cli](custom-roles-cli.md)voor meer informatie.
 
@@ -307,9 +307,9 @@ In deze stap brengt u het abonnement over van de bron directory naar de doel dir
     az role definition create --role-definition <role_definition>
     ```
 
-### <a name="create-role-assignments"></a>Maak roltoewijzingen
+### <a name="assign-roles"></a>Rollen toewijzen
 
-- Gebruik [AZ Role Assignment maken](/cli/azure/role/assignment#az_role_assignment_create) om de roltoewijzingen voor gebruikers, groepen en service-principals te maken. Zie voor meer informatie [roltoewijzingen toevoegen of verwijderen met behulp van Azure RBAC en Azure cli](role-assignments-cli.md).
+- Gebruik [AZ Role Assignment Create](/cli/azure/role/assignment#az_role_assignment_create) om rollen toe te wijzen aan gebruikers, groepen en service-principals. Zie [Azure-rollen toewijzen met Azure cli](role-assignments-cli.md)voor meer informatie.
 
     ```azurecli
     az role assignment create --role <role_name_or_id> --assignee <assignee> --resource-group <resource_group>
@@ -325,7 +325,7 @@ In deze stap brengt u het abonnement over van de bron directory naar de doel dir
     | Virtuele-machineschaalsets | [Beheerde identiteiten voor Azure-resources configureren op een virtuele-machineschaalset met Azure CLI](../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vmss.md#system-assigned-managed-identity) |
     | Overige services | [Services die beheerde identiteiten voor Azure-resources ondersteunen](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md) |
 
-1. Gebruik [AZ Role Assignment maken](/cli/azure/role/assignment#az_role_assignment_create) om de roltoewijzingen te maken voor door het systeem toegewezen beheerde identiteiten. Zie [een beheerde identiteits toegang toewijzen aan een resource met behulp van Azure cli](../active-directory/managed-identities-azure-resources/howto-assign-access-cli.md)voor meer informatie.
+1. Gebruik [AZ Role Assignment Create](/cli/azure/role/assignment#az_role_assignment_create) om rollen toe te wijzen aan door het systeem toegewezen beheerde identiteiten. Zie [een beheerde identiteits toegang toewijzen aan een resource met behulp van Azure cli](../active-directory/managed-identities-azure-resources/howto-assign-access-cli.md)voor meer informatie.
 
     ```azurecli
     az role assignment create --assignee <objectid> --role '<role_name_or_id>' --scope <scope>
@@ -341,7 +341,7 @@ In deze stap brengt u het abonnement over van de bron directory naar de doel dir
     | Virtuele-machineschaalsets | [Beheerde identiteiten voor Azure-resources configureren op een virtuele-machineschaalset met Azure CLI](../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vmss.md#user-assigned-managed-identity) |
     | Overige services | [Services die beheerde identiteiten voor Azure-resources ondersteunen](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md)<br/>[Een door de gebruiker toegewezen beheerde identiteit maken, weer geven of verwijderen met behulp van de Azure CLI](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md) |
 
-1. Gebruik [AZ Role Assignment maken](/cli/azure/role/assignment#az_role_assignment_create) om de roltoewijzingen voor door de gebruiker toegewezen beheerde identiteiten te maken. Zie [een beheerde identiteits toegang toewijzen aan een resource met behulp van Azure cli](../active-directory/managed-identities-azure-resources/howto-assign-access-cli.md)voor meer informatie.
+1. Gebruik [AZ Role Assignment Create](/cli/azure/role/assignment#az_role_assignment_create) om rollen toe te wijzen aan door de gebruiker toegewezen beheerde identiteiten. Zie [een beheerde identiteits toegang toewijzen aan een resource met behulp van Azure cli](../active-directory/managed-identities-azure-resources/howto-assign-access-cli.md)voor meer informatie.
 
     ```azurecli
     az role assignment create --assignee <objectid> --role '<role_name_or_id>' --scope <scope>

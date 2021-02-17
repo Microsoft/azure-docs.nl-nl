@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 4cd762d6c264d95ecb1bd0f3f4c3a4d96eb5a57d
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: c2543f74b90205a36d3f5b4481beca35c779f77e
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99585089"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546020"
 ---
 # <a name="form-recognizer-prebuilt-business-cards-model"></a>Model voor het maken van een webkaart met formulier herkenning 
 
@@ -76,7 +76,11 @@ Wanneer het veld **status** de waarde **geslaagd** heeft, bevat het JSON-antwoor
 
 ### <a name="sample-json-output"></a>Voor beeld van JSON-uitvoer
 
-Zie het volgende voor beeld van een geslaagde JSON-reactie: het knoop punt ' readResults ' bevat alle herkende tekst. De tekst wordt geordend op pagina, vervolgens per regel en vervolgens op afzonderlijke woorden. Het knoop punt ' documentResults ' bevat de bedrijfsspecifieke waarden die het model heeft gedetecteerd. Hier vindt u nuttige contact gegevens, zoals de voor naam, achternaam, bedrijfs naam en nog veel meer.
+De reactie op de resultaat bewerking analyse van bedrijfs kaart ophalen is de gestructureerde weer gave van het visite kaartje met alle gegevens die worden geëxtraheerd.  Hier vindt u een voor beeld van een [visite kaart bestand](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/business-card-english.jpg) en de uitvoer van de [voorbeeld bedrijfs kaart](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/business-card-result.json)voor de gestructureerde uitvoer.
+
+Zie het volgende voor beeld van een geslaagde JSON-reactie:
+* Het knooppunt `"readResults"` bevat alle herkende tekst. De tekst wordt geordend op pagina, vervolgens per regel en vervolgens op afzonderlijke woorden. 
+* Het knooppunt `"documentResults"` bevat de visitekaartjeswaarden die het model heeft gedetecteerd. Hier vindt u nuttige contact gegevens, zoals de voor naam, achternaam, bedrijfs naam en nog veel meer.
 
 ```json
 {

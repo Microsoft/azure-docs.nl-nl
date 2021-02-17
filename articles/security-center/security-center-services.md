@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/08/2021
+ms.date: 02/16/2021
 ms.author: memildin
-ms.openlocfilehash: 7034d1b5f06fcbcead79d85df10042eee3581b0b
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 0e1f669b6955d5c5b70f2f29ff39ba5aef0a9a56
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100369353"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100544813"
 ---
 # <a name="feature-coverage-for-machines"></a>Functiedekking voor machines
 
@@ -131,7 +131,7 @@ Zie [Evaluatie van eindpuntbeveiliging en aanbevelingen](security-center-endpoin
 |[Azure Defender voor DNS](defender-for-dns-introduction.md)|-|-|
 |[Azure Defender voor containerregisters](defender-for-container-registries-introduction.md)|✔ (2)|✔ (2)|
 |[Azure Defender voor Kubernetes](defender-for-kubernetes-introduction.md)|✔|✔|
-|[Beveiliging van Kubernetes-werk belasting](kubernetes-workload-protections.md)|-|-|
+|[Beveiliging van Kubernetes-werk belasting](kubernetes-workload-protections.md)|✔ (2)|✔ (2)|
 |||
 
 (1) vereist **Azure Defender voor servers**

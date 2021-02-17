@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/18/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: bf92765431ea6b0f80b96ab7d61e8e830220dc82
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: b589f98ee78d0709b2a74ba4e364cec0e486e968
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98934556"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100547159"
 ---
 # <a name="secure-azure-digital-twins"></a>Azure Digital Apparaatdubbels beveiligen
 
@@ -53,11 +53,6 @@ Azure biedt **twee ingebouwde rollen van Azure** voor het verlenen van toegang t
 | --- | --- | --- |
 | Azure Digital Apparaatdubbels-gegevens eigenaar | Biedt volledige toegang tot Azure Digital Apparaatdubbels-bronnen | bcd981a7-7f74-457b-83e1-cceb9e632ffe |
 | Azure Digital Apparaatdubbels-gegevens lezer | Geeft alleen-lezen toegang tot Azure Digital Apparaatdubbels-resources | d57506d4-4c8d-48b1-8587-93c323f6a5a3 |
-
->[!NOTE]
-> De namen van deze rollen zijn onlangs gewijzigd ten opzichte van hun eerdere namen in de preview-versie:
-> * *Azure Digital Twins-gegevenseigenaar* was voorheen *Azure Digital Twins-eigenaar (preview)* .
-> * *Azure Digital Apparaatdubbels data Reader* was voorheen *Azure Digital Apparaatdubbels Reader (preview)*.
 
 U kunt rollen op twee manieren toewijzen:
 * via het deel venster toegangs beheer (IAM) voor Azure Digital Apparaatdubbels in de Azure Portal (Zie [*Azure-roltoewijzingen toevoegen of verwijderen met de Azure Portal*](../role-based-access-control/role-assignments-portal.md))

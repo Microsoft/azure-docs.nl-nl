@@ -1,15 +1,15 @@
 ---
 title: Continue integratie met Azure-pijplijnen
 description: Meer informatie over het continu bouwen, testen en implementeren van ARM-sjablonen (Azure Resource Manager).
-ms.date: 08/24/2020
+ms.date: 02/16/2021
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: e7e2cda0524e4d754fbf879c046fee2d43c44cb3
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: d367da33d6b9997d77606e9a77a961808d66ff99
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98701709"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100560903"
 ---
 # <a name="tutorial-continuous-integration-of-arm-templates-with-azure-pipelines"></a>Zelfstudie: Continue integratie van ARM-sjablonen met Azure Pipelines
 
@@ -83,8 +83,8 @@ De map _CreateWebApp_ is de map waarin de sjabloon is opgeslagen. Met de opdrach
 
 In plaats van de sjablonen te maken, kunt u de sjablonen downloaden en opslaan in de map _CreateWebApp_.
 
-* De hoofdsjabloon: https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-deployment/linked-template/azuredeploy.json
-* De gekoppelde sjabloon: https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-deployment/linked-template/linkedStorageAccount.json
+* De hoofdsjabloon: https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-deployment/pipeline/azuredeploy.json
+* De gekoppelde sjabloon: https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-deployment/pipeline/linkedStorageAccount.json
 
 Zowel de mapnaam als de bestandsnamen worden gebruikt zoals ze zijn in de pijplijn. Als u deze namen wijzigt, moet u de namen die worden gebruikt in de pijplijn bijwerken.
 
@@ -105,7 +105,7 @@ Het bestand _azuredeploy.json_ is toegevoegd aan de lokale opslagplaats. Vervolg
 
     Er kan een waarschuwing over LF worden weergegeven. U kunt de waarschuwing negeren. **Hoofd** is de hoofdvertakking.  Doorgaans maakt u een branch (vertakking) voor elke update. Om de zelfstudie te vereenvoudigen gebruikt u de hoofdvertakking rechtstreeks.
 
-1. Blader in een browser naar uw GitHub-opslagplaats. De URL is `https://github.com/[YourAccountName]/[YourGitHubRepository]`. De map _CreateWebApp_ en de drie bestanden in de map worden weergeven.
+1. Blader in een browser naar uw GitHub-opslagplaats. De URL is `https://github.com/[YourAccountName]/[YourGitHubRepository]`. De map _CreateWebApp_ en de twee bestanden in de map worden weer geven.
 1. Selecteer _linkedStorageAccount.json_ om de sjabloon te openen.
 1. Selecteer de knop **Raw** (Onbewerkt). De URL begint met `https://raw.githubusercontent.com`.
 1. Maak een kopie van de URL. U moet deze waarde opgeven wanneer u de pijplijn verderop in de zelfstudie configureert.
@@ -134,7 +134,7 @@ Maak een serviceverbinding die wordt gebruikt voor het implementeren van project
 
 1. Selecteer **Projectinstellingen** onder in het menu links.
 1. Selecteer **Serviceverbindingen** onder **Pijplijnen**.
-1. Selecteer achtereenvolgens **Nieuwe serviceverbinding**, **Azure Resource Manager** en **Volgende**.
+1. Selecteer **service verbinding maken**, selecteer **Azure Resource Manager** en selecteer vervolgens **volgende**.
 1. Selecteer **Service-principal** en vervolgens **Volgende**.
 1. Voer de volgende waarden in:
 
@@ -155,7 +155,7 @@ U hebt nu de volgende taken voltooid.  Als u de vorige secties hebt overgeslagen
 Een pijplijn maken met een stap voor het implementeren van een sjabloon:
 
 1. Selecteer **Pijplijnen** in het menu aan de linkerkant.
-1. Selecteer **Nieuwe pijplijn**.
+1. Selecteer **pijp lijn maken**.
 1. Selecteer **GitHub** op het tabblad **Verbinding maken**. Voer, als u daarom wordt gevraagd, uw GitHub-referenties in en volg de instructies. Als het volgende scherm wordt weergegeven, selecteert u **Alleen opslagplaatsen selecteren** en controleert u of uw opslagplaats in de lijst voorkomt voordat u **Goedkeuren en installeren** selecteert.
 
     ![Azure Resource Manager - Azure DevOps - Azure Pipelines - Alleen opslagplaatsen selecteren](./media/deployment-tutorial-pipeline/azure-resource-manager-devops-pipelines-only-select-repositories.png)

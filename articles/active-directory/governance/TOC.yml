@@ -14,8 +14,10 @@
 - name: Zelfstudies
   expanded: true
   items:
-    - name: Uw eerste toegangspakket maken
+    - name: Toegang tot resources beheren-Azure Portal
       href: entitlement-management-access-package-first.md
+    - name: Toegang tot resources beheren-Microsoft Graph
+      href: /graph/tutorial-access-package-api?toc=/azure/active-directory/governance/toc.json&bc=/azure/active-directory/governance/breadcrumb/toc.json
 - name: Concepten
   expanded: true
   items:

@@ -6,17 +6,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/16/2020
+ms.date: 02/16/2021
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 02661c9c2a581ab21a2ae9dc31e5da95426c0edd
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 24fbe843986b732a04c9e356c54f3d768d6739be
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843380"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100558185"
 ---
 # <a name="configure-encryption-with-customer-managed-keys-stored-in-azure-key-vault"></a>Versleuteling configureren met door de klant beheerde sleutels die zijn opgeslagen in Azure Key Vault
 
@@ -33,7 +33,7 @@ U kunt een nieuwe of bestaande sleutel kluis gebruiken om door de klant beheerde
 
 Voor het gebruik van door de klant beheerde sleutels met Azure Storage versleuteling moet zowel de functie voor voorlopig verwijderen als voor leegmaken worden ingeschakeld voor de sleutel kluis. Voorlopig verwijderen is standaard ingeschakeld bij het maken van een nieuwe sleutel kluis en kan niet worden uitgeschakeld. U kunt het leegmaken van de beveiliging inschakelen wanneer u de sleutel kluis maakt of nadat deze is gemaakt.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 Zie [Quick Start: een sleutel kluis maken met behulp van de Azure Portal](../../key-vault/general/quick-create-portal.md)voor meer informatie over het maken van een sleutel kluis met de Azure Portal. Wanneer u de sleutel kluis maakt, selecteert u **beveiliging opschonen inschakelen**, zoals wordt weer gegeven in de volgende afbeelding.
 
@@ -131,7 +131,7 @@ Voeg vervolgens een sleutel toe aan de sleutel kluis.
 
 Azure Storage versleuteling ondersteunt RSA-en RSA-HSM-sleutels met een grootte van 2048, 3072 en 4096. Zie [about Keys](../../key-vault/keys/about-keys.md)(Engelstalig) voor meer informatie over sleutels.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 Voor informatie over het toevoegen van een sleutel met de Azure Portal, raadpleegt u [Quick Start: een sleutel instellen en ophalen van Azure Key Vault met behulp van de Azure Portal](../../key-vault/keys/quick-create-portal.md).
 
@@ -170,15 +170,16 @@ Wanneer u versleuteling met door de klant beheerde sleutels configureert, kunt u
 
 Azure Storage kunt de door de klant beheerde sleutel die wordt gebruikt voor versleuteling automatisch bijwerken om de nieuwste sleutel versie te gebruiken. Wanneer de door de klant beheerde sleutel is gedraaid in Azure Key Vault, zal Azure Storage automatisch de meest recente versie van de sleutel gebruiken voor versleuteling.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 Als u door de klant beheerde sleutels wilt configureren met automatische updates van de sleutel versie in de Azure Portal, voert u de volgende stappen uit:
 
 1. Ga naar uw opslagaccount.
-1. Klik op de Blade **instellingen** voor het opslag account op **versleuteling**. Selecteer de optie door de **klant beheerde sleutels** , zoals wordt weer gegeven in de volgende afbeelding.
+1. Klik op de Blade **instellingen** voor het opslag account op **versleuteling**. Sleutel beheer is standaard ingesteld op door **micro soft beheerde sleutels**, zoals wordt weer gegeven in de volgende afbeelding.
 
     ![Scherm opname van de portal met versleutelings optie](./media/customer-managed-keys-configure-key-vault/portal-configure-encryption-keys.png)
 
+1. Selecteer de optie door de **klant beheerde sleutels** .
 1. Kies de optie **selecteren uit Key Vault** .
 1. Selecteer **een sleutel kluis en sleutel selecteren**.
 1. Selecteer de sleutel kluis met de sleutel die u wilt gebruiken.
@@ -236,7 +237,7 @@ az storage account update
 
 Als u de sleutel versie liever hand matig bijwerkt, geeft u de versie expliciet op op het moment dat u versleuteling configureert met door de klant beheerde sleutels. In dit geval wordt de sleutel versie in Azure Storage niet automatisch bijgewerkt wanneer er een nieuwe versie wordt gemaakt in de sleutel kluis. Als u een nieuwe sleutel versie wilt gebruiken, moet u de versie die voor Azure Storage versleuteling wordt gebruikt, hand matig bijwerken.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 Als u door de klant beheerde sleutels wilt configureren met hand matig bijwerken van de sleutel versie in de Azure Portal, geeft u de sleutel-URI op, inclusief de versie. Voer de volgende stappen uit om een sleutel als URI op te geven:
 
@@ -304,7 +305,7 @@ Wanneer u de sleutel versie hand matig bijwerkt, moet u de versleutelings instel
 
 U kunt de sleutel die u gebruikt voor Azure Storage versleuteling op elk gewenst moment wijzigen.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 Voer de volgende stappen uit om de sleutel te wijzigen met de Azure Portal:
 
@@ -326,7 +327,7 @@ Als u de sleutel wilt wijzigen met Azure CLI, roept u de [Update AZ Storage acco
 
 Als u een door de klant beheerde sleutel intrekt, wordt de koppeling tussen het opslag account en de sleutel kluis verwijderd.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 Als u door de klant beheerde sleutels wilt intrekken met de Azure Portal, schakelt u de sleutel uit zoals beschreven in door de [klant beheerde sleutels uitschakelen](#disable-customer-managed-keys).
 
@@ -355,7 +356,7 @@ az keyvault delete-policy \
 
 Wanneer u door de klant beheerde sleutels uitschakelt, wordt uw opslag account opnieuw versleuteld met door micro soft beheerde sleutels.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 Voer de volgende stappen uit om door de klant beheerde sleutels uit te scha kelen in de Azure Portal:
 

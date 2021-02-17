@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 10/14/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to connect and activate Azure Stack Edge Mini R  so I can use it to transfer data to Azure.
-ms.openlocfilehash: ee3805d128a7b6d122f93e692291db1a387cfcf5
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: e9f4d4f4ad27081bb105cdb1698438837fc2fe02
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96464181"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546666"
 ---
 # <a name="tutorial-configure-the-device-settings-for-azure-stack-edge-mini-r"></a>Zelfstudie: Apparaatinstellingen configureren voor Azure Stack Edge Mini R
 
@@ -85,7 +85,7 @@ Volg deze stappen voor het configureren van apparaatinstellingen:
         ![Pagina Update-server van lokale webinterface 2](./media/azure-stack-edge-mini-r-deploy-set-up-device-update-time/update-server-2.png)
 
         > [!NOTE] 
-        > Als er een afzonderlijke Windows Update-server is geconfigureerd en u ervoor kiest om verbinding te maken via *https* (in plaats van *http*), zijn er certificaten voor de ondertekeningsketen nodig, die vereist zijn om verbinding te maken met de update-server. Ga naar [Certificaten beheren](azure-stack-edge-j-series-manage-certificates.md) voor meer informatie over het maken en uploaden van certificaten. Als u een niet-verbonden modus wilt gebruiken, bijvoorbeeld wanneer uw Azure Stack Edge-apparaatlagen in combinatie met MDC (Modular Data Center) worden gebruikt, schakelt u de optie WSUS in. Tijdens de activering wordt door het apparaat gescand op updates. Als de server niet is ingesteld, mislukt de activering. 
+        > Als er een afzonderlijke Windows Update-server is geconfigureerd en u ervoor kiest om verbinding te maken via *https* (in plaats van *http*), zijn er certificaten voor de ondertekeningsketen nodig, die vereist zijn om verbinding te maken met de update-server. Ga naar [Certificaten beheren](azure-stack-edge-gpu-manage-certificates.md) voor meer informatie over het maken en uploaden van certificaten. Als u een niet-verbonden modus wilt gebruiken, bijvoorbeeld wanneer uw Azure Stack Edge-apparaatlagen in combinatie met MDC (Modular Data Center) worden gebruikt, schakelt u de optie WSUS in. Tijdens de activering wordt door het apparaat gescand op updates. Als de server niet is ingesteld, mislukt de activering. 
 
 2. Selecteer **Toepassen**.
 3. Nadat de update-server is geconfigureerd, selecteert u **Volgende: Tijd**.

@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure Firewall?
       href: overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   expanded: true
   items:
     - name: Implementeren met IP-groepen - ARM-sjabloon
@@ -32,6 +32,12 @@
   items:
     - name: Azure Firewall-functies
       href: features.md
+    - name: Azure Firewall Premium-functies
+      href: premium-features.md
+    - name: Azure Firewall Premium in de portal
+      href: premium-portal.md
+    - name: Premium-certificaten Azure Firewall
+      href: premium-certificates.md
     - name: FQDN-tags
       href: fqdn-tags.md
     - name: FQDN's voor infrastructuur
@@ -91,6 +97,10 @@
       displayName: 'Azure CLI, az monitor diagnostic-settings create, monitor diagnostic settings'
     - name: Azure Firewall Workbook
       href: firewall-workbook.md
+    - name: Firewall Premium implementeren en configureren
+      href: premium-deploy.md
+    - name: Migreren naar Azure Firewall Premium
+      href: premium-migrate.md
 - name: Naslaginformatie
   items:
     - name: Azure CLI

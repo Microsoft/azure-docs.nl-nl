@@ -12,12 +12,12 @@ ms.topic: end-user-help
 ms.date: 01/28/2021
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: f4640bbd445b27942d757cc4e09aa7e673550ebc
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 84dde96276414e98cbde05d6e046dce03227f60d
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99226519"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100547856"
 ---
 # <a name="frequently-asked-questions-faq-about-the-microsoft-authenticator-app"></a>Veelgestelde vragen over de Microsoft Authenticator-app
 
@@ -94,6 +94,7 @@ De Microsoft Authenticator-app heeft de Azure Authenticator-app vervangen en de 
 ### <a name="device-registration"></a>Apparaatregistratie
 
 **V**: wat is apparaatregistratie?
+
 **A**: uw organisatie vereist mogelijk dat u het apparaat registreert om de toegang tot beveiligde bronnen, zoals bestanden en apps, bij te houden. Ze kunnen ook voorwaardelijke toegang inschakelen om het risico van ongewenste toegang tot deze bronnen te verminderen. U kunt de registratie van uw apparaat bij **instellingen** opheffen, maar u kunt de toegang tot e-mail berichten in Outlook, bestanden in OneDrive verliezen en u verliest de mogelijkheid om de aanmelding via de telefoon te gebruiken.
 
 ### <a name="verification-codes-when-connected"></a>Verificatie codes bij verbinding

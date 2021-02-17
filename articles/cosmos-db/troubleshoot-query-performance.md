@@ -4,16 +4,16 @@ description: Meer informatie over het identificeren, vaststellen en oplossen van
 author: timsander1
 ms.service: cosmos-db
 ms.topic: troubleshooting
-ms.date: 02/02/2021
+ms.date: 02/16/2021
 ms.author: tisande
 ms.subservice: cosmosdb-sql
 ms.reviewer: sngun
-ms.openlocfilehash: 6875fc53a651b89fcfe88d3217ff86bd21204f6c
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 6701a580cbe7790dcce2cbbcc46889f9dff00107
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99524284"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100559989"
 ---
 # <a name="troubleshoot-query-issues-when-using-azure-cosmos-db"></a>Query-problemen bij het gebruik van Azure Cosmos DB oplossen
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -213,6 +213,12 @@ Hieronder volgen enkele algemene systeem functies die de index niet gebruiken en
 | Bovenste/onderste                         | In plaats van de systeem functie te gebruiken voor het normaliseren van gegevens voor vergelijkingen, normaliseert u de behuizing bij het invoegen. Een query zoals dat ```SELECT * FROM c WHERE UPPER(c.name) = 'BOB'``` wordt ```SELECT * FROM c WHERE c.name = 'BOB'``` . |
 | GetCurrentDateTime/GetCurrentTimestamp/GetCurrentTicks | Bereken de huidige tijd voordat de query wordt uitgevoerd en gebruik deze teken reeks waarde in de- `WHERE` component. |
 | Wiskundige functies (non-aggregaties) | Als u een waarde regel matig in uw query wilt berekenen, kunt u overwegen om de waarde op te slaan als een eigenschap in het JSON-document. |
+
+Deze systeem functies kunnen indexen gebruiken, behalve wanneer ze worden gebruikt in query's met aggregaties:
+
+| **Systeem functie**                     | **Ideeën voor optimalisatie**             |
+| --------------------------------------- |------------------------------------------------------------ |
+| Ruimtelijke systeem functies                        | Het query resultaat opslaan in een realtime weer gave |
 
 Bij gebruik in de `SELECT` -component heeft inefficiënte systeem functies geen invloed op de manier waarop query's indexen kunnen gebruiken.
 

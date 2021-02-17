@@ -2,13 +2,13 @@
 title: BareMetal instantie-eenheden in azure
 description: Meer informatie over het identificeren en gebruiken van BareMetal-exemplaar eenheden via de Azure Portal.
 ms.topic: how-to
-ms.date: 1/4/2021
-ms.openlocfilehash: b089b45c35ff05f10ae59f8ce793645361be1e9b
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.date: 02/17/2021
+ms.openlocfilehash: 076e84473a7d067712625dd12a2d5cae42bfa91a
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98733260"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548162"
 ---
 # <a name="manage-baremetal-instances-through-the-azure-portal"></a>BareMetal-instanties beheren via de Azure Portal
  
@@ -17,25 +17,9 @@ In dit artikel wordt uitgelegd hoe [BareMetal-exemplaren](baremetal-overview-arc
 ## <a name="register-the-resource-provider"></a>De resourceprovider registreren
 Een Azure-resource provider voor BareMetal-instanties biedt zicht baarheid van de instanties in de Azure Portal, momenteel beschikbaar als open bare preview. Het Azure-abonnement dat u gebruikt voor implementaties van BareMetal-exemplaar registreert standaard de resource provider *BareMetalInfrastructure* . Als uw geïmplementeerde instantie-eenheden van BareMetal niet worden weer geven, moet u de resource provider registreren bij uw abonnement. 
 
-Er zijn twee manieren om de resource provider voor de BareMetal-instantie te registreren:
- 
-* [Azure-CLI](#azure-cli)
- 
-* [Azure Portal](#azure-portal)
- 
-### <a name="azure-cli"></a>Azure CLI
- 
-Meld u aan bij het Azure-abonnement dat u gebruikt voor de implementatie van het BareMetal-exemplaar via de Azure CLI. U kunt de BareMetalInfrastructure-resource provider registreren bij:
+U kunt de resource provider voor de BareMetal-instantie registreren met behulp van de Azure Portal of Azure CLI.
 
-```azurecli-interactive
-az provider register --namespace Microsoft.BareMetalInfrastructure
-```
- 
-Zie het artikel [Azure-resource providers en-typen](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-powershell)voor meer informatie.
- 
-### <a name="azure-portal"></a>Azure Portal
- 
-U kunt de BareMetalInfrastructure-resource provider registreren via de Azure Portal.
+### <a name="portal"></a>[Portal](#tab/azure-portal)
  
 U moet uw abonnement vermelden in de Azure Portal en vervolgens dubbel klikken op het abonnement dat is gebruikt voor het implementeren van uw BareMetal-instantie-eenheden.
  
@@ -53,12 +37,32 @@ U moet uw abonnement vermelden in de Azure Portal en vervolgens dubbel klikken o
 >Als de resourceprovider niet is geregistreerd, selecteert u **Registreren**.
  
 :::image type="content" source="media/baremetal-infrastructure-portal/register-resource-provider-azure-portal.png" alt-text="Scherm opname van de geregistreerde BareMetal-instantie-eenheid":::
- 
+
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Als u Azure CLI wilt gaan gebruiken:
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+Meld u aan bij het Azure-abonnement dat u gebruikt voor de implementatie van het BareMetal-exemplaar via de Azure CLI. Registreer de `BareMetalInfrastructure` resource provider bij de opdracht [AZ provider REGI ster](/cli/azure/provider#az_provider_register) :
+
+```azurecli
+az provider register --namespace Microsoft.BareMetalInfrastructure
+```
+
+U kunt de opdracht [AZ provider List](/cli/azure/provider#az_provider_list) gebruiken om alle beschik bare providers weer te geven.
+
+---
+
+Zie [Azure resource providers en-typen](../../../azure-resource-manager/management/resource-providers-and-types.md)voor meer informatie over resource providers.
+
 ## <a name="baremetal-instance-units-in-the-azure-portal"></a>BareMetal instantie-eenheden in de Azure Portal
  
 Wanneer u een aanvraag voor een BareMetal-exemplaar verzendt, geeft u het Azure-abonnement op dat u aan de BareMetal-instanties wilt koppelen. Gebruik hetzelfde abonnement dat u gebruikt om de toepassingslaag te implementeren die werkt op basis van de BareMetal-exemplaar-eenheden.
  
 Tijdens de implementatie van uw BareMetal-instanties wordt een nieuwe [Azure-resource groep](../../../azure-resource-manager/management/manage-resources-portal.md) gemaakt in het Azure-abonnement dat u in de implementatie aanvraag hebt gebruikt. Deze nieuwe resource groep bevat een lijst met alle BareMetal instantie-eenheden die u in het specifieke abonnement hebt geïmplementeerd.
+
+### <a name="portal"></a>[Portal](#tab/azure-portal)
 
 1. Selecteer in het BareMetal-abonnement in de Azure Portal **resource groepen**.
  
@@ -75,10 +79,27 @@ Tijdens de implementatie van uw BareMetal-instanties wordt een nieuwe [Azure-res
    
    >[!NOTE]
    >Als u meerdere BareMetal-exemplaar-tenants hebt geïmplementeerd onder hetzelfde Azure-abonnement, ziet u meerdere Azure-resource groepen.
- 
+
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Als u al uw BareMetal-instanties wilt weer geven, voert u de opdracht [AZ baremetalinstance List](/cli/azure/ext/baremetal-infrastructure/baremetalinstance#ext_baremetal_infrastructure_az_baremetalinstance_list) uit voor uw resource groep:
+
+```azurecli
+az baremetalinstance list --resource-group DSM05A-T550 –output table
+```
+
+> [!TIP]
+> De `--output` para meter is een globale para meter die beschikbaar is voor alle opdrachten. De **tabel** waarde geeft uitvoer met een beschrijvende indeling. Zie [output formats for Azure cli-opdrachten](/cli/azure/format-output-azure-cli)voor meer informatie.
+
+---
+
 ## <a name="view-the-attributes-of-a-single-instance"></a>De kenmerken van één exemplaar weer geven
- 
-U kunt de details van één eenheid weer geven. Selecteer in de lijst van de BareMetal-instantie het ene exemplaar dat u wilt weer geven.
+
+U kunt de details van één eenheid weer geven.
+
+### <a name="portal"></a>[Portal](#tab/azure-portal)
+
+Selecteer in de lijst van de BareMetal-instantie het ene exemplaar dat u wilt weer geven.
  
 :::image type="content" source="media/baremetal-infrastructure-portal/view-attributes-single-baremetal-instance.png" alt-text="Scherm opname van de BareMetal exemplaar-eenheids kenmerken van één exemplaar" lightbox="media/baremetal-infrastructure-portal/view-attributes-single-baremetal-instance.png":::
  
@@ -101,6 +122,18 @@ Aan de rechter kant ziet u ook de naam van de [locatie van de Azure nabijheid](.
  
 >[!TIP]
 >Als u de toepassingslaag in hetzelfde Azure-Data Center wilt vinden als revisie 4. x, raadpleegt u [Azure proximity placement groups voor optimale netwerk latentie](../../../virtual-machines/workloads/sap/sap-proximity-placement-scenarios.md).
+
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Voer de opdracht [AZ baremetalinstance show](/cli/azure/ext/baremetal-infrastructure/baremetalinstance#ext_baremetal_infrastructure_az_baremetalinstance_show) uit om de details van een BareMetal-exemplaar weer te geven:
+
+```azurecli
+az baremetalinstance show --resource-group DSM05A-T550 --instance-name orcllabdsm01
+```
+
+Als u niet zeker weet wat de naam van het exemplaar is, voert u de `az baremetalinstance list` opdracht uit, zoals hierboven beschreven.
+
+---
  
 ## <a name="check-activities-of-a-single-instance"></a>Activiteiten van één exemplaar controleren
  
@@ -113,11 +146,31 @@ Wijzigingen in de meta gegevens van de eenheid in Azure worden ook vastgelegd in
 Wanneer u een [tag](../../../azure-resource-manager/management/tag-resources.md) toevoegt aan of verwijdert uit een-instantie, wordt een andere activiteit die wordt geregistreerd, verwijderd.
  
 ## <a name="add-and-delete-an-azure-tag-to-an-instance"></a>Een Azure-tag toevoegen aan en verwijderen uit een exemplaar
+
+### <a name="portal"></a>[Portal](#tab/azure-portal)
  
 U kunt Azure-Tags toevoegen aan een BareMetal-instantie-eenheid of ze verwijderen. De manier waarop Tags Get wordt toegewezen, verschilt niet van het toewijzen van tags aan Vm's. Net als bij Vm's bestaan de tags in de meta gegevens van Azure en voor BareMetal-instanties dezelfde beperkingen als de labels voor Vm's.
  
 Het verwijderen van Tags werkt op dezelfde manier als met virtuele machines. Het Toep assen en verwijderen van een tag wordt weer gegeven in het activiteiten logboek van het BareMetal-exemplaar.
- 
+
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Het toewijzen van labels aan BareMetal-instanties werkt hetzelfde als voor virtuele machines. De tags bevinden zich in de Azure-meta gegevens en voor BareMetal-instanties hebben ze dezelfde beperkingen als de labels voor Vm's.
+
+Voer de opdracht [AZ baremetalinstance update](/cli/azure/ext/baremetal-infrastructure/baremetalinstance#ext_baremetal_infrastructure_az_baremetalinstance_update) uit om tags toe te voegen aan een BareMetal-exemplaar:
+
+```azurecli
+az baremetalinstance update --resource-group DSM05a-T550 --instance-name orcllabdsm01 --set tags.Dept=Finance tags.Status=Normal
+```
+
+Gebruik dezelfde opdracht om een tag te verwijderen:
+
+```azurecli
+az baremetalinstance update --resource-group DSM05a-T550 --instance-name orcllabdsm01 --remove tags.Dept
+```
+
+---
+
 ## <a name="check-properties-of-an-instance"></a>De eigenschappen van een exemplaar controleren
  
 Wanneer u de exemplaren aanschaft, kunt u naar de sectie eigenschappen gaan om de gegevens weer te geven die zijn verzameld over de instanties. De verzamelde gegevens zijn onder andere de Azure-connectiviteit, de opslag back-end, de ExpressRoute-circuit-ID, de unieke Resource-ID en de abonnements-ID. U gebruikt deze informatie in ondersteunings aanvragen of bij het instellen van de configuratie van de opslag momentopname.
@@ -127,15 +180,29 @@ Een ander belang rijk stukje informatie dat u ziet, is het IP-adres van de opsla
 :::image type="content" source="media/baremetal-infrastructure-portal/baremetal-instance-properties.png" alt-text="Scherm afbeelding met de instellingen voor de BareMetal-instantie" lightbox="media/baremetal-infrastructure-portal/baremetal-instance-properties.png":::
  
 ## <a name="restart-a-unit-through-the-azure-portal"></a>Een eenheid opnieuw opstarten via de Azure Portal
- 
-Er zijn verschillende situaties waarin het besturings systeem niet opnieuw moet worden opgestart, waardoor de BareMetal-exemplaar-eenheid opnieuw moet worden opgestart. U kunt een energie opnieuw opstarten van de eenheid rechtstreeks vanuit de Azure Portal:
+
+Er zijn verschillende situaties waarin het besturings systeem niet opnieuw moet worden opgestart, waardoor de BareMetal-exemplaar-eenheid opnieuw moet worden opgestart.
+
+### <a name="portal"></a>[Portal](#tab/azure-portal)
+
+U kunt een energie opnieuw opstarten van de eenheid rechtstreeks vanuit de Azure Portal:
  
 Selecteer **opnieuw opstarten** en vervolgens **Ja** om te bevestigen dat de eenheid opnieuw moet worden opgestart.
  
 :::image type="content" source="media/baremetal-infrastructure-portal/baremetal-instance-restart.png" alt-text="Scherm afbeelding waarin wordt weer gegeven hoe de BareMetal-exemplaar eenheid opnieuw moet worden opgestart":::
  
 Wanneer u een BareMetal-instantie-eenheid opnieuw opstart, treden er een vertraging op. Tijdens deze vertraging gaat de energie status van **Start** naar **gestart**, wat betekent dat het besturings systeem volledig is gestart. Als gevolg hiervan kunt u na het opnieuw opstarten zich niet aanmelden bij de eenheid zodra de status overschakelt naar **gestart**.
- 
+
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Als u een BareMetal-exemplaar opnieuw wilt starten, gebruikt u de opdracht [AZ baremetalinstance restart](/cli/azure/ext/baremetal-infrastructure/baremetalinstance#ext_baremetal_infrastructure_az_baremetalinstance_restart) :
+
+```azurecli
+az baremetalinstance restart --resource-group DSM05a-T550 --instance-name orcllabdsm01
+```
+
+---
+
 >[!IMPORTANT]
 >Afhankelijk van de hoeveelheid geheugen in uw BareMetal-instantie-eenheid, kan het opnieuw opstarten en opnieuw opstarten van de hardware en het besturings systeem een uur duren.
  

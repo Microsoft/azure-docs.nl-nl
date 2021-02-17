@@ -1,6 +1,6 @@
 ---
-title: Azure spot-Vm's gebruiken
-description: Meer informatie over het gebruik van Azure spot Vm's om kosten op te slaan.
+title: Azure Spot Virtual Machines gebruiken
+description: Meer informatie over het gebruik van Azure Spot Virtual Machines om kosten op te slaan.
 author: JagVeerappan
 ms.author: jagaveer
 ms.service: virtual-machines
@@ -8,23 +8,23 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 10/05/2020
 ms.reviewer: cynthn
-ms.openlocfilehash: 1e82da3bc45bc8fb88b3955bd59091372f56d292
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 460529ab6e3227a998ac04c4819171274307ff9e
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100375456"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100557821"
 ---
-# <a name="use-spot-vms-in-azure"></a>Gebruik van een spot Vm's in azure
+# <a name="use-azure-spot-virtual-machines"></a>Azure Spot Virtual Machines gebruiken 
 
-Met behulp van spot Vm's kunt u profiteren van onze ongebruikte capaciteit tegen een aanzienlijke kosten besparing. Op elk moment dat Azure de capaciteit nodig heeft, verwijdert de Azure-infra structuur spot Vm's. Daarom zijn de virtuele machines geschikt voor werk belastingen die onderbrekingen kunnen afhandelen, zoals batch verwerkings taken, ontwikkel-en test omgevingen, grootschalige werk belastingen en meer.
+Met behulp van Azure Spot Virtual Machines kunt u profiteren van onze ongebruikte capaciteit tegen een aanzienlijke kosten besparing. Op elk moment dat Azure de capaciteit nodig heeft, verwijdert de Azure-infra structuur Azure Spot Virtual Machines. Daarom zijn Azure Spot Virtual Machines geweldig voor workloads die onderbrekingen kunnen afhandelen, zoals batch verwerkings taken, ontwikkel-en test omgevingen, grootschalige werk belastingen en meer.
 
-De hoeveelheid beschik bare capaciteit kan variëren op basis van grootte, regio, tijd van de dag en meer. Bij het implementeren van spot-Vm's worden de Vm's door Azure toegewezen als er capaciteit beschikbaar is, maar er is geen SLA voor deze Vm's. Een spot-VM biedt geen garanties voor hoge Beschik baarheid. Op elk moment dat Azure de capaciteit nodig heeft, worden virtuele machines met de Azure-infra structuur met een kennisgeving van 30 seconden verwijderd. 
+De hoeveelheid beschik bare capaciteit kan variëren op basis van grootte, regio, tijd van de dag en meer. Wanneer u Azure Spot Virtual Machines implementeert, worden de Vm's door Azure toegewezen als er capaciteit beschikbaar is, maar er is geen SLA voor deze Vm's. Een Azure spot-virtuele machine biedt geen garanties voor hoge Beschik baarheid. Op elk moment dat Azure de capaciteit nodig heeft, verwijdert de Azure-infra structuur Azure Spot Virtual Machines met een kennisgeving van dertig seconden. 
 
 
 ## <a name="eviction-policy"></a>Verwijderingsbeleid
 
-Vm's kunnen worden verwijderd op basis van de capaciteit of de maximale prijs die u hebt ingesteld. Bij het maken van een spot-VM kunt u het verwijderings beleid zo instellen dat de *toewijzing wordt opheffen* (standaard) of *verwijderen*. 
+Vm's kunnen worden verwijderd op basis van de capaciteit of de maximale prijs die u hebt ingesteld. Wanneer u een virtuele machine van Azure spot maakt, kunt u het verwijderings beleid instellen op *toewijzing* (standaard) of *verwijderen*. 
 
 Het beleid voor het ongedaan maken van de *toewijzing* verplaatst de virtuele machine naar de status stopped-deallocated, zodat u deze later opnieuw kunt implementeren. Er is echter geen garantie dat de toewijzing slaagt. De toegewezen Vm's worden geteld bij uw quotum en er worden kosten in rekening gebracht voor de onderliggende schijven. 
 
@@ -47,11 +47,11 @@ U kunt zich aanmelden om in-VM-meldingen te ontvangen via [Azure Scheduled Event
 
 ## <a name="limitations"></a>Beperkingen
 
-De volgende VM-grootten worden niet ondersteund voor spot-Vm's:
+De volgende VM-grootten worden niet ondersteund voor Azure Spot Virtual Machines:
  - B-serie
  - Promotie versies van elke grootte (zoals dv2, NV, NC, H promotie grootten)
 
-Spot-Vm's kunnen worden geïmplementeerd in elke regio, met uitzonde ring van Microsoft Azure-China 21Vianet.
+Azure Spot Virtual Machines kan worden geïmplementeerd in elke regio, met uitzonde ring Microsoft Azure China 21Vianet.
 
 <a name="channel"></a>
 
@@ -65,7 +65,7 @@ De volgende [aanbiedings typen](https://azure.microsoft.com/support/legal/offer-
 
 ## <a name="pricing"></a>Prijzen
 
-Prijzen voor spot Vm's zijn variabel, op basis van de regio en de SKU. Zie prijzen voor VM'S voor [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) en [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/)voor meer informatie. 
+Prijzen voor Azure Spot Virtual Machines is variabel, op basis van de regio en de SKU. Zie prijzen voor VM'S voor [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) en [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/)voor meer informatie. 
 
 U kunt ook een query uitvoeren op prijs informatie met behulp van de [Azure retail prijs API](/rest/api/cost-management/retail-prices/azure-retail-prices) om te zoeken naar informatie over de prijzen. De `meterName` en `skuName` zijn beide opgenomen `Spot` .
 
@@ -87,24 +87,24 @@ U kunt historische prijzen en verwijderings tarieven weer geven per grootte in e
 
 ##  <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
-**V:** Eenmaal gemaakt is dit een plek-VM die gelijk is aan de normale standaard-VM?
+**V:** Eenmaal gemaakt, is de virtuele machine van Azure op dezelfde manier als de normale standaard-VM?
 
-**A:** Ja, behalve als er geen SLA is voor de spot-Vm's, en ze kunnen op elk gewenst moment worden verwijderd.
+**A:** Ja, behalve als er geen SLA voor Azure Spot Virtual Machines is en deze op elk gewenst moment kunnen worden verwijderd.
 
 
 **V:** Wat te doen wanneer u weggaat, maar nog steeds capaciteit nodig heeft?
 
-**A:** U wordt aangeraden standaard Vm's te gebruiken in plaats van op de plek waar u de capaciteit direct nodig hebt.
+**A:** U wordt aangeraden standaard Vm's te gebruiken in plaats van Azure Spot Virtual Machines als u capaciteit direct nodig hebt.
 
 
-**V:** Hoe wordt het quotum beheerd voor de plaats van virtuele machines?
+**V:** Hoe wordt het quotum beheerd voor Azure Spot Virtual Machines?
 
-**A:** Spot Vm's hebben een afzonderlijke quotum groep. Het steun quotum wordt gedeeld tussen Vm's en scale-set-exemplaren. Zie [Azure-abonnement- en servicelimieten, quota en beperkingen](../azure-resource-manager/management/azure-subscription-service-limits.md) voor meer informatie.
+**A:** Azure Spot Virtual Machines heeft een afzonderlijke quota groep. Het steun quotum wordt gedeeld tussen Vm's en scale-set-exemplaren. Zie [Azure-abonnement- en servicelimieten, quota en beperkingen](../azure-resource-manager/management/azure-subscription-service-limits.md) voor meer informatie.
 
 
-**V:** Kan ik een extra quotum voor plaats vragen?
+**V:** Kan ik een extra quotum voor Azure Spot Virtual Machines aanvragen?
 
-**A:** Ja, u kunt de aanvraag indienen om uw quotum voor de begeleide Vm's te verhogen via het [standaard quotum aanvraag proces](../azure-portal/supportability/per-vm-quota-requests.md).
+**A:** Ja, u kunt de aanvraag indienen om uw quotum voor Azure Spot Virtual Machines te verhogen via het [standaard quotum aanvraag proces](../azure-portal/supportability/per-vm-quota-requests.md).
 
 
 **V:** Waar kan ik vragen plaatsen?
@@ -117,8 +117,8 @@ U kunt historische prijzen en verwijderings tarieven weer geven per grootte in e
 **A:** Voordat u de maximum prijs kunt wijzigen, moet u de toewijzing van de virtuele machine ongedaan maken. Vervolgens kunt u de maximum prijs wijzigen in de portal, vanuit de **configuratie** sectie voor de virtuele machine. 
 
 ## <a name="next-steps"></a>Volgende stappen
-Gebruik de [cli](./linux/spot-cli.md)-, [Portal](spot-portal.md)-, [arm-sjabloon](./linux/spot-template.md)of [Power shell](./windows/spot-powershell.md) voor het implementeren van spot-vm's.
+Gebruik de [cli](./linux/spot-cli.md), [Portal](spot-portal.md), [arm-sjabloon](./linux/spot-template.md)of [Power shell](./windows/spot-powershell.md) om Azure spot virtual machines te implementeren.
 
-U kunt ook een [schaalset implementeren met steun-VM-exemplaren](../virtual-machine-scale-sets/use-spot.md).
+U kunt ook een [schaalset implementeren met Azure spot-exemplaren van virtuele machines](../virtual-machine-scale-sets/use-spot.md).
 
 Als er een fout optreedt, raadpleegt u [fout codes](./error-codes-spot.md).

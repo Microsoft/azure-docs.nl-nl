@@ -4,6 +4,14 @@
   items:
     - name: Over Kubernetes met Azure Arc
       href: overview.md
+- name: Concepten
+  items:
+    - name: Agent architectuur
+      href: conceptual-agent-architecture.md
+    - name: Configuraties en GitOps
+      href: conceptual-configurations.md
+    - name: Veelgestelde vragen
+      href: faq.md
 - name: Instructiegidsen
   items:
     - name: Verbinding maken met Azure Arc
@@ -12,7 +20,7 @@
           href: connect-cluster.md
         - name: Onboarding van een service-principal
           href: create-onboarding-service-principal.md
-    - name: Beheren
+    - name: Scenario's
       items:
         - name: Configuraties implementeren met GitOps
           href: use-gitops-connected-cluster.md

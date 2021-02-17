@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 08/06/2019
+ms.date: 02/11/2021
 ms.author: jeedes
-ms.openlocfilehash: 16c9d64cc4dd49898245d74108cd6a4f2f0e4660
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.openlocfilehash: ed3a808085e09ec7b5989fc623cc9129244ca2a6
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92455167"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100559037"
 ---
 # <a name="tutorial-integrate-costpoint-with-azure-active-directory"></a>Zelfstudie: Costpoint integreren met Azure Active Directory
 
@@ -26,145 +26,108 @@ In deze zelfstudie leert u hoe u Costpoint kunt integreren met Azure AD (Active 
 * Ervoor zorgen dat gebruikers zich automatisch met hun Azure AD-account kunnen aanmelden bij Costpoint.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
 
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
-
 ## <a name="prerequisites"></a>Vereisten
 
 U hebt het volgende nodig om aan de slag te gaan:
 
 * Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
-* Een Costpoint-abonnement waarvoor eenmalige aanmelding is ingeschakeld.
+* Costpoint-abonnement dat is ingeschakeld voor eenmalige aanmelding (SSO).
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
-In deze zelfstudie configureert en test u eenmalige aanmelding van Azure AD in een testomgeving. Costpoint biedt ondersteuning voor met **SP en IDP** geïnitieerde eenmalige aanmelding.
+In deze zelfstudie configureert en test u eenmalige aanmelding van Azure AD in een testomgeving. 
+
+* Costpoint biedt ondersteuning voor met **SP en IDP** geïnitieerde eenmalige aanmelding.
 
 ## <a name="generate-costpoint-metadata"></a>Metagegevens voor Costpoint genereren
 
-Costpoint SAML SSO-configuratie wordt uitgelegd in de handleiding **DeltekCostpoint711Security.pdf** . Download deze handleiding op de ondersteuningssite van Deltek Costpoint en raadpleeg de sectie **Eenmalige aanmelding instellen met SAML** > **Eenmalige aanmelding van SAML instellen tussen Costpoint en Microsoft Azure** . Volg de instructies en genereer een **XML-bestand met federatieve metagegevens voor Costpoint SP** . 
+Costpoint SAML SSO-configuratie wordt uitgelegd in de handleiding **DeltekCostpoint711Security.pdf**. Download deze handleiding op de ondersteuningssite van Deltek Costpoint en raadpleeg de sectie **Eenmalige aanmelding instellen met SAML** > **Eenmalige aanmelding van SAML instellen tussen Costpoint en Microsoft Azure**. Volg de instructies en genereer een **XML-bestand met federatieve metagegevens voor Costpoint SP**. 
 
-![Schermopname van het 'hulpprogramma voor productconfiguratie'; het tabblad 'WebLogic-beveiliging' is geselecteerd.](./media/costpoint-tutorial/config-utility.png)
+![Schermopname van het 'hulpprogramma voor productconfiguratie'; het tabblad 'WebLogic-beveiliging' is geselecteerd.](./media/costpoint-tutorial/configuration-utility.png)
 
 ## <a name="add-costpoint-from-the-gallery"></a>Costpoint toevoegen vanuit de galerie
 
-Om Costpoint te integreren met Azure AD voegt u Costpoint eerst vanuit de galerie toe aan de lijst met beheerde SaaS-apps in Azure Portal:
+Als u de integratie van Costpoint in azure AD wilt configureren, moet u Costpoint uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
+1. Typ in de sectie **toevoegen vanuit de galerie** **Costpoint** in het zoekvak.
+1. Selecteer **Costpoint** uit het paneel resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
+## <a name="configure-and-test-azure-ad-sso-for-costpoint"></a>Azure AD SSO voor Costpoint configureren en testen
 
-   ![De knop Azure Active Directory](common/select-azuread.png)
+Azure AD SSO met Costpoint configureren en testen met behulp van een test gebruiker met de naam **B. Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Costpoint.
 
-1. Selecteer **Bedrijfstoepassingen** > **Alle toepassingen** .
+Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met Costpoint:
 
-   ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
+1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
+    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
+    1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
+1. **[COSTPOINT SSO configureren](#configure-costpoint-sso)** : voor het configureren van de instellingen voor eenmalige aanmelding aan de kant van de toepassing.
+    1. **[Maak een Costpoint-test gebruiker](#create-costpoint-test-user)** -om een equivalent van B. Simon in Costpoint te hebben dat is gekoppeld aan de Azure AD-representatie van de gebruiker.
+1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-1. Als u een nieuwe toepassing wilt toevoegen, selecteert u **Nieuwe toepassing** .
-
-   ![De knop Nieuwe toepassing](common/add-new-app.png)
-
-1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak: **Costpoint** .
-
-   ![Costpoint in de resultatenlijst](common/search-new-app.png)
-
-1. Selecteer **SiteIntel** in de resultatenlijst, en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
-
-## <a name="configure-and-test-azure-ad-single-sgn-on"></a>Eenmalige aanmelding van Azure AD configureren en testen
-
-Configureer en test eenmalige aanmelding van Azure AD met Costpoint met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Costpoint.
-
-Als u eenmalige aanmelding van Azure AD wilt configureren en testen met Costpoint, voert u de volgende procedures uit:
-
-1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** zodat uw gebruikers deze functie kunnen gebruiken.
-1. **[Configureer Costpoint](#configure-costpoint)** om de instellingen voor eenmalige aanmelding aan de toepassingszijde te configureren.
-1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** om eenmalige aanmelding van Azure AD te testen met B.Simon.
-1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
-1. **[Een Costpoint-testgebruiker maken](#create-a-costpoint-test-user)** : als u een tegenhanger van B.Simon in Costpoint wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
-1. **[Eenmalige aanmelding testen](#test-sso)** om te controleren of de configuratie werkt.
-
-### <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
+## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in de Azure-portal:
 
-1. Selecteer op de integratiepagina van de toepassing **Costpoint** de optie **Eenmalige aanmelding** .
+1. Selecteer op de integratiepagina van de toepassing **Costpoint** de optie **Eenmalige aanmelding**.
 
-   ![De koppeling voor eenmalige aanmelding configureren](common/select-sso.png)
-
-1. Voltooi in de sectie **Standaard SAML-configuratie** deze stappen als u het *Service Provider-metagegevensbestand* hebt:
+1. Voltooi in de sectie **Standaard SAML-configuratie** deze stappen als u het **Service Provider-metagegevensbestand** hebt:
 
    > [!NOTE]
    > U downloadt het Service Provider-metagegevensbestand in [Metagegevens voor Costpoint genereren](#generate-costpoint-metadata). Later in de zelfstudie wordt uitgelegd hoe u het bestand gebruikt.
  
-   1. Selecteer de knop **Metagegevensbestand uploaden** . Selecteer het **XML-bestand met federatieve metagegevens voor Costpoint SP** dat eerder is gegenereerd in Costpoint, en selecteer vervolgens de knop **Toevoegen** om het bestand te uploaden.
+   1. Selecteer de knop **Metagegevensbestand uploaden**. Selecteer het **XML-bestand met federatieve metagegevens voor Costpoint SP** dat eerder is gegenereerd in Costpoint, en selecteer vervolgens de knop **Toevoegen** om het bestand te uploaden.
 
       ![Het metagegevensbestand uploaden](./media/costpoint-tutorial/upload-metadata.png)
     
    1. Wanneer het metagegevensbestand is geüpload, worden de waarde voor **Id** en **Antwoord-URL** automatisch ingevuld in de Costpoint-sectie.
 
       > [!NOTE]
-      > Als de waarden voor **Id** en **Antwoord-URL** niet automatisch worden ingevuld, voert u de waarden handmatig in afhankelijk van uw vereisten. Controleer of **Id (Entiteits-id)** en **Antwoord-URL (URL voor Assertion Consumer Service)** juist zijn ingesteld, en dat **ACS-URL** een geldige Costpoint-URL is die eindigt met **/LoginServlet.cps** .
+      > Als de waarden voor **Id** en **Antwoord-URL** niet automatisch worden ingevuld, voert u de waarden handmatig in afhankelijk van uw vereisten. Controleer of **Id (Entiteits-id)** en **Antwoord-URL (URL voor Assertion Consumer Service)** juist zijn ingesteld, en dat **ACS-URL** een geldige Costpoint-URL is die eindigt met **/LoginServlet.cps**.
 
-   1. Selecteer **Extra URL's instellen** . Voer voor **Relaystatus** een waarde in met het volgende patroon:`system=[your system]` (bijvoorbeeld **system=DELTEKCP** ).
+   1. Selecteer **Extra URL's instellen**. Voer voor **Relaystatus** een waarde in met het volgende patroon:`system=[your system]` (bijvoorbeeld **system=DELTEKCP**).
 
 1. Selecteer op de pagina **Eenmalige aanmelding instellen met SAML** in de sectie **SAML-handtekeningcertificaat** het pictogram **Kopiëren** om de **App-URL voor federatieve metagegevens** te kopiëren, en sla deze op in Kladblok.
 
    ![SAML-handtekeningcertificaat](common/copy-metadataurl.png)
 
-### <a name="configure-costpoint"></a>Costpoint configureren
-
-1. Ga terug naar het hulpprogramma voor Costpoint-configuratie. Plak in het tekstvak **XML-bestand met federatieve IdP-metagegevens** de inhoud van het bestand *App-URL voor federatieve metagegevens* . 
-
-   ![Hulpprogramma voor Costpoint-configuratie](./media/costpoint-tutorial/config-utility-idp.png)
-
-1. Ga verder met de instructies uit de handleiding **DeltekCostpoint711Security.pdf** om het instellen van Costpoint SAML te voltooien.
-
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
-Het doel van deze sectie is om in Azure Portal een testgebruiker te maken met de naam B.Simon.
+In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in de Azure-portal aan de linkerkant **Azure Active Directory** > **Gebruikers** > **Alle gebruikers** .
-
-   ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
-
-1. Selecteer **Nieuwe gebruiker** .
-
-   ![Knop Nieuwe gebruiker](common/new-user.png)
-
-1. Ga als volgt te werk in het venster dat  verschijnt:
-
-   ![Het dialoogvenster Gebruiker](common/user-properties.png)
-
-   1. Typ **B.Simon** in het veld **Naam** .
-   
-   1. Voer in het veld **Gebruikersnaam** in: `b.simon\@yourcompanydomain.extension` (bijvoorbeeld B.Simon@contoso.com).
-   
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het veld **Wachtwoord** .
-   
-   1. Selecteer **Maken** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
+   1. Voer in het veld **Naam**`B.Simon` in.  
+   1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
-In deze sectie geeft u B.Simon de mogelijkheid om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Costpoint.
+In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen aan Costpoint.
 
-1. Selecteer in de Azure-portal **Bedrijfstoepassingen** > **Alle toepassingen** .
-
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Costpoint** in de lijst met toepassingen.
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-1. Selecteer op de overzichtspagina van de app in de sectie **Beheren** de optie **Gebruikers en groepen** .
+## <a name="configure-costpoint-sso"></a>Costpoint SSO configureren
 
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
+1. Ga terug naar het hulpprogramma voor Costpoint-configuratie. Plak in het tekstvak **XML-bestand met federatieve IdP-metagegevens** de inhoud van het bestand *App-URL voor federatieve metagegevens*. 
 
-1. Selecteer **Gebruiker toevoegen** . Selecteer **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+   ![Hulpprogramma voor Costpoint-configuratie](./media/costpoint-tutorial/configuration-utility-metadata.png)
 
-   ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
+1. Ga verder met de instructies uit de handleiding **DeltekCostpoint711Security.pdf** om het instellen van Costpoint SAML te voltooien.
 
-1. Selecteer **B.Simon** in de lijst **Gebruikers** in het dialoogvenster **Gebruikers en groepen** . Kies vervolgens **Selecteren** .
-
-1. Als u een rolwaarde verwacht in de SAML-assertie, selecteert u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst. Kies vervolgens **Selecteren** .
-
-1. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen** .
-
-### <a name="create-a-costpoint-test-user"></a>Een Costpoint-testgebruiker maken
+### <a name="create-costpoint-test-user"></a>Costpoint-test gebruiker maken
 
 In deze sectie maakt u een gebruiker in Costpoint. Stel dat de gebruikers-id **B.SIMON** is, en dat de naam van de gebruiker **B.Simon** is. Neem contact op met het [klantondersteuningsteam van Costpoint](https://www.deltek.com/about/contact-us) om de gebruiker toe te voegen aan het Costpoint-platform. De gebruiker moet worden gemaakt en geactiveerd voordat deze eenmalige aanmelding kan gebruiken.
 
@@ -172,14 +135,22 @@ Nadat de gebruiker is gemaakt, moet de geselecteerde **Verificatiemethode** van 
 
 ![Costpoint-gebruiker](./media/costpoint-tutorial/costpoint-user.png)
 
-### <a name="test-sso"></a>Eenmalige aanmelding testen
+## <a name="test-sso"></a>Eenmalige aanmelding testen
 
-Wanneer u in het toegangsvenster de tegel Costpoint selecteert, wordt u automatisch aangemeld bij de Costpoint-toepassing omdat u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+#### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de URL voor Costpoint-aanmelding, waar u de aanmeldings stroom kunt initiëren.  
 
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
+* Ga rechtstreeks naar de URL voor Costpoint-aanmelding en start de aanmeldings stroom vanaf daar.
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+#### <a name="idp-initiated"></a>Met IDP geïnitieerd:
+
+* Klik op **test deze toepassing** in azure Portal en u moet automatisch worden aangemeld bij de Costpoint waarvoor u de SSO hebt ingesteld. 
+
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de tegel Costpoint in de app mijn apps klikt, wordt u omgeleid naar de aanmeldings pagina van de toepassing om de aanmeldings stroom te initiëren en als deze in de IDP-modus is geconfigureerd, moet u automatisch worden aangemeld bij de Costpoint waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+
+## <a name="next-steps"></a>Volgende stappen
+
+Nadat u Costpoint hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

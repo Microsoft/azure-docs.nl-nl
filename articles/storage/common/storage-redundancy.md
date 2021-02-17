@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 01/19/2021
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 598673bca5b893236cfd38a7fa220ff25ee9dd7e
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 78958dc0f95d2bc7a9e393ac2e769a97f7e92efa
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100388512"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556453"
 ---
 # <a name="azure-storage-redundancy"></a>Azure Storage-redundantie
 
@@ -200,7 +200,7 @@ In de volgende tabel ziet u welke redundantie opties worden ondersteund door elk
 
 | LRS | ZRS | GRS/RA-GRS | GZRS/RA-GZRS |
 |:-|:-|:-|:-|
-| Algemeen gebruik v2<br /> Algemeen gebruik v1<br /> Blob-opslag blok keren<br /> Blob Storage<br /> File Storage | Algemeen gebruik v2<br /> Blob-opslag blok keren<br /> File Storage | Algemeen gebruik v2<br /> Algemeen gebruik v1<br /> Blob Storage | Algemeen gebruik v2 |
+| Algemeen gebruik v2<br /> Algemeen gebruik v1<br /> BlockBlobStorage<br /> BlobStorage<br /> FileStorage | Algemeen gebruik v2<br /> BlockBlobStorage<br /> FileStorage | Algemeen gebruik v2<br /> Algemeen gebruik v1<br /> BlobStorage | Algemeen gebruik v2 |
 
 Alle gegevens voor alle opslag accounts worden gekopieerd op basis van de redundantie optie voor het opslag account. Objecten inclusief blok-blobs, toevoeg-blobs, pagina-blobs, wacht rijen, tabellen en bestanden worden gekopieerd. Gegevens in alle lagen, inclusief de laag Archive, worden gekopieerd. Zie [Azure Blob Storage: warme, cool en archief toegangs lagen](../blobs/storage-blob-storage-tiers.md)voor meer informatie over blob-lagen.
 

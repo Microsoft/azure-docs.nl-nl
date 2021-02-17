@@ -15,12 +15,12 @@ ms.date: 11/10/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: seohack1, devx-track-azurecli
-ms.openlocfilehash: e30af9522d7c8fa81c4d93e11d252aefc4426586
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: d77468619fcd67887273b2fbd452b37add1e19b0
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184260"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555879"
 ---
 # <a name="troubleshoot-azure-rbac"></a>Problemen met Azure RBAC oplossen
 
@@ -51,7 +51,7 @@ $ras.Count
 
 ## <a name="problems-with-azure-role-assignments"></a>Problemen met Azure-roltoewijzingen
 
-- Als u geen roltoewijzing kunt toevoegen in de Azure Portal op **toegangs beheer (IAM),** **omdat de**  >  optie **toewijzing van roltoewijzing** toevoegen is uitgeschakeld of omdat u de machtigingen fout ' de client met object-id heeft geen toestemming hebt om actie uit te voeren ', Controleer of u momenteel bent aangemeld met een gebruiker aan wie een rol is toegewezen die de machtiging heeft `Microsoft.Authorization/roleAssignments/write` , zoals [eigenaar](built-in-roles.md#owner) of [gebruikers toegangs beheerder](built-in-roles.md#user-access-administrator) in het bereik dat u probeert toe te wijzen aan de rol.
+- Als u geen rol kunt toewijzen in de Azure Portal op **toegangs beheer (IAM),** **omdat de**  >  optie **toewijzing van roltoewijzing** toevoegen is uitgeschakeld of omdat u de machtigingen fout ' de client met object-id heeft geen toestemming hebt om actie uit te voeren ', Controleer of u momenteel bent aangemeld met een gebruiker aan wie een rol is toegewezen die de `Microsoft.Authorization/roleAssignments/write` machtiging heeft, zoals [eigenaar](built-in-roles.md#owner) of [gebruikers toegangs beheerder](built-in-roles.md#user-access-administrator) in het bereik dat u probeert toe te wijzen aan de rol.
 - Als u een Service-Principal gebruikt om rollen toe te wijzen, kunt u het volgende fout bericht krijgen: onvoldoende bevoegdheden om de bewerking te volt ooien. Stel bijvoorbeeld dat u een Service-Principal hebt waaraan de rol eigenaar is toegewezen en u probeert de volgende roltoewijzing te maken als service-principal met behulp van Azure CLI:
 
     ```azurecli
@@ -63,7 +63,7 @@ $ras.Count
 
     Er zijn twee manieren om deze fout op te lossen. De eerste manier is het toewijzen van de rol van de [Directory lezers](../active-directory/roles/permissions-reference.md#directory-readers) aan de Service-Principal zodat deze gegevens in de map kan lezen.
 
-    De tweede manier om deze fout op te lossen is door de roltoewijzing te maken met behulp `--assignee-object-id` van de para meter in plaats van `--assignee` . Als u `--assignee-object-id` Azure cli gebruikt, wordt de Azure AD-zoek opdracht overs Laan. U moet de object-ID van de gebruiker, groep of toepassing ophalen waaraan u de rol wilt toewijzen. Zie [Azure-roltoewijzingen toevoegen of verwijderen met Azure cli](role-assignments-cli.md#add-role-assignment-for-a-new-service-principal-at-a-resource-group-scope)voor meer informatie.
+    De tweede manier om deze fout op te lossen is door de roltoewijzing te maken met behulp `--assignee-object-id` van de para meter in plaats van `--assignee` . Als u `--assignee-object-id` Azure cli gebruikt, wordt de Azure AD-zoek opdracht overs Laan. U moet de object-ID van de gebruiker, groep of toepassing ophalen waaraan u de rol wilt toewijzen. Zie [Azure-rollen toewijzen met Azure cli](role-assignments-cli.md#assign-a-role-for-a-new-service-principal-at-a-resource-group-scope)voor meer informatie.
 
     ```azurecli
     az role assignment create --assignee-object-id 11111111-1111-1111-1111-111111111111  --role "Contributor" --scope "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}"
@@ -151,7 +151,7 @@ Ook als u deze roltoewijzing met behulp van Azure CLI vermeldt, ziet u mogelijk 
 }
 ```
 
-Het is geen probleem om deze roltoewijzingen te verlaten wanneer de beveiligingsprincipal is verwijderd. Als u wilt, kunt u deze roltoewijzingen verwijderen met behulp van stappen die vergelijkbaar zijn met andere roltoewijzingen. Zie [Azure Portal](role-assignments-portal.md#remove-a-role-assignment), [Azure POWERSHELL](role-assignments-powershell.md#remove-a-role-assignment)of [Azure cli](role-assignments-cli.md#remove-a-role-assignment) (Engelstalig) voor meer informatie over het verwijderen van roltoewijzingen
+Het is geen probleem om deze roltoewijzingen te verlaten wanneer de beveiligingsprincipal is verwijderd. Als u wilt, kunt u deze roltoewijzingen verwijderen met behulp van stappen die vergelijkbaar zijn met andere roltoewijzingen. Zie [Azure-roltoewijzingen verwijderen](role-assignments-remove.md)voor meer informatie over het verwijderen van roltoewijzingen.
 
 Als u in Power shell probeert de roltoewijzingen te verwijderen met de naam van de object-ID en roldefinitie en er meer dan één roltoewijzing overeenkomt met de para meters, wordt het volgende fout bericht weer gegeven: ' de opgegeven informatie is niet toegewezen aan een roltoewijzing '. In de volgende uitvoer ziet u een voor beeld van het fout bericht:
 
@@ -174,7 +174,7 @@ PS C:\> Remove-AzRoleAssignment -ObjectId 33333333-3333-3333-3333-333333333333 -
 
 ## <a name="role-assignment-changes-are-not-being-detected"></a>Er worden geen wijzigingen voor roltoewijzingen gedetecteerd
 
-Azure Resource Manager worden soms configuraties en gegevens in de cache opgeslagen om de prestaties te verbeteren. Wanneer u roltoewijzingen toevoegt of verwijdert, kan het tot 30 minuten duren voordat de wijzigingen van kracht worden. Als u de Azure Portal, Azure PowerShell of Azure CLI gebruikt, kunt u het vernieuwen van uw roltoewijzingen afdwingen door u af te melden en u aan te melden. Als u wijzigingen aanbrengt in de roltoewijzing met REST API-aanroepen, kunt u een vernieuwing afdwingen door uw toegangs token te vernieuwen.
+Azure Resource Manager worden soms configuraties en gegevens in de cache opgeslagen om de prestaties te verbeteren. Wanneer u rollen toewijst of roltoewijzingen verwijdert, kan het tot 30 minuten duren voordat de wijzigingen van kracht worden. Als u de Azure Portal, Azure PowerShell of Azure CLI gebruikt, kunt u het vernieuwen van uw roltoewijzingen afdwingen door u af te melden en u aan te melden. Als u wijzigingen aanbrengt in de roltoewijzing met REST API-aanroepen, kunt u een vernieuwing afdwingen door uw toegangs token te vernieuwen.
 
 Als u een roltoewijzing toevoegt of verwijdert in het bereik van de beheer groep en de rol heeft `DataActions` , kan de toegang op het gegevensvlak niet enkele uren worden bijgewerkt. Dit geldt alleen voor beheer groeps bereik en het gegevens vlak.
 
@@ -249,5 +249,5 @@ Een lezer kan op het tabblad **platform functies** klikken en vervolgens op **al
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Problemen met gast gebruikers oplossen](role-assignments-external-users.md#troubleshoot)
-- [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure-portal](role-assignments-portal.md)
+- [Azure-rollen toewijzen met behulp van de Azure Portal](role-assignments-portal.md)
 - [Activiteiten logboeken voor Azure RBAC-wijzigingen weer geven](change-history-report.md)

@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 5c7ecfeace88f613d6f15606382bdbb3117a0cce
-ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
+ms.openlocfilehash: eb59bb43d493609ae408a402eaea2dcc9c6fab29
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100526631"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548774"
 ---
 # <a name="deploy-a-cloud-service-extended-support-using-arm-templates"></a>Een Cloud service (uitgebreide ondersteuning) implementeren met ARM-sjablonen
 
@@ -134,7 +134,7 @@ In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud servic
     ```
  
 
-4. Voeg uw sleutel kluis referentie toe in het  `OsProfile`   gedeelte van de arm-sjabloon. Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan Cloud Services (uitgebreide ondersteuning). Voeg de certificaten toe aan Key Vault en verwijs vervolgens naar de certificaat vingerafdrukken in het service configuratie bestand (. cscfg). U moet ook Key Vault inschakelen voor de juiste machtigingen, zodat Cloud Services (uitgebreide ondersteunings resource) het certificaat kan ophalen dat is opgeslagen als geheimen van Key Vault. Zie [certificaten gebruiken met Cloud Services (uitgebreide ondersteuning)](certificates-and-key-vault.md)voor meer informatie.
+4. Voeg uw sleutel kluis referentie toe in het  `OsProfile`   gedeelte van de arm-sjabloon. Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan Cloud Services (uitgebreide ondersteuning). Voeg de certificaten toe aan Key Vault en verwijs vervolgens naar de certificaat vingerafdrukken in het service configuratie bestand (. cscfg). U moet ook Key Vault inschakelen voor de juiste machtigingen, zodat Cloud Services (uitgebreide ondersteunings resource) het certificaat kan ophalen dat is opgeslagen als geheimen van Key Vault. De Key Vault moet zich in dezelfde regio en hetzelfde abonnement bevinden als de Cloud service en een unieke naam hebben. Zie [certificaten gebruiken met Cloud Services (uitgebreide ondersteuning)](certificates-and-key-vault.md)voor meer informatie.
      
     ```json
     "osProfile": { 

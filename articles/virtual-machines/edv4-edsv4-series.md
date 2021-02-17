@@ -9,12 +9,12 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/04/2020
-ms.openlocfilehash: fc410ef903ac7eca2457516df2c71260a4b19b89
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 656b2e44ec4a4e9de0d594301cb3e4c1b9a33b13
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99097486"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100558622"
 ---
 # <a name="edv4-and-edsv4-series"></a>Edv4- en Edsv4-serie
 
@@ -30,7 +30,7 @@ Edv4-serie-grootten worden uitgevoerd op de Intel &reg; Xeon &reg; Platinum 8272
 [Livemigratie](maintenance-and-updates.md): ondersteund<br>
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
-[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund (*Mini maal 4 vCPU vereist*)<br>
 [Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): niet ondersteund <br>
 <br>
 
@@ -58,7 +58,7 @@ Edsv4-serie-grootten worden uitgevoerd op de Intel &reg; Xeon &reg; Platinum 827
 [Livemigratie](maintenance-and-updates.md): ondersteund<br>
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
-[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund (*Mini maal 4 vCPU vereist*)<br>
 [Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): ondersteund <br>
 <br>
 

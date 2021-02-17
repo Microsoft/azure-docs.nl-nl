@@ -3,22 +3,22 @@ title: Microsoft Azure Maps-toewijzings aars beheren (preview-versie)
 description: In dit artikel leert u hoe u Microsoft Azure Maps Creator (preview) kunt beheren.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 12/07/2020
+ms.date: 02/16/2021
 ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 1ed3a9033f9be39774e1c52982f63259cc477d29
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: d26df4287032bc59cc58dd1d832d9d5a9c40afcd
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96906094"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100559198"
 ---
 # <a name="manage-azure-maps-creator-preview"></a>Azure Maps Maker beheren (preview-versie) 
 
 > [!IMPORTANT]
-> Azure Maps Creator-Services zijn momenteel beschikbaar als open bare preview.
+> Azure Maps Creator-services zijn momenteel beschikbaar als openbare preview.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Met Azure Maps Maker kunt u persoonlijke gegevens voor een binnenste kaart maken. Met de Azure Maps-API en de module over kaarten kunt u interactieve en dynamische kaart webtoepassingen voor het binnenste Web ontwikkelen. Op dit moment is de Maker alleen beschikbaar in de Verenigde Staten met de prijs categorie S1.
@@ -33,15 +33,15 @@ In dit artikel worden de stappen beschreven voor het maken en verwijderen van ee
 
     ![Start pagina van Azure Maps Portal](./media/how-to-manage-creator/select-maps-account.png)
 
-3. Als u zich op de pagina Azure Maps-account bevindt, gaat u naar de optie **overzicht** onder **Maker**. Klik op  **maken**  om een Azure Maps Creator-resource te maken.
+3. Als u zich op de pagina Azure Maps-account bevindt, gaat u naar de optie **overzicht** onder **Maker**. Selecteer  **maken**  om een Azure Maps Creator-resource te maken.
 
     ![Azure Maps Creator-pagina maken](./media/how-to-manage-creator/creator-blade-settings.png)
 
-4. Voer de naam en locatie in voor de bron van de maker. Momenteel wordt de Maker alleen ondersteund in de Verenigde Staten. Klik op **Controleren + maken**.
+4. Voer de naam en locatie in voor de bron van de maker. Momenteel wordt de Maker alleen ondersteund in de Verenigde Staten. Selecteer **Controleren + maken**.
 
    ![Informatie pagina voor de account van de Creator invoeren](./media/how-to-manage-creator/creator-creation-dialog.png)
 
-5. Controleer uw instellingen en klik op **maken**.
+5. Controleer uw instellingen en selecteer **maken**.
 
     ![Pagina instellingen van de Creator-account bevestigen](./media/how-to-manage-creator/creator-create-dialog.png)
 
@@ -49,25 +49,25 @@ In dit artikel worden de stappen beschreven voor het maken en verwijderen van ee
 
    ![Pagina status van implementatie van resource](./media/how-to-manage-creator/creator-resource-created.png)
 
-7. Klik op **Ga naar resource**. Op de pagina Maker resource weergave ziet u de status van uw Creator-resource en de gekozen demografische regio.
+7. Selecteer **Ga naar resource**. Op de pagina Maker resource weergave ziet u de status van uw Creator-resource en de gekozen demografische regio.
 
     ![Pagina status van de maker](./media/how-to-manage-creator/creator-resource-view.png)
 
    >[!NOTE]
-   >Op de pagina Creator-resource kunt u teruggaan naar het Azure Maps account waarmee het deel uitmaakt door te klikken op Azure Maps-account.
+   >Op de pagina Creator-resource kunt u teruggaan naar het Azure Maps account waarmee het deel uitmaakt door Azure Maps account te selecteren.
 
 ## <a name="delete-creator-preview-resource"></a>Bron van Creator (preview) verwijderen
 
-Als u de Creator-resource wilt verwijderen, gaat u naar uw Azure Maps-account. Selecteer **overzicht** onder **Maker**. Klik op de knop **Verwijderen**.
+Als u de Creator-resource wilt verwijderen, gaat u naar uw Azure Maps-account. Selecteer **overzicht** onder **Maker**. Selecteer de knop **Verwijderen**.
 
 >[!WARNING]
 >Wanneer u de maker-resource van uw Azure Maps-account verwijdert, verwijdert u ook de gegevens sets, tilesets en functie statesets die zijn gemaakt met behulp van Creator Services.
 
 ![De pagina Maker met de knop verwijderen](./media/how-to-manage-creator/creator-delete.png)
 
-Klik op de knop **verwijderen** en typ de naam van de maker om de verwijdering te bevestigen. Zodra de resource is verwijderd, ziet u een bevestigings pagina, zoals in de onderstaande afbeelding:
+Selecteer de knop **verwijderen** en typ de naam van de maker om de verwijdering te bevestigen. Zodra de resource is verwijderd, ziet u een bevestigings pagina, zoals in de onderstaande afbeelding:
 
-![Pagina Maker met bevestiging van verwijderen](./media/how-to-manage-creator/creator-confirmdelete.png)
+![Pagina Maker met bevestiging van verwijderen](./media/how-to-manage-creator/creator-confirm-delete.png)
 
 ## <a name="authentication"></a>Verificatie
 
@@ -77,7 +77,7 @@ De gebruiks gegevens van de maker zijn opgenomen in uw Azure Maps-gebruiks diagr
 
 ## <a name="access-to-creator-services"></a>Toegang tot Creator-services
 
-Creator-Services (preview) zijn alleen toegankelijk vanaf de locatie die is geselecteerd tijdens het maken. Als aanroepen naar Creator-services van buiten de geselecteerde locatie worden gedaan, wordt er een fout bericht van de gebruiker weer gegeven. Als u aanroepen buiten de geselecteerde locatie wilt maken, moet de service-URL het geografische voor voegsel voor de geselecteerde locaties bevatten. Als er bijvoorbeeld een Maker wordt gemaakt in de Verenigde Staten, moeten alle aanroepen naar de conversie service worden ingediend bij `us.atlas.microsoft.com/conversion/convert` .
+Creator-Services (preview) en services die gebruikmaken van gegevens die worden gehost in Creator (bijvoorbeeld service renderen), zijn toegankelijk via een geografische URL. De geografische URL wordt bepaald door de locatie die is geselecteerd tijdens het maken. Als er bijvoorbeeld een maker is gemaakt op de geografische locatie Verenigde Staten, moeten alle aanroepen naar de conversie service worden ingediend bij `us.atlas.microsoft.com/conversion/convert` .
 
 Daarnaast moeten alle gegevens die in de Maker worden geïmporteerd, worden geüpload naar dezelfde geografische locatie als de maker-resource. Als de maker bijvoorbeeld is ingericht in de Verenigde Staten, moeten alle onbewerkte gegevens worden geüpload via `us.atlas.microsoft.com/mapData/upload` .
 

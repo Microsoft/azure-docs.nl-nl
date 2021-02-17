@@ -15,12 +15,12 @@ ms.topic: how-to
 ms.date: 05/06/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 7d00c40a021bbe087d906fd6d9b767188a7b169a
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 1d90e83405cf9c560f644277a04012571e1a5a9d
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97964322"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556905"
 ---
 # <a name="list-azure-role-assignments-using-the-rest-api"></a>Azure-roltoewijzingen weer geven met behulp van de REST API
 
@@ -54,7 +54,7 @@ In azure RBAC kunt u de roltoewijzingen weer geven om toegang te krijgen. Als u 
 1. Vervang *{filter}* door de voor waarde die u wilt Toep assen om de roltoewijzings lijst te filteren.
 
     > [!div class="mx-tableFixed"]
-    > | Filteren | Beschrijving |
+    > | Filter | Description |
     > | --- | --- |
     > | `$filter=atScope()` | Hier worden roltoewijzingen voor alleen het opgegeven bereik weer gegeven, met inbegrip van de roltoewijzingen in subbereiken. |
     > | `$filter=assignedTo('{objectId}')` | Hier worden roltoewijzingen voor een opgegeven gebruiker of Service-Principal weer gegeven.<br/>Als de gebruiker lid is van een groep die een roltoewijzing heeft, wordt die roltoewijzing ook weer gegeven. Dit filter is transitief voor groepen. Dit betekent dat als de gebruiker lid is van een groep en die groep lid is van een andere groep die een roltoewijzing heeft, die roltoewijzing ook wordt vermeld.<br/>Dit filter accepteert alleen een object-ID voor een gebruiker of een service-principal. U kunt geen object-ID door geven voor een groep. |
@@ -92,5 +92,5 @@ Hieronder ziet u een voor beeld van de uitvoer:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de REST API](role-assignments-rest.md)
+- [Azure-rollen toewijzen met behulp van de REST API](role-assignments-rest.md)
 - [Azure REST API-naslaginformatie](/rest/api/azure/)

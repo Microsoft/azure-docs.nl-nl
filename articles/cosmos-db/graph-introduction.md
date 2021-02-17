@@ -7,17 +7,17 @@ ms.subservice: cosmosdb-graph
 ms.topic: overview
 ms.date: 11/25/2020
 ms.author: chrande
-ms.openlocfilehash: c2165ea6273ad90cfb95242dfe72538c0a5ef64c
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.openlocfilehash: 806904943f4e4a20734d595f835dc9450afdded5
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350055"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100547273"
 ---
 # <a name="introduction-to-gremlin-api-in-azure-cosmos-db"></a>Inleiding tot de Gremlin-API in Azure Cosmos DB
 [!INCLUDE[appliesto-gremlin-api](includes/appliesto-gremlin-api.md)]
 
-[Azure Cosmos DB](introduction.md)  is de wereldwijd gedistribueerde multimodel-databaseservice van Microsoft voor essentiële toepassingen. Dit is een database met meerdere modellen die modellen voor document-, sleutelwaarde-, grafiek- en kolomgegevens ondersteunt. 'Azure Cosmos DB biedt een databaseservice voor grafieken via de Gremin-API in een volledig beheerde databaseservice die voor welke schaal dan ook is ontworpen.  
+[Azure Cosmos DB](introduction.md)  is de wereldwijd gedistribueerde multimodel-databaseservice van Microsoft voor essentiële toepassingen. Dit is een database met meerdere modellen die modellen voor document-, sleutelwaarde-, grafiek- en kolomgegevens ondersteunt. Azure Cosmos DB biedt een Graph-database service via de Gremlin-API op een volledig beheerde database service die is ontworpen voor elke schaal.  
 
 :::image type="content" source="./media/graph-introduction/cosmosdb-graph-architecture.png" alt-text="Azure Cosmos DB-grafiekarchitectuur" border="false":::
 

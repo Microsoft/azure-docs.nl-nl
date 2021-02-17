@@ -6,12 +6,12 @@ author: harelbr
 ms.author: harelbr
 ms.date: 03/13/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 8e2bf4e451ebc3c9ebba2c01dae6703fc79aa606
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 63d1a0bf437df6bc0b68474e092ca23985493b24
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87324128"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100559595"
 ---
 # <a name="smart-detection-e-mail-notification-change"></a>Wijziging e-mail melding voor slimme detectie
 
@@ -19,7 +19,7 @@ Op basis van feedback van klanten worden op 1 april 2019 de standaard rollen gew
 
 ## <a name="what-is-changing"></a>Wat wordt er gewijzigd?
 
-Op dit moment worden er e-mail meldingen voor slimme detectie standaard verzonden naar de rol van het _abonnement_, de _mede_werkers van het abonnement en de functie voor _abonnements lezers_ . Deze rollen omvatten vaak gebruikers die niet actief betrokken zijn bij de bewaking, waardoor veel van deze gebruikers onnodig meldingen ontvangen. Om deze ervaring te verbeteren, worden er een wijziging aangebracht zodat e-mail meldingen alleen de [bewakings lezer controleren](../../role-based-access-control/built-in-roles.md#monitoring-reader) en [Inzender rollen controleren](../../role-based-access-control/built-in-roles.md#monitoring-contributor) .
+Op dit moment worden er e-mail meldingen voor slimme detectie standaard verzonden naar de rol van het _abonnement_, de _mede_ werkers van het abonnement en de functie voor _abonnements lezers_ . Deze rollen omvatten vaak gebruikers die niet actief betrokken zijn bij de bewaking, waardoor veel van deze gebruikers onnodig meldingen ontvangen. Om deze ervaring te verbeteren, worden er een wijziging aangebracht zodat e-mail meldingen alleen de [bewakings lezer controleren](../../role-based-access-control/built-in-roles.md#monitoring-reader) en [Inzender rollen controleren](../../role-based-access-control/built-in-roles.md#monitoring-contributor) .
 
 ## <a name="scope-of-this-change"></a>Bereik van deze wijziging
 
@@ -33,7 +33,7 @@ Deze wijziging is van invloed op alle slimme detectie regels, met uitzonde ring 
 
 Om ervoor te zorgen dat e-mail meldingen van Slimme detectie naar relevante gebruikers worden verzonden, moeten die gebruikers worden toegewezen aan de [bewakings lezer](../../role-based-access-control/built-in-roles.md#monitoring-reader) of [Inzender](../../role-based-access-control/built-in-roles.md#monitoring-contributor) rollen van het abonnement.
 
-Volg de stappen die worden beschreven in het artikel [een roltoewijzing toevoegen](../../role-based-access-control/role-assignments-portal.md#add-a-role-assignment) om gebruikers toe te wijzen aan de bewakings lezer of Inzender rollen te controleren via de Azure Portal. Zorg ervoor dat u de _bewakings lezer_ of het _bewaken_ van de Inzender selecteert als de rol waaraan gebruikers worden toegewezen.
+Volg de stappen die worden beschreven in het artikel [Azure roles toewijzen](../../role-based-access-control/role-assignments-portal.md) om gebruikers toe te wijzen aan de bewakings lezer of Inzender rollen te bewaken via de Azure Portal. Zorg ervoor dat u de _bewakings lezer_ of het _bewaken_ van de Inzender selecteert als de rol waaraan gebruikers worden toegewezen.
 
 > [!NOTE]
 > Specifieke ontvangers van Slimme detectie meldingen, geconfigureerd met de optie _extra e-mail ontvangers_ in de regel instellingen, worden niet beïnvloed door deze wijziging. Deze ontvangers blijven de e-mail meldingen ontvangen.

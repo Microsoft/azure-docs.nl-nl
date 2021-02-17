@@ -11,12 +11,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 01/12/2021
-ms.openlocfilehash: 8db0f5fa39c7f489db0e30e98ee2684c74eee7e8
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 8e78fc5bd49aaf2b31fdc83ced132e2a39ca83d5
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98180027"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100558888"
 ---
 # <a name="publish-your-active-trained-app-to-a-staging-or-production-endpoint"></a>Uw actieve, getrainde app publiceren naar een staging-of productie-eind punt
 
@@ -57,7 +57,6 @@ Als u bijvoorbeeld een app die is gemaakt op [www.Luis.ai](https://www.luis.ai),
 Nadat u de sleuf hebt geselecteerd, configureert u de publicatie-instellingen voor:
 
 * Sentimentanalyse
-* [Spelling correctie](luis-tutorial-bing-spellcheck.md)
 * Spraak gebeuren
 
 Nadat u hebt gepubliceerd, zijn deze instellingen beschikbaar voor controle op de pagina **publicatie-instellingen** van de sectie **beheren** . U kunt de instellingen wijzigen bij elke publicatie. Als u een publicatie annuleert, worden alle wijzigingen die u tijdens het publiceren hebt aangebracht, ook geannuleerd.
@@ -79,37 +78,6 @@ U hoeft geen Text Analytics sleutel op te geven en er worden geen kosten in reke
 Sentiment-gegevens is een score tussen 1 en 0 die de positieve waarde (dichter bij 1) of negatief (dichter bij 0) sentiment van de gegevens aangeeft. Het sentiment-label van `positive` , `neutral` en `negative` is per ondersteunde cultuur. Op dit moment worden alleen sentiment-labels in het Engels ondersteund.
 
 Zie [sentiment Analysis](luis-reference-prebuilt-sentiment.md) (Engelstalig) voor meer informatie over het JSON-eindpunt antwoord met sentiment analyse.
-
-## <a name="spelling-correction"></a>Spelling correctie
-
-De V3 API voor voor spellingen ondersteunt nu de Bing-spelling-API. U kunt een spelling controle toevoegen aan uw toepassing door de sleutel van de Bing zoeken-resource op te nemen in de koptekst van uw aanvragen. U kunt een bestaande Bing-Resource gebruiken als u er al een hebt of [een nieuwe bron maakt](https://portal.azure.com/#create/Microsoft.BingSearch) om deze functie te gebruiken. 
-
-|Header sleutel|Header waarde|
-|--|--|
-|`mkt-bing-spell-check-key`|Sleutels gevonden in de sleutels en de Blade van het **eind punt** van uw resource|
-
-Voor beeld van voor spelling uitvoer voor een verkeerd gespelde query:
-
-```json
-{
-  "query": "bouk me a fliht to kayro",
-  "prediction": {
-    "alteredQuery": "book me a flight to cairo",
-    "topIntent": "book a flight",
-    "intents": {
-      "book a flight": {
-        "score": 0.9480589
-      }
-      "None": {
-        "score": 0.0332136229
-      }
-    },
-    "entities": {}
-  }
-}
-```
-
-Correcties voor de spelling worden uitgevoerd voordat de LUIS-gebruiker utterance voor spelling. U kunt alle wijzigingen in de oorspronkelijke utterance zien, inclusief de spelling, in het antwoord.
 
 ## <a name="speech-priming"></a>Spraak gebeuren
 

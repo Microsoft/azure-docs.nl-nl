@@ -10,6 +10,9 @@
     - name: Virtuele hub beveiligen - ARM-sjabloon
       displayName: Resource Manager
       href: quick-secure-virtual-hub.md
+    - name: Firewall met beleids ARM-sjabloon implementeren
+      displayName: Resource Manager
+      href: quick-firewall-policy.md
 - name: Zelfstudies
   items:
     - name: Uw virtuele hub beveiligen - portal

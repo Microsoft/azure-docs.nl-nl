@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/17/2019
 ms.author: kumud
-ms.openlocfilehash: f4ce830c889feaeda05745eeb02b72f55ad9314a
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: 336eeee7d522647d11f55a65dc9dc4e65e8b7d47
+ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99819840"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100535230"
 ---
 # <a name="quickstart-create-and-configure-azure-ddos-protection-standard"></a>Snelstartgids: Azure DDoS Protection standaard maken en configureren
 
@@ -88,6 +88,11 @@ Controleer eerst de details van uw DDoS-beveiligings plan:
 3. Selecteer uw DDoS-beveiligings plan in de lijst.
 
 Het virtuele netwerk van _MyVnet_ moet worden weer gegeven. 
+
+### <a name="view-protected-resources"></a>Beveiligde bronnen weer geven
+Onder **beveiligde resources** kunt u uw beveiligde virtuele netwerken en open bare IP-adressen weer geven of meer virtuele netwerken toevoegen aan uw DDoS-beschermings plan:
+
+![Beveiligde bronnen weer geven](./media/manage-ddos-protection/ddos-protected-resources.png)
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

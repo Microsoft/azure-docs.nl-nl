@@ -7,20 +7,19 @@ author: mrcarter8
 ms.author: mcarter
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 05/11/2020
-ms.openlocfilehash: 67fa53e565de70d3da0b90e36a968b68d54d667f
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.date: 02/16/2021
+ms.openlocfilehash: 98a516e76d5e4f5c225873b934949759d7fcba8d
+ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99573242"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100535328"
 ---
 # <a name="configure-ip-firewall-for-azure-cognitive-search"></a>IP-Firewall voor Azure Cognitive Search configureren
 
 Azure Cognitive Search ondersteunt IP-regels voor ondersteuning van binnenkomende firewalls. Dit model bevat een extra beveiligingslaag voor uw zoek service, vergelijkbaar met de IP-regels die u vindt in een Azure Virtual Network-beveiligings groep. Met deze IP-regels kunt u de zoek service zo configureren dat deze alleen toegankelijk is vanaf een goedgekeurde set machines en/of Cloud Services. Voor toegang tot gegevens die zijn opgeslagen in uw zoek service van deze goedgekeurde sets computers en services, moet de aanroeper nog steeds een geldig autorisatie token presen teren.
 
-> [!Important]
-> IP-regels voor uw Azure Cognitive Search-service kunnen worden geconfigureerd met de Azure Portal-of de [beheer rest API versie 2020-03-13](/rest/api/searchmanagement/).
+U kunt IP-regels instellen in de Azure Portal, zoals beschreven in dit artikel. U kunt ook de [beheer rest API versie 2020-03-13](/rest/api/searchmanagement/), [Azure POWERSHELL](/powershell/module/az.search)of [Azure cli](/cli/azure/search)gebruiken.
 
 ## <a name="configure-an-ip-firewall-using-the-azure-portal"></a><a id="configure-ip-policy"></a> Een IP-Firewall configureren met behulp van de Azure Portal
 

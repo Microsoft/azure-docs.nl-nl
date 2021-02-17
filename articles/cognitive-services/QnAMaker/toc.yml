@@ -8,10 +8,12 @@
       href: whats-new.md
 - name: Snelstartgidsen
   items:
-    - name: Knowledge Base maken en doorzoeken op QnA Maker Portal
-      href: Quickstarts/create-publish-knowledge-base.md
-    - name: Een Knowledge Base maken en er query's op uitvoeren met behulp van client bibliotheken of REST API
-      href: Quickstarts/quickstart-sdk.md
+    - name: Een Knowledge Base maken en er Query's op uitvoeren
+      items:
+        - name: QnA Maker-portal
+          href: Quickstarts/create-publish-knowledge-base.md
+        - name: Client bibliotheken of REST API
+          href: Quickstarts/quickstart-sdk.md
     - name: Een Knowledge Base opvragen met REST-Api's
       href: Quickstarts/get-answer-from-knowledge-base-using-url-tool.md
 - name: Zelfstudies

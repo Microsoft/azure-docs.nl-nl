@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: 66d537b79819aecab4ce88a56ed465679363f421
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 9a347d57de540ed31c862f618be7c8a98b685348
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98805209"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546921"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-templates"></a>Vm's op uw Azure Stack Edge Pro GPU-apparaat implementeren via sjablonen
 
@@ -149,7 +149,7 @@ In een typische omgeving zou uw DNS zo zijn geconfigureerd dat alle opslag accou
 
 ### <a name="optional-install-certificates"></a>Beschrijving Certificaten installeren
 
-Sla deze stap over als u verbinding wilt maken via Storage Explorer met behulp van *http*. Als u *https* gebruikt, moet u de juiste certificaten installeren in Storage Explorer. In dit geval installeert u het BLOB-eindpunt certificaat. Zie certificaten maken en uploaden in [certificaten beheren](azure-stack-edge-j-series-manage-certificates.md)voor meer informatie. 
+Sla deze stap over als u verbinding wilt maken via Storage Explorer met behulp van *http*. Als u *https* gebruikt, moet u de juiste certificaten installeren in Storage Explorer. In dit geval installeert u het BLOB-eindpunt certificaat. Zie certificaten maken en uploaden in [certificaten beheren](azure-stack-edge-gpu-manage-certificates.md)voor meer informatie. 
 
 ### <a name="create-and-upload-a-vhd"></a>Een VHD maken en uploaden
 

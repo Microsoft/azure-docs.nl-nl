@@ -6,26 +6,26 @@ services: cognitive-services
 author: laujan
 manager: nitinme
 ms.service: cognitive-services
-ms.subservice: translator-text
 ms.topic: overview
-ms.date: 09/11/2020
+ms.subservice: translator-text
+ms.date: 02/15/2021
 ms.author: lajanuar
 ms.custom: cog-serv-seo-aug-2020
 keywords: translator, tekstvertaling, machine translation, vertaalservice
-ms.openlocfilehash: 37f0d64879493abcf3e5b9448068b86b7a36dccb
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 12f6d22f263747a8c43b2d98e6ade1de78aea1ce
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896694"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556255"
 ---
 # <a name="what-is-the-translator-service"></a>Wat is de Translator-service?
 
-Translator is een cloudservice voor automatische vertaling en maakt deel uit van de [Azure Cognitive Services](../../index.yml?panel=ai&pivot=products)-familie van cognitieve API's voor het bouwen van intelligente apps. Translator is eenvoudig in uw toepassingen, websites, hulpprogramma's en oplossingen te integreren. U kunt hiermee meertalige gebruikerservaringen in [meer dan zeventig talen](./language-support.md) toevoegen en u kunt het gebruiken op elk hardwareplatform onder elk willekeurig besturingssysteem voor vertalingen van tekst.
+Translator is een cloudservice voor automatische vertaling en maakt deel uit van de [Azure Cognitive Services](../../index.yml?panel=ai&pivot=products)-familie van cognitieve API's voor het bouwen van intelligente apps. Translator is eenvoudig in uw toepassingen, websites, hulpprogramma's en oplossingen te integreren. U kunt meertalige gebruikers ervaringen toevoegen in [meer dan 70 talen](./language-support.md). En kan worden gebruikt op elk platform met elk besturings systeem voor tekst vertaling.
 
 ## <a name="about-microsoft-translator"></a>Over Microsoft Translator
 
-Translator stuurt een aantal Microsoft-producten en -services aan en wordt door duizenden bedrijven over de hele wereld gebruikt in hun toepassingen en werkstromen, zodat hun inhoud beschikbaar wordt gemaakt voor een wereldwijd publiek.
+Translator voorziet in veel micro soft-producten en-services en wordt gebruikt door duizenden bedrijven wereld wijd in hun toepassingen en werk stromen.
 
 Spraakomzetting, mogelijk gemaakt door Translator, is ook beschikbaar via [Azure Speech Service](../speech-service/index.yml). In spraakomzetting worden functionaliteit van de Translator Speech-API en de Custom Speech Service gecombineerd tot een geïntegreerde en volledig aan te passen service. 
 
@@ -45,15 +45,15 @@ Meer informatie over [de werking van NMT](https://www.microsoft.com/en-us/transl
 
 ## <a name="improve-translations-with-custom-translator"></a>Vertalingen verbeteren met Custom Translator
 
-Custom Translator is een uitbreiding op de Translator-service en kan samen met Translator worden gebruikt om het neurale vertaalsysteem aan te passen en de vertalingen te verbeteren voor uw specifieke terminologie en stijl.
+ Aangepaste Translator, een uitbrei ding van de Translator-service, kan worden gebruikt in combi natie met Translator om het Neural-Vertaal systeem aan te passen en de vertaling te verbeteren voor uw specifieke terminologie en stijl.
 
-Met Custom Translator kunt u vertaalsystemen maken waarin de terminologie wordt verwerkt die wordt gebruikt in uw bedrijf of sector. U kunt uw aangepaste vertaalsysteem vervolgens eenvoudig integreren in uw bestaande toepassingen, werkstromen en websites voor meerdere typen apparaten via de gewone Translator, met behulp van de categorieparameter.
+Met Custom Translator kunt u Vertaal systemen maken voor het verwerken van de terminologie die wordt gebruikt in uw eigen bedrijf of branche. Uw aangepaste Vertaal systeem kan eenvoudig worden geïntegreerd met uw bestaande toepassingen, werk stromen, websites en apparaten, via de reguliere vertaler, met behulp van de para meter Category.
 
 Meer informatie over [Custom Translator](customization.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Registreer](./translator-how-to-signup.md) u voor een toegangssleutel.
+- [Maak een Translator-service](./translator-how-to-signup.md) om uw toegangs sleutels en eind punt op te halen.
 - Gebruik de [Quickstart](quickstart-translator.md) om snel de Translator-service aan te roepen.
 - [API-naslag](./reference/v3-0-reference.md) bevat de technische documentatie voor de API's.
 - [Prijsdetails](https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/)

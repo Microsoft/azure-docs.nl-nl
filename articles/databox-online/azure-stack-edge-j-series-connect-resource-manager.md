@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: 54aad90cf86f1a20d76f04f3a829f29c47023558
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: ebadfc889eb648b734747e5a2a45662e82aab643
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98805800"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546802"
 ---
 # <a name="connect-to-azure-resource-manager-on-your-azure-stack-edge-pro-device"></a>Verbinding maken met Azure Resource Manager op uw Azure Stack Edge Pro-apparaat
 
@@ -93,9 +93,9 @@ Als u verbinding wilt maken met Azure Resource Manager, moet u een handtekening 
 
 Voor het gebruik van alleen testen en ontwikkelen kunt u Windows Power shell gebruiken om certificaten te maken op uw lokale systeem. Volg de volgende richt lijnen bij het maken van de certificaten voor de client:
 
-1. U moet eerst een basis certificaat maken voor de handtekening keten. Zie stappen voor het [maken van handtekening keten certificaten](azure-stack-edge-j-series-manage-certificates.md#create-signing-chain-certificate)voor meer informatie.
+1. U moet eerst een basis certificaat maken voor de handtekening keten. Zie stappen voor het [maken van handtekening keten certificaten](azure-stack-edge-gpu-manage-certificates.md#create-signing-chain-certificate)voor meer informatie.
 
-2. U kunt vervolgens de eindpunt certificaten voor de BLOB en Azure Resource Manager maken. U kunt deze eind punten ophalen van de pagina **apparaat** in de lokale webgebruikersinterface. Zie de stappen voor het [maken van eindpunt certificaten](azure-stack-edge-j-series-manage-certificates.md#create-signed-endpoint-certificates).
+2. U kunt vervolgens de eindpunt certificaten voor de BLOB en Azure Resource Manager maken. U kunt deze eind punten ophalen van de pagina **apparaat** in de lokale webgebruikersinterface. Zie de stappen voor het [maken van eindpunt certificaten](azure-stack-edge-gpu-manage-certificates.md#create-signed-endpoint-certificates).
 
 3. Voor al deze certificaten moet u ervoor zorgen dat de naam van de onderwerpnaam en de alternatieve houder voldoen aan de volgende richt lijnen:
 
@@ -105,26 +105,26 @@ Voor het gebruik van alleen testen en ontwikkelen kunt u Windows Power shell geb
     |Blob Storage|`*.blob.<Device name>.<Dns Domain>`|`*.blob.< Device name>.<Dns Domain>`|`*.blob.mydevice1.microsoftdatabox.com` |
     |Multi-SAN één certificaat voor beide eind punten|`<Device name>.<dnsdomain>`|`login.<Device name>.<Dns Domain>`<br>`management.<Device name>.<Dns Domain>`<br>`*.blob.<Device name>.<Dns Domain>`|`mydevice1.microsoftdatabox.com` |
 
-Ga voor meer informatie over certificaten naar het beheren van [certificaten](azure-stack-edge-j-series-manage-certificates.md).
+Ga voor meer informatie over certificaten naar het beheren van [certificaten](azure-stack-edge-gpu-manage-certificates.md).
 
 ### <a name="upload-certificates-on-the-device"></a>Certificaten uploaden op het apparaat
 
 De certificaten die u in de vorige stap hebt gemaakt, bestaan in het persoonlijke archief van uw client. Deze certificaten moeten op uw client worden geëxporteerd naar de juiste indelings bestanden die vervolgens naar uw apparaat kunnen worden geüpload.
 
-1. Het basis certificaat moet worden geëxporteerd als een DER-Format-bestand met de extensie *. CER* . Zie [certificaten exporteren als. CER-indelings bestand](azure-stack-edge-j-series-manage-certificates.md#export-certificates-as-der-format)voor gedetailleerde stappen.
+1. Het basis certificaat moet worden geëxporteerd als een DER-Format-bestand met de extensie *. CER* . Zie [certificaten exporteren als. CER-indelings bestand](azure-stack-edge-gpu-manage-certificates.md#export-certificates-as-der-format)voor gedetailleerde stappen.
 
-2. De eindpunt certificaten moeten worden geëxporteerd als *PFX* -bestanden met persoonlijke sleutels. Zie [certificaten exporteren als. pfx-bestand met persoonlijke sleutels](azure-stack-edge-j-series-manage-certificates.md#export-certificates-as-pfx-format-with-private-key)voor gedetailleerde stappen.
+2. De eindpunt certificaten moeten worden geëxporteerd als *PFX* -bestanden met persoonlijke sleutels. Zie [certificaten exporteren als. pfx-bestand met persoonlijke sleutels](azure-stack-edge-gpu-manage-certificates.md#export-certificates-as-pfx-format-with-private-key)voor gedetailleerde stappen.
 
-3. De basis-en eindpunt certificaten worden vervolgens op het apparaat geüpload met behulp van de optie **+ certificaat toevoegen** op de pagina **certificaten** in de lokale webgebruikersinterface. Als u de certificaten wilt uploaden, volgt u de stappen in [certificaten uploaden](azure-stack-edge-j-series-manage-certificates.md#upload-certificates).
+3. De basis-en eindpunt certificaten worden vervolgens op het apparaat geüpload met behulp van de optie **+ certificaat toevoegen** op de pagina **certificaten** in de lokale webgebruikersinterface. Als u de certificaten wilt uploaden, volgt u de stappen in [certificaten uploaden](azure-stack-edge-gpu-manage-certificates.md#upload-certificates).
 
 
 ### <a name="import-certificates-on-the-client-running-azure-powershell"></a>Certificaten importeren op de client met Azure PowerShell
 
 De Windows-client waar u de Azure Resource Manager-Api's aanroept, moet een vertrouwens relatie met het apparaat tot stand brengen. Hiertoe moeten de certificaten die u hebt gemaakt in de vorige stap, worden geïmporteerd op de Windows-client in het juiste certificaat archief.
 
-1. Het basis certificaat dat u hebt geëxporteerd als de bestands indeling met de extensie *. CER* moet nu worden geïmporteerd in de vertrouwde basis certificerings instanties op het client systeem. Zie [certificaten importeren in het archief met vertrouwde basis certificerings instanties](azure-stack-edge-j-series-manage-certificates.md#import-certificates-as-der-format) voor gedetailleerde stappen.
+1. Het basis certificaat dat u hebt geëxporteerd als de bestands indeling met de extensie *. CER* moet nu worden geïmporteerd in de vertrouwde basis certificerings instanties op het client systeem. Zie [certificaten importeren in het archief met vertrouwde basis certificerings instanties](azure-stack-edge-gpu-manage-certificates.md#import-certificates-as-der-format) voor gedetailleerde stappen.
 
-2. De eindpunt certificaten die u als *PFX* hebt geëxporteerd, moeten worden geëxporteerd als *. CER*. Deze *CER* wordt vervolgens geïmporteerd in het **persoonlijke** certificaat archief op uw systeem. Zie [certificaten importeren in persoonlijk archief](azure-stack-edge-j-series-manage-certificates.md#import-certificates-as-der-format)voor gedetailleerde stappen.
+2. De eindpunt certificaten die u als *PFX* hebt geëxporteerd, moeten worden geëxporteerd als *. CER*. Deze *CER* wordt vervolgens geïmporteerd in het **persoonlijke** certificaat archief op uw systeem. Zie [certificaten importeren in persoonlijk archief](azure-stack-edge-gpu-manage-certificates.md#import-certificates-as-der-format)voor gedetailleerde stappen.
 
 ## <a name="step-3-install-powershell-on-the-client"></a>Stap 3: Power shell op de client installeren 
 

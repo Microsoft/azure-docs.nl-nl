@@ -9,12 +9,12 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: aea0a79d1ae27d987a6a30cfefe91e875f9a8382
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: eefd0ba447340f79100772f549002f6fd8c2c01c
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99097503"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100554861"
 ---
 # <a name="dv4-and-dsv4-series"></a>Dv4- en Dsv4-serie
 
@@ -34,7 +34,7 @@ Opslag van externe gegevens schijven wordt afzonderlijk van virtuele machines ge
 [Livemigratie](maintenance-and-updates.md): ondersteund<br>
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1<br>
-[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund (*Mini maal 4 vCPU vereist*)<br>
 [Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): niet ondersteund <br>
 <br>
 
@@ -58,7 +58,7 @@ Dsv4-serie-grootten worden uitgevoerd op Intel &reg; Xeon &reg; Platinum 8272CL 
 [Livemigratie](maintenance-and-updates.md): ondersteund<br>
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
-[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund (*Mini maal 4 vCPU vereist*)<br>
 [Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): niet ondersteund <br>
 <br>
 

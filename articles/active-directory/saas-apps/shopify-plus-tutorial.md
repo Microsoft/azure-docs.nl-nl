@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 06/18/2020
+ms.date: 02/11/2021
 ms.author: jeedes
-ms.openlocfilehash: d7a5d160fa8a0209478fe81d2880e8956828350d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 692355edb6b65ccf63ae685bc56d0e3985d119e3
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95993496"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100557093"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-shopify-plus"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met Shopify Plus
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u Shopify Plus kunt integreren met Azure Active D
 * In Azure AD bepalen wie toegang heeft tot Shopify Plus.
 * Ervoor zorgen dat gebruikers zich automatisch met hun Azure AD-account kunnen aanmelden bij Shopify Plus.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
-
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -39,27 +37,24 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* Shopify Plus ondersteunt door **SP en IDP** geïnitieerde eenmalige aanmelding
+* Shopify Plus ondersteunt door **SP en IDP** geïnitieerde SSO.
 
-* Nadat u Shopify Plus hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
-
-## <a name="adding-shopify-plus-from-the-gallery"></a>Shopify Plus toevoegen vanuit de galerie
+## <a name="add-shopify-plus-from-the-gallery"></a>Shopify plus toevoegen uit de galerie
 
 Voor het configureren van de integratie van Shopify Plus met Azure AD moet u Shopify Plus vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. Typ **Shopify Plus** in het zoekvak in de sectie **Toevoegen vanuit de galerie**.
 1. Selecteer **Shopify Plus** in het resultatenvenster en voeg de app vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-
-## <a name="configure-and-test-azure-ad-single-sign-on-for-shopify-plus"></a>Eenmalige aanmelding via Azure AD configureren en testen voor Shopify Plus
+## <a name="configure-and-test-azure-ad-sso-for-shopify-plus"></a>Azure AD SSO configureren en testen voor Shopify plus
 
 Configureer en test eenmalige aanmelding van Azure AD met Shopify Plus met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Shopify Plus.
 
-Voltooi de volgende bouwstenen om eenmalige aanmelding van Azure AD met Shopify Plus te configureren en te testen:
+Als u Azure AD SSO wilt configureren en testen met Shopify Plus, voert u de volgende stappen uit:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
@@ -72,9 +67,9 @@ Voltooi de volgende bouwstenen om eenmalige aanmelding van Azure AD met Shopify 
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Shopify Plus** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Zoek in de Azure Portal op de pagina **Shopify plus** Application Integration de sectie **Manage** en selecteer **eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -123,15 +118,9 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Shopify Plus** in de lijst met toepassingen.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
-
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-    ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
-
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-shopify-plus-sso"></a>Eenmalige aanmelding configureren voor Shopify Plus
@@ -164,20 +153,20 @@ Voor alle gebruikers onder een e-maildomein:
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u in het toegangsvenster op de tegel Shopify Plus klikt, wordt u als het goed is automatisch aangemeld bij de instantie van Shopify Plus waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+#### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de URL voor Shopify plus-aanmelding, waar u de aanmeldings stroom kunt initiëren.  
 
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
+* Ga rechtstreeks naar de URL voor Shopify plus-aanmelding en start de aanmeldings stroom vanaf daar.
 
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
+#### <a name="idp-initiated"></a>Met IDP geïnitieerd:
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+* Klik op **test deze toepassing** in azure Portal en u moet automatisch worden aangemeld bij de Shopify plus waarvoor u de SSO hebt ingesteld. 
 
-- [Shopify Plus proberen met Azure AD](https://aad.portal.azure.com/)
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de tegel Shopify plus in de app mijn apps klikt, wordt u omgeleid naar de aanmeldings pagina van de toepassing om de aanmeldings stroom te initiëren en als deze is geconfigureerd in de IDP-modus, moet u automatisch worden aangemeld bij de Shopify plus waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [Wat is sessiebeheer in Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)
+## <a name="next-steps"></a>Volgende stappen
 
-- [Shopify Plus beveiligen met geavanceerde zichtbaarheid en besturingselementen](/cloud-app-security/proxy-intro-aad)
+Nadat u Shopify hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

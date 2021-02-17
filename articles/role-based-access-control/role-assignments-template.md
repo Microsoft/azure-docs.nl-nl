@@ -1,25 +1,29 @@
 ---
-title: Azure-roltoewijzingen toevoegen met behulp van Azure Resource Manager sjablonen-Azure RBAC
+title: Azure-rollen toewijzen met behulp van Azure Resource Manager sjablonen-Azure RBAC
 description: Meer informatie over het verlenen van toegang tot Azure-resources voor gebruikers, groepen, service-principals of beheerde identiteiten met behulp van Azure Resource Manager sjablonen en Azure RBAC (op rollen gebaseerd toegangs beheer).
 services: active-directory
 documentationcenter: ''
 author: rolyon
-manager: mtillman
+manager: daveba
 ms.service: role-based-access-control
 ms.topic: how-to
 ms.workload: identity
 ms.date: 01/21/2021
 ms.author: rolyon
-ms.openlocfilehash: 023aa086cdafc3ab1459c2f748b2181575c14191
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 65b4ec369085e44cdffb0550e9eeaef0196cd35a
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98675333"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556014"
 ---
-# <a name="add-azure-role-assignments-using-azure-resource-manager-templates"></a>Azure-roltoewijzingen toevoegen met behulp van Azure Resource Manager sjablonen
+# <a name="assign-azure-roles-using-azure-resource-manager-templates"></a>Azure-rollen toewijzen met behulp van Azure Resource Manager sjablonen
 
 [!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control/definition-grant.md)] Naast het gebruik van Azure PowerShell of de Azure CLI kunt u rollen toewijzen met behulp van [Azure Resource Manager-sjablonen](../azure-resource-manager/templates/template-syntax.md). Sjablonen kunnen nuttig zijn als u resources consistent en herhaaldelijk wilt implementeren. In dit artikel wordt beschreven hoe u rollen toewijst met behulp van sjablonen.
+
+## <a name="prerequisites"></a>Vereisten
+
+[!INCLUDE [Azure role assignment prerequisites](../../includes/role-based-access-control/prerequisites-role-assignments.md)]
 
 ## <a name="get-object-ids"></a>Object-Id's ophalen
 
@@ -73,13 +77,13 @@ $objectid = (Get-AzADServicePrincipal -DisplayName "{name}").id
 objectid=$(az ad sp list --display-name "{name}" --query [].objectId --output tsv)
 ```
 
-## <a name="add-a-role-assignment"></a>Een roltoewijzing toevoegen
+## <a name="assign-an-azure-role"></a>Een Azure-rol toewijzen
 
-In azure RBAC kunt u een roltoewijzing toevoegen om toegang te verlenen.
+In azure RBAC wijst u een rol toe om toegang te verlenen.
 
 ### <a name="resource-group-scope-without-parameters"></a>Bereik van de resource groep (zonder para meters)
 
-De volgende sjabloon toont een eenvoudige manier om een roltoewijzing toe te voegen. Sommige waarden worden opgegeven in de sjabloon. In de volgende sjabloon ziet u:
+In de volgende sjabloon ziet u een eenvoudige manier om een rol toe te wijzen. Sommige waarden worden opgegeven in de sjabloon. In de volgende sjabloon ziet u:
 
 -  De rol van [lezer](built-in-roles.md#reader) toewijzen aan een gebruiker, groep of toepassing in een bereik van een resource groep
 
@@ -206,7 +210,7 @@ az deployment sub create --location centralus --template-file rbac-test.json --p
 
 ### <a name="resource-scope"></a>Resourcebereik
 
-Als u een roltoewijzing moet toevoegen op het niveau van een resource, stelt u de eigenschap van de roltoewijzing in op de `scope` naam van de resource.
+Als u een rol wilt toewijzen op het niveau van een resource, stelt u de `scope` eigenschap van de roltoewijzing in op de naam van de resource.
 
 In de volgende sjabloon ziet u:
 
@@ -369,15 +373,6 @@ az deployment group create --resource-group ExampleGroup2 --template-file rbac-t
 Hieronder ziet u een voor beeld van de toewijzing van de rol Inzender aan een nieuwe beheerde ID service-principal na de implementatie van de sjabloon.
 
 ![Roltoewijzing voor een nieuwe beheerde ID service-principal](./media/role-assignments-template/role-assignment-template-msi.png)
-
-## <a name="remove-a-role-assignment"></a>Roltoewijzing verwijderen
-
-In azure RBAC kunt u de functie toewijzing verwijderen om de toegang tot een Azure-resource te verwijderen. Er is geen manier om een roltoewijzing te verwijderen met behulp van een sjabloon. Als u een roltoewijzing wilt verwijderen, moet u andere hulpprogram ma's gebruiken, zoals:
-
-- [Azure-portal](role-assignments-portal.md#remove-a-role-assignment)
-- [Azure PowerShell](role-assignments-powershell.md#remove-a-role-assignment)
-- [Azure-CLI](role-assignments-cli.md#remove-a-role-assignment)
-- [REST API](role-assignments-rest.md#remove-a-role-assignment)
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -1,14 +1,14 @@
 ---
 title: Overzicht van de verbonden computer Windows-agent
 description: Dit artikel bevat een gedetailleerd overzicht van de beschik bare Azure Arc-servers agent, die ondersteuning biedt voor het bewaken van virtuele machines die worden gehost in hybride omgevingen.
-ms.date: 02/03/2021
+ms.date: 02/16/2021
 ms.topic: conceptual
-ms.openlocfilehash: ed77ee00510fedaf42226081fcf11c4753b8a63a
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: 82562bf3b1f8392e56a53ba0f968a76b050e7b13
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99626305"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100558502"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Overzicht van de agent voor servers met Azure Arc ingeschakeld
 
@@ -32,6 +32,30 @@ Het pakket met de Azure Connected machine agent bevat verschillende logische ond
     * Toewijzingen worden na 14 dagen verwijderd en worden na de periode van 14 dagen niet opnieuw aan de computer toegewezen.
 
 * De extensie agent beheert VM-extensies, met inbegrip van installeren, verwijderen en bijwerken. Uitbrei dingen worden gedownload van Azure en gekopieerd naar de `%SystemDrive%\%ProgramFiles%\AzureConnectedMachineAgent\ExtensionService\downloads` map in Windows, en voor Linux naar `/opt/GC_Ext/downloads` . In Windows wordt de uitbrei ding geïnstalleerd op het volgende pad `%SystemDrive%\Packages\Plugins\<extension>` en op Linux wordt de extensie geïnstalleerd `/var/lib/waagent/<extension>` .
+
+## <a name="instance-metadata"></a>Meta gegevens van instantie
+
+Meta gegevens over de verbonden computer worden verzameld nadat de verbonden machine agent is geregistreerd met servers met Arc-functionaliteit. Met name:
+
+* Naam, type en versie van het besturings systeem
+* Computernaam
+* Volledig gekwalificeerde domeinnaam (FQDN) van de computer
+* Versie van Connected Machine-agent
+* Active Directory-en DNS-Fully Qualified Domain Name (FQDN)
+* UUID (BIOS-ID)
+* Heartbeat van verbonden machine-agent
+* Versie van Connected Machine-agent
+* Open bare sleutel voor beheerde identiteit
+* Status en Details van beleids naleving (als Azure Policy gast configuratie beleid wordt gebruikt)
+
+De volgende meta gegevens worden door de agent aangevraagd vanuit Azure:
+
+* Resource locatie (regio)
+* ID van virtuele machine
+* Tags
+* Beheerd identiteits certificaat Azure Active Directory
+* Toewijzingen gast configuratie beleid
+* Verlengings aanvragen: installeren, bijwerken en verwijderen.
 
 ## <a name="download-agents"></a>Agents downloaden
 

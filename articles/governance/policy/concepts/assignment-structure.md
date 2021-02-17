@@ -3,12 +3,12 @@ title: Details van de structuur van de beleids toewijzing
 description: Beschrijft de beleids toewijzings definitie die door Azure Policy wordt gebruikt om beleids definities en-para meters te koppelen aan resources voor evaluatie.
 ms.date: 01/29/2021
 ms.topic: conceptual
-ms.openlocfilehash: 12acbe368c9ccd6fa5654d3394e0fecb286984bf
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 1151c931863e1139b76c34ced12c4e2842f83cc6
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99219563"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100558448"
 ---
 # <a name="azure-policy-assignment-structure"></a>Azure Policy-toewijzingsstructuur
 
@@ -98,7 +98,7 @@ Als u een aangepast bericht wilt instellen waarin wordt beschreven waarom een re
 ]
 ```
 
-Als de toewijzing voor een initiatief geldt, kunnen verschillende berichten worden geconfigureerd voor elke beleids definitie in het initiatief. De berichten gebruiken de `policyDefinitionReferenceId` waarde die is geconfigureerd in de initiatief definitie. Zie [Eigenschappen van eigenschaps definities](./initiative-definition-structure.md#policy-definition-properties)voor meer informatie.
+Als de toewijzing voor een initiatief geldt, kunnen verschillende berichten worden geconfigureerd voor elke beleids definitie in het initiatief. De berichten gebruiken de `policyDefinitionReferenceId` waarde die is geconfigureerd in de initiatief definitie. Zie [Eigenschappen van beleids definities](./initiative-definition-structure.md#policy-definition-properties)voor meer informatie.
 
 ```json
 "nonComplianceMessages": [

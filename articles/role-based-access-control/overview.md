@@ -10,12 +10,12 @@ ms.workload: identity
 ms.date: 09/30/2020
 ms.author: rolyon
 ms.custom: contperf-fy21q1, azuread-video-2020
-ms.openlocfilehash: a39ae904bb1dd36c3d3e19e8f51ff24e8d975f9b
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: 5bf9b79621ae1cd2c73f2e3ce18b0780bcdd2a71
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033915"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100559336"
 ---
 # <a name="what-is-azure-role-based-access-control-azure-rbac"></a>Wat is Azure RBAC (toegangsbeheer op basis van rollen)?
 
@@ -38,7 +38,7 @@ Hier volgen enkele voorbeelden van wat u met op rollen gebaseerd toegangsbeheer 
 
 ## <a name="how-azure-rbac-works"></a>Hoe Azure RBAC werkt
 
-De manier waarop u de toegang tot resources beheert met behulp van op rollen gebaseerd toegangsbeheer in Azure is door roltoewijzingen te maken. Dit is een belangrijke concept om te weten: het is de manier waarop machtigingen worden afgedwongen. Een roltoewijzing bestaat uit drie elementen: beveiligings-principal, roldefinitie en bereik (ook wel scope of niveau genoemd).
+De manier waarop u de toegang tot resources beheert met behulp van Azure RBAC is het toewijzen van Azure-rollen. Dit is een belangrijke concept om te weten: het is de manier waarop machtigingen worden afgedwongen. Een roltoewijzing bestaat uit drie elementen: beveiligings-principal, roldefinitie en bereik (ook wel scope of niveau genoemd).
 
 ### <a name="security-principal"></a>Beveiligings-principal
 
@@ -80,9 +80,9 @@ Het volgende diagram toont een voorbeeld van een roltoewijzing. In dit voorbeeld
 
 ![Roltoewijzing om toegang te beheren](./media/overview/rbac-overview.png)
 
-U kunt roltoewijzingen maken met behulp van Azure Portal, Azure CLI, Azure PowerShell, Azure-SDK's of REST-API's.
+U kunt rollen toewijzen met behulp van de Azure Portal, Azure CLI, Azure PowerShell, Azure Sdk's of REST Api's.
 
-Zie [Stappen om een roltoewijzing toe te voegen](role-assignments-steps.md) voor meer informatie.
+Zie [stappen voor het toewijzen van een Azure-rol](role-assignments-steps.md)voor meer informatie.
 
 ## <a name="multiple-role-assignments"></a>Meervoudige roltoewijzingen
 
@@ -122,6 +122,6 @@ Hier volgen de stappen op hoog niveau die Azure RBAC gebruikt om te bepalen of u
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure-portal](role-assignments-portal.md)
+- [Azure-rollen toewijzen met behulp van de Azure Portal](role-assignments-portal.md)
 - [Inzicht in de verschillende rollen](rbac-and-directory-admin-roles.md)
 - [Cloud Adoption Framework: Resource-toegangsbeheer in Azure](/azure/cloud-adoption-framework/govern/resource-consistency/resource-access-management)

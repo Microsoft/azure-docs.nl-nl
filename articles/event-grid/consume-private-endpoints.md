@@ -3,12 +3,12 @@ title: Gebeurtenissen leveren met behulp van een persoonlijke koppelings service
 description: In dit artikel wordt beschreven hoe u de beperking van het gebruik van een persoonlijke koppelings service kunt omzeilen.
 ms.topic: how-to
 ms.date: 02/12/2021
-ms.openlocfilehash: ad6f500830383f60e0350a297d2650bfbeae2f6f
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 4343740ea6c34c9ae282723b79007f7035785b04
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417230"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548608"
 ---
 # <a name="deliver-events-using-private-link-service"></a>Gebeurtenissen leveren met behulp van een persoonlijke koppelings service
 Het is momenteel niet mogelijk om gebeurtenissen te leveren met behulp van [persoonlijke eind punten](../private-link/private-endpoint-overview.md). Dat wil zeggen dat er geen ondersteuning is als u strikte vereisten voor netwerk isolatie hebt waarbij het verkeer van de geleverde gebeurtenissen de privé-IP-ruimte niet mag verlaten. 
@@ -19,7 +19,7 @@ Als uw vereisten echter een veilige manier hebben om gebeurtenissen te verzenden
 Vervolgens kunt u een persoonlijke koppeling gebruiken die is geconfigureerd in Azure Functions of uw webhook die is geïmplementeerd in uw virtuele netwerk om gebeurtenissen op te halen. Zie het voor beeld: [verbinding maken met privé-eind punten met Azure functions](/samples/azure-samples/azure-functions-private-endpoints/connect-to-private-endpoints-with-azure-functions/).
 
 
-:::image type="content" source="./media/consume-private-endpoints/deliver-private-link-service.png" alt-text="Leveren via een privé koppelings service":::
+:::image type="content" source="./media/consume-private-endpoints/deliver-private-link-service.svg" alt-text="Leveren via een privé koppelings service":::
 
 
 Onder deze configuratie gaat het verkeer via het open bare IP/Internet van Event Grid naar Event Hubs, Service Bus of Azure Storage, maar kan het kanaal worden versleuteld en wordt een beheerde identiteit van Event Grid gebruikt. Als u uw Azure Functions of webhook die is geïmplementeerd in uw virtuele netwerk configureert om gebruik te maken van een Event Hubs, Service Bus of Azure Storage via een persoonlijke koppeling, blijft die sectie van het verkeer duidelijk binnen Azure.

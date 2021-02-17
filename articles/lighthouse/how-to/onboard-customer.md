@@ -1,14 +1,14 @@
 ---
 title: Een klant onboarden in Azure Lighthouse
 description: Meer informatie over hoe u een klant kunt opsturen naar Azure Lighthouse, zodat de resources toegankelijk zijn en kunnen worden beheerd via uw eigen Tenant met behulp van Azure delegated resource management.
-ms.date: 02/08/2021
+ms.date: 02/16/2021
 ms.topic: how-to
-ms.openlocfilehash: c0a886b692b99156cbd53e5f0f5953047560c5b9
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 4487dd82b30e14f9db2001dc10f7437a53e745f3
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100372141"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556106"
 ---
 # <a name="onboard-a-customer-to-azure-lighthouse"></a>Een klant onboarden in Azure Lighthouse
 
@@ -205,7 +205,7 @@ De laatste autorisatie in bovenstaand voor beeld voegt een **principalId** toe a
 Zodra u het parameter bestand hebt bijgewerkt, moet een gebruiker in de Tenant van de klant de Azure Resource Manager-sjabloon implementeren binnen hun Tenant. Er is een afzonderlijke implementatie nodig voor elk abonnement dat u wilt vrijgeven (of voor elk abonnement met resource groepen die u wilt voorbereiden).
 
 > [!IMPORTANT]
-> Deze implementatie moet worden uitgevoerd door een niet-gast account in de Tenant van de klant met de [ingebouwde rol](../../role-based-access-control/built-in-roles.md#owner) van de eigenaar van het abonnement (of de resource groepen die worden uitgevoerd). Als u alle gebruikers wilt zien die het abonnement kunnen delegeren, kan een gebruiker in de Tenant van de klant het abonnement selecteren in de Azure Portal, **toegangs beheer openen (IAM)** en [alle gebruikers met de rol eigenaar weer geven](../../role-based-access-control/role-assignments-list-portal.md#list-owners-of-a-subscription). 
+> Deze implementatie moet worden uitgevoerd door een niet-gast account in de Tenant van de klant die een rol heeft met de `Microsoft.Authorization/roleAssignments/write` machtiging, zoals de [eigenaar](../../role-based-access-control/built-in-roles.md#owner), voor het onboarden van het abonnement (of met de resource groepen die worden uitgevoerd). Om gebruikers te vinden die het abonnement kunnen delegeren, kan een gebruiker in de Tenant van de klant het abonnement selecteren in de Azure Portal, **toegangs beheer openen (IAM)** en [alle gebruikers met de rol eigenaar weer geven](../../role-based-access-control/role-assignments-list-portal.md#list-owners-of-a-subscription). 
 >
 > Als het abonnement is gemaakt met behulp van het [programma Cloud Solution Provider (CSP)](../concepts/cloud-solution-provider.md), kan elke gebruiker met de rol [beheerder](/partner-center/permissions-overview#manage-commercial-transactions-in-partner-center-azure-ad-and-csp-roles) in de Tenant van de service provider de implementatie uitvoeren.
 

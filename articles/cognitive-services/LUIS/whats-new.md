@@ -4,13 +4,13 @@ description: Dit artikel wordt regelmatig bijgewerkt met nieuws over de Azure Co
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: overview
-ms.date: 01/21/2021
-ms.openlocfilehash: 5fdde81d31eae4c50b86a5553742f9b599f32505
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.date: 02/16/2021
+ms.openlocfilehash: f4ac384a9b1bce944397369cb93392f179643f96
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98693592"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100558757"
 ---
 # <a name="whats-new-in-language-understanding"></a>Nieuwe functies in Language Understanding
 
@@ -20,7 +20,7 @@ Meer informatie over nieuwe functies in de service. Dit kunnen releaseopmerkinge
 
 ### <a name="january-2021"></a>Januari 2021
 
-* De V3 API voor voor spellingen ondersteunt nu de [Bing-spelling-API](luis-how-to-publish-app.md#spelling-correction).
+* De V3 API voor voor spellingen ondersteunt nu de [Bing-spelling-API](luis-tutorial-bing-spellcheck.md).
 * De regionale portals (au.luis.ai en eu.luis.ai) zijn geconsolideerd in één portal en URL. Als u een van deze portals gebruikt, wordt u automatisch omgeleid naar luis.ai.
 
 ### <a name="december-2020"></a>December 2020

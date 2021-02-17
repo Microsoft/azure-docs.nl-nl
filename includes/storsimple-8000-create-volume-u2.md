@@ -2,19 +2,19 @@
 author: alkohli
 ms.service: storsimple
 ms.topic: include
-ms.date: 10/26/2018
+ms.date: 02/09/2021
 ms.author: alkohli
-ms.openlocfilehash: 2abfa29671bd804ee75194ef621fe07f06c015e9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 400c5f0b2281679c3ec913e94643ffec6082d9e6
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67176088"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100551947"
 ---
 #### <a name="to-create-a-volume"></a>Een volume maken
-1. Selecteer en klik op uw apparaat in de lijst in tabelvorm met apparaten op de blade **Apparaten**. Klik op **+ Volume toevoegen**.
+1. Selecteer en klik op uw apparaat in de lijst in tabelvorm met apparaten op de blade **Apparaten**. Klik op **+ Volume toevoegen**.<!--Note to reviewer. No screen updates. Had to rename screens to be able to correct a formatting error.-->
 
-    ![Een nieuw volume toevoegen](./media/storsimple-8000-create-volume-u2/step5createvol1.png)
+    ![Een nieuw volume toevoegen](./media/storsimple-8000-create-volume-u2/create-volume-01.png)
 
 2. Doe het volgende op de blade **Volume**:
    
@@ -35,19 +35,19 @@ ms.locfileid: "67176088"
        U kunt lokaal vastgemaakte volumes inrichten tot maximaal 8,5 TB, of gelaagde volumes op het 8100-apparaat tot 200 TB. Op een groter 8600-apparaat kunt u lokaal vastgemaakte volumes inrichten tot 22,5 TB en gelaagde volumes tot maximaal 500 TB. Aangezien lokale ruimte op het apparaat is vereist om de werkset van gelaagde volumes te hosten, heeft het maken van lokaal vastgemaakte volumes invloed op de beschikbare schijfruimte voor het inrichten van gelaagde volumes. Als u dus een lokaal vastgemaakt volume maakt, wordt de beschikbare schijfruimte voor het maken van gelaagde volumes verminderd. En andersom: als een gelaagd volume wordt gemaakt, wordt de beschikbare ruimte voor het maken van lokaal vastgemaakte volumes verminderd.
       
        Als u een lokaal vastgemaakt volume van 8,5 TB (maximaal toegestane grootte) op uw 8100-apparaat inricht, hebt u de lokale ruimte die beschikbaar is op het apparaat volledig gebruikt. Vanaf dat moment kunt u geen gelaagd volume maken, omdat er geen lokale ruimte op het apparaat is voor het hosten van de werkset van het gelaagde volume. Bestaande gelaagde volumes zijn ook van invloed op de beschikbare ruimte. Als u bijvoorbeeld een 8100-apparaat hebt met reeds gelaagde volumes van circa 106 TB, is er nog maar 4 TB ruimte beschikbaar voor lokaal vastgemaakte volumes.
-
+ 
       1. Klik in het veld **Verbonden hosts** op de pijl. 
 
-         ![Verbonden hosts](./media/storsimple-8000-create-volume-u2/step5createvol2.png)
+         ![Verbonden hosts](./media/storsimple-8000-create-volume-u2/create-volume-02.png)
 
       1. Kies op de blade **Verbonden hosts** een bestaande ACR of voeg een nieuwe ACR toe door de volgende stappen uit te voeren:
 
          1. Geef een **naam** voor uw ACR op.
          2. Geef onder **iSCSI-initiatornaam** het IQN (iSCI Qualified Name) van uw Windows-host op. Als u het IQN niet hebt, gaat u naar [Het IQN van een Windows Server-host ophalen](#get-the-iqn-of-a-windows-server-host).
 
-      1. Klik op **Maken**. Er wordt een volume gemaakt met de opgegeven instellingen.
+      1. Klik op **Create**. Er wordt een volume gemaakt met de opgegeven instellingen.
 
-         ![Klik op Maken](./media/storsimple-8000-create-volume-u2/step5createvol3.png)
+         ![Klik op Maken](./media/storsimple-8000-create-volume-u2/create-volume-03.png)
 
          > [!NOTE]
          > Let erop dat het volume dat u hier hebt gemaakt niet wordt beveiligd. U moet back-upbeleid maken en koppelen aan dit volume om geplande back-ups uit te voeren. 

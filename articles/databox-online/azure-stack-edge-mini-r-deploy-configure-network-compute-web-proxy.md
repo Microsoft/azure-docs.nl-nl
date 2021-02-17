@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 02/04/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to connect and activate Azure Stack Edge Mini R so I can use it to transfer data to Azure.
-ms.openlocfilehash: 1cca747003a127371db7d110500e2b4168f10219
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: a202ee1d708feebc7643fa6f20aafa9d8603fc38
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99594448"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546768"
 ---
 # <a name="tutorial-configure-network-for-azure-stack-edge-mini-r"></a>Zelfstudie: Netwerk configureren voor Azure Stack Edge Mini R
 
@@ -50,7 +50,7 @@ Volg deze stappen voor het configureren van het netwerk voor uw apparaat.
 
 2. Als er een zero day-update nodig is, kunt u die hier uitvoeren door een gegevenspoort te configureren met een bekabelde verbinding. Zie [Uw apparaat van een bekabelde verbinding voorzien](azure-stack-edge-mini-r-deploy-install.md#cable-the-device) voor meer instructies over het instellen van een bekabelde verbinding voor dit apparaat. Nadat de update is voltooid, kunt u de bekabelde verbinding verwijderen.
 
-3. Certificaten maken voor Wi-Fi en ondertekening. Zowel de ondertekeningsketen als de Wi-Fi-certificaten moeten de DER-indeling hebben met een *.CER*-bestandsextensie. Zie [Certificaten maken](azure-stack-edge-j-series-manage-certificates.md) voor instructies.
+3. Certificaten maken voor Wi-Fi en ondertekening. Zowel de ondertekeningsketen als de Wi-Fi-certificaten moeten de DER-indeling hebben met een *.CER*-bestandsextensie. Zie [Certificaten maken](azure-stack-edge-gpu-manage-certificates.md) voor instructies.
 
 4. Ga in de lokale webinterface naar **Aan de slag**. Selecteer op de tegel **Beveiliging** de optie **Certificaten** en selecteer vervolgens **Configureren**. 
 

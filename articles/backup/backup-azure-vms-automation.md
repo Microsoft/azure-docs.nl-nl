@@ -3,12 +3,12 @@ title: Back-ups van virtuele Azure-machines maken en herstellen met Power shell
 description: Hierin wordt beschreven hoe u back-ups van virtuele Azure-machines maakt en herstelt met Azure Backup met Power shell
 ms.topic: conceptual
 ms.date: 09/11/2019
-ms.openlocfilehash: 66b8fe0109a4dd2e054106b67f893def2ee596b0
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: cbb962cd6ddde3d0ee8280c0a548067446a58d55
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100095081"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548563"
 ---
 # <a name="back-up-and-restore-azure-vms-with-powershell"></a>Back-ups van virtuele Azure-machines maken en herstellen met Power shell
 
@@ -622,7 +622,7 @@ De sjabloon is niet direct toegankelijk omdat deze zich onder het opslagaccount 
 3. Implementeer de sjabloon voor het maken van een nieuwe virtuele machine, zoals [hier](../azure-resource-manager/templates/deploy-powershell.md)wordt uitgelegd.
 
     ```powershell
-    New-AzResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleResourceGroup -TemplateUri $templateBlobFullURI -storageAccountType Standard_GRS
+    New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup -TemplateUri $templateBlobFullURI -storageAccountType Standard_GRS
     ```
 
 ### <a name="create-a-vm-using-the-config-file"></a>Een virtuele machine maken met behulp van het configuratie bestand

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/20/2020
 ms.author: kumud
-ms.openlocfilehash: 54228ac0aa582d15509fbf967728364841e52453
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: d591194f09e85c3e34ed4b904249df994a14bff5
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98220572"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100558584"
 ---
 # <a name="add-change-or-delete-a-virtual-network-subnet"></a>Een subnet van een virtueel netwerk maken, wijzigen of verwijderen
 
@@ -81,7 +81,7 @@ Het account waarmee u zich aanmeldt bij of verbinding maakt met Azure met, moet 
     | Instelling | Beschrijving |
     | --- | --- |
     | **Adresbereik** | Als er geen resources binnen het subnet zijn geïmplementeerd, kunt u het adres bereik wijzigen. Als er resources in het subnet aanwezig zijn, moet u de resources naar een ander subnet verplaatsen of eerst verwijderen uit het subnet. De stappen die u moet nemen om een resource te verplaatsen of te verwijderen, variëren afhankelijk van de resource. Raadpleeg de documentatie voor elk van deze resource typen voor meer informatie over het verplaatsen of verwijderen van resources in subnetten. Zie de beperkingen voor het **adres bereik** in stap 4 van [een subnet toevoegen](#add-a-subnet). |
-    | **Gebruikers** | U kunt de toegang tot het subnet beheren door gebruik te maken van ingebouwde rollen of uw eigen aangepaste rollen. Zie [een roltoewijzing toevoegen](../role-based-access-control/role-assignments-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-role-assignment)voor meer informatie over het toewijzen van rollen en gebruikers voor toegang tot het subnet. |
+    | **Gebruikers** | U kunt de toegang tot het subnet beheren door gebruik te maken van ingebouwde rollen of uw eigen aangepaste rollen. Zie [Azure-rollen toewijzen](../role-based-access-control/role-assignments-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over het toewijzen van rollen en gebruikers voor toegang tot het subnet. |
     | **Netwerkbeveiligingsgroep** en **Routetabel** | Zie stap 4 van [een subnet toevoegen](#add-a-subnet). |
     | **Service-eindpunten** | <p>Zie Service-eind punten in stap 4 van [een subnet toevoegen](#add-a-subnet). Wanneer u een service-eind punt voor een bestaand subnet inschakelt, moet u ervoor zorgen dat er geen kritieke taken worden uitgevoerd op een wille keurige bron in het subnet. Service-eind punten scha kelen routes op elke netwerk interface in het subnet. De service-eind punten gaan van het gebruik van de standaard route met het adres voorvoegsel *0.0.0.0/0* en het volgende hop-type *Internet* om een nieuwe route te gebruiken met de adres prefixen van de service en het volgende hop-type *VirtualNetworkServiceEndpoint*.</p><p>Tijdens de switch kunnen alle open TCP-verbindingen worden beëindigd. Het service-eind punt is niet ingeschakeld totdat verkeer naar de service voor alle netwerk interfaces wordt bijgewerkt met de nieuwe route. Zie [virtueel netwerk verkeer routeren](virtual-networks-udr-overview.md)voor meer informatie over route ring.</p> |
     | **Delegatie van subnet** | Zie Service-eind punten in stap 4 van [een subnet toevoegen](#add-a-subnet). Subnet delegering kan worden gewijzigd in nul of er zijn meerdere overdrachten ingeschakeld. Als een resource voor een service al in het subnet is geïmplementeerd, kan er geen subnet-overdracht worden toegevoegd of verwijderd totdat alle resources voor de service zijn verwijderd. Als u wilt delegeren voor een andere service, selecteert u de service die u wilt delegeren in de lijst met **Services** . |
@@ -120,7 +120,7 @@ U kunt een subnet alleen verwijderen als er geen resources in het subnet aanwezi
 
 Om taken uit te voeren op subnetten, moet uw account worden toegewezen aan de [rol netwerk bijdrager](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) of aan een [aangepaste rol](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) waaraan de juiste acties in de volgende tabel zijn toegewezen:
 
-|Actie                                                                   |   Naam                                       |
+|Bewerking                                                                   |   Name                                       |
 |-----------------------------------------------------------------------  |   -----------------------------------------  |
 |Microsoft.Network/virtualNetworks/subnets/read                           |   Een subnet van een virtueel netwerk lezen              |
 |Micro soft. Network/virtualNetworks/subnetten/schrijven                          |   Een subnet van een virtueel netwerk maken of bijwerken  |

@@ -1,6 +1,6 @@
 ---
-title: 'Zelfstudie: toegangspakket maken - Azure AD-rechtenbeheer'
-description: Stapsgewijze zelfstudie voor het maken van uw eerste toegangspakket in Azure Active Directory-rechtenbeheer.
+title: 'Zelf studie: de toegang tot resources beheren in het beheer van rechten van Azure AD'
+description: Stapsgewijze zelf studie voor het maken van uw eerste toegangs pakket met behulp van de Azure Portal in Azure Active Directory rechten beheer.
 services: active-directory
 documentationCenter: ''
 author: ajburnle
@@ -16,14 +16,14 @@ ms.date: 09/30/2020
 ms.author: ajburnle
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2625b1e0ccc4c3129f412eff144f47d9dc97b961
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 1adbc653c8b698cb7b439b54b0a77d2b8cd4042a
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937895"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100547397"
 ---
-# <a name="tutorial-create-your-first-access-package-in-azure-ad-entitlement-management"></a>Zelfstudie: Uw eerste toegangspakket maken in Azure AD-rechtenbeheer
+# <a name="tutorial-manage-access-to-resources-in-azure-ad-entitlement-management"></a>Zelf studie: toegang tot resources beheren in het beheer van rechten van Azure AD
 
 Het beheren van toegang tot alle resources die werknemers nodig hebben, zoals groepen, toepassingen en sites, is een belangrijke functie voor organisaties. U wilt werknemers het juiste toegangsniveau verlenen om productief te zijn en hun toegang verwijderen wanneer deze niet meer nodig is.
 
@@ -41,8 +41,6 @@ In deze zelfstudie leert u het volgende:
 Bekijk de volgende video voor een stapsgewijze demonstratie van het proces voor het implementeren van Azure Active Directory-rechtenbeheer, inclusief het maken van uw eerste toegangspakket:
 
 >[!VIDEO https://www.youtube.com/embed/zaaKvaaYwI4]
-
-U kunt een toegangspakket ook programmatisch maken met behulp van Microsoft Graph. Raadpleeg [Rechtenbeheer-API](/graph/tutorial-access-package-api?view=graph-rest-beta) voor een zelfstudie waarin wordt uitgelegd hoe u automatisch een toegangspakket maakt.
 
 ## <a name="prerequisites"></a>Vereisten
 

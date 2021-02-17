@@ -7,14 +7,14 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 01/04/2021
+ms.date: 02/09/2021
 ms.reviewer: sngun
-ms.openlocfilehash: e227e230c4de1234e068f72958367dc2ac709426
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: ee05cbdfb2634ed7c299f736b3343ce2dfbd3520
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97881953"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548400"
 ---
 # <a name="change-feed-pull-model-in-azure-cosmos-db"></a>Pull-model voor feed wijzigen in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -22,7 +22,7 @@ ms.locfileid: "97881953"
 Met het pull-model voor wijzigings invoer kunt u de Azure Cosmos DB wijzigings feed gebruiken in uw eigen tempo. Zoals u al kunt doen met de [Change feed-processor](change-feed-processor.md), kunt u het pull-model wijzigings feed gebruiken om de verwerking van wijzigingen in meerdere parallelliseren te verwerken.
 
 > [!NOTE]
-> Het pull-model voor de wijzigings feed is momenteel in [de preview-versie van de Azure Cosmos db .NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.15.0-preview) . De preview-versie is nog niet beschikbaar voor andere SDK-versies.
+> Het pull-model voor de wijzigings feed is momenteel in [de preview-versie van de Azure Cosmos db .NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.17.0-preview) . De preview-versie is nog niet beschikbaar voor andere SDK-versies.
 
 ## <a name="comparing-with-change-feed-processor"></a>Vergelijken met de processor voor wijzigings invoer
 
@@ -48,7 +48,7 @@ Hier volgen enkele belang rijke verschillen tussen de Change feed-processor en h
 | Navragen voor toekomstige wijzigingen | Controleert automatisch op wijzigingen op basis van door de gebruiker opgegeven `WithPollInterval` | Handmatig |
 | Gedrag waarbij er geen nieuwe wijzigingen zijn | Automatisch wachten `WithPollInterval` en opnieuw controleren | Moet uitzonde ring afvangen en hand matig opnieuw controleren |
 | Wijzigingen van de hele container verwerken | Ja, en automatisch geparallelleerd voor meerdere threads/machine die uit dezelfde container worden verbruikt| Ja, en hand matig geparallelleerd met behulp van FeedTokens |
-| Wijzigingen van slechts één partitie sleutel verwerken | Niet ondersteund | Ja|
+| Wijzigingen van slechts één partitie sleutel verwerken | Niet ondersteund | Yes|
 | Ondersteunings niveau | Algemeen beschikbaar | Preview |
 
 > [!NOTE]
@@ -65,19 +65,19 @@ De `FeedIterator` is beschikbaar in twee soorten. Naast de voor beelden hieronde
 Hier volgt een voor beeld voor het verkrijgen van het `FeedIterator` retour neren van entiteits objecten, in dit geval een `User` object:
 
 ```csharp
-FeedIterator<User> InteratorWithPOCOS = container.GetChangeFeedIterator<User>(ChangeFeedStartFrom.Beginning());
+FeedIterator<User> InteratorWithPOCOS = container.GetChangeFeedIterator<User>(ChangeFeedMode.Incremental, ChangeFeedStartFrom.Beginning());
 ```
 
 Hier volgt een voor beeld voor het verkrijgen van een `FeedIterator` `Stream` :
 
 ```csharp
-FeedIterator iteratorWithStreams = container.GetChangeFeedStreamIterator<User>(ChangeFeedStartFrom.Beginning());
+FeedIterator iteratorWithStreams = container.GetChangeFeedStreamIterator<User>(ChangeFeedMode.Incremental, ChangeFeedStartFrom.Beginning());
 ```
 
 Als u geen `FeedRange` aan een hebt geleverd `FeedIterator` , kunt u de wijzigings feed van een hele container in uw eigen tempo verwerken. Hier volgt een voor beeld waarin wordt begonnen met het lezen van alle wijzigingen, beginnend bij de huidige tijd:
 
 ```csharp
-FeedIterator iteratorForTheEntireContainer = container.GetChangeFeedStreamIterator<User>(ChangeFeedStartFrom.Now());
+FeedIterator iteratorForTheEntireContainer = container.GetChangeFeedStreamIterator<User>(ChangeFeedMode.Incremental, ChangeFeedStartFrom.Now());
 
 while (iteratorForTheEntireContainer.HasMoreResults)
 {
@@ -103,7 +103,9 @@ Omdat de wijzigings feed in feite een oneindig lijst items is die alle toekomsti
 In sommige gevallen wilt u mogelijk alleen de wijzigingen van een specifieke partitie sleutel verwerken. U kunt een `FeedIterator` voor een specifieke partitie sleutel verkrijgen en de wijzigingen op dezelfde manier verwerken als voor een hele container.
 
 ```csharp
-FeedIterator<User> iteratorForPartitionKey = container.GetChangeFeedIterator<User>(ChangeFeedStartFrom.Beginning(FeedRange.FromPartitionKey(new PartitionKey("PartitionKeyValue"))));
+FeedIterator<User> iteratorForPartitionKey = container.GetChangeFeedIterator<User>(
+    ChangeFeedMode.Incremental, 
+    ChangeFeedStartFrom.Beginning(FeedRange.FromPartitionKey(new PartitionKey("PartitionKeyValue"))));
 
 while (iteratorForThePartitionKey.HasMoreResults)
 {
@@ -147,7 +149,7 @@ Hier volgt een voor beeld waarin wordt uitgelegd hoe u vanaf het begin van de wi
 Machine 1:
 
 ```csharp
-FeedIterator<User> iteratorA = container.GetChangeFeedIterator<User>(ChangeFeedStartFrom.Beginning(ranges[0]));
+FeedIterator<User> iteratorA = container.GetChangeFeedIterator<User>(ChangeFeedMode.Incremental, ChangeFeedStartFrom.Beginning(ranges[0]));
 while (iteratorA.HasMoreResults)
 {
     try {
@@ -169,7 +171,7 @@ while (iteratorA.HasMoreResults)
 Machine 2:
 
 ```csharp
-FeedIterator<User> iteratorB = container.GetChangeFeedIterator<User>(ChangeFeedStartFrom.Beginning(ranges[1]));
+FeedIterator<User> iteratorB = container.GetChangeFeedIterator<User>(ChangeFeedMode.Incremental, ChangeFeedStartFrom.Beginning(ranges[1]));
 while (iteratorB.HasMoreResults)
 {
     try {
@@ -193,7 +195,7 @@ while (iteratorB.HasMoreResults)
 U kunt de positie van uw opslaan `FeedIterator` door een vervolg token te maken. Een vervolg token is een teken reeks waarde waarmee de laatst verwerkte wijzigingen van de FeedIterator worden bijgehouden. Hierdoor kan de service `FeedIterator` op dit moment later worden hervat. Met de volgende code wordt de wijzigings feed gelezen sinds het maken van de container. Nadat er geen wijzigingen meer beschikbaar zijn, wordt er een vervolg token bewaard, zodat het gebruik van de wijzigings toevoer later kan worden hervat.
 
 ```csharp
-FeedIterator<User> iterator = container.GetChangeFeedIterator<User>(ChangeFeedStartFrom.Beginning());
+FeedIterator<User> iterator = container.GetChangeFeedIterator<User>(ChangeFeedMode.Incremental, ChangeFeedStartFrom.Beginning());
 
 string continuation = null;
 
@@ -216,7 +218,7 @@ while (iterator.HasMoreResults)
 }
 
 // Some time later
-FeedIterator<User> iteratorThatResumesFromLastPoint = container.GetChangeFeedIterator<User>(ChangeFeedStartFrom.ContinuationToken(continuation));
+FeedIterator<User> iteratorThatResumesFromLastPoint = container.GetChangeFeedIterator<User>(ChangeFeedMode.Incremental, ChangeFeedStartFrom.ContinuationToken(continuation));
 ```
 
 Zolang de Cosmos-container nog bestaat, verloopt de vervolg token van FeedIterator nooit.

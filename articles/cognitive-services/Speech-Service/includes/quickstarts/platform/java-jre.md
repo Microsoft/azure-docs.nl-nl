@@ -11,12 +11,12 @@ ms.topic: include
 ms.date: 10/15/2020
 ms.custom: devx-track-java
 ms.author: erhopf
-ms.openlocfilehash: 142d4504ab12e7df5cc1e009038554a5b90dff0c
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.openlocfilehash: c58132cfa422eae39fd5f4030afb2ff004c0e71d
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96188275"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100552912"
 ---
 In deze gids ontdekt u hoe u de [Speech SDK](~/articles/cognitive-services/speech-service/speech-sdk.md) kunt installeren voor 64-bits Java 8 JRE. Als u enkel de pakketnaam wilt om zelf aan de slag te gaan, dan is de Java SDK niet beschikbaar in de centrale Maven-opslagplaats. Of u nu Gradle of een `pom.xml`-afhankelijkheidsbestand gebruikt, u moet een aangepaste opslagplaats toevoegen die verwijst naar `https://csspeechstorage.blob.core.windows.net/maven/` (zie hieronder voor de pakketnaam).
 
@@ -33,6 +33,8 @@ In deze gids ontdekt u hoe u de [Speech SDK](~/articles/cognitive-services/speec
   - Linux: bekijk de lijst met [ondersteunde Linux-distributies en -doelarchitecturen](~/articles/cognitive-services/speech-service/speech-sdk.md).
 
 ## <a name="prerequisites"></a>Vereisten
+
+- In Windows hebt u het [Microsoft Visual C++ Redistributable for Visual Studio 2019](https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0) voor uw platform nodig. Bij een eerste installatie is mogelijk een herstart vereist.
 
 - [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) of [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 

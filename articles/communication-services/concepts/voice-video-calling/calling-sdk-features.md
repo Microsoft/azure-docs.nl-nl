@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: f949747649e351947ba65666fdb57c0beac3aa23
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 07ad53191c8212ccde5633a4068f31aa00ab69b1
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99492107"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100554727"
 ---
 # <a name="calling-client-library-overview"></a>Overzicht van de aanroepende clientbibliotheek
 
@@ -96,16 +96,17 @@ De aanroepende clientbibliotheek in Communication Services biedt ondersteuning v
 
 |           |Web | Android/iOS|
 |-----------|----|------------|
-|**Aantal uitgaande streams dat tegelijkertijd kan worden verzonden** |1 video + 1 scherm delen | 1 video |
-|**Aantal binnenkomende streams dat tegelijkertijd kan worden weergegeven** |1 video + 1 scherm delen| 6 video + 1 scherm delen |
+|**Aantal uitgaande streams dat tegelijkertijd kan worden verzonden** |1 audio/video of 1 audio/scherm delen | 1 audio/video | 
+|**Aantal binnenkomende streams dat tegelijkertijd kan worden weergegeven** |1 audio/video of 1 audio/scherm delen| 6 audio/video of 1 scherm delen |
 
+Houd er rekening mee dat in groeps scenario's één gemengde audio stroom wordt gebruikt ter ondersteuning van alle audio deel nemers.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Aan de slag met aanroepen](../../quickstarts/voice-video-calling/getting-started-with-calling.md)
+> [Aan de slag met oproepen](../../quickstarts/voice-video-calling/getting-started-with-calling.md)
 
 Raadpleeg voor meer informatie de volgende artikelen:
-- Stel u op de hoogte van algemene [aanroepstromen](../call-flows.md)
+- Stel u op de hoogte van algemene [aanroepstromen](../call-flows.md) 
 - Meer informatie over [aanroeptypen](../voice-video-calling/about-call-types.md)
 - [Uw PSTN-oplossing plannen](../telephony-sms/plan-solution.md)

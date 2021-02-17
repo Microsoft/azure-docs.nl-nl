@@ -13,12 +13,12 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/22/2019
 ms.author: rolyon
-ms.openlocfilehash: c6736bb2642ff08d0aa3cda536ef1599324efded
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: fcba9cad208c2ac170f91cc06a6db22e271f2a70
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85362008"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100559315"
 ---
 # <a name="tutorial-grant-a-user-access-to-azure-resources-using-the-azure-portal"></a>Zelfstudie: Toegang tot Azure-resources verlenen aan een gebruiker met behulp van de Azure-portal
 
@@ -58,7 +58,7 @@ Meld u aan bij Azure Portal op https://portal.azure.com.
 
 ## <a name="grant-access"></a>Toegang verlenen
 
-In Azure RBAC verleent u toegang door een roltoewijzing te maken.
+In azure RBAC wijst u een Azure-rol toe om toegang te verlenen.
 
 1. Klik in de lijst **Resourcegroepen** op de nieuwe resourcegroep **rbac-resource-group**.
 
@@ -82,7 +82,7 @@ In Azure RBAC verleent u toegang door een roltoewijzing te maken.
 
 1. Selecteer in de lijst **Selecteren** uzelf of een andere gebruiker.
 
-1. Klik op **Opslaan** om de roltoewijzing te maken.
+1. Klik op **Opslaan** om de rol toe te wijzen.
 
    Na enkele ogenblikken krijgt de gebruiker de rol Inzender voor virtuele machines toegewezen in het bereik van de resourcegroep rbac-resource-group.
 

@@ -8,12 +8,12 @@ ms.date: 4/10/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: contperf-fy21q3
-ms.openlocfilehash: 44cee2b47ae8f96e2852dfdb5aefe73a7af67ed6
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 155566a125485fda326f9f5e02d4aead0ffe30e3
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98731331"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100560741"
 ---
 # <a name="parse-and-validate-models-with-the-dtdl-parser-library"></a>Modellen parseren en valideren met de DTDL parser-bibliotheek
 
@@ -87,4 +87,4 @@ De volgende code toont een voor beeld van het gebruik van de parser-bibliotheek 
 ## <a name="next-steps"></a>Volgende stappen
 
 Wanneer u klaar bent met het schrijven van uw modellen, raadpleegt u de DigitalTwinsModels-Api's om ze te uploaden (en andere beheer bewerkingen uit te voeren):
-* [*Instructies: Aangepaste modellen beheren*](how-to-manage-model.md)
+* [*Instructies: DTDL-modellen beheren*](how-to-manage-model.md)

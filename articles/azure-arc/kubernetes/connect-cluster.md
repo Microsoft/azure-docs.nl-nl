@@ -2,23 +2,23 @@
 title: Een Azure Arc enabled Kubernetes-cluster verbinden (preview)
 services: azure-arc
 ms.service: azure-arc
-ms.date: 02/09/2021
+ms.date: 02/15/2021
 ms.topic: article
 author: mlearned
 ms.author: mlearned
 description: Een Azure Arc enabled Kubernetes-cluster verbinden met Azure Arc
 keywords: Kubernetes, Arc, azure, K8s, containers
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: e68eccf998592aa7d1ebfea51e4ca66d577b3c7f
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 5e2058c5128075de4c37eb9768b204532cd09ffa
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100390552"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100558558"
 ---
 # <a name="connect-an-azure-arc-enabled-kubernetes-cluster-preview"></a>Een Azure Arc enabled Kubernetes-cluster verbinden (preview)
 
-In dit artikel wordt het proces beschreven voor het verbinden van een CNCF-Kubernetes-cluster (native computing Foundation) van de Cloud, zoals AKS-engine op Azure, AKS-engine op Azure Stack hub, GKE, EKS en VMware vSphere cluster naar Azure Arc.
+Dit artikel biedt een overzicht van het verbinden van een bestaand Kubernetes-cluster met Azure Arc. Een conceptueel overzicht van deze informatie vindt u [hier](./conceptual-agent-architecture.md).
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -29,9 +29,9 @@ Controleer of u de volgende vereisten hebt voor bereid:
   * Maak een Kubernetes-cluster met behulp van docker voor [Mac](https://docs.docker.com/docker-for-mac/#kubernetes) of [Windows](https://docs.docker.com/docker-for-windows/#kubernetes).
 * Een kubeconfig-bestand voor toegang tot de rol cluster en Cluster beheerder op het cluster voor de implementatie van Kubernetes-agents die zijn ingeschakeld voor Arc.
 * De gebruiker of service-principal die wordt gebruikt met `az login` en `az connectedk8s connect` opdrachten moeten de machtigingen lezen en schrijven hebben voor het resource type micro soft. Kubernetes/connectedclusters. De rol ' Kubernetes cluster-Azure Arc-onboarding ' heeft deze machtigingen en kan worden gebruikt voor roltoewijzingen op de gebruiker of Service-Principal.
-* Helm 3 voor de onboarding van het cluster met behulp van een connectedk8s-extensie. [Installeer de nieuwste versie van helm 3](https://helm.sh/docs/intro/install) om te voldoen aan deze vereiste.
+* Helm 3 voor het onboarding van het cluster met behulp van een `connectedk8s` uitbrei ding. [Installeer de nieuwste versie van helm 3](https://helm.sh/docs/intro/install) om te voldoen aan deze vereiste.
 * Azure CLI-versie 2.15 + voor het installeren van de Kubernetes CLI-uitbrei dingen van Azure Arc ingeschakeld. [Installeer Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) of werk bij naar de nieuwste versie.
-* De Arc enabled Kubernetes CLI-extensies installeren:
+* Installeer de Azure Arc enabled Kubernetes CLI-extensies:
   
   * Installeer de `connectedk8s` extensie, waarmee u Kubernetes-clusters kunt verbinden met Azure:
   
@@ -72,7 +72,7 @@ Voor Azure Arc-agents zijn de volgende protocollen/poorten/uitgaande Url's verei
 | `https://mcr.microsoft.com`                                                                            | Vereist voor het ophalen van container installatie kopieën voor Azure Arc-agents.                                                                  |
 | `https://eus.his.arc.azure.com`, `https://weu.his.arc.azure.com`                                                                            |  Vereist voor het ophalen van door het systeem toegewezen beheerde identiteits certificaten.                                                                  |
 
-## <a name="register-the-two-providers-for-azure-arc-enabled-kubernetes"></a>Registreer de twee providers voor Azure Arc enabled Kubernetes:
+## <a name="register-the-two-providers-for-azure-arc-enabled-kubernetes"></a>Registreer de twee providers voor Azure Arc enabled Kubernetes
 
 ```console
 az provider register --namespace Microsoft.Kubernetes
@@ -134,20 +134,28 @@ Helm release deployment succeeded
     "serverAppId": "",
     "tenantId": ""
   },
-  "agentPublicKeyCertificate": "...",
-  "agentVersion": "0.1.0",
-  "id": "/subscriptions/57ac26cf-a9f0-4908-b300-9a4e9a0fb205/resourceGroups/AzureArcTest/providers/Microsoft.Kubernetes/connectedClusters/AzureArcTest1",
+  "agentPublicKeyCertificate": "xxxxxxxxxxxxxxxxxxx",
+  "agentVersion": null,
+  "connectivityStatus": "Connecting",
+  "distribution": "gke",
+  "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/AzureArcTest/providers/Microsoft.Kubernetes/connectedClusters/AzureArcTest1",
   "identity": {
-    "principalId": null,
-    "tenantId": null,
-    "type": "None"
+    "principalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "type": "SystemAssigned"
   },
-  "kubernetesVersion": "v1.15.0",
+  "infrastructure": "gcp",
+  "kubernetesVersion": null,
+  "lastConnectivityTime": null,
   "location": "eastus",
+  "managedIdentityCertificateExpirationTime": null,
   "name": "AzureArcTest1",
+  "offering": null,
+  "provisioningState": "Succeeded",
   "resourceGroup": "AzureArcTest",
   "tags": {},
-  "totalNodeCount": 1,
+  "totalCoreCount": null,
+  "totalNodeCount": null,
   "type": "Microsoft.Kubernetes/connectedClusters"
 }
 ```
@@ -175,7 +183,7 @@ U kunt deze resource ook bekijken op de [Azure Portal](https://portal.azure.com/
 
 ## <a name="connect-using-an-outbound-proxy-server"></a>Verbinding maken via een uitgaande proxy server
 
-Als uw cluster zich achter een uitgaande proxy server bevindt, moeten Azure CLI en de Arc enabled Kubernetes-agents hun aanvragen via de uitgaande proxy server routeren:
+Als uw cluster zich achter een uitgaande proxy server bevindt, moeten Azure CLI en de Azure Arc enabled Kubernetes-agents hun aanvragen via de uitgaande proxy server routeren:
 
 1. Controleer de versie van de `connectedk8s` uitbrei ding die op uw computer is geïnstalleerd:
 
@@ -212,7 +220,7 @@ Als uw cluster zich achter een uitgaande proxy server bevindt, moeten Azure CLI 
 > [!NOTE]
 > * Opgeven `excludedCIDR` onder `--proxy-skip-range` is belang rijk om ervoor te zorgen dat de communicatie in het cluster niet wordt verbroken voor de agents.
 > * Hoewel `--proxy-http` , `--proxy-https` , en `--proxy-skip-range` worden verwacht voor de meeste uitgaande proxy omgevingen, `--proxy-cert` is alleen vereist als vertrouwde certificaten van de proxy moeten worden toegevoegd aan het vertrouwde certificaat archief van de gehele agent.
-> * De bovenstaande proxy specificatie wordt momenteel alleen toegepast voor Arc-agents en niet voor de stroom die wordt gebruikt in sourceControlConfiguration. Het Kubernetes-team van Arc is actief op deze functie en het is binnenkort beschikbaar.
+> * De bovenstaande proxy specificatie wordt momenteel alleen toegepast voor Arc-agents en niet voor de stroom die wordt gebruikt in sourceControlConfiguration. Het Kubernetes-team van Azure Arc werkt actief op deze functie en is binnenkort beschikbaar.
 
 ## <a name="azure-arc-agents-for-kubernetes"></a>Azure Arc-agents voor Kubernetes
 
@@ -244,17 +252,7 @@ pod/metrics-agent-58b765c8db-n5l7k              2/2     Running  0       16h
 pod/resource-sync-agent-5cf85976c7-522p5        3/3     Running  0       16h
 ```
 
-Azure Arc enabled Kubernetes bestaat uit een aantal agents (opera tors) die in uw cluster worden uitgevoerd en die zijn geïmplementeerd in de `azure-arc` naam ruimte.
-
-| Agents (opera tors)                                                                                               | Description                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
-| `deployment.apps/config-agent`                                                                                 | Hiermee wordt het verbonden cluster gewatcheerd voor configuratie bronnen voor broncode beheer die zijn toegepast op het cluster en de nalevings status van updates.                                                        |
-| `deployment.apps/controller-manager` | Een operator van Opera tors die de interacties tussen onderdelen van Azure Arc indeelt.                                      |
-| `deployment.apps/metrics-agent`                                                                            | Verzamelt prestatie gegevens over andere Arc-agents.                                                                                    |
-| `deployment.apps/cluster-metadata-operator`                                                                            | Verzamelt de meta gegevens van het cluster, zoals de Cluster versie, het aantal knoop punten en de versie van de Azure Arc-agent.                                                                  |
-| `deployment.apps/resource-sync-agent`                                                                            |  Synchroniseert de hierboven vermelde meta gegevens van het cluster naar Azure.                                                                  |
-| `deployment.apps/clusteridentityoperator`                                                                            |  Azure Arc enabled Kubernetes ondersteunt momenteel door het systeem toegewezen identiteit. `clusteridentityoperator` onderhoudt het MSI-certificaat (Managed Service Identity) dat door andere agents wordt gebruikt voor communicatie met Azure.                                                                  |
-| `deployment.apps/flux-logs-agent`                                                                            |  Hiermee worden logboeken van de stroom-Opera tors verzameld die zijn geïmplementeerd als onderdeel van de configuratie van broncode beheer.                                                                  |
+Controleer of alle peulen zich in een staat bevinden `Running` .
 
 ## <a name="delete-a-connected-cluster"></a>Een verbonden cluster verwijderen
 

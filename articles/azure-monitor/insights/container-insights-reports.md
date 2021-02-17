@@ -3,15 +3,15 @@ title: Rapporten in Azure Monitor voor containers
 description: Beschrijft rapporten die beschikbaar zijn voor het analyseren van gegevens die zijn verzameld door Azure Monitor voor containers.
 ms.topic: conceptual
 ms.date: 12/07/2020
-ms.openlocfilehash: 3cc2f8fb9bfaa278ce06b4a8cd6d379397b7129a
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 94709cf4a8b579447c11f91f9bc6863ab4b4fe08
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96907532"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582317"
 ---
 # <a name="reports-in-azure-monitor-for-containers"></a>Rapporten in Azure Monitor voor containers
-Rapporten in Azure Monitor voor containers worden in het vervolg van [Azure-werkmappen](../platform/workbooks-overview.md)aanbevolen. In dit artikel worden de verschillende rapporten beschreven die beschikbaar zijn en hoe u deze kunt openen.
+Rapporten in Azure Monitor voor containers worden in het vervolg van [Azure-werkmappen](../visualize/workbooks-overview.md)aanbevolen. In dit artikel worden de verschillende rapporten beschreven die beschikbaar zijn en hoe u deze kunt openen.
 
 ## <a name="viewing-reports"></a>Rapporten weer geven
 Selecteer in het menu **Azure monitor** in het Azure Portal **containers**. Selecteer **inzichten** in de sectie **bewaking** , kies een bepaald cluster en selecteer vervolgens de pagina **rapporten (voor beeld)** . 
@@ -19,7 +19,7 @@ Selecteer in het menu **Azure monitor** in het Azure Portal **containers**. Sele
 [![Pagina rapporten](media/container-insights-reports/reports-page.png)](media/container-insights-reports/reports-page.png#lightbox)
 
 ## <a name="create-a-custom-workbook"></a>Een aangepaste werkmap maken
-Als u een aangepaste werkmap wilt maken op basis van een van deze werkmappen, selecteert u de vervolg keuzelijst **werkmappen weer geven** en **gaat u naar de galerie AKS** aan de onderkant van de vervolg keuzelijst. Zie [Azure monitor werkmappen](../platform/workbooks-overview.md) voor meer informatie over werkmappen en het gebruik van werkmap sjablonen.
+Als u een aangepaste werkmap wilt maken op basis van een van deze werkmappen, selecteert u de vervolg keuzelijst **werkmappen weer geven** en **gaat u naar de galerie AKS** aan de onderkant van de vervolg keuzelijst. Zie [Azure monitor werkmappen](../visualize/workbooks-overview.md) voor meer informatie over werkmappen en het gebruik van werkmap sjablonen.
 
 [![Galerie AKS](media/container-insights-reports/aks-gallery.png)](media/container-insights-reports/aks-gallery.png#lightbox)
 
@@ -78,4 +78,4 @@ Als u een aangepaste werkmap wilt maken op basis van een van deze werkmappen, se
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Azure monitor werkmappen](../platform/workbooks-overview.md) voor meer informatie over werkmappen in azure monitor.
+- Zie [Azure monitor werkmappen](../visualize/workbooks-overview.md) voor meer informatie over werkmappen in azure monitor.

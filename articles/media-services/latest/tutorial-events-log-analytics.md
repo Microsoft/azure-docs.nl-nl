@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: tutorial
 ms.date: 08/24/2020
 ms.author: inhenkel
-ms.openlocfilehash: 2bfd1064a02f0fb4982c9d2747b85707e98b5bcd
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: c481daf73f916ede2e7063c75448ba4d09e553cc
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954526"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571869"
 ---
 # <a name="tutorial-store-azure-media-services-events-in-azure-log-analytics"></a>Zelfstudie: Gebeurtenissen van Azure Media Services opslaan in Azure Log Analytics
 
@@ -42,11 +42,11 @@ Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://az
 > * Een [Azure-abonnement](how-to-set-azure-subscription.md)
 > * Een [Media Services](create-account-howto.md)-account en een resourcegroep.
 > * Een installatie van [FFmpeg](https://ffmpeg.org/download.html) voor uw besturingssysteem.
-> * Een [Log Analytics-werkruimte](../../azure-monitor/learn/quick-create-workspace.md)
+> * Een [Log Analytics-werkruimte](../../azure-monitor/logs/quick-create-workspace.md)
 
 ## <a name="subscribe-to-a-media-services-event-with-logic-app"></a>Abonneren op een Media Services-gebeurtenis met een logische app
 
-1. Als u dat nog niet hebt gedaan, maakt u in de Azure-portal een [Log Analytics](../../azure-monitor/learn/quick-create-workspace.md)-werkruimte. U hebt de werkruimte-id en een van de sleutels nodig, dus laat het browservenster geopend. Open de portal vervolgens in een ander tabblad of venster.
+1. Als u dat nog niet hebt gedaan, maakt u in de Azure-portal een [Log Analytics](../../azure-monitor/logs/quick-create-workspace.md)-werkruimte. U hebt de werkruimte-id en een van de sleutels nodig, dus laat het browservenster geopend. Open de portal vervolgens in een ander tabblad of venster.
 
 1. Ga naar uw Azure Media Services-account en selecteer **Gebeurtenissen**. U ziet nu alle methoden voor het abonneren op Azure Media Services-gebeurtenissen.
     > [!div class="mx-imgBorder"]
@@ -230,4 +230,4 @@ Als u de resources die u tijdens deze zelfstudie hebt gemaakt niet meer nodig he
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U kunt verschillende query's maken en deze opslaan. Deze kunnen worden toegevoegd aan het [Azure-dashboard](../../azure-monitor/learn/tutorial-logs-dashboards.md).
+U kunt verschillende query's maken en deze opslaan. Deze kunnen worden toegevoegd aan het [Azure-dashboard](../../azure-monitor/visualize/tutorial-logs-dashboards.md).

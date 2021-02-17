@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/26/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: c3e2245ae47504e058921c532ed40a220e95423d
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: bf91c0a6e533acb326fe815c3e3c1088c959a603
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98197571"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576729"
 ---
 # <a name="azure-security-baseline-for-site-recovery"></a>Azure-beveiligings basislijn voor Site Recovery
 
@@ -66,9 +66,9 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 **Richt lijnen**: Bewaak eventuele wijzigingen in netwerk bron configuraties die zijn gerelateerd aan de site Recovery-service met Azure-activiteiten Logboeken. Maak waarschuwingen in Azure Monitor om u te waarschuwen wanneer kritiek Site Recovery netwerk bronnen worden gewijzigd.
 
-- [Activiteiten logboek gebeurtenissen van Azure bekijken en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure bekijken en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen voor activiteiten logboek maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen voor activiteiten logboek maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -86,7 +86,7 @@ Gebruik Azure-activiteiten logboek gegevens om te bepalen wat het ' wat, wie en 
 
 Opname Site Recovery-Logboeken in Azure Monitor om gegenereerde beveiligings gegevens samen te voegen. In Azure Monitor kunt u Log Analytics-werk ruimten gebruiken om een query uit te voeren en te analyseren en opslag accounts te gebruiken voor lange termijn-of archiverings opslag. Daarnaast kunt u gegevens in-of uitschakelen voor Azure Sentinel of een SIEM-oplossing (Security Incident and Event Management) van derden.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Site Recovery bewaken met Azure Monitor-logboeken](monitor-log-analytics.md)
 
@@ -104,7 +104,7 @@ Gebruik Azure-activiteiten logboek gegevens om te bepalen wat het ' wat, wie en 
 
 Opname Site Recovery-logboeken met Azure Monitor om gegenereerde beveiligings gegevens samen te voegen. In Azure Monitor kunt u Log Analytics-werk ruimten gebruiken om een query uit te voeren en te analyseren en opslag accounts te gebruiken voor lange termijn/archiverings opslag. Gegevens in-en uitschakelen voor Azure Sentinel of een SIEM-oplossing (Security Incident and Event Management) van derden.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Site Recovery bewaken met Azure Monitor-logboeken](monitor-log-analytics.md)
 
@@ -118,7 +118,7 @@ Opname Site Recovery-logboeken met Azure Monitor om gegenereerde beveiligings ge
 
 **Hulp**: Stel de Bewaar periode voor logboek registratie in voor log Analytics werk ruimten die zijn gekoppeld aan uw Azure Recovery Services-kluizen met behulp van Azure monitor op basis van de nalevings voorschriften van uw organisatie. 
 
-- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -132,9 +132,9 @@ Voer query's uit in Log Analytics om zoek termen te zoeken, trends te identifice
 
 - [Site Recovery bewaken](site-recovery-monitor-and-troubleshoot.md)
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
-- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](../azure-monitor/platform/activity-log.md)
+- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](../azure-monitor/essentials/activity-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -150,7 +150,7 @@ Visualiseren en query's uitvoeren op logboek resultaten en waarschuwingen config
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/platform/alerts-log.md)
+- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/alerts/alerts-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -413,7 +413,7 @@ Alleen de klant heeft toegang tot de versleutelings sleutel tijdens het gebruik 
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4,9: wijzigingen in essentiële Azure-resources vastleggen en waarschuwen
 
 **Hulp**: gebruik Azure monitor met Azure-activiteiten Logboeken om waarschuwingen te maken wanneer wijzigingen worden aangebracht in essentiële resources,. Deze resources kunnen productie-exemplaren van Recovery Services kluizen, resources van Site Recovery service en gerelateerde resources omvatten.
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 

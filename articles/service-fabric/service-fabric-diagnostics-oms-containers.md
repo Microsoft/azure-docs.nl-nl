@@ -5,12 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: srrengar
-ms.openlocfilehash: c1d118fa1fb65663f37e33f739bf4a72a14e1c52
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 6539815875b87a0d0f525d7e89464fa7d2505746
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95998211"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570198"
 ---
 # <a name="monitor-containers-with-azure-monitor-logs"></a>Containers controleren met Azure Monitor-logboeken
  
@@ -46,7 +46,7 @@ Met de agent kunt u een verzameling van verschillende container-specifieke logbo
 
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over de oplossing voor de [Azure monitor-logboeken](../azure-monitor/insights/containers.md).
+* Meer informatie over de oplossing voor de [Azure monitor-logboeken](../azure-monitor/containers/containers.md).
 * Meer informatie over container indeling op Service Fabric- [service Fabric en containers](service-fabric-containers-overview.md)
-* Krijg vertrouwd met de functies voor [Zoeken in Logboeken en query's](../azure-monitor/log-query/log-query-overview.md) die worden aangeboden als onderdeel van Azure monitor logboeken
-* Azure Monitor logboeken configureren voor het instellen van [automatische waarschuwings](../azure-monitor/platform/alerts-overview.md) regels om te helpen bij het detecteren en diagnosticeren
+* Krijg vertrouwd met de functies voor [Zoeken in Logboeken en query's](../azure-monitor/logs/log-query-overview.md) die worden aangeboden als onderdeel van Azure monitor logboeken
+* Azure Monitor logboeken configureren voor het instellen van [automatische waarschuwings](../azure-monitor/alerts/alerts-overview.md) regels om te helpen bij het detecteren en diagnosticeren

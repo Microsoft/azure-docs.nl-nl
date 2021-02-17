@@ -11,17 +11,17 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/25/2019
-ms.openlocfilehash: a078ba6147d4d874a890f406563111b6fdb82ed6
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.openlocfilehash: 029e3ba799e5f239bde0ef049316dd268ebe4c8f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92780900"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588782"
 ---
 # <a name="set-up-and-use-azure-monitor-logs-with-a-multitenant-azure-sql-database-saas-app"></a>Azure Monitor-logboeken instellen en gebruiken met een SaaS-app met meerdere tenants die gebruikmaakt van Azure SQL Database
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
-In deze zelfstudie configureert en gebruikt u [Azure Monitor-logboeken](../../azure-monitor/log-query/log-query-overview.md) om elastische pools en databases te controleren. In deze zelfstudie wordt voortgebouwd op de [zelfstudie Prestatiecontrole en -beheer](saas-dbpertenant-performance-monitoring.md). Hierin wordt beschreven hoe u Azure Monitor-logboeken gebruikt als uitbreiding op de controle- en waarschuwingsfuncties van Azure Portal. Azure Monitor-logboeken bieden ondersteuning voor het controleren van duizenden elastische pools en honderdduizenden databases. Met Azure Monitor-logboeken beschikt u over één controleoplossing die kan worden geïntegreerd met controlefuncties van andere apps en Azure-services in meerdere Azure-abonnementen.
+In deze zelfstudie configureert en gebruikt u [Azure Monitor-logboeken](../../azure-monitor/logs/log-query-overview.md) om elastische pools en databases te controleren. In deze zelfstudie wordt voortgebouwd op de [zelfstudie Prestatiecontrole en -beheer](saas-dbpertenant-performance-monitoring.md). Hierin wordt beschreven hoe u Azure Monitor-logboeken gebruikt als uitbreiding op de controle- en waarschuwingsfuncties van Azure Portal. Azure Monitor-logboeken bieden ondersteuning voor het controleren van duizenden elastische pools en honderdduizenden databases. Met Azure Monitor-logboeken beschikt u over één controleoplossing die kan worden geïntegreerd met controlefuncties van andere apps en Azure-services in meerdere Azure-abonnementen.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -48,16 +48,16 @@ OMS-werkruimten worden nu aangeduid als Log Analytics-werkruimten. Log Analytics
 
 ### <a name="create-performance-diagnostic-data-by-simulating-a-workload-on-your-tenants"></a>Diagnostische gegevens over prestaties maken door een workload in uw tenants te simuleren 
 
-1. Open in PowerShell ISE *..\\WingtipTicketsSaaS-MultiTenantDb-master\\Leermodules\\Prestatiecontrole en -beheer\\Demo-PerformanceMonitoringAndManagement.ps1* . Laat dit script geopend omdat u mogelijk verschillende keren een belasting wilt genereren tijdens deze zelfstudie.
+1. Open in PowerShell ISE *..\\WingtipTicketsSaaS-MultiTenantDb-master\\Leermodules\\Prestatiecontrole en -beheer\\Demo-PerformanceMonitoringAndManagement.ps1*. Laat dit script geopend omdat u mogelijk verschillende keren een belasting wilt genereren tijdens deze zelfstudie.
 1. Richt een batch met tenants in, als u dit nog niet hebt gedaan, om de controlecontext interessanter te maken. Dit duurt enkele minuten.
 
-   a. Stel het volgende in: **$DemoScenario = 1** , _Een batch met tenants inrichten_ .
+   a. Stel het volgende in: **$DemoScenario = 1**, _Een batch met tenants inrichten_.
 
    b. Druk op F5 om het script uit te voeren en 17 extra tenants te implementeren.
 
 1. Start nu de belastinggenerator om een gesimuleerde belasting uit te voeren in alle tenants.
 
-    a. Stel het volgende in: **$DemoScenario = 2** , _Belasting met normale intensiteit genereren (ongeveer 30 DTU)_ .
+    a. Stel het volgende in: **$DemoScenario = 2**, _Belasting met normale intensiteit genereren (ongeveer 30 DTU)_ .
 
     b. Druk op F5 om het script uit te voeren.
 
@@ -69,7 +69,7 @@ De databasescripts en app-broncode van de SaaS-app met meerdere tenants Wingtip 
 
 Azure Monitor is een afzonderlijke service die moet worden geconfigureerd. Met Azure Monitor-logboeken worden logboekgegevens, telemetriegegevens en metrische gegevens verzameld in een Log Analytics-werkruimte. Net als andere resources in Azure moet een Log Analytics-werkruimte worden gemaakt. De werkruimte hoeft niet in dezelfde resourcegroep te worden gemaakt als de app die wordt gecontroleerd. Dit is vaak wel het handigst. Gebruik voor de Wingtip Tickets-app één resourcegroep om ervoor te zorgen dat de werkruimte met de app wordt verwijderd.
 
-1. Open in PowerShell ISE *..\\WingtipTicketsSaaS-MultiTenantDb-master\\Leermodules\\Prestatiecontrole en -beheer\\Log Analytics\\Demo-LogAnalytics.ps1* .
+1. Open in PowerShell ISE *..\\WingtipTicketsSaaS-MultiTenantDb-master\\Leermodules\\Prestatiecontrole en -beheer\\Log Analytics\\Demo-LogAnalytics.ps1*.
 1. Druk op F5 om het script uit te voeren.
 
 U kunt nu Azure Monitor-logboeken openen in Azure Portal. Het duurt enkele minuten om telemetriegegevens te verzamelen in de Log Analytics-werkruimte en om deze weer te geven. Hoe langer u het systeem diagnostische gegevens laat verzamelen, hoe interessanter het wordt. 
@@ -102,7 +102,7 @@ In deze oefening opent u de Log Analytics-werkruimte in Azure Portal om de telem
 
     ![Log Analytics-dashboard](./media/saas-dbpertenant-log-analytics/log-analytics-overview.png)
 
-1. Wijzig de filterinstelling om het tijdsbereik aan te passen. Voor deze zelfstudie selecteert u **Afgelopen uur** .
+1. Wijzig de filterinstelling om het tijdsbereik aan te passen. Voor deze zelfstudie selecteert u **Afgelopen uur**.
 
     ![Tijdfilter](./media/saas-dbpertenant-log-analytics/log-analytics-time-filter.png)
 
@@ -114,7 +114,7 @@ In deze oefening opent u de Log Analytics-werkruimte in Azure Portal om de telem
  
      ![Metrische gegevens voor de database](./media/saas-dbpertenant-log-analytics/log-analytics-database-metrics.png)
 
-1. Schuif door de analysepagina aan de linkerkant en selecteer de servertegel in de lijst **Resourcegegevens** .  
+1. Schuif door de analysepagina aan de linkerkant en selecteer de servertegel in de lijst **Resourcegegevens**.  
 
     ![Lijst met resourcegegevens](./media/saas-dbpertenant-log-analytics/log-analytics-resource-info.png)
 
@@ -135,7 +135,7 @@ In de Log Analytics-werkruimte kunt u het logboek en de metrische gegevens nader
 
 De controle en waarschuwingen in Azure Monitor-logboeken zijn gebaseerd op query's die worden uitgevoerd op de gegevens in de werkruimte, in tegenstelling tot de waarschuwingen die zijn gedefinieerd voor elke resource in Azure Portal. Door waarschuwingen te baseren op query's kunt u één waarschuwing definiëren die betrekking heeft op alle databases en hoeft u er niet een voor elke databases te definiëren. De uitvoering van query's wordt alleen beperkt door de gegevens die beschikbaar zijn in de werkruimte.
 
-Zie [Werken met waarschuwingsregels in Azure Monitor-logboeken](../../azure-monitor/platform/alerts-metric.md) voor meer informatie over het gebruik van Azure Monitor-logboeken bij het uitvoeren van query's en instellen van waarschuwingen.
+Zie [Werken met waarschuwingsregels in Azure Monitor-logboeken](../../azure-monitor/alerts/alerts-metric.md) voor meer informatie over het gebruik van Azure Monitor-logboeken bij het uitvoeren van query's en instellen van waarschuwingen.
 
 De kosten die in rekening worden gebracht voor Azure Monitor-logboeken voor Azure SQL Database zijn gebaseerd op het gegevensvolume in de werkruimte. In deze zelfstudie hebt u een gratis werkruimte gemaakt, die beperkt is tot 500 MB per dag. Wanneer deze limiet is bereikt, worden er geen gegevens meer toegevoegd aan de werkruimte.
 

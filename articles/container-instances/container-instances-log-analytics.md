@@ -3,12 +3,12 @@ title: Resource logboeken verzamelen & analyseren
 description: Meer informatie over het verzenden van resource logboeken en gebeurtenis gegevens van container groepen in Azure Container Instances naar Azure Monitor-logboeken
 ms.topic: article
 ms.date: 07/13/2020
-ms.openlocfilehash: b110ba46bdcf2741e5f16845f28fe8305bcee1a1
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: cfdcd1cc8e36a118c4e3c4435eaa002e4d3b1b93
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148641"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579323"
 ---
 # <a name="container-group-and-instance-logging-with-azure-monitor-logs"></a>Logboek registratie van container groepen en instanties met Azure Monitor-logboeken
 
@@ -27,7 +27,7 @@ In de volgende secties wordt beschreven hoe u een container groep met ingeschake
 
 Voor het inschakelen van logboekregistratie voor uw containerexemplaren hebt u het volgende nodig:
 
-* [Log Analytics-werkruimte](../azure-monitor/learn/quick-create-workspace.md)
+* [Log Analytics werk ruimte](../azure-monitor/logs/quick-create-workspace.md)
 * [Azure CLI](/cli/azure/install-azure-cli) (of [Cloud Shell](../cloud-shell/overview.md))
 
 ## <a name="get-log-analytics-credentials"></a>Log Analytics-referenties verkrijgen
@@ -37,7 +37,7 @@ Azure Container Instances heeft toestemming nodig om gegevens te verzenden naar 
 De Log Analytics-werkruimte-id en de primaire sleutel verkrijgt u als volgt:
 
 1. Navigeer in Azure Portal naar uw Log Analytics-werkruimte.
-1. Onder **instellingen**selecteert u **agents beheer**
+1. Onder **instellingen** selecteert u **agents beheer**
 1. Noteer het volgende:
    * **Werkruimte-id**
    * **Primaire sleutel**
@@ -105,7 +105,7 @@ Nadat u de containergroep hebt geïmplementeerd, kan het enkele minuten (wel tie
 De logboeken van de container groep in de `ContainerInstanceLog_CL` tabel weer geven:
 
 1. Navigeer in Azure Portal naar uw Log Analytics-werkruimte.
-1. Onder **Algemeen**selecteert u **Logboeken**  
+1. Onder **Algemeen** selecteert u **Logboeken**  
 1. Typ de volgende query: `ContainerInstanceLog_CL | limit 50`
 1. Selecteer **uitvoeren**
 
@@ -118,7 +118,7 @@ U ziet een aantal resultaten die door de query worden weer gegeven. Als u eerst 
 U kunt ook gebeurtenissen weer geven voor container instanties in de Azure Portal. Gebeurtenissen bevatten het tijdstip waarop het exemplaar is gemaakt en wanneer het wordt gestart. De gebeurtenis gegevens in de tabel weer geven `ContainerEvent_CL` :
 
 1. Navigeer in Azure Portal naar uw Log Analytics-werkruimte.
-1. Onder **Algemeen**selecteert u **Logboeken**  
+1. Onder **Algemeen** selecteert u **Logboeken**  
 1. Typ de volgende query: `ContainerEvent_CL | limit 50`
 1. Selecteer **uitvoeren**
 
@@ -153,8 +153,8 @@ ContainerInstanceLog_CL
 
 Voor meer informatie over het uitvoeren van query's op logboeken en het configureren van waarschuwingen in Azure Monitor-logboeken, zie:
 
-* [Zoek opdrachten in Logboeken in Azure Monitor logboeken](../azure-monitor/log-query/log-query-overview.md)
-* [Consistente waarschuwingen in Azure Monitor](../azure-monitor/platform/alerts-overview.md)
+* [Zoek opdrachten in Logboeken in Azure Monitor logboeken](../azure-monitor/logs/log-query-overview.md)
+* [Consistente waarschuwingen in Azure Monitor](../azure-monitor/alerts/alerts-overview.md)
 
 
 ### <a name="monitor-container-cpu-and-memory"></a>CPU en geheugen bewaken

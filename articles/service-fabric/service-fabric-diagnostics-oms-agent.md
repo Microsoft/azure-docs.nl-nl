@@ -5,12 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 04/16/2018
 ms.author: srrengar
-ms.openlocfilehash: b91a8a8742a5bdc9454ebcbd8894889084a12a79
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 47017fdb5f1fbaba800e71dea21afe2c39bd91e7
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86258682"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570147"
 ---
 # <a name="performance-monitoring-with-azure-monitor-logs"></a>Prestatie bewaking met Azure Monitor-logboeken
 
@@ -67,13 +67,13 @@ U kunt deze sjabloon downloaden en aanpassen om een cluster te implementeren dat
 
 Nu u de Log Analytics-agent hebt toegevoegd, gaat u naar de Log Analytics Portal om te kiezen welke prestatie meter items u wilt verzamelen.
 
-1. Ga in het Azure Portal naar de resource groep waarin u de Service Fabric-analyse oplossing hebt gemaakt. Selecteer **ServiceFabric \<nameOfLog AnalyticsWorkspace\> **.
+1. Ga in het Azure Portal naar de resource groep waarin u de Service Fabric-analyse oplossing hebt gemaakt. Selecteer **ServiceFabric \<nameOfLog AnalyticsWorkspace\>**.
 
 2. Klik op **Log Analytics**.
 
 3. Klik op **Geavanceerde instellingen**.
 
-4. Klik op **gegevens**en vervolgens op **Windows-of Linux-prestatie meter items**. Er is een lijst met standaard meteritems die u kunt inschakelen en u kunt ook het interval voor verzameling instellen. U kunt ook [aanvullende prestatiemeteritems toevoegen](service-fabric-diagnostics-event-generation-perf.md) om te verzamelen. In dit [artikel](/windows/win32/perfctrs/specifying-a-counter-path) wordt verwezen naar de juiste indeling.
+4. Klik op **gegevens** en vervolgens op **Windows-of Linux-prestatie meter items**. Er is een lijst met standaard meteritems die u kunt inschakelen en u kunt ook het interval voor verzameling instellen. U kunt ook [aanvullende prestatiemeteritems toevoegen](service-fabric-diagnostics-event-generation-perf.md) om te verzamelen. In dit [artikel](/windows/win32/perfctrs/specifying-a-counter-path) wordt verwezen naar de juiste indeling.
 
 5. Klik op **Opslaan** en klik vervolgens op **OK**.
 
@@ -91,6 +91,6 @@ Nu u de Log Analytics-agent hebt toegevoegd, gaat u naar de Log Analytics Portal
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Relevante [prestatie meter items](service-fabric-diagnostics-event-generation-perf.md)verzamelen. Als u de Log Analytics-agent wilt configureren voor het verzamelen van specifieke prestatie meter items, raadpleegt u [gegevens bronnen configureren](../azure-monitor/platform/agent-data-sources.md#configuring-data-sources).
-* Azure Monitor logboeken configureren om [automatische waarschuwingen](../azure-monitor/platform/alerts-overview.md) in te stellen voor detectie en diagnostische gegevens
+* Relevante [prestatie meter items](service-fabric-diagnostics-event-generation-perf.md)verzamelen. Als u de Log Analytics-agent wilt configureren voor het verzamelen van specifieke prestatie meter items, raadpleegt u [gegevens bronnen configureren](../azure-monitor/agents/agent-data-sources.md#configuring-data-sources).
+* Azure Monitor logboeken configureren om [automatische waarschuwingen](../azure-monitor/alerts/alerts-overview.md) in te stellen voor detectie en diagnostische gegevens
 * Als alternatief kunt u prestatie meter items verzamelen via [Azure Diagnostics extensie en deze naar Application Insights verzenden](service-fabric-diagnostics-event-aggregation-wad.md#add-the-application-insights-sink-to-the-resource-manager-template)

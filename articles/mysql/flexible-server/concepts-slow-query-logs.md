@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 9/21/2020
-ms.openlocfilehash: dde9575a70ea80ad262bc01bb9d5d0015c803427
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: d311ea3158e1f9d53c51fe239103039849597d11
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94543014"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579182"
 ---
 # <a name="slow-query-logs-in-azure-database-for-mysql-flexible-server-preview"></a>Trage query Logboeken in Azure Database for MySQL flexibele server (preview-versie)
 
@@ -27,10 +27,10 @@ Het logboek voor langzame query's is standaard uitgeschakeld. Als u logboeken wi
 
 Andere para meters die u kunt aanpassen om het gedrag van logboek registratie voor langzame query's te beheren, zijn:
 
-- **long_query_time** : een query vastleggen als deze langer duurt dan `long_query_time` (in seconden). De standaardinstelling is 10 seconden.
-- **log_slow_admin_statements** : bepaalt of administratieve instructies (bijvoorbeeld `ALTER_TABLE`, `ANALYZE_TABLE` ) worden geregistreerd.
-- **log_queries_not_using_indexes** : bepaalt of query's die geen indexen gebruiken, worden geregistreerd.
-- **log_throttle_queries_not_using_indexes** : beperkt het aantal niet-geïndexeerde query's dat naar het langzame query logboek kan worden geschreven. Deze para meter `log_queries_not_using_indexes` wordt van kracht wanneer is ingesteld op *op*
+- **long_query_time**: een query vastleggen als deze langer duurt dan `long_query_time` (in seconden). De standaardinstelling is 10 seconden.
+- **log_slow_admin_statements**: bepaalt of administratieve instructies (bijvoorbeeld `ALTER_TABLE`, `ANALYZE_TABLE` ) worden geregistreerd.
+- **log_queries_not_using_indexes**: bepaalt of query's die geen indexen gebruiken, worden geregistreerd.
+- **log_throttle_queries_not_using_indexes**: beperkt het aantal niet-geïndexeerde query's dat naar het langzame query logboek kan worden geschreven. Deze para meter `log_queries_not_using_indexes` wordt van kracht wanneer is ingesteld op *op*
 
 > [!IMPORTANT]
 > Als uw tabellen niet zijn geïndexeerd, worden het `log_queries_not_using_indexes` instellen `log_throttle_queries_not_using_indexes` van de para meters op **in** mogelijk beïnvloed door de MySQL-prestaties, omdat alle query's die worden uitgevoerd op deze niet-geïndexeerde tabellen, worden geschreven naar het logboek voor langzame query's.
@@ -39,7 +39,7 @@ Zie de documentatie van het MySQL- [logboek voor langzame query's](https://dev.m
 
 ## <a name="access-slow-query-logs"></a>Toegang tot langzame query logboeken
 
-Langzame query logboeken zijn geïntegreerd met Azure Monitor Diagnostische instellingen. Zodra u langzame query Logboeken hebt ingeschakeld op uw MySQL-flexibele server, kunt u deze naar Azure Monitor-logboeken, Event Hubs of Azure Storage verzenden. Raadpleeg de documentatie van de [Diagnostische logboeken](../../azure-monitor/platform/platform-logs-overview.md)voor meer informatie over diagnostische instellingen. Zie het [artikel over langzame query-logboeken](how-to-configure-slow-query-logs-portal.md#set-up-diagnostics)voor meer informatie over het inschakelen van diagnostische instellingen in de Azure Portal.
+Langzame query logboeken zijn geïntegreerd met Azure Monitor Diagnostische instellingen. Zodra u langzame query Logboeken hebt ingeschakeld op uw MySQL-flexibele server, kunt u deze naar Azure Monitor-logboeken, Event Hubs of Azure Storage verzenden. Raadpleeg de documentatie van de [Diagnostische logboeken](../../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie over diagnostische instellingen. Zie het [artikel over langzame query-logboeken](how-to-configure-slow-query-logs-portal.md#set-up-diagnostics)voor meer informatie over het inschakelen van diagnostische instellingen in de Azure Portal.
 
 In de volgende tabel wordt de uitvoer van het logboek voor langzame query's beschreven. Afhankelijk van de uitvoer methode worden de opgenomen velden en de volg orde waarin ze worden weer gegeven, mogelijk verschillend.
 

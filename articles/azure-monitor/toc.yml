@@ -13,98 +13,98 @@
 - name: Snelstartgidsen
   items:
     - name: Azure-resource bewaken
-      href: learn/quick-monitor-azure-resource.md
+      href: essentials/quick-monitor-azure-resource.md
     - name: Activiteitenlogboek naar een werkruimte verzenden
       items:
         - name: Azure Portal
-          href: learn/quick-collect-activity-log-portal.md
+          href: essentials/quick-collect-activity-log-portal.md
         - name: ARM-sjabloon
           displayName: Resource Manager
-          href: learn/quick-collect-activity-log-arm.md
+          href: essentials/quick-collect-activity-log-arm.md
     - name: Virtuele machines bewaken
       items:
         - name: Azure-VM's
-          href: learn/quick-monitor-azure-vm.md
+          href: vm/quick-monitor-azure-vm.md
         - name: Linux-computer
-          href: learn/quick-collect-linux-computer.md
+          href: vm/quick-collect-linux-computer.md
         - name: Windows-computer
-          href: learn/quick-collect-windows-computer.md
+          href: vm/quick-collect-windows-computer.md
     - name: Toepassingen bewaken
       items:
         - name: Node.js-toepassing
-          href: learn/nodejs-quick-start.md
+          href: app/nodejs-quick-start.md
         - name: Mobiele toepassing
-          href: learn/mobile-center-quickstart.md
+          href: app/mobile-center-quickstart.md
         - name: Webtoepassing
           href: app/website-monitoring.md
 - name: Zelfstudies
   items:
     - name: Een grafiek met metrische gegevens maken
-      href: learn/tutorial-metrics-explorer.md
+      href: essentials/tutorial-metrics-explorer.md
     - name: Logboeken verzamelen uit Azure-resource
-      href: learn/tutorial-resource-logs.md
+      href: essentials/tutorial-resource-logs.md
     - name: Logboekquery's schrijven
-      href: log-query/get-started-queries.md
+      href: logs/get-started-queries.md
     - name: Een dashboard maken op basis van logboekquery
-      href: learn/tutorial-logs-dashboards.md
+      href: visualize/tutorial-logs-dashboards.md
     - name: Een waarschuwing maken op basis van logboekquery
-      href: learn/tutorial-response.md
+      href: alerts/tutorial-response.md
     - name: Automatisch schalen op basis van prestaties en schema
-      href: learn/tutorial-autoscale-performance-schedule.md
+      href: autoscale/tutorial-autoscale-performance-schedule.md
     - name: Application Insights
       items:
         - name: Runtime-toepassingsuitzonderingen vinden
-          href: learn/tutorial-runtime-exceptions.md
+          href: app/tutorial-runtime-exceptions.md
         - name: Toepassingsprestatieproblemen vinden
-          href: learn/tutorial-performance.md
+          href: app/tutorial-performance.md
         - name: Waarschuwing bij toepassingsstatus
-          href: learn/tutorial-alert.md
+          href: app/tutorial-alert.md
         - name: Toepassingsgebruikers begrijpen
-          href: learn/tutorial-users.md
+          href: app/tutorial-users.md
         - name: Dashboard met toepassingsgegevens
-          href: learn/tutorial-app-dashboards.md
+          href: app/tutorial-app-dashboards.md
 - name: Voorbeelden
   items:
     - name: Resource Manager-sjablonen
       items:
         - name: Overzicht
-          href: samples/resource-manager-samples.md
+          href: /resource-manager-samples.md
         - name: Agents
-          href: samples/resource-manager-agent.md
+          href: agents/resource-manager-agent.md
         - name: Waarschuwingen
           items:
             - name: Waarschuwingsregels voor logboeken
-              href: samples/resource-manager-alerts-log.md
+              href: alerts/resource-manager-alerts-log.md
             - name: Regels voor metrische waarschuwingen
-              href: samples/resource-manager-alerts-metric.md
+              href: alerts/resource-manager-alerts-metric.md
             - name: Actiegroepen
-              href: samples/resource-manager-action-groups.md
+              href: alerts/resource-manager-action-groups.md
         - name: Application Insights
           items:
             - name: Een resource maken
-              href: samples/resource-manager-app-resource.md
+              href: app/resource-manager-app-resource.md
             - name: Azure App Service
-              href: samples/resource-manager-web-app.md
+              href: app/resource-manager-web-app.md
             - name: Azure Functions
-              href: samples/resource-manager-function-app.md
+              href: app/resource-manager-function-app.md
         - name: Gegevensverzamelingsregels
-          href: samples/resource-manager-data-collection-rules.md
+          href: agents/resource-manager-data-collection-rules.md
         - name: Diagnostische instellingen
-          href: samples/resource-manager-diagnostic-settings.md
+          href: essentials/resource-manager-diagnostic-settings.md
         - name: Log Analytics-werkruimten
-          href: samples/resource-manager-workspace.md
+          href: logs/resource-manager-workspace.md
         - name: Logboekquery's
-          href: samples/resource-manager-log-queries.md
+          href: logs/resource-manager-log-queries.md
         - name: Werkmappen
-          href: samples/resource-manager-workbooks.md
+          href: visualize/resource-manager-workbooks.md
         - name: Azure Monitor voor containers
-          href: samples/resource-manager-container-insights.md
+          href: containers/resource-manager-container-insights.md
         - name: Azure Monitor voor virtuele machines
-          href: samples/resource-manager-vminsights.md
+          href: vm/resource-manager-vminsights.md
     - name: Azure CLI
-      href: samples/cli-samples.md
+      href: /cli-samples.md
     - name: Azure PowerShell
-      href: samples/powershell-samples.md
+      href: /powershell-samples.md
 - name: Concepten
   items:
     - name: Wat kunt u bewaken?
@@ -112,52 +112,52 @@
     - name: Doorlopende bewaking
       href: continuous-monitoring.md
     - name: Gegevensbronnen
-      href: platform/data-sources.md
+      href: agents/data-sources.md
     - name: Gegevensplatform
-      href: platform/data-platform.md
+      href: /data-platform.md
     - name: Gegevensbeveiliging
       items:
         - name: Logboekgegevens
-          href: platform/data-security.md
+          href: logs/data-security.md
         - name: Door klant beheerde sleutels
-          href: platform/customer-managed-keys.md
+          href: logs/customer-managed-keys.md
         - name: Private Link-netwerken
-          href: platform/private-link-security.md
+          href: logs/private-link-security.md
         - name: Privé-opslag
-          href: platform/private-storage.md
+          href: logs/private-storage.md
         - name: Verwerking van persoonlijke logboekgegevens
-          href: platform/personal-data-mgmt.md
+          href: logs/personal-data-mgmt.md
         - name: 'Verzameling, retentie en opslag van toepassingsgegevens'
           href: app/data-retention-privacy.md
     - name: Waarschuwingen
       items:
         - name: Overzicht
-          href: platform/alerts-overview.md
+          href: alerts/alerts-overview.md
         - name: Metrische waarschuwingen
-          href: platform/alerts-metric-overview.md
+          href: alerts/alerts-metric-overview.md
         - name: Waarschuwingen voor logboeken
-          href: platform/alerts-unified-log.md
+          href: alerts/alerts-unified-log.md
         - name: Waarschuwingen voor activiteitenlogboeken
-          href: platform/activity-log-alerts.md
+          href: alerts/activity-log-alerts.md
     - name: Gegevens visualiseren
       href: visualizations.md
     - name: Partnerintegraties
-      href: platform/partners.md
+      href: /partners.md
     - name: Beveiliging
       items:
         - name: Beveiligingsbasislijn
           href: security-baseline.md
         - name: Besturingselementen voor beveiliging van Azure Policy
           displayName: 'regulatory, compliance, standards, domains'
-          href: ./platform/security-controls-policy.md
+          href: .//security-controls-policy.md
 - name: Instructiegidsen
   items:
     - name: Scenario's
       items:
         - name: Azure-resource bewaken
-          href: insights/monitor-azure-resource.md
+          href: essentials/monitor-azure-resource.md
         - name: Virtuele Azure-machine bewaken
-          href: insights/monitor-vm-azure.md
+          href: vm/monitor-vm-azure.md
           displayname: VM
     - name: Implementeren
       items:
@@ -169,236 +169,236 @@
     - name: Beheren en configureren
       items:
         - name: Rolmachtigingen en -beveiliging
-          href: platform/roles-permissions-security.md
+          href: /roles-permissions-security.md
         - name: IP-adressen
           href: app/ip-addresses.md
           displayname: 'firewall, firewall exceptions, whitelist'
         - name: Verbruik en kosten
           items:
             - name: Gebruik en geraamde kosten
-              href: platform/usage-estimated-costs.md
+              href: /usage-estimated-costs.md
             - name: Toepassingsgebruik en kosten
               href: app/pricing.md
             - name: Gegevensgebruik en kosten vastleggen
-              href: platform/manage-cost-storage.md
+              href: logs/manage-cost-storage.md
     - name: Metrische gegevens van Azure Monitor
       items:
         - name: Overzicht
           displayname: Metrics
-          href: platform/data-platform-metrics.md
+          href: essentials/data-platform-metrics.md
         - name: Metrics-explorer
           items:
             - name: Aan de slag met Metrics Explorer
-              href: platform/metrics-getting-started.md
+              href: essentials/metrics-getting-started.md
             - name: Geavanceerde functies van Metrics Explorer
-              href: platform/metrics-charts.md
+              href: essentials/metrics-charts.md
             - name: Meerdere resources weergeven in Metrics Explorer
-              href: platform/metrics-dynamic-scope.md
+              href: essentials/metrics-dynamic-scope.md
             - name: Voorbeelden van grafieken met metrische gegevens
-              href: platform/metric-chart-samples.md
+              href: essentials/metric-chart-samples.md
             - name: Problemen met grafieken met metrische gegevens oplossen
-              href: platform/metrics-troubleshoot.md
+              href: essentials/metrics-troubleshoot.md
             - name: Informatie over metrische gegevensaggregatie
-              href: platform/metrics-aggregation-explained.md
+              href: essentials/metrics-aggregation-explained.md
     - name: Azure Monitor-logboeken
       items:
         - name: Overzicht
           displayname: 'Azure Monitor Logs, Logs, Log Analytics, log query, log queries, query, queries'
-          href: platform/data-platform-logs.md
+          href: logs/data-platform-logs.md
         - name: Werkruimten en clusters
           items:
             - name: Een werkruimte maken
               items:
                 - name: Azure Portal
-                  href: learn/quick-create-workspace.md
+                  href: logs/quick-create-workspace.md
                 - name: Azure CLI
-                  href: learn/quick-create-workspace-cli.md
+                  href: logs/quick-create-workspace-cli.md
                 - name: PowerShell
-                  href: platform/powershell-workspace-configuration.md
+                  href: logs/powershell-workspace-configuration.md
             - name: Een werkruimte-implementatie ontwerpen
-              href: platform/design-logs-deployment.md
+              href: logs/design-logs-deployment.md
             - name: Een werkruimte bewaken
-              href: platform/monitor-workspace.md
+              href: logs/monitor-workspace.md
             - name: Een werkruimte verwijderen en herstellen
-              href: platform/delete-workspace.md
+              href: logs/delete-workspace.md
             - name: Toegang beheren
               displayName: Log Analytics workspace
-              href: platform/manage-access.md
+              href: logs/manage-access.md
             - name: Een werkruimte verplaatsen
-              href: platform/move-workspace.md
+              href: logs/move-workspace.md
             - name: Ontwerp voor serviceproviders
-              href: platform/service-providers.md
+              href: logs/service-providers.md
             - name: Toegewezen clusters
-              href: log-query/logs-dedicated-clusters.md
+              href: logs/logs-dedicated-clusters.md
         - name: Log Analytics
           items:
             - name: Overzicht
               displayname: 'Log Analytics, log query, log queries, query, queries'
-              href: log-query/log-analytics-overview.md
+              href: logs/log-analytics-overview.md
             - name: Zelfstudie
               displayname: 'Log Analytics workspace, log query, log queries, query, queries'
-              href: log-query/log-analytics-tutorial.md
+              href: logs/log-analytics-tutorial.md
             - name: Querybereik
-              href: log-query/scope.md
+              href: logs/scope.md
             - name: Voorbeelden van query's
-              href: log-query/example-queries.md
+              href: logs/example-queries.md
         - name: Logboekquery's
           items:
             - name: Overzicht
               displayname: 'log query, log queries, query, queries'
-              href: log-query/log-query-overview.md
+              href: logs/log-query-overview.md
             - name: KQL-verwijzing
               href: /azure/data-explorer/kusto/query/
             - name: Voorbeeldquery's
               href: /azure/data-explorer/kusto/query/samples?&pivots=azuremonitor
             - name: Standaardkolommen
-              href: platform/log-standard-columns.md
+              href: logs/log-standard-columns.md
             - name: Query's controleren
-              href: log-query/query-audit.md
+              href: logs/query-audit.md
             - name: Query's optimaliseren
-              href: log-query/query-optimization.md
+              href: logs/query-optimization.md
             - name: Functions
-              href: log-query/functions.md
+              href: logs/functions.md
             - name: Tekstgegevens parseren
-              href: log-query/parse-text.md
+              href: logs/parse-text.md
             - name: Computergroepen
-              href: platform/computer-groups.md
+              href: logs/computer-groups.md
             - name: Query's voor meerdere resources
               items:
                 - name: Overzicht
                   displayname: cross-resource queries
-                  href: log-query/cross-workspace-query.md
+                  href: logs/cross-workspace-query.md
                 - name: app-expressie
-                  href: log-query/app-expression.md
+                  href: logs/app-expression.md
                 - name: werkruimte-expressie
-                  href: log-query/workspace-expression.md
+                  href: logs/workspace-expression.md
                 - name: resource-expressie
-                  href: log-query/resource-expression.md
+                  href: logs/resource-expression.md
                 - name: Resources voor toepassingsgegevens samenbundelen
-                  href: log-query/unify-app-resource-data.md
+                  href: logs/unify-app-resource-data.md
                 - name: Overzicht van serviceoverstijgende query's voor Azure Monitor en Azure Data Explorer
-                  href: platform/azure-data-explorer-monitor-cross-service-query.md
+                  href: logs/azure-data-explorer-monitor-cross-service-query.md
                 - name: Query uitvoeren op Azure Data Explorer vanuit Azure Monitor
-                  href: platform/azure-monitor-data-explorer-proxy.md
+                  href: logs/azure-monitor-data-explorer-proxy.md
         - name: Gegevensexport
           items:
             - name: Export van werkruimtegegevens
-              href: platform/logs-data-export.md
+              href: logs/logs-data-export.md
             - name: Exporteren met Logic Apps
-              href: platform/logs-export-logic-app.md
+              href: logs/logs-export-logic-app.md
             - name: Query's uitvoeren op gegevens met Azure Data Explorer
-              href: platform/azure-data-explorer-query-storage.md
+              href: logs/azure-data-explorer-query-storage.md
             - name: Verzenden naar Excel
-              href: log-query/log-excel.md
+              href: logs/log-excel.md
             - name: Verzenden naar Power BI
-              href: log-query/log-powerbi.md
+              href: logs/log-powerbi.md
     - name: Platformlogboeken
       items:
         - name: Overzicht
           displayName: 'Platform logs, Resource logs, Activity log'
-          href: platform/platform-logs-overview.md
+          href: essentials/platform-logs-overview.md
         - name: Activiteitenlogboek
-          href: platform/activity-log.md
+          href: essentials/activity-log.md
         - name: Resourcelogboeken
-          href: platform/resource-logs.md
+          href: essentials/resource-logs.md
         - name: Diagnostische instellingen
           displayName: 'Platform logs, Resource logs, Activity log'
-          href: platform/diagnostic-settings.md
+          href: essentials/diagnostic-settings.md
     - name: Gegevens verzamelen
       items:
         - name: Gegevensverzamelingsregels
-          href: platform/data-collection-rule-overview.md
+          href: agents/data-collection-rule-overview.md
         - name: Opnametijd van logboekgegevens
           displayname: latency
-          href: platform/data-ingestion-time.md
+          href: logs/data-ingestion-time.md
         - name: Agent-gegevensbronnen
           items:
             - name: Overzicht
-              href: platform/agent-data-sources.md
+              href: agents/agent-data-sources.md
             - name: Windows-gebeurtenissen
-              href: platform/data-sources-windows-events.md
+              href: agents/data-sources-windows-events.md
             - name: Aangepaste JSON-gegevens
-              href: platform/data-sources-json.md
+              href: agents/data-sources-json.md
             - name: Verzamelde prestatiegegevens
-              href: platform/data-sources-collectd.md
+              href: agents/data-sources-collectd.md
             - name: Syslog
-              href: platform/data-sources-syslog.md
+              href: agents/data-sources-syslog.md
             - name: Prestatiemeteritems
-              href: platform/data-sources-performance-counters.md
+              href: agents/data-sources-performance-counters.md
             - name: Prestaties van Linux-toepassingen
-              href: platform/data-sources-linux-applications.md
+              href: agents/data-sources-linux-applications.md
             - name: IIS-logboeken
-              href: platform/data-sources-iis-logs.md
+              href: agents/data-sources-iis-logs.md
             - name: Event Tracing for Windows gegevens
-              href: platform/data-sources-event-tracing-windows.md
+              href: agents/data-sources-event-tracing-windows.md
             - name: Aangepaste logboeken
-              href: platform/data-sources-custom-logs.md
+              href: agents/data-sources-custom-logs.md
             - name: Aangepaste velden
-              href: platform/custom-fields.md
+              href: logs/custom-fields.md
         - name: Aangepaste metrische gegevens
           items:
             - name: Aangepaste metrische gegevens
-              href: platform/metrics-custom-overview.md
+              href: essentials/metrics-custom-overview.md
             - name: REST-API voor metrische gegevens
-              href: platform/metrics-store-custom-rest-api.md
+              href: essentials/metrics-store-custom-rest-api.md
         - name: Aangepaste logboeken
           items:
             - name: API voor Log Analytics-gegevensverzamelaar
-              href: platform/data-collector-api.md
+              href: logs/data-collector-api.md
             - name: Pijplijnvoorbeeld voor API voor Log Analytics-gegevensverzamelaar
-              href: platform/create-pipeline-datacollector-api.md
+              href: logs/create-pipeline-datacollector-api.md
         - name: Logic Apps
           items:
             - name: Connector voor Azure Monitor-logboeken
-              href: platform/logicapp-flow-connector.md
+              href: logs/logicapp-flow-connector.md
             - name: Application Insights-connector
               href: app/automate-with-logic-apps.md
     - name: Agents
       items:
         - name: Overzicht
-          href: platform/agents-overview.md
+          href: agents/agents-overview.md
         - name: Veelgestelde vragen
           href: faq.md#agents
         - name: Azure Monitor-agent
           items:
             - name: Overzicht
               displayname: Azure Monitor agent
-              href: platform/azure-monitor-agent-overview.md
+              href: agents/azure-monitor-agent-overview.md
             - name: Installeren
               displayname: Azure Monitor agent
-              href: platform/azure-monitor-agent-install.md
+              href: agents/azure-monitor-agent-install.md
             - name: Gegevens verzamelen
               displayname: 'data collection rule,Azure Monitor agent'
-              href: platform/data-collection-rule-azure-monitor-agent.md
+              href: agents/data-collection-rule-azure-monitor-agent.md
         - name: Log Analytics-agent
           items:
             - name: Overzicht
-              href: platform/log-analytics-agent.md
+              href: agents/log-analytics-agent.md
             - name: Windows-agents
-              href: platform/agent-windows.md
+              href: agents/agent-windows.md
             - name: Linux-agents
-              href: platform/agent-linux.md
+              href: agents/agent-linux.md
             - name: VM-extensie voor Windows
               href: ../virtual-machines/extensions/oms-windows.md?toc=/azure/azure-monitor/toc.json
             - name: VM-extensie voor Linux
               href: ../virtual-machines/extensions/oms-linux.md?toc=/azure/azure-monitor/toc.json
             - name: Log Analytics-gateway
-              href: platform/gateway.md
+              href: agents/gateway.md
             - name: Agents beheren
-              href: platform/agent-manage.md
+              href: agents/agent-manage.md
             - name: Status van agent
               href: insights/solution-agenthealth.md
         - name: Azure Diagnostics-extensie
           items:
             - name: Overzicht
-              href: platform/diagnostics-extension-overview.md
+              href: agents/diagnostics-extension-overview.md
             - name: Windows
               displayname: diagnostics extension
               items:
                 - name: Installeren en configureren
                   items:
                     - name: Installatieopties
-                      href: platform/diagnostics-extension-windows-install.md
+                      href: agents/diagnostics-extension-windows-install.md
                     - name: PowerShell
                       href: ../virtual-machines/extensions/diagnostics-windows.md?toc=/azure/azure-monitor/toc.json
                     - name: Resource Manager-sjabloon
@@ -406,23 +406,23 @@
                 - name: Verzenden naar metrische gegevens van Azure Monitor
                   items:
                     - name: Virtuele machine
-                      href: platform/collect-custom-metrics-guestos-resource-manager-vm.md
+                      href: essentials/collect-custom-metrics-guestos-resource-manager-vm.md
                     - name: Schaalset voor virtuele machines
-                      href: platform/collect-custom-metrics-guestos-resource-manager-vmss.md
+                      href: essentials/collect-custom-metrics-guestos-resource-manager-vmss.md
                     - name: Klassieke VM
-                      href: platform/collect-custom-metrics-guestos-vm-classic.md
+                      href: essentials/collect-custom-metrics-guestos-vm-classic.md
                     - name: Cloudservice
-                      href: platform/collect-custom-metrics-guestos-vm-cloud-service-classic.md
+                      href: essentials/collect-custom-metrics-guestos-vm-cloud-service-classic.md
                 - name: Verzenden naar Event Hubs
-                  href: platform/diagnostics-extension-stream-event-hubs.md
+                  href: agents/diagnostics-extension-stream-event-hubs.md
                 - name: Verzenden naar logboeken
-                  href: platform/diagnostics-extension-logs.md
+                  href: essentials/diagnostics-extension-logs.md
                 - name: Verzenden naar Application Insights
-                  href: platform/diagnostics-extension-to-application-insights.md
+                  href: agents/diagnostics-extension-to-application-insights.md
                 - name: Versiegeschiedenis
-                  href: platform/diagnostics-extension-versions.md
+                  href: agents/diagnostics-extension-versions.md
                 - name: Problemen oplossen
-                  href: platform/diagnostics-extension-troubleshooting.md
+                  href: agents/diagnostics-extension-troubleshooting.md
             - name: Linux
               displayname: diagnostics extension
               items:
@@ -431,82 +431,82 @@
                 - name: Versie 3.0
                   href: ../virtual-machines/extensions/diagnostics-linux-v3.md?toc=/azure/azure-monitor/toc.json
                 - name: Metrische gegevens verzamelen met Telegraf
-                  href: platform/collect-custom-metrics-linux-telegraf.md
+                  href: essentials/collect-custom-metrics-linux-telegraf.md
         - name: Problemen oplossen
           items:
             - name: VM-extensie voor Log Analytics
               displayname: 'troubleshoot, troubleshooting'
-              href: platform/vmext-troubleshoot.md
+              href: visualize/vmext-troubleshoot.md
             - name: Windows-agent voor Log Analytics
               displayname: 'troubleshoot, troubleshooting'
-              href: platform/agent-windows-troubleshoot.md
+              href: agents/agent-windows-troubleshoot.md
             - name: Linux-agent voor Log Analytics
               displayname: 'troubleshoot, troubleshooting'
-              href: platform/agent-linux-troubleshoot.md
+              href: agents/agent-linux-troubleshoot.md
     - name: Automatisch schalen
       items:
         - name: Overzicht
-          href: platform/autoscale-overview.md
+          href: autoscale/autoscale-overview.md
         - name: Walkthrough
-          href: platform/autoscale-get-started.md
+          href: autoscale/autoscale-get-started.md
         - name: Configuratie-instellingen
-          href: platform/autoscale-understanding-settings.md
+          href: autoscale/autoscale-understanding-settings.md
         - name: Aanbevolen procedures
-          href: platform/autoscale-best-practices.md
+          href: autoscale/autoscale-best-practices.md
         - name: Algemene metrische gegevens
-          href: platform/autoscale-common-metrics.md
+          href: autoscale/autoscale-common-metrics.md
         - name: Algemene patronen
-          href: platform/autoscale-common-scale-patterns.md
+          href: autoscale/autoscale-common-scale-patterns.md
         - name: Schaal aanpassen met aangepaste metrische gegevens
-          href: platform/autoscale-custom-metric.md
+          href: autoscale/autoscale-custom-metric.md
         - name: Schaal van virtuele-machineschaalsets aanpassen
           href: ../virtual-machine-scale-sets/tutorial-autoscale-powershell.md?toc=/azure/azure-monitor/toc.json
         - name: Schaal van virtuele-machineschaalsets automatisch aanpassen met Resource Manager-sjablonen
-          href: platform/autoscale-virtual-machine-scale-sets.md
+          href: autoscale/autoscale-virtual-machine-scale-sets.md
         - name: Webhooks en e-mailmeldingen gebruiken
-          href: platform/autoscale-webhook-email.md
+          href: autoscale/autoscale-webhook-email.md
         - name: Problemen oplossen
-          href: platform/autoscale-troubleshoot.md
+          href: autoscale/autoscale-troubleshoot.md
         - name: Schema's voor resourcelogboeken
-          href: platform/autoscale-resource-log-schema.md
+          href: autoscale/autoscale-resource-log-schema.md
     - name: Waarschuwingen
       items:
         - name: Regels voor metrische waarschuwingen
           items:
             - name: Metrische waarschuwingen beheren
-              href: platform/alerts-metric.md
+              href: alerts/alerts-metric.md
             - name: Beschikbaarheid
               href: app/monitor-web-app-availability.md
             - name: Dynamische drempels gebruiken
-              href: platform/alerts-dynamic-thresholds.md
+              href: alerts/alerts-dynamic-thresholds.md
             - name: Enkele waarschuwingen voor veel tijdreeksen
-              href: platform/alerts-metric-multiple-time-series-single-rule.md
+              href: alerts/alerts-metric-multiple-time-series-single-rule.md
             - name: Metrische waarschuwingen voor logboeken
-              href: platform/alerts-metric-logs.md
+              href: alerts/alerts-metric-logs.md
             - name: Een Resource Manager-sjabloon gebruiken
-              href: platform/alerts-metric-create-templates.md
+              href: alerts/alerts-metric-create-templates.md
             - name: Problemen met waarschuwingen over metrische gegevens oplossen
-              href: platform/alerts-troubleshoot-metric.md
+              href: alerts/alerts-troubleshoot-metric.md
         - name: Waarschuwingsregels voor logboeken
           items:
             - name: Logboekwaarschuwingen beheren
-              href: platform/alerts-log.md
+              href: alerts/alerts-log.md
             - name: Waarschuwingsquery's optimaliseren
-              href: platform/alerts-log-query.md
+              href: alerts/alerts-log-query.md
             - name: Een Resource Manager-sjabloon gebruiken
-              href: platform/alerts-log-create-templates.md
+              href: alerts/alerts-log-create-templates.md
             - name: Problemen met logboekwaarschuwingen oplossen
-              href: platform/alerts-troubleshoot-log.md
+              href: alerts/alerts-troubleshoot-log.md
             - name: Webhookacties
-              href: platform/alerts-log-webhook.md
+              href: alerts/alerts-log-webhook.md
         - name: Waarschuwingsregels voor activiteitenlogboek
           items:
             - name: Waarschuwingen voor gebeurtenissen van het activiteitenlogboek
-              href: platform/alerts-activity-log.md
+              href: alerts/alerts-activity-log.md
             - name: Beheergebeurtenissen migreren naar waarschuwingen voor activiteitenlogboeken
-              href: ./platform/activity-log-alerts.md
+              href: ./alerts/activity-log-alerts.md
             - name: Webhook-schema
-              href: platform/activity-log-alerts-webhook.md
+              href: alerts/activity-log-alerts-webhook.md
         - name: Waarschuwingen voor servicestatus
           items:
             - name: Meldingen weergeven
@@ -516,106 +516,106 @@
         - name: Meldingen en acties
           items:
             - name: Actieregels (preview)
-              href: platform/alerts-action-rules.md
+              href: alerts/alerts-action-rules.md
               displayName: 'Azure CLI, az monitor action rule'
             - name: Een actiegroep maken
-              href: platform/action-groups.md
+              href: alerts/action-groups.md
             - name: Algemeen waarschuwingsschema
-              href: platform/alerts-common-schema.md
+              href: alerts/alerts-common-schema.md
             - name: Definitie van algemeen waarschuwingsschema
-              href: platform/alerts-common-schema-definitions.md
+              href: alerts/alerts-common-schema-definitions.md
             - name: Het algemene waarschuwingsschema integreren met Logic Apps
-              href: platform/alerts-common-schema-integrations.md
+              href: alerts/alerts-common-schema-integrations.md
             - name: Gedrag van sms-waarschuwingen
-              href: platform/alerts-sms-behavior.md
+              href: alerts/alerts-sms-behavior.md
             - name: Limiet voor meldingssnelheid
-              href: platform/alerts-rate-limiting.md
+              href: alerts/alerts-rate-limiting.md
             - name: Actiegroepen maken met Resource Manager
-              href: platform/action-groups-create-resource-manager-template.md
+              href: alerts/action-groups-create-resource-manager-template.md
             - name: Een actie voor een Logische app implementeren
-              href: platform/action-groups-logic-app.md
+              href: alerts/action-groups-logic-app.md
         - name: Gebruikersinterface van waarschuwingen
           items:
             - name: Over slimme groepen
-              href: platform/alerts-smartgroups-overview.md
+              href: alerts/alerts-smartgroups-overview.md
             - name: Waarschuwingsexemplaren beheren
-              href: platform/alerts-managing-alert-instances.md
+              href: alerts/alerts-managing-alert-instances.md
             - name: Slimme groepen beheren
-              href: platform/alerts-managing-smart-groups.md
+              href: alerts/alerts-managing-smart-groups.md
             - name: Statussen van waarschuwingen en slimme groepen beheren
-              href: platform/alerts-managing-alert-states.md
+              href: alerts/alerts-managing-alert-states.md
         - name: Waarschuwings-API
-          href: platform/api-alerts.md
+          href: alerts/api-alerts.md
         - name: Waarschuwingsproblemen oplossen
-          href: platform/alerts-troubleshoot.md
+          href: alerts/alerts-troubleshoot.md
         - name: Waarschuwingen en regiowijzigingen
-          href: platform/alerts-resource-move.md
+          href: alerts/alerts-resource-move.md
         - name: IT Service Management
           items:
             - name: ITSM-connectoroverzicht
-              href: platform/itsmc-overview.md
+              href: alerts/itsmc-overview.md
             - name: ITSM-connectorpartners instellen
               items:
                 - name: Overzicht
-                  href: platform/itsmc-connections.md
+                  href: alerts/itsmc-connections.md
                 - name: ServiceNow
-                  href: platform/itsmc-connections-servicenow.md
+                  href: alerts/itsmc-connections-servicenow.md
                 - name: System Center Service Manager
                   items:
                     - name: Instellen
-                      href: platform/itsmc-connections-scsm.md
+                      href: alerts/itsmc-connections-scsm.md
                     - name: Service Manager-web-app maken
-                      href: platform/itsmc-service-manager-script.md
+                      href: alerts/itsmc-service-manager-script.md
                 - name: Cherwell
-                  href: platform/itsmc-connections-cherwell.md
+                  href: alerts/itsmc-connections-cherwell.md
                 - name: Provance
-                  href: platform/itsmc-connections-provance.md
+                  href: alerts/itsmc-connections-provance.md
             - name: Azure-configuratie voor ITSM-connector
-              href: platform/itsmc-definition.md
+              href: alerts/itsmc-definition.md
             - name: Gesynchroniseerde gegevens van uw ITSM-product
-              href: platform/itsmc-synced-data.md
+              href: alerts/itsmc-synced-data.md
             - name: Problemen oplossen in ITSM-connector
               items:
                 - name: Overzicht
-                  href: platform/itsmc-troubleshoot-overview.md
+                  href: alerts/itsmc-troubleshoot-overview.md
                 - name: Dashboard verkennen
-                  href: platform/itsmc-dashboard.md
+                  href: alerts/itsmc-dashboard.md
                 - name: Algemene fouten
-                  href: platform/itsmc-dashboard-errors.md
+                  href: alerts/itsmc-dashboard-errors.md
                 - name: ITSM-connector synchroniseren
-                  href: platform/itsmc-resync-servicenow.md
+                  href: alerts/itsmc-resync-servicenow.md
                 - name: Connector verwijderen
-                  href: platform/itsmc-connector-deletion.md
+                  href: alerts/itsmc-connector-deletion.md
             - name: Integreren met beveiligde export
               items:
                 - name: Overzicht
-                  href: platform/it-service-management-connector-secure-webhook-connections.md
+                  href: alerts/it-service-management-connector-secure-webhook-connections.md
                 - name: Azure-configuratie voor veilige export
-                  href: platform/itsm-connector-secure-webhook-connections-azure-configuration.md
+                  href: alerts/itsm-connector-secure-webhook-connections-azure-configuration.md
                 - name: ITSM-connectorpartners instellen
                   items:
                     - name: BMC
-                      href: platform/itsmc-secure-webhook-connections-bmc.md
+                      href: alerts/itsmc-secure-webhook-connections-bmc.md
                     - name: ServiceNow
-                      href: platform/itsmc-secure-webhook-connections-servicenow.md
+                      href: alerts/itsmc-secure-webhook-connections-servicenow.md
         - name: Klassieke waarschuwingsregels migreren
           items:
             - name: Over klassieke waarschuwingen
-              href: platform/alerts-classic.overview.md
+              href: alerts/alerts-classic.overview.md
             - name: Voorbereiden op migratie
-              href: platform/alerts-prepare-migration.md
+              href: alerts/alerts-prepare-migration.md
             - name: Over het hulpprogramma voor migratie
-              href: platform/alerts-understand-migration.md
+              href: alerts/alerts-understand-migration.md
             - name: Het hulpprogramma voor migratie gebruiken
-              href: platform/alerts-using-migration-tool.md
+              href: alerts/alerts-using-migration-tool.md
             - name: Automatisch migratieproces
-              href: platform/alerts-automatic-migration.md
+              href: alerts/alerts-automatic-migration.md
             - name: Klassieke waarschuwingen voor metrische gegevens beheren
-              href: platform/alerts-classic-portal.md
+              href: alerts/alerts-classic-portal.md
             - name: Een klassieke waarschuwing voor metrische gegevens met behulp van een Resource Manager-sjabloon
-              href: platform/alerts-enable-template.md
+              href: alerts/alerts-enable-template.md
             - name: Een klassieke metrische waarschuwing die een webhook aanroept
-              href: platform/alerts-webhooks.md
+              href: alerts/alerts-webhooks.md
     - name: Application Insights
       items:
         - name: Overzicht van Application Insights
@@ -807,7 +807,7 @@
             - name: Vooraf samengevoegde metrische gegevens op basis van logboeken
               href: app/pre-aggregated-metrics-log-metrics.md
             - name: Definities van metrische gegevens op basis van logboeken
-              href: platform/app-insights-metrics.md
+              href: essentials/app-insights-metrics.md
             - name: Metrische standaardgegevens
               href: app/standard-metrics.md
         - name: Search
@@ -991,135 +991,133 @@
     - name: Azure Monitor voor virtuele machines
       items:
         - name: Overzicht
-          href: insights/vminsights-overview.md
+          href: vm/vminsights-overview.md
         - name: Veelgestelde vragen over algemene beschikbaarheid
-          href: insights/vminsights-ga-release-faq.md
+          href: vm/vminsights-ga-release-faq.md
         - name: Veelgestelde vragen
           href: faq.md#azure-monitor-for-vms
         - name: Werkruimte configureren
-          href: insights/vminsights-configure-workspace.md
+          href: vm/vminsights-configure-workspace.md
         - name: Agents installeren
           items:
             - name: Overzicht
-              href: insights/vminsights-enable-overview.md
+              href: vm/vminsights-enable-overview.md
             - name: Azure Portal
-              href: insights/vminsights-enable-portal.md
+              href: vm/vminsights-enable-portal.md
             - name: Azure PowerShell
-              href: insights/vminsights-enable-powershell.md
+              href: vm/vminsights-enable-powershell.md
             - name: ARM-sjablonen
-              href: insights/vminsights-enable-resource-manager.md
+              href: vm/vminsights-enable-resource-manager.md
             - name: Azure Policy
-              href: insights/vminsights-enable-policy.md
+              href: vm/vminsights-enable-policy.md
             - name: Hybride VM's
-              href: insights/vminsights-enable-hybrid.md
+              href: vm/vminsights-enable-hybrid.md
             - name: Dependency Agent upgraden
-              href: insights/vminsights-dependency-agent-maintenance.md
+              href: vm/vminsights-dependency-agent-maintenance.md
         - name: Afhankelijkheden toewijzen
-          href: insights/vminsights-maps.md
+          href: vm/vminsights-maps.md
         - name: Prestaties bewaken
-          href: insights/vminsights-performance.md
+          href: vm/vminsights-performance.md
         - name: Gaststatus bewaken (preview)
           items:
             - name: Overzicht
-              href: insights/vminsights-health-overview.md
+              href: vm/vminsights-health-overview.md
             - name: Inschakelen
-              href: insights/vminsights-health-enable.md
+              href: vm/vminsights-health-enable.md
             - name: Waarschuwingen
-              href: insights/vminsights-health-alerts.md
+              href: vm/vminsights-health-alerts.md
             - name: Monitors in portal configureren
-              href: insights/vminsights-health-configure.md
+              href: vm/vminsights-health-configure.md
             - name: Monitors op schaal configureren
-              href: insights/vminsights-health-configure-dcr.md
+              href: vm/vminsights-health-configure-dcr.md
             - name: Problemen oplossen
-              href: insights/vminsights-health-troubleshoot.md
+              href: vm/vminsights-health-troubleshoot.md
         - name: Gegevens analyseren met logboekquery's
-          href: insights/vminsights-log-search.md
+          href: vm/vminsights-log-search.md
         - name: Waarschuwingen
-          href: insights/vminsights-alerts.md
+          href: vm/vminsights-alerts.md
         - name: Wijzigingen bewaken
-          href: insights/vminsights-change-analysis.md
+          href: vm/vminsights-change-analysis.md
         - name: Gegevens visualiseren met werkmappen
-          href: insights/vminsights-workbooks.md
+          href: vm/vminsights-workbooks.md
         - name: Bewaking uitschakelen
-          href: insights/vminsights-optout.md
+          href: vm/vminsights-optout.md
     - name: Azure Monitor voor containers
       items:
         - name: Overzicht
-          href: insights/container-insights-overview.md
+          href: containers/container-insights-overview.md
         - name: Veelgestelde vragen
           href: faq.md#azure-monitor-for-containers
         - name: Bewaking inschakelen
           items:
             - name: Bewakingsoverzicht inschakelen
-              href: insights/container-insights-onboard.md
+              href: containers/container-insights-onboard.md
             - name: Inschakelen voor nieuw AKS-cluster
-              href: insights/container-insights-enable-new-cluster.md
+              href: containers/container-insights-enable-new-cluster.md
             - name: Inschakelen voor bestaand AKS-cluster
-              href: insights/container-insights-enable-existing-clusters.md
-            - name: Inschakelen voor AKS met Azure Policy
-              href: containers/container-insights-enable-aks-policy.md
+              href: containers/container-insights-enable-existing-clusters.md
             - name: Inschakelen voor een cluster dat geschikt is voor Arc
-              href: insights/container-insights-enable-arc-enabled-clusters.md
+              href: containers/container-insights-enable-arc-enabled-clusters.md
             - name: Inschakelen voor een hybride cluster
-              href: insights/container-insights-hybrid-setup.md
+              href: containers/container-insights-hybrid-setup.md
             - name: Inschakelen voor Azure Red Hat OpenShift v3
-              href: insights/container-insights-azure-redhat-setup.md
+              href: containers/container-insights-azure-redhat-setup.md
             - name: Inschakelen voor Azure Red Hat OpenShift v4
-              href: insights/container-insights-azure-redhat4-setup.md
+              href: containers/container-insights-azure-redhat4-setup.md
             - name: Regiotoewijzingen
-              href: insights/container-insights-region-mapping.md
+              href: containers/container-insights-region-mapping.md
         - name: Prestaties bewaken
-          href: insights/container-insights-analyze.md
+          href: containers/container-insights-analyze.md
         - name: GPU-prestaties bewaken
-          href: insights/container-insights-gpu-monitoring.md
+          href: containers/container-insights-gpu-monitoring.md
         - name: Netwerkconfiguratie bewaken
           href: ../virtual-network/kubernetes-network-policies.md?toc=/azure/azure-monitor/toc.json#monitor-and-visualize-network-configurations-with-azure-npm
         - name: Implementaties en HPA's bewaken
-          href: insights/container-insights-deployment-hpa-metrics.md
+          href: containers/container-insights-deployment-hpa-metrics.md
         - name: Permanente volumes bewaken
-          href: insights/container-insights-persistent-volumes.md
+          href: containers/container-insights-persistent-volumes.md
         - name: Tabblad Rapporten
           href: insights/container-insights-reports.md
         - name: Livegegevens weergeven
           items:
             - name: Overzicht van livegegevens (preview)
-              href: insights/container-insights-livedata-overview.md
+              href: containers/container-insights-livedata-overview.md
             - name: Instellen
-              href: insights/container-insights-livedata-setup.md
+              href: containers/container-insights-livedata-setup.md
             - name: Metrische gegevens van clusters weergeven
-              href: insights/container-insights-livedata-metrics.md
+              href: containers/container-insights-livedata-metrics.md
             - name: Implementaties weergeven
-              href: insights/container-insights-livedata-deployments.md
+              href: containers/container-insights-livedata-deployments.md
         - name: Gegevens analyseren met logboekquery's
-          href: insights/container-insights-log-search.md
+          href: containers/container-insights-log-search.md
         - name: Waarschuwingen
           items:
             - name: Regels voor logboekwaarschuwingen maken
-              href: insights/container-insights-log-alerts.md
+              href: containers/container-insights-log-alerts.md
             - name: Regels voor metrische waarschuwingen maken
-              href: insights/container-insights-metric-alerts.md
+              href: containers/container-insights-metric-alerts.md
         - name: Agents beheren
-          href: insights/container-insights-manage-agent.md
+          href: containers/container-insights-manage-agent.md
         - name: Scraping van metrische gegevens instellen voor Prometheus
-          href: insights/container-insights-prometheus-integration.md
+          href: containers/container-insights-prometheus-integration.md
         - name: Instellingen voor verzamelen door agent configureren
-          href: insights/container-insights-agent-config.md
+          href: containers/container-insights-agent-config.md
         - name: Een update uitvoeren om metrische gegevens in te schakelen
-          href: insights/container-insights-update-metrics.md
+          href: containers/container-insights-update-metrics.md
         - name: Kosten en gebruik beheren
-          href: insights/container-insights-cost.md
+          href: containers/container-insights-cost.md
         - name: Bewaking uitschakelen
           items:
             - name: Bewaking van AKS uitschakelen
-              href: insights/container-insights-optout.md
+              href: containers/container-insights-optout.md
             - name: Bewaking van Red Hat OpenShift v3 uitschakelen
-              href: insights/container-insights-optout-openshift-v3.md
+              href: containers/container-insights-optout-openshift-v3.md
             - name: Bewaking van Red Hat OpenShift v4 uitschakelen
-              href: insights/container-insights-optout-openshift-v4.md
+              href: containers/container-insights-optout-openshift-v4.md
             - name: Bewaking van hybride cluster uitschakelen
-              href: insights/container-insights-optout-hybrid.md
+              href: containers/container-insights-optout-hybrid.md
         - name: Problemen oplossen
-          href: insights/container-insights-troubleshoot.md
+          href: containers/container-insights-troubleshoot.md
     - name: Inzichten
       items:
         - name: Azure Cache voor Redis (preview)
@@ -1155,7 +1153,7 @@
                 - name: Oplossing voor capaciteit en prestaties
                   href: insights/capacity-performance.md
                 - name: Docker- en Windows-containers bewaken
-                  href: insights/containers.md
+                  href: containers/containers.md
                 - name: Netwerken
                   items:
                     - name: Networking Analytics
@@ -1179,9 +1177,9 @@
                 - name: Office 365
                   href: insights/solution-office-365.md
                 - name: Oplossing voor servicetoewijzing
-                  href: insights/service-map.md
+                  href: vm/service-map.md
                 - name: Servicetoewijzing en Operations Manager
-                  href: insights/service-map-scom.md
+                  href: vm/service-map-scom.md
                 - name: Azure SQL
                   href: insights/azure-sql.md
                 - name: SQL Server
@@ -1193,108 +1191,108 @@
                 - name: Oplossing voor bedradingsgegevens
                   href: insights/wire-data.md
                 - name: Waarschuwingenbeheeroplossing
-                  href: platform/alert-management-solution.md
+                  href: insights/alert-management-solution.md
     - name: Werkmappen
       items:
         - name: Overzicht
           displayname: Workbooks
-          href: platform/workbooks-overview.md
+          href: visualize/workbooks-overview.md
         - name: Visualisaties
           items:
             - name: Tekst
-              href: platform/workbooks-text-visualizations.md
+              href: visualize/workbooks-text-visualizations.md
             - name: Grafiek
-              href: platform/workbooks-chart-visualizations.md
+              href: visualize/workbooks-chart-visualizations.md
             - name: Raster
-              href: platform/workbooks-grid-visualizations.md
+              href: visualize/workbooks-grid-visualizations.md
             - name: Tegel
-              href: platform/workbooks-tile-visualizations.md
+              href: visualize/workbooks-tile-visualizations.md
             - name: Boomstructuur
-              href: platform/workbooks-tree-visualizations.md
+              href: visualize/workbooks-tree-visualizations.md
             - name: Graph
-              href: platform/workbooks-graph-visualizations.md
+              href: visualize/workbooks-graph-visualizations.md
             - name: Kaart
-              href: platform/workbooks-map-visualizations.md
+              href: visualize/workbooks-map-visualizations.md
             - name: Honingraat
-              href: platform/workbooks-honey-comb.md
+              href: visualize/workbooks-honey-comb.md
             - name: Samengesteld staafdiagram
-              href: platform/workbooks-composite-bar.md
+              href: visualize/workbooks-composite-bar.md
         - name: Gegevensbronnen
-          href: platform/workbooks-data-sources.md
+          href: visualize/workbooks-data-sources.md
         - name: Parameters
           items:
             - name: Overzicht van parameters
-              href: platform/workbooks-parameters.md
+              href: visualize/workbooks-parameters.md
             - name: Parameters voor vervolgkeuzelijst
-              href: platform/workbooks-dropdowns.md
+              href: visualize/workbooks-dropdowns.md
             - name: Interactieve parameters
-              href: platform/workbooks-interactive.md
+              href: visualize/workbooks-interactive.md
             - name: Tijdsparameters
-              href: platform/workbooks-time.md
+              href: visualize/workbooks-time.md
             - name: Tekstparameters
-              href: platform/workbooks-text.md
+              href: visualize/workbooks-text.md
             - name: Resourceparameters
-              href: platform/workbooks-resources.md
+              href: visualize/workbooks-resources.md
         - name: Configuratie
           items:
             - name: Toegangsbeheer
-              href: platform/workbooks-access-control.md
+              href: visualize/workbooks-access-control.md
             - name: Implementeren met Azure Resource Manager
-              href: platform/workbooks-automate.md
+              href: visualize/workbooks-automate.md
             - name: Groepen
-              href: platform/workbooks-groups.md
+              href: visualize/workbooks-groups.md
             - name: Uw eigen opslag meenemen
-              href: platform/workbooks-bring-your-own-storage.md
+              href: visualize/workbooks-bring-your-own-storage.md
             - name: JSON-gegevens transformeren met JSONPath
-              href: platform/workbooks-jsonpath.md
+              href: visualize/workbooks-jsonpath.md
             - name: Werkmappen verplaatsen naar een andere regio
-              href: platform/workbooks-move-region.md
+              href: visualize/workbooks-move-region.md
             - name: Werkmapsjablonen verplaatsen naar een andere regio
-              href: platform/workbook-templates-move-region.md
+              href: visualize/workbook-templates-move-region.md
         - name: Koppelingen
           items:
             - name: Acties koppelen
-              href: platform/workbooks-link-actions.md
+              href: visualize/workbooks-link-actions.md
         - name: Weergaven converteren naar workbooks
           items:
             - name: Conversieoverzicht
-              href: platform/view-designer-conversion-overview.md
+              href: visualize/view-designer-conversion-overview.md
             - name: Conversieopties
-              href: platform/view-designer-conversion-options.md
+              href: visualize/view-designer-conversion-options.md
             - name: Overzicht en toegang
-              href: platform/view-designer-conversion-access.md
+              href: visualize/view-designer-conversion-access.md
             - name: Algemene taken
-              href: platform/view-designer-conversion-tasks.md
+              href: visualize/view-designer-conversion-tasks.md
             - name: Tegelconversies
-              href: platform/view-designer-conversion-tiles.md
+              href: visualize/view-designer-conversion-tiles.md
             - name: Voorbeelden
-              href: platform/view-designer-conversion-examples.md
+              href: visualize/view-designer-conversion-examples.md
     - name: Andere visualisaties
       items:
         - name: Power BI
           items:
             - name: Logboekgegevens exporteren
-              href: platform/powerbi.md
+              href: visualize/powerbi.md
             - name: Toepassingsgegevens exporteren
               href: app/export-power-bi.md
         - name: Dashboards
           items:
             - name: Dashboard gebruiken met logboekgegevens
-              href: learn/tutorial-logs-dashboards.md
+              href: visualize/tutorial-logs-dashboards.md
             - name: Dashboard gebruiken met toepassingsgegevens
-              href: learn/tutorial-app-dashboards.md
+              href: app/tutorial-app-dashboards.md
             - name: Log Analytics-dashboards upgraden
-              href: log-query/dashboard-upgrade.md
+              href: logs/dashboard-upgrade.md
         - name: Gegevens naar Grafana verzenden
-          href: platform/grafana-plugin.md
+          href: visualize/grafana-plugin.md
     - name: System Center-integratie
       items:
         - name: Operations Manager koppelen
-          href: platform/om-agents.md
+          href: agents/om-agents.md
         - name: Operations Manager evalueren
           href: insights/scom-assessment.md
         - name: Verbinding maken met Configuration Manager
-          href: platform/collect-sccm.md
+          href: logs/collect-sccm.md
 - name: Naslaginformatie
   items:
     - name: Servicelimieten
@@ -1306,23 +1304,23 @@
     - name: Ondersteunde metrische gegevens
       items:
         - name: Metrische platformgegevens
-          href: platform/metrics-supported.md
+          href: essentials/metrics-supported.md
         - name: Metrische gegevens in diagnostische instellingen
-          href: platform/metrics-supported-export-diagnostic-settings.md
+          href: essentials/metrics-supported-export-diagnostic-settings.md
         - name: Metrische gegevens in waarschuwingen
-          href: platform/alerts-metric-near-real-time.md
+          href: alerts/alerts-metric-near-real-time.md
     - name: Platformlogboeken
       items:
         - name: Schema voor activiteitenlogboek
-          href: platform/activity-log-schema.md
+          href: essentials/activity-log-schema.md
         - name: Schema's voor resourcelogboeken
-          href: platform/resource-logs-schema.md
+          href: essentials/resource-logs-schema.md
         - name: Ondersteunde resourcelogboekcategorieën
-          href: platform/resource-logs-categories.md
+          href: essentials/resource-logs-categories.md
     - name: Diagnostische extensieschema's
       items:
         - name: Diagnostische Windows-extensie
-          href: platform/diagnostics-extension-schema-windows.md
+          href: agents/diagnostics-extension-schema-windows.md
     - name: Application Insights
       items:
         - name: Afhankelijkheden automatisch verzamelen
@@ -1392,7 +1390,7 @@
           href: /rest/api/loganalytics
         - name: REST API-overzicht
           displayname: 'metrics, analyze'
-          href: platform/rest-api-walkthrough.md
+          href: essentials/rest-api-walkthrough.md
     - name: Resource Manager-sjablonen
       items:
         - name: Azure Monitor
@@ -1401,28 +1399,28 @@
           href: /azure/templates/microsoft.operationalinsights/allversions
     - name: Ingebouwde modules voor Azure Policy
       displayName: 'samples, policies, definitions'
-      href: samples/policy-reference.md
+      href: /policy-reference.md
     - name: Buitengebruikstelling van functies en API
       items:
         - name: OperationalInsights-API
-          href: platform/operationalinsights-api-retirement.md
+          href: logs/operationalinsights-api-retirement.md
         - name: API voor klassieke automatische schaalaanpassing en metrische gegevens
-          href: ./platform/classic-api-retirement-metrics-autoscale.md
+          href: ./essentials/classic-api-retirement-metrics-autoscale.md
         - name: Klassieke waarschuwingen en bewaking
-          href: platform/monitoring-classic-retirement.md
+          href: alerts/monitoring-classic-retirement.md
         - name: Overschakelen naar huidige API voor logboekwaarschuwingen
-          href: platform/alerts-log-api-switch.md
+          href: alerts/alerts-log-api-switch.md
         - name: Oplossing voor web-appanalyse
           href: insights/azure-web-apps-analytics.md
         - name: Application Insights-connector
-          href: platform/app-insights-connector.md
+          href: logs/app-insights-connector.md
         - name: Afschaffing van de OMS-portal
-          href: platform/oms-portal-transition.md
+          href: logs/oms-portal-transition.md
         - name: Afschaffing van metrische schijfgegevens
-          href: platform/portal-disk-metrics-deprecation.md
+          href: essentials/portal-disk-metrics-deprecation.md
         - name: Wijzigingen in de blobopslagindeling
           displayname: Diagnostic settings
-          href: platform/resource-logs-blob-format.md
+          href: essentials/resource-logs-blob-format.md
         - name: Key Vault Analytics (afgeschaft)
           href: insights/azure-key-vault-deprecated.md
         - name: Unix-meetgegevens
@@ -1433,13 +1431,13 @@
         - name: Weergaven
           items:
             - name: Designer weergeven
-              href: platform/view-designer.md
+              href: visualize/view-designer.md
             - name: Naslaginformatie voor tegels
-              href: platform/view-designer-tiles.md
+              href: visualize/view-designer-tiles.md
             - name: Naslaginformatie voor visualisatieonderdelen
-              href: platform/view-designer-parts.md
+              href: visualize/view-designer-parts.md
             - name: Filters
-              href: platform/view-designer-filters.md
+              href: visualize/view-designer-filters.md
 - name: Resources
   items:
     - name: Azure-roadmap

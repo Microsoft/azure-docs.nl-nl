@@ -15,12 +15,12 @@ ms.custom:
 - 'Role: Technical Support'
 - fasttrack-edit
 - iot
-ms.openlocfilehash: 81558526500f3c01e975d9a963b4a6a98ec6d753
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 8bd20e3c7207c75e87a2132fca89906885de2676
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96446406"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579264"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-disconnects-with-azure-iot-hub"></a>De verbinding met Azure IoT Hub controleren, vaststellen en problemen oplossen
 
@@ -82,7 +82,7 @@ De metrische gegevens [*voor verbonden apparaten (preview)*](monitor-iot-hub-ref
 
 U kunt metrische waarschuwings regels gebruiken om te controleren op het verbreken van de verbreking van apparaten op schaal. Dat wil zeggen, wanneer een groot aantal apparaten onverwacht wordt verbroken. Wanneer een dergelijk voorval wordt gedetecteerd, kunt u de logboeken bekijken om het probleem op te lossen. Voor het bewaken van de verbindingen per apparaat en voor het verbreken van de verbinding met essentiële apparaten; u moet echter Event Grid gebruiken. Event Grid biedt ook een meer real-time ervaring dan de metrische gegevens van Azure.
 
-Zie [waarschuwingen in Monitor IOT hub](monitor-iot-hub.md#alerts)voor meer informatie over waarschuwingen met IOT hub. Zie de [zelf studie metrische gegevens en Logboeken gebruiken](tutorial-use-metrics-and-diags.md)voor een overzicht van het maken van waarschuwingen in IOT hub. Zie [overzicht van waarschuwingen in Microsoft Azure](../azure-monitor/platform/alerts-overview.md) in de Azure monitor documentatie voor een gedetailleerd overzicht van waarschuwingen.
+Zie [waarschuwingen in Monitor IOT hub](monitor-iot-hub.md#alerts)voor meer informatie over waarschuwingen met IOT hub. Zie de [zelf studie metrische gegevens en Logboeken gebruiken](tutorial-use-metrics-and-diags.md)voor een overzicht van het maken van waarschuwingen in IOT hub. Zie [overzicht van waarschuwingen in Microsoft Azure](../azure-monitor/alerts/alerts-overview.md) in de Azure monitor documentatie voor een gedetailleerd overzicht van waarschuwingen.
 
 ## <a name="azure-monitor-use-logs-to-resolve-connectivity-errors"></a>Azure Monitor: Logboeken gebruiken om verbindings fouten op te lossen
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 8e2144a61d83f6c7dece8f34232031192b51cde8
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: d36ed6a795c5fa2241ee71751053a4cb5986aaf0
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94412694"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576825"
 ---
 # <a name="security-control-data-protection"></a>Beveiligings beheer: gegevens beveiliging
 
@@ -22,7 +22,7 @@ Aanbevelingen voor gegevens beveiliging zijn gericht op het adresseren van probl
 
 | Azure-ID | CIS-Id's | Onder |
 |--|--|--|
-| 4.1 | 13,1 | Klant |
+| 4.1 | 13.1 | Klant |
 
 Gebruik Tags om Azure-resources te helpen bij het bijhouden of verwerken van gevoelige informatie.
 
@@ -52,13 +52,13 @@ Maak gebruik van een oplossing van een derde partij in azure Marketplace op netw
 
 Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt micro soft alle inhoud van de klant als gevoelig en beschermd tegen verlies en bloot stelling van klant gegevens. Om ervoor te zorgen dat klant gegevens binnen Azure veilig blijven, heeft micro soft een reeks robuuste besturings elementen en mogelijkheden voor gegevens bescherming geïmplementeerd en onderhouden.
 
-- [Informatie over beveiliging van klanten in azure](../fundamentals/protection-customer-data.md)
+- [Informatie over beveiliging van klantgegevens in Azure](../fundamentals/protection-customer-data.md)
 
 ## <a name="44-encrypt-all-sensitive-information-in-transit"></a>4,4: alle gevoelige gegevens in de overdracht versleutelen
 
 | Azure-ID | CIS-Id's | Onder |
 |--|--|--|
-| 4.4 | 14,4 | Gedeeld |
+| 4.4 | 14.4 | Gedeeld |
 
 Versleutel alle gevoelige gegevens tijdens de overdracht. Zorg ervoor dat alle clients die verbinding maken met uw Azure-resources, TLS 1,2 of hoger kunnen onderhandelen.
 
@@ -70,7 +70,7 @@ Volg Azure Security Center aanbevelingen voor het versleutelen van de rest en de
 
 | Azure-ID | CIS-Id's | Onder |
 |--|--|--|
-| 4.5 | 14,5 | Gedeeld |
+| 4.5 | 14.5 | Gedeeld |
 
 Als er geen functie beschikbaar is voor uw specifieke service in azure, gebruikt u een actief detectie hulpprogramma van derden om alle gevoelige informatie te identificeren die is opgeslagen, verwerkt of verzonden door de technologie systemen van de organisatie, met inbegrip van de locaties op locatie of op een externe service provider, en de gevoelige informatie-inventaris van de organisatie bij te werken.
 
@@ -78,11 +78,11 @@ Gebruik Azure Information Protection voor het identificeren van gevoelige gegeve
 
 Gebruik Azure SQL Information Protection om u te helpen bij het classificeren en labelen van informatie die is opgeslagen in Azure SQL Database.
 
-- [Azure SQL-gegevens detectie implementeren](../../azure-sql/database/data-discovery-and-classification-overview.md)
+- [Azure SQL-gegevensdetectie implementeren](../../azure-sql/database/data-discovery-and-classification-overview.md)
 
 - [Azure Information Protection implementeren](/azure/information-protection/deployment-roadmap)
 
-- [Informatie over beveiliging van klanten in azure](../fundamentals/protection-customer-data.md)
+- [Informatie over beveiliging van klantgegevens in Azure](../fundamentals/protection-customer-data.md)
 
 ## <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4,6: Azure RBAC gebruiken om de toegang tot resources te beheren
 
@@ -98,23 +98,23 @@ Gebruik Azure RBAC (op rollen gebaseerd toegangs beheer) om de toegang tot gegev
 
 | Azure-ID | CIS-Id's | Onder |
 |--|--|--|
-| 4.7 | 14,7 | Gedeeld |
+| 4.7 | 14.7 | Gedeeld |
 
 Als dat nodig is voor de naleving van de reken bronnen, implementeert u een hulp programma van derden, zoals een geautomatiseerde oplossing voor gegevens verlies op basis van een host voor het afdwingen van toegangs beheer voor gegevens, zelfs wanneer gegevens worden gekopieerd uit een systeem.
 
 Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt micro soft alle inhoud van de klant als gevoelig en gaat u naar een fantastische lengte om te beschermen tegen verlies en bloot stelling van klant gegevens. Om ervoor te zorgen dat klant gegevens binnen Azure veilig blijven, heeft micro soft een reeks robuuste besturings elementen en mogelijkheden voor gegevens bescherming geïmplementeerd en onderhouden.
 
-- [Informatie over beveiliging van klanten in azure](../fundamentals/protection-customer-data.md)
+- [Informatie over beveiliging van klantgegevens in Azure](../fundamentals/protection-customer-data.md)
 
 ## <a name="48-encrypt-sensitive-information-at-rest"></a>4,8: gevoelige informatie op rest versleutelen
 
 | Azure-ID | CIS-Id's | Onder |
 |--|--|--|
-| 4.8 | 14,8 | Klant |
+| 4.8 | 14.8 | Klant |
 
 Gebruik versleuteling in rust voor alle Azure-resources. Micro soft raadt u aan Azure te laten beheren van uw versleutelings sleutels, maar in sommige gevallen kunt u ook uw eigen sleutels beheren. 
 
-- [Meer informatie over versleuteling in de rest van Azure](../fundamentals/encryption-atrest.md)
+- [Meer informatie over versleuteling van data-at-rest in Azure](../fundamentals/encryption-atrest.md)
 
 - [Door de klant beheerde versleutelings sleutels configureren](../../storage/common/customer-managed-keys-configure-key-vault.md)
 
@@ -122,11 +122,11 @@ Gebruik versleuteling in rust voor alle Azure-resources. Micro soft raadt u aan 
 
 | Azure-ID | CIS-Id's | Onder |
 |--|--|--|
-| 4.9 | 14,9 | Klant |
+| 4.9 | 14.9 | Klant |
 
 Gebruik Azure Monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer wijzigingen worden aangebracht in essentiële Azure-resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../azure-monitor/alerts/alerts-activity-log.md)
 
 
 ## <a name="next-steps"></a>Volgende stappen

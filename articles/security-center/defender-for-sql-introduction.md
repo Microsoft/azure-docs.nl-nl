@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: security-center
 ms.custom: references_regions
 manager: rkarlin
-ms.openlocfilehash: 28ec6659430cfdbc81533f05863ccb0ddc560e32
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 5d8c5eb385baff4aac450c470fb6103e2fb315f3
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99508029"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590411"
 ---
 # <a name="introduction-to-azure-defender-for-sql"></a>Inleiding tot Azure Defender voor SQL
 
@@ -43,8 +43,8 @@ Azure Defender voor SQL bevat twee Azure Defender-abonnementen die het [gegevens
 - **Azure Defender voor SQL-servers op computers** breidt de beveiliging voor uw systeemeigen Azure SQL-servers uit om hybride omgevingen volledig te ondersteunen en SQL-servers (alle ondersteunde versies) die worden gehost in Azure, andere cloudomgevingen en zelfs on-premises machines te beveiligen:
     - [SQL Server on Virtual Machines](https://azure.microsoft.com/services/virtual-machines/sql-server/)
     - On-premises SQL-servers:
-        - [SQL Server met Azure Arc (preview)](/sql/sql-server/azure-arc/overview)
-        - [SQL Server op Windows-computers zonder Azure Arc](../azure-monitor/platform/agent-windows.md)
+        - [SQL Server met Azure Arc (preview)](https://docs.microsoft.com/sql/sql-server/azure-arc/overview)
+        - [SQL Server op Windows-computers zonder Azure Arc](../azure-monitor/agents/agent-windows.md)
 
 
 ## <a name="what-are-the-benefits-of-azure-defender-for-sql"></a>Wat zijn de voordelen van Azure Defender voor SQL?

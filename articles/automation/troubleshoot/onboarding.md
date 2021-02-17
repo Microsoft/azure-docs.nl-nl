@@ -5,12 +5,12 @@ services: automation
 ms.subservice: ''
 ms.date: 06/30/2020
 ms.topic: troubleshooting
-ms.openlocfilehash: 41388e46f5204acaa53f376bc05cebf975361dad
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.openlocfilehash: d7803976ad76f0b4c9da5c9c3a78932adbcee106
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100008159"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581025"
 ---
 # <a name="troubleshoot-feature-deployment-issues"></a>Problemen met implementatie van functies oplossen
 
@@ -82,7 +82,7 @@ Failed to configure automation account for diagnostic logging
 
 #### <a name="cause"></a>Oorzaak
 
-Deze fout kan optreden als de prijs categorie niet overeenkomt met het facturerings model van het abonnement. Zie [verbruik en geschatte kosten in azure monitor bewaken](../../azure-monitor/platform/usage-estimated-costs.md)voor meer informatie.
+Deze fout kan optreden als de prijs categorie niet overeenkomt met het facturerings model van het abonnement. Zie [verbruik en geschatte kosten in azure monitor bewaken](../../azure-monitor//usage-estimated-costs.md)voor meer informatie.
 
 #### <a name="resolution"></a>Oplossing
 

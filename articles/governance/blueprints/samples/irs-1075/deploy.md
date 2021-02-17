@@ -3,12 +3,12 @@ title: Blauwdrukvoorbeeld IRS 1075 implementeren
 description: Implementeer stappen voor het blauwdrukvoorbeeld IRS 1075 (Rev.11-2016), inclusief de parametergegevens voor blauwdrukartefacten.
 ms.date: 01/08/2021
 ms.topic: sample
-ms.openlocfilehash: f4be1b642961b9642ea9d638521653dbc33f0334
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.openlocfilehash: 6df2781207c623e10daf0681865b9246be1b1f4c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98045203"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571910"
 ---
 # <a name="deploy-the-irs-1075-blueprint-sample"></a>Het blauwdrukvoorbeeld IRS 1075 implementeren
 
@@ -94,7 +94,7 @@ In de volgende tabel ziet u een lijst met de blauwdrukartefactparameters:
 |Naam van het artefact|Type artefact|Parameternaam|Beschrijving|
 |-|-|-|-|
 |IRS 1075 (Rev.11-2016)-controles en implementatie van specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten auditeren|Beleidstoewijzing|Id van de Log Analytics-werkruimte waarvoor VM's moeten worden geconfigureerd|Dit is de id (GUID) van de Log Analytics-werkruimte waarvoor de VM's moeten worden geconfigureerd.|
-|IRS 1075 (Rev.11-2016)-controles en implementatie van specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten auditeren|Beleidstoewijzing|Lijst met resourcetypen waarvoor diagnostische logboeken moeten zijn ingeschakeld|Lijst met resourcetypen die moeten worden gecontroleerd als de instelling voor diagnostische logboeken niet is ingeschakeld. Acceptabele waarden vindt u in de [schema's van diagnostische logboeken van Azure Monitor](../../../../azure-monitor/platform/resource-logs-schema.md#service-specific-schemas).|
+|IRS 1075 (Rev.11-2016)-controles en implementatie van specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten auditeren|Beleidstoewijzing|Lijst met resourcetypen waarvoor diagnostische logboeken moeten zijn ingeschakeld|Lijst met resourcetypen die moeten worden gecontroleerd als de instelling voor diagnostische logboeken niet is ingeschakeld. Acceptabele waarden vindt u in de [schema's van diagnostische logboeken van Azure Monitor](../../../../azure-monitor/essentials/resource-logs-schema.md#service-specific-schemas).|
 |IRS 1075 (Rev.11-2016)-controles en implementatie van specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten auditeren|Beleidstoewijzing|Lijst met gebruikers die moeten worden uitgesloten van de groep Beheerders voor Windows-VM's|Een lijst met leden die niet moeten worden opgenomen in de lokale groep beheerders, gescheiden door puntkomma's. Bijvoorbeeld: Beheerder; myUser1; myUser2|
 |IRS 1075 (Rev.11-2016)-controles en implementatie van specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten auditeren|Beleidstoewijzing|Lijst met gebruikers die moeten worden opgenomen in de groep Beheerders voor Windows-VM's|Een lijst met leden die moeten worden opgenomen in de lokale groep beheerders, gescheiden door puntkomma's. Bijvoorbeeld: Beheerder; myUser1; myUser2|
 |Log Analytics-agent voor Linux-VM-schaalsets (VMSS) implementeren|Beleidstoewijzing|Log Analytics-werkruimte voor Linux-VM-schaalsets (VMSS)|Als deze werkruimte buiten het bereik van de toewijzing valt, moet u aan de principal-id van de beleidstoewijzing handmatig de rechten voor Inzender voor Log Analytics (of vergelijkbaar) toekennen.|

@@ -7,12 +7,12 @@ author: mgoedtel
 ms.author: magoedte
 ms.date: 02/11/2021
 ms.topic: troubleshooting
-ms.openlocfilehash: af432d9c6323bd2328eb8dd84d8572a8a5ae05a7
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 15a18cbfc3a80bbfea0b92e5b616104dc0f593af
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100388002"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580999"
 ---
 # <a name="troubleshoot-hybrid-runbook-worker-issues"></a>Problemen met Hybrid Runbook Worker oplossen
 
@@ -128,7 +128,7 @@ De volgende problemen zijn mogelijke oorzaken:
 #### <a name="resolution"></a>Oplossing
 
 ##### <a name="mistyped-workspace-id-or-key"></a>Niet-getypte werk ruimte-ID of-sleutel
-Als u wilt controleren of de werk ruimte-ID of de werk ruimte sleutel van de agent is getypt, raadpleegt u [een werk ruimte toevoegen of verwijderen: Windows agent](../../azure-monitor/platform/agent-manage.md#windows-agent) voor de Windows-agent of [een werk ruimte toevoegen of verwijderen. Dit is een Linux-agent](../../azure-monitor/platform/agent-manage.md#linux-agent) voor de Linux-agent. Zorg ervoor dat u de volledige teken reeks selecteert in het Azure Portal en kopieer en plak deze zorgvuldig.
+Als u wilt controleren of de werk ruimte-ID of de werk ruimte sleutel van de agent is getypt, raadpleegt u [een werk ruimte toevoegen of verwijderen: Windows agent](../../azure-monitor/agents/agent-manage.md#windows-agent) voor de Windows-agent of [een werk ruimte toevoegen of verwijderen. Dit is een Linux-agent](../../azure-monitor/agents/agent-manage.md#linux-agent) voor de Linux-agent. Zorg ervoor dat u de volledige teken reeks selecteert in het Azure Portal en kopieer en plak deze zorgvuldig.
 
 ##### <a name="configuration-not-downloaded"></a>De configuratie is niet gedownload
 
@@ -169,7 +169,7 @@ Plaats dit bestand in dezelfde map als het uitvoer bare bestand `OrchestratorSan
 
 ## <a name="linux"></a>Linux
 
-De Linux-Hybrid Runbook Worker is afhankelijk van de [log Analytics-agent voor Linux](../../azure-monitor/platform/log-analytics-agent.md) om te communiceren met uw Automation-account om de werk nemer te registreren, Runbook-taken te ontvangen en de status van het rapport. Als de registratie van de werk nemer mislukt, zijn hier enkele mogelijke oorzaken voor de fout.
+De Linux-Hybrid Runbook Worker is afhankelijk van de [log Analytics-agent voor Linux](../../azure-monitor/agents/log-analytics-agent.md) om te communiceren met uw Automation-account om de werk nemer te registreren, Runbook-taken te ontvangen en de status van het rapport. Als de registratie van de werk nemer mislukt, zijn hier enkele mogelijke oorzaken voor de fout.
 
 ### <a name="scenario-linux-hybrid-runbook-worker-receives-prompt-for-a-password-when-signing-a-runbook"></a><a name="prompt-for-password"></a>Scenario: Linux Hybrid Runbook Worker wordt om een wacht woord gevraagd bij het ondertekenen van een Runbook
 
@@ -225,7 +225,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 ## <a name="windows"></a>Windows
 
-De Windows-Hybrid Runbook Worker is afhankelijk van de [log Analytics-agent voor Windows](../../azure-monitor/platform/log-analytics-agent.md) om te communiceren met uw Automation-account om de werk nemer te registreren, Runbook-taken te ontvangen en de status van het rapport. Als de registratie van de werk nemer mislukt, bevat deze sectie enkele mogelijke oorzaken.
+De Windows-Hybrid Runbook Worker is afhankelijk van de [log Analytics-agent voor Windows](../../azure-monitor/agents/log-analytics-agent.md) om te communiceren met uw Automation-account om de werk nemer te registreren, Runbook-taken te ontvangen en de status van het rapport. Als de registratie van de werk nemer mislukt, bevat deze sectie enkele mogelijke oorzaken.
 
 ### <a name="scenario-the-log-analytics-agent-for-windows-isnt-running"></a><a name="mma-not-running"></a>Scenario: de Log Analytics-agent voor Windows wordt niet uitgevoerd
 
@@ -253,7 +253,7 @@ Dit probleem kan worden veroorzaakt door uw proxy of netwerk firewall die commun
 
 #### <a name="resolution"></a>Oplossing
 
-Logboeken worden lokaal opgeslagen op elke Hybrid worker op C:\ProgramData\Microsoft\System Center\Orchestrator\7.2\SMA\Sandboxes. U kunt controleren of er waarschuwingen of fouten zijn in de gebeurtenis logboeken Logs\Microsoft-SMA\Operations en toepassings-en **service-Servicelogboeken\operations Manager** van de **toepassing en services** . In deze logboeken wordt een connectiviteit of een ander type probleem aangegeven die van invloed is op het inschakelen van de functie voor Azure Automation, of een probleem dat bij normale bewerkingen wordt aangetroffen. Zie problemen [met de log Analytics Windows-agent oplossen](../../azure-monitor/platform/agent-windows-troubleshoot.md)voor meer informatie over het oplossen van problemen met de log Analytics-agent.
+Logboeken worden lokaal opgeslagen op elke Hybrid worker op C:\ProgramData\Microsoft\System Center\Orchestrator\7.2\SMA\Sandboxes. U kunt controleren of er waarschuwingen of fouten zijn in de gebeurtenis logboeken Logs\Microsoft-SMA\Operations en toepassings-en **service-Servicelogboeken\operations Manager** van de **toepassing en services** . In deze logboeken wordt een connectiviteit of een ander type probleem aangegeven die van invloed is op het inschakelen van de functie voor Azure Automation, of een probleem dat bij normale bewerkingen wordt aangetroffen. Zie problemen [met de log Analytics Windows-agent oplossen](../../azure-monitor/agents/agent-windows-troubleshoot.md)voor meer informatie over het oplossen van problemen met de log Analytics-agent.
 
 Hybride werk rollen verzenden [runbook-uitvoer en-berichten](../automation-runbook-output-and-messages.md) naar Azure Automation op dezelfde manier als de runbook-taken die in de cloud worden uitgevoerd, uitvoer en berichten verzenden. U kunt de uitgebreide en voortgangs stromen op dezelfde manier inschakelen als voor runbooks.
 

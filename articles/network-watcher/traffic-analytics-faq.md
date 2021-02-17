@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: damendo
-ms.openlocfilehash: a5fdde954d2826f34c671552a88365f9276b89a0
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: f4d97b81bf8f11b8380f04dcbfdb72bd658805ab
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97895220"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579245"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Veelgestelde vragen over Traffic Analytics
 
@@ -69,7 +69,7 @@ U kunt Traffic Analytics voor Nsg's gebruiken in een van de volgende ondersteund
 - VS - oost
 - VS - oost 2
 - VS - noord-centraal
-- South Central US
+- VS - zuid-centraal
 - Central US
 - VS - west
 - VS - west 2
@@ -97,7 +97,7 @@ De Log Analytics-werk ruimte moet in de volgende regio's bestaan:
 - VS - oost
 - VS - oost 2
 - VS - noord-centraal
-- South Central US
+- VS - zuid-centraal
 - Central US
 - VS - west
 - VS - west 2
@@ -126,7 +126,7 @@ Ja.
 
 ## <a name="can-i-use-an-existing-workspace"></a>Kan ik een bestaande werk ruimte gebruiken?
 
-Ja. Als u een bestaande werk ruimte selecteert, moet u ervoor zorgen dat deze is gemigreerd naar de nieuwe query taal. Als u de werk ruimte niet wilt bijwerken, moet u een nieuwe maken. Zie [Azure monitor-logboeken upgraden naar nieuwe zoek opdracht in Logboeken](../azure-monitor/log-query/log-query-overview.md)voor meer informatie over de nieuwe query taal.
+Ja. Als u een bestaande werk ruimte selecteert, moet u ervoor zorgen dat deze is gemigreerd naar de nieuwe query taal. Als u de werk ruimte niet wilt bijwerken, moet u een nieuwe maken. Zie [Azure monitor-logboeken upgraden naar nieuwe zoek opdracht in Logboeken](../azure-monitor/logs/log-query-overview.md)voor meer informatie over de nieuwe query taal.
 
 ## <a name="can-my-azure-storage-account-be-in-one-subscription-and-my-log-analytics-workspace-be-in-a-different-subscription"></a>Kan mijn Azure Storage-account zich in één abonnement bevinden en mijn Log Analytics werk ruimte bevindt zich in een ander abonnement?
 
@@ -262,7 +262,7 @@ Traffic Analytics biedt geen ingebouwde ondersteuning voor waarschuwingen. Omdat
 - U kunt de snelkoppeling voor Log Analytics gebruiken in Traffic Analytics. 
 - Gebruik het [schema dat hier wordt beschreven](traffic-analytics-schema.md) om uw query's te schrijven 
 - Klik op nieuwe waarschuwings regel om de waarschuwing te maken
-- Raadpleeg de [documentatie over logboek waarschuwingen](../azure-monitor/platform/alerts-log.md) voor het maken van de waarschuwing
+- Raadpleeg de [documentatie over logboek waarschuwingen](../azure-monitor/alerts/alerts-log.md) voor het maken van de waarschuwing
 
 ## <a name="how-do-i-check-which-vms-are-receiving-most-on-premises-traffic"></a>Hoe kan ik controleren welke Vm's het meest lokale verkeer ontvangen?
 
@@ -403,4 +403,4 @@ De pagina topologie virtuele subnetwerken bevat twee hoofd secties:
 - Wanneer u een van deze knoop punten selecteert, kunt u alle verbindingen met één voor één bekijken door op de toets te drukken `Shift+Left arrow` . Focus wordt verplaatst naar het **vak informatie** van deze verbinding. De focus kan op elk gewenst moment worden teruggedraaid naar het knoop punt door opnieuw op te drukken `Shift+Right arrow` .
 
 ## <a name="are-classic-nsgs-supported"></a>Worden klassieke Nsg's ondersteund?
-Nee, Traffic Analytics biedt geen ondersteuning voor klassieke NSG. Het is raadzaam om IaaS-resources van klassiek naar Azure Resource Manager te migreren omdat klassieke resources worden [afgeschaft](https://docs.microsoft.com/azure/virtual-machines/classic-vm-deprecation). Raadpleeg dit artikel voor meer informatie [over het migreren](https://docs.microsoft.com/azure/virtual-machines/migration-classic-resource-manager-overview)van.
+Nee, Traffic Analytics biedt geen ondersteuning voor klassieke NSG. Het is raadzaam om IaaS-resources van klassiek naar Azure Resource Manager te migreren omdat klassieke resources worden [afgeschaft](../virtual-machines/classic-vm-deprecation.md). Raadpleeg dit artikel voor meer informatie [over het migreren](../virtual-machines/migration-classic-resource-manager-overview.md)van.

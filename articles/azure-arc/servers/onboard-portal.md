@@ -3,12 +3,12 @@ title: Verbinding maken tussen hybride computers en Azure via de Azure Portal
 description: In dit artikel leert u hoe u de agent kunt installeren en computers kunt verbinden met Azure met behulp van Azure Arc-servers van de Azure Portal.
 ms.date: 11/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: ca3c08acdef1b2a1f7c3774f5755967d472c93ed
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 97962f7fd9816e398f017555d7043cf65db00ed8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93398025"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584956"
 ---
 # <a name="connect-hybrid-machines-to-azure-from-the-azure-portal"></a>Verbinding maken tussen hybride computers en Azure via de Azure Portal
 
@@ -26,27 +26,27 @@ Het script om het downloaden en installeren te automatiseren en de verbinding me
 
 1. Ga in uw browser naar de [Azure Portal](https://portal.azure.com).
 
-1. Selecteer op de pagina **servers-Azure-boog** de optie **toevoegen** aan de linkerbovenhoek.
+1. Selecteer, op de pagina **Servers - Azure Arc** de optie **Toevoegen** in de linkerbovenhoek.
 
-1. Selecteer op de pagina **een methode selecteren** de tegel **servers met interactieve script toevoegen** en selecteer vervolgens **script genereren**.
+1. Selecteer, op de pagina **Een methode selecteren**, de tegel **Servers toevoegen met interactief script** en selecteer vervolgens **Script genereren**.
 
-1. Selecteer op de pagina **Script genereren** het abonnement en de resourcegroep waarin u de machine wilt beheren binnen Azure. Selecteer een Azure-locatie waar de metagegevens van de machine worden opgeslagen. Deze locatie kan hetzelfde of hetzelfde zijn als de locatie van de resource groep.
+1. Selecteer op de pagina **Script genereren** het abonnement en de resourcegroep waarin u de machine wilt beheren binnen Azure. Selecteer een Azure-locatie waar de metagegevens van de machine worden opgeslagen. Deze locatie kan hetzelfde zijn als, of verschillen van, de locatie van de resourcegroep.
 
-1. Controleer de informatie op de pagina **vereisten** en selecteer **volgende: Resource Details**.
+1. Controleer de informatie op de pagina **Vereisten** en selecteer daarna **Volgende: Resourcegegevens**.
 
-1. Geef op de pagina **Resource Details** het volgende op:
+1. Geef, op de pagina **Resourcegegevens**, het volgende op:
 
-    1. Selecteer in de vervolg keuzelijst **resource groep** de resource groep waarvan de machine wordt beheerd.
-    1. Selecteer in de vervolg keuzelijst **regio** de Azure-regio om de meta gegevens van de server op te slaan.
-    1. Selecteer in de vervolg keuzelijst **besturings systeem** het besturings systeem waarop het script moet worden uitgevoerd.
-    1. Als de computer communiceert via een proxy server om verbinding te maken met internet, geeft u het IP-adres van de proxy server of de naam en het poort nummer op dat door de computer wordt gebruikt om te communiceren met de proxy server. Voer de waarde in de indeling `http://<proxyURL>:<proxyport>` in.
+    1. Selecteer in de vervolgkeuzelijst **Resourcegroep**, de resourcegroep van waaruit de machine wordt beheerd.
+    1. Selecteer in de vervolg keuzelijst **Regio**, de Azure-regio om de metagegevens van de server op te slaan.
+    1. Selecteer in de vervolgkeuzelijst **Besturingssysteem**, het besturingssysteem waarop het script zal worden uitgevoerd.
+    1. Als de machine communiceert door middel van een proxyserver, geeft u het volgende op: het IP-adres van de proxyserver, of de naam en het poortnummer die de machine zal gebruiken om met de proxyserver te communiceren. Voer de waarde in de indeling `http://<proxyURL>:<proxyport>` in.
     1. Selecteer **Volgende: Tags**.
 
-1. Controleer op de pagina **Tags** of de standaard **fysieke locatie Tags** worden voorgesteld en voer een waarde in, of geef een of meer **aangepaste labels** op ter ondersteuning van uw standaarden.
+1. Controleer, op de pagina **Tags**, de standaard **Fysieke locatiecodes** die worden voorgesteld. Voer vervolgens een waarde in, of geef één of meer **Aangepaste codes** op om uw standaarden te ondersteunen.
 
-1. Selecteer **volgende: script downloaden en uitvoeren**.
+1. Selecteer **Volgende: Het script downloaden en uitvoeren**.
 
-1. Controleer de samenvattings informatie op de pagina **script downloaden en uitvoeren** en selecteer vervolgens **downloaden**. Als u nog wijzigingen wilt aanbrengen, selecteert u **Vorige**.
+1. Bekijk, op de pagina **Het script downloaden en uitvoeren**, de overzichtsgegevens. Selecteer vervolgens **Downloaden**. Als u nog wijzigingen wilt aanbrengen, selecteert u **Vorige**.
 
 ## <a name="install-and-validate-the-agent-on-windows"></a>De agent in Windows installeren en valideren
 
@@ -166,6 +166,6 @@ Nadat u de agent hebt geïnstalleerd en geconfigureerd om verbinding te maken me
 
 * Informatie over probleem oplossing vindt u in de [hand leiding problemen met verbonden machine agent oplossen](troubleshoot-agent-onboard.md).
 
-* Meer informatie over het beheren van uw machine met [Azure Policy](../../governance/policy/overview.md), voor zaken als VM- [gast configuratie](../../governance/policy/concepts/guest-configuration.md), moet u controleren of de computer rapporteert aan de verwachte log Analytics-werk ruimte, de bewaking inschakelen met [Azure monitor met vm's](../../azure-monitor/insights/vminsights-enable-policy.md)en nog veel meer.
+* Meer informatie over het beheren van uw machine met [Azure Policy](../../governance/policy/overview.md), voor zaken als VM- [gast configuratie](../../governance/policy/concepts/guest-configuration.md), moet u controleren of de computer rapporteert aan de verwachte log Analytics-werk ruimte, de bewaking inschakelen met [Azure monitor met vm's](../../azure-monitor/vm/vminsights-enable-policy.md)en nog veel meer.
 
-* Meer informatie over de [log Analytics-agent](../../azure-monitor/platform/log-analytics-agent.md). De Log Analytics-agent voor Windows en Linux is vereist wanneer u bewakings gegevens van het besturings systeem en werk belasting wilt verzamelen, deze wilt beheren met Automation-runbooks of-functies zoals Updatebeheer, of om andere Azure-Services zoals [Azure Security Center](../../security-center/security-center-introduction.md)te gebruiken.
+* Meer informatie over de [log Analytics-agent](../../azure-monitor/agents/log-analytics-agent.md). De Log Analytics-agent voor Windows en Linux is vereist wanneer u bewakings gegevens van het besturings systeem en werk belasting wilt verzamelen, deze wilt beheren met Automation-runbooks of-functies zoals Updatebeheer, of om andere Azure-Services zoals [Azure Security Center](../../security-center/security-center-introduction.md)te gebruiken.

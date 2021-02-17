@@ -5,12 +5,12 @@ author: anthonychu
 ms.author: antchu
 ms.date: 12/1/2020
 ms.topic: article
-ms.openlocfilehash: f527b387afc01eb60bd582adc13a4ad3d516055b
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: dd112c74ea9f013a0e14bddd735060ddbf73c14e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936988"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578520"
 ---
 # <a name="azure-functions-custom-handlers"></a>Aangepaste handlers Azure Functions
 
@@ -121,9 +121,6 @@ Stel voor aangepaste handlers `FUNCTIONS_WORKER_RUNTIME` in op `Custom` in *loca
   }
 }
 ```
-
-> [!NOTE]
-> `Custom` wordt mogelijk niet herkend als een geldige runtime op de Linux Premium-of App Service-abonnementen. Als dat het implementatie doel is, stelt `FUNCTIONS_WORKER_RUNTIME` u in op een lege teken reeks.
 
 ### <a name="function-metadata"></a>Functie-meta gegevens
 

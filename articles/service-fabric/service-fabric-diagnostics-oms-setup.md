@@ -5,12 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: srrengar
-ms.openlocfilehash: 691f3b7987c2591b0f6cea3f7b520c03c0ba9a9e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ba62ac80b2f8d318d0d13e81e88cc63a8d893a2b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86258652"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570342"
 ---
 # <a name="set-up-azure-monitor-logs-for-a-cluster"></a>Azure Monitor-logboeken voor een cluster instellen
 
@@ -47,9 +47,9 @@ Als u Windows gebruikt, gaat u door met de volgende stappen om Azure Monitor log
 
 ### <a name="connect-the-log-analytics-workspace-to-your-cluster"></a>De Log Analytics-werk ruimte koppelen aan uw cluster 
 
-1. De werkruimte moet zijn verbonden met de diagnostische gegevens die afkomstig zijn van uw cluster. Ga naar de resource groep waarin u de Service Fabric-analyse oplossing hebt gemaakt. Selecteer **ServiceFabric \<nameOfWorkspace\> ** en ga naar de pagina overzicht. Hier kunt u de instellingen voor de oplossing, de werk ruimte-instellingen wijzigen en toegang krijgen tot de Log Analytics-werk ruimte.
+1. De werkruimte moet zijn verbonden met de diagnostische gegevens die afkomstig zijn van uw cluster. Ga naar de resource groep waarin u de Service Fabric-analyse oplossing hebt gemaakt. Selecteer **ServiceFabric \<nameOfWorkspace\>** en ga naar de pagina overzicht. Hier kunt u de instellingen voor de oplossing, de werk ruimte-instellingen wijzigen en toegang krijgen tot de Log Analytics-werk ruimte.
 
-2. Selecteer in het navigatie menu aan de linkerkant onder **werkruimte gegevens bronnen**de optie **Logboeken voor opslag accounts**.
+2. Selecteer in het navigatie menu aan de linkerkant onder **werkruimte gegevens bronnen** de optie **Logboeken voor opslag accounts**.
 
 3. Op de pagina **Logboeken voor opslag accounts** selecteert u bovenaan **toevoegen** om de logboeken van uw cluster toe te voegen aan de werk ruimte.
 
@@ -119,9 +119,9 @@ Set-AzOperationalInsightsIntelligencePack -ResourceGroupName $ResourceGroup -Wor
 
 Wanneer u klaar bent, volgt u de stappen in de vorige sectie om Azure Monitor logboeken te verbinden met het juiste opslag account.
 
-U kunt ook andere oplossingen toevoegen of andere wijzigingen aanbrengen in uw Log Analytics-werk ruimte met behulp van Power shell. Zie [Azure monitor-logboeken beheren met Power shell](../azure-monitor/platform/powershell-workspace-configuration.md)voor meer informatie.
+U kunt ook andere oplossingen toevoegen of andere wijzigingen aanbrengen in uw Log Analytics-werk ruimte met behulp van Power shell. Zie [Azure monitor-logboeken beheren met Power shell](../azure-monitor/logs/powershell-workspace-configuration.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Implementeer de log Analytics-agent](service-fabric-diagnostics-oms-agent.md) op uw knoop punten om prestatie meter items te verzamelen en docker-statistieken en-logboeken te verzamelen voor uw containers
-* Krijg vertrouwd met de functies voor [Zoeken in Logboeken en query's](../azure-monitor/log-query/log-query-overview.md) die worden aangeboden als onderdeel van Azure monitor logboeken
-* [De weer gave Designer gebruiken om aangepaste weer gaven te maken in Azure Monitor-logboeken](../azure-monitor/platform/view-designer.md)
+* Krijg vertrouwd met de functies voor [Zoeken in Logboeken en query's](../azure-monitor/logs/log-query-overview.md) die worden aangeboden als onderdeel van Azure monitor logboeken
+* [De weer gave Designer gebruiken om aangepaste weer gaven te maken in Azure Monitor-logboeken](../azure-monitor/visualize/view-designer.md)

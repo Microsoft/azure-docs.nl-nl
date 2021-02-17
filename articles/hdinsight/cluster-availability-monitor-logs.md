@@ -4,12 +4,12 @@ description: Meer informatie over het gebruik van Azure Monitor-logboeken voor h
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 08/12/2020
-ms.openlocfilehash: d52cb1c5f3b1dd1b23adb39f2f65d0e66968e482
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 3bc5c659d9871cb8f1d49d2a3bfde2ce03faea86
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98946950"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571896"
 ---
 # <a name="how-to-monitor-cluster-availability-with-azure-monitor-logs-in-hdinsight"></a>De beschik baarheid van een cluster bewaken met Azure Monitor-Logboeken in HDInsight
 
@@ -19,7 +19,7 @@ HDInsight-clusters zijn onder andere integratie van Azure Monitor Logboeken. Dit
 
 Azure Monitor logboeken maken het mogelijk om gegevens die zijn gegenereerd door meerdere resources, zoals HDInsight-clusters, op één plek te verzamelen en samen te voegen voor een uniforme bewakings ervaring.
 
-Als vereiste hebt u een Log Analytics-werk ruimte nodig om de verzamelde gegevens op te slaan. Als u er nog geen hebt gemaakt, kunt u hier de instructies volgen: [Maak een log Analytics-werk ruimte](../azure-monitor/learn/quick-create-workspace.md).
+Als vereiste hebt u een Log Analytics-werk ruimte nodig om de verzamelde gegevens op te slaan. Als u er nog geen hebt gemaakt, kunt u hier de instructies volgen: [Maak een log Analytics-werk ruimte](../azure-monitor/logs/quick-create-workspace.md).
 
 ## <a name="enable-hdinsight-azure-monitor-logs-integration"></a>Integratie van HDInsight Azure Monitor-logboeken inschakelen
 
@@ -37,7 +37,7 @@ Als de integratie van Azure Monitor logboek is ingeschakeld (dit kan enkele minu
 
 In Logboeken worden een aantal voorbeeld query's weer geven, zoals:
 
-| Querynaam                      | Beschrijving                                                               |
+| Querynaam                      | Description                                                               |
 |---------------------------------|---------------------------------------------------------------------------|
 | Computers Beschik baarheid vandaag    | Grafiek het aantal computers dat Logboeken verzendt, elk uur                     |
 | Heartbeats weer geven                 | Alle Heartbeats van de computer in het afgelopen uur weer geven                           |
@@ -81,7 +81,7 @@ Omdat deze query alleen niet-beschik bare knoop punten retourneert als resultaat
 
 Stel in het gedeelte **geëvalueerd op basis van** de **periode** en **frequentie** in op basis van hoe vaak u wilt controleren op niet-beschik bare knoop punten.
 
-Voor het doel van deze waarschuwing moet u de frequentie van de **periode instellen.** Meer informatie over periode, frequentie en andere waarschuwings parameters vindt u [hier](../azure-monitor/platform/alerts-unified-log.md#alert-logic-definition).
+Voor het doel van deze waarschuwing moet u de frequentie van de **periode instellen.** Meer informatie over periode, frequentie en andere waarschuwings parameters vindt u [hier](../azure-monitor/alerts/alerts-unified-log.md#alert-logic-definition).
 
 Selecteer **gereed** wanneer u klaar bent met het configureren van de signaal logica.
 
@@ -94,7 +94,7 @@ Als u nog geen actie groep hebt, klikt u op **nieuwe maken** onder de sectie **a
 Hiermee wordt de **actie groep toevoegen** geopend. Kies een **naam voor de actie groep**, de **korte naam**, het **abonnement** en de **resource groep.** Kies in de sectie **acties** een **actie naam** en selecteer **e-mail/SMS/push/Voice** als **actie type.**
 
 > [!NOTE]
-> Er zijn verschillende andere acties die een waarschuwing kan activeren naast een E-mail/SMS/push/Voice, zoals een Azure-functie, LogicApp, webhook, ITSM en Automation-Runbook. [Meer informatie.](../azure-monitor/platform/action-groups.md#action-specific-information)
+> Er zijn verschillende andere acties die een waarschuwing kan activeren naast een E-mail/SMS/push/Voice, zoals een Azure-functie, LogicApp, webhook, ITSM en Automation-Runbook. [Meer informatie.](../azure-monitor/alerts/action-groups.md#action-specific-information)
 
 Hiermee wordt **e-mail/SMS/push/Voice** geopend. Kies een **naam** voor de ontvanger, **Schakel** het vak **e-mail** in en typ een e-mail adres waarnaar de waarschuwing moet worden verzonden. Selecteer **OK** in  **e-mail/SMS/push/Voice** en klik vervolgens in **actie groep toevoegen** om het configureren van uw actie groep te volt ooien.
 

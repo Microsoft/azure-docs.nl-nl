@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 12/01/2020
 ms.author: sngun
 ms.custom: subject-monitoring
-ms.openlocfilehash: d5cfdca24193b899926bd30995063ed55b3dd3eb
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 026724b6c9636a0c4b89ca8390a997d9640be6ec
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98943462"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582226"
 ---
 # <a name="monitor-azure-cosmos-db"></a>Azure Cosmos DB controleren
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -44,7 +44,7 @@ De **overzichts** pagina in de Azure portal voor elk Azure Cosmos DB account bev
 
 Azure Cosmos DB maakt bewakings gegevens met behulp van [Azure monitor](../azure-monitor/overview.md) . Dit is een volledige stack monitoring-service in azure die een volledige set functies biedt om uw Azure-resources te controleren naast bronnen in andere Clouds en on-premises.
 
-Als u nog niet bekend bent met het bewaken van Azure-Services, kunt u beginnen met het artikel [Azure-resources controleren met Azure monitor](../azure-monitor/insights/monitor-azure-resource.md) waarin de volgende concepten worden beschreven:
+Als u nog niet bekend bent met het bewaken van Azure-Services, kunt u beginnen met het artikel [Azure-resources controleren met Azure monitor](../azure-monitor/essentials/monitor-azure-resource.md) waarin de volgende concepten worden beschreven:
 
 * Wat is Azure Monitor?
 * Kosten die zijn gekoppeld aan bewaking
@@ -56,14 +56,14 @@ In de volgende secties vindt u een beschrijving van de specifieke gegevens die z
 
 ## <a name="azure-monitor-for-azure-cosmos-db"></a>Azure Monitor voor Azure Cosmos DB
 
-Azure Monitor voor Azure Cosmos DB is gebaseerd op de [werkmappen-functie van Azure monitor](../azure-monitor/platform/workbooks-overview.md) en gebruikt dezelfde bewakings gegevens die zijn verzameld voor Azure Cosmos DB beschreven in de volgende secties. Gebruik Azure Monitor voor een overzicht van de algehele prestaties, fouten, capaciteit en operationele status van al uw Azure Cosmos DB resources in een geïntegreerde interactieve ervaring en gebruik de andere functies van Azure Monitor voor gedetailleerde analyse en waarschuwingen. Zie het artikel [Azure monitor verkennen voor Azure Cosmos DB voor](../azure-monitor/insights/cosmosdb-insights-overview.md) meer informatie.
+Azure Monitor voor Azure Cosmos DB is gebaseerd op de [werkmappen-functie van Azure monitor](../azure-monitor/visualize/workbooks-overview.md) en gebruikt dezelfde bewakings gegevens die zijn verzameld voor Azure Cosmos DB beschreven in de volgende secties. Gebruik Azure Monitor voor een overzicht van de algehele prestaties, fouten, capaciteit en operationele status van al uw Azure Cosmos DB resources in een geïntegreerde interactieve ervaring en gebruik de andere functies van Azure Monitor voor gedetailleerde analyse en waarschuwingen. Zie het artikel [Azure monitor verkennen voor Azure Cosmos DB voor](../azure-monitor/insights/cosmosdb-insights-overview.md) meer informatie.
 
 > [!NOTE]
 > Wanneer u containers maakt, moet u ervoor zorgen dat u niet twee containers maakt met dezelfde naam, maar met een ander hoofdletter gebruik. Dat komt omdat sommige onderdelen van het Azure-platform niet hoofdletter gevoelig zijn. Dit kan leiden tot Verwar ring/botsing van telemetriegegevens en acties op containers met dergelijke namen.
 
 ## <a name="monitoring-data"></a><a id="monitoring-from-azure-cosmos-db"></a> Bewakings gegevens 
 
-Azure Cosmos DB worden dezelfde soorten bewakings gegevens verzameld als andere Azure-resources die worden beschreven in [gegevens van Azure-resources bewaken](../azure-monitor/insights/monitor-azure-resource.md#monitoring-data). Zie [Azure Cosmos DB monitoring data Naslag informatie](monitor-cosmos-db-reference.md) voor een gedetailleerde Naslag informatie over de logboeken en metrische gegevens die door Azure Cosmos DB zijn gemaakt.
+Azure Cosmos DB worden dezelfde soorten bewakings gegevens verzameld als andere Azure-resources die worden beschreven in [gegevens van Azure-resources bewaken](../azure-monitor/essentials/monitor-azure-resource.md#monitoring-data). Zie [Azure Cosmos DB monitoring data Naslag informatie](monitor-cosmos-db-reference.md) voor een gedetailleerde Naslag informatie over de logboeken en metrische gegevens die door Azure Cosmos DB zijn gemaakt.
 
 De **overzichts** pagina in de Azure portal voor elke Azure Cosmos-Data Base bevat een korte weer gave van het database gebruik, inclusief de aanvraag en het facturerings gebruik per uur. Dit is nuttige informatie, maar slechts een kleine hoeveelheid beschik bare bewakings gegevens. Sommige van deze gegevens worden automatisch verzameld en beschikbaar voor analyse zodra u de data base maakt terwijl u extra gegevens verzameling kunt inschakelen met een bepaalde configuratie.
 
@@ -81,7 +81,7 @@ De metrische gegevens en logboeken die u kunt verzamelen, worden besproken in de
 
 ## <a name="analyzing-metrics"></a><a id="analyze-metric-data"></a> Metrische gegevens analyseren
 
-Azure Cosmos DB biedt een aangepaste ervaring voor het werken met metrische gegevens. U kunt metrische gegevens voor Azure Cosmos DB met metrische gegevens uit andere Azure-Services analyseren door **metrische gegevens** te openen in het menu **Azure monitor** . Zie [aan de slag met Azure Metrics Explorer](../azure-monitor/platform/metrics-getting-started.md) voor meer informatie over het gebruik van dit hulp programma. U kunt ook afhandelen hoe u de latentie aan de [server zijde](monitor-server-side-latency.md), het [gebruik van aanvraag eenheden](monitor-request-unit-usage.md)en het [gebruik van genormaliseerde aanvraag eenheden](monitor-normalized-request-units.md) voor uw Azure Cosmos DB-resources bewaken.
+Azure Cosmos DB biedt een aangepaste ervaring voor het werken met metrische gegevens. U kunt metrische gegevens voor Azure Cosmos DB met metrische gegevens uit andere Azure-Services analyseren door **metrische gegevens** te openen in het menu **Azure monitor** . Zie [aan de slag met Azure Metrics Explorer](../azure-monitor/essentials/metrics-getting-started.md) voor meer informatie over het gebruik van dit hulp programma. U kunt ook afhandelen hoe u de latentie aan de [server zijde](monitor-server-side-latency.md), het [gebruik van aanvraag eenheden](monitor-request-unit-usage.md)en het [gebruik van genormaliseerde aanvraag eenheden](monitor-normalized-request-units.md) voor uw Azure Cosmos DB-resources bewaken.
 
 Zie voor een overzicht van de platform gegevens die voor Azure Cosmos DB worden verzameld, het artikel [bewaking Azure Cosmos DB Data Reference Metrics](monitor-cosmos-db-reference.md#metrics) .
 
@@ -90,10 +90,10 @@ Alle metrische gegevens voor Azure Cosmos DB bevinden zich in de naam ruimte **C
 * NaamVerzameling
 * DatabaseName
 * OperationType
-* Regio
+* Region
 * Status code
 
-Ter referentie ziet u een lijst met [alle metrische resource gegevens die worden ondersteund in azure monitor](../azure-monitor/platform/metrics-supported.md).
+Ter referentie ziet u een lijst met [alle metrische resource gegevens die worden ondersteund in azure monitor](../azure-monitor/essentials/metrics-supported.md).
 
 ### <a name="view-operation-level-metrics-for-azure-cosmos-db"></a>Metrische gegevens van het bewerkings niveau voor Azure Cosmos DB weer geven
 
@@ -127,7 +127,7 @@ U kunt metrische gegevens groeperen met behulp van de optie **splitsing Toep ass
 
 Gegevens in Azure Monitor logboeken worden opgeslagen in tabellen waarvan elke tabel een eigen set unieke eigenschappen heeft.
 
-Alle resource Logboeken in Azure Monitor hebben dezelfde velden die worden gevolgd door servicespecifieke velden. Het algemene schema wordt beschreven in [Azure monitor resource-logboek schema](../azure-monitor/platform/resource-logs-schema.md#top-level-common-schema). Zie [Azure Cosmos DB gegevens referentie bewaken](monitor-cosmos-db-reference.md#resource-logs)voor een lijst met de typen bron logboeken die zijn verzameld voor Azure Cosmos db.
+Alle resource Logboeken in Azure Monitor hebben dezelfde velden die worden gevolgd door servicespecifieke velden. Het algemene schema wordt beschreven in [Azure monitor resource-logboek schema](../azure-monitor/essentials/resource-logs-schema.md#top-level-common-schema). Zie [Azure Cosmos DB gegevens referentie bewaken](monitor-cosmos-db-reference.md#resource-logs)voor een lijst met de typen bron logboeken die zijn verzameld voor Azure Cosmos db.
 
 Het [activiteiten logboek](../azure-monitor/platform/activity-log.md) is een Azure-aanmelding voor een platform dat inzicht biedt in gebeurtenissen op abonnements niveau. U kunt deze onafhankelijk bekijken of door sturen naar Azure Monitor-logboeken, waar u veel complexere query's kunt uitvoeren met behulp van Log Analytics.  
 
@@ -141,9 +141,9 @@ Azure Cosmos DB slaat gegevens op in de volgende tabellen.
 ### <a name="sample-kusto-queries"></a>Voor beeld van Kusto-query's
 
 > [!IMPORTANT]
-> Wanneer u **Logboeken** in het menu Azure Cosmos DB selecteert, wordt log Analytics geopend met het query bereik ingesteld op het huidige Azure Cosmos DB-account. Dit betekent dat logboek query's alleen gegevens van die bron bevatten. Als u een query wilt uitvoeren die gegevens uit andere accounts of gegevens uit andere Azure-Services bevat, selecteert u **Logboeken** in het **Azure monitor** menu. Zie de [logboek query bereik en het tijds bereik in Azure Monitor Log Analytics](../azure-monitor/log-query/scope.md) voor meer informatie.
+> Wanneer u **Logboeken** in het menu Azure Cosmos DB selecteert, wordt log Analytics geopend met het query bereik ingesteld op het huidige Azure Cosmos DB-account. Dit betekent dat logboek query's alleen gegevens van die bron bevatten. Als u een query wilt uitvoeren die gegevens uit andere accounts of gegevens uit andere Azure-Services bevat, selecteert u **Logboeken** in het **Azure monitor** menu. Zie de [logboek query bereik en het tijds bereik in Azure Monitor Log Analytics](../azure-monitor/logs/scope.md) voor meer informatie.
 
-Hier volgen enkele query's die u kunt invoeren in de zoek balk Zoeken naar **Logboeken** om uw Azure Cosmos-resources te bewaken. Deze query's werken met de [nieuwe taal](../azure-monitor/log-query/log-query-overview.md).
+Hier volgen enkele query's die u kunt invoeren in de zoek balk Zoeken naar **Logboeken** om uw Azure Cosmos-resources te bewaken. Deze query's werken met de [nieuwe taal](../azure-monitor/logs/log-query-overview.md).
 
 * Een query uitvoeren voor alle Diagnostische logboeken van Azure Cosmos DB gedurende een opgegeven tijds periode:
 
@@ -172,11 +172,11 @@ Hier volgen enkele query's die u kunt invoeren in de zoek balk Zoeken naar **Log
 
 ## <a name="alerts"></a>Waarschuwingen
 
-Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Hiermee kunt u problemen in uw systeem identificeren en oplossen voordat uw klanten ze opmerken. U kunt waarschuwingen instellen voor [metrische gegevens](../azure-monitor/platform/alerts-metric-overview.md), [Logboeken](../azure-monitor/platform/alerts-unified-log.md)en het [activiteiten logboek](../azure-monitor/platform/activity-log-alerts.md). Verschillende soorten waarschuwingen hebben voor delen en nadelen
+Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Hiermee kunt u problemen in uw systeem identificeren en oplossen voordat uw klanten ze opmerken. U kunt waarschuwingen instellen voor [metrische gegevens](../azure-monitor/alerts/alerts-metric-overview.md), [Logboeken](../azure-monitor/alerts/alerts-unified-log.md)en het [activiteiten logboek](../azure-monitor/alerts/activity-log-alerts.md). Verschillende soorten waarschuwingen hebben voor delen en nadelen
 
 De volgende tabel bevat bijvoorbeeld enkele waarschuwings regels voor uw resources. U kunt een gedetailleerde lijst met waarschuwings regels van de Azure Portal vinden. Zie [het artikel waarschuwingen configureren](create-alerts.md) voor meer informatie.  
 
-| Waarschuwingstype | Voorwaarde | Beschrijving  |
+| Waarschuwingstype | Voorwaarde | Description  |
 |:---|:---|:---|
 |Frequentie limiet voor aanvraag eenheden (metrische waarschuwing) |Dimensie naam: status code, operator: is gelijk aan, dimensie waarden: 429  | Waarschuwingen als de container of data base de ingerichte doorvoer limiet heeft overschreden. |
 |Er is een failover uitgevoerd voor de regio |Operator: groter dan, aggregatie type: aantal, drempel waarde: 1 | Als er een failover wordt uitgevoerd voor een enkele regio. Deze waarschuwing is handig als u automatische failover niet hebt ingeschakeld. |
@@ -202,9 +202,9 @@ Als u afzonderlijke metrische gegevens wilt ophalen, gebruikt u de volgende inde
 https://management.azure.com/subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroup}/providers/Microsoft.DocumentDb/databaseAccounts/{DocumentDBAccountName}/providers/microsoft.insights/metrics?timespan={StartTime}/{EndTime}&interval={AggregationInterval}&metricnames={MetricName}&aggregation={AggregationType}&`$filter={Filter}&api-version=2018-01-01
 ```
 
-Zie het artikel [Azure monitoring rest API](../azure-monitor/platform/rest-api-walkthrough.md) voor meer informatie.
+Zie het artikel [Azure monitoring rest API](../azure-monitor/essentials/rest-api-walkthrough.md) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * Zie [Azure Cosmos DB Naslag informatie over bewakings gegevens](monitor-cosmos-db-reference.md) voor een verwijzing naar de logboeken en metrieken die zijn gemaakt door Azure Cosmos db.
-* Zie [Azure-resources bewaken met Azure monitor](../azure-monitor/insights/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.
+* Zie [Azure-resources bewaken met Azure monitor](../azure-monitor/essentials/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.

@@ -3,12 +3,12 @@ title: Hybride computers verbinden met Azure met behulp van Power shell
 description: In dit artikel leert u hoe u de Agent installeert en een machine verbindt met Azure met behulp van Azure Arc-servers. U kunt dit doen met Power shell.
 ms.date: 10/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0218235179e1a8a883360d0061e685c04079cbf4
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 07a00de9077378ce3e3f7a7578b66e93d1b04f2b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95492938"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584940"
 ---
 # <a name="connect-hybrid-machines-to-azure-by-using-powershell"></a>Hybride computers verbinden met Azure met behulp van Power shell
 
@@ -103,6 +103,6 @@ Nadat u de agent hebt geïnstalleerd en geconfigureerd voor registratie bij Azur
 
 * Zie, indien nodig, de [hand leiding problemen met verbonden machine agent oplossen](troubleshoot-agent-onboard.md).
 
-* Meer informatie over het beheren van uw machine met behulp van [Azure Policy](../../governance/policy/overview.md). U kunt VM- [gast configuratie](../../governance/policy/concepts/guest-configuration.md)gebruiken, controleren of de computer rapporteert aan de verwachte log Analytics-werk ruimte en de bewaking met [Azure monitor met vm's](../../azure-monitor/insights/vminsights-enable-policy.md)inschakelen.
+* Meer informatie over het beheren van uw machine met behulp van [Azure Policy](../../governance/policy/overview.md). U kunt VM- [gast configuratie](../../governance/policy/concepts/guest-configuration.md)gebruiken, controleren of de computer rapporteert aan de verwachte log Analytics-werk ruimte en de bewaking met [Azure monitor met vm's](../../azure-monitor/vm/vminsights-enable-policy.md)inschakelen.
 
-* Meer informatie over de [log Analytics-agent](../../azure-monitor/platform/log-analytics-agent.md). De Log Analytics-agent voor Windows en Linux is vereist wanneer u gegevens van het besturings systeem en werk belasting wilt verzamelen of beheren met Azure Automation runbooks of functies als Updatebeheer. Deze agent is ook vereist voor het gebruik van andere Azure-Services, zoals [Azure Security Center](../../security-center/security-center-introduction.md).
+* Meer informatie over de [log Analytics-agent](../../azure-monitor/agents/log-analytics-agent.md). De Log Analytics-agent voor Windows en Linux is vereist wanneer u gegevens van het besturings systeem en werk belasting wilt verzamelen of beheren met Azure Automation runbooks of functies als Updatebeheer. Deze agent is ook vereist voor het gebruik van andere Azure-Services, zoals [Azure Security Center](../../security-center/security-center-introduction.md).

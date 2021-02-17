@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2019
-ms.openlocfilehash: 819ef7e61045c0ed4205eeaf0094fec706b0b9da
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 99592544d97793f82db36e1d2cb33ba8c6af1c9c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86498607"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586962"
 ---
 # <a name="azure-monitor-naming-and-terminology-changes"></a>Azure Monitor naamgevings-en terminologie wijzigingen
 Er zijn belang rijke wijzigingen aangebracht in Azure Monitor recent, waarbij verschillende services worden geconsolideerd om de controle van Azure-klanten te vereenvoudigen. In dit artikel worden de recente naam en terminologie wijzigingen in Azure Monitor documentatie beschreven.
@@ -23,12 +23,12 @@ Er zijn belang rijke wijzigingen aangebracht in Azure Monitor recent, waarbij ve
 Na de consolidatie van verschillende services onder Azure Monitor, nemen we de volgende stap in de hand van de terminologie in onze documentatie om de Azure Monitor-service en de verschillende onderdelen beter te beschrijven. 
 
 ### <a name="log-analytics"></a>Log Analytics
-Azure Monitor logboek gegevens worden nog steeds opgeslagen in een Log Analytics-werk ruimte en worden nog steeds verzameld en geanalyseerd door dezelfde Log Analytics-service, maar we wijzigen de term _log Analytics_ op veel plaatsen in _Azure monitor logboeken_. Deze term weerspiegelt de rol in Azure Monitor en biedt een betere consistentie met [metrische gegevens in azure monitor](platform/data-platform-metrics.md).
+Azure Monitor logboek gegevens worden nog steeds opgeslagen in een Log Analytics-werk ruimte en worden nog steeds verzameld en geanalyseerd door dezelfde Log Analytics-service, maar we wijzigen de term _log Analytics_ op veel plaatsen in _Azure monitor logboeken_. Deze term weerspiegelt de rol in Azure Monitor en biedt een betere consistentie met [metrische gegevens in azure monitor](essentials/data-platform-metrics.md).
 
-De term _log Analytics_ is nu voornamelijk van toepassing op de pagina in de Azure Portal gebruikt om query's te schrijven en uit te voeren en logboek gegevens te analyseren. Het is het functionele equivalent van [Metrics Explorer](platform/metrics-charts.md), de pagina in de Azure Portal gebruikt voor het analyseren van metrische gegevens.
+De term _log Analytics_ is nu voornamelijk van toepassing op de pagina in de Azure Portal gebruikt om query's te schrijven en uit te voeren en logboek gegevens te analyseren. Het is het functionele equivalent van [Metrics Explorer](essentials/metrics-charts.md), de pagina in de Azure Portal gebruikt voor het analyseren van metrische gegevens.
 
 ### <a name="log-analytics-workspaces"></a>Log Analytics-werkruimten
-[Werk ruimten](platform/manage-access.md) die logboek gegevens bevatten in azure monitor worden nog steeds log Analytics werk ruimten genoemd. De naam van het menu **log Analytics** in het Azure Portal is gewijzigd in **log Analytics werk ruimten** en is waar u [nieuwe werk ruimten maakt](learn/quick-create-workspace.md) en gegevens bronnen configureert. Analyseer uw logboeken en andere bewakings gegevens in **Azure monitor** en configureer uw werk ruimte in **log Analytics-werk ruimten**.
+[Werk ruimten](logs/manage-access.md) die logboek gegevens bevatten in azure monitor worden nog steeds log Analytics werk ruimten genoemd. De naam van het menu **log Analytics** in het Azure Portal is gewijzigd in **log Analytics werk ruimten** en is waar u [nieuwe werk ruimten maakt](logs/quick-create-workspace.md) en gegevens bronnen configureert. Analyseer uw logboeken en andere bewakings gegevens in **Azure monitor** en configureer uw werk ruimte in **log Analytics-werk ruimten**.
 
 ### <a name="management-solutions"></a>Beheeroplossingen
 De naam van [beheer oplossingen](insights/solutions.md) is gewijzigd voor het _bewaken van oplossingen_, waardoor de functionaliteit ervan beter wordt beschreven.
@@ -59,4 +59,4 @@ Er zijn [nieuwe prijzen geïntroduceerd voor deze services](https://azure.micros
 ## <a name="next-steps"></a>Volgende stappen
 
 - Lees een [overzicht van Azure monitor](overview.md) waarin de verschillende onderdelen en functies worden beschreven.
-- Meer informatie over de [overgang van de OMS-Portal](./platform/oms-portal-transition.md).
+- Meer informatie over de [overgang van de OMS-Portal](./logs/oms-portal-transition.md).

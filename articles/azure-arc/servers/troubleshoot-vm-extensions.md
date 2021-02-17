@@ -3,12 +3,12 @@ title: Problemen met de VM-extensie van Azure Arc ingeschakelde servers oplossen
 description: In dit artikel leest u hoe u problemen oplost en oplost met Azure VM-extensies die zich voordoen met Azure Arc-servers.
 ms.date: 09/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: ffd7db5ff7da3d7f60762117f80d7b9b5af6f646
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 799e5c8ec00a894c6a54c64494edd8f259faf2dc
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91344610"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584671"
 ---
 # <a name="troubleshoot-arc-enabled-servers-vm-extension-issues"></a>Problemen met Arc ingeschakelde servers oplossen VM-extensie problemen
 
@@ -36,9 +36,9 @@ De volgende stappen voor probleem oplossing zijn van toepassing op alle VM-exten
 
 ### <a name="log-analytics-agent-for-linux"></a>Log Analytics-agent voor Linux
 
-- De 1.13.9-versie van de Log Analytics-agent (de overeenkomende extensie versie is 1.13.15) heeft geen juiste markering van geüploade gegevens met de resource-ID van de Azure Arc-server. Hoewel er logboeken naar de service worden verzonden, wanneer u probeert de gegevens van de geselecteerde server weer te geven nadat u **Logboeken** of **inzichten**hebt geselecteerd, worden er geen gegevens geretourneerd. U kunt de gegevens weer geven door query's uit te voeren vanuit Azure Monitor Logboeken of vanuit Azure Monitor voor VM's, die binnen het bereik van de werk ruimte vallen.
+- De 1.13.9-versie van de Log Analytics-agent (de overeenkomende extensie versie is 1.13.15) heeft geen juiste markering van geüploade gegevens met de resource-ID van de Azure Arc-server. Hoewel er logboeken naar de service worden verzonden, wanneer u probeert de gegevens van de geselecteerde server weer te geven nadat u **Logboeken** of **inzichten** hebt geselecteerd, worden er geen gegevens geretourneerd. U kunt de gegevens weer geven door query's uit te voeren vanuit Azure Monitor Logboeken of vanuit Azure Monitor voor VM's, die binnen het bereik van de werk ruimte vallen.
 
-- Sommige distributies worden momenteel niet ondersteund door de Log Analytics-agent voor Linux. De agent vereist extra afhankelijkheden die moeten worden geïnstalleerd, inclusief python 2. Bekijk de ondersteunings matrix en vereisten [hier](../../azure-monitor/platform/agents-overview.md#supported-operating-systems).
+- Sommige distributies worden momenteel niet ondersteund door de Log Analytics-agent voor Linux. De agent vereist extra afhankelijkheden die moeten worden geïnstalleerd, inclusief python 2. Bekijk de ondersteunings matrix en vereisten [hier](../../azure-monitor/agents/agents-overview.md#supported-operating-systems).
 
 - Fout code 52 in het status bericht wijst op ontbrekende afhankelijkheid. Controleer de uitvoer en logboeken voor meer informatie over welke afhankelijkheden ontbreken.
 

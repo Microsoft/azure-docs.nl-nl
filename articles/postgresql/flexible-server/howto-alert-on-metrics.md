@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: ac252c3898eb014885bf9a6bf6bdedb7db74fb62
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 3c6f1dd581f7b07bb7892cbfe23dd76348124f9a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545834"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579060"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-postgresql---flexible-server"></a>Gebruik de Azure Portal om waarschuwingen in te stellen voor de Azure Database for PostgreSQL-flexibele server
 
@@ -30,11 +30,11 @@ U kunt een waarschuwing configureren om de volgende acties uit te voeren wanneer
 
 U kunt informatie over waarschuwings regels configureren en ophalen met behulp van:
 
-* [Azure Portal](../../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
-* [Azure CLI](../../azure-monitor/platform/alerts-metric.md#with-azure-cli)
+* [Azure-portal](../../azure-monitor/alerts/alerts-metric.md#create-with-azure-portal)
+* [Azure-CLI](../../azure-monitor/alerts/alerts-metric.md#with-azure-cli)
 * [Azure Monitor REST API](/rest/api/monitor/metricalerts)
 
-## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Een waarschuwings regel maken op basis van een metriek van de Azure Portal
+## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Een waarschuwingsregel maken op een metrische waarde vanuit Azure Portal
 
 1. Selecteer in de [Azure Portal](https://portal.azure.com/)de Azure database for postgresql server die u wilt bewaken.
 
@@ -46,19 +46,19 @@ U kunt informatie over waarschuwings regels configureren en ophalen met behulp v
 
 4. De pagina **regel maken** wordt geopend, zoals hieronder wordt weer gegeven. Vul de vereiste gegevens in:
 
-   :::image type="content" source="./media/howto-alert-on-metrics/4-add-rule-form.png" alt-text="Waarschuwings regels selecteren":::
+   :::image type="content" source="./media/howto-alert-on-metrics/4-add-rule-form.png" alt-text="Formulier voor metrische waarschuwing toevoegen":::
 
 5. Selecteer **voor waarde toevoegen** in de sectie **voor waarde** .
 
 6. Selecteer een waarde in de lijst met signalen waarop u wilt worden gewaarschuwd. In dit voor beeld selecteert u ' opslag percentage '.
 
-   :::image type="content" source="./media/howto-alert-on-metrics/6-configure-signal-logic.png" alt-text="Waarschuwings regels selecteren":::
+   :::image type="content" source="./media/howto-alert-on-metrics/6-configure-signal-logic.png" alt-text="Metrische waarde selecteren":::
 
-7. Configureer de waarschuwings logica met inbegrip van de **voor waarde** (bijvoorbeeld ' Groter dan '), **drempel waarde** (bijvoorbeeld 85 procent), **tijd aggregatie** , **periode waarbinnen** de metrische regel moet worden voldaan voordat de waarschuwingen worden geactiveerd (bijvoorbeeld ' In de afgelopen 30 minuten ') en **frequentie** .
+7. Configureer de waarschuwings logica met inbegrip van de **voor waarde** (bijvoorbeeld ' Groter dan '), **drempel waarde** (bijvoorbeeld 85 procent), **tijd aggregatie**, **periode waarbinnen** de metrische regel moet worden voldaan voordat de waarschuwingen worden geactiveerd (bijvoorbeeld ' In de afgelopen 30 minuten ') en **frequentie**.
 
    Selecteer **gereed** wanneer u klaar bent.
 
-   :::image type="content" source="./media/howto-alert-on-metrics/7-set-threshold-time.png" alt-text="Waarschuwings regels selecteren":::
+   :::image type="content" source="./media/howto-alert-on-metrics/7-set-threshold-time.png" alt-text="Drempel instellen":::
 
 8. Selecteer in de sectie **actie groepen** de optie **nieuwe maken** om een nieuwe groep te maken voor het ontvangen van meldingen over de waarschuwing.
 
@@ -72,11 +72,11 @@ U kunt informatie over waarschuwings regels configureren en ophalen met behulp v
 
     3. Selecteer **OK** wanneer u klaar bent.
 
-    :::image type="content" source="./media/howto-alert-on-metrics/10-action-group-type.png" alt-text="Waarschuwings regels selecteren":::
+    :::image type="content" source="./media/howto-alert-on-metrics/10-action-group-type.png" alt-text="Actiegroep":::
 
 11. Geef een naam, beschrijving en ernst voor de waarschuwings regel op.
 
-    :::image type="content" source="./media/howto-alert-on-metrics/11-name-description-severity.png" alt-text="Waarschuwings regels selecteren"::: 
+    :::image type="content" source="./media/howto-alert-on-metrics/11-name-description-severity.png" alt-text="Opgeven, naam beschrijving en ernst"::: 
 
 12. Selecteer **waarschuwings regel maken** om de waarschuwing te maken.
 
@@ -92,5 +92,5 @@ Zodra u een waarschuwing hebt gemaakt, kunt u deze selecteren en de volgende act
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over het [configureren van webhooks in waarschuwingen](../../azure-monitor/platform/alerts-webhooks.md).
-* Bekijk een [overzicht van de verzameling metrische gegevens](../../azure-monitor/platform/data-platform.md) om te controleren of uw service beschikbaar is en reageert.
+* Meer informatie over het [configureren van webhooks in waarschuwingen](../../azure-monitor/alerts/alerts-webhooks.md).
+* Bekijk een [overzicht van de verzameling metrische gegevens](../../azure-monitor/data-platform.md) om te controleren of uw service beschikbaar is en reageert.

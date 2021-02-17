@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 8/11/2020
 ms.author: lajanuar
-ms.openlocfilehash: 021a65ba69b9d1909df4a86d92b660c0c1033a3b
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: bdfb1ac03ea6f896725d5c86cefe41021204359c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98895455"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582208"
 ---
 # <a name="translator-v30"></a>Translator v 3.0
 
@@ -41,7 +41,7 @@ Aanvragen voor de micro soft Translator zijn in de meeste gevallen verwerkt door
 
 Als u wilt afdwingen dat de aanvraag wordt verwerkt door een specifieke Azure-geografie, wijzigt u het globale eind punt in de API-aanvraag naar het gewenste geografische eind punt:
 
-|Beschrijving|Azure-Geografie|Basis-URL (geografisch eind punt)|
+|Description|Azure-Geografie|Basis-URL (geografisch eind punt)|
 |:--|:--|:--|
 |Azure|Algemeen (niet-regionaal)|   api.cognitive.microsofttranslator.com|
 |Azure|Verenigde Staten|   api-nam.cognitive.microsofttranslator.com|
@@ -188,7 +188,7 @@ Zo kan een klant met een gratis proef abonnement de volgende fout melding ontvan
 ```
 De fout code is een getal van 6 cijfers, waarbij de HTTP-status code van 3 cijfers wordt gevolgd door een getal van drie cijfers om de fout verder te categoriseren. Veelvoorkomende fout codes zijn:
 
-| Code | Beschrijving |
+| Code | Description |
 |:----|:-----|
 | 400000| Een van de aanvraag invoer is ongeldig.|
 | 400001| De para meter "scope" is ongeldig.|
@@ -230,13 +230,13 @@ De fout code is een getal van 6 cijfers, waarbij de HTTP-status code van 3 cijfe
 | 503000| De service is tijdelijk niet beschikbaar. Probeer het opnieuw. Als de fout zich blijft voordoen, meldt u deze met de datum/tijd van de fout, verzoekt u de aanvraag-id van de antwoord header X-id-aanvraag en de client-id van de aanvraag header X-ClientTraceId.|
 
 ## <a name="metrics"></a>Metrische gegevens 
-Met metrische gegevens kunt u het gebruik van de Vertaler en beschik baarheid in Azure Portal weer geven, onder de sectie metrische gegevens, zoals wordt weer gegeven in de onderstaande scherm afbeelding. Zie [gegevens en platform metrieken](../../../azure-monitor/platform/data-platform-metrics.md)voor meer informatie.
+Met metrische gegevens kunt u het gebruik van de Vertaler en beschik baarheid in Azure Portal weer geven, onder de sectie metrische gegevens, zoals wordt weer gegeven in de onderstaande scherm afbeelding. Zie [gegevens en platform metrieken](../../../azure-monitor/essentials/data-platform-metrics.md)voor meer informatie.
 
 ![Metrische gegevens van vertaler](../media/translatormetrics.png)
 
 Deze tabel bevat de beschik bare metrische gegevens met een beschrijving van hoe ze worden gebruikt voor het bewaken van API-aanroepen voor vertalingen.
 
-| Metrische gegevens | Beschrijving |
+| Metrische gegevens | Description |
 |:----|:-----|
 | TotalCalls| Totaal aantal API-aanroepen.|
 | TotalTokenCalls| Totaal aantal API-aanroepen via token service met verificatie token.|

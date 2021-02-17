@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/20/2018
-ms.openlocfilehash: 7bdea9239faa4ec66fffa236bea40afd5e628e62
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: c3934af1af040b8b45175bacde43237802ab82cf
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96607140"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582393"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Inzichten over uw DNS-infra structuur verzamelen met de preview-oplossing van DNS-analyse
 
@@ -35,10 +35,10 @@ De volgende tabel beschrijft de verbonden bronnen die worden ondersteund door de
 
 | **Verbonden bron** | **Ondersteuning** | **Beschrijving** |
 | --- | --- | --- |
-| [Windows-agents](../platform/agent-windows.md) | Ja | De oplossing verzamelt DNS-gegevens van Windows-agents. |
-| [Linux-agents](../learn/quick-collect-linux-computer.md) | Nee | De oplossing verzamelt geen DNS-gegevens van direct Linux-agents. |
-| [Beheergroep System Center Operations Manager](../platform/om-agents.md) | Ja | De oplossing verzamelt DNS-gegevens van agents in een verbonden Operations Manager-beheer groep. Een directe verbinding van de Operations Manager agent naar Azure Monitor is niet vereist. Gegevens worden doorgestuurd van de beheer groep naar de Log Analytics-werk ruimte. |
-| [Azure Storage-account](../platform/resource-logs.md#send-to-log-analytics-workspace) | Nee | Azure Storage wordt niet gebruikt door de oplossing. |
+| [Windows-agents](../agents/agent-windows.md) | Yes | De oplossing verzamelt DNS-gegevens van Windows-agents. |
+| [Linux-agents](../vm/quick-collect-linux-computer.md) | No | De oplossing verzamelt geen DNS-gegevens van direct Linux-agents. |
+| [Beheergroep System Center Operations Manager](../agents/om-agents.md) | Yes | De oplossing verzamelt DNS-gegevens van agents in een verbonden Operations Manager-beheer groep. Een directe verbinding van de Operations Manager agent naar Azure Monitor is niet vereist. Gegevens worden doorgestuurd van de beheer groep naar de Log Analytics-werk ruimte. |
+| [Azure Storage-account](../essentials/resource-logs.md#send-to-log-analytics-workspace) | No | Azure Storage wordt niet gebruikt door de oplossing. |
 
 ### <a name="data-collection-details"></a>Details van gegevens verzameling
 
@@ -48,7 +48,7 @@ De oplossing verzamelt DNS-inventarisatie-en DNS-gegevens over gebeurtenissen va
 
 Gebruik de volgende informatie om de oplossing te configureren:
 
-- U moet beschikken over een [Windows](../platform/agent-windows.md) -of [Operations Manager](../platform/om-agents.md) -agent op elke DNS-server die u wilt bewaken.
+- U moet beschikken over een [Windows](../agents/agent-windows.md) -of [Operations Manager](../agents/om-agents.md) -agent op elke DNS-server die u wilt bewaken.
 - U kunt de DNS-analyse oplossing toevoegen aan uw Log Analytics-werk ruimte vanuit [Azure Marketplace](https://aka.ms/dnsanalyticsazuremarketplace). U kunt ook het proces dat wordt beschreven in [Azure monitor oplossingen toevoegen van de Oplossingengalerie](solutions.md)gebruiken.
 
 De oplossing begint met het verzamelen van gegevens zonder dat er verdere configuratie nodig is. U kunt echter de volgende configuratie gebruiken om gegevens verzameling aan te passen.
@@ -76,7 +76,7 @@ Als uw Operations Manager-beheer groep is verbonden met uw Log Analytics-werk ru
 - Micro soft DNS data collector Intelligence Pack (micro soft. intelligence packs. DNS)
 - Micro soft System Center Advisor DNS-analyse-configuratie (Microsoft.IntelligencePack.Dns.Configuratie)
 
-Zie [Operations Manager koppelen aan Log Analytics](../platform/om-agents.md) voor meer informatie over de manier waarop uw management packs voor oplossingen worden bijgewerkt.
+Zie [Operations Manager koppelen aan Log Analytics](../agents/om-agents.md) voor meer informatie over de manier waarop uw management packs voor oplossingen worden bijgewerkt.
 
 ## <a name="use-the-dns-analytics-solution"></a>De DNS-analyse oplossing gebruiken
 
@@ -185,4 +185,4 @@ Als u feedback wilt geven, gaat u naar de [pagina log Analytics UserVoice](https
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Query logboeken](../log-query/log-query-overview.md) om gedetailleerde DNS-logboek records weer te geven.
+[Query logboeken](../logs/log-query-overview.md) om gedetailleerde DNS-logboek records weer te geven.

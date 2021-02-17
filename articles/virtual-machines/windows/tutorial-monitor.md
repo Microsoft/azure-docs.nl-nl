@@ -10,12 +10,12 @@ ms.workload: infrastructure
 ms.date: 09/27/2018
 ms.author: magoedte
 ms.custom: mvc
-ms.openlocfilehash: 89b33a697e818539ab6666be33fc1542c5bdcc51
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 3e7d93d7a1d0e804f340a7ce785ccc1165e93ee5
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736590"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570082"
 ---
 # <a name="tutorial-monitor-a-windows-virtual-machine-in-azure"></a>Zelfstudie: Een virtuele Windows-machine bewaken in Azure
 
@@ -86,18 +86,18 @@ Ga als volgt te werk als u de bewaking van uw Azure-VM met Azure Monitor voor VM
 
 3. Selecteer op de pagina **Inzichten (preview)** de optie **Nu uitproberen**.
 
-    ![Azure Monitor voor VM's voor een VM inschakelen](../../azure-monitor/insights/media/vminsights-enable-single-vm/enable-vminsights-vm-portal.png)
+    ![Azure Monitor voor VM's voor een VM inschakelen](../../azure-monitor/vm/media/vminsights-enable-portal/enable-vminsights-vm-portal.png)
 
 4. Als u een bestaande Log Analytics-werkruimte in hetzelfde abonnement hebt, selecteert u deze in de vervolgkeuzelijst op de pagina **Onboarding van Azure Monitor Insights**.  
 
     De lijst selecteert vooraf de standaardwerkruimte en de locatie waar de VM in het abonnement is geïmplementeerd. 
 
     >[!NOTE]
-    >Zie [Een Log Analytics-werkruimte maken](../../azure-monitor/learn/quick-create-workspace.md) om een nieuwe Log Analytics-werkruimte te maken voor het opslaan van de bewakingsgegevens van de VM. De werkruimte moet deel uitmaken van een van de [ondersteunde regio's](../../azure-monitor/insights/vminsights-configure-workspace.md#supported-regions).
+    >Zie [Een Log Analytics-werkruimte maken](../../azure-monitor/logs/quick-create-workspace.md) om een nieuwe Log Analytics-werkruimte te maken voor het opslaan van de bewakingsgegevens van de VM. De werkruimte moet deel uitmaken van een van de [ondersteunde regio's](../../azure-monitor/vm/vminsights-configure-workspace.md#supported-regions).
 
 Nadat u bewaking hebt ingeschakeld, moet u mogelijk enkele minuten wachten voordat u de metrische prestatiegegevens voor de VM kunt weergeven.
 
-![Verwerking van de implementatie van de bewaking van Azure Monitor voor VM's inschakelen](../../azure-monitor/insights/media/vminsights-enable-single-vm/onboard-vminsights-vm-portal-status.png)
+![Verwerking van de implementatie van de bewaking van Azure Monitor voor VM's inschakelen](../../azure-monitor/vm/media/vminsights-enable-portal/onboard-vminsights-vm-portal-status.png)
 
 ## <a name="view-vm-performance-metrics"></a>Metrische prestatiegegevens van VM's weergeven
 

@@ -3,12 +3,12 @@ title: Een nieuwe Azure Monitor maken Application Insights resource op basis van
 description: Meer informatie over de stappen die nodig zijn om de nieuwe Azure Monitor Application Insights op werk ruimte gebaseerde resources in te scha kelen.
 ms.topic: conceptual
 ms.date: 10/06/2020
-ms.openlocfilehash: 23994190df89b47d9c7e90ed62a724545389b1fe
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: 3ec0b25a24af13b29a3568165009f8a6d66e0218
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99063363"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578341"
 ---
 # <a name="workspace-based-application-insights-resources"></a>Application Insights resources op basis van een werk ruimte
 
@@ -23,10 +23,10 @@ Dit biedt ook algemene op rollen gebaseerd toegangs beheer (Azure RBAC) van Azur
 
 Met Application Insights op basis van een werk ruimte kunt u profiteren van de nieuwste mogelijkheden van Azure Monitor en Log Analytics met inbegrip van:
 
-* Door de [klant beheerde sleutels (CMK)](../platform/customer-managed-keys.md) bieden versleuteling op rest voor uw gegevens met versleutelings sleutels waartoe alleen u toegang hebt.
-* Met de [persoonlijke Azure-koppeling](../platform/private-link-security.md) kunt u Azure PaaS-services veilig koppelen aan uw virtuele netwerk met behulp van privé-eind punten.
+* Door de [klant beheerde sleutels (CMK)](../logs/customer-managed-keys.md) bieden versleuteling op rest voor uw gegevens met versleutelings sleutels waartoe alleen u toegang hebt.
+* Met de [persoonlijke Azure-koppeling](../logs/private-link-security.md) kunt u Azure PaaS-services veilig koppelen aan uw virtuele netwerk met behulp van privé-eind punten.
 * [Met uw eigen opslag (BYOS) voor Profiler en snapshot debugger](./profiler-bring-your-own-storage.md) hebt u volledige controle over het beleid voor versleuteling op rest, het beheer beleid voor levens duur en netwerk toegang tot alle gegevens die zijn gekoppeld aan Application Insights Profiler en snapshot debugger. 
-* Met [capaciteits reserverings lagen](../platform/manage-cost-storage.md#pricing-model) kunt u Maxi maal 25% besparen op basis van de betalen naar gebruik-prijs. 
+* Met [capaciteits reserverings lagen](../logs/manage-cost-storage.md#pricing-model) kunt u Maxi maal 25% besparen op basis van de betalen naar gebruik-prijs. 
 * Snellere gegevens opname via Log Analytics streaming-opname.
 
 ## <a name="create-workspace-based-resource"></a>Resource op basis van werk ruimte maken
@@ -36,7 +36,7 @@ Meld u aan bij de [Azure Portal](https://portal.azure.com)en maak een Applicatio
 > [!div class="mx-imgBorder"]
 > ![Op werkruimte gebaseerde Application Insights-resource](./media/create-workspace-resource/create-workspace-based.png)
 
-Als u nog geen bestaande Log Analytics-werk ruimte hebt, [raadpleegt u de documentatie voor het maken van log Analytics werk ruimte](../learn/quick-create-workspace.md).
+Als u nog geen bestaande Log Analytics-werk ruimte hebt, [raadpleegt u de documentatie voor het maken van log Analytics werk ruimte](../logs/quick-create-workspace.md).
 
 **Op werk ruimte gebaseerde resources zijn momenteel beschikbaar in alle commerciële regio's en Azure Government**
 
@@ -212,5 +212,5 @@ De verouderde functionaliteit voor continue export wordt niet ondersteund voor o
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Metrische gegevens verkennen](../platform/metrics-charts.md)
-* [Analytics-query's schrijven](../log-query/log-query-overview.md)
+* [Metrische gegevens verkennen](../essentials/metrics-charts.md)
+* [Analytics-query's schrijven](../logs/log-query-overview.md)

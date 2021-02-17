@@ -4,18 +4,18 @@ description: Lees meer informatie over het gebruik van Azure Arc voor servers om
 keywords: azure automation, DSC, powershell, configuratie van gewenste status, updatebeheer, bijhouden van wijzigingen, inventaris, runbooks, python, grafisch, hybride
 ms.date: 11/12/2020
 ms.topic: overview
-ms.openlocfilehash: 8368f89b8e471698ede3e9e8eb691e69f494b6e2
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.openlocfilehash: be5955e9bf02e591fdbba3f080d034c126379c2f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183393"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584787"
 ---
 # <a name="what-is-azure-arc-enabled-servers"></a>Wat zijn servers met Azure Arc?
 
 Met servers met Azure Arc kunt u uw Windows- en Linux-machines die buiten Azure worden gehost, in uw bedrijfsnetwerk of via een andere cloudprovider, beheren op eenzelfde manier als systeemeigen Azure-VM's. Wanneer een hybride machine aan Azure wordt gekoppeld, wordt deze een gekoppelde machine en wordt deze behandeld als een resource in Azure. Elke gekoppelde machine heeft een resource-id, is opgenomen in een resourcegroep en profiteert van standaard Azure-constructies, zoals Azure Policy en het toepassen van tags. Serviceproviders die de on-premises infrastructuur van een klant beheren, kunnen met behulp van [Azure Lighthouse](../../lighthouse/how-to/manage-hybrid-infrastructure-arc.md) met Azure Arc hun hybride machines beheren in meerdere klantomgevingen, net als ze vandaag de dag met systeemeigen Azure-resources doen.
 
-Om deze ervaring te bieden voor hybride machines die buiten Azure worden gehost, moet de Azure Connected Machine-agent worden geïnstalleerd op elke machine die u aan Azure wilt koppelen. Deze agent levert geen andere functionaliteit en vervangt de [Log Analytics-agent](../../azure-monitor/platform/log-analytics-agent.md) van Azure niet. De Log Analytics-agent voor Windows en Linux is vereist wanneer u het besturingssysteem en workloads op de machine proactief wilt monitoren, deze wilt beheren met Automation-runbooks of oplossingen zoals Updatebeheer, of andere Azure-services zoals [Azure Security Center](../../security-center/security-center-introduction.md) wilt gebruiken.
+Om deze ervaring te bieden voor hybride machines die buiten Azure worden gehost, moet de Azure Connected Machine-agent worden geïnstalleerd op elke machine die u aan Azure wilt koppelen. Deze agent levert geen andere functionaliteit en vervangt de [Log Analytics-agent](../../azure-monitor/agents/log-analytics-agent.md) van Azure niet. De Log Analytics-agent voor Windows en Linux is vereist wanneer u het besturingssysteem en workloads op de machine proactief wilt monitoren, deze wilt beheren met Automation-runbooks of oplossingen zoals Updatebeheer, of andere Azure-services zoals [Azure Security Center](../../security-center/security-center-introduction.md) wilt gebruiken.
 
 ## <a name="supported-scenarios"></a>Ondersteunde scenario's
 
@@ -25,7 +25,7 @@ Wanneer u uw machine verbindt met servers met Azure Arc, kunt u de volgende conf
 
 - Rapporteren over configuratiewijzigingen van geïnstalleerde software, Microsoft-services, Windows-register en -bestanden, en Linux-daemons op bewaakte servers met behulp van Azure Automation [Change Tracking and Inventory](../../automation/change-tracking/overview.md).
 
-- Controleer de prestaties van het gastbesturingssysteem van uw verbonden computer en ontdek toepassingscomponenten om hun processen en afhankelijkheden te controleren met andere resources die de door de toepassing worden gecommuniceerd met behulp van [Azure Monitor voor VM's](../../azure-monitor/insights/vminsights-overview.md).
+- Controleer de prestaties van het gastbesturingssysteem van uw verbonden computer en ontdek toepassingscomponenten om hun processen en afhankelijkheden te controleren met andere resources die de door de toepassing worden gecommuniceerd met behulp van [Azure Monitor voor VM's](../../azure-monitor/vm/vminsights-overview.md).
 
 - Vereenvoudig de implementatie met andere Azure-services zoals Azure Automation [State Configuration](../../automation/automation-dsc-overview.md) en Azure Monitor Log Analytics-werkruimte door gebruik te maken van de ondersteunde [Azure VM-extensies](manage-vm-extensions.md) voor uw niet-Azure Windows- of Linux-machine. Dit omvat het uitvoeren van configuratie na de implementatie of software-installatie met behulp van de aangepaste scriptextensie.
 
@@ -36,7 +36,7 @@ Wanneer u uw machine verbindt met servers met Azure Arc, kunt u de volgende conf
 
 - Neem uw niet-Azure-servers op voor het detecteren van bedreigingen en proactief toezicht op potentiële beveiligingsrisico's met behulp van [Azure Security Center](../../security-center/security-center-introduction.md).
 
-Aanmeldingsgegevens die zijn verzameld en opgeslagen in een Log Analytics-werkruimte van de hybride machine bevatten nu eigenschappen die specifiek zijn voor de machine, zoals een resource-id. Dit kan worden gebruikt ter ondersteuning van toegang tot het logboek met [resource-context](../../azure-monitor/platform/design-logs-deployment.md#access-mode).
+Aanmeldingsgegevens die zijn verzameld en opgeslagen in een Log Analytics-werkruimte van de hybride machine bevatten nu eigenschappen die specifiek zijn voor de machine, zoals een resource-id. Dit kan worden gebruikt ter ondersteuning van toegang tot het logboek met [resource-context](../../azure-monitor/logs/design-logs-deployment.md#access-mode).
 
 [!INCLUDE [azure-lighthouse-supported-service](../../../includes/azure-lighthouse-supported-service.md)]
 

@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 02/08/2021
-ms.openlocfilehash: ea99c34f03cd74185840767605c17ee6c65eb701
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 0ff11c9601fb55e27d8780185d77c177e9d9201b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100389702"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584644"
 ---
 # <a name="monitor-azure-cache-for-redis"></a>Azure-cache bewaken voor redis
 
@@ -52,13 +52,13 @@ Als u metrische gegevens voor redis wilt weer geven en aangepaste grafieken wilt
 
 ![In het navigatie deel venster aan de linkerkant van contoso55 is metrische gegevens een optie onder bewaking en is gemarkeerd. Er is een lijst met metrische gegevens over metrische gegevens. Cache treffers en cache missers zijn geselecteerd.](./media/cache-how-to-monitor/redis-cache-monitor.png)
 
-Zie [overzicht van metrische gegevens in Microsoft Azure](../azure-monitor/platform/data-platform.md)voor meer informatie over het werken met metrische gegevens met behulp van Azure monitor.
+Zie [overzicht van metrische gegevens in Microsoft Azure](../azure-monitor/data-platform.md)voor meer informatie over het werken met metrische gegevens met behulp van Azure monitor.
 
 <a name="how-to-view-metrics-and-customize-chart"></a>
 <a name="enable-cache-diagnostics"></a>
 ## <a name="export-cache-metrics"></a>Metrische gegevens van de cache exporteren
 
-Standaard worden de metrische gegevens in de cache van Azure Monitor [30 dagen opgeslagen](../azure-monitor/platform/data-platform-metrics.md) en vervolgens verwijderd. Als u de cache-metrische gegevens langer dan 30 dagen wilt behouden, kunt u [een opslag account aanwijzen](../azure-monitor/platform/resource-logs.md#send-to-azure-storage) en een **Bewaar beleid (dagen)** voor uw cache-metrische gegevens opgeven. 
+Standaard worden de metrische gegevens in de cache van Azure Monitor [30 dagen opgeslagen](../azure-monitor/essentials/data-platform-metrics.md) en vervolgens verwijderd. Als u de cache-metrische gegevens langer dan 30 dagen wilt behouden, kunt u [een opslag account aanwijzen](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage) en een **Bewaar beleid (dagen)** voor uw cache-metrische gegevens opgeven. 
 
 Een opslag account configureren voor de metrische gegevens van de cache:
 
@@ -74,10 +74,10 @@ Een opslag account configureren voor de metrische gegevens van de cache:
 ![Redis diagnostische gegevens](./media/cache-how-to-monitor/redis-cache-diagnostics.png)
 
 >[!NOTE]
->Naast het archiveren van uw cache-metrische gegevens naar opslag, kunt u [ze ook streamen naar een event hub of naar Azure monitor-logboeken verzenden](../azure-monitor/platform/rest-api-walkthrough.md#retrieve-metric-values).
+>Naast het archiveren van uw cache-metrische gegevens naar opslag, kunt u [ze ook streamen naar een event hub of naar Azure monitor-logboeken verzenden](../azure-monitor/essentials/rest-api-walkthrough.md#retrieve-metric-values).
 >
 
-Als u toegang wilt krijgen tot uw metrische gegevens, kunt u ze weer geven in de Azure Portal zoals eerder in dit artikel is beschreven. u kunt ze ook openen met behulp van de [Azure monitor metrische rest API](../azure-monitor/platform/stream-monitoring-data-event-hubs.md).
+Als u toegang wilt krijgen tot uw metrische gegevens, kunt u ze weer geven in de Azure Portal zoals eerder in dit artikel is beschreven. u kunt ze ook openen met behulp van de [Azure monitor metrische rest API](../azure-monitor/essentials/stream-monitoring-data-event-hubs.md).
 
 > [!NOTE]
 > Als u opslag accounts wijzigt, blijven de gegevens in het eerder geconfigureerde opslag account beschikbaar voor downloaden, maar wordt het niet weer gegeven in de Azure Portal.  
@@ -129,7 +129,7 @@ Als u waarschuwings regels wilt configureren voor uw cache, klikt u op **waarsch
 
 ![Bewaking](./media/cache-how-to-monitor/redis-cache-monitoring.png)
 
-Zie [overzicht van waarschuwingen](../azure-monitor/platform/alerts-classic-portal.md)voor meer informatie over het configureren en gebruiken van waarschuwingen.
+Zie [overzicht van waarschuwingen](../azure-monitor/alerts/alerts-classic-portal.md)voor meer informatie over het configureren en gebruiken van waarschuwingen.
 
 ## <a name="activity-logs"></a>Activiteitenlogboeken
 Activiteiten logboeken bieden inzicht in de bewerkingen die zijn uitgevoerd op uw Azure-cache voor redis-exemplaren. Voorheen bekend als ' controle logboeken ' of ' operationele logboeken '. Met activiteiten Logboeken kunt u de ' What, wie en wanneer ' bepalen voor schrijf bewerkingen (PUT, POST, DELETE) die zijn gemaakt in uw Azure-cache voor redis-exemplaren. 
@@ -140,4 +140,4 @@ Activiteiten logboeken bieden inzicht in de bewerkingen die zijn uitgevoerd op u
 
 Als u activiteiten logboeken voor uw cache wilt weer geven, klikt u op **activiteiten logboeken** in het **menu resource**.
 
-Zie [overzicht van het Azure-activiteiten logboek](../azure-monitor/platform/platform-logs-overview.md)voor meer informatie over activiteiten Logboeken.
+Zie [overzicht van het Azure-activiteiten logboek](../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie over activiteiten Logboeken.

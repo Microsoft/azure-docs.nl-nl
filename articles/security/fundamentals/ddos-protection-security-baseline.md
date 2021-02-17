@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: b4b2a3bf8c9a3a2e2ec7f1b22785a037f8dedc60
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 21ae8986761483658f5ac4254e4bb378e0bc4ba9
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98873957"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575053"
 ---
 # <a name="azure-security-baseline-for-azure-ddos-protection-standard"></a>Azure-beveiligings basislijn voor Azure DDoS Protection Standard
 
@@ -26,7 +26,7 @@ Deze beveiligings basislijn is van toepassing op de richt lijnen [Azure Security
 
 **Hulp**: Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend de logboeken naar een log Analytics-werk ruimte, een Azure Event hub of een Azure-opslag account voor archivering. Activiteiten logboeken bieden inzicht in de bewerkingen die zijn uitgevoerd op uw Azure DDoS Protection plannen op het niveau van het besturings element. Met Azure-activiteiten logboek gegevens kunt u bepalen wat voor schrijf bewerkingen (PUT, POST, DELETE) die worden uitgevoerd op het niveau van de Control-instantie voor uw Azure DDoS Protection-instanties, de ' wat, wie en wanneer ' zijn.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../../azure-monitor/essentials/activity-log.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -40,7 +40,7 @@ Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend
 
 - [Registratie in DDoS-diagnoselogboek bekijken en configureren](../../ddos-protection/diagnostic-logging.md)
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../../azure-monitor/essentials/activity-log.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -50,7 +50,7 @@ Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend
 
 **Richt lijnen**: stel in azure monitor de Bewaar periode voor logboek registratie In voor log Analytics werk ruimten die zijn gekoppeld aan uw Azure DDoS Protection plannen volgens de nalevings voorschriften van uw organisatie.
 
-- [Para meters voor het bewaren van Logboeken instellen](../../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen](../../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -62,9 +62,9 @@ Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend
 
 - [Informatie over toegang tot telemetrie, logboeken en aanvals analyses voor DDoS Protection Standard-Service](../../ddos-protection/telemetry.md)
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../../azure-monitor/essentials/activity-log.md)
 
-- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](../../azure-monitor/platform/activity-log.md)
+- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](../../azure-monitor/essentials/activity-log.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -80,7 +80,7 @@ Onboarding van een Log Analytics-werk ruimte naar Azure-Sentinel, aangezien deze
 
 - [Azure-Sentinel onboarden](../../sentinel/quickstart-onboard.md)
 
-- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](../../azure-monitor/platform/alerts-log.md)
+- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](../../azure-monitor/alerts/alerts-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -276,7 +276,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden aangebracht in azure DDoS Protection plannen, evenals andere essentiële of gerelateerde resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Ja
 

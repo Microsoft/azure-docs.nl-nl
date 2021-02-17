@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/08/2020
-ms.openlocfilehash: f2f2272363cbc26895b061fe7b6263ed2a29fbab
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: f06ed85e362f15e36e030cd11639d9d17348e938
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91993244"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573618"
 ---
 # <a name="deploy-azure-monitor-at-scale-using-azure-policy"></a>Azure Monitor op schaal implementeren met behulp van Azure Policy
 Hoewel sommige Azure Monitor functies eenmaal of een beperkt aantal keren worden geconfigureerd, moeten andere worden herhaald voor elke resource die u wilt bewaken. In dit artikel worden methoden beschreven voor het gebruik van Azure Policy om Azure Monitor op schaal te implementeren om ervoor te zorgen dat de bewaking consistent en correct is geconfigureerd voor al uw Azure-resources.
@@ -33,19 +33,19 @@ Azure Policy bestaat uit de objecten in de volgende tabel. Zie [Azure Policy obj
 | Toewijzing | Een beleids definitie of-initiatief wordt pas van kracht nadat het is toegewezen aan een bereik. U kunt bijvoorbeeld een beleid toewijzen aan een resource groep om dit toe te passen op alle resources die zijn gemaakt in die resource, of dit Toep assen op een abonnement om het toe te passen op alle resources in dat abonnement.  Zie [Azure Policy toewijzings structuur](../governance/policy/concepts/assignment-structure.md)voor meer informatie. |
 
 ## <a name="built-in-policy-definitions-for-azure-monitor"></a>Ingebouwde beleidsdefinities voor Azure Monitor
-Azure Policy bevat verschillende vooraf gedefinieerde definities die betrekking hebben op Azure Monitor. U kunt deze beleids definities toewijzen aan uw bestaande abonnement of ze gebruiken als basis voor het maken van uw eigen aangepaste definities. Zie [Azure Policy ingebouwde beleids definities voor Azure monitor](./samples/policy-reference.md)voor een volledige lijst van de ingebouwde politiek in de categorie **bewaking** .
+Azure Policy bevat verschillende vooraf gedefinieerde definities die betrekking hebben op Azure Monitor. U kunt deze beleids definities toewijzen aan uw bestaande abonnement of ze gebruiken als basis voor het maken van uw eigen aangepaste definities. Zie [Azure Policy ingebouwde beleids definities voor Azure monitor](.//policy-reference.md)voor een volledige lijst van de ingebouwde politiek in de categorie **bewaking** .
 
 Als u de ingebouwde beleids definities wilt weer geven die betrekking hebben op bewaking, voert u de volgende handelingen uit:
 
 1. Ga naar **Azure Policy** in het Azure Portal.
-2. **Definities**selecteren.
-3. Selecteer bij **type**de optie *ingebouwd* en selecteer bij **categorie**de optie *bewaking*.
+2. Selecteer **Definities**.
+3. Selecteer bij **type** de optie *ingebouwd* en selecteer bij **categorie** de optie *bewaking*.
 
   ![Scherm afbeelding van de pagina met Azure Policy definities in Azure Portal een lijst met beleids definities voor de categorie bewaking en het ingebouwde type weer gegeven.](media/deploy-scale/builtin-policies.png)
 
 
 ## <a name="diagnostic-settings"></a>Diagnostische instellingen
-[Diagnostische instellingen](platform/diagnostic-settings.md) verzamelen resource logboeken en metrische gegevens van Azure-resources op meerdere locaties, meestal naar een log Analytics-werk ruimte, waarmee u de gegevens kunt analyseren met [logboek query's](log-query/log-query-overview.md) en [logboek waarschuwingen](platform/alerts-log.md). Gebruik beleid om automatisch een diagnostische instelling te maken telkens wanneer u een resource maakt.
+[Diagnostische instellingen](essentials/diagnostic-settings.md) verzamelen resource logboeken en metrische gegevens van Azure-resources op meerdere locaties, meestal naar een log Analytics-werk ruimte, waarmee u de gegevens kunt analyseren met [logboek query's](logs/log-query-overview.md) en [logboek waarschuwingen](alerts/alerts-log.md). Gebruik beleid om automatisch een diagnostische instelling te maken telkens wanneer u een resource maakt.
 
 Elk Azure-resource type heeft een unieke set categorieën die moeten worden weer gegeven in de diagnostische instelling. Daarom vereist elk resource type een afzonderlijke beleids definitie. Sommige resource typen hebben ingebouwde beleids definities die u zonder wijzigingen kunt toewijzen. Voor andere resource typen moet u een aangepaste definitie maken.
 
@@ -122,7 +122,7 @@ Het initiatief wordt toegepast op elke virtuele machine wanneer deze wordt gemaa
 
 
 ## <a name="azure-monitor-for-vms"></a>Azure Monitor voor virtuele machines
-[Azure monitor voor VM's](insights/vminsights-overview.md) is het primaire hulp programma in azure monitor voor het bewaken van virtuele machines. Als u Azure Monitor voor VM's inschakelt, worden zowel de Log Analytics agent als de afhankelijkheids agent geïnstalleerd. In plaats van deze taken hand matig uit te voeren, gebruikt u Azure Policy om ervoor te zorgen dat elke virtuele machine is geconfigureerd terwijl u deze maakt.
+[Azure monitor voor VM's](vm/vminsights-overview.md) is het primaire hulp programma in azure monitor voor het bewaken van virtuele machines. Als u Azure Monitor voor VM's inschakelt, worden zowel de Log Analytics agent als de afhankelijkheids agent geïnstalleerd. In plaats van deze taken hand matig uit te voeren, gebruikt u Azure Policy om ervoor te zorgen dat elke virtuele machine is geconfigureerd terwijl u deze maakt.
 
 > [!NOTE]
 > Azure Monitor voor VM's bevat een functie met de naam **Azure monitor voor VM's-beleids dekking** waarmee niet-compatibele virtuele machines in uw omgeving kunnen worden gedetecteerd en hersteld. U kunt deze functie gebruiken in plaats van rechtstreeks te werken met Azure Policy voor Azure-Vm's en voor hybride virtuele machines die zijn verbonden met Azure Arc. Voor virtuele-machine schaal sets van Azure moet u de toewijzing maken met behulp van Azure Policy.
@@ -139,7 +139,7 @@ Azure Monitor voor VM's bevat de volgende ingebouwde initiatieven waarmee beide 
 ### <a name="virtual-machines"></a>Virtuele machines
 In plaats van toewijzingen voor deze initiatieven te maken met behulp van de Azure Policy-interface, bevat Azure Monitor voor VM's een functie waarmee u het aantal virtuele machines in elk bereik kunt controleren om te bepalen of het initiatief is toegepast. U kunt vervolgens de werk ruimte configureren en de vereiste toewijzingen maken met deze interface.
 
-Zie [Azure monitor voor VM's inschakelen met behulp van Azure Policy](./insights/vminsights-enable-policy.md)voor meer informatie over dit proces.
+Zie [Azure monitor voor VM's inschakelen met behulp van Azure Policy](./vm/vminsights-enable-policy.md)voor meer informatie over dit proces.
 
 ![Azure Monitor voor VM's beleid](media/deploy-scale/vminsights-policy.png)
 
@@ -148,7 +148,7 @@ Als u Azure Policy wilt gebruiken om controle in te scha kelen voor schaal sets 
 
 ![Scherm afbeelding van de pagina Assign initiatief in Azure Portal. De initiatief definitie is ingesteld om Azure Monitor in te scha kelen voor schaal sets voor virtuele machines.](media/deploy-scale/virtual-machine-scale-set-assign-initiative.png)
 
-Selecteer de werk ruimte waarnaar de gegevens worden verzonden. Voor deze werk ruimte moet de *VMInsights* -oplossing zijn geïnstalleerd, zoals beschreven in []() .
+Selecteer de werk ruimte waarnaar de gegevens worden verzonden. Voor deze werk ruimte moet de *VMInsights* -oplossing zijn geïnstalleerd, zoals beschreven in [log Analytics werk ruimte configureren voor Azure monitor voor VM's](vm/vminsights-configure-workspace.md).
 
 ![Werkruimte selecteren](media/deploy-scale/virtual-machine-scale-set-workspace.png)
 
@@ -166,8 +166,8 @@ Mogelijk hebt u scenario's waarin u de Log Analytics-agent wilt installeren, maa
 |Naam |Beschrijving |
 |-----|------------|
 |Implementatie van Log Analytics agent controleren-VM-installatie kopie (OS) niet vermeld |Rapporteert Vm's als niet-compatibel als de VM-installatie kopie (OS) niet is gedefinieerd in de lijst en de agent niet is geïnstalleerd. |
-|Log Analytics-agent voor Linux-Vm's implementeren |Implementeer Log Analytics-agent voor Linux-Vm's als de VM-installatie kopie (OS) in de lijst is gedefinieerd en de agent niet is geïnstalleerd. |
-|Log Analytics-agent voor Windows-Vm's implementeren |Log Analytics-agent voor Windows-Vm's implementeren als de VM-installatie kopie (OS) in de lijst is gedefinieerd en de agent niet is geïnstalleerd. |
+|Log Analytics-agent voor Linux-VM’s implementeren |Implementeer Log Analytics-agent voor Linux-Vm's als de VM-installatie kopie (OS) in de lijst is gedefinieerd en de agent niet is geïnstalleerd. |
+|Log Analytics-agent voor Windows-VM's implementeren |Log Analytics-agent voor Windows-Vm's implementeren als de VM-installatie kopie (OS) in de lijst is gedefinieerd en de agent niet is geïnstalleerd. |
 | [Preview-versie]: Log Analytics-agent moet worden geïnstalleerd op uw Linux Azure Arc-machines |Rapporteert hybride Azure Arc-machines als niet-compatibel voor Linux-Vm's als de VM-installatie kopie (OS) in de lijst is gedefinieerd en de agent niet is geïnstalleerd. |
 | [Preview-versie]: Log Analytics-agent moet worden geïnstalleerd op uw Windows Azure-Arc-machines |Rapporteert hybride Azure Arc-machines als niet-compatibel voor Windows-Vm's als de VM-installatie kopie (OS) in de lijst is gedefinieerd en de agent niet is geïnstalleerd. |
 | [Preview-versie]: Log Analytics-agent implementeren op Linux Azure Arc-machines |Implementeer Log Analytics agent voor Linux Hybrid Azure Arc machines als de VM-installatie kopie (OS) in de lijst is gedefinieerd en de agent niet is geïnstalleerd. |
@@ -181,4 +181,4 @@ Mogelijk hebt u scenario's waarin u de Log Analytics-agent wilt installeren, maa
 ## <a name="next-steps"></a>Volgende stappen
 
 - Lees meer over [Azure Policy](../governance/policy/overview.md).
-- Meer informatie over [Diagnostische instellingen](platform/diagnostic-settings.md).
+- Meer informatie over [Diagnostische instellingen](essentials/diagnostic-settings.md).

@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: overview
-ms.date: 01/05/2021
+ms.date: 02/16/2021
 ms.author: mbullwin
 keywords: afwijkingsdetectie, machine learning, algoritmes
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: 425c6cab4a4a5e1329e2d38f49c5058ec8ffc5b9
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
-ms.translationtype: HT
+ms.openlocfilehash: ad3bd1eed6e5e7efb783c4a40958e16c3ca23691
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97901365"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572076"
 ---
 # <a name="what-is-the-anomaly-detector-api"></a>Wat is de Anomaly Detector-API?
 
@@ -38,7 +38,7 @@ Met Anomaly Detector kunt u automatisch anomalieën in uw tijdreeksgegevens dete
 |Afwijkingsdetectie in realtime. | Anomalieën in uw streaminggegevens detecteren door de nieuwste punten te vergelijken met eerder gedetecteerde gegevenspunten. Met deze bewerking wordt een model gegenereerd met de gegevenspunten die u verzendt, en wordt bepaald of het doelpunt een anomalie is. Door de API aan te roepen bij elk nieuw gegevenspunt dat u genereert, kunt u uw gegevens bewaken terwijl ze worden gemaakt. |
 |Detecteert anomalieën in uw gegevensset als een batch. | Uw tijdreeks gebruiken om eventuele anomalieën in uw gegevens op te sporen. Met deze bewerking wordt een model gegenereerd op basis van uw volledige tijdreeksgegevens, waarbij elk punt wordt geanalyseerd met hetzelfde model.         |
 |Detecteert wijzigingspunten in uw gegevensset als een batch. | Uw tijdreeks om eventuele wijzigingspunten in uw gegevens te detecteren. Met deze bewerking wordt een model gegenereerd op basis van uw volledige tijdreeksgegevens, waarbij elk punt wordt geanalyseerd met hetzelfde model.    |
-| Aanvullende informatie over het probleem ophalen. | Nuttige informatie over uw gegevens en gedetecteerde anomalieën, waaronder verwachte waarden, grenzen en posities van anomalieën. |
+| Aanvullende informatie over het probleem ophalen. | Krijg nuttige informatie over uw gegevens en eventuele afwijkingen, waaronder verwachte waarden, afwijkings grenzen en posities. |
 | Grenzen voor anomaliedetectie aanpassen. | Met de Anomaly Detector-API worden automatisch grenzen voor anomaliedetectie gemaakt. U kunt deze grenzen aanpassen om de gevoeligheid van de API voor anomalieën in gegevens te verhogen of verlagen, en te optimaliseren voor uw gegevens. |
 
 ## <a name="demo"></a>Demo
@@ -53,13 +53,13 @@ Als u wilt weten hoe u de Anomaly Detector-API aanroept, probeert u dit [noteboo
 Voer de volgende stappen uit om het notebook uit te voeren:
 
 1. Haal een geldige abonnementssleutel en een geldig eindpunt voor de Anomaly Detector-API op. In de volgende sectie vindt u instructies voor het registreren.
-1. Meld u aan en klik op Klonen in de rechterbovenhoek.
-1. Schakel de optie 'public' in het dialoogvenster uit voordat u de kloonbewerking voltooit, anders is uw notebook, inclusief abonnementssleutels, openbaar.
-1. Klik op **Uitvoeren op gratis Compute**
+1. Meld u aan en selecteer klonen in de rechter bovenhoek.
+1. Schakel de optie openbaar uit in het dialoog venster voordat u de kloon bewerking voltooit, anders is uw notitie blok, inclusief abonnements sleutels, openbaar.
+1. Selecteer **uitvoeren op gratis Compute**
 1. Selecteer een van de notebooks.
 1. Voeg uw geldige abonnementssleutel voor de Anomaly Detector-API toe aan de variabele `subscription_key`.
 1. Wijzig de variabele `endpoint` in uw eindpunt. Bijvoorbeeld: `https://westus2.api.cognitive.microsoft.com/anomalydetector/v1.0/timeseries/last/detect`
-1. Klik in de bovenste menubalk op **Cel** en vervolgens op **Alle uitvoeren**.
+1. Selecteer in de bovenste menu balk **cel** en **Voer alles uit**.
 
 ## <a name="workflow"></a>Werkstroom
 
@@ -97,7 +97,7 @@ Er is geen klantconfiguratie nodig om zonetolerantie in te schakelen. Zonetolera
 
 ## <a name="deploy-on-premises-using-docker-containers"></a>On-premises implementeren met behulp van Docker-containers
 
-[Gebruik Anomaly Detector-containers](anomaly-detector-container-howto.md) om API-functies on-premises te implementeren. Docker-containers stellen u in staat om de service dichter bij uw gegevens te brengen voor naleving, beveiliging en andere operationele redenen.
+[Gebruik Anomaly Detector-containers](anomaly-detector-container-howto.md) om API-functies on-premises te implementeren. Met docker-containers kunt u de service dichter bij uw gegevens plaatsen voor naleving, beveiliging of andere operationele redenen.
 
 ## <a name="join-the-anomaly-detector-community"></a>Lid worden van de Anomaly Detector-community
 

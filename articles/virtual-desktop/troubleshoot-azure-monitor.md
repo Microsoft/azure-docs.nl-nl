@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 12/01/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 1818dc558ba45e318b71e1443556cc48feaede8b
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 1453d43707a3680380e553fe69d738b27fe5ae3a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100367670"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571349"
 ---
 # <a name="troubleshoot-azure-monitor-for-windows-virtual-desktop-preview"></a>Problemen met Azure Monitor voor virtueel bureau blad van Windows oplossen (preview-versie)
 
@@ -26,9 +26,9 @@ Als de configuratie werkmap niet goed werkt om Setup te automatiseren, kunt u de
 
 - Als u Diagnostische gegevens hand matig wilt inschakelen of toegang wilt krijgen tot de Log Analytics-werk ruimte, raadpleegt [u Windows diagnostische gegevens over virtueel bureau blad naar log Analytics](diagnostics-log-analytics.md)
 - Zie [log Analytics virtuele-machine-extensie voor Windows](../virtual-machines/extensions/oms-windows.md)als u de log Analytics-extensie hand matig wilt installeren op een host.
-- Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/learn/quick-create-workspace.md)om een nieuwe log Analytics-werk ruimte in te stellen.
-- Zie [Configuring Performance Counters](../azure-monitor/platform/data-sources-performance-counters.md)om prestatie meter items toe te voegen of te verwijderen.
-- Zie [gegevens bronnen van Windows-gebeurtenis logboeken verzamelen met log Analytics agent](../azure-monitor/platform/data-sources-windows-events.md)voor het configureren van gebeurtenissen voor een log Analytics-werk ruimte.
+- Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/logs/quick-create-workspace.md)om een nieuwe log Analytics-werk ruimte in te stellen.
+- Zie [Configuring Performance Counters](../azure-monitor/agents/data-sources-performance-counters.md)om prestatie meter items toe te voegen of te verwijderen.
+- Zie [gegevens bronnen van Windows-gebeurtenis logboeken verzamelen met log Analytics agent](../azure-monitor/agents/data-sources-windows-events.md)voor het configureren van gebeurtenissen voor een log Analytics-werk ruimte.
 
 ## <a name="my-data-isnt-displaying-properly"></a>Mijn gegevens worden niet correct weer gegeven
 
@@ -44,7 +44,7 @@ Als uw gegevens niet correct worden weer gegeven, controleert u uw configuratie,
 
 - Mogelijk moet u uitgaande poorten in de firewall van uw server openen zodat Azure Monitor gegevens naar de portal kunt verzenden. Zie [uitgaande poorten](https://docs.microsoft.com/azure/azure-monitor/app/ip-addresses). 
 
-- Ziet u geen gegevens uit de recente activiteit? Mogelijk wilt u 15 minuten wachten en de feed vernieuwen. Azure Monitor heeft een latentie periode van 15 minuten voor het invullen van de logboek gegevens. Zie [gegevens opname tijd vastleggen in azure monitor](../azure-monitor/platform/data-ingestion-time.md)voor meer informatie.
+- Ziet u geen gegevens uit de recente activiteit? Mogelijk wilt u 15 minuten wachten en de feed vernieuwen. Azure Monitor heeft een latentie periode van 15 minuten voor het invullen van de logboek gegevens. Zie [gegevens opname tijd vastleggen in azure monitor](../azure-monitor/logs/data-ingestion-time.md)voor meer informatie.
 
 Als u geen gegevens mist, maar uw gegevens nog steeds niet goed worden weer gegeven, is er mogelijk een probleem in de query of de gegevens bronnen. Bekijk onze bekende problemen en beperkingen. 
 
@@ -52,7 +52,7 @@ Als u geen gegevens mist, maar uw gegevens nog steeds niet goed worden weer gege
 
 Azure Monitor voor virtueel bureau blad van Windows maakt gebruik van Azure Monitor-werkmappen. Met werkmappen kunt u een kopie van de sjabloon virtuele Windows-bureau blad-werkmap opslaan en uw eigen aanpassingen door voeren.
 
-Met behulp van aangepaste werkmap sjablonen worden niet automatisch updates van de product groep toegepast. Zie voor meer informatie [problemen oplossen op basis van een werkmap](../azure-monitor/insights/troubleshoot-workbooks.md) en het [overzicht van werkmappen](../azure-monitor/platform/workbooks-overview.md).
+Met behulp van aangepaste werkmap sjablonen worden niet automatisch updates van de product groep toegepast. Zie voor meer informatie [problemen oplossen op basis van een werkmap](../azure-monitor/insights/troubleshoot-workbooks.md) en het [overzicht van werkmappen](../azure-monitor/visualize/workbooks-overview.md).
 
 ## <a name="i-cant-interpret-the-data"></a>Ik kan de gegevens niet interpreteren
 

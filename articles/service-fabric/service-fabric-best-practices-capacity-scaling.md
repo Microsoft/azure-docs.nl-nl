@@ -1,19 +1,19 @@
 ---
-title: Capaciteits planning en schalen voor Azure Service Fabric
+title: Plannen en schalen van capaciteiten voor Azure Service Fabric
 description: Aanbevolen procedures voor het plannen en schalen van Service Fabric clusters en toepassingen.
 author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d7d9ed8fa695c636e7aaf36fd034babb4de012d9
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 32a9c26bb9e89cf4057cc753b02ad3c006d0bae6
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98784677"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595065"
 ---
-# <a name="capacity-planning-and-scaling-for-azure-service-fabric"></a>Capaciteits planning en schalen voor Azure Service Fabric
+# <a name="capacity-planning-and-scaling-for-azure-service-fabric"></a>Plannen en schalen van capaciteiten voor Azure Service Fabric
 
 Voordat u Azure Service Fabric cluster of schaal Compute-resources maakt die uw cluster hosten, is het belang rijk om capaciteit te plannen. Zie [de service Fabric cluster capaciteit plannen](./service-fabric-cluster-capacity.md)voor meer informatie over het plannen van capaciteit. Zie [service Fabric schaalbaarheids overwegingen](/azure/architecture/reference-architectures/microservices/service-fabric#scalability-considerations)voor meer praktische richt lijnen voor schaal baarheid van clusters.
 
@@ -26,7 +26,7 @@ Door het gebruik van automatische schaling via schaal sets voor virtuele machine
 
 * Als u uw Resource Manager-sjablonen implementeert met de juiste capaciteit, wordt uw use-case niet ondersteund.
      
-   Naast hand matig schalen kunt u een [continue integratie-en leverings pijplijn configureren in azure DevOps Services met behulp van Azure-implementatie projecten voor de resource groep](../azure-resource-manager/templates/add-template-to-azure-pipelines.md). Deze pijp lijn wordt meestal geactiveerd door een logische app die gebruikmaakt van prestatie gegevens van virtuele machines die worden opgevraagd uit het [Azure Monitor rest API](../azure-monitor/platform/rest-api-walkthrough.md). De pijp lijn wordt in feite automatisch geschaald op basis van de gewenste metrische gegevens en tijdens het optimaliseren voor Resource Manager-sjablonen.
+   Naast hand matig schalen kunt u een [continue integratie-en leverings pijplijn configureren in azure DevOps Services met behulp van Azure-implementatie projecten voor de resource groep](../azure-resource-manager/templates/add-template-to-azure-pipelines.md). Deze pijp lijn wordt meestal geactiveerd door een logische app die gebruikmaakt van prestatie gegevens van virtuele machines die worden opgevraagd uit het [Azure Monitor rest API](../azure-monitor/essentials/rest-api-walkthrough.md). De pijp lijn wordt in feite automatisch geschaald op basis van de gewenste metrische gegevens en tijdens het optimaliseren voor Resource Manager-sjablonen.
 * U hoeft slechts één virtuele-machine schaalset-knoop punt tegelijk horizon taal te schalen.
    
    Als u met drie of meer knoop punten tegelijk wilt uitschalen, moet u een [service Fabric cluster uitschalen door een schaalset voor virtuele machines toe te voegen](virtual-machine-scale-set-scale-node-type-scale-out.md). Het is veilig om schaal sets voor virtuele machines horizon taal te schalen en te schalen, één knoop punt tegelijk.

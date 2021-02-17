@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c4fde22b1b8d72ae8ae775c090e0da25ce0665f
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 905261058c2de0afae18cbc5572c64962bef8834
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96181166"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580025"
 ---
 # <a name="analyze-azure-ad-activity-logs-with-azure-monitor-logs"></a>Azure AD-activiteiten logboeken analyseren met Azure Monitor-logboeken
 
@@ -36,9 +36,9 @@ In dit artikel leert u hoe u de Azure AD-activiteiten Logboeken in uw Log Analyt
 
 Als u wilt volgen, hebt u het volgende nodig:
 
-* Een Log Analytics-werk ruimte in uw Azure-abonnement. Leer [een Log Analytics-werkruimte maken](../../azure-monitor/learn/quick-create-workspace.md).
+* Een Log Analytics-werk ruimte in uw Azure-abonnement. Leer [een Log Analytics-werkruimte maken](../../azure-monitor/logs/quick-create-workspace.md).
 * Voer eerst de stappen uit om [de Azure AD-activiteiten logboeken te routeren naar uw log Analytics-werk ruimte](howto-integrate-activity-logs-with-log-analytics.md).
-*  [Toegang](../../azure-monitor/platform/manage-access.md#manage-access-using-workspace-permissions) tot de log Analytics-werk ruimte
+*  [Toegang](../../azure-monitor/logs/manage-access.md#manage-access-using-workspace-permissions) tot de log Analytics-werk ruimte
 * De volgende rollen in Azure Active Directory (als u Log Analytics via Azure Active Directory Portal opent)
     - Beveiligingsbeheerder
     - Beveiligingslezer
@@ -47,7 +47,7 @@ Als u wilt volgen, hebt u het volgende nodig:
     
 ## <a name="navigate-to-the-log-analytics-workspace"></a>Ga naar de werk ruimte Log Analytics
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
 
 2. Selecteer **Azure Active Directory** en selecteer vervolgens **Logboeken** in het gedeelte **bewaking** om uw log Analytics-werk ruimte te openen. De werk ruimte wordt geopend met een standaard query.
 
@@ -96,7 +96,7 @@ U kunt ook waarschuwingen instellen voor uw query. Als u bijvoorbeeld een waarsc
 
 3. Voer een naam en beschrijving in voor de waarschuwing en kies het Ernst niveau. In ons voor beeld kan het worden ingesteld op **informatief**.
 
-4. Selecteer de **actie groep** die wordt gewaarschuwd wanneer het signaal optreedt. U kunt ervoor kiezen om uw team op de hoogte te stellen van een e-mail of SMS-bericht of u zou de actie kunnen automatiseren met webhooks, Azure functions of Logic apps. Meer informatie over [het maken en beheren van waarschuwings groepen vindt u in de Azure Portal](../../azure-monitor/platform/action-groups.md).
+4. Selecteer de **actie groep** die wordt gewaarschuwd wanneer het signaal optreedt. U kunt ervoor kiezen om uw team op de hoogte te stellen van een e-mail of SMS-bericht of u zou de actie kunnen automatiseren met webhooks, Azure functions of Logic apps. Meer informatie over [het maken en beheren van waarschuwings groepen vindt u in de Azure Portal](../../azure-monitor/alerts/action-groups.md).
 
 5. Zodra u de waarschuwing hebt geconfigureerd, selecteert u **waarschuwing maken** om deze in te scha kelen. 
 
@@ -110,6 +110,6 @@ De werkmappen bieden verschillende rapporten die betrekking hebben op algemene s
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Aan de slag met query's in Azure Monitor-logboeken](../../azure-monitor/log-query/get-started-queries.md)
-* [Waarschuwings groepen maken en beheren in de Azure Portal](../../azure-monitor/platform/action-groups.md)
+* [Aan de slag met query's in Azure Monitor-logboeken](../../azure-monitor/logs/get-started-queries.md)
+* [Waarschuwings groepen maken en beheren in de Azure Portal](../../azure-monitor/alerts/action-groups.md)
 * [De log Analytics-weer gaven voor Azure Active Directory installeren en gebruiken](howto-install-use-log-analytics-views.md)

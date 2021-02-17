@@ -16,16 +16,16 @@ ms.date: 12/23/2020
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8e6c13600cb5940351d31b54af403584cc68a5f
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 204d83b96e3cbe26759d678126d8826d0b2e492e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100515645"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577847"
 ---
 # <a name="delegation-and-roles-in-azure-ad-entitlement-management"></a>Overdracht en rollen in het beheer van rechten van Azure AD
 
-Standaard kunnen globale beheerders en gebruikers beheerders alle aspecten van het beheer van rechten van Azure AD maken en beheren. Het is echter mogelijk dat de gebruikers in deze rollen niet alle situaties kennen waarin toegangs pakketten zijn vereist. Normaal gesp roken is het gebruikers binnen de respectieve afdelingen, teams of projecten die weten wie ze samen werken, met welke resources en hoe lang. In plaats van onbeperkte machtigingen te verlenen aan niet-beheerders, kunt u gebruikers de minste machtigingen verlenen die ze nodig hebben om hun taak uit te voeren en te voor komen dat er conflicterende of onjuiste toegangs rechten zijn.
+Standaard kunnen globale beheerders en gebruikers beheerders alle aspecten van het beheer van rechten van Azure AD maken en beheren. Het is echter mogelijk dat de gebruikers in deze rollen niet alle situaties kennen waarin toegangs pakketten zijn vereist. Dit zijn doorgaans gebruikers binnen de afdelingen, teams of projecten die weten wie ze samen werken, met welke resources en hoe lang. In plaats van onbeperkte machtigingen te verlenen aan niet-beheerders, kunt u gebruikers de minste machtigingen verlenen die ze nodig hebben om hun taken uit te voeren en te voor komen dat er conflicterende of onjuiste toegangs rechten worden gemaakt.
 
 In deze video vindt u een overzicht van de manier waarop u Access governance van de IT-beheerder kunt delegeren aan gebruikers die geen beheerder zijn.
 
@@ -39,7 +39,7 @@ Als u wilt weten hoe u Access governance kunt delegeren in het recht op beheer, 
 
 Als IT-beheerder heeft Hana contact personen in elke afdeling: Mamta in marketing, financiële gegevens markeren en Jan in juridisch die verantwoordelijk zijn voor de resources en bedrijfs kritieke inhoud van hun afdeling.
 
-Met het recht op rechten kunt u toegangs beheer aan deze niet-beheerders delegeren, omdat ze weten welke gebruikers toegang nodig hebben, voor hoe lang en op welke resources. Dit zorgt ervoor dat de juiste mensen de toegang voor hun afdelingen beheren.
+Met het recht op rechten kunt u toegangs beheer delegeren aan deze niet-beheerders omdat ze weten welke gebruikers toegang nodig hebben, voor hoe lang en op welke resources. Delegeren naar niet-beheerders zorgt ervoor dat de juiste personen toegang beheren voor hun afdelingen.
 
 Dit is een manier waarop Hana Access governance kan delegeren aan de afdelingen marketing, financiën en juridisch.
 
@@ -47,15 +47,13 @@ Dit is een manier waarop Hana Access governance kan delegeren aan de afdelingen 
 
 1. Hana voegt die groep toe aan de rol catalogus makers.
 
-    Mamta, Mark en Joe kunnen nu catalogi maken voor hun afdelingen, resources toevoegen die hun afdelingen nodig hebben en verdere delegering uitvoeren in de catalogus.
-
-    Houd er rekening mee dat Mamta, Mark en Joe de catalogussen van elkaar niet kunnen zien.
+    Mamta, Mark en Joe kunnen nu catalogi maken voor hun afdelingen, resources toevoegen die hun afdelingen nodig hebben en verdere delegering uitvoeren in de catalogus. Ze kunnen elkaars catalogi niet zien.
 
 1. Mamta maakt een **marketing** catalogus. Dit is een container met resources.
 
 1. Mamta voegt de resources die haar marketing afdeling eigendom is van deze catalogus toe.
 
-1. Mamta kan extra personen van haar afdeling toevoegen als catalogus eigenaars voor deze catalogus. Zo kunt u de verantwoordelijkheden voor het beheer van catalogi delen.
+1. Mamta kunnen andere personen van haar afdeling toevoegen als catalogus eigenaars voor deze catalogus, waardoor de verantwoordelijkheden voor het beheer van de catalogus kunnen worden gedeeld.
 
 1. Mamta kan het maken en beheren van toegangs pakketten in de marketing catalogus verder overdragen aan project managers in de marketing afdeling. Ze kan dit doen door ze toe te wijzen aan de rol Access Package Manager. Een Access package manager kan toegangs pakketten maken en beheren. 
 
@@ -78,19 +76,19 @@ Het beheer van rechten heeft de volgende rollen die specifiek zijn voor het behe
 
 | Rol van rechten beheer | Description |
 | --- | --- |
-| Maker van catalogus | Maak en beheer catalogi. Doorgaans een IT-beheerder die geen globale beheerder of een resource-eigenaar is voor een verzameling resources. De persoon die een catalogus maakt, wordt automatisch de eerste catalogus eigenaar van de catalogus en kan extra catalogus eigenaren toevoegen. Een maker van de catalogus kan geen catalogi beheren of weer geven die niet eigenaar zijn en resources niet kunnen toevoegen die niet zijn opgenomen in een catalogus. Als de maker van de catalogus een andere catalogus moet beheren of resources toevoegt waarvan ze geen eigenaar zijn, kunnen ze een mede-eigenaar van die catalogus of resource aanvragen. |
-| Catalogus eigenaar | Bestaande catalogi bewerken en beheren. Doorgaans een IT-beheerder of eigenaar van een resource, of een gebruiker die de eigenaar van de catalogus heeft opgegeven. |
+| Maker van catalogus | Maak en beheer catalogi. Doorgaans een IT-beheerder die geen globale beheerder of een resource-eigenaar is voor een verzameling resources. De persoon die een catalogus maakt, wordt automatisch de eerste catalogus eigenaar van de catalogus en kan meer catalogus eigenaren toevoegen. Een maker van de catalogus kan geen catalogi beheren of weer geven die niet eigenaar zijn en resources niet kunnen toevoegen die niet zijn opgenomen in een catalogus. Als de maker van de catalogus een andere catalogus moet beheren of resources toevoegt waarvan ze geen eigenaar zijn, kunnen ze een mede-eigenaar van die catalogus of resource aanvragen. |
+| Catalogus eigenaar | Bestaande catalogi bewerken en beheren. Doorgaans een IT-beheerder of eigenaar van een resource, of een gebruiker die de eigenaar van de catalogus heeft gekozen. |
 | Toegangs pakket beheer | Bewerk en beheer alle bestaande toegangs pakketten in een catalogus. |
 | Pakket toewijzings beheer openen | Alle bestaande toewijzingen van het toegangs pakket bewerken en beheren. |
 
-Daarnaast hebben een aangewezen goed keurder en een aanvrager van een toegangs pakket ook rechten, hoewel ze geen rollen zijn.
+De gekozen goed keurder en een aanvrager van een toegangs pakket hebben ook rechten, hoewel ze geen rollen zijn.
 
 | Rechts | Description |
 | --- | --- |
 | Fiatteur | Geautoriseerd door een beleid voor het goed keuren of weigeren van aanvragen voor toegang tot pakketten, hoewel ze de toegangs pakket definities niet kunnen wijzigen. |
 | Requestor | Geautoriseerd door een beleid van een toegangs pakket om het toegangs pakket aan te vragen. |
 
-De volgende tabel geeft een lijst van de taken die de rechten voor het beheer kunnen uitvoeren.
+De volgende tabel geeft een lijst van de taken die de rechten voor het beheer kunnen bieden.
 
 | Taak | Beheerder | Maker van catalogus | Catalogus eigenaar | Toegangs pakket beheer | Pakket toewijzings beheer openen |
 | --- | :---: | :---: | :---: | :---: | :---: |
@@ -118,9 +116,9 @@ De volgende tabel geeft een lijst van de taken die de rechten voor het beheer ku
 
 ## <a name="required-roles-to-add-resources-to-a-catalog"></a>Vereiste rollen om resources toe te voegen aan een catalogus
 
-Een globale beheerder kan een groep toevoegen of verwijderen (door de Cloud gemaakte beveiligings groepen of door de Cloud gemaakte Microsoft 365 groepen), de toepassing of de share point online-site in een catalogus. Een gebruikers beheerder kan een wille keurige groep of toepassing toevoegen aan of verwijderen uit een catalogus, met uitzonde ring van een groep die is geconfigureerd als toegewezen aan een directory-rol. Houd er rekening mee dat een gebruikers beheerder toegangs pakketten kan beheren in een catalogus die groepen bevat die zijn geconfigureerd als toegewezen aan een directory-rol.
+Een globale beheerder kan een groep toevoegen of verwijderen (door de Cloud gemaakte beveiligings groepen of door de Cloud gemaakte Microsoft 365 groepen), de toepassing of de share point online-site in een catalogus. Een gebruikers beheerder kan een wille keurige groep of toepassing toevoegen aan of verwijderen uit een catalogus, met uitzonde ring van een groep die is geconfigureerd als toegewezen aan een directory-rol. Houd er rekening mee dat een gebruikers beheerder toegangs pakketten kan beheren in een catalogus die groepen bevat die zijn geconfigureerd als toegewezen aan een directory-rol.  Raadpleeg voor meer informatie over door de gebruiker toewijs bare groepen [een door een functie toewijs bare groep maken in azure Active Directory](../roles/groups-create-eligible.md).
 
-Voor een gebruiker die geen globale beheerder of gebruikers beheerder is, om groepen, toepassingen of share point online-sites toe te voegen aan een catalogus, moet die gebruiker *zowel* de vereiste beheer functie voor Azure AD-adreslijst functies als de bevoegdheid van de catalogus eigenaar hebben. De volgende tabel geeft een lijst van de functie combinaties die nodig zijn om resources toe te voegen aan een catalogus. Als u resources uit een catalogus wilt verwijderen, moet u dezelfde rollen hebben.
+Voor een gebruiker die geen globale beheerder of gebruikers beheerder is, om groepen, toepassingen of share point online-sites toe te voegen aan een catalogus, moet die gebruiker *zowel* de vereiste beheer functie voor Azure AD-adreslijst functies als de bevoegdheid voor de catalogus eigenaar hebben. De volgende tabel geeft een lijst van de functie combinaties die nodig zijn om resources toe te voegen aan een catalogus. Als u resources uit een catalogus wilt verwijderen, moet u dezelfde rollen hebben.
 
 | Azure AD-adreslijst functie | Rol van rechten beheer | Kan beveiligings groep toevoegen | Kan Microsoft 365 groep toevoegen | Kan app toevoegen | Kan de share point online-site toevoegen |
 | --- | :---: | :---: | :---: | :---: | :---: |

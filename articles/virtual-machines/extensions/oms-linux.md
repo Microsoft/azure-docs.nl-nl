@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/18/2020
 ms.author: akjosh
-ms.openlocfilehash: f75ad90a562a39f940e1006a2e4d9123eff2b47c
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 202cdc341ce31c2347552e6fbc430c679ef28d7f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202178"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580093"
 ---
 # <a name="log-analytics-virtual-machine-extension-for-linux"></a>De virtuele-machine-extensie Log Analytics voor Linux
 
@@ -37,7 +37,7 @@ Azure Monitor Logboeken biedt bewakings-, waarschuwings-en waarschuwings functie
 
 ### <a name="operating-system"></a>Besturingssysteem
 
-Raadpleeg het artikel [overzicht van Azure monitor agents](../../azure-monitor/platform/agents-overview.md#supported-operating-systems) voor meer informatie over de ondersteunde Linux-distributies.
+Raadpleeg het artikel [overzicht van Azure monitor agents](../../azure-monitor/agents/agents-overview.md#supported-operating-systems) voor meer informatie over de ondersteunde Linux-distributies.
 
 ### <a name="agent-and-vm-extension-version"></a>Versie van agent en VM-extensie
 De volgende tabel bevat een overzicht van de versie van de Log Analytics VM-extensie en Log Analytics agent bundel voor elke release. Er wordt een koppeling naar de release opmerkingen voor de Log Analytics agent bundel versie opgenomen. Release opmerkingen bevatten informatie over fout oplossingen en nieuwe functies die beschikbaar zijn voor een bepaalde agent versie.  
@@ -76,7 +76,7 @@ De Log Analytics agent-extensie voor Linux vereist dat de virtuele doel machine 
 
 ## <a name="extension-schema"></a>Extensieschema
 
-De volgende JSON toont het schema voor de uitbrei ding van de Log Analytics agent. De uitbrei ding vereist de werk ruimte-ID en de werkruimte sleutel van de doel Log Analytics werkruimte; deze waarden vindt u in de Azure Portal [log Analytics-werk ruimte](../../azure-monitor/learn/quick-collect-linux-computer.md#obtain-workspace-id-and-key) . Omdat de werkruimte sleutel moet worden behandeld als gevoelige gegevens, moet deze worden opgeslagen in een configuratie met een beveiligde instelling. De beveiligde instellings gegevens voor de Azure VM-extensie zijn versleuteld en worden alleen ontsleuteld op de virtuele doel machine. Houd er rekening mee dat **workspaceId** en **workspaceKey** hoofdletter gevoelig zijn.
+De volgende JSON toont het schema voor de uitbrei ding van de Log Analytics agent. De uitbrei ding vereist de werk ruimte-ID en de werkruimte sleutel van de doel Log Analytics werkruimte; deze waarden vindt u in de Azure Portal [log Analytics-werk ruimte](../../azure-monitor/vm/quick-collect-linux-computer.md#obtain-workspace-id-and-key) . Omdat de werkruimte sleutel moet worden behandeld als gevoelige gegevens, moet deze worden opgeslagen in een configuratie met een beveiligde instelling. De beveiligde instellings gegevens voor de Azure VM-extensie zijn versleuteld en worden alleen ontsleuteld op de virtuele doel machine. Houd er rekening mee dat **workspaceId** en **workspaceKey** hoofdletter gevoelig zijn.
 
 ```json
 {
@@ -107,7 +107,7 @@ De volgende JSON toont het schema voor de uitbrei ding van de Log Analytics agen
 
 ### <a name="property-values"></a>Eigenschaps waarden
 
-| Naam | Waarde/voor beeld |
+| Name | Waarde/voor beeld |
 | ---- | ---- |
 | apiVersion | 2018-06-01 |
 | publisher | Micro soft. EnterpriseCloud. monitoring |
@@ -221,7 +221,7 @@ Uitvoer voor uitvoering van extensie wordt vastgelegd in het volgende bestand:
 | 53 | Deze uitbrei ding is mislukt vanwege ontbrekende of onjuiste configuratie parameters | Controleer de uitvoer en logboeken voor meer informatie over wat er mis ging. Controleer ook de juistheid van de werk ruimte-ID en controleer of de machine is verbonden met internet. |
 | 55 | Kan geen verbinding maken met de Azure Monitor-service of de vereiste pakketten ontbreken of met dpkg Package Manager is vergrendeld| Controleer of het systeem toegang heeft tot internet of dat er een geldige HTTP-proxy is ingesteld. Controleer bovendien de juistheid van de werk ruimte-ID en controleer of krul-en tar-hulpprogram ma's zijn geïnstalleerd. |
 
-Meer informatie over het oplossen van problemen vindt u in de [log Analytics-agent-for-Linux Troubleshooting Guide (Engelstalig](../../azure-monitor/platform/vmext-troubleshoot.md)).
+Meer informatie over het oplossen van problemen vindt u in de [log Analytics-agent-for-Linux Troubleshooting Guide (Engelstalig](../../azure-monitor/visualize/vmext-troubleshoot.md)).
 
 ### <a name="support"></a>Ondersteuning
 

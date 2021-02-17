@@ -3,12 +3,12 @@ title: Hoe kan ik... in Azure-toepassing inzichten | Microsoft Docs
 description: Veelgestelde vragen in Application Insights.
 ms.topic: conceptual
 ms.date: 04/04/2017
-ms.openlocfilehash: 134089f4df8f80147182835ca8746322c1de7e50
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 74a4d7ee65dccead132cfcebd9bf8c0de9b761a5
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87319249"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584155"
 ---
 # <a name="how-do-i--in-application-insights"></a>Hoe kan ik ... in Application Insights?
 ## <a name="get-an-email-when-"></a>Een e-mail ontvangen wanneer...
@@ -16,20 +16,20 @@ ms.locfileid: "87319249"
 Stel een [Beschik baarheid-webtest](./monitor-web-app-availability.md)in.
 
 ### <a name="email-if-my-site-is-overloaded"></a>E-mail als mijn site overbelast is
-Stel een [waarschuwing](../platform/alerts-log.md) in voor de **reactie tijd**van de server. Een drempel waarde tussen 1 en 2 seconden zou moeten werken.
+Stel een [waarschuwing](../alerts/alerts-log.md) in voor de **reactie tijd** van de server. Een drempel waarde tussen 1 en 2 seconden zou moeten werken.
 
 ![Scherm afbeelding die laat zien hoe u een waarschuwing instelt voor de reactie tijd van de server.](./media/how-do-i/030-server.png)
 
 Uw app kan ook tekenen van een stam weer geven door fout codes te retour neren. Stel een waarschuwing in voor **mislukte aanvragen**.
 
-Als u een waarschuwing voor **Server uitzonderingen**wilt instellen, moet u mogelijk [Extra Setup](./asp-net-exceptions.md) uitvoeren om gegevens te bekijken.
+Als u een waarschuwing voor **Server uitzonderingen** wilt instellen, moet u mogelijk [Extra Setup](./asp-net-exceptions.md) uitvoeren om gegevens te bekijken.
 
 ### <a name="email-on-exceptions"></a>E-mail op uitzonde ringen
 1. [Uitzonderings bewaking instellen](./asp-net-exceptions.md)
-2. [Een waarschuwing instellen](../platform/alerts-log.md) voor de metriek van het aantal uitzonde ringen
+2. [Een waarschuwing instellen](../alerts/alerts-log.md) voor de metriek van het aantal uitzonde ringen
 
 ### <a name="email-on-an-event-in-my-app"></a>E-mail voor een gebeurtenis in mijn app
-Stel dat u een e-mail bericht wilt ontvangen wanneer er een specifieke gebeurtenis plaatsvindt. Application Insights biedt deze functie niet rechtstreeks, maar kan wel [een waarschuwing verzenden wanneer een metriek een drempel waarde overschrijdt](../platform/alerts-log.md).
+Stel dat u een e-mail bericht wilt ontvangen wanneer er een specifieke gebeurtenis plaatsvindt. Application Insights biedt deze functie niet rechtstreeks, maar kan wel [een waarschuwing verzenden wanneer een metriek een drempel waarde overschrijdt](../alerts/alerts-log.md).
 
 Waarschuwingen kunnen worden ingesteld op [aangepaste metrische gegevens](./api-custom-events-metrics.md#trackmetric), maar geen aangepaste gebeurtenissen. Schrijf wat code om een metrische waarde te verg Roten wanneer de gebeurtenis zich voordoet:
 
@@ -51,7 +51,7 @@ Omdat waarschuwingen twee statussen hebben, moet u een lage waarde verzenden wan
 telemetry.TrackMetric("Alarm", 0.5);
 ```
 
-Maak een grafiek in [metrische Explorer](../platform/metrics-charts.md) om uw wekker te bekijken:
+Maak een grafiek in [metrische Explorer](../essentials/metrics-charts.md) om uw wekker te bekijken:
 
 ![Scherm afbeelding die laat zien hoe u een grafiek in metrische Explorer kunt maken om uw wekker weer te geven.](./media/how-do-i/010-alarm.png)
 
@@ -71,11 +71,11 @@ Enkele punten om in overweging te nemen:
 * Omdat e-mail berichten beide op ' alert ' en ' in orde ' worden verzonden, kunt u de eenmalige gebeurtenis beschouwen als een voor waarde met twee status waarden. Een voor beeld: in plaats van de gebeurtenis ' taak voltooid ', een ' taak wordt uitgevoerd ', waarbij u e-mail berichten ontvangt aan het begin en einde van een taak.
 
 ### <a name="set-up-alerts-automatically"></a>Waarschuwingen automatisch instellen
-[Power shell gebruiken voor het maken van nieuwe waarschuwingen](../platform/alerts-log.md)
+[Power shell gebruiken voor het maken van nieuwe waarschuwingen](../alerts/alerts-log.md)
 
 ## <a name="use-powershell-to-manage-application-insights"></a>Power shell gebruiken voor het beheren van Application Insights
 * [Nieuwe resources maken](./create-new-resource.md#creating-a-resource-automatically)
-* [Nieuwe waarschuwingen maken](../platform/alerts-log.md)
+* [Nieuwe waarschuwingen maken](../alerts/alerts-log.md)
 
 ## <a name="separate-telemetry-from-different-versions"></a>Telemetrie scheiden van verschillende versies
 
@@ -88,7 +88,7 @@ Enkele punten om in overweging te nemen:
 
 ## <a name="visualize-data"></a>Gegevens visualiseren
 #### <a name="dashboard-with-metrics-from-multiple-apps"></a>Dash board met metrische gegevens van meerdere apps
-* Pas in de [metrische Explorer](../platform/metrics-charts.md)de grafiek aan en sla deze op als favoriet. Vastmaken aan het Azure-dash board.
+* Pas in de [metrische Explorer](../essentials/metrics-charts.md)de grafiek aan en sla deze op als favoriet. Vastmaken aan het Azure-dash board.
 
 #### <a name="dashboard-with-data-from-other-sources-and-application-insights"></a>Dash board met gegevens uit andere bronnen en Application Insights
 * [Telemetrie exporteren naar Power bi](./export-power-bi.md).
@@ -165,6 +165,6 @@ De metrische gegevens die u kunt weer geven in Metrics Explorer zijn een set sys
 * **UNIX-server**  -  [Verzamelde installeren](./java-collectd.md)
 
 ### <a name="to-display-more-performance-counters"></a>Meer prestatie meter items weer geven
-* Voeg eerst [een nieuwe grafiek toe](../platform/metrics-charts.md) en kijk of de teller zich in de Basic-Set bevindt die wij bieden.
+* Voeg eerst [een nieuwe grafiek toe](../essentials/metrics-charts.md) en kijk of de teller zich in de Basic-Set bevindt die wij bieden.
 * Als dat niet het geval is, [voegt u de teller toe aan de set die wordt verzameld door de module prestatie meter items](./performance-counters.md).
 

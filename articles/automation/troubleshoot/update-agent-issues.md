@@ -5,12 +5,12 @@ services: automation
 ms.date: 01/25/2020
 ms.topic: troubleshooting
 ms.subservice: update-management
-ms.openlocfilehash: d4fbc566cb82eb3b728b37aa1f1cc20ff92f4fca
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 9516210021ce48f069ae3b3b4e02503527e0db24
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896237"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580886"
 ---
 # <a name="troubleshoot-windows-update-agent-issues"></a>Problemen met de Windows Update-agent oplossen
 
@@ -87,7 +87,7 @@ Proxy-en firewall configuraties moeten de Hybrid Runbook Worker agent toestaan t
 
 Met deze controle wordt bepaald of de Log Analytics-agent voor Windows ( `healthservice` ) op de computer wordt uitgevoerd. Voor meer informatie over het oplossen van problemen met de service, Zie [de log Analytics-agent voor Windows wordt niet uitgevoerd](hybrid-runbook-worker.md#mma-not-running).
 
-Zie [de agent voor Windows installeren](../../azure-monitor/learn/quick-collect-windows-computer.md#install-the-agent-for-windows)als u de log Analytics-agent voor Windows opnieuw wilt installeren.
+Zie [de agent voor Windows installeren](../../azure-monitor/vm/quick-collect-windows-computer.md#install-the-agent-for-windows)als u de log Analytics-agent voor Windows opnieuw wilt installeren.
 
 ### <a name="monitoring-agent-service-events"></a>Service gebeurtenissen van monitoring agent
 

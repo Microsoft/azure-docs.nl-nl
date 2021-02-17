@@ -7,12 +7,12 @@ ms.date: 01/27/2021
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 1c16da10a8a7853b1392383855aba0ff24424f33
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: d0e59f73dd9b62b528c3d86d315b613312df7773
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100515866"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577051"
 ---
 # <a name="monitor-the-overall-health-of-an-iot-central-application"></a>De algehele status van een IoT Central toepassing bewaken
 
@@ -23,7 +23,7 @@ ms.locfileid: "100515866"
 
 In dit artikel leert u hoe u de set metrische gegevens van IoT Central kunt gebruiken om de status van apparaten die zijn verbonden met uw IoT Central toepassing en de status van uw actieve gegevens exports te beoordelen.
 
-Metrische gegevens zijn standaard ingeschakeld voor uw IoT Central-toepassing en u opent deze vanuit de [Azure Portal](https://portal.azure.com/). Het [Azure monitor data platform geeft deze metrische gegevens](../../azure-monitor/platform/data-platform-metrics.md) weer en biedt verschillende manieren waarop u ermee kunt werken. U kunt bijvoorbeeld grafieken gebruiken in de Azure Portal, een REST API of query's in Power shell of de Azure CLI.
+Metrische gegevens zijn standaard ingeschakeld voor uw IoT Central-toepassing en u opent deze vanuit de [Azure Portal](https://portal.azure.com/). Het [Azure monitor data platform geeft deze metrische gegevens](../../azure-monitor/essentials/data-platform-metrics.md) weer en biedt verschillende manieren waarop u ermee kunt werken. U kunt bijvoorbeeld grafieken gebruiken in de Azure Portal, een REST API of query's in Power shell of de Azure CLI.
 
 ### <a name="trial-applications"></a>Proef toepassingen
 
@@ -46,7 +46,7 @@ Toegang tot metrische gegevens in het Azure Portal wordt beheerd door [Azure Rol
 
 ## <a name="iot-central-metrics"></a>IoT Central metrische gegevens
 
-Zie [ondersteunde metrische gegevens met Azure monitor](../../azure-monitor/platform/metrics-supported.md#microsoftiotcentraliotapps)voor een lijst met metrische gegevens die momenteel beschikbaar zijn voor IOT Central.
+Zie [ondersteunde metrische gegevens met Azure monitor](../../azure-monitor/essentials/metrics-supported.md#microsoftiotcentraliotapps)voor een lijst met metrische gegevens die momenteel beschikbaar zijn voor IOT Central.
 
 ### <a name="metrics-and-invoices"></a>Metrische gegevens en facturen
 

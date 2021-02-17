@@ -8,12 +8,12 @@ ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: df4bd0ae0884feae8bd21e33f4d27b6ceb207337
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 843e11e7f2df404a6bf1866da7b383ee9d1097de
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233998"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574785"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Veelgestelde vragen over configuratie en beheer voor Web Apps in azure
 
@@ -292,7 +292,7 @@ De snelste manier om te zoeken naar de versie van Microsoft .NET die in App Serv
 
 ## <a name="why-isnt-autoscale-working-as-expected"></a>Waarom werkt de functie voor automatisch schalen niet zoals verwacht?
 
-Als Azure automatisch schalen niet is geschaald in of geschaald naar verwachting van het web-app-exemplaar, is het mogelijk dat er een scenario wordt gebruikt waarin wordt beoogd niet te schalen om een oneindige lus te voor komen vanwege ' gaat en neer '. Dit gebeurt meestal wanneer er geen geschikte marge is tussen de drempel waarden voor uitschalen en schalen. Zie [Aanbevolen procedures voor automatisch schalen](../azure-monitor/platform/autoscale-best-practices.md#autoscale-best-practices)voor meer informatie over het voor komen van ' gaat en neer ' en het lezen van de best practices voor automatisch schalen.
+Als Azure automatisch schalen niet is geschaald in of geschaald naar verwachting van het web-app-exemplaar, is het mogelijk dat er een scenario wordt gebruikt waarin wordt beoogd niet te schalen om een oneindige lus te voor komen vanwege ' gaat en neer '. Dit gebeurt meestal wanneer er geen geschikte marge is tussen de drempel waarden voor uitschalen en schalen. Zie [Aanbevolen procedures voor automatisch schalen](../azure-monitor/autoscale/autoscale-best-practices.md#autoscale-best-practices)voor meer informatie over het voor komen van ' gaat en neer ' en het lezen van de best practices voor automatisch schalen.
 
 ## <a name="why-does-autoscale-sometimes-scale-only-partially"></a>Waarom wordt de functie voor automatisch schalen soms slechts gedeeltelijk geschaald?
 

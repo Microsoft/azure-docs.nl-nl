@@ -8,12 +8,12 @@ ms.author: chpalm
 ms.date: 10/03/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 7c522abd04f4a3e480bb5c3e14e78cc03dbd5d86
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
-ms.translationtype: HT
+ms.openlocfilehash: a047761669920d6460c3d6fb6d74b970effa7846
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888637"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572025"
 ---
 # <a name="region-availability-and-data-residency"></a>Regiobeschikbaarheid en gegevenslocatie
 
@@ -73,7 +73,7 @@ Audio- en video-communicatie wordt kortstondig verwerkt door de service en er wo
 
 ## <a name="azure-monitor-and-log-analytics"></a>Azure Monitor en Log Analytics
 
-Met Azure Communication Services worden logboekgegevens van Azure Monitor ingevoerd voor een inzicht in de operationele status en het gebruik van de service. Sommige van deze logboeken bevatten Communication Service-identiteiten en telefoonnummers als veldgegevens. Als u mogelijk persoonlijke gegevens wilt verwijderen [gebruikt u deze procedures voor Azure Monitor](../../azure-monitor/platform/personal-data-mgmt.md). U kunt ook [de standaard retentieperiode voor Azure Monitor](../../azure-monitor/platform/manage-cost-storage.md) configureren.
+Met Azure Communication Services worden logboekgegevens van Azure Monitor ingevoerd voor een inzicht in de operationele status en het gebruik van de service. Sommige van deze logboeken bevatten Communication Service-identiteiten en telefoonnummers als veldgegevens. Als u mogelijk persoonlijke gegevens wilt verwijderen [gebruikt u deze procedures voor Azure Monitor](../../azure-monitor/logs/personal-data-mgmt.md). U kunt ook [de standaard retentieperiode voor Azure Monitor](../../azure-monitor/logs/manage-cost-storage.md) configureren.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

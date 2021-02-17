@@ -3,12 +3,12 @@ title: IP-adressen die worden gebruikt door Azure Monitor
 description: Uitzonde ringen voor Server firewalls vereist voor Application Insights
 ms.topic: conceptual
 ms.date: 01/27/2020
-ms.openlocfilehash: 0e7028c59b4588ac23424a63f4e3ce240391dfb8
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 72f825630ec94b5c32a949a4395c431318afa87f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99220799"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584130"
 ---
 # <a name="ip-addresses-used-by-azure-monitor"></a>IP-adressen die worden gebruikt door Azure Monitor
 [Azure monitor](../overview.md) gebruikt een aantal IP-adressen. Azure Monitor bestaat uit metrische platform metrieken en u kunt zich ook aanmelden bij Log Analytics en Application Insights. Mogelijk moet u deze adressen weten als de app of infra structuur die u bewaakt, wordt gehost achter een firewall.
@@ -254,21 +254,21 @@ Het beheren van wijzigingen in IP-bron adressen kan veel tijd in beslag nemen. D
    1. Voeg de naam van de resource groep toe en voer vervolgens Details van het *exemplaar* in.
    1. Klik op **controleren + maken** en klik vervolgens op *maken*.
    
-   :::image type="content" source="../platform/media/action-groups/action-group-create-security-group.png" alt-text="Voor beeld voor het maken van een netwerk beveiligings groep."border="true":::
+   :::image type="content" source="../alerts/media/action-groups/action-group-create-security-group.png" alt-text="Voor beeld voor het maken van een netwerk beveiligings groep."border="true":::
 
 3. Ga naar de resource groep en klik vervolgens op de *netwerk beveiligings groep* die u hebt gemaakt.
 
     1. Selecteer *inkomende beveiligings regels*.
     1. Klik op **Toevoegen**.
     
-    :::image type="content" source="../platform/media/action-groups/action-group-add-service-tag.png" alt-text="Voor beeld voor het toevoegen van een servicetag."border="true":::
+    :::image type="content" source="../alerts/media/action-groups/action-group-add-service-tag.png" alt-text="Voor beeld voor het toevoegen van een servicetag."border="true":::
 
 4. Er wordt een nieuw venster geopend in het rechterdeel venster.
     1.  Bron **selecteren: servicetag**
     1.  Bron service label: **ActionGroup**
     1.  Klik op **Add**.
     
-    :::image type="content" source="../platform/media/action-groups/action-group-service-tag.png" alt-text="Voor beeld voor het toevoegen van een servicetag."border="true":::
+    :::image type="content" source="../alerts/media/action-groups/action-group-service-tag.png" alt-text="Voor beeld voor het toevoegen van een servicetag."border="true":::
 
 
 ## <a name="profiler"></a>Profiler

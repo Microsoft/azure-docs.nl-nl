@@ -4,12 +4,12 @@ description: De Azure Block Chain-Service bewaken via Azure Monitor
 ms.date: 01/08/2020
 ms.topic: how-to
 ms.reviewer: v-umha
-ms.openlocfilehash: 7300a5dcfb0150e6182636dcb71bacfa68c787db
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 05147f48c4cde4cc97bf6cc9cae5c8220a389ebd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87076918"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594914"
 ---
 # <a name="monitor-azure-blockchain-service-through-azure-monitor"></a>De Azure Block Chain-Service bewaken via Azure Monitor  
 
@@ -17,20 +17,20 @@ Als klanten Block Chain-scenario's voor de productie kwaliteit uitvoeren op Azur
 
 ## <a name="what-is-azure-monitor"></a>Wat is Azure Monitor?
 
-Met de Azure Block Chain-service worden bewakings gegevens gemaakt met behulp van Azure Monitor. Dit is een volledige stack monitoring-service in azure die een volledige set functies biedt om uw Azure-resources te controleren. Zie voor meer informatie over Azure Monitor [Azure-resources bewaken met Azure monitor](../../azure-monitor/insights/monitor-azure-resource.md).
+Met de Azure Block Chain-service worden bewakings gegevens gemaakt met behulp van Azure Monitor. Dit is een volledige stack monitoring-service in azure die een volledige set functies biedt om uw Azure-resources te controleren. Zie voor meer informatie over Azure Monitor [Azure-resources bewaken met Azure monitor](../../azure-monitor/essentials/monitor-azure-resource.md).
  
 
 In de volgende secties vindt u een beschrijving van de specifieke gegevens die zijn verzameld uit de Azure Block Chain-service en vindt u voor beelden voor het configureren van gegevens verzameling en het analyseren van deze gegevens met Azure-hulpprogram ma's.
 
 ## <a name="monitor-data-collected-from-azure-blockchain-service"></a>Gegevens controleren die zijn verzameld uit de Azure Block Chain-Service  
 
-De Azure Block Chain-service verzamelt dezelfde soort bewakings gegevens als andere Azure-resources, die worden beschreven in gegevens van Azure-resources [bewaken](../../azure-monitor/insights/monitor-azure-resource.md#monitoring-data) . Zie [Azure Block Chain service data Reference bewaken](#monitor-azure-blockchain-service-data-reference) voor een gedetailleerde Naslag informatie over de logboeken en metrische gegevens die door de Azure Block Chain-service zijn gemaakt.
+De Azure Block Chain-service verzamelt dezelfde soort bewakings gegevens als andere Azure-resources, die worden beschreven in gegevens van Azure-resources [bewaken](../../azure-monitor/essentials/monitor-azure-resource.md#monitoring-data) . Zie [Azure Block Chain service data Reference bewaken](#monitor-azure-blockchain-service-data-reference) voor een gedetailleerde Naslag informatie over de logboeken en metrische gegevens die door de Azure Block Chain-service zijn gemaakt.
 
 De overzichts pagina in de Azure Portal voor elke resource van een Azure Block Chain service-lid bevat een korte weer gave van de trans acties, met inbegrip van de verwerkte aanvragen en geverwerkte blokken. Sommige van deze gegevens worden automatisch verzameld en beschikbaar voor analyse wanneer u de resource van de Azure Block Chain service-lid maakt, terwijl u extra gegevens verzameling kunt inschakelen met aanvullende configuratie.
 
 ## <a name="diagnostic-settings"></a>Diagnostische instellingen  
 
-De metrische gegevens van het platform en het activiteiten logboek worden automatisch verzameld, maar u moet een diagnostische instelling maken om bron logboeken te verzamelen of deze buiten Azure Monitor door te sturen. Zie [Diagnostische instelling maken voor het verzamelen van platform logboeken en metrische gegevens in azure](../../azure-monitor/platform/diagnostic-settings.md) voor het gedetailleerde proces voor het maken van een diagnostische instelling met behulp van de Azure Portal, CLI of Power shell.
+De metrische gegevens van het platform en het activiteiten logboek worden automatisch verzameld, maar u moet een diagnostische instelling maken om bron logboeken te verzamelen of deze buiten Azure Monitor door te sturen. Zie [Diagnostische instelling maken voor het verzamelen van platform logboeken en metrische gegevens in azure](../../azure-monitor/essentials/diagnostic-settings.md) voor het gedetailleerde proces voor het maken van een diagnostische instelling met behulp van de Azure Portal, CLI of Power shell.
 
 Wanneer u een diagnostische instelling maakt, geeft u op welke categorieën logboeken u wilt verzamelen. De categorieën voor de Azure Block Chain-service worden hieronder weer gegeven.
 
@@ -42,13 +42,13 @@ Wanneer u een diagnostische instelling maakt, geeft u op welke categorieën logb
 
 ## <a name="analyze-metric-data"></a>Metrische gegevens analyseren  
 
-U kunt de metrische gegevens voor de Azure Block Chain-service analyseren met metrische gegevens Verkenner door te navigeren naar het tabblad metrische gegevens onder bewaking in de Blade ABS-resource. Zie [aan de slag met Azure Metrics Explorer](../../azure-monitor/platform/metrics-getting-started.md) voor meer informatie over het gebruik van het hulp programma. De volledige metrische gegevens voor de Azure Block Chain-service bevinden zich in de standaard gegevens van de naam ruimte Azure Block Chain service.
+U kunt de metrische gegevens voor de Azure Block Chain-service analyseren met metrische gegevens Verkenner door te navigeren naar het tabblad metrische gegevens onder bewaking in de Blade ABS-resource. Zie [aan de slag met Azure Metrics Explorer](../../azure-monitor/essentials/metrics-getting-started.md) voor meer informatie over het gebruik van het hulp programma. De volledige metrische gegevens voor de Azure Block Chain-service bevinden zich in de standaard gegevens van de naam ruimte Azure Block Chain service.
 
 U kunt **knooppunt** dimensie gebruiken bij het toevoegen van een filter of het splitsen van metrische gegevens, wat in principe meet waarden per transactie knooppunten en validatie knooppunten van het lid ABS levert.
 
 ## <a name="analyze-log-data"></a>Logboekgegevens analyseren
 
-Hier volgen enkele query's die u kunt invoeren in de zoek balk van het logboek om u te helpen bij het bewaken van de leden van de Azure Block Chain-service. Deze query's werken met de [nieuwe taal](../../azure-monitor/log-query/log-query-overview.md).
+Hier volgen enkele query's die u kunt invoeren in de zoek balk van het logboek om u te helpen bij het bewaken van de leden van de Azure Block Chain-service. Deze query's werken met de [nieuwe taal](../../azure-monitor/logs/log-query-overview.md).
 
 Als u de fout voorwaarden in de Block Chain-toepassings logboeken wilt opvragen, gebruikt u de onderstaande query:
 
@@ -74,12 +74,12 @@ Dit artikel bevat een verwijzing naar logboek-en metrische gegevens die zijn ver
 
 ### <a name="resource-logs"></a>Resourcelogboeken
 
-Alle bron logboeken delen een gemeen schappelijk schema op het hoogste niveau met enkele unieke eigenschappen die specifiek zijn voor de Block Chain-service. U kunt verwijzen naar het artikel op het [hoogste niveau bron logboeken](../../azure-monitor/platform/resource-logs-schema.md#top-level-common-schema)van de Azure Block Chain-service. Hieronder vindt u meer informatie over de specifieke eigenschappen  
+Alle bron logboeken delen een gemeen schappelijk schema op het hoogste niveau met enkele unieke eigenschappen die specifiek zijn voor de Block Chain-service. U kunt verwijzen naar het artikel op het [hoogste niveau bron logboeken](../../azure-monitor/essentials/resource-logs-schema.md#top-level-common-schema)van de Azure Block Chain-service. Hieronder vindt u meer informatie over de specifieke eigenschappen  
 
 De volgende tabel geeft een lijst van de eigenschappen voor Azure Block Chain-proxy Logboeken wanneer deze worden verzameld in Azure Monitor Logboeken of Azure Storage.  
 
 
-| Naam van eigenschap  | Beschrijving |
+| Naam van eigenschap  | Description |
 |:---|:---|
 | tijd | De datum en tijd (UTC) waarop de bewerking plaatsvond. |
 | resourceID  | De Azure Block Chain-Service resource waarvoor logboeken zijn ingeschakeld.  |
@@ -105,7 +105,7 @@ De volgende tabel geeft een lijst van de eigenschappen voor Azure Block Chain-pr
 De volgende tabel bevat de eigenschappen voor Azure Block Chain-toepassings Logboeken.
 
 
-| Naam van eigenschap  | Beschrijving |
+| Naam van eigenschap  | Description |
 |:---|:---|
 | tijd | De datum en tijd (UTC) waarop de bewerking plaatsvond. |
 | resourceID  | De Azure Block Chain-Service resource waarvoor logboeken zijn ingeschakeld.|
@@ -124,31 +124,31 @@ De volgende tabel bevat de eigenschappen voor Azure Block Chain-toepassings Logb
 
 In de volgende tabellen worden de platform gegevens weer gegeven die zijn verzameld voor de Azure Block Chain-service. Alle metrische gegevens worden opgeslagen in de standaard gegevens van de naam ruimte **Azure Block Chain Service** .
 
-Zie [Azure monitor ondersteunde metrische gegevens](../../azure-monitor/platform/metrics-supported.md)voor een lijst met alle Azure monitor ondersteunde metrische gegevens (inclusief de Azure Block Chain-Service).
+Zie [Azure monitor ondersteunde metrische gegevens](../../azure-monitor/essentials/metrics-supported.md)voor een lijst met alle Azure monitor ondersteunde metrische gegevens (inclusief de Azure Block Chain-Service).
 
 ### <a name="blockchain-metrics"></a>Metrische gegevens van Block Chain
 
 De volgende tabel bevat de lijst met block Chain-metrische gegevens die worden verzameld voor de resource van de Azure Block Chain service-lid.
 
 
-| Naam van meetwaarde | Eenheid  |  Aggregatietype| Beschrijving   |
+| Naam van metrische gegevens | Eenheid  |  Type aggregatie| Description   |
 |---|---|---|---|
-| Trans acties in behandeling   | Aantal  |  Average | Het aantal trans acties dat wacht om te worden ook niet gebruikt.   |
-| Verwerkte blokken   | Aantal  | Sum  |  Het aantal blokken dat in elk tijds interval wordt verwerkt. Op dit moment is de blok grootte 5 seconden. in een minuut worden 12 blokken en 60 blokken in vijf minuten in elk knoop punt verwerkt.   |
-|Verwerkte trans acties    | Aantal  | Sum  | Het aantal trans acties dat in een blok is verwerkt.    |
-|Trans acties in de wachtrij    |  Aantal | Average  | Het aantal trans acties dat niet direct kan worden ook niet gebruikt. Het kan zijn dat ze niet in de juiste volg orde zijn aangekomen en dat de volgende trans actie in de toekomst wordt gewacht. Het kan ook zijn dat twee trans acties hetzelfde nummer hebben als één keer (nonce) en dezelfde aardgas waarde, dus de tweede kan niet ook niet gebruikt zijn.   |
+| Trans acties in behandeling   | Count  |  Gemiddeld | Het aantal trans acties dat wacht om te worden ook niet gebruikt.   |
+| Verwerkte blokken   | Count  | Sum  |  Het aantal blokken dat in elk tijds interval wordt verwerkt. Op dit moment is de blok grootte 5 seconden. in een minuut worden 12 blokken en 60 blokken in vijf minuten in elk knoop punt verwerkt.   |
+|Verwerkte trans acties    | Count  | Sum  | Het aantal trans acties dat in een blok is verwerkt.    |
+|Trans acties in de wachtrij    |  Count | Gemiddeld  | Het aantal trans acties dat niet direct kan worden ook niet gebruikt. Het kan zijn dat ze niet in de juiste volg orde zijn aangekomen en dat de volgende trans actie in de toekomst wordt gewacht. Het kan ook zijn dat twee trans acties hetzelfde nummer hebben als één keer (nonce) en dezelfde aardgas waarde, dus de tweede kan niet ook niet gebruikt zijn.   |
 
 ### <a name="connection-metrics"></a>Verbindings gegevens  
 
 De volgende tabel geeft een lijst van de verschillende metrische verbindings gegevens die worden verzameld voor de resource van de Azure Block Chain service-lid. Dit zijn de metrische gegevens van de NGINX-proxy.
 
 
-| Naam van meetwaarde | Eenheid  |  Aggregatietype| Beschrijving |
+| Naam van metrische gegevens | Eenheid  |  Type aggregatie| Description |
 |---|---|---|---|
-| Geaccepteerde verbindingen   | Aantal  |  Sum | Het totale aantal geaccepteerde client verbindingen.   |
-| Actieve verbindingen  | Aantal  | Average  |  Het huidige aantal actieve client verbindingen, inclusief wachtende verbindingen.    |
-|Afgehandelde verbindingen    | Aantal  | Sum  | Het totale aantal verwerkte verbindingen. Over het algemeen is de parameter waarde hetzelfde als geaccepteerde verbindingen, tenzij sommige resource limieten zijn bereikt.     |
-|Verwerkte aanvragen     |  Aantal | Sum  | Het totale aantal client aanvragen.  |
+| Geaccepteerde verbindingen   | Count  |  Sum | Het totale aantal geaccepteerde client verbindingen.   |
+| Actieve verbindingen  | Count  | Gemiddeld  |  Het huidige aantal actieve client verbindingen, inclusief wachtende verbindingen.    |
+|Afgehandelde verbindingen    | Count  | Sum  | Het totale aantal verwerkte verbindingen. Over het algemeen is de parameter waarde hetzelfde als geaccepteerde verbindingen, tenzij sommige resource limieten zijn bereikt.     |
+|Verwerkte aanvragen     |  Count | Sum  | Het totale aantal client aanvragen.  |
 
 
 ### <a name="performance-metrics"></a>Metrische gegevens voor prestaties
@@ -156,15 +156,15 @@ De volgende tabel geeft een lijst van de verschillende metrische verbindings geg
 De volgende tabel bevat de prestatie gegevens die worden verzameld voor elk van de knoop punten van de Azure Block Chain-lid-resource.  
 
 
-| Naam van meetwaarde | Eenheid  |  Aggregatietype| Beschrijving   |
+| Naam van metrische gegevens | Eenheid  |  Type aggregatie| Description   |
 |---|---|---|---|
-| Percentage CPU-gebruik   | Percentage  |  Max. | Het percentage van het CPU-gebruik.     |
+| Percentage CPU-gebruik   | Percentage  |  Max | Het percentage van het CPU-gebruik.     |
 | I/o gelezen bytes   | Kilo bytes   | Sum  |  De som van i/o-Lees bewerkingen op alle knoop punten van de Block chain.      |
 |I/o-schrijf bytes     | Kilo bytes   | Sum  | De som van i/o-schrijf bewerkingen op alle knoop punten van de Block chain.     |
-|Geheugen limiet       |  Gigabytes   | Average    | Maxi maal beschikbaar geheugen voor het block chain-proces per knoop punt. |
-|Geheugengebruik     | Gigabytes  |  Average | De hoeveelheid geheugen die gemiddeld op alle knoop punten wordt gebruikt.  |
-| Percentage geheugen gebruik     | Percentage   | Average  |  Het percentage van het geheugen dat gemiddeld op alle knoop punten wordt gebruikt.       |
-|Opslag gebruik      | Gigabytes   | Average  | De hoeveelheid opslag die gemiddeld per knoop punt wordt gebruikt.       |
+|Geheugen limiet       |  Gigabytes   | Gemiddeld    | Maxi maal beschikbaar geheugen voor het block chain-proces per knoop punt. |
+|Geheugengebruik     | Gigabytes  |  Gemiddeld | De hoeveelheid geheugen die gemiddeld op alle knoop punten wordt gebruikt.  |
+| Percentage geheugen gebruik     | Percentage   | Gemiddeld  |  Het percentage van het geheugen dat gemiddeld op alle knoop punten wordt gebruikt.       |
+|Opslag gebruik      | Gigabytes   | Gemiddeld  | De hoeveelheid opslag die gemiddeld per knoop punt wordt gebruikt.       |
 
 
 ## <a name="next-steps"></a>Volgende stappen

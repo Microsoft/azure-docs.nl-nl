@@ -10,12 +10,12 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 zone_pivot_groups: client-operating-system-macos-and-linux-windows-powershell
-ms.openlocfilehash: 66b10efb6ca93bc6b4dd67d700daaf1f9049de68
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: ac9c8efbe29bf1420a94d486b650758cc22bec2f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183427"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575750"
 ---
 # <a name="upload-usage-data-metrics-and-logs-to-azure-monitor"></a>De gebruiks gegevens, de metrieken en de logboeken uploaden naar Azure Monitor
 
@@ -42,18 +42,18 @@ Zie [hulpprogram Ma's installeren](./install-client-tools.md).
 
 ## <a name="register-the-resource-provider"></a>De resourceprovider registreren
 
-Voordat u gegevens van de data service naar Azure uploadt, moet u ervoor zorgen dat de bron provider is geregistreerd voor uw Azure-abonnement `Microsoft.AzureData` .
+Voordat u gegevens van de data service naar Azure uploadt, moet u ervoor zorgen dat de bron provider is geregistreerd voor uw Azure-abonnement `Microsoft.AzureArcData` .
 
 Voer de volgende opdracht uit om de resource provider te controleren:
 
 ```azurecli
-az provider show -n Microsoft.AzureData -o table
+az provider show -n Microsoft.AzureArcData -o table
 ```
 
 Als de resource provider momenteel niet is geregistreerd in uw abonnement, kunt u deze registreren. Voer de volgende opdracht uit om deze te registreren.  Het kan een paar minuten duren voordat deze opdracht is uitgevoerd.
 
 ```azurecli
-az provider register -n Microsoft.AzureData --wait
+az provider register -n Microsoft.AzureArcData --wait
 ```
 
 ## <a name="create-service-principal"></a>Een service-principal maken
@@ -193,7 +193,7 @@ Maken, lezen, bijwerken en verwijderen (ruwe) bewerkingen op Azure Arc-gegevens 
 
 Tijdens de preview-periode vindt dit proces een nacht. De algemene richt lijnen zijn het gebruik slechts één keer per dag te uploaden. Wanneer gebruiks gegevens binnen dezelfde periode van 24 uur meerdere keren worden geëxporteerd en geüpload, wordt alleen de resource-inventaris bijgewerkt in Azure Portal, maar niet het resource gebruik.
 
-Voor het uploaden van metrische gegevens accepteert Azure monitor alleen de laatste 30 minuten aan data ([meer informatie](../../azure-monitor/platform/metrics-store-custom-rest-api.md#troubleshooting)). De richt lijnen voor het uploaden van metrische gegevens is het uploaden van de metrieken onmiddellijk na het maken van het export bestand, zodat u de volledige gegevensset in Azure Portal kunt weer geven. Als u bijvoorbeeld de metrische gegevens van 2:00 uur hebt geëxporteerd en de upload opdracht hebt uitgevoerd om 2:50 uur. Omdat Azure Monitor alleen gegevens voor de afgelopen 30 minuten accepteert, worden er mogelijk geen gegevens in de portal weer gegeven. 
+Voor het uploaden van metrische gegevens accepteert Azure monitor alleen de laatste 30 minuten aan data ([meer informatie](../../azure-monitor/essentials/metrics-store-custom-rest-api.md#troubleshooting)). De richt lijnen voor het uploaden van metrische gegevens is het uploaden van de metrieken onmiddellijk na het maken van het export bestand, zodat u de volledige gegevensset in Azure Portal kunt weer geven. Als u bijvoorbeeld de metrische gegevens van 2:00 uur hebt geëxporteerd en de upload opdracht hebt uitgevoerd om 2:50 uur. Omdat Azure Monitor alleen gegevens voor de afgelopen 30 minuten accepteert, worden er mogelijk geen gegevens in de portal weer gegeven. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

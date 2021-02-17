@@ -3,12 +3,12 @@ title: Azure Policy leren voor Kubernetes
 description: Lees hoe Azure Policy Rego gebruikt en beleids agent opent voor het beheren van clusters met Kubernetes in azure of on-premises.
 ms.date: 12/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: f25b64bc28535d125c7883f16c9e747d6250ca96
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 0aaf610cd5712ee195ed2a4108cf9e5ca9c65183
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98789735"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577098"
 ---
 # <a name="understand-azure-policy-for-kubernetes-clusters"></a>Azure Policy voor Kubernetes-clusters
 
@@ -447,7 +447,7 @@ Enkele andere overwegingen:
 ## <a name="logging"></a>Logboekregistratie
 
 Als Kubernetes-controller/-container moeten zowel de _Azure-beleids-_ als de _gate keeper_ -Logboeken in het Kubernetes-cluster worden bewaard. De logboeken kunnen worden weer gegeven op de pagina **inzichten** van het Kubernetes-cluster.
-Zie voor meer informatie [uw Kubernetes-cluster prestaties bewaken met Azure monitor voor containers](../../../azure-monitor/insights/container-insights-analyze.md).
+Zie voor meer informatie [uw Kubernetes-cluster prestaties bewaken met Azure monitor voor containers](../../../azure-monitor/containers/container-insights-analyze.md).
 
 Als u de logboeken wilt weer geven, gebruikt u `kubectl` :
 

@@ -8,12 +8,12 @@ ms.service: private-link
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: allensu
-ms.openlocfilehash: 7812d0f2e42dfed6cdd661244b77969297093a5d
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 3ed349616ae6456913c19bb073f6e9ea28e7d549
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879170"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575123"
 ---
 # <a name="use-azure-firewall-to-inspect-traffic-destined-to-a-private-endpoint"></a>Azure Firewall gebruiken om verkeer te controleren dat is bestemd voor een persoonlijk eind punt
 
@@ -106,7 +106,7 @@ Dezelfde overwegingen als in scenario 2 hierboven zijn van toepassing. In dit sc
 * Een Azure-abonnement.
 * Een Log Analytics-werkruimte.  
 
-Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/learn/quick-create-workspace.md) om een werk ruimte te maken als u er nog geen hebt in uw abonnement.
+Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/logs/quick-create-workspace.md) om een werk ruimte te maken als u er nog geen hebt in uw abonnement.
 
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
@@ -174,7 +174,7 @@ Vervang de volgende para meters in de stappen door de onderstaande informatie:
     | Resourcegroep | Selecteer **myResourceGroup**. U hebt deze resourcegroep in de vorige sectie gemaakt.  |
     | **Exemplaardetails** |  |
     | Naam van de virtuele machine | Voer **myVM** in. |
-    | Regio | Selecteer **(VS) Zuid-Centraal VS**. |
+    | Region | Selecteer **(VS) Zuid-Centraal VS**. |
     | Beschikbaarheidsopties | Laat de standaardwaarde **Geen infrastructuurredundantie vereist** staan. |
     | Installatiekopie | Selecteer **Ubuntu Server 18,04 LTS-gen1**. |
     | Grootte | Selecteer **Standard_B2s**. |
@@ -223,7 +223,7 @@ Vervang de volgende para meters in de stappen door de onderstaande informatie:
     | Resourcegroep | Selecteer **myResourceGroup**.  |
     | **Exemplaardetails** |  |
     | Naam | Voer **myAzureFirewall** in. |
-    | Regio | Selecteer **Zuid-Centraal VS**. |
+    | Region | Selecteer **Zuid-Centraal VS**. |
     | Beschikbaarheidszone | Laat de standaardwaarde **Geen** staan. |
     | Een virtueel netwerk kiezen    |    Selecteer **bestaande gebruiken**.    |
     | Virtueel netwerk    |    Selecteer **myAzFwVNet**.    |
@@ -309,7 +309,7 @@ In deze sectie maakt u een persoonlijk eind punt voor de Azure-SQL database in d
     | Resourcegroep | Selecteer **myResourceGroup**. |
     | **Exemplaardetails** | |
     | Naam | Voer **SQLPrivateEndpoint** in. |
-    | Regio | Selecteer **(VS) Zuid-Centraal vs.** |
+    | Region | Selecteer **(VS) Zuid-Centraal vs.** |
 
 6. Selecteer het tabblad **resource** of selecteer **volgende: resource** aan de onderkant van de pagina.
 
@@ -461,12 +461,12 @@ Deze regel staat communicatie toe via de firewall die we in de vorige stappen he
     | Bewerking | Voer **toestaan** in. |
     | **Regels** |  |
     | **FQDN-tags** | |
-    | Naam  | Leeg laten.  |
+    | Name  | Leeg laten.  |
     | Brontype | Wijzig het standaard **IP-adres**.    |
     | Bron | Leeg laten. |
     | FQDN-tags | De standaard instelling **0** behouden. |
     | **Doel-FQDN-naam** | |
-    | Naam | Voer **SQLPrivateEndpoint** in.    |
+    | Name | Voer **SQLPrivateEndpoint** in.    |
     | Brontype | Wijzig het standaard **IP-adres**. |
     | Bron | Voer **10.1.0.0/16** in. |
     | Protocol: poort | Voer **MSSQL: 1433** in. |
@@ -497,8 +497,8 @@ De route verzendt verkeer van het **myVM** -subnet naar de adres ruimte van het 
     | Abonnement | Selecteer uw abonnement. |
     | Resourcegroep | Selecteer **myResourceGroup**.  |
     | **Exemplaardetails** |  |
-    | Regio | Selecteer **Zuid-Centraal VS**. |
-    | Naam | Voer **het VM-AzureFirewall in**. |
+    | Region | Selecteer **Zuid-Centraal VS**. |
+    | Name | Voer **het VM-AzureFirewall in**. |
     | Gateway routes door geven | Selecteer **Nee**. |
 
 5. Selecteer **Controleren + maken**. De pagina **Beoordelen en maken** wordt weergegeven, waar uw configuratie wordt gevalideerd in Azure.

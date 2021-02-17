@@ -9,18 +9,18 @@ ms.subservice: autoscale
 ms.date: 04/18/2019
 ms.reviewer: avverma
 ms.custom: avverma
-ms.openlocfilehash: 37602f7b9a8669ce0e8db984f7f7617cffdd431c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b172f1f7137b53e98384d92c9c709694eaf0b7e9
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87029277"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594487"
 ---
 # <a name="vertical-autoscale-with-virtual-machine-scale-sets"></a>Verticaal automatisch schalen met schaal sets voor virtuele machines
 
 In dit artikel wordt beschreven hoe u Azure [Virtual Machine Scale sets](https://azure.microsoft.com/services/virtual-machine-scale-sets/) verticaal kunt schalen met of zonder opnieuw in te richten. 
 
-Verticaal schalen, ook wel bekend als *Omhoog schalen* en omlaag schalen, betekent dat de grootte van virtuele machines (VM) wordt verg root of *verkleind*als reactie op een werk belasting. Vergelijk dit gedrag met [horizon taal schalen](virtual-machine-scale-sets-autoscale-overview.md), ook wel *uitschalen* en schalen genoemd *in*, waarbij het aantal vm's wordt gewijzigd, afhankelijk van de werk belasting.
+Verticaal schalen, ook wel bekend als *Omhoog schalen* en omlaag schalen, betekent dat de grootte van virtuele machines (VM) wordt verg root of *verkleind* als reactie op een werk belasting. Vergelijk dit gedrag met [horizon taal schalen](virtual-machine-scale-sets-autoscale-overview.md), ook wel *uitschalen* en schalen genoemd *in*, waarbij het aantal vm's wordt gewijzigd, afhankelijk van de werk belasting.
 
 Opnieuw inrichten betekent dat een bestaande virtuele machine wordt verwijderd en vervangen door een nieuwe. Wanneer u de grootte van Vm's in een schaalset voor virtuele machines verhoogt of verlaagt, kunt u in sommige gevallen het formaat van bestaande Vm's wijzigen en uw gegevens behouden, terwijl u in andere gevallen nieuwe Vm's van de nieuwe grootte moet implementeren. Dit document behandelt beide gevallen.
 
@@ -118,7 +118,7 @@ Wanneer u de runbooks hebt geïmporteerd, voegt u een webhook toe aan het runboo
 
 ## <a name="add-an-alert-to-your-virtual-machine-scale-set"></a>Een waarschuwing toevoegen aan de schaalset van de virtuele machine
 
-Hieronder ziet u een Power shell-script waarin wordt getoond hoe u een waarschuwing toevoegt aan een schaalset voor virtuele machines. Raadpleeg het volgende artikel om de naam op te halen van de metrische gegevens voor het activeren van de waarschuwing: [Azure monitor automatisch schalen van algemene metrische gegevens](../azure-monitor/platform/autoscale-common-metrics.md).
+Hieronder ziet u een Power shell-script waarin wordt getoond hoe u een waarschuwing toevoegt aan een schaalset voor virtuele machines. Raadpleeg het volgende artikel om de naam op te halen van de metrische gegevens voor het activeren van de waarschuwing: [Azure monitor automatisch schalen van algemene metrische gegevens](../azure-monitor/autoscale/autoscale-common-metrics.md).
 
 ```powershell
 $actionEmail = New-AzAlertRuleEmail -CustomEmail user@contoso.com
@@ -153,8 +153,8 @@ Add-AzMetricAlertRule  -Name  $alertName `
 
 Raadpleeg de volgende artikelen voor meer informatie over het maken van waarschuwingen:
 
-* [Azure Monitor PowerShell-voorbeelden](../azure-monitor/samples/powershell-samples.md)
-* [Andere CLI-voor beelden van platformen Azure Monitor](../azure-monitor/samples/cli-samples.md)
+* [Azure Monitor PowerShell-voorbeelden](../azure-monitor/powershell-samples.md)
+* [Andere CLI-voor beelden van platformen Azure Monitor](../azure-monitor/cli-samples.md)
 
 ## <a name="summary"></a>Samenvatting
 

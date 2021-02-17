@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: yelevin
-ms.openlocfilehash: 3d9e436d636fbd5414367efb0e122748a8e9e2cb
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 35b3f4fe5703e9ce902553f992dfa44cea7db78f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100390807"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570445"
 ---
 # <a name="normalization-in-azure-sentinel"></a>Normalisatie in azure Sentinel
 
@@ -147,7 +147,7 @@ Zodra de functie is gewijzigd, klikt u nogmaals op opslaan en gebruikt u dezelfd
 
 JSON, XML en CSV zijn met name handig voor het parseren van query's. Azure Sentinel heeft ingebouwde functies voor het parseren van JSON, XML en CSV, evenals een hulp programma voor JSON-parsering.  Zie [JSON-velden gebruiken in azure Sentinel](https://techcommunity.microsoft.com/t5/azure-sentinel/tip-easily-use-json-fields-in-sentinel/ba-p/768747) (blog) voor meer informatie. 
 
-Meer informatie over [opgeslagen query's](../azure-monitor/log-query/example-queries.md) (de implementatie van query's tijd parsers) in log Analytics.
+Meer informatie over [opgeslagen query's](../azure-monitor/logs/example-queries.md) (de implementatie van query's tijd parsers) in log Analytics.
 
 
 ## <a name="next-steps"></a>Volgende stappen

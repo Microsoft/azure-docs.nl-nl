@@ -16,12 +16,12 @@ ms.date: 12/23/2020
 ms.author: barclayn
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af9921510ba11ab1bd7d0664b2c4c19e042864d3
-ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
+ms.openlocfilehash: 1a7f0d937d41ee42bf0fe678eb2f49e78882f881
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97746640"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577862"
 ---
 # <a name="archive-logs-and-reporting-on-azure-ad-entitlement-management-in-azure-monitor"></a>Logboeken en rapporten archiveren op het beheer van rechten van Azure AD in Azure Monitor
 
@@ -59,7 +59,7 @@ Voor het archiveren van Azure AD-controle logboeken moet u Azure Monitor in een 
 
 ## <a name="view-events-for-an-access-package"></a>Gebeurtenissen voor een toegangs pakket weer geven  
 
-Als u gebeurtenissen voor een toegangs pakket wilt weer geven, moet u toegang hebben tot de onderliggende Azure monitor-werk ruimte (Zie [toegang beheren voor logboek gegevens en werk ruimten in azure monitor](../../azure-monitor/platform/manage-access.md#manage-access-using-azure-permissions) voor informatie) en in een van de volgende rollen: 
+Als u gebeurtenissen voor een toegangs pakket wilt weer geven, moet u toegang hebben tot de onderliggende Azure monitor-werk ruimte (Zie [toegang beheren voor logboek gegevens en werk ruimten in azure monitor](../../azure-monitor/logs/manage-access.md#manage-access-using-azure-permissions) voor informatie) en in een van de volgende rollen: 
 
 - Globale beheerder  
 - Beveiligingsbeheerder  
@@ -128,7 +128,7 @@ Voer de volgende stappen uit om de roltoewijzing in te stellen en een query te m
 
     ![Een roltoewijzing toevoegen](./media/entitlement-management-logs-and-reporting/workspace-set-role-assignment.png)
 
-### <a name="install-azure-powershell-module"></a>Azure PowerShell-module installeren
+### <a name="install-azure-powershell-module"></a>Azure PowerShell module installeren
 
 Zodra u de juiste roltoewijzing hebt, start u Power shell en [installeert u de module Azure PowerShell](/powershell/azure/install-az-ps?view=azps-3.3.0) (als u dat nog niet hebt gedaan) door het volgende te typen:
 
@@ -189,4 +189,4 @@ $bResponse.Results |ft
 ```
 
 ## <a name="next-steps"></a>Volgende stappen:
-- [Interactieve rapporten maken met Azure Monitor werkmappen](../../azure-monitor/platform/workbooks-overview.md)
+- [Interactieve rapporten maken met Azure Monitor werkmappen](../../azure-monitor/visualize/workbooks-overview.md)

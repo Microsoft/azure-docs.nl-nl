@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 09415c47432f71310b10c86390c10e55f1ccc4b2
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 9350b5dbcedd2773e94ef9d35cfe26f97fbd97bc
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498605"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571607"
 ---
 # <a name="troubleshoot-common-azure-spring-cloud-issues"></a>Veelvoorkomende problemen met Azure lente-Cloud oplossen
 
@@ -66,7 +66,7 @@ Wanneer u fouten opspoort in de toepassing, moet u eerst de status en detectie s
 
 
 
-Zie aan de [slag met log Analytics in azure monitor](../azure-monitor/log-query/log-analytics-tutorial.md)voor meer informatie over Azure log Analytics.
+Zie aan de [slag met log Analytics in azure monitor](../azure-monitor/logs/log-analytics-tutorial.md)voor meer informatie over Azure log Analytics.
 
 ### <a name="my-application-experiences-high-cpu-usage-or-high-memory-usage"></a>Mijn toepassing heeft een hoog CPU-gebruik of een hoog geheugengebruik
 
@@ -88,7 +88,7 @@ Zie [metrische gegevens voor Azure lente-Cloud](spring-cloud-concept-metrics.md)
 
 Als alle exemplaren actief zijn, gaat u naar Azure Log Analytics om een query uit te voeren op uw toepassings logboeken en de code logica te controleren. Dit helpt u te zien of een van deze van invloed kan zijn op de schaal partitionering. Zie [Logboeken en metrische gegevens analyseren met Diagnostische instellingen](diagnostic-services.md)voor meer informatie.
 
-Zie aan de [slag met log Analytics in azure monitor](../azure-monitor/log-query/log-analytics-tutorial.md)voor meer informatie over Azure log Analytics. Query's uitvoeren op de logboeken met behulp van de [Kusto-query taal](/azure/kusto/query/).
+Zie aan de [slag met log Analytics in azure monitor](../azure-monitor/logs/log-analytics-tutorial.md)voor meer informatie over Azure log Analytics. Query's uitvoeren op de logboeken met behulp van de [Kusto-query taal](/azure/kusto/query/).
 
 ### <a name="checklist-for-deploying-your-spring-application-to-azure-spring-cloud"></a>Controle lijst voor het implementeren van uw lente toepassing in azure veer Cloud
 
@@ -163,7 +163,7 @@ Als u een bestaande tot een cloud gebaseerde oplossing naar Azure migreert, moet
 
 U kunt ook de logboeken van de _service register_ -client in azure log Analytics controleren. Zie [Logboeken en metrische gegevens analyseren met Diagnostische instellingen](diagnostic-services.md) voor meer informatie.
 
-Zie aan de [slag met log Analytics in azure monitor](../azure-monitor/log-query/log-analytics-tutorial.md)voor meer informatie over Azure log Analytics. Query's uitvoeren op de logboeken met behulp van de [Kusto-query taal](/azure/kusto/query/).
+Zie aan de [slag met log Analytics in azure monitor](../azure-monitor/logs/log-analytics-tutorial.md)voor meer informatie over Azure log Analytics. Query's uitvoeren op de logboeken met behulp van de [Kusto-query taal](/azure/kusto/query/).
 
 ### <a name="i-want-to-inspect-my-applications-environment-variables"></a>Ik wil de omgevings variabelen van mijn toepassing controleren
 
@@ -223,7 +223,7 @@ Controleer of de `spring-boot-actuator` afhankelijkheid is ingeschakeld in uw to
 </dependency>
 ```
 
-Als uw toepassings logboeken kunnen worden gearchiveerd in een opslag account, maar niet naar Azure Log Analytics worden verzonden, controleert u of u [uw werk ruimte op de juiste wijze hebt ingesteld](../azure-monitor/learn/quick-create-workspace.md). Als u een gratis laag van Azure Log Analytics gebruikt, moet u er rekening mee houden dat [de gratis laag geen Sla (Service Level Agreement) biedt](https://azure.microsoft.com/support/legal/sla/log-analytics/v1_3/).
+Als uw toepassings logboeken kunnen worden gearchiveerd in een opslag account, maar niet naar Azure Log Analytics worden verzonden, controleert u of u [uw werk ruimte op de juiste wijze hebt ingesteld](../azure-monitor/logs/quick-create-workspace.md). Als u een gratis laag van Azure Log Analytics gebruikt, moet u er rekening mee houden dat [de gratis laag geen Sla (Service Level Agreement) biedt](https://azure.microsoft.com/support/legal/sla/log-analytics/v1_3/).
 
 ## <a name="next-steps"></a>Volgende stappen
 

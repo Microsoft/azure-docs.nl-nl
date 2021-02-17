@@ -11,21 +11,21 @@ ms.topic: how-to
 ms.author: mimart
 ms.subservice: B2C
 ms.date: 01/29/2021
-ms.openlocfilehash: e44a029c61db5a22513387772c2b0d7a3e4d1a40
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 712a933276393890bf017a2517196031306233ad
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99219227"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573007"
 ---
 # <a name="monitor-azure-ad-b2c-with-azure-monitor"></a>Azure AD B2C met Azure Monitor bewaken
 
-Gebruik Azure Monitor om Azure Active Directory B2C (Azure AD B2C) aanmeld-en [audit](view-audit-logs.md) logboeken te routeren naar verschillende bewakings oplossingen. U kunt de logboeken bewaren voor lange termijn gebruik of integratie met SIEM-hulpprogram ma's (Security Information and Event Management) van derden om inzicht te krijgen in uw omgeving.
+Gebruik Azure Monitor om Azure Active Directory B2C (Azure AD B2C) aanmeld-en [audit](view-audit-logs.md) logboeken te routeren naar verschillende bewakings oplossingen. U kunt de logboeken behouden voor later gebruik of integreren met SIEM-hulpprogramma's (Security Information and Event Management) van derden om meer inzicht in uw omgeving te verkrijgen.
 
 U kunt logboek gebeurtenissen door sturen naar:
 
 * Een Azure- [opslag account](../storage/blobs/storage-blobs-introduction.md).
-* Een [log Analytics-werk ruimte](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace) (voor het analyseren van gegevens, het maken van Dash boards en waarschuwingen voor specifieke gebeurtenissen).
+* Een [log Analytics-werk ruimte](../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace) (voor het analyseren van gegevens, het maken van Dash boards en waarschuwingen voor specifieke gebeurtenissen).
 * Een Azure- [Event hub](../event-hubs/event-hubs-about.md) (en kan worden geïntegreerd met uw logische Splunk-en Sumo-instanties).
 
 ![Azure Monitor](./media/azure-monitor/azure-monitor-flow.png)
@@ -38,7 +38,7 @@ In dit artikel leert u hoe u de logboeken overbrengt naar een Azure Log Analytic
 
 ## <a name="deployment-overview"></a>Implementatieoverzicht
 
-Azure AD B2C maakt gebruik van [Azure Active Directory bewaking](../active-directory/reports-monitoring/overview-monitoring.md). Als u *Diagnostische instellingen* in azure Active Directory binnen uw Azure AD B2C Tenant wilt inschakelen, gebruikt u [Azure Lighthouse](../lighthouse/concepts/azure-delegated-resource-management.md) voor het [delegeren van een resource](../lighthouse/concepts/azure-delegated-resource-management.md), waarmee uw Azure AD B2C (de **service provider**) een Azure AD-resource (de **klant**) kan beheren. Nadat u de stappen in dit artikel hebt voltooid, hebt u toegang tot de resource groep *Azure-AD-B2C-monitor* die de [log Analytics-werk ruimte](../azure-monitor/learn/quick-create-workspace.md) in uw **Azure AD B2C** Portal bevat. U kunt de logboeken ook overdragen van Azure AD B2C naar uw Log Analytics-werk ruimte.
+Azure AD B2C maakt gebruik van [Azure Active Directory bewaking](../active-directory/reports-monitoring/overview-monitoring.md). Als u *Diagnostische instellingen* in azure Active Directory binnen uw Azure AD B2C Tenant wilt inschakelen, gebruikt u [Azure Lighthouse](../lighthouse/concepts/azure-delegated-resource-management.md) voor het [delegeren van een resource](../lighthouse/concepts/azure-delegated-resource-management.md), waarmee uw Azure AD B2C (de **service provider**) een Azure AD-resource (de **klant**) kan beheren. Nadat u de stappen in dit artikel hebt voltooid, hebt u toegang tot de resource groep *Azure-AD-B2C-monitor* die de [log Analytics-werk ruimte](../azure-monitor/logs/quick-create-workspace.md) in uw **Azure AD B2C** Portal bevat. U kunt de logboeken ook overdragen van Azure AD B2C naar uw Log Analytics-werk ruimte.
 
 Tijdens deze implementatie moet u een gebruiker of groep in uw Azure AD B2C Directory machtigen om de Log Analytics werkruimte-instantie te configureren binnen de Tenant die uw Azure-abonnement bevat. Als u de autorisatie wilt maken, implementeert u een [Azure Resource Manager](../azure-resource-manager/index.yml) sjabloon voor uw Azure AD-Tenant met het abonnement.
 
@@ -62,7 +62,7 @@ Een **log Analytics-werk ruimte** is een unieke omgeving voor Azure monitor logb
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Selecteer het pictogram voor het adres van de map en het **abonnement** op de werk balk van de portal en selecteer vervolgens de map die uw **Azure AD-Tenant** bevat.
-1. [Maak een log Analytics-werk ruimte](../azure-monitor/learn/quick-create-workspace.md). In dit voor beeld wordt een Log Analytics-werk ruimte met de naam *AzureAdB2C* gebruikt in een resource groep met de naam *Azure-AD-B2C-monitor*.
+1. [Maak een log Analytics-werk ruimte](../azure-monitor/logs/quick-create-workspace.md). In dit voor beeld wordt een Log Analytics-werk ruimte met de naam *AzureAdB2C* gebruikt in een resource groep met de naam *Azure-AD-B2C-monitor*.
 
 ## <a name="3-delegate-resource-management"></a>3. resource beheer delegeren
 
@@ -104,7 +104,7 @@ Vervolgens maakt u een Azure Resource Manager sjabloon waarmee Azure AD B2C toeg
    | Veld   | Definitie |
    |---------|------------|
    | Abonnement |  Selecteer de map met het Azure-abonnement waarin de resource groep *Azure-AD-B2C-monitor* is gemaakt. |
-   | Regio| Selecteer de regio waar de resource wordt geïmplementeerd.  | 
+   | Region| Selecteer de regio waar de resource wordt geïmplementeerd.  | 
    | Naam van msp-aanbod| Een naam die deze definitie beschrijft. Bijvoorbeeld *Azure AD B2C bewaking*.  |
    | Beschrijving van msp-aanbod| Een korte beschrijving van uw aanbieding. *Hiermee schakelt u bijvoorbeeld Azure monitor in azure AD B2C*.|
    | Beheerd door Tenant-id| De **Tenant-id** van uw Azure AD B2C Tenant (ook wel de Directory-id genoemd). |
@@ -144,9 +144,9 @@ Nadat u de sjabloon hebt geïmplementeerd en enkele minuten hebt gewacht totdat 
 
 Diagnostische instellingen bepalen waar logboeken en metrische gegevens voor een resource moeten worden verzonden. Mogelijke bestemmingen zijn:
 
-- [Azure Storage-account](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
-- [Event hubs](../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs) -oplossingen
-- [Log Analytics werk ruimte](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace)
+- [Azure Storage-account](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)
+- [Event hubs](../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs) -oplossingen
+- [Log Analytics werk ruimte](../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace)
 
 In dit voor beeld gebruiken we de Log Analytics-werk ruimte om een dash board te maken.
 
@@ -171,7 +171,7 @@ Controle-instellingen voor Azure AD B2C activiteiten logboeken configureren:
 1. Selecteer **Opslaan**.
 
 > [!NOTE]
-> Het kan tot vijf tien minuten duren nadat een gebeurtenis is verzonden zodat deze wordt [weer gegeven in een log Analytics-werk ruimte](../azure-monitor/platform/data-ingestion-time.md). Lees ook meer informatie over [Active Directory rapportage latenties](../active-directory/reports-monitoring/reference-reports-latencies.md), die van invloed kunnen zijn op de verouderde hoeveelheid gegevens en een belang rijke rol spelen bij rapportage.
+> Het kan tot vijf tien minuten duren nadat een gebeurtenis is verzonden zodat deze wordt [weer gegeven in een log Analytics-werk ruimte](../azure-monitor/logs/data-ingestion-time.md). Lees ook meer informatie over [Active Directory rapportage latenties](../active-directory/reports-monitoring/reference-reports-latencies.md), die van invloed kunnen zijn op de verouderde hoeveelheid gegevens en een belang rijke rol spelen bij rapportage.
 
 Als u het fout bericht ' Diagnostische instellingen voor het gebruik van Azure Monitor voor uw Azure AD B2C Directory wilt instellen ' wordt weer gegeven, moet u het beheer van gedelegeerde resources instellen, ' zorg ervoor dat u zich aanmeldt met een gebruiker die lid is van de [beveiligings groep](#32-select-a-security-group) en [Selecteer uw abonnement](#4-select-your-subscription).
 
@@ -181,7 +181,7 @@ U kunt nu uw Log Analytics-werk ruimte configureren om uw gegevens te visualiser
 
 ### <a name="61-create-a-query"></a>6,1 een query maken
 
-Met logboekquery's kunt u de waarde van de gegevens die in Azure Monitor-logboeken worden verzameld, volledig benutten. Met een krachtige query taal kunt u gegevens uit meerdere tabellen samen voegen, grote gegevens sets verzamelen en complexe bewerkingen met minimale code uitvoeren. Vrijwel elke vraag kan worden beantwoord en de analyse wordt uitgevoerd zolang de ondersteunende gegevens zijn verzameld en u begrijpt hoe u de juiste query kunt bouwen. Zie [aan de slag met logboek query's in azure monitor](../azure-monitor/log-query/get-started-queries.md)voor meer informatie.
+Met logboekquery's kunt u de waarde van de gegevens die in Azure Monitor-logboeken worden verzameld, volledig benutten. Met een krachtige query taal kunt u gegevens uit meerdere tabellen samen voegen, grote gegevens sets verzamelen en complexe bewerkingen met minimale code uitvoeren. Vrijwel elke vraag kan worden beantwoord en de analyse wordt uitgevoerd zolang de ondersteunende gegevens zijn verzameld en u begrijpt hoe u de juiste query kunt bouwen. Zie [aan de slag met logboek query's in azure monitor](../azure-monitor/logs/get-started-queries.md)voor meer informatie.
 
 1. Selecteer in **log Analytics werk ruimte** **Logboeken**
 1. Plak in de query-editor de volgende [query taal](/azure/data-explorer/kusto/query/) query van Kusto. Deze query toont het beleids gebruik per bewerking over de afgelopen x dagen. De standaard duur is ingesteld op 90 dagen (90d). U ziet dat de query alleen gericht is op de bewerking waarbij een token/code wordt uitgegeven door het beleid.
@@ -228,7 +228,7 @@ Zie de Azure AD B2C [Siem github opslag plaats](https://aka.ms/b2csiem)voor meer
 
 ### <a name="62-create-a-workbook"></a>6,2 een werkmap maken
 
-Werkmappen bieden een flexibel canvas voor gegevensanalyse en het maken van uitgebreide visuele rapporten in Azure Portal. Ze stellen u in staat om meerdere gegevensbronnen uit Azure aan te boren en deze te combineren tot uniforme interactieve ervaringen. Zie [Azure monitor werkmappen](../azure-monitor/platform/workbooks-overview.md)voor meer informatie.
+Werkmappen bieden een flexibel canvas voor gegevensanalyse en het maken van uitgebreide visuele rapporten in Azure Portal. Ze stellen u in staat om meerdere gegevensbronnen uit Azure aan te boren en deze te combineren tot uniforme interactieve ervaringen. Zie [Azure monitor werkmappen](../azure-monitor/visualize/workbooks-overview.md)voor meer informatie.
 
 Volg de onderstaande instructies om een nieuwe werkmap te maken met behulp van een JSON-galerie sjabloon. Deze werkmap bevat een **gebruikers inzicht** en een **verificatie** dashboard voor Azure AD B2C Tenant.
 
@@ -259,10 +259,10 @@ In de werkmap worden rapporten weer gegeven in de vorm van een dash board.
 
 ## <a name="create-alerts"></a>Waarschuwingen maken
 
-Waarschuwingen worden gemaakt door regels voor waarschuwingen in Azure Monitor en kunnen automatisch opgeslagen query's uitvoeren of aangepaste zoekopdrachten in logboeken met regelmatige tussenpozen. U kunt waarschuwingen maken op basis van specifieke prestatiemetrieken of wanneer bepaalde gebeurtenissen worden gemaakt, de afwezigheid van een gebeurtenis of een aantal gebeurtenissen die binnen een bepaalde periode worden gemaakt. Waarschuwingen kunnen bijvoorbeeld worden gebruikt om u te waarschuwen wanneer het gemiddelde aantal aanmeldingen een bepaalde drempel waarde overschrijdt. Zie [Create Alerts](../azure-monitor/learn/tutorial-response.md)(Engelstalig) voor meer informatie.
+Waarschuwingen worden gemaakt door regels voor waarschuwingen in Azure Monitor en kunnen automatisch opgeslagen query's uitvoeren of aangepaste zoekopdrachten in logboeken met regelmatige tussenpozen. U kunt waarschuwingen maken op basis van specifieke prestatiemetrieken of wanneer bepaalde gebeurtenissen worden gemaakt, de afwezigheid van een gebeurtenis of een aantal gebeurtenissen die binnen een bepaalde periode worden gemaakt. Waarschuwingen kunnen bijvoorbeeld worden gebruikt om u te waarschuwen wanneer het gemiddelde aantal aanmeldingen een bepaalde drempel waarde overschrijdt. Zie [Create Alerts](../azure-monitor/alerts/tutorial-response.md)(Engelstalig) voor meer informatie.
 
 
-Gebruik de volgende instructies om een nieuwe Azure-waarschuwing te maken, waarmee een [e-mail melding](../azure-monitor/platform/action-groups.md#configure-notifications) wordt verzonden wanneer er 25% van de **Totaal aanvragen** wordt vergeleken met de vorige periode. De waarschuwing wordt elke vijf minuten uitgevoerd en er wordt gezocht naar de laatste 24 uur in Windows. De waarschuwingen worden gemaakt met behulp van de Kusto-query taal.
+Gebruik de volgende instructies om een nieuwe Azure-waarschuwing te maken, waarmee een [e-mail melding](../azure-monitor/alerts/action-groups.md#configure-notifications) wordt verzonden wanneer er 25% van de **Totaal aanvragen** wordt vergeleken met de vorige periode. De waarschuwing wordt elke vijf minuten uitgevoerd en er wordt gezocht naar de laatste 24 uur in Windows. De waarschuwingen worden gemaakt met behulp van de Kusto-query taal.
 
 
 1. Selecteer in **log Analytics werk ruimte** **Logboeken**. 
@@ -296,7 +296,7 @@ Nadat de waarschuwing is gemaakt, gaat u naar **log Analytics werk ruimte** en s
 
 ### <a name="configure-action-groups"></a>Actie groepen configureren
 
-Azure Monitor-en Service Health-waarschuwingen gebruiken actie groepen om gebruikers te laten weten dat een waarschuwing is geactiveerd. U kunt onder andere het verzenden van een telefoon gesprek, SMS, e-mail, gebruiken. of het activeren van verschillende typen geautomatiseerde acties. Volg de instructies [voor het maken en beheren van actie groepen in de Azure Portal](../azure-monitor/platform/action-groups.md)
+Azure Monitor-en Service Health-waarschuwingen gebruiken actie groepen om gebruikers te laten weten dat een waarschuwing is geactiveerd. U kunt onder andere het verzenden van een telefoon gesprek, SMS, e-mail, gebruiken. of het activeren van verschillende typen geautomatiseerde acties. Volg de instructies [voor het maken en beheren van actie groepen in de Azure Portal](../azure-monitor/alerts/action-groups.md)
 
 Hier volgt een voor beeld van een e-mail melding voor waarschuwingen. 
 
@@ -306,7 +306,7 @@ Hier volgt een voor beeld van een e-mail melding voor waarschuwingen.
 
 Als u meerdere Azure AD B2C Tenant logboeken wilt toevoegen aan dezelfde Log Analytics werk ruimte (of een Azure-opslag account of Event Hub), moet u afzonderlijke implementaties met verschillende waarden voor de naam van het **MSP-aanbod** hebben. Zorg ervoor dat uw Log Analytics-werk ruimte zich in dezelfde resource groep bevindt als het account dat u hebt geconfigureerd in de [groep maken of kies resource groepen](#1-create-or-choose-resource-group).
 
-Wanneer u met meerdere Log Analytics-werk ruimten werkt, kunt u met de [query tussen werk ruimten](../azure-monitor/log-query/cross-workspace-query.md) query's maken die in meerdere werk ruimten werken. Met de volgende query wordt bijvoorbeeld een koppeling uitgevoerd van twee audit logboeken van verschillende tenants op basis van dezelfde categorie (bijvoorbeeld verificatie):
+Wanneer u met meerdere Log Analytics-werk ruimten werkt, kunt u met de [query tussen werk ruimten](../azure-monitor/logs/cross-workspace-query.md) query's maken die in meerdere werk ruimten werken. Met de volgende query wordt bijvoorbeeld een koppeling uitgevoerd van twee audit logboeken van verschillende tenants op basis van dezelfde categorie (bijvoorbeeld verificatie):
 
 ```kusto
 workspace("AD-B2C-TENANT1").AuditLogs
@@ -316,12 +316,12 @@ workspace("AD-B2C-TENANT1").AuditLogs
 
 ## <a name="change-the-data-retention-period"></a>De gegevensretentieperiode wijzigen
 
-Azure Monitor-logboeken zijn ontworpen om het verzamelen, indexeren en ondersteunen van enorme hoeveel heden gegevens per dag te schalen en op te slaan in een bron in uw onderneming of die in Azure is geïmplementeerd. Standaard worden logboeken 30 dagen bewaard, maar de Bewaar periode kan Maxi maal twee jaar worden verhoogd. Meer informatie over het [beheren van het gebruik en de kosten met Azure monitor-logboeken](../azure-monitor/platform/manage-cost-storage.md). Nadat u de prijs categorie hebt geselecteerd, kunt u [de Bewaar periode voor gegevens wijzigen](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period).
+Azure Monitor-logboeken zijn ontworpen om het verzamelen, indexeren en ondersteunen van enorme hoeveel heden gegevens per dag te schalen en op te slaan in een bron in uw onderneming of die in Azure is geïmplementeerd. Standaard worden logboeken 30 dagen bewaard, maar de Bewaar periode kan Maxi maal twee jaar worden verhoogd. Meer informatie over het [beheren van het gebruik en de kosten met Azure monitor-logboeken](../azure-monitor/logs/manage-cost-storage.md). Nadat u de prijs categorie hebt geselecteerd, kunt u [de Bewaar periode voor gegevens wijzigen](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period).
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * Meer voor beelden vindt u in de galerie met Azure AD B2C [Siem](https://aka.ms/b2csiem). 
 
-* Zie [zelf studie: resource logboeken verzamelen en analyseren vanuit een Azure-resource](../azure-monitor/insights/monitor-azure-resource.md)voor meer informatie over het toevoegen en configureren van diagnostische instellingen in azure monitor.
+* Zie [zelf studie: resource logboeken verzamelen en analyseren vanuit een Azure-resource](../azure-monitor/essentials/monitor-azure-resource.md)voor meer informatie over het toevoegen en configureren van diagnostische instellingen in azure monitor.
 
 * Zie [zelf studie: Stream Azure Active Directory-logboeken naar een Azure-Event hub](../active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md)voor informatie over het streamen van Azure AD-logboeken naar een event hub.

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/29/2019
 ms.author: terrylan
-ms.openlocfilehash: 8a33e9d462f3105bfee295ac82384a38325f7c7c
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 27443eb9c04c69567b3a1374f11e8b53837040f2
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498792"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585417"
 ---
 # <a name="security-services-and-technologies-available-on-azure"></a>Beveiligings Services en-technologieën die beschikbaar zijn op Azure
 
@@ -35,7 +35,7 @@ In de loop van de tijd wordt deze lijst gewijzigd en groeit, net zoals in Azure.
 |--------|--------|
 |[Azure &nbsp; Security &nbsp; Center](../../security-center/security-center-introduction.md)| Een werk belasting voor de beveiliging van de cloud die beveiligings beheer en geavanceerde bedreigings beveiliging biedt in hybride Cloud werkbelastingen.|
 |[Azure Key Vault](../../key-vault/general/overview.md)| Een beveiligde geheimen opslag voor de wacht woorden, verbindings reeksen en andere informatie die u nodig hebt om uw apps te laten werken. |
-|[Azure Monitor-logboeken](../../azure-monitor/log-query/log-query-overview.md)|Een bewakings service waarmee telemetrie en andere gegevens worden verzameld, en biedt een query taal en analyse-engine voor het leveren van operationele inzichten voor uw apps en resources. Kan alleen worden gebruikt of met andere services, zoals Security Center. |
+|[Azure Monitor-logboeken](../../azure-monitor/logs/log-query-overview.md)|Een bewakings service waarmee telemetrie en andere gegevens worden verzameld, en biedt een query taal en analyse-engine voor het leveren van operationele inzichten voor uw apps en resources. Kan alleen worden gebruikt of met andere services, zoals Security Center. |
 |[Azure dev/test Labs](../../devtest-labs/devtest-lab-overview.md)|Een service waarmee ontwikkel aars en testers snel omgevingen in azure kunnen maken, terwijl verspilling en beheer kosten worden geminimaliseerd.  |
 
 <!---|[Azure&nbsp;Disk&nbsp;Encryption](/azure/azure-security-disk-encryption-overview)| THIS WILL GO TO THE NEW OVERVIEW TOPIC MEGHAN STEWART IS WRITING|--->

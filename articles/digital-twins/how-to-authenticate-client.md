@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/7/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: eba3958ae5dd307b80b04371d3659a129d5acf89
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: 5a7cfec6acb4cd8735c039f5eab30bac4ccf55b0
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98797873"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556142"
 ---
 # <a name="write-client-app-authentication-code"></a>Verificatie code voor client-app schrijven
 
@@ -117,5 +117,5 @@ Als de gemarkeerde verificatie scenario's hierboven geen betrekking hebben op de
 Lees meer over de werking van beveiliging in azure Digital Apparaatdubbels:
 * [*Concepten: beveiliging voor Azure Digital Apparaatdubbels Solutions*](concepts-security.md)
 
-Of nu de verificatie is ingesteld, gaat u verder met het maken van modellen in uw exemplaar:
-* [*Instructies: Aangepaste modellen beheren*](how-to-manage-model.md)
+Of nu de verificatie is ingesteld, gaat u verder met het maken en beheren van modellen in uw exemplaar:
+* [*Instructies: DTDL-modellen beheren*](how-to-manage-model.md)

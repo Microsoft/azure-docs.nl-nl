@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 06/17/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 9dad8ffc9971894a2777e8bda9bcf6d78eee00a9
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: 3c9018322c9e5075ff59024f9d791e7431035e3d
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97369273"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555956"
 ---
 # <a name="list-azure-role-definitions"></a>Definities van Azure-rollen weer geven
 
@@ -478,5 +478,5 @@ Hieronder ziet u een voor beeld van de uitvoer:
 
 - [Ingebouwde Azure-rollen](built-in-roles.md)
 - [Aangepaste Azure-rollen](custom-roles.md)
-- [Azure-roltoewijzingen weer geven met behulp van de Azure Portal](role-assignments-list-portal.md)
-- [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure-portal](role-assignments-portal.md)
+- [Azure-roltoewijzingen vermelden met behulp van Azure Portal](role-assignments-list-portal.md)
+- [Azure-rollen toewijzen met behulp van de Azure Portal](role-assignments-portal.md)

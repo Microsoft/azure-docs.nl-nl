@@ -4,14 +4,14 @@ description: E-mail berichten, meldingen, Url's van websites (webhooks) of Autom
 author: yanivlavi
 ms.author: yalavi
 ms.topic: conceptual
-ms.date: 5/31/2019
+ms.date: 09/22/2020
 ms.subservice: alerts
-ms.openlocfilehash: a913bc0ae01507cb26c1650d63918a8319eeacf4
-ms.sourcegitcommit: 697638c20ceaf51ec4ebd8f929c719c1e630f06f
+ms.openlocfilehash: 0f81dd14988b069931bddf5f5636cb1bab426641
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97857423"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100544864"
 ---
 # <a name="log-alerts-in-azure-monitor"></a>Waarschuwingen registreren in Azure Monitor
 
@@ -51,7 +51,7 @@ De [log Analytics](../log-query/log-analytics-tutorial.md) query die wordt gebru
 - Meerdere resources met behulp van een [Cross-resource query](../log-query/cross-workspace-query.md#querying-across-log-analytics-workspaces-and-from-application-insights). 
  
 > [!IMPORTANT]
-> Waarschuwings query's hebben beperkingen om te zorgen voor optimale prestaties en de relevantie van de resultaten. Meer [informatie vindt u hier](./alerts-log-query.md).
+> Waarschuwings query's hebben beperkingen om te zorgen voor optimale prestaties en de relevantie van de resultaten. [Klik hier voor meer informatie](./alerts-log-query.md).
 
 > [!IMPORTANT]
 > Resource gerichte en [query's op meerdere bronnen](../log-query/cross-workspace-query.md#querying-across-log-analytics-workspaces-and-from-application-insights) worden alleen ondersteund met de huidige SCHEDULEDQUERYRULES-API. Als u de verouderde [log Analytics alert-API](api-alerts.md)gebruikt, moet u overschakelen. [Meer informatie over scha kelen](./alerts-log-api-switch.md)

@@ -1,6 +1,6 @@
 ---
-title: Implementeer Vm's op uw Azure Stack Edge Pro GPU-apparaat via Azure PowerShell
-description: Hierin wordt beschreven hoe u virtuele machines (Vm's) maakt en beheert op een Azure Stack Edge Pro GPU-apparaat met behulp van Azure PowerShell.
+title: Implementeer Vm's op uw Azure Stack edge-apparaat via Azure PowerShell
+description: Hierin wordt beschreven hoe u virtuele machines op een Azure Stack edge-apparaat maakt en beheert met behulp van Azure PowerShell.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,22 +8,22 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 01/22/2021
 ms.author: alkohli
-ms.openlocfilehash: 1d286e7661fa14dd63bd55b133c39414e04decc6
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: d4a4a2e6e04f8f6247df663aba033d387e66c437
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98802991"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546887"
 ---
-# <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-azure-powershell"></a>Implementeer Vm's op uw Azure Stack Edge Pro GPU-apparaat via Azure PowerShell
+# <a name="deploy-vms-on-your-azure-stack-edge-device-via-azure-powershell"></a>Implementeer Vm's op uw Azure Stack edge-apparaat via Azure PowerShell
 
-In dit artikel wordt beschreven hoe u een virtuele machine op uw Azure Stack Edge Pro-apparaat maakt en beheert met behulp van Azure PowerShell. Dit artikel is van toepassing op Azure Stack Edge Pro GPU, Azure Stack Edge Pro R en Azure Stack Edge mini-R-apparaten.
+In dit artikel wordt beschreven hoe u een virtuele machine op uw Azure Stack edge-apparaat maakt en beheert met behulp van Azure PowerShell. Dit artikel is van toepassing op Azure Stack Edge Pro GPU, Azure Stack Edge Pro R en Azure Stack Edge mini-R-apparaten.
 
 ## <a name="vm-deployment-workflow"></a>VM-implementatiewerkstroom
 
-De implementatiewerkstroom wordt afgebeeld in het volgende diagram.
+De implementatie werk stroom ziet er als volgt uit:
 
-![VM-implementatiewerkstroom](media/azure-stack-edge-gpu-deploy-virtual-machine-powershell/vm-workflow-r.svg)
+![Diagram van de werk stroom van de VM-implementatie.](media/azure-stack-edge-gpu-deploy-virtual-machine-powershell/vm-workflow-r.svg)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -32,7 +32,7 @@ De implementatiewerkstroom wordt afgebeeld in het volgende diagram.
 
 ## <a name="query-for-built-in-subscription-on-the-device"></a>Query voor ingebouwd abonnement op het apparaat
 
-Voor Azure Resource Manager wordt slechts één door de gebruiker zichtbaar vast abonnement ondersteund. Dit abonnement is uniek per apparaat en de abonnements naam of abonnements-ID kan niet worden gewijzigd.
+Voor Azure Resource Manager wordt slechts één vast abonnement ondersteund dat zichtbaar is voor gebruikers. Dit abonnement is uniek per apparaat en de abonnements naam of abonnements-ID kan niet worden gewijzigd.
 
 Dit abonnement bevat alle resources die zijn gemaakt voor het maken van VM'S. 
 
@@ -41,13 +41,13 @@ Dit abonnement bevat alle resources die zijn gemaakt voor het maken van VM'S.
 
 Dit abonnement wordt gebruikt voor het implementeren van de Vm's.
 
-1.  Als u dit abonnement wilt vermelden, typt u:
+1.  Als u dit abonnement wilt vermelden, voert u het volgende in:
 
     ```powershell
     Get-AzureRmSubscription
     ```
     
-    Hieronder ziet u een voorbeeld van de uitvoer.
+    Hier volgt een voor beeld van uitvoer:
 
     ```powershell
     PS C:\windows\system32> Get-AzureRmSubscription
@@ -59,7 +59,7 @@ Dit abonnement wordt gebruikt voor het implementeren van de Vm's.
     PS C:\windows\system32>
     ```
         
-3.  Bekijk de lijst met de geregistreerde resource providers die op het apparaat worden uitgevoerd. Deze lijst omvat doorgaans compute, netwerk en opslag.
+1. Bekijk de lijst met de geregistreerde resource providers die op het apparaat worden uitgevoerd. Deze lijst omvat doorgaans compute, netwerk en opslag.
 
     ```powershell
     Get-AzureRMResourceProvider
@@ -68,7 +68,7 @@ Dit abonnement wordt gebruikt voor het implementeren van de Vm's.
     > [!NOTE]
     > De resource providers zijn vooraf geregistreerd en kunnen niet worden gewijzigd of gewijzigd.
     
-    Hieronder ziet u een voorbeeld van de uitvoer:
+    Hier volgt een voor beeld van uitvoer:
 
     ```powershell
     Get-AzureRmResourceProvider
@@ -100,16 +100,16 @@ Dit abonnement wordt gebruikt voor het implementeren van de Vm's.
     
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Maak een Azure-resourcegroep met behulp van de opdracht [New-AzureRmResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Een resource groep is een logische container waarin de Azure-resources, zoals opslag account, schijf, beheerde schijf, worden geïmplementeerd en beheerd.
+Maak een Azure-resourcegroep met behulp van de opdracht [New-AzureRmResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Een resource groep is een logische container waarin Azure-resources, zoals een opslag account, schijf en beheerde schijf, worden geïmplementeerd en beheerd.
 
 > [!IMPORTANT]
-> Alle resources worden gemaakt op dezelfde locatie als die van het apparaat en de locatie is ingesteld op **DBELocal**.
+> Alle resources worden gemaakt op dezelfde locatie als die van het apparaat en de locatie wordt ingesteld op **DBELocal**.
 
 ```powershell
 New-AzureRmResourceGroup -Name <Resource group name> -Location DBELocal
 ```
 
-Hieronder ziet u een voorbeeld van de uitvoer.
+Hier volgt een voor beeld van uitvoer:
 
 ```powershell
 New-AzureRmResourceGroup -Name rg191113014333 -Location DBELocal 
@@ -118,16 +118,16 @@ Successfully created Resource Group:rg191113014333
 
 ## <a name="create-a-storage-account"></a>Een opslagaccount maken
 
-Maak een nieuw opslag account met behulp van de resource groep die u in de vorige stap hebt gemaakt. Dit account is een **lokaal opslag account** dat wordt gebruikt voor het uploaden van de installatie kopie van de virtuele schijf voor de VM.
+Maak een nieuw opslag account met behulp van de resource groep die u in de vorige stap hebt gemaakt. Dit is een lokaal opslag account dat u gebruikt voor het uploaden van de installatie kopie van de virtuele schijf voor de VM.
 
 ```powershell
 New-AzureRmStorageAccount -Name <Storage account name> -ResourceGroupName <Resource group name> -Location DBELocal -SkuName Standard_LRS
 ```
 
 > [!NOTE]
-> Alleen de lokale opslag accounts, zoals lokaal redundante opslag (Standard_LRS of Premium_LRS), kunnen worden gemaakt via Azure Resource Manager. Als u gelaagde opslag accounts wilt maken, raadpleegt u de stappen in [toevoegen, verbinding maken met opslag accounts op uw Azure stack Edge Pro](azure-stack-edge-j-series-deploy-add-storage-accounts.md).
+> Met Azure Resource Manager kunt u alleen lokale opslag accounts maken, zoals lokaal redundante opslag (Standard of Premium). Zie [zelf studie: gegevens overdragen via opslag accounts met Azure stack Edge Pro GPU](azure-stack-edge-j-series-deploy-add-storage-accounts.md)om gelaagde opslag accounts te maken.
 
-Hieronder ziet u een voorbeeld van de uitvoer.
+Hier volgt een voor beeld van uitvoer:
 
 ```powershell
 New-AzureRmStorageAccount -Name sa191113014333  -ResourceGroupName rg191113014333 -SkuName Standard_LRS -Location DBELocal
@@ -158,7 +158,7 @@ Context                : Microsoft.WindowsAzure.Commands.Common.Storage.LazyAzur
 ExtendedProperties     : {}
 ```
 
-Voer de opdracht uit om de sleutel van het opslag account op te halen `Get-AzureRmStorageAccountKey` . Hier wordt een voor beeld van een uitvoer van deze opdracht weer gegeven.
+Voer de opdracht uit om de sleutel van het opslag account op te halen `Get-AzureRmStorageAccountKey` . Hier volgt een voor beeld van de uitvoer van deze opdracht:
 
 ```powershell
 PS C:\Users\Administrator> Get-AzureRmStorageAccountKey
@@ -175,20 +175,19 @@ key1 /IjVJN+sSf7FMKiiPLlDm8mc9P4wtcmhhbnCa7...
 key2 gd34TcaDzDgsY9JtDNMUgLDOItUU0Qur3CBo6Q...
 ```
 
-## <a name="add-blob-uri-to-hosts-file"></a>Blob-URI toevoegen aan het hosts-bestand
+## <a name="add-the-blob-uri-to-the-host-file"></a>De BLOB-URI toevoegen aan het hostbestand
 
-U hebt de BLOB-URI al toegevoegd in het hosts-bestand voor de client die u gebruikt om verbinding te maken met de Blob-opslag in de sectie [hostbestand wijzigen voor naam omzetting van het eind punt](azure-stack-edge-j-series-connect-resource-manager.md#step-5-modify-host-file-for-endpoint-name-resolution). Dit item is gebruikt om de BLOB-URI toe te voegen:
+U hebt de BLOB-URI al toegevoegd in het hosts-bestand voor de client die u gebruikt om verbinding te maken met Azure Blob Storage in de sectie [hostbestand wijzigen voor naam omzetting van het eind punt](azure-stack-edge-j-series-connect-resource-manager.md#step-5-modify-host-file-for-endpoint-name-resolution). Dit item is gebruikt om de BLOB-URI toe te voegen:
 
 \<Azure consistent network services VIP \>\<storage name\>. blob. \<appliance name\> .\<dnsdomain\>
 
-
 ## <a name="install-certificates"></a>Certificaten installeren
 
-Als u *https* gebruikt, moet u de juiste certificaten op uw apparaat installeren. In dit geval installeert u het BLOB-eindpunt certificaat. Zie certificaten maken en uploaden in [certificaten beheren](azure-stack-edge-j-series-manage-certificates.md)voor meer informatie.
+Als u *https* gebruikt, moet u de juiste certificaten op uw apparaat installeren. In dit geval installeert u het BLOB-eindpunt certificaat. Zie certificaten maken en uploaden in [certificaten gebruiken met Azure stack Edge Pro GPU-apparaat](azure-stack-edge-gpu-manage-certificates.md)voor meer informatie.
 
 ## <a name="upload-a-vhd"></a>Een VHD uploaden
 
-Kopieer de schijf installatie kopieën die moeten worden gebruikt in pagina-blobs in het lokale opslag account dat u in de vorige stappen hebt gemaakt. U kunt een hulp programma zoals [AzCopy](../storage/common/storage-use-azcopy-v10.md) gebruiken om de VHD te uploaden naar het opslag account dat u in de vorige stappen hebt gemaakt. 
+Kopieer de schijf installatie kopieën die moeten worden gebruikt in pagina-blobs in het lokale opslag account dat u in de vorige stappen hebt gemaakt. U kunt een hulp programma zoals [AzCopy](../storage/common/storage-use-azcopy-v10.md) gebruiken om de VHD te uploaden naar het opslag account. 
 
 <!--Before you use AzCopy, make sure that the [AzCopy is configured correctly](#configure-azcopy) for use with the blob storage REST API version that you are using with your Azure Stack Edge Pro device.
 
@@ -197,11 +196,11 @@ AzCopy /Source:<sourceDirectoryForVHD> /Dest:<blobContainerUri> /DestKey:<storag
 ```
 
 > [!NOTE]
-> Set `BlobType` to page for creating a managed disk out of VHD. Set `BlobType` to block when writing to tiered storage accounts using AzCopy.
+> Set `BlobType` to `page` for creating a managed disk out of VHD. Set `BlobType` to `block` when you're writing to tiered storage accounts by using AzCopy.
 
-You can download the disk images from the marketplace. For detailed steps, go to [Get the virtual disk image from Azure marketplace](azure-stack-edge-j-series-create-virtual-machine-image.md).
+You can download the disk images from Azure Marketplace. For detailed steps, see [Get the virtual disk image from Azure Marketplace](azure-stack-edge-j-series-create-virtual-machine-image.md).
 
-A sample output using AzCopy 7.3 is shown below. For more information on this command, go to [Upload VHD file to storage account using AzCopy](../devtest-labs/devtest-lab-upload-vhd-using-azcopy.md).
+Here's a sample output using AzCopy 7.3. For more information on this command, see [Upload VHD file to storage account using AzCopy](../devtest-labs/devtest-lab-upload-vhd-using-azcopy.md).
 
 
 ```powershell
@@ -221,7 +220,7 @@ $StorageAccountSAS = New-AzureStorageAccountSASToken -Service Blob,File,Queue,Ta
 <AzCopy exe path> cp "Full VHD path" "<BlobEndPoint>/<ContainerName><StorageAccountSAS>"
 ```
 
-Hier volgt een voorbeeld van uitvoer: 
+Hier volgt een voor beeld van uitvoer: 
 
 ```powershell
 $ContainerName = <ContainerName>
@@ -248,7 +247,8 @@ Een beheerde schijf maken op basis van de geüploade VHD.
 ```powershell
 $DiskConfig = New-AzureRmDiskConfig -Location DBELocal -CreateOption Import -SourceUri "Source URL for your VHD"
 ```
-Hieronder ziet u een voorbeeld van de uitvoer: 
+Hier volgt een voor beeld van uitvoer: 
+
 <code>
 $DiskConfig = New-AzureRmDiskConfig -Location DBELocal -CreateOption Import –SourceUri http://</code><code>sa191113014333.blob.dbe-1dcmhq2.microsoftdatabox.com/vmimages/ubuntu13.vhd</code> 
 
@@ -256,7 +256,7 @@ $DiskConfig = New-AzureRmDiskConfig -Location DBELocal -CreateOption Import –S
 New-AzureRMDisk -ResourceGroupName <Resource group name> -DiskName <Disk name> -Disk $DiskConfig
 ```
 
-Hieronder ziet u een voorbeeld van de uitvoer. Ga naar [New-AzureRmDisk](/powershell/module/azurerm.compute/new-azurermdisk?view=azurermps-6.13.0&preserve-view=true)voor meer informatie over deze cmdlet.
+Hier volgt een voorbeeld uitvoer. Ga naar [New-AzureRmDisk](/powershell/module/azurerm.compute/new-azurermdisk?view=azurermps-6.13.0&preserve-view=true)voor meer informatie over deze cmdlet.
 
 ```powershell
 Tags               :
@@ -296,7 +296,7 @@ Set-AzureRmImageOsDisk -Image $imageConfig -OsType 'Linux' -OsState 'Generalized
 New-AzureRmImage -Image $imageConfig -ImageName <Image name>  -ResourceGroupName <Resource group name>
 ```
 
-Hieronder ziet u een voorbeeld van de uitvoer. Ga naar [New-AzureRmImage](/powershell/module/azurerm.compute/new-azurermimage?view=azurermps-6.13.0&preserve-view=true)voor meer informatie over deze cmdlet.
+Hier volgt een voorbeeld uitvoer. Ga naar [New-AzureRmImage](/powershell/module/azurerm.compute/new-azurermimage?view=azurermps-6.13.0&preserve-view=true)voor meer informatie over deze cmdlet.
 
 ```powershell
 New-AzureRmImage -Image Microsoft.Azure.Commands.Compute.Automation.Models.PSImage -ImageName ig191113014333  -ResourceGroupName rg191113014333
@@ -317,15 +317,14 @@ Tags                 : {}
 U moet één virtueel netwerk maken en een virtuele netwerk interface koppelen voordat u de virtuele machine maakt en implementeert.
 
 > [!IMPORTANT]
-> Bij het maken van het virtuele netwerk en de virtuele netwerk interface gelden de volgende regels:
-> - Er kan slechts één Vnet worden gemaakt (zelfs over resource groepen) en het moet exact overeenkomen met het logische netwerk in termen van de adres ruimte.
-> - Er is slechts één subnet toegestaan in het Vnet. Het subnet moet exact dezelfde adres ruimte zijn als het Vnet.
-> - Alleen een statische toewijzings methode is toegestaan tijdens het maken van Vnic en de gebruiker moet een privé-IP-adres opgeven.
+> De volgende regels zijn van toepassing:
+> - U kunt slechts één virtueel netwerk maken, zelfs over resource groepen. Het virtuele netwerk moet exact dezelfde adres ruimte hebben als het logische netwerk.
+> - Het virtuele netwerk kan slechts één subnet hebben. Het subnet moet exact dezelfde adres ruimte hebben als het virtuele netwerk.
+> - Wanneer u de virtuele netwerk interface kaart maakt, kunt u alleen de statische toewijzings methode gebruiken. De gebruiker moet een privé-IP-adres opgeven.
 
- 
-**Een query uitvoeren op de automatisch gemaakte Vnet**
+### <a name="query-the-automatically-created-virtual-network"></a>Een query uitvoeren op het automatisch gemaakte virtuele netwerk
 
-Wanneer u berekenen van de lokale gebruikers interface van uw apparaat inschakelt, wordt er automatisch een Vnet `ASEVNET` gemaakt onder de `ASERG` resource groep. Gebruik de volgende opdracht om een query uit te zoeken op het bestaande Vnet:
+Wanneer u Compute van de lokale gebruikers interface van uw apparaat inschakelt, wordt automatisch een virtueel netwerk met `ASEVNET` de naam gemaakt, onder de `ASERG` resource groep. Gebruik de volgende opdracht om in het bestaande virtuele netwerk op te vragen:
 
 ```powershell
 $aRmVN = Get-AzureRMVirtualNetwork -Name ASEVNET -ResourceGroupName ASERG 
@@ -336,14 +335,16 @@ $subNetId=New-AzureRmVirtualNetworkSubnetConfig -Name <Subnet name> -AddressPref
 $aRmVN = New-AzureRmVirtualNetwork -ResourceGroupName <Resource group name> -Name <Vnet name> -Location DBELocal -AddressPrefix <Address prefix> -Subnet $subNetId
 ```-->
 
-**Een Vnic maken met de Vnet-subnet-ID**
+### <a name="create-a-virtual-network-interface-card"></a>Een virtuele netwerkinterfacekaart maken
+
+Hier volgt de opdracht voor het maken van een virtuele netwerk interface kaart met behulp van de subnet-ID van het virtuele netwerk:
 
 ```powershell
 $ipConfig = New-AzureRmNetworkInterfaceIpConfig -Name <IP config Name> -SubnetId $aRmVN.Subnets[0].Id -PrivateIpAddress <Private IP>
 $Nic = New-AzureRmNetworkInterface -Name <Nic name> -ResourceGroupName <Resource group name> -Location DBELocal -IpConfiguration $ipConfig
 ```
 
-De voorbeeld uitvoer van deze opdrachten wordt hieronder weer gegeven:
+Hier volgt een voor beeld van de uitvoer van deze opdrachten:
 
 ```powershell
 PS C:\Users\Administrator> $subNetId=New-AzureRmVirtualNetworkSubnetConfig -Name my-ase-subnet -AddressPrefix "5.5.0.0/16"
@@ -405,7 +406,7 @@ Primary                     : True
 MacAddress                  : 00155D18E432                :
 ```
 
-U kunt eventueel tijdens het maken van een Vnic voor een virtuele machine het open bare IP-adres door geven. In dit geval wordt het privé-IP-adres door het open bare IP-adres geretourneerd. 
+U kunt eventueel tijdens het maken van een virtuele netwerk interface kaart voor een VM het open bare IP-adres door geven. In dit geval wordt het privé-IP-adres door het open bare IP-adres geretourneerd. 
 
 ```powershell
 New-AzureRmPublicIPAddress -Name <Public IP> -ResourceGroupName <ResourceGroupName> -AllocationMethod Static -Location DBELocal
@@ -413,8 +414,7 @@ $publicIP = (Get-AzureRmPublicIPAddress -Name <Public IP> -ResourceGroupName <Re
 $ipConfig = New-AzureRmNetworkInterfaceIpConfig -Name <ConfigName> -PublicIpAddressId $publicIP -SubnetId $subNetId
 ```
 
-
-**Een VM maken**:
+### <a name="create-a-vm"></a>Een virtuele machine maken
 
 U kunt nu de VM-installatie kopie gebruiken om een virtuele machine te maken en deze te koppelen aan het virtuele netwerk dat u eerder hebt gemaakt.
 
@@ -458,15 +458,15 @@ Volg deze stappen om verbinding te maken met een virtuele Windows-machine.
 [!INCLUDE [azure-stack-edge-gateway-connect-vm](../../includes/azure-stack-edge-gateway-connect-virtual-machine-windows.md)]
 
 
-<!--Connect to the VM using the private IP that you passed during the VM creation.
+<!--Connect to the VM by using the private IP that you passed during the VM creation.
 
 Open an SSH session to connect with the IP address.
 
 `ssh -l <username> <ip address>`
 
-When prompted, provide the password that you used when creating the VM.
+When you're prompted, provide the password that you used when creating the VM.
 
-If you need to provide the SSH key, use this command.
+If you need to provide the SSH key, use this command:
 
 ssh -i c:/users/Administrator/.ssh/id_rsa Administrator@5.5.41.236
 
@@ -475,16 +475,16 @@ If you used a public IP address during VM creation, you can use that IP to conne
 ```powershell
 $publicIp = Get-AzureRmPublicIpAddress -Name <Public IP> -ResourceGroupName <Resource group name>
 ```
-The public IP in this case will be the same as the private IP that you passed during virtual network interface creation.-->
+The public IP in this case is the same as the private IP that you passed during the virtual network interface creation.-->
 
 
-## <a name="manage-vm"></a>Virtuele machine beheren
+## <a name="manage-the-vm"></a>De virtuele machine beheren
 
-In de volgende sectie worden enkele veelvoorkomende bewerkingen voor de virtuele machine beschreven die u op uw Azure Stack Edge Pro-apparaat gaat maken.
+In de volgende secties worden enkele veelvoorkomende bewerkingen beschreven die u op uw Azure Stack Edge Pro-apparaat kunt maken.
 
 ### <a name="list-vms-running-on-the-device"></a>Virtuele machines weer geven die worden uitgevoerd op het apparaat
 
-Voer de volgende opdracht uit om een lijst te retour neren van alle virtuele machines die worden uitgevoerd op uw Azure Stack Edge Pro-apparaat.
+Als u een lijst wilt weer geven met alle virtuele machines die worden uitgevoerd op uw Azure Stack edge-apparaat, voert u de volgende opdracht uit:
 
 
 `Get-AzureRmVM -ResourceGroupName <String> -Name <String>`
@@ -492,11 +492,10 @@ Voer de volgende opdracht uit om een lijst te retour neren van alle virtuele mac
 
 ### <a name="turn-on-the-vm"></a>De virtuele machine inschakelen
 
-Voer de volgende cmdlet uit om een virtuele machine die wordt uitgevoerd op uw apparaat in te scha kelen:
+Voer de volgende cmdlet uit om een virtuele machine in te scha kelen die op uw apparaat wordt uitgevoerd:
 
 
 `Start-AzureRmVM [-Name] <String> [-ResourceGroupName] <String>`
-
 
 Ga naar [Start-AzureRmVM](/powershell/module/azurerm.compute/start-azurermvm?view=azurermps-6.13.0&preserve-view=true)voor meer informatie over deze cmdlet.
 
@@ -508,7 +507,6 @@ Voer de volgende cmdlet uit om een virtuele machine die wordt uitgevoerd op uw a
 ```powershell
 Stop-AzureRmVM [-Name] <String> [-StayProvisioned] [-ResourceGroupName] <String>
 ```
-
 
 Ga naar de [cmdlet stop-AzureRmVM](/powershell/module/azurerm.compute/stop-azurermvm?view=azurermps-6.13.0&preserve-view=true)voor meer informatie over deze cmdlet.
 
@@ -531,8 +529,6 @@ Remove-AzureRmVM [-Name] <String> [-ResourceGroupName] <String>
 ```
 
 Ga naar de [cmdlet Remove-AzureRmVm](/powershell/module/azurerm.compute/remove-azurermvm?view=azurermps-6.13.0&preserve-view=true)voor meer informatie over deze cmdlet.
-
-
 
 ## <a name="next-steps"></a>Volgende stappen
 

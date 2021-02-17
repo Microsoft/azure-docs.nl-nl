@@ -9,6 +9,7 @@
 - name: Instructiegidsen
   items:
     - name: BareMetal-exemplaareenheden beheren in Azure
+      displayName: 'Azure CLI, az baremetalinstance, az baremetalinstance restart'
       href: baremetal-infrastructure-portal.md
 - name: Naslaginformatie
   items:

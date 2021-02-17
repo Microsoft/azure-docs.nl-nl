@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 10/08/2020
 ms.author: rolyon
-ms.openlocfilehash: ad906e3665c6ffc354cf6292c2559d1184037594
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: deee42c46c9b08bb265c972695b9319413d4fcb1
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91856144"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555916"
 ---
 # <a name="understand-scope-for-azure-rbac"></a>Bereik voor Azure RBAC
 
@@ -32,7 +32,7 @@ Beheer groepen zijn een niveau van scope boven abonnementen, maar beheer groepen
 
 ## <a name="scope-format"></a>Bereik indeling
 
-Als u roltoewijzingen toevoegt met behulp van de opdracht regel, moet u het bereik opgeven. Voor opdracht regel Programma's is bereik een mogelijk lange teken reeks die het exacte bereik van de roltoewijzing identificeert. In de Azure Portal wordt deze scope doorgaans vermeld als de *resource-id*.
+Als u rollen toewijst met behulp van de opdracht regel, moet u het bereik opgeven. Voor opdracht regel Programma's is bereik een mogelijk lange teken reeks die het exacte bereik van de roltoewijzing identificeert. In de Azure Portal wordt deze scope doorgaans vermeld als de *resource-id*.
 
 Het bereik bestaat uit een reeks id's gescheiden door het slash-teken (/). U kunt deze teken reeks beschouwen als uitdrukken van de volgende hiërarchie, waarbij tekst zonder tijdelijke aanduidingen een `{}` vaste id is:
 
@@ -122,6 +122,6 @@ Het is tamelijk eenvoudig om het bereik voor een beheer groep, abonnement of res
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Stappen om een roltoewijzing toe te voegen](role-assignments-steps.md)
+- [Stappen voor het toewijzen van een Azure-rol](role-assignments-steps.md)
 - [Resource providers for Azure services](../azure-resource-manager/management/azure-services-resource-providers.md) (Resourceproviders voor Azure-services)
 - [Wat zijn Azure-beheergroepen?](../governance/management-groups/overview.md)

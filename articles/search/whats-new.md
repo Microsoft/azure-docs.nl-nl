@@ -8,12 +8,12 @@ ms.service: cognitive-search
 ms.topic: overview
 ms.date: 02/09/2021
 ms.custom: references_regions
-ms.openlocfilehash: 13cb22c178be29af71b57d0f50fdbd0e95718069
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: 2b6685952aee1c8600321070794f001e0881604b
+ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100104600"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100535209"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Nieuwe functies in Azure Cognitive Search
 
@@ -77,7 +77,7 @@ Meer informatie over nieuwe functies in de service. Voeg een bladwijzer toe aan 
 |November | [Vaardigheid van tekst vertalingen](cognitive-search-skill-text-translation.md) | Een cognitieve vaardigheid die wordt gebruikt tijdens het indexeren waarmee tekst wordt geëvalueerd en vertaald. Algemeen verkrijgbaar.|
 |November | [Power BI sjablonen](https://github.com/Azure-Samples/cognitive-search-templates/blob/master/README.md) | Sjabloon voor het visualiseren van inhoud in het kennis archief |
 |November | [Azure data Lake Storage Gen2 (preview)](search-howto-index-azure-data-lake-storage.md), [Cosmos DB Gremlin-API (preview)](search-howto-index-cosmosdb.md)en [Cosmos DB Cassandra-API (preview-versie)](search-howto-index-cosmosdb.md) | Nieuwe Indexeer functie gegevens bronnen in open bare preview. |
-|Juli | [Cloud ondersteuning Azure Government](../azure-government/compare-azure-government-global-azure.md#azure-cognitive-search) | Algemeen verkrijgbaar.|
+|Juli | [Cloud ondersteuning Azure Government](https://azure.microsoft.com/global-infrastructure/services/?regions=usgov-non-regional,us-dod-central,us-dod-east,usgov-arizona,usgov-texas,usgov-virginia&products=search) | Algemeen verkrijgbaar.|
 
 <a name="new-service-name"></a>
 

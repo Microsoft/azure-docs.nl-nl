@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc, devx-track-csharp
 manager: philmea
-ms.openlocfilehash: 7e3292a9070e6676faad15e73d357e7f6875b5f4
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 824308b66803d2dfa05383ff06ce97c48626619d
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100371660"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100557584"
 ---
 # <a name="extend-azure-iot-central-with-custom-rules-using-stream-analytics-azure-functions-and-sendgrid"></a>Azure IoT Central uitbreiden met aangepaste regels met behulp van Stream Analytics, Azure Functions en SendGrid
 
@@ -119,26 +119,26 @@ U kunt een IoT Central-toepassing configureren om voortdurend telemetrie te expo
 
 De naam ruimte van uw Event Hubs ziet eruit als in de volgende scherm afbeelding: 
 
-    :::image type="content" source="media/howto-create-custom-rules/event-hubs-namespace.png" alt-text="Screenshot of Event Hubs namespace." border="false":::
+```:::image type="content" source="media/howto-create-custom-rules/event-hubs-namespace.png" alt-text="Screenshot of Event Hubs namespace." border="false":::
 
-## <a name="define-the-function"></a>Definieer de functie
+## Define the function
 
-Deze oplossing maakt gebruik van een Azure Functions-app om een e-mail bericht te verzenden wanneer de Stream Analytics-taak een gestopt apparaat detecteert. De functie-app maken:
+This solution uses an Azure Functions app to send an email notification when the Stream Analytics job detects a stopped device. To create your function app:
 
-1. Ga in het Azure Portal naar de **app service** instantie in de resource groep **DetectStoppedDevices** .
-1. Selecteer deze optie **+** om een nieuwe functie te maken.
-1. Selecteer **http-trigger**.
-1. Selecteer **Toevoegen**.
+1. In the Azure portal, navigate to the **App Service** instance in the **DetectStoppedDevices** resource group.
+1. Select **+** to create a new function.
+1. Select **HTTP Trigger**.
+1. Select **Add**.
 
-    :::image type="content" source="media/howto-create-custom-rules/add-function.png" alt-text="Afbeelding van de standaard functie voor HTTP-triggers"::: 
+    :::image type="content" source="media/howto-create-custom-rules/add-function.png" alt-text="Image of the Default HTTP trigger function"::: 
 
-## <a name="edit-code-for-http-trigger"></a>Code voor HTTP-trigger bewerken
+## Edit code for HTTP Trigger
 
-De portal maakt een standaard functie met de naam **HttpTrigger1**:
+The portal creates a default function called **HttpTrigger1**:
 
-    :::image type="content" source="media/howto-create-custom-rules/default-function.png" alt-text="Screenshot of Edit HTTP trigger function.":::
+```:::image type="content" source="media/howto-create-custom-rules/default-function.png" alt-text="Screenshot of Edit HTTP trigger function.":::
 
-1. Vervang de C#-code door de volgende code:
+1. Replace the C# code with the following code:
 
     ```csharp
     #r "Newtonsoft.Json"
@@ -177,50 +177,50 @@ De portal maakt een standaard functie met de naam **HttpTrigger1**:
     }
     ```
 
-    Er wordt mogelijk een fout bericht weer gegeven totdat u de nieuwe code opslaat.
-1. Selecteer **Opslaan** om de functie op te slaan.
+    You may see an error message until you save the new code.
+1. Select **Save** to save the function.
 
-## <a name="add-sendgrid-key"></a>SendGrid-sleutel toevoegen
+## Add SendGrid Key
 
-Als u uw SendGrid-API-sleutel wilt toevoegen, moet u deze als volgt toevoegen aan de **functie sleutels** :
+To add your SendGrid API Key, you need to add it to your **Function Keys** as follows:
 
-1. Selecteer **functie toetsen**.
-1. Kies **+ nieuwe functie toets**.
-1. Voer de *naam* en de *waarde* in van de API-sleutel die u eerder hebt gemaakt.
-1. Klik op **OK.**
+1. Select **Function Keys**.
+1. Choose **+ New Function Key**.
+1. Enter the *Name* and *Value* of the API Key you created before.
+1. Click **OK.**
 
-    :::image type="content" source="media/howto-create-custom-rules/add-key.png" alt-text="Scherm opname van de Sangrid-sleutel toevoegen.":::
+    :::image type="content" source="media/howto-create-custom-rules/add-key.png" alt-text="Screenshot of Add Sangrid Key.":::
 
 
-## <a name="configure-httptrigger-function-to-use-sendgrid"></a>De functie http trigger configureren voor het gebruik van SendGrid
+## Configure HttpTrigger function to use SendGrid
 
-Als u e-mail berichten met SendGrid wilt verzenden, moet u de bindingen voor uw functie als volgt configureren:
+To send emails with SendGrid, you need to configure the bindings for your function as follows:
 
-1. Selecteer **Integreren**.
-1. Kies **uitvoer toevoegen** onder **http ($Return)**.
-1. Selecteer **verwijderen.**
-1. Kies **+ nieuwe uitvoer**.
-1. Kies voor bindings type de optie **SendGrid**.
-1. Klik voor de SendGrid-API-sleutel instelling op nieuw.
-1. Voer de *naam* en *waarde* van uw SendGrid API-sleutel in.
-1. Voeg de volgende informatie toe:
+1. Select **Integrate**.
+1. Choose **Add Output** under **HTTP ($return)**.
+1. Select **Delete.**
+1. Choose **+ New Output**.
+1. For Binding Type, then choose **SendGrid**.
+1. For SendGrid API Key Setting Type, click New.
+1. Enter the *Name* and *Value* of your SendGrid API key.
+1. Add the following information:
 
-| Instelling | Waarde |
+| Setting | Value |
 | ------- | ----- |
-| Naam van de berichtparameter | Uw naam kiezen |
-| Naar adres | De naam van uw adres kiezen |
-| Van-adres | De naam van uw from-adres kiezen |
-| Onderwerp van bericht | Voer uw koptekst voor het onderwerp in |
-| Berichttekst | Het bericht van uw integratie invoeren |
+| Message parameter name | Choose your name |
+| To address | Choose the name of your To Address |
+| From address | Choose the name of your From Address |
+| Message subject | Enter your subject header |
+| Message text | Enter the message from your integration |
 
-1. Selecteer **OK**.
+1. Select **OK**.
 
-    :::image type="content" source="media/howto-create-custom-rules/add-output.png" alt-text="Scherm opname van SandGrid-uitvoer toevoegen.":::
+    :::image type="content" source="media/howto-create-custom-rules/add-output.png" alt-text="Screenshot of Add SandGrid Output.":::
 
 
-### <a name="test-the-function-works"></a>De functie testen
+### Test the function works
 
-Als u de functie in de portal wilt testen, kiest u eerst **Logboeken** aan de onderkant van de code-editor. Kies vervolgens **testen** rechts van de code-editor. Gebruik de volgende JSON als de **hoofd tekst** van de aanvraag:
+To test the function in the portal, first choose **Logs** at the bottom of the code editor. Then choose **Test** to the right of the code editor. Use the following JSON as the **Request body**:
 
 ```json
 [{"deviceid":"test-device-1","time":"2019-05-02T14:23:39.527Z"},{"deviceid":"test-device-2","time":"2019-05-02T14:23:50.717Z"},{"deviceid":"test-device-3","time":"2019-05-02T14:24:28.919Z"}]
@@ -228,9 +228,9 @@ Als u de functie in de portal wilt testen, kiest u eerst **Logboeken** aan de on
 
 De functie logboek berichten worden weer gegeven in het deel venster **Logboeken** :
 
-    :::image type="content" source="media/howto-create-custom-rules/function-app-logs.png" alt-text="Function log output":::
+```:::image type="content" source="media/howto-create-custom-rules/function-app-logs.png" alt-text="Function log output":::
 
-Na enkele minuten ontvangt het e-mail adres **van de e-mail** een e-mail bericht met de volgende inhoud:
+After a few minutes, the **To** email address receives an email with the following content:
 
 ```txt
 The following device(s) have stopped sending telemetry:
@@ -311,9 +311,11 @@ Deze oplossing maakt gebruik van een Stream Analytics query om te detecteren wan
 
     :::image type="content" source="media/howto-create-custom-rules/stream-analytics.png" alt-text="Scherm opname van Stream Analytics.":::
 
-## <a name="configure-export-in-iot-central"></a>Exporteren configureren in IoT Central
+## <a name="configure-export-in-iot-central"></a>Exporteren configureren in IoT Central 
 
-Ga op de website van [Azure IOT Central Application Manager](https://aka.ms/iotcentral) naar de IOT Central toepassing die u hebt gemaakt op basis van de contoso-sjabloon. In deze sectie configureert u de toepassing voor het streamen van de telemetrie van de gesimuleerde apparaten naar uw Event Hub. Het exporteren configureren:
+Ga op de website van [Azure IOT Central Application Manager](https://aka.ms/iotcentral) naar de IOT Central toepassing die u hebt gemaakt.
+
+In deze sectie configureert u de toepassing voor het streamen van de telemetrie van de gesimuleerde apparaten naar uw Event Hub. Het exporteren configureren:
 
 1. Ga naar de pagina voor het **exporteren van gegevens** , selecteer **+ Nieuw** en klik vervolgens op **Azure Event hubs**.
 1. Gebruik de volgende instellingen om het exporteren te configureren en selecteer vervolgens **Opslaan**: 
@@ -322,13 +324,11 @@ Ga op de website van [Azure IOT Central Application Manager](https://aka.ms/iotc
     | ------- | ----- |
     | Weergavenaam | Exporteren naar Event Hubs |
     | Ingeschakeld | Uit |
-    | Event Hubs-naamruimte | De naam van uw Event Hubs-naam ruimte |
-    | Event Hub | centralexport |
-    | Metingen | Uit |
-    | Apparaten | Aan |
-    | Apparaatsjablonen | Aan |
+    | Type gegevens dat moet worden geëxporteerd | Telemetrie |
+    | Verrijken | Voer de gewenste sleutel/waarde in van de manier waarop u de geëxporteerde gegevens wilt ordenen | 
+    | Doel | Nieuwe maken en informatie invoeren voor het exporteren van de gegevens |
 
-    :::image type="content" source="media/howto-create-custom-rules/cde-configuration.png" alt-text="Scherm opname van configuratie van continue gegevens export.":::
+    :::image type="content" source="media/howto-create-custom-rules/cde-configuration.png" alt-text="Scherm opname van het exporteren van gegevens.":::
 
 Wacht tot de export status **actief** is voordat u doorgaat.
 

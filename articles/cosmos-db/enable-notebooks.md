@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 02/09/2021
 ms.author: dech
 ms.custom: references_regions
-ms.openlocfilehash: b8ce745a0a0db96e7f6b9e3a0140d46364246e4a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: fd7f663ee5b6ceb49e6f1a393fc30919d5b245e9
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100379604"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100547822"
 ---
 # <a name="enable-notebooks-for-azure-cosmos-db-accounts-preview"></a>Notebooks inschakelen voor Azure Cosmos DB accounts (preview-versie)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -95,15 +95,15 @@ Ingebouwde notitie blokken voor Azure Cosmos DB zijn momenteel beschikbaar in 29
 - Duitsland - west-centraal
 - Japan - west
 - Korea - zuid
-- VS Noord-Centraal
+- VS - noord-centraal
 - Europa - noord
-- VS Zuid-Centraal
+- VS - zuid-centraal
 - Azië - zuidoost
 - Zwitserland - noord
 - UAE - centraal
 - Verenigd Koninkrijk Zuid
 - Verenigd Koninkrijk West
-- VS-West-Centraal
+- VS - west-centraal
 - Europa -west
 - India - west
 - VS - west 2

@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 26c4e154deec02b0642e6c131ced50acb02f9899
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: d69675d7ab07e4097556d269c97c3ecb66dc2fc6
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98951518"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100545831"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-weibo-account-using-azure-active-directory-b2c"></a>Stel registratie in en meld u aan met een Weibo-account met behulp van Azure Active Directory B2C
 
@@ -32,19 +32,19 @@ ms.locfileid: "98951518"
 
 ## <a name="create-a-weibo-application"></a>Een Weibo-toepassing maken
 
-Als u aanmelden wilt inschakelen voor gebruikers met een Weibo-account in Azure Active Directory B2C (Azure AD B2C), moet u een toepassing maken in [Weibo ontwikkelaars Portal](https://open.weibo.com/). Als u nog geen Weibo-account hebt, kunt u zich aanmelden bij [https://weibo.com](https://weibo.com/signup/signup.php?lang=en-us) .
+Als u aanmelden wilt inschakelen voor gebruikers met een Weibo-account in Azure Active Directory B2C (Azure AD B2C), moet u een toepassing maken in Weibo ontwikkelaars Portal. Als u nog geen Weibo-account hebt, kunt u zich aanmelden bij [https://weibo.com](https://weibo.com/signup/signup.php?lang=en-us) .
 
-1. Meld u aan bij de [Weibo-ontwikkelaars Portal](https://open.weibo.com/) met uw Weibo-account referenties.
+1. Meld u aan bij de Weibo-ontwikkelaars Portal met uw Weibo-account referenties.
 1. Nadat u zich hebt aangemeld, selecteert u uw weergave naam in de rechter bovenhoek.
 1. Selecteer in de vervolg keuzelijst **编辑开发者信息** (ontwikkelaars gegevens bewerken).
 1. Voer de vereiste gegevens in en selecteer **提交** (verzenden).
 1. Voltooi het e-mail verificatie proces.
-1. Ga naar de [pagina identiteits verificatie](https://open.weibo.com/developers/identity/edit).
+1. Ga naar de pagina identiteits verificatie.
 1. Voer de vereiste gegevens in en selecteer **提交** (verzenden).
 
 ### <a name="register-a-weibo-application"></a>Een Weibo-toepassing registreren
 
-1. Ga naar de [nieuwe pagina](https://open.weibo.com/apps/new)voor het registreren van Weibo-apps.
+1. Ga naar de nieuwe pagina voor het registreren van Weibo-apps.
 1. Voer de benodigde toepassings gegevens in.
 1. Selecteer **创建** (maken).
 1. Kopieer de waarden van de **app-sleutel** en het app- **geheim**. U hebt beide nodig om de ID-provider toe te voegen aan uw Tenant.

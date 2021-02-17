@@ -1,22 +1,22 @@
 ---
-title: Azure-roltoewijzingen toevoegen of verwijderen met Azure PowerShell-Azure RBAC
+title: Azure-rollen toewijzen met behulp van Azure PowerShell-Azure RBAC
 description: Meer informatie over het verlenen van toegang tot Azure-resources voor gebruikers, groepen, service-principals of beheerde identiteiten met behulp van Azure PowerShell en Azure op rollen gebaseerd toegangs beheer (Azure RBAC).
 services: active-directory
 author: rolyon
-manager: mtillman
+manager: daveba
 ms.service: role-based-access-control
 ms.topic: how-to
 ms.workload: identity
-ms.date: 11/25/2020
+ms.date: 02/15/2021
 ms.author: rolyon
-ms.openlocfilehash: 3bb09133ba6991554072b4bf68b5306c78f868a7
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 00f663b90f34f3b557329692f844bbbc1bf3207d
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97964283"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556802"
 ---
-# <a name="add-or-remove-azure-role-assignments-using-azure-powershell"></a>Azure-roltoewijzingen toevoegen of verwijderen met behulp van Azure PowerShell
+# <a name="assign-azure-roles-using-azure-powershell"></a>Azure-rollen toewijzen met behulp van Azure PowerShell
 
 [!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control/definition-grant.md)] In dit artikel wordt beschreven hoe u rollen toewijst met behulp van Azure PowerShell.
 
@@ -24,19 +24,19 @@ ms.locfileid: "97964283"
 
 ## <a name="prerequisites"></a>Vereisten
 
-Om roltoewijzingen toe te voegen of te verwijderen, hebt u het volgende nodig:
+Als u rollen wilt toewijzen, hebt u het volgende nodig:
 
-- Machtigingen voor `Microsoft.Authorization/roleAssignments/write` en `Microsoft.Authorization/roleAssignments/delete`, zoals [Beheerder van gebruikerstoegang](built-in-roles.md#user-access-administrator) of [Eigenaar](built-in-roles.md#owner)
+- `Microsoft.Authorization/roleAssignments/write`machtigingen, zoals beheerder of [eigenaar](built-in-roles.md#owner) van [gebruikers toegang](built-in-roles.md#user-access-administrator)
 - [Power shell in azure Cloud shell](../cloud-shell/overview.md) of [Azure PowerShell](/powershell/azure/install-az-ps)
 - Het account dat u gebruikt om de Power shell-opdracht uit te voeren, moet de Microsoft Graph `Directory.Read.All` machtiging hebben.
 
-## <a name="steps-to-add-a-role-assignment"></a>Stappen om een roltoewijzing toe te voegen
+## <a name="steps-to-assign-an-azure-role"></a>Stappen voor het toewijzen van een Azure-rol
 
-In azure RBAC kunt u een roltoewijzing toevoegen om toegang te verlenen. Een roltoewijzing bestaat uit drie elementen: beveiligings-principal, roldefinitie en bereik (ook wel scope of niveau genoemd). Voer de volgende stappen uit om een roltoewijzing toe te voegen.
+Als u een rol wilt toewijzen, bestaat uit drie elementen: beveiligingsprincipal, roldefinitie en bereik.
 
 ### <a name="step-1-determine-who-needs-access"></a>Stap 1: bepalen wie toegang moet hebben
 
-U kunt een rol toewijzen aan een gebruiker, groep, Service-Principal of beheerde identiteit. Als u een roltoewijzing wilt toevoegen, moet u mogelijk de unieke ID van het object opgeven. De ID heeft de volgende indeling: `11111111-1111-1111-1111-111111111111` . U kunt de ID ophalen met behulp van de Azure Portal of Azure PowerShell.
+U kunt een rol toewijzen aan een gebruiker, groep, Service-Principal of beheerde identiteit. Als u een rol wilt toewijzen, moet u mogelijk de unieke ID van het object opgeven. De ID heeft de volgende indeling: `11111111-1111-1111-1111-111111111111` . U kunt de ID ophalen met behulp van de Azure Portal of Azure PowerShell.
 
 **Gebruiker**
 
@@ -74,7 +74,7 @@ Get-AzADServicePrincipal -SearchString <principalName>
 (Get-AzADServicePrincipal -DisplayName <principalName>).id
 ```
     
-### <a name="step-2-find-the-appropriate-role"></a>Stap 2: de juiste rol zoeken
+### <a name="step-2-select-the-appropriate-role"></a>Stap 2: Selecteer de juiste rol
 
 Machtigingen worden samen in rollen gegroepeerd. U kunt kiezen uit een lijst met verschillende [ingebouwde rollen van Azure](built-in-roles.md) of u kunt uw eigen aangepaste rollen gebruiken. Het is een best practice om toegang te verlenen met de mini maal benodigde bevoegdheden, dus vermijd het toewijzen van een bredere rol.
 
@@ -128,9 +128,9 @@ Voor beheer groeps bereik hebt u de naam van de beheer groep nodig. U kunt de na
 Get-AzManagementGroup
 ```
     
-### <a name="step-4-add-role-assignment"></a>Stap 4: roltoewijzing toevoegen
+### <a name="step-4-assign-role"></a>Stap 4: rol toewijzen
 
-Gebruik de opdracht [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment) om een roltoewijzing toe te voegen. Afhankelijk van het bereik heeft de opdracht meestal een van de volgende notaties.
+Als u een rol wilt toewijzen, gebruikt u de opdracht [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment) . Afhankelijk van het bereik heeft de opdracht meestal een van de volgende notaties.
 
 **Resourcebereik**
 
@@ -190,9 +190,9 @@ New-AzRoleAssignment -ObjectId <objectId> `
 -Scope /providers/Microsoft.Management/managementGroups/<groupName>
 ``` 
     
-## <a name="add-role-assignment-examples"></a>Voor beelden van functie toewijzing toevoegen
+## <a name="assign-role-examples"></a>Voor beelden van rollen toewijzen
 
-#### <a name="add-role-assignment-for-all-blob-containers-in-a-storage-account-resource-scope"></a>Roltoewijzing voor alle BLOB-containers in een opslag account bron bereik toevoegen
+#### <a name="assign-a-role-for-all-blob-containers-in-a-storage-account-resource-scope"></a>Een rol toewijzen voor alle BLOB-containers in een bron bereik van een opslag account
 
 Hiermee wijst u de rol van de BLOB voor het decoderen van gegevens over de [opslag](built-in-roles.md#storage-blob-data-contributor) van een opslag account met de naam *storage12345* toe aan een service-principal met object-id *55555555-5555-5555-5555-555555555555* .
 
@@ -212,7 +212,7 @@ ObjectType         : ServicePrincipal
 CanDelegate        : False
 ```
 
-#### <a name="add-role-assignment-for-a-specific-blob-container-resource-scope"></a>Roltoewijzings toevoegen voor een specifiek BLOB-container resource bereik
+#### <a name="assign-a-role-for-a-specific-blob-container-resource-scope"></a>Een rol toewijzen voor een specifiek BLOB-container resource bereik
 
 Hiermee wijst u de rol van [BLOB voor gegevens opslag](built-in-roles.md#storage-blob-data-contributor) toe aan een service-principal met object-id *55555555-5555-5555-5555-555555555555* in een resource bereik voor een BLOB-container met de naam *BLOB-01*.
 
@@ -233,7 +233,7 @@ ObjectType         : ServicePrincipal
 CanDelegate        : False
 ```
 
-#### <a name="add-role-assignment-for-a-group-in-a-specific-virtual-network-resource-scope"></a>Roltoewijzing toevoegen voor een groep in een specifiek bron bereik voor een virtueel netwerk
+#### <a name="assign-a-role-for-a-group-in-a-specific-virtual-network-resource-scope"></a>Een rol toewijzen voor een groep in een specifiek bron bereik voor een virtueel netwerk
 
 Wijst de rol [Inzender voor virtuele machines](built-in-roles.md#virtual-machine-contributor) toe aan de groep *Pharma verkoop beheerders* met id aaaaaaaa-AAAA-AAAA-AAAA-aaaaaaaaaaaa in een resource bereik voor een virtueel netwerk met de naam *Pharma-Sales-project-Network*.
 
@@ -258,7 +258,7 @@ ObjectType         : Group
 CanDelegate        : False
 ```
 
-#### <a name="add-a-role-assignment-for-a-user-at-a-resource-group-scope"></a>Een roltoewijzing toevoegen voor een gebruiker in een bereik van een resource groep
+#### <a name="assign-a-role-for-a-user-at-a-resource-group-scope"></a>Een rol toewijzen aan een gebruiker in een bereik van een resource groep
 
 Wijst de rol van [Inzender voor virtuele machines](built-in-roles.md#virtual-machine-contributor) toe aan *patlong \@ contoso.com* gebruiker op het *Pharma-Sales-* resource groeps bereik.
 
@@ -297,7 +297,7 @@ ObjectType         : User
 CanDelegate        : False
 ```
 
-#### <a name="add-role-assignment-for-a-user-using-the-unique-role-id-at-a-resource-group-scope"></a>Roltoewijzing voor een gebruiker toevoegen met behulp van de unieke rol-ID in een resource groeps bereik
+#### <a name="assign-a-role-for-a-user-using-the-unique-role-id-at-a-resource-group-scope"></a>Een rol voor een gebruiker toewijzen met behulp van de unieke rol-ID in een resource groeps bereik
 
 Er zijn een aantal keren dat een rolnaam kan worden gewijzigd, bijvoorbeeld:
 
@@ -324,7 +324,7 @@ ObjectType         : User
 CanDelegate        : False
 ```
 
-#### <a name="add-role-assignment-for-an-application-at-a-resource-group-scope"></a>Roltoewijzing toevoegen voor een toepassing in een bereik van een resource groep
+#### <a name="assign-a-role-for-an-application-at-a-resource-group-scope"></a>Een rol toewijzen voor een toepassing in een bereik van een resource groep
 
 Wijst de rol van [Inzender voor virtuele machines](built-in-roles.md#virtual-machine-contributor) toe aan een toepassing met Service-Principal object-id 77777777-7777-7777-7777-777777777777 op het *Pharma* van de resource groep.
 
@@ -344,7 +344,7 @@ ObjectType         : ServicePrincipal
 CanDelegate        : False
 ```
 
-#### <a name="add-role-assignment-for-a-user-at-a-subscription-scope"></a>Roltoewijzing voor een gebruiker toevoegen aan een abonnements bereik
+#### <a name="assign-a-role-for-a-user-at-a-subscription-scope"></a>Een rol toewijzen aan een gebruiker op een abonnements bereik
 
 Wijst de rol van [lezer](built-in-roles.md#reader) toe aan de *annm \@ example.com* -gebruiker bij een abonnements bereik.
 
@@ -364,7 +364,7 @@ ObjectType         : ServicePrincipal
 CanDelegate        : False
 ```
 
-#### <a name="add-role-assignment-for-a-user-at-a-management-group-scope"></a>Roltoewijzing voor een gebruiker toevoegen aan een beheer groeps bereik
+#### <a name="assign-a-role-for-a-user-at-a-management-group-scope"></a>Een rol toewijzen aan een gebruiker in een bereik van een beheer groep
 
 Wijst de rol [facturerings lezer](built-in-roles.md#billing-reader) toe aan de *Alain \@ example.com* -gebruiker in een bereik van een beheer groep.
 
@@ -383,36 +383,6 @@ ObjectId           : 44444444-4444-4444-4444-444444444444
 ObjectType         : User
 CanDelegate        : False
 ```
-
-## <a name="remove-a-role-assignment"></a>Roltoewijzing verwijderen
-
-In azure RBAC verwijdert u een roltoewijzing met behulp van [Remove-AzRoleAssignment](/powershell/module/az.resources/remove-azroleassignment)om de toegang te verwijderen.
-
-In het volgende voor beeld wordt de toewijzing van de rol [Inzender voor virtuele machines](built-in-roles.md#virtual-machine-contributor) uit de *patlong \@ contoso.com* -gebruiker voor de resource groep *Pharma-Sales* verwijderd:
-
-```azurepowershell
-PS C:\> Remove-AzRoleAssignment -SignInName patlong@contoso.com `
--RoleDefinitionName "Virtual Machine Contributor" `
--ResourceGroupName pharma-sales
-```
-
-Hiermee verwijdert u de rol van [lezer](built-in-roles.md#reader) uit de *team groep Anne Mack* met id 22222222-2222-2222-2222-222222222222 op abonnements bereik.
-
-```azurepowershell
-PS C:\> Remove-AzRoleAssignment -ObjectId 22222222-2222-2222-2222-222222222222 `
--RoleDefinitionName "Reader" `
--Scope "/subscriptions/00000000-0000-0000-0000-000000000000"
-```
-
-Hiermee verwijdert u de rol van [facturerings lezer](built-in-roles.md#billing-reader) van de *Alain \@ example.com* -gebruiker in het bereik van de beheer groep.
-
-```azurepowershell
-PS C:\> Remove-AzRoleAssignment -SignInName alain@example.com `
--RoleDefinitionName "Billing Reader" `
--Scope "/providers/Microsoft.Management/managementGroups/marketing-group"
-```
-
-Als u het volgende fout bericht wordt weer gegeven: ' de opgegeven informatie is niet toegewezen aan een roltoewijzing ', zorg ervoor dat u ook `-Scope` de `-ResourceGroupName` para meters of opgeeft. Zie [problemen met Azure RBAC oplossen](troubleshooting.md#role-assignments-with-identity-not-found)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 12/16/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: ca023af0666899ae94d5bf82fc6f0736d5a8efa5
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
-ms.translationtype: HT
+ms.openlocfilehash: 6b0bdc5a5b58c205d888c8892a4333225a9b316f
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97614265"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100557139"
 ---
 # <a name="tutorial-create-user-flows-in-azure-active-directory-b2c"></a>Zelfstudie: Gebruikersstromen maken in Azure Active Directory B2C
 
@@ -133,7 +133,7 @@ In dit artikel hebt u het volgende geleerd:
 > * Een gebruikersstroom voor profielbewerking maken
 > * Een gebruikersstroom voor het opnieuw instellen van het wachtwoord maken
 
-Hierna volgt informatie over het toevoegen van id-providers aan uw toepassingen zodat gebruikers zich kunnen aanmelden met providers zoals Azure AD, Amazon, Facebook, GitHub, LinkedIn, Microsoft en Twitter.
+Lees vervolgens hoe u Azure AD B2C kunt gebruiken om u aan te melden en gebruikers in een toepassing te registreren. Volg de koppeling van de ASP.NET-webtoepassing hieronder of navigeer naar een andere toepassing in de inhouds opgave onder **gebruikers verifiëren**.
 
 > [!div class="nextstepaction"]
-> [Id-providers toevoegen aan toepassingen >](tutorial-add-identity-providers.md)
+> [Zelf studie: verificatie inschakelen in een webtoepassing met behulp van Azure AD B2C >](tutorial-web-app-dotnet.md)

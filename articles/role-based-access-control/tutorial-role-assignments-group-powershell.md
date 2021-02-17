@@ -13,12 +13,12 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/02/2019
 ms.author: rolyon
-ms.openlocfilehash: 9b1a2f87498d7869b21e6a8ab44fc1f9660456ad
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
-ms.translationtype: HT
+ms.openlocfilehash: e25db6213c99afaa46732831534956b01adba0b4
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94648290"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555230"
 ---
 # <a name="tutorial-grant-a-group-access-to-azure-resources-using-azure-powershell"></a>Zelfstudie: een groep toegang verlenen tot Azure-resources met behulp van Azure PowerShell
 
@@ -294,4 +294,4 @@ Als u de in deze zelfstudie gemaakte resources wilt opschonen, verwijdert u de r
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Azure-roltoewijzingen toevoegen of verwijderen met behulp van Azure PowerShell](role-assignments-powershell.md)
+> [Azure-rollen toewijzen met behulp van Azure PowerShell](role-assignments-powershell.md)

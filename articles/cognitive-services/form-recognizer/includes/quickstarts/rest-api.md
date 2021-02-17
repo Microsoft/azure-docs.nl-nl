@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 12/15/2020
 ms.author: pafarley
-ms.openlocfilehash: 3112c93e0877a8441875e3c7627c2a7b84ac8ab1
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 8ba24d5a59beade1429b9d86ed549f1dae3c2f1f
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99808452"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100552987"
 ---
 > [!NOTE]
 > In deze handleiding wordt gebruikgemaakt van cURL om REST API-aanroepen uit te voeren. Er is ook [voorbeeldcode op GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/python/FormRecognizer/rest) die laat zien hoe u de REST-API‘s aanroept met Python.
@@ -85,9 +85,14 @@ curl -v -X GET "https://{Endpoint}/formrecognizer/v2.1-preview.2/layout/analyzeR
 
 U ontvangt een `200 (success)`-antwoord met JSON-inhoud.
 
-Bekijk de volgende factuurafbeelding en de bijbehorende JSON-uitvoer. De uitvoer is voor het gemak ingekort. Het knooppunt `"readResults"` bevat elke tekstregel met het bijbehorende begrenzingsvak op de pagina. Het knooppunt `"selectionMarks"` (in preview 2.1) toont elke selectiemarkering (selectievakje, keuzerondje) en of de status ervan 'ingeschakeld' of 'niet ingeschakeld' is. De `"pageResults"` sectie bevat de tabellen die zijn geëxtraheerd. Voor elke tabel worden de tekst-, rij-en kolom index, de rij-en kolom spanning, het begrenzingsvak en meer geëxtraheerd.
+Bekijk de volgende factuurafbeelding en de bijbehorende JSON-uitvoer.
+* Het knooppunt `"readResults"` bevat elke tekstregel met het bijbehorende begrenzingsvak op de pagina. 
+* Het knooppunt `"selectionMarks"` (in preview 2.1) toont elke selectiemarkering (selectievakje, keuzerondje) en of de status ervan 'ingeschakeld' of 'niet ingeschakeld' is. 
+* De `"pageResults"` sectie bevat de tabellen die zijn geëxtraheerd. Voor elke tabel worden de tekst-, rij-en kolom index, de rij-en kolom spanning, het begrenzingsvak en meer geëxtraheerd.
 
 :::image type="content" source="../../media/contoso-invoice.png" alt-text="Document met een Contoso-projectinstructie met een tabel.":::
+
+Deze uitvoer is inge kort voor eenvoud. Bekijk de [volledige voorbeeld uitvoer op github](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/sample-layout-output.json).
 
 # <a name="v20"></a>[v2.0](#tab/v2-0)    
 ```json
@@ -355,11 +360,16 @@ curl -v -X GET "https://{Endpoint}/formrecognizer/v2.1-preview.2/prebuilt/invoic
 
 ### <a name="examine-the-response"></a>Het antwoord bekijken
 
-U ontvangt een `200 (Success)` antwoord met JSON-uitvoer. Het veld `"readResults"` bevat elke regel tekst die is geëxtraheerd uit de factuur, het veld `"pageResults"` bevat de tabellen en selectiemarkeringen die zijn geëxtraheerd uit de factuur en het veld `"documentResults"` bevat sleutel/waarde-informatie voor de meest relevante onderdelen van de factuur.
+U ontvangt een `200 (Success)` antwoord met JSON-uitvoer. 
+* Het `"readResults"` veld bevat elke tekst regel die uit de factuur is opgehaald.
+* De `"pageResults"` bevat de tabellen en selectie markeringen die zijn opgehaald uit de factuur.
+* Het `"documentResults"` veld bevat sleutel/waarde-informatie voor de meest relevante onderdelen van de factuur.
 
-Bekijk het volgende factuurdocument en de bijbehorende JSON-uitvoer. De JSON-inhoud is voor het gemak ingekort.
+Bekijk het volgende factuurdocument en de bijbehorende JSON-uitvoer. 
 
 * [Voorbeeldfactuur](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/tree/master/curl/form-recognizer/sample-invoice.pdf)
+
+Deze JSON-inhoud is inge kort voor de Lees baarheid. Bekijk de [volledige voorbeeld uitvoer op github](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/sample-invoice-output.json).
 
 ```json
 {
@@ -716,7 +726,7 @@ U ontvangt een `200 (Success)`-antwoord met een JSON-hoofdtekst in de volgende i
 
 In aangepaste modellen die zijn getraind zonder labels, bevinden de koppelingen en tabellen voor sleutel/waarde-paren zich in het `"pageResults"` knoop punt van de JSON-uitvoer. In aangepaste modellen die zijn getraind met labels, bevinden de koppelingen sleutel/waarde-paar zich in het `"documentResults"` knoop punt. Als u ook extractie voor tekst zonder opmaak hebt opgegeven via de URL-parameter *includeTextDetails*, worden in het knooppunt `"readResults"` de inhoud en posities van alle tekst in het document weergegeven.
 
-Dit voorbeeld van een JSON-bestand is voor het gemak ingekort.
+Dit voorbeeld van een JSON-bestand is voor het gemak ingekort. Bekijk de [volledige voorbeeld uitvoer op github](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/analyze-result-invoice-6.pdf.json).
 
 # <a name="v20"></a>[v2.0](#tab/v2-0)
 ```JSON
@@ -1041,13 +1051,15 @@ curl -X GET "https://{Endpoint}/formrecognizer/v2.1-preview.2/prebuilt/receipt/a
 
 ### <a name="examine-the-response"></a>Het antwoord bekijken
 
-U ontvangt een `200 (Success)` antwoord met JSON-uitvoer. Het eerste veld, `"status"`, geeft de status van de bewerking aan. Als de bewerking is voltooid, bevat het veld `"readResults"` elke regel tekst die is geëxtraheerd uit het ontvangstbewijs, en het veld `"documentResults"` bevat sleutel/waarde-informatie voor de meest relevante onderdelen van het ontvangstbewijs. Als de bewerking niet is voltooid, wordt de waarde van `"status"` `"running"` of `"notStarted"`. U moet de API opnieuw aanroepen, handmatig of via een script. We raden een interval van één seconde of meer aan tussen oproepen.
+U ontvangt een `200 (Success)` antwoord met JSON-uitvoer. Het eerste veld, `"status"`, geeft de status van de bewerking aan. Als de bewerking niet is voltooid, wordt de waarde van `"status"` `"running"` of `"notStarted"`. U moet de API opnieuw aanroepen, handmatig of via een script. We raden een interval van één seconde of meer aan tussen oproepen.
 
-Bekijk de volgende afbeelding van het ontvangstbewijs en de bijbehorende JSON-uitvoer. De uitvoer is voor het gemak ingekort.
+Het knooppunt `"readResults"` bevat alle herkende tekst (als u de optionele parameter *includeTextDetails* instelt op `true`). De tekst wordt geordend op pagina, vervolgens per regel en vervolgens op afzonderlijke woorden. Het knooppunt `"documentResults"` bevat de ontvangstbewijswaarden die het model heeft gedetecteerd. Hier vindt u nuttige sleutel/waarde-paren zoals de belasting, het totaal, het bedrijfsadres, enzovoort.
+
+Bekijk de volgende afbeelding van het ontvangstbewijs en de bijbehorende JSON-uitvoer.
 
 ![Een ontvangstbewijs van Contoso Store](../../media/contoso-allinone.jpg)
 
-Het knooppunt `"readResults"` bevat alle herkende tekst (als u de optionele parameter *includeTextDetails* instelt op `true`). De tekst wordt geordend op pagina, vervolgens per regel en vervolgens op afzonderlijke woorden. Het knooppunt `"documentResults"` bevat de ontvangstbewijswaarden die het model heeft gedetecteerd. Hier vindt u nuttige sleutel/waarde-paren zoals de belasting, het totaal, het bedrijfsadres, enzovoort.
+Deze uitvoer is inge kort voor de Lees baarheid. Bekijk de [volledige voorbeeld uitvoer op github](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/receipt-result.json).
 
 ```json
 {
@@ -1386,11 +1398,11 @@ Het knooppunt `"readResults"` bevat alle herkende tekst (als u de optionele para
 In deze sectie wordt beschreven hoe u algemene velden uit de Engelse visite kaartjes analyseert en extraheert met behulp van een vooraf getraind model. Zie de [conceptuele hand leiding voor visite](../../concept-business-cards.md)kaartjes voor meer informatie over het analyseren van bedrijfs kaarten. Als u wilt beginnen met het analyseren van een visitekaartje, roept u de **[Visitekaartje analyseren](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeBusinessCardAsync)** -API aan met het cURL-opdracht hieronder. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
 
 1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
-1. Vervang `{your receipt URL}` door het URL-adres van een afbeelding van het ontvangstbewijs.
+1. Vervang `{your business card URL}` door het URL-adres van een afbeelding van het ontvangstbewijs.
 1. Vervang `{subscription key}` door de abonnementssleutel die u uit de vorige stap hebt gekopieerd.
 
 ```bash
-curl -i -X POST "https://{Endpoint}/formrecognizer/v2.1-preview.2/prebuilt/businessCard/analyze" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}" --data-ascii "{ 'source': '{your receipt URL}'}"
+curl -i -X POST "https://{Endpoint}/formrecognizer/v2.1-preview.2/prebuilt/businessCard/analyze" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}" --data-ascii "{ 'source': '{your business card URL}'}"
 ```
 
 U ontvangt een `202 (Success)` antwoord met am **Operation-Location**-koptekst. Deze waarde van deze header bevat een bewerkings-id die u kunt gebruiken om query's uit te voeren op de status van de asynchrone bewerking en de resultaten op te halen.
@@ -1414,11 +1426,13 @@ curl -v -X GET "https://westcentralus.api.cognitive.microsoft.com/formrecognizer
 
 ### <a name="examine-the-response"></a>Het antwoord bekijken
 
-U ontvangt een `200 (Success)` antwoord met JSON-uitvoer. Het knooppunt `"readResults"` bevat alle herkende tekst. De tekst wordt geordend op pagina, vervolgens per regel en vervolgens op afzonderlijke woorden. Het knooppunt `"documentResults"` bevat de visitekaartjeswaarden die het model heeft gedetecteerd. Hier vindt u nuttige contactgegevens zoals bedrijfsnaam, voornaam, achternaam, telefoonnummer, enzovoort.
+U ontvangt een `200 (Success)` antwoord met JSON-uitvoer. 
+
+Het knooppunt `"readResults"` bevat alle herkende tekst. De tekst wordt geordend op pagina, vervolgens per regel en vervolgens op afzonderlijke woorden. Het knooppunt `"documentResults"` bevat de visitekaartjeswaarden die het model heeft gedetecteerd. Hier vindt u nuttige contactgegevens zoals bedrijfsnaam, voornaam, achternaam, telefoonnummer, enzovoort.
 
 ![Een visitekaartje van het Contoso-bedrijf](../../media/business-card-english.jpg)
 
-In dit voorbeeld wordt de JSON-uitvoer weergegeven die Form Recognizer retourneert. De uitvoer is ingekort zodat deze beter leesbaar is.
+Deze voor beeld-JSON-uitvoer is inge kort voor de Lees baarheid. Bekijk de [volledige voorbeeld uitvoer op github](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/business-card-result.json).
 
 ```json
 {

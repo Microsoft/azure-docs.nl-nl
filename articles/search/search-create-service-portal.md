@@ -7,23 +7,21 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 01/23/2021
-ms.openlocfilehash: 57867cc4fb539b07fc1e4117f6e956078c41e2c6
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.date: 02/15/2021
+ms.openlocfilehash: 3be043af7b057c47f360ce36db6bb7c3afd80638
+ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98746693"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100535345"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-service-in-the-portal"></a>Quickstart: Een Azure Cognitive Search-service maken in de portal
 
 [Azure Cognitive Search](search-what-is-azure-search.md) is een Azure-resource die wordt gebruikt voor het toevoegen van een zoek ervaring in volledige tekst voor aangepaste apps. U kunt het eenvoudig integreren met andere Azure-Services die gegevens of aanvullende verwerking bieden, met apps op netwerk servers of met software die wordt uitgevoerd op andere Cloud platforms.
 
-In dit artikel vindt u informatie over het maken van een zoek service in de [Azure Portal](https://portal.azure.com/).
+U kunt de zoek service maken met behulp van de [Azure Portal](https://portal.azure.com/), die in dit artikel wordt besproken. U kunt ook [Azure PowerShell](search-manage-powershell.md), [Azure CLI](/cli/azure/search)of een [Azure Resource Manager service sjabloon](https://azure.microsoft.com/resources/templates/101-azure-search-create/)gebruiken.
 
 [![GIF-animatie](./media/search-create-service-portal/AnimatedGif-AzureSearch-small.gif)](./media/search-create-service-portal/AnimatedGif-AzureSearch.gif#lightbox)
-
-Hebt u liever PowerShell? Gebruik de [servicesjabloon](https://azure.microsoft.com/resources/templates/101-azure-search-create/) van Azure Resource Manager. Zie [Azure Cognitive Search beheren met PowerShell](search-manage-powershell.md) voor hulp om aan de slag te gaan.
 
 ## <a name="before-you-start"></a>Voordat u begint
 
@@ -136,9 +134,9 @@ Een eindpunt en sleutel zijn niet nodig voor op de portal gebaseerde taken. De p
 
 Nadat uw service is geconfigureerd, kunt u deze schalen, zodat de service aan uw behoeften voldoet. Als u voor uw Azure Cognitive Search-service kiest voor de categorie Standard, kunt u uw service in twee dimensies schalen: replica's en partities. Als u had gekozen voor de categorie Basic, had u alleen replica's kunnen toevoegen. Als u had gekozen voor de gratis service, had u niet kunnen schalen.
 
-**_Partities_* _ toestaan dat uw service meer documenten opslaat en doorzoekt.
+***Partities*** zorgen ervoor dat uw service meer documenten bewaart en meer documenten doorzoekt.
 
-Met _*_replica's_*_ kan uw service een hogere belasting van zoek query's verwerken.
+***Replica's*** zorgen ervoor dat uw services meer zoekquery's kunnen verwerken.
 
 Als u resources toevoegt, wordt uw maandfactuur hoger. Met de [prijscalculator](https://azure.microsoft.com/pricing/calculator/) krijgt u inzicht in het effect van het toevoegen van resources op uw facturering. Onthoud dat u resources kunt aanpassen aan de benodigde capaciteit. Zo kunt u eerst resources toevoegen voor het maken van een volledige eerste index en later het aantal resources weer verlagen tot een niveau dat geschikt is voor incrementele indexering.
 
@@ -146,7 +144,7 @@ Als u resources toevoegt, wordt uw maandfactuur hoger. Met de [prijscalculator](
 > Een service moet [twee replica's hebben voor een alleen-lezen-SLA en drie replica's voor een lezen/schrijven-SLA](https://azure.microsoft.com/support/legal/sla/search/v1_0/).
 
 1. Ga naar de pagina van uw zoekservice in Azure Portal.
-2. Selecteer in het linkerdeel venster _ *instellingen** > **schalen**.
+2. Selecteer in het navigatiedeelvenster aan de linkerkant **Instellingen** > **Schalen**.
 3. Gebruik de schuifbalk om resources van een bepaald type toe te voegen.
 
 :::image type="content" source="media/search-create-service-portal/settings-scale.png" alt-text="Capaciteit toevoegen via replica's en partities" border="false":::

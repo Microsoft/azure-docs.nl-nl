@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 06/09/2020
 ms.author: rolyon
-ms.openlocfilehash: 850d50bc9e427ff559782d587d74b33089332a8d
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 30c7e6b1412373cf3bfe1c511206aa4b916bf1ee
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99091660"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100557507"
 ---
 # <a name="elevate-access-to-manage-all-azure-subscriptions-and-management-groups"></a>Toegang verhogen om alle Azure-abonnementen en beheergroepen te beheren
 
@@ -80,7 +80,7 @@ Volg deze stappen om de toegang tot een globale beheerder te verhogen met behulp
 
 1. Breng de wijzigingen aan die u nodig hebt om een verhoogde toegang te maken.
 
-    Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal](role-assignments-portal.md)voor meer informatie over het toewijzen van rollen. Als u Privileged Identity Management gebruikt, raadpleegt u [Azure-resources detecteren om](../active-directory/privileged-identity-management/pim-resource-roles-discover-resources.md) [Azure-resource rollen](../active-directory/privileged-identity-management/pim-resource-roles-assign-roles.md)te beheren of toe te wijzen.
+    Zie [Azure-rollen toewijzen met behulp van de Azure Portal](role-assignments-portal.md)voor meer informatie over het toewijzen van rollen. Als u Privileged Identity Management gebruikt, raadpleegt u [Azure-resources detecteren om](../active-directory/privileged-identity-management/pim-resource-roles-discover-resources.md) [Azure-resource rollen](../active-directory/privileged-identity-management/pim-resource-roles-assign-roles.md)te beheren of toe te wijzen.
 
 1. Voer de stappen in de volgende sectie uit om de verhoogde toegang te verwijderen.
 
@@ -149,7 +149,7 @@ Ga als volgt te werk om de toewijzing van de rol beheerder voor gebruikers toega
 
 Gebruik de volgende basis stappen om de toegang tot een globale beheerder te verhogen met behulp van de Azure CLI.
 
-1. Gebruik de opdracht [AZ rest](/cli/azure/reference-index?view=azure-cli-latest#az-rest) om het eind punt aan te roepen `elevateAccess` , waarmee u de rol beheerder voor gebruikers toegang in het hoofd bereik ( `/` ) verleent.
+1. Gebruik de opdracht [AZ rest](/cli/azure/reference-index#az_rest) om het eind punt aan te roepen `elevateAccess` , waarmee u de rol beheerder voor gebruikers toegang in het hoofd bereik ( `/` ) verleent.
 
     ```azurecli
     az rest --method post --url "/providers/Microsoft.Authorization/elevateAccess?api-version=2016-07-01"
@@ -157,7 +157,7 @@ Gebruik de volgende basis stappen om de toegang tot een globale beheerder te ver
 
 1. Breng de wijzigingen aan die u nodig hebt om een verhoogde toegang te maken.
 
-    Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van Azure cli](role-assignments-cli.md)voor meer informatie over het toewijzen van rollen.
+    Zie [Azure-rollen toewijzen met behulp van de Azure cli](role-assignments-cli.md)voor meer informatie over het toewijzen van rollen.
 
 1. Voer de stappen in een latere sectie uit om de verhoogde toegang te verwijderen.
 
@@ -199,7 +199,7 @@ Ga als volgt te werk om de toewijzing van de rol beheerder voor gebruikers toega
     az role assignment delete --assignee username@example.com --role "User Access Administrator" --scope "/"
     ```
 
-## <a name="rest-api"></a>REST API
+## <a name="rest-api"></a>REST-API
 
 ### <a name="elevate-access-for-a-global-administrator"></a>Toegang verhogen voor een globale beheerder
 
@@ -213,7 +213,7 @@ Gebruik de volgende basis stappen om de toegang tot een globale beheerder te ver
 
 1. Breng de wijzigingen aan die u nodig hebt om een verhoogde toegang te maken.
 
-    Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de rest API](role-assignments-rest.md)voor meer informatie over het toewijzen van rollen.
+    Zie [Azure-rollen toewijzen met behulp van de rest API](role-assignments-rest.md)voor meer informatie over het toewijzen van rollen.
 
 1. Voer de stappen in een latere sectie uit om de verhoogde toegang te verwijderen.
 
@@ -330,4 +330,4 @@ Wanneer u aanroept `elevateAccess` , maakt u een roltoewijzing voor uzelf, zodat
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Inzicht in de verschillende rollen](rbac-and-directory-admin-roles.md)
-- [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de REST API](role-assignments-rest.md)
+- [Azure-rollen toewijzen met behulp van de REST API](role-assignments-rest.md)

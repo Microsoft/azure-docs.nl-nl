@@ -12,12 +12,12 @@ ms.date: 01/19/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: e6b520a32755379fce5326e25b90f135b0d67755
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: b2baff33d9e91e1b5259d79eca0a22535c00f419
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98574323"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555241"
 ---
 # <a name="set-up-the-local-account-identity-provider"></a>De ID-provider van het lokale account instellen
 
@@ -95,7 +95,7 @@ U kunt de lokale id-providers configureren die beschikbaar zijn voor gebruik in 
 
 Een gebruikers stroom kan alleen worden geconfigureerd voor het gebruik van een van de lokale account-id-providers tegelijk. Elke gebruikers stroom kan een andere provider voor de lokale account-id hebben ingesteld, als er meer dan één is ingeschakeld op Tenant niveau.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Zorg ervoor dat u de map met uw Azure AD B2C-Tenant gebruikt door het filter **Directory + abonnement** te selecteren in het bovenste menu en de map te kiezen die uw Azure AD-Tenant bevat.
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Onder **Beheren** selecteert u **Id-providers**.
@@ -150,5 +150,5 @@ Nadat u het Start pakket hebt gedownload.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Externe ID-providers toevoegen](tutorial-add-identity-providers.md)
+- [Externe ID-providers toevoegen](add-identity-provider.md)
 - [Een gebruikersstroom maken](tutorial-create-user-flows.md)

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 ms.custom: device-developer
-ms.openlocfilehash: 5a9f6fa79da59425e4972dddd21ffdea15af73e7
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: f027b2d41f63b5aa7ea3df87e06224abd629799b
+ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127903"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100535311"
 ---
 # <a name="telemetry-property-and-command-payloads"></a>Payloads van telemetrie, eigenschappen en opdrachten
 
@@ -723,7 +723,7 @@ IoT Central verwacht een reactie van het apparaat naar updates van schrijf bare 
 
 `ac` is een numeriek veld dat gebruikmaakt van de waarden in de volgende tabel:
 
-| Waarde | Label | Beschrijving |
+| Waarde | Label | Description |
 | ----- | ----- | ----------- |
 | `'ac': 200` | Voltooid | De bewerking voor het wijzigen van de eigenschap is voltooid. |
 | `'ac': 202`  of `'ac': 201` | In behandeling | De bewerking voor het wijzigen van de eigenschap is in behandeling of wordt uitgevoerd |
@@ -1068,7 +1068,7 @@ In het volgende code fragment van een model van een apparaat wordt de definitie 
                 "displayName": {
                   "en": "Bank3"
                 },
-                "enumValue": 2,
+                "enumValue": 3,
                 "name": "Bank3"
               }
             ],

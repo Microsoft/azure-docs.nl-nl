@@ -55,13 +55,13 @@
           href: role-assignments-list-cli.md
         - name: REST-API
           href: role-assignments-list-rest.md
-    - name: Roltoewijzingen toevoegen of verwijderen
+    - name: Rollen toewijzen
       items:
-        - name: Stappen om een roltoewijzing toe te voegen
+        - name: Stappen voor het toewijzen van een rol
           href: role-assignments-steps.md
         - name: Portal
           items:
-            - name: Roltoewijzingen toevoegen of verwijderen
+            - name: Rollen toewijzen
               href: role-assignments-portal.md
             - name: Abonnementsbeheerder
               href: role-assignments-portal-subscription-admin.md
@@ -78,6 +78,8 @@
         - name: ARM-sjabloon
           displayName: Resource Manager
           href: role-assignments-template.md
+    - name: Roltoewijzingen verwijderen
+      href: role-assignments-remove.md
     - name: Lijst met geweigerde toewijzingen weergeven
       items:
         - name: Overzicht

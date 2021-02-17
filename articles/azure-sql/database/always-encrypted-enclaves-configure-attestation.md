@@ -11,12 +11,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviwer: vanto
 ms.date: 01/15/2021
-ms.openlocfilehash: 51431bf0da9145e1b61da708942b675e4c3eea78
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 664733f3d4c4e4bf17440db0323580c5d2c8c2ce
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98733812"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555663"
 ---
 # <a name="configure-azure-attestation-for-your-azure-sql-logical-server"></a>Azure Attestation configureren voor uw logische Azure SQL-Server
 
@@ -114,7 +114,7 @@ Tijdens de Attestation-werk stroom roept de logische Azure SQL-Server met uw dat
 
 ### <a name="use-azure-portal-to-assign-permission"></a>Azure Portal gebruiken om machtigingen toe te wijzen
 
-Als u de identiteit van een Azure SQL-Server wilt toewijzen aan de rol van de Attestation-lezer voor een Attestation-provider, volgt u de algemene instructies in [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md). Als u zich in het deel venster **toewijzing van rol toevoegen** bevindt:
+Volg de algemene instructies in [Azure roles toewijzen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md)om de identiteit van een Azure SQL-Server toe te wijzen aan de Attestation Reader-rol voor een Attestation-provider. Als u zich in het deel venster **toewijzing van rol toevoegen** bevindt:
 
 1. Selecteer in de vervolg keuzelijst **rol** de rol **Attestation-lezer** .
 1. Voer in het veld **selecteren** de naam van uw Azure SQL-Server in om ernaar te zoeken.
@@ -143,7 +143,7 @@ $attestationResourceGroupName = "<attestation provider resource group name>"
 New-AzRoleAssignment -ObjectId $server.Identity.PrincipalId -RoleDefinitionName "Attestation Reader" -ResourceGroupName $attestationResourceGroupName
 ```
 
-Zie [Azure-roltoewijzingen toevoegen of verwijderen met Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md#add-role-assignment-examples)voor meer informatie.
+Zie [Azure-rollen toewijzen met behulp van Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md#assign-role-examples)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

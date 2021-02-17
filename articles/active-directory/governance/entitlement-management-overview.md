@@ -17,12 +17,12 @@ ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: c9815355b26a9c14c02110e4bb5fff4f998d2105
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: 7efaaf9cbfdb13c80ce653c99d05da451c2b8968
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032029"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100547312"
 ---
 # <a name="what-is-azure-ad-entitlement-management"></a>Wat is Azure AD-rechtenbeheer?
 
@@ -174,5 +174,6 @@ Hier volgen enkele voorbeelden van licentiescenario's om te helpen bepalen hoeve
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Zelfstudie: Uw eerste toegangspakket maken](entitlement-management-access-package-first.md)
+- Als u geïnteresseerd bent in het gebruik van de Azure Portal om de toegang tot resources te beheren, raadpleegt u [zelf studie: toegang tot resources beheren-Azure Portal](entitlement-management-access-package-first.md).
+- Als u geïnteresseerd bent in het gebruik van Microsoft Graph voor het beheren van de toegang tot bronnen, raadpleegt u [zelf studie: toegang tot resources beheren-Microsoft Graph](/graph/tutorial-access-package-api?toc=/azure/active-directory/governance/toc.json&bc=/azure/active-directory/governance/breadcrumb/toc.json)
 - [Algemene scenario's](entitlement-management-scenarios.md)

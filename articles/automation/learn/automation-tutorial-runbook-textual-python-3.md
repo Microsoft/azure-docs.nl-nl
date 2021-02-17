@@ -3,14 +3,14 @@ title: Een Python 3-runbook (preview) maken in Azure Automation
 description: In dit artikel leert u een eenvoudig Python 3-runbook (preview) maken, testen en publiceren.
 services: automation
 ms.subservice: process-automation
-ms.date: 12/22/2020
+ms.date: 02/16/2021
 ms.topic: tutorial
-ms.openlocfilehash: e03eba29d634fafa9302441b17ca3a6bf6598556
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: c19f7e177d51a3de75e7d7ae2b83442e23efd243
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100104974"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546139"
 ---
 # <a name="tutorial-create-a-python-3-runbook-preview"></a>Zelfstudie: Een Python 3-runbook (preview) maken
 
@@ -39,7 +39,7 @@ Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
    * Als u zowel Python 2 als Python 3 hebt geïnstalleerd en u beide typen runbooks wilt uitvoeren, moet u de volgende omgevingsvariabelen configureren:
 
      * Python 2: maak een nieuwe omgevingsvariabele met de naam `PYTHON_2_PATH` en geef de installatiemap op. Als de installatiemap bijvoorbeeld `C:\Python27` is, moet dit pad aan de variabele worden toegevoegd.
-     
+
      * Python 3: maak een nieuwe omgevingsvariabele met de naam `PYTHON_3_PATH` en geef de installatiemap op. Als de installatiemap bijvoorbeeld `C:\Python3` is, moet dit pad aan de variabele worden toegevoegd.
 
 ## <a name="create-a-new-runbook"></a>Een nieuw runbook maken
@@ -128,23 +128,17 @@ Daarvoor moet het script verifiëren met behulp van de referenties van uw Automa
 
 2. Voeg de volgende code toe om te verifiëren bij Azure:
 
-   ```python
-   import os
-   from azure.mgmt.compute import ComputeManagementClient
-   import azure.mgmt.resource 
-   import automationassets 
-   
-   def get_automation_runas_credential(runas_connection): 
+    ```python
     from OpenSSL import crypto 
     import binascii 
     from msrestazure import azure_active_directory 
     import adal 
-    
+
     # Get the Azure Automation RunAs service principal certificate 
     cert = automationassets.get_automation_certificate("AzureRunAsCertificate") 
     pks12_cert = crypto.load_pkcs12(cert) 
     pem_pkey = crypto.dump_privatekey(crypto.FILETYPE_PEM,pks12_cert.get_privatekey()) 
-
+    
     # Get run as connection information for the Azure Automation service principal 
     application_id = runas_connection["ApplicationId"] 
     thumbprint = runas_connection["CertificateThumbprint"] 
@@ -155,17 +149,13 @@ Daarvoor moet het script verifiëren met behulp van de referenties van uw Automa
     authority_url = ("https://login.microsoftonline.com/"+tenant_id) 
     context = adal.AuthenticationContext(authority_url) 
     return azure_active_directory.AdalAuthentication( 
-        lambda: context.acquire_token_with_client_certificate( 
-                resource, 
-                application_id, 
-                pem_pkey, 
-                thumbprint) 
+      lambda: context.acquire_token_with_client_certificate( 
+          resource, 
+          application_id, 
+          pem_pkey, 
+          thumbprint) 
     ) 
-    
-   # Authenticate to Azure using the Azure Automation RunAs service principal 
-   runas_connection = automationassets.get_automation_connection("AzureRunAsConnection") 
-   azure_credential = get_automation_runas_credential(runas_connection) 
-   ```
+    ```
 
 ## <a name="add-code-to-create-python-compute-client-and-start-the-vm"></a>Voeg code toe om de Python Compute-client te maken en de VM te starten
 

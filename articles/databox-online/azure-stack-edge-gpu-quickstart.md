@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 01/27/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to quickly deploy Azure Stack Edge so I can use it to transfer data to Azure.
-ms.openlocfilehash: 642ab348cd2bb5cd2cedd2b481b0d06fb6c4b425
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 4f3ecb6c9aa4ec200cd1a53b82d7c81a2c8d4dcd
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98953934"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546785"
 ---
 # <a name="quickstart-get-started-with-azure-stack-edge-pro-with-gpu"></a>Quickstart: Aan de slag met Azure Stack Edge Pro met GPU 
 
@@ -64,7 +64,7 @@ Voordat u implementeert, moet u ervoor zorgen dat aan de volgende vereisten is v
 10. **Certificaten configureren**: Als u de apparaatnaam en/of het DNS-domein hebt gewijzigd, moet u certificaten genereren of certificaten toevoegen om het apparaat te activeren. 
 
     - Als u niet-productieworkloads wilt testen, gebruikt u de [optie Certificaten genereren](azure-stack-edge-gpu-deploy-configure-certificates.md#generate-device-certificates). 
-    - Als u uw eigen certificaten hebt, inclusief de ondertekeningsketen(s), kunt u [Certificaten toevoegen](azure-stack-edge-gpu-deploy-configure-certificates.md#bring-your-own-certificates) in de juiste indeling. Zorg ervoor dat u eerst de ondertekeningsketen uploadt. Zie [Certificaten maken](azure-stack-edge-j-series-create-certificates-tool.md) en [Certificaten uploaden via de lokale UI](azure-stack-edge-gpu-deploy-configure-certificates.md#bring-your-own-certificates).
+    - Als u uw eigen certificaten hebt, inclusief de ondertekeningsketen(s), kunt u [Certificaten toevoegen](azure-stack-edge-gpu-deploy-configure-certificates.md#bring-your-own-certificates) in de juiste indeling. Zorg ervoor dat u eerst de ondertekeningsketen uploadt. Zie [Certificaten maken](azure-stack-edge-gpu-create-certificates-tool.md) en [Certificaten uploaden via de lokale UI](azure-stack-edge-gpu-deploy-configure-certificates.md#bring-your-own-certificates).
 
 11. **Activeren**: De activeringssleutel ophalen 
 
@@ -73,7 +73,7 @@ Voordat u implementeert, moet u ervoor zorgen dat aan de volgende vereisten is v
 
 12. **Rekenproces configureren**: Ga in de Azure-portal naar **Overzicht > Apparaat**. Controleer of het apparaat **Online** is. Ga in het linkerdeelvenster naar **Edge-rekenproces > Aan de slag > Edge-rekenproces configureren > Rekenproces**. Geef een bestaande of nieuwe IoT Hub-service op en wacht ongeveer 20 minuten totdat het rekenproces is geconfigureerd. Ga voor meer informatie naar de [Zelfstudie: Rekenproces configureren op Azure Stack Edge Pro GPU-apparaat](azure-stack-edge-gpu-deploy-configure-compute.md)
 
-U bent klaar om rekenworkloads te implementeren op uw apparaat [via IoT Edge](azure-stack-edge-gpu-deploy-sample-module-marketplace.md), [via `kubectl`](azure-stack-edge-gpu-create-kubernetes-cluster.md) of [via Kubernetes met Azure Arc](azure-stack-edge-gpu-deploy-arc-kubernetes-cluster.md). Als u problemen ondervindt tijdens de installatie, gaat u naar [Problemen met het apparaat](), [problemen met orders](azure-stack-edge-gpu-troubleshoot.md), [certificaatproblemen](azure-stack-edge-j-series-certificate-troubleshooting.md) of Kubernetes-problemen oplossen. 
+U bent klaar om rekenworkloads te implementeren op uw apparaat [via IoT Edge](azure-stack-edge-gpu-deploy-sample-module-marketplace.md), [via `kubectl`](azure-stack-edge-gpu-create-kubernetes-cluster.md) of [via Kubernetes met Azure Arc](azure-stack-edge-gpu-deploy-arc-kubernetes-cluster.md). Als u problemen ondervindt tijdens de installatie, gaat u naar [Problemen met het apparaat](), [problemen met orders](azure-stack-edge-gpu-troubleshoot.md), [certificaatproblemen](azure-stack-edge-gpu-certificate-troubleshooting.md) of Kubernetes-problemen oplossen. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

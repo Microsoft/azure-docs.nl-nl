@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: Azure Active Directory-integratie met eenmalige aanmelding (SSO) met Kendis-Scaling flexibele platform | Microsoft Docs'
-description: Meer informatie over het configureren van eenmalige aanmelding tussen Azure Active Directory en Kendis-Scaling flexibel platform.
+title: 'Zelf studie: Azure Active Directory de integratie van eenmalige aanmelding (SSO) met Kendis-Azure AD-integratie | Microsoft Docs'
+description: Meer informatie over het configureren van eenmalige aanmelding tussen Azure Active Directory en Kendis-Azure AD-integratie.
 services: active-directory
 author: jeevansd
 manager: CelesteDG
@@ -9,21 +9,21 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 01/28/2021
+ms.date: 02/12/2021
 ms.author: jeedes
-ms.openlocfilehash: e02ff4926897fafc72e1a5081366faad5d2f03ba
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 802ccc1989bf0930e8c0c9818227a49eb03fc1c8
+ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509773"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100534835"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-kendis-scaling-agile-platform"></a>Zelf studie: Azure Active Directory-integratie met eenmalige aanmelding (SSO) met Kendis-Scaling flexibel platform
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-kendis---azure-ad-integration"></a>Zelf studie: Azure Active Directory de integratie van eenmalige aanmelding (SSO) met Kendis-Azure AD-integratie
 
-In deze zelf studie leert u hoe u Kendis-Scaling flexibel platform kunt integreren met Azure Active Directory (Azure AD). Wanneer u Kendis-Scaling flexibel platform integreert met Azure AD, kunt u het volgende doen:
+In deze zelf studie leert u hoe u Kendis-Azure AD-integratie integreert met Azure Active Directory (Azure AD). Wanneer u Kendis-Azure AD-integratie integreert met Azure AD, kunt u het volgende doen:
 
-* Controle in azure AD die toegang heeft tot Kendis-Scaling flexibele platform.
-* Stel in dat uw gebruikers zich automatisch kunnen aanmelden om flexibel platform te Kendis-Scaling met hun Azure AD-accounts.
+* Controle in azure AD die toegang heeft tot Kendis-Azure AD-integratie.
+* Stel uw gebruikers in staat om automatisch te worden aangemeld bij Kendis-Azure AD-integratie met hun Azure AD-accounts.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
@@ -31,46 +31,46 @@ In deze zelf studie leert u hoe u Kendis-Scaling flexibel platform kunt integrer
 U hebt het volgende nodig om aan de slag te gaan:
 
 * Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
-* Kendis-Scaling abonnement met het flexibele platform eenmalige aanmelding (SSO) ingeschakeld.
+* Kendis-abonnement met eenmalige aanmelding (SSO) van Azure AD-integratie.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* Kendis-Scaling Agile-platform ondersteunt SSO **met SP en IDP**
-* Kendis-Scaling Agile-platform ondersteunt **just-in-time** -gebruikers inrichting
+* Kendis-Azure AD-integratie ondersteunt door **SP en IDP** GEÏNITIEERDe SSO
+* Kendis-Azure AD-integratie ondersteunt **just-in-time** -gebruikers inrichting
 
 
-## <a name="adding-kendis-scaling-agile-platform-from-the-gallery"></a>Kendis-Scaling flexibel platform toevoegen vanuit de galerie
+## <a name="adding-kendis---azure-ad-integration-from-the-gallery"></a>Kendis-Azure AD-integratie toevoegen vanuit de galerie
 
-Als u de integratie van Kendis-Scaling flexibele platform wilt configureren in azure AD, moet u Kendis-Scaling Agile-platform uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
+Als u de integratie van Kendis-Azure AD-integratie in azure AD wilt configureren, moet u Kendis-Azure AD-integratie vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ in de sectie **toevoegen vanuit de galerie** **Kendis flexibel platform** in het zoekvak.
-1. Selecteer **Kendis, flexibel platform schalen** vanuit het paneel resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
+1. Typ in de sectie **toevoegen vanuit de galerie** **KENDIS-Azure AD-integratie** in het zoekvak.
+1. Selecteer **Kendis-Azure AD-integratie** in het paneel resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 
-## <a name="configure-and-test-azure-ad-sso-for-kendis-scaling-agile-platform"></a>Azure AD SSO configureren en testen voor Kendis-Scaling Agile-platform
+## <a name="configure-and-test-azure-ad-sso-for-kendis---azure-ad-integration"></a>Azure AD SSO voor Kendis configureren en testen-Azure AD-integratie
 
-Configureer en test Azure AD SSO met Kendis-Scaling Agile-platform met behulp van een test gebruiker met de naam **B. Simon**. Voor het werken met SSO moet u een koppelings relatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Kendis-Scaling Agile-platform.
+Azure AD SSO configureren en testen met Kendis-Azure AD-integratie met behulp van een test gebruiker met de naam **B. Simon**. Voor het werken met SSO moet u een koppelings relatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Kendis-Azure AD-integratie.
 
-Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met Kendis-Scaling Agile-platform:
+Als u Azure AD SSO wilt configureren en testen met Kendis-Azure AD-integratie, voert u de volgende stappen uit:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
     1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
-1. **[Kendis-Scaling Agile platform SSO configureren](#configure-kendis-scaling-agile-platform-sso)** : voor het configureren van de instellingen voor eenmalige aanmelding aan de kant van de toepassing.
-    1. **[Maak Kendis-Scaling flexibele platform test gebruiker](#create-kendis-scaling-agile-platform-test-user)** : als u een equivalent van B. Simon wilt hebben in Kendis-Scaling Agile-platform dat is gekoppeld aan de Azure AD-representatie van de gebruiker.
+1. **[Kendis-Azure AD Integration SSO configureren](#configure-kendis-azure-ad-integration-sso)** : voor het configureren van de instellingen voor eenmalige aanmelding aan de kant van de toepassing.
+    1. **[Maak Kendis-Azure AD-test gebruiker](#create-kendis-azure-ad-integration-test-user)** voor het integreren van een equivalent van B. Simon in Kendis-Azure AD-integratie die is gekoppeld aan de Azure AD-representatie van de gebruiker.
 1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
 ## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in de Azure Portal op de pagina flexibele platform toepassings integratie met **Kendis-schaal** de sectie **beheren** en selecteer **eenmalige aanmelding**.
+1. Zoek in de Azure Portal op de pagina **Kendis-Azure AD-integratie** toepassing de sectie **beheren** en selecteer **eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -87,13 +87,13 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.kendis.io/login`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke-id, de antwoord-URL en de aanmeldings-URL. Neem contact op met [het ondersteunings team voor het Kendis van het flexibele platform](mailto:support@kendis.io) om deze waarden op te halen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke-id, de antwoord-URL en de aanmeldings-URL. Neem contact op met [Kendis-Azure AD Integration client support team](mailto:support@kendis.io) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** gaat u naar **Certificaat (Base64)** en selecteert u **Downloaden** om het certificaat te downloaden en op te slaan op uw computer.
 
     ![De link om het certificaat te downloaden](common/certificatebase64.png)
 
-1. Kopieer op de sectie **Kendis-Scaling Agile-platform instellen** de gewenste URL ('s) op basis van uw vereiste.
+1. Op de sectie **Kendis-Azure AD-integratie instellen** kopieert u de gewenste URL ('s) op basis van uw vereiste.
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
@@ -111,19 +111,19 @@ In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Porta
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
-In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Kendis-Scaling Agile-platform.
+In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Kendis-Azure AD-integratie.
 
 1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
-1. Selecteer in de lijst toepassingen het **flexibele platform Kendis-schalen**.
+1. Selecteer in de lijst toepassingen de optie **Kendis-Azure AD-integratie**.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-## <a name="configure-kendis-scaling-agile-platform-sso"></a>Kendis-Scaling flexibel platform-SSO configureren
+## <a name="configure-kendis-azure-ad-integration-sso"></a>Kendis-Azure AD Integration SSO configureren
 
-1. Meld u in een ander webbrowser venster aan bij de bedrijfs site van uw Kendis-Scaling flexibele platform als beheerder.
+1. Meld u in een ander webbrowser venster aan bij uw Kendis-Azure AD-integratie bedrijfs site als beheerder.
 
 1. Ga naar de **instellingen > SAML-configuraties**.
 
@@ -145,9 +145,9 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
 
     f. Klik op **Opslaan**.
 
-### <a name="create-kendis-scaling-agile-platform-test-user"></a>Kendis-Scaling flexibele platform test gebruiker maken
+### <a name="create-kendis-azure-ad-integration-test-user"></a>Kendis-Azure AD-integratie test gebruiker maken
 
-In deze sectie wordt een gebruiker met de naam Julia Simon gemaakt in Kendis-Scaling Agile-platform. Kendis-Scaling Agile-platform biedt ondersteuning voor Just-in-time-gebruikers inrichting, dat standaard is ingeschakeld. Er is geen actie-item voor u in deze sectie. Als een gebruiker nog niet bestaat in Kendis-Scaling Agile-platform, wordt er na verificatie een nieuwe gemaakt.
+In deze sectie wordt een gebruiker met de naam Julia Simon gemaakt in Kendis-Azure AD-integratie. Kendis-Azure AD-integratie ondersteunt just-in-time-gebruikers inrichting, die standaard is ingeschakeld. Er is geen actie-item voor u in deze sectie. Als een gebruiker nog niet bestaat in Kendis-Azure AD-integratie, wordt er na verificatie een nieuwe gemaakt.
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen
 
@@ -155,19 +155,19 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 #### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar Kendis-Scaling URL van het flexibele platform, waar u de aanmeldings stroom kunt initiëren.  
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de Kendis-URL van Azure AD-integratie, waar u de aanmeldings stroom kunt initiëren.  
 
-* Ga rechtstreeks naar Kendis-Scaling URL van het flexibele platform en start de aanmeldings stroom.
+* Ga rechtstreeks naar Kendis-aanmeld URL voor Azure AD-integratie en start de aanmeldings stroom vanaf daar.
 
 #### <a name="idp-initiated"></a>Met IDP geïnitieerd:
 
-* Klik op **test deze toepassing** in azure Portal en u moet automatisch worden aangemeld bij het Kendis-Scaling flexibele platform waarvoor u de SSO hebt ingesteld 
+* Klik op **test deze toepassing** in azure Portal en u moet automatisch worden aangemeld bij de Kendis-Azure AD-integratie waarvoor u de SSO hebt ingesteld 
 
-U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de tegel Kendis-Scaling Agile-platform in de mijn apps klikt, als deze is geconfigureerd in de SP-modus, wordt u omgeleid naar de aanmeldings pagina van de toepassing voor het initiëren van de aanmeldings stroom en als deze is geconfigureerd in de IDP-modus, moet u automatisch worden aangemeld bij het Kendis-Scaling flexibele platform waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de tegel Kendis-Azure AD-integratie in de mijn apps klikt, wordt u naar de aanmeldings pagina van de toepassing omgeleid voor het initiëren van de aanmeldings stroom en als deze is geconfigureerd in de IDP-modus, dan moet u automatisch worden aangemeld bij de Kendis-Azure AD-integratie waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u Kendis-Scaling flexibel platform hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+Nadat u Kendis-Azure AD-integratie hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
 

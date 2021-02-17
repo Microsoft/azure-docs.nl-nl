@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 08/31/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to add and connect to storage accounts on Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: c24970b30e522d593a491194dbbabb0421ad7f4b
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.openlocfilehash: b346cf37a8275b1783e94e0f51859b8c87eb9b67
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185532"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546819"
 ---
 # <a name="tutorial-transfer-data-via-storage-accounts-with-azure-stack-edge-pro-gpu"></a>Zelfstudie: Gegevens overdragen via opslagaccounts met Azure Stack Edge Pro GPU 
 
@@ -137,9 +137,9 @@ Deze stappen worden afzonderlijk beschreven in de volgende gedeelten.
 
 Voor toegang tot Blob Storage via HTTPS is een SSL-certificaat voor het apparaat vereist. U uploadt dit certificaat ook naar uw Azure Stack Edge Pro-apparaat als *PFX*-bestand waaraan een persoonlijke sleutel is gekoppeld. Voor meer informatie over het maken (alleen voor test- en ontwikkeldoeleinden) en het uploaden van deze certificaten naar uw Azure Stack Edge Pro-apparaat, gaat u naar:
 
-- [Blob-eindpuntcertificaat maken](azure-stack-edge-j-series-manage-certificates.md#create-certificates-optional).
-- [Blob-eindpuntcertificaat uploaden](azure-stack-edge-j-series-manage-certificates.md#upload-certificates).
-- [Importeren van certificaten op de client die toegang tot het apparaat heeft](azure-stack-edge-j-series-manage-certificates.md#import-certificates-on-the-client-accessing-the-device).
+- [Blob-eindpuntcertificaat maken](azure-stack-edge-gpu-manage-certificates.md#create-certificates-optional).
+- [Blob-eindpuntcertificaat uploaden](azure-stack-edge-gpu-manage-certificates.md#upload-certificates).
+- [Importeren van certificaten op de client die toegang tot het apparaat heeft](azure-stack-edge-gpu-manage-certificates.md#import-certificates-on-the-client-accessing-the-device).
 
 ### <a name="import-certificate"></a>Certificaat importeren
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/02/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: e8915e1c15972341befd176b412925f4e87c94f6
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: fadbed5607c7ebdd61a42ae054f431840c529d69
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201447"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573073"
 ---
 # <a name="azure-policy-security-baseline-for-azure-security-benchmark"></a>Azure Policy beveiligings basislijn voor Azure Security Bench Mark
 
@@ -31,9 +31,9 @@ Azure Policy gebruikt het _eigendom_ van de term in plaats van _verantwoordelijk
 
 **Richt lijnen**: Azure Policy gebruikt activiteiten logboeken, die automatisch worden ingeschakeld, om gebeurtenis bron, datum, gebruiker, tijds tempel, bron adressen, doel adressen en andere nuttige elementen op te neemt.
 
-* [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../../../azure-monitor/platform/diagnostic-settings.md)
+* [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../../../azure-monitor/essentials/diagnostic-settings.md)
 
-* [Logboek registratie en verschillende logboek typen in azure](../../../azure-monitor/platform/platform-logs-overview.md)
+* [Logboek registratie en verschillende logboek typen in azure](../../../azure-monitor/essentials/platform-logs-overview.md)
 
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
@@ -89,7 +89,7 @@ U kunt ook een just-in-time-of just-out-Access-oplossing inschakelen met behulp 
 
 **Hulp**: gebruik Azure monitor met activiteiten Logboeken om waarschuwingen te maken wanneer wijzigingen in azure Policy plaatsvinden.
 
-* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../../azure-monitor/platform/alerts-activity-log.md)
+* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../../azure-monitor/alerts/alerts-activity-log.md)
 
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar

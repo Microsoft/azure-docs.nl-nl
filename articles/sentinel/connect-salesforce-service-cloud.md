@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/17/2021
 ms.author: yelevin
-ms.openlocfilehash: 152fee2e4e72cee6a7bc1c768c0a8ca7b031ec39
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 1efd91d92bac1bc1f39d82aaa0cc71daa0275f8e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878915"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570538"
 ---
 # <a name="connect-your-salesforce-service-cloud-to-azure-sentinel"></a>Uw Sales Force-service-cloud verbinden met Azure Sentinel
 
@@ -35,7 +35,7 @@ In dit artikel wordt uitgelegd hoe u de Cloud oplossing van de Sales Force-servi
 
 - U moet lees-en schrijf machtigingen hebben voor de Azure Sentinel-werk ruimte.
 
-- U moet Lees machtigingen hebben voor gedeelde sleutels voor de werk ruimte. [Meer informatie over werkruimte sleutels](../azure-monitor/platform/log-analytics-agent.md#workspace-id-and-key).
+- U moet Lees machtigingen hebben voor gedeelde sleutels voor de werk ruimte. [Meer informatie over werkruimte sleutels](../azure-monitor/agents/log-analytics-agent.md#workspace-id-and-key).
 
 - U moet lees-en schrijf machtigingen hebben voor Azure Functions om een functie-app te kunnen maken. Meer [informatie over Azure functions](../azure-functions/index.yml).
 

@@ -6,12 +6,12 @@ ms.assetid: 4859d0d5-3e3c-40cc-96eb-f318b2c51a3d
 ms.topic: article
 ms.date: 10/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: bb0765a1d7934d60f787ed277dd3bd1f9bc1359b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 58ddf60a842a9583eae25a875f55227cee772a8a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88962941"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582539"
 ---
 # <a name="manage-an-app-service-plan-in-azure"></a>Een App Service-abonnement beheren in azure
 
@@ -34,17 +34,17 @@ U kunt een leeg App Service plan maken of u kunt een plan maken als onderdeel va
 
 2. Configureer de sectie met **instantie Details** voordat u het app service-abonnement configureert. Instellingen zoals **publiceren** en **besturings systemen** kunnen de beschik bare prijs categorieën voor uw app service plan wijzigen. De **regio** bepaalt waar uw app service plan wordt gemaakt. 
    
-3. Selecteer in de sectie **app service plan** een bestaand abonnement of maak een plan door **Nieuw maken**te selecteren.
+3. Selecteer in de sectie **app service plan** een bestaand abonnement of maak een plan door **Nieuw maken** te selecteren.
 
    ![Een App Service-abonnement maken.][createASP] 
 
-4. Wanneer u een plan maakt, kunt u de prijs categorie van het nieuwe plan selecteren. In **SKU en grootte**selecteert u **grootte wijzigen** om de prijs categorie te wijzigen. 
+4. Wanneer u een plan maakt, kunt u de prijs categorie van het nieuwe plan selecteren. In **SKU en grootte** selecteert u **grootte wijzigen** om de prijs categorie te wijzigen. 
 
 <a name="move"></a>
 
 ## <a name="move-an-app-to-another-app-service-plan"></a>Een app verplaatsen naar een andere App Service plan
 
-U kunt een app naar een andere App Service plan verplaatsen, zolang het bron plan en het doel abonnement zich in _dezelfde resource groep en geografische regio_bevinden.
+U kunt een app naar een andere App Service plan verplaatsen, zolang het bron plan en het doel abonnement zich in _dezelfde resource groep en geografische regio_ bevinden.
 
 > [!NOTE]
 > Azure implementeert elk nieuw App Service plan in een implementatie-eenheid, intern een webruimte genoemd. Elke regio kan veel webruimten hebben, maar uw app kan alleen worden verplaatst tussen plannen die zijn gemaakt in dezelfde webruimte. Een App Service Environment is een geïsoleerde webruimte, zodat apps kunnen worden verplaatst tussen plannen in dezelfde App Service Environment, maar niet tussen plannen in verschillende App Service omgevingen.
@@ -56,9 +56,9 @@ U kunt een app naar een andere App Service plan verplaatsen, zolang het bron pla
 
 2. Selecteer in het menu links de optie **app service abonnement wijzigen**.
 
-3. Selecteer in de vervolg keuzelijst **app service plan** een bestaand plan om de app naar te verplaatsen. In de vervolg keuzelijst worden alleen abonnementen weer gegeven die deel uitmaken van dezelfde resource groep en geografische regio als het huidige App Service plan. Als dat plan niet bestaat, kunt u standaard een plan maken. U kunt ook hand matig een nieuw plan maken door **Nieuw maken**te selecteren.
+3. Selecteer in de vervolg keuzelijst **app service plan** een bestaand plan om de app naar te verplaatsen. In de vervolg keuzelijst worden alleen abonnementen weer gegeven die deel uitmaken van dezelfde resource groep en geografische regio als het huidige App Service plan. Als dat plan niet bestaat, kunt u standaard een plan maken. U kunt ook hand matig een nieuw plan maken door **Nieuw maken** te selecteren.
 
-4. Als u een plan maakt, kunt u de prijs categorie van het nieuwe plan selecteren. Selecteer in **prijs categorie**de bestaande laag om deze te wijzigen. 
+4. Als u een plan maakt, kunt u de prijs categorie van het nieuwe plan selecteren. Selecteer in **prijs categorie** de bestaande laag om deze te wijzigen. 
    
    > [!IMPORTANT]
    > Als u een app van een abonnement op een hoger niveau verplaatst naar een onderlaagd abonnement, bijvoorbeeld van **D1** naar **F1**, kan de app bepaalde mogelijkheden in het doel plan verliezen. Als uw app bijvoorbeeld gebruikmaakt van TLS/SSL-certificaten, ziet u dit fout bericht:
@@ -82,7 +82,7 @@ U vindt de **kloon-app** in de sectie **hulp middelen voor ontwikkel aars** van 
 
 Zie [een app omhoog schalen in azure](manage-scale-up.md)om de prijs categorie van een app service plan omhoog te schalen.
 
-Als u het aantal exemplaren van een app wilt uitschalen, raadpleegt u [aantal exemplaren hand matig of automatisch schalen](../azure-monitor/platform/autoscale-get-started.md).
+Als u het aantal exemplaren van een app wilt uitschalen, raadpleegt u [aantal exemplaren hand matig of automatisch schalen](../azure-monitor/autoscale/autoscale-get-started.md).
 
 <a name="delete"></a>
 

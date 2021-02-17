@@ -3,12 +3,12 @@ title: Inleiding
 description: Meer informatie over de functies en voordelen van Azure VMware Solution voor het implementeren en beheren van VMware-workloads in Azure.
 ms.topic: overview
 ms.date: 11/11/2020
-ms.openlocfilehash: 57edfc5786dfc95070b66eb9c8e2e038bafdcd35
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
-ms.translationtype: HT
+ms.openlocfilehash: 255d3599385c60d3b13f4769796ced41a1177311
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94534650"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579290"
 ---
 # <a name="what-is-azure-vmware-solution"></a>Wat is Azure VMware Solution?
 
@@ -48,12 +48,12 @@ Zodra de Azure VMware Solution is geïmplementeerd in uw abonnement, worden [Azu
 
 In uw privécloud kunt u:
 - Logboeken op al uw VM's verzamelen.
-- [De MMA-agent downloaden en installeren](../azure-monitor/platform/log-analytics-agent.md#installation-options) op Linux- en Windows-VM's.
-- De [Azure Diagnostics-extensie](../azure-monitor/platform/diagnostics-extension-overview.md) inschakelen.
-- [Nieuwe query's maken en uitvoeren](../azure-monitor/platform/data-platform-logs.md#log-queries).
+- [De MMA-agent downloaden en installeren](../azure-monitor/agents/log-analytics-agent.md#installation-options) op Linux- en Windows-VM's.
+- De [Azure Diagnostics-extensie](../azure-monitor/agents/diagnostics-extension-overview.md) inschakelen.
+- [Nieuwe query's maken en uitvoeren](../azure-monitor/logs/data-platform-logs.md#log-queries).
 - Dezelfde query's uitvoeren die doorgaans worden uitgevoerd op uw VM's.
 
-Bewaken dat de patronen in de Azure VMware Solution vergelijkbaar zijn met Azure VM's binnen het IaaS-platform. Zie voor meer informatie en uitleg [VM's van Azure bewaken met Azure Monitor](../azure-monitor/insights/monitor-vm-azure.md).
+Bewaken dat de patronen in de Azure VMware Solution vergelijkbaar zijn met Azure VM's binnen het IaaS-platform. Zie voor meer informatie en uitleg [VM's van Azure bewaken met Azure Monitor](../azure-monitor/vm/monitor-vm-azure.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

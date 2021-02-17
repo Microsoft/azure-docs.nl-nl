@@ -5,12 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 02/21/2019
 ms.author: srrengar
-ms.openlocfilehash: f44426103b8f0fce275f33682edbc3b84a08344b
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 678e96c9b5611cd6d72abd7c4582691b55ffe479
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92329556"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581548"
 ---
 # <a name="event-analysis-and-visualization-with-azure-monitor-logs"></a>Gebeurtenis analyse en visualisatie met Azure Monitor-logboeken
  Met Azure Monitor-logboeken wordt telemetrie vastgelegd, verzameld en geanalyseerd op basis van toepassingen en services die worden gehost in de cloud en worden er analysehulpprogramma's geboden waarmee u de beschikbaarheid en prestaties hiervan kunt maximaliseren. In dit artikel wordt beschreven hoe u query's uitvoert in Azure Monitor Logboeken om inzicht te krijgen in wat er in uw cluster gebeurt. De volgende veelgestelde vragen worden behandeld:
@@ -103,7 +103,7 @@ Kusto is een krachtige querytaal. U kunt ook een andere waardevolle query uitvoe
 ## <a name="next-steps"></a>Volgende stappen
 
 * Als u de bewaking van infra structuur wilt inschakelen, zoals prestatie meter items, moet u [de log Analytics agent toevoegen](service-fabric-diagnostics-oms-agent.md). De agent verzamelt prestatie meter items en voegt deze toe aan uw bestaande werk ruimte.
-* Voor on-premises clusters biedt Azure Monitor-Logboeken een gateway (HTTP forward proxy) die kan worden gebruikt om gegevens te verzenden naar Azure Monitor-Logboeken. Meer informatie hierover vindt [u bij het verbinden van computers zonder Internet toegang tot Azure monitor-logboeken met behulp van de log Analytics gateway](../azure-monitor/platform/gateway.md).
-* [Automatische waarschuwingen](../azure-monitor/platform/alerts-overview.md) configureren voor ondersteuning bij detectie en diagnose.
-* Vertrouwd raken met de functies [zoeken in logboeken en query's uitvoeren](../azure-monitor/log-query/log-query-overview.md) die als onderdeel van Azure Monitor-logboeken worden aangeboden.
+* Voor on-premises clusters biedt Azure Monitor-Logboeken een gateway (HTTP forward proxy) die kan worden gebruikt om gegevens te verzenden naar Azure Monitor-Logboeken. Meer informatie hierover vindt [u bij het verbinden van computers zonder Internet toegang tot Azure monitor-logboeken met behulp van de log Analytics gateway](../azure-monitor/agents/gateway.md).
+* [Automatische waarschuwingen](../azure-monitor/alerts/alerts-overview.md) configureren voor ondersteuning bij detectie en diagnose.
+* Vertrouwd raken met de functies [zoeken in logboeken en query's uitvoeren](../azure-monitor/logs/log-query-overview.md) die als onderdeel van Azure Monitor-logboeken worden aangeboden.
 * Meer gedetailleerd overzicht van Azure Monitor-logboeken en wat het biedt, Lees [Wat is Azure monitor logboeken?](../azure-monitor/overview.md).

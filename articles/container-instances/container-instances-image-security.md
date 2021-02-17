@@ -4,12 +4,12 @@ description: Aanbevelingen voor het beveiligen van installatie kopieën en gehei
 ms.topic: article
 ms.date: 01/10/2020
 ms.custom: ''
-ms.openlocfilehash: 898bdf77bf4b6636e78f5d735fc8650da4fde2b8
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: cbceeea24501bc9815cb07e1b0a054914ba8e964
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148662"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579274"
 ---
 # <a name="security-considerations-for-azure-container-instances"></a>Beveiligings overwegingen voor Azure Container Instances
 
@@ -115,9 +115,9 @@ Het hulp programma partner licht [blauw](https://azuremarketplace.microsoft.com/
 
 Net als bij elke IT-omgeving moet u de activiteit en gebruikers toegang tot uw container ecosysteem consistent controleren om snel verdachte of schadelijke activiteiten te identificeren. Azure biedt oplossingen voor container bewaking, waaronder:
 
-* [Azure monitor voor containers](../azure-monitor/insights/container-insights-overview.md) bewaakt de prestaties van uw workloads die zijn geïmplementeerd op Kubernetes-omgevingen die worden gehost op Azure Kubernetes service (AKS). Azure Monitor voor containers biedt u inzicht in de prestaties door het verzamelen van geheugen-en processor metrieken van controllers, knoop punten en containers die beschikbaar zijn in Kubernetes via de API voor metrische gegevens. 
+* [Azure monitor voor containers](../azure-monitor/containers/container-insights-overview.md) bewaakt de prestaties van uw workloads die zijn geïmplementeerd op Kubernetes-omgevingen die worden gehost op Azure Kubernetes service (AKS). Azure Monitor voor containers biedt u inzicht in de prestaties door het verzamelen van geheugen-en processor metrieken van controllers, knoop punten en containers die beschikbaar zijn in Kubernetes via de API voor metrische gegevens. 
 
-* Met de [Azure container monitoring-oplossing](../azure-monitor/insights/containers.md) kunt u andere docker-en Windows-container-hosts op één locatie weer geven en beheren. Bijvoorbeeld:
+* Met de [Azure container monitoring-oplossing](../azure-monitor/containers/containers.md) kunt u andere docker-en Windows-container-hosts op één locatie weer geven en beheren. Bijvoorbeeld:
 
   * Gedetailleerde controle-informatie weer geven met opdrachten die worden gebruikt met containers. 
   * Problemen met containers oplossen door gecentraliseerde logboeken te bekijken en te zoeken zonder dat u op afstand docker of Windows-hosts hoeft weer te geven.  
@@ -139,7 +139,7 @@ Bewaak uw resource activiteit, zoals bestanden, netwerk en andere bronnen die uw
 Behoud een nauw keurige controle spoor van beheerders toegang tot uw container ecosysteem, met inbegrip van uw Kubernetes-cluster, container register en container installatie kopieën. Deze logboeken kunnen nood zakelijk zijn voor controle doeleinden en kunnen worden gebruikt als forensische-materiaal na een beveiligings incident. Azure-oplossingen omvatten:
 
 * [Integratie van de Azure Kubernetes-service met Azure Security Center](../security-center/defender-for-kubernetes-introduction.md) om de beveiligings configuratie van de cluster omgeving te controleren en aanbevelingen voor beveiliging te genereren
-* [Azure container bewakings oplossing](../azure-monitor/insights/containers.md)
+* [Azure container bewakings oplossing](../azure-monitor/containers/containers.md)
 * Resource logboeken voor [Azure container instances](container-instances-log-analytics.md) en [Azure container Registry](../container-registry/container-registry-diagnostics-audit-logs.md)
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -3,12 +3,12 @@ title: Azure Lighthouse in zakelijke scenario's
 description: De mogelijkheden van Azure Lighthouse kunnen worden gebruikt voor het vereenvoudigen van cross-Tenant beheer binnen een onderneming die gebruikmaakt van meerdere Azure AD-tenants.
 ms.date: 08/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3f452e6810fa6809b5ba1b83b664f8b38d82a895
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ca3d73a6c5b88f7531c3d76eb3bd348fdfe8fa39
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004242"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573026"
 ---
 # <a name="azure-lighthouse-in-enterprise-scenarios"></a>Azure Lighthouse in zakelijke scenario's
 
@@ -38,7 +38,7 @@ In beide gevallen moet u [het principe van minimale bevoegdheid volgen om te def
 
 Azure Lighthouse biedt alleen logische koppelingen tussen een beheer Tenant en beheerde tenants, in plaats van het fysiek verplaatsen van gegevens of resources. Bovendien gaat de Access altijd in slechts één richting, van de Tenant beheren naar de beheerde tenants.  Gebruikers en groepen in de Tenant beheren moeten multi-factor Authentication blijven gebruiken bij het uitvoeren van beheer bewerkingen op beheerde Tenant bronnen.
 
-Ondernemingen met interne of externe governance-en nalevings Guardrails kunnen [Azure-activiteiten logboeken](../../azure-monitor/platform/platform-logs-overview.md) gebruiken om te voldoen aan hun transparantie vereisten. Wanneer ondernemings tenants beheer-en beheerde Tenant relaties hebben ingesteld, kunnen gebruikers in elke Tenant vastgelegde activiteiten weer geven om te zien welke acties door gebruikers zijn uitgevoerd in de Tenant beheren.
+Ondernemingen met interne of externe governance-en nalevings Guardrails kunnen [Azure-activiteiten logboeken](../../azure-monitor/essentials/platform-logs-overview.md) gebruiken om te voldoen aan hun transparantie vereisten. Wanneer ondernemings tenants beheer-en beheerde Tenant relaties hebben ingesteld, kunnen gebruikers in elke Tenant vastgelegde activiteiten weer geven om te zien welke acties door gebruikers zijn uitgevoerd in de Tenant beheren.
 
 ## <a name="onboarding-considerations"></a>Onboarding-overwegingen
 

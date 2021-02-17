@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/16/2020
 ms.author: yelevin
-ms.openlocfilehash: 773cf5cc6755a4f094eb676992364eea07a795ea
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
-ms.translationtype: HT
+ms.openlocfilehash: 4bc5732c1b2349f34297ecaacc7eb3176fdba611
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94654657"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570492"
 ---
 # <a name="what-is-azure-sentinel"></a>Wat is Azure Sentinel?
 
@@ -51,7 +51,7 @@ U moet eerst [verbinding maken met uw beveiligingsbronnen](connect-data-sources.
 
 ## <a name="workbooks"></a>Werkmappen
 
-Nadat u [uw gegevensbronnen hebt verbonden](quickstart-onboard.md) met Azure Sentinel, kunt u de gegevens bewaken met behulp van de integratie van Azure Sentinel met Azure Monitor Workbooks, waarmee u veelzijdige, aangepaste werkmappen kunt maken. Hoewel werkmappen anders worden weergegeven in Azure-Sentinel, kan het handig zijn om te zien hoe u [interactieve rapporten kunt maken met Azure Monitor Workbooks](../azure-monitor/platform/workbooks-overview.md). Met Azure Sentinel kunt u aangepaste werkmappen maken voor uw gegevens. Daarnaast bevat dit ingebouwde werkmapsjablonen, zodat u snel inzicht kunt krijgen in uw gegevens zodra u verbinding maakt met een gegevensbron.
+Nadat u [uw gegevensbronnen hebt verbonden](quickstart-onboard.md) met Azure Sentinel, kunt u de gegevens bewaken met behulp van de integratie van Azure Sentinel met Azure Monitor Workbooks, waarmee u veelzijdige, aangepaste werkmappen kunt maken. Hoewel werkmappen anders worden weergegeven in Azure-Sentinel, kan het handig zijn om te zien hoe u [interactieve rapporten kunt maken met Azure Monitor Workbooks](../azure-monitor/visualize/workbooks-overview.md). Met Azure Sentinel kunt u aangepaste werkmappen maken voor uw gegevens. Daarnaast bevat dit ingebouwde werkmapsjablonen, zodat u snel inzicht kunt krijgen in uw gegevens zodra u verbinding maakt met een gegevensbron.
 
 ![Dashboards](./media/tutorial-monitor-data/access-workbooks.png)
 

@@ -3,12 +3,12 @@ title: Een nieuwe Azure-toepassing Insights-resource maken | Microsoft Docs
 description: Stel Application Insights bewaking hand matig in voor een nieuwe Live-toepassing.
 ms.topic: conceptual
 ms.date: 02/10/2021
-ms.openlocfilehash: 3233aed895eac269bd34a961728b3302581ff360
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: 1ec5e929f591c0b7ada36f345d86c6de591892c8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100104583"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575613"
 ---
 # <a name="create-an-application-insights-resource"></a>Een Application Insights-resource maken
 
@@ -35,7 +35,7 @@ Meld u aan bij de [Azure Portal](https://portal.azure.com)en maak een Applicatio
    | **Resource modus** | `Classic` of `Workspace-based` | Resources op basis van een werk ruimte zijn momenteel beschikbaar als open bare preview-versie en u kunt uw Application Insights telemetrie verzenden naar een algemene Log Analytics-werk ruimte. Zie het [artikel over resources op basis van werk ruimte](create-workspace-resource.md)voor meer informatie.
 
 > [!NOTE]
-> Hoewel u dezelfde resource naam in verschillende resource groepen kunt gebruiken, kan het nuttig zijn om een wereld wijd unieke naam te gebruiken. Dit kan handig zijn als u van plan bent om [query's voor meerdere resources uit te voeren](../log-query/cross-workspace-query.md#identifying-an-application) terwijl het de vereiste syntaxis vereenvoudigt.
+> Hoewel u dezelfde resource naam in verschillende resource groepen kunt gebruiken, kan het nuttig zijn om een wereld wijd unieke naam te gebruiken. Dit kan handig zijn als u van plan bent om [query's voor meerdere resources uit te voeren](../logs/cross-workspace-query.md#identifying-an-application) terwijl het de vereiste syntaxis vereenvoudigt.
 
 Voer de juiste waarden in de vereiste velden in en selecteer vervolgens **controleren + maken**.
 
@@ -159,13 +159,13 @@ Raadpleeg de [documentatie van Azure cli](/cli/azure/ext/application-insights/mo
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Diagnostische gegevens doorzoeken](./diagnostic-search.md)
-* [Metrische gegevens verkennen](../platform/metrics-charts.md)
-* [Analytics-query's schrijven](../log-query/log-query-overview.md)
+* [Metrische gegevens verkennen](../essentials/metrics-charts.md)
+* [Analytics-query's schrijven](../logs/log-query-overview.md)
 
 <!--Link references-->
 
 [api]: ./api-custom-events-metrics.md
 [diagnostic]: ./diagnostic-search.md
-[metrics]: ../platform/metrics-charts.md
+[metrics]: ../essentials/metrics-charts.md
 [start]: ./app-insights-overview.md
 

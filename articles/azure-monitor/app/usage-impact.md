@@ -6,16 +6,16 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 01/08/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 7393c36099795bbc989ae4b690100284d53f08e5
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 51f938743d8da3c9a1dea546320662701e2b88c8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92678379"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100583528"
 ---
 # <a name="impact-analysis-with-application-insights"></a>Impact analyse met Application Insights
 
-Impact analyseert hoe laad tijden en andere eigenschappen invloed hebben op de conversie snelheid voor verschillende onderdelen van uw app. Om het nauw keuriger te plaatsen, detecteert het **hoe elke dimensie** van **een pagina weergave** , **aangepaste gebeurtenis** of **aanvraag** van invloed is op het gebruik van een andere **pagina weergave** of een **aangepaste gebeurtenis** . 
+Impact analyseert hoe laad tijden en andere eigenschappen invloed hebben op de conversie snelheid voor verschillende onderdelen van uw app. Om het nauw keuriger te plaatsen, detecteert het **hoe elke dimensie** van **een pagina weergave**, **aangepaste gebeurtenis** of **aanvraag** van invloed is op het gebruik van een andere **pagina weergave** of een **aangepaste gebeurtenis**. 
 
 ![Hulp programma voor impact](./media/usage-impact/0001-impact.png)
 
@@ -65,16 +65,16 @@ Onder de motorkap is de impact van het hulp programma afhankelijk van de [correl
 
 De algemene uitsplitsing van de werking van impact analyse is als volgt:
 
-Laat _een_ = de hoofd pagina weer geven/aangepaste gebeurtenis/aanvraag die u in de eerste vervolg keuzelijst selecteert. ( **Voor de pagina weergave** ).
+Laat _een_ = de hoofd pagina weer geven/aangepaste gebeurtenis/aanvraag die u in de eerste vervolg keuzelijst selecteert. (**Voor de pagina weergave**).
 
-Laat _B_ = de secundaire pagina weergave/aangepaste gebeurtenis die u selecteert (heeft **invloed op het gebruik van** ).
+Laat _B_ = de secundaire pagina weergave/aangepaste gebeurtenis die u selecteert (heeft **invloed op het gebruik van**).
 
-Impact kijkt naar een voor beeld van alle sessies van gebruikers in het geselecteerde tijds bereik. Voor elke sessie zoekt het naar elk exemplaar van _A_ .
+Impact kijkt naar een voor beeld van alle sessies van gebruikers in het geselecteerde tijds bereik. Voor elke sessie zoekt het naar elk exemplaar van _A_.
 
 Sessies worden vervolgens onderverdeeld in twee verschillende soorten _subsessies_ op basis van een van de volgende twee omstandigheden:
 
 - Een geconverteerde subsessie bestaat uit een sessie die eindigt op een _B_ -gebeurtenis en _omvat alle gebeurtenissen_ die vóór _B_ worden uitgevoerd.
-- Een niet-geconverteerde subsessie treedt op wanneer alle _a_ plaatsvindt zonder een Terminal _B_ .
+- Een niet-geconverteerde subsessie treedt op wanneer alle _a_ plaatsvindt zonder een Terminal _B_.
 
 Hoe invloed wordt uiteindelijk berekend, is afhankelijk van het feit of er wordt geanalyseerd op basis van metrische gegevens of dimensies. Voor metrische gegevens van alle _a_ in een subsessie wordt het gemiddelde berekend. Overwegende dat voor dimensies de waarde van elk _A een_ bijdrage levert aan _1/N_ aan de waarde die is toegewezen aan _B_ , waarbij _N_ het aantal in de subsessie _is._
 
@@ -83,8 +83,8 @@ Hoe invloed wordt uiteindelijk berekend, is afhankelijk van het feit of er wordt
 - Begin met het verzenden van [aangepaste gebeurtenissen](./api-custom-events-metrics.md#trackevent) of [pagina weergaven](./api-custom-events-metrics.md#page-views)om gebruiks ervaringen in te scha kelen.
 - Als u al aangepaste gebeurtenissen of pagina weergaven verzendt, kunt u de gebruiks hulpprogramma's verkennen om te leren hoe gebruikers uw service gebruiken.
     - [Trechters](usage-funnels.md)
-    - [Bewaartermijn](usage-retention.md)
+    - [Bewaar](usage-retention.md)
     - [Gebruikersstromen](usage-flows.md)
-    - [Werkmappen](../platform/workbooks-overview.md)
+    - [Werkmappen](../visualize/workbooks-overview.md)
     - [Gebruikers context toevoegen](usage-send-user-context.md)
 

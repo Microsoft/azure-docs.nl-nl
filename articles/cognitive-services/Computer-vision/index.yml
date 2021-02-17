@@ -11,12 +11,12 @@ metadata:
   author: PatrickFarley
   ms.author: pafarley
   ms.date: 09/22/2020
-  ms.openlocfilehash: b1c22d790246be8f2a7adb6176ea436f760c15fb
-  ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+  ms.openlocfilehash: fcd078212e92f030593445b843497a88327c49b8
+  ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 02/14/2021
-  ms.locfileid: "100518110"
+  ms.lasthandoff: 02/17/2021
+  ms.locfileid: "100578154"
 landingContent:
 - title: Over Computer Vision
   linkLists:
@@ -112,6 +112,8 @@ landingContent:
   linkLists:
   - linkListType: get-started
     links:
+    - text: Overzicht van ruimtelijke analyse
+      url: intro-to-spatial-analysis-public-preview.md
     - text: De container installeren en uitvoeren
       url: spatial-analysis-container.md
     - text: Bewerkingen configureren
@@ -146,6 +148,18 @@ landingContent:
       url: quickstarts-sdk/client-library.md?pivots=programming-language-javascript
     - text: Go-SDK gebruiken
       url: quickstarts-sdk/client-library.md?pivots=programming-language-go
+- title: Verantwoordelijk gebruik van AI
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Transparantie opmerking voor ruimtelijke analyse
+      url: /legal/cognitive-services/computer-vision/transparency-note-spatial-analysis?context=%2fazure%2fcognitive-services%2fComputer-vision%2fcontext%2fcontext
+  - linkListType: concept
+    links:
+    - text: Verantwoordelijk gebruik in AI-implementatie
+      url: /legal/cognitive-services/computer-vision/responsible-use-deployment?context=%2fazure%2fcognitive-services%2fComputer-vision%2fcontext%2fcontext
+    - text: Gegevens, privacy en beveiliging
+      url: /legal/cognitive-services/computer-vision/compliance-privacy-security-2?context=%2fazure%2fcognitive-services%2fComputer-vision%2fcontext%2fcontext
 - title: Naslaginformatie
   linkLists:
   - linkListType: reference

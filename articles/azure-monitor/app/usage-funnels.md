@@ -6,16 +6,16 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 07/17/2017
 ms.reviewer: mbullwin
-ms.openlocfilehash: a81c4f32385cf06238f36ca0162923f93d682807
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d0e5cb5097a2f8833b10fec16a99b67c5c109fc8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87323720"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100583453"
 ---
 # <a name="discover-how-customers-are-using-your-application-with-application-insights-funnels"></a>Ontdek hoe klanten uw toepassing gebruiken met Application Insights trechters
 
-Meer informatie over de ervaring van de klant is van het grootste belang voor uw bedrijf. Als uw toepassing meerdere fasen omvat, moet u weten of de meeste klanten door het hele proces worden uitgevoerd of dat het proces op een bepaald moment wordt beëindigd. De voortgang van een reeks stappen in een webtoepassing wordt een *trechter*genoemd. U kunt Azure-toepassing Insights-trechters gebruiken om inzicht te krijgen in uw gebruikers en stapsgewijze conversie tarieven te bewaken. 
+Meer informatie over de ervaring van de klant is van het grootste belang voor uw bedrijf. Als uw toepassing meerdere fasen omvat, moet u weten of de meeste klanten door het hele proces worden uitgevoerd of dat het proces op een bepaald moment wordt beëindigd. De voortgang van een reeks stappen in een webtoepassing wordt een *trechter* genoemd. U kunt Azure-toepassing Insights-trechters gebruiken om inzicht te krijgen in uw gebruikers en stapsgewijze conversie tarieven te bewaken. 
 
 ## <a name="create-your-funnel"></a>Uw trechter maken
 Voordat u uw trechter maakt, moet u beslissen welke vraag u wilt beantwoorden. Stel dat u wilt weten hoeveel gebruikers de start pagina bekijken, een klant profiel bekijken en een ticket maken. In dit voor beeld willen de eigen aren van het bedrijf van Fabrikam Fiber weten welk percentage van klanten een klant ticket heeft gemaakt.
@@ -45,8 +45,8 @@ De vorige scherm afbeelding bevat vijf gemarkeerde gebieden. Dit zijn de functie
 ## <a name="next-steps"></a>Volgende stappen
   * [Overzicht van gebruik](usage-overview.md)
   * [Gebruikers, sessies en gebeurtenissen](usage-segmentation.md)
-  * [Bewaartermijn](usage-retention.md)
-  * [Werkmappen](../platform/workbooks-overview.md)
+  * [Bewaar](usage-retention.md)
+  * [Werkmappen](../visualize/workbooks-overview.md)
   * [Gebruikers context toevoegen](usage-send-user-context.md)
   * [Exporteren naar Power BI](./export-power-bi.md)
 

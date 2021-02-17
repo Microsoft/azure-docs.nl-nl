@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: b-juche
-ms.openlocfilehash: 4a4fff18d21ccb0c729ecb1f79df17225c8086bc
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: ed03e20f7a1a24d1a38e023b958959fdc6fdc326
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98632670"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579336"
 ---
 # <a name="requirements-and-considerations-for-using-cross-region-replication"></a>Vereisten en overwegingen voor het gebruik van replicatie tussen regio's 
 
@@ -29,7 +29,7 @@ Houd rekening met de volgende vereisten en overwegingen voor [het gebruik van de
 
 * De functie voor replicatie van meerdere regio's is momenteel beschikbaar als open bare preview. U moet een Waitlist-aanvraag indienen om toegang te krijgen tot de functie via de [Waitlist-verzend pagina van Azure NetApp files cross-Region replicatie](https://aka.ms/anfcrrpreviewsignup). Wacht op een officiële bevestigings-e-mail van het Azure NetApp Files team voordat u de functie voor replicatie tussen regio's gebruikt.
 * Azure NetApp Files replicatie is alleen beschikbaar in bepaalde paren met vaste regio's. Zie [ondersteunde regio paren](cross-region-replication-introduction.md#supported-region-pairs). 
-* SMB-volumes worden samen met NFS-volumes ondersteund. Voor de replicatie van SMB-volumes is een Active Directory verbinding vereist in de bron-en doel-NetApp-accounts. De doel-AD-verbinding moet toegang hebben tot de DNS-servers of domein controllers toevoegen die bereikbaar zijn vanuit het overgedragen subnet in de doel regio. Zie [vereisten voor Active Directory verbindingen](azure-netapp-files-create-volumes-smb.md#requirements-for-active-directory-connections)voor meer informatie. 
+* SMB-volumes worden samen met NFS-volumes ondersteund. Voor de replicatie van SMB-volumes is een Active Directory verbinding vereist in de bron-en doel-NetApp-accounts. De doel-AD-verbinding moet toegang hebben tot de DNS-servers of domein controllers toevoegen die bereikbaar zijn vanuit het overgedragen subnet in de doel regio. Zie [vereisten voor Active Directory verbindingen](create-active-directory-connections.md#requirements-for-active-directory-connections)voor meer informatie. 
 * Het doel account moet zich in een andere regio bevinden dan de regio van het bron volume. U kunt ook een bestaand NetApp-account in een andere regio selecteren.  
 * Het replicatie doel volume is alleen-lezen totdat u een [failover naar de doel regio hebt uitgevoerd](cross-region-replication-manage-disaster-recovery.md#fail-over-to-destination-volume) om het doel volume in te scha kelen voor lezen en schrijven. 
 * Azure NetApp Files replicatie biedt momenteel geen ondersteuning voor meerdere abonnementen. alle replicaties moeten worden uitgevoerd onder één abonnement.

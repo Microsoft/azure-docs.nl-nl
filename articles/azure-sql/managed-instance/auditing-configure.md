@@ -13,12 +13,12 @@ author: DavidTrigano
 ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 05/26/2020
-ms.openlocfilehash: 31a1169ca6c2194b8d5564e5d0df50116dd25084
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: ae0d9696d869b2a260de643482a9f86c34bcc824
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94505662"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575462"
 ---
 # <a name="get-started-with-azure-sql-managed-instance-auditing"></a>Aan de slag met controle van Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -79,11 +79,11 @@ In de volgende sectie wordt de configuratie van de controle op uw beheerde exemp
 
         - Configureer de SAS als volgt:
 
-          - **Toegestane Services** : BLOB
+          - **Toegestane Services**: BLOB
 
-          - **Begin datum** : gebruik de datum van gisteren om te voor komen dat er problemen met de tijd zone te maken hebben
+          - **Begin datum**: gebruik de datum van gisteren om te voor komen dat er problemen met de tijd zone te maken hebben
 
-          - **Eind datum** : Kies de datum waarop deze SAS-token verloopt
+          - **Eind datum**: Kies de datum waarop deze SAS-token verloopt
 
             > [!NOTE]
             > Vernieuw het token na verloop om mislukte audits te voor komen.
@@ -126,11 +126,11 @@ In de volgende sectie wordt de configuratie van de controle op uw beheerde exemp
 
      1. Vouw de hoofd notitie van Objectverkenner uit.
 
-     1. Vouw het **beveiligings** knooppunt uit, klik met de rechter muisknop op het knoop punt **controles** en klik op **nieuwe controle** :
+     1. Vouw het **beveiligings** knooppunt uit, klik met de rechter muisknop op het knoop punt **controles** en klik op **nieuwe controle**:
 
         ![Beveiligings-en controle knooppunt uitvouwen](./media/auditing-configure/10_mi_SSMS_new_audit.png)
 
-     1. Zorg ervoor dat de **URL** is geselecteerd in de **controle bestemming** en klik op **Bladeren** :
+     1. Zorg ervoor dat de **URL** is geselecteerd in de **controle bestemming** en klik op **Bladeren**:
 
         ![Azure Storage bladeren](./media/auditing-configure/11_mi_SSMS_audit_browse.png)
 
@@ -138,7 +138,7 @@ In de volgende sectie wordt de configuratie van de controle op uw beheerde exemp
 
         ![Aanmelden bij Azure](./media/auditing-configure/12_mi_SSMS_sign_in_to_azure.png)
 
-     1. Selecteer een abonnement, opslag account en BLOB-container in de vervolg keuzelijsten of maak uw eigen container door te klikken op **maken**. Wanneer u klaar bent, klikt u op **OK** :
+     1. Selecteer een abonnement, opslag account en BLOB-container in de vervolg keuzelijsten of maak uw eigen container door te klikken op **maken**. Wanneer u klaar bent, klikt u op **OK**:
 
         ![Azure-abonnement, opslag account en BLOB-container selecteren](./media/auditing-configure/13_mi_SSMS_select_subscription_account_container.png)
 
@@ -223,7 +223,7 @@ Als u gegevens van de audit logboeken van Event Hubs wilt gebruiken, moet u een 
 
 Als audit logboeken naar Azure Monitor logboeken worden geschreven, zijn ze beschikbaar in de Log Analytics-werk ruimte, waar u geavanceerde zoek opdrachten kunt uitvoeren op de controle gegevens. Ga als uitgangs punt naar de Log Analytics-werk ruimte. Klik onder de sectie **Algemeen** op **Logboeken** en voer een eenvoudige query in, zoals: `search "SQLSecurityAuditEvents"` om de audit logboeken weer te geven.  
 
-Met Azure Monitor-Logboeken kunt u in realtime operationeel inzicht krijgen met behulp van geïntegreerde Zoek-en aangepaste Dash boards waarmee u miljoenen records in al uw workloads en servers eenvoudig kunt analyseren. Zie voor aanvullende nuttige informatie over Azure Monitor Zoek taal en-opdrachten in Logboeken [Azure monitor logboeken zoeken](../../azure-monitor/log-query/log-query-overview.md).
+Met Azure Monitor-Logboeken kunt u in realtime operationeel inzicht krijgen met behulp van geïntegreerde Zoek-en aangepaste Dash boards waarmee u miljoenen records in al uw workloads en servers eenvoudig kunt analyseren. Zie voor aanvullende nuttige informatie over Azure Monitor Zoek taal en-opdrachten in Logboeken [Azure monitor logboeken zoeken](../../azure-monitor/logs/log-query-overview.md).
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 

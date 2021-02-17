@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/16/2020
 ms.author: yelevin
-ms.openlocfilehash: 226d5a46482d6611fdecf214d040fc27af9ac586
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: bc75ee64174957ad6486146b4da6f8a66a2120e5
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98632043"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570552"
 ---
 # <a name="connect-windows-security-events"></a>Verbinding maken met Windows-beveiligingsgebeurtenissen 
 
@@ -56,7 +56,7 @@ Uw Windows-beveiligings gebeurtenissen in azure-Sentinel verzamelen:
 
 1. Controleer of u de juiste machtigingen hebt, zoals wordt beschreven in de sectie **vereisten** op de pagina connector.
 
-1. Down load en installeer de [log Analytics-agent](../azure-monitor/platform/log-analytics-agent.md) (ook wel bekend als micro soft monitoring agent of MMA) op de computers waarvoor u beveiligings gebeurtenissen in azure Sentinel wilt streamen.
+1. Down load en installeer de [log Analytics-agent](../azure-monitor/agents/log-analytics-agent.md) (ook wel bekend als micro soft monitoring agent of MMA) op de computers waarvoor u beveiligings gebeurtenissen in azure Sentinel wilt streamen.
 
     Voor Azure Virtual Machines:
     
@@ -73,9 +73,9 @@ Uw Windows-beveiligings gebeurtenissen in azure-Sentinel verzamelen:
     >
     > Als u wilt toestaan dat Windows-systemen zonder de benodigde Internet verbinding nog steeds gebeurtenissen streamen naar Azure Sentinel, downloadt en installeert u de **OMS-gateway** op een afzonderlijke computer, met behulp van de koppeling rechtsonder, om als proxy te fungeren.  U moet de Log Analytics agent nog steeds installeren op elk Windows-systeem waarvan u de gebeurtenissen wilt verzamelen.
     >
-    > Zie de documentatie over [ **log Analytics gateway**](../azure-monitor/platform/gateway.md)voor meer informatie over dit scenario.
+    > Zie de documentatie over [ **log Analytics gateway**](../azure-monitor/agents/gateway.md)voor meer informatie over dit scenario.
 
-    Raadpleeg de documentatie van de [ **log Analytics-agent**](../azure-monitor/platform/agent-windows.md)voor aanvullende installatie opties en meer informatie.
+    Raadpleeg de documentatie van de [ **log Analytics-agent**](../azure-monitor/agents/agent-windows.md)voor aanvullende installatie opties en meer informatie.
 
 1. Selecteer welke gebeurtenissenset ([alles, algemeen of mini maal](#event-sets)) u wilt streamen.
 

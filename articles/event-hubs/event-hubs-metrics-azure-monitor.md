@@ -3,12 +3,12 @@ title: Metrische gegevens in Azure Monitor-Azure Event Hubs | Microsoft Docs
 description: Dit artikel bevat informatie over het gebruik van Azure monitoring voor het bewaken van Azure Event Hubs
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 74830775a4f31e6f8e486b4d6cc434335b4ee723
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: a53f69030e8333dfe659b163b83983615212281f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165889"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573159"
 ---
 # <a name="azure-event-hubs-metrics-in-azure-monitor"></a>Metrische gegevens van Azure Event Hubs in Azure Monitor
 
@@ -18,9 +18,9 @@ Azure Monitor biedt uniforme gebruikers interfaces voor bewaking in verschillend
 
 ## <a name="access-metrics"></a>Toegangs gegevens
 
-Azure Monitor biedt meerdere manieren om toegang te krijgen tot metrische gegevens. U hebt toegang tot metrische gegevens via de [Azure Portal](https://portal.azure.com), of u kunt gebruikmaken van de Azure monitor API'S (rest en .net) en analyse oplossingen, zoals Log Analytics en Event hubs. Zie [bewaking van gegevens die zijn verzameld door Azure monitor](../azure-monitor/platform/data-platform.md)voor meer informatie.
+Azure Monitor biedt meerdere manieren om toegang te krijgen tot metrische gegevens. U hebt toegang tot metrische gegevens via de [Azure Portal](https://portal.azure.com), of u kunt gebruikmaken van de Azure monitor API'S (rest en .net) en analyse oplossingen, zoals Log Analytics en Event hubs. Zie [bewaking van gegevens die zijn verzameld door Azure monitor](../azure-monitor/data-platform.md)voor meer informatie.
 
-Metrische gegevens zijn standaard ingeschakeld, en u kunt toegang krijgen tot de meest recente 30 dagen. Als u gegevens gedurende een langere periode wilt bewaren, kunt u metrische gegevens archiveren naar een Azure Storage-account. Deze instelling kan worden geconfigureerd in [Diagnostische instellingen](../azure-monitor/platform/diagnostic-settings.md) in azure monitor.
+Metrische gegevens zijn standaard ingeschakeld, en u kunt toegang krijgen tot de meest recente 30 dagen. Als u gegevens gedurende een langere periode wilt bewaren, kunt u metrische gegevens archiveren naar een Azure Storage-account. Deze instelling kan worden geconfigureerd in [Diagnostische instellingen](../azure-monitor/essentials/diagnostic-settings.md) in azure monitor.
 
 
 ## <a name="access-metrics-in-the-portal"></a>Toegang tot metrische gegevens in de portal
@@ -47,7 +47,7 @@ Met de volgende metrische gegevens krijgt u een overzicht van de status van uw s
 Alle waarden voor metrische gegevens worden elke minuut naar Azure Monitor verzonden. De granulatie tijd definieert het tijds interval waarvoor metrische waarden worden weer gegeven. Het ondersteunde tijds interval voor alle Event Hubs meet waarden is 1 minuut.
 
 ## <a name="azure-event-hubs-metrics"></a>Metrische gegevens van Azure Event Hubs
-Zie [Azure Event hubs](../azure-monitor/platform/metrics-supported.md#microsofteventhubnamespaces) voor een lijst met metrische gegevens die door de service worden ondersteund.
+Zie [Azure Event hubs](../azure-monitor/essentials/metrics-supported.md#microsofteventhubnamespaces) voor een lijst met metrische gegevens die door de service worden ondersteund.
 
 > [!NOTE]
 > Als er een gebruikers fout optreedt, wordt de metrische gegevens van de **gebruikers fouten** door Azure Event hubs bijgewerkt, maar worden er geen andere diagnostische informatie in het logboek geregistreerd. Daarom moet u details vastleggen over gebruikers fouten in uw toepassingen. U kunt ook de telemetrie converteren die wordt gegenereerd wanneer berichten worden verzonden of ontvangen in Application Insights. Zie [bijhouden met Application Insights](../service-bus-messaging/service-bus-end-to-end-tracing.md#tracking-with-azure-application-insights)voor een voor beeld.
@@ -55,7 +55,7 @@ Zie [Azure Event hubs](../azure-monitor/platform/metrics-supported.md#microsofte
 ## <a name="azure-monitor-integration-with-siem-tools"></a>Integratie met SIEM-hulpprogram ma's Azure Monitor
 Uw bewakings gegevens (activiteiten logboeken, Diagnostische logboeken, enzovoort) door sturen naar een Event Hub met Azure Monitor kunt u eenvoudig integreren met Security Information and Event Management-hulpprogram ma's (SIEM). Raadpleeg de volgende artikelen/blog berichten voor meer informatie:
 
-- [Azure-bewakings gegevens streamen naar een Event Hub voor gebruik door een extern hulp programma](../azure-monitor/platform/stream-monitoring-data-event-hubs.md)
+- [Azure-bewakings gegevens streamen naar een Event Hub voor gebruik door een extern hulp programma](../azure-monitor/essentials/stream-monitoring-data-event-hubs.md)
 - [Inleiding tot Azure Log Integration](/previous-versions/azure/security/fundamentals/azure-log-integration-overview)
 - [Azure Monitor gebruiken om te integreren met SIEM-hulpprogramma's](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 

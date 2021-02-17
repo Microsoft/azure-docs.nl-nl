@@ -8,16 +8,16 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 10/14/2020
 ms.author: apimpm
-ms.openlocfilehash: 064ac21e01239f7be3ddca9e48089ce880c6af58
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
-ms.translationtype: HT
+ms.openlocfilehash: df0018e323bc0c5725c9752b25b77612f035c196
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93379811"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582500"
 ---
 # <a name="reference-api-management-resource-log-schema"></a>Naslaginformatie: Schema voor API Management-resourcelogboek
 
-Dit artikel biedt een schemaverwijzing voor het Azure API Management-resourcelogboek GatewayLogs. Logboekvermeldingen bevatten ook velden in het [algemene schema op het hoogste niveau](../azure-monitor/platform/resource-logs-schema.md#top-level-common-schema).
+Dit artikel biedt een schemaverwijzing voor het Azure API Management-resourcelogboek GatewayLogs. Logboekvermeldingen bevatten ook velden in het [algemene schema op het hoogste niveau](../azure-monitor/essentials/resource-logs-schema.md#top-level-common-schema).
 
 Zie [Gepubliceerde API's bewaken](api-management-howto-use-azure-monitor.md#resource-logs) om het verzamelen van resourcelogboeken in API Management in te schakelen.
 
@@ -49,5 +49,5 @@ De volgende eigenschappen worden vastgelegd voor elke API-aanvraag.
 ## <a name="next-steps"></a>Volgende stappen
 
 * Zie [Gepubliceerde API's bewaken](api-management-howto-use-azure-monitor.md) voor informatie over het bewaken van API's in API Management
-* Lees meer over [Algemeen en servicespecifiek schema voor Azure-resourcelogboeken](../azure-monitor/platform/resource-logs-schema.md)
+* Lees meer over [Algemeen en servicespecifiek schema voor Azure-resourcelogboeken](../azure-monitor/essentials/resource-logs-schema.md)
 

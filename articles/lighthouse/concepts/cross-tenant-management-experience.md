@@ -3,12 +3,12 @@ title: Beheerervaring in meerdere tenants
 description: Azure delegated Resource Management maakt een cross-Tenant beheer mogelijk.
 ms.date: 02/08/2021
 ms.topic: conceptual
-ms.openlocfilehash: b76723c9ea94581561f5bdb04ea1fd8335da77b7
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 97b28409a7f180ffbf4f8766ee281710d6226019
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99981082"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573079"
 ---
 # <a name="cross-tenant-management-experiences"></a>Beheerervaring in meerdere tenants
 
@@ -100,7 +100,7 @@ De meeste taken en services kunnen worden uitgevoerd op gedelegeerde resources i
 - [Log Analytics](../../azure-monitor/platform/service-providers.md): gegevens opvragen uit externe werk ruimten in meerdere tenants (Houd er rekening mee dat Automation-accounts die worden gebruikt voor toegang tot gegevens uit werk ruimten in de tenants van de klant, moeten worden gemaakt in dezelfde Tenant)
 - [Waarschuwingen voor activiteiten logboek maken, weer geven en beheren](../../azure-monitor/platform/alerts-activity-log.md) in de tenants van de klant
 - Maak waarschuwingen in klant tenants die automatisering activeren, zoals Azure Automation runbooks of Azure Functions, in de Tenant beheren via webhooks
-- [Diagnostische instellingen](../..//azure-monitor/platform/diagnostic-settings.md) maken in de tenants van de klant om resource logboeken te verzenden naar werk ruimten in de Tenant beheren
+- [Diagnostische instellingen](../..//azure-monitor/essentials/diagnostic-settings.md) maken in de tenants van de klant om resource logboeken te verzenden naar werk ruimten in de Tenant beheren
 - Voor SAP-workloads [bewaakt u de metrische gegevens van SAP-oplossingen met een geaggregeerde weer gave van alle tenants van de klant](https://techcommunity.microsoft.com/t5/running-sap-applications-on-the/using-azure-lighthouse-and-azure-monitor-for-sap-solutions-to/ba-p/1537293)
 
 [Azure-netwerken](../../networking/networking-overview.md):

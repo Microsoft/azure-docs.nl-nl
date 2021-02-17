@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 12/15/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: a106455ea9d7b7a64fecd7c4255c294d0bd62db8
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: cfc980fdabdb9c6e7085088db12754243f133d89
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562613"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581395"
 ---
 # <a name="security-best-practices"></a>Aanbevolen procedures voor beveiliging
 
@@ -29,16 +29,16 @@ Hier vindt u de beveiligings behoeften die u nodig hebt voor de implementatie va
 
 | Beveiligings behoeften | Is de klant hiervoor verantwoordelijk? |
 |---------------|:-------------------------:|
-|Identiteit|Ja|
-|Gebruikers apparaten (Mobile en PC)|Ja|
-|App-beveiliging|Ja|
-|Session Host-besturings systeem|Ja|
-|Implementatie configuratie|Ja|
-|Netwerk besturings elementen|Ja|
-|Besturings vlak voor virtualisatie|Nee|
-|Fysieke hosts|Nee|
-|Fysiek netwerk|Nee|
-|Fysiek Data Center|Nee|
+|Identiteit|Yes|
+|Gebruikers apparaten (Mobile en PC)|Yes|
+|App-beveiliging|Yes|
+|Session Host-besturings systeem|Yes|
+|Implementatie configuratie|Yes|
+|Netwerk besturings elementen|Yes|
+|Besturings vlak voor virtualisatie|No|
+|Fysieke hosts|No|
+|Fysiek netwerk|No|
+|Fysiek Data Center|No|
 
 De beveiligings behoeften die de klant niet verantwoordelijk is voor worden verwerkt door micro soft.
 
@@ -80,10 +80,10 @@ Als u [voorwaardelijke toegang](../active-directory/conditional-access/overview.
 
 Als u controle logboek verzameling inschakelt, kunt u de activiteiten van gebruikers en beheerders met betrekking tot het virtuele bureau blad van Windows bekijken. Enkele voor beelden van belang rijke audit logboeken:
 
--   [Azure-activiteiten logboek](../azure-monitor/platform/activity-log.md)
+-   [Azure-activiteitenlogboek](../azure-monitor/essentials/activity-log.md)
 -   [Azure Active Directory activiteiten logboek](../active-directory/reports-monitoring/concept-activity-logs-azure-monitor.md)
 -   [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md)
--   [Sessie-hosts](../azure-monitor/platform/agent-windows.md)
+-   [Sessie-hosts](../azure-monitor/agents/agent-windows.md)
 -   [Diagnostische logboek van Windows virtueel bureau blad](../virtual-desktop/diagnostics-log-analytics.md)
 -   [Key Vault logboeken](../key-vault/general/logging.md)
 

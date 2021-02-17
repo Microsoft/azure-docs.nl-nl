@@ -5,12 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 11/21/2018
 ms.author: srrengar
-ms.openlocfilehash: 033b4967d3da382057c2651457f7792e760d8bc3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f9db0df9370197190c11b740f1fd1af3fb69f19c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86247612"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581415"
 ---
 # <a name="monitoring-the-cluster"></a>Het cluster bewaken
 
@@ -81,7 +81,7 @@ Zie [prestatie meter items in service Fabric](service-fabric-diagnostics-event-g
 Hier volgen twee algemene manieren waarop u het verzamelen van prestatie gegevens voor uw cluster kunt instellen:
 
 * **Een agent gebruiken**  
-Dit is de voorkeurs methode voor het verzamelen van prestaties van een machine, omdat agents meestal een lijst bevatten met mogelijke prestatie gegevens die kunnen worden verzameld, en een relatief eenvoudig proces is om de metrische gegevens te kiezen die u wilt verzamelen of wijzigen. De informatie over de Azure Monitor aanbieding Azure Monitor Logboeken in Service Fabric [Azure monitor logboeken integreren](service-fabric-diagnostics-event-analysis-oms.md) en [instellen van de log Analytics agent](../azure-monitor/platform/agent-windows.md) voor meer informatie over de log Analytics agent, wat een dergelijke bewakings agent is waarmee u prestatie gegevens kunt ophalen voor virtuele machines in het cluster en geïmplementeerde containers.
+Dit is de voorkeurs methode voor het verzamelen van prestaties van een machine, omdat agents meestal een lijst bevatten met mogelijke prestatie gegevens die kunnen worden verzameld, en een relatief eenvoudig proces is om de metrische gegevens te kiezen die u wilt verzamelen of wijzigen. De informatie over de Azure Monitor aanbieding Azure Monitor Logboeken in Service Fabric [Azure monitor logboeken integreren](service-fabric-diagnostics-event-analysis-oms.md) en [instellen van de log Analytics agent](../azure-monitor/agents/agent-windows.md) voor meer informatie over de log Analytics agent, wat een dergelijke bewakings agent is waarmee u prestatie gegevens kunt ophalen voor virtuele machines in het cluster en geïmplementeerde containers.
 
 * **Prestatie meter items voor Azure Table Storage**  
 U kunt ook prestatie gegevens verzenden naar dezelfde tabel opslag als de gebeurtenissen. Hiervoor moet u de Azure Diagnostics configuratie wijzigen om de juiste prestatie meter items van de virtuele machines in uw cluster op te halen, zodat u docker-statistieken kunt ophalen als u containers gaat implementeren. Meer informatie over het configureren van [prestatie meter items in wad](service-fabric-diagnostics-event-aggregation-wad.md) in service Fabric voor het instellen van verzameling prestatie meters.

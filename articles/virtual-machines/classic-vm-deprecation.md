@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: tagore
-ms.openlocfilehash: 7ed2a672f0f7149240e799b5529a7a3a6836a702
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 004a84cd98381af027c554a7ef40e27e69ec6dbc
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499302"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587911"
 ---
 # <a name="migrate-your-iaas-resources-to-azure-resource-manager-by-march-1-2023"></a>Migreer uw IaaS-resources naar Azure Resource Manager op 1 maart 2023 
 
@@ -30,7 +30,7 @@ Vm's die zijn gemaakt met het klassieke implementatie model, volgen het [moderne
 - Op 1 maart 2023 worden abonnementen die niet naar Azure Resource Manager worden gemigreerd, op de hoogte gesteld van tijd lijnen voor het verwijderen van alle resterende Vm's (klassiek).  
 
 Deze buiten gebruiks telling heeft *geen* invloed op de volgende Azure-Services en-functionaliteit: 
-- Azure Cloud Services 
+- [Azure Cloud Services (klassiek)](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me)
 - Opslag accounts die *niet* worden gebruikt door virtuele machines (klassiek) 
 - Virtuele netwerken die *niet* worden gebruikt door virtuele machines (klassiek) 
 - Andere klassieke resources
@@ -49,9 +49,9 @@ Begin met het plannen van de migratie naar Azure Resource Manager, vandaag.
 
 1. Het is raadzaam om de planning te starten met het [hulp programma voor migratie van platform ondersteuning](./migration-classic-resource-manager-overview.md) om uw bestaande vm's te migreren met drie eenvoudige stappen: valideren, voorbereiden en door voeren. Het hulp programma is ontworpen voor het migreren van uw virtuele machines binnen een minimum aan zonder uitval tijd. 
 
-   1. De eerste stap, validate, heeft geen invloed op uw bestaande implementatie en biedt een lijst van alle niet-ondersteunde scenario's voor migratie. 
-   1. Door loop de [lijst met tijdelijke oplossingen](./migration-classic-resource-manager-overview.md#unsupported-features-and-configurations) om uw implementatie te herstellen en deze gereed te maken voor migratie. 
-   1. In het ideale geval nadat alle validatie fouten zijn opgelost, moet u geen problemen ondervinden tijdens de stappen voor het voorbereiden en door voeren. Nadat het door voeren is voltooid, wordt uw implementatie Live gemigreerd naar Azure Resource Manager en kan deze vervolgens worden beheerd via nieuwe Api's die worden weer gegeven door Azure Resource Manager. 
+   - De eerste stap, validate, heeft geen invloed op uw bestaande implementatie en biedt een lijst van alle niet-ondersteunde scenario's voor migratie. 
+   - Door loop de [lijst met tijdelijke oplossingen](./migration-classic-resource-manager-overview.md#unsupported-features-and-configurations) om uw implementatie te herstellen en deze gereed te maken voor migratie. 
+   - In het ideale geval nadat alle validatie fouten zijn opgelost, moet u geen problemen ondervinden tijdens de stappen voor het voorbereiden en door voeren. Nadat het door voeren is voltooid, wordt uw implementatie Live gemigreerd naar Azure Resource Manager en kan deze vervolgens worden beheerd via nieuwe Api's die worden weer gegeven door Azure Resource Manager. 
 
    Als het hulp programma voor migratie niet geschikt is voor uw migratie, kunt u [andere compute-aanbiedingen](/azure/architecture/guide/technology-choices/compute-decision-tree) voor de migratie verkennen. Omdat er veel Azure Compute-aanbiedingen zijn, en ze verschillen van elkaar, kunnen we geen door het platform ondersteunde migratie paden aanbieden.  
 
@@ -65,6 +65,6 @@ Begin met het plannen van de migratie naar Azure Resource Manager, vandaag.
 
 - [Azure-migratie ondersteuning](https://ms.portal.azure.com/#create/Microsoft.Support/Parameters/{"pesId":"6f16735c-b0ae-b275-ad3a-03479cfa1396","supportTopicId":"1135e3d0-20e2-aec5-4ef0-55fd3dae2d58"}): specifiek ondersteunings team voor technische ondersteuning tijdens de migratie.
 
-- [Micro soft Fast track](https://www.microsoft.com/fasttrack): met Fast track kunt u in aanmerking komende klanten helpen bij het plannen van & uitvoering van deze migratie. [Noem uzelf](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fprograms%2Fazure-fasttrack%2F%23nomination&data=02%7C01%7CTanmay.Gore%40microsoft.com%7C3e75bbf3617944ec663a08d85c058340%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637360526032558561&sdata=CxWTVQQPVWNwEqDZKktXzNV74pX91uyJ8dY8YecIgGc%3D&reserved=0).  
+- [Micro soft Fast track](https://www.microsoft.com/fasttrack): met Fast track kunt u in aanmerking komende klanten helpen bij het plannen van & uitvoering van deze migratie. [Noem uzelf](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fprograms%2Fazure-fasttrack%2F%23nomination&data=02%7C01%7CTanmay.Gore%40microsoft.com%7C3e75bbf3617944ec663a08d85c058340%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637360526032558561&sdata=CxWTVQQPVWNwEqDZKktXzNV74pX91uyJ8dY8YecIgGc%3D&reserved=0) voor het migratie programma voor domein controller.  
 
 - Als uw bedrijf/organisatie is gekoppeld aan micro soft of werkt met micro soft-vertegenwoordigers (zoals Cloud Solution Architects (CSAs) of Technical Account Manager (TAMs)), kunt u het beste met hen samen werken voor aanvullende bronnen voor migratie.

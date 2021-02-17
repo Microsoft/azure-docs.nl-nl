@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/30/2020
-ms.openlocfilehash: bde1c503d0aaaff1afcee67a26245d5021c43bb4
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: d031b64b36bd7ff91c64960642cfbf00fb1682ab
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807747"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587297"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Office 365-beheer oplossing in azure (preview-versie)
 
@@ -118,7 +118,7 @@ Met de Office 365-beheer oplossing kunt u uw Office 365-omgeving in Azure Monito
 - Beheer activiteiten controleren om configuratie wijzigingen of bewerkingen met hoge bevoegdheden bij te houden.
 - Detecteer en onderzoek ongewenste gebruikers gedrag dat kan worden aangepast aan de behoeften van uw organisatie.
 - Demonstratie van controle en naleving. U kunt bijvoorbeeld bestands toegangs bewerkingen bewaken op vertrouwelijke bestanden, die u kunnen helpen bij het controle-en nalevings proces.
-- Voer operationele problemen op te lossen met behulp van [logboek query's](../log-query/log-query-overview.md) op Office 365-activiteit gegevens van uw organisatie.
+- Voer operationele problemen op te lossen met behulp van [logboek query's](../logs/log-query-overview.md) op Office 365-activiteit gegevens van uw organisatie.
 
 
 ## <a name="uninstall"></a>Verwijderen
@@ -473,6 +473,6 @@ De volgende tabel bevat voorbeeld logboek query's voor update records die door d
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Gebruik [logboek query's in azure monitor](../log-query/log-query-overview.md) om gedetailleerde update gegevens weer te geven.
-* [Maak uw eigen Dash boards](../learn/tutorial-logs-dashboards.md) om uw favoriete Office 365-Zoek query's weer te geven.
-* [Maak waarschuwingen](../platform/alerts-overview.md) om proactief te worden geïnformeerd over belang rijke Office 365-activiteiten.  
+* Gebruik [logboek query's in azure monitor](../logs/log-query-overview.md) om gedetailleerde update gegevens weer te geven.
+* [Maak uw eigen Dash boards](../visualize/tutorial-logs-dashboards.md) om uw favoriete Office 365-Zoek query's weer te geven.
+* [Maak waarschuwingen](../alerts/alerts-overview.md) om proactief te worden geïnformeerd over belang rijke Office 365-activiteiten.  

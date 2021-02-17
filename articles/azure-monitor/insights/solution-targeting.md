@@ -6,15 +6,15 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 04/27/2017
-ms.openlocfilehash: 5cecf24f4ba086feba5ab87b5752fd665c540dff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 338dc22c7a4f9fbca9f007ae76c092a3fe5f6762
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86498675"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587232"
 ---
 # <a name="targeting-monitoring-solutions-in-azure-monitor-preview"></a>Doelen voor bewakings oplossingen in Azure Monitor (preview-versie)
-Wanneer u een bewakings oplossing aan uw abonnement toevoegt, wordt deze automatisch standaard geïmplementeerd voor alle Windows-en Linux-agents die zijn verbonden met uw Log Analytics-werk ruimte.  U kunt uw kosten beheren en de hoeveelheid gegevens die voor een oplossing wordt verzameld beperken door deze te beperken tot een bepaalde set agents.  In dit artikel wordt beschreven hoe u **doel items van oplossingen** kunt gebruiken. Dit is een functie waarmee u een bereik kunt Toep assen op uw oplossingen.
+Wanneer u een bewakings oplossing aan uw abonnement toevoegt, wordt deze automatisch standaard geïmplementeerd voor alle Windows-en Linux-agents die zijn verbonden met uw Log Analytics-werk ruimte.  Mogelijk wilt u uw kosten beheren en het aantal verzamelde gegevens voor oplossing beperken door deze te beperken tot een bepaalde set agents.  In dit artikel wordt beschreven hoe u **doel items van oplossingen** kunt gebruiken. Dit is een functie waarmee u een bereik kunt Toep assen op uw oplossingen.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -23,7 +23,7 @@ Er zijn drie stappen voor het richten op een oplossing zoals beschreven in de vo
 
 
 ### <a name="1-create-a-computer-group"></a>1. een computer groep maken
-U geeft de computers op die u wilt gebruiken in een bereik door een [computer groep](../platform/computer-groups.md) te maken in azure monitor.  De computer groep kan worden gebaseerd op een logboek query of worden geïmporteerd uit andere bronnen, zoals Active Directory-of WSUS-groepen. Zoals [hieronder wordt beschreven](#solutions-and-agents-that-cant-be-targeted), worden alleen computers die rechtstreeks zijn verbonden met Azure monitor, opgenomen in het bereik.
+U geeft de computers op die u wilt gebruiken in een bereik door een [computer groep](../logs/computer-groups.md) te maken in azure monitor.  De computer groep kan worden gebaseerd op een logboek query of worden geïmporteerd uit andere bronnen, zoals Active Directory-of WSUS-groepen. Zoals [hieronder wordt beschreven](#solutions-and-agents-that-cant-be-targeted), worden alleen computers die rechtstreeks zijn verbonden met Azure monitor, opgenomen in het bereik.
 
 Zodra u de computer groep hebt gemaakt in uw werk ruimte, neemt u deze op in een bereik configuratie die kan worden toegepast op een of meer oplossingen.
  
@@ -53,7 +53,7 @@ Pas een scope configuratie toe met behulp van het volgende proces.
  4. In de eigenschappen voor de oplossing onder **werkruimte gegevens bronnen** selecteert u **oplossings doelen**.  Als de optie niet beschikbaar is, [kan deze oplossing niet worden benaderd](#solutions-and-agents-that-cant-be-targeted).
  5. Klik op **Scope configuratie toevoegen**.  Als u al een configuratie op deze oplossing hebt toegepast, is deze optie niet beschikbaar.  U moet de bestaande configuratie verwijderen voordat u er een toevoegt.
  6. Klik op de bereik configuratie die u hebt gemaakt.
- 7. Bekijk de **status** van de configuratie om er zeker van te zijn dat deze **correct**wordt weer gegeven.  Als de status een fout aangeeft, klikt u op het weglatings teken rechts van de configuratie en selecteert u **Scope configuratie bewerken** om wijzigingen aan te brengen.
+ 7. Bekijk de **status** van de configuratie om er zeker van te zijn dat deze **correct** wordt weer gegeven.  Als de status een fout aangeeft, klikt u op het weglatings teken rechts van de configuratie en selecteert u **Scope configuratie bewerken** om wijzigingen aan te brengen.
 
 ## <a name="solutions-and-agents-that-cant-be-targeted"></a>Oplossingen en agents die niet bedoeld zijn
 Hieronder vindt u de criteria voor agents en oplossingen die niet kunnen worden gebruikt voor het doel van oplossingen.
@@ -69,4 +69,4 @@ Doel stellingen van oplossingen kunnen niet worden gebruikt met de volgende oplo
 
 ## <a name="next-steps"></a>Volgende stappen
 - Meer informatie over het bewaken van oplossingen, inclusief de oplossingen die beschikbaar zijn voor installatie in uw omgeving, bij het [toevoegen van Azure log Analytics bewakings oplossingen voor uw werk ruimte](solutions.md).
-- Meer informatie over het maken van computer groepen bij [computer groepen in azure monitor-logboek query's](../platform/computer-groups.md).
+- Meer informatie over het maken van computer groepen bij [computer groepen in azure monitor-logboek query's](../logs/computer-groups.md).

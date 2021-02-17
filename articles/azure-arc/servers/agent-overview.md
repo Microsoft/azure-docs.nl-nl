@@ -3,12 +3,12 @@ title: Overzicht van de verbonden computer Windows-agent
 description: Dit artikel bevat een gedetailleerd overzicht van de beschik bare Azure Arc-servers agent, die ondersteuning biedt voor het bewaken van virtuele machines die worden gehost in hybride omgevingen.
 ms.date: 02/16/2021
 ms.topic: conceptual
-ms.openlocfilehash: 82562bf3b1f8392e56a53ba0f968a76b050e7b13
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 8c06989d726a30e95f0b9c4dcc15a967d498f92a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/17/2021
-ms.locfileid: "100558502"
+ms.locfileid: "100580872"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Overzicht van de agent voor servers met Azure Arc ingeschakeld
 
@@ -110,7 +110,7 @@ Om te zorgen voor de beveiliging van gegevens die onderweg zijn naar Azure, rade
 De verbonden machine agent voor Linux en Windows communiceert veilig uitgaande naar Azure Arc via TCP-poort 443. Als de computer verbinding maakt via een firewall of proxy server om via internet te communiceren, raadpleegt u het volgende om inzicht te krijgen in de vereisten voor de netwerk configuratie.
 
 > [!NOTE]
-> Arc ingeschakelde servers biedt geen ondersteuning voor het gebruik van een [log Analytics gateway](../../azure-monitor/platform/gateway.md) als een proxy voor de verbonden machine agent.
+> Arc ingeschakelde servers biedt geen ondersteuning voor het gebruik van een [log Analytics gateway](../../azure-monitor/agents/gateway.md) als een proxy voor de verbonden machine agent.
 >
 
 Als de uitgaande connectiviteit wordt beperkt door uw firewall of proxy server, controleert u of de Url's die hieronder worden weer gegeven niet zijn geblokkeerd. Wanneer u alleen de IP-bereiken of domein namen toestaat die vereist zijn om de agent te laten communiceren met de-service, moet u toegang tot de volgende service tags en Url's toestaan.

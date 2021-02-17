@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: e47dfeab7466faf9a60b161b05d8b3bf39ebdb6a
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: cf4e02f925e0c8c4024137589c0c9c4074c0aa11
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98203300"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596757"
 ---
 # <a name="azure-security-baseline-for-logic-apps"></a>Azure-beveiligings basislijn voor Logic Apps
 
@@ -216,9 +216,9 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 **Hulp**: gebruik het Azure-activiteiten logboek om netwerk resource configuraties te bewaken en wijzigingen te detecteren voor netwerk bronnen die betrekking hebben op uw Azure Logic apps exemplaren. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke netwerk bronnen plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -242,7 +242,7 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derden. 
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Azure Monitor logboeken instellen en diagnostische gegevens verzamelen voor Azure Logic Apps](monitor-logic-apps-log-analytics.md)
 
@@ -258,7 +258,7 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derden. 
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Azure Monitor logboeken instellen en diagnostische gegevens verzamelen voor Azure Logic Apps](monitor-logic-apps-log-analytics.md)
 
@@ -284,7 +284,7 @@ Stel in Azure Monitor de Bewaar periode voor logboek registratie in voor de logb
 
 - [De uitvoerings status controleren, de trigger geschiedenis controleren en waarschuwingen instellen voor Azure Logic Apps](monitor-logic-apps.md)
 
-- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -300,9 +300,9 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 - [Azure Monitor logboeken instellen en diagnostische gegevens verzamelen voor Azure Logic Apps](monitor-logic-apps-log-analytics.md)
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
-- [Azure-activiteiten Logboeken in Log Analytics in Azure Monitor verzamelen en analyseren](../azure-monitor/platform/activity-log.md)
+- [Azure-activiteiten Logboeken in Log Analytics in Azure Monitor verzamelen en analyseren](../azure-monitor/essentials/activity-log.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md) 
 
@@ -320,7 +320,7 @@ U kunt ook gegevens naar Azure-Sentinel inschakelen en op het bord zetten.
 
 - [Waarschuwingen beheren in Azure Security Center](../security-center/security-center-managing-and-responding-alerts.md)
 
-- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/learn/tutorial-response.md)
+- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -685,7 +685,7 @@ Wanneer u een Integration service Environment (ISE) maakt voor het hosten van uw
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer wijzigingen worden aangebracht in azure Logic apps, evenals andere essentiële of gerelateerde resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Ja
 

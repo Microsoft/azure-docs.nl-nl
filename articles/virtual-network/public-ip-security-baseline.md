@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/11/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: cba362004e764ffbbc734fb06c8898f380ffdf88
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: b26a020b9b4b1641d67a4f5ca55908b8d37f31e4
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99806915"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596493"
 ---
 # <a name="azure-security-baseline-for-azure-public-ip"></a>Azure-beveiligings basislijn voor open bare Azure-IP
 
@@ -52,7 +52,7 @@ Open bare IP bevat hulpprogram ma's voor het bewaken, vaststellen en weer geven 
 
 In plaats daarvan kunt u gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden.
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -64,7 +64,7 @@ In plaats daarvan kunt u gegevens in-en inschakelen voor Azure Sentinel of een S
 
 **Hulp**: Azure-activiteiten logboek gebruiken om configuraties te controleren en wijzigingen voor uw open bare IP-instanties te detecteren. Met uitzonde ring van het besturings vlak (bijvoorbeeld Azure Portal), genereert het open bare IP-adres zelf geen audit Logboeken. Open bare IP bevat hulpprogram ma's voor het bewaken, vaststellen en weer geven van metrische gegevens en het in-of uitschakelen van Logboeken voor bronnen in een virtueel Azure-netwerk.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -74,7 +74,7 @@ In plaats daarvan kunt u gegevens in-en inschakelen voor Azure Sentinel of een S
 
 **Hulp**: gebruik Azure monitor om de Bewaar periode voor logboek registratie in te stellen voor de log Analytics-werk ruimten die zijn gekoppeld aan open bare IP-instanties per nalevings verplichtingen van uw organisatie.
 
-- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -88,7 +88,7 @@ Gebruik Azure-activiteiten logboek om configuraties te controleren en wijziginge
 
 Openbaar IP-adres zelf maakt geen logboeken met betrekking tot netwerk verkeer dan op het besturings vlak (bijvoorbeeld Azure Portal).
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 

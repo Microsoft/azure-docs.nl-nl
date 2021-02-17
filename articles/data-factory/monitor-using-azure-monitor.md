@@ -7,12 +7,12 @@ ms.reviewer: maghan
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 07/13/2020
-ms.openlocfilehash: 389c0b1fd5a2fde33c2bf19ac2807cca45691523
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 5e2ecf8dff432f2a0ce6b3356ce3eca7a8127932
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100373144"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586854"
 ---
 # <a name="monitor-and-alert-data-factory-by-using-azure-monitor"></a>Data Factory bewaken en waarschuwen door gebruik te maken van Azure Monitor
 
@@ -76,7 +76,7 @@ Diagnostische instellingen voor uw data factory maken of toevoegen.
    ![Geef uw instellingen een naam en selecteer een werk ruimte voor logboek analyse](media/data-factory-monitor-oms/monitor-oms-image2.png)
 
     > [!NOTE]
-    > Omdat een Azure-logboek tabel niet meer dan 500 kolommen kan bevatten, raden we u **ten zeerste** aan de _resource-specifieke modus_ te selecteren. Zie [log Analytics bekende beperkingen](../azure-monitor/platform/resource-logs.md#column-limit-in-azurediagnostics)voor meer informatie.
+    > Omdat een Azure-logboek tabel niet meer dan 500 kolommen kan bevatten, raden we u **ten zeerste** aan de _resource-specifieke modus_ te selecteren. Zie [log Analytics bekende beperkingen](../azure-monitor/essentials/resource-logs.md#column-limit-in-azurediagnostics)voor meer informatie.
 
 1. Selecteer **Opslaan**.
 
@@ -151,7 +151,7 @@ Hier volgen enkele van de metrische gegevens die worden verzonden door Azure Dat
 | SSISPackageExecutionFailed           | Metrische gegevens voor uitvoering van SSIS-pakket mislukt    | Aantal    | Totaal                | Het totale aantal uitvoeringen SSIS-pakketten dat is mislukt binnen een minuut venster. |
 | SSISPackageExecutionSucceeded        | Metrische uitvoerings gegevens geslaagd SSIS-pakket | Aantal    | Totaal                | Het totale aantal uitvoeringen van SSIS-pakketten dat is voltooid binnen een minuut venster. |
 
-Volg de instructies in [Azure monitor data platform](../azure-monitor/platform/data-platform.md)om toegang te krijgen tot de metrische gegevens.
+Volg de instructies in [Azure monitor data platform](../azure-monitor/data-platform.md)om toegang te krijgen tot de metrische gegevens.
 
 > [!NOTE]
 > Alleen gebeurtenissen uit voltooide, geactiveerde activiteiten en pijplijn uitvoeringen worden verzonden. Uitvoeringen en fout opsporing worden **niet** verzonden. Aan de andere kant worden gebeurtenissen van **alle** SSIS-pakket uitvoeringen verzonden, met inbegrip van de procedures die zijn voltooid en worden uitgevoerd, ongeacht hun aanroep methoden. U kunt bijvoorbeeld pakket uitvoeringen aanroepen op met Azure ingeschakelde SQL Server Data Tools (SSDT), via T-SQL op SSMS, SQL Server Agent of andere aangewezen hulpprogram ma's, en als geactiveerd of fout opsporing uitvoeren van SSIS-pakket activiteiten in ADF-pijp lijnen.
@@ -848,7 +848,7 @@ Als u uw SSIS-werk belastingen wilt & verplaatsen, kunt u [SSIS IR inrichten in 
 
 Wanneer u eenmaal hebt ingericht, kunt u de [operationele status van SSIS IR controleren met behulp van Azure PowerShell of op de hub **bewaken** van de ADF-Portal](./monitor-integration-runtime.md#azure-ssis-integration-runtime). Met het project implementatie model worden SSIS-pakket uitvoerings Logboeken opgeslagen in SSISDB interne tabellen of weer gaven, zodat u ze kunt opvragen, analyseren en visueel weer geven met behulp van aangewezen hulpprogram ma's als SSMS. Met het pakket implementatie model kunnen SSIS-uitvoer logboeken worden opgeslagen in bestands systeem of Azure Files als CSV-bestanden die u nog steeds moet parseren en verwerken met andere aangewezen hulpprogram ma's voordat u ze kunt opvragen, analyseren en visueel weer geven.
 
-Nu met [Azure monitor](../azure-monitor/platform/data-platform.md) -integratie kunt u alle metrische gegevens en logboeken die zijn gegenereerd door SSIS IR-bewerkingen en SSIS-pakket uitvoeringen, opvragen, analyseren en visueel weer geven op Azure Portal. Daarnaast kunt u ook waarschuwingen genereren.
+Nu met [Azure monitor](../azure-monitor/data-platform.md) -integratie kunt u alle metrische gegevens en logboeken die zijn gegenereerd door SSIS IR-bewerkingen en SSIS-pakket uitvoeringen, opvragen, analyseren en visueel weer geven op Azure Portal. Daarnaast kunt u ook waarschuwingen genereren.
 
 ### <a name="configure-diagnostic-settings-and-workspace-for-ssis-operations"></a>Diagnostische instellingen en werk ruimte voor SSIS-bewerkingen configureren
 
@@ -856,9 +856,9 @@ Als u alle metrische gegevens en logboeken die zijn gegenereerd door SSIS IR-bew
 
 ### <a name="ssis-operational-metrics"></a>Operationele metrische gegevens voor SSIS
 
-SSIS operationele [metrische gegevens](../azure-monitor/platform/data-platform-metrics.md) zijn prestatie meter items of numerieke waarden die de status van de start-en stop bewerkingen van SSIS IR beschrijven, evenals de uitvoeringen van SSIS-pakketten op een bepaald moment. Ze maken deel uit van [ADF-metrische gegevens in azure monitor](#data-factory-metrics).
+SSIS operationele [metrische gegevens](../azure-monitor/essentials/data-platform-metrics.md) zijn prestatie meter items of numerieke waarden die de status van de start-en stop bewerkingen van SSIS IR beschrijven, evenals de uitvoeringen van SSIS-pakketten op een bepaald moment. Ze maken deel uit van [ADF-metrische gegevens in azure monitor](#data-factory-metrics).
 
-Wanneer u Diagnostische instellingen en werk ruimte voor uw ADF op Azure Monitor configureert en u het selectie vakje _AllMetrics_ inschakelt, krijgen SSIS operationele metrische gegevens beschikbaar voor [interactieve analyse met behulp van Azure Metrics Explorer](../azure-monitor/platform/metrics-getting-started.md), [presentatie op Azure-dash board](../azure-monitor/learn/tutorial-app-dashboards.md)en [bijna real time-waarschuwingen](../azure-monitor/platform/alerts-metric.md).
+Wanneer u Diagnostische instellingen en werk ruimte voor uw ADF op Azure Monitor configureert en u het selectie vakje _AllMetrics_ inschakelt, krijgen SSIS operationele metrische gegevens beschikbaar voor [interactieve analyse met behulp van Azure Metrics Explorer](../azure-monitor/essentials/metrics-getting-started.md), [presentatie op Azure-dash board](../azure-monitor/app/tutorial-app-dashboards.md)en [bijna real time-waarschuwingen](../azure-monitor/alerts/alerts-metric.md).
 
 ![Geef uw instellingen een naam en selecteer een werk ruimte voor logboek analyse](media/data-factory-monitor-oms/monitor-oms-image2.png)
 
@@ -874,9 +874,9 @@ Als u waarschuwingen wilt genereren op basis van de SSIS-metrische gegevens van 
 
 ### <a name="ssis-operational-logs"></a>SSIS-operationele logboeken
 
-SSIS-operationele [Logboeken](../azure-monitor/platform/data-platform-logs.md) zijn gebeurtenissen die worden gegenereerd door SSIS IR-bewerkingen en SSIS-pakket uitvoeringen die voldoende context bieden voor geïdentificeerde problemen en die nuttig zijn voor analyse van hoofd oorzaken. 
+SSIS-operationele [Logboeken](../azure-monitor/logs/data-platform-logs.md) zijn gebeurtenissen die worden gegenereerd door SSIS IR-bewerkingen en SSIS-pakket uitvoeringen die voldoende context bieden voor geïdentificeerde problemen en die nuttig zijn voor analyse van hoofd oorzaken. 
 
-Wanneer u Diagnostische instellingen en werk ruimte voor uw ADF op Azure Monitor configureert, kunt u de relevante SSIS-operationele logboeken selecteren en deze naar Log Analytics op basis van Azure Data Explorer verzenden. In dat geval worden ze beschikbaar gesteld voor [analyse met behulp van uitgebreide query taal](../azure-monitor/log-query/log-query-overview.md), [presentatie op Azure-dash board](../azure-monitor/learn/tutorial-app-dashboards.md)en [nabije real-time waarschuwingen](../azure-monitor/platform/alerts-log.md).
+Wanneer u Diagnostische instellingen en werk ruimte voor uw ADF op Azure Monitor configureert, kunt u de relevante SSIS-operationele logboeken selecteren en deze naar Log Analytics op basis van Azure Data Explorer verzenden. In dat geval worden ze beschikbaar gesteld voor [analyse met behulp van uitgebreide query taal](../azure-monitor/logs/log-query-overview.md), [presentatie op Azure-dash board](../azure-monitor/app/tutorial-app-dashboards.md)en [nabije real-time waarschuwingen](../azure-monitor/alerts/alerts-log.md).
 
 ![Geef uw instellingen een naam en selecteer een werk ruimte voor logboek analyse](media/data-factory-monitor-oms/monitor-oms-image2.png)
 

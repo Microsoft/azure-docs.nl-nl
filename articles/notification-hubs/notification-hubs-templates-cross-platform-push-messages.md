@@ -16,12 +16,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: e3c64155053517205ab006673bb8f400325ad3c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c4c1c247d8fb248c5e6d548dd04af1c3d08a4e76
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86219960"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588325"
 ---
 # <a name="notification-hubs-templates"></a>Notification Hubs sjablonen
 
@@ -108,7 +108,6 @@ De sjabloon voor de 1-daagse prognose met Celsius temperaturen is als volgt:
 
 Het bericht dat naar de notification hub wordt verzonden, bevat alle volgende eigenschappen:
 
-```html
 <table border="1">
 
 <tr><td>day1_image</td><td>day2_image</td><td>day3_image</td><td>day4_image</td><td>day5_image</td></tr>
@@ -117,7 +116,6 @@ Het bericht dat naar de notification hub wordt verzonden, bevat alle volgende ei
 
 <tr><td>day1_tempF</td><td>day2_tempF</td><td>day3_tempF</td><td>day4_tempF</td><td>day5_tempF</td></tr>
 </table><br/>
-```
 
 Met dit patroon verzendt de back-end alleen één bericht zonder specifieke persoonlijke opties op te slaan voor de gebruikers van de app. In de volgende afbeelding ziet u dit scenario:
 

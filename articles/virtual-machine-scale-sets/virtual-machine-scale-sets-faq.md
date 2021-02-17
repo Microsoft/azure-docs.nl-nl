@@ -9,12 +9,12 @@ ms.subservice: faq
 ms.date: 06/30/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 8170cfcbbf200c6ba5030aff5716f46b537d8c97
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3bc259f9ee6cb1e6fd927af82a1740403d3ae7d8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96016706"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587954"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Veelgestelde vragen over schaalsets voor virtuele Azure-machines
 
@@ -71,15 +71,15 @@ Ja. Zie het [document Scale set zone doc](./virtual-machine-scale-sets-use-avail
 
 ### <a name="what-are-best-practices-for-azure-autoscale"></a>Wat zijn de aanbevolen procedures voor Azure automatisch schalen?
 
-Zie [Aanbevolen procedures voor het automatisch schalen van virtuele machines](../azure-monitor/platform/autoscale-best-practices.md)voor aanbevolen procedures voor automatische schaling.
+Zie [Aanbevolen procedures voor het automatisch schalen van virtuele machines](../azure-monitor/autoscale/autoscale-best-practices.md)voor aanbevolen procedures voor automatische schaling.
 
 ### <a name="where-do-i-find-metric-names-for-autoscaling-that-uses-host-based-metrics"></a>Waar vind ik metrische namen voor automatisch schalen die gebruikmaken van metrische gegevens op basis van een host?
 
-Zie [ondersteunde metrische gegevens met Azure monitor](../azure-monitor/platform/metrics-supported.md)voor metrische namen voor automatisch schalen die gebruikmaken van metrische gegevens op basis van een host.
+Zie [ondersteunde metrische gegevens met Azure monitor](../azure-monitor/essentials/metrics-supported.md)voor metrische namen voor automatisch schalen die gebruikmaken van metrische gegevens op basis van een host.
 
 ### <a name="are-there-any-examples-of-autoscaling-based-on-an-azure-service-bus-topic-and-queue-length"></a>Zijn er voor beelden van automatisch schalen op basis van een Azure Service Bus onderwerp en wachtrij lengte?
 
-Ja. Zie voor voor beelden van automatisch schalen op basis van een Azure Service Bus onderwerp en wachtrij lengte [Azure monitor algemene metrische gegevens automatisch schalen](../azure-monitor/platform/autoscale-common-metrics.md).
+Ja. Zie voor voor beelden van automatisch schalen op basis van een Azure Service Bus onderwerp en wachtrij lengte [Azure monitor algemene metrische gegevens automatisch schalen](../azure-monitor/autoscale/autoscale-common-metrics.md).
 
 Gebruik voor een Service Bus wachtrij de volgende JSON:
 
@@ -104,9 +104,9 @@ Vervang voorbeeld waarden door de URI (Uniform Resource Identifiers) van uw reso
 
 U kunt een instelling voor automatisch schalen maken op een VM voor het gebruik van metrische gegevens op hostniveau of metrische gegevens op basis van een gast besturingssysteem.
 
-Zie voor een lijst met ondersteunde metrische gegevens [Azure monitor automatisch schalen van algemene metrische gegevens](../azure-monitor/platform/autoscale-common-metrics.md).
+Zie voor een lijst met ondersteunde metrische gegevens [Azure monitor automatisch schalen van algemene metrische gegevens](../azure-monitor/autoscale/autoscale-common-metrics.md).
 
-Zie [Geavanceerde configuratie van automatisch schalen met behulp van Resource Manager-sjablonen voor virtuele-machine schaal sets](../azure-monitor/platform/autoscale-virtual-machine-scale-sets.md)voor een volledig voor beeld van virtuele-machine schaal sets.
+Zie [Geavanceerde configuratie van automatisch schalen met behulp van Resource Manager-sjablonen voor virtuele-machine schaal sets](../azure-monitor/autoscale/autoscale-virtual-machine-scale-sets.md)voor een volledig voor beeld van virtuele-machine schaal sets.
 
 In het voor beeld wordt gebruikgemaakt van de CPU-metrische gegevens op hostniveau en de metrische gegevens over het aantal berichten.
 
@@ -114,13 +114,13 @@ In het voor beeld wordt gebruikgemaakt van de CPU-metrische gegevens op hostnive
 
 ### <a name="how-do-i-set-alert-rules-on-a-virtual-machine-scale-set"></a>Hoe kan ik waarschuwings regels instellen voor een schaalset voor virtuele machines?
 
-U kunt waarschuwingen over metrische gegevens voor virtuele-machine schaal sets maken via Power shell of Azure CLI. Zie Azure Monitor voor beelden van [Power shell-Quick](../azure-monitor/samples/powershell-samples.md#create-metric-alerts) start en [Azure monitor-voor beelden van cross-platform cli Quick](../azure-monitor/samples/cli-samples.md#work-with-alerts)start voor meer informatie.
+U kunt waarschuwingen over metrische gegevens voor virtuele-machine schaal sets maken via Power shell of Azure CLI. Zie Azure Monitor voor beelden van [Power shell-Quick](../azure-monitor/powershell-samples.md#create-metric-alerts) start en [Azure monitor-voor beelden van cross-platform cli Quick](../azure-monitor/cli-samples.md#work-with-alerts)start voor meer informatie.
 
 De TargetResourceId van de virtuele-machine schaalset ziet er als volgt uit:
 
 /subscriptions/yoursubscriptionid/resourceGroups/yourresourcegroup/providers/Microsoft.Compute/virtualMachineScaleSets/yourvmssname
 
-U kunt elk VM-prestatie meter item kiezen als metriek voor het instellen van een waarschuwing voor. Zie voor meer informatie de metrische gegevens van het [gast besturingssysteem voor Windows-vm's op basis van Resource Manager](../azure-monitor/platform/autoscale-common-metrics.md#guest-os-metrics-for-resource-manager-based-windows-vms) en [metrische gegevens voor het gast besturingssysteem voor virtuele Linux-machines](../azure-monitor/platform/autoscale-common-metrics.md#guest-os-metrics-linux-vms) in het artikel [Azure monitor automatisch schalen van algemene gegevens](../azure-monitor/platform/autoscale-common-metrics.md) .
+U kunt elk VM-prestatie meter item kiezen als metriek voor het instellen van een waarschuwing voor. Zie voor meer informatie de metrische gegevens van het [gast besturingssysteem voor Windows-vm's op basis van Resource Manager](../azure-monitor/autoscale/autoscale-common-metrics.md#guest-os-metrics-for-resource-manager-based-windows-vms) en [metrische gegevens voor het gast besturingssysteem voor virtuele Linux-machines](../azure-monitor/autoscale/autoscale-common-metrics.md#guest-os-metrics-linux-vms) in het artikel [Azure monitor automatisch schalen van algemene gegevens](../azure-monitor/autoscale/autoscale-common-metrics.md) .
 
 ### <a name="how-do-i-set-up-autoscale-on-a-virtual-machine-scale-set-by-using-powershell"></a>Hoe kan ik automatisch schalen instellen voor een schaalset voor virtuele machines met behulp van Power shell?
 
@@ -346,7 +346,7 @@ In azure Portal kunt u een afzonderlijk exemplaar of bulksgewijs verwijderen ver
 
 In azure CLI hebt u alleen de mogelijkheid om een afzonderlijk exemplaar te verwijderen. Als u probeert om één exemplaar te verwijderen dat een vergren deling heeft, wordt de vergren deling gerespecteerd en kunt u dat exemplaar niet verwijderen.
 
-## <a name="extensions"></a>Extensies
+## <a name="extensions"></a>Uitbreidingen
 
 ### <a name="how-do-i-delete-a-virtual-machine-scale-set-extension"></a>Wilt u de extensie van een virtuele-machine schaalset Hoe kan ik verwijderen?
 

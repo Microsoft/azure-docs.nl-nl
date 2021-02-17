@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 12/29/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: c706f38dabbe21e5bafb096bf406e70af0855aa3
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
-ms.translationtype: HT
+ms.openlocfilehash: 59791b72272ccd721a61da88d13b973119cef5d6
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089975"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596143"
 ---
 # <a name="tutorial-how-to-monitor-spring-cloud-resources-using-alerts-and-action-groups"></a>Zelfstudie: Spring Cloud-resources bewaken met behulp van waarschuwingen en actiegroepen
 
@@ -28,7 +28,7 @@ Er zijn twee stappen voor het instellen van een waarschuwingspijplijn:
 
 De procedures in deze zelfstudie werken met een geïmplementeerd Azure Spring Cloud-exemplaar en moeten voldoen aan de vereisten voor Azure Spring.  Volg een [snelstart](spring-cloud-quickstart.md) om aan de slag te gaan.
 
-Met de volgende procedures worden**Actiegroep** en **Waarschuwing** gestart vanaf de optie **Waarschuwingen** in het linkernavigatievenster van een Spring Cloud-exemplaar. (De procedure kan ook worden gestart op de pagina **Monitor - Overzicht** in de Azure-portal.) 
+Met de volgende procedures worden **Actiegroep** en **Waarschuwing** gestart vanaf de optie **Waarschuwingen** in het linkernavigatievenster van een Spring Cloud-exemplaar. (De procedure kan ook worden gestart op de pagina **Monitor - Overzicht** in de Azure-portal.) 
 
 Navigeer van een resourcegroep naar uw Spring Cloud-exemplaar. Selecteer **Waarschuwingen** in het linkerdeelvenster en selecteer vervolgens **Acties beheren**:
 
@@ -113,7 +113,7 @@ Een regel kan ook worden gemaakt op de pagina **Metrische gegevens**:
 In deze zelfstudie hebt u geleerd hoe u waarschuwingen en actiegroepen instelt voor een Azure Spring Cloud-toepassing. Voor meer informatie over actiegroepen raadpleegt u:
 
 > [!div class="nextstepaction"]
-> [Actiegroepen maken en beheren in de Azure-portal](../azure-monitor/platform/action-groups.md)
+> [Actiegroepen maken en beheren in de Azure-portal](../azure-monitor/alerts/action-groups.md)
 
 > [!div class="nextstepaction"]
-> [Gedrag van waarschuwingen via sms in actiegroepen](../azure-monitor/platform/alerts-sms-behavior.md)
+> [Gedrag van waarschuwingen via sms in actiegroepen](../azure-monitor/alerts/alerts-sms-behavior.md)

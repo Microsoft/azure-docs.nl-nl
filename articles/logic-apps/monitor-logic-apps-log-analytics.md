@@ -6,16 +6,16 @@ ms.suite: integration
 ms.reviewer: divswa, logicappspm
 ms.topic: article
 ms.date: 09/24/2020
-ms.openlocfilehash: 5df596560e97ea9dba38dca4d4ca58e38caabd37
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d72e3ffc8698d9f3a2df170bd87f2969475ca9ed
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91333950"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580693"
 ---
 # <a name="set-up-azure-monitor-logs-and-collect-diagnostics-data-for-azure-logic-apps"></a>Azure Monitor logboeken instellen en diagnostische gegevens verzamelen voor Azure Logic Apps
 
-Voor meer informatie over het opsporen van fouten in uw Logic apps tijdens runtime kunt u [Azure monitor logboeken](../azure-monitor/platform/data-platform-logs.md) instellen en gebruiken voor het vastleggen en opslaan van informatie over runtime gegevens en gebeurtenissen, zoals trigger gebeurtenissen, uitvoer gebeurtenissen en actie gebeurtenissen in een [log Analytics-werk ruimte](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace). [Azure monitor](../azure-monitor/overview.md) helpt u bij het bewaken van uw Cloud-en on-premises omgevingen, zodat u hun Beschik baarheid en prestaties gemakkelijker kunt onderhouden. Met Azure Monitor-Logboeken kunt u [logboek query's](../azure-monitor/log-query/log-query-overview.md) maken die u helpen bij het verzamelen en controleren van deze gegevens. U kunt [deze diagnostische gegevens ook gebruiken met andere Azure-Services](#extend-data), zoals Azure Storage en Azure Event hubs.
+Voor meer informatie over het opsporen van fouten in uw Logic apps tijdens runtime kunt u [Azure monitor logboeken](../azure-monitor/logs/data-platform-logs.md) instellen en gebruiken voor het vastleggen en opslaan van informatie over runtime gegevens en gebeurtenissen, zoals trigger gebeurtenissen, uitvoer gebeurtenissen en actie gebeurtenissen in een [log Analytics-werk ruimte](../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace). [Azure monitor](../azure-monitor/overview.md) helpt u bij het bewaken van uw Cloud-en on-premises omgevingen, zodat u hun Beschik baarheid en prestaties gemakkelijker kunt onderhouden. Met Azure Monitor-Logboeken kunt u [logboek query's](../azure-monitor/logs/log-query-overview.md) maken die u helpen bij het verzamelen en controleren van deze gegevens. U kunt [deze diagnostische gegevens ook gebruiken met andere Azure-Services](#extend-data), zoals Azure Storage en Azure Event hubs.
 
 Als u logboek registratie wilt instellen voor uw logische app, kunt u [log Analytics inschakelen wanneer u uw logische app maakt](#logging-for-new-logic-apps), of u kunt [de Logic apps-beheer oplossing](#install-management-solution) in uw log Analytics-werk ruimte installeren voor bestaande Logic apps. Deze oplossing biedt geaggregeerde gegevens voor uw logische app-uitvoeringen en bevat specifieke details zoals status, uitvoerings tijd, status van opnieuw verzenden en correlatie-Id's. [Stel vervolgens Azure monitor-logboeken](#set-up-resource-logs)in om logboek registratie in te scha kelen en query's te maken voor deze informatie.
 
@@ -23,7 +23,7 @@ In dit artikel wordt beschreven hoe u Log Analytics kunt inschakelen voor nieuwe
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voordat u begint, hebt u een [log Analytics-werk ruimte](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace)nodig. Als u geen werk ruimte hebt, leert u [hoe u een log Analytics-werk ruimte maakt](../azure-monitor/learn/quick-create-workspace.md).
+Voordat u begint, hebt u een [log Analytics-werk ruimte](../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace)nodig. Als u geen werk ruimte hebt, leert u [hoe u een log Analytics-werk ruimte maakt](../azure-monitor/logs/quick-create-workspace.md).
 
 <a name="logging-for-new-logic-apps"></a>
 
@@ -33,7 +33,7 @@ U kunt Log Analytics inschakelen wanneer u uw logische app maakt.
 
 1. Ga als volgt te werk in het [Azure Portal](https://portal.azure.com)in het deel venster waar u de gegevens voor de logische app hebt gemaakt:
 
-   1. Selecteer **aan**onder **log Analytics**.
+   1. Selecteer **aan** onder **log Analytics**.
 
    1. Selecteer in de lijst **log Analytics-werk ruimte** de werk ruimte waar u de gegevens van de logische app-uitvoeringen wilt verzenden.
 
@@ -41,7 +41,7 @@ U kunt Log Analytics inschakelen wanneer u uw logische app maakt.
 
       Nadat u deze stap hebt voltooid, maakt Azure uw logische app, die nu aan uw Log Analytics-werk ruimte is gekoppeld. Met deze stap wordt ook de oplossing voor Logic Apps beheer automatisch geïnstalleerd in uw werk ruimte.
 
-1. Als u gereed bent, selecteert u **Maken**.
+1. Selecteer **Maken** als u klaar bent.
 
 1. Nadat u uw logische app hebt uitgevoerd, [gaat u verder met deze stappen](#view-logic-app-runs)om uw logische app-uitvoeringen weer te geven.
 
@@ -55,15 +55,15 @@ Als u Log Analytics hebt ingeschakeld tijdens het maken van uw logische app, sla
 
    ![Selecteer ' Log Analytics werk ruimten '](./media/monitor-logic-apps-log-analytics/find-select-log-analytics-workspaces.png)
 
-1. Selecteer onder **log Analytics werk ruimten**uw werk ruimte.
+1. Selecteer onder **log Analytics werk ruimten** uw werk ruimte.
 
    ![Uw Log Analytics-werk ruimte selecteren](./media/monitor-logic-apps-log-analytics/select-log-analytics-workspace.png)
 
-1. Selecteer in het deel venster **overzicht** onder **aan de slag met log Analytics**  >  **bewakings oplossingen configureren**de optie **oplossingen weer geven**.
+1. Selecteer in het deel venster **overzicht** onder **aan de slag met log Analytics**  >  **bewakings oplossingen configureren** de optie **oplossingen weer geven**.
 
    ![Selecteer in het deel venster Overzicht de optie oplossingen weer geven.](./media/monitor-logic-apps-log-analytics/log-analytics-workspace.png)
 
-1. Selecteer onder **overzicht**de optie **toevoegen**.
+1. Selecteer onder **overzicht** de optie **toevoegen**.
 
    ![Voeg in het deel venster Overzicht een nieuwe oplossing toe](./media/monitor-logic-apps-log-analytics/add-logic-apps-management-solution.png)
 
@@ -71,7 +71,7 @@ Als u Log Analytics hebt ingeschakeld tijdens het maken van uw logische app, sla
 
    ![Selecteer ' Logic Apps-beheer ' in Marketplace](./media/monitor-logic-apps-log-analytics/select-logic-apps-management.png)
 
-1. Selecteer **maken**in het deel venster beschrijving van oplossing.
+1. Selecteer **maken** in het deel venster beschrijving van oplossing.
 
    ![Selecteer ' maken ' om de oplossing ' Logic Apps-beheer ' toe te voegen](./media/monitor-logic-apps-log-analytics/create-logic-apps-management-solution.png)
 
@@ -87,14 +87,14 @@ Als u Log Analytics hebt ingeschakeld tijdens het maken van uw logische app, sla
 
 ## <a name="set-up-azure-monitor-logs"></a>Azure Monitor-logboeken instellen
 
-Wanneer u gegevens over runtime-gebeurtenissen en-gegevens in [Azure monitor logboeken](../azure-monitor/platform/data-platform-logs.md)opslaat, kunt u [logboek query's](../azure-monitor/log-query/log-query-overview.md) maken waarmee u deze informatie vindt en kunt controleren.
+Wanneer u gegevens over runtime-gebeurtenissen en-gegevens in [Azure monitor logboeken](../azure-monitor/logs/data-platform-logs.md)opslaat, kunt u [logboek query's](../azure-monitor/logs/log-query-overview.md) maken waarmee u deze informatie vindt en kunt controleren.
 
 > [!NOTE]
 > Nadat u de diagnostische instellingen hebt ingeschakeld, kunnen de diagnostische gegevens niet Maxi maal 30 minuten in de logboeken op het opgegeven doel worden geplaatst, zoals Log Analytics, Event Hub of opslag account. Deze vertraging betekent dat er mogelijk geen diagnostische gegevens uit deze tijds periode bestaan die u kunt controleren. Voltooide gebeurtenissen en [bijgehouden eigenschappen](#extend-data) worden mogelijk gedurende 10-15 minuten niet in uw log Analytics-werk ruimte weer gegeven.
 
 1. Zoek en selecteer uw logische app in de [Azure Portal](https://portal.azure.com).
 
-1. Klik in het menu van de logische app onder **bewaking**op **Diagnostische instellingen**  >  **Diagnostische instelling toevoegen**.
+1. Klik in het menu van de logische app onder **bewaking** op **Diagnostische instellingen**  >  **Diagnostische instelling toevoegen**.
 
    ![Onder bewaking selecteert u Diagnostische instellingen > diagnostische instelling toevoegen.](./media/monitor-logic-apps-log-analytics/logic-app-diagnostics.png)
 
@@ -104,11 +104,11 @@ Wanneer u gegevens over runtime-gebeurtenissen en-gegevens in [Azure monitor log
 
    1. Selecteer **verzenden naar log Analytics**.
 
-   1. Selecteer bij **abonnement**het Azure-abonnement dat is gekoppeld aan uw log Analytics-werk ruimte.
+   1. Selecteer bij **abonnement** het Azure-abonnement dat is gekoppeld aan uw log Analytics-werk ruimte.
 
-   1. Voor **log Analytics werk ruimte**selecteert u de werk ruimte die u wilt gebruiken.
+   1. Voor **log Analytics werk ruimte** selecteert u de werk ruimte die u wilt gebruiken.
 
-   1. Selecteer onder **logboek**de categorie **WorkflowRuntime** , waarmee de gebeurtenis categorie wordt opgegeven die u wilt opnemen.
+   1. Selecteer onder **logboek** de categorie **WorkflowRuntime** , waarmee de gebeurtenis categorie wordt opgegeven die u wilt opnemen.
 
    1. Als u alle metrische gegevens wilt selecteren, selecteert u onder **metrische gegevens** **AllMetrics**.
 
@@ -178,10 +178,10 @@ Wanneer de logische app wordt uitgevoerd, kunt u de gegevens over die uitvoering
 
 Naast Azure Monitor-Logboeken kunt u uitbreiden hoe u de diagnostische gegevens van uw logische app gebruikt met andere Azure-Services, bijvoorbeeld:
 
-* [Azure-resourcelogboeken archiveren naar opslagaccount](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
-* [Azure-platform logboeken streamen naar Azure Event Hubs](../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs)
+* [Azure-resourcelogboeken archiveren naar opslagaccount](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)
+* [Azure-platform logboeken streamen naar Azure Event Hubs](../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs)
 
-U kunt vervolgens realtime-bewaking krijgen door telemetrie en analyses uit andere services te gebruiken, zoals [Azure stream Analytics](../stream-analytics/stream-analytics-introduction.md) en [Power bi](../azure-monitor/platform/powerbi.md). Bijvoorbeeld:
+U kunt vervolgens realtime-bewaking krijgen door telemetrie en analyses uit andere services te gebruiken, zoals [Azure stream Analytics](../stream-analytics/stream-analytics-introduction.md) en [Power bi](../azure-monitor/visualize/powerbi.md). Bijvoorbeeld:
 
 * [Gegevens streamen van Event Hubs naar Stream Analytics](../stream-analytics/stream-analytics-define-inputs.md)
 * [Analyseer streaminggegevens met Stream Analytics en maak een real-time analyse dashboard in Power BI](../stream-analytics/stream-analytics-power-bi-dashboard.md)
@@ -194,7 +194,7 @@ Zorg ervoor dat u eerst [een Azure-opslag account maakt](../storage/common/stora
 
 ## <a name="azure-monitor-diagnostics-events"></a>Diagnostische gebeurtenissen Azure Monitor
 
-Elke diagnostische gebeurtenis heeft details over uw logische app en die gebeurtenis, bijvoorbeeld de status, start tijd, eind tijd, enzovoort. Voor het programmatisch instellen van bewaking, tracering en logboek registratie kunt u deze informatie gebruiken met de [rest API voor Azure Logic apps](/rest/api/logic) en de [rest API voor Azure monitor](../azure-monitor/platform/metrics-supported.md#microsoftlogicworkflows). U kunt ook de `clientTrackingId` Eigenschappen en gebruiken `trackedProperties` , die worden weer gegeven in 
+Elke diagnostische gebeurtenis heeft details over uw logische app en die gebeurtenis, bijvoorbeeld de status, start tijd, eind tijd, enzovoort. Voor het programmatisch instellen van bewaking, tracering en logboek registratie kunt u deze informatie gebruiken met de [rest API voor Azure Logic apps](/rest/api/logic) en de [rest API voor Azure monitor](../azure-monitor/essentials/metrics-supported.md#microsoftlogicworkflows). U kunt ook de `clientTrackingId` Eigenschappen en gebruiken `trackedProperties` , die worden weer gegeven in 
 
 * `clientTrackingId`: Als u dit niet opgeeft, wordt deze ID automatisch door Azure gegenereerd en worden gebeurtenissen gecorreleerd in een logische app-uitvoering, inclusief alle geneste werk stromen die vanuit de logische app worden aangeroepen. U kunt deze ID hand matig opgeven in een trigger door een `x-ms-client-tracking-id` header met uw aangepaste ID-waarde in de trigger aanvraag door te geven. U kunt een trigger voor een aanvraag, een HTTP-trigger of een webhook gebruiken.
 

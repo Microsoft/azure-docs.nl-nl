@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: b50ab8cae91aab56be287f517fa6e6a0b25db8e1
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: d1f0b0b36c8f0ed5ede7b5c3113207ae3cce10fd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807866"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581254"
 ---
 # <a name="azure-security-baseline-for-azure-web-application-firewall"></a>Azure-beveiligings basislijn voor Azure Web Application firewall
 
@@ -111,9 +111,9 @@ Kies Azure PowerShell of Azure CLI om op basis van hun labels acties op resource
 
 **Hulp**: Azure-activiteiten logboek gebruiken om netwerk bron configuraties te bewaken en wijzigingen te detecteren voor netwerk instellingen en-bronnen die betrekking hebben op uw Azure Web Application firewall (WAF)-implementaties. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer wijzigingen in essentiële netwerk instellingen of bronnen plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -153,9 +153,9 @@ Azure Sentinel heeft een ingebouwde Azure WAF-werkmap, die een overzicht geeft v
 
 - [Logboek registratie-overzicht](ag/ag-overview.md#logging)
 
-- [Overzicht van Azure Monitor-logboek query](../azure-monitor/log-query/log-query-overview.md)
+- [Overzicht van Azure Monitor-logboek query](../azure-monitor/logs/log-query-overview.md)
 
-- [Overzicht van Azure platform-logboeken](../azure-monitor/platform/platform-logs-overview.md)
+- [Overzicht van Azure platform-logboeken](../azure-monitor/essentials/platform-logs-overview.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -192,9 +192,9 @@ Azure Sentinel heeft een ingebouwde WAF-firewall, die een overzicht geeft van de
 
 **Hulp**: Schakel Diagnostische instellingen voor Azure-activiteiten logboek in, evenals de diagnostische instellingen voor uw Azure-WAF en verzend de logboeken naar een log Analytics-werk ruimte. Query's uitvoeren in Log Analytics om termen te zoeken, trends te identificeren, patronen te analyseren en veel andere inzichten te bieden op basis van de verzamelde gegevens. Waarschuwingen maken voor afwijkende activiteiten op basis van metrische gegevens over WAF. Als er bijvoorbeeld een geblokkeerd aantal aanvragen van meer dan X, ' Y ' is.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
-- [Waarschuwingen maken in azure](../azure-monitor/learn/tutorial-response.md)
+- [Waarschuwingen maken in azure](../azure-monitor/alerts/tutorial-response.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 

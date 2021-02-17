@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ead666cecbc3208fe103aa740578ca36339c3e30
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 19935037e98bbc7ce9c4152b034b664d802a8f3a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99804968"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588269"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-postgresql---hyperscale-citus"></a>Azure-beveiligings basislijn voor Azure Database for PostgreSQL-grootschalige (Citus)
 
@@ -60,7 +60,7 @@ Zie [overzicht van Azure Security-basis lijnen](../security/benchmarks/security-
 
 Neem ook opname logboeken via Azure Monitor op voor het verzamelen van beveiligings gegevens die zijn gegenereerd door grootschalige (Citus). In de Azure Monitor gebruikt u Log Analytics werk ruimte (n) om een query uit te voeren en een analyse te verrichten en opslag accounts te gebruiken voor lange termijn/archiverings opslag. U kunt ook gegevens naar Azure Sentinel of een beveiligings incident en gebeurtenis beheer van derden (SIEM) inschakelen en op de trein zetten. 
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Metrische gegevens in grootschalige (Citus)](./concepts-hyperscale-monitoring.md)
 
@@ -80,7 +80,7 @@ Neem ook opname logboeken via Azure Monitor op voor het verzamelen van beveiligi
 
 - [Metrische gegevens in grootschalige (Citus)](./concepts-hyperscale-monitoring.md)
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -92,9 +92,9 @@ Neem ook opname logboeken via Azure Monitor op voor het verzamelen van beveiligi
 
 **Richt lijnen**: in azure monitor voor de log Analytics-werk ruimte die wordt gebruikt om uw grootschalige (Citus)-logboeken te bewaren, stelt u de Bewaar periode in volgens de nalevings voorschriften van uw organisatie. Gebruik Azure Storage-accounts voor lange termijn/archiverings opslag.
 
-- [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
-- [Bron logboeken opslaan in een Azure Storage-account](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
+- [Bron logboeken opslaan in een Azure Storage-account](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -106,9 +106,9 @@ Neem ook opname logboeken via Azure Monitor op voor het verzamelen van beveiligi
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Voor meer informatie over de Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)
+- [Voor meer informatie over de Log Analytics](../azure-monitor/logs/log-analytics-tutorial.md)
 
-- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -122,7 +122,7 @@ Onboarding van uw Log Analytics-werk ruimte naar Azure-Sentinel, omdat dit een v
 
 - [Metrische gegevens in grootschalige (Citus)](./howto-hyperscale-alert-on-metric.md)
 
-- [Diagnostische instellingen configureren voor het Azure-activiteiten logboek](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen configureren voor het Azure-activiteiten logboek](../azure-monitor/essentials/activity-log.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -379,7 +379,7 @@ Azure Database for PostgreSQL grootschalige (Citus) heeft ten minste één keer 
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden aangebracht in productie-exemplaren van grootschalige (Citus) en andere essentiële of verwante resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Ja
 

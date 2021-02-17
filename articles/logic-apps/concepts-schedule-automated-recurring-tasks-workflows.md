@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: conceptual
-ms.date: 01/07/2021
-ms.openlocfilehash: fd0a779ec5ac5537dd3e3ed6a82cf818b42cff15
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.date: 02/16/2021
+ms.openlocfilehash: e9fbafa9f3c33d10496e84f61e1f2b97f6328d3b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98018789"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581809"
 ---
 # <a name="schedule-and-run-recurring-automated-tasks-processes-and-workflows-with-azure-logic-apps"></a>Terugkerende en geautomatiseerde taken, processen en werkstromen plannen en uitvoeren met Azure Logic Apps
 
@@ -90,8 +90,8 @@ Hier volgen enkele patronen die laten zien hoe u het terugkeer patroon kunt behe
 | Begintijd | Recurrence zonder schedule | Terugkeer patroon met schema (alleen terugkeer patroon trigger) |
 |------------|-----------------------------|----------------------------------------------------|
 | geen | Voert de eerste werk belasting direct uit. <p>Voert toekomstige workloads uit op basis van de laatste uitvoerings tijd. | Voert de eerste werk belasting direct uit. <p>Voert toekomstige workloads uit op basis van de opgegeven planning. |
-| Begin tijd in het verleden | Trigger voor **terugkeer patroon** : Hiermee worden uitvoerings tijden berekend op basis van de opgegeven begin tijd en eerdere uitvoerings tijden. De eerste werk belasting wordt uitgevoerd tijdens de volgende toekomstige uitvoerings tijd. <p>Voert toekomstige werk belastingen uit op basis van berekeningen van de laatste uitvoerings tijd. <p><p>**Verschuivings venster** trigger: berekent uitvoerings tijden op basis van de opgegeven begin tijd en voldoet aan de vorige uitvoerings tijden. <p>Voert toekomstige werk belastingen uit op basis van berekeningen vanaf de opgegeven begin tijd. <p><p>Zie het voor beeld na deze tabel voor meer informatie. | Voert de eerste workload uit die *niet eerder* is dan de begin tijd, op basis van de planning die wordt berekend vanaf de begin tijd. <p>Voert toekomstige workloads uit op basis van de opgegeven planning. <p>**Opmerking:** Als u een terugkeer patroon opgeeft met een schema, maar geen uren of minuten opgeeft voor het schema, worden in Logic Apps toekomstige uitvoerings tijden berekend met behulp van de uren of minuten, respectievelijk vanaf de eerste uitvoerings tijd. |
-| Begin tijd nu of in de toekomst | De eerste werk belasting wordt uitgevoerd op de opgegeven begin tijd. <p>Voert toekomstige werk belastingen uit op basis van berekeningen van de laatste uitvoerings tijd. | Voert de eerste workload uit die *niet eerder* is dan de begin tijd, op basis van de planning die wordt berekend vanaf de begin tijd. <p>Voert toekomstige workloads uit op basis van de opgegeven planning. <p>**Opmerking:** Als u een terugkeer patroon opgeeft met een schema, maar geen uren of minuten opgeeft voor het schema, worden in Logic Apps toekomstige uitvoerings tijden berekend met behulp van de uren of minuten, respectievelijk vanaf de eerste uitvoerings tijd. |
+| Begin tijd in het verleden | Trigger voor **terugkeer patroon** : Hiermee worden uitvoerings tijden berekend op basis van de opgegeven begin tijd en eerdere uitvoerings tijden. <p><p>De eerste werk belasting wordt uitgevoerd tijdens de volgende toekomstige uitvoerings tijd. <p><p>Voert toekomstige workloads uit op basis van de laatste uitvoerings tijd. <p><p>**Verschuivings venster** trigger: berekent uitvoerings tijden op basis van de opgegeven begin tijd en voldoet aan de vorige uitvoerings tijden. <p><p>Voert toekomstige workloads uit op basis van de opgegeven begin tijd. <p><p>Zie het voor beeld na deze tabel voor meer informatie. | Voert de eerste workload uit die *niet eerder* is dan de begin tijd, op basis van de planning die wordt berekend vanaf de begin tijd. <p><p>Voert toekomstige workloads uit op basis van de opgegeven planning. <p><p>**Opmerking:** Als u een terugkeer patroon opgeeft met een schema, maar geen uren of minuten opgeeft voor het schema, worden in Logic Apps toekomstige uitvoerings tijden berekend met behulp van de uren of minuten, respectievelijk vanaf de eerste uitvoerings tijd. |
+| Begin tijd nu of in de toekomst | De eerste werk belasting wordt uitgevoerd op de opgegeven begin tijd. <p><p>Trigger voor **terugkeer patroon** : voert toekomstige workloads uit op basis van de laatste uitvoerings tijd. <p><p>**Schuivende venster** trigger: voert toekomstige workloads uit op basis van de opgegeven begin tijd. | Voert de eerste workload uit die *niet eerder* is dan de begin tijd, op basis van de planning die wordt berekend vanaf de begin tijd. <p><p>Voert toekomstige workloads uit op basis van de opgegeven planning. <p>**Opmerking:** Als u een terugkeer patroon opgeeft met een schema, maar geen uren of minuten opgeeft voor het schema, worden in Logic Apps toekomstige uitvoerings tijden berekend met behulp van de uren of minuten, respectievelijk vanaf de eerste uitvoerings tijd. |
 ||||
 
 *Voor beeld voor eerdere begin tijd en terugkeer patroon, maar geen planning*
@@ -152,7 +152,7 @@ Als deze Logic apps de zone UTC-6:00 Central Time (Amerikaanse & Canada) gebruik
 
   * #1 van logische app
 
-    | Date | Tijd (lokaal) | Tijd (UTC) | Notities |
+    | Datum | Tijd (lokaal) | Tijd (UTC) | Notities |
     |------|--------------|------------|-------|
     | 03/09/2019 | 1:30:00 UUR | 7:30:00 UUR | UTC vóór de dag waarop de zomer tijd van kracht wordt. |
     | 03/10/2019 | 1:30:00 UUR | 7:30:00 UUR | UTC is hetzelfde omdat de zomer tijd niet van kracht is. |
@@ -161,7 +161,7 @@ Als deze Logic apps de zone UTC-6:00 Central Time (Amerikaanse & Canada) gebruik
 
   * #2 van logische app
 
-    | Date | Tijd (lokaal) | Tijd (UTC) | Notities |
+    | Datum | Tijd (lokaal) | Tijd (UTC) | Notities |
     |------|--------------|------------|-------|
     | 03/09/2019 | 2:30:00 UUR | 8:30:00 UUR | UTC vóór de dag waarop de zomer tijd van kracht wordt. |
     | 03/10/2019 | 3:30:00 UUR * | 8:30:00 UUR | De zomer tijd is al actief, waardoor de lokale periode één uur vooruit is verplaatst, omdat de UTC-6:00 tijd zone verandert in UTC-5:00. Zie voor meer informatie [triggers die tussen 2:00 uur en 3:00 uur beginnen](#dst-window). |
@@ -174,7 +174,7 @@ Als deze Logic apps de zone UTC-6:00 Central Time (Amerikaanse & Canada) gebruik
 
   * #1 van logische app
 
-    | Date | Tijd (lokaal) | Tijd (UTC) | Notities |
+    | Datum | Tijd (lokaal) | Tijd (UTC) | Notities |
     |------|--------------|------------|-------|
     | 11/02/2019 | 1:30:00 UUR | 6:30:00 UUR ||
     | 11/03/2019 | 1:30:00 UUR | 6:30:00 UUR ||
@@ -183,7 +183,7 @@ Als deze Logic apps de zone UTC-6:00 Central Time (Amerikaanse & Canada) gebruik
 
   * #2 van logische app
 
-    | Date | Tijd (lokaal) | Tijd (UTC) | Notities |
+    | Datum | Tijd (lokaal) | Tijd (UTC) | Notities |
     |------|--------------|------------|-------|
     | 11/02/2019 | 2:30:00 UUR | 7:30:00 UUR ||
     | 11/03/2019 | 2:30:00 UUR | 8:30:00 UUR ||
@@ -206,7 +206,7 @@ Of, als u uw logische app kunt starten met de **aanvraag trigger wanneer een HTT
 
 Hier volgen enkele voor beelden van herhalingen die u kunt instellen voor de triggers die ondersteuning bieden voor de opties:
 
-| Trigger | Terugkeerpatroon | Interval | Frequentie | Begintijd | Deze dagen | Deze uren | Deze minuten | Opmerking |
+| Trigger | Terugkeerpatroon | Interval | Frequentie | Begintijd | Deze dagen | Deze uren | Deze minuten | Notitie |
 |---------|------------|----------|-----------|------------|---------------|----------------|------------------|------|
 | Optreden <br>Sliding window | Wordt elke 15 minuten uitgevoerd (geen begin datum en-tijd) | 15 | Minuut | geen | niet beschikbaar | geen | geen | Dit schema wordt onmiddellijk gestart, waarna toekomstige terugkeer patronen worden berekend op basis van de laatste uitvoerings tijd. |
 | Optreden <br>Sliding window | Wordt elke 15 minuten uitgevoerd (met begin datum en-tijd) | 15 | Minuut | *start date* T *Start* tijd Z | niet beschikbaar | geen | geen | Dit schema wordt niet *eerder* gestart dan de opgegeven begin datum en-tijd, waarna toekomstige terugkeer patronen worden berekend op basis van de laatste uitvoerings tijd. |

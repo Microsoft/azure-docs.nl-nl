@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/05/2020
 ms.author: allensu
-ms.openlocfilehash: 59359cdd3e3c035d4cb6789295d41bb3908019bb
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 7a456057bc088264cefb91be9f3e5069b29474a1
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98785817"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596803"
 ---
 # <a name="azure-monitor-logs-for-azure-standard-load-balancer"></a>Azure Monitor logboeken voor Azure Standard Load Balancer
 
@@ -63,7 +63,7 @@ Activiteitenlogboekregistratie is automatisch ingeschakeld voor elke Resource Ma
      5. Selecteer in de vervolg keuzelijst **Event hub beleids naam selecteren** de naam.
      6. Selecteer **OK**.
 
-   * **Verzenden naar log Analytics**. U moet al een log Analytics-werk ruimte hebben gemaakt en geconfigureerd voor dit proces. Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/learn/quick-create-workspace.md)om een log Analytics-werk ruimte te maken.
+   * **Verzenden naar log Analytics**. U moet al een log Analytics-werk ruimte hebben gemaakt en geconfigureerd voor dit proces. Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/logs/quick-create-workspace.md)om een log Analytics-werk ruimte te maken.
      1. Schakel het selectievakje **Verzenden naar Log Analytics** in.
      2. Selecteer in de vervolg keuzelijst **abonnement** het abonnement waarin uw log Analytics-werk ruimte zich bevindt.
      3. Selecteer de werk ruimte in de vervolg keuzelijst **log Analytics werk ruimte** .
@@ -100,10 +100,10 @@ Als u naar opslag exporteert, maakt u verbinding met uw opslag account en haalt 
 > Als u bekend bent met Visual Studio en basis concepten voor het wijzigen van waarden voor constanten en variabelen in C#, kunt u de [hulpprogram ma's voor logboek conversie](https://github.com/Azure-Samples/networking-dotnet-log-converter) gebruiken die beschikbaar zijn via github.
 
 ## <a name="stream-to-an-event-hub"></a>Streamen naar een Event Hub
-Wanneer diagnostische gegevens worden gestreamd naar een Event Hub, kunt u deze gebruiken voor gecentraliseerde logboek analyse in een partner SIEM-hulp programma met Azure Monitor-integratie. Zie [Azure-bewakings gegevens streamen naar een event hub](../azure-monitor/platform/stream-monitoring-data-event-hubs.md#partner-tools-with-azure-monitor-integration)voor meer informatie.
+Wanneer diagnostische gegevens worden gestreamd naar een Event Hub, kunt u deze gebruiken voor gecentraliseerde logboek analyse in een partner SIEM-hulp programma met Azure Monitor-integratie. Zie [Azure-bewakings gegevens streamen naar een event hub](../azure-monitor/essentials/stream-monitoring-data-event-hubs.md#partner-tools-with-azure-monitor-integration)voor meer informatie.
 
 ## <a name="send-to-log-analytics"></a>Verzenden naar Log Analytics
-U kunt Diagnostische gegevens voor resources rechtstreeks naar een Log Analytics-werk ruimte verzenden. In die werk ruimte kunt u complexe query's uitvoeren op basis van de informatie voor probleem oplossing en analyse. Zie [Azure-resource logboeken verzamelen in een log Analytics-werk ruimte in azure monitor](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace)voor meer informatie.
+U kunt Diagnostische gegevens voor resources rechtstreeks naar een Log Analytics-werk ruimte verzenden. In die werk ruimte kunt u complexe query's uitvoeren op basis van de informatie voor probleem oplossing en analyse. Zie [Azure-resource logboeken verzamelen in een log Analytics-werk ruimte in azure monitor](../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace)voor meer informatie.
 
 ## <a name="limitations"></a>Beperkingen
 De functie voor het exporteren van metrische gegevens naar Logboeken voor Azure Load Balancer heeft de volgende beperkingen:

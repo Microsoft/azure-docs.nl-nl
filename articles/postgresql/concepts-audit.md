@@ -6,12 +6,12 @@ ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/28/2020
-ms.openlocfilehash: 615297a4bf47d80c9313f011b90d343b7ae680e3
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 33fa6420f52cae9c869cc75a04ea82de0ec48262
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92488041"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596298"
 ---
 # <a name="audit-logging-in-azure-database-for-postgresql---single-server"></a>Controle logboek registratie in Azure Database for PostgreSQL-één server
 
@@ -21,7 +21,7 @@ Audit logboek registratie van database activiteiten in Azure Database for Postgr
 > pgAudit is beschikbaar in de preview-versie van Azure Database for PostgreSQL.
 > De uitbrei ding kan alleen worden ingeschakeld op servers met Algemeen en geoptimaliseerd voor geheugen.
 
-Als u Azure-logboeken op resource niveau wilt voor bewerkingen als Compute en opslag schalen, raadpleegt u het [Azure-activiteiten logboek](../azure-monitor/platform/platform-logs-overview.md).
+Als u Azure-logboeken op resource niveau wilt voor bewerkingen als Compute en opslag schalen, raadpleegt u het [Azure-activiteiten logboek](../azure-monitor/essentials/platform-logs-overview.md).
 
 ## <a name="usage-considerations"></a>Gebruiks overwegingen
 Standaard worden pgAudit-logboekinstructies samen met uw reguliere logboeken verzonden met behulp van de standaardfunctie voor logboekregistratie van Postgres. In Azure Database for PostgreSQL kunnen deze .log-bestanden worden gedownload via de Azure-portal of de CLI. De maximale opslag voor het verzamelen van bestanden is 1 GB en elk bestand is Maxi maal zeven dagen beschikbaar (de standaard waarde is drie dagen). Deze service is een korte-termijn opslag optie.
@@ -88,9 +88,9 @@ Als u snel aan de slag wilt gaan, stelt `pgaudit.log` u in `WRITE` en opent u de
 ## <a name="viewing-audit-logs"></a>Audit logboeken weer geven
 Als u. log-bestanden gebruikt, worden uw audit Logboeken in hetzelfde bestand opgenomen als uw PostgreSQL-fout Logboeken. U kunt logboek bestanden downloaden via de Azure- [Portal](howto-configure-server-logs-in-portal.md) of [cli](howto-configure-server-logs-using-cli.md). 
 
-Als u Azure resource logging gebruikt, is de manier waarop u toegang hebt tot de logboeken afhankelijk van het eind punt dat u kiest. Zie het artikel over het [opslag account voor logboeken](../azure-monitor/platform/resource-logs.md#send-to-azure-storage) voor Azure Storage. Zie het artikel [Stream Azure logs](../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs) voor Event hubs.
+Als u Azure resource logging gebruikt, is de manier waarop u toegang hebt tot de logboeken afhankelijk van het eind punt dat u kiest. Zie het artikel over het [opslag account voor logboeken](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage) voor Azure Storage. Zie het artikel [Stream Azure logs](../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs) voor Event hubs.
 
-Voor Azure Monitor-logboeken worden logboeken verzonden naar de werk ruimte die u hebt geselecteerd. De post gres-Logboeken gebruiken de **AzureDiagnostics** -verzamelings modus, zodat ze kunnen worden opgevraagd vanuit de tabel AzureDiagnostics. De velden in de tabel worden hieronder beschreven. Meer informatie over het uitvoeren van query's en waarschuwingen vindt u in het overzicht van de [Azure monitor-logboeken](../azure-monitor/log-query/log-query-overview.md) .
+Voor Azure Monitor-logboeken worden logboeken verzonden naar de werk ruimte die u hebt geselecteerd. De post gres-Logboeken gebruiken de **AzureDiagnostics** -verzamelings modus, zodat ze kunnen worden opgevraagd vanuit de tabel AzureDiagnostics. De velden in de tabel worden hieronder beschreven. Meer informatie over het uitvoeren van query's en waarschuwingen vindt u in het overzicht van de [Azure monitor-logboeken](../azure-monitor/logs/log-query-overview.md) .
 
 U kunt deze query gebruiken om aan de slag te gaan. U kunt waarschuwingen configureren op basis van query's.
 

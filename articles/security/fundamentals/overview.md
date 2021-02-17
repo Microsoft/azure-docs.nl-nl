@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/18/2019
 ms.author: TomSh
-ms.openlocfilehash: 749c32091ed10d5bb39d7b67c8b737e002fc9909
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 56965310c818f8d9089ab244641bdc562428a337
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94693729"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580457"
 ---
 # <a name="introduction-to-azure-security"></a>Inleiding tot Azure-beveiliging
 ## <a name="overview"></a>Overzicht
@@ -81,12 +81,12 @@ Application Insights maakt grafieken en tabellen waarin u bijvoorbeeld kunt zien
 Als er zich crashes, fouten of prestatie problemen voordoen, kunt u de gegevens in de telemetrie gedetailleerd doorzoeken om de oorzaak vast te stellen. En de service stuurt u e-mail berichten als er wijzigingen zijn in de beschik baarheid en prestaties van uw app. Toepassings inzicht wordt daarom een waardevol beveiligings programma, omdat het helpt bij de beschik baarheid van de beveiligings Triad van de vertrouwelijkheid, integriteit en beschik baarheid.
 
 ### <a name="azure-monitor"></a>Azure Monitor
-[Azure monitor](/azure/monitoring-and-diagnostics/) biedt visualisatie, query, route ring, waarschuwingen, automatisch schalen en automatisering op gegevens van de Azure-infra structuur ([activiteiten logboek](../../azure-monitor/platform/platform-logs-overview.md)) en elke afzonderlijke Azure-resource ([Diagnostische logboeken](../../azure-monitor/platform/platform-logs-overview.md)). U kunt Azure Monitor gebruiken om u te waarschuwen voor beveiligings gebeurtenissen die worden gegenereerd in azure-Logboeken.
+[Azure monitor](/azure/monitoring-and-diagnostics/) biedt visualisatie, query, route ring, waarschuwingen, automatisch schalen en automatisering op gegevens van de Azure-infra structuur ([activiteiten logboek](../../azure-monitor/essentials/platform-logs-overview.md)) en elke afzonderlijke Azure-resource ([Diagnostische logboeken](../../azure-monitor/essentials/platform-logs-overview.md)). U kunt Azure Monitor gebruiken om u te waarschuwen voor beveiligings gebeurtenissen die worden gegenereerd in azure-Logboeken.
 
 ### <a name="azure-monitor-logs"></a>Azure Monitor-logboeken
 [Azure monitor-logboeken](https://azure.microsoft.com/documentation/services/log-analytics/) : voorziet in een IT-beheer oplossing voor zowel on-premises als Cloud infrastructuur op basis van derden (zoals AWS) naast Azure-resources. Gegevens van Azure Monitor kunnen rechtstreeks naar Azure Monitor-logboeken worden gerouteerd, zodat u meet waarden en logboeken voor uw hele omgeving op één plek kunt zien.
 
-Azure Monitor logboeken kunnen een handig hulp middel zijn in forensische en een andere beveiligings analyse, omdat u met het hulp programma snel grote hoeveel heden aan beveiligings gegevens kunt doorzoeken met een flexibele query benadering. Daarnaast kunnen on-premises [firewall-en proxy Logboeken in Azure worden geëxporteerd en beschikbaar worden gesteld voor analyse met behulp van Azure monitor-Logboeken.](../../azure-monitor/platform/agent-windows.md)
+Azure Monitor logboeken kunnen een handig hulp middel zijn in forensische en een andere beveiligings analyse, omdat u met het hulp programma snel grote hoeveel heden aan beveiligings gegevens kunt doorzoeken met een flexibele query benadering. Daarnaast kunnen on-premises [firewall-en proxy Logboeken in Azure worden geëxporteerd en beschikbaar worden gesteld voor analyse met behulp van Azure monitor-Logboeken.](../../azure-monitor/agents/agent-windows.md)
 
 ### <a name="azure-advisor"></a>Azure Advisor
 [Azure Advisor](../../advisor/index.yml) is een gepersonaliseerde Cloud consultant waarmee u uw Azure-implementaties kunt optimaliseren. Advisor analyseert de configuratie van uw resources en de gebruiksgerelateerde telemetrie. Vervolgens worden oplossingen aanbevolen om de [prestaties](../../advisor/advisor-performance-recommendations.md), [beveiliging](../../advisor/advisor-security-recommendations.md)en [hoge Beschik baarheid](../../advisor/advisor-high-availability-recommendations.md) van uw resources te verbeteren terwijl u op zoek bent naar mogelijkheden om [uw totale Azure-uitgaven te verminderen](../../advisor/advisor-cost-recommendations.md). Azure Advisor biedt beveiligings aanbevelingen, waarmee u uw algemene beveiligings postuur aanzienlijk kunt verbeteren voor oplossingen die u in azure implementeert. Deze aanbevelingen worden getrokken van de beveiligings analyse die wordt uitgevoerd door [Azure Security Center.](../../security-center/security-center-introduction.md)
@@ -200,7 +200,7 @@ Geforceerde tunneling wordt doorgaans gebruikt om uitgaand verkeer naar Internet
 #### <a name="virtual-network-security-appliances"></a>Beveiligings apparaten Virtual Network
 Hoewel netwerk beveiligings groepen, User-Defined routes en geforceerde tunneling u een beveiligings niveau bieden op het netwerk en de transport lagen van het [OSI-model](https://en.wikipedia.org/wiki/OSI_model), is het mogelijk dat u de beveiliging op een hoger niveau van de stack wilt inschakelen. U kunt deze verbeterde beveiligings functies van het netwerk openen met behulp van een Azure-partner netwerk beveiligings apparaat. U kunt de meest recente oplossingen voor Azure-partner netwerk beveiliging vinden door de [Azure Marketplace](https://azure.microsoft.com/marketplace/) te bezoeken en te zoeken naar ' Beveiliging ' en ' netwerk beveiliging '.
 
-### <a name="azure-virtual-network"></a>Virtueel Azure-netwerk
+### <a name="azure-virtual-network"></a>Azure Virtual Network
 Een virtueel Azure-netwerk (VNET) is een weergave van uw eigen netwerk in de cloud. Het is een logische isolatie van de Azure Network-infra structuur die is toegewezen aan uw abonnement. U kunt de IP-adresblokken, DNS-instellingen, beveiligingsbeleidsregels en routetabellen binnen dit netwerk volledig beheren. U kunt uw VNet in subnetten segmenteren en Azure IaaS virtuele machines (Vm's) en/of [Cloud Services (PaaS-rolinstanties)](../../cloud-services/cloud-services-choose-me.md) plaatsen in azure Virtual Networks.
 
 Hiermee kunt u het virtuele netwerk via een van de beschikbare [verbindingsopties](../../vpn-gateway/index.yml) in Azure verbinden met uw on-premises netwerk. In wezen kunt u uw netwerk uitbreiden naar Azure met behoud van de volledige controle over IP-adresblokken en de schaalvoordelen van Azure voor ondernemingen.

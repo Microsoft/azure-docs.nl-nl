@@ -7,12 +7,12 @@ author: bwren
 ms.author: bwren
 ms.date: 10/16/2020
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: f9ced3dfeccdbac5f0eb220cf0e104679f263aac
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: d2e898c6401ff9959298e5e435d68b4c4a452c4c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186861"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587289"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Bewakings oplossingen in Azure Monitor
 
@@ -29,7 +29,7 @@ Gebruik de vervolg keuzelijsten aan de bovenkant van het scherm om de werk ruimt
 
 [![Scherm afbeelding toont het Azure Portal menu met de geselecteerde oplossingen en oplossingen die worden weer gegeven in het deel venster oplossingen.](media/solutions/overview.png)](media/solutions/overview.png#lightbox)
 
-Bewakings oplossingen kunnen meerdere typen Azure-resources bevatten en u kunt alle resources die zijn opgenomen in een oplossing, net als elke andere resource bekijken. Alle logboek query's die in de oplossing zijn opgenomen, worden bijvoorbeeld vermeld onder **oplossingen query's** in [query Explorer](../log-query/log-analytics-tutorial.md). U kunt deze query's gebruiken bij het uitvoeren van ad hoc-analyses met [logboek query's](../log-query/log-query-overview.md).
+Bewakings oplossingen kunnen meerdere typen Azure-resources bevatten en u kunt alle resources die zijn opgenomen in een oplossing, net als elke andere resource bekijken. Alle logboek query's die in de oplossing zijn opgenomen, worden bijvoorbeeld vermeld onder **oplossingen query's** in [query Explorer](../logs/log-analytics-tutorial.md). U kunt deze query's gebruiken bij het uitvoeren van ad hoc-analyses met [logboek query's](../logs/log-query-overview.md).
 
 ## <a name="list-installed-monitoring-solutions"></a>Geïnstalleerde bewakings oplossingen weer geven
 
@@ -83,7 +83,7 @@ Get-AzMonitorLogAnalyticsSolution -ResourceGroupName MyResourceGroup
 
 ### <a name="portal"></a>[Portal](#tab/portal)
 
-Bewakings oplossingen van micro soft en partners zijn beschikbaar via [Azure Marketplace](https://azuremarketplace.microsoft.com). U kunt zoeken naar beschik bare oplossingen en deze installeren met behulp van de volgende procedure. Wanneer u een oplossing installeert, moet u een [log Analytics-werk ruimte](../platform/manage-access.md) selecteren waarin de oplossing wordt geïnstalleerd en waar de gegevens worden verzameld.
+Bewakings oplossingen van micro soft en partners zijn beschikbaar via [Azure Marketplace](https://azuremarketplace.microsoft.com). U kunt zoeken naar beschik bare oplossingen en deze installeren met behulp van de volgende procedure. Wanneer u een oplossing installeert, moet u een [log Analytics-werk ruimte](../logs/manage-access.md) selecteren waarin de oplossing wordt geïnstalleerd en waar de gegevens worden verzameld.
 
 1. Klik in de [lijst met oplossingen voor uw abonnement](#list-installed-monitoring-solutions)op **toevoegen**.
 1. Blader of zoek naar een oplossing. U kunt ook naar oplossingen bladeren via [deze zoek koppeling](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/management-tools?page=1&subcategories=management-solutions).
@@ -141,7 +141,7 @@ Leden van de community kunnen beheer oplossingen verzenden naar Azure Quick Star
 
 ### <a name="install-a-solution-with-the-azure-cli"></a>Een oplossing met Azure CLI installeren
 
-Wanneer u een oplossing installeert, moet u een [log Analytics-werk ruimte](../platform/manage-access.md) selecteren waarin de oplossing wordt geïnstalleerd en waar de gegevens worden verzameld.  Met de Azure CLI beheert u werk ruimten met behulp van de opdracht [AZ monitor log-Analytics werk ruimte](/cli/azure/monitor/log-analytics/workspace) .  Volg het proces dat wordt beschreven in [log Analytics werk ruimte en het Automation-account](#log-analytics-workspace-and-automation-account) om een werk ruimte en een account te koppelen.
+Wanneer u een oplossing installeert, moet u een [log Analytics-werk ruimte](../logs/manage-access.md) selecteren waarin de oplossing wordt geïnstalleerd en waar de gegevens worden verzameld.  Met de Azure CLI beheert u werk ruimten met behulp van de opdracht [AZ monitor log-Analytics werk ruimte](/cli/azure/monitor/log-analytics/workspace) .  Volg het proces dat wordt beschreven in [log Analytics werk ruimte en het Automation-account](#log-analytics-workspace-and-automation-account) om een werk ruimte en een account te koppelen.
 
 Gebruik de [AZ monitor log-Analytics oplossing Create](/cli/azure/ext/log-analytics-solution/monitor/log-analytics/solution) om een bewakings oplossing te installeren.  Para meters tussen vier Kante haken zijn optioneel.
 
@@ -196,7 +196,7 @@ az monitor log-analytics solution create --resource-group MyResourceGroup \
 
 ### <a name="install-a-solution-with-azure-powershell"></a>Een oplossing met Azure PowerShell installeren
 
-Wanneer u een oplossing installeert, moet u een [log Analytics-werk ruimte](../platform/manage-access.md) selecteren waarin de oplossing wordt geïnstalleerd en waar de gegevens worden verzameld. Met Azure PowerShell beheert u werk ruimten met behulp van de cmdlets in de Power shell-module [AZ. MonitoringSolutions](/powershell/module/az.monitoringsolutions) . Volg het proces dat wordt beschreven in [log Analytics werk ruimte en het Automation-account](#log-analytics-workspace-and-automation-account) om een werk ruimte en een account te koppelen.
+Wanneer u een oplossing installeert, moet u een [log Analytics-werk ruimte](../logs/manage-access.md) selecteren waarin de oplossing wordt geïnstalleerd en waar de gegevens worden verzameld. Met Azure PowerShell beheert u werk ruimten met behulp van de cmdlets in de Power shell-module [AZ. MonitoringSolutions](/powershell/module/az.monitoringsolutions) . Volg het proces dat wordt beschreven in [log Analytics werk ruimte en het Automation-account](#log-analytics-workspace-and-automation-account) om een werk ruimte en een account te koppelen.
 
 Gebruik de cmdlet [New-AzMonitorLogAnalyticsSolution](/powershell/module/az.monitoringsolutions/new-azmonitorloganalyticssolution) om een bewakings oplossing te installeren. Para meters tussen vier Kante haken zijn optioneel.
 
@@ -219,7 +219,7 @@ New-AzMonitorLogAnalyticsSolution -Type Containers -ResourceGroupName MyResource
 
 ## <a name="log-analytics-workspace-and-automation-account"></a>Log Analytics-werk ruimte en Automation-account
 
-Voor alle bewakings oplossingen is een [log Analytics-werk ruimte](../platform/manage-access.md) vereist voor het opslaan van gegevens die zijn verzameld door de oplossing en het vinden van zoek opdrachten in Logboeken en weer gaven. Sommige oplossingen hebben ook een [Automation-account](../../automation/automation-security-overview.md) nodig om runbooks en gerelateerde resources te bevatten. De werk ruimte en het account moeten voldoen aan de volgende vereisten.
+Voor alle bewakings oplossingen is een [log Analytics-werk ruimte](../logs/manage-access.md) vereist voor het opslaan van gegevens die zijn verzameld door de oplossing en het vinden van zoek opdrachten in Logboeken en weer gaven. Sommige oplossingen hebben ook een [Automation-account](../../automation/automation-security-overview.md) nodig om runbooks en gerelateerde resources te bevatten. De werk ruimte en het account moeten voldoen aan de volgende vereisten.
 
 * Bij elke installatie van een oplossing kan slechts één Log Analytics-werk ruimte en één Automation-account worden gebruikt. U kunt de oplossing afzonderlijk in meerdere werk ruimten installeren.
 * Als voor een oplossing een Automation-account is vereist, moet de Log Analytics-werk ruimte en het Automation-account aan elkaar zijn gekoppeld. Een Log Analytics-werk ruimte kan alleen worden gekoppeld aan een Automation-account en een Automation-account kan alleen worden gekoppeld aan een Log Analytics-werk ruimte.
@@ -264,5 +264,5 @@ Remove-AzMonitorLogAnalyticsSolution  -ResourceGroupName MyResourceGroup -Name W
 ## <a name="next-steps"></a>Volgende stappen
 
 * Een [lijst met bewakings oplossingen van micro soft](../monitor-reference.md)ophalen.
-* Meer informatie over het [maken van query's](../log-query/log-query-overview.md) voor het analyseren van gegevens die zijn verzameld door bewakings oplossingen.
+* Meer informatie over het [maken van query's](../logs/log-query-overview.md) voor het analyseren van gegevens die zijn verzameld door bewakings oplossingen.
 * Bekijk alle [Azure cli-opdrachten voor Azure monitor](/cli/azure/azure-cli-reference-for-monitor).

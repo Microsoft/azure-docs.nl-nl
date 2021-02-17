@@ -3,12 +3,12 @@ title: Werken met uw beheer groepen-Azure governance
 description: Meer informatie over het weer geven, onderhouden, bijwerken en verwijderen van uw beheer groeps hiërarchie.
 ms.date: 01/15/2021
 ms.topic: conceptual
-ms.openlocfilehash: 33c7da1d7484056eb1bb2fd4b00d892137ed2b64
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 05e78d66c29e500842d14a6eeb563c4569ecf0bd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98787365"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596483"
 ---
 # <a name="manage-your-resources-with-management-groups"></a>Uw resources beheren met beheergroepen
 
@@ -357,7 +357,7 @@ az account management-group update --name 'Contoso' --parent ContosoIT
 
 ## <a name="audit-management-groups-using-activity-logs"></a>Beheergroepen controleren met behulp van activiteitenlogboeken
 
-Beheergroepen worden ondersteund door het [Azure-activiteitenlogboek](../../azure-monitor/platform/platform-logs-overview.md). U kunt een query uitvoeren op alle gebeurtenissen die plaatsvinden naar een beheer groep op dezelfde centrale locatie als andere Azure-resources. Zo kunt u alle gewijzigde rol- of beleidstoewijzingen binnen een bepaalde beheergroep bekijken.
+Beheergroepen worden ondersteund door het [Azure-activiteitenlogboek](../../azure-monitor/essentials/platform-logs-overview.md). U kunt een query uitvoeren op alle gebeurtenissen die plaatsvinden naar een beheer groep op dezelfde centrale locatie als andere Azure-resources. Zo kunt u alle gewijzigde rol- of beleidstoewijzingen binnen een bepaalde beheergroep bekijken.
 
 :::image type="content" source="./media/al-mg.png" alt-text="Schermopname van activiteitenlogboeken en bewerkingen met betrekking tot de geselecteerde beheergroep." border="false":::
 

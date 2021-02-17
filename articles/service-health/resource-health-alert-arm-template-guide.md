@@ -3,18 +3,18 @@ title: Sjabloon voor het maken van Resource Health-waarschuwingen
 description: Maak waarschuwingen via een programma waarmee u wordt gewaarschuwd wanneer uw Azure-resources niet meer beschikbaar zijn.
 ms.topic: conceptual
 ms.date: 9/4/2018
-ms.openlocfilehash: 3859bb0ce2497b1c1f547c3750e53745ef6d6f28
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4f1cbe1e2d2c185906feb4ccba380cb31df864f5
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91537426"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588203"
 ---
 # <a name="configure-resource-health-alerts-using-resource-manager-templates"></a>Resourcestatuswaarschuwingen configureren met Resource Manager-sjablonen
 
 In dit artikel wordt uitgelegd hoe u Resource Health waarschuwingen voor activiteiten Logboeken kunt maken via Azure Resource Manager sjablonen en Azure PowerShell.
 
-Azure Resource Health houdt u op de hoogte van de huidige en historische status van uw Azure-resources. Azure Resource Health waarschuwingen kunnen u in bijna realtime een melding sturen wanneer deze resources een wijziging in hun integriteits status hebben. Door Resource Health waarschuwingen via een programma te maken, kunnen gebruikers waarschuwingen bulksgewijs maken en aanpassen.
+Azure Resource Health houdt u op de hoogte van de huidige en historische status van uw Azure-resources. Met Azure Resource Health-waarschuwingen ontvangt u vrijwel in realtime een melding als de status van deze resources wordt gewijzigd. Door Resource Health waarschuwingen via een programma te maken, kunnen gebruikers waarschuwingen bulksgewijs maken en aanpassen.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -23,7 +23,7 @@ Azure Resource Health houdt u op de hoogte van de huidige en historische status 
 Als u de instructies op deze pagina wilt volgen, moet u enkele dingen vooraf instellen:
 
 1. U moet de Azure PowerShell- [module](/powershell/azure/install-az-ps) installeren
-2. U moet [een actie groep maken of opnieuw gebruiken](../azure-monitor/platform/action-groups.md) die is geconfigureerd om u op de hoogte te stellen
+2. U moet [een actie groep maken of opnieuw gebruiken](../azure-monitor/alerts/action-groups.md) die is geconfigureerd om u op de hoogte te stellen
 
 ## <a name="instructions"></a>Instructies
 1. Meld u met behulp van Power shell aan bij Azure met uw account en selecteer het abonnement waarmee u wilt communiceren
@@ -452,4 +452,4 @@ Meer informatie over Resource Health:
 
 Service Health-waarschuwingen maken:
 -  [Waarschuwingen voor Service Health configureren](./alerts-activity-log-service-notifications-portal.md) 
--  [Azure-gebeurtenisschema in het activiteitenlogboek](../azure-monitor/platform/activity-log-schema.md)
+-  [Azure-gebeurtenisschema in het activiteitenlogboek](../azure-monitor/essentials/activity-log-schema.md)

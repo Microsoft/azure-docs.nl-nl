@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: a8a27a782d5e05b5febda659009284c22d3608c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2a955273c01d8c0d865aabd91bb1bfcce70fd373
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87318977"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587364"
 ---
 # <a name="application-insights-agent-formerly-named-status-monitor-v2-detailed-instructions"></a>Application Insights-agent (voorheen met de naam Status Monitor v2): gedetailleerde instructies
 
@@ -160,7 +160,7 @@ Als u om een of andere reden geen verbinding kunt maken met de Power shell-modul
 
 1. Ga naar https://www.powershellgallery.com/packages/Az.ApplicationMonitor.
 2. Selecteer de meest recente versie van het bestand in de tabel **versie geschiedenis** .
-3. Selecteer onder **installatie opties**de optie **hand matig downloaden**.
+3. Selecteer onder **installatie opties** de optie **hand matig downloaden**.
 
 ### <a name="option-1-install-into-a-powershell-modules-directory"></a>Optie 1: installeren in een Power shell-modules directory
 Installeer de hand matig gedownloade Power shell-module in een Power shell-Directory, zodat deze kan worden gedetecteerd door Power shell-sessies.
@@ -231,9 +231,9 @@ Zie de [API-naslag informatie](./status-monitor-v2-api-reference.md#enable-appli
 
  Uw telemetrie weergeven:
 
-- [Bekijk metrische gegevens](../platform/metrics-charts.md) om de prestaties en het gebruik te bewaken.
+- [Bekijk metrische gegevens](../essentials/metrics-charts.md) om de prestaties en het gebruik te bewaken.
 - [Zoek gebeurtenissen en logboeken](./diagnostic-search.md) om problemen op te sporen.
-- [Gebruik analyses](../log-query/log-query-overview.md) voor meer geavanceerde query's.
+- [Gebruik analyses](../logs/log-query-overview.md) voor meer geavanceerde query's.
 - [Dash boards maken](./overview-dashboard.md).
 
  Meer telemetrie toevoegen:

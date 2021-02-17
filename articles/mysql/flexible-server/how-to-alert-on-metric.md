@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: mysql
 ms.topic: how-to
 ms.date: 9/21/2020
-ms.openlocfilehash: 4a099a9850289a046435b4e1763d7f54a702c0d0
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 632aae766e6fd1328dc6e0135a88a942d7ad0910
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545086"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595784"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-mysql---flexible-server"></a>Gebruik de Azure Portal om waarschuwingen in te stellen voor de Azure Database for MySQL-flexibele server 
 
@@ -28,26 +28,26 @@ U kunt een waarschuwing configureren om de volgende acties uit te voeren wanneer
 * Een webhook aanroepen
 
 U kunt informatie over waarschuwings regels configureren en ophalen met behulp van:
-* [Azure Portal](../../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
-* [Azure CLI](../../azure-monitor/platform/alerts-metric.md#with-azure-cli)
+* [Azure-portal](../../azure-monitor/alerts/alerts-metric.md#create-with-azure-portal)
+* [Azure-CLI](../../azure-monitor/alerts/alerts-metric.md#with-azure-cli)
 * [Azure Monitor REST API](/rest/api/monitor/metricalerts)
 
-## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Een waarschuwings regel maken op basis van een metriek van de Azure Portal
+## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Een waarschuwingsregel maken op een metrische waarde vanuit Azure Portal
 1. Selecteer in de [Azure Portal](https://portal.azure.com/)de Azure database for MySQL flexibele server die u wilt bewaken.
-2. Selecteer in de sectie **bewaking** van de zijbalk **waarschuwingen** .
-3. Selecteer **+ Nieuwe waarschuwingsregel** .
+2. Selecteer in de sectie **bewaking** van de zijbalk **waarschuwingen**.
+3. Selecteer **+ Nieuwe waarschuwingsregel**.
 4. De pagina **Regel maken** wordt geopend. Vul de vereiste gegevens in:
-5. Klik in de sectie **voor** waarde op **voor waarde selecteren** .
+5. Klik in de sectie **voor** waarde op **voor waarde selecteren**.
 6. U ziet een lijst met ondersteunde signalen. Selecteer de metrische gegevens waarvoor u een waarschuwing wilt maken. Selecteer bijvoorbeeld ' opslag percentage '.
 7. Er wordt een grafiek weer gegeven met de metrische gegevens voor de afgelopen zes uur. Gebruik de vervolg keuzelijst **grafiek periode** om de meer geschiedenis voor de metrische gegevens weer te geven.
 8. Selecteer het type **drempel waarde** (bijvoorbeeld "Static" of "Dynamic"), **operator** (ex. ' Groter dan ') en **aggregatie type** (bijvoorbeeld gemiddelde). Hiermee wordt de logica bepaald die door de metrische waarschuwings regel wordt geëvalueerd.
     - Als u een **statische** drempel waarde gebruikt, gaat u door met het definiëren van een **drempelwaarde** (bijvoorbeeld 85 procent). De metrische grafiek kan helpen om te bepalen wat een redelijke drempel waarde kan hebben.
-    - Als u een **dynamische** drempel waarde gebruikt, gaat u door met het definiëren van de **drempel gevoeligheid** . De metrische grafiek geeft de berekende drempel waarden weer op basis van recente gegevens. Meer [informatie over de drempel waarde voor het type en gevoeligheids opties voor dynamische waarden](../../azure-monitor/platform/alerts-dynamic-thresholds.md).
+    - Als u een **dynamische** drempel waarde gebruikt, gaat u door met het definiëren van de **drempel gevoeligheid**. De metrische grafiek geeft de berekende drempel waarden weer op basis van recente gegevens. Meer [informatie over de drempel waarde voor het type en gevoeligheids opties voor dynamische waarden](../../azure-monitor/alerts/alerts-dynamic-thresholds.md).
 9. Verfijn de voor waarde door het interval voor **aggregatie granulatie (periode)** aan te passen waarover gegevens punten worden gegroepeerd met behulp van de functie aggregatie type (ex. "30 minuten") en **frequentie** (ex "elke 15 minuten").
-10. Klik op **Gereed** .
+10. Klik op **Gereed**.
 11. Voeg een actie groep toe. Een actie groep is een verzameling voor keuren voor meldingen die zijn gedefinieerd door de eigenaar van een Azure-abonnement. Kies in de sectie **actie groepen** de **optie actie groep selecteren** om een bestaande actie groep te selecteren die u aan de waarschuwings regel wilt koppelen.
-12. U kunt ook een nieuwe actie groep maken om meldingen over de waarschuwing te ontvangen. Raadpleeg de [actie groep maken en beheren](../../azure-monitor/platform/action-groups.md) voor meer informatie.
-13. Als u een nieuwe actie groep wilt maken, kiest u **+ actie groep maken** . Vul het formulier actie groep maken in met een **abonnement** , **resource groep** , naam van de **actie groep** en **weergave naam** .
+12. U kunt ook een nieuwe actie groep maken om meldingen over de waarschuwing te ontvangen. Raadpleeg de [actie groep maken en beheren](../../azure-monitor/alerts/action-groups.md) voor meer informatie.
+13. Als u een nieuwe actie groep wilt maken, kiest u **+ actie groep maken**. Vul het formulier actie groep maken in met een **abonnement**, **resource groep**, naam van de **actie groep** en **weergave naam**.
 14. **Meldingen** voor actie groep configureren.
     
     Kies in **meldings type** de optie e-mail Azure Resource Manager rol om abonnements eigenaren, mede werkers en lezers te selecteren voor het ontvangen van meldingen. Kies de **Azure Resource Manager rol** voor het verzenden van het e-mail bericht.
@@ -57,7 +57,7 @@ U kunt informatie over waarschuwings regels configureren en ophalen met behulp v
 
     <!--:::image type="content" source="./media/howto-alert-on-metric/10-action-group-type.png" alt-text="Action group":::-->
     
-15. Vul de **Details van de waarschuwings regel** in, zoals de naam van de **waarschuwings regel** , **Beschrijving** , **waarschuwings regel opslaan in resource groep** en **Ernst** .
+15. Vul de **Details van de waarschuwings regel** in, zoals de naam van de **waarschuwings regel**, **Beschrijving**, **waarschuwings regel opslaan in resource groep** en **Ernst**.
 
     <!--:::image type="content" source="./media/howto-alert-on-metric/11-name-description-severity.png" alt-text="Action group":::-->
 
@@ -72,6 +72,6 @@ Zodra u een waarschuwing hebt gemaakt, kunt u deze selecteren en de volgende act
 
 
 ## <a name="next-steps"></a>Volgende stappen
-- Meer informatie over het [instellen van een waarschuwing op metrische gegevens](../../azure-monitor/platform/alerts-metric.md).
+- Meer informatie over het [instellen van een waarschuwing op metrische gegevens](../../azure-monitor/alerts/alerts-metric.md).
 - Meer informatie over beschik bare [metrische gegevens in azure database for MySQL flexibele server](./concepts-monitoring.md).
-- [Begrijpen hoe waarschuwingen voor metrische gegevens werken in Azure Monitor](../../azure-monitor/platform/alerts-metric-overview.md)
+- [Begrijpen hoe waarschuwingen voor metrische gegevens werken in Azure Monitor](../../azure-monitor/alerts/alerts-metric-overview.md)

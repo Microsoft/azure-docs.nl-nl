@@ -6,14 +6,14 @@ documentationcenter: ''
 author: vladvino
 ms.service: api-management
 ms.topic: article
-ms.date: 12/14/2020
+ms.date: 02/09/2021
 ms.author: apimpm
-ms.openlocfilehash: 344500d5635f591b34a45130c7dd6b63659ad84d
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 2bc9b1c5724fa7bab1fdf5ac9332d87ba03a6d11
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99491006"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100545816"
 ---
 # <a name="use-named-values-in-azure-api-management-policies"></a>Benoemde waarden gebruiken in azure API Management-beleid
 
@@ -25,7 +25,7 @@ ms.locfileid: "99491006"
 
 ## <a name="value-types"></a>Waardetypen
 
-|Type  |Beschrijving  |
+|Type  |Description  |
 |---------|---------|
 |Spoor     |  Expressie voor letterlijke teken reeks of beleid     |
 |Geheim     |   Letterlijke teken reeks of beleids expressie die is versleuteld met API Management      |
@@ -86,6 +86,8 @@ Zie [vereisten voor de integratie van sleutel kluis](#prerequisites-for-key-vaul
 
 ### <a name="add-a-plain-or-secret-value"></a>Een normale of geheime waarde toevoegen
 
+### <a name="portal"></a>[Portal](#tab/azure-portal)
+
 1. Blader in [Azure Portal](https://portal.azure.com) naar uw API Management-exemplaar.
 1. Selecteer onder **api's** de optie **benoemde waarden**  >  **+ toevoegen**.
 1. Voer een **naam** -id in en voer een **weergave naam** in die wordt gebruikt om naar de eigenschap in beleids regels te verwijzen.
@@ -95,6 +97,50 @@ Zie [vereisten voor de integratie van sleutel kluis](#prerequisites-for-key-vaul
 1. Selecteer **Maken**.
 
 Zodra de benoemde waarde is gemaakt, kunt u deze bewerken door de naam te selecteren. Als u de weergave naam wijzigt, worden alle beleids regels die verwijzen naar deze benoemde waarde, automatisch bijgewerkt voor gebruik van de nieuwe weergave naam.
+
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Als u Azure CLI wilt gaan gebruiken:
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+Als u een benoemde waarde wilt toevoegen, gebruikt u de opdracht [AZ APIM nv Create](/cli/azure/apim/nv#az_apim_nv_create) :
+
+```azurecli
+az apim nv create --resource-group apim-hello-word-resource-group \
+    --display-name "named_value_01" --named-value-id named_value_01 \
+    --secret true --service-name apim-hello-world --value test
+```
+
+Nadat u een benoemde waarde hebt gemaakt, kunt u deze bijwerken met behulp van de opdracht [AZ APIM nv update](/cli/azure/apim/nv#az_apim_nv_update) . Voer de opdracht [AZ APIM nv List](/cli/azure/apim/nv#az_apim_nv_list) uit om alle benoemde waarden weer te geven:
+
+```azurecli
+az apim nv list --resource-group apim-hello-word-resource-group \
+    --service-name apim-hello-world --output table
+```
+
+Voer de opdracht [AZ APIM nv show](/cli/azure/apim/nv#az_apim_nv_show) uit om de details te zien van de naam waarde die u hebt gemaakt voor dit voor beeld:
+
+```azurecli
+az apim nv show --resource-group apim-hello-word-resource-group \
+    --service-name apim-hello-world --named-value-id named_value_01
+```
+
+Dit voor beeld is een geheime waarde. De vorige opdracht retourneert niet de waarde. Als u de waarde wilt weer geven, voert u de opdracht [AZ APIM nv show-Secret](/cli/azure/apim/nv#az_apim_nv_show_secret) uit:
+
+```azurecli
+az apim nv show-secret --resource-group apim-hello-word-resource-group \
+    --service-name apim-hello-world --named-value-id named_value_01
+```
+
+Als u een benoemde waarde wilt verwijderen, gebruikt u de opdracht [AZ APIM nv delete](/cli/azure/apim/nv#az_apim_nv_delete) :
+
+```azurecli
+az apim nv delete --resource-group apim-hello-word-resource-group \
+    --service-name apim-hello-world --named-value-id named_value_01
+```
+
+---
 
 ## <a name="use-a-named-value"></a>Een benoemde waarde gebruiken
 

@@ -4,12 +4,12 @@ description: Bewaking van toepassings prestaties voor Azure app Services. Grafie
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.custom: devx-track-js, devx-track-dotnet
-ms.openlocfilehash: cd203c64695a9a61a93409a96f6a92b9acf9fe70
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 55682215a990643111d5813db437b1f1e4612868
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100365222"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100547227"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Azure App Service-prestaties bewaken
 
@@ -76,7 +76,7 @@ Er zijn twee manieren om toepassings bewaking in te scha kelen voor door Azure-a
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/netcore)
 
 > [!IMPORTANT]
-> De volgende versies van ASP.NET Core worden ondersteund: ASP.NET Core 2,1, 3,1 en 5,0. Versies 2,0, 2,2 en 3,0 zijn buiten gebruik gesteld en worden niet meer ondersteund. Voer een upgrade uit naar een [ondersteunde versie](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) van .net core voor automatische instrumentatie.
+> De volgende versies van ASP.NET Core worden ondersteund: ASP.NET Core 2,1 en 3,1. Versies 2,0, 2,2 en 3,0 zijn buiten gebruik gesteld en worden niet meer ondersteund. Voer een upgrade uit naar een [ondersteunde versie](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) van .net core voor automatische instrumentatie.
 
 Het is **niet mogelijk** om het volledige Framework te richten op basis van ASP.net core, een zelfstandige implementatie en toepassingen die op Linux zijn gebaseerd. ([Hand matige instrumentatie](./asp-net-core.md) via code werkt in alle eerdere scenario's.)
 

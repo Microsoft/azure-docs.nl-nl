@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 10/21/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure certificates for Azure Stack Edge Mini R  so I can use it to transfer data to Azure.
-ms.openlocfilehash: 1e81ab61b04f9cca6aff57de1736eac25a871c97
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: c3a09242b895234c96c64d9e23449d980e47e387
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96464284"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546734"
 ---
 # <a name="tutorial-configure-certificates-vpn-encryption-for-your-azure-stack-edge-mini-r"></a>Zelfstudie: Certificaten, VPN en versleuteling voor uw Azure Stack Edge Mini R configureren
 
@@ -38,10 +38,10 @@ Zorg dat aan deze voorwaarden wordt voldaan voordat u uw Azure Stack Edge Mini R
 * U hebt het fysieke apparaat geïnstalleerd zoals beschreven in [Azure Stack Edge Mini R installeren](azure-stack-edge-mini-r-deploy-install.md).
 
 * Als u van plan bent uw eigen certificaten te gebruiken:
-    - Zorg ervoor dat uw certificaten bij de hand hebt in de juiste indeling, inclusief het certificaat van de ondertekeningsketen. Ga voor meer informatie over het certificaat naar [Certificaten beheren](azure-stack-edge-j-series-manage-certificates.md)
+    - Zorg ervoor dat uw certificaten bij de hand hebt in de juiste indeling, inclusief het certificaat van de ondertekeningsketen. Ga voor meer informatie over het certificaat naar [Certificaten beheren](azure-stack-edge-gpu-manage-certificates.md)
 
     - Als uw apparaat wordt geïmplementeerd in Azure Government of Azure Government Secret of een uiterst geheime Azure Government-cloud en niet wordt geïmplementeerd in een openbare Azure-cloud, is een certificaat van de ondertekeningsketen vereist voordat u uw apparaat kunt activeren. 
-    Ga voor meer informatie over het certificaat naar [Certificaten beheren](azure-stack-edge-j-series-manage-certificates.md).
+    Ga voor meer informatie over het certificaat naar [Certificaten beheren](azure-stack-edge-gpu-manage-certificates.md).
 
 
 ## <a name="configure-certificates-for-device"></a>Certificaten configureren voor apparaat

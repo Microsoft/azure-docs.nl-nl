@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: jushiman
-ms.openlocfilehash: 215f907edb01cc35ffa4e9bb683964f8eda11d94
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 8faf86037bc5c2be4ab83adcbcd7e992840d329a
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99089322"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100557774"
 ---
 # <a name="dv3-and-dsv3-series"></a>Dv3- en DSv3-serie
 
@@ -34,7 +34,7 @@ Virtuele machines uit de Dv3-serie bieden een Intel® Hyper-Threading technologi
 [Livemigratie](maintenance-and-updates.md): ondersteund<br>
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1<br>
-[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund (*Mini maal 4 vCPU vereist*)<br>
 [Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): niet ondersteund <br>
 <br>
 
@@ -60,7 +60,7 @@ Virtuele machines uit de Dsv3-serie bieden een Intel® Hyper-Threading technolog
 [Livemigratie](maintenance-and-updates.md): ondersteund<br>
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
-[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund (*Mini maal 4 vCPU vereist*)<br>
 [Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): ondersteund <br>
 <br>
 

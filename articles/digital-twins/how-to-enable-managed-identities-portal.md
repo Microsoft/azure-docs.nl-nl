@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 1/21/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 1d54ecdac739bbc5a072426f5bf73f71ab394159
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 5c216661e45e5ed34a95e8a56002f3ad175b089a
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417296"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100545905"
 ---
 # <a name="enable-a-managed-identity-for-routing-azure-digital-twins-events-preview-azure-portal"></a>Een beheerde identiteit inschakelen voor het routeren van Azure Digital Apparaatdubbels-gebeurtenissen (preview): Azure Portal
 
@@ -101,9 +101,10 @@ Als u een rol aan de identiteit wilt toewijzen, moet u eerst de [Azure Portal](h
     :::image type="content" source="media/how-to-enable-managed-identities/add-role-assignment-1.png" alt-text="Scherm afbeelding van de Azure Portal de IAM-pagina (Access Control) voor een Event Hub wordt weer gegeven. De knop + toevoegen is gemarkeerd." lightbox="media/how-to-enable-managed-identities/add-role-assignment-1.png":::
 
 1. Vul op de volgende pagina **roltoewijzing toevoegen** de waarden in:
-    * **Rol**: Selecteer de gewenste rol in het vervolg keuzemenu
-    * **Toegang toewijzen aan**: Kies **gebruiker, groep of Service-Principal**
-    * **Select**: hier selecteert u de beheerde identiteit van uw Azure Digital apparaatdubbels-exemplaar waaraan de rol wordt toegewezen. De naam van de beheerde identiteit komt overeen met de naam van het exemplaar, dus zoek de naam van uw Azure Digital Apparaatdubbels-exemplaar. Wanneer u het resultaat selecteert, wordt de identiteit van de instantie weer gegeven in de sectie **geselecteerde leden** .
+    * **Rol**: Selecteer de gewenste rol in de vervolg keuzelijst.
+    * **Toegang toewijzen aan**: Selecteer onder door **systeem toegewezen beheerde identiteit** de optie **Digital apparaatdubbels**.
+    * **Abonnement**: Selecteer uw abonnement. Hiermee worden alle door Azure Digital Apparaatdubbels beheerde identiteiten in het geselecteerde abonnement weer gegeven.
+    * **Select**: hier selecteert u de beheerde identiteit van uw Azure Digital apparaatdubbels-exemplaar waaraan de rol wordt toegewezen. De naam van de beheerde identiteit komt overeen met de naam van het exemplaar. Kies dus de naam van uw Azure Digital Apparaatdubbels-exemplaar. Wanneer u deze optie selecteert, wordt de identiteit van de instantie weer gegeven in de sectie **geselecteerde leden** onder aan het deel venster.
 
     :::row:::
         :::column:::

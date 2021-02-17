@@ -1,35 +1,35 @@
 ---
-title: Azure-roltoewijzingen toevoegen of verwijderen voor externe gebruikers met behulp van de Azure Portal-Azure RBAC
+title: Azure-rollen toewijzen aan externe gast gebruikers met behulp van de Azure Portal-Azure RBAC
 description: Meer informatie over het verlenen van toegang tot Azure-resources voor gebruikers buiten een organisatie met behulp van de Azure Portal en Azure op rollen gebaseerd toegangs beheer (Azure RBAC).
 services: active-directory
 documentationcenter: ''
 author: rolyon
-manager: mtillman
-editor: ''
-ms.assetid: ''
+manager: daveba
 ms.service: role-based-access-control
 ms.devlang: ''
 ms.topic: how-to
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 11/25/2019
+ms.date: 02/15/2021
 ms.author: rolyon
-ms.reviewer: skwan
 ms.custom: it-pro
-ms.openlocfilehash: a18fc3e4851c2daf03c662cf40cef58cc7d9e77a
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: d834f4ccd8dba26c895e0578f161813fc49332ea
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98117704"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556291"
 ---
-# <a name="add-or-remove-azure-role-assignments-for-external-guest-users-using-the-azure-portal"></a>Azure-roltoewijzingen toevoegen of verwijderen voor externe gast gebruikers met behulp van de Azure Portal
+# <a name="assign-azure-roles-to-external-guest-users-using-the-azure-portal"></a>Azure-rollen toewijzen aan externe gast gebruikers met behulp van de Azure Portal
 
 [Azure RBAC (op rollen gebaseerd toegangs beheer)](overview.md) biedt betere beveiliging voor grote organisaties en voor kleine en middel grote bedrijven die werken met externe deel nemers, leveranciers of freelancers die toegang nodig hebben tot specifieke bronnen in uw omgeving, maar niet noodzakelijkerwijs op de volledige infra structuur of een facturerings bereik. U kunt de mogelijkheden van [Azure Active Directory B2B](../active-directory/external-identities/what-is-b2b.md) gebruiken om samen te werken met externe gast gebruikers en u kunt Azure RBAC gebruiken om alleen de machtigingen te verlenen die gast gebruikers in uw omgeving nodig hebben.
 
 ## <a name="prerequisites"></a>Vereisten
 
-[!INCLUDE [Azure role assignment prerequisites](../../includes/role-based-access-control/prerequisites-role-assignments.md)]
+Als u Azure-rollen wilt toewijzen of roltoewijzingen wilt verwijderen, hebt u het volgende nodig:
+
+- Machtigingen voor `Microsoft.Authorization/roleAssignments/write` en `Microsoft.Authorization/roleAssignments/delete`, zoals [Beheerder van gebruikerstoegang](built-in-roles.md#user-access-administrator) of [Eigenaar](built-in-roles.md#owner)
+
 
 ## <a name="when-would-you-invite-guest-users"></a>Wanneer wilt u gast gebruikers uitnodigen?
 
@@ -65,9 +65,9 @@ De gast gebruiker moet het uitnodigings proces volt ooien om toegang te kunnen k
 
 Zie [Azure Active Directory uitnodiging voor B2B-samen werking](../active-directory/external-identities/redemption-experience.md)voor meer informatie over het uitnodigings proces.
 
-## <a name="add-a-role-assignment-for-a-guest-user"></a>Een roltoewijzing voor een gast gebruiker toevoegen
+## <a name="assign-a-role-to-a-guest-user"></a>Een rol toewijzen aan een gast gebruiker
 
-In azure RBAC wijst u een rol toe om toegang te verlenen. Als u een roltoewijzing wilt toevoegen voor een gast gebruiker, voert u [dezelfde stappen uit](role-assignments-portal.md#add-a-role-assignment) als voor een gebruiker, groep, Service-Principal of beheerde identiteit. Volg deze stappen om een roltoewijzing voor een gast gebruiker in verschillende bereiken toe te voegen.
+In azure RBAC wijst u een rol toe om toegang te verlenen. Als u een rol aan een gast gebruiker wilt toewijzen, voert u [dezelfde stappen uit](role-assignments-portal.md) als voor een gebruiker, groep, Service-Principal of beheerde identiteit. Volg deze stappen om een rol toe te wijzen aan een gast gebruiker in verschillende bereiken.
 
 1. Klik in Azure Portal op **Alle services**.
 
@@ -101,9 +101,9 @@ In azure RBAC wijst u een rol toe om toegang te verlenen. Als u een roltoewijzin
 
     ![Roltoewijzing voor Inzender voor virtuele machines](./media/role-assignments-external-users/access-control-role-assignments.png)
 
-## <a name="add-a-role-assignment-for-a-guest-user-not-yet-in-your-directory"></a>Een roltoewijzing voor een gast gebruiker toevoegen die nog niet in uw directory is
+## <a name="assign-a-role-to-a-guest-user-not-yet-in-your-directory"></a>Een rol toewijzen aan een gast gebruiker die nog niet in uw directory is
 
-Als u een roltoewijzing wilt toevoegen voor een gast gebruiker, voert u [dezelfde stappen uit](role-assignments-portal.md#add-a-role-assignment) als voor een gebruiker, groep, Service-Principal of beheerde identiteit.
+Als u een rol aan een gast gebruiker wilt toewijzen, voert u [dezelfde stappen uit](role-assignments-portal.md) als voor een gebruiker, groep, Service-Principal of beheerde identiteit.
 
 Als de gast gebruiker zich nog niet in uw directory bevindt, kunt u de gebruiker rechtstreeks uitnodigen vanuit het deel venster roltoewijzing toevoegen.
 
@@ -187,7 +187,7 @@ Als een gast gebruiker in de Directory extra bevoegdheden nodig heeft, kunt u ee
 
 ### <a name="guest-user-cannot-browse-users-groups-or-service-principals-to-assign-roles"></a>Gast gebruiker kan niet bladeren naar gebruikers, groepen of service-principals om rollen toe te wijzen
 
-Gast gebruikers hebben beperkte mapmachtigingen. Zelfs als een gast [gebruiker een roltoewijzing](built-in-roles.md#owner) moet toevoegen om iemand anders toegang te verlenen, kunnen ze niet door de lijst met gebruikers, groepen of service-principals bladeren.
+Gast gebruikers hebben beperkte mapmachtigingen. Zelfs als een gast [gebruiker een rol](built-in-roles.md#owner) moet toewijzen om iemand anders toegang te verlenen, kunnen ze niet bladeren in de lijst met gebruikers, groepen of service-principals.
 
 ![Gast gebruiker kan niet bladeren in beveiligings-principals om rollen toe te wijzen](./media/role-assignments-external-users/directory-no-browse.png)
 

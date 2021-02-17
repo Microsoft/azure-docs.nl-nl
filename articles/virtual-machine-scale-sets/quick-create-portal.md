@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 06/30/2020
 ms.reviewer: mimckitt
 ms.custom: mimckitt
-ms.openlocfilehash: 8243619bc7a32c5fa86b6e108d954674b54394e5
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
-ms.translationtype: HT
+ms.openlocfilehash: 0408341eff483de71d76a24a933ece4cbdc2b947
+ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97913720"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100535277"
 ---
 # <a name="quickstart-create-a-virtual-machine-scale-set-in-the-azure-portal"></a>Quickstart: Een schaalset voor virtuele machines maken in Azure Portal
 
@@ -57,7 +57,7 @@ Maak eerst een openbare Standard Load Balancer met behulp van de portal. De naam
 U kunt een schaalset implementeren met een installatiekopie van Windows Server of Linux, zoals RHEL, CentOS, Ubuntu of SLES.
 
 1. Typ **Schaalset** in het zoekvak. In de resultaten onder **Marketplace** selecteert u **Schaalsets voor virtuele machines**. Selecteer **Maken** op de pagina **Virtuele-machineschaalsets**, waarna de pagina **Een virtuele-machineschaalset maken** wordt geopend. 
-1. Zorg ervoor dat op het tabblad **Basics** onder **Projectgegevens** het juiste abonnement is geselecteerd, en kies **Nieuwe maken** om een nieuwe resourcegroep te maken. Typ *myVMSSResourceGroup* voor de naam en selecteer **OK**. 
+1. Controleer op het tabblad **basis beginselen** onder **Project Details** of het juiste abonnement is geselecteerd en selecteer *myVMSSResourceGroup* uit de lijst met resource groepen. 
 1. Typ *myScaleSet* als de naam van de schaalset.
 1. Selecteer bij **Regio** een regio die zich dichtbij uw gebied bevindt.
 1. Selecteer een Marketplace-installatiekopie bij **Installatiekopie**. In dit voorbeeld hebben we gekozen voor *Ubuntu Server 18.04 LTS*.

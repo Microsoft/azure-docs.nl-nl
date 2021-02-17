@@ -1,27 +1,27 @@
 ---
-title: Een roltoewijzing voor een beheerde identiteit toevoegen (preview)-Azure RBAC
-description: Meer informatie over het toevoegen van een roltoewijzing door te beginnen met de beheerde identiteit en vervolgens het bereik en de rol te selecteren met behulp van de Azure Portal en Azure op rollen gebaseerd toegangs beheer (Azure RBAC).
+title: Azure-rollen toewijzen aan een beheerde identiteit (preview)-Azure RBAC
+description: Informatie over het toewijzen van Azure-rollen door te beginnen met de beheerde identiteit en vervolgens het bereik en de rol te selecteren met behulp van de Azure Portal en Azure op rollen gebaseerd toegangs beheer (Azure RBAC).
 services: active-directory
 author: rolyon
 manager: mtillman
 ms.service: role-based-access-control
 ms.topic: how-to
 ms.workload: identity
-ms.date: 01/11/2021
+ms.date: 02/15/2021
 ms.author: rolyon
-ms.openlocfilehash: a01246c0cf35653f4d13262183cf9df28b056c69
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 57c8c00a64996bc6223fbe7e514db9db38ccdcc2
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98122088"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556852"
 ---
-# <a name="add-a-role-assignment-for-a-managed-identity-preview"></a>Een roltoewijzing voor een beheerde identiteit toevoegen (preview)
+# <a name="assign-azure-roles-to-a-managed-identity-preview"></a>Azure-rollen toewijzen aan een beheerde identiteit (preview)
 
-U kunt roltoewijzingen voor een beheerde identiteit toevoegen met behulp van de pagina **toegangs beheer (IAM)** zoals beschreven in [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal](role-assignments-portal.md). Wanneer u de pagina toegangs beheer (IAM) gebruikt, begint u met het bereik en selecteert u vervolgens de beheerde identiteit en rol. In dit artikel wordt een alternatieve manier beschreven om roltoewijzingen toe te voegen voor een beheerde identiteit. Met deze stappen begint u met de beheerde identiteit en selecteert u vervolgens het bereik en de rol.
+U kunt een rol toewijzen aan een beheerde identiteit door gebruik te maken van de pagina **toegangs beheer (IAM)** zoals beschreven in [Azure-rollen toewijzen met behulp van de Azure Portal](role-assignments-portal.md). Wanneer u de pagina toegangs beheer (IAM) gebruikt, begint u met het bereik en selecteert u vervolgens de beheerde identiteit en rol. In dit artikel wordt een alternatieve manier beschreven om rollen toe te wijzen voor een beheerde identiteit. Met deze stappen begint u met de beheerde identiteit en selecteert u vervolgens het bereik en de rol.
 
 > [!IMPORTANT]
-> Als u een roltoewijzing voor een beheerde identiteit toevoegt met behulp van deze alternatieve stappen, is momenteel een preview-versie beschikbaar.
+> Als u een rol aan een beheerde identiteit wilt toewijzen met behulp van deze alternatieve stappen, is momenteel een preview-versie beschikbaar.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
@@ -92,5 +92,5 @@ Volg deze stappen om een rol toe te wijzen aan een door de gebruiker toegewezen 
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Wat zijn beheerde identiteiten voor Azure-resources?](../active-directory/managed-identities-azure-resources/overview.md)
-- [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure-portal](role-assignments-portal.md)
+- [Azure-rollen toewijzen met behulp van de Azure Portal](role-assignments-portal.md)
 - [Azure-roltoewijzingen vermelden met behulp van Azure Portal](role-assignments-list-portal.md)

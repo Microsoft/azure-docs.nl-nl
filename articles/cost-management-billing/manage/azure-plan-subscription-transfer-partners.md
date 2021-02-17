@@ -7,12 +7,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: banders
-ms.openlocfilehash: cb9a035217734028df325555cb0954dedd29ac30
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
-ms.translationtype: HT
+ms.openlocfilehash: d234227de98beeed6898697fb6ed8e0865546e16
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91372286"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555843"
 ---
 # <a name="transfer-subscriptions-under-an-azure-plan-from-one-partner-to-another-preview"></a>Abonnementen onder een Azure-plan van de ene partner aan de andere overdragen (Preview)
 
@@ -22,7 +22,7 @@ Dit artikel helpt u beter inzicht te krijgen in wat u moet weten voordat en nada
 
 Toegang voor bestaande gebruikers, groepen of service-principals die is toegewezen met behulp van op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC) wordt niet beïnvloed tijdens de overgang. Het gebruik van [Azure RBAC](../../role-based-access-control/overview.md) helpt u bij het beheren van wie er toegang heeft tot Azure-resources, wat ze kunnen doen met die resources en tot welke gebieden ze toegang hebben. Uw nieuwe partner krijgt geen Azure RBAC-toegang tot uw resources als gevolg van de overdracht van het abonnement. Uw vorige partner behoudt de Azure RBAC-toegang.
 
-Daarom is het belangrijk dat u de Azure RBAC-toegang voor de oude partner verwijdert en voor de nieuwe partner toegang toevoegt. Raadpleeg [Wat is op rollen gebaseerd toegangsbeheer in Azure (Azure RBAC)?](../../role-based-access-control/overview.md) voor meer informatie over het geven van toegang aan uw nieuwe partner. Zie [Een roltoewijzing verwijderen](../../role-based-access-control/role-assignments-portal.md#remove-a-role-assignment) voor meer informatie over het verwijderen van de Azure RBAC-toegang van uw vorige partner.
+Daarom is het belangrijk dat u de Azure RBAC-toegang voor de oude partner verwijdert en voor de nieuwe partner toegang toevoegt. Raadpleeg [Wat is op rollen gebaseerd toegangsbeheer in Azure (Azure RBAC)?](../../role-based-access-control/overview.md) voor meer informatie over het geven van toegang aan uw nieuwe partner. Zie [Azure-roltoewijzingen verwijderen](../../role-based-access-control/role-assignments-remove.md)voor meer informatie over het verwijderen van de Azure RBAC-toegang van uw vorige partner.
 
 Daarnaast krijgt uw nieuwe partner niet automatisch [Beheer namens](https://channel9.msdn.com/Series/cspdev/Module-11-Admin-On-Behalf-Of-AOBO)-toegang tot uw abonnementen. 'Beheer namens' heeft u partner nodig om de Azure abonnementen namens u te beheren. Zie voor meer informatie over Azure-machtigingen [Machtigingen verkrijgen voor het beheren van de service of het abonnement van een klant](/partner-center/customers-revoke-admin-privileges).
 

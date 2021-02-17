@@ -2,13 +2,13 @@
 title: Configuratie van batch-pool migreren van Cloud Services naar Virtual Machines
 description: Meer informatie over hoe u uw pool configuratie kunt bijwerken naar de nieuwste en aanbevolen configuratie
 ms.topic: how-to
-ms.date: 1/6/2021
-ms.openlocfilehash: 417738be2c69101129079b8ff3a3d80634f9f99c
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.date: 2/16/2021
+ms.openlocfilehash: 9cbcf3864526bd8f8132f3b0f729e2d728e07bb8
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98731496"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546037"
 ---
 # <a name="migrate-batch-pool-configuration-from-cloud-services-to-virtual-machines"></a>Configuratie van batch-pool migreren van Cloud Services naar Virtual Machines
 
@@ -36,6 +36,19 @@ Bij het bijwerken van de groeps configuratie moet rekening worden gehouden met h
    > Net als bij Virtual Machines en Virtual Machine Scale Sets wordt de door het besturings systeem beheerde schijf die voor elk knoop punt wordt gebruikt, de kosten in rekening gebracht. Dit is een aanvulling op de kosten van de Vm's. Er zijn geen kosten voor de besturingssysteem schijf voor cloudServiceConfiguration-knoop punten omdat de besturingssysteem schijf is gemaakt op de lokale SSD-knoop punten.
 
 - Het starten en verwijderen van de groep en het knoop punt kunnen enigszins verschillen tussen de groepen ' cloudServiceConfiguration ' en ' virtualMachineConfiguration '.
+
+## <a name="azure-data-factory-custom-activity-pools"></a>Aangepaste activiteiten groepen Azure Data Factory
+
+Azure Batch groepen kunnen worden gebruikt om Data Factory aangepaste activiteiten uit te voeren. De groepen cloudServiceConfiguration die worden gebruikt om aangepaste activiteiten uit te voeren, moeten worden verwijderd en nieuwe ' virtualMachineConfiguration-groepen worden gemaakt.
+
+- Pijp lijnen moeten worden gepauzeerd voordat verwijderen/opnieuw wordt gemaakt om ervoor te zorgen dat er geen uitvoeringen worden onderbroken.
+- Dezelfde groeps-id kan worden gebruikt om wijzigingen aan gekoppelde service configuraties te voor komen.
+- Pijp lijnen hervatten wanneer er nieuwe groepen zijn gemaakt.
+
+Voor meer informatie over het gebruik van Azure Batch om Data Factory aangepaste activiteiten uit te voeren:
+
+- [Azure Batch gekoppelde service](../data-factory/compute-linked-services.md#azure-batch-linked-service)
+- [Aangepaste activiteiten in een Data Factory pijp lijn](../data-factory/transform-data-using-dotnet-custom-activity.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -14,14 +14,14 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 09/23/2019
 ms.author: sethm
-ms.reviewer: jowargo
+ms.reviewer: thsomasu
 ms.lastreviewed: 09/23/2019
-ms.openlocfilehash: b871775bc7a6d795e86147ae9cffa27bdd2f3348
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 07600b1fe0cb7420989fbbfbe55c2f1a4197d2fc
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76263758"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548247"
 ---
 # <a name="notification-hubs-security"></a>Notification Hubs beveiliging
 
@@ -36,7 +36,7 @@ Notification Hubs implementeert een beveiligings schema op entiteits niveau met 
 Wanneer u een hub maakt, worden er automatisch twee regels gemaakt: één met **Luister** rechten (die de client-app gebruikt) en één met **alle** rechten (die de app-back-end gebruikt):
 
 - **DefaultListenSharedAccessSignature**: verleent alleen **listen** -machtiging.
-- **DefaultFullSharedAccessSignature**: verleent machtigingen voor **Luis teren**, **beheren**en **verzenden** . Dit beleid wordt alleen gebruikt in de back-end van uw app. Gebruik het niet in client toepassingen. Gebruik een beleid met alleen toegang voor **Luis teren** . Zie [SAS-tokens voor toegangs beleid](#sas-tokens-for-access-policies) verderop in dit artikel voor meer informatie over het maken van een nieuw aangepast toegangs beleid met een nieuwe SAS-token.
+- **DefaultFullSharedAccessSignature**: verleent machtigingen voor **Luis teren**, **beheren** en **verzenden** . Dit beleid wordt alleen gebruikt in de back-end van uw app. Gebruik het niet in client toepassingen. Gebruik een beleid met alleen toegang voor **Luis teren** . Zie [SAS-tokens voor toegangs beleid](#sas-tokens-for-access-policies) verderop in dit artikel voor meer informatie over het maken van een nieuw aangepast toegangs beleid met een nieuwe SAS-token.
 
 Bij het uitvoeren van registratie beheer vanuit client-apps, als de gegevens die via meldingen worden verzonden, niet gevoelig zijn (bijvoorbeeld weer updates), een veelgebruikte manier om toegang te krijgen tot een notification hub is de sleutel waarde van de regel alleen-lezen toegang tot de client-app te geven en de sleutel waarde van de regel volledige toegang te geven tot de back-end van de app.
 
@@ -46,9 +46,9 @@ De sleutel met **listen** -toegang kan een client-app voor elk label registreren
 
 ## <a name="security-claims"></a>Beveiligings claims
 
-Net als andere entiteiten zijn notification hub-bewerkingen toegestaan voor drie beveiligings claims: **Luis teren**, **verzenden**en **beheren**.
+Net als andere entiteiten zijn notification hub-bewerkingen toegestaan voor drie beveiligings claims: **Luis teren**, **verzenden** en **beheren**.
 
-| Claim   | Beschrijving                                          | Toegestane bewerkingen |
+| Claim   | Description                                          | Toegestane bewerkingen |
 | ------- | ---------------------------------------------------- | ------------------ |
 | Luisteren  | Enkelvoudige registraties maken/bijwerken, lezen en verwijderen | Registratie maken/bijwerken<br><br>Registratie lezen<br><br>Alle registraties voor een ingang lezen<br><br>Registratie verwijderen |
 | Verzenden    | Berichten verzenden naar de notification hub                | Bericht verzenden |
@@ -64,14 +64,14 @@ Gebruik het toegangs beleid op naam ruimte niveau (referenties) voor bewerkingen
 
 Ga als volgt te werk om een nieuwe beveiligings claim te maken of om bestaande SAS-sleutels weer te geven:
 
-1. Meld u aan bij Azure Portal.
+1. Meld u aan bij de Azure-portal.
 2. Selecteer **Alle resources**.
 3. Selecteer de naam van de notification hub waarvoor u de claim wilt maken of Bekijk de SAS-sleutel.
 4. Selecteer in het linkermenu **toegangs beleid**.
 5. Selecteer **Nieuw beleid** om een nieuwe beveiligings claim te maken. Geef het beleid een naam en selecteer de machtigingen die u wilt verlenen. Selecteer vervolgens **OK**.
 6. De volledige connection string (inclusief de nieuwe SAS-sleutel) wordt weer gegeven in het venster toegangs beleid. U kunt deze teken reeks naar het klem bord kopiëren voor later gebruik.
 
-Als u de SAS-sleutel uit een specifiek beleid wilt extra heren, selecteert u de knop **kopiëren** naast het beleid met de gewenste SAS-sleutel. Plak deze waarde op een tijdelijke locatie en kopieer vervolgens het SAS-sleutel gedeelte van de connection string. In dit voor beeld wordt gebruikgemaakt van een Notification Hubs naam ruimte met de naam **mytestnamespace1**en een beleid met de naam **policy2**. De SAS-sleutel is de waarde aan het einde van de teken reeks, opgegeven door **SharedAccessKey**:
+Als u de SAS-sleutel uit een specifiek beleid wilt extra heren, selecteert u de knop **kopiëren** naast het beleid met de gewenste SAS-sleutel. Plak deze waarde op een tijdelijke locatie en kopieer vervolgens het SAS-sleutel gedeelte van de connection string. In dit voor beeld wordt gebruikgemaakt van een Notification Hubs naam ruimte met de naam **mytestnamespace1** en een beleid met de naam **policy2**. De SAS-sleutel is de waarde aan het einde van de teken reeks, opgegeven door **SharedAccessKey**:
 
 ```shell
 Endpoint=sb://mytestnamespace1.servicebus.windows.net/;SharedAccessKeyName=policy2;SharedAccessKey=<SAS key value here>

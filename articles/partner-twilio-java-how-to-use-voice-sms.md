@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 11/25/2014
 ms.author: gwallace
 ms.custom: devx-track-java
-ms.openlocfilehash: 5e44ae3280d3ca0f8d5052be10d0955ba342352f
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: e7ff925534a9cab6523097f84a8ae199e9cb83eb
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97652871"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548723"
 ---
 # <a name="how-to-use-twilio-for-voice-and-sms-capabilities-in-java"></a>Twilio gebruiken voor spraak-en SMS-mogelijkheden in Java
 In deze hand leiding wordt gedemonstreerd hoe u veelvoorkomende programmeer taken uitvoert met de Twilio API-service in Azure. De besproken scenario's zijn onder andere het maken van een telefoon oproep en het verzenden van een SMS-bericht (Short Message Service). Zie de sectie [volgende stappen](#NextSteps) voor meer informatie over Twilio en het gebruik van spraak en SMS in uw toepassingen.
@@ -76,7 +76,7 @@ Wanneer u zich aanmeldt voor een Twilio-account, ontvangt u een account-ID en ee
 
 ## <a name="create-a-java-application"></a><a id="create_app"></a>Een Java-toepassing maken
 1. Haal het Twilioe JAR op en voeg deze toe aan uw Java-build-pad en uw WAR-implementatie-assembly. [https://github.com/twilio/twilio-java][twilio_java]U kunt de GitHub-bronnen downloaden en uw eigen jar maken, of een vooraf gebouwde jar (met of zonder afhankelijkheden) downloaden.
-2. Zorg ervoor dat de JDK van de **cacerts** -opslag bevat het certificaat voor de Equifax Secure Certificate Authority met MD5-vinger afdruk 67: CB: 9D: C0:13:24:8 bis: 82:9b: B2:17:1e: D1:1b: EC: D4 (het serie nummer is 35: de: F4: CF en de SHA1-vinger afdruk is D2:32:09: AD: 23: D3:14:23::................ Dit is het certificaat van de certificerings instantie (CA) voor de [https://api.twilio.com][twilio_api_service] service, die wordt aangeroepen wanneer u Twilio-api's gebruikt. Zie [een certificaat toevoegen aan het certificaat archief van de Java-ca][add_ca_cert]voor meer informatie over het controleren van de **cacerts** -jdk van uw computer met het juiste CA-certificaat.
+2. Zorg ervoor dat de JDK van de **cacerts** -opslag bevat het certificaat voor de Equifax Secure Certificate Authority met MD5-vinger afdruk 67: CB: 9D: C0:13:24:8 bis: 82:9b: B2:17:1e: D1:1b: EC: D4 (het serie nummer is 35: de: F4: CF en de SHA1-vinger afdruk is D2:32:09: AD: 23: D3:14:23::................ Dit is het certificaat van de certificerings instantie (CA) voor de [https://api.twilio.com][twilio_api_service] service, die wordt aangeroepen wanneer u Twilio-api's gebruikt.
 
 Gedetailleerde instructies voor het gebruik van de Twilio-client bibliotheek voor Java zijn beschikbaar voor [het maken van een telefoon oproep met behulp van Twilio in een Java-toepassing in azure][howto_phonecall_java].
 
@@ -217,7 +217,6 @@ Nu u de basis principes van de Twilio-service hebt geleerd, volgt u deze koppeli
 
 [twilio_java]: https://github.com/twilio/twilio-java
 [twilio_api_service]: https://api.twilio.com
-[add_ca_cert]: /azure/developer/java/sdk/java-sdk-add-certificate-ca-store
 [howto_phonecall_java]: partner-twilio-java-phone-call-example.md
 [misc_role_config_settings]: /previous-versions/azure/hh690945(v=azure.100)
 [twimlet_message_url]: https://twimlets.com/message

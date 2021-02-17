@@ -3,19 +3,19 @@ title: Gebruikers uitnodigen voor Video Indexer - Azure
 titleSuffix: Azure Media Services
 description: In dit artikel wordt uitgelegd hoe u gebruikers kunt uitnodigen voor Video Indexer.
 services: media-services
-author: ReutAmior
+author: Juliako
 manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: quickstart
-ms.date: 10/01/2019
+ms.date: 02/03/2021
 ms.author: juliako
-ms.openlocfilehash: 4023f8584e7b901a19906235d98982abbbfbaaf8
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
-ms.translationtype: HT
+ms.openlocfilehash: 7d3415ffad4820d8651841398ec6d47352869ce2
+ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92364134"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100534736"
 ---
 # <a name="quickstart-invite-users-to-video-indexer"></a>Snelstart: Gebruikers uitnodigen voor Video Indexer
 
@@ -29,26 +29,33 @@ Als u wilt samenwerken met uw collega’s, kunt u hen uitnodigen voor uw Video I
 1. Registreer u op de [Video Indexer](https://www.videoindexer.ai/)-website. Zorg ervoor dat u bent verbonden met een beheerdersaccount.
 1. Als u de beheerder bent, ziet u in de rechterbovenhoek de knop **Account delen**. Klik op de knop om gebruikers uit te nodigen. 
 
-   ![Nieuwe gebruikers uitnodigen](./media/invite-users/share-account.png)
-1. Voeg de e-mailadressen toe van de personen die u wilt toevoegen aan uw Video Indexer-account:
+    :::image type="content" source="./media/invite-users/share-account.png" alt-text="Uw account delen":::
+1. Voer in het dialoog venster **dit account delen met anderen** een e-mail adres in van een persoon die u wilt uitnodigen voor uw video indexer account:
 
-    ![Gebruikers uitnodigen voor dit account](./media/invite-users/invite-to-account.png)
-        
-    >[!NOTE]
-    > Alle gebruikers die u uitnodigt, hebben lees- en schrijfbevoegdheden voor alle video's in uw account.
-1. De gebruikers die u hebt uitgenodigd, krijgen een e-mail met een link en krijgen toegang tot het account zodra ze op de link **Deelnemen aan Video Indexer** klikken:
+    :::image type="content" source="./media/invite-users/share-account-others.png" alt-text="Gebruikers uitnodigen voor dit account":::  
+1. Nadat u op **uitnodigen** hebt geklikt, wordt de persoon toegevoegd aan de lijst met openstaande uitnodigingen. <br/>U kunt kiezen uit twee opties voor elke uitnodigingen die nog niet zijn toegevoegd aan het account: **Verwijder de uitnodiging** of **Kopieer de uitnodigings-URL**.
 
-    ![Bevestiging](./media/invite-users/invite-msg.png)
+    :::image type="content" source="./media/invite-users/invites-pending.png" alt-text="Uitnodigingen in behandeling":::  
+1. Zodra de uitnodiging aan het account is toegevoegd, ziet u drie opties waaruit u kunt kiezen. Twee opties voor rollen: **Inzender** (standaard) of **eigenaar**. Van kunt u ervoor kiezen om de uitnodiging te verwijderen door op **verwijderen** te drukken.
 
-    De gebruiker moet klikken op de deelname-link om toegang te krijgen tot het account. 
+    :::image type="content" source="./media/invite-users/joined-invitee-options.png" alt-text="Lid van een uitnodiging":::  
 
-## <a name="removing-existing-users"></a>Bestaande gebruikers verwijderen
+    Gebruikers ontvangen geen melding bij het verwijderen. Nadat de gebruikers zijn verwijderd, krijgen zij geen toestemming meer om zich aan te melden.
 
-Als u gebruikers wilt verwijderen die toegang hebben tot uw account, kunt u klikken op het **X** -teken naast de naam:
+## <a name="manage-roles-invite-more-users"></a>Rollen beheren, meer gebruikers uitnodigen
 
-![Gebruikers verwijderen](./media/invite-users/remove-users.png)
+Naast het dialoog venster **deze account delen met anderen** door te klikken op **share account** (zoals hierboven beschreven), kunt u dit doen via **instellingen**.
 
-Gebruikers ontvangen geen melding bij het verwijderen. Nadat de gebruikers zijn verwijderd, krijgen zij geen toestemming meer om zich aan te melden.
+1. Klik op de knop **instellingen** in het geopende account. 
+
+    :::image type="content" source="./media/invite-users/settings.png" alt-text="Accountinstellingen":::  
+1. Klik op de knop **rollen beheren** .
+1. Als u nog een gebruiker wilt uitnodigen, klikt **u op meer personen uitnodigen voor dit account**.
+
+    :::image type="content" source="./media/invite-users/invite-more-people.png" alt-text="Meer gebruikers uitnodigen":::  
+1. Zodra u **meer personen uitnodigen voor dit account** hebt ingedrukt, wordt het dialoog venster uitnodigen weer gegeven
+ 
+    :::image type="content" source="./media/invite-users/share-account-others.png" alt-text="Gebruikers uitnodigen voor dit account":::  
 
 ## <a name="next-steps"></a>Volgende stappen
 

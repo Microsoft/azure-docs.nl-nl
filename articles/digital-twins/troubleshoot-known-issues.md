@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.service: digital-twins
 ms.date: 07/14/2020
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 118b869cb97a7dd3ce65566a994a27d2a65a7402
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 49c790ae92537ab72fb9848ed4e57e222ef11d79
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98184931"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100545680"
 ---
 # <a name="known-issues-in-azure-digital-twins"></a>Bekende problemen in azure Digital Apparaatdubbels
 
@@ -30,8 +30,6 @@ Dit artikel bevat informatie over bekende problemen met Azure Digital Apparaatdu
 ## <a name="missing-role-assignment-after-scripted-setup"></a>Roltoewijzing ontbreekt na installatie van script
 
 **Beschrijving van probleem:** Sommige gebruikers kunnen problemen ondervinden met het toewijzings deel van de functie [*: een exemplaar en verificatie instellen (script)*](how-to-set-up-instance-scripted.md). Het script geeft geen fout aan, maar de rol van de *Azure Digital apparaatdubbels-gegevens eigenaar* is niet aan de gebruiker toegewezen. dit probleem heeft gevolgen voor de mogelijkheid om nog andere resources te maken.
-
-[!INCLUDE [digital-twins-role-rename-note.md](../../includes/digital-twins-role-rename-note.md)]
 
 | Is dit van invloed op mij? | Oorzaak | Oplossing |
 | --- | --- | --- |

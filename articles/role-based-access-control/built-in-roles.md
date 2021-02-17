@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 02/01/2021
+ms.date: 02/15/2021
 ms.custom: generated
-ms.openlocfilehash: 384d00ee41f2b6bfc2e91815bfcf54819c7d9ab2
-ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.openlocfilehash: d9a2667907108cfb4c8d7a2a2c9b1558e02a9110
+ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99809370"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100535124"
 ---
 # <a name="azure-built-in-roles"></a>Ingebouwde Azure-rollen
 
@@ -176,15 +176,15 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Azure Sentinel Contributor](#azure-sentinel-contributor) | Azure Sentinel Contributor | ab8e14d6-4a74-4a29-9ba8-549422addade |
 > | [Azure Sentinel Reader](#azure-sentinel-reader) | Azure Sentinel Reader | 8d289c81-5878-46d4-8554-54e1e3d8b5cb |
 > | [Azure Sentinel Responder](#azure-sentinel-responder) | Azure Sentinel Responder | 3e150937-b8fe-4cfb-8069-0eaf05ecd056 |
-> | [Key Vault beheerder (preview-versie)](#key-vault-administrator-preview) | Alle gegevenslaag bewerkingen uitvoeren op een sleutel kluis en alle objecten hierin, met inbegrip van certificaten, sleutels en geheimen. Kan geen sleutel kluis resources beheren of roltoewijzingen beheren. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | 00482a5a-887f-4fb3-b363-3b7fe8e74483 |
-> | [Key Vaulte-certificerings instanties (preview-versie)](#key-vault-certificates-officer-preview) | Acties uitvoeren op de certificaten van een sleutel kluis, met uitzonde ring van machtigingen beheren. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | a4417e6f-fecd-4de8-b567-7b0420556985 |
+> | [Key Vault beheerder](#key-vault-administrator) | Alle gegevenslaag bewerkingen uitvoeren op een sleutel kluis en alle objecten hierin, met inbegrip van certificaten, sleutels en geheimen. Kan geen sleutel kluis resources beheren of roltoewijzingen beheren. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | 00482a5a-887f-4fb3-b363-3b7fe8e74483 |
+> | [Key Vault-certificerings medewerker](#key-vault-certificates-officer) | Acties uitvoeren op de certificaten van een sleutel kluis, met uitzonde ring van machtigingen beheren. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | a4417e6f-fecd-4de8-b567-7b0420556985 |
 > | [Inzender Key Vault](#key-vault-contributor) | Sleutel kluizen beheren, maar u kunt geen rollen toewijzen in azure RBAC en biedt geen toegang tot geheimen, sleutels of certificaten. | f25e0fa2-a7c8-4377-a976-54943a77a395 |
-> | [Key Vault crypto-functionaris (preview-versie)](#key-vault-crypto-officer-preview) | Acties uitvoeren op de sleutels van een sleutel kluis, met uitzonde ring van machtigingen beheren. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | 14b46e9e-c2b7-41b4-b07b-48a6ebf60603 |
-> | [Versleuteling van gebruiker van crypto-service Key Vault (preview-versie)](#key-vault-crypto-service-encryption-user-preview) | Lees de meta gegevens van sleutels en voer terugloop/uitlopende bewerkingen uit. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | e147488a-f6f5-4113-8e2d-b22465e65bf6 |
-> | [Key Vault crypto grafie-gebruiker (preview-versie)](#key-vault-crypto-user-preview) | Voer cryptografische bewerkingen uit met behulp van sleutels. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | 12338af0-0e69-4776-bea7-57ae8d297424 |
-> | [Key Vault lezer (preview-versie)](#key-vault-reader-preview) | Lees de meta gegevens van sleutel kluizen en de bijbehorende certificaten, sleutels en geheimen. Kan geen gevoelige waarden lezen, zoals geheime inhoud of sleutel materiaal. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | 21090545-7ca7-4776-b22c-e363652d74d2 |
-> | [Key Vaulte geheimen-auditeur (preview-versie)](#key-vault-secrets-officer-preview) | Acties uitvoeren op de geheimen van een sleutel kluis, met uitzonde ring van machtigingen beheren. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | b86a8fe4-44ce-4948-aee5-eccb2c155cd7 |
-> | [Key Vault geheimen gebruiker (preview-versie)](#key-vault-secrets-user-preview) | Geheime inhoud lezen. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | 4633458b-17de-408a-b874-0445c86b69e6 |
+> | [Crypto medewerker Key Vault](#key-vault-crypto-officer) | Acties uitvoeren op de sleutels van een sleutel kluis, met uitzonde ring van machtigingen beheren. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | 14b46e9e-c2b7-41b4-b07b-48a6ebf60603 |
+> | [Versleutelings gebruiker van crypto grafie-service Key Vault](#key-vault-crypto-service-encryption-user) | Lees de meta gegevens van sleutels en voer terugloop/uitlopende bewerkingen uit. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | e147488a-f6f5-4113-8e2d-b22465e65bf6 |
+> | [Gebruiker van crypto grafie Key Vault](#key-vault-crypto-user) | Voer cryptografische bewerkingen uit met behulp van sleutels. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | 12338af0-0e69-4776-bea7-57ae8d297424 |
+> | [Key Vault lezer](#key-vault-reader) | Lees de meta gegevens van sleutel kluizen en de bijbehorende certificaten, sleutels en geheimen. Kan geen gevoelige waarden lezen, zoals geheime inhoud of sleutel materiaal. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | 21090545-7ca7-4776-b22c-e363652d74d2 |
+> | [Functionaris voor Key Vault geheimen](#key-vault-secrets-officer) | Acties uitvoeren op de geheimen van een sleutel kluis, met uitzonde ring van machtigingen beheren. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | b86a8fe4-44ce-4948-aee5-eccb2c155cd7 |
+> | [Key Vault geheimen gebruiker](#key-vault-secrets-user) | Geheime inhoud lezen. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | 4633458b-17de-408a-b874-0445c86b69e6 |
 > | [Beheerde HSM-Inzender](#managed-hsm-contributor) | Hiermee kunt u beheerde HSM-groepen beheren, maar niet de toegang tot de Pools. | 18500a29-7fe2-46b2-a342-b16a415e101d |
 > | [Beveiligingsbeheerder](#security-admin) | Machtigingen voor Security Center weer geven en bijwerken. Dezelfde machtigingen als de rol van beveiligings lezer en kunnen ook het beveiligings beleid bijwerken en waarschuwingen en aanbevelingen negeren. | fb1c8493-542b-48eb-b624-b4c8fea62acd |
 > | [Inzender voor beveiligings beoordeling](#security-assessment-contributor) | Hiermee kunt u evaluaties naar Security Center pushen | 612c2aa1-cb24-443b-ac28-3ab7272de6f5 |
@@ -2175,8 +2175,9 @@ Azure Storage containers en blobs lezen, schrijven en verwijderen. Zie [machtigi
 > | **DataActions** |  |
 > | [Micro soft. Storage](resource-provider-operations.md#microsoftstorage)/storageAccounts/blobServices/containers/blobs/Delete | Een BLOB verwijderen. |
 > | [Micro soft. Storage](resource-provider-operations.md#microsoftstorage)/storageAccounts/blobServices/containers/blobs/Read | Een BLOB of een lijst met blobs retour neren. |
-> | [Micro soft. Storage](resource-provider-operations.md#microsoftstorage)/storageAccounts/blobServices/containers/blobs/Move/Action | Verplaatst de blob van het ene pad naar het andere |
 > | [Micro soft. Storage](resource-provider-operations.md#microsoftstorage)/storageAccounts/blobServices/containers/blobs/write | Schrijven naar een blob. |
+> | [Micro soft. Storage](resource-provider-operations.md#microsoftstorage)/storageAccounts/blobServices/containers/blobs/Move/Action | Verplaatst de blob van het ene pad naar het andere |
+> | [Micro soft. Storage](resource-provider-operations.md#microsoftstorage)/storageAccounts/blobServices/containers/blobs/add/Action | Retourneert het resultaat van het toevoegen van blob-inhoud |
 > | **NotDataActions** |  |
 > | *geen* |  |
 
@@ -2200,8 +2201,9 @@ Azure Storage containers en blobs lezen, schrijven en verwijderen. Zie [machtigi
       "dataActions": [
         "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete",
         "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
+        "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write",
         "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/move/action",
-        "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write"
+        "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/add/action"
       ],
       "notDataActions": []
     }
@@ -4399,6 +4401,8 @@ Hiermee kunt u het beveiligings beleid van SQL-servers en-data bases beheren, ma
 > | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/managedInstances/Read | De lijst met beheerde exemplaren retour neren of de eigenschappen van het opgegeven beheerde exemplaar ophalen. |
 > | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/managedInstances/azureADOnlyAuthentications/* |  |
 > | [Micro soft. Security](resource-provider-operations.md#microsoftsecurity)/sqlVulnerabilityAssessments/* |  |
+> | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/managedInstances/Administrators/Read | Hiermee wordt een lijst met beheerders van beheerde instanties opgehaald. |
+> | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/servers/Administrators/Read | Hiermee wordt een specifiek Azure Active Directory-beheer object opgehaald |
 > | **NotActions** |  |
 > | *geen* |  |
 > | **DataActions** |  |
@@ -4461,7 +4465,9 @@ Hiermee kunt u het beveiligings beleid van SQL-servers en-data bases beheren, ma
         "Microsoft.Sql/servers/azureADOnlyAuthentications/*",
         "Microsoft.Sql/managedInstances/read",
         "Microsoft.Sql/managedInstances/azureADOnlyAuthentications/*",
-        "Microsoft.Security/sqlVulnerabilityAssessments/*"
+        "Microsoft.Security/sqlVulnerabilityAssessments/*",
+        "Microsoft.Sql/managedInstances/administrators/read",
+        "Microsoft.Sql/servers/administrators/read"
       ],
       "notActions": [],
       "dataActions": [],
@@ -7562,7 +7568,7 @@ Azure Sentinel responder [meer informatie](../sentinel/roles.md)
 }
 ```
 
-### <a name="key-vault-administrator-preview"></a>Key Vault beheerder (preview-versie)
+### <a name="key-vault-administrator"></a>Key Vault beheerder
 
 Alle gegevenslaag bewerkingen uitvoeren op een sleutel kluis en alle objecten hierin, met inbegrip van certificaten, sleutels en geheimen. Kan geen sleutel kluis resources beheren of roltoewijzingen beheren. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '.
 
@@ -7615,13 +7621,13 @@ Alle gegevenslaag bewerkingen uitvoeren op een sleutel kluis en alle objecten hi
       "notDataActions": []
     }
   ],
-  "roleName": "Key Vault Administrator (preview)",
+  "roleName": "Key Vault Administrator",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
 ```
 
-### <a name="key-vault-certificates-officer-preview"></a>Key Vaulte-certificerings instanties (preview-versie)
+### <a name="key-vault-certificates-officer"></a>Key Vault-certificerings medewerker
 
 Acties uitvoeren op de certificaten van een sleutel kluis, met uitzonde ring van machtigingen beheren. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '.
 
@@ -7676,7 +7682,7 @@ Acties uitvoeren op de certificaten van een sleutel kluis, met uitzonde ring van
       "notDataActions": []
     }
   ],
-  "roleName": "Key Vault Certificates Officer (preview)",
+  "roleName": "Key Vault Certificates Officer",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
@@ -7737,7 +7743,7 @@ Sleutel kluizen beheren, maar u kunt geen rollen toewijzen in azure RBAC en bied
 }
 ```
 
-### <a name="key-vault-crypto-officer-preview"></a>Key Vault crypto-functionaris (preview-versie)
+### <a name="key-vault-crypto-officer"></a>Crypto medewerker Key Vault
 
 Acties uitvoeren op de sleutels van een sleutel kluis, met uitzonde ring van machtigingen beheren. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '.
 
@@ -7790,13 +7796,13 @@ Acties uitvoeren op de sleutels van een sleutel kluis, met uitzonde ring van mac
       "notDataActions": []
     }
   ],
-  "roleName": "Key Vault Crypto Officer (preview)",
+  "roleName": "Key Vault Crypto Officer",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
 ```
 
-### <a name="key-vault-crypto-service-encryption-user-preview"></a>Versleuteling van gebruiker van crypto-service Key Vault (preview-versie)
+### <a name="key-vault-crypto-service-encryption-user"></a>Versleutelings gebruiker van crypto grafie-service Key Vault
 
 Lees de meta gegevens van sleutels en voer terugloop/uitlopende bewerkingen uit. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '.
 
@@ -7839,13 +7845,13 @@ Lees de meta gegevens van sleutels en voer terugloop/uitlopende bewerkingen uit.
       "notDataActions": []
     }
   ],
-  "roleName": "Key Vault Crypto Service Encryption User (preview)",
+  "roleName": "Key Vault Crypto Service Encryption User",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
 ```
 
-### <a name="key-vault-crypto-user-preview"></a>Key Vault crypto grafie-gebruiker (preview-versie)
+### <a name="key-vault-crypto-user"></a>Gebruiker van crypto grafie Key Vault
 
 Voer cryptografische bewerkingen uit met behulp van sleutels. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '.
 
@@ -7894,13 +7900,13 @@ Voer cryptografische bewerkingen uit met behulp van sleutels. Werkt alleen voor 
       "notDataActions": []
     }
   ],
-  "roleName": "Key Vault Crypto User (preview)",
+  "roleName": "Key Vault Crypto User",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
 ```
 
-### <a name="key-vault-reader-preview"></a>Key Vault lezer (preview-versie)
+### <a name="key-vault-reader"></a>Key Vault lezer
 
 Lees de meta gegevens van sleutel kluizen en de bijbehorende certificaten, sleutels en geheimen. Kan geen gevoelige waarden lezen, zoals geheime inhoud of sleutel materiaal. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '.
 
@@ -7955,13 +7961,13 @@ Lees de meta gegevens van sleutel kluizen en de bijbehorende certificaten, sleut
       "notDataActions": []
     }
   ],
-  "roleName": "Key Vault Reader (preview)",
+  "roleName": "Key Vault Reader",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
 ```
 
-### <a name="key-vault-secrets-officer-preview"></a>Key Vaulte geheimen-auditeur (preview-versie)
+### <a name="key-vault-secrets-officer"></a>Functionaris voor Key Vault geheimen
 
 Acties uitvoeren op de geheimen van een sleutel kluis, met uitzonde ring van machtigingen beheren. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '.
 
@@ -8014,13 +8020,13 @@ Acties uitvoeren op de geheimen van een sleutel kluis, met uitzonde ring van mac
       "notDataActions": []
     }
   ],
-  "roleName": "Key Vault Secrets Officer (preview)",
+  "roleName": "Key Vault Secrets Officer",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
 ```
 
-### <a name="key-vault-secrets-user-preview"></a>Key Vault geheimen gebruiker (preview-versie)
+### <a name="key-vault-secrets-user"></a>Key Vault geheimen gebruiker
 
 Geheime inhoud lezen. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '.
 
@@ -8055,7 +8061,7 @@ Geheime inhoud lezen. Werkt alleen voor sleutel kluizen die gebruikmaken van het
       "notDataActions": []
     }
   ],
-  "roleName": "Key Vault Secrets User (preview)",
+  "roleName": "Key Vault Secrets User",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }

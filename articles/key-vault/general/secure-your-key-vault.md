@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: sudbalas
-ms.openlocfilehash: f82c7060f703aff6c19f0082454779b8fea1ba76
-ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
+ms.openlocfilehash: 552aad3e3b41bcfd55d1b57a53d8dff2080a6210
+ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100526252"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100534699"
 ---
 # <a name="secure-access-to-a-key-vault"></a>Veilige toegang tot een sleutelkluis
 
@@ -182,13 +182,13 @@ We moeten de volgende bewerkingen voor onze rollen autoriseren:
 
 De volgende tabel bevat een overzicht van de toegangs machtigingen voor onze rollen en toepassingen.
 
-| Rol | Machtigingen voor de beheerlaag | Machtigingen voor gegevens vlak: beleid voor kluis toegang | Machtigingen voor gegevens vlak-Azure RBAC (preview-versie)  |
+| Rol | Machtigingen voor de beheerlaag | Machtigingen voor gegevens vlak: beleid voor kluis toegang | Machtigingen voor gegevens vlak-Azure RBAC  |
 | --- | --- | --- | --- |
-| Beveiligingsteam | [Inzender Key Vault](../../role-based-access-control/built-in-roles.md#key-vault-contributor) | Certificaten: alle bewerkingen <br> Sleutels: alle bewerkingen <br> Geheimen: alle bewerkingen | [Key Vault beheerder (preview-versie)](../../role-based-access-control/built-in-roles.md#key-vault-administrator-preview) |
+| Beveiligingsteam | [Inzender Key Vault](../../role-based-access-control/built-in-roles.md#key-vault-contributor) | Certificaten: alle bewerkingen <br> Sleutels: alle bewerkingen <br> Geheimen: alle bewerkingen | [Key Vault beheerder](../../role-based-access-control/built-in-roles.md#key-vault-administrator) |
 | Ontwikkel aars en &nbsp; Opera tors | Machtiging voor Key Vault implementeren<br><br> **Opmerking**: met deze machtiging kunnen geïmplementeerde vm's worden gebruikt voor het ophalen van geheimen uit een sleutel kluis. | Geen | Geen |
-| Auditors | Geen | Certificaten: lijst <br> Sleutels: weergeven<br>Geheimen: weergeven<br><br> **Opmerking**: met deze machtiging kunnen Audi tors kenmerken (tags, activerings datums, verval datums) controleren op sleutels en geheimen die niet in de logboeken zijn verzonden. | [Key Vault lezer (preview-versie)](../../role-based-access-control/built-in-roles.md#key-vault-reader-preview) |
-| Azure Storage-account | Geen | Sleutels: Get, List, wrapKey, sleutel uitpakken <br> | [Versleutelings gebruiker van crypto grafie-service Key Vault](../../role-based-access-control/built-in-roles.md#key-vault-crypto-service-encryption-user-preview) |
-| Toepassing | Geen | Geheimen: ophalen, lijst <br> Certificaten: ophalen, lijst | [Key Vault lezer (preview)](../../role-based-access-control/built-in-roles.md#key-vault-reader-preview), [Key Vault geheime gebruiker (preview-versie)](../../role-based-access-control/built-in-roles.md#key-vault-secrets-user-preview) |
+| Auditors | Geen | Certificaten: lijst <br> Sleutels: weergeven<br>Geheimen: weergeven<br><br> **Opmerking**: met deze machtiging kunnen Audi tors kenmerken (tags, activerings datums, verval datums) controleren op sleutels en geheimen die niet in de logboeken zijn verzonden. | [Key Vault lezer](../../role-based-access-control/built-in-roles.md#key-vault-reader) |
+| Azure Storage-account | Geen | Sleutels: Get, List, wrapKey, sleutel uitpakken <br> | [Versleutelings gebruiker van crypto grafie-service Key Vault](../../role-based-access-control/built-in-roles.md#key-vault-crypto-service-encryption-user) |
+| Toepassing | Geen | Geheimen: ophalen, lijst <br> Certificaten: ophalen, lijst | [Key Vault lezer](../../role-based-access-control/built-in-roles.md#key-vault-reader), [Key Vault geheime gebruiker](../../role-based-access-control/built-in-roles.md#key-vault-secrets-user) |
 
 De drie team rollen hebben toegang tot andere resources, samen met Key Vault machtigingen. Ontwikkel aars en Opera tors hebben toegang nodig om Vm's (of de Web Apps-functie van Azure App Service) te implementeren. Audi tors hebben lees toegang nodig tot het opslag account waarin de Key Vault logboeken worden opgeslagen.
 

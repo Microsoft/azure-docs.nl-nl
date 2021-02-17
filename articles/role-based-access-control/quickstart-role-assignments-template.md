@@ -1,5 +1,5 @@
 ---
-title: 'Quickstart: Een Azure-roltoewijzing toevoegen met behulp van een Azure Resource Manager-sjabloon - Azure RBAC'
+title: 'Snelstartgids: een Azure-rol toewijzen met behulp van een Azure Resource Manager sjabloon-Azure RBAC'
 description: Lees meer informatie over het verlenen van toegang tot Azure-resources voor een gebruiker in het bereik van een resourcegroep met behulp van Azure Resource Manager-sjablonen en op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC).
 services: role-based-access-control,azure-resource-manager
 author: rolyon
@@ -8,16 +8,16 @@ ms.service: role-based-access-control
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.workload: identity
-ms.date: 05/21/2020
+ms.date: 02/15/2021
 ms.author: rolyon
-ms.openlocfilehash: 622f37fa4fda20fdc854edf5cd7c192b4113c4e3
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 6e8f194cd85a3c381bdabf206777a99dce3c29b6
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88690439"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100559270"
 ---
-# <a name="quickstart-add-an-azure-role-assignment-using-an-arm-template"></a>Quickstart: Een Azure-roltoewijzing toevoegen met behulp van een ARM-sjabloon
+# <a name="quickstart-assign-an-azure-role-using-an-arm-template"></a>Snelstartgids: een Azure-rol toewijzen met behulp van een ARM-sjabloon
 
 Met [op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC)](overview.md) kunt u de toegang tot Azure-resources beheren. In deze quickstart maakt u een resourcegroep en verleent u een gebruiker toegang tot het maken en beheren van virtuele machines in de resourcegroep. In deze quickstart wordt gebruikgemaakt van een Azure Resource Manager-sjabloon (ARM-sjabloon) om de toegang te verlenen.
 
@@ -29,11 +29,11 @@ Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van A
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u roltoewijzingen wilt toevoegen, hebt u het volgende nodig:
+Als u Azure-rollen wilt toewijzen en roltoewijzingen wilt verwijderen, hebt u het volgende nodig:
 
 - Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 - Machtigingen voor `Microsoft.Authorization/roleAssignments/write` en `Microsoft.Authorization/roleAssignments/delete`, zoals [Beheerder van gebruikerstoegang](built-in-roles.md#user-access-administrator) of [Eigenaar](built-in-roles.md#owner)
-- Om een roltoewijzing toe te voegen, moet u drie elementen opgeven: beveiligingsprincipal, roldefinitie en bereik. Voor deze quickstart bent u of is een andere gebruiker de beveiligingsprincipal in uw map, is de roldefinitie [Inzender voor virtuele machines](built-in-roles.md#virtual-machine-contributor) en is het bereik de opgegeven resourcegroep.
+- Als u een rol wilt toewijzen, moet u drie elementen opgeven: beveiligingsprincipal, roldefinitie en bereik. Voor deze quickstart bent u of is een andere gebruiker de beveiligingsprincipal in uw map, is de roldefinitie [Inzender voor virtuele machines](built-in-roles.md#virtual-machine-contributor) en is het bereik de opgegeven resourcegroep.
 
 ## <a name="review-the-template"></a>De sjabloon controleren
 

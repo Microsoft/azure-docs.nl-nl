@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
 ms.custom: devx-track-python
-ms.openlocfilehash: b4455f21ae7243ab7a15e8d746d6674289f9fdb5
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
-ms.translationtype: HT
+ms.openlocfilehash: 56e92a698446bd417c74820d6da662ad9ee55c77
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953012"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555673"
 ---
 # <a name="tutorial-enable-authentication-in-a-python-web-application-with-azure-ad-b2c"></a>Zelfstudie: Verificatie inschakelen in een Python-webtoepassing met Azure AD B2C
 
@@ -185,4 +185,4 @@ In deze zelfstudie hebt u een Python Flask-webtoepassing geconfigureerd, zodat u
 Lees nu hoe u de gebruikersinterface kunt aanpassen van de gebruikersstroompagina's die voor uw gebruikers worden weergegeven door Azure AD B2C:
 
 > [!div class="nextstepaction"]
-> [Zelfstudie: De interface van de gebruikerservaring in Azure AD B2C aanpassen >](tutorial-customize-ui.md)
+> [De interface van gebruikers ervaringen aanpassen in Azure AD B2C >](customize-ui.md)

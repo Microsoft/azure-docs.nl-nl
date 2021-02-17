@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 10/19/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure certificates for Azure Stack Edge Pro R so I can use it to transfer data to Azure.
-ms.openlocfilehash: fad3e5dcb0ecda82f3fb35cadf1719a62c99bd97
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: abea192f209b968c6842e985620c067c93990687
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96464061"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548145"
 ---
 # <a name="tutorial-configure-certificates-for-your-azure-stack-edge-pro-r"></a>Zelfstudie: Certificaten voor uw Azure Stack Edge Pro R configureren
 
@@ -37,7 +37,7 @@ Zorg dat aan deze voorwaarden wordt voldaan voordat u uw Azure Stack Edge Pro R-
 
 * U hebt het fysieke apparaat geïnstalleerd zoals beschreven in [Azure Stack Edge Pro R installeren](azure-stack-edge-pro-r-deploy-install.md).
 * Als u van plan bent uw eigen certificaten te gebruiken:
-    - Zorg ervoor dat uw certificaten bij de hand hebt in de juiste indeling, inclusief het certificaat van de ondertekeningsketen. Ga voor meer informatie over het certificaat naar [Certificaten beheren](azure-stack-edge-j-series-manage-certificates.md)
+    - Zorg ervoor dat uw certificaten bij de hand hebt in de juiste indeling, inclusief het certificaat van de ondertekeningsketen. Ga voor meer informatie over het certificaat naar [Certificaten beheren](azure-stack-edge-gpu-manage-certificates.md)
 
 
 

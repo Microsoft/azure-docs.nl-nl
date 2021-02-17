@@ -1,20 +1,20 @@
 ### YamlMime:Landing
-title: Azure Arc Kubernetes (preview)
+title: Kubernetes met Azure Arc (preview)
 summary: Meer informatie over hoe u Kubernetes-clusters beheert met Azure Arc
 metadata:
-  title: Azure Arc Kubernetes
+  title: Kubernetes met Azure Arc
   description: Meer informatie over het beheren van on-premises machines in Azure
-  author: 
+  author: shashankbarsin
   ms.service: azure-arc
   ms.topic: landing-page
-  ms.date: 06/26/2020
-  ms.author: 
-  ms.openlocfilehash: 9eeddfefe451eb524484df8a1986c7ec736c4c0f
-  ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
-  ms.translationtype: HT
+  ms.date: 02/15/2021
+  ms.author: shasb
+  ms.openlocfilehash: 97343e8c23e202e70ec30bb0a522105889ea08b3
+  ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/18/2020
-  ms.locfileid: "97674369"
+  ms.lasthandoff: 02/17/2021
+  ms.locfileid: "100560230"
 landingContent:
 - title: Kubernetes-clusters verbinden met Azure met behulp van Azure Arc
   linkLists:
@@ -22,10 +22,22 @@ landingContent:
     links:
     - text: Wat is Kubernetes met Azure Arc?
       url: overview.md
+  - linkListType: concept
+    links:
+    - text: Agent architectuur
+      url: conceptual-agent-architecture.md
+    - text: Configuraties en GitOps
+      url: conceptual-configurations.md
+    - text: Veelgestelde vragen
+      url: faq.md
+- title: Aan de slag
+  linkLists:
   - linkListType: quickstart
     links:
     - text: Cluster verbinden
       url: connect-cluster.md
+- title: Clusters configureren, beheren en bewaken
+  linkLists:
   - linkListType: how-to-guide
     links:
     - text: Configuraties implementeren met GitOps

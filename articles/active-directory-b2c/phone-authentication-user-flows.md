@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/01/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 1ed0ca069f29413083356a3147d4b97f1b6ed981
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: dd21c1dca0dd54331780ba98f9c53d5b99d6b4e9
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99525192"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100557228"
 ---
 # <a name="set-up-phone-sign-up-and-sign-in-for-user-flows-preview"></a>Registratie van de telefoon en aanmelding voor gebruikers stromen instellen (preview-versie)
 
@@ -142,5 +142,5 @@ Nadat u aanmelding via de telefoon en aanmelding hebt ingeschakeld en de herstel
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Externe ID-providers toevoegen](tutorial-add-identity-providers.md)
+- [Externe ID-providers toevoegen](add-identity-provider.md)
 - [Een gebruikersstroom maken](tutorial-create-user-flows.md)

@@ -3,17 +3,17 @@ title: De beschik baarheid van Azure Cosmos-Sdk's in multiregionale omgevingen v
 description: Meer informatie over de beschik baarheid van Azure Cosmos SDK als u in meerdere regionale omgevingen werkt.
 author: ealsur
 ms.service: cosmos-db
-ms.date: 10/20/2020
+ms.date: 02/16/2021
 ms.author: maquaran
 ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: b1c2377ba26b4ca64f5028fb1a51ca4e64f6a67c
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 34c6e7ad8473f02f2772c84ea63aee2a41b97306
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93097886"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100559689"
 ---
 # <a name="diagnose-and-troubleshoot-the-availability-of-azure-cosmos-sdks-in-multiregional-environments"></a>De beschik baarheid van Azure Cosmos-Sdk's in multiregionale omgevingen vaststellen en oplossen
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -35,7 +35,7 @@ Wanneer u de regionale voor keur instelt, zal de client verbinding maken met een
 | Enkele schrijf regio | Voorkeursregio | Primaire regio  |
 | Meerdere schrijf regio's | Voorkeursregio | Voorkeursregio  |
 
-Als u **geen voorkeurs regio instelt** , wordt de SDK-client standaard ingesteld op de primaire regio:
+Als u **geen voorkeurs regio instelt**, wordt de SDK-client standaard ingesteld op de primaire regio:
 
 |Accounttype |Leesbewerkingen |Schrijfbewerkingen |
 |------------------------|--|--|
@@ -51,7 +51,7 @@ In dergelijke gevallen worden logboeken door de client met de Azure Cosmos SDK b
 
 * De eigenschap *RequestDiagnosticsString* op antwoorden in de .NET v2-SDK.
 * De *Diagnostische* eigenschap voor antwoorden en uitzonde ringen in de .net v3 SDK.
-* De methode *getDiagnostics ()* voor antwoorden en uitzonde ringen in Java v4 SDK.
+* De methode *getDiagnostics ()* voor antwoorden en uitzonderingen in Java V4 SDK.
 
 Bij het bepalen van de volgende regio in de volg orde van voor keur, gebruikt de SDK-client de lijst met account regio's, waarbij de prioriteit van de gewenste regio's (indien van toepassing) kan worden bepaald.
 
@@ -83,9 +83,9 @@ Bij het gebruik van [sessie consistentie](consistency-levels.md#guarantees-assoc
 
 ## <a name="transient-connectivity-issues-on-tcp-protocol"></a>Problemen met de tijdelijke verbinding met het TCP-protocol
 
-In scenario's waarin de Azure Cosmos SDK-client is geconfigureerd voor het gebruik van het TCP-protocol voor een bepaalde aanvraag, kunnen er situaties zijn waarin de netwerk omstandigheden de communicatie met een bepaald eind punt tijdelijk beïnvloeden. Deze tijdelijke netwerk omstandigheden kunnen worden geoppereerd als TCP-time-outs. De client probeert de aanvraag gedurende enkele seconden lokaal uit te voeren op hetzelfde eind punt.
+In scenario's waarin de Azure Cosmos SDK-client is geconfigureerd voor het gebruik van het TCP-protocol voor een bepaalde aanvraag, kunnen er situaties zijn waarin de netwerk omstandigheden de communicatie met een bepaald eind punt tijdelijk beïnvloeden. Deze tijdelijke netwerk omstandigheden kunnen worden geoppereerd als TCP-time-outs en service niet beschikbaar (HTTP 503-fouten). De client probeert de aanvraag gedurende enkele seconden lokaal uit te voeren op hetzelfde eind punt voordat de fout wordt halen.
 
-Als de gebruiker een lijst met voorkeurs regio's heeft geconfigureerd met meer dan één regio en het Azure Cosmos-account meerdere schrijf regio's of één schrijf regio is en de bewerking een lees aanvraag is, probeert de client de ene bewerking in de volgende regio uit de voorkeurs lijst uit te voeren.
+Als de gebruiker een lijst met voorkeurs regio's heeft geconfigureerd met meer dan één regio en het Azure Cosmos-account meerdere schrijf regio's of een enkele schrijf regio is en de bewerking een lees aanvraag is, detecteert de client de lokale fout en probeert die ene bewerking in de volgende regio uit de voorkeurs lijst uit te voeren.
 
 ## <a name="next-steps"></a>Volgende stappen
 

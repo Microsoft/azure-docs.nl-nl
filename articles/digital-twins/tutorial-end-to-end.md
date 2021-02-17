@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 5ef06f2db487a3e6d897e26758da840f37c3ecaf
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: cff40385edc89c0f6d2d105d089b66c046b0c04b
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575802"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100545935"
 ---
 # <a name="tutorial-build-out-an-end-to-end-solution"></a>Zelfstudie: Een end-to-end-oplossing bouwen
 
@@ -124,8 +124,6 @@ Ga terug naar het venster van Visual Studio waarin het _**AdtE2ESample**_ -proje
 ### <a name="assign-permissions-to-the-function-app"></a>Machtigingen toewijzen aan de functie-app
 
 De volgende stap is de functie-app toegang te geven tot Azure Digital Twins door een app-instelling te configureren, de app een door het systeem beheerde Microsoft Azure AD-identiteit toe te wijzen, en deze identiteit de rol *Azure Digital Twins-gegevenseigenaar* te geven in het Azure Digital Twins-exemplaar. Deze rol is vereist voor alle gebruikers of functies die veel gegevensvlakactiviteiten op het exemplaar willen uitvoeren. Meer informatie over beveiliging en roltoewijzingen vindt u in [*Concepten: Beveiliging voor Azure Digital Twins-oplossingen*](concepts-security.md).
-
-[!INCLUDE [digital-twins-role-rename-note.md](../../includes/digital-twins-role-rename-note.md)]
 
 Gebruik in Azure Cloud Shell de volgende opdracht om een toepassingsinstelling in te stellen die door uw functie-app wordt gebruikt om te verwijzen naar uw exemplaar van Azure Digital Twins. Vul de tijdelijke aanduidingen in met de details van uw resources (Houd er rekening mee dat uw URL van het Azure Digital Apparaatdubbels-exemplaar de hostnaam is voorafgegaan door *https://*).
 

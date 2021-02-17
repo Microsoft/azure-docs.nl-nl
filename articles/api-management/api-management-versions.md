@@ -6,15 +6,15 @@ documentationcenter: ''
 author: johndowns
 ms.service: api-management
 ms.topic: article
-ms.date: 06/12/2020
+ms.date: 02/10/2021
 ms.author: jodowns
 ms.custom: fasttrack-new
-ms.openlocfilehash: 578bb511175d88a1507af9520265a1acd068b27c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9dc44b4b898603df88d1bdd8c36ddfb6449335ac
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87096843"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100547193"
 ---
 # <a name="versions-in-azure-api-management"></a>Versies in azure API Management
 
@@ -64,9 +64,13 @@ Als u een versie aan een niet-versie van API toevoegt, `Original` wordt er autom
 
 ## <a name="how-versions-are-represented"></a>Hoe versies worden weer gegeven
 
-Azure API Management onderhoudt een resource met de naam een *versieset*die een set versies voor één logische API vertegenwoordigt. Wanneer u de Azure Portal gebruikt voor het beheren van versies die niet worden weer gegeven, maar als u met de API Management-service communiceert met Power shell, Resource Manager-sjablonen of de Azure Resource Manager-API, kunt u versie sets direct weer geven en beheren. Een versieset bevat de weergave naam van de API met versie en het [versie beheer schema dat wordt gebruikt](#versioning-schemes) om aanvragen naar opgegeven versies te sturen.
+Azure API Management onderhoudt een resource met de naam een *versieset* die een set versies voor één logische API vertegenwoordigt. Een versieset bevat de weergave naam van de API met versie nummer en het [versie beheer schema dat wordt gebruikt](#versioning-schemes) om aanvragen naar opgegeven versies te sturen.
 
-Elke versie van een API wordt onderhouden als eigen API-resource, die vervolgens wordt gekoppeld aan een versieset. Een versieset kan Api's bevatten met zeer verschillende bewerkingen of beleids regels. Dit weerspiegelt het feit dat u belang rijke wijzigingen kunt aanbrengen tussen versies van uw API.
+Elke versie van een API wordt onderhouden als eigen API-resource, die vervolgens wordt gekoppeld aan een versieset. Een versieset kan Api's met verschillende bewerkingen of beleids regels bevatten. U kunt belang rijke wijzigingen aanbrengen tussen versies in een set.
+
+De Azure Portal maakt versie sets voor u. U kunt de naam en beschrijving voor een versie die is ingesteld in de Azure Portal wijzigen.
+
+U kunt versie sets rechtstreeks weer geven en beheren met behulp van [Azure cli](/cli/azure/apim/api/versionset), [Azure PowerShell](/powershell/module/az.apimanagement/#api-management), [Resource Manager-sjablonen](/azure/templates/microsoft.apimanagement/service/apiversionsets)of de [Azure Resource Manager-API](/rest/api/apimanagement/2020-06-01-preview/apiversionset).
 
 ### <a name="migrating-a-non-versioned-api-to-a-versioned-api"></a>Een API die niet naar een versie is gemigreerd, migreren naar een API met versie
 

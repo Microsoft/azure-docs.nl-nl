@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: 08ab71375171d4bb4167c725bc7118bec2e1ebfa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: da85abdff3d1022659f2d4e83fd14c5ae6003fc9
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91371996"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546054"
 ---
 # <a name="machine-learning-features"></a>Machine learning-functies
 
@@ -160,11 +160,9 @@ Verzend adres (geleerde computer entiteit)
 
 ### <a name="required-feature-using-prebuilt-entities"></a>Vereiste functie voor het gebruik van vooraf gemaakte entiteiten
 
-De plaats, de staat en het land/de regio zijn doorgaans een gesloten set lijsten, wat betekent dat ze niet veel in de loop van de tijd veranderen. Deze entiteiten kunnen de relevante aanbevolen functies hebben en deze functies kunnen worden gemarkeerd als vereist. Dit betekent dat het hele verzend adres niet wordt geretourneerd als de entiteiten met de vereiste onderdelen niet worden gevonden.
+Vooraf gemaakte entiteiten zoals plaats, provincie en land/regio zijn doorgaans een gesloten set lijsten, wat betekent dat ze niet veel in de loop van de tijd veranderen. Deze entiteiten kunnen de relevante aanbevolen functies hebben en deze functies kunnen worden gemarkeerd als vereist. De `isRequired` markering is echter alleen gerelateerd aan de entiteit waaraan deze is toegewezen en heeft geen invloed op de hiërarchie. Als de functie voor de vooraf samengestelde subentiteit niet wordt gevonden, is dit niet van invloed op de detectie en het retour neren van de bovenliggende entiteit.
 
-Wat gebeurt er als de stad, staat of land/regio zich in de utterance bevindt, maar ze bevinden zich op een locatie of slang LUIS niet? Als u een aantal post verwerking wilt bieden bij het oplossen van de entiteit, als gevolg van een score met een lage betrouw baarheid van LUIS, markeert u de functie niet als vereist.
-
-Een ander voor beeld van een vereiste functie voor het verzend adres is het maken van het straat nummer een vereist, [vooraf gebouwd](luis-reference-prebuilt-entities.md) nummer. Hiermee kan een gebruiker "1 micro soft Way" of "One micro soft Way" invoeren. Beide worden omgezet in het cijfer 1 voor de subentiteit straat nummer.
+Als voor beeld van een vereiste functie kunt u overwegen om adressen te detecteren. U kunt overwegen om een straat een vereiste te maken. Hiermee kan een gebruiker "1 micro soft Way" of "One micro soft Way" invoeren, en beide worden omgezet naar het cijfer "1" voor de subentiteit straat nummer. Zie het artikel over de [vooraf gedefinieerde entiteit ](luis-reference-prebuilt-entities.md) voor meer informatie.
 
 ### <a name="required-feature-using-list-entities"></a>Vereiste functie voor het gebruik van lijst entiteiten
 
@@ -176,7 +174,7 @@ Stel dat uw bedrijf alleen naar een beperkt aantal landen/regio's wordt verzonde
 |--|--|
 |Verenigde Staten|U.S.<br>U. S. A<br>VS<br>VS<br>0|
 
-Een client toepassing, zoals een chat-bot, kan een opvolgings vraag stellen om u te helpen. Zo kan de klant begrijpen dat de selectie van het land of de regio beperkt is en *vereist*is.
+Een client toepassing, zoals een chat-bot, kan een opvolgings vraag stellen om u te helpen. Zo kan de klant begrijpen dat de selectie van het land of de regio beperkt is en *vereist* is.
 
 ### <a name="required-feature-using-regular-expression-entities"></a>Vereiste functie voor het gebruik van reguliere expressie-entiteiten
 
@@ -207,7 +205,7 @@ De machine learning-entiteit voor ticket-Book heeft twee subeenheden voor het va
 
 :::image type="content" source="media/luis-concept-features/ticket-booking-entity.png" alt-text="Ticketbooking-entiteits schema":::
 
-De ticket-boekings entiteit is een machine learning-entiteit met subentiteiten, waaronder _oorsprong_ en _bestemming_. Deze subentiteiten geven beide een geografische locatie aan. Voor het extra heren van de locaties en het onderscheiden van de _oorsprong_ en _bestemming_moet elke subentiteit functies bevatten.
+De ticket-boekings entiteit is een machine learning-entiteit met subentiteiten, waaronder _oorsprong_ en _bestemming_. Deze subentiteiten geven beide een geografische locatie aan. Voor het extra heren van de locaties en het onderscheiden van de _oorsprong_ en _bestemming_ moet elke subentiteit functies bevatten.
 
 |Type|Subentiteit van oorsprong |Doel-subentiteit|
 |--|--|--|
@@ -226,7 +224,7 @@ Nadat u de machine learning-entiteit hebt gemaakt, moet u voorbeeld uitingen toe
 
 Voor het ticket reserverings voorbeeld labelt u het voor beeld uitingen in de intentie met de `TicketBooking` entiteit en eventuele subentiteiten in de tekst.
 
-:::image type="content" source="media/luis-concept-features/intent-example-utterances-machine-learning-entity.png" alt-text="Ticketbooking-entiteits schema":::
+:::image type="content" source="media/luis-concept-features/intent-example-utterances-machine-learning-entity.png" alt-text="Voorbeelden van uitingen labelen":::
 
 ### <a name="example-pizza-ordering-app"></a>Voor beeld: Pizza best Ellen
 
@@ -234,13 +232,13 @@ Voor een tweede voor beeld moet u een app voor een pizza-restaurant ontvangen. d
 
 De machine learning-entiteit in dit voor beeld is complexer met geneste subentiteiten, woordgroepen lijsten, vooraf gemaakte entiteiten en aangepaste entiteiten.
 
-:::image type="content" source="media/luis-concept-features/pizza-order-entity.png" alt-text="Ticketbooking-entiteits schema":::
+:::image type="content" source="media/luis-concept-features/pizza-order-entity.png" alt-text="Entiteits schema voor pizza order":::
 
 In dit voor beeld worden functies op het niveau van de subentiteit en het onderliggende niveau van de subentiteit gebruikt. Welk niveau wordt opgehaald voor het soort woordgroepen lijst of model als onderdeel, is een belang rijk onderdeel van het ontwerp van de entiteit.
 
 Hoewel subentiteiten een groot aantal woordgroepen lijsten kunnen hebben als functies waarmee de entiteit kan worden gedetecteerd, heeft elke subeenheid slechts één model als een functie. In deze [pizza-app](https://github.com/Azure/pizza_luis_bot/blob/master/CognitiveModels/MicrosoftPizza.json)zijn deze modellen voornamelijk lijsten.
 
-:::image type="content" source="media/luis-concept-features/intent-example-utterances-machine-learning-entity-pizza.png" alt-text="Ticketbooking-entiteits schema":::
+:::image type="content" source="media/luis-concept-features/intent-example-utterances-machine-learning-entity-pizza.png" alt-text="Pizza order intentie met gelabeld voor beeld uitingen":::
 
 Het correct gelabelde voorbeeld uitingen wordt weer gegeven op een manier om te laten zien hoe de entiteiten zijn genest. 
 

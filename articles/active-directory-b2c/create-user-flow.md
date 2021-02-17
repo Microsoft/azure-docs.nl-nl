@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 07/30/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 418446e0d465b606b8d580297cebd73c466d4841
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
-ms.translationtype: HT
+ms.openlocfilehash: 9bd436b972dfb1549232831b1f07c3726ff459dd
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109009"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556501"
 ---
 # <a name="create-a-user-flow-in-azure-active-directory-b2c"></a>Een gebruikersstroom maken in Azure Active Directory B2C
 
@@ -27,7 +27,7 @@ U kunt [gebruikersstromen](user-flow-overview.md) van verschillende typen in uw 
 ## <a name="before-you-begin"></a>Voordat u begint
 
 - **Registreer de toepassing** die u wilt gebruiken om de nieuwe gebruikersstroom te testen. Zie bijvoorbeeld [Zelfstudie: een webtoepassing registreren in Azure AD B2C](tutorial-register-applications.md).
-- **Voeg externe id-providers toe** als u wilt dat gebruikers zich kunnen aanmelden bij providers als Azure AD, Amazon, Facebook, GitHub, LinkedIn, Microsoft en Twitter. Zie [Zelfstudie: id-providers toevoegen aan uw apps in Azure AD B2C](tutorial-add-identity-providers.md).
+- **Voeg externe id-providers toe** als u wilt dat gebruikers zich kunnen aanmelden bij providers als Azure AD, Amazon, Facebook, GitHub, LinkedIn, Microsoft en Twitter. Zie [id-providers toevoegen aan uw toepassingen in azure AD B2C](add-identity-provider.md).
 - **Configureer de id-provider van het lokale account** om de identiteitstypen (e-mailadres, gebruikersnaam, telefoonnummer) op te geven die u wilt ondersteunen voor lokale accounts in uw tenant. Vervolgens kunt u uit deze ondersteunde identiteitstypen kiezen wanneer u afzonderlijke gebruikersstromen maakt. Wanneer een gebruiker de gebruikersstroom voltooit, wordt er een lokaal account in uw Azure AD B2C-map gemaakt en worden de gegevens van de gebruiker geverifieerd door de id-provider van uw **lokale account**. Configureer de id-provider van het lokale account van uw tenant met de volgende stappen:
 
    1. Meld u aan bij de [Azure-portal](https://portal.azure.com/). 
@@ -66,7 +66,7 @@ U kunt [gebruikersstromen](user-flow-overview.md) van verschillende typen in uw 
 
    - **Lokaal account**. Als u wilt toestaan dat gebruikers lokale accounts maken in uw Azure AD B2C-tenant, selecteert u het type id dat ze moeten gebruiken (bijvoorbeeld e-mailadres, gebruikers-id of telefoonnummer). Alleen de identiteitstypen die in de instellingen voor de [id-provider van het lokale account](#before-you-begin) worden geconfigureerd, worden vermeld.
 
-   - **Id-providers voor sociale netwerken**. Als u wilt dat gebruikers zich aanmelden met [id-providers voor sociale netwerken die u hebt toegevoegd](tutorial-add-identity-providers.md), zoals Azure AD, Amazon, Facebook, GitHub, LinkedIn, Microsoft of Twitter, selecteert u de providers in de lijst.
+   - **Id-providers voor sociale netwerken**. Als u wilt dat gebruikers zich aanmelden met [id-providers voor sociale netwerken die u hebt toegevoegd](add-identity-provider.md), zoals Azure AD, Amazon, Facebook, GitHub, LinkedIn, Microsoft of Twitter, selecteert u de providers in de lijst.
 
 9. Kies voor **Gebruikerskenmerken en claims** de claims en kenmerken van de gebruiker die u tijdens de registratie wilt verzamelen en verzenden. Selecteer **Meer weergeven**. Selecteer de kenmerken en claims en selecteer vervolgens **OK**.
 

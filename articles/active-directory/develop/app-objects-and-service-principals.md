@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 07/22/2020
+ms.date: 02/15/2021
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40
 ms.reviewer: sureshja
-ms.openlocfilehash: a18e3cb65b2ef70a04ca1d7e74dd9d5f42e3a933
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 0345362e0e5bce9912a247fc90dee63943a1cb3b
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97355763"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100557840"
 ---
 # <a name="application-and-service-principal-objects-in-azure-active-directory"></a>Toepassings- en service-principal-objecten in Azure Active Directory
 
@@ -27,9 +27,9 @@ In dit artikel worden de registratie van toepassingen, toepassings objecten en s
 ## <a name="application-registration"></a>Een toepassing registreren
 Als u identiteits-en toegangs beheer functies wilt overdragen aan Azure AD, moet een toepassing zijn geregistreerd bij een Azure AD- [Tenant](developer-glossary.md#tenant). Wanneer u uw toepassing registreert bij Azure AD, maakt u een identiteits configuratie voor uw toepassing waarmee deze kan worden geïntegreerd met Azure AD. Wanneer u een app registreert in de [Azure Portal][AZURE-Portal], kiest u of deze één Tenant is (alleen toegankelijk in uw Tenant) of multi tenant (toegankelijk in andere tenants) en kunt u eventueel een omleidings-URI instellen (waarbij het toegangs token wordt verzonden naar).
 
-:::image type="content" source="media/app-objects-and-service-principals/app-registration.png" alt-text="Scherm afbeelding van het Azure Portal een toepassings venster registreren":::
+Zie de [Snelstartgids voor app-registratie](quickstart-register-app.md)voor stapsgewijze instructies voor het registreren van een app.
 
-Wanneer u de app-registratie hebt voltooid, hebt u een wereld wijd unieke instantie van de app (het toepassings object) die zich in uw thuis Tenant of-map bevindt.  U hebt ook een wereld wijd unieke ID voor uw app (de app of client-ID).  In de portal kunt u geheimen of certificaten en scopes toevoegen om uw app te laten werken, de huis stijl van uw app aan te passen in het dialoog venster voor aanmelden en nog veel meer.
+Wanneer u de app-registratie hebt voltooid, hebt u een wereld wijd unieke instantie van de app (het [toepassings object](#application-object)) die zich in uw thuis Tenant of-map bevindt.  U hebt ook een wereld wijd unieke ID voor uw app (de app of client-ID).  In de portal kunt u geheimen of certificaten en scopes toevoegen om uw app te laten werken, de huis stijl van uw app aan te passen in het dialoog venster voor aanmelden en nog veel meer.
 
 Als u een toepassing registreert in de portal, worden er automatisch een toepassings object en een Service-Principal-object gemaakt in uw thuis Tenant.  Als u een toepassing registreert/maakt met behulp van de Microsoft Graph Api's, is het maken van het Service-Principal-object een afzonderlijke stap.
 

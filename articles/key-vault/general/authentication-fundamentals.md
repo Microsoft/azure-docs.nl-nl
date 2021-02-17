@@ -7,12 +7,12 @@ ms.date: 09/25/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-ms.openlocfilehash: 6de0fc52ae265a47ca7f52d46e5f44b74c1277aa
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: a75ecac20c553f697585648c5654d375b85e5183
+ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96530915"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100535192"
 ---
 # <a name="key-vault-authentication-fundamentals"></a>Basisprincipes van Key Vault-verificatie
 
@@ -120,7 +120,7 @@ Key Vault roltoewijzingen zijn een set van ingebouwde rollen toewijzingen van Az
 Raadpleeg de volgende documenten voor meer informatie over Azure RBAC voor Key Vault:
 
 * [Koppeling](./secure-your-key-vault.md#management-plane-and-azure-rbac) Azure RBAC voor Key Vault
-* [Koppeling](../../role-based-access-control/built-in-roles.md#key-vault-administrator-preview) Azure RBAC voor Key Vault-rollen (preview-versie)
+* [Koppeling](../../role-based-access-control/built-in-roles.md#key-vault-administrator) van Azure RBAC voor Key Vault-rollen
 
 ## <a name="configure-key-vault-firewall"></a>Key Vault firewall configureren
 

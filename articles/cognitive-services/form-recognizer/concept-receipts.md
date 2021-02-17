@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: pafarley
-ms.openlocfilehash: c1ae52b2b92c5c8d5a1a98632e19d3140672d6ea
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 565ba3f7cd02a5ca8a3a858dc29a8fa6c7df16c1
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99585038"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546003"
 ---
 # <a name="form-recognizer-prebuilt-receipt-model"></a>Vooraf gegenereerde ontvangst model voor formulier herkenning
 
@@ -115,7 +115,12 @@ Wanneer het veld **status** de waarde **geslaagd** heeft, bevat het JSON-antwoor
 
 ### <a name="sample-json-output"></a>Voor beeld van JSON-uitvoer
 
-Zie het volgende voor beeld van een geslaagde JSON-reactie: het knoop punt ' readResults ' bevat alle herkende tekst. De tekst wordt geordend op pagina, vervolgens per regel en vervolgens op afzonderlijke woorden. Het knoop punt ' documentResults ' bevat de bedrijfsspecifieke waarden die het model heeft gedetecteerd. Hier vindt u nuttige sleutel/waarde-paren zoals de voor naam, achternaam, bedrijfs naam en nog veel meer.
+
+De reactie op de bewerking resultaat van het analyseren van de ontvangst genereren is de gestructureerde weer gave van de ontvangst met alle gegevens die worden geëxtraheerd.  Hier vindt u een voor beeld van een [ontvangst bestand](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/contoso-allinone.jpg) en de bijbehorende gestructureerde uitvoer uitvoer voor [beeld van ontvangst](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/receipt-result.json).
+
+Zie het volgende voor beeld van een geslaagde JSON-reactie:
+* Het knooppunt `"readResults"` bevat alle herkende tekst. De tekst wordt geordend op pagina, vervolgens per regel en vervolgens op afzonderlijke woorden. 
+* Het knooppunt `"documentResults"` bevat de visitekaartjeswaarden die het model heeft gedetecteerd. Hier vindt u nuttige sleutel/waarde-paren zoals de voor naam, achternaam, bedrijfs naam en nog veel meer.
 
 ```json
 { 

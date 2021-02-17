@@ -2,19 +2,19 @@
 title: Overzicht van Kubernetes met Azure Arc
 services: azure-arc
 ms.service: azure-arc
-ms.date: 05/19/2020
+ms.date: 02/15/2021
 ms.topic: overview
 author: mlearned
 ms.author: mlearned
 description: In dit artikel vindt u een overzicht van Kubernetes met Azure Arc.
 keywords: Kubernetes, Arc, Azure, containers
 ms.custom: references_regions
-ms.openlocfilehash: 7e48ebf98f12e79cb154fb50d8e6dbdfaea1cd95
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
-ms.translationtype: HT
+ms.openlocfilehash: 54b439d73ed5dfb0709d33dea1f588b8bdf4489f
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371304"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100560272"
 ---
 # <a name="what-is-azure-arc-enabled-kubernetes-preview"></a>Wat is Kubernetes met Azure Arc Preview?
 
@@ -60,22 +60,6 @@ Kubernetes met Azure Arc wordt momenteel ondersteund in deze regio’s:
 
 * VS - oost 
 * Europa -west
-
-## <a name="frequently-asked-questions"></a>Veelgestelde vragen
-
-* Wat is het verschil tussen Kubernetes met Azure Arc en Azure Kubernetes Service (AKS)?
-
-    Azure Kubernetes Service (AKS) is de beheerde Kubernetes-service van Azure. Met AKS kunt u eenvoudig een ​​beheerd Kubernetes-cluster in Azure implementeren. AKS verkleint de complexiteit en de operationele overhead die gepaard gaan met het beheer van Kubernetes door veel van deze taken naar Azure over te hevelen. De Kubernetes-modellen worden beheerd door Azure. U beheert en onderhoudt alleen de agentknooppunten.
-
-    Met Kubernetes met Azure Arc kunt u Kubernetes-clusters verbinden met Azure om de beheerfunctionaliteit van Azure uit te breiden met bijvoorbeeld Azure Monitor en Azure Policy. Het onderhoud van het onderliggende Kubernetes-cluster voert u zelf uit.
-
-* Moet ik mijn Azure Kubernetes Service-clusters die worden uitgevoerd op Azure, verbinden met Azure Arc?
-
-    Nee. Alle functies van Kubernetes met Azure Arc, zoals Azure Monitor en Azure Policy (Gatekeeper), zijn standaard beschikbaar met AKS, die al een resourceweergave in Azure heeft.
-    
-* Moet ik mijn AKS-cluster op Azure Stack HCI verbinden met Azure Arc? En hoe zit het met Kubernetes-clusters die worden uitgevoerd op Azure Stack Hub of Azure Stack Edge?
-
-    Ja, het verbinden van deze clusters met Azure Arc heeft voordelen. U beschikt hiermee over een resourceweergave voor deze Kubernetes-clusters in Azure Resource Manager. Met deze resourceweergave kunnen functies zoals Clusterconfiguratie, Azure Monitor, Azure Policy (Gatekeeper) worden uitgebreid naar deze Kubernetes-clusters
 
 ## <a name="next-steps"></a>Volgende stappen
 

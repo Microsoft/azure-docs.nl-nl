@@ -9,19 +9,19 @@ ms.author: mikben
 ms.date: 09/29/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 779fa577b25bd4f2aa92aa8b8cc1244a58bdf1ae
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
-ms.translationtype: HT
+ms.openlocfilehash: 883be25716d94130984baef5e7a1eab80888a2b9
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92126187"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100558468"
 ---
 # <a name="pricing-scenarios"></a>Prijsscenario's
 
 [!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
 
-Prijzen voor Azure Communication Services zijn doorgaans gebaseerd op een model voor betalen per gebruik.
+Prijzen voor Azure Communication Services zijn doorgaans gebaseerd op een model voor betalen per gebruik. De prijzen in de volgende voor beelden zijn bedoeld ter illustratie en komen mogelijk niet overeen met de nieuwste prijzen voor Azure.
 
 ## <a name="voicevideo-calling-and-screen-sharing"></a>Spraak-/video-oproepen en scherm delen
 
@@ -46,11 +46,34 @@ Alice heeft een groepsoproep gemaakt met haar collega's, Bob en Charlie. Alice e
 - 2 deelnemers x 60 minuten x $0,004 per deelnemer per minuut = $0,48 [voor video en audio geldt hetzelfde tarief]
 - 1 deelnemers x 43 minuten x $0,004 per deelnemer per minuut = $0,172 [voor video en audio geldt hetzelfde tarief]
 
-**Totale kosten voor de groepsoproep** : $0,48 + $0,172 = $0,652
+**Totale kosten voor de groepsoproep**: $0,48 + $0,172 = $0,652
+
+### <a name="pricing-example-a-user-of-the-communication-services-js-client-library-joins-a-scheduled-microsoft-teams-meeting"></a>Prijs voorbeeld: een gebruiker van de JS-client bibliotheek van Communication Services maakt deel uit van een geplande micro soft teams-vergadering
+
+Anja is een dokters bijeenkomst met haar patiënt, Bob. Anja wordt toegevoegd aan het bezoek vanuit de team bureau blad-toepassing. Bob ontvangt een koppeling met de website van de gezondheids zorg die verbinding maakt met de vergadering via de client bibliotheek van de Communication Services JS. Bob gebruikt zijn mobiele telefoon om de vergadering in te voeren met een webbrowser (iPhone met Safari). Chatten is beschikbaar op het virtuele bezoek. 
+
+- De aanroep duurt een totaal van 30 minuten.
+- Anne en Robert nemen deel aan de volledige oproep. Anne draait haar video vijf minuten nadat het gesprek is gestart en deelt het scherm gedurende 13 minuten. Bob heeft zijn video aan voor de hele oproep.
+- Anja stuurt vijf berichten, Bob beantwoordt met drie berichten.
+
+
+**Kostenberekeningen**
+
+- 1 deel nemer (Bob) x 30 minuten x $0,004 per deel nemer per minuut = $0,12 [zowel video als audio worden in rekening gebracht tegen hetzelfde tarief]
+- 1 deel nemer (Alice) x 30 minuten x $0,000 per deel nemer per minuut = $0,0 *. 
+- 1 deel nemer (Bob) x 3 chat berichten x $0,0008 = $0,0024.
+- 1 deel nemer (Alice) x 5 chat berichten x $0,000 = $0,0 *. 
+
+* De deelname van Alice valt onder de licentie van haar teams. In uw Azure-factuur worden de notulen en chat berichten weer gegeven die gebruikers van teams hebben met communicatie Services-gebruikers voor uw gemak, maar die minuten en berichten die afkomstig zijn van de teams-client, worden niet op prijs.
+
+**Totale kosten voor het bezoek**: 
+- Gebruiker die lid is van de communicatie Services JS-client bibliotheek: $0,12 + $0,0024 = $0,1224
+- Gebruiker die deelneemt aan teams bureaublad toepassing: $0 (gedekt door teams licentie) 
+
 
 ## <a name="chat"></a>Chat
 
-Met Communication Services kunt u uw toepassing uitbreiden met de mogelijkheid om chatberichten tussen twee of meer gebruikers te verzenden en te ontvangen. Chat-clientbibliotheken zijn beschikbaar voor JavaScript, .NET, Python en Java. Raadpleeg [deze pagina voor meer informatie over clientbibliotheken](./sdk-options.md)
+Met communicatie Services kunt u uw toepassing uitbreiden met de mogelijkheid om chat berichten tussen twee of meer gebruikers te verzenden en te ontvangen. Chat-clientbibliotheken zijn beschikbaar voor JavaScript, .NET, Python en Java. Raadpleeg [deze pagina voor meer informatie over clientbibliotheken](./sdk-options.md)
 
 ### <a name="price"></a>Prijs
 
@@ -58,7 +81,7 @@ Er wordt $0,0008 in rekening gebracht voor elk verzonden chatbericht.
 
 ### <a name="pricing-example-chat-between-two-users"></a>Prijsvoorbeeld: Chat tussen twee gebruikers 
 
-Geeta start een chatthread met Emily om een update te delen en verzendt 5 berichten. De chat duurt 10 minuten, waarbij Geeta en Elsje ieder nog eens 15 berichten verzenden.
+Geeta start een chatthread met Emily om een update te delen en verzendt 5 berichten. De chat sessie duurt 10 minuten. Geeta en Elsje verzenden elk nog 15 berichten.
 
 **Kostenberekeningen** 
 - Aantal verzonden berichten (5 + 15 + 15) x $0,0008 = $0,028

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/03/2019
+ms.date: 02/09/2021
 ms.author: jeedes
-ms.openlocfilehash: ddc639b38cb25ff7e395327b303577d9003230e5
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.openlocfilehash: 92813be19d31ebb84a3b3585288a0881d635d31f
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92455061"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556406"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cyberark-saml-authentication"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met CyberArk SAML Authentication
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u CyberArk SAML Authentication integreert met Azu
 * In Azure AD bepalen wie toegang heeft tot CyberArk SAML Authentication.
 * Ervoor zorgen dat gebruikers zich automatisch met hun Azure AD-accounts kunnen aanmelden bij CyberArk SAML Authentication.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
-
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -39,24 +37,24 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* CyberArk SAML Authentication ondersteunt met **SP en IDP** geïnitieerde eenmalige aanmelding
+* CyberArk SAML-verificatie ondersteunt SSO die is gestart **met SP en IDP** .
 
-## <a name="adding-cyberark-saml-authentication-from-the-gallery"></a>CyberArk SAML Authentication toevoegen vanuit de galerie
+## <a name="add-cyberark-saml-authentication-from-the-gallery"></a>CyberArk SAML-verificatie toevoegen vanuit de galerie
 
 Voor het configureren van de integratie van CyberArk SAML Authentication met Azure AD moet u CyberArk SAML Authentication vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. Typ in het gedeelte **Toevoegen uit de galerie** **CyberArk SAML Authentication** in het zoekvak.
 1. Selecteer **CyberArk SAML Authentication** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-cyberark-saml-authentication"></a>Eenmalige aanmelding van Azure AD configureren en testen voor CyberArk SAML Authentication
+## <a name="configure-and-test-azure-ad-sso-for-cyberark-saml-authentication"></a>Azure AD SSO configureren en testen voor CyberArk SAML-verificatie
 
 Configureer en test eenmalige aanmelding van Azure AD met CyberArk SAML Authentication met behulp van een testgebruiker met de naam **B. Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in CyberArk SAML Authentication.
 
-Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met CyberArk SAML Authentication te configureren en testen:
+Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met CyberArk SAML-verificatie:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     * **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
@@ -69,9 +67,9 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met CyberArk SA
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in [Azure Portal](https://portal.azure.com/), op de integratiepagina van de toepassing **CyberArk SAML Authentication** , het gedeelte **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Zoek in de Azure Portal op de pagina **CYBERARK SAML-verificatie** -toepassings integratie de sectie **beheren** en selecteer **eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -98,9 +96,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -113,20 +111,14 @@ In deze sectie geeft u B. Simon toestemming om eenmalige aanmelding van Azure te
 1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **CyberArk SAML Authentication** in de lijst met toepassingen.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
-
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-    ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
-
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-cyberark-saml-authentication-sso"></a>Eenmalige aanmelding voor CyberArk SAML Authentication configureren
 
-Als u eenmalige aanmelding wilt configureren aan de zijde van **CyberArk SAML Authentication** , moet u het gedownloade **Certificaat (Base64)** en de juiste, uit Azure Portal gekopieerde URL's verzenden naar het [ondersteuningsteam van CyberArk SAML Authentication](mailto:bizdevtech@cyberark.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren aan de zijde van **CyberArk SAML Authentication**, moet u het gedownloade **Certificaat (Base64)** en de juiste, uit Azure Portal gekopieerde URL's verzenden naar het [ondersteuningsteam van CyberArk SAML Authentication](mailto:bizdevtech@cyberark.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-cyberark-saml-authentication-test-user"></a>Testgebruiker voor CyberArk SAML Authentication maken
 
@@ -134,16 +126,20 @@ In deze sectie maakt u een gebruiker met de naam B. Simon in CyberArk SAML Authe
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u op de tegel CyberArk SAML Authentication in het toegangsvenster klikt, wordt u automatisch aangemeld bij de instantie van CyberArk SAML Authentication waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+#### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de URL voor CyberArk SAML-verificatie, waar u de aanmeldings stroom kunt initiëren.  
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+* Ga rechtstreeks naar de URL voor aanmelding bij CyberArk SAML-verificatie en start de aanmeldings stroom vanaf daar.
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+#### <a name="idp-initiated"></a>Met IDP geïnitieerd:
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+* Klik op **test deze toepassing** in azure Portal en u moet automatisch worden aangemeld bij de CyberArk SAML-verificatie waarvoor u de SSO hebt ingesteld. 
 
-- [CyberArk SAML Authentication met Azure AD uitproberen](https://aad.portal.azure.com/)
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de tegel CyberArk SAML-verificatie in de mijn apps klikt, wordt u omgeleid naar de aanmeldings pagina van de toepassing om de aanmeldings stroom te initiëren en als deze in de IDP-modus is geconfigureerd, moet u automatisch worden aangemeld bij de CyberArk SAML-verificatie waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+
+## <a name="next-steps"></a>Volgende stappen
+
+Zodra u CyberArk SAML-verificatie hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

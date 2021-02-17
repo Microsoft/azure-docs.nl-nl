@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/10/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to connect and activate Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: dd4078d414048d858c46f6757daa0a87a698eaab
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
-ms.translationtype: HT
+ms.openlocfilehash: ceaa16ee2a54886cde45f37ea90ed617abafffc1
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91976064"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546904"
 ---
 # <a name="tutorial-configure-the-device-settings-for-azure-stack-edge-pro-with-gpu"></a>Zelfstudie: apparaatinstellingen configureren voor Azure Stack Edge Pro met GPU
 
@@ -53,7 +53,7 @@ Volg deze stappen voor het configureren van apparaatinstellingen:
 
     3. Selecteer **Toepassen** om de geconfigureerde apparaatinstellingen te valideren en toe te passen.
 
-        ![Pagina Apparaat van de lokale webinterface 1](./media/azure-stack-edge-gpu-deploy-set-up-device-update-time/device-2.png)
+        ![Pagina 'Apparaat' 1 van de lokale webinterface](./media/azure-stack-edge-gpu-deploy-set-up-device-update-time/device-2.png)
 
         Als u de naam van het apparaat en het DNS-domein hebt gewijzigd, werken de automatisch gegenereerde zelfondertekende certificaten op het apparaat niet. Kies een van de volgende opties wanneer u certificaten configureert: 
         
@@ -61,7 +61,7 @@ Volg deze stappen voor het configureren van apparaatinstellingen:
         - Uw eigen certificaten voor het apparaat gebruiken, inclusief de ondertekeningsketen.
     
 
-        ![Pagina Apparaat van de lokale webinterface 2](./media/azure-stack-edge-gpu-deploy-set-up-device-update-time/device-3.png)
+        ![Pagina 'Apparaat' 2 van de lokale webinterface](./media/azure-stack-edge-gpu-deploy-set-up-device-update-time/device-3.png)
 
     4. Wanneer de apparaatnaam en het DNS-domein worden gewijzigd, wordt het SMB-eindpunt gemaakt.  
 
@@ -82,10 +82,10 @@ Volg deze stappen voor het configureren van apparaatinstellingen:
         ![Pagina Update-server van lokale webinterface 2](./media/azure-stack-edge-gpu-deploy-set-up-device-update-time/update-3.png)
 
         > [!NOTE] 
-        > Als er een afzonderlijke Windows Update-server is geconfigureerd en u ervoor kiest om verbinding te maken via *https* (in plaats van *http*), zijn er certificaten voor de ondertekeningsketen nodig, die vereist zijn om verbinding te maken met de update-server. Ga naar [Certificaten beheren](azure-stack-edge-j-series-manage-certificates.md) voor meer informatie over het maken en uploaden van certificaten. 
+        > Als er een afzonderlijke Windows Update-server is geconfigureerd en u ervoor kiest om verbinding te maken via *https* (in plaats van *http*), zijn er certificaten voor de ondertekeningsketen nodig, die vereist zijn om verbinding te maken met de update-server. Ga naar [Certificaten beheren](azure-stack-edge-gpu-manage-certificates.md) voor meer informatie over het maken en uploaden van certificaten. 
 
 2. Selecteer **Toepassen**.
-3. Nadat de update-server is geconfigureerd, selecteert u**Volgende: Tijd**.
+3. Nadat de update-server is geconfigureerd, selecteert u **Volgende: Tijd**.
     
 
 ## <a name="configure-time"></a>Tijd configureren

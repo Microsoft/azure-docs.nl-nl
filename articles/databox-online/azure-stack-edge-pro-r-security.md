@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 10/14/2020
 ms.author: alkohli
-ms.openlocfilehash: 891885dce52ee57fa163bb71b427591156091651
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 922ef24bff7d6e60a3ba3b91113003f8206b8177
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100362847"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548638"
 ---
 # <a name="security-and-data-protection-for-azure-stack-edge-pro-r-and-azure-stack-edge-mini-r"></a>Beveiliging en gegevens bescherming voor Azure Stack Edge Pro R en Azure Stack Edge mini-R
 
@@ -77,7 +77,7 @@ U kunt:
 
 ### <a name="establish-trust-with-the-device-via-certificates"></a>Een vertrouwens relatie met het apparaat tot stand brengen via certificaten
 
-Met Azure Stack Edge robuuste apparaat kunt u uw eigen certificaten meenemen en installeren die voor alle open bare eind punten worden gebruikt. Ga naar [uw certificaat uploaden](azure-stack-edge-j-series-manage-certificates.md#upload-certificates)voor meer informatie. Voor een lijst met alle certificaten die op uw apparaat kunnen worden geïnstalleerd, gaat u naar [certificaten op uw apparaat beheren](azure-stack-edge-j-series-manage-certificates.md).
+Met Azure Stack Edge robuuste apparaat kunt u uw eigen certificaten meenemen en installeren die voor alle open bare eind punten worden gebruikt. Ga naar [uw certificaat uploaden](azure-stack-edge-gpu-manage-certificates.md#upload-certificates)voor meer informatie. Voor een lijst met alle certificaten die op uw apparaat kunnen worden geïnstalleerd, gaat u naar [certificaten op uw apparaat beheren](azure-stack-edge-gpu-manage-certificates.md).
 
 - Wanneer u Compute op uw apparaat configureert, worden er een IoT-apparaat en een IoT Edge apparaat gemaakt. Aan deze apparaten worden automatisch symmetrische toegangs sleutels toegewezen. Als beveiligings best practice worden deze sleutels regel matig gedraaid via de IoT Hub-service.
 

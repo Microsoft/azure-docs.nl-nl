@@ -1,6 +1,6 @@
 ---
-title: Een sjabloon gebruiken voor het implementeren van Azure spot-Vm's
-description: Meer informatie over het gebruik van een sjabloon voor het implementeren van spot-Vm's om kosten te besparen.
+title: Een sjabloon gebruiken voor het implementeren van Azure-steun Virtual Machines voor Azure
+description: Meer informatie over het gebruik van een sjabloon voor het implementeren van Azure Spot Virtual Machines om kosten te besparen.
 author: cynthn
 ms.service: virtual-machines
 ms.workload: infrastructure-services
@@ -8,25 +8,25 @@ ms.topic: how-to
 ms.date: 03/25/2020
 ms.author: cynthn
 ms.reviewer: jagaveer
-ms.openlocfilehash: 0cf6fc1b37064ef6193f35334711dcc5b8d01088
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 44134e73f2e654d7bfdb9119942a5c3982859c7a
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98200784"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100557754"
 ---
-# <a name="deploy-spot-vms-using-a-resource-manager-template"></a>Spot-Vm's implementeren met een resource manager-sjabloon
+# <a name="deploy-azure-spot-virtual-machines-using-a-resource-manager-template"></a>Azure Spot Virtual Machines implementeren met behulp van een resource manager-sjabloon
 
-Met behulp van [Spot vm's](../spot-vms.md) kunt u profiteren van onze ongebruikte capaciteit tegen een aanzienlijke kosten besparing. Op elk moment dat Azure de capaciteit nodig heeft, verwijdert de Azure-infra structuur spot Vm's. Daarom zijn de virtuele machines geschikt voor werk belastingen die onderbrekingen kunnen afhandelen, zoals batch verwerkings taken, ontwikkel-en test omgevingen, grootschalige werk belastingen en meer.
+Met behulp van [Azure Spot Virtual Machines](../spot-vms.md) kunt u profiteren van onze ongebruikte capaciteit tegen een aanzienlijke kosten besparing. Op elk moment dat Azure de capaciteit nodig heeft, verwijdert de Azure-infra structuur Azure Spot Virtual Machines. Daarom zijn Azure Spot Virtual Machines geweldig voor workloads die onderbrekingen kunnen afhandelen, zoals batch verwerkings taken, ontwikkel-en test omgevingen, grootschalige werk belastingen en meer.
 
-Prijzen voor spot Vm's zijn variabel, op basis van de regio en de SKU. Zie prijzen voor VM'S voor [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) en [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/)voor meer informatie.
+Prijzen voor Azure Spot Virtual Machines is variabel, op basis van de regio en de SKU. Zie prijzen voor VM'S voor [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) en [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/)voor meer informatie.
 
-U hebt de mogelijkheid om een maximum prijs voor de virtuele machine in te stellen die u wilt betalen, per uur. De maximale prijs voor een steun-VM kan worden ingesteld in Amerikaanse dollars (USD), met Maxi maal vijf decimalen. De waarde `0.98765` is bijvoorbeeld een maximum prijs van $0,98765 USD per uur. Als u de maximale prijs instelt op `-1` , wordt de VM niet verwijderd op basis van de prijs. De prijs voor de virtuele machine is de huidige prijs voor steun of de prijs voor een standaard-VM, die ooit kleiner is, zolang er capaciteit en quota beschikbaar zijn. Zie [Spot vm's-prijzen](../spot-vms.md#pricing)voor meer informatie over het instellen van de maximum prijs.
+U hebt de mogelijkheid om een maximum prijs voor de virtuele machine in te stellen die u wilt betalen, per uur. U kunt de maximale prijs voor een virtuele machine van Azure spot instellen in Amerikaanse dollars (USD), met Maxi maal vijf decimalen. De waarde `0.98765` is bijvoorbeeld een maximum prijs van $0,98765 USD per uur. Als u de maximale prijs instelt op `-1` , wordt de VM niet verwijderd op basis van de prijs. De prijs voor de virtuele machine is de huidige prijs voor Azure Spot Virtual Machines of de prijs voor een standaard-VM, die ooit minder is, zolang er capaciteit en quota beschikbaar zijn. Zie [Azure Spot Virtual Machines-prijzen](../spot-vms.md#pricing)voor meer informatie over het instellen van de maximum prijs.
 
 
 ## <a name="use-a-template"></a>Een sjabloon gebruiken
 
-Gebruik of hoger voor implementaties van steun sjablonen `"apiVersion": "2019-03-01"` . Voeg de `priority` `evictionPolicy` en `billingProfile` Eigenschappen toe aan uw sjabloon:
+Voor implementaties van Azure-sjablonen voor virtuele machines, gebruikt `"apiVersion": "2019-03-01"` of hoger. Voeg de `priority` `evictionPolicy` en `billingProfile` Eigenschappen toe aan uw sjabloon:
 
 ```json
 "priority": "Spot",
@@ -36,7 +36,7 @@ Gebruik of hoger voor implementaties van steun sjablonen `"apiVersion": "2019-03
 }
 ```
 
-Hier volgt een voorbeeld sjabloon met de toegevoegde eigenschappen voor een spot-VM. Vervang de resource namen door uw eigen naam en `<password>` met een wacht woord voor het lokale Administrator-account op de virtuele machine.
+Hier volgt een voorbeeld sjabloon met de toegevoegde eigenschappen voor een virtuele Azure spot-machine. Vervang de resource namen door uw eigen naam en `<password>` met een wacht woord voor het lokale Administrator-account op de virtuele machine.
 
 ```json
 {
@@ -175,7 +175,7 @@ Hier volgt een voorbeeld sjabloon met de toegevoegde eigenschappen voor een spot
 
 ## <a name="simulate-an-eviction"></a>Een verwijdering simuleren
 
-U kunt een weghalen van een spot-VM [simuleren](/rest/api/compute/virtualmachines/simulateeviction) om te testen hoe goed uw toepassing kan worden gepaard met een plotselinge verwijdering. 
+U kunt een virtuele machine van Azure spot [simuleren](/rest/api/compute/virtualmachines/simulateeviction) om te testen hoe goed uw toepassing terugvalt op een plotselinge verwijdering. 
 
 Vervang het volgende door uw gegevens: 
 
@@ -190,8 +190,8 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U kunt ook een spot-VM maken met behulp van [Azure PowerShell](../windows/spot-powershell.md) of de [Azure cli](spot-cli.md).
+U kunt ook een virtuele Azure-machine maken met behulp van [Azure PowerShell](../windows/spot-powershell.md) of de [Azure cli](spot-cli.md).
 
-Zoek actuele prijs informatie met behulp van de [Azure retail-prijs-API](/rest/api/cost-management/retail-prices/azure-retail-prices) voor meer informatie over de prijzen. De `meterName` en `skuName` zijn beide opgenomen `Spot` .
+Zoek actuele prijs informatie met behulp van de [Azure retail-prijs-API](/rest/api/cost-management/retail-prices/azure-retail-prices) voor informatie over de prijzen van Azure Spot Virtual Machine. De `meterName` en `skuName` zijn beide opgenomen `Spot` .
 
 Als er een fout optreedt, raadpleegt u [fout codes](../error-codes-spot.md).

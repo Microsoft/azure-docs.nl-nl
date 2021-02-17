@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 01/19/2021
-ms.openlocfilehash: b376883ab7d8ef0ffd57a271e74862b684788ebd
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 70aaa528fc86c9e543267b68b5b4cf157ec2dc65
+ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98630273"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100535260"
 ---
 # <a name="automatically-label-your-data-in-azure-purview"></a>Voorzie uw gegevens automatisch in azure controle sfeer liggen
 
@@ -41,17 +41,17 @@ Gevoeligheids labels in azure controle sfeer liggen kunnen worden gebruikt om au
 Zie voor meer informatie:
 
 - [Meer informatie over gevoeligheids labels](/microsoft-365/compliance/sensitivity-labels) in de Microsoft 365 documentatie
-- [Wat zijn regels voor auto labeling?](#what-are-autolabeling-rules)
+- [Wat zijn regels voor automatisch labelen?](#what-are-auto-labeling-rules)
 - [Ondersteunde gegevens typen voor gevoeligheids labels in azure controle sfeer liggen](#supported-data-types-for-sensitivity-labels-in-azure-purview)
 - [Labelen voor SQL database kolommen](#labeling-for-sql-database-columns)
 
-#### <a name="what-are-autolabeling-rules"></a>Wat zijn regels voor auto labeling?
+#### <a name="what-are-auto-labeling-rules"></a>Wat zijn regels voor automatisch labelen?
 
 Uw gegevens groeien voortdurend en veranderen. Het bijhouden van de gegevens die momenteel niet zijn gelabeld, en het uitvoeren van een actie om hand matig labels toe te passen, is niet alleen omslachtig, maar is ook onnodig handig. 
 
-Regels voor het autolabelen zijn voor waarden die u opgeeft, waarbij wordt aangegeven wanneer een bepaald label moet worden toegepast. Wanneer aan deze voor waarden wordt voldaan, wordt het label automatisch toegewezen aan de gegevens en worden er op schaal consistentie van consistente gevoelige labels op uw gegevens bewaard.
+Regels voor automatisch labelen zijn voor waarden die u opgeeft, waarbij wordt aangegeven wanneer een bepaald label moet worden toegepast. Wanneer aan deze voor waarden wordt voldaan, wordt het label automatisch toegewezen aan de gegevens en worden er op schaal consistentie van consistente gevoelige labels op uw gegevens bewaard.
 
-Wanneer u uw etiketten maakt, moet u ervoor zorgen dat u regels voor automatisch labelen definieert voor zowel [bestanden](#define-autolabeling-rules-for-files) als [database kolommen](#define-autolabeling-rules-for-database-columns) om uw labels te laten Toep assen met elke gegevens scan. 
+Wanneer u labels maakt, moet u ervoor zorgen dat u automatisch label regels definieert voor zowel [bestanden](#define-auto-labeling-rules-for-files) als [database kolommen](#define-auto-labeling-rules-for-database-columns) om uw labels automatisch toe te passen bij elke gegevens scan. 
 
 Nadat u uw gegevens in controle sfeer liggen hebt gescand, kunt u de labels weer geven die automatisch zijn toegepast in de controle sfeer liggen-catalogus en inzicht rapporten.
 #### <a name="supported-data-types-for-sensitivity-labels-in-azure-purview"></a>Ondersteunde gegevens typen voor gevoeligheids labels in azure controle sfeer liggen
@@ -123,10 +123,10 @@ Wanneer u labels uitbreidt naar assets in azure controle sfeer liggen, kunt u de
 
 1. Volg de overige aanwijzingen in de wizard voor de label instellingen. 
 
-    Definieer met name regels voor het autolabelen voor bestanden en database kolommen:
+    Definieer met name regels voor automatische labeling voor bestanden en database kolommen:
 
-    - [Regels voor het autolabelen van bestanden definiëren](#define-autolabeling-rules-for-files)
-    - [Regels voor het autolabelen definiëren voor database kolommen](#define-autolabeling-rules-for-database-columns)
+    - [Regels voor automatisch labelen voor bestanden definiëren](#define-auto-labeling-rules-for-files)
+    - [Regels voor automatisch labelen definiëren voor database kolommen](#define-auto-labeling-rules-for-database-columns)
 
     Zie voor meer informatie over de wizard opties [wat gevoeligheids labels kunnen doen](/microsoft-365/compliance/sensitivity-labels#what-sensitivity-labels-can-do) in de Microsoft 365 documentatie.
 
@@ -156,21 +156,21 @@ Ga door met [het scannen van uw gegevens om labels automatisch toe te passen](#s
 - [Labels op assets weer geven](#view-labels-on-assets)
 - [Insight-rapporten voor classificaties en gevoeligheids labels weer geven](#view-insight-reports-for-the-classifications-and-sensitivity-labels)
 
-#### <a name="define-autolabeling-rules-for-files"></a>Regels voor het autolabelen van bestanden definiëren
+#### <a name="define-auto-labeling-rules-for-files"></a>Regels voor automatisch labelen voor bestanden definiëren
 
-Definieer regels voor het autolabelen van bestanden in de wizard wanneer u een label maakt of bewerkt. 
+Definieer regels voor automatisch labelen voor bestanden in de wizard wanneer u een label maakt of bewerkt. 
 
 Schakel op de pagina **automatische labeling voor Office** -apps **automatische labeling in voor Office-apps** en definieer vervolgens de voor waarden waarop u wilt dat het label automatisch wordt toegepast op uw gegevens.
 
 Bijvoorbeeld:
 
-:::image type="content" source="media/create-sensitivity-label/create-auto-labeling-rules-files-small.png" alt-text="Regels voor het autolabelen van bestanden definiëren in het Microsoft 365 beveiligings-en nalevings centrum" lightbox="media/create-sensitivity-label/create-auto-labeling-rules-files.png":::
+:::image type="content" source="media/create-sensitivity-label/create-auto-labeling-rules-files-small.png" alt-text="Regels voor automatische labeling definiëren voor bestanden in het Microsoft 365 Security and Compliance Center" lightbox="media/create-sensitivity-label/create-auto-labeling-rules-files.png":::
  
 Zie voor meer informatie [automatisch een gevoeligheids label Toep assen op de gegevens](/microsoft-365/compliance/apply-sensitivity-label-automatically#how-to-configure-auto-labeling-for-office-apps) in de Microsoft 365 documentatie. 
 
-#### <a name="define-autolabeling-rules-for-database-columns"></a>Regels voor het autolabelen definiëren voor database kolommen
+#### <a name="define-auto-labeling-rules-for-database-columns"></a>Regels voor automatisch labelen definiëren voor database kolommen
 
-Definieer regels voor het autolabelen voor database kolommen in de wizard wanneer u een label maakt of bewerkt. 
+Automatisch label regels definiëren voor database kolommen in de wizard wanneer u een label maakt of bewerkt. 
 
 Onder de optie **Azure controle sfeer liggen activa (preview)** :
 
@@ -180,7 +180,7 @@ Onder de optie **Azure controle sfeer liggen activa (preview)** :
 
 Bijvoorbeeld:
         
-:::image type="content" source="media/create-sensitivity-label/create-auto-labeling-rules-db-columns-small.png" alt-text="Regels voor het autolabelen van SQL-kolommen definiëren in het Microsoft 365 beveiligings-en nalevings centrum" lightbox="media/create-sensitivity-label/create-auto-labeling-rules-db-columns.png":::
+:::image type="content" source="media/create-sensitivity-label/create-auto-labeling-rules-db-columns-small.png" alt-text="Regels voor automatische labeling definiëren voor SQL-kolommen in het Microsoft 365 Security and Compliance Center" lightbox="media/create-sensitivity-label/create-auto-labeling-rules-db-columns.png":::
 
 ## <a name="scan-your-data-to-apply-labels-automatically"></a>Uw gegevens scannen om labels automatisch toe te passen
 
@@ -188,7 +188,7 @@ Scan uw gegevens in azure controle sfeer liggen om automatisch de labels toe te 
 
 Voor meer informatie over het instellen van scans op diverse assets in azure controle sfeer liggen raadpleegt u:
 
-|Bron  |Naslaginformatie  |
+|Bron  |Referentie  |
 |---------|---------|
 |**Azure Blob Storage**     |[Azure-Blob Storage registreren en controleren](register-scan-azure-blob-storage-source.md)         |
 |**Azure Data Lake Storage**     |[Azure Data Lake Storage Gen1 registreren en scannen](register-scan-adls-gen1.md) </br>[Azure Data Lake Storage Gen2 registreren en scannen](register-scan-adls-gen2.md)         |
@@ -197,7 +197,7 @@ Voor meer informatie over het instellen van scans op diverse assets in azure con
 
 ## <a name="view-labels-on-assets"></a>Labels op assets weer geven
 
-Wanneer u regels voor automatisch labelen voor uw labels in Microsoft 365 hebt gedefinieerd en uw gegevens in azure controle sfeer liggen hebt gescand, worden labels automatisch toegepast op uw activa. 
+Zodra u de regels voor automatisch labelen voor uw labels in Microsoft 365 hebt gedefinieerd en uw gegevens in azure controle sfeer liggen hebt gescand, worden labels automatisch toegepast op uw activa. 
 
 **U kunt als volgt de labels weer geven die zijn toegepast op uw assets in de Azure controle sfeer liggen-catalogus:**
 

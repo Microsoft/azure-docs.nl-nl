@@ -14,33 +14,31 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 75df01ff65a0910dab140942b520978cd7728775
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: f75b8055757557eadeb98a45196a116e56c5aa35
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897574"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101093431"
 ---
 # <a name="creating-filters-with-cli"></a>Filters maken met CLI
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-Bij het leveren van uw inhoud aan klanten (het streamen van Live-gebeurtenissen of video op aanvraag), heeft uw client mogelijk meer flexibiliteit nodig dan is beschreven in het manifest bestand van het standaard activum. Met Azure Media Services kunt u account filters en activa filters definiëren voor uw inhoud. 
+Bij het leveren van uw inhoud aan klanten (het streamen van Live-gebeurtenissen of video op aanvraag), heeft uw client mogelijk meer flexibiliteit nodig dan is beschreven in het manifest bestand van het standaard activum. Met Azure Media Services kunt u account filters en activa filters definiëren voor uw inhoud.
 
 Zie [dynamische manifesten](filters-dynamic-manifest-overview.md) en [filters](filters-concept.md)voor een gedetailleerde beschrijving van deze functie en scenario's waarin deze wordt gebruikt.
 
-In dit onderwerp wordt beschreven hoe u een filter configureert voor een video op aanvraag en gebruikt u CLI voor Media Services v3 om [account filters](/cli/azure/ams/account-filter?view=azure-cli-latest) en [activa filters](/cli/azure/ams/asset-filter?view=azure-cli-latest)te maken. 
+In dit onderwerp wordt beschreven hoe u een filter configureert voor een video op aanvraag en gebruikt u CLI voor Media Services v3 om [account filters](/cli/azure/ams/account-filter?view=azure-cli-latest) en [activa filters](/cli/azure/ams/asset-filter?view=azure-cli-latest)te maken.
 
 > [!NOTE]
 > Zorg ervoor dat u de [presentationTimeRange](filters-concept.md#presentationtimerange)controleert.
 
-## <a name="prerequisites"></a>Vereisten 
+## <a name="prerequisites"></a>Vereisten
 
-- [Een Azure Media Services-account maken](./create-account-howto.md). Zorg ervoor dat u de naam van de resource groep en de naam van het Media Services account vergeet. 
+- [Een Azure Media Services-account maken](./create-account-howto.md). Zorg ervoor dat u de naam van de resource groep en de naam van het Media Services account vergeet.
 
-[!INCLUDE [media-services-cli-instructions](../../../includes/media-services-cli-instructions.md)]
-
-## <a name="define-a-filter"></a>Een filter definiëren 
+## <a name="define-a-filter"></a>Een filter definiëren
 
 In het volgende voor beeld worden de voor waarden voor het bijhouden van selecties gedefinieerd die worden toegevoegd aan het definitieve manifest. Dit filter bevat audio tracks die EC-3 zijn en video tracks met bitsnelheid in het 0-1000000-bereik.
 
@@ -82,7 +80,7 @@ In het volgende voor beeld worden de voor waarden voor het bijhouden van selecti
 
 ## <a name="create-account-filters"></a>Account filters maken
 
-Met de volgende [AZ AMS account-filter](/cli/azure/ams/account-filter?view=azure-cli-latest) opdracht maakt u een account filter met selecties voor het bijhouden van filters die [eerder zijn gedefinieerd](#define-a-filter). 
+Met de volgende [AZ AMS account-filter](/cli/azure/ams/account-filter?view=azure-cli-latest) opdracht maakt u een account filter met selecties voor het bijhouden van filters die [eerder zijn gedefinieerd](#define-a-filter).
 
 Met de opdracht kunt u een optionele `--tracks` para meter door geven die JSON bevat die de selecties van het bijhouden vertegenwoordigt.  Gebruik @ {file} om JSON vanuit een bestand te laden. Als u de Azure CLI lokaal gebruikt, geeft u het hele bestandspad op:
 
@@ -130,7 +128,7 @@ In de volgende tabel ziet u enkele voor beelden van Url's met filters:
 
 ## <a name="next-step"></a>Volgende stap
 
-[Video streamen](stream-files-tutorial-with-api.md) 
+[Video streamen](stream-files-tutorial-with-api.md)
 
 ## <a name="see-also"></a>Zie ook
 

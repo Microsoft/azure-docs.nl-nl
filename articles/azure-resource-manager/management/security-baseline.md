@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/30/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 5e44515c8ca71d115ced65c9123e2b1ae3bdf23a
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 1ba497094a28e056d5984f1e58e2f15c9d21eae2
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100578236"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101094449"
 ---
 # <a name="azure-security-baseline-for-azure-resource-manager"></a>Azure-beveiligings basislijn voor Azure Resource Manager
 
@@ -241,7 +241,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Richt lijnen**: gebruik Azure AD RBAC om de toegang tot gegevens en resources te beheren. anders kunt u servicespecifieke methoden voor toegangs beheer gebruiken.
 
-- [RBAC configureren in Azure](../../role-based-access-control/role-assignments-portal.md)
+- [Azure RBAC configureren](../../role-based-access-control/role-assignments-portal.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 

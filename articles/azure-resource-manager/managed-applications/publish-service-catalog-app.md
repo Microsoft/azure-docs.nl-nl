@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.custom: subject-armqs, devx-track-azurecli
 ms.date: 04/14/2020
 ms.author: tomfitz
-ms.openlocfilehash: 342fa722d704933f22cec00a46d11ccc38fc6e4d
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: b255cafb9040f87c902fe6c094c3e0db3d461e4b
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91650643"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101093647"
 ---
 # <a name="quickstart-create-and-publish-a-managed-application-definition"></a>Quickstart: De definitie van een beheerde toepassing maken en publiceren
 
@@ -401,7 +401,7 @@ U kunt controleren dat de definitiebestanden van de toepassing zijn opgeslagen i
 
 ## <a name="make-sure-users-can-see-your-definition"></a>Ervoor zorgen dat gebruikers de definitie kunnen zien
 
-U hebt toegang tot de definitie van de beheerde toepassing, maar u wilt controleren of andere gebruikers in uw organisatie hiertoe toegang hebben. Verleen hun minimaal de rol van Lezer voor de definitie. Mogelijk hebben ze dit toegangsniveau overgenomen van het abonnement of de resourcegroep. Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van het Azure-portaal](../../role-based-access-control/role-assignments-portal.md) om te controleren wie toegang heeft tot het definiëren en toevoegen van gebruikers of groepen.
+U hebt toegang tot de definitie van de beheerde toepassing, maar u wilt controleren of andere gebruikers in uw organisatie hiertoe toegang hebben. Verleen hun minimaal de rol van Lezer voor de definitie. Mogelijk hebben ze dit toegangsniveau overgenomen van het abonnement of de resourcegroep. Zie [Azure-rollen toewijzen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md)om te controleren wie toegang heeft tot de definitie en gebruikers of groepen toe te voegen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: willzhan
 ms.custom: seodec18
-ms.openlocfilehash: e0104dd2761f74fbd84486aebbf8c3c4e128eb08
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: bb43396260e1b914f9f5b9e9ae489e87042a3154
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954898"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101092440"
 ---
 # <a name="design-of-a-multi-drm-content-protection-system-with-access-control"></a>Ontwerp van een inhoudsbeveiligingssysteem van een multi-DRM met toegangsbeheer
 
@@ -66,8 +66,8 @@ Denk aan het volgende om uw keuze te maken:
 * Widevine wordt systeem eigen geïmplementeerd in elk Android-apparaat, in Chrome en op andere apparaten. Widevine wordt ook ondersteund in Firefox en Opera-browsers via een streepje.
 * FairPlay is beschikbaar op iOS, macOS en tvOS.
 
-
 ## <a name="a-reference-design"></a>Een referentie ontwerp
+
 Deze sectie bevat een referentie ontwerp dat neutraal is voor de technologieën die worden gebruikt om het te implementeren.
 
 Een DRM-subsysteem kan de volgende onderdelen bevatten:

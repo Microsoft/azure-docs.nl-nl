@@ -3,12 +3,12 @@ title: Azure Service Bus berichten-wacht rijen, onderwerpen en abonnementen
 description: Dit artikel bevat een overzicht van Azure Service Bus Messa ging-entiteiten (wacht rijen, onderwerpen en abonnementen).
 ms.topic: conceptual
 ms.date: 02/16/2021
-ms.openlocfilehash: f647164ba18cb83e35b5bd174f09e07a4a9f9aa7
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: b8fb68509ad920fc6911290377f49b89ec610b58
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652816"
+ms.locfileid: "101096322"
 ---
 # <a name="service-bus-queues-topics-and-subscriptions"></a>Service Bus-wachtrijen, -onderwerpen en -abonnementen
 Azure Service Bus biedt ondersteuning voor een set Cloud, op berichten gebaseerde middleware-technologieën, waaronder betrouw bare Message Queuing en duurzame berichten over publiceren/abonneren. Deze Brokered Messaging mogelijkheden kunnen worden beschouwd als losgekoppelde berichten functies die ondersteuning bieden voor publiceren-abonneren, tijdelijke loskoppelingen en taakverdelings scenario's met behulp van de werk belasting van Service Bus berichten. Ontkoppelde communicatie heeft veel voor delen. Zo kunnen clients en servers zo nodig verbinding maken en hun bewerkingen op asynchrone wijze uitvoeren.
@@ -36,6 +36,9 @@ U kunt twee verschillende modi opgeven waarin Service Bus berichten ontvangt.
         Als de toepassing het bericht om de een of andere reden niet kan verwerken, kan het de Service Bus-service vragen om het bericht te **verlaten** . Service Bus **ontgrendelt** het bericht en maakt het beschikbaar om opnieuw te worden ontvangen, hetzij door dezelfde consument hetzij door een andere concurrerende consument. Ten tweede is er een **time-out** gekoppeld aan de vergren deling. Als de toepassing het bericht niet kan verwerken voordat de time-out van de vergren deling is verlopen, wordt het bericht Service Bus ontgrendeld en wordt het beschikbaar gemaakt om opnieuw te worden ontvangen.
 
         Als de toepassing vastloopt na het verwerken van het bericht, maar voordat de Service Bus-service wordt aangevraagd om het bericht te volt ooien, Service Bus het bericht naar de toepassing terugleveren wanneer het opnieuw wordt gestart. Dit proces wordt vaak **ten minste eenmaal** verwerkt. Dat wil zeggen dat elk bericht ten minste één keer wordt verwerkt. In bepaalde situaties kan hetzelfde bericht echter opnieuw worden bezorgd. Als uw scenario dubbele verwerking niet kan verdragen, voegt u extra logica toe aan uw toepassing om dubbele waarden te detecteren. Zie [Detectie van duplicaten](duplicate-detection.md) voor meer informatie. Deze functie wordt **precies eenmaal** verwerkt.
+
+        > [!NOTE]
+        > Zie voor meer informatie over deze twee modi [ontvangst bewerkingen](message-transfers-locks-settlement.md#settling-receive-operations)afwijzen.
 
 ## <a name="topics-and-subscriptions"></a>Onderwerpen en abonnementen
 Met een wachtrij kan een bericht worden verwerkt door één gebruiker. In tegens telling tot wacht rijen bieden onderwerpen en abonnementen een een-op-veel communicatie vorm in een **publicatie-en Abonneer** patroon. Het is handig om te schalen naar een groot aantal geadresseerden. Elk gepubliceerd bericht wordt beschikbaar gesteld voor elk abonnement dat is geregistreerd bij het onderwerp. Publisher verzendt een bericht naar een onderwerp en een of meer abonnees ontvangen een kopie van het bericht, afhankelijk van de filter regels die zijn ingesteld voor deze abonnementen. De abonnementen kunnen extra filters gebruiken om de berichten te beperken die ze willen ontvangen. Uitgevers verzenden berichten naar een onderwerp op dezelfde manier als wanneer ze berichten verzenden naar een wachtrij. Maar, consumenten ontvangen geen berichten rechtstreeks vanuit het onderwerp. In plaats daarvan ontvangen gebruikers berichten van abonnementen van het onderwerp. Een onderwerps abonnement lijkt op een virtuele wachtrij die kopieën ontvangt van de berichten die naar het onderwerp worden verzonden. Consumenten ontvangen berichten van een abonnement die identiek zijn met de manier waarop ze berichten ontvangen van een wachtrij.

@@ -1,0 +1,91 @@
+- name: Documentatie voor front deur Standard/Premium (preview)
+  href: index.yml
+- name: Overzicht
+  items:
+    - name: Wat is Azure front deur Standard/Premium (preview)?
+      href: overview.md
+    - name: Vergelijking van laag
+      href: tier-comparison.md
+- name: Quickstarts
+  expanded: true
+  items:
+    - name: Een voor deur standaard/Premium maken-Portal
+      href: create-front-door-portal.md
+- name: Concepten
+  items:
+    - name: Veelgestelde vragen over Front Door
+      href: faq.md
+    - name: Eindpunt beheerder
+      href: concept-endpoint-manager.md
+    - name: Oorsprong
+      href: concept-origin.md
+    - name: Route
+      href: concept-route.md
+    - name: Regelset
+      href: concept-rule-set.md
+    - name: Overeenkomende voor waarden voor regel instellingen
+      href: concept-rule-set-match-conditions.md
+    - name: Acties voor regel sets
+      href: concept-rule-set-actions.md
+    - name: URL-omleiding en URL opnieuw schrijven
+      href: concept-rule-set-url-redirect-and-rewrite.md
+    - name: Statuscontroles
+      href: concept-health-probes.md
+    - name: Private Link
+      href: concept-private-link.md
+    - name: Caching
+      href: concept-caching.md
+    - name: DDoS
+      href: concept-ddos.md
+- name: Instructiegidsen
+  items:
+    - name: Endpoint Manager configureren
+      href: how-to-configure-endpoint-manager.md
+    - name: Bron groepen configureren
+      href: how-to-create-origin.md
+    - name: Een aangepast domein toevoegen
+      href: how-to-add-custom-domain.md
+    - name: HTTPS inschakelen voor een aangepast domein
+      href: how-to-configure-https-custom-domain.md
+    - name: Route koppeling
+      href: how-to-configure-route.md
+    - name: Beveiligings headers configureren met een regelset
+      href: how-to-add-security-headers.md
+    - name: Cache opschonen
+      href: how-to-cache-purge.md
+    - name: Compressie
+      href: how-to-compression.md
+    - name: Persoonlijke koppeling inschakelen
+      href: how-to-enable-private-link.md
+    - name: Logboekregistratie
+      href: how-to-logs.md
+    - name: Bewaking en waarschuwingen
+      href: how-to-monitor-metrics.md
+    - name: Rapporten
+      href: how-to-reports.md
+    - name: Problemen oplossen
+      items:
+        - name: Routeringsproblemen
+          href: troubleshoot-route-issues.md
+        - name: Toegestane certificeringsinstanties
+          href: troubleshoot-allowed-certificate-authority.md
+        - name: Compressie
+          href: troubleshoot-compression.md
+        - name: Cross-Origin-resource delen
+          href: troubleshoot-cross-origin-resources.md
+- name: Naslaginformatie
+  items:
+    - name: .NET
+      href: /dotnet/api/microsoft.azure.management.cdn
+    - name: REST-API
+      href: /rest/api/cdn/
+- name: Resources
+  items:
+    - name: Azure-roadmap
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Prijzen
+      href: 'https://azure.microsoft.com/pricing/details/frontdoor/'
+    - name: Prijscalculator
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Service-updates
+      href: 'https://azure.microsoft.com/updates/?product=frontdoor'

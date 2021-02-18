@@ -9,15 +9,16 @@ ms.topic: how-to
 author: danimir
 ms.author: danil
 ms.reviewer: douglas, sstein
-ms.date: 01/26/2021
-ms.openlocfilehash: 7588ce055ce0df89a7dca87a75a38c8acccf6d46
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.date: 02/17/2021
+ms.openlocfilehash: ecd97efbf12fb149037a94749bc899169f2c5a92
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98806089"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101096522"
 ---
 # <a name="user-initiated-manual-failover-on-sql-managed-instance"></a>User-initiated manual failover on SQL Managed Instance (Door gebruiker geïnitieerde handmatige failover op een SQL Managed Instance)
+[!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
 
 In dit artikel wordt uitgelegd hoe u hand matig een primair knoop punt doorstuurt op de service lagen van SQL Managed instance Algemeen (GP) en Bedrijfskritiek (BC) en hoe u een secundair alleen-lezen replica knooppunt hand matig doorstuurt op de service tier BC.
 

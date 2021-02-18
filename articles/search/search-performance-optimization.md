@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/01/2021
 ms.custom: references_regions
-ms.openlocfilehash: bbd3e5774c6effa45888f6e59874d29f3b55b45f
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 5e8b873e0e4e89979769183cfbf0ad473069e897
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100545578"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101096430"
 ---
 # <a name="scale-for-performance-on-azure-cognitive-search"></a>Schaal voor prestaties op Azure Cognitive Search
 
@@ -100,6 +100,7 @@ Azure Cognitive Search ondersteunt momenteel Beschikbaarheidszones voor de Stand
 + Australië-oost (gemaakt op 30 januari 2021 of hoger)
 + Canada-centraal (gemaakt op 30 januari 2021 of hoger)
 + VS-centraal (gemaakt op 4 december 2020 of hoger)
++ VS-Oost (gemaakt op 27 januari 2021 of hoger)
 + VS-Oost 2 (gemaakt op 30 januari 2021 of hoger)
 + Frankrijk-centraal (gemaakt op 23 oktober 2020 of hoger)
 + Japan-Oost (gemaakt op 30 januari 2021 of hoger)

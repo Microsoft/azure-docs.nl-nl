@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 58aabd52b8c5493671e0a76d0032a6d7c3081f40
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: f28020ba431d3dfdc79c2d4a98b6e6138f563aeb
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100582047"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101096484"
 ---
 # <a name="azure-security-baseline-for-azure-data-share"></a>Azure-beveiligings basislijn voor Azure-gegevens share
 
@@ -199,7 +199,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Richt lijnen**: gebruik Azure RBAC (op rollen gebaseerd toegangs beheer) voor het beheren van de toegang tot gegevens en resources die zijn gerelateerd aan Azure-gegevens share bronnen. anders kunt u ook servicespecifieke methoden voor toegangs beheer gebruiken.
 
-- [RBAC configureren in Azure](../role-based-access-control/role-assignments-portal.md) 
+- [Azure RBAC configureren](../role-based-access-control/role-assignments-portal.md) 
 
 **Monitoring door Azure Security Center**: Ja
 

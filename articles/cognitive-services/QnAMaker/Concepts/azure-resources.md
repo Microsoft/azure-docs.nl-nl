@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: f46a0938ebb8d9fe7e032162120056dca96b9567
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: f5a248b8701c71b2dcf0415c6656b9b565535232
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99979759"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101096529"
 ---
 # <a name="azure-resources-for-qna-maker"></a>Azure-resources voor QnA Maker
 
@@ -142,16 +142,16 @@ Uw QnA Maker-service behandelt twee soorten sleutels: het **ontwerpen van sleute
 
 Gebruik deze sleutels bij het indienen van aanvragen bij de service via Api's.
 
-![Sleutelbeheer](../media/qnamaker-how-to-key-management/key-management.png)
+![Sleutelbeheer](../media/authoring-key.png)
 
 |Naam|Locatie|Doel|
 |--|--|--|
-|Auteur/abonnements sleutel|[Azure-portal](https://azure.microsoft.com/free/cognitive-services/)|Deze sleutels worden gebruikt voor toegang tot de Api's van de [QnA Maker Management-service](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase). Met deze Api's kunt u de vragen en antwoorden in uw Knowledge Base bewerken en uw kennis database publiceren. Deze sleutels worden gemaakt wanneer u een nieuwe QnA Maker-service maakt.<br><br>Deze sleutels vindt u op de pagina **sleutels** van de **Cognitive Services** resource.|
+|Auteur/abonnements sleutel|[Azure-portal](https://azure.microsoft.com/free/cognitive-services/)|Deze sleutels worden gebruikt voor toegang tot de Api's van de [QnA Maker Management-service](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase). Met deze Api's kunt u de vragen en antwoorden in uw Knowledge Base bewerken en uw kennis database publiceren. Deze sleutels worden gemaakt wanneer u een nieuwe QnA Maker-service maakt.<br><br>Zoek deze sleutels op de **Cognitive Services** -resource op de pagina **sleutels en eind punt** .|
 |Query-eindpunt sleutel|[QnA Maker-portal](https://www.qnamaker.ai)|Deze sleutels worden gebruikt om een query uit te geven op het gepubliceerde Knowledge Base-eind punt om een antwoord te krijgen op de vraag van een gebruiker. Normaal gesp roken gebruikt u dit query-eind punt in uw chat-bot of in de client toepassings code die verbinding maakt met de QnA Maker-service. Deze sleutels worden gemaakt wanneer u uw QnA Maker Knowledge Base publiceert.<br><br>Deze sleutels vindt u op de pagina **Service-instellingen** . Ga naar deze pagina vanuit het menu van de gebruiker in de rechter bovenhoek van de pagina in de vervolg keuzelijst.|
 
 ### <a name="find-authoring-keys-in-the-azure-portal"></a>Zoek sleutels zoeken in de Azure Portal
 
-U kunt uw ontwerp sleutels bekijken en opnieuw instellen in de Azure Portal, waar u de QnA Maker resource hebt gemaakt. Deze sleutels kunnen worden aangeduid als abonnements sleutels.
+U kunt uw ontwerp sleutels bekijken en opnieuw instellen in de Azure Portal, waar u de QnA Maker resource hebt gemaakt.
 
 1. Ga naar de QnA Maker resource in de Azure Portal en selecteer de resource met het _Cognitive Services_ type:
 
@@ -189,12 +189,12 @@ Gebruik deze sleutels bij het indienen van aanvragen bij de service via Api's.
 
 |Naam|Locatie|Doel|
 |--|--|--|
-|Auteur/abonnements sleutel|[Azure-portal](https://azure.microsoft.com/free/cognitive-services/)|Deze sleutels worden gebruikt voor toegang tot de Api's van de [QnA Maker Management-service](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase). Met deze Api's kunt u de vragen en antwoorden in uw Knowledge Base bewerken en uw kennis database publiceren. Deze sleutels worden gemaakt wanneer u een nieuwe QnA Maker-service maakt.<br><br>Deze sleutels vindt u op de pagina **sleutels** van de **Cognitive Services** resource.|
+|Auteur/abonnements sleutel|[Azure-portal](https://azure.microsoft.com/free/cognitive-services/)|Deze sleutels worden gebruikt voor toegang tot de Api's van de [QnA Maker Management-service](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase). Met deze Api's kunt u de vragen en antwoorden in uw Knowledge Base bewerken en uw kennis database publiceren. Deze sleutels worden gemaakt wanneer u een nieuwe QnA Maker-service maakt.<br><br>Zoek deze sleutels op de **Cognitive Services** -resource op de pagina **sleutels en eind punt** .|
 |Azure Cognitive Search-beheer sleutel|[Azure-portal](../../../search/search-security-api-keys.md)|Deze sleutels worden gebruikt om te communiceren met de Azure cognitieve Search-service die is geïmplementeerd in het Azure-abonnement van de gebruiker. Wanneer u een Azure cognitieve zoek opdracht koppelt aan de service QnA Maker Managed (preview), wordt de beheer sleutel automatisch door gegeven aan de QnA Maker-service. <br><br>Op de pagina **sleutels** vindt u deze sleutels op de **Azure Cognitive Search** -resource.|
 
 ### <a name="find-authoring-keys-in-the-azure-portal"></a>Zoek sleutels zoeken in de Azure Portal
 
-U kunt uw ontwerp sleutels bekijken en opnieuw instellen in de Azure Portal, waar u de resource voor QnA Maker Managed (preview) hebt gemaakt. Deze sleutels kunnen worden aangeduid als abonnements sleutels.
+U kunt uw ontwerp sleutels bekijken en opnieuw instellen in de Azure Portal, waar u de resource voor QnA Maker Managed (preview) hebt gemaakt.
 
 1. Ga naar de resource QnA Maker Managed (preview) in de Azure Portal en selecteer de resource met het *Cognitive Services* type:
 
@@ -365,6 +365,6 @@ Met QnA Maker Managed (preview) hebt u de mogelijkheid om uw QnA Maker-service i
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over de QnA Maker [Knowledge Base](../index.yml)
+* Meer informatie over de QnA Maker [Knowledge Base](../How-To/manage-knowledge-bases.md)
 * Inzicht in de [levens cyclus van een Knowledge Base](development-lifecycle-knowledge-base.md)
 * [Limieten](../limits.md) voor service-en Knowledge bases controleren

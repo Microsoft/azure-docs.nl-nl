@@ -1,0 +1,127 @@
+### YamlMime:Landing
+title: Documentatie voor Azure front deur Standard/Premium (preview)
+summary: Azure front deur Standard/Premium (preview) is een modern netwerk platform voor beveiligde toepassingen dat een schaal bare CDN, DSA en GLB biedt voor uw wereld wijde webtoepassingen.
+metadata:
+  title: Azure front deur Standard/Premium-documentatie
+  description: Azure front deur Standard/Premium (preview) biedt een schaalbaar en beveiligd toegangs punt voor een snelle levering van uw globale webtoepassingen. Leer hoe u Front Door gebruikt met onze snelstarts, zelfstudies en voorbeelden.
+  services: frontdoor
+  ms.service: frontdoor
+  ms.topic: landing-page
+  author: duongau
+  ms.author: duau
+  ms.date: 02/18/2020
+  ms.openlocfilehash: b11cf6b0fe8c0f1cdf711ee3b9ef6c92e5bc71bb
+  ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+  ms.translationtype: MT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 02/18/2021
+  ms.locfileid: "101100956"
+landingContent:
+- title: Meer informatie over Azure front deur Standard/Premium (preview)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is Azure front deur Standard/Premium (preview)?
+      url: overview.md
+- title: Een Front Door-profiel maken
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Een standaard profiel voor voor deur/Premium maken
+      url: create-front-door-portal.md
+- title: Endpoint Manager configureren
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Eindpunt beheerder
+      url: concept-endpoint-manager.md
+    - text: Route
+      url: concept-route.md
+  - linkListType: how-to-guide
+    links:
+    - text: Endpoint Manager configureren
+      url: how-to-configure-endpoint-manager.md
+- title: Aangepaste domeinen toevoegen
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Een aangepast domein toevoegen
+      url: how-to-add-custom-domain.md
+- title: Uw oorsprongs groepen beheren
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Oorsprong
+      url: concept-origin.md
+    - text: Statuscontroles
+      url: concept-health-probes.md
+  - linkListType: how-to-guide
+    links:
+    - text: Een originele groep configureren
+      url: how-to-create-origin.md
+- title: Een regelset configureren
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Wat is de regel instelling?
+      url: concept-rule-set.md
+    - text: Overeenkomende voor waarden voor regel instellingen
+      url: concept-rule-set-match-conditions.md
+    - text: Acties voor regel sets
+      url: concept-rule-set-actions.md
+  - linkListType: how-to-guide
+    links:
+    - text: Een regelset configureren
+      url: how-to-configure-rule-set.md
+- title: Uw toepassing beveiligen
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Private Link
+      url: concept-private-link.md
+    - text: WAF op de voor deur standaard/Premium van Azure
+      url: ../../web-application-firewall/afds/afds-overview.md
+    - text: DDoS-bescherming
+      url: concept-ddos.md
+  - linkListType: how-to-guide
+    links:
+    - text: Persoonlijke koppeling inschakelen
+      url: how-to-enable-private-link.md
+    - text: WAF-beleid configureren
+      url: ../../web-application-firewall/afds/waf-front-door-create-portal.md
+- title: Rapporten, metrische gegevens en Logboeken
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Rapporten
+      url: how-to-reports.md
+    - text: Bewaking, metrische gegevens en waarschuwingen
+      url: how-to-monitor-metrics.md
+    - text: Logboekregistratie
+      url: how-to-logs.md
+- title: Caching en optimalisatie
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Caching
+      url: concept-caching.md
+  - linkListType: how-to-guide
+    links:
+    - text: Cache opschonen
+      url: how-to-cache-purge.md
+    - text: Compressie
+      url: how-to-compression.md
+- title: Problemen met Azure Front Door oplossen
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Algemene BGP-routeringsproblemen
+      url: troubleshoot-route-issues.md
+    - text: Toegestane certificeringsinstanties
+      url: troubleshoot-allowed-certificate-authority.md
+- title: Meer informatie over Azure Front Door
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is Azure Front Door?
+      url: ../front-door-overview.md

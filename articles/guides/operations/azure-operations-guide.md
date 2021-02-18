@@ -8,12 +8,12 @@ ms.service: azure
 ms.topic: overview
 ms.workload: infrastructure
 ms.date: 08/24/2018
-ms.openlocfilehash: c0269464352fa333c6447834a56c25348ecb71a3
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 1eb0bf2c0e214c3e076895903176d15ee792c70c
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98895251"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101093041"
 ---
 # <a name="get-started-for-azure-it-operators"></a>Introductie voor Azure-IT-uitvoerders
 
@@ -200,7 +200,7 @@ Als u het tegoed overschrijdt, wordt uw service uitgeschakeld totdat de volgende
 
 Azure RBAC heeft verschillende ingebouwde rollen die u kunt gebruiken om machtigingen toe te wijzen. Als u een gebruiker een beheerder van een Azure-abonnement wilt maken, wijst u de rol [Eigenaar](../../role-based-access-control/built-in-roles.md#owner) aan deze persoon toe voor het abonnementsbereik. De rol van eigenaar geeft de gebruiker volledige toegang tot alle resources in het abonnement, waaronder het recht om toegang aan anderen te delegeren.
 
-Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure-portal](../../role-based-access-control/role-assignments-portal.md) voor meer informatie.
+Zie [Azure-rollen toewijzen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md)voor meer informatie.
 
 ### <a name="view-billing-information-in-the-azure-portal"></a>Factureringsgegevens weergeven in de Azure-portal
 
@@ -304,7 +304,7 @@ Hier volgen enkele voor beelden van [ingebouwde rollen in azure](../../role-base
 
 - **Inzender voor opslagaccounts**: Een gebruiker met deze rol kan opslagaccounts beheren, maar niet de toegang tot de opslagaccounts.
 
-Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure-portal](../../role-based-access-control/role-assignments-portal.md) voor meer informatie.
+Zie [Azure-rollen toewijzen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md)voor meer informatie.
 
 ## <a name="azure-virtual-machines"></a>Azure Virtual Machines
 

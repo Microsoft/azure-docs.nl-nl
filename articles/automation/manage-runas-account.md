@@ -5,12 +5,12 @@ services: automation
 ms.subservice: ''
 ms.date: 01/19/2021
 ms.topic: conceptual
-ms.openlocfilehash: f9e99318c526bb935d0e035fdbf59874249390da
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: f170fc948f136f4f46634e7ae2645ed2eb357afa
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99050936"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101096469"
 ---
 # <a name="manage-an-azure-automation-run-as-account"></a>Een Azure Automation uitvoeren als-account beheren
 
@@ -64,10 +64,10 @@ Voordat u de machtigingen voor het uitvoeren als-account toewijst, moet u eerst 
 
 Raadpleeg de volgende artikelen voor gedetailleerde stappen voor het toevoegen van roltoewijzingen, afhankelijk van de methode die u wilt gebruiken.
 
-* [Toewijzing van Azure-functie toevoegen vanuit de Azure Portal](../role-based-access-control/role-assignments-portal.md)
-* [Toewijzing van Azure-functie toevoegen met behulp van Azure PowerShell](../role-based-access-control/role-assignments-powershell.md)
-* [Azure-roltoewijzing toevoegen met behulp van Azure CLI](../role-based-access-control/role-assignments-cli.md)
-* [Toewijzing van Azure-rollen toevoegen met behulp van de REST API](..//role-based-access-control/role-assignments-rest.md)
+* [Azure-rollen toewijzen met behulp van de Azure Portal](../role-based-access-control/role-assignments-portal.md)
+* [Azure-rollen toewijzen met behulp van Azure PowerShell](../role-based-access-control/role-assignments-powershell.md)
+* [Azure-rollen toewijzen met behulp van Azure CLI](../role-based-access-control/role-assignments-cli.md)
+* [Azure-rollen toewijzen met behulp van de REST API](..//role-based-access-control/role-assignments-rest.md)
 
 Nadat u het uitvoeren als-account aan de rol hebt toegewezen, geeft u in uw runbook op `Set-AzContext -SubscriptionId "xxxx-xxxx-xxxx-xxxx"` dat u de context van het abonnement wilt gebruiken. Zie [set-AzContext](/powershell/module/az.accounts/set-azcontext)voor meer informatie.
 

@@ -1,14 +1,14 @@
 ---
 title: Voor beeld van Azure Security Bench Mark Foundation blauw druk-overzicht
 description: Overzicht en architectuur van het voor beeld van Azure Security Bench Mark Foundation Blue.
-ms.date: 02/12/2020
+ms.date: 02/17/2020
 ms.topic: sample
-ms.openlocfilehash: 4bbc5b94ea9b977a2b71edbf15cf5a7aa0566974
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: b3b58f2fb603e23e4b188e527fa4fc60f4041a29
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100487107"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101095276"
 ---
 # <a name="overview-of-the-azure-security-benchmark-foundation-blueprint-sample"></a>Overzicht van het voor beeld van Azure Security Bench Mark Foundation blauw druk
 

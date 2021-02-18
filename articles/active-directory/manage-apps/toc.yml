@@ -212,8 +212,10 @@
               href: application-proxy-integrate-with-microsoft-cloud-application-security.md
             - name: Integreren via Extern bureaublad
               href: application-proxy-integrate-with-remote-desktop-services.md
-            - name: Integreren met SharePoint
+            - name: Integreren met share point (Kerberos)
               href: application-proxy-integrate-with-sharepoint-server.md
+            - name: Integreren met share point (SAML)
+              href: application-proxy-integrate-with-sharepoint-server-saml.md
             - name: Integreren met OMS
               href: application-proxy-integrate-with-teams.md
             - name: Integreren met Tableau

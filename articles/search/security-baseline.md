@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 8c32d06247516611fc79bd6f77b60fec6b73044d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 0618e4445629893fbe623df4bc937698bd307c7c
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100591817"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101096559"
 ---
 # <a name="azure-security-baseline-for-azure-cognitive-search"></a>Azure-beveiligings basislijn voor Azure Cognitive Search
 
@@ -495,7 +495,7 @@ Micro soft beheert het onderliggende platform en behandelt alle inhoud van de kl
 ### <a name="46-use-azure-rbac-to-manage-access-to-resources"></a>4,6: Azure RBAC gebruiken om de toegang tot resources te beheren
 
 **Richt lijnen**: voor Service beheer gebruikt u Azure RBAC (op rollen gebaseerd toegangs beheer) voor het beheren van de toegang tot sleutels en configuratie. Voor inhouds bewerkingen, zoals indexering en query's, gebruikt Cognitive Search sleutels in plaats van een model voor toegangs beheer op basis van een identiteit. Gebruik Azure RBAC om de toegang tot sleutels te beheren.
-- [RBAC configureren in Azure](../role-based-access-control/role-assignments-portal.md) 
+- [Azure RBAC configureren](../role-based-access-control/role-assignments-portal.md) 
 
  
 - [Rollen gebruiken voor beheerders toegang tot Cognitive Search](./search-security-rbac.md)

@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 01/26/2021
 ms.author: banders
 ms.custom: seodec18
-ms.openlocfilehash: 23e3adad12a726b03f6efe309dde0ec4a93bcd5b
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 1574149e0587701323cb9ae5ae0c5cfeaccf47c7
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897422"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101096418"
 ---
 # <a name="manage-access-to-billing-information-for-azure"></a>Toegang tot factureringsgegevens beheren voor Azure
 
@@ -40,7 +40,7 @@ Accountbeheerders kunnen anderen toegang verlenen tot informatie over Azure-fact
 
 Deze rollen hebben toegang tot de factureringsgegevens in de [Azure-portal](https://portal.azure.com/). Personen aan wie deze rollen zijn toegewezen, kunnen ook de [Billing-API's](consumption-api-overview.md#usage-details-api) gebruiken om programmatisch facturen en gebruiksgegevens te verkrijgen.
 
-Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van Azure Portal](../../role-based-access-control/role-assignments-portal.md) voor meer informatie over het toewijzen van rollen.
+Zie [Azure-rollen toewijzen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md)om rollen toe te wijzen.
 
 **Als u een EA-klant bent, kan een accounteigenaar de bovenstaande rol toewijzen aan andere gebruikers van zijn team. Maar als u wilt dat deze gebruikers factureringsgegevens kunnen inzien, moet de Enterprise-beheerder de accounteigenaar toestaan om rekeningen in het Enterprise-portal in te zien.
 
@@ -105,7 +105,7 @@ De functie Facturering voor lezer is beschikbaar als preview-versie en biedt nog
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Gebruikers met andere rollen, zoals een Eigenaar of Inzender, hebben niet alleen toegang tot factureringsgegevens, maar ook tot Azure-services. Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van Azure Portal](../../role-based-access-control/role-assignments-portal.md) voor meer informatie over het beheren van deze rollen.
+- Gebruikers met andere rollen, zoals een Eigenaar of Inzender, hebben niet alleen toegang tot factureringsgegevens, maar ook tot Azure-services. Zie [Azure-rollen toewijzen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md)om deze rollen te beheren.
 - Zie [Ingebouwde rollen in Azure](../../role-based-access-control/built-in-roles.md) voor meer informatie over rollen.
 
 ## <a name="need-help-contact-us"></a>Hebt u hulp nodig? Neem contact met ons op.

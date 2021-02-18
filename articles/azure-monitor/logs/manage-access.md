@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 04/10/2019
-ms.openlocfilehash: 184d5c98b2b434c87e112c569ff4e8ab347344c5
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: f16e5363af7de2152a7fa73bb52219d87971a249
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609364"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101091202"
 ---
 # <a name="manage-access-to-log-data-and-workspaces-in-azure-monitor"></a>Toegang tot logboekgegevens en werkruimten beheren in Azure Monitor
 
@@ -120,7 +120,7 @@ Voor de volgende activiteiten zijn ook Azure-machtigingen vereist:
 
 ## <a name="manage-access-using-azure-permissions"></a>Toegang beheren met Azure-machtigingen
 
-Volg de stappen in [Roltoewijzingen gebruiken voor het beheer van de toegang tot de resources van uw Azure-abonnement](../../role-based-access-control/role-assignments-portal.md) om toegang te verlenen tot de Log Analytics-werkruimte met behulp van Azure-machtigingen. Voor beeld van aangepaste rollen, Zie [voor beelden van aangepaste rollen](#custom-role-examples)
+Als u toegang wilt verlenen tot de Log Analytics-werk ruimte met behulp van Azure-machtigingen, volgt u de stappen in [Azure-rollen toewijzen om de toegang tot uw Azure-abonnements resources te beheren](../../role-based-access-control/role-assignments-portal.md). Voor beeld van aangepaste rollen, Zie [voor beelden van aangepaste rollen](#custom-role-examples)
 
 Azure heeft twee ingebouwde gebruikers rollen voor Log Analytics-werk ruimten:
 

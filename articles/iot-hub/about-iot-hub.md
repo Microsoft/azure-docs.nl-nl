@@ -13,12 +13,12 @@ ms.custom:
 - 'role: System Architecture'
 ms.service: iot-hub
 services: iot-hub
-ms.openlocfilehash: a460d77a032f36505c8036bc60aa37017f630e55
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-ms.translationtype: HT
+ms.openlocfilehash: 7e72f628bf328a3b93e81c60aa65b8c2495f7f2b
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501138"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101095251"
 ---
 # <a name="what-is-azure-iot-hub"></a>Wat is Azure IoT Hub?
 
@@ -104,6 +104,8 @@ IoT Hub en de apparaat-SDK's ondersteunen de volgende protocollen voor het verbi
 * AMQP via WebSockets
 * MQTT
 * MQTT via WebSockets
+
+IoT Hub en de Sdk's van het apparaat ondersteunen de [Azure IoT Plug en Play](../iot-pnp/overview-iot-plug-and-play.md) -conventies voor het verbinden van apparaten. IoT Plug en Play-apparaten gebruiken een model voor het adverteren van hun mogelijkheden aan IoT-Plug en Play-toepassingen. Met het model voor apparaten kunnen bouwers van oplossingen smart-apparaten integreren met hun oplossingen zonder hand matige configuratie.
 
 Als uw oplossing de apparaatbibliotheken niet kan gebruiken, kunnen apparaten het protocol MQTT v3.1.1, HTTPS 1.1 of AMQP 1.0 gebruiken om op systeemeigen wijze verbinding te maken met uw hub.
 

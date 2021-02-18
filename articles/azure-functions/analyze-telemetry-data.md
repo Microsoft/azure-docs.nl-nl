@@ -4,12 +4,12 @@ description: Meer informatie over het weer geven en opvragen van Azure Functions
 ms.topic: how-to
 ms.date: 10/14/2020
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 9e03a36824853a3e43bbf8628fd12481cfbcaf25
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 56af6af6f4204a819c06fd97cda357dca20a19b0
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99549555"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591173"
 ---
 # <a name="analyze-azure-functions-telemetry-in-application-insights"></a>Azure Functions telemetrie in Application Insights analyseren 
 
@@ -64,12 +64,12 @@ De volgende gebieden van Application Insights kunnen nuttig zijn bij het evaluer
 | ---- | ----------- |
 | **[Fouten](../azure-monitor/app/asp-net-exceptions.md)** |  Grafieken en waarschuwingen maken op basis van functie fouten en server uitzonderingen. De **naam** van de bewerking is de naam van de functie. Storingen in afhankelijkheden worden niet weer gegeven, tenzij u aangepaste telemetrie implementeert voor afhankelijkheden. |
 | **[Prestaties](../azure-monitor/app/performance-counters.md)** | Analyseer prestatie problemen door het resource gebruik en de door Voer per **Cloud-rolinstanties** weer te geven. Deze prestatie gegevens kunnen nuttig zijn voor het opsporen van fouten in scenario's waarbij functies worden bogging van uw onderliggende resources. |
-| **[Metrische gegevens](../azure-monitor/platform/metrics-charts.md)** | Grafieken en waarschuwingen maken op basis van metrische gegevens. Metrische gegevens bevatten het aantal functie-aanroepen, uitvoerings tijd en succes percentages. |
+| **[Metrische gegevens](../azure-monitor/essentials/metrics-charts.md)** | Grafieken en waarschuwingen maken op basis van metrische gegevens. Metrische gegevens bevatten het aantal functie-aanroepen, uitvoerings tijd en succes percentages. |
 | **[Live Metrics](../azure-monitor/app/live-stream.md)** | Metrische gegevens weer geven terwijl deze in bijna realtime worden gemaakt. |
 
 ## <a name="query-telemetry-data"></a>Telemetrie-gegevens opvragen
 
-[Application Insights Analytics](../azure-monitor/log-query/log-query-overview.md) geeft u toegang tot alle telemetriegegevens in de vorm van tabellen in een Data Base. Analytics biedt een query taal voor het uitpakken, bewerken en visualiseren van de gegevens. 
+[Application Insights Analytics](../azure-monitor/logs/log-query-overview.md) geeft u toegang tot alle telemetriegegevens in de vorm van tabellen in een Data Base. Analytics biedt een query taal voor het uitpakken, bewerken en visualiseren van de gegevens. 
 
 Kies **Logboeken** om te verkennen of een query uit te zoeken naar vastgelegde gebeurtenissen.
 

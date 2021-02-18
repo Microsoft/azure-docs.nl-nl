@@ -6,12 +6,12 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 07/28/2020
-ms.openlocfilehash: 4c6d8fabbd236a2653fff8168ad73c0b45f09d64
-ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
+ms.openlocfilehash: 4970cacb0995678bdad87f14ba971b8fb88ffa09
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98027839"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593647"
 ---
 # <a name="react-plugin-for-application-insights-javascript-sdk"></a>Invoeg toepassing reageren voor Application Insights java script-SDK
 
@@ -75,9 +75,9 @@ class MyComponent extends React.Component {
 export default withAITracking(reactPlugin, MyComponent);
 ```
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>Configuratie
 
-| Naam    | Standaard | Beschrijving                                                                                                    |
+| Name    | Standaard | Beschrijving                                                                                                    |
 |---------|---------|----------------------------------------------------------------------------------------------------------------|
 | geschiedenis | null    | Router geschiedenis reageren. Zie de [documentatie over het reagerende router pakket](https://reactrouter.com/web/api/history)voor meer informatie. Voor meer informatie over het openen van het geschiedenis object buiten de onderdelen raadpleegt u de [Veelgestelde vragen over de reagerende router](https://github.com/ReactTraining/react-router/blob/master/FAQ.md#how-do-i-access-the-history-object-outside-of-components)    |
 
@@ -226,4 +226,4 @@ Bekijk de [Application Insights reageren](https://github.com/Azure-Samples/appli
 ## <a name="next-steps"></a>Volgende stappen
 
 - Zie de [Application Insights java script SDK-documentatie](javascript.md)voor meer informatie over de Java script-SDK.
-- Zie het [overzicht van logboek query's](../../azure-monitor/log-query/log-query-overview.md)voor meer informatie over de Kusto-query taal en het opvragen van gegevens in log Analytics.
+- Zie het [overzicht van logboek query's](../../azure-monitor/logs/log-query-overview.md)voor meer informatie over de Kusto-query taal en het opvragen van gegevens in log Analytics.

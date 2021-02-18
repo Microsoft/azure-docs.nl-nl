@@ -9,12 +9,12 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: 50d78e83bbbeb4b0252c83f9f52e94599ea6946c
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 2f68452bed69e4e174f126d259e8df6d2283e6cf
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98787957"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585228"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Microsoft Azure Storage bewaken, problemen opsporen en oplossen
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -69,7 +69,7 @@ Als u dergelijke toepassingen wilt beheren, moet u ze proactief controleren en i
   * [Bijlage 4: Excel gebruiken om metrische gegevens weer te geven en te registreren]
   * [Bijlage 5: bewaking met Application Insights voor Azure DevOps]
 
-## <a name="introduction"></a><a name="introduction"></a>Inleiding
+## <a name="introduction"></a><a name="introduction"></a>Introductie
 In deze hand leiding wordt beschreven hoe u functies zoals Azure Opslaganalyse, logboek registratie aan client zijde in de Azure Storage-client bibliotheek en andere hulpprogram ma's van derden kunt gebruiken voor het identificeren, vaststellen en oplossen van Azure Storage gerelateerde problemen.
 
 ![Diagram waarin de gegevens stroom tussen client toepassingen en Azure Storage-services wordt weer gegeven.][1]
@@ -94,7 +94,7 @@ De '[bijlagen]' bevatten informatie over het gebruik van andere hulpprogram ma's
 ## <a name="monitoring-your-storage-service"></a><a name="monitoring-your-storage-service"></a>Uw opslag service controleren
 Als u bekend bent met de bewaking van Windows-prestaties, kunt u de metrische gegevens van de opslag beschouwen als Azure Storage equivalent van prestatie meter items van Windows. In metrische gegevens over opslag vindt u een uitgebreide set metrische gegevens (prestatie meter items in de terminologie van Windows prestatie meter), zoals service beschikbaarheid, het totale aantal aanvragen voor de service of het percentage voltooide aanvragen aan de service. Zie voor een volledige lijst met beschik bare metrische gegevens het [tabel schema voor Opslaganalyse metrische gegevens](/rest/api/storageservices/Storage-Analytics-Metrics-Table-Schema). U kunt opgeven of u wilt dat de opslag service elk uur of elke minuut metrische gegevens verzamelt en samenvoegt. Voor meer informatie over het inschakelen van metrische gegevens en het bewaken van uw opslag accounts raadpleegt u metrische waarden voor [opslag inschakelen en statistieken weer geven](../blobs/monitor-blob-storage.md).
 
-U kunt kiezen welke metrische gegevens per uur u wilt weer geven in de [Azure Portal](https://portal.azure.com) en regels configureren waarmee beheerders per e-mail op de hoogte worden gesteld wanneer een metrische waarde van elk uur een bepaalde drempel waarde overschrijdt. Zie [waarschuwings meldingen ontvangen](../../azure-monitor/platform/alerts-overview.md)voor meer informatie.
+U kunt kiezen welke metrische gegevens per uur u wilt weer geven in de [Azure Portal](https://portal.azure.com) en regels configureren waarmee beheerders per e-mail op de hoogte worden gesteld wanneer een metrische waarde van elk uur een bepaalde drempel waarde overschrijdt. Zie [waarschuwings meldingen ontvangen](../../azure-monitor/alerts/alerts-overview.md)voor meer informatie.
 
 U wordt aangeraden [Azure monitor voor opslag](../../azure-monitor/insights/storage-insights-overview.md) te bekijken (preview). Het is een functie van Azure Monitor die uitgebreide controle biedt over uw Azure Storage-accounts door een uniforme weer gave te bieden van de prestaties, capaciteit en beschik baarheid van uw Azure Storage services. U hoeft niets in te scha kelen of te configureren, en u kunt deze metrische gegevens direct weer geven vanuit de vooraf gedefinieerde interactieve diagrammen en andere visualisaties die zijn opgenomen.
 
@@ -566,7 +566,7 @@ Als de client toepassing een SAS-sleutel probeert te gebruiken die niet de benod
 
 In de volgende tabel ziet u een voor beeld van een logboek bericht aan de server zijde uit het logboek bestand van de opslag logboek registratie:
 
-| Naam | Waarde |
+| Name | Waarde |
 | --- | --- |
 | Begin tijd van aanvraag | 2014-05-30T06:17:48.4473697 Z |
 | Het type bewerking     | GetBlobProperties            |

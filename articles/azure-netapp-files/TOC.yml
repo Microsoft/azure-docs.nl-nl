@@ -77,6 +77,8 @@
       href: manage-manual-qos-capacity-pool.md
     - name: Een subnet delegeren aan Azure NetApp Files
       href: azure-netapp-files-delegate-subnet.md
+    - name: Active Directory verbindingen maken en beheren
+      href: create-active-directory-connections.md
     - name: Een NFS-volume maken en beheren
       items:
         - name: Een NFS-volume maken

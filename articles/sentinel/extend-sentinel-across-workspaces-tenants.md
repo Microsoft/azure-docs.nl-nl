@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/11/2020
 ms.author: yelevin
-ms.openlocfilehash: 9cbafa2a87db9aa59769ac759da9b56a6463874a
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.openlocfilehash: 49b267d36fb6c365cf2125912c0d27fe7d669474
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100006680"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585289"
 ---
 # <a name="extend-azure-sentinel-across-workspaces-and-tenants"></a>Azure-Sentinel uitbreiden in werkruimten en tenants
 
@@ -35,7 +35,7 @@ U kunt het volledige voordeel van de Azure Sentinel-ervaring verkrijgen wanneer 
 | Eigendom van gegevens | De grenzen van gegevens eigendom, bijvoorbeeld door dochter ondernemingen of gelieerde ondernemingen, worden beter afgebakend met afzonderlijke werk ruimten. |  |
 | Meerdere Azure-tenants | Azure Sentinel ondersteunt het verzamelen van gegevens van micro soft en Azure SaaS-resources alleen binnen een eigen Azure Active Directory (Azure AD)-Tenant grens. Daarom is voor elke Azure AD-tenant een afzonderlijke werkruimte vereist. |  |
 | Gedetailleerde controle over gegevenstoegang | Een organisatie moet mogelijk verschillende groepen binnen of buiten de organisatie toestaan om toegang te krijgen tot een aantal van de gegevens die worden verzameld door Azure Sentinel. Bijvoorbeeld:<br><ul><li>Resource-eigen aren hebben toegang tot gegevens met betrekking tot hun resources</li><li>Regionale of subsidiaire SOCs toegang tot gegevens die relevant zijn voor hun delen van de organisatie</li></ul> | [Resource-Azure RBAC](https://techcommunity.microsoft.com/t5/azure-sentinel/controlling-access-to-azure-sentinel-data-resource-rbac/ba-p/1301463) of [tabel niveau gebruiken Azure RBAC](https://techcommunity.microsoft.com/t5/azure-sentinel/table-level-rbac-in-azure-sentinel/ba-p/965043) |
-| Gedetailleerde instellingen voor retentie | In het verleden waren meerdere werk ruimten de enige manier om verschillende Bewaar perioden voor verschillende gegevens typen in te stellen. Dit is in veel gevallen niet langer nodig, dankzij de introductie van instellingen voor het bewaren van een tabel niveau. | Instellingen voor het [bewaren van tabel niveau](https://techcommunity.microsoft.com/t5/azure-sentinel/new-per-data-type-retention-is-now-available-for-azure-sentinel/ba-p/917316) gebruiken of [gegevens verwijdering](../azure-monitor/platform/personal-data-mgmt.md#how-to-export-and-delete-private-data) automatiseren |
+| Gedetailleerde instellingen voor retentie | In het verleden waren meerdere werk ruimten de enige manier om verschillende Bewaar perioden voor verschillende gegevens typen in te stellen. Dit is in veel gevallen niet langer nodig, dankzij de introductie van instellingen voor het bewaren van een tabel niveau. | Instellingen voor het [bewaren van tabel niveau](https://techcommunity.microsoft.com/t5/azure-sentinel/new-per-data-type-retention-is-now-available-for-azure-sentinel/ba-p/917316) gebruiken of [gegevens verwijdering](../azure-monitor/logs/personal-data-mgmt.md#how-to-export-and-delete-private-data) automatiseren |
 | Gesplitste facturering | Door werk ruimten in afzonderlijke abonnementen te plaatsen, kunnen ze worden gefactureerd aan verschillende partijen. | Gebruiksrapportages en doorberekening |
 | Verouderde architectuur | Het gebruik van meerdere werk ruimten kan van een historisch ontwerp zijn dat rekening houdt met de beperkingen of aanbevolen procedures die niet meer waar zijn. Het kan ook een willekeurige ontwerpkeuze zijn geweest, die kan worden aangepast voor een betere aansluiting op Azure Sentinel.<br><br>Enkele voorbeelden:<br><ul><li>Een standaard werkruimte per abonnement gebruiken bij het implementeren van Azure Security Center</li><li>De nood zaak van nauw keurigere toegangs beheer-of Bewaar instellingen, de oplossingen waarvoor relatief nieuwe</li></ul> | Werkruimten opnieuw ontwerpen |
 
@@ -81,12 +81,12 @@ Azure Sentinel ondersteunt een [incident weergave van meerdere werk ruimten](./m
 
 ### <a name="cross-workspace-querying"></a>Query's in meerdere werk ruimten
 
-Azure Sentinel ondersteunt het opvragen van [meerdere werk ruimten in één query](../azure-monitor/log-query/cross-workspace-query.md), zodat u gegevens uit meerdere werk ruimten in één query kunt zoeken en correleren. 
+Azure Sentinel ondersteunt het opvragen van [meerdere werk ruimten in één query](../azure-monitor/logs/cross-workspace-query.md), zodat u gegevens uit meerdere werk ruimten in één query kunt zoeken en correleren. 
 
-- Gebruik de [werk ruimte ()-expressie](../azure-monitor/log-query/workspace-expression.md) om te verwijzen naar een tabel in een andere werk ruimte. 
+- Gebruik de [werk ruimte ()-expressie](../azure-monitor/logs/workspace-expression.md) om te verwijzen naar een tabel in een andere werk ruimte. 
 - Gebruik de [operator Union](/azure/data-explorer/kusto/query/unionoperator?pivots=azuremonitor) naast de werk ruimte ()-expressie om een query uit te voeren voor tabellen in meerdere werk ruimten.
 
-U kunt opgeslagen [functies](../azure-monitor/log-query/functions.md) gebruiken om query's in meerdere werk ruimten te vereenvoudigen. Als een verwijzing naar een werk ruimte bijvoorbeeld lang is, wilt u de expressie wellicht opslaan `workspace("customer-A's-hard-to-remember-workspace-name").SecurityEvent` als een functie met de naam `SecurityEventCustomerA` . U kunt vervolgens query's schrijven als `SecurityEventCustomerA | where ...` .
+U kunt opgeslagen [functies](../azure-monitor/logs/functions.md) gebruiken om query's in meerdere werk ruimten te vereenvoudigen. Als een verwijzing naar een werk ruimte bijvoorbeeld lang is, wilt u de expressie wellicht opslaan `workspace("customer-A's-hard-to-remember-workspace-name").SecurityEvent` als een functie met de naam `SecurityEventCustomerA` . U kunt vervolgens query's schrijven als `SecurityEventCustomerA | where ...` .
 
 Een functie kan ook een vaak gebruikte samen voeging vereenvoudigen. U kunt bijvoorbeeld de volgende expressie opslaan als een functie met de naam `unionSecurityEvent` :
 

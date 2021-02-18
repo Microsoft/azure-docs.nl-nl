@@ -8,12 +8,12 @@ ms.date: 08/14/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: c24fd42f866cd15f84688318050bc07d5ad235e9
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 53d1504b03e3dbe99cbdeac23df2623a5390b3d9
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100384653"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100635418"
 ---
 # <a name="give-modules-access-to-a-devices-local-storage"></a>Modules toegang geven tot de lokale opslag van een apparaat
 
@@ -85,7 +85,7 @@ Meer informatie over de opties voor het maken van [docker-documenten](https://do
 
 ## <a name="encrypted-data-in-module-storage"></a>Versleutelde gegevens in module opslag
 
-Wanneer modules de workload API van IoT Edge daemon aanroepen om gegevens te versleutelen, wordt de versleutelings sleutel afgeleid met behulp van de module-ID en de generatie-ID van de module. Een generatie-ID wordt gebruikt om geheimen te beveiligen als een module uit de implementatie wordt verwijderd en er later een andere module met dezelfde module-ID wordt geïmplementeerd op hetzelfde apparaat. U kunt de generatie-ID van een module weer geven met behulp van de Azure CLI [-opdracht AZ IOT hub module-identiteits weergave](/cli/azure/ext/azure-cli-iot-ext/iot/hub/module-identity#ext-azure-cli-iot-ext-az-iot-hub-module-identity-show).
+Wanneer modules de workload API van IoT Edge daemon aanroepen om gegevens te versleutelen, wordt de versleutelings sleutel afgeleid met behulp van de module-ID en de generatie-ID van de module. Een generatie-ID wordt gebruikt om geheimen te beveiligen als een module uit de implementatie wordt verwijderd en er later een andere module met dezelfde module-ID wordt geïmplementeerd op hetzelfde apparaat. U kunt de generatie-id van een module weer geven met behulp van de Azure CLI [-opdracht AZ IOT hub module-identiteits weergave](/cli/azure/ext/azure-iot/iot/hub/module-identity).
 
 Als u bestanden wilt delen tussen verschillende modules, moeten ze geen geheimen bevatten of niet worden ontsleuteld.
 

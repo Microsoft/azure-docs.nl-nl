@@ -8,16 +8,16 @@ ms.subservice: iomt
 ms.topic: how-to
 ms.date: 11/13/2020
 ms.author: jasteppe
-ms.openlocfilehash: 14fd5378f37ebfc20b2d7084c08f15ea8f7a00b2
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 00abad784048b67e9d89c12b9be3f631f586fb07
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630529"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574525"
 ---
 # <a name="export-azure-iot-connector-for-fhir-preview-metrics-through-diagnostic-settings"></a>Metrische gegevens van Azure IoT Connector voor FHIR (preview) exporteren via diagnostische instellingen
 
-In dit artikel leert u hoe u Azure IoT connector exporteert voor snelle bronnen voor de gezondheids zorg (FHIR&#174;) * metrische Logboeken. De functie die logboek registratie van metrische gegevens mogelijk maakt, is de [**Diagnostische instellingen**](../azure-monitor/platform/diagnostic-settings.md) in de Azure Portal. 
+In dit artikel leert u hoe u Azure IoT connector exporteert voor snelle bronnen voor de gezondheids zorg (FHIR&#174;) * metrische Logboeken. De functie die logboek registratie van metrische gegevens mogelijk maakt, is de [**Diagnostische instellingen**](../azure-monitor/essentials/diagnostic-settings.md) in de Azure Portal. 
 
 > [!TIP]
 > Volg de richt lijnen in [Diagnostische logboek registratie inschakelen in azure API voor FHIR en Azure IOT connector voor FHIR](enable-diagnostic-logging.md#enable-diagnostic-logging-in-azure-api-for-fhir) om controle logboek registratie in te stellen.
@@ -48,7 +48,7 @@ In dit artikel leert u hoe u Azure IoT connector exporteert voor snelle bronnen 
 > [!Note] 
 > Het kan tot vijf tien minuten duren voordat de eerste metrische Logboeken in de opslag plaats van uw keuze worden weer gegeven.  
  
-Zie de [documentatie van Azure resource log](../azure-monitor/platform/platform-logs-overview.md) voor meer informatie over het werken met Diagnostische logboeken
+Zie de [documentatie van Azure resource log](../azure-monitor/essentials/platform-logs-overview.md) voor meer informatie over het werken met Diagnostische logboeken
 
 ## <a name="conclusion"></a>Conclusie 
 Toegang tot metrische Logboeken is essentieel voor het controleren en oplossen van problemen.  Met Azure IoT connector voor FHIR kunt u deze acties uitvoeren via metrische Logboeken. 
@@ -60,4 +60,4 @@ Bekijk veelgestelde vragen over de Azure IoT-connector voor FHIR.
 >[!div class="nextstepaction"]
 >[Veelgestelde vragen over Azure IoT connector voor FHIR](fhir-faq.md)
 
-* In de Azure Portal wordt Azure IoT connector voor FHIR aangeduid als IoT-connector (preview). FHIR is een geregistreerd handels merk van HL7 en wordt gebruikt met de machtiging van HL7.
+*In Azure Portal wordt Azure IoT Connector for FHIR aangeduid als IoT Connector (preview). FHIR is een gedeponeerd handelsmerk van HL7 en wordt gebruikt met de toestemming van HL7.

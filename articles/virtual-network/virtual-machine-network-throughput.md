@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 4/26/2019
 ms.author: steveesp
 ms.reviewer: kumud, mareat
-ms.openlocfilehash: 280b3cbef8307691b0d50c4a26f6dca18b7fb65b
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: cb128f9269895f04d1e0dad8e0c8d06c481e86c6
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233862"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576160"
 ---
 # <a name="virtual-machine-network-bandwidth"></a>Bandbreedte van virtuele machines
 
@@ -55,12 +55,12 @@ Voor gegevens overdracht tussen eind punten is het maken van verschillende strom
 ## <a name="flow-limits-and-active-connections-recommendations"></a>Aanbevelingen voor stroom limieten en actieve verbindingen
 
 De Azure-netwerk stack ondersteunt vandaag 1 miljoen stromen (500.000 binnenkomend en 500.000 uitgaand) voor een virtuele machine. Het totale aantal actieve verbindingen dat door een virtuele machine in verschillende scenario's kan worden verwerkt, is als volgt.
-- Vm's die deel uitmaken van VNET, kunnen 500.000 **_actieve verbindingen_* _ verwerken voor alle VM-grootten met 500.000 _*_actieve stromen in elke richting_*_.  
-- Vm's met virtuele netwerk apparaten (Nva's) zoals gateway, proxy, firewall kunnen 250.000 _*_actieve verbindingen_*_ met 500.000 _ *_actieve stromen in elke richting_* afhandelen. als gevolg hiervan wordt het door sturen en extra nieuwe stroom maken voor nieuwe verbinding ingesteld op de volgende hop, zoals weer gegeven in het bovenstaande diagram. 
+- Virtuele machines die deel uitmaken van VNET, kunnen 500.000 ***actieve verbindingen** _ verwerken voor alle VM-grootten met 500.000 _ *_actieve stromen in elke richting_* *.  
+- Vm's met virtuele netwerk apparaten (Nva's) zoals gateway, proxy, firewall kunnen 250.000 ***actieve verbindingen** wijzigen, met 500.000 _ *_actieve stromen in elke richting_** als gevolg van het door sturen en aanvullen van nieuwe verbindingen naar de volgende hop, zoals wordt weer gegeven in het bovenstaande diagram. 
 
 Zodra deze limiet is bereikt, worden extra verbindingen verwijderd. Het instellen en het beëindigen van de verbinding kan ook invloed hebben op de netwerk prestaties als de verbinding tot stand brengen en het beëindigen van de CPU met pakket verwerkings routines. We raden u aan werk belastingen te laten voldoen aan de verwachte verkeers patronen en de werk belasting adequaat uit te breiden zodat deze overeenkomen met uw prestatie behoeften.
 
-Er zijn metrische gegevens beschikbaar in [Azure monitor](../azure-monitor/platform/metrics-supported.md#microsoftcomputevirtualmachines) om het aantal netwerk stromen en de frequentie van het maken van de stroom op uw virtuele machine-of VMSS-instanties bij te houden.
+Er zijn metrische gegevens beschikbaar in [Azure monitor](../azure-monitor/essentials/metrics-supported.md#microsoftcomputevirtualmachines) om het aantal netwerk stromen en de frequentie van het maken van de stroom op uw virtuele machine-of VMSS-instanties bij te houden.
 
 ![Scherm afbeelding toont de pagina metrische gegevens van Azure Monitor met een lijn diagram en totalen voor binnenkomende en uitgaande stromen.](media/virtual-machine-network-throughput/azure-monitor-flow-metrics.png)
 

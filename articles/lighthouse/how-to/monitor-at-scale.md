@@ -3,21 +3,21 @@ title: Gedelegeerde resources op schaal controleren
 description: Meer informatie over het effectief gebruiken van Azure Monitor-logboeken op schaal bare wijze over de tenants van de klant die u beheert.
 ms.date: 02/11/2021
 ms.topic: how-to
-ms.openlocfilehash: f3a789c855f7b05d24cdacd0fb31ee7d6d3e188b
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: aadd14bb3e4aad61fb2afc0735b5714deedfe301
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100379230"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593116"
 ---
 # <a name="monitor-delegated-resources-at-scale"></a>Gedelegeerde resources op schaal controleren
 
 Als service provider hebt u mogelijk meerdere tenants voor klanten in [Azure Lighthouse](../overview.md). Met Azure Lighthouse kunnen service providers bewerkingen op verschillende tijdstippen in meerdere tenants tegelijk uitvoeren, waardoor beheer taken efficiënter zijn.
 
-In dit onderwerp wordt beschreven hoe u [Azure monitor-logboeken](../../azure-monitor/platform/data-platform-logs.md) op schaal bare wijze kunt gebruiken voor de tenants van de klant die u beheert. Hoewel we in dit onderwerp naar service providers en klanten verwijzen, is deze richt lijn ook van toepassing op [ondernemingen die Azure Lighthouse gebruiken om meerdere tenants te beheren](../concepts/enterprise.md).
+In dit onderwerp wordt beschreven hoe u [Azure monitor-logboeken](../../azure-monitor/logs/data-platform-logs.md) op schaal bare wijze kunt gebruiken voor de tenants van de klant die u beheert. Hoewel we in dit onderwerp naar service providers en klanten verwijzen, is deze richt lijn ook van toepassing op [ondernemingen die Azure Lighthouse gebruiken om meerdere tenants te beheren](../concepts/enterprise.md).
 
 > [!NOTE]
-> Zorg ervoor dat gebruikers in uw tenants voor beheer de [benodigde rollen hebben gekregen voor het beheren van log Analytics-werk ruimten](../../azure-monitor/platform/manage-access.md#manage-access-using-azure-permissions) op uw gedelegeerde klant abonnementen.
+> Zorg ervoor dat gebruikers in uw tenants voor beheer de [benodigde rollen hebben gekregen voor het beheren van log Analytics-werk ruimten](../../azure-monitor/logs/manage-access.md#manage-access-using-azure-permissions) op uw gedelegeerde klant abonnementen.
 
 ## <a name="create-log-analytics-workspaces"></a>Log Analytics-werk ruimten maken
 
@@ -28,7 +28,7 @@ We raden u aan deze werk ruimten rechtstreeks te maken in de tenants van de klan
 > [!TIP]
 > Elk Automation-account dat wordt gebruikt om toegang te krijgen tot gegevens uit een Log Analytics-werk ruimte, moet in dezelfde Tenant worden gemaakt als de werk ruimte.
 
-U kunt een Log Analytics-werk ruimte maken met behulp van de [Azure Portal](../../azure-monitor/learn/quick-create-workspace.md), met behulp van [Azure cli](../../azure-monitor/learn/quick-create-workspace-cli.md)of met behulp van [Azure PowerShell](../../azure-monitor/platform/powershell-workspace-configuration.md).
+U kunt een Log Analytics-werk ruimte maken met behulp van de [Azure Portal](../../azure-monitor/logs/quick-create-workspace.md), met behulp van [Azure cli](../../azure-monitor/logs/quick-create-workspace-cli.md)of met behulp van [Azure PowerShell](../../azure-monitor/logs/powershell-workspace-configuration.md).
 
 > [!IMPORTANT]
 > Zelfs als alle werk ruimten in de Tenant van de klant zijn gemaakt, moet de resource provider micro soft. Insights ook zijn geregistreerd bij een abonnement in de beheer Tenant.
@@ -43,11 +43,11 @@ Wanneer u hebt vastgesteld welk beleid u wilt implementeren, kunt u [ze op schaa
 
 ## <a name="analyze-the-gathered-data"></a>De verzamelde gegevens analyseren
 
-Nadat u uw beleid hebt geïmplementeerd, worden de gegevens vastgelegd in de Log Analytics werk ruimten die u hebt gemaakt in elke Tenant van de klant. Als u inzicht wilt krijgen in alle beheerde klanten, kunt u gebruikmaken van hulpprogram ma's zoals [Azure monitor werkmappen](../../azure-monitor/platform/workbooks-overview.md) voor het verzamelen en analyseren van gegevens uit meerdere gegevens bronnen.
+Nadat u uw beleid hebt geïmplementeerd, worden de gegevens vastgelegd in de Log Analytics werk ruimten die u hebt gemaakt in elke Tenant van de klant. Als u inzicht wilt krijgen in alle beheerde klanten, kunt u gebruikmaken van hulpprogram ma's zoals [Azure monitor werkmappen](../../azure-monitor/visualize/workbooks-overview.md) voor het verzamelen en analyseren van gegevens uit meerdere gegevens bronnen.
 
 ## <a name="view-alerts-across-customers"></a>Waarschuwingen over klanten weer geven
 
-U kunt [waarschuwingen](../../azure-monitor/platform/alerts-overview.md) weer geven voor de gedelegeerde abonnementen in de tenants van de klant die u beheert.
+U kunt [waarschuwingen](../../azure-monitor/alerts/alerts-overview.md) weer geven voor de gedelegeerde abonnementen in de tenants van de klant die u beheert.
 
 Vanuit uw Tenant beheren kunt u [waarschuwingen voor activiteiten logboeken maken, weer geven en beheren](../../azure-monitor/platform/alerts-activity-log.md) in de Azure portal of via api's en beheer hulpprogramma's.
 

@@ -5,12 +5,12 @@ ms.custom: subject-cost-optimization
 ms.service: app-service
 ms.topic: how-to
 ms.date: 01/01/2021
-ms.openlocfilehash: 3df08705859678525526f8fef198826f58249d8b
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: ada4c1991a57c8252247c9617e097dc82cb3b4a9
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99573361"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593988"
 ---
 # <a name="plan-and-manage-costs-for-azure-app-service"></a>Kosten plannen en beheren voor Azure App Service
 
@@ -38,7 +38,7 @@ Afhankelijk van de functie die u in App Service gebruikt, kunnen de volgende kos
 - **App service plan**  Vereist om een App Service-app te hosten.
 - **Geïsoleerde laag**  Een [Virtual Network](../virtual-network/index.yml) is vereist voor een app service omgeving.
 - **Back-up**  Er is een [opslag account](../storage/index.yml) vereist om back-ups te maken.
-- **Diagnostische logboeken**  U kunt het [opslag account](../storage/index.yml) selecteren als de optie voor logboek registratie of integreren met [Azure log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md).
+- **Diagnostische logboeken**  U kunt het [opslag account](../storage/index.yml) selecteren als de optie voor logboek registratie of integreren met [Azure log Analytics](../azure-monitor/logs/log-analytics-tutorial.md).
 - **App service certificaten**  Certificaten die u aanschaft in azure, moeten in [Azure Key Vault](../key-vault/index.yml)worden bewaard.
 
 Andere kosten resources voor App Service zijn (Zie [app service prijzen](https://azure.microsoft.com/pricing/details/app-service/) voor details):
@@ -114,7 +114,7 @@ Productie werkbelastingen worden geleverd met de aanbeveling van de speciale pri
 > [!NOTE]
 > **Premium v3** ondersteunt zowel Windows-containers als Linux-containers. 
 
-Wanneer u de gewenste prijs categorie hebt gekozen, moet u de niet-actieve instanties minimaliseren. In een scale-out-implementatie kunt u geld verspillen op gewerkte reken instanties. U moet [automatisch schalen configureren](../azure-monitor/platform/autoscale-get-started.md), beschikbaar in de **Standard** -laag en hoger. Door scale-out planningen te maken en scale-out-regels op basis van metrische gegevens, betaalt u alleen voor de instanties die u op een bepaald moment nodig hebt.
+Wanneer u de gewenste prijs categorie hebt gekozen, moet u de niet-actieve instanties minimaliseren. In een scale-out-implementatie kunt u geld verspillen op gewerkte reken instanties. U moet [automatisch schalen configureren](../azure-monitor/autoscale/autoscale-get-started.md), beschikbaar in de **Standard** -laag en hoger. Door scale-out planningen te maken en scale-out-regels op basis van metrische gegevens, betaalt u alleen voor de instanties die u op een bepaald moment nodig hebt.
 
 ### <a name="azure-reservations"></a>Azure-reserveringen
 

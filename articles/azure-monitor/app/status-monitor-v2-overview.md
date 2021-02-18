@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 09/16/2019
-ms.openlocfilehash: f0ce969a4ab016d6a036d33a0e9bf027bb580a20
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 69f80856150e461c6edfafdf0aa89de77c4ab0fd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186215"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100583807"
 ---
 # <a name="deploy-azure-monitor-application-insights-agent-for-on-premises-servers"></a>Azure Monitor Application Insights-agent implementeren voor on-premises servers
 
@@ -67,7 +67,7 @@ Elk van deze opties wordt beschreven in de [gedetailleerde instructies](status-m
   - De cmdlet [Get-ApplicationInsightsMonitoringStatus](./status-monitor-v2-api-reference.md#get-applicationinsightsmonitoringstatus) kan worden gebruikt om te controleren of de activering is geslaagd.
   - We raden u aan [Live metrische gegevens](./live-stream.md) te gebruiken om snel te bepalen of uw app telemetrie verzendt.
 
-  - U kunt [log Analytics](../log-query/log-analytics-tutorial.md) ook gebruiken om alle Cloud rollen weer te geven die momenteel telemetrie verzenden:
+  - U kunt [log Analytics](../logs/log-analytics-tutorial.md) ook gebruiken om alle Cloud rollen weer te geven die momenteel telemetrie verzenden:
       ```Kusto
       union * | summarize count() by cloud_RoleName, cloud_RoleInstance
       ```
@@ -76,9 +76,9 @@ Elk van deze opties wordt beschreven in de [gedetailleerde instructies](status-m
 
 Uw telemetrie weergeven:
 
-* [Bekijk metrische gegevens](../platform/metrics-charts.md) om de prestaties en het gebruik te bewaken.
+* [Bekijk metrische gegevens](../essentials/metrics-charts.md) om de prestaties en het gebruik te bewaken.
 * [Zoek gebeurtenissen en logboeken](./diagnostic-search.md) om problemen op te sporen.
-* [Gebruik analyses](../log-query/log-query-overview.md) voor meer geavanceerde query's.
+* [Gebruik analyses](../logs/log-query-overview.md) voor meer geavanceerde query's.
 * [Dash boards maken](./overview-dashboard.md).
 
 Meer telemetrie toevoegen:

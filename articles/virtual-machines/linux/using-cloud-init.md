@@ -6,14 +6,14 @@ ms.service: virtual-machines-linux
 ms.subservice: extensions
 ms.workload: infrastructure-services
 ms.topic: how-to
-ms.date: 10/14/2020
+ms.date: 02/14/2021
 ms.author: danis
-ms.openlocfilehash: 87cb4a233470fadc9cde616790aff0d5cd7b151b
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: a4fc51c8bb8a07f768da16224b9258bbdbf6d9b4
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92096654"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100632931"
 ---
 # <a name="cloud-init-support-for-virtual-machines-in-azure"></a>Cloud-init-ondersteuning voor virtuele machines in azure
 In dit artikel wordt de ondersteuning beschreven die bestaat voor [Cloud-init](https://cloudinit.readthedocs.io) voor het configureren van een virtuele machine (VM) of schaal sets voor virtuele machines bij het inrichten van de tijd in Azure. Deze Cloud-init-configuraties worden uitgevoerd bij de eerste keer opstarten zodra de resources zijn ingericht door Azure.  
@@ -135,6 +135,10 @@ package_upgrade: true
 packages:
   - httpd
 ```
+> [!NOTE]
+> Cloud-init heeft meerdere [invoer typen](https://cloudinit.readthedocs.io/en/latest/topics/format.html), Cloud-init maakt gebruik van de eerste regel van de CustomData/User Data om aan te geven hoe de invoer moet worden verwerkt, bijvoorbeeld `#cloud-config` geeft aan dat de inhoud moet worden verwerkt als een Cloud-init-configuratie.
+
+
 Druk op `ctrl-X` om het bestand te sluiten, typ `y` om het bestand op te slaan en druk op `enter` om de bestands naam te bevestigen bij afsluiten.
 
 De laatste stap bestaat uit het maken van een virtuele machine met de opdracht [AZ VM Create](/cli/azure/vm) . 

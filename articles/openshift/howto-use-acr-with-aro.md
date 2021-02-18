@@ -3,15 +3,15 @@ title: Gebruik Azure Container Registry met Azure Red Hat open Shift
 description: Meer informatie over het ophalen en uitvoeren van een container van Azure Container Registry in uw Azure Red Hat open Shift-cluster.
 author: sakthi-vetrivel
 ms.author: suvetriv
-ms.service: container-service
+ms.service: azure-redhat-openshift
 ms.topic: conceptual
 ms.date: 01/10/2021
-ms.openlocfilehash: 91b43aa939579f5df8115048cf52b9bcdd7ade3d
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: 651b73db084e8090f59faeffa9991c2ac468ca08
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99063847"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100634410"
 ---
 # <a name="use-azure-container-registry-with-azure-red-hat-openshift-aro"></a>Gebruik Azure Container Registry met Azure Red Hat open Shift (ARO)
 

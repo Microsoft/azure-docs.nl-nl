@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/12/2020
 ms.author: kenwith
 ms.reviewer: arvinh,luleon
-ms.openlocfilehash: 454d44eecd4eaa6d5c1f50edbd7edb1024ace041
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 0593d2b675da533035a70c66784812543909c9db
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99256878"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574191"
 ---
 # <a name="understand-how-provisioning-integrates-with-azure-monitor-logs"></a>Meer informatie over het inrichten van inrichtingen met Azure Monitor-logboeken
 
@@ -24,7 +24,7 @@ Inrichtings integratie met Azure Monitor logboeken en Log Analytics. Met Azure m
 
 ## <a name="enabling-provisioning-logs"></a>Inrichtings logboeken inschakelen
 
-U moet al bekend zijn met Azure monitoring en Log Analytics. Als dat niet het geval is, gaat u naar meer informatie en gaat u terug naar meer informatie over het inrichtings logboek van de toepassing. Zie [Azure monitor Overview](../../azure-monitor/overview.md)voor meer informatie over Azure-bewaking. Zie [overzicht van logboek query's in azure monitor](../../azure-monitor/log-query/log-query-overview.md)voor meer informatie over Azure monitor logboeken en log Analytics.
+U moet al bekend zijn met Azure monitoring en Log Analytics. Als dat niet het geval is, gaat u naar meer informatie en gaat u terug naar meer informatie over het inrichtings logboek van de toepassing. Zie [Azure monitor Overview](../../azure-monitor/overview.md)voor meer informatie over Azure-bewaking. Zie [overzicht van logboek query's in azure monitor](../../azure-monitor/logs/log-query-overview.md)voor meer informatie over Azure monitor logboeken en log Analytics.
 
 Zodra u Azure monitoring hebt geconfigureerd, kunt u Logboeken inschakelen voor het inrichten van toepassingen. De optie bevindt zich op de pagina **Diagnostische instellingen** .
 
@@ -47,7 +47,7 @@ De onderliggende gegevens stroom die het inrichten van logboek viewers verzendt,
 
 ## <a name="azure-monitor-workbooks"></a>Azure Monitor-werkmappen
 
-Azure Monitor werkmappen bieden een flexibel canvas voor gegevens analyse. Ze bieden ook voor het maken van uitgebreide visuele rapporten in de Azure Portal. Zie [Azure monitor Workbooks Overview](../../azure-monitor/platform/workbooks-overview.md)(Engelstalig) voor meer informatie.
+Azure Monitor werkmappen bieden een flexibel canvas voor gegevens analyse. Ze bieden ook voor het maken van uitgebreide visuele rapporten in de Azure Portal. Zie [Azure monitor Workbooks Overview](../../azure-monitor/visualize/workbooks-overview.md)(Engelstalig) voor meer informatie.
 
 Het inrichten van toepassingen wordt geleverd met een reeks vooraf gemaakte werkmappen. U kunt ze vinden op de pagina werkmappen. Als u de gegevens wilt bekijken, moet u ervoor zorgen dat alle filters (time Range, jobID, appName) worden ingevuld. U moet er ook voor zorgen dat u een app hebt ingericht, anders zijn er geen gegevens in de logboeken.
 
@@ -57,7 +57,7 @@ Het inrichten van toepassingen wordt geleverd met een reeks vooraf gemaakte werk
 
 ## <a name="custom-queries"></a>Aangepaste query's
 
-U kunt aangepaste query's maken en de gegevens in azure-Dash boards weer geven. Zie [Dash boards van log Analytics gegevens maken en delen](../../azure-monitor/log-query/get-started-queries.md)voor meer informatie. Zorg er ook voor dat u [overzicht van logboek query's in azure monitor](../../azure-monitor/log-query/log-query-overview.md)bekijkt.
+U kunt aangepaste query's maken en de gegevens in azure-Dash boards weer geven. Zie [Dash boards van log Analytics gegevens maken en delen](../../azure-monitor/logs/get-started-queries.md)voor meer informatie. Zorg er ook voor dat u [overzicht van logboek query's in azure monitor](../../azure-monitor/logs/log-query-overview.md)bekijkt.
 
 Hier volgen enkele voor beelden om aan de slag te gaan met het inrichten van toepassingen.
 
@@ -96,7 +96,7 @@ AADProvisioningLogs
 
 Met Azure Monitor kunt u aangepaste waarschuwingen configureren, zodat u een melding krijgt over belang rijke gebeurtenissen met betrekking tot het inrichten. Het is bijvoorbeeld mogelijk dat u een waarschuwing wilt ontvangen over pieken in fouten. Of het is mogelijk dat er pieken optreden in uitgeschakeld of verwijderd. Een ander voor beeld van waar u mogelijk wilt worden gewaarschuwd, is het ontbreken van een inrichting, wat aangeeft dat er iets mis is.
 
-Zie [reageren op gebeurtenissen met Azure monitor-waarschuwingen](../../azure-monitor/learn/tutorial-response.md)voor meer informatie over waarschuwingen.
+Zie [reageren op gebeurtenissen met Azure monitor-waarschuwingen](../../azure-monitor/alerts/tutorial-response.md)voor meer informatie over waarschuwingen.
 
 Waarschuwen wanneer er sprake is van een piek in storingen. Vervang de jobID door de jobID voor uw toepassing.
 
@@ -118,7 +118,7 @@ We nemen een open-source-en community-benadering voor het inrichten van query's 
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Log Analytics](../reports-monitoring/howto-analyze-activity-logs-log-analytics.md)
-- [Aan de slag met query's in Azure Monitor-logboeken](../../azure-monitor/log-query/get-started-queries.md)
-- [Waarschuwings groepen maken en beheren in de Azure Portal](../../azure-monitor/platform/action-groups.md)
+- [Aan de slag met query's in Azure Monitor-logboeken](../../azure-monitor/logs/get-started-queries.md)
+- [Waarschuwings groepen maken en beheren in de Azure Portal](../../azure-monitor/alerts/action-groups.md)
 - [De log Analytics-weer gaven voor Azure Active Directory installeren en gebruiken](../reports-monitoring/howto-install-use-log-analytics-views.md)
 - [API voor het inrichten van Logboeken](/graph/api/resources/provisioningobjectsummary?preserve-view=true&view=graph-rest-beta.md)

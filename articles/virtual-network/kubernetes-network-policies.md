@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 9/25/2018
 ms.author: aanandr
 ms.custom: ''
-ms.openlocfilehash: b7c683edd15ab05e9efc239ffe07759078754607
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: a68e1a3f60930e290e97084ff2ec9350b18e2873
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222646"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594970"
 ---
 # <a name="azure-kubernetes-network-policies-overview"></a>Overzicht van Azure Kubernetes-netwerk beleid
 
@@ -112,7 +112,7 @@ Gebruikers hadden eerder alleen meer informatie over hun netwerk configuratie me
 ### <a name="supported-metrics"></a>Ondersteunde metrische gegevens
 Hier volgt een lijst met ondersteunde metrische gegevens:
 
-|Naam meetwaarde |Beschrijving  |Type metrische waarde voor Prometheus  |Labels  |
+|Naam meetwaarde |Description  |Type metrische waarde voor Prometheus  |Labels  |
 |---------|---------|---------|---------|
 |`npm_num_policies`     |aantal netwerk beleidsregels          |Meter         |-         |
 |`npm_num_iptables_rules`     | aantal IPTables-regels     | Meter        |-         |         
@@ -130,7 +130,7 @@ Er is ook een metrische waarde voor ' exec_time_count ' en ' exec_time_sum ' voo
 De metrische gegevens kunnen worden geschroot door Azure Monitor voor containers of via Prometheus.
 
 ### <a name="setup-for-azure-monitor"></a>Instellen voor Azure Monitor
-De eerste stap is het inschakelen van Azure Monitor voor containers voor uw Kubernetes-cluster. U kunt de stappen vinden in [Azure monitor voor containers Overview](../azure-monitor/insights/container-insights-overview.md). Als u Azure Monitor voor containers hebt ingeschakeld, configureert u de [Azure monitor voor containers ConfigMap](https://aka.ms/container-azm-ms-agentconfig) om NPM-integratie en verzameling van Prometheus NPM-gegevens in te scha kelen. Azure monitor voor containers ConfigMap bevat een ```integrations``` sectie met instellingen voor het verzamelen van NPM-metrische gegevens. Deze instellingen zijn standaard uitgeschakeld in de ConfigMap. Als u de basis instelling inschakelt ```collect_basic_metrics = true``` , worden algemene NPM-metrische gegevens verzameld. Als u de geavanceerde instelling inschakelt ```collect_advanced_metrics = true``` , worden er naast basis gegevens ook geavanceerde metrische gegevens verzameld. 
+De eerste stap is het inschakelen van Azure Monitor voor containers voor uw Kubernetes-cluster. U kunt de stappen vinden in [Azure monitor voor containers Overview](../azure-monitor/containers/container-insights-overview.md). Als u Azure Monitor voor containers hebt ingeschakeld, configureert u de [Azure monitor voor containers ConfigMap](https://aka.ms/container-azm-ms-agentconfig) om NPM-integratie en verzameling van Prometheus NPM-gegevens in te scha kelen. Azure monitor voor containers ConfigMap bevat een ```integrations``` sectie met instellingen voor het verzamelen van NPM-metrische gegevens. Deze instellingen zijn standaard uitgeschakeld in de ConfigMap. Als u de basis instelling inschakelt ```collect_basic_metrics = true``` , worden algemene NPM-metrische gegevens verzameld. Als u de geavanceerde instelling inschakelt ```collect_advanced_metrics = true``` , worden er naast basis gegevens ook geavanceerde metrische gegevens verzameld. 
 
 Nadat u de ConfigMap hebt bewerkt, slaat u deze lokaal op en past u de ConfigMap als volgt toe op uw cluster.
 
@@ -143,7 +143,7 @@ integrations: |-
 ```
 Geavanceerde meet waarden zijn optioneel. Als u deze inschakelt, wordt automatisch de verzameling basis metrieken ingeschakeld. Geavanceerde metrische gegevens bevatten momenteel alleen `npm_ipset_counts`
 
-Meer informatie over [Azure monitor voor containers verzamelings instellingen in configuratie toewijzing](../azure-monitor/insights/container-insights-agent-config.md)
+Meer informatie over [Azure monitor voor containers verzamelings instellingen in configuratie toewijzing](../azure-monitor/containers/container-insights-agent-config.md)
 
 ### <a name="visualization-options-for-azure-monitor"></a>Visualisatie opties voor Azure Monitor
 Zodra de verzameling met NPM-metrische gegevens is ingeschakeld, kunt u de metrische gegevens weer geven in de Azure Portal met behulp van container Insights of in Grafana.
@@ -154,7 +154,7 @@ Open Azure Portal. Ga in de inzichten van uw cluster naar werkmappen en open de 
 Naast het weer geven van de werkmap (afbeeldingen hieronder) kunt u de metrische gegevens voor Prometheus ook rechtstreeks opvragen in ' logboeken ' in de sectie inzichten. Met deze query worden bijvoorbeeld alle metrische gegevens weer gegeven die worden verzameld.
 | waar TimeGenerated > geleden (5H) | Where-naam bevat "npm_"
 
-U kunt ook rechtstreeks een query uitvoeren op Log Analytics voor de metrische gegevens. Meer informatie hierover vindt u aan de slag [met log Analytics query's](../azure-monitor/insights/container-insights-log-search.md) 
+U kunt ook rechtstreeks een query uitvoeren op Log Analytics voor de metrische gegevens. Meer informatie hierover vindt u aan de slag [met log Analytics query's](../azure-monitor/containers/container-insights-log-search.md) 
 
 #### <a name="viewing-in-grafana-dashboard"></a>Weer geven in Grafana-dash board
 Stel uw Grafana-server in en configureer een Log Analytics gegevens bron zoals [hier](https://grafana.com/grafana/plugins/grafana-azure-monitor-datasource)wordt beschreven. Importeer vervolgens [Grafana-dash board met een log Analytics back-end](https://grafana.com/grafana/dashboards/10956) in uw Grafana Labs.

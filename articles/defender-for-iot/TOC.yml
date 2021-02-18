@@ -66,12 +66,12 @@
         - name: Gebeurtenis aggregatie (preview-versie)
           displayName: 'process events, network connection'
           href: concept-event-aggregation.md
-        - name: Beveiligingswaarschuwingen
+        - name: Ingebouwde waarschuwingen voor IoT Hub
           displayName: 'binary command line, disable firewall, port forwarding detection, possible attempt to disable auditd logging detected, reverse shells, successful bruteforce attempt, successful local login, web shell, Behavior similar, Crypto coin, suspicious, Exposed Docker,'
           href: concept-security-alerts.md
-        - name: Aangepaste beveiligings waarschuwingen
+        - name: Aangepaste beveiligings waarschuwingen voor IoT Hub
           href: concept-customizable-security-alerts.md
-        - name: Aanbevelingen voor beveiliging
+        - name: Beveiligings aanbevelingen voor IoT Hub
           href: concept-recommendations.md
         - name: Klassiek
           items:
@@ -94,6 +94,12 @@
             - name: Aggregatie van klassieke gebeurtenissen van beveiligings module
               displayName: 'twin, default, configuration, alerts'
               href: event-aggregation.md
+            - name: Beveiligings waarschuwingen op basis van een agent
+              href: agent-based-security-alerts.md
+            - name: Aangepaste waarschuwingen op basis van agent beveiliging
+              href: agent-based-security-custom-alerts.md
+            - name: Aanbevelingen op basis van een agent
+              href: agent-based-recommendations.md
 - name: Instructiegidsen
   items:
     - name: Oplossing zonder agent voor organisaties

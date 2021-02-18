@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 09/10/2020
-ms.openlocfilehash: 35f575410caa7a8a8ffbda35bdfa876418db8945
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: fee454073c50b9542e140576ef0629a39b8f4294
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98210372"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573454"
 ---
 # <a name="explore-azure-monitor-for-azure-cache-for-redis"></a>Azure Monitor voor Azure cache verkennen voor redis
 
@@ -23,7 +23,7 @@ Azure Monitor voor Azure cache voor redis-resources voor al uw Azure cache voor 
 
 Dit artikel helpt u bij het begrijpen van de voor delen van deze nieuwe bewakings ervaring. Ook wordt uitgelegd hoe u de ervaring kunt aanpassen en aanpassen aan de unieke behoeften van uw organisatie.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Voordat u met de ervaring begint, moet u weten hoe Azure Monitor voor Azure cache voor redis visueel informatie weergeeft.
 
@@ -44,7 +44,7 @@ Voor deze functie hoeft u niets in te scha kelen of te configureren. De Azure-ca
 
 Voer de volgende stappen uit om het gebruik en de prestaties van uw opslag accounts voor al uw abonnementen weer te geven:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 1. Zoek naar **monitor** en selecteer **monitor**.
 
@@ -186,6 +186,6 @@ Raadpleeg het [artikel speciale probleemoplossings problemen](troubleshoot-workb
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Waarschuwingen voor metrische gegevens](../platform/alerts-metric.md) en [service status meldingen](../../service-health/alerts-activity-log-service-notifications-portal.md) configureren om automatische waarschuwingen in te stellen die ondersteuning bieden bij het detecteren van problemen.
+* [Waarschuwingen voor metrische gegevens](../alerts/alerts-metric.md) en [service status meldingen](../../service-health/alerts-activity-log-service-notifications-portal.md) configureren om automatische waarschuwingen in te stellen die ondersteuning bieden bij het detecteren van problemen.
 
-* Meer informatie over de scenario's die door werkmappen worden ondersteund, over het ontwerpen of aanpassen van rapporten en meer door [interactieve rapporten maken met Azure monitor werkmappen](../platform/workbooks-overview.md)te controleren.
+* Meer informatie over de scenario's die door werkmappen worden ondersteund, over het ontwerpen of aanpassen van rapporten en meer door [interactieve rapporten maken met Azure monitor werkmappen](../visualize/workbooks-overview.md)te controleren.

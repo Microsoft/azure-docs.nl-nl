@@ -7,12 +7,12 @@ ms.service: azure-netapp-files
 ms.workload: storage
 ms.topic: conceptual
 ms.date: 08/07/2019
-ms.openlocfilehash: b41575208d0793a33864556ec4313ae1a71f2db5
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: f73091552a78760024189b173897913edca724bb
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184464"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593414"
 ---
 # <a name="performance-benchmark-test-recommendations-for-azure-netapp-files"></a>Aanbevelingen van prestatiebenchmarks voor Azure NetApp Files
 
@@ -113,7 +113,7 @@ U kunt ook een dash board maken in Azure Monitor voor Azure NetApp Files door na
 
 ### <a name="azure-monitor-api-access"></a>Azure Monitor API-toegang
 
-U kunt toegang krijgen tot Azure NetApp Files meter items door gebruik te maken van REST API-aanroepen. Zie [ondersteunde metrische gegevens met Azure monitor: micro soft. NetApp/netAppAccounts/capacityPools/volumes](../azure-monitor/platform/metrics-supported.md#microsoftnetappnetappaccountscapacitypoolsvolumes) voor tellers voor capaciteits Pools en volumes.
+U kunt toegang krijgen tot Azure NetApp Files meter items door gebruik te maken van REST API-aanroepen. Zie [ondersteunde metrische gegevens met Azure monitor: micro soft. NetApp/netAppAccounts/capacityPools/volumes](../azure-monitor/essentials/metrics-supported.md#microsoftnetappnetappaccountscapacitypoolsvolumes) voor tellers voor capaciteits Pools en volumes.
 
 In het volgende voor beeld wordt een GET URL weer gegeven voor het weer geven van logische volume grootte:
 

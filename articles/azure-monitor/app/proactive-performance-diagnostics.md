@@ -4,12 +4,12 @@ description: Application Insights voert een slimme analyse uit van de telemetrie
 ms.topic: conceptual
 ms.date: 05/04/2017
 ms.reviewer: antonfr
-ms.openlocfilehash: ead71a5ac6e2cfa0df6654c7ba9aa7b5b9238d04
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: a055a323001e0291d3cb5c1716e640b3c8b21dbf
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96763771"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573727"
 ---
 # <a name="smart-detection---performance-anomalies"></a>Slimme detectie-prestatie afwijkingen
 
@@ -70,12 +70,12 @@ E-mail berichten over fouten met betrekking tot Slimme detectie van prestaties z
 * *Kan ik mijn eigen anomalie detectie regels maken of bestaande regels aanpassen?*
 
   * Nog niet, maar u kunt het volgende doen:
-    * [Stel waarschuwingen](../platform/alerts-log.md) in waarmee u wordt gewaarschuwd wanneer een metriek een drempel waarde overschrijdt.
+    * [Stel waarschuwingen](../alerts/alerts-log.md) in waarmee u wordt gewaarschuwd wanneer een metriek een drempel waarde overschrijdt.
     * [Telemetrie exporteren](./export-telemetry.md) naar een [Data base](./code-sample-export-sql-stream-analytics.md) of [naar Power bi](./export-power-bi.md), waar u deze zelf kunt analyseren.
 * *Hoe vaak wordt de analyse uitgevoerd?*
 
   * We voeren de analyse dagelijks uit op de telemetrie van de vorige dag (volle dag in UTC-tijd zone).
-* *Daarom worden [metrische waarschuwingen](../platform/alerts-log.md)vervangen?*
+* *Daarom worden [metrische waarschuwingen](../alerts/alerts-log.md)vervangen?*
   * Nee.  Het detecteren van elk gedrag dat u mogelijk zou kunnen overwegen, wordt niet door ons vastgelegd.
 
 
@@ -175,10 +175,10 @@ Met deze diagnostische hulpprogram ma's kunt u de telemetrie van uw app inspecte
 
 * [Profiler](profiler.md) 
 * [fout opsporing voor moment opnamen](./snapshot-debugger.md)
-* [Analyse](../log-query/log-analytics-tutorial.md)
-* [Slimme diagnostische gegevens over analyse](../log-query/log-query-overview.md)
+* [Analyse](../logs/log-analytics-tutorial.md)
+* [Slimme diagnostische gegevens over analyse](../logs/log-query-overview.md)
 
 Slimme detecties zijn volledig automatisch. Maar misschien wilt u nog meer waarschuwingen instellen?
 
-* [Hand matig geconfigureerde metrische waarschuwingen](../platform/alerts-log.md)
+* [Hand matig geconfigureerde metrische waarschuwingen](../alerts/alerts-log.md)
 * [Webtests voor beschikbaarheid](./monitor-web-app-availability.md)

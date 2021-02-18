@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: f968267d4233c765bfd107d81957cf04edace923
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 7380c0d9679fe74bc91eea269f53fea750922b79
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94408512"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575009"
 ---
 # <a name="azure-operational-security"></a>Operationele Azure-beveiliging
 ## <a name="introduction"></a>Inleiding
@@ -108,7 +108,7 @@ Beveiligde gegevens in Azure Backup worden opgeslagen in een back-upkluis in een
 
 ![Beheeroplossingen](./media/operational-security/azure-operational-security-fig4.png)
 
-Een goed voor beeld van een oplossing die gebruikmaakt van meerdere services om aanvullende functionaliteit te bieden is de [updatebeheer oplossing](../../automation/update-management/overview.md). Deze oplossing maakt gebruik van de [Azure monitor logboeken](../../azure-monitor/log-query/log-query-overview.md) agent voor Windows en Linux voor het verzamelen van informatie over de vereiste updates op elke agent. Deze gegevens worden naar de opslag plaats van Azure Monitor-logboeken geschreven, waar u deze kunt analyseren met een dash board.
+Een goed voor beeld van een oplossing die gebruikmaakt van meerdere services om aanvullende functionaliteit te bieden is de [updatebeheer oplossing](../../automation/update-management/overview.md). Deze oplossing maakt gebruik van de [Azure monitor logboeken](../../azure-monitor/logs/log-query-overview.md) agent voor Windows en Linux voor het verzamelen van informatie over de vereiste updates op elke agent. Deze gegevens worden naar de opslag plaats van Azure Monitor-logboeken geschreven, waar u deze kunt analyseren met een dash board.
 
 Wanneer u een implementatie maakt, worden runbooks in [Azure Automation](../../automation/automation-intro.md) gebruikt om vereiste updates te installeren. U beheert dit hele proces in de portal en hoeft zich geen zorgen te maken over de onderliggende details.
 
@@ -128,7 +128,7 @@ In Security Center definieert u de beleidsregels op grond van de beveiligingsver
 Beleids regels die zijn ingeschakeld in het abonnements niveau, worden automatisch door gegeven aan alle resource groepen binnen het abonnement, zoals wordt weer gegeven in het diagram aan de rechter kant:
 
 
-### <a name="data-collection"></a>Gegevensverzameling
+### <a name="data-collection"></a>Gegevens verzamelen
 
 Met Security Center worden gegevens van uw virtuele machines (VM's) verzameld om de beveiligingsstatus van de VM's te beoordelen, aanbevelingen voor beveiliging te geven en u te waarschuwen bij bedreigingen. Wanneer u voor het eerst toegang Security Center, wordt gegevens verzameling ingeschakeld op alle virtuele machines in uw abonnement. Gegevensverzameling wordt aanbevolen, maar u kunt gegevensverzameling indien gewenst ook uitschakelen in het Security Center-beleid.
 
@@ -148,19 +148,19 @@ Met Security Center worden gegevens van uw virtuele machines (VM's) verzameld om
 
 Om klanten te helpen bedreigingen te voorkomen, te detecteren en erop te reageren, verzamelt en verwerkt Azure Security Center gegevens over beveiliging, zoals configuratie-informatie, metagegevens, gebeurtenislogboeken, crashdumpbestanden en nog veel meer. Microsoft voldoet aan strikte nalevings- en beveiligingsrichtlijnen - van het schrijven van code tot de uitvoering van een service.
 
--   **Scheiding van gegevens** : gegevens worden op een logische manier apart van elkaar gehouden, in elk onderdeel van de service. Alle gegevens worden gemarkeerd per organisatie. Deze markering blijft aanwezig gedurende de levenscyclus van de gegevens en deze wordt afgedwongen op elke laag van de service.
+-   **Scheiding van gegevens**: gegevens worden op een logische manier apart van elkaar gehouden, in elk onderdeel van de service. Alle gegevens worden gemarkeerd per organisatie. Deze markering blijft aanwezig gedurende de levenscyclus van de gegevens en deze wordt afgedwongen op elke laag van de service.
 
--   **Gegevens toegang** : om aanbevelingen voor beveiliging te bieden en mogelijke beveiligings Risico's te onderzoeken, kunnen mede werkers van micro soft toegang hebben tot gegevens die worden verzameld of geanalyseerd door Azure-Services, waaronder crash dump bestanden, gebeurtenissen voor het maken van processen, moment opnamen van virtuele schijven en artefacten, die per ongeluk klant gegevens of persoonlijke gegevens van uw virtuele machines kunnen bevatten. We voldoen aan de [voor waarden van de micro soft Online Services en de privacyverklaring](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31), die aangeven dat micro soft de klant gegevens niet gebruikt of dat er gegevens worden afgeleid voor reclame-of vergelijk bare commerciële doel einden.
+-   **Gegevens toegang**: om aanbevelingen voor beveiliging te bieden en mogelijke beveiligings Risico's te onderzoeken, kunnen mede werkers van micro soft toegang hebben tot gegevens die worden verzameld of geanalyseerd door Azure-Services, waaronder crash dump bestanden, gebeurtenissen voor het maken van processen, moment opnamen van virtuele schijven en artefacten, die per ongeluk klant gegevens of persoonlijke gegevens van uw virtuele machines kunnen bevatten. We voldoen aan de [voor waarden van de micro soft Online Services en de privacyverklaring](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31), die aangeven dat micro soft de klant gegevens niet gebruikt of dat er gegevens worden afgeleid voor reclame-of vergelijk bare commerciële doel einden.
 
--   **Gegevensgebruik** : Microsoft gebruikt informatie over patronen en bedreigingen die worden gezien tussen meerdere tenants voor het verbeteren van onze mogelijkheden voor voorkoming en detectie; wij doen dit in overeenstemming met de privacyverplichtingen beschreven in onze [Privacyverklaring](https://www.microsoft.com/en-us/privacystatement/OnlineServices/).
+-   **Gegevensgebruik**: Microsoft gebruikt informatie over patronen en bedreigingen die worden gezien tussen meerdere tenants voor het verbeteren van onze mogelijkheden voor voorkoming en detectie; wij doen dit in overeenstemming met de privacyverplichtingen beschreven in onze [Privacyverklaring](https://www.microsoft.com/en-us/privacystatement/OnlineServices/).
 
 ### <a name="data-location"></a>Locatie van gegevens
 
 Azure Security Center verzamelt tijdelijke kopieën van uw crashdumpbestanden en analyseert deze op bewijs van pogingen tot misbruik en geslaagde aanvallen. Azure Security Center voert deze analyse uit binnen hetzelfde geografische gebied als de werkruimte en verwijdert de tijdelijke kopieën wanneer de analyse is voltooid. Machine-artefacten worden centraal opgeslagen in dezelfde regio als de virtuele machine.
 
--   **Uw opslag accounts** : er is een opslag account opgegeven voor elke regio waarin de virtuele machines worden uitgevoerd. Hierdoor kunt u gegevens in dezelfde regio opslaan als de virtuele machine waarvan de gegevens worden verzameld.
+-   **Uw opslag accounts**: er is een opslag account opgegeven voor elke regio waarin de virtuele machines worden uitgevoerd. Hierdoor kunt u gegevens in dezelfde regio opslaan als de virtuele machine waarvan de gegevens worden verzameld.
 
--   **Azure Security Center-opslag** : informatie over beveiligingswaarschuwingen, waaronder waarschuwingen van partners, aanbevelingen en de status van de beveiliging, worden centraal opgeslagen, momenteel in de Verenigde Staten. Deze informatie omvat mogelijk gerelateerde configuratie-informatie en beveiligingsgebeurtenissen die indien nodig zijn verzameld van uw virtuele machines om u de beveiligingswaarschuwing, aanbeveling of de beveiligingsstatus door te geven.
+-   **Azure Security Center-opslag**: informatie over beveiligingswaarschuwingen, waaronder waarschuwingen van partners, aanbevelingen en de status van de beveiliging, worden centraal opgeslagen, momenteel in de Verenigde Staten. Deze informatie omvat mogelijk gerelateerde configuratie-informatie en beveiligingsgebeurtenissen die indien nodig zijn verzameld van uw virtuele machines om u de beveiligingswaarschuwing, aanbeveling of de beveiligingsstatus door te geven.
 
 
 ## <a name="azure-monitor"></a>Azure Monitor
@@ -195,17 +195,17 @@ Deze logboeken worden verzonden door een resource en bieden uitgebreide, frequen
 
 Windows-gebeurtenis systeem logboeken zijn bijvoorbeeld een categorie met Diagnostische logboeken voor Vm's en blob-, tabel-en wachtrij logboeken zijn categorieën met Diagnostische logboeken voor opslag accounts.
 
-Diagnostische logboeken verschillen van het [activiteiten logboek (voorheen bekend als audit logboek of operationeel logboek)](../../azure-monitor/platform/platform-logs-overview.md). Het activiteiten logboek biedt inzicht in de bewerkingen die zijn uitgevoerd voor de resources in uw abonnement. Diagnoselogboeken bieden inzicht in bewerkingen die door de resources zelf zijn uitgevoerd.
+Diagnostische logboeken verschillen van het [activiteiten logboek (voorheen bekend als audit logboek of operationeel logboek)](../../azure-monitor/essentials/platform-logs-overview.md). Het activiteiten logboek biedt inzicht in de bewerkingen die zijn uitgevoerd voor de resources in uw abonnement. Diagnoselogboeken bieden inzicht in bewerkingen die door de resources zelf zijn uitgevoerd.
 
 ### <a name="metrics"></a>Metrische gegevens
 
-Met Azure Monitor kunt u telemetrie gebruiken om inzicht te krijgen in de prestaties en status van uw workloads op Azure. Het belangrijkste type Azure-telemetriegegevens is de metrische gegevens (ook wel prestatie meters genoemd) die worden verzonden door de meeste Azure-resources. Azure Monitor biedt verschillende manieren om deze [metrische gegevens](../../azure-monitor/platform/data-platform.md) te configureren en te gebruiken voor bewaking en probleem oplossing. Metrische gegevens zijn een waardevolle bron van telemetrie en u kunt de volgende taken uitvoeren:
+Met Azure Monitor kunt u telemetrie gebruiken om inzicht te krijgen in de prestaties en status van uw workloads op Azure. Het belangrijkste type Azure-telemetriegegevens is de metrische gegevens (ook wel prestatie meters genoemd) die worden verzonden door de meeste Azure-resources. Azure Monitor biedt verschillende manieren om deze [metrische gegevens](../../azure-monitor/data-platform.md) te configureren en te gebruiken voor bewaking en probleem oplossing. Metrische gegevens zijn een waardevolle bron van telemetrie en u kunt de volgende taken uitvoeren:
 
 -   **Volg de prestaties** van uw resource (zoals een VM, website of logische app) door de metrische gegevens in een portal diagram te tekenen en de grafiek vast te maken aan een dash board.
 
 -   **Ontvang een melding over een probleem** dat invloed heeft op de prestaties van uw resource wanneer een metriek een bepaalde drempel overschrijdt.
 
--   **Automatische acties configureren** , zoals het automatisch schalen van een resource of het activeren van een runbook wanneer een metriek een bepaalde drempel overschrijdt.
+-   **Automatische acties configureren**, zoals het automatisch schalen van een resource of het activeren van een runbook wanneer een metriek een bepaalde drempel overschrijdt.
 
 -   **Geavanceerde analyses uitvoeren** of rapportages over prestaties of gebruiks trends van uw resource.
 
@@ -213,7 +213,7 @@ Met Azure Monitor kunt u telemetrie gebruiken om inzicht te krijgen in de presta
 
 ### <a name="azure-diagnostics"></a>Azure Diagnostics
 
-Het is de mogelijkheid binnen Azure om het verzamelen van diagnostische gegevens op een geïmplementeerde toepassing mogelijk te maken. U kunt de diagnostische uitbrei ding van verschillende bronnen gebruiken. Dit wordt momenteel ondersteund: [Web-en werk rollen van Azure Cloud service](/visualstudio/azure/vs-azure-tools-configure-roles-for-cloud-service), [Azure virtual machines](../../virtual-machines/windows/overview.md) met micro soft Windows en [service Fabric](../../azure-monitor/platform/diagnostics-extension-overview.md). Andere Azure-Services hebben hun eigen afzonderlijke diagnoses.
+Het is de mogelijkheid binnen Azure om het verzamelen van diagnostische gegevens op een geïmplementeerde toepassing mogelijk te maken. U kunt de diagnostische uitbrei ding van verschillende bronnen gebruiken. Dit wordt momenteel ondersteund: [Web-en werk rollen van Azure Cloud service](/visualstudio/azure/vs-azure-tools-configure-roles-for-cloud-service), [Azure virtual machines](../../virtual-machines/windows/overview.md) met micro soft Windows en [service Fabric](../../azure-monitor/agents/diagnostics-extension-overview.md). Andere Azure-Services hebben hun eigen afzonderlijke diagnoses.
 
 ## <a name="azure-network-watcher"></a>Azure Network Watcher
 
@@ -225,7 +225,7 @@ Het controleren van de netwerk beveiliging is essentieel voor het detecteren van
 
 Network Watcher heeft momenteel de volgende mogelijkheden:
 
--   **<a href="/azure/network-watcher/network-watcher-monitoring-overview">Audit logboeken</a>** : bewerkingen die worden uitgevoerd als onderdeel van de configuratie van netwerken, worden vastgelegd. Deze logboeken kunnen worden weer gegeven in de Azure Portal of worden opgehaald met micro soft-hulpprogram ma's, zoals Power BI of hulpprogram ma's van derden. Audit logboeken zijn beschikbaar via de portal, Power shell, CLI en rest-API. Zie bewerkingen controleren met Resource Manager voor meer informatie over audit Logboeken. Audit logboeken zijn beschikbaar voor bewerkingen die op alle netwerk bronnen worden uitgevoerd.
+-   **<a href="/azure/network-watcher/network-watcher-monitoring-overview">Audit logboeken</a>**: bewerkingen die worden uitgevoerd als onderdeel van de configuratie van netwerken, worden vastgelegd. Deze logboeken kunnen worden weer gegeven in de Azure Portal of worden opgehaald met micro soft-hulpprogram ma's, zoals Power BI of hulpprogram ma's van derden. Audit logboeken zijn beschikbaar via de portal, Power shell, CLI en rest-API. Zie bewerkingen controleren met Resource Manager voor meer informatie over audit Logboeken. Audit logboeken zijn beschikbaar voor bewerkingen die op alle netwerk bronnen worden uitgevoerd.
 
 
 -   **<a href="/azure/network-watcher/network-watcher-ip-flow-verify-overview">IP-stroom wordt geverifieerd</a>** : controleert of een pakket is toegestaan of geweigerd op basis van de stroom informatie 5-tuple Packet para meters (doel-IP, bron-IP, doel poort, bron poort en Protocol). Als het pakket wordt geweigerd door een netwerk beveiligings groep, wordt de regel en netwerk beveiligings groep die het pakket heeft geweigerd, geretourneerd.

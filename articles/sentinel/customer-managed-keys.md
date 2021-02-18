@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/12/2020
 ms.author: yelevin
-ms.openlocfilehash: b346a23ccde6abd0f76982a4d19e00e28e8511a7
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: a1c2754fcae5768c6b87d6280fc882acd46d9a0a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97930868"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585338"
 ---
 # <a name="set-up-azure-sentinel-customer-managed-key"></a>Door de klant beheerde sleutel met Azure-Sentinel instellen
 
@@ -30,13 +30,13 @@ Dit artikel bevat achtergrond informatie en stappen voor het configureren van ee
 >
 > - Toegang tot deze mogelijkheid wordt bepaald door de Azure-functie registratie. U kunt toegang aanvragen door contact op te nemen azuresentinelCMK@microsoft.com . Aanvragen in behandeling worden goedgekeurd volgens de beschik bare capaciteit.
 >
-> - De CMK-mogelijkheid is alleen beschikbaar voor klanten die 1 TB per dag of langer verzenden. U ontvangt informatie over aanvullende prijzen wanneer u van toepassing bent op micro soft om CMK in te richten op uw Azure-abonnement. Meer informatie over [log Analytics prijzen](../azure-monitor/platform/manage-cost-storage.md#log-analytics-dedicated-clusters).
+> - De CMK-mogelijkheid is alleen beschikbaar voor klanten die 1 TB per dag of langer verzenden. U ontvangt informatie over aanvullende prijzen wanneer u van toepassing bent op micro soft om CMK in te richten op uw Azure-abonnement. Meer informatie over [log Analytics prijzen](../azure-monitor/logs/manage-cost-storage.md#log-analytics-dedicated-clusters).
 
 ## <a name="how-cmk-works"></a>Hoe CMK werkt 
 
 De Azure Sentinel-oplossing maakt gebruik van verschillende opslag bronnen voor logboek verzameling en-functies, waaronder Log Analytics en anderen. Als onderdeel van de configuratie van de Azure Sentinel CMK moet u ook de CMK-instellingen voor de gerelateerde opslag resources configureren. Gegevens die zijn opgeslagen in andere opslag bronnen dan Log Analytics, worden ook versleuteld.
 
-Meer informatie over [CMK](../azure-monitor/platform/customer-managed-keys.md#customer-managed-key-overview).
+Meer informatie over [CMK](../azure-monitor/logs/customer-managed-keys.md#customer-managed-key-overview).
 
 > [!NOTE]
 > Als u CMK inschakelt op de Sentinel van Azure, wordt een open bare preview-functie die geen ondersteuning biedt voor CMK, niet ingeschakeld.
@@ -71,7 +71,7 @@ Voer de volgende stappen uit om CMK in te richten:
 
 ### <a name="step-2-enable-cmk-on-your-log-analytics-workspace"></a>STAP 2: CMK inschakelen in uw Log Analytics-werk ruimte
 
-Volg de instructies in [Azure monitor door de klant beheerde sleutel configuratie](../azure-monitor/platform/customer-managed-keys.md) om een CMK-werk ruimte te maken die wordt gebruikt als de Azure Sentinel-werk ruimte in de volgende stappen.
+Volg de instructies in [Azure monitor door de klant beheerde sleutel configuratie](../azure-monitor/logs/customer-managed-keys.md) om een CMK-werk ruimte te maken die wordt gebruikt als de Azure Sentinel-werk ruimte in de volgende stappen.
 
 ### <a name="step-3-register-for-cosmos-db"></a>STAP 3: registreren voor Cosmos DB
 
@@ -114,7 +114,7 @@ De enige bewerking die mogelijk is nadat de versleutelings sleutel is ingetrokke
 
 Als de toegang na het intrekken wordt hersteld, wordt de toegang tot de gegevens binnen een uur hersteld door Azure Sentinel.
 
-Zie [Azure monitor CMK intrekken](../azure-monitor/platform/customer-managed-keys.md#key-revocation)voor meer informatie over hoe dit werkt in azure monitor.
+Zie [Azure monitor CMK intrekken](../azure-monitor/logs/customer-managed-keys.md#key-revocation)voor meer informatie over hoe dit werkt in azure monitor.
 
 ## <a name="key-encryption-key-rotation"></a>Sleutel versleutelings sleutel draaien
 
@@ -127,7 +127,7 @@ In Key Vault kunt u een nieuwe versie van de sleutel draaiing maken.
 
 U kunt de vorige versie van de sleutel na 24 uur uitschakelen, of nadat de Azure Key Vault controle logboeken geen activiteit meer weer geven die gebruikmaakt van de vorige versie.
 
-Als u dezelfde sleutel gebruikt in azure Sentinel en in Log Analytics, is het nood zakelijk om een sleutel rotatie uit te voeren. u moet de cluster bron in Log Analytics expliciet bijwerken met de nieuwe Azure Key Vault sleutel versie. Zie [Azure monitor CMK Rotation](../azure-monitor/platform/customer-managed-keys.md#key-rotation)(Engelstalig) voor meer informatie.
+Als u dezelfde sleutel gebruikt in azure Sentinel en in Log Analytics, is het nood zakelijk om een sleutel rotatie uit te voeren. u moet de cluster bron in Log Analytics expliciet bijwerken met de nieuwe Azure Key Vault sleutel versie. Zie [Azure monitor CMK Rotation](../azure-monitor/logs/customer-managed-keys.md#key-rotation)(Engelstalig) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 In dit document hebt u geleerd hoe u een door de klant beheerde sleutel instelt in azure Sentinel. Zie de volgende artikelen voor meer informatie over Azure Sentinel:

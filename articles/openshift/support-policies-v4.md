@@ -3,15 +3,15 @@ title: Azure Red Hat open Shift 4-cluster ondersteunings beleid
 description: Meer informatie over de vereisten voor het ondersteunings beleid voor Red Hat open Shift 4
 author: sakthi-vetrivel
 ms.author: suvetriv
-ms.service: container-service
+ms.service: azure-redhat-openshift
 ms.topic: conceptual
 ms.date: 11/23/2020
-ms.openlocfilehash: c58b267874f013a4660428e23abd41810a0fbf34
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: fced0cfb1836be0f90c606b9a9753dad4200670d
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100093162"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100635622"
 ---
 # <a name="azure-red-hat-openshift-support-policy"></a>Ondersteunings beleid voor Azure Red Hat open Shift
 

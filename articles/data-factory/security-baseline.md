@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 387c5e70d50e53f922530cfb1fa91494fa7cc624
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: ab4f92c9723dc98d0b6c32d3a49df8d4f724ebfa
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100376306"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585468"
 ---
 # <a name="azure-security-baseline-for-azure-data-factory"></a>Azure-beveiligings basislijn voor Azure Data Factory
 
@@ -175,9 +175,9 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 **Hulp**: Azure-activiteiten logboek gebruiken om netwerk resource configuraties te bewaken en wijzigingen te detecteren voor netwerk bronnen die betrekking hebben op uw Azure Data Factory exemplaren. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke netwerk bronnen plaatsvinden.
 
-* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Waarschuwingen maken in Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+* [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -201,7 +201,7 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een beveiligings incident en gebeurtenis beheer van derden (SIEM). U kunt Azure Data Factory ook integreren met Git om diverse voor delen van broncode beheer te benutten, zoals de mogelijkheid om wijzigingen op te sporen/te controleren en de mogelijkheid om wijzigingen te herstellen die fouten veroorzaken.
 
-* [Diagnostische instellingen configureren](../azure-monitor/platform/diagnostic-settings.md)
+* [Diagnostische instellingen configureren](../azure-monitor/essentials/diagnostic-settings.md)
 
 * [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -219,7 +219,7 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een beveiligings i
 
 Diagnostische instellingen gebruiken voor het configureren van Diagnostische logboeken voor niet-reken resources in Azure Data Factory, zoals metrische gegevens en informatie over het uitvoeren van de pijp lijn. Azure Data Factory Stores-pijp lijn-gegevens gedurende 45 dagen worden uitgevoerd. Als u deze gegevens langer wilt bewaren, slaat u de diagnostische logboeken op in een opslag account voor controle of hand matige inspectie en geeft u de retentie tijd op in dagen. U kunt de logboeken ook streamen naar Azure Event Hubs of de logboeken naar een Log Analytics-werk ruimte verzenden voor analyse.
 
-* [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+* [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 * [Informatie over Azure Data Factory Diagnostische logboeken](./monitor-using-azure-monitor.md)
 
@@ -233,7 +233,7 @@ Diagnostische instellingen gebruiken voor het configureren van Diagnostische log
 
 Als uw organisatie de gegevens van het beveiligings gebeurtenis logboek wil behouden, kan deze worden opgeslagen in een gegevensverzamelings tier, op welk moment een query kan worden uitgevoerd in Log Analytics.
 
-* [Gegevens verzamelen van Azure-Virtual Machines in Azure Monitor](../azure-monitor/learn/quick-collect-azurevm.md)
+* [Gegevens verzamelen van Azure-Virtual Machines in Azure Monitor](../azure-monitor/vm/quick-collect-azurevm.md)
 
 * [Gegevens verzameling inschakelen in Azure Security Center](../security-center/security-center-enable-data-collection.md#data-collection-tier)
 
@@ -247,7 +247,7 @@ Als uw organisatie de gegevens van het beveiligings gebeurtenis logboek wil beho
 
 * [Diagnostische logboeken inschakelen in Azure Data Factory](./monitor-using-azure-monitor.md)
 
-* [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+* [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -263,7 +263,7 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 * [Log Analytics schema](./monitor-using-azure-monitor.md#schema-of-logs-and-events)
 
-* [Gegevens verzamelen van een virtuele machine van Azure met Azure Monitor](../azure-monitor/learn/quick-collect-azurevm.md)
+* [Gegevens verzamelen van een virtuele machine van Azure met Azure Monitor](../azure-monitor/vm/quick-collect-azurevm.md)
 
 * [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -281,9 +281,9 @@ Zorg er bovendien voor dat u Diagnostische instellingen inschakelt voor services
 
 * [Waarschuwingen in Azure Data Factory](./monitor-visually.md#alerts)
 
-* [Pagina alle ondersteunde metrische gegevens](../azure-monitor/platform/metrics-supported.md)
+* [Pagina alle ondersteunde metrische gegevens](../azure-monitor/essentials/metrics-supported.md)
 
-* [Waarschuwingen configureren in Log Analytics werk ruimte](../azure-monitor/platform/alerts-log.md)
+* [Waarschuwingen configureren in Log Analytics werk ruimte](../azure-monitor/alerts/alerts-log.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -652,9 +652,9 @@ U kunt referenties of geheime waarden opslaan in een Azure Key Vault en deze geb
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden doorgevoerd in azure Data Factory en gerelateerde resources.
 
-* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
-* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 * [Azure Storage-analyselogboeken](../storage/common/storage-analytics-logging.md)
 

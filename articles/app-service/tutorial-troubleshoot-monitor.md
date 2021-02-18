@@ -5,12 +5,12 @@ author: msangapu-msft
 ms.author: msangapu
 ms.topic: tutorial
 ms.date: 06/20/2020
-ms.openlocfilehash: af2711a3d219bb472334ad61bad0b87f6c691dab
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
-ms.translationtype: HT
+ms.openlocfilehash: d45a8b8f426df32b9f5ac6f64237107083e0f9ab
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98183197"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586277"
 ---
 # <a name="tutorial-troubleshoot-an-app-service-app-with-azure-monitor"></a>Zelfstudie: Problemen met een App Service-app oplossen met behulp van Azure Monitor
 
@@ -78,7 +78,7 @@ Diagnostische instellingen kunnen worden gebruikt om metrische gegevens voor bep
 U voert de volgende opdrachten uit om diagnostische instellingen te maken voor AppServiceConsoleLogs (standaardlogboeken voor uitvoer/fouten) en AppServiceHTTPLogs (webserverlogboeken). Vervang _\<app-name>_ en _\<workspace-name>_ door uw eigen waarden. 
 
 > [!NOTE]
-> De eerste twee opdrachten, `resourceID` en `workspaceID`, zijn variabelen die moeten worden gebruikt in de opdracht `az monitor diagnostic-settings create`. Zie [Diagnostische instellingen maken met behulp van Azure CLI](../azure-monitor/platform/diagnostic-settings.md#create-using-azure-cli) voor meer informatie over deze opdracht.
+> De eerste twee opdrachten, `resourceID` en `workspaceID`, zijn variabelen die moeten worden gebruikt in de opdracht `az monitor diagnostic-settings create`. Zie [Diagnostische instellingen maken met behulp van Azure CLI](../azure-monitor/essentials/diagnostic-settings.md#create-using-azure-cli) voor meer informatie over deze opdracht.
 >
 
 ```bash
@@ -129,7 +129,7 @@ Selecteer in Azure Portal uw Log Analytics-werkruimte.
 
 ### <a name="log-queries"></a>Logboekquery's
 
-Met logboekquery's kunt u de waarde van de gegevens die in Azure Monitor-logboeken worden verzameld, volledig benutten. U gebruikt logboekquery's om de logboeken te identificeren in zowel AppServiceHTTPLogs als AppServiceConsoleLogs. Bekijk het [overzicht voor logboekquery’s](../azure-monitor/log-query/log-query-overview.md) voor meer informatie over logboekquery's.
+Met logboekquery's kunt u de waarde van de gegevens die in Azure Monitor-logboeken worden verzameld, volledig benutten. U gebruikt logboekquery's om de logboeken te identificeren in zowel AppServiceHTTPLogs als AppServiceConsoleLogs. Bekijk het [overzicht voor logboekquery’s](../azure-monitor/logs/log-query-overview.md) voor meer informatie over logboekquery's.
 
 ### <a name="view-appservicehttplogs-with-log-query"></a>AppServiceHTTPLogs weergeven met logboekquery
 
@@ -269,6 +269,6 @@ Wat u hebt geleerd:
 > * Logboekquery's gebruiken om web-app-fouten op te sporen en op te lossen
 
 ## <a name="next-steps"></a><a name="nextsteps"></a> Volgende stappen
-* [Logboeken doorzoeken met Azure Monitor](../azure-monitor/log-query/log-query-overview.md)
+* [Logboeken doorzoeken met Azure Monitor](../azure-monitor/logs/log-query-overview.md)
 * [Problemen met Azure App Service oplossen in Visual Studio](troubleshoot-dotnet-visual-studio.md)
 * [App-logboeken in HDInsight analyseren](https://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)

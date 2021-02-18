@@ -14,12 +14,12 @@ ms.subservice: roles
 ms.custom: it-pro
 ms.reviewer: martincoetzer; MarkMorow
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ae8dbf6ffd2d827bbcd0fd723f63255d71d47a5
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 9f2fe29ede2bf0f92049d1ae82bae87326057a63
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99090787"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594290"
 ---
 # <a name="securing-privileged-access-for-hybrid-and-cloud-deployments-in-azure-ad"></a>Bevoegde toegang beveiligen voor hybride implementaties en cloudimplementaties in Azure AD
 
@@ -212,7 +212,7 @@ Micro soft-accounts uit andere Program ma's, zoals Xbox, Live en Outlook, mogen 
 
 #### <a name="monitor-azure-activity"></a>Azure-activiteit bewaken
 
-Het Azure-activiteitenlogboek bevat een geschiedenis van gebeurtenissen op abonnementsniveau in Azure. Het biedt informatie over wie de resources heeft gemaakt, bijgewerkt en verwijderd, en wanneer deze gebeurtenissen zich hebben voorgedaan. Zie [controleren en meldingen ontvangen over belang rijke acties in uw Azure-abonnement](../../azure-monitor/platform/alerts-activity-log.md)voor meer informatie.
+Het Azure-activiteitenlogboek bevat een geschiedenis van gebeurtenissen op abonnementsniveau in Azure. Het biedt informatie over wie de resources heeft gemaakt, bijgewerkt en verwijderd, en wanneer deze gebeurtenissen zich hebben voorgedaan. Zie [controleren en meldingen ontvangen over belang rijke acties in uw Azure-abonnement](../../azure-monitor/alerts/alerts-activity-log.md)voor meer informatie.
 
 ### <a name="additional-steps-for-organizations-managing-access-to-other-cloud-apps-via-azure-ad"></a>Aanvullende stappen voor organisaties die toegang tot andere Cloud-apps beheren via Azure AD
 

@@ -5,18 +5,18 @@ services: automation
 ms.subservice: change-inventory-management
 ms.date: 10/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: 275e57e5dcf173e8d5f30f262641b02698910422
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 4faa7837a75bab6dfab651862754cd92394c5137
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92209727"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585903"
 ---
 # <a name="how-to-create-alerts-for-change-tracking-and-inventory"></a>Waarschuwingen voor Wijzigingen bijhouden en inventaris maken
 
 Waarschuwingen in azure geven proactief u op de hoogte van de resultaten van runbook-taken, service status problemen of andere scenario's met betrekking tot uw Automation-account. Azure Automation bevat geen vooraf geconfigureerde waarschuwings regels, maar u kunt uw eigen waarschuwing maken op basis van de gegevens die worden gegenereerd. Dit artikel bevat richt lijnen voor het maken van waarschuwings regels op basis van wijzigingen die door Wijzigingen bijhouden en inventaris worden geïdentificeerd.
 
-Als u niet bekend bent met Azure Monitor waarschuwingen, raadpleegt u [overzicht van waarschuwingen in Microsoft Azure](../../azure-monitor/platform/alerts-overview.md) voordat u begint. Zie [waarschuwingen in Logboeken vastleggen in azure monitor](../../azure-monitor/platform/alerts-unified-log.md)voor meer informatie over waarschuwingen die gebruikmaken van logboek query's.
+Als u niet bekend bent met Azure Monitor waarschuwingen, raadpleegt u [overzicht van waarschuwingen in Microsoft Azure](../../azure-monitor/alerts/alerts-overview.md) voordat u begint. Zie [waarschuwingen in Logboeken vastleggen in azure monitor](../../azure-monitor/alerts/alerts-unified-log.md)voor meer informatie over waarschuwingen die gebruikmaken van logboek query's.
 
 ## <a name="create-alert"></a>Waarschuwing maken
 
@@ -38,36 +38,36 @@ We gebruiken dit voor beeld om de stappen voor het maken van waarschuwingen voor
 
 5. Nadat de waarschuwings logica is ingesteld, wijst u actie groepen toe om acties uit te voeren als reactie op het activeren van de waarschuwing. In dit geval worden e-mail berichten ingesteld om te worden verzonden en wordt een ITSM-ticket (IT Service Management) gemaakt.
 
-Volg de onderstaande stappen om waarschuwingen in te stellen om u de status van een update-implementatie te laten weten. Zie [overzicht van Azure-waarschuwingen](../../azure-monitor/platform/alerts-overview.md)als u geen ervaring hebt met Azure-waarschuwingen.
+Volg de onderstaande stappen om waarschuwingen in te stellen om u de status van een update-implementatie te laten weten. Zie [overzicht van Azure-waarschuwingen](../../azure-monitor/alerts/alerts-overview.md)als u geen ervaring hebt met Azure-waarschuwingen.
 
 ## <a name="configure-action-groups-for-your-alerts"></a>Actie groepen voor uw waarschuwingen configureren
 
-Zodra u uw waarschuwingen hebt geconfigureerd, kunt u een actie groep instellen. Dit is een groep acties die in meerdere waarschuwingen moet worden gebruikt. De acties kunnen e-mail meldingen, runbooks, webhooks en nog veel meer zijn. Raadpleeg [Actiegroepen maken en beheren](../../azure-monitor/platform/action-groups.md) voor meer informatie over actiegroepen.
+Zodra u uw waarschuwingen hebt geconfigureerd, kunt u een actie groep instellen. Dit is een groep acties die in meerdere waarschuwingen moet worden gebruikt. De acties kunnen e-mail meldingen, runbooks, webhooks en nog veel meer zijn. Raadpleeg [Actiegroepen maken en beheren](../../azure-monitor/alerts/action-groups.md) voor meer informatie over actiegroepen.
 
 1. Selecteer een waarschuwing en selecteer vervolgens **nieuwe maken** onder **actie groepen**.
 
 2. Voer een volledige naam en een korte naam in voor de actie groep. Updatebeheer maakt gebruik van de korte naam wanneer u meldingen verzendt met de opgegeven groep.
 
-3. Voer onder **acties**een naam in waarmee de actie wordt opgegeven, bijvoorbeeld **e-mail melding**.
+3. Voer onder **acties** een naam in waarmee de actie wordt opgegeven, bijvoorbeeld **e-mail melding**.
 
-4. Voor **actie type**selecteert u het juiste type, bijvoorbeeld **e-mail/SMS/push/Voice**.
+4. Voor **actie type** selecteert u het juiste type, bijvoorbeeld **e-mail/SMS/push/Voice**.
 
 5. Selecteer **Details bewerken**.
 
-6. Vul het deel venster in voor uw actie type. Als u bijvoorbeeld **e-mail/SMS/push/Voice**gebruikt, voert u een actie naam in, selecteert u het selectie vakje **e-mail** , voert u een geldig e-mail adres in en selecteert u **OK**.
+6. Vul het deel venster in voor uw actie type. Als u bijvoorbeeld **e-mail/SMS/push/Voice** gebruikt, voert u een actie naam in, selecteert u het selectie vakje **e-mail** , voert u een geldig e-mail adres in en selecteert u **OK**.
 
     ![Een e-mailactiegroep configureren](./media/configure-alerts/configure-email-action-group.png)
 
 7. Selecteer OK in het deelvenster **Actiegroep toevoegen**.
 
-8. Voor een waarschuwings-e-mail kunt u het onderwerp van de e-mail aanpassen. Selecteer **acties aanpassen** onder **regel maken**en selecteer vervolgens **e-mail onderwerp**.
+8. Voor een waarschuwings-e-mail kunt u het onderwerp van de e-mail aanpassen. Selecteer **acties aanpassen** onder **regel maken** en selecteer vervolgens **e-mail onderwerp**.
 
 9. Wanneer u klaar bent, selecteert u **Waarschuwingsregel maken**.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over [waarschuwingen vindt u in azure monitor](../../azure-monitor/platform/alerts-overview.md).
+* Meer informatie over [waarschuwingen vindt u in azure monitor](../../azure-monitor/alerts/alerts-overview.md).
 
-* Meer informatie over [logboek query's](../../azure-monitor/log-query/log-query-overview.md) voor het ophalen en analyseren van gegevens uit een log Analytics-werk ruimte.
+* Meer informatie over [logboek query's](../../azure-monitor/logs/log-query-overview.md) voor het ophalen en analyseren van gegevens uit een log Analytics-werk ruimte.
 
-* [Gebruik en kosten beheren met Azure monitor logboeken](../../azure-monitor/platform/manage-cost-storage.md) beschrijft hoe u uw kosten kunt bepalen door de Bewaar periode van uw gegevens te wijzigen en hoe u uw gegevens gebruik kunt analyseren en waarschuwen.
+* [Gebruik en kosten beheren met Azure monitor logboeken](../../azure-monitor/logs/manage-cost-storage.md) beschrijft hoe u uw kosten kunt bepalen door de Bewaar periode van uw gegevens te wijzigen en hoe u uw gegevens gebruik kunt analyseren en waarschuwen.

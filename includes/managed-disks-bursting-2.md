@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/27/2020
 ms.author: albecker1
 ms.custom: include file
-ms.openlocfilehash: 28c92004fe67de35e5776cd7dc24cf534ec6f8f3
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 801f0f03b49d20c84a4531bd0daad7630a0ed01d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98061132"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585098"
 ---
 ## <a name="common-scenarios"></a>Algemene scenario's
 De volgende scenario's kunnen aanzienlijk van bursting profiteren:
@@ -37,7 +37,8 @@ Er zijn drie statussen die uw resource kan hebben met bursting ingeschakeld:
 - **Constante** : het verkeer van de resource heeft precies betrekking op het prestatie doel.
 
 ## <a name="examples-of-bursting"></a>Voor beelden van bursting
-In de volgende voor beelden ziet u hoe bursting werkt met verschillende combi Naties van virtuele machines en schijven. Om ervoor te zorgen dat de voor beelden gemakkelijk te volgen zijn, zullen we de focus richten op MB/s, maar dezelfde logica wordt onafhankelijk toegepast op IOPS.
+
+In de volgende voor beelden ziet u hoe bursting werkt met verschillende combi Naties van VM'S en schijven. Om ervoor te zorgen dat de voor beelden gemakkelijk te volgen zijn, zullen we de focus richten op MB/s, maar dezelfde logica wordt onafhankelijk toegepast op IOPS.
 
 ### <a name="non-burstable-virtual-machine-with-burstable-disks"></a>Niet-Burstable virtuele machine met Burstable-schijven
 **Combi natie van VM en schijf:** 
@@ -50,17 +51,17 @@ In de volgende voor beelden ziet u hoe bursting werkt met verschillende combi Na
     - Ingericht (e) MB/s: 100
     - Max burst MB/s: 170
 
- Wanneer de VM wordt opgestart, worden er gegevens opgehaald van de besturingssysteem schijf. Omdat de besturingssysteem schijf deel uitmaakt van een virtuele machine die aan de slag gaat, is de besturingssysteem schijf vol met burst-tegoed. Deze tegoeden staan de opstart tijd van de besturingssysteem schijf tegen 170 MB/s seconde, zoals hieronder wordt weer gegeven:
+ Wanneer de virtuele machine wordt opgestart, worden gegevens opgehaald van de besturingssysteem schijf. Omdat de besturingssysteem schijf deel uitmaakt van een VM die wordt opgestart, is de besturingssysteem schijf vol met burst-tegoed. Met deze tegoeden kan het opstarten van de besturingssysteem schijf tot 170 MB/s seconde worden gestart.
 
-![Niet-bursting voor het opstarten van de burst-schijf van de VM](media/managed-disks-bursting/nonbursting-vm-busting-disk/nonbusting-vm-bursting-disk-startup.jpg)
+![VM verzendt een aanvraag voor 192 MB/s van de door voer naar de besturingssysteem schijf. de besturingssysteem schijf reageert met 170 MB/s-gegevens.](media/managed-disks-bursting/nonbursting-vm-busting-disk/nonbusting-vm-bursting-disk-startup.jpg)
 
-Nadat het opstarten is voltooid, wordt een toepassing uitgevoerd op de VM en heeft deze een niet-kritieke werk belasting. Voor deze workload is 15 MB/S vereist die gelijkmatig over alle schijven wordt verdeeld:
+Nadat het opstarten is voltooid, wordt een toepassing uitgevoerd op de VM en heeft deze een niet-kritieke werk belasting. Voor deze workload is 15 MB/S vereist die gelijkmatig over alle schijven wordt verdeeld.
 
-![Niet-bursted VM-bursting-schijf niet-actief](media/managed-disks-bursting/nonbursting-vm-busting-disk/nonbusting-vm-bursting-disk-idling.jpg)
+![De toepassing verzendt een aanvraag voor 15 MB/s van de door voer naar een virtuele machine. de VM haalt een aanvraag en stuurt elke schijf een aanvraag voor 5 MB/s. op deze schijven wordt 5 MB/s als resultaat gegeven. VM retourneert 15 MB/s voor de toepassing.](media/managed-disks-bursting/nonbursting-vm-busting-disk/nonbusting-vm-bursting-disk-idling.jpg)
 
-Vervolgens moet de toepassing een batch taak verwerken die 192 MB/s vereist. 2 MB/s worden gebruikt door de besturingssysteem schijf en de rest wordt evenredig verdeeld over de gegevens schijven:
+Vervolgens moet de toepassing een batch taak verwerken die 192 MB/s vereist. 2 MB/s worden gebruikt door de besturingssysteem schijf en de rest wordt evenredig verdeeld over de gegevens schijven.
 
-![Niet-burstive machine bursting bursting](media/managed-disks-bursting/nonbursting-vm-busting-disk/nonbusting-vm-bursting-disk-bursting.jpg)
+![De toepassing verzendt een aanvraag voor 192 MB/s van de door voer naar de virtuele machine, voert een aanvraag uit en stuurt het grote deel van de aanvraag naar de gegevens schijven (95 MB/s) en 2 MB/s naar de besturingssysteem schijf, de gegevens schijven die aan de vraag voldoen en alle schijven retour neren de aangevraagde door voer naar de virtuele machine.](media/managed-disks-bursting/nonbursting-vm-busting-disk/nonbusting-vm-bursting-disk-bursting.jpg)
 
 ### <a name="burstable-virtual-machine-with-non-burstable-disks"></a>Burstable virtuele machine met niet-Burstable schijven
 **Combi natie van VM en schijf:** 
@@ -72,11 +73,12 @@ Vervolgens moet de toepassing een batch taak verwerken die 192 MB/s vereist. 2 M
 - 2 P10-gegevens schijven 
     - Ingericht (e) MB/s: 250
 
- Na de eerste keer opstarten wordt een toepassing uitgevoerd op de VM en heeft deze een niet-kritieke werk belasting. Voor deze werk belasting is 30 MB/s vereist die gelijkmatig over alle schijven wordt verdeeld: ![ bursting machine unburstd Disk Idle niet-inactief](media/managed-disks-bursting/bursting-vm-nonbursting-disk/burst-vm-nonbursting-disk-normal.jpg)
+ Na de eerste keer opstarten wordt een toepassing uitgevoerd op de VM en heeft deze een niet-kritieke werk belasting. Deze werk belasting vereist 30 MB/s die gelijkmatig over alle schijven wordt verdeeld.
+![De toepassing verzendt een aanvraag voor 30 MB/s van de door voer naar een virtuele machine, de virtuele machine stuurt een aanvraag en verzendt elke schijf een aanvraag voor 10 MB/s. alle schijven retour neren 10 MB/s. VM retourneert 30 MB/s voor de toepassing.](media/managed-disks-bursting/bursting-vm-nonbursting-disk/burst-vm-nonbursting-disk-normal.jpg)
 
-Vervolgens moet de toepassing een batch taak verwerken die 600 MB/s vereist. De Standard_L8s_v2-bursts om aan deze vraag te voldoen en vervolgens aanvragen naar de schijven gelijkmatig te verdelen over P50 schijven:
+Vervolgens moet de toepassing een batch taak verwerken die 600 MB/s vereist. De Standard_L8s_v2-bursts om te voldoen aan deze vraag en vervolgens aanvragen naar de schijven, worden gelijkmatig verdeeld over P50-schijven.
 
-![Niet-burstive-schijf bursting voor ontdubbeling van VM](media/managed-disks-bursting/bursting-vm-nonbursting-disk/burst-vm-nonbursting-disk-bursting.jpg)
+![De toepassing verzendt een aanvraag voor 600 MB/s van de door voer naar de VM. de VM haalt bursts op om de aanvraag uit te voeren en stuurt elke schijf een aanvraag voor 200 MB/s. elke schijven retourneert 200 MB/s, virtuele machine-bursts om 600 MB/s te retour neren naar de toepassing.](media/managed-disks-bursting/bursting-vm-nonbursting-disk/burst-vm-nonbursting-disk-bursting.jpg)
 ### <a name="burstable-virtual-machine-with-burstable-disks"></a>Bebreekbaar virtuele machine met Burstable-schijven
 **Combi natie van VM en schijf:** 
 - Standard_L8s_v2 
@@ -89,14 +91,14 @@ Vervolgens moet de toepassing een batch taak verwerken die 600 MB/s vereist. De 
     - Ingericht (e) MB/s: 25
     - Max burst MB/s: 170 
 
-Wanneer de virtuele machine wordt opgestart, wordt de burst-limiet van 1.280 MB/s op de besturingssysteem schijf gesplitst en wordt de schijf van het besturings systeem gereageerd met de burst-prestaties van 170 MB/s:
+Wanneer de virtuele machine wordt gestart, wordt de burst-limiet van 1.280 MB/s op de besturingssysteem schijf gesplitst en reageert de besturingssysteem schijf met de burst-prestaties van 170 MB/s.
 
-![Ontbursting van VM bursting-schijf opstarten](media/managed-disks-bursting/bursting-vm-bursting-disk/burst-vm-burst-disk-startup.jpg)
+![Bij het opstarten verzendt de VM-bursts een aanvraag van 1.280 MB/s naar de besturingssysteem schijf, worden de schijf bursts van het besturings systeem om de 1.280 MB/s te retour neren.](media/managed-disks-bursting/bursting-vm-bursting-disk/burst-vm-burst-disk-startup.jpg)
 
-Nadat het opstarten is voltooid, wordt een toepassing vervolgens uitgevoerd op de VM. De toepassing heeft een niet-kritieke werk belasting die 15 MB/s vereist die gelijkmatig over alle schijven wordt verdeeld:
+Na het opstarten start u een toepassing met een niet-kritieke werk belasting. Voor deze toepassing is 15 MB/s vereist die gelijkmatig over alle schijven wordt verdeeld.
 
-![Burstisatie van VM-bursting-schijf inactief](media/managed-disks-bursting/bursting-vm-bursting-disk/burst-vm-burst-disk-idling.jpg)
+![De toepassing verzendt een aanvraag voor 15 MB/s van de door voer naar een virtuele machine. de VM haalt een aanvraag en stuurt elke schijf een aanvraag voor 5 MB/s. op deze schijven wordt 5 MB/s als resultaat gegeven. VM retourneert 15 MB/s voor de toepassing.](media/managed-disks-bursting/bursting-vm-bursting-disk/burst-vm-burst-disk-idling.jpg)
 
-Vervolgens moet de toepassing een batch taak verwerken die 360 MB/s vereist. De Standard_L8s_v2-bursts om aan deze vraag te voldoen en vervolgens aanvragen. De besturingssysteem schijf heeft slechts 20 MB/s nodig. De resterende 340 MB/s worden verwerkt door de burst-P4-gegevens schijven:  
+Vervolgens moet de toepassing een batch taak verwerken die 360 MB/s vereist. De Standard_L8s_v2-bursts om aan deze vraag te voldoen en vervolgens aanvragen. De besturingssysteem schijf heeft slechts 20 MB/s nodig. De resterende 340 MB/s worden verwerkt door de burst-P4-gegevens schijven.
 
-![Burstisatie bursting machine bursting](media/managed-disks-bursting/bursting-vm-bursting-disk/burst-vm-burst-disk-bursting.jpg)
+![De toepassing verzendt een aanvraag voor 360 MB/s van de door voer naar de VM. de VM haalt bursts op om de aanvraag uit te voeren en stuurt elk van de gegevens schijven een aanvraag voor 170 MB/s en 20 MB/s van de besturingssysteem schijf. elke schijf retourneert de gevraagde MB/s, VM-bursts om 360 MB/s te retour neren naar de toepassing.](media/managed-disks-bursting/bursting-vm-bursting-disk/burst-vm-burst-disk-bursting.jpg)

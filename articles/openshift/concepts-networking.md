@@ -4,14 +4,14 @@ description: Netwerkdiagram en overzicht voor netwerken van Azure Red Hat OpenSh
 author: sakthi-vetrivel
 ms.author: suvetriv
 ms.topic: tutorial
-ms.service: container-service
+ms.service: azure-redhat-openshift
 ms.date: 11/23/2020
-ms.openlocfilehash: 07b0dd38b616525728c264bd315c5cb8ddcaa79a
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: b785a6b73f595072f5d723bad8c119ddc4dc0f11
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99072049"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100636322"
 ---
 # <a name="network-concepts-for-azure-red-hat-openshift-aro"></a>Netwerkconcepten voor Azure Red Hat OpenShift (ARO)
 

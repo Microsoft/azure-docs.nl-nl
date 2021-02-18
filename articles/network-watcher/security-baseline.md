@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: b7dc7a9f93d6d70abec57632ffc95aea8a6bc699
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 82e15712fe1e7a5791b1374e4aa4cd446f8f5e90
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99804985"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574434"
 ---
 # <a name="azure-security-baseline-for-network-watcher"></a>Azure-beveiligings basislijn voor Network Watcher
 
@@ -118,9 +118,9 @@ Network Watcher moet zijn ingeschakeld
 
 **Hulp**: Azure-activiteiten logboek gebruiken om wijzigingen in azure Network Watcher te controleren. U kunt waarschuwingen maken binnen Azure Monitor die worden geactiveerd wanneer er wijzigingen plaatsvinden.
 
-* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Waarschuwingen maken in Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+* [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -142,7 +142,7 @@ Network Watcher moet zijn ingeschakeld
 
 **Hulp**: Azure-activiteiten logboek gebruiken om configuraties te controleren en wijzigingen voor uw Azure Network Watcher-instanties te detecteren. Behalve op het besturings vlak (bijvoorbeeld Azure Portal), genereert Network Watcher zelf geen logboeken die betrekking hebben op netwerk verkeer. Network Watcher voorziet in hulpprogram ma's voor het bewaken, vaststellen en weer geven van metrische gegevens en het in-of uitschakelen van Logboeken voor bronnen in een virtueel Azure-netwerk.
 
-* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
 * [Network Watcher begrijpen](./network-watcher-monitoring-overview.md)
 
@@ -154,7 +154,7 @@ Network Watcher moet zijn ingeschakeld
 
 **Hulp**: Azure-activiteiten logboek gebruiken om configuraties te controleren en wijzigingen voor uw Azure Network Watcher-instanties te detecteren. Met uitzonde ring van het besturings vlak (bijvoorbeeld Azure Portal), genereert Network Watcher zelf geen audit Logboeken. Network Watcher voorziet in hulpprogram ma's voor het bewaken, vaststellen en weer geven van metrische gegevens en het in-of uitschakelen van Logboeken voor bronnen in een virtueel Azure-netwerk.
 
-* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
 * [Network Watcher begrijpen](./network-watcher-monitoring-overview.md)
 
@@ -174,7 +174,7 @@ Network Watcher moet zijn ingeschakeld
 
 **Richt lijnen**: stel in azure monitor de Bewaar periode voor logboek registratie In voor log Analytics werk ruimten die zijn gekoppeld aan Azure Network Watcher volgens de nalevings voorschriften van uw organisatie.
 
-* [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+* [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -184,7 +184,7 @@ Network Watcher moet zijn ingeschakeld
 
 **Hulp**: Azure-activiteiten logboek gebruiken om configuraties te controleren en wijzigingen voor uw Azure Network Watcher-instanties te detecteren. Behalve op het besturings vlak (bijvoorbeeld Azure Portal), genereert Network Watcher zelf geen logboeken die betrekking hebben op netwerk verkeer. Network Watcher voorziet in hulpprogram ma's voor het bewaken, vaststellen en weer geven van metrische gegevens en het in-of uitschakelen van Logboeken voor bronnen in een virtueel Azure-netwerk.
 
-* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
 * [Network Watcher begrijpen](./network-watcher-monitoring-overview.md)
 
@@ -479,7 +479,7 @@ Als u Network Watcher mogelijkheden wilt gebruiken, moet het account waarmee u z
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden aangebracht in azure Network Watcher en andere essentiële of verwante resources.
 
-* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Ja
 

@@ -4,15 +4,15 @@ description: Controleer uw web- en werkrollen op een effectieve manier met Appli
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 09/05/2018
-ms.openlocfilehash: ccd863db55ef0ff9f4051947321321c8b01430c4
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 1f9204534fcdfbf7c393eaafdbae62c4c4321f2f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920679"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573867"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Application Insights voor Azure Cloud Services
-[Application Insights][start] kunt [Azure Cloud service-apps](https://azure.microsoft.com/services/cloud-services/) bewaken voor Beschik baarheid, prestaties, fouten en gebruik door gegevens van Application Insights sdk's te combi neren met [Azure Diagnostics](../platform/diagnostics-extension-overview.md) gegevens uit uw Cloud Services. Op basis van de feedback die u krijgt over de prestaties en de effectiviteit van uw app tijdens het gebruik, kunt u weldoordachte beslissingen nemen over de richting van het ontwerp in elke fase van de ontwikkelingslevenscyclus.
+[Application Insights][start] kunt [Azure Cloud service-apps](https://azure.microsoft.com/services/cloud-services/) bewaken voor Beschik baarheid, prestaties, fouten en gebruik door gegevens van Application Insights sdk's te combi neren met [Azure Diagnostics](../agents/diagnostics-extension-overview.md) gegevens uit uw Cloud Services. Op basis van de feedback die u krijgt over de prestaties en de effectiviteit van uw app tijdens het gebruik, kunt u weldoordachte beslissingen nemen over de richting van het ontwerp in elke fase van de ontwikkelingslevenscyclus.
 
 ![Overzichts dashboard](./media/cloudservices/overview-graphs.png)
 
@@ -32,7 +32,7 @@ Met deze optie wordt uw app tijdens runtime geinstrumenteerd, zodat u alle telem
 
 Als u deze optie alleen nodig hebt, bent u klaar. 
 
-In de volgende stappen worden [metrische gegevens uit uw app weer gegeven](../platform/metrics-charts.md)en wordt er een [query op uw data uitgevoerd met Analytics](../log-query/log-query-overview.md). 
+In de volgende stappen worden [metrische gegevens uit uw app weer gegeven](../essentials/metrics-charts.md)en wordt er een [query op uw data uitgevoerd met Analytics](../logs/log-query-overview.md). 
 
 Als u de prestaties in de browser wilt bewaken, kunt u ook [beschikbaarheids tests](./monitor-web-app-availability.md) instellen en [code toevoegen aan uw webpagina's](./javascript.md).
 
@@ -95,7 +95,7 @@ Als u hebt besloten om een afzonderlijke Application Insights-resource voor elke
 
 Dit heeft gevolgen voor het invoegen van uw Application Insights instrumentatie sleutels in de bestanden met de naam *ServiceConfiguration. \* . cscfg*. Hier volgt de [voorbeeld code](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/AzureEmailService/ServiceConfiguration.Cloud.cscfg).
 
-Als u het niveau van diagnostische gegevens wilt variëren dat naar Application Insights wordt verzonden, kunt u dit doen [door de *cscfg* -bestanden rechtstreeks te bewerken](../platform/diagnostics-extension-to-application-insights.md).
+Als u het niveau van diagnostische gegevens wilt variëren dat naar Application Insights wordt verzonden, kunt u dit doen [door de *cscfg* -bestanden rechtstreeks te bewerken](../agents/diagnostics-extension-to-application-insights.md).
 
 ## <a name="install-the-sdk-in-each-project"></a><a name="sdk"></a>De SDK installeren in elk project
 Met deze optie kunt u aangepaste zakelijke telemetrie toevoegen aan elke rol. De optie geeft een nauwere analyse van de manier waarop uw app wordt gebruikt en voert deze uit.
@@ -167,7 +167,7 @@ Deze stap is alleen nodig als u volledige SQL-query's wilt vastleggen op .NET Fr
 
 1. Open de Application Insights resources die u hebt gemaakt.
 
-   Afzonderlijke gegevens punten worden weer gegeven in de [Zoek opdracht][diagnostic]en verzamelde gegevens worden weer gegeven in [metrische Explorer](../platform/metrics-charts.md).
+   Afzonderlijke gegevens punten worden weer gegeven in de [Zoek opdracht][diagnostic]en verzamelde gegevens worden weer gegeven in [metrische Explorer](../essentials/metrics-charts.md).
 
 1. Meer telemetrie toevoegen (Zie de volgende secties) en vervolgens uw app publiceren om live diagnostische gegevens en gebruiks feedback te ontvangen. 
 
@@ -180,17 +180,17 @@ Als er geen gegevens zijn, gaat u als volgt te werk:
 Zie [Probleemoplossing][qna] voor meer informatie .
 
 ## <a name="view-azure-diagnostics-events"></a>Azure Diagnostics gebeurtenissen weer geven
-U vindt de [Azure Diagnostics](../platform/diagnostics-extension-overview.md) informatie in Application Insights op de volgende locaties:
+U vindt de [Azure Diagnostics](../agents/diagnostics-extension-overview.md) informatie in Application Insights op de volgende locaties:
 
 * Prestatiemeteritems worden weergegeven als aangepaste functies voor het verzamelen van metrische gegevens. 
 * Windows-gebeurtenislogboeken worden als traceringen en aangepaste gebeurtenissen weergegeven.
 * Toepassinglogboeken, ETW-logboeken en logboeken met diagnostische gegevens over de infrastructuur worden weergegeven als traceringen.
 
-Als u prestatie meter items en aantallen gebeurtenissen wilt weer geven, opent u [Metrics Explorer](../platform/metrics-charts.md) en voegt u de volgende grafiek toe:
+Als u prestatie meter items en aantallen gebeurtenissen wilt weer geven, opent u [Metrics Explorer](../essentials/metrics-charts.md) en voegt u de volgende grafiek toe:
 
 ![Azure Diagnostics gegevens](./media/cloudservices/23-wad.png)
 
-Als u wilt zoeken in de verschillende traceer logboeken die worden verzonden door Azure Diagnostics, gebruikt u [zoeken](./diagnostic-search.md) of een [Analytics-query](../log-query/log-analytics-tutorial.md). Stel bijvoorbeeld dat u een niet-verwerkte uitzonde ring hebt die een rol heeft veroorzaakt door lopen en recyclen. Deze informatie zou worden weergegeven in het toepassingskanaal van het Windows-gebeurtenislogboek. U kunt zoeken gebruiken om de fout in het Windows-gebeurtenis logboek weer te geven en de volledige Stack tracering voor de uitzonde ring op te halen. Dit helpt u om de hoofd oorzaak van het probleem te vinden.
+Als u wilt zoeken in de verschillende traceer logboeken die worden verzonden door Azure Diagnostics, gebruikt u [zoeken](./diagnostic-search.md) of een [Analytics-query](../logs/log-analytics-tutorial.md). Stel bijvoorbeeld dat u een niet-verwerkte uitzonde ring hebt die een rol heeft veroorzaakt door lopen en recyclen. Deze informatie zou worden weergegeven in het toepassingskanaal van het Windows-gebeurtenislogboek. U kunt zoeken gebruiken om de fout in het Windows-gebeurtenis logboek weer te geven en de volledige Stack tracering voor de uitzonde ring op te halen. Dit helpt u om de hoofd oorzaak van het probleem te vinden.
 
 ![Azure Diagnostics zoeken](./media/cloudservices/25-wad.png)
 
@@ -261,7 +261,7 @@ Voor een algemene afbeelding van uw systeem kunt u de belangrijkste bewakings gr
 
 Als uw systeem gebruikmaakt van andere Azure-Services, zoals Stream Analytics, kunt u ook hun bewakings grafieken toevoegen. 
 
-Als u een mobiele client-app hebt, gebruikt u [App Center](../learn/mobile-center-quickstart.md). Maak query’s in [Analytics](../log-query/log-query-overview.md) om de aantallen gebeurtenissen weer te geven en aan het dashboard vast te maken.
+Als u een mobiele client-app hebt, gebruikt u [App Center](../app/mobile-center-quickstart.md). Maak query’s in [Analytics](../logs/log-query-overview.md) om de aantallen gebeurtenissen weer te geven en aan het dashboard vast te maken.
 
 ## <a name="example"></a>Voorbeeld
 In [het voorbeeld](https://github.com/MohanGsk/ApplicationInsights-Home/tree/master/Samples/AzureEmailService) wordt een service gecontroleerd die een webrol en twee werkrollen heeft.
@@ -274,7 +274,7 @@ Hebt u uw app ontwikkeld voor .NET 4.6? .NET 4,6 wordt niet automatisch onderste
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Het verzenden van gegevens van Azure Diagnostics naar Application Insights configureren](../platform/diagnostics-extension-to-application-insights.md)
+* [Het verzenden van gegevens van Azure Diagnostics naar Application Insights configureren](../agents/diagnostics-extension-to-application-insights.md)
 * [Automatisch Application Insights-resources maken](./powershell.md)
 * [Azure Diagnostics automatiseren](./powershell-azure-diagnostics.md)
 * [Azure Functions](https://github.com/christopheranderson/azure-functions-app-insights-sample)

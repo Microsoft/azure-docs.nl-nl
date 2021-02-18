@@ -4,12 +4,12 @@ description: Prestaties bewaken en problemen detecteren in Node.js-services met 
 ms.topic: conceptual
 ms.date: 06/01/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 0d414ce44a8d6ab308bd31f7372bb1c146fac9f5
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 9eba74bcf2b4b047b3ed881342db4f7b1011f928
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98611012"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585762"
 ---
 # <a name="monitor-your-nodejs-services-and-apps-with-application-insights"></a>Node.js-services en -apps bewaken met Application Insights
 
@@ -34,7 +34,7 @@ Voordat u begint, moet u ervoor zorgen dat u een Azure-abonnement hebt of moet u
 
 ### <a name="set-up-an-application-insights-resource"></a><a name="resource"></a> Een Application Insights resource instellen
 
-1. Meld u aan bij de [Azure-portal][portal].
+1. Meld u aan bij [Azure Portal][portal].
 2. [Create an Application Insights resource](create-new-resource.md) (Een Application Insights-resource maken)
 
 ### <a name="set-up-the-nodejs-sdk"></a><a name="sdk"></a> De Node.ja SDK instellen
@@ -425,7 +425,7 @@ Deze eigenschappen zijn specifiek voor de client, zodat u `appInsights.defaultCl
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Uw telemetrie in de portal bewaken](./overview-dashboard.md)
-* [Analysequery’s schrijven over uw telemetrie](../log-query/log-analytics-tutorial.md)
+* [Analysequery’s schrijven over uw telemetrie](../logs/log-analytics-tutorial.md)
 
 <!--references-->
 

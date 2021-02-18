@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 04/23/2020
 ms.author: byvinyal
 ms.custom: seodec18
-ms.openlocfilehash: 587ad53fa3a4875f7019a8c094db1b9a5f096519
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: bf230032afe80680dc392c2a74da2a5aef381983
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509550"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586100"
 ---
 # <a name="monitor-apps-in-azure-app-service"></a>Apps in Azure App Service bewaken
 [Azure app service](./overview.md) biedt ingebouwde functionaliteit voor het controleren van web apps, mobiele apps en api's in de [Azure Portal](https://portal.azure.com).
@@ -136,7 +136,7 @@ Er zijn twee metrische gegevens die het CPU-gebruik weer spie gelen:
 **CPU-percentage**: handig voor apps die worden gehost in Basic-, Standard-en Premium-abonnementen, omdat ze kunnen worden uitgeschaald. CPU-percentage is een goede indicatie van het totale gebruik voor alle exemplaren.
 
 ## <a name="metrics-granularity-and-retention-policy"></a>Granulatie van metrische gegevens en bewaar beleid
-Metrische gegevens voor een app-en app service-plan worden geregistreerd en geaggregeerd door de service en [bewaard volgens deze regels](../azure-monitor/platform/data-platform-metrics.md#retention-of-metrics).
+Metrische gegevens voor een app-en app service-plan worden geregistreerd en geaggregeerd door de service en [bewaard volgens deze regels](../azure-monitor/essentials/data-platform-metrics.md#retention-of-metrics).
 
 ## <a name="monitoring-quotas-and-metrics-in-the-azure-portal"></a>Quota en metrische gegevens bewaken in de Azure Portal
 Als u de status van de verschillende quota's en metrische gegevens wilt bekijken die van invloed zijn op een app, gaat u naar de [Azure Portal](https://portal.azure.com).
@@ -153,14 +153,14 @@ Selecteer **instellingen** quota's om quota's te vinden  >  . In de grafiek kunt
 
 Wanneer u op een van deze grafieken klikt, wordt u naar de weer gave metrische gegevens geleid, waar u aangepaste grafieken kunt maken, verschillende metrische gegevens en nog veel meer wilt opvragen. 
 
-Zie [metrische service gegevens bewaken](../azure-monitor/platform/data-platform.md)voor meer informatie over metrische gegevens.
+Zie [metrische service gegevens bewaken](../azure-monitor/data-platform.md)voor meer informatie over metrische gegevens.
 
 ## <a name="alerts-and-autoscale"></a>Waarschuwingen en automatisch schalen
-Metrische gegevens voor een app of een App Service plan kunnen worden aangesloten op waarschuwingen. Zie [Meldingen van waarschuwingen ontvangen](../azure-monitor/platform/alerts-classic-portal.md) voor meer informatie.
+Metrische gegevens voor een app of een App Service plan kunnen worden aangesloten op waarschuwingen. Zie [Meldingen van waarschuwingen ontvangen](../azure-monitor/alerts/alerts-classic-portal.md) voor meer informatie.
 
 App Service-apps die worden gehost in basis-of snellere App Service plannen ondersteunen automatisch schalen. Met automatisch schalen kunt u regels configureren die de metrische gegevens van het App Service plan bewaken. Regels kunnen het aantal instanties verg Roten of verkleinen, zodat u indien nodig aanvullende bronnen kunt opgeven. Regels kunnen u helpen bij het besparen van geld wanneer de app te veel is ingericht.
 
-Zie [How to scale](../azure-monitor/platform/autoscale-get-started.md) and [Best practices for Azure monitor automatisch schalen](../azure-monitor/platform/autoscale-best-practices.md)voor meer informatie over automatisch schalen.
+Zie [How to scale](../azure-monitor/autoscale/autoscale-get-started.md) and [Best practices for Azure monitor automatisch schalen](../azure-monitor/autoscale/autoscale-best-practices.md)voor meer informatie over automatisch schalen.
 
 [fzilla]:https://go.microsoft.com/fwlink/?LinkId=247914
 [vmsizes]:https://go.microsoft.com/fwlink/?LinkID=309169

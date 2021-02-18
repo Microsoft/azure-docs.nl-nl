@@ -5,12 +5,12 @@ ms.assetid: 94af2caf-a2ec-4415-a097-f60694b860b3
 ms.topic: overview
 ms.date: 07/06/2020
 ms.custom: devx-track-dotnet, mvc, seodec18
-ms.openlocfilehash: 0bfacc4169de6b30272229283e9aef9a9d69fad5
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: 668988ae34c2f97f3baca3f360c13e3ec3e30731
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99592327"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586347"
 ---
 # <a name="app-service-overview"></a>Overzicht van App Service
 
@@ -28,7 +28,7 @@ Hier volgen enkele belangrijke functies van App Service:
 * **Beheerde productieomgeving**: in App Service worden automatisch [patches gemaakt en het besturingssysteem en taalframeworks onderhouden](overview-patch-os-runtime.md). Besteed uw tijd aan het schrijven van geweldige apps en laat het platform aan Azure over.
 * **Containervorming en Docker**: converteer uw app voor Dockerize-uitvoering en host een aangepaste Windows- of Linux-container in App Service. Voer apps met meerdere containers uit met Docker Compose. Migreer uw Docker-vaardigheden rechtstreeks naar App Service.
 * **DevOps-optimalisatie**: stel [continue integratie en implementatie](deploy-continuous-deployment.md) in met Azure DevOps, GitHub, BitBucket, Docker Hub of Azure Container Registry. Verhoog updateniveaus via [test- en faseringsomgevingen](deploy-staging-slots.md). Beheer uw apps in App Service met [Azure PowerShell](/powershell/azure/) of de [platformoverschrijdende opdrachtregelinterface (CLI)](/cli/azure/install-azure-cli).
-* **Globale schaling met hoge beschikbaarheid**: u kunt handmatig of automatisch [omhoog](manage-scale-up.md) schalen of [uit](../azure-monitor/platform/autoscale-get-started.md)schalen. U kunt uw apps overal in de globale datacenterinfrastructuur van Microsoft hosten; de [SLA](https://azure.microsoft.com/support/legal/sla/app-service/) van App Service belooft hoge beschikbaarheid.
+* **Globale schaling met hoge beschikbaarheid**: u kunt handmatig of automatisch [omhoog](manage-scale-up.md) schalen of [uit](../azure-monitor/autoscale/autoscale-get-started.md)schalen. U kunt uw apps overal in de globale datacenterinfrastructuur van Microsoft hosten; de [SLA](https://azure.microsoft.com/support/legal/sla/app-service/) van App Service belooft hoge beschikbaarheid.
 * **Verbindingen met SaaS-platforms en on-premises gegevens**: u kunt kiezen uit meer dan 50 [connectors](../connectors/apis-list.md) voor bedrijfssystemen (zoals SAP), SaaS-services (zoals Salesforce) en internetservices (zoals Facebook). Toegang tot on-premises gegevens met [hybride verbindingen](app-service-hybrid-connections.md) en [Azure Virtual Networks](web-sites-integrate-with-vnet.md).
 * **Beveiliging en naleving**: App Service voldoet aan de vereisten van [ISO, SOC en PCI](https://www.microsoft.com/en-us/trustcenter). Verifieer gebruikers met [Azure Active Directory](configure-authentication-provider-aad.md), [Google](configure-authentication-provider-google.md), [Facebook](configure-authentication-provider-facebook.md), [Twitter](configure-authentication-provider-twitter.md) of een [Microsoft-account](configure-authentication-provider-microsoft.md). Maak [IP-adresbeperkingen](app-service-ip-restrictions.md) en [ beheer service-identiteiten](overview-managed-identity.md).
 * **Toepassingssjablonen**: kies uit een uitgebreide lijst met toepassingssjablonen in [Microsoft Azure Marketplace](https://azure.microsoft.com/marketplace/), zoals WordPress, Joomla en Drupal.

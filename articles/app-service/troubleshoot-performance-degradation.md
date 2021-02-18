@@ -7,12 +7,12 @@ ms.assetid: b8783c10-3a4a-4dd6-af8c-856baafbdde5
 ms.topic: article
 ms.date: 08/03/2016
 ms.custom: seodec18
-ms.openlocfilehash: cf8b0e1fda03a74d30ec77c911d705bf12cf0126
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: e048e4c17092c71a5adaf29f342546b9258837c5
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96763805"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586237"
 ---
 # <a name="troubleshoot-slow-app-performance-issues-in-azure-app-service"></a>Problemen met prestatie problemen met langzame apps in Azure App Service oplossen
 Dit artikel helpt u bij het oplossen van problemen met prestatie problemen met langzame apps in [Azure app service](./overview.md).
@@ -61,7 +61,7 @@ Enkele van de metrische gegevens die u mogelijk wilt bewaken voor uw app, zijn
 Zie voor meer informatie:
 
 * [Apps in Azure App Service bewaken](web-sites-monitor.md)
-* [Waarschuwingen ontvangen](../azure-monitor/platform/alerts-overview.md)
+* [Waarschuwingen ontvangen](../azure-monitor/alerts/alerts-overview.md)
 
 #### <a name="monitor-web-endpoint-status"></a>Status van web-eind punt bewaken
 Als uw app wordt uitgevoerd in de prijs categorie **Standard** , kunt u met app service twee eind punten van drie geografische locaties bewaken.

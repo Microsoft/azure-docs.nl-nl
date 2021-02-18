@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/26/2020
 ms.author: yelevin
-ms.openlocfilehash: 5bf94d7c5889bb5a743655d65e48f021e91e01b7
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 0b2a6088effc735076d56ba83dd85135392147b8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807136"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574986"
 ---
 # <a name="import-threat-intelligence-into-azure-sentinel"></a>Bedreigingsinformatie importeren in Azure Sentinel
 
@@ -419,7 +419,7 @@ Laten we eens kijken hoe u de Threat Intelligence-werkmap kunt vinden die is opg
 
     :::image type="content" source="media/import-threat-intelligence/threat-intel-bar-chart.png" alt-text="Staaf diagram":::
 
-Werkmappen bieden krachtige interactieve Dash boards die u inzicht geven in alle aspecten van Azure Sentinel. Er is een hele partij die u met werkmappen kunt doen, en terwijl de meegeleverde sjablonen een geweldig start punt zijn, wilt u waarschijnlijk de sjablonen in de hand brengen en aanpassen of nieuwe Dash boards maken die veel verschillende gegevens bronnen combi neren, zodat u uw gegevens op unieke wijze kunt visualiseren. Omdat Azure Sentinel-werkmappen zijn gebaseerd op Azure Monitor werkmappen, is er al uitgebreide documentatie beschikbaar en veel meer sjablonen. Een fantastische plek om te beginnen is dit artikel over het [maken van interactieve rapporten met Azure monitor-werkmappen](../azure-monitor/platform/workbooks-overview.md). 
+Werkmappen bieden krachtige interactieve Dash boards die u inzicht geven in alle aspecten van Azure Sentinel. Er is een hele partij die u met werkmappen kunt doen, en terwijl de meegeleverde sjablonen een geweldig start punt zijn, wilt u waarschijnlijk de sjablonen in de hand brengen en aanpassen of nieuwe Dash boards maken die veel verschillende gegevens bronnen combi neren, zodat u uw gegevens op unieke wijze kunt visualiseren. Omdat Azure Sentinel-werkmappen zijn gebaseerd op Azure Monitor werkmappen, is er al uitgebreide documentatie beschikbaar en veel meer sjablonen. Een fantastische plek om te beginnen is dit artikel over het [maken van interactieve rapporten met Azure monitor-werkmappen](../azure-monitor/visualize/workbooks-overview.md). 
 
 Er is ook een uitgebreide community van [Azure monitor werkmappen op github](https://github.com/microsoft/Application-Insights-Workbooks) waar u aanvullende sjablonen kunt downloaden en uw eigen sjablonen kunnen bijdragen.
 

@@ -12,14 +12,14 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/30/2020
+ms.date: 02/17/2021
 ms.author: memildin
-ms.openlocfilehash: b9f0b3219a75900a44a73ca0fc3e453f023bddb8
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.openlocfilehash: aeabfb42d378f22ff660214517fea031d678b208
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92787156"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100635571"
 ---
 # <a name="tutorial-triage-investigate-and-respond-to-security-alerts"></a>Zelfstudie: Beveiligingswaarschuwingen sorteren, onderzoeken en erop reageren
 Security Center analyseert voortdurend de werkbelasting van uw hybride cloud met behulp van geavanceerde analysen en bedreigingsinformatie, om u te waarschuwen voor mogelijk schadelijke activiteiten in uw cloudresources. U kunt ook waarschuwingen van andere beveiligingsproducten en -services integreren in Security Center. Wanneer een waarschuwing wordt gegeven, moet snel actie worden ondernomen om het mogelijke beveiligingsprobleem te onderzoeken en tegen te gaan. 
@@ -42,7 +42,7 @@ Security Center biedt een overkoepelend overzicht van alle beveiligingswaarschuw
 
 Sorteer uw waarschuwingen op de pagina **Beveiligingswaarschuwingen** :
 
-:::image type="content" source="./media/tutorial-security-incident/alerts-list.png" alt-text="Overzichtspagina voor beveiligingswaarschuwingen" lightbox="./media/tutorial-security-incident/alerts-list.png":::
+:::image type="content" source="media/security-center-managing-and-responding-alerts/alerts-page.png" alt-text="Lijst met beveiligings waarschuwingen voor Azure Security Center":::
 
 Gebruik deze pagina om de actieve beveiligingswaarschuwingen in uw omgeving te bekijken om te bepalen welke waarschuwing het eerst moet worden onderzocht.
 

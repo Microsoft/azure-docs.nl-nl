@@ -4,12 +4,12 @@ description: Verzend gepersonaliseerde meldingen over service Health-gebeurtenis
 ms.topic: conceptual
 ms.service: service-health
 ms.date: 3/27/2018
-ms.openlocfilehash: 05b0572c89a29fddc881f9977ee437d1319e6254
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a70c4fcd01a1a95c598d980004ee60292a6cf24b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86518925"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594621"
 ---
 # <a name="use-a-webhook-to-configure-health-notifications-for-problem-management-systems"></a>Een webhook gebruiken voor het configureren van status meldingen voor probleem beheersystemen
 
@@ -31,7 +31,7 @@ Als u een vooraf geconfigureerde integratie wilt gebruiken, raadpleegt u:
 ## <a name="configure-a-custom-notification-by-using-the-service-health-webhook-payload"></a>Een aangepaste melding configureren met behulp van de Service Health webhook Payload
 Als u uw eigen aangepaste integratie van webhook wilt instellen, moet u de JSON-Payload parseren die via Service Health melding wordt verzonden.
 
-Bekijk [een voor beeld van een nettolading voor](../azure-monitor/platform/activity-log-alerts-webhook.md) `ServiceHealth` webhooks.
+Bekijk [een voor beeld van een nettolading voor](../azure-monitor/alerts/activity-log-alerts-webhook.md) `ServiceHealth` webhooks.
 
 U kunt controleren of het een service status waarschuwing is door te kijken naar `context.eventSource == "ServiceHealth"` . De volgende eigenschappen zijn het meest relevant:
 - **data. context. activityLog. status**
@@ -46,14 +46,14 @@ U kunt controleren of het een service status waarschuwing is door te kijken naar
 ## <a name="create-a-link-to-the-service-health-dashboard-for-an-incident"></a>Een koppeling naar het dash board van Service Health maken voor een incident
 U kunt een directe koppeling naar uw Service Health dash board maken op een bureau blad of mobiel apparaat door een speciale URL te genereren. Gebruik de *trackingId* en de eerste drie en de laatste drie cijfers van uw *subscriptionId* met de volgende indeling:
 
-https <i></i> ://app.Azure.com/h/* &lt; trackingId &gt; * / * &lt; eerste drie en laatste drie cijfers subscriptionId &gt; *
+https <i></i> ://app.Azure.com/h/*&lt; trackingId &gt;* / *&lt; eerste drie en laatste drie cijfers subscriptionId &gt;*
 
 Als uw *subscriptionId* bijvoorbeeld bba14129-e895-429b-8809-278e836ecdb3 is en uw *TRACKINGID* 0DET-Urb is, is uw service Health URL:
 
 https <i></i> ://app.Azure.com/h/0DET-Urb/bbadb3
 
 ## <a name="use-the-level-to-detect-the-severity-of-the-issue"></a>Het niveau gebruiken om de ernst van het probleem te detecteren
-Van laag tot hoogste urgentie kan de eigenschap **Level** in de payload *informatie*, *waarschuwing*, *fout*of *kritiek*zijn.
+Van laag tot hoogste urgentie kan de eigenschap **Level** in de payload *informatie*, *waarschuwing*, *fout* of *kritiek* zijn.
 
 ## <a name="parse-the-impacted-services-to-determine-the-incident-scope"></a>De betrokken Services parseren om het incident bereik te bepalen
 Service Health waarschuwingen kunnen u informeren over problemen in meerdere regio's en services. Als u meer informatie wilt, moet u de waarde van weer parseren `impactedServices` .
@@ -98,7 +98,7 @@ In dit voor beeld ziet u problemen voor:
 
 Volg deze stappen:
 
-1. Maak de service status Payload die u wilt verzenden. Bekijk een voor beeld van een service Health-webhook Payload op [webhooks voor Azure-activiteiten logboek waarschuwingen](../azure-monitor/platform/activity-log-alerts-webhook.md).
+1. Maak de service status Payload die u wilt verzenden. Bekijk een voor beeld van een service Health-webhook Payload op [webhooks voor Azure-activiteiten logboek waarschuwingen](../azure-monitor/alerts/activity-log-alerts-webhook.md).
 
 1. Maak als volgt een HTTP POST-aanvraag:
 
@@ -114,6 +114,6 @@ Volg deze stappen:
 1. Ga naar [PagerDuty](https://www.pagerduty.com/) om te bevestigen dat de integratie is ingesteld.
 
 ## <a name="next-steps"></a>Volgende stappen
-- Controleer het [webhook-schema](../azure-monitor/platform/activity-log-alerts-webhook.md)van de waarschuwing voor het activiteiten logboek. 
-- Meer informatie over [service status meldingen](./service-notifications.md).
-- Meer informatie over [actiegroepen](../azure-monitor/platform/action-groups.md).
+- Bekijk het [webhookschema voor waarschuwingen voor het activiteitenlogboek](../azure-monitor/alerts/activity-log-alerts-webhook.md). 
+- Meer informatie over [servicestatusmeldingen](./service-notifications.md).
+- Meer informatie over [actiegroepen](../azure-monitor/alerts/action-groups.md).

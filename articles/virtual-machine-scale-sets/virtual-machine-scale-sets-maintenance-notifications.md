@@ -9,12 +9,12 @@ ms.subservice: management
 ms.date: 11/12/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: 2aa589d237a8cfeb8e0dc947896dba82e755631c
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 85e4b6a4d0ff1c3bd7e634311a36396a74408419
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94564766"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594443"
 ---
 # <a name="planned-maintenance-notifications-for-virtual-machine-scale-sets"></a>Meldingen voor gepland onderhoud voor virtuele-machineschaalsets
 
@@ -28,7 +28,7 @@ Azure voert regel matig updates uit om de betrouw baarheid, prestaties en beveil
 
 Gepland onderhoud waarvoor opnieuw opstarten is vereist, wordt gepland in golven. Elke golf heeft een ander bereik (regio's):
 
-- Een golf begint met een melding aan klanten. Standaard wordt er een melding verzonden naar de eigenaar van het abonnement en mede-eigen aars. U kunt ontvangers en bericht opties, zoals e-mail, SMS en webhooks, toevoegen aan de meldingen door Azure- [activiteiten logboek waarschuwingen](../azure-monitor/platform/platform-logs-overview.md)te gebruiken.  
+- Een golf begint met een melding aan klanten. Standaard wordt er een melding verzonden naar de eigenaar van het abonnement en mede-eigen aars. U kunt ontvangers en bericht opties, zoals e-mail, SMS en webhooks, toevoegen aan de meldingen door Azure- [activiteiten logboek waarschuwingen](../azure-monitor/essentials/platform-logs-overview.md)te gebruiken.  
 - Met een melding wordt een *self-service venster* beschikbaar gesteld. In dit venster met meestal 35 dagen kunt u zien welke van uw Vm's zijn opgenomen in de Wave. U kunt onderhoud proactief starten volgens uw eigen plannings behoeften.
 - Na het self-service venster begint een *gepland onderhouds venster* . Op een bepaald moment tijdens dit venster plant Azure en past het vereiste onderhoud toe op uw VM. 
 
@@ -72,7 +72,7 @@ Het is raadzaam selfservice onderhoud in de volgende gevallen te gebruiken:
 
 Wanneer een geplande onderhouds Golf is gepland, kunt u de lijst met virtuele-machine schaal sets weer geven die worden beïnvloed door de aanstaande onderhouds Golf door gebruik te maken van de Azure Portal. 
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Selecteer in het menu links **alle services** en selecteer vervolgens virtuele- **machine schaal sets**.
 3. Selecteer onder **schaal sets voor virtuele machines** de optie **kolommen bewerken** om de lijst met beschik bare kolommen te openen.
 4. Selecteer in de sectie **beschik bare kolommen** de optie **self-service onderhoud** en verplaats deze naar de lijst met **geselecteerde kolommen** . Selecteer **Toepassen**.  
@@ -84,22 +84,22 @@ De kolom **self-service onderhoud** wordt nu weer gegeven in de lijst met virtue
 | Waarde | Beschrijving |
 |-------|-------------|
 | Ja | Ten minste één VM in de schaalset voor virtuele machines bevindt zich in een self-service venster. U kunt onderhoud starten op elk gewenst moment tijdens dit selfservice venster. | 
-| Nee | Er bevinden zich geen Vm's in een self-service venster in de desbetreffende schaalset voor virtuele machines. | 
+| No | Er bevinden zich geen Vm's in een self-service venster in de desbetreffende schaalset voor virtuele machines. | 
 | - | Uw schaal sets voor virtuele machines maken geen deel uit van een geplande onderhouds Golf.| 
 
 ## <a name="notification-and-alerts-in-the-portal"></a>Meldingen en waarschuwingen in de portal
 
-Azure communiceert een planning voor gepland onderhoud door een e-mail bericht te verzenden naar de eigenaar van het abonnement en de groep mede-eigen aars. U kunt ontvangers en kanalen aan deze communicatie toevoegen door waarschuwingen voor activiteiten logboeken te maken. Zie [abonnements activiteiten bewaken met het Azure-activiteiten logboek](../azure-monitor/platform/platform-logs-overview.md)voor meer informatie.
+Azure communiceert een planning voor gepland onderhoud door een e-mail bericht te verzenden naar de eigenaar van het abonnement en de groep mede-eigen aars. U kunt ontvangers en kanalen aan deze communicatie toevoegen door waarschuwingen voor activiteiten logboeken te maken. Zie [abonnements activiteiten bewaken met het Azure-activiteiten logboek](../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Selecteer in het menu links de optie **monitor**. 
 3. Selecteer in het deel venster **monitor-waarschuwingen (klassiek)** **+ waarschuwing voor activiteiten logboek toevoegen**.
 4. Selecteer op de pagina **waarschuwing voor activiteiten logboek toevoegen** de gevraagde informatie of voer deze in. Zorg er in **criteria** voor dat u de volgende waarden instelt:
-   - **Gebeurtenis categorie** : Selecteer **service Health**.
-   - **Services** : Selecteer **Virtual Machine Scale sets en virtual machines**.
-   - **Type** : Selecteer **gepland onderhoud**. 
+   - **Gebeurtenis categorie**: Selecteer **service Health**.
+   - **Services**: Selecteer **Virtual Machine Scale sets en virtual machines**.
+   - **Type**: Selecteer **gepland onderhoud**. 
     
-Zie [waarschuwingen voor activiteiten](../azure-monitor/platform/activity-log-alerts.md) logboeken maken voor meer informatie over het configureren van waarschuwingen voor activiteiten Logboeken.
+Zie [waarschuwingen voor activiteiten](../azure-monitor/alerts/activity-log-alerts.md) logboeken maken voor meer informatie over het configureren van waarschuwingen voor activiteiten Logboeken.
     
     
 ## <a name="start-maintenance-on-your-virtual-machine-scale-set-from-the-portal"></a>Onderhoud starten op de schaalset voor virtuele machines vanuit de portal
@@ -120,7 +120,7 @@ Onderhouds informatie wordt alleen geretourneerd als het onderhoud is gepland. A
 Get-AzVmss -ResourceGroupName rgName -VMScaleSetName vmssName -InstanceId id -InstanceView
 ```
 
-De volgende eigenschappen worden geretourneerd onder **MaintenanceRedeployStatus** : 
+De volgende eigenschappen worden geretourneerd onder **MaintenanceRedeployStatus**: 
 
 | Waarde | Beschrijving   |
 |-------|---------------|
@@ -165,7 +165,7 @@ De volgende eigenschappen worden geretourneerd onder **MaintenanceRedeployStatus
 
 ### <a name="start-maintenance-on-your-vm-instance-by-using-the-cli"></a>Onderhoud starten op uw VM-exemplaar met behulp van de CLI
 
-De volgende aanroep initieert onderhoud voor een VM-exemplaar als deze `IsCustomerInitiatedMaintenanceAllowed` is ingesteld op **waar** :
+De volgende aanroep initieert onderhoud voor een VM-exemplaar als deze `IsCustomerInitiatedMaintenanceAllowed` is ingesteld op **waar**:
 
 ```azurecli
 az vmss perform-maintenance -g rgName -n vmssName --instance-ids id

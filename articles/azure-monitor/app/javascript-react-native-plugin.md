@@ -6,12 +6,12 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 08/06/2020
-ms.openlocfilehash: 3dac47aa7cf93ca882c4c1d0d191dabf0eb7178c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0c122a21fc7149e9943825cafbed77069b7919f3
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88227210"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593597"
 ---
 # <a name="native-react-plugin-for-application-insights-javascript-sdk"></a>Native reageren-invoeg toepassing voor Application Insights java script SDK
 
@@ -59,4 +59,4 @@ appInsights.loadAppInsights();
 ## <a name="next-steps"></a>Volgende stappen
 
 - Zie de [Application Insights java script SDK-documentatie](javascript.md)voor meer informatie over de Java script-SDK.
-- Zie het [overzicht van logboek query's](../../azure-monitor/log-query/log-query-overview.md)voor meer informatie over de Kusto-query taal en het opvragen van gegevens in log Analytics.
+- Zie het [overzicht van logboek query's](../../azure-monitor/logs/log-query-overview.md)voor meer informatie over de Kusto-query taal en het opvragen van gegevens in log Analytics.

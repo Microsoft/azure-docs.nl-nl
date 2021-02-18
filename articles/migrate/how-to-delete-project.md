@@ -6,12 +6,12 @@ ms.author: panshar
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 10/22/2019
-ms.openlocfilehash: face3d02ee72d1e05c6c08330dae4fffc2fd0e0b
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: bfb4db5d3ebf69f9c7f552c175d33a8b817d1562
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96754246"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595143"
 ---
 # <a name="delete-an-azure-migrate-project"></a>Een Azure Migrate-project verwijderen
 
@@ -27,7 +27,7 @@ Voordat u een project verwijdert:
     - De werk ruimte wordt niet automatisch verwijderd. Verwijder deze hand matig.
     - Controleer wat er voor een werk ruimte wordt gebruikt voordat u deze verwijdert. Dezelfde Log Analytics-werk ruimte kan voor meerdere scenario's worden gebruikt.
     - Voordat u het project verwijdert, kunt u een koppeling naar de werk ruimte vinden in de evaluatie van **Azure migrate-servers**  >  **Azure migrate-server**, onder **OMS-werk ruimte**.
-    - Als u een werk ruimte wilt verwijderen nadat u een project hebt verwijderd, gaat u naar de werk ruimte in de relevante resource groep en volgt u [deze instructies](../azure-monitor/platform/delete-workspace.md).
+    - Als u een werk ruimte wilt verwijderen nadat u een project hebt verwijderd, gaat u naar de werk ruimte in de relevante resource groep en volgt u [deze instructies](../azure-monitor/logs/delete-workspace.md).
 
 
 ## <a name="delete-a-project"></a>Een project verwijderen
@@ -59,9 +59,9 @@ ProjectName | Micro soft. migrate/migrateprojects
 Project ProjectName | Micro soft. migrate/assessmentProjects
 ' ProjectName ' rsvault | Recovery Services-kluis
 "ProjectName"-MigrateVault-* | Recovery Services-kluis
-migrateappligwsa* | Opslagaccount
-migrateapplilsa* | Opslagaccount
-migrateapplicsa* | Opslagaccount
+migrateappligwsa* | Storage-account
+migrateapplilsa* | Storage-account
+migrateapplicsa* | Storage-account
 migrateapplikv* | Key Vault
 migrateapplisbns16041 | Service Bus-naamruimte
 

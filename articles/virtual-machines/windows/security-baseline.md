@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ef5cddc131e25a1966ca86c3c8650452f73be69e
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 5a9bc576541c5991bb5f9352dc41fb0cce99c601
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879677"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594277"
 ---
 # <a name="azure-security-baseline-for-windows-virtual-machines"></a>Azure-beveiligings basislijn voor Windows Virtual Machines
 
@@ -174,9 +174,9 @@ U kunt de just-in-time-netwerk toegang van Azure Security Center gebruiken om de
 
 Gebruik Azure Policy om configuraties te valideren (en/of te herstellen) voor netwerk bronnen die betrekking hebben op Windows Virtual Machines.
 
-* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Waarschuwingen maken in Azure Monitor](../../azure-monitor/platform/alerts-activity-log.md)
+* [Waarschuwingen maken in Azure Monitor](../../azure-monitor/alerts/alerts-activity-log.md)
 
 * [Azure Policy configureren en beheren](../../governance/policy/tutorials/create-and-manage.md)
 
@@ -220,13 +220,13 @@ Voor een geavanceerde zicht baarheid van de toepassingen en services die worden 
 
 Schakel Azure Monitor ook in voor toegang tot uw audit-en activiteiten logboeken, waaronder gebeurtenis bron, datum, gebruiker, tijds tempel, bron adressen, doel adressen en andere nuttige elementen.
 
-* [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../../azure-monitor/platform/diagnostic-settings.md)
+* [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../../azure-monitor/essentials/diagnostic-settings.md)
 
-* [Overzicht van de log Analytics-agent](../../azure-monitor/platform/log-analytics-agent.md)
+* [Overzicht van de log Analytics-agent](../../azure-monitor/agents/log-analytics-agent.md)
 
 * [Extensie van de virtuele machine voor logboek analyse voor Windows](../extensions/oms-windows.md)
 
-* [Activiteiten logboek gebeurtenissen van Azure bekijken en ophalen](../../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Activiteiten logboek gebeurtenissen van Azure bekijken en ophalen](../../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
 * [Overzicht van Application Insights](../../azure-monitor/app/app-insights-overview.md)
 
@@ -242,7 +242,7 @@ Als uw organisatie de gegevens van het beveiligings logboek van de virtuele mach
 
 * [Gegevensverzameling in Azure Security Center](../../security-center/security-center-enable-data-collection.md)
 
-* [Als u de syslog-gegevens voor bewaking wilt vastleggen, moet u de uitbrei ding Log Analytics inschakelen](../../azure-monitor/learn/quick-collect-azurevm.md#enable-the-log-analytics-vm-extension)
+* [Als u de syslog-gegevens voor bewaking wilt vastleggen, moet u de uitbrei ding Log Analytics inschakelen](../../azure-monitor/vm/quick-collect-azurevm.md#enable-the-log-analytics-vm-extension)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -252,9 +252,9 @@ Als uw organisatie de gegevens van het beveiligings logboek van de virtuele mach
 
 **Richt lijnen**: Zorg ervoor dat voor opslag accounts of log Analytics-werk ruimten die worden gebruikt voor het opslaan van de logboeken van de virtuele machine, de Bewaar periode voor logboek registratie is ingesteld volgens de nalevings voorschriften van uw organisatie.
 
-* [Virtuele machines in azure controleren](../../azure-monitor/insights/monitor-vm-azure.md)
+* [Virtuele machines in azure controleren](../../azure-monitor/vm/monitor-vm-azure.md)
 
-* [De Bewaar periode van Log Analytics Workspace configureren](../../azure-monitor/platform/manage-cost-storage.md)
+* [De Bewaar periode van Log Analytics Workspace configureren](../../azure-monitor/logs/manage-cost-storage.md)
 
 **Azure Security Center bewaking**: niet beschikbaar
 
@@ -268,15 +268,15 @@ Analyseer en bewaak logboeken voor afwijkend gedrag en controleer regel matig de
 
 U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derden om uw logboeken te controleren en te controleren.
 
-* [Overzicht van de log Analytics-agent](../../azure-monitor/platform/log-analytics-agent.md)
+* [Overzicht van de log Analytics-agent](../../azure-monitor/agents/log-analytics-agent.md)
 
 * [Extensie van de virtuele machine voor logboek analyse voor Windows](../extensions/oms-windows.md)
 
 * [Azure-Sentinel onboarden](../../sentinel/quickstart-onboard.md)
 
-* [Log Analytics-werk ruimte begrijpen](../../azure-monitor/log-query/log-analytics-tutorial.md)
+* [Log Analytics-werk ruimte begrijpen](../../azure-monitor/logs/log-analytics-tutorial.md)
 
-* [Aangepaste query's uitvoeren in Azure Monitor](../../azure-monitor/log-query/get-started-queries.md)
+* [Aangepaste query's uitvoeren in Azure Monitor](../../azure-monitor/logs/get-started-queries.md)
 
 **Azure Security Center bewaking**: niet beschikbaar
 
@@ -292,7 +292,7 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 * [Waarschuwingen beheren in Azure Security Center](../../security-center/security-center-managing-and-responding-alerts.md)
 
-* [Een waarschuwing over logboek gegevens van log Analytics](../../azure-monitor/learn/tutorial-response.md)
+* [Een waarschuwing over logboek gegevens van log Analytics](../../azure-monitor/alerts/tutorial-response.md)
 
 **Azure Security Center bewaking**: niet beschikbaar
 
@@ -410,7 +410,7 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 * [Azure-activiteitenlogboeken integreren in Azure Monitor](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-* [Actie groepen configureren voor aangepaste waarschuwingen en meldingen](../../azure-monitor/platform/action-groups.md)
+* [Actie groepen configureren voor aangepaste waarschuwingen en meldingen](../../azure-monitor/alerts/action-groups.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -452,13 +452,13 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 **Richt lijnen**: Diagnostische instellingen configureren voor Azure Active Directory om de audit logboeken en aanmeldings logboeken te verzenden naar een log Analytics-werk ruimte. Gebruik Azure Monitor ook om logboeken te controleren en query's uit te voeren op logboek gegevens van virtuele Azure-machines.
 
-* [Log Analytics-werk ruimte begrijpen](../../azure-monitor/log-query/log-analytics-tutorial.md)
+* [Log Analytics-werk ruimte begrijpen](../../azure-monitor/logs/log-analytics-tutorial.md)
 
 * [Azure-activiteitenlogboeken integreren in Azure Monitor](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-* [Aangepaste query's uitvoeren in Azure Monitor](../../azure-monitor/log-query/get-started-queries.md)
+* [Aangepaste query's uitvoeren in Azure Monitor](../../azure-monitor/logs/get-started-queries.md)
 
-* [Virtuele machines in azure controleren](../../azure-monitor/insights/monitor-vm-azure.md)
+* [Virtuele machines in azure controleren](../../azure-monitor/vm/monitor-vm-azure.md)
 
 **Azure Security Center bewaking**: niet beschikbaar
 
@@ -592,9 +592,9 @@ Micro soft maakt gebruik van het Transport Layer Security (TLS)-protocol voor he
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer wijzigingen worden doorgevoerd in virtuele machines en gerelateerde resources.
 
-* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../azure-monitor/platform/alerts-activity-log.md)
+* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../azure-monitor/alerts/alerts-activity-log.md)
 
-* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../azure-monitor/platform/alerts-activity-log.md)
+* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../azure-monitor/alerts/alerts-activity-log.md)
 
 * [Azure Storage-analyselogboeken](../../storage/common/storage-analytics-logging.md)
 

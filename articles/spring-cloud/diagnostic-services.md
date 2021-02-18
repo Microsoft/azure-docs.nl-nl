@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/06/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 11f5fcd74b228fa2d57658f5c268e3bebc3c7e93
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 52413f36a9ba5c7b7a3c68567a65a20bc3ce4090
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499523"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585202"
 ---
 # <a name="analyze-logs-and-metrics-with-diagnostics-settings"></a>Logboeken en metrische gegevens analyseren met Diagnostische instellingen
 
@@ -31,7 +31,7 @@ Kies de categorie van het logboek en de metrische gegevens die u wilt bewaken.
 
 ## <a name="logs"></a>Logboeken
 
-|Logboek | Beschrijving |
+|Logboek | Description |
 |----|----|
 | **ApplicationConsole** | Console logboek van alle toepassingen van klanten. |
 | **SystemLogs** | Op dit moment worden alleen logboeken met [lente-Cloud configuratie servers](https://cloud.spring.io/spring-cloud-config/reference/html/#_spring_cloud_config_server) in deze categorie vastgelegd. |
@@ -40,7 +40,7 @@ Kies de categorie van het logboek en de metrische gegevens die u wilt bewaken.
 
 Zie voor een volledige lijst met metrische gegevens [lente-Cloud metrieken](./spring-cloud-concept-metrics.md#user-metrics-options).
 
-Als u aan de slag wilt gaan, schakelt u een van deze services in om de gegevens te ontvangen. Zie aan de [slag met log Analytics in azure monitor](../azure-monitor/log-query/log-analytics-tutorial.md)voor meer informatie over het configureren van log Analytics.
+Als u aan de slag wilt gaan, schakelt u een van deze services in om de gegevens te ontvangen. Zie aan de [slag met log Analytics in azure monitor](../azure-monitor/logs/log-analytics-tutorial.md)voor meer informatie over het configureren van log Analytics.
 
 ## <a name="configure-diagnostics-settings"></a>Diagnostische instellingen configureren
 
@@ -131,11 +131,11 @@ Zie voor meer informatie over het verzenden van diagnostische gegevens naar een 
 1. Als u toepassings logboeken wilt bekijken, zoekt u naar een Event Hub genaamd **Insights-logs-applicationconsole**.
 1. Als u metrische gegevens van de toepassing wilt bekijken, zoekt u naar een Event Hub met de naam **Insights-metrische gegevens-pt1m**.
 
-Voor meer informatie over het verzenden van diagnostische gegevens naar een Event Hub raadpleegt u [Azure Diagnostics gegevens streamen in het warme pad met behulp van Event hubs](../azure-monitor/platform/diagnostics-extension-stream-event-hubs.md).
+Voor meer informatie over het verzenden van diagnostische gegevens naar een Event Hub raadpleegt u [Azure Diagnostics gegevens streamen in het warme pad met behulp van Event hubs](../azure-monitor/agents/diagnostics-extension-stream-event-hubs.md).
 
 ## <a name="analyze-the-logs"></a>De logboeken analyseren
 
-Azure Log Analytics wordt uitgevoerd met een Kusto-engine, zodat u een query kunt uitvoeren op uw logboeken voor analyse. Raadpleeg de [log Analytics zelf studie](../azure-monitor/log-query/log-analytics-tutorial.md)voor een snelle inleiding in het uitvoeren van query's op Logboeken met behulp van Kusto.
+Azure Log Analytics wordt uitgevoerd met een Kusto-engine, zodat u een query kunt uitvoeren op uw logboeken voor analyse. Raadpleeg de [log Analytics zelf studie](../azure-monitor/logs/log-analytics-tutorial.md)voor een snelle inleiding in het uitvoeren van query's op Logboeken met behulp van Kusto.
 
 Toepassings logboeken bieden essentiële informatie en uitgebreide logboeken over de status, prestaties en meer van de toepassing. In de volgende secties vindt u enkele eenvoudige query's waarmee u inzicht krijgt in de huidige en eerdere status van uw toepassing.
 
@@ -176,9 +176,9 @@ AppPlatformLogsforSpring
 
 ### <a name="learn-more-about-querying-application-logs"></a>Meer informatie over het uitvoeren van query's in toepassings logboeken
 
-Azure Monitor biedt uitgebreide ondersteuning voor het uitvoeren van query's in toepassings logboeken met behulp van Log Analytics. Zie aan de [slag met logboek query's in azure monitor](../azure-monitor/log-query/get-started-queries.md)voor meer informatie over deze service. Zie [overzicht van logboek query's in azure monitor](../azure-monitor/log-query/log-query-overview.md)voor meer informatie over het bouwen van query's voor het analyseren van uw toepassings Logboeken.
+Azure Monitor biedt uitgebreide ondersteuning voor het uitvoeren van query's in toepassings logboeken met behulp van Log Analytics. Zie aan de [slag met logboek query's in azure monitor](../azure-monitor/logs/get-started-queries.md)voor meer informatie over deze service. Zie [overzicht van logboek query's in azure monitor](../azure-monitor/logs/log-query-overview.md)voor meer informatie over het bouwen van query's voor het analyseren van uw toepassings Logboeken.
 
-## <a name="frequently-asked-questions-faq"></a>Veelgestelde vragen (FAQ's)
+## <a name="frequently-asked-questions-faq"></a>Veelgestelde vragen
 
 ### <a name="how-to-convert-multi-line-java-stack-traces-into-a-single-line"></a>Hoe kan ik meerdere regels Java stack-traceringen omzetten in één regel?
 

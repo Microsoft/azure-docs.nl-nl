@@ -2,13 +2,13 @@
 title: Azure Service Bus Premium-en Standard-lagen
 description: In dit artikel worden de standaard-en Premium-lagen van Azure Service Bus beschreven. Vergelijkt deze lagen en biedt technische verschillen.
 ms.topic: conceptual
-ms.date: 07/28/2020
-ms.openlocfilehash: 31c53a1375078cd5d185945cba55a6e5a6dd5ffb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 02/17/2021
+ms.openlocfilehash: 0385526560e6aafaab66d9212ff54caff2362ebd
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90966791"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100636506"
 ---
 # <a name="service-bus-premium-and-standard-messaging-tiers"></a>Prijscategorieën voor Service Bus Premium en Standard Messaging
 
@@ -26,9 +26,9 @@ In de volgende tabel worden enkele belangrijke verschillen uitgelicht.
 | Mogelijkheid om de workload omhoog en omlaag te schalen |N.v.t. |
 | Bericht grootte Maxi maal 1 MB. Deze limiet kan in de toekomst worden verhoogd. Zie [berichten over Azure blog](https://techcommunity.microsoft.com/t5/messaging-on-azure/bg-p/MessagingonAzureBlog)voor de meest recente belang rijke updates voor de service. |Berichtformaat tot maximaal 256 kB |
 
-**Service Bus Premium Messaging** biedt isolatie van resources op het niveau van de CPU en het geheugen, zodat elke workload van een klant geïsoleerd wordt uitgevoerd. Deze resource container wordt een *Messa ging-eenheid*genoemd. Aan elke Premium-naamruimte wordt ten minste één Messaging-eenheid toegewezen. U kunt 1, 2, 4 of 8 Messa ging-eenheden kopen voor elke Service Bus Premium-naam ruimte. Eén werk belasting of entiteit kan meerdere Messa ging-eenheden omvatten en het aantal Messa ging-eenheden kan worden gewijzigd in. Dit resulteert in voorspelbare en herhaalbare prestaties voor uw Service Bus-oplossing.
+**Service Bus Premium Messaging** biedt isolatie van resources op het niveau van de CPU en het geheugen, zodat elke workload van een klant geïsoleerd wordt uitgevoerd. Deze resource container wordt een *Messa ging-eenheid* genoemd. Aan elke Premium-naamruimte wordt ten minste één Messaging-eenheid toegewezen. U kunt 1, 2, 4 of 8 Messa ging-eenheden kopen voor elke Service Bus Premium-naam ruimte. Eén werk belasting of entiteit kan meerdere Messa ging-eenheden omvatten en het aantal Messa ging-eenheden kan worden gewijzigd in. Dit resulteert in voorspelbare en herhaalbare prestaties voor uw Service Bus-oplossing.
 
-Niet alleen zijn de prestaties beter voorspelbaar en beschikbaar, ze zijn ook sneller. Service Bus Premium-berichten worden gebaseerd op de opslag engine die is geïntroduceerd in [Azure Event hubs](https://azure.microsoft.com/services/event-hubs/). Met de Premium-laag zijn de piekprestaties veel sneller dan met de Standard-laag.
+Niet alleen zijn de prestaties beter voorspelbaar en beschikbaar, ze zijn ook sneller. Met de Premium-laag zijn de piekprestaties veel sneller dan met de Standard-laag.
 
 ## <a name="premium-messaging-technical-differences"></a>Technische verschillen Premium Messaging
 
@@ -40,9 +40,7 @@ Gepartitioneerde wacht rijen en onderwerpen worden niet ondersteund in Premium M
 
 ### <a name="express-entities"></a>Express-entiteiten
 
-Omdat Premium Messa ging wordt uitgevoerd in een geïsoleerde runtime-omgeving, worden Express-entiteiten niet ondersteund in Premium-naam ruimten. Zie de eigenschap [QueueDescription.EnableExpress](/dotnet/api/microsoft.servicebus.messaging.queuedescription.enableexpress#Microsoft_ServiceBus_Messaging_QueueDescription_EnableExpress) voor meer informatie over de Express-functie.
-
-Als u code uitvoert onder Standard Messaging en deze wilt overzetten naar de Premium-prijscategorie, moet de eigenschap [EnableExpress](/dotnet/api/microsoft.servicebus.messaging.queuedescription.enableexpress#Microsoft_ServiceBus_Messaging_QueueDescription_EnableExpress) zijn ingesteld op **false** (de standaardwaarde).
+Omdat Premium Messa ging wordt uitgevoerd in een geïsoleerde runtime-omgeving, worden Express-entiteiten niet ondersteund in Premium-naam ruimten. Een Express-entiteit bevat tijdelijk een bericht in het geheugen voordat het naar permanente opslag wordt geschreven. Als er code wordt uitgevoerd onder Standard Messa ging en u deze wilt overbrengen naar de laag Premium, moet u ervoor zorgen dat de functie Express-entiteit is uitgeschakeld.
 
 ## <a name="premium-messaging-resource-usage"></a>Resource gebruik voor Premium Messa ging
 Over het algemeen kan elke bewerking van een entiteit CPU-en geheugen gebruik veroorzaken. Hier volgen enkele van deze bewerkingen: 
@@ -69,8 +67,8 @@ Er zijn een aantal factoren waarmee rekening moet worden gehouden bij het bepale
 
 - Begin met ***1 of 2 Messa ging-eenheden*** die aan uw naam ruimte zijn toegewezen.
 - Onderzoek de metrische gegevens over het CPU-gebruik binnen de [metrische gegevens over het resource gebruik](service-bus-metrics-azure-monitor.md#resource-usage-metrics) voor uw naam ruimte.
-    - Als het CPU-gebruik ***lager is dan 20%***, kunt u het aantal Messa ging-eenheden dat aan uw naam ruimte is toegewezen, wellicht ***omlaag schalen*** .
-    - Als het CPU-gebruik ***hoger is dan 70%***, zal uw toepassing profiteren van het ***opschalen*** van het aantal Messa ging-eenheden dat aan uw naam ruimte is toegewezen.
+    - Als het CPU-gebruik ***minder dan 20%** _ is, kunt u mogelijk _ *_omlaag schalen_** het aantal Messa ging-eenheden dat aan uw naam ruimte is toegewezen.
+    - Als het CPU-gebruik ***hoger is dan 70%** _, zal uw toepassing profiteren van _ *_Omhoog schalen_** het aantal Messa ging-eenheden dat aan uw naam ruimte is toegewezen.
 
 Zie [bericht eenheden automatisch bijwerken](automate-update-messaging-units.md)voor informatie over het configureren van een service bus naam ruimte om automatisch te schalen (verg Roten of verkleinen van Messa ging-eenheden).
 

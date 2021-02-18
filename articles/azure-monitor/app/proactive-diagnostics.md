@@ -3,12 +3,12 @@ title: Slimme detectie in Azure-toepassing Insights | Microsoft Docs
 description: Application Insights voert een automatische diep gaande analyse van uw app-telemetrie uit en waarschuwt u mogelijke problemen.
 ms.topic: conceptual
 ms.date: 02/07/2019
-ms.openlocfilehash: 2b6e9370387bf3bb87555261b3949db2917e9911
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 974795e853416ff7a4c051530b050fc663c9423d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186249"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585658"
 ---
 # <a name="smart-detection-in-application-insights"></a>Slimme detectie in Application Insights
  Slimme detectie waarschuwt automatisch mogelijke prestatie problemen en fout afwijkingen in uw webtoepassing. Er wordt proactieve analyse uitgevoerd van de telemetrie die uw app naar [Application Insights](./app-insights-overview.md)verzendt. Als er sprake is van een plotselinge toename van de fout frequentie of abnormale patronen in de prestaties van de client of server, ontvangt u een waarschuwing. Deze functie heeft geen configuratie nodig. Het werkt als uw toepassing voldoende telemetrie verzendt.
@@ -53,11 +53,11 @@ U kunt de configuratie ook wijzigen met Azure Resource Manager sjablonen. [Zie A
 ## <a name="next-steps"></a>Volgende stappen
 Met deze diagnostische hulpprogram ma's kunt u de telemetrie van uw app inspecteren:
 
-* [Metrische Explorer](../platform/metrics-charts.md)
+* [Metrische Explorer](../essentials/metrics-charts.md)
 * [Zoek Verkenner](./diagnostic-search.md)
-* [Analyse-krachtige query taal](../log-query/log-analytics-tutorial.md)
+* [Analyse-krachtige query taal](../logs/log-analytics-tutorial.md)
 
 Slimme detectie is volledig automatisch. Maar misschien wilt u nog meer waarschuwingen instellen?
 
-* [Hand matig geconfigureerde metrische waarschuwingen](../platform/alerts-log.md)
+* [Hand matig geconfigureerde metrische waarschuwingen](../alerts/alerts-log.md)
 * [Webtests voor beschikbaarheid](./monitor-web-app-availability.md)

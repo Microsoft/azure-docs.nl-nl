@@ -11,20 +11,22 @@ ms.topic: overview
 ms.service: azure-communication-services
 ms.custom: tracking-python, devx-track-js
 zone_pivot_groups: acs-js-csharp-java-python
-ms.openlocfilehash: 60c51de4e4549649c681c961c6ddc1acdb12e698
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
-ms.translationtype: HT
+ms.openlocfilehash: 9d665df8eacfa575cd8dc50251662730e58fa7b3
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659689"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653428"
 ---
 # <a name="quickstart-send-an-sms-message"></a>Quickstart: Een sms-bericht verzenden
 
 [!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
+[!INCLUDE [Regional Availability Notice](../../includes/regional-availability-include.md)]
+
 
 > [!IMPORTANT]
 > Sms-berichten kunnen worden verzonden naar telefoonnummers in de Verenigde Staten. Communication Services biedt nog geen ondersteuning voor sms-berichten vanaf telefoonnummers in andere geografische gebieden.
-> Raadpleeg **[Uw oplossing voor telefonie en sms plannen](../../concepts/telephony-sms/plan-solution.md)** voor meer informatie.
+> Zie voor meer informatie **[telefoon nummer typen](../../concepts/telephony-sms/plan-solution.md)**.
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [Send SMS with .NET client library](./includes/send-sms-net.md)]
@@ -58,7 +60,7 @@ In deze quickstart hebt u geleerd hoe u sms-berichten kunt verzenden met Azure C
 > [Abonneren op sms-gebeurtenissen](./handle-sms-events.md)
 
 > [!div class="nextstepaction"]
-> [Uw PSTN-oplossing plannen](../../concepts/telephony-sms/plan-solution.md)
+> [Telefoon nummer typen](../../concepts/telephony-sms/plan-solution.md)
 
 > [!div class="nextstepaction"]
 > [Meer informatie over sms](../../concepts/telephony-sms/concepts.md)

@@ -8,12 +8,12 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 307afc8f1caafac1a511f0f9895cc73dd9b47eb4
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 50c8a36b943abb24f2c31bfc2bc33e646a74524a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98196041"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596621"
 ---
 # <a name="azure-spring-cloud-faq"></a>Veelgestelde vragen over Azure veer Cloud
 
@@ -90,9 +90,9 @@ Er is een probleem vastgesteld met de Spring boot 2,4 en er wordt momenteel gewe
 
 ### <a name="where-can-i-view-my-spring-cloud-application-logs-and-metrics"></a>Waar kan ik de logboeken en metrische gegevens van mijn lente-Cloud weer geven?
 
-Zoek metrische gegevens op het tabblad Overzicht van de app en het tabblad [Azure monitor](../azure-monitor/platform/data-platform-metrics.md#metrics-explorer) .
+Zoek metrische gegevens op het tabblad Overzicht van de app en het tabblad [Azure monitor](../azure-monitor/essentials/data-platform-metrics.md#metrics-explorer) .
 
-Azure lente Cloud ondersteunt het exporteren van Lente-Cloud toepassings logboeken en-metrische gegevens naar Azure Storage, EventHub en [log Analytics](../azure-monitor/platform/data-platform-logs.md). De tabel naam in Log Analytics is *AppPlatformLogsforSpring*. Zie [diagnostische services](diagnostic-services.md)voor meer informatie over het inschakelen van deze functie.
+Azure lente Cloud ondersteunt het exporteren van Lente-Cloud toepassings logboeken en-metrische gegevens naar Azure Storage, EventHub en [log Analytics](../azure-monitor/logs/data-platform-logs.md). De tabel naam in Log Analytics is *AppPlatformLogsforSpring*. Zie [diagnostische services](diagnostic-services.md)voor meer informatie over het inschakelen van deze functie.
 
 ### <a name="does-azure-spring-cloud-support-distributed-tracing"></a>Wordt gedistribueerde tracering door Azure lente Cloud ondersteund?
 

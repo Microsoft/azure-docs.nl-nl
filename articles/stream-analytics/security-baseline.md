@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: c1e61e9434d96148fbce840f4bad7f6a3b2ecb6b
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: e37171fce5dd7fe625550c5f554f211cf148ea07
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202722"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591431"
 ---
 # <a name="azure-security-baseline-for-stream-analytics"></a>Azure-beveiligings basislijn voor Stream Analytics
 
@@ -114,9 +114,9 @@ Zie het [overzicht van Azure Security-basis lijnen](../security/benchmarks/secur
 
 **Hulp**: Azure-activiteiten logboek gebruiken om resource configuraties te bewaken en wijzigingen voor uw stream Analytics resources te detecteren. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke resources plaatsvinden.
 
-* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Waarschuwingen maken in Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+* [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -138,7 +138,7 @@ Zie het [overzicht van Azure Security-basis lijnen](../security/benchmarks/secur
 
 **Hulp**: opname logboeken via Azure monitor om beveiligings gegevens zoals controle gebeurtenissen en-aanvragen samen te voegen. In Azure Monitor kunt u Log Analytics-werk ruimten gebruiken om een query uit te voeren en te analyseren, en kunt u gebruikmaken van Azure Storage accountyfor lange termijn/archief opslag, optioneel met beveiligings functies zoals onveranderlijke opslag en afgedwongen Bewaar perioden.
 
-* [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+* [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -170,7 +170,7 @@ Zie het [overzicht van Azure Security-basis lijnen](../security/benchmarks/secur
 
 * [Bewaar beleid configureren voor logboeken van Azure Storage-account](../storage/common/storage-monitor-storage-account.md#configure-logging)
 
-* [De Bewaar periode voor gegevens wijzigen in Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+* [De Bewaar periode voor gegevens wijzigen in Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -182,9 +182,9 @@ Zie het [overzicht van Azure Security-basis lijnen](../security/benchmarks/secur
 
 * [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-* [Voor meer informatie over de Log Analytics-werk ruimte](../azure-monitor/log-query/log-analytics-tutorial.md)
+* [Voor meer informatie over de Log Analytics-werk ruimte](../azure-monitor/logs/log-analytics-tutorial.md)
 
-* [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+* [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -196,7 +196,7 @@ Zie het [overzicht van Azure Security-basis lijnen](../security/benchmarks/secur
 
 * [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-* [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/learn/tutorial-response.md)
+* [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 * [Azure Stream Analytics biedt Diagnostische logboeken en activiteiten gegevens voor beoordeling](./stream-analytics-job-diagnostic-logs.md)
 
@@ -474,7 +474,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden aangebracht in productie-exemplaren van Azure stream Analytics resources.
 
-* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Ja
 

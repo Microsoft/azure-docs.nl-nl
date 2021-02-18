@@ -8,12 +8,12 @@ ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: 1a319c728b918dbad7dd5f240bc7a0bfeb0c4c09
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 244012f0945f467fe79e95d652ba22e3b62a1b7a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881041"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596943"
 ---
 # <a name="configure-optimize-and-troubleshoot-azcopy"></a>Configureren, optimaliseren en problemen oplossen in AzCopy
 
@@ -183,7 +183,7 @@ Wanneer u een taak hervat, zoekt AzCopy naar het job plan-bestand. In het plan b
 
 ## <a name="change-the-location-of-the-plan-and-log-files"></a>De locatie van het plan en de logboek bestanden wijzigen
 
-Plan-en logboek bestanden bevinden zich standaard in de `%USERPROFILE%\.azcopy` map op Windows of in de `$HOME$\.azcopy` map op Mac en Linux. U kunt deze locatie wijzigen.
+Plan-en logboek bestanden bevinden zich standaard in de `%USERPROFILE%\.azcopy` map op Windows of in de `$HOME/.azcopy` map op Mac en Linux. U kunt deze locatie wijzigen.
 
 ### <a name="change-the-location-of-plan-files"></a>De locatie van plan bestanden wijzigen
 

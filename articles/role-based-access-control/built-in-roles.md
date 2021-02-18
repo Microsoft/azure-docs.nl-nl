@@ -9,12 +9,12 @@ author: rolyon
 ms.author: rolyon
 ms.date: 02/15/2021
 ms.custom: generated
-ms.openlocfilehash: d9a2667907108cfb4c8d7a2a2c9b1558e02a9110
-ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
+ms.openlocfilehash: 1cd86ac2b9500c15bc32445e1866a40ca1c6b409
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100535124"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577005"
 ---
 # <a name="azure-built-in-roles"></a>Ingebouwde Azure-rollen
 
@@ -196,9 +196,9 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | **Controle** |  |  |
 > | [Inzender voor Application Insights onderdelen](#application-insights-component-contributor) | Kan Application Insights onderdelen beheren | ae349356-3a1b-4a5e-921d-050484c6347e |
 > | [Application Insights Snapshot Debugger](#application-insights-snapshot-debugger) | Geeft gebruikers machtigingen voor het weer geven en downloaden van moment opnamen van fout opsporing die zijn verzameld met de Application Insights Snapshot Debugger. Houd er rekening mee dat deze machtigingen niet zijn opgenomen in de rollen [eigenaar](#owner) of [Inzender](#contributor) . Wanneer gebruikers de Application Insights Snapshot Debugger rol geven, moet u de rol rechtstreeks aan de gebruiker toekennen. De rol wordt niet herkend wanneer deze wordt toegevoegd aan een aangepaste rol. | 08954f03-6346-4c2e-81c0-ec3a5cfae23b |
-> | [Inzender bewaken](#monitoring-contributor) | Kan alle bewakings gegevens lezen en controle-instellingen bewerken. Zie ook aan de [slag met rollen, machtigingen en beveiliging met Azure monitor](../azure-monitor/platform/roles-permissions-security.md#built-in-monitoring-roles). | 749f88d5-cbae-40b8-bcfc-e573ddc772fa |
+> | [Inzender bewaken](#monitoring-contributor) | Kan alle bewakings gegevens lezen en controle-instellingen bewerken. Zie ook aan de [slag met rollen, machtigingen en beveiliging met Azure monitor](../azure-monitor/roles-permissions-security.md#built-in-monitoring-roles). | 749f88d5-cbae-40b8-bcfc-e573ddc772fa |
 > | [De uitgever van metrische gegevens controleren](#monitoring-metrics-publisher) | Hiermee schakelt u de metrische gegevens voor publicatie in op Azure-resources | 3913510d-42f4-4e42-8a64-420c390055eb |
-> | [Bewakings lezer](#monitoring-reader) | Kan alle bewakings gegevens (metrieken, logboeken, enzovoort) lezen. Zie ook aan de [slag met rollen, machtigingen en beveiliging met Azure monitor](../azure-monitor/platform/roles-permissions-security.md#built-in-monitoring-roles). | 43d0d8ad-25c7-4714-9337-8ba259a9fe05 |
+> | [Bewakings lezer](#monitoring-reader) | Kan alle bewakings gegevens (metrieken, logboeken, enzovoort) lezen. Zie ook aan de [slag met rollen, machtigingen en beveiliging met Azure monitor](../azure-monitor/roles-permissions-security.md#built-in-monitoring-roles). | 43d0d8ad-25c7-4714-9337-8ba259a9fe05 |
 > | [Inzender voor werkmappen](#workbook-contributor) | Kan gedeelde werkmappen opslaan. | e8ddcd69-c73f-4f9f-9844-4100522f16ad |
 > | [Werkmap lezer](#workbook-reader) | Kan werkmappen lezen. | b279062a-9be3-42a0-92ae-8b3cf002ec4d |
 > | **Beheer + governance** |  |  |
@@ -4774,7 +4774,7 @@ Het maken en beheren van gegevens fabrieken, evenals onderliggende resources. [M
 
 ### <a name="data-purger"></a>Gegevens opschoner
 
-Kan analyse gegevens opschonen [meer informatie](../azure-monitor/platform/personal-data-mgmt.md)
+Kan analyse gegevens opschonen [meer informatie](../azure-monitor/logs/personal-data-mgmt.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -4917,7 +4917,7 @@ Kan benodigde bewerkingen voor domein services lezen, maken, wijzigen en verwijd
 
 ### <a name="log-analytics-contributor"></a>Inzender van Log Analytics
 
-Log Analytics Inzender kan alle bewakings gegevens lezen en controle-instellingen bewerken. Het bewerken van bewakings instellingen omvat het toevoegen van de VM-extensie aan Vm's; lezen van opslag account sleutels om het verzamelen van logboeken van Azure Storage te kunnen configureren. Automation-accounts maken en configureren; oplossingen toevoegen; en het configureren van Azure Diagnostics voor alle Azure-resources. [Meer informatie](../azure-monitor/platform/manage-access.md)
+Log Analytics Inzender kan alle bewakings gegevens lezen en controle-instellingen bewerken. Het bewerken van bewakings instellingen omvat het toevoegen van de VM-extensie aan Vm's; lezen van opslag account sleutels om het verzamelen van logboeken van Azure Storage te kunnen configureren. Automation-accounts maken en configureren; oplossingen toevoegen; en het configureren van Azure Diagnostics voor alle Azure-resources. [Meer informatie](../azure-monitor/logs/manage-access.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -4982,7 +4982,7 @@ Log Analytics Inzender kan alle bewakings gegevens lezen en controle-instellinge
 
 ### <a name="log-analytics-reader"></a>Lezer van Log Analytics
 
-Log Analytics Reader kan alle bewakings gegevens weer geven en doorzoeken en controle-instellingen weer geven, inclusief het weer geven van de configuratie van Azure Diagnostics op alle Azure-resources. [Meer informatie](../azure-monitor/platform/manage-access.md)
+Log Analytics Reader kan alle bewakings gegevens weer geven en doorzoeken en controle-instellingen weer geven, inclusief het weer geven van de configuratie van Azure Diagnostics op alle Azure-resources. [Meer informatie](../azure-monitor/logs/manage-access.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -8596,7 +8596,7 @@ Geeft gebruikers machtigingen voor het weer geven en downloaden van moment opnam
 
 ### <a name="monitoring-contributor"></a>Inzender bewaken
 
-Kan alle bewakings gegevens lezen en controle-instellingen bewerken. Zie ook aan de [slag met rollen, machtigingen en beveiliging met Azure monitor](../azure-monitor/platform/roles-permissions-security.md#built-in-monitoring-roles). [Meer informatie](../azure-monitor/platform/roles-permissions-security.md)
+Kan alle bewakings gegevens lezen en controle-instellingen bewerken. Zie ook aan de [slag met rollen, machtigingen en beveiliging met Azure monitor](../azure-monitor/roles-permissions-security.md#built-in-monitoring-roles). [Meer informatie](../azure-monitor/roles-permissions-security.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -8742,7 +8742,7 @@ Hiermee schakelt u de metrische gegevens voor publicatie in op Azure-resources [
 
 ### <a name="monitoring-reader"></a>Bewakings lezer
 
-Kan alle bewakings gegevens (metrieken, logboeken, enzovoort) lezen. Zie ook aan de [slag met rollen, machtigingen en beveiliging met Azure monitor](../azure-monitor/platform/roles-permissions-security.md#built-in-monitoring-roles). [Meer informatie](../azure-monitor/platform/roles-permissions-security.md)
+Kan alle bewakings gegevens (metrieken, logboeken, enzovoort) lezen. Zie ook aan de [slag met rollen, machtigingen en beveiliging met Azure monitor](../azure-monitor/roles-permissions-security.md#built-in-monitoring-roles). [Meer informatie](../azure-monitor/roles-permissions-security.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |

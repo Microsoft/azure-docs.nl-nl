@@ -5,19 +5,19 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: how-to
-ms.date: 02/05/2021
+ms.date: 02/17/2021
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 5ccef241a37e63467b681d5fd12c65072cb92e58
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: e6147918e7cd56aed5b5b333a8e9825a34d60fd4
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99626451"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652272"
 ---
-# <a name="use-azure-storage-explorer-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Azure Storage Explorer gebruiken voor het beheren van adreslijsten, bestanden en ACL's in Azure Data Lake Storage Gen2
+# <a name="use-azure-storage-explorer-to-manage-directories-and-files-in-azure-data-lake-storage-gen2"></a>Azure Storage Explorer gebruiken voor het beheren van mappen en bestanden in Azure Data Lake Storage Gen2
 
-In dit artikel wordt beschreven hoe u [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) gebruikt voor het maken en beheren van mappen, bestanden en toegangs beheer lijsten (acl's) in opslag accounts waarvoor HNS (hiërarchische naam ruimte) is ingeschakeld.
+In dit artikel leest u hoe u [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) gebruikt voor het maken en beheren van mappen en bestanden in opslag accounts met een hiërarchische naam ruimte (HNS) ingeschakeld.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -26,6 +26,9 @@ In dit artikel wordt beschreven hoe u [Azure Storage Explorer](https://azure.mic
 - Een opslag account met een hiërarchische naam ruimte (HNS) ingeschakeld. Volg [deze](../common/storage-account-create.md) instructies om er een te maken.
 
 - Azure Storage Explorer geïnstalleerd op de lokale computer. Zie [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) voor meer informatie over het installeren van Azure Storage Explorer voor Windows, Macintosh of Linux.
+
+> [!NOTE]
+> Storage Explorer maakt gebruik van de [eind punten](../common/storage-private-endpoints.md#private-endpoints-for-azure-storage) van de BLOB (blob) & data Lake Storage Gen2 (DFS) bij het werken met Azure data Lake Storage Gen2. Als toegang tot Azure Data Lake Storage Gen2 is geconfigureerd met behulp van privé-eind punten, moet u ervoor zorgen dat er twee persoonlijke eind punten worden gemaakt voor het opslag account: een met de subresource van het doel `blob` en de andere met de doel-subresource `dfs` .
 
 ## <a name="sign-in-to-storage-explorer"></a>Aanmelden bij Storage Explorer
 
@@ -77,41 +80,9 @@ Selecteer in de toepassing **Azure Storage Explorer** een directory in een opsla
 
 Als u bestanden wilt downloaden met behulp van **Azure Storage Explorer**, selecteert u in het lint de optie **down load** , waarbij een bestand is geselecteerd. Er wordt een dialoogvenster geopend waarin u een bestandsnaam kunt invoeren. Selecteer **Opslaan** om het downloaden van een bestand naar de lokale locatie te starten.
 
-<a id="managing-access"></a>
-
-## <a name="manage-acls"></a>Acl's beheren
-
-Klik met de rechter muisknop op de container, een map of een bestand en klik vervolgens op **Access Control-Lijsten beheren**.  Op de volgende scherm afbeelding ziet u het menu zoals deze wordt weer gegeven wanneer u met de rechter muisknop op een map klikt.
-
-> [!div class="mx-imgBorder"]
-> ![Met de rechter muisknop op een map in Azure Storage Explorer](./media/data-lake-storage-explorer/manage-access-control-list-option.png)
-
-In het dialoog venster **toegang beheren** kunt u machtigingen voor de eigenaar en de groep eigen aren beheren. Ook kunt u nieuwe gebruikers en groepen toevoegen aan de toegangsbeheerlijst voor wie u vervolgens machtigingen kunt beheren.
-
-> [!div class="mx-imgBorder"]
-> ![Het dialoog venster toegang beheren](./media/data-lake-storage-explorer/manage-access-dialog-box.png)
-
-Selecteer de knop **toevoegen** om een nieuwe gebruiker of groep toe te voegen aan de toegangs beheer lijst. Voer vervolgens het bijbehorende Azure Active Directory (AAD) in dat u aan de lijst wilt toevoegen en selecteer vervolgens **toevoegen**.  De gebruiker of groep wordt nu weergegeven in het veld **Gebruikers en groepen:**, zodat u kunt beginnen met het beheren van hun machtigingen.
-
-> [!NOTE]
-> Het is een best practice en het wordt aanbevolen om een beveiligingsgroep in AAD te maken en machtigingen te onderhouden voor de groep in plaats van afzonderlijke gebruikers. Zie voor meer informatie over deze aanbeveling en andere aanbevolen procedures [Access Control model in azure data Lake Storage Gen2](data-lake-storage-access-control-model.md).
-
-Gebruik de besturings elementen van het selectie vakje om de toegangs-en standaard-Acl's in te stellen. Zie [typen acl's](data-lake-storage-access-control.md#types-of-acls)voor meer informatie over het verschil tussen deze typen acl's.
-
-<a id="apply-acls-recursively"></a>
-
-## <a name="apply-acls-recursively"></a>Acl's recursief Toep assen
-
-U kunt ACL-vermeldingen recursief Toep assen op de bestaande onderliggende items van een bovenliggende map zonder dat u deze wijzigingen afzonderlijk voor elk onderliggend item hoeft aan te brengen.
-
-Als u ACL-vermeldingen recursief wilt Toep assen, klikt u met de rechter muisknop op de container of een map en klikt u vervolgens op **Access Control lijsten door geven**.  Op de volgende scherm afbeelding ziet u het menu zoals deze wordt weer gegeven wanneer u met de rechter muisknop op een map klikt.
-
-> [!div class="mx-imgBorder"]
-> ![Klik met de rechter muisknop op een map en kies de instelling toegangs beheer door geven](./media/data-lake-storage-explorer/propagate-access-control-list-option.png)
-
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over toegangs beheer lijsten in Data Lake Storage Gen2.
+Meer informatie over het beheren van machtigingen voor bestanden en mappen met behulp van toegangs beheer lijsten (Acl's)
 
 > [!div class="nextstepaction"]
-> [Toegangsbeheer in Data Lake Storage Gen2](./data-lake-storage-access-control.md)
+> [Azure Storage Explorer gebruiken voor het beheren van Acl's in Azure Data Lake Storage Gen2](./data-lake-storage-explorer-acl.md)

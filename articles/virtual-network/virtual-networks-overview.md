@@ -12,19 +12,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/03/2020
 ms.author: kumud
-ms.openlocfilehash: e1efd02d60ba874178f24da2b441fc122e4a1912
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 849127ed0846928a77795ac0a1ea3f7a091468b5
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98218531"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100635945"
 ---
 # <a name="what-is-azure-virtual-network"></a>Wat is Azure Virtual Network?
 
 Azure Virtual Network (VNet) is de basisbouwsteen voor uw privénetwerk in Azure. Via VNet kunnen veel soorten Azure-resources, zoals virtuele Azure-machines, veilig communiceren met elkaar, internet en on-premises netwerken. VNet is vergelijkbaar met een traditioneel netwerk dat u in uw eigen datacentrum zou uitvoeren, maar biedt daarnaast de voordelen van de infrastructuur van Azure, zoals schaal, beschikbaarheid en isolatie.
 
 ## <a name="why-use-an-azure-virtual-network"></a>Waarom een virtueel Azure-netwerk gebruiken?
-Via een virtueel Azure-netwerk kunnen Azure-resources veilig communiceren met elkaar, internet, en on-premises netwerken. Belangrijke scenario's die u kunt uitvoeren met een virtueel netwerk zijn: communicatie tussen Azure-resources en internet, communicatie tussen Azure-resources onderling, communicatie met on-premises resources, filteren van netwerkverkeer, routering van netwerkverkeer, en integratie met Azure-services.
+Via een virtueel Azure-netwerk kunnen Azure-resources veilig communiceren met elkaar, internet, en on-premises netwerken. De belangrijkste scenario's die u kunt uitvoeren met een virtueel netwerk, zijn: communicatie van Azure-resources met het Internet, communicatie tussen Azure-resources, communicatie met on-premises resources, het filteren van netwerk verkeer, route ring van netwerk verkeer en integratie met Azure-Services.
 
 ### <a name="communicate-with-the-internet"></a>Communiceren met internet
 

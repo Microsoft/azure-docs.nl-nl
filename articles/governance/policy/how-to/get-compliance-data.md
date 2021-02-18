@@ -3,12 +3,12 @@ title: Nalevings gegevens voor beleid ophalen
 description: Azure Policy evaluaties en effecten bepalen de naleving. Meer informatie over hoe u de compatibiliteits Details van uw Azure-resources kunt ophalen.
 ms.date: 10/05/2020
 ms.topic: how-to
-ms.openlocfilehash: 112badce00ec56df0f80c7b51bb4789a414cdcbd
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: 3c1c128b414444c6004f32f3f3173548f81a82e1
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920233"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577108"
 ---
 # <a name="get-compliance-data-of-azure-resources"></a>Compatibiliteits gegevens van Azure-resources ophalen
 
@@ -195,7 +195,7 @@ Naast het **conform** -en **niet-nalevings** beleid en de bronnen gelden vier an
 - **Niet gestart**: de evaluatie cyclus is niet gestart voor het beleid of de resource.
 - **Niet geregistreerd**: de Azure Policy resource provider is niet geregistreerd of het account dat is aangemeld, heeft geen machtiging voor het lezen van de compatibiliteits gegevens.
 
-Azure Policy maakt gebruik van de velden **type**, **naam** of **kind** in de definitie om te bepalen of een resource een overeenkomst is. Wanneer de bron overeenkomt, wordt deze beschouwd als toepasselijk en heeft deze de status **compatibel**, **niet-compatibel** of **uitgezonderd**. Als een van beide **typen**, namen **of typen** de enige eigenschap in de definitie is, worden alle opgenomen en niet-vrijgestelde resources beschouwd als toepasselijk en geëvalueerd. **name**
+Azure Policy maakt gebruik van de velden **type**, **naam** of **kind** in de definitie om te bepalen of een resource een overeenkomst is. Wanneer de bron overeenkomt, wordt deze beschouwd als toepasselijk en heeft deze de status **compatibel**, **niet-compatibel** of **uitgezonderd**. Als een van beide **typen**, namen **of typen** de enige eigenschap in de definitie is, worden alle opgenomen en niet-vrijgestelde resources beschouwd als toepasselijk en geëvalueerd. 
 
 Het nalevings percentage wordt bepaald door het verdelen van de **compatibele** en **vrijgestelde** resources op basis van het _totale aantal resources_. _Het totale aantal resources_ wordt gedefinieerd als de som van de **compatibele**, **niet-compatibele**, **uitgesloten** en **conflicterende** resources. De algemene compatibiliteits aantallen zijn de som van afzonderlijke resources die in **overeenstemming** zijn met of worden **uitgesloten** van de som van alle afzonderlijke resources. In de onderstaande afbeelding zijn er 20 afzonderlijke resources die van toepassing zijn en slechts één **niet-compatibel** is.
 De algemene bron compatibiliteit is 95% (19 van 20).
@@ -683,7 +683,7 @@ Trent Baker
 
 ## <a name="azure-monitor-logs"></a>Azure Monitor-logboeken
 
-Als u een [log Analytics-werk ruimte](../../../azure-monitor/log-query/log-query-overview.md) hebt met `AzureActivity` van de [analyse van activiteitenlogboek oplossing](../../../azure-monitor/platform/activity-log.md) die aan uw abonnement is gekoppeld, kunt u de resultaten van de niet-naleving van de evaluatie van nieuwe en bijgewerkte resources ook weer geven met behulp van eenvoudige Kusto-query's en de `AzureActivity` tabel. Met details in Azure Monitor-logboeken kunnen waarschuwingen worden geconfigureerd om niet-naleving te controleren.
+Als u een [log Analytics-werk ruimte](../../../azure-monitor/logs/log-query-overview.md) hebt met `AzureActivity` van de [analyse van activiteitenlogboek oplossing](../../../azure-monitor/essentials/activity-log.md) die aan uw abonnement is gekoppeld, kunt u de resultaten van de niet-naleving van de evaluatie van nieuwe en bijgewerkte resources ook weer geven met behulp van eenvoudige Kusto-query's en de `AzureActivity` tabel. Met details in Azure Monitor-logboeken kunnen waarschuwingen worden geconfigureerd om niet-naleving te controleren.
 
 :::image type="content" source="../media/getting-compliance-data/compliance-loganalytics.png" alt-text="Scherm opname van Azure Monitor logboeken met Azure Policy acties in de tabel AzureActivity." border="false":::
 

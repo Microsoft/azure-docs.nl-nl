@@ -7,12 +7,12 @@ ms.service: azure-redhat-openshift
 ms.topic: conceptual
 ms.date: 08/13/2020
 keywords: migratie, Aro, open Shift, Red Hat
-ms.openlocfilehash: 371672de83a6d745d7b367f8327a64e11059923e
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: d875389419e1442b942b4b42389664ffdd064ba3
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653275"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100634104"
 ---
 # <a name="migrate-from-azure-red-hat-openshift-311-to-azure-red-hat-openshift-4"></a>Migreren van Azure Red Hat open Shift 3,11 naar Azure Red Hat open Shift 4
 
@@ -100,7 +100,7 @@ Zie voor meer informatie over het configureren van deze opslag typen [permanente
 
 Azure Red Hat open Shift 4 kan installatie kopieën bouwen van uw bron code, deze implementeren en hun levens cyclus beheren. Om dit mogelijk te maken, biedt Azure Red Hat open Shift vier een [intern, geïntegreerd REGI ster voor container installatie kopieën](https://docs.openshift.com/container-platform/4.6/registry/registry-options.html) dat kan worden geïmplementeerd in uw Azure Red Hat open Shift-omgeving om installatie kopieën lokaal te beheren.
 
-Als u externe registers gebruikt, zoals [Azure container Registry](../container-registry/index.yml), [Red Hat kade](https://docs.openshift.com/container-platform/4.6/registry/registry-options.html#registry-quay-overview_registry-options)-registers of een rood Hat-bestand met [verificatie mogelijkheden](https://docs.openshift.com/container-platform/4.6/registry/registry-options.html#registry-authentication-enabled-registry-overview_registry-options), voert u de stappen uit om referenties aan het cluster toe te voegen zodat het cluster toegang heeft tot de opslag plaatsen.
+Als u externe registers gebruikt, zoals [Azure container Registry](../container-registry/index.yml), [Red Hat kade](ttps://docs.openshift.com/container-platform/4.6/registry/registry-options.html#registry-quay-overview_registry-options)-registers of een rood Hat-bestand met [verificatie mogelijkheden](https://docs.openshift.com/container-platform/4.6/registry/registry-options.html#registry-authentication-enabled-registry-overview_registry-options), voert u de stappen uit om referenties aan het cluster toe te voegen zodat het cluster toegang heeft tot de opslag plaatsen.
 
 ### <a name="monitoring"></a>Bewaking
 

@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/10/2020
 ms.custom: lyrana
-ms.openlocfilehash: 0b564ddfdea2cf24b7f9b1bc608d47fa4cfe541b
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: bfd0d04313f0b519b4013a43e29d88400c73ea31
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97632669"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591383"
 ---
 # <a name="monitoring-azure-time-series-insights-data-reference"></a>Azure Time Series Insights gegevens referentie bewaken
 
@@ -23,12 +23,12 @@ Meer informatie over de gegevens en resources die worden verzameld door Azure Mo
 
 ## <a name="metrics"></a>Metrische gegevens
 
-In deze sectie vindt u alle automatisch verzamelde platform gegevens die zijn verzameld voor Azure Time Series Insights. Zie [Azure monitor ondersteunde metrische gegevens](../azure-monitor/platform/metrics-supported.md)voor een lijst met alle Azure monitor metrische gegevens voor ondersteuning (inclusief Azure time series Insights). De resource provider voor deze metrische gegevens is [micro soft. TimeSeriesInsights/environments/eventsources](../azure-monitor/platform/metrics-supported.md#microsofttimeseriesinsightsenvironmentseventsources) en [micro soft. TimeSeriesInsights/environments](../azure-monitor/platform/metrics-supported.md#microsofttimeseriesinsightsenvironments).
+In deze sectie vindt u alle automatisch verzamelde platform gegevens die zijn verzameld voor Azure Time Series Insights. Zie [Azure monitor ondersteunde metrische gegevens](../azure-monitor/essentials/metrics-supported.md)voor een lijst met alle Azure monitor metrische gegevens voor ondersteuning (inclusief Azure time series Insights). De resource provider voor deze metrische gegevens is [micro soft. TimeSeriesInsights/environments/eventsources](../azure-monitor/essentials/metrics-supported.md#microsofttimeseriesinsightsenvironmentseventsources) en [micro soft. TimeSeriesInsights/environments](../azure-monitor/essentials/metrics-supported.md#microsofttimeseriesinsightsenvironments).
 
 
 ### <a name="ingress"></a>Inkomend verkeer
  
-|Gegevens|Weergave naam voor metrische gegevens|Eenheid|Aggregatietype|Beschrijving|
+|Metrisch|Weergave naam voor metrische gegevens|Eenheid|Aggregatietype|Description|
 |---|---|---|---|---|
 |IngressReceivedBytes|Ontvangen bytes van binnenkomend verkeer|Bytes|Totaal|Aantal gelezen bytes van de gebeurtenis bron|
 |IngressReceivedInvalidMessages|Ongeldige berichten ontvangen|Aantal|Totaal|Aantal ongeldige berichten gelezen uit de gebeurtenis bron|
@@ -40,7 +40,7 @@ In deze sectie vindt u alle automatisch verzamelde platform gegevens die zijn ve
 
 ### <a name="storage"></a>Storage
 
-|Gegevens|Weergave naam voor metrische gegevens|Eenheid|Aggregatietype|Beschrijving|
+|Metrisch|Weergave naam voor metrische gegevens|Eenheid|Aggregatietype|Description|
 |---|---|---|---|---|
 |WarmStorageMaxProperties|Maximale eigenschappen van warme opslag|Count|Maximum|Maximum aantal eigenschappen dat is toegestaan door de omgeving voor de SKU van S1/S2 en het maximum aantal eigenschappen dat is toegestaan door de warme Store voor PAYG SKU|
 |WarmStorageUsedProperties|Eigenschappen voor warme opslag gebruikt |Count|Maximum|Aantal eigenschappen dat wordt gebruikt door de omgeving voor de SKU van S1/S2 en het aantal eigenschappen dat door warme Store voor PAYG SKU wordt gebruikt|

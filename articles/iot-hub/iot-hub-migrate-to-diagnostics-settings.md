@@ -8,16 +8,16 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 03/11/2019
 ms.author: kgremban
-ms.openlocfilehash: dfd819d82f5e35183802e33e5d423cad4de36c38
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 48b646881b12047b28490999a96326f6076af2c1
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461589"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591840"
 ---
 # <a name="migrate-your-iot-hub-from-operations-monitoring-to-azure-monitor-resource-logs"></a>Migreer uw IoT Hub van operations monitoring naar Azure Monitor resource logs
 
-Klanten die [bewerkingen bewaken](iot-hub-operations-monitoring.md) om de status van bewerkingen in IOT hub bij te houden, kunnen die werk stroom migreren naar [Azure monitor-bron logboeken](../azure-monitor/platform/platform-logs-overview.md), een functie van Azure monitor. Bron logboeken geven diagnostische gegevens op resource niveau voor veel Azure-Services.
+Klanten die [bewerkingen bewaken](iot-hub-operations-monitoring.md) om de status van bewerkingen in IOT hub bij te houden, kunnen die werk stroom migreren naar [Azure monitor-bron logboeken](../azure-monitor/essentials/platform-logs-overview.md), een functie van Azure monitor. Bron logboeken geven diagnostische gegevens op resource niveau voor veel Azure-Services.
 
 **De functionaliteit voor de bewaking van bewerkingen van IOT hub is afgeschaft** en is verwijderd uit de portal. In dit artikel worden de stappen beschreven voor het verplaatsen van uw workloads van operations monitoring naar Azure Monitor resource logs. Zie [uw Azure IOT-oplossingen bewaken met Azure monitor en Azure resource Health](https://azure.microsoft.com/blog/monitor-your-azure-iot-solutions-with-azure-monitor-and-azure-resource-health/)voor meer informatie over de tijd lijn van de afschaffing.
 
@@ -49,9 +49,9 @@ Als u uw IoT Hub in de Azure Portal wilt bijwerken, maakt u eerst een diagnostis
 
 1. Selecteer **Opslaan** om de instellingen op te slaan.
 
-Nieuwe instellingen worden in ongeveer 10 minuten van kracht. Daarna worden logboeken weer gegeven in de geconfigureerde bestemming. Zie [logboek gegevens verzamelen en gebruiken van uw Azure-resources](../azure-monitor/platform/platform-logs-overview.md)voor meer informatie over het configureren van diagnostiek.
+Nieuwe instellingen worden in ongeveer 10 minuten van kracht. Daarna worden logboeken weer gegeven in de geconfigureerde bestemming. Zie [logboek gegevens verzamelen en gebruiken van uw Azure-resources](../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie over het configureren van diagnostiek.
 
-Zie [Diagnostische instellingen](../azure-monitor/platform/diagnostic-settings.md) in de Azure monitor-documentatie voor meer informatie over het maken van diagnostische instellingen, met inbegrip van Power shell en de Azure cli.
+Zie [Diagnostische instellingen](../azure-monitor/essentials/diagnostic-settings.md) in de Azure monitor-documentatie voor meer informatie over het maken van diagnostische instellingen, met inbegrip van Power shell en de Azure cli.
 
 ### <a name="turn-off-operations-monitoring"></a>Bewaking van bewerkingen uitschakelen
 

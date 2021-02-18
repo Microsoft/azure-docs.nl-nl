@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: tutorial
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: 1f5db17549c2b95d5dd0dd2f866ca1d1c0e7d8aa
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
-ms.translationtype: HT
+ms.openlocfilehash: 0868c99a29b8da4376b639a54988fc821433e26d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965116"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576983"
 ---
 # <a name="planning-and-operations-guide"></a>Handleiding voor planning en bewerking
 Deze gids is bedoeld voor IT-specialisten, IT-architecten, gegevensbeveiligingsanalisten en cloudbeheerders die willen gaan werken met Azure Security Center.
@@ -135,7 +135,7 @@ Azure Security Center maakt gebruik van de Log Analytics-agent. Dit is dezelfde 
 
 ### <a name="agent"></a>Agent
 
-Als automatisch inrichten is ingeschakeld in het beveiligingsbeleid, wordt de Log Analytics-agent (voor [Windows](../azure-monitor/platform/agent-windows.md) of [Linux](../azure-monitor/learn/quick-collect-linux-computer.md)) geïnstalleerd op alle ondersteunde virtuele machines van Azure en op nieuwe virtuele machines die worden gemaakt. Als de Log Analytics-agent al op de virtuele machine of computer is geïnstalleerd, maakt Azure Security Center gebruik van de huidige geïnstalleerde agent. Het proces van de agent is ontworpen om niet-invasief te zijn en minimale invloed te hebben op de prestaties van de virtuele machine.
+Als automatisch inrichten is ingeschakeld in het beveiligingsbeleid, wordt de Log Analytics-agent (voor [Windows](../azure-monitor/agents/agent-windows.md) of [Linux](../azure-monitor/vm/quick-collect-linux-computer.md)) geïnstalleerd op alle ondersteunde virtuele machines van Azure en op nieuwe virtuele machines die worden gemaakt. Als de Log Analytics-agent al op de virtuele machine of computer is geïnstalleerd, maakt Azure Security Center gebruik van de huidige geïnstalleerde agent. Het proces van de agent is ontworpen om niet-invasief te zijn en minimale invloed te hebben op de prestaties van de virtuele machine.
 
 De Log Analytics-agent voor Windows vereist TCP-poort 443. Zie de [Handleiding voor het oplossen van problemen met Azure Security Center](security-center-troubleshooting-guide.md) voor meer informatie.
 

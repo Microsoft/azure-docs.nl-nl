@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9fc1592681429998f5082fbadcd45fa068f130e
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 86ad698793d562f93f9972903ca21e50c209c79c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96180469"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580002"
 ---
 # <a name="install-and-use-the-log-analytics-views-for-azure-active-directory"></a>De log Analytics-weer gaven voor Azure Active Directory installeren en gebruiken
 
@@ -35,7 +35,7 @@ Met de weer gaven van de Azure Active Directory log Analytics kunt u de Azure AD
 
 Als u de log Analytics-weer gaven wilt gebruiken, hebt u het volgende nodig:
 
-* Een Log Analytics-werk ruimte in uw Azure-abonnement. Leer [een Log Analytics-werkruimte maken](../../azure-monitor/learn/quick-create-workspace.md).
+* Een Log Analytics-werk ruimte in uw Azure-abonnement. Leer [een Log Analytics-werkruimte maken](../../azure-monitor/logs/quick-create-workspace.md).
 * Voer eerst de stappen uit om [de Azure AD-activiteiten logboeken te routeren naar uw log Analytics-werk ruimte](howto-integrate-activity-logs-with-log-analytics.md).
 * Down load de weer gaven van de [github-opslag plaats](https://aka.ms/AADLogAnalyticsviews) naar uw lokale computer.
 
@@ -67,11 +67,11 @@ Als u de log Analytics-weer gaven wilt gebruiken, hebt u het volgende nodig:
 
     ![Regel maken](./media/howto-install-use-log-analytics-views/create-rule.png)
 
-6. Selecteer de actie groep waarvoor u een waarschuwing wilt ontvangen. In het algemeen kan dit een team zijn dat u per e-mail of SMS-bericht wilt laten weten, of het kan een geautomatiseerde taak zijn via webhooks, runbooks, functies, Logic apps of externe ITSM-oplossingen. Meer informatie over [het maken en beheren van actie groepen in de Azure Portal](../../azure-monitor/platform/action-groups.md).
+6. Selecteer de actie groep waarvoor u een waarschuwing wilt ontvangen. In het algemeen kan dit een team zijn dat u per e-mail of SMS-bericht wilt laten weten, of het kan een geautomatiseerde taak zijn via webhooks, runbooks, functies, Logic apps of externe ITSM-oplossingen. Meer informatie over [het maken en beheren van actie groepen in de Azure Portal](../../azure-monitor/alerts/action-groups.md).
 
 7. Selecteer **waarschuwings regel maken** om de waarschuwing te maken. U wordt nu gewaarschuwd wanneer er een fout is opgetreden bij het aanmelden.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Activiteiten logboeken analyseren met Azure Monitor-logboeken](howto-analyze-activity-logs-log-analytics.md)
-* [Aan de slag met Azure Monitor-Logboeken in de Azure Portal](../../azure-monitor/log-query/log-analytics-tutorial.md)
+* [Aan de slag met Azure Monitor-Logboeken in de Azure Portal](../../azure-monitor/logs/log-analytics-tutorial.md)

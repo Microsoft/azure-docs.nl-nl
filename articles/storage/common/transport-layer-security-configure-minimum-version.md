@@ -10,12 +10,12 @@ ms.date: 12/11/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: e5ab583330b46b8f53223500076aa04780e6deac
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: 3a44466f04e598080662599e785eb71698265f87
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108718"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592344"
 ---
 # <a name="enforce-a-minimum-required-version-of-transport-layer-security-tls-for-requests-to-a-storage-account"></a>Een mini maal vereiste versie van Transport Layer Security (TLS) afdwingen voor aanvragen van een opslag account
 
@@ -35,11 +35,11 @@ Wanneer u een minimum versie van TLS afdwingt voor uw opslag account, is het ris
 
 Als u aanvragen wilt registreren voor uw Azure Storage-account en de TLS-versie wilt bepalen die wordt gebruikt door de client, kunt u Azure Storage logboek registratie gebruiken in Azure Monitor (preview). Zie [Azure Storage bewaken](../blobs/monitor-blob-storage.md)voor meer informatie.
 
-Azure Storage logboek registratie in Azure Monitor ondersteunt het gebruik van logboek query's voor het analyseren van logboek gegevens. Als u een query wilt uitvoeren op Logboeken, kunt u een Azure Log Analytics-werk ruimte gebruiken. Zie [zelf studie: aan de slag met log Analytics query's](../../azure-monitor/log-query/log-analytics-tutorial.md)voor meer informatie over logboek query's.
+Azure Storage logboek registratie in Azure Monitor ondersteunt het gebruik van logboek query's voor het analyseren van logboek gegevens. Als u een query wilt uitvoeren op Logboeken, kunt u een Azure Log Analytics-werk ruimte gebruiken. Zie [zelf studie: aan de slag met log Analytics query's](../../azure-monitor/logs/log-analytics-tutorial.md)voor meer informatie over logboek query's.
 
 Als u Azure Storage gegevens wilt registreren met Azure Monitor en deze wilt analyseren met Azure Log Analytics, moet u eerst een diagnostische instelling maken die aangeeft welke typen aanvragen en voor welke opslag Services u gegevens wilt registreren. Azure Storage-Logboeken in Azure Monitor bevinden zich in de open bare preview en is beschikbaar voor preview-tests in alle open bare Cloud regio's. Met deze preview-versie kunt u logboeken maken voor blobs (inclusief Azure Data Lake Storage Gen2), bestanden, wacht rijen en tabellen. Voer de volgende stappen uit om een diagnostische instelling te maken in de Azure Portal:
 
-1. Maak een nieuwe Log Analytics-werk ruimte in het abonnement dat uw Azure Storage-account bevat. Nadat u logboek registratie voor uw opslag account hebt geconfigureerd, zijn de logboeken beschikbaar in de werk ruimte Log Analytics. Raadpleeg [Een Log Analytics-werkruimte maken in Azure Portal](../../azure-monitor/learn/quick-create-workspace.md) voor meer informatie.
+1. Maak een nieuwe Log Analytics-werk ruimte in het abonnement dat uw Azure Storage-account bevat. Nadat u logboek registratie voor uw opslag account hebt geconfigureerd, zijn de logboeken beschikbaar in de werk ruimte Log Analytics. Raadpleeg [Een Log Analytics-werkruimte maken in Azure Portal](../../azure-monitor/logs/quick-create-workspace.md) voor meer informatie.
 1. Ga in Azure Portal naar uw opslagaccount.
 1. Selecteer in de sectie controle de optie **Diagnostische instellingen (preview)**.
 1. Selecteer de Azure Storage-service waarvoor u aanvragen wilt registreren. Kies bijvoorbeeld **BLOB** om aanvragen te registreren bij Blob Storage.
@@ -50,7 +50,7 @@ Als u Azure Storage gegevens wilt registreren met Azure Monitor en deze wilt ana
 
     :::image type="content" source="media/transport-layer-security-configure-minimum-version/create-diagnostic-setting-logs.png" alt-text="Scherm afbeelding die laat zien hoe u een diagnostische instelling voor logboek registratie aanvragen maakt":::
 
-Nadat u de diagnostische instelling hebt gemaakt, worden aanvragen voor het opslag account vervolgens geregistreerd volgens die instelling. Zie voor meer informatie [Diagnostische instelling maken om bron logboeken en metrische gegevens in azure te verzamelen](../../azure-monitor/platform/diagnostic-settings.md).
+Nadat u de diagnostische instelling hebt gemaakt, worden aanvragen voor het opslag account vervolgens geregistreerd volgens die instelling. Zie voor meer informatie [Diagnostische instelling maken om bron logboeken en metrische gegevens in azure te verzamelen](../../azure-monitor/essentials/diagnostic-settings.md).
 
 Zie [bron Logboeken (preview)](../blobs/monitor-blob-storage-reference.md#resource-logs-preview)voor een verwijzing van velden die beschikbaar zijn in azure Storage-Logboeken in azure monitor.
 
@@ -344,13 +344,13 @@ In de volgende afbeelding ziet u de fout die optreedt als u probeert een opslag 
 
 ## <a name="permissions-necessary-to-require-a-minimum-version-of-tls"></a>Benodigde machtigingen voor het vereisen van een minimum versie van TLS
 
-Als u de eigenschap **MinimumTlsVersion** voor het opslag account wilt instellen, moet een gebruiker gemachtigd zijn om opslag accounts te maken en te beheren. Azure RBAC-rollen (op rollen gebaseerd toegangs beheer) die deze machtigingen bieden, zijn onder andere de actie **micro soft. Storage/Storage accounts/write** of **micro \* soft. Storage/Storage accounts/* _. Ingebouwde rollen met deze actie zijn onder andere:
+Als u de eigenschap **MinimumTlsVersion** voor het opslag account wilt instellen, moet een gebruiker gemachtigd zijn om opslag accounts te maken en te beheren. Azure RBAC-rollen (op rollen gebaseerd toegangs beheer) die deze machtigingen bieden, zijn onder andere **micro soft. Storage/Storage accounts/write** of **micro soft. \* Storage/Storage accounts/** action. Ingebouwde rollen met deze actie zijn onder andere:
 
 - De rol van Azure Resource Manager [eigenaar](../../role-based-access-control/built-in-roles.md#owner)
 - De rol [inzender](../../role-based-access-control/built-in-roles.md#contributor) Azure Resource Manager
 - De rol [Inzender voor opslag accounts](../../role-based-access-control/built-in-roles.md#storage-account-contributor)
 
-Deze rollen bieden geen toegang tot gegevens in een opslag account via Azure Active Directory (Azure AD). Ze bevatten echter de _ * micro soft. Storage/Storage accounts/listkeys ophalen/Action * *, waarmee toegang wordt verleend aan de toegangs sleutels voor het account. Met deze machtiging kan een gebruiker de toegangs sleutels voor het account gebruiken om toegang te krijgen tot alle gegevens in een opslag account.
+Deze rollen bieden geen toegang tot gegevens in een opslag account via Azure Active Directory (Azure AD). Ze bevatten echter de **micro soft. Storage/Storage accounts/listkeys ophalen/Action**, waarmee toegang wordt verleend aan de toegangs sleutels voor het account. Met deze machtiging kan een gebruiker de toegangs sleutels voor het account gebruiken om toegang te krijgen tot alle gegevens in een opslag account.
 
 Roltoewijzingen moeten zijn gericht op het niveau van het opslag account of hoger, zodat een gebruiker een minimum versie van TLS vereist voor het opslag account. Zie [inzicht in het bereik voor Azure RBAC](../../role-based-access-control/scope-overview.md)voor meer informatie over het gebruikersrol bereik.
 

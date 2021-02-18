@@ -5,14 +5,14 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 11/10/2020
+ms.date: 02/17/2021
 ms.author: normesta
-ms.openlocfilehash: 65d1ef76ffae113a4b526eec75301abbfea751e7
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: e5f62456b85791bad5bb66f3abf67e523558d76e
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96017709"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650385"
 ---
 # <a name="access-control-model-in-azure-data-lake-storage-gen2"></a>Access Control model in Azure Data Lake Storage Gen2
 
@@ -35,7 +35,7 @@ Dit artikel is gericht op Azure RBAC en Acl's, en hoe het systeem ze samen evalu
 
 Azure RBAC gebruikt roltoewijzingen om machtigingen sets toe te passen op [beveiligings-principals](../../role-based-access-control/overview.md#security-principal). Een beveiligingsprincipal is een object dat staat voor een gebruiker, groep, Service-Principal of beheerde identiteit die is gedefinieerd in Azure Active Directory (AD). Een machtigingenset kan een beveiligings-principal een "grof korrelf" toegangs niveau geven, zoals lees-of schrijf toegang tot **alle** gegevens in een opslag account of **alle** gegevens in een container. 
 
-Met de volgende rollen wordt een beveiligingsprincipal toegestaan om toegang te krijgen tot gegevens in een opslag account. 
+Met de volgende rollen wordt een beveiligingsprincipal toegestaan om toegang te krijgen tot gegevens in een opslag account.
 
 |Rol|Beschrijving|
 |--|--|

@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 11/05/2020
+ms.date: 02/16/2021
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1957adc0effd5b37d7aff3f813267da6ca065e0a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 15e5aba2bad4cd7ae63ceb9c9f67f7e653a82a91
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100368962"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650147"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Vereisten voor Azure AD Connect
 In dit artikel worden de vereisten en de hardwarevereisten voor Azure Active Directory (Azure AD)-verbinding beschreven.
@@ -167,6 +167,17 @@ Vóór versie 1.1.614.0 maakt Azure AD Connect standaard gebruik van TLS 1,0 voo
     "SchUseStrongCrypto"=dword:00000001
     ```
 1. Als u ook TLS 1,2 wilt inschakelen tussen de sync engine-server en een externe SQL Server, moet u ervoor zorgen dat u de vereiste versies hebt geïnstalleerd voor [TLS 1,2-ondersteuning voor Microsoft SQL Server](https://support.microsoft.com/kb/3135244).
+
+### <a name="dcom-prerequisites-on-the-synchronization-server"></a>DCOM-vereisten op de synchronisatie server
+Tijdens de installatie van de synchronisatie service wordt Azure AD Connect gecontroleerd op de aanwezigheid van de volgende register sleutel:
+
+- HKEY_LOCAL_MACHINE: Software\Microsoft\Ole
+
+Onder deze register sleutel wordt Azure AD Connect gecontroleerd of de volgende waarden aanwezig zijn en niet zijn beschadigd: 
+
+- [MachineAccessRestriction](https://docs.microsoft.com/windows/win32/com/machineaccessrestriction)
+- [MachineLaunchRestriction](https://docs.microsoft.com/windows/win32/com/machinelaunchrestriction)
+- [DefaultLaunchPermission](https://docs.microsoft.com/windows/win32/com/defaultlaunchpermission)
 
 ## <a name="prerequisites-for-federation-installation-and-configuration"></a>Vereisten voor Federatie-installatie en-configuratie
 ### <a name="windows-remote-management"></a>Windows Remote Management

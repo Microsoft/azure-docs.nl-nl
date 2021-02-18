@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 8/11/2020
 ms.author: lajanuar
-ms.openlocfilehash: bdfb1ac03ea6f896725d5c86cefe41021204359c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 567e28ee7f698565d6ad0020db7abdca0557f053
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100582208"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650759"
 ---
 # <a name="translator-v30"></a>Translator v 3.0
 
@@ -35,7 +35,7 @@ Micro soft Translator wordt uit meerdere datacenter locaties verzonden. Ze bevin
 
 * **Amerikaans continent:** VS-Oost, Zuid-Centraal VS, West-Centraal VS en VS-West 2 
 * **Azië en Stille Oceaan:** Korea-zuid, Japan-Oost, Zuidoost-Azië en Australië-oost
-* **Europa:** Europa-noord en Europa-west
+* **Europa:** Europa-noord, Europa-west, Zwitserland-noord <sup>1, 2</sup>en Zwitserland-West <sup>1, 2</sup>
 
 Aanvragen voor de micro soft Translator zijn in de meeste gevallen verwerkt door het Data Center dat zich het dichtst bij de oorspronkelijke bestemming bevindt. In het geval van een storing in een Data Center kan de aanvraag buiten de regio van Azure worden gerouteerd.
 
@@ -47,6 +47,17 @@ Als u wilt afdwingen dat de aanvraag wordt verwerkt door een specifieke Azure-ge
 |Azure|Verenigde Staten|   api-nam.cognitive.microsofttranslator.com|
 |Azure|Europa|  api-eur.cognitive.microsofttranslator.com|
 |Azure|Azië en Stille Oceaan|    api-apc.cognitive.microsofttranslator.com|
+
+<sup>1</sup> klant met een resource in Zwitserland-noord of Zwitserland-West kan ervoor zorgen dat de tekst-API-aanvragen worden aangeboden in Zwitser land. Om ervoor te zorgen dat aanvragen worden verwerkt in Zwitser land, maakt u de Vertaal resource in de resource regio ' ' Zwitserland-noord ' of ' Zwitserland-west ' en gebruikt u vervolgens het aangepaste eind punt van de resource in uw API-aanvragen. Bijvoorbeeld: als u een resource Translator in Azure Portal met ' resource Region ' als ' Zwitserland-noord ' maakt en uw resource naam ' My-CH-n ' is, is het aangepaste eind punt ' https://my-ch-n.cognitiveservices.azure.com '. En een voorbeeld aanvraag om te zetten is:
+```curl
+// Pass secret key and region using headers to a custom endpoint
+curl -X POST " my-ch-n.cognitiveservices.azure.com/translator/text/v3.0/translate?to=fr" \
+-H "Ocp-Apim-Subscription-Key: xxx" \
+-H "Ocp-Apim-Subscription-Region: switzerlandnorth" \
+-H "Content-Type: application/json" \
+-d "[{'Text':'Hello'}]" -v
+```
+<sup>2</sup> Aangepaste vertalers zijn momenteel niet beschikbaar in Zwitser land.
 
 ## <a name="authentication"></a>Verificatie
 

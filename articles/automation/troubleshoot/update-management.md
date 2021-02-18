@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 01/13/2021
 ms.topic: troubleshooting
-ms.openlocfilehash: 9ccaddec73a9c74123471c34b1b973b78eacfff8
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: c16b032502401b633532ab0fcf9518aa85a1b8d6
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98890778"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579736"
 ---
 # <a name="troubleshoot-update-management-issues"></a>Problemen met Updatebeheer oplossen
 
@@ -135,7 +135,7 @@ Dit probleem kan worden veroorzaakt door lokale configuratie problemen of door e
 
 1. Voer de probleem oplosser voor [Windows](update-agent-issues.md#troubleshoot-offline) of [Linux](update-agent-issues-linux.md#troubleshoot-offline)uit, afhankelijk van het besturings systeem.
 
-2. Zorg ervoor dat uw computer rapporteert aan de juiste werk ruimte. Zie [agent connectiviteit controleren op Azure monitor](../../azure-monitor/platform/agent-windows.md#verify-agent-connectivity-to-azure-monitor)voor meer informatie over hoe u dit aspect kunt controleren. Zorg er ook voor dat deze werk ruimte is gekoppeld aan uw Azure Automation-account. Als u wilt bevestigen, gaat u naar uw Automation-account en selecteert u **gekoppelde werk ruimte** onder **gerelateerde resources**.
+2. Zorg ervoor dat uw computer rapporteert aan de juiste werk ruimte. Zie [agent connectiviteit controleren op Azure monitor](../../azure-monitor/agents/agent-windows.md#verify-agent-connectivity-to-azure-monitor)voor meer informatie over hoe u dit aspect kunt controleren. Zorg er ook voor dat deze werk ruimte is gekoppeld aan uw Azure Automation-account. Als u wilt bevestigen, gaat u naar uw Automation-account en selecteert u **gekoppelde werk ruimte** onder **gerelateerde resources**.
 
 3. Zorg ervoor dat de computers worden weer gegeven in de Log Analytics werkruimte die aan uw Automation-account is gekoppeld. Voer de volgende query uit in de werk ruimte Log Analytics.
 
@@ -144,7 +144,7 @@ Dit probleem kan worden veroorzaakt door lokale configuratie problemen of door e
    | summarize by Computer, Solutions
    ```
 
-    Als uw computer niet in de query resultaten wordt weer geven, is deze niet recent ingecheckt. Er is waarschijnlijk een probleem met de lokale configuratie en u moet [de agent opnieuw installeren](../../azure-monitor/learn/quick-collect-windows-computer.md#install-the-agent-for-windows).
+    Als uw computer niet in de query resultaten wordt weer geven, is deze niet recent ingecheckt. Er is waarschijnlijk een probleem met de lokale configuratie en u moet [de agent opnieuw installeren](../../azure-monitor/vm/quick-collect-windows-computer.md#install-the-agent-for-windows).
 
     Als uw computer wordt weer gegeven in de query resultaten, controleert u onder de eigenschappen van de **oplossing** welke **updates** worden weer gegeven. Hiermee wordt gecontroleerd of het is geregistreerd bij Updatebeheer. Als dat niet het geval is, controleert u of er problemen zijn met de scope configuratie. De [Scope configuratie](../update-management/scope-configuration.md) bepaalt welke machines zijn geconfigureerd voor updatebeheer. Zie [machines inschakelen in de werk ruimte](../update-management/enable-from-automation-account.md#enable-machines-in-the-workspace)om de scope configuratie voor het doel van de computer te configureren.
 

@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3334c5ca300b6dbeb0ad055c7dbd2c15e1c5481a
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 2a2161fd24ccde596630549163a631626a961773
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98677118"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596660"
 ---
 # <a name="monitor-workload---azure-portal"></a>Workload bewaken-Azure Portal
 
@@ -36,7 +36,7 @@ Ga naar de Blade bladeren voor Log Analytics-werk ruimten en maak een werk ruimt
 
 ![Scherm afbeelding toont de Log Analytics werk ruimte waar u waarden kunt invoeren.](./media/sql-data-warehouse-monitor-workload-portal/add_analytics_workspace_2.png)
 
-Raadpleeg de volgende [documentatie](../../azure-monitor/learn/quick-create-workspace.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.jsond#create-a-workspace)voor meer informatie over werk ruimten.
+Raadpleeg de volgende [documentatie](../../azure-monitor/logs/quick-create-workspace.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.jsond#create-a-workspace)voor meer informatie over werk ruimten.
 
 ## <a name="turn-on-resource-logs"></a>Resource logboeken inschakelen
 

@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 02/09/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 5519157b58268b30ecb7a1af7b86d13d587a23b8
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: eaf512915532b482c25e830cd9f2e01d61aa4524
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100519402"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572783"
 ---
 # <a name="configure-an-aks-cluster"></a>Een AKS-cluster configureren
 
@@ -100,9 +100,9 @@ Door te gebruiken `containerd` voor AKS-knoop punten, verbetert de opstart laten
 * Voor `containerd` kunt u het beste [`crictl`](https://kubernetes.io/docs/tasks/debug-application-cluster/crictl) als vervangings-CLI gebruiken in plaats van de docker-CLI, voor het **oplossen** van een Peul, containers en container installatie kopieën op Kubernetes-knoop punten (bijvoorbeeld `crictl ps` ). 
    * Het biedt geen volledige functionaliteit van de docker-CLI. Het is alleen bedoeld voor het oplossen van problemen.
    * `crictl` biedt een meer kubernetes gebruiks vriendelijke weer gave van containers, met concepten zoals peulen, enzovoort.
-* `Containerd` Hiermee stelt u logboek registratie in met de gestandaardiseerde `cri` logboek indeling (die verschilt van wat u momenteel van het JSON-stuur programma van de docker haalt). Uw logboek registratie oplossing moet ondersteuning bieden voor de `cri` indeling voor logboek registratie (zoals [Azure monitor voor containers](../azure-monitor/insights/container-insights-enable-new-cluster.md))
+* `Containerd` Hiermee stelt u logboek registratie in met de gestandaardiseerde `cri` logboek indeling (die verschilt van wat u momenteel van het JSON-stuur programma van de docker haalt). Uw logboek registratie oplossing moet ondersteuning bieden voor de `cri` indeling voor logboek registratie (zoals [Azure monitor voor containers](../azure-monitor/containers/container-insights-enable-new-cluster.md))
 * U hebt geen toegang meer tot de docker-engine, of u kunt `/var/run/docker.sock` docker-in-docker (DinD) niet meer gebruiken.
-  * Als u momenteel toepassings Logboeken of bewakings gegevens van de docker-engine uitpakt, kunt u in plaats daarvan iets gebruiken als [Azure monitor voor containers](../azure-monitor/insights/container-insights-enable-new-cluster.md) . Daarnaast biedt AKS geen ondersteuning voor het uitvoeren van out-of-band-opdrachten op de agent knooppunten die instabiliteit kunnen veroorzaken.
+  * Als u momenteel toepassings Logboeken of bewakings gegevens van de docker-engine uitpakt, kunt u in plaats daarvan iets gebruiken als [Azure monitor voor containers](../azure-monitor/containers/container-insights-enable-new-cluster.md) . Daarnaast biedt AKS geen ondersteuning voor het uitvoeren van out-of-band-opdrachten op de agent knooppunten die instabiliteit kunnen veroorzaken.
   * Zelfs bij gebruik van Moby/docker, het bouwen van installatie kopieën en rechtstreeks gebruikmaken van de docker-engine via de bovenstaande methoden, wordt sterk afgeraden. Kubernetes is niet volledig op de hoogte van deze verbruikte resources en deze benaderingen presen teren hier talloze problemen die [hier](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/) [worden beschreven, bijvoorbeeld.](https://securityboulevard.com/2018/05/escaping-the-whale-things-you-probably-shouldnt-do-with-docker-part-1/)
 * Installatie kopieën maken: u kunt uw huidige docker-werk stroom gewoon blijven gebruiken, tenzij u installatie kopieën in uw AKS-cluster bouwt. In dit geval kunt u het beste overschakelen naar de aanbevolen benadering voor het bouwen van installatie kopieën met [ACR-taken](../container-registry/container-registry-quickstart-task-cli.md)of een veiligere optie in het cluster, zoals [docker buildx](https://github.com/docker/buildx).
 

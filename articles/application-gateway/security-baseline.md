@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 4f28665998dcac9f641d4142a0dea60707fb02e9
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 579baa611db47215c8ada554328d254ce99f17cf
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99805357"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579749"
 ---
 # <a name="azure-security-baseline-for-azure-application-gateway"></a>Azure-beveiligings basislijn voor Azure-toepassing gateway
 
@@ -188,9 +188,9 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 **Hulp**: Azure-activiteiten logboek gebruiken om netwerk bron configuraties te bewaken en wijzigingen te detecteren voor netwerk instellingen en-bronnen die betrekking hebben op uw Azure-toepassing gateway-implementaties. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in essentiële netwerk instellingen of-resources plaatsvinden.
 
-* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Waarschuwingen maken in Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+* [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -216,7 +216,7 @@ Naast activiteiten Logboeken kunt u Diagnostische instellingen configureren voor
 
 Azure-toepassing gateway biedt ook ingebouwde integratie met Azure-toepassing Insights. Application Insights verzamelt logboek-, prestatie-en fout gegevens. Application Insights detecteert automatisch prestatie afwijkingen en bevat krachtige analyse hulpprogramma's waarmee u problemen kunt vaststellen en inzicht krijgt in de manier waarop uw web-apps worden gebruikt. U kunt continue export inschakelen voor het exporteren van telemetrie van Application Insights naar een centrale locatie om de gegevens langer dan de standaard retentie periode te bewaren.
 
-* [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+* [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 * [Diagnostische instellingen inschakelen voor Azure-toepassing gateway](./application-gateway-diagnostics.md)
 
@@ -236,7 +236,7 @@ Naast activiteiten Logboeken kunt u Diagnostische instellingen configureren voor
 
 Azure-toepassing gateway biedt ook ingebouwde integratie met Azure-toepassing Insights. Application Insights verzamelt logboek-, prestatie-en fout gegevens. Application Insights detecteert automatisch prestatie afwijkingen en bevat krachtige analyse hulpprogramma's waarmee u problemen kunt vaststellen en inzicht krijgt in de manier waarop uw web-apps worden gebruikt. U kunt continue export inschakelen voor het exporteren van telemetrie van Application Insights naar een centrale locatie om de gegevens langer dan de standaard retentie periode te bewaren.
 
-* [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+* [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 * [Diagnostische instellingen inschakelen voor Azure-toepassing gateway](./application-gateway-diagnostics.md)
 
@@ -260,7 +260,7 @@ Azure-toepassing gateway biedt ook ingebouwde integratie met Azure-toepassing In
 
 **Hulp**: stel binnen Azure monitor uw Bewaar periode voor log Analytics werk ruimte in volgens de nalevings voorschriften van uw organisatie. Gebruik Azure Storage-accounts voor lange termijn/archiverings opslag.
 
-* [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+* [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -274,7 +274,7 @@ Gebruik Azure Monitor voor netwerken voor een uitgebreid overzicht van de status
 
 Optioneel kunt u gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden.
 
-* [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+* [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 * [Diagnostische instellingen inschakelen voor Azure-toepassing gateway](./application-gateway-diagnostics.md)
 
@@ -294,13 +294,13 @@ Gebruik Azure Monitor voor netwerken voor een uitgebreid overzicht van de status
 
 * [Azure WAF implementeren](../web-application-firewall/ag/create-waf-policy-ag.md)
 
-* [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+* [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 * [Diagnostische instellingen inschakelen voor Azure-toepassing gateway](./application-gateway-diagnostics.md)
 
 * [Azure Monitor voor netwerken gebruiken](../azure-monitor/insights/network-insights-overview.md)
 
-* [Waarschuwingen maken in azure](../azure-monitor/learn/tutorial-response.md)
+* [Waarschuwingen maken in azure](../azure-monitor/alerts/tutorial-response.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -591,7 +591,7 @@ Micro soft beheert de onderliggende infra structuur voor Azure-toepassing gatewa
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer wijzigingen worden aangebracht in productie-Azure-toepassing gateway-exemplaren, evenals andere kritieke of verwante resources.
 
-* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Ja
 

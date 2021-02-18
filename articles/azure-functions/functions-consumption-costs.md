@@ -3,18 +3,18 @@ title: De kosten van het verbruiks abonnement in Azure Functions schatten
 description: Meer informatie over hoe u de kosten die u kunt doen bij het uitvoeren van uw functie-app in een verbruiks abonnement in azure, beter kunt schatten.
 ms.date: 9/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: 430804d478df718f51ae1da9adb6693f597157a9
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 4967e0ff79a638891da4f784cf2f5f1ca4ddfe51
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934880"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578565"
 ---
 # <a name="estimating-consumption-plan-costs"></a>Kosten schatten voor verbruiksplan
 
 Er zijn momenteel drie typen hosting plannen voor een app die wordt uitgevoerd in Azure Functions, waarbij elk abonnement een eigen prijs model heeft: 
 
-| Plannen | Beschrijving |
+| Plannen | Description |
 | ---- | ----------- |
 | [**Verbruik**](consumption-plan.md) | Er worden alleen kosten in rekening gebracht voor de tijd dat uw functie-app wordt uitgevoerd. Dit abonnement bevat een [gratis][prijs pagina] voor granting per abonnement.|
 | [**Premium**](functions-premium-plan.md) | Biedt u dezelfde functies en schaal methode als het verbruiks abonnement, maar met verbeterde prestaties en VNET-toegang. De kosten zijn gebaseerd op de gekozen prijs categorie. Zie [Azure functions Premium-abonnement](functions-premium-plan.md)voor meer informatie. |
@@ -67,11 +67,11 @@ In [uw factuur](../cost-management-billing/understand/download-azure-invoice.md)
 
 ### <a name="function-app-level-metrics"></a>Metrische gegevens op app-niveau functie
 
-Voor een beter begrip van de kosten impact van uw functies kunt u Azure Monitor gebruiken om de metrische gegevens weer te geven die momenteel worden gegenereerd door uw functie-apps. U kunt in de [Azure Portal] -of rest-api's een [Azure monitor Metrics Explorer](../azure-monitor/platform/metrics-getting-started.md) gebruiken om deze gegevens op te halen.
+Voor een beter begrip van de kosten impact van uw functies kunt u Azure Monitor gebruiken om de metrische gegevens weer te geven die momenteel worden gegenereerd door uw functie-apps. U kunt in de [Azure Portal] -of rest-api's een [Azure monitor Metrics Explorer](../azure-monitor/essentials/metrics-getting-started.md) gebruiken om deze gegevens op te halen.
 
 #### <a name="monitor-metrics-explorer"></a>Metrics Explorer bewaken
 
-Gebruik [Azure monitor Metrics Explorer](../azure-monitor/platform/metrics-getting-started.md) om kostengerelateerde gegevens weer te geven voor de functie-apps van uw verbruiks plan in een grafische indeling. 
+Gebruik [Azure monitor Metrics Explorer](../azure-monitor/essentials/metrics-getting-started.md) om kostengerelateerde gegevens weer te geven voor de functie-apps van uw verbruiks plan in een grafische indeling. 
 
 1. Klik boven aan de [Azure Portal] in **Zoek Services, resources en docs**  zoeken naar `monitor` en selecteer **monitor** onder **Services**.
 

@@ -4,16 +4,16 @@ description: Meer informatie over het ophalen van bron gebeurtenissen via activi
 ms.topic: article
 ms.date: 04/24/2020
 ms.author: msangapu
-ms.openlocfilehash: c5c84891187c540c0b24162cf5c8c7f96e9e731a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c20028a4f84dae9d292cf855a1e164bd69864909
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88962295"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574043"
 ---
 # <a name="get-resource-events-in-azure-app-service"></a>Resource gebeurtenissen in Azure App Service ophalen
 
-Azure App Service biedt ingebouwde hulpprogram ma's voor het bewaken van de status en status van uw resources. Resource gebeurtenissen helpt u bij het begrijpen van alle wijzigingen die zijn aangebracht in uw onderliggende web-app-resources en om indien nodig actie te ondernemen. Voor beelden van gebeurtenissen zijn: schalen van instanties, updates van toepassings instellingen, opnieuw starten van de web-app en nog veel meer. In dit artikel leert u hoe u [Azure-activiteiten logboeken](../azure-monitor/platform/activity-log.md#view-the-activity-log) kunt weer geven en [Event grid](../event-grid/index.yml) om bron gebeurtenissen te bewaken die betrekking hebben op uw app service Web-app.
+Azure App Service biedt ingebouwde hulpprogram ma's voor het bewaken van de status en status van uw resources. Resource gebeurtenissen helpt u bij het begrijpen van alle wijzigingen die zijn aangebracht in uw onderliggende web-app-resources en om indien nodig actie te ondernemen. Voor beelden van gebeurtenissen zijn: schalen van instanties, updates van toepassings instellingen, opnieuw starten van de web-app en nog veel meer. In dit artikel leert u hoe u [Azure-activiteiten logboeken](../azure-monitor/essentials/activity-log.md#view-the-activity-log) kunt weer geven en [Event grid](../event-grid/index.yml) om bron gebeurtenissen te bewaken die betrekking hebben op uw app service Web-app.
 
 > [!NOTE]
 > App Service integratie met Event Grid is in **Preview**. [Bekijk de aankondiging voor meer informatie.](https://aka.ms/app-service-event-grid-announcement)
@@ -33,7 +33,7 @@ Azure-activiteiten logboeken voor App Service Details, zoals:
 
 De activiteiten logboeken van Azure kunnen worden opgevraagd met behulp van de Azure Portal, Power shell, REST API of CLI. U kunt de logboeken verzenden naar een opslag account, Event hub en Log Analytics. U kunt ze ook analyseren in Power BI of waarschuwingen maken om de resource gebeurtenissen bijgewerkt te houden.
 
-[Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen.](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+[Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen.](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
 ## <a name="ship-activity-logs-to-event-grid"></a>Activiteiten logboeken verzenden naar Event Grid
 
@@ -44,7 +44,7 @@ U kunt Event Grid ook gebruiken met Logic Apps om op elke locatie gegevens te ve
 [De eigenschappen en het schema voor Azure App Service gebeurtenissen weer geven.](../event-grid/event-schema-app-service.md)
 
 ## <a name="next-steps"></a><a name="nextsteps"></a> Volgende stappen
-* [Logboeken doorzoeken met Azure Monitor](../azure-monitor/log-query/log-query-overview.md)
+* [Logboeken doorzoeken met Azure Monitor](../azure-monitor/logs/log-query-overview.md)
 * [Azure App Service bewaken](web-sites-monitor.md)
 * [Problemen met Azure App Service oplossen in Visual Studio](troubleshoot-dotnet-visual-studio.md)
 * [App-logboeken in HDInsight analyseren](https://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)

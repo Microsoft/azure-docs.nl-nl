@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: d47f6c20246e3210b58dbc9c802a11c866ae305e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3f348a5005f28fdd1d02be706ca2742d77368288
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88935004"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592377"
 ---
 # <a name="monitor-operations-and-activity-of-azure-cognitive-search"></a>Bewerkingen en activiteiten van Azure Cognitive Search bewaken
 
@@ -59,7 +59,7 @@ U kunt de volgende Api's gebruiken voor het ophalen van dezelfde informatie die 
 
 ### <a name="activity-logs-and-service-health"></a>Activiteiten logboeken en service status
 
-Op de pagina [**activiteiten logboek**](../azure-monitor/platform/activity-log.md#view-the-activity-log) in de portal wordt informatie verzameld van Azure Resource Manager en rapporten over wijzigingen in de status van de service. U kunt het activiteiten logboek controleren op kritieke, fout-en waarschuwings voorwaarden met betrekking tot de service status.
+Op de pagina [**activiteiten logboek**](../azure-monitor/essentials/activity-log.md#view-the-activity-log) in de portal wordt informatie verzameld van Azure Resource Manager en rapporten over wijzigingen in de status van de service. U kunt het activiteiten logboek controleren op kritieke, fout-en waarschuwings voorwaarden met betrekking tot de service status.
 
 Algemene vermeldingen bevatten verwijzingen naar API-sleutels-algemene informatie meldingen, zoals *admin-sleutel ophalen* en *query sleutels ophalen*. Deze activiteiten wijzen op aanvragen die zijn gemaakt met behulp van de beheerder sleutel (objecten maken of verwijderen) of de query sleutel, maar niet de aanvraag zelf weer geven. Voor informatie over deze korrel moet u diagnostische logboek registratie configureren.
 
@@ -90,7 +90,7 @@ Azure Monitor biedt verschillende opslag opties en uw keuze bepaalt hoe u de geg
 * Kies Azure Blob-opslag als u logboek gegevens in een Power BI rapport wilt [visualiseren](search-monitor-logs-powerbi.md) .
 * Kies Log Analytics als u gegevens wilt verkennen via Kusto-query's.
 
-Azure Monitor heeft een eigen facturerings structuur en de diagnostische logboeken waarnaar in deze sectie wordt verwezen, hebben een bijbehorende prijs. Zie [verbruik en geschatte kosten in azure monitor](../azure-monitor/platform/usage-estimated-costs.md)voor meer informatie.
+Azure Monitor heeft een eigen facturerings structuur en de diagnostische logboeken waarnaar in deze sectie wordt verwezen, hebben een bijbehorende prijs. Zie [verbruik en geschatte kosten in azure monitor](../azure-monitor//usage-estimated-costs.md)voor meer informatie.
 
 ## <a name="monitor-user-access"></a>Gebruikers toegang controleren
 
@@ -107,4 +107,4 @@ Het is niet mogelijk om deze informatie afzonderlijk te registreren vanuit de qu
 Fluency met Azure Monitor is essentieel voor het toezicht op elke Azure-service, inclusief resources zoals Azure Cognitive Search. Als u niet bekend bent met Azure Monitor, neemt u de tijd voor het beoordelen van artikelen die betrekking hebben op resources. Naast zelf studies is het volgende artikel een goede plaats om te beginnen.
 
 > [!div class="nextstepaction"]
-> [Azure-resources bewaken met Azure Monitor](../azure-monitor/insights/monitor-azure-resource.md)
+> [Azure-resources bewaken met Azure Monitor](../azure-monitor/essentials/monitor-azure-resource.md)

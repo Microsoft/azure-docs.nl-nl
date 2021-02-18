@@ -10,12 +10,12 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 02/03/2021
 ms.custom: azure-synapse, sqldbrb=1
-ms.openlocfilehash: e96aa32c6b67290fc4b4ee62ae98c4e72399fd4b
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 0e85019c8f02b8a4a97426d50a30d047b95378a1
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509584"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572285"
 ---
 # <a name="auditing-for-azure-sql-database-and-azure-synapse-analytics"></a>Controleren op Azure SQL Database en Azure Synapse Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -139,7 +139,7 @@ Als u het schrijven van audit logboeken naar een Log Analytics-werk ruimte wilt 
 
    ![LogAnalyticsworkspace](./media/auditing-overview/auditing_select_oms.png)
 
-Zie [de implementatie van uw Azure monitor-logboeken ontwerpen](../../azure-monitor/platform/design-logs-deployment.md) voor meer informatie over Azure monitor log Analytics-werk ruimte.
+Zie [de implementatie van uw Azure monitor-logboeken ontwerpen](../../azure-monitor/logs/design-logs-deployment.md) voor meer informatie over Azure monitor log Analytics-werk ruimte.
    
 ### <a name="audit-to-event-hub-destination"></a><a id="audit-event-hub-destination"></a>Controleren op Event hub-doel
 
@@ -170,7 +170,7 @@ Als u ervoor hebt gekozen om audit logboeken naar Azure Monitor-logboeken te sch
     ![Log Analytics Security Insights](media/auditing-overview/auditing-log-analytics-dashboard-data.png)
 
 - U kunt ook toegang krijgen tot de audit logboeken vanuit Log Analytics Blade. Open uw Log Analytics-werk ruimte en klik onder **algemene** sectie op **Logboeken**. U kunt beginnen met een eenvoudige query, bijvoorbeeld: *Zoek naar SQLSecurityAuditEvents* om de audit logboeken weer te geven.
-    Hier kunt u ook [Azure monitor-logboeken](../../azure-monitor/log-query/log-query-overview.md)  gebruiken om geavanceerde zoek opdrachten uit te voeren in uw audit logboek gegevens. Met Azure Monitor-Logboeken kunt u in realtime operationeel inzicht krijgen met behulp van geïntegreerde Zoek-en aangepaste Dash boards waarmee u miljoenen records in al uw workloads en servers eenvoudig kunt analyseren. Zie voor aanvullende nuttige informatie over Azure Monitor Zoek taal en-opdrachten in Logboeken [Azure monitor logboeken zoeken](../../azure-monitor/log-query/log-query-overview.md).
+    Hier kunt u ook [Azure monitor-logboeken](../../azure-monitor/logs/log-query-overview.md)  gebruiken om geavanceerde zoek opdrachten uit te voeren in uw audit logboek gegevens. Met Azure Monitor-Logboeken kunt u in realtime operationeel inzicht krijgen met behulp van geïntegreerde Zoek-en aangepaste Dash boards waarmee u miljoenen records in al uw workloads en servers eenvoudig kunt analyseren. Zie voor aanvullende nuttige informatie over Azure Monitor Zoek taal en-opdrachten in Logboeken [Azure monitor logboeken zoeken](../../azure-monitor/logs/log-query-overview.md).
 
 Als u ervoor hebt gekozen om audit logboeken naar Event hub te schrijven:
 

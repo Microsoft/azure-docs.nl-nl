@@ -10,12 +10,12 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.custom: sqldbrb=1
 ms.date: 06/03/2020
-ms.openlocfilehash: f4da14c1fbdaf71018e62b0f97e288a66edef5c8
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: f5c176db4f679c79bb42c6ceb46b3588e9440874
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92677283"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572215"
 ---
 # <a name="sql-database-audit-log-format"></a>Indeling van SQL Database audit logboek
 
@@ -42,11 +42,11 @@ Controle gebeurtenissen worden geschreven naar de naam ruimte en Event Hub die t
 
 ### <a name="log-analytics"></a>Log Analytics
 
-Controle gebeurtenissen worden geschreven naar Log Analytics werk ruimte die tijdens de controle configuratie is gedefinieerd, naar de `AzureDiagnostics` tabel met de categorie `SQLSecurityAuditEvents` . Zie [log Analytics Search Reference](../../azure-monitor/log-query/log-query-overview.md)(Engelstalig) voor meer nuttige informatie over log Analytics Zoek taal en-opdrachten.
+Controle gebeurtenissen worden geschreven naar Log Analytics werk ruimte die tijdens de controle configuratie is gedefinieerd, naar de `AzureDiagnostics` tabel met de categorie `SQLSecurityAuditEvents` . Zie [log Analytics Search Reference](../../azure-monitor/logs/log-query-overview.md)(Engelstalig) voor meer nuttige informatie over log Analytics Zoek taal en-opdrachten.
 
 ## <a name="audit-log-fields"></a><a id="subheading-1"></a>Controle logboek velden
 
-| Naam (BLOB) | Naam (Event Hubs/Log Analytics) | Beschrijving | Blob-type | Type Event Hubs/Log Analytics |
+| Naam (BLOB) | Naam (Event Hubs/Log Analytics) | Description | Blob-type | Type Event Hubs/Log Analytics |
 |-------------|---------------------------------|-------------|-----------|-------------------------------|
 | action_id | action_id_s | ID van de actie | varchar (4) | tekenreeks |
 | action_name | action_name_s | De naam van de actie | N.v.t. | tekenreeks |

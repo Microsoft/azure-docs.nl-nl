@@ -4,12 +4,12 @@ description: Bewaak Azure Backup werk belastingen en maak aangepaste waarschuwin
 ms.topic: conceptual
 ms.date: 06/04/2019
 ms.assetid: 01169af5-7eb0-4cb0-bbdb-c58ac71bf48b
-ms.openlocfilehash: 3f5f663a2f0ed0f91cc414d352e975a2ff3b9649
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1800771bfff0afbcec8440383536734246ea8f5c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88827151"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580730"
 ---
 # <a name="monitor-at-scale-by-using-azure-monitor"></a>Op schaal controleren met behulp van Azure Monitor
 
@@ -29,7 +29,7 @@ In Azure Monitor kunt u uw eigen waarschuwingen maken in een Log Analytics-werk 
 > [!IMPORTANT]
 > Zie voor meer informatie over de kosten voor het maken van deze query [Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/).
 
-Open de sectie **logs** van de werk ruimte log Analytics en maak een query voor uw eigen Logboeken. Wanneer u **nieuwe waarschuwings regel**selecteert, wordt de pagina Azure monitor waarschuwings-maken geopend, zoals wordt weer gegeven in de volgende afbeelding.
+Open de sectie **logs** van de werk ruimte log Analytics en maak een query voor uw eigen Logboeken. Wanneer u **nieuwe waarschuwings regel** selecteert, wordt de pagina Azure monitor waarschuwings-maken geopend, zoals wordt weer gegeven in de volgende afbeelding.
 
 ![Een waarschuwing maken in een Log Analytics-werk ruimte](media/backup-azure-monitoring-laworkspace/custom-alert.png)
 
@@ -56,7 +56,7 @@ Een actie groep gebruiken om een meldings kanaal op te geven. Voor een overzicht
 
 U kunt aan alle vereisten voor waarschuwingen en bewaking voldoen via alleen Log Analytics, of u kunt Log Analytics gebruiken om ingebouwde meldingen aan te vullen.
 
-Zie [logboek waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../azure-monitor/platform/alerts-log.md) en [actie groepen maken en beheren in de Azure Portal](../azure-monitor/platform/action-groups.md)voor meer informatie.
+Zie [logboek waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../azure-monitor/alerts/alerts-log.md) en [actie groepen maken en beheren in de Azure Portal](../azure-monitor/alerts/action-groups.md)voor meer informatie.
 
 ### <a name="sample-kusto-queries"></a>Voor beeld van Kusto-query's
 
@@ -180,7 +180,7 @@ Het juiste logboek identificeren en een waarschuwing maken:
 
 2. Selecteer de naam van de bewerking om de relevante gegevens weer te geven.
 3. Selecteer **nieuwe waarschuwings regel** om de pagina **regel maken** te openen.
-4. Maak een waarschuwing door de stappen te volgen in [waarschuwingen voor activiteiten logboek maken, weer geven en beheren met behulp van Azure monitor](../azure-monitor/platform/alerts-activity-log.md).
+4. Maak een waarschuwing door de stappen te volgen in [waarschuwingen voor activiteiten logboek maken, weer geven en beheren met behulp van Azure monitor](../azure-monitor/alerts/alerts-activity-log.md).
 
    ![Nieuwe waarschuwingsregel](media/backup-azure-monitoring-laworkspace/new-alert-rule.png)
 
@@ -193,8 +193,8 @@ U kunt alle waarschuwingen weer geven die zijn gemaakt op basis van activiteiten
 Hoewel u meldingen kunt ontvangen via activiteiten logboeken, raden we u ten zeerste aan gebruik te maken van Log Analytics in plaats van activiteiten logboeken voor bewaking op schaal. Waarom?
 
 - **Beperkte scenario's**: meldingen via activiteiten logboeken zijn alleen van toepassing op back-ups van Azure-vm's. De meldingen moeten worden ingesteld voor elke Recovery Services kluis.
-- **Passende definitie**: de geplande back-upactiviteit past niet op de nieuwste definitie van activiteiten Logboeken. In plaats daarvan wordt de [resource-logboeken](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace)uitgelijnd. Deze uitlijning veroorzaakt onverwachte effecten wanneer de gegevens die door het activiteiten logboek kanaal worden gewijzigd.
-- **Problemen met het activiteiten logboek kanaal**: in Recovery Services kluizen worden activiteiten logboeken die zijn gepompt van Azure Backup een nieuw model volgen. Helaas heeft deze wijziging gevolgen voor het genereren van activiteiten Logboeken in Azure Government, Azure Duitsland en Azure China 21Vianet. Als gebruikers van deze Cloud Services waarschuwingen van activiteiten Logboeken in Azure Monitor maken of configureren, worden de waarschuwingen niet geactiveerd. Als een gebruiker in alle open bare Azure-regio's ook [Recovery Services-activiteiten Logboeken in een log Analytics werkruimte verzamelt](../azure-monitor/platform/activity-log.md), worden deze logboeken niet weer gegeven.
+- **Passende definitie**: de geplande back-upactiviteit past niet op de nieuwste definitie van activiteiten Logboeken. In plaats daarvan wordt de [resource-logboeken](../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace)uitgelijnd. Deze uitlijning veroorzaakt onverwachte effecten wanneer de gegevens die door het activiteiten logboek kanaal worden gewijzigd.
+- **Problemen met het activiteiten logboek kanaal**: in Recovery Services kluizen worden activiteiten logboeken die zijn gepompt van Azure Backup een nieuw model volgen. Helaas heeft deze wijziging gevolgen voor het genereren van activiteiten Logboeken in Azure Government, Azure Duitsland en Azure China 21Vianet. Als gebruikers van deze Cloud Services waarschuwingen van activiteiten Logboeken in Azure Monitor maken of configureren, worden de waarschuwingen niet geactiveerd. Als een gebruiker in alle open bare Azure-regio's ook [Recovery Services-activiteiten Logboeken in een log Analytics werkruimte verzamelt](../azure-monitor/essentials/activity-log.md), worden deze logboeken niet weer gegeven.
 
 Gebruik een Log Analytics-werk ruimte voor bewaking en waarschuwingen op schaal voor al uw workloads die worden beveiligd door Azure Backup.
 

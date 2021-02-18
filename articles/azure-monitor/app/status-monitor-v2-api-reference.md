@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: 2f814c54aeca8a337f786beb8da1b98accbeef7e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2278b9d70e888fa546dc64da4743b2bf5b6c45e8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87318994"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587529"
 ---
 # <a name="azure-monitor-application-insights-agent-api-reference"></a>API-naslag informatie over Azure Monitor Application Insights agent
 
@@ -47,7 +47,7 @@ PS C:\> Enable-InstrumentationEngine
 ### <a name="parameters"></a>Parameters
 
 #### <a name="-acceptlicense"></a>-AcceptLicense
-**Beschrijving.** Gebruik deze schakel optie om de licentie en privacyverklaring in headless installaties te accepteren.
+**Optioneel.** Gebruik deze schakel optie om de licentie en privacyverklaring in headless installaties te accepteren.
 
 #### <a name="-verbose"></a>-Verbose
 **Algemene para meter.** Gebruik deze optie om gedetailleerde logboeken uit te voeren.
@@ -83,7 +83,7 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-x
 ```
 
 #### <a name="example-with-an-instrumentation-key-map"></a>Voor beeld met een instrumentatie sleutel toewijzing
-In dit voorbeeld geldt het volgende:
+In dit voorbeeld:
 - `MachineFilter` komt overeen met de huidige computer met behulp van het `'.*'` Joker teken.
 - `AppFilter='WebAppExclude'` biedt een `null` instrumentatie sleutel. De opgegeven app wordt niet geinstrumenteerd.
 - `AppFilter='WebAppOne'` Hiermee wijst u de opgegeven app een unieke instrumentatie sleutel toe.
@@ -127,12 +127,12 @@ U kunt één installatie script maken voor verschillende computers door in te st
 
 
 #### <a name="-enableinstrumentationengine"></a>-EnableInstrumentationEngine
-**Beschrijving.** Gebruik deze schakel optie om de instrumentatie-engine in te scha kelen voor het verzamelen van gebeurtenissen en berichten over wat er gebeurt tijdens de uitvoering van een beheerd proces. Deze gebeurtenissen en berichten bevatten afhankelijkheids resultaat codes, HTTP-woorden en SQL-opdracht tekst.
+**Optioneel.** Gebruik deze schakel optie om de instrumentatie-engine in te scha kelen voor het verzamelen van gebeurtenissen en berichten over wat er gebeurt tijdens de uitvoering van een beheerd proces. Deze gebeurtenissen en berichten bevatten afhankelijkheids resultaat codes, HTTP-woorden en SQL-opdracht tekst.
 
 De instrumentatie-engine voegt overhead toe en is standaard uitgeschakeld.
 
 #### <a name="-acceptlicense"></a>-AcceptLicense
-**Beschrijving.** Gebruik deze schakel optie om de licentie en privacyverklaring in headless installaties te accepteren.
+**Optioneel.** Gebruik deze schakel optie om de licentie en privacyverklaring in headless installaties te accepteren.
 
 #### <a name="-ignoresharedconfig"></a>-IgnoreSharedConfig
 Wanneer u een cluster van webservers hebt, kunt u gebruikmaken van een [gedeelde configuratie](/iis/web-hosting/configuring-servers-in-the-windows-web-platform/shared-configuration_211).
@@ -392,7 +392,7 @@ C:\Program Files\WindowsPowerShell\Modules\Az.ApplicationMonitor\content\Runtime
 
 U kunt het proces op de geinstrumenteerde computer controleren om te controleren of alle Dll's zijn geladen. Als de bewaking werkt, moeten ten minste 12 Dll's worden geladen.
 
-Voer de volgende opdracht uit `Get-ApplicationInsightsMonitoringStatus -InspectProcess` :
+Voer de opdracht `Get-ApplicationInsightsMonitoringStatus -InspectProcess` uit:
 
 
 ```
@@ -475,7 +475,7 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-x
 ```
 
 #### <a name="example-with-an-instrumentation-key-map"></a>Voor beeld met een instrumentatie sleutel toewijzing
-In dit voorbeeld geldt het volgende:
+In dit voorbeeld:
 - `MachineFilter` komt overeen met de huidige computer met behulp van het `'.*'` Joker teken.
 - `AppFilter='WebAppExclude'` biedt een `null` instrumentatie sleutel. De opgegeven app wordt niet geinstrumenteerd.
 - `AppFilter='WebAppOne'` Hiermee wijst u de opgegeven app een unieke instrumentatie sleutel toe.
@@ -585,17 +585,17 @@ Er zijn drie opties voor het verzamelen van gebeurtenissen:
 ### <a name="parameters"></a>Parameters
 
 #### <a name="-maxdurationinminutes"></a>-MaxDurationInMinutes
-**Beschrijving.** Gebruik deze para meter om in te stellen hoe lang dit script gebeurtenissen moet verzamelen. Standaard is dit 5 minuten.
+**Optioneel.** Gebruik deze para meter om in te stellen hoe lang dit script gebeurtenissen moet verzamelen. Standaard is dit 5 minuten.
 
 #### <a name="-logdirectory"></a>-LogDirectory
-**Beschrijving.** Gebruik deze schakel optie om de map uitvoermap van het ETL-bestand in te stellen. Dit bestand wordt standaard gemaakt in de map Power shell-modules. Het volledige pad wordt weer gegeven tijdens het uitvoeren van het script.
+**Optioneel.** Gebruik deze schakel optie om de map uitvoermap van het ETL-bestand in te stellen. Dit bestand wordt standaard gemaakt in de map Power shell-modules. Het volledige pad wordt weer gegeven tijdens het uitvoeren van het script.
 
 
 #### <a name="-collectsdkevents"></a>-CollectSdkEvents
-**Beschrijving.** Gebruik deze schakel optie om Application Insights SDK-gebeurtenissen te verzamelen.
+**Optioneel.** Gebruik deze schakel optie om Application Insights SDK-gebeurtenissen te verzamelen.
 
 #### <a name="-collectredfieldevents"></a>-CollectRedfieldEvents
-**Beschrijving.** Gebruik deze schakel optie om gebeurtenissen van Status Monitor en de Redfield-runtime te verzamelen.
+**Optioneel.** Gebruik deze schakel optie om gebeurtenissen van Status Monitor en de Redfield-runtime te verzamelen.
 
 #### <a name="-verbose"></a>-Verbose
 **Algemene para meter.** Gebruik deze optie om gedetailleerde logboeken uit te voeren.
@@ -637,9 +637,9 @@ Timeout Reached. Stopping...
 ## <a name="next-steps"></a>Volgende stappen
 
   Uw telemetrie weergeven:
- - [Bekijk metrische gegevens](../platform/metrics-charts.md) om de prestaties en het gebruik te bewaken.
+ - [Bekijk metrische gegevens](../essentials/metrics-charts.md) om de prestaties en het gebruik te bewaken.
 - [Zoek gebeurtenissen en logboeken](./diagnostic-search.md) om problemen op te sporen.
-- Gebruik [analyses](../log-query/log-query-overview.md) voor meer geavanceerde query's.
+- Gebruik [analyses](../logs/log-query-overview.md) voor meer geavanceerde query's.
 - [Dash boards maken](./overview-dashboard.md).
  
  Meer telemetrie toevoegen:

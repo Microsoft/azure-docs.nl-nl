@@ -8,12 +8,12 @@ ms.author: tagore
 author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
-ms.openlocfilehash: 8dcc6dd355e0c89aa4120a6cc7f331159d56c1bc
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 0b6096f980234c09bf1c2da2b4621b8ed66b495d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98742179"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578169"
 ---
 # <a name="enable-diagnostics-in-azure-cloud-services-classic-using-powershell"></a>Diagnostische gegevens inschakelen in azure Cloud Services (klassiek) met behulp van Power shell
 
@@ -134,5 +134,5 @@ Remove-AzureServiceDiagnosticsExtension -ServiceName "MyService" -Role "WebRole"
 
 ## <a name="next-steps"></a>Volgende stappen
 * Zie voor meer informatie over het gebruik van Azure Diagnostics en andere technieken voor het oplossen van problemen, [Diagnostische gegevens inschakelen in Azure Cloud Services en virtual machines](cloud-services-dotnet-diagnostics.md).
-* Het [Configuratie schema voor diagnostische gegevens](../azure-monitor/platform/diagnostics-extension-schema-windows.md) bevat uitleg over de verschillende XML-configuratie opties voor de uitbrei ding van diagnostische gegevens.
+* Het [Configuratie schema voor diagnostische gegevens](../azure-monitor/agents/diagnostics-extension-schema-windows.md) bevat uitleg over de verschillende XML-configuratie opties voor de uitbrei ding van diagnostische gegevens.
 * Zie [een virtuele Windows-machine met behulp van Azure Resource Manager sjabloon maken](../virtual-machines/extensions/diagnostics-template.md) voor informatie over het inschakelen van de uitbrei ding voor diagnostische gegevens voor virtual machines.

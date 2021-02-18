@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/19/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 850171a4f1f303ef344fa5007325093c6363615b
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: ac2982b021172893e4aabe0f21c7077115684eff
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98789074"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592627"
 ---
 # <a name="azure-security-baseline-for-azure-hpc-cache"></a>Azure-beveiligings basislijn voor Azure HPC-cache
 
@@ -613,9 +613,9 @@ Implementeer een oplossing van derden van Azure Marketplace voor de DNS-registra
 
 U kunt ook Azure Security Center en Azure Policy gebruiken om Azure-resource Logboeken in te scha kelen voor HPC-cache en om gegevens te verzamelen en te registreren. Deze logboeken kunnen essentieel zijn voor het later onderzoeken van beveiligings incidenten en het uitvoeren van forensische-oefeningen.
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/platform/platform-logs-overview.md) 
+- [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/essentials/platform-logs-overview.md) 
 
 - [Meer informatie over het verzamelen van Azure Security Center gegevens](../security-center/security-center-enable-data-collection.md)
 
@@ -633,7 +633,7 @@ Daarnaast kunt u gegevens inschakelen en vrijgeven aan Azure Sentinel of een SIE
 
 Veel organisaties kiezen voor het gebruik van Azure Sentinel voor ' hot ' gegevens die regel matig worden gebruikt en die worden Azure Storage voor ' koude ' gegevens die minder vaak worden gebruikt.
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 

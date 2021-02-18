@@ -3,12 +3,12 @@ title: Exporteren naar SQL vanuit Azure-toepassing Insights | Microsoft Docs
 description: Application Insights gegevens doorlopend naar SQL exporteren met behulp van Stream Analytics.
 ms.topic: conceptual
 ms.date: 09/11/2017
-ms.openlocfilehash: 5fb7093dd9945893b17f1b8f5e596cfe5181c3b6
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 25d28bb0fc35ef76231c085dc1d9d8a1234a264c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98942424"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587756"
 ---
 # <a name="walkthrough-export-to-sql-from-application-insights-using-stream-analytics"></a>Walkthrough: exporteren naar SQL vanuit Application Insights met behulp van Stream Analytics
 In dit artikel wordt beschreven hoe u uw telemetriegegevens van [Azure-toepassing inzichten][start] kunt verplaatsen naar Azure SQL database met behulp van [continue export][export] en [Azure stream Analytics](https://azure.microsoft.com/services/stream-analytics/). 
@@ -61,7 +61,7 @@ Doorlopend exporteren voert altijd gegevens uit naar een Azure Storage-account, 
     ![Gebeurtenis typen kiezen](./media/code-sample-export-sql-stream-analytics/085-types.png)
 
 
-1. Laat sommige gegevens samen voegen. U kunt de toepassing een tijdje gebruiken. Telemetrie is beschikbaar in en u ziet statistische grafieken in [metrische Explorer](../platform/metrics-charts.md) en afzonderlijke gebeurtenissen in [Diagnostische Zoek opdrachten](./diagnostic-search.md). 
+1. Laat sommige gegevens samen voegen. U kunt de toepassing een tijdje gebruiken. Telemetrie is beschikbaar in en u ziet statistische grafieken in [metrische Explorer](../essentials/metrics-charts.md) en afzonderlijke gebeurtenissen in [Diagnostische Zoek opdrachten](./diagnostic-search.md). 
    
     Daarnaast worden de gegevens naar uw opslag geëxporteerd. 
 2. Inspecteer de geëxporteerde gegevens in de portal: Kies **Bladeren**, selecteer uw opslag account en vervolgens **containers** of in Visual Studio. In Visual Studio kiest u **weer gave/Cloud Verkenner** en opent u Azure/Storage. (Als u deze menu optie niet hebt, moet u de Azure SDK installeren: Open het dialoog venster New project en open Visual C#/Cloud/Get Microsoft Azure SDK voor .NET.)
@@ -252,7 +252,7 @@ FROM [dbo].[PageViewsTable]
 
 [diagnostic]: ./diagnostic-search.md
 [export]: ./export-telemetry.md
-[metrics]: ../platform/metrics-charts.md
+[metrics]: ../essentials/metrics-charts.md
 [portal]: https://portal.azure.com/
 [start]: ./app-insights-overview.md
 

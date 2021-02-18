@@ -15,12 +15,12 @@ ms.date: 02/12/2021
 ms.author: sethm
 ms.reviewer: thsomasu
 ms.lastreviewed: 11/13/2019
-ms.openlocfilehash: e34fbdca51e7680a80c768e49bae891cb56dfa9d
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 0f79402956148c566bc34faa88e10895657883c2
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100546445"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591742"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Push meldingen met Azure Notification Hubs: veelgestelde vragen
 
@@ -196,7 +196,7 @@ U kunt ook programmatisch toegang krijgen tot metrische gegevens. Raadpleeg voor
 
 - [Azure monitor metrische gegevens ophalen met .net](https://azure.microsoft.com/resources/samples/monitor-dotnet-metrics-api/). In dit voor beeld worden de gebruikers naam en het wacht woord gebruikt. Als u een certificaat wilt gebruiken, overbelast u de FromServicePrincipal-methode om een certificaat op te geven, zoals wordt weer gegeven in [dit voor beeld](https://github.com/Azure/azure-libraries-for-net/blob/master/src/ResourceManagement/ResourceManager/Authentication/AzureCredentialsFactory.cs). 
 - [Metrische gegevens en activiteiten logboeken voor een resource ophalen](https://azure.microsoft.com/resources/samples/monitor-dotnet-query-metrics-activitylogs/)
-- [Azure Monitoring REST API-overzicht](../azure-monitor/platform/rest-api-walkthrough.md)
+- [Azure Monitoring REST API-overzicht](../azure-monitor/essentials/rest-api-walkthrough.md)
 
 > [!NOTE]
 > Geslaagde meldingen betekenen gewoon dat push meldingen zijn bezorgd bij de externe PNS (bijvoorbeeld APNs voor iOS en macOS of FCM voor Android-apparaten). Het is de verantwoordelijkheid van de PNS om de meldingen te leveren aan doel apparaten. Normaal gesp roken worden door de PNS geen metrische gegevens over levering aan derden blootgesteld.  
@@ -211,7 +211,7 @@ U kunt ook programmatisch toegang krijgen tot metrische gegevens. Raadpleeg voor
 [Notification Hubs beveiligings model]: /previous-versions/azure/azure-services/dn495373(v=azure.100)
 [Notification Hubs Secure push-zelf studie]: ./notification-hubs-aspnet-backend-ios-push-apple-apns-secure-notification.md
 [Notification Hubs probleem oplossing]: ./notification-hubs-push-notification-fixer.md
-[Notification Hubs metrische gegevens]: ../azure-monitor/platform/metrics-supported.md#microsoftnotificationhubsnamespacesnotificationhubs
+[Notification Hubs metrische gegevens]: ../azure-monitor/essentials/metrics-supported.md#microsoftnotificationhubsnamespacesnotificationhubs
 [Registraties exporteren/importeren]: ./export-modify-registrations-bulk.md
 [Azure-portal]: https://portal.azure.com
 [complete samples]: https://github.com/Azure/azure-notificationhubs-samples

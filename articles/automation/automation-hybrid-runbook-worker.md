@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 01/22/2021
 ms.topic: conceptual
-ms.openlocfilehash: 7cf18b6b677daaf97d425c86a0cad91b3abcb225
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: c95ccb5ea1a23e8173d58bd3a18490e9b8e630e4
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896949"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581260"
 ---
 # <a name="hybrid-runbook-worker-overview"></a>Overzicht van Hybrid Runbook Worker
 
@@ -20,12 +20,12 @@ Runbooks in Azure Automation hebben mogelijk geen toegang tot resources in ander
 
 Er zijn twee soorten Runbook-werk nemers: systeem en gebruiker. In de volgende tabel wordt het verschil tussen de tabellen beschreven.
 
-|Type | Beschrijving |
+|Type | Description |
 |-----|-------------|
 |**Systeem** |Ondersteunt een set verborgen runbooks die worden gebruikt door de Updatebeheer-functie die is ontworpen om door de gebruiker opgegeven updates te installeren op Windows-en Linux-computers.<br> Dit type Hybrid Runbook Worker is geen lid van een Hybrid Runbook Worker groep en voert daarom geen runbooks uit die zijn gericht op een Runbook worker-groep. |
 |**Gebruiker** |Ondersteunt door de gebruiker gedefinieerde runbooks die rechtstreeks worden uitgevoerd op de Windows-en Linux-computer die lid zijn van een of meer Runbook worker-groepen. |
 
-Een Hybrid Runbook Worker kan worden uitgevoerd op het Windows-of Linux-besturings systeem en deze rol is afhankelijk van de [log Analytics agent](../azure-monitor/platform/log-analytics-agent.md) rapportage aan een Azure monitor [log Analytics-werk ruimte](../azure-monitor/platform/design-logs-deployment.md). De werk ruimte is niet alleen om de computer te bewaken voor het ondersteunde besturings systeem, maar ook om de onderdelen te downloaden die nodig zijn om de Hybrid Runbook Worker te installeren.
+Een Hybrid Runbook Worker kan worden uitgevoerd op het Windows-of Linux-besturings systeem en deze rol is afhankelijk van de [log Analytics agent](../azure-monitor/agents/log-analytics-agent.md) rapportage aan een Azure monitor [log Analytics-werk ruimte](../azure-monitor/logs/design-logs-deployment.md). De werk ruimte is niet alleen om de computer te bewaken voor het ondersteunde besturings systeem, maar ook om de onderdelen te downloaden die nodig zijn om de Hybrid Runbook Worker te installeren.
 
 Als Azure Automation [updatebeheer](./update-management/overview.md) is ingeschakeld, wordt een computer die is verbonden met uw log Analytics-werk ruimte automatisch geconfigureerd als een systeem Hybrid Runbook Worker. [Hybrid Runbook worker](automation-windows-hrw-install.md) Zie een [Linux-Hybrid Runbook worker implementeren](automation-linux-hrw-install.md)voor meer informatie over het configureren van een Windows-Hybrid Runbook worker als gebruiker.
 
@@ -62,7 +62,7 @@ Als u een proxy server gebruikt voor communicatie tussen Azure Automation en com
 
 ### <a name="firewall-use"></a>Gebruik van Firewall
 
-Als u een firewall gebruikt om de toegang tot internet te beperken, moet u de firewall configureren om toegang toe te staan. Als u de Log Analytics-gateway als een proxy gebruikt, moet u ervoor zorgen dat deze is geconfigureerd voor Hybrid Runbook Workers. Zie [Configure the log Analytics Gateway for Automation Hybrid Runbook Workers](../azure-monitor/platform/gateway.md)(Engelstalig).
+Als u een firewall gebruikt om de toegang tot internet te beperken, moet u de firewall configureren om toegang toe te staan. Als u de Log Analytics-gateway als een proxy gebruikt, moet u ervoor zorgen dat deze is geconfigureerd voor Hybrid Runbook Workers. Zie [Configure the log Analytics Gateway for Automation Hybrid Runbook Workers](../azure-monitor/agents/gateway.md)(Engelstalig).
 
 ### <a name="service-tags"></a>Servicetags
 

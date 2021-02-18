@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 3b6cb195f44bf6c868402481480d9b10802c4d59
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 8e2af73be0fc887b132f523133159472ce1d1f98
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965665"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570975"
 ---
 # <a name="use-packet-capture-for-proactive-network-monitoring-with-alerts-and-azure-functions"></a>Pakket opname gebruiken voor proactieve netwerk bewaking met waarschuwingen en Azure Functions
 
@@ -80,7 +80,7 @@ De eerste stap is het maken van een Azure-functie voor het verwerken van de waar
     |**Abonnement**|[Uw abonnement] Het abonnement waarvoor u de functie-app wilt maken.||
     |**Resourcegroep**|PacketCaptureRG|De resource groep die de functie-app bevat.|
     |**Hostingabonnement**|Verbruiksabonnement| Het type van het plan dat door uw functie-app wordt gebruikt. Opties zijn verbruik of Azure App Service plan. |
-    |**Locatie**|Central US| De regio waarin de functie-app moet worden gemaakt.|
+    |**Locatie**|VS - centraal| De regio waarin de functie-app moet worden gemaakt.|
     |**Opslagaccount**|automatisch gegenereerde| Het opslag account dat Azure Functions vereist voor opslag voor algemeen gebruik.|
 
 3. Selecteer op de Blade **PacketCaptureExample functie-apps** de optie **functies**  >  **aangepaste functie**  > **+** .
@@ -332,7 +332,7 @@ Het volgende voor beeld is Power shell-code die in de functie kan worden gebruik
 
     ![De functie-URL kopiëren][2]
 
-Als u aangepaste eigenschappen nodig hebt in de payload van de POST-aanvraag van de webhook, raadpleegt u [een webhook configureren voor een Azure metric-waarschuwing](../azure-monitor/platform/alerts-webhooks.md).
+Als u aangepaste eigenschappen nodig hebt in de payload van de POST-aanvraag van de webhook, raadpleegt u [een webhook configureren voor een Azure metric-waarschuwing](../azure-monitor/alerts/alerts-webhooks.md).
 
 ## <a name="configure-an-alert-on-a-vm"></a>Een waarschuwing configureren voor een virtuele machine
 
@@ -340,13 +340,13 @@ Waarschuwingen kunnen worden geconfigureerd om personen te waarschuwen wanneer e
 
 ### <a name="create-the-alert-rule"></a>De waarschuwings regel maken
 
-Ga naar een bestaande virtuele machine en voeg vervolgens een waarschuwings regel toe. Meer gedetailleerde documentatie over het configureren van waarschuwingen vindt u [in azure monitor voor Azure-Services-Azure Portal](../azure-monitor/platform/alerts-classic-portal.md). Voer de volgende waarden in op de Blade **waarschuwings regel** en selecteer **OK**.
+Ga naar een bestaande virtuele machine en voeg vervolgens een waarschuwings regel toe. Meer gedetailleerde documentatie over het configureren van waarschuwingen vindt u [in azure monitor voor Azure-Services-Azure Portal](../azure-monitor/alerts/alerts-classic-portal.md). Voer de volgende waarden in op de Blade **waarschuwings regel** en selecteer **OK**.
 
   |**Instelling** | **Waarde** | **Details** |
   |---|---|---|
   |**Naam**|TCP_Segments_Sent_Exceeded|De naam van de waarschuwings regel.|
   |**Beschrijving**|Drempel waarde verzonden TCP-segmenten overschreden|De beschrijving voor de waarschuwings regel.|
-  |**Metrisch gegeven**|Verzonden TCP-segmenten| De metriek die moet worden gebruikt om de waarschuwing te activeren. |
+  |**Meting**|Verzonden TCP-segmenten| De metriek die moet worden gebruikt om de waarschuwing te activeren. |
   |**Condition**|Groter dan| De voor waarde die moet worden gebruikt bij het evalueren van de metriek.|
   |**Spreek**|100| De waarde van de metriek waarmee de waarschuwing wordt geactiveerd. Deze waarde moet worden ingesteld op een geldige waarde voor uw omgeving.|
   |**Periode**|In de afgelopen vijf minuten| Bepaalt de periode waarin de drempel waarde voor de metriek moet worden gezocht.|

@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 9/21/2020
-ms.openlocfilehash: 5aab78ad99b80ff1d7be92bd36847b01dbc0e33b
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: d38a0ea7307584c25ddec9389feaef7518bcf925
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542215"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591755"
 ---
 # <a name="track-database-activity-with-audit-logs-in-azure-database-for-mysql-flexible-server"></a>Database activiteiten bijhouden met audit Logboeken in Azure Database for MySQL flexibele server
 
@@ -50,7 +50,7 @@ Andere para meters die u kunt aanpassen om het gedrag van de controle logboek re
 
 ## <a name="access-audit-logs"></a>Auditlogboeken inzien
 
-Audit logboeken zijn geïntegreerd met Azure Monitor Diagnostische instellingen. Zodra u audit logboeken op uw MySQL-flexibele server hebt ingeschakeld, kunt u deze naar Azure Monitor-logboeken, Event Hubs of Azure Storage verzenden. Raadpleeg de documentatie van de [Diagnostische logboeken](../../azure-monitor/platform/platform-logs-overview.md)voor meer informatie over diagnostische instellingen. Zie het artikel over het [controle logboek](how-to-configure-audit-logs-portal.md#set-up-diagnostics)van de portal voor meer informatie over het inschakelen van diagnostische instellingen in de Azure Portal.
+Audit logboeken zijn geïntegreerd met Azure Monitor Diagnostische instellingen. Zodra u audit logboeken op uw MySQL-flexibele server hebt ingeschakeld, kunt u deze naar Azure Monitor-logboeken, Event Hubs of Azure Storage verzenden. Raadpleeg de documentatie van de [Diagnostische logboeken](../../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie over diagnostische instellingen. Zie het artikel over het [controle logboek](how-to-configure-audit-logs-portal.md#set-up-diagnostics)van de portal voor meer informatie over het inschakelen van diagnostische instellingen in de Azure Portal.
 
 In de volgende secties wordt de uitvoer van MySQL-audit Logboeken beschreven op basis van het gebeurtenis type. Afhankelijk van de uitvoer methode worden de opgenomen velden en de volg orde waarin ze worden weer gegeven, mogelijk verschillend.
 

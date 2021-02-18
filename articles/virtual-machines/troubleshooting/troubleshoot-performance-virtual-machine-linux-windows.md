@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 09/18/2019
 ms.author: v-miegge
-ms.openlocfilehash: ec605fd30252b9a0cfb80d0bc3ff145ed3b5a1d4
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: cde84a018d307bada6a6b6f3b5467b8addd007b1
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573306"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571435"
 ---
 # <a name="troubleshoot-azure-virtual-machine-performance-on-linux-or-windows"></a>Problemen met prestaties van virtuele Azure-machines in Linux of Windows oplossen
 
@@ -30,7 +30,7 @@ In dit artikel wordt beschreven hoe u bewaking gebruikt om prestatie knelpunten 
 
 ### <a name="azure-iaas-virtual-machine-monitoring"></a>Azure IAAS-bewaking van virtuele machines
 
-Als u de gast-VM wilt controleren, gebruikt u de Azure VM-bewaking. Hiermee wordt u gewaarschuwd voor bepaalde resource voorwaarden op hoog niveau. Zie [overzicht van Azure-resource logboeken](../../azure-monitor/learn/tutorial-resource-logs.md)om te controleren of u de diagnostische gegevens van de virtuele machine hebt ingeschakeld. Als u het volgende ziet, hebt u waarschijnlijk niet de diagnostische gegevens ingeschakeld:
+Als u de gast-VM wilt controleren, gebruikt u de Azure VM-bewaking. Hiermee wordt u gewaarschuwd voor bepaalde resource voorwaarden op hoog niveau. Zie [overzicht van Azure-resource logboeken](../../azure-monitor/essentials/tutorial-resource-logs.md)om te controleren of u de diagnostische gegevens van de virtuele machine hebt ingeschakeld. Als u het volgende ziet, hebt u waarschijnlijk niet de diagnostische gegevens ingeschakeld:
 
 ![Bewaking is niet ingeschakeld](media/troubleshoot-performance-virtual-machine-linux-windows/1-virtual-machines-monitoring-not-enabled.png)
  
@@ -101,7 +101,7 @@ Controleer uw gegevens om te bepalen of u knel punten in de resource hebt. Als u
 
 ### <a name="cpu-observe-trends"></a>Trends in de CPU
 
-Houd bij het bekijken van prestatie problemen rekening met de trends en begrijp of ze van invloed zijn op u. In de volgende secties gebruiken we de bewakings grafieken van de portal om trends weer te geven. Ze kunnen ook handig zijn voor het cross-refereren van het bron gedrag van verschillen in dezelfde periode. Als u de grafieken wilt aanpassen, klikt u op [Azure monitor gegevens platform](../../azure-monitor/platform/data-platform.md).
+Houd bij het bekijken van prestatie problemen rekening met de trends en begrijp of ze van invloed zijn op u. In de volgende secties gebruiken we de bewakings grafieken van de portal om trends weer te geven. Ze kunnen ook handig zijn voor het cross-refereren van het bron gedrag van verschillen in dezelfde periode. Als u de grafieken wilt aanpassen, klikt u op [Azure monitor gegevens platform](../../azure-monitor/data-platform.md).
 
 Spiking – spiking kan zijn gerelateerd aan een geplande taak/bekende gebeurtenis. Als u de taak kunt identificeren, bepaalt u of de taak wordt uitgevoerd op het vereiste prestatie niveau. Als de prestaties acceptabel zijn, is het wellicht niet nodig om resources te verg Roten.
 
@@ -210,7 +210,7 @@ Met nieuwe schijf aanbiedingen onder standaard opslag kunnen de limieten voor IO
 
 * [Schaalbaarheids-en prestatie doelen voor VM-schijven in Windows](../disks-scalability-targets.md).
 
-#### <a name="references"></a>Verwijzingen
+#### <a name="references"></a>Referenties
 
 * [Schaalbaarheids-en prestatie doelen voor Premium-pagina-Blob Storage-accounts](../../storage/blobs/scalability-targets-premium-page-blobs.md)
 

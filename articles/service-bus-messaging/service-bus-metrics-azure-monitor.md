@@ -3,12 +3,12 @@ title: Azure Service Bus metrische gegevens in Azure Monitor | Microsoft Docs
 description: In dit artikel wordt uitgelegd hoe u Azure Monitor kunt gebruiken om Service Bus entiteiten (wacht rijen, onderwerpen en abonnementen) te bewaken.
 ms.topic: article
 ms.date: 02/12/2021
-ms.openlocfilehash: fa242b4d8c8a6ce83801667e686864f858f8a000
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 1e57def2ee7409ae62cdbe065c36e8a53a140e18
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100519096"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570574"
 ---
 # <a name="azure-service-bus-metrics-in-azure-monitor"></a>Azure Service Bus metrische gegevens in Azure Monitor
 
@@ -21,9 +21,9 @@ Azure Monitor biedt uniforme gebruikers interfaces voor bewaking in verschillend
 
 ## <a name="access-metrics"></a>Toegangs gegevens
 
-Azure Monitor biedt meerdere manieren om toegang te krijgen tot metrische gegevens. U hebt toegang tot metrische gegevens via de [Azure Portal](https://portal.azure.com), of u kunt gebruikmaken van de Azure monitor API'S (rest en .net) en analyse oplossingen, zoals Azure monitor logboeken en Event hubs. Zie [metrische gegevens in azure monitor](../azure-monitor/platform/data-platform-metrics.md)voor meer informatie.
+Azure Monitor biedt meerdere manieren om toegang te krijgen tot metrische gegevens. U hebt toegang tot metrische gegevens via de [Azure Portal](https://portal.azure.com), of u kunt gebruikmaken van de Azure monitor API'S (rest en .net) en analyse oplossingen, zoals Azure monitor logboeken en Event hubs. Zie [metrische gegevens in azure monitor](../azure-monitor/essentials/data-platform-metrics.md)voor meer informatie.
 
-Metrische gegevens zijn standaard ingeschakeld, en u kunt toegang krijgen tot de meest recente 30 dagen. Als u gegevens gedurende een langere periode wilt bewaren, kunt u metrische gegevens archiveren naar een Azure Storage-account. Deze waarde wordt geconfigureerd in [Diagnostische instellingen](../azure-monitor/platform/diagnostic-settings.md) in azure monitor.
+Metrische gegevens zijn standaard ingeschakeld, en u kunt toegang krijgen tot de meest recente 30 dagen. Als u gegevens gedurende een langere periode wilt bewaren, kunt u metrische gegevens archiveren naar een Azure Storage-account. Deze waarde wordt geconfigureerd in [Diagnostische instellingen](../azure-monitor/essentials/diagnostic-settings.md) in azure monitor.
 
 ## <a name="access-metrics-in-the-portal"></a>Toegang tot metrische gegevens in de portal
 
@@ -100,7 +100,7 @@ De volgende twee typen fouten worden geclassificeerd als gebruikers fouten:
 > [!NOTE] 
 > De volgende metrische gegevens zijn alleen beschikbaar voor de **Premium** -laag. 
 > 
-> De belangrijkste metrische gegevens die moeten worden bewaakt voor de uitval van een naam ruimte met een Premium-laag zijn: **CPU-gebruik per naam ruimte** en **geheugen grootte per naam ruimte**. [Stel waarschuwingen](../azure-monitor/platform/alerts-metric.md) in voor deze metrische gegevens met behulp van Azure monitor.
+> De belangrijkste metrische gegevens die moeten worden bewaakt voor de uitval van een naam ruimte met een Premium-laag zijn: **CPU-gebruik per naam ruimte** en **geheugen grootte per naam ruimte**. [Stel waarschuwingen](../azure-monitor/alerts/alerts-metric.md) in voor deze metrische gegevens met behulp van Azure monitor.
 > 
 > De andere metriek die u kunt bewaken is: **vertraagde aanvragen**. Het is niet mogelijk om een probleem op te lossen, omdat de naam ruimte binnen het geheugen, de CPU en de brokered Connections limieten blijft. Zie [beperking in azure service bus Premium-laag](service-bus-throttling.md#throttling-in-azure-service-bus-premium-tier) voor meer informatie.
 

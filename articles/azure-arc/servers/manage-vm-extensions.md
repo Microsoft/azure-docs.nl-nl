@@ -3,12 +3,12 @@ title: VM-extensie beheer met servers die geschikt zijn voor Azure-Arc
 description: Servers met Azure-Arc kunnen de implementatie van virtuele-machine uitbreidingen beheren die configuratie van de na de implementatie en Automation-taken bieden met niet-Azure Vm's.
 ms.date: 01/07/2021
 ms.topic: conceptual
-ms.openlocfilehash: 5430b1c1318747cccfb95f031700fddaad716284
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: b39149eb7ac572ac3bd50bb6303f28d2340f387d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98020618"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580849"
 ---
 # <a name="virtual-machine-extension-management-with-azure-arc-enabled-servers"></a>Extensiebeheer voor virtuele machines met servers met Azure Arc
 
@@ -27,9 +27,9 @@ Ondersteuning voor VM-extensies voor Azure Arc ingeschakelde servers biedt de vo
 
 - Gebruik [Azure Automation status configuratie](../../automation/automation-dsc-overview.md) om configuraties centraal op te slaan en de gewenste status van hybride verbonden computers te onderhouden die zijn ingeschakeld via de DSC-extensie voor vm's.
 
-- Verzamel logboek gegevens voor analyse met [Logboeken in azure monitor](../../azure-monitor/platform/data-platform-logs.md) ingeschakeld via de VM-extensie van de log Analytics agent. Dit is handig voor het uitvoeren van complexe analyses op gegevens uit verschillende soorten bronnen.
+- Verzamel logboek gegevens voor analyse met [Logboeken in azure monitor](../../azure-monitor/logs/data-platform-logs.md) ingeschakeld via de VM-extensie van de log Analytics agent. Dit is handig voor het uitvoeren van complexe analyses op gegevens uit verschillende soorten bronnen.
 
-- Met [Azure monitor voor VM's](../../azure-monitor/insights/vminsights-overview.md)kunt u de prestaties van uw Windows-en Linux-vm's analyseren en de processen en afhankelijkheden van andere bronnen en externe processen controleren. Dit wordt bereikt door zowel de Log Analytics agent als de VM-extensies voor de afhankelijkheids agent in te scha kelen.
+- Met [Azure monitor voor VM's](../../azure-monitor/vm/vminsights-overview.md)kunt u de prestaties van uw Windows-en Linux-vm's analyseren en de processen en afhankelijkheden van andere bronnen en externe processen controleren. Dit wordt bereikt door zowel de Log Analytics agent als de VM-extensies voor de afhankelijkheids agent in te scha kelen.
 
 - Down load en voer scripts uit op hybride verbonden computers met de extensie voor aangepaste scripts. Deze uitbrei ding is handig voor configuratie na de implementatie, software-installatie of andere configuratie-of beheer taken.
 
@@ -39,7 +39,7 @@ Ondersteuning voor VM-extensies voor Azure Arc ingeschakelde servers biedt de vo
 
 De functionaliteit van de VM-extensie is alleen beschikbaar in de lijst met [ondersteunde regio's](overview.md#supported-regions). Zorg ervoor dat u uw computer in een van deze regio's onboardt.
 
-## <a name="extensions"></a>Extensies
+## <a name="extensions"></a>Uitbreidingen
 
 In deze release ondersteunen we de volgende VM-extensies op Windows-en Linux-computers.
 
@@ -55,7 +55,7 @@ Zie [overzicht van agents](agent-overview.md#agent-component-details)voor meer i
 |Log Analytics-agent |Micro soft. EnterpriseCloud. monitoring |MicrosoftMonitoringAgent |[VM-extensie Log Analytics voor Windows](../../virtual-machines/extensions/oms-windows.md)|
 |Azure Monitor voor VM's (inzichten) |Micro soft. Azure. monitoring. DependencyAgent |DependencyAgentWindows | [Extensie van de virtuele machine van de afhankelijkheids agent voor Windows](../../virtual-machines/extensions/agent-dependency-windows.md)|
 |Synchronisatie van certificaat Azure Key Vault | Micro soft. Azure. key. kluis |KeyVaultForWindows | [Extensie van de virtuele machine Key Vault voor Windows](../../virtual-machines/extensions/key-vault-windows.md) |
-|Azure Monitor-agent |Micro soft. Azure. monitor |AzureMonitorWindowsAgent |[De Azure Monitor-agent installeren (preview-versie)](../../azure-monitor/platform/azure-monitor-agent-install.md) |
+|Azure Monitor-agent |Micro soft. Azure. monitor |AzureMonitorWindowsAgent |[De Azure Monitor-agent installeren (preview-versie)](../../azure-monitor/agents/azure-monitor-agent-install.md) |
 
 ### <a name="linux-extensions"></a>Linux-extensies
 
@@ -67,7 +67,7 @@ Zie [overzicht van agents](agent-overview.md#agent-component-details)voor meer i
 |Log Analytics-agent |Micro soft. EnterpriseCloud. monitoring |OmsAgentForLinux |[VM-extensie Log Analytics voor Linux](../../virtual-machines/extensions/oms-linux.md) |
 |Azure Monitor voor VM's (inzichten) |Micro soft. Azure. monitoring. DependencyAgent |DependencyAgentLinux |[Extensie van de virtuele machine van de afhankelijkheids agent voor Linux](../../virtual-machines/extensions/agent-dependency-linux.md) |
 |Synchronisatie van certificaat Azure Key Vault | Micro soft. Azure. key. kluis |KeyVaultForLinux | [Extensie van de virtuele machine Key Vault voor Linux](../../virtual-machines/extensions/key-vault-linux.md) |
-|Azure Monitor-agent |Micro soft. Azure. monitor |AzureMonitorLinuxAgent |[De Azure Monitor-agent installeren (preview-versie)](../../azure-monitor/platform/azure-monitor-agent-install.md) |
+|Azure Monitor-agent |Micro soft. Azure. monitor |AzureMonitorLinuxAgent |[De Azure Monitor-agent installeren (preview-versie)](../../azure-monitor/agents/azure-monitor-agent-install.md) |
 
 ## <a name="prerequisites"></a>Vereisten
 

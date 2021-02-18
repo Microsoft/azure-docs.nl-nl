@@ -7,12 +7,12 @@ author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 317c02fe03a56ea3cd3a98b00f8a0080b3917108
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 67e7765a1f46c2be5790c11687e06ea624702b9b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88930278"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589561"
 ---
 # <a name="profile-live-azure-service-fabric-applications-with-application-insights"></a>Live Azure Service Fabric-toepassingen met Application Insights profileren
 
@@ -29,7 +29,7 @@ Voer de volgende acties uit om uw omgeving in te stellen:
 
 1. Profiler ondersteunt .NET Framework en .net core. Als u .NET Framework gebruikt, zorg er dan voor dat u [.NET Framework 4.6.1](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) of hoger gebruikt. Het is voldoende om te bevestigen dat het geïmplementeerde besturings systeem `Windows Server 2012 R2` of hoger is. Profiler ondersteunt .NET Core 2,1 en nieuwere toepassingen.
 
-1. Zoek naar de [Azure Diagnostics](../platform/diagnostics-extension-overview.md) extensie in het bestand met de implementatie sjabloon.
+1. Zoek naar de [Azure Diagnostics](../agents/diagnostics-extension-overview.md) extensie in het bestand met de implementatie sjabloon.
 
 1. Voeg de volgende `SinksConfig` sectie toe als onderliggend element van `WadCfg` . Vervang de `ApplicationInsightsProfiler` eigenschaps waarde door uw eigen Application Insights instrumentatie sleutel:  
 

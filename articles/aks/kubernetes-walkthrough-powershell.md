@@ -5,12 +5,12 @@ services: container-service
 ms.topic: quickstart
 ms.date: 01/13/2021
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 41412a4ec95bb9b89df5fded6962965594e823fc
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 131469a955190561d8854aad4a7f77c8ca15a222
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98248510"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578781"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-cluster-using-powershell"></a>Quickstart: een Azure Kubernetes Service-cluster met behulp van PowerShell
 
@@ -235,7 +235,7 @@ Open een webbrowser naar het externe IP-adres van uw service om de Azure Vote-ap
 
 ![Stem-app is geïmplementeerd in Azure Kubernetes Service](./media/kubernetes-walkthrough-powershell/voting-app-deployed-in-azure-kubernetes-service.png)
 
-Toen het AKS-cluster werd gemaakt, is [Azure Monitor voor containers](../azure-monitor/insights/container-insights-overview.md) ingeschakeld om metrische gegevens over de status van de clusterknooppunten en -pods vast te leggen. Deze metrische gegevens over de status zijn in de Azure-portal beschikbaar.
+Toen het AKS-cluster werd gemaakt, is [Azure Monitor voor containers](../azure-monitor/containers/container-insights-overview.md) ingeschakeld om metrische gegevens over de status van de clusterknooppunten en -pods vast te leggen. Deze metrische gegevens over de status zijn in de Azure-portal beschikbaar.
 
 ## <a name="delete-the-cluster"></a>Het cluster verwijderen
 

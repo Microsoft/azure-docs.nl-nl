@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/26/2020
 ms.author: victorh
 ms.custom: references_regions
-ms.openlocfilehash: d46c1d8efb5234d47c80ca4256c2f56d56ccf805
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 90c20c1f463cf5143460510b9a409ad5ed3ba9f7
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060705"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576125"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Veelgestelde vragen over Application Gateway
 
@@ -168,7 +168,7 @@ Ja. U kunt de verbinding verbreken instellen om leden binnen een back-end-groep 
 
 Ja.
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>Configuratie
 
 ### <a name="is-application-gateway-always-deployed-in-a-virtual-network"></a>Wordt Application Gateway altijd geïmplementeerd in een virtueel netwerk?
 
@@ -333,7 +333,7 @@ Application Gateway ondersteunt Maxi maal 100 verificatie certificaten.
 
 ### <a name="does-application-gateway-natively-integrate-with-azure-key-vault"></a>Biedt Application Gateway systeem eigen integratie met Azure Key Vault?
 
-Ja, de SKU van Application Gateway v2 ondersteunt Key Vault. Zie [TLS Terminate with Key Vault certificates](key-vault-certs.md)(Engelstalig) voor meer informatie.
+Ja, de SKU van Application Gateway v2 ondersteunt Key Vault. Zie [TLS-beëindiging met Key Vault-certificaten](key-vault-certs.md) voor meer informatie.
 
 ### <a name="how-do-i-configure-https-listeners-for-com-and-net-sites"></a>HTTPS-listeners Hoe kan ik configureren voor. com-en .net-sites? 
 
@@ -454,7 +454,7 @@ Selecteer in de portal op de menu-Blade van een toepassings gateway het **activi
 
 ### <a name="can-i-set-alerts-with-application-gateway"></a>Kan ik waarschuwingen instellen met Application Gateway?
 
-Ja. In Application Gateway worden waarschuwingen voor metrische gegevens geconfigureerd. Zie [Application Gateway metrische gegevens](./application-gateway-metrics.md) en [waarschuwings meldingen ontvangen](../azure-monitor/platform/alerts-overview.md)voor meer informatie.
+Ja. In Application Gateway worden waarschuwingen voor metrische gegevens geconfigureerd. Zie [Application Gateway metrische gegevens](./application-gateway-metrics.md) en [waarschuwings meldingen ontvangen](../azure-monitor/alerts/alerts-overview.md)voor meer informatie.
 
 ### <a name="how-do-i-analyze-traffic-statistics-for-application-gateway"></a>Hoe kan ik verkeers statistieken voor Application Gateway analyseren?
 

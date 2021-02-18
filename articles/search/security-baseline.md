@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: f393c5df23b9552f598e05d25aaf09e529324abe
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 8c32d06247516611fc79bd6f77b60fec6b73044d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201991"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591817"
 ---
 # <a name="azure-security-baseline-for-azure-cognitive-search"></a>Azure-beveiligings basislijn voor Azure Cognitive Search
 
@@ -171,7 +171,7 @@ U kunt deze gegevens ook in-of uitschakelen voor Azure Sentinel of een SIEM van 
 
 - [Aan de slag met Azure Monitor en integratie van SIEM van derden](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -185,7 +185,7 @@ U kunt deze gegevens ook in-of uitschakelen voor Azure Sentinel of een SIEM van 
 
 - [Logboek gegevens verzamelen en analyseren voor Azure Cognitive Search](./search-monitor-logs.md)
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -205,7 +205,7 @@ U kunt deze gegevens ook in-of uitschakelen voor Azure Sentinel of een SIEM van 
 
 Stel in Azure Monitor de Bewaar periode voor uw Log Analytics werk ruimte in volgens de nalevings voorschriften van uw organisatie. Gebruik Azure Storage accounts voor lange termijn-en archiverings opslag. 
 
-- [De Bewaar periode voor gegevens wijzigen in Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [De Bewaar periode voor gegevens wijzigen in Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 - [Bewaar beleid configureren voor logboeken van Azure Storage-account](../storage/common/storage-monitor-storage-account.md#configure-logging)
 
@@ -223,9 +223,9 @@ Stel in Azure Monitor de Bewaar periode voor uw Log Analytics werk ruimte in vol
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Meer informatie over Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)
+- [Meer informatie over Log Analytics](../azure-monitor/logs/log-analytics-tutorial.md)
 
-- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -239,7 +239,7 @@ Stel in Azure Monitor de Bewaar periode voor uw Log Analytics werk ruimte in vol
 
 - [Waarschuwingen beheren in Azure Security Center](../security-center/security-center-managing-and-responding-alerts.md)
 
-- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/learn/tutorial-response.md)
+- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -532,7 +532,7 @@ Micro soft beheert de onderliggende infra structuur voor Cognitive Search en hee
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden aangebracht in productie-exemplaren van Cognitive Search en andere essentiële of gerelateerde resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 - [Waarschuwingen voor Cognitive Search activiteiten maken](./search-monitor-logs.md)
 

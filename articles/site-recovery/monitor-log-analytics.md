@@ -7,16 +7,16 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/15/2019
 ms.author: raynew
-ms.openlocfilehash: e3d3ce8218030bc8ba6c59b26b7360bf2299e02a
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 308e1bcf042feb15179d32844d8c569af6166619
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499812"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571672"
 ---
 # <a name="monitor-site-recovery-with-azure-monitor-logs"></a>Site Recovery bewaken met Azure Monitor-logboeken
 
-In dit artikel wordt beschreven hoe u computers die zijn gerepliceerd door Azure [site Recovery](site-recovery-overview.md)bewaakt met behulp van [Azure monitor-logboeken](../azure-monitor/platform/data-platform-logs.md)en [log Analytics](../azure-monitor/log-query/log-query-overview.md).
+In dit artikel wordt beschreven hoe u computers die zijn gerepliceerd door Azure [site Recovery](site-recovery-overview.md)bewaakt met behulp van [Azure monitor-logboeken](../azure-monitor/logs/data-platform-logs.md)en [log Analytics](../azure-monitor/logs/log-query-overview.md).
 
 Azure Monitor logboeken bieden een platform voor gegevens over het logboek waarmee activiteiten en bron logboeken worden verzameld, samen met andere bewakings gegevens. In Azure Monitor-logboeken gebruikt u Log Analytics om logboek query's te schrijven en te testen, en om logboek gegevens interactief te analyseren. U kunt de resultaten van het logboek visualiseren en doorzoeken en waarschuwingen configureren om acties uit te voeren op basis van bewaakte gegevens.
 
@@ -35,8 +35,8 @@ Het gebruik van Azure Monitor-logboeken met Site Recovery wordt ondersteund voor
 U hebt het volgende nodig:
 
 - Ten minste één computer die wordt beveiligd in een Recovery Services kluis.
-- Een Log Analytics-werk ruimte om Site Recovery-logboeken op te slaan. [Meer informatie over](../azure-monitor/learn/quick-create-workspace.md) het instellen van een werk ruimte.
-- Een basis memorandum van het schrijven, uitvoeren en analyseren van logboek query's in Log Analytics. [Meer informatie](../azure-monitor/log-query/log-analytics-tutorial.md).
+- Een Log Analytics-werk ruimte om Site Recovery-logboeken op te slaan. [Meer informatie over](../azure-monitor/logs/quick-create-workspace.md) het instellen van een werk ruimte.
+- Een basis memorandum van het schrijven, uitvoeren en analyseren van logboek query's in Log Analytics. [Meer informatie](../azure-monitor/logs/log-analytics-tutorial.md).
 
 U wordt aangeraden de [algemene controle vragen](monitoring-common-questions.md) te bekijken voordat u begint.
 
@@ -62,9 +62,9 @@ U kunt de gegevens van het verloop snelheidgegevens en gegevens over de upload s
 1. Ga naar de werk ruimte Log Analytics en klik op **Geavanceerde instellingen**.
 2. Klik op de pagina **verbonden bronnen** en selecteer vervolgens **Windows-servers**.
 3. Down load de Windows-agent (64 bits) op de proces server. 
-4. [De werk ruimte-ID en-sleutel ophalen](../azure-monitor/platform/log-analytics-agent.md#workspace-id-and-key)
-5. [Agent configureren voor het gebruik van TLS 1,2](../azure-monitor/platform/agent-windows.md#configure-agent-to-use-tls-12)
-6. [Voltooi de installatie van de agent](../azure-monitor/platform/agent-windows.md#install-agent-using-setup-wizard) door de opgehaalde werk ruimte-ID en-sleutel op te geven.
+4. [De werk ruimte-ID en-sleutel ophalen](../azure-monitor/agents/log-analytics-agent.md#workspace-id-and-key)
+5. [Agent configureren voor het gebruik van TLS 1,2](../azure-monitor/agents/agent-windows.md#configure-agent-to-use-tls-12)
+6. [Voltooi de installatie van de agent](../azure-monitor/agents/agent-windows.md#install-agent-using-setup-wizard) door de opgehaalde werk ruimte-ID en-sleutel op te geven.
 7. Nadat de installatie is voltooid, gaat u naar Log Analytics werk ruimte en klikt u op **Geavanceerde instellingen**. Ga naar de pagina **gegevens** en klik op **Windows-prestatie meter items**. 
 8. Klik op **+** om de volgende twee tellers toe te voegen met een steekproef interval van 300 seconden:
 
@@ -76,7 +76,7 @@ De gegevens voor het verloop en de upload frequentie worden gestart in de werk r
 
 ## <a name="query-the-logs---examples"></a>Query's uitvoeren op de logboeken-voor beelden
 
-U haalt gegevens op uit logboeken met behulp van logboek query's die zijn geschreven met de [Kusto-query taal](../azure-monitor/log-query/get-started-queries.md). In deze sectie vindt u enkele voor beelden van algemene query's die u kunt gebruiken voor Site Recovery bewaking.
+U haalt gegevens op uit logboeken met behulp van logboek query's die zijn geschreven met de [Kusto-query taal](../azure-monitor/logs/get-started-queries.md). In deze sectie vindt u enkele voor beelden van algemene query's die u kunt gebruiken voor Site Recovery bewaking.
 
 > [!NOTE]
 > Enkele voor beelden gebruiken **replicationProviderName_s** ingesteld op **A2A**. Hiermee worden virtuele Azure-machines opgehaald die worden gerepliceerd naar een secundaire Azure-regio met behulp van Site Recovery. In deze voor beelden kunt u **A2A** vervangen door **InMageAzureV2** als u on-premises virtuele VMware-machines of fysieke servers wilt ophalen die met site Recovery worden gerepliceerd naar Azure.
@@ -252,7 +252,7 @@ AzureDiagnostics 
 
 ## <a name="set-up-alerts---examples"></a>Waarschuwingen instellen-voor beelden
 
-U kunt Site Recovery waarschuwingen instellen op basis van Azure Monitor gegevens. Meer [informatie](../azure-monitor/platform/alerts-log.md#create-a-log-alert-rule-with-the-azure-portal) over het instellen van logboek waarschuwingen. 
+U kunt Site Recovery waarschuwingen instellen op basis van Azure Monitor gegevens. Meer [informatie](../azure-monitor/alerts/alerts-log.md#create-a-log-alert-rule-with-the-azure-portal) over het instellen van logboek waarschuwingen. 
 
 > [!NOTE]
 > Enkele voor beelden gebruiken **replicationProviderName_s** ingesteld op **A2A**. Hiermee stelt u waarschuwingen in voor virtuele Azure-machines die worden gerepliceerd naar een secundaire Azure-regio. In deze voor beelden kunt u **A2A** vervangen door **InMageAzureV2** als u waarschuwingen wilt instellen voor on-premises virtuele VMware-machines of fysieke servers die worden gerepliceerd naar Azure.

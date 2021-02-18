@@ -4,12 +4,12 @@ description: In deze zelfstudie configureert u Azure Monitor-logboeken voor bewa
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
-ms.openlocfilehash: cf14cce631a505a951ec4d9c0955431b9a98527e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: b7689d6e259055137a8d1d3c61552790ab9f28d3
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91840673"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588235"
 ---
 # <a name="tutorial-monitor-windows-containers-on-service-fabric-using-azure-monitor-logs"></a>Zelfstudie: Windows-containers in Service Fabric bewaken met behulp van Azure Monitor-logboeken
 
@@ -230,6 +230,6 @@ In deze zelfstudie heeft u het volgende geleerd:
 Nu u bewaking hebt geconfigureerd voor uw containertoepassing, kunt u:
 
 * De Azure Monitor-logboeken configureren voor een Linux-cluster, volgens soortgelijke stappen als in deze zelfstudie. Raadpleeg [Deze sjabloon](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Ubuntu-1-NodeType-Secure-OMS) om wijzigingen in de Resource Manager-sjabloon aan te brengen.
-* Azure Monitor-logboeken configureren om [automatische waarschuwingen](../azure-monitor/platform/alerts-overview.md) in te stellen voor detectie en diagnostiek.
+* Azure Monitor-logboeken configureren om [automatische waarschuwingen](../azure-monitor/alerts/alerts-overview.md) in te stellen voor detectie en diagnostiek.
 * De lijst met [aanbevolen prestatiemeteritems](service-fabric-diagnostics-event-generation-perf.md) van Service Fabric onderzoeken om deze voor uw clusters te configureren.
-* Vertrouwd raken met de functies [zoeken in logboeken en query's uitvoeren](../azure-monitor/log-query/log-query-overview.md) die als onderdeel van Azure Monitor-logboeken worden aangeboden.
+* Vertrouwd raken met de functies [zoeken in logboeken en query's uitvoeren](../azure-monitor/logs/log-query-overview.md) die als onderdeel van Azure Monitor-logboeken worden aangeboden.

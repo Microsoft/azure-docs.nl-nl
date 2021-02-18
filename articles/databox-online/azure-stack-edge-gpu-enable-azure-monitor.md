@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 02/02/2021
 ms.author: alkohli
-ms.openlocfilehash: 171b4dbfb2a5852e270c483a28cad31f97dcb42b
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 199ec8e2f1e8eb74d971286a4fc6180eb8b72f2a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493909"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595969"
 ---
 # <a name="enable-azure-monitor-on-your-azure-stack-edge-pro-gpu-device"></a>Azure Monitor op uw Azure Stack Edge Pro GPU-apparaat inschakelen
 
@@ -49,7 +49,7 @@ Voer de volgende stappen uit om een log Analytics-werk ruimte te maken. Een log 
 
         ![Log Analytics-werk ruimte + maken bekijken](media/azure-stack-edge-gpu-enable-azure-monitor/create-log-analytics-workspace-review-create-1.png)
 
-Zie voor meer informatie de gedetailleerde stappen in [een log Analytics-werk ruimte maken via Azure Portal](../azure-monitor/learn/quick-create-workspace.md).
+Zie voor meer informatie de gedetailleerde stappen in [een log Analytics-werk ruimte maken via Azure Portal](../azure-monitor/logs/quick-create-workspace.md).
 
 
 
@@ -57,7 +57,7 @@ Zie voor meer informatie de gedetailleerde stappen in [een log Analytics-werk ru
 
 Voer de volgende stappen uit om container Insights in te scha kelen in uw werk ruimte. 
 
-1. Volg de gedetailleerde stappen in de [oplossing Azure monitor containers toevoegen](../azure-monitor/insights/container-insights-hybrid-setup.md#how-to-add-the-azure-monitor-containers-solution). Gebruik het volgende sjabloon bestand `containerSolution.json` :
+1. Volg de gedetailleerde stappen in de [oplossing Azure monitor containers toevoegen](../azure-monitor/containers/container-insights-hybrid-setup.md#how-to-add-the-azure-monitor-containers-solution). Gebruik het volgende sjabloon bestand `containerSolution.json` :
 
     ```yml
     {

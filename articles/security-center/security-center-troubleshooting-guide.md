@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: 64b39dfa581b242fbb490d61b388f2bf260976ef
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 20241ad316da1c5d713617f3f371d02e2a4e6cc9
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460418"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570822"
 ---
 # <a name="azure-security-center-troubleshooting-guide"></a>Handleiding voor het oplossen van problemen met Azure Security Center
 
@@ -42,7 +42,7 @@ Klanten kunnen feedback delen voor waarschuwingsbeschrijving en relevantie. Navi
 
 ## <a name="audit-log"></a>Auditlogboek
 
-In de meeste gevallen vindt probleemoplossing in Security Center plaats door eerst de records in het [Controlelogboek](../azure-monitor/platform/platform-logs-overview.md) van het onderdeel met de fout te raadplegen. Met auditlogboeken kunt u het volgende bepalen:
+In de meeste gevallen vindt probleemoplossing in Security Center plaats door eerst de records in het [Controlelogboek](../azure-monitor/essentials/platform-logs-overview.md) van het onderdeel met de fout te raadplegen. Met auditlogboeken kunt u het volgende bepalen:
 
 * Welke bewerkingen er hebben plaatsgevonden
 * Wie de bewerking heeft gestart
@@ -81,14 +81,14 @@ Er zijn twee installatie scenario's die verschillende resultaten kunnen oplevere
 
 **Bewakingsstatus** toont de reden waarom Security Center VM's en computers die zijn geïnitialiseerd voor automatische inrichting niet afdoende kan bewaken. In de volgende tabel ziet u de waarden, beschrijvingen en oplossingen voor **Bewakingsstatus**.
 
-| Bewakingsstatus | Beschrijving | Stappen om het probleem op te lossen |
+| Bewakingsstatus | Description | Stappen om het probleem op te lossen |
 |---|---|---|
 | Agent wacht op installatie | De installatie van de Log Analytics-agent is nog actief.  De installatie kan enkele uren duren. | Wacht totdat de automatische installatie is voltooid. |
 | Energiestatus uitgeschakeld | De virtuele machine is gestopt.  De Log Analytics-agent kan alleen worden geïnstalleerd op een virtuele machine waarop wordt uitgevoerd. | Start de VM opnieuw op. |
 | Azure VM-agent ontbreekt of is ongeldig | De Log Analytics-agent is nog niet geïnstalleerd.  Security Center installeert de extensie pas als er een geldige Azure VM-agent is. | Installeer de Azure VM-agent (opnieuw) op de virtuele machine of voer een upgrade uit. |
 | VM-status niet gereed voor installatie  | De Log Analytics-agent is nog niet geïnstalleerd, omdat de VM niet gereed is voor installatie. De virtuele machine is niet gereed voor installatie vanwege een probleem met de VM-agent of de VM-inrichting. | Controleer de status van uw virtuele machine. Ga terug naar **Virtuele machines** in de portal en selecteer de virtuele machine voor statusinformatie. |
-|Installatie is mislukt: algemene fout | De Log Analytics-agent is geïnstalleerd, maar is mislukt vanwege een fout. | [Installeer de extensie handmatig](../azure-monitor/learn/quick-collect-azurevm.md#enable-the-log-analytics-vm-extension) of verwijder de extensie zodat Security Center deze opnieuw probeert te installeren. |
-| Installatie is mislukt: lokale agent is al geïnstalleerd | De installatie van Log Analytics agent is mislukt. Security Center heeft vastgesteld dat er al een lokale agent (Log Analytics of System Center Operations Manager) is geïnstalleerd op de VM. Om te voor komen dat de multi-multihoming-configuratie, waarbij de VM wordt gerapporteerd aan twee afzonderlijke werk ruimten, de installatie van de Log Analytics-agent is gestopt. | U kunt dit op twee manieren oplossen: [de extensie handmatig installeren](../azure-monitor/learn/quick-collect-azurevm.md#enable-the-log-analytics-vm-extension) en verbinden met de gewenste werkruimte. Of, de gewenste werkruimte instellen als uw standaardwerkruimte en automatische inrichting van de agent inschakelen.  Zie [Automatische inrichting inschakelen](security-center-enable-data-collection.md). |
+|Installatie is mislukt: algemene fout | De Log Analytics-agent is geïnstalleerd, maar is mislukt vanwege een fout. | [Installeer de extensie handmatig](../azure-monitor/vm/quick-collect-azurevm.md#enable-the-log-analytics-vm-extension) of verwijder de extensie zodat Security Center deze opnieuw probeert te installeren. |
+| Installatie is mislukt: lokale agent is al geïnstalleerd | De installatie van Log Analytics agent is mislukt. Security Center heeft vastgesteld dat er al een lokale agent (Log Analytics of System Center Operations Manager) is geïnstalleerd op de VM. Om te voor komen dat de multi-multihoming-configuratie, waarbij de VM wordt gerapporteerd aan twee afzonderlijke werk ruimten, de installatie van de Log Analytics-agent is gestopt. | U kunt dit op twee manieren oplossen: [de extensie handmatig installeren](../azure-monitor/vm/quick-collect-azurevm.md#enable-the-log-analytics-vm-extension) en verbinden met de gewenste werkruimte. Of, de gewenste werkruimte instellen als uw standaardwerkruimte en automatische inrichting van de agent inschakelen.  Zie [Automatische inrichting inschakelen](security-center-enable-data-collection.md). |
 | Kan geen verbinding maken tussen agent en werkruimte | Log Analytics-agent is geïnstalleerd, maar is mislukt vanwege een netwerk verbinding.  Controleer of er internettoegang is. En anders moet er een geldige HTTP-proxy voor de agent zijn geconfigureerd. | Zie Netwerkvereisten voor Monitoring Agent. |
 | Agent verbonden met ontbrekende of onbekende werkruimte | Security Center geïdentificeerd dat de Log Analytics-agent die op de virtuele machine is geïnstalleerd, is verbonden met een werk ruimte waartoe hij geen toegang heeft. | Dit kan gebeuren in twee gevallen. De werkruimte is verwijderd en bestaat niet meer. Installeer de agent opnieuw met de juiste werkruimte of verwijder de agent en laat Security Center de automatische inrichtingsinstallatie voltooien. In het tweede geval behoort de werkruimte tot een abonnement waarvoor Security Center geen machtigingen heeft. Security Center verleent de Microsoft Security Resource Provider toegang op basis van een abonnement. Als u toegang wilt inschakelen, registreert u het abonnement op Microsoft Security Resource Provider. U kunt dit doen via API, PowerShell, portal of gewoon door in het dashboard **Overzicht** van het Security Center te filteren op abonnement. Zie [Resourceproviders en -typen](../azure-resource-manager/management/resource-providers-and-types.md#azure-portal) voor meer informatie. |
 | Agent reageert niet of ID ontbreekt | Security Center kan de beveiligingsgegevens die zijn gescand van de virtuele machine niet ophalen, zelfs niet als de agent is geïnstalleerd. | De agent rapporteert geen gegevens, ook de heartbeat niet. De agent is mogelijk beschadigd of het verkeer wordt geblokkeerd. Het is ook mogelijk dat de agent gegevens rapporteert, maar er ontbreekt een Azure-Resource-ID zodat de gegevens niet overeenkomen met de Azure-VM. Zie [probleemoplossings handleiding voor log Analytics-agent voor Linux](https://github.com/Microsoft/OMS-Agent-for-Linux/blob/master/docs/Troubleshooting.md#im-not-seeing-any-linux-data-in-the-oms-portal)voor meer informatie over het oplossen van problemen met Linux. Zie [Troubleshooting Windows Virtual Machines](../virtual-machines/extensions/oms-windows.md#troubleshoot-and-support) (Problemen met virtuele Windows-machines oplossen) voor het oplossen van problemen in Windows. |
@@ -98,17 +98,17 @@ Er zijn twee installatie scenario's die verschillende resultaten kunnen oplevere
 
 Agents kunnen alleen verbinding maken met Security Center en zich daarbij registreren als ze toegang hebben tot netwerkbronnen, inclusief de poortnummers en domein-URL's.
 
-* Voor proxyservers moet u ervoor zorgen dat de juiste resources voor de proxyserver zijn geconfigureerd in de instellingen voor de agent. Lees dit artikel voor meer informatie over [het wijzigen van de proxy-instellingen](../azure-monitor/platform/agent-windows.md).
+* Voor proxyservers moet u ervoor zorgen dat de juiste resources voor de proxyserver zijn geconfigureerd in de instellingen voor de agent. Lees dit artikel voor meer informatie over [het wijzigen van de proxy-instellingen](../azure-monitor/agents/agent-windows.md).
 * Als u een firewall gebruikt om de toegang tot internet te beperken, moet u uw firewall zodanig configureren dat toegang tot Log Analytics wordt toegestaan. De agent-instellingen hoeven niet te worden aangepast.
 
 De volgende tabel bevat de resources die nodig zijn voor communicatie.
 
 | Agentresource | Poorten | HTTPS-controle overslaan |
 |---|---|---|
-| *.ods.opinsights.azure.com | 443 | Ja |
-| *.oms.opinsights.azure.com | 443 | Ja |
-| *.blob.core.windows.net | 443 | Ja |
-| *.azure-automation.net | 443 | Ja |
+| *.ods.opinsights.azure.com | 443 | Yes |
+| *.oms.opinsights.azure.com | 443 | Yes |
+| *.blob.core.windows.net | 443 | Yes |
+| *.azure-automation.net | 443 | Yes |
 
 Als er problemen zijn tijdens het onboarden van de agent, leest u het artikel [Onboarding-problemen van Operations Management Suite oplossen](https://support.microsoft.com/help/3126513/how-to-troubleshoot-operations-management-suite-onboarding-issues).
 

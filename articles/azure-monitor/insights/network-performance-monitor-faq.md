@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: vinynigam
 ms.author: vinigam
 ms.date: 10/12/2018
-ms.openlocfilehash: 1faeb047783b9db24348425e5a6453754e550d4d
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: c58f94bcdb659eed67ebf023af473545d8cee1a7
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99833011"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587268"
 ---
 # <a name="network-performance-monitor-solution-faq"></a>Veelgestelde vragen over Netwerkprestatiemeter oplossingen
 
@@ -43,7 +43,7 @@ De mogelijkheid om netwerken met Linux-knoop punten te bewaken, is nu algemeen b
 Voor het uitvoeren van de NPM-oplossing op knoop punt-Vm's voor het bewaken van netwerken, moeten de knoop punten ten minste 500 MB geheugen en één kern hebben. U hoeft geen afzonderlijke knoop punten te gebruiken voor het uitvoeren van NPM. De oplossing kan worden uitgevoerd op knoop punten waarop andere workloads worden uitgevoerd. De oplossing biedt de mogelijkheid om het bewakings proces te stoppen als er meer dan 5% CPU wordt gebruikt.
 
 ### <a name="to-use-npm-should-i-connect-my-nodes-as-direct-agent-or-through-system-center-operations-manager"></a>Als u NPM wilt gebruiken, moet ik mijn knoop punten verbinden als een directe agent of via System Center Operations Manager?
-Zowel de prestatie meter als de service connectiviteits monitor biedt ondersteuning voor knoop punten [die zijn verbonden als directe agents](../platform/agent-windows.md) en [verbonden via Operations Manager](../platform/om-agents.md).
+Zowel de prestatie meter als de service connectiviteits monitor biedt ondersteuning voor knoop punten [die zijn verbonden als directe agents](../agents/agent-windows.md) en [verbonden via Operations Manager](../agents/om-agents.md).
 
 Voor de functionaliteit van de ExpressRoute-monitor moeten de Azure-knoop punten alleen als directe agents zijn verbonden. Azure-knoop punten, die zijn verbonden via Operations Manager worden niet ondersteund. Voor on-premises knoop punten worden de knoop punten die zijn verbonden als directe agents en via Operations Manager ondersteund voor het bewaken van een ExpressRoute-circuit.
 
@@ -98,7 +98,7 @@ Als een hop rood is, betekent dit dat deze deel uitmaakt van ten minste één be
 NPM maakt gebruik van een Probabilistic-mechanisme om fout kansen toe te wijzen aan elk netwerkpad, netwerk segment en de samenstellende netwerk hops op basis van het aantal beschadigde paden waarvan ze deel uitmaken. Naarmate de netwerk segmenten en-hops deel uitmaken van meer aantal beschadigde paden, nemen de fout waarschijnlijke fouten toe. Dit algoritme werkt het beste wanneer u een groot aantal knoop punten met NPM-agent hebt verbonden, omdat hierdoor de gegevens punten voor het berekenen van de fout kansen worden verhoogd.
 
 ### <a name="how-can-i-create-alerts-in-npm"></a>Hoe kan ik waarschuwingen in NPM maken?
-Op dit moment wordt het maken van waarschuwingen van de NPM-gebruikers interface mislukt als gevolg van een bekend probleem. [Maak waarschuwingen hand matig](../platform/alerts-log.md).
+Op dit moment wordt het maken van waarschuwingen van de NPM-gebruikers interface mislukt als gevolg van een bekend probleem. [Maak waarschuwingen hand matig](../alerts/alerts-log.md).
 
 ### <a name="what-are-the-default-log-analytics-queries-for-alerts"></a>Wat zijn de standaard Log Analytics query's voor waarschuwingen
 Query prestatie meter

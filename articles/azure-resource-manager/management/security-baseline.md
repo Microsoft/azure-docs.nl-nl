@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/30/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: b4f0c64abf150165e3239e78e8cf9b824b34eed6
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 5e44515c8ca71d115ced65c9123e2b1ae3bdf23a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202365"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578236"
 ---
 # <a name="azure-security-baseline-for-azure-resource-manager"></a>Azure-beveiligings basislijn voor Azure Resource Manager
 
@@ -31,9 +31,9 @@ De inhoud wordt gegroepeerd op de **beveiligings controles** die zijn gedefiniee
 
 - [Azure-Sentinel onboarden](../../sentinel/quickstart-onboard.md) 
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../../azure-monitor/platform/diagnostic-settings.md) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Interne host-logboeken van de virtuele machine van Azure verzamelen met Azure Monitor](../../azure-monitor/learn/quick-collect-azurevm.md) 
+- [Interne host-logboeken van de virtuele machine van Azure verzamelen met Azure Monitor](../../azure-monitor/vm/quick-collect-azurevm.md) 
 
 - [Aan de slag met Azure Monitor en integratie van SIEM van derden](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
@@ -45,9 +45,9 @@ De inhoud wordt gegroepeerd op de **beveiligings controles** die zijn gedefiniee
 
 **Richt lijnen**: Azure Resource Manager gebruikt activiteiten logboeken, die automatisch worden ingeschakeld, om gebeurtenis bron, datum, gebruiker, tijds tempel, bron adressen, doel adressen en andere nuttige elementen op te neemt.
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../../azure-monitor/platform/diagnostic-settings.md) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Logboek registratie en verschillende logboek typen in azure](../../azure-monitor/platform/platform-logs-overview.md)
+- [Logboek registratie en verschillende logboek typen in azure](../../azure-monitor/essentials/platform-logs-overview.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -61,9 +61,9 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 - [Azure-Sentinel onboarden](../../sentinel/quickstart-onboard.md) 
 
-- [Aan de slag met Log Analytics query's](../../azure-monitor/log-query/log-analytics-tutorial.md) 
+- [Aan de slag met Log Analytics query's](../../azure-monitor/logs/log-analytics-tutorial.md) 
 
-- [Aangepaste query's uitvoeren in Azure Monitor](../../azure-monitor/log-query/get-started-queries.md)
+- [Aangepaste query's uitvoeren in Azure Monitor](../../azure-monitor/logs/get-started-queries.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -77,7 +77,7 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 - [Waarschuwingen beheren in Azure Security Center](../../security-center/security-center-managing-and-responding-alerts.md) 
 
-- [Een waarschuwing over Log Analytics logboek gegevens](../../azure-monitor/learn/tutorial-response.md)
+- [Een waarschuwing over Log Analytics logboek gegevens](../../azure-monitor/alerts/tutorial-response.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -261,7 +261,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden doorgevoerd in essentiële Azure-resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Ja
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/01/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: f13909d3835bdbd2931277a88244abfae3f80759
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 29c49ceb3647964030f53c94276e831dc0f648c7
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96466817"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576619"
 ---
 # <a name="azure-monitor-for-windows-virtual-desktop-preview-glossary"></a>Azure Monitor voor de woorden lijst voor het virtuele bureau blad (preview) van Windows
 
@@ -24,7 +24,7 @@ In dit artikel vindt u een korte beschrijving van belang rijke termen en concept
 
 ## <a name="alerts"></a>Waarschuwingen
 
-Actieve Azure Monitor waarschuwingen die u in het abonnement hebt geconfigureerd en die zijn geclassificeerd als [Ernst 1](#severity-1-alerts) worden weer gegeven op de pagina overzicht. Zie [reageren op gebeurtenissen met Azure monitor waarschuwingen](../azure-monitor/learn/tutorial-response.md)voor meer informatie over het instellen van waarschuwingen.
+Actieve Azure Monitor waarschuwingen die u in het abonnement hebt geconfigureerd en die zijn geclassificeerd als [Ernst 1](#severity-1-alerts) worden weer gegeven op de pagina overzicht. Zie [reageren op gebeurtenissen met Azure monitor waarschuwingen](../azure-monitor/alerts/tutorial-response.md)voor meer informatie over het instellen van waarschuwingen.
 
 ## <a name="available-sessions"></a>Beschikbare sessies
 
@@ -128,7 +128,7 @@ De volgende tabel bevat de aanbevolen prestatie meter items en tijds intervallen
 |RemoteFX-netwerk ( \* ) \\ huidige TCP RTT|30 seconden|
 |RemoteFX-netwerk ( \* ) \\ huidige UDP-band breedte|30 seconden|
 
-Zie [prestatie meter items configureren](../azure-monitor/platform/data-sources-performance-counters.md)voor meer informatie over het lezen van prestatie meter items.
+Zie [prestatie meter items configureren](../azure-monitor/agents/data-sources-performance-counters.md)voor meer informatie over het lezen van prestatie meter items.
 
 Voor meer informatie over prestatie meter items voor de invoer vertraging raadpleegt u [prestatie meter items voor gebruikers invoer vertraging](/windows-server/remote/remote-desktop-services/rds-rdsh-performance-counters/).
 
@@ -186,7 +186,7 @@ De volgende tabel geeft een lijst van de vereiste Windows-gebeurtenissen voor Az
 | Micro soft-FSLogix-apps/operationeel|Fout, waarschuwing en informatie|
 |Micro soft-FSLogix-Apps/beheerder|Fout, waarschuwing en informatie|
 
-Zie [Eigenschappen van Windows-gebeurtenis records](../azure-monitor/platform/data-sources-windows-events.md)voor meer informatie over Windows-gebeurtenissen.
+Zie [Eigenschappen van Windows-gebeurtenis records](../azure-monitor/agents/data-sources-windows-events.md)voor meer informatie over Windows-gebeurtenissen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

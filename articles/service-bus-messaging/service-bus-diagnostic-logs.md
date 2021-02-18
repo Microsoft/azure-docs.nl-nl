@@ -3,12 +3,12 @@ title: Diagnostische logboeken van Azure Service Bus | Microsoft Docs
 description: Dit artikel bevat een overzicht van alle operationele en Diagnostische logboeken die beschikbaar zijn voor Azure Service Bus.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: f227f5a988ccd51425b4f43e87b4ed4d9af74e1f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f2672d61285025eadb8f742ca2518297107595ce
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88064431"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585267"
 ---
 # <a name="enable-diagnostics-logs-for-service-bus"></a>Diagnostische logboeken voor Service Bus inschakelen
 
@@ -27,7 +27,7 @@ De JSON-teken reeksen van het operationele logboek bevatten de elementen die in 
 
 | Naam | Beschrijving |
 | ------- | ------- |
-| ActivityId | Interne ID, gebruikt om de opgegeven activiteit te identificeren |
+| ActivityId: | Interne ID, gebruikt om de opgegeven activiteit te identificeren |
 | Gebeurtenisnaam | Naam van bewerking |
 | ResourceId | Resource-ID Azure Resource Manager |
 | SubscriptionId | Abonnements-id |
@@ -76,7 +76,7 @@ De volgende beheer bewerkingen worden vastgelegd in operationele logboeken:
 
 Operationele logboeken zijn standaard uitgeschakeld. Ga als volgt te werk om Diagnostische logboeken in te scha kelen:
 
-1. Ga in het [Azure Portal](https://portal.azure.com)naar uw Azure service bus-naam ruimte en selecteer vervolgens **Diagnostische instellingen**onder **bewaking**.
+1. Ga in het [Azure Portal](https://portal.azure.com)naar uw Azure service bus-naam ruimte en selecteer vervolgens **Diagnostische instellingen** onder **bewaking**.
 
    ![De koppeling Diagnostische instellingen](./media/service-bus-diagnostic-logs/image1.png)
 
@@ -89,9 +89,9 @@ Operationele logboeken zijn standaard uitgeschakeld. Ga als volgt te werk om Dia
    a. Voer in het vak **naam** een naam in voor de diagnostische instellingen.  
 
    b. Selecteer een van de volgende drie bestemmingen voor uw Diagnostische logboeken:  
-   - Als u **archiveren naar een opslag account**selecteert, moet u het opslag account configureren waarin de diagnostische logboeken worden opgeslagen.  
-   - Als u **Stream naar een event hub**selecteert, moet u de Event hub configureren waarnaar u de diagnostische logboeken wilt streamen.
-   - Als u **verzenden naar log Analytics**selecteert, moet u opgeven naar welk exemplaar van log Analytics de diagnostische gegevens worden verzonden.  
+   - Als u **archiveren naar een opslag account** selecteert, moet u het opslag account configureren waarin de diagnostische logboeken worden opgeslagen.  
+   - Als u **Stream naar een event hub** selecteert, moet u de Event hub configureren waarnaar u de diagnostische logboeken wilt streamen.
+   - Als u **verzenden naar log Analytics** selecteert, moet u opgeven naar welk exemplaar van log Analytics de diagnostische gegevens worden verzonden.  
 
    c. Schakel het selectie vakje **OperationalLogs** in.
 
@@ -101,7 +101,7 @@ Operationele logboeken zijn standaard uitgeschakeld. Ga als volgt te werk om Dia
 
 De nieuwe instellingen worden in ongeveer 10 minuten van kracht. De logboeken worden weer gegeven in het geconfigureerde archiverings doel in het deel venster **Diagnostische logboeken** .
 
-Zie het [overzicht van Azure Diagnostics-logboeken](../azure-monitor/platform/platform-logs-overview.md)voor meer informatie over het configureren van diagnostische instellingen.
+Zie het [overzicht van Azure Diagnostics-logboeken](../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie over het configureren van diagnostische instellingen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

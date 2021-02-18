@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.reviewer: vitalyg
 ms.custom: fasttrack-edit
-ms.openlocfilehash: e9334d222d443679362514481ecd83b90bbda0ac
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 7b53b0bc8c7cc3df2123d327bf87a85081f88f50
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96855070"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589555"
 ---
 # <a name="sampling-in-application-insights"></a>Steekproeven in Application Insights
 
@@ -478,7 +478,7 @@ Als de voor waarden voor het gebruik van de andere vormen van steek proeven niet
 
 ## <a name="knowing-whether-sampling-is-in-operation"></a>Weten wanneer voorbeelden actief zijn
 
-Als u de werkelijke sampling frequentie wilt detecteren, ongeacht waar deze is toegepast, gebruikt u een [analyse query](../log-query/log-query-overview.md) zoals deze:
+Als u de werkelijke sampling frequentie wilt detecteren, ongeacht waar deze is toegepast, gebruikt u een [analyse query](../logs/log-query-overview.md) zoals deze:
 
 ```kusto
 union requests,dependencies,pageViews,browserTimings,exceptions,traces

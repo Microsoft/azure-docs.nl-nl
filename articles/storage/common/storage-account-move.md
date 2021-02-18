@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 05/11/2020
 ms.author: normesta
 ms.reviewer: dineshm
-ms.openlocfilehash: 76482266f0bbb1f80c1699c736048c705b90b4dc
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: d894ce71e0ffa5a0894a1f6b0035efe66271ded8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98986917"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591476"
 ---
 # <a name="move-an-azure-storage-account-to-another-region"></a>Een Azure Storage-account naar een andere regio verplaatsen
 
@@ -224,7 +224,7 @@ De volgende tabel bevat een overzicht van deze functies en richtlijnen voor het 
 | **Levenscyclus beheer beleid** | [De levenscyclus van Azure Blob-opslag beheren](../blobs/storage-lifecycle-management-concepts.md) |
 | **Statische websites** | [Een statische website hosten in Azure Storage](../blobs/storage-blob-static-website-how-to.md) |
 | **Gebeurtenisabonnementen** | [Reageren op gebeurtenissen van Blob Storage](../blobs/storage-blob-event-overview.md) |
-| **Waarschuwingen** | [Waarschuwingen voor activiteiten logboek maken, weer geven en beheren met behulp van Azure Monitor](../../azure-monitor/platform/alerts-activity-log.md) |
+| **Waarschuwingen** | [Waarschuwingen voor activiteiten logboek maken, weer geven en beheren met behulp van Azure Monitor](../../azure-monitor/alerts/alerts-activity-log.md) |
 | **Content Delivery Network (CDN)** | [Azure CDN gebruiken om toegang te krijgen tot blobs met aangepaste domeinen via HTTPS](../blobs/storage-https-custom-domain-cdn.md) |
 
 > [!NOTE] 

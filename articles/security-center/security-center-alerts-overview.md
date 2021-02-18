@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 10/05/2020
 ms.author: memildin
-ms.openlocfilehash: b26d42ca32f0048bb2bedcb5fef337c3ac1d7d65
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: a8cb997337d26a166b4c73d33965820da5ae2a86
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807221"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596319"
 ---
 # <a name="security-alerts-in-azure-security-center"></a>Beveiligingswaarschuwingen in Azure Security Center
 
@@ -98,4 +98,4 @@ U hebt verschillende mogelijkheden voor het weer geven van uw waarschuwingen bui
 
 In dit artikel hebt u geleerd over de verschillende soorten waarschuwingen die beschikbaar zijn in Security Center. Zie voor meer informatie:
 
-- **Beveiligings waarschuwingen in azure-activiteiten logboek** -naast de beschik baarheid van de Azure portal of programmatisch, worden beveiligings waarschuwingen en incidenten gecontroleerd als gebeurtenissen in [Azure-activiteiten logboek](../azure-monitor/platform/activity-log.md#view-the-activity-log). Zie [beveiligings waarschuwingen in azure-activiteiten logboek](https://go.microsoft.com/fwlink/?linkid=2114113) voor meer informatie over het gebeurtenis schema
+- **Beveiligings waarschuwingen in azure-activiteiten logboek** -naast de beschik baarheid van de Azure portal of programmatisch, worden beveiligings waarschuwingen en incidenten gecontroleerd als gebeurtenissen in [Azure-activiteiten logboek](../azure-monitor/essentials/activity-log.md#view-the-activity-log). Zie [beveiligings waarschuwingen in azure-activiteiten logboek](https://go.microsoft.com/fwlink/?linkid=2114113) voor meer informatie over het gebeurtenis schema

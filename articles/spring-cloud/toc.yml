@@ -59,7 +59,7 @@
   items:
     - name: Ontwikkelen
       items:
-        - name: Een Java Spring-app voorbereiden voor implementatie
+        - name: Een app voorbereiden op implementatie
           href: spring-cloud-tutorial-prepare-app-deployment.md
         - name: Een configuratieserver instellen
           href: spring-cloud-tutorial-config-server.md

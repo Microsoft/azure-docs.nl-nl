@@ -3,12 +3,12 @@ title: UK OFFICIAL- en UK NHS-blauwdrukvoorbeelden implementeren
 description: Implementeer stappen voor UK OFFICIAL- en UK NHS-blauwdrukvoorbeelden, inclusief de parametergegevens voor blauwdrukartefacten.
 ms.date: 02/05/2021
 ms.topic: sample
-ms.openlocfilehash: 0c917134e5807283ceb0e7ce693037824794a6ef
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: fc41e7d9d3867123286f970d7c54f5e6fff2d276
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99627547"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578041"
 ---
 # <a name="deploy-the-uk-official-and-uk-nhs-blueprint-samples"></a>De UK OFFICIAL- en UK NHS-blauwdrukvoorbeelden implementeren
 
@@ -93,9 +93,9 @@ In de volgende tabel ziet u een lijst met de blauwdrukartefactparameters:
 
 Naam van het artefact|Type artefact|Parameternaam|Beschrijving|
 |-|-|-|-|
-|Het blauwdrukinitiatief voor UK OFFICIAL- of UK NHS|Beleidstoewijzing |Resourcetypen voor het controleren van diagnostische logboeken (Beleid: Het blauwdrukinitiatief voor UK OFFICIAL- of UK NHS) |Lijst met resourcetypen die moeten worden gecontroleerd als de instelling voor diagnostische logboeken niet is ingeschakeld.  Zie [Ondersteunde services, schema's en categorieën voor diagnostische logboeken van Azure](../../../../azure-monitor/platform/resource-logs-schema.md) voor acceptabele waarden. |
-|\[Preview\]: Log Analytics-agent voor virtuele Linux-machines implementeren |Beleidstoewijzing |Optioneel: Lijst met VM-installatiekopieën met ondersteuning voor het Linux-besturingssysteem die aan het bereik kunnen worden toegevoegd (Beleid: \[Preview\]: Log Analytics-agent voor virtuele Linux-machines implementeren) |(optioneel) Standaardwaarde is _Geen_. Raadpleeg [Een Log Analytics-werkruimte maken in Azure Portal](../../../../azure-monitor/learn/quick-create-workspace.md) voor meer informatie. |
-|\[Preview\]: Log Analytics-agent voor Windows-VM's implementeren |Beleidstoewijzing |Optioneel: Lijst met VM-installatiekopieën met ondersteuning voor het Windows-besturingssysteem die aan het bereik kunnen worden toegevoegd (Beleid: \[Preview\]: Log Analytics-agent voor Windows-VM's implementeren) |(optioneel) Standaardwaarde is _Geen_. Raadpleeg [Een Log Analytics-werkruimte maken in Azure Portal](../../../../azure-monitor/learn/quick-create-workspace.md) voor meer informatie. |
+|Het blauwdrukinitiatief voor UK OFFICIAL- of UK NHS|Beleidstoewijzing |Resourcetypen voor het controleren van diagnostische logboeken (Beleid: Het blauwdrukinitiatief voor UK OFFICIAL- of UK NHS) |Lijst met resourcetypen die moeten worden gecontroleerd als de instelling voor diagnostische logboeken niet is ingeschakeld.  Zie [Ondersteunde services, schema's en categorieën voor diagnostische logboeken van Azure](../../../../azure-monitor/essentials/resource-logs-schema.md) voor acceptabele waarden. |
+|\[Preview\]: Log Analytics-agent voor virtuele Linux-machines implementeren |Beleidstoewijzing |Optioneel: Lijst met VM-installatiekopieën met ondersteuning voor het Linux-besturingssysteem die aan het bereik kunnen worden toegevoegd (Beleid: \[Preview\]: Log Analytics-agent voor virtuele Linux-machines implementeren) |(optioneel) Standaardwaarde is _Geen_. Raadpleeg [Een Log Analytics-werkruimte maken in Azure Portal](../../../../azure-monitor/logs/quick-create-workspace.md) voor meer informatie. |
+|\[Preview\]: Log Analytics-agent voor Windows-VM's implementeren |Beleidstoewijzing |Optioneel: Lijst met VM-installatiekopieën met ondersteuning voor het Windows-besturingssysteem die aan het bereik kunnen worden toegevoegd (Beleid: \[Preview\]: Log Analytics-agent voor Windows-VM's implementeren) |(optioneel) Standaardwaarde is _Geen_. Raadpleeg [Een Log Analytics-werkruimte maken in Azure Portal](../../../../azure-monitor/logs/quick-create-workspace.md) voor meer informatie. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

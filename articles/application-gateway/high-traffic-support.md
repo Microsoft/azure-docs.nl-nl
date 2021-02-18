@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: conceptual
 ms.date: 03/24/2020
 ms.author: caya
-ms.openlocfilehash: a5f7569fc46d4678ca0c12299e33caa3c78df849
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: d8940d791920daca6ef0af186a4bb5e17009637b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182917"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586121"
 ---
 # <a name="application-gateway-high-traffic-support"></a>Ondersteuning voor intensief verkeer in Application Gateway
 
@@ -23,7 +23,7 @@ U kunt Application Gateway met Web Application firewall (WAF) gebruiken voor een
 
 Het is belang rijk dat u uw Application Gateway schaalt op basis van uw verkeer en met een bit van een buffer, zodat u voor bereid bent op verkeer pieken of pieken en de invloed die het kan hebben op uw QoS, minimaliseert. De volgende suggesties helpen u bij het instellen van Application Gateway met WAF voor het verwerken van extra verkeer.
 
-Raadpleeg de [documentatie over metrische gegevens](./application-gateway-metrics.md) voor de volledige lijst met metrische gegevens die worden aangeboden door Application Gateway. Zie [metrische gegevens visualiseren](./application-gateway-metrics.md#metrics-visualization) in de Azure Portal en de [documentatie van Azure monitor](../azure-monitor/platform/alerts-metric.md) voor het instellen van waarschuwingen voor metrische gegevens.
+Raadpleeg de [documentatie over metrische gegevens](./application-gateway-metrics.md) voor de volledige lijst met metrische gegevens die worden aangeboden door Application Gateway. Zie [metrische gegevens visualiseren](./application-gateway-metrics.md#metrics-visualization) in de Azure Portal en de [documentatie van Azure monitor](../azure-monitor/alerts/alerts-metric.md) voor het instellen van waarschuwingen voor metrische gegevens.
 
 ## <a name="scaling-for-application-gateway-v1-sku-standardwaf-sku"></a>Schalen voor Application Gateway v1 SKU (Standard/WAF SKU)
 
@@ -65,7 +65,7 @@ Controleer de metriek van de reken eenheid voor de afgelopen maand. Metrische re
 
 ## <a name="monitoring-and-alerting"></a>Bewaking en waarschuwingen
 
-Als u een melding wilt ontvangen over mogelijke afwijkingen of afwijkingen van het gebruik, kunt u waarschuwingen instellen voor bepaalde metrische gegevens. Raadpleeg de [documentatie over metrische gegevens](./application-gateway-metrics.md) voor de volledige lijst met metrische gegevens die worden aangeboden door Application Gateway. Zie [metrische gegevens visualiseren](./application-gateway-metrics.md#metrics-visualization) in de Azure Portal en de [documentatie van Azure monitor](../azure-monitor/platform/alerts-metric.md) voor het instellen van waarschuwingen voor metrische gegevens.
+Als u een melding wilt ontvangen over mogelijke afwijkingen of afwijkingen van het gebruik, kunt u waarschuwingen instellen voor bepaalde metrische gegevens. Raadpleeg de [documentatie over metrische gegevens](./application-gateway-metrics.md) voor de volledige lijst met metrische gegevens die worden aangeboden door Application Gateway. Zie [metrische gegevens visualiseren](./application-gateway-metrics.md#metrics-visualization) in de Azure Portal en de [documentatie van Azure monitor](../azure-monitor/alerts/alerts-metric.md) voor het instellen van waarschuwingen voor metrische gegevens.
 
 ## <a name="alerts-for-application-gateway-v1-sku-standardwaf"></a>Waarschuwingen voor de Application Gateway v1-SKU (Standard/WAF)
 

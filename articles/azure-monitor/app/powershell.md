@@ -3,18 +3,18 @@ title: Azure-toepassing Insights automatiseren met Power shell | Microsoft Docs
 description: Het maken en beheren van resources, waarschuwingen en beschikbaarheids tests in Power shell automatiseren met behulp van een Azure Resource Manager sjabloon.
 ms.topic: conceptual
 ms.date: 05/02/2020
-ms.openlocfilehash: c380880845c162a1e8fb38e699a439ac04fb3b5a
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: c2e3d33be487b6a92cb7038d814e17fcd5a10064
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186266"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589797"
 ---
 #  <a name="manage-application-insights-resources-using-powershell"></a>Application Insights-resources beheren met Power shell
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Dit artikel laat u zien hoe u het maken en bijwerken van [Application Insights](./app-insights-overview.md) resources automatisch kunt automatiseren met behulp van Azure resource management. Als onderdeel van een bouw proces kunt u bijvoorbeeld het volgende doen. Naast de basis Application Insights resource kunt u [Beschik baarheid-webtesten](./monitor-web-app-availability.md)maken, [waarschuwingen](../platform/alerts-log.md)instellen, het [prijs schema](pricing.md)instellen en andere Azure-resources maken.
+Dit artikel laat u zien hoe u het maken en bijwerken van [Application Insights](./app-insights-overview.md) resources automatisch kunt automatiseren met behulp van Azure resource management. Als onderdeel van een bouw proces kunt u bijvoorbeeld het volgende doen. Naast de basis Application Insights resource kunt u [Beschik baarheid-webtesten](./monitor-web-app-availability.md)maken, [waarschuwingen](../alerts/alerts-log.md)instellen, het [prijs schema](pricing.md)instellen en andere Azure-resources maken.
 
 De sleutel voor het maken van deze resources is JSON-sjablonen voor [Azure Resource Manager](../../azure-resource-manager/management/manage-resources-powershell.md). De basis procedure is: de JSON-definities van bestaande resources downloaden; para meters bepaalde waarden, zoals namen, en voer vervolgens de sjabloon uit wanneer u een nieuwe resource wilt maken. U kunt meerdere resources samenbundelen om ze allemaal in één keer te maken, bijvoorbeeld een app-monitor met beschikbaarheids tests, waarschuwingen en opslag voor continue export. Er zijn enkele finesses naar een aantal van de parameterizations, die hier wordt uitgelegd.
 
@@ -404,12 +404,12 @@ Hiermee stelt u de dagelijkse limiet in op 200 GB per dag, configureert u de dag
 
 ## <a name="add-a-metric-alert"></a>Een waarschuwing voor metrische gegevens toevoegen
 
-Als u het maken van metrische waarschuwingen wilt automatiseren, raadpleegt u het artikel over de [sjabloon metrische waarschuwingen](../platform/alerts-metric-create-templates.md#template-for-a-simple-static-threshold-metric-alert)
+Als u het maken van metrische waarschuwingen wilt automatiseren, raadpleegt u het artikel over de [sjabloon metrische waarschuwingen](../alerts/alerts-metric-create-templates.md#template-for-a-simple-static-threshold-metric-alert)
 
 
 ## <a name="add-an-availability-test"></a>Een beschikbaarheids test toevoegen
 
-Als u beschikbaarheids testen wilt automatiseren, raadpleegt u het artikel over de [sjabloon metrische waarschuwingen](../platform/alerts-metric-create-templates.md#template-for-an-availability-test-along-with-a-metric-alert).
+Als u beschikbaarheids testen wilt automatiseren, raadpleegt u het artikel over de [sjabloon metrische waarschuwingen](../alerts/alerts-metric-create-templates.md#template-for-an-availability-test-along-with-a-metric-alert).
 
 ## <a name="add-more-resources"></a>Meer resources toevoegen
 
@@ -469,6 +469,6 @@ Azure moet de resources in strikte volg orde instellen. Als u er zeker van wilt 
 Andere automatiserings artikelen:
 
 * [Maak een Application Insights resource](./create-new-resource.md#creating-a-resource-automatically) snelle methode zonder een sjabloon te gebruiken.
-* [Webtests maken](../samples/resource-manager-alerts-metric.md#availability-test-with-metric-alert)
+* [Webtests maken](../alerts/resource-manager-alerts-metric.md#availability-test-with-metric-alert)
 * [Diagnostische Azure-gegevens verzenden naar Application Insights](powershell-azure-diagnostics.md)
 * [Release aantekeningen maken](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1)

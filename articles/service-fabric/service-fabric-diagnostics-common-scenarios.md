@@ -3,12 +3,12 @@ title: Veelvoorkomende Scenario's voor Azure Service Fabric diagnosticeren
 description: Meer informatie over het oplossen van veelvoorkomende bewakings-en diagnose scenario's in azure Service Fabric-toepassingen.
 ms.topic: article
 ms.date: 02/25/2019
-ms.openlocfilehash: f92bc02082d8bcd9d917f05c93d3da413f772cd0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3083348948ce97ae9d99098896878d79081a15f0
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86257739"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580489"
 ---
 # <a name="diagnose-common-scenarios-with-service-fabric"></a>Veelvoorkomende scenario's met Service Fabric diagnosticeren
 
@@ -133,9 +133,9 @@ Controleer deze koppelingen voor de volledige lijst met prestatie meter items op
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Veelvoorkomende fouten bij het activeren van code pakketten opzoeken](./service-fabric-diagnostics-code-package-errors.md)
-* [Stel waarschuwingen in AI in](../azure-monitor/platform/alerts-log.md) om een melding te ontvangen over wijzigingen in prestaties of gebruik
+* [Stel waarschuwingen in AI in](../azure-monitor/alerts/alerts-log.md) om een melding te ontvangen over wijzigingen in prestaties of gebruik
 * [Slimme detectie in Application Insights](../azure-monitor/app/proactive-diagnostics.md) voert een proactieve analyse uit van de telemetrie die naar AI wordt verzonden om u te waarschuwen over mogelijke prestatie problemen
-* Meer informatie over Azure Monitor-logboeken waarin u wordt [gewaarschuwd](../azure-monitor/platform/alerts-overview.md) voor hulp bij detectie en diagnose.
-* Voor on-premises clusters biedt Azure Monitor-Logboeken een gateway (HTTP forward proxy) die kan worden gebruikt om gegevens te verzenden naar Azure Monitor-Logboeken. Meer informatie over dat bij [het verbinden van computers zonder Internet toegang tot Azure monitor-logboeken met behulp van de log Analytics gateway](../azure-monitor/platform/gateway.md)
-* Krijg vertrouwd met de functies voor [Zoeken in Logboeken en query's](../azure-monitor/log-query/log-query-overview.md) die worden aangeboden als onderdeel van Azure monitor logboeken
+* Meer informatie over Azure Monitor-logboeken waarin u wordt [gewaarschuwd](../azure-monitor/alerts/alerts-overview.md) voor hulp bij detectie en diagnose.
+* Voor on-premises clusters biedt Azure Monitor-Logboeken een gateway (HTTP forward proxy) die kan worden gebruikt om gegevens te verzenden naar Azure Monitor-Logboeken. Meer informatie over dat bij [het verbinden van computers zonder Internet toegang tot Azure monitor-logboeken met behulp van de log Analytics gateway](../azure-monitor/agents/gateway.md)
+* Krijg vertrouwd met de functies voor [Zoeken in Logboeken en query's](../azure-monitor/logs/log-query-overview.md) die worden aangeboden als onderdeel van Azure monitor logboeken
 * Meer gedetailleerd overzicht van Azure Monitor-logboeken en wat het biedt, Lees [Wat is Azure monitor logboeken?](../azure-monitor/overview.md)

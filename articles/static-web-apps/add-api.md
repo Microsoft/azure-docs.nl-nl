@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/29/2020
 ms.author: wachegha
 ms.custom: devx-track-js
-ms.openlocfilehash: 53be2ee9b6b3ab46f081747aec58b9c99fc54f0d
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 8a42ca4cf69515c99bb2e0bd28bb62dfed0e18f8
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349953"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650678"
 ---
 # <a name="add-an-api-to-azure-static-web-apps-preview-with-azure-functions"></a>Een API toevoegen aan de preview-versie van statische Web Apps van Azure met Azure Functions
 
@@ -234,7 +234,7 @@ Voeg vervolgens de app-specifieke instellingen toe.
 1. Klik op de knop **Aanmelden bij GitHub** en verifieer u bij GitHub
 1. Kies de gewenste _organisatie_
 1. Selecteer **mijn-vanille-API** in de vervolg keuzelijst voor de _opslag plaats_
-1. Selecteer **hoofd** in de vervolgkeuzelijst _Vertakking_
+1. Selecteer **Hoofd** in de vervolgkeuzelijst _Vertakking_
 1. Selecteer het Framework van uw keuze voor het maken van de configuratie in de vervolg keuzelijst _Build presets_
 
  > Deze velden worden weer gegeven in de standaard project structuur van het app-type. Wijzig de waarden in aanpassen aan uw app.

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/03/2021
 ms.author: terrylan
-ms.openlocfilehash: eb8332bda2105c3f83c0c1cc28fb7db4b1ca0102
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 79262b85e9591ae4b41e8467abdcbccb3804d4ec
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99549922"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590348"
 ---
 # <a name="azure-threat-protection"></a>Beveiliging van Azure Threat
 
@@ -89,7 +89,7 @@ Naast het bieden van waardevolle services zelf, kunnen Azure Monitor logboeken w
 Azure Monitor logboeken helpen u snel en eenvoudig inzicht te krijgen in de algemene beveiligings postuur van elke omgeving, in de context van IT-bewerkingen, inclusief software-update beoordeling, antimalware-evaluatie en configuratie basislijnen. Beveiligings logboek gegevens zijn gemakkelijk toegankelijk om de beveiligings-en nalevings controle processen te stroom lijnen.
 
 ### <a name="insight-and-analytics"></a>Inzicht en analyse
-In het midden van [Azure monitor logboeken](../../azure-monitor/log-query/log-query-overview.md) bevindt zich de opslag plaats, die wordt gehost door Azure.
+In het midden van [Azure monitor logboeken](../../azure-monitor/logs/log-query-overview.md) bevindt zich de opslag plaats, die wordt gehost door Azure.
 
 ![Inzicht-en analyse diagram](./media/threat-detection/azure-threat-detection-fig4.png)
 
@@ -98,8 +98,8 @@ U kunt gegevens in de opslag plaats verzamelen van verbonden bronnen door gegeve
 Gegevens bronnen en oplossingen maken elk afzonderlijke record typen met hun eigen set eigenschappen, maar u kunt ze wel samen analyseren in query's naar de opslag plaats. U kunt dezelfde hulpprogram ma's en methoden gebruiken om te werken met een verscheidenheid aan gegevens die door verschillende bronnen worden verzameld.
 
 De meeste interactie met Azure Monitor Logboeken is via de Azure Portal, die in een browser wordt uitgevoerd en die u toegang biedt tot configuratie-instellingen en meerdere hulpprogram ma's om verzamelde gegevens te analyseren en er actie op te ondernemen. Vanuit de portal kunt u het volgende gebruiken:
-* [Zoek opdrachten in Logboeken](../../azure-monitor/log-query/log-query-overview.md) waar u query's samen stelt om verzamelde gegevens te analyseren.
-* [Dash boards](../../azure-monitor/learn/tutorial-logs-dashboards.md), die u kunt aanpassen met grafische weer gaven van uw meest waardevolle Zoek opdrachten.
+* [Zoek opdrachten in Logboeken](../../azure-monitor/logs/log-query-overview.md) waar u query's samen stelt om verzamelde gegevens te analyseren.
+* [Dash boards](../../azure-monitor/visualize/tutorial-logs-dashboards.md), die u kunt aanpassen met grafische weer gaven van uw meest waardevolle Zoek opdrachten.
 * [Oplossingen](../../azure-monitor/insights/solutions.md)die aanvullende functionaliteit en analyse hulpprogramma's bieden.
 
 Oplossingen voegen functionaliteit toe aan Azure Monitor Logboeken. Ze worden voornamelijk uitgevoerd in de Cloud en bieden een analyse van de gegevens die worden verzameld in de log Analytics-opslag plaats. Oplossingen kunnen ook nieuwe record typen definiëren die kunnen worden geanalyseerd met Zoek opdrachten in Logboeken of door een aanvullende gebruikers interface te gebruiken die door de oplossing in het dash board van log Analytics wordt geboden.

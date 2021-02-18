@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 06/21/2019
-ms.openlocfilehash: e4a6802829d230cebc460df1409b7655534a5b8e
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 322ef3b8ca30396bd4772850ff651f7545a21257
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92782991"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580755"
 ---
 # <a name="restore-your-azure-sql-database-or-failover-to-a-secondary"></a>Uw Azure SQL Database of failover naar een secundaire herstellen
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -62,7 +62,7 @@ De herstel bewerking is van invloed op de toepassing. Hiervoor moet de SQL-conne
 
 Afhankelijk van de toepassings tolerantie tot uitval tijd en mogelijke bedrijfs aansprakelijkheid kunt u de volgende herstel opties overwegen.
 
-Gebruik de [database herstel bare data base](/previous-versions/azure/reference/dn800985(v=azure.100)) ( *LastAvailableBackupDate* ) ophalen om het meest recente, door de geo gerepliceerde terugzet punt op te halen.
+Gebruik de [database herstel bare data base](/previous-versions/azure/reference/dn800985(v=azure.100)) (*LastAvailableBackupDate*) ophalen om het meest recente, door de geo gerepliceerde terugzet punt op te halen.
 
 ## <a name="wait-for-service-recovery"></a>Wachten op service herstel
 
@@ -109,7 +109,7 @@ U moet ervoor zorgen dat alle aanmeldingen die door uw toepassing worden gebruik
 
 U moet ervoor zorgen dat de instellingen van de bestaande waarschuwings regel worden bijgewerkt om toe te wijzen aan de herstelde data base en de andere server.
 
-Zie [waarschuwings meldingen ontvangen](../../azure-monitor/platform/alerts-overview.md) en [service Health bijhouden](../../service-health/service-notifications.md)voor meer informatie over database waarschuwings regels.
+Zie [waarschuwings meldingen ontvangen](../../azure-monitor/alerts/alerts-overview.md) en [service Health bijhouden](../../service-health/service-notifications.md)voor meer informatie over database waarschuwings regels.
 
 ### <a name="enable-auditing"></a>Controle inschakelen
 

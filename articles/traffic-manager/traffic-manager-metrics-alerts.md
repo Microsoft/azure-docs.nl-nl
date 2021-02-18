@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/11/2018
 ms.author: duau
-ms.openlocfilehash: bd3588c207fe8828744a665539830d81805bd7b3
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: b18e0329aeb4e95e021c3326b6b428c10edc0c6e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98184268"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586415"
 ---
 # <a name="traffic-manager-metrics-and-alerts"></a>Metrische gegevens en waarschuwingen Traffic Manager
 
@@ -26,7 +26,7 @@ Traffic Manager biedt u de taak verdeling op basis van DNS met meerdere routerin
 Traffic Manager biedt de volgende metrische gegevens per profiel dat klanten kunnen gebruiken om het gebruik van Traffic Manager en de status van hun eind punten onder dat profiel te begrijpen.  
 
 ### <a name="queries-by-endpoint-returned"></a>Query's op eind punt geretourneerd
-Gebruik [Deze metrische gegevens](../azure-monitor/platform/metrics-supported.md) om het aantal query's weer te geven dat gedurende een bepaalde periode door een Traffic Manager profiel wordt verwerkt. U kunt ook dezelfde informatie weer geven op het niveau van de granulatie op het eind punt, zodat u begrijpt hoe vaak een eind punt is geretourneerd in de antwoorden op query's van Traffic Manager.
+Gebruik [Deze metrische gegevens](../azure-monitor/essentials/metrics-supported.md) om het aantal query's weer te geven dat gedurende een bepaalde periode door een Traffic Manager profiel wordt verwerkt. U kunt ook dezelfde informatie weer geven op het niveau van de granulatie op het eind punt, zodat u begrijpt hoe vaak een eind punt is geretourneerd in de antwoorden op query's van Traffic Manager.
 
 In het volgende voor beeld toont afbeelding 1 alle antwoorden op query's die het Traffic Manager-profiel retourneert. 
 
@@ -42,7 +42,7 @@ In afbeelding 2 wordt dezelfde informatie weer gegeven, maar deze wordt gesplits
 *Afbeelding 2: de weer gave splitsen met het query volume dat wordt geretourneerd per eind punt*
 
 ## <a name="endpoint-status-by-endpoint"></a>Eindpunt status op eind punt
-Gebruik [Deze metrische gegevens](../azure-monitor/platform/metrics-supported.md#microsoftnetworktrafficmanagerprofiles) om inzicht te krijgen in de status van de eind punten in het profiel. Er zijn twee waarden nodig:
+Gebruik [Deze metrische gegevens](../azure-monitor/essentials/metrics-supported.md#microsoftnetworktrafficmanagerprofiles) om inzicht te krijgen in de status van de eind punten in het profiel. Er zijn twee waarden nodig:
  - Gebruik **1** als het eind punt actief is.
  - Gebruik **0** als het eind punt niet beschikbaar is.
 
@@ -58,11 +58,11 @@ Deze metriek kan worden weer gegeven als een statistische waarde die de status v
 
 *Afbeelding 4: de gesplitste weer gave van metrische gegevens van de eindpunt status*
 
-U kunt deze metrische gegevens gebruiken via de portal van [Azure monitor Services](../azure-monitor/platform/metrics-supported.md), [rest API](/rest/api/monitor/), [Azure cli](/cli/azure/monitor)en [Azure PowerShell](/powershell/module/az.applicationinsights), of via de sectie metrische gegevens van de portal-ervaring van Traffic Manager.
+U kunt deze metrische gegevens gebruiken via de portal van [Azure monitor Services](../azure-monitor/essentials/metrics-supported.md), [rest API](/rest/api/monitor/), [Azure cli](/cli/azure/monitor)en [Azure PowerShell](/powershell/module/az.applicationinsights), of via de sectie metrische gegevens van de portal-ervaring van Traffic Manager.
 
 ## <a name="alerts-on-traffic-manager-metrics"></a>Waarschuwingen over Traffic Manager metrische gegevens
-Naast het verwerken en weer geven van metrische gegevens van Traffic Manager, kunt u met Azure Monitor klanten waarschuwingen configureren en ontvangen die zijn gekoppeld aan deze metrische gegevens. U kunt kiezen aan welke voor waarden in deze metrische gegevens moet worden voldaan om een waarschuwing te vinden, hoe vaak deze voor waarden moeten worden bewaakt en hoe de waarschuwingen naar u moeten worden gezonden. Zie [Azure monitor Alerts documentation](../azure-monitor/platform/alerts-metric.md)(Engelstalig) voor meer informatie.
+Naast het verwerken en weer geven van metrische gegevens van Traffic Manager, kunt u met Azure Monitor klanten waarschuwingen configureren en ontvangen die zijn gekoppeld aan deze metrische gegevens. U kunt kiezen aan welke voor waarden in deze metrische gegevens moet worden voldaan om een waarschuwing te vinden, hoe vaak deze voor waarden moeten worden bewaakt en hoe de waarschuwingen naar u moeten worden gezonden. Zie [Azure monitor Alerts documentation](../azure-monitor/alerts/alerts-metric.md)(Engelstalig) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
-- Meer informatie over [Azure Monitor-service](../azure-monitor/platform/metrics-supported.md)
-- Meer informatie over het [maken van een grafiek met Azure monitor](../azure-monitor/platform/metrics-getting-started.md#create-your-first-metric-chart)
+- Meer informatie over [Azure Monitor-service](../azure-monitor/essentials/metrics-supported.md)
+- Meer informatie over het [maken van een grafiek met Azure monitor](../azure-monitor/essentials/metrics-getting-started.md#create-your-first-metric-chart)

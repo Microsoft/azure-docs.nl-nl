@@ -243,6 +243,8 @@
           href: /powershell/module/az.databox
         - name: .NET-API 's
           href: /dotnet/api/overview/azure/databox/management
+        - name: .NET SDK
+          href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.DataBox/'
         - name: Ingebouwde modules voor Azure Policy
           displayName: 'samples, policies, definitions'
           href: ./policy-reference.md

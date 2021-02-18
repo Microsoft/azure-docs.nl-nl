@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2020
 ms.author: yelevin
-ms.openlocfilehash: f249a95551916311fab51ebef72b55d9a4343c0b
-ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
+ms.openlocfilehash: d35a97b0008a7ce3069185dd557a60221776b0ba
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100530515"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595460"
 ---
 # <a name="collect-data-from-linux-based-sources-using-syslog"></a>Gegevens verzamelen van op Linux gebaseerde bronnen met behulp van syslog
 
@@ -34,7 +34,7 @@ U kunt gebeurtenissen streamen van op Linux gebaseerde machines of toestellen di
 
 **Syslog** is een protocol voor gebeurtenis registratie dat algemeen is voor Linux. Wanneer de **log Analytics-agent voor Linux** op uw virtuele machine of apparaat is geïnstalleerd, wordt de lokale syslog-daemon geconfigureerd voor het door sturen van berichten naar de agent op TCP-poort 25224. De agent verzendt het bericht vervolgens naar uw Log Analytics-werk ruimte via HTTPS, waar het wordt geparseerd in een gebeurtenis logboek vermelding in de syslog-tabel in **Azure Sentinel >-logboeken**.
 
-Zie [syslog-gegevens bronnen in azure monitor](../azure-monitor/platform/data-sources-syslog.md)voor meer informatie.
+Zie [syslog-gegevens bronnen in azure monitor](../azure-monitor/agents/data-sources-syslog.md)voor meer informatie.
 
 ## <a name="configure-syslog-collection"></a>Syslog-verzameling configureren
 
@@ -83,7 +83,7 @@ Zie [syslog-gegevens bronnen in azure monitor](../azure-monitor/platform/data-so
 
 1. Als u de gegevens van het syslog-logboek in **Logboeken** wilt opvragen, typt u `Syslog` in het query venster.
 
-1. U kunt de query parameters die worden beschreven in [functies gebruiken in azure monitor logboek query's](../azure-monitor/log-query/functions.md) gebruiken om uw syslog-berichten te parseren. U kunt de query vervolgens opslaan als een nieuwe Log Analytics functie en deze gebruiken als een nieuw gegevens type.
+1. U kunt de query parameters die worden beschreven in [functies gebruiken in azure monitor logboek query's](../azure-monitor/logs/functions.md) gebruiken om uw syslog-berichten te parseren. U kunt de query vervolgens opslaan als een nieuwe Log Analytics functie en deze gebruiken als een nieuw gegevens type.
 
 > [!NOTE]
 > **Dezelfde computer gebruiken voor het door sturen van zowel normale syslog- *als* CEF-berichten**
@@ -92,7 +92,7 @@ Zie [syslog-gegevens bronnen in azure monitor](../azure-monitor/platform/data-so
 >
 >    Het [verzamelen van gegevens is al ingesteld op basis van uw CEF-bronnen en u](connect-common-event-format.md)hebt de log Analytics agent zo geconfigureerd:
 >
-> 1. Op elke computer die Logboeken in CEF-indeling verzendt, moet u het syslog-configuratie bestand bewerken om de faciliteiten te verwijderen die worden gebruikt om CEF-berichten te verzenden. Op deze manier worden de functies die in CEF worden verzonden, ook niet in syslog verzonden. Zie [syslog op Linux-agent configureren](../azure-monitor/platform/data-sources-syslog.md#configure-syslog-on-linux-agent) voor gedetailleerde instructies over hoe u dit doet.
+> 1. Op elke computer die Logboeken in CEF-indeling verzendt, moet u het syslog-configuratie bestand bewerken om de faciliteiten te verwijderen die worden gebruikt om CEF-berichten te verzenden. Op deze manier worden de functies die in CEF worden verzonden, ook niet in syslog verzonden. Zie [syslog op Linux-agent configureren](../azure-monitor/agents/data-sources-syslog.md#configure-syslog-on-linux-agent) voor gedetailleerde instructies over hoe u dit doet.
 >
 > 1. U moet de volgende opdracht uitvoeren op die computers om de synchronisatie van de agent met de syslog-configuratie in azure Sentinel uit te scha kelen. Dit zorgt ervoor dat de configuratie wijziging die u in de vorige stap hebt aangebracht, niet wordt overschreven.<br>
 > `sudo su omsagent -c 'python /opt/microsoft/omsconfig/Scripts/OMS_MetaConfigHelper.py --disable'`

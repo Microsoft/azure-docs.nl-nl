@@ -9,12 +9,12 @@ ms.author: chpalm
 ms.date: 10/06/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: ed9af178c10d033806b05f73372a0642bb28cab4
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
-ms.translationtype: HT
+ms.openlocfilehash: 24926640de3b50823dfeaf195500f33b49aebc18
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91801639"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652714"
 ---
 # <a name="quickstart-send-sms-messages-in-azure-logic-apps-with-azure-communication-services"></a>Quickstart: Sms-berichten verzenden in Azure Logic Apps met Azure Communication Services
 
@@ -39,6 +39,8 @@ Hoewel deze quickstart gericht is op het gebruiken van de connector om te reager
 
 - Een telefoonnummer waarop u sms-berichten kunt ontvangen, of [een telefoonnummer aanvragen](./get-phone-number.md).
 
+[!INCLUDE [Regional Availability Notice](../../includes/regional-availability-include.md)]
+
 ## <a name="add-an-sms-action"></a>Een sms-actie toevoegen
 
 Om de actie **Sms verzenden** toe te voegen als een nieuwe stap in uw werkstroom met behulp van de Azure Communication Services SMS-connector, volgt u deze stappen in de [Azure-portal](https://portal.azure.com) terwijl de werkstroom van uw logische app geopend is in Logic App Designer:
@@ -47,7 +49,7 @@ Om de actie **Sms verzenden** toe te voegen als een nieuwe stap in uw werkstroom
 
 1. Voer in het zoekvak **Kies een bewerking** `Azure Communication Services` in. Selecteer **Sms verzenden** in de lijst met acties.
 
-   :::image type="content" source="./media/logic-app/select-send-sms-action.png" alt-text="Schermopname van de Azure-portal waarin de Logic App Designer is geopend met een voorbeeld van een logische app die de actie Sms verzenden gebruikt voor de Azure Communication Services-connector.":::
+   :::image type="content" source="./media/logic-app/select-send-sms-action.png" alt-text="Schermopname van de Logic app Designer en de Azure Communication Services-connector met de actie Sms verzenden geselecteerd.":::
 
 1. Maak nu een verbinding met uw Communication Services-resource.
 
@@ -57,7 +59,7 @@ Om de actie **Sms verzenden** toe te voegen als een nieuwe stap in uw werkstroom
 
    1. Selecteer **Maken**.
 
-   :::image type="content" source="./media/logic-app/send-sms-configuration.png" alt-text="Schermopname van de Azure-portal waarin de Logic App Designer is geopend met een voorbeeld van een logische app die de actie Sms verzenden gebruikt voor de Azure Communication Services-connector.":::
+   :::image type="content" source="./media/logic-app/send-sms-configuration.png" alt-text="Schermopname van de configuratie van de actie Sms verzenden met voorbeeldgegevens.":::
 
 1. Geef bij de actie **Sms verzenden** de volgende gegevens op: 
 
@@ -67,7 +69,7 @@ Om de actie **Sms verzenden** toe te voegen als een nieuwe stap in uw werkstroom
 
    Hier is een **Sms verzenden**-actie met voorbeeldgegevens:
 
-   :::image type="content" source="./media/logic-app/send-sms-action.png" alt-text="Schermopname van de Azure-portal waarin de Logic App Designer is geopend met een voorbeeld van een logische app die de actie Sms verzenden gebruikt voor de Azure Communication Services-connector.":::
+   :::image type="content" source="./media/logic-app/send-sms-action.png" alt-text="Schermopname van de actie Sms verzenden met voorbeeldgegevens.":::
 
 1. Selecteer **Opslaan** op de werkbalk van de ontwerper wanneer u klaar bent.
 
@@ -93,5 +95,5 @@ In deze quickstart hebt u geleerd hoe u sms-berichten kunt verzenden met behulp 
 Raadpleeg de volgende artikelen voor meer informatie over sms in Azure Communication Services:
 
 - [Sms-concepten](../../concepts/telephony-sms/concepts.md)
-- [Uw telefoon- en sms-oplossing plannen](../../concepts/telephony-sms/plan-solution.md)
+- [Telefoon nummer typen](../../concepts/telephony-sms/plan-solution.md)
 - [SMS SDK](../../concepts/telephony-sms/sdk-features.md)

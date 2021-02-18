@@ -3,16 +3,16 @@ title: Migreren van een Azure Red Hat OpenShift 3.11 naar Azure Red Hat OpenShif
 description: Migreren van een Azure Red Hat OpenShift 3.11 naar Azure Red Hat OpenShift 4
 author: sakthi-vetrivel
 ms.author: suvetriv
-ms.service: container-service
+ms.service: azure-redhat-openshift
 ms.topic: conceptual
 ms.date: 08/13/2020
 keywords: migratie, Aro, open Shift, Red Hat
-ms.openlocfilehash: f9bfc924581d5dbe33c7c2683a0f6083cb2abc23
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: 371672de83a6d745d7b367f8327a64e11059923e
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99071032"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653275"
 ---
 # <a name="migrate-from-azure-red-hat-openshift-311-to-azure-red-hat-openshift-4"></a>Migreren van Azure Red Hat open Shift 3,11 naar Azure Red Hat open Shift 4
 
@@ -100,13 +100,13 @@ Zie voor meer informatie over het configureren van deze opslag typen [permanente
 
 Azure Red Hat open Shift 4 kan installatie kopieën bouwen van uw bron code, deze implementeren en hun levens cyclus beheren. Om dit mogelijk te maken, biedt Azure Red Hat open Shift vier een [intern, geïntegreerd REGI ster voor container installatie kopieën](https://docs.openshift.com/container-platform/4.6/registry/registry-options.html) dat kan worden geïmplementeerd in uw Azure Red Hat open Shift-omgeving om installatie kopieën lokaal te beheren.
 
-Als u externe registers gebruikt, zoals [Azure container Registry](../container-registry/index.yml), [Red Hat kade](ttps://docs.openshift.com/container-platform/4.6/registry/registry-options.html#registry-quay-overview_registry-options)-registers of een rood Hat-bestand met [verificatie mogelijkheden](https://docs.openshift.com/container-platform/4.6/registry/registry-options.html#registry-authentication-enabled-registry-overview_registry-options), voert u de stappen uit om referenties aan het cluster toe te voegen zodat het cluster toegang heeft tot de opslag plaatsen.
+Als u externe registers gebruikt, zoals [Azure container Registry](../container-registry/index.yml), [Red Hat kade](https://docs.openshift.com/container-platform/4.6/registry/registry-options.html#registry-quay-overview_registry-options)-registers of een rood Hat-bestand met [verificatie mogelijkheden](https://docs.openshift.com/container-platform/4.6/registry/registry-options.html#registry-authentication-enabled-registry-overview_registry-options), voert u de stappen uit om referenties aan het cluster toe te voegen zodat het cluster toegang heeft tot de opslag plaatsen.
 
 ### <a name="monitoring"></a>Bewaking
 
 Azure Red Hat open Shift bevat een vooraf geconfigureerde, vooraf geïnstalleerde en automatisch bijgewerkte bewakings stack die is gebaseerd op het open-source project Prometheus en het bredere milieu systeem. Het biedt bewaking van cluster onderdelen en bevat een set waarschuwingen om de Cluster beheerder onmiddellijk op de hoogte te stellen van de problemen die zich voordoen en een set Grafana-Dash boards. De cluster bewakings stack wordt alleen ondersteund voor het bewaken van Azure Red Hat open Shift-clusters. Zie [cluster monitoring voor Azure Red Hat open Shift](https://docs.openshift.com/container-platform/4.6/monitoring/understanding-the-monitoring-stack.html)voor meer informatie.
 
-Als u Azure Monitor hebt gebruikt [voor containers voor Azure Red Hat open shift 3,11](../azure-monitor/insights/container-insights-azure-redhat-setup.md), kunt u ook Azure monitor inschakelen voor containers voor [Azure Red Hat open Shift 4-clusters](../azure-monitor/insights/container-insights-azure-redhat4-setup.md) en door gaan met het gebruik van dezelfde log Analytics-werk ruimte.
+Als u Azure Monitor hebt gebruikt [voor containers voor Azure Red Hat open shift 3,11](../azure-monitor/containers/container-insights-azure-redhat-setup.md), kunt u ook Azure monitor inschakelen voor containers voor [Azure Red Hat open Shift 4-clusters](../azure-monitor/containers/container-insights-azure-redhat4-setup.md) en door gaan met het gebruik van dezelfde log Analytics-werk ruimte.
 
 ## <a name="move-your-dns-or-load-balancer-configuration-to-the-new-cluster"></a>Uw DNS-of Load Balancer-configuratie verplaatsen naar het nieuwe cluster
 

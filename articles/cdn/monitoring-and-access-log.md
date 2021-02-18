@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 11/23/2020
 ms.author: yuajia
-ms.openlocfilehash: 43f53d1098e08a0f913e3baec2c6aaf3d65054d0
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 8a4b48586c564ee5d14a0768156b0477e2935ccf
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501464"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575442"
 ---
 # <a name="real-time-monitoring-metrics-and-access-logs-for-azure-cdn"></a>Real-time bewaking, metrische gegevens en logboeken voor toegang tot Azure CDN
 Met Azure CDN van micro soft kunt u bronnen bewaken op de volgende manieren om problemen op te lossen, op te sporen en op te sporen. 
@@ -215,18 +215,18 @@ De metrische gegevens worden weer gegeven in grafieken en toegankelijk via Power
 
 Azure CDN van micro soft-metingen en verzendt de metrische gegevens over 60-seconden intervallen. De metrische gegevens kunnen Maxi maal drie minuten in de portal worden weer gegeven. 
 
-Zie [Azure monitor metrische](../azure-monitor/platform/data-platform-metrics.md)gegevens voor meer informatie.
+Zie [Azure monitor metrische](../azure-monitor/essentials/data-platform-metrics.md)gegevens voor meer informatie.
 
 **Metrische gegevens die door Azure CDN van micro soft worden ondersteund**
 
-| Metrische gegevens  | Beschrijving | Afmetingen |
+| Metrische gegevens  | Description | Dimensies |
 | ------------- | ------------- | ------------- |
 | Percentage treffers * | Het percentage van de uitvoer van de CDN-cache dat wordt berekend op basis van het totale aantal uitgangen. | Eindpunt |
 | RequestCount | Het aantal client aanvragen dat door CDN wordt geleverd. | Eindpunt </br> Land van de client. </br> Client regio. </br> HTTP-status. </br> HTTP-status groep. |
 | ResponseSize | Het aantal bytes dat is verzonden als antwoorden van CDN Edge naar clients. |Eindpunt </br> Land van de client. </br> Client regio. </br> HTTP-status. </br> HTTP-status groep. |
 | TotalLatency | De totale tijd van de client aanvraag die door CDN is ontvangen **totdat de laatste reactie byte van CDN naar de client is verzonden**. |Eindpunt </br> Land van de client. </br> Client regio. </br> HTTP-status. </br> HTTP-status groep. |
 
-**_Aantal bytes treffers = (uitgang van rand-uitgang van oorsprong)/egress vanaf rand_*
+***Aantal bytes treffers = (uitgang van rand-uitgang van oorsprong)/egress vanaf rand**
 
 Scenario's die zijn uitgesloten voor de berekening van de verhouding treffers in bytes:
 
@@ -265,7 +265,7 @@ Selecteer **nieuwe waarschuwings regel** voor metrische gegevens die worden weer
 
 :::image type="content" source="./media/cdn-raw-logs/raw-logs-08.png" alt-text="Waarschuwingen configureren voor het CDN-eind punt." border="true":::
 
-Er wordt een waarschuwing berekend op basis van Azure Monitor. Zie [Azure monitor-waarschuwingen](../azure-monitor/platform/alerts-overview.md)voor meer informatie over waarschuwingen.
+Er wordt een waarschuwing berekend op basis van Azure Monitor. Zie [Azure monitor-waarschuwingen](../azure-monitor/alerts/alerts-overview.md)voor meer informatie over waarschuwingen.
 
 ### <a name="additional-metrics"></a>Aanvullende metrische gegevens
 U kunt extra metrische gegevens inschakelen met behulp van Azure Log Analytics en onbewerkte logboeken voor extra kosten.
@@ -299,4 +299,4 @@ Zie voor meer informatie over Azure CDN en de andere Azure-Services die in dit a
 
 * Meer informatie over [Azure monitor](../azure-monitor/overview.md).
 
-* [Log Analytics configureren in azure monitor](../azure-monitor/log-query/log-analytics-tutorial.md).
+* [Log Analytics configureren in azure monitor](../azure-monitor/logs/log-analytics-tutorial.md).

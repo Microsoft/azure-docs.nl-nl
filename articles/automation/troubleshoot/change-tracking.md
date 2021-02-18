@@ -3,18 +3,63 @@ title: Problemen met de Azure Automation-Wijzigingen bijhouden en-inventaris opl
 description: In dit artikel leest u hoe u problemen oplost en oplost met de functie voor Wijzigingen bijhouden en inventaris van Azure Automation.
 services: automation
 ms.subservice: change-inventory-management
-ms.date: 01/31/2019
+ms.date: 02/15/2021
 ms.topic: troubleshooting
-ms.openlocfilehash: 516f1a4e5e7c677b17a2941ee3c300db44d49a3b
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 9fe53a343a9f6675519b60d37d077886adaf8a9d
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896542"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100651154"
 ---
 # <a name="troubleshoot-change-tracking-and-inventory-issues"></a>Problemen met Wijzigingen bijhouden en inventaris oplossen
 
 In dit artikel wordt beschreven hoe u problemen met Azure Automation Wijzigingen bijhouden en voorraad problemen oplost en oplost. Zie [overzicht van wijzigingen bijhouden en inventaris](../change-tracking/overview.md)voor algemene informatie over wijzigingen bijhouden en inventarisatie.
+
+## <a name="general-errors"></a>Algemene fouten
+
+### <a name="scenario-machine-is-already-registered-to-a-different-account"></a><a name="machine-already-registered"></a>Scenario: de computer is al geregistreerd voor een ander account
+
+### <a name="issue"></a>Probleem
+
+Het volgende fout bericht wordt weer gegeven:
+
+```error
+Unable to Register Machine for Change Tracking, Registration Failed with Exception System.InvalidOperationException: {"Message":"Machine is already registered to a different account."}
+```
+
+### <a name="cause"></a>Oorzaak
+
+De machine is al geïmplementeerd in een andere werk ruimte voor Wijzigingen bijhouden.
+
+### <a name="resolution"></a>Oplossing
+
+1. Zorg ervoor dat uw computer rapporteert aan de juiste werk ruimte. Zie [agent connectiviteit controleren op Azure monitor](../../azure-monitor/platform/agent-windows.md#verify-agent-connectivity-to-azure-monitor)voor meer informatie over hoe u dit kunt controleren. Zorg er ook voor dat deze werk ruimte is gekoppeld aan uw Azure Automation-account. Als u wilt bevestigen, gaat u naar uw Automation-account en selecteert u **gekoppelde werk ruimte** onder **gerelateerde resources**.
+
+1. Zorg ervoor dat de computers worden weer gegeven in de Log Analytics werkruimte die aan uw Automation-account is gekoppeld. Voer de volgende query uit in de werk ruimte Log Analytics.
+
+   ```kusto
+   Heartbeat
+   | summarize by Computer, Solutions
+   ```
+
+   Als uw computer niet in de query resultaten wordt weer geven, is deze niet recent ingecheckt. Er is waarschijnlijk een probleem met de lokale configuratie. U moet de Log Analytics-agent opnieuw installeren.
+
+   Als uw computer wordt weer gegeven in de query resultaten, controleert u onder de eigenschap Solutions die **change tracking** wordt weer gegeven. Hiermee wordt gecontroleerd of het is geregistreerd bij Wijzigingen bijhouden en inventarisatie. Als dat niet het geval is, controleert u of er problemen zijn met de scope configuratie. De scope configuratie bepaalt welke machines zijn geconfigureerd voor Wijzigingen bijhouden en inventarisatie. Als u de scope configuratie voor de doel computer wilt configureren, raadpleegt u [Wijzigingen bijhouden en inventaris inschakelen vanuit een Automation-account](../change-tracking/enable-from-automation-account.md).
+
+   Voer deze query uit in uw werk ruimte.
+
+   ```kusto
+   Operation
+   | where OperationCategory == 'Data Collection Status'
+   | sort by TimeGenerated desc
+   ```
+
+1. Als er een ```Data collection stopped due to daily limit of free data reached. Ingestion status = OverQuota``` resultaat wordt weer gegeven, is de in uw werk ruimte gedefinieerde quota bereikt, waardoor er geen gegevens meer kunnen worden opgeslagen. Ga in uw werk ruimte naar **verbruik en geschatte kosten**. Selecteer een nieuwe **prijs categorie** waarmee u meer gegevens kunt gebruiken, of klik op **dagelijks Cap** en verwijder het kapje.
+
+:::image type="content" source="./media/change-tracking/change-tracking-usage.png" alt-text="Gebruik en geschatte kosten." lightbox="./media/change-tracking/change-tracking-usage.png":::
+
+Als uw probleem nog steeds niet is opgelost, volgt u de stappen in [een Windows-Hybrid Runbook worker implementeren](../automation-windows-hrw-install.md) om de Hybrid worker voor Windows opnieuw te installeren. Volg voor Linux de stappen in  [een Linux-Hybrid Runbook worker implementeren](../automation-linux-hrw-install.md).
 
 ## <a name="windows"></a>Windows
 
@@ -96,11 +141,11 @@ Heartbeat
 | summarize by Computer, Solutions
 ```
 
-Als uw machine niet in query resultaten wordt weer geven, is deze niet recent ingecheckt. Er is waarschijnlijk een probleem met de lokale configuratie en u moet de agent opnieuw installeren. Zie [logboek gegevens verzamelen met de log Analytics-agent](../../azure-monitor/platform/log-analytics-agent.md)voor meer informatie over de installatie en configuratie.
+Als uw machine niet in query resultaten wordt weer geven, is deze niet recent ingecheckt. Er is waarschijnlijk een probleem met de lokale configuratie en u moet de agent opnieuw installeren. Zie [logboek gegevens verzamelen met de log Analytics-agent](../../azure-monitor/agents/log-analytics-agent.md)voor meer informatie over de installatie en configuratie.
 
 Als uw computer in de query resultaten wordt weer gegeven, controleert u de scope configuratie. Zie [oplossingen voor doel bewaking in azure monitor](../../azure-monitor/insights/solution-targeting.md).
 
-Zie [probleem: u ziet geen Linux-gegevens](../../azure-monitor/platform/agent-linux-troubleshoot.md#issue-you-are-not-seeing-any-linux-data)voor meer probleem oplossing van dit probleem.
+Zie [probleem: u ziet geen Linux-gegevens](../../azure-monitor/agents/agent-linux-troubleshoot.md#issue-you-are-not-seeing-any-linux-data)voor meer probleem oplossing van dit probleem.
 
 ##### <a name="log-analytics-agent-for-linux-not-configured-correctly"></a>Log Analytics-agent voor Linux is niet juist geconfigureerd
 

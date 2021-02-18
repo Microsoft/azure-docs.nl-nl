@@ -8,18 +8,18 @@ ms.date: 12/06/2019
 ms.topic: how-to
 ms.service: iot-central
 manager: philmea
-ms.openlocfilehash: b447f44d0c95693e560fd5bbfbff8c8daeec964e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 84a723023bf8614b837ba9783bae987403921c06
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80157684"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585480"
 ---
 # <a name="group-multiple-actions-to-run-from-one-or-more-rules"></a>Meerdere acties groeperen om uit te voeren vanuit een of meer regels
 
 *Dit artikel is van toepassing op bouwers en beheerders.*
 
-In azure IoT Central maakt u regels om acties uit te voeren wanneer aan een voor waarde wordt voldaan. Regels zijn gebaseerd op telemetrie van apparaten of gebeurtenissen. U kunt bijvoorbeeld een operator waarschuwen wanneer de Tempe ratuur van een apparaat een drempel waarde overschrijdt. In dit artikel wordt beschreven hoe u [Azure monitor](../../azure-monitor/overview.md) *actie groepen* kunt gebruiken om meerdere acties aan een IOT Central regel te koppelen. U kunt een actie groep koppelen aan meerdere regels. Een [actie groep](../../azure-monitor/platform/action-groups.md) is een verzameling voor keuren voor meldingen die zijn gedefinieerd door de eigenaar van een Azure-abonnement.
+In azure IoT Central maakt u regels om acties uit te voeren wanneer aan een voor waarde wordt voldaan. Regels zijn gebaseerd op telemetrie van apparaten of gebeurtenissen. U kunt bijvoorbeeld een operator waarschuwen wanneer de Tempe ratuur van een apparaat een drempel waarde overschrijdt. In dit artikel wordt beschreven hoe u [Azure monitor](../../azure-monitor/overview.md) *actie groepen* kunt gebruiken om meerdere acties aan een IOT Central regel te koppelen. U kunt een actie groep koppelen aan meerdere regels. Een [actie groep](../../azure-monitor/alerts/action-groups.md) is een verzameling voor keuren voor meldingen die zijn gedefinieerd door de eigenaar van een Azure-abonnement.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -28,7 +28,7 @@ In azure IoT Central maakt u regels om acties uit te voeren wanneer aan een voor
 
 ## <a name="create-action-groups"></a>Actiegroepen maken
 
-U kunt [actie groepen maken en beheren in de Azure Portal](../../azure-monitor/platform/action-groups.md) of met een [Azure Resource Manager sjabloon](../../azure-monitor/platform/action-groups-create-resource-manager-template.md).
+U kunt [actie groepen maken en beheren in de Azure Portal](../../azure-monitor/alerts/action-groups.md) of met een [Azure Resource Manager sjabloon](../../azure-monitor/alerts/action-groups-create-resource-manager-template.md).
 
 Een actie groep kan:
 

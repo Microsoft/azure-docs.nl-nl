@@ -7,14 +7,14 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: managed-hsm
 ms.topic: conceptual
-ms.date: 09/15/2020
+ms.date: 02/17/2021
 ms.author: ambapat
-ms.openlocfilehash: 816941fe0ec3a81c41da56acedcedf2de7febe74
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 0c0a0c5f62f92aaf195e207dfd505ffb017d924e
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445231"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653897"
 ---
 # <a name="managed-hsm-access-control"></a>Toegangsbeheer van beheerde HSM
 
@@ -60,10 +60,10 @@ Beveiligings-principals hebben toegang tot de abonnementen via eind punten. De t
 
 De volgende tabel bevat de eind punten voor de beheer-en gegevens abonnementen.
 
-| Toegangs &nbsp; vlak | Eindpunten voor toegang | Bewerkingen | Mechanisme voor toegangsbeheer |
+| Toegangs &nbsp; vlak | Eindpunten voor toegang | Operations | Mechanisme voor toegangsbeheer |
 | --- | --- | --- | --- |
 | Beheerlaag | **Wereldwijd:**<br> management.azure.com:443<br> | Beheerde Hsm's maken, lezen, bijwerken, verwijderen en verplaatsen<br>Beheerde HSM-Tags instellen | Azure RBAC |
-| Gegevenslaag | **Wereldwijd:**<br> &lt;HSM-name &gt; . Vault.Azure.net:443<br> | **Sleutels** : ontsleutelen, versleutelen,<br> uitpakken, terugloop, controleren, ondertekenen, ophalen, weer geven, bijwerken, maken, importeren, verwijderen, back-up, herstellen, opschonen<br/><br/> Rol van gegevenslaag **-beheer (beheerde HSM Local RBAC)**_: roldefinities weer geven, rollen toewijzen, roltoewijzingen verwijderen, aangepaste rollen <br/> <br/> definiëren_ * back-ups maken/herstellen **: back-up maken, herstellen, <br/> <br/> status back-** up maken/herstellen van beveiligings domein * *: beveiligings domein downloaden en uploaden | Beheerde HSM lokale RBAC |
+| Gegevenslaag | **Wereldwijd:**<br> &lt;HSM-name &gt; . managedhsm.Azure.net:443<br> | **Sleutels**: ontsleutelen, versleutelen,<br> uitpakken, terugloop, controleren, ondertekenen, ophalen, weer geven, bijwerken, maken, importeren, verwijderen, back-up, herstellen, opschonen<br/><br/> Rol van gegevenslaag **-beheer (beheerde HSM Local RBAC)**_: roldefinities weer geven, rollen toewijzen, roltoewijzingen verwijderen, aangepaste rollen <br/> <br/> definiëren_* back-ups maken/herstellen **: back-up maken, herstellen, <br/> <br/> status back-** up maken/herstellen van beveiligings domein * *: beveiligings domein downloaden en uploaden | Beheerde HSM lokale RBAC |
 |||||
 ## <a name="management-plane-and-azure-rbac"></a>Beheer vlak en Azure RBAC
 
@@ -71,10 +71,10 @@ In het beheer vlak gebruikt u Azure RBAC om de bewerkingen te autoriseren die ee
 
 U maakt een sleutel kluis in een resource groep en beheert de toegang met behulp van Azure Active Directory. U verleent gebruikers of groepen de mogelijkheid om de sleutel kluizen in een resource groep te beheren. U verleent de toegang op een specifiek Scope niveau door de juiste Azure-rollen toe te wijzen. Als u toegang wilt verlenen aan een gebruiker om sleutel kluizen te beheren, wijst u een vooraf gedefinieerde `key vault Contributor` rol toe aan de gebruiker op een specifiek bereik. De volgende Scope niveaus kunnen worden toegewezen aan een Azure-rol:
 
-- **Beheer groep** : een Azure-rol die is toegewezen op het abonnements niveau, is van toepassing op alle abonnementen in die beheer groep.
-- **Abonnement** : een Azure-rol die is toegewezen op abonnements niveau, is van toepassing op alle resource groepen en resources in dat abonnement.
-- **Resource groep** : een Azure-rol die is toegewezen op het niveau van de resource groep, is van toepassing op alle resources in die resource groep.
-- **Specifieke resource** : een Azure-rol die is toegewezen voor een specifieke resource, is van toepassing op die resource. In dit geval is de resource een specifieke sleutel kluis.
+- **Beheer groep**: een Azure-rol die is toegewezen op het abonnements niveau, is van toepassing op alle abonnementen in die beheer groep.
+- **Abonnement**: een Azure-rol die is toegewezen op abonnements niveau, is van toepassing op alle resource groepen en resources in dat abonnement.
+- **Resource groep**: een Azure-rol die is toegewezen op het niveau van de resource groep, is van toepassing op alle resources in die resource groep.
+- **Specifieke resource**: een Azure-rol die is toegewezen voor een specifieke resource, is van toepassing op die resource. In dit geval is de resource een specifieke sleutel kluis.
 
 Er zijn verschillende vooraf gedefinieerde rollen. Als een vooraf gedefinieerde rol niet aan uw behoeften voldoet, kunt u uw eigen rol definiëren. Zie [Azure RBAC: ingebouwde rollen](../../role-based-access-control/built-in-roles.md)voor meer informatie.
 
@@ -82,8 +82,8 @@ Er zijn verschillende vooraf gedefinieerde rollen. Als een vooraf gedefinieerde 
 
 U verleent een beveiligingsprincipal toegang om specifieke sleutel bewerkingen uit te voeren door een rol toe te wijzen. Voor elke roltoewijzing moet u een rol en bereik opgeven waarop de toewijzing van toepassing is. Voor beheerde HSM Local RBAC twee scopes zijn beschikbaar.
 
-- **"/" of "/Keys"** : het bereik van de HSM-niveau. Beveiligings-principals waaraan een rol in dit bereik is toegewezen, kunnen de bewerkingen uitvoeren die in de rol zijn gedefinieerd voor alle objecten (sleutels) in de beheerde HSM.
-- **"/Keys/ &lt; key-name &gt; "** : bereik op sleutel niveau. Beveiligings-principals waaraan een rol in dit bereik is toegewezen, kunnen de bewerkingen uitvoeren die in deze rol zijn gedefinieerd voor alle versies van de opgegeven sleutel.
+- **"/" of "/Keys"**: het bereik van de HSM-niveau. Beveiligings-principals waaraan een rol in dit bereik is toegewezen, kunnen de bewerkingen uitvoeren die in de rol zijn gedefinieerd voor alle objecten (sleutels) in de beheerde HSM.
+- **"/Keys/ &lt; key-name &gt; "**: bereik op sleutel niveau. Beveiligings-principals waaraan een rol in dit bereik is toegewezen, kunnen de bewerkingen uitvoeren die in deze rol zijn gedefinieerd voor alle versies van de opgegeven sleutel.
 
 ## <a name="next-steps"></a>Volgende stappen
 

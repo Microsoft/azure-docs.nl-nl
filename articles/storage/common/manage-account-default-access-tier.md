@@ -8,16 +8,16 @@ ms.service: storage
 ms.subservice: common
 ms.topic: how-to
 ms.reviewer: klaasl
-ms.openlocfilehash: 10d4e99d7bbebb6bc7d7def308e233507ed99ce9
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: 637f748882b3ac84127c8b71761a06629e1e0957
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98166481"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653829"
 ---
 # <a name="manage-the-default-access-tier-of-an-azure-storage-account"></a>De standaardlaag voor toegang tot een Azure Storage account beheren
 
-Elk Azure Storage-account heeft een standaardlaag voor toegang, hetzij heet, koud of archief. U wijst de Access-laag toe wanneer u een opslag account maakt. De standaardlaag voor toegang is hot.
+Elk Azure Storage account heeft een standaardaccess-laag, hetzij Hot of cool. U wijst de Access-laag toe wanneer u een opslag account maakt. De standaardlaag voor toegang is hot.
 
 U kunt de standaardlaag voor het account wijzigen door het kenmerk **toegangs niveau** in te stellen voor het opslag account. Het wijzigen van de servicelaag is van toepassing op alle objecten die zijn opgeslagen in het account waarvoor geen expliciete laag is ingesteld. Het in-of uitschakelen van de laag van dynamisch naar koeling-schrijf bewerkingen (per 10.000) voor alle blobs zonder een set-laag in GPv2-accounts en het omschakelen van koud naar warm keer de kosten voor zowel lees bewerkingen (per 10.000) als voor het ophalen van gegevens (per GB) voor alle blobs in Blob Storage-en GPv2-accounts.
 

@@ -1,14 +1,14 @@
 ---
 title: Azure Service Bus berichten-wacht rijen, onderwerpen en abonnementen
 description: Dit artikel bevat een overzicht van Azure Service Bus Messa ging-entiteiten (wacht rijen, onderwerpen en abonnementen).
-ms.topic: article
-ms.date: 11/04/2020
-ms.openlocfilehash: 54b6a1fd2d4e8e5ef5bb6522374646257213e4b4
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.topic: conceptual
+ms.date: 02/16/2021
+ms.openlocfilehash: f647164ba18cb83e35b5bd174f09e07a4a9f9aa7
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95791610"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652816"
 ---
 # <a name="service-bus-queues-topics-and-subscriptions"></a>Service Bus-wachtrijen, -onderwerpen en -abonnementen
 Azure Service Bus biedt ondersteuning voor een set Cloud, op berichten gebaseerde middleware-technologieën, waaronder betrouw bare Message Queuing en duurzame berichten over publiceren/abonneren. Deze Brokered Messaging mogelijkheden kunnen worden beschouwd als losgekoppelde berichten functies die ondersteuning bieden voor publiceren-abonneren, tijdelijke loskoppelingen en taakverdelings scenario's met behulp van de werk belasting van Service Bus berichten. Ontkoppelde communicatie heeft veel voor delen. Zo kunnen clients en servers zo nodig verbinding maken en hun bewerkingen op asynchrone wijze uitvoeren.
@@ -26,19 +26,16 @@ Door gebruik te maken van wacht rijen tussen bericht producenten en consumenten,
 U kunt wacht rijen maken met behulp van de sjablonen [Azure Portal](service-bus-quickstart-portal.md), [Power shell](service-bus-quickstart-powershell.md), [cli](service-bus-quickstart-cli.md)en [Resource Manager](service-bus-resource-manager-namespace-queue.md). Verzend en ontvang vervolgens berichten met behulp van clients die zijn geschreven in [C#](service-bus-dotnet-get-started-with-queues.md), [Java](service-bus-java-how-to-use-queues.md), [python](service-bus-python-how-to-use-queues.md), [Java script](service-bus-nodejs-how-to-use-queues.md), [php](service-bus-php-how-to-use-queues.md)en [ruby](service-bus-ruby-how-to-use-queues.md). 
 
 ### <a name="receive-modes"></a>Ontvangst modi
-U kunt twee verschillende modi opgeven waarin Service Bus berichten ontvangt: **ReceiveAndDelete** of **PeekLock**. Als Service Bus de aanvraag van de consument ontvangt in de [ReceiveAndDelete](/dotnet/api/microsoft.azure.servicebus.receivemode) -modus, wordt het bericht gemarkeerd als verbruikt en wordt het naar de consumenten toepassing geretourneerd. Deze modus is het eenvoudigste model. Het werkt het beste voor scenario's waarin de toepassing een bericht niet verwerkt als er een fout optreedt. Als u meer inzicht wilt hebben in dit scenario, kunt u het beste een scenario waarin de consumer de ontvangst aanvraag uitgeeft, afhandelen voordat deze wordt verwerkt. Als Service Bus het bericht markeert als verbruikt, begint de toepassing met het gebruiken van berichten bij het opnieuw opstarten. Het bericht dat het heeft geconsumeerd voordat het vastloopt, wordt genegeerd.
+U kunt twee verschillende modi opgeven waarin Service Bus berichten ontvangt.
 
-In de [PeekLock](/dotnet/api/microsoft.azure.servicebus.receivemode) -modus wordt de receive-bewerking twee fasen, waardoor het mogelijk is om toepassingen te ondersteunen die geen ontbrekende berichten kunnen verdragen. Wanneer Service Bus de aanvraag ontvangt, worden de volgende bewerkingen uitgevoerd:
+- **Ontvangen en verwijderen**. In deze modus, wanneer Service Bus de aanvraag van de gebruiker ontvangt, wordt het bericht gemarkeerd als verbruikt en wordt het naar de consumenten toepassing geretourneerd. Deze modus is het eenvoudigste model. Het werkt het beste voor scenario's waarin de toepassing een bericht niet verwerkt als er een fout optreedt. Als u meer inzicht wilt hebben in dit scenario, kunt u het beste een scenario waarin de consumer de ontvangst aanvraag uitgeeft, afhandelen voordat deze wordt verwerkt. Als Service Bus het bericht markeert als verbruikt, begint de toepassing met het gebruiken van berichten bij het opnieuw opstarten. Het bericht dat het heeft geconsumeerd voordat het vastloopt, wordt genegeerd.
+- **Vergren deling bekijken**. In deze modus wordt de receive-bewerking twee fasen, waardoor het mogelijk is om toepassingen te ondersteunen die geen ontbrekende berichten kunnen verdragen. 
+    1. Zoekt het volgende bericht dat moet worden gebruikt, **vergrendelt** het om te voor komen dat andere gebruikers het ontvangen en retour neren het bericht vervolgens naar de toepassing. 
+    1. Nadat de toepassing klaar is met de verwerking van het bericht, vraagt het de Service Bus-service om de tweede fase van het ontvangst proces te volt ooien. Vervolgens **markeert de service het bericht als verbruikt**. 
 
-1. Hiermee wordt het volgende bericht gezocht dat moet worden gebruikt.
-1. Hiermee vergrendelt u het om te voor komen dat andere gebruikers het ontvangen.
-1. Ga vervolgens terug naar de toepassing. 
+        Als de toepassing het bericht om de een of andere reden niet kan verwerken, kan het de Service Bus-service vragen om het bericht te **verlaten** . Service Bus **ontgrendelt** het bericht en maakt het beschikbaar om opnieuw te worden ontvangen, hetzij door dezelfde consument hetzij door een andere concurrerende consument. Ten tweede is er een **time-out** gekoppeld aan de vergren deling. Als de toepassing het bericht niet kan verwerken voordat de time-out van de vergren deling is verlopen, wordt het bericht Service Bus ontgrendeld en wordt het beschikbaar gemaakt om opnieuw te worden ontvangen.
 
-Nadat de toepassing klaar is met de verwerking van het bericht of het op betrouw bare wijze opslaat voor toekomstige verwerking, wordt de tweede fase van het ontvangst proces voltooid door [`CompleteAsync`](/dotnet/api/microsoft.azure.servicebus.queueclient.completeasync) het bericht aan te roepen. Wanneer Service Bus de **CompleteAsync** -aanvraag ontvangt, wordt het bericht gemarkeerd als verbruikt.
-
-Als de toepassing het bericht om de een of andere reden niet kan verwerken, kan de [`AbandonAsync`](/dotnet/api/microsoft.azure.servicebus.queueclient.abandonasync) methode in het bericht worden aangeroepen (in plaats van [`CompleteAsync`](/dotnet/api/microsoft.azure.servicebus.queueclient.completeasync) ). Met deze methode kan Service Bus het bericht ontgrendelen en het beschikbaar maken zodat het opnieuw kan worden ontvangen, hetzij door dezelfde consument hetzij door een andere concurrerende consument. Ten tweede is er een time-out gekoppeld aan de vergren deling. Als de toepassing het bericht niet kan verwerken voordat de time-out van de vergren deling is verlopen, wordt het bericht Service Bus ontgrendeld en wordt het beschikbaar gemaakt om opnieuw te worden ontvangen.
-
-Als de toepassing vastloopt na het verwerken van het bericht, maar voordat het wordt aangeroepen [`CompleteAsync`](/dotnet/api/microsoft.azure.servicebus.queueclient.completeasync) , service bus het bericht in de toepassing opnieuw afleveren wanneer het opnieuw wordt gestart. Dit proces wordt vaak **ten minste eenmaal** verwerkt. Dat wil zeggen dat elk bericht ten minste één keer wordt verwerkt. In bepaalde situaties kan hetzelfde bericht echter opnieuw worden bezorgd. Als uw scenario dubbele verwerking niet kan verdragen, voegt u extra logica toe aan uw toepassing om dubbele waarden te detecteren. U kunt dit doen met behulp van de eigenschap [MessageId](/dotnet/api/microsoft.azure.servicebus.message.messageid) van het bericht, dat constant blijft tijdens bezorgings pogingen. Deze functie wordt **precies eenmaal** verwerkt.
+        Als de toepassing vastloopt na het verwerken van het bericht, maar voordat de Service Bus-service wordt aangevraagd om het bericht te volt ooien, Service Bus het bericht naar de toepassing terugleveren wanneer het opnieuw wordt gestart. Dit proces wordt vaak **ten minste eenmaal** verwerkt. Dat wil zeggen dat elk bericht ten minste één keer wordt verwerkt. In bepaalde situaties kan hetzelfde bericht echter opnieuw worden bezorgd. Als uw scenario dubbele verwerking niet kan verdragen, voegt u extra logica toe aan uw toepassing om dubbele waarden te detecteren. Zie [Detectie van duplicaten](duplicate-detection.md) voor meer informatie. Deze functie wordt **precies eenmaal** verwerkt.
 
 ## <a name="topics-and-subscriptions"></a>Onderwerpen en abonnementen
 Met een wachtrij kan een bericht worden verwerkt door één gebruiker. In tegens telling tot wacht rijen bieden onderwerpen en abonnementen een een-op-veel communicatie vorm in een **publicatie-en Abonneer** patroon. Het is handig om te schalen naar een groot aantal geadresseerden. Elk gepubliceerd bericht wordt beschikbaar gesteld voor elk abonnement dat is geregistreerd bij het onderwerp. Publisher verzendt een bericht naar een onderwerp en een of meer abonnees ontvangen een kopie van het bericht, afhankelijk van de filter regels die zijn ingesteld voor deze abonnementen. De abonnementen kunnen extra filters gebruiken om de berichten te beperken die ze willen ontvangen. Uitgevers verzenden berichten naar een onderwerp op dezelfde manier als wanneer ze berichten verzenden naar een wachtrij. Maar, consumenten ontvangen geen berichten rechtstreeks vanuit het onderwerp. In plaats daarvan ontvangen gebruikers berichten van abonnementen van het onderwerp. Een onderwerps abonnement lijkt op een virtuele wachtrij die kopieën ontvangt van de berichten die naar het onderwerp worden verzonden. Consumenten ontvangen berichten van een abonnement die identiek zijn met de manier waarop ze berichten ontvangen van een wachtrij.
@@ -55,7 +52,7 @@ Zie voor een volledig werk voorbeeld het TopicSubscriptionWithRuleOperationsSamp
 
 Zie de documentatie voor de klassen [SqlFilter](/dotnet/api/microsoft.azure.servicebus.sqlfilter) en [SqlRuleAction](/dotnet/api/microsoft.azure.servicebus.sqlruleaction) voor meer informatie over mogelijke filter waarden.
 
-## <a name="java-message-service-jms-20-entities-preview"></a>JMS (Java Message Service) 2,0-entiteiten (preview-versie)
+## <a name="java-message-service-jms-20-entities"></a>JMS-entiteiten (Java Message Service) 2,0
 De volgende entiteiten zijn toegankelijk via de JMS-API (Java Message Service) 2,0.
 
   * Tijdelijke wacht rijen

@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 30be9cbba7fe702d12285fe13794290c4820fd53
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 544f871f62481243cda2409db24b0d067df28c32
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487990"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580589"
 ---
 # <a name="monitor-and-tune-azure-database-for-postgresql---hyperscale-citus"></a>Azure Database for PostgreSQL-grootschalige (Citus) bewaken en afstemmen
 
@@ -22,17 +22,17 @@ Het bewaken van gegevens over uw servers helpt u bij het oplossen en optimaliser
 
 Grootschalige (Citus) geeft metrische gegevens voor elk knoop punt in een server groep. De metrische gegevens bieden inzicht in het gedrag van ondersteunende resources. Elke metriek wordt verzonden met een frequentie van één minuut en heeft tot wel 30 dagen aan geschiedenis.
 
-Naast het weer geven van grafieken van de metrische gegevens kunt u waarschuwingen configureren. Zie voor stapsgewijze instructies voor [het instellen van waarschuwingen](howto-hyperscale-alert-on-metric.md).  Andere taken zijn onder andere het instellen van geautomatiseerde acties, het uitvoeren van geavanceerde analyses en het archiveren van geschiedenis. Zie het overzicht van Azure- [metrische](../azure-monitor/platform/data-platform.md)gegevens voor meer informatie.
+Naast het weer geven van grafieken van de metrische gegevens kunt u waarschuwingen configureren. Zie voor stapsgewijze instructies voor [het instellen van waarschuwingen](howto-hyperscale-alert-on-metric.md).  Andere taken zijn onder andere het instellen van geautomatiseerde acties, het uitvoeren van geavanceerde analyses en het archiveren van geschiedenis. Zie het overzicht van Azure- [metrische](../azure-monitor/data-platform.md)gegevens voor meer informatie.
 
 ### <a name="list-of-metrics"></a>Lijst met metrische gegevens
 
 Deze metrische gegevens zijn beschikbaar voor grootschalige-knoop punten (Citus):
 
-|Gegevens|Weergave naam voor metrische gegevens|Eenheid|Beschrijving|
+|Metrisch|Weergave naam voor metrische gegevens|Eenheid|Description|
 |---|---|---|---|
-|active_connections|Actieve verbindingen|Aantal|Het aantal actieve verbindingen met de server.|
+|active_connections|Actieve verbindingen|Count|Het aantal actieve verbindingen met de server.|
 |cpu_percent|CPU-percentage|Percentage|Het percentage CPU-gebruik.|
-|IOPS|IOPS|Aantal|Zie de [IOPS-definitie](../virtual-machines/premium-storage-performance.md#iops) en de [grootschalige-door Voer (Citus)](concepts-hyperscale-configuration-options.md)|
+|IOPS|IOPS|Count|Zie de [IOPS-definitie](../virtual-machines/premium-storage-performance.md#iops) en de [grootschalige-door Voer (Citus)](concepts-hyperscale-configuration-options.md)|
 |memory_percent|Geheugen percentage|Percentage|Het percentage geheugen dat in gebruik is.|
 |network_bytes_ingress|Netwerk in|Bytes|Netwerk in meerdere actieve verbindingen.|
 |network_bytes_egress|Netwerk uit|Bytes|Netwerk uit over actieve verbindingen.|

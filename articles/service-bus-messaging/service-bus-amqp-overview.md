@@ -2,13 +2,13 @@
 title: Overzicht van AMQP 1,0 in Azure Service Bus
 description: Lees hoe Azure Service Bus Advanced Message Queueing Protocol (AMQP) ondersteunt, een open standaard protocol.
 ms.topic: article
-ms.date: 11/20/2020
-ms.openlocfilehash: 58c2cc8e9d92fff31a286b6e9bd63b63bee26aee
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.date: 02/17/2021
+ms.openlocfilehash: b2ca126312f5fc3da2a7ff6e20a9ade252f489f1
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98632881"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653880"
 ---
 # <a name="amqp-10-support-in-service-bus"></a>Ondersteuning voor AMQP 1,0 in Service Bus
 De Azure Service Bus-Cloud service maakt gebruik van het [Advanced Message queueing Protocol (AMQP) 1,0](http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-overview-v1.0.html) als het belangrijkste communicatie middel. Micro soft heeft partners in de branche, zowel klanten als leveranciers van concurrerende Messa ging-makelaars, ontwikkeld om AMQP in het afgelopen decennium te ontwikkelen en ontwikkelen, met nieuwe uitbrei dingen die worden ontwikkeld in het [Oasis AMQP Technical Committee](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=amqp). AMQP 1,0 is een ISO-en IEC-norm ([iso 19464:20149](https://www.iso.org/standard/64955.html)). 
@@ -84,9 +84,8 @@ Wilt u meer weten? Ga naar de volgende koppelingen:
 
 * [Service Bus van .NET gebruiken met AMQP]
 * [Service Bus van Java gebruiken met AMQP]
-* [Apache Qpid Proton-C op een Azure Linux-VM installeren]
 
 [0]: ./media/service-bus-amqp-overview/service-bus-amqp-1.png
 [Service Bus van .NET gebruiken met AMQP]: service-bus-amqp-dotnet.md
 [Service Bus van Java gebruiken met AMQP]: ./service-bus-java-how-to-use-jms-api-amqp.md
-[Apache Qpid Proton-C installeren op een Azure Linux-VM]::
+

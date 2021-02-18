@@ -8,18 +8,18 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 02/15/2021
-ms.openlocfilehash: 8a61ad1599a2d4d1aeaf8b36d2f92d95ec1896a0
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: e183d81355d4db81e677f34b02330ddb9b631957
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100573046"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100651983"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-service-in-the-portal"></a>Quickstart: Een Azure Cognitive Search-service maken in de portal
 
 [Azure Cognitive Search](search-what-is-azure-search.md) is een Azure-resource die wordt gebruikt voor het toevoegen van een zoek ervaring in volledige tekst voor aangepaste apps. U kunt het eenvoudig integreren met andere Azure-Services die gegevens of aanvullende verwerking bieden, met apps op netwerk servers of met software die wordt uitgevoerd op andere Cloud platforms.
 
-U kunt de zoek service maken met behulp van de [Azure Portal](https://portal.azure.com/), die in dit artikel wordt besproken. U kunt ook [Azure PowerShell](search-manage-powershell.md), [Azure CLI](/cli/azure/search)of een [Azure Resource Manager service sjabloon](https://azure.microsoft.com/resources/templates/101-azure-search-create/)gebruiken.
+U kunt de zoek service maken met behulp van de [Azure Portal](https://portal.azure.com/), die in dit artikel wordt besproken. U kunt ook [Azure PowerShell](search-manage-powershell.md), [Azure cli](/cli/azure/search), het [beheer rest API](/rest/api/searchmanagement/)of een [Azure Resource Manager service sjabloon](https://azure.microsoft.com/resources/templates/101-azure-search-create/)gebruiken.
 
 [![GIF-animatie](./media/search-create-service-portal/AnimatedGif-AzureSearch-small.gif)](./media/search-create-service-portal/AnimatedGif-AzureSearch.gif#lightbox)
 
@@ -85,7 +85,7 @@ Vereisten voor servicenaam:
 
 Azure Cognitive Search is beschikbaar in de meeste regio's, zoals beschreven in de [beschik bare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=search). Als u meerdere Azure-Services gebruikt, kiest u in het algemeen een regio die ook als host fungeert voor uw gegevens of toepassings service. Zo minimaliseert of vermijdt u bandbreedtekosten voor uitgaande gegevens (er zijn geen kosten voor uitgaande gegevens wanneer services zich in dezelfde regio bevinden).
 
-+ [AI-verrijking](cognitive-search-concept-intro.md) vereist dat Cognitive Services zich in dezelfde fysieke regio bevinden als Azure Cognitive Search. Daarom bieden enkele regio's niet beide mogelijkheden. Op de pagina [beschik bare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=search) wordt de dubbele Beschik baarheid aangegeven door twee gestapelde vinkjes weer te geven. Er is een niet-beschik bare combi natie met een ontbrekend vinkje:
++ [AI-verrijking](cognitive-search-concept-intro.md) vereist dat Cognitive Services zich in dezelfde fysieke regio bevinden als Azure Cognitive Search. Er zijn slechts enkele regio's die niet beide bieden. Op de pagina [beschik bare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=search) wordt de dubbele Beschik baarheid aangegeven door twee gestapelde vinkjes weer te geven. Er is een niet-beschik bare combi natie met een ontbrekend vinkje:
 
   :::image type="content" source="media/search-create-service-portal/region-availability.png" alt-text="Regionale beschikbaarheid" border="true":::
 

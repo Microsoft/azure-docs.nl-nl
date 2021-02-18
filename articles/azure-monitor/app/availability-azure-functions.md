@@ -3,12 +3,12 @@ title: Aangepaste beschikbaarheids tests maken en uitvoeren met behulp van Azure
 description: In dit document wordt beschreven hoe u een Azure-functie maakt met TrackAvailability () die regel matig wordt uitgevoerd op basis van de configuratie gegeven in de functie Timer trigger. De resultaten van deze test worden verzonden naar uw Application Insights-resource, waar u de gegevens van beschikbaarheids resultaten kunt opvragen en waarschuwen. Aangepaste tests bieden u de mogelijkheid om complexere beschikbaarheids tests te schrijven dan mogelijk is met behulp van de portal-gebruikers interface, een app te bewaken in uw Azure VNET, het eindpunt adres te wijzigen of een beschikbaarheids test te maken als deze niet beschikbaar is in uw regio.
 ms.topic: conceptual
 ms.date: 05/04/2020
-ms.openlocfilehash: 3553b212d1b63d4bd239893ba90aa3465d98df60
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 98d9eaadb31ffdeabe85752f7c76bdd4f7c0d4f3
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945648"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589939"
 ---
 # <a name="create-and-run-custom-availability-tests-using-azure-functions"></a>Aangepaste beschikbaarheids tests maken en uitvoeren met behulp van Azure Functions
 
@@ -175,7 +175,7 @@ Als u alles hebt uitgevoerd als is (zonder bedrijfs logica toe te voegen), ziet 
 
 ## <a name="query-in-logs-analytics"></a>Query in Logboeken (analyse)
 
-U kunt Logboeken (analyse) gebruiken om de beschikbaarheids resultaten, afhankelijkheden en meer weer te geven. Ga voor meer informatie over Logboeken naar het [overzicht van logboek query's](../log-query/log-query-overview.md).
+U kunt Logboeken (analyse) gebruiken om de beschikbaarheids resultaten, afhankelijkheden en meer weer te geven. Ga voor meer informatie over Logboeken naar het [overzicht van logboek query's](../logs/log-query-overview.md).
 
 >[!div class="mx-imgBorder"]
 >![Beschikbaarheids resultaten](media/availability-azure-functions/availabilityresults.png)

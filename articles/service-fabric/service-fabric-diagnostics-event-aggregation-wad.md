@@ -5,12 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 04/03/2018
 ms.author: srrengar
-ms.openlocfilehash: bcb9ca9e73c0898dc778202eca036a5ae92bebf8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 87fc8e30274f0a11b7ddfc5eeb184f1a45a5351d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87076145"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588378"
 ---
 # <a name="event-aggregation-and-collection-using-windows-azure-diagnostics"></a>Gebeurtenis aggregatie en verzameling met behulp van Windows Azure Diagnostics
 > [!div class="op_single_selector"]
@@ -346,7 +346,7 @@ Voeg in het ' WadCfg ' van de Resource Manager-sjabloon een ' sink ' toe door de
 
 In zowel de voor gaande code fragmenten is de naam ' applicationInsights ' gebruikt om de sink te beschrijven. Dit is geen vereiste en zolang de naam van de sink is opgenomen in ' sinks ', kunt u de naam op een wille keurige teken reeks instellen.
 
-Op dit moment worden logboeken van het cluster weer gegeven als **traceringen** in de logboek weergave van Application Insights. Omdat de meeste traceringen van het platform van het niveau ' informatief ' zijn, kunt u ook overwegen de Sink-configuratie te wijzigen zodat alleen logboeken worden verzonden met het type waarschuwing of fout. U kunt dit doen door ' channels ' toe te voegen aan uw Sink, zoals wordt geïllustreerd in [dit artikel](../azure-monitor/platform/diagnostics-extension-to-application-insights.md).
+Op dit moment worden logboeken van het cluster weer gegeven als **traceringen** in de logboek weergave van Application Insights. Omdat de meeste traceringen van het platform van het niveau ' informatief ' zijn, kunt u ook overwegen de Sink-configuratie te wijzigen zodat alleen logboeken worden verzonden met het type waarschuwing of fout. U kunt dit doen door ' channels ' toe te voegen aan uw Sink, zoals wordt geïllustreerd in [dit artikel](../azure-monitor/agents/diagnostics-extension-to-application-insights.md).
 
 >[!NOTE]
 >Als u een onjuiste Application Insights sleutel in de portal of in uw Resource Manager-sjabloon gebruikt, moet u de sleutel hand matig wijzigen en het cluster bijwerken of opnieuw implementeren.

@@ -6,12 +6,12 @@ author: renatosalas
 ms.author: regutier
 ms.date: 01/14/2021
 ms.reviewer: mbullwin
-ms.openlocfilehash: f82432c1dd8c66e8ce845831ff35d534a34e3e04
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 9c3ff91cbfb6423099040a6ea46eeb66f5461f48
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202535"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589672"
 ---
 # <a name="configure-bring-your-own-storage-byos-for-application-insights-profiler-and-snapshot-debugger"></a>Uw eigen opslag (BYOS) configureren voor Application Insights Profiler en Snapshot Debugger
 
@@ -21,9 +21,9 @@ Wanneer u Application Insights Profiler of Snapshot Debugger gebruikt, worden ar
 Met uw eigen opslag kunt u deze artefacten uploaden naar een opslag account dat u beheert. Dit betekent dat u het beleid voor versleuteling op rest, het levens duur beheer beleid en netwerk toegang beheert. U bent echter verantwoordelijk voor de kosten van het betreffende opslagaccount.
 
 > [!NOTE]
-> Als u een persoonlijke koppeling inschakelt, moet u uw eigen opslag ruimte maken. [Raadpleeg de documentatie](../platform/private-link-security.md) voor meer informatie over persoonlijke koppelingen voor Application Insights.
+> Als u een persoonlijke koppeling inschakelt, moet u uw eigen opslag ruimte maken. [Raadpleeg de documentatie](../logs/private-link-security.md) voor meer informatie over persoonlijke koppelingen voor Application Insights.
 >
-> Als u Customer-Managed sleutels inschakelt, moet u uw eigen opslag ruimte maken. [Raadpleeg de documentatie](../platform/customer-managed-keys.md)voor meer informatie over Customer-Managed sleutels voor Application Insights.
+> Als u Customer-Managed sleutels inschakelt, moet u uw eigen opslag ruimte maken. [Raadpleeg de documentatie](../logs/customer-managed-keys.md)voor meer informatie over Customer-Managed sleutels voor Application Insights.
 
 ## <a name="how-will-my-storage-account-be-accessed"></a>Hoe wordt mijn opslag account geopend?
 1. Agents die worden uitgevoerd in uw Virtual Machines of App Service uploaden artefacten (profielen, moment opnamen en symbolen) naar BLOB-containers in uw account. Dit proces omvat het maken van contact met de Application Insights Profiler-of Snapshot Debugger-service om een SAS-token (Shared Access Signature) te verkrijgen voor een nieuwe Blob in uw opslag account.

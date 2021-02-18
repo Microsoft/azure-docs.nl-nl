@@ -7,16 +7,16 @@ ms.service: web-application-firewall
 ms.topic: article
 ms.date: 09/06/2019
 ms.author: victorh
-ms.openlocfilehash: 733a9af589718e9abe8736491023003744428cd6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c928d4234e82e7c43c2365e20d57d0b97d4dbc1c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361063"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589002"
 ---
 # <a name="use-log-analytics-to-examine-application-gateway-web-application-firewall-waf-logs"></a>Log Analytics gebruiken om Application Gateway-logboeken van Web Application firewall (WAF) te onderzoeken
 
-Zodra uw Application Gateway WAF operationeel is, kunt u Logboeken inschakelen om te controleren wat er met elke aanvraag gebeurt. Firewall logboeken bieden inzicht in wat de WAF is te evalueren, vergelijken en blok keren. Met Azure Monitor Log Analytics kunt u de gegevens in de logboeken van de firewall bekijken om nog meer inzichten te geven. Zie [een log Analytics-werk ruimte maken in de Azure Portal](../../azure-monitor/learn/quick-create-workspace.md)voor meer informatie over het maken van een log Analytics-werk ruimte. Zie [Overzicht van logboekquery's in Azure Monitor](../../azure-monitor/log-query/log-query-overview.md) voor meer informatie over logboekquery's.
+Zodra uw Application Gateway WAF operationeel is, kunt u Logboeken inschakelen om te controleren wat er met elke aanvraag gebeurt. Firewall logboeken bieden inzicht in wat de WAF is te evalueren, vergelijken en blok keren. Met Azure Monitor Log Analytics kunt u de gegevens in de logboeken van de firewall bekijken om nog meer inzichten te geven. Zie [een log Analytics-werk ruimte maken in de Azure Portal](../../azure-monitor/logs/quick-create-workspace.md)voor meer informatie over het maken van een log Analytics-werk ruimte. Zie [Overzicht van logboekquery's in Azure Monitor](../../azure-monitor/logs/log-query-overview.md) voor meer informatie over logboekquery's.
 
 ## <a name="import-waf-logs"></a>WAF-logboeken importeren
 

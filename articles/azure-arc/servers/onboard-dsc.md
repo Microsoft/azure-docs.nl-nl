@@ -3,12 +3,12 @@ title: Aangesloten machine agent installeren met behulp van Windows Power shell 
 description: In dit artikel leert u hoe u met behulp van Windows Power shell DSC computers kunt verbinden met Azure met behulp van Azure Arc-servers.
 ms.date: 09/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: b351aa8e989bd36c135271d3adafca6eb64ccf39
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: c0ae9c97afe14559aa36c1b8387f07897aa4c43b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107552"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587643"
 ---
 # <a name="how-to-install-the-connected-machine-agent-using-windows-powershell-dsc"></a>De verbonden machine agent installeren met behulp van Windows Power shell DSC
 
@@ -60,7 +60,7 @@ Hieronder vindt u de para meters die u aan het Power shell-script geeft.
 
 - `ResourceGroup`: De naam van de resource groep waaraan u de verbonden computers wilt koppelen.
 
-- `Location`: Zie [ondersteunde Azure-regio's](overview.md#supported-regions). Deze locatie kan hetzelfde of hetzelfde zijn als de locatie van de resource groep.
+- `Location`: Zie [ondersteunde Azure-regio's](overview.md#supported-regions). Deze locatie kan hetzelfde zijn als, of verschillen van, de locatie van de resourcegroep.
 
 - `Tags`: Teken reeks matrix van tags die moeten worden toegepast op de bron van de verbonden machine.
 
@@ -88,6 +88,6 @@ De [CompositeResource](https://www.powershellgallery.com/packages/compositeresou
 
 * Informatie over probleem oplossing vindt u in de [hand leiding problemen met verbonden machine agent oplossen](troubleshoot-agent-onboard.md).
 
-* Meer informatie over het beheren van uw machine met [Azure Policy](../../governance/policy/overview.md), voor zaken als VM- [gast configuratie](../../governance/policy/concepts/guest-configuration.md), moet u controleren of de computer rapporteert aan de verwachte log Analytics-werk ruimte, de bewaking inschakelen met [Azure monitor met vm's](../../azure-monitor/insights/vminsights-enable-policy.md)en nog veel meer.
+* Meer informatie over het beheren van uw machine met [Azure Policy](../../governance/policy/overview.md), voor zaken als VM- [gast configuratie](../../governance/policy/concepts/guest-configuration.md), moet u controleren of de computer rapporteert aan de verwachte log Analytics-werk ruimte, de bewaking inschakelen met [Azure monitor met vm's](../../azure-monitor/vm/vminsights-enable-policy.md)en nog veel meer.
 
-* Meer informatie over de [log Analytics-agent](../../azure-monitor/platform/log-analytics-agent.md). De Log Analytics-agent voor Windows en Linux is vereist wanneer u het besturingssysteem en workloads op de machine proactief wilt monitoren, deze wilt beheren met Automation-runbooks of oplossingen zoals Updatebeheer, of andere Azure-services zoals [Azure Security Center](../../security-center/security-center-introduction.md) wilt gebruiken.
+* Meer informatie over de [log Analytics-agent](../../azure-monitor/agents/log-analytics-agent.md). De Log Analytics-agent voor Windows en Linux is vereist wanneer u het besturingssysteem en workloads op de machine proactief wilt monitoren, deze wilt beheren met Automation-runbooks of oplossingen zoals Updatebeheer, of andere Azure-services zoals [Azure Security Center](../../security-center/security-center-introduction.md) wilt gebruiken.

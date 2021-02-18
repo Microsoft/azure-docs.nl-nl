@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: adwise
 ms.custom: seodec18
-ms.openlocfilehash: 5659f3b2d020a97ed2460c55283bb41f2f7606cc
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 16c18d8f86890baaf1882c532c19ff32ab2017da
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98943739"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592662"
 ---
 # <a name="tutorial-create-and-manage-azure-budgets"></a>Zelfstudie: Azure-budgetten maken en beheren
 
@@ -140,7 +140,7 @@ Evaluaties van budgetkosten zijn gebaseerd op de werkelijke kosten. Ze bevatten 
 
 ## <a name="trigger-an-action-group"></a>Een actiegroep activeren
 
-Wanneer u een budget voor het bereik van een abonnement of resourcegroep maakt of bewerkt, kunt u dit configureren voor het aanroepen van een actiegroep. Met de actiegroep kunnen verschillende acties worden uitgevoerd wanneer de budgetdrempel is bereikt. Actiegroepen worden momenteel alleen ondersteund voor bereiken van abonnementen en resourcegroepen. Zie [Actiegroepen maken en beheren in de Azure-portal](../../azure-monitor/platform/action-groups.md) voor meer informatie over actiegroepen. Zie [Kosten beheren met Azure-budgetten](../manage/cost-management-budget-scenario.md) voor meer informatie over het gebruik van automatisering op basis van budgetten met actiegroepen.
+Wanneer u een budget voor het bereik van een abonnement of resourcegroep maakt of bewerkt, kunt u dit configureren voor het aanroepen van een actiegroep. Met de actiegroep kunnen verschillende acties worden uitgevoerd wanneer de budgetdrempel is bereikt. Actiegroepen worden momenteel alleen ondersteund voor bereiken van abonnementen en resourcegroepen. Zie [Actiegroepen maken en beheren in de Azure-portal](../../azure-monitor/alerts/action-groups.md) voor meer informatie over actiegroepen. Zie [Kosten beheren met Azure-budgetten](../manage/cost-management-budget-scenario.md) voor meer informatie over het gebruik van automatisering op basis van budgetten met actiegroepen.
 
 Als u actiegroepen wilt maken of bijwerken, selecteert u **Actiegroepen beheren** tijdens het maken of bewerken van een budget.
 
@@ -160,7 +160,7 @@ In het volgende voorbeeld zijn budgetdrempels ingesteld op 50%, 75% en 100%. Elk
 
 ![Voorbeeld van waarschuwingsvoorwaarden die zijn geconfigureerd met verschillende actiegroepen en typen acties](./media/tutorial-acm-create-budgets/manage-action-groups04.png)
 
-Budgetintegratie met actiegroepen werkt alleen voor actiegroepen waarvoor het algemene waarschuwingsschema is uitgeschakeld. Zie [Hoe kan ik het algemene waarschuwingsschema inschakelen?](../../azure-monitor/platform/alerts-common-schema.md#how-do-i-enable-the-common-alert-schema) voor meer informatie over het uitschakelen van het schema.
+Budgetintegratie met actiegroepen werkt alleen voor actiegroepen waarvoor het algemene waarschuwingsschema is uitgeschakeld. Zie [Hoe kan ik het algemene waarschuwingsschema inschakelen?](../../azure-monitor/alerts/alerts-common-schema.md#how-do-i-enable-the-common-alert-schema) voor meer informatie over het uitschakelen van het schema.
 
 ## <a name="create-and-edit-budgets-with-powershell"></a>Budgetten maken en bewerken met PowerShell
 

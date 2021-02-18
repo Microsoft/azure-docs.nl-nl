@@ -3,12 +3,12 @@ title: 'Hoe kunt u uw Application Insights-implementatie ontwerpen: een VS veel 
 description: Telemetrie omleiden naar verschillende bronnen voor ontwikkelings-, test-en productie tempels.
 ms.topic: conceptual
 ms.date: 05/11/2020
-ms.openlocfilehash: 49e9b8920af7333e0d95e23e6e5cf0828d448609
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 3964cddcf27a4b2c7397b508ccb3cc8928bd04ad
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95536350"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589538"
 ---
 # <a name="how-many-application-insights-resources-should-i-deploy"></a>Hoeveel Application Insights resources moeten worden geïmplementeerd
 
@@ -86,7 +86,7 @@ U hebt de instrumentatie sleutels nodig van alle resources waarnaar de app gegev
 ## <a name="filter-on-build-number"></a>Filteren op build-nummer
 Wanneer u een nieuwe versie van uw app publiceert, wilt u de telemetrie van verschillende builds kunnen scheiden.
 
-U kunt de eigenschap toepassings versie instellen, zodat u [Zoek opdrachten](../../azure-monitor/app/diagnostic-search.md) en [metrische Explorer](../../azure-monitor/platform/metrics-charts.md) -resultaten kunt filteren.
+U kunt de eigenschap toepassings versie instellen, zodat u [Zoek opdrachten](../../azure-monitor/app/diagnostic-search.md) en [metrische Explorer](../../azure-monitor/essentials/metrics-charts.md) -resultaten kunt filteren.
 
 Er zijn verschillende methoden voor het instellen van de eigenschap toepassings versie.
 
@@ -132,7 +132,7 @@ Als u de toepassingsversie wilt bijhouden, zorgt u ervoor dat `buildinfo.config`
 </PropertyGroup>
 ```
 
-Wanneer de buildgegevens beschikbaar zijn, voegt de Application Insights-webmodule automatisch **Toepassingsversie** als eigenschap toe aan elk telemetrie-item. Dit biedt de mogelijkheid om op versie te filteren wanneer u [diagnostische zoekopdrachten](../../azure-monitor/app/diagnostic-search.md) uitvoert of [metrische gegevens verkent](../../azure-monitor/platform/metrics-charts.md).
+Wanneer de buildgegevens beschikbaar zijn, voegt de Application Insights-webmodule automatisch **Toepassingsversie** als eigenschap toe aan elk telemetrie-item. Dit biedt de mogelijkheid om op versie te filteren wanneer u [diagnostische zoekopdrachten](../../azure-monitor/app/diagnostic-search.md) uitvoert of [metrische gegevens verkent](../../azure-monitor/essentials/metrics-charts.md).
 
 U ziet echter dat het build-versie nummer alleen wordt gegenereerd door de micro soft build engine, niet door de ontwikkel aars versie van Visual Studio.
 

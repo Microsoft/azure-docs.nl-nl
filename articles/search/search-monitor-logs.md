@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: e6fcf5980cf64b5fc088dfa295ef6221ffda6de9
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: e29e20d071e992b941b2f6bd803c8dade044fbfd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499931"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592477"
 ---
 # <a name="collect-and-analyze-log-data-for-azure-cognitive-search"></a>Logboek gegevens voor Azure Cognitive Search verzamelen en analyseren
 
@@ -25,7 +25,7 @@ Wanneer u diagnostische logboek registratie instelt, wordt u gevraagd een opslag
 
 | Resource | Gebruikt voor |
 |----------|----------|
-| [Verzenden naar Log Analytics-werkruimte](../azure-monitor/learn/tutorial-resource-logs.md) | Gebeurtenissen en metrische gegevens worden verzonden naar een Log Analytics-werk ruimte, die in de portal kan worden opgevraagd om gedetailleerde informatie te retour neren. Zie [aan de slag met Azure monitor-logboeken](../azure-monitor/log-query/log-analytics-tutorial.md) voor een inleiding |
+| [Verzenden naar Log Analytics-werkruimte](../azure-monitor/essentials/tutorial-resource-logs.md) | Gebeurtenissen en metrische gegevens worden verzonden naar een Log Analytics-werk ruimte, die in de portal kan worden opgevraagd om gedetailleerde informatie te retour neren. Zie [aan de slag met Azure monitor-logboeken](../azure-monitor/logs/log-analytics-tutorial.md) voor een inleiding |
 | [Archiveren met Blob Storage](../storage/blobs/storage-blobs-overview.md) | Gebeurtenissen en metrische gegevens worden gearchiveerd naar een BLOB-container en opgeslagen in JSON-bestanden. Logboeken kunnen behoorlijk nauw keurig zijn (per uur per minuut), wat nuttig is voor het opnieuw doorzoeken van een specifiek incident, maar niet voor open-end onderzoek. Gebruik een JSON-editor om een onbewerkte logboek bestand te bekijken of Power BI om logboek gegevens samen te voegen en te visualiseren.|
 | [Streamen naar Event hub](../event-hubs/index.yml) | Gebeurtenissen en metrische gegevens worden gestreamd naar een Azure Event Hubs-service. Kies deze optie als een alternatieve service voor het verzamelen van gegevens voor zeer grote logboeken. |
 
@@ -33,7 +33,7 @@ Wanneer u diagnostische logboek registratie instelt, wordt u gevraagd een opslag
 
 Maak vooraf een resource zodat u een of meer resources kunt selecteren bij het configureren van diagnostische logboek registratie.
 
-+ [Een log Analytics-werk ruimte maken](../azure-monitor/learn/quick-create-workspace.md)
++ [Een log Analytics-werk ruimte maken](../azure-monitor/logs/quick-create-workspace.md)
 
 + [Een opslagaccount maken](../storage/common/storage-account-create.md)
 
@@ -120,7 +120,7 @@ AzureDiagnostics
 
 Geregistreerde gebeurtenissen die door Azure Monitor zijn vastgelegd, zijn onder andere die zijn gerelateerd aan indexering en query's. De **AzureDiagnostics** -tabel in log Analytics verzamelt operationele gegevens met betrekking tot query's en indexering.
 
-| OperationName | Beschrijving |
+| OperationName | Description |
 |---------------|-------------|
 | ServiceStats | Met deze bewerking wordt een routine aanroep uitgevoerd om [service statistieken](/rest/api/searchservice/get-service-statistics)op te halen, direct of impliciet te worden aangeroepen om een portal overzichts pagina te vullen wanneer deze wordt geladen of vernieuwd. |
 | Query. Search |  Query's aanvragen voor een index Zie [controle query's](search-monitor-queries.md) voor informatie over vastgelegde query's.|

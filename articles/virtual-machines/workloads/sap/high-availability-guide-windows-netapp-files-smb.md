@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/12/2020
 ms.author: radeltch
-ms.openlocfilehash: 90b0ab4fdabd40e803d1f85a640e4cb387e40c44
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: b04dacfdedded417e2557d1568e01bc9fa8f5745
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94958945"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590122"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-windows-with-azure-netapp-filessmb-for-sap-applications"></a>Hoge Beschik baarheid voor SAP NetWeaver op Azure Vm's in Windows met Azure NetApp Files (SMB) voor SAP-toepassingen
 
@@ -81,7 +81,7 @@ Lees eerst de volgende SAP-opmerkingen en-documenten:
 * [Azure Virtual Machines architectuur en scenario's met hoge Beschik baarheid voor SAP net-Weaver](./sap-high-availability-architecture-scenarios.md)
 * [Test poort toevoegen in ASCS-cluster configuratie](sap-high-availability-installation-wsfc-file-share.md)
 * [Installatie van een (A) SCS-exemplaar op een failovercluster](https://www.sap.com/documents/2017/07/f453332f-c97c-0010-82c7-eda71af511fa.html)
-* [Een SMB-volume maken voor Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-create-volumes-smb.md#requirements-for-active-directory-connections)
+* [Een SMB-volume maken voor Azure NetApp Files](../../../azure-netapp-files/create-active-directory-connections.md#requirements-for-active-directory-connections)
 * [NetApp SAP-toepassingen op Microsoft Azure met behulp van Azure NetApp Files][anf-sap-applications-azure]
 
 ## <a name="overview"></a>Overzicht
@@ -114,9 +114,9 @@ Voer de volgende stappen uit, als voor bereiding op het gebruik van Azure NetApp
 4. Azure NetApp Files resources moeten zich in een gedelegeerd subnet bevinden. Volg de instructies in [een subnet overdragen aan Azure NetApp files](../../../azure-netapp-files/azure-netapp-files-delegate-subnet.md) om het gedelegeerde subnet te maken.  
 
    > [!IMPORTANT]
-   > U moet Active Directory verbindingen maken voordat u een SMB-volume maakt. Bekijk de [vereisten voor Active Directory verbindingen](../../../azure-netapp-files/azure-netapp-files-create-volumes-smb.md#requirements-for-active-directory-connections).  
+   > U moet Active Directory verbindingen maken voordat u een SMB-volume maakt. Bekijk de [vereisten voor Active Directory verbindingen](../../../azure-netapp-files/create-active-directory-connections.md#requirements-for-active-directory-connections).  
 
-5. Active Directory verbinding maken, zoals beschreven in [een Active Directory-verbinding maken](../../../azure-netapp-files/azure-netapp-files-create-volumes-smb.md#create-an-active-directory-connection)  
+5. Active Directory verbinding maken, zoals beschreven in [een Active Directory-verbinding maken](../../../azure-netapp-files/create-active-directory-connections.md#create-an-active-directory-connection)  
 6. SMB-Azure NetApp Files SMB-volume maken, volgens de instructies in [een SMB-volume toevoegen](../../../azure-netapp-files/azure-netapp-files-create-volumes-smb.md#add-an-smb-volume)  
 7. Koppel het SMB-volume op uw virtuele Windows-machine.
 

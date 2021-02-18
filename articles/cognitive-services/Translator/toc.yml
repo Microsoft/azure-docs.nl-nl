@@ -86,6 +86,22 @@
           href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
         - name: Naleving
           href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
+- name: Document vertaling
+  items:
+    - name: Overzicht
+      items:
+        - name: Wat is document vertalingen?
+          href: document-translation/overview.md
+    - name: Instructiegidsen
+      items:
+        - name: Aan de slag met document vertalingen
+          href: document-translation/get-started-with-document-translation.md
+        - name: SAS-tokens maken
+          href: document-translation/create-sas-tokens.md
+    - name: Referentie
+      items:
+        - name: Naslag informatie over document vertalingen API
+          href: 'https://docs.microsoft.com/rest/api/cognitiveservices/translator/translation'
 - name: Custom Translator
   items:
     - name: Overzicht

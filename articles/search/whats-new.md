@@ -8,12 +8,12 @@ ms.service: cognitive-search
 ms.topic: overview
 ms.date: 02/09/2021
 ms.custom: references_regions
-ms.openlocfilehash: d37b39f596a9986f001663847e0b8e6ae8adb987
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 6de91d51f3700c25ba1e0f361c948dc8ab338c43
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100545510"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590554"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Nieuwe functies in Azure Cognitive Search
 
@@ -25,6 +25,7 @@ Meer informatie over nieuwe functies in de service. Voeg een bladwijzer toe aan 
 |------------------------------|---------------|---------------|
 | [Documenten opnieuw instellen (preview-versie)](search-howto-run-reset-indexers.md) |  Afzonderlijke geselecteerde Zoek documenten in de werk belasting van de Indexeer functie opnieuw verwerken. | [Search REST API 2020-06-30-preview](/rest/api/searchservice/index-preview) |
 | [Beschikbaarheidszones](search-performance-optimization.md#availability-zones)| Zoek Services met twee of meer replica's in bepaalde regio's, zoals wordt weer gegeven in [schaal voor prestaties](search-performance-optimization.md#availability-zones), profiteer van tolerantie door replica's te hebben op twee of meer verschillende fysieke locaties.  | De regio en de datum waarop de zoek service is gemaakt, bepalen de beschik baarheid. Zie de schaal voor het prestatie artikel voor meer informatie. |
+| [Azure-CLI](/cli/azure/search) </br>[Azure PowerShell](/powershell/module/az.search/) | Nieuwe revisies bieden nu het volledige aantal bewerkingen in het management REST API 2020-08-01, inclusief ondersteuning voor IP-firewall regels en privé-eind punten. | Algemeen verkrijgbaar. |
 
 ## <a name="january-2021"></a>Januari 2021
 

@@ -8,12 +8,12 @@ ms.technology: devops-cicd
 ms.topic: tutorial
 ms.date: 03/24/2020
 author: mlearned
-ms.openlocfilehash: af61254643e9f072995bceed1b6ecf8ecc29e5f8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 9ccf28f5431a92f71b1c18e609639d0abf309c06
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91855449"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590858"
 ---
 # <a name="deploy-aspnet-core-apps-to-azure-kubernetes-service-with-azure-devops-starter"></a>ASP.NET Core-apps implementeren in Azure Kubernetes Service met Azure DevOps Starter
 
@@ -24,7 +24,7 @@ DevOps Starter doet ook het volgende:
 * Er worden automatisch Azure-resources gemaakt, zoals Azure Kubernetes Service.
 * In Azure DevOps wordt een release-pijplijn gemaakt en geconfigureerd om een build en release-pijplijn in te stellen voor CI/CD.
 * Er wordt een Azure Application Insights-resource gemaakt voor de bewaking.
-* [Azure Monitor voor containers](../azure-monitor/insights/container-insights-overview.md) wordt ingeschakeld voor het bewaken van de prestaties voor de werkbelastingen van de container op het AKS-cluster
+* [Azure Monitor voor containers](../azure-monitor/containers/container-insights-overview.md) wordt ingeschakeld voor het bewaken van de prestaties voor de werkbelastingen van de container op het AKS-cluster
 
 In deze zelfstudie leert u het volgende:
 

@@ -4,12 +4,12 @@ description: Afhankelijkheids aanroepen bewaken vanaf uw on-premises of Microsof
 ms.topic: conceptual
 ms.date: 08/26/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: df13042656aa077b30bf144aab0a47d9fc0a0662
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 05b6c29b121cbf42cf0ebe12b2879e50735db7ea
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91263926"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652000"
 ---
 # <a name="dependency-tracking-in-azure-application-insights"></a>Afhankelijkheden bijhouden in Azure-toepassing Insights 
 
@@ -109,9 +109,10 @@ Voor ASP.NET-toepassingen wordt volledige SQL-query tekst verzameld met de hulp 
 Naast de hierboven beschreven platformspecifieke stappen moet u ook expliciet aanwijzen **om SQL-opdrachten verzamelen in te scha kelen** door het applicationInsights.config bestand te wijzigen met het volgende:
 
 ```xml
-<Add Type="Microsoft.ApplicationInsights.DependencyCollector.DependencyTrackingTelemetryModule, Microsoft.AI.DependencyCollector">
-<EnableSqlCommandTextInstrumentation>true</EnableSqlCommandTextInstrumentation>
-</Add>
+<TelemetryModules>
+  <Add Type="Microsoft.ApplicationInsights.DependencyCollector.DependencyTrackingTelemetryModule, Microsoft.AI.DependencyCollector">
+    <EnableSqlCommandTextInstrumentation>true</EnableSqlCommandTextInstrumentation>
+  </Add>
 ```
 
 In de bovenstaande gevallen wordt de juiste methode voor het valideren van de instrumentatie-engine correct geïnstalleerd door te controleren of de SDK-versie van verzamelde `DependencyTelemetry` ' rddp ' is. ' rdddsd ' of ' rddf ' geeft aan dat afhankelijkheden worden verzameld via DiagnosticSource of event source-retour aanroepen, en daarom wordt volledige SQL-query niet vastgelegd.

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 42d4467a6441e517ef3194f701eb47e7e68505b1
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: cc5b3b85d6d13fda532da0993fa7f733126b8eae
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99806304"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591870"
 ---
 # <a name="view-and-configure-ddos-diagnostic-logging"></a>Registratie in DDoS-diagnoselogboek bekijken en configureren
 
@@ -57,9 +57,9 @@ Als u diagnostische logboek registratie automatisch wilt inschakelen voor alle o
 
 7. Selecteer onder **doel Details** zo veel van de volgende opties als u nodig hebt:
 
-    - **Archiveren naar een opslag account**: gegevens worden naar een Azure Storage-account geschreven. Zie [Archief bron logboeken](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage)voor meer informatie over deze optie.
-    - **Streamen naar een event hub**: Hiermee kan een logboek ontvanger logboeken ophalen met behulp van een Azure Event hub. Event hubs maken integratie mogelijk met Splunk of andere SIEM-systemen. Zie [bron logboeken streamen naar een event hub](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs)voor meer informatie over deze optie.
-    - **Verzenden naar log Analytics**: schrijft logboeken naar de Azure Monitor-service. Zie [Logboeken verzamelen voor gebruik in azure monitor-logboeken voor](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-log-analytics-workspace)meer informatie over deze optie.
+    - **Archiveren naar een opslag account**: gegevens worden naar een Azure Storage-account geschreven. Zie [Archief bron logboeken](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage)voor meer informatie over deze optie.
+    - **Streamen naar een event hub**: Hiermee kan een logboek ontvanger logboeken ophalen met behulp van een Azure Event hub. Event hubs maken integratie mogelijk met Splunk of andere SIEM-systemen. Zie [bron logboeken streamen naar een event hub](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs)voor meer informatie over deze optie.
+    - **Verzenden naar log Analytics**: schrijft logboeken naar de Azure Monitor-service. Zie [Logboeken verzamelen voor gebruik in azure monitor-logboeken voor](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-log-analytics-workspace)meer informatie over deze optie.
 
 ### <a name="log-schemas"></a>Logboek schema's
 

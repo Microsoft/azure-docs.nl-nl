@@ -2,17 +2,17 @@
 title: Concepten-updates en upgrades voor Privécloud
 description: Meer informatie over de belangrijkste upgrade processen en functies in de Azure VMware-oplossing.
 ms.topic: conceptual
-ms.date: 02/02/2021
-ms.openlocfilehash: 78d4b566aa9156cdddfdcd69b50ebfd1d10aa784
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.date: 02/16/2021
+ms.openlocfilehash: d93453cbf6ad744844a04cd298cc18ad181cc0b0
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100006698"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100634989"
 ---
 # <a name="azure-vmware-solution-private-cloud-updates-and-upgrades"></a>Updates en upgrades voor persoonlijke Clouds in azure VMware-oplossing
 
-Een van de belangrijkste voor delen van persoonlijke Clouds van Azure VMware-oplossingen is dat het platform voor u wordt onderhouden. Platform onderhoud omvat geautomatiseerde updates voor een gevalideerde VMware-software bundel, om ervoor te zorgen dat u de nieuwste versie van de gevalideerde persoonlijke cloud software van Azure VMware-oplossing gebruikt.
+Een van de voor delen van persoonlijke Clouds van Azure VMware-oplossingen is dat het platform voor u wordt onderhouden. Onderhoud omvat geautomatiseerde updates voor een gevalideerde VMware-software bundel om ervoor te zorgen dat u de nieuwste versie van de persoonlijke cloud software van Azure VMware kunt gebruiken.
 
 Met name een persoonlijke cloud van Azure VMware-oplossing bevat:
 
@@ -22,7 +22,7 @@ Met name een persoonlijke cloud van Azure VMware-oplossing bevat:
 - VMware vSAN-gegevens opslag voor virtuele machines met vSphere-werk belasting  
 - VMware HCX voor werk belasting mobiliteit  
 
-Naast deze onderdelen bevat een persoonlijke cloud van Azure VMware-oplossing resources in azure aan die vereist zijn voor connectiviteit en om de privécloud te kunnen uitvoeren. De Azure VMware-oplossing bewaakt voortdurend de status van zowel de aan-als de VMware-onderdelen. Wanneer er een fout wordt gedetecteerd door de Azure VMware-oplossing, wordt er actie ondernomen om de mislukte onderdelen te herstellen. 
+Een Azure VMware-oplossing privécloud bevat ook bronnen in de Azure-aan die vereist zijn voor connectiviteit en om de privécloud te kunnen uitvoeren. De Azure VMware-oplossing bewaakt voortdurend de status van zowel de aan-als de VMware-onderdelen. Wanneer er een fout wordt gedetecteerd door de Azure VMware-oplossing, wordt er actie ondernomen om de mislukte onderdelen te herstellen. 
 
 ## <a name="what-components-get-updated"></a>Welke onderdelen worden bijgewerkt?   
 
@@ -46,12 +46,12 @@ U wordt gewaarschuwd voor en nadat patches zijn toegepast op uw persoonlijke Clo
 
 ## <a name="vmware-appliance-backup"></a>VMware-apparaat back-up 
 
-Naast het maken van updates, maakt Azure VMware-oplossing een configuratie back-up van deze VMware-onderdelen:
+Azure VMware-oplossing maakt ook een configuratie back-up van de volgende VMware-onderdelen:
 
 - vCenter Server 
 - NSX-T-beheer 
 
-In het geval van een storing kan de Azure VMware-oplossing deze herstellen vanuit de back-up van de configuratie. 
+In het geval van een storing kan de Azure VMware-oplossing deze onderdelen herstellen vanuit de back-up van de configuratie. 
 
 Voor meer informatie over de versies van VMware-software raadpleegt u het [concept artikel private clouds and clusters](concepts-private-clouds-clusters.md) en de [Veelgestelde vragen](faq.yml).
 

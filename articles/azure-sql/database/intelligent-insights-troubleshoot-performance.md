@@ -11,17 +11,17 @@ author: danimir
 ms.author: danil
 ms.reviewer: wiassaf, sstein
 ms.date: 1/14/2021
-ms.openlocfilehash: 3b57172daeffd1766da456e56cb5e445427a4858
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 17ea6716f090144e8dfef16721bfb69dc23e9912
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98220385"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589325"
 ---
 # <a name="troubleshoot-azure-sql-database-and-azure-sql-managed-instance-performance-issues-with-intelligent-insights"></a>Problemen met prestatie problemen met Azure SQL Database en Azure SQL Managed instance oplossen met Intelligent Insights
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
 
-Deze pagina bevat informatie over Azure SQL Database en prestatie problemen met Azure SQL Managed instance die zijn gedetecteerd via het [intelligent Insights](intelligent-insights-overview.md) resource logboek. Metrische gegevens en bron logboeken kunnen worden gestreamd naar [Azure monitor-logboeken](../../azure-monitor/insights/azure-sql.md), [Azure Event hubs](../../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs), [Azure Storage](metrics-diagnostic-telemetry-logging-streaming-export-configure.md#stream-into-azure-storage)of een oplossing van derden voor aangepaste DevOps-waarschuwingen en rapportage mogelijkheden.
+Deze pagina bevat informatie over Azure SQL Database en prestatie problemen met Azure SQL Managed instance die zijn gedetecteerd via het [intelligent Insights](intelligent-insights-overview.md) resource logboek. Metrische gegevens en bron logboeken kunnen worden gestreamd naar [Azure monitor-logboeken](../../azure-monitor/insights/azure-sql.md), [Azure Event hubs](../../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs), [Azure Storage](metrics-diagnostic-telemetry-logging-streaming-export-configure.md#stream-into-azure-storage)of een oplossing van derden voor aangepaste DevOps-waarschuwingen en rapportage mogelijkheden.
 
 > [!NOTE]
 > Zie de [Aanbevolen stroom diagram voor probleem oplossing](intelligent-insights-troubleshoot-performance.md#recommended-troubleshooting-flow) in dit document voor een snelle probleemoplossings gids voor het oplossen van problemen met behulp van intelligent Insights.
@@ -335,4 +335,4 @@ Intelligent Insights is doorgaans één uur tijd nodig voor het uitvoeren van de
 - Leer [intelligent Insights](intelligent-insights-overview.md) -concepten.
 - Het logboek voor de [intelligent Insights prestatie diagnose](intelligent-insights-use-diagnostics-log.md)gebruiken.
 - Bewaak met [Azure SQL-analyse](../../azure-monitor/insights/azure-sql.md).
-- Meer informatie over [het verzamelen en gebruiken van logboek gegevens van uw Azure-resources](../../azure-monitor/platform/platform-logs-overview.md).
+- Meer informatie over [het verzamelen en gebruiken van logboek gegevens van uw Azure-resources](../../azure-monitor/essentials/platform-logs-overview.md).

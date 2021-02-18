@@ -9,12 +9,12 @@ ms.date: 01/27/2021
 ms.author: normesta
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 5e08af509487188245b0fad9ba2d0f490944868f
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 17a2d04fd6519dfdaf3c97c4ef56e87e162c9e9c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100371784"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591574"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Azure Storage-firewalls en virtuele netwerken configureren
 
@@ -567,7 +567,7 @@ Resources van sommige services, **wanneer deze zijn geregistreerd in uw abonneme
 | Azure File Sync          | Micro soft. StorageSync      | Hiermee kunt u uw on-premises Bestands server transformeren naar een cache voor Azure-bestands shares. Het toestaan van synchronisatie op meerdere locaties, snelle herstel na nood gevallen en back-ups aan de Cloud zijde. [Meer informatie](../files/storage-sync-files-planning.md) |
 | Azure HDInsight          | Microsoft.HDInsight        | Richt de oorspronkelijke inhoud in van het standaard bestandssysteem voor een nieuw HDInsight-cluster. [Meer informatie](../../hdinsight/hdinsight-hadoop-use-blob-storage.md). |
 | Azure import-export      | Microsoft.ImportExport     | Hiermee kunt u gegevens importeren voor het Azure Storage of exporteren van gegevens uit Azure Storage met behulp van de Azure Storage import/export-service. [Meer informatie](../../import-export/storage-import-export-service.md).  |
-| Azure Monitor            | Microsoft.Insights         | Hiermee staat u het schrijven van bewakings gegevens naar een beveiligd opslag account, inclusief bron logboeken, Azure Active Directory aanmeld-en audit logboeken en Microsoft Intune-Logboeken toe. [Meer informatie](../../azure-monitor/platform/roles-permissions-security.md). |
+| Azure Monitor            | Microsoft.Insights         | Hiermee staat u het schrijven van bewakings gegevens naar een beveiligd opslag account, inclusief bron logboeken, Azure Active Directory aanmeld-en audit logboeken en Microsoft Intune-Logboeken toe. [Meer informatie](../../azure-monitor/roles-permissions-security.md). |
 | Azure-netwerken         | Microsoft.Network          | U kunt Logboeken voor netwerk verkeer opslaan en analyseren, met inbegrip van de Network Watcher-en Traffic Analytics-Services. [Meer informatie](../../network-watcher/network-watcher-nsg-flow-logging-overview.md). |
 | Azure Site Recovery      | Micro soft. SiteRecovery     | Schakel replicatie in voor herstel na nood gevallen van virtuele Azure IaaS-machines wanneer u gebruikmaakt van cache-, bron-of doel opslag accounts die gebruikmaken van een firewall.  [Meer informatie](../../site-recovery/azure-to-azure-tutorial-enable-replication.md). |
 

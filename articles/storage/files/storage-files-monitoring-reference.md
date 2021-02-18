@@ -9,12 +9,12 @@ ms.date: 10/02/2020
 ms.author: normesta
 ms.subservice: logs
 ms.custom: monitoring
-ms.openlocfilehash: 3a3f4faf8278553153ae2186ea74d20702c603b3
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 4575709a4fa7067b02228036fb2e2b4a60844e21
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780923"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592326"
 ---
 # <a name="azure-files-monitoring-data-reference"></a>Naslag informatie over Azure Files bewakings gegevens
 
@@ -36,9 +36,9 @@ Azure Files biedt de volgende metrische gegevens over capaciteit in Azure Monito
 
 #### <a name="azure-files"></a>Azure Files
 
-In deze tabel worden [Azure files metrische gegevens](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsfileservices)weer gegeven.
+In deze tabel worden [Azure files metrische gegevens](../../azure-monitor/essentials/metrics-supported.md#microsoftstoragestorageaccountsfileservices)weer gegeven.
 
-| Gegevens | Beschrijving |
+| Metrisch | Beschrijving |
 | ------------------- | ----------------- |
 | FileCapacity | De hoeveelheid bestands opslag die door het opslag account wordt gebruikt. <br/><br/> Eenheid: bytes <br/> Aggregatie type: gemiddeld <br/> Waarde-voor beeld: 1024 |
 | FileCount   | Het aantal bestanden in het opslag account. <br/><br/> Eenheid: aantal <br/> Aggregatie type: gemiddeld <br/> Waarde-voor beeld: 1024 |
@@ -88,4 +88,4 @@ De volgende tabel geeft een lijst van de eigenschappen voor Azure Storage bron L
 ## <a name="see-also"></a>Zie ook
 
 - Zie [bewaking Azure files](storage-files-monitoring-reference.md) voor een beschrijving van de bewakings Azure Storage.
-- Zie [Azure-resources bewaken met Azure monitor](../../azure-monitor/insights/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.
+- Zie [Azure-resources bewaken met Azure monitor](../../azure-monitor/essentials/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.

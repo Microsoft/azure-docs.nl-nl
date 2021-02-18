@@ -8,12 +8,12 @@ ms.author: maquaran
 ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: 34c6e7ad8473f02f2772c84ea63aee2a41b97306
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 641b7d44407f8f3760c673f45d69dcfdc8b363b8
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100559689"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650980"
 ---
 # <a name="diagnose-and-troubleshoot-the-availability-of-azure-cosmos-sdks-in-multiregional-environments"></a>De beschik baarheid van Azure Cosmos-Sdk's in multiregionale omgevingen vaststellen en oplossen
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -43,7 +43,17 @@ Als u **geen voorkeurs regio instelt**, wordt de SDK-client standaard ingesteld 
 | Meerdere schrijf regio's | Primaire regio  | Primaire regio  |
 
 > [!NOTE]
-> Primaire regio verwijst naar de eerste regio in de [lijst met Azure Cosmos-account regio's](distribute-data-globally.md)
+> Primaire regio verwijst naar de eerste regio in de [lijst met Azure Cosmos-account regio's](distribute-data-globally.md).
+> Als de waarden die zijn opgegeven als regionale voor keur niet overeenkomen met een van de bestaande Azure-regio's, worden ze genegeerd. Als ze overeenkomen met een bestaande regio, maar het account niet naar dit gebied wordt gerepliceerd, zal de client verbinding maken met de volgende voorkeurs regio die overeenkomt met of aan de primaire regio.
+
+> [!WARNING]
+> Het uitschakelen van de herdetectie van het eind punt (dat wil zeggen instellen op false) bij de client configuratie zorgt voor het uitschakelen van alle failover-en beschikbaarheids logica die in dit document wordt beschreven.
+> Deze configuratie kan worden gebruikt door de volgende para meters in elke Azure Cosmos-SDK:
+>
+> * De eigenschap [Connection Policy. EnableEndpointRediscovery](/dotnet/api/microsoft.azure.documents.client.connectionpolicy.enableendpointdiscovery) in de .NET v2-SDK.
+> * De methode [CosmosClientBuilder. endpointDiscoveryEnabled](/java/api/com.azure.cosmos.cosmosclientbuilder.endpointdiscoveryenabled) in Java v4 SDK.
+> * De [CosmosClient.enable_endpoint_discovery](/python/api/azure-cosmos/azure.cosmos.cosmos_client.cosmosclient) -para meter in de PYTHON-SDK.
+> * De [CosmosClientOptions. Connection Policy. enableEndpointDiscovery](/javascript/api/@azure/cosmos/connectionpolicy#enableEndpointDiscovery) -para meter in de JS-SDK.
 
 Onder normale omstandigheden zal de SDK-client verbinding maken met de voorkeurs regio (als een regionale voor keur is ingesteld) of aan de primaire regio (als er geen voor keur is ingesteld), en de bewerkingen worden beperkt tot die regio, tenzij een van de onderstaande scenario's zich voordoet.
 
@@ -59,7 +69,7 @@ Zie de [sla's voor Beschik baarheid](high-availability.md#slas-for-availability)
 
 ## <a name="removing-a-region-from-the-account"></a><a id="remove-region"></a>Een regio uit het account verwijderen
 
-Wanneer u een regio uit een Azure Cosmos-account verwijdert, detecteert elke SDK-client die actief gebruikmaakt van het account, het verwijderen van de regio via een back-end-respons code. De client markeert vervolgens het regionale eind punt als niet-beschikbaar. De client probeert de huidige bewerking opnieuw en alle toekomstige bewerkingen worden permanent doorgestuurd naar de volgende regio in de volg orde van voor keur.
+Wanneer u een regio uit een Azure Cosmos-account verwijdert, detecteert elke SDK-client die actief gebruikmaakt van het account, het verwijderen van de regio via een back-end-respons code. De client markeert vervolgens het regionale eind punt als niet-beschikbaar. De client probeert de huidige bewerking opnieuw en alle toekomstige bewerkingen worden permanent doorgestuurd naar de volgende regio in de volg orde van voor keur. Als de lijst met voor keuren slechts één vermelding had (of leeg was), maar het account andere regio's beschikbaar heeft, wordt de route naar de volgende regio in de lijst met accounts doorgestuurd.
 
 ## <a name="adding-a-region-to-an-account"></a>Een regio toevoegen aan een account
 

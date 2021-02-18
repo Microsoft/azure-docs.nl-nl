@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2019
 ms.author: terrylan
-ms.openlocfilehash: 9b9a83cf71dfa7658c34c3c98f8d12a056adad0c
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: e7e8d51b8227acd033c95583d6e61d78a56d62a3
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94698781"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590283"
 ---
 # <a name="security-best-practices-for-iaas-workloads-in-azure"></a>Best practices voor beveiliging voor IaaS-workloads in Azure
 In dit artikel worden de aanbevolen beveiligings procedures voor Vm's en besturings systemen beschreven.
@@ -130,17 +130,17 @@ Gebruik [Azure Security Center](../../security-center/security-center-introducti
 
 Security Center kunt actief controleren op bedreigingen en mogelijke bedreigingen worden weer gegeven in beveiligings waarschuwingen. Gecorreleerde bedreigingen worden geaggregeerd in één weer gave die een beveiligings incident wordt genoemd.
 
-Security Center slaat gegevens op in [Azure monitor logboeken](../../azure-monitor/log-query/log-query-overview.md). Azure Monitor-logboeken bieden een query taal en analyse-engine waarmee u inzicht krijgt in de werking van uw toepassingen en resources. Gegevens worden ook verzameld van [Azure monitor](../../batch/monitoring-overview.md), beheer oplossingen en agents die zijn geïnstalleerd op virtuele machines in de Cloud of on-premises. Deze gedeelde functionaliteit helpt u een volledig overzicht van uw omgeving te vormen.
+Security Center slaat gegevens op in [Azure monitor logboeken](../../azure-monitor/logs/log-query-overview.md). Azure Monitor-logboeken bieden een query taal en analyse-engine waarmee u inzicht krijgt in de werking van uw toepassingen en resources. Gegevens worden ook verzameld van [Azure monitor](../../batch/monitoring-overview.md), beheer oplossingen en agents die zijn geïnstalleerd op virtuele machines in de Cloud of on-premises. Deze gedeelde functionaliteit helpt u een volledig overzicht van uw omgeving te vormen.
 
 Organisaties die geen sterke beveiliging afdwingen voor hun Vm's, blijven niet op de hoogte van potentiële pogingen door onbevoegde gebruikers om beveiligings controles te omzeilen.
 
 ## <a name="monitor-vm-performance"></a>VM-prestaties bewaken
 Misbruik van bronnen kan een probleem zijn wanneer VM-processen meer resources gebruiken dan ze zouden moeten doen. Prestatie problemen met een virtuele machine kunnen leiden tot onderbrekingen in de service, waardoor het beveiligings principe van Beschik baarheid wordt geschonden. Dit is met name belang rijk voor Vm's die IIS of andere webservers hosten, omdat hoge CPU-of geheugen gebruik mogelijk duidt op een DoS-aanval (Denial of service). Het is essentieel dat u de VM-toegang niet alleen opnieuw kunt bewaken terwijl er een probleem optreedt, maar ook proactief voor de basislijn prestaties, zoals gemeten tijdens de normale werking.
 
-U wordt aangeraden [Azure monitor](../../azure-monitor/platform/data-platform.md) te gebruiken om inzicht te krijgen in de status van uw resource. Azure Monitor functies:
+U wordt aangeraden [Azure monitor](../../azure-monitor/data-platform.md) te gebruiken om inzicht te krijgen in de status van uw resource. Azure Monitor functies:
 
-- [Diagnostische logboek bestanden](../../azure-monitor/platform/platform-logs-overview.md)van de resource: bewaakt uw VM-resources en identificeert mogelijke problemen die de prestaties en beschik baarheid kunnen beschadigen.
-- [Azure Diagnostics extensie](../../azure-monitor/platform/diagnostics-extension-overview.md): biedt mogelijkheden voor bewaking en diagnostiek op Windows-vm's. U kunt deze mogelijkheden inschakelen door de uitbrei ding op te nemen als onderdeel van de [Azure Resource Manager sjabloon](../../virtual-machines/extensions/diagnostics-template.md).
+- [Diagnostische logboek bestanden](../../azure-monitor/essentials/platform-logs-overview.md)van de resource: bewaakt uw VM-resources en identificeert mogelijke problemen die de prestaties en beschik baarheid kunnen beschadigen.
+- [Azure Diagnostics extensie](../../azure-monitor/agents/diagnostics-extension-overview.md): biedt mogelijkheden voor bewaking en diagnostiek op Windows-vm's. U kunt deze mogelijkheden inschakelen door de uitbrei ding op te nemen als onderdeel van de [Azure Resource Manager sjabloon](../../virtual-machines/extensions/diagnostics-template.md).
 
 Organisaties die de prestaties van de virtuele machine niet controleren, kunnen niet bepalen of bepaalde wijzigingen in prestatie patronen normaal of abnormaal zijn. Een virtuele machine die meer resources verbruikt dan normaal, kan duiden op een aanval van een externe bron of een aangetast proces dat wordt uitgevoerd in de virtuele machine.
 

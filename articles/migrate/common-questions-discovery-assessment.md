@@ -6,12 +6,12 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 06/09/2020
-ms.openlocfilehash: 944d867ef888e70faa659adcc0e2d4c02f003c97
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: 40afa1d743b8d074fa46dde46163f6479ebf87c2
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567400"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589075"
 ---
 # <a name="discovery-assessment-and-dependency-analysis---common-questions"></a>Detectie, beoordeling en afhankelijkheids analyse-Veelgestelde vragen
 
@@ -150,9 +150,9 @@ De verschillen tussen visualisatie zonder agents en visualisaties op basis van a
 **Vereiste** | **Zonder agent** | **Op basis van een agent**
 --- | --- | ---
 Ondersteuning | Deze optie is momenteel in Preview en is alleen beschikbaar voor virtuele VMware-machines. [Bekijk](migrate-support-matrix-vmware.md#dependency-analysis-requirements-agentless) ondersteunde besturings systemen. | In algemene Beschik baarheid (GA).
-Agent | U hoeft geen agents te installeren op computers die u wilt cross-checken. | Agents die moeten worden geïnstalleerd op elke on-premises computer die u wilt analyseren: [micro soft Monitoring Agent (MMA)](../azure-monitor/platform/agent-windows.md)en de [dependency agent](../azure-monitor/platform/agents-overview.md#dependency-agent). 
+Agent | U hoeft geen agents te installeren op computers die u wilt cross-checken. | Agents die moeten worden geïnstalleerd op elke on-premises computer die u wilt analyseren: [micro soft Monitoring Agent (MMA)](../azure-monitor/agents/agent-windows.md)en de [dependency agent](../azure-monitor/agents/agents-overview.md#dependency-agent). 
 Vereisten | [Bekijk](concepts-dependency-visualization.md#agentless-analysis) de vereisten en implementatie behoeften. | [Bekijk](concepts-dependency-visualization.md#agent-based-analysis) de vereisten en implementatie behoeften.
-Log Analytics | Niet vereist. | Azure Migrate gebruikt de [servicetoewijzing](../azure-monitor/insights/service-map.md) oplossing in [Azure monitor logboeken](../azure-monitor/log-query/log-query-overview.md) voor de visualisatie van afhankelijkheden. [Meer informatie](concepts-dependency-visualization.md#agent-based-analysis).
+Log Analytics | Niet vereist. | Azure Migrate gebruikt de [servicetoewijzing](../azure-monitor/vm/service-map.md) oplossing in [Azure monitor logboeken](../azure-monitor/logs/log-query-overview.md) voor de visualisatie van afhankelijkheden. [Meer informatie](concepts-dependency-visualization.md#agent-based-analysis).
 Uitleg | Hiermee worden TCP-verbindings gegevens vastgelegd op computers die zijn ingeschakeld voor de visualisatie van afhankelijkheden. Na detectie verzamelt het gegevens met intervallen van vijf minuten. | Servicetoewijzing agents die op een computer zijn geïnstalleerd, verzamelen gegevens over TCP-processen en inkomende/uitgaande verbindingen voor elk proces.
 Gegevens | Naam van de bron computer server, proces, toepassings naam.<br/><br/> Naam van de doel computer server, proces, toepassings naam en poort. | Naam van de bron computer server, proces, toepassings naam.<br/><br/> Naam van de doel computer server, proces, toepassings naam en poort.<br/><br/> Het aantal gegevens over verbindingen, latentie en gegevens overdracht wordt verzameld en beschikbaar gesteld voor Log Analytics query's. 
 Visualisatie | Afhankelijkheids toewijzing van één server kan worden weer gegeven gedurende een periode van één uur tot 30 dagen. | Afhankelijkheids toewijzing van één server.<br/><br/> De kaart kan alleen over een uur worden weer gegeven.<br/><br/> Afhankelijkheids toewijzing van een groep servers.<br/><br/> Servers in een groep toevoegen aan en verwijderen uit de kaart weergave.
@@ -171,8 +171,8 @@ Nee. Meer informatie over [Azure migrate prijzen](https://azure.microsoft.com/pr
 
 Als u visualisatie op basis van een op agents gebaseerde afhankelijkheid wilt gebruiken, downloadt en installeert u agents op elke on-premises computer die u wilt evalueren:
 
-- [Micro soft Monitoring Agent (MMA)](../azure-monitor/platform/agent-windows.md)
-- [Agent voor afhankelijkheden](../azure-monitor/platform/agents-overview.md#dependency-agent)
+- [Micro soft Monitoring Agent (MMA)](../azure-monitor/agents/agent-windows.md)
+- [Agent voor afhankelijkheden](../azure-monitor/agents/agents-overview.md#dependency-agent)
 - Als u machines hebt die geen verbinding met internet hebben, kunt u de Log Analytics-gateway op de computers downloaden en installeren.
 
 U hebt deze agents alleen nodig als u visualisatie van afhankelijkheden op basis van een agent gebruikt.
@@ -189,14 +189,14 @@ Nee, het visualisatie rapport van de afhankelijkheid in de op een agent gebaseer
 
 Voor visualisatie op basis van een agent:
 
-- Gebruik een [script om de afhankelijkheids agent te installeren](../azure-monitor/insights/vminsights-enable-hybrid.md#dependency-agent).
-- Gebruik voor MMA [de opdracht regel of de automatisering](../azure-monitor/platform/log-analytics-agent.md#installation-options)of gebruik een [script](https://gallery.technet.microsoft.com/scriptcenter/Install-OMS-Agent-with-2c9c99ab).
+- Gebruik een [script om de afhankelijkheids agent te installeren](../azure-monitor/vm/vminsights-enable-hybrid.md#dependency-agent).
+- Gebruik voor MMA [de opdracht regel of de automatisering](../azure-monitor/agents/log-analytics-agent.md#installation-options)of gebruik een [script](https://gallery.technet.microsoft.com/scriptcenter/Install-OMS-Agent-with-2c9c99ab).
 - Naast scripts kunt u implementatie hulpprogramma's zoals micro soft endpoint Configuration Manager en [Intigua](https://www.intigua.com/intigua-for-azure-migration) gebruiken om de agents te implementeren.
 
 ## <a name="what-operating-systems-does-mma-support"></a>Welke besturings systemen ondersteunt MMA?
 
-- Bekijk de lijst met [Windows-besturings systemen die MMA ondersteunt](../azure-monitor/platform/log-analytics-agent.md#installation-options).
-- Bekijk de lijst met [Linux-besturings systemen die MMA ondersteunt](../azure-monitor/platform/log-analytics-agent.md#installation-options).
+- Bekijk de lijst met [Windows-besturings systemen die MMA ondersteunt](../azure-monitor/agents/log-analytics-agent.md#installation-options).
+- Bekijk de lijst met [Linux-besturings systemen die MMA ondersteunt](../azure-monitor/agents/log-analytics-agent.md#installation-options).
 
 ## <a name="can-i-visualize-dependencies-for-more-than-one-hour"></a>Kan ik afhankelijkheden langer dan een uur visualiseren?
 

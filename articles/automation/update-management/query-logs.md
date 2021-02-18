@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 09/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: 833e2f7808b4b8efa210bc6a903ed30fe9ac53e0
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 5eb0c7d72896cc9a27907743b1b9c3d5a40614dd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92222234"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592863"
 ---
 # <a name="query-update-management-logs"></a>Query's uitvoeren op Updatebeheer-logboeken
 
@@ -120,7 +120,7 @@ Een record met een type `UpdateRunProgress` wordt gemaakt die de update-implemen
 | Resource | De naam van de resource. |
 | ResourceId | De unieke id voor de resource die aan de record is gekoppeld. |
 | ResourceProvider | De resource provider. |
-| ResourceType | Resource type. |
+| ResourceType | Resourcetype. |
 | SourceComputerId | De unieke id van de bron computer. |
 | SourceSystem | Bron systeem voor de record. De waarde is `OperationsManager`. |
 | StartTime | Tijdstip waarop de update is gepland om te worden geïnstalleerd. *Deze eigenschap wordt momenteel niet gebruikt. Zie TimeGenerated.* |
@@ -152,7 +152,7 @@ Er wordt een record met het type `UpdateSummary` gemaakt die een update overzich
 | ResourceGroup | De naam van de resource groep die de resource bevat. |
 | ResourceId | De unieke id voor de resource die aan de record is gekoppeld. |
 | ResourceProvider | De resource provider. |
-| ResourceType | Resource type. |
+| ResourceType | Resourcetype. |
 | RestartPending | Waar als opnieuw opstarten in behandeling is of anders onwaar. |
 | SecurityUpdatesMissing | Aantal ontbrekende beveiligings updates die van toepassing zijn.|
 | SourceComputerId | De unieke id voor de virtuele machine. |
@@ -191,11 +191,11 @@ Heartbeat
 
 Op een Windows-computer kunt u de volgende informatie controleren om de agent connectiviteit met Azure Monitor-logboeken te controleren:
 
-1. Open **micro soft Monitoring Agent**in het configuratie scherm. Op het tabblad **log Analytics van Azure** wordt het volgende bericht weer gegeven: **micro soft monitoring agent heeft verbinding gemaakt met log Analytics**.
+1. Open **micro soft Monitoring Agent** in het configuratie scherm. Op het tabblad **log Analytics van Azure** wordt het volgende bericht weer gegeven: **micro soft monitoring agent heeft verbinding gemaakt met log Analytics**.
 
 1. Open het Windows-gebeurtenis logboek. Ga naar **Application and Services Servicelogboeken\operations Manager** en zoek naar gebeurtenis-id 3000 en gebeurtenis-id 5002 van de bron **service connector**. Deze gebeurtenissen geven aan of de computer is geregistreerd bij de Log Analytics-werkruimte en of deze de configuratie ontvangt.
 
-Als de agent niet kan communiceren met Azure Monitor-logboeken en de agent is geconfigureerd voor communicatie met Internet via een firewall of proxy server, controleert u of de firewall of proxy server correct is geconfigureerd. Zie [netwerk configuratie voor Windows-agent](../../azure-monitor/platform/agent-windows.md) of [netwerk configuratie voor Linux-agent](../../azure-monitor/learn/quick-collect-linux-computer.md)voor informatie over het controleren van de juiste configuratie van de firewall of proxy server.
+Als de agent niet kan communiceren met Azure Monitor-logboeken en de agent is geconfigureerd voor communicatie met Internet via een firewall of proxy server, controleert u of de firewall of proxy server correct is geconfigureerd. Zie [netwerk configuratie voor Windows-agent](../../azure-monitor/agents/agent-windows.md) of [netwerk configuratie voor Linux-agent](../../azure-monitor/vm/quick-collect-linux-computer.md)voor informatie over het controleren van de juiste configuratie van de firewall of proxy server.
 
 > [!NOTE]
 > Als uw Linux-systemen zijn geconfigureerd om te communiceren met een proxy-of Log Analytics gateway en u Updatebeheer inschakelt, werkt u de `proxy.conf` machtigingen bij om de groep omiuser Lees machtigingen voor het bestand te verlenen met behulp van de volgende opdrachten:
@@ -205,7 +205,7 @@ Als de agent niet kan communiceren met Azure Monitor-logboeken en de agent is ge
 
 Nieuwe toegevoegde Linux-agents tonen de status **bijgewerkt** nadat een evaluatie is uitgevoerd. Dit proces kan maximaal zes uur duren.
 
-Zie [Operations Manager integratie valideren met Azure monitor logboeken](../../azure-monitor/platform/om-agents.md#validate-operations-manager-integration-with-azure-monitor)om te controleren of een Operations Manager-beheer groep communiceert met Azure monitor-Logboeken.
+Zie [Operations Manager integratie valideren met Azure monitor logboeken](../../azure-monitor/agents/om-agents.md#validate-operations-manager-integration-with-azure-monitor)om te controleren of een Operations Manager-beheer groep communiceert met Azure monitor-Logboeken.
 
 ### <a name="single-azure-vm-assessment-queries-windows"></a>Enkelvoudige Azure VM-evaluatie query's (Windows)
 
@@ -410,5 +410,5 @@ Update
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [Azure monitor-logboeken](../../azure-monitor/log-query/log-query-overview.md)voor meer informatie over Azure monitor Logboeken.
+* Zie [Azure monitor-logboeken](../../azure-monitor/logs/log-query-overview.md)voor meer informatie over Azure monitor Logboeken.
 * Zie [Configuring Alerts (waarschuwingen configureren](configure-alerts.md)) voor meer informatie.

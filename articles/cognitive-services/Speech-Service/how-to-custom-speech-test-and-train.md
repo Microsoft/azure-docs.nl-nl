@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/12/2021
 ms.author: trbye
-ms.openlocfilehash: 8546201d21e68fbcf1e519c8fe9ba0de1dc38a96
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 2e6f79643493457a587f907f2649c7ab50b963f4
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100367976"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100634733"
 ---
 # <a name="prepare-data-for-custom-speech"></a>Gegevens voorbereiden voor Custom Speech
 
@@ -58,7 +58,7 @@ Bestanden moeten worden gegroepeerd op type in een gegevensset en worden geüplo
 > Overweeg om voorbeeld gegevens te gebruiken om snel aan de slag te gaan. Bekijk deze GitHub-opslag plaats voor <a href="https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/sampledata/customspeech" target="_target">voorbeeld <span class="docon docon-navigate-external x-hidden-focus"></span> Custom speech gegevens</a>
 
 > [!NOTE]
-> Niet alle basis modellen ondersteunen training met audio. Als een basis model dit niet ondersteunt, gebruikt de spraak service alleen de tekst uit de transcripten en wordt de audio genegeerd. Zie [taal ondersteuning](language-support.md#speech-to-text) voor een lijst met basis modellen die ondersteuning bieden voor training met audio gegevens.
+> Niet alle basis modellen ondersteunen training met audio. Als een basis model dit niet ondersteunt, gebruikt de spraak service alleen de tekst uit de transcripten en wordt de audio genegeerd. Zie [taal ondersteuning](language-support.md#speech-to-text) voor een lijst met basis modellen die ondersteuning bieden voor training met audio gegevens. Zelfs als een basis model training met audio gegevens ondersteunt, kan de service slechts een deel van de audio gebruiken. Nog steeds alle transcripten worden gebruikt.
 
 > [!NOTE]
 > Als u het basis model dat wordt gebruikt voor de training wijzigt en u audio hebt in de trainings-gegevensset, moet u *altijd* controleren of het nieuwe basis model [training voor audio gegevens ondersteunt](language-support.md#speech-to-text). Als het eerder gebruikte basis model geen training met audio gegevens ondersteunt, en de training-gegevensset bevat audio, wordt de trainings tijd met het nieuwe basis model **drastisch** verhoogd en kan het enkele uren tot enkele dagen en langer duren. Dit geldt vooral als uw abonnement op de spraak service zich **niet** in een regio bevindt [met de speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training.

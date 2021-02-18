@@ -6,12 +6,12 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: tutorial
 ms.date: 2/8/2021
-ms.openlocfilehash: b20da64c135f7e54a7f6bc74beea073140a1e0a9
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: 18cb4e3ada94822c2f4cb1ca7675310a37e44e84
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100101701"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590656"
 ---
 # <a name="tutorial-media-services-trusted-storage"></a>Zelf studie: vertrouwde opslag Media Services
 
@@ -23,6 +23,9 @@ In deze zelfstudie leert u:
 > - Azure-Services toegang geven tot een opslag account bij gebruik van netwerk toegangs beheer, zoals een firewall of VPN
 
 Met de 2020-05-01-API kunt u vertrouwde opslag inschakelen door een beheerde identiteit te koppelen aan een Media Services-account.
+
+>[!NOTE]
+>Vertrouwde opslag is alleen beschikbaar in de API en is momenteel niet ingeschakeld in de Azure Portal.
 
 Media Services kunt automatisch toegang krijgen tot uw opslag account met behulp van systeem verificatie. Media Services valideert of het Media Services-account en het opslag account zich in hetzelfde abonnement bevinden. Ook wordt gevalideerd of de gebruiker die de koppeling toevoegt, toegang heeft tot het opslag account met Azure Resource Manager RBAC.
 

@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: wiassaf, sstein
 ms.date: 04/06/2020
-ms.openlocfilehash: 999bb83af6937d4a7b3d7ee8207e2fd689a23d35
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 1de2c1ff02c799d04f2ab2c81e83dda5001a531f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96490803"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592724"
 ---
 # <a name="configure-streaming-export-of-azure-sql-database-and-sql-managed-instance-diagnostic-telemetry"></a>Streaming-export van Azure SQL Database en SQL Managed instance diagnostische telemetrie configureren
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -58,17 +58,17 @@ Deze diagnostische telemetrie kan worden gestreamd naar een van de volgende Azur
 
 - **[Log Analytics-werk ruimte](#stream-into-sql-analytics)**:
 
-  Gegevens die naar een [log Analytics-werk ruimte](../../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace) zijn gestreamd, kunnen worden gebruikt door [SQL Analytics](../../azure-monitor/insights/azure-sql.md). SQL Analytics is een alleen-Cloud bewakings oplossing die intelligente bewaking biedt over uw data bases, waaronder prestatie rapporten, waarschuwingen en aanbevelingen voor risico beperking. Gegevens die naar een Log Analytics-werk ruimte zijn gestreamd, kunnen worden geanalyseerd met andere bewakings gegevens die zijn verzameld en biedt u ook de mogelijkheid om andere Azure Monitor functies, zoals waarschuwingen en visualisaties, te gebruiken.
+  Gegevens die naar een [log Analytics-werk ruimte](../../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace) zijn gestreamd, kunnen worden gebruikt door [SQL Analytics](../../azure-monitor/insights/azure-sql.md). SQL Analytics is een alleen-Cloud bewakings oplossing die intelligente bewaking biedt over uw data bases, waaronder prestatie rapporten, waarschuwingen en aanbevelingen voor risico beperking. Gegevens die naar een Log Analytics-werk ruimte zijn gestreamd, kunnen worden geanalyseerd met andere bewakings gegevens die zijn verzameld en biedt u ook de mogelijkheid om andere Azure Monitor functies, zoals waarschuwingen en visualisaties, te gebruiken.
 - **[Azure Event hubs](#stream-into-event-hubs)**:
 
-  Gegevens die naar een [Azure Event hub](../../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs)zijn gestreamd, bieden de volgende functionaliteit:
+  Gegevens die naar een [Azure Event hub](../../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs)zijn gestreamd, bieden de volgende functionaliteit:
 
   - **Stream-logboeken naar logboek registraties van derden en telemetrie-systemen**: streamen al uw metrische gegevens en bron logboeken naar een enkele Event hub voor het pipeen van informatie over het logboek naar een Siem of log Analytics-hulp programma van derden.
   - **Een aangepast telemetrie-en logboek registratie platform bouwen**: met de uiterst schaal bare publicatie van Event hubs kunt u de metrische gegevens en bron logboeken flexibel vastleggen in een aangepast telemetrie-platform. Zie [het ontwerp en de grootte van een telemetrie-platform op wereld wijd schalen op Azure Event hubs](https://azure.microsoft.com/documentation/videos/build-2015-designing-and-sizing-a-global-scale-telemetry-platform-on-azure-event-Hubs/) voor meer informatie.
   - **Bekijk de service status door gegevens te streamen naar Power bi**: gebruik Event Hubs, Stream Analytics en Power bi om uw diagnostische gegevens te transformeren naar bijna realtime inzichten op uw Azure-Services. Zie [Stream Analytics en Power BI: een real-time analyse dashboard voor het streamen van gegevens](../../stream-analytics/stream-analytics-power-bi-dashboard.md) voor meer informatie over deze oplossing.
 - **[Azure Storage](#stream-into-azure-storage)**:
 
-  Met gegevens die naar [Azure Storage](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage) worden gestreamd kunt u grote hoeveel heden diagnostische telemetrie archiveren voor een fractie van de kosten van de vorige twee stroomsgewijze opties.
+  Met gegevens die naar [Azure Storage](../../azure-monitor/essentials/resource-logs.md#send-to-azure-storage) worden gestreamd kunt u grote hoeveel heden diagnostische telemetrie archiveren voor een fractie van de kosten van de vorige twee stroomsgewijze opties.
 
 Deze diagnostische telemetrie die is gestreamd naar een van deze bestemmingen, kan worden gebruikt om het resource gebruik en de statistieken voor query uitvoering te meten voor eenvoudiger prestatie bewaking.
 
@@ -89,14 +89,14 @@ U kunt metrische gegevens en logboekregistratie van diagnostische telemetrie ins
 
 ## <a name="configure-the-streaming-export-of-diagnostic-telemetry"></a>De streaming-export van diagnostische telemetrie configureren
 
-U kunt het menu **Diagnostische instellingen** in de Azure Portal gebruiken om streaming van diagnostische telemetrie in te scha kelen en te configureren. Daarnaast kunt u Power shell, de Azure CLI, de [rest API](/rest/api/monitor/diagnosticsettings)en [Resource Manager-sjablonen](../../azure-monitor/samples/resource-manager-diagnostic-settings.md) gebruiken om streaming van diagnostische telemetrie te configureren. U kunt de volgende bestemmingen instellen voor het streamen van de diagnostische telemetrie: Azure Storage, Azure Event Hubs en Azure Monitor Logboeken.
+U kunt het menu **Diagnostische instellingen** in de Azure Portal gebruiken om streaming van diagnostische telemetrie in te scha kelen en te configureren. Daarnaast kunt u Power shell, de Azure CLI, de [rest API](/rest/api/monitor/diagnosticsettings)en [Resource Manager-sjablonen](../../azure-monitor/essentials/resource-manager-diagnostic-settings.md) gebruiken om streaming van diagnostische telemetrie te configureren. U kunt de volgende bestemmingen instellen voor het streamen van de diagnostische telemetrie: Azure Storage, Azure Event Hubs en Azure Monitor Logboeken.
 
 > [!IMPORTANT]
 > Het exporteren van de telemetrie van de gegevens stroom is standaard niet ingeschakeld.
 
 Selecteer een van de volgende tabbladen voor stapsgewijze instructies voor het configureren van de streaming-export van diagnostische telemetrie in de Azure Portal en voor scripts voor het uitvoeren van hetzelfde met Power shell en de Azure CLI.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/azure-portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/azure-portal)
 
 ### <a name="elastic-pools-in-azure-sql-database"></a>Elastische Pools in Azure SQL Database
 
@@ -284,7 +284,7 @@ Geef de resource-ID van de werk ruimte \<$WSID\> op als para meter bij het uitvo
 
   Vervang door \<subID\> de abonnements-id, \<RG_NAME\> met de naam van de resource groep en \<WS_NAME\> met de naam van de werk ruimte.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 U kunt metrische gegevens en diagnostische logboek registratie inschakelen met behulp van de Azure CLI.
 
@@ -335,7 +335,7 @@ U kunt een verzameling data bases en database verzamelingen met Azure SQL-analys
 2. Maak een Log Analytics-werk ruimte in de oplossing.
 3. Configureer data bases voor het streamen van diagnostische telemetrie in de werk ruimte.
 
-U kunt de streaming-export van deze diagnostische telemetrie configureren met behulp van de ingebouwde optie **Send to log Analytics** op het tabblad Diagnostische instellingen in de Azure Portal. U kunt streaming ook inschakelen in een Log Analytics-werk ruimte met behulp van diagnostische instellingen via [Power shell-cmdlets](metrics-diagnostic-telemetry-logging-streaming-export-configure.md?tabs=azure-powershell#configure-the-streaming-export-of-diagnostic-telemetry), de [Azure CLI](metrics-diagnostic-telemetry-logging-streaming-export-configure.md?tabs=azure-cli#configure-the-streaming-export-of-diagnostic-telemetry), de [Azure monitor rest API](/rest/api/monitor/diagnosticsettings)of [Resource Manager-sjablonen](../../azure-monitor/samples/resource-manager-diagnostic-settings.md).
+U kunt de streaming-export van deze diagnostische telemetrie configureren met behulp van de ingebouwde optie **Send to log Analytics** op het tabblad Diagnostische instellingen in de Azure Portal. U kunt streaming ook inschakelen in een Log Analytics-werk ruimte met behulp van diagnostische instellingen via [Power shell-cmdlets](metrics-diagnostic-telemetry-logging-streaming-export-configure.md?tabs=azure-powershell#configure-the-streaming-export-of-diagnostic-telemetry), de [Azure CLI](metrics-diagnostic-telemetry-logging-streaming-export-configure.md?tabs=azure-cli#configure-the-streaming-export-of-diagnostic-telemetry), de [Azure monitor rest API](/rest/api/monitor/diagnosticsettings)of [Resource Manager-sjablonen](../../azure-monitor/essentials/resource-manager-diagnostic-settings.md).
 
 ### <a name="create-an-azure-sql-analytics-resource"></a>Een Azure SQL-analyse resource maken
 
@@ -428,7 +428,7 @@ Als u Azure SQL-analyse gebruikt, kunt u uw gegevens opname bewaken door **OMS-w
 
 ## <a name="metrics-and-logs-available"></a>Metrische gegevens en logboeken beschikbaar
 
-De beschik bare telemetrie voor afzonderlijke data bases, gepoolde data bases, elastische Pools, beheerde exemplaren en exemplaar databases wordt beschreven in deze sectie van het artikel. Verzamelde bewakings-telemetrie in SQL Analytics kan worden gebruikt voor uw eigen aangepaste analyse en toepassings ontwikkeling met behulp van [Azure monitor logboek](../../azure-monitor/log-query/get-started-queries.md) taal van query's.
+De beschik bare telemetrie voor afzonderlijke data bases, gepoolde data bases, elastische Pools, beheerde exemplaren en exemplaar databases wordt beschreven in deze sectie van het artikel. Verzamelde bewakings-telemetrie in SQL Analytics kan worden gebruikt voor uw eigen aangepaste analyse en toepassings ontwikkeling met behulp van [Azure monitor logboek](../../azure-monitor/logs/get-started-queries.md) taal van query's.
 
 ### <a name="basic-metrics"></a>Basis gegevens
 
@@ -605,7 +605,7 @@ Meer informatie over [query Store-wacht statistieken](/sql/relational-databases/
 |Bericht|Fout bericht in tekst zonder opmaak |
 |user_defined_b|Is de door de gebruiker gedefinieerde fout |
 |error_number_d|Foutcode |
-|Ernst|Ernst van de fout |
+|Severity|Ernst van de fout |
 |state_d|Status van de fout |
 |query_hash_s|Query-hash van de mislukte query, indien beschikbaar |
 |query_plan_hash_s|Query plan-hash van de mislukte query, indien beschikbaar |
@@ -747,8 +747,8 @@ Meer informatie over de [intelligent Insights-logboek indeling](intelligent-insi
 
 Zie voor meer informatie over het inschakelen van logboek registratie en het begrijpen van de metrische gegevens en logboek categorieën die worden ondersteund door de verschillende Azure-Services:
 
-- [Overzicht van metrische gegevens in Microsoft Azure](../../azure-monitor/platform/data-platform.md)
-- [Overzicht van Azure-platformlogboeken](../../azure-monitor/platform/platform-logs-overview.md)
+- [Overzicht van metrische gegevens in Microsoft Azure](../../azure-monitor/data-platform.md)
+- [Overzicht van Azure-platformlogboeken](../../azure-monitor/essentials/platform-logs-overview.md)
 
 Lees voor meer informatie over Event Hubs:
 

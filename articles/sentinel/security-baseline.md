@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/10/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ba15deed98af16b9b501439082ee6c9237fe20b7
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: d95a2318d94f52352c9546aedc24d0111c5ba0a4
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807204"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571655"
 ---
 # <a name="azure-security-baseline-for-azure-sentinel"></a>Azure-beveiligings basislijn voor Azure-Sentinel
 
@@ -37,9 +37,9 @@ In deze beveiligings basislijn worden richt lijnen van de [Azure Security Bench 
 
 - [Controle inschakelen in azure Sentinel](resources.md)
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -73,7 +73,7 @@ In deze beveiligings basislijn worden richt lijnen van de [Azure Security Bench 
 
 **Richt lijnen**: in azure monitor stelt u de Bewaar periode voor het logboek In voor log Analytics werk ruimten die zijn gekoppeld aan uw Azure Sentinel-werk ruimten volgens de nalevings voorschriften van uw organisatie.
 
-- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -341,7 +341,7 @@ Elke Sentinel-werkmap is bovendien een Azure-resource en u kunt rollen toewijzen
 
 **Hulp**: Azure Sentinel en Azure monitor log Analytics-werk ruimten maken momenteel gebruik van door micro soft beheerde sleutels voor het versleutelen van opgenomen gegevens in rust. De mogelijkheid om uw eigen sleutel te halen, is nog niet volledig ondersteund voor Sentinel, maar zal zich in de nabije toekomst bevinden.
 
-- [Azure Monitor door de klant beheerde sleutel overzicht](../azure-monitor/platform/customer-managed-keys.md#customer-managed-key-overview)
+- [Azure Monitor door de klant beheerde sleutel overzicht](../azure-monitor/logs/customer-managed-keys.md#customer-managed-key-overview)
 
 - [Informatie over door de klant beheerde sleutels in azure Sentinel (preview-versie)](customer-managed-keys.md)
 

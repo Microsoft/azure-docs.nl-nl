@@ -3,15 +3,15 @@ title: Ondersteunde resources voor Azure Red Hat OpenShift 3.11
 description: Begrijp welke Azure-regio's en virtuele-machine grootten worden ondersteund door Microsoft Azure Red Hat open SHIFT.
 author: jimzim
 ms.author: jzim
-ms.service: container-service
+ms.service: azure-redhat-openshift
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: 38203cede755d776ba9142ad16e1bea1fd1637a6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ad0837ae110b84cdff690fe76e13923a0ab60996
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82203672"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100635605"
 ---
 # <a name="azure-red-hat-openshift-resources"></a>Azure Red Hat open Shift-resources
 

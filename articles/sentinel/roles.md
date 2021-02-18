@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/28/2020
 ms.author: yelevin
-ms.openlocfilehash: 9c100ca82b751a050e74cce85e1794701a789288
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: f9b50c831b435a6189a9b9e4d79a934a2661b033
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95498466"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570393"
 ---
 # <a name="permissions-in-azure-sentinel"></a>Machtigingen in Azure Sentinel
 
@@ -91,7 +91,7 @@ De volgende tabel bevat een overzicht van de rollen en toegestane acties in Azur
 
 - Naast of in plaats van met behulp van ingebouwde rollen van Azure, kunt u aangepaste Azure-rollen maken voor Azure Sentinel. Aangepaste Azure-rollen voor Azure Sentinel worden op dezelfde manier gemaakt als bij het maken van andere [aangepaste rollen van Azure](../role-based-access-control/custom-roles-rest.md#create-a-custom-role), op basis van [specifieke machtigingen voor Azure Sentinel](../role-based-access-control/resource-provider-operations.md#microsoftsecurityinsights) en tot [Azure log Analytics-resources](../role-based-access-control/resource-provider-operations.md#microsoftoperationalinsights).
 
-- U kunt de Log Analytics geavanceerde op rollen gebaseerd toegangs beheer van Azure gebruiken voor de gegevens in uw Azure Sentinel-werk ruimte. Dit omvat zowel op gegevens type gebaseerde Azure RBAC en resource gerichte Azure RBAC. Zie [logboek gegevens en-werk ruimten beheren in azure monitor](../azure-monitor/platform/manage-access.md#manage-access-using-workspace-permissions)voor meer informatie over log Analytics rollen.
+- U kunt de Log Analytics geavanceerde op rollen gebaseerd toegangs beheer van Azure gebruiken voor de gegevens in uw Azure Sentinel-werk ruimte. Dit omvat zowel Azure RBAC op basis van type als resource gerichte Azure RBAC. Raadpleeg [Logboekgegevens en werkruimten beheren in Azure Monitor](../azure-monitor/logs/manage-access.md#manage-access-using-workspace-permissions) voor meer informatie over Log Analytics-rollen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

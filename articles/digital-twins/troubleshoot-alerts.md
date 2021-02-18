@@ -7,18 +7,18 @@ ms.author: baanders
 ms.date: 7/28/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 057a1b08095a71e2fca6119f5b63bfdc787eea88
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.openlocfilehash: 461d7a82854ce62ee99eef1227c13c7a8f0371e2
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94616599"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594875"
 ---
 # <a name="troubleshooting-azure-digital-twins-alerts"></a>Problemen met Azure Digital Apparaatdubbels oplossen: waarschuwingen
 
 Azure Digital Apparaatdubbels verzamelt [metrische](troubleshoot-metrics.md) gegevens voor uw service-exemplaar die informatie geven over de status van uw resources. U kunt deze metrische gegevens gebruiken om de algemene status van de Azure Digital Apparaatdubbels-service en de gekoppelde resources te beoordelen.
 
-**Waarschuwingen** geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw metrische gegevens. Hiermee kunt u problemen identificeren en verhelpen voordat de gebruikers van uw systeem ze merken. Meer informatie over waarschuwingen vindt u in [*overzicht van waarschuwingen in Microsoft Azure*](../azure-monitor/platform/alerts-overview.md).
+**Waarschuwingen** geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw metrische gegevens. Hiermee kunt u problemen identificeren en verhelpen voordat de gebruikers van uw systeem ze merken. Meer informatie over waarschuwingen vindt u in [*overzicht van waarschuwingen in Microsoft Azure*](../azure-monitor/alerts/alerts-overview.md).
 
 ## <a name="turn-on-alerts"></a>Waarschuwingen inschakelen
 
@@ -38,7 +38,7 @@ Hier vindt u informatie over het inschakelen van waarschuwingen voor uw Azure Di
 
 :::image type="content" source="media/troubleshoot-alerts/create-alert-rule.png" alt-text="Scherm opname van de pagina waarschuwings regel maken met secties voor de details van het bereik, de voor waarde, de actie groep en de waarschuwings regel" lightbox="media/troubleshoot-alerts/create-alert-rule.png":::
 
-Zie [*overzicht van waarschuwingen in Microsoft Azure*](../azure-monitor/platform/alerts-overview.md)voor een rond overzicht van het invullen van deze velden. Hieronder ziet u enkele voor beelden van hoe de stappen eruitzien voor Azure Digital Apparaatdubbels.
+Zie [*overzicht van waarschuwingen in Microsoft Azure*](../azure-monitor/alerts/alerts-overview.md)voor een rond overzicht van het invullen van deze velden. Hieronder ziet u enkele voor beelden van hoe de stappen eruitzien voor Azure Digital Apparaatdubbels.
 
 ### <a name="select-conditions"></a>Voor waarden selecteren
 
@@ -58,6 +58,6 @@ Nadat u een waarschuwing hebt ingesteld, worden deze weer gegeven op de pagina *
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [*overzicht van waarschuwingen in Microsoft Azure*](../azure-monitor/platform/alerts-overview.md)voor meer informatie over waarschuwingen met Azure monitor.
+* Zie [*overzicht van waarschuwingen in Microsoft Azure*](../azure-monitor/alerts/alerts-overview.md)voor meer informatie over waarschuwingen met Azure monitor.
 * Zie voor meer informatie over de metrische gegevens van de Azure Digital Apparaatdubbels [*problemen oplossen: metrische gegevens weer geven met Azure monitor*](troubleshoot-metrics.md).
 * Zie [*probleem oplossing: diagnostische gegevens instellen*](troubleshoot-diagnostics.md)voor meer informatie over het inschakelen van diagnostische logboek registratie voor uw metrische gegevens.

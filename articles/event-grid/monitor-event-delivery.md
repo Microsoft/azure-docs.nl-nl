@@ -3,12 +3,12 @@ title: Azure Event Grid metrische gegevens weer geven en waarschuwingen instelle
 description: In dit artikel wordt beschreven hoe u de Azure Portal gebruikt om metrische gegevens weer te geven voor Azure Event Grid onderwerpen en abonnementen, en hierop waarschuwingen te maken.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 518d34d39e6fbecc408fe9a44d899fe4745d60d0
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8f8d7e15475ce74dc1af55dc7f6116d5d8b79cc8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96008953"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577405"
 ---
 # <a name="monitor-event-grid-message-delivery"></a>Bezorging van Event Grid bericht bewaken 
 In dit artikel wordt beschreven hoe u de portal kunt gebruiken om de metrische gegevens voor Event Grid-onderwerpen en-abonnementen te bekijken en om waarschuwingen te maken. 
@@ -52,7 +52,7 @@ U kunt grafieken met ondersteunde metrische gegevens maken met behulp van het ta
 
 :::image type="content" source="./media/monitor-event-delivery/topics-metrics-page.png" alt-text="Pagina met metrische gegevens over het onderwerp":::
 
-Zie [metrische gegevens in azure monitor](../azure-monitor/platform/data-platform-metrics.md) voor meer informatie over metrische gegevens.
+Zie [metrische gegevens in azure monitor](../azure-monitor/essentials/data-platform-metrics.md) voor meer informatie over metrische gegevens.
 
 Zie bijvoorbeeld het grafiek met metrische gegevens voor de metrische gegevens van **gepubliceerde gebeurtenissen** .
 
@@ -63,7 +63,7 @@ Zie bijvoorbeeld het grafiek met metrische gegevens voor de metrische gegevens v
 1. Ga naar de pagina met het **Event grid-onderwerp** door de stappen uit de vorige sectie te volgen. 
 2. Selecteer het abonnement in het onderste deel venster, zoals in het volgende voor beeld wordt weer gegeven. 
 
-    :::image type="content" source="./media/monitor-event-delivery/select-event-subscription.png" alt-text="Selecteer gebeurtenisabonnement":::    
+    :::image type="content" source="./media/monitor-event-delivery/select-event-subscription.png" alt-text="Gebeurtenis abonnement selecteren":::    
 
     U kunt ook zoeken naar **Event grid-abonnementen** in de zoek balk van de Azure Portal, **het type onderwerp**, het **abonnement** en de **locatie** selecteren om een gebeurtenis abonnement te zien. 
 
@@ -91,7 +91,7 @@ U kunt grafieken met ondersteunde metrische gegevens maken met behulp van het ta
 
 :::image type="content" source="./media/monitor-event-delivery/system-topic-metrics-page.png" alt-text="Systeem onderwerp-metrische gegevens pagina":::
 
-Zie [metrische gegevens in azure monitor](../azure-monitor/platform/data-platform-metrics.md) voor meer informatie over metrische gegevens.
+Zie [metrische gegevens in azure monitor](../azure-monitor/essentials/data-platform-metrics.md) voor meer informatie over metrische gegevens.
 
 
 ## <a name="next-steps"></a>Volgende stappen

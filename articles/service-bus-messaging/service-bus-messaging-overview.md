@@ -2,13 +2,13 @@
 title: Overzicht van Azure Service Bus-berichtenservice | Microsoft Docs
 description: Dit artikel bevat een overzicht op hoog niveau van Azure Service Bus, een volledig beheerde berichtenbroker die binnen ondernemingen kan worden geïntegreerd.
 ms.topic: overview
-ms.date: 01/28/2021
-ms.openlocfilehash: 232f25ca94e9426a20755940caf284426502cfb3
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.date: 02/16/2021
+ms.openlocfilehash: 897729b9748d69ad3c6de507e800dbb3a1a3619c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99219159"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570476"
 ---
 # <a name="what-is-azure-service-bus"></a>Wat is Azure Service Bus?
 Microsoft Azure Service Bus is een volledig beheerde zakelijke berichtenbroker met berichtwachtrijen en onderwerpen over publiceren-abonneren. Service Bus wordt gebruikt om toepassingen en services van elkaar los te koppelen, waardoor de volgende voordelen worden geboden:
@@ -118,11 +118,10 @@ Met batchverwerking aan clientzijde kan een wachtrij of een onderwerpclient een 
 Een transactie groepeert twee of meer bewerkingen in een *uitvoeringsbereik*. Service Bus biedt u de mogelijkheid bewerkingen te groeperen voor meerdere berichtentiteiten binnen het bereik van één transactie. Een berichtentiteit kan een wachtrij, onderwerp of abonnement zijn. Zie [Overview of Service Bus transaction processing](service-bus-transactions.md) (Overzicht van transactieverwerking in Service Bus) voor meer informatie.
 
 ### <a name="autodelete-on-idle"></a>Automatisch verwijderen bij inactiviteit
-
-Automatisch verwijderen bij inactiviteit houdt in dat u een interval voor inactiviteit kunt opgeven waarna de wachtrij of het onderwerpabonnement automatisch wordt verwijderd. De minimale duur is vijf minuten. Zie [QueueDescription.AutoDeleteOnIdle Property](/dotnet/api/microsoft.servicebus.messaging.queuedescription.autodeleteonidle) (Eigenschap QueueDescription.AutoDeleteOnIdle) voor meer informatie.
+Automatisch verwijderen bij inactiviteit houdt in dat u een interval voor inactiviteit kunt opgeven waarna de wachtrij of het onderwerpabonnement automatisch wordt verwijderd. De minimale duur is vijf minuten. 
 
 ### <a name="duplicate-detection"></a>Detectie van duplicaten
-Met de functie voor detectie van duplicaten kan de afzender hetzelfde bericht opnieuw verzenden en moet de broker een mogelijk duplicaat verwijderen. De functie voor detectie van duplicaten is gebaseerd op het volgen van de `message-id`-eigenschap van een bericht, wat betekent dat de toepassing ervoor moet zorgen dat dezelfde waarde wordt gebruikt wanneer het bericht opnieuw wordt verzonden. Dit kan rechtstreeks worden afgeleid van een toepassingsspecifieke context. Zie [Detectie van duplicaten](duplicate-detection.md) voor meer informatie.
+Met de functie voor detectie van duplicaten kan de afzender hetzelfde bericht opnieuw verzenden en moet de broker een mogelijk duplicaat verwijderen. Zie [Detectie van duplicaten](duplicate-detection.md) voor meer informatie.
 
 ### <a name="geo-disaster-recovery"></a>Geo-noodherstel
 

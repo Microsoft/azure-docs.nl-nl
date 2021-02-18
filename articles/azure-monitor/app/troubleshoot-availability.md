@@ -6,12 +6,12 @@ author: lgayhardt
 ms.author: lagayhar
 ms.date: 11/19/2020
 ms.reviewer: sdash
-ms.openlocfilehash: 368c45433247c441631bdf79bfc9caa28a41f1b4
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 849701caf73a4fb289773c67bccaab2e0f39dbd1
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96546744"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100583729"
 ---
 # <a name="troubleshooting"></a>Problemen oplossen
 
@@ -62,7 +62,7 @@ Controleer de configuratie van de klassieke waarschuwingen om te bevestigen dat 
 
 ### <a name="i-did-not-receive-the-webhook-notification"></a>Ik heb de webhook-melding niet ontvangen?
 
-Controleer of de toepassing die de webhook-melding ontvangt, beschikbaar is en de webhook-aanvragen verwerkt. Zie [voor](../platform/alerts-log-webhook.md) meer informatie.
+Controleer of de toepassing die de webhook-melding ontvangt, beschikbaar is en de webhook-aanvragen verwerkt. Zie [voor](../alerts/alerts-log-webhook.md) meer informatie.
 
 ### <a name="i-am-getting--403-forbidden-errors-what-does-this-mean"></a>Ik ontvang 403 verboden fouten, wat betekent dit?
 
@@ -113,7 +113,7 @@ Dit wordt momenteel niet ondersteund.
 
 ## <a name="who-receives-the-classic-alert-notifications"></a>Wie ontvangt de (klassieke) waarschuwings meldingen?
 
-Deze sectie is alleen van toepassing op klassieke waarschuwingen en helpt u bij het optimaliseren van uw waarschuwings meldingen om ervoor te zorgen dat alleen de gewenste ontvangers meldingen ontvangen. Raadpleeg het [overzichts artikel over waarschuwingen](../platform/alerts-overview.md)voor meer informatie over het verschil tussen [klassieke waarschuwingen](../platform/alerts-classic.overview.md)en de nieuwe waarschuwingen. Voor het beheren van waarschuwings meldingen in de nieuwe waarschuwings ervaring gebruikt u [actie groepen](../platform/action-groups.md).
+Deze sectie is alleen van toepassing op klassieke waarschuwingen en helpt u bij het optimaliseren van uw waarschuwings meldingen om ervoor te zorgen dat alleen de gewenste ontvangers meldingen ontvangen. Raadpleeg het [overzichts artikel over waarschuwingen](../alerts/alerts-overview.md)voor meer informatie over het verschil tussen [klassieke waarschuwingen](../alerts/alerts-classic.overview.md)en de nieuwe waarschuwingen. Voor het beheren van waarschuwings meldingen in de nieuwe waarschuwings ervaring gebruikt u [actie groepen](../alerts/action-groups.md).
 
 * We raden u aan specifieke ontvangers te gebruiken voor klassieke waarschuwings meldingen.
 
@@ -124,7 +124,7 @@ Deze sectie is alleen van toepassing op klassieke waarschuwingen en helpt u bij 
 > [!NOTE]
 > Als u momenteel de optie voor het selectie vakje **massaal/groep** gebruikt en deze functie uitschakelt, kunt u de wijziging niet meer ongedaan maken.
 
-Gebruik de nieuwe waarschuwings ervaring/bijna realtime waarschuwingen als u gebruikers op basis van hun rollen wilt waarschuwen. Met [actie groepen](../platform/action-groups.md)kunt u e-mail meldingen configureren voor gebruikers met een van de rollen Inzender/eigenaar/lezer (niet gecombineerd als één optie).
+Gebruik de nieuwe waarschuwings ervaring/bijna realtime waarschuwingen als u gebruikers op basis van hun rollen wilt waarschuwen. Met [actie groepen](../alerts/action-groups.md)kunt u e-mail meldingen configureren voor gebruikers met een van de rollen Inzender/eigenaar/lezer (niet gecombineerd als één optie).
 
 ## <a name="next-steps"></a>Volgende stappen
 

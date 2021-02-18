@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc, fasttrack-edit
 ms.date: 09/16/2020
 ms.author: yelevin
-ms.openlocfilehash: 369847810cdb7f7e93a13f5d410f226d3663080d
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.openlocfilehash: 384c6df86b4aadb117bb31b4604fa4c2ffcda09a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96188578"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570583"
 ---
 # <a name="quickstart-get-started-with-azure-sentinel"></a>Quickstart: Aan de slag met Azure Sentinel
 
@@ -52,7 +52,7 @@ De hoofdtekst van de overzichtspagina geeft in een oogopslag inzicht in de bevei
 
 ## <a name="use-built-in-workbooks"></a>Ingebouwde werkmappen gebruiken<a name="dashboards"></a>
 
-Ingebouwde werkmappen bieden geïntegreerde gegevens uit uw verbonden gegevensbronnen om u de kans te geven in te zoomen op de gebeurtenissen die in deze services zijn gegenereerd. De ingebouwde werkmappen hebben betrekking op Azure AD, gebeurtenissen voor Azure-activiteiten en on-premises, wat gegevens kunnen zijn van Windows-gebeurtenissen van servers, uit Microsoft-bronnen, uit bronnen van derden, waaronder logboeken van firewallverkeer, Office 365 en onveilige protocollen op basis van Windows-gebeurtenissen. De werkmappen zijn gebaseerd op Azure Monitor-werkmappen, zodat u bij het ontwerpen van uw eigen werkmap de beschikking hebt over verbeterde mogelijkheden voor aanpassing en flexibiliteit. Zie [Werkmappen](../azure-monitor/platform/workbooks-overview.md) voor meer informatie.
+Ingebouwde werkmappen bieden geïntegreerde gegevens uit uw verbonden gegevensbronnen om u de kans te geven in te zoomen op de gebeurtenissen die in deze services zijn gegenereerd. De ingebouwde werkmappen hebben betrekking op Azure AD, gebeurtenissen voor Azure-activiteiten en on-premises, wat gegevens kunnen zijn van Windows-gebeurtenissen van servers, uit Microsoft-bronnen, uit bronnen van derden, waaronder logboeken van firewallverkeer, Office 365 en onveilige protocollen op basis van Windows-gebeurtenissen. De werkmappen zijn gebaseerd op Azure Monitor-werkmappen, zodat u bij het ontwerpen van uw eigen werkmap de beschikking hebt over verbeterde mogelijkheden voor aanpassing en flexibiliteit. Zie [Werkmappen](../azure-monitor/visualize/workbooks-overview.md) voor meer informatie.
 
 1. Selecteer onder **Instellingen** de optie **Werkmappen**. Onder **Geïnstalleerd** worden alle geïnstalleerde werkmappen weergegeven. Onder **Alle** ziet u de complete galerie met ingebouwde werkmappen die beschikbaar zijn voor installatie. 
 2. Zoek naar een specifieke werkmap om de hele lijst te zien met beschrijvingen van de mappen. 
@@ -66,14 +66,14 @@ Ingebouwde werkmappen bieden geïntegreerde gegevens uit uw verbonden gegevensbr
       ![Palo Alto-dashboard](./media/qs-get-visibility/palo-alto-week-query.png)
 
 
-U kunt de werkmappen aanpassen door de hoofdquery te bewerken ![knop query bewerken](./media/qs-get-visibility/edit-query-button.png). Klik op de knop ![Log Analytics](./media/qs-get-visibility/go-to-la-button.png) om naar [Log Analytics te gaan om de query daar te bewerken](../azure-monitor/log-query/log-analytics-tutorial.md). Selecteer het beletselteken (...) en vervolgens **Tegelgegevens aanpassen** om het hoofdtijdfilter te bewerken of de specifieke tegels uit de werkmap te verwijderen.
+U kunt de werkmappen aanpassen door de hoofdquery te bewerken ![knop query bewerken](./media/qs-get-visibility/edit-query-button.png). Klik op de knop ![Log Analytics](./media/qs-get-visibility/go-to-la-button.png) om naar [Log Analytics te gaan om de query daar te bewerken](../azure-monitor/logs/log-analytics-tutorial.md). Selecteer het beletselteken (...) en vervolgens **Tegelgegevens aanpassen** om het hoofdtijdfilter te bewerken of de specifieke tegels uit de werkmap te verwijderen.
 
-Ga voor meer informatie over het werken met query's naar [Tutorial: Visual data in Log Analytics](../azure-monitor/learn/tutorial-logs-dashboards.md) (Zelfstudie: Gegevens visualiseren in Log Analytics).
+Ga voor meer informatie over het werken met query's naar [Tutorial: Visual data in Log Analytics](../azure-monitor/visualize/tutorial-logs-dashboards.md) (Zelfstudie: Gegevens visualiseren in Log Analytics).
 
 ### <a name="add-a-new-tile"></a>Een nieuwe tegel toevoegen
 
 Als u een nieuwe tegel wilt toevoegen, kunt u deze toevoegen aan een bestaande werkmap. Dit kan een werkmap zijn die u zelf maakt of een ingebouwde werkmap van Azure Sentinel. 
-1. Maak in Log Analytics een tegel met behulp van de instructies in [Tutorial: Visual data in Log Analytics](../azure-monitor/learn/tutorial-logs-dashboards.md) (Zelfstudie: Gegevens visualiseren in Log Analytics). 
+1. Maak in Log Analytics een tegel met behulp van de instructies in [Tutorial: Visual data in Log Analytics](../azure-monitor/visualize/tutorial-logs-dashboards.md) (Zelfstudie: Gegevens visualiseren in Log Analytics). 
 2. Nadat de tegel is gemaakt, selecteert u onder **Vastmaken** de werkmap waarin u de tegel wilt weergeven.
 
 ## <a name="create-new-workbooks"></a>Nieuwe werkmappen maken

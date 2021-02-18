@@ -7,16 +7,16 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 06/06/2020
 ms.author: surmb
-ms.openlocfilehash: be629d9f8441ad40fe15f005f4aeb0ec5565a7ec
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 9faa3a284aa7151880526c1ee70cfadc3dbf3089
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96437062"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576116"
 ---
 # <a name="metrics-for-application-gateway"></a>Metrische gegevens voor Application Gateway
 
-Application Gateway publiceert gegevens punten, met de naam metrieken, naar [Azure monitor](../azure-monitor/overview.md) voor de prestaties van uw Application Gateway-en back-end-exemplaren. Deze metrische gegevens zijn numerieke waarden in een geordende set gegevensverzamelinggegevens die op een bepaald moment een aspect van uw toepassings gateway beschrijven. Als er aanvragen worden doorgelopen door de Application Gateway, worden de metrische gegevens gemeten en verzonden in intervallen van 60 seconden. Als er geen aanvragen worden verzonden door de Application Gateway of geen gegevens voor een metriek, wordt de metriek niet gerapporteerd. Zie [Azure monitor metrische](../azure-monitor/platform/data-platform-metrics.md)gegevens voor meer informatie.
+Application Gateway publiceert gegevens punten, met de naam metrieken, naar [Azure monitor](../azure-monitor/overview.md) voor de prestaties van uw Application Gateway-en back-end-exemplaren. Deze metrische gegevens zijn numerieke waarden in een geordende set gegevensverzamelinggegevens die op een bepaald moment een aspect van uw toepassings gateway beschrijven. Als er aanvragen worden doorgelopen door de Application Gateway, worden de metrische gegevens gemeten en verzonden in intervallen van 60 seconden. Als er geen aanvragen worden verzonden door de Application Gateway of geen gegevens voor een metriek, wordt de metriek niet gerapporteerd. Zie [Azure monitor metrische](../azure-monitor/essentials/data-platform-metrics.md)gegevens voor meer informatie.
 
 ## <a name="metrics-supported-by-application-gateway-v2-sku"></a>Metrische gegevens die worden ondersteund door Application Gateway v2 SKU
 
@@ -200,7 +200,7 @@ In de volgende afbeelding ziet u een voor beeld met drie metrische gegevens die 
 
 :::image type="content" source="media/application-gateway-diagnostics/figure5.png" alt-text="Metrische weer gave." lightbox="media/application-gateway-diagnostics/figure5-lb.png":::
 
-Zie [ondersteunde metrische gegevens met Azure monitor](../azure-monitor/platform/metrics-supported.md)voor een actuele lijst met metrische gegevens.
+Zie [ondersteunde metrische gegevens met Azure monitor](../azure-monitor/essentials/metrics-supported.md)voor een actuele lijst met metrische gegevens.
 
 ### <a name="alert-rules-on-metrics"></a>Waarschuwings regels voor metrische gegevens
 
@@ -230,9 +230,9 @@ Er wordt een lijst met waarschuwingen weer gegeven nadat u een metrische waarsch
 
 ![Lijst met waarschuwingen en regels][9]
 
-Zie [waarschuwings meldingen ontvangen](../azure-monitor/platform/alerts-overview.md)voor meer informatie over waarschuwings meldingen.
+Zie [waarschuwings meldingen ontvangen](../azure-monitor/alerts/alerts-overview.md)voor meer informatie over waarschuwings meldingen.
 
-Ga voor meer informatie over webhooks en hoe u deze kunt gebruiken met waarschuwingen, [een webhook configureren voor een Azure metric-waarschuwing](../azure-monitor/platform/alerts-webhooks.md).
+Ga voor meer informatie over webhooks en hoe u deze kunt gebruiken met waarschuwingen, [een webhook configureren voor een Azure metric-waarschuwing](../azure-monitor/alerts/alerts-webhooks.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

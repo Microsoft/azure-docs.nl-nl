@@ -7,12 +7,12 @@ ms.date: 01/27/2021
 ms.topic: article
 ms.service: virtual-machines
 ms.subservice: imaging
-ms.openlocfilehash: 56f1e78e0f2bbba15b50664b88bd8808731e6836
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 6090adffbab7c8c57837b62e190f90c8ffb18e3d
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807611"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100636421"
 ---
 # <a name="azure-image-builder-service-devops-task"></a>Azure Image Builder service DevOps-taak
 
@@ -21,7 +21,7 @@ In dit artikel leest u hoe u een Azure DevOps-taak kunt gebruiken om bouw artefa
 ## <a name="devops-task-versions"></a>DevOps-taak versies
 Er zijn twee taken voor Azure VM Image Builder (AIB) DevOps:
 
-* [' Stabiele ' AIB-taak](https://marketplace.visualstudio.com/items?itemName=AzureImageBuilder.devOps-task-for-azure-image-builder), waardoor we de meest recente updates en functies kunnen plaatsen, kunnen klanten deze testen voordat we deze naar de ' stabiele ' taak promo veren, ongeveer 1 week later. 
+* [' Stabiele ' AIB-taak](https://marketplace.visualstudio.com/items?itemName=AzureImageBuilder.devOps-task-for-azure-image-builder)is dit de nieuwste stabiele build die is getest en er zijn geen problemen met telemetrie. 
 
 
 * [' Onstabiele ' AIB-taak](https://marketplace.visualstudio.com/items?itemName=AzureImageBuilder.devOps-task-for-azure-image-builder-canary), waardoor we de meest recente updates en functies kunnen plaatsen, kunnen klanten deze testen voordat ze het niveau verhogen naar de taak ' stabiele '. Als er geen gerapporteerde problemen zijn en in onze telemetrie geen problemen worden weer gegeven, kunt u de taak code verhogen naar stabiel. 

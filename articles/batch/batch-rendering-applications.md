@@ -3,12 +3,12 @@ title: Rendering van toepassingen
 description: Het is mogelijk om alle rendering-toepassingen met Azure Batch te gebruiken. Azure Marketplace-VM-installatie kopieën zijn echter beschikbaar met vooraf geïnstalleerde toepassingen.
 ms.date: 02/12/2021
 ms.topic: how-to
-ms.openlocfilehash: e296ab09498b6bb7ee21e3d88c9c416c66368d69
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 18fc142d2fa9c819b9872c64ef7aae4c73cc2428
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100362230"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100635333"
 ---
 # <a name="pre-installed-applications-on-batch-rendering-vm-images"></a>Vooraf geïnstalleerde toepassingen voor VM-installatie kopieën voor batch Rendering
 
@@ -20,7 +20,7 @@ Sommige toepassingen bieden alleen ondersteuning voor Windows, maar de meeste wo
 
 ## <a name="applications-on-latest-centos-7-rendering-image"></a>Toepassingen op de nieuwste CentOS 7-rendering-afbeelding
 
-De volgende lijst is van toepassing op de CentOS-rendering-afbeelding versie 1.1.7.
+De volgende lijst is van toepassing op de CentOS-rendering-afbeelding versie 1.2.0.
 
 * Autodesk Maya I/O 2020 update 4,6
 * Autodesk Arnold voor Maya 2020 (Arnold versie 6.2.0.0) MtoA-4.2.0-2020

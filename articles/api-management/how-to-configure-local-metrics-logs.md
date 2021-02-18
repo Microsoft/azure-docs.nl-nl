@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 02/01/2021
 ms.author: apimpm
-ms.openlocfilehash: e34c25b2e3bfa845e258dc5d9699497d7ffcb004
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 2b66663c9ee8033bcb12bfac57964ea0eafecdac
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526667"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594168"
 ---
 # <a name="configure-local-metrics-and-logs-for-azure-api-management-self-hosted-gateway"></a>Lokale metrische gegevens en logboeken voor Azure API Management zelf-hostende gateway configureren
 
@@ -204,7 +204,7 @@ De zelf-hostende Gateway levert standaard logboeken naar `stdout` en `stderr` . 
 kubectl logs <pod-name>
 ```
 
-Als uw zelf-hostende gateway is geïmplementeerd in de Azure Kubernetes-service, kunt u [Azure monitor voor containers](../azure-monitor/insights/container-insights-overview.md) inschakelen `stdout` en `stderr` van uw workloads verzamelen en de logboeken in log Analytics weer geven. 
+Als uw zelf-hostende gateway is geïmplementeerd in de Azure Kubernetes-service, kunt u [Azure monitor voor containers](../azure-monitor/containers/container-insights-overview.md) inschakelen `stdout` en `stderr` van uw workloads verzamelen en de logboeken in log Analytics weer geven. 
 
 De zelf-hostende gateway biedt ook ondersteuning voor een aantal protocollen `localsyslog` , waaronder, `rfc5424` en `journal` . De onderstaande tabel bevat een overzicht van alle ondersteunde opties. 
 

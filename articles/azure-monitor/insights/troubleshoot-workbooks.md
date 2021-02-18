@@ -6,12 +6,12 @@ ms.author: lagayhar
 author: lgayhardt
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: 3a2765e9dcf3b0e7bf28191e6ecbb069f26c42f5
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: a823b5e2ae31e62ff6d876f0b3468953c0ed9c35
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98208519"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587150"
 ---
 # <a name="troubleshooting-workbook-based-insights"></a>Problemen met op werk blad gebaseerde inzichten oplossen
 
@@ -72,4 +72,4 @@ Als u de naam van een stap in uw opgeslagen werkmap wilt wijzigen, selecteert u 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over de scenario's voor werkmappen is ontworpen voor ondersteuning, het ontwerpen van nieuwe en het aanpassen van bestaande rapporten, en meer door [interactieve rapporten maken met Azure monitor werkmappen](../platform/workbooks-overview.md)te controleren.
+Meer informatie over de scenario's voor werkmappen is ontworpen voor ondersteuning, het ontwerpen van nieuwe en het aanpassen van bestaande rapporten, en meer door [interactieve rapporten maken met Azure monitor werkmappen](../visualize/workbooks-overview.md)te controleren.

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/25/2018
-ms.openlocfilehash: 97d7d21374062462248e1b86f2bde2fef2d25331
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 685bf35bfb6d6e85d70bd1f1b446370d66a320f2
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004905"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573391"
 ---
 # <a name="optimize-your-environment-with-the-system-center-operations-manager-health-check-preview-solution"></a>De omgeving optimaliseren met behulp van System Center Operations Manager-statuscontrole (preview)
 
@@ -229,7 +229,7 @@ Als u aanbevelingen hebt die u wilt negeren, kunt u een tekst bestand maken dat 
     ```
 
     >[!NOTE]
-    > Als uw werk ruimte is bijgewerkt naar de [nieuwe log Analytics query taal](../log-query/log-query-overview.md), wordt de bovenstaande query gewijzigd in het volgende.
+    > Als uw werk ruimte is bijgewerkt naar de [nieuwe log Analytics query taal](../logs/log-query-overview.md), wordt de bovenstaande query gewijzigd in het volgende.
     >
     > `SCOMAssessmentRecommendationRecommendation | where RecommendationResult == "Failed" | sort by Computer asc | project Computer, RecommendationId, Recommendation`
 
@@ -254,7 +254,7 @@ Als u aanbevelingen hebt die u wilt negeren, kunt u een tekst bestand maken dat 
     ```
 
     >[!NOTE]
-    > Als uw werk ruimte is bijgewerkt naar de [nieuwe log Analytics query taal](../log-query/log-query-overview.md), wordt de bovenstaande query gewijzigd in het volgende.
+    > Als uw werk ruimte is bijgewerkt naar de [nieuwe log Analytics query taal](../logs/log-query-overview.md), wordt de bovenstaande query gewijzigd in het volgende.
     >
     > `SCOMAssessmentRecommendationRecommendation | where RecommendationResult == "Ignore" | sort by Computer asc | project Computer, RecommendationId, Recommendation`
 
@@ -295,5 +295,5 @@ Als u aanbevelingen hebt die u wilt negeren, kunt u een tekst bestand maken dat 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Zoek logboeken](../log-query/log-query-overview.md) voor meer informatie over het analyseren van gedetailleerde System Center Operations Manager-statuscontrole gegevens en aanbevelingen.
+- [Zoek logboeken](../logs/log-query-overview.md) voor meer informatie over het analyseren van gedetailleerde System Center Operations Manager-statuscontrole gegevens en aanbevelingen.
 

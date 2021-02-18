@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 09/28/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 1cc2cd1a7c5c16b1f9d1542e3f2d14dc030bb090
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: d1e51552acdd869a3f304a6d48e18e9d2aa6c782
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97586547"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576762"
 ---
 # <a name="monitor-azure-file-sync"></a>Azure File Sync bewaken
 
@@ -42,7 +42,7 @@ De metrische gegevens voor Azure File Sync zijn standaard ingeschakeld en worden
 
 De volgende metrische gegevens voor Azure File Sync zijn beschikbaar in Azure Monitor:
 
-| Naam van metrische gegevens | Beschrijving |
+| Naam van metrische gegevens | Description |
 |-|-|
 | Gesynchroniseerde bytes | Grootte van de overgedragen gegevens (uploaden en downloaden).<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensies: naam server eindpunt, synchronisatie richting, naam synchronisatie groep |
 | Cloud lagen intrekken | De grootte van de gegevens die worden ingetrokken.<br><br>**Opmerking**: deze metrische gegevens worden in de toekomst verwijderd. Gebruik de grootte van de Cloud-laag voor het intrekken van de grootte van gegevens die zijn ingetrokken.<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensie: Server naam |
@@ -56,7 +56,7 @@ De volgende metrische gegevens voor Azure File Sync zijn beschikbaar in Azure Mo
 
 ### <a name="alerts"></a>Waarschuwingen
 
-Waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Zie [overzicht van waarschuwingen in Microsoft Azure](../../azure-monitor/platform/alerts-overview.md)voor meer informatie over het configureren van waarschuwingen in azure monitor.
+Waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Zie [overzicht van waarschuwingen in Microsoft Azure](../../azure-monitor/alerts/alerts-overview.md)voor meer informatie over het configureren van waarschuwingen in azure monitor.
 
 **Waarschuwingen voor Azure File Sync maken**
 
@@ -118,7 +118,7 @@ Als u de status van een **Server eindpunt** wilt weer geven in de portal, gaat u
 
 - De volgende metrische grafieken kunnen worden weer gegeven in de portal van de opslag synchronisatie service:
 
-  | Naam van metrische gegevens | Beschrijving | Naam Blade |
+  | Naam van metrische gegevens | Description | Naam Blade |
   |-|-|-|
   | Gesynchroniseerde bytes | Grootte van overgedragen gegevens (uploaden en downloaden) | Synchronisatie groep, Server eindpunt |
   | Cloud lagen intrekken | Grootte van gegevens die zijn ingetrokken | Geregistreerde servers |
@@ -178,7 +178,7 @@ Als u de prestatie meter items van Azure File Sync op de server wilt weer geven,
 
 De volgende prestatie meter items voor Azure File Sync zijn beschikbaar in prestatie meter:
 
-| Object\Counter naam van prestaties | Beschrijving |
+| Object\Counter naam van prestaties | Description |
 |-|-|
 | AFS bytes Transferred\Downloaded bytes per seconde | Aantal gedownloade bytes per seconde. |
 | AFS bytes Transferred\Uploaded bytes per seconde | Aantal geüploade bytes per seconde. |

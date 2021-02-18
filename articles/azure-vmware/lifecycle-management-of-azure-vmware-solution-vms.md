@@ -3,12 +3,12 @@ title: Levenscyclus beheer van virtuele machines met Azure VMware-oplossingen
 description: Meer informatie over het beheren van alle aspecten van de levens cyclus van uw Azure VMware-oplossing-Vm's met Microsoft Azure systeem eigen hulpprogram ma's.
 ms.topic: conceptual
 ms.date: 02/08/2021
-ms.openlocfilehash: d8224a37e46b336ebf889fe1c075930f34f10ca4
-ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
+ms.openlocfilehash: 2cb9964b68769b1e784cebf62b4d336b355c68fb
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99988533"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572204"
 ---
 # <a name="lifecycle-management-of-azure-vmware-solution-vms"></a>Levenscyclus beheer van virtuele machines met Azure VMware-oplossingen
 
@@ -45,9 +45,9 @@ In het volgende diagram ziet u de geïntegreerde bewakings architectuur voor vir
 Als u geen ervaring hebt met Azure of als u niet bekend bent met een van de eerder genoemde services, raadpleegt u de volgende artikelen:
 
 - [Overzicht van Automation-accountverificatie](../automation/automation-security-overview.md)
-- [De implementatie van uw Azure monitor-logboeken ontwerpen](../azure-monitor/platform/design-logs-deployment.md) en [Azure monitor](../azure-monitor/overview.md)
+- [De implementatie van uw Azure monitor-logboeken ontwerpen](../azure-monitor/logs/design-logs-deployment.md) en [Azure monitor](../azure-monitor/overview.md)
 - [Plannen](../security-center/security-center-planning-and-operations-guide.md) en [ondersteunde platforms](../security-center/security-center-os-coverage.md) voor Azure Security Center
-- [Overzicht Azure Monitor voor VM's inschakelen](../azure-monitor/insights/vminsights-enable-overview.md)
+- [Overzicht Azure Monitor voor VM's inschakelen](../azure-monitor/vm/vminsights-enable-overview.md)
 - [Wat is servers voor Azure-Arc ingeschakeld?](../azure-arc/servers/overview.md) en [Wat is Azure Arc enabled Kubernetes?](../azure-arc/kubernetes/overview.md)
 - [Overzicht van Updatebeheer](../automation/update-management/overview.md)
 
@@ -59,7 +59,7 @@ Azure Updatebeheer in Azure Automation beheert updates van het besturings systee
 
 1.  Voordat u Log Analytics kunt toevoegen aan Azure Updatebeheer, moet u eerst [een Azure Automation-account maken](../automation/automation-create-standalone-account.md). Als u uw account liever met behulp van een sjabloon wilt maken, raadpleegt u [een Automation-account maken met behulp van een Azure Resource Manager sjabloon](../automation/quickstart-create-automation-account-template.md).
 
-2. Met **log Analytics werk ruimte** kan de verzameling van Logboeken en prestatie meter items worden verzameld met de log Analytics agent of uitbrei dingen. Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/learn/quick-create-workspace.md)om uw log Analytics-werk ruimte te maken. Als u wilt, kunt u ook een werk ruimte maken via [cli](../azure-monitor/learn/quick-create-workspace-cli.md), [power shell](../azure-monitor/platform/powershell-workspace-configuration.md)of [Azure Resource Manager sjabloon](../azure-monitor/samples/resource-manager-workspace.md).
+2. Met **log Analytics werk ruimte** kan de verzameling van Logboeken en prestatie meter items worden verzameld met de log Analytics agent of uitbrei dingen. Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/logs/quick-create-workspace.md)om uw log Analytics-werk ruimte te maken. Als u wilt, kunt u ook een werk ruimte maken via [cli](../azure-monitor/logs/quick-create-workspace-cli.md), [power shell](../azure-monitor/logs/powershell-workspace-configuration.md)of [Azure Resource Manager sjabloon](../azure-monitor/logs/resource-manager-workspace.md).
 
 3. Als u Azure Updatebeheer wilt inschakelen voor uw virtuele machines, raadpleegt u [updatebeheer inschakelen vanuit een Automation-account](../automation/update-management/enable-from-automation-account.md). In het proces koppelt u uw Log Analytics-werk ruimte aan uw Automation-account. 
  
@@ -99,22 +99,14 @@ Virtuele machines van Azure VMware-oplossingen kunnen worden bewaakt via de Log 
 
 Azure Monitor is een uitgebreide oplossing voor het verzamelen, analyseren en werken op telemetrie in uw Cloud-en on-premises omgevingen. Hiervoor is geen implementatie vereist. Met Azure Monitor kunt u de prestaties van een gast besturingssysteem controleren en toepassings afhankelijkheden detecteren en toewijzen voor Azure VMware-oplossingen of on-premises Vm's.
 
-- Met Azure Monitor kunt u gegevens verzamelen uit verschillende bronnen om te controleren en analyseren. Zie [bronnen van bewakings gegevens voor Azure monitor](../azure-monitor/platform/data-sources.md)voor meer informatie.
+- Met Azure Monitor kunt u gegevens verzamelen uit verschillende bronnen om te controleren en analyseren. Zie [bronnen van bewakings gegevens voor Azure monitor](../azure-monitor/agents/data-sources.md)voor meer informatie.
 
-- Verschillende typen gegevens verzamelen voor analyse, visualisatie en waarschuwingen. Zie [Azure monitor data platform](../azure-monitor/platform/data-platform.md)voor meer informatie.
+- Verschillende typen gegevens verzamelen voor analyse, visualisatie en waarschuwingen. Zie [Azure monitor data platform](../azure-monitor/data-platform.md)voor meer informatie.
 
-- Zie [log Analytics-werk ruimte configureren voor Azure monitor voor VM's](../azure-monitor/insights/vminsights-configure-workspace.md)om Azure monitor te configureren met uw log Analytics-werk ruimte.
+- Zie [log Analytics-werk ruimte configureren voor Azure monitor voor VM's](../azure-monitor/vm/vminsights-configure-workspace.md)om Azure monitor te configureren met uw log Analytics-werk ruimte.
 
 - U kunt waarschuwings regels maken om problemen in uw omgeving te identificeren, zoals een hoog gebruik van resources, ontbrekende patches, weinig schijf ruimte en heartbeat van uw Vm's. U kunt ook een geautomatiseerd antwoord op gedetecteerde gebeurtenissen instellen door een waarschuwing te verzenden naar de ITSM-hulpprogram ma's (IT Service Management). Melding over waarschuwings detectie kan ook via e-mail worden verzonden. Als u dergelijke regels wilt maken, raadpleegt u:
-    - [Metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../azure-monitor/platform/alerts-metric.md).
-    - [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../azure-monitor/platform/alerts-log.md).
-    - [Actie regels](../azure-monitor/platform/alerts-action-rules.md) om geautomatiseerde acties en meldingen in te stellen.
-    - [Verbind Azure met ITSM-hulpprogram ma's met behulp van IT Service Management-connector](../azure-monitor/platform/itsmc-overview.md).
-    
- ## <a name="next-steps"></a>Volgende stappen
-
-Nu u de systeem eigen hulpprogram ma's van Azure hebt gebruikt voor het beheren van uw Azure VMware-oplossings-Vm's gedurende de levens cyclus, wilt u mogelijk meer informatie over:
-
-- [Bescherm uw Azure VMware-oplossing-vm's met Azure Security Center](azure-security-integration.md).
-- [Instellen van Azure backup server voor de Azure VMware-oplossing](set-up-backup-server-for-azure-vmware-solution.md).
-- [Integratie van de Azure VMware-oplossing in een hub-en-spoke-architectuur](concepts-hub-and-spoke.md).
+    - [Metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../azure-monitor/alerts/alerts-metric.md).
+    - [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../azure-monitor/alerts/alerts-log.md).
+    - [Actie regels](../azure-monitor/alerts/alerts-action-rules.md) om geautomatiseerde acties en meldingen in te stellen.
+    - [Verbind Azure met ITSM-hulpprogram ma's met behulp van IT Service Management-connector](../azure-monitor/alerts/itsmc-overview.md).

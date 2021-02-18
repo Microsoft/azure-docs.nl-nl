@@ -6,12 +6,12 @@ ms.author: thweiss
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 01/08/2021
-ms.openlocfilehash: 0c75f9938b3bc4fa8a2e650f77a3708e91180fea
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 3ee8d5f36977a5a9f20c7e636118ffa9f6ee0b6d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98059217"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570994"
 ---
 # <a name="azure-cosmos-db-serverless-preview"></a>Azure Cosmos DB serverloze (preview-versie)
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -64,7 +64,7 @@ Wanneer u door het deel venster met **metrische gegevens** van uw account blader
 
 :::image type="content" source="./media/serverless/request-units-consumed.png" alt-text="Diagram waarin de verbruikte aanvraag eenheden worden weer gegeven" border="false":::
 
-U kunt dezelfde grafiek vinden wanneer u Azure Monitor gebruikt, zoals [hier](monitor-request-unit-usage.md)wordt beschreven. Houd er rekening mee dat Azure Monitor [waarschuwingen](../azure-monitor/platform/alerts-metric-overview.md)kunt instellen, die kunnen worden gebruikt om u te waarschuwen wanneer het verbruik van de aanvraag eenheid een bepaalde drempel waarde heeft door gegeven.
+U kunt dezelfde grafiek vinden wanneer u Azure Monitor gebruikt, zoals [hier](monitor-request-unit-usage.md)wordt beschreven. Houd er rekening mee dat Azure Monitor [waarschuwingen](../azure-monitor/alerts/alerts-metric-overview.md)kunt instellen, die kunnen worden gebruikt om u te waarschuwen wanneer het verbruik van de aanvraag eenheid een bepaalde drempel waarde heeft door gegeven.
 
 ## <a name="performance"></a><a id="performance"></a>Prestaties
 

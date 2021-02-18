@@ -9,12 +9,12 @@ ms.topic: reference
 ms.service: azure-monitor
 ms.subservice: logs
 ms.custom: monitoring
-ms.openlocfilehash: ba8a82ed1113bfb3e71560ca9a6c713602df21f2
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 95f20737b044140fe12ea939e71cd2397cb4826d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97590644"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576690"
 ---
 # <a name="azure-queue-storage-monitoring-data-reference"></a>Naslag informatie voor Azure Queue Storage monitoring-gegevens
 
@@ -36,9 +36,9 @@ Azure Storage biedt de volgende metrische gegevens over capaciteit in Azure Moni
 
 #### <a name="queue-storage-metrics"></a>Queue Storage metrische gegevens
 
-In deze tabel worden [Queue Storage metrische gegevens](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsqueueservices)weer gegeven.
+In deze tabel worden [Queue Storage metrische gegevens](../../azure-monitor/essentials/metrics-supported.md#microsoftstoragestorageaccountsqueueservices)weer gegeven.
 
-| Gegevens | Beschrijving |
+| Metrisch | Beschrijving |
 | ------------------- | ----------------- |
 | **QueueCapacity** | De hoeveelheid Queue Storage die wordt gebruikt door het opslag account. <br><br> Teleenheid `Bytes` <br> Aggregatie type: `Average` <br> Waarde-voor beeld: `1024` |
 | **QueueCount** | Het aantal wacht rijen in het opslag account. <br><br> Teleenheid `Count` <br> Aggregatie type: `Average` <br> Waarde-voor beeld: `1024` |
@@ -80,4 +80,4 @@ De volgende tabel geeft een lijst van de eigenschappen voor Azure Storage bron L
 ## <a name="see-also"></a>Zie ook
 
 - Zie [azure Queue Storage bewaken](monitor-queue-storage.md) voor een beschrijving van het controleren van Azure Queue Storage.
-- Zie [Azure-resources bewaken met Azure monitor](../../azure-monitor/insights/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.
+- Zie [Azure-resources bewaken met Azure monitor](../../azure-monitor/essentials/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.

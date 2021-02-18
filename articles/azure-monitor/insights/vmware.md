@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/04/2018
-ms.openlocfilehash: be50deb836082354db899e84ef24d75c4d403432
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9dc31cd4f492a4e95ce8232a8df28f07206e23b1
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91450395"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587166"
 ---
 # <a name="vmware-monitoring-deprecated-solution-in-azure-monitor"></a>Oplossing VMWare-bewaking (afgeschaft) in Azure Monitor
 
@@ -33,7 +33,7 @@ Gebruik de volgende informatie om de oplossing te installeren en configureren.
 vSphere ESXi host 5,5, 6,0 en 6,5
 
 #### <a name="prepare-a-linux-server"></a>Een Linux-server voorbereiden
-Maak een virtuele machine van het Linux-besturings systeem om alle syslog-gegevens van de ESXi-hosts te ontvangen. De [log Analytics Linux-agent](../learn/quick-collect-linux-computer.md) is het verzamel punt voor alle ESXi host syslog-gegevens. U kunt meerdere ESXi-hosts gebruiken om logboeken door te sturen naar één Linux-server, zoals in het volgende voor beeld.
+Maak een virtuele machine van het Linux-besturings systeem om alle syslog-gegevens van de ESXi-hosts te ontvangen. De [log Analytics Linux-agent](../vm/quick-collect-linux-computer.md) is het verzamel punt voor alle ESXi host syslog-gegevens. U kunt meerdere ESXi-hosts gebruiken om logboeken door te sturen naar één Linux-server, zoals in het volgende voor beeld.
 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]  
 
@@ -42,7 +42,7 @@ Maak een virtuele machine van het Linux-besturings systeem om alle syslog-gegeve
 ### <a name="configure-syslog-collection"></a>Syslog-verzameling configureren
 1. Het door sturen van syslog instellen voor VSphere. Zie [syslog configureren op ESXi 5,0 en hoger (2003322)](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2003322)voor gedetailleerde informatie over het instellen van syslog-forwarding. Ga naar de **ESXi-configuratie**  >  **Software**  >  **Geavanceerde instellingen**  >  **syslog**.
    ![vsphereconfig](./media/vmware/vsphere1.png)  
-1. Voeg in het veld *syslog. Global. logHost* uw Linux-server en het poort nummer *1514*toe. Bijvoorbeeld `tcp://hostname:1514` of `tcp://123.456.789.101:1514`
+1. Voeg in het veld *syslog. Global. logHost* uw Linux-server en het poort nummer *1514* toe. Bijvoorbeeld `tcp://hostname:1514` of `tcp://123.456.789.101:1514`
 1. Open de ESXi host-firewall voor syslog. **ESXi**  >  **Software**  >  **Beveiligings profiel**  >  **Firewall** en open **Eigenschappen**.  
 
     ![vspherefw](./media/vmware/vsphere2.png)  
@@ -81,7 +81,7 @@ De volgende tabel toont methoden voor gegevens verzameling en andere informatie 
 
 In de volgende tabel ziet u voor beelden van gegevens velden die door de VMWare-bewaking oplossing zijn verzameld:
 
-| veld naam | description |
+| veld naam | beschrijving |
 | --- | --- |
 | Device_s |VMware-opslag apparaten |
 | ESXIFailure_s |fout typen |
@@ -122,7 +122,7 @@ In de weer gave **VMware** -dash board worden Blades ingedeeld op:
 
 Klik op een Blade om Log Analytics Zoek venster te openen waarin gedetailleerde informatie voor de Blade wordt weer gegeven.
 
-Hier kunt u de logboek query bewerken om deze te wijzigen voor iets specifiek. Zie [gegevens zoeken met behulp van logboek query's in azure monitor](../log-query/log-query-overview.md)voor meer informatie over het maken van logboek query's.
+Hier kunt u de logboek query bewerken om deze te wijzigen voor iets specifiek. Zie [gegevens zoeken met behulp van logboek query's in azure monitor](../logs/log-query-overview.md)voor meer informatie over het maken van logboek query's.
 
 #### <a name="find-esxi-host-events"></a>ESXi host-gebeurtenissen zoeken
 Eén ESXi-host genereert meerdere logboeken op basis van hun processen. De VMWare-bewaking oplossing centraliseert deze en geeft een overzicht van het aantal gebeurtenissen. Deze gecentraliseerde weer gave helpt u te begrijpen welke ESXi-host een groot aantal gebeurtenissen heeft en welke gebeurtenissen het vaakst optreden in uw omgeving.
@@ -151,12 +151,12 @@ De oplossing bevat andere nuttige query's die u kunnen helpen bij het beheren va
 
 
 #### <a name="save-queries"></a>Query's opslaan
-Het opslaan van logboek query's is een standaard functie in Azure Monitor en kan u helpen bij het bewaren van query's die u nuttig hebt gevonden. Nadat u een query hebt gemaakt die u nuttig vindt, slaat u deze op door op de **Favorieten**te klikken. Met een opgeslagen query kunt u deze later eenvoudig opnieuw gebruiken vanaf de pagina [mijn dash board](../learn/tutorial-logs-dashboards.md) waar u uw eigen aangepaste Dash boards kunt maken.
+Het opslaan van logboek query's is een standaard functie in Azure Monitor en kan u helpen bij het bewaren van query's die u nuttig hebt gevonden. Nadat u een query hebt gemaakt die u nuttig vindt, slaat u deze op door op de **Favorieten** te klikken. Met een opgeslagen query kunt u deze later eenvoudig opnieuw gebruiken vanaf de pagina [mijn dash board](../visualize/tutorial-logs-dashboards.md) waar u uw eigen aangepaste Dash boards kunt maken.
 
 ![Scherm afbeelding toont een deel van een aangepast dash board met de naam zoeken in Logboeken met pictogrammen voor ongedaan maken, exporteren, waarschuwing, opslaan, favorieten en geschiedenis.](./media/vmware/dockerdashboardview.png)
 
 #### <a name="create-alerts-from-queries"></a>Waarschuwingen maken op basis van query's
-Nadat u uw query's hebt gemaakt, wilt u mogelijk de query's gebruiken om u te waarschuwen wanneer er specifieke gebeurtenissen optreden. Zie [waarschuwingen in log Analytics](../platform/alerts-overview.md) voor informatie over het maken van waarschuwingen. Zie voor voor beelden van waarschuwings query's en andere query voorbeelden de [bewaking VMware met log Analytics](/archive/blogs/msoms/monitor-vmware-using-oms-log-analytics) blog post.
+Nadat u uw query's hebt gemaakt, wilt u mogelijk de query's gebruiken om u te waarschuwen wanneer er specifieke gebeurtenissen optreden. Zie [waarschuwingen in log Analytics](../alerts/alerts-overview.md) voor informatie over het maken van waarschuwingen. Zie voor voor beelden van waarschuwings query's en andere query voorbeelden de [bewaking VMware met log Analytics](/archive/blogs/msoms/monitor-vmware-using-oms-log-analytics) blog post.
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 ### <a name="what-do-i-need-to-do-on-the-esxi-host-setting-what-impact-will-it-have-on-my-current-environment"></a>Wat moet ik doen op de ESXi? Wat is de impact van het in mijn huidige omgeving?
@@ -190,14 +190,14 @@ Er kunnen meerdere redenen zijn:
 
     a. Controleer of de Log Analytics agent wordt uitgevoerd met behulp van `ps -ef | grep oms` . Als de service niet wordt uitgevoerd, start u het proces door de opdracht uit te voeren `sudo /opt/microsoft/omsagent/bin/service_control start`
 
-     b. Open het `/etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf`-bestand.
+     b. Open het bestand `/etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf`.
 
      c. Controleer of de juiste gebruikers-en groeps instelling geldig is, vergelijkbaar met: `-rw-r--r-- 1 omsagent omiusers 677 Sep 20 16:46 vmware_esxi.conf`
 
      d. Als het bestand niet bestaat of als de gebruikers-en groeps instelling onjuist zijn, moet u [een Linux-server voorbereiden](#prepare-a-linux-server).
 
 ## <a name="next-steps"></a>Volgende stappen
-* Gebruik [logboek query's](../log-query/log-query-overview.md) in log Analytics om gedetailleerde VMware-hostgegevens weer te geven.
-* [Maak uw eigen Dash boards](../learn/tutorial-logs-dashboards.md) waarin VMware-hostgegevens worden weer gegeven.
-* [Waarschuwingen maken](../platform/alerts-overview.md) wanneer specifieke VMware-host-gebeurtenissen optreden.
+* Gebruik [logboek query's](../logs/log-query-overview.md) in log Analytics om gedetailleerde VMware-hostgegevens weer te geven.
+* [Maak uw eigen Dash boards](../visualize/tutorial-logs-dashboards.md) waarin VMware-hostgegevens worden weer gegeven.
+* [Waarschuwingen maken](../alerts/alerts-overview.md) wanneer specifieke VMware-host-gebeurtenissen optreden.
 

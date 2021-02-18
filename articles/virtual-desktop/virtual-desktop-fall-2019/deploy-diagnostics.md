@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 12/15/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 9672d18fe99d8baae3c73fa3782531eb84114713
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 05d312296b48f35ea87c5443cc587989e2d11fd5
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97515641"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587972"
 ---
 # <a name="deploy-the-windows-virtual-desktop-classic-diagnostics-tool"></a>Het Windows-hulp programma voor virtueel bureau blad (klassiek) implementeren
 
@@ -116,7 +116,7 @@ U kunt als volgt de aanbevolen prestatie meter items hand matig configureren:
     -   Processor informatie ( \* ) \\ processor tijd
     -   Gebruikers invoer vertraging per sessie ( \* ) \\ maximale invoer vertraging
 
-Meer informatie over de prestatie meter items [in Windows-en Linux-prestatie gegevens bronnen in azure monitor](../../azure-monitor/platform/data-sources-performance-counters.md).
+Meer informatie over de prestatie meter items [in Windows-en Linux-prestatie gegevens bronnen in azure monitor](../../azure-monitor/agents/data-sources-performance-counters.md).
 
 >[!NOTE]
 >Alle extra tellers die u configureert, worden niet weer gegeven in het diagnostische hulp programma zelf. Als u deze wilt weer geven in het diagnostische hulp programma, moet u het configuratie bestand van het hulp programma configureren. Instructies voor het uitvoeren van een geavanceerd beheer vindt u op een later tijdstip in GitHub.
@@ -157,7 +157,7 @@ Als u de status van virtuele machines wilt kunnen bekijken, moet u de Log Analyt
 2. Ga naar uw Log Analytics-werk ruimte.
 3. Selecteer in het linkerdeel venster onder gegevens bronnen voor werk ruimte de optie **virtuele machines**.
 4. Selecteer de naam van de virtuele machine waarmee u verbinding wilt maken.
-5. Selecteer **Verbinden**.
+5. Selecteer **Verbinding maken**.
 
 ## <a name="deploy-the-diagnostics-tool"></a>Het diagnosehulpprogramma implementeren
 
@@ -199,7 +199,7 @@ De omleidings-URI instellen:
 
 Voordat u het hulp programma voor diagnostische gegevens beschikbaar maakt voor uw gebruikers, moet u ervoor zorgen dat ze over de volgende machtigingen beschikken:
 
-- Gebruikers hebben lees toegang nodig voor log Analytics. Zie [aan de slag met rollen, machtigingen en beveiliging met Azure monitor](../../azure-monitor/platform/roles-permissions-security.md)voor meer informatie.
+- Gebruikers hebben lees toegang nodig voor log Analytics. Zie [aan de slag met rollen, machtigingen en beveiliging met Azure monitor](../../azure-monitor/roles-permissions-security.md)voor meer informatie.
 -  Gebruikers hebben ook lees toegang nodig voor de Windows-Tenant voor virtueel bureau blad (functie voor RDS-lezer). Zie voor meer informatie [gedelegeerde toegang in virtueel bureau blad van Windows](delegated-access-virtual-desktop-2019.md).
 
 U moet uw gebruikers ook de volgende informatie geven:

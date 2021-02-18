@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/07/2019
 ms.author: robb
 ms.custom: include file
-ms.openlocfilehash: 1f461c4870b398a49387472c49d45b90929405c7
-ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
+ms.openlocfilehash: 56afc81794bb18bfb7c9146eeb4ed61a0a75ea0f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100529702"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587003"
 ---
 **Volume gegevensverzameling en gegevensretentie** 
 
@@ -72,7 +72,7 @@ ms.locfileid: "100529702"
 
 **<a name="data-ingestion-volume-rate">Gegevensopnamevolume</a>**
 
-Azure Monitor is een grootschalige gegevensservice die elke maand een groeiend aantal terabytes aan gegevens van duizenden klanten verwerkt. De limiet voor het opnamevolume moet de klanten van Azure Monitor isoleren tegen plotselinge opnamepieken in een multitenancy-omgeving. Er is een standaarddrempel van 500 MB (gecomprimeerd) voor het opnamevolume gedefenieerd in werkruimtes. Dit staat gelijk aan een niet-gecomprimeerd volume van ongeveer **6 GB/min**. De werkelijke grootte kan per gegevenstype variëren afhankelijk van de logboeklengte en de compressieratio ervan. De limiet voor volumesnelheid is van toepassing op gegevens die worden opgenomen vanuit Azure-resource via [Diagnostische instellingen](../articles/azure-monitor/platform/diagnostic-settings.md). Wanneer het volumelimiet is bereikt, probeert een mechanisme voor nieuwe pogingen de gegevens vier keer op te nemen in een periode van 30 minuten. Als dat niet lukt, mislukt de bewerking. De limiet is niet van toepassingen op gegevens van [agents](../articles/azure-monitor/platform/agents-overview.md) of de [Data Collector-API](../articles/azure-monitor/platform/data-collector-api.md).
+Azure Monitor is een grootschalige gegevensservice die elke maand een groeiend aantal terabytes aan gegevens van duizenden klanten verwerkt. De limiet voor het opnamevolume moet de klanten van Azure Monitor isoleren tegen plotselinge opnamepieken in een multitenancy-omgeving. Er is een standaarddrempel van 500 MB (gecomprimeerd) voor het opnamevolume gedefenieerd in werkruimtes. Dit staat gelijk aan een niet-gecomprimeerd volume van ongeveer **6 GB/min**. De werkelijke grootte kan per gegevenstype variëren afhankelijk van de logboeklengte en de compressieratio ervan. De limiet voor volumesnelheid is van toepassing op gegevens die worden opgenomen vanuit Azure-resource via [Diagnostische instellingen](../articles/azure-monitor/platform/diagnostic-settings.md). Wanneer het volumelimiet is bereikt, probeert een mechanisme voor nieuwe pogingen de gegevens vier keer op te nemen in een periode van 30 minuten. Als dat niet lukt, mislukt de bewerking. De limiet is niet van toepassingen op gegevens van [agents](../articles/azure-monitor/agents/agents-overview.md) of de [Data Collector-API](../articles/azure-monitor/platform/data-collector-api.md).
 
 Als naar een werkruimte verzonden gegevens een volumesnelheid heeft die hoger is dan 80 % van de drempel die in uw werkruimte is geconfigureerd, wordt er om de zes uur een gebeurtenis verzonden naar de *bewerkingstabel* in uw werkruimte, zolang de drempel nog steeds wordt overschreden. Als het opnamevolume hoger is dan de drempel, worden sommige gegevens verwijderd en wordt er om de zes uur een gebeurtenis verzonden naar de *bewerkingstabel* in uw werkruimte, zolang de drempel wordt overschreden. Als uw opnamevolume de drempel blijft overschrijden of als u verwacht de drempel binnenkort te bereiken, kunt u een verhoging aanvragen door een ondersteuningsaanvraag te openen. 
 

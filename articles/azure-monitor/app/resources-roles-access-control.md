@@ -4,12 +4,12 @@ description: Eigen aren, mede werkers en lezers van de inzichten van uw organisa
 ms.topic: conceptual
 ms.date: 02/14/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: cd1e69ecd121380353ad6400d473d572b7b7bb3e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4254170ad100b634439cc846dc381e305ae71d1f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89076681"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589594"
 ---
 # <a name="resources-roles-and-access-control-in-application-insights"></a>Resources, rollen en toegangs beheer in Application Insights
 
@@ -54,7 +54,7 @@ Kies **toegangs beheer (IAM)** in het menu aan de linkerkant.
 
 ![Scherm afbeelding van de knop toegangs beheer in Azure Portal](./media/resources-roles-access-control/0001-access-control.png)
 
-**Roltoewijzing toevoegen** selecteren
+Selecteer **Roltoewijzing toevoegen**
 
 ![Scherm afbeelding van het toegangs beheer menu met de knop toevoegen gemarkeerd in rood](./media/resources-roles-access-control/0002-add.png)
 
@@ -76,7 +76,7 @@ Waar van toepassing, gaan we een koppeling naar de bijbehorende officiële refer
 | [Lezer](../../role-based-access-control/built-in-roles.md#reader) |Kan weer geven, maar niet wijzigen. |
 | [Application Insights Snapshot Debugger](../../role-based-access-control/built-in-roles.md#application-insights-snapshot-debugger) | Hiermee krijgt de gebruiker toestemming om Application Insights Snapshot Debugger-functies te gebruiken. Houd er rekening mee dat deze rol is opgenomen in de rollen eigenaar en Inzender. |
 | Inzender voor Azure service Deploy release management | Rol van Inzender voor services die worden geïmplementeerd via Azure service Deploy. |
-| [Gegevens opschoner](../../role-based-access-control/built-in-roles.md#data-purger) | Speciale rol voor het leegmaken van persoonlijke gegevens. Bekijk onze [richt lijnen voor persoonlijke gegevens](../platform/personal-data-mgmt.md) voor meer informatie.   |
+| [Gegevens opschoner](../../role-based-access-control/built-in-roles.md#data-purger) | Speciale rol voor het leegmaken van persoonlijke gegevens. Bekijk onze [richt lijnen voor persoonlijke gegevens](../logs/personal-data-mgmt.md) voor meer informatie.   |
 | ExpressRoute-beheerder | Kan snelle routes maken en verwijderen.|
 | [Inzender van Log Analytics](../../role-based-access-control/built-in-roles.md#log-analytics-contributor) | Log Analytics Inzender kan alle bewakings gegevens lezen en controle-instellingen bewerken. Het bewerken van bewakings instellingen omvat het toevoegen van de VM-extensie aan Vm's; lezen van opslag account sleutels om het verzamelen van logboeken van Azure Storage te kunnen configureren. Automation-accounts maken en configureren; oplossingen toevoegen; en het configureren van Azure Diagnostics voor alle Azure-resources.  |
 | [Lezer van Log Analytics](../../role-based-access-control/built-in-roles.md#log-analytics-reader) | Log Analytics Reader kan alle bewakings gegevens weer geven en doorzoeken en controle-instellingen weer geven, inclusief het weer geven van de configuratie van Azure Diagnostics op alle Azure-resources. |

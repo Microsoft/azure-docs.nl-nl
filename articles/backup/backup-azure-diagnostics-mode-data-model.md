@@ -3,12 +3,12 @@ title: Gegevens model van Azure Monitor logboeken
 description: In dit artikel vindt u informatie over de Azure Monitor Log Analytics gegevens model gegevens voor Azure Backup gegevens.
 ms.topic: conceptual
 ms.date: 02/26/2019
-ms.openlocfilehash: 1fcb4eb0c584f792132f19c8c4d66289342aa36e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2d2146612763bac39eb636bb7da522586a0daee2
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89020946"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586772"
 ---
 # <a name="log-analytics-data-model-for-azure-backup-data"></a>Log Analytics gegevens model voor Azure Backup gegevens
 
@@ -33,11 +33,11 @@ Deze tabel bevat details over velden die betrekking hebben op waarschuwingen.
 | AlertUniqueId_s |Tekst |De unieke id van de gegenereerde waarschuwing |
 | AlertType_s |Tekst |Type waarschuwing, bijvoorbeeld back-up |
 | AlertStatus_s |Tekst |De status van de waarschuwing, bijvoorbeeld actief |
-| AlertOccurrenceDateTime_s |Datum en tijd |Datum en tijd waarop de waarschuwing is gemaakt |
+| AlertOccurrenceDateTime_s |Datum/tijd |Datum en tijd waarop de waarschuwing is gemaakt |
 | AlertSeverity_s |Tekst |Ernst van de waarschuwing, bijvoorbeeld kritiek |
-|AlertTimeToResolveInMinutes_s    | Getal        |De tijd die nodig is om een waarschuwing op te lossen. Leeg voor actieve waarschuwingen.         |
+|AlertTimeToResolveInMinutes_s    | Aantal        |De tijd die nodig is om een waarschuwing op te lossen. Leeg voor actieve waarschuwingen.         |
 |AlertConsolidationStatus_s   |Tekst         |Vaststellen of de waarschuwing een geconsolideerde waarschuwing is         |
-|CountOfAlertsConsolidated_s     |Getal         |Aantal waarschuwingen dat is geconsolideerd als het een geconsolideerde waarschuwing is          |
+|CountOfAlertsConsolidated_s     |Aantal         |Aantal waarschuwingen dat is geconsolideerd als het een geconsolideerde waarschuwing is          |
 |AlertRaisedOn_s     |Tekst         |Het type entiteit waarop de waarschuwing is opgetreden         |
 |AlertCode_s     |Tekst         |Code voor een unieke identificatie van een waarschuwings type         |
 |RecommendedAction_s   |Tekst         |Aanbevolen actie om de waarschuwing op te lossen         |
@@ -152,11 +152,11 @@ Deze tabel bevat details over projectgerelateerde velden.
 | JobOperation_s |Tekst |Bewerking waarvoor de taak wordt uitgevoerd bijvoorbeeld back-ups maken, herstellen, back-up configureren |
 | JobStatus_s |Tekst |De status van de voltooide taak, bijvoorbeeld voltooid, is mislukt |
 | JobFailureCode_s |Tekst |De teken reeks voor de fout code omdat de taak fout is opgetreden |
-| JobStartDateTime_s |Datum en tijd |Datum en tijd waarop de taak is gestart |
+| JobStartDateTime_s |Datum/tijd |Datum en tijd waarop de taak is gestart |
 | BackupStorageDestination_s |Tekst |Doel van back-upopslag, bijvoorbeeld Cloud, schijf  |
 | AdHocOrScheduledJob_s |Tekst | Veld om op te geven of de taak ad-hoc of gepland is |
-| JobDurationInSecs_s | Getal |Totale taak duur in seconden |
-| DataTransferredInMB_s | Getal |Gegevens die worden overgebracht in MB voor deze taak|
+| JobDurationInSecs_s | Aantal |Totale taak duur in seconden |
+| DataTransferredInMB_s | Aantal |Gegevens die worden overgebracht in MB voor deze taak|
 | JobUniqueId_g |Tekst |Unieke ID voor het identificeren van de taak |
 | RecoveryJobDestination_s |Tekst | Doel van een herstel taak, waarbij de gegevens worden hersteld |
 | RecoveryJobRPDateTime_s |DateTime | De datum, het tijdstip waarop het herstel punt dat wordt hersteld, is gemaakt |
@@ -172,7 +172,7 @@ Deze tabel bevat details over projectgerelateerde velden.
 
 Deze tabel bevat details over velden die betrekking hebben op het beleid.
 
-| Veld | Gegevenstype | Versies van toepassing | Beschrijving |
+| Veld | Gegevenstype | Versies van toepassing | Description |
 | --- | --- | --- | --- |
 | EventName_s |Tekst ||Dit veld vertegenwoordigt de naam van deze gebeurtenis. Het is altijd AzureBackupCentralReport |
 | SchemaVersion_s |Tekst ||Dit veld geeft de huidige versie van het schema aan. Het is **v2** |
@@ -220,7 +220,7 @@ Deze tabel bevat details over velden die betrekking hebben op het beleid.
 
 Deze tabel bevat details over beleids koppelingen met verschillende entiteiten.
 
-| Veld | Gegevenstype | Versies van toepassing | Beschrijving |
+| Veld | Gegevenstype | Versies van toepassing | Description |
 | --- | --- | --- | --- |
 | EventName_s |Tekst ||Dit veld vertegenwoordigt de naam van deze gebeurtenis. Het is altijd AzureBackupCentralReport |
 | SchemaVersion_s |Tekst ||Dit veld geeft de huidige versie van het schema aan. Het is **v2** |
@@ -297,8 +297,8 @@ Deze tabel bevat basis velden die betrekking hebben op opslag en die opslag aan 
 | BackupItemUniqueId_s |Tekst |Unieke ID die wordt gebruikt om het back-upitem te identificeren dat is gerelateerd aan de opslag entiteit |
 | BackupManagementServerUniqueId_s |Tekst |Unieke ID die wordt gebruikt om de back-upbeheerserver te identificeren die betrekking heeft op de opslag entiteit|
 | VaultUniqueId_s |Tekst |Unieke ID die wordt gebruikt om de kluis te identificeren die is gerelateerd aan de opslag entiteit|
-| StorageConsumedInMBs_s |Getal|Grootte van de opslag die wordt gebruikt door het bijbehorende back-upitem in de bijbehorende opslag |
-| StorageAllocatedInMBs_s |Getal |Grootte van de opslag die wordt toegewezen door het bijbehorende back-upitem in de bijbehorende opslag van het type schijf|
+| StorageConsumedInMBs_s |Aantal|Grootte van de opslag die wordt gebruikt door het bijbehorende back-upitem in de bijbehorende opslag |
+| StorageAllocatedInMBs_s |Aantal |Grootte van de opslag die wordt toegewezen door het bijbehorende back-upitem in de bijbehorende opslag van het type schijf|
 
 ### <a name="vault"></a>Kluis
 
@@ -349,7 +349,7 @@ In deze tabel worden de werk belasting (s) aangegeven waaraan een volume is geko
 
 Deze tabel bevat basis velden die betrekking hebben op een beveiligd exemplaar.
 
-| Veld | Gegevenstype |Versies van toepassing | Beschrijving |
+| Veld | Gegevenstype |Versies van toepassing | Description |
 | --- | --- | --- | --- |
 | BackupItemUniqueId_s |Tekst |v2|Unieke ID die wordt gebruikt voor het identificeren van het back-upitem voor Vm's waarvan een back-up is gemaakt met DPM, MABS|
 | ProtectedContainerUniqueId_s |Tekst |v2|Unieke ID die wordt gebruikt om de beveiligde container te identificeren voor alles behalve Vm's waarvoor een back-up is gemaakt met behulp van DPM, MABS|
@@ -462,7 +462,7 @@ Hieronder vindt u enkele voor beelden voor het schrijven van query's op Azure Ba
 
 ## <a name="v1-schema-vs-v2-schema"></a>V1-schema VS v2-schema
 
-Eerder werden de diagnostische gegevens voor Azure Backup Agent en Azure VM-back-up verzonden naar Azure Diagnostics tabel in een schema waarnaar wordt verwezen als ***v1-schema***. Daarna werden nieuwe kolommen toegevoegd ter ondersteuning van andere scenario's en werk belastingen, en worden diagnostische gegevens gepusht in een nieuw schema waarnaar wordt verwezen als ***v2-schema***.  
+Eerder werden de diagnostische gegevens voor Azure Backup Agent en Azure VM-back-up verzonden naar Azure Diagnostics tabel in een schema waarnaar wordt verwezen als ***v1-schema** _. Daarna werden nieuwe kolommen toegevoegd ter ondersteuning van andere scenario's en werk belastingen, en worden diagnostische gegevens gepusht in een nieuw schema, aangeduid als _ *_v2 schema_* *.  
 
 Om redenen van achterwaartse compatibiliteit, worden diagnostische gegevens voor Azure Backup-Agent en Azure VM-back-up momenteel verzonden naar Azure Diagnostics tabel in zowel het v1-als het v2-schema (met v1-schema nu op een afschaffing-pad). U kunt bepalen welke records in Log Analytics van v1-schema door records te filteren voor SchemaVersion_s = "v1" in uw logboek query's.
 
@@ -495,4 +495,4 @@ Omdat het v1-schema zich op een afschaffing pad bevindt, is het raadzaam om alle
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Wanneer u het gegevens model hebt gecontroleerd, kunt u beginnen met het [maken van aangepaste query's](../azure-monitor/learn/tutorial-logs-dashboards.md) in azure monitor Logboeken om uw eigen dash board te bouwen.
+Wanneer u het gegevens model hebt gecontroleerd, kunt u beginnen met het [maken van aangepaste query's](../azure-monitor/visualize/tutorial-logs-dashboards.md) in azure monitor Logboeken om uw eigen dash board te bouwen.

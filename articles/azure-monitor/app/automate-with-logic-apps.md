@@ -3,19 +3,19 @@ title: Azure-toepassing Insights-processen automatiseren met behulp van Logic Ap
 description: Meer informatie over hoe u Herhaal bare processen snel kunt automatiseren door de Application Insights-connector toe te voegen aan uw logische app.
 ms.topic: conceptual
 ms.date: 03/11/2019
-ms.openlocfilehash: f6406c2e6fb933c561a8ae54009499768c81a204
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d7ff75be3cb847235405a740df4a20803cdc87b3
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90970860"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589914"
 ---
 # <a name="automate-application-insights-processes-by-using-logic-apps"></a>Application Insights processen automatiseren met behulp van Logic Apps
 
 Vindt u het herhaaldelijk om dezelfde query's op uw telemetriegegevens uit te voeren om te controleren of uw service goed werkt? Wilt u deze query's automatiseren om trends en afwijkingen op te sporen en vervolgens uw eigen werk stromen rond hen te bouwen? De Azure-toepassing Insights-connector voor Logic Apps is het juiste hulp middel voor dit doel.
 
 > [!NOTE]
-> De Azure-toepassing Insights-connector is vervangen door de [Azure monitor-connector](../platform/logicapp-flow-connector.md) die is geïntegreerd met Azure Active Directory in plaats van een API-sleutel te vereisen en u kunt ook gegevens ophalen uit een log Analytics-werk ruimte.
+> De Azure-toepassing Insights-connector is vervangen door de [Azure monitor-connector](../logs/logicapp-flow-connector.md) die is geïntegreerd met Azure Active Directory in plaats van een API-sleutel te vereisen en u kunt ook gegevens ophalen uit een log Analytics-werk ruimte.
 
 Met deze integratie kunt u talloze processen automatiseren zonder dat u maar één regel code hoeft te schrijven. U kunt een logische app maken met de Application Insights-connector om snel een Application Insights proces te automatiseren. 
 
@@ -27,12 +27,12 @@ In deze zelf studie leert u hoe u een logische app maakt die gebruikmaakt van he
 
 ### <a name="step-1-create-a-logic-app"></a>Stap 1: een logische app maken
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-1. Klik op **een resource maken**, selecteer **Web en mobiel**en selecteer vervolgens **logische app**.
+1. Klik op **een resource maken**, selecteer **Web en mobiel** en selecteer vervolgens **logische app**.
 
     ![Venster nieuwe logische app](./media/automate-with-logic-apps/1createlogicapp.png)
 
 ### <a name="step-2-create-a-trigger-for-your-logic-app"></a>Stap 2: een trigger maken voor uw logische app
-1. Selecteer in het venster **Logic app Designer** onder **beginnen met een algemene trigger de**optie **terugkeer patroon**.
+1. Selecteer in het venster **Logic app Designer** onder **beginnen met een algemene trigger de** optie **terugkeer patroon**.
 
     ![Venster Logic app Designer](./media/automate-with-logic-apps/2logicappdesigner.png)
 
@@ -43,9 +43,9 @@ In deze zelf studie leert u hoe u een logische app maakt die gebruikmaakt van he
 ### <a name="step-3-add-an-application-insights-action"></a>Stap 3: een Application Insights actie toevoegen
 1. Klik op **nieuwe stap**.
 
-1. Typ **Azure-toepassing Insights**in het zoekvak **Kies een actie** .
+1. Typ **Azure-toepassing Insights** in het zoekvak **Kies een actie** .
 
-1. Klik onder **acties**op **Azure-toepassing Insights-visualiseren Analytics-query**.
+1. Klik onder **acties** op **Azure-toepassing Insights-visualiseren Analytics-query**.
 
     ![Logic app Designer-venster voor het kiezen van een actie](./media/automate-with-logic-apps/4visualize.png)
 
@@ -120,7 +120,7 @@ Wanneer u uw eigen query's maakt, controleert u of ze correct werken in Analytic
 ### <a name="step-7-save-and-test-your-logic-app"></a>Stap 7: uw logische app opslaan en testen
 * Klik op **Opslaan** om uw wijzigingen op te slaan.
 
-U kunt wachten tot de trigger de logische app uitvoert, of u kunt de logische app direct uitvoeren door **uitvoeren**te selecteren.
+U kunt wachten tot de trigger de logische app uitvoert, of u kunt de logische app direct uitvoeren door **uitvoeren** te selecteren.
 
 ![Het scherm voor het maken van logische apps](./media/automate-with-logic-apps/13save.png)
 
@@ -130,7 +130,7 @@ Wanneer de logische app wordt uitgevoerd, krijgen de ontvangers die u in de e-ma
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het maken van [Analytics-query's](../log-query/get-started-queries.md).
+- Meer informatie over het maken van [Analytics-query's](../logs/get-started-queries.md).
 - Meer informatie over [Logic Apps](../../logic-apps/logic-apps-overview.md).
 
 

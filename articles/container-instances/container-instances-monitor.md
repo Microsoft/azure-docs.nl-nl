@@ -3,12 +3,12 @@ title: Container instanties bewaken
 description: Het gebruik van reken resources zoals CPU en geheugen door uw containers in Azure Container Instances bewaken.
 ms.topic: article
 ms.date: 12/17/2020
-ms.openlocfilehash: 83a8a5ab2c8c49f4044564c2d899685914103b0b
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: ae9725ffe66bebbed26745c311b2ada07d5d2c00
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916071"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589298"
 ---
 # <a name="monitor-container-resources-in-azure-container-instances"></a>Containerresources in Azure Container Instances bewaken
 
@@ -146,6 +146,6 @@ Meer informatie over het maken van [metrische waarschuwingen][metric-alert] om e
 
 <!-- LINKS - Internal -->
 [azure-monitoring]: ../azure-monitor/overview.md
-[metric-alert]: ..//azure-monitor/platform/alerts-metric.md
-[monitor-dimension]: ../azure-monitor/platform/data-platform-metrics.md#multi-dimensional-metrics
-[supported-metrics]: ../azure-monitor/platform/metrics-supported.md#microsoftcontainerinstancecontainergroups
+[metric-alert]: ..//azure-monitor/alerts/alerts-metric.md
+[monitor-dimension]: ../azure-monitor/essentials/data-platform-metrics.md#multi-dimensional-metrics
+[supported-metrics]: ../azure-monitor/essentials/metrics-supported.md#microsoftcontainerinstancecontainergroups

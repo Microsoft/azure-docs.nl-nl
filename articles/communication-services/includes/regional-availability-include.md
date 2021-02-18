@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 11/29/2020
 ms.author: mikben
-ms.openlocfilehash: f5c8d8065149a1e380224b2016a45916e72d388e
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: bba0d07a0135644eff8ae1ef59ab3b43fd99a380
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98948302"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100651019"
 ---
 > [!IMPORTANT]
-> De beschikbaarheid van telefoonnummers is momenteel beperkt tot Azure-abonnementen met een factureringsadres in de Verenigde Staten. Ga naar de documentatie over [planning voor telefonie- en sms-oplossingen](../concepts/telephony-sms/plan-solution.md) voor meer informatie.
+> De beschikbaarheid van telefoonnummers is momenteel beperkt tot Azure-abonnementen met een factureringsadres in de Verenigde Staten. Ga voor meer informatie naar de documentatie over [telefoon nummer typen](../concepts/telephony-sms/plan-solution.md) .

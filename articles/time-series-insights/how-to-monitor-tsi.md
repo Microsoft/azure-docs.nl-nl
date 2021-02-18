@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/10/2020
 ms.custom: lyrana
-ms.openlocfilehash: 3fc880e238c1c9f45c663975470a6ab57267a648
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 940f7efc7130ef80817be3b42e3c0eff83588a90
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879541"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587989"
 ---
 # <a name="monitoring-time-series-insights"></a>Bewakings Time Series Insights
 
@@ -29,7 +29,7 @@ De pagina **overzicht** in de Azure portal voor elke time series Insights omgevi
 
 Time Series Insights maakt bewakings gegevens met behulp van [Azure monitor](../azure-monitor/overview.md). Dit is een volledige stack bewakings service in azure met een volledige set functies voor het bewaken van uw Azure-resources naast bronnen in andere Clouds en on-premises.
 
-Begin met het artikel [bewaking van Azure-resources met Azure monitor](../azure-monitor/insights/monitor-azure-resource.md), waarin de volgende concepten worden beschreven:
+Begin met het artikel [bewaking van Azure-resources met Azure monitor](../azure-monitor/essentials/monitor-azure-resource.md), waarin de volgende concepten worden beschreven:
 
 - Wat is Azure Monitor?
 - Kosten die zijn gekoppeld aan bewaking
@@ -40,11 +40,11 @@ Begin met het artikel [bewaking van Azure-resources met Azure monitor](../azure-
 In de volgende secties vindt u een beschrijving van de specifieke gegevens die zijn verzameld voor Azure Time Series Insights. In deze secties vindt u ook voor beelden voor het configureren van gegevens verzameling en het analyseren van deze gegevens met Azure-hulpprogram ma's.
 
 > [!TIP]
-> Zie [verbruik en geschatte kosten](../azure-monitor/platform/usage-estimated-costs.md)voor meer informatie over de kosten die zijn gekoppeld aan Azure monitor. Zie [gegevens opname tijd vastleggen](../azure-monitor/platform/data-ingestion-time.md)voor meer informatie over de tijd die nodig is om uw gegevens weer te geven in azure monitor.
+> Zie [verbruik en geschatte kosten](../azure-monitor//usage-estimated-costs.md)voor meer informatie over de kosten die zijn gekoppeld aan Azure monitor. Zie [gegevens opname tijd vastleggen](../azure-monitor/logs/data-ingestion-time.md)voor meer informatie over de tijd die nodig is om uw gegevens weer te geven in azure monitor.
 
 ## <a name="monitoring-data-from-azure-time-series-insights"></a>Gegevens van Azure Time Series Insights bewaken
 
-Azure Time Series Insights worden dezelfde soorten bewakings gegevens verzameld als andere Azure-resources die worden beschreven in [gegevens van Azure-resources bewaken](../azure-monitor/insights/monitor-azure-resource.md#monitoring-data). 
+Azure Time Series Insights worden dezelfde soorten bewakings gegevens verzameld als andere Azure-resources die worden beschreven in [gegevens van Azure-resources bewaken](../azure-monitor/essentials/monitor-azure-resource.md#monitoring-data). 
 
 Zie [Azure time series Insights bewakings gegevens Naslag informatie](how-to-monitor-tsi-reference.md) voor een gedetailleerde Naslag informatie over de logboeken en metrieken die u kunt verzamelen.
 
@@ -53,7 +53,7 @@ Zie [Azure time series Insights bewakings gegevens Naslag informatie](how-to-mon
 Metrische platform gegevens worden automatisch verzameld en opgeslagen, maar kunnen worden doorgestuurd naar andere locaties met behulp van een diagnostische instelling.
 
 Bron logboeken worden pas verzameld en opgeslagen als u een diagnostische instelling hebt gemaakt en deze naar een of meer locaties wilt door sturen.
-Zie [Diagnostische instelling maken voor het verzamelen van platform logboeken en metrische gegevens in azure](../azure-monitor/platform/diagnostic-settings.md) voor het gedetailleerde proces voor het maken van een diagnostische instelling met behulp van de Azure Portal, CLI of Power shell. Wanneer u een diagnostische instelling maakt, geeft u op welke categorieën logboeken u wilt verzamelen.
+Zie [Diagnostische instelling maken voor het verzamelen van platform logboeken en metrische gegevens in azure](../azure-monitor/essentials/diagnostic-settings.md) voor het gedetailleerde proces voor het maken van een diagnostische instelling met behulp van de Azure Portal, CLI of Power shell. Wanneer u een diagnostische instelling maakt, geeft u op welke categorieën logboeken u wilt verzamelen.
 
 U kunt Logboeken verzamelen uit de volgende categorieën voor Azure Time Series Insights:
 
@@ -80,7 +80,7 @@ U kunt bron Logboeken openen als een BLOB in een opslag account, als gebeurtenis
 
 Gegevens in Azure Monitor logboeken worden opgeslagen in tabellen waarvan elke tabel een eigen set unieke eigenschappen heeft.
 
-Alle resource Logboeken in Azure Monitor hebben dezelfde velden die worden gevolgd door servicespecifieke velden. Het algemene schema wordt beschreven in [Azure monitor resource-logboek schema](../azure-monitor/platform/resource-logs-schema.md#top-level-common-schema). Zie [Azure time series Insights monitoring data Reference](how-to-monitor-tsi-reference.md#resource-logs)(Engelstalig) voor een lijst met de typen bron logboeken die worden verzameld voor Azure time series Insights.
+Alle resource Logboeken in Azure Monitor hebben dezelfde velden die worden gevolgd door servicespecifieke velden. Het algemene schema wordt beschreven in [Azure monitor resource-logboek schema](../azure-monitor/essentials/resource-logs-schema.md#top-level-common-schema). Zie [Azure time series Insights monitoring data Reference](how-to-monitor-tsi-reference.md#resource-logs)(Engelstalig) voor een lijst met de typen bron logboeken die worden verzameld voor Azure time series Insights.
 
 Azure Time Series Insights slaat gegevens op in de volgende tabellen.
 
@@ -122,4 +122,4 @@ Wanneer u een waarschuwings regel maakt op basis van de metrische gegevens van h
 ## <a name="next-steps"></a>Volgende stappen
 
 * Zie [Azure time series Insights Naslag informatie over bewakings gegevens](how-to-monitor-tsi-reference.md) voor een verwijzing naar de logboeken en metrieken die zijn gemaakt door Azure time series Insights.
-* Zie [Azure-resources bewaken met Azure monitor](../azure-monitor/insights/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.
+* Zie [Azure-resources bewaken met Azure monitor](../azure-monitor/essentials/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.

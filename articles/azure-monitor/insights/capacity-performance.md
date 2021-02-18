@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/13/2017
-ms.openlocfilehash: ee5aec2e483f41c73d57fc1d91427e5657bda3e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9fce67c0ffe1951b0bfc325603b6d8f985dd804d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87317991"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592205"
 ---
 # <a name="plan-hyper-v-virtual-machine-capacity-with-the-capacity-and-performance-solution-deprecated"></a>Virtuele Hyper-V-machine capaciteit plannen met de Capaciteit en prestaties oplossing (afgeschaft)
 
@@ -39,12 +39,12 @@ De oplossing:
 
 De volgende tabel beschrijft de verbonden bronnen die worden ondersteund door deze oplossing.
 
-| Verbonden bron | Ondersteuning | Beschrijving |
+| Verbonden bron | Ondersteuning | Description |
 |---|---|---|
-| [Windows-agents](../platform/agent-windows.md) | Ja | De oplossing verzamelt informatie over capaciteits-en prestatie gegevens van Windows-agents. |
-| [Linux-agents](../learn/quick-collect-linux-computer.md) | Nee | De oplossing verzamelt geen gegevens over de capaciteits-en prestatie gegevens van direct Linux-agents.|
-| [SCOM-beheer groep](../platform/om-agents.md) | Ja |De oplossing verzamelt capaciteits-en prestatie gegevens van agents in een verbonden SCOM-beheer groep. Er is geen rechtstreekse verbinding van de SCOM-agent naar Log Analytics vereist.|
-| [Azure-opslag account](../platform/resource-logs.md#send-to-log-analytics-workspace) | Nee | Azure Storage omvat geen capaciteits-en prestatie gegevens.|
+| [Windows-agents](../agents/agent-windows.md) | Yes | De oplossing verzamelt informatie over capaciteits-en prestatie gegevens van Windows-agents. |
+| [Linux-agents](../vm/quick-collect-linux-computer.md) | No    | De oplossing verzamelt geen gegevens over de capaciteits-en prestatie gegevens van direct Linux-agents.|
+| [SCOM-beheer groep](../agents/om-agents.md) | Yes |De oplossing verzamelt capaciteits-en prestatie gegevens van agents in een verbonden SCOM-beheer groep. Er is geen rechtstreekse verbinding van de SCOM-agent naar Log Analytics vereist.|
+| [Azure Storage-account](../essentials/resource-logs.md#send-to-log-analytics-workspace) | No | Azure Storage omvat geen capaciteits-en prestatie gegevens.|
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -72,7 +72,7 @@ New Management Pack with id:"Microsoft.IntelligencePacks.CapacityPerformance", v
 
 Wanneer de Capaciteit en prestaties oplossing wordt bijgewerkt, wordt het versie nummer gewijzigd.
 
-Zie [Operations Manager koppelen aan Log Analytics](../platform/om-agents.md) voor meer informatie over de manier waarop uw management packs voor oplossingen worden bijgewerkt.
+Zie [Operations Manager koppelen aan Log Analytics](../agents/om-agents.md) voor meer informatie over de manier waarop uw management packs voor oplossingen worden bijgewerkt.
 
 ## <a name="using-the-solution"></a>De oplossing gebruiken
 
@@ -117,7 +117,7 @@ Als samen vatting van de oplossing worden gegevens over capaciteit en prestaties
 De volgende tabel bevat voor beelden van zoek opdrachten in het logboek voor de capaciteits-en prestatie gegevens die door deze oplossing worden verzameld en berekend.
 
 
-| Query’s uitvoeren | Beschrijving |
+| Query’s uitvoeren | Description |
 |:--- |:--- |
 | Alle geheugen configuraties van host | Perf &#124; waarbij ObjectName = = "Capaciteit en prestaties" en CounterName = = "host assigned Memory MB" &#124; vat MB = AVG (CounterValue) door INSTANCENAME |
 | Alle VM-geheugen configuraties | Perf &#124; waarbij ObjectName = = "Capaciteit en prestaties" en CounterName = = "aan VM toegewezen geheugen MB" &#124; een samen vatting van MB = Gem (CounterValue) door INSTANCENAME |
@@ -129,5 +129,5 @@ De volgende tabel bevat voor beelden van zoek opdrachten in het logboek voor de 
 
 
 ## <a name="next-steps"></a>Volgende stappen
-* Gebruik [Zoek opdrachten in Logboeken in log Analytics](../log-query/log-query-overview.md) om gedetailleerde capaciteit en prestaties gegevens weer te geven.
+* Gebruik [Zoek opdrachten in Logboeken in log Analytics](../logs/log-query-overview.md) om gedetailleerde capaciteit en prestaties gegevens weer te geven.
 

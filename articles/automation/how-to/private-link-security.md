@@ -6,12 +6,12 @@ ms.author: magoedte
 ms.topic: conceptual
 ms.date: 12/11/2020
 ms.subservice: ''
-ms.openlocfilehash: 26e7dbf3f5629d4691211b6c9b82446ba4035421
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: f3c9197faaae89e0ffb238f987ee66dafea8abdd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347614"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579806"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-automation"></a>Persoonlijke Azure-koppeling gebruiken om netwerken veilig te verbinden met Azure Automation
 
@@ -34,7 +34,7 @@ Met een persoonlijke koppeling kunt u het volgende doen:
 - Maak privé verbinding met Azure Monitor Log Analytics werk ruimte zonder open bare toegang tot het netwerk.
 
     >[!NOTE]
-    >Een afzonderlijk privé-eind punt voor uw Log Analytics-werk ruimte is vereist als uw Automation-account is gekoppeld aan een Log Analytics werk ruimte om taak gegevens door te sturen, en wanneer u functies hebt ingeschakeld, zoals Updatebeheer, Wijzigingen bijhouden en inventaris, status configuratie of VM's buiten bedrijfsuren starten/stoppen. Zie voor meer informatie over persoonlijke koppeling voor Azure Monitor de [koppeling Azure private gebruiken om netwerken veilig te verbinden met Azure monitor](../../azure-monitor/platform/private-link-security.md).
+    >Een afzonderlijk privé-eind punt voor uw Log Analytics-werk ruimte is vereist als uw Automation-account is gekoppeld aan een Log Analytics werk ruimte om taak gegevens door te sturen, en wanneer u functies hebt ingeschakeld, zoals Updatebeheer, Wijzigingen bijhouden en inventaris, status configuratie of VM's buiten bedrijfsuren starten/stoppen. Zie voor meer informatie over persoonlijke koppeling voor Azure Monitor de [koppeling Azure private gebruiken om netwerken veilig te verbinden met Azure monitor](../../azure-monitor/logs/private-link-security.md).
 
 - Zorg ervoor dat uw automatiserings gegevens alleen toegankelijk zijn via geautoriseerde particuliere netwerken.
 - Voorkom gegevens exfiltration uit uw particuliere netwerken door uw Azure Automation-bron te definiëren die verbinding maakt via uw persoonlijke eind punt.
@@ -46,8 +46,8 @@ Zie  [belang rijke voor delen van een persoonlijke koppeling](../../private-link
 ## <a name="limitations"></a>Beperkingen
 
 - In de huidige implementatie van een persoonlijke koppeling hebben de Cloud-taken van het Automation-account geen toegang tot Azure-resources die zijn beveiligd met een persoonlijk eind punt. Bijvoorbeeld Azure Key Vault, Azure SQL, Azure Storage account, enzovoort. U kunt dit probleem omzeilen door in plaats daarvan een [Hybrid Runbook worker](../automation-hybrid-runbook-worker.md) te gebruiken.
-- U moet de nieuwste versie van de Log Analytics- [agent](../../azure-monitor/platform/log-analytics-agent.md) voor Windows of Linux gebruiken.
-- De [log Analytics-gateway](../../azure-monitor/platform/gateway.md) biedt geen ondersteuning voor persoonlijke koppelingen.
+- U moet de nieuwste versie van de Log Analytics- [agent](../../azure-monitor/agents/log-analytics-agent.md) voor Windows of Linux gebruiken.
+- De [log Analytics-gateway](../../azure-monitor/agents/gateway.md) biedt geen ondersteuning voor persoonlijke koppelingen.
 
 ## <a name="how-it-works"></a>Uitleg
 
@@ -76,7 +76,7 @@ Om inzicht te krijgen in & Updatebeheer beoordeling [over updatebeheer](../updat
 
 Als u wilt dat de computers die zijn geconfigureerd voor update beheer verbinding maken met Automation-& Log Analytics werk ruimte op een veilige manier via een particulier koppelings kanaal, moet u een persoonlijke koppeling inschakelen voor de Log Analytics werk ruimte die is gekoppeld aan het Automation-account dat is geconfigureerd met een persoonlijke koppeling.
 
-U kunt bepalen hoe een Log Analytics werkruimte kan worden bereikt buiten het bereik van de persoonlijke koppeling door de stappen te volgen die worden beschreven in [log Analytics configureren](../../azure-monitor/platform/private-link-security.md#configure-log-analytics). Als u het **toestaan van open bare netwerk toegang** hebt ingesteld op **Nee**, kunnen computers buiten de verbonden bereiken geen gegevens uploaden naar deze werk ruimte. Als u het **toestaan van open bare netwerk toegang voor query's** op **Nee** instelt, hebben computers buiten de scopes geen toegang tot gegevens in deze werk ruimte.
+U kunt bepalen hoe een Log Analytics werkruimte kan worden bereikt buiten het bereik van de persoonlijke koppeling door de stappen te volgen die worden beschreven in [log Analytics configureren](../../azure-monitor/logs/private-link-security.md#configure-log-analytics). Als u het **toestaan van open bare netwerk toegang** hebt ingesteld op **Nee**, kunnen computers buiten de verbonden bereiken geen gegevens uploaden naar deze werk ruimte. Als u het **toestaan van open bare netwerk toegang voor query's** op **Nee** instelt, hebben computers buiten de scopes geen toegang tot gegevens in deze werk ruimte.
 
 Gebruik **DSCAndHybridWorker** doel-subresource om een persoonlijke koppeling in te scha kelen voor Hybrid worker-gebruikers & systeem.
 
@@ -114,7 +114,7 @@ In deze sectie maakt u een persoonlijk eind punt voor uw Automation-account.
     | Resourcegroep | Selecteer **myResourceGroup**. U hebt deze in de vorige sectie gemaakt.  |
     | **EXEMPLAARDETAILS** |  |
     | Naam | Voer uw *PrivateEndpoint* in. |
-    | Regio | Selecteer **YourRegion**. |
+    | Region | Selecteer **YourRegion**. |
     |||
 
 4. Selecteer **Volgende: Resource**.

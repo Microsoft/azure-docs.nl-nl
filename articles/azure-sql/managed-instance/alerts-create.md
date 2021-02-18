@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: wiassaf, sstein
 ms.date: 05/04/2020
-ms.openlocfilehash: a85bf6510163c47fa39bdb28debff806e1812f58
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d37465223000399aa42895626c48426ddadc0c72
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499268"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592715"
 ---
 # <a name="create-alerts-for-azure-sql-managed-instance-using-the-azure-portal"></a>Waarschuwingen voor Azure SQL Managed Instance maken met behulp van Azure Portal
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -41,7 +41,7 @@ U kunt een waarschuwing configureren om het volgende te doen wanneer deze wordt 
 * Azure-runbook aanroepen
 * Een extern ticketing ITSM-compatibel systeem aanroepen
 
-U kunt informatie over waarschuwings regels configureren en ophalen met behulp van [de Azure Portal, Power shell of de Azure cli](../../azure-monitor/platform/alerts-classic-portal.md) of [Azure monitor rest API](/rest/api/monitor/alertrules). 
+U kunt informatie over waarschuwings regels configureren en ophalen met behulp van [de Azure Portal, Power shell of de Azure cli](../../azure-monitor/alerts/alerts-classic-portal.md) of [Azure monitor rest API](/rest/api/monitor/alertrules). 
 
 ## <a name="alerting-metrics-available-for-managed-instance"></a>Beschik bare metrische gegevens voor waarschuwingen voor beheerd exemplaar
 
@@ -50,7 +50,7 @@ U kunt informatie over waarschuwings regels configureren en ophalen met behulp v
 
 De volgende metrische gegevens over beheerde exemplaren zijn beschikbaar voor configuratie van waarschuwingen:
 
-| Gegevens | Beschrijving | Hoeveelheid maat eenheid \ mogelijke waarden |
+| Metrisch | Beschrijving | Hoeveelheid maat eenheid \ mogelijke waarden |
 | :--------- | --------------------- | ----------- |
 | Gemiddeld CPU-percentage | Gemiddeld percentage van het CPU-gebruik in de geselecteerde tijds periode. | 0-100 (%) |
 | Gelezen IO-bytes | I/o-bytes in de geselecteerde tijds periode gelezen. | Bytes |
@@ -113,7 +113,7 @@ De nieuwe waarschuwings regel wordt binnen enkele minuten actief en wordt geacti
 ## <a name="verifying-alerts"></a>Waarschuwingen controleren
 
 > [!NOTE]
-> Zie [Supression van waarschuwingen met behulp van actie regels](../../azure-monitor/platform/alerts-action-rules.md#suppression-of-alerts)om onderdrukken van ruis te ontvangen.
+> Zie [Supression van waarschuwingen met behulp van actie regels](../../azure-monitor/alerts/alerts-action-rules.md#suppression-of-alerts)om onderdrukken van ruis te ontvangen.
 
 Wanneer u een waarschuwings regel instelt, controleert u of u tevreden bent met de trigger voor waarschuwingen en de frequentie ervan. Voor het voor beeld dat op deze pagina wordt weer gegeven voor het instellen van een waarschuwing voor de gebruikte opslag ruimte, ontvangt u een e-mail bericht, zoals hieronder wordt weer gegeven.
 
@@ -142,8 +142,8 @@ Bestaande waarschuwingen weer geven, onderbreken, activeren, wijzigen en verwijd
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [overzicht van waarschuwingen in Microsoft Azure](../../azure-monitor/platform/alerts-overview.md) voor informatie over Azure monitor waarschuwings systeem.
-* Zie [begrijpen hoe metrische waarschuwingen werken in azure monitor](../../azure-monitor/platform/alerts-metric-overview.md) voor meer informatie over metrische gegevens.
-* Meer informatie over het configureren van een webhook in waarschuwingen vindt u in [een webhook aanroepen met een klassieke metrische waarschuwing](../../azure-monitor/platform/alerts-webhooks.md)
+* Zie [overzicht van waarschuwingen in Microsoft Azure](../../azure-monitor/alerts/alerts-overview.md) voor informatie over Azure monitor waarschuwings systeem.
+* Zie [begrijpen hoe metrische waarschuwingen werken in azure monitor](../../azure-monitor/alerts/alerts-metric-overview.md) voor meer informatie over metrische gegevens.
+* Meer informatie over het configureren van een webhook in waarschuwingen vindt u in [een webhook aanroepen met een klassieke metrische waarschuwing](../../azure-monitor/alerts/alerts-webhooks.md)
 * Meer informatie over het configureren en beheren van waarschuwingen met behulp van Power shell, Zie [actie regels](/powershell/module/az.monitor/add-azmetricalertrulev2)
 * Meer informatie over het configureren en beheren van waarschuwingen met behulp van API vindt u in [Azure Monitor rest API naslag](/rest/api/monitor/) informatie

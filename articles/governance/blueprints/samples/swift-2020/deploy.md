@@ -3,12 +3,12 @@ title: Het blauwdrukvoorbeeld SWIFT CSP-CSCF v2020 implementeren
 description: Implementeer stappen voor het blauwdrukvoorbeeld SWIFT CSP-CSCF v2020, waaronder details van de parameters voor blauwdrukartefacten.
 ms.date: 01/08/2021
 ms.topic: sample
-ms.openlocfilehash: c3672dabb7f4c0a977b8140f470ddfc9fcea9c6d
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.openlocfilehash: 8f28bae58128306776fa18a6b383e324482bb03f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98048756"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582009"
 ---
 # <a name="deploy-the-swift-csp-cscf-v2020-blueprint-sample"></a>Het blauwdrukvoorbeeld SWIFT CSP-CSCF v2020 implementeren
 
@@ -93,7 +93,7 @@ In de volgende tabel ziet u een lijst met de blauwdrukartefactparameters:
 
 |Naam van het artefact|Type artefact|Parameternaam|Beschrijving|
 |-|-|-|-|
-|\[Preview\]: SWIFT CSP-CSCF v2020-besturingselementen controleren en specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten|Beleidstoewijzing|Lijst met resourcetypen waarvoor diagnostische logboeken moeten zijn ingeschakeld|Lijst met resourcetypen die moeten worden gecontroleerd als de instelling voor diagnostische logboeken niet is ingeschakeld. Acceptabele waarden vindt u in de [categorieën van de resourcelogboeken van Azure Monitor](../../../../azure-monitor/platform/resource-logs-categories.md#supported-log-categories-per-resource-type).|
+|\[Preview\]: SWIFT CSP-CSCF v2020-besturingselementen controleren en specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten|Beleidstoewijzing|Lijst met resourcetypen waarvoor diagnostische logboeken moeten zijn ingeschakeld|Lijst met resourcetypen die moeten worden gecontroleerd als de instelling voor diagnostische logboeken niet is ingeschakeld. Acceptabele waarden vindt u in de [categorieën van de resourcelogboeken van Azure Monitor](../../../../azure-monitor/essentials/resource-logs-categories.md#supported-log-categories-per-resource-type).|
 |\[Preview\]: SWIFT CSP-CSCF v2020-besturingselementen controleren en specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten|Beleidstoewijzing|Verbonden werkruimte-id's|Een door puntkomma's gescheiden lijst met de werkruimte-id's waarmee de Log Analytics-agent moet zijn verbonden|
 |\[Preview\]: SWIFT CSP-CSCF v2020-besturingselementen controleren en specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten|Beleidstoewijzing|Lijst met gebruikers die moeten worden opgenomen in de groep Beheerders voor Windows-VM's|Een lijst met leden die moeten worden opgenomen in de lokale groep beheerders, gescheiden door puntkomma's. Bijvoorbeeld: Beheerder; myUser1; myUser2|
 |\[Preview\]: SWIFT CSP-CSCF v2020-besturingselementen controleren en specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten|Beleidstoewijzing|Domeinnaam (FQDN)|De Fully Qualified Domain Name (FQDN) waaraan de virtuele Windows-machines moeten worden toegevoegd|

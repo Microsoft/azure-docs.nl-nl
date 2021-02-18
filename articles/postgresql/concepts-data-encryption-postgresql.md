@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: 730d12558e413d96909914d06187d0d5f89ec661
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: d9624fd899649f4e54c5bd509ed5961b862632dd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567525"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581587"
 ---
 # <a name="azure-database-for-postgresql-single-server-data-encryption-with-a-customer-managed-key"></a>Azure Database for PostgreSQL gegevens versleuteling met één server met een door de klant beheerde sleutel
 
@@ -117,7 +117,7 @@ Configureer de volgende Azure-functies om de status van de data base te controle
 * [Azure resource Health](../service-health/resource-health-overview.md): een ontoegankelijke data base die de toegang tot de klant sleutel heeft verloren, wordt weer gegeven als ' niet toegankelijk ' nadat de eerste verbinding met de data base is geweigerd.
 * [Activiteiten logboek](../service-health/alerts-activity-log-service-notifications-portal.md): wanneer de toegang tot de klant sleutel in de door de klant beheerde Key Vault mislukt, worden de gegevens toegevoegd aan het activiteiten logboek. U kunt zo snel mogelijk toegang herstellen als u waarschuwingen voor deze gebeurtenissen maakt.
 
-* [Actie groepen](../azure-monitor/platform/action-groups.md): Definieer deze groepen voor het verzenden van meldingen en waarschuwingen op basis van uw voor keuren.
+* [Actie groepen](../azure-monitor/alerts/action-groups.md): Definieer deze groepen voor het verzenden van meldingen en waarschuwingen op basis van uw voor keuren.
 
 ## <a name="restore-and-replicate-with-a-customers-managed-key-in-key-vault"></a>Herstellen en repliceren met de beheerde sleutel van een klant in Key Vault
 

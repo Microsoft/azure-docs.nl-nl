@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/30/2020
 ms.author: radeltch
 ms.reviewer: cynthn
-ms.openlocfilehash: 1c33011d947d6dc9dd9ee4dd6331c24c06d99b38
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: 411a95154c9ca36595dff4472e9ab8e1ae8a767e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98693821"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571371"
 ---
 # <a name="azure-monitor-for-sap-solutions-preview"></a>Azure monitor voor SAP-oplossingen (preview-versie)
 
@@ -35,7 +35,7 @@ Ondersteunde data bases:
 - SAP HANA-database
 - Micro soft SQL Server
 
-Azure Monitor voor SAP-oplossingen maakt gebruik van de kracht van bestaande [Azure monitor](../../../azure-monitor/overview.md) mogelijkheden, zoals log Analytics en [werkmappen](../../../azure-monitor/platform/workbooks-overview.md) , om meer controle mogelijkheden te bieden. Klanten kunnen [aangepaste visualisaties](../../../azure-monitor/platform/workbooks-overview.md#getting-started) maken door de standaard werkmappen te bewerken die worden meegeleverd door Azure monitor voor SAP-oplossingen, [aangepaste query's](../../../azure-monitor/log-query/log-analytics-tutorial.md) te schrijven en [aangepaste waarschuwingen](../../../azure-monitor/learn/tutorial-response.md) te maken met behulp van Azure log Analytics-werk ruimte, profiteren van de [flexibele Bewaar periode](../../../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period) en het koppelen van bewakings gegevens met hun ticket systeem.
+Azure Monitor voor SAP-oplossingen maakt gebruik van de kracht van bestaande [Azure monitor](../../../azure-monitor/overview.md) mogelijkheden, zoals log Analytics en [werkmappen](../../../azure-monitor/visualize/workbooks-overview.md) , om meer controle mogelijkheden te bieden. Klanten kunnen [aangepaste visualisaties](../../../azure-monitor/visualize/workbooks-overview.md#getting-started) maken door de standaard werkmappen te bewerken die worden meegeleverd door Azure monitor voor SAP-oplossingen, [aangepaste query's](../../../azure-monitor/logs/log-analytics-tutorial.md) te schrijven en [aangepaste waarschuwingen](../../../azure-monitor/alerts/tutorial-response.md) te maken met behulp van Azure log Analytics-werk ruimte, profiteren van de [flexibele Bewaar periode](../../../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period) en het koppelen van bewakings gegevens met hun ticket systeem.
 
 ## <a name="what-data-does-azure-monitor-for-sap-solutions-collect"></a>Welke gegevens worden Azure Monitor voor SAP-oplossingen verzameld?
 
@@ -91,9 +91,9 @@ De belangrijkste onderdelen van de architectuur zijn:
    - Virtuele Azure-machine: ook bekend als *Collector-VM*. Dit is een Standard_B2ms VM. Het belangrijkste doel van deze virtuele machine is het hosten van de *bewakings lading*. Bewakings Payload verwijst naar de logica van het verzamelen van telemetrie van de bron systemen en het overdragen van de verzamelde gegevens naar het bewakings raamwerk. In het bovenstaande diagram bevat de bewakings lading de logica om verbinding te maken met SAP HANA data base via SQL-poort.
    - [Azure Key Vault](../../../key-vault/general/basic-concepts.md): deze resource is geïmplementeerd voor het veilig vasthouden van SAP Hana database referenties en voor het opslaan van informatie over [providers](./azure-monitor-providers.md).
    - Log Analytics-werk ruimte: de bestemming waar de telemetriegegevens zich bevinden.
-      - Visualisatie is gebaseerd op telemetrie in Log Analytics met behulp van [Azure-werkmappen](../../../azure-monitor/platform/workbooks-overview.md). Klanten kunnen visualisatie aanpassen. Klanten kunnen hun werkmappen of specifieke visualisatie in werkmappen ook vastmaken aan Azure-dash board voor automatisch vernieuwen met de laagste granulatie van 30 minuten.
+      - Visualisatie is gebaseerd op telemetrie in Log Analytics met behulp van [Azure-werkmappen](../../../azure-monitor/visualize/workbooks-overview.md). Klanten kunnen visualisatie aanpassen. Klanten kunnen hun werkmappen of specifieke visualisatie in werkmappen ook vastmaken aan Azure-dash board voor automatisch vernieuwen met de laagste granulatie van 30 minuten.
       - Klanten kunnen hun bestaande werk ruimte binnen hetzelfde abonnement gebruiken als SAP-bewakings resource door deze optie te kiezen op het moment van de implementatie.
-      - Klanten kunnen Kusto query language (KQL) gebruiken om [query's](../../../azure-monitor/log-query/log-query-overview.md) uit te voeren op de onbewerkte tabellen in log Analytics werk ruimte. Bekijk de *aangepaste logboeken*.
+      - Klanten kunnen Kusto query language (KQL) gebruiken om [query's](../../../azure-monitor/logs/log-query-overview.md) uit te voeren op de onbewerkte tabellen in log Analytics werk ruimte. Bekijk de *aangepaste logboeken*.
 
 > [!Note]
 > Klanten zijn verantwoordelijk voor het patchen en onderhouden van de virtuele machine, geïmplementeerd in de beheerde resource groep.

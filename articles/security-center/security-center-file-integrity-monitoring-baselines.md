@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/22/2020
+ms.date: 02/17/2021
 ms.author: memildin
-ms.openlocfilehash: 89230b6aca9e225c28a1efd0b99476b35f4d8db0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2f160948a06d8a3175158e0100345ee2a330048c
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91439560"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100634691"
 ---
 # <a name="compare-baselines-using-file-integrity-monitoring-fim"></a>Basislijnen vergelijken met behulp van bewaking bestandsintegriteit (FIM)
 
@@ -62,23 +62,22 @@ FIM-basis lijnen worden gestart door kenmerken te identificeren van een bekende 
 > [!NOTE]
 > Raadpleeg voor meer informatie over register instellingen die worden ondersteund door de verschillende versies van het besturings systeem, het [werk blad Groepsbeleid instellingen referentie](https://www.microsoft.com/download/confirmation.aspx?id=25250).
 
-*FIM configureren voor het bewaken van register basislijnen:*
+FIM configureren voor het bewaken van register basislijnen:
 
-1. In het venster **Windows-REGI ster toevoegen voor wijzigingen bijhouden** , in het tekstvak **Windows-register sleutel** , voert u de register sleutel in.
+1. In het venster **Windows-REGI ster toevoegen voor wijzigingen bijhouden** , in het tekstvak **Windows-register sleutel** , voert u de volgende register sleutel in:
 
-    <code>
-
+    ```
     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters
-    </code>
+    ```
 
-      ![FIM inschakelen in een REGI ster](./media/security-center-file-integrity-monitoring-baselines/baselines-add-registry.png)
+    :::image type="content" source="./media/security-center-file-integrity-monitoring-baselines/baselines-add-registry.png" alt-text="FIM inschakelen in een REGI ster":::
 
 ## <a name="track-changes-to-windows-files"></a>Wijzigingen in Windows-bestanden bijhouden
 
 1. In het venster **Windows-bestand toevoegen voor wijzigingen bijhouden** , in het tekstvak **pad invoeren** , voert u de map in die de bestanden bevat die u wilt bijhouden. In het voor beeld in de volgende afbeelding bevindt **Contoso web app** zich in de D:\ station in de mapstructuur van de **ContosWebApp** .  
 1. Maak een aangepaste vermelding voor een Windows-bestand door een naam op te geven van de instellings klasse, recursie in te scha kelen en de bovenste map met een Joker teken (*) op te geven.
 
-    ![FIM inschakelen voor een bestand](./media/security-center-file-integrity-monitoring-baselines/baselines-add-file.png)
+    :::image type="content" source="./media/security-center-file-integrity-monitoring-baselines/baselines-add-file.png" alt-text="FIM inschakelen voor een bestand":::
 
 ## <a name="retrieve-change-data"></a>Wijzigings gegevens ophalen
 

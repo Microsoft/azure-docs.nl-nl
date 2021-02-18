@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/25/2021
 ms.author: allensu
-ms.openlocfilehash: 43d83d994c9a4ee3cf89b584f6c3835a62fa2cfe
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: fbde2b95b7aca205f164dc45c1f0170cc4da74fb
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98806000"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581894"
 ---
 # <a name="standard-load-balancer-diagnostics-with-metrics-alerts-and-resource-health"></a>Diagnose van Standard Load Balancer met metrische gegevens, meldingen en status van resources
 
@@ -34,7 +34,7 @@ Azure Load Balancer biedt multidimensionale metrische gegevens via de metrische 
 
 De verschillende Standard Load Balancer configuraties bieden de volgende metrische gegevens:
 
-| Metrisch | Resourcetype | Beschrijving | Aanbevolen aggregatie |
+| Metrisch | Resourcetype | Description | Aanbevolen aggregatie |
 | --- | --- | --- | --- |
 | Gegevenspadbeschikbaarheid | Openbare en interne load balancer | Standard Load Balancer oefent doorlopend het gegevenspad vanuit een regio naar de front-end van de load balancer, helemaal tot de SDN-stack die ondersteuning biedt voor de VM. Zolang de gezonde instanties blijven bestaan, volgt de meting hetzelfde pad als het verkeer met gelijke taak verdeling van uw toepassing. Het gegevenspad dat uw klanten gebruiken, wordt ook gevalideerd. De meting is onzichtbaar voor de toepassing en heeft geen invloed op andere bewerkingen.| Average |
 | Status van statustest | Openbare en interne load balancer | Standard Load Balancer maakt gebruik van een gedistribueerde status-probing-service die de status van uw toepassings eindpunt bewaakt volgens de configuratie-instellingen. Deze metriek biedt een gefilterde weergave van een aggregatie of per-eindpunt van elk exemplaareindpunt in de load balancer-groep. U ziet hoe in Load Balancer de status van de toepassing wordt weergegeven, zoals aangeduid via de statustestconfiguratie. |  Average |
@@ -72,7 +72,7 @@ De metrische gegevens voor uw Standard Load Balancer resources weer geven:
 
 ### <a name="retrieve-multi-dimensional-metrics-programmatically-via-apis"></a>Via Api's multi-dimensionale metrieken ophalen
 
-Zie [Azure Monitoring rest API-overzicht](../azure-monitor/platform/rest-api-walkthrough.md#retrieve-metric-definitions-multi-dimensional-api)voor API-richt lijnen voor het ophalen van multi-dimensionale metrische definities en waarden. Deze metrische gegevens kunnen naar een opslag account worden geschreven door een [Diagnostische instelling](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings) voor de categorie alle metrische gegevens toe te voegen. 
+Zie [Azure Monitoring rest API-overzicht](../azure-monitor/essentials/rest-api-walkthrough.md#retrieve-metric-definitions-multi-dimensional-api)voor API-richt lijnen voor het ophalen van multi-dimensionale metrische definities en waarden. Deze metrische gegevens kunnen naar een opslag account worden geschreven door een [Diagnostische instelling](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings) voor de categorie alle metrische gegevens toe te voegen. 
 
 ### <a name="configure-alerts-for-multi-dimensional-metrics"></a>Waarschuwingen voor multi-dimensionale metrische gegevens configureren ###
 
@@ -232,7 +232,7 @@ Met de grafiek kunnen klanten de implementatie zelf oplossen zonder dat ze hoeve
 
 De integriteits status voor de Standard Load Balancer bronnen wordt weer gegeven via de bestaande **resource status** onder **monitor > service Health**. Het wordt elke **twee minuten** geëvalueerd door de beschik baarheid van het gegevenspad te meten. Dit bepaalt of uw frontend-taakverdelings eindpunten beschikbaar zijn.
 
-| Status van resource status | Beschrijving |
+| Status van resource status | Description |
 | --- | --- |
 | Beschikbaar | Uw standaard load balancer resource is in orde en beschikbaar. |
 | Verminderd beschikbaar | Uw standaard load balancer heeft platform of door de gebruiker gestarte gebeurtenissen die invloed hebben op de prestaties. De metriek voor het gegevenspad heeft een beschikbaarheid van minder dan 90% en meer dan 25% gerapporteerd gedurende ten minste twee minuten. U ondervindt aanzienlijke invloed op de prestaties. [Volg de RHC-hand leiding voor probleem oplossing](https://docs.microsoft.com/azure/load-balancer/troubleshoot-rhc) om te bepalen of er door de gebruiker geïnitieerde gebeurtenissen zijn die invloed hebben op uw Beschik baarheid.

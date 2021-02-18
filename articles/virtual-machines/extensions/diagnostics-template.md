@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 05/31/2017
 ms.author: mimckitt
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a91e21994dda126e14c100bcf1d2a69c36b13e1e
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 413ea38b1694a9322742f3a76438e7b752152e24
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202161"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580223"
 ---
 # <a name="use-monitoring-and-diagnostics-with-a-windows-vm-and-azure-resource-manager-templates"></a>Bewaking en diagnose gebruiken met een Windows-VM en Azure Resource Manager sjablonen
 De uitbrei ding van de Azure Diagnostics biedt de bewakings-en diagnostische mogelijkheden van een Azure virtual machine op basis van Windows. U kunt deze mogelijkheden inschakelen op de virtuele machine door de uitbrei ding op te nemen als onderdeel van de Azure Resource Manager sjabloon. Zie [Azure Resource Manager sjablonen ontwerpen met VM-extensies](../windows/template-description.md#extensions) voor meer informatie over het opnemen van uitbrei dingen als onderdeel van een sjabloon voor een virtuele machine. In dit artikel wordt beschreven hoe u de Azure Diagnostics extensie kunt toevoegen aan een virtuele-machine sjabloon van Windows.  
@@ -80,7 +80,7 @@ De waarde van de eigenschap *name* kan worden gebruikt om te verwijzen naar de u
 
 De *typeHandlerVersion* geeft de versie van de extensie aan die u wilt gebruiken. Als u *autoUpgradeMinorVersion* secundaire versie instelt op **True** , zorgt u ervoor dat u de meest recente secundaire versie van de uitbrei ding krijgt die beschikbaar is. Het wordt nadrukkelijk aanbevolen om *autoUpgradeMinorVersion* altijd in te stellen op **True** , zodat u altijd de meest recente beschik bare diagnostische uitbrei ding kunt gebruiken met alle nieuwe functies en oplossingen voor fouten. 
 
-Het element *Settings* bevat configuratie-eigenschappen voor de uitbrei ding die kan worden ingesteld en gelezen via de extensie (ook wel open bare configuratie genoemd). De eigenschap *xmlcfg* bevat op XML gebaseerde configuratie voor de diagnostische logboeken, prestatie meter items etc. deze worden verzameld door de Diagnostics-agent. Zie [Diagnostische configuratie schema](../../azure-monitor/platform/diagnostics-extension-schema-windows.md) voor meer informatie over het XML-schema zelf. Een veelvoorkomende procedure is om de feitelijke XML-configuratie op te slaan als een variabele in de Azure Resource Manager sjabloon en deze vervolgens samen te voegen en met base64 te coderen om de waarde voor *xmlcfg* in te stellen. Zie de sectie over [Diagnostische configuratie variabelen](#diagnostics-configuration-variables) voor meer informatie over het opslaan van XML in variabelen. De eigenschap *Storage account* geeft de naam van het opslag account aan waarnaar diagnostische gegevens worden overgebracht. 
+Het element *Settings* bevat configuratie-eigenschappen voor de uitbrei ding die kan worden ingesteld en gelezen via de extensie (ook wel open bare configuratie genoemd). De eigenschap *xmlcfg* bevat op XML gebaseerde configuratie voor de diagnostische logboeken, prestatie meter items etc. deze worden verzameld door de Diagnostics-agent. Zie [Diagnostische configuratie schema](../../azure-monitor/agents/diagnostics-extension-schema-windows.md) voor meer informatie over het XML-schema zelf. Een veelvoorkomende procedure is om de feitelijke XML-configuratie op te slaan als een variabele in de Azure Resource Manager sjabloon en deze vervolgens samen te voegen en met base64 te coderen om de waarde voor *xmlcfg* in te stellen. Zie de sectie over [Diagnostische configuratie variabelen](#diagnostics-configuration-variables) voor meer informatie over het opslaan van XML in variabelen. De eigenschap *Storage account* geeft de naam van het opslag account aan waarnaar diagnostische gegevens worden overgebracht. 
 
 De eigenschappen in *protectedSettings* (ook wel particuliere configuratie genoemd) kunnen worden ingesteld, maar kunnen niet worden gelezen nadat ze zijn ingesteld. Het alleen-schrijven van *protectedSettings* maakt het handig voor het opslaan van geheimen zoals de sleutel van het opslag account waar de diagnostische gegevens worden geschreven.    
 
@@ -118,7 +118,7 @@ De voor gaande JSON-code van de Diagnostics-extensie definieert een *accountid* 
 
 De eigenschap *xmlcfg* voor de diagnostische uitbrei ding wordt gedefinieerd met behulp van meerdere variabelen die samen worden samengevoegd. De waarden van deze variabelen bevinden zich in XML, zodat ze op de juiste wijze moeten worden geescaped bij het instellen van de JSON-variabelen.
 
-In het volgende voor beeld wordt de diagnostische configuratie-XML beschreven waarmee standaard prestatie meter items op systeem niveau worden verzameld samen met een aantal Windows-gebeurtenis logboeken en logboeken met diagnostische gegevens. De functie is op de juiste wijze doorgevoerd en geformatteerd zodat de configuratie rechtstreeks kan worden geplakt in het gedeelte variabelen van uw sjabloon. Zie het [Configuratie schema voor diagnostische gegevens](../../azure-monitor/platform/diagnostics-extension-schema-windows.md) voor een meer menselijk leesbaar voor beeld van de configuratie-XML.
+In het volgende voor beeld wordt de diagnostische configuratie-XML beschreven waarmee standaard prestatie meter items op systeem niveau worden verzameld samen met een aantal Windows-gebeurtenis logboeken en logboeken met diagnostische gegevens. De functie is op de juiste wijze doorgevoerd en geformatteerd zodat de configuratie rechtstreeks kan worden geplakt in het gedeelte variabelen van uw sjabloon. Zie het [Configuratie schema voor diagnostische gegevens](../../azure-monitor/agents/diagnostics-extension-schema-windows.md) voor een meer menselijk leesbaar voor beeld van de configuratie-XML.
 
 ```json
 "wadlogs": "<WadCfg> <DiagnosticMonitorConfiguration overallQuotaInMB=\"4096\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration\"> <DiagnosticInfrastructureLogs scheduledTransferLogLevelFilter=\"Error\"/> <WindowsEventLog scheduledTransferPeriod=\"PT1M\" > <DataSource name=\"Application!*[System[(Level = 1 or Level = 2)]]\" /> <DataSource name=\"Security!*[System[(Level = 1 or Level = 2)]]\" /> <DataSource name=\"System!*[System[(Level = 1 or Level = 2)]]\" /></WindowsEventLog>",

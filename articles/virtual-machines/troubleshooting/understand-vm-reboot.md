@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 4694b6ac829c42f20c6783810c248ee18d220433
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: c3dcb4a7b92f5aab1336e49a7d299614855b48fd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91965757"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591163"
 ---
 # <a name="understand-a-system-reboot-for-azure-vm"></a>Meer informatie over het opnieuw opstarten van het systeem voor Azure VM
 
@@ -64,7 +64,7 @@ Updates voor meerdere exemplaren (voor VM's in een beschikbaarheidsset) worden t
 
 ### <a name="user-initiated-reboot-or-shutdown-actions"></a>Door de gebruiker geïnitieerde acties voor opnieuw opstarten of afsluiten
 
-Als u de computer opnieuw opstart vanaf de Azure Portal, Azure PowerShell, opdracht regel interface of REST API, kunt u de gebeurtenis vinden in het [Azure-activiteiten logboek](../../azure-monitor/platform/platform-logs-overview.md).
+Als u de computer opnieuw opstart vanaf de Azure Portal, Azure PowerShell, opdracht regel interface of REST API, kunt u de gebeurtenis vinden in het [Azure-activiteiten logboek](../../azure-monitor/essentials/platform-logs-overview.md).
 
 Als u de actie uitvoert vanuit het besturings systeem van de virtuele machine, kunt u de gebeurtenis in de systeem logboeken vinden.
 

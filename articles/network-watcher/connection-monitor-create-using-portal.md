@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/23/2020
 ms.author: vinigam
-ms.openlocfilehash: bd13712d137ec5a1fdfa6dec8e6f6d1e0a7432cb
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: 61cb37e727808566db1bc9b1161960926e03cb91
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99833164"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570893"
 ---
 # <a name="create-a-monitor-in-connection-monitor-by-using-the-azure-portal"></a>Een monitor maken in de verbindings monitor met behulp van de Azure Portal
 
@@ -186,7 +186,7 @@ Als u in de Azure Portal waarschuwingen voor een verbindings monitor wilt maken,
 
 - **Voorwaarde naam**: de waarschuwing wordt gemaakt op basis van de `Test Result(preview)` metriek. Wanneer het resultaat van de test van de verbindings monitor een mislukt resultaat is, wordt de waarschuwings regel geactiveerd. 
 
-- **Naam van de actie groep**: u kunt uw e-mail adres rechtstreeks invoeren of u kunt waarschuwingen maken via actie groepen. Als u uw e-mail adres rechtstreeks invoert, wordt er een actie groep gemaakt met de naam **NPM e-mail ActionGroup** . De e-mail-ID wordt toegevoegd aan die actie groep. Als u actie groepen wilt gebruiken, moet u een eerder gemaakte actie groep selecteren. Zie [actie groepen maken in de Azure Portal](../azure-monitor/platform/action-groups.md)voor meer informatie over het maken van een actie groep. Nadat de waarschuwing is gemaakt, kunt u [uw waarschuwingen beheren](../azure-monitor/platform/alerts-metric.md#view-and-manage-with-azure-portal). 
+- **Naam van de actie groep**: u kunt uw e-mail adres rechtstreeks invoeren of u kunt waarschuwingen maken via actie groepen. Als u uw e-mail adres rechtstreeks invoert, wordt er een actie groep gemaakt met de naam **NPM e-mail ActionGroup** . De e-mail-ID wordt toegevoegd aan die actie groep. Als u actie groepen wilt gebruiken, moet u een eerder gemaakte actie groep selecteren. Zie [actie groepen maken in de Azure Portal](../azure-monitor/alerts/action-groups.md)voor meer informatie over het maken van een actie groep. Nadat de waarschuwing is gemaakt, kunt u [uw waarschuwingen beheren](../azure-monitor/alerts/alerts-metric.md#view-and-manage-with-azure-portal). 
 
 - **Naam van waarschuwings regel**: de naam van de verbindings monitor.
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/29/2019
 ms.author: magoedte
-ms.openlocfilehash: c8427e92f89804f64741ab86aa9903b0de23b3ec
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 9e75b159f994a869a2bbd4498332a1e160bf5462
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966850"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580304"
 ---
 # <a name="azure-monitor-dependency-virtual-machine-extension-for-linux"></a>Extensie van de virtuele machine voor Azure Monitor afhankelijkheid voor Linux
 
@@ -30,7 +30,7 @@ De Azure Monitor voor VM's toewijzings functie haalt de gegevens op uit de micro
 
 ### <a name="operating-system"></a>Besturingssysteem
 
-De Azure VM dependency agent-extensie voor Linux kan worden uitgevoerd op basis van de ondersteunde besturings systemen die worden vermeld in de sectie [ondersteunde besturings systemen](../../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems) van het artikel Azure monitor voor VM's-implementatie.
+De Azure VM dependency agent-extensie voor Linux kan worden uitgevoerd op basis van de ondersteunde besturings systemen die worden vermeld in de sectie [ondersteunde besturings systemen](../../azure-monitor/vm/vminsights-enable-overview.md#supported-operating-systems) van het artikel Azure monitor voor VM's-implementatie.
 
 ## <a name="extension-schema"></a>Extensieschema
 

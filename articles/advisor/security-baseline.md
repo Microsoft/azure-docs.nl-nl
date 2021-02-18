@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 2887b12e7ce24e9c5a881a2b3edeebb258532a49
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 36d5eba344906ca03b137efb220f54dc3a11eb6d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736487"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572818"
 ---
 # <a name="azure-security-baseline-for-azure-advisor"></a>Azure-beveiligings basislijn voor Azure Advisor
 
@@ -227,9 +227,9 @@ Gebruik voorwaardelijke toegang van Azure om de interactie van een gebruiker met
 
 Activiteiten logboeken kunnen worden gebruikt om een fout te vinden bij het oplossen van problemen of om te controleren hoe een gebruiker in uw organisatie een resource heeft gewijzigd.
 
-- [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/platform/platform-logs-overview.md)
+- [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/essentials/platform-logs-overview.md)
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -243,7 +243,7 @@ Zorg ervoor dat u Azure-activiteiten logboeken integreert in uw centrale logboek
 
 Daarnaast kunt u gegevens inschakelen en vrijgeven aan Azure Sentinel of een SIEM van derden. Veel organisaties kiezen voor het gebruik van Azure Sentinel voor ' hot ' gegevens die regel matig worden gebruikt en die worden Azure Storage voor ' koude ' gegevens die minder vaak worden gebruikt.
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -256,9 +256,9 @@ Daarnaast kunt u gegevens inschakelen en vrijgeven aan Azure Sentinel of een SIE
 **Richt lijnen**: Zorg ervoor dat opslag accounts of log Analytics-werk ruimten die worden gebruikt voor het opslaan van Azure Advisor Logboeken de Bewaar periode voor logboek registratie hebben volgens de nalevings voorschriften van uw organisatie.
 In Azure Monitor kunt u de Bewaar periode voor uw Log Analytics werk ruimte instellen volgens de nalevings voorschriften van uw organisatie. Gebruik Azure Storage, Data Lake of Log Analytics werkruimte accounts voor lange termijn-en archiverings opslag.
 
-- [De Bewaar periode van Log Analytics Workspace configureren](../azure-monitor/platform/manage-cost-storage.md) 
+- [De Bewaar periode van Log Analytics Workspace configureren](../azure-monitor/logs/manage-cost-storage.md) 
 
-- [Bron logboeken opslaan in een Azure Storage-account](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
+- [Bron logboeken opslaan in een Azure Storage-account](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 

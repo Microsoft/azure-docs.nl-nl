@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc7a5e2e45cd3d76c0d8af612291ecaf9893b5b5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b4d32e0b939731d64f3ef2495ab606b5dc0780e4
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89231092"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592288"
 ---
 # <a name="interpret-the-azure-ad-audit-logs-schema-in-azure-monitor-preview"></a>Het Azure AD audit logs-schema interpreteren in Azure Monitor (preview)
 
@@ -167,11 +167,11 @@ In dit artikel wordt het schema voor het audit logboek voor Azure Active Directo
 
 <br>
 
-| Naam van eigenschap | Beschrijving |
+| Naam van eigenschap | Description |
 |---------------|-------------|
-| AuditEventCategory | Het type controle gebeurtenis. Dit kan *gebruikers beheer*, *toepassings beheer*of een ander type zijn.|
-| Identiteits type | Het type kan *toepassing* of *gebruiker*zijn. |
-| Bewerkings type | Het type kan worden *toegevoegd*, *bijgewerkt*, *verwijderd*. of *andere*. |
+| AuditEventCategory | Het type controle gebeurtenis. Dit kan *gebruikers beheer*, *toepassings beheer* of een ander type zijn.|
+| Identiteits type | Het type kan *toepassing* of *gebruiker* zijn. |
+| Type bewerking | Het type kan worden *toegevoegd*, *bijgewerkt*, *verwijderd*. of *andere*. |
 | Doel resource type | Hiermee geeft u het doel resource type op waarop de bewerking is uitgevoerd. Het type kan *toepassing*, *gebruiker*, *rol*, *beleid* zijn | 
 | Doel resource naam | De naam van de doel resource. Dit kan een toepassings naam, een rolnaam, een user principal name of een Service Principal Name zijn. |
 | additionalTargets | Een lijst met aanvullende eigenschappen voor specifieke bewerkingen. Voor een update bewerking worden bijvoorbeeld de oude waarden en de nieuwe waarden weer gegeven onder *targetUpdatedProperties*. | 
@@ -179,5 +179,5 @@ In dit artikel wordt het schema voor het audit logboek voor Azure Active Directo
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Interpret sign-in logs schema in Azure Monitor](reference-azure-monitor-sign-ins-log-schema.md) (Aanmeldingslogboekenschema interpreteren in Azure Monitor)
-* [Diagnostische logboeken van Azure](../../azure-monitor/platform/platform-logs-overview.md)
+* [Diagnostische logboeken van Azure](../../azure-monitor/essentials/platform-logs-overview.md)
 * [Veelgestelde vragen en bekende problemen](concept-activity-logs-azure-monitor.md#frequently-asked-questions)

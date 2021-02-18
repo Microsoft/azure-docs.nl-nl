@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/04/2020
 ms.author: mlottner
-ms.openlocfilehash: 495f9d568760421c7f42df3acf74217c15b01a05
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.openlocfilehash: d054b005b6b11e718662619b5525de3fc1ae5f4c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98246336"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592646"
 ---
 # <a name="access-your-security-data"></a>Toegang tot uw beveiligings gegevens
 
@@ -37,7 +37,7 @@ Voor toegang tot uw waarschuwingen en aanbevelingen in uw Log Analytics-werk rui
 1. Kies een waarschuwing of aanbeveling in Defender voor IoT.
 1. Klik op **nader onderzoek** en klik vervolgens op **de kolom DeviceID om te zien op welke apparaten deze waarschuwing wordt weer gegeven**.
 
-Zie [aan de slag met query's in log Analytics](../azure-monitor/log-query/get-started-queries.md)voor meer informatie over het opvragen van gegevens uit log Analytics.
+Zie [aan de slag met query's in log Analytics](../azure-monitor/logs/get-started-queries.md)voor meer informatie over het opvragen van gegevens uit log Analytics.
 
 ## <a name="security-alerts"></a>Beveiligingswaarschuwingen
 
@@ -64,7 +64,7 @@ SecurityAlert
 | take 3
 ```
 
-| TimeGenerated           | IoTHubId                                                                                                       | DeviceId      | AlertSeverity | DisplayName                           | Beschrijving                                             | ExtendedProperties                                                                                                                                                             |
+| TimeGenerated           | IoTHubId                                                                                                       | DeviceId      | AlertSeverity | DisplayName                           | Description                                             | ExtendedProperties                                                                                                                                                             |
 |-------------------------|----------------------------------------------------------------------------------------------------------------|---------------|---------------|---------------------------------------|---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 2018-11-18T18:10:29.000 | /Subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Hoog          | Beveiligings aanval geslaagd           | Er is een beveiligings aanval op het apparaat geslaagd        |    {"Full source Address": "[ \" 10.165.12.18: \" ]", "gebruikers namen": "[ \" \" ]", "DeviceID": "IOT-Device-Linux"}                                                                       |
 | 2018-11-19T12:40:31.000 | /Subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Hoog          | Geslaagde lokale aanmelding op het apparaat      | Er is een geslaagde lokale aanmelding voor het apparaat gedetecteerd     | {"Extern adres": "?", "externe poort": "", "lokale poort": "", "aanmeldings shell": "/bin/su", "aanmeldings proces-id": "28207", "gebruikers naam": "aanvaller", "DeviceId": "IoT-Device-Linux"} |
@@ -144,7 +144,7 @@ SecurityRecommendation
 | take 2
 ```
 
-| TimeGenerated | IoTHubId | DeviceId | RecommendationSeverity | RecommendationState | RecommendationDisplayName | Beschrijving | RecommendationAdditionalData |
+| TimeGenerated | IoTHubId | DeviceId | RecommendationSeverity | RecommendationState | RecommendationDisplayName | Description | RecommendationAdditionalData |
 |---------------|----------|----------|------------------------|---------------------|---------------------------|-------------|------------------------------|
 | 2019-03-22T10:21:06.060 |    /Subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Normaal | Actief | Er is een strikte firewall regel in de invoer keten gevonden | Er is een regel in de firewall gevonden die een gebruiks patroon bevat voor een breed scala aan IP-adressen of poorten | {"Rules": "[{ \" SourceAddress \" : \" \" , \" SourcePort \" : \" \" , \" DestinationAddress \" : \" \" , \" DestinationPort \" : \" 1337 \" }]"} |
 | 2019-03-22T10:50:27.237 | /Subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Normaal | Actief | Er is een strikte firewall regel in de invoer keten gevonden | Er is een regel in de firewall gevonden die een gebruiks patroon bevat voor een breed scala aan IP-adressen of poorten | {"Rules": "[{ \" SourceAddress \" : \" \" , \" SourcePort \" : \" \" , \" DestinationAddress \" : \" \" , \" DestinationPort \" : \" 1337 \" }]"} |

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 09/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: 2e7e798967541748b5572994d48cb5bdf7474cb1
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 4199c5576662eee1dd6cedc388440a71e21f8b74
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182866"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581216"
 ---
 # <a name="forward-azure-automation-job-data-to-azure-monitor-logs"></a>Azure Automation-taakgegevens doorsturen naar Azure Monitor-logboeken
 
@@ -56,7 +56,7 @@ Als u de resultaten van een specifieke resource groep wilt retour neren, neemt u
 
 Als u meer dan één Automation-account of werk ruimte hebt in de uitvoer van de voor gaande opdrachten, kunt u de naam en andere gerelateerde eigenschappen vinden die deel uitmaken van de volledige Resource-ID van uw Automation-account door het volgende uit te voeren:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Selecteer in de Azure Portal uw Automation-account op de pagina **Automation-accounts** .
 1. Selecteer op de pagina van het geselecteerde Automation-account onder **account instellingen** de optie **Eigenschappen**.
 1. Op de pagina **Eigenschappen** ziet u de details die hieronder worden weer gegeven.
@@ -72,7 +72,7 @@ Diagnostische instellingen voor automatisering ondersteunt het door sturen van d
 * DSCNodeStatus
 * Metrische gegevens-totaal aantal taken, totale aantal uitgevoerde update-implementatie computers, totale aantal uitgevoerde update-implementaties
 
-Als u wilt beginnen met het verzenden van uw automatiserings logboeken naar Azure Monitor-logboeken, raadpleegt u [Diagnostische instellingen maken](../azure-monitor/platform/diagnostic-settings.md) om inzicht te krijgen in de functie en methoden die beschikbaar zijn om de diagnostische instellingen te configureren
+Als u wilt beginnen met het verzenden van uw automatiserings logboeken naar Azure Monitor-logboeken, raadpleegt u [Diagnostische instellingen maken](../azure-monitor/essentials/diagnostic-settings.md) om inzicht te krijgen in de functie en methoden die beschikbaar zijn om de diagnostische instellingen te configureren
 
 ## <a name="azure-monitor-log-records"></a>Azure Monitor logboek records
 
@@ -140,7 +140,7 @@ Als u een waarschuwings regel wilt maken, moet u beginnen met het maken van een 
 
    Als u logboeken van meer dan één Automation-account of-abonnement op uw werk ruimte instelt, kunt u uw waarschuwingen groeperen op abonnement en Automation-account. De naam van het Automation-account vindt u in het `Resource` veld in de zoek actie van `JobLogs` .
 
-3. Als u het scherm **regel maken** wilt openen, klikt u op **nieuwe waarschuwings regel** boven aan de pagina. Zie [logboek waarschuwingen in azure](../azure-monitor/platform/alerts-unified-log.md)voor meer informatie over de opties voor het configureren van de waarschuwing.
+3. Als u het scherm **regel maken** wilt openen, klikt u op **nieuwe waarschuwings regel** boven aan de pagina. Zie [logboek waarschuwingen in azure](../azure-monitor/alerts/alerts-unified-log.md)voor meer informatie over de opties voor het configureren van de waarschuwing.
 
 ### <a name="find-all-jobs-that-have-completed-with-errors"></a>Alle taken zoeken die zijn voltooid met fouten
 
@@ -192,8 +192,8 @@ AzureDiagnostics
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [Zoek opdrachten in Logboeken in azure monitor logboeken](../azure-monitor/log-query/log-query-overview.md)voor meer informatie over het maken van zoek query's en het controleren van de Automation-taak logboeken met Azure monitor-Logboeken.
+* Zie [Zoek opdrachten in Logboeken in azure monitor logboeken](../azure-monitor/logs/log-query-overview.md)voor meer informatie over het maken van zoek query's en het controleren van de Automation-taak logboeken met Azure monitor-Logboeken.
 * Zie [runbook-uitvoer bewaken](automation-runbook-output-and-messages.md)voor meer informatie over het maken en ophalen van uitvoer-en fout berichten van runbooks.
 * Voor meer informatie over het uitvoeren van een runbook, het controleren van runbook-taken en andere technische details raadpleegt u [runbook execution in azure Automation](automation-runbook-execution.md).
-* Zie [Azure Storage-gegevens verzamelen in azure monitor logs Overview](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace)voor meer informatie over Azure monitor logboeken en bronnen voor gegevens verzameling.
-* Zie voor hulp bij het oplossen van problemen Log Analytics [problemen oplossen waarom log Analytics niet langer gegevens verzamelt](../azure-monitor/platform/manage-cost-storage.md#troubleshooting-why-log-analytics-is-no-longer-collecting-data).
+* Zie [Azure Storage-gegevens verzamelen in azure monitor logs Overview](../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace)voor meer informatie over Azure monitor logboeken en bronnen voor gegevens verzameling.
+* Zie voor hulp bij het oplossen van problemen Log Analytics [problemen oplossen waarom log Analytics niet langer gegevens verzamelt](../azure-monitor/logs/manage-cost-storage.md#troubleshooting-why-log-analytics-is-no-longer-collecting-data).

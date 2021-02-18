@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Azure Policy gebruiken om cluster configuraties op schaal toe te passen
 keywords: Kubernetes, Arc, azure, K8s, containers
-ms.openlocfilehash: b80e50cb4823632f054de3b7f9da71392f8578d7
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 23cd42458c396afd31741c648d713934250a4112
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/17/2021
-ms.locfileid: "100560182"
+ms.locfileid: "100587804"
 ---
 # <a name="use-azure-policy-to-apply-cluster-configurations-at-scale-preview"></a>Azure Policy gebruiken om clusterconfiguraties op schaal toe te passen (preview)
 
@@ -74,4 +74,4 @@ Voor bestaande clusters moet u een herstel taak hand matig uitvoeren. Deze taak 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Azure Monitor instellen voor containers met Kubernetes-clusters die zijn ingeschakeld voor Arc](../../azure-monitor/insights/container-insights-enable-arc-enabled-clusters.md)
+* [Azure Monitor instellen voor containers met Kubernetes-clusters die zijn ingeschakeld voor Arc](../../azure-monitor/containers/container-insights-enable-arc-enabled-clusters.md)

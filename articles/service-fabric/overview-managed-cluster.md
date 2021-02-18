@@ -2,13 +2,13 @@
 title: Beheerde Service Fabric-clusters (preview)
 description: Beheerde Service Fabric clusters zijn een evolutie van het Azure Service Fabric-clusterresourcemodel dat de implementatie en het clusterbeheer stroomlijnt.
 ms.topic: overview
-ms.date: 09/28/2020
-ms.openlocfilehash: 3d26a92126491662d5c51b3c4e8900ffa547f830
-ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
-ms.translationtype: HT
+ms.date: 02/15/2021
+ms.openlocfilehash: 8b90b73ef5f3202788ac7857875427673ebb562b
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91410381"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100635142"
 ---
 # <a name="service-fabric-managed-clusters-preview"></a>Beheerde Service Fabric-clusters (preview)
 
@@ -62,21 +62,26 @@ Beheerde Service Fabric-clusters zijn beschikbaar in de Basic- en Standard-SKU's
 | Typen knooppunten toevoegen of verwijderen | Nee | Ja |
 | Zoneredundantie | Nee | Ja |
 
-## <a name="service-fabric-managed-cluster-feature-roadmap"></a>Functieroadmap voor een beheerde Service Fabric-cluster
-Aangezien dit een vroege preview-versie is van beheerde Service Fabric-clusters zijn, moet u rekening houden met enkele gebreken. Deze functies worden beschikbaar bij toekomstige releases. 
+## <a name="whats-new-for-service-fabric-managed-clusters"></a>Wat is er nieuw voor Service Fabric beheerde clusters?
 
-* Toepassingen rechtstreeks vanuit Visual Studio publiceren naar clusters
-* Beheerde identiteiten 
-* ARM-toepassingsimplementaties 
-* Beschikbaarheidszones 
-* Omgekeerde proxy 
-* Automatisch schalen 
-* NSG-regels bijwerken 
-* Automatische upgrades voor het besturingssysteem
+De nieuwste functies voor de preview-versie van Service Fabric Managed clusters zijn onder meer ondersteuning voor:
+
+* [Toepassingen implementeren met ARM-sjablonen](how-to-managed-cluster-app-deployment-template.md)
+* [Automatische upgrades voor het besturingssysteem](how-to-managed-cluster-configuration.md#enable-automatic-os-image-upgrades)
+* [Schijf versleuteling](how-to-enable-managed-cluster-disk-encryption.md)
+* [NSG regels Toep assen](how-to-managed-cluster-configuration.md#apply-nsg-rules)
+
+De volgende functies moeten worden toegevoegd aan aanstaande releases:
+
+* Toepassingen implementeren met Visual Studio
+* Ondersteuning voor beheerde identiteiten
+* Beschikbaarheidszones
+* Omgekeerde proxy
+* Automatisch schalen
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Probeer de snelstartgids uit om aan de slag te gaan met beheerde Service Fabric-clusters:
+Probeer de Snelstartgids om aan de slag te gaan met Service Fabric beheerde clusters:
 
 > [!div class="nextstepaction"]
 > [Een beheerde Service Fabric-cluster (preview) maken](quickstart-managed-cluster-template.md)

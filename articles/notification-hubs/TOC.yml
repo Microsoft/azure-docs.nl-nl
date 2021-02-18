@@ -24,9 +24,9 @@
       items:
         - name: Firebase Cloud Messaging
           items:
-            - name: Pushmeldingen verzenden naar alle geregistreerde apparaten (SDK-versie 1.0.0-preview1)
+            - name: Push meldingen verzenden naar alle registraties (huidige SDK)
               href: android-sdk.md
-            - name: Pushmeldingen verzenden naar alle geregistreerde apparaten (SDK-versie 0.6)
+            - name: Push meldingen verzenden naar alle registraties (verouderde SDK)
               href: notification-hubs-android-push-notification-google-fcm-get-started.md
             - name: Pushmeldingen verzenden naar specifieke apparaten
               href: push-notifications-android-specific-devices-firebase-cloud-messaging.md
@@ -50,10 +50,10 @@
           items:
             - name: Vereisten voor iOS-zelfstudies
               href: ios-sdk-get-started.md
-            - name: Objective-C (versie 3.0.0-preview1)
-              href: ios-sdk-300.md
-            - name: Objective-C (versie 2.0.4)
-              href: ios-sdk-204.md
+            - name: Doel-C (huidige SDK)
+              href: ios-sdk-current.md
+            - name: Doel-C (verouderde SDK)
+              href: ios-sdk-legacy.md
         - name: Pushmeldingen verzenden naar specifieke apparaten
           href: notification-hubs-ios-xplat-segmented-apns-push-notification.md
         - name: Pushmeldingen verzenden naar specifieke gebruikers

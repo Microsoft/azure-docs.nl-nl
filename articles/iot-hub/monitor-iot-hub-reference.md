@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: iot-hub
 ms.custom: subject-monitoring
 ms.date: 10/22/2020
-ms.openlocfilehash: f198b59f106b7d2a29e35d77b54274328be6fa93
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 6c7fd0a310663b664d33027951ade885b83d458a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99581598"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570965"
 ---
 # <a name="monitoring-azure-iot-hub-data-reference"></a>Naslag informatie over Azure IoT Hub-gegevens bewaken
 
@@ -24,25 +24,48 @@ In deze sectie vindt u alle automatisch verzamelde platform gegevens voor Azure 
 
 In de volgende subsecties worden de IoT Hub platform metrieken per algemene categorie en weer gegeven op basis van de weergave naam die ze in de Azure Portal met behulp van hebben. Informatie wordt ook verstrekt die relevant is voor de metrische gegevens die in elke Subsectie worden weer gegeven.
 
-U kunt ook een enkele tabel vinden met een lijst met alle IoT Hub platform metrieken per metrische naam onder [micro soft. devices/IotHubs](../azure-monitor/platform/metrics-supported.md#microsoftdevicesiothubs) in de Azure monitor-documentatie. Houd er rekening mee dat deze tabel niet alle informatie bevat, zoals [ondersteunde aggregaties](#supported-aggregations) voor bepaalde metrische gegevens, die in dit artikel beschikbaar zijn.
+U kunt ook een enkele tabel vinden met een lijst met alle IoT Hub platform metrieken per metrische naam onder [micro soft. devices/IotHubs](../azure-monitor/essentials/metrics-supported.md#microsoftdevicesiothubs) in de Azure monitor-documentatie. Houd er rekening mee dat deze tabel niet alle informatie bevat, zoals [ondersteunde aggregaties](#supported-aggregations) voor bepaalde metrische gegevens, die in dit artikel beschikbaar zijn.
 
-Zie [ondersteunde metrische gegevens met Azure monitor](../azure-monitor/platform/metrics-supported.md)voor meer informatie over metrische gegevens die door andere Azure-Services worden ondersteund.
+Zie [ondersteunde metrische gegevens met Azure monitor](../azure-monitor/essentials/metrics-supported.md)voor meer informatie over metrische gegevens die door andere Azure-Services worden ondersteund.
 
 **Onderwerpen in dit gedeelte**
 
-- [Ondersteunde aggregaties](#supported-aggregations)
-- [Metrische gegevens van de opdracht Cloud naar apparaat](#cloud-to-device-command-metrics)
-- [Metrische gegevens voor directe methoden van de Cloud naar een apparaat](#cloud-to-device-direct-methods-metrics)
-- [Metrische gegevens van de Cloud naar het apparaat dubbele bewerkingen](#cloud-to-device-twin-operations-metrics)
-- [Metrische configuratie gegevens](#configurations-metrics)
-- [Metrische gegevens per dag quotum](#daily-quota-metrics)
-- [Metrische gegevens van apparaat](#device-metrics)
-- [Metrische gegevens over de telemetrie van apparaten](#device-telemetry-metrics)
-- [Gegevens van het apparaat naar de Cloud voor dubbele bewerkingen](#device-to-cloud-twin-operations-metrics)
-- [Metrische gegevens van gebeurtenis raster](#event-grid-metrics)
-- [Metrische gegevens van taken](#jobs-metrics)
-- [Routerings metrieken](#routing-metrics)
-- [Dubbele metrische query gegevens](#twin-query-metrics)
+- [Naslag informatie over Azure IoT Hub-gegevens bewaken](#monitoring-azure-iot-hub-data-reference)
+  - [Metrische gegevens](#metrics)
+    - [Ondersteunde aggregaties](#supported-aggregations)
+    - [Metrische gegevens van de opdracht Cloud naar apparaat](#cloud-to-device-command-metrics)
+    - [Metrische gegevens voor directe methoden van de Cloud naar een apparaat](#cloud-to-device-direct-methods-metrics)
+    - [Metrische gegevens van de Cloud naar het apparaat dubbele bewerkingen](#cloud-to-device-twin-operations-metrics)
+    - [Metrische configuratie gegevens](#configurations-metrics)
+    - [Metrische gegevens per dag quotum](#daily-quota-metrics)
+    - [Metrische gegevens van apparaat](#device-metrics)
+    - [Metrische gegevens over de telemetrie van apparaten](#device-telemetry-metrics)
+    - [Gegevens van het apparaat naar de Cloud voor dubbele bewerkingen](#device-to-cloud-twin-operations-metrics)
+    - [Metrische gegevens van gebeurtenis raster](#event-grid-metrics)
+    - [Metrische gegevens van taken](#jobs-metrics)
+    - [Routerings metrieken](#routing-metrics)
+    - [Dubbele metrische query gegevens](#twin-query-metrics)
+  - [Metrische dimensies](#metric-dimensions)
+  - [Resourcelogboeken](#resource-logs)
+    - [Verbindingen](#connections)
+    - [Apparaattelemetrie](#device-telemetry)
+    - [Cloud-naar-apparaat-opdrachten](#cloud-to-device-commands)
+    - [Bewerkingen voor apparaat-id's](#device-identity-operations)
+    - [Bestandsuploadbewerkingen](#file-upload-operations)
+    - [Routes](#routes)
+    - [Dubbele bewerkingen van het apparaat naar de Cloud](#device-to-cloud-twin-operations)
+    - [Dubbele bewerkingen van het Cloud naar het apparaat](#cloud-to-device-twin-operations)
+    - [Dubbele query's](#twin-queries)
+    - [Taakbewerkingen](#jobs-operations)
+    - [Directe methoden](#direct-methods)
+    - [Gedistribueerde tracering (preview-versie)](#distributed-tracing-preview)
+      - [IoT Hub D2C-Logboeken (apparaat-naar-Cloud)](#iot-hub-d2c-device-to-cloud-logs)
+      - [IoT Hub ingangs logboeken](#iot-hub-ingress-logs)
+      - [IoT Hub uitgangs logboeken](#iot-hub-egress-logs)
+    - [Configuraties](#configurations)
+    - [Apparaatversleuteling (preview-versie)](#device-streams-preview)
+  - [Tabellen Azure Monitor logboeken](#azure-monitor-logs-tables)
+  - [Zie ook](#see-also)
 
 ### <a name="supported-aggregations"></a>Ondersteunde aggregaties
 
@@ -226,31 +249,50 @@ Azure IoT Hub heeft de volgende dimensies die zijn gekoppeld aan een aantal metr
 |**Resultaat**| **Geslaagd** of **mislukt**.|
 |**RoutingSource**| Apparaat-berichten<br>Dubbele wijzigings gebeurtenissen<br>Levenscyclus gebeurtenissen van apparaat|
 
-Zie voor meer informatie over metrische dimensies [multi-dimensionale metrische gegevens](../azure-monitor/platform/data-platform-metrics.md#multi-dimensional-metrics).
+Zie voor meer informatie over metrische dimensies [multi-dimensionale metrische gegevens](../azure-monitor/essentials/data-platform-metrics.md#multi-dimensional-metrics).
 
 ## <a name="resource-logs"></a>Resourcelogboeken
 
-In deze sectie vindt u een lijst met alle bron logboek categorie typen en schema's die zijn verzameld voor Azure IoT Hub. De resource provider en het type voor alle IoT Hub Logboeken is [micro soft. devices/IotHubs](../azure-monitor/platform/resource-logs-categories.md#microsoftdevicesiothubs).
+In deze sectie vindt u een lijst met alle bron logboek categorie typen en schema's die zijn verzameld voor Azure IoT Hub. De resource provider en het type voor alle IoT Hub Logboeken is [micro soft. devices/IotHubs](../azure-monitor/essentials/resource-logs-categories.md#microsoftdevicesiothubs).
 
 **Onderwerpen in dit gedeelte**
 
-- [Verbindingen](#connections)
-- [Apparaattelemetrie](#device-telemetry)
-- [Cloud-naar-apparaat-opdrachten](#cloud-to-device-commands)
-- [Bewerkingen voor apparaat-id's](#device-identity-operations)
-- [Bestandsuploadbewerkingen](#file-upload-operations)
-- [Routes](#routes)
-- [Dubbele bewerkingen van het apparaat naar de Cloud](#device-to-cloud-twin-operations)
-- [Dubbele bewerkingen van het Cloud naar het apparaat](#cloud-to-device-twin-operations)
-- [Dubbele query's](#twin-queries)
-- [Taakbewerkingen](#jobs-operations)
-- [Directe methoden](#direct-methods)
-- [Gedistribueerde tracering (preview-versie)](#distributed-tracing-preview)
-  - [IoT Hub D2C-Logboeken (apparaat-naar-Cloud)](#iot-hub-d2c-device-to-cloud-logs)
-  - [IoT Hub ingangs logboeken](#iot-hub-ingress-logs)
-  - [IoT Hub uitgangs logboeken](#iot-hub-egress-logs)
-- [Configuraties](#configurations)
-- [Apparaatversleuteling (preview-versie)](#device-streams-preview)
+- [Naslag informatie over Azure IoT Hub-gegevens bewaken](#monitoring-azure-iot-hub-data-reference)
+  - [Metrische gegevens](#metrics)
+    - [Ondersteunde aggregaties](#supported-aggregations)
+    - [Metrische gegevens van de opdracht Cloud naar apparaat](#cloud-to-device-command-metrics)
+    - [Metrische gegevens voor directe methoden van de Cloud naar een apparaat](#cloud-to-device-direct-methods-metrics)
+    - [Metrische gegevens van de Cloud naar het apparaat dubbele bewerkingen](#cloud-to-device-twin-operations-metrics)
+    - [Metrische configuratie gegevens](#configurations-metrics)
+    - [Metrische gegevens per dag quotum](#daily-quota-metrics)
+    - [Metrische gegevens van apparaat](#device-metrics)
+    - [Metrische gegevens over de telemetrie van apparaten](#device-telemetry-metrics)
+    - [Gegevens van het apparaat naar de Cloud voor dubbele bewerkingen](#device-to-cloud-twin-operations-metrics)
+    - [Metrische gegevens van gebeurtenis raster](#event-grid-metrics)
+    - [Metrische gegevens van taken](#jobs-metrics)
+    - [Routerings metrieken](#routing-metrics)
+    - [Dubbele metrische query gegevens](#twin-query-metrics)
+  - [Metrische dimensies](#metric-dimensions)
+  - [Resourcelogboeken](#resource-logs)
+    - [Verbindingen](#connections)
+    - [Apparaattelemetrie](#device-telemetry)
+    - [Cloud-naar-apparaat-opdrachten](#cloud-to-device-commands)
+    - [Bewerkingen voor apparaat-id's](#device-identity-operations)
+    - [Bestandsuploadbewerkingen](#file-upload-operations)
+    - [Routes](#routes)
+    - [Dubbele bewerkingen van het apparaat naar de Cloud](#device-to-cloud-twin-operations)
+    - [Dubbele bewerkingen van het Cloud naar het apparaat](#cloud-to-device-twin-operations)
+    - [Dubbele query's](#twin-queries)
+    - [Taakbewerkingen](#jobs-operations)
+    - [Directe methoden](#direct-methods)
+    - [Gedistribueerde tracering (preview-versie)](#distributed-tracing-preview)
+      - [IoT Hub D2C-Logboeken (apparaat-naar-Cloud)](#iot-hub-d2c-device-to-cloud-logs)
+      - [IoT Hub ingangs logboeken](#iot-hub-ingress-logs)
+      - [IoT Hub uitgangs logboeken](#iot-hub-egress-logs)
+    - [Configuraties](#configurations)
+    - [Apparaatversleuteling (preview-versie)](#device-streams-preview)
+  - [Tabellen Azure Monitor logboeken](#azure-monitor-logs-tables)
+  - [Zie ook](#see-also)
 
 ### <a name="connections"></a>Verbindingen
 
@@ -690,4 +732,4 @@ Zie de [Naslag informatie over Azure monitor logboek tabel](/azure/azure-monitor
 ## <a name="see-also"></a>Zie ook
 
 * Zie [azure IOT hub bewaken](monitor-iot-hub.md) voor een beschrijving van het controleren van Azure IOT hub.
-* Zie [Azure-resources bewaken met Azure monitor](../azure-monitor/insights/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.
+* Zie [Azure-resources bewaken met Azure monitor](../azure-monitor/essentials/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/13/2020
 ms.author: kumud
-ms.openlocfilehash: d42e0f5594fdde55f1b4183a806e388658e86dc3
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 5070b64c3900aa4ee1cf51519c7b64362ac37413
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222935"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596664"
 ---
 # <a name="create-change-or-delete-a-network-security-group"></a>Een netwerkbeveiligingsgroep maken, wijzigen of verwijderen
 
@@ -93,7 +93,7 @@ Onder **bewaking** kunt u **Diagnostische instellingen** in-of uitschakelen. Ond
 
 Zie de volgende artikelen voor meer informatie over de algemene Azure-instellingen die worden weer gegeven:
 
-- [Activiteitenlogboek](../azure-monitor/platform/platform-logs-overview.md)
+- [Activiteitenlogboek](../azure-monitor/essentials/platform-logs-overview.md)
 - [Toegangsbeheer (IAM)](../role-based-access-control/overview.md)
 - [Tags](../azure-resource-manager/management/tag-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - [Vergrendelingen](../azure-resource-manager/management/lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
@@ -355,7 +355,7 @@ Om taken uit te voeren op netwerk beveiligings groepen, beveiligings regels en t
 
 ### <a name="network-security-group"></a>Netwerkbeveiligingsgroep
 
-| Actie                                                        |   Naam                                                                |
+| Bewerking                                                        |   Name                                                                |
 |-------------------------------------------------------------- |   -------------------------------------------                         |
 | Micro soft. Network/networkSecurityGroups/lezen                  |   Netwerk beveiligings groep ophalen                                          |
 | Micro soft. Network/networkSecurityGroups/schrijven                 |   Een netwerk beveiligings groep maken of bijwerken                             |
@@ -364,7 +364,7 @@ Om taken uit te voeren op netwerk beveiligings groepen, beveiligings regels en t
 
 ### <a name="network-security-group-rule"></a>Regel voor netwerk beveiligings groep
 
-| Actie                                                        |   Naam                                                                |
+| Bewerking                                                        |   Name                                                                |
 |-------------------------------------------------------------- |   -------------------------------------------                         |
 | Micro soft. Network/networkSecurityGroups/securityRules/lezen            |   Regel ophalen                                                            |
 | Micro soft. Network/networkSecurityGroups/securityRules/schrijven           |   Regel maken of bijwerken                                               |
@@ -372,7 +372,7 @@ Om taken uit te voeren op netwerk beveiligings groepen, beveiligings regels en t
 
 ### <a name="application-security-group"></a>Toepassingsbeveiligingsgroep
 
-| Actie                                                                     | Naam                                                     |
+| Bewerking                                                                     | Name                                                     |
 | --------------------------------------------------------------             | -------------------------------------------              |
 | Micro soft. Network/applicationSecurityGroups/joinIpConfiguration/Action     | Een IP-configuratie toevoegen aan een toepassings beveiligings groep|
 | Micro soft. Network/applicationSecurityGroups/joinNetworkSecurityRule/Action | Een beveiligings regel toevoegen aan een toepassings beveiligings groep    |

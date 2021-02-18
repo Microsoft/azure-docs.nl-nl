@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 01/25/2019
 ms.author: duau
-ms.openlocfilehash: 837d1f78a9fde72137383e6c22adb8870997dc9b
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: 907c03bd15463368def316e72f55ce214cb3e617
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98986036"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571046"
 ---
 # <a name="configure-network-performance-monitor-for-expressroute"></a>Netwerkprestatiemeter configureren voor ExpressRoute
 
@@ -54,7 +54,7 @@ Maak een werk ruimte in het abonnement met de VNets-koppeling naar de ExpressRou
 1. Selecteer in de [Azure Portal](https://portal.azure.com)het abonnement waaraan de VNETs is gekoppeld aan uw ExpressRoute-circuit. Zoek vervolgens in de lijst met Services op de **Marketplace** naar ' Netwerkprestatiemeter '. Klik in het retour venster om de pagina **Netwerkprestatiemeter** te openen.
 
    >[!NOTE]
-   >U kunt een nieuwe werk ruimte maken of een bestaande werk ruimte gebruiken. Als u een bestaande werk ruimte wilt gebruiken, moet u ervoor zorgen dat de werk ruimte is gemigreerd naar de nieuwe query taal. [Meer informatie...](../azure-monitor/log-query/log-query-overview.md)
+   >U kunt een nieuwe werk ruimte maken of een bestaande werk ruimte gebruiken. Als u een bestaande werk ruimte wilt gebruiken, moet u ervoor zorgen dat de werk ruimte is gemigreerd naar de nieuwe query taal. [Meer informatie...](../azure-monitor/logs/log-query-overview.md)
    >
 
    ![portal](./media/how-to-npm/3.png)<br><br>
@@ -118,7 +118,7 @@ U wordt aangeraden ten minste twee agents te installeren aan elke kant van de Ex
 
 ### <a name="23-configure-proxy-settings-optional"></a><a name="proxy"></a>2,3: proxy-instellingen configureren (optioneel)
 
-Als u een webproxy gebruikt voor toegang tot internet, gebruikt u de volgende stappen om proxy-instellingen te configureren voor de micro soft monitoring agent. Voer de volgende stappen uit voor elke server. Als er veel servers zijn die u moet configureren, is het wellicht eenvoudiger om een script te gebruiken om dit proces te automatiseren. Als dit het geval is, raadpleegt [u proxy-instellingen voor de micro soft monitoring agent configureren met een script](../azure-monitor/platform/agent-windows.md).
+Als u een webproxy gebruikt voor toegang tot internet, gebruikt u de volgende stappen om proxy-instellingen te configureren voor de micro soft monitoring agent. Voer de volgende stappen uit voor elke server. Als er veel servers zijn die u moet configureren, is het wellicht eenvoudiger om een script te gebruiken om dit proces te automatiseren. Als dit het geval is, raadpleegt [u proxy-instellingen voor de micro soft monitoring agent configureren met een script](../azure-monitor/agents/agent-windows.md).
 
 Proxy-instellingen voor de micro soft monitoring agent configureren met behulp van het configuratie scherm:
 

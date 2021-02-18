@@ -6,12 +6,12 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: troubleshooting
 ms.date: 01/02/2020
-ms.openlocfilehash: cefcd4ce287eecfe2c764d88d5d2233cc8ac0a5c
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 4eeda2e4e418920522f7a65bef68928963c43ad4
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96753442"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581785"
 ---
 # <a name="troubleshoot-assessmentdependency-visualization"></a>Problemen met de evaluatie/afhankelijkheid oplossen
 
@@ -75,7 +75,7 @@ Azure Migrate server-evaluatie kan Azure VM Sku's aanbevelen met meer kernen en 
 
 - De aanbeveling van de VM-SKU is afhankelijk van de evaluatie-eigenschappen.
 - Dit wordt beïnvloed door het type beoordeling dat u uitvoert in Server beoordeling: op *basis van prestaties* of *als on-premises*.
-- Voor evaluaties op basis van prestaties worden de gebruiks gegevens van de on-premises Vm's (CPU, geheugen, schijf en netwerk gebruik) beschouwd om de juiste doel-VM-SKU voor uw on-premises Vm's te bepalen. Er wordt ook een comfortfactor toegevoegd bij het bepalen van effectief gebruik.
+- Bij evaluatie op basis van prestaties houdt Server Assessment rekening met de gebruiksgegevens van de on-premises VM's (CPU, geheugen, schijf- en netwerkgebruik) om te bepalen wat de juiste doel-VM-SKU is voor uw on-premises VM's. Er wordt ook een comfortfactor toegevoegd bij het bepalen van effectief gebruik.
 - Voor on-premises grootte worden de prestatie gegevens niet in overweging genomen en wordt de doel-SKU aanbevolen op basis van on-premises toewijzing.
 
 Om te laten zien hoe dit kan invloed hebben op aanbevelingen, gaan we een voor beeld doen:
@@ -160,12 +160,12 @@ Voor Windows-Vm's:
 
     ![MMA-status](./media/troubleshoot-assessment/mma-properties.png)
 
-Voor virtuele Linux-machines moet u ervoor zorgen dat de installatie opdrachten voor MMA en de afhankelijkheids agent zijn geslaagd. Raadpleeg [hier](../azure-monitor/insights/service-map.md#post-installation-issues)voor meer richt lijnen voor probleem oplossing.
+Voor virtuele Linux-machines moet u ervoor zorgen dat de installatie opdrachten voor MMA en de afhankelijkheids agent zijn geslaagd. Raadpleeg [hier](../azure-monitor/vm/service-map.md#post-installation-issues)voor meer richt lijnen voor probleem oplossing.
 
 ## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 
-- **MMS-agent**: Bekijk de ondersteunde [Windows](../azure-monitor/platform/agents-overview.md#supported-operating-systems)-en [Linux](../azure-monitor/platform/agents-overview.md#supported-operating-systems) -besturings systemen.
-- **Afhankelijkheids agent**: de ondersteunde [Windows-en Linux](../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems) -besturings systemen.
+- **MMS-agent**: Bekijk de ondersteunde [Windows](../azure-monitor/agents/agents-overview.md#supported-operating-systems)-en [Linux](../azure-monitor/agents/agents-overview.md#supported-operating-systems) -besturings systemen.
+- **Afhankelijkheids agent**: de ondersteunde [Windows-en Linux](../azure-monitor/vm/vminsights-enable-overview.md#supported-operating-systems) -besturings systemen.
 
 ## <a name="visualize-dependencies-for--hour"></a>Afhankelijkheden voor > uur visualiseren
 
@@ -198,7 +198,7 @@ Azure Migrate biedt momenteel ondersteuning voor het maken van OMS-werkruimte in
 
 Verzamel logboeken voor netwerk verkeer als volgt:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Druk op F12 om Ontwikkelhulpprogramma's te starten. Als dat nodig is, schakelt u de instelling  **vermeldingen wissen bij navigatie** uit.
 3. Selecteer het tabblad **netwerk** en begin met het vastleggen van netwerk verkeer:
    - In Chrome selecteert u **logboek behouden**. De opname moet automatisch worden gestart. Een rode cirkel geeft aan dat verkeer wordt vastgelegd. Als de rode cirkel niet wordt weer gegeven, selecteert u de zwarte cirkel om te starten.

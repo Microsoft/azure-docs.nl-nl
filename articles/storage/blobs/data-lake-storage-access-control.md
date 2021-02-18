@@ -5,15 +5,15 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 10/16/2020
+ms.date: 02/17/2021
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 2a1455c5956297a19d640146879f93b61d035139
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: c1e2b6abe378df1450967ee0e1df6021ca0d5744
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185900"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650368"
 ---
 # <a name="access-control-lists-acls-in-azure-data-lake-storage-gen2"></a>Toegangs beheer lijsten (Acl's) in Azure Data Lake Storage Gen2
 
@@ -28,18 +28,20 @@ U kunt een [beveiligingsprincipal](../../role-based-access-control/overview.md#s
 > [!NOTE]
 > Acl's zijn alleen van toepassing op beveiligings-principals in dezelfde Tenant en zijn niet van toepassing op gebruikers die gebruikmaken van een gedeelde sleutel of SAS-token verificatie (Shared Access Signature). Dat komt doordat er geen identiteit aan de oproepende functie is gekoppeld en daarom de autorisatie op basis van machtigingen voor beveiliging niet kan worden uitgevoerd.  
 
+<a id="set-access-control-lists"></a>
+
 ## <a name="how-to-set-acls"></a>Acl's instellen
 
 Zie een van de volgende artikelen voor het instellen van machtigingen voor bestands-en mapniveau:
 
 | Omgeving | Artikel |
 |--------|-----------|
-|Azure Storage Explorer |[Azure Storage Explorer gebruiken voor het beheren van adreslijsten, bestanden en ACL's in Azure Data Lake Storage Gen2](data-lake-storage-explorer.md#managing-access)|
-|.NET |[.NET gebruiken voor het beheren van mappen, bestanden en Acl's in Azure Data Lake Storage Gen2](data-lake-storage-directory-file-acl-dotnet.md#manage-access-control-lists-acls)|
-|Java|[Java gebruiken voor het beheren van mappen, bestanden en Acl's in Azure Data Lake Storage Gen2](data-lake-storage-directory-file-acl-java.md#manage-access-control-lists-acls)|
-|Python|[Python gebruiken voor het beheren van mappen, bestanden en Acl's in Azure Data Lake Storage Gen2](data-lake-storage-directory-file-acl-python.md#manage-access-control-lists-acls)|
-|PowerShell|[Power shell gebruiken voor het beheren van mappen, bestanden en Acl's in Azure Data Lake Storage Gen2](data-lake-storage-directory-file-acl-powershell.md#manage-access-control-lists-acls)|
-|Azure CLI|[Azure CLI gebruiken voor het beheren van mappen, bestanden en Acl's in Azure Data Lake Storage Gen2](data-lake-storage-directory-file-acl-cli.md#manage-access-control-lists-acls)|
+|Azure Storage Explorer |[Azure Storage Explorer gebruiken om Acl's in Azure Data Lake Storage Gen2 in te stellen](data-lake-storage-explorer-acl.md)|
+|.NET |[.NET gebruiken om Acl's in Azure Data Lake Storage Gen2 in te stellen](data-lake-storage-acl-dotnet.md)|
+|Java|[Java gebruiken om Acl's in Azure Data Lake Storage Gen2 in te stellen](data-lake-storage-acl-java.md)|
+|Python|[Python gebruiken om Acl's in Azure Data Lake Storage Gen2 in te stellen](data-lake-storage-acl-python.md)|
+|PowerShell|[Power shell gebruiken voor het instellen van Acl's in Azure Data Lake Storage Gen2](data-lake-storage-acl-powershell.md)|
+|Azure CLI|[Azure CLI gebruiken om Acl's in Azure Data Lake Storage Gen2 in te stellen](data-lake-storage-acl-cli.md)|
 |REST-API |[Pad-bijwerken](/rest/api/storageservices/datalakestoragegen2/path/update)|
 
 > [!IMPORTANT]
@@ -62,7 +64,7 @@ Zowel toegangs-Acl's als standaard-Acl's hebben dezelfde structuur.
 
 De machtigingen voor mappen en bestanden in een container, zijn **lezen**, **schrijven** en **uitvoeren** en kunnen worden gebruikt voor bestanden en mappen, zoals wordt weer gegeven in de volgende tabel:
 
-|            |    Bestand     |   Directory |
+|            |    File     |   Directory |
 |------------|-------------|----------|
 | **Lezen (L)** | Kan de inhoud van een bestand lezen | Moet worden **gelezen** en **uitgevoerd** om de inhoud van de map weer te geven |
 | **Schrijven (S)** | Kan schrijven of toevoegen aan een bestand | **Schrijven** en **uitvoeren** is vereist om onderliggende items in een map te maken |
@@ -200,7 +202,7 @@ Zoals geïllustreerd in het algoritme voor toegangs controle, beperkt het masker
 
 Voor een nieuwe Data Lake Storage Gen2-container wordt het masker voor de toegangs-ACL van de hoofdmap (/) standaard ingesteld op **750** voor directory's en **640** voor bestanden. In de volgende tabel ziet u de symbolische notatie van deze machtigings niveaus.
 
-|Entiteit|Mappen|Files|
+|Entiteit|Mappen|Bestanden|
 |--|--|--|
 |Gebruiker die eigenaar is|`rwx`|`r-w`|
 |Groep die eigenaar is|`r-x`|`r--`|
@@ -273,7 +275,7 @@ Zie [hoe machtigingen worden geëvalueerd](data-lake-storage-access-control-mode
 
 ### <a name="what-are-the-limits-for-azure-role-assignments-and-acl-entries"></a>Wat zijn de limieten voor Azure-Roltoewijzingen en ACL-vermeldingen?
 
-De volgende tabel bevat een samen vatting van de beperkingen waarmee u rekening moet houden tijdens het gebruik van Azure RBAC voor het beheren van ' grof gekorrelde ' machtigingen (machtigingen die van toepassing zijn op opslag accounts of containers) en het gebruik van Acl's voor het beheren van ' verfijnde ' machtigingen (machtigingen die van toepassing zijn op bestanden en mappen). Gebruik beveiligings groepen voor ACL-toewijzingen. Door groepen te gebruiken, bent u minder waarschijnlijk het maximum aantal roltoewijzingen per abonnement en het maximum aantal Acl's-vermeldingen per bestand of map te overschrijden. 
+De volgende tabel bevat een samen vatting van de beperkingen waarmee u rekening moet houden tijdens het gebruik van Azure RBAC voor het beheren van ' grof gekorrelde ' machtigingen (machtigingen die van toepassing zijn op opslag accounts of containers) en het gebruik van Acl's voor het beheren van ' verfijnde ' machtigingen (machtigingen die van toepassing zijn op bestanden en mappen). Gebruik beveiligings groepen voor ACL-toewijzingen. Door groepen te gebruiken, bent u minder waarschijnlijk het maximum aantal roltoewijzingen per abonnement en het maximum aantal ACL'S-vermeldingen per bestand of map te overschrijden. 
 
 [!INCLUDE [Security groups](../../../includes/azure-storage-data-lake-rbac-acl-limits.md)] 
 

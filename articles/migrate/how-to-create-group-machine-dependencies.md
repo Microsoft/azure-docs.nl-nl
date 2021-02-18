@@ -6,12 +6,12 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 11/25/2020
-ms.openlocfilehash: d4bf635c57bcef41cd0f3285d8a91bae4b3e0415
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 1a3f2ae4829c7f4ae41d31e2a2fc35d79adf3d4c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96752019"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596708"
 ---
 # <a name="set-up-dependency-visualization"></a>Visualisatie van afhankelijkheid instellen
 
@@ -30,11 +30,11 @@ In dit artikel wordt beschreven hoe u een afhankelijkheids analyse op basis van 
         - [VMware](how-to-set-up-appliance-vmware.md) Virtuele.
         - [Hyper-V](how-to-set-up-appliance-hyper-v.md) Virtuele.
         - [Fysieke servers](how-to-set-up-appliance-physical.md).
-- Als u afhankelijkheids visualisatie wilt gebruiken, koppelt u een [log Analytics-werk ruimte](../azure-monitor/platform/manage-access.md) aan een Azure migrate project:
+- Als u afhankelijkheids visualisatie wilt gebruiken, koppelt u een [log Analytics-werk ruimte](../azure-monitor/logs/manage-access.md) aan een Azure migrate project:
     - U kunt een werk ruimte pas toevoegen nadat u het Azure Migrate apparaat hebt ingesteld en de computers in het Azure Migrate-project detecteert.
     - Zorg ervoor dat u een werk ruimte hebt in het abonnement met het Azure Migrate-project.
     - De werk ruimte moet zich bevinden in de regio's VS-Oost, Zuidoost-Azië of Europa-west. Werk ruimten in andere regio's kunnen niet worden gekoppeld aan een project.
-    - De werk ruimte moet zich in een regio bevinden waarin [servicetoewijzing wordt ondersteund](../azure-monitor/insights/vminsights-configure-workspace.md#supported-regions).
+    - De werk ruimte moet zich in een regio bevinden waarin [servicetoewijzing wordt ondersteund](../azure-monitor/vm/vminsights-configure-workspace.md#supported-regions).
     - U kunt een nieuwe of bestaande Log Analytics-werk ruimte koppelen aan een Azure Migrate-project.
     - U koppelt de werk ruimte de eerste keer dat u een afhankelijkheids visualisatie instelt voor een machine. De werk ruimte voor een Azure Migrate project kan niet worden gewijzigd nadat deze is toegevoegd.
     - In Log Analytics wordt de werk ruimte die is gekoppeld aan Azure Migrate gelabeld met de sleutel van het migratie project en de project naam.
@@ -60,7 +60,7 @@ In dit artikel wordt beschreven hoe u een afhankelijkheids analyse op basis van 
 Installeer de agents op elke computer die u wilt analyseren.
 
 > [!NOTE]
-> Voor computers die worden bewaakt door System Center Operations Manager 2012 R2 of hoger, hoeft u de MMA-agent niet te installeren. Servicetoewijzing integreert met Operations Manager. [Volg](../azure-monitor/insights/service-map-scom.md#prerequisites) de richt lijnen voor integratie.
+> Voor computers die worden bewaakt door System Center Operations Manager 2012 R2 of hoger, hoeft u de MMA-agent niet te installeren. Servicetoewijzing integreert met Operations Manager. [Volg](../azure-monitor/vm/service-map-scom.md#prerequisites) de richt lijnen voor integratie.
 
 1. Klik in **Azure migrate: Server evaluatie** op **gedetecteerde servers**.
 2. Voor elke computer die u wilt analyseren met afhankelijkheids visualisatie, klikt u in de kolom **afhankelijkheden** op **Agent installatie vereist**.
@@ -85,9 +85,9 @@ Installeer de agent als volgt op een Windows-computer:
 5. Klik op **Toevoegen** om een nieuwe Log Analytics-werkruimte toe te voegen. Plak de werkruimte-id en -sleutel die u in de portal hebt gekopieerd. Klik op **Volgende**.
 
 U kunt de agent installeren vanaf de opdracht regel of met behulp van een geautomatiseerde methode als Configuration Manager of [Intigua](https://www.intigua.com/intigua-for-azure-migration).
-- [Meer informatie](../azure-monitor/platform/log-analytics-agent.md#installation-options) over het gebruiken van deze methoden om de MMA-agent te installeren.
+- [Meer informatie](../azure-monitor/agents/log-analytics-agent.md#installation-options) over het gebruiken van deze methoden om de MMA-agent te installeren.
 - De MMA-agent kan ook worden geïnstalleerd met behulp van dit [script](https://github.com/brianbar-MSFT/Install-MMA).
-- Meer [informatie](../azure-monitor/platform/agents-overview.md#supported-operating-systems) over de Windows-besturings systemen die worden ondersteund door MMA.
+- Meer [informatie](../azure-monitor/agents/agents-overview.md#supported-operating-systems) over de Windows-besturings systemen die worden ondersteund door MMA.
 
 ### <a name="install-mma-on-a-linux-machine"></a>MMA installeren op een Linux-computer
 
@@ -98,7 +98,7 @@ De MMA op een Linux-computer installeren:
 
     ```sudo sh ./omsagent-<version>.universal.x64.sh --install -w <workspace id> -s <workspace key>```
 
-[Meer informatie](../azure-monitor/platform/agents-overview.md#supported-operating-systems) over de lijst met door MMA ondersteunde Linux-besturingssystemen. 
+[Meer informatie](../azure-monitor/agents/agents-overview.md#supported-operating-systems) over de lijst met door MMA ondersteunde Linux-besturingssystemen. 
 
 ## <a name="install-the-dependency-agent"></a>De afhankelijkheidsagent installeren
 
@@ -107,8 +107,8 @@ De MMA op een Linux-computer installeren:
 
     ```sh InstallDependencyAgent-Linux64.bin```
 
-- [Meer informatie](../azure-monitor/insights/vminsights-enable-hybrid.md#dependency-agent) over hoe u scripts kunt gebruiken om de afhankelijkheidsagent te installeren.
-- Meer [informatie](../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems) over de besturings systemen die worden ondersteund door de afhankelijkheids agent.
+- [Meer informatie](../azure-monitor/vm/vminsights-enable-hybrid.md#dependency-agent) over hoe u scripts kunt gebruiken om de afhankelijkheidsagent te installeren.
+- Meer [informatie](../azure-monitor/vm/vminsights-enable-overview.md#supported-operating-systems) over de besturings systemen die worden ondersteund door de afhankelijkheids agent.
 
 
 ## <a name="create-a-group-using-dependency-visualization"></a>Een groep maken met behulp van afhankelijkheids visualisatie
@@ -149,8 +149,8 @@ Nadat u de groep hebt gemaakt, wordt u aangeraden agents op alle computers in de
 
 U kunt een query uitvoeren op afhankelijkheids gegevens die zijn vastgelegd door Servicetoewijzing in de werk ruimte Log Analytics die aan het Azure Migrate project is gekoppeld. Log Analytics wordt gebruikt om Azure Monitor-logboek query's te schrijven en uit te voeren.
 
-- [Meer informatie over het](../azure-monitor/insights/service-map.md#log-analytics-records) zoeken naar servicetoewijzing gegevens in log Analytics.
-- [Bekijk een overzicht van het](../azure-monitor/log-query/get-started-queries.md)  schrijven van logboek query's in [log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md).
+- [Meer informatie over het](../azure-monitor/vm/service-map.md#log-analytics-records) zoeken naar servicetoewijzing gegevens in log Analytics.
+- [Bekijk een overzicht van het](../azure-monitor/logs/get-started-queries.md)  schrijven van logboek query's in [log Analytics](../azure-monitor/logs/log-analytics-tutorial.md).
 
 Voer een query uit voor afhankelijkheids gegevens als volgt:
 
@@ -165,8 +165,8 @@ Voer een query uit voor afhankelijkheids gegevens als volgt:
 Hier volgen enkele voor beelden van query's die u kunt gebruiken om afhankelijkheids gegevens te extra heren.
 
 - U kunt de query's aanpassen om de gewenste gegevenspunten te extraheren.
-- [Bekijk](../azure-monitor/insights/service-map.md#log-analytics-records) een volledige lijst met afhankelijkheids gegevens records.
-- [Bekijk](../azure-monitor/insights/service-map.md#sample-log-searches) aanvullende voorbeeld query's.
+- [Bekijk](../azure-monitor/vm/service-map.md#log-analytics-records) een volledige lijst met afhankelijkheids gegevens records.
+- [Bekijk](../azure-monitor/vm/service-map.md#sample-log-searches) aanvullende voorbeeld query's.
 
 #### <a name="sample-review-inbound-connections"></a>Voor beeld: binnenkomende verbindingen controleren
 
@@ -174,7 +174,7 @@ Controleer binnenkomende verbindingen voor een set Vm's.
 
 - De records in de tabel voor de metrische gegevens van de verbinding (VMConnection) vertegenwoordigen geen afzonderlijke fysieke netwerk verbindingen.
 - Er worden meerdere fysieke netwerkverbindingen gegroepeerd in een logische verbinding.
-- Meer [informatie](../azure-monitor/insights/service-map.md#connections) over hoe fysieke netwerk verbindings gegevens worden geaggregeerd in VMConnection.
+- Meer [informatie](../azure-monitor/vm/service-map.md#connections) over hoe fysieke netwerk verbindings gegevens worden geaggregeerd in VMConnection.
 
 ```
 // the machines of interest

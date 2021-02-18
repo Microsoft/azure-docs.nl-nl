@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/26/2020
 ms.author: akjosh
-ms.openlocfilehash: 22cc9bf1bdfdb8a3026bb09f44e007ab3438325a
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 1b394a6daf7ba680d193a13dd4cb25dbebc576e4
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98046818"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580079"
 ---
 # <a name="log-analytics-virtual-machine-extension-for-windows"></a>De virtuele-machine-extensie Log Analytics voor Windows
 
@@ -30,12 +30,12 @@ Azure Monitor Logboeken biedt bewakings mogelijkheden voor Cloud-en on-premises 
 
 ### <a name="operating-system"></a>Besturingssysteem
 
-Raadpleeg het artikel [overzicht van Azure monitor agents](../../azure-monitor/platform/agents-overview.md#supported-operating-systems) voor meer informatie over de ondersteunde Windows-besturings systemen.
+Raadpleeg het artikel [overzicht van Azure monitor agents](../../azure-monitor/agents/agents-overview.md#supported-operating-systems) voor meer informatie over de ondersteunde Windows-besturings systemen.
 
 ### <a name="agent-and-vm-extension-version"></a>Versie van agent en VM-extensie
 De volgende tabel bevat een overzicht van de versie van de Windows Log Analytics VM-extensie en Log Analytics agent bundel voor elke release. 
 
-| Log Analytics bundel versie van Windows-agent | Windows VM-extensie versie Log Analytics | Releasedatum | Releaseopmerkingen |
+| Log Analytics bundel versie van Windows-agent | Windows VM-extensie versie Log Analytics | Releasedatum | Opmerkingen bij de release |
 |--------------------------------|--------------------------|--------------------------|--------------------------|
 | 10.20.18053| 1.0.18053.0 | Oktober 2020   | <ul><li>Nieuwe agent probleem Oplosser</li><li>Updates voor het verwerken van certificaat wijzigingen in Azure-Services door de agent</li></ul> |
 | 10.20.18040 | 1.0.18040.2 | Augustus 2020   | <ul><li>Hiermee wordt een probleem in azure Arc opgelost</li></ul> |
@@ -89,7 +89,7 @@ De volgende JSON toont het schema voor de uitbrei ding van de Log Analytics agen
 ```
 ### <a name="property-values"></a>Eigenschaps waarden
 
-| Naam | Waarde/voor beeld |
+| Name | Waarde/voor beeld |
 | ---- | ---- |
 | apiVersion | 2015-06-15 |
 | publisher | Micro soft. EnterpriseCloud. monitoring |
@@ -101,14 +101,14 @@ De volgende JSON toont het schema voor de uitbrei ding van de Log Analytics agen
 \* De workspaceId wordt de consumerId in de Log Analytics-API genoemd.
 
 > [!NOTE]
-> Zie Azure [Connect Windows computers to Azure monitor](../../azure-monitor/platform/agent-windows.md)voor extra eigenschappen.
+> Zie Azure [Connect Windows computers to Azure monitor](../../azure-monitor/agents/agent-windows.md)voor extra eigenschappen.
 
 ## <a name="template-deployment"></a>Sjabloonimplementatie
 
 Azure VM-extensies kunnen worden geïmplementeerd met Azure Resource Manager sjablonen. Het JSON-schema dat in de vorige sectie wordt beschreven, kan worden gebruikt in een Azure Resource Manager sjabloon om de Log Analytics agent-extensie uit te voeren tijdens de implementatie van een Azure Resource Manager-sjabloon. Een voorbeeld sjabloon met de extensie van de Log Analytics agent-VM vindt u in de [Galerie van Azure Quick](https://github.com/Azure/azure-quickstart-templates/tree/master/201-oms-extension-windows-vm)start. 
 
 >[!NOTE]
->De sjabloon biedt geen ondersteuning voor het opgeven van meer dan één werk ruimte-ID en werkruimte sleutel wanneer u de agent wilt configureren om te rapporteren aan meerdere werk ruimten. Zie [een werk ruimte toevoegen of verwijderen](../../azure-monitor/platform/agent-manage.md#adding-or-removing-a-workspace)als u de agent wilt configureren om te rapporteren aan meerdere werk ruimten.  
+>De sjabloon biedt geen ondersteuning voor het opgeven van meer dan één werk ruimte-ID en werkruimte sleutel wanneer u de agent wilt configureren om te rapporteren aan meerdere werk ruimten. Zie [een werk ruimte toevoegen of verwijderen](../../azure-monitor/agents/agent-manage.md#adding-or-removing-a-workspace)als u de agent wilt configureren om te rapporteren aan meerdere werk ruimten.  
 
 De JSON voor een extensie van een virtuele machine kan worden genest in de resource van de virtuele machine of worden geplaatst op het hoofd niveau of op de hoogste niveaus van een JSON-sjabloon van Resource Manager. De plaatsing van de JSON is van invloed op de waarde van de naam en het type van de resource. Zie voor meer informatie [naam en type voor onderliggende resources instellen](../../azure-resource-manager/templates/child-resource-name-type.md). 
 

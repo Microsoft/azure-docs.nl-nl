@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 08/22/2017
 ms.author: yegu
-ms.openlocfilehash: c13821544ff9725a387534370fc716c70072bb85
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: ba021d280f71504ad5c1e1aea0dc1c8c6b507b1e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99831770"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581072"
 ---
 # <a name="how-to-configure-azure-cache-for-redis"></a>Azure-cache configureren voor redis
 In dit onderwerp worden de configuraties beschreven die beschikbaar zijn voor uw Azure-cache voor redis-exemplaren. In dit onderwerp wordt ook de standaard redis-server configuratie voor Azure cache voor redis-exemplaren besproken.
@@ -341,10 +341,10 @@ Klik op **waarschuwings regels** om waarschuwingen te configureren op basis van 
 
 ### <a name="diagnostics"></a>Diagnostiek
 
-Standaard worden de metrische gegevens in de cache van Azure Monitor [30 dagen opgeslagen](../azure-monitor/platform/data-platform-metrics.md) en vervolgens verwijderd. Als u de cache gegevens langer dan 30 dagen wilt behouden, klikt u op **diagnose** om [het opslag account te configureren](cache-how-to-monitor.md#export-cache-metrics) dat wordt gebruikt voor het opslaan van de diagnostische gegevens van de cache.
+Standaard worden de metrische gegevens in de cache van Azure Monitor [30 dagen opgeslagen](../azure-monitor/essentials/data-platform-metrics.md) en vervolgens verwijderd. Als u de cache gegevens langer dan 30 dagen wilt behouden, klikt u op **diagnose** om [het opslag account te configureren](cache-how-to-monitor.md#export-cache-metrics) dat wordt gebruikt voor het opslaan van de diagnostische gegevens van de cache.
 
 >[!NOTE]
->Naast het archiveren van uw cache-metrische gegevens naar opslag, kunt u [ze ook streamen naar een event hub of naar Azure monitor-logboeken verzenden](../azure-monitor/platform/stream-monitoring-data-event-hubs.md).
+>Naast het archiveren van uw cache-metrische gegevens naar opslag, kunt u [ze ook streamen naar een event hub of naar Azure monitor-logboeken verzenden](../azure-monitor/essentials/stream-monitoring-data-event-hubs.md).
 >
 >
 

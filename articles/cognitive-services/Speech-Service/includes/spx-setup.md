@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: 1eae40437e06bfb150e202db1f3bb4125baeaa97
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: b985399eb89ae7bbf73d280775157207498f0080
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100515017"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100645384"
 ---
 ## <a name="download-and-install"></a>Downloaden en installeren
 
@@ -19,11 +19,12 @@ ms.locfileid: "100515017"
 Volg deze stappen om de Speech CLI te installeren voor Windows:
 
 1. In Windows hebt u het [Microsoft Visual C++ Redistributable for Visual Studio 2019](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads) voor uw platform nodig. Bij een eerste installatie is mogelijk een herstart vereist.
-1. Installeer [.net Core 3,1](/dotnet/core/install/linux).
+1. Installeer de [.net Core 3,1-SDK](/dotnet/core/install/linux).
 2. Installeer de speech CLI met behulp van NuGet door de volgende opdracht in te voeren:
 
-    `dotnet tool install --global Microsoft.CognitiveServices.Speech.CLI --version 1.15.0`
-
+   ```console
+   dotnet tool install --global Microsoft.CognitiveServices.Speech.CLI --version 1.15.0
+   ```
 Typ `spx` om Help weer te geven voor de Speech CLI.
 
 > [!NOTE]

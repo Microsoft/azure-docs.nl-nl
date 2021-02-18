@@ -8,12 +8,12 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 06/05/2020
 ms.author: cherylmc
-ms.openlocfilehash: 62979a2cbe2a5912476ca65327a06eef9c36c1cb
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: a5bbcc4c07826a5093da3f51c709f49ceb231753
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127886"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596083"
 ---
 # <a name="azure-virtual-wan-logs-and-metrics"></a>Virtuele WAN-logboeken en-metrische gegevens van Azure
 
@@ -130,4 +130,4 @@ Vermeldingen in het **activiteiten logboek** worden standaard verzameld en kunne
 ## <a name="next-steps"></a>Volgende stappen
 
 * Zie [zelf studie: Azure firewall logboeken controleren](../firewall/firewall-diagnostics.md)voor meer informatie over het bewaken van Azure firewall logboeken en metrische gegevens.
-* Zie [metrische gegevens in azure monitor](../azure-monitor/platform/data-platform-metrics.md)voor meer informatie over metrische gegevens in azure monitor.
+* Zie [metrische gegevens in azure monitor](../azure-monitor/essentials/data-platform-metrics.md)voor meer informatie over metrische gegevens in azure monitor.

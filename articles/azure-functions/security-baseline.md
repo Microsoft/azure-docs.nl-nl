@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 5b38da5539cb80110b2a769a219213a5c74e1506
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: b57de23bf59f1b9c84674fe95495f980c4594e2a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98198552"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587613"
 ---
 # <a name="azure-security-baseline-for-azure-functions"></a>Azure-beveiligings basislijn voor Azure Functions
 
@@ -207,9 +207,9 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 **Hulp**: Azure-activiteiten logboek gebruiken om netwerk resource configuraties te bewaken en wijzigingen te detecteren voor netwerk instellingen en-bronnen die betrekking hebben op uw Azure functions-implementaties. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in essentiële netwerk instellingen of-resources plaatsvinden. 
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -237,7 +237,7 @@ Als u in uw functie-app ingebouwde beveiligings-en controle logboek registratie 
 
 Optioneel kunt u gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden. 
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Azure Functions met Azure-toepassing inzichten instellen](./functions-monitoring.md)
 
@@ -255,7 +255,7 @@ Optioneel kunt u gegevens in-en inschakelen voor Azure Sentinel of een SIEM van 
 
 Als u in uw functie-app ingebouwde beveiligings-en controle logboek registratie hebt, schakelt u de diagnostische instelling ' FunctionAppLogs ' in en verzendt u de logboeken naar een Log Analytics-werk ruimte, een Azure Event Hub of een Azure-opslag account voor archivering. 
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Diagnostische instellingen inschakelen (door de gebruiker gegenereerde logboeken) voor Azure Functions](./functions-monitor-log-analytics.md)
 
@@ -275,7 +275,7 @@ Als u in uw functie-app ingebouwde beveiligings-en controle logboek registratie 
 
 **Richt lijnen**: in azure monitor stelt u de Bewaar periode voor het logboek In voor log Analytics werk ruimten die zijn gekoppeld aan uw functie-apps volgens de nalevings voorschriften van uw organisatie.
 
-- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -291,7 +291,7 @@ Als u in uw functie-app ingebouwde beveiligings-en controle logboek registratie 
 
 Optioneel kunt u gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden. 
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Diagnostische instellingen inschakelen voor Azure Functions](./functions-monitor-log-analytics.md)
 
@@ -311,13 +311,13 @@ Schakel Application Insights in voor uw functie-apps voor het verzamelen van log
 
 Optioneel kunt u gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden. 
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Diagnostische instellingen inschakelen voor Azure Functions](./functions-monitor-log-analytics.md)
 
 - [Application Insights inschakelen voor Azure Functions](./configure-monitoring.md#enable-application-insights-integration)
 
-- [Waarschuwingen maken in azure](../azure-monitor/learn/tutorial-response.md)
+- [Waarschuwingen maken in azure](../azure-monitor/alerts/tutorial-response.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -631,7 +631,7 @@ Micro soft beheert de onderliggende infra structuur voor Azure Functions en heef
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer wijzigingen worden aangebracht in productie functie-apps, evenals andere kritieke of verwante resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 

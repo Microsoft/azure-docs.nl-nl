@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/31/2019
 ms.author: tomsh
-ms.openlocfilehash: c3674b6877438a0dd4fe53569cf6852e872334a7
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: 4bc30fbf342a9bc85b52c9f88ce7ca1df3c36e23
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98693609"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595491"
 ---
 # <a name="azure-operational-security-overview"></a>Overzicht van Azure Operational Security
 
@@ -94,7 +94,7 @@ In Azure Security Center wordt de configuratie van uw resources beoordeeld om be
 >[!Note]
 >Zie voor meer informatie over rollen en toegestane acties in Security Center [machtigingen in azure Security Center](../../security-center/security-center-permissions.md).
 
-Security Center maakt gebruik van micro soft monitoring agent. Dit is dezelfde agent die wordt gebruikt door de Azure Monitor-service. Gegevens die worden verzameld van deze agent worden opgeslagen in een bestaande Log Analytics [werk ruimte](../../azure-monitor/platform/manage-access.md) die is gekoppeld aan uw Azure-abonnement of een nieuwe werk ruimte, rekening houdend met de geolocatie van de virtuele machine.
+Security Center maakt gebruik van micro soft monitoring agent. Dit is dezelfde agent die wordt gebruikt door de Azure Monitor-service. Gegevens die worden verzameld van deze agent worden opgeslagen in een bestaande Log Analytics [werk ruimte](../../azure-monitor/logs/manage-access.md) die is gekoppeld aan uw Azure-abonnement of een nieuwe werk ruimte, rekening houdend met de geolocatie van de virtuele machine.
 
 ## <a name="azure-monitor"></a>Azure Monitor
 
@@ -108,23 +108,23 @@ Azure Monitor bevat de volgende onderdelen.
 
 ### <a name="azure-activity-log"></a>Azure-activiteitenlogboek
 
-Het [Azure-activiteiten logboek](../../azure-monitor/platform/platform-logs-overview.md) biedt inzicht in de bewerkingen die zijn uitgevoerd voor de resources in uw abonnement. Het was voorheen bekend als ' controle logboek ' of ' operationeel logboek ', omdat het controle-vlak gebeurtenissen voor uw abonnementen rapporteert.
+Het [Azure-activiteiten logboek](../../azure-monitor/essentials/platform-logs-overview.md) biedt inzicht in de bewerkingen die zijn uitgevoerd voor de resources in uw abonnement. Het was voorheen bekend als ' controle logboek ' of ' operationeel logboek ', omdat het controle-vlak gebeurtenissen voor uw abonnementen rapporteert.
 
 ### <a name="azure-diagnostic-logs"></a>Diagnostische logboeken in Azure
 
-[Diagnostische logboeken van Azure](../../azure-monitor/platform/platform-logs-overview.md) worden verzonden door een resource en bieden uitgebreide, frequente gegevens over de werking van die resource. De inhoud van deze logboeken is afhankelijk van het bron type.
+[Diagnostische logboeken van Azure](../../azure-monitor/essentials/platform-logs-overview.md) worden verzonden door een resource en bieden uitgebreide, frequente gegevens over de werking van die resource. De inhoud van deze logboeken is afhankelijk van het bron type.
 
 Windows-gebeurtenis systeem logboeken zijn een categorie van Diagnostische logboeken voor Vm's. BLOB-, tabel-en wachtrij logboeken zijn categorieën van Diagnostische logboeken voor opslag accounts.
 
-Diagnostische logboeken verschillen van het [activiteiten logboek](../../azure-monitor/platform/platform-logs-overview.md). Het activiteiten logboek biedt inzicht in de bewerkingen die zijn uitgevoerd voor de resources in uw abonnement. Diagnostische logboeken bieden inzicht in bewerkingen die door uw resource worden uitgevoerd.
+Diagnostische logboeken verschillen van het [activiteiten logboek](../../azure-monitor/essentials/platform-logs-overview.md). Het activiteiten logboek biedt inzicht in de bewerkingen die zijn uitgevoerd voor de resources in uw abonnement. Diagnostische logboeken bieden inzicht in bewerkingen die door uw resource worden uitgevoerd.
 
 ### <a name="metrics"></a>Metrische gegevens
 
-Azure Monitor biedt telemetrie waarmee u inzicht krijgt in de prestaties en status van uw workloads op Azure. Het belangrijkste type Azure-telemetriegegevens is de [metrische](../../azure-monitor/platform/data-platform.md) gegevens (ook wel prestatie meters genoemd) die worden verzonden door de meeste Azure-resources. Azure Monitor biedt verschillende manieren om deze metrische gegevens te configureren en te gebruiken voor bewaking en probleem oplossing.
+Azure Monitor biedt telemetrie waarmee u inzicht krijgt in de prestaties en status van uw workloads op Azure. Het belangrijkste type Azure-telemetriegegevens is de [metrische](../../azure-monitor/data-platform.md) gegevens (ook wel prestatie meters genoemd) die worden verzonden door de meeste Azure-resources. Azure Monitor biedt verschillende manieren om deze metrische gegevens te configureren en te gebruiken voor bewaking en probleem oplossing.
 
 ### <a name="azure-diagnostics"></a>Azure Diagnostics
 
-Azure Diagnostics kunt het verzamelen van diagnostische gegevens op een geïmplementeerde toepassing. U kunt de diagnostische uitbrei ding van verschillende bronnen gebruiken. Dit wordt momenteel ondersteund: [Azure-Cloud service rollen](/visualstudio/azure/vs-azure-tools-configure-roles-for-cloud-service), [virtuele Azure-machines](/visualstudio/azure/vs-azure-tools-configure-roles-for-cloud-service) met micro soft Windows en [Azure service Fabric](../../azure-monitor/platform/diagnostics-extension-overview.md).
+Azure Diagnostics kunt het verzamelen van diagnostische gegevens op een geïmplementeerde toepassing. U kunt de diagnostische uitbrei ding van verschillende bronnen gebruiken. Dit wordt momenteel ondersteund: [Azure-Cloud service rollen](/visualstudio/azure/vs-azure-tools-configure-roles-for-cloud-service), [virtuele Azure-machines](/visualstudio/azure/vs-azure-tools-configure-roles-for-cloud-service) met micro soft Windows en [Azure service Fabric](../../azure-monitor/agents/diagnostics-extension-overview.md).
 
 ## <a name="azure-network-watcher"></a>Azure Network Watcher
 

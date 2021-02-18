@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: quickstart
 ms.date: 09/03/2020
 ms.author: cshoe
-ms.openlocfilehash: aab99721b61ababe218e509ab1078198b5f4152b
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: c54a56843be5121e16449d95fb18c24901a95a8d
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97030362"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650559"
 ---
 # <a name="quickstart-building-your-first-static-site-in-the-azure-portal"></a>Quickstart: Uw eerste statische site bouwen in de Azure-portal
 
@@ -55,7 +55,7 @@ Nadat u zich hebt aangemeld bij GitHub, voert u de gegevens van de opslagplaats 
 
 1. Kies de gewenste _organisatie_
 1. Selecteer **mijn-eerste-statische-web-app** in de vervolgkeuzelijst _Opslagplaats_
-1. Selecteer **hoofd** in de vervolgkeuzelijst _Vertakking_
+1. Selecteer **Hoofd** in de vervolgkeuzelijst _Vertakking_
 
 > [!NOTE]
 > Als u geen opslagplaatsen ziet, moet u mogelijk Azure Static Web Apps autoriseren in GitHub. Ga naar de GitHub-opslagplaats en ga naar **Instellingen > Toepassingen > Geautoriseerde OAuth-apps**, selecteer **Azure Static Web Apps** en selecteer **Verlenen**. Voor organisatie-opslagplaatsen moet u een eigenaar van de organisatie zijn om de machtigingen te verlenen.

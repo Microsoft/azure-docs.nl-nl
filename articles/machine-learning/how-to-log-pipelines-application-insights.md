@@ -10,12 +10,12 @@ ms.subservice: core
 ms.date: 08/11/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: e451e55a9a73022f9c90ba4adae91b520840481e
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 58e604eccaca4630a235f4ae83724df20d6b1e26
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98880756"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592523"
 ---
 # <a name="collect-machine-learning-pipeline-log-files-in-application-insights-for-alerts-and-debugging"></a>machine learning pijplijn logboek bestanden verzamelen in Application Insights voor waarschuwingen en fout opsporing
 
@@ -164,6 +164,6 @@ In enkele van de onderstaande query's wordt gebruikgemaakt van ' customDimension
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u Logboeken in uw Application Insights-exemplaar hebt, kunnen ze worden gebruikt om [Azure monitor-waarschuwingen](../azure-monitor/platform/alerts-overview.md#what-you-can-alert-on) in te stellen op basis van query resultaten.
+Zodra u Logboeken in uw Application Insights-exemplaar hebt, kunnen ze worden gebruikt om [Azure monitor-waarschuwingen](../azure-monitor/alerts/alerts-overview.md#what-you-can-alert-on) in te stellen op basis van query resultaten.
 
-U kunt ook resultaten van query's toevoegen aan een [Azure-dash board](../azure-monitor/learn/tutorial-app-dashboards.md#add-logs-query) voor meer inzichten.
+U kunt ook resultaten van query's toevoegen aan een [Azure-dash board](../azure-monitor/app/tutorial-app-dashboards.md#add-logs-query) voor meer inzichten.

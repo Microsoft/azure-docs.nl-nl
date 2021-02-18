@@ -3,12 +3,12 @@ title: Toegewezen hosting Azure Functions
 description: Meer informatie over de voor delen van het uitvoeren van Azure Functions op een speciaal App Service hosting abonnement.
 ms.topic: conceptual
 ms.date: 10/29/2020
-ms.openlocfilehash: 0ebf83aa919d91f161b247539ae20873242a8ed8
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 0ee32d4c4a7d33664da88b133a1f7011fc09f298
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97937621"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591055"
 ---
 # <a name="dedicated-hosting-plans-for-azure-functions"></a>Toegewezen hosting plannen voor Azure Functions
 
@@ -33,7 +33,7 @@ Zelfs met Always ingeschakeld, wordt de time-out voor de uitvoering van afzonder
 
 ## <a name="scaling"></a>Schalen
 
-Met een App Service-abonnement kunt u hand matig uitschalen door meer VM-exemplaren toe te voegen. U kunt automatisch schalen ook inschakelen, maar automatisch schalen is langzamer dan de elastische schaal van het Premium-abonnement. Zie [aantal exemplaren hand matig of automatisch schalen](../azure-monitor/platform/autoscale-get-started.md?toc=%2fazure%2fapp-service%2ftoc.json)voor meer informatie. U kunt ook omhoog schalen door een ander App Service plan te kiezen. Zie [een app omhoog schalen in azure](../app-service/manage-scale-up.md)voor meer informatie. 
+Met een App Service-abonnement kunt u hand matig uitschalen door meer VM-exemplaren toe te voegen. U kunt automatisch schalen ook inschakelen, maar automatisch schalen is langzamer dan de elastische schaal van het Premium-abonnement. Zie [aantal exemplaren hand matig of automatisch schalen](../azure-monitor/autoscale/autoscale-get-started.md?toc=%2fazure%2fapp-service%2ftoc.json)voor meer informatie. U kunt ook omhoog schalen door een ander App Service plan te kiezen. Zie [een app omhoog schalen in azure](../app-service/manage-scale-up.md)voor meer informatie. 
 
 > [!NOTE] 
 > Wanneer u Java script-functies (Node.js) uitvoert op een App Service-abonnement, moet u een abonnement kiezen dat minder Vcpu's heeft. Zie voor meer informatie [single-core app service-abonnementen kiezen](functions-reference-node.md#choose-single-vcpu-app-service-plans). 

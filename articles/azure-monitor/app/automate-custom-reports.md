@@ -4,12 +4,12 @@ description: Aangepaste dagelijkse/wekelijkse/maandelijkse rapporten automatiser
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.reviewer: sdash
-ms.openlocfilehash: da465fbc899cb52fc48dbde830d3db4f3b58c68b
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 39970227fc94d3073688b23cc530462f368a6ecf
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98680447"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590035"
 ---
 # <a name="automate-custom-reports-with-azure-application-insights-data"></a>Aangepaste rapporten automatiseren met Azure-toepassing Insights-gegevens
 
@@ -31,7 +31,7 @@ Elke onderneming heeft zijn unieke rapportage behoeften, zoals:
 
 U kunt [programmatisch query's uitvoeren op Application Insights](https://dev.applicationinsights.io/) gegevens om aangepaste rapporten te genereren op schema. U kunt de volgende opties gebruiken om snel aan de slag te gaan:
 
-* [Rapporten automatiseren met automatische stroom](../platform/logicapp-flow-connector.md)
+* [Rapporten automatiseren met automatische stroom](../logs/logicapp-flow-connector.md)
 * [Rapporten automatiseren met Logic Apps](automate-with-logic-apps.md)
 * Gebruik de [Azure function](../../azure-functions/functions-get-started.md) -sjabloon ' Application Insights gepland overzicht ' in het bewakings scenario. Deze functie maakt gebruik van SendGrid om het e-mail bericht te leveren. 
 
@@ -150,7 +150,7 @@ Deze stappen zijn alleen van toepassing als u nog geen SendGrid-account hebt gec
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over het maken van [Analytics-query's](../log-query/get-started-queries.md).
+* Meer informatie over het maken van [Analytics-query's](../logs/get-started-queries.md).
 * Meer informatie over het [programmatisch opvragen van Application Insights gegevens](https://dev.applicationinsights.io/)
 * Meer informatie over [Logic Apps](../../logic-apps/logic-apps-overview.md).
 * Meer informatie over [micro soft power Automatiseer](https://ms.flow.microsoft.com).

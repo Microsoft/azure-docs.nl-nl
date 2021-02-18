@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: f6825fee4cfb78ab54d782cd4d942bb994bedae9
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: b484873f6c118c49712cbcd66eeb6a63d8aa05f6
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98195718"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591558"
 ---
 # <a name="azure-security-baseline-for-azure-storage"></a>Azure-beveiligings basislijn voor Azure Storage
 
@@ -158,7 +158,7 @@ U kunt ook gebruikmaken van ingebouwde beleids definities met betrekking tot het
 
 - [Azure Policy configureren en beheren](../../governance/policy/tutorials/create-and-manage.md)
 
-- [Waarschuwingen maken in Azure Monitor](../../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken in Azure Monitor](../../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -180,7 +180,7 @@ U kunt ook gebruikmaken van ingebouwde beleids definities met betrekking tot het
 
 **Hulp**: opname logboeken via Azure monitor voor het verzamelen van beveiligings gegevens die worden gegenereerd door eind punten, netwerk bronnen en andere beveiligings systemen. In Azure Monitor kunt u Log Analytics werk ruimte (n) gebruiken om een query uit te voeren en te analyseren en Azure Storage-accounts te gebruiken voor lange termijn/archief opslag, eventueel met beveiligings functies zoals onveranderlijke opslag en afgedwongen Bewaar perioden.
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../../azure-monitor/platform/diagnostic-settings.md)
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../../azure-monitor/essentials/diagnostic-settings.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -210,7 +210,7 @@ U kunt ook gebruikmaken van ingebouwde beleids definities met betrekking tot het
 
 - [Bewaar beleid configureren voor logboeken van Azure Storage-account](./storage-monitor-storage-account.md#configure-logging)
 
-- [De Bewaar periode voor gegevens wijzigen in Log Analytics](../../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [De Bewaar periode voor gegevens wijzigen in Log Analytics](../../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -238,7 +238,7 @@ Schakel ook geavanceerde beveiliging tegen bedreigingen in voor uw Azure Storage
 
 - [Waarschuwingen beheren in Azure Security Center](../../security-center/security-center-managing-and-responding-alerts.md)
 
-- [Een waarschuwing over logboek gegevens van log Analytics](../../azure-monitor/learn/tutorial-response.md)
+- [Een waarschuwing over logboek gegevens van log Analytics](../../azure-monitor/alerts/tutorial-response.md)
 
 - [Azure Storage-analyselogboeken](./storage-analytics-logging.md)
 
@@ -362,7 +362,7 @@ U kunt ook Just-in-time/alleen-voldoende toegang inschakelen met behulp van Azur
 
 - [Meer informatie over Azure AD-risico detectie](../../active-directory/identity-protection/overview-identity-protection.md)
 
-- [Actie groepen configureren voor aangepaste waarschuwingen en meldingen](../../azure-monitor/platform/action-groups.md)
+- [Actie groepen configureren voor aangepaste waarschuwingen en meldingen](../../azure-monitor/alerts/action-groups.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -572,7 +572,7 @@ Daarnaast kunt u het virtuele netwerk service-eindpunt beleid gebruiken om uitga
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer er wijzigingen worden aangebracht in de resources van het opslag account. U kunt ook Azure Storage logboek registratie inschakelen om bij te houden hoe elke aanvraag voor Azure Storage is geautoriseerd. De logboeken geven aan of een aanvraag anoniem is gemaakt door gebruik te maken van een OAuth 2,0-token, met behulp van gedeelde sleutel of door gebruik te maken van een Shared Access Signature (SAS). Daarnaast kunt u met behulp van Azure Monitor op anonieme toegang waarschuwen voor opslag accounts met behulp van anonieme verificatie.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../azure-monitor/alerts/alerts-activity-log.md)
 
 - [Azure Storage-analyselogboeken](./storage-analytics-logging.md)
 

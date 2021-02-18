@@ -9,12 +9,12 @@ ms.subservice: autoscale
 ms.date: 05/29/2018
 ms.reviewer: avverma
 ms.custom: avverma
-ms.openlocfilehash: ac42fe3265163a5a967524fe11063803c9ca91d3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4bb4084a7ee0d9d719a88c077fa8c63803aa6934
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87080587"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591364"
 ---
 # <a name="automatically-scale-a-virtual-machine-scale-set-in-the-azure-portal"></a>Schaal sets van virtuele machines automatisch schalen in de Azure Portal
 Wanneer u een schaalset maakt, definieert u het aantal VM-exemplaren dat u wilt uitvoeren. Wanneer de vraag van de toepassing verandert, kunt u het aantal VM-exemplaren automatisch vergroten of verkleinen. De mogelijkheid van automatisch schalen stelt u in staat om altijd te voldoen aan de vraag van klanten houden of om gedurende de levenscyclus van uw app te reageren op wijzigingen in de prestaties van de toepassing.
@@ -37,7 +37,7 @@ Als de vraag van uw toepassing toeneemt, neemt de belasting van de VM-exemplaren
 
 4. Voer een naam in voor de instellingen, zoals *automatisch schalen*, en selecteer vervolgens de optie om **een regel toe te voegen**.
 
-5. We gaan een regel maken waarmee het aantal VM-exemplaren in een schaalset wordt verhoogd wanneer de gemiddelde CPU-belasting gedurende een periode van tien minuten hoger is dan 70%. Wanneer de regel wordt geactiveerd, wordt het aantal VM-exemplaren verhoogd met 20%. In schaal sets met een klein aantal VM-exemplaren kunt u de **bewerking** zo instellen dat het *aantal wordt verhoogd door* en vervolgens *1* of *2* voor het *aantal exemplaren*opgeven. In schaal sets met een groot aantal VM-exemplaren is het mogelijk dat de verhoging van de VM-exemplaren van 10% of 20% meer geschikt is.
+5. We gaan een regel maken waarmee het aantal VM-exemplaren in een schaalset wordt verhoogd wanneer de gemiddelde CPU-belasting gedurende een periode van tien minuten hoger is dan 70%. Wanneer de regel wordt geactiveerd, wordt het aantal VM-exemplaren verhoogd met 20%. In schaal sets met een klein aantal VM-exemplaren kunt u de **bewerking** zo instellen dat het *aantal wordt verhoogd door* en vervolgens *1* of *2* voor het *aantal exemplaren* opgeven. In schaal sets met een groot aantal VM-exemplaren is het mogelijk dat de verhoging van de VM-exemplaren van 10% of 20% meer geschikt is.
 
     Geef de volgende instellingen op voor de regel:
     
@@ -45,7 +45,7 @@ Als de vraag van uw toepassing toeneemt, neemt de belasting van de VM-exemplaren
     |------------------------|---------------------------------------------------------------------------------------------------------------------|----------------|
     | *Tijd aggregatie*     | Hiermee definieert u hoe de verzamelde meetwaarden moeten worden samengevoegd voor analyse.                                                | Average        |
     | *Metrische naam*          | De prestatiemeetwaarde die u wilt bewaken en waarvoor u acties wilt toepassen op de schaalset.                                                   | Percentage CPU |
-    | *Tijdsintervalstatistieken* | Hiermee definieert u hoe de verzamelde metrische gegevens in elke tijd korrel moeten worden geaggregeerd voor analyse.                             | Average        |
+    | *Tijdsintervalstatistieken* | Hiermee definieert u hoe de verzamelde metrische gegevens in elke tijd korrel moeten worden geaggregeerd voor analyse.                             | Gemiddeld        |
     | *Operator*             | De operator die wordt gebruikt voor het vergelijken van de meetwaarden met de drempelwaarde.                                                     | Groter dan   |
     | *Drempelwaarde*            | Het percentage dat ervoor zorgt dat de regel voor automatisch schalen een actie activeert.                                                 | 70             |
     | *Duur*             | De hoeveelheid tijd waarna de meetwaarde en drempelwaarde met elkaar worden vergeleken. Bevat geen afkoele periode.                                   | 10 minuten     |
@@ -87,7 +87,7 @@ In het profiel voor automatisch schalen moet een minimum, maximum en standaard a
     |---------|---------|--------|
     | 2       | 10      | 2      |
 
-2. Selecteer **Opslaan**om uw regels voor automatisch schalen en instanties toe te passen.
+2. Selecteer **Opslaan** om uw regels voor automatisch schalen en instanties toe te passen.
 
 
 ## <a name="monitor-number-of-instances-in-a-scale-set"></a>Aantal exemplaren in een schaalset bewaken
@@ -111,9 +111,9 @@ In de vorige voor beelden is een schaalset automatisch in-of uitgeschaald met el
 4. Als u het aantal exemplaren wilt opschalen, voert u *10* in als het aantal exemplaren.
 5. Kies **specifieke dagen herhalen** voor het **plannings** type.
 6. Selecteer alle werk dagen, maandag tot en met vrijdag.
-7. Kies de juiste tijd zone en geef een **begin tijd** van *09:00*op.
+7. Kies de juiste tijd zone en geef een **begin tijd** van *09:00* op.
 8. Kies opnieuw om **een voor waarde voor de schaal toe te voegen** . Herhaal het proces voor het maken van een planning met de naam *schalen in de avond* die schaalt naar *3* instanties, herhaalt elke werkdag en begint om *18:00*.
-9. Selecteer **Opslaan**om regels voor automatisch schalen op basis van een schema toe te passen.
+9. Selecteer **Opslaan** om regels voor automatisch schalen op basis van een schema toe te passen.
 
     ![Regels voor automatisch schalen maken die volgens een schema worden geschaald](media/virtual-machine-scale-sets-autoscale-portal/schedule-autoscale.PNG)
 
@@ -125,4 +125,4 @@ In dit artikel hebt u geleerd hoe u regels voor automatisch schalen kunt gebruik
 
 Zie [Manage a virtual machine scale set with Azure PowerShell](./virtual-machine-scale-sets-manage-powershell.md) (Virtuele-machineschaalset beheren met Azure PowerShell) voor meer informatie over het beheren van uw VM-exemplaren.
 
-Als u wilt weten hoe u waarschuwingen kunt genereren wanneer uw regels voor automatisch schalen worden geactiveerd, raadpleegt u [Use autoscale actions to send email and webhook alert notifications in Azure Monitor](../azure-monitor/platform/autoscale-webhook-email.md) (Acties voor automatisch schalen gebruiken om waarschuwingen per e-mail of webhooks te verzenden in Azure Monitor). U kunt ook [controlelogboeken gebruiken om waarschuwingen per e-mail of webhooks te verzenden in Azure Monitor](../azure-monitor/platform/alerts-log-webhook.md).
+Als u wilt weten hoe u waarschuwingen kunt genereren wanneer uw regels voor automatisch schalen worden geactiveerd, raadpleegt u [Use autoscale actions to send email and webhook alert notifications in Azure Monitor](../azure-monitor/autoscale/autoscale-webhook-email.md) (Acties voor automatisch schalen gebruiken om waarschuwingen per e-mail of webhooks te verzenden in Azure Monitor). U kunt ook [controlelogboeken gebruiken om waarschuwingen per e-mail of webhooks te verzenden in Azure Monitor](../azure-monitor/alerts/alerts-log-webhook.md).

@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 9350b5dbcedd2773e94ef9d35cfe26f97fbd97bc
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 7c4dbeae0cfb76063fdca70b3ad1d264b59f9ace
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/17/2021
-ms.locfileid: "100571607"
+ms.locfileid: "100634240"
 ---
 # <a name="troubleshoot-common-azure-spring-cloud-issues"></a>Veelvoorkomende problemen met Azure lente-Cloud oplossen
 
@@ -212,7 +212,7 @@ Zoek naar het onderliggende knoop punt met de naam `systemEnvironment` .  Dit kn
 
 Ga naar **app-beheer** om te controleren of de statussen _van_ de toepassing _actief_ zijn.
 
-Controleer of weer _JMX_ is ingeschakeld in uw toepassings pakket. Deze functie kan worden ingeschakeld met de configuratie-eigenschap `spring.jmx.enabled=true` .  
+Controleer of _JMX_ is ingeschakeld in uw toepassings pakket. Deze functie kan worden ingeschakeld met de configuratie-eigenschap `spring.jmx.enabled=true` .  
 
 Controleer of de `spring-boot-actuator` afhankelijkheid is ingeschakeld in uw toepassings pakket en of deze correct wordt opgestart.
 

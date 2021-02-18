@@ -3,15 +3,15 @@ title: Azure Active Directory integratie voor Azure Red Hat open Shift
 description: Meer informatie over het maken van een Azure AD-beveiligings groep en-gebruiker voor het testen van apps op uw Microsoft Azure Red Hat open Shift-cluster.
 author: jimzim
 ms.author: jzim
-ms.service: container-service
+ms.service: azure-redhat-openshift
 ms.topic: conceptual
 ms.date: 05/13/2019
-ms.openlocfilehash: ee8613d0300a941f80577c98be106173d5d3ced1
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: f0bf28d61d4c9ad95a485fb4b60e370c16ace16c
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92220700"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633322"
 ---
 # <a name="azure-active-directory-integration-for-azure-red-hat-openshift"></a>Azure Active Directory integratie voor Azure Red Hat open Shift
 
@@ -29,7 +29,7 @@ Microsoft Azure Red Hat open Shift moet machtigingen hebben om namens uw cluster
 
 Zorg er in de [Azure Portal](https://portal.azure.com)voor dat uw Tenant wordt weer gegeven onder uw gebruikers naam in de rechter bovenhoek van de portal:
 
-![Scherm afbeelding van de portal met Tenant rechtsboven ](./media/howto-create-tenant/tenant-callout.png) als de verkeerde Tenant wordt weer gegeven, klikt u in de rechter bovenhoek op uw gebruikers naam, klikt u op **Active Directory**en selecteert u de juiste Tenant in de lijst **alle directory's** .
+![Scherm afbeelding van de portal met Tenant rechtsboven ](./media/howto-create-tenant/tenant-callout.png) als de verkeerde Tenant wordt weer gegeven, klikt u in de rechter bovenhoek op uw gebruikers naam, klikt u op **Active Directory** en selecteert u de juiste Tenant in de lijst **alle directory's** .
 
 Maak een nieuwe Azure Active Directory eigenaar van de gebruiker om u aan te melden bij uw Azure Red Hat open Shift-cluster.
 
@@ -85,7 +85,7 @@ Genereer een client geheim om uw app te verifiëren voor Azure Active Directory.
 
 1. Klik in het gedeelte **beheren** van de pagina app-registraties op **certificaten & geheimen**.
 2. Klik in het deel venster **certificaten & geheimen** op **+ Nieuw client geheim**.  Het deel venster **een geheim van client toevoegen** wordt weer gegeven.
-3. Geef een **Beschrijving**op.
+3. Geef een **Beschrijving** op.
 4. Stel **verloopt** op de gewenste duur, bijvoorbeeld **in 2 jaar**.
 5. Klik op **toevoegen** en de sleutel waarde wordt weer gegeven in de sectie **client geheimen** van de pagina.
 6. Kopieer de sleutel waarde. We verwijzen naar deze waarde, zoals `SECRET` in de zelf studie [een Azure Red Hat open Shift-cluster maken](tutorial-create-cluster.md) .
@@ -106,10 +106,10 @@ Zie [een app registreren bij het Azure Active Directory v 1.0-eind punt](../acti
 
 3. Vouw de **gebruiker** uit op de onderstaande lijst en schakel de machtiging **gebruiker. Read** in. Als **User. Read** standaard is ingeschakeld, moet u ervoor zorgen dat het de **Azure Active Directory Graph** permission **gebruiker. Read**.
 4. Schuif omhoog en selecteer **toepassings machtigingen**.
-5. Vouw **map** in de onderstaande lijst uit en Schakel **Directory. ReadAll**in.
+5. Vouw **map** in de onderstaande lijst uit en Schakel **Directory. ReadAll** in.
 6. Klik op **machtigingen toevoegen** om de wijzigingen te accepteren.
-7. In het paneel API-machtigingen moeten nu zowel *User. Read* als *Directory. ReadAll*worden weer gegeven. Let op de waarschuwing in de **beheerders vergunning vereist** kolom naast *Directory. ReadAll*.
-8. Als u de beheerder van het *Azure-abonnement*bent, klikt u op **toestemming van beheerder verlenen voor *abonnements naam* ** hieronder. Als u niet de beheerder van het *Azure-abonnement*bent, vraagt u de toestemming van de beheerder aan.
+7. In het paneel API-machtigingen moeten nu zowel *User. Read* als *Directory. ReadAll* worden weer gegeven. Let op de waarschuwing in de **beheerders vergunning vereist** kolom naast *Directory. ReadAll*.
+8. Als u de beheerder van het *Azure-abonnement* bent, klikt u op **toestemming van beheerder verlenen voor *abonnements naam*** hieronder. Als u niet de beheerder van het *Azure-abonnement* bent, vraagt u de toestemming van de beheerder aan.
 
 ![Scherm opname van het paneel API-machtigingen. Gebruiker. Read en Directory. ReadAll machtigingen toegevoegd, toestemming van de beheerder vereist voor Directory. ReadAll](./media/howto-aad-app-configuration/permissions-required.png)
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/12/2021
 ms.author: trbye
-ms.openlocfilehash: 078118ec793530720a49a19046854e5ea4b7f5c4
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 3f0d191157fbabeab2b6f08a9d0a9b3bf1a35250
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100388937"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591886"
 ---
 # <a name="evaluate-and-improve-custom-speech-accuracy"></a>Nauwkeurigheid van Custom Speech beoordelen en verbeteren
 
@@ -109,12 +109,13 @@ Audio met transcripten met menselijke labels biedt de grootste verbeteringen als
 
 Houd rekening met de volgende details:
 
-* Custom Speech kan alleen een Word-context vastleggen om vervangings fouten, geen invoeg-of verwijderings fouten, te verminderen.
+* Training met audio biedt de meeste voor delen als de audio ook moeilijk te begrijpen is voor mensen. In de meeste gevallen moet u training starten door alleen de bijbehorende tekst te gebruiken.
+* Als u een van de meest intensief gebruikte talen gebruikt, zoals Amerikaans-Engels, is er een goede kans dat er geen audio gegevens hoeven te worden getraind. Voor dergelijke talen bieden de basis modellen al zeer goede herkennings resultaten in de meeste scenario's; het is waarschijnlijk genoeg om te trainen met Verwante tekst.
+* Met Custom Speech kan alleen een Word-context worden vastgelegd om vervangings fouten, geen invoeg fouten of verwijderings foutes te verminderen.
 * Vermijd voor beelden die transcriptie-fouten bevatten, maar neem een verscheidenheid aan audio kwaliteit op.
 * Vermijd zinnen die geen verband houden met uw probleem domein. Niet-verwante zinnen kunnen schadelijk zijn voor uw model.
 * Wanneer de kwaliteit van transcripten verschilt, kunt u uitzonderlijk goede zinnen dupliceren (zoals uitstekende transcripties die sleutel zinnen bevatten) om het gewicht te verg Roten.
 * De transcripten worden door de spraak service automatisch gebruikt voor het verbeteren van de herkenning van domein-specifieke woorden en zinsdelen, alsof ze zijn toegevoegd als gerelateerde tekst.
-* Training met audio biedt de meeste voor delen als de audio ook moeilijk te begrijpen is voor mensen. In de meeste gevallen moet u training starten door alleen de bijbehorende tekst te gebruiken.
 * Het kan enkele dagen duren voordat een trainings bewerking is voltooid. Als u de snelheid van training wilt verbeteren, moet u uw abonnement op de spraak service maken in een [regio met de speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training.
 
 > [!NOTE]

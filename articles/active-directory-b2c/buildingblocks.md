@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 12/10/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 0170877995573bdfcb13ebc1c0387bed0893deac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a42c1d06051c283f0e911c4cd166884ddd060f45
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85201222"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633271"
 ---
 # <a name="buildingblocks"></a>BuildingBlocks
 
@@ -78,4 +78,4 @@ Het element **BuildingBlocks** bevat de volgende elementen die moeten worden opg
 
 - [Lokalisatie](localization.md) : biedt ondersteuning voor meerdere talen. Met de lokalisatie ondersteuning in beleids regels kunt u de lijst met ondersteunde talen in een beleid instellen en een standaard taal kiezen. Taalspecifieke teken reeksen en verzamelingen worden ook ondersteund.
 
-- [DisplayControls](display-controls.md) : definieert de besturings elementen die op een pagina moeten worden weer gegeven. Besturings elementen voor weer gave hebben speciale functionaliteit en werken met technische profielen voor validatie van de back-end. Besturings elementen voor weer gave zijn momenteel beschikbaar als **Preview-versie**.
+- [DisplayControls](display-controls.md) : definieert de besturings elementen die op een pagina moeten worden weer gegeven. Besturings elementen voor weer gave hebben speciale functionaliteit en werken met technische profielen voor validatie van de back-end. 

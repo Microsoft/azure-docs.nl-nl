@@ -9,12 +9,12 @@ ms.date: 10/02/2020
 ms.author: normesta
 ms.subservice: logs
 ms.custom: subject-monitoring
-ms.openlocfilehash: 6dd53358b67eef481948d3349afc07086ea26fcd
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: b37586f66106e33b2a8dad034a6e7c131484be73
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99584903"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571626"
 ---
 # <a name="azure-blob-storage-monitoring-data-reference"></a>Naslag informatie voor Azure Blob Storage-bewakings gegevens
 
@@ -36,7 +36,7 @@ Azure Storage biedt de volgende metrische gegevens over capaciteit in Azure Moni
 
 #### <a name="blob-storage"></a>Blob Storage
 
-In deze tabel worden [metrische gegevens voor Blob-opslag](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsblobservices)weer gegeven.
+In deze tabel worden [metrische gegevens voor Blob-opslag](../../azure-monitor/essentials/metrics-supported.md#microsoftstoragestorageaccountsblobservices)weer gegeven.
 
 | Metrisch | Beschrijving |
 | ------------------- | ----------------- |
@@ -176,4 +176,4 @@ De volgende tabel geeft een lijst van de eigenschappen voor Azure Storage bron L
 ## <a name="see-also"></a>Zie ook
 
 - Zie [bewaking Azure Storage](monitor-blob-storage.md) voor een beschrijving van de bewakings Azure Storage.
-- Zie [Azure-resources bewaken met Azure monitor](../../azure-monitor/insights/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.
+- Zie [Azure-resources bewaken met Azure monitor](../../azure-monitor/essentials/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.

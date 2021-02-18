@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/13/2021
 ms.author: tamram
 ms.custom: security-recommendations
-ms.openlocfilehash: 05fdf681b7cdc3b8145a30041e261eece420e560
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 5653b59ed29495334079e932fb305fd4ba10475c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878084"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592356"
 ---
 # <a name="security-recommendations-for-blob-storage"></a>Beveiligings aanbevelingen voor Blob Storage
 
@@ -71,7 +71,7 @@ Azure Security Center regel matig de beveiligings status van uw Azure-resources 
 | Aanbeveling | Opmerkingen | Beveiligingscentrum |
 |-|----|--|
 | Bijhouden hoe aanvragen worden geautoriseerd | Schakel Azure Storage logboek registratie in om bij te houden hoe elke aanvraag voor Azure Storage is geautoriseerd. De logboeken geven aan of een aanvraag anoniem is gemaakt door gebruik te maken van een OAuth 2,0-token, met behulp van gedeelde sleutel of door gebruik te maken van een Shared Access Signature (SAS). Zie [Azure Blob Storage bewaken met Azure monitor](monitor-blob-storage.md) of [Azure Storage Analytics-logboek registratie met klassieke bewaking](../common/storage-analytics-logging.md)voor meer informatie. | - |
-| Waarschuwingen instellen in Azure Monitor | Logboek waarschuwingen configureren om bronnen logboeken te evalueren met een ingestelde frequentie en een waarschuwing te activeren op basis van de resultaten. Zie [waarschuwingen in Logboeken vastleggen in azure monitor](../../azure-monitor/platform/alerts-unified-log.md)voor meer informatie. | - |
+| Waarschuwingen instellen in Azure Monitor | Logboek waarschuwingen configureren om bronnen logboeken te evalueren met een ingestelde frequentie en een waarschuwing te activeren op basis van de resultaten. Zie [waarschuwingen in Logboeken vastleggen in azure monitor](../../azure-monitor/alerts/alerts-unified-log.md)voor meer informatie. | - |
 
 ## <a name="next-steps"></a>Volgende stappen
 

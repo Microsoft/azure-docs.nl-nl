@@ -4,12 +4,12 @@ description: Bewaking van toepassings prestaties voor Azure app Services. Grafie
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.custom: devx-track-js, devx-track-dotnet
-ms.openlocfilehash: 55682215a990643111d5813db437b1f1e4612868
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 74b39219b3b18c8de0214367d141085f6dc5f674
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100547227"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573996"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Azure App Service-prestaties bewaken
 
@@ -434,8 +434,8 @@ De duur van de `serverresponsetime` berekende Application Insights is niet noodz
 ## <a name="next-steps"></a>Volgende stappen
 * [Voer de profiler uit in uw live app](./profiler.md).
 * [Azure Functions](https://github.com/christopheranderson/azure-functions-app-insights-sample): Azure Functions bewaken met Application Insights
-* [Schakel diagnostische Azure-gegevens in](../platform/diagnostics-extension-to-application-insights.md) om te verzenden naar Application Insights.
-* [Controleer metrische gegevens voor servicestatus](../platform/data-platform.md) om ervoor te zorgen dat de service beschikbaar is en reageert.
-* [Ontvang waarschuwingsmeldingen](../platform/alerts-overview.md) wanneer er operationele gebeurtenissen plaatsvinden of metrische gegevens een drempelwaarde overschrijden.
+* [Schakel diagnostische Azure-gegevens in](../agents/diagnostics-extension-to-application-insights.md) om te verzenden naar Application Insights.
+* [Controleer metrische gegevens voor servicestatus](../data-platform.md) om ervoor te zorgen dat de service beschikbaar is en reageert.
+* [Ontvang waarschuwingsmeldingen](../alerts/alerts-overview.md) wanneer er operationele gebeurtenissen plaatsvinden of metrische gegevens een drempelwaarde overschrijden.
 * Gebruik [Application Insights voor JavaScript-apps en -webpagina's](javascript.md) om clienttelemetrie op te halen uit de browsers die een webpagina bezoeken.
 * [Stel webtests voor beschikbaarheid in](monitor-web-app-availability.md) om te worden gewaarschuwd als uw site niet actief is.

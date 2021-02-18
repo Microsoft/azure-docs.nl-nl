@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: wiassaf, sstein
 ms.date: 06/12/2020
-ms.openlocfilehash: 0f3dce3ca79b12b05325a1d8284dd3304653d5fa
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 61033e3eb8264c1e462faac3e4553a855a1d06c7
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96488864"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592081"
 ---
 # <a name="intelligent-insights-using-ai-to-monitor-and-troubleshoot-database-performance-preview"></a>Intelligent Insights met AI gebruiken om database prestaties te controleren en op te lossen (preview-versie)
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -107,13 +107,13 @@ In het volgende voor beeld ziet u een Intelligent Insights die wordt weer gegeve
 
 ### <a name="set-up-with-event-hubs"></a>Instellen met Event Hubs
 
-Als u Intelligent Insights met Event Hubs wilt gebruiken, configureert u Intelligent Insights logboek gegevens die moeten worden gestreamd naar Event Hubs, raadpleegt u de [logboek registratie voor metrieke en diagnostische](metrics-diagnostic-telemetry-logging-streaming-export-configure.md) informatie en [registreert u logboeken van Azure diagnostics naar Event hubs](../../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs).
+Als u Intelligent Insights met Event Hubs wilt gebruiken, configureert u Intelligent Insights logboek gegevens die moeten worden gestreamd naar Event Hubs, raadpleegt u de [logboek registratie voor metrieke en diagnostische](metrics-diagnostic-telemetry-logging-streaming-export-configure.md) informatie en [registreert u logboeken van Azure diagnostics naar Event hubs](../../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs).
 
 Zie [wat u kunt doen met metrische gegevens en Diagnostische logboeken in Event hubs](metrics-diagnostic-telemetry-logging-streaming-export-configure.md#what-to-do-with-metrics-and-resource-logs-in-event-hubs)voor informatie over het gebruik van Event hubs om aangepaste bewaking en waarschuwingen in te stellen.
 
 ### <a name="set-up-with-azure-storage"></a>Instellen met Azure Storage
 
-Als u Intelligent Insights met opslag wilt gebruiken, moet u Intelligent Insights logboek gegevens configureren om te worden gestreamd naar opslag [Azure Storage](metrics-diagnostic-telemetry-logging-streaming-export-configure.md#stream-into-azure-storage). [Metrics and diagnostics logging](metrics-diagnostic-telemetry-logging-streaming-export-configure.md)
+Als u Intelligent Insights met opslag wilt gebruiken, moet u Intelligent Insights logboek gegevens configureren om te worden gestreamd naar opslag [Azure Storage](metrics-diagnostic-telemetry-logging-streaming-export-configure.md#stream-into-azure-storage). [](metrics-diagnostic-telemetry-logging-streaming-export-configure.md)
 
 ### <a name="custom-integrations-of-intelligent-insights-log"></a>Aangepaste integraties van Intelligent Insights logboek
 

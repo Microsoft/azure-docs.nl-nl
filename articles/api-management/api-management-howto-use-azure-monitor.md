@@ -8,12 +8,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 10/14/2020
 ms.author: apimpm
-ms.openlocfilehash: 5e5c59d611cb7f4b5333b9919488e6fc083611cd
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
-ms.translationtype: HT
+ms.openlocfilehash: 1cb902c4b59193c46dbeca47bb355f0695a0f2c7
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96779240"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572799"
 ---
 # <a name="tutorial-monitor-published-apis"></a>Zelfstudie: Gepubliceerde API's bewaken
 
@@ -39,7 +39,7 @@ U kunt ook de ingebouwde [analytische gegevens](howto-use-analytics.md) van API 
 
 ## <a name="view-metrics-of-your-apis"></a>Metrische gegevens van uw API's weergeven
 
-API Management geeft elke minuut [metrische gegevens](../azure-monitor/platform/data-platform-metrics.md) vrij, waardoor u in vrijwel realtime inzicht hebt in de status van uw API's. Hierna staan de twee meestgebruikte metrische gegevens. Zie [ondersteunde metrische gegevens](../azure-monitor/platform/metrics-supported.md#microsoftapimanagementservice) voor een lijst met alle beschikbare metrische gegevens.
+API Management geeft elke minuut [metrische gegevens](../azure-monitor/essentials/data-platform-metrics.md) vrij, waardoor u in vrijwel realtime inzicht hebt in de status van uw API's. Hierna staan de twee meestgebruikte metrische gegevens. Zie [ondersteunde metrische gegevens](../azure-monitor/essentials/metrics-supported.md#microsoftapimanagementservice) voor een lijst met alle beschikbare metrische gegevens.
 
 * **Capaciteit**: hiermee kunt u beslissingen nemen over het uitvoeren van een up- of downgrade van uw APIM-services. Dit gegeven komt elke minuut beschikbaar en is een weerspiegeling van de capaciteit van de gateway ten tijde van de export. Het gegevensbereik loopt van 0 tot 100 en wordt berekend op basis van gateway-resources als CPU- en geheugengebruik.
 * **Aanvragen**: helpt u bij het analyseren van API-verkeer via uw API Management-services. De meetwaarde wordt iedere minuut verzonden en rapporteert het aantal gateway-aanvragen met dimensies, inclusief responscodes, locatie, hostnaam en fouten. 
@@ -62,7 +62,7 @@ Metrische gegevens openen:
 
 ## <a name="set-up-an-alert-rule"></a>Een waarschuwingsregel instellen 
 
-U kunt [waarschuwingen](../azure-monitor/platform/alerts-metric-overview.md) ontvangt op basis van metrische gegevens en activiteitenlogboeken. Met Azure Monitor kunt u een [waarschuwing configureren](../azure-monitor/platform/alerts-metric.md) om het volgende te doen bij activering:
+U kunt [waarschuwingen](../azure-monitor/alerts/alerts-metric-overview.md) ontvangt op basis van metrische gegevens en activiteitenlogboeken. Met Azure Monitor kunt u een [waarschuwing configureren](../azure-monitor/alerts/alerts-metric.md) om het volgende te doen bij activering:
 
 * Een e-mailmelding verzenden
 * Een webhook aanroepen
@@ -140,7 +140,7 @@ Ga als volgt te werk om resourcelogboeken te configureren:
 
    U kunt resourcelogboeken samen met metrische gegevens naar een opslagaccount archiveren, ze naar een Event Hub streamen of ze naar een Log Analytics-werkruimte verzenden. 
 
-Raadpleeg [Diagnostische instellingen maken om logboeken en metrische gegevens van het platform te verzenden naar verschillende bestemmingen](../azure-monitor/platform/diagnostic-settings.md) voor meer informatie.
+Raadpleeg [Diagnostische instellingen maken om logboeken en metrische gegevens van het platform te verzenden naar verschillende bestemmingen](../azure-monitor/essentials/diagnostic-settings.md) voor meer informatie.
 
 ## <a name="view-diagnostic-data-in-azure-monitor"></a>Diagnostische gegevens weergeven in Azure Monitor
 
@@ -151,7 +151,7 @@ Als u het verzamelen van GatewayLogs of metrische gegevens in een Log Analytics-
 
     :::image type="content" source="media/api-management-howto-use-azure-monitor/logs-menu-item.png" alt-text="Schermopname van het item Logboeken in het menu Bewaking":::
 
-Voer query's uit om de gegevens weer te geven. Er worden verschillende [voorbeeldquery's](../azure-monitor/log-query/example-queries.md) gegeven of u kunt uw eigen query's uitvoeren. Met de volgende query wordt bijvoorbeeld de meest recente 24 uur aan gegevens opgehaald uit de GatewayLogs-tabel:
+Voer query's uit om de gegevens weer te geven. Er worden verschillende [voorbeeldquery's](../azure-monitor/logs/example-queries.md) gegeven of u kunt uw eigen query's uitvoeren. Met de volgende query wordt bijvoorbeeld de meest recente 24 uur aan gegevens opgehaald uit de GatewayLogs-tabel:
 
 ```kusto
 ApiManagementGatewayLogs
@@ -160,9 +160,9 @@ ApiManagementGatewayLogs
 
 Raadpleeg voor meer informatie over het gebruik van resourcelogboeken voor API Management:
 
-* [Aan de slag met Azure Monitor Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md) of probeer de [Log Analytics-testomgeving](https://portal.loganalytics.io/demo).
+* [Aan de slag met Azure Monitor Log Analytics](../azure-monitor/logs/log-analytics-tutorial.md) of probeer de [Log Analytics-testomgeving](https://portal.loganalytics.io/demo).
 
-* [Overzicht van logboekquery’s in Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
+* [Overzicht van logboekquery’s in Azure Monitor](../azure-monitor/logs/log-query-overview.md).
 
 De volgende JSON geeft een voorbeeldvermelding in GatewayLogs aan voor een succesvolle API-aanvraag. Raadpleeg de [naslaginformatie over schema's](gateway-log-schema-reference.md) voor meer informatie. 
 

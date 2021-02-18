@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.author: ilahat
 author: ilahat
 ms.date: 11/01/2019
-ms.openlocfilehash: cec17b98daa8eca31cda076921288e2838960511
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 2a2e9d429d494c35c49a5b0a3e10b291fd8f24a6
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96434529"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633934"
 ---
 # <a name="azure-managed-applications-with-notifications"></a>Door Azure beheerde toepassingen met meldingen
 
@@ -86,10 +86,10 @@ POST https://{your_endpoint_URI}/resource?{optional_parameter}={optional_paramet
 
 {
     "eventType": "PUT",
-    "applicationId": "subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applications/<applicationName>",
+    "applicationId": "/subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applications/<applicationName>",
     "eventTime": "2019-08-14T19:20:08.1707163Z",
     "provisioningState": "Succeeded",
-    "applicationDefinitionId": "subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applicationDefinitions/<appDefName>"    
+    "applicationDefinitionId": "/subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applicationDefinitions/<appDefName>"    
 }
 
 ```
@@ -104,7 +104,7 @@ POST https://{your_endpoint_URI}/resource?{optional_parameter}={optional_paramet
     "applicationId": "subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applications/<applicationName>",
     "eventTime": "2019-08-14T19:20:08.1707163Z",
     "provisioningState": "Failed",
-    "applicationDefinitionId": "subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applicationDefinitions/<appDefName>",
+    "applicationDefinitionId": "/subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applicationDefinitions/<appDefName>",
     "error": {
         "code": "ErrorCode",
         "message": "error message",
@@ -127,7 +127,7 @@ POST https://{your_endpoint_URI}/resource?{optional_parameter}={optional_paramet
 
 {
     "eventType": "PUT",
-    "applicationId": "subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applications/<applicationName>",
+    "applicationId": "/subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applications/<applicationName>",
     "eventTime": "2019-08-14T19:20:08.1707163Z",
     "provisioningState": "Succeeded",
     "billingDetails": {
@@ -150,7 +150,7 @@ POST https://{your_endpoint_URI}/resource?{optional_parameter}={optional_paramet
 
 {
     "eventType": "PUT",
-    "applicationId": "subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applications/<applicationName>",
+    "applicationId": "/subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applications/<applicationName>",
     "eventTime": "2019-08-14T19:20:08.1707163Z",
     "provisioningState": "Failed",
     "billingDetails": {
@@ -178,7 +178,7 @@ POST https://{your_endpoint_URI}/resource?{optional_parameter}={optional_paramet
 
 Parameter | Beschrijving
 ---|---
-eventType | Het type gebeurtenis dat de melding heeft geactiveerd. (Bijvoorbeeld PUT, PATCH, DELETE)
+Type | Het type gebeurtenis dat de melding heeft geactiveerd. (Bijvoorbeeld PUT, PATCH, DELETE)
 applicationId | De volledig gekwalificeerde resource-id van de beheerde toepassing waarvoor de melding is geactiveerd.
 eventTime | De tijds tempel van de gebeurtenis die de melding heeft geactiveerd. (Datum en tijd in UTC ISO 8601-indeling.)
 provisioningState | De inrichtings status van het exemplaar van de beheerde toepassing. (Bijvoorbeeld geslaagd, mislukt, verwijderen, verwijderd.)

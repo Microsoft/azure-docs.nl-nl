@@ -3,12 +3,12 @@ title: Bewaking van web-app-prestaties-Azure-toepassing Insights
 description: Hoe Application Insights past in de devOps-cyclus
 ms.topic: conceptual
 ms.date: 12/21/2018
-ms.openlocfilehash: d2c3326c3f655d4bdfeaa42ac272658b251b7f82
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bc897cc0259894964e0b6164219b1e5459e824b6
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87324485"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579563"
 ---
 # <a name="deep-diagnostics-for-web-apps-and-services-with-application-insights"></a>Diepe diagnostische gegevens voor web-apps en services met Application Insights
 ## <a name="why-do-i-need-application-insights"></a>Waarom heb ik Application Insights nodig?
@@ -110,7 +110,7 @@ Toepassings overzicht detecteert automatisch de topologie van uw toepassing, waa
 ![Toepassingskaart](./media/devops/0050.png)
 
 ## <a name="application-insights-analytics"></a>Application Insights Analytics
-Met [Analytics](../log-query/log-query-overview.md)kunt u wille keurige query's schrijven in een krachtige, op SQL gebaseerde taal.  Het is eenvoudig om problemen met de hele app-stack op te lossen omdat verschillende perspectieven aansluiten en u de juiste vragen kunt stellen om service prestaties te correleren met metrische gegevens van uw bedrijf en de ervaring van de klant. 
+Met [Analytics](../logs/log-query-overview.md)kunt u wille keurige query's schrijven in een krachtige, op SQL gebaseerde taal.  Het is eenvoudig om problemen met de hele app-stack op te lossen omdat verschillende perspectieven aansluiten en u de juiste vragen kunt stellen om service prestaties te correleren met metrische gegevens van uw bedrijf en de ervaring van de klant. 
 
 U kunt een query uitvoeren voor al uw telemetrie-exemplaar en metrische gegevens die zijn opgeslagen in de portal. De taal bevat filter, samen voegen, aggregatie en andere bewerkingen. U kunt velden berekenen en statistische analyses uitvoeren. Er zijn zowel tabellaire als grafische visualisaties.
 

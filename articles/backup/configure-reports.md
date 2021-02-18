@@ -3,12 +3,12 @@ title: Azure Backup-rapporten configureren
 description: Rapporten voor Azure Backup configureren en weer geven met behulp van Log Analytics en Azure-werkmappen
 ms.topic: conceptual
 ms.date: 02/10/2020
-ms.openlocfilehash: 39d1aa17c5e92eccd34013738937e49890109561
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 78ab22bece54caa15e23021e594eaa0742505f79
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897272"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591972"
 ---
 # <a name="configure-azure-backup-reports-preview"></a>Azure Backup rapporten configureren (preview-versie)
 
@@ -18,7 +18,7 @@ Een veelvoorkomende vereiste voor back-upbeheerders is het verkrijgen van inzich
 - Controle van back-ups en herstel bewerkingen.
 - De belangrijkste trends op verschillende niveaus nauw keurig te identificeren.
 
-Momenteel biedt Azure Backup een rapportage oplossing die gebruikmaakt van [Azure monitor-logboeken](../azure-monitor/log-query/log-analytics-tutorial.md) en [Azure-werkmappen](../azure-monitor/platform/workbooks-overview.md). Met deze resources krijgt u inzicht in uw back-ups over uw hele back-ups. In dit artikel wordt uitgelegd hoe u Azure Backup-rapporten configureert en weergeeft.
+Momenteel biedt Azure Backup een rapportage oplossing die gebruikmaakt van [Azure monitor-logboeken](../azure-monitor/logs/log-analytics-tutorial.md) en [Azure-werkmappen](../azure-monitor/visualize/workbooks-overview.md). Met deze resources krijgt u inzicht in uw back-ups over uw hele back-ups. In dit artikel wordt uitgelegd hoe u Azure Backup-rapporten configureert en weergeeft.
 
 ## <a name="supported-scenarios"></a>Ondersteunde scenario's
 
@@ -41,9 +41,9 @@ Volg deze stappen om de rapporten te gaan gebruiken.
 
 Stel een of meer Log Analytics-werk ruimten in om de gegevens van uw back-uprapport op te slaan. De locatie en het abonnement waar deze Log Analytics werk ruimte kunnen worden gemaakt, zijn onafhankelijk van de locatie en het abonnement waar uw kluizen bestaan.
 
-Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/learn/quick-create-workspace.md)om een log Analytics-werk ruimte in te stellen.
+Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/logs/quick-create-workspace.md)om een log Analytics-werk ruimte in te stellen.
 
-De gegevens in een Log Analytics-werk ruimte worden standaard 30 dagen bewaard. Als u gegevens voor een langere periode wilt zien, wijzigt u de Bewaar periode van de Log Analytics werk ruimte. Als u de Bewaar periode wilt wijzigen, raadpleegt u [gebruik en kosten beheren met Azure monitor-logboeken](../azure-monitor/platform/manage-cost-storage.md).
+De gegevens in een Log Analytics-werk ruimte worden standaard 30 dagen bewaard. Als u gegevens voor een langere periode wilt zien, wijzigt u de Bewaar periode van de Log Analytics werk ruimte. Als u de Bewaar periode wilt wijzigen, raadpleegt u [gebruik en kosten beheren met Azure monitor-logboeken](../azure-monitor/logs/manage-cost-storage.md).
 
 ### <a name="2-configure-diagnostics-settings-for-your-vaults"></a>2. Configureer de diagnostische instellingen voor uw kluizen
 

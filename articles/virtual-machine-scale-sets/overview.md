@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 06/30/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: dff83159511c6e8a08e8f212c01244e923ad1f5b
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
-ms.translationtype: HT
+ms.openlocfilehash: 4f741c1317f70079755b61f7ad94a415cd039865
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94376941"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578880"
 ---
 # <a name="what-are-virtual-machine-scale-sets"></a>Wat zijn schaalsets voor virtuele machines?
 Met behulp van schaalsets voor virtuele Azure-machines kunt u een groep VM's met gelijke taakverdeling maken en beheren. Het aantal VM-exemplaren kan automatisch toenemen of afnemen in reactie op vraag of een ingesteld schema. Schaalsets bieden een hoge beschikbaarheid voor uw toepassingen. Een ander voordeel is dat u vanaf één plek een groot aantal virtuele machines kunt beheren, configureren en bijwerken. Met schaalsets voor virtuele machines kunt u grootschalige services bouwen voor zaken zoals rekenkracht, big data en containerworkloads.
@@ -57,7 +57,7 @@ Er zijn geen extra kosten verbonden aan het gebruik van schaalsets. U betaalt al
 
 ## <a name="how-to-monitor-your-scale-sets"></a>Uw schaalsets bewaken
 
-Gebruik [Azure Monitor voor VM's](../azure-monitor/insights/vminsights-overview.md). Deze tool heeft een eenvoudig voorbereidingsproces en automatiseert de verzameling van belangrijke prestatiemeteritems voor CPU, geheugen, schijf en netwerk uit de virtuele machines in uw schaalset. De tool bevat ook extra bewakingsmogelijkheden en vooraf gedefinieerde visualisaties waarmee u zich kunt concentreren op de beschikbaarheid en prestaties van uw schaalsets.
+Gebruik [Azure Monitor voor VM's](../azure-monitor/vm/vminsights-overview.md). Deze tool heeft een eenvoudig voorbereidingsproces en automatiseert de verzameling van belangrijke prestatiemeteritems voor CPU, geheugen, schijf en netwerk uit de virtuele machines in uw schaalset. De tool bevat ook extra bewakingsmogelijkheden en vooraf gedefinieerde visualisaties waarmee u zich kunt concentreren op de beschikbaarheid en prestaties van uw schaalsets.
 
 Schakel bewaking in voor uw [toepassing voor de schaalset voor virtuele machines](../azure-monitor/app/azure-vm-vmss-apps.md) met Application Insights om gedetailleerde informatie te verzamelen over uw toepassing, waaronder paginaweergaven, toepassingsaanvragen en uitzonderingen. Controleer de beschikbaarheid van uw toepassing door een [beschikbaarheidstest ](../azure-monitor/app/monitor-web-app-availability.md) te configureren om gebruikersverkeer te simuleren.
 

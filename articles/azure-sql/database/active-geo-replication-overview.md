@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 08/27/2020
-ms.openlocfilehash: c7a24dbe93bf0096e327804be07acc3f67d2f03b
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 3a678f6280b5f2d0fd372e75bfbeb6eb2e9b1577
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94985753"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100634291"
 ---
 # <a name="creating-and-using-active-geo-replication---azure-sql-database"></a>Actieve geo-replicatie-Azure SQL Database maken en gebruiken
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -25,6 +25,9 @@ Actieve geo-replicatie is een Azure SQL Database functie waarmee u lees bare sec
 
 > [!NOTE]
 > Actieve geo-replicatie wordt niet ondersteund door Azure SQL Managed instance. Gebruik [groepen voor automatische failover](auto-failover-group-overview.md)voor geografische failover van exemplaren van SQL Managed instance.
+
+> [!NOTE]
+> Zie [SQL database migreren met behulp van actieve geo-replicatie](../../germany/germany-migration-databases.md#migrate-sql-database-using-active-geo-replication)om SQL-data bases te migreren vanuit Azure Duitsland met behulp van actieve geo-replicatie.
 
 Actieve geo-replicatie is ontworpen als een oplossing voor bedrijfs continuïteit waarmee de toepassing snel herstel van afzonderlijke data bases kan uitvoeren in het geval van een regionale storing of een grote schaal onderbreking. Als geo-replicatie is ingeschakeld, kan de toepassing failover initiëren naar een secundaire data base in een andere Azure-regio. Maxi maal vier secundaire, worden in dezelfde of verschillende regio's ondersteund, en de secundairen kunnen ook worden gebruikt voor alleen-lezen toegang query's. De failover moet hand matig worden geïnitieerd door de toepassing of de gebruiker. Na een failover heeft de nieuwe primaire een ander eind punt voor de verbinding.
 
@@ -292,6 +295,9 @@ Zoals eerder besproken, kan actieve geo-replicatie ook programmatisch worden beh
 | [Replicatie koppelingen-lijst op Data Base](/rest/api/sql/replicationlinks/listbydatabase) | Hiermee worden alle replicatie koppelingen voor een bepaalde data base in een geo-replicatie relatie opgehaald. Hiermee wordt de informatie opgehaald die zichtbaar is in de catalogus weergave van sys.geo_replication_links. |
 | [Replicatie koppeling verwijderen](/rest/api/sql/replicationlinks/delete) | Hiermee verwijdert u een database replicatie koppeling. Kan niet worden uitgevoerd tijdens failover. |
 |  | |
+
+
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

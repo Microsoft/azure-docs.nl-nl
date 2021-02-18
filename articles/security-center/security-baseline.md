@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 0e4c749d875ab22f8cdf26adf6050e1fa0476b28
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 195c264eca0c40712816495a09e1387fcaa2c910
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202246"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572938"
 ---
 # <a name="azure-security-baseline-for-security-center"></a>Azure-beveiligings basislijn voor Security Center
 
@@ -30,7 +30,7 @@ Deze beveiligings basislijn is van toepassing op de richt lijnen van [Azure Secu
 
 - [Bestands netwerk verkeer met een netwerk beveiligings groep](../virtual-network/tutorial-filter-network-traffic.md)
 
-- [Firewall vereisten voor het gebruik van de Log Analytics-agent](../azure-monitor/platform/log-analytics-agent.md#firewall-requirements)
+- [Firewall vereisten voor het gebruik van de Log Analytics-agent](../azure-monitor/agents/log-analytics-agent.md#firewall-requirements)
 
 - [Persoonlijke Azure-koppeling](../private-link/private-link-overview.md) 
 
@@ -46,7 +46,7 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 - [Gegevensverzameling in Azure Security Center](security-center-enable-data-collection.md)
 
-- [Firewall vereisten voor het gebruik van de Log Analytics-agent](../azure-monitor/platform/log-analytics-agent.md#firewall-requirements)
+- [Firewall vereisten voor het gebruik van de Log Analytics-agent](../azure-monitor/agents/log-analytics-agent.md#firewall-requirements)
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md) 
 
@@ -70,7 +70,7 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 - [Gegevensverzameling in Azure Security Center](security-center-enable-data-collection.md)
 
-- [Firewall vereisten voor het gebruik van de Log Analytics-agent](../azure-monitor/platform/log-analytics-agent.md#firewall-requirements)
+- [Firewall vereisten voor het gebruik van de Log Analytics-agent](../azure-monitor/agents/log-analytics-agent.md#firewall-requirements)
 
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md) 
 
@@ -86,9 +86,9 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 **Hulp**: Azure-activiteiten logboek gebruiken om resource configuraties te bewaken en wijzigingen te detecteren voor netwerk bronnen die betrekking hebben op Azure Security Center. Maak waarschuwingen in Azure Monitor om u te waarschuwen wanneer wijzigingen aan kritieke resources plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log) 
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log) 
 
-- [Waarschuwingen maken in Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -112,9 +112,9 @@ U kunt ook gegevens verzenden die zijn geproduceerd door Security Center naar Az
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md) 
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Interne host-logboeken van de virtuele machine van Azure verzamelen met Azure Monitor](../azure-monitor/learn/quick-collect-azurevm.md)
+- [Interne host-logboeken van de virtuele machine van Azure verzamelen met Azure Monitor](../azure-monitor/vm/quick-collect-azurevm.md)
 
 - [Aan de slag met Azure Monitor en integratie van SIEM van derden](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
@@ -126,11 +126,11 @@ U kunt ook gegevens verzenden die zijn geproduceerd door Security Center naar Az
 
 **Hulp**: Azure monitor activiteiten logboeken zijn automatisch beschikbaar. deze logboeken bevatten alle schrijf bewerkingen voor uw resource, zoals Azure Security Center, inclusief welke bewerkingen zijn uitgevoerd, wie de bewerking heeft gestart en wanneer deze zich hebben voorgedaan. Verzend uw Azure-activiteiten logboeken naar een Log Analytics-werk ruimte voor consolidatie van het logboek en een verhoogde Bewaar periode.
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/platform/platform-logs-overview.md)
+- [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/essentials/platform-logs-overview.md)
 
-- [Activiteiten logboeken verzenden naar een Log Analytics-werk ruimte](../azure-monitor/platform/activity-log.md#send-to-log-analytics-workspace)
+- [Activiteiten logboeken verzenden naar een Log Analytics-werk ruimte](../azure-monitor/essentials/activity-log.md#send-to-log-analytics-workspace)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -140,7 +140,7 @@ U kunt ook gegevens verzenden die zijn geproduceerd door Security Center naar Az
 
 **Richt lijnen**: stel in azure monitor uw Bewaar periode voor log Analytics werkruimte in volgens de nalevings voorschriften van uw organisatie. Gebruik Azure Storage accounts voor lange termijn-en archiverings opslag. 
 
-- [De Bewaar periode voor gegevens wijzigen in Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period) 
+- [De Bewaar periode voor gegevens wijzigen in Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period) 
 
 - [Bewaar beleid configureren voor logboeken van Azure Storage-account](../storage/common/storage-monitor-storage-account.md#configure-logging)
 
@@ -156,9 +156,9 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md) 
 
-- [Aan de slag met Log Analytics query's](../azure-monitor/log-query/log-analytics-tutorial.md) 
+- [Aan de slag met Log Analytics query's](../azure-monitor/logs/log-analytics-tutorial.md) 
 
-- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -174,11 +174,11 @@ U kunt ook gegevens die zijn gerelateerd aan en worden geproduceerd door Azure S
 
 - [Waarschuwingen beheren in Azure Security Center](security-center-managing-and-responding-alerts.md) 
 
-- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/learn/tutorial-response.md)
+- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 - [Geautomatiseerde bedreigingsreacties instellen in Azure Sentinel](../sentinel/tutorial-respond-threats-playbook.md)
 
-- [Waarschuwingen registreren in Azure Monitor](../azure-monitor/platform/alerts-unified-log.md)
+- [Waarschuwingen registreren in Azure Monitor](../azure-monitor/alerts/alerts-unified-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -368,7 +368,7 @@ Standaard worden Azure Security Center gegevens opgeslagen in de Security Center
 
 Volg Azure Security Center aanbevelingen voor het versleutelen van de rest en de versleuteling in de door Voer, indien van toepassing. 
 
-- [Gegevens veilig naar Log Analytics verzenden](../azure-monitor/platform/data-security.md#sending-data-securely-using-tls-12)
+- [Gegevens veilig naar Log Analytics verzenden](../azure-monitor/logs/data-security.md#sending-data-securely-using-tls-12)
 
 - [Meer informatie over versleuteling in transit met Azure](../security/fundamentals/encryption-overview.md#encryption-of-data-in-transit)
 
@@ -394,7 +394,7 @@ Volg Azure Security Center aanbevelingen voor het versleutelen van de rest en de
 
 **Hulp**: Azure Security Center gebruikt een geconfigureerde log Analytics-werk ruimte om de gegevens, waarschuwingen en aanbevelingen op te slaan die worden gegenereerd. Configureer een door de klant beheerde sleutel (CMK) voor de werk ruimte die u hebt geconfigureerd voor het verzamelen van Security Center gegevens. CMK maakt het mogelijk om alle gegevens die worden opgeslagen of verzonden naar de werk ruimte te versleutelen met een Azure Key Vault sleutel die u hebt gemaakt en waarvan u de eigenaar bent. 
 
-- [Door de klant beheerde sleutel van Azure Monitor](../azure-monitor/platform/customer-managed-keys.md)
+- [Door de klant beheerde sleutel van Azure Monitor](../azure-monitor/logs/customer-managed-keys.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -404,7 +404,7 @@ Volg Azure Security Center aanbevelingen voor het versleutelen van de rest en de
 
 **Hulp**: gebruik Azure monitor om waarschuwingen te maken wanneer wijzigingen worden aangebracht in essentiële Azure-resources met betrekking tot Azure Security Center. Deze wijzigingen kunnen bestaan uit alle acties waarmee configuraties met betrekking tot Security Center worden gewijzigd, zoals het uitschakelen van waarschuwingen of aanbevelingen, of het bijwerken of verwijderen van gegevens archieven.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -596,7 +596,7 @@ Gebruik Azure Resource Graph om resources binnen hun abonnementen op te vragen e
 
 **Hulp**: Azure Security Center gebruikt een geconfigureerde log Analytics-werk ruimte om de gegevens, waarschuwingen en aanbevelingen op te slaan die worden gegenereerd. Configureer een door de klant beheerde sleutel (CMK) voor de werk ruimte die u hebt geconfigureerd voor het verzamelen van Security Center gegevens. CMK maakt het mogelijk om alle gegevens die worden opgeslagen of verzonden naar de werk ruimte te versleutelen met een Azure Key Vault sleutel die u hebt gemaakt en waarvan u de eigenaar bent. 
 
-- [Door de klant beheerde sleutel van Azure Monitor](../azure-monitor/platform/customer-managed-keys.md)
+- [Door de klant beheerde sleutel van Azure Monitor](../azure-monitor/logs/customer-managed-keys.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -656,7 +656,7 @@ Gebruik Azure Resource Graph om resources binnen hun abonnementen op te vragen e
 
 **Richt lijnen**: Zorg ervoor dat u regel matig herstel kunt uitvoeren met Azure Resource Manager back-upsjabloon bestanden. Het herstellen van een back-up van door de klant beheerde sleutels testen.
 
-- [Log Analytics-werk ruimte beheren met Azure Resource Manager sjablonen](../azure-monitor/samples/resource-manager-workspace.md)
+- [Log Analytics-werk ruimte beheren met Azure Resource Manager sjablonen](../azure-monitor/logs/resource-manager-workspace.md)
 
 - [Sleutel kluis sleutels herstellen in azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
 

@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 85e6a66f4520f12278266203211e1d1ae224c97f
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 0f328ed44252f7fb314552d6d05df9806f59d972
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96180452"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591126"
 ---
 # <a name="integrate-azure-ad-logs-with-azure-monitor-logs"></a>Azure AD-logboeken integreren met Azure Monitor-logboeken
 
@@ -59,7 +59,7 @@ U hebt het volgende nodig om deze functie te gebruiken:
 * Een Azure-abonnement. Als u nog geen Azure-abonnement hebt, kunt u zich registreren voor een [gratis proefversie](https://azure.microsoft.com/free/).
 * Een Azure AD-tenant.
 * Een gebruiker die een *globale beheerder* of *beveiligingsbeheerder* voor de Azure-tenant is.
-* Een Log Analytics-werk ruimte in uw Azure-abonnement. Leer [een Log Analytics-werkruimte maken](../../azure-monitor/learn/quick-create-workspace.md).
+* Een Log Analytics-werk ruimte in uw Azure-abonnement. Leer [een Log Analytics-werkruimte maken](../../azure-monitor/logs/quick-create-workspace.md).
 
 ## <a name="licensing-requirements"></a>Licentievereisten
 
@@ -67,9 +67,9 @@ Voor het gebruik van deze functie is een Azure AD Premium P1-of P2-licentie vere
 
 ## <a name="send-logs-to-azure-monitor"></a>Logboeken naar Azure Monitor verzenden
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
 
-2. Selecteer **Azure Active Directory**  >  Diagnostische **instellingen Azure Active Directory diagnostische**  ->  **instelling toevoegen**. U kunt ook **export instellingen** selecteren op de pagina **controle logboeken** of **aanmeldingen** om naar de configuratie pagina Diagnostische instellingen te gaan.  
+2. Selecteer   >  Diagnostische **instellingen Azure Active Directory diagnostische**  ->  **instelling toevoegen**. U kunt ook **export instellingen** selecteren op de pagina **controle logboeken** of **aanmeldingen** om naar de configuratie pagina Diagnostische instellingen te gaan.  
     
 3. Schakel in het menu **Diagnostische instellingen** het selectie vakje **verzenden naar log Analytics werk ruimte** in en selecteer vervolgens **configureren**.
 

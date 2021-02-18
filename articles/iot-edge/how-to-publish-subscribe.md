@@ -10,12 +10,12 @@ ms.date: 11/09/2020
 ms.topic: conceptual
 ms.service: iot-edge
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: 13bfd7c602389ff286a80f625829da5924a73bdf
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: e4043fd8b7c9571b62cbf65d7398754b27375efd
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98621892"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633968"
 ---
 # <a name="publish-and-subscribe-with-azure-iot-edge"></a>Publiceren en abonneren met Azure IoT Edge
 
@@ -366,8 +366,8 @@ Met de Sdk's van het [Azure IOT-apparaat](https://github.com/Azure/azure-iot-sdk
 
 Het verzenden van telemetriegegevens naar IoT Hub is vergelijkbaar met publiceren op een door de gebruiker gedefinieerd onderwerp, maar met behulp van een specifiek IoT Hub onderwerp:
 
-- Voor een apparaat wordt telemetrie verzonden in het onderwerp: `devices/<device_name>/messages/events`
-- Voor een module wordt telemetrie verzonden in het onderwerp: `devices/<device_name>/<module_name>/messages/events`
+- Voor een apparaat wordt telemetrie verzonden in het onderwerp: `devices/<device_name>/messages/events/`
+- Voor een module wordt telemetrie verzonden in het onderwerp: `devices/<device_name>/<module_name>/messages/events/`
 
 Daarnaast kunt u een route maken, zoals `FROM /messages/* INTO $upstream` om telemetrie te verzenden van de IOT Edge MQTT-Broker naar IOT hub. Zie voor meer informatie over route ring [Declareer routes](module-composition.md#declare-routes).
 

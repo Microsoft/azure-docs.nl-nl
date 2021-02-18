@@ -7,12 +7,12 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 06/21/2018
 ms.custom: seodec18
-ms.openlocfilehash: 5141c7fcfe1128574145930548f41731529c2ad8
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 484e8853d02aa68c8a8695ba7cc724adb5a8766a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98012458"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572961"
 ---
 # <a name="understand-stream-analytics-job-monitoring-and-how-to-monitor-queries"></a>Meer informatie over Stream Analytics taak bewaking en het bewaken van query's
 
@@ -48,7 +48,7 @@ Het venster wordt weer gegeven zoals hieronder weer gegeven:
 U kunt deze metrische gegevens gebruiken om [de prestaties van uw stream Analytics-taak te bewaken](./stream-analytics-set-up-alerts.md#scenarios-to-monitor). 
 
 ## <a name="customizing-monitoring-in-the-azure-portal"></a>Bewaking aanpassen in de Azure Portal
-U kunt het type grafiek, de weer gegeven metrische gegevens en het tijds bereik in de instellingen van de grafiek wijzigen. Zie [How to Customize monitoring (bewaking aanpassen](../azure-monitor/platform/data-platform.md)) voor meer informatie.
+U kunt het type grafiek, de weer gegeven metrische gegevens en het tijds bereik in de instellingen van de grafiek wijzigen. Zie [How to Customize monitoring (bewaking aanpassen](../azure-monitor/data-platform.md)) voor meer informatie.
 
   ![Tijd diagram van de query controle Stream Analytics](./media/stream-analytics-monitoring/08-stream-analytics-monitoring.png)  
 
@@ -57,7 +57,7 @@ U kunt het type grafiek, de weer gegeven metrische gegevens en het tijds bereik 
 Een ander interessant gegevens punt voor het bewaken van uw taak is de tijd van de laatste uitvoer, zoals weer gegeven op de pagina overzicht.
 Dit is de tijd van de toepassing (dus de tijd die de tijds tempel van de gebeurtenis gegevens gebruikt) van de laatste uitvoer van uw taak.
 
-## <a name="get-help"></a>Help opvragen
+## <a name="get-help"></a>Hulp vragen
 Probeer voor meer hulp onze [micro soft Q&een vraag pagina voor Azure stream Analytics](/answers/topics/azure-stream-analytics.html)
 
 ## <a name="next-steps"></a>Volgende stappen

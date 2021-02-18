@@ -3,12 +3,12 @@ title: Blauwdrukvoorbeeld Canada Federal PBMM implementeren
 description: Implementeer stappen voor het blauwdrukvoorbeeld Canada Federal PBMM, waaronder details van de parameters voor blauwdrukartefacten.
 ms.date: 02/05/2021
 ms.topic: sample
-ms.openlocfilehash: 376c6329c0c3c571364c7d5d23a21c9f8cad2e53
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: ec7b0f4bd049b8cb2ead9301ac9ddb76ae727cca
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99624992"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594789"
 ---
 # <a name="deploy-the-canada-federal-pbmm-blueprint-samples"></a>De Canada Federal PBMM-blauwdrukvoorbeelden implementeren
 
@@ -93,12 +93,12 @@ In de volgende tabel ziet u een lijst met de blauwdrukartefactparameters:
 
 Naam van het artefact|Type artefact|Parameternaam|Beschrijving|
 |-|-|-|-|
-|\[Preview\]: Log Analytics-agent voor virtuele Linux-machines implementeren |Beleidstoewijzing |Log Analytics-werkruimte voor virtuele Linux-machines |Raadpleeg [Een Log Analytics-werkruimte maken in Azure Portal](../../../../azure-monitor/learn/quick-create-workspace.md) voor meer informatie. |
+|\[Preview\]: Log Analytics-agent voor virtuele Linux-machines implementeren |Beleidstoewijzing |Log Analytics-werkruimte voor virtuele Linux-machines |Raadpleeg [Een Log Analytics-werkruimte maken in Azure Portal](../../../../azure-monitor/logs/quick-create-workspace.md) voor meer informatie. |
 |\[Preview\]: Log Analytics-agent voor virtuele Linux-machines implementeren |Beleidstoewijzing |Optioneel: Lijst met VM-installatiekopieën met ondersteuning van het Linux-besturingssysteem die aan het bereik kunnen worden toegevoegd |Een lege matrix kan worden gebruikt om aan te geven dat er geen optionele parameters zijn: `[]` |
 |\[Preview\]: Log Analytics-agent voor Windows-VM's implementeren |Beleidstoewijzing |Optioneel: Lijst met VM-installatiekopieën met ondersteuning van het Windows-besturingssysteem die aan het bereik kunnen worden toegevoegd |Een lege matrix kan worden gebruikt om aan te geven dat er geen optionele parameters zijn: `[]` |
-|\[Preview\]: Log Analytics-agent voor Windows-VM's implementeren |Beleidstoewijzing |Log Analytics-werkruimte voor Windows-VM's |Raadpleeg [Een Log Analytics-werkruimte maken in Azure Portal](../../../../azure-monitor/learn/quick-create-workspace.md) voor meer informatie. |
+|\[Preview\]: Log Analytics-agent voor Windows-VM's implementeren |Beleidstoewijzing |Log Analytics-werkruimte voor Windows-VM's |Raadpleeg [Een Log Analytics-werkruimte maken in Azure Portal](../../../../azure-monitor/logs/quick-create-workspace.md) voor meer informatie. |
 |\[Preview\]: Canada Federal PBMM-controles uitvoeren en specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten |Beleidstoewijzing |Id van de Log Analytics-werkruimte waarvoor VM's moeten worden geconfigureerd |Dit is de id (GUID) van de Log Analytics-werkruimte waarvoor de VM's moeten worden geconfigureerd. |
-|\[Preview\]: Canada Federal PBMM-controles uitvoeren en specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten |Beleidstoewijzing |Lijst met resourcetypen waarvoor diagnostische logboeken moeten zijn ingeschakeld |Lijst met resourcetypen die moeten worden gecontroleerd als de instelling voor diagnostische logboeken niet is ingeschakeld. Acceptabele waarden vindt u in de [schema's van diagnostische logboeken van Azure Monitor](../../../../azure-monitor/platform/resource-logs-schema.md#service-specific-schemas). |
+|\[Preview\]: Canada Federal PBMM-controles uitvoeren en specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten |Beleidstoewijzing |Lijst met resourcetypen waarvoor diagnostische logboeken moeten zijn ingeschakeld |Lijst met resourcetypen die moeten worden gecontroleerd als de instelling voor diagnostische logboeken niet is ingeschakeld. Acceptabele waarden vindt u in de [schema's van diagnostische logboeken van Azure Monitor](../../../../azure-monitor/essentials/resource-logs-schema.md#service-specific-schemas). |
 |\[Preview\]: Canada Federal PBMM-controles uitvoeren en specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten |Beleidstoewijzing |Beheerdersgroep |Groep. Voorbeeld: `Administrator; myUser1; myUser2` |
 |\[Preview\]: Canada Federal PBMM-controles uitvoeren en specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten |Beleidstoewijzing |Lijst met gebruikers die moeten worden opgenomen in de groep Beheerders voor Windows-VM's |Een lijst met leden die moeten worden opgenomen in de lokale groep beheerders, gescheiden door puntkomma's. Voorbeeld: `Administrator; myUser1; myUser2` |
 |Advanced Threat Protection implementeren voor opslagaccounts |Beleidstoewijzing |Effect |Informatie over de effecten van het beleid vindt u bij [Inzicht in de effecten van Azure Policy](../../../policy/concepts/effects.md). |

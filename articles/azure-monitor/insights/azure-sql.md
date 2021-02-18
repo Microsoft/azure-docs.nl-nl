@@ -7,12 +7,12 @@ author: danimir
 ms.author: danil
 ms.date: 09/19/2020
 ms.reviewer: carlrab
-ms.openlocfilehash: 0015138f4da9f66e2f9148e468dd1b5543ae0c4b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fbe506dc3f5738f0ef639695ded980a24536993e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91397076"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577462"
 ---
 # <a name="monitor-azure-sql-database-using-azure-sql-analytics-preview"></a>Azure SQL Database bewaken met behulp van Azure SQL-analyse (preview)
 
@@ -31,19 +31,19 @@ Zie de Inge sloten video voor een praktische beschrijving van het gebruik van Az
 
 Azure SQL-analyse is een bewakings oplossing die alleen in de Cloud wordt ondersteund voor het streamen van de telemetrie van diagnostische gegevens voor alle Azure SQL-data bases Omdat Azure SQL-analyse geen agents gebruikt om verbinding te maken met Azure Monitor, biedt het geen ondersteuning voor de bewaking van SQL Server die on-premises of in virtuele machines worden gehost.
 
-| Verbonden bron | Ondersteund | Beschrijving |
+| Verbonden bron | Ondersteund | Description |
 | --- | --- | --- |
-| [Diagnostische instellingen](../platform/diagnostic-settings.md) | **Ja** | Azure metrische en logboek gegevens worden rechtstreeks door Azure naar Azure Monitor logboeken verzonden. |
-| [Azure-opslag account](../platform/resource-logs.md#send-to-log-analytics-workspace) | Nee | Azure Monitor leest de gegevens van een opslag account niet. |
-| [Windows-agents](../platform/agent-windows.md) | Nee | Directe Windows-agents worden niet gebruikt door Azure SQL-analyse. |
-| [Linux-agents](../learn/quick-collect-linux-computer.md) | Nee | Direct Linux-agents worden niet gebruikt door Azure SQL-analyse. |
-| [Beheergroep System Center Operations Manager](../platform/om-agents.md) | Nee | Een directe verbinding van de Operations Manager agent naar Azure Monitor wordt niet gebruikt door Azure SQL-analyse. |
+| [Diagnostische instellingen](../essentials/diagnostic-settings.md) | **Ja** | Azure metrische en logboek gegevens worden rechtstreeks door Azure naar Azure Monitor logboeken verzonden. |
+| [Azure Storage-account](../essentials/resource-logs.md#send-to-log-analytics-workspace) | No | Azure Monitor leest de gegevens van een opslag account niet. |
+| [Windows-agents](../agents/agent-windows.md) | No | Directe Windows-agents worden niet gebruikt door Azure SQL-analyse. |
+| [Linux-agents](../vm/quick-collect-linux-computer.md) | No | Direct Linux-agents worden niet gebruikt door Azure SQL-analyse. |
+| [Beheergroep System Center Operations Manager](../agents/om-agents.md) | No | Een directe verbinding van de Operations Manager agent naar Azure Monitor wordt niet gebruikt door Azure SQL-analyse. |
 
 ## <a name="azure-sql-analytics-options"></a>Azure SQL-analyse opties
 
 De onderstaande tabel bevat een overzicht van de ondersteunde opties voor twee versies van het dash board Azure SQL-analyse, één voor Azure SQL Database en de andere voor Azure SQL Managed instance-data bases.
 
-| Azure SQL-analyse optie | Beschrijving | Ondersteuning voor SQL Database | Ondersteuning voor SQL Managed Instance |
+| Azure SQL-analyse optie | Description | Ondersteuning voor SQL Database | Ondersteuning voor SQL Managed Instance |
 | --- | ------- | ----- | ----- |
 | Resource per type | Perspectief dat alle bewaakte resources telt. | Ja | Ja |
 | Inzichten | Voorziet in een hiërarchisch inzoomen op de prestaties van Intelligent Insights. | Ja | Ja |
@@ -170,13 +170,13 @@ Zodra de nieuwe rol is gemaakt, wijst u deze rol toe aan elke gebruiker die u no
 
 ## <a name="analyze-data-and-create-alerts"></a>Gegevens analyseren en waarschuwingen maken
 
-Gegevens analyse in Azure SQL-analyse is gebaseerd op [log Analytics taal](../log-query/get-started-queries.md) voor uw aangepaste query en rapportage. Hier vindt u een beschrijving van de beschik bare gegevens die zijn verzameld uit de database resource voor aangepaste query's in [metrische gegevens en logboeken](../../azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure.md#metrics-and-logs-available).
+Gegevens analyse in Azure SQL-analyse is gebaseerd op [log Analytics taal](../logs/get-started-queries.md) voor uw aangepaste query en rapportage. Hier vindt u een beschrijving van de beschik bare gegevens die zijn verzameld uit de database resource voor aangepaste query's in [metrische gegevens en logboeken](../../azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure.md#metrics-and-logs-available).
 
 Automatische waarschuwingen in Azure SQL-analyse is gebaseerd op het schrijven van een Log Analytics query die een waarschuwing activeert wanneer aan een voor waarde wordt voldaan. Zoek hieronder een aantal voor beelden over Log Analytics query's waarop waarschuwingen kunnen worden ingesteld in Azure SQL-analyse.
 
 ### <a name="creating-alerts-for-azure-sql-database"></a>Waarschuwingen voor Azure SQL Database maken
 
-U kunt eenvoudig [waarschuwingen maken](../platform/alerts-metric.md) met de gegevens die afkomstig zijn uit Azure SQL database resources. Hier volgen enkele nuttige [logboek query's](../log-query/log-query-overview.md) die u kunt gebruiken met een logboek waarschuwing:
+U kunt eenvoudig [waarschuwingen maken](../alerts/alerts-metric.md) met de gegevens die afkomstig zijn uit Azure SQL database resources. Hier volgen enkele nuttige [logboek query's](../logs/log-query-overview.md) die u kunt gebruiken met een logboek waarschuwing:
 
 #### <a name="high-cpu"></a>Hoog CPU-gebruik
 
@@ -297,7 +297,7 @@ Hoewel Azure SQL-analyse gratis is voor gebruik, kunt u het verbruik van de tele
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Gebruik [logboek query's](../log-query/log-query-overview.md) in azure monitor om gedetailleerde Azure SQL-gegevens weer te geven.
-- [Maak uw eigen Dash boards](../learn/tutorial-logs-dashboards.md) waarin Azure SQL-gegevens worden weer gegeven.
-- [Maak waarschuwingen](../platform/alerts-overview.md) wanneer er specifieke Azure SQL-gebeurtenissen optreden.
+- Gebruik [logboek query's](../logs/log-query-overview.md) in azure monitor om gedetailleerde Azure SQL-gegevens weer te geven.
+- [Maak uw eigen Dash boards](../visualize/tutorial-logs-dashboards.md) waarin Azure SQL-gegevens worden weer gegeven.
+- [Maak waarschuwingen](../alerts/alerts-overview.md) wanneer er specifieke Azure SQL-gebeurtenissen optreden.
 

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 12/07/2020
 ms.author: sngun
 ms.custom: subject-monitoring
-ms.openlocfilehash: 04103de47e82764f7ec4effa84a9b2b7b90b9363
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: 5f542b35110a6d967640ad91faead75f6cc0e0c2
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98034625"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593291"
 ---
 # <a name="monitoring-azure-cosmos-db-data-reference"></a>Azure Cosmos DB gegevens referentie bewaken
 
@@ -22,11 +22,11 @@ Dit artikel bevat naslaginformatie over logboek- en metrische gegevens die worde
 
 ## <a name="metrics"></a>Metrische gegevens
 
-Alle metrische gegevens die overeenkomen met Azure Cosmos DB worden opgeslagen in de naam ruimte **Cosmos DB standaard metrische gegevens**. Zie [Azure monitor ondersteunde metrische gegevens](../azure-monitor/platform/metrics-supported.md)voor een lijst met alle Azure monitor metrische gegevens voor ondersteuning (inclusief Azure Cosmos DB). In deze sectie vindt u alle automatisch verzamelde platform gegevens die zijn verzameld voor Azure Cosmos DB.  
+Alle metrische gegevens die overeenkomen met Azure Cosmos DB worden opgeslagen in de naam ruimte **Cosmos DB standaard metrische gegevens**. Zie [Azure monitor ondersteunde metrische gegevens](../azure-monitor/essentials/metrics-supported.md)voor een lijst met alle Azure monitor metrische gegevens voor ondersteuning (inclusief Azure Cosmos DB). In deze sectie vindt u alle automatisch verzamelde platform gegevens die zijn verzameld voor Azure Cosmos DB.  
 
 ### <a name="request-metrics"></a>Metrische gegevens aanvragen
 
-|Metrisch (metrische weergave naam)|Eenheid (aggregatie type) |Beschrijving|Afmetingen| Tijd granulatie| Toewijzing van verouderde metriek | Gebruik |
+|Metrisch (metrische weergave naam)|Eenheid (aggregatie type) |Description|Dimensies| Tijd granulatie| Toewijzing van verouderde metriek | Gebruik |
 |---|---|---|---| ---| ---| ---|
 | TotalRequests (totaal aantal aanvragen) | Aantal (aantal) | Aantal aanvragen dat is gedaan| DATABASENAME, verzamel-, regio, status code| Alles | TotalRequests, http 2xx, HTTP 3xx, HTTP 400, HTTP 401, interne server fout, service niet beschikbaar, beperkt aantal aanvragen per seconde | Wordt gebruikt voor het bewaken van aanvragen per status code, container op een minuut granulatie. Als u gemiddeld aantal aanvragen per seconde wilt ophalen, gebruikt u de aggregatie van Count op minuut en deelt u deze door 60. |
 | MetadataRequests (meta gegevens aanvragen) |Aantal (aantal) | Aantal aanvragen voor meta gegevens. Azure Cosmos DB behoudt de container van de meta gegevens van het systeem voor elk account, waarmee u verzamelingen, data bases, enzovoort, en hun configuraties, kosteloos kunt inventariseren. | DATABASENAME, verzamel-, regio, status code| Alles| |Wordt gebruikt voor het bewaken van vertragingen als gevolg van aanvragen voor meta gegevens.|
@@ -34,7 +34,7 @@ Alle metrische gegevens die overeenkomen met Azure Cosmos DB worden opgeslagen i
 
 ### <a name="request-unit-metrics"></a>Metrische gegevens van aanvraag eenheid
 
-|Metrisch (metrische weergave naam)|Eenheid (aggregatie type)|Beschrijving|Afmetingen| Tijd granulatie| Toewijzing van verouderde metriek | Gebruik |
+|Metrisch (metrische weergave naam)|Eenheid (aggregatie type)|Description|Dimensies| Tijd granulatie| Toewijzing van verouderde metriek | Gebruik |
 |---|---|---|---| ---| ---| ---|
 | MongoRequestCharge (Mongo-aanvraag kosten) | Aantal (totaal) |Verbruikte Mongo-aanvraag eenheden| DATABASENAME, verzamel-, regio, opdrachtnaam, error code| Alles |Kosten voor query aanvragen voor Mongo, kosten voor Mongo update aanvragen, Mongo aanvraag kosten verwijderen, Mongo aanvraag kosten invoegen, Mongo aantal aanvraag kosten| Wordt gebruikt voor het bewaken van Mongo resource RUs in een minuut.|
 | TotalRequestUnits (totaal aantal aanvraag eenheden)| Aantal (totaal) | Verbruikte aanvraag eenheden| DATABASENAME, verzamel-, regio, status code |Alles| TotalRequestUnits| Wordt gebruikt voor het bewaken van het totale aantal RU-gebruik met een minuut granulatie. Als u gemiddelde RU verbruikt per seconde, gebruikt u de totale aggregatie op minuut en deelt u dit door 60.|
@@ -42,7 +42,7 @@ Alle metrische gegevens die overeenkomen met Azure Cosmos DB worden opgeslagen i
 
 ### <a name="storage-metrics"></a>Metrische opslag gegevens
 
-|Metrisch (metrische weergave naam)|Eenheid (aggregatie type)|Beschrijving|Afmetingen| Tijd granulatie| Toewijzing van verouderde metriek | Gebruik |
+|Metrisch (metrische weergave naam)|Eenheid (aggregatie type)|Description|Dimensies| Tijd granulatie| Toewijzing van verouderde metriek | Gebruik |
 |---|---|---|---| ---| ---| ---|
 | AvailableStorage (beschik bare opslag) |Bytes (totaal) | Totale beschik bare opslag gerapporteerd bij een granulatie van 5 minuten per regio| Databasenaam, verzamel-, regio| 5 M| Beschikbare opslag| Wordt gebruikt voor het bewaken van beschik bare opslag capaciteit (alleen van toepassing voor vaste opslag verzamelingen). de minimale granulatie moet 5 minuten zijn.| 
 | DataUsage (gegevens gebruik) |Bytes (totaal) |Totaal gegevens gebruik gerapporteerd bij een granulatie van 5 minuten per regio| Databasenaam, verzamel-, regio| 5 M |Gegevens grootte | Voor het bewaken van het totale gegevens gebruik in de container en de regio, moet de minimale granulatie 5 minuten zijn.|
@@ -52,26 +52,26 @@ Alle metrische gegevens die overeenkomen met Azure Cosmos DB worden opgeslagen i
 
 ### <a name="latency-metrics"></a>Metrische latentie gegevens
 
-|Metrisch (metrische weergave naam)|Eenheid (aggregatie type)|Beschrijving|Afmetingen| Tijd granulatie| Gebruik |
+|Metrisch (metrische weergave naam)|Eenheid (aggregatie type)|Description|Dimensies| Tijd granulatie| Gebruik |
 |---|---|---|---| ---| ---|
 | ReplicationLatency (replicatie latentie)| MilliSeconden (minimum, maximum, gemiddeld) | Replicatie latentie van P99 voor de bron-en doel regio's voor geografisch ingeschakelde account| SourceRegion, TargetRegion| Alles | Wordt gebruikt voor het bewaken van de replicatie latentie van P99 tussen twee regio's voor een geo-gerepliceerd account. |
 | Latentie aan server zijde| MilliSeconden (gemiddeld) | De tijd die de server nodig heeft om de aanvraag te verwerken. | Verzamelingnaam, ConnectionMode, DATABASENAME, OperationType, PublicAPIType, regio | Alles | Wordt gebruikt om de latentie van de aanvraag op de Azure Cosmos DB server te bewaken. |
 
 ### <a name="availability-metrics"></a>Metrische beschikbaarheids gegevens
 
-|Metrisch (metrische weergave naam) |Eenheid (aggregatie type)|Beschrijving| Tijd granulatie| Toewijzing van verouderde metriek | Gebruik |
+|Metrisch (metrische weergave naam) |Eenheid (aggregatie type)|Description| Tijd granulatie| Toewijzing van verouderde metriek | Gebruik |
 |---|---|---|---| ---| ---|
 | ServiceAvailability (Service beschikbaarheid)| Percentage (minimum, maximum) | Beschik baarheid van account aanvragen op een granulatie van één uur| 1U | Service beschikbaarheid | Vertegenwoordigt het percentage van het totaal aantal geslaagde aanvragen. Een aanvraag wordt als mislukt beschouwd als gevolg van een systeem fout als de status code 410, 500 of 503 wordt gebruikt om de beschik baarheid van het account te controleren op de granulatie van het uur. |
 
 ### <a name="cassandra-api-metrics"></a>Cassandra-API metrische gegevens
 
-|Metrisch (metrische weergave naam)|Eenheid (aggregatie type)|Beschrijving|Afmetingen| Tijd granulatie| Gebruik |
+|Metrisch (metrische weergave naam)|Eenheid (aggregatie type)|Description|Dimensies| Tijd granulatie| Gebruik |
 |---|---|---|---| ---| ---|
 | CassandraRequests (Cassandra-aanvragen) | Aantal (aantal) | Aantal gemaakte Cassandra-API aanvragen| DATABASENAME, Verzamelingsset, error code, regio, OperationType, resource type| Alles| Wordt gebruikt om Cassandra-aanvragen te bewaken met een granulatie van minuten. Als u gemiddeld aantal aanvragen per seconde wilt ophalen, gebruikt u de aggregatie van Count op minuut en deelt u deze door 60.|
 | CassandraRequestCharges (Cassandra-aanvraag kosten) | Aantal (som, min, Max, Gem) | De aanvraag eenheden die worden verbruikt door de Cassandra-API | DATABASENAME, verzamel-, regio, OperationType, resource type| Alles| Wordt gebruikt om te controleren RUs dat per minuut wordt gebruikt door een Cassandra-API-account.|
 | CassandraConnectionClosures (Cassandra-verbinding gesloten) |Aantal (aantal) |Aantal gesloten Cassandra-verbindingen| ClosureReason, regio| Alles | Wordt gebruikt om de connectiviteit tussen clients en de Azure Cosmos DB Cassandra-API te bewaken.|
 
-Zie voor meer informatie een overzicht van [alle platform metrieken die worden ondersteund in azure monitor](../azure-monitor/platform/metrics-supported.md).
+Zie voor meer informatie een overzicht van [alle platform metrieken die worden ondersteund in azure monitor](../azure-monitor/essentials/metrics-supported.md).
 
 ## <a name="resource-logs"></a>Resourcelogboeken
 
@@ -100,7 +100,7 @@ De volgende tabel geeft een overzicht van de eigenschappen van resource Logboeke
 | **resourceTokenUserRid** | **resourceTokenUserRid_s** | Deze waarde is niet-leeg wanneer [bron tokens](./secure-access-to-data.md#resource-tokens) voor authenticatie worden gebruikt. De waarde verwijst naar de resource-ID van de gebruiker. |
 | **responseLength** | **responseLength_s** | De lengte van het antwoord, in bytes.|
 
-Zie [Azure monitor-logboeken categorieën en schema's](../azure-monitor/platform/resource-logs-schema.md)voor een lijst met alle Azure monitor logboek categorieën en koppelingen naar gekoppelde schema's. 
+Zie [Azure monitor-logboeken categorieën en schema's](../azure-monitor/essentials/resource-logs-schema.md)voor een lijst met alle Azure monitor logboek categorieën en koppelingen naar gekoppelde schema's. 
 
 ## <a name="azure-monitor-logs-tables"></a>Tabellen Azure Monitor logboeken
 
@@ -109,4 +109,4 @@ Azure Cosmos DB maakt gebruik van Kusto-tabellen uit Azure Monitor-Logboeken. U 
 ## <a name="see-also"></a>Zie ook
 
 - Zie [bewaking Azure Cosmos DB](monitor-cosmos-db.md) voor een beschrijving van de bewakings Azure Cosmos db.
-- Zie [Azure-resources bewaken met Azure monitor](../azure-monitor/insights/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.
+- Zie [Azure-resources bewaken met Azure monitor](../azure-monitor/essentials/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.

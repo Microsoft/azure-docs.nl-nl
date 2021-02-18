@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/15/2020
+ms.date: 02/17/2021
 ms.author: memildin
-ms.openlocfilehash: 598c13b0434a364e73471b53c82663b94fb42f4e
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 3bdc0af2ea581954cb5edd2c7d00d286f814506c
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97560098"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633594"
 ---
 # <a name="alert-validation-in-azure-security-center"></a>Validatie van waarschuwingen in Azure Security Center
 In dit document leest u hoe u kunt controleren of uw systeem op de juiste manier is geconfigureerd voor waarschuwingen van Azure Security Center.
@@ -28,7 +28,7 @@ Waarschuwingen zijn de meldingen die Security Center genereert wanneer het bedre
 Zie [beveiligings waarschuwingen in Security Center](security-center-alerts-overview.md) en [beheren en reageren op beveiligings waarschuwingen](security-center-managing-and-responding-alerts.md) voor meer informatie.
 
 
-## <a name="generate-sample-azure-defender-alerts"></a>Voor beeld van Azure Defender-waarschuwingen genereren
+## <a name="generate-sample-azure-defender-alerts"></a>Voorbeelden van Azure Defender-waarschuwingen genereren
 
 Als u de nieuwe preview-versie van waarschuwingen gebruikt, zoals beschreven in [beveiligings waarschuwingen beheren en erop reageren in azure Security Center](security-center-managing-and-responding-alerts.md), kunt u in een paar klikken voorbeeld waarschuwingen maken via de pagina beveiligings waarschuwingen in de Azure Portal.
 
@@ -36,11 +36,6 @@ Gebruik voorbeeld waarschuwingen voor het volgende:
 
 - de waarde en mogelijkheden van Azure Defender evalueren
 - Controleer alle configuraties die u hebt gemaakt voor uw beveiligings waarschuwingen (zoals SIEM-integraties, werk stroom automatisering en e-mail meldingen)
-
-> [!NOTE]
-> Voor deze procedure is de melding nieuwe (preview-versie) beschikbaar in de banner aan de bovenkant van de pagina **beveiligings waarschuwingen** .
->
-> :::image type="content" source="media/security-center-managing-and-responding-alerts/preview-alerts-experience-banner.png" alt-text="Banner met koppeling naar de nieuwe preview-waarschuwingen":::
 
 Voorbeeld waarschuwingen maken:
 

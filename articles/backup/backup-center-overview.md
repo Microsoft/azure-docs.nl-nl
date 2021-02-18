@@ -3,12 +3,12 @@ title: Overzicht van Back-upcentrum
 description: Dit artikel bevat een overzicht van Back-upcentrum voor Azure.
 ms.topic: conceptual
 ms.date: 09/30/2020
-ms.openlocfilehash: b42fcc782eb50c061ab7617ea0ef1f3344fee4e9
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 93f9e5dc064d264e0cc111d8ddb093639307c55b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98893606"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592029"
 ---
 # <a name="overview-of-backup-center-preview"></a>Overzicht van Back-upcentrum (preview-versie)
 
@@ -18,7 +18,7 @@ Enkele van de belangrijkste voor delen van Back-upcentrum zijn:
 
 * **Eén venster van glas voor het beheren van back-ups** – backup Center is ontworpen voor een grote en gedistribueerde Azure-omgeving. U kunt Back-upcentrum gebruiken om efficiënt back-ups te beheren met meerdere werkbelasting typen, kluizen, abonnementen, regio's en [Azure Lighthouse](../lighthouse/overview.md) -tenants.
 * **Data Source-gericht beheer** : Back-upcentrum biedt weer gaven en filters die zijn gecentreerd op de gegevens bronnen waarvan u een back-up maakt (bijvoorbeeld vm's en data bases). Hiermee kan een resource-eigenaar of een back-upbeheerder back-ups van items bewaken en uitvoeren, zonder dat u zich hoeft te concentreren op welke kluis een item wordt opgeslagen. Een belang rijke functie van dit ontwerp is de mogelijkheid om weer gaven te filteren op Data Source-specifieke eigenschappen, zoals een Data Source-abonnement, resource groep voor gegevens bronnen en data source-Tags. Als uw organisatie bijvoorbeeld een oefening volgt met het toewijzen van verschillende labels aan Vm's die tot verschillende afdelingen behoren, kunt u Back-upcentrum gebruiken om de back-upgegevens te filteren op basis van de labels van de onderliggende Vm's waarvan een back-up wordt gemaakt, zonder dat u zich hoeft te concentreren op de tag van de kluis.
-* **Verbonden ervaringen** – backup Center biedt systeem eigen integraties voor bestaande Azure-Services waarmee beheer op schaal kan worden ingeschakeld. Back-upcentrum gebruikt bijvoorbeeld de [Azure Policy](../governance/policy/overview.md) -ervaring om u te helpen bij het beheren van uw back-ups. Het maakt ook gebruik van [Azure-werkmappen](../azure-monitor/platform/workbooks-overview.md) en [Azure monitor logboeken](../azure-monitor/platform/data-platform-logs.md) om u te helpen gedetailleerde rapporten over back-ups te bekijken. U hoeft dus geen nieuwe principes te ontdekken voor het gebruik van de verschillende functies van het Back-upcentrum.
+* **Verbonden ervaringen** – backup Center biedt systeem eigen integraties voor bestaande Azure-Services waarmee beheer op schaal kan worden ingeschakeld. Back-upcentrum gebruikt bijvoorbeeld de [Azure Policy](../governance/policy/overview.md) -ervaring om u te helpen bij het beheren van uw back-ups. Het maakt ook gebruik van [Azure-werkmappen](../azure-monitor/visualize/workbooks-overview.md) en [Azure monitor logboeken](../azure-monitor/logs/data-platform-logs.md) om u te helpen gedetailleerde rapporten over back-ups te bekijken. U hoeft dus geen nieuwe principes te ontdekken voor het gebruik van de verschillende functies van het Back-upcentrum.
 
 ## <a name="supported-scenarios"></a>Ondersteunde scenario's
 

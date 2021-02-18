@@ -9,12 +9,12 @@ ms.service: notification-hubs
 ms.reviewer: thsomasu
 ms.lastreviewed: 05/27/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 63841bd603373d0fb325bcf82511ce3fb07b4136
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 31a411cbcecab8192643f86b6b54d09ac03e7f45
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96017250"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581715"
 ---
 # <a name="tutorial-send-push-notifications-to-android-devices-using-firebase-sdk-version-100-preview1"></a>Zelfstudie: Pushmeldingen verzenden naar Android-apparaten met Firebase SDK versie 1.0.0-preview1
 
@@ -37,7 +37,7 @@ U hebt een actief Azure-account nodig om deze zelfstudie te voltooien. Als u gee
 U hebt ook het volgende nodig:
 
 - We bevelen hiervoor de nieuwste versie van [Android Studio](https://go.microsoft.com/fwlink/?LinkId=389797) aan.
-- Minimale ondersteuning is API niveau 16.
+- De minimale ondersteuning is API Level 19.
 
 ## <a name="create-an-android-studio-project"></a>Een Android Studio-project maken
 
@@ -162,12 +162,8 @@ Uw Notification Hub is nu geconfigureerd om te werken met Firebase Cloud Messagi
 1. Voeg in het bestand **build.gradle** voor de app de volgende regels toe in de sectie met afhankelijkheden:
 
    ```gradle
-   implementation 'com.microsoft.azure:notification-hubs-android-sdk:1.0.0-preview1@aar'
+   implementation 'com.microsoft.azure:notification-hubs-android-sdk-fcm:1.1.4'
    implementation 'androidx.appcompat:appcompat:1.0.0'
-
-   implementation 'com.google.firebase:firebase-messaging:20.1.5'
-
-   implementation 'com.android.volley:volley:1.1.1'
    ```
 
 2. Voeg de volgende opslagplaats toe na de sectie met afhankelijkheden:
@@ -198,18 +194,23 @@ Uw Notification Hub is nu geconfigureerd om te werken met Firebase Cloud Messagi
    public class CustomNotificationListener implements NotificationHubListener {
 
       @override
+      public void onNotificationReceived(Context context, RemoteMessage message) {
+    
+         /* The following notification properties are available. */
+         Notification notification = message.getNotification();
+         String title = notification.getTitle();
+         String body = notification.getBody();
+         Map<String, String> data = message.getData();
+    
+         if (message != null) {
+            Log.d(TAG, "Message Notification Title: " + title);
+            Log.d(TAG, "Message Notification Body: " + message);
+         }
 
-      public void onNotificationReceived(Context context, NotificationMessage message) {
-
-      /* The following notification properties are available. */
-
-      String title = message.getTitle();
-      String message = message.getMessage();
-      Map<String, String> data = message.getData();
-
-      if (message != null) {
-         Log.d(TAG, "Message Notification Title: " + title);
-         Log.d(TAG, "Message Notification Body: " + message);
+         if (data != null) {
+             for (Map.Entry<String, String> entry : data.entrySet()) {
+                 Log.d(TAG, "key, " + entry.getKey() + " value " + entry.getValue());
+             }
          }
       }
    }

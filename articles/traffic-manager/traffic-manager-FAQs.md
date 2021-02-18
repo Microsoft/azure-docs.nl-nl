@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/26/2019
 ms.author: duau
-ms.openlocfilehash: 17ccfeb709c530a868a75ecd87052618aaea4846
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: fa8dba12a050e42e258e4224f29e379ff53f09d8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98184574"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576670"
 ---
 # <a name="traffic-manager-frequently-asked-questions-faq"></a>Veelgestelde vragen over Traffic Manager
 
@@ -347,7 +347,7 @@ Azure Resource Manager vereist dat alle resource groepen een locatie opgeven, wa
 
 De huidige bewakings status van elk eind punt, naast het algehele profiel, wordt weer gegeven in de Azure Portal. Deze informatie is ook beschikbaar via de verkeers monitor [rest API](/rest/api/trafficmanager/), [Power shell-cmdlets](/powershell/module/az.trafficmanager)en [platformoverschrijdende Azure cli](/cli/azure/install-classic-cli).
 
-U kunt Azure Monitor ook gebruiken om de status van uw eind punten bij te houden en een visuele weer gave ervan te bekijken. Zie de [documentatie van Azure monitoring](../azure-monitor/platform/data-platform.md)voor meer informatie over het gebruik van Azure monitor.
+U kunt Azure Monitor ook gebruiken om de status van uw eind punten bij te houden en een visuele weer gave ervan te bekijken. Zie de [documentatie van Azure monitoring](../azure-monitor/data-platform.md)voor meer informatie over het gebruik van Azure monitor.
 
 ### <a name="can-i-monitor-https-endpoints"></a>Kan ik HTTPS-eind punten controleren?
 
@@ -458,7 +458,7 @@ Het aantal Traffic Manager status controles dat uw eind punt bereikt, is afhanke
 
 ### <a name="how-can-i-get-notified-if-one-of-my-endpoints-goes-down"></a>Hoe kan ik een melding krijgen als een van mijn eind punten uitvalt?
 
-Een van de metrische gegevens die door Traffic Manager worden verschaft, is de status van eind punten in een profiel. U kunt deze weer geven als een aggregatie van alle eind punten in een profiel (bijvoorbeeld 75% van uw eind punten in orde) of, op een niveau per eind punt. Traffic Manager metrische gegevens worden weer gegeven via Azure Monitor en u kunt de [waarschuwings mogelijkheden](../azure-monitor/platform/alerts-metric.md) ervan gebruiken om meldingen te ontvangen wanneer er een wijziging is in de status van uw eind punt. Zie [Traffic Manager metrische gegevens en waarschuwingen](traffic-manager-metrics-alerts.md)voor meer informatie.  
+Een van de metrische gegevens die door Traffic Manager worden verschaft, is de status van eind punten in een profiel. U kunt deze weer geven als een aggregatie van alle eind punten in een profiel (bijvoorbeeld 75% van uw eind punten in orde) of, op een niveau per eind punt. Traffic Manager metrische gegevens worden weer gegeven via Azure Monitor en u kunt de [waarschuwings mogelijkheden](../azure-monitor/alerts/alerts-metric.md) ervan gebruiken om meldingen te ontvangen wanneer er een wijziging is in de status van uw eind punt. Zie [Traffic Manager metrische gegevens en waarschuwingen](traffic-manager-metrics-alerts.md)voor meer informatie.  
 
 ## <a name="traffic-manager-nested-profiles"></a>Traffic Manager geneste profielen
 

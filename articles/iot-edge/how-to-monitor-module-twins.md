@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 1a11d3a9a972188af4cf8f054349da98d69691a3
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: d968fb066e68fe1bb6986c63ce750c5de5c98cf9
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91876155"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633175"
 ---
 # <a name="monitor-module-twins"></a>Dubbele modules bewaken
 
@@ -200,7 +200,7 @@ Als u het bericht ' er bestaat geen module-identiteit voor deze module ' wordt w
 Ga als volgt te werk om een module te controleren en te bewerken:
 
 1. Als dat nog niet is gebeurd, installeert u de [Azure IOT tools-extensie](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) voor Visual Studio code.
-1. Vouw in de **Explorer**het **Azure-IOT hub**uit en vouw vervolgens het apparaat uit met de module die u wilt bewaken.
+1. Vouw in de **Explorer** het **Azure-IOT hub** uit en vouw vervolgens het apparaat uit met de module die u wilt bewaken.
 1. Klik met de rechter muisknop op de module en selecteer **module bewerken dubbele**. Er wordt een tijdelijk bestand van de module twee naar uw computer gedownload en weer gegeven in Visual Studio code.
 
   ![Een module vinden die is verdubbeld voor bewerken in Visual Studio code](./media/how-to-monitor-module-twins/edit-module-twin-vscode.png)
@@ -213,7 +213,7 @@ Als u wijzigingen aanbrengt, selecteert u **Update module** nadaarboven boven de
 
 Als u wilt zien of IoT Edge wordt uitgevoerd, gebruikt u de [methode AZ IOT hub invoke-module](how-to-edgeagent-direct-method.md#ping) om de IOT Edge agent te pingen.
 
-De [AZ IOT hub-module-dubbele](/cli/azure/ext/azure-cli-iot-ext/iot/hub/module-twin) structuur biedt de volgende opdrachten:
+De [AZ IOT hub-module-dubbele](/cli/azure/ext/azure-iot/iot/hub/module-twin) structuur biedt de volgende opdrachten:
 
 * **AZ IOT hub module-dubbele weer gave** -een module definitie weer geven.
 * **AZ IOT hub module-dubbele update** -een module definitie bijwerken.

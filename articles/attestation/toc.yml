@@ -65,3 +65,6 @@
       href: troubleshoot-guide.md
     - name: TPM-en VBS-Attestation-Protocol
       href: virtualization-based-security-protocol.md
+    - name: Ingebouwde modules voor Azure Policy
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md

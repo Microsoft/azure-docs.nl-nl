@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 07/15/2020
 ms.author: allensu
-ms.openlocfilehash: fdb609a243656e2c75159cd2d4e70e2f965ae896
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 96e80de5b8b5ab0a046913ce40ca2d7254dd0133
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352113"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573215"
 ---
 # <a name="diagnostic-logs---azure-content-delivery-network"></a>Diagnostische logboeken-Azure Content Delivery Network
 
@@ -78,7 +78,7 @@ Als u een opslag account wilt gebruiken om de logboeken op te slaan, voert u de 
 Voer de volgende stappen uit om Log Analytics te gebruiken voor de logboeken:
 
 >[!NOTE] 
->Er is een log Analytics-werk ruimte vereist om deze stappen uit te voeren. Raadpleeg: **[een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/learn/quick-create-workspace.md)** voor meer informatie.
+>Er is een log Analytics-werk ruimte vereist om deze stappen uit te voeren. Raadpleeg: **[een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/logs/quick-create-workspace.md)** voor meer informatie.
     
 1. Voer een naam in voor de diagnostische logboek instellingen voor de naam van de **Diagnostische instelling**.
 
@@ -222,7 +222,7 @@ Voor toegang tot de kern analyse wordt een voorbeeld code voor een hulp programm
 U kunt het hulp programma als volgt gebruiken:
 
 1.  Ga naar de GitHub-koppeling: [https://github.com/Azure-Samples/azure-cdn-samples/tree/master/CoreAnalytics-ExportToCsv](https://github.com/Azure-Samples/azure-cdn-samples/tree/master/CoreAnalytics-ExportToCsv)
-2.  Download de code.
+2.  Down load de code.
 3.  Volg de instructies voor het compileren en configureren.
 4.  Voer het hulp programma uit.
 5.  In het resulterende CSV-bestand worden de analyse gegevens weer gegeven in een eenvoudige, vlakke hiërarchie.
@@ -367,9 +367,9 @@ Voorbeeld eigenschappen:
 
 ```
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 
-* [Diagnostische logboeken van Azure](../azure-monitor/platform/platform-logs-overview.md)
+* [Diagnostische logboeken van Azure](../azure-monitor/essentials/platform-logs-overview.md)
 * [Kern analyse via Azure CDN aanvullende portal](./cdn-analyze-usage-patterns.md)
-* [Azure Monitor-logboeken](../azure-monitor/log-query/log-query-overview.md)
+* [Azure Monitor-logboeken](../azure-monitor/logs/log-query-overview.md)
 * [Azure Log Analytics REST API](/rest/api/loganalytics)

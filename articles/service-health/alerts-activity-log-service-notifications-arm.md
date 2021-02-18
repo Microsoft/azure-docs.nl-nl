@@ -4,12 +4,12 @@ description: Ontvang meldingen via een SMS, e-mail of webhook wanneer de Azure-s
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 06/29/2020
-ms.openlocfilehash: 688314a2057964c66baeacbbc49736ea436f5ec5
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 532fbae505e0bcaa6ab31a2e935362114537d134
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91630216"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594947"
 ---
 # <a name="quickstart-create-activity-log-alerts-on-service-notifications-using-an-arm-template"></a>Snelstart: Waarschuwingen voor activiteitenlogboek maken bij servicemeldingen met behulp van een ARM-sjabloon
 
@@ -17,7 +17,7 @@ In dit artikel wordt beschreven hoe u waarschuwingen voor een activiteitenlogboe
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Servicestatusmeldingen worden opgeslagen in het [Activiteitenlogboek van Azure](../azure-monitor/platform/platform-logs-overview.md). Gezien het mogelijk grote volume aan informatie dat in het activiteitenlogboek is opgeslagen, is er een afzonderlijke gebruikersinterface waarmee u gemakkelijk waarschuwingen voor servicestatusmeldingen kunt bekijken en instellen.
+Servicestatusmeldingen worden opgeslagen in het [Activiteitenlogboek van Azure](../azure-monitor/essentials/platform-logs-overview.md). Gezien het mogelijk grote volume aan informatie dat in het activiteitenlogboek is opgeslagen, is er een afzonderlijke gebruikersinterface waarmee u gemakkelijk waarschuwingen voor servicestatusmeldingen kunt bekijken en instellen.
 
 U kunt een waarschuwing ontvangen wanneer Azure servicestatusmeldingen verzendt naar uw Azure-abonnement. U kunt de waarschuwing configureren op basis van:
 
@@ -34,7 +34,7 @@ U kunt ook configureren naar wie de waarschuwing moet worden verzonden:
 - Selecteer een bestaande actiegroep.
 - Maak een nieuwe actiegroep maken (die kan worden gebruikt voor toekomstige waarschuwingen).
 
-Raadpleeg [Actiegroepen maken en beheren](../azure-monitor/platform/action-groups.md) voor meer informatie over actiegroepen.
+Raadpleeg [Actiegroepen maken en beheren](../azure-monitor/alerts/action-groups.md) voor meer informatie over actiegroepen.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -199,7 +199,7 @@ Remove-AzResourceGroup -Name my-resource-group
 - Meer informatie over het [instellen van mobiele pushmeldingen voor Azure Service Health](https://www.microsoft.com/en-us/videoplayer/embed/RE2OtUw).
 - Meer informatie over het [configureren van webhookmeldingen voor bestaande problematische beheersystemen](service-health-alert-webhook-guide.md).
 - Meer informatie over [servicestatusmeldingen](service-notifications.md).
-- Meer informatie over [meldingssnelheidsbeperking](../azure-monitor/platform/alerts-rate-limiting.md).
-- Bekijk het [webhookschema voor waarschuwingen voor het activiteitenlogboek](../azure-monitor/platform/activity-log-alerts-webhook.md).
-- Een [overzicht van waarschuwingen voor het activiteitenlogboek](../azure-monitor/platform/alerts-overview.md) en meer informatie over het ontvangen van waarschuwingen.
-- Meer informatie over [actiegroepen](../azure-monitor/platform/action-groups.md).
+- Meer informatie over [meldingssnelheidsbeperking](../azure-monitor/alerts/alerts-rate-limiting.md).
+- Bekijk het [webhookschema voor waarschuwingen voor het activiteitenlogboek](../azure-monitor/alerts/activity-log-alerts-webhook.md).
+- Een [overzicht van waarschuwingen voor het activiteitenlogboek](../azure-monitor/alerts/alerts-overview.md) en meer informatie over het ontvangen van waarschuwingen.
+- Meer informatie over [actiegroepen](../azure-monitor/alerts/action-groups.md).

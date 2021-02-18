@@ -7,29 +7,33 @@ ms.author: shhazam
 ms.date: 12/12/2020
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: 2ec682bf76e35b54f58acc1956972c57128edd75
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 93efc89722d3152d92b6f8c8038deaa566741f7c
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100523138"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100636557"
 ---
 # <a name="work-with-defender-for-iot-cli-commands"></a>Werken met CLI-opdrachten voor Defender for IoT
 
-In dit artikel worden CLI-opdrachten voor Sens oren en on-premises beheer consoles beschreven. De opdrachten zijn toegankelijk voor beheerders, cyberx-gebruikers en ondersteunings gebruikers.
+In dit artikel worden CLI-opdrachten voor Sens oren en on-premises beheer consoles beschreven. De opdrachten zijn toegankelijk voor de volgende gebruikers:
 
-Definieer uitsluitings regels wanneer u onderhouds activiteiten plant of een activiteit waarvoor geen waarschuwing is vereist.
+- Beheerder
+- Cyber-x 
+- Ondersteuning
+
+Als u met de CLI wilt werken, maakt u verbinding met een Terminal. Bijvoorbeeld terminal naam `Putty` en `Support` gebruiker. 
 
 ## <a name="create-local-alert-exclusion-rules"></a>Regels voor het uitsluiten van een lokale waarschuwing maken
 
-U kunt een uitsluitings regel maken door de volgende opdracht in te voeren in de CLI:
+U kunt een regel voor het uitsluiten van een lokale waarschuwing maken door de volgende opdracht in te voeren in de CLI:
 
 ```azurecli-interactive
 alerts exclusion-rule-create [-h] -n NAME [-ts TIMES] [-dir DIRECTION]  
 [-dev DEVICES] [-a ALERTS]
 ```
 
-De kenmerken die u in de regels voor de uitsluiting van waarschuwingen kunt definiëren, zijn als volgt:
+De volgende kenmerken kunnen worden gebruikt met de regels voor uitsluitingen van waarschuwingen:
 
 | Kenmerk | Beschrijving |
 |--|--|
@@ -42,18 +46,18 @@ De kenmerken die u in de regels voor de uitsluiting van waarschuwingen kunt defi
 
 ## <a name="append-local-alert-exclusion-rules"></a>Regels voor uitsluiting van lokale waarschuwingen toevoegen
 
-U kunt nieuwe regels toevoegen aan de huidige regels voor waarschuwings uitsluiting door de volgende opdracht in te voeren in de CLI:
+U kunt regels voor het uitsluiten van lokale waarschuwingen toevoegen door de volgende opdracht in te voeren in de CLI:
 
 ```azurecli-interactive
 alerts exclusion-rule-append [-h] -n NAME [-ts TIMES] [-dir DIRECTION]  
 [-dev DEVICES] [-a ALERTS]
 ```
 
-De hier gebruikte kenmerken zijn vergelijkbaar met kenmerken die worden beschreven wanneer u lokale regels voor waarschuwings uitsluiting maakt. In het gebruik hier worden de kenmerken toegepast op bestaande regels.
+De hier gebruikte kenmerken zijn hetzelfde als de kenmerken die worden beschreven in de sectie regels voor het maken van een lokale waarschuwing. Het verschil in het gebruik is dat hier de kenmerken worden toegepast op de bestaande regels.
 
 ## <a name="show-local-alert-exclusion-rules"></a>Regels voor het uitsluiten van lokale waarschuwingen weer geven
 
-Voer de volgende opdracht in om alle bestaande uitsluitings regels weer te geven:
+Voer de volgende opdracht in om de bestaande lijst met uitsluitings regels weer te geven:
 
 ```azurecli-interactive
 alerts exclusion-rule-list [-h] -n NAME [-ts TIMES] [-dir DIRECTION]  
@@ -69,7 +73,7 @@ alerts exclusion-rule-remove [-h] -n NAME [-ts TIMES] [-dir DIRECTION]
 [-dev DEVICES] [-a ALERTS]
 ```
 
-U kunt het volgende kenmerk gebruiken met de regels voor het uitsluiten van waarschuwingen:
+Het volgende kenmerk kan worden gebruikt met de regels voor uitsluitingen van waarschuwingen:
 
 | Kenmerk | Beschrijving|
 | --------- | ---------------------------------- |
@@ -77,11 +81,11 @@ U kunt het volgende kenmerk gebruiken met de regels voor het uitsluiten van waar
 
 ## <a name="sync-time-from-the-ntp-server"></a>Synchronisatie tijd van de NTP-server
 
-U kunt een tijd synchronisatie van een NTP-server in-en uitschakelen.
+U kunt een tijd synchronisatie van een opgegeven NTP-server in-of uitschakelen.
 
 ### <a name="enable-ntp-sync"></a>NTP-synchronisatie inschakelen
 
-Door de volgende opdracht in te scha kelen, wordt de huidige tijd periodiek opgehaald van een opgegeven NTP-server:
+Voer de volgende opdracht in om periodiek de tijd op te halen van de opgegeven NTP-server:
 
 ```azurecli-interactive
 ntp enable IP
@@ -91,7 +95,7 @@ Het kenmerk dat u kunt definiëren in de opdracht, is het IP-adres van de NTP-se
 
 ### <a name="disable-ntp-sync"></a>NTP-synchronisatie uitschakelen
 
-Als u de volgende opdracht opgeeft, wordt de tijd synchronisatie met de opgegeven NTP-server uitgeschakeld:
+Voer de volgende opdracht in om de tijd synchronisatie met de opgegeven NTP-server uit te scha kelen:
 
 ```azurecli-interactive
 ntp disable IP
@@ -99,15 +103,15 @@ ntp disable IP
 
 Het kenmerk dat u kunt definiëren in de opdracht, is het IP-adres van de NTP-server.
 
-## <a name="configure-the-network"></a>Het netwerk configureren
+## <a name="network-configuration"></a>Netwerkconfiguratie
 
 De volgende tabel beschrijft de opdrachten die beschikbaar zijn voor het configureren van uw netwerk opties voor Azure Defender voor IoT:
 
 |Name|Opdracht|Beschrijving|
 |-----------|-------|-----------|
-|Ping|`ping IP `| Pingt adressen buiten het Defender voor IoT-platform.|
-|Blink|`network blink`|Hiermee schakelt u de para meters van de netwerk configuratie in.|
-|Het netwerk opnieuw configureren |`network edit-settings`| Hiermee schakelt u de para meters van de netwerk configuratie in. |
+|Ping|`ping IP`| Een adres pingen buiten het Defender voor IoT-platform.|
+|Blink|`network blink`| Zoek een verbinding door ervoor te zorgen dat de interface licht knippert. |
+|Het netwerk opnieuw configureren |`network edit-settings`| Een wijziging in de para meters van de netwerk configuratie in te scha kelen. |
 |Netwerk instellingen weer geven |`network list`|Hiermee worden de para meters van de netwerk adapter weer gegeven. |
 |De netwerk configuratie valideren |`network validate` |Geeft de instellingen van het uitvoer netwerk. <br /> <br />Bijvoorbeeld: <br /> <br />Huidige netwerk instellingen: <br /> Interface: ETH0 <br /> IP: 10.100.100.1 <br />subnet: 255.255.255.0 <br />standaard gateway: 10.100.100.254 <br />DNS: 10.100.100.254 <br />monitor interfaces: eth1|
 |Certificaat importeren |`certificate import FILE` |Hiermee wordt het HTTPS-certificaat geïmporteerd. U moet het volledige pad opgeven dat leidt naar een \* . crt-bestand. |
@@ -115,7 +119,7 @@ De volgende tabel beschrijft de opdrachten die beschikbaar zijn voor het configu
 
 ## <a name="filter-network-configurations"></a>Netwerk configuraties filteren
 
-`network capture-filter`Met de opdracht kunnen beheerders netwerk verkeer elimineren dat niet hoeft te worden geanalyseerd. Verkeer filteren met behulp van een opgenomen lijst of een uitsluitings lijst.
+Met de `network capture-filter` opdracht kunnen beheerders netwerk verkeer elimineren dat niet hoeft te worden geanalyseerd. U kunt verkeer filteren met behulp van een opgenomen lijst of een uitsluitings lijst.
 
 ```azurecli-interactive
 network capture-filter
@@ -125,7 +129,7 @@ Nadat u de opdracht hebt ingevoerd, wordt u gevraagd de volgende vraag:
 
 >`Would you like to supply devices and subnet masks you wish to include in the capture filter? [Y/N]:`
 
-Selecteer `Y` deze optie om een nano bestand te openen waarmee u apparaten, kanalen, poorten en subsets kunt toevoegen, afhankelijk van de volgende syntaxis:
+Selecteer `Y` deze optie om een nano bestand te openen waar u een apparaat, kanaal, poort en subset kunt toevoegen volgens de volgende syntaxis:
 
 | Kenmerk | Beschrijving |
 |--|--|
@@ -137,11 +141,11 @@ Scheid argumenten door een rij te verwijderen.
 
 Wanneer u een apparaat, kanaal of subnet opneemt, verwerkt de sensor alle geldige verkeer voor dat argument, met inbegrip van poorten en verkeer dat doorgaans niet kan worden verwerkt.
 
-U wordt dan gevraagd het volgende te doen:
+Vervolgens wordt u de volgende vraag gesteld:
 
 >`Would you like to supply devices and subnet masks you wish to exclude from the capture filter? [Y/N]:`
 
-Selecteer `Y` deze optie om een nano bestand te openen waarmee u apparaten, kanalen, poorten en subsets kunt toevoegen, afhankelijk van de volgende syntaxis:
+Selecteer `Y` deze optie om een nano bestand te openen waarmee u een apparaat, kanaal, poort en subsets kunt toevoegen, afhankelijk van de volgende syntaxis:
 
 | Kenmerk | Beschrijving |
 |--|--|
@@ -173,7 +177,7 @@ UDP-en TCP-poorten voor al het verkeer opnemen of uitsluiten.
 
 ### <a name="components"></a>Onderdelen
 
-U wordt gevraagd het volgende te doen:
+U wordt de volgende vraag gesteld:
 
 >`In which component do you wish to apply this capture filter?`
 
@@ -232,7 +236,7 @@ sudo cyberx-xsense-capture-filter -p all -m all-connected
 
 ## <a name="define-client-and-server-hosts"></a>Hosts voor client en server definiëren
 
-Als Defender voor IoT de hosts client en server niet automatisch heeft gedetecteerd, voert u de volgende opdracht in om de client-en Server-hosts in te stellen:
+Als Defender voor IoT de client en Server hosts niet automatisch detecteren, voert u de volgende opdracht in om de client-en Server-hosts in te stellen:
 
 ```azurecli-interactive
 directions [-h] [--identifier IDENTIFIER] [--port PORT] [--remove] [--add]  
@@ -256,6 +260,7 @@ De volgende tabel beschrijft de opdrachten die beschikbaar zijn voor het uitvoer
 
 |Name|Code|Description|
 |----|----|-----------|
+|De datum weer geven|`date`|Retourneert de huidige datum op de host in GMT-indeling.|
 |De host opnieuw opstarten|`system reboot`|Het hostapparaat wordt opnieuw opgestart.|
 |De host afsluiten|`system shutdown`|De host wordt afgesloten.|
 |Back-up maken van het systeem|`system backup`|Initieert een onmiddellijke back-up (een niet-geplande back-up).|
@@ -290,6 +295,6 @@ Wanneer u het hulp programma gebruikt:
 
 - Bevestig het toestel domein (zoals het in het certificaat wordt weer gegeven) met uw DNS-server en het bijbehorende IP-adres. 
     
-## <a name="next-steps"></a>Volgende stappen
+## <a name="see-also"></a>Zie ook
 
 [Defender voor IoT API-sensor-en beheer console-Api's](references-work-with-defender-for-iot-apis.md)

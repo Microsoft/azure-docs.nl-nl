@@ -3,12 +3,12 @@ title: Veelvoorkomende fouten oplossen
 description: Meer informatie over het oplossen van problemen met het maken van beleids definities, de diverse Sdk's en de invoeg toepassing voor Kubernetes.
 ms.date: 01/26/2021
 ms.topic: troubleshooting
-ms.openlocfilehash: 0a64346188696cc7cc16d832474ec4ee6befdae2
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 6e0e4067f07266bae9c87fd4443d27314cc28c0b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98917740"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592601"
 ---
 # <a name="troubleshoot-errors-with-using-azure-policy"></a>Fouten bij het gebruik van Azure Policy oplossen
 
@@ -87,7 +87,7 @@ Als u nog steeds een probleem met uw gedupliceerde en aangepaste ingebouwde bele
 
 #### <a name="issue"></a>Probleem
 
-Een resource waarvan u verwacht dat Azure Policy worden uitgevoerd, heeft geen actie ondergaand en er is geen vermelding in het [Azure-activiteiten logboek](../../../azure-monitor/platform/platform-logs-overview.md).
+Een resource waarvan u verwacht dat Azure Policy worden uitgevoerd, heeft geen actie ondergaand en er is geen vermelding in het [Azure-activiteiten logboek](../../../azure-monitor/essentials/platform-logs-overview.md).
 
 #### <a name="cause"></a>Oorzaak
 
@@ -123,7 +123,7 @@ Een beleids toewijzing aan het bereik van uw nieuwe of bijgewerkte bron voldoet 
 
 #### <a name="resolution"></a>Oplossing
 
-Het fout bericht van een beleids toewijzing voor weigeren omvat de beleids definitie en beleids toewijzing-Id's. Als de fout informatie in het bericht ontbreekt, is het ook beschikbaar in het [activiteiten logboek](../../../azure-monitor/platform/activity-log.md#view-the-activity-log). Gebruik deze informatie om meer te weten te komen over de resource beperkingen en pas de bron eigenschappen in uw aanvraag aan om de toegestane waarden te vergelijken.
+Het fout bericht van een beleids toewijzing voor weigeren omvat de beleids definitie en beleids toewijzing-Id's. Als de fout informatie in het bericht ontbreekt, is het ook beschikbaar in het [activiteiten logboek](../../../azure-monitor/essentials/activity-log.md#view-the-activity-log). Gebruik deze informatie om meer te weten te komen over de resource beperkingen en pas de bron eigenschappen in uw aanvraag aan om de toegestane waarden te vergelijken.
 
 ## <a name="template-errors"></a>Sjabloon fouten
 

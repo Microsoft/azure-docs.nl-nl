@@ -5,12 +5,12 @@ services: automation
 ms.subservice: change-inventory-management
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: 9f7a37fa2101e4a386c9c6f2338f185b3ecdc986
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: e5b42d6102737b778ea5d19cd7da3c2f64881b1b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99052614"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585926"
 ---
 # <a name="enable-change-tracking-and-inventory-from-a-runbook"></a>Wijzigingen bijhouden en inventaris inschakelen vanuit een runbook
 
@@ -28,7 +28,7 @@ Deze methode gebruikt twee runbooks:
 
 * Azure-abonnement. Als u nog geen abonnement hebt, kunt u [uw voordelen als MSDN-abonnee activeren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) of u aanmelden voor een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * [Automation-account](../automation-security-overview.md) voor het beheren van computers.
-* [Log Analytics werk ruimte](../../azure-monitor/platform/design-logs-deployment.md)
+* [Log Analytics werk ruimte](../../azure-monitor/logs/design-logs-deployment.md)
 * Een [virtuele machine](../../virtual-machines/windows/quick-create-portal.md).
 * Twee Automation-assets, die worden gebruikt door het **Enable-AutomationSolution** runbook. Dit runbook, als het nog niet bestaat in uw Automation-account, wordt tijdens de eerste uitvoering automatisch geïmporteerd door het runbook **Enable-MultipleSolution** .
     * *LASolutionSubscriptionId*: abonnement-id van waar de log Analytics-werk ruimte zich bevindt.

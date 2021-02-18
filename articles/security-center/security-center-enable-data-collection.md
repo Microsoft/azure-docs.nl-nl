@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: quickstart
 ms.date: 11/15/2020
 ms.author: memildin
-ms.openlocfilehash: be8123d3c8a4acc684610aeaa9ee263c5defa17d
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
-ms.translationtype: HT
+ms.openlocfilehash: 8fa2a06b1310e7cd825c918e92ea7af9b9b488de
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97813612"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596160"
 ---
 # <a name="auto-provisioning-agents-and-extensions-from-azure-security-center"></a>Automatische inrichting van agents en extensies van Azure Security Center
 
@@ -83,7 +83,7 @@ Automatische inrichting van de Log Analytics-agent inschakelen:
 
     - **Azure VM's verbinden met een andere werkruimte**: selecteer in de vervolgkeuzelijst de werkruimte waarin verzamelde gegevens moeten worden opgeslagen. De vervolgkeuzelijst bevat alle werkruimten in al uw abonnementen. U kunt deze optie gebruiken om gegevens te verzamelen van virtuele machines die worden uitgevoerd in verschillende abonnementen, en deze allemaal op te slaan in uw geselecteerde werkruimte.  
 
-        Als u al een bestaande Log Analytics-werkruimte hebt, wilt u mogelijk dezelfde werkruimte gebruiken (vereist lees- en schrijfmachtigingen voor de werkruimte). Deze optie is handig als u een centrale werkruimte gebruikt in uw organisatie en u deze ook wilt gebruiken voor het verzamelen van beveiligingsgegevens. Meer informatie vindt u in [Toegang tot logboekgegevens en werkruimten beheren in Azure Monitor](../azure-monitor/platform/manage-access.md).
+        Als u al een bestaande Log Analytics-werkruimte hebt, wilt u mogelijk dezelfde werkruimte gebruiken (vereist lees- en schrijfmachtigingen voor de werkruimte). Deze optie is handig als u een centrale werkruimte gebruikt in uw organisatie en u deze ook wilt gebruiken voor het verzamelen van beveiligingsgegevens. Meer informatie vindt u in [Toegang tot logboekgegevens en werkruimten beheren in Azure Monitor](../azure-monitor/logs/manage-access.md).
 
         Als voor uw werkruimte al een Security- of SecurityCenterFree-oplossing is ingeschakeld, wordt de prijs automatisch ingesteld. Als dat niet het geval is, installeert u een Security Center-oplossing in de werkruimte:
 
@@ -218,7 +218,7 @@ De Log Analytics-agent handmatig installeren:
    - [De Log Analytics-agent voor Windows installeren](../virtual-machines/extensions/oms-windows.md)
    - [De Log Analytics-agent voor Linux installeren](../virtual-machines/extensions/oms-linux.md)
 
-1. Als u agents wilt implementeren op uw bestaande VM's, volgt u de instructies in [Gegevens verzamelen over Azure Virtual Machines](../azure-monitor/learn/quick-collect-azurevm.md) (de sectie **Gebeurtenis- en prestatiegegevens verzamelen** is optioneel).
+1. Als u agents wilt implementeren op uw bestaande VM's, volgt u de instructies in [Gegevens verzamelen over Azure Virtual Machines](../azure-monitor/vm/quick-collect-azurevm.md) (de sectie **Gebeurtenis- en prestatiegegevens verzamelen** is optioneel).
 
 1. Als u PowerShell wilt gebruiken om de agents te implementeren, gebruikt u de instructies in de documentatie voor virtuele machines:
 

@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 3/16/2020
-ms.openlocfilehash: 73705434aef3ee438c02fbfd6502d30e7620b695
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: f5557140d77865a6d4c44316cecd512f877736e0
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95026451"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577074"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-postgresql---hyperscale-citus"></a>Gebruik de Azure Portal om waarschuwingen in te stellen voor de Azure Database for PostgreSQL-grootschalige (Citus)
 
@@ -26,11 +26,11 @@ U kunt een waarschuwing configureren om de volgende acties uit te voeren wanneer
 * Een webhook aanroepen.
 
 U kunt informatie over waarschuwings regels configureren en ophalen met behulp van:
-* [Azure-portal](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
-* [Azure-CLI](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
+* [Azure-portal](../azure-monitor/alerts/alerts-metric.md#create-with-azure-portal)
+* [Azure-CLI](../azure-monitor/alerts/alerts-metric.md#with-azure-cli)
 * [Azure Monitor REST API](/rest/api/monitor/metricalerts)
 
-## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Een waarschuwings regel maken op basis van een metriek van de Azure Portal
+## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Een waarschuwingsregel maken op een metrische waarde vanuit Azure Portal
 1. Selecteer in de [Azure Portal](https://portal.azure.com/)de Azure database for postgresql server die u wilt bewaken.
 
 2. Selecteer in de sectie **bewaking** van de zijbalk **waarschuwingen** zoals wordt weer gegeven:
@@ -109,5 +109,5 @@ Wanneer de schijf de schijfruimte limiet nadert, kunt u met deze technieken meer
 Bewaking van CPU-gebruik is nuttig om een basis lijn voor prestaties te maken. Het is bijvoorbeeld mogelijk dat het CPU-gebruik doorgaans ongeveer 40-60% is. Als het CPU-gebruik plotseling begint met het zweven van 95%, kunt u een afwijkingen herkennen. Het CPU-gebruik kan de biologische groei weer spie gelen, maar kan ook een losse query onthullen. Wanneer u een CPU-waarschuwing maakt, moet u een lange aggregatie granulatie instellen om langdurige verhogingen te ondervangen en tijdelijke pieken te negeren.
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over het [configureren van webhooks in waarschuwingen](../azure-monitor/platform/alerts-webhooks.md).
-* Bekijk een [overzicht van de verzameling metrische gegevens](../azure-monitor/platform/data-platform.md) om te controleren of uw service beschikbaar is en reageert.
+* Meer informatie over het [configureren van webhooks in waarschuwingen](../azure-monitor/alerts/alerts-webhooks.md).
+* Bekijk een [overzicht van de verzameling metrische gegevens](../azure-monitor/data-platform.md) om te controleren of uw service beschikbaar is en reageert.

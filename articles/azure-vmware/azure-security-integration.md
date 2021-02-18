@@ -3,12 +3,12 @@ title: Bescherm uw Azure VMware-oplossing-Vm's met Azure Security Center-integra
 description: Bescherm uw Azure VMware-oplossing-Vm's met de systeem eigen beveiligings tools van Azure in het dash board van Azure Security Center.
 ms.topic: how-to
 ms.date: 02/12/2021
-ms.openlocfilehash: b37d09d6e8f239586a18c0fa3b1dcd7bfee98102
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 7292ea4486a61f5b0cfd8f656d2763a3ce655e79
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100516359"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578250"
 ---
 # <a name="protect-your-azure-vmware-solution-vms-with-azure-security-center-integration"></a>Bescherm uw Azure VMware-oplossing-Vm's met Azure Security Center-integratie
 
@@ -50,7 +50,7 @@ U kunt de Log Analytics-werk ruimte configureren met Azure Sentinel voor waarsch
 
 ## <a name="create-a-log-analytics-workspace"></a>Een Log Analytics-werkruimte maken
 
-U hebt een Log Analytics-werk ruimte nodig voor het verzamelen van gegevens uit verschillende bronnen. Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/learn/quick-create-workspace.md)voor meer informatie. 
+U hebt een Log Analytics-werk ruimte nodig voor het verzamelen van gegevens uit verschillende bronnen. Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/logs/quick-create-workspace.md)voor meer informatie. 
 
 ## <a name="deploy-security-center-and-configure-azure-vmware-solution-vms"></a>Security Center implementeren en virtuele machines van Azure VMware-oplossingen configureren
 
@@ -243,5 +243,5 @@ U kunt query's maken of de beschik bare vooraf gedefinieerde query gebruiken in 
 Nu u hebt besproken hoe u uw Azure VMware-oplossing-Vm's kunt beveiligen, wilt u mogelijk meer informatie over:
 
 - Het [Azure Defender-dash board](../security-center/azure-defender-dashboard.md)gebruiken.
-- [Geavanceerde detectie van bedreigingen in azure-Sentinel](../azure-monitor/learn/quick-create-workspace.md).
+- [Geavanceerde detectie van bedreigingen in azure-Sentinel](../azure-monitor/logs/quick-create-workspace.md).
 - [Levenscyclus beheer van virtuele machines met Azure VMware-oplossingen](lifecycle-management-of-azure-vmware-solution-vms.md).

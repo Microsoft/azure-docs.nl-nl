@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 77af95f2decbfb81ed930591b03f71fb71780def
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: e71beb4e4b5d23dcd1cffa1f60462d782d37db2e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99805244"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572184"
 ---
 # <a name="azure-security-baseline-for-backup"></a>Azure-beveiligings basislijn voor back-up
 
@@ -116,9 +116,9 @@ Zie [overzicht van Azure Security-basis lijnen](../security/benchmarks/security-
 
 **Richt lijnen**: als u de Mars-agent gebruikt op een virtuele machine van Azure die wordt beveiligd door een NSG of Azure firewall, gebruikt u Azure-activiteiten logboek om de configuratie van de NSG of de firewall te bewaken. U kunt waarschuwingen maken binnen Azure Monitor die worden geactiveerd wanneer er wijzigingen in deze resources plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure bekijken en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure bekijken en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen voor activiteiten logboek maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen voor activiteiten logboek maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -142,7 +142,7 @@ Zie [overzicht van Azure Security-basis lijnen](../security/benchmarks/security-
 
 Neem ook opname logboeken via Azure Monitor op om beveiligings gegevens te verzamelen die zijn gegenereerd door Azure Backup. In de Azure Monitor gebruikt u Log Analytics werk ruimte (n) om een query uit te voeren en een analyse te verrichten en opslag accounts te gebruiken voor lange termijn/archiverings opslag. U kunt ook gegevens naar Azure Sentinel of een beveiligings incident en gebeurtenis beheer van derden (SIEM) inschakelen en op de trein zetten.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Diagnostische instellingen gebruiken voor Recovery Services kluizen](./backup-azure-diagnostic-events.md)
 
@@ -158,7 +158,7 @@ Neem ook opname logboeken via Azure Monitor op om beveiligings gegevens te verza
 
 Daarnaast verzendt Azure Backup diagnostische gebeurtenissen die kunnen worden verzameld en gebruikt voor analyse, waarschuwingen en rapportage. U kunt de diagnostische instellingen voor een Recovery Services kluis configureren via de Azure Portal. U kunt een of meer diagnostische gebeurtenissen verzenden naar een opslag account, Event hub of een Log Analytics-werk ruimte.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Diagnostische instellingen gebruiken voor Recovery Services kluizen](./backup-azure-diagnostic-events.md)
 
@@ -178,7 +178,7 @@ Daarnaast verzendt Azure Backup diagnostische gebeurtenissen die kunnen worden v
 
 **Richt lijnen**: stel in azure monitor de Bewaar periode voor logboek registratie In voor log Analytics werk ruimten die zijn gekoppeld aan uw Azure Recovery Services-kluizen volgens de nalevings voorschriften van uw organisatie.
 
-- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -192,9 +192,9 @@ Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend
 
 - [Bewaking Azure Backup werk belastingen](./backup-azure-monitoring-built-in-monitor.md)
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
-- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](../azure-monitor/platform/activity-log.md)
+- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](../azure-monitor/essentials/activity-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -212,7 +212,7 @@ U kunt ook een Log Analytics werk ruimte onboarden naar Azure Sentinel, aangezie
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/platform/alerts-log.md)
+- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/alerts/alerts-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -518,7 +518,7 @@ Wanneer u een back-up maakt van de MARS-agent of een Recovery Services kluis ver
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer wijzigingen worden aangebracht in productie Azure Recovery Services kluizen, evenals andere essentiële of gerelateerde bronnen.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 

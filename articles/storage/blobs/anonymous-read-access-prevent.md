@@ -10,12 +10,12 @@ ms.date: 12/09/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: blobs
-ms.openlocfilehash: 179e60a41a9cd6a2277959b3cd31159c796d845d
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: b0003384676f420c5ece043b1eb6120ed8ee2435
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96937284"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574902"
 ---
 # <a name="prevent-anonymous-public-read-access-to-containers-and-blobs"></a>Anonieme open bare Lees toegang voor containers en blobs voor komen
 
@@ -35,7 +35,7 @@ Micro soft raadt u aan om logboek registratie en metrische gegevens voor dat acc
 
 ### <a name="monitor-anonymous-requests-with-metrics-explorer"></a>Anonieme aanvragen controleren met Metrics Explorer
 
-Als u anonieme aanvragen wilt bijhouden in een opslag account, gebruikt u Azure Metrics Explorer in de Azure Portal. Zie aan de slag [met Azure Metrics Explorer](../../azure-monitor/platform/metrics-getting-started.md)voor meer informatie over Metrics Explorer.
+Als u anonieme aanvragen wilt bijhouden in een opslag account, gebruikt u Azure Metrics Explorer in de Azure Portal. Zie aan de slag [met Azure Metrics Explorer](../../azure-monitor/essentials/metrics-getting-started.md)voor meer informatie over Metrics Explorer.
 
 Volg deze stappen om een metriek te maken waarmee anonieme aanvragen worden bijgehouden:
 
@@ -61,7 +61,7 @@ Nadat u de metrische gegevens hebt geconfigureerd, worden anonieme aanvragen wee
 
 :::image type="content" source="media/anonymous-read-access-prevent/metric-anonymous-blob-requests.png" alt-text="Scherm opname van geaggregeerde anonieme aanvragen op Blob Storage":::
 
-U kunt ook een waarschuwings regel configureren om u op de hoogte te stellen wanneer er een bepaald aantal anonieme aanvragen wordt gedaan voor uw opslag account. Zie [metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../../azure-monitor/platform/alerts-metric.md)voor meer informatie.
+U kunt ook een waarschuwings regel configureren om u op de hoogte te stellen wanneer er een bepaald aantal anonieme aanvragen wordt gedaan voor uw opslag account. Zie [metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../../azure-monitor/alerts/alerts-metric.md)voor meer informatie.
 
 ### <a name="analyze-logs-to-identify-containers-receiving-anonymous-requests"></a>Logboeken analyseren om containers te identificeren die anonieme aanvragen ontvangen
 
@@ -69,7 +69,7 @@ Azure Storage legt vastgelegde gegevens vast over aanvragen voor het opslag acco
 
 Als u aanvragen wilt registreren voor uw Azure Storage-account om anonieme aanvragen te evalueren, kunt u Azure Storage logboek registratie gebruiken in Azure Monitor (preview). Zie [Azure Storage bewaken](./monitor-blob-storage.md)voor meer informatie.
 
-Azure Storage logboek registratie in Azure Monitor ondersteunt het gebruik van logboek query's voor het analyseren van logboek gegevens. Als u een query wilt uitvoeren op Logboeken, kunt u een Azure Log Analytics-werk ruimte gebruiken. Zie [zelf studie: aan de slag met log Analytics query's](../../azure-monitor/log-query/log-analytics-tutorial.md)voor meer informatie over logboek query's.
+Azure Storage logboek registratie in Azure Monitor ondersteunt het gebruik van logboek query's voor het analyseren van logboek gegevens. Als u een query wilt uitvoeren op Logboeken, kunt u een Azure Log Analytics-werk ruimte gebruiken. Zie [zelf studie: aan de slag met log Analytics query's](../../azure-monitor/logs/log-analytics-tutorial.md)voor meer informatie over logboek query's.
 
 > [!NOTE]
 > De preview van Azure Storage logboek registratie in Azure Monitor wordt alleen ondersteund in de open bare Azure-Cloud. Overheids Clouds bieden geen ondersteuning voor logboek registratie voor Azure Storage met Azure Monitor.
@@ -79,7 +79,7 @@ Azure Storage logboek registratie in Azure Monitor ondersteunt het gebruik van l
 Als u Azure Storage gegevens wilt registreren met Azure Monitor en deze wilt analyseren met Azure Log Analytics, moet u eerst een diagnostische instelling maken die aangeeft welke typen aanvragen en voor welke opslag Services u gegevens wilt registreren. Voer de volgende stappen uit om een diagnostische instelling te maken in de Azure Portal:
 
 1. Schrijf u in [voor de Azure Storage registratie in azure monitor preview](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxW65f1VQyNCuBHMIMBV8qlUM0E0MFdPRFpOVTRYVklDSE1WUTcyTVAwOC4u).
-1. Maak een nieuwe Log Analytics-werk ruimte in het abonnement dat uw Azure Storage-account bevat. Nadat u logboek registratie voor uw opslag account hebt geconfigureerd, zijn de logboeken beschikbaar in de werk ruimte Log Analytics. Raadpleeg [Een Log Analytics-werkruimte maken in Azure Portal](../../azure-monitor/learn/quick-create-workspace.md) voor meer informatie.
+1. Maak een nieuwe Log Analytics-werk ruimte in het abonnement dat uw Azure Storage-account bevat. Nadat u logboek registratie voor uw opslag account hebt geconfigureerd, zijn de logboeken beschikbaar in de werk ruimte Log Analytics. Raadpleeg [Een Log Analytics-werkruimte maken in Azure Portal](../../azure-monitor/logs/quick-create-workspace.md) voor meer informatie.
 1. Ga in Azure Portal naar uw opslagaccount.
 1. Selecteer in de sectie controle de optie **Diagnostische instellingen (preview)**.
 1. Selecteer **BLOB** om aanvragen te registreren die worden uitgevoerd op Blob Storage.
@@ -90,7 +90,7 @@ Als u Azure Storage gegevens wilt registreren met Azure Monitor en deze wilt ana
 
     :::image type="content" source="media/anonymous-read-access-prevent/create-diagnostic-setting-logs.png" alt-text="Scherm afbeelding die laat zien hoe u een diagnostische instelling voor logboek registratie aanvragen maakt":::
 
-Nadat u de diagnostische instelling hebt gemaakt, worden aanvragen voor het opslag account vervolgens geregistreerd volgens die instelling. Zie voor meer informatie [Diagnostische instelling maken om bron logboeken en metrische gegevens in azure te verzamelen](../../azure-monitor/platform/diagnostic-settings.md).
+Nadat u de diagnostische instelling hebt gemaakt, worden aanvragen voor het opslag account vervolgens geregistreerd volgens die instelling. Zie voor meer informatie [Diagnostische instelling maken om bron logboeken en metrische gegevens in azure te verzamelen](../../azure-monitor/essentials/diagnostic-settings.md).
 
 Zie [bron Logboeken (preview)](./monitor-blob-storage-reference.md#resource-logs-preview)voor een verwijzing van velden die beschikbaar zijn in azure Storage-Logboeken in azure monitor.
 
@@ -106,7 +106,7 @@ StorageBlobLogs
 | project TimeGenerated, AccountName, AuthenticationType, Uri
 ```
 
-U kunt ook een waarschuwings regel configureren op basis van deze query om u te informeren over anonieme aanvragen. Zie [logboek waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../../azure-monitor/platform/alerts-log.md)voor meer informatie.
+U kunt ook een waarschuwings regel configureren op basis van deze query om u te informeren over anonieme aanvragen. Zie [logboek waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../../azure-monitor/alerts/alerts-log.md)voor meer informatie.
 
 ## <a name="remediate-anonymous-public-access"></a>Anonieme open bare toegang herstellen
 
@@ -290,13 +290,13 @@ In de volgende afbeelding ziet u de fout die optreedt wanneer u probeert om een 
 
 ## <a name="permissions-for-allowing-or-disallowing-public-access"></a>Machtigingen voor het toestaan of weigeren van open bare toegang
 
-Als u de eigenschap **AllowBlobPublicAccess** voor het opslag account wilt instellen, moet een gebruiker gemachtigd zijn om opslag accounts te maken en te beheren. Azure RBAC-rollen (op rollen gebaseerd toegangs beheer) die deze machtigingen bieden, zijn onder andere de actie **micro soft. Storage/Storage accounts/write** of **micro \* soft. Storage/Storage accounts/* _. Ingebouwde rollen met deze actie zijn onder andere:
+Als u de eigenschap **AllowBlobPublicAccess** voor het opslag account wilt instellen, moet een gebruiker gemachtigd zijn om opslag accounts te maken en te beheren. Azure RBAC-rollen (op rollen gebaseerd toegangs beheer) die deze machtigingen bieden, zijn onder andere **micro soft. Storage/Storage accounts/write** of **micro soft. \* Storage/Storage accounts/** action. Ingebouwde rollen met deze actie zijn onder andere:
 
 - De rol van Azure Resource Manager [eigenaar](../../role-based-access-control/built-in-roles.md#owner)
 - De rol [inzender](../../role-based-access-control/built-in-roles.md#contributor) Azure Resource Manager
 - De rol [Inzender voor opslag accounts](../../role-based-access-control/built-in-roles.md#storage-account-contributor)
 
-Deze rollen bieden geen toegang tot gegevens in een opslag account via Azure Active Directory (Azure AD). Ze bevatten echter de _ * micro soft. Storage/Storage accounts/listkeys ophalen/Action * *, waarmee toegang wordt verleend aan de toegangs sleutels voor het account. Met deze machtiging kan een gebruiker de toegangs sleutels voor het account gebruiken om toegang te krijgen tot alle gegevens in een opslag account.
+Deze rollen bieden geen toegang tot gegevens in een opslag account via Azure Active Directory (Azure AD). Ze bevatten echter de **micro soft. Storage/Storage accounts/listkeys ophalen/Action**, waarmee toegang wordt verleend aan de toegangs sleutels voor het account. Met deze machtiging kan een gebruiker de toegangs sleutels voor het account gebruiken om toegang te krijgen tot alle gegevens in een opslag account.
 
 Roltoewijzingen moeten zijn gericht op het niveau van het opslag account of hoger, zodat een gebruiker open bare toegang tot het opslag account toestaat of weigert. Zie [inzicht in het bereik voor Azure RBAC](../../role-based-access-control/scope-overview.md)voor meer informatie over het gebruikersrol bereik.
 

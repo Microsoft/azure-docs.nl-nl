@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: vinynigam
 ms.author: vinigam
 ms.date: 02/20/2018
-ms.openlocfilehash: 4ae0a85c8608ff96777bc6b952554f1ccd917306
-ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
+ms.openlocfilehash: 92326ea4d3de896a67b2953fb612b79948044d08
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100530601"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573429"
 ---
 # <a name="network-performance-monitor-solution-in-azure"></a>Netwerkprestatiemeter oplossing in azure
 
@@ -76,7 +76,7 @@ De lijst met ondersteunde regio's voor de monitor ExpressRoute is beschikbaar in
 
 ### <a name="install-and-configure-agents"></a>Agents installeren en configureren 
 
-Gebruik de basis procedures voor het installeren van agents op [Windows-computers verbinden met Azure monitor](../platform/agent-windows.md), [Linux-computers verbinden met Azure monitor (Preview)](../../virtual-machines/extensions/oms-linux.md) en [Operations Manager verbinden met Azure monitor](../platform/om-agents.md).
+Gebruik de basis procedures voor het installeren van agents op [Windows-computers verbinden met Azure monitor](../agents/agent-windows.md), [Linux-computers verbinden met Azure monitor (Preview)](../../virtual-machines/extensions/oms-linux.md) en [Operations Manager verbinden met Azure monitor](../agents/om-agents.md).
 
 ### <a name="where-to-install-the-agents"></a>Waar de agents moeten worden geïnstalleerd 
 
@@ -266,13 +266,13 @@ De topologie die in de kaart wordt weer gegeven, is een laag-3-topologie en beva
 
 ## <a name="log-queries-in-azure-monitor"></a>Logboekquery's in Azure Monitor
 
-Alle gegevens die grafisch worden weer gegeven via de Netwerkprestatiemeter dash board en inzoom pagina's, zijn ook ingebouwd in [logboek query's](../log-query/log-query-overview.md). U kunt een interactieve analyse van gegevens in de opslag plaats uitvoeren en gegevens uit verschillende bronnen correleren. U kunt ook aangepaste waarschuwingen en weer gaven maken en de gegevens exporteren naar Excel, Power BI of een deel bare koppeling. Het gebied **algemene query's** in het dash board bevat enkele nuttige query's die u als uitgangs punt kunt gebruiken om uw eigen query's en rapporten te maken. 
+Alle gegevens die grafisch worden weer gegeven via de Netwerkprestatiemeter dash board en inzoom pagina's, zijn ook ingebouwd in [logboek query's](../logs/log-query-overview.md). U kunt een interactieve analyse van gegevens in de opslag plaats uitvoeren en gegevens uit verschillende bronnen correleren. U kunt ook aangepaste waarschuwingen en weer gaven maken en de gegevens exporteren naar Excel, Power BI of een deel bare koppeling. Het gebied **algemene query's** in het dash board bevat enkele nuttige query's die u als uitgangs punt kunt gebruiken om uw eigen query's en rapporten te maken. 
 
 ## <a name="alerts"></a>Waarschuwingen
 
-Netwerkprestatiemeter maakt gebruik van de waarschuwings mogelijkheden van [Azure monitor](../platform/alerts-overview.md).
+Netwerkprestatiemeter maakt gebruik van de waarschuwings mogelijkheden van [Azure monitor](../alerts/alerts-overview.md).
 
-Dit betekent dat alle meldingen worden beheerd met behulp van [actie groepen](../platform/action-groups.md).  
+Dit betekent dat alle meldingen worden beheerd met behulp van [actie groepen](../alerts/action-groups.md).  
 
 Als u een NPM-gebruiker een waarschuwing maakt via Log Analytics: 
 1. U ziet een koppeling waarmee u wordt omgeleid naar Azure Portal. Klik hierop om toegang te krijgen tot de portal.
@@ -283,7 +283,7 @@ Als u een NPM-gebruiker een waarschuwing maakt via Log Analytics:
 Als u een NPM-gebruiker een waarschuwing maakt via Azure Portal:  
 1. U kunt ervoor kiezen om uw e-mail adres rechtstreeks in te voeren of u kunt ervoor kiezen om waarschuwingen te maken via actie groepen.
 2. Als u ervoor kiest om uw e-mail adres direct in te voeren, wordt een actie groep met de naam **NPM e-mail ActionGroup** gemaakt en wordt de e-mail-id toegevoegd aan die actie groep.
-3. Als u actie groepen wilt gebruiken, moet u een eerder gemaakte actie groep selecteren. Hier vindt u informatie over het maken van een actie groep [.](../platform/action-groups.md#create-an-action-group-by-using-the-azure-portal) 
+3. Als u actie groepen wilt gebruiken, moet u een eerder gemaakte actie groep selecteren. Hier vindt u informatie over het maken van een actie groep [.](../alerts/action-groups.md#create-an-action-group-by-using-the-azure-portal) 
 4. Zodra de waarschuwing is gemaakt, kunt u de koppeling waarschuwingen beheren gebruiken om uw waarschuwingen te beheren. 
 
 Telkens wanneer u een waarschuwing maakt, maakt NPM een query op basis van een logboek waarschuwing in Azure Monitor. Deze query wordt standaard elke vijf minuten geactiveerd. Azure monitor brengt geen kosten in rekening voor de eerste 250-logboek waarschuwings regels die zijn gemaakt en alle waarschuwings regels boven de limiet van het 250-logboek waarschuwings regels worden gefactureerd [op basis van de prijzen voor waarschuwingen op Azure monitor pagina met prijzen](https://azure.microsoft.com/pricing/details/monitor/).

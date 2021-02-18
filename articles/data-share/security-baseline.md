@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 345748380479d81f1ea0df9ecf327200482a6cd7
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 58aabd52b8c5493671e0a76d0032a6d7c3081f40
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937166"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582047"
 ---
 # <a name="azure-security-baseline-for-azure-data-share"></a>Azure-beveiligings basislijn voor Azure-gegevens share
 
@@ -34,7 +34,7 @@ U kunt deze gegevens ook in-of uitschakelen voor Azure Sentinel of een SIEM van 
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md) 
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
 - [Aan de slag met Azure Monitor en integratie van SIEM van derden](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/) 
 
@@ -48,11 +48,11 @@ U kunt deze gegevens ook in-of uitschakelen voor Azure Sentinel of een SIEM van 
 
 Schakel Diagnostische logboeken in voor Azure data share, met name de diagnostische logboeken voor MicrosoftDataShareSentShareSnapshotsLog &amp; MicrosoftDataShareReceivedShareSnapshotsLog. Met deze logboeken kunt u belang rijke informatie vastleggen, zoals de begin tijd van de synchronisatie, de eind tijd, de status en andere gegevens. Deze logboeken kunnen essentieel zijn voor het later onderzoeken van beveiligings incidenten en het uitvoeren van forensische-oefeningen.
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/platform/platform-logs-overview.md)
+- [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/essentials/platform-logs-overview.md)
 
-- [Diagnostische instellingen configureren voor het Azure-activiteiten logboek](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen configureren voor het Azure-activiteiten logboek](../azure-monitor/essentials/activity-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -62,9 +62,9 @@ Schakel Diagnostische logboeken in voor Azure data share, met name de diagnostis
 
 **Richt lijnen**: Zorg ervoor dat voor opslag accounts of log Analytics-werk ruimten die worden gebruikt voor het opslaan van logboeken van Azure data share, de Bewaar periode voor logboeken is ingesteld volgens de nalevings voorschriften van uw organisatie.
 
-- [De Bewaar periode van Log Analytics Workspace configureren](../azure-monitor/platform/manage-cost-storage.md)
+- [De Bewaar periode van Log Analytics Workspace configureren](../azure-monitor/logs/manage-cost-storage.md)
 
-- [Bron logboeken opslaan in een Azure Storage-account](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
+- [Bron logboeken opslaan in een Azure Storage-account](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -78,9 +78,9 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md) 
 
-- [Aan de slag met Log Analytics query's](../azure-monitor/log-query/log-analytics-tutorial.md) 
+- [Aan de slag met Log Analytics query's](../azure-monitor/logs/log-analytics-tutorial.md) 
 
-- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/log-query/get-started-queries.md) 
+- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md) 
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -94,7 +94,7 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 - [Waarschuwingen beheren in Azure Security Center](../security-center/security-center-managing-and-responding-alerts.md) 
 
-- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/learn/tutorial-response.md) 
+- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/alerts/tutorial-response.md) 
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -209,7 +209,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om Azure monitor-waarschuwingen te maken wanneer wijzigingen worden doorgevoerd in essentiële Azure-resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md) 
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md) 
 
 **Monitoring door Azure Security Center**: Ja
 

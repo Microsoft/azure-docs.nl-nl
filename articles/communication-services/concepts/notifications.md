@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: d2b77708609f61eeb4ce33148f020027d646836b
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
-ms.translationtype: HT
+ms.openlocfilehash: 30cb023b8ca78f252dbf087a604a61b8aa5c6659
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97813595"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577393"
 ---
 # <a name="communication-services-notifications"></a>Communication Services-meldingen
 
@@ -91,7 +91,7 @@ Wanneer u geen pushmeldingen op uw apparaat ziet, zijn er drie locaties waar de 
 
 De eerste plek waar een melding kan worden neergezet (Azure Notification Hubs heeft de meldingen van Azure Communication Services niet geaccepteerd) wordt hieronder behandeld. Zie [Een diagnose stellen voor verwijderde meldingen in Azure Notification Hubs](../../notification-hubs/notification-hubs-push-notification-fixer.md) voor de andere twee locaties.
 
-Bekijk de metrische gegevenswaarde van `incoming messages` van de gekoppelde [metrische gegevens van Azure Notification Hub](../../azure-monitor/platform/metrics-supported.md#microsoftnotificationhubsnamespacesnotificationhubs) om te zien of de Communication Services-resource meldingen naar Azure Notification Hubs stuurt.
+Bekijk de metrische gegevenswaarde van `incoming messages` van de gekoppelde [metrische gegevens van Azure Notification Hub](../../azure-monitor/essentials/metrics-supported.md#microsoftnotificationhubsnamespacesnotificationhubs) om te zien of de Communication Services-resource meldingen naar Azure Notification Hubs stuurt.
 
 Hierna volgen enkele veelvoorkomende onjuiste configuraties die mogelijk de oorzaak zijn waarom Azure Notification Hub geen meldingen van uw Communication Services-resource accepteert.
 

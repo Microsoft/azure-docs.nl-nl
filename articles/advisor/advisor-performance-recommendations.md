@@ -3,12 +3,12 @@ title: Verbeter de prestaties van Azure-apps met Advisor
 description: Gebruik aanbevelingen voor prestaties in Azure Advisor om de snelheid en reactie tijd van uw bedrijfskritische toepassingen te verbeteren.
 ms.topic: article
 ms.date: 07/29/2020
-ms.openlocfilehash: f546527011402b9ea33321d56356d8aabe2412c1
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 69fd86226375073c71903af5704ef3a635eeaffb
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735525"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579928"
 ---
 # <a name="improve-the-performance-of-azure-applications-by-using-azure-advisor"></a>Verbeter de prestaties van Azure-toepassingen met behulp van Azure Advisor
 
@@ -88,7 +88,7 @@ Migreer het implementatie model van uw opslag account naar Azure Resource Manage
 Advisor identificeert zelfstandige opslag accounts die gebruikmaken van het klassieke implementatie model en raadt aan de migratie naar het Resource Manager-implementatie model te migreren.
 
 > [!NOTE]
-> Klassieke waarschuwingen in Azure Monitor zijn in augustus 2019 buiten gebruik gesteld. We raden u aan uw klassieke opslag account bij te werken om Resource Manager te gebruiken om de functionaliteit van waarschuwingen met het nieuwe platform te behouden. Zie [klassieke waarschuwingen buiten](../azure-monitor/platform/monitoring-classic-retirement.md#retirement-of-classic-monitoring-and-alerting-platform)gebruik stellen voor meer informatie.
+> Klassieke waarschuwingen in Azure Monitor zijn in augustus 2019 buiten gebruik gesteld. We raden u aan uw klassieke opslag account bij te werken om Resource Manager te gebruiken om de functionaliteit van waarschuwingen met het nieuwe platform te behouden. Zie [klassieke waarschuwingen buiten](../azure-monitor/alerts/monitoring-classic-retirement.md#retirement-of-classic-monitoring-and-alerting-platform)gebruik stellen voor meer informatie.
 
 ## <a name="design-your-storage-accounts-to-prevent-reaching-the-maximum-subscription-limit"></a>Uw opslag accounts ontwerpen om te voor komen dat de maximale abonnements limiet wordt bereikt
 

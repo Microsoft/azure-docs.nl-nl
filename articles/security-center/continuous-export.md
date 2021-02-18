@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 12/24/2020
 ms.author: memildin
-ms.openlocfilehash: 226ca943554ca24f3332f24f5a9baf571b432917
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 9b8dc635781c96dcbd7aa423c77f60ff0556bd71
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/17/2021
-ms.locfileid: "100590611"
+ms.locfileid: "100634057"
 ---
 # <a name="continuously-export-security-center-data"></a>Security Center-gegevens continu exporteren
 
@@ -210,7 +210,7 @@ U ziet nu nieuwe Azure Security Center waarschuwingen of aanbevelingen (afhankel
 
 Als u een CSV-rapport voor waarschuwingen of aanbevelingen wilt downloaden, opent u de pagina **beveiligings waarschuwingen** of **aanbevelingen** en selecteert u de knop **CSV-rapport downloaden** .
 
-[![Waarschuwings gegevens downloaden als een CSV-bestand](media/continuous-export/download-alerts-csv.png)](media/continuous-export/download-alerts-csv.png#lightbox)
+:::image type="content" source="./media/continuous-export/download-alerts-csv.png" alt-text="Waarschuwings gegevens downloaden als een CSV-bestand" lightbox="./media/continuous-export/download-alerts-csv.png":::
 
 > [!NOTE]
 > Deze rapporten bevatten waarschuwingen en aanbevelingen voor resources van de momenteel geselecteerde abonnementen.

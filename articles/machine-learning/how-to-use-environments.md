@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/23/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 4388c1a43cf958133356ed9d1ac80aec3ba0ce16
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: 75882701984dfff3005aa3661274a8dc94b22a28
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100093638"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596346"
 ---
 # <a name="create--use-software-environments-in-azure-machine-learning"></a>Software omgevingen maken & gebruiken in Azure Machine Learning
 
@@ -205,7 +205,8 @@ myenv = Environment.from_existing_conda_environment(name="myenv",
 Een omgevings definitie kan worden opgeslagen in een map in een gemakkelijk te bewerken indeling met de- [`save_to_directory()`](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py#&preserve-view=truesave-to-directory-path--overwrite-false-) methode. Na wijziging kan een nieuwe omgeving worden geïnstantieerd door bestanden uit de map te laden.
 
 ```python
-myenv = Environment.save_to_directory(path="path-to-destination-directory", overwrite=False)
+# save the enviroment
+myenv.save_to_directory(path="path-to-destination-directory", overwrite=False)
 # modify the environment definition
 newenv = Environment.load_from_directory(path="path-to-source-directory")
 ```

@@ -66,8 +66,8 @@
               href: build-enrollment-app.md
 - name: Naslaginformatie
   items:
-    - name: REST-API
-      href: 'https://docs.microsoft.com/rest/api/face/'
+    - name: Face-API
+      href: APIReference.md
     - name: SDK's
       items:
         - name: .NET

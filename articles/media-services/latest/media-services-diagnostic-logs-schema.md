@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 8cfbe26458de630aaf411aade4a31cb4e9c72b17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8015f610dfd9404810a1fa19c951078ebb45ac4f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89295424"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588498"
 ---
 # <a name="diagnostic-logs-schemas"></a>Schema's van diagnostische logboeken
 
@@ -26,13 +26,13 @@ ms.locfileid: "89295424"
 
 Met [Azure monitor](../../azure-monitor/overview.md) kunt u metrische gegevens en Diagnostische logboeken bewaken die u helpen begrijpen hoe uw toepassingen worden uitgevoerd. U kunt Media Services Diagnostische logboeken bewaken en waarschuwingen en meldingen maken voor de verzamelde metrische gegevens en Logboeken. U kunt logboeken naar [Azure Storage](https://azure.microsoft.com/services/storage/)verzenden, ze streamen naar [Azure Event hubs](https://azure.microsoft.com/services/event-hubs/)en exporteren naar [log Analytics](https://azure.microsoft.com/services/log-analytics/)of services van derden gebruiken.
 
-Zie [Azure monitor metrische](../../azure-monitor/platform/data-platform.md) gegevens en [Azure monitor Diagnostische logboeken](../../azure-monitor/platform/platform-logs-overview.md)voor meer informatie.
+Zie [Azure monitor metrische](../../azure-monitor/data-platform.md) gegevens en [Azure monitor Diagnostische logboeken](../../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie.
 
 In dit artikel worden Media Services schema's voor diagnostische Logboeken beschreven.
 
 ## <a name="top-level-diagnostic-logs-schema"></a>Schema voor Diagnostische logboeken op het hoogste niveau
 
-Zie [ondersteunde services, schema's en categorieën voor Diagnostische logboeken van Azure](../../azure-monitor/platform/resource-logs-schema.md)voor een gedetailleerde beschrijving van het schema voor Diagnostische logboeken op het hoogste niveau.
+Zie [ondersteunde services, schema's en categorieën voor Diagnostische logboeken van Azure](../../azure-monitor/essentials/resource-logs-schema.md)voor een gedetailleerde beschrijving van het schema voor Diagnostische logboeken op het hoogste niveau.
 
 ## <a name="key-delivery-log-schema"></a>Schema voor sleutel leverings logboek
 

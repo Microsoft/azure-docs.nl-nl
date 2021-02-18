@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.date: 12/05/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: b28d7ee5d2eeb1015695e32e5918bd94f9051050
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: a478d9c620219a768983570897715f924565a80f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736665"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594308"
 ---
 # <a name="tutorial-monitor-changes-and-update-a-windows-virtual-machine-in-azure"></a>Zelfstudie: Wijzigingen bewaken en een virtuele Windows-machine bijwerken in Azure
 
@@ -76,7 +76,7 @@ Updatebeheer inschakelen voor de VM:
 
 Er wordt een validatie uitgevoerd om te bepalen of Updatebeheer is ingeschakeld voor deze VM. De validatie bevat controles voor een Log Analytics-werkruimte en een gekoppeld Automation-account en controleert of de oplossing zich in de werkruimte bevindt.
 
-Een [Log Analytics](../../azure-monitor/log-query/log-query-overview.md)-werkruimte wordt gebruikt om gegevens te verzamelen die worden gegenereerd door functies en services, zoals Updatebeheer. De werkruimte biedt één locatie om gegevens uit meerdere bronnen te bekijken en te analyseren.
+Een [Log Analytics](../../azure-monitor/logs/log-query-overview.md)-werkruimte wordt gebruikt om gegevens te verzamelen die worden gegenereerd door functies en services, zoals Updatebeheer. De werkruimte biedt één locatie om gegevens uit meerdere bronnen te bekijken en te analyseren.
 
 Als u aanvullende acties wilt uitvoeren op VM's waarvoor updates zijn vereist, kunt u Azure Automation gebruiken om runbooks uit te voeren op VM's. Dergelijke acties omvatten het downloaden of toepassen van updates.
 
@@ -86,7 +86,7 @@ Kies in het venster **Updatebeheer inschakelen** de Log Analytics-werkruimte en 
 
 De volgende vereiste onderdelen na de onboarding eventueel ontbreken, worden automatisch toegevoegd:
 
-* [Log Analytics](../../azure-monitor/log-query/log-query-overview.md)-werkruimte
+* [Log Analytics](../../azure-monitor/logs/log-query-overview.md)-werkruimte
 * [Automation](../../automation/index.yml)
 * Een [Hybride runbook worker](../../automation/automation-hybrid-runbook-worker.md) die op de VM is ingeschakeld
 
@@ -113,7 +113,7 @@ Als u een nieuwe update-implementatie voor de VM wilt plannen, selecteert u **Up
 | **Naam** |Voer een unieke naam in om de update-implementatie te identificeren. |
 |**Besturingssysteem**| Selecteer **Linux** of **Windows**.|
 | **Bij te werken groepen** |Voor VM's die in Azure worden gehost, definieert u een query op basis van een combinatie van abonnement, resourcegroepen, locaties en tags. Met deze query wordt een dynamische groep met door Azure gehoste VM's opgebouwd die in uw implementatie moeten worden opgenomen. </br></br>Voor VM's die niet in Azure worden gehost, selecteert u een bestaande opgeslagen zoekopdracht. Met deze zoekopdracht kunt u een groep van deze VM's selecteren die in de implementatie moet worden meegenomen. </br></br> Zie [Dynamische groepen](../../automation/update-management/configure-groups.md) voor meer informatie.|
-| **Bij te werken machines** |Selecteer **Opgeslagen zoekopdracht**, **Geïmporteerde groep** of **Machines**.<br/><br/>Als u **Machines**  selecteert, kunt u in de vervolgkeuzelijst uit afzonderlijke machines kiezen. De gereedheid van elke machine wordt weergegeven in de kolom **GEREEDHEID VOOR UPDATE-AGENT** van de tabel.</br></br> Zie [Computergroepen in Azure Monitorlogboeken](../../azure-monitor/platform/computer-groups.md) voor meer informatie over de verschillende manieren waarop u computergroepen kunt maken in Azure Monitor-logboeken |
+| **Bij te werken machines** |Selecteer **Opgeslagen zoekopdracht**, **Geïmporteerde groep** of **Machines**.<br/><br/>Als u **Machines**  selecteert, kunt u in de vervolgkeuzelijst uit afzonderlijke machines kiezen. De gereedheid van elke machine wordt weergegeven in de kolom **GEREEDHEID VOOR UPDATE-AGENT** van de tabel.</br></br> Zie [Computergroepen in Azure Monitorlogboeken](../../azure-monitor/logs/computer-groups.md) voor meer informatie over de verschillende manieren waarop u computergroepen kunt maken in Azure Monitor-logboeken |
 |**Updateclassificaties**|Kies alle benodigde updateclassificaties.|
 |**Updates opnemen/uitsluiten**|Selecteer deze optie om het deelvenster **Opnemen/uitsluiten** te openen. Updates die moeten worden opgenomen en die moeten worden uitgesloten, worden op afzonderlijke tabbladen weergegeven. Zie [Een update-implementatie plannen](../../automation/update-management/deploy-updates.md#schedule-an-update-deployment) voor meer informatie over het verwerken van de opname. |
 |**Instellingen voor planning**|Kies het tijdstip waarop u wilt beginnen en selecteer **Eenmaal**, of **Terugkerend**.|

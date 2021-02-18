@@ -8,12 +8,12 @@ ms.author: tagore
 author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
-ms.openlocfilehash: c5dd09292897d69f90606e8661b4e6cb28090612
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 04a30a2446061df75d133bdbd088b7e71c59cade
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98742587"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578213"
 ---
 # <a name="configuration-and-management-issues-for-azure-cloud-services-classic-frequently-asked-questions-faqs"></a>Configuratie-en beheer problemen voor Azure Cloud Services (klassiek): veelgestelde vragen (FAQ)
 
@@ -240,9 +240,9 @@ Automatisch schalen op basis van geheugen metrieken voor een Cloud Services word
 
 U kunt dit probleem omzeilen door Application Insights te gebruiken. Automatisch schalen ondersteunt Application Insights als metrische bron en kan het aantal rolinstanties schalen op basis van de metrische gegevens van de gast, zoals ' geheugen '.  U moet Application Insights configureren in uw bestand van het Cloud service project-pakket (*. cspkg) en Azure Diagnostics extensie inschakelen op de service om deze eenvoudig te implementeren.
 
-Zie aan de [slag met automatisch schalen op basis van aangepaste metrische gegevens in azure](../azure-monitor/platform/autoscale-custom-metric.md) voor meer informatie over het gebruik van een aangepaste metriek via Application Insights voor het configureren van automatisch schalen op Cloud Services.
+Zie aan de [slag met automatisch schalen op basis van aangepaste metrische gegevens in azure](../azure-monitor/autoscale/autoscale-custom-metric.md) voor meer informatie over het gebruik van een aangepaste metriek via Application Insights voor het configureren van automatisch schalen op Cloud Services.
 
-Voor meer informatie over het integreren van Azure Diagnostics met Application Insights voor Cloud Services raadpleegt [u Cloud service, virtuele machine of service Fabric diagnostische gegevens verzenden naar Application Insights](../azure-monitor/platform/diagnostics-extension-to-application-insights.md)
+Voor meer informatie over het integreren van Azure Diagnostics met Application Insights voor Cloud Services raadpleegt [u Cloud service, virtuele machine of service Fabric diagnostische gegevens verzenden naar Application Insights](../azure-monitor/agents/diagnostics-extension-to-application-insights.md)
 
 Zie [Application Insights voor Azure Cloud Services](../azure-monitor/app/cloudservices.md) voor meer informatie over het inschakelen van Application Insights voor Cloud Services
 

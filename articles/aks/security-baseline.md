@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 4cf623ed960fd2efe6fdf506751858796008cef4
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 8e86679e7531bb70d6d4f1a27718c2fc8f0e8a9c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202025"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578548"
 ---
 # <a name="azure-security-baseline-for-azure-kubernetes-service"></a>Azure-beveiligings basislijn voor Azure Kubernetes-service
 
@@ -196,9 +196,9 @@ Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijziging
 
 Gebruik Azure Monitor Logboeken om de logboeken in te scha kelen en query's uit te voeren op de AKS van de hoofd onderdelen, uitvoeren-apiserver en uitvoeren-Controller-Manager. De knoop punten waarop de kubelet wordt uitgevoerd, maken en beheren met container runtime en hun toepassingen implementeren via de Managed Kubernetes API-server. 
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 - [Logboeken van Kubernetes-hoofdknooppunten inschakelen en controleren in AKS (Azure Kubernetes Service)](view-master-logs.md)
 
@@ -240,9 +240,9 @@ Deze gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derden op b
 
 - [Controleer het logboek schema inclusief de logboek functies.](view-master-logs.md)
 
-- [Azure Monitor voor containers begrijpen](../azure-monitor/insights/container-insights-overview.md)
+- [Azure Monitor voor containers begrijpen](../azure-monitor/containers/container-insights-overview.md)
 
-- [Azure Monitor inschakelen voor containers](../azure-monitor/insights/container-insights-onboard.md)
+- [Azure Monitor inschakelen voor containers](../azure-monitor/containers/container-insights-onboard.md)
 
 - [Logboeken van Kubernetes-hoofdknooppunten inschakelen en controleren in AKS (Azure Kubernetes Service)](view-master-logs.md)
 
@@ -294,7 +294,7 @@ Gegevens verzameling is vereist om inzicht te krijgen in ontbrekende updates, on
 
 **Hulp**: de AKS-exemplaren (Azure Kubernetes service) voorbereiden op Azure monitor en de bijbehorende Bewaar periode voor de Azure log Analytics-werk ruimte instellen volgens de nalevings vereisten van uw organisatie. 
 
-- [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -312,7 +312,7 @@ Bekijk de logboeken die zijn gegenereerd door de AKS-Master onderdelen (uitvoere
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -422,7 +422,7 @@ Beleids regels en procedures voor het gebruik van specifieke beheerders accounts
 
 **Hulp**: eenmalige aanmelding gebruiken voor Azure Kubernetes service (AKS) met Azure Active Directory (Azure AD) geïntegreerde verificatie voor een AKS-cluster.
 
-- [Kubernetes-logboeken, gebeurtenissen en metrische gegevens over pod in realtime weer geven](../azure-monitor/insights/container-insights-livedata-overview.md)
+- [Kubernetes-logboeken, gebeurtenissen en metrische gegevens over pod in realtime weer geven](../azure-monitor/containers/container-insights-livedata-overview.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -518,7 +518,7 @@ Houd rekening met de rollen die worden gebruikt voor ondersteunings-of probleemo
 **Hulp**: Integreer gebruikers verificatie voor Azure Kubernetes service (AKS) met Azure Active Directory (Azure AD). Diagnostische instellingen voor Azure AD maken, de controle-en aanmeldings logboeken verzenden naar een Azure Log Analytics-werk ruimte. Gewenste waarschuwingen configureren (zoals wanneer een gedeactiveerd account zich probeert aan te melden) binnen een Azure Log Analytics-werk ruimte.
 - [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/platform/alerts-log.md)
+- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/alerts/alerts-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -673,11 +673,11 @@ Waarschuwingen configureren voor proactieve meldingen of het maken van Logboeken
 
 Gebruik Azure-activiteiten logboek om uw AKS-clusters en gerelateerde resources op hoog niveau te bewaken. Integreer met Prometheus om de metrische gegevens van de toepassing en werk belasting weer te geven die worden verzameld van knoop punten en Kubernetes met behulp van query's om aangepaste waarschuwingen, Dash boards en gedetailleerde gedetailleerde analyses te maken.
 
-- [Azure Monitor voor containers begrijpen](../azure-monitor/insights/container-insights-overview.md)
+- [Azure Monitor voor containers begrijpen](../azure-monitor/containers/container-insights-overview.md)
 
-- [Azure Monitor inschakelen voor containers](../azure-monitor/insights/container-insights-onboard.md)
+- [Azure Monitor inschakelen voor containers](../azure-monitor/containers/container-insights-onboard.md)
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
 **Monitoring door Azure Security Center**: Ja
 

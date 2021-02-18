@@ -12,12 +12,12 @@ ms.date: 10/16/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 33504487b6175023e18893812c533950305cb1d3
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.openlocfilehash: d4a68b492bad4ac091b4600c9ec81ac0de27cc05
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98745999"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572894"
 ---
 # <a name="collect-azure-active-directory-b2c-logs-with-application-insights"></a>Azure Active Directory B2C-logboeken met Application Insights verzamelen
 
@@ -32,7 +32,7 @@ De gedetailleerde activiteiten logboeken die hier worden beschreven, moeten **al
 
 Als u er nog geen hebt, maakt u een instantie van Application Insights in uw abonnement.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Selecteer het filter **Directory + abonnement** in het bovenste menu en selecteer vervolgens de map die uw Azure-abonnement bevat (niet uw Azure AD B2C Directory).
 1. Selecteer **een resource maken** in het navigatie menu aan de linkerkant.
 1. Zoek en selecteer **Application Insights** en selecteer vervolgens **maken**.
@@ -94,14 +94,14 @@ Er is een korte vertraging, meestal minder dan vijf minuten, voordat u nieuwe lo
 
 Hier volgt een lijst met query's die u kunt gebruiken om de logboeken weer te geven:
 
-| Query’s uitvoeren | Beschrijving |
+| Query’s uitvoeren | Description |
 |---------------------|--------------------|
 `traces` | Alle logboeken weer geven die zijn gegenereerd door Azure AD B2C |
 `traces | where timestamp > ago(1d)` | Alle logboeken weer geven die zijn gegenereerd door Azure AD B2C voor de afgelopen dag
 
 De invoer kan lang zijn. Exporteren naar CSV voor een betere blik.
 
-Zie [overzicht van logboek query's in azure monitor](../azure-monitor/log-query/log-query-overview.md)voor meer informatie over het uitvoeren van query's.
+Zie [overzicht van logboek query's in azure monitor](../azure-monitor/logs/log-query-overview.md)voor meer informatie over het uitvoeren van query's.
 
 ## <a name="configure-application-insights-in-production"></a>Application Insights in productie configureren
 

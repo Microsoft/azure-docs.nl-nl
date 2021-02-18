@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 1/22/2020
 ms.author: kumud
-ms.openlocfilehash: 6cf082aa33d2063982d85cf0c2fdd68d61072217
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 74e09b4798a648b6a881fb05f1128831ad5f4aff
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98216934"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586435"
 ---
 # <a name="create-change-or-delete-a-network-interface"></a>Netwerkinterface maken, wijzigen of verwijderen
 
@@ -49,7 +49,7 @@ Wanneer u een virtuele machine maakt met behulp van de Azure Portal, maakt de po
 
     |Instelling|Vereist?|Details|
     |---|---|---|
-    |Naam|Yes|De naam moet uniek zijn binnen de resource groep die u selecteert. In de loop van de tijd hebt u waarschijnlijk verschillende netwerk interfaces in uw Azure-abonnement. Zie [naamgevings conventies](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging#resource-naming)voor suggesties bij het maken van een naamgevings Conventie om het beheren van verschillende netwerk interfaces eenvoudiger te maken. De naam kan niet worden gewijzigd nadat de netwerk interface is gemaakt.|
+    |Name|Yes|De naam moet uniek zijn binnen de resource groep die u selecteert. In de loop van de tijd hebt u waarschijnlijk verschillende netwerk interfaces in uw Azure-abonnement. Zie [naamgevings conventies](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging#resource-naming)voor suggesties bij het maken van een naamgevings Conventie om het beheren van verschillende netwerk interfaces eenvoudiger te maken. De naam kan niet worden gewijzigd nadat de netwerk interface is gemaakt.|
     |Virtueel netwerk|Yes|Selecteer het virtuele netwerk voor de netwerk interface. U kunt alleen een netwerk interface toewijzen aan een virtueel netwerk dat zich in hetzelfde abonnement en dezelfde locatie bevindt als de netwerk interface. Zodra een netwerk interface is gemaakt, kunt u het virtuele netwerk dat aan is toegewezen niet wijzigen. De virtuele machine waaraan u de netwerk interface toevoegt, moet ook aanwezig zijn op dezelfde locatie en hetzelfde abonnement als de netwerk interface.|
     |Subnet|Yes|Selecteer een subnet binnen het virtuele netwerk dat u hebt geselecteerd. U kunt het subnet waaraan de netwerk interface is toegewezen, wijzigen nadat het is gemaakt.|
     |Toewijzing van privé-IP-adres|Yes| In deze instelling kiest u de toewijzings methode voor het IPv4-adres. Kies uit de volgende toewijzings methoden: **dynamisch:** wanneer u deze optie selecteert, wijst Azure automatisch het volgende beschik bare adres toe uit de adres ruimte van het subnet dat u hebt geselecteerd. **Statisch:** Wanneer u deze optie selecteert, moet u hand matig een beschikbaar IP-adres toewijzen in de adres ruimte van het subnet dat u hebt geselecteerd. Statische en dynamische adressen worden pas gewijzigd als u deze wijzigt of als de netwerk interface wordt verwijderd. U kunt de toewijzings methode wijzigen nadat de netwerk interface is gemaakt. De Azure DHCP-server wijst dit adres toe aan de netwerk interface binnen het besturings systeem van de virtuele machine.|
@@ -90,7 +90,7 @@ U kunt de meeste instellingen voor een netwerk interface weer geven en wijzigen 
    - **Eigenschappen:** Geeft de sleutel instellingen weer over de netwerk interface, met inbegrip van het MAC-adres (leeg als de netwerk interface niet is gekoppeld aan een virtuele machine) en het abonnement dat bestaat in.
    - **Efficiënte beveiligings regels:**  Beveiligings regels worden weer gegeven als de netwerk interface is gekoppeld aan een actieve virtuele machine en een NSG is gekoppeld aan de netwerk interface, het subnet waaraan het is toegewezen, of beide. Zie [effectief beveiligings regels weer geven](#view-effective-security-rules)voor meer informatie over wat er wordt weer gegeven. Zie [netwerk beveiligings groepen](./network-security-groups-overview.md)voor meer informatie over nsg's.
    - **Efficiënte routes:** Routes worden weer gegeven als de netwerk interface is gekoppeld aan een actieve virtuele machine. De routes zijn een combi natie van de standaard routes van Azure, alle door de gebruiker gedefinieerde routes en eventuele BGP-routes die mogelijk bestaan voor het subnet waaraan de netwerk interface is toegewezen. Zie [werkelijke routes weer geven](#view-effective-routes)voor meer informatie over wat er wordt weer gegeven. Zie [route ring-overzicht](virtual-networks-udr-overview.md)voor meer informatie over de standaard routes van Azure en door de gebruiker gedefinieerde routes.
-Algemene Azure Resource Manager-instellingen: Zie [activiteiten logboek](../azure-monitor/platform/platform-logs-overview.md), [toegangs beheer (IAM)](../role-based-access-control/overview.md), [Tags](../azure-resource-manager/management/tag-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [vergren delingen](../azure-resource-manager/management/lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)en [automatiserings script](../azure-resource-manager/templates/export-template-portal.md)voor meer informatie over algemene Azure Resource Manager-instellingen.
+Algemene Azure Resource Manager-instellingen: Zie [activiteiten logboek](../azure-monitor/essentials/platform-logs-overview.md), [toegangs beheer (IAM)](../role-based-access-control/overview.md), [Tags](../azure-resource-manager/management/tag-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [vergren delingen](../azure-resource-manager/management/lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)en [automatiserings script](../azure-resource-manager/templates/export-template-portal.md)voor meer informatie over algemene Azure Resource Manager-instellingen.
 
 <a name="view-settings-commands"></a>**Opdrachten**
 
@@ -251,7 +251,7 @@ Met de functie volgende hop van Azure Network Watcher kunt u ook bepalen of rout
 
 Om taken uit te voeren op netwerk interfaces, moet uw account worden toegewezen aan de rol [netwerk bijdrager](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) of aan een [aangepaste](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) rol waaraan de juiste machtigingen zijn toegewezen in de volgende tabel:
 
-| Actie                                                                     | Naam                                                      |
+| Bewerking                                                                     | Name                                                      |
 | ---------                                                                  | -------------                                             |
 | Micro soft. Network/networkInterfaces/lezen                                   | Netwerk interface ophalen                                     |
 | Micro soft. Network/networkInterfaces/schrijven                                  | Netwerk interface maken of bijwerken                        |

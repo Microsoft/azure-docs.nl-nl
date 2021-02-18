@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 01/21/2021
 ms.author: tamram
 ms.reviewer: fryu
-ms.openlocfilehash: e4a5803b3d04b59316f71e50af24945efc87cb69
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 944e233fafc4cf5c8c90041e18f94d0e53b7bb46
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98677560"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591530"
 ---
 # <a name="prevent-shared-key-authorization-for-an-azure-storage-account-preview"></a>Verificatie van gedeelde sleutels voor een Azure Storage account voor komen (preview-versie)
 
@@ -41,7 +41,7 @@ Zie [over de preview-versie](#about-the-preview)voor meer informatie over het in
 
 ### <a name="monitor-how-many-requests-are-authorized-with-shared-key"></a>Controleren hoeveel aanvragen zijn geautoriseerd met een gedeelde sleutel
 
-Als u wilt bijhouden hoe aanvragen voor een opslag account worden geautoriseerd, gebruikt u Azure Metrics Explorer in de Azure Portal. Zie aan de slag [met Azure Metrics Explorer](../../azure-monitor/platform/metrics-getting-started.md)voor meer informatie over Metrics Explorer.
+Als u wilt bijhouden hoe aanvragen voor een opslag account worden geautoriseerd, gebruikt u Azure Metrics Explorer in de Azure Portal. Zie aan de slag [met Azure Metrics Explorer](../../azure-monitor/essentials/metrics-getting-started.md)voor meer informatie over Metrics Explorer.
 
 Volg deze stappen om een metriek te maken waarmee aanvragen worden bijgehouden die zijn gemaakt met gedeelde sleutel of SA'S:
 
@@ -67,7 +67,7 @@ Nadat u de metrische gegevens hebt geconfigureerd, worden de aanvragen voor uw o
 
 :::image type="content" source="media/shared-key-authorization-prevent/metric-shared-key-requests.png" alt-text="Scherm opname van geaggregeerde aanvragen die zijn gemachtigd met een gedeelde sleutel":::
 
-U kunt ook een waarschuwings regel configureren om u op de hoogte te stellen wanneer een bepaald aantal aanvragen dat is geautoriseerd met een gedeelde sleutel, wordt gemaakt op basis van uw opslag account. Zie [metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../../azure-monitor/platform/alerts-metric.md)voor meer informatie.
+U kunt ook een waarschuwings regel configureren om u op de hoogte te stellen wanneer een bepaald aantal aanvragen dat is geautoriseerd met een gedeelde sleutel, wordt gemaakt op basis van uw opslag account. Zie [metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../../azure-monitor/alerts/alerts-metric.md)voor meer informatie.
 
 ### <a name="analyze-logs-to-identify-clients-that-are-authorizing-requests-with-shared-key-or-sas"></a>Logboeken analyseren om clients te identificeren die aanvragen toestaan met gedeelde sleutel of SAS
 
@@ -75,14 +75,14 @@ Azure Storage legt vastgelegde gegevens vast over aanvragen voor het opslag acco
 
 Als u aanvragen wilt registreren voor uw Azure Storage-account om te controleren hoe ze zijn geautoriseerd, kunt u Azure Storage logboek registratie gebruiken in Azure Monitor (preview). Zie [Azure Storage bewaken](../blobs/monitor-blob-storage.md)voor meer informatie.
 
-Azure Storage logboek registratie in Azure Monitor ondersteunt het gebruik van logboek query's voor het analyseren van logboek gegevens. Als u een query wilt uitvoeren op Logboeken, kunt u een Azure Log Analytics-werk ruimte gebruiken. Zie [zelf studie: aan de slag met log Analytics query's](../../azure-monitor/log-query/log-analytics-tutorial.md)voor meer informatie over logboek query's.
+Azure Storage logboek registratie in Azure Monitor ondersteunt het gebruik van logboek query's voor het analyseren van logboek gegevens. Als u een query wilt uitvoeren op Logboeken, kunt u een Azure Log Analytics-werk ruimte gebruiken. Zie [zelf studie: aan de slag met log Analytics query's](../../azure-monitor/logs/log-analytics-tutorial.md)voor meer informatie over logboek query's.
 
 #### <a name="create-a-diagnostic-setting-in-the-azure-portal"></a>Een diagnostische instelling maken in de Azure Portal
 
 Als u Azure Storage gegevens wilt registreren met Azure Monitor en deze wilt analyseren met Azure Log Analytics, moet u eerst een diagnostische instelling maken die aangeeft welke typen aanvragen en voor welke opslag Services u gegevens wilt registreren. Voer de volgende stappen uit om een diagnostische instelling te maken in de Azure Portal:
 
 1. Schrijf u in [voor de Azure Storage registratie in azure monitor preview](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxW65f1VQyNCuBHMIMBV8qlUM0E0MFdPRFpOVTRYVklDSE1WUTcyTVAwOC4u).
-1. Maak een nieuwe Log Analytics-werk ruimte in het abonnement dat uw Azure Storage-account bevat of gebruik een bestaande Log Analytics-werk ruimte. Nadat u logboek registratie voor uw opslag account hebt geconfigureerd, zijn de logboeken beschikbaar in de werk ruimte Log Analytics. Raadpleeg [Een Log Analytics-werkruimte maken in Azure Portal](../../azure-monitor/learn/quick-create-workspace.md) voor meer informatie.
+1. Maak een nieuwe Log Analytics-werk ruimte in het abonnement dat uw Azure Storage-account bevat of gebruik een bestaande Log Analytics-werk ruimte. Nadat u logboek registratie voor uw opslag account hebt geconfigureerd, zijn de logboeken beschikbaar in de werk ruimte Log Analytics. Raadpleeg [Een Log Analytics-werkruimte maken in Azure Portal](../../azure-monitor/logs/quick-create-workspace.md) voor meer informatie.
 1. Ga in Azure Portal naar uw opslagaccount.
 1. Selecteer in de sectie controle de optie **Diagnostische instellingen (preview)**.
 1. Selecteer de Azure Storage-service waarvoor u aanvragen wilt registreren. Kies bijvoorbeeld **BLOB** om aanvragen te registreren bij Blob Storage.
@@ -95,7 +95,7 @@ Als u Azure Storage gegevens wilt registreren met Azure Monitor en deze wilt ana
 
 U kunt een diagnostische instelling maken voor elk type Azure Storage bron in uw opslag account.
 
-Nadat u de diagnostische instelling hebt gemaakt, worden aanvragen voor het opslag account vervolgens geregistreerd volgens die instelling. Zie voor meer informatie [Diagnostische instelling maken om bron logboeken en metrische gegevens in azure te verzamelen](../../azure-monitor/platform/diagnostic-settings.md).
+Nadat u de diagnostische instelling hebt gemaakt, worden aanvragen voor het opslag account vervolgens geregistreerd volgens die instelling. Zie voor meer informatie [Diagnostische instelling maken om bron logboeken en metrische gegevens in azure te verzamelen](../../azure-monitor/essentials/diagnostic-settings.md).
 
 Zie [bron Logboeken (preview)](../blobs/monitor-blob-storage-reference.md#resource-logs-preview)voor een verwijzing van velden die beschikbaar zijn in azure Storage-Logboeken in azure monitor.
 
@@ -110,7 +110,7 @@ StorageBlobLogs
 | top 10 by count_ desc
 ```
 
-U kunt ook een waarschuwings regel configureren op basis van deze query om u te informeren over aanvragen die zijn gemachtigd met gedeelde sleutel of SA'S. Zie [logboek waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../../azure-monitor/platform/alerts-log.md)voor meer informatie.
+U kunt ook een waarschuwings regel configureren op basis van deze query om u te informeren over aanvragen die zijn gemachtigd met gedeelde sleutel of SA'S. Zie [logboek waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../../azure-monitor/alerts/alerts-log.md)voor meer informatie.
 
 ## <a name="remediate-authorization-via-shared-key"></a>Autorisatie herstellen via gedeelde sleutel
 
@@ -123,7 +123,7 @@ De eigenschap **AllowSharedKeyAccess** is niet standaard ingesteld en retourneer
 > [!WARNING]
 > Als clients momenteel toegang hebben tot gegevens in uw opslag account met een gedeelde sleutel, raadt micro soft u aan deze clients te migreren naar Azure AD voordat u de gedeelde sleutel toegang tot het opslag account niet toestaat.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 Voer de volgende stappen uit om de verificatie van de gedeelde sleutel voor een opslag account in de Azure Portal niet toe te staan:
 
@@ -193,13 +193,13 @@ resources
 
 ## <a name="permissions-for-allowing-or-disallowing-shared-key-access"></a>Machtigingen voor het toestaan of weigeren van toegang tot gedeelde sleutels
 
-Als u de eigenschap **AllowSharedKeyAccess** voor het opslag account wilt instellen, moet een gebruiker gemachtigd zijn om opslag accounts te maken en te beheren. Azure RBAC-rollen (op rollen gebaseerd toegangs beheer) die deze machtigingen bieden, zijn onder andere de actie **micro soft. Storage/Storage accounts/write** of **micro \* soft. Storage/Storage accounts/* _. Ingebouwde rollen met deze actie zijn onder andere:
+Als u de eigenschap **AllowSharedKeyAccess** voor het opslag account wilt instellen, moet een gebruiker gemachtigd zijn om opslag accounts te maken en te beheren. Azure RBAC-rollen (op rollen gebaseerd toegangs beheer) die deze machtigingen bieden, zijn onder andere **micro soft. Storage/Storage accounts/write** of **micro soft. \* Storage/Storage accounts/** action. Ingebouwde rollen met deze actie zijn onder andere:
 
 - De rol van Azure Resource Manager [eigenaar](../../role-based-access-control/built-in-roles.md#owner)
 - De rol [inzender](../../role-based-access-control/built-in-roles.md#contributor) Azure Resource Manager
 - De rol [Inzender voor opslag accounts](../../role-based-access-control/built-in-roles.md#storage-account-contributor)
 
-Deze rollen bieden geen toegang tot gegevens in een opslag account via Azure Active Directory (Azure AD). Ze bevatten echter de _ * micro soft. Storage/Storage accounts/listkeys ophalen/Action * *, waarmee toegang wordt verleend aan de toegangs sleutels voor het account. Met deze machtiging kan een gebruiker de toegangs sleutels voor het account gebruiken om toegang te krijgen tot alle gegevens in een opslag account.
+Deze rollen bieden geen toegang tot gegevens in een opslag account via Azure Active Directory (Azure AD). Ze bevatten echter de **micro soft. Storage/Storage accounts/listkeys ophalen/Action**, waarmee toegang wordt verleend aan de toegangs sleutels voor het account. Met deze machtiging kan een gebruiker de toegangs sleutels voor het account gebruiken om toegang te krijgen tot alle gegevens in een opslag account.
 
 Roltoewijzingen moeten worden ingedeeld op het niveau van het opslag account of hoger, zodat een gebruiker toegang tot gedeelde sleutels voor het opslag account toestaat of weigert. Zie [inzicht in het bereik voor Azure RBAC](../../role-based-access-control/scope-overview.md)voor meer informatie over het gebruikersrol bereik.
 

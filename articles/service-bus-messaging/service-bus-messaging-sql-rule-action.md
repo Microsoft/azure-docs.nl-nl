@@ -3,12 +3,12 @@ title: Regel voor Azure Service Bus abonnement de SQL-actie syntaxis | Microsoft
 description: Dit artikel bevat een verwijzing voor de syntaxis van de SQL-regel actie. De acties worden geschreven in de op SQL-taal gebaseerde syntaxis die wordt uitgevoerd op een bericht.
 ms.topic: article
 ms.date: 11/24/2020
-ms.openlocfilehash: f7b8cdfcccc22508b98a42391d2a0ef9955232d0
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 75ff437bace59d7f4de07342277f0760480a5b0f
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98742676"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652833"
 ---
 # <a name="subscription-rule-sql-action-syntax"></a>Syntaxis van SQL-actie voor abonnements regel
 
@@ -185,7 +185,7 @@ Booleaanse constanten worden vertegenwoordigd door de tref woorden `TRUE` of `FA
   
 Teken reeks constanten worden tussen enkele aanhalings tekens geplaatst en bevatten geldige Unicode-tekens. Een enkel aanhalings teken in een teken reeks constante wordt weer gegeven als twee enkele aanhalings tekens.  
   
-## <a name="function"></a>functieassembly  
+## <a name="function"></a>-functie  
   
 ```  
 <function> :=  
@@ -199,7 +199,8 @@ De `newid()` functie retourneert een `System.Guid` gegenereerd door de- `System.
   
 De `property(name)` functie retourneert de waarde van de eigenschap waarnaar wordt verwezen door `name` . De `name` waarde kan een geldige expressie zijn die een teken reeks waarde retourneert.  
 
-[!INCLUDE [service-bus-filter-examples](../../includes/service-bus-filter-examples.md)]
+## <a name="examples"></a>Voorbeelden
+Zie [Service Bus-filter voorbeelden](service-bus-filter-examples.md)voor voor beelden.
   
 ## <a name="considerations"></a>Overwegingen
 

@@ -5,15 +5,15 @@ author: memildin
 manager: rkarlin
 services: security-center
 ms.author: memildin
-ms.date: 09/10/2020
+ms.date: 02/17/2021
 ms.service: security-center
 ms.topic: how-to
-ms.openlocfilehash: 12cc2de6cd1a8e9ddf40b358c94b720b8b2cf594
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 646495597565bbb033ac3adaa15f3754f33e8fd6
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98920440"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100634159"
 ---
 # <a name="suppress-alerts-from-azure-defender"></a>Waarschuwingen van Azure Defender onderdrukken
 
@@ -60,9 +60,7 @@ Een regel rechtstreeks in het Azure Portal maken:
 
 1. Van de pagina Beveiligingswaarschuwingen in Security Center:
 
-    - Zoek de specifieke waarschuwing die u niet meer wilt weer geven en selecteer in het menu met het weglatings teken (...) voor de waarschuwing de optie **onderdrukkings regel maken**:
-
-        [![* * Onderdrukkings regel maken * * optie](media/alerts-suppression-rules/auto-dismiss-future-option.png)](media/alerts-suppression-rules/auto-dismiss-future-option.png#lightbox)
+    - Selecteer de specifieke waarschuwing die u niet meer wilt weer geven en selecteer in het detail venster **actie ondernemen**.
 
     - Of selecteer de koppeling **onderdrukt regels** boven aan de pagina en selecteer op de pagina onderdrukkings regels de optie **nieuwe onderdrukkings regel maken**:
 
@@ -85,7 +83,7 @@ Een regel rechtstreeks in het Azure Portal maken:
 1. Sla de regel op. 
 
 
-## <a name="edit-a-suppression-rules"></a>Een onderdrukkings regel bewerken
+## <a name="edit-a-suppression-rule"></a>Een onderdrukkings regel bewerken
 
 Als u een regel wilt bewerken die u hebt gemaakt, gebruikt u de pagina onderdrukkings regels.
 
@@ -106,20 +104,6 @@ Als u een of meer regels die u hebt gemaakt, wilt verwijderen, gebruikt u de pag
 1. Als u één regel wilt verwijderen, opent u het menu met weglatings tekens (...) voor de regel en selecteert u **verwijderen**.
 1. Als u meerdere regels wilt verwijderen, schakelt u de selectie vakjes in voor de regels die moeten worden verwijderd en selecteert u **verwijderen**.
     ![Een of meer onderdrukkings regels verwijderen](media/alerts-suppression-rules/delete-multiple-alerts.png)
-
-## <a name="view-suppressed-alerts"></a>Onderdrukt waarschuwingen weer geven
-
-Waarschuwingen die overeenkomen met uw ingeschakelde onderdrukkings regels worden nog steeds gegenereerd, maar de status wordt ingesteld op **genegeerd**. U kunt de status bekijken in Azure Portal of de manier waarop u uw Security Center beveiligingswaarschuwingen bekijkt. 
-
-> [!TIP]
-> [Azure Sentinel](https://azure.microsoft.com/services/azure-sentinel/) maakt geen incidenten voor onderdrukte waarschuwingen. Voor andere Siem's kunt u onderdrukt waarschuwingen filteren met behulp van de waarschuwingen ' status ' (' genegeerd ').
-
-Gebruik het filter van Security Center om waarschuwingen weer te geven die door uw regels zijn genegeerd.
-
-* Open op de pagina beveiligings waarschuwingen van Security Center de filter opties en selecteer **genegeerd**.  
-
-   [![Genegeerde waarschuwingen weer geven](media/alerts-suppression-rules/view-dismissed-alerts.png)](media/alerts-suppression-rules/view-dismissed-alerts.png#lightbox)
-
 
 ## <a name="create-and-manage-suppression-rules-with-the-api"></a>Onderdrukkings regels maken en beheren met de API
 

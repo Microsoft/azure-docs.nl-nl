@@ -12,14 +12,14 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/30/2020
+ms.date: 02/17/2021
 ms.author: memildin
-ms.openlocfilehash: d3ed064547b1202aa562fffdfde85a28cbe8514e
-ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
-ms.translationtype: HT
+ms.openlocfilehash: 5e39093e0472705111907e72b70446db53770012
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97809544"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100634482"
 ---
 # <a name="quickstart-set-up-azure-security-center"></a>Quickstart: Azure Security Center instellen
 
@@ -88,7 +88,7 @@ Automatische inrichting van de Log Analytics-agent inschakelen:
 
 1. Selecteer **Prijzen en instellingen** in het hoofdmenu van Security Center.
 1. Selecteer het betreffende abonnement.
-1. Stel op de pagina **Gegevensverzameling** **Automatische inrichting** in op **Aan**.
+1. Stel op de pagina **automatische inrichting** voor de **log Analytics-agent voor Azure-vm's** de status in **op aan**.
 1. Selecteer **Opslaan**.
 
     :::image type="content" source="./media/security-center-enable-data-collection/enable-automatic-provisioning.png" alt-text="Automatische inrichting van de Log Analytics-agent inschakelen":::

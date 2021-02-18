@@ -38,7 +38,7 @@
     - name: Container-compute
       expanded: true
       items:
-        - name: Vertrouwelijke containers (lift en shift)
+        - name: Vertrouwelijke containers
           items:
             - name: Aan de slag
               href: confidential-containers.md
@@ -58,7 +58,7 @@
       href: how-to-fortanix-enclave-manager.md
 - name: Referenties
   items:
-    - name: Helper-functie voor SGX-prijsopgave
+    - name: Helper-functie voor SGX-notering
       href: confidential-nodes-out-of-proc-attestation.md
 - name: Resources
   items:

@@ -2,18 +2,18 @@
 title: Configuraties en GitOps-Kubernetes van Azure Arc ingeschakeld
 services: azure-arc
 ms.service: azure-arc
-ms.date: 02/15/2021
+ms.date: 02/17/2021
 ms.topic: conceptual
 author: shashankbarsin
 ms.author: shasb
 description: Dit artikel bevat een conceptueel overzicht van de GitOps-en configuratie mogelijkheden van Azure Arc enabled Kubernetes.
 keywords: Kubernetes, Arc, azure, containers, configuratie, GitOps
-ms.openlocfilehash: 780c3c5c578c8a9b12eb7dda711070790477ac5f
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: f8fe1522eee4cc855ae1f396d9c98323114a25ce
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100561477"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652544"
 ---
 # <a name="configurations-and-gitops-with-azure-arc-enabled-kubernetes"></a>Configuraties en GitOps met Azure Arc enabled Kubernetes
 
@@ -29,7 +29,7 @@ Ten aanzien van Kubernetes is GitOps de praktijk van het declareren van de gewen
 
 De verbinding tussen uw cluster en een Git-opslag plaats wordt gemaakt als een `Microsoft.KubernetesConfiguration/sourceControlConfigurations` uitbreidings resource boven op de Azure-Kubernetes-resource (vertegenwoordigd door `Microsoft.Kubernetes/connectedClusters` ) in azure Resource Manager. 
 
-De `sourceControlConfiguration` resource-eigenschappen worden gebruikt voor het implementeren van de stroom operator op het cluster met de juiste para meters, zoals de Git-opslag plaats van waaruit manifesten moeten worden opgehaald en het polling-interval waarmee ze moeten worden opgehaald. De `sourceControlConfiguration` gegevens worden in de rest van een Azure Cosmos DB-Data Base opgeslagen als versleuteld, om de vertrouwelijkheid van gegevens te garanderen.
+De `sourceControlConfiguration` resource-eigenschappen worden gebruikt voor het implementeren van de stroom operator op het cluster met de juiste para meters, zoals de Git-opslag plaats waaruit manifesten moeten worden opgehaald en het polling-interval waarmee ze moeten worden opgehaald. De `sourceControlConfiguration` gegevens worden versleuteld en op rest in een Azure Cosmos DB Data Base opgeslagen om de vertrouwelijkheid van gegevens te garanderen.
 
 De `config-agent` uitvoering in uw cluster is verantwoordelijk voor:
 * Het bijhouden van nieuwe of bijgewerkte `sourceControlConfiguration` uitbreidings resources op de Azure Arc enabled Kubernetes-resource.
@@ -39,14 +39,14 @@ De `config-agent` uitvoering in uw cluster is verantwoordelijk voor:
 U kunt meerdere naam ruimte-bronnen maken `sourceControlConfiguration` op hetzelfde Azure Arc-Kubernetes-cluster om multitenancy te bereiken.
 
 > [!NOTE]
-> * Omdat de `config-agent` monitors voor nieuwe of bijgewerkte `sourceControlConfiguration` uitbreidings resources beschikbaar zijn op Azure Arc enabled Kubernetes-resource, moeten agents verbinding hebben met de gewenste status om naar het cluster te worden getrokken. Wanneer agents geen verbinding kunnen maken met Azure, worden de gewenste status eigenschappen die zijn gedeclareerd op de `sourceControlConfiguration` bron in azure Resource Manager niet toegepast op het cluster.
-> * Gevoelige klant invoer zoals een persoonlijke sleutel, bekende hosts-inhoud, HTTPS-gebruikers naam en Token/wacht woord worden niet meer dan 48 uur opgeslagen in de Azure-Kubernetes Services. Als u gebruikmaakt van gevoelige invoer voor configuraties, wordt u geadviseerd om de clusters zo vaak mogelijk online te brengen.
+> * `config-agent` doorlopend monitors voor nieuwe of bijgewerkte `sourceControlConfiguration` uitbreidings bronnen die beschikbaar zijn op de Azure Arc enabled Kubernetes-resource. Daarom vereisen agents consistente connectiviteit om de gewenste status eigenschappen naar het cluster te halen. Als agents geen verbinding kunnen maken met Azure, wordt de gewenste status niet toegepast op het cluster.
+> * Gevoelige klant invoer zoals een persoonlijke sleutel, bekende hosts-inhoud, HTTPS-gebruikers naam en Token of wacht woord worden opgeslagen voor Maxi maal 48 uur in de Azure-Kubernetes Services. Als u gebruikmaakt van gevoelige invoer voor configuraties, moet u de clusters zo vaak mogelijk online brengen.
 
 ## <a name="apply-configurations-at-scale"></a>Configuraties op schaal Toep assen
 
-Sinds Azure Resource Manager uw configuraties beheert, kunt u Azure Policy gebruiken om het maken van dezelfde configuratie op alle Kubernetes-resources van Azure-arctangens binnen het bereik van een abonnement of een resource groep te automatiseren. 
+Sinds Azure Resource Manager uw configuraties beheert, kunt u het maken van dezelfde configuratie automatiseren voor alle Azure-Kubernetes-resources met behulp van Azure Policy, binnen het bereik van een abonnement of een resource groep. 
 
-Met deze afdwinging zorgt u ervoor dat een gemeen schappelijke basislijn configuratie (met configuraties zoals ClusterRoleBindings, RoleBindings en NetworkPolicy) kan worden toegepast op de gehele vloot of inventaris van Azure Arc enabled Kubernetes-clusters.
+Deze uitbreiige afdwinging zorgt ervoor dat een gemeen schappelijke basislijn configuratie (met configuraties zoals ClusterRoleBindings, RoleBindings en NetworkPolicy) kan worden toegepast op een volledige vloot of inventaris van Azure Arc-ingeschakelde Kubernetes clusters.
 
 ## <a name="next-steps"></a>Volgende stappen
 

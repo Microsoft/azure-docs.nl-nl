@@ -5,16 +5,16 @@ description: Meer informatie over het trainen van een model, het converteren naa
 keywords: SQL-rand implementeren
 ms.prod: sql
 ms.technology: machine-learning
-ms.topic: conceptual
+ms.topic: quickstart
 author: dphansen
 ms.author: davidph
 ms.date: 10/13/2020
-ms.openlocfilehash: 6dd7715292470d186806443d0a0b05bdbb084a43
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 755111b2fc48ec119c30d09f2e51b9db6c333848
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93392177"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653207"
 ---
 # <a name="deploy-and-make-predictions-with-an-onnx-model-and-sql-machine-learning"></a>Voor spellingen implementeren en maken met een ONNX-model en SQL-machine learning
 
@@ -72,14 +72,14 @@ y_train = pd.DataFrame(df.iloc[:,df.columns.tolist().index(target_column)])
 print("\n*** Training dataset x\n")
 print(x_train.head())
 
-print("\n**_ Training dataset y\n")
+print("\n*** Training dataset y\n")
 print(y_train.head())
 ```
 
-_ * Uitvoer * *:
+**Uitvoer**:
 
 ```text
-**_ Training dataset x
+*** Training dataset x
 
         CRIM    ZN  INDUS  CHAS    NOX     RM   AGE     DIS  RAD    TAX  \
 0  0.00632  18.0   2.31   0.0  0.538  6.575  65.2  4.0900  1.0  296.0
@@ -95,7 +95,7 @@ _ * Uitvoer * *:
 3     18.7  394.63   2.94  
 4     18.7  396.90   5.33  
 
-_*_ Training dataset y
+*** Training dataset y
 
 0    24.0
 1    21.6
@@ -137,15 +137,15 @@ from sklearn.metrics import r2_score, mean_squared_error
 y_pred = model.predict(x_train)
 sklearn_r2_score = r2_score(y_train, y_pred)
 sklearn_mse = mean_squared_error(y_train, y_pred)
-print('_*_ Scikit-learn r2 score: {}'.format(sklearn_r2_score))
-print('_*_ Scikit-learn MSE: {}'.format(sklearn_mse))
+print('*** Scikit-learn r2 score: {}'.format(sklearn_r2_score))
+print('*** Scikit-learn MSE: {}'.format(sklearn_mse))
 ```
 
-_ * Uitvoer * *:
+**Uitvoer**:
 
 ```text
-**_ Scikit-learn r2 score: 0.7406426641094094
-_*_ Scikit-learn MSE: 21.894831181729206
+*** Scikit-learn r2 score: 0.7406426641094094
+*** Scikit-learn MSE: 21.894831181729206
 ```
 
 ## <a name="convert-the-model-to-onnx"></a>Het model converteren naar ONNX
@@ -208,18 +208,18 @@ onnx_r2_score = r2_score(y_train, y_pred)
 onnx_mse = mean_squared_error(y_train, y_pred)
 
 print()
-print('_*_ Onnx r2 score: {}'.format(onnx_r2_score))
-print('_*_ Onnx MSE: {}\n'.format(onnx_mse))
+print('*** Onnx r2 score: {}'.format(onnx_r2_score))
+print('*** Onnx MSE: {}\n'.format(onnx_mse))
 print('R2 Scores are equal' if sklearn_r2_score == onnx_r2_score else 'Difference in R2 scores: {}'.format(abs(sklearn_r2_score - onnx_r2_score)))
 print('MSE are equal' if sklearn_mse == onnx_mse else 'Difference in MSE scores: {}'.format(abs(sklearn_mse - onnx_mse)))
 print()
 ```
 
-_ * Uitvoer * *:
+**Uitvoer**:
 
 ```text
-**_ Onnx r2 score: 0.7406426691136831
-_*_ Onnx MSE: 21.894830759270633
+*** Onnx r2 score: 0.7406426691136831
+*** Onnx MSE: 21.894830759270633
 
 R2 Scores are equal
 MSE are equal
@@ -227,7 +227,7 @@ MSE are equal
 
 ## <a name="insert-the-onnx-model"></a>Het ONNX-model invoegen
 
-Sla het model op in een `models` tabel in een data base in Azure SQL Edge of Azure SQL Managed instance `onnx` . Geef in het connection string het adres van de @-server * *, de **gebruikers naam** en het **wacht woord** op.
+Sla het model op in een `models` tabel in een data base in Azure SQL Edge of Azure SQL Managed instance `onnx` . Geef in het connection string het **server adres**, de **gebruikers naam** en het **wacht woord** op.
 
 ```python
 import pyodbc

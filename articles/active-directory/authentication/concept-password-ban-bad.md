@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b019c12103a0324e21ef7c06b0c7a5d7fe14e6ec
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 740201b84323f5a01ab01bb21ec458a19832e499
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743884"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652017"
 ---
 # <a name="eliminate-bad-passwords-using-azure-active-directory-password-protection"></a>Verwijder ongeldige wacht woorden met Azure Active Directory wachtwoord beveiliging
 
@@ -174,7 +174,7 @@ Kijk eens naar het volgende voorbeeld:
 De volgende stap is het identificeren van alle instanties van verboden wacht woorden in het genormaliseerde nieuwe wacht woord van de gebruiker. Punten worden toegewezen op basis van de volgende criteria:
 
 1. Elk verboden wacht woord dat is gevonden in het wacht woord van een gebruiker wordt één punt gegeven.
-1. Elk resterend uniek teken wordt op één punt gegeven.
+1. Elk resterend teken dat geen deel uitmaakt van een verboden wacht woord, wordt één punt gegeven.
 1. Een wacht woord moet ten minste vijf (5) punten zijn om te worden geaccepteerd.
 
 Voor de volgende twee voorbeeld scenario's gebruikt contoso Azure AD-wachtwoord beveiliging en heeft Contoso de aangepaste lijst met geblokkeerde wacht woorden. Er wordt ook van uitgegaan dat "leeg" voor komt in de globale lijst.

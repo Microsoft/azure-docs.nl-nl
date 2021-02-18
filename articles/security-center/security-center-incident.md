@@ -6,14 +6,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: how-to
-ms.date: 06/15/2020
+ms.date: 02/17/2021
 ms.author: memildin
-ms.openlocfilehash: 2b5dc30de19704b5e8950515cfa6224b4bbdbaf0
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 722a508679c74f9d62df07575ffa1006528f4398
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341343"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652097"
 ---
 # <a name="manage-security-incidents-in-azure-security-center"></a>Beveiligings incidenten beheren in Azure Security Center
 
@@ -29,11 +29,19 @@ In Security Center is een beveiligingsincident een samenloop van alle waarschuwi
 
 ## <a name="managing-security-incidents"></a>Beveiligingsincidenten beheren
 
-1. Selecteer op de pagina overzicht van Security Center de tegel **beveiligings waarschuwingen** . De incidenten en waarschuwingen worden weer gegeven. U ziet dat beveiligings incidenten een ander pictogram voor beveiligings waarschuwingen hebben.
+1. Op de pagina waarschuwingen van Security Center klikt u op de knop **filter toevoegen** om te filteren op waarschuwings naam in het **beveiligings incident waarschuwing dat op meerdere resources is gedetecteerd**. 
 
-    ![Beveiligings incidenten weer geven](./media/security-center-managing-and-responding-alerts/security-center-manage-alerts.png)
+    :::image type="content" source="media/security-center-incident/locating-incidents.png" alt-text="Het vinden van de incidenten op de pagina waarschuwingen in Azure Security Center":::
 
-1. Als u details wilt weer geven, selecteert u een incident. Op de pagina **beveiligings incident** vindt u meer informatie. 
+    De lijst wordt nu gefilterd, zodat alleen incidenten worden weer gegeven. U ziet dat beveiligings incidenten een ander pictogram voor beveiligings waarschuwingen hebben.
+
+    :::image type="content" source="media/security-center-incident/incidents-list.png" alt-text="Lijst met incidenten op de pagina waarschuwingen in Azure Security Center":::
+
+1. Als u de details van een incident wilt weer geven, selecteert u er een in de lijst. Er wordt een zijvenster weer gegeven met meer informatie over het incident.
+
+    :::image type="content" source="media/security-center-incident/incident-quick-peek.png" alt-text="Zijvenster met details van het incident":::
+
+1. Selecteer **volledige details weer geven** om meer details weer te geven.
 
     [![Reageren op beveiligings incidenten in Azure Security Center](media/security-center-incident/incident-details.png)](media/security-center-incident/incident-details.png#lightbox)
 

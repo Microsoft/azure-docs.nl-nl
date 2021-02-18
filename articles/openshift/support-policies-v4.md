@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.service: azure-redhat-openshift
 ms.topic: conceptual
 ms.date: 11/23/2020
-ms.openlocfilehash: fced0cfb1836be0f90c606b9a9753dad4200670d
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 8de819fc5444146f40a6a052cd51e6164cdfb230
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100635622"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653054"
 ---
 # <a name="azure-red-hat-openshift-support-policy"></a>Ondersteunings beleid voor Azure Red Hat open Shift
 
@@ -23,7 +23,7 @@ Bepaalde configuraties voor Azure Red Hat open Shift 4-clusters kunnen van invlo
 ## <a name="cluster-configuration-requirements"></a>Vereisten voor cluster configuratie
 
 * Alle open Shift-cluster operators moeten in een beheerde status blijven. De lijst met cluster operators kan worden geretourneerd door uit te voeren `oc get clusteroperators` .
-* Het cluster moet mini maal twee werk knooppunten hebben. Schaal de cluster medewerkers niet op nul of probeer het cluster niet correct af te zetten.
+* Het cluster moet mini maal twee werk knooppunten hebben. Er zijn geen taints die het plannen van open Shift-onderdelen verhinderen. Schaal de cluster medewerkers niet op nul of probeer het cluster niet correct af te zetten.
 * Verwijder of wijzig de cluster Prometheus-en Alertmanager-Services niet.
 * Verwijder geen service Alertmanager-regels.
 * Verwijder of wijzig geen netwerk beveiligings groepen.

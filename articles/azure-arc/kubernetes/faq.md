@@ -2,18 +2,18 @@
 title: Veelgestelde vragen over Azure Arc enabled Kubernetes
 services: azure-arc
 ms.service: azure-arc
-ms.date: 02/15/2021
+ms.date: 02/17/2021
 ms.topic: conceptual
 author: shashankbarsin
 ms.author: shasb
 description: Dit artikel bevat een lijst met veelgestelde vragen met betrekking tot Azure Arc enabled Kubernetes
 keywords: Kubernetes, Arc, azure, containers, configuratie, GitOps, veelgestelde vragen
-ms.openlocfilehash: 237b2629b833a63552b172636f46a1ac92e321c0
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: e0d7501dc1a82940571d0168222c396f61a70bce
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100561495"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652493"
 ---
 # <a name="frequently-asked-questions---azure-arc-enabled-kubernetes"></a>Veelgestelde vragen: Azure Arc enabled Kubernetes
 
@@ -31,19 +31,19 @@ Nee. Alle Azure Arc ingeschakelde Kubernetes-functies, waaronder Azure Monitor e
     
 ## <a name="should-i-connect-my-aks-hci-cluster-and-kubernetes-clusters-on-azure-stack-hub-and-azure-stack-edge-to-azure-arc"></a>Moet ik mijn AKS-HCI-cluster en Kubernetes-clusters op Azure Stack hub en Azure Stack Edge verbinden met Azure Arc?
 
-Ja, u kunt uw AKS-HCI-cluster of Kubernetes-clusters op Azure Stack Edge-of Azure Stack-hub met Azure Arc verbinden met clusters met resource weergave in Azure Resource Manager. Deze resource weergave breidt mogelijkheden als cluster configuratie, Azure Monitor en Azure Policy (gate keeper) uit naar de Kubernetes-clusters waarmee u verbinding maakt.
+Ja, u kunt uw AKS-HCI-cluster of Kubernetes-clusters op Azure Stack Edge-of Azure Stack-hub met Azure Arc verbinden met clusters met resource weergave in Azure Resource Manager. Deze resource weergave breidt mogelijkheden, zoals cluster configuratie, Azure Monitor en Azure Policy (gate keeper), uit voor verbonden Kubernetes-clusters.
 
 ## <a name="how-to-address-expired-azure-arc-enabled-kubernetes-resources"></a>Hoe kan ik de verlopen Azure Arc-Kubernetes-resources adresseren?
 
-Het MSI-certificaat (Managed Service Identity) dat is gekoppeld aan uw Azure Arc enabled-Kuberenetes heeft een verloop venster van 90 dagen. Zodra dit certificaat is verlopen, wordt de resource beschouwd als `Expired` alle functies, zoals configuratie, bewaking en beleid, werken niet meer op dit cluster. Voer de volgende stappen uit om uw Kubernetes-cluster opnieuw te laten werken met Azure Arc:
+Het Managed Service Identity (MSI)-certificaat dat is gekoppeld aan uw Azure Arc enabled-Kubernetes heeft een verloop venster van 90 dagen. Zodra dit certificaat is verlopen, wordt de resource beschouwd als `Expired` alle functies (zoals configuratie, bewaking en beleid) die niet meer werken op dit cluster. Uw Kubernetes-cluster opnieuw samen werken met Azure Arc:
 
-1. Kubernetes-resource en agents van Azure-Arc op het cluster verwijderen 
+1. Verwijder de Kubernetes-resource en-agents van Azure-arctangens op het cluster. 
 
     ```console
     az connectedk8s delete -n <name> -g <resource-group>
     ```
 
-1. Maak de Azure Arc-Kubernetes-resource opnieuw door agents in het cluster opnieuw te implementeren.
+1. Maak de Azure Arc-Kubernetes-resource opnieuw door agents in het cluster te implementeren.
     
     ```console
     az connectedk8s connect -n <name> -g <resource-group>
@@ -62,9 +62,11 @@ De CI/CD-pijp lijn past slechts eenmaal wijzigingen toe tijdens de uitvoering va
 
 **GitOps op schaal Toep assen**
 
-CI/CD-pijp lijnen zijn geschikt voor op gebeurtenissen gerichte implementaties van uw Kubernetes-cluster, waarbij de gebeurtenis kan een push-naar-een Git-opslag plaats zijn. Voor de implementatie van dezelfde configuratie voor al uw Kubernetes-clusters moet de CI/CD-pijp lijn echter hand matig worden geconfigureerd met referenties van elk van deze Kubernetes-clusters. In het geval van Azure Arc enabled Kubernetes, omdat Azure Resource Manager uw configuraties beheert, kunt u Azure Policy gebruiken om de toepassing van de gewenste configuratie op alle Kubernetes-clusters in een abonnement of resource groeps bereik te automatiseren. Deze mogelijkheid is zelfs van toepassing op Kubernetes-resources van Azure Arc die zijn gemaakt na de beleids toewijzing.
+CI/CD-pijp lijnen zijn handig voor op gebeurtenissen gebaseerde implementaties in uw Kubernetes-cluster (bijvoorbeeld een push naar een Git-opslag plaats). Als u echter dezelfde configuratie wilt implementeren voor al uw Kubernetes-clusters, moet u de referenties van elke Kubernetes-cluster hand matig configureren voor de CI/CD-pijp lijn. 
 
-De configuratie functie wordt gebruikt voor het Toep assen van basislijn configuraties zoals netwerk beleid, functie bindingen en pod beveiligings beleid voor de gehele inventaris van Kubernetes-clusters voor nalevings-en governance vereisten.
+Voor Azure Arc enabled Kubernetes, omdat Azure Resource Manager uw configuraties beheert, kunt u het maken van dezelfde configuratie automatiseren voor alle Azure-Arc-Kubernetes-resources met behulp van Azure Policy binnen het bereik van een abonnement of een resource groep. Deze mogelijkheid is zelfs van toepassing op Kubernetes-resources van Azure Arc die zijn gemaakt na de beleids toewijzing.
+
+Deze functie past basislijn configuraties (zoals netwerk beleid, Pod en beveiligings beleid) toe in de gehele Kubernetes-cluster inventaris om te voldoen aan de vereisten voor naleving en governance.
 
 ## <a name="next-steps"></a>Volgende stappen
 

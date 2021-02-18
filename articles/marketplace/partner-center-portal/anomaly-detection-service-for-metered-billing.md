@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.author: mingshen
 author: mingshen-ms
 ms.date: 06/10/2020
-ms.openlocfilehash: 909b818c60932f5b1d6071ea1ccf0ee4c76173b4
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 5ab57bcccb6f681f5c9282ef461181952ed5a679
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92280532"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653071"
 ---
 # <a name="anomaly-detection-service-for-metered-billing"></a>Afwijkingsdetectieservice voor facturering naar gebruik
 
@@ -50,32 +50,37 @@ Het model werkt door het genereren van interval voor retroactieve vertrouwen. De
 
 ## <a name="anomaly-detection-notification"></a>Melding over afwijkings detectie
 
-Er worden wekelijks meldingen over afwijkings detectie per week verzonden. Het bevat alle afwijkingen die in de week voor alle meters en klanten zijn gedetecteerd. Dit e-mail bericht wordt verzonden naar de **technische** en **ondersteunings** contacten die zijn verschaft tijdens het maken van de aanbieding.
+U kunt afwijkingen evalueren, beheren en bevestigen in het partner centrum. Zie [anomalie detectie voor factuur met data limiet voor](../anomaly-detection.md)meer informatie.
 
-U wordt verwacht te onderzoeken of gedetecteerde afwijkingen echte problemen zijn en als dit het geval is, neem dan contact op met micro soft om het onjuiste gebruik te melden (Zie de sectie ondersteuning hieronder).
+Om ervoor te zorgen dat uw klanten niet worden overbelast voor gebruik in de data limiet, moet u onderzoeken of gedetecteerde afwijkingen echte problemen zijn. Als dat het geval is, kunt u het onjuiste gebruik in partner centrum bevestigen.
 
-Als u bevestigt dat gedetecteerde afwijkingen normaal gebruik zijn, is er geen verdere actie nodig. Als een afwijkend mogelijk groot financieel risico oplevert, kunnen we echter contact met u opnemen om het gebruik te bevestigen.  
+U wordt aangeraden te bevestigen of gedetecteerde afwijkingen normaal gebruik zijn. Als u dit doet, worden de afwijkende gegevens die we aan u verstrekt, verbeterd. Als een afwijkend financieel risico vormt, kunnen we contact met u opnemen om het gebruik te bevestigen.
 
 ## <a name="when-and-how-to-get-support"></a>Wanneer en hoe u ondersteuning krijgt
 
-Als u het verkeerde gebruik hebt verzonden naar micro soft en dit hebt gedaan, of als gevolg van de klant, zal micro soft geen factuur voor de klant initiëren voor gebruik onder het rapport of u betalen voor dat gebruik. Het verlies van inkomsten vanwege het te laag gemelde verbruik is voor uw rekening.
+Als u ons een onjuist gebruik van een Data limiet hebt gestuurd dat voor de klant in rekening is gebracht, zullen we geen factuur voor de klant initiëren voor gebruik onder het oog van het rapport of u betalen voor dat gebruik. Het verlies van inkomsten vanwege het te laag gemelde verbruik is voor uw rekening.
 
-Als een van de volgende gevallen van toepassing is, kunt u een ondersteuningsticket openen om terugbetaling of factureringscorrectie voor uw klanten aan te vragen:
+Als een van de volgende gevallen van toepassing is, kunt u het gebruiks bedrag in partner centrum aanpassen, wat leidt tot een terugbetaling of facturerings correctie voor uw klanten:
 
-- U hebt bevestigd dat een van de gevonden afwijkingen een echt probleem is en het onjuiste gebruik zou leiden tot **overbelasting** van de klant.
-- U ontdekt dat u onjuist gebruik naar ons hebt verzonden en dat het onjuiste gebruik zou leiden tot **overbelasting** van de klant.
-- U wilt een terugbetaling aanvragen voor de kosten van het facturerings gebruik van uw klant.
+- U hebt bevestigd dat een van de gevonden afwijkingen een echt probleem is en het onjuiste gebruik zou leiden tot het overladen van de klant.
+- U ontdekt dat u onjuist gebruik naar ons hebt verzonden en het onjuiste gebruik zou leiden tot een overbelasting van de klant.
 
-Een ticket verzenden:
+Een ondersteunings ticket verzenden dat betrekking heeft op afwijkingen in de betalings wijze:
 
-1. Ga naar de ondersteunings pagina. Voer in het **vak vertel ons over uw probleem**' onjuist gebruik ' in.
-2. Selecteer in ondersteunings onderwerpen een van de volgende opties in de vervolg keuzelijst van zoek resultaten:
-    - **Commerciële Marketplace**  >  Factuur met data **limiet**  >  **Onjuist gebruik verzonden voor de aanbieding van Azure-toepassingen**of
-    - **Commerciële Marketplace**  >  Factuur met data **limiet**  >  **Onjuist gebruik verzonden voor SaaS-aanbieding**
-3. Onder **volgende stap**selecteert u de knop **oplossingen controleren** om u aan te melden bij het partner centrum om een ondersteunings ticket in te dienen.
+1. Meld u met uw werk account aan bij [Partner Center](https://partner.microsoft.com/dashboard/commercial-marketplace/overview) .
+1. Selecteer in het menu in de rechter bovenhoek van de pagina het **ondersteunings** pictogram. Het deel venster **Help en ondersteuning** wordt weer gegeven aan de rechter kant van de pagina.
+1. Voor hulp bij de commerciële Marketplace selecteert u **commerciële Marketplace**.
+   ![Illustreert het ondersteunings venster.](../media/support/commercial-marketplace-support-pane.png)
+1. Voer in het vak **samen vatting van probleem** de **commerciële Marketplace in > factuur met data limiet**.
+1. Selecteer in het vak **probleem type** een van de volgende opties:
+    - **Commerciële Marketplace > factuur met data limiet > onjuist gebruik verzonden voor Azure Applications-aanbieding**
+    - **Commerciële Marketplace > facturering via data limiet > onjuist gebruik voor SaaS-aanbieding**
+1. Onder **volgende stap** selecteert u **oplossingen controleren**.
+1. Bekijk de aanbevolen documenten, indien aanwezig of selecteer **probleem Details opgeven** om een ondersteunings ticket in te dienen.
 
 Voor meer ondersteunings opties voor Publisher raadpleegt u [ondersteuning voor het programma voor commerciële Marketplace in Partner Center](../support.md).
 
-## <a name="next-step"></a>Volgende stap
+## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over de [Marketplace meter Service-API](marketplace-metering-service-apis.md).
+- [Afwijkings detectie voor facturering met data limiet](../anomaly-detection.md)

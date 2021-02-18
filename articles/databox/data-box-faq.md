@@ -6,14 +6,14 @@ author: v-dalc
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 12/17/2020
+ms.date: 02/17/2021
 ms.author: alkohli
-ms.openlocfilehash: 87ec1f03a1f2294a4423e26129644eafcf7c915c
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 46a60642e177a2bfb9e8fb996427ea45f6777468
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97655472"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652782"
 ---
 # <a name="azure-data-box-frequently-asked-questions"></a>Azure Data Box: veelgestelde vragen
 
@@ -69,6 +69,10 @@ Als u in het scenario voor importeren bijvoorbeeld de bron gegevens in Canada ha
 
 3. U kunt vervolgens een hulp programma als AzCopy gebruiken om de gegevens naar een opslag account in VS-West te kopiëren. Met deze stap worden [standaard](https://azure.microsoft.com/pricing/details/storage/) kosten voor opslag en [band breedte](https://azure.microsoft.com/pricing/details/bandwidth/) in rekening gebracht die niet zijn opgenomen in de facturering van data box.
 
+### <a name="q-how-can-i-recover-my-data-if-an-entire-region-fails"></a>V. Hoe kan ik mijn gegevens herstellen als een hele regio is mislukt?
+
+A. In uitzonderlijke omstandigheden waarbij een regio door een belang rijke nood geval verloren gaat, kan micro soft een regionale failover initiëren. In dit geval is er geen actie voor uw onderdeel vereist. Uw order wordt afgehandeld via de failover-regio als deze zich binnen hetzelfde land of dezelfde handels grens bevindt. Sommige Azure-regio's hebben echter geen gekoppelde regio in dezelfde geografische of handels grens. Als er sprake is van een nood geval in een van deze regio's, moet u de Data Box order opnieuw maken vanuit een andere beschik bare regio en de gegevens naar Azure kopiëren in de nieuwe regio. Zie [Bedrijfscontinuïteit en herstel na noodgevallen (BCDR): gekoppelde Azure-regio's](../best-practices-availability-paired-regions.md) voor meer informatie.
+
 ### <a name="q-who-should-i-contact-if-i-come-across-any-issues-with-data-box"></a>V. Met wie moet ik contact opnemen als ik problemen ondervindt met Data Box?
 A. Als u problemen ondervindt met Data Box, [neemt u contact op met Microsoft ondersteuning](data-box-disk-contact-microsoft-support.md).
 
@@ -81,7 +85,7 @@ A. Ja. Er worden kosten in rekening gebracht voor een verloren of beschadigd app
 ### <a name="q-how-do-i-get-data-box"></a>V. Hoe kan ik Data Box krijgen? 
 A.  Meld u aan bij de Azure Portal en maak een bestelling voor Data Box om Azure Data Box te ontvangen. Geef uw contactgegevens en overige informatie op. Zodra u een bestelling hebt geplaatst, wordt Data Box op basis van beschikbaarheid binnen 10 dagen verzonden. Ga voor meer informatie naar [Een Data Box bestellen](data-box-deploy-ordered.md).
 
-### <a name="q-i-couldnt-create-a-data-box-order-in-the-azure-portal-why"></a>V. Ik kan geen Data Box volgorde maken in de Azure Portal. Waarom?
+### <a name="q-i-couldnt-create-a-data-box-order-in-the-azure-portal-why"></a>V. Ik kan geen Data Box volgorde maken in de Azure Portal. Hoe komt dat?
 A. Als u geen Data Box order kunt maken, is er een probleem met het type abonnement of de toegang.
 
 Raadpleeg uw abonnement. Data Box is alleen beschikbaar voor EA- en CSP-abonnementen (Enterprise Agreement en Cloud Solution Provider). Als u niet een van deze typen abonnementen hebt, neemt u contact op met Microsoft Ondersteuning om uw abonnement bij te werken.
@@ -104,7 +108,7 @@ Deze lever tijden zijn *schattingen*. De tijd voor elke fase van de order verwer
 6. Apparaat verwerken bij Data Center: 1-2 werk dagen, afhankelijk van andere orders die in behandeling zijn
 7. Gegevens uploaden naar Azure: begint zodra de verwerking is voltooid en het apparaat is verbonden. De upload tijd is afhankelijk van de aard van de gegevens, de grootte en het aantal bestanden.
 
-### <a name="q-i-ordered-a-couple-of-data-box-devices-i-cant-create-any-additional-orders-why"></a>V. Ik heb een aantal Data Box-apparaten besteld. Ik kan geen verdere orders maken. Waarom?
+### <a name="q-i-ordered-a-couple-of-data-box-devices-i-cant-create-any-additional-orders-why"></a>V. Ik heb een aantal Data Box-apparaten besteld. Ik kan geen verdere orders maken. Hoe komt dat?
 A. We hebben een maximum van vijf actieve orders per abonnement per commerce-grens toegestaan (een combi natie van land en regio geselecteerd). Neem contact op met Microsoft Ondersteuning om de limiet voor uw abonnement te verhogen als u een extra apparaat moet bestellen.
 
 ### <a name="q-when-i-try-to-create-an-order-i-receive-a-notification-that-the-data-box-service-is-not-available-what-does-this-mean"></a>V. Als ik een bestelling probeer te maken, ontvang ik een melding dat de Data Box-service niet beschikbaar is. Wat betekent dit?
@@ -160,7 +164,7 @@ Voer de volgende stappen uit:
 
 Als het lampje van de systeem fout zich nog steeds bevindt, [neemt u contact op met Microsoft ondersteuning](data-box-disk-contact-microsoft-support.md).
 
-### <a name="q-i-cant-access-the-data-box-unlock-password-in-the-azure-portal-why"></a>V. Ik heb geen toegang tot het ontgrendelingswachtwoord voor de Data Box in de Azure Portal. Waarom?
+### <a name="q-i-cant-access-the-data-box-unlock-password-in-the-azure-portal-why"></a>V. Ik heb geen toegang tot het ontgrendelingswachtwoord voor de Data Box in de Azure Portal. Hoe komt dat?
 A. Als u geen toegang hebt tot het wacht woord voor ontgrendelen in de Azure Portal, controleert u de machtigingen voor uw abonnement en opslag account. Zorg dat u inzender- of eigenaarsmachtigingen op resourcegroepniveau hebt. U moet ten minste Data Box operator machtiging hebben om de toegangs referenties te bekijken.
 
 ### <a name="q-is-port-channel-configuration-supported-on-data-box-how-about-mpio"></a>V. Wordt poortkanaalconfiguratie ondersteund in Data Box? En MPIO?
@@ -201,7 +205,7 @@ A.  U kunt het kopieerproces als volgt versnellen:
 - Gebruik meerdere gegevensstromen. `Robocopy`Gebruik bijvoorbeeld de multi-threaded optie. Ga naar [Tutorial: Copy data to Azure Data Box and verify](data-box-deploy-copy-data.md) (Zelfstudie: Gegevens naar Azure Data Box kopiëren en verifiëren) voor meer informatie over de opdracht die u moet gebruiken.
 - Gebruik meerdere sessies.
 - In plaats van te kopiëren over een netwerk share (waarbij netwerk snelheid de Kopieer snelheid kan beperken), slaat u de gegevens lokaal op de computer op waarop de Data Box is aangesloten.
-- Voer een benchmark-test uit van de prestaties van de computer die wordt gebruikt om de gegevens te kopiëren. Down load en gebruik het [ `Bluestop` FIO-hulp programma](https://ci.appveyor.com/project/axboe/fio) om de prestaties van de serverhardware te benchmarkren. Selecteer de nieuwste versie van x86 of x64, selecteer het tabblad **artefacten** en down load het MSI-bestand.
+- Voer een benchmark-test uit van de prestaties van de computer die wordt gebruikt om de gegevens te kopiëren. Down load en gebruik het [ `Bluestop` `FIO` hulp programma](https://ci.appveyor.com/project/axboe/fio) om de prestaties van de serverhardware te benchmarken. Selecteer de nieuwste versie van x86 of x64, selecteer het tabblad **artefacten** en down load het MSI-bestand.
 
 <!--### Q. How to speed up the data copy if the source data has small files (KBs or few MBs)?
 A.  To speed up the copy process:

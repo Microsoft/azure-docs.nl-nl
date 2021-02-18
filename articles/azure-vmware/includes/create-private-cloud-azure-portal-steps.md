@@ -1,14 +1,14 @@
 ---
-title: Azure VMware Solution implementeren
-description: Stappen voor het implementeren van Azure VMware Solution met behulp van de Azure-portal.
+title: Een Azure VMware Solution-privécloud maken
+description: Stappen voor het maken van een privécloud van Azure VMware-oplossing met behulp van de Azure Portal.
 ms.topic: include
-ms.date: 09/28/2020
-ms.openlocfilehash: 4d0881721cd8c13d1b6c9fb3a29e4cdb6d6a753f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.date: 02/17/2021
+ms.openlocfilehash: 983dccfaa9ea43955bfecc68bbbe432c579d51d1
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91578309"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653127"
 ---
 <!-- Used in deploy-azure-vmware-solution.md and tutorial-create-private-cloud.md -->
 
@@ -40,4 +40,4 @@ ms.locfileid: "91578309"
 
 1. Controleer of de implementatie is gelukt. Ga naar de resourcegroep die u hebt gemaakt en selecteer uw privécloud.  U ziet de status **Geslaagd** wanneer de implementatie is voltooid. 
 
-   :::image type="content" source="../media/tutorial-create-private-cloud/validate-deployment.png" alt-text="Voer op het tabblad Basisinstellingen waarden in voor de velden." border="true":::
+   :::image type="content" source="../media/tutorial-create-private-cloud/validate-deployment.png" alt-text="Controleer of de implementatie is gelukt." border="true":::

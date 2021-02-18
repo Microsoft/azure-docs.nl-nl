@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: db21f1170dacbfa1e4367e7f22143ec3d0b0f6e4
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: a43a27a8e880c76ba21639437c0c20f583620d50
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737333"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653615"
 ---
 # <a name="install-and-run-the-spatial-analysis-container-preview"></a>De container voor ruimtelijke analyse installeren en uitvoeren (preview-versie)
 
@@ -249,7 +249,7 @@ sudo systemctl --now enable nvidia-mps.service
 
 ## <a name="configure-azure-iot-edge-on-the-host-computer"></a>Azure IoT Edge op de hostcomputer configureren
 
-Als u de container voor ruimtelijke analyse op de hostcomputer wilt implementeren, moet u een exemplaar van een [Azure IOT hub](../../iot-hub/iot-hub-create-through-portal.md) -service maken met behulp van de prijs categorie Standard (S1) of gratis (F0). Als uw hostcomputer een Azure Stack Edge is, gebruikt u hetzelfde abonnement en dezelfde resource groep die wordt gebruikt door de Azure Stack Edge-resource.
+Als u de container voor ruimtelijke analyse op de hostcomputer wilt implementeren, moet u een exemplaar van een [Azure IOT hub](../../iot-hub/iot-hub-create-through-portal.md) -service maken met behulp van de prijs categorie Standard (S1) of gratis (F0). 
 
 Gebruik de Azure CLI om een exemplaar van Azure IoT Hub te maken. Vervang de para meters, indien van toepassing. U kunt de Azure-IoT Hub ook maken op de [Azure Portal](https://portal.azure.com/).
 
@@ -264,7 +264,7 @@ sudo az iot hub create --name "test-iot-hub-123" --sku S1 --resource-group "test
 sudo az iot hub device-identity create --hub-name "test-iot-hub-123" --device-id "my-edge-device" --edge-enabled
 ```
 
-Als de hostcomputer geen Azure Stack edge-apparaat is, moet u [Azure IOT Edge](../../iot-edge/how-to-install-iot-edge.md) versie 1.0.9 installeren. Volg deze stappen om de juiste versie te downloaden:
+U moet [Azure IOT Edge](../../iot-edge/how-to-install-iot-edge.md) versie 1.0.9 installeren. Volg deze stappen om de juiste versie te downloaden:
 
 Ubuntu Server 18.04:
 ```bash
@@ -396,7 +396,73 @@ sudo apt-get install -y docker-ce nvidia-docker2
 sudo systemctl restart docker
 ```
 
-Nu u de virtuele machine hebt ingesteld en geconfigureerd, volgt u de onderstaande stappen om de container voor ruimtelijke analyse te implementeren. 
+Nu u de virtuele machine hebt ingesteld en geconfigureerd, volgt u de onderstaande stappen om Azure IoT Edge te configureren. 
+
+## <a name="configure-azure-iot-edge-on-the-vm"></a>Azure IoT Edge op de virtuele machine configureren
+
+Als u de container voor ruimtelijke analyse op de VM wilt implementeren, moet u een exemplaar van een [Azure IOT hub](../../iot-hub/iot-hub-create-through-portal.md) -service maken met behulp van de prijs categorie Standard (S1) of gratis (F0).
+
+Gebruik de Azure CLI om een exemplaar van Azure IoT Hub te maken. Vervang de para meters, indien van toepassing. U kunt de Azure-IoT Hub ook maken op de [Azure Portal](https://portal.azure.com/).
+
+```bash
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+sudo az login
+sudo az account set --subscription <name or ID of Azure Subscription>
+sudo az group create --name "test-resource-group" --location "WestUS"
+
+sudo az iot hub create --name "test-iot-hub-123" --sku S1 --resource-group "test-resource-group"
+
+sudo az iot hub device-identity create --hub-name "test-iot-hub-123" --device-id "my-edge-device" --edge-enabled
+```
+
+U moet [Azure IOT Edge](../../iot-edge/how-to-install-iot-edge.md) versie 1.0.9 installeren. Volg deze stappen om de juiste versie te downloaden:
+
+Ubuntu Server 18.04:
+```bash
+curl https://packages.microsoft.com/config/ubuntu/18.04/multiarch/prod.list > ./microsoft-prod.list
+```
+
+Kopieer de gegenereerde lijst.
+```bash
+sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
+```
+
+Installeer de openbare Microsoft GPG-sleutel.
+
+```bash
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo cp ./microsoft.gpg /etc/apt/trusted.gpg.d/
+```
+
+Werk de pakket lijsten op het apparaat bij.
+
+```bash
+sudo apt-get update
+```
+
+Installeer de 1.0.9-release:
+
+```bash
+sudo apt-get install iotedge=1.0.9* libiothsm-std=1.0.9*
+```
+
+Registreer vervolgens de virtuele machine als IoT Edge apparaat in uw IoT Hub-exemplaar met behulp van een [Connection String](../../iot-edge/how-to-manual-provision-symmetric-key.md?view=iotedge-2018-06).
+
+U moet het IoT Edge apparaat verbinden met uw Azure-IoT Hub. U moet de connection string kopiëren van het IoT Edge apparaat dat u eerder hebt gemaakt. U kunt ook de onderstaande opdracht uitvoeren in de Azure CLI.
+
+```bash
+sudo az iot hub device-identity show-connection-string --device-id my-edge-device --hub-name test-iot-hub-123
+```
+
+Open voor bewerking op de VM  `/etc/iotedge/config.yaml` . Vervang door `ADD DEVICE CONNECTION STRING HERE` de Connection String. Sla het bestand op en sluit het. Voer deze opdracht uit om de IoT Edge-service op de VM opnieuw op te starten.
+
+```bash
+sudo systemctl restart iotedge
+```
+
+Implementeer de container voor ruimtelijke analyse als een IoT-module op de VM, hetzij vanuit de [Azure Portal](../../iot-edge/how-to-deploy-modules-portal.md) of [Azure cli](../cognitive-services-apis-create-account-cli.md?tabs=windows). Als u de portal gebruikt, stelt u de afbeeldings-URI in op de locatie van uw Azure Container Registry. 
+
+Gebruik de onderstaande stappen om de container te implementeren met behulp van de Azure CLI.
 
 ---
 

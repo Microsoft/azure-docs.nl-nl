@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 077500e0188d1cc20864d436a2e2fd711b180702
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
-ms.translationtype: HT
+ms.openlocfilehash: 9b249bddc4cd269933a39b5baf77995aec1e82b3
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97560233"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653931"
 ---
 # <a name="chat-concepts"></a>Chatconcepten
 
@@ -41,92 +41,79 @@ De chatarchitectuur bestaat uit twee belangrijke onderdelen: 1) Vertrouwde servi
  - **Vertrouwde service:** Om een chatsessie goed te beheren, hebt u een service nodig die u helpt om verbinding te maken met Communication Services via uw verbindingsreeks voor de resource. Deze service is verantwoordelijk voor het maken van chatgesprekken, het beheren van lidmaatschappen en het verlenen van toegangstokens aan gebruikers. Meer informatie over toegangstokens vindt u in onze quickstart over [toegangstokens](../../quickstarts/access-tokens.md).
 
  - **Client-app:**  De clienttoepassing maakt verbinding met uw vertrouwde service en ontvangt de toegangstokens die worden gebruikt om rechtstreeks verbinding te maken met Communication Services. Nadat deze verbinding tot stand is gebracht, kan uw client-app berichten verzenden en ontvangen.
+
+We raden u aan om toegangs tokens te genereren met behulp van de vertrouwde servicelaag. In dit scenario is de server verantwoordelijk voor het maken en beheren van gebruikers en het uitgeven van de tokens.
     
 ## <a name="message-types"></a>Berichttypen
 
 De chat functie van Communication Services deelt door gebruikers gegenereerde berichten, evenals door het systeem gegenereerde berichten; dit worden **gespreksactiviteiten** genoemd. Gespreksactiviteiten worden gegenereerd als een chatgesprek wordt bijgewerkt. Als u `List Messages` of `Get Messages` aanroept in een chatgesprek bevat het resultaat de door de gebruiker gegenereerde tekstberichten en de systeemberichten in chronologische volgorde. Zo kunt u vaststellen wanneer een lid is toegevoegd of verwijderd of wanneer het onderwerp van het chatgesprek is bijgewerkt. Ondersteunde berichttypen zijn:  
 
- - `Text`: Een bericht zonder opmaak dat door een gebruiker is opgesteld en verzonden als onderdeel van een chatgesprek. 
+ - `Text`: Een bericht zonder opmaak dat door een gebruiker is opgesteld en verzonden als onderdeel van een chatgesprek.
  - `RichText/HTML`: Een bericht met opmaak. Houd er rekening mee dat Communication Services-gebruikers momenteel geen RTF-berichten kunnen verzenden. Dit berichttype wordt ondersteund voor berichten die Teams-gebruikers verzenden naar Communication Services-gebruikers in Teams Interop-scenario's.
- - `ThreadActivity/AddMember`: Een systeembericht dat aangeeft dat een of meer leden zijn toegevoegd aan het chatgesprek. Bijvoorbeeld:
 
-```xml
-
-<addmember>
-    <eventtime>1598478187549</eventtime>
-    <initiator>8:acs:57b9bac9-df6c-4d39-a73b-26e944adf6ea_0e59221d-0c1d-46ae-9544-c963ce56c10b</initiator>
-    <detailedinitiatorinfo>
-        <friendlyName>User 1</friendlyName>
-    </detailedinitiatorinfo>
-    <rosterVersion>1598478184564</rosterVersion>
-    <target>8:acs:57b9bac9-df6c-4d39-a73b-26e944adf6ea_0e59221d-0c1d-46ae-9544-c963ce56c10b</target>
-    <detailedtargetinfo>
-        <id>8:acs:57b9bac9-df6c-4d39-a73b-26e944adf6ea_0e59221d-0c1d-46ae-9544-c963ce56c10b</id>
-        <friendlyName>User 1</friendlyName>
-    </detailedtargetinfo>
-    <target>8:acs:57b9bac9-df6c-4d39-a73b-26e944adf6ea_8540c0de-899f-5cce-acb5-3ec493af3800</target>
-    <detailedtargetinfo>
-        <id>8:acs:57b9bac9-df6c-4d39-a73b-26e944adf6ea_8540c0de-899f-5cce-acb5-3ec493af3800</id>
-        <friendlyName>User 2</friendlyName>
-    </detailedtargetinfo>
-</addmember>
-
-```  
-
-- `ThreadActivity/DeleteMember`: Systeembericht dat aangeeft dat een lid is verwijderd uit het chatgesprek. Bijvoorbeeld:
-
-```xml
-
-<deletemember>
-    <eventtime>1598478187642</eventtime>
-    <initiator>8:acs:57b9bac9-df6c-4d39-a73b-26e944adf6ea_0e59221d-0c1d-46ae-9544-c963ce56c10b</initiator>
-    <detailedinitiatorinfo>
-        <friendlyName>User 1</friendlyName>
-    </detailedinitiatorinfo>
-    <rosterVersion>1598478184564</rosterVersion>
-    <target>8:acs:57b9bac9-df6c-4d39-a73b-26e944adf6ea_8540c0de-899f-5cce-acb5-3ec493af3800</target>
-    <detailedtargetinfo>
-        <id>8:acs:57b9bac9-df6c-4d39-a73b-26e944adf6ea_8540c0de-899f-5cce-acb5-3ec493af3800</id>
-        <friendlyName>User 2</friendlyName>
-    </detailedtargetinfo>
-</deletemember>
+ - `ThreadActivity/ParticipantAdded`: Een systeem bericht dat aangeeft dat een of meer deel nemers zijn toegevoegd aan de chat thread. Bijvoorbeeld:
 
 ```
-
-- `ThreadActivity/MemberJoined`: Een systeembericht dat wordt gegenereerd wanneer een gastgebruiker deelneemt aan de Teams-vergaderchat. Communication Services-gebruikers kunnen als gast deelnemen aan Teams-vergaderchats. Bijvoorbeeld:  
-```xml
-{ 
-  "id": "1606351443605", 
-  "type": "ThreadActivity/MemberJoined", 
-  "version": "1606347753409", 
-  "priority": "normal", 
-  "content": "{\"eventtime\":1606351443080,\"initiator\":\"8:orgid:8a53fd2b5ef150bau8442ad732a6ac6b_0e8deebe7527544aa2e7bdf3ce1b8733\",\"members\":[{\"id\":\"8:acs:9b665d83-8164-4923-ad5d-5e983b07d2d7_00000006-7ef9-3bbe-b274-5a3a0d0002b1\",\"friendlyname\":\"\"}]}", 
-  "senderId": " 19:meeting_curGQFTQ8tifs3EK9aTusiszGpkZULzNTTy2dbfI4dCJEaik@thread.v2", 
-  "createdOn": "2020-11-29T00:44:03.6950000Z" 
-} 
+{
+            "id": "1613589626560",
+            "type": "participantAdded",
+            "sequenceId": "7",
+            "version": "1613589626560",
+            "content":
+            {
+                "participants":
+                [
+                    {
+                        "id": "8:acs:d2a829bc-8523-4404-b727-022345e48ca6_00000008-511c-4df6-f40f-343a0d003226",
+                        "displayName": "Jane",
+                        "shareHistoryTime": "1970-01-01T00:00:00Z"
+                    }
+                ],
+                "initiator": "8:acs:d2a829bc-8523-4404-b727-022345e48ca6_00000008-511c-4ce0-f40f-343a0d003224"
+            },
+            "createdOn": "2021-02-17T19:20:26Z"
+        }
 ```
-- `ThreadActivity/MemberLeft`: Een systeembericht dat wordt gegenereerd wanneer een gastgebruiker de vergaderchat verlaat. Communication Services-gebruikers kunnen als gast deelnemen aan Teams-vergaderchats. Bijvoorbeeld: 
-```xml
-{ 
-  "id": "1606347703429", 
-  "type": "ThreadActivity/MemberLeft", 
-  "version": "1606340753429", 
-  "priority": "normal", 
-  "content": "{\"eventtime\":1606340755385,\"initiator\":\"8:orgid:8a53fd2b5u8150ba81442ad732a6ac6b_0e8deebe7527544aa2e7bdf3ce1b8733\",\"members\":[{\"id\":\"8:acs:9b665753-8164-4923-ad5d-5e983b07d2d7_00000006-7ef9-3bbe-b274-5a3a0d0002b1\",\"friendlyname\":\"\"}]}", 
-  "senderId": "19:meeting_9u7hBcYiADudn41Djm0n9DTVyAHuMZuh7p0bDsx1rLVGpnMk@thread.v2", 
-  "createdOn": "2020-11-29T23:42:33.4290000Z" 
-} 
+
+- `ThreadActivity/ParticipantRemoved`: Systeem bericht dat aangeeft dat een deel nemer is verwijderd uit de chat thread. Bijvoorbeeld:
+
 ```
-- `ThreadActivity/TopicUpdate`: Systeembericht dat aangeeft dat het onderwerp is bijgewerkt. Bijvoorbeeld:
+{
+            "id": "1613589627603",
+            "type": "participantRemoved",
+            "sequenceId": "8",
+            "version": "1613589627603",
+            "content":
+            {
+                "participants":
+                [
+                    {
+                        "id": "8:acs:d2a829bc-8523-4404-b727-022345e48ca6_00000008-511c-4df6-f40f-343a0d003226",
+                        "displayName": "Jane",
+                        "shareHistoryTime": "1970-01-01T00:00:00Z"
+                    }
+                ],
+                "initiator": "8:acs:d2a829bc-8523-4404-b727-022345e48ca6_00000008-511c-4ce0-f40f-343a0d003224"
+            },
+            "createdOn": "2021-02-17T19:20:27Z"
+        }
+```
 
-```xml
+- `ThreadActivity/TopicUpdate`: Systeem bericht dat aangeeft dat het onderwerp van de thread is bijgewerkt. Bijvoorbeeld:
 
-<topicupdate>
-    <eventtime>1598477591811</eventtime>
-    <initiator>8:acs:57b9bac9-df6c-4d39-a73b-26e944adf6ea_0e59221d-0c1d-46ae-9544-c963ce56c10b</initiator>
-    <value>New topic</value>
-</topicupdate>
-
+```
+{
+            "id": "1613589623037",
+            "type": "topicUpdated",
+            "sequenceId": "2",
+            "version": "1613589623037",
+            "content":
+            {
+                "topic": "New topic",
+                "initiator": "8:acs:d2a829bc-8523-4404-b727-022345e48ca6_00000008-511c-4ce0-f40f-343a0d003224"
+            },
+            "createdOn": "2021-02-17T19:20:23Z"
+        }
 ```
 
 ## <a name="real-time-signaling"></a>Signalering in realtime 

@@ -2,22 +2,22 @@
 title: Configuraties implementeren met behulp van GitOps in Kubernetes-cluster met Arc (preview)
 services: azure-arc
 ms.service: azure-arc
-ms.date: 02/15/2021
+ms.date: 02/17/2021
 ms.topic: article
 author: mlearned
 ms.author: mlearned
 description: GitOps gebruiken voor het configureren van een Azure Arc enabled Kubernetes-cluster (preview)
 keywords: GitOps, Kubernetes, K8s, azure, Arc, Azure Kubernetes service, AKS, containers
-ms.openlocfilehash: 3cadcdf80abd997ec10aeb9521680944d455898f
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: b30ecde0e128a955967638828dcb7bec008205ea
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100560165"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652476"
 ---
 # <a name="deploy-configurations-using-gitops-on-an-arc-enabled-kubernetes-cluster-preview"></a>Configuraties implementeren met behulp van GitOps op een Kubernetes-cluster met Arc-functionaliteit (preview)
 
-In dit artikel wordt beschreven hoe u configuraties toepast op een Azure Arc enabled Kubernetes-cluster. Een conceptueel overzicht van deze informatie vindt u [hier](./conceptual-configurations.md).
+In dit artikel wordt beschreven hoe u configuraties toepast op een Azure Arc enabled Kubernetes-cluster. Zie het [artikel configuraties en GitOps-Azure-Arc Kubernetes](./conceptual-configurations.md)voor een conceptueel overzicht van dit proces.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -85,13 +85,13 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
   "type": "Microsoft.KubernetesConfiguration/sourceControlConfigurations"
   ```
 
-#### <a name="use-a-public-git-repo"></a>Een openbaar Git-opslag plaats gebruiken
+#### <a name="use-a-public-git-repository"></a>Een open bare Git-opslag plaats gebruiken
 
 | Parameter | Indeling |
 | ------------- | ------------- |
 | `--repository-url` | http [s]://Server/repo [. git] of git://Server/repo [. git]
 
-#### <a name="use-a-private-git-repo-with-ssh-and-flux-created-keys"></a>Een privé Git-opslag plaats gebruiken met sleutels voor SSH en stromen
+#### <a name="use-a-private-git-repository-with-ssh-and-flux-created-keys"></a>Een persoonlijke Git-opslag plaats met SSH-en met stromen gemaakte sleutels gebruiken
 
 | Parameter | Indeling | Notities
 | ------------- | ------------- | ------------- |
@@ -100,7 +100,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 > [!NOTE]
 > De open bare sleutel die wordt gegenereerd door stroom moet worden toegevoegd aan het gebruikers account in uw Git-service provider. Als de sleutel wordt toegevoegd aan de opslag plaats in plaats van het gebruikers account, gebruikt u `git@` in plaats van `user@` in de URL. Ga naar de sectie [configuratie Toep assen vanuit een persoonlijke Git-opslag plaats](#apply-configuration-from-a-private-git-repository) voor meer informatie.
 
-#### <a name="use-a-private-git-repo-with-ssh-and-user-provided-keys"></a>Een privé Git-opslag plaats gebruiken met SSH en door de gebruiker verschafte sleutels
+#### <a name="use-a-private-git-repository-with-ssh-and-user-provided-keys"></a>Een persoonlijke Git-opslag plaats gebruiken met SSH en door de gebruiker verschafte sleutels
 
 | Parameter | Indeling | Notities |
 | ------------- | ------------- | ------------- |
@@ -120,9 +120,9 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 | `--ssh-known-hosts-file` | volledig pad naar lokaal bestand | Bekende hosts-inhoud in een lokaal bestand opgeven |
 
 > [!NOTE]
-> Als u de Git-opslag plaats wilt verifiëren voordat u de SSH-verbinding tot stand brengt, houdt de stroom operator een lijst met algemene Git-hosts in het bekende hosts-bestand bij. Als u een ongebruikelijk Git-opslag plaats of uw eigen Git-host gebruikt, moet u mogelijk de host-sleutel opgeven om ervoor te zorgen dat stroom uw opslag plaats kan identificeren. U kunt uw known_hosts inhoud rechtstreeks of in een bestand opgeven. Gebruik de [indelings specificaties](https://aka.ms/KnownHostsFormat) voor de known_hosts-inhoud in combi natie met een van de hierboven beschreven SSH-sleutel scenario's voor het leveren van uw eigen inhoud.
+> Als u de Git-opslag plaats wilt verifiëren voordat u de SSH-verbinding tot stand brengt, houdt de stroom operator een lijst met algemene Git-hosts in het bekende hosts-bestand bij. Als u een ongebruikelijke Git-opslag plaats of uw eigen Git-host gebruikt, moet u mogelijk de host-sleutel opgeven om ervoor te zorgen dat stroom uw opslag plaats kan identificeren. U kunt uw known_hosts inhoud rechtstreeks of in een bestand opgeven. Gebruik de [indelings specificaties](https://aka.ms/KnownHostsFormat) voor de known_hosts-inhoud in combi natie met een van de hierboven beschreven SSH-sleutel scenario's voor het leveren van uw eigen inhoud.
 
-#### <a name="use-a-private-git-repo-with-https"></a>Een privé Git-opslag plaats gebruiken met HTTPS
+#### <a name="use-a-private-git-repository-with-https"></a>Een persoonlijke Git-opslag plaats met HTTPS gebruiken
 
 | Parameter | Indeling | Notities |
 | ------------- | ------------- | ------------- |
@@ -133,7 +133,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 > [!NOTE]
 > De persoonlijke verificatie van de HTTPS helm-versie wordt alleen ondersteund met de helm-operator grafiek versie 1.2.0 + (standaard).
 > De HTTPS-verificatie van de helm-versie wordt momenteel niet ondersteund voor door Azure Kubernetes Services beheerde clusters.
-> Als u een stroom nodig hebt om de Git-opslag plaats via uw proxy te openen, moet u de Azure Arc-agents bijwerken met de proxy instellingen. Zie [verbinding maken met een uitgaande proxy server](./connect-cluster.md#connect-using-an-outbound-proxy-server)voor meer informatie.
+> Als u stroom nodig hebt om toegang te krijgen tot de Git-opslag plaats via uw proxy, moet u de Azure Arc-agents bijwerken met de proxy instellingen. Zie [verbinding maken met een uitgaande proxy server](./connect-cluster.md#connect-using-an-outbound-proxy-server)voor meer informatie.
 
 #### <a name="additional-parameters"></a>Aanvullende para meters
 
@@ -151,11 +151,11 @@ Pas de configuratie aan met de volgende optionele para meters:
 
 | Optie | Beschrijving |
 | ------------- | ------------- |
-| `--git-branch`  | Vertakking van Git opslag plaats die moet worden gebruikt voor Kubernetes-manifesten. De standaard waarde is ' Master '. Nieuwere opslag plaatsen hebben een hoofd vertakking `main` met de naam, in welk geval u moet instellen `--git-branch=main` . |
-| `--git-path`  | Relatief pad binnen de Git-opslag plaats voor stroom om Kubernetes-manifesten te vinden. |
-| `--git-readonly` | Git-opslag plaats worden als alleen-lezen beschouwd. Er wordt geen poging gedaan om te schrijven naar de stroom. |
+| `--git-branch`  | Vertakking van de Git-opslag plaats die moet worden gebruikt voor Kubernetes-manifesten. De standaard waarde is ' Master '. Nieuwere opslag plaatsen hebben een hoofd vertakking `main` met de naam, in welk geval u moet instellen `--git-branch=main` . |
+| `--git-path`  | Relatief pad binnen de Git-opslag plaats voor stroom om Kubernetes-manifesten te zoeken. |
+| `--git-readonly` | Git-opslag plaats wordt als alleen-lezen beschouwd. Er wordt geen poging gedaan om te schrijven naar de stroom. |
 | `--manifest-generation`  | Als deze functie is ingeschakeld, zoekt stroom. stroom. yaml en voert u Kustomize of andere manifest generatoren uit. |
-| `--git-poll-interval`  | Periode waarvoor Git-opslag plaats moet worden gecontroleerd op nieuwe door voeringen. De standaard waarde is `5m` (5 minuten). |
+| `--git-poll-interval`  | Periode waarbij de Git-opslag plaats wordt gecontroleerd op nieuwe door voeringen. De standaard waarde is `5m` (5 minuten). |
 | `--sync-garbage-collection`  | Als deze functie is ingeschakeld, worden door stroom gemaakte resources verwijderd, maar zijn ze niet meer aanwezig in Git. |
 | `--git-label`  | Label om de voortgang van de synchronisatie bij te houden. Wordt gebruikt om de Git-vertakking te labelen.  De standaardinstelling is `flux-sync`. |
 | `--git-user`  | Gebruikers naam voor git-door voer. |
@@ -237,7 +237,7 @@ Terwijl het inrichtings proces plaatsvindt, `sourceControlConfiguration` wordt d
 
 ## <a name="apply-configuration-from-a-private-git-repository"></a>Configuratie Toep assen vanuit een persoonlijke Git-opslag plaats
 
-Als u een privé Git-opslag plaats gebruikt, moet u de open bare SSH-sleutel configureren in uw opslag plaats. De open bare SSH-sleutel is het certificaat dat door stroom wordt gegenereerd of het het account dat u opgeeft. U kunt de open bare sleutel configureren op het specifieke Git-opslag plaats of op de Git-gebruiker die toegang heeft tot de opslag plaats. 
+Als u een privé Git-opslag plaats gebruikt, moet u de open bare SSH-sleutel configureren in uw opslag plaats. De open bare SSH-sleutel is het certificaat dat door stroom wordt gegenereerd of het het account dat u opgeeft. U kunt de open bare sleutel configureren in de specifieke Git-opslag plaats of op de Git-gebruiker die toegang heeft tot de opslag plaats. 
 
 ### <a name="get-your-own-public-key"></a>Uw eigen open bare sleutel ophalen
 
@@ -275,7 +275,7 @@ Gebruik een van de volgende opties:
     6. Plak de open bare sleutel zonder omringende aanhalings tekens.
     7. Klik op **SSH-sleutel toevoegen**.
 
-* Optie 2: Voeg de open bare sleutel toe als een Deploy-sleutel voor de Git-opslag plaats (alleen van toepassing op deze opslag plaats):  
+* Optie 2: Voeg de open bare sleutel als een Deploy-sleutel toe aan de Git-opslag plaats (alleen van toepassing op deze opslag plaats):  
     1. Open GitHub en navigeer naar uw opslag plaats.
     1. Klik op **Instellingen**.
     1. Klik op **sleutels implementeren**.
@@ -349,7 +349,7 @@ Een `sourceControlConfiguration` gebruiken van Azure CLI of Azure Portal verwijd
 
 > [!NOTE]
 > Wanneer een `sourceControlConfiguration` met- `namespace` bereik is gemaakt, kunnen gebruikers met `edit` een functie binding in de naam ruimte werk belastingen implementeren op deze naam ruimte. Wanneer `sourceControlConfiguration` het bereik van de naam ruimte wordt verwijderd, blijft de naam ruimte intact en wordt deze niet verwijderd om te voor komen dat deze andere workloads worden opgesplitst. Indien nodig kunt u deze naam ruimte hand matig verwijderen met `kubectl` .  
-> Wijzigingen in het cluster die het resultaat zijn van implementaties van de getraceerde Git-opslag plaats, worden niet verwijderd wanneer het `sourceControlConfiguration` wordt verwijderd.
+> Wijzigingen in het cluster die het resultaat zijn van implementaties uit de getraceerde Git-opslag plaats, worden niet verwijderd wanneer het `sourceControlConfiguration` wordt verwijderd.
 
 ```azurecli
 az k8sconfiguration delete --name cluster-config --cluster-name AzureArcTest1 --resource-group AzureArcTest --cluster-type connectedClusters

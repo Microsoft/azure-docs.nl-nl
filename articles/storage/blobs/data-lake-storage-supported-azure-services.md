@@ -5,15 +5,15 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 08/05/2020
+ms.date: 02/17/2021
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 0dd011d6c1ff631d537dbcadf9a77bbe6d89aa45
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 36e1a8a288e1f9b2a8d65ab966b607b594d66f4e
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100518796"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653598"
 ---
 # <a name="azure-services-that-support-azure-data-lake-storage-gen2"></a>Azure-Services die ondersteuning bieden voor Azure Data Lake Storage Gen2
 
@@ -29,17 +29,17 @@ Deze tabel geeft een lijst van de Azure-Services die u kunt gebruiken met Azure 
 |Azure-service |Ondersteunings niveau |Azure AD |Gedeelde sleutel| Verwante artikelen: |
 |---------------|-------------------|---|---|---|
 |Azure Data Factory|Algemeen beschikbaar|Ja|Ja|[Gegevens laden in Azure Data Lake Storage Gen2 met Azure Data Factory](../../data-factory/load-azure-data-lake-storage-gen2.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
-|Azure Databricks|Algemeen beschikbaar|Ja|Ja|[Gebruiken met Azure Databricks](/azure/databricks/data/data-sources/azure/azure-datalake-gen2) <br> [Snelstartgids: gegevens in Azure Data Lake Storage Gen2 analyseren met behulp van Azure Databricks](data-lake-storage-quickstart-create-databricks-account.md) <br>[Zelfstudie: Gegevens extraheren, transformeren en laden met behulp van Azure Databricks](/azure/databricks/scenarios/databricks-extract-load-sql-data-warehouse) <br>[Zelf studie: toegang tot Data Lake Storage Gen2 gegevens met Azure Databricks met Spark](data-lake-storage-use-databricks-spark.md)|
+|Azure Databricks|Algemeen beschikbaar|Ja|Ja|[Gebruiken met Azure Databricks](/azure/databricks/data/data-sources/azure/azure-datalake-gen2) <br> [Zelfstudie: Gegevens extraheren, transformeren en laden met behulp van Azure Databricks](/azure/databricks/scenarios/databricks-extract-load-sql-data-warehouse) <br>[Zelf studie: toegang tot Data Lake Storage Gen2 gegevens met Azure Databricks met Spark](data-lake-storage-use-databricks-spark.md)|
 |Azure Event Hub|Algemeen beschikbaar|Nee|Ja|[Gebeurtenissen vastleggen via Azure Event Hubs in Azure Blob Storage of Azure Data Lake Storage](../../event-hubs/event-hubs-capture-overview.md)|
 |Azure Event Grid|Algemeen beschikbaar|Ja|Ja|[Zelfstudie: Het Data Lake Capture-patroon implementeren om een Databricks Delta-tabel bij te werken](data-lake-storage-events.md)|
 |Azure Logic Apps|Algemeen beschikbaar|Nee|Ja|[Overzicht - Wat is Azure Logic Apps?](../../logic-apps/logic-apps-overview.md)|
 |Azure Machine Learning|Algemeen beschikbaar|Ja|Ja|[Toegang tot gegevens in azure Storage-services](../../machine-learning/how-to-access-data.md)|
 |Azure Stream Analytics|Algemeen beschikbaar|Ja|Ja|[Snelstart: Een Stream Analytics-taak maken via Azure Portal](../../stream-analytics/stream-analytics-quick-create-portal.md) <br> [Uitgaand naar Azure Data Lake Gen2](../../stream-analytics/stream-analytics-define-outputs.md)|
 |Data Box|Algemeen beschikbaar|Nee|Ja|[Gebruik Azure Data Box om gegevens van een on-premises HDFS-Store te migreren naar Azure Storage](data-lake-storage-migrate-on-premises-hdfs-cluster.md)|
-|HDInsight |Algemeen beschikbaar|Ja|Ja|[Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)<br>[De HDFS CLI gebruiken met Data Lake Storage Gen2](data-lake-storage-use-hdfs-data-lake-storage.md) <br>[Zelf studie: gegevens extra heren, transformeren en laden met behulp van Apache Hive in azure HDInsight](data-lake-storage-tutorial-extract-transform-load-hive.md)|
+|HDInsight |Algemeen beschikbaar|Ja|Ja|[Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md)<br>[De HDFS CLI gebruiken met Data Lake Storage Gen2](data-lake-storage-use-hdfs-data-lake-storage.md) <br>[Zelf studie: gegevens extra heren, transformeren en laden met behulp van Apache Hive in azure HDInsight](data-lake-storage-tutorial-extract-transform-load-hive.md)|
 |IoT Hub |Algemeen beschikbaar|Ja|Ja|[IoT Hub bericht routering gebruiken om apparaat-naar-Cloud-berichten te verzenden naar verschillende eind punten](../../iot-hub/iot-hub-devguide-messages-d2c.md)|
 |Power BI|Algemeen beschikbaar|Ja|Ja|[Gegevens analyseren in Data Lake Storage Gen2 met behulp van Power BI](/power-query/connectors/datalakestorage)|
-|Azure Synapse Analytics (voorheen Azure SQL Data Warehouse)|Algemeen beschikbaar|Ja|Ja|[Gegevens analyseren in een opslagaccount](../../synapse-analytics/get-started-analyze-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Azure Synapse Analytics (voorheen Azure SQL Data Warehouse)|Algemeen beschikbaar|Ja|Ja|[Gegevens analyseren in een opslagaccount](../../synapse-analytics/get-started-analyze-storage.md)|
 |SQL Server Integration Services (SSIS)|Algemeen beschikbaar|Ja|Ja|[Verbindings beheer Azure Storage](/sql/integration-services/connection-manager/azure-storage-connection-manager)|
 |Azure Data Explorer|Algemeen beschikbaar|Ja|Ja|[Query's uitvoeren op gegevens in Azure Data Lake met behulp van Azure Data Explorer](/azure/data-explorer/data-lake-query-data)|
 |Azure Cognitive Search|Preview|Ja|Ja|[Index-en zoek Azure Data Lake Storage Gen2 documenten (preview-versie)](../../search/search-howto-index-azure-data-lake-storage.md)|

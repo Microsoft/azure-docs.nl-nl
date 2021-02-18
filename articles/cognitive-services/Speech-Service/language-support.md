@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/07/2021
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: 9dfd950303d1cb838d44ae672fed33dd4cd7b5ec
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: c49ee2778d3198cc7109c34bceb1591756d82b1c
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100381899"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653445"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Taal-en spraak ondersteuning voor de spraak service
 
@@ -38,92 +38,92 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 
 | Taal                 | Land instelling (BCP-47) | Aanpassingen  | [Taaldetectie](how-to-automatic-language-detection.md) |
 |------------------------------------|--------|---------------------------------------------------|-------------------------------|
-| Arabisch (Bahrein), modern, standaard  | `ar-BH` | Taalmodel                                   | Yes                           | 
-| Arabisch (Egypte)                     | `ar-EG` | Taalmodel                                   | Yes                          |
-| Arabisch (Irak)                      | `ar-IQ` | Taalmodel                                   |                           |
-| Arabisch (Israël)                    | `ar-IL` | Taalmodel                                   |                           |
-| Arabisch (Jordanië)                    | `ar-JO` | Taalmodel                                   |                           |
-| Arabisch (Koeweit)                    | `ar-KW` | Taalmodel                                   |                           |
-| Arabisch (Libanon)                   | `ar-LB` | Taalmodel                                   |                           |
-| Arabisch (Oman)                      | `ar-OM` | Taalmodel                                   |                           |
-| Arabisch (Qatar)                     | `ar-QA` | Taalmodel                                   |                           |
-| Arabisch (Saoedi-Arabië)              | `ar-SA` | Taalmodel                                   | Yes                          |
-| Arabisch (status van Palestijnse)        | `ar-PS` | Taalmodel                                   |                           |
-| Arabisch (Syrië)                     | `ar-SY` | Taalmodel                                   | Yes                          |
-| Arabisch (Verenigde Arabische Emiraten)      | `ar-AE` | Taalmodel                                   |                           |
-| Bulgaars (Bulgarije)               | `bg-BG` | Taalmodel                                   |                           |
-| Catalaans (Spanje)                    | `ca-ES` | Taalmodel                                   | Yes                          |
-| Chinees (Kantonees, traditioneel)   | `zh-HK` | Akoestische model (20201015)<br>Taalmodel                 |        Yes                   |
-| Chinees (Mandarijn, vereenvoudigd)     | `zh-CN` | Akoestische model (20200910)<br>Taalmodel                 |     Yes                      |
-| Chinees (Taiwan Mandarijn)       | `zh-TW` | Akoestische model (20190701, 20201015)<br>Taalmodel                 |           Yes                |
-| Kroatisch (Kroatië)                 | `hr-HR` | Taalmodel                                   |                           |
-| Tsjechisch (Tsjechische Republiek)             | `cs-CZ` | Taal model                                   |                           |
-| Deens (Denemarken)                   | `da-DK` | Taalmodel                                   | Yes                          |
-| Nederlands (Nederland)                | `nl-NL` | Akoestische model (20201015)<br>Taalmodel                                   |    Yes                       |
-| Engels (Australië)                | `en-AU` | Akoestische model (20201019)<br>Taalmodel                 | Yes                          |
-| Engels (Canada)                   | `en-CA` | Akoestische model (20201019)<br>Taalmodel                 | Yes                          |
-| Engels (Hongkong)                | `en-HK` | Taal model                                   |                           |
-| Engels (India)                    | `en-IN` | Akoestische model (20200923)<br>Taalmodel                 | Yes                          |
-| Engels (Ierland)                  | `en-IE` | Taal model                                   |                           |
-| Engels (Nieuw-Zeeland)              | `en-NZ` | Akoestische model (20201019)<br>Taalmodel                 |  Yes                         |
-| Engels (Nigeria)                  | `en-NG` | Taal model                                   |                           |
-| Engels (Filipijnen)              | `en-PH` | Taal model                                   |                           |
-| Engels (Singapore)                | `en-SG` | Taal model                                   |                           |
-| Engels (Zuid-Afrika)             | `en-ZA` | Taal model                                   |                           |
-| Engels (Verenigd Koninkrijk)           | `en-GB` | Akoestische model (20201019)<br>Taalmodel<br>Uitspraak van| Yes                          |
-| Engels (Verenigde Staten)            | `en-US` | Akoestische model (20201019)<br>Taalmodel<br>Uitspraak van| Yes                          |
-| Estisch (Estland)                  | `et-EE` | Taal model                                   |                           |
-| Fins (Finland)                  | `fi-FI` | Taalmodel                                   |     Yes                      |
-| Frans (Canada)                    | `fr-CA` | Akoestische model (20201015)<br>Taalmodel                 |     Yes                      |
-| Frans (Frankrijk)                    | `fr-FR` | Akoestische model (20201015)<br>Taalmodel<br>Uitspraak van|      Yes                     |
-| Duits (Duitsland)                   | `de-DE` | Akoestische model (20190701, 20200619, 20201127)<br>Taalmodel<br>Uitspraak van|  Yes                         |
-| Grieks (Griekenland)                     | `el-GR` | Taalmodel                                   |                           |
-| Gujarati (Indiase)                  | `gu-IN` | Taalmodel                                   |                           |
-| Hindi (India)                      | `hi-IN` | Akoestische model (20200701)<br>Taalmodel                 |     Yes                      |
-| Hongaars (Hongarije)                | `hu-HU` | Taal model                                   |                           |
-| Ierse (Ierland)                     | `ga-IE` | Taalmodel                                   |                           |
-| Italiaans (Italië)                    | `it-IT` | Akoestische model (20201016)<br>Taalmodel<br>Uitspraak van|      Yes                     |
-| Japans (Japan)                   | `ja-JP` | Taalmodel                                   |      Yes                     |
-| Koreaans (Korea)                     | `ko-KR` | Akoestische model (20201015)<br>Taalmodel                 |      Yes                     |
-| Lets (Letland)                   | `lv-LV` | Taalmodel                                   |                           |
-| Litouws (Litouwen)             | `lt-LT` | Taalmodel                                   |                           |
-| Maltees (Malta)                     | `mt-MT` | Taalmodel                                   |                           |
-| Marathi (India)                    | `mr-IN` | Taalmodel                                   |                           |
-| Noors (Bokmål, Noorwegen)         | `nb-NO` | Taalmodel                                   |     Yes                      |
-| Pools (Polen)                    | `pl-PL` | Taalmodel                                   |       Yes                    |
-| Portugees (Brazilië)                | `pt-BR` | Akoestische model (20190620, 20201015)<br>Taalmodel<br>Uitspraak van|          Yes                 |
-| Portugees (Portugal)              | `pt-PT` | Taalmodel                                   |             Yes              |
-| Roemeens (Roemenië)                 | `ro-RO` | Taalmodel                                   |                           |
-| Russisch (Rusland)                   | `ru-RU` | Akoestische model (20200907)<br>Taalmodel                 |                Yes           |
-| Slowaaks (Slowakije)                  | `sk-SK` | Taalmodel                                   |                           |
-| Sloveens (Slovenië)               | `sl-SI` | Taalmodel                                   |                           |
-| Spaans (Argentinië)                | `es-AR` | Taal model                                   |                           |
-| Spaans (Bolivia)                  | `es-BO` | Taal model                                   |                           |
-| Spaans (Chili)                    | `es-CL` | Taal model                                   |                           |
-| Spaans (Colombia)                 | `es-CO` | Taal model                                   |                           |
-| Spaans (Costa Rica)               | `es-CR` | Taal model                                   |                           |
-| Spaans (Cuba)                     | `es-CU` | Taal model                                   |                           |
-| Spaans (Dominicaanse Republiek)       | `es-DO` | Taal model                                   |                           |
-| Spaans (Ecuador)                  | `es-EC` | Taal model                                   |                           |
-| Spaans (El Salvador)              | `es-SV` | Taal model                                   |                           |
-| Spaans (Equatoriaal-Guinea)        | `es-GQ` | Taal model                                   |                           |
-| Spaans (Guatemala)                | `es-GT` | Taal model                                   |                           |
-| Spaans (Honduras)                 | `es-HN` | Taal model                                   |                           |
-| Spaans (Mexico)                   | `es-MX` | Akoestische model (20200907)<br>Taalmodel                 |    Yes                       |
-| Spaans (Nicaragua)                | `es-NI` | Taal model                                   |                           |
-| Spaans (Panama)                   | `es-PA` | Taal model                                   |                           |
-| Spaans (Paraguay)                 | `es-PY` | Taal model                                   |                           |
-| Spaans (Peru)                     | `es-PE` | Taal model                                   |                           |
-| Spaans (Puerto Rico)              | `es-PR` | Taal model                                   |                           |
-| Spaans (Spanje)                    | `es-ES` | Akoestische model (20201015)<br>Taalmodel                 |  Yes                         |
-| Spaans (Uruguay)                  | `es-UY` | Taal model                                   |                           |
-| Spaans (Verenigde Staten)                      | `es-US` | Taal model                                   |                           |
-| Spaans (Venezuela)                | `es-VE` | Taal model                                   |                           |
-| Zweeds (Zweden)                   | `sv-SE` | Taalmodel                                   |   Yes                        |
-| Tamil (India)                      | `ta-IN` | Taalmodel                                   |                           |
-| Telugu (India)                     | `te-IN` | Taalmodel                                   |                           |
-| Thai (Thailand)                    | `th-TH` | Taalmodel                                   |      Yes                     |
-| Turks (Turkije)                   | `tr-TR` | Taalmodel                                   |                           |
+| Arabisch (Bahrein), modern, standaard  | `ar-BH` | Tekst                                   | Yes                           | 
+| Arabisch (Egypte)                     | `ar-EG` | Tekst                                   | Yes                          |
+| Arabisch (Irak)                      | `ar-IQ` | Tekst                                   |                           |
+| Arabisch (Israël)                    | `ar-IL` | Tekst                                   |                           |
+| Arabisch (Jordanië)                    | `ar-JO` | Tekst                                   |                           |
+| Arabisch (Koeweit)                    | `ar-KW` | Tekst                                   |                           |
+| Arabisch (Libanon)                   | `ar-LB` | Tekst                                   |                           |
+| Arabisch (Oman)                      | `ar-OM` | Tekst                                   |                           |
+| Arabisch (Qatar)                     | `ar-QA` | Tekst                                   |                           |
+| Arabisch (Saoedi-Arabië)              | `ar-SA` | Tekst                                   | Yes                          |
+| Arabisch (status van Palestijnse)        | `ar-PS` | Tekst                                   |                           |
+| Arabisch (Syrië)                     | `ar-SY` | Tekst                                   | Yes                          |
+| Arabisch (Verenigde Arabische Emiraten)      | `ar-AE` | Tekst                                   |                           |
+| Bulgaars (Bulgarije)               | `bg-BG` | Tekst                                   |                           |
+| Catalaans (Spanje)                    | `ca-ES` | Tekst                                   | Yes                          |
+| Chinees (Kantonees, traditioneel)   | `zh-HK` | Audio (20201015)<br>Tekst                 |        Yes                   |
+| Chinees (Mandarijn, vereenvoudigd)     | `zh-CN` | Audio (20200910)<br>Tekst                 |     Yes                      |
+| Chinees (Taiwan Mandarijn)       | `zh-TW` | Audio (20190701, 20201015)<br>Tekst                 |           Yes                |
+| Kroatisch (Kroatië)                 | `hr-HR` | Tekst                                   |                           |
+| Tsjechisch (Tsjechische Republiek)             | `cs-CZ` | Tekst                                   |                           |
+| Deens (Denemarken)                   | `da-DK` | Tekst                                   | Yes                          |
+| Nederlands (Nederland)                | `nl-NL` | Audio (20201015)<br>Tekst                                   |    Yes                       |
+| Engels (Australië)                | `en-AU` | Audio (20201019)<br>Tekst                 | Yes                          |
+| Engels (Canada)                   | `en-CA` | Audio (20201019)<br>Tekst                 | Yes                          |
+| Engels (Hongkong)                | `en-HK` | Tekst                                   |                           |
+| Engels (India)                    | `en-IN` | Audio (20200923)<br>Tekst                 | Yes                          |
+| Engels (Ierland)                  | `en-IE` | Tekst                                   |                           |
+| Engels (Nieuw-Zeeland)              | `en-NZ` | Audio (20201019)<br>Tekst                 |  Yes                         |
+| Engels (Nigeria)                  | `en-NG` | Tekst                                   |                           |
+| Engels (Filipijnen)              | `en-PH` | Tekst                                   |                           |
+| Engels (Singapore)                | `en-SG` | Tekst                                   |                           |
+| Engels (Zuid-Afrika)             | `en-ZA` | Tekst                                   |                           |
+| Engels (Verenigd Koninkrijk)           | `en-GB` | Audio (20201019)<br>Tekst<br>Uitspraak van| Yes                          |
+| Engels (Verenigde Staten)            | `en-US` | Audio (20201019)<br>Tekst<br>Uitspraak van| Yes                          |
+| Estisch (Estland)                  | `et-EE` | Tekst                                   |                           |
+| Fins (Finland)                  | `fi-FI` | Tekst                                   |     Yes                      |
+| Frans (Canada)                    | `fr-CA` | Audio (20201015)<br>Tekst                 |     Yes                      |
+| Frans (Frankrijk)                    | `fr-FR` | Audio (20201015)<br>Tekst<br>Uitspraak van|      Yes                     |
+| Duits (Duitsland)                   | `de-DE` | Audio (20190701, 20200619, 20201127)<br>Tekst<br>Uitspraak van|  Yes                         |
+| Grieks (Griekenland)                     | `el-GR` | Tekst                                   |                           |
+| Gujarati (Indiase)                  | `gu-IN` | Tekst                                   |                           |
+| Hindi (India)                      | `hi-IN` | Audio (20200701)<br>Tekst                 |     Yes                      |
+| Hongaars (Hongarije)                | `hu-HU` | Tekst                                   |                           |
+| Ierse (Ierland)                     | `ga-IE` | Tekst                                   |                           |
+| Italiaans (Italië)                    | `it-IT` | Audio (20201016)<br>Tekst<br>Uitspraak van|      Yes                     |
+| Japans (Japan)                   | `ja-JP` | Tekst                                   |      Yes                     |
+| Koreaans (Korea)                     | `ko-KR` | Audio (20201015)<br>Tekst                 |      Yes                     |
+| Lets (Letland)                   | `lv-LV` | Tekst                                   |                           |
+| Litouws (Litouwen)             | `lt-LT` | Tekst                                   |                           |
+| Maltees (Malta)                     | `mt-MT` | Tekst                                   |                           |
+| Marathi (India)                    | `mr-IN` | Tekst                                   |                           |
+| Noors (Bokmål, Noorwegen)         | `nb-NO` | Tekst                                   |     Yes                      |
+| Pools (Polen)                    | `pl-PL` | Tekst                                   |       Yes                    |
+| Portugees (Brazilië)                | `pt-BR` | Audio (20190620, 20201015)<br>Tekst<br>Uitspraak van|          Yes                 |
+| Portugees (Portugal)              | `pt-PT` | Tekst                                   |             Yes              |
+| Roemeens (Roemenië)                 | `ro-RO` | Tekst                                   |                           |
+| Russisch (Rusland)                   | `ru-RU` | Audio (20200907)<br>Tekst                 |                Yes           |
+| Slowaaks (Slowakije)                  | `sk-SK` | Tekst                                   |                           |
+| Sloveens (Slovenië)               | `sl-SI` | Tekst                                   |                           |
+| Spaans (Argentinië)                | `es-AR` | Tekst                                   |                           |
+| Spaans (Bolivia)                  | `es-BO` | Tekst                                   |                           |
+| Spaans (Chili)                    | `es-CL` | Tekst                                   |                           |
+| Spaans (Colombia)                 | `es-CO` | Tekst                                   |                           |
+| Spaans (Costa Rica)               | `es-CR` | Tekst                                   |                           |
+| Spaans (Cuba)                     | `es-CU` | Tekst                                   |                           |
+| Spaans (Dominicaanse Republiek)       | `es-DO` | Tekst                                   |                           |
+| Spaans (Ecuador)                  | `es-EC` | Tekst                                   |                           |
+| Spaans (El Salvador)              | `es-SV` | Tekst                                   |                           |
+| Spaans (Equatoriaal-Guinea)        | `es-GQ` | Tekst                                   |                           |
+| Spaans (Guatemala)                | `es-GT` | Tekst                                   |                           |
+| Spaans (Honduras)                 | `es-HN` | Tekst                                   |                           |
+| Spaans (Mexico)                   | `es-MX` | Audio (20200907)<br>Tekst                 |    Yes                       |
+| Spaans (Nicaragua)                | `es-NI` | Tekst                                   |                           |
+| Spaans (Panama)                   | `es-PA` | Tekst                                   |                           |
+| Spaans (Paraguay)                 | `es-PY` | Tekst                                   |                           |
+| Spaans (Peru)                     | `es-PE` | Tekst                                   |                           |
+| Spaans (Puerto Rico)              | `es-PR` | Tekst                                   |                           |
+| Spaans (Spanje)                    | `es-ES` | Audio (20201015)<br>Tekst                 |  Yes                         |
+| Spaans (Uruguay)                  | `es-UY` | Tekst                                   |                           |
+| Spaans (Verenigde Staten)                      | `es-US` | Tekst                                   |                           |
+| Spaans (Venezuela)                | `es-VE` | Tekst                                   |                           |
+| Zweeds (Zweden)                   | `sv-SE` | Tekst                                   |   Yes                        |
+| Tamil (India)                      | `ta-IN` | Tekst                                   |                           |
+| Telugu (India)                     | `te-IN` | Tekst                                   |                           |
+| Thai (Thailand)                    | `th-TH` | Tekst                                   |      Yes                     |
+| Turks (Turkije)                   | `tr-TR` | Tekst                                   |                           |
 
 ## <a name="text-to-speech"></a>Tekst naar spraak
 

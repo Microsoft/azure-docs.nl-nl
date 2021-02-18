@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake
-ms.date: 11/13/2019
-ms.openlocfilehash: 51cf4a4d3aa3cb4654b141a98064460a7152fcec
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.date: 02/16/2021
+ms.openlocfilehash: f1761851f91e6d0c0aadb3315dbb7980a00bba5b
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737452"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633815"
 ---
 # <a name="azure-hybrid-benefit---azure-sql-database--sql-managed-instance"></a>Azure Hybrid Benefit-Azure SQL Database & beheerde instantie van SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
@@ -85,12 +85,12 @@ Azure Hybrid Benefit voor SQL Server wijkt af van de mobiliteit van licenties op
 
 #### <a name="what-are-the-specific-rights-of-the-azure-hybrid-benefit-for-sql-server"></a>Wat zijn de specifieke rechten van de Azure Hybrid Benefit voor SQL Server?
 
-SQL Database-klanten beschikken over de volgende rechten die zijn gekoppeld aan Azure Hybrid Benefit voor SQL Server:
+Gebruikers van SQL Database en SQL Managed instance hebben de volgende rechten die zijn gekoppeld aan Azure Hybrid Benefit voor SQL Server:
 
 |Licentie footprint|Wat doet Azure Hybrid Benefit voor SQL Server u doen?|
 |---|---|
 |SQL Server Enterprise Edition core-klanten met SA|<li>Kan het basis tarief voor grootschalige, Algemeen of Bedrijfskritiek SKU betalen</li><br><li>1 kern on-premises = 4 kernen in grootschalige SKU</li><br><li>1 kern on-premises = 4 kernen in Algemeen SKU</li><br><li>1 kern on-premises = 1 kern geheugen in Bedrijfskritiek SKU</li>|
-|SQL Server Standard Edition core-klanten met SA|<li>Kan het basis tarief voor grootschalige en alleen Algemeen SKU betalen</li><br><li>1 kern on-premises = 1 kern in grootschalige SKU</li><br><li>1 kern on-premises = 1 kern geheugen in Algemeen SKU</li>|
+|SQL Server Standard Edition core-klanten met SA|<li>Kan het basis tarief voor grootschalige, Algemeen of Bedrijfskritiek SKU betalen</li><br><li>1 kern on-premises = 1 kern in grootschalige SKU</li><br><li>1 kern on-premises = 1 kern geheugen in Algemeen SKU</li><br><li>4 core on-premises = 1 kern geheugen in Bedrijfskritiek SKU</li>|
 |||
 
 

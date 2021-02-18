@@ -1,18 +1,18 @@
 ---
-title: Zelfstudie - vSphere-cluster implementeren in Azure
-description: Meer informatie over het implementeren van een vSphere-cluster in Azure met behulp van Azure VMware Solution
+title: 'Zelf studie: een privécloud van Azure VMware-oplossing maken en implementeren'
+description: Meer informatie over het maken en implementeren van een Azure VMware-oplossing privécloud
 ms.topic: tutorial
 ms.date: 11/19/2020
-ms.openlocfilehash: 3c8ae3673ad049153c2b9700bd7efae6c4c286ed
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: c8383e987e13e43ea9bc9ba5be196538a259aa8c
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100093944"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653126"
 ---
-# <a name="tutorial-deploy-an-azure-vmware-solution-private-cloud-in-azure"></a>Zelfstudie: Een Azure VMware Solution-privécloud implementeren in Azure
+# <a name="tutorial-create-an-azure-vmware-solution-private-cloud"></a>Zelfstudie: Een Azure VMware Solution-privécloud maken
 
-Met Azure VMware Solution kunt u een vSphere-cluster in Azure implementeren. De minimale initiële implementatie is drie hosts. Extra hosts kunnen een voor een worden toegevoegd, maximaal 16 hosts per cluster. 
+In deze zelf studie leert u hoe u een privécloud van Azure VMware-oplossingen maakt en implementeert. De minimale initiële implementatie van hosts is drie. Extra hosts kunnen een voor een worden toegevoegd, maximaal 16 hosts per cluster. 
 
 Met Azure VMware Solution kunt u bij het starten uw privécloud niet met uw on-premises vCenter beheren. Daarom moet u aanvullende configuratie uitvoeren. Deze procedures en gerelateerde vereisten worden behandeld in deze zelfstudie.
 
@@ -25,13 +25,10 @@ In deze zelfstudie leert u het volgende:
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- De juiste beheerdersrechten en machtigingen voor het maken van een privécloud.
+- De juiste beheerdersrechten en machtigingen voor het maken van een privécloud. U moet mini maal een bijdrager niveau in het abonnement hebben.
+- Volg de informatie die u hebt verzameld in het [plannings](production-ready-deployment-steps.md) artikel om Azure VMware-oplossing te implementeren.
 - Zorg ervoor dat de juiste netwerken zijn geconfigureerd zoals beschreven in [ Zelfstudie: Controlelijst voor netwerken](tutorial-network-checklist.md).
-
-## <a name="register-the-resource-provider"></a>De resourceprovider registreren
-
-[!INCLUDE [register-resource-provider-steps](includes/register-resource-provider-steps.md)]
-
+- Er zijn hosts ingericht en de resource provider micro soft. AVS is geregistreerd zoals beschreven in [de aanvragen hosts en de resource provider micro soft. AVS in te scha kelen](enable-azure-vmware-solution.md).
 
 ## <a name="create-a-private-cloud"></a>Een privécloud maken
 

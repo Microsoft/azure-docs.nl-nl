@@ -1,19 +1,19 @@
 ---
-title: Out-of-proc attestation-ondersteuning met helper-DaemonSet voor Intel SGX-offerte op Azure
+title: Ondersteuning voor out-of-process-Attestation met Intel SGX quote helper Daemonset op Azure (preview-versie)
 description: DaemonSet voor het genereren van de offerte buiten het SGX-toepassingsproces. In dit artikel wordt uitgelegd hoe out-of-proc attestation wordt geboden voor vertrouwelijke workloads die binnen een container worden uitgevoerd.
 ms.service: container-service
 author: agowdamsft
 ms.topic: overview
-ms.date: 9/22/2020
+ms.date: 2/12/2021
 ms.author: amgowda
-ms.openlocfilehash: b79b3b40f3fbfe7d70550db3aaf7b365aa455e89
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
-ms.translationtype: HT
+ms.openlocfilehash: 89890740b06a399bad4678ff6ddd9be09c1cda0e
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94564154"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653326"
 ---
-# <a name="platform-software-management-with-sgx-quote-helper-daemon-set"></a>Platformsoftwarebeheer met helper-DaemonSet voor SGX-offerte
+# <a name="platform-software-management-with-sgx-quote-helper-daemon-set-preview"></a>Platform software beheer met SGX quote helper daemon set (preview-versie)
 
 Voor [Enclavetoepassingen](confidential-computing-enclaves.md) die externe attestation uitvoeren, is een gegenereerde offerte vereist. Deze offerte voorziet in een cryptografisch bewijs van de identiteit en de status van de toepassing en de omgeving waarin de enclave wordt uitgevoerd. Voor het genereren van de offerte zijn vertrouwde softwareonderdelen van Platform Software Components (PSW) van Intel vereist.
 
@@ -27,6 +27,13 @@ Intel ondersteunt twee attestation-modi voor het genereren van de offerte:
 SGX-toepassingen die zijn gebouwd met behulp van de Open Enclave SDK, maken standaard gebruik van de attestation-modus in-proc. Op SGX gebaseerde toepassingen kunnen out-of-proc worden uitgevoerd. Hiervoor is extra hosting nodig en moeten de vereiste onderdelen, zoals Architectural Enclave Service Manager (AESM), buiten de toepassing beschikbaar worden gemaakt.
 
 Het gebruik van deze functie wordt **sterk aanbevolen**, omdat deze de uptime van uw enclave-apps verbetert tijdens updates van het Intel-platform of het DCAP-stuurprogramma.
+
+Als u deze functie wilt inschakelen op AKS-cluster, wijzigt u de opdracht add--Enable-sgxquotehelper in de CLI wanneer u de add-on van de vertrouwelijke computer inschakelt. Gedetailleerde CLI-instructies [zijn:](confidential-nodes-aks-get-started.md) 
+
+```azurecli-interactive
+# Create a new AKS cluster with system node pool with Confidential Computing addon enabled and SGX Quote Helper
+az aks create -g myResourceGroup --name myAKSCluster --generate-ssh-keys --enable-addon confcom --enable-sgxquotehelper
+```
 
 ## <a name="why-and-what-are-the-benefits-of-out-of-proc"></a>Wat zijn de voordelen van out-of-proc, en waarom?
 

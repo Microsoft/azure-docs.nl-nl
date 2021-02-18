@@ -3,12 +3,12 @@ title: Voor beeld van Azure Security Bench Mark Foundation blauw punt implemente
 description: Implementeer stappen voor het voor beeld van de Azure Security Bench Mark Foundation-blauw druk, inclusief details van de artefact parameter.
 ms.date: 02/12/2020
 ms.topic: sample
-ms.openlocfilehash: e1a5e011f5b53d35971fa43613914c0a43549600
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 84c157d696dc8ababe1f252136672ea600e604af
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100421850"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633951"
 ---
 # <a name="deploy-the-azure-security-benchmark-foundation-blueprint-sample"></a>Het voor beeld van Azure Security Bench Mark Foundation blauw punt implementeren
 
@@ -132,10 +132,8 @@ De volgende tabel bevat een lijst met de para meters van de blauw druk:
 |Virtual Network spoke-sjabloon voor Azure|Resource Manager-sjabloon|Adres namen van subnet (optioneel)|Matrix van namen van subnetten die moeten worden geïmplementeerd in het spoke-virtuele netwerk; bijvoorbeeld ' subnet1 ', ' subnet2 '|
 |Virtual Network spoke-sjabloon voor Azure|Resource Manager-sjabloon|Adres voorvoegsels (optioneel)|Matrix met IP-adres voorvoegsels voor optionele subnetten voor het spoke-virtuele netwerk; bijvoorbeeld "10.0.7.0/24", "10.0.8.0/24"|
 |Virtual Network spoke-sjabloon voor Azure|Resource Manager-sjabloon|Spoke implementeren|Voer ' waar ' of ' onwaar ' in om op te geven of met de toewijzing de spoke-onderdelen van de architectuur worden geïmplementeerd|
-|Network Watcher resource groep|Resourcegroep|Naam van de resourcegroep|Vergrendeld: maakt gebruik van Network Watcher naam van de resource groep|
-|Network Watcher resource groep|Resourcegroep|Resourcegroeplocatie|Vergrendeld: gebruikt een hub-locatie|
-|Azure Network Watcher-sjabloon|Resource Manager-sjabloon|Network Watcher locatie|Locatie voor de Network Watcher resource|
-|Azure Network Watcher-sjabloon|Resource Manager-sjabloon|Locatie van de resource groep Network Watcher|Locatie van de resource groep Network Watcher|
+|Azure Network Watcher-sjabloon|Resource Manager-sjabloon|Network Watcher locatie|Als Network Watcher al is ingeschakeld, **moet** deze parameter waarde overeenkomen met de locatie van de bestaande Network Watcher resource groep.|
+|Azure Network Watcher-sjabloon|Resource Manager-sjabloon|Locatie van de resource groep Network Watcher|Als Network Watcher al is ingeschakeld, **moet** deze parameter waarde overeenkomen met de naam van de bestaande Network Watcher resource groep.|
 
 ## <a name="next-steps"></a>Volgende stappen
 

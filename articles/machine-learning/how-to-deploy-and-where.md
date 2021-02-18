@@ -12,12 +12,12 @@ ms.date: 01/13/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
 adobe-target: true
-ms.openlocfilehash: da47967b719b5ce601d8049f54597c207ea732c8
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: d8c6a9cc000d307490745b923a1f1ba6c93abf53
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100372031"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652221"
 ---
 # <a name="deploy-machine-learning-models-to-azure"></a>machine learning modellen implementeren in azure
 
@@ -325,6 +325,14 @@ In de volgende tabel worden de verschillende service statussen beschreven:
 
 > [!TIP]
 > Tijdens de implementatie worden docker-installatie kopieën voor Compute-doelen gemaakt en geladen van Azure Container Registry (ACR). Azure Machine Learning maakt standaard een ACR die gebruikmaakt van de *Basic* -servicelaag. Het wijzigen van de ACR voor uw werk ruimte in de standaard-of Premium-laag kan de tijd verminderen die nodig is om installatie kopieën te bouwen en implementeren in uw reken doelen. Zie [Azure container Registry service lagen](../container-registry/container-registry-skus.md)voor meer informatie.
+
+> [!NOTE]
+> Als u een model implementeert in azure Kubernetes service (AKS), raden wij u aan [Azure monitor](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-enable-existing-clusters) voor dat cluster in te scha kelen. Dit helpt u bij het begrijpen van het totale cluster status-en resource gebruik. U kunt ook de volgende bronnen nuttig vinden:
+>
+> * [Controleren op Resource Health gebeurtenissen die van invloed zijn op uw AKS-cluster](https://docs.microsoft.com/azure/aks/aks-resource-health)
+> * [Diagnostische gegevens voor Azure Kubernetes-service](https://docs.microsoft.com/azure/aks/concepts-diagnostics)
+>
+> Als u probeert een model te implementeren in een beschadigde of overbelast cluster, worden er waarschijnlijk problemen ondervinden. Neem contact op met de ondersteuning van AKS als u hulp nodig hebt bij het oplossen van problemen met AKS-clusters.
 
 ### <a name="batch-inference"></a><a id="azuremlcompute"></a> Batch-deinterferentie
 Azure Machine Learning Compute-doelen worden gemaakt en beheerd door Azure Machine Learning. Ze kunnen worden gebruikt voor batch voorspelling van Azure Machine Learning pijp lijnen.

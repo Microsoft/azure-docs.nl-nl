@@ -10,12 +10,12 @@ ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
 ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: dd967ad08b628f9073edfe548033f7e97845d047
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9a28c47493f0f775c9e489daf3232371a65d4a7e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96016060"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581439"
 ---
 # <a name="post-deployment-tasks"></a>Taken na de implementatie
 
@@ -160,7 +160,7 @@ Er zijn drie manieren om de Log Analytics-agent toe te voegen aan open SHIFT.
 - Azure Monitor VM-extensie inschakelen voor elk open Shift-knoop punt
 - De Log Analytics-agent installeren als een open Shift-daemon-set
 
-Lees de volledige [instructies](../../azure-monitor/insights/containers.md#configure-a-log-analytics-agent-for-red-hat-openshift) voor meer informatie.
+Lees de volledige [instructies](../../azure-monitor/containers/containers.md#configure-a-log-analytics-agent-for-red-hat-openshift) voor meer informatie.
 
 ## <a name="configure-metrics-and-logging"></a>Metrische gegevens en logboek registratie configureren
 

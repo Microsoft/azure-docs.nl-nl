@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/10/2021
+ms.date: 02/17/2021
 ms.author: memildin
-ms.openlocfilehash: d40d6107d3eee4b45f2184a61b1cdfc99559e9c7
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 837ba5a0fd5ff94cc4f55cd4b01b8cb8a27425fd
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100379006"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100634257"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -35,11 +35,29 @@ Zie [Belangrijke aanstaande wijzigingen aan Azure Security Center](upcoming-chan
 
 De updates in februari zijn onder andere:
 
+- [Pagina nieuwe beveiligings waarschuwingen in de Azure Portal uitgebracht voor algemene Beschik baarheid (GA)](#new-security-alerts-page-in-the-azure-portal-released-for-general-availability-ga)
 - [Aanbevelingen voor de beveiliging van Kubernetes-werk belasting uitgebracht voor algemene Beschik baarheid (GA)](#kubernetes-workload-protection-recommendations-released-for-general-availability-ga)
 - [Pagina direct koppelen aan beleid van aanbevelings gegevens](#direct-link-to-policy-from-recommendation-details-page)
 - [Aanbeveling voor SQL-gegevens classificatie heeft geen invloed meer op uw beveiligde Score](#sql-data-classification-recommendation-no-longer-affects-your-secure-score)
 - [Werk stroom automatisering kan worden geactiveerd door wijzigingen in de nalevings evaluaties van de regelgeving (preview-versie)](#workflow-automations-can-be-triggered-by-changes-to-regulatory-compliance-assessments-preview)
 - [Pagina-uitbrei dingen Asset Inventory](#asset-inventory-page-enhancements)
+
+
+### <a name="new-security-alerts-page-in-the-azure-portal-released-for-general-availability-ga"></a>Pagina nieuwe beveiligings waarschuwingen in de Azure Portal uitgebracht voor algemene Beschik baarheid (GA)
+
+De pagina Beveiligingswaarschuwingen van Azure Security Center is opnieuw ontworpen en biedt nu het volgende:
+
+- **Verbeterde sorteren-ervaring voor waarschuwingen** : helpt om de vermoeidheid van waarschuwingen te verminderen en de aandacht te vestigen op de meest relevante bedreigingen eenvoudiger, de lijst bevat aanpas bare filters en groeperings opties.
+- **Meer informatie in de lijst met waarschuwingen** , zoals MITRE att&ACK tactiek.
+- **Om voorbeeld waarschuwingen te maken** : als u de mogelijkheden van Azure Defender wilt evalueren en uw waarschuwingen wilt testen. configuratie (voor SIEM-integratie, e-mail meldingen en werk stroom automatisering) kunt u voorbeeld waarschuwingen maken op basis van alle Azure Defender-abonnementen.
+- **Uitlijning met de incident ervaring van Azure-Sentinel** : voor klanten die beide producten gebruiken, is het niet meer eenvoudig om te scha kelen tussen de verschillende gebruikers.
+- **Betere prestaties** voor grote waarschuwings lijsten.
+- **Toetsenbord navigatie** via de lijst met waarschuwingen.
+- **Waarschuwingen van Azure Resource Graph**: u kunt query's uitvoeren op waarschuwingen in Azure Resource Graph, de Kusto-achtige API voor al uw resources. Dit is ook handig als u uw eigen waarschuwingendashboards bouwt. [Meer informatie over Azure Resource Graph](../governance/resource-graph/index.yml).
+- **Functie voor voorbeeld waarschuwingen maken** : Zie voor [beelden van Azure Defender-waarschuwingen genereren](security-center-alert-validation.md#generate-sample-azure-defender-alerts)voor het maken van voorbeeld waarschuwingen van de nieuwe waarschuwingen.
+
+:::image type="content" source="media/security-center-managing-and-responding-alerts/alerts-page.png" alt-text="Lijst met beveiligings waarschuwingen voor Azure Security Center":::
+
 
 ### <a name="kubernetes-workload-protection-recommendations-released-for-general-availability-ga"></a>Aanbevelingen voor de beveiliging van Kubernetes-werk belasting uitgebracht voor algemene Beschik baarheid (GA)
 

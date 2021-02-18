@@ -5,16 +5,16 @@ tags: billing
 ms.assetid: 86697fdf-3499-4cab-ab3f-10d40d3c1f70
 ms.topic: how-to
 ms.date: 12/14/2020
-ms.openlocfilehash: 8110f87401da1352309fb55615093d49981c754d
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: d6c68dd341e0794a690b41b73ecc4be954db7359
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97504811"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653846"
 ---
 # <a name="manage-an-azure-support-request"></a>Een Azure-ondersteuningsaanvraag beheren
 
-Nadat u [een ondersteunings aanvraag voor Azure hebt gemaakt](how-to-create-azure-support-request.md), kunt u deze beheren in de [Azure Portal](https://portal.azure.com), die in dit artikel wordt besproken. U kunt ook via een programma aanvragen maken en beheren met behulp van de [ondersteunings ticket rest API van Azure](/rest/api/support).
+Nadat u [een ondersteunings aanvraag voor Azure hebt gemaakt](how-to-create-azure-support-request.md), kunt u deze beheren in de [Azure Portal](https://portal.azure.com), die in dit artikel wordt besproken. U kunt ook programmatisch aanvragen maken en beheren met behulp van de [Azure-ondersteunings ticket rest API](/rest/api/support)of met behulp van [Azure cli](/cli/azure/azure-cli-support-request).
 
 ## <a name="view-support-requests"></a>Ondersteuningsaanvragen weergeven
 
@@ -127,7 +127,7 @@ Als u een ondersteunings aanvraag wilt sluiten, [verzendt u een bericht](#send-a
 
 Als u een gesloten ondersteunings aanvraag opnieuw wilt openen, maakt u een [Nieuw bericht](#send-a-message), waarmee de aanvraag automatisch opnieuw wordt geopend.
 
-## <a name="cancel-a-support-plan"></a>Een ondersteunings plan annuleren
+## <a name="cancel-a-support-plan"></a>Een ondersteuningsplan annuleren
 
 Zie [een ondersteunings plan annuleren](../../cost-management-billing/manage/cancel-azure-subscription.md#cancel-a-support-plan)als u een ondersteunings plan wilt annuleren.
 

@@ -3,16 +3,16 @@ title: Bevoegde containers uitvoeren in een Azure Red Hat open Shift-cluster | M
 description: Voer geprivilegieerde containers uit om de beveiliging en naleving te controleren.
 author: makdaam
 ms.author: b-lejaku
-ms.service: container-service
+ms.service: azure-redhat-openshift
 ms.topic: conceptual
 ms.date: 12/05/2019
 keywords: Aro, open Shift, aquasec, twistlock, Red Hat
-ms.openlocfilehash: 914b29410a0f30e5c3d3a893c2e278ecbb83b648
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 77e75232b7f9d23f1d07931cc7dc231174e1312d
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92218864"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633559"
 ---
 # <a name="run-privileged-containers-in-an-azure-red-hat-openshift-cluster"></a>Bevoorrechte containers uitvoeren in een Azure Red Hat OpenShift-cluster
 

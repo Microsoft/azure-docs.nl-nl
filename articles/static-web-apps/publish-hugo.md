@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: aapowell
-ms.openlocfilehash: e49a84f5ac507ac80481313c103701a88934083a
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
-ms.translationtype: HT
+ms.openlocfilehash: 4539c32a367bb0974212d989176a96b530da21a4
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97900770"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652327"
 ---
 # <a name="tutorial-publish-a-hugo-site-to-azure-static-web-apps-preview"></a>Zelfstudie: Een Hugo-site publiceren in Azure Static Web Apps Preview
 
@@ -88,7 +88,7 @@ U hebt een opslagplaats in GitHub nodig om verbinding te maken met Azure Static 
 1. Push de lokale opslagplaats naar GitHub.
 
    ```bash
-   git push --set-upstream origin master
+   git push --set-upstream origin main
    ```
 
 ## <a name="deploy-your-web-app"></a>De web-app implementeren
@@ -123,7 +123,7 @@ De volgende stappen laten zien hoe u een nieuwe statische site-app maakt en deze
 
 1. Selecteer de **statische-hugo-app** als de _Opslagplaats_.
 
-1. Selecteer **hoofd** voor de _Vertakking_.
+1. Selecteer **hoofd** voor de _vertakking_ .
 
    :::image type="content" source="./media/publish-hugo/completed-github-info.png" alt-text="Voltooide GitHub-gegevens":::
 

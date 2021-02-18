@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 02/01/2021
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 82af70547d20509c48f1e07bbc7610fc666a6da1
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 8b3ce2c195dc2fa3dd703306e731aa5b807b78b1
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100393051"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100648600"
 ---
 # <a name="manage-permissions-to-restore-an-azure-cosmos-db-account"></a>Machtigingen voor het herstellen van een Azure Cosmos DB-account beheren
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -61,7 +61,7 @@ De volgende machtigingen zijn vereist om de verschillende activiteiten uit te vo
 |Machtiging  |Impact  |Minimum bereik  |Maximum bereik  |
 |---------|---------|---------|---------|
 |`Microsoft.Resources/deployments/validate/action`, `Microsoft.Resources/deployments/write` | Deze machtigingen zijn vereist voor de implementatie van de ARM-sjabloon om het herstelde account te maken. Zie de [RestorableAction](#custom-restorable-action) hieronder voor meer informatie over het instellen van deze rol. | Niet van toepassing | Niet van toepassing  |
-|Microsoft.DocumentDB/databaseAccounts/schrijven | Deze machtiging is vereist voor het herstellen van een account in een resource groep | De resource groep waaronder het teruggezette account is gemaakt. | Het abonnement waarmee het herstelde account is gemaakt |
+|`Microsoft.DocumentDB/databaseAccounts/write` | Deze machtiging is vereist voor het herstellen van een account in een resource groep | De resource groep waaronder het teruggezette account is gemaakt. | Het abonnement waarmee het herstelde account is gemaakt |
 |`Microsoft.DocumentDB/locations/restorableDatabaseAccounts/restore/action` |Deze machtiging is vereist voor het bereik van de bron herstelbaar database account zodat er herstel acties kunnen worden uitgevoerd.  | De *RestorableDatabaseAccount* -resource die deel uitmaakt van het bron account dat wordt hersteld. Deze waarde wordt ook gegeven door de `ID` eigenschap van de bron van het herstorable database account. Een voor beeld van een restorable account is */subscriptions/subscriptionId/providers/Microsoft.DocumentDB/locations/Region/restorableDatabaseAccounts/<GUID-instanceid>* | Het abonnement met het database account dat kan worden ontstorbaar. De resource groep kan niet worden gekozen als bereik.  |
 |`Microsoft.DocumentDB/locations/restorableDatabaseAccounts/read` |Deze machtiging is vereist voor het bereik van de bron herstelbaar database account voor het weer geven van de database accounts die kunnen worden hersteld.  | De *RestorableDatabaseAccount* -resource die deel uitmaakt van het bron account dat wordt hersteld. Deze waarde wordt ook gegeven door de `ID` eigenschap van de bron van het herstorable database account. Een voor beeld van een restorable account is */subscriptions/subscriptionId/providers/Microsoft.DocumentDB/locations/Region/restorableDatabaseAccounts/<GUID-instanceid>*| Het abonnement met het database account dat kan worden ontstorbaar. De resource groep kan niet worden gekozen als bereik.  |
 |`Microsoft.DocumentDB/locations/restorableDatabaseAccounts/*/read` | Deze machtiging is vereist voor het bereik van de bron herstorable om het lezen van mogelijk te maken bronnen, zoals een lijst met data bases en containers, toe te staan voor een restorable-account.  | De *RestorableDatabaseAccount* -resource die deel uitmaakt van het bron account dat wordt hersteld. Deze waarde wordt ook gegeven door de `ID` eigenschap van de bron van het herstorable database account. Een voor beeld van een restorable account is */subscriptions/subscriptionId/providers/Microsoft.DocumentDB/locations/Region/restorableDatabaseAccounts/<GUID-instanceid>*| Het abonnement met het database account dat kan worden ontstorbaar. De resource groep kan niet worden gekozen als bereik. |

@@ -9,12 +9,12 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring
-ms.openlocfilehash: 4a4624a94a27f00201c55a320f1745783b06d169
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: ff4c3c5ae8629879fca6e9e683a9c77d0e2f144b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92781920"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596105"
 ---
 # <a name="transition-to-metrics-in-azure-monitor"></a>Overstappen op metrische gegevens in Azure Monitor
 
@@ -35,7 +35,7 @@ Als u wilt overstappen op metrische gegevens in Azure Monitor, raden we u aan de
    > [!NOTE]
    > Metrische gegevens in Azure Monitor zijn standaard ingeschakeld, zodat u niets hoeft te doen om het vastleggen van metrische gegevens te starten. U moet echter grafieken of Dash boards maken om deze metrische gegevens weer te geven. 
  
-5. Als u waarschuwings regels hebt gemaakt die zijn gebaseerd op de metrische gegevens voor opslag, kunt u [waarschuwings regels maken](../../azure-monitor/platform/alerts-overview.md) die zijn gebaseerd op metrische gegevens in azure monitor. 
+5. Als u waarschuwings regels hebt gemaakt die zijn gebaseerd op de metrische gegevens voor opslag, kunt u [waarschuwings regels maken](../../azure-monitor/alerts/alerts-overview.md) die zijn gebaseerd op metrische gegevens in azure monitor. 
 
 6. Wanneer u al uw metrische gegevens in Azure Monitor kunt zien, kunt u de klassieke logboek registratie uitschakelen. 
 
@@ -53,7 +53,7 @@ Voor de ondersteuning van metrische gegevens bieden klassieke metrische gegevens
 
 Als voor de activiteit in uw account geen metrische gegevens worden geactiveerd, wordt voor de metrische gegevens een waarde van nul (0) weer gegeven in de klassieke metrische gegevens. De metrische gegevens in Azure Monitor worden volledig wegge laten, wat leidt tot schone rapporten. Als er bijvoorbeeld een time-out voor de server wordt gerapporteerd, `ServerTimeoutError` wordt de waarde in de tabel metrische gegevens ingesteld op 0. Azure Monitor retourneert geen gegevens wanneer u een query uitvoert op de waarde metric `Transactions` met dimensie `ResponseType` gelijk aan `ServerTimeoutError` . 
 
-Zie [metrische gegevens in azure monitor](../../azure-monitor/platform/data-platform-metrics.md)voor meer informatie over metrische gegevens in azure monitor.
+Zie [metrische gegevens in azure monitor](../../azure-monitor/essentials/data-platform-metrics.md)voor meer informatie over metrische gegevens in azure monitor.
 
 <a id="metrics-mapping-between-old-metrics-and-new-metrics"></a>
 
@@ -72,7 +72,7 @@ Zie [metrische gegevens in azure monitor](../../azure-monitor/platform/data-plat
 > [!NOTE]
 > Er zijn ook verschillende nieuwe capaciteits metrieken die niet beschikbaar waren als klassieke metrische gegevens. Zie [metrische gegevens](../blobs/monitor-blob-storage-reference.md#metrics)om de volledige lijst weer te geven.
 
-**Metrische gegevens van trans actie**
+**Metrische gegevens voor transacties**
 
 | Klassieke metriek | Metrische waarde in Azure Monitor |
 | ------------------- | ----------------- |

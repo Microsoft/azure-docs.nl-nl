@@ -5,12 +5,12 @@ ms.service: azure-monitor
 ms.subservice: application-insights
 ms.topic: conceptual
 ms.date: 04/28/2020
-ms.openlocfilehash: 345d0d31528f7bdc40be4400e783ad5be45df72f
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: b4a255235b2c6d772ab9a05dffacd4574ddd3280
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930557"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584198"
 ---
 # <a name="custom-metric-collection-in-net-and-net-core"></a>Aangepaste metrische verzameling in .NET en .NET core
 
@@ -109,7 +109,7 @@ Als we onze Application Insights-resource in de logboeken-ervaring onderzoeken, 
 > [!NOTE]
 > Hoewel het onbewerkte telemetriegegevens geen expliciete Sum-eigenschap/-veld bevat, hebben we er een voor u gemaakt. In dit geval vertegenwoordigen de `value` and- `valueSum` eigenschap hetzelfde.
 
-U kunt ook toegang krijgen tot uw aangepaste metrische telemetriegegevens in het gedeelte [_metrische gegevens_](../platform/metrics-charts.md) van de portal. Als een [op een logboek gebaseerd en aangepaste metrische gegevens](pre-aggregated-metrics-log-metrics.md). (In de onderstaande scherm afbeelding ziet u een voor beeld van op een logboek gebaseerd.) ![Weer gave metrische gegevens Verkenner](./media/get-metric/metrics-explorer.png)
+U kunt ook toegang krijgen tot uw aangepaste metrische telemetriegegevens in het gedeelte [_metrische gegevens_](../essentials/metrics-charts.md) van de portal. Als een [op een logboek gebaseerd en aangepaste metrische gegevens](pre-aggregated-metrics-log-metrics.md). (In de onderstaande scherm afbeelding ziet u een voor beeld van op een logboek gebaseerd.) ![Weer gave metrische gegevens Verkenner](./media/get-metric/metrics-explorer.png)
 
 ### <a name="caching-metric-reference-for-high-throughput-usage"></a>Naslag informatie over caching in cache voor gebruik met hoge door Voer
 
@@ -188,7 +188,7 @@ Multidimensionale metrische gegevens in de metrische Explorer-ervaring zijn niet
 
 ### <a name="enable-multi-dimensional-metrics"></a>Multidimensionale metrische gegevens inschakelen
 
-Als u multidimensionale metrische gegevens wilt inschakelen voor een Application Insights resource, selecteert u **gebruik en geschatte kosten**  >  **aangepaste metrische gegevens**Hiermee  >  **kunt u waarschuwingen op aangepaste metrische dimensies maken**  >  **OK**. Meer informatie hierover vindt u [hier](pre-aggregated-metrics-log-metrics.md#custom-metrics-dimensions-and-pre-aggregation).
+Als u multidimensionale metrische gegevens wilt inschakelen voor een Application Insights resource, selecteert u **gebruik en geschatte kosten**  >  **aangepaste metrische gegevens** Hiermee  >  **kunt u waarschuwingen op aangepaste metrische dimensies maken**  >  . Meer informatie hierover vindt u [hier](pre-aggregated-metrics-log-metrics.md#custom-metrics-dimensions-and-pre-aggregation).
 
 Zodra u hebt vastgesteld dat er nieuwe multi-dimensionale telemetrie is gewijzigd en verzonden, kunt u **splitsen Toep assen**.
 
@@ -302,6 +302,6 @@ SeverityLevel.Error);
 
 * [Meer informatie ](./worker-service.md)over het bewaken van Worker-service toepassingen.
 * Voor meer informatie over [metrische gegevens op basis van een logboek en vooraf geaggregeerde metrieken](./pre-aggregated-metrics-log-metrics.md).
-* [Metrische Explorer](../platform/metrics-getting-started.md)
+* [Metrische Explorer](../essentials/metrics-getting-started.md)
 * Application Insights voor [ASP.net core-toepassingen](asp-net-core.md) inschakelen
 * Application Insights inschakelen voor ASP.NET- [toepassingen](asp-net.md)

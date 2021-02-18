@@ -7,12 +7,12 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 09/19/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: bf8ea45f37e421d70a68c4a6e138f5203e92d78f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 620dadbaba049d6baea54b3b64c9e248fc48004a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87045772"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573445"
 ---
 # <a name="monitor-resource-groups-with-azure-monitor-preview"></a>Resource groepen bewaken met Azure Monitor (preview-versie)
 
@@ -46,9 +46,9 @@ De pagina resource groep Insights bevat verschillende andere hulpprogram ma's di
 
    |         |          |
    | ---------------- |:-----|
-   | [**Waarschuwingen**](../platform/alerts-overview.md)      |  Uw waarschuwingen weer geven, maken en beheren. |
-   | [**Metrische gegevens**](../platform/data-platform.md) | Visualiseer en verken uw metrische gegevens op basis van metriek.    |
-   | [**Activiteiten logboeken**](../platform/platform-logs-overview.md) | Gebeurtenissen op abonnements niveau die zich hebben voorgedaan in Azure.  |
+   | [**Waarschuwingen**](../alerts/alerts-overview.md)      |  Uw waarschuwingen weer geven, maken en beheren. |
+   | [**Metrische gegevens**](../data-platform.md) | Visualiseer en verken uw metrische gegevens op basis van metriek.    |
+   | [**Activiteiten logboeken**](../essentials/platform-logs-overview.md) | Gebeurtenissen op abonnements niveau die zich hebben voorgedaan in Azure.  |
    | [**Overzicht van de toepassing**](../app/app-map.md) | Navigeer door de topologie van de gedistribueerde toepassing om knel punten in de prestaties of HOTS pots te identificeren. |
 
 ## <a name="failures-and-performance"></a>Fouten en prestaties
@@ -113,10 +113,10 @@ Als u waarschuwingen in Azure Monitor voor resource groepen wilt weer geven, moe
 
 Azure Monitor voor resource groepen is afhankelijk van het beheer systeem voor Azure Monitor waarschuwingen om de waarschuwings status op te halen. Waarschuwingen beheer is standaard niet geconfigureerd voor elke resource groep en elk abonnement en kan alleen worden ingeschakeld door iemand met een rol van eigenaar of Inzender. De functie kan worden ingeschakeld door:
 * Het openen van Azure Monitor voor resource groepen voor een resource groep in het abonnement.
-* Of ga naar het abonnement, klik op **resource providers**en klik vervolgens op **registreren voor waarschuwingen. beheer**.
+* Of ga naar het abonnement, klik op **resource providers** en klik vervolgens op **registreren voor waarschuwingen. beheer**.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure Monitor-werkmappen](../platform/workbooks-overview.md)
+- [Azure Monitor-werkmappen](../visualize/workbooks-overview.md)
 - [Azure Resource Health](../../service-health/resource-health-overview.md)
-- [Azure Monitor-waarschuwingen](../platform/alerts-overview.md)
+- [Azure Monitor-waarschuwingen](../alerts/alerts-overview.md)

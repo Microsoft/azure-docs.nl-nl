@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.custom: subject-monitoring
 ms.date: 10/02/2020
-ms.openlocfilehash: 6da9c6775a6d5c96bc52183fefc3e5330272e9ff
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: f9f25ec2dd8fb8b859f7863c1e695e22cb9a9cec
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99585123"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575072"
 ---
 # <a name="monitoring-azure-machine-learning-data-reference"></a>Naslag informatie over Azure machine learning-gegevens bewaken
 
@@ -23,7 +23,7 @@ Meer informatie over de gegevens en resources die worden verzameld door Azure Mo
 
 ## <a name="metrics"></a>Metrische gegevens
 
-In deze sectie vindt u alle automatisch verzamelde platform gegevens die zijn verzameld voor Azure Machine Learning. De resource provider voor deze metrische gegevens is [micro soft. MachineLearningServices/Workspaces](../azure-monitor/platform/metrics-supported.md#microsoftmachinelearningservicesworkspaces).
+In deze sectie vindt u alle automatisch verzamelde platform gegevens die zijn verzameld voor Azure Machine Learning. De resource provider voor deze metrische gegevens is [micro soft. MachineLearningServices/Workspaces](../azure-monitor/essentials/metrics-supported.md#microsoftmachinelearningservicesworkspaces).
 
 **Model**
 
@@ -74,7 +74,7 @@ Informatie over trainings uitvoeringen.
 
 ## <a name="metric-dimensions"></a>Metrische dimensies
 
-Zie [multidimensionale metrische](../azure-monitor/platform/data-platform-metrics.md#multi-dimensional-metrics)gegevens voor meer informatie over de metrieke dimensies.
+Zie [multidimensionale metrische](../azure-monitor/essentials/data-platform-metrics.md#multi-dimensional-metrics)gegevens voor meer informatie over de metrieke dimensies.
 
 Azure Machine Learning heeft de volgende dimensies die zijn gekoppeld aan de metrische gegevens.
 
@@ -117,7 +117,7 @@ De volgende tabel geeft een lijst van de bewerkingen met betrekking tot Azure Ma
 
 In deze sectie vindt u de typen bron logboeken die u kunt verzamelen voor Azure Machine Learning-werk ruimte.
 
-Resource provider en type: [micro soft. MachineLearningServices/Workspace](../azure-monitor/platform/resource-logs-categories.md#microsoftmachinelearningservicesworkspaces).
+Resource provider en type: [micro soft. MachineLearningServices/Workspace](../azure-monitor/essentials/resource-logs-categories.md#microsoftmachinelearningservicesworkspaces).
 
 | Categorie | Weergavenaam |
 | ----- | ----- |
@@ -232,4 +232,4 @@ De volgende schema's zijn in gebruik door Azure Machine Learning
 ## <a name="see-also"></a>Zie ook
 
 - Zie [bewaking Azure machine learning](monitor-azure-machine-learning.md) voor een beschrijving van de bewakings Azure machine learning.
-- Zie [Azure-resources bewaken met Azure monitor](../azure-monitor/insights/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.
+- Zie [Azure-resources bewaken met Azure monitor](../azure-monitor/essentials/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.

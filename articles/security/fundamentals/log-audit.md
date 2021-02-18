@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/31/2019
 ms.author: terrylan
-ms.openlocfilehash: 79c15f2df82125f20dcfaf9992d9047b632c253d
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 0d85cf6ae501a7d50f20e48543e361149f4b57d0
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94412796"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580544"
 ---
 # <a name="azure-security-logging-and-auditing"></a>Azure-logboekregistratie en -controle van beveiligingsgegevens
 
@@ -38,9 +38,9 @@ Cloud toepassingen zijn complex met veel bewegende onderdelen. Logboek gegevens 
 - Acties automatiseren waarvoor anders hand matige interventie nodig zou zijn
 
 Azure-logboeken zijn ingedeeld in de volgende typen:
-* **Control/Management-logboeken** bevatten informatie over Azure Resource Manager Create-, update-en delete-bewerkingen. Zie [activiteiten logboeken van Azure](../../azure-monitor/platform/platform-logs-overview.md)voor meer informatie.
+* **Control/Management-logboeken** bevatten informatie over Azure Resource Manager Create-, update-en delete-bewerkingen. Zie [activiteiten logboeken van Azure](../../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie.
 
-* **Gegevens vlak logboeken** bevatten informatie over gebeurtenissen die worden gegenereerd als onderdeel van het gebruik van Azure-resources. Voor beelden van dit type logboek zijn het Windows-gebeurtenis systeem, de beveiliging en toepassings Logboeken in een virtuele machine (VM) en de [Diagnostische logboeken](../../azure-monitor/platform/platform-logs-overview.md) die zijn geconfigureerd via Azure monitor.
+* **Gegevens vlak logboeken** bevatten informatie over gebeurtenissen die worden gegenereerd als onderdeel van het gebruik van Azure-resources. Voor beelden van dit type logboek zijn het Windows-gebeurtenis systeem, de beveiliging en toepassings Logboeken in een virtuele machine (VM) en de [Diagnostische logboeken](../../azure-monitor/essentials/platform-logs-overview.md) die zijn geconfigureerd via Azure monitor.
 
 * **Verwerkte gebeurtenissen** bieden informatie over geanalyseerde gebeurtenissen/waarschuwingen die namens u zijn verwerkt. Voor beelden van dit type zijn [Azure Security Center waarschuwingen](../../security-center/security-center-managing-and-responding-alerts.md) waarbij [Azure Security Center](../../security-center/security-center-introduction.md) uw abonnement heeft verwerkt en geanalyseerd en beknopte beveiligings waarschuwingen biedt.
 
@@ -48,10 +48,10 @@ De volgende tabel bevat de belangrijkste typen logboeken die beschikbaar zijn in
 
 | Logboekcategorie | Logboek type | Gebruik | Integratie |
 | ------------ | -------- | ------ | ----------- |
-|[Activiteiten logboeken](../../azure-monitor/platform/platform-logs-overview.md)|Gebeurtenissen op het vlak van het besturings element op Azure Resource Manager resources|  Biedt inzicht in de bewerkingen die zijn uitgevoerd voor de resources in uw abonnement.|    Rest API, [Azure monitor](../../azure-monitor/platform/platform-logs-overview.md)|
-|[Azure-resource logboeken](../../azure-monitor/platform/platform-logs-overview.md)|Frequente gegevens over de werking van Azure Resource Manager resources in het abonnement|   Biedt inzicht in de bewerkingen die uw resource zelf heeft uitgevoerd.| Azure Monitor|
+|[Activiteiten logboeken](../../azure-monitor/essentials/platform-logs-overview.md)|Gebeurtenissen op het vlak van het besturings element op Azure Resource Manager resources|    Biedt inzicht in de bewerkingen die zijn uitgevoerd voor de resources in uw abonnement.|    Rest API, [Azure monitor](../../azure-monitor/essentials/platform-logs-overview.md)|
+|[Azure-resource logboeken](../../azure-monitor/essentials/platform-logs-overview.md)|Frequente gegevens over de werking van Azure Resource Manager resources in het abonnement| Biedt inzicht in de bewerkingen die uw resource zelf heeft uitgevoerd.| Azure Monitor|
 |[Azure Active Directory-rapportage](../../active-directory/reports-monitoring/overview-reports.md)|Logboeken en rapporten | Rapporteert aanmeldings activiteiten van gebruikers en informatie over systeem activiteiten over gebruikers en groeps beheer.|[Graph API](../../active-directory/develop/microsoft-graph-intro.md)|
-|[Virtuele machines en Cloud Services](../../azure-monitor/learn/quick-collect-azurevm.md)|Windows Event Log-service en Linux syslog|  Legt systeem gegevens vast en registreert gegevens op de virtuele machines en brengt deze gegevens over naar een opslag account van uw keuze.|   Windows (met behulp van Windows Azure Diagnostics [[wad](../../azure-monitor/platform/diagnostics-extension-overview.md)]-opslag) en Linux in azure monitor|
+|[Virtuele machines en Cloud Services](../../azure-monitor/vm/quick-collect-azurevm.md)|Windows Event Log-service en Linux syslog| Legt systeem gegevens vast en registreert gegevens op de virtuele machines en brengt deze gegevens over naar een opslag account van uw keuze.|   Windows (met behulp van Windows Azure Diagnostics [[wad](../../azure-monitor/agents/diagnostics-extension-overview.md)]-opslag) en Linux in azure monitor|
 |[Azure Opslaganalyse](/rest/api/storageservices/fileservices/storage-analytics)|Met opslag logboek registratie kunt u metrische gegevens voor een opslag account|Biedt inzicht in Trace-aanvragen, analyse van gebruiks trends en het vaststellen van problemen met uw opslag account.| REST API of de [client bibliotheek](/dotnet/api/overview/azure/storage)|
 |[Stroom logboeken voor netwerk beveiligings groepen (NSG)](../../network-watcher/network-watcher-nsg-flow-logging-overview.md)|JSON-indeling, geeft uitgaande en inkomende stromen per regel weer|Geeft informatie weer over binnenkomend en uitgaand IP-verkeer via een netwerk beveiligings groep.|[Azure Network Watcher](../../network-watcher/network-watcher-monitoring-overview.md)|
 |[Toepassings inzicht](../../azure-monitor/app/app-insights-overview.md)|Logboeken, uitzonde ringen en aangepaste diagnostische gegevens|  Biedt een service voor het controleren van de prestaties van toepassingen (APM) voor webontwikkelaars op meerdere platforms.| REST API, [Power bi](https://powerbi.microsoft.com/documentation/powerbi-azure-and-power-bi/)|

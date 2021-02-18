@@ -9,16 +9,19 @@ ms.service: media-services
 ms.topic: conceptual
 ms.date: 1/29/2020
 ms.author: inhenkel
-ms.openlocfilehash: 96031642efb1248fb3b1acabeb9d7381177a2c70
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: fd92eed127ec50a3d3a86f667d9aa764b79c190a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100098075"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585404"
 ---
 # <a name="trusted-storage-for-media-services"></a>Vertrouwde opslag voor Media Services
 
 Wanneer u een Media Services-account maakt, moet u dit koppelen aan een opslag account. Media Services hebben toegang tot dat opslag account met behulp van systeem verificatie of beheerde identiteits verificatie. Media Services valideert of het Media Services-account en het opslag account zich in hetzelfde abonnement bevinden en valideert dat de gebruiker die de koppeling toevoegt, toegang heeft tot het opslag account met Azure Resource Manager RBAC.
+
+>[!NOTE]
+>Vertrouwde opslag is alleen beschikbaar in de API en is momenteel niet ingeschakeld in de Azure Portal.
 
 ## <a name="trusted-storage-with-a-firewall"></a>Vertrouwde opslag met een firewall
 

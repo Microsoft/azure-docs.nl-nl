@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 2d72027082ed2b57b28a15a736c35801ba88188c
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: a5639d583d9b98f6527e47bf5db213cb191ebeb7
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99832518"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575298"
 ---
 # <a name="view-and-configure-ddos-protection-alerts"></a>DDoS-beschermingswaarschuwingen bekijken en configureren
 
@@ -72,7 +72,7 @@ Binnen een paar minuten van aanvals detectie ontvangt u een e-mail bericht van A
 
 ![Waarschuwing voor aanvallen](./media/manage-ddos-protection/ddos-alert.png)
 
-U kunt ook meer te weten komen over het [configureren van webhooks](../azure-monitor/platform/alerts-webhooks.md?toc=%2fazure%2fvirtual-network%2ftoc.json) en [Logic apps](../logic-apps/logic-apps-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) voor het maken van waarschuwingen.
+U kunt ook meer te weten komen over het [configureren van webhooks](../azure-monitor/alerts/alerts-webhooks.md?toc=%2fazure%2fvirtual-network%2ftoc.json) en [Logic apps](../logic-apps/logic-apps-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) voor het maken van waarschuwingen.
 
 ## <a name="view-alerts-in-azure-security-center"></a>Waarschuwingen in Azure Security Center weer geven
 

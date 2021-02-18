@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 03/26/2018
 ms.author: twooley
-ms.openlocfilehash: 07bf22cfc683d8c6f2c765364334ed1594e2fdaa
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.openlocfilehash: 0b84e26962b00ee5b9d4c34cab7efbcc9aa0bf01
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98745881"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582795"
 ---
 # <a name="accessing-diagnostic-logs-for-azure-data-lake-storage-gen1"></a>Diagnostische logboeken openen voor Azure Data Lake Storage Gen1
 Meer informatie over het inschakelen van diagnostische logboek registratie voor uw Azure Data Lake Storage Gen1-account en het weer geven van de logboeken die voor uw account zijn verzameld.
@@ -46,7 +46,7 @@ Organisaties kunnen diagnostische logboek registratie inschakelen voor hun Azure
         
         * Selecteer de optie om **te streamen naar een event hub** om logboek gegevens naar een Azure Event hub te streamen. Waarschijnlijk zult u deze optie gebruiken als u een downstream verwerkings pijplijn hebt om inkomende Logboeken in realtime te analyseren. Als u deze optie selecteert, moet u de details opgeven voor de Azure Event hub die u wilt gebruiken.
 
-        * Selecteer de optie om **naar log Analytics te verzenden** om de Azure Monitor-service te gebruiken om de gegenereerde logboek gegevens te analyseren. Als u deze optie selecteert, moet u de Details voor de Log Analytics-werk ruimte opgeven waarvoor u de logboek analyse uitvoeren wilt gebruiken. Zie [verzamelde gegevens weer geven of analyseren met Azure monitor logboeken zoeken](../azure-monitor/log-query/log-analytics-tutorial.md) voor meer informatie over het gebruik van Azure monitor-Logboeken.
+        * Selecteer de optie om **naar log Analytics te verzenden** om de Azure Monitor-service te gebruiken om de gegenereerde logboek gegevens te analyseren. Als u deze optie selecteert, moet u de Details voor de Log Analytics-werk ruimte opgeven waarvoor u de logboek analyse uitvoeren wilt gebruiken. Zie [verzamelde gegevens weer geven of analyseren met Azure monitor logboeken zoeken](../azure-monitor/logs/log-analytics-tutorial.md) voor meer informatie over het gebruik van Azure monitor-Logboeken.
      
    * Geef op of u audit Logboeken of aanvraag Logboeken of beide wilt ophalen.
    * Geef het aantal dagen op dat de gegevens moeten worden bewaard. Bewaren is alleen van toepassing als u Azure Storage-account gebruikt om logboek gegevens te archiveren.
@@ -115,7 +115,7 @@ Hier volgt een voor beeld van een vermelding in het aanvraag logboek in JSON-ind
 ```
 
 #### <a name="request-log-schema"></a>Schema voor aanvraag logboek
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | tijd |Tekenreeks |De tijds tempel (in UTC) van het logboek |
 | resourceId |Tekenreeks |De ID van de resource waarop de bewerking plaatsvond |
@@ -128,7 +128,7 @@ Hier volgt een voor beeld van een vermelding in het aanvraag logboek in JSON-ind
 | properties |JSON |Zie hieronder voor meer informatie |
 
 #### <a name="request-log-properties-schema"></a>Schema eigenschappen van het aanvraag logboek
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | HttpMethod |Tekenreeks |De HTTP-methode die wordt gebruikt voor de bewerking. Bijvoorbeeld ophalen. |
 | Pad |Tekenreeks |Het pad waarin de bewerking is uitgevoerd |
@@ -167,7 +167,7 @@ Hier volgt een voor beeld van een vermelding in het audit logboek in JSON-indeli
 ```
 
 #### <a name="audit-log-schema"></a>Schema van auditlogboek
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | tijd |Tekenreeks |De tijds tempel (in UTC) van het logboek |
 | resourceId |Tekenreeks |De ID van de resource waarop de bewerking plaatsvond |
@@ -180,12 +180,12 @@ Hier volgt een voor beeld van een vermelding in het audit logboek in JSON-indeli
 | properties |JSON |Zie hieronder voor meer informatie |
 
 #### <a name="audit-log-properties-schema"></a>Schema eigenschappen van controle logboek
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | StreamName |Tekenreeks |Het pad waarin de bewerking is uitgevoerd |
 
 ## <a name="samples-to-process-the-log-data"></a>Voor beelden voor het verwerken van de logboek gegevens
-Bij het verzenden van logboeken van Azure Data Lake Storage Gen1 naar Azure Monitor-Logboeken (Zie [gegevens weer geven of analyseren die zijn verzameld met Azure monitor logboeken zoeken](../azure-monitor/log-query/log-analytics-tutorial.md) voor meer informatie over het gebruik van Azure monitor Logboeken), wordt met de volgende query een tabel geretourneerd met een lijst met gebruikers weergave namen, de tijd van de gebeurtenissen en het aantal gebeurtenissen voor het tijdstip van de gebeurtenis samen met een visueel diagram. Het kan eenvoudig worden gewijzigd om gebruikers-GUID of andere kenmerken weer te geven:
+Bij het verzenden van logboeken van Azure Data Lake Storage Gen1 naar Azure Monitor-Logboeken (Zie [gegevens weer geven of analyseren die zijn verzameld met Azure monitor logboeken zoeken](../azure-monitor/logs/log-analytics-tutorial.md) voor meer informatie over het gebruik van Azure monitor Logboeken), wordt met de volgende query een tabel geretourneerd met een lijst met gebruikers weergave namen, de tijd van de gebeurtenissen en het aantal gebeurtenissen voor het tijdstip van de gebeurtenis samen met een visueel diagram. Het kan eenvoudig worden gewijzigd om gebruikers-GUID of andere kenmerken weer te geven:
 
 ```
 search *

@@ -8,12 +8,12 @@ ms.author: dademath
 ms.date: 07/28/2020
 ms.topic: include
 ms.service: azure-communication-services
-ms.openlocfilehash: a16846b8859f93a2d376691115e4b2dd0a7163b6
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 3bf0831084b9dd6f16d8208def87033fc0be2900
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98633348"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100645391"
 ---
 ## <a name="download-code"></a>Download code
 
@@ -74,13 +74,13 @@ We gaan nu verder met het installeren van Azure Communication Services-bibliothe
 
 ### <a name="install-communication-services-libraries"></a>Communicatie Services-bibliotheken installeren
 
-We gaan bibliotheek gebruiken `Administration` om `User Access Tokens` te genereren.
+We gaan bibliotheek gebruiken `Identity` om `User Access Tokens` te genereren.
 
 Gebruik de opdracht `npm install` om de Azure Communication Services Administration-clientbibliotheek voor JavaScript te installeren.
 
 ```console
 
-npm install @azure/communication-administration --save
+npm install @azure/communication-identity --save
 
 ```
 
@@ -89,7 +89,7 @@ Met de optie `--save` wordt de bibliotheek als een afhankelijkheid in bestand **
 Importeer de interface voor de `CommunicationIdentityClient` boven in het bestand `index.js`.
 
 ```javascript
-const { CommunicationIdentityClient } = require('@azure/communication-administration');
+const { CommunicationIdentityClient } = require('@azure/communication-identity');
 ```
 
 ## <a name="access-token-generation"></a>Toegangstoken genereren
@@ -136,7 +136,7 @@ Open de URL in uw browser en controleer of er een antwoordtekst wordt weergeven 
 
 Als u uw Azure-functie wilt implementeren, kunt u daarvoor [stapsgewijze instructies volgen](../../../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-javascript#sign-in-to-azure)
 
-Doorgaans moet u dan het volgende doen:
+In samen vatting moet u het volgende doen:
 1. Meld u vanuit Visual Studio aan bij Azure
 2. Publiceer uw project naar uw Azure-account. Hier moet u een bestaand abonnement kiezen.
 3. Maak een nieuwe Azure-functieresource met behulp van de Visual Studio-wizard of gebruik een bestaande resource. Als het een nieuwe resource betreft, moet u deze configureren voor de gewenste regio, runtime en uw unieke id.

@@ -3,12 +3,12 @@ title: DoD Impact Level 4-blauwdrukvoorbeeld
 description: Implementeer stappen voor het DoD Impact Level 4-blauwdrukvoorbeeld, inclusief de parametergegevens voor blauwdrukartefacten.
 ms.date: 01/08/2021
 ms.topic: sample
-ms.openlocfilehash: 40f45d1194ae089010edf308c3b110bc97591613
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
-ms.translationtype: HT
+ms.openlocfilehash: 389090b79c0aad343c1999ea17ed8c9332958544
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98033758"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594804"
 ---
 # <a name="deploy-the-dod-impact-level-4-blueprint-sample"></a>Het DoD Impact Level 4-blauwdrukvoorbeeld implementeren
 
@@ -109,7 +109,7 @@ In de volgende tabel ziet u een lijst met de blauwdrukartefactparameters:
 |Log Analytics-agent voor virtuele Windows-machines implementeren|Beleidstoewijzing|Optioneel: Lijst met VM-installatiekopieën met ondersteuning van het Windows-besturingssysteem die aan het bereik kunnen worden toegevoegd|Een lege matrix kan worden gebruikt om aan te geven dat er geen optionele parameters zijn: \[\]|
 |\[Preview\]: DoD Impact Level 4|Beleidstoewijzing|Leden worden opgenomen in de lokale groep Administrators|Een lijst met leden die niet moeten worden opgenomen in de lokale groep beheerders, gescheiden door puntkomma's. Bijvoorbeeld: Beheerder; myUser1; myUser2|
 |\[Preview\]: DoD Impact Level 4|Beleidstoewijzing|Leden die moeten worden uitgesloten in de lokale groep Administrators|Een lijst met leden die moeten worden opgenomen in de lokale groep beheerders, gescheiden door puntkomma's. Bijvoorbeeld: Beheerder; myUser1; myUser2|
-|\[Preview\]: DoD Impact Level 4|Beleidstoewijzing|Lijst met resourcetypen waarvoor diagnostische logboeken moeten zijn ingeschakeld|Lijst met resourcetypen die moeten worden gecontroleerd als de instelling voor diagnostische logboeken niet is ingeschakeld. Acceptabele waarden vindt u in de [schema's van diagnostische logboeken van Azure Monitor](../../../../azure-monitor/platform/resource-logs-schema.md#service-specific-schemas).|
+|\[Preview\]: DoD Impact Level 4|Beleidstoewijzing|Lijst met resourcetypen waarvoor diagnostische logboeken moeten zijn ingeschakeld|Lijst met resourcetypen die moeten worden gecontroleerd als de instelling voor diagnostische logboeken niet is ingeschakeld. Acceptabele waarden vindt u in de [schema's van diagnostische logboeken van Azure Monitor](../../../../azure-monitor/essentials/resource-logs-schema.md#service-specific-schemas).|
 |\[Preview\]: DoD Impact Level 4|Beleidstoewijzing|Id van de Log Analytics-werkruimte waarvoor VM's moeten worden geconfigureerd|Dit is de id (GUID) van de Log Analytics-werkruimte waarvoor de VM's moeten worden geconfigureerd.|
 |\[Preview\]: DoD Impact Level 4|Beleidstoewijzing|Geografisch redundante back-up op de lange termijn moet zijn ingeschakeld voor Azure SQL Databases|Informatie over de effecten van het beleid vindt u bij [Inzicht in de effecten van Azure Policy](../../../policy/concepts/effects.md).|
 |\[Preview\]: DoD Impact Level 4|Beleidstoewijzing|De evaluatie van beveiligingsproblemen moet worden ingeschakeld voor uw beheerde SQL-exemplaren|Informatie over de effecten van het beleid vindt u bij [Inzicht in de effecten van Azure Policy](../../../policy/concepts/effects.md).|

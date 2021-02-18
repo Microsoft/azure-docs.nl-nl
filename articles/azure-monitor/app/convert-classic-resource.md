@@ -3,12 +3,12 @@ title: Een Azure Monitor Application Insights klassieke resource migreren naar e
 description: Meer informatie over de stappen die nodig zijn om uw Azure Monitor Application Insights klassieke resource bij te werken naar het nieuwe model op basis van werk ruimte.
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: 5316bf5b919fe8b24ea1dd601214df62aa034f37
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 5791abe33dee2e62aadb00ae1024338e1e44a900
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98945106"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584247"
 ---
 # <a name="migrate-to-workspace-based-application-insights-resources"></a>Migreren naar op werk ruimte gebaseerde Application Insights resources
 
@@ -22,21 +22,21 @@ Met resources op basis van een werk ruimte kunnen veelvoorkomende Azure-functies
 
 Met Application Insights op basis van een werk ruimte kunt u profiteren van de nieuwste mogelijkheden van Azure Monitor en Log Analytics met inbegrip van:
 
-* Door de [klant beheerde sleutels (CMK)](../platform/customer-managed-keys.md) bieden versleuteling op rest voor uw gegevens met versleutelings sleutels waartoe alleen u toegang hebt.
-* Met de [persoonlijke Azure-koppeling](../platform/private-link-security.md) kunt u Azure PaaS-services veilig koppelen aan uw virtuele netwerk met behulp van privé-eind punten.
+* Door de [klant beheerde sleutels (CMK)](../logs/customer-managed-keys.md) bieden versleuteling op rest voor uw gegevens met versleutelings sleutels waartoe alleen u toegang hebt.
+* Met de [persoonlijke Azure-koppeling](../logs/private-link-security.md) kunt u Azure PaaS-services veilig koppelen aan uw virtuele netwerk met behulp van privé-eind punten.
 * [Met uw eigen opslag (BYOS) voor Profiler en snapshot debugger](./profiler-bring-your-own-storage.md) hebt u volledige controle over het beleid voor versleuteling op rest, het beheer beleid voor levens duur en netwerk toegang tot alle gegevens die zijn gekoppeld aan Application Insights Profiler en snapshot debugger. 
-* Met [capaciteits reserverings lagen](../platform/manage-cost-storage.md#pricing-model) kunt u Maxi maal 25% besparen op basis van de betalen naar gebruik-prijs. 
+* Met [capaciteits reserverings lagen](../logs/manage-cost-storage.md#pricing-model) kunt u Maxi maal 25% besparen op basis van de betalen naar gebruik-prijs. 
 * Snellere gegevens opname via Log Analytics streaming-opname.
 
 ## <a name="migration-process"></a>Migratieproces
 
 Wanneer u migreert naar een resource op basis van een werk ruimte, worden er geen gegevens vanuit de opslag van uw klassieke resource overgedragen naar de nieuwe opslag op basis van de werk ruimte. Als u wilt migreren, wijzigt u in plaats daarvan de locatie waar nieuwe gegevens naar een Log Analytics werkruimte worden geschreven, terwijl u de toegang tot uw klassieke resource gegevens behoudt. 
 
-Uw klassieke resource gegevens blijven behouden en zijn onderhevig aan de Bewaar instellingen op uw klassieke Application Insights-resource. Voor alle nieuwe gegevensgestuurde post migratie zijn de [Bewaar instellingen](../platform/manage-cost-storage.md#change-the-data-retention-period) van de gekoppelde log Analytics werk ruimte van toepassing, die ook [verschillende Bewaar instellingen per gegevens type](../platform/manage-cost-storage.md#retention-by-data-type)ondersteunt.
+Uw klassieke resource gegevens blijven behouden en zijn onderhevig aan de Bewaar instellingen op uw klassieke Application Insights-resource. Voor alle nieuwe gegevensgestuurde post migratie zijn de [Bewaar instellingen](../logs/manage-cost-storage.md#change-the-data-retention-period) van de gekoppelde log Analytics werk ruimte van toepassing, die ook [verschillende Bewaar instellingen per gegevens type](../logs/manage-cost-storage.md#retention-by-data-type)ondersteunt.
 Het migratie proces is **permanent en kan niet worden omgekeerd**. Wanneer u een resource hebt gemigreerd naar een werk ruimte op basis van Application Insights, is het altijd een resource op basis van een werk ruimte. Zodra u de migratie hebt uitgevoerd, kunt u echter zo vaak als nodig is de doel werkruimte wijzigen. 
 
 > [!NOTE]
-> Gegevens opname en retentie voor op werk ruimte gebaseerde Application Insights resources worden [gefactureerd via de log Analytics werk ruimte](../platform/manage-cost-storage.md) waarin de gegevens zich bevinden. Als u hebt gekozen voor het bewaren van gegevens van meer dan 90 dagen voor gegevens die zijn opgenomen in de klassieke Application Insights resource voordat de migratie wordt uitgevoerd, blijft de gegevens retentie in rekening worden gebracht via die Application Insights resource. Meer [informatie]( ./pricing.md#workspace-based-application-insights) over facturering voor op werk ruimte gebaseerde Application Insights resources.
+> Gegevens opname en retentie voor op werk ruimte gebaseerde Application Insights resources worden [gefactureerd via de log Analytics werk ruimte](../logs/manage-cost-storage.md) waarin de gegevens zich bevinden. Als u hebt gekozen voor het bewaren van gegevens van meer dan 90 dagen voor gegevens die zijn opgenomen in de klassieke Application Insights resource voordat de migratie wordt uitgevoerd, blijft de gegevens retentie in rekening worden gebracht via die Application Insights resource. Meer [informatie]( ./pricing.md#workspace-based-application-insights) over facturering voor op werk ruimte gebaseerde Application Insights resources.
 
 Als u geen bestaande resource hoeft te migreren en u in plaats daarvan een nieuwe op werk ruimte gebaseerde Application Insights resource wilt maken, gebruikt u de [hand leiding voor het maken van resources op basis van de werk ruimte](create-workspace-resource.md).
 
@@ -44,12 +44,12 @@ Als u geen bestaande resource hoeft te migreren en u in plaats daarvan een nieuw
 
 - Een Log Analytics-werk ruimte waarvoor de toegangs beheer modus is ingesteld op de **`use resource or workspace permissions`** instelling. 
 
-    - Application Insights resources op basis van een werk ruimte zijn niet compatibel met werk ruimten die zijn ingesteld op de toegewezen **`workspace based permissions`** instelling. Raadpleeg de [richt lijnen voor het log Analytics configureren van toegangs beheer modus](../platform/manage-access.md#configure-access-control-mode) voor meer informatie log Analytics over het toegangs beheer voor werk ruimten.
+    - Application Insights resources op basis van een werk ruimte zijn niet compatibel met werk ruimten die zijn ingesteld op de toegewezen **`workspace based permissions`** instelling. Raadpleeg de [richt lijnen voor het log Analytics configureren van toegangs beheer modus](../logs/manage-access.md#configure-access-control-mode) voor meer informatie log Analytics over het toegangs beheer voor werk ruimten.
 
-    - Als u nog geen bestaande Log Analytics-werk ruimte hebt, [raadpleegt u de documentatie voor het maken van log Analytics werk ruimte](../learn/quick-create-workspace.md).
+    - Als u nog geen bestaande Log Analytics-werk ruimte hebt, [raadpleegt u de documentatie voor het maken van log Analytics werk ruimte](../logs/quick-create-workspace.md).
     
 - Continue export wordt niet ondersteund voor op werk ruimte gebaseerde resources en moet worden uitgeschakeld.
-Zodra de migratie is voltooid, kunt u [Diagnostische instellingen](../platform/diagnostic-settings.md) gebruiken om gegevens archivering te configureren voor een opslag account of streaming naar Azure Event hub.  
+Zodra de migratie is voltooid, kunt u [Diagnostische instellingen](../essentials/diagnostic-settings.md) gebruiken om gegevens archivering te configureren voor een opslag account of streaming naar Azure Event hub.  
 
 - Controleer de huidige Bewaar instellingen onder **Algemeen**  >  **gebruik en geschatte kosten**  >  voor het **bewaren van gegevens** voor uw log Analytics-werk ruimte. Deze instelling is van invloed op hoe lang nieuwe opgenomen gegevens worden opgeslagen nadat u uw Application Insights-resource hebt gemigreerd. Als u momenteel Application Insights gegevens langer dan de standaard 90 dagen opslaat en deze grotere Bewaar periode wilt behouden, moet u mogelijk de Bewaar instellingen voor uw werk ruimte aanpassen.
 
@@ -209,7 +209,7 @@ Selecteer in het deel venster Resource Application Insights **Eigenschappen**  >
 
 **Fout bericht:** *de geselecteerde werk ruimte is geconfigureerd met toegangs modus op basis van een werk ruimte. Sommige APM-functies kunnen worden beïnvloed. Selecteer een andere werk ruimte of sta toegang op basis van resources in de werk ruimte-instellingen toe. U kunt deze fout negeren door CLI te gebruiken.* 
 
-Als u de Application Insights resource op basis van een werk ruimte goed wilt laten werken, moet u de toegangs beheer modus van uw doel Log Analytics werk ruimte wijzigen in de instelling **machtigingen voor resource of werk ruimte** . Deze instelling bevindt zich in de gebruikers interface van log Analytics werk ruimte onder **Eigenschappen**  >  **toegangs beheer modus**. Raadpleeg de richt lijnen voor het [log Analytics configureren van de toegangs beheer modus](../platform/manage-access.md#configure-access-control-mode)voor gedetailleerde instructies. Als uw toegangs beheer modus is ingesteld op de instelling exclusieve **machtigingen voor werk ruimte vereist** , blijft migratie via de portal migratie-ervaring geblokkeerd.
+Als u de Application Insights resource op basis van een werk ruimte goed wilt laten werken, moet u de toegangs beheer modus van uw doel Log Analytics werk ruimte wijzigen in de instelling **machtigingen voor resource of werk ruimte** . Deze instelling bevindt zich in de gebruikers interface van log Analytics werk ruimte onder **Eigenschappen**  >  **toegangs beheer modus**. Raadpleeg de richt lijnen voor het [log Analytics configureren van de toegangs beheer modus](../logs/manage-access.md#configure-access-control-mode)voor gedetailleerde instructies. Als uw toegangs beheer modus is ingesteld op de instelling exclusieve **machtigingen voor werk ruimte vereist** , blijft migratie via de portal migratie-ervaring geblokkeerd.
 
 Als u de toegangs beheer modus uit veiligheids overwegingen voor uw huidige doel werkruimte niet kunt wijzigen, kunt u het beste een nieuwe Log Analytics-werk ruimte maken die u voor de migratie kunt gebruiken. 
 
@@ -229,7 +229,7 @@ De verouderde functionaliteit voor continue export wordt niet ondersteund voor o
 
 - Zodra u uitschakelen hebt geselecteerd, kunt u teruggaan naar de migratie GEBRUIKERSINTERFACE. Als de pagina doorlopend exporteren wordt gevraagd of uw instellingen niet worden opgeslagen, kunt u OK selecteren voor deze prompt, omdat deze niet van toepassing is op het uit-en inschakelen van continue export.
 
-- Zodra u uw Application Insights resource naar een werk ruimte hebt gemigreerd, kunt u Diagnostische instellingen gebruiken om de functionaliteit te vervangen die doorlopende export wordt gebruikt om te bieden. Selecteer **Diagnostische instellingen**  >  **Diagnostische instelling toevoegen** vanuit uw Application Insights-resource. U kunt alle tabellen selecteren of een subset van tabellen die u wilt archiveren naar een opslag account of naar een Azure Event hub streamen. Raadpleeg de [richt lijnen voor Azure monitor Diagnostische instellingen](../platform/diagnostic-settings.md)voor gedetailleerde richt lijnen voor Diagnostische instellingen.
+- Zodra u uw Application Insights resource naar een werk ruimte hebt gemigreerd, kunt u Diagnostische instellingen gebruiken om de functionaliteit te vervangen die doorlopende export wordt gebruikt om te bieden. Selecteer **Diagnostische instellingen**  >  **Diagnostische instelling toevoegen** vanuit uw Application Insights-resource. U kunt alle tabellen selecteren of een subset van tabellen die u wilt archiveren naar een opslag account of naar een Azure Event hub streamen. Raadpleeg de [richt lijnen voor Azure monitor Diagnostische instellingen](../essentials/diagnostic-settings.md)voor gedetailleerde richt lijnen voor Diagnostische instellingen.
 
 ### <a name="retention-settings"></a>Bewaar instellingen
 
@@ -241,5 +241,5 @@ U kunt de huidige Bewaar instellingen voor log Analytics controleren onder **Alg
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Metrische gegevens verkennen](../platform/metrics-charts.md)
-* [Analytics-query's schrijven](../log-query/log-query-overview.md)
+* [Metrische gegevens verkennen](../essentials/metrics-charts.md)
+* [Analytics-query's schrijven](../logs/log-query-overview.md)

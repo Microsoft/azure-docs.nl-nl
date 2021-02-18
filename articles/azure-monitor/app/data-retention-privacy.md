@@ -4,12 +4,12 @@ description: Retentie en privacybeleid
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 2205ab1115a66092ae6dd6d75ee7004ab281eec7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 54d3e53b71b5f63da84e41a752bbbb6fce65c045
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91263909"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579586"
 ---
 # <a name="data-collection-retention-and-storage-in-application-insights"></a>Verzameling, retentie en opslag van gegevens in Application Insights
 
@@ -120,7 +120,7 @@ Ja, bepaalde telemetrie-kanalen blijven gegevens lokaal behouden als een eind pu
 
 Met telemetrie-kanalen die gebruikmaken van lokale opslag, worden tijdelijke bestanden in de map TEMP of APPDATA gemaakt. deze zijn beperkt tot het specifieke account dat uw toepassing uitvoert. Dit kan gebeuren wanneer een eind punt tijdelijk niet beschikbaar is of als u de beperkings limiet bereikt. Zodra dit probleem is opgelost, wordt het verzenden van alle nieuwe en permanente gegevens hervat met het telemetrie-kanaal.
 
-Deze persistente gegevens worden niet lokaal versleuteld. Als dit een probleem is, controleert u de gegevens en beperkt u het verzamelen van persoonlijke gegevens. (Zie [persoonlijke gegevens exporteren en verwijderen](../platform/personal-data-mgmt.md#how-to-export-and-delete-private-data)voor meer informatie.)
+Deze persistente gegevens worden niet lokaal versleuteld. Als dit een probleem is, controleert u de gegevens en beperkt u het verzamelen van persoonlijke gegevens. (Zie [persoonlijke gegevens exporteren en verwijderen](../logs/personal-data-mgmt.md#how-to-export-and-delete-private-data)voor meer informatie.)
 
 Als een klant deze map moet configureren met specifieke beveiligings vereisten, kan deze per Framework worden geconfigureerd. Zorg ervoor dat het proces dat uw toepassing uitvoert, schrijf toegang heeft tot deze map, maar zorg er ook voor dat deze map wordt beveiligd om te voor komen dat telemetrie door onbedoelde gebruikers wordt gelezen.
 
@@ -199,7 +199,7 @@ AzureLogHandler(
 
 ## <a name="how-do-i-send-data-to-application-insights-using-tls-12"></a>Hoe kan ik gegevens naar Application Insights verzenden met behulp van TLS 1,2?
 
-Om ervoor te zorgen dat de beveiliging van gegevens die onderweg zijn naar de eind punten van de Application Insights, raden we klanten ten zeerste aan om hun toepassing te configureren voor het gebruik van ten minste Transport Layer Security (TLS) 1,2. Oudere versies van TLS/Secure Sockets Layer (SSL) zijn kwetsbaar voor aanvallen en terwijl ze nog steeds werken om achterwaartse compatibiliteit mogelijk te maken, worden ze **niet aanbevolen**en wordt de branche snel verplaatst om ondersteuning voor deze oudere protocollen te annuleren. 
+Om ervoor te zorgen dat de beveiliging van gegevens die onderweg zijn naar de eind punten van de Application Insights, raden we klanten ten zeerste aan om hun toepassing te configureren voor het gebruik van ten minste Transport Layer Security (TLS) 1,2. Oudere versies van TLS/Secure Sockets Layer (SSL) zijn kwetsbaar voor aanvallen en terwijl ze nog steeds werken om achterwaartse compatibiliteit mogelijk te maken, worden ze **niet aanbevolen** en wordt de branche snel verplaatst om ondersteuning voor deze oudere protocollen te annuleren. 
 
 De [PCI Security Standards Council](https://www.pcisecuritystandards.org/) heeft een [deadline ingesteld van 30 juni 2018](https://www.pcisecuritystandards.org/pdfs/PCI_SSC_Migrating_from_SSL_and_Early_TLS_Resource_Guide.pdf) om oudere versies van TLS/SSL uit te scha kelen en te upgraden naar meer beveiligde protocollen. Als de ondersteuning voor Azure is verbroken, kunt u, als uw toepassing/clients geen communicatie meer over ten minste TLS 1,2, gegevens verzenden naar Application Insights. De aanpak die u moet nemen om de TLS-ondersteuning van uw toepassing te testen en te valideren, varieert afhankelijk van het besturings systeem/platform en de taal/het Framework dat door uw toepassing wordt gebruikt.
 
@@ -212,7 +212,7 @@ Het wordt niet aanbevolen om uw toepassing expliciet in te stellen voor gebruik 
 | Azure App Services  | Wordt ondersteund. de configuratie is mogelijk vereist. | Ondersteuning werd aangekondigd in april 2018. Lees de aankondiging voor [meer informatie](https://azure.github.io/AppService/2018/04/17/App-Service-and-Functions-hosted-apps-can-now-update-TLS-versions!)over de configuratie.  |
 | Azure Function-apps | Wordt ondersteund. de configuratie is mogelijk vereist. | Ondersteuning werd aangekondigd in april 2018. Lees de aankondiging voor [meer informatie](https://azure.github.io/AppService/2018/04/17/App-Service-and-Functions-hosted-apps-can-now-update-TLS-versions!)over de configuratie. |
 |.NET | Ondersteund, de configuratie is afhankelijk van versie. | Raadpleeg [deze instructies](/dotnet/framework/network-programming/tls#support-for-tls-12)voor gedetailleerde informatie over de configuratie van .net 4,7 en eerdere versies.  |
-|Status Monitor | Ondersteund, configuratie vereist | Status monitor is afhankelijk van de configuratie van de [besturingssysteem configuratie](/windows-server/security/tls/tls-registry-settings)  +  [.NET Configuration](/dotnet/framework/network-programming/tls#support-for-tls-12) voor de ondersteuning van TLS 1,2.
+|Status Monitor | Ondersteund, configuratie vereist | Status monitor is afhankelijk van de configuratie van de [besturingssysteem configuratie](/windows-server/security/tls/tls-registry-settings)  +  [](/dotnet/framework/network-programming/tls#support-for-tls-12) voor de ondersteuning van TLS 1,2.
 |Node.js |  In v 10.5.0 is configuratie mogelijk vereist. | Gebruik de [officiële Node.js TLS/SSL-documentatie](https://nodejs.org/api/tls.html) voor specifieke configuratie van de toepassing. |
 |Java | Ondersteund, JDK-ondersteuning voor TLS 1,2 is toegevoegd in [JDK 6 update 121](https://www.oracle.com/technetwork/java/javase/overview-156328.html#R160_121) en [JDK 7](https://www.oracle.com/technetwork/java/javase/7u131-relnotes-3338543.html). | JDK 8 maakt [standaard gebruik van TLS 1,2](https://blogs.oracle.com/java-platform-group/jdk-8-will-use-tls-12-as-default).  |
 |Linux | Linux-distributies zijn vaak afhankelijk van [openssl](https://www.openssl.org) voor TLS 1,2-ondersteuning.  | Controleer de [openssl wijzigingen logboek](https://www.openssl.org/news/changelog.html) om te bevestigen dat uw versie van openssl wordt ondersteund.|
@@ -240,7 +240,7 @@ openssl s_client -connect bing.com:443 -tls1_2
 
 ## <a name="personal-data-stored-in-application-insights"></a>Persoons gegevens die zijn opgeslagen in Application Insights
 
-In ons [Application Insights persoonlijke gegevens artikel](../platform/personal-data-mgmt.md) wordt dit probleem uitvoerig besproken.
+In ons [Application Insights persoonlijke gegevens artikel](../logs/personal-data-mgmt.md) wordt dit probleem uitvoerig besproken.
 
 #### <a name="can-my-users-turn-off-application-insights"></a>Kunnen mijn gebruikers Application Insights uitschakelen?
 Niet rechtstreeks. We bieden geen switch die uw gebruikers kunnen uitvoeren om Application Insights uit te scha kelen.
@@ -293,7 +293,7 @@ Voor [sdk's voor andere platforms][platforms]raadpleegt u hun documenten.
 U kunt [een aantal gegevens uitschakelen door ApplicationInsights.configte bewerken ][config]
 
 > [!NOTE]
-> Client-IP wordt gebruikt om geografische locatie af te leiden, maar standaard worden IP-gegevens niet meer opgeslagen en worden alle nullen naar het gekoppelde veld geschreven. Voor meer informatie over het afhandelen van persoonlijke gegevens kunt u dit [artikel](../platform/personal-data-mgmt.md#application-data)aanbevelen. Als u IP-adres gegevens moet opslaan in het artikel over de [IP-adres verzameling](./ip-collection.md) , wordt u door de opties geleid.
+> Client-IP wordt gebruikt om geografische locatie af te leiden, maar standaard worden IP-gegevens niet meer opgeslagen en worden alle nullen naar het gekoppelde veld geschreven. Voor meer informatie over het afhandelen van persoonlijke gegevens kunt u dit [artikel](../logs/personal-data-mgmt.md#application-data)aanbevelen. Als u IP-adres gegevens moet opslaan in het artikel over de [IP-adres verzameling](./ip-collection.md) , wordt u door de opties geleid.
 
 ## <a name="credits"></a>Tegoeden
 Dit product bevat GeoLite2-gegevens die zijn gemaakt door MaxMind, die beschikbaar zijn via [https://www.maxmind.com](https://www.maxmind.com) .

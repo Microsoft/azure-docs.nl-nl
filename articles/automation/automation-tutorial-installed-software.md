@@ -7,12 +7,12 @@ ms.date: 04/11/2018
 ms.topic: tutorial
 ms.subservice: change-inventory-management
 ms.custom: mvc
-ms.openlocfilehash: 0c083f4576e123ea14d837ed3915c56d18d84623
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
-ms.translationtype: HT
+ms.openlocfilehash: 8451067ae86e95269c0c2f22554e1654ac64c1e4
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207560"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593785"
 ---
 # <a name="discover-what-software-is-installed-on-your-vms"></a>Uitvinden welke software is geïnstalleerd op uw VM's
 
@@ -48,7 +48,7 @@ Voor deze zelfstudie moet u eerst Wijzigingen bijhouden en Inventaris inschakele
 
 1. Navigeer naar uw Automation-account en selecteer **Inventaris** of **Wijzigingen bijhouden** onder **Configuratiebeheer**.
 
-2. Kies de [Log Analytics](../azure-monitor/log-query/log-query-overview.md)-werkruimte. In deze werkruimte worden gegevens verzameld die worden gegenereerd door functies als Wijzigingen bijhouden en Inventaris. De werkruimte biedt één locatie om gegevens uit meerdere bronnen te bekijken en te analyseren.
+2. Kies de [Log Analytics](../azure-monitor/logs/log-query-overview.md)-werkruimte. In deze werkruimte worden gegevens verzameld die worden gegenereerd door functies als Wijzigingen bijhouden en Inventaris. De werkruimte biedt één locatie om gegevens uit meerdere bronnen te bekijken en te analyseren.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -80,7 +80,7 @@ Nadat de functie is ingeschakeld, wordt informatie over geïnstalleerde software
 
 Niet-Azure-machines inschakelen voor de functie:
 
-1. Installeer de [Log Analytics-agent voor Windows](../azure-monitor/platform/agent-windows.md) of [Log Analytics-agent voor Linux](automation-linux-hrw-install.md), afhankelijk van uw besturingssysteem. 
+1. Installeer de [Log Analytics-agent voor Windows](../azure-monitor/agents/agent-windows.md) of [Log Analytics-agent voor Linux](automation-linux-hrw-install.md), afhankelijk van uw besturingssysteem. 
 
 2. Navigeer naar uw Automation-account en ga naar **Inventaris** of **Wijzigingen bijhouden** onder **Configuratiebeheer**. 
 
@@ -122,7 +122,7 @@ ConfigurationData
 | summarize arg_max(TimeGenerated, *) by SoftwareName, Computer
 ```
 
-Zie [Azure Monitor-logboeken](../azure-monitor/log-query/log-query-overview.md) voor meer informatie over het uitvoeren en doorzoeken van logboekbestanden in Azure Monitor-logboeken.
+Zie [Azure Monitor-logboeken](../azure-monitor/logs/log-query-overview.md) voor meer informatie over het uitvoeren en doorzoeken van logboekbestanden in Azure Monitor-logboeken.
 
 ## <a name="see-the-software-inventory-for-a-single-machine"></a>De software-inventaris voor één computer bekijken
 

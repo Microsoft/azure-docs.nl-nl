@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 02/15/2021
-ms.openlocfilehash: 7149233782815deebebde53767a3c654ac2321bb
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 8a61ad1599a2d4d1aeaf8b36d2f92d95ec1896a0
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100547754"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573046"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-service-in-the-portal"></a>Quickstart: Een Azure Cognitive Search-service maken in de portal
 
@@ -27,9 +27,9 @@ U kunt de zoek service maken met behulp van de [Azure Portal](https://portal.azu
 
 De volgende service-eigenschappen staan gedurende de levensduur van de service vast. Als een of meerdere wilt wijzigen, is er een nieuwe service vereist. Aangezien ze vast staan, is het belangrijk om na te denken over de implicaties voor het gebruik bij het invullen van de eigenschappen:
 
-* De servicenaam wordt onderdeel van het URL-eindpunt ([tips](#name-the-service) voor handige servicenamen).
-* De [servicelaag](search-sku-tier.md) is van invloed op de facturering en stelt een limiet in voor de capaciteit. Sommige functies zijn niet beschikbaar in de gratis laag.
-* De serviceregio kan de beschikbaarheid van bepaalde scenario's bepalen. Als u een [hoog beveiligings](search-security-overview.md) niveau of een [AI-verrijking](cognitive-search-concept-intro.md)nodig hebt, moet u Azure-Cognitive Search maken in dezelfde regio als andere services of in regio's die de desbetreffende functie bieden. 
++ De servicenaam wordt onderdeel van het URL-eindpunt ([tips](#name-the-service) voor handige servicenamen).
++ De [servicelaag](search-sku-tier.md) is van invloed op de facturering en stelt een limiet in voor de capaciteit. Sommige functies zijn niet beschikbaar in de gratis laag.
++ De serviceregio kan de beschikbaarheid van bepaalde scenario's bepalen. Als u een [hoog beveiligings](search-security-overview.md) niveau of een [AI-verrijking](cognitive-search-concept-intro.md)nodig hebt, moet u Azure-Cognitive Search maken in dezelfde regio als andere services of in regio's die de desbetreffende functie bieden. 
 
 ## <a name="subscribe-free-or-paid"></a>Abonneren (gratis of betaald)
 
@@ -72,30 +72,30 @@ Geef bij Exemplaardetails een servicenaam op in het veld **URL**. De naam is ond
 
 Vereisten voor servicenaam:
 
-* De naam moet uniek zijn binnen de naamruimte search.windows.net
-* De naam moet tussen de 2 en 60 tekens lang zijn
-* U moet kleine letters, cijfers of streepjes (-) gebruiken
-* Gebruik geen streepjes (-) bij de eerste 2 tekens of als het allerlaatste teken
-* U mag nergens twee opeenvolgende streepjes (--) gebruiken
++ De naam moet uniek zijn binnen de naamruimte search.windows.net
++ De naam moet tussen de 2 en 60 tekens lang zijn
++ U moet kleine letters, cijfers of streepjes (-) gebruiken
++ Gebruik geen streepjes (-) bij de eerste 2 tekens of als het allerlaatste teken
++ U mag nergens twee opeenvolgende streepjes (--) gebruiken
 
 > [!TIP]
 > Als u denkt dat u meerdere services zult gebruiken, is het raadzaam om als naamconventie de regio (of locatie) in de servicenaam op te nemen. Services in dezelfde regio kunnen gegevens gratis uitwisselen, dus als Azure Cognitive Search zich in VS - west bevindt en u ook andere services in VS - west hebt, kan een naam zoals `mysearchservice-westus` u een bezoek aan de eigenschappenpagina besparen wanneer u beslist hoe u resources combineert of bijvoegt.
 
 ## <a name="choose-a-location"></a>Een locatie kiezen
 
-Azure Cognitive Search is beschikbaar in de meeste regio's, zoals beschreven op de [pagina met prijzen](https://azure.microsoft.com/pricing/details/search/).
+Azure Cognitive Search is beschikbaar in de meeste regio's, zoals beschreven in de [beschik bare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=search). Als u meerdere Azure-Services gebruikt, kiest u in het algemeen een regio die ook als host fungeert voor uw gegevens of toepassings service. Zo minimaliseert of vermijdt u bandbreedtekosten voor uitgaande gegevens (er zijn geen kosten voor uitgaande gegevens wanneer services zich in dezelfde regio bevinden).
 
-Als u meerdere Azure-Services gebruikt, kiest u in het algemeen een regio die ook als host fungeert voor uw gegevens of toepassings service. Zo minimaliseert of vermijdt u bandbreedtekosten voor uitgaande gegevens (er zijn geen kosten voor uitgaande gegevens wanneer services zich in dezelfde regio bevinden).
++ [AI-verrijking](cognitive-search-concept-intro.md) vereist dat Cognitive Services zich in dezelfde fysieke regio bevinden als Azure Cognitive Search. Daarom bieden enkele regio's niet beide mogelijkheden. Op de pagina [beschik bare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=search) wordt de dubbele Beschik baarheid aangegeven door twee gestapelde vinkjes weer te geven. Er is een niet-beschik bare combi natie met een ontbrekend vinkje:
 
-Klanten met BCDR-vereisten (bedrijfscontinuïteit en herstel na noodgevallen) moeten hun services in [regioparen](../best-practices-availability-paired-regions.md#azure-regional-pairs) maken. Als u bijvoorbeeld werkzaam bent in Noord-Amerika, kiest u wellicht VS - oost en VS - west, of VS - noord-centraal en VS - zuid-centraal, voor elke service.
+  :::image type="content" source="media/search-create-service-portal/region-availability.png" alt-text="Regionale beschikbaarheid" border="true":::
 
-De volgende functies zijn alleen beschikbaar in bepaalde regio's:
++ Aan vereisten voor bedrijfs continuïteit en nood herstel (BCDR) moet worden voldaan door meerdere zoek services in [regionale paren](../best-practices-availability-paired-regions.md#azure-regional-pairs)te maken. Als u bijvoorbeeld werkt met Noord-Amerika, kunt u voor elke zoek service het volgende kiezen: VS-Oost, VS-West of Noord-Centraal VS en Zuid-Central.
 
-* AI-verrijking vereist dat Cognitive Services zich in dezelfde regio bevinden als Azure Cognitive Search. Kies de [regio voor Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/) eerste (de lijst is kleiner) en kies vervolgens dezelfde regio voor de zoek service.
+Enkele functies hebben een beperkte Beschik baarheid op basis van regio's. De beperkingen worden beschreven in de functie documentatie:
 
-* Dubbele versleuteling is alleen beschikbaar in bepaalde regio's. Zie [Double Encryption](search-security-overview.md#double-encryption) (Engelstalig) voor meer informatie.
++ [Dubbele versleuteling](search-security-overview.md#double-encryption)
 
-* Ondersteuning voor beschikbaarheids zone wordt aangeboden in specifieke regio's, op Services die zijn gemaakt na specifieke datums. Zie voor meer informatie ["Beschikbaarheidszones" in schaal voor prestaties](search-performance-optimization.md#availability-zones).
++ [' Beschikbaarheidszones ' op schaal voor prestaties](search-performance-optimization.md#availability-zones).
 
 ## <a name="choose-a-pricing-tier"></a>Kies een prijscategorie
 
@@ -121,7 +121,7 @@ Tenzij u de portal gebruikt, moet u voor programmatische toegang tot uw nieuwe s
 
 1. Zoek aan de rechterkant van de pagina **Overzicht** het URL-eindpunt en kopieer het.
 
-2. Kopieer op de pagina **Sleutels** een van de beheersleutels (deze zijn equivalent). API-beheersleutels voor beheerders zijn vereist voor het maken, bijwerken en verwijderen van objecten in uw service. Querysleutels bieden daarentegen alleen leestoegang tot indexinhoud.
+1. Kopieer op de pagina **Sleutels** een van de beheersleutels (deze zijn equivalent). API-beheersleutels voor beheerders zijn vereist voor het maken, bijwerken en verwijderen van objecten in uw service. Querysleutels bieden daarentegen alleen leestoegang tot indexinhoud.
 
    :::image type="content" source="media/search-create-service-portal/get-url-key.png" alt-text="Pagina Overzicht van de service met URL-eindpunt" border="false":::
 
@@ -141,8 +141,8 @@ Als u resources toevoegt, wordt uw maandfactuur hoger. Met de [prijscalculator](
 > Een service moet [twee replica's hebben voor een alleen-lezen-SLA en drie replica's voor een lezen/schrijven-SLA](https://azure.microsoft.com/support/legal/sla/search/v1_0/).
 
 1. Ga naar de pagina van uw zoekservice in Azure Portal.
-2. Selecteer in het navigatiedeelvenster aan de linkerkant **Instellingen** > **Schalen**.
-3. Gebruik de schuifbalk om resources van een bepaald type toe te voegen.
+1. Selecteer in het navigatiedeelvenster aan de linkerkant **Instellingen** > **Schalen**.
+1. Gebruik de schuifbalk om resources van een bepaald type toe te voegen.
 
 :::image type="content" source="media/search-create-service-portal/settings-scale.png" alt-text="Capaciteit toevoegen via replica's en partities" border="false":::
 

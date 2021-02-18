@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 12/03/2020
-ms.openlocfilehash: 22c69288479e0247e499a33c2e818c19f7edb2ae
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: b13d03f05b7225a1c88f6b10b454749bd7b42477
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879945"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588348"
 ---
 # <a name="azure-purview-metrics-in-azure-monitor"></a>De metrische gegevens voor Azure controle sfeer liggen in Azure Monitor
 
@@ -24,7 +24,7 @@ Azure controle sfeer liggen-beheerders kunnen Azure Monitor gebruiken om de oper
 
 ## <a name="aggregated-metrics"></a>Cumulatieve metrische gegevens
 
-De metrische gegevens zijn toegankelijk vanuit het Azure Portal voor een controle sfeer liggen-account. Toegang tot de metrische gegevens wordt bepaald door de roltoewijzing van het controle sfeer liggen-account. Gebruikers moeten deel uitmaken van de rol ' controle lezer ' in azure controle sfeer liggen om de metrische gegevens te bekijken. Bekijk de [rol van bewakings lezers rollen](../azure-monitor/platform/roles-permissions-security.md#built-in-monitoring-roles) voor meer informatie over de toegangs niveaus voor rollen.
+De metrische gegevens zijn toegankelijk vanuit het Azure Portal voor een controle sfeer liggen-account. Toegang tot de metrische gegevens wordt bepaald door de roltoewijzing van het controle sfeer liggen-account. Gebruikers moeten deel uitmaken van de rol ' controle lezer ' in azure controle sfeer liggen om de metrische gegevens te bekijken. Bekijk de [rol van bewakings lezers rollen](../azure-monitor/roles-permissions-security.md#built-in-monitoring-roles) voor meer informatie over de toegangs niveaus voor rollen.
 
 De persoon die het controle sfeer liggen-account heeft gemaakt, krijgt automatisch machtigingen voor het weer geven van metrische gegevens. Als iemand anders de metrische gegevens wil zien, voegt u deze toe aan de rol **controle lezer** door de volgende stappen uit te voeren:
 
@@ -58,11 +58,11 @@ Azure controle sfeer liggen-gebruikers kunnen ook rechtstreeks toegang krijgen t
 
 ### <a name="available-metrics"></a>Beschikbare metrische gegevens
 
-Om vertrouwd te raken met het gebruik van de sectie metric in de Azure Portal de volgende twee documenten vooraf te lezen. [Aan de slag met metrische Explorer](../azure-monitor/platform/metrics-getting-started.md) en [geavanceerde functies van metrische Explorer](../azure-monitor/platform/metrics-charts.md).
+Om vertrouwd te raken met het gebruik van de sectie metric in de Azure Portal de volgende twee documenten vooraf te lezen. [Aan de slag met metrische Explorer](../azure-monitor/essentials/metrics-getting-started.md) en [geavanceerde functies van metrische Explorer](../azure-monitor/essentials/metrics-charts.md).
 
 De volgende tabel bevat de lijst met metrische gegevens die u kunt verkennen in de Azure Portal:
 
-| Naam meetwaarde | Metrische naamruimte | Type aggregatie | Beschrijving |
+| Naam meetwaarde | Metrische naamruimte | Type aggregatie | Description |
 | ------------------- | ------------------- | ------------------- | ----------------- |
 | De scan is geannuleerd | Automatische scan | Sum <br> Count | De geannuleerde gegevens bron wordt gecontroleerd op basis van de tijds periode |
 | De scan is voltooid | Automatische scan | Sum <br> Count | De voltooide scan van gegevens bronnen samen voegen gedurende een bepaalde periode |
@@ -75,7 +75,7 @@ Onbewerkte telemetriegegevens worden verzonden naar Azure Monitor. Gebeurtenisse
 
 Volg de stappen voor het maken van een diagnostische instelling voor uw Azure controle sfeer liggen-account.
 
-1. Maak een nieuwe diagnostische instelling voor het verzamelen van platform logboeken en metrische gegevens aan de hand van dit artikel: [Diagnostische instellingen maken voor het verzenden van platform logboeken en metrische gegevens naar verschillende bestemmingen](../azure-monitor/platform/diagnostic-settings.md). Selecteer de bestemming alleen als Azure Storage-account.
+1. Maak een nieuwe diagnostische instelling voor het verzamelen van platform logboeken en metrische gegevens aan de hand van dit artikel: [Diagnostische instellingen maken voor het verzenden van platform logboeken en metrische gegevens naar verschillende bestemmingen](../azure-monitor/essentials/diagnostic-settings.md). Selecteer de bestemming alleen als Azure Storage-account.
 
    :::image type="content" source="./media/how-to-monitor-with-azure-monitor/step-one-diagnostic-setting.png" alt-text="Scherm opname van het maken van een diagnostisch logboek." lightbox="./media/how-to-monitor-with-azure-monitor/step-one-diagnostic-setting.png":::
 

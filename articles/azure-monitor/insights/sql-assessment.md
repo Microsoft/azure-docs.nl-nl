@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/05/2020
-ms.openlocfilehash: 98caca31e172f54c3e37f33c5a463790d9d27032
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e0a7a5b9e19436deaed45382fe23063fa61edadf
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87325981"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587261"
 ---
 # <a name="optimize-your-sql-environment-with-the-sql-server-health-check-solution-in-azure-monitor"></a>Optimaliseer uw SQL-omgeving met de SQL Server Health Check-oplossing in Azure Monitor
 
@@ -44,9 +44,9 @@ Nadat u de oplossing hebt toegevoegd en een evaluatie is voltooid, wordt de same
 
 Voor het uitvoeren van de status controle op uw SQL Server-servers, hebben ze een agent en connectiviteit tot Azure Monitor met een van de volgende ondersteunde methoden:
 
-1. Installeer de [micro soft Monitoring Agent (MMA)](../platform/agent-windows.md) als de server nog niet wordt bewaakt door System Center 2016-Operations Manager of Operations Manager 2012 R2.
+1. Installeer de [micro soft Monitoring Agent (MMA)](../agents/agent-windows.md) als de server nog niet wordt bewaakt door System Center 2016-Operations Manager of Operations Manager 2012 R2.
 2. Als het wordt bewaakt met System Center 2016-Operations Manager of Operations Manager 2012 R2 en de beheer groep is niet geïntegreerd met Azure Monitor, kan de server meerdere locaties hebben met Log Analytics om gegevens te verzamelen en door te sturen naar de service en nog steeds door Operations Manager worden bewaakt.  
-3. Als uw Operations Manager-beheer groep is geïntegreerd met de service, moet u de domein controllers voor het verzamelen van gegevens door de service toevoegen volgens de stappen onder door [agents beheerde computers toevoegen](../platform/om-agents.md#connecting-operations-manager-to-azure-monitor) nadat u de oplossing in uw werk ruimte hebt ingeschakeld.  
+3. Als uw Operations Manager-beheer groep is geïntegreerd met de service, moet u de domein controllers voor het verzamelen van gegevens door de service toevoegen volgens de stappen onder door [agents beheerde computers toevoegen](../agents/om-agents.md#connecting-operations-manager-to-azure-monitor) nadat u de oplossing in uw werk ruimte hebt ingeschakeld.  
 
 De agent op uw SQL Server die aan een Operations Manager beheer groep rapporteert, verzamelt gegevens, stuurt deze door naar de toegewezen beheer server en wordt vervolgens rechtstreeks van een beheer server naar Azure Monitor verzonden.  De gegevens worden niet naar de Operations Manager-data bases geschreven.  
 
@@ -77,7 +77,7 @@ Gebruik de volgende informatie om de Operations Manager uitvoeren als-account in
 >
 
 1. Open de operations-console in Operations Manager en klik vervolgens op **beheer**.
-2. Klik onder **Run as-configuratie**op **profielen**en open **SQL-evaluatie uitvoeren als-profiel**.
+2. Klik onder **Run as-configuratie** op **profielen** en open **SQL-evaluatie uitvoeren als-profiel**.
 3. Klik op de pagina **Run As-accounts** op **Toevoegen**.
 4. Selecteer een Windows run as-account dat de referenties bevat die nodig zijn voor SQL Server, of klik op **Nieuw** om er een te maken.
 
@@ -257,5 +257,5 @@ De resultaten kunnen vervolgens naar Excel worden geëxporteerd voor verdere con
 * Ja, zie de sectie [aanbevelingen negeren](#ignore-recommendations) hierboven.
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Meld query's](../log-query/log-query-overview.md) om te leren hoe u gedetailleerde gegevens en aanbevelingen voor de SQL Health Checker kunt analyseren.
+* [Meld query's](../logs/log-query-overview.md) om te leren hoe u gedetailleerde gegevens en aanbevelingen voor de SQL Health Checker kunt analyseren.
 

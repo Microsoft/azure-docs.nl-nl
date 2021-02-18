@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: sttsinar
-ms.openlocfilehash: 833d96b8ca252cff5384cde114390aba8c2f51c3
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: e3a24e4c947afdc1970f6e624335ecc84dd8eff2
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99097687"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594400"
 ---
 # <a name="b-series-burstable-virtual-machine-sizes"></a>Grootte van de B-serie bebreekbaar virtuele machines
 
@@ -109,7 +109,7 @@ Voor een D16s_v3 met 16 Vcpu's en 64 GiB geheugen is het uurtarief $0,936 per uu
 
 **A**: met de **krediet** metriek kunt u zien hoeveel tegoeden uw virtuele machine heeft gebankd en hoe de **ConsumedCredit** -metriek laat zien hoeveel CPU-tegoeden uw VM van de Bank heeft verbruikt.    U kunt deze metrische gegevens bekijken in het deel venster metrische gegevens in de portal of via een programma via de Azure Monitor-Api's.
 
-Voor meer informatie over het verkrijgen van toegang tot de metrische gegevens voor Azure, verwijzen we u naar het [overzicht van metrieken in Microsoft Azure](../azure-monitor/platform/data-platform.md).
+Voor meer informatie over het verkrijgen van toegang tot de metrische gegevens voor Azure, verwijzen we u naar het [overzicht van metrieken in Microsoft Azure](../azure-monitor/data-platform.md).
 
 ### <a name="q-how-are-credits-accumulated-and-consumed"></a>V: hoe worden tegoed verzameld en verbruikt?
 

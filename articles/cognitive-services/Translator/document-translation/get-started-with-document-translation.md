@@ -6,12 +6,12 @@ manager: nitinme
 ms.author: lajanuar
 author: laujan
 ms.date: 02/11/2021
-ms.openlocfilehash: f6b68ea756253a30f006983c214e287c75637278
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 5508ffc758b08642b05b1f77b66c9f29be1c85a2
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100642374"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650776"
 ---
 # <a name="get-started-with-document-translation-preview"></a>Aan de slag met document vertalingen (preview-versie)
 
@@ -108,7 +108,7 @@ De `sourceUrl` , `targetUrl` en optioneel `glossaryUrl`  moeten een Shared Acces
 * Kopieer en plak de code van een van de voor beelden in uw project.
 * Stel de waarden van uw eind punt, abonnements sleutel en container-URL in.
 * Voer het programma uit. Bijvoorbeeld: `python translate.py`.
-  
+
 ### <a name="java"></a>[Java](#tab/java)
 
 * Maak een werkmap voor uw project. Bijvoorbeeld:
@@ -127,7 +127,7 @@ mkdir sample-project
 mkdir -p src/main/java/
 ```
 
-* Java-bron bestanden (bijvoorbeeld _voorbeeld. java_) Live in src/main/**Java**.
+**Opmerking**: Java-bron bestanden (bijvoorbeeld _voorbeeld. java_) Live in src/main/**Java**.
 
 * Initialiseer uw project met Gradle in uw hoofdmap (bijvoorbeeld *voorbeeld project*):
 
@@ -136,6 +136,7 @@ gradle init --type basic
 ```
 
 * Wanneer u wordt gevraagd om een **DSL** te kiezen, selecteert u **Kotlin**.
+
 * Werk het `build.gradle.kts`  bestand bij. Houd er rekening mee dat u het volgende moet bijwerken `mainClassName` , afhankelijk van het voor beeld:
 
   ```java
@@ -155,7 +156,8 @@ gradle init --type basic
   ```
 
 * Maak een Java-bestand in de **Java** -map en kopieer/plak de code uit het voor beeld. Vergeet niet om uw abonnements sleutel en eind punt toe te voegen.
-**Bouw en voer het voor beeld uit vanuit de hoofdmap**:
+
+* **Bouw en voer het voor beeld uit vanuit de hoofdmap**:
 
 ```powershell
 gradle build
@@ -172,7 +174,7 @@ gradle run
 * Compileer het bestand. Bijvoorbeeld: go build example-code.go.
 * Voer het bestand uit, bijvoorbeeld: voorbeeldcode.
 
----
+ ---
 
 ## <a name="make-document-translation-requests"></a>Aanvragen voor het vertalen van documenten maken
 

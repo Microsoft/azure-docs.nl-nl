@@ -9,12 +9,12 @@ metadata:
   author: dikamath
   ms.author: dikamath
   ms.date: 11/19/2020
-  ms.openlocfilehash: 98ff5a64ae3ed4c66d3a584ba2dda604a1a707b2
-  ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+  ms.openlocfilehash: f02468ca6ba3cc26d06b8caa8b8ae5b863fb51b5
+  ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 02/14/2021
-  ms.locfileid: "100381882"
+  ms.lasthandoff: 02/18/2021
+  ms.locfileid: "100651762"
 landingContent:
 - title: Over Azure VMware Solution
   linkLists:
@@ -72,7 +72,7 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Azure VMware Solution inschakelen
+    - text: Host-quota aanvragen en Azure VMware-oplossing inschakelen
       url: enable-azure-vmware-solution.md
     - text: Kosten besparen met een gereserveerde instantie
       url: reserved-instance.md

@@ -1,21 +1,21 @@
 ---
 title: Een SAS-token (Shared Access Signature) maken voor containers en blobs met micro soft Storage Explorer
-description: Een Shared Access token (SAS) maken voor containers en blobs met micro soft Storage Explorer
+description: Het maken van een Shared Access token (SAS) voor containers en blobs met micro soft Storage Explorer en de Azure Portal
 ms.topic: how-to
 manager: nitinme
 ms.author: lajanuar
 author: laujan
 ms.date: 02/11/2021
-ms.openlocfilehash: 49813a29009e04c81dae59a7d4da2bae411e07b2
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 1425be4fc4e462185f9fee573dc87b04a68bfea4
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100642386"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650742"
 ---
 # <a name="create-sas-tokens-for-document-translation"></a>SAS-tokens maken voor document vertalingen
 
-In dit artikel vindt u informatie over het maken van SAS-tokens (Shared Access Signature) met behulp van de Azure Storage Explorer of Azure Portal. Een SAS-token biedt beveiligde, gedelegeerde toegang tot resources in uw Azure-opslag account.
+In dit artikel leert u hoe u SAS-tokens (Shared Access Signature) kunt maken met behulp van de Azure Storage Explorer of de Azure Portal. Een SAS-token biedt beveiligde, gedelegeerde toegang tot resources in uw Azure-opslag account.
 
 ## <a name="create-sas-tokens-with-azure-storage-explorer"></a>SAS-tokens met Azure Storage Explorer maken
 

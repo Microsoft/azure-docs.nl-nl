@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/17/2020
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: 708c70a5144e4e38dd5de9524711c80ef28cd839
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: 9302bde13a303dda2107900dc0c10cc180669a18
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100092125"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650725"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>De Text Analytics aanroepen REST API
 
@@ -37,7 +37,7 @@ Voordat u de Text Analytics-API gebruikt, moet u een Azure-resource maken met ee
 
 ## <a name="change-your-pricing-tier"></a>Uw prijs categorie wijzigen 
 
-Als u een bestaande Text Analytics resource hebt met de prijs categorie S0 via S4, kunt u deze bijwerken om de [prijs categorie](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/)Standard (S) te gebruiken:
+Als u een bestaande Text Analytics resource hebt met de prijs categorie S0 via S4, moet u deze bijwerken om de [prijs categorie](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/)Standard (S) te gebruiken. De prijs categorieën S0 tot en met S4 worden buiten gebruik gesteld. De prijzen van uw resource bijwerken:
 
 1. Navigeer naar uw Text Analytics-resource in de [Azure Portal](https://portal.azure.com/).
 2. Selecteer **prijs categorie** in het navigatie menu links. Het gaat onder **resource beheer**. 

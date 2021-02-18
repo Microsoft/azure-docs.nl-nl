@@ -3,18 +3,18 @@ title: Inzicht in het werken met Azure Cost Management-gegevens
 description: Dit artikel helpt u om een beter beeld te krijgen van gegevens die worden opgenomen in Azure Cost Management en hoe vaak deze worden verwerkt, verzameld, weergegeven en afgesloten.
 author: bandersmsft
 ms.author: banders
-ms.date: 01/06/2021
+ms.date: 01/17/2021
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: micflan
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: e6096c259ec1870a711a515bf02d5d00b4f75345
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
-ms.translationtype: HT
+ms.openlocfilehash: ad099fc7dfcee168186ef5229785933f4b1c5a90
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97964147"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650878"
 ---
 # <a name="understand-cost-management-data"></a>Inzicht in gegevens van Cost Management
 
@@ -31,6 +31,7 @@ In de onderstaande tabel vindt u informatie over de momenteel ondersteunde [Micr
 | **Categorie**  | **Naam van aanbieding** | **Quotum-id** | **Nummer van aanbieding** | **Gegevens beschikbaar vanaf** |
 | --- | --- | --- | --- | --- |
 | **Azure Government** | Azure Government Enterprise                                                         | EnterpriseAgreement_2014-09-01 | MS-AZR-USGOV-0017P | mei 2014<sup>1</sup> |
+| **Azure Government** | Azure Government - Betalen per gebruik | PayAsYouGo_2014-09-01 | MS-AZR-USGOV-0003P | 2 oktober 2018<sup>2</sup> |
 | **Enterprise Agreement (EA)** | Enterprise Dev/Test                                                        | MSDNDevTest_2014-09-01 | MS-AZR-0148P | mei 2014<sup>1</sup> |
 | **Enterprise Agreement (EA)** | Microsoft Azure Enterprise | EnterpriseAgreement_2014-09-01 | MS-AZR-0017P | mei 2014<sup>1</sup> |
 | **Microsoft-klantovereenkomst** | Microsoft Azure Plan | EnterpriseAgreement_2014-09-01 | N.v.t. | maart 2019<sup>3</sup> |
@@ -51,7 +52,7 @@ In de onderstaande tabel vindt u informatie over de momenteel ondersteunde [Micr
 
 _<sup>**1**</sup> Voor gegevens van vóór 2014 mei gaat u naar de [Azure Enterprise-portal](https://ea.azure.com)._
 
-_<sup>**2**</sup> Voor gegevens van vóór 2 oktober 2018, gaat u naar het [Azure-accountcentrum](https://account.azure.com/subscriptions)._
+_<sup>**2**</sup> voor gegevens vóór 2 oktober 2018 gaat u naar de [Azure-Accountcentrum](https://account.azure.com/subscriptions) voor globale accounts en [Azure-Accountcentrum gov](https://account.windowsazure.us/subscriptions) voor Azure Government-accounts._
 
 _<sup>**3**</sup> Microsoft-klantovereenkomsten die zijn gestart in maart 2019 en die geen historische gegevens hebben vóór dit punt._
 
@@ -62,7 +63,6 @@ De volgende aanbiedingen worden nog niet ondersteund:
 | Categorie  | **Naam van aanbieding** | **Quotum-id** | **Nummer van aanbieding** |
 | --- | --- | --- | --- |
 | **Azure Duitsland** | Azure Duitsland - Betalen per gebruik | PayAsYouGo_2014-09-01 | MS-AZR-DE-0003P |
-| **Azure Government** | Azure Government - Betalen per gebruik | PayAsYouGo_2014-09-01 | MS-AZR-USGOV-0003P |
 | **Cloud Solution Provider (CSP)** | Microsoft Azure                                    | CSP_2015-05-01 | MS-AZR-0145P |
 | **Cloud Solution Provider (CSP)** | Azure Government CSP                               | CSP_2015-05-01 | MS-AZR-USGOV-0145P |
 | **Cloud Solution Provider (CSP)** | Azure Duitsland in CSP voor Microsoft Cloud Duitsland   | CSP_2015-05-01 | MS-AZR-DE-0145P |
@@ -161,7 +161,7 @@ Wanneer de kosten- en gebruiksgegevens beschikbaar komen in Cost Management en F
 
 ### <a name="rerated-data"></a>Opnieuw berekende tarieven
 
-Ongeacht of u gegevens ophaalt met behulp van de API's van Cost Management, Power BI of in Azure Portal, u dient er rekening mee te houden dat het tarief voor de kosten van de huidige factureringsperiode opnieuw wordt berekend totdat de factuur is gesloten en dat de kosten dus kunnen veranderen.
+Of u de Cost Management-Api's, Power BI of de Azure Portal gebruikt om gegevens op te halen, de kosten van de huidige facturerings periode moeten worden geclassificeerd. Kosten kunnen veranderen totdat de factuur is gesloten.
 
 ## <a name="cost-rounding"></a>Kostenafronding
 
@@ -175,7 +175,7 @@ De in Cost Management weergegeven kosten worden afgerond. Kosten die worden gere
 
 ## <a name="historical-data-might-not-match-invoice"></a>Historische gegevens komen mogelijk niet overeenkomen met de factuur
 
-Historische gegevens voor aanbiedingen die zijn gebaseerd op tegoeden en vooraf betalen, komen mogelijk niet overeen met uw factuur. Bij sommige Azure-aanbiedingen van betalen per gebruik, MSDN en Visual Studio kunnen tegoeden en voorafbetalingen van Azure op de factuur worden toegepast. De historische gegevens die in Cost Management worden weergegeven, zijn echter alleen gebaseerd op uw geschatte verbruikskosten. Historische gegevens van Cost Management bevatten geen betalingen en tegoeden. Het is dus mogelijk dat historische gegevens die worden weergegeven voor de volgende aanbiedingen mogelijk niet exact overeen met uw factuur.
+Historische gegevens voor aanbiedingen die zijn gebaseerd op tegoeden en vooraf betalen, komen mogelijk niet overeen met uw factuur. Bij sommige Azure-aanbiedingen van betalen per gebruik, MSDN en Visual Studio kunnen tegoeden en voorafbetalingen van Azure op de factuur worden toegepast. De historische gegevens die in Cost Management worden weer gegeven, zijn alleen gebaseerd op uw geschatte verbruiks kosten. Historische gegevens van Cost Management bevatten geen betalingen en tegoeden. Historische gegevens die worden weer gegeven voor de volgende aanbiedingen, komen mogelijk niet exact overeen met uw factuur.
 
 - Azure for Students (MS-AZR-0170P)
 - Azure in Open (MS-AZR-0111P)

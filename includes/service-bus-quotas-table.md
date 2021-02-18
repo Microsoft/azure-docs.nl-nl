@@ -5,15 +5,15 @@ services: service-bus-messaging
 author: spelluru
 ms.service: service-bus-messaging
 ms.topic: include
-ms.date: 07/15/2020
+ms.date: 02/17/2021
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 46e5400627e4d2896265ed95410c8afcb918043b
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: ee066ff46f319749469a41e6decf12b35c0ee27e
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100106081"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100651937"
 ---
 De volgende tabel vermeldt quotuminformatie die specifiek is voor Azure Service Bus-berichten. Voor informatie over prijzen en andere quota voor Service Bus raadpleegt u [Service Bus-prijzen](https://azure.microsoft.com/pricing/details/service-bus/).
 
@@ -28,15 +28,15 @@ De volgende tabel vermeldt quotuminformatie die specifiek is voor Azure Service 
 | Aantal [gepartitioneerde onderwerpen](../articles/service-bus-messaging/service-bus-partitioning.md) of wachtrijen per naamruimte |Naamruimte |Verdere verzoeken om nieuwe gepartitioneerde onderwerpen of wachtrijen in de naamruimte te maken, worden geweigerd. Als dit wordt geconfigureerd via de [Azure Portal][Azure portal], wordt er een foutbericht gegenereerd. Indien aangeroepen vanuit de beheer-API, wordt de uitzondering **QuotaExceededException** ontvangen door de aanroepende code. |Basic- en Standard-lagen: 100.<br/><br/>Gepartitioneerde entiteiten worden niet ondersteund in de [Premium-laag](../articles/service-bus-messaging/service-bus-premium-messaging.md).<br/><br />Elke gepartitioneerde wachtrij of onderwerp telt voor het quotum van 1000 entiteiten per naamruimte. |
 | Maximale grootte van ieder berichtentiteitspad: wachtrij of onderwerp |Entiteit |- |260 tekens. |
 | Maximale grootte van berichtentiteitsnaam: naamruimte, abonnement of abonnementsregel |Entiteit |- |50 tekens. |
-| Maximale berichtgrootte van een [bericht-ID](/dotnet/api/microsoft.azure.servicebus.message.messageid) | Entiteit |- | 128 |
-| Maximale berichtgrootte van een [sessie-ID](/dotnet/api/microsoft.azure.servicebus.message.sessionid) | Entiteit |- | 128 |
+| Maximale berichtgrootte van een bericht-ID | Entiteit |- | 128 |
+| Maximale berichtgrootte van een sessie-ID | Entiteit |- | 128 |
 | Berichtgrootte voor een wachtrij, onderwerp of abonnementsentiteit |Entiteit |Binnenkomende berichten die deze quota overschrijden, worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. |Maximale berichtgrootte: 256 KB voor [Standard-laag](../articles/service-bus-messaging/service-bus-premium-messaging.md), 1 MB voor [Premium-laag](../articles/service-bus-messaging/service-bus-premium-messaging.md). <br /><br />Door oververhitting van het systeem is deze limiet minder dan deze waarden.<br /><br />Maximale header-grootte: 64 KB.<br /><br />Maximumaantal headereigenschappen in eigenschapverzameling: **byte/int.MaxValue**.<br /><br />Maximale grootte van eigenschap in eigenschapverzameling: Geen expliciete limiet. Beperkt door maximale header-grootte. |
-| Berichteigenschapsgrootte voor een wachtrij, onderwerp of abonnementsentiteit |Entiteit | De uitzondering `SerializationException` wordt gegenereerd. |De maximale grootte van de berichteigenschap voor elke eigenschap is 32.000. De cumulatieve grootte van alle eigenschappen mag niet groter zijn dan 64.000. Deze limiet is van toepassing op de volledige header van het [Brokered bericht](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage), die zowel gebruikerseigenschappen als systeemkenmerken heeft, zoals een [sequentienummer](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.sequencenumber), [label](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.label) en [bericht-id](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.messageid). |
+| Berichteigenschapsgrootte voor een wachtrij, onderwerp of abonnementsentiteit |Entiteit | De uitzondering `SerializationException` wordt gegenereerd. |De maximale grootte van de berichteigenschap voor elke eigenschap is 32.000. De cumulatieve grootte van alle eigenschappen mag niet groter zijn dan 64.000. Deze limiet is van toepassing op de volledige header van het brokered-bericht, met zowel gebruikers eigenschappen als systeem eigenschappen, zoals Volg nummer, label en bericht-ID. |
 | Aantal abonnementen per onderwerp |Entiteit |Volgende aanvragen om aanvullende abonnementen te maken voor het onderwerp worden geweigerd. Als resultaat wordt er een foutbericht weergegeven als de entiteit wordt geconfigureerd via de portal. Als deze wordt aangeroepen vanuit de beheer-API, wordt een uitzondering ontvangen door de aanroepende code. |2\.000 per onderwerp voor de laag Standard en Premium. |
 | Aantal SQL-filters per onderwerp |Entiteit |Volgende aanvragen om aanvullende filters te maken voor het onderwerp worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. |2.000 |
 | Aantal correlatiefilters per onderwerp |Entiteit |Volgende aanvragen om aanvullende filters te maken voor het onderwerp worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. |100.000 |
 | Grootte van SQL-filters of acties |Naamruimte |Volgende aanvragen om aanvullende filters te maken, worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. |Maximale lengte van de filtervoorwaarde: 1024 (1k).<br /><br />Maximale lengte van de regelactie: 1024 (1k).<br /><br />Maximumaantal expressies per regelactie: 32. |
-| Aantal [SharedAccessAuthorizationRule](/dotnet/api/microsoft.servicebus.messaging.sharedaccessauthorizationrule)-regels per naamruimte, wachtrij of onderwerp |Entiteit, naamruimte |Volgende aanvragen om aanvullende regels te maken, worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. |Maximumaantal regels per entiteitstype: 12. <br /><br /> Regels die zijn geconfigureerd in een Service Bus-naamruimte zijn van toepassing op alle typen: wachtrijen, onderwerpen. |
+| Aantal Shared Access Authorization-regels per naam ruimte, wachtrij of onderwerp |Entiteit, naamruimte |Volgende aanvragen om aanvullende regels te maken, worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. |Maximumaantal regels per entiteitstype: 12. <br /><br /> Regels die zijn geconfigureerd in een Service Bus-naamruimte zijn van toepassing op alle typen: wachtrijen, onderwerpen. |
 | Aantal berichten per transactie | Transactie | Extra binnenkomende berichten worden geweigerd en een uitzondering met de melding 'Kan niet meer dan 100 berichten in een transactie verzenden' wordt ontvangen door de aanroepende code. | 100 <br /><br /> Voor zowel de bewerking **Send()** als **SendAsync()** . |
 | Aantal filterregels voor virtuele netwerken en IP's | Naamruimte | &nbsp; | 128 | 
 

@@ -10,12 +10,12 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 zone_pivot_groups: client-operating-system-macos-and-linux-windows-powershell
-ms.openlocfilehash: ac9c8efbe29bf1420a94d486b650758cc22bec2f
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 61ac4c979445ef48b5986ec3793a9880cedc837a
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100575750"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650249"
 ---
 # <a name="upload-usage-data-metrics-and-logs-to-azure-monitor"></a>De gebruiks gegevens, de metrieken en de logboeken uploaden naar Azure Monitor
 
@@ -29,7 +29,7 @@ U kunt regel matig gebruiks gegevens voor facturerings doeleinden exporteren, me
 Voordat u gebruiks gegevens, metrieken of Logboeken kunt uploaden, moet u het volgende doen:
 
 * Hulpprogramma's installeren 
-* [De `Microsoft.AzureData` resource provider registreren](#register-the-resource-provider) 
+* [De `Microsoft.AzureArcData` resource provider registreren](#register-the-resource-provider) 
 * [De service-principal maken](#create-service-principal)
 
 ## <a name="install-tools"></a>Hulpprogramma's installeren

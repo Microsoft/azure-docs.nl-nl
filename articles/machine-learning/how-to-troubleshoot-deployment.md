@@ -10,16 +10,24 @@ ms.author: gopalv
 ms.date: 11/25/2020
 ms.topic: troubleshooting
 ms.custom: contperf-fy20q4, devx-track-python, deploy, contperf-fy21q2
-ms.openlocfilehash: 2b953fd040b9ba76eacddb91a89ac65d51e340a0
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 4901d73235778a3194fe75b95df9cb81aeeb093b
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98071660"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100651677"
 ---
 # <a name="troubleshooting-remote-model-deployment"></a>Problemen met de implementatie van externe modellen oplossen 
 
 Informatie over het oplossen en oplossen van veelvoorkomende fouten die kunnen optreden bij het implementeren van een model naar Azure Container Instances (ACI) en Azure Kubernetes service (AKS) met behulp van Azure Machine Learning.
+
+> [!NOTE]
+> Als u een model implementeert in azure Kubernetes service (AKS), raden wij u aan [Azure monitor](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-enable-existing-clusters) voor dat cluster in te scha kelen. Dit helpt u bij het begrijpen van het totale cluster status-en resource gebruik. U kunt ook de volgende bronnen nuttig vinden:
+>
+> * [Controleren op Resource Health gebeurtenissen die van invloed zijn op uw AKS-cluster](https://docs.microsoft.com/azure/aks/aks-resource-health)
+> * [Diagnostische gegevens voor Azure Kubernetes-service](https://docs.microsoft.com/azure/aks/concepts-diagnostics)
+>
+> Als u probeert een model te implementeren in een beschadigde of overbelast cluster, worden er waarschijnlijk problemen ondervinden. Neem contact op met de ondersteuning van AKS als u hulp nodig hebt bij het oplossen van problemen met AKS-clusters.
 
 ## <a name="prerequisites"></a>Vereisten
 

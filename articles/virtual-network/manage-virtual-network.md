@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/10/2019
 ms.author: kumud
-ms.openlocfilehash: 61ca4dc8cd7048df69c827e7ca657b9882900819
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: cc0028a8c7d6d15277c3789118b13b80ed4306ea
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98218906"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596636"
 ---
 # <a name="create-change-or-delete-a-virtual-network"></a>Een virtueel netwerk maken, wijzigen of verwijderen
 
@@ -87,7 +87,7 @@ Voer de volgende taken uit voordat u de stappen in een van de secties van dit ar
    - **Eigenschappen**: geeft instellingen weer over het virtuele netwerk, met inbegrip van de resource-id van het virtuele netwerk en het Azure-abonnement waarin deze zich bevindt.
    - **Diagram**: het diagram biedt een visuele weer gave van alle apparaten die zijn verbonden met het virtuele netwerk. Het diagram bevat enkele belang rijke informatie over de apparaten. Als u een apparaat in deze weer gave wilt beheren, selecteert u het apparaat in het diagram.
    - **Algemene Azure-instellingen**: voor meer informatie over algemene Azure-instellingen raadpleegt u de volgende informatie:
-     - [Activiteitenlogboek](../azure-monitor/platform/platform-logs-overview.md)
+     - [Activiteitenlogboek](../azure-monitor/essentials/platform-logs-overview.md)
      - [Toegangsbeheer (IAM)](../role-based-access-control/overview.md)
      - [Tags](../azure-resource-manager/management/tag-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
      - [Vergrendelingen](../azure-resource-manager/management/lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
@@ -170,7 +170,7 @@ U kunt een virtueel netwerk alleen verwijderen als er geen resources zijn verbon
 
 Als u taken wilt uitvoeren op virtuele netwerken, moet uw account worden toegewezen aan de rol [netwerk bijdrager](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) of aan een [aangepaste](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) rol waaraan de juiste acties in de volgende tabel zijn toegewezen:
 
-| Actie                                  |   Naam                                |
+| Bewerking                                  |   Name                                |
 |---------------------------------------- |   --------------------------------    |
 |Micro soft. Network/virtualNetworks/lezen   |   Een virtueel netwerk lezen              |
 |Micro soft. Network/virtualNetworks/schrijven  |   Een virtueel netwerk maken of bijwerken  |

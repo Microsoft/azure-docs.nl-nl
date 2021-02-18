@@ -1,35 +1,39 @@
 ---
-title: Azure Data Lake Storage Gen2 Power shell voor bestanden & Acl's
-description: Gebruik Power shell-cmdlets voor het beheren van mappen en ACL'S (toegangs beheer lijsten) in opslag accounts met een hiërarchische naam ruimte (HNS) ingeschakeld.
+title: 'Power shell gebruiken voor het beheren van gegevens: Azure Data Lake Storage Gen2'
+description: Gebruik Power shell-cmdlets voor het beheren van mappen en bestanden in opslag accounts waarvoor een hiërarchische naam ruimte is ingeschakeld.
 services: storage
 author: normesta
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
 ms.topic: how-to
-ms.date: 01/06/2021
+ms.date: 02/17/2021
 ms.author: normesta
 ms.reviewer: prishet
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: fb715840ec3b3b1d5e65f17d4c18eb719e6acf80
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: fe7ad949d7301a035eb17d2b4d8d678dfb2e0546
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98043571"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650193"
 ---
-# <a name="use-powershell-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Power shell gebruiken voor het beheren van mappen, bestanden en Acl's in Azure Data Lake Storage Gen2
+# <a name="use-powershell-to-manage-directories-and-files-in-azure-data-lake-storage-gen2"></a>Power shell gebruiken voor het beheren van mappen en bestanden in Azure Data Lake Storage Gen2
 
-In dit artikel leest u hoe u Power shell gebruikt voor het maken en beheren van mappen, bestanden en machtigingen in opslag accounts met een hiërarchische naam ruimte (HNS) ingeschakeld. 
+In dit artikel leest u hoe u Power shell gebruikt voor het maken en beheren van mappen en bestanden in opslag accounts met een hiërarchische naam ruimte.
+
+Zie [Power shell gebruiken voor het beheren van acl's in azure data Lake Storage Gen2](data-lake-storage-acl-powershell.md)voor meer informatie over het ophalen, instellen en bijwerken van de acl's (toegangs beheer lijsten) van mappen en bestanden.
 
 [Naslag informatie](/powershell/module/Az.Storage/)  |  Toewijzing van gen1 [naar Gen2](#gen1-gen2-map)  |  [Feedback geven](https://github.com/Azure/azure-powershell/issues)
 
 ## <a name="prerequisites"></a>Vereisten
 
-> [!div class="checklist"]
-> * Een Azure-abonnement. Zie [Gratis proefversie van Azure ophalen](https://azure.microsoft.com/pricing/free-trial/).
-> * Een opslag account met een hiërarchische naam ruimte (HNS) ingeschakeld. Volg [deze](../common/storage-account-create.md) instructies om er een te maken.
-> * .NET Framework is 4.7.2 of hoger geïnstalleerd. Zie [.NET Framework downloaden](https://dotnet.microsoft.com/download/dotnet-framework).
-> * Power shell-versie `5.1` of hoger.
+- Een Azure-abonnement. Zie [Gratis proefversie van Azure ophalen](https://azure.microsoft.com/pricing/free-trial/).
+
+- Een opslag account waarvoor een hiërarchische naam ruimte is ingeschakeld. Volg [deze](create-data-lake-storage-account.md) instructies om er een te maken.
+
+- .NET Framework is 4.7.2 of hoger geïnstalleerd. Zie [.NET Framework downloaden](https://dotnet.microsoft.com/download/dotnet-framework).
+
+- Power shell-versie `5.1` of hoger.
 
 ## <a name="install-the-powershell-module"></a>De PowerShell-module installeren
 
@@ -38,9 +42,9 @@ In dit artikel leest u hoe u Power shell gebruikt voor het maken en beheren van 
    ```powershell
    echo $PSVersionTable.PSVersion.ToString() 
    ```
-    
+
    Zie [bestaande Windows Power shell upgraden](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell) voor informatie over het bijwerken van uw versie van Power shell
-    
+
 2. Installeer **AZ. Storage** -module.
 
    ```powershell
@@ -53,7 +57,7 @@ In dit artikel leest u hoe u Power shell gebruikt voor het maken en beheren van 
 
 Kies hoe u wilt dat uw opdrachten autorisatie aanvragen voor het opslag account. 
 
-### <a name="option-1-obtain-authorization-by-using-azure-active-directory-ad"></a>Optie 1: autorisatie verkrijgen met behulp van Azure Active Directory (AD)
+### <a name="option-1-obtain-authorization-by-using-azure-active-directory-azure-ad"></a>Optie 1: autorisatie verkrijgen met behulp van Azure Active Directory (Azure AD)
 
 Met deze methode zorgt het systeem ervoor dat uw gebruikers account beschikt over de juiste toewijzings-en ACL-machtigingen van Azure op rollen gebaseerde toegangs beheer (Azure RBAC).
 
@@ -127,6 +131,7 @@ $dir.Owner
 $dir.Properties
 $dir.Properties.Metadata
 ```
+
 > [!NOTE]
 > Als u de hoofdmap van de container wilt ophalen, laat u de `-Path` para meter weg.
 
@@ -159,7 +164,7 @@ Move-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname
 
 Een directory verwijderen met de `Remove-AzDataLakeGen2Item` cmdlet.
 
-In dit voor beeld wordt een map met de naam verwijderd `my-directory` . 
+In dit voor beeld wordt een map met de naam verwijderd `my-directory` .
 
 ```powershell
 $filesystemName = "my-file-system"
@@ -173,7 +178,7 @@ U kunt de `-Force` para meter gebruiken om het bestand zonder prompt te verwijde
 
 Down load een bestand vanuit een directory met de `Get-AzDataLakeGen2ItemContent` cmdlet.
 
-In dit voor beeld wordt een bestand gedownload met de naam `upload.txt` van een map met de naam `my-directory` . 
+In dit voor beeld wordt een bestand gedownload met de naam `upload.txt` van een map met de naam `my-directory` .
 
 ```powershell
 $filesystemName = "my-file-system"
@@ -267,150 +272,13 @@ Remove-AzDataLakeGen2Item  -Context $ctx -FileSystem $filesystemName -Path $file
 
 U kunt de `-Force` para meter gebruiken om het bestand zonder prompt te verwijderen.
 
-## <a name="manage-access-control-lists-acls"></a>Toegangs beheer lijsten (Acl's) beheren
-
-U kunt toegangs machtigingen van mappen en bestanden ophalen, instellen en bijwerken.
-
-> [!NOTE]
-> Als u Azure Active Directory (Azure AD) gebruikt om opdrachten te autoriseren, moet u ervoor zorgen dat aan uw beveiligingsprincipal de [rol van BLOB-gegevens eigenaar voor opslag](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner)is toegewezen. Zie voor meer informatie over hoe ACL-machtigingen worden toegepast en de gevolgen van het wijzigen van  [toegangs beheer in azure data Lake Storage Gen2](./data-lake-storage-access-control.md).
-
-### <a name="get-an-acl"></a>Een ACL ophalen
-
-De ACL van een map of bestand ophalen met behulp van de- `Get-AzDataLakeGen2Item` cmdlet.
-
-In dit voor beeld wordt de ACL van de hoofdmap van een **container** opgehaald en wordt de ACL vervolgens naar de console afgedrukt.
-
-```powershell
-$filesystemName = "my-file-system"
-$filesystem = Get-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName
-$filesystem.ACL
-```
-
-In dit voor beeld wordt de ACL van een **Directory** opgehaald en wordt de ACL vervolgens naar de console afgedrukt.
-
-```powershell
-$filesystemName = "my-file-system"
-$dirname = "my-directory/"
-$dir = Get-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname
-$dir.ACL
-```
-
-In dit voor beeld wordt de ACL van een **bestand** opgehaald en wordt de ACL vervolgens naar de console afgedrukt.
-
-```powershell
-$filePath = "my-directory/upload.txt"
-$file = Get-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $filePath
-$file.ACL
-```
-
-In de volgende afbeelding ziet u de uitvoer na het ophalen van de ACL van een directory.
-
-![ACL-uitvoer ophalen voor Directory](./media/data-lake-storage-directory-file-acl-powershell/get-acl.png)
-
-In dit voor beeld heeft de gebruiker die eigenaar is, de machtigingen lezen, schrijven en uitvoeren. De groep die eigenaar is, heeft alleen lees-en uitvoer machtigingen. Zie [toegangs beheer in azure data Lake Storage Gen2](data-lake-storage-access-control.md)voor meer informatie over toegangs beheer lijsten.
-
-### <a name="set-an-acl"></a>Een ACL instellen
-
-Gebruik de `set-AzDataLakeGen2ItemAclObject` cmdlet om een ACL te maken voor de gebruiker die eigenaar is, de groep die eigenaar is of andere gebruikers. Gebruik vervolgens de `Update-AzDataLakeGen2Item` cmdlet om de ACL door te voeren.
-
-In dit voor beeld wordt de ACL ingesteld op de hoofdmap van een **container** voor de gebruiker die eigenaar is van de groep of andere gebruikers, en wordt de ACL vervolgens naar de console afgedrukt.
-
-```powershell
-$filesystemName = "my-file-system"
-$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -Permission rw- 
-$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType group -Permission rw- -InputObject $acl 
-$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType other -Permission -wx -InputObject $acl
-Update-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Acl $acl
-$filesystem = Get-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName
-$filesystem.ACL
-```
-
-In dit voor beeld wordt de ACL ingesteld op een **map** voor de gebruiker die eigenaar is van de groep of andere gebruikers, en wordt de ACL vervolgens naar de console afgedrukt.
-
-```powershell
-$filesystemName = "my-file-system"
-$dirname = "my-directory/"
-$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -Permission rw- 
-$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType group -Permission rw- -InputObject $acl 
-$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType other -Permission -wx -InputObject $acl
-Update-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname -Acl $acl
-$dir = Get-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname
-$dir.ACL
-```
-
-> [!NOTE]
-> Als u een **standaard** -ACL-vermelding wilt instellen, gebruikt u de para meter **-DefaultScope** wanneer u de opdracht **set-AzDataLakeGen2ItemAclObject** uitvoert. Bijvoorbeeld: `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -Permission rwx -DefaultScope`.
-
-In dit voor beeld wordt de toegangs beheer lijst voor een **bestand** ingesteld op de gebruiker die eigenaar is van de groep of van andere gebruikers, en wordt de ACL vervolgens naar de console afgedrukt.
-
-```powershell
-$filesystemName = "my-file-system"
-$filePath = "my-directory/upload.txt"
-$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -Permission rw- 
-$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType group -Permission rw- -InputObject $acl 
-$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType other -Permission "-wx" -InputObject $acl
-Update-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $filePath -Acl $acl
-$file = Get-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $filePath
-$file.ACL
-```
-> [!NOTE]
-> Als u een **standaard** -ACL-vermelding wilt instellen, gebruikt u de para meter **-DefaultScope** wanneer u de opdracht **set-AzDataLakeGen2ItemAclObject** uitvoert. Bijvoorbeeld: `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -Permission rwx -DefaultScope`.
-
-In de volgende afbeelding ziet u de uitvoer na het instellen van de ACL van een bestand.
-
-![ACL-uitvoer voor bestand ophalen](./media/data-lake-storage-directory-file-acl-powershell/set-acl.png)
-
-In dit voor beeld hebben de gebruiker die eigenaar is en de groep die eigenaar is alleen lees-en schrijf machtigingen. Alle andere gebruikers hebben machtigingen voor schrijven en uitvoeren. Zie [toegangs beheer in azure data Lake Storage Gen2](data-lake-storage-access-control.md)voor meer informatie over toegangs beheer lijsten.
-
-### <a name="add-or-update-an-acl-entry"></a>Een ACL-vermelding toevoegen of bijwerken
-
-Haal eerst de ACL op. Gebruik vervolgens de `set-AzDataLakeGen2ItemAclObject` cmdlet om een ACL-vermelding toe te voegen of bij te werken. Gebruik de `Update-AzDataLakeGen2Item` cmdlet om de ACL door te voeren.
-
-In dit voor beeld wordt de ACL voor een gebruiker gemaakt of bijgewerkt voor een **map** .
-
-```powershell
-$filesystemName = "my-file-system"
-$dirname = "my-directory/"
-$acl = (Get-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname).ACL
-$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityID xxxxxxxx-xxxx-xxxxxxxxxxx -Permission r-x -InputObject $acl 
-Update-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname -Acl $acl
-```
-
-> [!NOTE]
-> Als u een **standaard** -ACL-vermelding wilt bijwerken, gebruikt u de para meter **-DefaultScope** wanneer u de opdracht **set-AzDataLakeGen2ItemAclObject** uitvoert. Bijvoorbeeld: `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityID xxxxxxxx-xxxx-xxxxxxxxxxx -Permission r-x -DefaultScope`.
-
-### <a name="remove-an-acl-entry"></a>Een ACL-vermelding verwijderen
-
-In dit voor beeld wordt een item uit een bestaande ACL verwijderd.
-
-```powershell
-$id = "xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-
-# Create the new ACL object.
-[Collections.Generic.List[System.Object]]$aclnew =$acl
-
-foreach ($a in $aclnew)
-{
-    if ($a.AccessControlType -eq "User"-and $a.DefaultScope -eq $false -and $a.EntityId -eq $id)
-    {
-        $aclnew.Remove($a);
-        break;
-    }
-}
-Update-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname -Acl $aclnew
-```
-
-### <a name="set-an-acl-recursively"></a>Recursief instellen van een ACL
-
-U kunt Acl's recursief toevoegen, bijwerken en verwijderen voor de bestaande onderliggende items van een bovenliggende map zonder dat u deze wijzigingen afzonderlijk voor elk onderliggend item hoeft aan te brengen. Zie [acl's (Access Control Lists) recursief instellen voor Azure data Lake Storage Gen2](recursive-access-control-lists.md)voor meer informatie.
-
 <a id="gen1-gen2-map"></a>
 
 ## <a name="gen1-to-gen2-mapping"></a>Toewijzing van gen1 naar Gen2
 
 In de volgende tabel ziet u hoe de cmdlets die worden gebruikt voor Data Lake Storage Gen1 worden toegewezen aan de cmdlets voor Data Lake Storage Gen2.
 
-|Data Lake Storage Gen1-cmdlet| Data Lake Storage Gen2-cmdlet| Opmerkingen |
+|Data Lake Storage Gen1-cmdlet| Data Lake Storage Gen2-cmdlet| Notities |
 |--------|---------|-----|
 |Get-AzDataLakeStoreChildItem|Get-AzDataLakeGen2ChildItem|Standaard worden in de cmdlet Get-AzDataLakeGen2ChildItem alleen de onderliggende items van het eerste niveau weer gegeven. Met de para meter-recursief worden onderliggende items recursief weer gegeven. |
 |Get-AzDataLakeStoreItem<br>Get-AzDataLakeStoreItemAclEntry<br>Get-AzDataLakeStoreItemOwner<br>Get-AzDataLakeStoreItemPermission|Get-AzDataLakeGen2Item|De uitvoer items van de cmdlet Get-AzDataLakeGen2Item hebben de volgende eigenschappen: ACL, eigenaar, groep, machtiging.|
@@ -423,5 +291,5 @@ In de volgende tabel ziet u hoe de cmdlets die worden gebruikt voor Data Lake St
 
 ## <a name="see-also"></a>Zie ook
 
-* [Bekende problemen](data-lake-storage-known-issues.md#api-scope-data-lake-client-library)
-* [PowerShell Storage-cmdlets](/powershell/module/az.storage)
+- [Bekende problemen](data-lake-storage-known-issues.md#api-scope-data-lake-client-library)
+- [PowerShell Storage-cmdlets](/powershell/module/az.storage)

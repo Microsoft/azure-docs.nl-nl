@@ -1,17 +1,15 @@
 ---
 title: Chaos en failover-tests maken voor Azure Service Fabric
 description: Met behulp van de test scenario's voor de Service Fabric chaos test en failover kunt u fouten opdoen en de betrouw baarheid van uw services controleren.
-author: georgewallace
 ms.topic: conceptual
 ms.date: 10/1/2019
-ms.author: gwallace
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 78e613e9d86c44ad7daf8778b35e6af49abb7d38
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 9939ef12dcbcc2b5d8733a68166c8e7162c4b0ea
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100546360"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594987"
 ---
 # <a name="testability-scenarios"></a>Test scenario's
 Grote gedistribueerde systemen zoals Cloud infrastructuren zijn inherent onbetrouwbaar. Azure Service Fabric biedt ontwikkel aars de mogelijkheid om services te schrijven voor het uitvoeren van een onbetrouwbare infra structuur. Ontwikkel aars die een hoogwaardige service willen schrijven, moeten een dergelijke onbetrouwbare infra structuur kunnen maken om de stabiliteit van hun services te testen.

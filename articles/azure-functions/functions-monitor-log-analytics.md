@@ -6,27 +6,27 @@ ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 582dafba40012e9ff9c59bc09adb1a0831e999f5
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: b6ce9e77421df0563810fd7f8255720c1fd2d0c0
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491219"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591085"
 ---
 # <a name="monitoring-azure-functions-with-azure-monitor-logs"></a>Azure Functions controleren met Azure Monitor-logboeken
 
-Azure Functions biedt een integratie met [Azure monitor-logboeken](../azure-monitor/platform/data-platform-logs.md) om functies te bewaken. Dit artikel laat u zien hoe u Azure Functions kunt configureren voor het verzenden van door het systeem gegenereerde en door de gebruiker gegenereerde logboeken naar Azure Monitor-Logboeken.
+Azure Functions biedt een integratie met [Azure monitor-logboeken](../azure-monitor/logs/data-platform-logs.md) om functies te bewaken. Dit artikel laat u zien hoe u Azure Functions kunt configureren voor het verzenden van door het systeem gegenereerde en door de gebruiker gegenereerde logboeken naar Azure Monitor-Logboeken.
 
-Met Azure Monitor Logboeken kunt u logboeken van verschillende resources in dezelfde werk ruimte consolideren, waar het kan worden geanalyseerd met [query's](../azure-monitor/log-query/log-query-overview.md) om verzamelde gegevens snel op te halen, samen te voegen en te analyseren.  U kunt query's maken en testen door [Log Analytics](../azure-monitor/log-query/log-query-overview.md) in Azure Portal te gebruiken. Vervolgens kunt u de gegevens onmiddellijk analyseren met deze hulpprogramma's, maar u kunt de query's ook opslaan om deze te gebruiken met [visualisaties](../azure-monitor/visualizations.md) of [waarschuwingsregels](../azure-monitor/platform/alerts-overview.md).
+Met Azure Monitor Logboeken kunt u logboeken van verschillende resources in dezelfde werk ruimte consolideren, waar het kan worden geanalyseerd met [query's](../azure-monitor/logs/log-query-overview.md) om verzamelde gegevens snel op te halen, samen te voegen en te analyseren.  U kunt query's maken en testen door [Log Analytics](../azure-monitor/logs/log-query-overview.md) in Azure Portal te gebruiken. Vervolgens kunt u de gegevens onmiddellijk analyseren met deze hulpprogramma's, maar u kunt de query's ook opslaan om deze te gebruiken met [visualisaties](../azure-monitor/visualizations.md) of [waarschuwingsregels](../azure-monitor/alerts/alerts-overview.md).
 
-Azure Monitor gebruikt een versie van de [Kusto-querytaal](/azure/kusto/query/) (KQL) die door Azure Data Explorer wordt gebruikt en die geschikt is voor eenvoudige logboekquery's maar die ook geavanceerde functies bevat, zoals aggregaties, joins en slimme analyse. Via [diverse lessen](../azure-monitor/log-query/get-started-queries.md) kunt u de querytaal snel leren.
+Azure Monitor gebruikt een versie van de [Kusto-querytaal](/azure/kusto/query/) (KQL) die door Azure Data Explorer wordt gebruikt en die geschikt is voor eenvoudige logboekquery's maar die ook geavanceerde functies bevat, zoals aggregaties, joins en slimme analyse. Via [diverse lessen](../azure-monitor/logs/get-started-queries.md) kunt u de querytaal snel leren.
 
 > [!NOTE]
 > Integratie met Azure Monitor-Logboeken is momenteel een open bare Preview voor v2-en V3-functie-apps die worden uitgevoerd op Windows-verbruiks-, Premium-en speciale hosting abonnementen.
 
 ## <a name="setting-up"></a>Instellen
 
-1. Selecteer in de sectie **bewaking** van de functie-app [Azure portal](https://portal.azure.com)in het Azure Portal **Diagnostische instellingen** en selecteer vervolgens **Diagnostische instelling toevoegen**.
+1. Selecteer in de sectie **bewaking** van de functie-app [](https://portal.azure.com)in het Azure Portal **Diagnostische instellingen** en selecteer vervolgens **Diagnostische instelling toevoegen**.
 
    :::image type="content" source="media/functions-monitor-log-analytics/diagnostic-settings-add.png" alt-text="Diagnostische instellingen selecteren":::
 
@@ -124,5 +124,5 @@ FunctionAppLogs
 ## <a name="next-steps"></a>Volgende stappen
 
 - Bekijk het [Azure functions overzicht](functions-overview.md).
-- Meer informatie over [Azure monitor-logboeken](../azure-monitor/platform/data-platform-logs.md).
-- Lees meer over de [querytaal](../azure-monitor/log-query/get-started-queries.md).
+- Meer informatie over [Azure monitor-logboeken](../azure-monitor/logs/data-platform-logs.md).
+- Meer informatie over de [querytaal](../azure-monitor/logs/get-started-queries.md).

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 3a232f8e8c35e265a8243ac79e465c03f6b9650e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: cc52d1f6eec5f1aedb0db37b3945f7be6d9f62a8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96487861"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595633"
 ---
 # <a name="security-control-network-security"></a>Beveiligings beheer: netwerk beveiliging
 
@@ -178,13 +178,13 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 | Azure-ID | CIS-Id's | Onder |
 |--|--|--|
-| 1.11 | 11,3 | Klant |
+| 1.11 | 11.3 | Klant |
 
 Gebruik Azure-activiteiten logboek om resource configuraties te bewaken en wijzigingen in uw Azure-resources te detecteren. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke resources plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](../../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken in Azure Monitor](../../azure-monitor/alerts/alerts-activity-log.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 

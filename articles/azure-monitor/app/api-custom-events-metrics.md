@@ -4,12 +4,12 @@ description: Voeg een paar regels code toe aan de apparaat-of bureau blad-app, d
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 72e79ff90422a6f055d5b883ba208555244687b3
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 881c657b25d04834d83221c738c578b8281752b7
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98927821"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593740"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>Application Insights-API voor aangepaste gebeurtenissen en metrische gegevens
 
@@ -108,7 +108,7 @@ In Node.js projecten kunt u gebruiken `new applicationInsights.TelemetryClient(i
 
 ## <a name="trackevent"></a>Track Event
 
-In Application Insights is een *aangepaste gebeurtenis* een gegevens punt dat u kunt weer geven in [Metrics Explorer](../platform/metrics-charts.md) als een geaggregeerd aantal en in [Diagnostische Zoek opdrachten](./diagnostic-search.md) als afzonderlijke exemplaren. (Deze heeft geen betrekking op de gebeurtenissen van MVC of ander Framework.)
+In Application Insights is een *aangepaste gebeurtenis* een gegevens punt dat u kunt weer geven in [Metrics Explorer](../essentials/metrics-charts.md) als een geaggregeerd aantal en in [Diagnostische Zoek opdrachten](./diagnostic-search.md) als afzonderlijke exemplaren. (Deze heeft geen betrekking op de gebeurtenissen van MVC of ander Framework.)
 
 Voeg `TrackEvent` aanroepen in uw code in om verschillende gebeurtenissen te tellen. Hoe vaak gebruikers een bepaalde functie kiezen, hoe vaak ze bepaalde doel stellingen bereiken of misschien hoe vaak ze bepaalde soorten fouten maken.
 
@@ -146,7 +146,7 @@ telemetry.trackEvent({name: "WinGame"});
 
 ### <a name="custom-events-in-analytics"></a>Aangepaste gebeurtenissen in Analytics
 
-De telemetrie is beschikbaar in de `customEvents` tabel in [Application Insights tabblad logboeken](../log-query/log-query-overview.md) of de [gebruiks ervaring](usage-overview.md). Gebeurtenissen kunnen afkomstig zijn van `trackEvent(..)` of [klikken op de invoeg toepassing voor automatische verzamelingen van analyses](javascript-click-analytics-plugin.md).
+De telemetrie is beschikbaar in de `customEvents` tabel in [Application Insights tabblad logboeken](../logs/log-query-overview.md) of de [gebruiks ervaring](usage-overview.md). Gebeurtenissen kunnen afkomstig zijn van `trackEvent(..)` of [klikken op de invoeg toepassing voor automatische verzamelingen van analyses](javascript-click-analytics-plugin.md).
 
  
 
@@ -204,7 +204,7 @@ telemetry.trackMetric({name: "queueLength", value: 42.0});
 
 ### <a name="custom-metrics-in-analytics"></a>Aangepaste metrische gegevens in analyse
 
-De telemetrie is beschikbaar in de `customMetrics` tabel in [Application Insights Analytics](../log-query/log-query-overview.md). Elke rij vertegenwoordigt een aanroep naar `trackMetric(..)` in uw app.
+De telemetrie is beschikbaar in de `customMetrics` tabel in [Application Insights Analytics](../logs/log-query-overview.md). Elke rij vertegenwoordigt een aanroep naar `trackMetric(..)` in uw app.
 
 * `valueSum` -Dit is de som van de metingen. Delen door om de gemiddelde waarde op te halen `valueCount` .
 * `valueCount` -Het aantal metingen dat is geaggregeerd in deze `trackMetric(..)` aanroep.
@@ -274,7 +274,7 @@ De resulterende laad duur van pagina's die wordt weer gegeven in Metrics Explore
 
 ### <a name="page-telemetry-in-analytics"></a>Pagina-telemetrie in Analytics
 
-In [analyse](../log-query/log-query-overview.md) twee tabellen worden gegevens uit browser bewerkingen weer gegeven:
+In [analyse](../logs/log-query-overview.md) twee tabellen worden gegevens uit browser bewerkingen weer gegeven:
 
 * De `pageViews` tabel bevat gegevens over de URL en pagina titel
 * De `browserTimings` tabel bevat gegevens over client prestaties, zoals de tijd die nodig is voor het verwerken van de inkomende gegevens
@@ -310,7 +310,7 @@ De aanbevolen methode voor het verzenden van telemetrie aanvragen is echter waar
 
 ## <a name="operation-context"></a>Bewerkings context
 
-U kunt telemetrie-items samen correleren door ze te koppelen aan de bewerkings context. De standaard module voor aanvraag tracering doet dit voor uitzonde ringen en andere gebeurtenissen die worden verzonden terwijl een HTTP-aanvraag wordt verwerkt. In [Search](./diagnostic-search.md) en [Analytics](../log-query/log-query-overview.md)kunt u eenvoudig alle gebeurtenissen vinden die zijn gekoppeld aan de aanvraag met behulp van de bewerkings-id.
+U kunt telemetrie-items samen correleren door ze te koppelen aan de bewerkings context. De standaard module voor aanvraag tracering doet dit voor uitzonde ringen en andere gebeurtenissen die worden verzonden terwijl een HTTP-aanvraag wordt verwerkt. In [Search](./diagnostic-search.md) en [Analytics](../logs/log-query-overview.md)kunt u eenvoudig alle gebeurtenissen vinden die zijn gekoppeld aan de aanvraag met behulp van de bewerkings-id.
 
 Zie de [correlatie van telemetrie in Application Insights](./correlation.md) voor meer informatie over correlatie.
 
@@ -348,7 +348,7 @@ Zie [aangepaste bewerkingen bijhouden met Application Insights .NET SDK](./custo
 
 ### <a name="requests-in-analytics"></a>Aanvragen in Analytics
 
-In [Application Insights Analytics](../log-query/log-query-overview.md)worden aanvragen weer gegeven in de `requests` tabel.
+In [Application Insights Analytics](../logs/log-query-overview.md)worden aanvragen weer gegeven in de `requests` tabel.
 
 Als er [steek proeven](./sampling.md) worden uitgevoerd, wordt in de eigenschap itemCount een waarde weer gegeven die groter is dan 1. Bijvoorbeeld itemCount = = 10 betekent dat er bij 10 aanroepen naar trackRequest (), het steekproef proces slechts een van deze toegezonden. Als u het juiste aantal aanvragen en gemiddelde duur wilt ophalen op basis van aanvraag namen, gebruikt u de volgende code:
 
@@ -361,7 +361,7 @@ requests
 
 Uitzonde ringen verzenden naar Application Insights:
 
-* Om [ze te tellen](../platform/metrics-charts.md)als een indicatie van de frequentie van een probleem.
+* Om [ze te tellen](../essentials/metrics-charts.md)als een indicatie van de frequentie van een probleem.
 * Om [afzonderlijke instanties te controleren](./diagnostic-search.md).
 
 De rapporten bevatten de stack traceringen.
@@ -430,7 +430,7 @@ De Sdk's ondervangen veel uitzonde ringen automatisch, zodat u TrackException ni
 
 ### <a name="exceptions-in-analytics"></a>Uitzonde ringen in analyse
 
-In [Application Insights Analytics](../log-query/log-query-overview.md)worden uitzonde ringen in de `exceptions` tabel weer gegeven.
+In [Application Insights Analytics](../logs/log-query-overview.md)worden uitzonde ringen in de `exceptions` tabel weer gegeven.
 
 Als er [steek proeven](./sampling.md) worden uitgevoerd, `itemCount` wordt in de eigenschap een waarde weer gegeven die groter is dan 1. Bijvoorbeeld itemCount = = 10 betekent dat er bij 10 aanroepen naar trackException (), het steekproef proces slechts een van deze toegezonden. Als u het aantal uitzonde ringen dat is gesegmenteerd per type uitzonde ring, wilt ophalen, gebruikt u de volgende code:
 
@@ -525,7 +525,7 @@ In de [Zoek opdracht](./diagnostic-search.md)kunt u vervolgens eenvoudig alle be
 
 ### <a name="traces-in-analytics"></a>Traces in Analytics
 
-In [Application Insights Analytics](../log-query/log-query-overview.md)worden aanroepen naar TrackTrace weer gegeven in de `traces` tabel.
+In [Application Insights Analytics](../logs/log-query-overview.md)worden aanroepen naar TrackTrace weer gegeven in de `traces` tabel.
 
 Als er [steek proeven](./sampling.md) worden uitgevoerd, wordt in de eigenschap itemCount een waarde weer gegeven die groter is dan 1. Bijvoorbeeld itemCount = = 10 betekent dat bij 10 aanroepen naar `trackTrace()` het steekproef proces slechts één daarvan wordt verzonden. Als u het juiste aantal tracerings aanroepen wilt krijgen, moet u dus code gebruiken, zoals `traces | summarize sum(itemCount)` .
 
@@ -607,7 +607,7 @@ Als u de standaard module voor het bijhouden van afhankelijkheden in C# wilt uit
 
 ### <a name="dependencies-in-analytics"></a>Afhankelijkheden in Analytics
 
-In [Application Insights Analytics](../log-query/log-query-overview.md)worden trackDependency-aanroepen weer gegeven in de `dependencies` tabel.
+In [Application Insights Analytics](../logs/log-query-overview.md)worden trackDependency-aanroepen weer gegeven in de `dependencies` tabel.
 
 Als er [steek proeven](./sampling.md) worden uitgevoerd, wordt in de eigenschap itemCount een waarde weer gegeven die groter is dan 1. Bijvoorbeeld itemCount = = 10 betekent dat er bij 10 aanroepen naar trackDependency (), het steekproef proces slechts een van deze toegezonden. Als u het juiste aantal afhankelijkheden wilt ophalen dat is gesegmenteerd door het doel onderdeel, gebruikt u de volgende code:
 
@@ -695,7 +695,7 @@ Als uw app gebruikers in accounts groepeert, kunt u ook een id voor het account 
 appInsights.setAuthenticatedUserContext(validatedId, accountId);
 ```
 
-In [Metrics Explorer](../platform/metrics-charts.md)kunt u een grafiek maken waarin **gebruikers, geverifieerde** en **gebruikers accounts** worden geteld.
+In [Metrics Explorer](../essentials/metrics-charts.md)kunt u een grafiek maken waarin **gebruikers, geverifieerde** en **gebruikers accounts** worden geteld.
 
 U kunt ook [zoeken](./diagnostic-search.md) naar client gegevens punten met specifieke gebruikers namen en accounts.
 
@@ -816,7 +816,7 @@ telemetry.TrackEvent(event);
 
 ### <a name="custom-measurements-and-properties-in-analytics"></a>Aangepaste metingen en eigenschappen in Analytics
 
-In [analyses](../log-query/log-query-overview.md)worden aangepaste metrische gegevens en eigenschappen weer gegeven in `customMeasurements` de `customDimensions` kenmerken en van elke telemetrie-record.
+In [analyses](../logs/log-query-overview.md)worden aangepaste metrische gegevens en eigenschappen weer gegeven in `customMeasurements` de `customDimensions` kenmerken en van elke telemetrie-record.
 
 Als u bijvoorbeeld een eigenschap met de naam ' game ' aan uw aanvraag-telemetrie hebt toegevoegd, telt deze query het aantal exemplaren van verschillende waarden van ' game ' en wordt het gemiddelde van de aangepaste metrische waarde ' Score ' weer gegeven:
 

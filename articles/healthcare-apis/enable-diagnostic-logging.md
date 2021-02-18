@@ -9,16 +9,16 @@ ms.reviewer: dseven
 ms.author: cavoeg
 author: CaitlinV39
 ms.date: 02/03/2021
-ms.openlocfilehash: 8dc87ae5b296f322d9d5a4d59c0a8c9b1c50d5da
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 220618f93d23ec71ee3246e8bd68bfd724860696
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575433"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581970"
 ---
 # <a name="enable-diagnostic-logging-in-azure-api-for-fhir"></a>Diagnostische logboek registratie inschakelen in azure API voor FHIR
 
-In dit artikel wordt beschreven hoe u diagnostische logboek registratie inschakelt in azure API for FHIR en kunt u enkele voorbeeld query's voor deze logboeken bekijken. De toegang tot Diagnostische logboeken is essentieel voor elke gezondheids zorg waarbij naleving van wettelijke vereisten (zoals HIPAA) een moet zijn. De functie in azure API voor FHIR die Diagnostische logboeken mogelijk maakt, is de [**Diagnostische instellingen**](../azure-monitor/platform/diagnostic-settings.md) in de Azure Portal. 
+In dit artikel wordt beschreven hoe u diagnostische logboek registratie inschakelt in azure API for FHIR en kunt u enkele voorbeeld query's voor deze logboeken bekijken. De toegang tot Diagnostische logboeken is essentieel voor elke gezondheids zorg waarbij naleving van wettelijke vereisten (zoals HIPAA) een moet zijn. De functie in azure API voor FHIR die Diagnostische logboeken mogelijk maakt, is de [**Diagnostische instellingen**](../azure-monitor/essentials/diagnostic-settings.md) in de Azure Portal. 
 
 ## <a name="enable-audit-logs"></a>Audit logboeken inschakelen
 1. Als u diagnostische logboek registratie in azure API voor FHIR wilt inschakelen, selecteert u uw Azure API for FHIR-service in de Azure Portal 
@@ -45,7 +45,7 @@ In dit artikel wordt beschreven hoe u diagnostische logboek registratie inschake
 > [!Note] 
 > Het kan tot vijf tien minuten duren voordat de eerste Logboeken in Log Analytics worden weer gegeven.  
  
-Raadpleeg de documentatie van het [Azure-resource logboek](../azure-monitor/platform/platform-logs-overview.md) voor meer informatie over het werken met Diagnostische logboeken
+Raadpleeg de documentatie van het [Azure-resource logboek](../azure-monitor/essentials/platform-logs-overview.md) voor meer informatie over het werken met Diagnostische logboeken
 
 ## <a name="audit-log-details"></a>Details van controle logboek
 Op dit moment retourneert de Azure API voor de FHIR-service de volgende velden in het audit logboek: 

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/27/2020
 ms.author: errobin
-ms.openlocfilehash: 88c287c4aa87b4df41bfe6bbc1992262b21d07aa
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 190a9e431dedfb0f0fe6077e903174f253f5c773
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232757"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589106"
 ---
 # <a name="using-insights-to-monitor-and-configure-your-azure-load-balancer"></a>Inzichten gebruiken om uw Azure Load Balancer te controleren en te configureren
 
@@ -40,7 +40,7 @@ Voor standaard load balancers worden uw back-endservers met een kleur gecodeerd 
 
 ## <a name="metrics-dashboard"></a>Dashboard met metrische gegevens
 
-Op de Blade inzichten van uw Load Balancer kunt u gedetailleerdere metrische gegevens selecteren om een vooraf geconfigureerde [Azure monitor werkmap](../azure-monitor/platform/workbooks-overview.md) weer te geven met metrische gegevens die relevant zijn voor specifieke aspecten van uw Load Balancer. In dit dash board worden de Load Balancer status en koppelingen naar de relevante documentatie boven aan de pagina weer gegeven.
+Op de Blade inzichten van uw Load Balancer kunt u gedetailleerdere metrische gegevens selecteren om een vooraf geconfigureerde [Azure monitor werkmap](../azure-monitor/visualize/workbooks-overview.md) weer te geven met metrische gegevens die relevant zijn voor specifieke aspecten van uw Load Balancer. In dit dash board worden de Load Balancer status en koppelingen naar de relevante documentatie boven aan de pagina weer gegeven.
 
 In eerste instantie wordt het tabblad Overzicht weer gegeven. U kunt door de beschik bare tabbladen navigeren die visuele elementen bevatten die relevant zijn voor een specifiek aspect van uw Load Balancer. Expliciete richt lijnen zijn beschikbaar in het dash board onder aan elk tabblad.
 
@@ -80,4 +80,4 @@ Het tabblad metrische definities bevat alle informatie die wordt weer gegeven in
 * Bekijk het dash board en geef feedback via de onderstaande koppeling als er iets kan worden verbeterd
 * [Raadpleeg de documentatie over metrische gegevens om te zien hoe elke metriek wordt berekend](./load-balancer-standard-diagnostics.md#multi-dimensional-metrics)
 * [Verbindings monitors voor uw Load Balancer maken](../network-watcher/connection-monitor.md)
-* [Maak uw eigen werkmappen](../azure-monitor/platform/workbooks-overview.md), u kunt inspireren door te klikken op de knop bewerken in het dash board gedetailleerde metrische gegevens
+* [Maak uw eigen werkmappen](../azure-monitor/visualize/workbooks-overview.md), u kunt inspireren door te klikken op de knop bewerken in het dash board gedetailleerde metrische gegevens

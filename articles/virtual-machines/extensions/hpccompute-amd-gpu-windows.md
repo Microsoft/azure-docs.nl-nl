@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 05/10/2020
 ms.author: vikancha
-ms.openlocfilehash: e0a5074061b190088441ed4f6787b112fb11fe5a
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: aad28df218973cf07231262ccd8b9a07f263424f
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966000"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652748"
 ---
 # <a name="amd-gpu-driver-extension-for-windows"></a>Uitbrei ding van AMD GPU-stuur programma voor Windows
 
@@ -70,7 +70,7 @@ In de volgende JSON wordt het schema voor de uitbrei ding weer gegeven.
 
 | Name | Waarde/voor beeld | Gegevenstype |
 | ---- | ---- | ---- |
-| apiVersion | 2015-06-15 | datum |
+| apiVersion | 2015-06-15 | date |
 | publisher | Micro soft. HpcCompute | tekenreeks |
 | type | AmdGpuDriverWindows | tekenreeks |
 | typeHandlerVersion | 1.0 | int |
@@ -151,7 +151,7 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 Uitvoer voor uitvoering van extensie wordt vastgelegd in de volgende map:
 
 ```cmd
-C:\WindowsAzure\Logs\Plugins\Microsoft.HpcCompute.NvidiaGpuDriverMicrosoft\
+C:\WindowsAzure\Logs\Plugins\Microsoft.HpcCompute.AmdGpuDriverMicrosoft\
 ```
 
 ### <a name="error-codes"></a>Foutcodes

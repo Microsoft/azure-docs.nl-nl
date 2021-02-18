@@ -2,23 +2,23 @@
 title: Een Azure Arc enabled Kubernetes-cluster verbinden (preview)
 services: azure-arc
 ms.service: azure-arc
-ms.date: 02/15/2021
+ms.date: 02/17/2021
 ms.topic: article
 author: mlearned
 ms.author: mlearned
 description: Een Azure Arc enabled Kubernetes-cluster verbinden met Azure Arc
 keywords: Kubernetes, Arc, azure, K8s, containers
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 5e2058c5128075de4c37eb9768b204532cd09ffa
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 876bc15a3f4db1d12afec37c69656c431e5e6773
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100558558"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652510"
 ---
 # <a name="connect-an-azure-arc-enabled-kubernetes-cluster-preview"></a>Een Azure Arc enabled Kubernetes-cluster verbinden (preview)
 
-Dit artikel biedt een overzicht van het verbinden van een bestaand Kubernetes-cluster met Azure Arc. Een conceptueel overzicht van deze informatie vindt u [hier](./conceptual-agent-architecture.md).
+In dit artikel wordt stapsgewijs beschreven hoe u een bestaand Kubernetes-cluster verbindt met Azure Arc. Zie het [artikel Azure Arc enabled Kubernetes agent Architecture](./conceptual-agent-architecture.md)voor een conceptueel overzicht van het verbinden van clusters.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -28,12 +28,12 @@ Controleer of u de volgende vereisten hebt voor bereid:
   * Maak een Kubernetes-cluster met behulp [van Kubernetes in docker (kind)](https://kind.sigs.k8s.io/).
   * Maak een Kubernetes-cluster met behulp van docker voor [Mac](https://docs.docker.com/docker-for-mac/#kubernetes) of [Windows](https://docs.docker.com/docker-for-windows/#kubernetes).
 * Een kubeconfig-bestand voor toegang tot de rol cluster en Cluster beheerder op het cluster voor de implementatie van Kubernetes-agents die zijn ingeschakeld voor Arc.
-* De gebruiker of service-principal die wordt gebruikt met `az login` en `az connectedk8s connect` opdrachten moeten de machtigingen lezen en schrijven hebben voor het resource type micro soft. Kubernetes/connectedclusters. De rol ' Kubernetes cluster-Azure Arc-onboarding ' heeft deze machtigingen en kan worden gebruikt voor roltoewijzingen op de gebruiker of Service-Principal.
+* Lees-en schrijf machtigingen voor de gebruiker of service-principal die wordt gebruikt met `az login` en `az connectedk8s connect` opdrachten voor het `Microsoft.Kubernetes/connectedclusters` bron type. De rol ' Kubernetes cluster-Azure Arc-onboarding ' heeft deze machtigingen en kan worden gebruikt voor roltoewijzingen op de gebruiker of Service-Principal.
 * Helm 3 voor het onboarding van het cluster met behulp van een `connectedk8s` uitbrei ding. [Installeer de nieuwste versie van helm 3](https://helm.sh/docs/intro/install) om te voldoen aan deze vereiste.
 * Azure CLI-versie 2.15 + voor het installeren van de Kubernetes CLI-uitbrei dingen van Azure Arc ingeschakeld. [Installeer Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) of werk bij naar de nieuwste versie.
-* Installeer de Azure Arc enabled Kubernetes CLI-extensies:
+* De Azure Arc enabled Kubernetes CLI-extensies:
   
-  * Installeer de `connectedk8s` extensie, waarmee u Kubernetes-clusters kunt verbinden met Azure:
+  * Installeer de `connectedk8s` uitbrei ding om u te helpen bij het verbinden van Kubernetes-clusters met Azure:
   
   ```azurecli
   az extension add --name connectedk8s
@@ -70,7 +70,7 @@ Voor Azure Arc-agents zijn de volgende protocollen/poorten/uitgaande Url's verei
 | `https://eastus.dp.kubernetesconfiguration.azure.com`, `https://westeurope.dp.kubernetesconfiguration.azure.com` | Gegevens vlak eindpunt voor de agent om de status te pushen en configuratie gegevens op te halen.                                      |
 | `https://login.microsoftonline.com`                                                                            | Vereist om Azure Resource Manager-tokens op te halen en bij te werken.                                                                                    |
 | `https://mcr.microsoft.com`                                                                            | Vereist voor het ophalen van container installatie kopieën voor Azure Arc-agents.                                                                  |
-| `https://eus.his.arc.azure.com`, `https://weu.his.arc.azure.com`                                                                            |  Vereist voor het ophalen van door het systeem toegewezen beheerde identiteits certificaten.                                                                  |
+| `https://eus.his.arc.azure.com`, `https://weu.his.arc.azure.com`                                                                            |  Vereist voor het ophalen van door het systeem toegewezen Managed Service Identity-certificaten (MSI).                                                                  |
 
 ## <a name="register-the-two-providers-for-azure-arc-enabled-kubernetes"></a>Registreer de twee providers voor Azure Arc enabled Kubernetes
 
@@ -177,7 +177,9 @@ Name           Location    ResourceGroup
 AzureArcTest1  eastus      AzureArcTest
 ```
 
-U kunt deze resource ook bekijken op de [Azure Portal](https://portal.azure.com/). Open de portal in uw browser en navigeer naar de resource groep en de Azure Arc-Kubernetes-resource, op basis van de resource naam en de naam invoer van de resource groep die eerder in de opdracht zijn gebruikt `az connectedk8s connect` .  
+U kunt deze resource ook bekijken op de [Azure Portal](https://portal.azure.com/).
+1. Open de portal in uw browser.
+1. Ga naar de resource groep en de Azure Arc-Kubernetes-resource, op basis van de resource naam en de naam invoer van de resource groep die eerder in de opdracht zijn gebruikt `az connectedk8s connect` .  
 > [!NOTE]
 > Na de onboarding van het cluster duurt het ongeveer vijf tot tien minuten voor de meta gegevens van het cluster (cluster versie, agent versie, aantal knoop punten, enzovoort) tot het Opper vlak op de overzichts pagina van de Azure Arc enabled Kubernetes-resource in Azure Portal.
 
@@ -220,7 +222,7 @@ Als uw cluster zich achter een uitgaande proxy server bevindt, moeten Azure CLI 
 > [!NOTE]
 > * Opgeven `excludedCIDR` onder `--proxy-skip-range` is belang rijk om ervoor te zorgen dat de communicatie in het cluster niet wordt verbroken voor de agents.
 > * Hoewel `--proxy-http` , `--proxy-https` , en `--proxy-skip-range` worden verwacht voor de meeste uitgaande proxy omgevingen, `--proxy-cert` is alleen vereist als vertrouwde certificaten van de proxy moeten worden toegevoegd aan het vertrouwde certificaat archief van de gehele agent.
-> * De bovenstaande proxy specificatie wordt momenteel alleen toegepast voor Arc-agents en niet voor de stroom die wordt gebruikt in sourceControlConfiguration. Het Kubernetes-team van Azure Arc werkt actief op deze functie en is binnenkort beschikbaar.
+> * De bovenstaande proxy specificatie wordt momenteel alleen toegepast voor Azure Arc-agents en niet voor de stroom die wordt gebruikt in `sourceControlConfiguration` . Het Kubernetes-team van Azure Arc werkt actief aan deze functie.
 
 ## <a name="azure-arc-agents-for-kubernetes"></a>Azure Arc-agents voor Kubernetes
 

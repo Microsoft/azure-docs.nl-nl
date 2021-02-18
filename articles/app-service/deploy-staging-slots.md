@@ -5,17 +5,17 @@ ms.assetid: e224fc4f-800d-469a-8d6a-72bcde612450
 ms.topic: article
 ms.date: 04/30/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: ef90603e8c8cdd66d43b9f88f6d128d8a472fd8a
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 1c4cff264b63506432daf350be3557bae7234584
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150328"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594244"
 ---
 # <a name="set-up-staging-environments-in-azure-app-service"></a>Faseringsomgevingen in Azure App Service instellen
 <a name="Overview"></a>
 
-Wanneer u uw web-app, Web-app op Linux, mobiele back-end of API-app voor [Azure app service](./overview.md)implementeert, kunt u een afzonderlijke implementatie sleuf gebruiken in plaats van de standaard productie sleuf wanneer u in de laag **Standard**, **Premium**of **geïsoleerd** app service plan werkt. Implementatie sites zijn live apps met hun eigen hostnamen. Elementen voor app-inhoud en-configuraties kunnen worden omgewisseld tussen twee implementatie sleuven, met inbegrip van de productie site. 
+Wanneer u uw web-app, Web-app op Linux, mobiele back-end of API-app voor [Azure app service](./overview.md)implementeert, kunt u een afzonderlijke implementatie sleuf gebruiken in plaats van de standaard productie sleuf wanneer u in de laag **Standard**, **Premium** of **geïsoleerd** app service plan werkt. Implementatie sites zijn live apps met hun eigen hostnamen. Elementen voor app-inhoud en-configuraties kunnen worden omgewisseld tussen twee implementatie sleuven, met inbegrip van de productie site. 
 
 Het implementeren van uw toepassing in een niet-productie sleuf biedt de volgende voor delen:
 
@@ -121,13 +121,13 @@ Implementatie sleuven wisselen:
 
     In het dialoog venster **wisselen** worden de instellingen weer gegeven van de geselecteerde bron-en doel sleuven die worden gewijzigd.
 
-2. Selecteer de gewenste **bron** -en **doel** sleuf. Normaal gesp roken is het doel de productie site. Selecteer ook de tabbladen **bron wijzigingen** en **doel wijzigingen** en controleer of de configuratie wijzigingen worden verwacht. Wanneer u klaar bent, kunt u de sleuven direct wisselen door **wisselen**te selecteren.
+2. Selecteer de gewenste **bron** -en **doel** sleuf. Normaal gesp roken is het doel de productie site. Selecteer ook de tabbladen **bron wijzigingen** en **doel wijzigingen** en controleer of de configuratie wijzigingen worden verwacht. Wanneer u klaar bent, kunt u de sleuven direct wisselen door **wisselen** te selecteren.
 
     ![Omwisselen voltooien](./media/web-sites-staged-publishing/SwapImmediately.png)
 
     Als u wilt zien hoe uw doel sleuf wordt uitgevoerd met de nieuwe instellingen voordat de swap daad werkelijk plaatsvindt, selecteert u niet **wisselen**, maar volgt u de instructies in [swap with preview](#Multi-Phase).
 
-3. Wanneer u klaar bent, sluit u het dialoog venster door **sluiten**te selecteren.
+3. Wanneer u klaar bent, sluit u het dialoog venster door **sluiten** te selecteren.
 
 Zie [problemen met swaps oplossen](#troubleshoot-swaps)als u problemen hebt.
 
@@ -157,7 +157,7 @@ Wisselen met preview:
 
     Als u een in behandeling zijnde wisseling wilt annuleren, selecteert u in plaats hiervan **wisseling annuleren** .
 
-4. Wanneer u klaar bent, sluit u het dialoog venster door **sluiten**te selecteren.
+4. Wanneer u klaar bent, sluit u het dialoog venster door **sluiten** te selecteren.
 
 Zie [problemen met swaps oplossen](#troubleshoot-swaps)als u problemen hebt.
 
@@ -183,9 +183,9 @@ Met automatisch wisselen worden Azure DevOps-scenario's gestroomlijnd waarbij u 
 
 Automatisch wisselen configureren:
 
-1. Ga naar de resource pagina van uw app. Selecteer **Deployment slots**  >  *\<desired source slot>*  >  **Configuration**  >  **algemene instellingen**voor configuratie van implementatie sites.
+1. Ga naar de resource pagina van uw app. Selecteer   >  *\<desired source slot>*  >    >  **algemene instellingen** voor configuratie van implementatie sites.
    
-2. Selecteer **aan**om **automatisch te scha kelen**. Selecteer vervolgens de gewenste doel sleuf voor de **implementatie sleuf voor automatisch wisselen**en selecteer **Opslaan** op de opdracht balk. 
+2. Selecteer **aan** om **automatisch te scha kelen**. Selecteer vervolgens de gewenste doel sleuf voor de **implementatie sleuf voor automatisch wisselen** en selecteer **Opslaan** op de opdracht balk. 
    
     ![Selecties voor het configureren van automatisch wisselen](./media/web-sites-staged-publishing/AutoSwap02.png)
 
@@ -222,7 +222,7 @@ Zie [problemen met swaps oplossen](#troubleshoot-swaps)als u problemen hebt.
 
 ## <a name="monitor-a-swap"></a>Een swap bewaken
 
-Als de [wissel bewerking](#AboutConfiguration) veel tijd in beslag neemt, kunt u in het [activiteiten logboek](../azure-monitor/platform/platform-logs-overview.md)informatie ontvangen over de wissel bewerking.
+Als de [wissel bewerking](#AboutConfiguration) veel tijd in beslag neemt, kunt u in het [activiteiten logboek](../azure-monitor/essentials/platform-logs-overview.md)informatie ontvangen over de wissel bewerking.
 
 Selecteer op de resource pagina van de app in de portal in het linkerdeel venster het **activiteiten logboek**.
 
@@ -274,7 +274,7 @@ Standaard krijgen nieuwe sleuven een routerings regel van `0%` , die grijs wordt
 
 ## <a name="delete-a-slot"></a>Een sleuf verwijderen
 
-Zoek en selecteer uw app. Selecteer overzicht van **implementatie sites**  >  *\<slot to delete>*  >  **Overview**. Het app-type wordt weer gegeven als **app service (sleuf)** om u eraan te herinneren dat u een implementatie site bekijkt. Selecteer **verwijderen** op de opdracht balk.  
+Zoek en selecteer uw app. Selecteer overzicht van **implementatie sites**  >  *\<slot to delete>*  >  . Het app-type wordt weer gegeven als **app service (sleuf)** om u eraan te herinneren dat u een implementatie site bekijkt. Selecteer **verwijderen** op de opdracht balk.  
 
 ![Een implementatie site verwijderen](./media/web-sites-staged-publishing/DeleteStagingSiteButton.png)
 
@@ -291,7 +291,7 @@ Azure PowerShell is een module die cmdlets biedt voor het beheren van Azure via 
 Zie [Microsoft Azure PowerShell installeren en configureren](/powershell/azure/)voor meer informatie over het installeren en configureren van Azure PowerShell en over het verifiëren van Azure PowerShell met uw Azure-abonnement.  
 
 ---
-### <a name="create-a-web-app"></a>Een webtoepassing maken
+### <a name="create-a-web-app"></a>Een web-app maken
 ```powershell
 New-AzWebApp -ResourceGroupName [resource group name] -Name [app name] -Location [location] -AppServicePlan [app service plan name]
 ```
@@ -398,7 +398,7 @@ Zie [AZ webapp Deployment sleuf](/cli/azure/webapp/deployment/slot)voor [Azure c
 
 ## <a name="troubleshoot-swaps"></a>Problemen met swaps oplossen
 
-Als er een fout optreedt tijdens het wisselen van een [sleuf](#AboutConfiguration), wordt deze *D:\home\LogFiles\eventlog.xml*aangemeld. Het wordt ook vastgelegd in het logboek voor toepassings specifieke fouten.
+Als er een fout optreedt tijdens het wisselen van een [sleuf](#AboutConfiguration), wordt deze *D:\home\LogFiles\eventlog.xml* aangemeld. Het wordt ook vastgelegd in het logboek voor toepassings specifieke fouten.
 
 Hier volgen enkele veelvoorkomende wissel fouten:
 

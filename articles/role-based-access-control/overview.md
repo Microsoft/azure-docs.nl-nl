@@ -10,12 +10,12 @@ ms.workload: identity
 ms.date: 09/30/2020
 ms.author: rolyon
 ms.custom: contperf-fy21q1, azuread-video-2020
-ms.openlocfilehash: 5bf9b79621ae1cd2c73f2e3ce18b0780bcdd2a71
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 4241e476b2f778ff63057d0491b5dc8666c7520c
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100559336"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650861"
 ---
 # <a name="what-is-azure-role-based-access-control-azure-rbac"></a>Wat is Azure RBAC (toegangsbeheer op basis van rollen)?
 
@@ -86,7 +86,7 @@ Zie [stappen voor het toewijzen van een Azure-rol](role-assignments-steps.md)voo
 
 ## <a name="multiple-role-assignments"></a>Meervoudige roltoewijzingen
 
-Wat gebeurt er wanneer er meerdere overlappende roltoewijzingen zijn? Azure RBAC is een additief model, dus uw effectieve machtigingen zijn de som van uw roltoewijzingen. Bekijk het volgende voorbeeld, waarbij aan een gebruiker de rol Inzender wordt toegekend in het abonnementsbereik en de rol Lezer in een resourcegroep. De som van de Inzender- en Lezer-machtigingen is effectief gelijk aan de rol Inzender voor de resourcegroep. Daarom heeft in dit geval de toewijzing van de rol Lezer geen impact.
+Wat gebeurt er wanneer er meerdere overlappende roltoewijzingen zijn? Azure RBAC is een additief model, dus uw effectieve machtigingen zijn de som van uw roltoewijzingen. Bekijk het volgende voorbeeld, waarbij aan een gebruiker de rol Inzender wordt toegekend in het abonnementsbereik en de rol Lezer in een resourcegroep. De som van de Inzender machtigingen en de lezers machtigingen zijn in feite de rol van Inzender voor het abonnement. Daarom heeft in dit geval de toewijzing van de rol Lezer geen impact.
 
 ![Meervoudige roltoewijzingen](./media/overview/rbac-multiple-roles.png)
 

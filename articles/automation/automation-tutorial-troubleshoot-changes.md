@@ -7,12 +7,12 @@ keywords: wijziging, bijhouden, bijhouden van wijzigingen, inventaris, automatis
 ms.date: 12/05/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 28c440f27dcbd4ac509adea83d5c3085488cb488
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
-ms.translationtype: HT
+ms.openlocfilehash: a223ac4296dd160bbdd904e1d3443552d4f49a23
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92204245"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587926"
 ---
 # <a name="troubleshoot-changes-on-an-azure-vm"></a>Problemen met wijzigingen aan een virtuele machine van Azure oplossen
 
@@ -54,7 +54,7 @@ Voor deze zelfstudie moet u eerst Wijzigingen bijhouden en Inventaris inschakele
 
     ![Wijziging inschakelen](./media/automation-tutorial-troubleshoot-changes/enableinventory.png)
 
-3. Kies de [Log Analytics](../azure-monitor/log-query/log-query-overview.md)-werkruimte. In deze werkruimte worden gegevens verzameld die worden gegenereerd door functies als Wijzigingen bijhouden en Inventaris. De werkruimte biedt één locatie om gegevens uit meerdere bronnen te bekijken en te analyseren.
+3. Kies de [Log Analytics](../azure-monitor/logs/log-query-overview.md)-werkruimte. In deze werkruimte worden gegevens verzameld die worden gegenereerd door functies als Wijzigingen bijhouden en Inventaris. De werkruimte biedt één locatie om gegevens uit meerdere bronnen te bekijken en te analyseren.
 
     [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -80,7 +80,7 @@ ConfigurationChange
 | where ConfigChangeType == "WindowsServices" and SvcState == "Stopped"
 ```
 
-Zie [Azure Monitor-logboeken](../azure-monitor/log-query/log-query-overview.md) voor meer informatie over het uitvoeren en doorzoeken van logboekbestanden in Azure Monitor-logboeken.
+Zie [Azure Monitor-logboeken](../azure-monitor/logs/log-query-overview.md) voor meer informatie over het uitvoeren en doorzoeken van logboekbestanden in Azure Monitor-logboeken.
 
 ## <a name="configure-change-tracking"></a>Wijzigingen bijhouden configureren
 
@@ -198,7 +198,7 @@ Het kan handig zijn om wijzigingen te bekijken in Azure Portal, maar het is nóg
 
     ![Signaallogica configureren](./media/automation-tutorial-troubleshoot-changes/configure-signal-logic.png)
 
-10. Selecteer **Nieuwe maken** onder **Actiegroepen**. Een actiegroep is een groep acties die u op meerdere waarschuwingen kunt toepassen. Deze acties kunnen bestaan uit, maar zijn niet beperkt tot, e-mailmeldingen, runbooks, webhooks en nog veel meer. Raadpleeg [Actiegroepen maken en beheren](../azure-monitor/platform/action-groups.md) voor meer informatie over actiegroepen.
+10. Selecteer **Nieuwe maken** onder **Actiegroepen**. Een actiegroep is een groep acties die u op meerdere waarschuwingen kunt toepassen. Deze acties kunnen bestaan uit, maar zijn niet beperkt tot, e-mailmeldingen, runbooks, webhooks en nog veel meer. Raadpleeg [Actiegroepen maken en beheren](../azure-monitor/alerts/action-groups.md) voor meer informatie over actiegroepen.
 
 11. Voer onder **Waarschuwingsdetails definiëren** een naam en beschrijving voor de waarschuwing in. 
 

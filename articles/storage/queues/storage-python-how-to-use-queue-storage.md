@@ -1,20 +1,20 @@
 ---
-title: Azure Queue Storage gebruiken vanuit python-Azure Storage
+title: Azure Queue Storage gebruiken vanuit python
 description: Meer informatie over het gebruik van Azure Queue Storage van python voor het maken en verwijderen van wacht rijen en het invoegen, ophalen en verwijderen van berichten.
 author: mhopkins-msft
 ms.author: mhopkins
 ms.reviewer: dineshm
-ms.date: 01/19/2021
+ms.date: 02/16/2021
 ms.topic: how-to
 ms.service: storage
 ms.subservice: queues
 ms.custom: seo-javascript-october2019, devx-track-python
-ms.openlocfilehash: 82d18fd79b10a8500cfd9191f143438d69fda401
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 8c30d05cf49162155f84961e1fd8a32361444ba5
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98600802"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653258"
 ---
 # <a name="how-to-use-azure-queue-storage-from-python"></a>Azure Queue Storage gebruiken vanuit python
 
@@ -22,9 +22,9 @@ ms.locfileid: "98600802"
 
 ## <a name="overview"></a>Overzicht
 
-In dit artikel worden algemene scenario's voor het gebruik van de Azure Queue Storage-service beschreven. De scenario's die worden behandeld, zijn het invoegen, inspecteren, ophalen en verwijderen van wachtrij berichten. De code voor het maken en verwijderen van wacht rijen wordt ook behandeld.
+In dit artikel worden algemene scenario's voor het gebruik van de Azure Queue Storage-service beschreven. De gedekte scenario's zijn het invoegen, inspecteren, ophalen en verwijderen van wachtrij berichten. De code voor het maken en verwijderen van wacht rijen wordt ook behandeld.
 
-De voor beelden in dit artikel zijn geschreven in Python en gebruiken de [Azure Queue Storage-client bibliotheek voor python](https://github.com/Azure/Azure-SDK-for-Python/tree/master/sdk/storage/azure-storage-queue). Zie de sectie [volgende stappen](#next-steps) voor meer informatie over wacht rijen.
+De voor beelden in dit artikel zijn geschreven in Python en gebruiken de [Azure Queue Storage-client bibliotheek voor python](https://github.com/azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-queue). Zie de sectie [volgende stappen](#next-steps) voor meer informatie over wacht rijen.
 
 [!INCLUDE [storage-queue-concepts-include](../../../includes/storage-queue-concepts-include.md)]
 
@@ -117,6 +117,26 @@ queue_service.create_queue(queue_name)
 
 ---
 
+Azure-wachtrij berichten worden opgeslagen als tekst. Als u binaire gegevens wilt opslaan, moet u de functies van base64-code ring en decodering instellen voordat u een bericht in de wachtrij plaatst.
+
+# <a name="python-v12"></a>[Python-V12](#tab/python)
+
+Configureer base64-coderings-en decodeer functies bij het maken van het client object.
+
+:::code language="python" source="~/azure-storage-snippets/queues/howto/python/python-v12/python-howto-v12.py" id="Snippet_EncodeMessage":::
+
+# <a name="python-v2"></a>[Python v2](#tab/python2)
+
+Configureer functies voor Base64-code ring en decodering op Queue Storage object.
+
+```python
+# Setup Base64 encoding and decoding functions
+queue_service.encode_function = QueueMessageFormat.binary_base64encode
+queue_service.decode_function = QueueMessageFormat.binary_base64decode
+```
+
+---
+
 ## <a name="insert-a-message-into-a-queue"></a>Een bericht in een wachtrij invoegen
 
 # <a name="python-v12"></a>[Python-V12](#tab/python)
@@ -133,26 +153,6 @@ Als u een bericht in een wachtrij wilt invoegen, gebruikt u de [`put_message`](/
 message = u"Hello, World"
 print("Adding message: " + message)
 queue_service.put_message(queue_name, message)
-```
-
----
-
-Azure-wachtrij berichten worden opgeslagen als tekst. Als u binaire gegevens wilt opslaan, moet u de functies van base64-code ring en decodering instellen voordat u een bericht in de wachtrij plaatst.
-
-# <a name="python-v12"></a>[Python-V12](#tab/python)
-
-Configureer base64-functies voor coderen en decoderen op het client object van de wachtrij.
-
-:::code language="python" source="~/azure-storage-snippets/queues/howto/python/python-v12/python-howto-v12.py" id="Snippet_EncodeMessage":::
-
-# <a name="python-v2"></a>[Python v2](#tab/python2)
-
-Configureer functies voor Base64-code ring en decodering op Queue Storage object.
-
-```python
-# Setup Base64 encoding and decoding functions
-queue_service.encode_function = QueueMessageFormat.binary_base64encode
-queue_service.decode_function = QueueMessageFormat.binary_base64decode
 ```
 
 ---

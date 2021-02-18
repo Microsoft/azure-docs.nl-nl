@@ -1,0 +1,41 @@
+### YamlMime:Landing
+title: Documentatie voor IoT-apparaten en-toepassingen ontwikkelen
+summary: Bekijk de Azure IoT-documentatie voor het ontwikkelen van Inge sloten apparaten en het bouwen van Cloud toepassingen op basis van apparaten.
+metadata:
+  title: IoT-apparaten en-toepassingen ontwikkelen
+  description: Meer informatie over het gebruik van Azure IoT voor het ontwikkelen van Inge sloten apparaten en het bouwen van Cloud toepassingen op basis van apparaten.
+  services: iot-develop
+  ms.service: iot-develop
+  ms.topic: landing-page
+  author: timlt
+  ms.author: timlt
+  ms.date: 01/11/2021
+  ms.openlocfilehash: 98d3a7f3eb51ce9c2fddfe5b3ac6730d8ef3b3eb
+  ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+  ms.translationtype: MT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 02/18/2021
+  ms.locfileid: "100656235"
+landingContent:
+- title: Over IoT-apparaten en-toepassingen ontwikkelen
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is Azure IoT-apparaat en toepassings ontwikkeling?
+      url: about-iot-develop.md
+    - text: Welke SDK moet ik gebruiken?
+      url: about-iot-sdks.md
+- title: Aan de slag met het ontwikkelen van Device Application
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Telemetrie van apparaat naar IoT Central verzenden
+      url: quickstart-send-telemetry-python.md
+    - text: Telemetrie van apparaat naar IoT Hub verzenden
+      url: quickstart-send-telemetry-cli-python.md
+- title: Aan de slag met het ontwikkelen van Inge sloten apparaten
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Aan de slag met het ontwikkelen van Inge sloten apparaten
+      url: quickstart-device-development.md

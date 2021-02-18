@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 0cece3f531d50356fdefb81a598109d7c067c5ed
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 39950b4d62b7dbfacba94f5ba3c5de50bbb974b3
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98805941"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653670"
 ---
 # <a name="routes-in-azure-static-web-apps-preview"></a>Routes in de preview-versie van statische Web Apps van Azure
 
@@ -50,10 +50,10 @@ Routes worden gedefinieerd in de _routes.jsop_ bestand als een matrix van route 
 
 | Regel eigenschap  | Vereist | Standaardwaarde | Opmerking                                                      |
 | -------------- | -------- | ------------- | ------------------------------------------------------------ |
-| `route`        | Ja      | n.v.t.          | Het route patroon dat is aangevraagd door de aanroeper.<ul><li>[Joker tekens](#wildcards) worden aan het einde van route paden ondersteund. De routerings _beheerder/ \*_ komt bijvoorbeeld overeen met een wille keurige route onder het pad van de _beheerder_ .<li>Het standaard bestand van een route is _index.html_.</ul>|
-| `serve`        | Nee       | n.v.t.          | Hiermee wordt het bestand of het pad gedefinieerd dat door de aanvraag wordt geretourneerd. Het bestandspad en de naam kunnen afwijken van het aangevraagde pad. Als er `serve` geen waarde is gedefinieerd, wordt het aangevraagde pad gebruikt. Query string-para meters worden niet ondersteund; de `serve` waarden moeten verwijzen naar de werkelijke bestanden.  |
-| `allowedRoles` | Nee       | toegang     | Een matrix met namen van rollen. <ul><li>Geldige tekens zijn `a-z`, `A-Z`, `0-9` en `_`.<li>De ingebouwde rol `anonymous` is van toepassing op alle niet-geverifieerde gebruikers.<li>De ingebouwde rol `authenticated` is van toepassing op elke aangemelde gebruiker.<li>Gebruikers moeten deel uitmaken van ten minste één rol.<li>Rollen worden _op basis van_ elkaar vergeleken. Als een gebruiker zich in een van de vermelde rollen bevindt, wordt de toegang verleend.<li>Afzonderlijke gebruikers zijn gekoppeld aan rollen via [uitnodigingen](authentication-authorization.md).</ul> |
-| `statusCode`   | Nee       | 200           | Het antwoord van de [HTTP-status code](https://wikipedia.org/wiki/List_of_HTTP_status_codes) voor de aanvraag. |
+| `route`        | Yes      | n.v.t.          | Het route patroon dat is aangevraagd door de aanroeper.<ul><li>[Joker tekens](#wildcards) worden aan het einde van route paden ondersteund. De routerings _beheerder/ \*_ komt bijvoorbeeld overeen met een wille keurige route onder het pad van de _beheerder_ .<li>Het standaard bestand van een route is _index.html_.</ul>|
+| `serve`        | No       | n.v.t.          | Hiermee wordt het bestand of het pad gedefinieerd dat door de aanvraag wordt geretourneerd. Het bestandspad en de naam kunnen afwijken van het aangevraagde pad. Als er `serve` geen waarde is gedefinieerd, wordt het aangevraagde pad gebruikt. Query string-para meters worden niet ondersteund; de `serve` waarden moeten verwijzen naar de werkelijke bestanden.  |
+| `allowedRoles` | No       | toegang     | Een matrix met namen van rollen. <ul><li>Geldige tekens zijn `a-z`, `A-Z`, `0-9` en `_`.<li>De ingebouwde rol `anonymous` is van toepassing op alle niet-geverifieerde gebruikers.<li>De ingebouwde rol `authenticated` is van toepassing op elke aangemelde gebruiker.<li>Gebruikers moeten deel uitmaken van ten minste één rol.<li>Rollen worden _op basis van_ elkaar vergeleken. Als een gebruiker zich in een van de vermelde rollen bevindt, wordt de toegang verleend.<li>Afzonderlijke gebruikers zijn gekoppeld aan rollen via [uitnodigingen](authentication-authorization.md).</ul> |
+| `statusCode`   | No       | 200           | Het antwoord van de [HTTP-status code](https://wikipedia.org/wiki/List_of_HTTP_status_codes) voor de aanvraag. |
 
 ## <a name="securing-routes-with-roles"></a>Routes beveiligen met rollen
 
@@ -77,7 +77,7 @@ U kunt indien nodig nieuwe rollen maken in de `allowedRoles` matrix. Als u een r
 }
 ```
 
-- U hebt volledige controle over de namen van rollen. Er is geen hoofd lijst waaraan uw rollen moeten voldoen.
+- U hebt volledige controle over de namen van rollen. Er is geen lijst waaraan uw rollen moeten voldoen.
 - Afzonderlijke gebruikers zijn gekoppeld aan rollen via [uitnodigingen](authentication-authorization.md).
 
 ## <a name="wildcards"></a>Jokertekens

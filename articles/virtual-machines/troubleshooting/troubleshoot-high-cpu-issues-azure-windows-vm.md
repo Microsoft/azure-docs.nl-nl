@@ -1,5 +1,5 @@
 ---
-title: Problemen met hoge CPU oplossen voor virtuele Azure Windows-machines
+title: Problemen met hoog CPU-verbruik oplossen voor Azure Windows Virtual Machines
 description: .
 services: virtual-machines-windows, azure-resource-manager
 documentationcenter: ''
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 9/24/2020
 ms.author: mnanda
-ms.openlocfilehash: ffac5ac4d1a8143590e1d72aaafc8a02d6ab04ca
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 124650f4570608efabba3d8002c14ad06c4782ad
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977252"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571502"
 ---
-# <a name="troubleshoot-high-cpu-issues-for-azure-windows-virtual-machines"></a>Problemen met hoge CPU oplossen voor virtuele Azure Windows-machines
+# <a name="troubleshoot-high-cpu-issues-for-azure-windows-virtual-machines"></a>Problemen met hoog CPU-verbruik oplossen voor Azure Windows Virtual Machines
 
 ## <a name="summary"></a>Samenvatting
 
@@ -108,15 +108,15 @@ Blader om **problemen op te sporen en op te lossen** in de VM-Blade en zoek naar
 
   ![Problemen met VM-prestaties oplossen](./media/troubleshoot-high-cpu-issues-azure-windows-vm/2-troubleshoot-vm-performance-issues.png)
 
-Als u **problemen oplossen**selecteert, wordt het PerfInsights-installatie scherm geladen.
+Als u **problemen oplossen** selecteert, wordt het PerfInsights-installatie scherm geladen.
 
-Als u installeren selecteert, biedt de installatie andere opties **voor**de verzameling.
+Als u installeren selecteert, biedt de installatie andere opties **voor** de verzameling.
 
   ![Prestatieanalyse](./media/troubleshoot-high-cpu-issues-azure-windows-vm/3-performance-analysis.png)
 
 De genummerde opties in de scherm afbeelding hebben betrekking op de volgende opmerkingen:
 
-1. Voor de optie **hoge CPU**selecteert u **prestatie analyse** of **Geavanceerd**.
+1. Voor de optie **hoge CPU** selecteert u **prestatie analyse** of **Geavanceerd**.
 
 2. Wanneer u hier symptomen toevoegt, worden deze toegevoegd aan het rapport, waarmee u informatie kunt delen met ondersteuning voor Azure.
 
@@ -225,7 +225,7 @@ Er zijn geen standaard rapporten die gereed zijn voor gebruik in Perfmon. Er zij
 
 Selecteer de categorie **tellers toevoegen** om te beginnen.
 
-1. Selecteer onder **beschik bare items**de teller **% ProcessorTime** in de categorie **processor informatie** .
+1. Selecteer onder **beschik bare items** de teller **% ProcessorTime** in de categorie **processor informatie** .
 
 1. Selecteer **_Total**, waarmee u de statistieken van alle gecombineerde kernen krijgt.
 
@@ -237,7 +237,7 @@ Nadat de tellers zijn geladen, ziet u lijn trend grafieken in het tijds bestek v
 
   ![Instellingen voor prestatie meter](./media/troubleshoot-high-cpu-issues-azure-windows-vm/12-performance-monitor-1.png)
 
-Elk prestatie meter item heeft **gemiddelde**, **minimale**en **maximale** waarden. Focus op zowel **gemiddelde** als **maximum** waarden, omdat de gemiddelde waarde kan variëren, afhankelijk van de duur van het verzamelen van gegevens. Als de activiteit met hoge CPU 10 minuten is waargenomen terwijl de totale verzameling 40 minuten was, zullen de gemiddelde waarden veel lager zijn.
+Elk prestatie meter item heeft **gemiddelde**, **minimale** en **maximale** waarden. Focus op zowel **gemiddelde** als **maximum** waarden, omdat de gemiddelde waarde kan variëren, afhankelijk van de duur van het verzamelen van gegevens. Als de activiteit met hoge CPU 10 minuten is waargenomen terwijl de totale verzameling 40 minuten was, zullen de gemiddelde waarden veel lager zijn.
 
 In de vorige trend grafiek ziet u dat de **totale processor** ongeveer 15 minuten in de buurt van 80 procent is.
 
@@ -257,7 +257,7 @@ Op een typische productie computer kunnen honderden of processen worden uitgevoe
 
 Als u dit proces wilt versnellen, gebruikt u de weer gave **histogram** en wijzigt u het weergave type van **regel** in **histogram**, waarmee u een staaf diagram krijgt. U vindt het eenvoudiger om de processen te kiezen die het hoge CPU-gebruik tijdens de verzamelings tijd ervaren.
 
-Omdat er altijd een balk voor **totaal**wordt weer gegeven, kunt u zich richten op balken die een hoge mate van uitputting hebben. U kunt de andere balken verwijderen om de weer gave op te schonen. Vervolgens gaat u terug naar de **regel** weergave.
+Omdat er altijd een balk voor **totaal** wordt weer gegeven, kunt u zich richten op balken die een hoge mate van uitputting hebben. U kunt de andere balken verwijderen om de weer gave op te schonen. Vervolgens gaat u terug naar de **regel** weergave.
 
   ![Indica toren prestatie meter](./media/troubleshoot-high-cpu-issues-azure-windows-vm/14-performance-monitor-2.png)
 
@@ -281,7 +281,7 @@ Nadat u Azure Monitor metrische gegevens hebt ingeschakeld, installeert de softw
 
   ![Opslagaccount voor diagnose](./media/troubleshoot-high-cpu-issues-azure-windows-vm/17-diagnostics-storage-account.png)
 
-De categorieën **basis** tellers worden **standaard**ingesteld. U kunt echter ook een **aangepaste** verzameling instellen.
+De categorieën **basis** tellers worden **standaard** ingesteld. U kunt echter ook een **aangepaste** verzameling instellen.
 
   ![Prestatiemeteritems](./media/troubleshoot-high-cpu-issues-azure-windows-vm/18-performance-counters.png)
 
@@ -289,7 +289,7 @@ Nadat de instellingen zijn ingeschakeld, kunt u deze **gast** items weer geven i
 
   ![Metrische naam ruimte](./media/troubleshoot-high-cpu-issues-azure-windows-vm/19-metrics-namespace.png)
 
-Zie [virtuele machines van Azure bewaken met Azure monitor](../../azure-monitor/insights/monitor-vm-azure.md)voor meer informatie over het gebruik van Azure monitor voor het beheren van Azure-vm's.
+Zie [virtuele machines van Azure bewaken met Azure monitor](../../azure-monitor/vm/monitor-vm-azure.md)voor meer informatie over het gebruik van Azure monitor voor het beheren van Azure-vm's.
 
 ### <a name="reactive-troubleshooting"></a>Reactief probleem oplossen
 

@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: ninarn, sstein
 ms.date: 12/9/2020
-ms.openlocfilehash: f50042caf21630c5054ead76825e49b820405c5b
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: c478edf95ae345d64da630400fbf63ac613b73a6
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98732691"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653632"
 ---
 # <a name="elastic-pools-help-you-manage-and-scale-multiple-databases-in-azure-sql-database"></a>Meerdere databases in Azure SQL Database beheren en schalen met elastische pools
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -90,15 +90,10 @@ Zie het [op DTU gebaseerde aankoop model](service-tiers-dtu.md) of het [op vCore
 Aan de hand van de volgende stappen kunt u schatten of een pool rendabeler is dan de afzonderlijke data bases:
 
 1. U moet als volgt een schatting maken van de Edtu's-of vCores die nodig zijn voor de groep:
-
-Voor op DTU gebaseerd inkoop model:
-
-MAX (<*Totaal aantal db's* x *gemiddeld DTU-gebruik per DB* ->, <*aantal gelijktijdig pieken db's* X *piek-DTU-gebruik per DB*>)
-
-Voor op vCore gebaseerd inkoop model:
-
-MAX (<*totale aantal db's* x- *VCore gebruik per DB* ->, <*aantal gelijktijdig pieken db's* X *piek vCore gebruik per DB*>)
-
+   - Voor het op DTU gebaseerde aankoop model:
+     - Max (<*totale aantal db's* &times; *gemiddeld DTU-gebruik per DB* -> <*aantal gelijktijdig pieken db's* &times; *piek gebruik per DB*>)
+   - Voor het op vCore gebaseerde aankoop model:
+     - Max (<*totale aantal db's* &times; *gemiddeld vCore gebruik per DB* -> <*aantal gelijktijdig gepiekde db's* &times; *piek vCore gebruik per DB*>)
 2. Schatting van de totale opslag ruimte die nodig is voor de groep door de benodigde gegevens grootte voor alle data bases in de groep toe te voegen. Bepaal voor het DTU-aankoop model de eDTU-groeps grootte die deze hoeveelheid opslag biedt.
 3. Neem voor het op DTU gebaseerde aankoop model meer van de eDTU-schattingen uit stap 1 en stap 2. Neem voor het op vCore gebaseerde aankoop model de vCore-schatting uit stap 1.
 4. Bekijk de [pagina met prijzen voor SQL database](https://azure.microsoft.com/pricing/details/sql-database/) en zoek de kleinste groeps grootte die groter is dan de schatting van stap 3.

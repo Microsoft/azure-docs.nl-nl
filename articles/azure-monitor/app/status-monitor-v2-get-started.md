@@ -6,12 +6,12 @@ author: TimothyMothra
 ms.author: tilee
 ms.date: 01/22/2021
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: f340b4fdf7fef6daecf8801d16d19aee9b89e4d5
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.openlocfilehash: 21184e1623fd47e8367d4c5dfbc2c85debe93124
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98746455"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587385"
 ---
 # <a name="get-started-with-azure-monitor-application-insights-agent-for-on-premises-servers"></a>Aan de slag met Azure Monitor Application Insights-agent voor on-premises servers
 
@@ -79,9 +79,9 @@ Enable-ApplicationInsightsMonitoring -ConnectionString xxxxxxxx-xxxx-xxxx-xxxx-x
 
  Uw telemetrie weergeven:
 
-- [Bekijk metrische gegevens](../platform/metrics-charts.md) om de prestaties en het gebruik te bewaken.
+- [Bekijk metrische gegevens](../essentials/metrics-charts.md) om de prestaties en het gebruik te bewaken.
 - [Zoek gebeurtenissen en logboeken](./diagnostic-search.md) om problemen op te sporen.
-- [Gebruik analyses](../log-query/log-query-overview.md) voor meer geavanceerde query's.
+- [Gebruik analyses](../logs/log-query-overview.md) voor meer geavanceerde query's.
 - [Dash boards maken](./overview-dashboard.md).
 
  Meer telemetrie toevoegen:

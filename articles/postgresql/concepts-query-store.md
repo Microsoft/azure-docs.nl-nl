@@ -6,12 +6,12 @@ ms.author: sunila
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/01/2020
-ms.openlocfilehash: 5dff78989eef17f95d8b8dd108baafc53a3f761a
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 1779df1c5f9baf2aa46ff809ecae9ec5e3cd7adb
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657019"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581567"
 ---
 # <a name="monitor-performance-with-the-query-store"></a>Prestaties bewaken met de query Store
 
@@ -88,7 +88,7 @@ Wanneer query Store is ingeschakeld, worden gegevens opgeslagen in een periode v
 
 De volgende opties zijn beschikbaar voor het configureren van query Store-para meters.
 
-| **Parameter** | **Beschrijving** | **Standaard** | **Bereik**|
+| **Parameter** | **Beschrijving** | **Prijs** | **Bereik**|
 |---|---|---|---|
 | pg_qs pg_qs.query_capture_mode | Hiermee stelt u in welke instructies worden bijgehouden. | geen | geen, boven, alle |
 | pg_qs pg_qs.max_query_text_length | Hiermee stelt u de maximale query lengte in die kan worden opgeslagen. Langere query's worden afgekapt. | 6000 | 100-10K |
@@ -97,7 +97,7 @@ De volgende opties zijn beschikbaar voor het configureren van query Store-para m
 
 De volgende opties zijn specifiek van toepassing op wacht statistieken.
 
-| **Parameter** | **Beschrijving** | **Standaard** | **Bereik**|
+| **Parameter** | **Beschrijving** | **Prijs** | **Bereik**|
 |---|---|---|---|
 | pgms_wait_sampling pgms_wait_sampling.query_capture_mode | Hiermee wordt ingesteld welke instructies worden bijgehouden voor wachtende statistieken. | geen | geen, alle|
 | Pgms_wait_sampling Pgms_wait_sampling.history_period | Stel de frequentie in milliseconden in waarop wacht gebeurtenissen worden bemonsterd. | 100 | 1-600000 |
@@ -178,7 +178,7 @@ Query_store Query_store.staging_data_reset () retourneert void
 
 
 ## <a name="azure-monitor"></a>Azure Monitor
-Azure Database for PostgreSQL is geïntegreerd met [Azure monitor Diagnostische instellingen](../azure-monitor/platform/diagnostic-settings.md). Met Diagnostische instellingen kunt u uw post gres-Logboeken in JSON-indeling verzenden naar [Azure monitor logboeken](../azure-monitor/log-query/log-query-overview.md) voor analyse-en waarschuwings doeleinden, Event hubs voor streaming en Azure Storage voor archivering.
+Azure Database for PostgreSQL is geïntegreerd met [Azure monitor Diagnostische instellingen](../azure-monitor/essentials/diagnostic-settings.md). Met Diagnostische instellingen kunt u uw post gres-Logboeken in JSON-indeling verzenden naar [Azure monitor logboeken](../azure-monitor/logs/log-query-overview.md) voor analyse-en waarschuwings doeleinden, Event hubs voor streaming en Azure Storage voor archivering.
 
 >[!IMPORTANT]
 > Deze diagnostische functie voor is alleen beschikbaar in de prijs Categorieën Algemeen en geoptimaliseerd voor geheugen.
@@ -195,7 +195,7 @@ Resource logboeken inschakelen met behulp van de Azure Portal:
 5. Selecteer de logboek typen **QueryStoreRuntimeStatistics** en **QueryStoreWaitStatistics**.
 6. Sla de instelling op.
 
-Ga naar het [artikel Diagnostische instellingen](../azure-monitor/platform/diagnostic-settings.md)om deze instelling in te scha kelen met behulp van Power shell, CLI of rest API.
+Ga naar het [artikel Diagnostische instellingen](../azure-monitor/essentials/diagnostic-settings.md)om deze instelling in te scha kelen met behulp van Power shell, CLI of rest API.
 
 ### <a name="json-log-format"></a>JSON-logboek bestands indeling
 In de volgende tabellen worden de velden voor de twee logboek typen beschreven. Afhankelijk van het uitvoer eindpunt dat u kiest, worden de opgenomen velden en de volg orde waarin ze worden weer gegeven.

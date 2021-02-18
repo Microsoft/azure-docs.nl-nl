@@ -5,16 +5,16 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/29/2019
 ms.topic: conceptual
-ms.openlocfilehash: 03814766d7bc873855df261a50a40b8d342fa69b
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: add2bbb7b8f9eeb72c8c58b8c54b070a6b14d8e6
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054243"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586067"
 ---
 # <a name="use-an-alert-to-trigger-an-azure-automation-runbook"></a>Een waarschuwing gebruiken om een Azure Automation runbook te activeren
 
-U kunt [Azure monitor](../azure-monitor/overview.md) gebruiken voor het bewaken van metrische gegevens op basis niveau en logboeken voor de meeste services in Azure. U kunt Azure Automation runbooks aanroepen met behulp van [actie groepen](../azure-monitor/platform/action-groups.md) of met klassieke waarschuwingen om taken te automatiseren op basis van waarschuwingen. In dit artikel wordt beschreven hoe u een runbook configureert en uitvoert met behulp van waarschuwingen.
+U kunt [Azure monitor](../azure-monitor/overview.md) gebruiken voor het bewaken van metrische gegevens op basis niveau en logboeken voor de meeste services in Azure. U kunt Azure Automation runbooks aanroepen met behulp van [actie groepen](../azure-monitor/alerts/action-groups.md) of met klassieke waarschuwingen om taken te automatiseren op basis van waarschuwingen. In dit artikel wordt beschreven hoe u een runbook configureert en uitvoert met behulp van waarschuwingen.
 
 ## <a name="alert-types"></a>Waarschuwingstypen
 
@@ -25,15 +25,15 @@ U kunt Automation-runbooks gebruiken met drie waarschuwings typen:
 * Bijna realtime waarschuwingen voor metrische gegevens
 
 > [!NOTE]
-> Het algemene waarschuwings schema standaardisert de verbruiks ervaring voor waarschuwings meldingen in azure vandaag. In het verleden hebben de drie waarschuwings typen in azure vandaag (metrische gegevens, logboeken en activiteiten Logboeken) hun eigen e-mail sjablonen, webhook-schema's, enzovoort. Zie het [algemene waarschuwings schema](../azure-monitor/platform/alerts-common-schema.md) voor meer informatie.
+> Het algemene waarschuwings schema standaardisert de verbruiks ervaring voor waarschuwings meldingen in azure vandaag. In het verleden hebben de drie waarschuwings typen in azure vandaag (metrische gegevens, logboeken en activiteiten Logboeken) hun eigen e-mail sjablonen, webhook-schema's, enzovoort. Zie het [algemene waarschuwings schema](../azure-monitor/alerts/alerts-common-schema.md) voor meer informatie.
 
 Wanneer een waarschuwing een runbook aanroept, is de daad werkelijke aanroep een HTTP POST-aanvraag naar de webhook. De hoofd tekst van de POST-aanvraag bevat een JSON-indelings object met handige eigenschappen die aan de waarschuwing zijn gerelateerd. De volgende tabel bevat koppelingen naar het payload-schema voor elk waarschuwings type:
 
 |Waarschuwing  |Beschrijving|Payload-schema  |
 |---------|---------|---------|
-|[Algemene waarschuwing](../azure-monitor/platform/alerts-common-schema.md)|Het algemene waarschuwings schema waarmee de verbruiks ervaring voor waarschuwings meldingen in azure vandaag wordt gestandaardiseerd.|Schema voor algemene nettoladingen van waarschuwingen|
-|[Waarschuwing voor activiteiten logboek](../azure-monitor/platform/activity-log-alerts.md)    |Hiermee verzendt u een melding wanneer een nieuwe gebeurtenis in het Azure-activiteiten logboek overeenkomt met specifieke voor waarden. Bijvoorbeeld wanneer een `Delete VM` bewerking plaatsvindt in **myProductionResourceGroup** of wanneer er een nieuwe Azure service Health gebeurtenis met de status actief wordt weer gegeven.| [Schema waarschuwing waarschuwings lading activiteiten logboek](../azure-monitor/platform/activity-log-alerts-webhook.md)        |
-|[Waarschuwing voor bijna realtime metrische gegevens](../azure-monitor/platform/alerts-metric-near-real-time.md)    |Hiermee wordt een melding sneller verzonden dan metrische waarschuwingen wanneer een of meer metrische gegevens op platform niveau voldoen aan de opgegeven voor waarden. Als de waarde voor **CPU%** op een VM bijvoorbeeld groter is dan 90 en de waarde voor **netwerk in** groter is dan 500 MB voor de afgelopen vijf minuten.| [Bijna real-time metrische schema voor waarschuwingen nettolading](../azure-monitor/platform/alerts-webhooks.md#payload-schema)          |
+|[Algemene waarschuwing](../azure-monitor/alerts/alerts-common-schema.md)|Het algemene waarschuwings schema waarmee de verbruiks ervaring voor waarschuwings meldingen in azure vandaag wordt gestandaardiseerd.|Schema voor algemene nettoladingen van waarschuwingen|
+|[Waarschuwing voor activiteiten logboek](../azure-monitor/alerts/activity-log-alerts.md)    |Hiermee verzendt u een melding wanneer een nieuwe gebeurtenis in het Azure-activiteiten logboek overeenkomt met specifieke voor waarden. Bijvoorbeeld wanneer een `Delete VM` bewerking plaatsvindt in **myProductionResourceGroup** of wanneer er een nieuwe Azure service Health gebeurtenis met de status actief wordt weer gegeven.| [Schema waarschuwing waarschuwings lading activiteiten logboek](../azure-monitor/alerts/activity-log-alerts-webhook.md)        |
+|[Waarschuwing voor bijna realtime metrische gegevens](../azure-monitor/alerts/alerts-metric-near-real-time.md)    |Hiermee wordt een melding sneller verzonden dan metrische waarschuwingen wanneer een of meer metrische gegevens op platform niveau voldoen aan de opgegeven voor waarden. Als de waarde voor **CPU%** op een VM bijvoorbeeld groter is dan 90 en de waarde voor **netwerk in** groter is dan 500 MB voor de afgelopen vijf minuten.| [Bijna real-time metrische schema voor waarschuwingen nettolading](../azure-monitor/alerts/alerts-webhooks.md#payload-schema)          |
 
 Omdat de gegevens die door elk type waarschuwing worden gegeven, verschillend zijn, wordt elk waarschuwings type anders afgehandeld. In de volgende sectie leert u hoe u een runbook maakt om verschillende soorten waarschuwingen te verwerken.
 
@@ -185,7 +185,7 @@ Waarschuwingen gebruiken actie groepen, die bestaan uit verzamelingen acties die
 
     ![Pagina actie groep toevoegen](./media/automation-create-alert-triggered-runbook/add-action-group.png)
 
-    U kunt deze actie groep gebruiken in de [activiteiten logboek waarschuwingen](../azure-monitor/platform/activity-log-alerts.md) en [bijna realtime waarschuwingen](../azure-monitor/platform/alerts-overview.md) die u maakt.
+    U kunt deze actie groep gebruiken in de [activiteiten logboek waarschuwingen](../azure-monitor/alerts/activity-log-alerts.md) en [bijna realtime waarschuwingen](../azure-monitor/alerts/alerts-overview.md) die u maakt.
 
 1. Voeg onder **waarschuwings Details** een naam en beschrijving voor de waarschuwings regel toe en klik op **waarschuwings regel maken**.
 
@@ -193,6 +193,6 @@ Waarschuwingen gebruiken actie groepen, die bestaan uit verzamelingen acties die
 
 * Als u een runbook wilt starten met een webhook, raadpleegt u [een Runbook starten vanuit een webhook](automation-webhooks.md).
 * Zie [een Runbook starten](./start-runbooks.md)om verschillende manieren te ontdekken om een runbook te starten.
-* Zie [waarschuwingen voor activiteiten logboek maken](../azure-monitor/platform/activity-log-alerts.md)voor informatie over het maken van een waarschuwing voor een activiteiten logboek.
-* Zie [een waarschuwings regel maken in de Azure Portal](../azure-monitor/platform/alerts-metric.md?toc=/azure/azure-monitor/toc.json)voor meer informatie over het maken van een nabije realtime-waarschuwing.
+* Zie [waarschuwingen voor activiteiten logboek maken](../azure-monitor/alerts/activity-log-alerts.md)voor informatie over het maken van een waarschuwing voor een activiteiten logboek.
+* Zie [een waarschuwings regel maken in de Azure Portal](../azure-monitor/alerts/alerts-metric.md?toc=/azure/azure-monitor/toc.json)voor meer informatie over het maken van een nabije realtime-waarschuwing.
 * Zie [Az.Automation](/powershell/module/az.automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.

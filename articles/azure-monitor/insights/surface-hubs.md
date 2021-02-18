@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/16/2018
-ms.openlocfilehash: 7e3b0f92770b48ef5163846e67940efe80fb669a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e38214174fd4e3aa6859f05fd24737d9e9d1f963
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90085345"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587224"
 ---
 # <a name="monitor-surface-hubs-with-azure-monitor-to-track-their-health"></a>Surface hubs bewaken met Azure Monitor om hun status bij te houden
 
@@ -26,7 +26,7 @@ Gebruik de volgende informatie om de oplossing te installeren en configureren. A
 
 * Een [log Analytics abonnements](https://azure.microsoft.com/pricing/details/log-analytics/) niveau waarmee het aantal apparaten dat u wilt bewaken, wordt ondersteund. Log Analytics prijzen variëren afhankelijk van het aantal apparaten dat is inge schreven en hoeveel gegevens er worden verwerkt. Als u uw Surface Hub-implementatie wilt plannen, moet u rekening houden.
 
-Vervolgens voegt u een bestaande Log Analytics-werk ruimte toe, of maakt u een nieuwe. Gedetailleerde instructies voor het gebruik van beide methoden zijn bij [het maken van een log Analytics-werk ruimte in de Azure Portal](../learn/quick-create-workspace.md). Nadat de Log Analytics-werk ruimte is geconfigureerd, zijn er twee manieren om uw Surface Hub apparaten in te schrijven:
+Vervolgens voegt u een bestaande Log Analytics-werk ruimte toe, of maakt u een nieuwe. Gedetailleerde instructies voor het gebruik van beide methoden zijn bij [het maken van een log Analytics-werk ruimte in de Azure Portal](../logs/quick-create-workspace.md). Nadat de Log Analytics-werk ruimte is geconfigureerd, zijn er twee manieren om uw Surface Hub apparaten in te schrijven:
 
 * Automatisch via intune
 * Hand matig door **instellingen** op uw Surface hub apparaat.
@@ -55,9 +55,9 @@ U hebt de werk ruimte-ID en de werkruimte sleutel nodig voor de Log Analytics-we
 
 Als u intune niet gebruikt om uw omgeving te beheren, kunt u apparaten hand matig registreren via de **instellingen** op elke Surface hub:
 
-1. Open **instellingen**vanuit uw Surface hub.
+1. Open **instellingen** vanuit uw Surface hub.
 2. Voer de beheerders referenties voor het apparaat in wanneer u hierom wordt gevraagd.
-3. Klik op **Dit apparaat**en klik onder **bewaking**op **log Analytics instellingen configureren**.
+3. Klik op **Dit apparaat** en klik onder **bewaking** op **log Analytics instellingen configureren**.
 4. Selecteer **bewaking inschakelen**.
 5. Typ in het dialoog venster Log Analytics instellingen de Log Analytics **werk ruimte-id** en typ de **werkruimte sleutel**.  
    ![Scherm afbeelding toont de instellingen van het Microsoft Operations Manager-pakket met behulp van het selectie vakje controle inschakelen en tekst vakken voor werk ruimte-ID en werkruimte sleutel.](./media/surface-hubs/settings.png)
@@ -74,8 +74,8 @@ Wanneer u op de tegel Surface Hub klikt, wordt de status van uw apparaat weer ge
 
    ![Surface Hub dash board](./media/surface-hubs/surface-hub-dashboard.png)
 
-U kunt [waarschuwingen](../platform/alerts-overview.md) maken op basis van bestaande of aangepaste zoek opdrachten in Logboeken. Met behulp van de gegevens Azure Monitor verzameld van uw Surface hubs, kunt u zoeken naar problemen en waarschuwen op basis van de voor waarden die u voor uw apparaten definieert.
+U kunt [waarschuwingen](../alerts/alerts-overview.md) maken op basis van bestaande of aangepaste zoek opdrachten in Logboeken. Met behulp van de gegevens Azure Monitor verzameld van uw Surface hubs, kunt u zoeken naar problemen en waarschuwen op basis van de voor waarden die u voor uw apparaten definieert.
 
 ## <a name="next-steps"></a>Volgende stappen
-* Gebruik [logboek query's in azure monitor](../log-query/log-query-overview.md) om gedetailleerde Surface hub gegevens weer te geven.
-* Maak [waarschuwingen](../platform/alerts-overview.md) om u te waarschuwen wanneer er problemen optreden met uw Surface hubs.
+* Gebruik [logboek query's in azure monitor](../logs/log-query-overview.md) om gedetailleerde Surface hub gegevens weer te geven.
+* Maak [waarschuwingen](../alerts/alerts-overview.md) om u te waarschuwen wanneer er problemen optreden met uw Surface hubs.

@@ -3,12 +3,12 @@ title: Configureer uw eigen sleutel voor het versleutelen van Azure Event Hubs g
 description: Dit artikel bevat informatie over het configureren van uw eigen sleutel voor het versleutelen van Azure Event Hubs gegevens rest.
 ms.topic: conceptual
 ms.date: 02/01/2021
-ms.openlocfilehash: 53622344e36e514543d547dec95caaf1b0b76a13
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: c9d1ac1c3a3387600fed80939598baafe658054b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430676"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595993"
 ---
 # <a name="configure-customer-managed-keys-for-encrypting-azure-event-hubs-data-at-rest-by-using-the-azure-portal"></a>Door de klant beheerde sleutels voor het versleutelen van Azure Event Hubs-gegevens op rest configureren met behulp van de Azure Portal
 Azure Event Hubs zorgt voor versleuteling van gegevens in rust met Azure Storage-service versleuteling (Azure SSE). De Event Hubs-service gebruikt Azure Storage om de gegevens op te slaan. Alle gegevens die zijn opgeslagen met Azure Storage, worden versleuteld met door micro soft beheerde sleutels. Als u uw eigen sleutel gebruikt (ook wel Bring Your Own Key (BYOK) of door de klant beheerde sleutel), worden de gegevens nog steeds versleuteld met behulp van de door micro soft beheerde sleutel, maar wordt de door micro soft beheerde sleutel versleuteld met behulp van de door de klant beheerde sleutel. Met deze functie kunt u de toegang tot door de klant beheerde sleutels maken, draaien, uitschakelen en intrekken die worden gebruikt voor het versleutelen van door micro soft beheerde sleutels. Het inschakelen van de functie BYOK is een eenmalige installatie procedure voor uw naam ruimte.
@@ -70,7 +70,7 @@ Als u de toegang tot de versleutelings sleutels intrekt, worden de gegevens niet
 Zodra de versleutelings sleutel is ingetrokken, wordt de Event Hubs-service op de versleutelde naam ruimte niet meer bruikbaar. Als de toegang tot de sleutel is ingeschakeld of de sleutel verwijderen is hersteld, wordt de sleutel door Event Hubs service gekozen, zodat u toegang hebt tot de gegevens van de versleutelde Event Hubs naam ruimte.
 
 ## <a name="set-up-diagnostic-logs"></a>Diagnostische logboeken instellen 
-Door Diagnostische logboeken in te stellen voor met BYOK ingeschakelde naam ruimten hebt u de vereiste informatie over de bewerkingen. Deze logboeken kunnen worden ingeschakeld en later naar een Event Hub worden gestreamd of geanalyseerd via log Analytics of worden gestreamd naar opslag om aangepaste analyses uit te voeren. Zie [overzicht van Diagnostische logboeken van Azure](../azure-monitor/platform/platform-logs-overview.md)voor meer informatie over Diagnostische logboeken.
+Door Diagnostische logboeken in te stellen voor met BYOK ingeschakelde naam ruimten hebt u de vereiste informatie over de bewerkingen. Deze logboeken kunnen worden ingeschakeld en later naar een Event Hub worden gestreamd of geanalyseerd via log Analytics of worden gestreamd naar opslag om aangepaste analyses uit te voeren. Zie [overzicht van Diagnostische logboeken van Azure](../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie over Diagnostische logboeken.
 
 ## <a name="enable-user-logs"></a>Gebruikers Logboeken inschakelen
 Volg deze stappen om Logboeken in te scha kelen voor door de klant beheerde sleutels.

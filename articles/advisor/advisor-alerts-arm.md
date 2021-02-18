@@ -4,12 +4,12 @@ description: Meer informatie over hoe u een waarschuwing instelt voor nieuwe aan
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 06/29/2020
-ms.openlocfilehash: f03bf6eaf4f3045e00fc67efe6faa9f53d962089
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 7b10ad06e5397ab733987373a3bd18de981c8c97
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91629893"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590059"
 ---
 # <a name="quickstart-create-azure-advisor-alerts-on-new-recommendations-using-an-arm-template"></a>Quickstart: Azure Advisor-waarschuwingen maken voor nieuwe aanbevelingen met behulp van een ARM-sjabloon
 
@@ -17,7 +17,7 @@ In dit artikel wordt beschreven hoe u een waarschuwing instelt voor nieuwe aanbe
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Wanneer Azure Advisor een nieuwe aanbeveling voor een van uw resources detecteert, wordt een gebeurtenis opgeslagen in het [Azure-activiteitenlogboek](../azure-monitor/platform/platform-logs-overview.md). U kunt waarschuwingen instellen voor deze gebeurtenissen van Azure Advisor met behulp van een functie voor het maken van aanbevelingsgerichte waarschuwingen. U kunt een abonnement en optioneel een resourcegroep selecteren om de resources op te geven waarvoor u waarschuwingen wilt ontvangen.
+Wanneer Azure Advisor een nieuwe aanbeveling voor een van uw resources detecteert, wordt een gebeurtenis opgeslagen in het [Azure-activiteitenlogboek](../azure-monitor/essentials/platform-logs-overview.md). U kunt waarschuwingen instellen voor deze gebeurtenissen van Azure Advisor met behulp van een functie voor het maken van aanbevelingsgerichte waarschuwingen. U kunt een abonnement en optioneel een resourcegroep selecteren om de resources op te geven waarvoor u waarschuwingen wilt ontvangen.
 
 U kunt ook de typen aanbevelingen vaststellen met behulp van de volgende eigenschappen:
 
@@ -30,7 +30,7 @@ U kunt ook de actie configureren die wordt uitgevoerd wanneer een waarschuwing w
 - Een bestaande actiegroep te selecteren
 - Een nieuwe actiegroep te maken
 
-Raadpleeg [Actiegroepen maken en beheren](../azure-monitor/platform/action-groups.md) voor meer informatie over actiegroepen.
+Raadpleeg [Actiegroepen maken en beheren](../azure-monitor/alerts/action-groups.md) voor meer informatie over actiegroepen.
 
 > [!NOTE]
 > Advisor-waarschuwingen zijn momenteel alleen beschikbaar voor aanbevelingen voor hoge beschikbaarheid, prestaties en kosten. Aanbevelingen voor beveiliging worden niet ondersteund.
@@ -203,5 +203,5 @@ Remove-AzResourceGroup -Name my-resource-group
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Een [overzicht van waarschuwingen voor het activiteitenlogboek](../azure-monitor/platform/alerts-overview.md) en meer informatie over het ontvangen van waarschuwingen.
-- Meer informatie over [actiegroepen](../azure-monitor/platform/action-groups.md).
+- Een [overzicht van waarschuwingen voor het activiteitenlogboek](../azure-monitor/alerts/alerts-overview.md) en meer informatie over het ontvangen van waarschuwingen.
+- Meer informatie over [actiegroepen](../azure-monitor/alerts/action-groups.md).

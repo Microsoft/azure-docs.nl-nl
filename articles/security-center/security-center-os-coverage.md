@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/31/2020
 ms.author: memildin
-ms.openlocfilehash: 31ff3620bcab6b10b59582daa255ff1f259ab0d3
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
-ms.translationtype: HT
+ms.openlocfilehash: 4cc8130d34b5f51728fb2e7fb47c1fb0717d2138
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96852639"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595116"
 ---
 # <a name="supported-platforms"></a>Ondersteunde platforms 
 
@@ -37,10 +37,10 @@ Azure Security Center detecteert automatisch IaaS-resources die in het abonnemen
 
 ## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 
-Security Center is afhankelijk van de [Log Analytics-agent](../azure-monitor/platform/agents-overview.md#log-analytics-agent). Zorg ervoor dat op de computers een van de ondersteunde besturingssystemen voor deze agent wordt uitgevoerd, zoals wordt beschreven op de volgende pagina's:
+Security Center is afhankelijk van de [Log Analytics-agent](../azure-monitor/agents/agents-overview.md#log-analytics-agent). Zorg ervoor dat op de computers een van de ondersteunde besturingssystemen voor deze agent wordt uitgevoerd, zoals wordt beschreven op de volgende pagina's:
 
-* [Log Analytics-agent voor door Windows ondersteunde besturingssystemen](../azure-monitor/platform/agents-overview.md#supported-operating-systems)
-* [Log Analytics-agent voor door Linux ondersteunde besturingssystemen](../azure-monitor/platform/agents-overview.md#supported-operating-systems)
+* [Log Analytics-agent voor door Windows ondersteunde besturingssystemen](../azure-monitor/agents/agents-overview.md#supported-operating-systems)
+* [Log Analytics-agent voor door Linux ondersteunde besturingssystemen](../azure-monitor/agents/agents-overview.md#supported-operating-systems)
 
 Zorg er ook voor dat uw Log Analytics-agent correct [is geconfigureerd voor het verzenden van gegevens naar Security Center](security-center-enable-data-collection.md#manual-agent)
 

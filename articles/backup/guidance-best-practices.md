@@ -3,12 +3,12 @@ title: Richtlijnen en aanbevolen procedures
 description: Ontdek de aanbevolen procedures en richt lijnen voor het maken van een back-up van de Cloud en on-premises werk belasting naar de Cloud
 ms.topic: conceptual
 ms.date: 07/22/2020
-ms.openlocfilehash: 7b65556d8dd9b5b12e8da25055f6e39732c83afd
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 0b3f70061be4d158ae717a97779d6ab0445f5858
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99258758"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593335"
 ---
 # <a name="backup-cloud-and-on-premises-workloads-to-cloud"></a>Back-ups in de Cloud en on-premises naar de Cloud
 
@@ -238,9 +238,9 @@ Als back-upgebruiker of-beheerder moet u alle back-upoplossingen kunnen bewaken 
   * De belangrijkste trends op verschillende niveaus nauw keurig te identificeren.
 
 * Bovendien
-  * U kunt gegevens (bijvoorbeeld taken, beleids regels, enzovoort) verzenden naar de **log Analytics** -werk ruimte. Hiermee schakelt u de functies van Azure Monitor Logboeken in om de correlatie van gegevens in te scha kelen met andere bewakings gegevens die door Azure Monitor zijn verzameld, het consolideren van logboek vermeldingen van meerdere Azure-abonnementen en-tenants naar één locatie voor analyse, gebruik dan logboek query's om complexe analyses uit te voeren en uitgebreide inzichten op logboek vermeldingen te verkrijgen. [Klik hier voor meer informatie](../azure-monitor/platform/activity-log.md#send-to-log-analytics-workspace).
-  * U kunt gegevens verzenden naar Event hub voor het verzenden van vermeldingen buiten Azure, bijvoorbeeld naar een SIEM (Security Information and Event Management) of een andere log Analytics-oplossing. [Klik hier voor meer informatie](../azure-monitor/platform/activity-log.md#send-to-azure-event-hubs).
-  * U kunt gegevens naar een Azure Storage account verzenden als u uw logboek gegevens langer dan 90 dagen wilt bewaren voor controle, statische analyse of back-up. Als u uw gebeurtenissen gedurende 90 dagen of minder hoeft te bewaren, hoeft u geen archieven in te stellen voor een opslag account, omdat activiteiten in het Azure-platform gedurende 90 dagen worden bewaard. [Meer informatie](../azure-monitor/platform/activity-log.md#send-to--azure-storage).
+  * U kunt gegevens (bijvoorbeeld taken, beleids regels, enzovoort) verzenden naar de **log Analytics** -werk ruimte. Hiermee schakelt u de functies van Azure Monitor Logboeken in om de correlatie van gegevens in te scha kelen met andere bewakings gegevens die door Azure Monitor zijn verzameld, het consolideren van logboek vermeldingen van meerdere Azure-abonnementen en-tenants naar één locatie voor analyse, gebruik dan logboek query's om complexe analyses uit te voeren en uitgebreide inzichten op logboek vermeldingen te verkrijgen. [Klik hier voor meer informatie](../azure-monitor/essentials/activity-log.md#send-to-log-analytics-workspace).
+  * U kunt gegevens verzenden naar Event hub voor het verzenden van vermeldingen buiten Azure, bijvoorbeeld naar een SIEM (Security Information and Event Management) of een andere log Analytics-oplossing. [Klik hier voor meer informatie](../azure-monitor/essentials/activity-log.md#send-to-azure-event-hubs).
+  * U kunt gegevens naar een Azure Storage account verzenden als u uw logboek gegevens langer dan 90 dagen wilt bewaren voor controle, statische analyse of back-up. Als u uw gebeurtenissen gedurende 90 dagen of minder hoeft te bewaren, hoeft u geen archieven in te stellen voor een opslag account, omdat activiteiten in het Azure-platform gedurende 90 dagen worden bewaard. [Meer informatie](../azure-monitor/essentials/activity-log.md#send-to--azure-storage).
 
 ### <a name="alerting"></a>Waarschuwingen
 

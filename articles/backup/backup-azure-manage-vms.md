@@ -3,12 +3,12 @@ title: Back-ups van Azure-VM'S beheren en bewaken
 description: Meer informatie over het beheren en bewaken van back-ups van Azure-VM'S met behulp van de Azure Backup-service.
 ms.topic: conceptual
 ms.date: 08/02/2020
-ms.openlocfilehash: a56f13afa23a81b9cd2b34d34e1ca302c0c667f0
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 51ce88bb67d64ce129a3479d38db9a66dfe65d0a
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "96002903"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100635074"
 ---
 # <a name="manage-azure-vm-backups-with-azure-backup-service"></a>Back-ups van Azure-VM'S beheren met Azure Backup-Service
 
@@ -31,7 +31,7 @@ U kunt back-ups beheren met behulp van het dash board en door in te zoomen op af
 
 Vm's op het kluis dashboard weer geven:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 1. Selecteer in het menu links **Alle services**.
 
     ![Alle services selecteren](./media/backup-azure-manage-vms/select-all-services.png)
@@ -65,7 +65,7 @@ Vm's op het kluis dashboard weer geven:
 
 Een bestaand back-upbeleid wijzigen:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/). Open het kluis dashboard.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/). Open het kluis dashboard.
 2. Selecteer in **> back-upbeleid beheren** het back-upbeleid voor het type **Azure virtual machine**.
 3. Selecteer **wijzigen** en wijzig de instellingen.
 
@@ -73,7 +73,7 @@ Een bestaand back-upbeleid wijzigen:
 
 Een back-upbeleid beheren:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/). Open het kluis dashboard.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/). Open het kluis dashboard.
 2. Selecteer op de tegel **Back-upitems** de optie **Azure virtual machine**.
 
     ![De tegel back-upitems openen](./media/backup-azure-manage-vms/azure-virtual-machine.png)
@@ -97,7 +97,7 @@ U kunt een back-up op aanvraag uitvoeren van een virtuele machine nadat u de bev
 * De Bewaar termijn voor een back-up op aanvraag is de Bewaar waarde die u opgeeft wanneer u de back-up triggert.
 
 > [!NOTE]
-> De Azure Backup-service ondersteunt Maxi maal negen back-ups op aanvraag per dag, maar micro soft raadt niet meer dan vier dagelijkse back-ups op aanvraag aan om de beste prestaties te garanderen.
+> De Azure Backup-service ondersteunt Maxi maal drie back-ups op aanvraag per dag en één extra geplande back-up.
 
 Een back-up op aanvraag activeren:
 

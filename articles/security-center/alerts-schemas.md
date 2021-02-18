@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/19/2020
 ms.author: memildin
-ms.openlocfilehash: f9b3be69ab57c0abf7523169303def899f325229
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 7778607b533a836eb5a47a12b73374c2a8299621
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92789213"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590572"
 ---
 # <a name="security-alerts-schemas"></a>Schema's voor beveiligings waarschuwingen
 
@@ -24,8 +24,8 @@ Als Azure Defender is ingeschakeld voor uw abonnement, ontvangt u beveiligings w
 
 U kunt deze beveiligings waarschuwingen bekijken op de pagina's van Azure Security Center **Threat Protection** of via externe hulpprogram ma's, zoals:
 
-- [Azure Sentinel](../sentinel/index.yml) : de Cloud-native Siem van micro soft. De Sentinel-connector ontvangt waarschuwingen van Azure Security Center en verzendt deze naar de [log Analytics-werk ruimte](../azure-monitor/learn/quick-create-workspace.md) voor Azure Sentinel.
-- Siem's van derden: gegevens verzenden naar [Azure Event hubs](../event-hubs/index.yml). Integreer vervolgens uw event hub-gegevens met een SIEM van derden. Meer informatie in [streaming-waarschuwingen naar een Siem-, via-of IT-Service beheer oplossing](export-to-siem.md).
+- [Azure Sentinel](../sentinel/index.yml) : de Cloud-native Siem van micro soft. De Sentinel-connector ontvangt waarschuwingen van Azure Security Center en verzendt deze naar de [log Analytics-werk ruimte](../azure-monitor/logs/quick-create-workspace.md) voor Azure Sentinel.
+- Siem's van derden: gegevens verzenden naar [Azure Event hubs](../event-hubs/index.yml). Integreer vervolgens uw event hub-gegevens met een SIEM van derden. Zie voor meer informatie [Waarschuwingen streamen naar een SIEM-, SOAR- of IT Service Management-oplossing](export-to-siem.md).
 - [De rest API](/rest/api/securitycenter/) : als u de rest API gebruikt voor toegang tot waarschuwingen, raadpleegt u de [online Alerts API-documentatie](/rest/api/securitycenter/alerts).
 
 Als u een programmatische methode gebruikt om de waarschuwingen te verbruiken, hebt u het juiste schema nodig om de velden te vinden die relevant zijn voor u. Als u exporteert naar een event hub of als u werk stroom automatisering wilt activeren met algemene HTTP-connectors, gebruikt u de schema's om de JSON-objecten correct te parseren.
@@ -68,7 +68,7 @@ Raadpleeg [de documentatie](../sentinel/index.yml)voor meer informatie over Azur
 
 
 
-### <a name="azure-activity-log"></a>[Azure-activiteiten logboek](#tab/schema-activitylog)
+### <a name="azure-activity-log"></a>[Azure-activiteitenlogboek](#tab/schema-activitylog)
 
 Azure Security Center controles gegenereerd beveiligings waarschuwingen als gebeurtenissen in azure-activiteiten logboek.
 
@@ -140,7 +140,7 @@ U kunt de gebeurtenissen voor beveiligings waarschuwingen in het activiteiten lo
 
 ### <a name="the-data-model-of-the-schema"></a>Het gegevens model van het schema
 
-|Veld|Beschrijving|
+|Veld|Description|
 |----|----|
 |**detailhandelkanalen**|Constante, ' bewerking '|
 |**correlationId**|De meldings-ID Azure Security Center|
@@ -150,7 +150,7 @@ U kunt de gebeurtenissen voor beveiligings waarschuwingen in het activiteiten lo
 |**category**|De subvelden value en localizedValue zijn constant-' Security '|
 |**eventTimestamp**|UTC-tijds tempel voor het moment waarop de waarschuwing is gegenereerd|
 |**id**|De volledig gekwalificeerde waarschuwings-ID|
-|**afvlakking**|Constante, ' informatief '|
+|**niveau**|Constante, ' informatief '|
 |**operationId**|Zie correlationId|
 |**operationName**|Het veld waarde is constant: ' micro soft. Security/locations/Alerts/Activate/Action ' en de gelokaliseerde waarde is ' waarschuwing activeren ' (de gebruiker kan mogelijk worden gelokaliseerd pari)|
 |**resourceGroupName**|Bevat de naam van de resource groep|
@@ -160,7 +160,7 @@ U kunt de gebeurtenissen voor beveiligings waarschuwingen in het activiteiten lo
 |**status**|De subvelden value en localizedValue zijn constant-"actief"|
 |**subStatus**|De subvelden value en localizedValue zijn leeg|
 |**submissionTimestamp**|De UTC-tijds tempel van het verzenden van gebeurtenissen naar het activiteiten logboek|
-|**Abonnements**|De abonnements-ID van de aangetaste resource|
+|**subscriptionId**|De abonnements-ID van de aangetaste resource|
 |**properties**|Een JSON-verzameling extra eigenschappen die betrekking hebben op de waarschuwing. Deze kunnen worden gewijzigd van de ene waarschuwing naar de andere, maar de volgende velden worden in alle waarschuwingen weer gegeven:<br>-Ernst: de ernst van de aanval<br>-compromisedEntity: de naam van de aangetaste bron<br>-remediationSteps: matrix van herstels tappen die moeten worden genomen<br>-intentie: de bedoeling van de Kill-keten van de waarschuwing. Mogelijke intenties worden gedocumenteerd in de [tabel met bedoelingen](alerts-reference.md#intentions)|
 |**relatedEvents**|Constante-lege matrix|
 |||
@@ -186,5 +186,5 @@ Zie de volgende pagina's voor meer informatie over de manieren om toegang te kri
 
 - [Azure-Sentinel](../sentinel/index.yml) : de Cloud-native Siem van micro soft
 - [Azure-Event hubs](../event-hubs/index.yml) -de volledig beheerde, realtime Service voor gegevens opname van micro soft
-- [Security Center gegevens doorlopend exporteren](continuous-export.md)
-- [Log Analytics werk ruimten](../azure-monitor/learn/quick-create-workspace.md) : Azure monitor slaat logboek gegevens op in een log Analytics-werk ruimte, een container die gegevens en configuratie gegevens bevat
+- [Security Center-gegevens continu exporteren](continuous-export.md)
+- [Log Analytics werk ruimten](../azure-monitor/logs/quick-create-workspace.md) : Azure monitor slaat logboek gegevens op in een log Analytics-werk ruimte, een container die gegevens en configuratie gegevens bevat

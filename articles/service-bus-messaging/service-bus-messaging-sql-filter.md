@@ -3,12 +3,12 @@ title: Azure Service Bus regel voor abonnements regels SQL-filter syntaxis | Mic
 description: In dit artikel vindt u meer informatie over de grammatica van SQL-filters. Een SQL-filter ondersteunt een subset van de SQL-92-standaard.
 ms.topic: article
 ms.date: 11/24/2020
-ms.openlocfilehash: 810d17d458de79c851b6f1ada4556a231bfd20eb
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 022f6cb1d698a10dc216db8d41c172691f7535ab
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98742978"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652938"
 ---
 # <a name="subscription-rule-sql-filter-syntax"></a>Syntaxis van SQL-filter voor abonnements regels
 
@@ -183,7 +183,7 @@ Booleaanse constanten worden vertegenwoordigd door de tref woorden **True** of *
 
 Teken reeks constanten worden tussen enkele aanhalings tekens geplaatst en bevatten geldige Unicode-tekens. Een enkel aanhalings teken in een teken reeks constante wordt weer gegeven als twee enkele aanhalings tekens.  
   
-## <a name="function"></a>functieassembly  
+## <a name="function"></a>-functie  
   
 ```  
 <function> :=  
@@ -269,8 +269,8 @@ Houd rekening met de volgende [SqlFilter](/dotnet/api/microsoft.servicebus.messa
   
 -   Reken kundige Opera tors zoals,,, `+` `-` `*` `/` en `%` volgen dezelfde semantiek als de C#-operator die is gebonden aan het gegevens type promoties en impliciete conversies.
 
-
-[!INCLUDE [service-bus-filter-examples](../../includes/service-bus-filter-examples.md)]
+## <a name="examples"></a>Voorbeelden
+Zie [Service Bus-filter voorbeelden](service-bus-filter-examples.md)voor voor beelden.
 
 ## <a name="next-steps"></a>Volgende stappen
 

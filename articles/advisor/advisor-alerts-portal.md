@@ -3,18 +3,18 @@ title: Azure Advisor waarschuwingen maken voor nieuwe aanbevelingen met behulp v
 description: Azure Advisor-waarschuwingen maken voor nieuwe aanbeveling
 ms.topic: article
 ms.date: 09/09/2019
-ms.openlocfilehash: 837f12a12e532902ee76e345afa430f758f79c10
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3c51479821914ef34edcd13d8708344169f17aae
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90973656"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590114"
 ---
 # <a name="create-azure-advisor-alerts-on-new-recommendations-using-the-azure-portal"></a>Maak Azure Advisor waarschuwingen met betrekking tot nieuwe aanbevelingen met behulp van de Azure Portal 
 
 In dit artikel wordt beschreven hoe u een waarschuwing instelt voor nieuwe aanbevelingen van Azure Advisor met behulp van de Azure Portal. 
 
-Wanneer Azure Advisor een nieuwe aanbeveling voor een van uw resources detecteert, wordt een gebeurtenis opgeslagen in het [Azure-activiteitenlogboek](../azure-monitor/platform/platform-logs-overview.md). U kunt waarschuwingen instellen voor deze gebeurtenissen van Azure Advisor met behulp van een functie voor het maken van aanbevelingsgerichte waarschuwingen. U kunt een abonnement en optioneel een resourcegroep selecteren om de resources op te geven waarvoor u waarschuwingen wilt ontvangen. 
+Wanneer Azure Advisor een nieuwe aanbeveling voor een van uw resources detecteert, wordt een gebeurtenis opgeslagen in het [Azure-activiteitenlogboek](../azure-monitor/essentials/platform-logs-overview.md). U kunt waarschuwingen instellen voor deze gebeurtenissen van Azure Advisor met behulp van een functie voor het maken van aanbevelingsgerichte waarschuwingen. U kunt een abonnement en optioneel een resourcegroep selecteren om de resources op te geven waarvoor u waarschuwingen wilt ontvangen. 
 
 U kunt ook de typen aanbevelingen vaststellen met behulp van de volgende eigenschappen:
 
@@ -27,7 +27,7 @@ U kunt ook de actie configureren die wordt uitgevoerd wanneer een waarschuwing w
 * Een bestaande actiegroep te selecteren
 * Een nieuwe actiegroep te maken
 
-Raadpleeg [Actiegroepen maken en beheren](../azure-monitor/platform/action-groups.md) voor meer informatie over actiegroepen.
+Raadpleeg [Actiegroepen maken en beheren](../azure-monitor/alerts/action-groups.md) voor meer informatie over actiegroepen.
 
 > [!NOTE] 
 > Advisor-waarschuwingen zijn momenteel alleen beschikbaar voor aanbevelingen voor hoge beschikbaarheid, prestaties en kosten. Aanbevelingen voor beveiliging worden niet ondersteund. 
@@ -57,7 +57,7 @@ Raadpleeg [Actiegroepen maken en beheren](../azure-monitor/platform/action-group
 
     ![Actie groep voor Advisor-waarschuwingen](./media/advisor-alerts/create6.png)
 
-7. Selecteer in de sectie **actie groepen** de optie **bestaande toevoegen** om een actie groep te gebruiken die u al hebt gemaakt of selecteer **nieuwe maken** om een nieuwe [actie groep](../azure-monitor/platform/action-groups.md)in te stellen. 
+7. Selecteer in de sectie **actie groepen** de optie **bestaande toevoegen** om een actie groep te gebruiken die u al hebt gemaakt of selecteer **nieuwe maken** om een nieuwe [actie groep](../azure-monitor/alerts/action-groups.md)in te stellen. 
 
     ![Advisor-waarschuwing bestaande toevoegen](./media/advisor-alerts/create7.png)
 
@@ -187,11 +187,11 @@ Vanuit Azure Advisor kunt u waarschuwingen voor uw aanbevelingen bewerken, verwi
 
 1. Selecteer in de **portal** **Azure Advisor**.
 
-    :::image type="content" source="./media/advisor-alerts/create1.png" alt-text="Scherm afbeelding van de sectie waarschuwings Details.":::
+    :::image type="content" source="./media/advisor-alerts/create1.png" alt-text="Scherm opname van het Azure Portal menu waarin Azure Advisor is geselecteerd.":::
 
 2. Selecteer in de sectie **bewaking** van het linkermenu **waarschuwingen**.
 
-    :::image type="content" source="./media/advisor-alerts/create2.png" alt-text="Scherm afbeelding van de sectie waarschuwings Details.":::
+    :::image type="content" source="./media/advisor-alerts/create2.png" alt-text="Scherm opname van het menu Azure Portal waarin de geselecteerde waarschuwingen worden weer gegeven.":::
 
 3. Als u een waarschuwing wilt bewerken, klikt u op de naam van de waarschuwing om de waarschuwing te openen en bewerkt u de velden die u wilt bewerken.
 
@@ -199,5 +199,5 @@ Vanuit Azure Advisor kunt u waarschuwingen voor uw aanbevelingen bewerken, verwi
  
 
 ## <a name="next-steps"></a>Volgende stappen
-- Een [overzicht van waarschuwingen voor het activiteitenlogboek](../azure-monitor/platform/alerts-overview.md) en meer informatie over het ontvangen van waarschuwingen.
-- Meer informatie over [actiegroepen](../azure-monitor/platform/action-groups.md).
+- Een [overzicht van waarschuwingen voor het activiteitenlogboek](../azure-monitor/alerts/alerts-overview.md) en meer informatie over het ontvangen van waarschuwingen.
+- Meer informatie over [actiegroepen](../azure-monitor/alerts/action-groups.md).

@@ -3,20 +3,20 @@ title: Azure Automation-runbooktypen
 description: In dit artikel worden de typen runbooks beschreven die u kunt gebruiken in Azure Automation en overwegingen om te bepalen welk type u moet gebruiken.
 services: automation
 ms.subservice: process-automation
-ms.date: 01/08/2021
+ms.date: 02/17/2021
 ms.topic: conceptual
-ms.openlocfilehash: c1398d25b6d2540abea0012acd69555e5e53e25c
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 067096943cd95913077ada817c94640ff5264520
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98050966"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100634886"
 ---
 # <a name="azure-automation-runbook-types"></a>Azure Automation-runbooktypen
 
 De functie Azure Automation proces automatisering ondersteunt diverse typen runbooks, zoals gedefinieerd in de volgende tabel. Zie [Runbook-uitvoering in azure Automation](automation-runbook-execution.md)voor meer informatie over de proces automatiserings omgeving.
 
-| Type | Beschrijving |
+| Type | Description |
 |:--- |:--- |
 | [Grafisch](#graphical-runbooks)|Grafisch runbook dat is gebaseerd op Windows Power shell en is volledig gemaakt en bewerkt in de grafische editor in Azure Portal. |
 | [Grafische power shell-werk stroom](#graphical-runbooks)|Grafisch runbook op basis van een Windows Power shell-werk stroom en is volledig gemaakt en bewerkt in de grafische editor in Azure Portal. |
@@ -101,6 +101,11 @@ Power shell workflow-runbooks zijn tekst-runbooks op basis van [Windows Power sh
 ## <a name="python-runbooks"></a>Python-runbooks
 
 Python runbooks compileren onder python 2 en python 3. Python 3-runbooks zijn momenteel beschikbaar als preview-versie. U kunt de code van het runbook rechtstreeks bewerken met de teksteditor in de Azure-portal. U kunt ook een editor voor offline tekst gebruiken en [het runbook importeren](manage-runbooks.md) in azure Automation.
+
+Python 3-runbooks worden ondersteund in de volgende globale Azure-infra structuren:
+
+* Azure Global
+* Azure Government
 
 ### <a name="advantages"></a>Voordelen
 

@@ -1,59 +1,54 @@
 ---
-title: Confidential Computing-knooppunten in Azure Kubernetes Service (AKS) (openbare preview)
+title: Vertrouwelijke computing-knoop punten op de Azure Kubernetes-service (AKS)
 description: Confidential Computing-knooppunten in AKS
 services: virtual-machines
 author: agowdamsft
 ms.service: container-service
 ms.topic: overview
-ms.date: 9/22/2020
+ms.date: 2/08/2021
 ms.author: amgowda
-ms.openlocfilehash: 1b945ac9f656a227bcc3335cb0ec995626f98f77
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
-ms.translationtype: HT
+ms.openlocfilehash: 9ca98c032a7c8bd1820a92bff77079a61c515d65
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94564171"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653377"
 ---
-# <a name="confidential-computing-nodes-on-azure-kubernetes-service-public-preview"></a>Confidential Computing-knooppunten in Azure Kubernetes Service (openbare preview)
+# <a name="confidential-computing-nodes-on-azure-kubernetes-service"></a>Vertrouwelijke computing-knoop punten op de Azure Kubernetes-service
 
-Met [Azure Confidential Computing](overview.md) kunt u uw gevoelige gegevens tijdens het gebruik beschermen. De onderliggende infrastructuren beveiligen deze gegevens van andere toepassingen, beheerders en cloudproviders met een hardwarematige, vertrouwde uitvoeringsomgeving.
+Met [Azure Confidential Computing](overview.md) kunt u uw gevoelige gegevens tijdens het gebruik beschermen. De onderliggende vertrouwelijke computing infrastructuur beveiligt deze gegevens van andere toepassingen, beheerders en cloud providers met een hardwarematige, door hardware ondersteunde vertrouwde uitvoerings container omgevingen. Als u vertrouwelijke computing knooppunten toevoegt, kunt u de container toepassing uitvoeren in een geïsoleerde, met hardware beveiligde en attest bare omgeving.
 
 ## <a name="overview"></a>Overzicht
 
-Azure Kubernetes Service (AKS) biedt ondersteuning voor het toevoegen van [DCsv2 Confidential Computing-knooppunten](confidential-computing-enclaves.md) mogelijk gemaakt door Intel SGX. Op deze knooppunten kunnen gevoelige workloads worden uitgevoerd binnen een hardwarematige, vertrouwde uitvoeringsomgeving door code op gebruikersniveau toe te staan persoonlijke gebieden van het geheugen toe te wijzen. Deze persoonlijke geheugengebieden worden enclaves genoemd. Enclaves zijn ontworpen voor het beveiligen van code en gegevens van processen die met hogere bevoegdheid worden uitgevoerd. Het SGX-uitvoeringsmodel haalt de tussenliggende lagen van Hypervisor en het besturingssysteem van de gast en de host. Met het *hardwarematige, per container geïsoleerde uitvoeringsmodel* kunnen toepassingen rechtstreeks worden uitgevoerd met de CPU, terwijl het speciale blok geheugen versleuteld blijft. Vertrouwelijke rekenknooppunten helpen bij de algemene beveiligingspostuur van containertoepassingen op AKS en zijn een uitstekende toevoeging voor een containerstrategie die voorzien is van krachtige beveiliging. 
+Azure Kubernetes Service (AKS) biedt ondersteuning voor het toevoegen van [DCsv2 Confidential Computing-knooppunten](confidential-computing-enclaves.md) mogelijk gemaakt door Intel SGX. Met deze knoop punten kunt u gevoelige werk belastingen uitvoeren binnen een hardware-gebaseerde Trust Execution Environment (TEE). T de code op gebruikers niveau van containers toestaan om persoonlijke geheugen gebieden toe te wijzen om de code rechtstreeks uit te voeren met een CPU. Deze privé geheugen regio's die rechtstreeks met de CPU worden uitgevoerd, worden enclaves genoemd. Enclaves helpen bij het beschermen van de vertrouwelijkheid van gegevens, gegevens integriteit en code-integriteit van andere processen die worden uitgevoerd op dezelfde knoop punten. Het Intel SGX-uitvoerings model verwijdert ook de tussenliggende lagen van het gast besturingssysteem, het besturings systeem van de host en Hyper Visor, waardoor de aanval wordt verkleind surface area. Met het *geïsoleerde op hardware gebaseerd* model voor het uitvoeren van een container in een knoop punt kunnen toepassingen rechtstreeks worden uitgevoerd met de CPU, terwijl het speciaal versleutelde geheugen blok per container wordt bewaard. Vertrouwelijke computing-knoop punten met vertrouwelijke containers vormen een uitstekende aanvulling op de beveiligings planning en ingrijpende container strategie van het vertrouwens niveau van nul.
 
 ![overzicht van sgx-knoop punt](./media/confidential-nodes-aks-overview/sgxaksnode.jpg)
 
 ## <a name="aks-confidential-nodes-features"></a>Functies van vertrouwelijke AKS-knooppunten
 
-- Hardwarematige isolatie van de containers op procesniveau via het vertrouwde SGX-uitvoeringsmodel 
+- Hardwarematige en proces niveau isolatie van containers via Intel SGX Trusted Execution Environment (TEE) 
 - Clusters van heterogene knooppuntpools (een combinatie van vertrouwelijke en niet-vertrouwelijke knooppuntpools)
-- Op geheugen gebaseerde pod-planning met Encrypted Page Cache (EPC)
-- Vooraf geïnstalleerd SGX DCAP-stuurprogramma
-- Vooraf geïnstalleerde Intel FSGS-patch
-- Ondersteunt CPU-verbruik op basis van horizontaal, automatisch schalen van pods en clusters
-- Helper voor bevestiging van out-of-process via AKS-daemonset
+- Op geheugen gebaseerde pod-planning (Encrypted page cache) (EPC vereist)
+- Intel SGX DCAP-stuur programma vooraf geïnstalleerd
+- Op CPU-verbruik gebaseerd horizon taal pod automatisch schalen en cluster automatisch schalen
 - Linux-containers biden ondersteuning via Ubuntu 18.04 Gen 2 VM-werkknooppunten
 
-## <a name="aks-provided-daemon-sets-addon"></a>Door AKS geleverde daemonsets (invoegtoepassing)
+## <a name="confidential-computing-add-on-for-aks"></a>Add-on voor vertrouwelijke computing voor AKS
+De functie add-on biedt extra mogelijkheden op AKS wanneer u groeps knooppunten met vertrouwelijke Computing op het cluster uitvoert. Met deze invoeg toepassing worden de onderstaande functies ingeschakeld.
 
-#### <a name="sgx-device-plugin"></a>SGX Device Plugin <a id="sgx-plugin"></a>
+#### <a name="azure-device-plugin-for-intel-sgx"></a>Azure Device-invoeg toepassing voor Intel SGX <a id="sgx-plugin"></a>
 
-SGX Device Plugin implementeert de interface voor de Kubernetes-apparaatinvoegtoepassing voor het EPC-geheugen. Deze invoegtoepassing maakt van het EPC-geheugen feitelijk een extra resourcetype in Kubernetes. Gebruikers kunnen limieten voor deze resource opgeven, net als voor andere resources. Naast de planningsfunctie kan SGX met behulp van de apparaatinvoegtoepassing machtigingen voor apparaatstuurprogramma's toewijzen aan de containers voor vertrouwelijke werkbelastingen. Een voorbeeld van een implementatie van de op het EPC-geheugen gebaseerde implementatiesample (`kubernetes.azure.com/sgx_epc_mem_in_MiB`) vindt u [hier](https://github.com/Azure-Samples/confidential-computing/blob/main/containersamples/helloworld/helm/templates/helloworld.yaml)
+De invoeg toepassing voor apparaten implementeert de Kubernetes Device-invoeg toepassing voor het geheugen van de versleutelde pagina cache (EPC) en maakt de apparaatstuurprogramma's van de knoop punten beschikbaar. In feite maakt deze invoeg toepassing EPC-geheugen als een ander resource type in Kubernetes. Gebruikers kunnen limieten voor deze resource opgeven, net als voor andere resources. Naast de plannings functie, helpt de invoeg toepassing voor apparaten Intel SGX-apparaatstuurprogramma's machtigingen toe te wijzen aan de containers voor vertrouwelijke werk belasting. Met deze ontwikkelaar van de invoeg toepassing kan voor komen dat de Intel SGX-stuur programma-volumes in de implementatie bestanden worden gekoppeld. Een voorbeeld van een implementatie van de op het EPC-geheugen gebaseerde implementatiesample (`kubernetes.azure.com/sgx_epc_mem_in_MiB`) vindt u [hier](https://github.com/Azure-Samples/confidential-computing/blob/main/containersamples/helloworld/helm/templates/helloworld.yaml)
 
-#### <a name="sgx-quote-helper-service"></a>Helper-service voor SGX-offertes <a id="sgx-quote"></a>
 
-Enclavetoepassingen die externe bevestiging uitvoeren, moeten een offerte genereren. De offerte voorziet in een cryptografisch bewijs van de identiteit en de status van de toepassing en de omgeving waarin de enclave wordt uitgevoerd. Het genereren van offertes is afhankelijk van bepaalde vertrouwde softwareonderdelen van Intel, die deel uitmaken van SGX Platform Software Components (PSW/DCAP). Deze PSW is verpakt als een daemonset die per knooppunt wordt uitgevoerd. PSW kan worden gebruikt bij het aanvragen van een offerte ter bevestiging vanuit enclave-apps. Door gebruik te maken van de door de AKS verstrekte service, kan de compatibiliteit tussen de PSW en andere softwareonderdelen in de host beter worden onderhouden. [Lees meer](confidential-nodes-out-of-proc-attestation.md) over de details van het gebruik en de functie.
-
-## <a name="programming--application-models"></a>Programmeren en toepassingsmodellen
+## <a name="programming-models"></a>Programmeermodellen
 
 ### <a name="confidential-containers"></a>Vertrouwelijke containers
 
-[Vertrouwelijke containers](confidential-containers.md) voeren bestaande programma's in runtime uit, evenals de **meestgebruikte programmeertalen** (Python, Node, Java, enzovoort), in combinatie met hun bestaande bibliotheekafhankelijkheden, zonder wijziging of hercompilatie van de broncode. Dit model is het snelste model naar vertrouwelijkheid, mogelijk gemaakt via opensourceprojecten en Azure-partners. De containerinstallatiekopieën die gereed zijn gemaakt om in de beveiligde enclaves te worden uitgevoerd, worden vertrouwelijke containers genoemd.
+Met [vertrouwelijke containers](confidential-containers.md) kunt u bestaande niet-gewijzigde container toepassingen van de meest **voorkomende programmeer talen** runtime (python, knoop punt, Java, enzovoort) op een vertrouwelijke plaats uitvoeren. Voor Dit verpakkings model hoeft u geen bron code te wijzigen of opnieuw te compileren. Dit is de snelste methode voor vertrouwelijkheid die kan worden bereikt door uw standaard docker-containers te verpakken met Open-Source projecten of Azure-partner oplossingen. In Dit verpakkings-en uitvoerings model worden alle onderdelen van de container toepassing geladen in de Trusted boundary (enclave). Dit model werkt goed voor de schap-container toepassingen die beschikbaar zijn in de markt of aangepaste apps die momenteel worden uitgevoerd op knoop punten met algemene doel einden.
 
 ### <a name="enclave-aware-containers"></a>Enclave-compatibele containers
-
-AKS ondersteunt toepassingen die zijn geprogrammeerd om te worden uitgevoerd op vertrouwelijke knooppunten en maken gebruik van een **speciale instructieset** die beschikbaar wordt gesteld via de SDK's en frameworks. Dit toepassingsmodel biedt de meeste controle over uw toepassingen met een computer met een laagste Trusted Computing Base (TCB). [Lees meer](enclave-aware-containers.md) over enclave-compatibele containers.
+Vertrouwelijke computing knooppunten in AKS ondersteunen ook containers die zijn geprogrammeerd om in een enclave te worden uitgevoerd om een **speciale instructieset** te gebruiken die beschikbaar is via de CPU. Met dit programmeer model kunt u uw uitvoerings stroom nauw keurig beheren en moet u speciale Sdk's en frameworks gebruiken. Dit programmeer model biedt de meeste controle over de toepassings stroom met een TCB (laagste Trusted Computing Base). Enclaveing voor de ontwikkeling van een container houdt in dat er niet-vertrouwde en vertrouwde onderdelen aan de container toepassing worden toegevoegd, zodat u het normale geheugen en het EPC-geheugen (Encrypted page cache) kunt beheren waar enclave wordt uitgevoerd. [Lees meer](enclave-aware-containers.md) over enclave-compatibele containers.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -62,6 +57,8 @@ AKS ondersteunt toepassingen die zijn geprogrammeerd om te worden uitgevoerd op 
 [Quickstart met samples van vertrouwelijke containers](https://github.com/Azure-Samples/confidential-container-samples)
 
 [DCsv2 SKU-lijst](../virtual-machines/dcv2-series.md)
+
+[Ingrijpende indieping met webinar-sessie met vertrouwelijke containers](https://www.youtube.com/watch?reload=9&v=FYZxtHI_Or0&feature=youtu.be)
 
 <!-- LINKS - external -->
 [Azure Attestation]: ../attestation/index.yml

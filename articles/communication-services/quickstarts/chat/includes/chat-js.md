@@ -10,12 +10,12 @@ ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 4d3781c7a3894429cb5daccb334655543e3eea01
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: af42b83fc005397d4564b7570eedaff0305a8bc8
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100551641"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653542"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
@@ -88,24 +88,7 @@ Maak een bestand in de hoofdmap van uw project met de naam **client.js** om de t
 
 Als u een chat-client in uw web-app wilt maken, gebruikt u het **eind punt** van de communicatie service en het **toegangs token** dat is gegenereerd als onderdeel van de vereiste stappen. 
 
-Met toegangstokens voor gebruikers kunt u clienttoepassingen maken die zich rechtstreeks verifiëren bij Azure Communication Services.
-
-##### <a name="server-vs-client-side"></a>Server versus client zijde
-
-We raden u aan om toegangs tokens te genereren met behulp van een server onderdeel dat deze door geeft aan de client toepassing. In dit scenario is de server verantwoordelijk voor het maken en beheren van gebruikers en het uitgeven van de tokens. Aan de client zijde kunnen vervolgens toegangs tokens van de service worden ontvangen en worden gebruikt om de Azure Communication Services-client bibliotheken te verifiëren.
-
-Tokens kunnen ook aan de client zijde worden uitgegeven via de Azure Communication Administration-bibliotheek voor Java script. In dit scenario moet de client gebruiker op de hoogte zijn van gebruikers om hun tokens uit te geven.
-
-Raadpleeg de volgende documentatie voor meer informatie over de [client-en server architectuur](../../../concepts/client-and-server-architecture.md) .
-
-In het diagram onder de toepassing aan de client zijde wordt een toegangs token van een vertrouwde servicelaag ontvangen. De toepassing gebruikt vervolgens het token om communicatie Services-bibliotheken te verifiëren. Na verificatie kan de toepassing nu de communicatie services aan de client zijde gebruiken om bewerkingen uit te voeren, zoals chatten met andere gebruikers.
-
-:::image type="content" source="../../../media/scenarios/archdiagram-access.png" alt-text="Diagram waarin de architectuur van de gebruikers toegangs token wordt weer gegeven.":::
-
-##### <a name="instructions"></a>Instructies
-Deze demo heeft geen betrekking op het maken van een servicelaag voor uw chat toepassing. 
-
-Als u geen gebruikers en hun tokens hebt gegenereerd, volgt u de instructies hier om dit te doen: [token voor gebruikers toegang](../../access-tokens.md). Vergeet niet om het bereik in te stellen op ' chat ' en niet op ' VoIP '.
+Met toegangstokens voor gebruikers kunt u clienttoepassingen maken die zich rechtstreeks verifiëren bij Azure Communication Services. Deze Snelstartgids heeft geen betrekking op het maken van een servicelaag voor het beheren van tokens voor uw chat toepassing. Zie [Chat concepten](../../../concepts/chat/concepts.md) voor meer informatie over de chat architectuur en [gebruikers toegangs tokens](../../access-tokens.md) voor meer informatie over toegangs tokens.
 
 In **client.js** het endpoint-en toegangs token in de onderstaande code gebruiken om chat mogelijkheden toe te voegen met de Azure Communication chat-client bibliotheek voor Java script.
 

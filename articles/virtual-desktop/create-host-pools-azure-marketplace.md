@@ -3,15 +3,16 @@ title: Windows Virtual Desktop, hostgroep, Azure portal - Azure
 description: Een Windows Virtual Desktop-hostgroep maken met behulp van de Azure-portal.
 author: Heidilohr
 ms.topic: tutorial
-ms.date: 09/14/2020
+ms.custom: references_regions
+ms.date: 02/17/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 268f1c4bff84a2c9ef67c3f6b5749bc8d0b90e85
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 46a029a3b803428d6250b74059190f66183be452
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735178"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100651456"
 ---
 # <a name="tutorial-create-a-host-pool-with-the-azure-portal"></a>Zelfstudie: Een hostpool maken met de Azure-portal
 
@@ -67,6 +68,9 @@ Ga als volgt te werk om te beginnen met het maken van uw nieuwe hostgroep:
 
      > [!div class="mx-imgBorder"]
      > ![Een schermopname van de Azure Portal met het veld Locatie met de locatie US - oost geselecteerd. Naast het veld ziet u de tekst: "Metagegevens worden opgeslagen in US - oost."](media/portal-location-field.png)
+  
+   >[!NOTE]
+   > Als u uw hostgroep in [een ondersteunde regio](data-locations.md) buiten de Verenigde Staten wilt maken, moet u de resource provider opnieuw registreren. Na het opnieuw registreren ziet u de andere regio's in de vervolg keuzelijst voor het selecteren van de locatie. Meer informatie over het opnieuw registreren van het probleem bij het maken van een [hostgroep](troubleshoot-set-up-issues.md#i-only-see-us-when-setting-the-location-for-my-service-objects) .
 
 8. Onder Hostgroeptype geeft u aan of uw hostgroep **Persoonlijk** of **Gegroepeerd** wordt.
 

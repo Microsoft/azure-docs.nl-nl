@@ -4,31 +4,29 @@ description: Meer informatie over hoe automatische afwijkings detectie voor fact
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 1/09/2021
+ms.date: 2/17/2021
 author: sayantanroy83
 ms.author: sroy
-ms.openlocfilehash: d4fb88854359dcd6e383b47d2a8ce4e9c91f867a
-ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
+ms.openlocfilehash: 7f1bcac49ccb12ea1e0517aed5a139e549451ec0
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99989363"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653003"
 ---
 # <a name="anomaly-detection-for-metered-billing"></a>Afwijkings detectie voor facturering met data limiet
 
-Dit artikel bevat informatie over de Marketplace-meet service en de bijbehorende automatische anomalie detectie mogelijkheid om ervoor te zorgen dat klanten correct worden gefactureerd voor het gebruik in de data limiet. De optie voor facturering via data limiet is momenteel beschikbaar voor SaaS-aanbiedingen ( [Software as a Service](plan-saas-offer.md) ) en [Azure-toepassingen](plan-azure-application-offer.md#types-of-plans) met een beheerd toepassings abonnement. Met deze optie kunnen partners Voorst Ellen maken in het commerciële Marketplace-programma dat wordt gefactureerd op basis van niet-standaard eenheden.
+De aangepaste optie voor facturering via data limiet is momenteel beschikbaar voor SaaS-aanbiedingen ( [Software as a Service](plan-saas-offer.md) ) en [Azure-toepassingen](plan-azure-application-offer.md#types-of-plans) met een beheerd toepassings abonnement.
 
-Partners met aangepaste meters die zijn geïmplementeerd voor SaaS en beheerde toepassingen, kunnen afwijken van het verwachte gebruik als afwijkingen voor de _overschrijding-gebeurtenissen_ op specifieke _aangepaste meters_ in het partner centrum. Om het risico te beperken, maakt het partner centrum gebruik van een afwijkings detectie service waarmee machine learning algoritmen worden toegepast om het normale facturerings gedrag op basis van de data limiet te bepalen, het gebruik van de gefactureerde facturering te analyseren en afwijkingen te detecteren met minimale tussen komst van de gebruiker. Met behulp van _anomalie detectie modellen_ in de gegevens sets voor gefactureerde facturering kunt u de uitgever op de hoogte brengen wanneer het gerapporteerde gebruik het verwachte gebruik overschrijdt.
+Als u gebruikmaakt van de facturerings optie met data limiet voor het maken van aanbiedingen in het Commercial Marketplace-programma waarmee u het gebruik kunt berekenen op basis van niet-standaard eenheden, moet u weten wanneer uw klant meer van een service heeft gebruikt dan verwacht.
 
-## <a name="usability-experience"></a>Bruikbaarheids ervaring
+## <a name="use-the-anomaly-detection-feature"></a>De functie voor afwijkings detectie gebruiken
 
-Micro soft is afhankelijk van de partner om het overschrijding gebruik te melden van hun SaaS-of Azure Managed Application-aanbiedingen voordat micro soft de klant factureert. Als het verkeerde gebruik wordt gerapporteerd, zou de klant mogelijk een onjuiste factuur kunnen ontvangen, zowel micro soft als de geloofwaardigheid van de partner ondermijnen.
+Micro soft is afhankelijk van u, de partner, om het overschrijding gebruik van hun SaaS-of Azure Managed Application-aanbiedingen te melden voordat micro soft de klant factureert. Als het verkeerde gebruik wordt gerapporteerd, zou de klant mogelijk een onjuiste factuur kunnen ontvangen, zowel micro soft als de geloofwaardigheid van de partner ondermijnen.
 
-Om dit te verhelpen, wordt een automatische afwijkings detectie functie aangeboden voor zowel SaaS-apps als Azure Application Managed Application-abonnementen. Deze functie is een machine learning model dat het gebruik proactief bewaakt met behulp van facturering op basis van data limieten en voor spelt de verwachte waarde van het gebruik binnen het verwachte bereik. Als het gebruik zich buiten het verwachte bereik bevindt, wordt het beschouwd als een afwijkingen en wordt er een waarschuwings melding voor de partner weer gegeven op de overzichts pagina van de aanbieding in het Commercial Marketplace-programma van partner Center.
+Om ervoor te zorgen dat uw klanten correct worden gefactureerd, gebruikt u de functie **anomalie detectie** voor zowel SaaS-apps als Azure Application Managed Application-abonnementen. Deze functie bewaakt het gebruik van facturering met data limieten en voor spelt de verwachte waarde van het gebruik binnen het verwachte bereik. Als het gebruik zich buiten het verwachte bereik bevindt, wordt het beschouwd als onverwacht, (een afwijkend) en ontvangt u een waarschuwings melding op de overzichts pagina van uw aanbieding in het Commercial Marketplace-programma van partner Center. U kunt het dagelijks gebruik van uw klanten bijhouden voor elke aangepaste meter dimensie die u hebt ingesteld.
 
-Het machine learning model analyseert overschrijding-gebruik dagelijks. De uitgever kan alle afwijkingen weer geven die zijn gerapporteerd voor het overschrijding-gebruik van hun klanten voor de aangepaste meter dimensies van elke aanbieding.
-
-### <a name="view-and-manage-metered-usage-anomalies"></a>Afwijkingen in het gebruik van een Data limiet weer geven en beheren
+## <a name="view-and-manage-metered-usage-anomalies"></a>Afwijkingen in het gebruik van een Data limiet weer geven en beheren
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com/dashboard/home).
 1. Selecteer in het menu aan de linkerkant de optie **commerciële Marketplace**  >  **analyseren**.

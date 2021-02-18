@@ -9,12 +9,12 @@ ms.workload: infrastructure-services
 ms.date: 04/06/2018
 ms.author: johnkem
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: c981214c69653b3a4a687a861cb348f3587def7c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 06c614d57002c7944d88df123d06ac63d04b288f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89078755"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591144"
 ---
 # <a name="azure-diagnostics-extension-for-windows-vms"></a>Azure Diagnostics-extensie voor Windows-Vm's
 
@@ -34,7 +34,7 @@ De uitbrei ding Azure Diagnostics vereist dat de virtuele doel machine is verbon
 
 ## <a name="extension-schema"></a>Extensieschema
 
-[In dit document worden de Azure Diagnostics extensie schema-en eigenschaps waarden beschreven.](../../azure-monitor/platform/diagnostics-extension-schema-windows.md)
+[In dit document worden de Azure Diagnostics extensie schema-en eigenschaps waarden beschreven.](../../azure-monitor/agents/diagnostics-extension-schema-windows.md)
 
 ## <a name="template-deployment"></a>Sjabloonimplementatie
 
@@ -81,12 +81,12 @@ Gegevens over de status van uitbreidings implementaties kunnen worden opgehaald 
 az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 ```
 
-[Raadpleeg dit artikel](../../azure-monitor/platform/diagnostics-extension-troubleshooting.md) voor een uitgebreidere gids voor probleem oplossing voor de uitbrei ding van de Azure Diagnostics.
+[Raadpleeg dit artikel](../../azure-monitor/agents/diagnostics-extension-troubleshooting.md) voor een uitgebreidere gids voor probleem oplossing voor de uitbrei ding van de Azure Diagnostics.
 
 ### <a name="support"></a>Ondersteuning
 
 Als u op elk moment in dit artikel meer hulp nodig hebt, kunt u contact opnemen met de Azure-experts op [MSDN Azure en stack overflow forums](https://azure.microsoft.com/support/forums/). U kunt ook een ondersteunings incident voor Azure opslaan. Ga naar de [ondersteunings site van Azure](https://azure.microsoft.com/support/options/) en selecteer ondersteuning verkrijgen. Lees de [Veelgestelde vragen over ondersteuning voor Microsoft Azure](https://azure.microsoft.com/support/faq/)voor meer informatie over het gebruik van Azure-ondersteuning.
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Meer informatie over de uitbrei ding van de Azure Diagnostics](../../azure-monitor/platform/diagnostics-extension-overview.md)
-* [Het schema en de versies van de extensie controleren](../../azure-monitor/platform/diagnostics-extension-schema-windows.md)
+* [Meer informatie over de uitbrei ding van de Azure Diagnostics](../../azure-monitor/agents/diagnostics-extension-overview.md)
+* [Het schema en de versies van de extensie controleren](../../azure-monitor/agents/diagnostics-extension-schema-windows.md)

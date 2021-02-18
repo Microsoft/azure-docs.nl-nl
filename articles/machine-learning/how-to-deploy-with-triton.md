@@ -7,20 +7,20 @@ ms.service: machine-learning
 ms.subservice: core
 ms.author: gopalv
 author: gvashishtha
-ms.date: 09/23/2020
+ms.date: 02/16/2020
 ms.topic: conceptual
 ms.reviewer: larryfr
 ms.custom: deploy
-ms.openlocfilehash: c5db04a673c1cdc0c0f24e128f340f4ae55fea81
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: 3d2e01b645c1661d4b44520193b9c4557cbc1ea0
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825524"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652165"
 ---
 # <a name="high-performance-serving-with-triton-inference-server-preview"></a>Hoge prestaties met een Triton-inrichtings server (preview-versie) 
 
-Meer informatie over het gebruik van de [NVIDIA Triton-server](https://developer.nvidia.com/nvidia-triton-inference-server) voor inactiviteit voor het verbeteren van de prestaties van de webservice die wordt gebruikt voor model deinterferentie.
+Meer informatie over het gebruik van de [NVIDIA Triton-server](https://aka.ms/nvidia-triton-docs) voor inactiviteit voor het verbeteren van de prestaties van de webservice die wordt gebruikt voor model deinterferentie.
 
 Een van de manieren om een model te implementeren, is als een webservice. Bijvoorbeeld een implementatie naar Azure Kubernetes service of Azure Container Instances. Azure Machine Learning maakt standaard gebruik van een single-threaded, *Algemeen* webframework voor web service-implementaties.
 
@@ -30,7 +30,7 @@ Triton is een raam werk dat is *geoptimaliseerd voor* demijnen. Het biedt een be
 > Het gebruik van Triton voor implementatie vanuit Azure Machine Learning is momenteel beschikbaar als __Preview-versie__. De functionaliteit van de preview-versie wordt mogelijk niet gedekt door de klant ondersteuning. Voor meer informatie raadpleegt [u de aanvullende gebruiks voorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
 
 > [!TIP]
-> De code fragmenten in dit document zijn bedoeld als illustratief en er wordt mogelijk geen volledige oplossing weer gegeven. Zie de [end-to-end-voor beelden van Triton in azure machine learning](https://github.com/Azure/azureml-examples/tree/main/tutorials)voor werk voorbeeld code.
+> De code fragmenten in dit document zijn bedoeld als illustratief en er wordt mogelijk geen volledige oplossing weer gegeven. Zie de [end-to-end-voor beelden van Triton in azure machine learning](https://aka.ms/triton-aml-sample)voor werk voorbeeld code.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -47,48 +47,45 @@ Voordat u Triton voor uw eigen model probeert te gebruiken, is het belang rijk o
 
 * Meerdere [Gunicorn](https://gunicorn.org/) -werk rollen worden gestart om inkomende aanvragen gelijktijdig te verwerken.
 * Deze werk nemers verwerken de pre-verwerking, het model aanroepen en naverwerking. 
-* Voor aanvragen voor deaanvraaging wordt de __Score-URI__ gebruikt. Bijvoorbeeld `https://myserevice.azureml.net/score`.
+* Clients gebruiken de __Score-URI van Azure ml__. Bijvoorbeeld `https://myservice.azureml.net/score`.
 
 :::image type="content" source="./media/how-to-deploy-with-triton/normal-deploy.png" alt-text="Normaal, niet-Triton, implementatie architectuur diagram":::
 
-### <a name="setting-the-number-of-workers"></a>Het aantal werk rollen instellen
+**Direct implementeren met Triton**
 
-Stel de omgevings variabele in om het aantal werk nemers in uw implementatie in te stellen `WORKER_COUNT` . Als u een [omgevings](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py) object hebt aangeroepen `env` , kunt u het volgende doen:
+* Aanvragen gaan rechtstreeks naar de Triton-server.
+* Triton verwerkt aanvragen in batches om het GPU-gebruik te maximaliseren.
+* De client gebruikt de __Triton-URI__ om aanvragen te doen. Bijvoorbeeld `https://myservice.azureml.net/v2/models/${MODEL_NAME}/versions/${MODEL_VERSION}/infer`.
 
-```{py}
-env.environment_variables["WORKER_COUNT"] = "1"
-```
-
-Hiermee wordt het aantal werk nemers dat u opgeeft, door Azure ML genoteerd.
-
+:::image type="content" source="./media/how-to-deploy-with-triton/triton-deploy.png" alt-text="Inferenceconfig-implementatie met alleen Triton en geen python-middleware":::
 
 **Configuratie-implementatie met Triton**
 
 * Meerdere [Gunicorn](https://gunicorn.org/) -werk rollen worden gestart om inkomende aanvragen gelijktijdig te verwerken.
 * De aanvragen worden doorgestuurd naar de **Triton-server**. 
 * Triton verwerkt aanvragen in batches om het GPU-gebruik te maximaliseren.
-* De client gebruikt de __Score__ ring-URI voor het maken van aanvragen. Bijvoorbeeld `https://myserevice.azureml.net/score`.
+* De client gebruikt de __Score-URI van Azure ml__ om aanvragen uit te voeren. Bijvoorbeeld `https://myservice.azureml.net/score`.
 
-:::image type="content" source="./media/how-to-deploy-with-triton/inferenceconfig-deploy.png" alt-text="Inferenceconfig-implementatie met Triton":::
+:::image type="content" source="./media/how-to-deploy-with-triton/inference-config-deploy.png" alt-text="Implementatie met Triton en python-middleware":::
 
 De werk stroom voor het gebruik van Triton voor uw model implementatie is:
 
-1. Controleer of Triton kan dienen voor uw model.
+1. Uw model rechtstreeks bij Triton bedienen.
 1. Controleer of u aanvragen kunt verzenden naar uw Triton-geïmplementeerde model.
-1. Neem uw Triton code op in uw AML-implementatie.
+1. Beschrijving Een laag van python-middleware maken voor pre-en naverwerking aan de server zijde
 
-## <a name="verify-that-triton-can-serve-your-model"></a>Controleren of Triton uw model kan leveren
+## <a name="deploying-triton-without-python-pre--and-post-processing"></a>Triton implementeren zonder python vóór en na de verwerking
 
 Voer eerst de volgende stappen uit om te controleren of de Triton in-Server voor uw model kan dienen.
 
 ### <a name="optional-define-a-model-config-file"></a>Beschrijving Een model configuratie bestand definiëren
 
-Het configuratie bestand van het model vertelt Triton hoeveel invoer moet worden verwacht en van welke dimensies deze invoer zal zijn. Zie [model configuratie](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/model_configuration.html) in de NVIDIA-documentatie voor meer informatie over het maken van het configuratie bestand.
+Het configuratie bestand van het model vertelt Triton hoeveel invoer moet worden verwacht en van welke dimensies deze invoer zal zijn. Zie [model configuratie](https://aka.ms/nvidia-triton-docs) in de NVIDIA-documentatie voor meer informatie over het maken van het configuratie bestand.
 
 > [!TIP]
 > We gebruiken de `--strict-model-config=false` optie bij het starten van de Triton-inrichtings server, wat betekent dat u geen bestand hoeft op te geven `config.pbtxt` voor ONNX-of tensor flow-modellen.
 > 
-> Zie voor meer informatie over deze optie [gegenereerde model configuratie](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/model_configuration.html#generated-model-configuration) in de NVIDIA-documentatie.
+> Zie voor meer informatie over deze optie [gegenereerde model configuratie](https://aka.ms/nvidia-triton-docs) in de NVIDIA-documentatie.
 
 ### <a name="use-the-correct-directory-structure"></a>De juiste mapstructuur gebruiken
 
@@ -106,92 +103,128 @@ models
 ```
 
 > [!IMPORTANT]
-> Deze mapstructuur is een Triton-model opslagplaats en is vereist voor uw model (s) voor gebruik met Triton. Zie [Triton model-opslag](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/model_repository.html) plaatsen in de NVIDIA-documentatie voor meer informatie.
+> Deze mapstructuur is een Triton-model opslagplaats en is vereist voor uw model (s) voor gebruik met Triton. Zie [Triton model-opslag](https://aka.ms/nvidia-triton-docs) plaatsen in de NVIDIA-documentatie voor meer informatie.
 
-### <a name="test-with-triton-and-docker"></a>Testen met Triton en docker
+### <a name="register-your-triton-model"></a>Uw Triton-model registreren
 
-Als u uw model wilt testen om er zeker van te zijn dat het wordt uitgevoerd met Triton, kunt u docker gebruiken. Met de volgende opdrachten wordt de Triton-container aan uw lokale computer door getrokken en wordt de Triton-server gestart:
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
 
-1. Als u de installatie kopie voor de Triton-server op uw lokale computer wilt ophalen, gebruikt u de volgende opdracht:
+```azurecli-interactive
+az ml model register -n my_triton_model -p models --model-framework=Multi
+```
 
-    ```bash
-    docker pull nvcr.io/nvidia/tritonserver:20.09-py3
-    ```
+`az ml model register`Raadpleeg de [referentie documentatie](/cli/azure/ext/azure-cli-ml/ml/model)voor meer informatie.
 
-1. Gebruik de volgende opdracht om de Triton-server te starten. Vervang door `<path-to-models/triton>` het pad naar de Triton-model opslagplaats die uw modellen bevat:
+# <a name="python"></a>[Python](#tab/python)
 
-    ```bash
-    docker run --rm -ti -v<path-to-models/triton>:/models nvcr.io/nvidia/tritonserver:20.09-py3 tritonserver --model-repository=/models --strict-model-config=false
-    ```
 
-    > [!IMPORTANT]
-    > Als u Windows gebruikt, wordt u mogelijk gevraagd netwerk verbindingen voor dit proces toe te staan wanneer u de opdracht voor het eerst uitvoert. Als dit het geval is, selecteert u om toegang in te scha kelen.
+```python
 
-    Zodra deze is gestart, wordt de informatie die lijkt op de volgende tekst geregistreerd op de opdracht regel:
+from azureml.core.model import Model
 
-    ```bash
-    I0923 19:21:30.582866 1 http_server.cc:2705] Started HTTPService at 0.0.0.0:8000
-    I0923 19:21:30.626081 1 http_server.cc:2724] Started Metrics Service at 0.0.0.0:8002
-    ```
+model_path = "models"
 
-    De eerste regel geeft het adres van de webservice aan. In dit geval `0.0.0.0:8000` is dat hetzelfde als `localhost:8000` .
+model = Model.register(
+    model_path=model_path,
+    model_name="bidaf-9-tutorial",
+    tags={"area": "Natural language processing", "type": "Question-answering"},
+    description="Question answering from ONNX model zoo",
+    workspace=ws,
+    model_framework=Model.Framework.MULTI,  # This line tells us you are registering a Triton model
+)
 
-1. Gebruik een hulp programma zoals krul om toegang te krijgen tot het eind punt van de status.
+```
+Zie de documentatie voor de [model klasse](/python/api/azureml-core/azureml.core.model.model?preserve-view=true&view=azure-ml-py)voor meer informatie.
 
-    ```bash
-    curl -L -v -i localhost:8000/v2/health/ready
-    ```
+---
 
-    Deze opdracht retourneert informatie die lijkt op het volgende. Let op de `200 OK` ; deze status betekent dat de webserver wordt uitgevoerd.
+### <a name="deploy-your-model"></a>Uw model implementeren
 
-    ```bash
-    *   Trying 127.0.0.1:8000...
-    * Connected to localhost (127.0.0.1) port 8000 (#0)
-    > GET /v2/health/ready HTTP/1.1
-    > Host: localhost:8000
-    > User-Agent: curl/7.71.1
-    > Accept: */*
-    >
-    * Mark bundle as not supporting multiuse
-    < HTTP/1.1 200 OK
-    HTTP/1.1 200 OK
-    ```
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
 
-Na een eenvoudige status controle kunt u een client maken voor het verzenden van gegevens naar Triton. Zie de [client voorbeelden](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/client_example.html) in de NVIDIA-documentatie voor meer informatie over het maken van een client. Er zijn ook [python-voor beelden in de Triton-github](https://github.com/triton-inference-server/server/tree/master/src/clients/python/examples).
+Als u een met GPU ingeschakeld Azure Kubernetes-service cluster met de naam ' AKS-GPU ' hebt gemaakt via Azure Machine Learning, kunt u de volgende opdracht gebruiken om uw model te implementeren.
 
-Zie voor meer informatie over het uitvoeren van Triton met behulp van docker [Triton uitvoeren op een systeem met een GPU](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/run.html#running-triton-on-a-system-with-a-gpu) en [Triton uitvoeren op een systeem zonder GPU](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/run.html#running-triton-on-a-system-without-a-gpu).
-
-### <a name="register-your-model"></a>Uw model registreren
-
-Nu u hebt gecontroleerd of uw model werkt met Triton, registreert u dit bij Azure Machine Learning. Model registratie slaat uw model bestanden op in de werk ruimte Azure Machine Learning en wordt gebruikt bij de implementatie met de python-SDK en Azure CLI.
-
-De volgende voor beelden laten zien hoe u de model (len) kunt registreren:
+```azurecli
+az ml model deploy -n triton-webservice -m triton_model:1 --dc deploymentconfig.json --compute-target aks-gpu
+```
 
 # <a name="python"></a>[Python](#tab/python)
 
 ```python
-from azureml.core.model import Model
+from azureml.core.webservice import AksWebservice
+from azureml.core.model import InferenceConfig
+from random import randint
 
-model = Model.register(
-    model_path=os.path.join("..", "triton"),
-    model_name="bidaf_onnx",
-    tags={'area': "Natural language processing", 'type': "Question answering"},
-    description="Question answering model from ONNX model zoo",
-    workspace=ws
-```
+service_name = "triton-webservice"
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+config = AksWebservice.deploy_configuration(
+    compute_target_name="aks-gpu",
+    gpu_cores=1,
+    cpu_cores=1,
+    memory_gb=4,
+    auth_enabled=True,
+)
 
-```azurecli
-az ml model register --model-path='triton' \
---name='bidaf_onnx' \
---workspace-name='<my_workspace>'
+service = Model.deploy(
+    workspace=ws,
+    name=service_name,
+    models=[model],
+    deployment_config=config,
+    overwrite=True,
+)
 ```
 ---
 
-<a id="processing"></a>
+Raadpleeg [deze documentatie voor meer informatie over het implementeren van modellen](how-to-deploy-and-where.md).
 
-## <a name="verify-you-can-call-into-your-model"></a>Controleer of u het model kunt aanroepen
+### <a name="call-into-your-deployed-model"></a>Aanroepen naar uw geïmplementeerde model
+
+U kunt eerst uw score-URI en Bearer-tokens ophalen.
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
+
+
+```azurecli
+az ml service show --name=triton-webservice
+```
+# <a name="python"></a>[Python](#tab/python)
+
+```python
+import requests
+
+print(service.scoring_uri)
+print(service.get_keys())
+
+```
+
+---
+
+Controleer vervolgens of uw service wordt uitgevoerd door het volgende te doen: 
+
+```{bash}
+!curl -v $scoring_uri/v2/health/ready -H 'Authorization: Bearer '"$service_key"''
+```
+
+Deze opdracht retourneert informatie die lijkt op het volgende. Let op de `200 OK` ; deze status betekent dat de webserver wordt uitgevoerd.
+
+```{bash}
+*   Trying 127.0.0.1:8000...
+* Connected to localhost (127.0.0.1) port 8000 (#0)
+> GET /v2/health/ready HTTP/1.1
+> Host: localhost:8000
+> User-Agent: curl/7.71.1
+> Accept: */*
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+HTTP/1.1 200 OK
+```
+
+Zodra u een status controle hebt uitgevoerd, kunt u een client maken voor het verzenden van gegevens naar Triton. Zie de [client voorbeelden](https://aka.ms/nvidia-client-examples) in de NVIDIA-documentatie voor meer informatie over het maken van een client. Er zijn ook [python-voor beelden in de Triton-github](https://aka.ms/nvidia-triton-docs).
+
+Als u op dit punt geen python vóór en naverwerking wilt toevoegen aan uw geïmplementeerde webservice, kunt u dit doen. Als u deze voorafgaande en verwerkings logica wilt toevoegen, leest u op.
+
+## <a name="optional-re-deploy-with-a-python-entry-script-for-pre--and-post-processing"></a>Beschrijving Opnieuw implementeren met een python-invoer script voor vóór en na de verwerking
 
 Nadat u hebt gecontroleerd of de Triton uw model kan leveren, kunt u vooraf en post code toevoegen door een _invoer script_ te definiëren. Dit bestand heeft de naam `score.py` . Zie [een vermeldings script definiëren](how-to-deploy-and-where.md#define-an-entry-script)voor meer informatie over invoer scripts.
 
@@ -236,7 +269,7 @@ res = triton_client.infer(model_name,
 
 <a id="redeploy"></a>
 
-## <a name="redeploy-with-an-inference-configuration"></a>Opnieuw implementeren met een configuratie voor afnemen van een interferentie
+### <a name="redeploy-with-an-inference-configuration"></a>Opnieuw implementeren met een configuratie voor afnemen van een interferentie
 
 Met een Afleidings configuratie kunt u een invoer script en het Azure Machine Learning-implementatie proces gebruiken met behulp van de python-SDK of Azure CLI.
 
@@ -244,6 +277,19 @@ Met een Afleidings configuratie kunt u een invoer script en het Azure Machine Le
 > U moet de met de curator gevoerde `AzureML-Triton` [omgeving](./resource-curated-environments.md)opgeven.
 >
 > Het code voorbeeld van python wordt gekloond `AzureML-Triton` in een andere omgeving met de naam `My-Triton` . De Azure CLI-code gebruikt ook deze omgeving. Zie de referentie [environment. Clone ()](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py#clone-new-name-) voor meer informatie over het klonen van een omgeving.
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
+
+> [!TIP]
+> Zie voor meer informatie over het maken van een Afleidings configuratie het [schema](./reference-azure-machine-learning-cli.md#inference-configuration-schema)voor het afstellen van interferentie.
+
+```azurecli
+az ml model deploy -n triton-densenet-onnx \
+-m densenet_onnx:1 \
+--ic inference-config.json \
+-e My-Triton --dc deploymentconfig.json \
+--overwrite --compute-target=aks-gpu
+```
 
 # <a name="python"></a>[Python](#tab/python)
 
@@ -283,48 +329,47 @@ print(local_service.state)
 print(local_service.scoring_uri)
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-
-> [!TIP]
-> Zie voor meer informatie over het maken van een Afleidings configuratie het [schema](./reference-azure-machine-learning-cli.md#inference-configuration-schema)voor het afstellen van interferentie.
-
-```azurecli
-az ml model deploy -n triton-densenet-onnx \
--m densenet_onnx:1 \
---ic inference-config.json \
--e My-Triton --dc deploymentconfig.json \
---overwrite --compute-target=aks-gpu
-```
-
 ---
 
 Nadat de implementatie is voltooid, wordt de Score-URI weer gegeven. Voor deze lokale implementatie is het `http://localhost:6789/score` . Als u in de Cloud implementeert, kunt u de opdracht [AZ ml service show](/cli/azure/ext/azure-cli-ml/ml/service?view=azure-cli-latest#ext_azure_cli_ml_az_ml_service_show) CLI gebruiken om de Score-URI op te halen.
 
 Zie [een model gebruiken dat is geïmplementeerd als een webservice](how-to-consume-web-service.md)voor meer informatie over het maken van een client die inactiviteits aanvragen verzendt naar de Score-URI.
 
+### <a name="setting-the-number-of-workers"></a>Het aantal werk rollen instellen
+
+Stel de omgevings variabele in om het aantal werk nemers in uw implementatie in te stellen `WORKER_COUNT` . Als u een [omgevings](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py) object hebt aangeroepen `env` , kunt u het volgende doen:
+
+```{py}
+env.environment_variables["WORKER_COUNT"] = "1"
+```
+
+Hiermee wordt het aantal werk nemers dat u opgeeft, door Azure ML genoteerd.
+
+
 ## <a name="clean-up-resources"></a>Resources opschonen
 
 Als u van plan bent de Azure Machine Learning-werk ruimte te blijven gebruiken, maar de geïmplementeerde service wilt verwijderen, gebruikt u een van de volgende opties:
 
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
+
+```azurecli
+az ml service delete -n triton-densenet-onnx
+```
 # <a name="python"></a>[Python](#tab/python)
 
 ```python
 local_service.delete()
 ```
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
-
-```azurecli
-az ml service delete -n triton-densenet-onnx
-```
 
 ---
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Bekijk end-to-end-voor beelden van Triton in Azure Machine Learning](https://aka.ms/aml-triton-sample)
-* Bekijk de [voor beelden van Triton-clients](https://github.com/triton-inference-server/server/tree/master/src/clients/python/examples)
-* Lees de [Triton-Server documentatie](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/index.html) voor deservering
+* Bekijk de [voor beelden van Triton-clients](https://aka.ms/nvidia-client-examples)
+* Lees de [Triton-Server documentatie](https://aka.ms/nvidia-triton-docs) voor deservering
 * [Problemen met een mislukte implementatie oplossen](how-to-troubleshoot-deployment.md)
 * [Implementeren naar Azure Kubernetes Service](how-to-deploy-azure-kubernetes-service.md)
 * [Webservice bijwerken](how-to-deploy-update-web-service.md)

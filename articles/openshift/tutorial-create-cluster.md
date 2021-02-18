@@ -4,14 +4,14 @@ description: Meer informatie over het maken van een Microsoft Azure Red Hat Open
 author: sakthi-vetrivel
 ms.author: suvetriv
 ms.topic: tutorial
-ms.service: container-service
+ms.service: azure-redhat-openshift
 ms.date: 10/26/2020
-ms.openlocfilehash: e6be2b659223fb110d7e13b14d732561df9ad408
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: b690d3b3c29d2943e28a0992730d932b35c20734
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99072233"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653037"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-4-cluster"></a>Zelfstudie: Een Azure Red Hat OpenShift 4-cluster maken
 
@@ -26,6 +26,8 @@ In deze zelfstudie, deel een van drie, bereidt u uw omgeving voor op het maken v
 Als u ervoor kiest om CLI lokaal te installeren en gebruiken, moet u Azure CLI versie 2.6.0 of hoger gebruiken voor deze zelfstudie. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren](/cli/azure/install-azure-cli?view=azure-cli-latest) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 Azure Red Hat OpenShift vereist minimaal 40 kernen om een OpenShift-cluster te maken en uit te voeren. Het standaardquotum voor Azure-resources voor een nieuw Azure-abonnement voldoet niet aan deze vereiste. Als u een verhoging van de resourcelimiet wilt aanvragen, raadpleegt u [Standaardquotum: limieten verhogen per VM-reeks](../azure-portal/supportability/per-vm-quota-requests.md).
+
+ARO pull Secret heeft geen invloed op de kosten van de RH open Shift-licentie voor ARO.
 
 ### <a name="verify-your-permissions"></a>Uw machtigingen controleren
 

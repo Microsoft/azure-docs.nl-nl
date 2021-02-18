@@ -10,12 +10,12 @@ ms.subservice: develop
 ms.topic: tutorial
 ms.date: 01/12/2021
 ms.author: v-doeris
-ms.openlocfilehash: 4b07ef14b87d87aa78ad2174b0f4dc176b8a63dc
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 82e7d01442d30356a3d8ac68262a1ac49990666c
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100562094"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100651184"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-in-an-electron-desktop-app"></a>Zelf studie: gebruikers aanmelden en de Microsoft Graph-API aanroepen in een Elektroon-desktop-app
 
@@ -576,7 +576,6 @@ class AuthProvider {
      * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-common/docs/Accounts.md
      */
     async getAccount() {
-        // need to call getAccount here?
         const cache = this.clientApplication.getTokenCache();
         const currentAccounts = await cache.getAllAccounts();
 

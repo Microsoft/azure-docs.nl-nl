@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: aapowell
 ms.custom: devx-track-js
-ms.openlocfilehash: e24a2a19eb39e2c6c7612631ad98f95cb4c5b9ef
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 4430ed34858077b13b4fec69756c1c7e9f3ef7ac
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91250161"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652353"
 ---
 # <a name="tutorial-publish-a-gatsby-site-to-azure-static-web-apps-preview"></a>Zelfstudie: Een Gatsby-site publiceren in Azure Static Web Apps Preview
 
@@ -75,7 +75,7 @@ U moet een opslagplaats in GitHub hebben om een nieuwe Azure Static Web Apps-res
 1. Push de lokale opslagplaats naar GitHub.
 
    ```bash
-   git push --set-upstream origin master
+   git push --set-upstream origin main
    ```
 
 ## <a name="deploy-your-web-app"></a>De web-app implementeren
@@ -102,7 +102,7 @@ De volgende stappen laten zien hoe u een nieuwe statische site-app maakt en deze
 
 1. Selecteer voor _SKU_ de optie **Gratis**.
 
-   :::image type="content" source="./media/publish-gatsby/basic-app-details.png" alt-text="Een Static Web Apps-resource (preview) maken in de portal":::
+   :::image type="content" source="./media/publish-gatsby/basic-app-details.png" alt-text="Ingevulde gegevens":::
 
 1. Klik op de knop **Aanmelden bij GitHub**.
 
@@ -110,9 +110,9 @@ De volgende stappen laten zien hoe u een nieuwe statische site-app maakt en deze
 
 1. Selecteer de **gatsby-static-web-app** als de _Opslagplaats_ .
 
-1. Selecteer **hoofd** voor de _Vertakking_.
+1. Selecteer **hoofd** voor de _vertakking_ .
 
-   :::image type="content" source="./media/publish-gatsby/completed-github-info.png" alt-text="Een Static Web Apps-resource (preview) maken in de portal":::
+   :::image type="content" source="./media/publish-gatsby/completed-github-info.png" alt-text="Voltooide GitHub-gegevens":::
 
 ### <a name="build"></a>Ontwikkelen
 
@@ -126,7 +126,7 @@ Voeg vervolgens configuratie-instellingen toe die tijdens het bouwproces worden 
 
    Een waarde voor _API-locatie_ is niet nodig omdat u momenteel geen API implementeert.
 
-   :::image type="content" source="./media/publish-gatsby/build-details.png" alt-text="Een Static Web Apps-resource (preview) maken in de portal":::
+   :::image type="content" source="./media/publish-gatsby/build-details.png" alt-text="Build-instellingen":::
 
 ### <a name="review-and-create"></a>Controleren en maken
 
@@ -138,7 +138,7 @@ Voeg vervolgens configuratie-instellingen toe die tijdens het bouwproces worden 
 
 1. Klik in het resourcescherm op de _URL_-koppeling om de geïmplementeerde toepassing te openen. Mogelijk moet u enkele minuten wachten voor de GitHub-actie is voltooid.
 
-   :::image type="content" source="./media/publish-gatsby/deployed-app.png" alt-text="Een Static Web Apps-resource (preview) maken in de portal":::
+   :::image type="content" source="./media/publish-gatsby/deployed-app.png" alt-text="Geïmplementeerde toepassing":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

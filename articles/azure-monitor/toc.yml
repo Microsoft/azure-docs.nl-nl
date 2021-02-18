@@ -68,7 +68,7 @@
     - name: Resource Manager-sjablonen
       items:
         - name: Overzicht
-          href: /resource-manager-samples.md
+          href: resource-manager-samples.md
         - name: Agents
           href: agents/resource-manager-agent.md
         - name: Waarschuwingen
@@ -102,9 +102,9 @@
         - name: Azure Monitor voor virtuele machines
           href: vm/resource-manager-vminsights.md
     - name: Azure CLI
-      href: /cli-samples.md
+      href: cli-samples.md
     - name: Azure PowerShell
-      href: /powershell-samples.md
+      href: powershell-samples.md
 - name: Concepten
   items:
     - name: Wat kunt u bewaken?
@@ -114,7 +114,7 @@
     - name: Gegevensbronnen
       href: agents/data-sources.md
     - name: Gegevensplatform
-      href: /data-platform.md
+      href: data-platform.md
     - name: Gegevensbeveiliging
       items:
         - name: Logboekgegevens
@@ -142,7 +142,7 @@
     - name: Gegevens visualiseren
       href: visualizations.md
     - name: Partnerintegraties
-      href: /partners.md
+      href: partners.md
     - name: Beveiliging
       items:
         - name: Beveiligingsbasislijn
@@ -169,14 +169,14 @@
     - name: Beheren en configureren
       items:
         - name: Rolmachtigingen en -beveiliging
-          href: /roles-permissions-security.md
+          href: roles-permissions-security.md
         - name: IP-adressen
           href: app/ip-addresses.md
           displayname: 'firewall, firewall exceptions, whitelist'
         - name: Verbruik en kosten
           items:
             - name: Gebruik en geraamde kosten
-              href: /usage-estimated-costs.md
+              href: usage-estimated-costs.md
             - name: Toepassingsgebruik en kosten
               href: app/pricing.md
             - name: Gegevensgebruik en kosten vastleggen
@@ -1399,7 +1399,7 @@
           href: /azure/templates/microsoft.operationalinsights/allversions
     - name: Ingebouwde modules voor Azure Policy
       displayName: 'samples, policies, definitions'
-      href: /policy-reference.md
+      href: policy-reference.md
     - name: Buitengebruikstelling van functies en API
       items:
         - name: OperationalInsights-API

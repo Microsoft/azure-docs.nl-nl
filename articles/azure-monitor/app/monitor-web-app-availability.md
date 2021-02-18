@@ -4,12 +4,12 @@ description: Stel webtests in Application Insights in. Ontvang een waarschuwing 
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.reviewer: sdash
-ms.openlocfilehash: b0f66608c6e0f23b861e207d0dea07a546b41c2a
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 41338760034918dce30ffb45c738588a2aa29786
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937408"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585940"
 ---
 # <a name="monitor-the-availability-of-any-website"></a>Beschik baarheid van alle websites bewaken
 
@@ -151,7 +151,7 @@ Klik op de rij met de uitzonde ring om de details van de uitzonde ring aan de se
 
 ![Diagnostische gegevens aan de server zijde](./media/monitor-web-app-availability/open-instance-4.png)
 
-Naast de onbewerkte resultaten kunt u ook twee belang rijke metrische gegevens over beschik baarheid in [Metrics Explorer](../platform/metrics-getting-started.md)bekijken:
+Naast de onbewerkte resultaten kunt u ook twee belang rijke metrische gegevens over beschik baarheid in [Metrics Explorer](../essentials/metrics-getting-started.md)bekijken:
 
 1. Beschikbaarheid: percentage van de tests die zijn geslaagd, bekeken over alle testuitvoeringen.
 2. Testduur: gemiddelde testduur van alle testuitvoeringen.
@@ -159,7 +159,7 @@ Naast de onbewerkte resultaten kunt u ook twee belang rijke metrische gegevens o
 ## <a name="automation"></a>Automation
 
 * Gebruik [PowerShell-scripts om automatisch een beschikbaarheidstest in te stellen](./powershell.md#add-an-availability-test).
-* Stel een [webhook](../platform/alerts-webhooks.md) in die wordt aangeroepen wanneer er een waarschuwing wordt gegenereerd.
+* Stel een [webhook](../alerts/alerts-webhooks.md) in die wordt aangeroepen wanneer er een waarschuwing wordt gegenereerd.
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 

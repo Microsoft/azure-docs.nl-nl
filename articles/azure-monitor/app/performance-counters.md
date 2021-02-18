@@ -4,12 +4,12 @@ description: Systeem-en aangepaste .NET-prestatie meter items bewaken in Applica
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f772b129e20fbaaade7305d84064a713dd734199
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 5f1bd3ac4542dcce0d41f69a9c1664b747214554
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937387"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100583887"
 ---
 # <a name="system-performance-counters-in-application-insights"></a>Systeem prestatie meter items in Application Insights
 
@@ -110,7 +110,7 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector;
 ```
 
 ## <a name="performance-counters-in-analytics"></a>Prestatie meter items in Analytics
-U kunt rapporten over prestatie meter items zoeken en weer geven in [Analytics](../log-query/log-query-overview.md).
+U kunt rapporten over prestatie meter items zoeken en weer geven in [Analytics](../logs/log-query-overview.md).
 
 Het **Performance Counters** -schema stelt de `category` , `counter` naam en `instance` naam van elk prestatie meter item in.  In de telemetrie voor elke toepassing ziet u alleen de items voor die toepassing. Als u bijvoorbeeld wilt zien welke items beschikbaar zijn: 
 
@@ -148,7 +148,7 @@ De ondersteuning voor prestatie meter items in ASP.NET Core is beperkt:
 * SDK-versies 2.8.0 en hoger ondersteunen CPU/geheugen teller in Linux. Er wordt geen ander item ondersteund in Linux. De aanbevolen manier om systeem tellers op te halen in Linux (en andere niet-Windows-omgevingen) is met behulp van [EventCounters](eventcounters.md)
 
 ## <a name="alerts"></a>Waarschuwingen
-Net als bij andere metrische gegevens kunt u [een waarschuwing instellen](../platform/alerts-log.md) om u te waarschuwen als een prestatie meter item buiten een limiet valt die u opgeeft. Open het deel venster waarschuwingen en klik op waarschuwing toevoegen.
+Net als bij andere metrische gegevens kunt u [een waarschuwing instellen](../alerts/alerts-log.md) om u te waarschuwen als een prestatie meter item buiten een limiet valt die u opgeeft. Open het deel venster waarschuwingen en klik op waarschuwing toevoegen.
 
 ## <a name="next-steps"></a><a name="next"></a>Volgende stappen
 

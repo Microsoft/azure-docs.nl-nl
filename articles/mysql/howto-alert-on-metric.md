@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: 81003be986524b94e9c4487cd0d8606540445d16
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 5b9e7938f404a37672fe8d13725b1e64d665bf18
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542079"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576265"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-mysql"></a>Gebruik de Azure Portal om waarschuwingen in te stellen voor Azure Database for MySQL 
 
@@ -25,11 +25,11 @@ U kunt een waarschuwing configureren om de volgende acties uit te voeren wanneer
 * Een webhook aanroepen
 
 U kunt informatie over waarschuwings regels configureren en ophalen met behulp van:
-* [Azure-portal](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
-* [Azure-CLI](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
+* [Azure-portal](../azure-monitor/alerts/alerts-metric.md#create-with-azure-portal)
+* [Azure-CLI](../azure-monitor/alerts/alerts-metric.md#with-azure-cli)
 * [Azure Monitor REST API](/rest/api/monitor/metricalerts)
 
-## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Een waarschuwings regel maken op basis van een metriek van de Azure Portal
+## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Een waarschuwingsregel maken op een metrische waarde vanuit Azure Portal
 1. Selecteer in de [Azure Portal](https://portal.azure.com/)de Azure database for mysql server die u wilt bewaken.
 
 2. Selecteer in de sectie **bewaking** van de zijbalk **waarschuwingen** zoals wordt weer gegeven:
@@ -48,7 +48,7 @@ U kunt informatie over waarschuwings regels configureren en ophalen met behulp v
    
    :::image type="content" source="./media/howto-alert-on-metric/6-configure-signal-logic.png" alt-text="Metrische waarde selecteren":::
 
-7. Configureer de waarschuwings logica met inbegrip van de **voor waarde** (bijvoorbeeld ' Groter dan '), **drempel waarde** (bijvoorbeeld 85 procent), **tijd aggregatie** , **periode waarbinnen** de metrische regel moet worden voldaan voordat de waarschuwingen worden geactiveerd (bijvoorbeeld ' In de afgelopen 30 minuten ') en **frequentie**.
+7. Configureer de waarschuwings logica met inbegrip van de **voor waarde** (bijvoorbeeld ' Groter dan '), **drempel waarde** (bijvoorbeeld 85 procent), **tijd aggregatie**, **periode waarbinnen** de metrische regel moet worden voldaan voordat de waarschuwingen worden geactiveerd (bijvoorbeeld ' In de afgelopen 30 minuten ') en **frequentie**.
    
    Selecteer **gereed** wanneer u klaar bent.
 
@@ -85,5 +85,5 @@ Zodra u een waarschuwing hebt gemaakt, kunt u deze selecteren en de volgende act
 
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over het [configureren van webhooks in waarschuwingen](../azure-monitor/platform/alerts-webhooks.md).
-* Bekijk een [overzicht van de verzameling metrische gegevens](../azure-monitor/platform/data-platform.md) om te controleren of uw service beschikbaar is en reageert.
+* Meer informatie over het [configureren van webhooks in waarschuwingen](../azure-monitor/alerts/alerts-webhooks.md).
+* Bekijk een [overzicht van de verzameling metrische gegevens](../azure-monitor/data-platform.md) om te controleren of uw service beschikbaar is en reageert.

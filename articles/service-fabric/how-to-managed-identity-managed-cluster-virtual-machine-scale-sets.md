@@ -4,12 +4,12 @@ description: In dit artikel wordt uitgelegd hoe u een beheerde identiteit kunt t
 ms.topic: how-to
 ms.date: 11/24/2020
 ms.custom: references_regions
-ms.openlocfilehash: 9edcf75451f43f2a00cd01d5ca7f385704b1ea7f
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 3ff5d66160ddbb037469378634826fd9eeae0c54
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878423"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100651643"
 ---
 # <a name="add-a-managed-identity-to-a-service-fabric-managed-cluster-node-type-preview"></a>Een beheerde identiteit toevoegen aan een Service Fabric beheerd cluster knooppunt type (preview-versie)
 
@@ -54,7 +54,7 @@ Een roltoewijzing toevoegen aan de beheerde identiteit met de Service Fabric res
 
 De volgende waarden moeten worden gebruikt, indien van toepassing:
 
-|Naam|Waarde van bijbehorende Service Fabric resource provider|
+|Name|Waarde van bijbehorende Service Fabric resource provider|
 |----|-------------------------------------|
 |Toepassings-id|74cb6831-0dbb-4be1-8206-fd4df301cdc2|
 |Object-id|fbc587f2-66f5-4459-a027-bcd908b9d278|
@@ -99,23 +99,28 @@ New-AzRoleAssignment -PrincipalId fbc587f2-66f5-4459-a027-bcd908b9d278 -RoleDefi
 
 ## <a name="add-managed-identity-properties-to-node-type-definition"></a>Eigenschappen van beheerde identiteit toevoegen aan de definitie van het knooppunt type
 
-Voeg ten slotte de `vmManagedIdentity` Eigenschappen en toe `userAssignedIdentities` aan de knooppunt type definitie van het beheerde cluster:
+Voeg ten slotte de `vmManagedIdentity` Eigenschappen en toe `userAssignedIdentities` aan de definitie van het knoop punt type van het beheerde cluster. Zorg ervoor dat u **2021-01-01-preview** of hoger gebruikt voor de `apiVersion` .
 
 ```json
 
-"properties": {
-    "isPrimary" : true,
-    "vmInstanceCount": 5,
-    "dataDiskSizeGB": 100,
-    "vmSize": "Standard_D2",
-    "vmImagePublisher" : "MicrosoftWindowsServer",
-    "vmImageOffer" : "WindowsServer",
-    "vmImageSku" : "2019-Datacenter",
-    "vmImageVersion" : "latest",
-    "vmManagedIdentity": {
-        "userAssignedIdentities": [
-            "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('userAssignedIdentityName'))]"
-        ]
+ {
+    "type": "Microsoft.ServiceFabric/managedclusters/nodetypes",
+    "apiVersion": "2021-01-01-preview",
+    ...
+    "properties": {
+        "isPrimary" : true,
+        "vmInstanceCount": 5,
+        "dataDiskSizeGB": 100,
+        "vmSize": "Standard_D2_v2",
+        "vmImagePublisher" : "MicrosoftWindowsServer",
+        "vmImageOffer" : "WindowsServer",
+        "vmImageSku" : "2019-Datacenter",
+        "vmImageVersion" : "latest",
+        "vmManagedIdentity": {
+            "userAssignedIdentities": [
+                "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('userAssignedIdentityName'))]"
+            ]
+        }
     }
 }
 ```

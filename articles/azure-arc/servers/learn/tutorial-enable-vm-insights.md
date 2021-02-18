@@ -3,16 +3,16 @@ title: "Zelfstudie: Een hybride machine bewaken met Azure Monitor voor VM's"
 description: Lees hier meer over het verzamelen en analyseren van gegevens voor een hybride machine in Azure Monitor.
 ms.topic: tutorial
 ms.date: 09/23/2020
-ms.openlocfilehash: 76565e40a8d85003c5a03be5fa48f83459657f29
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
-ms.translationtype: HT
+ms.openlocfilehash: 409ad0976e02e42e385e22a103cfc06af5a4f3f4
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94738081"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587694"
 ---
 # <a name="tutorial-monitor-a-hybrid-machine-with-azure-monitor-for-vms"></a>Zelfstudie: Een hybride machine bewaken met Azure Monitor voor VM's
 
-[Azure Monitor](../overview.md) kan gegevens rechtstreeks vanuit uw hybride machines verzamelen en onderbrengen in een Log Analytics-werkruimte voor uitvoerige analyse en correlatie. Dit betekent meestal dat de [Log Analytics-agent](../../../azure-monitor/platform/agents-overview.md#log-analytics-agent) op de machine wordt geïnstalleerd met behulp van een script, handmatig of via een geautomatiseerde methode volgens de standaarden voor configuratiebeheer. Voor Arc-servers is onlangs ondersteuning geïntroduceerd voor het installeren van de [VM-extensies](../manage-vm-extensions.md) van Log Analytics- en Dependency-agent voor Windows en Linux, zodat Azure Monitor gegevens van uw niet-Azure-VM's kan verzamelen.
+[Azure Monitor](../overview.md) kan gegevens rechtstreeks vanuit uw hybride machines verzamelen en onderbrengen in een Log Analytics-werkruimte voor uitvoerige analyse en correlatie. Dit betekent meestal dat de [Log Analytics-agent](../../../azure-monitor/agents/agents-overview.md#log-analytics-agent) op de machine wordt geïnstalleerd met behulp van een script, handmatig of via een geautomatiseerde methode volgens de standaarden voor configuratiebeheer. Voor Arc-servers is onlangs ondersteuning geïntroduceerd voor het installeren van de [VM-extensies](../manage-vm-extensions.md) van Log Analytics- en Dependency-agent voor Windows en Linux, zodat Azure Monitor gegevens van uw niet-Azure-VM's kan verzamelen.
 
 In deze zelfstudie leert u hoe u gegevens kunt configureren en verzamelen van uw Linux- of Windows-machines. U doet dit door Azure Monitor voor VM's in te schakelen door een vereenvoudigde reeks stappen te volgen. Met deze stappen wordt de ervaring gestroomlijnd en verkort.  
 
@@ -22,9 +22,9 @@ In deze zelfstudie leert u hoe u gegevens kunt configureren en verzamelen van uw
 
 * De functionaliteit van de VM-extensie is alleen beschikbaar in de lijst met [ondersteunde regio's](../overview.md#supported-regions).
 
-* Zie [Ondersteunde besturingssystemen](../../../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems) als u wilt controleren of het besturingssysteem van de server die u inschakelt wordt ondersteund door Azure Monitor voor VM's.
+* Zie [Ondersteunde besturingssystemen](../../../azure-monitor/vm/vminsights-enable-overview.md#supported-operating-systems) als u wilt controleren of het besturingssysteem van de server die u inschakelt wordt ondersteund door Azure Monitor voor VM's.
 
-* Bekijk de firewallvereisten voor de Log Analytics-agent in het [overzicht van de Log Analytics-agent](../../../azure-monitor/platform/log-analytics-agent.md#network-requirements). De Map en Dependency Agent van Azure Monitor voor VM's stuurt zelf geen gegevens door en u hoeft er geen wijzigingen in de firewalls en poorten voor aan te brengen.
+* Bekijk de firewallvereisten voor de Log Analytics-agent in het [overzicht van de Log Analytics-agent](../../../azure-monitor/agents/log-analytics-agent.md#network-requirements). De Map en Dependency Agent van Azure Monitor voor VM's stuurt zelf geen gegevens door en u hoeft er geen wijzigingen in de firewalls en poorten voor aan te brengen.
 
 ## <a name="sign-in-to-azure-portal"></a>Meld u aan bij Azure Portal
 

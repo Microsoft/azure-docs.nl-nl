@@ -1,16 +1,16 @@
 ---
 title: Aan de slag met Azure Service Bus-wachtrijen | Microsoft Docs
 description: In deze zelf studie maakt u .NET Core-Console toepassingen om berichten te verzenden naar en berichten van een Service Bus wachtrij te ontvangen.
-ms.topic: conceptual
+ms.topic: quickstart
 ms.tgt_pltfrm: dotnet
 ms.date: 09/01/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 8c862fda5ee2bb5b7418fda1b4e45cd06742cf95
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: e8e70884838d56003694e2da09668527ce5b6c7b
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95819279"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652986"
 ---
 # <a name="get-started-with-service-bus-queues"></a>Aan de slag met Service Bus-wachtrijen
 In deze zelf studie maakt u .NET Core-Console toepassingen om berichten te verzenden naar en berichten van een Service Bus wachtrij te ontvangen.
@@ -36,19 +36,19 @@ Maak een C#-consoletoepassing met Visual Studio om berichten naar de wachtrij te
 
 ### <a name="create-a-console-application"></a>Een consoletoepassing maken
 
-Start Visual Studio en maak een nieuw **console-app (.net core)** -project voor C#. In dit voor beeld wordt de app- *CoreSenderApp* naam.
+Start Visual Studio en maak een nieuwe **Consoletoepassing (.NET Core)** voor C#. In dit voor beeld wordt de app- *CoreSenderApp* naam.
 
 ### <a name="add-the-service-bus-nuget-package"></a>Het Service Bus NuGet-pakket toevoegen
 
 1. Klik met de rechtermuisknop op het nieuwe project en selecteer **NuGet-pakketten beheren**.
 1. Selecteer **Bladeren**. Zoek en selecteer **[micro soft. Azure. ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/)**.
-1. Selecteer **installeren** om de installatie te volt ooien en sluit NuGet Package Manager.
+1. Selecteer **Installeren** om de installatie te voltooien en sluit vervolgens de NuGet Package Manager.
 
     ![Een NuGet-pakket selecteren][nuget-pkg]
 
 ### <a name="write-code-to-send-messages-to-the-queue"></a>Code schrijven om berichten naar de wachtrij te verzenden
 
-1. Voeg in *Program.cs* de volgende `using` instructies toe boven aan de definitie van de naam ruimte, vóór de klassen declaratie:
+1. Voeg in *Program.cs* de volgende `using`-instructies aan het begin van de naamruimtedefinitie toe voor de klassedeclaratie:
 
     ```csharp
     using System.Text;
@@ -57,7 +57,7 @@ Start Visual Studio en maak een nieuw **console-app (.net core)** -project voor 
     using Microsoft.Azure.ServiceBus;
     ```
 
-1. `Program`Declareer de volgende variabelen in de-klasse:
+1. Declareer in de klasse `Program` de volgende variabelen:
 
     ```csharp
     const string ServiceBusConnectionString = "<your_connection_string>";
@@ -65,9 +65,9 @@ Start Visual Studio en maak een nieuw **console-app (.net core)** -project voor 
     static IQueueClient queueClient;
     ```
 
-    Voer uw connection string in voor de naam ruimte als de `ServiceBusConnectionString` variabele. Voer de naam van uw wachtrij in.
+    Voer uw verbindingsstring in voor de naamruimte als de variabele `ServiceBusConnectionString`. Voer de naam van uw wachtrij in.
 
-1. Vervang de- `Main()` methode door de volgende **async** - `Main` methode. Hiermee wordt de `SendMessagesAsync()` methode aangeroepen die u in de volgende stap toevoegt om berichten naar de wachtrij te verzenden. 
+1. Vervang de `Main()`-methode door de volgende **async** `Main`-methode. Hiermee wordt de `SendMessagesAsync()`-methode aangeroepen die u in de volgende stap toevoegt om berichten naar de wachtrij te verzenden. 
 
     ```csharp
     public static async Task Main(string[] args)
@@ -87,7 +87,7 @@ Start Visual Studio en maak een nieuw **console-app (.net core)** -project voor 
         await queueClient.CloseAsync();
     }
     ```
-1. Voeg direct na de `MainAsync()` methode de volgende `SendMessagesAsync()` methode toe waarmee het aantal berichten wordt verzonden dat is opgegeven door `numberOfMessagesToSend` (momenteel ingesteld op 10):
+1. Voeg direct na de `MainAsync()` methode de volgende `SendMessagesAsync()` methode toe voor het uitvoeren van het werk van het verzenden van het aantal berichten dat is opgegeven door `numberOfMessagesToSend` (momenteel ingesteld op 10):
 
     ```csharp
     static async Task SendMessagesAsync(int numberOfMessagesToSend)
@@ -184,7 +184,7 @@ Selecteer de naam van uw wachtrij in het venster **overzicht** van de naam ruimt
 
 De waarde voor het **aantal actieve berichten** voor de wachtrij is nu **10**. Telkens wanneer u deze app Sender uitvoert zonder de berichten op te halen, wordt deze waarde verhoogd met 10.
 
-De huidige grootte van de wachtrij verhoogt de **huidige** waarde in **Essentials**  telkens wanneer de app berichten aan de wachtrij toevoegt.
+De huidige grootte van de wachtrij verhoogt de **HUIDIGE** waarde in **Essentials** telkens wanneer de app berichten aan de wachtrij toevoegt.
 
 In de volgende sectie wordt beschreven hoe u deze berichten ophaalt.
 
@@ -194,7 +194,7 @@ Als u de berichten wilt ontvangen die u hebt verzonden, maakt u een andere **con
 
 ### <a name="write-code-to-receive-messages-from-the-queue"></a>Schrijven van code voor het ontvangen van berichten van de wachtrij
 
-1. Voeg in *Program.cs* de volgende `using` instructies toe boven aan de definitie van de naam ruimte, vóór de klassen declaratie:
+1. Voeg in *Program.cs* de volgende `using`-instructies aan het begin van de naamruimtedefinitie toe voor de klassedeclaratie:
 
     ```csharp
     using System;
@@ -204,7 +204,7 @@ Als u de berichten wilt ontvangen die u hebt verzonden, maakt u een andere **con
     using Microsoft.Azure.ServiceBus;
     ```
 
-1. `Program`Declareer de volgende variabelen in de-klasse:
+1. Declareer in de klasse `Program` de volgende variabelen:
 
     ```csharp
     const string ServiceBusConnectionString = "<your_connection_string>";
@@ -212,7 +212,7 @@ Als u de berichten wilt ontvangen die u hebt verzonden, maakt u een andere **con
     static IQueueClient queueClient;
     ```
 
-    Voer uw connection string in voor de naam ruimte als de `ServiceBusConnectionString` variabele. Voer de naam van uw wachtrij in.
+    Voer uw verbindingsstring in voor de naamruimte als de variabele `ServiceBusConnectionString`. Voer de naam van uw wachtrij in.
 
 1. Vervang de `Main()`-methode door de volgende code:
 
@@ -381,7 +381,7 @@ namespace CoreReceiverApp
 }
 ```
 
-Voer het programma uit en controleer de portal opnieuw. Het **aantal actieve berichten** en **huidige** waarden zijn nu **0**.
+Voer het programma uit en controleer de portal opnieuw. De waarden voor **Aantal actieve berichten** en **HUIDIGE** zijn nu **0**.
 
 ![Wachtrij nadat berichten zijn ontvangen][queue-message-receive]
 

@@ -10,14 +10,14 @@ ms.service: media-services
 ms.subservice: video-indexer
 ms.workload: na
 ms.topic: article
-ms.date: 02/01/2021
+ms.date: 02/16/2021
 ms.author: juliako
-ms.openlocfilehash: a6b1fc5adba166aa15a786d3440be1eca7f0a260
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: c8fcd6e662a0beff61209de4b5c4331618b45ea1
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100560511"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653297"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Release opmerkingen bij Azure Media Services Video Indexer
 
@@ -29,6 +29,33 @@ Om u op de hoogte te houden van de nieuwste ontwikkelingen, biedt dit artikel u 
 * Bekende problemen
 * Opgeloste fouten
 * Afgeschafte functionaliteit
+
+## <a name="february-2021"></a>Februari 2021
+
+### <a name="multiple-account-owners"></a>Meerdere account eigenaren 
+
+De rol account eigenaar is toegevoegd aan Video Indexer. U kunt gebruikers toevoegen, wijzigen en verwijderen. Wijzig hun rol. Zie [gebruikers uitnodigen](invite-users.md)voor meer informatie over het delen van een account.
+
+### <a name="audio-event-detection-public-preview"></a>Audio gebeurtenis detectie (open bare preview)
+
+> [!NOTE]
+> Deze functie is alleen beschikbaar in proef accounts. 
+
+Video Indexer detecteert nu de volgende audio-effecten in de niet-spraak segmenten van de inhoud: Gunshot, glas Brokers, alarm, Siren, explosie, honden schors, alinea, laughter, massa reacties (cheering, Clapping en booing) en stilte. 
+
+De functie voor nieuw toegevoegde audio is beschikbaar wanneer u een bestand indexeert door de **geavanceerde optie**  ->  **geavanceerde audio** -voor instelling te kiezen (onder video en audio indexeren). Standaard indexering bevat alleen **stilte** -en overschrijvings **reacties**. 
+
+Het gebeurtenis type **Clapping** dat is opgenomen in het vorige model voor audio-effecten, is nu geëxtraheerd door een deel van het gebeurtenis type voor de **reactie** van de hoeveelheid.
+
+Wanneer u ervoor kiest om de **InSites** van uw video op de [video indexer](https://www.videoindexer.ai/) website te bekijken, worden de audio-effecten op de pagina weer gegeven.
+
+:::image type="content" source="./media/release-notes/audio-detection.png" alt-text="Geluids gebeurtenis detectie":::
+
+### <a name="named-entities-enhancement"></a>Verbetering van benoemde entiteiten  
+
+De geëxtraheerde lijst met personen en locatie is uitgebreid en bijgewerkt in het algemeen. 
+
+Daarnaast bevat het model nu mensen en locaties in context die niet beroemde zijn, zoals een ' Sam ' of ' Home ' in de video. 
 
 ## <a name="january-2021"></a>Januari 2021
 

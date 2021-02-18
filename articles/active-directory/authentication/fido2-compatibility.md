@@ -11,12 +11,12 @@ author: knicholasa
 manager: martinco
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0a8f96fabdff3543222077f5113b0bd602997b7
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 3e324ae0fc80bb5990f9cf15901080684086a549
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417160"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652238"
 ---
 # <a name="browser-support-of-fido2-passwordless-authentication"></a>Browser ondersteuning voor FIDO2-verificatie met wacht woord
 
@@ -39,7 +39,7 @@ De informatie in de bovenstaande tabel is getest op de volgende versies van het 
 
 | Besturingssysteem | Nieuwste test versie |
 | --- | --- |
-| Windows | Windows 10 20H2 1904 |
+| Windows | Windows 10-20H2 |
 | macOS | OS X 11 Big sur |
 | Linux | Fedora 32-werk station |
 

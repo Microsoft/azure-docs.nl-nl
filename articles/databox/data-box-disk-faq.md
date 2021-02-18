@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: conceptual
-ms.date: 12/17/2020
+ms.date: 02/17/2021
 ms.author: alkohli
-ms.openlocfilehash: 103e4453ecf848822db0d82bc13e93b0c8c68331
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: f4f1924ce19ccb0f48aa1a7c9a0515fa89505dae
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98702131"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652306"
 ---
 # <a name="azure-data-box-disk-frequently-asked-questions"></a>Azure Data Box Disk: veelgestelde vragen
 
@@ -48,13 +48,10 @@ A. Ga naar de [pagina Prijzen](https://azure.microsoft.com/pricing/details/datab
 A.  Als u Azure Data Box-schijven wilt aanschaffen, meldt u zich aan bij Azure Portal en plaatst u een Data Box-bestelling voor schijven. Geef uw contactgegevens en overige informatie op. Zodra u een bestelling hebt geplaatst, worden de schijven op basis van beschikbaarheid binnen tien dagen verzonden.
 
 ### <a name="q-what-is-the-maximum-amount-of-data-i-can-transfer-with-data-box-disks-in-one-instance"></a>V. Wat is de maximale hoeveelheid gegevens die ik met Data Box Disks in één keer kan overdragen?
-A. Bij vijf schijven van 8 TB (7 TB aan bruikbare capaciteit), bedraagt de maximaal bruikbare capaciteit 35 TB. U kunt dus 35 TB aan gegevens in één keer overdragen. Als u meer gegevens wilt overdragen, moet u meer schijven bestellen.
+A. Voor vijf schijven, elk met een capaciteit van 8 TB (7 TB aan bruikbare capaciteit), is de Maxi maal bruikbare capaciteit 35 TB. U kunt dus 35 TB aan gegevens overdragen in één exemplaar. Als u meer gegevens wilt overdragen, moet u meer schijven bestellen.
 
 ### <a name="q-how-can-i-check-if-data-box-disks-are-available-in-my-region"></a>V. Hoe kan ik controleren of Data Box Disks in mijn regio beschikbaar is? 
 A.  Als u wilt zien waar de Data Box schijven op dit moment beschikbaar zijn, gaat u naar de [Beschik baarheid](data-box-disk-overview.md#region-availability)van de regio.  
-
-### <a name="q-which-regions-can-i-store-data-in-with-data-box-disks"></a>V. In welke regio's kan ik gegevens opslaan met Data Box Disks?
-A. Data Box Disk wordt ondersteund voor alle regio's binnen de Verenigde Staten, Canada, Australië, Europa-west en Europa-noord, Korea en Japan. Alleen de Azure-regio's met een openbare cloud worden ondersteund. Azure Government of andere onafhankelijke clouds worden niet ondersteund.
 
 ### <a name="q-which-regions-can-i-store-data-in-with-data-box-disks"></a>V. In welke regio's kan ik gegevens opslaan met Data Box Disks?
 A. Data Box Disk wordt ondersteund voor alle regio's binnen de Verenigde Staten, Canada, Australië, Europa-west en Europa-noord, Korea en Japan. Alleen de Azure-regio's met een openbare cloud worden ondersteund. Azure Government of andere onafhankelijke clouds worden niet ondersteund.
@@ -64,17 +61,21 @@ A. Data Box Disk ondersteunt alleen gegevens opname binnen hetzelfde land/dezelf
 
 Als u bijvoorbeeld gegevens op uw locatie in Canada wilt verplaatsen naar een Azure West US-opslag account, kunt u deze op de volgende manier bereiken:
 
-### <a name="option-1"></a>Optie 1: 
+#### <a name="option-1"></a>Optie 1: 
 
 Verzend een [ondersteunde schijf](../import-export/storage-import-export-requirements.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#supported-disks) met gegevens met de [Azure import/export-service](../import-export/storage-import-export-service.md) van de bron locatie in Canada naar het Azure West US-Data Center.
 
-### <a name="option-2"></a>Optie 2:
+#### <a name="option-2"></a>Optie 2:
 
 1. Volg Data Box Disk in Canada door een opslag account te kiezen in Canada-centraal. De SSD-schijven worden verzonden vanuit het Azure-Data Center in Canada-centraal naar het verzend adres (in Canada) dat wordt gegeven tijdens het maken van de order.
 
 2. Nadat de gegevens van uw on-premises server naar de schijven zijn gekopieerd, gaat u terug naar het Azure-Data Center in Canada met behulp van de micro soft-retour labels. De gegevens die aanwezig zijn op de Data Box Disk, worden vervolgens geüpload naar het doel-opslag account in de Canada Azure-regio die u hebt gekozen tijdens het maken van de order.
 
 3. U kunt vervolgens een hulp programma als AzCopy gebruiken om de gegevens naar een opslag account in VS-West te kopiëren. Met deze stap worden [standaard](https://azure.microsoft.com/pricing/details/storage/) kosten voor opslag en [band breedte](https://azure.microsoft.com/pricing/details/bandwidth/) in rekening gebracht die niet zijn opgenomen in de facturering van data Box disk.
+
+### <a name="q-how-can-i-recover-my-data-if-an-entire-region-fails"></a>V. Hoe kan ik mijn gegevens herstellen als een hele regio is mislukt?
+
+A. In uitzonderlijke omstandigheden waarbij een regio door een belang rijke nood geval verloren gaat, kan micro soft een regionale failover initiëren. In dit geval is er geen actie voor uw onderdeel vereist. Uw order wordt afgehandeld via de failover-regio als deze zich binnen hetzelfde land of dezelfde handels grens bevindt. Sommige Azure-regio's hebben echter geen gekoppelde regio in dezelfde geografische of handels grens. Als er sprake is van een nood geval in een van deze regio's, moet u de Data Box order opnieuw maken vanuit een andere beschik bare regio en de gegevens naar Azure kopiëren in de nieuwe regio. Zie [Bedrijfscontinuïteit en herstel na noodgevallen (BCDR): gekoppelde Azure-regio's](../best-practices-availability-paired-regions.md) voor meer informatie.
 
 ### <a name="q-whom-should-i-contact-if-i-encounter-any-issues--with-data-box-disks"></a>V. Met wie moet ik contact opnemen als ik een probleem krijg met Data Box-schijven?
 A. Als u problemen ondervindt met Data Box schijven, [neemt u contact op met Microsoft ondersteuning](./data-box-disk-contact-microsoft-support.md).
@@ -128,7 +129,7 @@ A. Ja. Er kunnen meerdere Data Box-schijven verbinding maken met dezelfde hostco
 ## <a name="track-status"></a>Status bijhouden
 
 ### <a name="q-how-do-i-track-the-disks-from-when-i-placed-the-order-to-shipping-the-disks-back"></a>V. Hoe kan ik de bestelstatus van de schijven volgen vanaf het moment dat de bestelling is geplaatst als ik de schijven terug wil sturen? 
-A.  U kunt de status van de Data Box Disk-bestelling volgen in Azure Portal. Als u de bestelling plaatst, wordt u ook gevraagd een e-mailadres voor meldingen op te geven. Als u dat hebt gedaan, dan krijgt u elke keer per e-mail een melding als er een statuswijziging heeft plaatsgevonden. Meer informatie over het [configureren van e-mailmeldingen](data-box-portal-ui-admin.md#edit-notification-details).
+A.  U kunt de status van de Data Box Disk-bestelling volgen in Azure Portal. Als u de bestelling plaatst, wordt u ook gevraagd een e-mailadres voor meldingen op te geven. Als u er een hebt gegeven, wordt u via e-mail op de hoogte gesteld van alle status wijzigingen van de order. Meer informatie over het [configureren van e-mailmeldingen](data-box-portal-ui-admin.md#edit-notification-details).
 
 ### <a name="q-how-do-i-return-the-disks"></a>V. Hoe kan ik de schijven terugsturen? 
 A.  In de verpakking van de Data Box-schijven zit een verzendlabel. Bevestig het label aan de doos met de schijven en geef de verzegelde verpakking af bij de verzender. Als het label beschadigd is of verloren is gegaan, gaat u naar **Overzicht > Verzendlabel downloaden** en downloadt u een nieuw verzendlabel.
@@ -174,8 +175,8 @@ A.  U kunt het kopieerproces als volgt versnellen:
 - Gebruik meerdere gegevensstromen. `Robocopy`Gebruik bijvoorbeeld de multi-threaded optie. Ga naar [Tutorial: Copy data to Azure Data Box Disk and verify](data-box-disk-deploy-copy-data.md#copy-data-to-disks) (Zelfstudie: Gegevens naar Azure Data Box kopiëren en verifiëren) voor meer informatie over de opdracht die u moet gebruiken.
 - Gebruik meerdere sessies.
 - In plaats van te kopiëren via een netwerkshare (waarbij de netwerksnelheid beperkend kan zijn), zorgt u ervoor dat de gegevens lokaal aanwezig zijn op de computer waarmee de schijven zijn verbonden.
-- Zorg ervoor dat u USB 3.0 of hoger gebruikt gedurende het hele kopieerproces. Down load en gebruik het [ `USBView` hulp programma](/windows-hardware/drivers/debugger/usbview) om de USB-controllers en USB-apparaten te identificeren die zijn verbonden met de computer.
-- Voer een benchmark-test uit van de prestaties van de computer die wordt gebruikt om de gegevens te kopiëren. Down load en gebruik het [Bluestop- `FIO` hulp programma](https://ci.appveyor.com/project/axboe/fio) om de prestaties van de serverhardware te benchmarkren. Selecteer de nieuwste versie van x86 of x64, selecteer het tabblad **artefacten** en down load het MSI-bestand.
+- Zorg ervoor dat u USB 3,0 of hoger gebruikt tijdens het kopieer proces. Down load en gebruik het [ `USBView` hulp programma](/windows-hardware/drivers/debugger/usbview) om de USB-controllers en USB-apparaten te identificeren die zijn verbonden met de computer.
+- Voer een benchmark-test uit van de prestaties van de computer die wordt gebruikt om de gegevens te kopiëren. Down load en gebruik het [ `Bluestop` `FIO` hulp programma](https://ci.appveyor.com/project/axboe/fio) om de prestaties van de serverhardware te benchmarken. Selecteer de nieuwste versie van x86 of x64, selecteer het tabblad **artefacten** en down load het MSI-bestand.
 
 ### <a name="q-how-to-speed-up-the-data-if-the-source-data-has-small-files-kbs-or-few-mbs"></a>V. Hoe kan ik het kopiëren van de gegevens versnellen als de brongegevens uit kleine bestanden (kB's of enkele MB's) bestaan?
 A.  U kunt het kopieerproces als volgt versnellen:
@@ -191,7 +192,7 @@ A.  Nee. Er wordt momenteel slechts één (algemeen of klassiek) opslagaccount o
 A. Er zijn drie hulpprogramma's beschikbaar voor Data Box Disk:
  - **Data Box Disk hulp programma voor ontgrendelen**: gebruik dit hulp programma om de versleutelde schijven te ontgrendelen die van micro soft worden geleverd. Wanneer u schijven ontgrendelt met het hulpprogramma moet u een wachtwoordsleutel opgeven. Deze vindt u in de gegevens van de Data Box Disk-bestelling in de Azure-portal. 
  - **Data Box Disk validatie hulpprogramma**: gebruik dit hulp programma om de grootte, indeling en BLOB-namen te valideren volgens de Azure-naamgevings conventies. Er worden ook controle sommen gegenereerd voor de gekopieerde gegevens, die vervolgens worden gebruikt om te controleren of de gegevens zijn geüpload naar Azure.
- - **Data Box Disk Splits-hulp programma voor kopiëren**: gebruik dit hulp programma wanneer u meerdere schijven gebruikt en een grote gegevensset hebt die moet worden gesplitst en op alle schijven moeten worden gekopieerd. Dit hulpprogramma is momenteel beschikbaar voor Windows. Dit hulp programma wordt niet ondersteund met Managed disks. Dit hulp programma valideert ook bij het kopiëren van de gegevens. Daarom kunt u de validatie stap overs Laan wanneer u dit hulp programma gebruikt.
+ - **Data Box Disk Splits-hulp programma voor kopiëren**: gebruik dit hulp programma wanneer u meerdere schijven gebruikt en een grote gegevensset hebt die moet worden gesplitst en op alle schijven moeten worden gekopieerd. Dit hulpprogramma is momenteel beschikbaar voor Windows. Dit hulp programma wordt niet ondersteund met Managed disks. Met dit hulp programma worden de gegevens gevalideerd terwijl deze worden gekopieerd, zodat u de validatie stap kunt overs Laan wanneer u dit hulp programma gebruikt.
 
 De set hulpprogramma's is beschikbaar voor zowel Windows als Linux. U kunt de set hulpprogramma's hier downloaden:
 - [Data Box Disk-toolset voor Windows downloaden](https://aka.ms/databoxdisktoolswin) 
@@ -209,7 +210,7 @@ A.  Zodra de bestellingsstatus voor Gegevens kopiëren als voltooid is aangemerk
 ### <a name="q-where-is-my-data-located-in-azure-after-the-upload"></a>V. Waar bevinden zich mijn gegevens in Azure na het uploaden?
 A.  Als u de gegevens onder de bestanden *BlockBlob* en *PageBlob* op uw schijf kopieert, wordt er voor elke submap onder de mappen *BlockBlob* en *PageBlob* een container gemaakt in het Azure Storage-account. Als u de bestanden in de *BlockBlob* -en *PageBlob* -mappen rechtstreeks hebt gekopieerd, bevinden de bestanden zich in een standaard container *$root* onder het Azure Storage-account. Wanneer u de gegevens naar een map onder *AzureFile* map kopieert, wordt een file share gemaakt.
 
-### <a name="q-i-just-noticed-that-i-did-not-follow-the-azure-naming-requirements-for-my-containers-will-my-data-fail-to-upload-to-azure"></a>V. Ik heb gemerkt dat ik de naamgevingsvereisten voor Azure niet voor mijn containers heb gevolgd. Worden mijn gegevens niet naar Azure geüpload?
+### <a name="q-i-just-noticed-that-i-didnt-follow-the-azure-naming-requirements-for-my-containers-will-my-data-fail-to-upload-to-azure"></a>V. Ik heb zojuist opgemerkt dat ik niet de Azure-naamgevings vereisten voor mijn containers heb gevolgd. Worden mijn gegevens niet naar Azure geüpload?
 A. Hoofd letters in de naam van de container worden automatisch omgezet in kleine letters. Als de namen niet op andere manieren voldoen: ze bevatten bijvoorbeeld speciale tekens of andere talen. het uploaden mislukt. Ga voor meer informatie naar [Naamconventies](data-box-disk-limits.md#azure-block-blob-page-blob-and-file-naming-conventions).
 
 ### <a name="q-how-do-i-verify-the-data-i-copied-onto-multiple-data-box-disks"></a>V. Hoe controleer ik de gegevens die ik naar meerdere Data Box-schijven heb gekopieerd?
@@ -228,7 +229,7 @@ A. Ja. Als u besluit uw gegevens te valideren (aanbevolen), dan dient u de valid
 A. U kunt een kloon maken van uw vorige bestelling. Hierdoor maakt u dezelfde bestelling als eerst en kunt u de details van de bestelling bewerken zonder dat u opnieuw uw adres, contactgegevens en meldingsinformatie hoeft te typen.
 
 ### <a name="q-i-copied-data-to-the-manageddisk-folder-i-dont-see-any-managed-disks-with-the-resource-group-specified-for-managed-disks-was-my-data-uploaded-to-azure-how-can-i-locate-it"></a>V. Ik heb gegevens gekopieerd naar de map ManagedDisk. Ik zie geen Managed disks met de resource groep die is opgegeven voor beheerde schijven. Zijn mijn gegevens geüpload naar Azure? Hoe kan ik het vinden?
-A. Ja. Uw gegevens zijn geüpload naar Azure, maar als u geen beheerde schijven met de opgegeven resource groepen ziet, is het waarschijnlijk dat de gegevens ongeldig zijn. Als pagina-blobs, blok-blobs, Azure Files of Managed disks niet geldig zijn, worden ze naar de volgende mappen geleid:
+A. Ja. Uw gegevens zijn geüpload naar Azure, maar als u geen beheerde schijven met de opgegeven resource groepen ziet, is het waarschijnlijk dat de gegevens niet geldig zijn. Als pagina-blobs, blok-blobs, Azure Files of Managed disks niet geldig zijn, worden ze naar de volgende mappen geleid:
  - Pagina-blobs gaan naar een blok-BLOB-container, te beginnen met *databoxdisk-ongeldig-PB*-.
  - Azure Files gaat naar een blok-BLOB-container, te beginnen met *databoxdisk-ongeldig-af-*.
  - Beheerde schijven gaan naar een blok-BLOB-container, te beginnen met *databoxdisk-ongeldig-MD-*.

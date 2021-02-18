@@ -8,12 +8,12 @@ ms.author: chpalm
 ms.date: 10/03/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: a047761669920d6460c3d6fb6d74b970effa7846
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 5ea4e4fcce380a3bd9c30312639f7aa10bf0bb90
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100572025"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653462"
 ---
 # <a name="region-availability-and-data-residency"></a>Regiobeschikbaarheid en gegevenslocatie
 
@@ -23,7 +23,11 @@ Azure Communication Services is toegewijd aan het helpen van onze klanten bij he
 
 ## <a name="data-residency"></a>Gegevenslocatie
 
-Bij het maken van een Communication Services-resource geeft u een **geografie** op (niet een Azure-datacentrum). Alle gegevens die in rust worden opgeslagen door Communication Services worden in die geografische regio bewaard, in een datacentrum dat intern door Communication Services is geselecteerd. Gegevens kunnen echter in andere geografische gebieden worden doorgestuurd of verwerkt, maar deze globale eindpunten zijn nodig om een ervaring met hoge prestaties en lage latentie te bieden aan eindgebruikers, ongeacht hun locatie.
+Bij het maken van een Communication Services-resource geeft u een **geografie** op (niet een Azure-datacentrum). Alle gegevens die in rust worden opgeslagen door Communication Services worden in die geografische regio bewaard, in een datacentrum dat intern door Communication Services is geselecteerd. Gegevens mogen door Voer of worden verwerkt in andere geografische gebieden. Deze globale eind punten zijn nodig voor een snelle en lage latentie ervaring voor eind gebruikers, ongeacht hun locatie.
+
+## <a name="data-residency-and-events"></a>Gegevens locatie en-gebeurtenissen
+
+Elk Event Grid systeem onderwerp dat is geconfigureerd met Azure Communication Services wordt gemaakt op een algemene locatie. Ter ondersteuning van betrouw bare levering kan een algemeen Event Grid systeem onderwerp de gebeurtenis gegevens opslaan in elk micro soft Data Center. Wanneer u Event Grid configureert met Azure Communication Services, levert u uw gebeurtenis gegevens op Event Grid, een Azure-resource onder uw besturings element. Azure Communication Services kan worden geconfigureerd om Azure Event Grid te gebruiken. u bent zelf verantwoordelijk voor het beheren van uw Event Grid bron en de gegevens die erin zijn opgeslagen.
 
 ## <a name="relating-humans-to-azure-communication-services-identities"></a>Mensen verbinden aan identiteiten van Azure Communication Services
 

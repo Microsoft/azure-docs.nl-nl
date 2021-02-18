@@ -2,17 +2,17 @@
 title: Filters voor Azure Service Bus-onderwerp | Microsoft Docs
 description: In dit artikel wordt uitgelegd hoe abonnees kunnen bepalen welke berichten ze willen ontvangen van een onderwerp door filters op te geven.
 ms.topic: conceptual
-ms.date: 01/22/2021
-ms.openlocfilehash: 63cf6e67d4fa32c5c7f52f569094e1165554108c
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.date: 02/17/2021
+ms.openlocfilehash: f28b26ee112b47b9782823f6c79670dee9a3f082
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98742961"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100651660"
 ---
 # <a name="topic-filters-and-actions"></a>Onderwerpfilters en acties
 
-Abonnees kunnen definiëren welke berichten ze willen ontvangen van een onderwerp. Deze berichten worden opgegeven in de vorm van een of meer benoemde abonnementsregels. Elke regel bestaat uit een **filter** voorwaarde waarmee bepaalde berichten worden geselecteerd en die **optioneel** een **actie** bevatten die het geselecteerde bericht aantekent. 
+Abonnees kunnen definiëren welke berichten ze willen ontvangen van een onderwerp. Deze berichten worden opgegeven in de vorm van een of meer benoemde abonnementsregels. Elke regel bestaat uit een **filter voorwaarde** waarmee bepaalde berichten worden geselecteerd en die **optioneel** een **actie** bevatten die het geselecteerde bericht aantekent. 
 
 Alle regels **zonder acties** worden gecombineerd met een `OR` voor waarde en resulteren in **één bericht** op het abonnement, zelfs als u meerdere overeenkomende regels hebt. 
 
@@ -32,9 +32,7 @@ Elk nieuw gemaakt onderwerp-abonnement heeft een eerste standaard abonnements re
 Service Bus ondersteunt drie filter voorwaarden:
 
 -   *SQL-filters* -een **SQLFILTER** bevat een SQL-achtige voorwaardelijke expressie die in de Broker wordt geëvalueerd op basis van de door de gebruiker gedefinieerde eigenschappen en systeem eigenschappen van de binnenkomende berichten. Alle systeem eigenschappen moeten worden voorafgegaan door `sys.` in de voorwaardelijke expressie. De [SQL-taal deel verzameling voor filter voorwaarden](service-bus-messaging-sql-filter.md) test op het bestaan van eigenschappen ( `EXISTS` ), null-waarden ( `IS NULL` ), logische not/en/of relationele Opera Tors, eenvoudig numeriek reken kundig en eenvoudig tekst patroon dat overeenkomt met `LIKE` .
-
 -   *Booleaanse filters* : de **TrueFilter** en **FalseFilter** leiden ertoe dat alle berichten (**waar**) of geen van de binnenkomende berichten (**False**) worden geselecteerd voor het abonnement. Deze twee filters worden afgeleid van het SQL-filter. 
-
 -   *Correlatie filters* : een **CorrelationFilter** bevat een set voor waarden die overeenkomen met een of meer van de gebruikers-en systeem eigenschappen van een inkomend bericht. Een veelgebruikte toepassing is om te vergelijken met de eigenschap **CorrelationId** , maar deze kan er ook voor kiezen om te zoeken op basis van de volgende eigenschappen:
 
     - **Invoer**
@@ -66,7 +64,8 @@ Partitioneren gebruikt filters voor het distribueren van berichten over verschil
 
 Route ring gebruikt filters voor het distribueren van berichten over topic-abonnementen op een voorspel bare manier, maar niet noodzakelijkerwijs exclusief. In combi natie met de functie voor [automatisch door sturen](service-bus-auto-forwarding.md) kunnen onderwerps filters worden gebruikt voor het maken van complexe routerings grafieken binnen een service bus naam ruimte voor bericht distributie binnen een Azure-regio. Met Azure Functions of Azure Logic Apps fungeren als een brug tussen Azure Service Bus naam ruimten, kunt u complexe globale topologieën maken met directe integratie in line-of-business-toepassingen.
 
-[!INCLUDE [service-bus-filter-examples](../../includes/service-bus-filter-examples.md)]
+## <a name="examples"></a>Voorbeelden
+Zie [Service Bus-filter voorbeelden](service-bus-filter-examples.md)voor voor beelden.
 
 
 

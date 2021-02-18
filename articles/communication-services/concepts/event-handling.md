@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: e661b99e3c5028f40ea69ddedc22c7ee2895acec
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
-ms.translationtype: HT
+ms.openlocfilehash: b4e600581880ccca4f8716db02064e5bb353787c
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888722"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653778"
 ---
 # <a name="event-handling-in-azure-communication-services"></a>Afhandeling van gebeurtenissen in Azure Communication Services
 
@@ -25,6 +25,9 @@ Azure Communication Services kan worden geïntegreerd met [Azure Event Grid](htt
 Azure Event Grid is een volledig beheerde service voor gebeurtenisrouting, die gebruikmaakt van een publicatie/abonnementmodel. Event Grid heeft ingebouwde ondersteuning voor Azure-Services, zoals [Azure Functions](../../azure-functions/functions-overview.md) en [Azure Logic-apps](../../azure-functions/functions-overview.md). Het kan gebeurteniswaarschuwingen leveren aan niet-Azure-Services met behulp van webhooks. Zie [Een inleiding tot Azure Event Grid](../../event-grid/overview.md) voor een volledige lijst met gebeurtenisverwerkers die Event Grid ondersteunt.
 
 :::image type="content" source="https://docs.microsoft.com/azure/event-grid/media/overview/functional-model.png" alt-text="Diagram waarin het gebeurtenismodel van Azure Event Grid wordt weergegeven.":::
+
+> [!NOTE]
+> Ga voor meer informatie over hoe gegevens locatie verband houdt met gebeurtenis afhandeling naar de [conceptuele documentatie van data locatie](./privacy.md)
 
 ## <a name="events-types"></a>Gebeurtenistypen
 

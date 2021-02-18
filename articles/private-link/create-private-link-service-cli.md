@@ -4,15 +4,15 @@ description: Meer informatie over het maken van een Azure-service voor persoonli
 services: private-link
 author: asudbring
 ms.service: private-link
-ms.topic: how-to
+ms.topic: quickstart
 ms.date: 01/22/2021
 ms.author: allensu
-ms.openlocfilehash: 567ed736c52e8b3cbb03edeb19b3c0e2364e4112
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 27ce0b2646b6c380e86b377d3dba287f7791794e
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98757336"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653683"
 ---
 # <a name="create-a-private-link-service-using-azure-cli"></a>Een persoonlijke koppelings service maken met behulp van Azure CLI
 
@@ -79,7 +79,7 @@ az network vnet subnet update \
     --disable-private-link-service-network-policies true
 ```
 
-### <a name="create-standard-load-balancer"></a>Een standaard load balancer maken
+### <a name="create-standard-load-balancer"></a>Een Standard Load Balancer maken
 
 In deze sectie wordt beschreven hoe u de volgende onderdelen van de load balancer kunt maken en configureren:
 

@@ -52,7 +52,7 @@
       href: concepts-upgrades.md
 - name: Instructiegidsen
   items:
-    - name: Azure VMware Solution inschakelen
+    - name: Host-quota aanvragen en Azure VMware-oplossing inschakelen
       href: enable-azure-vmware-solution.md
     - name: Kosten besparen met een gereserveerde instantie
       href: reserved-instance.md

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 01/29/2021
 ms.topic: conceptual
-ms.openlocfilehash: 8ea668ab2266a1deae108542687c89f3a221568e
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: a6827f8629423b9ed3adc362d3d05fd740e25a65
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99220970"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633305"
 ---
 # <a name="run-runbooks-on-a-hybrid-runbook-worker"></a>Runbooks uitvoeren op een Hybrid Runbook Worker
 
@@ -96,7 +96,7 @@ Gebruik de volgende procedure om een uitvoeren als-account op te geven voor een 
 Als onderdeel van uw geautomatiseerde bouw proces voor het implementeren van resources in azure, hebt u mogelijk toegang tot on-premises systemen nodig ter ondersteuning van een taak of een reeks stappen in uw implementatie reeks. Als u verificatie wilt uitvoeren voor Azure met behulp van het uitvoeren als-account, moet u het certificaat van het uitvoeren als-account installeren.
 
 >[!NOTE]
->Dit Power shell-runbook wordt momenteel niet uitgevoerd op LInux-computers. Het wordt alleen uitgevoerd op Windows-computers.
+>Dit Power shell-runbook wordt momenteel niet uitgevoerd op Linux-computers. Het wordt alleen uitgevoerd op Windows-computers.
 >
 
 Het volgende Power shell-runbook, met de naam **export-RunAsCertificateToHybridWorker**, exporteert het run as-certificaat uit uw Azure Automation-account. Het runbook wordt gedownload en geïmporteerd in het certificaat archief van de lokale computer op een Hybrid Runbook Worker dat is verbonden met hetzelfde account. Zodra deze stap is voltooid, controleert het runbook of de werk nemer kan worden geverifieerd bij Azure met behulp van het run as-account.

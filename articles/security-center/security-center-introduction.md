@@ -12,14 +12,14 @@ ms.topic: overview
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/26/2021
+ms.date: 02/17/2021
 ms.author: memildin
-ms.openlocfilehash: 9f39988375f58f75dad2b623cd3d937022a072e7
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: c4861192c7f2bbfb2a51e19b88daee45b501949b
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98806190"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100634767"
 ---
 # <a name="what-is-azure-security-center"></a>Wat is Azure Security Center?
 
@@ -101,7 +101,7 @@ Met de beveiliging tegen bedreigingen van Security Center kunt u bedreigingen de
 
 De beveiliging tegen bedreigingen van Security Center bevat een complete analyse van de aanvalsketen, waarbij automatisch waarschuwingen in uw omgeving aan elkaar worden gerelateerd op basis van de cyberaanvalsketenanalyse, zodat u een beter inzicht hebt in de hele geschiedenis van een aanval; waar deze is gestart en welke impact deze had op uw resources.
 
-:::image type="content" source="./media/security-center-intro/sc-alerts.png" alt-text="Beveiligingswaarschuwingen":::
+:::image type="content" source="media/security-center-managing-and-responding-alerts/alerts-page.png" alt-text="Lijst met beveiligings waarschuwingen voor Azure Security Center":::
 
 ### <a name="integration-with-microsoft-defender-for-endpoint"></a>Integratie met Microsoft Defender voor Eindpunt
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/15/2021
 ms.author: jeedes
-ms.openlocfilehash: ab2aa1df0719b685800529f32e36674bf85e57ee
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: c330ce9b9eec693d7dabda55ad65d297ca78ca01
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625311"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653863"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-logicmonitor"></a>Zelfstudie: Azure Active Directory-integratie met LogicMonitor
 
@@ -80,7 +80,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     a. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<companyname>.logicmonitor.com`
 
     b. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `https://<companyname>.logicmonitor.com`
-
+    
+    c. Typ in het tekstvak **antwoord-URL (assertion Consumer Service-URL)** een URL met het volgende patroon: `https://companyname.logicmonitor.com/santaba/saml/SSO/` 
+  
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en id. Neem contact op met het [ondersteuningsteam van LogicMonitor](https://www.logicmonitor.com/contact/) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 

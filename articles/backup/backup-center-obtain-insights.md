@@ -3,16 +3,16 @@ title: Inzichten verkrijgen met behulp van Back-upcentrum
 description: Meer informatie over het analyseren van historische trends en het verkrijgen van meer inzicht in uw back-ups met Back-upcentrum.
 ms.topic: conceptual
 ms.date: 09/01/2020
-ms.openlocfilehash: c5f707ce3bc8d1172805ac14958a50bf59d1412d
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 3086224e4dbb1be2ccfadbfcfcb7441b68a5ff6b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98893690"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592012"
 ---
 # <a name="obtain-insights-using-backup-center-preview"></a>Inzichten verkrijgen met behulp van Back-upcentrum (preview-versie)
 
-Voor het analyseren van historische trends en het verkrijgen van diepere inzichten op uw back-ups biedt Back-upcentrum een interface voor het [maken van back-uprapporten (preview)](configure-reports.md), waarin [Azure monitor-logboeken](../azure-monitor/platform/data-platform-logs.md) en [Azure-werkmappen](../azure-monitor/platform/workbooks-overview.md)worden gebruikt. Back-uprapporten bieden de volgende mogelijkheden:
+Voor het analyseren van historische trends en het verkrijgen van diepere inzichten op uw back-ups biedt Back-upcentrum een interface voor het [maken van back-uprapporten (preview)](configure-reports.md), waarin [Azure monitor-logboeken](../azure-monitor/logs/data-platform-logs.md) en [Azure-werkmappen](../azure-monitor/visualize/workbooks-overview.md)worden gebruikt. Back-uprapporten bieden de volgende mogelijkheden:
 
 - Het toewijzen en voors pellen van verbruikte Cloud opslag.
 

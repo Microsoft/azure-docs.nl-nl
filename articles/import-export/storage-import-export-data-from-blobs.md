@@ -5,16 +5,16 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: how-to
-ms.date: 01/14/2021
+ms.date: 02/16/2021
 ms.author: alkohli
 ms.subservice: common
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 772be332af1476975d91eb270bec24d6d241a616
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 8ccc7b641e2bfcb4ea8733b9d4f793229c430bc0
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98706564"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652866"
 ---
 # <a name="use-the-azure-importexport-service-to-export-data-from-azure-blob-storage"></a>De Azure Import/Export-service gebruiken voor het exporteren van gegevens uit Azure Blob-opslag
 
@@ -43,13 +43,13 @@ U moet het volgende doen:
 Voer de volgende stappen uit om een export taak te maken in de Azure Portal.
 
 1. Meld u aan bij <https://portal.azure.com/> .
-2. Ga naar **alle services > opslag > import/export-taken**.
+2. Zoeken naar **import/export-taken**.
 
-    ![Ga naar import/export-taken](./media/storage-import-export-data-from-blobs/export-from-blob1.png)
+    ![Zoeken naar import/export-taken](./media/storage-import-export-data-to-blobs/import-to-blob-1.png)
 
-3. Klik op **import/export-taak maken**.
+3. Selecteer **+ Nieuw**.
 
-    ![Klik op import/export-taak](./media/storage-import-export-data-from-blobs/export-from-blob2.png)
+    ![Selecteer + Nieuw om een nieuwe te maken ](./media/storage-import-export-data-to-blobs/import-to-blob-2.png)
 
 4. In **Basisbeginselen**:
 
@@ -60,7 +60,7 @@ Voer de volgende stappen uit om een export taak te maken in de Azure Portal.
     - Selecteer een abonnement.
     - Voer een resource groep in of Selecteer deze.
 
-        ![Basisbeginselen](./media/storage-import-export-data-from-blobs/export-from-blob3.png)
+        ![Basisbeginselen](./media/storage-import-export-data-from-blobs/export-from-blob-3.png)
 
 5. In **taak Details**:
 
@@ -69,17 +69,17 @@ Voer de volgende stappen uit om een export taak te maken in de Azure Portal.
     - Geef de BLOB-gegevens op die u wilt exporteren uit uw opslag account naar uw lege station of stations.
     - Kies ervoor om alle BLOB-gegevens in het opslag account te **exporteren** .
 
-         ![Alles exporteren](./media/storage-import-export-data-from-blobs/export-from-blob4.png)
+         ![Alles exporteren](./media/storage-import-export-data-from-blobs/export-from-blob-4.png)
 
     - U kunt opgeven welke containers en blobs u wilt exporteren.
         - U kunt als volgt **een BLOB opgeven die moet worden geëxporteerd**: gebruik de **gelijkteken** -selector. Geef het relatieve pad naar de BLOB op, beginnend met de container naam. Gebruik *$root* om de basis container op te geven.
         - **Om alle blobs op te geven die beginnen met een voor voegsel**: gebruik de kiezer **begint met** selector. Geef het voor voegsel op, beginnend met een slash/. Het voor voegsel kan het voor voegsel van de container naam, de volledige container naam of de volledige container naam, gevolgd door het voor voegsel van de BLOB-naam. U moet de BLOB-paden in een geldige indeling opgeven om te voor komen dat er fouten optreden tijdens de verwerking, zoals wordt weer gegeven in deze scherm opname. Zie voor [beelden van geldige BLOB-paden](#examples-of-valid-blob-paths)voor meer informatie.
 
-           ![Geselecteerde containers en blobs exporteren](./media/storage-import-export-data-from-blobs/export-from-blob5.png)
+           ![Geselecteerde containers en blobs exporteren](./media/storage-import-export-data-from-blobs/export-from-blob-5.png)
 
     - U kunt exporteren vanuit het BLOB-lijst bestand.
 
-        ![Exporteren uit BLOB-lijst bestand](./media/storage-import-export-data-from-blobs/export-from-blob6.png)
+        ![Exporteren uit BLOB-lijst bestand](./media/storage-import-export-data-from-blobs/export-from-blob-6.png)
 
    > [!NOTE]
    > Als de blob die moet worden geëxporteerd, wordt gebruikt tijdens het kopiëren van de gegevens, neemt Azure import/export-service een moment opname van de BLOB en kopieert de moment opname.
@@ -320,7 +320,7 @@ Deze *optionele* stap helpt u bij het bepalen van het aantal stations dat vereis
 
     De para meters worden in de volgende tabel beschreven:
 
-    |Opdracht regel parameter|Beschrijving|
+    |Opdracht regel parameter|Description|
     |--------------------------|-----------------|
     |**/logdir:**|Optioneel. De logboekmap. Uitgebreide logboek bestanden worden naar deze map geschreven. Als dat niet is opgegeven, wordt de huidige map gebruikt als Logboekmap.|
     |**SN**|Vereist. De naam van het opslag account voor de export taak.|
@@ -374,7 +374,7 @@ Number of drives needed:        3
 
 De volgende tabel bevat voor beelden van geldige BLOB-paden:
 
-   | Kiezer | BLOB-pad | Beschrijving |
+   | Kiezer | BLOB-pad | Description |
    | --- | --- | --- |
    | Begint met |/ |Exporteert alle blobs in het opslag account |
    | Begint met |/$root/ |Exporteert alle blobs in de basis container |

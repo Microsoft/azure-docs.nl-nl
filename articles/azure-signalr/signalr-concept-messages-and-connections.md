@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: zhshang
-ms.openlocfilehash: d71462bd30dbd4b377353c792a3c579e02949680
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 9d0e94cf2318db777bb44c15037f73531cd969fa
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151091"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593322"
 ---
 # <a name="messages-and-connections-in-azure-signalr-service"></a>Berichten en verbindingen in Azure SignalR Service
 
@@ -62,7 +62,7 @@ Het bericht dat naar de service wordt verzonden, is een inkomend bericht. Het be
 
 ## <a name="related-resources"></a>Gerelateerde resources
 
-- [Aggregatietypen in Azure Monitor](../azure-monitor/platform/metrics-supported.md#microsoftsignalrservicesignalr )
+- [Aggregatietypen in Azure Monitor](../azure-monitor/essentials/metrics-supported.md#microsoftsignalrservicesignalr )
 - [ASP.NET Core SignalR-configuratie](/aspnet/core/signalr/configuration)
 - [JSON](https://www.json.org/)
 - [MessagePack](/aspnet/core/signalr/messagepackhubprotocol)

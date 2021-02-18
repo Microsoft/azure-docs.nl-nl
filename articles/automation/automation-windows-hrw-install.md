@@ -5,16 +5,16 @@ services: automation
 ms.subservice: process-automation
 ms.date: 11/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: 09c86e23379cf9ccecf77d88a99ad6b3a7019a87
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.openlocfilehash: f6858c7350e6c72a096b2f2bd5f4a4ff606bf023
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100006986"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100651354"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Een Windows-Hybrid Runbook Worker implementeren
 
-U kunt de functie gebruikers Hybrid Runbook Worker van Azure Automation gebruiken om runbooks rechtstreeks op de Azure-of niet-Azure-machine uit te voeren, inclusief servers die zijn geregistreerd bij [servers met Azure Arc-functionaliteit](../azure-arc/servers/overview.md). Op de computer of server die als host fungeert voor de rol, kunt u runbooks rechtstreeks uitvoeren en aan resources in de omgeving om deze lokale resources te beheren.
+U kunt de functie gebruikers Hybrid Runbook Worker van Azure Automation gebruiken om runbooks rechtstreeks op een Azure-of niet-Azure-machine uit te voeren, inclusief servers die zijn geregistreerd bij [servers met Azure Arc-functionaliteit](../azure-arc/servers/overview.md). Op de machine of de server die als host fungeert voor de rol, kunt u runbooks rechtstreeks uitvoeren op de computer en resources in de omgeving om deze lokale resources te beheren.
 
 Azure Automation runbooks opslaat en beheert en vervolgens aan een of meer aangewezen computers worden geleverd. In dit artikel wordt beschreven hoe u een gebruikers Hybrid Runbook Worker implementeert op een Windows-computer, hoe u de werk nemer verwijdert en hoe u een Hybrid Runbook Worker groep verwijdert.
 
@@ -26,13 +26,13 @@ Voordat u begint, moet u ervoor zorgen dat u over het volgende beschikt.
 
 ### <a name="a-log-analytics-workspace"></a>Een Log Analytics-werk ruimte
 
-De functie Hybrid Runbook Worker is afhankelijk van een Azure Monitor Log Analytics-werk ruimte om de rol te installeren en te configureren. U kunt dit maken via [Azure Resource Manager](../azure-monitor/samples/resource-manager-workspace.md#create-a-log-analytics-workspace), via [Power shell](../azure-monitor/scripts/powershell-sample-create-workspace.md?toc=/powershell/module/toc.json)of in de [Azure Portal](../azure-monitor/learn/quick-create-workspace.md).
+De functie Hybrid Runbook Worker is afhankelijk van een Azure Monitor Log Analytics-werk ruimte om de rol te installeren en te configureren. U kunt dit maken via [Azure Resource Manager](../azure-monitor/logs/resource-manager-workspace.md#create-a-log-analytics-workspace), via [Power shell](../azure-monitor/logs/powershell-sample-create-workspace.md?toc=/powershell/module/toc.json)of in de [Azure Portal](../azure-monitor/logs/quick-create-workspace.md).
 
-Als u geen Azure Monitor Log Analytics-werk ruimte hebt, raadpleegt u de [ontwerp richtlijnen voor Azure monitor logboek](../azure-monitor/platform/design-logs-deployment.md) voordat u de werk ruimte maakt.
+Als u geen Azure Monitor Log Analytics-werk ruimte hebt, raadpleegt u de [ontwerp richtlijnen voor Azure monitor logboek](../azure-monitor/logs/design-logs-deployment.md) voordat u de werk ruimte maakt.
 
 ### <a name="log-analytics-agent"></a>Log Analytics-agent
 
-De Hybrid Runbook Worker-rol vereist de [log Analytics-agent](../azure-monitor/platform/log-analytics-agent.md) voor het ondersteunde Windows-besturings systeem. Voor servers of computers die buiten Azure worden gehost, kunt u de Log Analytics-agent installeren met [servers met Azure Arc-functionaliteit](../azure-arc/servers/overview.md).
+De Hybrid Runbook Worker-rol vereist de [log Analytics-agent](../azure-monitor/agents/log-analytics-agent.md) voor het ondersteunde Windows-besturings systeem. Voor servers of computers die buiten Azure worden gehost, kunt u de Log Analytics-agent installeren met [servers met Azure Arc-functionaliteit](../azure-arc/servers/overview.md).
 
 ### <a name="supported-windows-operating-system"></a>Ondersteund Windows-besturings systeem
 

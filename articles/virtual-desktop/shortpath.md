@@ -6,12 +6,12 @@ author: gundarev
 ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: denisgun
-ms.openlocfilehash: c1cdafe2929502293aada32dbae06e342761862b
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 295a46f6d1074ddf8422233ea3ccfa4d65c28fd8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98876695"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571599"
 ---
 # <a name="windows-virtual-desktop-rdp-shortpath-preview"></a>RDP-shortpath van Windows virtueel bureau blad (preview-versie)
 
@@ -151,7 +151,8 @@ Als u toegang wilt verlenen tot de RDP shortpath-listener over netwerk beveiligi
 Volg de [documentatie voor de netwerk beveiligings groep](../virtual-machines/windows/nsg-quickstart-portal.md) om een binnenkomende beveiligings regel te maken die verkeer met de volgende para meters toestaat:
 
 * **Bron**  -  **Een** of het IP-bereik waar de clients zich bevinden
-* **Poort bereik van bron** -* *\** _ _ **bestemming**  -  
+* **Poort bereik van bron** - **\***
+* **Doel**  -  **Alle**
 * Poortbereiken van **doel**  -  **3390**
 * **Protocol**  -  **UDP**
 * **Actie**  -  **Toestaan**
@@ -188,7 +189,7 @@ De mogelijke waarden zijn:
 * **0** : gebruikers verbinding maakt geen gebruik van RDP-shortpath
 * **1** -gebruikers verbinding maakt gebruik van RDP-shortpath
   
-In de volgende query lijst kunt u verbindings gegevens bekijken. U kunt deze query uitvoeren in de [log Analytics query-editor](../azure-monitor/log-query/log-analytics-tutorial.md#write-a-query). Vervang elke query door `userupn` de UPN van de gebruiker die u wilt zoeken.
+In de volgende query lijst kunt u verbindings gegevens bekijken. U kunt deze query uitvoeren in de [log Analytics query-editor](../azure-monitor/logs/log-analytics-tutorial.md#write-a-query). Vervang elke query door `userupn` de UPN van de gebruiker die u wilt zoeken.
 
 ```kusto
 let Events = WVDConnections | where UserName == "userupn" ;

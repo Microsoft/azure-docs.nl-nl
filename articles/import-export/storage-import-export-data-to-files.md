@@ -5,16 +5,16 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: how-to
-ms.date: 01/14/2021
+ms.date: 02/16/2021
 ms.author: alkohli
 ms.subservice: common
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: e038cdcb50c7ee15960c904c8e234d6917d02f3b
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 44473efbfb1c07c628c939fd05805ed92e691736
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98706585"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100651817"
 ---
 # <a name="use-azure-importexport-service-to-import-data-to-azure-files"></a>Azure Import/Export-service gebruiken om gegevens te importeren naar Azure Files
 
@@ -119,13 +119,13 @@ Voor extra voor beelden gaat u naar [voor beelden van logboek bestanden](#sample
 
 Voer de volgende stappen uit om een import taak te maken in de Azure Portal.
 1. Meld u aan bij https://portal.azure.com/ .
-2. Ga naar **alle services > opslag > import/export-taken**.
+2. Zoeken naar **import/export-taken**.
 
-    ![Ga naar importeren/exporteren](./media/storage-import-export-data-to-blobs/import-to-blob1.png)
+    ![Zoeken in import/export-taken](./media/storage-import-export-data-to-blobs/import-to-blob-1.png)
 
-3. Klik op **import/export-taak maken**.
+3. Selecteer **+ Nieuw**.
 
-    ![Klik op import/export-taak](./media/storage-import-export-data-to-blobs/import-to-blob2.png)
+    ![Selecteer Nieuw om een nieuwe te maken ](./media/storage-import-export-data-to-blobs/import-to-blob-2.png)
 
 4. In **Basisbeginselen**:
 
@@ -136,7 +136,7 @@ Voer de volgende stappen uit om een import taak te maken in de Azure Portal.
     - Selecteer een abonnement.
     - Selecteer een resourcegroep.
 
-        ![Import taak maken-stap 1](./media/storage-import-export-data-to-blobs/import-to-blob3.png)
+        ![Import taak maken-stap 1](./media/storage-import-export-data-to-blobs/import-to-blob-3.png)
 
 3. In **taak Details**:
 
@@ -144,7 +144,7 @@ Voer de volgende stappen uit om een import taak te maken in de Azure Portal.
     - Selecteer het opslag account waarin de gegevens worden geïmporteerd.
     - De locatie van de dropoff wordt automatisch ingevuld op basis van de regio van het geselecteerde opslag account.
 
-       ![Import taak maken-stap 2](./media/storage-import-export-data-to-blobs/import-to-blob4.png)
+       ![Import taak maken-stap 2](./media/storage-import-export-data-to-blobs/import-to-blob-4.png)
 
 4. In **retour verzendings gegevens**:
 
@@ -155,7 +155,7 @@ Voer de volgende stappen uit om een import taak te maken in de Azure Portal.
         > [!TIP]
         > In plaats van een e-mail adres voor één gebruiker op te geven, moet u een groeps-e-mail opgeven. Dit zorgt ervoor dat u meldingen ontvangt, zelfs als een beheerder deze verlaat.
 
-       ![Import taak maken-stap 3](./media/storage-import-export-data-to-blobs/import-to-blob5.png)
+       ![Import taak maken-stap 3](./media/storage-import-export-data-to-blobs/import-to-blob-5.png)
 
 
 5. In de **samen vatting**:
@@ -163,7 +163,7 @@ Voer de volgende stappen uit om een import taak te maken in de Azure Portal.
     - Geef het Azure Data Center-verzend adres voor de verzend schijven terug naar Azure. Zorg ervoor dat de naam en het volledige adres van de taak worden vermeld op het verzend label.
     - Klik op **OK** om het maken van de import taak te volt ooien.
 
-        ![Import taak maken-stap 4](./media/storage-import-export-data-to-blobs/import-to-blob6.png)
+        ![Import taak maken-stap 4](./media/storage-import-export-data-to-blobs/import-to-blob-6.png)
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 

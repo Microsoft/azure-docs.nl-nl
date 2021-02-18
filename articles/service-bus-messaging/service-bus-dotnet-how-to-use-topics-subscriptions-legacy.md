@@ -1,16 +1,16 @@
 ---
 title: Aan de slag met Azure Service Bus-onderwerpen en -abonnementen | Microsoft Docs
 description: Een C# .NET Core-consoletoepassing schrijven die Service Bus Messaging-onderwerpen en -abonnementen gebruikt.
-ms.topic: conceptual
+ms.topic: quickstart
 ms.tgt_pltfrm: dotnet
 ms.date: 09/02/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 85eb8e6cdaa8636215c5df9d81dbecdca97a2501
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 28e94cdb0df0a18b41f4c8a0ded362b50df6dcac
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95819273"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652969"
 ---
 # <a name="get-started-with-service-bus-topics"></a>Aan de slag met Service Bus-onderwerpen
 Deze zelfstudie bestaat uit de volgende stappen:
@@ -201,7 +201,7 @@ Als u de berichten wilt ontvangen die u hebt verzonden, maakt u een andere .NET 
     static ISubscriptionClient subscriptionClient;
     ```
 
-3. Vervang de- `Main()` methode door de volgende **async** - `Main` methode. Hiermee wordt de `RegisterOnMessageHandlerAndReceiveMessages()` methode aangeroepen die u in de volgende stap gaat toevoegen. 
+3. Vervang de `Main()`-methode door de volgende **async** `Main`-methode. Hiermee wordt de `RegisterOnMessageHandlerAndReceiveMessages()` methode aangeroepen die u in de volgende stap gaat toevoegen. 
 
     ```csharp
     public static async Task Main(string[] args)

@@ -10,12 +10,12 @@ ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 6a075ae721d767faf25e4774dd545d36eedfaef4
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 1548b878d5b1261d2d4b91ed6c081c27845d99d1
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100379652"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653514"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -83,6 +83,8 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 
 ## <a name="create-a-chat-client"></a>Een chat-client maken
 Als u een chat-client wilt maken, gebruikt u het Communications Service-eindpunt en het toegangstoken dat is gegenereerd als onderdeel van de vereiste stappen. Met toegangstokens voor gebruikers kunt u clienttoepassingen maken die zich rechtstreeks verifiëren bij Azure Communication Services. Zodra u deze tokens op uw server hebt gegenereerd, geeft u ze terug op een clientapparaat. U moet de klasse CommunicationTokenCredential van de gemeen schappelijke client bibliotheek gebruiken om het token door te geven aan uw chat-client. 
+
+Meer informatie over de [architectuur van chatten](../../../concepts/chat/concepts.md)
 
 Bij het toevoegen van de importinstructies, moet u ervoor zorgen dat u alleen importbewerkingen toevoegt vanuit de com.azure.communication.chat en com.azure.communication.chat.models naamspaties en niet vanuit de com.azure.communication.chat.implementation naamspatie. In het bestand App.java dat is gegenereerd via Maven, kunt u de volgende code gebruiken om te beginnen met:
 
@@ -217,7 +219,7 @@ Zie [Berichttypen](../../../concepts/chat/concepts.md#message-types)voor meer in
 
 ## <a name="add-a-user-as-participant-to-the-chat-thread"></a>Een gebruiker toevoegen als deel nemer aan de chat thread
 
-Zodra u een chat-thread hebt gemaakt, kunt u gebruikers toevoegen en verwijderen. Door gebruikers toe te voegen, kunt u hen toegang geven tot het verzenden van berichten naar de chat-thread en andere deel nemers toevoegen/verwijderen. U moet beginnen met het ophalen van een nieuw toegangstoken en een nieuwe identiteit voor die gebruiker. Voordat u de methode addParticipants aanroept, moet u ervoor zorgen dat u een nieuw toegangs token en een nieuwe identiteit hebt verkregen voor die gebruiker. De gebruiker heeft het toegangstoken nodig om hun chat-client te initialiseren.
+Zodra u een chat-thread hebt gemaakt, kunt u gebruikers toevoegen en verwijderen. Door gebruikers toe te voegen, kunt u hen toegang geven tot het verzenden van berichten naar de chat-thread en andere deel nemers toevoegen/verwijderen. U moet beginnen met het ophalen van een nieuw toegangstoken en een nieuwe identiteit voor die gebruiker. Voordat u de methode addParticipants aanroept, moet u ervoor zorgen dat u een nieuw toegangs token en een nieuwe identiteit hebt verkregen voor die gebruiker. De gebruiker heeft dat toegangstoken nodig om zijn chat-client te initialiseren.
 
 Gebruik `addParticipants` methode om deel nemers toe te voegen aan de thread die wordt geïdentificeerd door thread.
 

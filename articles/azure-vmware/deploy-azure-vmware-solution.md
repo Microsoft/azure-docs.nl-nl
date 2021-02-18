@@ -1,35 +1,27 @@
 ---
 title: Azure VMware Solution implementeren en configureren
-description: Meer informatie over hoe u gegevens verzameld in de planningsfase kunt gebruiken voor het implementeren van de Azure VMware Solution-privécloud.
+description: Meer informatie over het gebruik van de gegevens die zijn verzameld in de plannings fase voor het implementeren en configureren van de privécloud van Azure VMware-oplossing.
 ms.topic: tutorial
-ms.date: 12/24/2020
-ms.openlocfilehash: 4c6929ca59bae022642082e8382203a10bd41309
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.custom: contperf-fy21q3
+ms.date: 02/17/2021
+ms.openlocfilehash: bfd057a19ebe26a66d11b52ddf17c285a1f9a308
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100382052"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652731"
 ---
 # <a name="deploy-and-configure-azure-vmware-solution"></a>Azure VMware Solution implementeren en configureren
 
-In dit artikel gebruikt u de informatie in het onderdeel [planning](production-ready-deployment-steps.md) om Azure VMware Solution te implementeren. 
+In dit artikel gebruikt u de informatie in de [sectie planning](production-ready-deployment-steps.md) om de Azure VMware-oplossing te implementeren en te configureren. 
 
 >[!IMPORTANT]
 >Als u de informatie nog niet hebt gedefinieerd, gaat u terug naar de [sectie planning](production-ready-deployment-steps.md) voordat u doorgaat.
 
-## <a name="register-the-resource-provider"></a>De resourceprovider registreren
 
-[!INCLUDE [register-resource-provider-steps](includes/register-resource-provider-steps.md)]
+## <a name="create-an-azure-vmware-solution-private-cloud"></a>Een Azure VMware Solution-privécloud maken
 
-
-## <a name="deploy-azure-vmware-solution"></a>Azure VMware Solution implementeren
-
-Gebruik de informatie die u hebt verzameld in het artikel [De implementatie van Azure VMware Solution plannen](production-ready-deployment-steps.md):
-
->[!NOTE]
->Als u Azure VMware Solution wilt implementeren, moet u minimum het niveau inzender hebben in het abonnement.
-
-[!INCLUDE [create-avs-private-cloud-azure-portal](includes/create-private-cloud-azure-portal-steps.md)]
+Volg de vereisten en stappen in de zelf studie [een Azure VMware-oplossing voor persoonlijke Cloud maken](tutorial-create-private-cloud.md) . U kunt een Azure VMware Solution-privécloud maken met behulp van [Azure Portal](tutorial-create-private-cloud.md#azure-portal) of door de [Azure CLI](tutorial-create-private-cloud.md#azure-cli) te gebruiken.  
 
 >[!NOTE]
 >Bekijk voor een volledig overzicht van deze stap de video [Azure VMware Solution Deployment](https://www.youtube.com/embed/gng7JjxgayI).
@@ -60,7 +52,7 @@ Als u in de implementatie stap geen virtueel netwerk hebt gedefinieerd en u de E
 
 Het Jump box bevindt zich in het virtuele netwerk waar de Azure VMware-oplossing verbinding maakt via het ExpressRoute-circuit.  Ga in Azure naar de netwerkinterface van de jumpbox en [bekijk de effectieve routes](../virtual-network/manage-route-table.md#view-effective-routes).
 
-In de lijst met effectieve routes ziet u de netwerken die zijn gemaakt als onderdeel van de Azure VMware Solution-implementatie. U ziet meerdere netwerken die zijn afgeleid van het [`/22`netwerk dat u gedefinieerd hebt](production-ready-deployment-steps.md#ip-address-segment) tijdens de [implementatiestap](#deploy-azure-vmware-solution) eerder in dit artikel.
+In de lijst met effectieve routes ziet u de netwerken die zijn gemaakt als onderdeel van de Azure VMware Solution-implementatie. U ziet meerdere netwerken die zijn afgeleid van het [ `/22` netwerk dat u hebt gedefinieerd](production-ready-deployment-steps.md#ip-address-segment) tijdens het [maken van een privécloud](#create-an-azure-vmware-solution-private-cloud).  
 
 :::image type="content" source="media/pre-deployment/azure-vmware-solution-effective-routes.png" alt-text="Controleer de netwerkroutes die zijn geadverteerd van Azure VMware Solution naar Azure Virtual Network" lightbox="media/pre-deployment/azure-vmware-solution-effective-routes.png":::
 

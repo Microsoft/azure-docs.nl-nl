@@ -7,7 +7,7 @@
     - name: Berichtenservices vergelijken
       href: ../event-grid/compare-messaging-services.md
       maintainContext: true
-    - name: Service Bus gebruiken met Java Message Service (JMS) 2.0 (preview)
+    - name: 'Service Bus gebruiken met de Java-bericht service (JMS) 2,0'
       href: how-to-use-java-message-service-20.md
 - name: Snelstartgidsen
   items:
@@ -90,6 +90,10 @@
       href: service-bus-samples.md
 - name: Concepten
   items:
+    - name: 'Wachtrijen, onderwerpen en abonnementen'
+      href: service-bus-queues-topics-subscriptions.md
+    - name: Onderwerpfilters en acties
+      href: topic-filters.md
     - name: Premium Messaging
       href: service-bus-premium-messaging.md
     - name: Azure Queues en Service Bus-wachtrijen vergelijken
@@ -158,12 +162,16 @@
       href: service-bus-create-namespace-portal.md
     - name: Ontwikkelen
       items:
+        - name: Abonnements filters en-acties instellen
+          href: service-bus-filter-examples.md
         - name: Afhandeling van berichten
           items:
             - name: 'Wachtrijen, onderwerpen en abonnementen'
               href: service-bus-queues-topics-subscriptions.md
-            - name: Java Message Services (JMS) 2.0-entiteiten (preview)
+            - name: 'JMS-entiteiten (Java Message Service) 2,0'
               href: java-message-service-20-entities.md
+            - name: JMS-ontwikkelaar (Java Message Service) guide.md
+              href: jms-developer-guide.md
             - name: 'Berichten, nettoladingen en serialisatie'
               href: service-bus-messages-payloads.md
             - name: 'Berichten overdragen, vergrendelen en verwerken'
@@ -172,8 +180,6 @@
               href: message-sequencing.md
             - name: Verlopen van berichten (Time to Live)
               href: message-expiration.md
-        - name: Onderwerpfilters en acties
-          href: topic-filters.md
         - name: Migreren van Standard- naar Premium-naamruimten
           href: service-bus-migrate-standard-premium.md
         - name: Gepartitioneerde wachtrijen en onderwerpen

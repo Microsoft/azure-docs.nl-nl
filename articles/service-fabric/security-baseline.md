@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 175c00440fe9723bbd389db39616f525c2b7f436
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: b2d86083077b95312415099f64a13509ed60091b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99805475"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582629"
 ---
 # <a name="azure-security-baseline-for-service-fabric"></a>Azure-beveiligings basislijn voor Service Fabric
 
@@ -178,9 +178,9 @@ U kunt Azure PowerShell of de Azure-opdracht regel interface (CLI) gebruiken om 
 
 **Hulp**: Azure-activiteiten logboek gebruiken om netwerk resource configuraties te bewaken en wijzigingen te detecteren voor netwerk bronnen die betrekking hebben op uw Azure service Fabric-implementaties. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke netwerk bronnen plaatsvinden.
 
-* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Waarschuwingen maken in Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+* [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -224,7 +224,7 @@ U kunt Azure PowerShell of de Azure-opdracht regel interface (CLI) gebruiken om 
 
 * [De Log Analytics-agent implementeren op uw knoop punten](./service-fabric-diagnostics-oms-agent.md)
 
-* [Zoek opdrachten in logboek Log Analytics](../azure-monitor/log-query/log-query-overview.md)
+* [Zoek opdrachten in logboek Log Analytics](../azure-monitor/logs/log-query-overview.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -240,7 +240,7 @@ U kunt Azure PowerShell of de Azure-opdracht regel interface (CLI) gebruiken om 
 
 * [De Log Analytics-agent implementeren op uw knoop punten](./service-fabric-diagnostics-oms-agent.md)
 
-* [De Bewaar periode van Log Analytics Workspace configureren](../azure-monitor/platform/manage-cost-storage.md)
+* [De Bewaar periode van Log Analytics Workspace configureren](../azure-monitor/logs/manage-cost-storage.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -256,7 +256,7 @@ U kunt Azure PowerShell of de Azure-opdracht regel interface (CLI) gebruiken om 
 
 * [De Log Analytics-agent implementeren op uw knoop punten](./service-fabric-diagnostics-oms-agent.md)
 
-* [De Bewaar periode van Log Analytics Workspace configureren](../azure-monitor/platform/manage-cost-storage.md)
+* [De Bewaar periode van Log Analytics Workspace configureren](../azure-monitor/logs/manage-cost-storage.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -266,7 +266,7 @@ U kunt Azure PowerShell of de Azure-opdracht regel interface (CLI) gebruiken om 
 
 **Hulp**: gebruik Azure log Analytics Workspace-Query's om Azure service Fabric-logboeken te doorzoeken.
 
-* [Zoek opdrachten in logboek Log Analytics](../azure-monitor/log-query/log-query-overview.md)
+* [Zoek opdrachten in logboek Log Analytics](../azure-monitor/logs/log-query-overview.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -278,7 +278,7 @@ U kunt Azure PowerShell of de Azure-opdracht regel interface (CLI) gebruiken om 
 
 * [Waarschuwingen beheren in Azure Security Center](../security-center/security-center-managing-and-responding-alerts.md)
 
-* [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/learn/tutorial-response.md)
+* [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -586,7 +586,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer wijzigingen worden doorgevoerd in essentiële Azure-resources.
 
-* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 

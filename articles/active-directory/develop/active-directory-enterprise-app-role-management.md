@@ -10,14 +10,14 @@ ms.subservice: develop
 ms.custom: aaddev
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 02/15/2021
 ms.author: jeedes
-ms.openlocfilehash: 38673df29dd50e77acc4b4d106d69a82cad9c040
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: aab1f99984ed5286692cbf9dae39fb4f7d28599c
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100104345"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652459"
 ---
 # <a name="how-to-configure-the-role-claim-issued-in-the-saml-token-for-enterprise-applications"></a>Procedure: de rol claim configureren die is uitgegeven in het SAML-token voor zakelijke toepassingen
 
@@ -27,6 +27,9 @@ Door Azure Active Directory (Azure AD) te gebruiken, kunt u het claim type voor 
 
 - Een Azure AD-abonnement met Directory-installatie.
 - Een abonnement waarvoor eenmalige aanmelding (SSO) is ingeschakeld. U moet SSO configureren met uw toepassing.
+
+> [!NOTE]
+> In dit artikel wordt uitgelegd hoe u toepassings rollen maakt/bijwerkt of verwijdert op de service-principal met behulp van Api's in azure AD. Als u de nieuwe gebruikers interface voor app-rollen wilt gebruiken, raadpleegt u de Details [hier](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps).
 
 ## <a name="when-to-use-this-feature"></a>Wanneer u deze functie gebruikt
 

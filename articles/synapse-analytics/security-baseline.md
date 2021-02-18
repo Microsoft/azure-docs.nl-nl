@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 5e2f6d8ca1f3911959f396eb1ed77ce8377c0e3c
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 9831f70a88aba497eb7d6a759233c3d7d7be62c6
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807832"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585115"
 ---
 # <a name="azure-security-baseline-for-azure-synapse-analytics"></a>Azure-beveiligings basislijn voor Azure Synapse Analytics
 
@@ -167,9 +167,9 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 **Hulp**: Azure-activiteiten logboek gebruiken om netwerk resource configuraties te bewaken en wijzigingen te detecteren voor netwerk bronnen die betrekking hebben op uw toegewezen SQL-groep. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke netwerk bronnen plaatsvinden.
 
-* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Waarschuwingen maken in Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+* [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -237,7 +237,7 @@ Controle kan zowel op het niveau van de data base of op de server worden ingesch
 
 * [De levenscyclus van Azure Blob-opslag beheren](../storage/blobs/storage-lifecycle-management-concepts.md?tabs=azure-portal)
 
-* [Para meters voor het bewaren van Logboeken instellen in een Log Analytics-werk ruimte](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+* [Para meters voor het bewaren van Logboeken instellen in een Log Analytics-werk ruimte](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 * [Streaming-gebeurtenissen vastleggen in Event Hubs](../event-hubs/event-hubs-capture-overview.md)
 
@@ -629,7 +629,7 @@ Autorisatie wordt beheerd door de databaserol lidmaatschappen en object machtigi
 
 Daarnaast kunt u waarschuwingen instellen voor data bases in uw SQL Synapse-groep met behulp van de Azure Portal. Waarschuwingen kunnen u een e-mail sturen of een webhook aanroepen wanneer bepaalde metrische gegevens (zoals de grootte van de data base of het CPU-gebruik) de drempel waarde hebben bereikt.
 
-* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+* [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 * [Waarschuwingen maken voor Azure SQL Synapse](../azure-sql/database/alerts-insights-configure-portal.md)
 

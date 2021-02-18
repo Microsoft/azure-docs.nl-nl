@@ -14,22 +14,21 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 02/16/2021
 ms.author: b-juche
-ms.openlocfilehash: 6bb787084d4396737d3002bb98fe50e283c5764a
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 91f4f90658281282cdcb01b091bd9c9647d8d702
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/17/2021
-ms.locfileid: "100582900"
+ms.locfileid: "100635483"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Een SMB-volume maken voor Azure NetApp Files
 
 Azure NetApp Files biedt ondersteuning voor het maken van volumes met behulp van NFS (NFSv3 en NFSv 4.1), SMB3 of het dubbele Protocol (NFSv3 en SMB). Capaciteitsgebruik van een volume wordt in mindering gebracht op de ingerichte capaciteit van de pool. In dit artikel wordt beschreven hoe u een SMB3-volume maakt.
 
 ## <a name="before-you-begin"></a>Voordat u begint 
-U dient al een capaciteitspool te hebben ingesteld.   
-[Een capaciteits groep instellen](azure-netapp-files-set-up-capacity-pool.md)   
-Er moet een subnet zijn gedelegeerd aan Azure NetApp Files.  
-[Een subnet delegeren aan Azure NetApp Files](azure-netapp-files-delegate-subnet.md)
+
+* U dient al een capaciteitspool te hebben ingesteld. Zie [een capaciteits pool instellen](azure-netapp-files-set-up-capacity-pool.md).     
+* Er moet een subnet zijn gedelegeerd aan Azure NetApp Files. Zie [een subnet delegeren aan Azure NetApp files](azure-netapp-files-delegate-subnet.md).
 
 ## <a name="configure-active-directory-connections"></a>Active Directory verbindingen configureren 
 

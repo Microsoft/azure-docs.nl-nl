@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/11/2021
-ms.openlocfilehash: c213a38286de05df5c3be8e3498bcca4ab6e1fbf
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: b1262533c3398a774b85e4143289a9b7c342aeab
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736141"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593573"
 ---
 # <a name="azure-monitor-for-existing-operations-manager-customers"></a>Azure Monitor voor bestaande Operations Manager klanten
 Dit artikel bevat richt lijnen voor klanten die momenteel [System Center Operations Manager](/system-center/scom/welcome) gebruiken en een overgang plannen naar [Azure monitor](overview.md) wanneer ze bedrijfs toepassingen en andere resources migreren naar Azure. Hierbij wordt ervan uitgegaan dat uw ultieme doel stelling een volledige overgang naar de Cloud is, waarbij u zoveel mogelijk Operations Manager functionaliteit kunt vervangen door Azure Monitor, zonder in te leveren op de operationele vereisten van uw bedrijf en IT. 
@@ -63,11 +63,11 @@ U schakelt Application Insights in voor elk van uw zakelijke toepassingen. Het i
 Als u vertrouwd bent met Azure Monitor, kunt u waarschuwings regels maken die management pack functionaliteit kunnen vervangen en de bedrijfs processen zo ontwikkelen dat ze het nieuwe bewakings platform gebruiken. Zo kunt u beginnen met het verwijderen van machines en Management Packs uit de Operations Manager beheer groep. U kunt Management Packs blijven gebruiken voor essentiële server software en on-premises infra structuur, maar u kunt ook door gaan met de nieuwe functies in Azure Monitor waarmee u extra functionaliteit kunt intrekken.
 
 ## <a name="monitor-azure-services"></a>Azure-Services bewaken
-Azure-Services vereisen Azure Monitor voor het verzamelen van telemetrie en zijn ingeschakeld wanneer u een Azure-abonnement maakt. Het [activiteiten logboek](platform/activity-log.md) wordt automatisch verzameld voor het abonnement en de [metrische gegevens](platform/data-platform-metrics.md) van het platform worden automatisch verzameld van de Azure-resources die u maakt. U kunt meteen aan de slag met [metrische gegevens Verkenner](platform/metrics-getting-started.md), die vergelijkbaar is met prestatie weergaven in de operations-console, maar biedt interactieve analyses en [Geavanceerde aggregaties](platform/metrics-charts.md) van data. [Een waarschuwing voor metrische gegevens maken](platform/alerts-metric.md) om te worden gewaarschuwd wanneer een waarde een drempel overschrijdt of [een grafiek aan een Azure-dash board toevoegt](platform/metrics-charts.md#pinning-to-dashboards) voor zicht baarheid.
+Azure-Services vereisen Azure Monitor voor het verzamelen van telemetrie en zijn ingeschakeld wanneer u een Azure-abonnement maakt. Het [activiteiten logboek](essentials/activity-log.md) wordt automatisch verzameld voor het abonnement en de [metrische gegevens](essentials/data-platform-metrics.md) van het platform worden automatisch verzameld van de Azure-resources die u maakt. U kunt meteen aan de slag met [metrische gegevens Verkenner](essentials/metrics-getting-started.md), die vergelijkbaar is met prestatie weergaven in de operations-console, maar biedt interactieve analyses en [Geavanceerde aggregaties](essentials/metrics-charts.md) van data. [Een waarschuwing voor metrische gegevens maken](alerts/alerts-metric.md) om te worden gewaarschuwd wanneer een waarde een drempel overschrijdt of [een grafiek aan een Azure-dash board toevoegt](essentials/metrics-charts.md#pinning-to-dashboards) voor zicht baarheid.
 
 [![Metrics-explorer](media/azure-monitor-operations-manager/metrics-explorer.png)](media/azure-monitor-operations-manager/metrics-explorer.png#lightbox)
 
-[Maak een diagnostische instelling](platform/diagnostic-settings.md) voor elke Azure-resource voor het verzenden van metrische gegevens en [resource logboeken](platform/resource-logs.md), die informatie geven over de interne bewerking van elke resource, naar een log Analytics-werk ruimte. Hiermee beschikt u over alle beschik bare telemetrie voor uw resources en kunt u [log Analytics](log-query/log-analytics-overview.md) gebruiken om logboek-en prestatie gegevens interactief te analyseren met behulp van een geavanceerde query taal die geen equivalent in Operations Manager heeft. U kunt ook [waarschuwingen voor logboek query's](platform/alerts-log-query.md)maken, waarmee u complexe logica kunt gebruiken om de waarschuwings voorwaarden te bepalen en gegevens te correleren tussen meerdere resources.
+[Maak een diagnostische instelling](essentials/diagnostic-settings.md) voor elke Azure-resource voor het verzenden van metrische gegevens en [resource logboeken](essentials/resource-logs.md), die informatie geven over de interne bewerking van elke resource, naar een log Analytics-werk ruimte. Hiermee beschikt u over alle beschik bare telemetrie voor uw resources en kunt u [log Analytics](logs/log-analytics-overview.md) gebruiken om logboek-en prestatie gegevens interactief te analyseren met behulp van een geavanceerde query taal die geen equivalent in Operations Manager heeft. U kunt ook [waarschuwingen voor logboek query's](alerts/alerts-log-query.md)maken, waarmee u complexe logica kunt gebruiken om de waarschuwings voorwaarden te bepalen en gegevens te correleren tussen meerdere resources.
 
 [![Logboekanalyse](media/azure-monitor-operations-manager/log-analytics.png)](media/azure-monitor-operations-manager/log-analytics.png#lightbox)
 
@@ -76,7 +76,7 @@ Azure-Services vereisen Azure Monitor voor het verzamelen van telemetrie en zijn
 [![Inzicht-voor beeld](media/azure-monitor-operations-manager/insight.png)](media/azure-monitor-operations-manager/insight.png#lightbox)
 
 
-Inzichten zijn gebaseerd op [werkmappen](platform/workbooks-overview.md) in azure monitor, waarmee metrische gegevens worden gecombineerd en query's worden vastgelegd in uitgebreide, interactieve rapporten. Maak uw eigen werkmappen om gegevens uit meerdere services te combi neren, vergelijkbaar met de manier waarop u aangepaste weer gaven en rapporten in de operations-console kunt maken.
+Inzichten zijn gebaseerd op [werkmappen](visualize/workbooks-overview.md) in azure monitor, waarmee metrische gegevens worden gecombineerd en query's worden vastgelegd in uitgebreide, interactieve rapporten. Maak uw eigen werkmappen om gegevens uit meerdere services te combi neren, vergelijkbaar met de manier waarop u aangepaste weer gaven en rapporten in de operations-console kunt maken.
 
 ### <a name="azure-management-pack"></a>Azure management pack
 Met [azure Management Pack](https://www.microsoft.com/download/details.aspx?id=50013) kan Operations Manager Azure-resources detecteren en hun status controleren op basis van een bepaalde reeks bewakings scenario's. Voor dit management pack moet u aanvullende configuratie uitvoeren voor elke resource in azure, maar het kan handig zijn om uw Azure-resources in de operations-console te presen teren tot u uw bedrijfs processen hebt ontwikkeld om te focussen op Azure Monitor.
@@ -89,21 +89,21 @@ Met [azure Management Pack](https://www.microsoft.com/download/details.aspx?id=5
 ## <a name="monitor-server-software-and-local-infrastructure"></a>Server software en lokale infra structuur bewaken
 Wanneer u machines naar de Cloud verplaatst, worden de bewakings vereisten voor de software niet gewijzigd. Het is niet meer nodig om de fysieke onderdelen te controleren omdat deze zijn gevirtualiseerd, maar het gast besturingssysteem en de werk belastingen hebben dezelfde vereisten, ongeacht hun omgeving.
 
-[Azure monitor voor VM's](insights/vminsights-overview.md) is de belangrijkste functie in azure monitor voor het bewaken van virtuele machines en het bijbehorende gast besturingssysteem en werk belastingen. Net als bij Operations Manager gebruikt Azure Monitor voor VM's een agent voor het verzamelen van gegevens van het gast besturingssysteem van virtuele machines. Dit zijn dezelfde prestatie-en gebeurtenis gegevens die meestal worden gebruikt door Management Packs voor analyse en waarschuwingen. Er zijn geen bestaande regels die kunnen worden gebruikt om problemen te identificeren en op te lossen voor de bedrijfs toepassingen en server software die op die computers worden uitgevoerd. U moet uw eigen waarschuwings regels maken om proactief op de hoogte te worden gesteld van gedetecteerde problemen.
+[Azure monitor voor VM's](vm/vminsights-overview.md) is de belangrijkste functie in azure monitor voor het bewaken van virtuele machines en het bijbehorende gast besturingssysteem en werk belastingen. Net als bij Operations Manager gebruikt Azure Monitor voor VM's een agent voor het verzamelen van gegevens van het gast besturingssysteem van virtuele machines. Dit zijn dezelfde prestatie-en gebeurtenis gegevens die meestal worden gebruikt door Management Packs voor analyse en waarschuwingen. Er zijn geen bestaande regels die kunnen worden gebruikt om problemen te identificeren en op te lossen voor de bedrijfs toepassingen en server software die op die computers worden uitgevoerd. U moet uw eigen waarschuwings regels maken om proactief op de hoogte te worden gesteld van gedetecteerde problemen.
 
 [![Prestaties Azure Monitor voor VM's](media/azure-monitor-operations-manager/vm-insights-performance.png)](media/azure-monitor-operations-manager/vm-insights-performance.png#lightbox)
 
 Azure Monitor de status van verschillende toepassingen en services die op een virtuele machine worden uitgevoerd ook niet meten. Metrische waarschuwingen kunnen automatisch worden omgezet wanneer een waarde onder de drempel waarde daalt, maar Azure Monitor heeft momenteel niet de mogelijkheid om de status criteria te definiëren voor toepassingen en services die op de machine worden uitgevoerd, noch biedt de functie status samen voegen om de status van verwante onderdelen te groeperen.
 
 > [!NOTE]
-> Een nieuwe [functie gast status voor Azure monitor voor VM's](insights/vminsights-health-overview.md) is nu beschikbaar in de open bare preview-versie en geeft een waarschuwing op basis van de status van een set prestatie gegevens. Dit is in eerste instantie beperkt tot een specifieke set prestatie meter items die betrekking hebben op het gast besturingssysteem en niet voor toepassingen of andere workloads die worden uitgevoerd op de virtuele machine.
+> Een nieuwe [functie gast status voor Azure monitor voor VM's](vm/vminsights-health-overview.md) is nu beschikbaar in de open bare preview-versie en geeft een waarschuwing op basis van de status van een set prestatie gegevens. Dit is in eerste instantie beperkt tot een specifieke set prestatie meter items die betrekking hebben op het gast besturingssysteem en niet voor toepassingen of andere workloads die worden uitgevoerd op de virtuele machine.
 > 
 > [![Gast status Azure Monitor voor VM's](media/azure-monitor-operations-manager/vm-insights-guest-health.png)](media/azure-monitor-operations-manager/vm-insights-guest-health.png#lightbox)
 
 Het bewaken van de software op uw computers in een hybride omgeving maakt doorgaans gebruik van een combi natie van Azure Monitor voor VM's en Operations Manager, afhankelijk van de vereisten van elke machine en op uw vervaldag om operationele processen rond Azure Monitor te ontwikkelen. De micro soft-beheer agent (aangeduid als de Log Analytics agent in Azure Monitor) wordt door beide platforms gebruikt, zodat één computer gelijktijdig kan worden bewaakt door beide.
 
 > [!NOTE]
-> In de toekomst wordt Azure Monitor voor VM's overgezet naar de [Azure monitor agent](platform/azure-monitor-agent-overview.md), die momenteel beschikbaar is als open bare preview. Het is compatibel met de micro soft monitoring agent zodat dezelfde virtuele machine nog steeds door beide platforms kan worden bewaakt.
+> In de toekomst wordt Azure Monitor voor VM's overgezet naar de [Azure monitor agent](agents/azure-monitor-agent-overview.md), die momenteel beschikbaar is als open bare preview. Het is compatibel met de micro soft monitoring agent zodat dezelfde virtuele machine nog steeds door beide platforms kan worden bewaakt.
 
 Ga door met het gebruik van Operations Manager voor functionaliteit die nog niet door Azure Monitor is verschaft. Dit omvat Management Packs voor essentiële server software, zoals IIS, SQL Server of Exchange. Mogelijk hebt u ook aangepaste Management Packs ontwikkeld voor een on-premises infra structuur die niet kan worden bereikt met Azure Monitor. Blijf ook Operations Manager gebruiken als deze nauw geïntegreerd is in uw operationele processen totdat u kunt overstappen op het moderniseren van uw service bewerkingen, waarbij Azure Monitor en andere Azure-Services kunnen worden uitgebreid of vervangen. 
 
@@ -111,8 +111,8 @@ Gebruik Azure Monitorloze Vm's om uw huidige bewaking te verbeteren, zelfs als d
 
 - Ontdek en bewaak relaties tussen virtuele machines en hun externe afhankelijkheden.
 - Bekijk geaggregeerde prestatie gegevens op meerdere virtuele machines in interactieve grafieken en werkmappen.
-- Gebruik [logboek query's](log-query/log-query-overview.md) om telemetrie van uw virtuele machines interactief te analyseren met gegevens van uw andere Azure-resources.
-- Maak [logboek waarschuwings regels](platform/alerts-log-query.md) op basis van complexe logica op meerdere virtuele machines.
+- Gebruik [logboek query's](logs/log-query-overview.md) om telemetrie van uw virtuele machines interactief te analyseren met gegevens van uw andere Azure-resources.
+- Maak [logboek waarschuwings regels](alerts/alerts-log-query.md) op basis van complexe logica op meerdere virtuele machines.
 
 [![Azure Monitor voor VM's kaart](media/azure-monitor-operations-manager/vm-insights-map.png)](media/azure-monitor-operations-manager/vm-insights-map.png#lightbox)
 
@@ -130,8 +130,8 @@ Als uw bewaking van een zakelijke toepassing beperkt is tot de functionaliteit v
 - Verzamel browser gegevens, zoals pagina weergaven en de prestaties van de belasting.
 - Detecteer uitzonde ringen en zoom in stack trace en gerelateerde aanvragen.
 - Geavanceerde analyses uitvoeren met behulp van functies zoals [gedistribueerde tracering](app/distributed-tracing.md) en [Slimme detectie](app/proactive-diagnostics.md).
-- [Metrics Explorer](platform/metrics-getting-started.md) gebruiken om de prestatie gegevens interactief te analyseren.
-- Gebruik [logboek query's](log-query/log-query-overview.md) om verzamelde telemetrie samen te analyseren met gegevens die worden verzameld voor Azure-Services en-Azure monitor voor VM's.
+- [Metrics Explorer](essentials/metrics-getting-started.md) gebruiken om de prestatie gegevens interactief te analyseren.
+- Gebruik [logboek query's](logs/log-query-overview.md) om verzamelde telemetrie samen te analyseren met gegevens die worden verzameld voor Azure-Services en-Azure monitor voor VM's.
 
 [![Application Insights](media/azure-monitor-operations-manager/application-insights.png)](media/azure-monitor-operations-manager/application-insights.png#lightbox)
 
@@ -148,7 +148,7 @@ Volg de basis strategie in de andere secties van deze hand leiding om Operations
 ## <a name="next-steps"></a>Volgende stappen
 
 - Raadpleeg de [Cloud monitoring-hand leiding](/azure/cloud-adoption-framework/manage/monitor/) voor een gedetailleerde vergelijking van Azure Monitor en System Center Operations Manager en meer informatie over het ontwerpen en implementeren van een hybride bewakings omgeving.
-- Meer informatie over het [bewaken van Azure-resources in azure monitor](insights/monitor-azure-resource.md).
-- Meer informatie over het [bewaken van virtuele Azure-machines in azure monitor](insights/monitor-vm-azure.md).
-- Lees meer over [Azure monitor voor VM's](insights/vminsights-overview.md).
+- Meer informatie over het [bewaken van Azure-resources in azure monitor](essentials/monitor-azure-resource.md).
+- Meer informatie over het [bewaken van virtuele Azure-machines in azure monitor](vm/monitor-vm-azure.md).
+- Lees meer over [Azure monitor voor VM's](vm/vminsights-overview.md).
 - Lees meer over [Application Insights](app/app-insights-overview.md).

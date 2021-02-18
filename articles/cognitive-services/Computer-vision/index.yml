@@ -11,12 +11,12 @@ metadata:
   author: PatrickFarley
   ms.author: pafarley
   ms.date: 09/22/2020
-  ms.openlocfilehash: fcd078212e92f030593445b843497a88327c49b8
-  ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+  ms.openlocfilehash: de1668d62b283185c08e5c839da0ec8a815e5c99
+  ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
   ms.translationtype: MT
   ms.contentlocale: nl-NL
   ms.lasthandoff: 02/17/2021
-  ms.locfileid: "100578154"
+  ms.locfileid: "100634597"
 landingContent:
 - title: Over Computer Vision
   linkLists:
@@ -160,12 +160,16 @@ landingContent:
       url: /legal/cognitive-services/computer-vision/responsible-use-deployment?context=%2fazure%2fcognitive-services%2fComputer-vision%2fcontext%2fcontext
     - text: Gegevens, privacy en beveiliging
       url: /legal/cognitive-services/computer-vision/compliance-privacy-security-2?context=%2fazure%2fcognitive-services%2fComputer-vision%2fcontext%2fcontext
-- title: Naslaginformatie
+- title: Referentie
   linkLists:
   - linkListType: reference
     links:
-    - text: REST-API
-      url: https://docs.microsoft.com/rest/api/computer-vision/
+    - text: Computer Vision-API v3.2-preview
+      url: https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-2/operations/5d986960601faab4bf452005
+    - text: Computer Vision API v3.1
+      url: https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005
+    - text: Computer Vision-API v2.1
+      url: https://westus.dev.cognitive.microsoft.com/docs/services/5cd27ec07268f6c679a3e641/operations/56f91f2e778daf14a499f21b
     - text: .NET SDK
       url: /dotnet/api/overview/azure/cognitiveservices/client/computervision?view=azure-dotnet
     - text: Python-SDK

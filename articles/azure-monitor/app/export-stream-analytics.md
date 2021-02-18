@@ -3,12 +3,12 @@ title: Exporteren met behulp van Stream Analytics vanuit Azure-toepassing inzich
 description: Stream Analytics kunt de gegevens die u exporteert, continu transformeren, filteren en routeren vanuit Application Insights.
 ms.topic: conceptual
 ms.date: 01/08/2019
-ms.openlocfilehash: e90daf2516b00f7a27ac47e34cfc4ace03fee6e2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c8486d7e5656a7770aec4a50739d3a9160e123e3
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90979185"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584321"
 ---
 # <a name="use-stream-analytics-to-process-exported-data-from-application-insights"></a>Gebruik Stream Analytics voor het verwerken van geëxporteerde gegevens van Application Insights
 [Azure stream Analytics](https://azure.microsoft.com/services/stream-analytics/) is het ideale hulp programma voor het verwerken van gegevens die zijn [geëxporteerd vanuit Application Insights](export-telemetry.md). Stream Analytics kunnen gegevens uit verschillende bronnen ophalen. De gegevens kunnen worden getransformeerd en gefilterd en vervolgens worden doorgestuurd naar verschillende Sinks.
@@ -55,10 +55,10 @@ Met [doorlopend exporteren](export-telemetry.md) worden gegevens verplaatst van 
 
     ![Gebeurtenis typen kiezen](./media/export-stream-analytics/080.png)
 
-1. Laat sommige gegevens samen voegen. U kunt de toepassing een tijdje gebruiken. Telemetrie is beschikbaar in en u ziet statistische grafieken in [metrische Explorer](../platform/metrics-charts.md) en afzonderlijke gebeurtenissen in [Diagnostische Zoek opdrachten](./diagnostic-search.md). 
+1. Laat sommige gegevens samen voegen. U kunt de toepassing een tijdje gebruiken. Telemetrie is beschikbaar in en u ziet statistische grafieken in [metrische Explorer](../essentials/metrics-charts.md) en afzonderlijke gebeurtenissen in [Diagnostische Zoek opdrachten](./diagnostic-search.md). 
    
     Daarnaast worden de gegevens naar uw opslag geëxporteerd. 
-2. Inspecteer de geëxporteerde gegevens. In Visual Studio kiest u **weer gave/Cloud Verkenner**en opent u Azure/Storage. (Als u deze menu optie niet hebt, moet u de Azure SDK installeren: Open het dialoog venster New project en open Visual C#/Cloud/Get Microsoft Azure SDK voor .NET.)
+2. Inspecteer de geëxporteerde gegevens. In Visual Studio kiest u **weer gave/Cloud Verkenner** en opent u Azure/Storage. (Als u deze menu optie niet hebt, moet u de Azure SDK installeren: Open het dialoog venster New project en open Visual C#/Cloud/Get Microsoft Azure SDK voor .NET.)
    
     ![Scherm afbeelding die laat zien hoe u de gebeurtenis typen instelt die u wilt zien.](./media/export-stream-analytics/04-data.png)
    
@@ -95,7 +95,7 @@ Het voorvoegsel patroon van het pad geeft aan waar Stream Analytics de invoer be
 
 `webapplication27_12345678123412341234123456789abcdef0/PageViews/{date}/{time}`
 
-In dit voorbeeld geldt het volgende:
+In dit voorbeeld:
 
 * `webapplication27` is de naam van de Application Insights resource **alle kleine letters**.
 * `1234...` is de instrumentatie sleutel van de Application Insights resource, waarbij **streepjes worden wegge laten**. 

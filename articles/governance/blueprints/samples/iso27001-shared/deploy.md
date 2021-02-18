@@ -3,12 +3,12 @@ title: Implementatie van blauwdrukvoorbeeld voor ISO 27001 conforme gedeelde ser
 description: Implementeer stappen voor het blauwdrukvoorbeeld voor ISO 27001 conforme gedeelde services, waaronder details van de parameters voor blauwdrukartefacten.
 ms.date: 02/05/2021
 ms.topic: sample
-ms.openlocfilehash: 8b28954b6145a9e6c1827107cf11aa85326dcc1f
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: 2eb9ed2199b28ad7cb349e6088c3cc583d8f011d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99627796"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577313"
 ---
 # <a name="deploy-the-iso-27001-shared-services-blueprint-sample"></a>Overzicht van de voorbeeldblauwdruk voor ISO 27001 conforme gedeelde services
 
@@ -110,7 +110,7 @@ In de volgende tabel ziet u een lijst met de blauwdrukartefactparameters:
 |Toegestane brontypen|Beleidstoewijzing|Toegestane brontypen|Lijst met resourcetypen die mogen worden geïmplementeerd. Deze lijst bestaat uit alle resourcetypen die in gedeelde services worden geïmplementeerd.|
 |Toegestane opslagaccount-SKU's|Beleidstoewijzing|Toegestane opslag-SKU's|Lijst met toegestane opslagaccount-SKU's voor diagnostische logboeken. De standaardwaarde is _["Standard_LRS"]_ .|
 |Toegestane SKU's van virtuele machines|Beleidstoewijzing|Lijst met SKU's voor virtuele machines die mogen worden geïmplementeerd. De standaardwaarde is _["Standard_DS1_v2", "Standard_DS2_v2"]_ .|
-|Blauwdrukinitiatief voor ISO 27001|Beleidstoewijzing|Resourcetypen voor het controleren van diagnostische logboeken|Lijst met resourcetypen die moeten worden gecontroleerd als de instelling voor diagnostische logboeken niet is ingeschakeld. Acceptabele waarden vindt u in de [schema's van diagnostische logboeken van Azure Monitor](../../../../azure-monitor/platform/resource-logs-schema.md#service-specific-schemas).|
+|Blauwdrukinitiatief voor ISO 27001|Beleidstoewijzing|Resourcetypen voor het controleren van diagnostische logboeken|Lijst met resourcetypen die moeten worden gecontroleerd als de instelling voor diagnostische logboeken niet is ingeschakeld. Acceptabele waarden vindt u in de [schema's van diagnostische logboeken van Azure Monitor](../../../../azure-monitor/essentials/resource-logs-schema.md#service-specific-schemas).|
 |Log Analytics-resourcegroep|Resourcegroep|Naam|**Vergrendeld**: voegt de **organisatienaam** samen met `-sharedsvsc-log-rg` om de resourcegroep uniek te maken.|
 |Log Analytics-resourcegroep|Resourcegroep|Locatie|**Vergrendeld**: maakt gebruik van de blauwdrukparameter.|
 |Log Analytics-sjabloon|Resource Manager-sjabloon|Servicelaag|Hiermee stelt u de laag van de Log Analytics-werkruimte in. Standaardwaarde is _PerNode_.|

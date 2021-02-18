@@ -10,12 +10,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake
 ms.date: 01/15/2021
-ms.openlocfilehash: 35cdfdbdc04d0c88bc49c024ea7465537583e0d7
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: c55e2d2d9eaeae441e8a7505d0f391ed0860cedf
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735508"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100634189"
 ---
 # <a name="vcore-model-overview---azure-sql-database-and-azure-sql-managed-instance"></a>overzicht van vCore-model-Azure SQL Database en Azure SQL Managed instance 
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -204,7 +204,7 @@ Raadpleeg [AZ SQL mi update](/cli/azure/sql/mi#az-sql-mi-update) Command voor me
 
 Gen4-hardware wordt [gefaseerd uitgevoerd](https://azure.microsoft.com/updates/gen-4-hardware-on-azure-sql-database-approaching-end-of-life-in-2020/) en is niet meer beschikbaar voor nieuwe implementaties. Alle nieuwe data bases moeten worden geïmplementeerd op GEN5-hardware.
 
-GEN5 is wereld wijd beschikbaar in de meeste regio's.
+GEN5 is wereld wijd beschikbaar in alle open bare regio's.
 
 #### <a name="fsv2-series"></a>Fsv2-serie
 

@@ -9,12 +9,12 @@ ms.devlang: java
 ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.custom: devx-track-java
-ms.openlocfilehash: d6b23a831426a3308a0b47946d5a82679e937bbe
-ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
+ms.openlocfilehash: cba8b97adb40ca2c277268188ff6ad541c7e9676
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97683115"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596472"
 ---
 # <a name="troubleshoot-issues-when-you-use-azure-cosmos-db-java-sdk-v4-with-sql-api-accounts"></a>Problemen oplossen met Azure Cosmos DB Java SDK v4 met SQL API-accounts
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -40,7 +40,7 @@ Begin met deze lijst:
 * Lees de rest van dit artikel als u geen oplossing hebt gevonden. Bestand vervolgens een [github-probleem](https://github.com/Azure/azure-sdk-for-java/issues). Als er een optie is om tags toe te voegen aan uw GitHub-probleem, voegt u een tag *Cosmos: v4-item* toe.
 
 ### <a name="retry-logic"></a>Logica voor opnieuw proberen <a id="retry-logics"></a>
-Cosmos DB SDK bij een i/o-fout probeert de mislukte bewerking opnieuw uit te voeren als het probleem zich voordoet in de SDK. Als er een nieuwe poging wordt gedaan om fouten te voor komen, is het een goed idee. Het is raadzaam om de nieuwste SDK te gebruiken als de logica voor nieuwe pogingen voortdurend wordt verbeterd.
+Cosmos DB SDK bij een IO-fout probeert de mislukte bewerking opnieuw uit te voeren als opnieuw proberen in de SDK kans van slagen heeft. Als er een nieuwe poging wordt gedaan om fouten te voor komen, is het een goed idee. Het is raadzaam om de nieuwste SDK te gebruiken als de logica voor nieuwe pogingen voortdurend wordt verbeterd.
 
 1. Bij lees-en query-i/o-fouten wordt opnieuw geprobeerd door de SDK zonder de halen aan de eind gebruiker.
 2. Schrijf bewerkingen (maken, Upsert, vervangen, verwijderen) zijn ' not ' idempotent en daarom kan SDK niet altijd een blinde schrijf bewerking uitvoeren. De toepassings logica van de gebruiker is vereist voor het afhandelen van de fout en het opnieuw proberen.
@@ -54,7 +54,7 @@ Cosmos DB SDK bij een i/o-fout probeert de mislukte bewerking opnieuw uit te voe
 Voor de beste prestaties:
 * Zorg ervoor dat de app wordt uitgevoerd in dezelfde regio als uw Azure Cosmos DB-account. 
 * Controleer het CPU-gebruik op de host waarop de app wordt uitgevoerd. Als het CPU-gebruik 50 procent of meer is, voert u uw app uit op een host met een hogere configuratie. U kunt ook de belasting op meer machines distribueren.
-    * Als u uw toepassing uitvoert op de Azure Kubernetes-service, kunt u [Azure monitor gebruiken om het CPU-gebruik te bewaken](../azure-monitor/insights/container-insights-analyze.md).
+    * Als u uw toepassing uitvoert op de Azure Kubernetes-service, kunt u [Azure monitor gebruiken om het CPU-gebruik te bewaken](../azure-monitor/containers/container-insights-analyze.md).
 
 #### <a name="connection-throttling"></a>Verbindings beperking
 De verbindings beperking kan worden veroorzaakt door een [verbindings limiet op een hostcomputer of een overschrijding] van een [Azure SNAT-poort].

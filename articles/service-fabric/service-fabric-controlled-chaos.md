@@ -1,17 +1,15 @@
 ---
 title: Chaos in Service Fabric clusters induceren
 description: Fout injectie en cluster analyse service-Api's gebruiken voor het beheren van chaos in het cluster.
-author: georgewallace
 ms.topic: conceptual
 ms.date: 02/05/2018
-ms.author: gwallace
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 727e0c8a738258434036652dd3df1f686f7433bb
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 8ff3c88b7f86294badb76ec1e8dde0c34b942509
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100546377"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588985"
 ---
 # <a name="induce-controlled-chaos-in-service-fabric-clusters"></a>Beheerde chaos in Service Fabric clusters induceren
 Grootschalige gedistribueerde systemen zoals Cloud infrastructuren zijn inherent onbetrouwbaar. Met Azure Service Fabric kunnen ontwikkel aars betrouw bare gedistribueerde services bovenop een onbetrouwbare infra structuur schrijven. Ontwikkel aars moeten de stabiliteit van hun services kunnen testen om robuuste gedistribueerde services boven op een onbetrouwbare infra structuur te schrijven, terwijl de onderliggende onbetrouwbare infra structuur in gecompliceerde status overgangen door problemen gaat.

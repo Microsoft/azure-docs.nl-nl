@@ -5,16 +5,16 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: de013b6ccd924f50ffe12fcba1285b121eece5f7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3e9e924d6626d9f0dcd2db8a5e8b8f90a0aa01ce
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83827553"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593845"
 ---
 # <a name="query-logs-from-startstop-vms-during-off-hours"></a>Query's uitvoeren op logboeken vanuit VM's buiten bedrijfsuren starten/stoppen
 
-Azure Automation twee typen records worden doorgestuurd naar de gekoppelde Log Analytics werk ruimte: taak logboeken en taak stromen. In dit artikel worden de gegevens weer gegeven die beschikbaar zijn voor [query's](../azure-monitor/log-query/log-query-overview.md) in azure monitor.
+Azure Automation twee typen records worden doorgestuurd naar de gekoppelde Log Analytics werk ruimte: taak logboeken en taak stromen. In dit artikel worden de gegevens weer gegeven die beschikbaar zijn voor [query's](../azure-monitor/logs/log-query-overview.md) in azure monitor.
 
 ## <a name="job-logs"></a>Taaklogboeken
 
@@ -56,13 +56,13 @@ Azure Automation twee typen records worden doorgestuurd naar de gekoppelde Log A
 |StreamType | Het type taakstroom. Mogelijke waarden zijn:<br>-Voortgang<br>- Uitvoer<br>- Waarschuwing<br>- Fout<br>- Foutopsporing<br>- Uitgebreid|
 |Tijd | Datum en tijd van uitvoering van de runbooktaak.|
 
-Wanneer u een zoek opdracht in het logboek uitvoert waarmee categorie records van **JobLogs** of **JobStreams**worden geretourneerd, kunt u de weer gave **JobLogs** of **JobStreams** selecteren, waarin een reeks tegels wordt weer gegeven met een overzicht van de updates die worden geretourneerd door de zoek opdracht.
+Wanneer u een zoek opdracht in het logboek uitvoert waarmee categorie records van **JobLogs** of **JobStreams** worden geretourneerd, kunt u de weer gave **JobLogs** of **JobStreams** selecteren, waarin een reeks tegels wordt weer gegeven met een overzicht van de updates die worden geretourneerd door de zoek opdracht.
 
 ## <a name="sample-log-searches"></a>Voorbeeldzoekopdrachten in logboeken
 
 De volgende tabel bevat voor beelden van zoek opdrachten in Logboeken voor taak records die worden verzameld door VM's buiten bedrijfsuren starten/stoppen.
 
-|Query’s uitvoeren | Beschrijving|
+|Query’s uitvoeren | Description|
 |----------|----------|
 |Taken zoeken voor runbook-ScheduledStartStop_Parent die zijn voltooid | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "ScheduledStartStop_Parent" ) <br>&#124;  where ( ResultType == "Completed" )  <br>&#124;  summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc</code>|
 |Taken zoeken voor runbook-ScheduledStartStop_Parent die niet zijn voltooid | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "ScheduledStartStop_Parent" ) <br>&#124;  where ( ResultType == "Failed" )  <br>&#124;  summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc</code>|
@@ -72,5 +72,5 @@ De volgende tabel bevat voor beelden van zoek opdrachten in Logboeken voor taak 
 ## <a name="next-steps"></a>Volgende stappen
 
 * Als u de functie wilt instellen, raadpleegt u [virtuele machines stoppen/starten configureren tijdens buiten kantoor uren](automation-solution-vm-management-config.md).
-* Zie [logboek waarschuwingen maken met Azure monitor](../azure-monitor/platform/alerts-log.md)voor meer informatie over logboek waarschuwingen tijdens de implementatie van onderdelen.
+* Zie [logboek waarschuwingen maken met Azure monitor](../azure-monitor/alerts/alerts-log.md)voor meer informatie over logboek waarschuwingen tijdens de implementatie van onderdelen.
 * Raadpleeg [problemen met VM's buiten bedrijfsuren starten/stoppen oplossen](troubleshoot/start-stop-vm.md)om de functie fouten op te lossen.

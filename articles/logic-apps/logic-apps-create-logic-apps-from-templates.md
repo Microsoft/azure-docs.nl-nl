@@ -8,12 +8,12 @@ ms.author: klam
 ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 10/15/2017
-ms.openlocfilehash: 7eca9b4a8cf09f2f35d56dc22fc25169be192f47
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 42c592e6aede4537dc983fd2cff043a878f81f1c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87066244"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593096"
 ---
 # <a name="create-logic-app-workflows-from-prebuilt-templates"></a>Werkstromen voor logische apps maken met vooraf gedefinieerde sjablonen
 
@@ -21,7 +21,7 @@ Logic Apps biedt sjablonen die preconstrueerde Logic apps hebben die de veelgebr
 
 Hier volgen enkele sjabloon categorieën:
 
-| Sjabloon type | Beschrijving | 
+| Sjabloon type | Description | 
 | ------------- | ----------- | 
 | Enter prise Cloud-sjablonen | Voor de integratie van Azure Blob, Dynamics CRM, Sales Force, box en ook andere connectors voor uw Enter prise Cloud-behoeften. U kunt deze sjablonen bijvoorbeeld gebruiken om zakelijke leads te organiseren of een back-up te maken van uw bedrijfs bestands gegevens. | 
 | Persoonlijke productiviteits sjablonen | Verbeter de persoonlijke productiviteit door dagelijks herinneringen in te stellen, belang rijke werk items in te scha kelen in taken lijsten en langdurige taken uit te voeren naar één stap voor het goed keuren van een gebruiker. | 
@@ -50,7 +50,7 @@ Als u nog geen abonnement op Azure hebt, [meld u dan aan voor een gratis Azure-a
    | **Abonnement** | *your-Azure-subscription-name* | Selecteer het Azure-abonnement dat u wilt gebruiken. | 
    | **Resourcegroep** | *naam-van-uw-Azure-resourcegroep* | Maak of selecteer een [Azure-resource groep](../azure-resource-manager/management/overview.md) voor deze logische app en beheer alle resources die zijn gekoppeld aan deze app. | 
    | **Locatie** | *uw-Azure-datacenter-regio* | Selecteer de regio van het datacenter voor het implementeren van uw logische app, bijvoorbeeld VS - west. | 
-   | **Log Analytics** | **Uit** (standaard) of **op** | Stel [Diagnostische logboek registratie](../logic-apps/monitor-logic-apps-log-analytics.md) in voor uw logische app met behulp van [Azure monitor-logboeken](../azure-monitor/log-query/log-query-overview.md). Hiervoor hebt u al een Log Analytics-werk ruimte nodig. | 
+   | **Log Analytics** | **Uit** (standaard) of **op** | Stel [Diagnostische logboek registratie](../logic-apps/monitor-logic-apps-log-analytics.md) in voor uw logische app met behulp van [Azure monitor-logboeken](../azure-monitor/logs/log-query-overview.md). Hiervoor hebt u al een Log Analytics-werk ruimte nodig. | 
    |||| 
 
 4. Wanneer u klaar bent, selecteert u **Vastmaken aan dashboard**. Op die manier wordt uw logische app automatisch weergegeven op uw Azure-dashboard en wordt geopend na de implementatie. Kies **Maken**.
@@ -66,14 +66,14 @@ Als u nog geen abonnement op Azure hebt, [meld u dan aan voor een gratis Azure-a
    ![Een sjabloon voor een logische app kiezen](./media/logic-apps-create-logic-apps-from-templates/choose-logic-app-template.png)
 
    > [!TIP]
-   > Kies **lege logische app**om uw logische app helemaal zelf te maken.
+   > Kies **lege logische app** om uw logische app helemaal zelf te maken.
 
    Wanneer u een vooraf gemaakte sjabloon selecteert, kunt u meer informatie over die sjabloon weer geven. 
    Bijvoorbeeld:
 
    ![Een vooraf gemaakte sjabloon kiezen](./media/logic-apps-create-logic-apps-from-templates/logic-app-choose-prebuilt-template.png)
 
-6. Kies **deze sjabloon gebruiken**om door te gaan met de geselecteerde sjabloon. 
+6. Kies **deze sjabloon gebruiken** om door te gaan met de geselecteerde sjabloon. 
 
 7. Op basis van de connectors in de sjabloon wordt u gevraagd om een van de volgende stappen uit te voeren:
 
@@ -101,7 +101,7 @@ Als u nog geen abonnement op Azure hebt, [meld u dan aan voor een gratis Azure-a
 
 1. Zoek en open in de [Azure Portal](https://portal.azure.com "Azure Portal")uw logische app in de ontwerp functie voor logische apps.
 
-2. Kies **sjablonen**op de werk balk van de ontwerp functie. Met deze actie worden niet-opgeslagen wijzigingen verwijderd. er wordt dus een waarschuwing weer gegeven, zodat u kunt bevestigen dat u wilt door gaan. Klik op **OK**om te bevestigen. Bijvoorbeeld:
+2. Kies **sjablonen** op de werk balk van de ontwerp functie. Met deze actie worden niet-opgeslagen wijzigingen verwijderd. er wordt dus een waarschuwing weer gegeven, zodat u kunt bevestigen dat u wilt door gaan. Klik op **OK** om te bevestigen. Bijvoorbeeld:
 
    ![Kies sjablonen](./media/logic-apps-create-logic-apps-from-templates/logic-app-update-existing-with-template.png)
 
@@ -114,7 +114,7 @@ Als u nog geen abonnement op Azure hebt, [meld u dan aan voor een gratis Azure-a
 
    ![Een vooraf gemaakte sjabloon kiezen](./media/logic-apps-create-logic-apps-from-templates/logic-app-choose-prebuilt-template.png)
 
-4. Kies **deze sjabloon gebruiken**om door te gaan met de geselecteerde sjabloon. 
+4. Kies **deze sjabloon gebruiken** om door te gaan met de geselecteerde sjabloon. 
 
 5. Op basis van de connectors in de sjabloon wordt u gevraagd om een van de volgende stappen uit te voeren:
 
@@ -131,7 +131,7 @@ Als u nog geen abonnement op Azure hebt, [meld u dan aan voor een gratis Azure-a
 8. Ga door met het bouwen van uw logische app. 
 
    > [!TIP]
-   > Als u uw wijzigingen nog niet hebt opgeslagen, kunt u uw werk verwijderen en terugkeren naar uw vorige logische app. Kies **verwijderen**op de werk balk van de ontwerp functie.
+   > Als u uw wijzigingen nog niet hebt opgeslagen, kunt u uw werk verwijderen en terugkeren naar uw vorige logische app. Kies **verwijderen** op de werk balk van de ontwerp functie.
 
 > [!NOTE] 
 > Veel sjablonen bevatten connectors waarvoor mogelijk al vooraf de vereiste eigenschappen zijn ingevuld. Voor sommige sjablonen is het echter mogelijk dat u nog steeds waarden moet opgeven voordat u de logische app correct kunt implementeren. Als u probeert te implementeren zonder de ontbrekende eigenschaps velden te volt ooien, wordt er een fout bericht weer gegeven.

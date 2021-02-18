@@ -9,18 +9,18 @@ ms.subservice: cost-management
 ms.topic: how-to
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: de0e9c631a97891e75c091c75a34b7dd94a52894
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
-ms.translationtype: HT
+ms.openlocfilehash: 1706fd69f58e4dee4a7ed963fb22cb63aec026fa
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131459"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593382"
 ---
 # <a name="manage-costs-with-azure-budgets"></a>Kosten beheren met Azure Budgets
 
 Kostenbeheer is een essentieel onderdeel om de waarde van uw investering in de cloud te maximaliseren. Er zijn verschillende scenario's waar zichtbaarheid van kosten, rapportage en op kosten gebaseerde indelingen van belang zijn voor een voortdurende bedrijfsuitoefening. [Azure Cost Management-API's](/rest/api/consumption/) bieden een set API's ter ondersteuning van al deze scenario's. De API's bieden gebruiksdetails, waardoor u kosten op granulair exemplaarniveau kunt bekijken.
 
-Budgetten worden doorgaans gebruikt als deel van kostenbeheer. In Azure kan er een bereik voor budgetten worden ingesteld. U kunt bijvoorbeeld uw budget beperken op basis van abonnement, resourcegroepen of een verzameling resources. Naast het gebruik van de budget-API om u per e-mail op de hoogte te stellen wanneer een budgetdrempelwaarde is bereikt, kunt u ook [Azure Monitor-actiegroepen](../../azure-monitor/platform/action-groups.md) gebruiken om een vooraf bepaalde set acties te activeren als resultaat van een budgetgebeurtenis.
+Budgetten worden doorgaans gebruikt als deel van kostenbeheer. In Azure kan er een bereik voor budgetten worden ingesteld. U kunt bijvoorbeeld uw budget beperken op basis van abonnement, resourcegroepen of een verzameling resources. Naast het gebruik van de budget-API om u per e-mail op de hoogte te stellen wanneer een budgetdrempelwaarde is bereikt, kunt u ook [Azure Monitor-actiegroepen](../../azure-monitor/alerts/action-groups.md) gebruiken om een vooraf bepaalde set acties te activeren als resultaat van een budgetgebeurtenis.
 
 Een algemeen budgetscenario voor een klant met een niet-kritieke workload is wanneer de klant op basis van een budget wil beheren en ook een voorspelbare maandelijkse factuur wil. Dit scenario vereist een op kosten gebaseerde indeling van resources die onderdeel zijn van de Azure-omgeving. In dit scenario wordt voor het abonnement een maandelijks budget van $1000 vastgesteld. Er worden ook meldingen over de drempelwaarde ingesteld om indelingen te activeren. Dit scenario begint met een drempelwaarde van 80%, waarna alle VM's in de resourcegroep **Optioneel** worden afgesloten. Bij de drempelwaarde van 100% van de kosten worden vervolgens alle VM-exemplaren afgesloten.
 

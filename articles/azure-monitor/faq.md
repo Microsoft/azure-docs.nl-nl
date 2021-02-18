@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2020
-ms.openlocfilehash: a8d3ded1d11a350ff53ffda71348b2cc707760b8
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.openlocfilehash: 212828493a381ca118d3bdc54428bddba9bd842a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100008414"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577568"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Veelgestelde vragen over Azure Monitor
 
@@ -31,7 +31,7 @@ In september 2018, micro soft gecombineerd Azure Monitor, Log Analytics en Appli
 Functies van Azure Monitor die automatisch worden ingeschakeld, zoals het verzamelen van metrische gegevens en activiteiten logboeken, zijn gratis. Er zijn kosten verbonden aan andere functies, zoals logboek query's en waarschuwingen. Zie de [pagina met prijzen voor Azure monitor](https://azure.microsoft.com/pricing/details/monitor/) voor gedetailleerde prijs informatie.
 
 ### <a name="how-do-i-enable-azure-monitor"></a>Azure Monitor Hoe kan ik inschakelen?
-Azure Monitor is ingeschakeld wanneer u een nieuw Azure-abonnement maakt, het [activiteiten logboek](./platform/platform-logs-overview.md) en de [metrische gegevens](platform/data-platform-metrics.md) van het platform worden automatisch verzameld. Maak [Diagnostische instellingen](platform/diagnostic-settings.md) voor het verzamelen van meer gedetailleerde informatie over de werking van uw Azure-resources en voeg [bewakings oplossingen](insights/solutions.md) en [inzichten](./monitor-reference.md) toe om extra analyses te bieden op verzamelde gegevens voor bepaalde services. 
+Azure Monitor is ingeschakeld wanneer u een nieuw Azure-abonnement maakt, het [activiteiten logboek](./essentials/platform-logs-overview.md) en de [metrische gegevens](essentials/data-platform-metrics.md) van het platform worden automatisch verzameld. Maak [Diagnostische instellingen](essentials/diagnostic-settings.md) voor het verzamelen van meer gedetailleerde informatie over de werking van uw Azure-resources en voeg [bewakings oplossingen](insights/solutions.md) en [inzichten](./monitor-reference.md) toe om extra analyses te bieden op verzamelde gegevens voor bepaalde services. 
 
 ### <a name="how-do-i-access-azure-monitor"></a>Hoe kan ik toegang tot Azure Monitor?
 Toegang tot alle Azure Monitor-functies en-gegevens via het menu **monitor** in de Azure Portal. De sectie **bewaking** van het menu voor verschillende Azure-Services biedt toegang tot dezelfde hulpprogram ma's als gegevens die zijn gefilterd op een bepaalde resource. Azure Monitor gegevens zijn ook toegankelijk voor diverse scenario's met behulp van CLI, Power shell en een REST API.
@@ -40,10 +40,10 @@ Toegang tot alle Azure Monitor-functies en-gegevens via het menu **monitor** in 
 Nee. Azure Monitor is een schaal bare Cloud service die grote hoeveel heden gegevens verwerkt en opslaat, hoewel Azure Monitor resources kan bewaken die on-premises en in andere Clouds zijn.
 
 ### <a name="can-azure-monitor-monitor-on-premises-resources"></a>Kan Azure Monitor on-premises resources controleren?
-Ja, naast het verzamelen van bewakings gegevens van Azure-resources, kunnen Azure Monitor gegevens verzamelen van virtuele machines en toepassingen in andere Clouds en on-premises. Zie [bronnen van bewakings gegevens voor Azure monitor](platform/data-sources.md).
+Ja, naast het verzamelen van bewakings gegevens van Azure-resources, kunnen Azure Monitor gegevens verzamelen van virtuele machines en toepassingen in andere Clouds en on-premises. Zie [bronnen van bewakings gegevens voor Azure monitor](agents/data-sources.md).
 
 ### <a name="does-azure-monitor-integrate-with-system-center-operations-manager"></a>Is Azure Monitor geïntegreerd met System Center Operations Manager?
-U kunt uw bestaande System Center Operations Manager-beheer groep verbinden met Azure Monitor om gegevens van agents te verzamelen in Azure Monitor Logboeken. Zo kunt u logboek query's en oplossingen gebruiken om gegevens te analyseren die zijn verzameld door agents. U kunt ook bestaande System Center Operations Manager agenten zo configureren dat gegevens rechtstreeks naar Azure Monitor worden verzonden. Zie [Operations Manager verbinding maken met Azure monitor](platform/om-agents.md).
+U kunt uw bestaande System Center Operations Manager-beheer groep verbinden met Azure Monitor om gegevens van agents te verzamelen in Azure Monitor Logboeken. Zo kunt u logboek query's en oplossingen gebruiken om gegevens te analyseren die zijn verzameld door agents. U kunt ook bestaande System Center Operations Manager agenten zo configureren dat gegevens rechtstreeks naar Azure Monitor worden verzonden. Zie [Operations Manager verbinding maken met Azure monitor](agents/om-agents.md).
 
 ### <a name="what-ip-addresses-does-azure-monitor-use"></a>Welke IP-adressen Azure Monitor gebruiken?
 Zie [IP-adressen die worden gebruikt door Application Insights en log Analytics](app/ip-addresses.md) voor een lijst met de IP-adressen en poorten die vereist zijn voor agents en andere externe bronnen voor toegang tot Azure monitor. 
@@ -51,16 +51,16 @@ Zie [IP-adressen die worden gebruikt door Application Insights en log Analytics]
 ## <a name="monitoring-data"></a>Bewakingsgegevens
 
 ### <a name="where-does-azure-monitor-get-its-data"></a>Waar Azure Monitor de gegevens ophalen?
-Azure Monitor verzamelt gegevens uit verschillende bronnen, waaronder Logboeken en metrieken van Azure-platform en-resources, aangepaste toepassingen en agents die op virtuele machines worden uitgevoerd. Andere services, zoals Azure Security Center, en Network Watcher het verzamelen van gegevens in een Log Analytics-werk ruimte, zodat deze kunnen worden geanalyseerd met Azure Monitor gegevens. U kunt ook aangepaste gegevens naar Azure Monitor verzenden met behulp van de REST API voor Logboeken of metrieken. Zie [bronnen van bewakings gegevens voor Azure monitor](platform/data-sources.md).
+Azure Monitor verzamelt gegevens uit verschillende bronnen, waaronder Logboeken en metrieken van Azure-platform en-resources, aangepaste toepassingen en agents die op virtuele machines worden uitgevoerd. Andere services, zoals Azure Security Center, en Network Watcher het verzamelen van gegevens in een Log Analytics-werk ruimte, zodat deze kunnen worden geanalyseerd met Azure Monitor gegevens. U kunt ook aangepaste gegevens naar Azure Monitor verzenden met behulp van de REST API voor Logboeken of metrieken. Zie [bronnen van bewakings gegevens voor Azure monitor](agents/data-sources.md).
 
 ### <a name="what-data-is-collected-by-azure-monitor"></a>Welke gegevens worden er door Azure Monitor verzameld? 
-Azure Monitor verzamelt gegevens uit een verscheidenheid aan bronnen in [Logboeken](platform/data-platform-logs.md) of [metrieken](platform/data-platform-metrics.md). Elk type gegevens heeft zijn eigen relatieve voor delen, en alle typen bieden ondersteuning voor een bepaalde set functies in Azure Monitor. Er is één metrische Data Base voor elk Azure-abonnement, terwijl u meerdere Log Analytics-werk ruimten kunt maken voor het verzamelen van Logboeken, afhankelijk van uw vereisten. Zie [Azure monitor data platform](platform/data-platform.md).
+Azure Monitor verzamelt gegevens uit een verscheidenheid aan bronnen in [Logboeken](logs/data-platform-logs.md) of [metrieken](essentials/data-platform-metrics.md). Elk type gegevens heeft zijn eigen relatieve voor delen, en alle typen bieden ondersteuning voor een bepaalde set functies in Azure Monitor. Er is één metrische Data Base voor elk Azure-abonnement, terwijl u meerdere Log Analytics-werk ruimten kunt maken voor het verzamelen van Logboeken, afhankelijk van uw vereisten. Zie [Azure monitor data platform](/data-platform.md).
 
 ### <a name="is-there-a-maximum-amount-of-data-that-i-can-collect-in-azure-monitor"></a>Is er een maximale hoeveelheid gegevens die ik kan verzamelen in Azure Monitor?
-Er is geen limiet voor de hoeveelheid metrische gegevens die u kunt verzamelen, maar deze gegevens worden Maxi maal 93 dagen opgeslagen. Zie het [bewaren van metrische gegevens](platform/data-platform-metrics.md#retention-of-metrics). Er is geen limiet voor het aantal logboek gegevens dat u kunt verzamelen, maar dit kan worden beïnvloed door de prijs categorie die u kiest voor de Log Analytics-werk ruimte. Zie de [prijs informatie](https://azure.microsoft.com/pricing/details/monitor/).
+Er is geen limiet voor de hoeveelheid metrische gegevens die u kunt verzamelen, maar deze gegevens worden Maxi maal 93 dagen opgeslagen. Zie het [bewaren van metrische gegevens](essentials/data-platform-metrics.md#retention-of-metrics). Er is geen limiet voor het aantal logboek gegevens dat u kunt verzamelen, maar dit kan worden beïnvloed door de prijs categorie die u kiest voor de Log Analytics-werk ruimte. Zie de [prijs informatie](https://azure.microsoft.com/pricing/details/monitor/).
 
 ### <a name="how-do-i-access-data-collected-by-azure-monitor"></a>Hoe kan ik toegang tot gegevens die door Azure Monitor zijn verzameld?
-Inzichten en oplossingen bieden een aangepaste ervaring voor het werken met gegevens die zijn opgeslagen in Azure Monitor. U kunt rechtstreeks met logboek gegevens werken met behulp van een logboek query die is geschreven in Kusto query language (KQL). In de Azure Portal kunt u query's schrijven en uitvoeren en gegevens interactief analyseren met behulp van Log Analytics. Analyseer de metrische gegevens in de Azure Portal met de Metrics Explorer. Zie [logboek gegevens analyseren in azure monitor](log-query/log-query-overview.md) en [aan de slag met Azure Metrics Explorer](platform/metrics-getting-started.md).
+Inzichten en oplossingen bieden een aangepaste ervaring voor het werken met gegevens die zijn opgeslagen in Azure Monitor. U kunt rechtstreeks met logboek gegevens werken met behulp van een logboek query die is geschreven in Kusto query language (KQL). In de Azure Portal kunt u query's schrijven en uitvoeren en gegevens interactief analyseren met behulp van Log Analytics. Analyseer de metrische gegevens in de Azure Portal met de Metrics Explorer. Zie [logboek gegevens analyseren in azure monitor](logs/log-query-overview.md) en [aan de slag met Azure Metrics Explorer](essentials/metrics-getting-started.md).
 
 ## <a name="solutions-and-insights"></a>Oplossingen en inzichten
 
@@ -80,23 +80,23 @@ Als u oplossingen wilt weer geven in de Azure Portal, klikt u op **meer** in het
 Azure Data Explorer is een snelle en zeer schaalbare service voor gegevensverkenning voor telemetrische gegevens en gegevens uit logboeken. Azure Monitor-Logboeken is gebaseerd op Azure Data Explorer en maakt gebruik van dezelfde Kusto query language (KQL) met enkele kleine verschillen. Zie [Azure monitor taal verschillen in de logboek query](/azure/data-explorer/kusto/query/).
 
 ### <a name="how-do-i-retrieve-log-data"></a>Hoe kan ik logboek gegevens ophalen?
-Alle gegevens worden opgehaald uit een Log Analytics-werk ruimte met behulp van een logboek query die is geschreven met Kusto query language (KQL). U kunt uw eigen query's schrijven of oplossingen en inzichten gebruiken die logboek query's bevatten voor een bepaalde toepassing of service. Zie [overzicht van logboek query's in azure monitor](log-query/log-query-overview.md).
-
+Alle gegevens worden opgehaald uit een Log Analytics-werk ruimte met behulp van een logboek query die is geschreven met Kusto query language (KQL). U kunt uw eigen query's schrijven of oplossingen en inzichten gebruiken die logboek query's bevatten voor een bepaalde toepassing of service. Zie [overzicht van logboek query's in azure monitor](logs/log-query-overview.md).
+p
 ### <a name="can-i-delete-data-from-a-log-analytics-workspace"></a>Kan ik gegevens verwijderen uit een Log Analytics-werk ruimte?
-Gegevens worden uit een werk ruimte verwijderd op basis van de [Bewaar periode](platform/manage-cost-storage.md#change-the-data-retention-period). U kunt specifieke gegevens verwijderen voor privacy-of nalevings redenen. Zie [persoonlijke gegevens exporteren en verwijderen](platform/personal-data-mgmt.md#how-to-export-and-delete-private-data) voor meer informatie.
+Gegevens worden uit een werk ruimte verwijderd op basis van de [Bewaar periode](logs/manage-cost-storage.md#change-the-data-retention-period). U kunt specifieke gegevens verwijderen voor privacy-of nalevings redenen. Zie [persoonlijke gegevens exporteren en verwijderen](logs/personal-data-mgmt.md#how-to-export-and-delete-private-data) voor meer informatie.
 
 ### <a name="is-log-analytics-storage-immutable"></a>Is Log Analytics opslag onveranderbaar?
 Gegevens in database opslag kunnen niet worden gewijzigd wanneer deze zijn opgenomen, maar kunnen worden verwijderd via het [  pad van de API voor het verwijderen van persoonlijke gegevens](platform/personal-data-mgmt.md#delete). Hoewel de gegevens niet kunnen worden gewijzigd, moeten voor sommige certificeringen gegevens onveranderlijk worden bewaard en kunnen ze niet worden gewijzigd of verwijderd in de opslag. Gegevens Onveranderbaarheid kunnen worden bereikt met behulp van [gegevens export](platform/logs-data-export.md) naar een opslag account dat is geconfigureerd als [onveranderlijke opslag](../storage/blobs/storage-blob-immutability-policies-manage.md).
 
 ### <a name="what-is-a-log-analytics-workspace"></a>Wat is een Log Analytics-werkruimte?
-Alle door Azure Monitor verzamelde logboek gegevens worden opgeslagen in een Log Analytics-werk ruimte. Een werk ruimte is in feite een container waarin logboek gegevens worden verzameld uit verschillende bronnen. Mogelijk hebt u een enkele Log Analytics-werk ruimte voor al uw bewakings gegevens of hebt u vereisten voor meerdere werk ruimten. Zie [de implementatie van uw Azure monitor-logboeken ontwerpen](platform/design-logs-deployment.md).
+Alle door Azure Monitor verzamelde logboek gegevens worden opgeslagen in een Log Analytics-werk ruimte. Een werk ruimte is in feite een container waarin logboek gegevens worden verzameld uit verschillende bronnen. Mogelijk hebt u een enkele Log Analytics-werk ruimte voor al uw bewakings gegevens of hebt u vereisten voor meerdere werk ruimten. Zie [de implementatie van uw Azure monitor-logboeken ontwerpen](logs/design-logs-deployment.md).
 
 ### <a name="can-you-move-an-existing-log-analytics-workspace-to-another-azure-subscription"></a>Kunt u een bestaande Log Analytics-werk ruimte verplaatsen naar een ander Azure-abonnement?
-U kunt een werk ruimte verplaatsen tussen resource groepen of abonnementen, maar niet naar een andere regio. Zie [een log Analytics-werk ruimte verplaatsen naar een ander abonnement of een andere resource groep](platform/move-workspace.md).
+U kunt een werk ruimte verplaatsen tussen resource groepen of abonnementen, maar niet naar een andere regio. Zie [een log Analytics-werk ruimte verplaatsen naar een ander abonnement of een andere resource groep](logs/move-workspace.md).
 
 ### <a name="why-cant-i-see-query-explorer-and-save-buttons-in-log-analytics"></a>Waarom kan ik query Explorer niet zien en knoppen Opslaan in Log Analytics?
 
-De knoppen **query Verkenner**, **Opslaan** en **nieuwe waarschuwings regel** zijn niet beschikbaar wanneer het [query bereik](log-query/scope.md) is ingesteld op een specifieke resource. Als u waarschuwingen wilt maken, een query wilt opslaan of laden, moet Log Analytics bereik zijn van een werk ruimte. Als u Log Analytics in de werkruimte context wilt openen, selecteert u **Logboeken** in het menu **Azure monitor** . De laatst gebruikte werk ruimte is geselecteerd, maar u kunt een andere werk ruimte selecteren. Zie de [logboek query bereik en het tijds bereik in Azure Monitor Log Analytics](log-query/scope.md)
+De knoppen **query Verkenner**, **Opslaan** en **nieuwe waarschuwings regel** zijn niet beschikbaar wanneer het [query bereik](logs/scope.md) is ingesteld op een specifieke resource. Als u waarschuwingen wilt maken, een query wilt opslaan of laden, moet Log Analytics bereik zijn van een werk ruimte. Als u Log Analytics in de werkruimte context wilt openen, selecteert u **Logboeken** in het menu **Azure monitor** . De laatst gebruikte werk ruimte is geselecteerd, maar u kunt een andere werk ruimte selecteren. Zie de [logboek query bereik en het tijds bereik in Azure Monitor Log Analytics](logs/scope.md)
 
 ### <a name="why-am-i-getting-the-error-register-resource-provider-microsoftinsights-for-this-subscription-to-enable-this-query-when-opening-log-analytics-from-a-vm"></a>Waarom krijg ik de fout: ' micro soft. Insights van resource provider registreren voor dit abonnement om deze query in te scha kelen ' bij het openen van Log Analytics van een VM? 
 Veel resource providers worden automatisch geregistreerd, maar u moet mogelijk bepaalde resource providers hand matig registreren. Het bereik voor registratie is altijd het abonnement. Zie [Resourceproviders en -typen](../azure-resource-manager/management/resource-providers-and-types.md#azure-portal) voor meer informatie.
@@ -107,7 +107,7 @@ Als u VM-logboeken wilt weer geven, moet u beschikken over de machtiging lezen v
 ## <a name="metrics"></a>Metrische gegevens
 
 ### <a name="why-are-metrics-from-the-guest-os-of-my-azure-virtual-machine-not-showing-up-in-metrics-explorer"></a>Waarom worden metrische gegevens van het gast besturingssysteem van mijn virtuele machine van Azure niet weer gegeven in Metrics Explorer?
-[Metrische platform gegevens](insights/monitor-azure-resource.md#monitoring-data) worden automatisch verzameld voor Azure-resources. U moet enige configuratie uitvoeren voor het verzamelen van metrische gegevens uit het gast besturingssysteem van een virtuele machine. Voor een Windows-VM installeert u de diagnostische uitbrei ding en configureert u de Azure Monitor sink, zoals beschreven in [Windows Azure Diagnostics extension (WAD) installeren en configureren](platform/diagnostics-extension-windows-install.md). Voor Linux installeert u de telegrafa-agent zoals beschreven in [aangepaste metrische gegevens verzamelen voor een virtuele Linux-machine met de InfluxData-telegrafa-agent](platform/collect-custom-metrics-linux-telegraf.md).
+[Metrische platform gegevens](essentials/monitor-azure-resource.md#monitoring-data) worden automatisch verzameld voor Azure-resources. U moet enige configuratie uitvoeren voor het verzamelen van metrische gegevens uit het gast besturingssysteem van een virtuele machine. Voor een Windows-VM installeert u de diagnostische uitbrei ding en configureert u de Azure Monitor sink, zoals beschreven in [Windows Azure Diagnostics extension (WAD) installeren en configureren](agents/diagnostics-extension-windows-install.md). Voor Linux installeert u de telegrafa-agent zoals beschreven in [aangepaste metrische gegevens verzamelen voor een virtuele Linux-machine met de InfluxData-telegrafa-agent](essentials/collect-custom-metrics-linux-telegraf.md).
 
 ## <a name="alerts"></a>Waarschuwingen
 
@@ -120,24 +120,24 @@ Waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waard
 - Webtest: resultaten van de beschikbaarheids test voldoen aan de criteria die zijn gedefinieerd.
 
 
-Zie [overzicht van waarschuwingen in Microsoft Azure](platform/alerts-overview.md).
+Zie [overzicht van waarschuwingen in Microsoft Azure](alerts/alerts-overview.md).
 
 
 ### <a name="what-is-an-action-group"></a>Wat is een actie groep?
-Een actie groep is een verzameling van meldingen en acties die kunnen worden geactiveerd door een waarschuwing. Meerdere waarschuwingen kunnen één actie groep gebruiken, zodat u algemene sets van meldingen en acties kunt benutten. Zie [actie groepen maken en beheren in de Azure Portal](platform/action-groups.md).
+Een actie groep is een verzameling van meldingen en acties die kunnen worden geactiveerd door een waarschuwing. Meerdere waarschuwingen kunnen één actie groep gebruiken, zodat u algemene sets van meldingen en acties kunt benutten. Zie [actie groepen maken en beheren in de Azure Portal](alerts/action-groups.md).
 
 
 ### <a name="what-is-an-action-rule"></a>Wat is een actie regel?
-Met een actie regel kunt u het gedrag wijzigen van een set waarschuwingen die overeenkomen met een bepaald criterium. Zo kunt u dergelijke vereisten doen als u waarschuwings acties wilt uitschakelen tijdens een onderhouds venster. U kunt ook een actie groep Toep assen op een set waarschuwingen in plaats van deze rechtstreeks toe te passen op de waarschuwings regels. Zie [actie regels](platform/alerts-action-rules.md).
+Met een actie regel kunt u het gedrag wijzigen van een set waarschuwingen die overeenkomen met een bepaald criterium. Zo kunt u dergelijke vereisten doen als u waarschuwings acties wilt uitschakelen tijdens een onderhouds venster. U kunt ook een actie groep Toep assen op een set waarschuwingen in plaats van deze rechtstreeks toe te passen op de waarschuwings regels. Zie [actie regels](alerts/alerts-action-rules.md).
 
 ## <a name="agents"></a>Agents
 
 ### <a name="does-azure-monitor-require-an-agent"></a>Is Azure Monitor een agent nodig?
-Een agent is alleen vereist voor het verzamelen van gegevens van het besturings systeem en workloads op virtuele machines. De virtuele machines kunnen zich in azure, een andere cloud omgeving of on-premises bevinden. Zie [overzicht van de Azure monitor agents](platform/agents-overview.md).
+Een agent is alleen vereist voor het verzamelen van gegevens van het besturings systeem en workloads op virtuele machines. De virtuele machines kunnen zich in azure, een andere cloud omgeving of on-premises bevinden. Zie [overzicht van de Azure monitor agents](agents/agents-overview.md).
 
 
 ### <a name="whats-the-difference-between-the-azure-monitor-agents"></a>Wat is het verschil tussen de Azure Monitor agents?
-Diagnostische Azure-extensie is voor virtuele machines van Azure en verzamelt gegevens voor Azure Monitor metrieken, Azure Storage en Azure Event Hubs. De Log Analytics-agent is voor virtuele machines in azure, een andere cloud omgeving of on-premises en verzamelt gegevens voor Azure Monitor-Logboeken. De afhankelijkheids agent vereist de Log Analytics agent en de verzamelde proces gegevens en-afhankelijkheden. Zie [overzicht van de Azure monitor agents](platform/agents-overview.md).
+Diagnostische Azure-extensie is voor virtuele machines van Azure en verzamelt gegevens voor Azure Monitor metrieken, Azure Storage en Azure Event Hubs. De Log Analytics-agent is voor virtuele machines in azure, een andere cloud omgeving of on-premises en verzamelt gegevens voor Azure Monitor-Logboeken. De afhankelijkheids agent vereist de Log Analytics agent en de verzamelde proces gegevens en-afhankelijkheden. Zie [overzicht van de Azure monitor agents](agents/agents-overview.md).
 
 
 ### <a name="does-my-agent-traffic-use-my-expressroute-connection"></a>Maakt mijn agent verkeer gebruik van mijn ExpressRoute-verbinding?
@@ -156,7 +156,7 @@ De hoeveelheid gegevens die per agent wordt verzonden, is afhankelijk van:
 * Het aantal logboeken en prestatie meter items dat wordt verzameld
 * Het gegevens volume in de logboeken
 
-Zie [gebruik en kosten beheren met Azure monitor logboeken](platform/manage-cost-storage.md) voor meer informatie.
+Zie [gebruik en kosten beheren met Azure monitor logboeken](logs/manage-cost-storage.md) voor meer informatie.
 
 Voor computers waarop de WireData-agent kan worden uitgevoerd, gebruikt u de volgende query om te zien hoeveel gegevens er worden verzonden:
 
@@ -173,7 +173,7 @@ Band breedte is een functie voor de hoeveelheid gegevens die wordt verzonden. Ge
 
 ### <a name="how-can-i-be-notified-when-data-collection-from-the-log-analytics-agent-stops"></a>Hoe kan ik een melding ontvangen wanneer het verzamelen van gegevens van de Log Analytics agent stopt?
 
-Gebruik de stappen die worden beschreven in [een waarschuwing bij het maken van een nieuw logboek om een](platform/alerts-metric.md) melding te ontvangen wanneer het verzamelen van gegevens wordt gestopt. Gebruik de volgende instellingen voor de waarschuwings regel:
+Gebruik de stappen die worden beschreven in [een waarschuwing bij het maken van een nieuw logboek om een](alerts/alerts-metric.md) melding te ontvangen wanneer het verzamelen van gegevens wordt gestopt. Gebruik de volgende instellingen voor de waarschuwings regel:
 
 - **Waarschuwings voorwaarde definiëren**: geef uw log Analytics-werk ruimte op als bron doel.
 - **Waarschuwings criteria** 
@@ -185,11 +185,11 @@ Gebruik de stappen die worden beschreven in [een waarschuwing bij het maken van 
    - **Naam**: *gegevens verzameling gestopt*
    - **Ernst**: *waarschuwing*
 
-Geef een bestaande of nieuwe [actie groep](platform/action-groups.md) op, zodat wanneer de logboek waarschuwing overeenkomt met criteria, u een melding ontvangt als er al meer dan 15 minuten een heartbeat ontbreekt.
+Geef een bestaande of nieuwe [actie groep](alerts/action-groups.md) op, zodat wanneer de logboek waarschuwing overeenkomt met criteria, u een melding ontvangt als er al meer dan 15 minuten een heartbeat ontbreekt.
 
 
 ### <a name="what-are-the-firewall-requirements-for-azure-monitor-agents"></a>Wat zijn de firewall vereisten voor Azure Monitor agents?
-Zie [netwerk firewall vereisten](platform/log-analytics-agent.md#network-requirements)voor meer informatie over Firewall vereisten.
+Zie [netwerk firewall vereisten](agents/log-analytics-agent.md#network-requirements)voor meer informatie over Firewall vereisten.
 
 
 ## <a name="visualizations"></a>Visualisaties
@@ -205,7 +205,7 @@ De weer gave Designer is alleen beschikbaar voor gebruikers die zijn toegewezen 
 
 * [.NET app](app/asp-net-troubleshoot-no-data.md)
 * [Een app die al wordt uitgevoerd bewaken](app/monitor-performance-live-website-now.md#troubleshoot)
-* [Diagnostische gegevens van Azure](platform/diagnostics-extension-to-application-insights.md)
+* [Diagnostische gegevens van Azure](agents/diagnostics-extension-to-application-insights.md)
 * [Java-web-app](app/java-troubleshoot.md)
 
 *Ik krijg geen gegevens van mijn server:*
@@ -306,10 +306,10 @@ Van [client webpagina's](app/javascript.md):
 
 Van andere bronnen, als u deze configureert:
 
-* [Diagnostische gegevens van Azure](platform/diagnostics-extension-to-application-insights.md)
-* [Importeren naar Analytics](platform/data-collector-api.md)
-* [Log Analytics](platform/data-collector-api.md)
-* [Logstash](platform/data-collector-api.md)
+* [Diagnostische gegevens van Azure](agents/diagnostics-extension-to-application-insights.md)
+* [Importeren naar Analytics](logs/data-collector-api.md)
+* [Log Analytics](logs/data-collector-api.md)
+* [Logstash](logs/data-collector-api.md)
 
 ### <a name="can-i-filter-out-or-modify-some-telemetry"></a>Kan ik een telemetrie uitfilteren of wijzigen?
 
@@ -451,7 +451,7 @@ U kunt geen metrisch Explorer-rapport instellen of continue export instellen.
 
 #### <a name="querying-the-telemetry"></a>Query's uitvoeren op de telemetrie
 
-Gebruik de [rest API](https://dev.applicationinsights.io/) om [Analytics](./log-query/log-query-overview.md) -query's uit te voeren.
+Gebruik de [rest API](https://dev.applicationinsights.io/) om [Analytics](./logs/log-query-overview.md) -query's uit te voeren.
 
 ### <a name="how-can-i-set-an-alert-on-an-event"></a>Hoe kan ik een waarschuwing instellen voor een gebeurtenis?
 
@@ -669,7 +669,7 @@ ContainerLog
 
 Schakel de verzameling voor deze eigenschappen voor elke container logboek regel opnieuw in.
 
-Als de eerste optie niet handig is als gevolg van wijzigingen in de query, kunt u het verzamelen van deze velden opnieuw inschakelen door de instelling ```log_collection_settings.enrich_container_logs``` in de configuratie-instellingen voor de [gegevens verzameling](insights/container-insights-agent-config.md)in te scha kelen.
+Als de eerste optie niet handig is als gevolg van wijzigingen in de query, kunt u het verzamelen van deze velden opnieuw inschakelen door de instelling ```log_collection_settings.enrich_container_logs``` in de configuratie-instellingen voor de [gegevens verzameling](containers/container-insights-agent-config.md)in te scha kelen.
 
 > [!NOTE]
 > De tweede optie wordt niet aanbevolen voor grote clusters met meer dan 50 knoop punten, omdat hiermee de API-server aanroepen van elk knoop punt in het cluster worden gegenereerd om deze verrijking uit te voeren. Met deze optie wordt ook de gegevens grootte voor elke verzamelde logboek regel verhoogd.
@@ -684,7 +684,7 @@ Azure Monitor voor containers ondersteunt bewakings werkbelastingen die zijn ge�
 
 ### <a name="why-dont-i-see-data-in-my-log-analytics-workspace"></a>Waarom zie ik geen gegevens in mijn Log Analytics-werk ruimte?
 
-Als u elke dag op een bepaalde tijd geen gegevens kunt zien in de Log Analytics-werkruimte, hebt u mogelijk de standaardlimiet van 500 MB bereikt, of de daglimiet die is opgegeven om de dagelijks verzamelde hoeveelheid gegevens in de hand te houden. Wanneer de limiet voor een dag wordt bereikt, stopt de gegevensverzameling en wordt pas de volgende dag weer hervat. Zie [logboek gegevens gebruiken en kosten](platform/manage-cost-storage.md)voor meer informatie over het controleren van uw gegevens gebruik en het bijwerken van een andere prijs categorie op basis van uw verwachte gebruiks patronen. 
+Als u elke dag op een bepaalde tijd geen gegevens kunt zien in de Log Analytics-werkruimte, hebt u mogelijk de standaardlimiet van 500 MB bereikt, of de daglimiet die is opgegeven om de dagelijks verzamelde hoeveelheid gegevens in de hand te houden. Wanneer de limiet voor een dag wordt bereikt, stopt de gegevensverzameling en wordt pas de volgende dag weer hervat. Zie [logboek gegevens gebruiken en kosten](logs/manage-cost-storage.md)voor meer informatie over het controleren van uw gegevens gebruik en het bijwerken van een andere prijs categorie op basis van uw verwachte gebruiks patronen. 
 
 ### <a name="what-are-the-container-states-specified-in-the-containerinventory-table"></a>Wat zijn de container statussen die zijn opgegeven in de tabel ContainerInventory?
 
@@ -704,7 +704,7 @@ De logboek verzameling van containers in de uitvoeren-naam ruimte is standaard u
 
 ### <a name="how-do-i-update-the-omsagent-to-the-latest-released-version"></a>Hoe kan ik de omsagent bij naar de meest recente versie?
 
-Zie [agent beheer](insights/container-insights-manage-agent.md)voor meer informatie over het bijwerken van de agent.
+Zie [agent beheer](containers/container-insights-manage-agent.md)voor meer informatie over het bijwerken van de agent.
 
 ### <a name="how-do-i-enable-multi-line-logging"></a>Hoe kan ik logboek registratie met meerdere regels inschakelen?
 
@@ -732,7 +732,7 @@ Raadpleeg de volgende [github-koppeling](https://github.com/moby/moby/issues/229
 
 ### <a name="how-do-i-resolve-azure-ad-errors-when-i-enable-live-logs"></a>Hoe kan ik Azure AD-fouten oplossen wanneer ik live-logboeken inschakel? 
 
-Mogelijk wordt de volgende fout weer **gegeven: de antwoord-URL die in de aanvraag is opgegeven, komt niet overeen met de antwoord-url's die zijn geconfigureerd voor de toepassing: ' <-toepassings-id \> '**. De oplossing voor het oplossen hiervan vindt u in het artikel [informatie over container gegevens in realtime weer geven met Azure monitor voor containers](insights/container-insights-livedata-setup.md#configure-ad-integrated-authentication). 
+Mogelijk wordt de volgende fout weer **gegeven: de antwoord-URL die in de aanvraag is opgegeven, komt niet overeen met de antwoord-url's die zijn geconfigureerd voor de toepassing: ' <-toepassings-id \> '**. De oplossing voor het oplossen hiervan vindt u in het artikel [informatie over container gegevens in realtime weer geven met Azure monitor voor containers](containers/container-insights-livedata-setup.md#configure-ad-integrated-authentication). 
 
 ### <a name="why-cant-i-upgrade-cluster-after-onboarding"></a>Waarom kan ik het cluster niet upgraden na het onboarden?
 
@@ -740,19 +740,19 @@ Als u Azure Monitor voor containers voor een AKS-cluster hebt ingeschakeld, verw
 
 ### <a name="which-ports-and-domains-do-i-need-to-openallow-for-the-agent"></a>Welke poorten en domeinen moet ik openen/toestaan voor de agent?
 
-Zie de [netwerk firewall vereisten](insights/container-insights-onboard.md#network-firewall-requirements) voor de proxy-en firewall configuratie-informatie die is vereist voor de container agent met Azure, Azure US Government en Azure China 21vianet-Clouds.
+Zie de [netwerk firewall vereisten](containers/container-insights-onboard.md#network-firewall-requirements) voor de proxy-en firewall configuratie-informatie die is vereist voor de container agent met Azure, Azure US Government en Azure China 21vianet-Clouds.
 
 
 ## <a name="azure-monitor-for-vms"></a>Azure Monitor voor virtuele machines
 
 ### <a name="can-i-onboard-to-an-existing-workspace"></a>Kan ik onboarding uitvoeren op een bestaande werk ruimte?
-Als uw virtuele machines al zijn verbonden met een Log Analytics-werk ruimte, kunt u deze werk ruimte blijven gebruiken bij onboarding naar Azure Monitor voor VM's, op voor waarde dat deze zich in een van de [ondersteunde regio's](insights/vminsights-configure-workspace.md#supported-regions)bevindt.
+Als uw virtuele machines al zijn verbonden met een Log Analytics-werk ruimte, kunt u deze werk ruimte blijven gebruiken bij onboarding naar Azure Monitor voor VM's, op voor waarde dat deze zich in een van de [ondersteunde regio's](vm/vminsights-configure-workspace.md#supported-regions)bevindt.
 
 
 ### <a name="can-i-onboard-to-a-new-workspace"></a>Kan ik onboarding uitvoeren op een nieuwe werk ruimte? 
 Als uw Vm's momenteel niet zijn verbonden met een bestaande Log Analytics-werk ruimte, moet u een nieuwe werk ruimte maken om uw gegevens op te slaan. Het maken van een nieuwe standaardwerk ruimte wordt automatisch uitgevoerd als u een enkele Azure-VM voor Azure Monitor voor VM's configureert via de Azure Portal.
 
-Als u ervoor kiest de op scripts gebaseerde methode te gebruiken, worden deze stappen behandeld in het artikel [Azure monitor voor VM's inschakelen met behulp van Azure PowerShell of Resource Manager-sjabloon](./insights/vminsights-enable-powershell.md) . 
+Als u ervoor kiest de op scripts gebaseerde methode te gebruiken, worden deze stappen behandeld in het artikel [Azure monitor voor VM's inschakelen met behulp van Azure PowerShell of Resource Manager-sjabloon](./vm/vminsights-enable-powershell.md) . 
 
 ### <a name="what-do-i-do-if-my-vm-is-already-reporting-to-an-existing-workspace"></a>Wat moet ik doen als mijn VM al rapporteert aan een bestaande werk ruimte?
 Als u al gegevens van uw virtuele machines verzamelt, is het mogelijk dat u deze al hebt geconfigureerd om gegevens te rapporteren aan een bestaande Log Analytics-werk ruimte.  Als die werk ruimte zich in een van de ondersteunde regio's bevindt, kunt u Azure Monitor voor VM's inschakelen voor die bestaande werk ruimte.  Als de werk ruimte die u al gebruikt, zich niet in een van de ondersteunde regio's bevindt, kunt u op dit moment niet op de Azure Monitor voor VM's.  We werken actief ter ondersteuning van extra regio's.
@@ -771,9 +771,9 @@ Als u onboarding hebt gestart en berichten ziet met de melding dat de virtuele m
 
 
 ### <a name="i-dont-see-some-or-any-data-in-the-performance-charts-for-my-vm"></a>Ik zie geen enkele of alle gegevens in de prestatie grafieken voor mijn VM
-Onze prestatie grafieken zijn bijgewerkt voor het gebruik van gegevens die zijn opgeslagen in de tabel *InsightsMetrics* .  Als u gegevens in deze grafieken wilt weer geven, moet u een upgrade uitvoeren om de nieuwe VM Insights-oplossing te gebruiken.  Raadpleeg onze Ga naar de [Veelgestelde vragen](insights/vminsights-ga-release-faq.md) voor meer informatie.
+Onze prestatie grafieken zijn bijgewerkt voor het gebruik van gegevens die zijn opgeslagen in de tabel *InsightsMetrics* .  Als u gegevens in deze grafieken wilt weer geven, moet u een upgrade uitvoeren om de nieuwe VM Insights-oplossing te gebruiken.  Raadpleeg onze Ga naar de [Veelgestelde vragen](vm/vminsights-ga-release-faq.md) voor meer informatie.
 
-Als u geen prestatie gegevens in de tabel schijf of in een aantal prestatie grafieken ziet, zijn de prestatie meter items mogelijk niet geconfigureerd in de werk ruimte. Voer het volgende [Power shell-script](./insights/vminsights-enable-powershell.md)uit om het probleem op te lossen.
+Als u geen prestatie gegevens in de tabel schijf of in een aantal prestatie grafieken ziet, zijn de prestatie meter items mogelijk niet geconfigureerd in de werk ruimte. Voer het volgende [Power shell-script](./vm/vminsights-enable-powershell.md)uit om het probleem op te lossen.
 
 
 ### <a name="how-is-azure-monitor-for-vms-map-feature-different-from-service-map"></a>Hoe verschilt Azure Monitor voor VM's kaart functie van Servicetoewijzing?

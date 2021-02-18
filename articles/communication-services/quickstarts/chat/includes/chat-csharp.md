@@ -10,12 +10,12 @@ ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 04e658e3107ac0c9622ca1601eb93b01b9986fef
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 1db7eeb61bc4ded2d7015baecaacd974d7767812
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100645513"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653513"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
@@ -60,7 +60,11 @@ De volgende klassen verwerken enkele van de belangrijkste functies van de Azure 
 
 ## <a name="create-a-chat-client"></a>Een chat-client maken
 
-Als u een chat-client wilt maken, gebruikt u uw communicatie Services-eind punt en het toegangs token dat is gegenereerd als onderdeel van de vereiste stappen. U moet de klasse `CommunicationIdentityClient` uit de clientbibliotheek `Administration` gebruiken om een gebruiker te maken en een token uit te geven om aan uw chat-client door te geven. Meer informatie over [toegangstokens voor gebruikers](../../access-tokens.md).
+Als u een chat-client wilt maken, gebruikt u uw communicatie Services-eind punt en het toegangs token dat is gegenereerd als onderdeel van de vereiste stappen. U moet de klasse `CommunicationIdentityClient` uit de clientbibliotheek `Administration` gebruiken om een gebruiker te maken en een token uit te geven om aan uw chat-client door te geven.
+
+Meer informatie over [toegangstokens voor gebruikers](../../access-tokens.md).
+
+Deze Snelstartgids heeft geen betrekking op het maken van een servicelaag voor het beheren van tokens voor uw chat toepassing, hoewel dit wordt aanbevolen. Meer informatie over de [architectuur van chatten](../../../concepts/chat/concepts.md)
 
 ```csharp
 using Azure.Communication.Identity;

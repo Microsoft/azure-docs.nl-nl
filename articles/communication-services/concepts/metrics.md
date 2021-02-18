@@ -9,16 +9,16 @@ ms.author: mikben
 ms.date: 05/19/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: e7ed4ba181d3730ebbea7725451567c93433afb8
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: edbf29b103a84240299f4a9f389a8c7a90012821
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251094"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572071"
 ---
 # <a name="metrics-overview"></a>Overzicht van metrische gegevens
 
-Azure Communication Services biedt momenteel metrische gegevens voor chat en sms. [Azure Metrics Explorer](../../azure-monitor/platform/metrics-getting-started.md) kan worden gebruikt om uw eigen grafieken uit te zetten, afwijkingen in uw metrische waarden te onderzoeken en uw API-verkeer te begrijpen met behulp van de metrische gegevens die chat- en sms-aanvragen verzenden.
+Azure Communication Services biedt momenteel metrische gegevens voor chat en sms. [Azure Metrics Explorer](../../azure-monitor/essentials/metrics-getting-started.md) kan worden gebruikt om uw eigen grafieken uit te zetten, afwijkingen in uw metrische waarden te onderzoeken en uw API-verkeer te begrijpen met behulp van de metrische gegevens die chat- en sms-aanvragen verzenden.
 
 ## <a name="where-to-find-metrics"></a>Waar u metrische gegevens kunt vinden
 
@@ -30,7 +30,7 @@ Er zijn twee typen aanvragen die worden weergegeven in de metrische gegevens van
 
 De metrische gegevens van zowel chat- als sms-API-aanvragen bevatten drie dimensies die u kunt gebruiken voor het filteren van uw metrische gegevens. Deze dimensies kunnen worden geaggregeerd met behulp van het aggregatietype `Count` en ondersteunen alle standaard Azure-aggregatie-tijdreeksen, inclusief `Sum`, `Average`, `Min`en `Max`.
 
-Meer informatie over ondersteunde aggregatietypen en aggregaties van tijdreeksen vindt u in [Geavanceerde functies van Azure Metrics Explorer](../../azure-monitor/platform/metrics-charts.md#aggregation)
+Meer informatie over ondersteunde aggregatietypen en aggregaties van tijdreeksen vindt u in [Geavanceerde functies van Azure Metrics Explorer](../../azure-monitor/essentials/metrics-charts.md#aggregation)
 
 - **Bewerking** - Alle bewerkingen of routes die kunnen worden aangeroepen op de ACS chat-gateway.
 - **Statuscode** - De reactie van de statuscode die na de aanvraag is verzonden.
@@ -90,4 +90,4 @@ De volgende bewerkingen zijn beschikbaar voor de metrische gegevens van de Verif
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over de [Metrische gegevens van Data Platform](../../azure-monitor/platform/data-platform-metrics.md)
+- Meer informatie over de [Metrische gegevens van Data Platform](../../azure-monitor/essentials/data-platform-metrics.md)

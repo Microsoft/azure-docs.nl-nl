@@ -3,12 +3,12 @@ title: Verbeter de betrouw baarheid van uw toepassing met Advisor
 description: Gebruik Azure Advisor om de betrouw baarheid in uw bedrijfs kritieke Azure-implementaties te garanderen en te verbeteren.
 ms.topic: article
 ms.date: 09/27/2020
-ms.openlocfilehash: 0ced690ae735a281fdf8b1c3a020ff8c63ce469b
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: c96b47f1ee145129f4c14c6646f93abeb8a5aac9
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078031"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579970"
 ---
 # <a name="improve-the-reliability-of-your-application-by-using-azure-advisor"></a>Verbeter de betrouw baarheid van uw toepassing met behulp van Azure Advisor
 
@@ -68,7 +68,7 @@ Om redundantie voor uw toepassing te bieden, raden we u aan om twee of meer virt
 
 ## <a name="ensure-availability-set-fault-tolerance-temporarily-disabled"></a>Fout tolerantie voor beschikbaarheidsset garanderen (tijdelijk uitgeschakeld)
 
-Om redundantie voor uw toepassing te bieden, raden we u aan om twee of meer virtuele machines in een beschikbaarheidsset te groeperen. Advisor identificeert beschikbaarheids sets die één virtuele machine bevatten en raadt u aan om een of meer virtuele machines toe te voegen.Deze configuratie zorgt ervoor dat tijdens gepland of niet-gepland onderhoud ten minste één virtuele machine beschikbaar is en voldoet aan de SLA van de virtuele Azure-machine.U kunt ervoor kiezen om een virtuele machine te maken of een bestaande virtuele machine toe te voegen aan de beschikbaarheidsset.  
+Om redundantie voor uw toepassing te bieden, raden we u aan om twee of meer virtuele machines in een beschikbaarheidsset te groeperen. Advisor identificeert beschikbaarheids sets die één virtuele machine bevatten en raadt u aan om een of meer virtuele machines toe te voegen. Deze configuratie zorgt ervoor dat tijdens gepland of niet-gepland onderhoud ten minste één virtuele machine beschikbaar is en voldoet aan de SLA van de virtuele Azure-machine. U kunt ervoor kiezen om een virtuele machine te maken of een bestaande virtuele machine toe te voegen aan de beschikbaarheidsset.  
 
 ## <a name="use-managed-disks-to-improve-data-reliability-temporarily-disabled"></a>Beheerde schijven gebruiken om de betrouw baarheid van gegevens te verbeteren (tijdelijk uitgeschakeld)
 
@@ -76,7 +76,7 @@ Virtuele machines die deel uitmaken van een beschikbaarheidsset met schijven die
 
 ## <a name="repair-invalid-log-alert-rules"></a>Ongeldige regels voor logboek waarschuwingen herstellen
 
-Azure Advisor detecteert waarschuwings regels voor logboeken waarvoor ongeldige query's zijn opgegeven in de voor waarde-sectie. Met Azure Monitor waarschuwings regels vastleggen voert u query's uit op de opgegeven frequentie en Fire Alerts op basis van de resultaten. Query's kunnen na verloop van tijd ongeldig worden vanwege wijzigingen in de resources, tabellen of opdrachten waarnaar wordt verwezen. Advisor raadt correcties aan voor waarschuwings query's om te voor komen dat de regels automatisch worden uitgeschakeld en om te zorgen voor bewakings dekking. Zie [Troubleshooting alert Rules](../azure-monitor/platform/alerts-troubleshoot-log.md#query-used-in-a-log-alert-isnt-valid) (Engelstalig) voor meer informatie.
+Azure Advisor detecteert waarschuwings regels voor logboeken waarvoor ongeldige query's zijn opgegeven in de voor waarde-sectie. Met Azure Monitor waarschuwings regels vastleggen voert u query's uit op de opgegeven frequentie en Fire Alerts op basis van de resultaten. Query's kunnen na verloop van tijd ongeldig worden vanwege wijzigingen in de resources, tabellen of opdrachten waarnaar wordt verwezen. Advisor raadt correcties aan voor waarschuwings query's om te voor komen dat de regels automatisch worden uitgeschakeld en om te zorgen voor bewakings dekking. Zie [Troubleshooting alert Rules](../azure-monitor/alerts/alerts-troubleshoot-log.md#query-used-in-a-log-alert-isnt-valid) (Engelstalig) voor meer informatie.
 
 ## <a name="configure-consistent-indexing-mode-on-your-azure-cosmos-db-collection"></a>Consistente indexerings modus configureren voor uw Azure Cosmos DB verzameling
 

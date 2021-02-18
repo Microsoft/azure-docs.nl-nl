@@ -3,18 +3,18 @@ title: Overdrachts wijzigingen in uw beheer Tenant bewaken
 description: Meer informatie over het bewaken van overdrachts activiteiten van klant tenants naar uw beheer Tenant.
 ms.date: 01/27/2021
 ms.topic: how-to
-ms.openlocfilehash: 9fdf47df4ac37fec44cf53b565b7fe1411540793
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 3bf6cc044d807d0c830b15c6d9c9a6d507f1a54f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99089411"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593133"
 ---
 # <a name="monitor-delegation-changes-in-your-managing-tenant"></a>Overdrachts wijzigingen in uw beheer Tenant bewaken
 
 Als service provider wilt u mogelijk weten wanneer klanten abonnementen of resource groepen worden gedelegeerd aan uw Tenant via [Azure Lighthouse](../overview.md)of wanneer eerder gedelegeerde resources worden verwijderd.
 
-In het [Azure-activiteiten logboek](../../azure-monitor/platform/platform-logs-overview.md) wordt in de Tenant beheren de activiteit overdracht op Tenant niveau bijgehouden. Deze geregistreerde activiteit bevat eventuele toegevoegde of verwijderde delegaties van alle tenants van klanten.
+In het [Azure-activiteiten logboek](../../azure-monitor/essentials/platform-logs-overview.md) wordt in de Tenant beheren de activiteit overdracht op Tenant niveau bijgehouden. Deze geregistreerde activiteit bevat eventuele toegevoegde of verwijderde delegaties van alle tenants van klanten.
 
 In dit onderwerp worden de machtigingen beschreven die nodig zijn voor het bewaken van overdrachts activiteiten aan uw Tenant (in al uw klanten). Het bevat ook een voorbeeld script met één methode voor het uitvoeren van query's en rapportage over deze gegevens.
 
@@ -104,7 +104,7 @@ Houd bij het uitvoeren van query's op deze gegevens de volgende informatie:
 - Als er meerdere resource groepen in één implementatie worden gedelegeerd, worden afzonderlijke vermeldingen geretourneerd voor elke resource groep.
 - Wijzigingen die zijn aangebracht in een eerdere delegering (zoals het bijwerken van de machtigings structuur) worden geregistreerd als een extra delegering.
 - Zoals hierboven vermeld, moet een account beschikken over de ingebouwde rol van de bewakings lezer Azure in het hoofd bereik (/) om toegang te kunnen krijgen tot deze gegevens op Tenant niveau.
-- U kunt deze gegevens gebruiken in uw eigen werk stromen en rapportage. U kunt bijvoorbeeld de [http data collector API (open bare preview)](../../azure-monitor/platform/data-collector-api.md) gebruiken om gegevens te registreren voor Azure monitor van een rest API-client en vervolgens [actie groepen](../../azure-monitor/platform/action-groups.md) gebruiken om meldingen of waarschuwingen te maken.
+- U kunt deze gegevens gebruiken in uw eigen werk stromen en rapportage. U kunt bijvoorbeeld de [http data collector API (open bare preview)](../../azure-monitor/logs/data-collector-api.md) gebruiken om gegevens te registreren voor Azure monitor van een rest API-client en vervolgens [actie groepen](../../azure-monitor/alerts/action-groups.md) gebruiken om meldingen of waarschuwingen te maken.
 
 ```azurepowershell-interactive
 # Log in first with Connect-AzAccount if you're not using Cloud Shell
@@ -181,5 +181,5 @@ else {
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over het voorbereiden van klanten op [Azure Lighthouse](../concepts/azure-delegated-resource-management.md).
-- Meer informatie over [Azure monitor](../../azure-monitor/index.yml) en het [Azure-activiteiten logboek](../../azure-monitor/platform/platform-logs-overview.md).
+- Meer informatie over [Azure monitor](../../azure-monitor/index.yml) en het [Azure-activiteiten logboek](../../azure-monitor/essentials/platform-logs-overview.md).
 - Raadpleeg de voorbeeld werkmap [activiteiten logboeken per domein](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/workbook-activitylogs-by-domain) voor meer informatie over het weer geven van Azure-activiteiten logboeken tussen abonnementen met een optie om deze te filteren op domein naam.

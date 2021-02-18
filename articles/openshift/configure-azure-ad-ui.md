@@ -1,19 +1,19 @@
 ---
 title: 'Azure Red Hat open SHIFT met openshift 4: Configureer Azure Active Directory-verificatie met behulp van de Azure Portal en de open Shift-webconsole'
 description: Meer informatie over het configureren van Azure Active Directory-verificatie voor een open ploeg cluster van Azure Red Hat met openshift 4 met behulp van de Azure Portal en de webconsole open Shift
-ms.service: container-service
+ms.service: azure-redhat-openshift
 ms.topic: article
 ms.date: 03/12/2020
 author: sabbour
 ms.author: asabbour
 keywords: Aro, open Shift, AZ Aro, Red Hat, cli
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 1b9e4d1f1b989caa317384292d013af255530f11
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 7f01404f63a32e3a23413b8eaca64f679f7036d8
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748070"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100635159"
 ---
 # <a name="configure-azure-active-directory-authentication-for-an-azure-red-hat-openshift-4-cluster-portal"></a>Azure Active Directory authenticatie configureren voor een Azure Red Hat open Shift 4-cluster (Portal)
 
@@ -36,7 +36,7 @@ echo "OAuth callback URL: https://oauth-openshift.apps.$domain.$location.aroapp.
 
 Meld u aan bij de Azure Portal en navigeer naar [app-registraties Blade](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)en klik vervolgens op **nieuwe registratie** om een nieuwe toepassing te maken.
 
-Geef een naam op voor de toepassing, bijvoorbeeld **Aro-azuread-auth** , en vul de **omleidings-URI** in met de waarde van de OAUTH call back-URL die u eerder hebt opgehaald.
+Geef een naam op voor de toepassing, bijvoorbeeld **Aro-azuread-auth**, en vul de **omleidings-URI** in met de waarde van de OAUTH call back-URL die u eerder hebt opgehaald.
 
 ![Nieuwe toepassing registreren](media/aro4-ad-registerapp.png)
 
@@ -44,7 +44,7 @@ Navigeer naar **certificaten & geheimen** en klik op **Nieuw client geheim** en 
 
 ![Een geheim maken](media/aro4-ad-clientsecret.png)
 
-Navigeer naar het **overzicht** en noteer de id van de **toepassing (client) ID** en de **Directory (Tenant)** . U hebt deze in een later stadium nodig.
+Navigeer naar het **overzicht** en noteer de id van de **toepassing (client) ID** en de **Directory (Tenant)**. U hebt deze in een later stadium nodig.
 
 ![Toepassings-Id's (client) en Directory (Tenant) ophalen](media/aro4-ad-ids.png)
 
@@ -60,7 +60,7 @@ U kunt optionele claims gebruiken voor het volgende:
 
 We configureren open Shift om de claim te gebruiken `email` en terug te vallen op `upn` om de voorkeurs gebruikersnaam in te stellen door het toevoegen `upn` van het id-token dat wordt geretourneerd door Azure Active Directory.
 
-Navigeer naar **token configuratie (preview)** en klik op **optionele claim toevoegen** . Selecteer **id** en controleer vervolgens de **e-mail-** en **UPN** -claims.
+Navigeer naar **token configuratie (preview)** en klik op **optionele claim toevoegen**. Selecteer **id** en controleer vervolgens de **e-mail-** en **UPN** -claims.
 
 ![Scherm opname van het e-mail adres en UPN-claims die zijn toegevoegd.](media/aro4-ad-tokens.png)
 
@@ -100,12 +100,12 @@ U kunt de URL van de clusterconsole vinden door de volgende opdracht uit te voer
 
 Start de console-URL in een browser en meld u aan met de referenties van `kubeadmin`.
 
-Ga naar **beheer** , klik op **cluster instellingen** en selecteer vervolgens het tabblad **globale configuratie** . Schuif naar Select **OAuth** .
+Ga naar **beheer**, klik op **cluster instellingen** en selecteer vervolgens het tabblad **globale configuratie** . Schuif naar Select **OAuth**.
 
-Schuif omlaag om **toevoegen** onder **id-providers** te selecteren en selecteer **OpenID Connect Connect** .
+Schuif omlaag om **toevoegen** onder **id-providers** te selecteren en selecteer **OpenID Connect Connect**.
 ![Selecteer OpenID Connect Connect in de vervolg keuzelijst ID-providers](media/aro4-oauth-idpdrop.png)
 
-Vul de naam in als **Aad** , de **client-id** als de **toepassings-id** en het **client geheim** . De **URL** van de uitgever heeft de volgende indeling: `https://login.microsoftonline.com/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` . Vervang de tijdelijke aanduiding door de Tenant-ID die u eerder hebt opgehaald.
+Vul de naam in als **Aad**, de **client-id** als de **toepassings-id** en het **client geheim**. De **URL** van de uitgever heeft de volgende indeling: `https://login.microsoftonline.com/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` . Vervang de tijdelijke aanduiding door de Tenant-ID die u eerder hebt opgehaald.
 
 ![OAuth-details invullen](media/aro4-oauth-idp-1.png)
 
@@ -115,6 +115,6 @@ Schuif omlaag naar de sectie **claims** en werk de **Voorkeurs gebruikersnaam** 
 
 ## <a name="verify-login-through-azure-active-directory"></a>Aanmelden via Azure Active Directory verifiëren
 
-Als u nu de open Shift-webconsole afmeldt en zich opnieuw probeert aan te melden, wordt een nieuwe optie weer gegeven om u aan te melden bij **Aad** . Mogelijk moet u enkele minuten wachten.
+Als u nu de open Shift-webconsole afmeldt en zich opnieuw probeert aan te melden, wordt een nieuwe optie weer gegeven om u aan te melden bij **Aad**. Mogelijk moet u enkele minuten wachten.
 
 ![Aanmeldings scherm met Azure Active Directory optie](media/aro4-login-2.png)

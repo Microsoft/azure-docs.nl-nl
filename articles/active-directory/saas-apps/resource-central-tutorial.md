@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 11/06/2020
+ms.date: 01/13/2021
 ms.author: jeedes
-ms.openlocfilehash: 2430de60b3de5812090496fa66e36b3d7515c6b1
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
-ms.translationtype: HT
+ms.openlocfilehash: dbc148fcbcd9c3be86a29df1e08755611a347b07
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96327369"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586562"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-resource-central"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Resource Central
 
@@ -41,17 +41,16 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * Resource Central biedt ondersteuning voor het **Just In Time** inrichten van gebruikers
 
-## <a name="adding-resource-central-from-the-gallery"></a>Resource Central toevoegen vanuit de galerie
+## <a name="add-resource-central-from-the-gallery"></a>Resource Central toevoegen vanuit de galerie
 
 Voor het configureren van de integratie van Resource Central met Azure AD moet u Resource Central uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
-1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ **Resource Central** in het zoekvak in de sectie **Toevoegen uit de galerie**.
+1. Als u een nieuwe toepassing wilt toevoegen, selecteert u **Nieuwe toepassing**.
+1. In de sectie **toevoegen vanuit de galerie** typt u in het zoekvak **Resource Central**.
 1. Selecteer **Resource Central** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
-
 
 ## <a name="configure-and-test-azure-ad-sso-for-resource-central"></a>Eenmalige aanmelding van Azure AD voor Resource Central configureren en testen
 
@@ -62,8 +61,8 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure Active Directory 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
     1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
-1. **[Eenmalige aanmelding voor Resource Central configureren](#configure-resource-central-sso)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
     1. **[Een Resource Central-testgebruiker maken](#create-resource-central-test-user)** : als u een equivalent van B.Simon in Resource Central wilt hebben dat is gekoppeld aan de Azure AD-weergave van de gebruiker.
+1. **[Eenmalige aanmelding voor Resource Central configureren](#configure-resource-central-sso)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
 1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
 ## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
@@ -76,33 +75,34 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
-1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
+1. Voer in de **eenvoudige SAML-configuratie** de waarden in voor de volgende velden:
 
-    a. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<DOMAIN_NAME>/ResourceCentral`
+   1. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<DOMAIN_NAME>/ResourceCentral`
 
-    b. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `https://<DOMAIN_NAME>/ResourceCentral`
+   1. Typ in het tekstvak **id (Entiteits-ID)** een URL met het volgende patroon:  `https://<DOMAIN_NAME>/ResourceCentral`
 
-    c. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://<DOMAIN_NAME>/ResourceCentral/ExAuth/Saml2Authentication/Acs`
+   1. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://<DOMAIN_NAME>/ResourceCentral/ExAuth/Saml2Authentication/Acs`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL, id en antwoord-URL. Neem contact op met het [ondersteuningsteam van Resource Central](mailto:st@aod.vn) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Deze waarden zijn geen letterlijke waarden. Deze waarden bijwerken met de werkelijke aanmeldings-URL, id en antwoord-URL-waarden. Neem contact op met het [ondersteuningsteam van Resource Central](mailto:st@aod.vn) om deze waarden te verkrijgen.  U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
-1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** gaat u naar **Certificaat (Base64)** en selecteert u **Downloaden** om het certificaat te downloaden en op te slaan op uw computer.
+1. Zoek op de pagina **eenmalige aanmelding met SAML instellen** in het **SAML-handtekening certificaat** naar **certificaat (base64)** en selecteer **downloaden** om het certificaat te downloaden en op uw computer op te slaan.
 
     ![De link om het certificaat te downloaden](common/certificatebase64.png)
 
-1. In de sectie **Resource Central instellen** kopieert u de juiste URL('s) op basis van uw behoeften.
+1. In **Resource Central instellen** kopieert u de gewenste URL ('s) op basis van uw vereiste.
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
+
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
-In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
+In dit gedeelte gaat u een testgebruiker met de naam B.Simon maken in de Azure-portal.
 
 1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
 1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
-   1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
+   1. Voer `username@companydomain.extension` in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
    1. Klik op **Create**.
 
@@ -113,30 +113,72 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Resource Central** in de lijst met toepassingen.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
-
-## <a name="configure-resource-central-sso"></a>Eenmalige aanmelding van Resource Central configureren
-
-Als u eenmalige aanmelding wilt configureren in **Resource Central**, moet u het gedownloade **certificaat (Base64)** en de juiste, uit Azure Portal gekopieerde URL's verzenden naar het [ondersteuningsteam van Resource Central](mailto:rc@aod.vn). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+1. Selecteer **gebruiker toevoegen** en selecteer vervolgens **gebruikers en groepen** in het deel venster **toewijzing toevoegen** .
+1. Selecteer in het deel venster **gebruikers en groepen** **B. Simon** van de lijst **gebruikers** en klik vervolgens op de knop **selecteren** onder aan het scherm.
+1. Als u een rol verwacht die aan de gebruikers moet worden toegewezen, kunt u deze selecteren in **een rol selecteren**. Als er voor deze app geen rol is ingesteld, ziet u **standaard Access** -rol geselecteerd.
+1. Klik in het deel venster **toewijzing toevoegen** op de knop **toewijzen** .
 
 ### <a name="create-resource-central-test-user"></a>Resource Central-testgebruiker maken
 
-In deze sectie wordt een gebruiker met de naam Britta Simon gemaakt in Resource Central. Resource Central biedt ondersteuning voor Just-In-Time-inrichting van gebruikers. Deze functie is standaard ingeschakeld. Er is geen actie-item voor u in deze sectie. Als er nog geen gebruiker in Resource Central bestaat, wordt er een nieuwe gemaakt nadat deze is geverifieerd.
+In deze sectie wordt een gebruiker met de naam **B. Simon** gemaakt in **Resource Central**.
+
+1. In Resource Central selecteert u **beveiligings**  >  **personen**  >  **Nieuw**.
+  
+    :::image type="content" source="./media/resource-central/new-person.png" alt-text="Scherm opname van het deel venster personen in Resource Central, met de knop Nieuw gemarkeerd.":::
+
+1. Voer bij **persoons gegevens**, voor **weergave naam**, de gebruiker **B. Simon** in. Voer de Azure AD-gebruikers naam van de gebruiker in voor het **SMTP-adres**. Bijvoorbeeld `B.Simon@contoso.com`.
+
+    :::image type="content" source="./media/resource-central/person.png" alt-text="Scherm opname van het deel venster met de persoons gegevens in Resource Central.":::
+
+## <a name="configure-resource-central-sso"></a>Eenmalige aanmelding van Resource Central configureren
+
+In deze sectie configureert u eenmalige aanmelding in **Resource Central systeem beheerder**.
+
+1. Selecteer in Resource Central System Administrator **externe verificatie**.
+1.  Selecteer **Ja** om de **configuratie in te scha kelen**.
+
+    ![Scherm afbeelding met de optie configuratie inschakelen die is geselecteerd in het deel venster Externe verificatie in Resource Central.](./media/resource-central/enable.png)
+
+1. Selecteer **SAML2** in het **verificatie protocol**. 
+
+   :::image type="content" source="./media/resource-central/protocol.png" alt-text="Scherm opname van de SAML2 die is geselecteerd voor het verificatie protocol in Resource Central.":::
+
+1. Voer onder **SAML2-configuratie** de waarden in voor de volgende velden:
+
+    1. Voor **id (Entiteits-ID)**, **aanmeldings-URL**, **afmeldings-URL** en **Azure ad-id** voert u de relevante url's in:
+
+       :::image type="content" source="./media/resource-central/auth.png" alt-text="Scherm afbeelding van het configuratie venster SAML2 in Resource Central.":::
+
+        Kopieer de Url's uit het deel venster **Resource Central instellen** :
+
+        :::image type="content" source="./media/resource-central/setup.png" alt-text="Scherm opname van het deel venster Resource Central instellen in Resource Central.":::
+
+   1. Voer voor **retour-URL** in `https://<DOMAIN_NAME>/ResourceCentral/ExAuth/Saml2Authentication/CallbackHandler` .
+  
+1. Voor het **certificaat** uploadt u uw certificaat en voert u uw wacht woord in.
+
+   ![Scherm afbeelding van de sectie certificaat in Resource Central.](./media/resource-central/cert.png)
+   
+1. Selecteer **Opslaan**.
+
+1. Ga terug naar **Azure Portal**. Upload uw certificaat in het **SAML-handtekening certificaat** en voer uw wacht woord in.
+
+   ![Scherm opname van het deel venster certificaat importeren in de Azure Portal.](./media/resource-central/cert2.png).
+
+1. Selecteer **Toevoegen**.
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD. Als u eenmalige aanmelding wilt testen, hebt u drie opties:
 
-* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van Resource Central, waar u de aanmeldingsstroom kunt initiëren. 
+* Selecteer **Deze toepassing testen** in het Azure Portal. De koppeling wordt omgeleid naar de aanmeldings-URL van de Resource Central, waar u zich kunt aanmelden.
 
-* Ga rechtstreeks naar de aanmeldings-URL van Resource Central en initieer de aanmeldingsstroom daar.
+* Ga rechtstreeks naar de Resource Central-aanmeld-URL en start de aanmelding.
 
-* U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u in Toegangsvenster op de Resource Central-tegel klikt, wordt u omgeleid naar de aanmeldings-URL voor Resource Central. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+   :::image type="content" source="./media/resource-central/test.png" alt-text="Scherm afbeelding van de test webpagina voor eenmalige aanmelding in de Resource Central.":::
 
+* Gebruik de portal mijn apps van micro soft. Selecteer in de portal mijn apps de tegel **Resource Central** om om te leiden naar de URL voor het aanmelden bij Resource Central. Zie [Aanmelden bij en het starten van apps vanuit de Mijn apps-portal](../user-help/my-apps-portal-end-user-access.md) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u Resource Central hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
+Nadat u Resource Central hebt ingesteld voor eenmalige aanmelding met Azure AD, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

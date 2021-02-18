@@ -6,12 +6,12 @@ author: harelbr
 ms.author: harelbr
 ms.date: 03/13/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 63d1a0bf437df6bc0b68474e092ca23985493b24
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 0bf3a95814aadf687efcc27294b760e14f7d45d8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/17/2021
-ms.locfileid: "100559595"
+ms.locfileid: "100585640"
 ---
 # <a name="smart-detection-e-mail-notification-change"></a>Wijziging e-mail melding voor slimme detectie
 
@@ -27,7 +27,7 @@ Deze wijziging is van invloed op alle slimme detectie regels, met uitzonde ring 
 
 * Slimme detectie regels zijn gemarkeerd als preview. Deze slimme detectie regels ondersteunen vandaag nog geen e-mail meldingen.
 
-* Regel voor afwijkingen van de fout. Deze regel begint met het richten op de nieuwe standaard rollen, zodra deze zijn gemigreerd van een klassieke waarschuwing naar het Unified Alerts-platform (meer informatie is [hier](../platform/monitoring-classic-retirement.md)beschikbaar.)
+* Regel voor afwijkingen van de fout. Deze regel begint met het richten op de nieuwe standaard rollen, zodra deze zijn gemigreerd van een klassieke waarschuwing naar het Unified Alerts-platform (meer informatie is [hier](../alerts/monitoring-classic-retirement.md)beschikbaar.)
 
 ## <a name="how-to-prepare-for-this-change"></a>Hoe bereidt u zich voor op deze wijziging?
 

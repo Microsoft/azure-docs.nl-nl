@@ -3,17 +3,17 @@ title: Azure-toepassing Insights-gegevens model | Microsoft Docs
 description: Beschrijft de eigenschappen die zijn geëxporteerd uit continue export in JSON en gebruikt als filters.
 ms.topic: conceptual
 ms.date: 01/08/2019
-ms.openlocfilehash: 29ad999c307d1c11e7a584b61d85ed73b9448cb4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b4609d54c1c3c33a654dd58a3bceaca4974fda15
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87324383"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584220"
 ---
 # <a name="application-insights-export-data-model"></a>Gegevens model Application Insights exporteren
 Deze tabel bevat de eigenschappen van de telemetrie die van de [Application Insights](./app-insights-overview.md) sdk's naar de portal worden verzonden.
 Deze eigenschappen worden weer gegeven in gegevens uitvoer van [doorlopend exporteren](export-telemetry.md).
-Ze worden ook weer gegeven in eigenschaps filters in [metrische Explorer](../platform/metrics-charts.md) en [Diagnostische Zoek opdrachten](./diagnostic-search.md).
+Ze worden ook weer gegeven in eigenschaps filters in [metrische Explorer](../essentials/metrics-charts.md) en [Diagnostische Zoek opdrachten](./diagnostic-search.md).
 
 Punten om te noteren:
 
@@ -107,7 +107,7 @@ Punten om te noteren:
 ## <a name="context"></a>Context
 Alle soorten telemetrie zijn vergezeld van een context sectie. Niet al deze velden worden met elk gegevens punt verzonden.
 
-| Pad | Type | Notities |
+| Pad | Type | Opmerkingen |
 | --- | --- | --- |
 | context. custom. Dimensions [0] |object [] |Sleutel-waarde teken reeks paren die zijn ingesteld met de para meter aangepaste eigenschappen. Maximum lengte van de sleutel 100, waarden met een maximale lengte van 1024. Meer dan 100 unieke waarden, de eigenschap kan worden doorzocht, maar kan niet worden gebruikt voor segmentatie. Maxi maal 200 sleutels per iKey. |
 | context. custom. Metrics [0] |object [] |Sleutel-waardeparen ingesteld op basis van de para meter voor aangepaste metingen en door TrackMetrics. Maximum lengte van de sleutel 100, waarden kunnen numeriek zijn. |
@@ -154,7 +154,7 @@ Alle soorten telemetrie zijn vergezeld van een context sectie. Niet al deze veld
 ## <a name="events"></a>Gebeurtenissen
 Aangepaste gebeurtenissen gegenereerd door [track Event ()](./api-custom-events-metrics.md#trackevent).
 
-| Pad | Type | Notities |
+| Pad | Type | Opmerkingen |
 | --- | --- | --- |
 | aantal gebeurtenissen [0] |geheel getal |100/([sampling](./sampling.md) frequentie). Bijvoorbeeld 4 = &gt; 25%. |
 | gebeurtenis [0] naam |tekenreeks |Gebeurtenis naam.  Maximale lengte van 250. |
@@ -165,7 +165,7 @@ Aangepaste gebeurtenissen gegenereerd door [track Event ()](./api-custom-events-
 ## <a name="exceptions"></a>Uitzonderingen
 Rapporteert [uitzonde ringen](./asp-net-exceptions.md) op de server en in de browser.
 
-| Pad | Type | Notities |
+| Pad | Type | Opmerkingen |
 | --- | --- | --- |
 | basicException [0]-Assembly |tekenreeks | |
 | aantal basicException [0] |geheel getal |100/([sampling](./sampling.md) frequentie). Bijvoorbeeld 4 = &gt; 25%. |
@@ -194,7 +194,7 @@ Rapporteert [uitzonde ringen](./asp-net-exceptions.md) op de server en in de bro
 ## <a name="trace-messages"></a>Berichten traceren
 Verzonden door [TrackTrace](./api-custom-events-metrics.md#tracktrace)en door de [logboek registratie-adapters](./asp-net-trace-logs.md).
 
-| Pad | Type | Notities |
+| Pad | Type | Opmerkingen |
 | --- | --- | --- |
 | bericht [0] logger logboek |tekenreeks | |
 | bericht [0] para meters |tekenreeks | |
@@ -204,7 +204,7 @@ Verzonden door [TrackTrace](./api-custom-events-metrics.md#tracktrace)en door de
 ## <a name="remote-dependency"></a>Externe afhankelijkheid
 Verzonden door TrackDependency. Wordt gebruikt voor het rapporteren van de prestaties en het gebruik van [aanroepen naar afhankelijkheden](./asp-net-dependencies.md) in de server en Ajax-aanroepen in de browser.
 
-| Pad | Type | Notities |
+| Pad | Type | Opmerkingen |
 | --- | --- | --- |
 | remoteDependency [0] async |booleaans | |
 | remoteDependency [0] basenaam |tekenreeks | |
@@ -225,7 +225,7 @@ Verzonden door TrackDependency. Wordt gebruikt voor het rapporteren van de prest
 ## <a name="requests"></a>Aanvragen
 Verzonden door [TrackRequest](./api-custom-events-metrics.md#trackrequest). De standaard modules gebruiken dit om de reactie tijd van de server te rapporteren, gemeten op de server.
 
-| Pad | Type | Notities |
+| Pad | Type | Opmerkingen |
 | --- | --- | --- |
 | aantal aanvragen [0] |geheel getal |100/([sampling](./sampling.md) frequentie). Bijvoorbeeld: 4 = &gt; 25%. |
 | aanvraag [0] durationMetric. waarde |getal |Tijd van aanvraag die inkomt bij antwoord. 1e7 = = 1S |
@@ -243,7 +243,7 @@ Verzonden door de browser. Hiermee wordt de tijd gemeten voor het verwerken van 
 
 Met context waarden wordt het client besturingssysteem en de browser versie weer gegeven.
 
-| Pad | Type | Notities |
+| Pad | Type | Opmerkingen |
 | --- | --- | --- |
 | clientPerformance [0] clientProcess. waarde |geheel getal |De tijd vanaf het moment dat de HTML wordt ontvangen om de pagina weer te geven. |
 | clientPerformance [0] naam |tekenreeks | |
@@ -260,7 +260,7 @@ Met context waarden wordt het client besturingssysteem en de browser versie weer
 ## <a name="page-views"></a>Paginaweergaven
 Verzonden door trackPageView () of [stopTrackPage](./api-custom-events-metrics.md#page-views)
 
-| Pad | Type | Notities |
+| Pad | Type | Opmerkingen |
 | --- | --- | --- |
 | aantal weer geven [0] |geheel getal |100/([sampling](./sampling.md) frequentie). Bijvoorbeeld 4 = &gt; 25%. |
 | weer gave [0] durationMetric. waarde |geheel getal |De waarde is optioneel ingesteld in trackPageView () of door startTrackPage ()-stopTrackPage (). Niet hetzelfde als clientPerformance-waarden. |
@@ -273,7 +273,7 @@ Verzonden door trackPageView () of [stopTrackPage](./api-custom-events-metrics.m
 ## <a name="availability"></a>Beschikbaarheid
 Rapporten over [Beschik baarheid van webtests](./monitor-web-app-availability.md).
 
-| Pad | Type | Notities |
+| Pad | Type | Opmerkingen |
 | --- | --- | --- |
 | Beschik baarheid [0] availabilityMetric.name |tekenreeks |availability |
 | Beschik baarheid [0] availabilityMetric. waarde |getal |1,0 of 0,0 |

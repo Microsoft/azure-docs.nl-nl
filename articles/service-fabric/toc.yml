@@ -406,6 +406,54 @@
           href: service-fabric-get-started-mac.md
         - name: De Service Fabric-CLI instellen
           href: service-fabric-cli.md
+        - name: In een IDE werken
+          items:
+            - name: Werken in een Windows-/VS-ontwikkelomgeving
+              items:
+                - name: Toepassingen beheren in Visual Studio
+                  href: service-fabric-manage-application-in-visual-studio.md
+                - name: Beveiligde verbindingen configureren in Visual Studio
+                  href: service-fabric-visualstudio-configure-secure-connections.md
+                - name: Fouten opsporen in een .NET-service in Visual Studio
+                  href: service-fabric-debugging-your-application.md
+                - name: Fouten opsporen in Windows-containers met Service Fabric en VS
+                  href: service-fabric-how-to-debug-windows-containers.md
+                - name: Veelvoorkomende fouten en uitzonderingen
+                  href: service-fabric-errors-and-exceptions.md
+                - name: Lokaal bewaken en diagnoses uitvoeren
+                  href: service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md
+                - name: Een Linux-cluster instellen in Windows
+                  href: service-fabric-local-linux-cluster-windows.md
+                - name: Vanuit VS een .NET Core-app implementeren in een extern Linux-cluster
+                  href: service-fabric-how-to-publish-linux-app-vs.md
+            - name: Werken in een Linux-/Eclipse-ontwikkelomgeving
+              items:
+                - name: Aan de slag met Eclipse-invoegtoepassing voor Java-ontwikkeling
+                  href: service-fabric-get-started-eclipse.md
+                - name: Fouten opsporen in een Java-service in Eclipse
+                  href: service-fabric-debugging-your-application-java.md
+                - name: Lokaal bewaken en diagnoses uitvoeren
+                  href: service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally-linux.md
+            - name: In een VS Code-omgeving werken
+              items:
+                - name: Aan de slag met VS-code
+                  href: service-fabric-get-started-vs-code.md
+                - name: C# Service Fabric-toepassingen ontwikkelen met VS Code
+                  href: service-fabric-develop-csharp-applications-with-vs-code.md
+                - name: Java Service Fabric-toepassingen ontwikkelen met VS Code
+                  href: service-fabric-develop-java-applications-with-vs-code.md
+    - name: Service Fabric beheerde clusters gebruiken
+      items:
+        - name: Een virtuelemachineschaalsetextensie toevoegen aan een beheerd clusterknooppunttype
+          href: how-to-managed-cluster-vmss-extension.md
+        - name: Uw beheerde cluster configureren
+          href: how-to-managed-cluster-configuration.md
+        - name: Beheerde cluster toepassingen implementeren met ARM-sjabloon
+          href: how-to-managed-cluster-app-deployment-template.md
+        - name: Een beheerd cluster met beheerde identiteit configureren
+          href: how-to-managed-identity-managed-cluster-virtual-machine-scale-sets.md
+        - name: Schijf versleuteling inschakelen voor beheerde cluster knooppunten
+          href: how-to-enable-managed-cluster-disk-encryption.md
     - name: Plannen en voorbereiden
       items:
         - name: Clustercapaciteit plannen
@@ -416,6 +464,142 @@
           href: service-fabric-disaster-recovery.md
         - name: Capaciteit van een toepassing plannen
           href: service-fabric-capacity-planning.md
+    - name: Clusters maken en beheren
+      items:
+        - name: Clusters op Azure
+          items:
+            - name: Maken
+              items:
+                - name: Een clusterimplementatie plannen
+                  href: service-fabric-cluster-azure-deployment-preparation.md
+                - name: Maken in Azure-portal
+                  href: service-fabric-cluster-creation-via-portal.md
+                - name: Een Azure Service Fabric-cluster implementeren in meerdere beschikbaarheidszones
+                  href: service-fabric-cross-availability-zones.md
+                - name: Een Azure Service Fabric-cluster met staatloze knooppunttypen implementeren
+                  href: service-fabric-stateless-node-types.md
+                - name: Verificatie via Azure Active Directory instellen
+                  href: service-fabric-cluster-creation-setup-aad.md
+                - name: Een aangepaste clustersjabloon maken
+                  href: service-fabric-cluster-creation-create-template.md
+                - name: Maken met behulp van Resource Manager
+                  href: service-fabric-cluster-creation-via-arm.md
+                - name: Maken met behulp van algemene naam voor certificaat
+                  href: service-fabric-create-cluster-using-cert-cn.md
+                - name: Een Linux-cluster maken
+                  href: service-fabric-tutorial-create-vnet-and-linux-cluster.md
+            - name: Schalen
+              items:
+                - name: Handmatig uitschalen
+                  href: service-fabric-cluster-scale-in-out.md
+                - name: Programmatisch uitschalen
+                  href: service-fabric-cluster-programmatic-scaling.md
+                - name: Primair knooppunttype omhoog schalen
+                  href: service-fabric-scale-up-primary-node-type.md
+                - name: Een knooppunttype toevoegen
+                  href: virtual-machine-scale-set-scale-node-type-scale-out.md
+                - name: Een knooppunttype verwijderen
+                  href: service-fabric-how-to-remove-node-type.md
+            - name: Upgraden
+              items:
+                - name: De Service Fabric-versie upgraden
+                  href: service-fabric-cluster-upgrade-version-azure.md
+                - name: De clusterconfiguratie upgraden
+                  href: service-fabric-cluster-config-upgrade-azure.md
+                - name: Patch uitvoeren voor clusterknooppunten (Windows)
+                  href: service-fabric-patch-orchestration-application.md
+                - name: Schijfversleuteling inschakelen (Windows)
+                  href: service-fabric-enable-azure-disk-encryption-windows.md
+                - name: Schijfversleuteling inschakelen (Linux)
+                  href: service-fabric-enable-azure-disk-encryption-linux.md
+                - name: Toegangsbeheer instellen
+                  href: service-fabric-cluster-security-roles.md
+                - name: Een poort in de load balancer openen
+                  href: create-load-balancer-rule.md
+                - name: Wijzig het clustercertificaat in een algemene naam
+                  href: service-fabric-cluster-change-cert-thumbprint-to-cn.md
+                - name: Handmatig clustercertificaten aanwijzen
+                  href: service-fabric-cluster-rollover-cert-cn.md
+                - name: Clustercertificaten beheren
+                  href: service-fabric-cluster-security-update-certs-azure.md
+                - name: Extern verbinding maken met de VM die het clusterknooppunt vormt
+                  href: service-fabric-cluster-remote-connect-to-azure-cluster-node.md
+        - name: Zelfstandige clusters
+          items:
+            - name: Maken
+              items:
+                - name: On-premises maken
+                  href: service-fabric-cluster-creation-for-windows-server.md
+                - name: Beveiligen met behulp van certificaten
+                  href: service-fabric-windows-cluster-x509-security.md
+                - name: Beveiligen met behulp van Windows-beveiliging
+                  href: service-fabric-windows-cluster-windows-security.md
+                - name: Inhoud van het zelfstandige pakket
+                  href: service-fabric-cluster-standalone-package-contents.md
+            - name: Schalen
+              href: service-fabric-cluster-windows-server-add-remove-nodes.md
+            - name: Upgraden
+              items:
+                - name: De Service Fabric-versie upgraden
+                  href: service-fabric-cluster-upgrade-windows-server.md
+                - name: De clusterconfiguratie upgraden
+                  href: service-fabric-cluster-config-upgrade-windows-server.md
+                - name: Configuratie-instellingen
+                  href: service-fabric-cluster-manifest.md
+                - name: Toegangsbeheer instellen
+                  href: service-fabric-cluster-security-roles.md
+                - name: Patch uitvoeren voor clusterknooppunten (Windows)
+                  href: service-fabric-patch-orchestration-application.md
+        - name: Visualiseren met Service Fabric Explorer
+          href: service-fabric-visualizing-your-cluster.md
+        - name: Verbinding maken met een beveiligd cluster
+          href: service-fabric-connect-to-secure-cluster.md
+    - name: Bewaken en diagnoses uitvoeren
+      items:
+        - name: Problemen vaststellen bij algemene scenario’s
+          href: service-fabric-diagnostics-common-scenarios.md
+        - name: Codepakketfouten vaststellen
+          href: service-fabric-diagnostics-code-package-errors.md
+        - name: Toepassingen bewaken
+          items:
+            - name: Logboekregistratie toevoegen aan uw toepassing
+              href: service-fabric-how-to-diagnostics-log.md
+            - name: Analyseren met Application Insights
+              href: service-fabric-diagnostics-event-analysis-appinsights.md
+            - name: Logboeken combineren met EventFlow
+              href: service-fabric-diagnostics-event-aggregation-eventflow.md
+            - name: Containers bewaken
+              href: service-fabric-diagnostics-oms-containers.md
+        - name: Clusters bewaken
+          items:
+            - name: Azure Monitor-logboeken configureren om clustergebeurtenissen te verzamelen
+              href: service-fabric-diagnostics-oms-setup.md
+            - name: Uw cluster bewaken met behulp van Azure Monitor-logboeken
+              href: service-fabric-diagnostics-event-analysis-oms.md
+            - name: Query EventStore-API's
+              href: service-fabric-diagnostics-eventstore-query.md
+            - name: Diagnostische gegevens over Windows-cluster
+              href: service-fabric-diagnostics-event-aggregation-wad.md
+            - name: Diagnostische gegevens over Linux-cluster
+              href: service-fabric-diagnostics-oms-syslog.md
+        - name: Infrastructuur bewaken
+          items:
+            - name: Prestatiemeteritems verzamelen met de Log Analytics-agent
+              href: service-fabric-diagnostics-oms-agent.md
+            - name: Prestatiemeteritems verzamelen met WAD
+              href: service-fabric-diagnostics-perf-wad.md
+        - name: Statusbewaking
+          items:
+            - name: Status rapporteren en controleren
+              href: service-fabric-diagnostics-how-to-report-and-check-service-health.md
+            - name: Problemen met systeemstatusrapporten oplossen
+              href: service-fabric-understand-and-troubleshoot-with-system-health-reports.md
+            - name: Statusrapporten weergeven
+              href: service-fabric-view-entities-aggregated-health.md
+        - name: Omgekeerde-proxygebeurtenissen onderzoeken
+          href: service-fabric-reverse-proxy-diagnostics.md
+        - name: Problemen met uw lokale cluster oplossen
+          href: service-fabric-troubleshoot-local-cluster-setup.md
     - name: Aan de slag met uw eerste...
       items:
         - name: Windows-containertoepassing
@@ -434,7 +618,7 @@
           href: service-fabric-create-your-first-linux-application-with-java.md
         - name: Uitvoerbare gasttoepassing in Windows
           href: quickstart-guest-app.md
-    - name: Een toepassing bouwen
+    - name: Toepassingen bouwen
       items:
         - name: Een service bouwen die door een gast kan worden uitgevoerd
           items:
@@ -547,52 +731,6 @@
           href: service-fabric-backuprestoreservice-quickstart-standalonecluster.md
         - name: Oude Java-toepassing migreren voor ondersteuning van Maven
           href: service-fabric-migrate-old-javaapp-to-use-maven.md
-    - name: In een IDE werken
-      items:
-        - name: Werken in een Windows-/VS-ontwikkelomgeving
-          items:
-            - name: Toepassingen beheren in Visual Studio
-              href: service-fabric-manage-application-in-visual-studio.md
-            - name: Beveiligde verbindingen configureren in Visual Studio
-              href: service-fabric-visualstudio-configure-secure-connections.md
-            - name: Fouten opsporen in een .NET-service in Visual Studio
-              href: service-fabric-debugging-your-application.md
-            - name: Fouten opsporen in Windows-containers met Service Fabric en VS
-              href: service-fabric-how-to-debug-windows-containers.md
-            - name: Veelvoorkomende fouten en uitzonderingen
-              href: service-fabric-errors-and-exceptions.md
-            - name: Lokaal bewaken en diagnoses uitvoeren
-              href: service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md
-            - name: Een Linux-cluster instellen in Windows
-              href: service-fabric-local-linux-cluster-windows.md
-            - name: Vanuit VS een .NET Core-app implementeren in een extern Linux-cluster
-              href: service-fabric-how-to-publish-linux-app-vs.md
-        - name: Werken in een Linux-/Eclipse-ontwikkelomgeving
-          items:
-            - name: Aan de slag met Eclipse-invoegtoepassing voor Java-ontwikkeling
-              href: service-fabric-get-started-eclipse.md
-            - name: Fouten opsporen in een Java-service in Eclipse
-              href: service-fabric-debugging-your-application-java.md
-            - name: Lokaal bewaken en diagnoses uitvoeren
-              href: service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally-linux.md
-        - name: In een VS Code-omgeving werken
-          items:
-            - name: Aan de slag met VS-code
-              href: service-fabric-get-started-vs-code.md
-            - name: C# Service Fabric-toepassingen ontwikkelen met VS Code
-              href: service-fabric-develop-csharp-applications-with-vs-code.md
-            - name: Java Service Fabric-toepassingen ontwikkelen met VS Code
-              href: service-fabric-develop-java-applications-with-vs-code.md
-    - name: Migreren uit Cloud Services
-      items:
-        - name: Cloud Services vergelijken met Service Fabric
-          href: service-fabric-cloud-services-migration-differences.md
-        - name: Migreren naar Service Fabric
-          href: service-fabric-cloud-services-migration-worker-role-stateless-service.md
-        - name: Aanbevolen procedures
-          href: /azure/architecture/service-fabric/migrate-from-cloud-services
-        - name: Moderniseer uw toepassing
-          href: /azure/architecture/service-fabric/modernize-app-azure-service-fabric
     - name: Toepassingslevenscyclus beheren
       items:
         - name: Toepassingspakket maken
@@ -651,144 +789,6 @@
           href: service-fabric-reverseproxy-setup.md
         - name: Omgekeerde proxy voor veilige communicatie configureren
           href: service-fabric-reverseproxy-configure-secure-communication.md
-    - name: Clusters maken en beheren
-      items:
-        - name: Clusters op Azure
-          items:
-            - name: Maken
-              items:
-                - name: Een clusterimplementatie plannen
-                  href: service-fabric-cluster-azure-deployment-preparation.md
-                - name: Maken in Azure-portal
-                  href: service-fabric-cluster-creation-via-portal.md
-                - name: Een Azure Service Fabric-cluster implementeren in meerdere beschikbaarheidszones
-                  href: service-fabric-cross-availability-zones.md
-                - name: Een Azure Service Fabric-cluster met staatloze knooppunttypen implementeren
-                  href: service-fabric-stateless-node-types.md
-                - name: Verificatie via Azure Active Directory instellen
-                  href: service-fabric-cluster-creation-setup-aad.md
-                - name: Een aangepaste clustersjabloon maken
-                  href: service-fabric-cluster-creation-create-template.md
-                - name: Maken met behulp van Resource Manager
-                  href: service-fabric-cluster-creation-via-arm.md
-                - name: Maken met behulp van algemene naam voor certificaat
-                  href: service-fabric-create-cluster-using-cert-cn.md
-                - name: Een Linux-cluster maken
-                  href: service-fabric-tutorial-create-vnet-and-linux-cluster.md
-            - name: Schalen
-              items:
-                - name: Handmatig uitschalen
-                  href: service-fabric-cluster-scale-in-out.md
-                - name: Programmatisch uitschalen
-                  href: service-fabric-cluster-programmatic-scaling.md
-                - name: Primair knooppunttype omhoog schalen
-                  href: service-fabric-scale-up-primary-node-type.md
-                - name: Een knooppunttype toevoegen
-                  href: virtual-machine-scale-set-scale-node-type-scale-out.md
-                - name: Een knooppunttype verwijderen
-                  href: service-fabric-how-to-remove-node-type.md
-            - name: Upgraden
-              items:
-                - name: Een virtuelemachineschaalsetextensie toevoegen aan een beheerd clusterknooppunttype
-                  href: how-to-managed-cluster-vmss-extension.md
-                - name: De Service Fabric-versie upgraden
-                  href: service-fabric-cluster-upgrade-version-azure.md
-                - name: De clusterconfiguratie upgraden
-                  href: service-fabric-cluster-config-upgrade-azure.md
-                - name: Patch uitvoeren voor clusterknooppunten (Windows)
-                  href: service-fabric-patch-orchestration-application.md
-                - name: Schijfversleuteling inschakelen (Windows)
-                  href: service-fabric-enable-azure-disk-encryption-windows.md
-                - name: Schijfversleuteling inschakelen (Linux)
-                  href: service-fabric-enable-azure-disk-encryption-linux.md
-                - name: Toegangsbeheer instellen
-                  href: service-fabric-cluster-security-roles.md
-                - name: Een poort in de load balancer openen
-                  href: create-load-balancer-rule.md
-                - name: Wijzig het clustercertificaat in een algemene naam
-                  href: service-fabric-cluster-change-cert-thumbprint-to-cn.md
-                - name: Handmatig clustercertificaten aanwijzen
-                  href: service-fabric-cluster-rollover-cert-cn.md
-                - name: Clustercertificaten beheren
-                  href: service-fabric-cluster-security-update-certs-azure.md
-                - name: Extern verbinding maken met de VM die het clusterknooppunt vormt
-                  href: service-fabric-cluster-remote-connect-to-azure-cluster-node.md
-        - name: Zelfstandige clusters
-          items:
-            - name: Maken
-              items:
-                - name: On-premises maken
-                  href: service-fabric-cluster-creation-for-windows-server.md
-                - name: Beveiligen met behulp van certificaten
-                  href: service-fabric-windows-cluster-x509-security.md
-                - name: Beveiligen met behulp van Windows-beveiliging
-                  href: service-fabric-windows-cluster-windows-security.md
-                - name: Inhoud van het zelfstandige pakket
-                  href: service-fabric-cluster-standalone-package-contents.md
-            - name: Schalen
-              href: service-fabric-cluster-windows-server-add-remove-nodes.md
-            - name: Upgraden
-              items:
-                - name: De Service Fabric-versie upgraden
-                  href: service-fabric-cluster-upgrade-windows-server.md
-                - name: De clusterconfiguratie upgraden
-                  href: service-fabric-cluster-config-upgrade-windows-server.md
-                - name: Configuratie-instellingen
-                  href: service-fabric-cluster-manifest.md
-                - name: Toegangsbeheer instellen
-                  href: service-fabric-cluster-security-roles.md
-                - name: Patch uitvoeren voor clusterknooppunten (Windows)
-                  href: service-fabric-patch-orchestration-application.md
-        - name: Visualiseren met Service Fabric Explorer
-          href: service-fabric-visualizing-your-cluster.md
-        - name: Verbinding maken met een beveiligd cluster
-          href: service-fabric-connect-to-secure-cluster.md
-    - name: Bewaken en diagnoses uitvoeren
-      items:
-        - name: Problemen vaststellen bij algemene scenario’s
-          href: service-fabric-diagnostics-common-scenarios.md
-        - name: Codepakketfouten vaststellen
-          href: service-fabric-diagnostics-code-package-errors.md
-        - name: Toepassingen bewaken
-          items:
-            - name: Logboekregistratie toevoegen aan uw toepassing
-              href: service-fabric-how-to-diagnostics-log.md
-            - name: Analyseren met Application Insights
-              href: service-fabric-diagnostics-event-analysis-appinsights.md
-            - name: Logboeken combineren met EventFlow
-              href: service-fabric-diagnostics-event-aggregation-eventflow.md
-            - name: Containers bewaken
-              href: service-fabric-diagnostics-oms-containers.md
-        - name: Clusters bewaken
-          items:
-            - name: Azure Monitor-logboeken configureren om clustergebeurtenissen te verzamelen
-              href: service-fabric-diagnostics-oms-setup.md
-            - name: Uw cluster bewaken met behulp van Azure Monitor-logboeken
-              href: service-fabric-diagnostics-event-analysis-oms.md
-            - name: Query EventStore-API's
-              href: service-fabric-diagnostics-eventstore-query.md
-            - name: Diagnostische gegevens over Windows-cluster
-              href: service-fabric-diagnostics-event-aggregation-wad.md
-            - name: Diagnostische gegevens over Linux-cluster
-              href: service-fabric-diagnostics-oms-syslog.md
-        - name: Infrastructuur bewaken
-          items:
-            - name: Prestatiemeteritems verzamelen met de Log Analytics-agent
-              href: service-fabric-diagnostics-oms-agent.md
-            - name: Prestatiemeteritems verzamelen met WAD
-              href: service-fabric-diagnostics-perf-wad.md
-        - name: Statusbewaking
-          items:
-            - name: Status rapporteren en controleren
-              href: service-fabric-diagnostics-how-to-report-and-check-service-health.md
-            - name: Problemen met systeemstatusrapporten oplossen
-              href: service-fabric-understand-and-troubleshoot-with-system-health-reports.md
-            - name: Statusrapporten weergeven
-              href: service-fabric-view-entities-aggregated-health.md
-        - name: Omgekeerde-proxygebeurtenissen onderzoeken
-          href: service-fabric-reverse-proxy-diagnostics.md
-        - name: Problemen met uw lokale cluster oplossen
-          href: service-fabric-troubleshoot-local-cluster-setup.md
     - name: Beheerde identiteit voor Service Fabric-apps gebruiken
       items:
         - name: Clusterinstallatie
@@ -797,8 +797,6 @@
               href: configure-existing-cluster-enable-managed-identity-token-service.md
             - name: Een nieuw Azure Service Fabric-cluster configureren met beheerde identiteit
               href: configure-new-azure-service-fabric-enable-managed-identity.md
-            - name: Een beheerd Service Fabric-cluster configureren met een beheerde identiteit
-              href: how-to-managed-identity-managed-cluster-virtual-machine-scale-sets.md
         - name: Installatie van toepassing
           items:
             - name: Een toepassing implementeren met beheerde identiteit
@@ -811,12 +809,22 @@
           href: how-to-managed-identity-service-fabric-app-code.md
         - name: Toegang tot andere Azure-resources verlenen
           href: how-to-grant-access-other-resources.md
+    - name: Migreren uit Cloud Services
+      items:
+        - name: Cloud Services vergelijken met Service Fabric
+          href: service-fabric-cloud-services-migration-differences.md
+        - name: Migreren naar Service Fabric
+          href: service-fabric-cloud-services-migration-worker-role-stateless-service.md
+        - name: Aanbevolen procedures
+          href: /azure/architecture/service-fabric/migrate-from-cloud-services
+        - name: Moderniseer uw toepassing
+          href: /azure/architecture/service-fabric/modernize-app-azure-service-fabric
 - name: Naslaginformatie
   items:
     - name: Azure PowerShell
       href: /powershell/module/az.servicefabric/
     - name: PowerShell
-      href: /powershell/module/ServiceFabric/New-ServiceFabricService?view=azureservicefabricps
+      href: /powershell/module/servicefabric/?view=azureservicefabricps
     - name: Azure CLI (az sf)
       href: /cli/azure/sf
     - name: Service Fabric CLI (sfctl)

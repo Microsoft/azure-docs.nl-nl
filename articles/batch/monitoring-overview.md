@@ -3,12 +3,12 @@ title: Azure Batch bewaken
 description: Meer informatie over Azure monitoring services, metrische gegevens, Diagnostische logboeken en andere bewakings functies voor Azure Batch.
 ms.topic: how-to
 ms.date: 04/05/2018
-ms.openlocfilehash: 9387d4894dbf06445fd43722353ca7ae98607359
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b926f9c6d173cd0b8d886047eae490e4a151988f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86144942"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595429"
 ---
 # <a name="monitor-batch-solutions"></a>Batch-oplossingen controleren
 
@@ -18,15 +18,15 @@ Zie [Azure-toepassingen en-resources](../azure-monitor/overview.md)bewaken voor 
 
 ## <a name="subscription-level-monitoring"></a>Bewaking op abonnements niveau
 
-Op abonnements niveau, dat batch-accounts bevat, verzamelt het [Azure-activiteiten logboek](../azure-monitor/platform/platform-logs-overview.md) operationele gebeurtenis gegevens in [verschillende categorieën](../azure-monitor/platform/activity-log.md#view-the-activity-log).
+Op abonnements niveau, dat batch-accounts bevat, verzamelt het [Azure-activiteiten logboek](../azure-monitor/essentials/platform-logs-overview.md) operationele gebeurtenis gegevens in [verschillende categorieën](../azure-monitor/essentials/activity-log.md#view-the-activity-log).
 
 Voor batch-accounts verzamelt het activiteiten logboek gebeurtenissen met betrekking tot het maken en verwijderen van accounts en sleutel beheer.
 
-Een manier om gebeurtenissen uit uw activiteiten logboek op te halen, is met behulp van de Azure Portal. Klik op **alle services**  >  **activiteiten logboek**. U kunt ook een query uitvoeren op gebeurtenissen met behulp van de Azure CLI, Power shell-cmdlets of de Azure Monitor REST API. U kunt ook het activiteiten logboek exporteren of waarschuwingen voor het [activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)configureren.
+Een manier om gebeurtenissen uit uw activiteiten logboek op te halen, is met behulp van de Azure Portal. Klik op **alle services**  >  **activiteiten logboek**. U kunt ook een query uitvoeren op gebeurtenissen met behulp van de Azure CLI, Power shell-cmdlets of de Azure Monitor REST API. U kunt ook het activiteiten logboek exporteren of waarschuwingen voor het [activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)configureren.
 
 ## <a name="batch-account-level-monitoring"></a>Bewaking op batch-account niveau
 
-Bewaak elk batch-account met behulp van de functies van [Azure monitor](../azure-monitor/overview.md). Azure Monitor verzamelt [metrische gegevens](../azure-monitor/platform/data-platform-metrics.md) en eventueel [Diagnostische logboeken](../azure-monitor/platform/platform-logs-overview.md) voor resources die zijn afgestemd op het niveau van een batch-account, zoals Pools, Jobs en taken. Verzamel en gebruik deze gegevens hand matig of programmatisch om activiteiten in uw batch-account te bewaken en problemen te onderzoeken. Zie [metrische batches, waarschuwingen en logboeken voor diagnostische evaluatie en controle](batch-diagnostics.md)voor meer informatie.
+Bewaak elk batch-account met behulp van de functies van [Azure monitor](../azure-monitor/overview.md). Azure Monitor verzamelt [metrische gegevens](../azure-monitor/essentials/data-platform-metrics.md) en eventueel [Diagnostische logboeken](../azure-monitor/essentials/platform-logs-overview.md) voor resources die zijn afgestemd op het niveau van een batch-account, zoals Pools, Jobs en taken. Verzamel en gebruik deze gegevens hand matig of programmatisch om activiteiten in uw batch-account te bewaken en problemen te onderzoeken. Zie [metrische batches, waarschuwingen en logboeken voor diagnostische evaluatie en controle](batch-diagnostics.md)voor meer informatie.
  
 > [!NOTE]
 > Metrische gegevens zijn standaard beschikbaar in uw batch-account zonder extra configuratie en ze hebben een rolling geschiedenis van 30 dagen. U moet Diagnostische logboek registratie inschakelen voor een batch-account en u kunt extra kosten in rekening brengen om diagnostische logboek gegevens op te slaan of te verwerken. 

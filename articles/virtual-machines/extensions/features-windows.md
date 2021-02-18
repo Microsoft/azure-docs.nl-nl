@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: akjosh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 565f98126cea8cc03874bb4f83ecdc2c65f8d5fb
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 44d071c635967e4ce3078be8419414bc9ff0c653
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96016451"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580145"
 ---
 # <a name="virtual-machine-extensions-and-features-for-windows"></a>Extensies en functies van virtuele machines voor Windows
 
@@ -36,7 +36,7 @@ Dit artikel bevat een overzicht van VM-extensies, vereisten voor het gebruik van
 Er zijn verschillende verschillende Azure VM-extensies beschikbaar, elk met een specifieke use-case. Voorbeelden zijn:
 
 - Pas Power shell desired state configurations toe aan een virtuele machine met de DSC-extensie voor Windows. Zie [Azure desired state Configuration extension](dsc-overview.md)(Engelstalig) voor meer informatie.
-- De bewaking van een virtuele machine configureren met de VM-extensie Log Analytics agent. Zie [Azure Vm's verbinden met Azure monitor-logboeken](../../azure-monitor/learn/quick-collect-azurevm.md)voor meer informatie.
+- De bewaking van een virtuele machine configureren met de VM-extensie Log Analytics agent. Zie [Azure Vm's verbinden met Azure monitor-logboeken](../../azure-monitor/vm/quick-collect-azurevm.md)voor meer informatie.
 - Configureer een virtuele Azure-machine met behulp van chef. Zie [Azure VM-implementatie automatiseren met chef](/azure/developer/chef/windows-vm-configure)voor meer informatie.
 - Configureer de bewaking van uw Azure-infra structuur met de Datadog-extensie. Zie de [Datadog-blog](https://www.datadoghq.com/blog/introducing-azure-monitoring-with-one-click-datadog-deployment/)voor meer informatie.
 
@@ -55,12 +55,12 @@ Zie [Azure virtual machine agent](agent-windows.md)voor meer informatie over ond
 
 #### <a name="supported-agent-versions"></a>Ondersteunde agent versies
 
-Er zijn minimale versies van de agent om de best mogelijke ervaring te bieden. Zie [dit artikel](https://support.microsoft.com/help/4049215/extensions-and-virtual-machine-agent-minimum-version-support)voor meer informatie.
+Er zijn minimale versies van de agent om de best mogelijke ervaring te bieden. Raadpleeg [dit artikel](https://support.microsoft.com/help/4049215/extensions-and-virtual-machine-agent-minimum-version-support) voor meer informatie.
 
 #### <a name="supported-oses"></a>Ondersteunde besturings systemen
 
-De Windows-gast agent wordt uitgevoerd op meerdere besturings systemen, maar het Framework Extensions heeft een limiet voor de besturings systemen die uitbrei dingen. Zie [dit artikel](https://support.microsoft.com/help/4078134/azure-extension-supported-operating-systems
-)voor meer informatie.
+De Windows-gast agent wordt uitgevoerd op meerdere besturings systemen, maar het Framework Extensions heeft een limiet voor de besturings systemen die uitbrei dingen. Raadpleeg [dit artikel](https://support.microsoft.com/help/4078134/azure-extension-supported-operating-systems
+) voor meer informatie.
 
 Sommige extensies worden niet ondersteund in alle besturings systemen en kunnen *Fout Code 51, ' niet-ondersteund besturings systeem ',* verzenden. Raadpleeg de documentatie van de afzonderlijke extensie voor ondersteuning.
 
@@ -264,7 +264,7 @@ De agents en uitbrei dingen delen hetzelfde update mechanisme. Voor sommige upda
 Wanneer er een update beschikbaar is, wordt deze alleen geïnstalleerd op de virtuele machine wanneer er een wijziging is aangebracht in extensies en andere VM-modellen, zoals:
 
 - Gegevensschijven
-- Extensies
+- Uitbreidingen
 - Container voor diagnostische gegevens over opstarten
 - Geheimen voor gast besturingssystemen
 - VM-grootte

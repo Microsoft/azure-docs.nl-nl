@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: wiassaf, sstein
 ms.date: 09/30/2020
-ms.openlocfilehash: 3d28cf1a89ff455cfbed26aad234607ec8cd7e63
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 6b56da68b10bc40304097fbe9eeaf200d422b663
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96490564"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592685"
 ---
 # <a name="monitoring-and-performance-tuning-in-azure-sql-database-and-azure-sql-managed-instance"></a>Bewaking en prestatieafstemming van Azure SQL Database en Azure SQL Managed Instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -99,11 +99,11 @@ U kunt Diagnostische instellingen configureren voor het streamen van categorieë
 
 ### <a name="log-analytics-workspace-in-azure-monitor"></a>Log Analytics werk ruimte in Azure Monitor
 
-U kunt metrische gegevens en bron logboeken streamen naar een [log Analytics werk ruimte in azure monitor](../../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace). Gegevens die hier worden gestreamd, kunnen worden gebruikt door [SQL Analytics](../../azure-monitor/insights/azure-sql.md). Dit is een alleen-Cloud bewakings oplossing die intelligente bewaking van uw data bases bevat, waaronder prestatie rapporten, waarschuwingen en aanbevelingen voor risico beperking. Gegevens die naar een Log Analytics-werk ruimte worden gestreamd, kunnen worden geanalyseerd met andere bewakings gegevens die worden verzameld en biedt u ook de mogelijkheid om andere Azure Monitor functies, zoals waarschuwingen en visualisaties, te gebruiken.
+U kunt metrische gegevens en bron logboeken streamen naar een [log Analytics werk ruimte in azure monitor](../../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace). Gegevens die hier worden gestreamd, kunnen worden gebruikt door [SQL Analytics](../../azure-monitor/insights/azure-sql.md). Dit is een alleen-Cloud bewakings oplossing die intelligente bewaking van uw data bases bevat, waaronder prestatie rapporten, waarschuwingen en aanbevelingen voor risico beperking. Gegevens die naar een Log Analytics-werk ruimte worden gestreamd, kunnen worden geanalyseerd met andere bewakings gegevens die worden verzameld en biedt u ook de mogelijkheid om andere Azure Monitor functies, zoals waarschuwingen en visualisaties, te gebruiken.
 
 ### <a name="azure-event-hubs"></a>Azure Event Hubs
 
-U kunt metrische gegevens en bron logboeken streamen naar [Azure Event hubs](../../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs). Diagnostische telemetrie streamen naar Event hubs om de volgende functionaliteit te bieden:
+U kunt metrische gegevens en bron logboeken streamen naar [Azure Event hubs](../../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs). Diagnostische telemetrie streamen naar Event hubs om de volgende functionaliteit te bieden:
 
 - **Logboeken streamen naar logboekregistratie van derden en telemetrie-systemen**
 
@@ -117,7 +117,7 @@ U kunt metrische gegevens en bron logboeken streamen naar [Azure Event hubs](../
 
 ### <a name="azure-storage"></a>Azure Storage
 
-Metrische gegevens van Stream en bron logboeken naar [Azure Storage](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage). Gebruik Azure Storage om grote hoeveel heden diagnostische telemetrie te archiveren voor een fractie van de kosten van de vorige twee opties voor gegevens stromen.
+Metrische gegevens van Stream en bron logboeken naar [Azure Storage](../../azure-monitor/essentials/resource-logs.md#send-to-azure-storage). Gebruik Azure Storage om grote hoeveel heden diagnostische telemetrie te archiveren voor een fractie van de kosten van de vorige twee opties voor gegevens stromen.
 
 ## <a name="use-extended-events"></a>Uitgebreide gebeurtenissen gebruiken 
 

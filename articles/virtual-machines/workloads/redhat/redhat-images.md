@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 02/10/2020
 ms.author: alsin
 ms.reviewer: cynthn
-ms.openlocfilehash: 293245d6778a40e234cdca177905c15dc88dd04f
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 0f3b36729fb07c6f5ae03a46e199e4cadb44a25e
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737758"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100635588"
 ---
 # <a name="overview-of-red-hat-enterprise-linux-images"></a>Overzicht van Red Hat Enterprise Linux installatie kopieën
 
@@ -65,6 +65,9 @@ Deze vergelijking van de afbeeldings versie wordt uitgevoerd door de waarden te 
 
 ## <a name="rhel-6-image-types"></a>RHEL 6-afbeeldings typen
 
+>[!NOTE]
+> Vanaf 30 2020 december heeft RHEL 6,10 het einde van de levens duur bereikt (EOL). Voor voortdurende ondersteuning kunt u ELS inschakelen als onderdeel van de uitgebreide ondersteunings fase van de levens cyclus. Zie [Red Hat Els-documentatie](./redhat-extended-lifecycle-support.md)voor meer informatie.
+
 Voor RHEL 6. x-installatie kopieën worden de afbeeldings typen weer gegeven in de volgende tabel.
 
 |Uitgever | Aanbieding | SKU-waarde | Versie | Details
@@ -106,7 +109,15 @@ Details voor RHEL 8-afbeeldings typen vindt u hieronder.
 |RedHat | RHEL | 8 | Samengevoegde waarden van de RHEL secundaire versie en de publicatie datum (bijvoorbeeld 8.0.20191023) | Deze installatie kopieën zijn RHEL 8 gepartitioneerde installatie kopieën die zijn verbonden met standaard Red Hat-opslag plaatsen.
 |RedHat | RHEL | 8-Gen2 | Samengevoegde waarden van de RHEL secundaire versie en de publicatie datum (bijvoorbeeld 8.0.20191024) | Deze installatie kopieën zijn Hyper-V-generatie 2 RHEL 8 gepartitioneerde installatie kopieën die zijn verbonden met Standard Red Hat-opslag plaatsen. Zie [ondersteuning voor virtuele machines van de tweede generatie op Azure](../../generation-2.md)voor meer informatie over virtuele machines van de tweede generatie in Azure.
 
-## <a name="rhel-longer-support-add-ons"></a>RHEL meer ondersteuning voor invoeg toepassingen
+## <a name="rhel-extended-support-add-ons"></a>Uitgebreide ondersteuning voor RHEL-invoeg toepassingen
+
+### <a name="extended-life-cycle-support"></a>Uitgebreide ondersteuning voor levens cyclus
+
+De uitgebreide invoeg toepassing voor ondersteuning (ELS) is een optioneel abonnement waarmee essentiële en belang rijke beveiligingsfixes worden ingeschakeld voor releases die het einde van de levens duur (EOL) hebben bereikt. Meer informatie over RHEL EUS is beschikbaar in [de documentatie van Red Hat](https://access.redhat.com/support/policy/updates/errata#Extended_Life_Cycle_Support).
+
+ELS is momenteel alleen beschikbaar voor RHEL 6,10. Voor betalen per gebruik-installatie kopieën kunt u ELS inschakelen door de stappen in de [Red Hat Els-documentatie](./redhat-extended-lifecycle-support.md)te volgen.
+
+Als u werkt met een oudere versie, is een upgrade naar RHEL 6,10 vereist voordat u ELS kunt inschakelen.
 
 ### <a name="extended-update-support"></a>Ondersteuning voor uitgebreide updates
 

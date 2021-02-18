@@ -3,12 +3,12 @@ title: Beheeropties blauwdrukvoorbeeld FedRAMP Moderate
 description: Hier vindt u informatie over de toewijzing van beheeropties aan het blauwdrukvoorbeeld FedRAMP Moderate. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
 ms.date: 01/08/2021
 ms.topic: sample
-ms.openlocfilehash: 30fd8030150613e6e429501ec27d5cad5cbe2a45
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
-ms.translationtype: HT
+ms.openlocfilehash: 7a78ebf631d2c7eb21fea64b0b6aa307bb500e0d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98034795"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594693"
 ---
 # <a name="control-mapping-of-the-fedramp-moderate-blueprint-sample"></a>Informatie over toewijzing van beheeropties aan het blauwdrukvoorbeeld FedRAMP Moderate
 
@@ -283,8 +283,8 @@ Met deze blauwdruk kunt u uw systeem controleren door logboekregistraties en geg
 Nu u de toewijzing van beheeropties van de blauwdruk FedRAMP Moderate hebt bekeken, kunt u naar de volgende artikelen gaan voor informatie over de blauwdruk en de implementatie van dit voorbeeld:
 
 > [!div class="nextstepaction"]
-> [FedRAMP Moderate-blauwdruk - Overzicht](./index.md)
-> [FedRAMP Moderate-blauwdruk - Implementatiestappen](./deploy.md)
+> [FedRAMP matige blauw druk-overzicht](./index.md) 
+>  [FedRAMP matige blauw druk-stappen implementeren](./deploy.md)
 
 Aanvullende artikelen over blauwdrukken en het gebruik hiervan:
 

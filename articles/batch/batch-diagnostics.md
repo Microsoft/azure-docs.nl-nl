@@ -4,22 +4,22 @@ description: Registreer en analyseer logboek gebeurtenissen van het diagnostisch
 ms.topic: how-to
 ms.date: 10/08/2020
 ms.custom: seodec18
-ms.openlocfilehash: fe2697c73f2a5f3f0b33cfb598f11f39420ed723
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 83411d7018155955f5be71bd41803e510edbc9da
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994108"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592683"
 ---
 # <a name="batch-metrics-alerts-and-logs-for-diagnostic-evaluation-and-monitoring"></a>Metrische batches, waarschuwingen en logboeken voor diagnostische evaluatie en bewaking
 
-In dit artikel wordt uitgelegd hoe u een batch-account kunt bewaken met behulp van functies van [Azure monitor](../azure-monitor/overview.md). Azure Monitor verzamelt [metrische gegevens](../azure-monitor/platform/data-platform-metrics.md) en [Diagnostische logboeken](../azure-monitor/platform/platform-logs-overview.md) voor resources in uw batch-account. Verzamel en gebruik deze gegevens op verschillende manieren om uw batch-account te controleren en problemen op te sporen. U kunt ook [metrische waarschuwingen](../azure-monitor/platform/alerts-overview.md) configureren zodat u meldingen ontvangt wanneer een metriek een opgegeven waarde bereikt.
+In dit artikel wordt uitgelegd hoe u een batch-account kunt bewaken met behulp van functies van [Azure monitor](../azure-monitor/overview.md). Azure Monitor verzamelt [metrische gegevens](../azure-monitor/essentials/data-platform-metrics.md) en [Diagnostische logboeken](../azure-monitor/essentials/platform-logs-overview.md) voor resources in uw batch-account. Verzamel en gebruik deze gegevens op verschillende manieren om uw batch-account te controleren en problemen op te sporen. U kunt ook [metrische waarschuwingen](../azure-monitor/alerts/alerts-overview.md) configureren zodat u meldingen ontvangt wanneer een metriek een opgegeven waarde bereikt.
 
 ## <a name="batch-metrics"></a>Metrische batches
 
 Metrische gegevens zijn Azure-telemetriegegevens (ook wel prestatie meter items genoemd) die worden verzonden door uw Azure-resources en die worden gebruikt door de Azure Monitor service. Voor beelden van metrische gegevens in een batch-account zijn groep maken gebeurtenissen, Low-Priority aantal knoop punten en gebeurtenissen voltooid.
 
-Bekijk de [lijst met ondersteunde metrische gegevens voor batches](../azure-monitor/platform/metrics-supported.md#microsoftbatchbatchaccounts).
+Bekijk de [lijst met ondersteunde metrische gegevens voor batches](../azure-monitor/essentials/metrics-supported.md#microsoftbatchbatchaccounts).
 
 Metrische gegevens zijn:
 
@@ -68,9 +68,9 @@ Een waarschuwing voor metrische gegevens configureren in de Azure Portal:
 5. Voer in de sectie **Details van waarschuwings regel** een naam en **Beschrijving** voor de **waarschuwings regel** in en selecteer de **Ernst**
 6. Selecteer **Waarschuwingsregel maken**.
 
-Zie [begrijpen hoe metrische waarschuwingen werken in azure monitor](../azure-monitor/platform/alerts-metric-overview.md) en [metrische waarschuwingen met behulp van Azure monitor maken, weer geven en beheren](../azure-monitor/platform/alerts-metric.md)voor meer informatie over het maken van metrische waarschuwingen.
+Zie [begrijpen hoe metrische waarschuwingen werken in azure monitor](../azure-monitor/alerts/alerts-metric-overview.md) en [metrische waarschuwingen met behulp van Azure monitor maken, weer geven en beheren](../azure-monitor/alerts/alerts-metric.md)voor meer informatie over het maken van metrische waarschuwingen.
 
-U kunt ook een nabije realtime-waarschuwing configureren met behulp van de Azure Monitor [rest API](/rest/api/monitor/). Zie [overzicht van waarschuwingen in Microsoft Azure](../azure-monitor/platform/alerts-overview.md)voor meer informatie. Zie de informatie over zoek query's in [reageren op gebeurtenissen met Azure monitor waarschuwingen](../azure-monitor/learn/tutorial-response.md)om taak-, taak-of pool-specifieke informatie in uw waarschuwingen op te vragen.
+U kunt ook een nabije realtime-waarschuwing configureren met behulp van de Azure Monitor [rest API](/rest/api/monitor/). Zie [overzicht van waarschuwingen in Microsoft Azure](../azure-monitor/alerts/alerts-overview.md)voor meer informatie. Zie de informatie over zoek query's in [reageren op gebeurtenissen met Azure monitor waarschuwingen](../azure-monitor/alerts/tutorial-response.md)om taak-, taak-of pool-specifieke informatie in uw waarschuwingen op te vragen.
 
 ## <a name="batch-diagnostics"></a>Batch-diagnose
 
@@ -88,7 +88,7 @@ Een veelvoorkomend scenario is het selecteren van een Azure Storage-account als 
 U kunt ook het volgende doen:
 
 - Batch diagnostische logboek gebeurtenissen streamen naar een [Azure Event hub](../event-hubs/event-hubs-about.md). Event Hubs kan miljoenen gebeurtenissen per seconde opnemen, die u vervolgens kunt transformeren en opslaan met behulp van een real-time analyse provider.
-- Diagnostische logboeken verzenden naar [Azure monitor-logboeken](../azure-monitor/log-query/log-query-overview.md), waar u ze kunt analyseren of exporteren voor analyse in Power bi of Excel.
+- Diagnostische logboeken verzenden naar [Azure monitor-logboeken](../azure-monitor/logs/log-query-overview.md), waar u ze kunt analyseren of exporteren voor analyse in Power bi of Excel.
 
 > [!NOTE]
 > Mogelijk worden er extra kosten in rekening gebracht om diagnostische logboek gegevens met Azure-Services op te slaan of te verwerken.
@@ -105,7 +105,7 @@ Volg de onderstaande stappen om een nieuwe diagnostische instelling te maken in 
 6. Selecteer **ServiceLog**, **AllMetrics** of beide.
 7. Selecteer **Opslaan** om de diagnostische instelling te maken.
 
-U kunt ook [verzameling via Azure monitor in de Azure Portal inschakelen](../azure-monitor/platform/diagnostic-settings.md) om Diagnostische instellingen te configureren, met behulp van een [Resource Manager-sjabloon](../azure-monitor/samples/resource-manager-diagnostic-settings.md)of met Azure POWERSHELL of de Azure cli. Zie [overzicht van Azure platform-logboeken](../azure-monitor/platform/platform-logs-overview.md)voor meer informatie.
+U kunt ook [verzameling via Azure monitor in de Azure Portal inschakelen](../azure-monitor/essentials/diagnostic-settings.md) om Diagnostische instellingen te configureren, met behulp van een [Resource Manager-sjabloon](../azure-monitor/essentials/resource-manager-diagnostic-settings.md)of met Azure POWERSHELL of de Azure cli. Zie [overzicht van Azure platform-logboeken](../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie.
 
 ### <a name="access-diagnostics-logs-in-storage"></a>Diagnostische logboeken openen in Storage
 
@@ -135,7 +135,7 @@ Hieronder ziet u een voor beeld van een `PoolResizeCompleteEvent` vermelding in 
 { "Tenant": "65298bc2729a4c93b11c00ad7e660501", "time": "2019-08-22T20:59:13.5698778Z", "resourceId": "/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.BATCH/BATCHACCOUNTS/MYBATCHACCOUNT/", "category": "ServiceLog", "operationName": "PoolResizeCompleteEvent", "operationVersion": "2017-06-01", "properties": {"id":"MYPOOLID","nodeDeallocationOption":"Requeue","currentDedicatedNodes":10,"targetDedicatedNodes":100,"currentLowPriorityNodes":0,"targetLowPriorityNodes":0,"enableAutoScale":false,"isAutoPool":false,"startTime":"2019-08-22 20:50:59.522","endTime":"2019-08-22 20:59:12.489","resultCode":"Success","resultMessage":"The operation succeeded"}}
 ```
 
-Zie voor meer informatie over het schema van Diagnostische logboeken in het opslag account [Azure-resource logboeken archiveren in het opslag account](../azure-monitor/platform/resource-logs.md#send-to-azure-storage). Als u via een programma toegang wilt krijgen tot de logboeken in uw opslag account, gebruikt u de opslag-Api's.
+Zie voor meer informatie over het schema van Diagnostische logboeken in het opslag account [Azure-resource logboeken archiveren in het opslag account](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage). Als u via een programma toegang wilt krijgen tot de logboeken in uw opslag account, gebruikt u de opslag-Api's.
 
 ### <a name="service-log-events"></a>Service logboek gebeurtenissen
 

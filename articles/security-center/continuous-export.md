@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 12/24/2020
 ms.author: memildin
-ms.openlocfilehash: 845ff6f0905b232b9ec68dbe127ef7f47a6ad898
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 226ca943554ca24f3332f24f5a9baf571b432917
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98916778"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590611"
 ---
 # <a name="continuously-export-security-center-data"></a>Security Center-gegevens continu exporteren
 
@@ -44,7 +44,7 @@ In dit artikel wordt beschreven hoe u doorlopend exporteren naar Log Analytics w
 |Releasestatus:|Algemene Beschik baarheid (GA)|
 |Prijzen:|Gratis|
 |Vereiste rollen en machtigingen:|<ul><li>**Beveiligings beheerder** of- **eigenaar** voor de resource groep</li><li>Schrijf machtigingen voor de doel resource</li><li>Als u het Azure Policy beleid ' DeployIfNotExist ' gebruikt dat hieronder wordt beschreven, hebt u ook machtigingen nodig voor het toewijzen van beleid</li></ul>|
-|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov, andere overheden<br>![Ja](./media/icons/yes-icon.png) Gov China (naar Event hub)|
+|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov, andere overheden<br>![Yes](./media/icons/yes-icon.png) Gov China (naar Event hub)|
 |||
 
 
@@ -185,7 +185,7 @@ Als u de gebeurtenis schema's van de geëxporteerde gegevens typen wilt weer gev
 
 ##  <a name="view-exported-alerts-and-recommendations-in-azure-monitor"></a>Geëxporteerde waarschuwingen en aanbevelingen in Azure Monitor weer geven
 
-U kunt er ook voor kiezen om geëxporteerde beveiligings waarschuwingen en/of aanbevelingen in [Azure monitor](../azure-monitor/platform/alerts-overview.md)weer te geven. 
+U kunt er ook voor kiezen om geëxporteerde beveiligings waarschuwingen en/of aanbevelingen in [Azure monitor](../azure-monitor/alerts/alerts-overview.md)weer te geven. 
 
 Azure Monitor biedt een uniforme waarschuwings ervaring voor verschillende Azure-waarschuwingen, waaronder diagnostisch logboeken, metrische waarschuwingen en aangepaste waarschuwingen op basis van Log Analytics werkruimte query's.
 
@@ -195,13 +195,13 @@ Als u waarschuwingen en aanbevelingen van Security Center in Azure Monitor wilt 
 
     ![Pagina waarschuwingen van Azure Monitor](./media/continuous-export/azure-monitor-alerts.png)
 
-1. Configureer op de pagina regel maken uw nieuwe regel (op dezelfde manier als u een [waarschuwings regel voor het logboek configureert in azure monitor](../azure-monitor/platform/alerts-unified-log.md)):
+1. Configureer op de pagina regel maken uw nieuwe regel (op dezelfde manier als u een [waarschuwings regel voor het logboek configureert in azure monitor](../azure-monitor/alerts/alerts-unified-log.md)):
 
     * Selecteer voor **resource** de log Analytics werk ruimte waarnaar u beveiligings waarschuwingen en aanbevelingen hebt geëxporteerd.
 
     * Selecteer voor voor waarde **aangepaste logboek zoekopdracht**. Configureer op de pagina die wordt weer gegeven, de query, de lookback periode en de frequentie periode. In de zoek query kunt u *SecurityAlert* of *SecurityRecommendation* typen om een query uit te voeren op de gegevens typen die Security Center doorlopend exporteren naar wanneer u de functie continue export naar log Analytics inschakelt. 
     
-    * U kunt desgewenst de [actie groep](../azure-monitor/platform/action-groups.md) configureren die u wilt activeren. Actie groepen kunnen e-mail verzenden, ITSM tickets, webhooks en meer activeren.
+    * U kunt desgewenst de [actie groep](../azure-monitor/alerts/action-groups.md) configureren die u wilt activeren. Actie groepen kunnen e-mail verzenden, ITSM tickets, webhooks en meer activeren.
     ![Waarschuwings regel Azure Monitor](./media/continuous-export/azure-monitor-alert-rule.png)
 
 U ziet nu nieuwe Azure Security Center waarschuwingen of aanbevelingen (afhankelijk van de geconfigureerde regels voor continue export en de voor waarde die u in uw Azure Monitor waarschuwings regel hebt opgegeven) in Azure Monitor waarschuwingen, waarbij automatisch een actie groep wordt geactiveerd (indien opgegeven).

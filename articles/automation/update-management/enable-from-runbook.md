@@ -6,12 +6,12 @@ ms.subservice: update-management
 ms.topic: conceptual
 ms.date: 11/24/2020
 ms.custom: mvc
-ms.openlocfilehash: 219efe05b399677c60922542f3d7acd76ca37d26
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 5377a3ff7ef7033b57f8785baa615a717ef7fa0f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054886"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575867"
 ---
 # <a name="enable-update-management-from-a-runbook"></a>Updatebeheer inschakelen vanuit een runbook
 
@@ -29,7 +29,7 @@ Deze methode gebruikt twee runbooks:
 
 * Azure-abonnement. Als u nog geen abonnement hebt, kunt u [uw voordelen als MSDN-abonnee activeren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) of u aanmelden voor een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * [Automation-account](../automation-security-overview.md) voor het beheren van computers.
-* [Log Analytics werk ruimte](../../azure-monitor/platform/design-logs-deployment.md)
+* [Log Analytics werk ruimte](../../azure-monitor/logs/design-logs-deployment.md)
 * Een [virtuele machine](../../virtual-machines/windows/quick-create-portal.md).
 * Twee Automation-assets, die worden gebruikt door het **Enable-AutomationSolution** runbook. Dit runbook, als het nog niet bestaat in uw Automation-account, wordt tijdens de eerste uitvoering automatisch geïmporteerd door het runbook **Enable-MultipleSolution** .
     * *LASolutionSubscriptionId*: abonnement-id van waar de log Analytics-werk ruimte zich bevindt.

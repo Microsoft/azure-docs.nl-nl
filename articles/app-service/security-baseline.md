@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 648e7991784212e4fe781efd5d9f01cb571c5012
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: d7753de473d90c45fecb20403352a594ef52dafe
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807849"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586297"
 ---
 # <a name="azure-security-baseline-for-app-service"></a>Azure-beveiligings basislijn voor App Service
 
@@ -241,9 +241,9 @@ Bekijk gedetailleerde beveiligings waarschuwingen en aanbevelingen in Security C
 
 Het is raadzaam om een proces met automatische hulpprogram ma's te maken voor het bewaken van netwerk bron configuraties en om snel wijzigingen te detecteren.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 - [Beveiligingswaarschuwingen en aanbevelingen exporteren](../security-center/continuous-export.md)
 
@@ -280,7 +280,7 @@ De ' What, wie en wanneer ' voor schrijf bewerkingen (PUT, POST, DELETE) die zij
 
 Daarnaast biedt Azure Key Vault gecentraliseerd geheim beheer met toegangs beleid en controle geschiedenis. 
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Diagnostische instellingen inschakelen voor Azure App Service](troubleshoot-diagnostic-logs.md)
 
@@ -293,7 +293,7 @@ Daarnaast biedt Azure Key Vault gecentraliseerd geheim beheer met toegangs belei
 ### <a name="25-configure-security-log-storage-retention"></a>2,5: Bewaar beveiliging van het beveiligings logboek configureren
 
 **Richt lijnen**: stel in azure monitor de Bewaar periode voor het logboek in voor de log Analytics-werk ruimten die zijn gekoppeld aan uw app service bronnen volgens de nalevings voorschriften van uw organisatie.
-- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -309,7 +309,7 @@ Als u een Web Application firewall (WAF) hebt geïmplementeerd, kunt u aanvallen
 
 Gebruik Azure Sentinel, een schaalbaar en SIEM (native Security Information Event Management) van de cloud om te integreren met verschillende gegevens bronnen en connectors, conform de vereisten. U kunt gegevens in azure Marketplace eventueel inschakelen voor een oplossing voor het beheer van beveiligings gegevens van derden.
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/activity-log.md)
 
 - [Application Insights inschakelen](../azure-monitor/app/app-insights-overview.md)
 
@@ -640,7 +640,7 @@ Houd er rekening mee dat lokale gekoppelde schijven optioneel kunnen worden gebr
 
 **Hulp**: gebruik Azure monitor met Azure-activiteiten logboek om waarschuwingen te maken op basis van wijzigingen in productie app service apps en andere essentiële of verwante resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 

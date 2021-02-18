@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: damendo
-ms.openlocfilehash: d465106725e9b936172fb74e1cc265c14942f662
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 27f94c43266fe324016a73e2e6d31e8488457416
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97898093"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593057"
 ---
 # <a name="read-nsg-flow-logs"></a>NSG-stroomlogboeken lezen
 
@@ -189,6 +189,6 @@ Dit scenario is een voor beeld van het lezen van vermeldingen in NSG-stroom logb
 
 Ga naar [elastische stack gebruiken](network-watcher-visualize-nsg-flow-logs-open-source-tools.md), [gebruik Grafana](network-watcher-nsg-grafana.md)en [gebruik Graylog](network-watcher-analyze-nsg-flow-logs-graylog.md) om meer te weten te komen over manieren om NSG-stroom logboeken weer te geven. Een open-source Azure-functie benadering voor het rechtstreeks gebruiken van de blobs en het geven van verschillende log Analytics-consumenten vindt u hier: [Azure Network WATCHER NSG stroom logboeken connector](https://github.com/Microsoft/AzureNetworkWatcherNSGFlowLogsConnector).
 
-U kunt [Azure Traffic Analytics](./traffic-analytics.md) gebruiken om inzicht te krijgen in uw verkeers stromen. Traffic Analytics gebruikt [log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md) om uw verkeers stroom te doorzoeken.
+U kunt [Azure Traffic Analytics](./traffic-analytics.md) gebruiken om inzicht te krijgen in uw verkeers stromen. Traffic Analytics gebruikt [log Analytics](../azure-monitor/logs/log-analytics-tutorial.md) om uw verkeers stroom te doorzoeken.
 
 Ga voor meer informatie over opslag-blobs naar: [Azure functions Blob Storage-bindingen](../azure-functions/functions-bindings-storage-blob.md)

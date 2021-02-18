@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 12/30/2020
+ms.date: 12/29/2020
 ms.author: irenehua
-ms.openlocfilehash: 0c491275f793ce2cd5e830ca6a3014dc45d6d509
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: 1228462dc6437ecce7718c4747d2acb9ae7332cb
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99594532"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593037"
 ---
 # <a name="update-or-delete-a-load-balancer-used-by-virtual-machine-scale-sets"></a>Een load balancer die wordt gebruikt door virtuele-machine schaal sets bijwerken of verwijderen
 
@@ -83,14 +83,15 @@ az network lb inbound-nat-pool update
 
 ## <a name="delete-inbound-nat-rules"></a>Inkomende NAT-regels verwijderen
 
-Afzonderlijke binnenkomende NAT-regels kunnen niet worden verwijderd, maar u kunt wel de volledige set binnenkomende NAT-regels verwijderen.
+Afzonderlijke binnenkomende NAT-regels kunnen niet worden verwijderd, maar u kunt de volledige set binnenkomende NAT-regels verwijderen door de binnenkomende NAT-groep te verwijderen.
 
-Als u wilt verwijderen van de volledige set binnenkomende NAT-regels die door de schaalset worden gebruikt, verwijdert u eerst de NAT-groep uit de schaalset. Hier wordt een volledig voor beeld van het gebruik van CLI weer gegeven:
-    
+Als u de NAT-pool wilt verwijderen, moet u deze eerst verwijderen uit de schaalset. Hier wordt een volledig voor beeld van het gebruik van CLI weer gegeven:
+
 ```azurecli-interactive
     az vmss update
        --resource-group MyResourceGroup
        --name MyVMSS
+       --remove virtualMachineProfile.networkProfile.networkInterfaceConfigurations[0].ipConfigurations[0].loadBalancerInboundNatPools
      az vmss update-instances 
        --instance-ids "*" 
        --resource-group MyResourceGroup

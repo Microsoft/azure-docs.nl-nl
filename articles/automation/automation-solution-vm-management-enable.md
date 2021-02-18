@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: dde2c3e4cf496bb15ca91c72d9a41936af7051c5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 36f885416c5e9cb656d01a65b9c503f8897d2f9f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83743760"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593903"
 ---
 # <a name="enable-startstop-vms-during-off-hours"></a>VM's buiten bedrijfsuren starten/stoppen inschakelen
 
@@ -30,7 +30,7 @@ Voer de stappen in dit onderwerp uit om de VM's buiten bedrijfsuren starten/stop
    ![Inschakelen vanuit Automation-account](./media/automation-solution-vm-management/enable-from-automation-account.png)
 
    > [!NOTE]
-   > U kunt de resource ook maken vanaf elke locatie in de Azure Portal door te klikken op **een resource maken**. Typ op de pagina Marketplace een tref woord zoals **starten** of **starten/stoppen**. Als u begint te typen, wordt de lijst gefilterd op basis van uw invoer. U kunt ook een of meer tref woorden in de volledige naam van de functie typen en vervolgens op **Enter**drukken. Selecteer **VM's buiten bedrijfsuren starten/stoppen** in de zoek resultaten.
+   > U kunt de resource ook maken vanaf elke locatie in de Azure Portal door te klikken op **een resource maken**. Typ op de pagina Marketplace een tref woord zoals **starten** of **starten/stoppen**. Als u begint te typen, wordt de lijst gefilterd op basis van uw invoer. U kunt ook een of meer tref woorden in de volledige naam van de functie typen en vervolgens op **Enter** drukken. Selecteer **VM's buiten bedrijfsuren starten/stoppen** in de zoek resultaten.
 
 5. Controleer op de pagina VM's buiten bedrijfsuren starten/stoppen voor de geselecteerde implementatie de samenvattings informatie en klik vervolgens op **maken**.
 
@@ -50,7 +50,7 @@ Als de resource is gemaakt, wordt de pagina oplossing toevoegen weer gegeven. U 
 
    - Geef een naam op voor de nieuwe Log Analytics-werk ruimte, zoals **ContosoLAWorkspace**.
    - Selecteer een **abonnement** om te koppelen door te selecteren in de vervolg keuzelijst, als de standaard optie is geselecteerd, niet geschikt is.
-   - Voor **resource groep**kunt u een nieuwe resource groep maken of een bestaande selecteren.
+   - Voor **resource groep** kunt u een nieuwe resource groep maken of een bestaande selecteren.
    - Selecteer een **locatie**.
    - Selecteer een **prijs categorie**. Kies de optie **per GB (zelfstandig)** . Azure Monitor-logboeken hebben bijgewerkte [prijzen](https://azure.microsoft.com/pricing/details/log-analytics/) en de laag per GB is de enige optie.
 
@@ -61,11 +61,11 @@ Als de resource is gemaakt, wordt de pagina oplossing toevoegen weer gegeven. U 
 
 ## <a name="add-automation-account"></a>Automation-account toevoegen
 
-Open opnieuw de pagina oplossing toevoegen en selecteer **Automation-account**. U kunt een bestaand Automation-account selecteren dat nog niet aan een Log Analytics-werk ruimte is gekoppeld. Als u een nieuwe Log Analytics-werk ruimte maakt, kunt u een nieuw Automation-account maken om hieraan te koppelen. Selecteer een bestaand Automation-account of klik op **een Automation-account maken**en geef op de pagina Automation-account toevoegen de naam op van het Automation-account in het veld **naam** .
+Open opnieuw de pagina oplossing toevoegen en selecteer **Automation-account**. U kunt een bestaand Automation-account selecteren dat nog niet aan een Log Analytics-werk ruimte is gekoppeld. Als u een nieuwe Log Analytics-werk ruimte maakt, kunt u een nieuw Automation-account maken om hieraan te koppelen. Selecteer een bestaand Automation-account of klik op **een Automation-account maken** en geef op de pagina Automation-account toevoegen de naam op van het Automation-account in het veld **naam** .
 
 Alle andere opties worden automatisch ingevuld op basis van de geselecteerde Log Analytics werk ruimte. U kunt deze opties niet wijzigen. Een uitvoeren als-account voor Azure is de standaard methode voor verificatie voor de runbooks die zijn opgenomen in de functie. 
 
-Nadat u op **OK**hebt geklikt, worden de configuratie opties gevalideerd en wordt het Automation-account gemaakt. U kunt de voortgang bijhouden onder **Meldingen** in het menu.
+Nadat u op **OK** hebt geklikt, worden de configuratie opties gevalideerd en wordt het Automation-account gemaakt. U kunt de voortgang bijhouden onder **Meldingen** in het menu.
 
 ## <a name="define-feature-parameters"></a>Functie parameters definiëren
 
@@ -82,7 +82,7 @@ Nadat u op **OK**hebt geklikt, worden de configuratie opties gevalideerd en word
   
 4. Gebruik het veld **planning** om een planning te selecteren voor het beheer van vm's door de functie. Selecteer een begin datum en-tijd voor uw planning om een terugkerend dagelijks schema te maken, beginnend bij het gekozen tijdstip. Het selecteren van een andere regio is niet beschikbaar. Als u de planning wilt configureren voor uw specifieke tijd zone nadat u de functie hebt geconfigureerd, raadpleegt u [de planningen voor opstarten en afsluiten wijzigen](automation-solution-vm-management-config.md#modify-the-startup-and-shutdown-schedules).
 
-5. Als u e-mail meldingen van een [actie groep](../azure-monitor/platform/action-groups.md)wilt ontvangen, accepteert u de standaard waarde **Ja** in het veld  **e-mail meldingen** en geeft u een geldig e-mail adres op. Als u **Nee** selecteert maar besluit op een later tijdstip dat u e-mail meldingen wilt ontvangen, kunt u de actie groep bijwerken die is gemaakt met geldige e-mail adressen gescheiden door komma's. 
+5. Als u e-mail meldingen van een [actie groep](../azure-monitor/alerts/action-groups.md)wilt ontvangen, accepteert u de standaard waarde **Ja** in het veld  **e-mail meldingen** en geeft u een geldig e-mail adres op. Als u **Nee** selecteert maar besluit op een later tijdstip dat u e-mail meldingen wilt ontvangen, kunt u de actie groep bijwerken die is gemaakt met geldige e-mail adressen gescheiden door komma's. 
 
 6. De volgende waarschuwings regels inschakelen:
 
@@ -92,13 +92,13 @@ Nadat u op **OK**hebt geklikt, worden de configuratie opties gevalideerd en word
 
 ## <a name="create-alerts"></a>Waarschuwingen maken
 
-VM's buiten bedrijfsuren starten/stoppen bevat geen vooraf gedefinieerde set met waarschuwingen. Lees [logboek waarschuwingen maken met Azure monitor](../azure-monitor/platform/alerts-log.md) voor meer informatie over het maken van mislukte waarschuwingen om uw DevOps of operationele processen en procedures te ondersteunen.
+VM's buiten bedrijfsuren starten/stoppen bevat geen vooraf gedefinieerde set met waarschuwingen. Lees [logboek waarschuwingen maken met Azure monitor](../azure-monitor/alerts/alerts-log.md) voor meer informatie over het maken van mislukte waarschuwingen om uw DevOps of operationele processen en procedures te ondersteunen.
 
 ## <a name="deploy-the-feature"></a>De functie implementeren
 
 1. Nadat u de aanvankelijk vereiste instellingen voor de functie hebt geconfigureerd, klikt u op **OK** om de pagina para meters te sluiten.
 
-2. Klik op **Maken**. Nadat alle instellingen zijn gevalideerd, wordt de functie geïmplementeerd voor uw abonnement. Het kan enkele seconden duren voordat dit proces is voltooid en u kunt de voortgang bijhouden onder **meldingen** in het menu.
+2. Klik op **Create**. Nadat alle instellingen zijn gevalideerd, wordt de functie geïmplementeerd voor uw abonnement. Het kan enkele seconden duren voordat dit proces is voltooid en u kunt de voortgang bijhouden onder **meldingen** in het menu.
 
     > [!NOTE]
     > Als u een abonnement voor Azure Cloud Solution Provider (Azure CSP) hebt nadat de implementatie is voltooid, gaat u in uw Automation-account naar **variabelen** onder **gedeelde resources** en stelt u de [External_EnableClassicVMs](automation-solution-vm-management.md#variables) variabele in op **Onwaar**. Zo stopt de oplossing met het zoeken naar klassieke VM-resources.

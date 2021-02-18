@@ -6,23 +6,23 @@ ms.suite: integration
 ms.reviewer: divswa, logicappspm
 ms.topic: article
 ms.date: 01/30/2020
-ms.openlocfilehash: 5baa4d4d968adb25b5520ca91149970f5c5578e9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 765c15897bd5d435503d3bef07e76a93b148971c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86536263"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596862"
 ---
 # <a name="set-up-azure-monitor-logs-and-collect-diagnostics-data-for-b2b-messages-in-azure-logic-apps"></a>Azure Monitor-logboeken instellen en diagnostische gegevens verzamelen voor B2B-berichten in Azure Logic Apps
 
-Nadat u B2B-communicatie tussen handels partners in uw integratie account hebt ingesteld, kunnen deze partners berichten uitwisselen met behulp van protocollen zoals AS2, X12 en EDIFACT. Als u wilt controleren of deze communicatie werkt zoals verwacht, kunt u [Azure monitor logboeken](../azure-monitor/platform/data-platform-logs.md) instellen voor uw integratie account. [Azure monitor](../azure-monitor/overview.md) helpt u bij het bewaken van uw Cloud-en on-premises omgevingen, zodat u hun Beschik baarheid en prestaties gemakkelijker kunt onderhouden. Met Azure Monitor-Logboeken kunt u gegevens over runtime gegevens en-gebeurtenissen vastleggen en opslaan, zoals trigger gebeurtenissen, uitvoer gebeurtenissen en actie gebeurtenissen in een [log Analytics-werk ruimte](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace). Voor berichten verzamelt ook logboek registratie informatie zoals:
+Nadat u B2B-communicatie tussen handels partners in uw integratie account hebt ingesteld, kunnen deze partners berichten uitwisselen met behulp van protocollen zoals AS2, X12 en EDIFACT. Als u wilt controleren of deze communicatie werkt zoals verwacht, kunt u [Azure monitor logboeken](../azure-monitor/logs/data-platform-logs.md) instellen voor uw integratie account. [Azure monitor](../azure-monitor/overview.md) helpt u bij het bewaken van uw Cloud-en on-premises omgevingen, zodat u hun Beschik baarheid en prestaties gemakkelijker kunt onderhouden. Met Azure Monitor-Logboeken kunt u gegevens over runtime gegevens en-gebeurtenissen vastleggen en opslaan, zoals trigger gebeurtenissen, uitvoer gebeurtenissen en actie gebeurtenissen in een [log Analytics-werk ruimte](../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace). Voor berichten verzamelt ook logboek registratie informatie zoals:
 
 * Aantal berichten en status
 * Status van bevestigingen
 * Correlaties tussen berichten en bevestigingen
 * Gedetailleerde fout beschrijvingen voor fouten
 
-Met Azure Monitor kunt u [logboek query's](../azure-monitor/log-query/log-query-overview.md) maken waarmee u deze gegevens kunt vinden en controleren. U kunt [deze diagnostische gegevens ook gebruiken met andere Azure-Services](../logic-apps/monitor-logic-apps-log-analytics.md#extend-data), zoals Azure Storage en Azure Event hubs.
+Met Azure Monitor kunt u [logboek query's](../azure-monitor/logs/log-query-overview.md) maken waarmee u deze gegevens kunt vinden en controleren. U kunt [deze diagnostische gegevens ook gebruiken met andere Azure-Services](../logic-apps/monitor-logic-apps-log-analytics.md#extend-data), zoals Azure Storage en Azure Event hubs.
 
 Als u logboek registratie wilt instellen voor uw integratie account, [installeert u de logische apps B2B oplossing](#install-b2b-solution) in de Azure Portal. Deze oplossing biedt geaggregeerde informatie over evenementen voor B2B-berichten. Stel vervolgens [Azure monitor-logboeken](#set-up-resource-logs)in om logboek registratie in te scha kelen en query's te maken voor deze informatie.
 
@@ -32,7 +32,7 @@ In dit artikel wordt beschreven hoe u Azure Monitor logboek registratie inschake
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een Log Analytics-werkruimte. Als u geen Log Analytics-werk ruimte hebt, leert u [hoe u een log Analytics-werk ruimte maakt](../azure-monitor/learn/quick-create-workspace.md).
+* Een Log Analytics-werkruimte. Als u geen Log Analytics-werk ruimte hebt, leert u [hoe u een log Analytics-werk ruimte maakt](../azure-monitor/logs/quick-create-workspace.md).
 
 * Een logische app die is ingesteld met Azure Monitor logboek registratie en verzendt deze gegevens naar een Log Analytics-werk ruimte. Meer informatie [over het instellen van Azure monitor-logboeken voor uw logische app](../logic-apps/monitor-logic-apps.md).
 
@@ -48,11 +48,11 @@ Voordat Azure Monitor Logboeken de B2B-berichten voor uw logische app kunt volge
 
    ![Selecteer ' Log Analytics werk ruimten '](./media/monitor-b2b-messages-log-analytics/find-select-log-analytics-workspaces.png)
 
-1. Selecteer onder **log Analytics werk ruimten**uw werk ruimte.
+1. Selecteer onder **log Analytics werk ruimten** uw werk ruimte.
 
    ![Uw Log Analytics-werk ruimte selecteren](./media/monitor-b2b-messages-log-analytics/select-log-analytics-workspace.png)
 
-1. Selecteer in het deel venster Overzicht onder **aan de slag met log Analytics**  >  **bewakings oplossingen configureren**de optie **oplossingen weer geven**.
+1. Selecteer in het deel venster Overzicht onder **aan de slag met log Analytics**  >  **bewakings oplossingen configureren** de optie **oplossingen weer geven**.
 
    ![Selecteer in het deel venster Overzicht de optie oplossingen weer geven.](./media/monitor-b2b-messages-log-analytics/log-analytics-workspace.png)
 
@@ -64,7 +64,7 @@ Voordat Azure Monitor Logboeken de B2B-berichten voor uw logische app kunt volge
 
    ![Selecteer ' Logic Apps-beheer ' in Marketplace](./media/monitor-b2b-messages-log-analytics/select-logic-apps-b2b-solution.png)
 
-1. Selecteer **maken**in het deel venster beschrijving van oplossing.
+1. Selecteer **maken** in het deel venster beschrijving van oplossing.
 
    ![Selecteer ' maken ' om de oplossing ' Logische apps B2B ' toe te voegen](./media/monitor-b2b-messages-log-analytics/create-logic-apps-b2b-solution.png)
 
@@ -86,7 +86,7 @@ U kunt Azure Monitor logboek registratie rechtstreeks vanuit uw integratie accou
 
    ![Uw integratie account zoeken en selecteren](./media/monitor-b2b-messages-log-analytics/find-integration-account.png)
 
-1. Klik in het menu van het integratie account onder **bewaking**op **Diagnostische instellingen**. Selecteer **Diagnostische instelling toevoegen**.
+1. Klik in het menu van het integratie account onder **bewaking** op **Diagnostische instellingen**. Selecteer **Diagnostische instellingen toevoegen**.
 
    ![Onder bewaking selecteert u Diagnostische instellingen.](./media/monitor-b2b-messages-log-analytics/monitor-diagnostics-settings.png)
 
@@ -96,11 +96,11 @@ U kunt Azure Monitor logboek registratie rechtstreeks vanuit uw integratie accou
 
    1. Selecteer **verzenden naar log Analytics**.
 
-   1. Selecteer bij **abonnement**het Azure-abonnement dat is gekoppeld aan uw log Analytics-werk ruimte.
+   1. Selecteer bij **abonnement** het Azure-abonnement dat is gekoppeld aan uw log Analytics-werk ruimte.
 
-   1. Voor **log Analytics werk ruimte**selecteert u de werk ruimte die u wilt gebruiken.
+   1. Voor **log Analytics werk ruimte** selecteert u de werk ruimte die u wilt gebruiken.
 
-   1. Selecteer onder **logboek**de categorie **IntegrationAccountTrackingEvents** , waarmee de gebeurtenis categorie wordt opgegeven die u wilt opnemen.
+   1. Selecteer onder **logboek** de categorie **IntegrationAccountTrackingEvents** , waarmee de gebeurtenis categorie wordt opgegeven die u wilt opnemen.
 
    1. Selecteer **Opslaan** als u klaar bent.
 
@@ -127,7 +127,7 @@ Wanneer de logische app wordt uitgevoerd, kunt u de status en gegevens over die 
 
    ![Interval wijzigen](./media/monitor-b2b-messages-log-analytics/change-summary-interval.png)
 
-1. Nadat het dash board bericht status wordt weer gegeven, kunt u meer informatie weer geven voor een specifiek bericht type, waarin gegevens worden weer gegeven op basis van één dag. Selecteer de tegel voor **AS2**, **X12**of **EDIFACT**.
+1. Nadat het dash board bericht status wordt weer gegeven, kunt u meer informatie weer geven voor een specifiek bericht type, waarin gegevens worden weer gegeven op basis van één dag. Selecteer de tegel voor **AS2**, **X12** of **EDIFACT**.
 
    ![Statussen voor berichten weer geven](./media/monitor-b2b-messages-log-analytics/workspace-summary-b2b-messages.png)
 
@@ -163,7 +163,7 @@ Wanneer de logische app wordt uitgevoerd, kunt u de status en gegevens over die 
 
    * To search results with prebuilt queries, select **Favorites**.
 
-   * Learn [how to build queries by adding filters](../logic-apps/create-monitoring-tracking-queries.md). Or learn more about [how to find data with log searches in Azure Monitor logs](../azure-monitor/log-query/log-query-overview.md).
+   * Learn [how to build queries by adding filters](../logic-apps/create-monitoring-tracking-queries.md). Or learn more about [how to find data with log searches in Azure Monitor logs](../azure-monitor/logs/log-query-overview.md).
 
    * To change query in the search box, update the query with the columns and values that you want to use as filters.
 -->
@@ -182,8 +182,8 @@ Hier volgen de beschrijvingen van de eigenschappen voor elk AS2-bericht.
 
 | Eigenschap | Beschrijving |
 |----------|-------------|
-| **Afzender** | De gast partner die is opgegeven in de **instellingen voor ontvangen**of de host-partner die is opgegeven in instellingen voor het **verzenden** van een AS2-overeenkomst |
-| **Ontvangst** | De host-partner die is opgegeven in de instellingen voor **ontvangen**of de gast partner die is opgegeven in **instellingen verzenden** voor een AS2-overeenkomst |
+| **Afzender** | De gast partner die is opgegeven in de **instellingen voor ontvangen** of de host-partner die is opgegeven in instellingen voor het **verzenden** van een AS2-overeenkomst |
+| **Ontvangst** | De host-partner die is opgegeven in de instellingen voor **ontvangen** of de gast partner die is opgegeven in **instellingen verzenden** voor een AS2-overeenkomst |
 | **Logische app** | De logische app waar de AS2 acties worden ingesteld |
 | **Status** | De status van het AS2-bericht <br>Geslaagd = er is een geldig AS2-bericht ontvangen of verzonden. Er is geen MDN ingesteld. <br>Geslaagd = er is een geldig AS2-bericht ontvangen of verzonden. MDN wordt ingesteld en ontvangen, of MDN wordt verzonden. <br>Mislukt = er is een ongeldig AS2-bericht ontvangen. Er is geen MDN ingesteld. <br>In behandeling = er is een geldig AS2-bericht ontvangen of verzonden. MDN is ingesteld en MDN wordt verwacht. |
 | **TERUG** | De status van het MDN-bericht <br>Geaccepteerd = er is een positief MDN ontvangen of verzonden. <br>In behandeling = wachten op ontvangen of verzenden van een MDN. <br>Afgewezen = er is een negatieve MDN ontvangen of verzonden. <br>Niet vereist = MDN is niet ingesteld in de overeenkomst. |
@@ -215,8 +215,8 @@ Hier volgen de beschrijvingen van de eigenschappen voor elk X12-bericht.
 
 | Eigenschap | Beschrijving |
 |----------|-------------|
-| **Afzender** | De gast partner die is opgegeven in de **instellingen voor ontvangen**of de host-partner die is opgegeven in instellingen voor het **verzenden** van een X12-overeenkomst |
-| **Ontvangst** | De host-partner die is opgegeven in de instellingen voor **ontvangen**of de gast partner die is opgegeven in **instellingen verzenden** voor een X12-overeenkomst |
+| **Afzender** | De gast partner die is opgegeven in de **instellingen voor ontvangen** of de host-partner die is opgegeven in instellingen voor het **verzenden** van een X12-overeenkomst |
+| **Ontvangst** | De host-partner die is opgegeven in de instellingen voor **ontvangen** of de gast partner die is opgegeven in **instellingen verzenden** voor een X12-overeenkomst |
 | **Logische app** | De logische app waar de X12 acties worden ingesteld |
 | **Status** | De status van het X12-bericht <br>Geslaagd = er is een geldig X12-bericht ontvangen of verzonden. Er is geen functionele ACK ingesteld. <br>Geslaagd = er is een geldig X12-bericht ontvangen of verzonden. Functionele ACK is ingesteld en ontvangen, of er wordt een functionele ACK verzonden. <br>Mislukt = er is een ongeldig X12-bericht ontvangen of verzonden. <br>In behandeling = er is een geldig X12-bericht ontvangen of verzonden. Functionele ACK is ingesteld en er wordt een functionele ACK verwacht. |
 | **TERUG** | Status van functionele ACK (997) <br>Geaccepteerd = een positieve functionele Ack ontvangen of verzonden. <br>Afgewezen = er is een negatieve functionele Ack ontvangen of verzonden. <br>In behandeling = er is een functionele ACK verwacht, maar deze is niet ontvangen. <br>In behandeling = er is een functionele ACK gegenereerd, maar er kan niet naar de partner worden verzonden. <br>Niet vereist = functionele ACK is niet ingesteld. |
@@ -250,8 +250,8 @@ Hier volgen de beschrijvingen van de eigenschappen voor elk EDIFACT-bericht.
 
 | Eigenschap | Beschrijving |
 |----------|-------------|
-| **Afzender** | De gast partner die is opgegeven in de **instellingen voor ontvangen**of de host-partner die is opgegeven in instellingen voor het **verzenden** van een Edifact-overeenkomst |
-| **Ontvangst** | De host-partner die is opgegeven in de instellingen voor **ontvangen**of de gast partner die is opgegeven in **instellingen verzenden** voor een Edifact-overeenkomst |
+| **Afzender** | De gast partner die is opgegeven in de **instellingen voor ontvangen** of de host-partner die is opgegeven in instellingen voor het **verzenden** van een Edifact-overeenkomst |
+| **Ontvangst** | De host-partner die is opgegeven in de instellingen voor **ontvangen** of de gast partner die is opgegeven in **instellingen verzenden** voor een Edifact-overeenkomst |
 | **Logische app** | De logische app waar de EDIFACT acties worden ingesteld |
 | **Status** | De status van het EDIFACT-bericht <br>Geslaagd = er is een geldig EDIFACT-bericht ontvangen of verzonden. Er is geen functionele ACK ingesteld. <br>Geslaagd = er is een geldig EDIFACT-bericht ontvangen of verzonden. Functionele ACK is ingesteld en ontvangen, of er wordt een functionele ACK verzonden. <br>Mislukt = er is een ongeldig EDIFACT-bericht ontvangen of verzonden <br>In behandeling = er is een geldig EDIFACT-bericht ontvangen of verzonden. Functionele ACK is ingesteld en er wordt een functionele ACK verwacht. |
 | **TERUG** | Status van functionele ACK (CONTRL) <br>Geaccepteerd = een positieve functionele Ack ontvangen of verzonden. <br>Afgewezen = er is een negatieve functionele Ack ontvangen of verzonden. <br>In behandeling = er is een functionele ACK verwacht, maar deze is niet ontvangen. <br>In behandeling = er is een functionele ACK gegenereerd, maar er kan niet naar de partner worden verzonden. <br>Niet vereist = functionele ACK is niet ingesteld. |

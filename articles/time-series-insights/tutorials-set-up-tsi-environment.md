@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: tutorial
 ms.date: 01/19/2021
 ms.custom: seodec18
-ms.openlocfilehash: 912dbf48254a8d68b9bf76db04734fd791a3edb9
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 56f4cb49f42936e7b9f64c2546b94c99d16bac79
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98677051"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101092100"
 ---
 # <a name="tutorial-set-up-an-azure-time-series-insights-gen2-environment"></a>Zelfstudie: Een Azure Time Series Insights Gen2-omgeving instellen
 
@@ -38,7 +38,7 @@ Neem een [gratis Azure-abonnement](https://azure.microsoft.com/free/) als u nog 
 
 ## <a name="prerequisites"></a>Vereisten
 
-* U moet minimaal de rol **Inzender** hebben voor het Azure-abonnement. Lees [Azure-roltoewijzingen toevoegen of verwijderen met behulp van Azure Portal](../role-based-access-control/role-assignments-portal.md) voor meer informatie.
+* U moet minimaal de rol **Inzender** hebben voor het Azure-abonnement. Lees voor meer informatie [Azure-rollen toewijzen met behulp van de Azure Portal](../role-based-access-control/role-assignments-portal.md).
 
 ## <a name="create-a-device-simulation"></a>Een apparaatsimulatie maken
 
@@ -91,8 +91,8 @@ In deze sectie wordt beschreven hoe u een Azure Time Series Insights Gen2-omgevi
     | **Resourcegroep** | Selecteer een bestaande resourcegroep voor de Azure Time Series Insights Gen2-omgevingsresource of maak een nieuwe. Een resourcegroep is een container voor Azure-resources. Het is een best practice om dezelfde resourcegroep te gebruiken als voor de andere IoT-resources die door de apparaatsimulator worden gemaakt. |
     | **Locatie** | Selecteer een datacentrumregio voor uw Azure Time Series Insights Gen2-omgeving. Om extra latentie te voorkomen, kunt u het beste uw Azure Time Series Insights Gen2-omgeving maken in dezelfde regio als uw IoT-hub die door de apparaatsimulator is gemaakt. |
     | **Laag** |  Selecteer **Gen2(L1)** . Dit is de SKU voor het Azure Time Series Insights Gen2-product. |
-    | **Eigenschapsnaam van tijdreeks-id** | Voer een naam in van een eigenschap die waarden bevat waarmee uw tijdreeks-exemplaren uniek worden geïdentificeerd. De waarde die u invoert in het vak **Eigenschapsnaam** als tijdsreeks-id kan later niet worden gewijzigd. Voor deze zelfstudie gebruiken we **_iothub-connection-device-id_* _. Lees [Best practices voor het kiezen van een tijdreeks-id](./how-to-select-tsid.md) voor meer informatie over de Time Series-id, waaronder een samengestelde tijdsreeks-id. |
-    | _ *Naam van opslagaccount** | Voer een wereldwijd unieke naam voor een nieuw opslagaccount in.|
+    | **Eigenschapsnaam van tijdreeks-id** | Voer een naam in van een eigenschap die waarden bevat waarmee uw tijdreeks-exemplaren uniek worden geïdentificeerd. De waarde die u invoert in het vak **Eigenschapsnaam** als tijdsreeks-id kan later niet worden gewijzigd. Voer voor deze zelf studie **_iothub-Connection-apparaat-id_** in. Lees [Aanbevolen procedures voor het kiezen van een time series-id voor](./how-to-select-tsid.md)meer informatie over de tijd reeks-id, inclusief samengestelde tijd reeks-id. |
+    | **Naam van opslagaccount** | Voer een wereldwijd unieke naam voor een nieuw opslagaccount in.|
     | **Opslagaccounttype** | Selecteer de opslagtype voor een nieuw opslagaccount. We raden StorageV2 aan|
     | **Replicatie van opslagaccount** | Selecteer de opslagtype voor een nieuw opslagaccount. Op basis van uw locatieselectie kunt u kiezen uit LRS, GRS en ZRS. Voor deze zelfstudie kunt u LRS selecteren|
     | **Hiërarchische naamruimte** |Deze optie kan worden geselecteerd wanneer u het opslagtype selecteert dat StorageV2 moet worden. Dit is standaard uitgeschakeld. Voor deze zelfstudie kunt u de standaardinstelling *uitgeschakeld* laten|

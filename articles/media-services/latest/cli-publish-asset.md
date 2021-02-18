@@ -15,12 +15,12 @@ ms.workload: na
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: c283c39f1ea90275c42de1481a9cb9006f2b2c5f
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 4ba5efe66e033966705072bfdf96422731fab082
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897085"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101091861"
 ---
 # <a name="cli-example-publish-an-asset"></a>CLI-voorbeeld: Een asset publiceren
 
@@ -31,8 +31,6 @@ In het Azure CLI-script in dit artikel ziet u hoe u een streaming-locator kunt m
 ## <a name="prerequisites"></a>Vereisten 
 
 [Een Azure Media Services-account maken](./create-account-howto.md).
-
-[!INCLUDE [media-services-cli-instructions.md](../../../includes/media-services-cli-instructions.md)]
 
 ## <a name="example-script"></a>Voorbeeldscript
 

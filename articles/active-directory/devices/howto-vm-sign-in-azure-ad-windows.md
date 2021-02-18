@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e22e5fc4bc7211d905dbe8775b0ef6e893bd2cc
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 66958e275a6dee13244f0f283b1ee1dbb5d40470
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98760998"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101093456"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Aanmelden bij een virtuele Windows-machine in azure met Azure Active Directory authenticatie (preview-versie)
 
@@ -194,9 +194,9 @@ az role assignment create \
 
 Raadpleeg de volgende artikelen voor meer informatie over het gebruik van Azure RBAC voor het beheren van de toegang tot uw Azure-abonnements bronnen:
 
-- [Azure-roltoewijzingen toevoegen of verwijderen met behulp van Azure CLI](../../role-based-access-control/role-assignments-cli.md)
-- [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure-portal](../../role-based-access-control/role-assignments-portal.md)
-- [Voeg Azure-roltoewijzingen toe of verwijder deze met behulp van Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
+- [Azure-rollen toewijzen met behulp van Azure CLI](../../role-based-access-control/role-assignments-cli.md)
+- [Azure-rollen toewijzen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md)
+- [Wijs Azure-rollen toe met behulp van Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
 
 ## <a name="using-conditional-access"></a>Voorwaardelijke toegang gebruiken
 

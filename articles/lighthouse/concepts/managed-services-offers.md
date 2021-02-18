@@ -1,14 +1,14 @@
 ---
 title: Aanbiedingen voor beheerde service in Azure Marketplace
 description: Met managed service kunt u aanbiedingen van resource beheer verkopen aan klanten in azure Marketplace.
-ms.date: 02/10/2021
+ms.date: 02/17/2021
 ms.topic: conceptual
-ms.openlocfilehash: 7f3a12f34b4cedcb12ad2786fcb687044c30c211
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: e66a87751e0375804031e777a40c5fc1d0e8a7e2
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100375541"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101093004"
 ---
 # <a name="managed-service-offers-in-azure-marketplace"></a>Aanbiedingen voor beheerde service in Azure Marketplace
 
@@ -20,9 +20,12 @@ Met beheerde services kunt u het proces van het onboarding van klanten naar Azur
 
 Daarna kunnen gebruikers in uw organisatie aan deze resources werken vanuit uw Tenant beheren via [Azure delegated resource management](azure-delegated-resource-management.md), volgens de toegang die u hebt gedefinieerd bij het maken van de aanbieding. Dit wordt gedaan via een manifest waarmee de gebruikers, groepen en service-principals van Azure Active Directory (Azure AD) worden opgegeven die toegang hebben tot de resources van de klant, samen met [rollen](tenants-users-roles.md) die hun toegangs niveau bepalen.
 
+> [!NOTE]
+> Aanbiedingen van beheerde services zijn mogelijk niet beschikbaar in Azure Government en andere nationale Clouds.
+
 ## <a name="public-and-private-offers"></a>Open bare en persoonlijke aanbiedingen
 
-Elk managed services-aanbod omvat een of meer abonnementen. Plannen kunnen privé of openbaar zijn.
+Elk beheerd service aanbod omvat een of meer abonnementen. Plannen kunnen privé of openbaar zijn.
 
 Als u uw aanbieding wilt beperken tot specifieke klanten, kunt u een privé-abonnement publiceren. Wanneer u dit doet, kan het abonnement alleen worden aangeschaft voor de specifieke abonnements-Id's die u opgeeft. Zie voor meer informatie [persoonlijke aanbiedingen](../../marketplace/private-offers.md).
 
@@ -38,9 +41,9 @@ Indien nodig kunt u zowel open bare als privé-abonnementen in dezelfde aanbiedi
 
 ## <a name="publish-managed-service-offers"></a>Aanbiedingen voor beheerde services publiceren
 
-Zie [een Managed Services-aanbieding naar Azure Marketplace publiceren](../how-to/publish-managed-services-offers.md)voor meer informatie over het publiceren van een managed services-aanbod.
+Zie [een beheerde service aanbieding naar Azure Marketplace publiceren](../how-to/publish-managed-services-offers.md)voor meer informatie over het publiceren van een beheerde service aanbieding.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over [Azure delegated resource management](azure-delegated-resource-management.md) en [Cross-Tenant beheer ervaring](cross-tenant-management-experience.md).
-- [Publiceer Managed Services aanbiedingen](../how-to/publish-managed-services-offers.md) voor Azure Marketplace.
+- [Publiceer managed service aanbiedingen](../how-to/publish-managed-services-offers.md) voor Azure Marketplace.

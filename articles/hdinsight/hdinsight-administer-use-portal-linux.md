@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 04/24/2020
-ms.openlocfilehash: 5d308bfbe605e5ec3bed3bf5d6506ccafc53836e
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: e21361b6d491f53f41754831d2bdf896ef2719db
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98942821"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101091438"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Apache Hadoop clusters in HDInsight beheren door gebruik te maken van de Azure Portal
 
@@ -54,7 +54,7 @@ Selecteer de naam van uw cluster op de pagina [**HDInsight-clusters**](#showClus
     |---|---|
     |Overzicht|Geeft algemene informatie voor uw cluster.|
     |Activiteitenlogboek|Activiteiten logboeken weer geven en opvragen.|
-    |Toegangsbeheer (IAM)|Roltoewijzingen gebruiken.  Zie [roltoewijzingen gebruiken voor het beheren van toegang tot de resources van uw Azure-abonnement](../role-based-access-control/role-assignments-portal.md).|
+    |Toegangsbeheer (IAM)|Roltoewijzingen gebruiken.  Zie [Azure-rollen toewijzen om de toegang tot uw Azure-abonnements resources te beheren](../role-based-access-control/role-assignments-portal.md).|
     |Tags|Hiermee stelt u sleutel/waarde-paren in om een aangepaste taxonomie van uw Cloud Services te definiëren. U kunt bijvoorbeeld een sleutel met de naam **project** maken en vervolgens een algemene waarde gebruiken voor alle services die aan een specifiek project zijn gekoppeld.|
     |Problemen vaststellen en oplossen|Informatie over probleem oplossing weer geven.|
     |Snelstart|Geeft informatie weer waarmee u aan de slag kunt gaan met HDInsight.|
@@ -225,7 +225,7 @@ Het wacht woord wordt gewijzigd op alle knoop punten in het cluster.
    | Veld | Waarde |
    | --- | --- |
    | Scripttype | Selecteer **-aangepast** in de vervolg keuzelijst.|
-   | Naam |"SSH-referenties wijzigen" |
+   | Name |"SSH-referenties wijzigen" |
    | Bash-script-URI |De URI naar het changecredentials.sh-bestand |
    | Knooppunt type (n): (Head, worker, Nimbus, supervisor of Zookeeper.) |✓ voor alle weer gegeven knooppunt typen |
    | Parameters |Voer de SSH-gebruikers naam en vervolgens het nieuwe wacht woord in. Er moet één spatie tussen de gebruikers naam en het wacht woord zijn. |

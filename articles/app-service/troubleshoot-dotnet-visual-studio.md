@@ -6,12 +6,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/29/2016
 ms.custom: devx-track-csharp, seodec18
-ms.openlocfilehash: a177b22f0f91d82013956bff36eaa57a084c27d1
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 65eb4e8fefb74219c927fe507baceca7c55462be
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576579"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101095714"
 ---
 # <a name="troubleshoot-an-app-in-azure-app-service-using-visual-studio"></a>Problemen met een app in Azure App Service oplossen met Visual Studio
 ## <a name="overview"></a>Overzicht
@@ -49,7 +49,7 @@ Visual Studio biedt toegang tot een subset van de app-beheer functies en configu
    >
    >
 
-    Zie [accounts, abonnementen en beheerders rollen beheren](../role-based-access-control/role-assignments-portal.md)voor meer informatie over het maken van verbinding met Azure-resources vanuit Visual Studio.
+    Zie [Azure-rollen toewijzen met behulp van de Azure Portal](../role-based-access-control/role-assignments-portal.md)voor meer informatie over het maken van verbinding met Azure-resources vanuit Visual Studio.
 2. In **Server Explorer** vouwt u **Azure** uit en vouwt u **app service** uit.
 3. Vouw de resource groep uit met de app die u hebt gemaakt in [een ASP.net-app maken in azure app service](quickstart-dotnet-framework.md), klik met de rechter muisknop op het app-knoop punt en klik op **instellingen weer geven**.
 

@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: article
 ms.date: 11/13/2020
 tags: connectors
-ms.openlocfilehash: 790879894c3b268fcd55aafc96507319b29fe1e5
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 87a9c8a38ede7008d658068329c8c72e7e3c4117
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99055073"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101095463"
 ---
 # <a name="manage-email-contacts-and-calendars-in-office-365-outlook-by-using-azure-logic-apps"></a>E-mail, contactpersonen en agenda's beheren in Office 365 Outlook met behulp van Azure Logic Apps
 
@@ -98,7 +98,7 @@ Als u verbinding met Outlook probeert te maken met behulp van een ander account 
 
   1. Selecteer **toegangs beheer (IAM)** in het menu van de resource groep van uw logische app. Stel het andere account in met de rol **Inzender** . 
   
-     Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure-portal](../role-based-access-control/role-assignments-portal.md) voor meer informatie.
+     Zie [Azure-rollen toewijzen met behulp van de Azure Portal](../role-based-access-control/role-assignments-portal.md)voor meer informatie.
 
   1. Nadat u deze rol hebt ingesteld, meldt u zich aan bij de Azure Portal met het account dat nu Inzender machtigingen heeft. U kunt dit account nu gebruiken om de verbinding met Outlook te maken.
 

@@ -1,14 +1,14 @@
 ---
 title: Voor beeld van Azure Security Bench Mark Foundation blauw punt implementeren
 description: Implementeer stappen voor het voor beeld van de Azure Security Bench Mark Foundation-blauw druk, inclusief details van de artefact parameter.
-ms.date: 02/12/2020
+ms.date: 02/17/2020
 ms.topic: sample
-ms.openlocfilehash: 84c157d696dc8ababe1f252136672ea600e604af
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: aaaabc8767c6d80548a26d64d8557587180fb6f3
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100633951"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101095288"
 ---
 # <a name="deploy-the-azure-security-benchmark-foundation-blueprint-sample"></a>Het voor beeld van Azure Security Bench Mark Foundation blauw punt implementeren
 
@@ -92,6 +92,9 @@ Zodra de kopie van het blauwdrukvoorbeeld is **Gepubliceerd**, kan het worden to
      - **Network Watcher naam**: naam voor de Network Watcher resource
      - **Network Watcher naam van resource groep**: naam voor de Network Watcher resource groep
      - **DDoS-beveiliging inschakelen**: Voer ' waar ' of ' onwaar ' in om op te geven of DDoS Protection is ingeschakeld in het virtuele netwerk
+     
+    > [!NOTE] 
+    > Als Network Watcher al is ingeschakeld, is het raadzaam om de bestaande Network Watcher resource groep te gebruiken. U moet ook de locatie voor de bestaande Network Watcher resource groep opgeven voor de artefact parameter **Network Watcher locatie van de resource groep**.
 
    - Artefactparameters
 
@@ -132,8 +135,14 @@ De volgende tabel bevat een lijst met de para meters van de blauw druk:
 |Virtual Network spoke-sjabloon voor Azure|Resource Manager-sjabloon|Adres namen van subnet (optioneel)|Matrix van namen van subnetten die moeten worden geïmplementeerd in het spoke-virtuele netwerk; bijvoorbeeld ' subnet1 ', ' subnet2 '|
 |Virtual Network spoke-sjabloon voor Azure|Resource Manager-sjabloon|Adres voorvoegsels (optioneel)|Matrix met IP-adres voorvoegsels voor optionele subnetten voor het spoke-virtuele netwerk; bijvoorbeeld "10.0.7.0/24", "10.0.8.0/24"|
 |Virtual Network spoke-sjabloon voor Azure|Resource Manager-sjabloon|Spoke implementeren|Voer ' waar ' of ' onwaar ' in om op te geven of met de toewijzing de spoke-onderdelen van de architectuur worden geïmplementeerd|
-|Azure Network Watcher-sjabloon|Resource Manager-sjabloon|Network Watcher locatie|Als Network Watcher al is ingeschakeld, **moet** deze parameter waarde overeenkomen met de locatie van de bestaande Network Watcher resource groep.|
+|Azure Network Watcher-sjabloon|Resource Manager-sjabloon|Network Watcher locatie|Locatie voor de Network Watcher resource|
 |Azure Network Watcher-sjabloon|Resource Manager-sjabloon|Locatie van de resource groep Network Watcher|Als Network Watcher al is ingeschakeld, **moet** deze parameter waarde overeenkomen met de naam van de bestaande Network Watcher resource groep.|
+
+## <a name="troubleshooting"></a>Problemen oplossen
+
+Als de fout zich voordoet `The resource group 'NetworkWatcherRG' failed to deploy due to the
+following error: Invalid resource group location '{location}'. The Resource group already exists in
+location '{location}'.` , controleert u of de para meter blauw drukken **Network Watcher naam** van de resource groep de naam van de bestaande Network Watcher resource groep opgeeft en of de locatie van de artefact parameter **Network Watcher resource groep** de locatie van de bestaande Network Watcher resource groep aangeeft.
 
 ## <a name="next-steps"></a>Volgende stappen
 

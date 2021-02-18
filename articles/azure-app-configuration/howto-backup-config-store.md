@@ -10,12 +10,12 @@ ms.custom: devx-track-dotnet, devx-track-azurecli
 ms.topic: how-to
 ms.date: 04/27/2020
 ms.author: avgupta
-ms.openlocfilehash: 04edf2eeb231ff1444c732840def2b78b1373e79
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 39c50f539c04a6c49316f4541c759859be861f9d
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565922"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101095520"
 ---
 # <a name="back-up-app-configuration-stores-automatically"></a>Automatisch back-ups maken van app-configuratie archieven
 
@@ -41,7 +41,7 @@ In deze zelf studie maakt u een secundair archief in de `centralus` regio en all
 
 ## <a name="prerequisites"></a>Vereisten 
 
-- [Visual Studio 2019](https://visualstudio.microsoft.com/vs) met de workload Azure Development.
+- [Visual Studio 2019](https://visualstudio.microsoft.com/vs) met de werk belasting Azure Development.
 
 - [.NET Core SDK](https://dotnet.microsoft.com/download).
 
@@ -177,7 +177,7 @@ az functionapp identity assign --name $functionAppName --resource-group $resourc
 ```
 
 > [!NOTE]
-> Voor het uitvoeren van de vereiste functie voor het maken van resources en het beheer van rollen moet uw account `Owner` machtigingen hebben op het juiste bereik (uw abonnement of resource groep). Als u hulp nodig hebt bij roltoewijzing, leert u [hoe u Azure-roltoewijzingen toevoegt of verwijdert met behulp van de Azure Portal](../role-based-access-control/role-assignments-portal.md).
+> Voor het uitvoeren van de vereiste functie voor het maken van resources en het beheer van rollen moet uw account `Owner` machtigingen hebben op het juiste bereik (uw abonnement of resource groep). Als u hulp nodig hebt bij roltoewijzing, leert u [hoe u Azure-functies toewijst met behulp van de Azure Portal](../role-based-access-control/role-assignments-portal.md).
 
 Gebruik de volgende opdrachten of de [Azure Portal](./howto-integrate-azure-managed-service-identity.md#grant-access-to-app-configuration) om de beheerde identiteit van uw functie-app toegang te verlenen tot uw app-configuratie archieven. Gebruik deze rollen:
 - Wijs de `App Configuration Data Reader` rol toe aan het configuratie archief van de primaire app.
@@ -216,7 +216,7 @@ Als u wilt testen of alles werkt, kunt u een sleutel waarde uit het primaire arc
 az appconfig kv set --name $primaryAppConfigName --key Foo --value Bar --yes
 ```
 
-U hebt de gebeurtenis geactiveerd. Na enkele ogen blikken wordt de gebeurtenis melding door Event Grid naar uw wachtrij verzonden. *Nadat de volgende geplande uitvoering van de functie is uitgevoerd* , bekijkt u de configuratie-instellingen in het secundaire archief om te zien of deze de bijgewerkte sleutel waarde uit het primaire archief bevat.
+U hebt de gebeurtenis geactiveerd. Na enkele ogen blikken wordt de gebeurtenis melding door Event Grid naar uw wachtrij verzonden. *Nadat de volgende geplande uitvoering van de functie is uitgevoerd*, bekijkt u de configuratie-instellingen in het secundaire archief om te zien of deze de bijgewerkte sleutel waarde uit het primaire archief bevat.
 
 > [!NOTE]
 > U kunt [de functie hand matig activeren](../azure-functions/functions-manually-run-non-http.md) tijdens het testen en oplossen van problemen zonder te wachten op de geplande timer trigger.

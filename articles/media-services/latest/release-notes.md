@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 10/21/2020
 ms.author: inhenkel
-ms.openlocfilehash: 2254762ec2cc9d99946afaef12f452fdfbfea9e2
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 14bc7b6f45b04f230252e85cd10b7246529cb751
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98898236"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101095160"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Release opmerkingen bij Azure Media Services v3
 
@@ -441,5 +441,4 @@ Ga naar het artikel van de [Azure Media Services-community](media-services-commu
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Overzicht](media-services-overview.md)
-- [Media Services v3-documentatie-updates](docs-release-notes.md)
 - [Release opmerkingen bij Media Services v2](../previous/media-services-release-notes.md)

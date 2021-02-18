@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 509eae7acf0dd9f6b8ae80befb7423422f778710
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 0211388f3b638080c79a58330ba1fff1989def7d
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100518824"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101095862"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Machtigingen voor beheerdersrollen in Azure Active Directory
 
@@ -2176,6 +2176,6 @@ Lezer van gebruiks samenvattings rapporten | &nbsp; | :heavy_check_mark: | :heav
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [Azure-roltoewijzingen toevoegen of verwijderen (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md) voor meer informatie over het toewijzen van een gebruiker als beheerder van een Azure-abonnement.
+* Zie [een gebruiker toewijzen als beheerder van een Azure-abonnement](../../role-based-access-control/role-assignments-portal-subscription-admin.md) voor meer informatie over het toewijzen van een gebruiker als beheerder van een Azure-account.
 * Zie [inzicht in de verschillende rollen](../../role-based-access-control/rbac-and-directory-admin-roles.md) voor meer informatie over het beheren van toegang tot resources in Microsoft Azure.
 * Zie [een Azure-abonnement koppelen aan of toevoegen aan uw Azure Active Directory Tenant](../fundamentals/active-directory-how-subscriptions-associated-directory.md) voor meer informatie over de relatie tussen abonnementen en een Azure AD-Tenant, of voor instructies om een abonnement te koppelen of toe te voegen.

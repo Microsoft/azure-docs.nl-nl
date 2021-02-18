@@ -4,12 +4,12 @@ description: Meer informatie over het beveiligen van het gehele Azure Policy op 
 services: container-service
 ms.topic: article
 ms.date: 09/22/2020
-ms.openlocfilehash: 8e437095b3d527647a453ba89adaa2ab62672177
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 34f2bfe346d7163a254e2ccecd1d7ef63ddb4194
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348522"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101092630"
 ---
 # <a name="secure-pods-with-azure-policy"></a>Pods beveiligen met Azure Policy
 
@@ -60,7 +60,7 @@ De volgende algemene beperkingen zijn van toepassing op de Azure Policy-invoeg t
 De volgende beperkingen gelden alleen voor de Azure Policy-invoeg toepassing voor AKS:
 
 - [AKS pod-beveiligings beleid (preview)](use-pod-security-policies.md) en de Azure Policy-invoeg toepassing voor AKS kunnen niet beide worden ingeschakeld. 
-- Naam ruimten automatisch uitgesloten door Azure Policy invoeg toepassing voor evaluatie: _uitvoeren-System_ , _gate keeper-System_ en _AKS-Peri Scope_.
+- Naam ruimten automatisch uitgesloten door Azure Policy invoeg toepassing voor evaluatie: _uitvoeren-System_, _gate keeper-System_ en _AKS-Peri Scope_. Als u Calico-netwerk beleid gebruikt met Kubernetes-versie 1,20 en hoger, worden er automatisch twee naam ruimten uitgesloten, die _Calico System_ en _tigera-operator_ zijn.
 
 ### <a name="recommendations"></a>Aanbevelingen
 
@@ -107,8 +107,8 @@ Beide ingebouwde initiatieven zijn gebaseerd op definities die worden gebruikt i
 |Gebruik van het host-bestands systeem beperken|[Open bare Cloud](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F098fc59e-46c7-4d99-9b16-64990e543d75)| Ja | Ja
 |Linux-mogelijkheden beperken tot de [standaardset](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities)|[Open bare Cloud](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc26596ff-4d70-4e6a-9a30-c2506bd2f80c) | Ja | Ja
 |Gebruik van gedefinieerde volume typen beperken|[Open bare Cloud](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F16697877-1118-4fb1-9b65-9898ec2509ec)| - | Ja, toegestane volume typen zijn `configMap` , `emptyDir` , `projected` , `downwardAPI` , `persistentVolumeClaim`|
-|Escalatie van bevoegdheden naar hoofdmap|[Open bare Cloud](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1c6e92c9-99f0-4e55-9cf2-0c234dc48f99) | - | Ja |
-|De gebruikers-en groeps-Id's van de container beperken|[Open bare Cloud](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff06ddb64-5fa3-4b77-b166-acb36f7f6042) | - | Ja|
+|Escalatie van bevoegdheden naar hoofdmap|[Open bare Cloud](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1c6e92c9-99f0-4e55-9cf2-0c234dc48f99) | - | Yes |
+|De gebruikers-en groeps-Id's van de container beperken|[Open bare Cloud](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff06ddb64-5fa3-4b77-b166-acb36f7f6042) | - | Yes|
 |Het toewijzen van een FSGroup die eigenaar is van de volumes van de pod beperken|[Open bare Cloud](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff06ddb64-5fa3-4b77-b166-acb36f7f6042) | - | Ja, toegestane regels zijn `runAsUser: mustRunAsNonRoot` , `supplementalGroup: mustRunAs 1:65536` , `fsGroup: mustRunAs 1:65535` , `runAsGroup: mustRunAs 1:65535` .  |
 |Vereist seccomp-profiel|[Open bare Cloud](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F975ce327-682c-4f2e-aa46-b9598289b86c) | - | Ja, allowedProfiles zijn * `docker/default` of `runtime/default` |
 
@@ -151,9 +151,9 @@ If the built-in initiatives to address pod security do not match your requiremen
 
 AKS vereist dat systeem peul wordt uitgevoerd op een cluster om essentiële services te bieden, zoals DNS-omzetting. Beleids regels die de functionaliteit van de pod beperken, kunnen invloed hebben op de mogelijkheid van systeem pod stabiliteit. Als gevolg hiervan worden de volgende naam ruimten **uitgesloten van beleids evaluatie tijdens toegangs aanvragen tijdens het maken, bijwerken en beleid controleren**. Dit zorgt ervoor dat nieuwe implementaties van deze naam ruimten worden uitgesloten van Azure-beleid.
 
-1. uitvoeren-systeem
+1. kube-system
 1. gate keeper-System
-1. Azure-boog
+1. azure-arc
 1. AKS-Peri Scope
 
 Aanvullende aangepaste naam ruimten kunnen worden uitgesloten van de evaluatie tijdens het maken, bijwerken en controleren. Deze uitsluitingen moeten worden gebruikt als u een speciaal peul hebt dat wordt uitgevoerd in een goedgekeurde naam ruimte en u wilt voor komen dat controle schendingen worden geactiveerd.
@@ -252,7 +252,7 @@ Maak de Pod met de opdracht [kubectl apply][kubectl-apply] en geef de naam van u
 kubectl apply -f nginx-unprivileged.yaml
 ```
 
-De Pod is gepland. Wanneer u de status van de pod controleert met behulp van de [kubectl Get peul][kubectl-get] opdracht, wordt de pod *uitgevoerd* :
+De Pod is gepland. Wanneer u de status van de pod controleert met behulp van de [kubectl Get peul][kubectl-get] opdracht, wordt de pod *uitgevoerd*:
 
 ```console
 $ kubectl get pods

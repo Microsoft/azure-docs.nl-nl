@@ -5,12 +5,12 @@ ms.assetid: bb51e565-e462-4c60-929a-2ff90121f41d
 ms.topic: article
 ms.date: 01/06/2016
 ms.custom: seodec18
-ms.openlocfilehash: 6c45d2da8658740b5e5e7e3dceb7478ea28d712c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8742b590af89954cb8480e5282827bcd5228673b
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88962023"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101095836"
 ---
 # <a name="provision-and-deploy-microservices-predictably-in-azure"></a>Micro services zoals verwacht inrichten en implementeren in azure
 Deze zelf studie laat zien hoe u een toepassing kunt inrichten en implementeren die is samengesteld uit micro [Services](https://en.wikipedia.org/wiki/Microservices) in [Azure app service](https://azure.microsoft.com/services/app-service/) als één eenheid en op een voorspel bare manier met behulp van JSON-resource groeps sjablonen en Power shell-scripts. 
@@ -45,14 +45,14 @@ Zie [Azure PowerShell gebruiken met Azure Resource Manager](../azure-resource-ma
 Met dit [Preview-programma](https://resources.azure.com) kunt u de JSON-definities van alle resource groepen in uw abonnement en de afzonderlijke resources verkennen. In het hulp programma kunt u de JSON-definities van een resource bewerken, een volledige hiërarchie van resources verwijderen en nieuwe resources maken.  De informatie die beschikbaar is in dit hulp programma is zeer nuttig voor het ontwerpen van sjablonen, omdat u kunt zien welke eigenschappen u moet instellen voor een bepaald type resource, de juiste waarden, enzovoort. U kunt zelfs uw resource groep in [Azure Portal](https://portal.azure.com/)maken en vervolgens de bijbehorende JSON-definities in het Explorer-hulp programma inspecteren om u te helpen bij het Templatize van de resource groep.
 
 ### <a name="deploy-to-azure-button"></a>De knop Implementeren in Azure
-Als u GitHub gebruikt voor broncode beheer, kunt u een [knop voor implementeren naar Azure](https://azure.microsoft.com/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/) in uw Leesmij-bestand plaatsen. MD, waarmee de gebruikers interface voor het maken van een inschakel functie kan worden geïmplementeerd in Azure. Hoewel u dit kunt doen voor elke eenvoudige app, kunt u deze uitbreiden om het implementeren van een hele resource groep mogelijk te maken door een azuredeploy.jsin te voegen in de hoofdmap van de opslag plaats. Dit JSON-bestand, dat de sjabloon resource groep bevat, wordt gebruikt door de knop implementeren naar Azure om de resource groep te maken. Zie voor een voor beeld het [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) -voor beeld, dat u in deze zelf studie gaat gebruiken.
+Als u GitHub gebruikt voor broncode beheer, kunt u een [knop voor implementeren naar Azure](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-to-azure-button) in uw Leesmij-bestand plaatsen. MD, waarmee de gebruikers interface voor het maken van een inschakel functie kan worden geïmplementeerd in Azure. Hoewel u dit kunt doen voor elke eenvoudige app, kunt u deze uitbreiden om het implementeren van een hele resource groep mogelijk te maken door een azuredeploy.jsin te voegen in de hoofdmap van de opslag plaats. Dit JSON-bestand, dat de sjabloon resource groep bevat, wordt gebruikt door de knop implementeren naar Azure om de resource groep te maken. Zie voor een voor beeld het [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) -voor beeld, dat u in deze zelf studie gaat gebruiken.
 
 ## <a name="get-the-sample-resource-group-template"></a>De voorbeeld sjabloon voor de resource groep ophalen
 Nu gaan we hier meteen aan de slag.
 
 1. Navigeer naar het [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) app service-voor beeld.
 2. Klik in readme.md op **implementeren naar Azure**.
-3. U wordt naar de site [Deploy-to-Azure](https://deploy.azure.com) geleid en u hebt gevraagd om implementatie parameters in te voeren. U ziet dat de meeste velden zijn gevuld met de naam van de opslag plaats en enkele wille keurige teken reeksen. U kunt alle velden wijzigen als u wilt, maar de enige dingen die u moet invoeren zijn de SQL Server beheerders aanmelding en het wacht woord. Klik vervolgens op **volgende**.
+3. U wordt naar de site [Deploy-to-Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure-appservice-samples%2FToDoApp%2Fmaster%2Fazuredeploy.json) geleid en u hebt gevraagd om implementatie parameters in te voeren. U ziet dat de meeste velden zijn gevuld met de naam van de opslag plaats en enkele wille keurige teken reeksen. U kunt alle velden wijzigen als u wilt, maar de enige dingen die u moet invoeren zijn de SQL Server beheerders aanmelding en het wacht woord. Klik vervolgens op **volgende**.
    
    ![Geeft de para meters voor invoer implementatie op de site Deploy-to-Azure.](./media/app-service-deploy-complex-application-predictably/gettemplate-1-deploybuttonui.png)
 4. Klik vervolgens op **implementeren** om het implementatie proces te starten. Zodra het proces is uitgevoerd om te worden voltooid, klikt u op de http://todoapp koppeling *XXXX*. azurewebsites.net om door de geïmplementeerde toepassing te bladeren. 
@@ -183,10 +183,10 @@ Opnieuw, de geneste resources moeten een hiërarchie hebben die lijkt op die in 
 De knop **implementeren in azure** is geweldig, maar u kunt de sjabloon voor de resource groep alleen in azuredeploy.jsalleen implementeren als u al hebt gepusht azuredeploy.jsop github. De Azure .NET SDK biedt ook de hulp middelen waarmee u elk JSON-sjabloon bestand rechtstreeks vanaf uw lokale computer kunt implementeren. Volg hiervoor de volgende stappen:
 
 1. Klik in Visual Studio op **File** > **New** > **Project**.
-2. Klik op **Visual C#**  >  **Cloud**  >  **Azure resource groep**en klik vervolgens op **OK**.
+2. Klik op **Visual C#**  >  **Cloud**  >  **Azure resource groep** en klik vervolgens op **OK**.
    
    ![Maak een nieuw project als een Azure-resource groep in de Azure .NET SDK.](./media/app-service-deploy-complex-application-predictably/deploy-1-vsproject.png)
-3. Selecteer in **Azure-sjabloon selecteren**de optie **lege sjabloon** en klik op **OK**.
+3. Selecteer in **Azure-sjabloon selecteren** de optie **lege sjabloon** en klik op **OK**.
 4. Sleep azuredeploy.jsnaar de map met **sjablonen** van het nieuwe project.
    
    ![Hier ziet u het resultaat van het slepen van de azuredeploy.jsnaar een bestand in de map Temp late van het project.](./media/app-service-deploy-complex-application-predictably/deploy-2-copyjson.png)
@@ -194,7 +194,7 @@ De knop **implementeren in azure** is geweldig, maar u kunt de sjabloon voor de 
 6. We voegen net zo eenvoudig een aantal standaard bronnen voor toepassings inzichten toe aan het JSON-bestand door te klikken op **resource toevoegen**. Als u alleen geïnteresseerd bent in het implementeren van het JSON-bestand, gaat u verder met de stappen voor het implementeren.
    
    ![Hiermee wordt de knop resource toevoegen weer gegeven die u kunt gebruiken om standaard Application Insight-resources toe te voegen aan uw JSON-bestand.](./media/app-service-deploy-complex-application-predictably/deploy-3-newresource.png)
-7. Selecteer **Application Insights voor web apps**en controleer of een bestaand app service plan en een bestaande app is geselecteerd en klik vervolgens op **toevoegen**.
+7. Selecteer **Application Insights voor web apps** en controleer of een bestaand app service plan en een bestaande app is geselecteerd en klik vervolgens op **toevoegen**.
    
    ![Toont de selectie van Application Insights voor Web Apps, naam, App Service plan en web-app.](./media/app-service-deploy-complex-application-predictably/deploy-4-newappinsight.png)
    
@@ -209,11 +209,11 @@ De knop **implementeren in azure** is geweldig, maar u kunt de sjabloon voor de 
 11. Zoek de `location` `isEnabled` Eigenschappen en stel deze in zoals hieronder wordt weer gegeven. Doe hetzelfde voor de andere drie waarschuwingen (paars bollen).
     
     ![Hier worden de locatie-en isEnabled-eigenschappen weer gegeven in de appInsights JSON-code CPUHigh en de waarden die u moet instellen.](./media/app-service-deploy-complex-application-predictably/deploy-7-alerts.png)
-12. U bent nu klaar om te implementeren. Klik met de rechter muisknop op het **Deploy**project en selecteer  >  **nieuwe implementatie**implementeren.
+12. U bent nu klaar om te implementeren. Klik met de rechter muisknop op het project en selecteer  >  **nieuwe implementatie** implementeren.
     
     ![Laat zien hoe u uw nieuwe project implementeert.](./media/app-service-deploy-complex-application-predictably/deploy-8-newdeployment.png)
 13. Meld u aan bij uw Azure-account als u dit nog niet hebt gedaan.
-14. Selecteer een bestaande resource groep in uw abonnement of maak een nieuwe, selecteer **azuredeploy.jsaan**en klik vervolgens op **para meters bewerken**.
+14. Selecteer een bestaande resource groep in uw abonnement of maak een nieuwe, selecteer **azuredeploy.jsaan** en klik vervolgens op **para meters bewerken**.
     
     ![Laat zien hoe u de para meters in de azuredeploy.jsin het bestand kunt bewerken.](./media/app-service-deploy-complex-application-predictably/deploy-9-deployconfig.png)
     
@@ -228,7 +228,7 @@ De knop **implementeren in azure** is geweldig, maar u kunt de sjabloon voor de 
     > Automatisch schalen is een functie die wordt aangeboden in een **Standard** -laag of hoger, en waarschuwingen op plan niveau zijn functies die worden aangeboden in de laag **basis** of hoger. u moet de **SKU** -para meter instellen op **Standard** of **Premium** om alle nieuwe app Insights-resources licht omhoog te bekijken.
     > 
     > 
-16. Klik op **Implementeren**. Als u **wacht woorden opslaan**hebt geselecteerd, wordt het wacht woord opgeslagen in het parameter bestand **in tekst zonder opmaak**. Anders wordt u gevraagd het wacht woord voor de data base in te voeren tijdens het implementatie proces.
+16. Klik op **Implementeren**. Als u **wacht woorden opslaan** hebt geselecteerd, wordt het wacht woord opgeslagen in het parameter bestand **in tekst zonder opmaak**. Anders wordt u gevraagd het wacht woord voor de data base in te voeren tijdens het implementatie proces.
 
 Dat is alles. Nu hoeft u alleen maar naar [Azure Portal](https://portal.azure.com/) en het [Azure resource Explorer](https://resources.azure.com) -hulp programma te gaan om de nieuwe instellingen voor waarschuwingen en automatisch schalen toe te voegen aan uw JSON geïmplementeerde toepassing.
 

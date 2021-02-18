@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.author: mingshen
 author: mingshen-ms
 ms.date: 06/10/2020
-ms.openlocfilehash: 5ab57bcccb6f681f5c9282ef461181952ed5a679
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: ac3e07c67ca82c2960de1c4341a714b33751bfc1
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653071"
+ms.locfileid: "101092404"
 ---
 # <a name="anomaly-detection-service-for-metered-billing"></a>Afwijkingsdetectieservice voor facturering naar gebruik
 
@@ -50,7 +50,7 @@ Het model werkt door het genereren van interval voor retroactieve vertrouwen. De
 
 ## <a name="anomaly-detection-notification"></a>Melding over afwijkings detectie
 
-U kunt afwijkingen evalueren, beheren en bevestigen in het partner centrum. Zie [anomalie detectie voor factuur met data limiet voor](../anomaly-detection.md)meer informatie.
+U kunt afwijkingen evalueren, beheren en bevestigen in het partner centrum. Zie afwijkingen met behulp [van gefactureerde facturen beheren in partner centrum](../anomaly-detection.md)voor meer informatie.
 
 Om ervoor te zorgen dat uw klanten niet worden overbelast voor gebruik in de data limiet, moet u onderzoeken of gedetecteerde afwijkingen echte problemen zijn. Als dat het geval is, kunt u het onjuiste gebruik in partner centrum bevestigen.
 
@@ -83,4 +83,4 @@ Voor meer ondersteunings opties voor Publisher raadpleegt u [ondersteuning voor 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over de [Marketplace meter Service-API](marketplace-metering-service-apis.md).
-- [Afwijkings detectie voor facturering met data limiet](../anomaly-detection.md)
+- [Afwijkingen in het gebruik van de data limiet in het partner centrum beheren](../anomaly-detection.md)

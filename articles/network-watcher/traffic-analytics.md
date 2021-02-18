@@ -13,12 +13,12 @@ ms.date: 01/04/2021
 ms.author: damendo
 ms.reviewer: vinigam
 ms.custom: references_regions
-ms.openlocfilehash: 42536480a72e8d2160064a82eee7bac11c17746c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 87dacd28223fd88866edb90266aa76fd3cdf86cf
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100585511"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101095367"
 ---
 # <a name="traffic-analytics"></a>Traffic Analytics
 
@@ -71,33 +71,34 @@ U kunt Traffic Analytics voor Nsg's gebruiken in een van de volgende ondersteund
       Central US  
       China - oost 2  
       China - noord 2  
+      Azië - oost       
    :::column-end:::
    :::column span="":::
-      Azië - oost  
       VS - oost  
       VS - oost 2  
       VS-Oost 2 EUAP  
       Frankrijk - centraal  
-      Japan - oost  
+      Duitsland-west-centraal Japan-Oost  
       Japan - west  
       Korea - centraal  
       Korea - zuid  
       VS - noord-centraal  
+      Europa - noord    
    :::column-end:::
    :::column span="":::
-      Europa - noord  
       Zuid-Afrika - noord  
       VS - zuid-centraal  
       India - zuid  
       Azië - zuidoost  
       Zwitserland - noord  
       Zwitserland - west  
+      VAE - noord  
       Verenigd Koninkrijk Zuid  
-      Verenigd Koninkrijk West  
+      Verenigd Koninkrijk West   
       USGov Arizona  
+      USGov Texas
    :::column-end:::
    :::column span="":::
-      USGov Texas  
       USGov Virginia  
       USNat-Oost  
       USNat-West  
@@ -143,14 +144,15 @@ De Log Analytics-werk ruimte moet in de volgende regio's bestaan:
       Zwitserland - noord  
       Zwitserland - west  
       UAE - centraal  
+      VAE - noord  
       Verenigd Koninkrijk Zuid  
-      Verenigd Koninkrijk West  
+      Verenigd Koninkrijk West   
       USGov Arizona  
       USGov Virginia  
-      USNat-Oost  
-      USNat-West  
+      USNat-Oost   
    :::column-end:::
    :::column span="":::
+      USNat-West   
       USSec-Oost  
       USSec-West  
       VS - west-centraal  

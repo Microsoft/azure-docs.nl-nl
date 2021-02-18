@@ -3,12 +3,12 @@ title: Programmatisch Azure-Dash boards maken
 description: Gebruik een dash board in de Azure Portal als sjabloon om programmatisch Azure-Dash boards te maken. Bevat een JSON-verwijzing.
 ms.topic: how-to
 ms.date: 12/4/2020
-ms.openlocfilehash: e69d3f3cea0ff63f94e797047eb10b9583678b1b
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: bd56dc1c729c5aa7a77e79aa3af3366166fdcfea
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96745805"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101095167"
 ---
 # <a name="programmatically-create-azure-dashboards"></a>Programmatisch Azure-Dash boards maken
 
@@ -46,7 +46,7 @@ Nadat u het dash board hebt geconfigureerd, is de volgende stap het publiceren v
 
 ![een dash board delen](./media/azure-portal-dashboards-create-programmatically/share-command.png)
 
-Als u **delen** selecteert, wordt u gevraagd welk abonnement en welke resource groep u wilt publiceren. U moet schrijf toegang hebben tot het abonnement en de resource groep die u kiest. Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure-portal](../role-based-access-control/role-assignments-portal.md) voor meer informatie.
+Als u **delen** selecteert, wordt u gevraagd welk abonnement en welke resource groep u wilt publiceren. U moet schrijf toegang hebben tot het abonnement en de resource groep die u kiest. Zie [Azure-rollen toewijzen met behulp van de Azure Portal](../role-based-access-control/role-assignments-portal.md)voor meer informatie.
 
 ![wijzigingen aanbrengen in delen en toegang](./media/azure-portal-dashboards-create-programmatically/sharing-and-access.png)
 
@@ -665,7 +665,7 @@ az portal dashboard create --resource-group myResourceGroup --name 'Simple VM Da
    --input-path portal-dashboard-template-testvm.json --location centralus
 ```
 
-U kunt een dash board bijwerken met behulp van de opdracht [AZ Portal dash board update](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_update) :
+U kunt een dashboard bijwerken met behulp van de opdracht [az portal dash board update](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_update):
 
 ```azurecli
 az portal dashboard update --resource-group myResourceGroup --name 'Simple VM Dashboard' \
@@ -678,13 +678,13 @@ Bekijk de details van een dash board door de opdracht [AZ Portal dash board show
 az portal dashboard show --resource-group myResourceGroup --name 'Simple VM Dashboard'
 ```
 
-Als u alle Dash boards voor het huidige abonnement wilt zien, gebruikt u [AZ Portal dash board List](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_list):
+Als u alle dashboards voor het huidige abonnement wilt zien, gebruikt u [az portal dash board List](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_list):
 
 ```azurecli
 az portal dashboard list
 ```
 
-U kunt ook alle Dash boards voor een resource groep bekijken:
+U kunt ook alle dashboards voor een resourcegroep bekijken:
 
 ```azurecli
 az portal dashboard list --resource-group myResourceGroup
@@ -694,4 +694,4 @@ az portal dashboard list --resource-group myResourceGroup
 
 Zie [Azure Portal instellingen en voor keuren beheren](set-preferences.md)voor meer informatie over Desk tops.
 
-Zie [AZ Portal dash board](/cli/azure/ext/portal/portal/dashboard)voor meer informatie over Azure CLI-ondersteuning voor dash boards.
+Zie [az portal dash board](/cli/azure/ext/portal/portal/dashboard) voor meer informatie over Azure CLI-ondersteuning voor dashboards.

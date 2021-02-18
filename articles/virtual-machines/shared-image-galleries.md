@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 10/14/2020
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: 3022e9c694d70359a90e71ecd1232e9274f92f10
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: baba35bd29ec6708aca77bd9c6d74401a365014a
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98730319"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101091888"
 ---
 # <a name="shared-image-galleries-overview"></a>Galerieën met gedeelde installatiekopieën (overzicht)
 
@@ -24,7 +24,7 @@ Shared Image Gallery is een service waarmee u structuur en organisatie kunt bouw
 - Versiebeheer en groepering van installatiekopieën voor eenvoudiger beheer.
 - Maximaal beschikbare installatiekopieën met zone-redundante opslag (ZRS)-accounts in regio’s die beschikbaarheidszones ondersteunen. ZRS biedt betere flexibiliteit tegen zonegebonden fouten.
 - Ondersteuning voor Premium-opslag (Premium_LRS).
-- U kunt delen tussen meerdere abonnementen en zelfs tussen Active Directory (AD)-tenants met behulp van RBAC.
+- U kunt delen tussen meerdere abonnementen en zelfs tussen AD-tenants (Active Directory) met behulp van Azure-RBAC.
 - Het schalen van uw implementaties met replica's van installatiekopieën in elke regio.
 
 Met behulp van Shared Image Gallery kunt u uw installatiekopieën delen met verschillende gebruikers, service-principals of AD-groepen binnen uw organisatie. Gedeelde installatiekopieën kunnen worden gerepliceerd naar meerdere regio's, zodat u uw implementaties sneller kunt schalen.
@@ -146,14 +146,14 @@ De regio's waarheen een versie van de gedeelde installatiekopie wordt gereplicee
 
 ## <a name="access"></a>Access
 
-Aangezien Shared Image Gallery, de definitie en de versie van de installatiekopie allemaal resources zijn, kunnen ze worden gedeeld met behulp van de ingebouwde, systeemeigen Azure RBAC-besturingselementen. Met RBAC kunt u deze resources delen met andere gebruikers, service-principals en groepen. U kunt zelfs toegang delen met personen buiten de tenant waarin ze zijn gemaakt. Zodra een gebruiker toegang heeft tot de versie van de gedeelde installatiekopie, kan hij een virtuele machine of een virtuele-machineschaalset implementeren.  Dit is de matrix voor delen waarin u kunt zien waartoe de gebruiker toegang krijgt:
+Aangezien Shared Image Gallery, de definitie en de versie van de installatiekopie allemaal resources zijn, kunnen ze worden gedeeld met behulp van de ingebouwde, systeemeigen Azure RBAC-besturingselementen. Met behulp van Azure RBAC kunt u deze resources delen met andere gebruikers, service-principals en groepen. U kunt zelfs toegang delen met personen buiten de tenant waarin ze zijn gemaakt. Zodra een gebruiker toegang heeft tot de versie van de gedeelde installatiekopie, kan hij een virtuele machine of een virtuele-machineschaalset implementeren.  Dit is de matrix voor delen waarin u kunt zien waartoe de gebruiker toegang krijgt:
 
 | Gedeeld met gebruiker     | Galerie met gedeelde installatiekopieën | Definitie van installatiekopie | Versie van installatiekopie |
 |----------------------|----------------------|--------------|----------------------|
 | Galerie met gedeelde installatiekopieën | Ja                  | Ja          | Ja                  |
 | Definitie van installatiekopie     | Nee                   | Ja          | Ja                  |
 
-Voor de beste ervaring wordt u aangeraden op galerieniveau te delen. Het is niet raadzaam om afzonderlijke versies van een installatiekopie te delen. Zie [Toegang tot Azure-resources beheren met behulp van RBAC](../role-based-access-control/role-assignments-portal.md) voor meer informatie over RBAC.
+Voor de beste ervaring wordt u aangeraden op galerieniveau te delen. Het is niet raadzaam om afzonderlijke versies van een installatiekopie te delen. Zie [Azure-rollen toewijzen](../role-based-access-control/role-assignments-portal.md)voor meer informatie over Azure RBAC.
 
 Installatiekopieën kunnen ook op schaal worden gedeeld, ook via tenants met behulp van een app-registratie voor meerdere tenants. Voor meer informatie over het delen van installatie kopieën tussen tenants, zie ' share galerie-VM-installatie kopieën delen in azure-tenants ' met behulp van [Azure cli](./linux/share-images-across-tenants.md) of [Power shell](./windows/share-images-across-tenants.md).
 

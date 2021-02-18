@@ -15,12 +15,12 @@ ms.workload: na
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6fe958c9300d6a6feeb6926f84dbecf565dfafc1
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: cc605a08147da1d076b302e515a4ebe8d411a782
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954341"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101091839"
 ---
 # <a name="azure-cli-example-reset-the-account-credentials"></a>Voorbeeld van Azure CLI: De referenties voor het account opnieuw instellen
 
@@ -31,8 +31,6 @@ In het Azure CLI-script in dit artikel ziet u hoe u de referenties van uw accoun
 ## <a name="prerequisites"></a>Vereisten
 
 [Een Azure Media Services-account maken](./create-account-howto.md).
-
-[!INCLUDE [media-services-cli-instructions.md](../../../includes/media-services-cli-instructions.md)]
 
 ## <a name="example-script"></a>Voorbeeldscript
 

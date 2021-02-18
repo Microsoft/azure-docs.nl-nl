@@ -5,12 +5,12 @@ author: mumian
 ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: jgao
-ms.openlocfilehash: 6086dffaefba003461a6edd8177afab05377103d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aabaad54dce52d57aaa4689f591351e290b0f9a3
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91371249"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101093693"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-the-azure-portal"></a>Azure Resource Manager resource groepen beheren met behulp van de Azure Portal
 
@@ -87,9 +87,9 @@ U kunt de resources in de groep verplaatsen naar een andere resource groep. Zie 
 Vergren delen voor komt dat andere gebruikers in uw organisatie per ongeluk essentiële resources verwijderen of wijzigen, zoals een Azure-abonnement, resource groep of resource. 
 
 1. Open de resource groep die u wilt vergren delen.  Zie [resource groepen openen](#open-resource-groups).
-2. Selecteer in het linkerdeel venster de optie **vergren**delen.
-3. Selecteer **toevoegen**om een vergren deling aan de resource groep toe te voegen.
-4. Voer de **vergrendelings naam**, het **vergrendelings type**en de **notities**in. De vergrendelings typen bevatten **alleen-lezen**en **verwijderen**.
+2. Selecteer in het linkerdeel venster de optie **vergren** delen.
+3. Selecteer **toevoegen** om een vergren deling aan de resource groep toe te voegen.
+4. Voer de **vergrendelings naam**, het **vergrendelings type** en de **notities** in. De vergrendelings typen bevatten **alleen-lezen** en **verwijderen**.
 
     ![Azure-resource groep vergren delen](./media/manage-resource-groups-portal/manage-resource-groups-add-lock.png)
 
@@ -105,7 +105,7 @@ Zie voor meer informatie over het exporteren van sjablonen [één en meerdere re
 
 ## <a name="manage-access-to-resource-groups"></a>Toegang tot resource groepen beheren
 
-[Toegangs beheer op basis van rollen (Azure RBAC) van Azure](../../role-based-access-control/overview.md) is de manier waarop u de toegang tot resources in azure beheert. Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure-portal](../../role-based-access-control/role-assignments-portal.md) voor meer informatie.
+[Toegangs beheer op basis van rollen (Azure RBAC) van Azure](../../role-based-access-control/overview.md) is de manier waarop u de toegang tot resources in azure beheert. Zie [Azure-rollen toewijzen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

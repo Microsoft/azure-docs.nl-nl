@@ -11,12 +11,12 @@ ms.date: 09/29/2020
 ms.custom:
 - mqtt
 - 'Role: Cloud Development'
-ms.openlocfilehash: b83faecb16ac09a47a0ade25474f7a5b3ecd4296
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: fff4b9157c30203f47c65a74b211e3dbf6426d92
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400925"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101093029"
 ---
 # <a name="understand-and-use-device-twins-in-iot-hub"></a>Apparaat-apparaatdubbels in IoT Hub begrijpen en gebruiken
 
@@ -42,6 +42,8 @@ Apparaat apparaatdubbels gebruiken voor het volgende:
 Raadpleeg de [informatie over apparaat-naar-Cloud-communicatie](iot-hub-devguide-d2c-guidance.md) voor hulp bij het gebruik van gerapporteerde eigenschappen, apparaat-naar-Cloud-berichten of het uploaden van bestanden.
 
 Raadpleeg de [communicatie richtlijnen van Cloud naar apparaat](iot-hub-devguide-c2d-guidance.md) voor hulp bij het gebruik van de gewenste eigenschappen, directe methoden of Cloud-naar-apparaat-berichten.
+
+Zie voor meer informatie over de werking van apparaatdubbels op het apparaat model dat wordt gebruikt door een Azure IoT Plug en Play-apparaat [inzicht in IoT Plug en Play Digital apparaatdubbels](../iot-pnp/concepts-digital-twin.md).
 
 ## <a name="device-twins"></a>Apparaat apparaatdubbels
 
@@ -185,7 +187,7 @@ De back-end van de oplossing werkt op het apparaat tussen het gebruik van de vol
 
   - Eigenschappen
 
-    | Naam | Waarde |
+    | Name | Waarde |
     | --- | --- |
     $content-type | application/json |
     $iothub-enqueuedtime |  Tijdstip waarop de melding is verzonden |

@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: reference
 ms.date: 01/08/2020
-ms.openlocfilehash: ae036b7d893eb268ea55026054bf364dad0b610e
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 0799e8c76bc5d3969943d766aa83de40659a236a
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94961546"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101093307"
 ---
 # <a name="network-topologies-for-azure-sql-managed-instance-migrations-using-azure-database-migration-service"></a>Netwerk topologieën voor Azure SQL Managed instance-migraties met Azure Database Migration Service
 
@@ -83,11 +83,12 @@ Gebruik deze netwerk topologie als uw omgeving een of meer van de volgende scena
 
 | **NAAM**                  | **IMPORTEER**                                              | **PROTOCOLSUBSTATUS** | **Bron** | **BEOOGDE**           | **OPTREDEN** | **Reden voor regel**                                                                                                                                                                              |
 |---------------------------|-------------------------------------------------------|--------------|------------|---------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| beheer                | 443, 9354                                              | TCP          | Alle        | Alle                       | Toestaan      | Beheer vlak communicatie via Service Bus en Azure Blob-opslag. <br/>(Als micro soft-peering is ingeschakeld, hebt u deze regel mogelijk niet nodig.)                                                             |
-| Diagnostiek               | 12000                                                 | TCP          | Alle        | Alle                       | Toestaan      | DMS gebruikt deze regel voor het verzamelen van diagnostische gegevens voor het oplossen van problemen.                                                                                                                      |
-| SQL-bron server         | 1433 (of TCP IP-poort waarnaar SQL Server luistert) | TCP          | Elk        | On-premises adresruimte | Toestaan      | SQL Server bron connectiviteit vanuit DMS <br/>(Als u site-naar-site-connectiviteit hebt, hebt u deze regel mogelijk niet nodig.)                                                                                       |
-| SQL Server benoemd exemplaar | 1434                                                  | UDP          | Elk        | On-premises adresruimte | Toestaan      | SQL Server bron connectiviteit van een benoemde instantie van DMS <br/>(Als u site-naar-site-connectiviteit hebt, hebt u deze regel mogelijk niet nodig.)                                                                        |
-| SMB-share                 | 445                                                   | TCP          | Elk        | On-premises adresruimte | Toestaan      | SMB-netwerk share voor DMS voor het opslaan van back-upbestanden van data bases voor migraties naar Azure SQL Database MI-en SQL-servers op Azure VM <br/>(Als u site-naar-site-connectiviteit hebt, hebt u deze regel mogelijk niet nodig). |
+| ServiceBus                | 443, ServiceTag: ServiceBus                           | TCP          | Alle        | Alle                       | Toestaan      | Communicatie van beheer vlak via Service Bus. <br/>(Als micro soft-peering is ingeschakeld, hebt u deze regel mogelijk niet nodig.)                                                             |
+| Storage                   | 443, ServiceTag: opslag                              | TCP          | Alle        | Alle                       | Toestaan      | Beheer vlak met Azure Blob Storage. <br/>(Als micro soft-peering is ingeschakeld, hebt u deze regel mogelijk niet nodig.)                                                             |
+| Diagnostiek               | 443, ServiceTag: AzureMonitor                         | TCP          | Alle        | Alle                       | Toestaan      | DMS gebruikt deze regel voor het verzamelen van diagnostische gegevens voor het oplossen van problemen. <br/>(Als micro soft-peering is ingeschakeld, hebt u deze regel mogelijk niet nodig.)                                                  |
+| SQL-bron server         | 1433 (of TCP IP-poort waarnaar SQL Server luistert) | TCP          | Alle        | On-premises adresruimte | Toestaan      | SQL Server bron connectiviteit vanuit DMS <br/>(Als u site-naar-site-connectiviteit hebt, hebt u deze regel mogelijk niet nodig.)                                                                                       |
+| SQL Server benoemd exemplaar | 1434                                                  | UDP          | Alle        | On-premises adresruimte | Toestaan      | SQL Server bron connectiviteit van een benoemde instantie van DMS <br/>(Als u site-naar-site-connectiviteit hebt, hebt u deze regel mogelijk niet nodig.)                                                                        |
+| SMB-share                 | 445 (als scenario neeeds)                             | TCP          | Alle        | On-premises adresruimte | Toestaan      | SMB-netwerk share voor DMS voor het opslaan van back-upbestanden van data bases voor migraties naar Azure SQL Database MI-en SQL-servers op Azure VM <br/>(Als u site-naar-site-connectiviteit hebt, hebt u deze regel mogelijk niet nodig). |
 | DMS_subnet                | Alle                                                   | Alle          | Alle        | DMS_Subnet                | Toestaan      |                                                                                                                                                                                                  |
 
 ## <a name="see-also"></a>Zie ook

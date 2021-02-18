@@ -10,12 +10,12 @@ metadata:
   ms.service: dms
   ms.topic: landing-page
   ms.custom: seo-azure-migrate
-  ms.openlocfilehash: c2461fa9eb2c326141d244fbc576355226f891dd
-  ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
-  ms.translationtype: HT
+  ms.openlocfilehash: 2703c34dc56303103c682bed740a34991a6471f6
+  ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/20/2020
-  ms.locfileid: "94962702"
+  ms.lasthandoff: 02/18/2021
+  ms.locfileid: "101092163"
 landingContent:
 - title: Over Azure Database Migration Service
   linkLists:
@@ -57,29 +57,27 @@ landingContent:
   linkLists:
   - linkListType: tutorial
     links:
-    - text: Migreren naar individuele SQL DB-database - online
-      url: tutorial-sql-server-azure-sql-online.md
-    - text: Migreren naar individuele SQL DB-database - offline
+    - text: Migreren naar Azure SQL Database
       url: tutorial-sql-server-to-azure-sql.md
-    - text: Migreren naar een met SQL DB beheerd exemplaar - online
+    - text: Migreren naar Azure SQL Managed instance (online)
       url: tutorial-sql-server-managed-instance-online.md
-    - text: Migreren naar een met SQL DB beheerd exemplaar - offline
+    - text: Migreren naar een beheerd SQL-exemplaar (offline)
       url: tutorial-sql-server-to-managed-instance.md
-    - text: RDS SQL Server migreren naar individuele SQL DB-database of beheerd exemplaar van SQL Database - online
+    - text: RDS-SQL Server migreren naar Azure SQL
       url: tutorial-rds-sql-server-azure-sql-and-managed-instance-online.md
   - linkListType: reference
     links:
-    - text: Bekende problemen - Onlinemigratie naar individuele SQL DB-database
+    - text: 'Bekende problemen: online migratie naar SQL Database'
       url: known-issues-azure-sql-online.md
-    - text: Bekende problemen - Onlinemigratie naar afzonderlijk beheerd exemplaar van SQL DB
+    - text: Bekende problemen-online migratie naar SQL Managed instance
       url: known-issues-azure-sql-db-managed-instance-online.md
-    - text: Netwerktopologieën voor migraties van met beheerde SQL DB-exemplaren
+    - text: Netwerktopologieën voor migraties van SQL-beheerde exemplaren
       url: resource-network-topologies.md
-    - text: Aangepaste rollen voor online migratie van SQL Server naar een beheerd SQL DB-exemplaar
+    - text: Aangepaste rollen voor online migraties van SQL Server naar een door SQL beheerd exemplaar
       url: resource-custom-roles-sql-db-managed-instance.md
   - linkListType: video
     links:
-    - text: SQL Server 2008 migreren naar een met een beheerd SQL DB-exemplaar
+    - text: SQL Server 2008 migreren naar een beheerd exemplaar van SQL
       url: https://azure.microsoft.com/resources/videos/how-to-migrate-sql-server-2008-or-r2-to-azure-sqldbmi/
 - title: Open-sourcedatabases migreren naar Azure
   linkLists:

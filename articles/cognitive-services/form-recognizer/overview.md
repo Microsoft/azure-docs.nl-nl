@@ -11,12 +11,12 @@ ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: geautomatiseerde gegevensverwerking, documentverwerking, geautomatiseerde gegevensinvoer, formulierverwerking
-ms.openlocfilehash: 2d3a37165994a8c7ff9d46ac24e63b7f58404ce3
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 95bbc33035ca99a64242274570be5c9263029aef
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99584563"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101094367"
 ---
 # <a name="what-is-form-recognizer"></a>Wat is Form Recognizer?
 
@@ -27,26 +27,27 @@ Azure Form Recognizer is een cognitieve service waarmee u software voor geautoma
 Form Recognizer bestaat uit aangepaste modellen voor documentverwerking, vooraf gebouwde modellen voor facturen, ontvangstbewijzen en visitekaartjes, en het indelingsmodel. U kunt Form Recognizer-modellen aanroepen met behulp van een REST API of clientbibliotheek-SDK’s om de complexiteit te reduceren en deze te integreren in uw werkstroom of toepassing.
 
 Form Recognizer bestaat uit de volgende services:
+
 * **[Indelings-API](#layout-api)** : tekst, selectiemarkeringen en tabelstructuren extraheren uit documenten, samen met de bijbehorende begrenzingsvakcoördinaten.
 * **[Aangepaste modellen](#custom-models)** : sleutel-waardeparen, selectiemarkeringen en tabelgegevens extraheren uit formulieren. Deze modellen worden getraind met uw eigen gegevens, zodat ze zijn afgestemd op uw formulieren.
 * **[Vooraf samengestelde modellen](#prebuilt-models)** : gegevens ophalen uit unieke formuliertypen met vooraf samengestelde modellen. Momenteel zijn de volgende vooraf gebouwde modellen beschikbaar
-    * [Facturen](./concept-invoices.md)
-    * [Ontvangstbewijzen](./concept-receipts.md)
-    * [Visitekaartjes](./concept-business-cards.md)
-
+  * [Facturen](./concept-invoices.md)
+  * [Ontvangstbewijzen](./concept-receipts.md)
+  * [Visitekaartjes](./concept-business-cards.md)
 
 ## <a name="try-it-out"></a>Probeer het eens
 
 Als u de Form Recognizer-service wilt uitproberen, gaat u online naar de gebruikersinterface van het voorbeeldhulpprogramma:
-
-
-# <a name="v20"></a>[v2.0](#tab/v2-0)
-> [!div class="nextstepaction"]
-> [Form Recognizer proberen](https://fott.azurewebsites.net/)
-
+<!-- markdownlint-disable MD025 -->
 # <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
+
 > [!div class="nextstepaction"]
 > [Form Recognizer proberen](https://fott-preview.azurewebsites.net/)
+
+# <a name="v20"></a>[v2.0](#tab/v2-0)
+
+> [!div class="nextstepaction"]
+> [Form Recognizer proberen](https://fott.azurewebsites.net/)
 
 ---
 
@@ -137,12 +138,11 @@ U gebruikt de volgende API's om modellen te trainen en gestructureerde gegevens 
 | **Ontvangstbewijs analyseren** | Analyseer een ontvangstbewijsdocument voor het extraheren van belangrijke informatie en andere ontvangstbewijstekst.|
 | **Visitekaartjes analyseren** | Analyseer een visitekaartje om belangrijke informatie en tekst te extraheren.|
 
+# <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
+Lees het [naslagmateriaal bij de REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeWithCustomForm) voor meer informatie. Als u bekend bent met een eerdere versie van de API, raadpleegt u het artikel [Nieuwe functies](./whats-new.md) voor meer informatie over recente wijzigingen.
 
 # <a name="v20"></a>[v2.0](#tab/v2-0)
 Lees het [naslagmateriaal bij de REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm) voor meer informatie. Als u bekend bent met een eerdere versie van de API, raadpleegt u het artikel [Nieuwe functies](./whats-new.md) voor meer informatie over recente wijzigingen.
-
-# <a name="v21"></a>[v2.1](#tab/v2-1)
-Lees het [naslagmateriaal bij de REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeWithCustomForm) voor meer informatie. Als u bekend bent met een eerdere versie van de API, raadpleegt u het artikel [Nieuwe functies](./whats-new.md) voor meer informatie over recente wijzigingen.
 
 ---
 

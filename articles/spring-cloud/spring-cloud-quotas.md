@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 496f2e812a102e85fea92a535552daaaadf5f31e
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 20ebeb23fe09ba4fd70a724828afadfaa3901abd
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093426"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101095674"
 ---
 # <a name="quotas-and-service-plans-for-azure-spring-cloud"></a>Quota's en service plannen voor Azure lente-Cloud
 
@@ -22,13 +22,17 @@ Alle Azure-Services hebben standaard limieten en-quota ingesteld voor resources 
 
 ## <a name="azure-spring-cloud-service-tiers-and-limits"></a>Azure lente-Cloud service lagen en-limieten
 
-| Resource | Basic | Standard
+| Resource | Bereik | Basic | Standard
 ------- | ------- | -------
-vCPU | 1 per service-exemplaar | 4 per service-exemplaar
-Geheugen | 2 GB per service-exemplaar | 8 GB per service-exemplaar
-Azure veer Cloud service-instanties per regio per abonnement | 10 | 10
-Totaal aantal app-exemplaren per Azure veer Cloud service-exemplaar | 25 | 500
-Permanente volumes | 1 GB/app x 10 apps | 50 GB/app x 10-apps
+vCPU | per app-exemplaar | 1 | 4
+Geheugen | per app-exemplaar | 2 GB | 8 GB
+Azure lente-Cloud service-instanties | per regio per abonnement | 10 | 10
+Totaal aantal app-exemplaren | Cloud service-exemplaar per Azure-veer | 25 | 500
+Aangepaste domeinen | Cloud service-exemplaar per Azure-veer | 0 | 25 
+Permanente volumes | Cloud service-exemplaar per Azure-veer | 1 GB/app x 10 apps | 50 GB/app x 10-apps
+
+> [!TIP]
+> De vermelde tarieven voor het totale aantal app-exemplaren per service-exemplaar gelden voor apps/implementaties met de status gestopt. Verwijder apps/implementaties die niet worden gebruikt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

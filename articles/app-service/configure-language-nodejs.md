@@ -6,12 +6,12 @@ ms.devlang: nodejs
 ms.topic: article
 ms.date: 06/02/2020
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 8bdf637ab773e90a5eac42bcaa443cf6741db636
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 6a6f782768db12c2ce75f5cf1e66100222f24446
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94696010"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101095215"
 ---
 # <a name="configure-a-nodejs-app-for-azure-app-service"></a>Een Node.js-app configureren voor Azure App Service
 
@@ -342,6 +342,19 @@ if (req.secure) {
 
 ::: zone-end
 
+
+::: zone pivot="platform-linux"
+
+## <a name="monitor-with-application-insights"></a>Controleren met behulp van Application Insights
+
+Met Application Insights kunt u de prestaties, uitzonde ringen en het gebruik van uw toepassing bewaken zonder dat er code wijzigingen worden aangebracht. Als u de app Insights-agent wilt koppelen, gaat u naar uw web-app in de portal en selecteert u **Application Insights** onder **instellingen** en selecteert u vervolgens **Application Insights inschakelen**. Selecteer vervolgens een bestaande app Insights-resource of maak een nieuwe. Ten slotte selecteert u onder **Toep assen** . Als u uw web-app wilt instrumenteren met Power shell, raadpleegt u [deze instructies](../azure-monitor/app/azure-web-apps.md?tabs=netcore#enabling-through-powershell)
+
+Deze agent bewaakt uw Node.js-toepassing aan de server zijde. Als u uw Java script aan de client zijde wilt bewaken, [voegt u de Java script-SDK toe aan uw project](../azure-monitor/app/javascript.md). 
+
+Zie de release opmerkingen voor de [Application Insights-extensie](../azure-monitor/app/web-app-extension-release-notes.md)voor meer informatie.
+
+::: zone-end
+
 ## <a name="troubleshooting"></a>Problemen oplossen
 
 Wanneer een werk Node.js-app anders werkt in App Service of fouten bevat, kunt u het volgende proberen:
@@ -370,4 +383,3 @@ Wanneer een werk Node.js-app anders werkt in App Service of fouten bevat, kunt u
 > [Veelgestelde vragen over App Service Linux](faq-app-service-linux.md)
 
 ::: zone-end
-

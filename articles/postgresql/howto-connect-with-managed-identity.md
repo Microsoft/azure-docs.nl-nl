@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 05/19/2020
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 444fbb08dfa535980c4012858b675e700ffa29d8
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: b0d6b083228ddab9d958bf3480b592f7ee0d892d
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92745105"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101092644"
 ---
 # <a name="connect-with-managed-identity-to-azure-database-for-postgresql"></a>Een beheerde identiteit verbinden met Azure Database for PostgreSQL
 
@@ -27,7 +27,7 @@ In deze zelfstudie leert u procedures om het volgende te doen:
 ## <a name="prerequisites"></a>Vereisten
 
 - Als u niet bekend bent met de functie voor beheerde identiteiten voor Azure-resources, raadpleegt u dit [overzicht](../../articles/active-directory/managed-identities-azure-resources/overview.md). Als u geen Azure-account hebt, [registreert u zich voor een gratis account](https://azure.microsoft.com/free/) voordat u verder gaat.
-- Voor het maken van de vereiste resources en rollen beheer moet uw account de machtigingen eigenaar hebben op het juiste bereik (uw abonnement of resource groep). Als u hulp nodig hebt bij het toewijzen van rollen, raadpleegt u [Azure op rollen gebaseerd toegangs beheer (Azure RBAC) gebruiken om de toegang tot uw Azure-abonnements resources te beheren](../../articles/role-based-access-control/role-assignments-portal.md).
+- Voor het maken van de vereiste resources en rollen beheer moet uw account de machtigingen eigenaar hebben op het juiste bereik (uw abonnement of resource groep). Als u hulp nodig hebt bij roltoewijzing, raadpleegt u [Azure-rollen toewijzen om de toegang tot uw Azure-abonnements resources te beheren](../../articles/role-based-access-control/role-assignments-portal.md).
 - U hebt een Azure-VM (bijvoorbeeld met Ubuntu Linux) nodig die u wilt gebruiken voor toegang tot uw data base met behulp van beheerde identiteit
 - U hebt een Azure Database for PostgreSQL database server met [Azure AD-verificatie](howto-configure-sign-in-aad-authentication.md) geconfigureerd
 - Als u het C#-voor beeld wilt volgen, voltooit u eerst de hand leiding How to [Connect with C#](connect-csharp.md) .

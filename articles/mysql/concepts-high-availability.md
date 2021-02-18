@@ -1,17 +1,17 @@
 ---
 title: Hoge Beschik baarheid-Azure Database for MySQL
 description: In dit artikel vindt u informatie over hoge Beschik baarheid in Azure Database for MySQL
-author: mksuni
-ms.author: sumuth
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 7/7/2020
-ms.openlocfilehash: b301946ce818559510b4e401b1f0aaf7c235d5a3
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 74d6981c0465a1960e920313c1f960f0d781692b
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93242293"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101092967"
 ---
 # <a name="high-availability-in-azure-database-for-mysql"></a>Hoge Beschik baarheid in Azure Database for MySQL
 De Azure Database for MySQL-service biedt een gegarandeerd hoog niveau van Beschik baarheid met de SLA (financieel ondersteunde service level agreement) van [99,99%](https://azure.microsoft.com/support/legal/sla/mysql) uptime. Azure Database for MySQL biedt een hoge Beschik baarheid tijdens geplande gebeurtenissen, zoals de initated van de gebruiker en ook wanneer niet-geplande gebeurtenissen, zoals onderliggende hardware, software of netwerk fouten, optreden. Azure Database for MySQL kan snel van de meeste kritieke omstandigheden worden hersteld, waardoor er bijna geen toepassings tijd meer is bij het gebruik van deze service.
@@ -22,8 +22,8 @@ Azure Database for MySQL is geschikt voor het uitvoeren van essentiële data bas
 
 | **Onderdeel** | **Beschrijving**|
 | ------------ | ----------- |
-| <b>MySQL-database server | Azure Database for MySQL biedt beveiliging, isolatie, bron beveiligingen en de mogelijkheid om snel opnieuw op te starten voor database servers. Deze mogelijkheden vergemakkelijken bewerkingen zoals schalen en database server herstel na een onderbreking in enkele seconden. <br/> Gegevens wijzigingen in de database server worden meestal uitgevoerd in de context van een database transactie. Alle database wijzigingen worden synchroon vastgelegd in de vorm van write-Ahead Logboeken (ib_log) op Azure Storage, die is gekoppeld aan de database server. Tijdens het database [controlepunt](https://dev.mysql.com/doc/refman/5.7/en/innodb-checkpoints.html) proces worden gegevens pagina's van het database server geheugen ook naar de opslag leeg gemaakt. |
-| <b>Externe opslag | Alle fysieke MySQL-gegevens bestanden en-logboek bestanden worden opgeslagen op Azure Storage, die is ontworpen voor het opslaan van drie kopieën van gegevens binnen een regio om gegevens redundantie, Beschik baarheid en betrouw baarheid te garanderen. De opslaglaag is ook onafhankelijk van de database server. Dit kan binnen een paar seconden worden losgekoppeld van een mislukte database server en opnieuw worden gekoppeld aan een nieuwe database server. Azure Storage doorlopend monitors voor eventuele opslag fouten. Als een blok beschadiging wordt gedetecteerd, wordt dit automatisch opgelost door een nieuwe opslag kopie te instantiëren. |
+| <b>MySQL-database server | Azure Database for MySQL biedt beveiliging, isolatie, bron beveiligingen en de mogelijkheid om snel opnieuw op te starten voor database servers. Deze mogelijkheden vergemakkelijken bewerkingen zoals schalen en database server herstel na een storing in 60-120 seconden, afhankelijk van de transactionele activiteit op de data base. <br/> Gegevens wijzigingen in de database server worden meestal uitgevoerd in de context van een database transactie. Alle database wijzigingen worden synchroon vastgelegd in de vorm van write-Ahead Logboeken (ib_log) op Azure Storage, die is gekoppeld aan de database server. Tijdens het database [controlepunt](https://dev.mysql.com/doc/refman/5.7/en/innodb-checkpoints.html) proces worden gegevens pagina's van het database server geheugen ook naar de opslag leeg gemaakt. |
+| <b>Externe opslag | Alle fysieke MySQL-gegevens bestanden en-logboek bestanden worden opgeslagen op Azure Storage, die is ontworpen voor het opslaan van drie kopieën van gegevens binnen een regio om gegevens redundantie, Beschik baarheid en betrouw baarheid te garanderen. De opslaglaag is ook onafhankelijk van de database server. Het kan worden losgekoppeld van een mislukte database server en binnen 60 seconden aan een nieuwe database server worden gekoppeld. Azure Storage doorlopend monitors voor eventuele opslag fouten. Als een blok beschadiging wordt gedetecteerd, wordt dit automatisch opgelost door een nieuwe opslag kopie te instantiëren. |
 | <b>Gateway | De gateway fungeert als een database proxy, stuurt alle client verbindingen naar de database server. |
 
 ## <a name="planned-downtime-mitigation"></a>Geplande downtime van uitval tijd
@@ -38,15 +38,15 @@ Hier volgen enkele geplande onderhouds scenario's:
 | <b>Berekenings schaal omhoog/omlaag | Wanneer de gebruiker de bewerking omhoog/omlaag Compute Scale uitvoert, wordt een nieuwe database server ingericht met behulp van de geschaalde Compute-configuratie. In de oude database server mogen actieve controle punten worden voltooid, worden de client verbindingen geleegd, worden niet-doorgevoerde trans acties geannuleerd en vervolgens afgesloten. De opslag wordt vervolgens losgekoppeld van de oude database server en gekoppeld aan de nieuwe database server. Wanneer de client toepassing de verbinding probeert te maken of probeert een nieuwe verbinding tot stand te brengen, stuurt de gateway de verbindings aanvraag door naar de nieuwe database server.|
 | <b>Opslag ruimte omhoog schalen | Het omhoog schalen van de opslag is een online bewerking en de database server wordt niet onderbroken.|
 | <b>Nieuwe software-implementatie (Azure) | Nieuwe functies implementatie of fout oplossingen worden automatisch uitgevoerd als onderdeel van het geplande onderhoud van de service. Raadpleeg de [documentatie](concepts-monitoring.md#planned-maintenance-notification)voor meer informatie en Controleer ook de [Portal](https://aka.ms/servicehealthpm).|
-| <b>Secundaire versie-upgrades | Azure Database for MySQL worden database servers automatisch aan de secundaire versie door Azure door berekend. Deze treedt op als onderdeel van het geplande onderhoud van de service. Dit leidt tot een korte downtime in seconden en de database server wordt automatisch opnieuw opgestart met de nieuwe secundaire versie. Raadpleeg de [documentatie](concepts-monitoring.md#planned-maintenance-notification)voor meer informatie en Controleer ook de [Portal](https://aka.ms/servicehealthpm).|
+| <b>Secundaire versie-upgrades | Azure Database for MySQL worden database servers automatisch aan de secundaire versie door Azure door berekend. Deze treedt op als onderdeel van het geplande onderhoud van de service. Tijdens gepland onderhoud kunnen de database server opnieuw worden opgestart of failovers, wat kan leiden tot een kortere Beschik baarheid van de database servers voor eind gebruikers. Azure Database for MySQL-servers worden uitgevoerd in containers zodat de database server opnieuw wordt opgestart, wordt doorgaans in 60-120 seconden snel uitgevoerd. De volledige geplande onderhouds gebeurtenis, inclusief het opnieuw opstarten van de server, wordt zorgvuldig gecontroleerd door het technische team. De tijd van de failover van de server is afhankelijk van de herstel tijd van de data base, waardoor de data base langer online kan worden uitgevoerd als er sprake is van een zware trans actie op de server op het moment van de failover. Om te voor komen dat de computer opnieuw wordt opgestart, wordt aanbevolen om langlopende trans acties (bulksgewijs laden) te voor komen tijdens geplande onderhouds gebeurtenissen. Raadpleeg de [documentatie](concepts-monitoring.md#planned-maintenance-notification)voor meer informatie en Controleer ook de [Portal](https://aka.ms/servicehealthpm).|
 
 
 ##  <a name="unplanned-downtime-mitigation"></a>Ongeplande downtime-beperking
 
-Ongeplande uitval tijd kan optreden als gevolg van onvoorziene storingen, waaronder onderliggende hardwarestoringen, netwerk problemen en software fouten. Als de database server onverwacht uitvalt, wordt er in een paar seconden automatisch een nieuwe database server ingericht. De externe opslag wordt automatisch gekoppeld aan de nieuwe database server. MySQL-engine voert de herstel bewerking uit met WAL en database bestanden, en opent de database server om clients toe te staan verbinding te maken. Niet-doorgevoerde trans acties gaan verloren en moeten opnieuw worden geprobeerd door de toepassing. Hoewel een ongeplande uitval tijd niet kan worden vermeden, Azure Database for MySQL de uitval tijd verminderen door automatisch herstel bewerkingen uit te voeren op de database server en opslag lagen zonder menselijke tussen komst. 
+Ongeplande uitval tijd kan optreden als gevolg van onvoorziene storingen, waaronder onderliggende hardwarestoringen, netwerk problemen en software fouten. Als de database server onverwacht uitvalt, wordt een nieuwe database server binnen 60-120 seconden automatisch ingericht. De externe opslag wordt automatisch gekoppeld aan de nieuwe database server. MySQL-engine voert de herstel bewerking uit met WAL en database bestanden, en opent de database server om clients toe te staan verbinding te maken. Niet-doorgevoerde trans acties gaan verloren en moeten opnieuw worden geprobeerd door de toepassing. Hoewel een ongeplande uitval tijd niet kan worden vermeden, Azure Database for MySQL de uitval tijd verminderen door automatisch herstel bewerkingen uit te voeren op de database server en opslag lagen zonder menselijke tussen komst. 
 
 
-:::image type="content" source="./media/concepts-high-availability/availability-for-mysql-server.png" alt-text="weer gave van elastisch schalen in azure MySQL":::
+:::image type="content" source="./media/concepts-high-availability/availability-for-mysql-server.png" alt-text="weer gave van hoge Beschik baarheid in azure MySQL":::
 
 ### <a name="unplanned-downtime-failure-scenarios-and-service-recovery"></a>Ongeplande downtime: fout scenario's en service herstel
 Hier volgen enkele fout scenario's en hoe Azure Database for MySQL automatisch herstelt:

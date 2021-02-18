@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 8c63ada9621fc1485742a7683fd6742f0e896854
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: ce18e71ced320c408933caeb39b469d5885bd6ba
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954426"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101095945"
 ---
 # <a name="use-the-content-aware-encoding-preset-to-find-the-optimal-bitrate-value-for-a-given-resolution"></a>De vooraf ingestelde coderings voorinstelling gebruiken om de optimale bitrate waarde voor een bepaalde oplossing te vinden
 
@@ -29,7 +29,7 @@ U moet rekening houden met de inhoud die u verwerkt en de coderings ladder aanpa
 
 De voor instelling van de [adaptieve streaming](autogen-bitrate-ladder.md) van micro soft is deels gericht op het probleem van de variabiliteit in de kwaliteit en resolutie van de bron Video's. Onze klanten hebben een verschillende combi natie van inhoud, een aantal voor 1080p, anderen op 720p en enkele van de SD en lagere resoluties. Bovendien is niet alle bron inhoud kwalitatief hoogwaardige mezzanine van film of TV Studios. Met de vooraf ingestelde adaptieve streaming worden deze problemen opgelost door ervoor te zorgen dat de videoladder nooit de resolutie of de gemiddelde bitsnelheid van de invoer-mezzanine overschrijdt. Deze standaard instelling onderzoekt echter geen andere bron eigenschappen dan omzetting en bitrate.
 
-## <a name="the-content-aware-encoding"></a>De coderings functionaliteit voor inhoud 
+## <a name="the-content-aware-encoding"></a>De coderings functionaliteit voor inhoud
 
 De vooraf ingestelde coderings instellingen voor versleuteling breiden het Adaptive Bitrate Streaming-mechanisme uit door aangepaste logica te integreren waarmee de encoder de optimale bitrate waarde voor een bepaalde oplossing kan zoeken, maar zonder dat er uitgebreide reken kundige analyse nodig is. Deze vooraf ingestelde produceert een reeks GOP terug-afgevulde Mp4's. Op basis van de invoer inhoud voert de service een initiële licht gewicht analyse uit van de invoer inhoud en gebruikt de resultaten om het optimale aantal lagen, de juiste bitrate en resolutie-instellingen voor levering door adaptieve streaming te bepalen. Deze standaard instelling is met name van toepassing op Video's met een laag en gemiddeld complexiteit, waarbij de uitvoer bestanden lagere bitsnelheden zijn dan de vooraf ingestelde voor instelling van adaptief streamen, maar met een kwaliteit die nog steeds een goede ervaring voor kijkers biedt. De uitvoer bevat MP4-bestanden met Interleaved video en audio
 
@@ -57,7 +57,7 @@ Hieronder vindt u de resultaten voor een andere categorie bron inhoud, waarbij h
 
 U kunt als volgt trans formaties maken die gebruikmaken van deze voor instelling. 
 
-Zie de sectie [volgende stappen](#next-steps) voor zelf studies over het gebruik van transformeren-uitvoer. Het uitvoer activum kan worden geleverd vanaf Media Services streaming-eind punten in protocollen zoals MPEG-DASH en HLS (zoals weer gegeven in de zelf studies).
+Zie de sectie [volgende stappen](#next-steps) voor zelf studies die gebruikmaken van trans formatie-uitvoer. Het uitvoer activum kan worden geleverd vanaf Media Services streaming-eind punten in protocollen zoals MPEG-DASH en HLS (zoals weer gegeven in de zelf studies).
 
 > [!NOTE]
 > Zorg ervoor dat u de **ContentAwareEncoding** -voor instelling niet ContentAwareEncodingExperimental gebruikt.

@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/05/2021
 ms.author: banders
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 2fb1a8c3e583a4bdc88f2b61844e9bcb16dc7cdf
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: c3142fd41830487453a3cc980a87cdca72cf7213
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100367194"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101094130"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Eigendom van de facturering van een Azure-abonnement overdragen aan een ander account
 
@@ -66,7 +66,7 @@ Voor Visual Studio- en Microsoft Partner Network-abonnementen geldt een maandeli
 
 Als u het eigendom van de facturering van een Azure-abonnement hebt geaccepteerd, is het raadzaam de volgende stappen te volgen:
 
-1. Controleer de servicebeheerder, co-beheerders en andere Azure-roltoewijzingen en werk ze bij. Zie [Toevoegen of wijzigen van de beheerders van Azure-abonnementen](add-change-subscription-administrator.md) en [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md) voor meer informatie.
+1. Controleer de servicebeheerder, co-beheerders en andere Azure-roltoewijzingen en werk ze bij. Zie [Azure-abonnements beheerders toevoegen of wijzigen](add-change-subscription-administrator.md) en [Azure-rollen toewijzen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md)voor meer informatie.
 1. Referenties bijwerken die zijn gekoppeld aan de services van dit abonnement, waaronder:
    1. Beheercertificaten die de gebruiker beheerdersrechten verlenen voor de abonnementsresources. Zie [Een beheercertificaat voor Azure maken en uploaden](../../cloud-services/cloud-services-certs-create.md) voor meer informatie
    1. Toegangssleutels voor services zoals Storage. Zie [Over Azure-opslagaccounts](../../storage/common/storage-account-create.md) voor meer informatie
@@ -126,4 +126,4 @@ Als u vragen hebt of hulp nodig hebt, [kunt u een ondersteuningsaanvraag maken](
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Controleer de servicebeheerder, co-beheerders en andere Azure-roltoewijzingen en werk ze bij. Zie [Toevoegen of wijzigen van de beheerders van Azure-abonnementen](add-change-subscription-administrator.md) en [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md) voor meer informatie.
+- Controleer de servicebeheerder, co-beheerders en andere Azure-roltoewijzingen en werk ze bij. Zie [Azure-abonnements beheerders toevoegen of wijzigen](add-change-subscription-administrator.md) en [Azure-rollen toewijzen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md)voor meer informatie.

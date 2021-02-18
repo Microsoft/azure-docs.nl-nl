@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 12/16/2020
 ms.author: sefriend
 manager: clarkn
-ms.openlocfilehash: 1500a635d5177ed8899cdc3f1364e57a8525892c
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: b71c5426b6fba6f232b5a7aa42347f6b25d46299
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100099945"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101094945"
 ---
 # <a name="troubleshoot-common-windows-virtual-desktop-agent-issues"></a>Veelvoorkomende problemen met Windows Virtual Desktop agent oplossen
 
@@ -269,6 +269,7 @@ Als u het probleem niet kunt vinden in dit artikel of als u de instructies niet 
 - Uw Vm's worden niet weer gegeven in de lijst sessie hosts
 - De **extern bureaublad agent loader** wordt niet weer geven in het venster Services
 - U ziet het onderdeel **RdAgentBootLoader** niet in taak beheer
+- U ontvangt een **Connection Broker die de instellingen** fout op aangepaste installatie kopie-vm's niet kan valideren
 - De instructies in dit artikel hebben het probleem niet opgelost
 
 ### <a name="step-1-uninstall-all-agent-boot-loader-and-stack-component-programs"></a>Stap 1: alle agents, opstart lader en stack component-Program ma's verwijderen

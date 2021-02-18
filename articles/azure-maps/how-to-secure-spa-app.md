@@ -10,12 +10,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: devx-track-js
-ms.openlocfilehash: 3b647a02731a4fa404aab4bb648853eea766d92e
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 9d2af0bf731ab069a8512cb10feccf5ba18d3fa0
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684069"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101092717"
 ---
 # <a name="how-to-secure-a-single-page-application-with-non-interactive-sign-in"></a>Een toepassing met één pagina beveiligen met niet-interactieve aanmelding
 
@@ -111,7 +111,7 @@ U verleent op *rollen gebaseerd toegangs beheer voor Azure (Azure RBAC)* door de
 
 2. Selecteer op **het tabblad roltoewijzingen,** onder **rol**, een ingebouwde Azure Maps roldefinitie, zoals **Azure Maps gegevens lezer** of **Azure Maps gegevensinzender**. Selecteer **functie-app** onder **toegang toewijzen aan**. Selecteer de principal op naam. Selecteer vervolgens **Opslaan**.
 
-   * Zie de Details voor het [toevoegen of verwijderen van roltoewijzingen](../role-based-access-control/role-assignments-portal.md).
+   * Zie voor meer informatie over het [toewijzen van Azure-rollen](../role-based-access-control/role-assignments-portal.md).
 
 > [!WARNING]
 > Azure Maps ingebouwde roldefinities bieden een zeer grote autorisatie toegang tot veel Azure Maps REST-Api's. Zie [een aangepaste roldefinitie maken en de door het systeem toegewezen identiteit toewijzen](../role-based-access-control/custom-roles.md) aan de definitie van de aangepaste rol om api's toegang tot een minimum te beperken. Hiermee wordt de mini maal benodigde bevoegdheden voor toegang tot Azure Maps door de toepassing ingeschakeld.

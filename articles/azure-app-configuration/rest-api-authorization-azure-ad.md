@@ -6,12 +6,12 @@ ms.author: alkemper
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: f144c1f09f87e0b915daf86ba0391c2934e60095
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: c028dcf6649da9abd196997d077b58386a5e6dd9
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932673"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101092798"
 ---
 # <a name="azure-active-directory-authorization---rest-api-reference"></a>Azure Active Directory autorisatie-REST API verwijzing
 
@@ -43,4 +43,4 @@ HTTP/1.1 403 Forbidden
 
 ## <a name="managing-role-assignments"></a>Roltoewijzingen beheren
 
-U kunt roltoewijzingen beheren door gebruik te maken van [RBAC-procedures](../role-based-access-control/overview.md) die standaard in alle Azure-Services zijn opgenomen. U kunt dit doen via de Azure CLI, Power shell en de Azure Portal. Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal](../role-based-access-control/role-assignments-portal.md)voor meer informatie.
+U kunt roltoewijzingen beheren door gebruik te maken van [Azure RBAC-procedures](../role-based-access-control/overview.md) die standaard zijn opgenomen in alle Azure-Services. U kunt dit doen via de Azure CLI, Power shell en de Azure Portal. Zie [Azure-rollen toewijzen met behulp van de Azure Portal](../role-based-access-control/role-assignments-portal.md)voor meer informatie.

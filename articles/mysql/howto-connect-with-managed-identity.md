@@ -7,12 +7,12 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 05/19/2020
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 74530b861b4dc7a35fa8b192ecc0e79ce5fa59c2
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 898f568d285c3b4b4360ea4dda8c63a1e0f13a42
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92742985"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101091809"
 ---
 # <a name="connect-with-managed-identity-to-azure-database-for-mysql"></a>Een beheerde identiteit verbinden met Azure Database for MySQL
 
@@ -31,7 +31,7 @@ In deze zelfstudie leert u procedures om het volgende te doen:
 ## <a name="prerequisites"></a>Vereisten
 
 - Als u niet bekend bent met de functie voor beheerde identiteiten voor Azure-resources, raadpleegt u dit [overzicht](../../articles/active-directory/managed-identities-azure-resources/overview.md). Als u geen Azure-account hebt, [registreert u zich voor een gratis account](https://azure.microsoft.com/free/) voordat u verder gaat.
-- Voor het maken van de vereiste resources en rollen beheer moet uw account de machtigingen eigenaar hebben op het juiste bereik (uw abonnement of resource groep). Als u hulp nodig hebt bij het toewijzen van rollen, raadpleegt u [Azure op rollen gebaseerd toegangs beheer (Azure RBAC) gebruiken om de toegang tot uw Azure-abonnements resources te beheren](../../articles/role-based-access-control/role-assignments-portal.md).
+- Voor het maken van de vereiste resources en rollen beheer moet uw account de machtigingen eigenaar hebben op het juiste bereik (uw abonnement of resource groep). Als u hulp nodig hebt bij roltoewijzing, raadpleegt u [Azure-rollen toewijzen om de toegang tot uw Azure-abonnements resources te beheren](../../articles/role-based-access-control/role-assignments-portal.md).
 - U hebt een Azure-VM (bijvoorbeeld met Ubuntu Linux) nodig die u wilt gebruiken voor toegang tot uw data base met behulp van beheerde identiteit
 - U hebt een Azure Database for MySQL database server met [Azure AD-verificatie](howto-configure-sign-in-azure-ad-authentication.md) geconfigureerd
 - Als u het C#-voor beeld wilt volgen, moet u eerst de hand leiding voor het [maken van verbinding met C#](connect-csharp.md) volt ooien

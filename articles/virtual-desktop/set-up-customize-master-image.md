@@ -6,19 +6,19 @@ ms.topic: how-to
 ms.date: 01/19/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 33af83934e8ecc5745f2edad3a7832a870406452
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: ca92e6e888ead6bbd79c7a8d524516ee95e8c45d
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98602382"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101092925"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Een VHD-hoofdinstallatiekopie voorbereiden en aanpassen
 
 In dit artikel leest u hoe u een installatie kopie van een virtuele harde schijf (VHD) voor het uploaden naar Azure voorbereidt, inclusief het maken van virtuele machines (Vm's) en het installeren van software. Deze instructies gelden voor een Windows-specifieke configuratie voor virtueel bureau blad die kan worden gebruikt met de bestaande processen van uw organisatie.
 
 >[!IMPORTANT]
->U wordt aangeraden een installatie kopie te gebruiken uit de galerie met installatie kopieën van Azure. Als u echter een aangepaste installatie kopie nodig hebt, moet u ervoor zorgen dat de virtuele WIndows-bureau blad-agent nog niet op uw apparaat is geïnstalleerd. Het gebruik van een aangepaste installatie kopie met de virtueel-bureaublad agent van Windows kan problemen veroorzaken met de installatie kopie.  
+>U wordt aangeraden een installatie kopie te gebruiken uit de galerie met installatie kopieën van Azure. Als u echter een aangepaste installatie kopie nodig hebt, moet u ervoor zorgen dat de virtuele Windows-bureau blad-agent nog niet op uw virtuele machine is geïnstalleerd. Het gebruik van een aangepaste installatie kopie met de virtueel-bureaublad agent van Windows kan problemen veroorzaken met de installatie kopie, zoals het blok keren van de registratie en het voor komen van verbindingen van gebruikers sessies.  
 
 ## <a name="create-a-vm"></a>Een virtuele machine maken
 
@@ -216,3 +216,5 @@ Nu u een installatie kopie hebt, kunt u hostgroepen maken of bijwerken. Raadplee
 - [Een hostpool maken met PowerShell](create-host-pools-powershell.md)
 - [Een profielcontainer maken voor een hostpool met behulp van een bestandsshare](create-host-pools-user-profile.md)
 - [De taakverdelingsmethode voor Windows Virtual Desktop configureren](configure-host-pool-load-balancing.md)
+
+Als er een verbindings probleem is opgetreden na het voorbereiden of aanpassen van uw VHD-installatie kopie, raadpleegt u de [hand leiding](troubleshoot-agent.md#your-issue-isnt-listed-here-or-wasnt-resolved) voor het oplossen van problemen.

@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 02/06/2021
 ms.author: robb
 ms.subservice: metrics
-ms.openlocfilehash: 51cd3bf3349e1880d4dc9f5d98d2d9b5dc5bb228
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 3f9ec395e8ccf6d5162717b2e38b0650ccc84812
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610444"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101091783"
 ---
 # <a name="supported-metrics-with-azure-monitor"></a>Ondersteunde metrische gegevens met Azure Monitor
 
@@ -154,21 +154,21 @@ Zie [overzicht van bewakings agenten](../agents/agents-overview.md)voor belang r
 
 |Metrisch|Exporteerbaar via Diagnostische instellingen?|Weergave naam voor metrische gegevens|Eenheid|Aggregatietype|Description|Dimensies|
 |---|---|---|---|---|---|---|
-|actief-timer-aantal|Yes|System. runtime|actief-timer-aantal|Count|Gemiddeld|Het aantal timers dat momenteel actief is|Implementatie, AppName, pod|
-|toewijzing-rate|Yes|System. runtime|toewijzing-rate|Bytes|Gemiddeld|Aantal toegewezen bytes in de beheerde heap|Implementatie, AppName, pod|
+|actief-timer-aantal|Yes|actief-timer-aantal|Count|Gemiddeld|Het aantal timers dat momenteel actief is|Implementatie, AppName, pod|
+|toewijzing-rate|Yes|toewijzing-rate|Bytes|Gemiddeld|Aantal toegewezen bytes in de beheerde heap|Implementatie, AppName, pod|
 |AppCpuUsage|Yes|CPU-gebruik van de app (preview-versie)|Percentage|Gemiddeld|Het recente CPU-gebruik voor de app|Implementatie, AppName, pod|
-|assembly-aantal|Yes|System. runtime|assembly-aantal|Count|Gemiddeld|Aantal geladen Assembly's|Implementatie, AppName, pod|
-|CPU-gebruik|Yes|System. runtime|CPU-gebruik|Percentage|Gemiddeld|% keer dat het proces de CPU heeft gebruikt|Implementatie, AppName, pod|
-|huidige-aanvragen|Yes|Micro soft. AspNetCore. hosting|huidige-aanvragen|Count|Gemiddeld|Totaal aantal verwerkte aanvragen in de levens duur van het proces|Implementatie, AppName, pod|
-|uitzonde ring-aantal|Yes|System. runtime|uitzonde ring-aantal|Aantal|Totaal|Aantal uitzonde ringen|Implementatie, AppName, pod|
-|mislukte aanvragen|Yes|Micro soft. AspNetCore. hosting|mislukte aanvragen|Count|Gemiddeld|Totaal aantal mislukte aanvragen in de levens duur van het proces|Implementatie, AppName, pod|
-|GC-heap-grootte|Yes|System. runtime|GC-heap-grootte|Count|Gemiddeld|Totale grootte van heap gerapporteerd door de GC (MB)|Implementatie, AppName, pod|
-|gen-0-GC-aantal|Yes|System. runtime|gen-0-GC-aantal|Count|Gemiddeld|Aantal GCs gen 0|Implementatie, AppName, pod|
-|gen-0-grootte|Yes|System. runtime|gen-0-grootte|Bytes|Gemiddeld|Heap-grootte in generatie 0|Implementatie, AppName, pod|
-|gen-1-GC-aantal|Yes|System. runtime|gen-1-GC-aantal|Count|Gemiddeld|System. runtime|Aantal gen 1-GCs|Implementatie, AppName, pod|
-|gen-1-grootte|Yes|System. runtime|gen-1-grootte|Bytes|Gemiddeld|Heap-grootte in generatie 1|Implementatie, AppName, pod|
-|gen-2-GC-aantal|Yes|System. runtime|gen-2-GC-aantal|Count|Gemiddeld|Aantal gen 2-GCs|Implementatie, AppName, pod|
-|gen-2-grootte|Yes|System. runtime|gen-2-grootte|Bytes|Gemiddeld|Heap-grootte in generatie 2|Implementatie, AppName, pod|
+|assembly-aantal|Yes|assembly-aantal|Count|Gemiddeld|Aantal geladen Assembly's|Implementatie, AppName, pod|
+|CPU-gebruik|Yes|CPU-gebruik|Percentage|Gemiddeld|% keer dat het proces de CPU heeft gebruikt|Implementatie, AppName, pod|
+|huidige-aanvragen|Yes|huidige-aanvragen|Count|Gemiddeld|Totaal aantal verwerkte aanvragen in de levens duur van het proces|Implementatie, AppName, pod|
+|uitzonde ring-aantal|Yes|uitzonde ring-aantal|Aantal|Totaal|Aantal uitzonde ringen|Implementatie, AppName, pod|
+|mislukte aanvragen|Yes|mislukte aanvragen|Count|Gemiddeld|Totaal aantal mislukte aanvragen in de levens duur van het proces|Implementatie, AppName, pod|
+|GC-heap-grootte|Yes|GC-heap-grootte|Count|Gemiddeld|Totale grootte van heap gerapporteerd door de GC (MB)|Implementatie, AppName, pod|
+|gen-0-GC-aantal|Yes|gen-0-GC-aantal|Count|Gemiddeld|Aantal GCs gen 0|Implementatie, AppName, pod|
+|gen-0-grootte|Yes|gen-0-grootte|Bytes|Gemiddeld|Heap-grootte in generatie 0|Implementatie, AppName, pod|
+|gen-1-GC-aantal|Yes|gen-1-GC-aantal|Count|Gemiddeld|Aantal gen 1-GCs|Implementatie, AppName, pod|
+|gen-1-grootte|Yes|gen-1-grootte|Bytes|Gemiddeld|Heap-grootte in generatie 1|Implementatie, AppName, pod|
+|gen-2-GC-aantal|Yes|gen-2-GC-aantal|Count|Gemiddeld|Aantal gen 2-GCs|Implementatie, AppName, pod|
+|gen-2-grootte|Yes|gen-2-grootte|Bytes|Gemiddeld|Heap-grootte in generatie 2|Implementatie, AppName, pod|
 |JVM. gc. live. data. size|Yes|JVM. gc. live. data. size|Bytes|Gemiddeld|Grootte van de geheugen groep van de oude generatie na een volledige GC|Implementatie, AppName, pod|
 |JVM. gc. max. data. size|Yes|JVM. gc. max. data. size|Bytes|Gemiddeld|Maximale grootte van de geheugen groep voor de oude generatie|Implementatie, AppName, pod|
 |JVM. gc. toegewezen geheugen|Yes|JVM. gc. toegewezen geheugen|Bytes|Maximum|Verhoogd voor een toename van de grootte van de Memory pool voor de jonge generatie na een GC tot de volgende|Implementatie, AppName, pod|
@@ -178,15 +178,15 @@ Zie [overzicht van bewakings agenten](../agents/agents-overview.md)voor belang r
 |JVM. Memory. committed|Yes|JVM. Memory. committed|Bytes|Gemiddeld|Geheugen toegewezen aan JVM in bytes|Implementatie, AppName, pod|
 |JVM. Memory. Max|Yes|JVM. Memory. Max|Bytes|Maximum|De maximale hoeveelheid geheugen in bytes die kan worden gebruikt voor geheugen beheer|Implementatie, AppName, pod|
 |JVM. Memory. used|Yes|JVM. Memory. used|Bytes|Gemiddeld|Gebruikt app-geheugen in bytes|Implementatie, AppName, pod|
-|Loh-grootte|Yes|System. runtime|Loh-grootte|Bytes|Gemiddeld|Grootte van LOH-heap|Implementatie, AppName, pod|
-|monitor-vergren delen-aantal conflicten|Yes|System. runtime|monitor-vergren delen-aantal conflicten|Count|Gemiddeld|Aantal keren dat er conflicten zijn opgetreden bij het maken van de monitor vergrendeling|Implementatie, AppName, pod|
+|Loh-grootte|Yes|Loh-grootte|Bytes|Gemiddeld|Grootte van LOH-heap|Implementatie, AppName, pod|
+|monitor-vergren delen-aantal conflicten|Yes|monitor-vergren delen-aantal conflicten|Count|Gemiddeld|Aantal keren dat er conflicten zijn opgetreden bij het maken van de monitor vergrendeling|Implementatie, AppName, pod|
 |proces. CPU. Usage|Yes|proces. CPU. Usage|Percentage|Gemiddeld|Het recente CPU-gebruik voor het JVM-proces|Implementatie, AppName, pod|
-|aanvragen per seconde|Yes|Micro soft. AspNetCore. hosting|aanvragen-frequentie|Count|Gemiddeld|Aanvraag frequentie|Implementatie, AppName, pod|
+|aanvragen per seconde|Yes|aanvragen-frequentie|Count|Gemiddeld|Aanvraag frequentie|Implementatie, AppName, pod|
 |System. CPU. Usage|Yes|System. CPU. Usage|Percentage|Gemiddeld|Het recente CPU-gebruik voor het hele systeem|Implementatie, AppName, pod|
-|thread pool-voltooid-items-aantal|Yes|System. runtime|thread pool-voltooid-items-aantal|Count|Gemiddeld|Aantal voltooide werk items van thread pool|Implementatie, AppName, pod|
-|thread pool-lengte van wachtrij|Yes|System. runtime|thread pool-lengte van wachtrij|Count|Gemiddeld|Wachtrij lengte werk items in thread pool|Implementatie, AppName, pod|
-|thread pool-aantal threads|Yes|System. runtime|thread pool-aantal threads|Count|Gemiddeld|Aantal thread pool-threads|Implementatie, AppName, pod|
-|tijd-in-GC|Yes|System. runtime|tijd-in-GC|Percentage|Gemiddeld|% tijd in GC sinds de laatste GC|Implementatie, AppName, pod|
+|thread pool-voltooid-items-aantal|Yes|thread pool-voltooid-items-aantal|Count|Gemiddeld|Aantal voltooide werk items van thread pool|Implementatie, AppName, pod|
+|thread pool-lengte van wachtrij|Yes|thread pool-lengte van wachtrij|Count|Gemiddeld|Wachtrij lengte werk items in thread pool|Implementatie, AppName, pod|
+|thread pool-aantal threads|Yes|thread pool-aantal threads|Count|Gemiddeld|Aantal thread pool-threads|Implementatie, AppName, pod|
+|tijd-in-GC|Yes|tijd-in-GC|Percentage|Gemiddeld|% tijd in GC sinds de laatste GC|Implementatie, AppName, pod|
 |Tomcat. Global. error|Yes|Tomcat. Global. error|Aantal|Totaal|Tomcat Global-fout|Implementatie, AppName, pod|
 |Tomcat. Global. ontvangen|Yes|Tomcat. Global. ontvangen|Bytes|Totaal|Totaal aantal bytes ontvangen Tomcat|Implementatie, AppName, pod|
 |Tomcat. Global. Request. Gem. tijd|Yes|Tomcat. Global. Request. Gem. tijd|Milliseconden|Gemiddeld|Gemiddelde tijd Tomcat-aanvraag|Implementatie, AppName, pod|
@@ -202,8 +202,8 @@ Zie [overzicht van bewakings agenten](../agents/agents-overview.md)voor belang r
 |Tomcat. Sessions. rejected|Yes|Tomcat. Sessions. rejected|Aantal|Totaal|Aantal geweigerde Tomcat-sessies|Implementatie, AppName, pod|
 |tomcat.threads.config Max.|Yes|tomcat.threads.config Max.|Aantal|Totaal|Maximum aantal threads van Tomcat-configuratie|Implementatie, AppName, pod|
 |Tomcat. threads. current|Yes|Tomcat. threads. current|Aantal|Totaal|Aantal huidige threads van Tomcat|Implementatie, AppName, pod|
-|Totaal-aanvragen|Yes|Micro soft. AspNetCore. hosting|Totaal-aanvragen|Count|Gemiddeld|Totaal aantal aanvragen in de levens duur van het proces|Implementatie, AppName, pod|
-|Working-set|Yes|System. runtime|Working-set|Count|Gemiddeld|Hoeveelheid werkset die wordt gebruikt door het proces (MB)|Implementatie, AppName, pod|
+|Totaal-aanvragen|Yes|Totaal-aanvragen|Count|Gemiddeld|Totaal aantal aanvragen in de levens duur van het proces|Implementatie, AppName, pod|
+|Working-set|Yes|Working-set|Count|Gemiddeld|Hoeveelheid werkset die wordt gebruikt door het proces (MB)|Implementatie, AppName, pod|
 
 
 ## <a name="microsoftautomationautomationaccounts"></a>Micro soft. Automation/automationAccounts

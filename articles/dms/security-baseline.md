@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/08/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 002c6762c71d5ffb45e56f3bc74d911570bca8bd
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 79743ba2c733855a377ae8e2522ce54eca9e8c04
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100571952"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101091095"
 ---
 # <a name="azure-security-baseline-for-azure-database-migration-service"></a>Azure-beveiligings basislijn voor Azure Database Migration Service
 
@@ -269,7 +269,7 @@ Gebruik ingebouwde rollen om machtigingen toe te wijzen en definieer alleen aang
 
 - [Wat is Azure Role-based Access Control (Azure RBAC)](../role-based-access-control/overview.md)
 
-- [RBAC configureren in Azure](../role-based-access-control/role-assignments-portal.md) 
+- [Azure RBAC configureren](../role-based-access-control/role-assignments-portal.md) 
 
 - [Identiteits- en toegangsbeoordelingen van Azure AD](../active-directory/governance/access-reviews-overview.md)
 

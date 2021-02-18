@@ -4,12 +4,12 @@ description: Gebruik Azure Resource Manager om resources te verplaatsen naar een
 ms.topic: conceptual
 ms.date: 09/15/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: cd05fe045532ee1b1f1fb88e502d786daabf9365
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aca1e5255c89e99a2c996e072e5106da8dc3eef9
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91319551"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101093631"
 ---
 # <a name="move-resources-to-a-new-resource-group-or-subscription"></a>Resources verplaatsen naar een nieuwe resourcegroep of een nieuw abonnement
 
@@ -37,7 +37,7 @@ Voordat u een resource verplaatst, moeten er enkele belangrijke stappen worden u
 
 1. Als u een resource verplaatst waaraan een Azure-rol rechtstreeks is toegewezen aan de resource (of een onderliggende resource), wordt de roltoewijzing niet verplaatst en wordt deze zwevend. Nadat de verplaatsing is verplaatst, moet u de roltoewijzing opnieuw maken. Uiteindelijk wordt de zwevende roltoewijzing automatisch verwijderd, maar het is een best practice om de roltoewijzing te verwijderen voordat u de resource verplaatst.
 
-    Zie [Azure-roltoewijzingen weer geven](../../role-based-access-control/role-assignments-list-portal.md#list-role-assignments-at-a-scope) en [Azure-roltoewijzingen toevoegen of verwijderen](../../role-based-access-control/role-assignments-portal.md)voor meer informatie over het beheren van roltoewijzingen.
+    Zie [Azure-roltoewijzingen weer geven](../../role-based-access-control/role-assignments-list-portal.md#list-role-assignments-at-a-scope) en [Azure-rollen toewijzen](../../role-based-access-control/role-assignments-portal.md)voor meer informatie over het beheren van roltoewijzingen.
 
 1. De bron-en doel abonnementen moeten actief zijn. Als u problemen ondervindt bij het inschakelen van een uitgeschakeld account, [maakt u een ondersteunings aanvraag voor Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Selecteer **abonnements beheer** voor het type probleem.
 
@@ -178,11 +178,11 @@ Wanneer u de resource groep bekijkt, is de optie verplaatsen uitgeschakeld.
 
 Als u de optie verplaatsen wilt inschakelen, selecteert u de resources die u wilt verplaatsen. Als u alle resources wilt selecteren, schakelt u het selectie vakje boven aan de lijst in. U kunt ook afzonderlijke resources selecteren. Na het selecteren van resources is de optie verplaatsen ingeschakeld.
 
-:::image type="content" source="./media/move-resource-group-and-subscription/select-resources.png" alt-text="optie voor verplaatsen is uitgeschakeld":::
+:::image type="content" source="./media/move-resource-group-and-subscription/select-resources.png" alt-text="resources selecteren":::
 
 Selecteer de knop **verplaatsen** .
 
-:::image type="content" source="./media/move-resource-group-and-subscription/move-options.png" alt-text="optie voor verplaatsen is uitgeschakeld":::
+:::image type="content" source="./media/move-resource-group-and-subscription/move-options.png" alt-text="opties verplaatsen":::
 
 Deze knop biedt u drie opties:
 
@@ -194,11 +194,11 @@ Selecteer of u de resources verplaatst naar een nieuwe resource groep of een nie
 
 Selecteer de doel resource groep. Bevestig dat u scripts voor deze resources moet bijwerken en selecteer **OK**. Als u hebt geselecteerd om naar een nieuw abonnement te gaan, moet u ook het doel abonnement selecteren.
 
-:::image type="content" source="./media/move-resource-group-and-subscription/move-destination.png" alt-text="optie voor verplaatsen is uitgeschakeld":::
+:::image type="content" source="./media/move-resource-group-and-subscription/move-destination.png" alt-text="doel selecteren":::
 
 Nadat u hebt gecontroleerd of de resources kunnen worden verplaatst, ziet u een melding dat de verplaatsings bewerking wordt uitgevoerd.
 
-:::image type="content" source="./media/move-resource-group-and-subscription/move-notification.png" alt-text="optie voor verplaatsen is uitgeschakeld":::
+:::image type="content" source="./media/move-resource-group-and-subscription/move-notification.png" alt-text="melding":::
 
 Wanneer deze is voltooid, ontvangt u een melding van het resultaat.
 

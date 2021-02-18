@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure Front Door?
       href: front-door-overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   expanded: true
   items:
     - name: Een Front Door maken - Portal
@@ -36,6 +36,8 @@
       href: front-door-quickstart-template-samples.md
 - name: Concepten
   items:
+    - name: Standard/Premium SKU
+      href: standard-premium/overview.md
     - name: Beveiliging
       items:
         - name: Beveiligingsbasislijn
@@ -44,7 +46,7 @@
       href: front-door-backend-pool.md
     - name: Opslaan in cache met Front Door
       href: front-door-caching.md
-    - name: DDoS-beveiliging
+    - name: DDoS-bescherming
       href: front-door-ddos.md
     - name: Veelgestelde vragen over Front Door
       href: front-door-faq.md

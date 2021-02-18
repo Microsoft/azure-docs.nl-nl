@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/07/2021
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: c49ee2778d3198cc7109c34bceb1591756d82b1c
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 502f93df8d9948a6d6682b14ea13b59e324833cb
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653445"
+ms.locfileid: "101091473"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Taal-en spraak ondersteuning voor de spraak service
 
@@ -191,6 +191,7 @@ Neural stemmen kunnen worden gebruikt om interacties te maken met chat bots uitb
 | Fins (Finland) | `fi-FI` | Vrouw | `fi-FI-SelmaNeural` <sup>Nieuw</sup> | Algemeen |
 | Fins (Finland) | `fi-FI` | Man | `fi-FI-HarriNeural` <sup>Nieuw</sup> | Algemeen |
 | Frans (Canada) | `fr-CA` | Vrouw | `fr-CA-SylvieNeural` | Algemeen |
+| Frans (Canada) | `fr-CA` | Man | `fr-CA-AntoineNeural` <sup>Nieuw</sup> | Algemeen |
 | Frans (Canada) | `fr-CA` | Man | `fr-CA-JeanNeural` | Algemeen |
 | Frans (Frankrijk) | `fr-FR` | Vrouw | `fr-FR-DeniseNeural` | Algemeen |
 | Frans (Frankrijk) | `fr-FR` | Man | `fr-FR-HenriNeural` | Algemeen |

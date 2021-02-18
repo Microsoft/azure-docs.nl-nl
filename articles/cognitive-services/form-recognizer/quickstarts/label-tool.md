@@ -2,22 +2,26 @@
 title: 'Quickstart: Formulieren labelen, een model trainen en formulieren analyseren met behulp van het voorbeeldhulpprogramma voor labelen, Form Recognizer'
 titleSuffix: Azure Cognitive Services
 description: In deze quickstart gebruikt u Form Recognizer, het voorbeeldhulpprogramma voor labelen om formulierdocumenten handmatig te labelen. Vervolgens traint u een aangepast documentverwerkingsmodel met de gelabelde documenten en gebruikt u het model om sleutel-waardeparen te extraheren.
-author: PatrickFarley
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 01/29/2021
-ms.author: pafarley
+ms.author: lajanuar
 ms.custom: cog-serv-seo-aug-2020
 keywords: documentverwerking
-ms.openlocfilehash: 9642f9ce51cd3eb90344f96bc099da7adea93022
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 3814eb9d71f38406533d0bcecf594bbdcd42d5b7
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100364785"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101095796"
 ---
+<!-- markdownlint-disable MD001 -->
+<!-- markdownlint-disable MD024 -->
+<!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD034 -->
 # <a name="train-a-form-recognizer-model-with-labels-using-the-sample-labeling-tool"></a>Een Form Recognizer-model trainen met behulp van het voorbeeldhulpprogramma voor labelen
 
 In deze quickstart gebruikt u de REST API van Form Recognizer met het voorbeeldhulpprogramma voor labelen om een aangepast documentverwerkingsmodel te trainen met handmatig gelabelde gegevens. Zie de sectie [Trainen met labels](../overview.md#train-with-labels) van het overzicht voor meer informatie over leren onder supervisie met Form Recognizer.
@@ -30,8 +34,8 @@ U hebt het volgende nodig om deze quickstart te voltooien:
 
 * Azure-abonnement: [Krijg een gratis abonnement](https://azure.microsoft.com/free/cognitive-services)
 * Wanneer u een Azure-abonnement hebt, kunt u <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer"  title="Een Form Recognizer-resource maken"  target="_blank">een Form Recognizer-resource maken <span class="docon docon-navigate-external x-hidden-focus"></span></a> in Azure Portal om uw sleutel en eindpunt op te halen. Nadat de app is geïmplementeerd, klikt u op **Ga naar resource**.
-    * U hebt de sleutel en het eindpunt nodig van de resource die u maakt, om de toepassing te verbinden met de Form Recognizer API. Later in de quickstart plakt u uw sleutel en eindpunt in de onderstaande code.
-    * U kunt de gratis prijscategorie (`F0`) gebruiken om de service uit te proberen, en later upgraden naar een betaalde laag voor productie.
+  * U hebt de sleutel en het eindpunt nodig van de resource die u maakt, om de toepassing te verbinden met de Form Recognizer API. Later in de quickstart plakt u uw sleutel en eindpunt in de onderstaande code.
+  * U kunt de gratis prijscategorie (`F0`) gebruiken om de service uit te proberen, en later upgraden naar een betaalde laag voor productie.
 * Een set van minimaal zes formulieren van hetzelfde type. U gebruikt deze gegevens om het model te trainen en een formulier te testen. U kunt een [voorbeeldgegevensverzameling](https://go.microsoft.com/fwlink/?linkid=2090451) gebruiken voor deze quickstart (download en extraheer *sample_data.zip*). Upload de trainingsbestanden naar de hoofdmap van een Blob Storage-container in een Azure Storage-account met een standaardprestatielaag.
 
 ## <a name="create-a-form-recognizer-resource"></a>Een Form Recognizer-resource maken
@@ -42,27 +46,28 @@ U hebt het volgende nodig om deze quickstart te voltooien:
 
 Als u het Form Recognizer-voorbeeldhulpprogramma voor labelen online wilt uitproberen, gaat u naar de [website van FOTT](https://fott-preview.azurewebsites.net/).
 
-# <a name="v20"></a>[v2.0](#tab/v2-0)
-> [!div class="nextstepaction"]
-> [Vooraf gebouwde modellen uitproberen](https://fott.azurewebsites.net/)
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
 
-# <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
 > [!div class="nextstepaction"]
 > [Vooraf gebouwde modellen uitproberen](https://fott-preview.azurewebsites.net/)
 
+### <a name="v20"></a>[v2.0](#tab/v2-0)
+
+> [!div class="nextstepaction"]
+> [Vooraf gebouwde modellen uitproberen](https://fott.azurewebsites.net/)
+
 ---
 
-U hebt een Azure-abonnement ([maak gratis een account](https://azure.microsoft.com/free/cognitive-services)) en een eindpunt en sleutel voor de [Form Recognizer-resource](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer) nodig om de Form Recognizer-service te kunnen uitproberen. 
-
+U hebt een Azure-abonnement ([maak gratis een account](https://azure.microsoft.com/free/cognitive-services)) en een eindpunt en sleutel voor de [Form Recognizer-resource](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer) nodig om de Form Recognizer-service te kunnen uitproberen.
 
 ## <a name="set-up-the-sample-labeling-tool"></a>Het voorbeeldhulpprogramma voor labelen instellen
 
 U gebruikt de Docker-engine voor het uitvoeren van het voorbeeldhulpprogramma voor labelen. Volg deze stappen om de Docker-container in te stellen. Zie het [Docker-overzicht](https://docs.docker.com/engine/docker-overview/) voor een inleiding tot de basisprincipes van Docker en containers.
 
 > [!TIP]
-> Het OCR-voorbeeldhulpprogramma voor labelen is ook beschikbaar als een opensourceproject op GitHub. Het hulpprogramma is een TypeScript-webtoepassing die is gebouwd met React + Redux. Zie de opslagplaats [OCR Form Labeling Tool](https://github.com/microsoft/OCR-Form-Tools/blob/master/README.md#run-as-web-application) (OCR-voorbeeldhulpprogramma voor labelen) voor meer informatie of als u een bijdrage wilt leveren. Als u het hulpprogramma online wilt uitproberen, gaat u naar de [FOTT-website](https://fott.azurewebsites.net/).   
+> Het OCR-voorbeeldhulpprogramma voor labelen is ook beschikbaar als een opensourceproject op GitHub. Het hulpprogramma is een TypeScript-webtoepassing die is gebouwd met React + Redux. Zie de opslagplaats [OCR Form Labeling Tool](https://github.com/microsoft/OCR-Form-Tools/blob/master/README.md#run-as-web-application) (OCR-voorbeeldhulpprogramma voor labelen) voor meer informatie of als u een bijdrage wilt leveren. Als u het hulpprogramma online wilt uitproberen, gaat u naar de [FOTT-website](https://fott.azurewebsites.net/).
 
-1. Installeer eerst Docker op een hostcomputer. In deze handleiding wordt uitgelegd hoe u een lokale computer als host kunt gebruiken. Als u een Docker-hostingservice in Azure wilt gebruiken, raadpleegt u de instructiegids [Het voorbeeldhulpprogramma voor labelen implementeren](../deploy-label-tool.md). 
+1. Installeer eerst Docker op een hostcomputer. In deze handleiding wordt uitgelegd hoe u een lokale computer als host kunt gebruiken. Als u een Docker-hostingservice in Azure wilt gebruiken, raadpleegt u de instructiegids [Het voorbeeldhulpprogramma voor labelen implementeren](../deploy-label-tool.md).
 
    De hostcomputer moet voldoen aan de volgende hardwarevereisten:
 
@@ -70,38 +75,43 @@ U gebruikt de Docker-engine voor het uitvoeren van het voorbeeldhulpprogramma vo
     |:--|:--|:--|
     |Voorbeeldhulpprogramma voor labelen|2 kernen, 4 GB geheugen|4 kernen, 8 GB geheugen|
 
-   Installeer Docker op uw computer door de juiste instructies te volgen voor uw besturingssysteem: 
+   Installeer Docker op uw computer door de juiste instructies te volgen voor uw besturingssysteem:
+
    * [Windows](https://docs.docker.com/docker-for-windows/)
    * [MacOS](https://docs.docker.com/docker-for-mac/)
    * [Linux](https://docs.docker.com/install/)
 
-
-
 1. Haal de container voor het voorbeeldhulpprogramma voor labelen op met de opdracht `docker pull`.
 
-    # <a name="v20"></a>[v2.0](#tab/v2-0)    
-    ```
-    docker pull mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool
-    ```
-    # <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)    
-    ```
-    docker pull mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:latest-preview
-    ```
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
 
-    ---
+```console
+ docker pull mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:latest-preview
+```
 
-1. U bent nu klaar om de container met `docker run` uit te voeren.
+### <a name="v20"></a>[v2.0](#tab/v2-0)
 
-    # <a name="v20"></a>[v2.0](#tab/v2-0)    
-    ```
-    docker run -it -p 3000:80 mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool eula=accept
-    ```
-    # <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)    
-    ```
-    docker run -it -p 3000:80 mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:latest-preview eula=accept    
-    ```
+```console
+docker pull mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool
+```
 
-    --- 
+---
+</br>
+  3. U bent nu klaar om de container met `docker run` uit te voeren.
+
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
+
+```console
+ docker run -it -p 3000:80 mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:latest-preview eula=accept
+```
+
+### <a name="v20"></a>[v2.0](#tab/v2-0)
+
+```console
+docker run -it -p 3000:80 mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool eula=accept
+```
+
+---
 
    Met deze opdracht wordt het voorbeeldhulpprogramma voor labelen beschikbaar gemaakt via een webbrowser. Ga naar `http://localhost:3000`.
 
@@ -116,10 +126,10 @@ Zorg er eerst voor dat alle trainingsdocumenten dezelfde indeling hebben. Als u 
 
 Schakel CORS in voor uw opslagaccount. Selecteer uw opslagaccount in Azure Portal en klik in het linkerdeelvenster op het tabblad **CORS**. Vul in de onderste regel de volgende waarden in. Klik bovenaan op **Opslaan**.
 
-* Toegestane oorsprongen = * 
+* Toegestane oorsprongen = *
 * Toegestane methoden = \[alles selecteren\]
 * Toegestane headers = *
-* Zichtbare headers = * 
+* Zichtbare headers = *
 * Maximumleeftijd = 200
 
 > [!div class="mx-imgBorder"]
@@ -164,7 +174,7 @@ Wanneer u een project maakt of opent, wordt hoofdvenster van de tageditor geopen
 
 * Een voorbeeldvenster met een verstelbaar formaat dat een te scrollen lijst met formulieren van de bronverbinding bevat.
 * Het hoofdvenster van de tageditor waarmee u labels kunt toepassen.
-* Het deelvenster van de tageditor waarmee gebruikers labels kunnen wijzigen, vergrendelen, opnieuw ordenen en verwijderen. 
+* Het deelvenster van de tageditor waarmee gebruikers labels kunnen wijzigen, vergrendelen, opnieuw ordenen en verwijderen.
 
 ### <a name="identify-text-elements"></a>Tekstelementen identificeren
 
@@ -178,7 +188,29 @@ Er wordt ook weergegeven welke tabellen automatisch zijn geëxtraheerd. Klik op 
 
 Vervolgens maakt u tags (labels) en past u deze toe op de tekst elementen die door het model moeten worden geanalyseerd.
 
-# <a name="v20"></a>[v2.0](#tab/v2-0)  
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
+
+1. Gebruik eerst het deel venster Tags editor om de labels te maken die u wilt identificeren:
+   * Klik op **+** om een nieuw label te maken.
+   * Voer de naam van het label in.
+   * Druk op Enter om het label op te slaan.
+1. Klik in de hoofdeditor op woorden in de gemarkeerde tekstelementen. In de _Preview-versie van de v 2.1_ -API kunt u ook _selectie markeringen_ selecteren, zoals keuze rondjes en selectie vakjes als sleutel waardeparen. Form Recognizer identificeert of de selectiemarkering de waarde ‘ingeschakeld’ of ‘uitgeschakeld’ is.
+1. Klik op het label dat u wilt toepassen of druk op de bijbehorende toets op het toetsenbord. De numerieke toetsen zijn toegewezen als sneltoetsen voor de eerste tien labels. U kunt de volgorde van de labels wijzigen met behulp van de pijlen omhoog en omlaag in het tageditorvenster.
+    > [!Tip]
+    > Houd rekening met de volgende tips wanneer u een label maakt van uw formulieren:
+    >
+    > * U kunt slechts één label per geselecteerd tekstelement toepassen.
+    > * Elk label kan slechts eenmaal per pagina worden toegepast. Als een waarde meerdere keren op hetzelfde formulier wordt weergegeven, maakt u voor elk exemplaar verschillende labels. Bijvoorbeeld: factuur 1, factuur 2, enzovoort.
+    > * Een label kan niet op meerdere pagina's worden toegepast.
+    > * De labelwaarden zijn zoals ze op het formulier worden weergegeven. Splits geen waarde in twee delen met twee verschillende labels. Zo moet bijvoorbeeld een adresveld met één label worden gelabeld, ook als het meerdere regels omvat.
+    > * Voeg geen sleutels aan de velden met labels toe, alleen de waarden.
+    > * Tabelgegevens moeten automatisch worden gedetecteerd en worden beschikbaar in het laatste JSON-uitvoerbestand. Als het model echter niet alle tabelgegevens detecteert, kunt u deze velden ook handmatig labelen. Label elke cel in de tabel met een ander label. Als uw formulieren tabellen met een wisselend aantal rijen bevatten, moet u ervoor zorgen dat u ten minste één formulier met de grootste mogelijke tabel labelt.
+    > * Gebruik de knoppen rechts van de **+** om uw labels te zoeken, een nieuwe naam te geven, opnieuw in te delen en te verwijderen.
+    > * Als u een toegepast label wilt verwijderen zonder het label zelf te verwijderen, selecteert u de gemarkeerde rechthoek in de documentweergave en drukt u op de verwijdertoets.
+    >
+
+### <a name="v20"></a>[v2.0](#tab/v2-0)
+
 1. Gebruik eerst het deelvenster van de tageditor om de labels te maken die u wilt identificeren.
    1. Klik op **+** om een nieuw label te maken.
    1. Voer de naam van het label in.
@@ -186,7 +218,8 @@ Vervolgens maakt u tags (labels) en past u deze toe op de tekst elementen die do
 1. Klik in de hoofdeditor op woorden in de gemarkeerde tekstelementen.
 1. Klik op het label dat u wilt toepassen of druk op de bijbehorende toets op het toetsenbord. De numerieke toetsen zijn toegewezen als sneltoetsen voor de eerste tien labels. U kunt de volgorde van de labels wijzigen met behulp van de pijlen omhoog en omlaag in het tageditorvenster.
     > [!Tip]
-    > Denk aan de volgende tips wanneer u labels voor uw formulieren gebruikt.
+    > Houd rekening met de volgende tips wanneer u een label maakt van uw formulieren:
+    >
     > * U kunt slechts één label per geselecteerd tekstelement toepassen.
     > * Elk label kan slechts eenmaal per pagina worden toegepast. Als een waarde meerdere keren op hetzelfde formulier wordt weergegeven, maakt u voor elk exemplaar verschillende labels. Bijvoorbeeld: factuur 1, factuur 2, enzovoort.
     > * Een label kan niet op meerdere pagina's worden toegepast.
@@ -195,31 +228,11 @@ Vervolgens maakt u tags (labels) en past u deze toe op de tekst elementen die do
     > * Tabelgegevens moeten automatisch worden gedetecteerd en worden beschikbaar in het laatste JSON-uitvoerbestand. Als het model echter niet alle tabelgegevens detecteert, kunt u deze velden ook handmatig labelen. Label elke cel in de tabel met een ander label. Als uw formulieren tabellen met een wisselend aantal rijen bevatten, moet u ervoor zorgen dat u ten minste één formulier met de grootste mogelijke tabel labelt.
     > * Gebruik de knoppen rechts van de **+** om uw labels te zoeken, een nieuwe naam te geven, opnieuw in te delen en te verwijderen.
     > * Als u een toegepast label wilt verwijderen zonder het label zelf te verwijderen, selecteert u de gemarkeerde rechthoek in de documentweergave en drukt u op de verwijdertoets.
-
-
-# <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1) 
-1. Gebruik eerst het deelvenster van de tageditor om de labels te maken die u wilt identificeren.
-   1. Klik op **+** om een nieuw label te maken.
-   1. Voer de naam van het label in.
-   1. Druk op Enter om het label op te slaan.
-1. Klik in de hoofdeditor op woorden in de gemarkeerde tekstelementen. In de _Preview-versie van de v 2.1_ -API kunt u ook _selectie markeringen_ selecteren, zoals keuze rondjes en selectie vakjes als sleutel waardeparen. Form Recognizer identificeert of de selectiemarkering de waarde ‘ingeschakeld’ of ‘uitgeschakeld’ is.
-1. Klik op het label dat u wilt toepassen of druk op de bijbehorende toets op het toetsenbord. De numerieke toetsen zijn toegewezen als sneltoetsen voor de eerste tien labels. U kunt de volgorde van de labels wijzigen met behulp van de pijlen omhoog en omlaag in het tageditorvenster.
-    > [!Tip]
-    > Denk aan de volgende tips wanneer u labels voor uw formulieren gebruikt.
-    > * U kunt slechts één label per geselecteerd tekstelement toepassen.
-    > * Elk label kan slechts eenmaal per pagina worden toegepast. Als een waarde meerdere keren op hetzelfde formulier wordt weergegeven, maakt u voor elk exemplaar verschillende labels. Bijvoorbeeld: factuur 1, factuur 2, enzovoort.
-    > * Een label kan niet op meerdere pagina's worden toegepast.
-    > * De labelwaarden zijn zoals ze op het formulier worden weergegeven. Splits geen waarde in twee delen met twee verschillende labels. Zo moet bijvoorbeeld een adresveld met één label worden gelabeld, ook als het meerdere regels omvat.
-    > * Voeg geen sleutels aan de velden met labels toe, alleen de waarden.
-    > * Tabelgegevens moeten automatisch worden gedetecteerd en worden beschikbaar in het laatste JSON-uitvoerbestand. Als het model echter niet alle tabelgegevens detecteert, kunt u deze velden ook handmatig labelen. Label elke cel in de tabel met een ander label. Als uw formulieren tabellen met een wisselend aantal rijen bevatten, moet u ervoor zorgen dat u ten minste één formulier met de grootste mogelijke tabel labelt.
-    > * Gebruik de knoppen rechts van de **+** om uw labels te zoeken, een nieuwe naam te geven, opnieuw in te delen en te verwijderen.
-    > * Als u een toegepast label wilt verwijderen zonder het label zelf te verwijderen, selecteert u de gemarkeerde rechthoek in de documentweergave en drukt u op de verwijdertoets.
-
+>
 
 ---
 
 :::image type="content" source="../media/label-tool/main-editor-2-1.png" alt-text="Hoofdvenster van de editor van het voorbeeldhulpprogramma voor labelen.":::
-
 
 Volg de bovenstaande stappen om ten minste vijf formulieren te labelen.
 
@@ -231,35 +244,43 @@ U kunt desgewenst het verwachte gegevenstype voor elk label instellen. Open het 
 > ![Selectie van waardetypen met het voorbeeldhulpprogramma voor labelen](../media/whats-new/value-type.png)
 
 De volgende waardetypen en variaties worden momenteel ondersteund:
+
 * `string`
-    * standaard, `no-whitespaces`, `alphanumeric`
+  * standaard, `no-whitespaces`, `alphanumeric`
+
 * `number`
-    * standaard, `currency`
-* `date` 
-    * standaard, `dmy`, `mdy`, `ymd`
+  * standaard, `currency`
+
+* `date`
+  * standaard, `dmy`, `mdy`, `ymd`
+
 * `time`
 * `integer`
 * `selectionMark` – _Nieuw in v2.1-preview.1!_
 
 > [!NOTE]
 > Zie de volgende regels voor de datumnotatie:
-> 
+>
 > U moet een indeling (`dmy`, `mdy`, `ymd`) opgeven voor de datumnotatie.
 >
 > De volgende tekens kunnen worden gebruikt als datumscheidingstekens: `, - / . \`. Witruimte kan niet als scheidingsteken worden gebruikt. Bijvoorbeeld:
+>
 > * 01.01.2020
 > * 01-01-2020
 > * 01/01/2020
 >
 > De dag en maand kunnen worden geschreven met een of twee cijfers; het jaar kan uit twee of vier cijfers bestaan:
+>
 > * 1-1-2020
 > * 1-01-20
 >
 > Als een datumtekenreeks acht cijfers bevat, is het scheidingsteken optioneel:
+>
 > * 01012020
 > * 01 01 2020
 >
 > De maand kan ook worden geschreven met de volledige of afgekorte naam. Als de naam wordt gebruikt, zijn de scheidingstekens optioneel. Deze indeling kan echter minder nauwkeurig worden herkend dan andere.
+>
 > * 01/jan/2020
 > * 01jan2020
 > * 01 jan 2020
@@ -282,21 +303,22 @@ Nadat de training is voltooid, bekijkt u de waarde **Gemiddelde nauwkeurigheid**
 
 ## <a name="compose-trained-models"></a>Getrainde modellen samenstellen
 
-# <a name="v20"></a>[v2.0](#tab/v2-0)  
-
-Deze functie is momenteel beschikbaar in de preview van v2.1. 
-
-# <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1) 
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
 
 Met Model samenstellen kunt u maximaal 100 modellen met één model-id samenstellen. Wanneer u Analyseren aanroept met deze samengestelde model-id, zal Form Recognizer het formulier dat u hebt ingediend eerst classificeren door het aan het best overeenkomende model te koppelen, en vervolgens resultaten voor dat model retourneren. Dit is handig wanneer binnenkomende formulieren mogelijk tot één van meerdere sjablonen behoren.
 
-Om modellen samen te stellen in het voorbeeldhulpprogramma voor labelen, klikt u aan de linkerkant op het pictogram Model samenstellen (samenvoegingspijlen). Selecteer links de modellen die u wilt samenstellen. Modellen met het pijlenpictogram zijn al samengesteld. Klik op de knop Samenstellen. Geef in het pop-upvenster uw nieuwe model naam op en klik op opstellen. Wanneer de bewerking is voltooid, zou uw nieuwe samengestelde model in de lijst moeten worden weergegeven. 
+Om modellen samen te stellen in het voorbeeldhulpprogramma voor labelen, klikt u aan de linkerkant op het pictogram Model samenstellen (samenvoegingspijlen). Selecteer links de modellen die u wilt samenstellen. Modellen met het pijlenpictogram zijn al samengesteld.
+Klik op de knop Samenstellen. Geef in het pop-upvenster uw nieuwe model naam op en klik op opstellen. Wanneer de bewerking is voltooid, zou uw nieuwe samengestelde model in de lijst moeten worden weergegeven.
 
 :::image type="content" source="../media/label-tool/model-compose.png" alt-text="UX-weergave van Model samenstellen.":::
 
+### <a name="v20"></a>[v2.0](#tab/v2-0)
+
+Deze functie is momenteel beschikbaar in de preview van v2.1.
+
 ---
 
-## <a name="analyze-a-form"></a>Een formulier analyseren 
+## <a name="analyze-a-form"></a>Een formulier analyseren
 
 Klik aan de linkerkant op het voorspellingspictogram (gloeilamp) om het model te testen. Upload een formulierdocument dat u niet in het trainingsproces hebt gebruikt. Klik vervolgens aan de rechterkant op de knop **Voorspellen** om voorspellingen voor sleutels of waarden voor het formulier op te halen. Er worden labels toegepast in begrenzingsvakken en de betrouwbaarheid van elk label wordt gerapporteerd.
 
@@ -311,13 +333,15 @@ De gerapporteerde gemiddelde nauwkeurigheid, de betrouwbaarheidsscores en werkel
 
 ## <a name="save-a-project-and-resume-later"></a>Een project opslaan en later hervatten
 
-Als u het project op een ander tijdstip of in een andere browser wilt hervatten, moet u het beveiligingstoken van het project opslaan en later opnieuw invoeren. 
+Als u het project op een ander tijdstip of in een andere browser wilt hervatten, moet u het beveiligingstoken van het project opslaan en later opnieuw invoeren.
 
 ### <a name="get-project-credentials"></a>Projectreferenties ophalen
+
 Ga naar de pagina met projectinstellingen (schuifregelaar) en noteer de naam van het beveiligingstoken. Ga vervolgens naar uw toepassingsinstellingen (tandwielpictogram), waarin alle beveiligingstokens in uw huidige browserexemplaar worden weergegeven. Zoek het beveiligingstoken van uw project en kopieer de naam en sleutelwaarde naar een veilige locatie.
 
 ### <a name="restore-project-credentials"></a>Projectreferenties herstellen
-Als u uw project wilt hervatten, moet u eerst een verbinding maken met dezelfde Blob Storage-container. Herhaal de bovenstaande stappen om dit te doen. Ga vervolgens naar de pagina met toepassingsinstellingen (tandwielpictogram) en kijk of het beveiligingstoken van uw project aanwezig is. Als dat niet het geval is, voegt u een nieuw beveiligingstoken toe en kopieert u de naam en de sleutel van het token uit de vorige stap. Klik vervolgens op Instellingen opslaan. 
+
+Als u uw project wilt hervatten, moet u eerst een verbinding maken met dezelfde Blob Storage-container. Herhaal de bovenstaande stappen om dit te doen. Ga vervolgens naar de pagina met toepassingsinstellingen (tandwielpictogram) en kijk of het beveiligingstoken van uw project aanwezig is. Als dat niet het geval is, voegt u een nieuw beveiligingstoken toe en kopieert u de naam en de sleutel van het token uit de vorige stap. Klik vervolgens op Instellingen opslaan.
 
 ### <a name="resume-a-project"></a>Een project hervatten
 

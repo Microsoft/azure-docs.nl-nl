@@ -11,12 +11,12 @@ author: knicholasa
 manager: martinco
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e324ae0fc80bb5990f9cf15901080684086a549
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: a8ed99338a10eb226823c4bd4857d812038ff632
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652238"
+ms.locfileid: "101094509"
 ---
 # <a name="browser-support-of-fido2-passwordless-authentication"></a>Browser ondersteuning voor FIDO2-verificatie met wacht woord
 
@@ -32,6 +32,17 @@ In deze tabel wordt de ondersteuning voor het verifiëren van Azure Active Direc
 | **Windows**  | ![Chrome ondersteunt USB in Windows voor AAD-accounts.][y] | ![Chrome ondersteunt NFC in Windows voor AAD-accounts.][y] | ![Chrome ondersteunt de ondersteuning van een door Windows voor AAD-accounts.][y] | ![Edge ondersteunt USB in Windows voor AAD-accounts.][y] | ![Edge ondersteunt NFC in Windows voor AAD-accounts.][y] | ![Edge ondersteunt de ondersteuning voor een micro soft-account voor AAD-accounts.][y] | ![Firefox ondersteunt USB in Windows voor AAD-accounts.][y] | ![Firefox ondersteunt NFC in Windows voor AAD-accounts.][y] | ![Firefox ondersteunt de ondersteuning van een bel op Windows voor AAD-accounts.][y] |
 | **MacOS**  | ![Chrome ondersteunt USB op macOS voor AAD-accounts.][y] | ![Chrome biedt geen ondersteuning voor NFC in macOS voor AAD-accounts.][n] | ![Chrome biedt geen ondersteuning voor het macOS voor AAD-accounts.][n] | ![Edge ondersteunt USB op macOS voor AAD-accounts.][y] | ![Edge biedt geen ondersteuning voor NFC in macOS voor AAD-accounts.][n] | ![Edge biedt geen ondersteuning voor een service voor AAD-accounts.][n] | ![Firefox biedt geen ondersteuning voor USB op macOS voor AAD-accounts.][n] | ![Firefox biedt geen ondersteuning voor NFC in macOS voor AAD-accounts.][n] | ![Firefox ondersteunt geen ondersteuning voor de AAD-accounts van een macOS.][n] |
 | **Linux**  | ![Chrome ondersteunt USB op Linux voor AAD-accounts.][y] | ![Chrome biedt geen ondersteuning voor NFC op Linux voor AAD-accounts.][n] | ![Chrome biedt geen ondersteuning voor het bieden van een service op Linux voor AAD-accounts.][n] | ![Edge biedt geen ondersteuning voor USB op Linux voor AAD-accounts.][n] | ![Edge biedt geen ondersteuning voor NFC op Linux voor AAD-accounts.][n] | ![Edge biedt geen ondersteuning voor een bel op Linux voor AAD-accounts.][n] | ![Firefox biedt geen ondersteuning voor USB op Linux voor AAD-accounts.][n] | ![Firefox biedt geen ondersteuning voor NFC op Linux voor AAD-accounts.][n] | ![Firefox biedt geen ondersteuning voor het bieden van een service op Linux voor AAD-accounts.][n] |
+
+## <a name="unsupported-browsers"></a>Niet-ondersteunde browsers
+
+De volgende combi Naties van besturings systemen en browsers worden niet ondersteund, maar toekomstige ondersteuning en tests worden onderzocht. Als u aanvullende besturings systemen en browser ondersteuning wilt zien, geeft u feedback via het hulp programma voor product feedback onder aan de pagina.
+
+| Besturingssysteem | Browser |
+| ---- | ---- |
+| iOS | Safari, Brave |
+| macOS | Safari |
+| Android | Chrome |
+| ChromeOS | Chrome |
 
 ## <a name="operating-system-versions-tested"></a>Geteste besturings systeem versies
 

@@ -11,12 +11,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 01/21/2021
-ms.openlocfilehash: ea95b2097c611635eb937498c6f1d87cb544bcd1
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 5ca13784fe2f9a6a5b448bc838bf508f01b0a9fe
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98681091"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101095185"
 ---
 # <a name="add-contributors-to-your-app"></a>Inzenders toevoegen aan uw app
 
@@ -37,7 +37,7 @@ U hebt gemigreerd als uw LUIS-ontwerp ervaring is gekoppeld aan een bewerkings r
 
     Wanneer het e-mail adres van de gebruiker wordt gevonden, selecteert u het account en selecteert u **Opslaan**.
 
-    Als u problemen ondervindt met deze roltoewijzing, raadpleegt u [Azure-roltoewijzingen](../../role-based-access-control/role-assignments-portal.md) en [probleem oplossing voor Azure-toegangs beheer](../../role-based-access-control/troubleshooting.md#problems-with-azure-role-assignments).
+    Als u problemen ondervindt met deze roltoewijzing, raadpleegt u [Azure-rollen](../../role-based-access-control/role-assignments-portal.md) en [Azure Access Control-probleem oplossing](../../role-based-access-control/troubleshooting.md#problems-with-azure-role-assignments)toewijzen.
 
 ## <a name="view-the-app-as-a-contributor"></a>De app als een bijdrager weer geven
 

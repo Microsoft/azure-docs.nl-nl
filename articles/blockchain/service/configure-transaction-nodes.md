@@ -4,12 +4,12 @@ description: Service transactie knooppunten van Azure Block Chain configureren
 ms.date: 11/20/2019
 ms.topic: how-to
 ms.reviewer: janders
-ms.openlocfilehash: 50f9b2aa0f5e1a1b1095b6c799ce0706b6e541de
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 0b659fa9f15cd41e9e55de526747d470046cafa4
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150867"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101091271"
 ---
 # <a name="configure-azure-blockchain-service-transaction-nodes"></a>Azure Block Chain Service-transactie knooppunten configureren
 
@@ -37,7 +37,7 @@ Een transactie knooppunt toevoegen:
 
     | Instelling | Beschrijving |
     |---------|-------------|
-    | Naam | Naam van het transactie knooppunt. De naam wordt gebruikt voor het maken van het DNS-adres voor het eind punt van het transactie knooppunt. Bijvoorbeeld `newnode-myblockchainmember.blockchain.azure.com`. De naam van het knoop punt kan niet worden gewijzigd nadat deze is gemaakt. |
+    | Name | Naam van het transactie knooppunt. De naam wordt gebruikt voor het maken van het DNS-adres voor het eind punt van het transactie knooppunt. Bijvoorbeeld `newnode-myblockchainmember.blockchain.azure.com`. De naam van het knoop punt kan niet worden gewijzigd nadat deze is gemaakt. |
     | Wachtwoord | Stel een sterk wacht woord in. Gebruik het wacht woord voor toegang tot het knoop punt van het transactie knooppunt met basis verificatie.
 
 1. Selecteer **Maken**.
@@ -62,20 +62,20 @@ Azure Block Chain Service Trans Action node-eind punten ondersteunen Azure Activ
 
 Toegangs beheer voor Azure AD aan uw eind punt verlenen:
 
-1. Ga in het Azure Portal naar het lid van de Azure Block Chain-service en selecteer **transactie knooppunten > toegangs beheer (IAM) > voeg > roltoewijzing**toe.
+1. Ga in het Azure Portal naar het lid van de Azure Block Chain-service en selecteer **transactie knooppunten > toegangs beheer (IAM) > voeg > roltoewijzing** toe.
 1. Maak een nieuwe roltoewijzing voor een gebruiker, groep of Service-Principal (toepassings rollen).
 
     ![IAM-rol toevoegen](./media/configure-transaction-nodes/add-role.png)
 
     | Instelling | Bewerking |
     |---------|-------------|
-    | Rol | Selecteer **eigenaar**, **bijdrager**of **lezer**.
+    | Rol | Selecteer **eigenaar**, **bijdrager** of **lezer**.
     | Toegang toewijzen aan | Selecteer **Azure AD-gebruiker,-groep of-Service-Principal**.
-    | Selecteren | Zoek naar de gebruiker, groep of service-principal die u wilt toevoegen.
+    | Selecteer | Zoek naar de gebruiker, groep of service-principal die u wilt toevoegen.
 
 1. Selecteer **Opslaan** om de roltoewijzing toe te voegen.
 
-Zie [Azure-roltoewijzingen toevoegen of verwijderen met de Azure Portal](../../role-based-access-control/role-assignments-portal.md) voor meer informatie over Azure AD-toegangs beheer.
+Zie [Azure-rollen toewijzen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md) voor meer informatie over Azure AD-toegangs beheer
 
 Zie [verbinding maken met uw knoop punt met behulp van Aad-verificatie](configure-aad.md)voor meer informatie over het maken van verbinding met Azure AD-verificatie.
 
@@ -89,7 +89,7 @@ U kunt de eindpunt Details van de basis verificatie van een transactie knooppunt
 
 De gebruikers naam is de naam van het knoop punt en kan niet worden gewijzigd.
 
-Als u de URL wilt gebruiken, vervangt u door \<password\> de wachtwoordset wanneer het knoop punt is ingericht. U kunt het wacht woord bijwerken door **wacht woord opnieuw instellen**te selecteren.
+Als u de URL wilt gebruiken, vervangt u door \<password\> de wachtwoordset wanneer het knoop punt is ingericht. U kunt het wacht woord bijwerken door **wacht woord opnieuw instellen** te selecteren.
 
 ### <a name="access-keys"></a>Toegangssleutels
 

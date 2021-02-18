@@ -10,12 +10,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: d47e98273e696a4b6e827d8ebbc71a297f2861cb
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 9c973859c8b7a3d04693946f50377837c3538b85
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905312"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101094100"
 ---
 # <a name="authentication-with-azure-maps"></a>Verificatie met Azure Maps
 
@@ -84,7 +84,7 @@ Azure Maps ondersteunt toegang tot alle principal-typen voor [op rollen gebaseer
 
 In de volgende secties worden de concepten en onderdelen van Azure Maps integratie met Azure RBAC besproken. Als onderdeel van het proces om uw Azure Maps-account in te stellen, wordt een Azure AD-adres lijst gekoppeld aan het Azure-abonnement waarop het Azure Maps-account zich bevindt. 
 
-Wanneer u Azure RBAC configureert, kiest u een beveiligingsprincipal en past u deze toe op een roltoewijzing. Zie [Azure-roltoewijzingen toevoegen of verwijderen](../role-based-access-control/role-assignments-portal.md)voor meer informatie over het toevoegen van roltoewijzingen aan de Azure Portal.
+Wanneer u Azure RBAC configureert, kiest u een beveiligingsprincipal en past u deze toe op een roltoewijzing. Zie [Azure-rollen toewijzen](../role-based-access-control/role-assignments-portal.md)voor meer informatie over het toevoegen van roltoewijzingen aan de Azure Portal.
 
 ### <a name="picking-a-role-definition"></a>Een roldefinitie kiezen
 

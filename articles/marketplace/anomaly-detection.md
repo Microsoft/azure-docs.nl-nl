@@ -1,20 +1,20 @@
 ---
-title: Afwijkings detectie voor facturering in data limiet | Azure Marketplace
-description: Meer informatie over hoe automatische afwijkings detectie voor factuur met data limiet ervoor zorgt dat uw klanten correct worden gefactureerd voor gebruik in de aanbieding van uw commerciële Marketplace.
+title: Afwijkingen in het gebruik van de data limiet in het partner centrum beheren | Azure Marketplace
+description: Meer informatie over hoe automatische afwijkings detectie voor factuur met data limiet ervoor zorgt dat uw klanten correct worden gefactureerd voor het gebruik van uw commerciële Marketplace-aanbiedingen.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 2/17/2021
+ms.date: 2/18/2021
 author: sayantanroy83
 ms.author: sroy
-ms.openlocfilehash: 7f1bcac49ccb12ea1e0517aed5a139e549451ec0
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 1ff6262a75261c575082f3fc48d588c868ad0b51
+ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653003"
+ms.locfileid: "101092523"
 ---
-# <a name="anomaly-detection-for-metered-billing"></a>Afwijkings detectie voor facturering met data limiet
+# <a name="manage-metered-billing-anomalies-in-partner-center"></a>Afwijkingen in het gebruik van de data limiet in het partner centrum beheren
 
 De aangepaste optie voor facturering via data limiet is momenteel beschikbaar voor SaaS-aanbiedingen ( [Software as a Service](plan-saas-offer.md) ) en [Azure-toepassingen](plan-azure-application-offer.md#types-of-plans) met een beheerd toepassings abonnement.
 
@@ -80,3 +80,4 @@ Nadat u een overschrijding-gebruik als anomalie hebt gemarkeerd of een model dat
 ## <a name="see-also"></a>Zie ook
 - [Factuur met data limiet voor SaaS met de commerciële Marketplace-meet service](./partner-center-portal/saas-metered-billing.md)
 - [Factuur voor beheerde toepassing met data limiet](./partner-center-portal/azure-app-metered-billing.md)
+- [Afwijkingsdetectieservice voor facturering naar gebruik](./partner-center-portal/anomaly-detection-service-for-metered-billing.md)

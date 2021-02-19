@@ -327,6 +327,8 @@
           href: how-to-create-transform.md
         - name: Een eenvoudige audiotransformatie maken met REST
           href: how-to-create-basic-audio-transform.md
+        - name: Miniatuur sprites maken
+          href: how-to-create-thumbnail-sprites.md
         - name: Een copyAllBitrateNonInterleaved-transformatie maken met REST
           href: how-to-create-copyallbitratenoninterleaved-transform.md
         - name: Video's kopiëren zonder codering met REST
@@ -503,5 +505,3 @@
       href: azure-clouds-regions.md
     - name: Regionale codenamen en eindpunten
       href: azure-regions-code-names.md
-    - name: Documentatie-updates
-      href: docs-release-notes.md

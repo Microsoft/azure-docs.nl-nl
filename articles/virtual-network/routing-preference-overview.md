@@ -76,7 +76,7 @@ Het prijs verschil tussen beide opties wordt weer gegeven in de prijzen voor geg
 * Routerings voorkeur ondersteunt momenteel alleen open bare IPv4-IP-adressen. Open bare IPv6-adressen worden niet ondersteund.
 
 
-## <a name="next-steps"></a>Volgende stappen
+## <a name="next-steps"></a>Volgende stappen 
 
 * [Routerings voorkeur configureren voor een virtuele machine met behulp van de Azure PowerShell](configure-routing-preference-virtual-machine-powershell.md)
 * [Routerings voorkeur configureren voor een virtuele machine met behulp van Azure CLI](configure-routing-preference-virtual-machine-cli.md)

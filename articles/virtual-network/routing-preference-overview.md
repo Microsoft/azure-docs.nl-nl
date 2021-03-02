@@ -11,22 +11,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 12/02/2020
+ms.date: 02/01/2021
 ms.author: mnayak
-ms.openlocfilehash: 7fdd23aea5e435c94493a0cbe86b6ffcdb0d2e10
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.custom: references_regions
+ms.openlocfilehash: b0235286260910a45523e3236e7ed3a114eaf57f
+ms.sourcegitcommit: 8c93b05c27c7e8a5ba62a4d6fc6fc4d0c3980a21
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99539067"
+ms.lasthandoff: 02/26/2021
+ms.locfileid: "101601330"
 ---
-# <a name="what-is-routing-preference-preview"></a>Wat is routerings voorkeur (preview)?
+# <a name="what-is-routing-preference"></a>Wat is een routeringsvoorkeur?
 
 Met de voor keuren voor Azure-route ring kunt u kiezen hoe uw verkeer tussen Azure en Internet wordt gerouteerd. U kunt ervoor kiezen om verkeer door te sturen via het micro soft-netwerk of via het ISP-netwerk (openbaar Internet). Deze opties worden ook respectievelijk aangeduid als *koude aardappel routering* en *warme aardappel routering* . De prijs van de uitgaande gegevens overdracht is afhankelijk van de selectie van de route ring. U kunt de routerings optie kiezen tijdens het maken van een openbaar IP-adres. Het open bare IP-adres kan worden gekoppeld aan resources, zoals virtuele machines, schaal sets voor virtuele machines, Internet gerichte load balancer, enzovoort. U kunt ook de routerings voorkeur instellen voor Azure storage-resources, zoals blobs, bestanden, Web en Azure DataLake. Verkeer wordt standaard gerouteerd via het wereld wijde netwerk van micro soft voor alle Azure-Services.
-
-> [!IMPORTANT]
-> De voor keuren voor route ring is momenteel beschikbaar als open bare preview.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="routing-via-microsoft-global-network"></a>Route ring via een wereld wijd netwerk van micro soft
 
@@ -70,13 +67,13 @@ Voor opslag gebruiken primaire eind punten altijd het **wereld wijde netwerk van
 * Azure DataLake
 
 ## <a name="pricing"></a>Prijzen
-Het prijs verschil tussen beide opties wordt weer gegeven in de prijzen voor gegevens overdracht via internet. Route ring via de **wereld wijde** prijs van gegevens overdracht van micro soft is hetzelfde als de huidige prijs voor het uitbrengen van Internet. Ga naar de [pagina met prijzen voor Azure-band breedte](https://azure.microsoft.com/pricing/details/bandwidth/) voor de meest recente prijs informatie. 
+Het prijs verschil tussen beide opties wordt weer gegeven in de prijzen voor gegevens overdracht via internet. Route ring via de **wereld wijde** prijs van gegevens overdracht van micro soft is hetzelfde als de huidige prijs voor het uitbrengen van Internet. Ga naar de [pagina met prijzen voor Azure-band breedte](https://azure.microsoft.com/pricing/details/bandwidth/) voor de meest recente prijs informatie.
 
 ## <a name="limitations"></a>Beperkingen
 
+* Routerings voorkeur wordt momenteel niet ondersteund in Australië-centraal, Australië Central2, Canada-oost, Brazilië-zuid, Korea-centraal en Korea-zuid.
 * Routerings voorkeur is alleen compatibel met een zone-redundante standaard-SKU van een openbaar IP-adres. De basis-SKU van het open bare IP-adres wordt niet ondersteund.
 * Routerings voorkeur ondersteunt momenteel alleen open bare IPv4-IP-adressen. Open bare IPv6-adressen worden niet ondersteund.
-* Virtuele machines met meerdere Nic's kunnen slechts één type routerings voorkeur hebben.
 
 
 ## <a name="next-steps"></a>Volgende stappen

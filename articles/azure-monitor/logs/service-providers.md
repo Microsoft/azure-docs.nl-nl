@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: MeirMen
 ms.author: meirm
 ms.date: 02/03/2020
-ms.openlocfilehash: 5f69de583dea14be3c7ce3ab6779af549e95de75
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 09b5a6bd11db1a8faa29e7b3871156f9c28d1140
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611991"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717380"
 ---
 # <a name="azure-monitor-logs-for-service-providers"></a>Azure Monitor logboeken voor service providers
 
@@ -48,7 +48,7 @@ De voor delen van de gedistribueerde architectuur zijn:
 
 De nadelen van de gedistribueerde architectuur zijn:
 
-* Het centraal visualiseren en analyseren van gegevens over de tenants van klanten met hulpprogram ma's als Azure Monitor werkmappen kan leiden tot tragere ervaringen, met name bij het analyseren van gegevens over meer dan 50 werk ruimten.
+* Het centraal visualiseren en analyseren van gegevens [over de tenants van klanten](cross-workspace-query.md) met hulpprogram ma's als Azure monitor werkmappen kan leiden tot tragere ervaringen, met name bij het analyseren van gegevens over meer dan 50 werk ruimten.
 * Als klanten niet zijn voor bereid voor Azure delegated resource management, moeten beheerders van service providers worden ingericht in de klanten Directory en is het moeilijker voor de service provider om een groot aantal klant tenants tegelijk te beheren.
 
 ### <a name="2-central---logs-are-stored-in-a-workspace-located-in-the-service-provider-tenant"></a>2. centrale logboeken worden opgeslagen in een werk ruimte die zich bevindt in de Tenant van de service provider
@@ -85,7 +85,7 @@ Er zijn twee opties voor het implementeren van Logboeken op een centrale locatie
 
 * Het maken van werk ruimten automatiseren met [Power shell](../logs/powershell-workspace-configuration.md)
 
-* [Waarschuwingen](../platform/alerts-overview.md) gebruiken om te integreren met bestaande systemen
+* [Waarschuwingen](../alerts/alerts-overview.md) gebruiken om te integreren met bestaande systemen
 
 * Samenvattings rapporten genereren met behulp van [Power bi](../visualize/powerbi.md)
 

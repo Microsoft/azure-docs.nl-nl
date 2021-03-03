@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: overview
 ms.date: 01/13/2021
 ms.author: pafarley
-ms.openlocfilehash: dbe0b5ac207b361a9584603bbe2d59abd5e5ca4e
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 4f5ea68102e98a9abc3e5a0a31d3153bc1bd1663
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100390399"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738222"
 ---
 # <a name="whats-new-in-computer-vision"></a>Wat is er nieuw in Computer Vision?
 
@@ -50,8 +50,8 @@ Er is een nieuwe versie van de [container voor ruimtelijke analyse](spatial-anal
 * **Laatste wijziging**: de naam van de gebeurtenis *personZoneEvent* is gewijzigd in *personZoneEnterExitEvent*. Deze gebeurtenis wordt gegenereerd door de *personcrossingpolygon* -bewerking wanneer een persoon de zone invoert of verlaat en de genummerde zijde van de gekruiste zone bevat.
 * De video-URL kan in alle bewerkingen als ' persoonlijke para meter/verborgen ' worden gegeven. De functie voor het maken van een donkere weeres is nu optioneel en werkt alleen als u `KEY` en als `IV` omgevings variabelen hebt ingesteld.
 * Kalibratie is standaard ingeschakeld voor alle bewerkingen. Stel `do_calibration: false` deze optie in op uitschakelen.
-* Er is ondersteuning toegevoegd voor automatisch opnieuw kalibreren (standaard uitgeschakeld) via de `enable_recalibration` para meter. Raadpleeg de [ruimtelijke analyse bewerkingen](https://docs.microsoft.com/azure/cognitive-services/computer-vision/spatial-analysis-operations) voor meer informatie
-* Camera kalibratie parameters naar `DETECTOR_NODE_CONFIG` . Raadpleeg de [ruimtelijke analyse bewerkingen](https://docs.microsoft.com/azure/cognitive-services/computer-vision/spatial-analysis-operations) voor meer informatie.
+* Er is ondersteuning toegevoegd voor automatisch opnieuw kalibreren (standaard uitgeschakeld) via de `enable_recalibration` para meter. Raadpleeg de [ruimtelijke analyse bewerkingen](./spatial-analysis-operations.md) voor meer informatie
+* Camera kalibratie parameters naar `DETECTOR_NODE_CONFIG` . Raadpleeg de [ruimtelijke analyse bewerkingen](./spatial-analysis-operations.md) voor meer informatie.
 
 
 ## <a name="october-2020"></a>Oktober 2020

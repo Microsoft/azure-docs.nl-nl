@@ -2,13 +2,13 @@
 title: 'Zelfstudie: Toegang tot uw privécloud'
 description: Meer informatie over het openen van een Azure VMware Solution-privécloud
 ms.topic: tutorial
-ms.date: 09/21/2020
-ms.openlocfilehash: b7f21dbba5256712607241bb1258962fc22418fb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.date: 02/22/2021
+ms.openlocfilehash: 81296223ab941633a4b0f1316e359a0eb2ff73ce
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91578412"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738477"
 ---
 # <a name="tutorial-access-an-azure-vmware-solution-private-cloud"></a>Zelfstudie: Toegang tot een privécloud van Azure VMware Solution
 
@@ -30,9 +30,12 @@ In deze zelfstudie leert u het volgende:
 
 1. Meld u vanuit de jumpbox aan bij de vSphere-client met VMware vCenter SSO met een gebruikersnaam voor de cloudbeheerder en controleer of de gebruikersinterface correct wordt weergegeven.
 
-1. Selecteer in de Azure-portal uw privécloud en selecteer vervolgens in de weergave **Overzicht** de optie **Identiteit > Standaard**. 
+1. Selecteer in de Azure Portal uw privécloud en **beheer** vervolgens  >  **identiteit**. 
 
    De URL's en gebruikersreferenties voor vCenter en NSX-T-beheer van de privécloud worden weergegeven.
+
+   >[!TIP]
+   >Selecteer **een nieuw wacht woord genereren** om nieuwe vCenter-en NSX-T-wacht woorden te genereren.
 
    :::image type="content" source="media/tutorial-access-private-cloud/ss4-display-identity.png" alt-text="URL's en referenties weergeven van vCenter en NSX-beheer van de privécloud." border="true":::
 
@@ -44,13 +47,13 @@ In deze zelfstudie leert u het volgende:
 
 1. Voer op het tabblad vCenter de `cloudadmin@vmcp.local`-gebruikersreferenties in uit de vorige stap.
 
-   :::image type="content" source="media/tutorial-access-private-cloud/ss5-vcenter-login.png" alt-text="URL's en referenties weergeven van vCenter en NSX-beheer van de privécloud." border="true":::
+   :::image type="content" source="media/tutorial-access-private-cloud/ss5-vcenter-login.png" alt-text="Aanmelden bij vCenter van de privécloud." border="true":::
 
-   :::image type="content" source="media/tutorial-access-private-cloud/ss6-vsphere-client-home.png" alt-text="URL's en referenties weergeven van vCenter en NSX-beheer van de privécloud." border="true":::
+   :::image type="content" source="media/tutorial-access-private-cloud/ss6-vsphere-client-home.png" alt-text="vCenter-portal." border="true":::
 
 1. Meld u op het tweede tabblad van de browser aan bij NSX-T-beheer.
 
-   :::image type="content" source="media/tutorial-access-private-cloud/ss10-nsx-manager-home.png" alt-text="URL's en referenties weergeven van vCenter en NSX-beheer van de privécloud." border="true":::
+   :::image type="content" source="media/tutorial-access-private-cloud/ss10-nsx-manager-home.png" alt-text="Meld u op het tweede tabblad van de browser aan bij NSX-T-beheer." border="true":::
 
 
 

@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
-ms.date: 12/07/2020
-ms.openlocfilehash: be8d00d795c19399d494db21578e9a7ba8dd9711
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.date: 03/02/2021
+ms.openlocfilehash: 43dd047738538b0dcc76904e951eccea3a327c19
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934013"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101715844"
 ---
 # <a name="create-stateful-and-stateless-workflows-in-visual-studio-code-with-the-azure-logic-apps-preview-extension"></a>Stateful en stateless werk stromen maken in Visual Studio code met de extensie Azure Logic Apps (preview)
 
@@ -22,7 +22,7 @@ Met [Azure Logic Apps Preview](logic-apps-overview-preview.md)kunt u automatiser
 
 ![Scherm opname van Visual Studio code, Logic app project en werk stroom.](./media/create-stateful-stateless-workflows-visual-studio-code/visual-studio-code-logic-apps-overview.png)
 
-In Visual Studio code kunt u beginnen met het maken van een project dat de werk stromen van uw logische app in uw ontwikkel omgeving *lokaal* bouwt en uitvoert met behulp van de extensie Azure Logic apps (preview). U kunt ook beginnen met [het maken van een nieuwe **logische app (preview)** in de Azure Portal](create-stateful-stateless-workflows-azure-portal.md), maar beide benaderingen bieden u de mogelijkheid om uw logische app te implementeren en uit te voeren in dezelfde soorten hosting omgevingen.
+In Visual Studio code kunt u beginnen met het maken van een project waarbij u de werk stromen van uw logische app *lokaal* kunt bouwen en uitvoeren in uw ontwikkel omgeving met behulp van de extensie Azure Logic apps (preview). U kunt ook beginnen met [het maken van een nieuwe **logische app (preview)** in de Azure Portal](create-stateful-stateless-workflows-azure-portal.md), maar beide benaderingen bieden u de mogelijkheid om uw logische app te implementeren en uit te voeren in dezelfde soorten hosting omgevingen.
 
 Ondertussen kunt u nog steeds het type van de oorspronkelijke logische app maken. Hoewel de ontwikkelings ervaring in Visual Studio code verschilt van de oorspronkelijke en nieuwe logische app-typen, kan uw Azure-abonnement beide typen bevatten. U kunt alle geïmplementeerde Logic apps in uw Azure-abonnement weer geven en openen, maar de apps zijn ingedeeld in hun eigen categorieën en secties.
 
@@ -63,40 +63,53 @@ In dit artikel wordt uitgelegd hoe u een logische app en een werk stroom maakt i
 
 ### <a name="storage-requirements"></a>Opslag vereisten
 
-#### <a name="windows-and-linux"></a>Windows en Linux
+#### <a name="windows"></a>Windows
+
+Als u uw Logic app-project lokaal wilt bouwen en uitvoeren in Visual Studio code wanneer u Windows gebruikt, voert u de volgende stappen uit om de Azure Storage-emulator in te stellen:
 
 1. Down load en Installeer [Azure Storage Emulator 5,10](https://go.microsoft.com/fwlink/p/?linkid=717179).
 
-1. Als u de emulator wilt uitvoeren, moet u een lokale installatie van SQL DB hebben, zoals de gratis [SQL Server 2019 Express Edition](https://go.microsoft.com/fwlink/p/?linkid=866658). Zie [de Azure Storage-emulator gebruiken voor ontwikkeling en testen](../storage/common/storage-use-emulator.md)voor meer informatie.
+1. Als u er nog geen hebt, moet u een lokale installatie van SQL DB hebben, zoals de gratis [SQL Server 2019 Express Edition](https://go.microsoft.com/fwlink/p/?linkid=866658), zodat de emulator kan worden uitgevoerd.
 
-   > [!IMPORTANT]
-   > Voordat u de ontwerp functie opent om uw werk stroom te maken, moet u de emulator starten. Anders wordt er een bericht weer gegeven dat de `Workflow design time could not be started` .
-   >
-   > ![Scherm opname van de Azure Storage-emulator wordt uitgevoerd.](./media/create-stateful-stateless-workflows-visual-studio-code/start-storage-emulator.png)
+   Zie [de Azure Storage-emulator gebruiken voor ontwikkeling en testen](../storage/common/storage-use-emulator.md)voor meer informatie.
 
-#### <a name="macos"></a>macOS
+1. Voordat u uw project kunt uitvoeren, moet u de emulator starten.
+
+   ![Scherm opname van de Azure Storage-emulator wordt uitgevoerd.](./media/create-stateful-stateless-workflows-visual-studio-code/start-storage-emulator.png)
+
+#### <a name="macos-and-linux"></a>macOS en Linux
+
+Voer de volgende stappen uit om een Azure Storage-account te maken en in te stellen om uw Logic app-project lokaal te bouwen en uit te voeren in Visual Studio code wanneer u macOS of Linux gebruikt.
+
+> [!NOTE]
+> De ontwerper in Visual Studio code werkt momenteel niet in Linux-besturings systeem, maar u kunt nog steeds Logic apps bouwen, uitvoeren en implementeren die gebruikmaken van de Logic Apps Preview-runtime voor op Linux gebaseerde virtuele machines. Voor Taan kunt u uw Logic apps in Visual Studio code op Windows of macOS bouwen en vervolgens implementeren op een virtuele machine op basis van Linux.
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com)en [Maak een Azure Storage-account](../storage/common/storage-account-create.md?tabs=azure-portal). Dit is een [vereiste voor Azure functions](../azure-functions/storage-considerations.md).
 
-1. [Zoek en kopieer de Connection String van het opslag account](../storage/common/storage-account-keys-manage.md?tabs=azure-portal#view-account-access-keys), bijvoorbeeld:
+1. Selecteer in het menu voor het opslag account onder **instellingen** de optie **toegangs sleutels**.
+
+1. Zoek in het deel venster **toegangs toetsen** de Connection String van het opslag account, die er ongeveer als volgt uitziet:
 
    `DefaultEndpointsProtocol=https;AccountName=fabrikamstorageacct;AccountKey=<access-key>;EndpointSuffix=core.windows.net`
 
    ![Scherm opname van de Azure Portal met toegangs sleutels voor het opslag account en connection string gekopieerd.](./media/create-stateful-stateless-workflows-visual-studio-code/find-storage-account-connection-string.png)
 
-1. Sla de teken reeks ergens veilig op zodat u later de teken reeks kunt toevoegen aan de **local.settings.jsop** bestanden in het project dat u gebruikt voor het maken van uw logische app in Visual Studio code.
+   Raadpleeg voor meer informatie [beheer van opslag accounts beheren](../storage/common/storage-account-keys-manage.md?tabs=azure-portal#view-account-access-keys).
 
-Wanneer u later de ontwerp functie voor een werk stroom in uw logische app probeert te openen, wordt er een bericht weer gegeven dat de `Workflow design time could not be started` . Nadat dit bericht wordt weer gegeven, moet u de connection string van het opslag account toevoegen aan de twee **local.settings.jsop** bestanden in het project en opnieuw proberen om de ontwerp functie opnieuw te openen.
+1. Sla de connection string op een veilige plek op. Nadat u uw Logic app-project in Visual Studio code hebt gemaakt, moet u de teken reeks toevoegen aan de **local.settings.jsvoor** het bestand in de hoofdmap van uw project.
+
+   > [!IMPORTANT]
+   > Als u van plan bent om te implementeren op een docker-container, moet u deze connection string ook toevoegen aan het docker-bestand dat u voor de implementatie gebruikt.
 
 ### <a name="tools"></a>Hulpprogramma's
 
-* [Visual Studio code 1.30.1 (januari 2019) of hoger](https://code.visualstudio.com/). Dit is gratis. Down load en installeer ook deze extra hulpprogram ma's voor Visual Studio code, als u deze nog niet hebt:
+* [Visual Studio code 1.30.1 (januari 2019) of hoger](https://code.visualstudio.com/). Dit is gratis. Down load en installeer ook deze hulpprogram ma's voor Visual Studio code, als u deze nog niet hebt:
 
   * [Azure-account extensie](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account), die een gemeen schappelijke Azure-aanmelding en-filter ervaring biedt voor alle andere Azure-extensies in Visual Studio code.
 
   * [C# voor Visual Studio code extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp), waarmee u met de functie F5 uw logische app kunt uitvoeren.
 
-  * [Azure functions core tools 3.0.2931 of hoger](https://github.com/Azure/azure-functions-core-tools/releases/tag/3.0.2931) met behulp van het micro soft-installatie programma (MSI).
+  * [Azure functions core tools 3.0.3245 of hoger](https://github.com/Azure/azure-functions-core-tools/releases/tag/3.0.3245) met behulp van de versie van het micro soft Installer (MSI), dat wil zeggen `func-cli-3.0.3245-x*.msi` .
 
     Deze hulpprogram ma's bevatten een versie van dezelfde runtime die de Azure Functions-runtime aanstuurt, die door de preview-uitbrei ding wordt gebruikt in Visual Studio code.
 
@@ -108,9 +121,11 @@ Wanneer u later de ontwerp functie voor een werk stroom in uw logische app probe
     Op dit moment kunt u zowel de oorspronkelijke Azure Logic Apps extensie als de open bare preview-extensie hebben geïnstalleerd in Visual Studio code. Hoewel de ontwikkelings ervaring op een aantal manieren verschilt tussen de uitbrei dingen, kan uw Azure-abonnement zowel logische app-typen bevatten die u met de uitbrei dingen maakt. Visual Studio code toont alle geïmplementeerde Logic apps in uw Azure-abonnement, maar organiseert ze in verschillende secties op extensie namen, **Logic apps** en **Azure Logic apps (preview)**.
 
     > [!IMPORTANT]
-    > Als u logische apps hebt gemaakt met de extensie voor een eerdere persoonlijke preview-versie, werken deze Logic apps niet met de open bare preview-extensie. U kunt deze Logic apps echter migreren nadat u de uitbrei ding van de persoonlijke Preview hebt verwijderd, de gekoppelde bestanden hebt verwijderd en de uitbrei ding voor open bare preview-versie hebt geïnstalleerd. Vervolgens maakt u een nieuw project in Visual Studio code en kopieert u het **werk stroom. definitie** bestand van uw eerder gemaakte logische app naar het nieuwe project. Zie voor meer informatie [migreren vanuit de uitbrei ding voor de persoonlijke preview](#migrate-private-preview).
+    > Als u logische app-projecten hebt gemaakt met de extensie eerdere persoonlijke preview, werken deze projecten niet met de open bare preview-extensie. U kunt deze projecten echter migreren nadat u de uitbrei ding van de persoonlijke Preview hebt verwijderd, de gekoppelde bestanden hebt verwijderd en de uitbrei ding voor open bare preview-versie hebt geïnstalleerd. Vervolgens maakt u een nieuw project in Visual Studio code en kopieert u het **werk stroom. definitie** bestand van uw eerder gemaakte logische app naar het nieuwe project. Zie voor meer informatie [migreren vanuit de uitbrei ding voor de persoonlijke preview](#migrate-private-preview).
+    > 
+    > Als u logische app-projecten met de eerdere open bare preview-extensie hebt gemaakt, kunt u deze projecten blijven gebruiken zonder migratie stappen.
 
-    Voer de volgende stappen uit om de extensie **Azure Logic apps (preview)** te installeren:
+    **Voer de volgende stappen uit om de extensie **Azure Logic apps (preview)** te installeren:**
 
     1. Selecteer in Visual Studio code op de werk balk links de optie **uitbrei dingen**.
 
@@ -119,6 +134,13 @@ Wanneer u later de ontwerp functie voor een werk stroom in uw logische app probe
        Nadat de installatie is voltooid, wordt de preview-uitbrei ding weer gegeven in de lijst **extensies: geïnstalleerd** .
 
        ![Scherm opname van de lijst met geïnstalleerde extensies van Visual Studio code met de extensie ' Azure Logic Apps (preview) ' onderstreept.](./media/create-stateful-stateless-workflows-visual-studio-code/azure-logic-apps-extension-installed.png)
+
+       > [!TIP]
+       > Als de extensie niet wordt weer gegeven in de lijst met geïnstalleerde Program meren, start u Visual Studio code opnieuw op.
+
+* Als u de [inline code bewerkingen actie](../logic-apps/logic-apps-add-run-inline-code.md) wilt gebruiken waarmee Java script wordt uitgevoerd, installeert u [Node.js versie 10. x. x, 11. x. x of 12. x. x](https://nodejs.org/en/download/releases/).
+
+  > [!TIP] Down load de MSI-versie voor Windows. Als u in plaats daarvan de ZIP-versie gebruikt, moet u Node.js hand matig beschikbaar maken met behulp van een omgevings variabele PATH voor uw besturings systeem.
 
 * Voor het lokaal uitvoeren van webhook-triggers en-acties, zoals de [ingebouwde HTTP-webhook-trigger](../connectors/connectors-native-webhook.md), in Visual Studio code moet u [door sturen instellen voor de call back-URL](#webhook-setup).
 
@@ -130,17 +152,17 @@ Wanneer u later de ontwerp functie voor een werk stroom in uw logische app probe
 
 ## <a name="migrate-from-private-preview-extension"></a>Migreren vanuit een persoonlijke preview-extensie
 
-Alle Logic apps die u met de extensie **Azure Logic apps (private preview)** hebt gemaakt, werken niet met de extensie PublicPreview. U kunt deze Logic apps echter migreren naar een nieuw Visual Studio code-project door de volgende stappen uit te voeren:
+De logische app-projecten die u met de extensie **Azure Logic apps (private preview)** hebt gemaakt, werken niet met de extensie open bare preview. U kunt deze projecten echter migreren naar nieuwe projecten door de volgende stappen uit te voeren:
 
 1. Verwijder de extensie van de persoonlijke preview.
 
-1. Verwijder de gekoppelde uitbreidings bundel-en NuGet-pakket mappen op de volgende locaties:
+1. Verwijder alle gekoppelde uitbreidings bundel-en NuGet-pakket mappen op de volgende locaties:
 
    * De map **micro soft. Azure. functions. ExtensionBundle. workflows** , die eerdere uitbreidings bundels bevat en die zich in een van beide paden bevindt:
 
      * `C:\Users\{userName}\AppData\Local\Temp\Functions\ExtensionBundles`
 
-     * `C:\Users\{userName}.azure-functions-core-tools\Functions\ExtensionBundles`
+     * `C:\Users\{userName}\.azure-functions-core-tools\Functions\ExtensionBundles`
 
    * De map **micro soft. Azure. workflows. webjobs. extension** , de [NuGet](/nuget/what-is-nuget) cache voor de extensie van de persoonlijke preview en bevindt zich op dit pad:
 
@@ -158,9 +180,7 @@ Alle Logic apps die u met de extensie **Azure Logic apps (private preview)** heb
 
 1. Als u er zeker van wilt zijn dat alle uitbrei dingen correct zijn geïnstalleerd, laadt of start u Visual Studio code opnieuw.
 
-1. Inschakelen of bevestigen dat Visual Studio code automatisch extensie-updates zoekt en installeert, zodat de PublicPreview-extensie de meest recente updates ontvangt. Als dat niet het geval is, moet u de verouderde versie hand matig verwijderen en de nieuwste versie installeren.
-
-   Voer de volgende stappen uit om deze instelling te controleren:
+1. Controleer of Visual Studio code automatisch extensie-updates zoekt en installeert zodat uw preview-uitbrei ding de meest recente updates ontvangt. Als dat niet het geval is, moet u de verouderde versie hand matig verwijderen en de nieuwste versie installeren.
 
    1. Ga in het menu **bestand** naar **voor keur** **>** **instellingen**.
 
@@ -168,25 +188,24 @@ Alle Logic apps die u met de extensie **Azure Logic apps (private preview)** heb
 
    1. Controleer of **automatisch controleren van updates** en **automatisch bijwerken** is geselecteerd.
 
-1. Inschakelen of bevestigen dat deze extensie-instellingen de juiste selecties hebben:
+De volgende instellingen zijn standaard ingeschakeld en ingesteld voor de uitbrei ding Logic Apps Preview:
 
-   * **Azure Logic Apps v2: paneel modus**
-   * **Azure Logic Apps v2: Project runtime**
+* **Azure Logic apps v2: Project runtime**, dat is ingesteld op versie **~ 3**
 
-   1. Ga in het menu **bestand** naar **voor keur** **>** **instellingen**.
+  > [!NOTE]
+  > Deze versie is vereist voor het gebruik van de [inline code bewerkingen acties](../logic-apps/logic-apps-add-run-inline-code.md).
 
-   1. Ga op het tabblad **gebruiker** naar **>** **extensies** **>** **Azure Logic apps (preview)**.
+* **Azure Logic apps v2: experimentele weergave beheer**, waarmee u de nieuwste versie van Visual Studio code kunt ontwerpen. Als u problemen ondervindt met de ontwerp functie, zoals het slepen en neerzetten van items, schakelt u deze instelling uit.
 
-   1. Bevestig deze extensie-instellingen:
+Voer de volgende stappen uit om deze instellingen te zoeken en te bevestigen:
 
-      * Controleer onder **Azure Logic apps v2: deel venster modus**, of **modus inschakelen** is geselecteerd.
+1. Ga in het menu **bestand** naar **voor keur** **>** **instellingen**.
 
-      * Controleer onder **Azure Logic apps v2: Project runtime** of de versie is ingesteld op **~ 3**.
+1. Ga op het tabblad **gebruiker** naar **>** **extensies** **>** **Azure Logic apps (preview)**.
 
-        > [!IMPORTANT]
-        > Voor het gebruik van [inline code bewerkingen acties](../logic-apps/logic-apps-add-run-inline-code.md), die momenteel niet beschikbaar zijn voor MacOS en Linux, is voor de runtime-instelling voor **project** versie 3 vereist.
+   U kunt bijvoorbeeld de **Azure Logic apps v2: Project runtime** -instelling vinden of het zoekvak gebruiken voor het zoeken naar andere instellingen:
 
-      ![Scherm opname van Visual Studio code-instellingen voor de extensie Azure Logic Apps (preview).](./media/create-stateful-stateless-workflows-visual-studio-code/azure-logic-apps-preview-settings.png)
+   ![Scherm opname van Visual Studio code-instellingen voor de extensie Azure Logic Apps (preview).](./media/create-stateful-stateless-workflows-visual-studio-code/azure-logic-apps-preview-settings.png)
 
 <a name="connect-azure-account"></a>
 
@@ -216,7 +235,7 @@ Alle Logic apps die u met de extensie **Azure Logic apps (private preview)** heb
 
 ## <a name="create-a-local-project"></a>Een lokaal project maken
 
-Voordat u uw logische app kunt maken, moet u een lokaal project maken, zodat u uw logische app kunt beheren en implementeren vanuit Visual Studio code. Het onderliggende project is vergelijkbaar met een Azure Functions project, ook wel bekend als een functie-app-project. Deze project typen zijn echter gescheiden van elkaar, waardoor Logic apps en functie-apps niet in hetzelfde project kunnen voor komen.
+Voordat u uw logische app kunt maken, moet u een lokaal project maken, zodat u uw logische app kunt beheren, uitvoeren en implementeren vanuit Visual Studio code. Het onderliggende project is vergelijkbaar met een Azure Functions project, ook wel bekend als een functie-app-project. Deze project typen zijn echter gescheiden van elkaar, waardoor Logic apps en functie-apps niet in hetzelfde project kunnen voor komen.
 
 1. Maak op uw computer een *lege* lokale map die moet worden gebruikt voor het project dat u later in Visual Studio code gaat maken.
 
@@ -238,15 +257,50 @@ Voordat u uw logische app kunt maken, moet u een lokaal project maken, zodat u u
 
 1. Geef een naam op voor de werk stroom en druk op ENTER. In dit voor beeld wordt `Fabrikam-Stateful-Workflow` de naam gebruikt.
 
-   ![Scherm afbeelding met het vak ' nieuwe stateful werk stroom maken (3/3) ' en ' fabrikam-stateful-werk stroom ' als werk stroom naam.](./media/create-stateful-stateless-workflows-visual-studio-code/name-your-workflow.png)
+   ![Scherm afbeelding met het vak ' nieuwe stateful werk stroom maken (3/4) ' en ' fabrikam-stateful-werk stroom ' als werk stroom naam.](./media/create-stateful-stateless-workflows-visual-studio-code/name-your-workflow.png)
 
-   Visual Studio code voltooit het maken van het project en opent de **workflow.jsin** het bestand voor uw werk stroom.
+   Visual Studio code voltooit het maken van het project en opent de **workflow.jsin** het bestand voor uw werk stroom in de code-editor.
+
+   > [!NOTE]
+   > Als u wordt gevraagd om te selecteren hoe u uw project wilt openen, selecteert u **openen in huidig venster** als u uw project wilt openen in het huidige venster van Visual Studio code. Als u een nieuw exemplaar voor Visual Studio code wilt openen, selecteert u **openen in nieuw venster**.
 
 1. Open in de Visual Studio-werk balk het deel venster Verkenner als dit nog niet is geopend.
 
    In het deel venster Verkenner wordt uw project weer gegeven. Dit bevat nu automatisch gegenereerde project bestanden. Het project bevat bijvoorbeeld een map waarin de naam van uw werk stroom wordt weer gegeven. In deze map bevat de **workflow.jsin** het bestand de onderliggende JSON-definitie van uw werk stroom.
 
    ![Scherm opname van het deel venster Verkenner met projectmap, map werk stroom en het bestand workflow.jsop.](./media/create-stateful-stateless-workflows-visual-studio-code/local-project-created.png)
+
+1. Als u macOS of Linux gebruikt, stelt u toegang tot uw opslag account in door de volgende stappen uit te voeren die nodig zijn voor het lokaal uitvoeren van uw project:
+
+   1. Open in de hoofdmap van het project de **local.settings.jsin** het bestand.
+
+      ![Scherm opname van het Verkenner-deel venster en het bestand local.settings.jsin uw project.](./media/create-stateful-stateless-workflows-visual-studio-code/local-settings-json-files.png)
+
+   1. Vervang de `AzureWebJobsStorage` waarde van de eigenschap door de Connection String van het opslag account die u eerder hebt opgeslagen, bijvoorbeeld:
+
+      Voor:
+      ```json
+      {
+         "IsEncrypted": false,
+         "Values": {
+            "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+            "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+          }
+      }
+      ```
+
+      Na:
+      ```json
+      {
+         "IsEncrypted": false,
+         "Values": {
+            "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=fabrikamstorageacct;AccountKey=<access-key>;EndpointSuffix=core.windows.net",
+           "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+         }
+      }
+      ```
+
+   1. Wanneer u klaar bent, moet u ervoor zorgen dat u de wijzigingen opslaat.
 
 <a name="open-workflow-definition-designer"></a>
 
@@ -256,7 +310,7 @@ Voordat u uw logische app kunt maken, moet u een lokaal project maken, zodat u u
 
    `..\Users\{yourUserName}\dotnet --list-sdks`
 
-   Als u .NET Core SDK 5. x hebt, is het mogelijk dat u met deze versie de onderliggende werk stroom definitie van de logische app in de ontwerp functie niet kunt openen. In plaats van deze versie te verwijderen, maakt u op het hoofd niveau van het project een **global.jsin** het bestand dat verwijst naar de .net core runtime 3. x-versie waarvan u later dan 3.1.201, bijvoorbeeld:
+   Als u .NET Core SDK 5. x hebt, is het mogelijk dat u met deze versie de onderliggende werk stroom definitie van de logische app in de ontwerp functie niet kunt openen. In plaats van deze versie te verwijderen, maakt u in de hoofdmap van het project een **global.jsvoor** het bestand dat verwijst naar de .net core runtime 3. x-versie die u later dan 3.1.201, bijvoorbeeld:
 
    ```json
    {
@@ -267,49 +321,12 @@ Voordat u uw logische app kunt maken, moet u een lokaal project maken, zodat u u
    }
    ```
 
-   Zorg ervoor dat u de **global.jsvoor** het bestand expliciet toevoegt aan het hoofd niveau van het project in Visual Studio code. Anders wordt de ontwerp functie niet geopend.
-
-1. Als u Visual Studio code op Windows of Linux uitvoert, moet u ervoor zorgen dat de Azure Storage emulator wordt uitgevoerd. Raadpleeg de [vereisten](#prerequisites)voor meer informatie. Als u Visual Studio code uitvoert op macOS, gaat u verder met de volgende stap.
+   > [!IMPORTANT]
+   > Zorg ervoor dat u de **global.jsvoor** het bestand in de hoofdmap van het project expliciet toevoegt vanuit Visual Studio code. Anders wordt de ontwerp functie niet geopend.
 
 1. Vouw de projectmap voor uw werk stroom uit. Open de **workflow.jsin** het snelmenu van het bestand en selecteer **openen in Designer**.
 
    ![Scherm opname van het deel venster Verkenner en het snelkoppelings venster voor de workflow.jsin het bestand ' openen in Designer ' is geselecteerd.](./media/create-stateful-stateless-workflows-visual-studio-code/open-definition-file-in-designer.png)
-
-   Als het fout bericht wordt weer gegeven `Workflow design time could not be started` , controleert u de volgende voor waarden:
-
-   * **Windows of Linux**: Zorg ervoor dat de Azure Storage emulator wordt uitgevoerd. Zie anders [problemen en fouten oplossen](#troubleshooting).
-
-   * **macOS**: Probeer de volgende oplossing en Raadpleeg, als dit niet lukt, het [oplossen van problemen en fouten](#troubleshooting).
-
-     1. Open in uw project de **local.settings.jsop** bestanden, die u kunt vinden in de hoofdmap van uw project en in de map **werk stroom-Designtime** .
-
-        ![Scherm opname van het Verkenner-deel venster en ' local.settings.jsop ' bestanden in uw project.](./media/create-stateful-stateless-workflows-visual-studio-code/local-settings-json-files.png)
-
-     1. Zoek de eigenschap in elk bestand `AzureWebJobsStorage` , bijvoorbeeld:
-
-        ```json
-        {
-           "IsEncrypted": false,
-           "Values": {
-              "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-              "FUNCTIONS_WORKER_RUNTIME": "dotnet"
-            }
-        }
-        ```
-
-      1. Vervang de `AzureWebJobsStorage` eigenschaps waarde door de Connection String die u eerder hebt opgeslagen in uw opslag account, bijvoorbeeld:
-
-         ```json
-         {
-            "IsEncrypted": false,
-            "Values": {
-               "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=fabrikamstorageacct;AccountKey=<access-key>;EndpointSuffix=core.windows.net",
-               "FUNCTIONS_WORKER_RUNTIME": "dotnet"
-            }
-         }
-         ```
-
-      1. Sla de wijzigingen op en probeer de **workflow.js** opnieuw te openen in de ontwerp functie van het bestand.
 
 1. Selecteer in de lijst **connectors in azure inschakelen** de optie **connectors van Azure gebruiken**. Dit is van toepassing op alle beheerde connectors die beschikbaar zijn en worden geïmplementeerd in azure, niet alleen voor connectors voor Azure-Services.
 
@@ -337,7 +354,9 @@ Voordat u uw logische app kunt maken, moet u een lokaal project maken, zodat u u
    Nadat u deze stap hebt uitgevoerd, opent Visual Studio code de werk stroom ontwerper.
 
    > [!NOTE]
-   > Wanneer Visual Studio code de ontwerp tijd API van de werk stroom start, wordt er een bericht weer gegeven dat het opstarten enkele seconden kan duren. U kunt dit bericht negeren of **OK** selecteren.
+   > Wanneer Visual Studio code de ontwerp tijd API van de werk stroom start, wordt mogelijk een bericht weer gegeven dat het opstarten enkele seconden kan duren. U kunt dit bericht negeren of **OK** selecteren.
+   >
+   > Als de ontwerper niet kan worden geopend, raadpleegt u de sectie probleem oplossing. de [ontwerp functie kan niet worden geopend](#designer-fails-to-open).
 
    Nadat de ontwerp functie wordt weer gegeven, wordt de prompt **een bewerking kiezen** wordt weer gegeven op de ontwerp functie en is deze standaard ingeschakeld, waarin het deel venster **actie toevoegen** wordt weer gegeven.
 
@@ -472,17 +491,25 @@ Voor het lokaal uitvoeren van webhook-triggers en acties in Visual Studio code m
 
 #### <a name="set-up-the-forwarding-url-in-your-app-settings"></a>De doorstuur-URL instellen in de app-instellingen
 
-1. Open in Visual Studio code op het hoofd niveau van het project de **local.settings.jsin** het bestand.
+1. Voeg in Visual Studio code, in de ontwerp functie, de trigger of actie **http + webhook** toe.
 
-1. Voeg in het `Values` -object een eigenschap toe met de naam `Workflows.WebhookRedirectHostUri` en stel de waarde in op de DOORSTUUR-URL die u eerder hebt gemaakt, bijvoorbeeld:
+1. Wanneer de prompt wordt weer gegeven voor de locatie van het host-eind punt, voert u de URL voor door sturen (omleiding) in die u eerder hebt gemaakt.
 
+   > [!NOTE]
+   > Als u de prompt negeert, wordt een waarschuwing weer gegeven dat u de doorstuur-URL moet opgeven, dus Selecteer **configureren** en voer de URL in. Nadat u deze stap hebt voltooid, wordt de prompt niet opnieuw weer gegeven voor de volgende webhook-triggers of-acties die u kunt toevoegen.
+   >
+   > Als u wilt dat de prompt opnieuw wordt weer gegeven, opent u op het hoofd niveau van het project het **local.settings.js** snelmenu van het bestand en selecteert **u het eind punt webhook-omleiding configureren**. De prompt wordt nu weer gegeven zodat u de doorstuur-URL kunt opgeven.
+
+   Visual Studio code voegt de doorstuur-URL toe aan de **local.settings.jsvoor** het bestand in de hoofdmap van uw project. In het `Values` -object wordt de eigenschap met de naam `Workflows.WebhookRedirectHostUri` nu weer gegeven en wordt deze ingesteld op de DOORSTUUR-URL, bijvoorbeeld:
+   
    ```json
    {
       "IsEncrypted": false,
       "Values": {
          "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-         "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+         "FUNCTIONS_WORKER_RUNTIME": "node",
          "FUNCTIONS_V2_COMPATIBILITY_MODE": "true",
+         <...>
          "Workflows.WebhookRedirectHostUri": "http://xxxXXXXxxxXXX.ngrok.io",
          <...>
       }
@@ -491,14 +518,14 @@ Voor het lokaal uitvoeren van webhook-triggers en acties in Visual Studio code m
 
 De eerste keer dat u een lokale foutopsporingssessie start of de werk stroom uitvoert zonder fouten op te sporen, registreert de Logic Apps runtime de werk stroom met het service-eind punt en abonneert dit op het eind punt om de webhook-bewerkingen op de hoogte te stellen. De volgende keer dat de werk stroom wordt uitgevoerd, wordt de runtime niet geregistreerd of opnieuw geabonneerd omdat de registratie van het abonnement al in de lokale opslag bestaat.
 
-Wanneer u de foutopsporingssessie stopt voor een werk stroom uitvoering die gebruikmaakt van triggers of acties die lokaal worden uitgevoerd op basis van webhook, worden de bestaande abonnements registraties niet verwijderd. Als u de registratie ongedaan wilt maken, moet u de registraties van het abonnement hand matig verwijderen of verwijderen.
+Wanneer u de foutopsporingssessie stopt voor een werk stroom die wordt uitgevoerd op lokaal uitvoeren webhook-triggers of-acties, worden de bestaande abonnements registraties niet verwijderd. Als u de registratie ongedaan wilt maken, moet u de registraties van het abonnement hand matig verwijderen of verwijderen.
 
 > [!NOTE]
 > Nadat de werk stroom is gestart, kunnen er in het Terminal venster fouten worden weer gegeven, zoals in het volgende voor beeld:
 >
 > `message='Http request failed with unhandled exception of type 'InvalidOperationException' and message: 'System.InvalidOperationException: Synchronous operations are disallowed. Call ReadAsync or set AllowSynchronousIO to true instead.`
 >
-> Open in dit geval de **local.settings.jsin** het bestand op het hoofd niveau van het project en zorg ervoor dat de eigenschap is ingesteld op `true` :
+> Open in dit geval de **local.settings.js** in het bestand in de hoofdmap van uw project en controleer of de eigenschap is ingesteld op `true` :
 >
 > `"FUNCTIONS_V2_COMPATIBILITY_MODE": "true"`
 
@@ -544,6 +571,9 @@ Als u uw logische app wilt testen, voert u de volgende stappen uit om een foutop
 1. Open het menu **uitvoeren** op de activiteiten balk van Visual Studio en selecteer **Start Debugging** (F5).
 
    Het **Terminal** venster wordt geopend, zodat u de foutopsporingssessie kunt controleren.
+
+   > [!NOTE]
+   > Als u de fout melding **' fout bestaat na het uitvoeren van preLaunchTask ' generateDebugSymbols ' '** krijgt, raadpleegt u de sectie probleem oplossing. [Fout bij het opsporen van de sessie kan niet worden gestart](#debugging-fails-to-start).
 
 1. Zoek nu de call back-URL voor het eind punt op de aanvraag trigger.
 
@@ -624,15 +654,15 @@ Als u uw logische app wilt testen, voert u de volgende stappen uit om een foutop
 
    | Actie status | Pictogram | Beschrijving |
    |---------------|------|-------------|
-   | Aborted | ![Pictogram voor de actie status ' afgebroken '][aborted-icon] | De actie is gestopt of niet voltooid vanwege externe problemen, bijvoorbeeld een systeem storing of een vervallen Azure-abonnement. |
-   | Geannuleerd | ![Pictogram voor de actie status geannuleerd][cancelled-icon] | De actie is uitgevoerd, maar er is een annulerings aanvraag ontvangen. |
-   | Mislukt | ![Pictogram voor de actie status ' mislukt '][failed-icon] | De actie is mislukt. |
-   | Wordt uitgevoerd | ![Pictogram voor de actie status ' actief '][running-icon] | De actie wordt momenteel uitgevoerd. |
-   | Overgeslagen | ![Pictogram voor de actie status "overgeslagen"][skipped-icon] | De actie is overgeslagen omdat de onmiddellijk voorafgaande actie is mislukt. Een actie heeft een `runAfter` voor waarde die vereist dat de voorafgaande actie is voltooid voordat de huidige actie kan worden uitgevoerd. |
-   | Geslaagd | ![Pictogram voor de actie status geslaagd][succeeded-icon] | De actie is geslaagd. |
-   | Geslaagd met nieuwe pogingen | ![Pictogram voor de actie status geslaagd met nieuwe pogingen][succeeded-with-retries-icon] | De actie is voltooid, maar alleen na een of meer pogingen. Als u de geschiedenis van de nieuwe poging wilt bekijken, selecteert u in de detail weergave uitvoerings geschiedenis die actie zodat u de invoer en uitvoer kunt bekijken. |
-   | Time-out opgetreden | ![Pictogram voor de actie status time-out][timed-out-icon] | De actie is gestopt vanwege de time-outlimiet die is opgegeven door de instellingen van die actie. |
-   | Wachten | ![Pictogram voor de actie status ' wachten '][waiting-icon] | Is van toepassing op een webhook-actie die wordt gewacht op een inkomende aanvraag van een aanroeper. |
+   | **Aborted** | ![Pictogram voor de actie status ' afgebroken '][aborted-icon] | De actie is gestopt of niet voltooid vanwege externe problemen, bijvoorbeeld een systeem storing of een vervallen Azure-abonnement. |
+   | **Gevraagd** | ![Pictogram voor de actie status geannuleerd][cancelled-icon] | De actie is uitgevoerd, maar er is een aanvraag ontvangen om te annuleren. |
+   | **Mislukt** | ![Pictogram voor de actie status ' mislukt '][failed-icon] | De actie is mislukt. |
+   | **Wordt uitgevoerd** | ![Pictogram voor de actie status ' actief '][running-icon] | De actie wordt momenteel uitgevoerd. |
+   | **Overgeslagen** | ![Pictogram voor de actie status "overgeslagen"][skipped-icon] | De actie is overgeslagen omdat de onmiddellijk voorafgaande actie is mislukt. Een actie heeft een `runAfter` voor waarde die vereist dat de voorafgaande actie is voltooid voordat de huidige actie kan worden uitgevoerd. |
+   | **Geslaagd** | ![Pictogram voor de actie status geslaagd][succeeded-icon] | De actie is geslaagd. |
+   | **Geslaagd met nieuwe pogingen** | ![Pictogram voor de actie status geslaagd met nieuwe pogingen][succeeded-with-retries-icon] | De actie is voltooid, maar alleen na een of meer pogingen. Als u de geschiedenis van de nieuwe poging wilt bekijken, selecteert u in de detail weergave uitvoerings geschiedenis die actie zodat u de invoer en uitvoer kunt bekijken. |
+   | **Time-out opgetreden** | ![Pictogram voor de actie status time-out][timed-out-icon] | De actie is gestopt vanwege de time-outlimiet die is opgegeven door de instellingen van die actie. |
+   | **Wachten** | ![Pictogram voor de actie status ' wachten '][waiting-icon] | Is van toepassing op een webhook-actie die wordt gewacht op een inkomende aanvraag van een aanroeper. |
    ||||
 
    [aborted-icon]: ./media/create-stateful-stateless-workflows-visual-studio-code/aborted.png
@@ -716,7 +746,7 @@ Vanuit Visual Studio code kunt u uw project rechtstreeks naar Azure publiceren, 
 * [Een in Azure App Service omhoog schalen](../app-service/manage-scale-up.md)
 * [Schaal en hosting van Azure Functions](../azure-functions/functions-scale.md)
 
-U kunt uw logische app als een nieuwe resource publiceren, waarmee automatisch extra benodigde resources worden gemaakt, zoals een [Azure Storage account, vergelijkbaar met de vereisten van de functie-app](../azure-functions/storage-considerations.md). Of u kunt uw logische app publiceren naar een eerder geïmplementeerde **Logic app (preview)** -resource, die de logische app overschrijft.
+U kunt uw logische app als een nieuwe resource publiceren, waarmee automatisch alle benodigde resources worden gemaakt, zoals een [Azure Storage account, vergelijkbaar met de vereisten van de functie-app](../azure-functions/storage-considerations.md). Of u kunt uw logische app publiceren naar een eerder geïmplementeerde **Logic app (preview)** -resource, die de logische app overschrijft.
 
 ### <a name="publish-to-a-new-logic-app-preview-resource"></a>Publiceren naar een nieuwe logische app (preview)-resource
 
@@ -725,6 +755,8 @@ U kunt uw logische app als een nieuwe resource publiceren, waarmee automatisch e
 1. Selecteer op de werk balk van het deel venster **Azure: Logic apps (preview)** de optie **implementeren naar logische app**.
 
    ![Scherm opname van het deel venster Azure: Logic Apps (preview) en de werk balk van het deel venster met ' implementeren op logische app ' geselecteerd.](./media/create-stateful-stateless-workflows-visual-studio-code/deploy-to-logic-app.png)
+
+1. Als u hierom wordt gevraagd, selecteert u het Azure-abonnement dat u wilt gebruiken voor de implementatie van de logische app.
 
 1. Selecteer in de lijst die door Visual Studio code wordt geopend, een van de volgende opties:
 
@@ -742,7 +774,21 @@ U kunt uw logische app als een nieuwe resource publiceren, waarmee automatisch e
 
       ![Scherm opname van het deel venster ' Azure: Logic Apps (preview) ' en een prompt om een naam op te geven voor de nieuwe logische app die u wilt maken.](./media/create-stateful-stateless-workflows-visual-studio-code/enter-logic-app-name.png)
 
-   1. Selecteer een hosting abonnement voor uw nieuwe logische app, een [**app service plan**](../azure-functions/dedicated-plan.md) of [**Premium**](../azure-functions/functions-premium-plan.md). In dit voor beeld wordt **app service plan** geselecteerd.
+   1. Selecteer een [hosting abonnement](../app-service/overview-hosting-plans.md) voor uw nieuwe logische app, een [ **app service plan** (toegewezen)](../azure-functions/dedicated-plan.md) of [**Premium**](../azure-functions/functions-premium-plan.md).
+
+      > [!IMPORTANT]
+      > Verbruiks abonnementen worden niet ondersteund of zijn niet beschikbaar voor dit resource type. Het geselecteerde abonnement is van invloed op de mogelijkheden en prijs categorieën die later beschikbaar zijn voor u. Raadpleeg de volgende onderwerpen voor meer informatie: 
+      >
+      > * [Schaal en hosting van Azure Functions](../azure-functions/functions-scale.md)
+      > * [Prijs informatie voor App Service](https://azure.microsoft.com/pricing/details/app-service/)
+      >
+      > Het Premium-abonnement biedt bijvoorbeeld toegang tot netwerk mogelijkheden, zoals verbinding maken en integreren met Azure Virtual Networks, vergelijkbaar met Azure Functions wanneer u uw Logic apps maakt en implementeert. 
+      > Raadpleeg de volgende onderwerpen voor meer informatie:
+      > 
+      > * [Netwerkopties van Azure Functions](../azure-functions/functions-networking-options.md)
+      > * [Azure Logic Apps Anywhere-netwerk mogelijkheden uitvoeren met Azure Logic Apps Preview](https://techcommunity.microsoft.com/t5/integrations-on-azure/logic-apps-anywhere-networking-possibilities-with-logic-app/ba-p/2105047)
+
+      In dit voor beeld wordt het **app service-abonnement** gebruikt.
 
       ![Scherm opname van het deel venster "Azure: Logic Apps (preview)" en een prompt om "App Service plan" of "Premium" te selecteren.](./media/create-stateful-stateless-workflows-visual-studio-code/select-hosting-plan.png)
 
@@ -773,7 +819,7 @@ U kunt uw logische app als een nieuwe resource publiceren, waarmee automatisch e
 
       1. Selecteer **overzicht** in het menu resource. Zoek en kopieer de waarde van de **instrumentatie sleutel** .
 
-      1. Open in Visual Studio code op het hoofd niveau van het project de **local.settings.jsin** het bestand.
+      1. Open in Visual Studio code in de hoofdmap van het project de **local.settings.jsin** het bestand.
 
       1. Voeg in het `Values` -object de `APPINSIGHTS_INSTRUMENTATIONKEY` eigenschap toe en stel de waarde in op de instrumentatie sleutel, bijvoorbeeld:
 
@@ -809,7 +855,7 @@ U kunt uw logische app als een nieuwe resource publiceren, waarmee automatisch e
          * Werk stroom activiteit, zoals trigger, actie en uitvoeren.
          * Activiteit van de opslag aanvraag, zoals geslaagd of mislukt.
          * Activiteit van de HTTP-aanvraag, zoals inkomend, uitgaand, geslaagd en mislukt.
-         * Ad hoc-ontwikkelings traceringen, zoals fout opsporings berichten.
+         * Eventuele ontwikkelings traceringen, zoals fout opsporingsberichten.
 
          Elk gebeurtenis type wordt toegewezen aan een Ernst niveau. Zo `Trace` legt het niveau de meest gedetailleerde berichten vast, terwijl `Information` in het niveau algemene activiteiten in uw werk stroom worden vastgelegd, zoals wanneer uw logische app, werk stroom, trigger en acties worden gestart en gestopt. In deze tabel worden de ernst niveaus en de bijbehorende tracerings typen beschreven:
 
@@ -890,7 +936,7 @@ U kunt meerdere werk stromen hebben in uw logische app-project. Voer de volgende
 
 1. Selecteer in het deel venster Azure, naast **Azure: Logic apps (preview)**, **werk stroom maken** (pictogram voor Azure Logic apps).
 
-1. Selecteer het werk stroom type dat u wilt toevoegen, **stateful** of **stateless**.
+1. Selecteer het werk stroom type dat u wilt toevoegen: **stateful** of **stateless**
 
 1. Geef een naam op voor uw werk stroom.
 
@@ -904,7 +950,7 @@ In Visual Studio code kunt u alle geïmplementeerde Logic apps in uw Azure-abonn
 
 1. Selecteer op de werk balk links het pictogram van Azure. Vouw in het deel venster **Azure: Logic apps (preview)** uw abonnement uit, waarin alle geïmplementeerde Logic apps voor dat abonnement worden weer gegeven.
 
-1. Zoek en selecteer de logische app die u wilt beheren. Open het snelmenu van de logische app en selecteer de taak die u wilt uitvoeren.
+1. Open de logische app die u wilt beheren. Selecteer in het snelmenu van de logische app de taak die u wilt uitvoeren.
 
    U kunt bijvoorbeeld taken selecteren, zoals stoppen, starten, opnieuw starten of verwijderen van uw geïmplementeerde logische app.
 
@@ -998,7 +1044,7 @@ Als u een stateless werk stroom eenvoudiger wilt opsporen, kunt u de uitvoerings
 
 1. Voeg de `Workflows.{yourWorkflowName}.operationOptions` eigenschap toe en stel de waarde in op `WithStatelessRunHistory` , bijvoorbeeld:
 
-   **Windows of Linux**
+   **Windows**
 
    ```json
    {
@@ -1011,7 +1057,7 @@ Als u een stateless werk stroom eenvoudiger wilt opsporen, kunt u de uitvoerings
    }
    ```
 
-   **MacOS**
+   **macOS of Linux**
 
    ```json
    {
@@ -1061,7 +1107,10 @@ Voer de volgende stappen uit om Application Insights in te scha kelen op een ge�
 
    Als Application Insights is ingeschakeld, selecteert u in het deel venster **Application Insights** **Application Insights gegevens weer geven**.
 
-Nadat Application Insights is geopend, kunt u verschillende metrische gegevens voor uw logische app bekijken. Zie [Azure Logic apps Anywhere-monitor uitvoeren met Application Insights-deel 1](https://techcommunity.microsoft.com/t5/integrations-on-azure/azure-logic-apps-running-anywhere-monitor-with-application/ba-p/1877849)voor meer informatie.
+Nadat Application Insights is geopend, kunt u verschillende metrische gegevens voor uw logische app bekijken. Raadpleeg de volgende onderwerpen voor meer informatie:
+
+* [Azure Logic Apps Anywhere-monitor uitvoeren met Application Insights-deel 1](https://techcommunity.microsoft.com/t5/integrations-on-azure/azure-logic-apps-running-anywhere-monitor-with-application/ba-p/1877849)
+* [Azure Logic Apps Anywhere-monitor uitvoeren met Application Insights-deel 2](https://techcommunity.microsoft.com/t5/integrations-on-azure/azure-logic-apps-running-anywhere-monitor-with-application/ba-p/2003332)
 
 <a name="deploy-docker"></a>
 
@@ -1081,58 +1130,70 @@ Als u niet bekend bent met docker, raadpleegt u de volgende onderwerpen:
 
 * Het Azure Storage account dat door uw logische app wordt gebruikt voor implementatie
 
-* Een docker-bestand voor een .NET-werk stroom die u gebruikt bij het bouwen van de docker-container
+* Een docker-bestand voor de werk stroom die u gebruikt bij het bouwen van uw docker-container
 
-   Dit voor beeld van een docker-bestand implementeert bijvoorbeeld een logische app met een stateful werk stroom. Het bestand bevat de connection string en de toegangs sleutel voor het Azure Storage account dat is gebruikt voor het publiceren van de logische app naar de Azure Portal.
+  Dit voor beeld van een docker-bestand implementeert bijvoorbeeld een logische app. Hiermee geeft u de connection string op die de toegangs sleutel bevat voor het Azure Storage account dat is gebruikt voor het publiceren van de logische app naar de Azure Portal. Zie [opslag account ophalen Connection String](#find-storage-account-connection-string)om deze teken reeks te vinden.
 
    ```text
-   FROM mcr.microsoft.com/dotnet/core/sdk3.1 AS installer-env
+   FROM mcr.microsoft.com/azure-functions/node:3.0
 
-   COPY . /src/dotnet-function-app
-   RUN cd /src/dotnet-function-app && \
-       mkdir -p /home/site/wwwroot && \
-       dotnet publish *.csproj --output /home/site/wwwroot
-
-   FROM mcr.microsoft.com/azure-functions/dotnet:3.0
    ENV AzureWebJobsStorage <storage-account-connection-string>
    ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
        AzureFunctionsJobHost__Logging__Console__IsEnabled=true \
        FUNCTIONS_V2_COMPATIBILITY_MODE=true
 
-   COPY --from=installer-env ["/home/site/wwwroot", "/home/site/wwwroot"]
+   COPY . /home/site/wwwroot
+
+   RUN cd /home/site/wwwroot
    ```
 
    Zie [Aanbevolen procedures voor het schrijven van docker-bestanden](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) voor meer informatie.
 
-### <a name="build-and-publish-your-app"></a>Uw app bouwen en publiceren
+<a name="find-storage-account-connection-string"></a>
 
-1. Als u het project van de logische app lokaal wilt maken, opent u een opdracht regel prompt en voert u de volgende opdracht uit:
+### <a name="get-storage-account-connection-string"></a>connection string van opslag account ophalen
 
-   `dotnet build -c release`
+Voordat u uw docker-container installatie kopie kunt bouwen en uitvoeren, moet u de connection string die de toegangs sleutel bevat, ophalen naar uw opslag account. U hebt dit opslag account eerder gemaakt, zoals het gebruik van de uitbrei ding voor macOS of Linux, of wanneer u uw logische app hebt geïmplementeerd op de Azure Portal.
 
-   Zie de pagina [DotNet-build](/dotnet/core/tools/dotnet-build/) -verwijzing voor meer informatie.
-
-1. Publiceer de build van uw project naar een map die u wilt gebruiken voor implementatie naar de hostomgeving door de volgende opdracht uit te voeren:
-
-   `dotnet publish -c release`
-
-   Zie de pagina met [DotNet Publish](/dotnet/core/tools/dotnet-publish/) -verwijzing voor meer informatie.
-
-### <a name="access-to-your-storage-account"></a>Toegang tot uw opslag account
-
-Voordat u uw docker-container bouwt en uitvoert, moet u de connection string die de toegangs sleutels bevat, ophalen uit uw opslag account.
+Ga als volgt te werk om deze connection string te zoeken en te kopiëren:
 
 1. Selecteer in het Azure Portal, in het menu van het opslag account, onder **instellingen** de optie **toegangs sleutels**. 
 
+1. Zoek in het deel venster **toegangs toetsen** de Connection String van het opslag account, die er ongeveer als volgt uitziet:
+
+   `DefaultEndpointsProtocol=https;AccountName=fabrikamstorageacct;AccountKey=<access-key>;EndpointSuffix=core.windows.net`
+
    ![Scherm opname van de Azure Portal met toegangs sleutels voor het opslag account en connection string gekopieerd.](./media/create-stateful-stateless-workflows-visual-studio-code/find-storage-account-connection-string.png)
-
-1. Kopieer de connection string van uw opslag account onder **verbindings reeks**. De connection string ziet er ongeveer als volgt uit:
-
-   `DefaultEndpointsProtocol=https;AccountName=fabrikamstorageacct;AccountKey={access-key};EndpointSuffix=core.windows.net`
 
    Raadpleeg voor meer informatie [beheer van opslag accounts beheren](../storage/common/storage-account-keys-manage.md?tabs=azure-portal#view-account-access-keys).
 
-1. Sla de connection string op een veilige plek op. In uw logische app-project moet u deze teken reeks toevoegen aan beide **local.settings.jsop** bestanden. U moet deze teken reeks ook toevoegen aan het docker-bestand.
+1. Sla de connection string op een veilige plek op, zodat u deze teken reeks kunt toevoegen aan het docker-bestand dat u voor de implementatie gebruikt. 
+
+<a name="find-storage-account-master-key"></a>
+
+### <a name="find-master-key-for-storage-account"></a>Hoofd sleutel voor opslag account zoeken
+
+Als uw werk stroom een aanvraag trigger bevat, moet u [de retour-URL van de trigger ophalen](#get-callback-url-request-trigger) nadat u uw docker-container installatie kopie hebt gemaakt en uitgevoerd. Voor deze taak moet u ook de waarde van de hoofd sleutel opgeven voor het opslag account dat u voor de implementatie gebruikt.
+
+1. Als u deze hoofd sleutel wilt vinden, opent u in uw project het bestand **Azure-webjobs-geheimen/{Deployment-name}/host.js** .
+
+1. Zoek de `AzureWebJobsStorage` eigenschap en kopieer de sleutel waarde uit deze sectie:
+
+   ```json
+   {
+      <...>
+      "masterKey": {
+         "name": "master",
+         "value": "<master-key>",
+         "encrypted": false
+      },
+      <...>
+   }
+   ```
+
+1. Sla deze sleutel waarde op een veilige plek op, zodat u deze later kunt gebruiken.
+
+<a name="build-run-docker-container-image"></a>
 
 ### <a name="build-and-run-your-docker-container-image"></a>Uw docker-container installatie kopie bouwen en uitvoeren
 
@@ -1142,33 +1203,21 @@ Voordat u uw docker-container bouwt en uitvoert, moet u de connection string die
 
    Zie [docker build](https://docs.docker.com/engine/reference/commandline/build/)voor meer informatie.
 
-1. Sla de teken reeks ergens veilig op zodat u later de teken reeks kunt toevoegen aan de **local.settings.jsop** bestanden in het project dat u gebruikt voor het maken van uw logische app in Visual Studio code.
-
 1. Voer de container lokaal uit met behulp van deze opdracht:
 
    `docker run -e WEBSITE_HOSTNAME=localhost -p 8080:80 local/workflowcontainer`
 
    Zie [docker run](https://docs.docker.com/engine/reference/commandline/run/)(Engelstalig) voor meer informatie.
 
+<a name="get-callback-url-request-trigger"></a>
+
 ### <a name="get-callback-url-for-request-trigger"></a>Retour-URL ophalen voor aanvraag trigger
 
-Als u de call back-URL voor de aanvraag trigger wilt ophalen, verzendt u deze aanvraag:
+Voor een werk stroom die gebruikmaakt van de aanvraag trigger, de retour-URL van de trigger ophalen door deze aanvraag te verzenden:
 
 `POST /runtime/webhooks/workflow/api/management/workflows/{workflow-name}/triggers/{trigger-name}/listCallbackUrl?api-version=2020-05-01-preview&code={master-key}`
 
-De <*-hoofd sleutel*> waarde wordt gedefinieerd in het Azure Storage account dat u hebt ingesteld voor `AzureWebJobsStorage` in het bestand **Azure-webjobs-geheimen/{Deployment-name}/host.jsop**, waar u de waarde in deze sectie kunt vinden:
-
-```json
-{
-   <...>
-   "masterKey": {
-      "name": "master",
-      "value": "<master-key>",
-      "encrypted": false
-   },
-   <...>
-   }
-```
+De `{trigger-name}` waarde is de naam van de aanvraag trigger die wordt weer gegeven in de JSON-definitie van de werk stroom. De `{master-key}` waarde wordt gedefinieerd in het Azure Storage account dat u voor de `AzureWebJobsStorage` eigenschap in het bestand hebt ingesteld, **Azure-webjobs-geheimen/{Deployment-name}/host.jsop**. Zie voor meer informatie de [hoofd sleutel opslag account zoeken](#find-storage-account-master-key).
 
 <a name="delete-from-designer"></a>
 
@@ -1193,29 +1242,31 @@ Voer een van de volgende stappen uit om een item in uw werk stroom te verwijdere
 
 <a name="designer-fails-to-open"></a>
 
-### <a name="opening-designer-fails-with-error-workflow-design-time-could-not-be-started"></a>Het openen van de ontwerp functie is mislukt met de fout: de ontwerp tijd van de werk stroom kan niet worden gestart
+### <a name="designer-fails-to-open"></a>Het openen van de ontwerp functie is mislukt
 
-1. Open in Visual Studio code het venster uitvoer. Selecteer in het menu **weer gave** de optie **uitvoer**.
+Wanneer u de ontwerp functie probeert te openen, wordt deze fout weer geven: **' de werk stroom ontwerp tijd kan niet worden gestart '**. Als u eerder probeerde de ontwerp functie te openen en vervolgens het project hebt stopgezet of verwijderd, wordt de uitbreidings bundel mogelijk niet correct gedownload. Voer de volgende stappen uit om te controleren of dit de oorzaak van het probleem is:
 
-1. Selecteer in de lijst in de titel balk van het uitvoer venster **Azure Logic apps (preview)** zodat u de uitvoer van de uitbrei ding kunt controleren, bijvoorbeeld:
+  1. Open in Visual Studio code het venster uitvoer. Selecteer in het menu **weer gave** de optie **uitvoer**.
 
-   ![Scherm opname van het uitvoer venster waarin ' Azure Logic Apps ' is geselecteerd.](./media/create-stateful-stateless-workflows-visual-studio-code/check-outout-window-azure-logic-apps.png)
+  1. Selecteer in de lijst in de titel balk van het uitvoer venster **Azure Logic apps (preview)** zodat u de uitvoer van de uitbrei ding kunt controleren, bijvoorbeeld:
 
-1. Controleer de uitvoer en controleer of dit fout bericht wordt weer gegeven:
+     ![Scherm opname van het uitvoer venster waarin ' Azure Logic Apps ' is geselecteerd.](./media/create-stateful-stateless-workflows-visual-studio-code/check-outout-window-azure-logic-apps.png)
 
-   ```text
-   A host error has occurred during startup operation '{operationID}'.
-   System.Private.CoreLib: The file 'C:\Users\{userName}\AppData\Local\Temp\Functions\
-   ExtensionBundles\Microsoft.Azure.Functions.ExtensionBundle.Workflows\1.1.1\bin\
-   DurableTask.AzureStorage.dll' already exists.
-   Value cannot be null. (Parameter 'provider')
-   Application is shutting down...
-   Initialization cancellation requested by runtime.
-   Stopping host...
-   Host shutdown completed.
-   ```
+  1. Controleer de uitvoer en controleer of dit fout bericht wordt weer gegeven:
 
-   Deze fout kan optreden als u eerder hebt geprobeerd om de ontwerp functie te openen en vervolgens het project uit te zetten of te verwijderen. Om deze fout op te lossen, verwijdert u de map **ExtensionBundles** op deze locatie **. ..\Users \\ {uw-username} \AppData\Local\Temp\Functions\ExtensionBundles** en probeer het **workflow.js** opnieuw te openen in het bestand in de ontwerp functie.
+     ```text
+     A host error has occurred during startup operation '{operationID}'.
+     System.Private.CoreLib: The file 'C:\Users\{userName}\AppData\Local\Temp\Functions\
+     ExtensionBundles\Microsoft.Azure.Functions.ExtensionBundle.Workflows\1.1.7\bin\
+     DurableTask.AzureStorage.dll' already exists.
+     Value cannot be null. (Parameter 'provider')
+     Application is shutting down...
+     Initialization cancellation requested by runtime.
+     Stopping host...
+     Host shutdown completed.
+     ```
+
+   Om deze fout op te lossen, verwijdert u de map **ExtensionBundles** op deze locatie **. ..\Users \{ uw-gebruikers naam} \AppData\Local\Temp\Functions\ExtensionBundles** en probeer het **workflow.js** opnieuw te openen in het bestand in de ontwerp functie.
 
 <a name="missing-triggers-actions"></a>
 
@@ -1284,6 +1335,37 @@ U kunt dit probleem oplossen door de- `UrlSegmentMaxCount` en `UrlSegmentMaxLeng
    ![Scherm opname van de REGI ster-editor.](media/create-stateful-stateless-workflows-visual-studio-code/edit-registry-settings-uri-length.png)
 
 1. Wanneer u klaar bent, start u de computer opnieuw op om de wijzigingen van kracht te laten worden.
+
+<a name="debugging-fails-to-start"></a>
+
+### <a name="debugging-session-fails-to-start"></a>Sessie voor fout opsporing kan niet worden gestart
+
+Wanneer u probeert een foutopsporingssessie te starten, wordt de fout **' fout bestaat na het uitvoeren van preLaunchTask ' generateDebugSymbols ' '** weer geven. Om dit probleem op te lossen, bewerkt u de **tasks.jsin** het bestand in uw project om het genereren van symbolen over te slaan.
+
+1. Vouw in uw project de map **. vscode** uit en open de **tasks.jsin** het bestand.
+
+1. Verwijder in de volgende taak de regel, `"dependsOn: "generateDebugSymbols"` samen met de komma die de voor gaande regel eindigt, bijvoorbeeld:
+
+   Voor:
+   ```json
+    {
+      "type": "func",
+      "command": "host start",
+      "problemMatcher": "$func-watch",
+      "isBackground": true,
+      "dependsOn": "generateDebugSymbols"
+    }
+   ```
+
+   Na:
+   ```json
+    {
+      "type": "func",
+      "command": "host start",
+      "problemMatcher": "$func-watch",
+      "isBackground": true
+    }
+   ```
 
 ## <a name="next-steps"></a>Volgende stappen
 

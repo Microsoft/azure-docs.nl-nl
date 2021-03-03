@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive, seoapr2020, devx-track-csharp
 ms.date: 04/28/2020
-ms.openlocfilehash: 6948491091f558aa7f317d519b0f92c63cac4788
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 6e2758fd650547978924c25f8f3faf1e3e7194f6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98946640"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699382"
 ---
 # <a name="use-c-with-mapreduce-streaming-on-apache-hadoop-in-hdinsight"></a>C# gebruiken met MapReduce streaming op Apache Hadoop in HDInsight
 
@@ -20,7 +20,7 @@ Met Apache Hadoop streaming kunt u MapReduce-taken uitvoeren met behulp van een 
 
 ## <a name="net-on-hdinsight"></a>.NET in HDInsight
 
-HDInsight-clusters gebruiken [mono https://mono-project.com) (](https://mono-project.com) om .NET-toepassingen uit te voeren. Mono versie 4.2.1 is opgenomen in HDInsight-versie 3,6. Zie [Apache Hadoop-onderdelen die beschikbaar zijn in verschillende versies van hdinsight](../hdinsight-component-versioning.md#apache-components-available-with-different-hdinsight-versions)voor meer informatie over de versie van mono die is opgenomen in hdinsight.
+HDInsight-clusters gebruiken [mono https://mono-project.com) (](https://mono-project.com) om .NET-toepassingen uit te voeren. Mono versie 4.2.1 is opgenomen in HDInsight-versie 3,6. Zie [Apache Hadoop-onderdelen die beschikbaar zijn met hdinsight-versies](../hdinsight-component-versioning.md)voor meer informatie over de versie van mono die deel uitmaakt van hdinsight.
 
 Zie [mono-compatibiliteit](https://www.mono-project.com/docs/about-mono/compatibility/)voor meer informatie over de compatibiliteit van mono met .NET Framework versies.
 

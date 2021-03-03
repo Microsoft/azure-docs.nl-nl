@@ -13,12 +13,12 @@ ms.date: 10/03/2018
 ms.author: ryanwi
 ms.reviewer: jlu, annaba, hirsin
 ROBOTS: NOINDEX
-ms.openlocfilehash: 4f6b2b1c0f584e092c9e8f7d330a94b0b54fd6f2
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: d68cfb91445e2055cb3c3feb88bf925987ea9852
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98197418"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101687393"
 ---
 # <a name="how-to-migrate-from-the-azure-access-control-service"></a>Procedure: migreren vanuit Azure Access Control Service
 
@@ -113,7 +113,7 @@ Vanaf november 2017 worden alle Access Control onderdelen volledig ondersteund e
 Dit is de planning voor het afAccess Controlen van onderdelen:
 
 - **November 2017**: de Azure AD-beheer ervaring in de klassieke Azure-Portal [is buiten gebruik gesteld](https://blogs.technet.microsoft.com/enterprisemobility/2017/09/18/marching-into-the-future-of-the-azure-ad-admin-experience-retiring-the-azure-classic-portal/). Op dit punt is naam ruimte beheer voor Access Control beschikbaar op een nieuwe, toegewezen URL: `https://manage.windowsazure.com?restoreClassic=true` . Gebruik deze URl om uw bestaande naam ruimten weer te geven, naam ruimten in te scha kelen en uit te scha kelen en om naam ruimten te verwijderen, indien gewenst.
-- **2 April 2018**: de klassieke Azure-Portal is volledig buiten gebruik gesteld, wat betekent dat Access Control naam ruimte beheer niet meer beschikbaar is via een URL. Op dit moment kunt u uw Access Control-naam ruimten niet in-of uitschakelen, verwijderen of opsommen. De Access Control Beheer Portal is echter volledig functioneel en bevindt zich op `https://\<namespace\>.accesscontrol.windows.net` . Alle andere onderdelen van Access Control blijven normaal functioneren.
+- **2 April 2018**: de klassieke Azure-Portal is volledig buiten gebruik gesteld, wat betekent dat Access Control naam ruimte beheer niet meer beschikbaar is via een URL. Op dit moment kunt u uw Access Control-naam ruimten niet in-of uitschakelen, verwijderen of opsommen. De Access Control Beheer Portal is echter volledig functioneel en bevindt zich op `https://<namespace>.accesscontrol.windows.net` . Alle andere onderdelen van Access Control blijven normaal functioneren.
 - **7 November 2018**: alle Access Control onderdelen worden permanent afgesloten. Dit omvat de Access Control Beheer Portal, de beheer service, STS en de token transformatie regel engine. Op dit moment mislukken alle aanvragen die worden verzonden naar Access Control (te vinden op \<namespace\> . accesscontrol.Windows.net). U moet alle bestaande apps en services voor deze periode goed hebben gemigreerd naar andere technologieën.
 
 > [!NOTE]

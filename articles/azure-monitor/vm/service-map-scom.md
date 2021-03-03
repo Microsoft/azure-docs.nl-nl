@@ -1,29 +1,29 @@
 ---
-title: Azure Monitor voor VM's kaart integreren met Operations Manager | Microsoft Docs
-description: Azure Monitor voor VM's detecteert automatisch toepassings onderdelen op Windows-en Linux-systemen en wijst de communicatie tussen services toe. In dit artikel wordt beschreven hoe u met de kaart functie automatisch gedistribueerde toepassings diagrammen maakt in Operations Manager.
+title: Integratie van de VM Insights-kaart met Operations Manager | Microsoft Docs
+description: VM Insights detecteert automatisch toepassings onderdelen op Windows-en Linux-systemen en wijst de communicatie tussen services toe. In dit artikel wordt beschreven hoe u met de kaart functie automatisch gedistribueerde toepassings diagrammen maakt in Operations Manager.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/12/2019
-ms.openlocfilehash: 0722a1806cc94102f92045c78850d96ed9890d02
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: a39f40c2a284a743db258a49f36cb4f13c2a4d1c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100608966"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101725489"
 ---
-# <a name="integrate-system-center-operations-manager-with-azure-monitor-for-vms-map-feature"></a>System Center Operations Manager integreren met Azure Monitor voor VM's kaart functie
+# <a name="integrate-system-center-operations-manager-with-vm-insights-map-feature"></a>System Center Operations Manager integreren met de functie voor het toewijzen van vm's met VM
 
-In Azure Monitor voor VM's kunt u gedetecteerde toepassings onderdelen weer geven op virtuele Windows-en Linux-machines (Vm's) die worden uitgevoerd in azure of in uw omgeving. Als deze integratie tussen de kaart functie en System Center Operations Manager, kunt u automatisch gedistribueerde toepassings diagrammen maken in Operations Manager die zijn gebaseerd op de dynamische afhankelijkheids toewijzingen in Azure Monitor voor VM's. In dit artikel wordt beschreven hoe u uw System Center Operations Manager-beheer groep configureert ter ondersteuning van deze functie.
+In VM Insights kunt u gedetecteerde toepassings onderdelen weer geven op virtuele Windows-en Linux-machines (Vm's) die worden uitgevoerd in azure of in uw omgeving. Als deze integratie tussen de kaart functie en System Center Operations Manager, kunt u automatisch gedistribueerde toepassings diagrammen maken in Operations Manager die zijn gebaseerd op de dynamische afhankelijkheids toewijzingen in VM Insights. In dit artikel wordt beschreven hoe u uw System Center Operations Manager-beheer groep configureert ter ondersteuning van deze functie.
 
 >[!NOTE]
->Als u Servicetoewijzing al hebt geïmplementeerd, kunt u uw kaarten weer geven in Azure Monitor voor VM's, met daarin extra functies voor het controleren van de status en prestaties van de virtuele machine. De kaart functie van Azure Monitor voor VM's is bedoeld om de zelfstandige Servicetoewijzing oplossing te vervangen. Zie [Azure monitor voor VM's-overzicht](../vm/vminsights-overview.md)voor meer informatie.
+>Als u Servicetoewijzing al hebt geïmplementeerd, kunt u uw kaarten weer geven in VM Insights, waaronder extra functies voor het controleren van de status en prestaties van de virtuele machine. De kaart functie van VM Insights is bedoeld om de zelfstandige Servicetoewijzing oplossing te vervangen. Zie [overzicht van VM Insights](../vm/vminsights-overview.md)voor meer informatie.
 
 ## <a name="prerequisites"></a>Vereisten
 
 * Een System Center Operations Manager-beheer groep (2012 R2 of hoger).
-* Een Log Analytics-werk ruimte die is geconfigureerd voor de ondersteuning van Azure Monitor voor VM's.
+* Een Log Analytics-werk ruimte die is geconfigureerd om VM Insights te ondersteunen.
 * Een of meer virtuele Windows-en Linux-machines of fysieke computers die worden bewaakt door Operations Manager en het verzenden van gegevens naar uw Log Analytics-werk ruimte. Linux-servers die rapporteren aan een Operations Manager-beheer groep moeten worden geconfigureerd om rechtstreeks verbinding te maken met Azure Monitor. Raadpleeg het overzicht in [logboek gegevens verzamelen met de log Analytics-agent](../agents/log-analytics-agent.md)voor meer informatie.
 * Een service-principal met toegang tot het Azure-abonnement dat is gekoppeld aan de Log Analytics-werk ruimte. Ga voor meer informatie naar [een service-principal maken](#create-a-service-principal).
 
@@ -43,7 +43,7 @@ Nadat u de Servicetoewijzing management pack hebt geïnstalleerd, wordt er een n
 >[!NOTE]
 >[Operations Management Suite is een verzameling van services](../terminology.md#april-2018---retirement-of-operations-management-suite-brand) die zijn opgenomen log Analytics, maakt nu deel uit van [Azure monitor](../overview.md).
 
-Ga als volgt te werk om Azure Monitor voor VM's kaart integratie te configureren:
+Ga als volgt te werk om de integratie van de VM Insights-map te configureren:
 
 1. Als u de configuratie wizard wilt openen, klikt u in het deel venster **servicetoewijzing overzicht** op **werk ruimte toevoegen**.  
 
@@ -66,7 +66,7 @@ Ga als volgt te werk om Azure Monitor voor VM's kaart integratie te configureren
     Voor de integratie van het bouwen van een gedistribueerd toepassings diagram voor een-server moet de-server:
 
    * Bewaakt door Operations Manager
-   * Geconfigureerd om te rapporteren aan de Log Analytics werk ruimte die is geconfigureerd met Azure Monitor voor VM's
+   * Geconfigureerd om te rapporteren aan de Log Analytics werk ruimte die is geconfigureerd met VM Insights
    * Vermeld in de groep Servicetoewijzing servers
 
      ![De configuratie groep Operations Manager](media/service-map-scom/scom-config-group.png)
@@ -92,7 +92,7 @@ De map Servicetoewijzing heeft vier knoop punten:
   >[!NOTE]
   >Deze waarschuwingen worden niet Log Analytics waarschuwingen die zijn gesynchroniseerd met Operations Manager en ze worden gegenereerd in de beheer groep op basis van werk stromen die zijn gedefinieerd in de Servicetoewijzing management pack.
 
-* **Servers**: geeft een lijst van de bewaakte servers die zijn geconfigureerd om te synchroniseren van Azure monitor voor VM's kaart functie.
+* **Servers**: geeft een lijst van de bewaakte servers die zijn geconfigureerd voor synchronisatie vanuit de functie van de VM Insights-kaart.
 
     ![Het deel venster Operations Manager monitoring servers](media/service-map-scom/scom-monitoring-servers.png)
 
@@ -117,7 +117,7 @@ U kunt slechts één Log Analytics werkruimte configureren in deze huidige versi
 
 ## <a name="configure-rules-and-overrides"></a>Regels en onderdrukkingen configureren
 
-Met een regel, *Microsoft.SystemCenter. ServiceMapImport. rule*, wordt regel matig informatie opgehaald van de functie Azure monitor voor VM's map. Als u het synchronisatie-interval wilt wijzigen, kunt u de regel overschrijven en de waarde voor de para meter **IntervalMinutes** wijzigen.
+Met een regel, *Microsoft.SystemCenter. ServiceMapImport. rule*, wordt regel matig gegevens opgehaald uit de functie van de VM Insights-kaart. Als u het synchronisatie-interval wilt wijzigen, kunt u de regel overschrijven en de waarde voor de para meter **IntervalMinutes** wijzigen.
 
 ![Het venster Eigenschappen van Operations Manager onderdrukkingen](media/service-map-scom/scom-overrides.png)
 
@@ -131,8 +131,8 @@ Met een regel, *Microsoft.SystemCenter. ServiceMapImport. rule*, wordt regel mat
 Het huidige ontwerp bevat de volgende problemen en beperkingen:
 
 * U kunt alleen verbinding maken met een enkele Log Analytics-werk ruimte.
-* Hoewel u servers hand matig aan de groep Servicetoewijzing servers kunt toevoegen via het deel venster **ontwerpen** , worden de kaarten voor die servers niet direct gesynchroniseerd. Ze worden tijdens de volgende synchronisatie cyclus gesynchroniseerd vanaf Azure Monitor voor VM's toewijzings functie.
-* Als u wijzigingen aanbrengt in de diagrammen voor gedistribueerde toepassingen die zijn gemaakt door de management pack, worden deze wijzigingen waarschijnlijk overschreven bij de volgende synchronisatie met Azure Monitor voor VM's.
+* Hoewel u servers hand matig aan de groep Servicetoewijzing servers kunt toevoegen via het deel venster **ontwerpen** , worden de kaarten voor die servers niet direct gesynchroniseerd. Ze worden tijdens de volgende synchronisatie cyclus gesynchroniseerd vanuit de functie van de VM Insights-kaart.
+* Als u wijzigingen aanbrengt in de diagrammen voor gedistribueerde toepassingen die zijn gemaakt door de management pack, worden deze wijzigingen waarschijnlijk overschreven bij de volgende synchronisatie met VM Insights.
 
 ## <a name="create-a-service-principal"></a>Een service-principal maken
 
@@ -144,5 +144,5 @@ Zie voor officiële Azure-documentatie over het maken van een Service-Principal:
 
 ### <a name="suggestions"></a>Suggesties
 
-Hebt u feedback voor ons over de integratie met Azure Monitor voor VM's kaart functie of deze documentatie? Ga naar onze [pagina met gebruikers spraak](https://feedback.azure.com/forums/267889-log-analytics/category/184492-service-map), waar u functies kunt suggereren of stem op bestaande suggesties.
+Hebt u feedback voor ons over de integratie met de functie voor het toewijzen van vm's met de VM of deze documentatie? Ga naar onze [pagina met gebruikers spraak](https://feedback.azure.com/forums/267889-log-analytics/category/184492-service-map), waar u functies kunt suggereren of stem op bestaande suggesties.
 

@@ -1,17 +1,16 @@
 ---
 title: Azure Storage services bewaken met Azure Monitor voor opslag | Microsoft Docs
 description: In dit artikel wordt de Azure Monitor voor opslag functie beschreven waarmee opslag beheerders een duidelijk beeld krijgen van de prestaties en het gebruik van problemen met hun Azure Storage accounts.
-ms.subservice: ''
 ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 05/11/2020
-ms.openlocfilehash: 13c884d9f140fbd962bfa32ef2d853339aec325a
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 0baaca8df8865061b51f1629da14c3b18a527047
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100587357"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708064"
 ---
 # <a name="monitoring-your-storage-service-with-azure-monitor-for-storage"></a>Uw opslag service controleren met Azure Monitor voor opslag
 
@@ -85,7 +84,7 @@ Wanneer u een waarde selecteert onder een van de kolommen in de werkmap, zoomt u
 
 ## <a name="view-from-a-storage-account"></a>Weer geven vanuit een opslag account
 
-Direct toegang tot Azure Monitor voor VM's vanuit een opslag account:
+Om toegang tot de VM direct vanuit een opslag account te verkrijgen:
 
 1. Selecteer opslag accounts in het Azure Portal.
 

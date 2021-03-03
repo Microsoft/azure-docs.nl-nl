@@ -13,16 +13,16 @@ ms.topic: quickstart
 ms.date: 12/24/2019
 ms.author: bwren
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: ef6e31968f85407e8055315becdc1337b474ad70
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: dbe51930ec92ec4f89738dc5d543003f45acebf9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100628659"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733819"
 ---
 # <a name="quickstart-collect-data-from-a-linux-computer-in-a-hybrid-environment-with-azure-monitor"></a>Quickstart: Gegevens verzamelen van een Linux-computer in een hybride omgeving met Azure Monitor
 
-[Azure Monitor](../overview.md) kan gegevens rechtstreeks vanuit uw fysieke of virtuele Linux-computers in uw omgeving verzamelen en onderbrengen in een Log Analytics-werkruimte voor uitvoerige analyse en correlatie. Door de [Log Analytics-agent te installeren](../agents/log-analytics-agent.md) kan Azure Monitor gegevens verzamelen uit een datacentrum of een andere cloudomgeving. In deze snelstart wordt beschreven hoe u met een paar eenvoudige stappen gegevens van uw Linux-server configureert en verzamelt. Zie [Gegevens verzamelen over Azure Virtual Machines](../learn/quick-collect-azurevm.md) voor informatie over virtuele Linux-machines in Azure.  
+[Azure Monitor](../overview.md) kan gegevens rechtstreeks vanuit uw fysieke of virtuele Linux-computers in uw omgeving verzamelen en onderbrengen in een Log Analytics-werkruimte voor uitvoerige analyse en correlatie. Door de [Log Analytics-agent te installeren](../agents/log-analytics-agent.md) kan Azure Monitor gegevens verzamelen uit een datacentrum of een andere cloudomgeving. In deze snelstart wordt beschreven hoe u met een paar eenvoudige stappen gegevens van uw Linux-server configureert en verzamelt. Zie [Gegevens verzamelen over Azure Virtual Machines](./quick-collect-azurevm.md) voor informatie over virtuele Linux-machines in Azure.  
 
 Zie [Ondersteunde besturingssystemen](../agents/agents-overview.md#supported-operating-systems) en [Netwerkconfiguratie voor de firewall](../agents/log-analytics-agent.md#network-requirements) voor meer informatie over de ondersteunde configuratie.
  
@@ -166,4 +166,4 @@ Nu u bezig bent met het verzamelen van operationele gegevens en prestatiegegeven
 Voor informatie over het weergeven en analyseren van de gegevens gaat u verder met de zelfstudie.
 
 > [!div class="nextstepaction"]
-> [Gegevens weergeven of analyseren in Log Analytics](../log-query/log-analytics-tutorial.md)
+> [Gegevens weergeven of analyseren in Log Analytics](../logs/log-analytics-tutorial.md)

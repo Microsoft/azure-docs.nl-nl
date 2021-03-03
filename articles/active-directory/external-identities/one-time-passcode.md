@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 02/12/2021
+ms.date: 03/02/2021
 ms.author: mimart
 author: msmimart
 manager: CelesteDG
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f37c7e2f21c76fcc902b0922399081b9be949e99
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 7961997c6a6736c154b6217ee3f21682d0c4c3fc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100365528"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101688464"
 ---
 # <a name="email-one-time-passcode-authentication"></a>Verificatie met eenmalige e-mail wachtwoord code
 
@@ -26,7 +26,8 @@ In dit artikel wordt beschreven hoe u eenmalige verificatie via e-mail voor B2B-
 ![Overzichts diagram van het wacht woord voor eenmalige e-mail](media/one-time-passcode/email-otp.png)
 
 > [!IMPORTANT]
-> **Vanaf 2021 oktober** wordt de functie voor eenmalige e-mail wachtwoord code ingeschakeld voor alle bestaande tenants en standaard ingeschakeld voor nieuwe tenants. Als u niet wilt toestaan dat deze functie automatisch wordt ingeschakeld, kunt u deze uitschakelen. Zie [eenmalige E-mail uitschakelen onderstaande wachtwoord code](#disable-email-one-time-passcode) .
+> - **Vanaf 2021 oktober** wordt de functie voor eenmalige e-mail wachtwoord code ingeschakeld voor alle bestaande tenants en standaard ingeschakeld voor nieuwe tenants. Als u niet wilt toestaan dat deze functie automatisch wordt ingeschakeld, kunt u deze uitschakelen. Zie [eenmalige E-mail uitschakelen onderstaande wachtwoord code](#disable-email-one-time-passcode) .
+> - De e-mail wachtwoord instellingen voor eenmalige e-mail zijn verplaatst naar de Azure Portal van **externe samenwerkings instellingen** naar **alle id-providers**.
 
 > [!NOTE]
 > Eenmalige wachtwoord code gebruikers moeten zich aanmelden met behulp van een koppeling die de Tenant context bevat (bijvoorbeeld `https://myapps.microsoft.com/?tenantid=<tenant id>` of `https://portal.azure.com/<tenant id>` , of in het geval van een geverifieerd domein `https://myapps.microsoft.com/<verified domain>.onmicrosoft.com` ). Directe koppelingen naar toepassingen en bronnen werken ook zolang ze de context van de Tenant bevatten. Gast gebruikers kunnen zich momenteel niet aanmelden met eind punten die geen Tenant context hebben. Als u bijvoorbeeld gebruikt `https://myapps.microsoft.com` , treedt er `https://portal.azure.com` een fout op.
@@ -83,27 +84,50 @@ Vanaf 2021 oktober wordt de functie voor eenmalige e-mail wachtwoord code ingesc
 
 2. Selecteer in het navigatiedeelvenster de service **Azure Active Directory**.
 
-3. Externe **identiteiten**  >  **externe instellingen voor samen werking** selecteren.
+3. Selecteer **externe identiteiten**  >  **alle id-providers**.
 
-4. Selecteer onder **e-mail eenmalige wachtwoord code voor gasten** de optie **e-mail eenmalige wachtwoord code voor gasten uitschakelen**.
+4. Selecteer **eenmalige e-mail** en selecteer **eenmalige wachtwoord code voor gasten uitschakelen**.
 
    > [!NOTE]
-   > Als u in plaats van de opties voor eenmalige e-mail wachtwoord code de volgende wissel knop ziet, betekent dit dat u eerder hebt ingeschakeld, uitgeschakeld of hebt gekozen voor de preview van de functie. Selecteer **Nee** om de functie uit te scha kelen.
+   > De e-mail wachtwoord instellingen voor eenmalige e-mail zijn verplaatst naar de Azure Portal van **externe samenwerkings instellingen** naar **alle id-providers**.
+   > Als er een wissel knop wordt weer gegeven in plaats van de opties voor eenmalige e-mail wachtwoord code, betekent dit dat u eerder hebt ingeschakeld, uitgeschakeld of hebt gekozen voor de preview van de functie. Selecteer **Nee** om de functie uit te scha kelen.
    >
-   >![Eenmalige E-mail inschakelen wacht woord voor wachtwoord registratie](media/delegate-invitations/enable-email-otp-opted-in.png)
+   >![E-mail eenmalige wachtwoord code in-/uitschakelen uitgeschakeld](media/one-time-passcode/enable-email-otp-disabled.png)
 
 5. Selecteer **Opslaan**.
 
 ## <a name="note-for-public-preview-customers"></a>Opmerking voor open bare preview-klanten
 
-Als u eerder hebt gekozen voor de open bare preview-versie van het e-mail wachtwoord voor de e-mail, is de datum van oktober 2021 voor automatische activering niet van toepassing op u, zodat uw gerelateerde bedrijfs processen niet worden beïnvloed. Daarnaast ziet u in de Azure Portal, onder de **wachtwoord code voor het eenmalige e-mail adres voor gasten** , de optie voor het **automatisch inschakelen van e-mail eenmalige wachtwoord code voor gasten in oktober 2021**. In plaats daarvan wordt de volgende **Ja** -of **geen** wissel knop weer geven:
+Als u eerder hebt gekozen voor de open bare preview-versie van het e-mail wachtwoord voor de e-mail, is de datum van oktober 2021 voor automatische activering niet van toepassing op u, zodat uw gerelateerde bedrijfs processen niet worden beïnvloed. Daarnaast ziet u in de Azure Portal, onder de **wachtwoord code voor het eenmalige e-mail adres voor gasten** , de optie voor het **automatisch inschakelen van e-mail eenmalige wachtwoord code voor gasten vanaf oktober 2021**. In plaats daarvan wordt de volgende **Ja** -of **geen** wissel knop weer geven:
 
-![Eenmalige E-mail inschakelen wacht woord voor wachtwoord registratie](media/delegate-invitations/enable-email-otp-opted-in.png)
+![E-mail met eenmalige wachtwoord code](media/one-time-passcode/enable-email-otp-opted-in.png)
 
 Als u de functie echter wilt uitschakelen en wilt toestaan dat deze automatisch kan worden ingeschakeld in oktober 2021, kunt u terugkeren naar de standaard instellingen met behulp van het [bron type configuratie van de Microsoft Graph-API-e-mail verificatie methode](/graph/api/resources/emailauthenticationmethodconfiguration). Nadat u de standaard instellingen hebt hersteld, zijn de volgende opties beschikbaar onder **e-mail eenmalige wachtwoord code voor gasten**:
 
-- **Eenmalige e-mail wachtwoord voor gasten automatisch inschakelen in oktober 2021**. Prijs Als de functie voor eenmalige e-mail wachtwoord code nog niet is ingeschakeld voor uw Tenant, wordt deze automatisch ingeschakeld in oktober 2021. Er is geen verdere actie nodig als u de functie op dat moment wilt inschakelen. Als u de functie al hebt ingeschakeld of uitgeschakeld, is deze optie niet beschikbaar.
+![Eenmalige E-mail inschakelen wacht woord voor wachtwoord registratie](media/one-time-passcode/email-otp-options.png)
+
+- **Eenmalige e-mail wachtwoord voor gasten automatisch inschakelen vanaf oktober 2021**. Prijs Als de functie voor eenmalige e-mail wachtwoord code nog niet is ingeschakeld voor uw Tenant, wordt deze automatisch ingeschakeld vanaf oktober 2021. Er is geen verdere actie nodig als u de functie op dat moment wilt inschakelen. Als u de functie al hebt ingeschakeld of uitgeschakeld, is deze optie niet beschikbaar.
 
 - **Eenmalige e-mail wachtwoord instellen voor gasten die nu effectief** zijn. Hiermee schakelt u de functie e-mail eenmalige wachtwoord code in voor uw Tenant.
 
 - **Eenmalige e-mail wachtwoord voor gasten uitschakelen**. Hiermee schakelt u de functie e-mail eenmalige wachtwoord code voor uw Tenant uit en voor komt u dat de functie wordt ingeschakeld in oktober 2021.
+
+## <a name="note-for-azure-us-government-customers"></a>Opmerking voor klanten van de Amerikaanse overheid van Azure
+
+De functie voor eenmalige e-mail wachtwoord code is standaard uitgeschakeld in de Azure-Cloud voor de Amerikaanse overheid.  
+
+ ![E-mail eenmalige wachtwoord code uitgeschakeld](media/one-time-passcode/enable-email-otp-disabled.png)
+
+De functie voor eenmalige e-mail wachtwoord code in de Azure-Cloud voor de Amerikaanse overheid inschakelen:
+
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als een globale Azure AD-beheerder.
+2. Selecteer in het navigatiedeelvenster de service **Azure Active Directory**.
+3. Instellingen voor **organisatie relaties** selecteren   >  ****.
+
+   > [!NOTE]
+   > - Als u geen **organisatie relaties** ziet, zoekt u naar ' externe identiteiten ' in de zoek balk aan de bovenkant.
+
+4. Selecteer **eenmalige e-mail wachtwoord code** en selecteer vervolgens **Ja**.
+5. Selecteer **Opslaan**.
+
+Zie [Azure Amerikaanse overheids Clouds](current-limitations.md#azure-us-government-clouds)voor meer informatie over huidige beperkingen.

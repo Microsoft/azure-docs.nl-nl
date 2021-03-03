@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/26/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 2c69cea7055476bcc4c4a28cea0a0cf8c8f66f88
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: bbb42a4955ff0b4fbbac58830ec5c8aecf04915d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98753458"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686730"
 ---
 # <a name="a-web-api-that-calls-web-apis-call-an-api"></a>Een web-API die web-Api's aanroept: een API aanroepen
 
@@ -29,9 +29,15 @@ Nadat u een token hebt, kunt u een beveiligde web-API aanroepen. Gewoonlijk roep
 
 Wanneer u *micro soft. Identity. Web* gebruikt, hebt u drie gebruiks scenario's:
 
-- [Optie 1: Microsoft Graph aanroepen met de Microsoft Graph SDK](#option-1-call-microsoft-graph-with-the-sdk)
-- [Optie 2: een stroomafwaartse Web-API aanroepen met de helper-klasse](#option-2-call-a-downstream-web-api-with-the-helper-class)
-- [Optie 3: een stroomafwaartse Web-API aanroepen zonder de helper-klasse](#option-3-call-a-downstream-web-api-without-the-helper-class)
+- [Een web-API die web-Api's aanroept: een API aanroepen](#a-web-api-that-calls-web-apis-call-an-api)
+  - [Controller code](#controller-code)
+- [ASP.NET Core](#aspnet-core)
+      - [Optie 1: Microsoft Graph aanroepen met de SDK](#option-1-call-microsoft-graph-with-the-sdk)
+      - [Optie 2: een stroomafwaartse Web-API aanroepen met de helper-klasse](#option-2-call-a-downstream-web-api-with-the-helper-class)
+      - [Optie 3: een stroomafwaartse Web-API aanroepen zonder de helper-klasse](#option-3-call-a-downstream-web-api-without-the-helper-class)
+- [Java](#java)
+- [Python](#python)
+  - [Volgende stappen](#next-steps)
 
 #### <a name="option-1-call-microsoft-graph-with-the-sdk"></a>Optie 1: Microsoft Graph aanroepen met de SDK
 
@@ -159,7 +165,7 @@ private String callMicrosoftGraphMeEndpoint(String accessToken){
 ```
 
 # <a name="python"></a>[Python](#tab/python)
-Een voor beeld van het demonstreren van deze stroom met MSAL python is nog niet beschikbaar.
+Een voor beeld van het demonstreren van deze stroom met MSAL python is beschikbaar op [MS-Identity-python-](https://github.com/Azure-Samples/ms-identity-python-on-behalf-of)namens.
 
 ---
 

@@ -3,12 +3,12 @@ title: 'Azure-quickstart: Een event hub maken met behulp van de Azure-portal'
 description: In deze quickstart leert u hoe u met Azure Portal een Azure-event hub maakt.
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.openlocfilehash: c1244317655815da91429585eff9ffbcc16662d4
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
-ms.translationtype: HT
+ms.openlocfilehash: 6bd9d247db6cd5a956ff4bce9b70f1f8a5a7499a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96435498"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101742038"
 ---
 # <a name="quickstart-create-an-event-hub-using-azure-portal"></a>Quickstart: Een event hub maken met behulp van Azure Portal
 Azure Event Hubs is een big data-platform voor het streamen van gegevens en een gebeurtenisopneemservice die miljoenen gebeurtenissen per seconde kan ontvangen en verwerken. Event Hubs kan gebeurtenissen, gegevens of telemetrie die wordt geproduceerd door gedistribueerde software en apparaten verwerken en opslaan. Gegevens die naar een Event Hub worden verzonden, kunnen worden omgezet en opgeslagen via een provider voor realtime analytische gegevens of batchverwerking/opslagadapters. Zie [Overzicht van Event Hubs](event-hubs-about.md) en [Functies van Event Hubs](event-hubs-features.md) voor een gedetailleerd overzicht van Event Hubs.
@@ -87,7 +87,7 @@ Ga als volgt te werk om een Event Hub in de naamruimte te maken:
 
     Met de instelling **Aantal partities** kunt u het verbruik van verschillende gebruikers parallelliseren. Zie [Partities](event-hubs-scalability.md#partitions) voor meer informatie.
 
-    De instelling **Bewaarperiode van berichten** duidt aan hoe lang de Event Hubs-service gegevens bewaart. Zie [Quota en limieten](event-hubs-quotas.md) als u wilt weten wat de maximumlimieten voor deze instelling zijn.
+    De instelling **Bewaarperiode van berichten** duidt aan hoe lang de Event Hubs-service gegevens bewaart. Zie [gebeurtenis retentie](event-hubs-features.md#event-retention)voor meer informatie.
 1. U kunt de status van het Event Hub-creatieproces bekijken in de waarschuwingen. Nadat de event hub is gemaakt, wordt deze weergegeven in de lijst met event hubs.
 
     ![Event Hub gemaakt](./media/event-hubs-quickstart-portal/event-hub-created.png)

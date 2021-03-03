@@ -4,12 +4,12 @@ description: Geeft een overzicht van de Azure Backup-service en hoe deze bijdraa
 ms.topic: overview
 ms.date: 04/24/2019
 ms.custom: mvc
-ms.openlocfilehash: 6a30e31dd1462e427faf64966a38c94f9fa56df6
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 2879d104d534733651ba76ab5521541adad0a51c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624469"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101725353"
 ---
 # <a name="what-is-the-azure-backup-service"></a>Wat is de Azure Backup-service?
 
@@ -26,6 +26,7 @@ De Azure Backup-service biedt eenvoudige, beveiligde en kosteneffectieve oplossi
 - **SQL Server op virtuele Azure-machines** -  [Maak back-ups van SQL Server-databases die worden uitgevoerd op virtuele Azure-machines](backup-azure-sql-database.md)
 - **SAP HANA-databases op virtuele Azure-machines** - [Maak back-ups van SAP HANA-databases die worden uitgevoerd op virtuele Azure-machines](backup-azure-sap-hana-database.md)
 - **Azure Database for PostgreSQL-servers (preview)**  -  [Back-ups maken van Azure PostgreSQL-databases en de back-ups tot tien jaar bewaren](backup-azure-database-postgresql.md)
+- **Azure-blobs (preview-versie)**  -  [Overzicht van operationele back-ups voor Azure-blobs (in preview-versie)](blob-backup-overview.md)
 
 ![Overzicht van Azure Backup](./media/backup-overview/azure-backup-overview.png)
 

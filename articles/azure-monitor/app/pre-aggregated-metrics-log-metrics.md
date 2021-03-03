@@ -6,12 +6,12 @@ author: vgorbenko
 ms.author: vitalyg
 ms.date: 09/18/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: c419411b0956cdc42055f0e97a47fc8e4ddb38c9
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: acbe535d740eb527d165be1675f31e759851a987
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100589734"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717822"
 ---
 # <a name="log-based-and-pre-aggregated-metrics-in-application-insights"></a>Vooraf samengevoegde metrische gegevens op basis van logboeken in Application Insights
 
@@ -48,8 +48,10 @@ Het is belang rijk dat het verzamelings eindpunt gebeurtenissen vóór opname sa
 | .NET core en .NET Framework | Ondersteund (V 2.13.1 +)| Ondersteund via [TrackMetric](api-custom-events-metrics.md#trackmetric)| Ondersteund (V 2.7.2 +) via [GetMetric](get-metric.md) |
 | Java                         | Niet ondersteund       | Ondersteund via [TrackMetric](api-custom-events-metrics.md#trackmetric)| Niet ondersteund                           |
 | Node.js                      | Niet ondersteund       | Ondersteund via  [TrackMetric](api-custom-events-metrics.md#trackmetric)| Niet ondersteund                           |
-| Python                       | Niet ondersteund       | Ondersteund                                 | Ondersteund via [Opentellingen. statistieken](opencensus-python.md#metrics) |  
+| Python                       | Niet ondersteund       | Ondersteund                                 | Gedeeltelijk ondersteund via [Opentellingen. statistieken](opencensus-python.md#metrics) |  
 
+> [!NOTE]
+>  De metrische gegevens implementatie voor python met opentellingen. stats wijkt af van GetMetric. Raadpleeg [de python-documentatie over metrische](./opencensus-python.md#metrics)gegevens voor meer informatie.
 
 ### <a name="codeless-supported-pre-aggregated-metrics-table"></a>Niet-ondersteunde, vooraf geaggregeerde metrische tabel met code ring
 

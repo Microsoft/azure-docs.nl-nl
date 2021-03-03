@@ -1,15 +1,15 @@
 ---
 title: Overzicht van waarschuwings-en meldings bewaking in azure
-description: Overzicht van waarschuwingen in Azure. Waarschuwingen, klassieke waarschuwingen en de interface van waarschuwingen.
+description: Overzicht van waarschuwingen in Azure Monitor
 ms.subservice: alerts
 ms.topic: conceptual
-ms.date: 01/28/2018
-ms.openlocfilehash: 96e15c1e07d437855b6553757295800406a4cf4c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.date: 02/14/2021
+ms.openlocfilehash: e2d447b7407ed874d9c183c5cd2009882f1d6b3b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609621"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723585"
 ---
 # <a name="overview-of-alerts-in-microsoft-azure"></a>Overzicht van waarschuwingen in Microsoft Azure 
 
@@ -94,7 +94,7 @@ In plaats daarvan kunt u [de waarschuwings instanties die op uw abonnementen wor
 > [!NOTE]
    >  U hebt alleen toegang tot waarschuwingen die in de afgelopen 30 dagen zijn gegenereerd.
 
-Klassieke waarschuwingen worden niet weer gegeven of bijgehouden. U kunt de abonnementen of filter parameters wijzigen om de pagina bij te werken. 
+U kunt de abonnementen of filter parameters wijzigen om de pagina bij te werken.
 
 ![Scherm afbeelding van de pagina waarschuwingen](media/alerts-overview/alerts-page.png)
 

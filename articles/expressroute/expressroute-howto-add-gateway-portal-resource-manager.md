@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/05/2020
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: 843d0b8cfd75e8cbdf45ac535cc9486aa42442d6
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
-ms.translationtype: HT
+ms.openlocfilehash: 56e35c23eacdf98db283ba5d8c2e32687cbe0ea8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "91761781"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101740899"
 ---
 # <a name="tutorial-configure-a-virtual-network-gateway-for-expressroute-using-the-azure-portal"></a>Zelfstudie: Een virtuele-netwerkgateway configureren voor ExpressRoute met behulp van de Azure-portal
 > [!div class="op_single_selector"]
@@ -50,6 +50,11 @@ In de stappen voor deze taak gebruiken we een VNet dat is gebaseerd op de waarde
 
 U kunt een [video](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-a-vpn-gateway-for-your-virtual-network) van deze stappen bekijken voordat u begint met de configuratie.
 
+> [!IMPORTANT]
+> IPv6-ondersteuning voor persoonlijke peering is momenteel beschikbaar als **open bare preview**. Als u uw virtuele netwerk wilt verbinden met een ExpressRoute-circuit met op IPv6 gebaseerde privé-peering geconfigureerd, zorgt u ervoor dat uw virtuele netwerk dual stack is en volgt u de richt lijnen voor [IPv6 voor Azure VNet](https://docs.microsoft.com/azure/virtual-network/ipv6-overview).
+> 
+> 
+
 ## <a name="create-the-gateway-subnet"></a>Her gatewaysubnet maken
 
 1. Navigeer in de [portal](https://portal.azure.com) naar het virtuele netwerk van Resource Manager waarvoor u een gateway wilt maken.
@@ -58,9 +63,13 @@ U kunt een [video](https://azure.microsoft.com/documentation/videos/azure-expres
    
     :::image type="content" source="./media/expressroute-howto-add-gateway-portal-resource-manager/add-gateway-subnet.png" alt-text="Het gatewaysubnet toevoegen":::
 
-1. Als **naam** voor het subnet wordt automatisch de waarde GatewaySubnet ingevuld. Deze waarde is vereist. Zonder deze waarde wordt het subnet niet in Azure als het gatewaysubnet herkend. Pas de automatisch ingevulde waarden voor **Adresbereik** aan overeenkomstig uw configuratievereisten. We raden u aan een gatewaysubnet te maken met een adresbereik van /27 of groter (/26, /25, enzovoort). Selecteer vervolgens **OK** om de waarden op te slaan en het gatewaysubnet te maken.
+1. Als **naam** voor het subnet wordt automatisch de waarde GatewaySubnet ingevuld. Deze waarde is vereist. Zonder deze waarde wordt het subnet niet in Azure als het gatewaysubnet herkend. Pas de automatisch ingevulde waarden voor **Adresbereik** aan overeenkomstig uw configuratievereisten. We raden u aan een gatewaysubnet te maken met een adresbereik van /27 of groter (/26, /25, enzovoort).
 
-    :::image type="content" source="./media/expressroute-howto-add-gateway-portal-resource-manager/add-subnet-gateway.png" alt-text="Het subnet toevoegen":::
+    Als u een virtueel netwerk met dubbele stack gebruikt en op IPv6 gebaseerde privé-peering via ExpressRoute wilt gebruiken, klikt u op **ip6 adres ruimte toevoegen** en waarden voor het **IPv6-adres bereik** invoeren.
+
+Selecteer vervolgens **OK** om de waarden op te slaan en het gatewaysubnet te maken.
+
+    :::image type="content" source="./media/expressroute-howto-add-gateway-portal-resource-manager/add-subnet-gateway.png" alt-text="Adding the subnet":::
 
 ## <a name="create-the-virtual-network-gateway"></a>De gateway van het virtuele netwerk maken
 
@@ -70,7 +79,7 @@ U kunt een [video](https://azure.microsoft.com/documentation/videos/azure-expres
     | Instelling | Waarde |
     | --------| ----- |
     | Abonnement | Controleer of het juiste abonnement is geselecteerd. |
-    | Resource Group | De resourcegroep wordt automatisch geselecteerd wanneer u het virtuele netwerk selecteert. | 
+    | Resourcegroep | De resourcegroep wordt automatisch geselecteerd wanneer u het virtuele netwerk selecteert. | 
     | Naam | Geef een naam op voor de gateway. Dit is iets anders dan een naam opgeven voor het gatewaysubnet. Hier gaat het om de naam van het gatewayobject dat u maakt.|
     | Regio | Wijzig het veld **Regio** om naar de locatie van het virtuele netwerk te verwijzen. Als de locatie niet verwijst naar de regio waarin het virtuele netwerk zich bevindt, wordt het virtuele netwerk niet weergegeven in de vervolgkeuzelijst Virtueel netwerk. |
     | Gatewaytype | Selecteer **ExpressRoute**|
@@ -78,6 +87,11 @@ U kunt een [video](https://azure.microsoft.com/documentation/videos/azure-expres
     | Virtueel netwerk | Selecteer *TestVNet*. |
     | Openbaar IP-adres | Selecteer **Nieuw maken**.|
     | Naam openbaar IP-adres | Geef een naam op voor het openbare IP-adres. |
+
+    > [!IMPORTANT]
+    > Als u van plan bent om op IPv6 gebaseerde privé-peering te gebruiken via ExpressRoute, moet u ervoor zorgen dat u een AZ-SKU (ErGw1AZ, ErGw2AZ, ErGw3AZ) voor **SKU** selecteert.
+    > 
+    > 
 
 1. Selecteer **Beoordelen en maken** en daarna **Maken** om de gateway te maken. De instellingen worden gevalideerd en de gateway wordt geïmplementeerd. Het maken van een gateway voor een virtueel netwerk kan tot 45 minuten duren.
 

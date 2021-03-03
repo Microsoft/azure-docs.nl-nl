@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: b484873f6c118c49712cbcd66eeb6a63d8aa05f6
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 5367fbcb88e19253eead58d8f99933fdadc41898
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100591558"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101714711"
 ---
 # <a name="azure-security-baseline-for-azure-storage"></a>Azure-beveiligings basislijn voor Azure Storage
 
@@ -190,7 +190,7 @@ U kunt ook gebruikmaken van ingebouwde beleids definities met betrekking tot het
 
 **Hulp**: Azure Opslaganalyse biedt logboeken voor blobs, wacht rijen en tabellen. U kunt de Azure Portal gebruiken om te configureren welke logboeken voor uw account worden vastgelegd. 
 
-- [Bewaking configureren voor uw Azure Storage-account](./storage-monitor-storage-account.md#configure-monitoring-for-a-storage-account)
+- [Bewaking configureren voor uw Azure Storage-account](./manage-storage-analytics-logs.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -208,7 +208,7 @@ U kunt ook gebruikmaken van ingebouwde beleids definities met betrekking tot het
 
 **Richt lijnen**: wanneer u beveiligings logboeken opslaat in het Azure Storage-account of log Analytics-werk ruimte, kunt u het Bewaar beleid instellen op basis van de vereisten van uw organisatie. 
 
-- [Bewaar beleid configureren voor logboeken van Azure Storage-account](./storage-monitor-storage-account.md#configure-logging)
+- [Bewaar beleid configureren voor logboeken van Azure Storage-account](./manage-storage-analytics-logs.md#configure-logging)
 
 - [De Bewaar periode voor gegevens wijzigen in Log Analytics](../../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
@@ -414,7 +414,7 @@ Een efficiënte manier om het risico van onvermoede gebruikers accounts te beper
 
 - [Anonieme leestoegang tot containers en blobs beheren](../blobs/anonymous-read-access-configure.md)
 
-- [Een Storage-account bewaken in de Azure-portal](./storage-monitor-storage-account.md)
+- [Een Storage-account bewaken in de Azure-portal](./manage-storage-analytics-logs.md)
 
 - [Toegangs sleutels voor opslag accounts beheren](./storage-account-keys-manage.md)
 
@@ -432,7 +432,7 @@ Diagnostische instellingen voor Azure Active Directory gebruikers accounts maken
 
 - [Azure-activiteitenlogboeken integreren in Azure Monitor](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-- [Metrische waarschuwingen voor Azure Storage accounts configureren](./storage-monitor-storage-account.md)
+- [Metrische waarschuwingen voor Azure Storage accounts configureren](./manage-storage-analytics-logs.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -576,7 +576,7 @@ Daarnaast kunt u het virtuele netwerk service-eindpunt beleid gebruiken om uitga
 
 - [Azure Storage-analyselogboeken](./storage-analytics-logging.md)
 
-- [Metrische waarschuwingen voor Azure Storage accounts configureren](./storage-monitor-storage-account.md)
+- [Metrische waarschuwingen voor Azure Storage accounts configureren](./manage-storage-analytics-logs.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 

@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 02/18/2020
-ms.openlocfilehash: 5485d97638679651a3890e0b7578787e481437c6
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 1f619e1eac58f70642117dabafc266d1bc250609
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101656275"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101690410"
 ---
 # <a name="migration-overview-sql-server-to-sql-managed-instance"></a>Migratie overzicht: SQL Server naar een beheerd exemplaar van SQL
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -115,7 +115,7 @@ In de volgende tabel worden de aanbevolen migratie opties vergeleken:
 
 |Migratieoptie  |Wanneer gebruikt u dit?  |Overwegingen  |
 |---------|---------|---------|
-|[Azure Database Migration Service (DMS)](../../../dms/tutorial-sql-server-to-managed-instance.md) | -Migreer afzonderlijke data bases of meerdere data bases op schaal. </br> -Kan downtime tijdens het migratie proces inpassen. </br> </br> Ondersteunde bronnen: </br> -SQL Server (2005-2019) on-premises of Azure VM </br> -AWS EC2 </br> -AWS RDS </br> -GCP Compute SQL Server-VM |  -Migraties op schaal kunnen worden geautomatiseerd via [Power shell](../../../dms/howto-sql-server-to-azure-sql-mi-powershell.md). </br> -Het volt ooien van de migratie is afhankelijk van de grootte van de data base en van invloed op back-up-en herstel tijd. </br> -Er is mogelijk voldoende downtime vereist. |
+|[Azure Database Migration Service (DMS)](../../../dms/tutorial-sql-server-to-managed-instance.md) | -Migreer afzonderlijke data bases of meerdere data bases op schaal. </br> -Kan downtime tijdens het migratie proces inpassen. </br> </br> Ondersteunde bronnen: </br> -SQL Server (2005-2019) on-premises of Azure VM </br> -AWS EC2 </br> -AWS RDS </br> -GCP Compute SQL Server-VM |  -Migraties op schaal kunnen worden geautomatiseerd via [Power shell](../../../dms/howto-sql-server-to-azure-sql-managed-instance-powershell-offline.md). </br> -Het volt ooien van de migratie is afhankelijk van de grootte van de data base en van invloed op back-up-en herstel tijd. </br> -Er is mogelijk voldoende downtime vereist. |
 |[Systeem eigen back-up en herstel](../../managed-instance/restore-sample-database-quickstart.md) | -Een afzonderlijke line-of-Business-toepassings database (s) migreren.  </br> -Snelle en eenvoudige migratie zonder een afzonderlijke migratie service of een afzonderlijk hulp programma.  </br> </br> Ondersteunde bronnen: </br> -SQL Server (2005-2019) on-premises of Azure VM </br> -AWS EC2 </br> -AWS RDS </br> -GCP Compute SQL Server-VM | -Database back-up gebruikt meerdere threads voor het optimaliseren van gegevens overdracht naar Azure Blob-opslag, maar ISV-band breedte en grootte van de data base kunnen de overdrachts frequentie beïnvloeden. </br> -Downtime moet voldoen aan de tijd die nodig is voor het uitvoeren van een volledige back-up en herstel (dit is een omvang van de gegevens bewerking).| 
 |[Replay-service voor logboeken (LRS)](../../managed-instance/log-replay-service-migrate.md) | -Een afzonderlijke line-of-Business-toepassings database (s) migreren.  </br> -Er is meer controle nodig voor database migraties.  </br> </br> Ondersteunde bronnen: </br> -SQL Server (2008-2019) on-premises of Azure VM </br> -AWS EC2 </br> -AWS RDS </br> -GCP Compute SQL Server-VM | -De migratie omvat het maken van volledige database back-ups op SQL Server en het kopiëren van back-upbestanden naar Azure Blob Storage. LRS wordt gebruikt om back-upbestanden van Azure Blob Storage te herstellen naar een door SQL beheerd exemplaar. </br> -Data bases die tijdens het migratie proces worden hersteld, bevinden zich in een herstel modus en kunnen niet worden gebruikt om te lezen of te schrijven totdat het proces is voltooid.| 
 | | | |
@@ -163,7 +163,7 @@ Naast de architectuur met hoge Beschik baarheid die is opgenomen in het SQL Mana
 
 #### <a name="sql-agent-jobs"></a>SQL-Agent taken
 
-Gebruik de optie offline Azure Database Migration Service (DMS) om [SQL-Agent taken](../../../dms/howto-sql-server-to-azure-sql-mi-powershell.md#offline-migrations)te migreren. Als dat niet het geval is, voert u de taken in Transact-SQL (T-SQL) uit met SQL Server Management Studio en maakt u deze hand matig opnieuw op het door SQL Managed instance-exemplaar. 
+Gebruik de optie offline Azure Database Migration Service (DMS) om [SQL-Agent taken](../../../dms/howto-sql-server-to-azure-sql-managed-instance-powershell-offline.md)te migreren. Als dat niet het geval is, voert u de taken in Transact-SQL (T-SQL) uit met SQL Server Management Studio en maakt u deze hand matig opnieuw op het door SQL Managed instance-exemplaar. 
 
 > [!IMPORTANT]
 > Momenteel ondersteunt Azure DMS alleen taken met de stappen van het T-SQL-subsysteem. Taken met SSIS-pakket stappen moet hand matig worden gemigreerd. 

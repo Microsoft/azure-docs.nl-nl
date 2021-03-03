@@ -8,15 +8,14 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 3b6928b759d2349051dbb69258952f2f1ee10a31
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: d32e5c55bbaa7357c1f13200213dbaed19986825
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878135"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101694339"
 ---
 # <a name="azure-disk-encryption-scenarios-on-linux-vms"></a>Azure Disk Encryption-scenario's voor virtuele Linux-machines
-
 
 Azure Disk Encryption voor virtuele Linux-machines (Vm's) gebruikt de DM-Crypt-functie van Linux voor het versleutelen van de volledige schijf versleuteling van de besturingssysteem schijf en gegevens schijven. Daarnaast biedt het een versleuteling van de tijdelijke schijf wanneer de functie EncryptFormatAll wordt gebruikt.
 
@@ -408,7 +407,6 @@ Azure Disk Encryption werkt niet voor de volgende Linux-scenario's,-functies en-
 - Een installatie kopie of moment opname van een versleutelde virtuele machine maken en deze gebruiken voor het implementeren van extra Vm's.
 - Kernel-crash dump (kdump).
 - Oracle-ACFS (ASM-cluster bestands systeem).
-- Gen2 Vm's (zie: [ondersteuning voor virtuele machines van generatie 2 op Azure](../generation-2.md#generation-1-vs-generation-2-capabilities)).
 - De NVMe-schijven van virtuele machines uit de Lsv2-serie (zie: [Lsv2-serie](../lsv2-series.md)).
 - Een virtuele machine met ' geneste koppel punten '; dat wil zeggen, meerdere koppel punten in één pad (zoals "/1stmountpoint/data/2stmountpoint").
 - Een virtuele machine met een gegevens station die boven op een map van het besturings systeem is geplaatst.
@@ -416,7 +414,6 @@ Azure Disk Encryption werkt niet voor de volgende Linux-scenario's,-functies en-
 - Vm's uit de M-serie met Write Accelerator-schijven.
 - ADE Toep assen op een virtuele machine met schijven die zijn versleuteld met versleuteling aan de [server zijde met door de klant beheerde sleutels](../disk-encryption.md) (SSE + CMK). Het Toep assen van SSE en CMK op een gegevens schijf op een virtuele machine die is versleuteld met ADE, is ook een niet-ondersteund scenario.
 - Migratie van een VM die is versleuteld met ADE of **ooit** is versleuteld met ADE, voor versleuteling aan de [server zijde met door de klant beheerde sleutels](../disk-encryption.md).
-- [Azure VM-grootten zonder lokale tijdelijke schijf](../azure-vms-no-temp-disk.md); met name Dv4, Dsv4, Ev4 en Esv4.
 - Vm's in failoverclusters versleutelen.
 
 ## <a name="next-steps"></a>Volgende stappen

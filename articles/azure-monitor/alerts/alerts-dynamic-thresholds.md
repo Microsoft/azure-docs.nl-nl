@@ -5,12 +5,12 @@ author: yanivlavi
 ms.author: yalavi
 ms.topic: conceptual
 ms.date: 01/04/2021
-ms.openlocfilehash: 31a034a7f52efd915b7a07e1abb953a14839892e
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 9cf4caf77d14dd1296276ca48827c170ef265e9b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609656"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101718060"
 ---
 # <a name="metric-alerts-with-dynamic-thresholds-in-azure-monitor"></a>Metrische waarschuwingen met dynamische drempel waarden in Azure Monitor
 
@@ -22,7 +22,7 @@ We horen graag uw feedback en blijven deze op <azurealertsfeedback@microsoft.com
 
 ## <a name="why-and-when-is-using-dynamic-condition-type-recommended"></a>Waarom en wanneer wordt dynamisch voor waarden type gebruikt?
 
-1. **Schaal bare waarschuwing** : dynamische regels voor drempel waarden kunnen een aangepaste drempel waarde voor honderden metrische reeksen tegelijk maken, maar bieden hetzelfde gemak voor het definiëren van een waarschuwings regel voor één metriek. Ze geven u minder waarschuwingen om te maken en te beheren. U kunt Azure Portal of de Azure Resource Manager-API gebruiken om ze te maken. De schaal bare aanpak is vooral nuttig bij het omgaan met metrische dimensies of bij het Toep assen op meerdere resources, zoals bij alle abonnements bronnen.  Meer [informatie over het configureren van metrische waarschuwingen met dynamische drempel waarden met behulp van sjablonen](../platform/alerts-metric-create-templates.md).
+1. **Schaal bare waarschuwing** : dynamische regels voor drempel waarden kunnen een aangepaste drempel waarde voor honderden metrische reeksen tegelijk maken, maar bieden hetzelfde gemak voor het definiëren van een waarschuwings regel voor één metriek. Ze geven u minder waarschuwingen om te maken en te beheren. U kunt Azure Portal of de Azure Resource Manager-API gebruiken om ze te maken. De schaal bare aanpak is vooral nuttig bij het omgaan met metrische dimensies of bij het Toep assen op meerdere resources, zoals bij alle abonnements bronnen.  Meer [informatie over het configureren van metrische waarschuwingen met dynamische drempel waarden met behulp van sjablonen](./alerts-metric-create-templates.md).
 
 1. **Herkenning van Smart metrische patronen** : met onze ml-technologie kunnen we automatisch metrische patronen detecteren en aanpassen aan metrische wijzigingen in de loop van de tijd, wat vaak een seizoensgebondenheid (per uur/dagelijks/wekelijks) kan zijn. Het aanpassen van het gedrag van metrische gegevens in de loop van de tijd en waarschuwing op basis van afwijkingen van het patroon, wordt de last van het weten van de drempel waarde ' right ' voor elke metriek vrijgegeven. Het ML-algoritme dat wordt gebruikt in dynamische drempel waarden is ontworpen om te voor komen dat er ruis (lage precisie) of grote (lage) drempel waarden zijn die geen verwacht patroon hebben.
 
@@ -75,7 +75,7 @@ Gebruik de volgende instellingen om een waarschuwing te activeren wanneer er een
 
 ## <a name="how-do-you-find-out-why-a-dynamic-thresholds-alert-was-triggered"></a>Hoe kom ik erachter waarom een waarschuwing over dynamische drempel waarden is geactiveerd?
 
-U kunt geactiveerde waarschuwings instanties in de weer gave waarschuwingen verkennen door te klikken op de koppeling in het e-mail bericht of in de browser om de weer gave waarschuwingen in de Azure Portal weer te geven. Meer [informatie over de weer gave waarschuwingen](../platform/alerts-overview.md#alerts-experience).
+U kunt geactiveerde waarschuwings instanties in de weer gave waarschuwingen verkennen door te klikken op de koppeling in het e-mail bericht of in de browser om de weer gave waarschuwingen in de Azure Portal weer te geven. Meer [informatie over de weer gave waarschuwingen](./alerts-overview.md#alerts-experience).
 
 De weer gave waarschuwingen wordt weer gegeven:
 
@@ -188,4 +188,4 @@ Gebruik de volgende informatie om de vorige grafiek te interpreteren.
 - **Rode stip met een zwarte cirkel** : toont de eerste meet waarde uit het toegestane bereik. Dit is de waarde die een metrische waarschuwing activeert en deze in een actieve status plaatst.
 - **Rode puntjes**: Geef extra gemeten waarden aan buiten het toegestane bereik. Er worden geen aanvullende metrische waarschuwingen geactiveerd, maar de waarschuwing blijft actief.
 - **Rood gebied** : geeft de tijd weer waarop de metrische waarde buiten het toegestane bereik valt. De waarschuwing blijft actief zolang de volgende gemeten waarden buiten het toegestane bereik vallen, maar er worden geen nieuwe waarschuwingen geactiveerd.
-- **Einde van het rode gebied** : wanneer de blauwe lijn in de toegestane waarden terugkomt, wordt het rode gebied gestopt en wordt de regel voor de gemeten waarde blauw. De status van de metrische waarschuwing die wordt geactiveerd op het moment van de rode punt met een zwart kader, wordt ingesteld op opgelost. 
+- **Einde van het rode gebied** : wanneer de blauwe lijn in de toegestane waarden terugkomt, wordt het rode gebied gestopt en wordt de regel voor de gemeten waarde blauw. De status van de metrische waarschuwing die wordt geactiveerd op het moment van de rode punt met een zwart kader, wordt ingesteld op opgelost.

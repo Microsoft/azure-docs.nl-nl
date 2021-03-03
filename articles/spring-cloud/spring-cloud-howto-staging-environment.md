@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 82a8da9d2663b03d89ad0819ec6d918bebaf5f5e
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: d610e79773dabb9942352747f1f032b17730ffca
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99574726"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738749"
 ---
 # <a name="set-up-a-staging-environment-in-azure-spring-cloud"></a>Een faserings omgeving instellen in azure lente-Cloud
 
@@ -23,7 +23,7 @@ In dit artikel wordt uitgelegd hoe u een faserings implementatie instelt met beh
 ## <a name="prerequisites"></a>Vereisten
 
 * Azure veer Cloud-instantie in de *Standard* - **prijs categorie**.
-* Azure CLI [Azure lente-Cloud uitbreiding](https://docs.microsoft.com/cli/azure/azure-cli-extensions-overview)
+* Azure CLI [Azure lente-Cloud uitbreiding](/cli/azure/azure-cli-extensions-overview)
 
 In dit artikel wordt gebruikgemaakt van een toepassing die is gebouwd op basis van de lente initialisatie functie. Als u een andere toepassing voor dit voor beeld wilt gebruiken, moet u een eenvoudige wijziging aanbrengen in een openbaar gedeelte van de toepassing om uw staging-implementatie te onderscheiden van productie.
 

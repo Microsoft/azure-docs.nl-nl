@@ -1,22 +1,21 @@
 ---
 title: Netwerkprestatiemeter Solution service Connectivity-Azure Log Analytics
 description: Gebruik de monitor functie voor service connectiviteit in Netwerkprestatiemeter om de netwerk verbinding te bewaken met een eind punt met een open TCP-poort.
-ms.subservice: logs
 ms.topic: conceptual
 author: abshamsft
 ms.author: absha
 ms.date: 02/20/2018
-ms.openlocfilehash: a980c0987106a80751a98c48dfc5780708e6f889
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: a5b42e61af398e111b2014f3734a0011a4bee778
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100573415"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734159"
 ---
 # <a name="service-connectivity-monitor"></a>Bewaking van serviceverbinding
 
 > [!IMPORTANT]
-> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor](https://docs.microsoft.com/azure/network-watcher/migrate-to-connection-monitor-from-network-performance-monitor) in azure Network Watcher vóór 29 februari 2024.
+> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor](../../network-watcher/migrate-to-connection-monitor-from-network-performance-monitor.md) in azure Network Watcher vóór 29 februari 2024.
 
 U kunt de monitor functie voor service connectiviteit in [Netwerkprestatiemeter](network-performance-monitor.md) gebruiken om de netwerk verbinding te bewaken met een eind punt met een open TCP-poort. Dergelijke eind punten omvatten websites, SaaS-toepassingen, PaaS-toepassingen en SQL-data bases. 
 
@@ -137,4 +136,3 @@ Voor de regio van de Amerikaanse overheids-Virginia zijn alleen DOD-Url's ingebo
 
 ## <a name="next-steps"></a>Volgende stappen
 [Zoek logboeken](../logs/log-query-overview.md) om gedetailleerde gegevens records voor netwerk prestaties weer te geven.
-

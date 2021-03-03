@@ -12,19 +12,17 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/30/2020
 ms.author: yelevin
-ms.openlocfilehash: 5c715804693571bc421951de1288fc884d2eae8d
-ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
+ms.openlocfilehash: 23e116eba6393f834b3368901d4440e668b16fca
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97746181"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101724282"
 ---
 # <a name="advanced-multistage-attack-detection-in-azure-sentinel"></a>Geavanceerde aanvals detectie in azure-Sentinel
 
-
 > [!IMPORTANT]
-> Sommige Fusion-functies in azure Sentinel zijn momenteel beschikbaar als **open bare preview**.
-> Deze functies worden zonder service level agreement gegeven en worden niet aanbevolen voor productie werkbelastingen. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+> Enkele fusie detecties (Zie de hieronder vermelde) zijn momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
 
 Door gebruik te maken van fusie technologie op basis van machine learning, kan Azure Sentinel automatisch meerdere fase aanvallen detecteren door combi Naties te identificeren van afwijkend gedrag en verdachte activiteiten die in verschillende stadia van de Kill-keten worden waargenomen. Op basis van deze detecties genereert Azure Sentinel incidenten die anders moeilijk te ondervangen zijn. Deze incidenten bestaan uit twee of meer waarschuwingen of activiteiten. Deze incidenten zijn bedoeld om te worden ontworpen met weinig volume, hoge betrouw baarheid en hoge urgentie.
 
@@ -60,12 +58,12 @@ Zoals hierboven vermeld, omdat fusie meerdere beveiligings waarschuwingen van ve
 Als u deze scenario's voor het detecteren van problemen met de fusie wilt inschakelen, moeten alle gegevens bronnen die worden vermeld, worden opgenomen in de gekoppelde Azure Sentinel data-connectors.
 
 > [!NOTE]
-> Sommige van deze scenario's bevinden zich in de **open bare preview**. Deze worden aangegeven.
+> Sommige van deze scenario's zijn beschikbaar als **Preview-versie**. Deze worden aangegeven.
 
 ## <a name="compute-resource-abuse"></a>Misbruik van reken bronnen
 
 ### <a name="multiple-vm-creation-activities-following-suspicious-azure-active-directory-sign-in"></a>Meerdere activiteiten voor het maken van VM'S na een verdachte Azure Active Directory aanmelding
-Dit scenario is momenteel beschikbaar als **open bare preview**.
+Dit scenario is momenteel beschikbaar als **Preview-versie**.
 
 **Mitre ATT&VERzonken tactiek:** Initiële toegang, impact 
 
@@ -214,7 +212,7 @@ Dit scenario is momenteel beschikbaar als **open bare preview**.
 ### <a name="suspicious-inbox-manipulation-rules-set-following-suspicious-azure-ad-sign-in"></a>Verdachte regels voor het bewerken van postvak in zijn ingesteld na verdachte aanmelding bij Azure AD
 Dit scenario maakt deel uit van twee bedreigings classificaties in deze lijst: **gegevens exfiltration** en **zijdelingse verplaatsing**. Duidelijkheidshalve wordt het in beide gedeelten weer gegeven.
 
-Dit scenario is momenteel beschikbaar als **open bare preview**.
+Dit scenario is momenteel beschikbaar als **Preview-versie**.
 
 **Mitre ATT&VERzonken tactiek:** Initiële toegang, zijdelingse verplaatsing, exfiltration
 
@@ -235,7 +233,7 @@ Dit scenario is momenteel beschikbaar als **open bare preview**.
 - **Aanmeldings gebeurtenis van de gebruiker met de gelekte referenties voor de verdachte regel voor Postvak in**
 
 ### <a name="multiple-power-bi-report-sharing-activities-following-suspicious-azure-ad-sign-in"></a>Meerdere Power BI activiteiten voor het delen van rapporten na verdachte aanmelding bij Azure AD 
-Dit scenario is momenteel beschikbaar als **open bare preview**.
+Dit scenario is momenteel beschikbaar als **Preview-versie**.
 
 **Mitre ATT&VERzonken tactiek:** Initiële toegang, exfiltration 
 
@@ -256,7 +254,7 @@ Dit scenario is momenteel beschikbaar als **open bare preview**.
 - **Aanmeldings gebeurtenis van de gebruiker met de gelekte referenties, waardoor er meerdere Power BI rapport activiteiten voor delen**
 
 ### <a name="suspicious-power-bi-report-sharing-following-suspicious-azure-ad-sign-in"></a>Verdachte Power BI voor het delen van rapporten na verdachte Azure AD-aanmelding
-Dit scenario is momenteel beschikbaar als **open bare preview**.
+Dit scenario is momenteel beschikbaar als **Preview-versie**.
 
 **Mitre ATT&VERzonken tactiek:** Initiële toegang, exfiltration 
 
@@ -299,7 +297,7 @@ Dit scenario is momenteel beschikbaar als **open bare preview**.
 - **Aanmeldings gebeurtenis van de gebruiker met de gelekte referenties voor het verwijderen van massale bestanden**
 
 ### <a name="suspicious-email-deletion-activity-following-suspicious-azure-ad-sign-in"></a>Activiteit verdachte e-mail verwijderen na verdachte aanmelding bij Azure AD
-Dit scenario is momenteel beschikbaar als **open bare preview**.
+Dit scenario is momenteel beschikbaar als **Preview-versie**.
 
 **Mitre ATT&VERzonken tactiek:** Initiële toegang, impact 
 
@@ -322,7 +320,7 @@ Dit scenario is momenteel beschikbaar als **open bare preview**.
 ## <a name="denial-of-service"></a>Denial of Service
 
 ### <a name="multiple-vm-delete-activities-following-suspicious-azure-ad-sign-in"></a>Meerdere VM-activiteiten verwijderen na verdachte aanmelding bij Azure AD
-Dit scenario is momenteel beschikbaar als **open bare preview**.
+Dit scenario is momenteel beschikbaar als **Preview-versie**.
 
 **Mitre ATT&VERzonken tactiek:** Initiële toegang, impact
 
@@ -367,7 +365,7 @@ Dit scenario is momenteel beschikbaar als **open bare preview**.
 ### <a name="suspicious-inbox-manipulation-rules-set-following-suspicious-azure-ad-sign-in"></a>Verdachte regels voor het bewerken van postvak in zijn ingesteld na verdachte aanmelding bij Azure AD
 Dit scenario maakt deel uit van twee bedreigings classificaties in deze lijst: **zijdelingse verplaatsing** en **gegevens exfiltration**. Duidelijkheidshalve wordt het in beide gedeelten weer gegeven.
 
-Dit scenario is momenteel beschikbaar als **open bare preview**.
+Dit scenario is momenteel beschikbaar als **Preview-versie**.
 
 **Mitre ATT&VERzonken tactiek:** Initiële toegang, zijdelingse verplaatsing, exfiltration
 
@@ -412,7 +410,7 @@ Dit scenario is momenteel beschikbaar als **open bare preview**.
 ## <a name="malicious-execution-with-legitimate-process"></a>Schadelijke uitvoering met legitiem proces
 
 ### <a name="powershell-made-a-suspicious-network-connection-followed-by-anomalous-traffic-flagged-by-palo-alto-networks-firewall"></a>Power Shell heeft een verdachte netwerk verbinding gemaakt, gevolgd door afwijkend verkeer dat is gemarkeerd door de firewall van Palo Alto Networks.
-Dit scenario is momenteel beschikbaar als **open bare preview**.
+Dit scenario is momenteel beschikbaar als **Preview-versie**.
 
 **Mitre ATT&VERzonken tactiek:** Uitvoering
 
@@ -423,7 +421,7 @@ Dit scenario is momenteel beschikbaar als **open bare preview**.
 **Beschrijving:** Fusion incidenten van dit type geven aan dat er een uitgaande verbindings aanvraag is gedaan via een Power shell-opdracht en dat er afwijkende binnenkomende activiteiten zijn gedetecteerd door de firewall Palo Alto Networks. Dit geeft een indicatie dat een aanvaller waarschijnlijk toegang tot uw netwerk heeft verkregen en probeert schadelijke acties uit te voeren. Verbindings pogingen met Power shell die volgen op dit patroon, kunnen een indicatie zijn van de opdracht-en controle activiteit van schadelijke software, aanvragen voor het downloaden van extra malware of een aanvaller die externe interactieve toegang tot stand brengt. Net als bij alle ' bewoonde ' aanvallen op het land ' kan deze activiteit een authentiek gebruik zijn van Power shell. De uitvoering van de Power shell-opdracht gevolgd door de verdachte binnenkomende firewall activiteit verhoogt echter het vertrouwen dat Power shell op een kwaad aardige manier wordt gebruikt en moet verder worden onderzocht. In Palo Alto-Logboeken wordt Azure Sentinel gericht op [bedreigings logboeken](https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/view-and-manage-logs/log-types-and-severity-levels/threat-logs)en verkeer wordt beschouwd als verdacht Wanneer bedreigingen zijn toegestaan (verdachte gegevens, bestanden, flooden, pakketten, scans, spyware, url's, virussen, beveiligings problemen, bosbrand-virussen, Wildfires). U kunt ook verwijzen naar het Palo Alto-bedreigings logboek dat overeenkomt met het [type bedreiging/inhoud](https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields.html) dat wordt vermeld in de beschrijving van het fusie incident voor aanvullende waarschuwings Details.
 
 ### <a name="suspicious-remote-wmi-execution-followed-by-anomalous-traffic-flagged-by-palo-alto-networks-firewall"></a>Verdachte externe WMI-uitvoering gevolgd door afwijkend verkeer dat is gemarkeerd door de firewall Palo Alto Networks
-Dit scenario is momenteel beschikbaar als **open bare preview**.
+Dit scenario is momenteel beschikbaar als **Preview-versie**.
 
 **Mitre ATT&VERzonken tactiek:** Uitvoering, detectie
 
@@ -456,7 +454,7 @@ Dit scenario is momenteel beschikbaar als **open bare preview**.
 ## <a name="malware-c2-or-download"></a>Malware C2 of downloaden
 
 ### <a name="network-request-to-tor-anonymization-service-followed-by-anomalous-traffic-flagged-by-palo-alto-networks-firewall"></a>Netwerk aanvraag naar TOR anoniem maken-service, gevolgd door afwijkend verkeer dat is gemarkeerd met de firewall van Palo Alto Networks.
-Dit scenario is momenteel beschikbaar als **open bare preview**.
+Dit scenario is momenteel beschikbaar als **Preview-versie**.
 
 **Mitre ATT&VERzonken tactiek:** Opdracht en controle
 
@@ -467,7 +465,7 @@ Dit scenario is momenteel beschikbaar als **open bare preview**.
 **Beschrijving:** Fusie-incidenten van dit type geven aan dat er een uitgaande verbindings aanvraag is gedaan aan de TOR anoniem maken-service en dat afwijkende binnenkomende activiteiten zijn gedetecteerd door de firewall van de Palo Alto-netwerken. Dit geeft een indicatie dat een aanvaller toegang heeft tot uw netwerk en de acties en intentie probeert te verbergen. Verbindingen met het TOR-netwerk na dit patroon kan een indicatie zijn van de opdracht-en controle activiteit voor schadelijke software, aanvragen voor het downloaden van extra malware of een aanvaller die externe interactieve toegang tot stand brengt. In Palo Alto-Logboeken wordt Azure Sentinel gericht op [bedreigings logboeken](https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/view-and-manage-logs/log-types-and-severity-levels/threat-logs)en verkeer wordt beschouwd als verdacht Wanneer bedreigingen zijn toegestaan (verdachte gegevens, bestanden, flooden, pakketten, scans, spyware, url's, virussen, beveiligings problemen, bosbrand-virussen, Wildfires). U kunt ook verwijzen naar het Palo Alto-bedreigings logboek dat overeenkomt met het [type bedreiging/inhoud](https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields.html) dat wordt vermeld in de beschrijving van het fusie incident voor aanvullende waarschuwings Details.
 
 ### <a name="outbound-connection-to-ip-with-a-history-of-unauthorized-access-attempts-followed-by-anomalous-traffic-flagged-by-palo-alto-networks-firewall"></a>Uitgaande verbinding met IP met een geschiedenis van ongeoorloofde toegangs pogingen gevolgd door afwijkend verkeer dat is gemarkeerd door de firewall Palo Alto Networks
-Dit scenario is momenteel beschikbaar als **open bare preview**.
+Dit scenario is momenteel beschikbaar als **Preview-versie**.
 
 **Mitre ATT&VERzonken tactiek:** Opdracht en controle
 
@@ -502,7 +500,7 @@ Dit scenario is momenteel beschikbaar als **open bare preview**.
 ## <a name="remote-exploitation"></a>Externe exploitatie
 
 ### <a name="suspected-use-of-attack-framework-followed-by-anomalous-traffic-flagged-by-palo-alto-networks-firewall"></a>Verdacht gebruik van een aanvals raamwerk gevolgd door afwijkend verkeer dat is gemarkeerd met de firewall Palo Alto Networks
-Dit scenario is momenteel beschikbaar als **open bare preview**.
+Dit scenario is momenteel beschikbaar als **Preview-versie**.
 
 **Mitre ATT&VERzonken tactiek:** Initiële toegang, uitvoering, zijdelingse verplaatsing, escalatie van bevoegdheden
 

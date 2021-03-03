@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/08/2021
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: b4a4fa8a207320a5867b6cdf1dc347bbb2f453af
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: e5872b6ab97a47c09081cf9c26fb7f140b110c3f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99525735"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733445"
 ---
 # <a name="text-to-speech-rest-api"></a>REST API voor tekst-naar-spraak
 
@@ -76,7 +76,7 @@ Voordat u deze API gebruikt, moet u het volgende weten:
 
 In deze tabel vindt u de vereiste en optionele kopteksten voor tekst-naar-spraak-aanvragen.
 
-| Header | Description | Vereist/optioneel |
+| Header | Beschrijving | Vereist/optioneel |
 |--------|-------------|---------------------|
 | `Ocp-Apim-Subscription-Key` | De abonnementssleutel voor de Speech-service. | Deze header of `Authorization` is vereist. |
 | `Authorization` | Een autorisatie token dat wordt voorafgegaan door het woord `Bearer` . Zie [Verificatie](#authentication) voor meer informatie. | Deze header of `Ocp-Apim-Subscription-Key` is vereist. |
@@ -211,7 +211,7 @@ Deze regio's worden ondersteund voor tekst naar spraak met behulp van de REST AP
 
 In deze tabel vindt u de vereiste en optionele kopteksten voor tekst-naar-spraak-aanvragen.
 
-| Header | Description | Vereist/optioneel |
+| Header | Beschrijving | Vereist/optioneel |
 |--------|-------------|---------------------|
 | `Authorization` | Een autorisatie token dat wordt voorafgegaan door het woord `Bearer` . Zie [Verificatie](#authentication) voor meer informatie. | Vereist |
 | `Content-Type` | Hiermee geeft u het type inhoud op voor de opgegeven tekst. Geaccepteerde waarde: `application/ssml+xml` . | Vereist |
@@ -279,5 +279,5 @@ Als de HTTP-status is `200 OK` , bevat de hoofd tekst van het antwoord een audio
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Een gratis Azure-account maken](https://azure.microsoft.com/free/cognitive-services/)
-- [Asynchrone synthese voor lange-vorm audio](quickstarts/text-to-speech/async-synthesis-long-form-audio.md)
+- [Asynchrone synthese voor lange-vorm audio](./long-audio-api.md)
 - [Aan de slag met Custom Voice](how-to-custom-voice.md)

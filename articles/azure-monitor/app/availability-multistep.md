@@ -2,13 +2,13 @@
 title: Bewaken met webtests met meerdere stappen-Azure-toepassing inzichten
 description: Webtests met meerdere stappen instellen om uw webtoepassingen te bewaken met Azure-toepassing Insights
 ms.topic: conceptual
-ms.date: 05/26/2020
-ms.openlocfilehash: 0031971dc2ccd2a9e681220dd835f46d33e36dbb
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.date: 02/14/2021
+ms.openlocfilehash: 1d3597eaf54c40fb1f986d822af0dd6b8c8a7b2e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98934856"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719845"
 ---
 # <a name="multi-step-web-tests"></a>Webtests met meerdere stappen
 
@@ -65,7 +65,6 @@ Raadpleeg de [officiële documentatie voor Visual studio 2019](/visualstudio/tes
 |Instelling| Uitleg
 |----|----|----|
 |**Bijna realtime (preview-versie)** | We raden u aan bijna realtime waarschuwingen te gebruiken. Het configureren van dit type waarschuwing wordt uitgevoerd nadat de beschikbaarheids test is gemaakt.  |
-|**Klassieke** | Het gebruik van klassieke waarschuwingen voor nieuwe beschikbaarheids tests wordt niet meer aanbevolen.|
 |**Drempel waarde voor waarschuwings locatie**|We raden aan dat er mini maal 3/5 locaties zijn. De optimale relatie tussen de drempel waarde van de waarschuwings locatie en het aantal test locaties is drempel waarde voor **waarschuwings locaties**  =  **aantal test locaties-2, met een minimum van vijf test locaties.**|
 
 ## <a name="configuration"></a>Configuratie

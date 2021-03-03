@@ -6,15 +6,15 @@ ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 11/17/2020
-ms.openlocfilehash: 9f8ad1e9a3c69d4ab629694fb18eab4bce95bb38
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 4d4f9b7caed81f8c01e7e2d7e9f94ec3acf3ba92
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100627325"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737338"
 ---
 # <a name="resource-manager-template-samples-for-agents-in-azure-monitor"></a>Resource Manager-voorbeeldsjablonen voor agents in Azure Monitor
-Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het implementeren en configureren van de [Log Analytics-agent](../platform/log-analytics-agent.md) en [de diagnostische extensie](../platform/diagnostics-extension-overview.md) voor virtuele machines in Azure Monitor. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.
+Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het implementeren en configureren van de [Log Analytics-agent](./log-analytics-agent.md) en [de diagnostische extensie](./diagnostics-extension-overview.md) voor virtuele machines in Azure Monitor. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.
 
 [!INCLUDE [azure-monitor-samples](../../../includes/azure-monitor-resource-manager-samples.md)]
 
@@ -421,7 +421,7 @@ In het volgende voorbeeld wordt de Log Analytics-agent op een virtuele Linux Azu
 In de voorbeelden in deze sectie wordt de diagnostische extensie voor virtuele Windows- en Linux-machines in Azure geïnstalleerd en geconfigureerd voor het verzamelen van gegevens.
 
 ### <a name="windows"></a>Windows
-In het volgende voorbeeld wordt de diagnostische extensie op een virtuele Windows Azure-machine ingeschakeld en geconfigureerd. Raadpleeg [Schema voor diagnostische extensie voor Windows](../platform/diagnostics-extension-schema-windows.md) voor meer informatie over de configuratie.
+In het volgende voorbeeld wordt de diagnostische extensie op een virtuele Windows Azure-machine ingeschakeld en geconfigureerd. Raadpleeg [Schema voor diagnostische extensie voor Windows](./diagnostics-extension-schema-windows.md) voor meer informatie over de configuratie.
 
 #### <a name="template-file"></a>Sjabloonbestand
 
@@ -807,6 +807,6 @@ In het volgende voorbeeld wordt de diagnostische extensie op een virtuele Linux 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Meer voorbeeldsjablonen voor Azure Monitor](../samples/resource-manager-samples.md).
-* [Meer informatie over Log Analytics-agent](../platform/log-analytics-agent.md).
-* [Meer informatie over de diagnostische extensie](../platform/diagnostics-extension-overview.md).
+* [Meer voorbeeldsjablonen voor Azure Monitor](../resource-manager-samples.md).
+* [Meer informatie over Log Analytics-agent](./log-analytics-agent.md).
+* [Meer informatie over de diagnostische extensie](./diagnostics-extension-overview.md).

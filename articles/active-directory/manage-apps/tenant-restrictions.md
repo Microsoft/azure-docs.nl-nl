@@ -12,12 +12,12 @@ ms.date: 2/23/2021
 ms.author: kenwith
 ms.reviewer: hpsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 611dd5e53ae96e06677b1c4a6a6f009e582b33af
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: b545afb370b84404d3e15f885464aabf00d2eaf2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101646262"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101687070"
 ---
 # <a name="use-tenant-restrictions-to-manage-access-to-saas-cloud-applications"></a>Tenant beperkingen gebruiken om de toegang tot SaaS-Cloud toepassingen te beheren
 
@@ -109,19 +109,18 @@ Hoewel de configuratie van Tenant beperkingen wordt uitgevoerd op de bedrijfs pr
 
 De beheerder voor de Tenant die is opgegeven als de beperkte-toegangs context Tenant kan dit rapport gebruiken om te zien of aanmeldingen zijn geblokkeerd vanwege het beleid voor Tenant beperkingen, met inbegrip van de identiteit die wordt gebruikt en de doel directory-ID. Aanmeldingen worden opgenomen als de Tenant instelling die de beperking heeft, ofwel de Tenant van de gebruiker of de resource Tenant voor de aanmelding is.
 
-> [!NOTE]
-> Het rapport kan beperkte informatie bevatten, zoals de doelmap-ID, wanneer een gebruiker die zich in een andere Tenant bevindt dan de niet-toegankelijke context-aanmelding. In dit geval wordt door de gebruiker geïdentificeerde informatie, zoals naam en user principal name, gemaskeerd voor het beveiligen van gebruikers gegevens in andere tenants (" 00000000-0000-0000-0000-00000000@domain.com ") 
+Het rapport kan beperkte informatie bevatten, zoals de doelmap-ID, wanneer een gebruiker die zich in een andere Tenant bevindt dan de niet-toegankelijke context-aanmelding. In dit geval wordt de door de gebruiker geïdentificeerde informatie, zoals naam en user principal name, gemaskeerd om gebruikers gegevens in andere tenants te beveiligen ({PII verwijderd} @domain.com of 00000000-0000-0000-0000-000000000000 in plaats van de gebruikers namen en object-id's waar van toepassing). 
 
 Net als bij andere rapporten in de Azure Portal, kunt u filters gebruiken om het bereik van uw rapport op te geven. U kunt filteren op een bepaald tijds interval, gebruiker, toepassing, client of status. Als u de knop **kolommen** selecteert, kunt u ervoor kiezen om gegevens weer te geven met een combi natie van de volgende velden:
 
-- **Gebruiker**
+- **Gebruiker** : in dit veld kunnen persoonlijke gegevens worden verwijderd, waar deze worden ingesteld op `00000000-0000-0000-0000-000000000000` . 
 - **Toepassing**
 - **Status**
 - **Datum**
-- **Datum (UTC)** (waarbij UTC Coordinated Universal Time)
+- **Datum (UTC)** : waar UTC Coordinated Universal Time is
 - **IP-adres**
 - **Client**
-- **Gebruikersnaam**
+- **Gebruikers naam** : in dit veld kunnen persoonlijke gegevens worden verwijderd, waar deze worden ingesteld op `{PII Removed}@domain.com`
 - **Locatie**
 - **Doel-Tenant-ID**
 
@@ -196,7 +195,7 @@ Afhankelijk van de mogelijkheden van uw proxy-infra structuur kunt u de implemen
 
 Raadpleeg de documentatie van uw proxy server voor specifieke informatie.
 
-## <a name="blocking-consumer-applications"></a>Consumenten toepassingen blok keren
+## <a name="blocking-consumer-applications-public-preview"></a>Consumenten toepassingen blok keren (open bare preview)
 
 Toepassingen van micro soft die ondersteuning bieden voor zowel consumenten accounts als organisatie accounts, zoals [OneDrive](https://onedrive.live.com/) of [Microsoft Learn](https://docs.microsoft.com/learn/), kunnen soms worden gehost op dezelfde URL.  Dit betekent dat gebruikers die toegang moeten hebben tot deze URL voor werk, ook toegang hebben tot het persoonlijk gebruik. Dit kan niet worden toegestaan volgens de richt lijnen van uw bedrijf.
 
@@ -204,11 +203,11 @@ Sommige organisaties proberen dit op te lossen door te blok keren `login.live.co
 
 1. Blokkerend `login.live.com` blokkeert het gebruik van persoonlijke accounts in B2B-gast scenario's, die kunnen intrude voor bezoekers en samen werking.
 1. [Voor auto pilot is het gebruik `login.live.com` van vereist](https://docs.microsoft.com/mem/autopilot/networking-requirements) om te implementeren. InTune-en auto pilot-scenario's kunnen mislukken wanneer `login.live.com` geblokkeerd.
-1. Organisatie-telemetrie en Windows-updates die afhankelijk zijn van de MSA-service voor apparaat-Id's [, zullen niet langer werken](https://docs.microsoft.com/windows/deployment/update/windows-update-troubleshooting#feature-updates-are-not-being-offered-while-other-updates-are).
+1. Organisatie-telemetrie en Windows-updates die afhankelijk zijn van de login.live.com-service voor apparaat-Id's [, zullen niet langer werken](https://docs.microsoft.com/windows/deployment/update/windows-update-troubleshooting#feature-updates-are-not-being-offered-while-other-updates-are).
 
 ### <a name="configuration-for-consumer-apps"></a>Configuratie voor consumenten-apps
 
-Hoewel de `Restrict-Access-To-Tenants` header fungeert als een acceptatie lijst, werkt het MSA-blok als een signaal voor weigeren, waarmee wordt aangegeven dat het Microsoft-account platform niet toestaat dat gebruikers zich kunnen aanmelden bij consumenten toepassingen. Als u dit signaal wilt verzenden, `sec-Restrict-Tenant-Access-Policy` wordt een header geïnjecteerd naar verkeer dat wordt bezocht `login.live.com` met dezelfde bedrijfs proxy of firewall als [hierboven](#proxy-configuration-and-requirements). De waarde van de header moet zijn `restrict-msa` . Wanneer de header aanwezig is en een consumenten-app zich rechtstreeks probeert aan te melden bij een gebruiker, wordt dat aanmelden geblokkeerd.
+Terwijl de `Restrict-Access-To-Tenants` header fungeert als een acceptatie lijst, werkt het Microsoft-account (MSA)-blok als een signaal voor weigeren, waarmee wordt aangegeven dat de Microsoft-account platform niet toestaat dat gebruikers zich kunnen aanmelden bij consumenten toepassingen. Als u dit signaal wilt verzenden, `sec-Restrict-Tenant-Access-Policy` wordt de header geïnjecteerd naar verkeer dat wordt bezocht `login.live.com` met dezelfde bedrijfs proxy of firewall als [hierboven](#proxy-configuration-and-requirements). De waarde van de header moet zijn `restrict-msa` . Wanneer de header aanwezig is en een consumenten-app zich rechtstreeks probeert aan te melden bij een gebruiker, wordt dat aanmelden geblokkeerd.
 
 Op dit moment wordt verificatie voor consumenten toepassingen niet weer gegeven in de [beheer logboeken](#admin-experience), omdat login.live.com onafhankelijk van Azure AD wordt gehost.
 

@@ -1,211 +1,212 @@
 - name: Documentatie voor Cloud Services (klassiek)
   href: index.yml
-- name: Overzicht
   items:
-    - name: Wat is Cloud Services (klassiek)?
-      href: cloud-services-choose-me.md
-    - name: Configuratiebestanden en verpakking van een cloudservice
-      href: cloud-services-model-and-package.md
-- name: Aan de slag
-  items:
-    - name: Voorbeeld van .NET-cloudservice
-      href: cloud-services-dotnet-get-started.md
-    - name: Voorbeeld van Python voor Visual Studio-cloudservice
-      href: cloud-services-python-ptvs.md
-- name: Concepten
-  items:
-    - name: Beveiliging
+    - name: Overzicht
       items:
-        - name: Beveiligingsbasislijn
-          href: security-baseline.md
-- name: Procedures
-  items:
-    - name: Plannen
+        - name: Wat is Cloud Services (klassiek)?
+          href: cloud-services-choose-me.md
+        - name: Configuratiebestanden en verpakking van een cloudservice
+          href: cloud-services-model-and-package.md
+    - name: Aan de slag
       items:
-        - name: Grootten van virtuele machines
-          href: cloud-services-sizes-specs.md
-        - name: Updates
-          href: cloud-services-update-azure-service.md
-    - name: Ontwikkelen
+        - name: Voorbeeld van .NET-cloudservice
+          href: cloud-services-dotnet-get-started.md
+        - name: Voorbeeld van Python voor Visual Studio-cloudservice
+          href: cloud-services-python-ptvs.md
+    - name: Concepten
       items:
-        - name: PHP-web- en -werkrollen maken
-          href: ../cloud-services-php-create-web-role.md
-        - name: Een Node.js-toepassing maken en implementeren
-          href: cloud-services-nodejs-develop-deploy-app.md
-        - name: Een Node.js-webtoepassing maken met Express
-          href: cloud-services-nodejs-develop-deploy-express-app.md
-        - name: Storage en Visual Studio
+        - name: Beveiliging
           items:
-            - name: Blob Storage en verbonden services
-              href: ../visual-studio/vs-storage-cloud-services-getting-started-blobs.md
-            - name: Queue Storage en verbonden services
-              href: ../visual-studio/vs-storage-cloud-services-getting-started-queues.md
-            - name: Table Storage en verbonden services
-              href: ../visual-studio/vs-storage-cloud-services-getting-started-tables.md
-        - name: Verkeersregels voor een rol configureren
-          href: cloud-services-enable-communication-role-instances.md
-        - name: Levenscyclusgebeurtenissen van cloudservices verwerken
-          href: cloud-services-role-lifecycle-dotnet.md
-        - name: Socket.io (Node.js)
-          href: cloud-services-nodejs-chat-app-socketio.md
-        - name: Bellen met behulp van Twilio (.NET)
-          href: ../partner-twilio-cloud-services-dotnet-phone-call-web-role.md
-        - name: Opstarttaken configureren
-          items:
-            - name: Opstarttaken maken
-              href: cloud-services-startup-tasks.md
-            - name: Veelvoorkomende opstarttaken
-              href: cloud-services-startup-tasks-common.md
-            - name: Een taak gebruiken om .NET op een cloudservicerol te installeren
-              href: cloud-services-dotnet-install-dotnet.md
-        - name: Extern bureaublad configureren
-          items:
-            - name: Portal
-              href: cloud-services-role-enable-remote-desktop-new-portal.md
-            - name: PowerShell
-              href: cloud-services-role-enable-remote-desktop-powershell.md
-            - name: Visual Studio
-              href: cloud-services-role-enable-remote-desktop-visual-studio.md
-    - name: Implementeren
+            - name: Beveiligingsbasislijn
+              href: security-baseline.md
+    - name: Procedures
       items:
-        - name: Een cloudservice maken en implementeren in Portal
-          href: cloud-services-how-to-create-deploy-portal.md
-        - name: Een lege cloudservicecontainer maken in PowerShell
-          href: cloud-services-powershell-create-cloud-container.md
-        - name: Een aangepaste domeinnaam configureren
-          href: cloud-services-custom-domain-name-portal.md
-        - name: Verbinding maken met een aangepaste domeincontroller
-          href: cloud-services-connect-to-custom-domain.md
-    - name: Services beheren
-      items:
-        - name: Veelvoorkomende beheertaken
-          href: cloud-services-how-to-manage-portal.md
-        - name: Cloudservice configureren
-          href: cloud-services-how-to-configure-portal.md
-        - name: Een cloudservice beheren met Azure Automation
-          href: automation-manage-cloud-services.md
-        - name: Automatisch schalen configureren
-          href: cloud-services-how-to-scale-portal.md
-        - name: Python gebruiken om Azure-resources te beheren
-          href: cloud-services-python-how-to-use-service-management.md
-        - name: Speculatieve uitvoering beperken
-          href: mitigate-se.md
-        - name: Patches voor gastbesturingssysteem
-          href: cloud-services-guestos-msrc-releases.md
-        - name: Buitengebruikstelling van gastbesturingssysteem
+        - name: Plannen
           items:
-            - name: Beleid voor buitengebruikstelling
-              href: cloud-services-guestos-retirement-policy.md
-            - name: Kennisgeving van buitengebruikstelling van groep 1
-              href: cloud-services-guestos-family1-retirement.md
-        - name: Releasenieuws over gastbesturingssysteem
-          href: cloud-services-guestos-update-matrix.md
-        - name: Overzichtskaart van configuratie van Cloud Servicerollen voor XPath
-          href: cloud-services-role-config-xpath.md
-    - name: Certificaten beheren
-      items:
-        - name: Cloud Services en beheercertificaten
-          href: cloud-services-certs-create.md
-        - name: SSL configureren
-          href: cloud-services-configure-ssl-certificate-portal.md
-    - name: Controleren
-      items:
-        - name: Een cloudservice bewaken
-          href: cloud-services-how-to-monitor.md
-        - name: Prestatiemeteritems gebruiken
-          href: diagnostics-performance-counters.md
-        - name: Prestaties testen
-          href: /visualstudio/azure/vs-azure-tools-performance-profiling-cloud-services?toc=/azure/cloud-services/toc.json
+            - name: Grootten van virtuele machines
+              href: cloud-services-sizes-specs.md
+            - name: Updates
+              href: cloud-services-update-azure-service.md
+        - name: Ontwikkelen
           items:
-            - name: Testen met Visual Studio Profiler
-              href: cloud-services-performance-testing-visual-studio-profiler.md
-        - name: Diagnostische gegevens inschakelen
+            - name: PHP-web- en -werkrollen maken
+              href: ../cloud-services-php-create-web-role.md
+            - name: Een Node.js-toepassing maken en implementeren
+              href: cloud-services-nodejs-develop-deploy-app.md
+            - name: Een Node.js-webtoepassing maken met Express
+              href: cloud-services-nodejs-develop-deploy-express-app.md
+            - name: Storage en Visual Studio
+              items:
+                - name: Blob Storage en verbonden services
+                  href: ../visual-studio/vs-storage-cloud-services-getting-started-blobs.md
+                - name: Queue Storage en verbonden services
+                  href: ../visual-studio/vs-storage-cloud-services-getting-started-queues.md
+                - name: Table Storage en verbonden services
+                  href: ../visual-studio/vs-storage-cloud-services-getting-started-tables.md
+            - name: Verkeersregels voor een rol configureren
+              href: cloud-services-enable-communication-role-instances.md
+            - name: Levenscyclusgebeurtenissen van cloudservices verwerken
+              href: cloud-services-role-lifecycle-dotnet.md
+            - name: Socket.io (Node.js)
+              href: cloud-services-nodejs-chat-app-socketio.md
+            - name: Bellen met behulp van Twilio (.NET)
+              href: ../partner-twilio-cloud-services-dotnet-phone-call-web-role.md
+            - name: Opstarttaken configureren
+              items:
+                - name: Opstarttaken maken
+                  href: cloud-services-startup-tasks.md
+                - name: Veelvoorkomende opstarttaken
+                  href: cloud-services-startup-tasks-common.md
+                - name: Een taak gebruiken om .NET op een cloudservicerol te installeren
+                  href: cloud-services-dotnet-install-dotnet.md
+            - name: Extern bureaublad configureren
+              items:
+                - name: Portal
+                  href: cloud-services-role-enable-remote-desktop-new-portal.md
+                - name: PowerShell
+                  href: cloud-services-role-enable-remote-desktop-powershell.md
+                - name: Visual Studio
+                  href: cloud-services-role-enable-remote-desktop-visual-studio.md
+        - name: Implementeren
           items:
-            - name: Azure PowerShell
-              href: cloud-services-diagnostics-powershell.md
-            - name: .NET
-              href: cloud-services-dotnet-diagnostics.md
-            - name: Visual Studio
-              href: /visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?toc=/azure/cloud-services/toc.json
-        - name: Diagnostische gegevens opslaan en weergeven in Azure Storage
-          href: diagnostics-extension-to-storage.md
-        - name: Een cloudservice volgen met de diagnosefunctie
-          href: cloud-services-dotnet-diagnostics-trace-flow.md
-    - name: Problemen oplossen
-      items:
-        - name: Fouten opsporen
+            - name: Een cloudservice maken en implementeren in Portal
+              href: cloud-services-how-to-create-deploy-portal.md
+            - name: Een lege cloudservicecontainer maken in PowerShell
+              href: cloud-services-powershell-create-cloud-container.md
+            - name: Een aangepaste domeinnaam configureren
+              href: cloud-services-custom-domain-name-portal.md
+            - name: Verbinding maken met een aangepaste domeincontroller
+              href: cloud-services-connect-to-custom-domain.md
+        - name: Services beheren
           items:
-            - name: Opties voor cloudservices
-              href: /visualstudio/azure/vs-azure-tools-debugging-cloud-services-overview?toc=/azure/cloud-services/toc.json
-            - name: Lokale cloudservice met Visual Studio
-              href: /visualstudio/azure/vs-azure-tools-debug-cloud-services-virtual-machines?toc=/azure/cloud-services/toc.json
-            - name: Gepubliceerde cloudservice met Visual Studio
-              href: /visualstudio/azure/vs-azure-tools-intellitrace-debug-published-cloud-services?toc=/azure/cloud-services/toc.json
-        - name: Toewijzing van cloudservice is mislukt
-          href: cloud-services-allocation-failures.md
-        - name: Veelvoorkomende oorzaken voor het recyclen van cloudservicerollen
-          href: cloud-services-troubleshoot-common-issues-which-cause-roles-recycle.md
-        - name: Toepassing biedt geen ondersteuning voor TLS 1.2
-          href: applications-dont-support-tls-1-2.md
-        - name: Standaard-TEMP-map is te klein voor de rol
-          href: cloud-services-troubleshoot-default-temp-folder-size-too-small-web-worker-role.md
-        - name: Veelvoorkomende implementatieproblemen
-          href: cloud-services-troubleshoot-deployment-problems.md
-        - name: Starten van rol is mislukt
-          href: cloud-services-troubleshoot-roles-that-fail-start.md
-        - name: Richtlijnen voor herstel
-          href: cloud-services-disaster-recovery-guidance.md
-        - name: Werkstroom van een klassieke VM-architectuur
-          href: cloud-services-workflow-process.md
-        - name: Ondersteuning voor resourcestatus voor Cloud Services
-          href: resource-health-for-cloud-services.md
-        - name: Veelgestelde vragen over Cloud Services
+            - name: Veelvoorkomende beheertaken
+              href: cloud-services-how-to-manage-portal.md
+            - name: Cloudservice configureren
+              href: cloud-services-how-to-configure-portal.md
+            - name: Een cloudservice beheren met Azure Automation
+              href: automation-manage-cloud-services.md
+            - name: Automatisch schalen configureren
+              href: cloud-services-how-to-scale-portal.md
+            - name: Python gebruiken om Azure-resources te beheren
+              href: cloud-services-python-how-to-use-service-management.md
+            - name: Speculatieve uitvoering beperken
+              href: mitigate-se.md
+            - name: Patches voor gastbesturingssysteem
+              href: cloud-services-guestos-msrc-releases.md
+            - name: Buitengebruikstelling van gastbesturingssysteem
+              items:
+                - name: Beleid voor buitengebruikstelling
+                  href: cloud-services-guestos-retirement-policy.md
+                - name: Kennisgeving van buitengebruikstelling van groep 1
+                  href: cloud-services-guestos-family1-retirement.md
+            - name: Releasenieuws over gastbesturingssysteem
+              href: cloud-services-guestos-update-matrix.md
+            - name: Overzichtskaart van configuratie van Cloud Servicerollen voor XPath
+              href: cloud-services-role-config-xpath.md
+        - name: Certificaten beheren
           items:
-            - name: Veelgestelde vragen over beschikbaarheid van toepassingen en services
-              href: cloud-services-application-and-service-availability-faq.md
-            - name: Veelgestelde vragen over configuratie en beheer
-              href: cloud-services-configuration-and-management-faq.md
-            - name: Veelgestelde vragen over connectiviteit en netwerken
-              href: cloud-services-connectivity-and-networking-faq.md
-            - name: Veelgestelde vragen over implementatie
-              href: cloud-services-deployment-faq.md
-- name: Naslaginformatie
-  items:
-    - name: Codevoorbeelden
-      href: 'https://azure.microsoft.com/resources/samples/?service=cloud-services'
-    - name: .csdef XML-schema
-      href: schema-csdef-file.md
+            - name: Cloud Services en beheercertificaten
+              href: cloud-services-certs-create.md
+            - name: SSL configureren
+              href: cloud-services-configure-ssl-certificate-portal.md
+        - name: Controleren
+          items:
+            - name: Een cloudservice bewaken
+              href: cloud-services-how-to-monitor.md
+            - name: Prestatiemeteritems gebruiken
+              href: diagnostics-performance-counters.md
+            - name: Prestaties testen
+              href: /visualstudio/azure/vs-azure-tools-performance-profiling-cloud-services?toc=/azure/cloud-services/toc.json
+              items:
+                - name: Testen met Visual Studio Profiler
+                  href: cloud-services-performance-testing-visual-studio-profiler.md
+            - name: Diagnostische gegevens inschakelen
+              items:
+                - name: Azure PowerShell
+                  href: cloud-services-diagnostics-powershell.md
+                - name: .NET
+                  href: cloud-services-dotnet-diagnostics.md
+                - name: Visual Studio
+                  href: /visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?toc=/azure/cloud-services/toc.json
+            - name: Diagnostische gegevens opslaan en weergeven in Azure Storage
+              href: diagnostics-extension-to-storage.md
+            - name: Een cloudservice volgen met de diagnosefunctie
+              href: cloud-services-dotnet-diagnostics-trace-flow.md
+        - name: Problemen oplossen
+          items:
+            - name: Fouten opsporen
+              items:
+                - name: Opties voor cloudservices
+                  href: /visualstudio/azure/vs-azure-tools-debugging-cloud-services-overview?toc=/azure/cloud-services/toc.json
+                - name: Lokale cloudservice met Visual Studio
+                  href: /visualstudio/azure/vs-azure-tools-debug-cloud-services-virtual-machines?toc=/azure/cloud-services/toc.json
+                - name: Gepubliceerde cloudservice met Visual Studio
+                  href: /visualstudio/azure/vs-azure-tools-intellitrace-debug-published-cloud-services?toc=/azure/cloud-services/toc.json
+            - name: Toewijzing van cloudservice is mislukt
+              href: cloud-services-allocation-failures.md
+            - name: Veelvoorkomende oorzaken voor het recyclen van cloudservicerollen
+              href: cloud-services-troubleshoot-common-issues-which-cause-roles-recycle.md
+            - name: Toepassing biedt geen ondersteuning voor TLS 1.2
+              href: applications-dont-support-tls-1-2.md
+            - name: Standaard-TEMP-map is te klein voor de rol
+              href: cloud-services-troubleshoot-default-temp-folder-size-too-small-web-worker-role.md
+            - name: Veelvoorkomende implementatieproblemen
+              href: cloud-services-troubleshoot-deployment-problems.md
+            - name: Starten van rol is mislukt
+              href: cloud-services-troubleshoot-roles-that-fail-start.md
+            - name: Richtlijnen voor herstel
+              href: cloud-services-disaster-recovery-guidance.md
+            - name: Werkstroom van een klassieke VM-architectuur
+              href: cloud-services-workflow-process.md
+            - name: Ondersteuning voor resourcestatus voor Cloud Services
+              href: resource-health-for-cloud-services.md
+            - name: Veelgestelde vragen over Cloud Services
+              items:
+                - name: Veelgestelde vragen over beschikbaarheid van toepassingen en services
+                  href: cloud-services-application-and-service-availability-faq.md
+                - name: Veelgestelde vragen over configuratie en beheer
+                  href: cloud-services-configuration-and-management-faq.md
+                - name: Veelgestelde vragen over connectiviteit en netwerken
+                  href: cloud-services-connectivity-and-networking-faq.md
+                - name: Veelgestelde vragen over implementatie
+                  href: cloud-services-deployment-faq.md
+    - name: Naslaginformatie
       items:
-        - name: LoadBalancerProbe-schema
-          href: schema-csdef-loadbalancerprobe.md
-        - name: WebRole-schema
-          href: schema-csdef-webrole.md
-        - name: WorkerRole-schema
-          href: schema-csdef-workerrole.md
-        - name: NetworkTrafficRules-schema
-          href: schema-csdef-networktrafficrules.md
-    - name: .cscfg XML-schema
-      href: schema-cscfg-file.md
+        - name: Codevoorbeelden
+          href: 'https://azure.microsoft.com/resources/samples/?service=cloud-services'
+        - name: .csdef XML-schema
+          href: schema-csdef-file.md
+          items:
+            - name: LoadBalancerProbe-schema
+              href: schema-csdef-loadbalancerprobe.md
+            - name: WebRole-schema
+              href: schema-csdef-webrole.md
+            - name: WorkerRole-schema
+              href: schema-csdef-workerrole.md
+            - name: NetworkTrafficRules-schema
+              href: schema-csdef-networktrafficrules.md
+        - name: .cscfg XML-schema
+          href: schema-cscfg-file.md
+          items:
+            - name: Role-schema
+              href: schema-cscfg-role.md
+            - name: NetworkConfiguration-schema
+              href: schema-cscfg-networkconfiguration.md
+        - name: REST
+          href: /rest/api/compute/cloudservices/
+    - name: Resources
       items:
-        - name: Role-schema
-          href: schema-cscfg-role.md
-        - name: NetworkConfiguration-schema
-          href: schema-cscfg-networkconfiguration.md
-    - name: REST
-      href: /rest/api/compute/cloudservices/
-- name: Resources
-  items:
-    - name: Azure-roadmap
-      href: 'https://azure.microsoft.com/roadmap/?category=compute'
-    - name: Leertraject
-      href: /learn/paths/azure-fundamentals/
-    - name: Microsoft Q&A-vragenpagina
-      href: /answers/topics/azure-cloud-services.html
-    - name: Prijzen
-      href: 'https://azure.microsoft.com/pricing/details/cloud-services/'
-    - name: Prijscalculator
-      href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Service-updates
-      href: 'https://azure.microsoft.com/updates/?product=cloud-services&updatetype=&platform='
-    - name: Video's
-      href: 'https://azure.microsoft.com/documentation/videos/index/?services=cloud-services'
+        - name: Azure-roadmap
+          href: 'https://azure.microsoft.com/roadmap/?category=compute'
+        - name: Leertraject
+          href: /learn/paths/azure-fundamentals/
+        - name: Microsoft Q&A-vragenpagina
+          href: /answers/topics/azure-cloud-services.html
+        - name: Prijzen
+          href: 'https://azure.microsoft.com/pricing/details/cloud-services/'
+        - name: Prijscalculator
+          href: 'https://azure.microsoft.com/pricing/calculator/'
+        - name: Service-updates
+          href: 'https://azure.microsoft.com/updates/?product=cloud-services&updatetype=&platform='
+        - name: Video's
+          href: 'https://azure.microsoft.com/documentation/videos/index/?services=cloud-services'

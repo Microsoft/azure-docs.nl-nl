@@ -13,12 +13,12 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 02/17/2021
 tags: azure-synapse
-ms.openlocfilehash: fee285aa3beb308f5e6b3b233d40597c2a287eb7
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: f47303a953dbb06b4c9efdfbbae41715cad81d2a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100651966"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101690801"
 ---
 # <a name="data-discovery--classification"></a>Gegevensdetectie en -classificatie
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -187,12 +187,12 @@ U kunt de REST API gebruiken om classificaties en aanbevelingen programmatisch t
 
 ## <a name="faq---advanced-classification-capabilities"></a>Veelgestelde vragen-geavanceerde classificatie mogelijkheden
 
-**Vraag**: zal [Azure controle sfeer liggen](https://docs.microsoft.com/azure/purview/overview) de sql-gegevens detectie & classificatie vervangen of zal de classificatie van sql-gegevens detectie & binnenkort worden ingetrokken?
-**Antwoord**: we blijven de classificatie van SQL-gegevens detectie & ondersteunen en moedigen u aan [Azure controle sfeer liggen](https://docs.microsoft.com/azure/purview/overview) te nemen met uitgebreide mogelijkheden om geavanceerde classificatie mogelijkheden en data governance te stimuleren. Als we besluiten een service, functie, API of SKU buiten gebruik te stellen, ontvangt u een aankondiging met een migratie of een overgangs traject. Meer informatie over het micro soft Lifecycle-beleid vindt u hier.
+**Vraag**: zal [Azure controle sfeer liggen](../../purview/overview.md) de sql-gegevens detectie & classificatie vervangen of zal de classificatie van sql-gegevens detectie & binnenkort worden ingetrokken?
+**Antwoord**: we blijven de classificatie van SQL-gegevens detectie & ondersteunen en moedigen u aan [Azure controle sfeer liggen](../../purview/overview.md) te nemen met uitgebreide mogelijkheden om geavanceerde classificatie mogelijkheden en data governance te stimuleren. Als we besluiten een service, functie, API of SKU buiten gebruik te stellen, ontvangt u een aankondiging met een migratie of een overgangs traject. Meer informatie over het micro soft Lifecycle-beleid vindt u hier.
 
 
 ## <a name="next-steps"></a><a id="next-steps"></a>Volgende stappen
 
 - U kunt [Azure SQL auditing](../../azure-sql/database/auditing-overview.md) configureren voor het bewaken en controleren van de toegang tot uw geclassificeerde gevoelige gegevens.
 - Zie [detecteren, classificeren, labelen & beveiligen van SQL-gegevens voor een presentatie met gegevens detectie & classificatie. Gegevens die worden weer gegeven](https://www.youtube.com/watch?v=itVi9bkJUNc).
-- Zie [uw Azure SQL-gegevens classificeren met behulp van Azure controle sfeer liggen-labels](https://docs.microsoft.com/azure/sql-database/scripts/sql-database-import-purview-labels)om uw Azure SQL-data bases en Azure Synapse Analytics te classificeren met Azure controle sfeer liggen-labels met behulp van T-SQL-opdrachten.
+- Zie [uw Azure SQL-gegevens classificeren met behulp van Azure controle sfeer liggen-labels](../../sql-database/scripts/sql-database-import-purview-labels.md)om uw Azure SQL-data bases en Azure Synapse Analytics te classificeren met Azure controle sfeer liggen-labels met behulp van T-SQL-opdrachten.

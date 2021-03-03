@@ -8,12 +8,16 @@ ms.date: 10/16/2018
 ms.author: glenga
 ms.reviewer: msangapu;suwatch;pbatum;naren.soni
 ms.custom: seodec18
-ms.openlocfilehash: 2743efa5a9067f0667d54be0b7df75a627e60fcd
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+adobe-target: true
+adobe-target-activity: DocsExp–386541–A/B–Enhanced-Readability-Quickstarts–2.19.2021
+adobe-target-experience: Experience B
+adobe-target-content: ./webjobs-create-ieux
+ms.openlocfilehash: 8afc8ca9b0dedb10ecdb30e8abb22a5d0986de5b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92674037"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723874"
 ---
 # <a name="run-background-tasks-with-webjobs-in-azure-app-service"></a>Achtergrond taken uitvoeren met webjobs in Azure App Service
 
@@ -66,11 +70,11 @@ when making changes in one don't forget the other two.
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar de pagina **App Service** van uw app service Web-app, API-app of mobiele app.
 
-2. Selecteer **webjobs** .
+2. Selecteer **webjobs**.
 
    ![Webjobs selecteren](./media/web-sites-create-web-jobs/select-webjobs.png)
 
-2. Selecteer op de pagina **webjobs** de optie **toevoegen** .
+2. Selecteer op de pagina **webjobs** de optie **toevoegen**.
 
     ![Pagina Webtaak](./media/web-sites-create-web-jobs/wjblade.png)
 
@@ -85,13 +89,13 @@ when making changes in one don't forget the other two.
    | **Type** | Continu | De [typen Webtaaks](#webjob-types) worden eerder in dit artikel beschreven. |
    | **Schalen** | Meerdere exemplaren | Alleen beschikbaar voor doorlopende webjobs. Hiermee wordt bepaald of het programma of script wordt uitgevoerd op alle exemplaren of op slechts één exemplaar. De optie voor het uitvoeren van meerdere exemplaren is niet van toepassing op de [prijs categorieën](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)gratis of gedeeld. | 
 
-4. Klik op **OK** .
+4. Klik op **OK**.
 
    De nieuwe Webtaak wordt weer gegeven op de pagina **webjobs** .
 
    ![Lijst met webjobs](./media/web-sites-create-web-jobs/listallwebjobs.png)
 
-2. Als u een doorlopende Webtaak wilt stoppen of opnieuw wilt starten, klikt u met de rechter muisknop in de lijst en klikt u op **stoppen** of **starten** .
+2. Als u een doorlopende Webtaak wilt stoppen of opnieuw wilt starten, klikt u met de rechter muisknop in de lijst en klikt u op **stoppen** of **starten**.
 
     ![Een doorlopende Webtaak stoppen](./media/web-sites-create-web-jobs/continuousstop.png)
 
@@ -104,11 +108,11 @@ when making changes in one don't forget the other two.
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar de pagina **App Service** van uw app service Web-app, API-app of mobiele app.
 
-2. Selecteer **webjobs** .
+2. Selecteer **webjobs**.
 
    ![Webjobs selecteren](./media/web-sites-create-web-jobs/select-webjobs.png)
 
-2. Selecteer op de pagina **webjobs** de optie **toevoegen** .
+2. Selecteer op de pagina **webjobs** de optie **toevoegen**.
 
     ![Pagina Webtaak](./media/web-sites-create-web-jobs/wjblade.png)
 
@@ -123,13 +127,13 @@ when making changes in one don't forget the other two.
    | **Type** | Geactiveerd | De [typen Webtaaks](#webjob-types) worden eerder in dit artikel beschreven. |
    | **Triggers** | Handmatig | |
 
-4. Klik op **OK** .
+4. Klik op **OK**.
 
    De nieuwe Webtaak wordt weer gegeven op de pagina **webjobs** .
 
    ![Lijst met webjobs](./media/web-sites-create-web-jobs/listallwebjobs.png)
 
-7. Als u de Webtaak wilt uitvoeren, klikt u met de rechter muisknop op de naam in de lijst en klikt u op **uitvoeren** .
+7. Als u de Webtaak wilt uitvoeren, klikt u met de rechter muisknop op de naam in de lijst en klikt u op **uitvoeren**.
    
     ![Webtaak uitvoeren](./media/web-sites-create-web-jobs/runondemand.png)
 
@@ -142,11 +146,11 @@ when making changes in one don't forget the other two.
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar de pagina **App Service** van uw app service Web-app, API-app of mobiele app.
 
-2. Selecteer **webjobs** .
+2. Selecteer **webjobs**.
 
    ![Webjobs selecteren](./media/web-sites-create-web-jobs/select-webjobs.png)
 
-2. Selecteer op de pagina **webjobs** de optie **toevoegen** .
+2. Selecteer op de pagina **webjobs** de optie **toevoegen**.
 
    ![Pagina Webtaak](./media/web-sites-create-web-jobs/wjblade.png)
 
@@ -162,7 +166,7 @@ when making changes in one don't forget the other two.
    | **Triggers** | Gepland | Schakel de functie altijd on in om de planning betrouwbaar te laten werken. Always on is alleen beschikbaar in de prijs categorieën Basic, Standard en Premium.|
    | **CRON-expressie** | 0 0/20 * * * * | [Cron-expressies](#ncrontab-expressions) worden beschreven in de volgende sectie. |
 
-4. Klik op **OK** .
+4. Klik op **OK**.
 
    De nieuwe Webtaak wordt weer gegeven op de pagina **webjobs** .
 
@@ -196,7 +200,7 @@ Zie [een geactiveerde Webtaak plannen](webjobs-dotnet-deploy-vs.md#scheduling-a-
    
     ![Details van de uitvoering van de Webtaak](./media/web-sites-create-web-jobs/webjobrundetails.png)
 
-   Als u de uitvoer tekst in een afzonderlijk browser venster wilt zien, selecteert u **downloaden** . Als u de tekst zelf wilt downloaden, klikt u met de rechter muisknop op **downloaden** en gebruikt u uw browser opties om de inhoud van het bestand op te slaan.
+   Als u de uitvoer tekst in een afzonderlijk browser venster wilt zien, selecteert u **downloaden**. Als u de tekst zelf wilt downloaden, klikt u met de rechter muisknop op **downloaden** en gebruikt u uw browser opties om de inhoud van het bestand op te slaan.
    
 5. Selecteer de navigatie koppeling **webjobs** boven aan de pagina om naar een lijst met webjobs te gaan.
 

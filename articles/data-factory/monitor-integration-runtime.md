@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 08/11/2020
 author: dcstwh
 ms.author: weetok
-ms.openlocfilehash: a52fad39e19bdf2edf110990c8f0e392ec5803ce
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 1cb4fcaa51e1a59ee9d09eb178faf9b250173709
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100377496"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101740019"
 ---
 # <a name="monitor-an-integration-runtime-in-azure-data-factory"></a>Een IR bewaken in Azure Data Factory
 
@@ -48,7 +48,7 @@ De volgende tabel bevat beschrijvingen van de eigenschappen die worden geretourn
 | Locatie | Locatie van de Azure Integration runtime. Zie [Inleiding tot Integration runtime](concepts-integration-runtime.md)voor meer informatie over de locatie van een Azure Integration runtime. |
 | DataFactoryName | De naam van de data factory waarvan de Azure Integration runtime deel uitmaakt. | 
 | ResourceGroupName | De naam van de resource groep waartoe de data factory behoort.  |
-| Description | Beschrijving van de Integration runtime.  |
+| Beschrijving | Beschrijving van de Integration runtime.  |
 
 ### <a name="status"></a>Status
 
@@ -171,7 +171,7 @@ Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Name $A
 
 De volgende tabel bevat beschrijvingen van eigenschappen die door de bovenstaande cmdlet voor een Azure-SSIS IR worden geretourneerd.
 
-| Eigenschap/status              | Description                  |
+| Eigenschap/status              | Beschrijving                  |
 | ---------------------------- | ---------------------------- |
 | CreateTime                   | De UTC-tijd waarop uw Azure-SSIS IR is gemaakt. |
 | Knooppunten                        | De toegewezen/beschik bare knoop punten van uw Azure-SSIS IR met knooppunt-specifieke statussen (starten/beschikbaar/recyclen/niet beschikbaar) en fouten die kunnen optreden. |
@@ -193,7 +193,7 @@ De volgende tabel bevat beschrijvingen van eigenschappen die door de bovenstaand
 | ResourceGroupName            | De naam van uw Azure-resource groep waarin uw ADF en Azure-SSIS IR zijn gemaakt. |
 | DataFactoryName              | De naam van de ADF. |
 | Name                         | De naam van uw Azure-SSIS IR. |
-| Description                  | De beschrijving van uw Azure-SSIS IR. |
+| Beschrijving                  | De beschrijving van uw Azure-SSIS IR. |
   
 #### <a name="status-per-azure-ssis-ir-node"></a>Status (per Azure-SSIS IR knoop punt)
 
@@ -210,7 +210,7 @@ De volgende tabel bevat mogelijke statussen van een Azure-SSIS IR knoop punt:
 
 De volgende tabel bevat mogelijke algemene statussen van een Azure-SSIS IR. De algemene status is afhankelijk van de gecombineerde status van alle knoop punten die deel uitmaken van de Azure-SSIS IR. 
 
-| Algemene status | Description | 
+| Algemene status | Beschrijving | 
 | -------------- | ----------- | 
 | Eerste        | De knoop punten van uw Azure-SSIS IR zijn niet toegewezen/voor bereid. | 
 | Starten       | De knoop punten van uw Azure-SSIS IR worden toegewezen/voor bereid en de facturering is gestart. |
@@ -224,7 +224,17 @@ Als u uw Azure-SSIS IR in Azure Portal wilt bewaken, gaat u naar de pagina **Int
 
 ![Alle Integration Runtimes bewaken](media/monitor-integration-runtime/monitor-integration-runtimes.png)
 
-Selecteer vervolgens de naam van uw Azure-SSIS IR om de pagina controle te openen, waar u de eigenschappen en statussen van de algemene/specifieke knoop punten kunt zien. Afhankelijk van de manier waarop u de instellingen algemeen, implementatie en Geavanceerd van uw Azure-SSIS IR configureert, vindt u in deze pagina verschillende informatief en functionele tegels.  In de informatie tegels **type** en **regio** worden respectievelijk het type en de regio van uw Azure-SSIS IR weer gegeven. De tegel informatie over **knooppunt grootte** bevat de SKU (SSIS edition_VM tier_VM Series), het aantal CPU-kernen en de grootte van het RAM-geheugen per knoop punt voor uw Azure-SSIS IR. De tegel belichte **/AANGEvraagde knoop** punten vergelijkt het aantal knoop punten dat momenteel wordt uitgevoerd op het totale aantal knoop punten dat eerder is aangevraagd voor uw Azure-SSIS IR. De functionele tegels worden in meer details hieronder beschreven.
+Selecteer vervolgens de naam van uw Azure-SSIS IR om de pagina controle te openen, waar u de eigenschappen en statussen van de algemene/specifieke knoop punten kunt zien. Afhankelijk van de manier waarop u de instellingen algemeen, implementatie en Geavanceerd van uw Azure-SSIS IR configureert, vindt u in deze pagina verschillende informatief en functionele tegels.
+
+In de informatie tegels **type** en **regio** worden respectievelijk het type en de regio van uw Azure-SSIS IR weer gegeven.
+
+De tegel informatie over **knooppunt grootte** bevat de SKU (SSIS edition_VM tier_VM Series), het aantal CPU-kernen en de grootte van het RAM-geheugen per knoop punt voor uw Azure-SSIS IR. 
+
+De tegel belichte **/AANGEvraagde knoop** punten vergelijkt het aantal knoop punten dat momenteel wordt uitgevoerd op het totale aantal knoop punten dat eerder is aangevraagd voor uw Azure-SSIS IR.
+
+De tegel **koppeling voor dubbele stand-by-functie/rol** bevat de naam van uw dubbele stand-by Azure-SSIS IR-paar dat wordt gesynchroniseerd met een Azure SQL database/Managed instance failover groep voor bedrijfs continuïteit en herstel na nood gevallen (BCDR) en de huidige primaire/secundaire rol van uw Azure-SSIS IR. Wanneer er een SSISDB-failover optreedt, worden de rollen door uw primaire en secundaire Azure-SSIS-IRs gewisseld (Zie [uw Azure-SSIS IR configureren voor BCDR](./configure-bcdr-azure-ssis-integration-runtime.md)).
+
+De functionele tegels worden in meer details hieronder beschreven.
 
 ![Uw Azure-SSIS IR bewaken](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime.png)
 
@@ -254,13 +264,13 @@ Als u uw Azure-SSIS IR aan een VNet koppelt, ziet u de tegel **VNet/SUBNET valid
 
 Op de tegel connectiviteit voor het controleren van de **verbinding** van de pagina bewaking van Azure-SSIS IR kunt u de **verbindings koppeling testen** selecteren om een venster te openen. hier kunt u de verbindingen tussen uw Azure-SSIS IR en relevante pakket-en configuratie-en gegevens archieven controleren, evenals beheer Services via hun Fully Qualified Domain Name (FQDN)/IP-adres en de aangewezen poort (Zie [verbindingen testen van uw Azure-SSIS IR](./ssis-integration-runtime-diagnose-connectivity-faq.md)).
 
-![Scherm afbeelding die laat zien waar u de verbindingen tussen uw Azure-SSIS IR en relevante pakket/configuratie/gegevens opslag kunt testen.](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-diagnose.png)
+![De tegel Azure-SSIS IR-diagnose controleren](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-diagnose.png)
 
 #### <a name="static-public-ip-addresses-tile"></a>Tegel voor statische open bare IP-adressen
 
 Als u uw eigen statische open bare IP-adressen voor Azure-SSIS IR meebrengt, ziet u de tegel **statische open bare IP-adressen** op de pagina voor Azure-SSIS IR bewaking (Zie [uw eigen statische open bare IP-adressen voor Azure-SSIS IR](./join-azure-ssis-integration-runtime-virtual-network.md#publicIP)plaatsen). Op deze tegel kunt u koppelingen selecteren met uw eerste/tweede statische open bare IP-adressen voor Azure-SSIS IR om een venster te openen waarin u de resource-ID () kunt kopiëren `/subscriptions/YourAzureSubscripton/resourceGroups/YourResourceGroup/providers/Microsoft.Network/publicIPAddresses/YourPublicIPAddress` van een tekstvak. In het pop-upvenster kunt u ook de koppeling **uw eerste/tweede statische open bare IP-adres weer geven** selecteren om uw eerste/tweede statische open bare IP-adres te beheren in azure Portal.
 
-![Scherm afbeelding die laat zien waar u uw eerste/tweede statische open bare IP-adressen kunt aanwijzen.](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-static.png)
+![Uw Azure-SSIS IR-statische tegel bewaken](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-static.png)
 
 #### <a name="package-stores-tile"></a>Tegel pakket winkels
 
@@ -272,7 +282,7 @@ Als u pakket implementatie model gebruikt waarbij pakketten worden opgeslagen in
 
 Als er problemen zijn met het starten/stoppen/onderhoud/bijwerken van uw Azure-SSIS IR, ziet u een tegel met een extra **fout (en)** op de pagina voor Azure-SSIS IR bewaking. Op deze tegel kunt u een koppeling selecteren met het aantal fouten dat door uw Azure-SSIS IR is gegenereerd om een venster weer te geven, waar u deze fouten in meer details kunt zien en kopiëren om de aanbevolen oplossingen te vinden in onze probleemoplossings handleiding (Zie [problemen met uw Azure-SSIS IR oplossen](./ssis-integration-runtime-management-troubleshoot.md)).
 
-![De tegel Azure-SSIS IR-diagnose controleren](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-error.png)
+![Uw Azure-SSIS IR-fout tegel bewaken](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-error.png)
 
 ### <a name="monitor-the-azure-ssis-integration-runtime-with-azure-monitor"></a>De Azure SSIS Integration runtime bewaken met Azure Monitor
 

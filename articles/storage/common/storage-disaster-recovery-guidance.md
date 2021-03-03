@@ -10,12 +10,12 @@ ms.date: 05/05/2020
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: 9a4453c29c52f8821643e93584666c3a6a8e6b4c
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: e00e22862121f2f974f9531a9892e32e115d6041
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100379825"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737644"
 ---
 # <a name="disaster-recovery-and-storage-account-failover"></a>Herstel na noodgeval en failover van opslagaccount
 
@@ -55,7 +55,7 @@ Houd bovendien de volgende aanbevolen procedures voor het onderhouden van hoge B
 
 - **Schijven:** Gebruik [Azure backup](https://azure.microsoft.com/services/backup/) om een back-up te maken van de VM-schijven die worden gebruikt door uw virtuele Azure-machines. U kunt ook [Azure site Recovery](https://azure.microsoft.com/services/site-recovery/) gebruiken om uw vm's te beschermen in het geval van een regionale nood situatie.
 - **Blok-blobs:** Schakel [zacht verwijderen](../blobs/soft-delete-blob-overview.md) in om te beschermen tegen verwijderingen op object niveau en overschrijvingen, of kopieer blok-blobs naar een ander opslag account in een andere regio met behulp van [AzCopy](./storage-use-azcopy-v10.md), [Azure PowerShell](/powershell/module/az.storage/)of de [Azure data verplaatsings bibliotheek](storage-use-data-movement-library.md).
-- **Bestanden:** Gebruik [Azure backup](https://docs.microsoft.com/azure/backup/azure-file-share-backup-overview) om een back-up te maken van uw bestands shares. Schakel ook [zacht verwijderen](https://docs.microsoft.com/azure/storage/files/storage-files-prevent-file-share-deletion) in om te beschermen tegen onbedoelde verwijderingen van de bestands share. Voor geo-redundantie wanneer GRS niet beschikbaar is, gebruikt u [AzCopy](./storage-use-azcopy-v10.md) of [Azure PowerShell](/powershell/module/az.storage/) om uw bestanden te kopiëren naar een ander opslag account in een andere regio.
+- **Bestanden:** Gebruik [Azure backup](../../backup/azure-file-share-backup-overview.md) om een back-up te maken van uw bestands shares. Schakel ook [zacht verwijderen](../files/storage-files-prevent-file-share-deletion.md) in om te beschermen tegen onbedoelde verwijderingen van de bestands share. Voor geo-redundantie wanneer GRS niet beschikbaar is, gebruikt u [AzCopy](./storage-use-azcopy-v10.md) of [Azure PowerShell](/powershell/module/az.storage/) om uw bestanden te kopiëren naar een ander opslag account in een andere regio.
 - **Tabellen:** gebruik [AzCopy](./storage-use-azcopy-v10.md) om tabel gegevens te exporteren naar een ander opslag account in een andere regio.
 
 ## <a name="track-outages"></a>Uitval bijhouden

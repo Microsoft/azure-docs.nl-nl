@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 303a919cc0afc9b5db49918233f3e5718a896646
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 4461fb6904d51ee8d740b633a2d0028658ac2ced
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148047"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101687546"
 ---
 # <a name="scale-up-and-down-an-azure-database-for-postgresql-hyperscale-server-group-using-cli-azdata-or-kubectl"></a>Een Azure Database for PostgreSQL grootschalige-Server groep omhoog en omlaag schalen met CLI (azdata of kubectl)
 
@@ -180,6 +180,21 @@ Hier wordt de nieuwe definitie van de Server groep weer gegeven:
 ## <a name="scale-down-the-server-group"></a>De Server groep omlaag schalen
 
 Als u de Server groep omlaag wilt schalen, voert u dezelfde opdracht uit, maar stelt u lagere waarden in voor de instellingen die u omlaag wilt schalen. Als u de aanvragen en/of limieten wilt verwijderen, geeft u de waarde ervan op als lege teken reeks.
+
+## <a name="reset-to-default-values"></a>Standaard waarden opnieuw instellen
+Als u de standaard waarden voor het aantal kern geheugens of aanvragen opnieuw wilt instellen, moet u de para meters bewerken en een lege teken reeks door geven in plaats van een werkelijke waarde. Voer de volgende opdrachten uit als u de para meter voor de kern limiet (CL) wilt resetten:
+- op een Linux-client:
+
+```console
+    azdata arc postgres server edit -n <servergroup name> -cl ""
+```
+
+- op een Windows-client: 
+ 
+```console
+    azdata arc postgres server edit -n <servergroup name> -cl '""'
+```
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

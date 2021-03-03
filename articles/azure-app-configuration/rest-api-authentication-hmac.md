@@ -6,12 +6,12 @@ ms.author: alkemper
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: 4b5a073459fad734a11d3a75718240d0ebbb486a
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: d5b5470b30848fd31be63f25c85c23f88cdaf0c6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99981388"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101732221"
 ---
 # <a name="hmac-authentication---rest-api-reference"></a>HMAC-verificatie-REST API referentie
 
@@ -49,7 +49,7 @@ Authorization: HMAC-SHA256 Credential={Access Key ID}&SignedHeaders=x-ms-date;ho
 
 ``Authorization``: **HMAC-sha256**```Credential```=\<value\>&```SignedHeaders```=\<value\>&```Signature```=\<value\>
 
-|  Argument | Description  |
+|  Argument | Beschrijving  |
 | ------ | ------ |
 | **HMAC-SHA256** | Autorisatie schema. _lang_ |
 | **Referentie** | De ID van de toegangs sleutel die wordt gebruikt voor het berekenen van de hand tekening. _lang_ |
@@ -87,7 +87,7 @@ _Teken reeks-naar-teken =_
 
 **HTTP_METHOD** + ' \n ' + **path_and_query** + ' \n ' + **signed_headers_values**
 
-|  Argument | Description  |
+|  Argument | Beschrijving  |
 | ------ | ------ |
 | **HTTP_METHOD** | De naam van de HTTP-methode die wordt gebruikt in combi natie met de aanvraag. Zie [Section 9](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)(Engelstalig) voor meer informatie. |
 |**path_and_query** | Het samen voegen van de aanvraag absolute URI het pad en de query reeks. Zie voor meer informatie [sectie 3,3](https://tools.ietf.org/html/rfc3986#section-3.3).

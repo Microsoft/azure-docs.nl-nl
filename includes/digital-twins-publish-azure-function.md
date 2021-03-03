@@ -5,12 +5,12 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 1/21/2021
 ms.author: baanders
-ms.openlocfilehash: 63b393f519ad29baa05fef046ee1e8ba9e5330d8
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 59506b1d1d3fbbc5a532c597d46dc92ee3c2e98e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98701153"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101751121"
 ---
 Als u het project wilt publiceren naar een functie-app in azure, klikt u met de rechter muisknop op het project in *Solution Explorer* en kiest u **publiceren**.
 
@@ -19,15 +19,13 @@ Als u het project wilt publiceren naar een functie-app in azure, klikt u met de 
 
 :::image type="content" source="../articles/digital-twins/media/tutorial-end-to-end/publish-azure-function-1.png" alt-text="Scherm opname van Visual Studio met het menu met de rechter muisknop selecteren. Publiceren is gemarkeerd in het menu.":::
 
-Laat op de pagina *Publish* die volgt, het standaard geselecteerde doel **Azure** staan en klik op *Next* (volgende). 
+Op de pagina *publiceren* die volgt, verlaat u de standaard doel selectie van **Azure** en selecteert u *volgende*. 
 
-Kies voor een specifiek doel **Azure-functie-app (Windows)** en klik op *Next*.
+Kies voor een specifiek doel **Azure functie-app (Windows)** en selecteer *volgende*.
 
 :::image type="content" source="../articles/digital-twins/media/tutorial-end-to-end/publish-azure-function-2.png" alt-text="Scherm opname van Visual Studio in het dialoog venster Azure-functie publiceren. Azure functie-app (Windows) is geselecteerd op de specifieke doel pagina.":::
 
-Kies uw abonnement op de pagina *Functions Instance*. Hiermee wordt een vak gevuld met de *resourcegroepen* in uw abonnement.
-
-Selecteer de resourcegroep van uw exemplaar, en klik op *+* om een nieuwe Azure-functie maken.
+Kies uw abonnement op de pagina *Functions Instance*. Selecteer vervolgens het *+* pictogram om een nieuwe Azure-functie te maken.
 
 :::image type="content" source="../articles/digital-twins/media/tutorial-end-to-end/publish-azure-function-3.png" alt-text="Scherm opname van Visual Studio in het dialoog venster Azure-functie publiceren. De knop + om een nieuwe functie te maken, wordt op de pagina functie-exemplaar gemarkeerd.":::
 
@@ -37,13 +35,13 @@ Vul de velden in het venster *Function App (Windows) - Create new* (Functie-app 
 * Zorg ervoor dat de **Resource group** overeenkomt met de resourcegroep die u wilt gebruiken
 * Laat het **Plan type** staan op *Consumption* (verbruik)
 * Selecteer de **Location** die overeenkomt met de locatie van uw resourcegroep
-* Maak een nieuwe **Azure Storage**-resource met behulp van de koppeling *New...* . Stel de locatie in overeenkomstig uw resourcegroep, gebruik de standaardwaarden voor de overige velden en klik op OK.
+* Maak een nieuwe **Azure Storage**-resource met behulp van de koppeling *New...* . Stel de locatie zo in dat deze overeenkomt met uw resource groep, gebruik de andere standaard waarden en selecteer OK.
 
 :::image type="content" source="../articles/digital-twins/media/tutorial-end-to-end/publish-azure-function-4.png" alt-text="Scherm opname van Visual Studio in het dialoog venster Azure-functie publiceren. De details van een nieuwe functie-app worden ingevuld, zoals naam, abonnement, resource groep, type abonnement, locatie en Azure Storage.":::
 
 Ten slotte selecteert u **Create**.
 
-Hiermee gaat u terug naar de pagina *Functions instance*, waar uw nieuwe functie-app nu onder uw resourcegroep wordt weergegeven. Klik op *Finish* (voltooien).
+Na een korte ogen blik geduld terwijl de app service is gemaakt, wordt het dialoog venster terug naar de pagina met functie- *exemplaren* weer gegeven, met uw nieuwe functie-app in het deel van het onderdeel **apps** dat onder de resource groep is genest. Selecteer *Finish*.
 
 :::image type="content" source="../articles/digital-twins/media/tutorial-end-to-end/publish-azure-function-5.png" alt-text="Azure-functie publiceren in Visual Studio: Functions-instantie (na functie-app)":::
 
@@ -59,4 +57,6 @@ Controleer in het deelvenster *Publish* dat wordt geopend in het hoofdvenster va
 >
 > Volg de prompts om een upgrade uit te voeren naar de meest recente runtime-versie van Azure Functions. Dit probleem kan optreden als u een oudere versie van Visual Studio gebruikt.
 
-De functie-app kan alleen toegang krijgen tot Azure Digital Apparaatdubbels als het een door een systeem beheerde identiteit heeft en toegang heeft tot uw Azure Digital Apparaatdubbels-exemplaar. Daarna stelt u dat in.
+De functie-app is nu gepubliceerd naar Azure. 
+
+Als uw functie-app toegang moet hebben tot Azure Digital Apparaatdubbels, moet er een door het systeem beheerde identiteit zijn met machtigingen voor toegang tot uw Azure Digital Apparaatdubbels-instantie. Daarna stelt u dat in.

@@ -4,12 +4,12 @@ description: Meer informatie over de ondersteunde services en het gebeurtenis sc
 ms.subservice: logs
 ms.topic: reference
 ms.date: 09/01/2020
-ms.openlocfilehash: b37535b67ed1873c5a492e28e6bf4da8c67c7e5d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 7c426074bbeb2792f152063d938e867b86dc1f6f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610361"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717533"
 ---
 # <a name="common-and-service-specific-schema-for-azure-resource-logs"></a>Algemeen en specifiek service schema voor Azure-resource logboeken
 
@@ -23,7 +23,7 @@ Een combi natie van het resource type (beschikbaar in de `resourceId` eigenschap
 
 ## <a name="top-level-common-schema"></a>Algemeen schema op het hoogste niveau
 
-| Name | Vereist/optioneel | Description |
+| Name | Vereist/optioneel | Beschrijving |
 |---|---|---|
 | tijd | Vereist | De tijds tempel (UTC) van de gebeurtenis. |
 | resourceId | Vereist | De resource-ID van de resource die de gebeurtenis heeft verzonden. Voor Tenant Services is dit de vorm/tenants/Tenant-id/providers/provider-name. |
@@ -73,14 +73,14 @@ Het schema voor resource logboeken varieert afhankelijk van de categorie resourc
 | Front Door | [Logboek registratie voor de voor deur](../../frontdoor/front-door-diagnostics.md) |
 | IoT Hub | [IoT Hub bewerkingen](../../iot-hub/monitor-iot-hub-reference.md#resource-logs) |
 | Key Vault |[Logboekregistratie van Azure Key Vault](../../key-vault/general/logging.md) |
-| Kubernetes-service |[Logboek registratie voor Azure Kubernetes](../../aks/view-master-logs.md#log-event-schema) |
+| Kubernetes-service |[Logboek registratie voor Azure Kubernetes](../../aks/view-control-plane-logs.md#log-event-schema) |
 | Load Balancer |[Logboekanalyse voor Azure Load Balancer](../../load-balancer/load-balancer-monitor-log.md) |
 | Logic Apps |[Aangepast Logic Apps B2B-volgschema](../../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md) |
 | Netwerkbeveiligingsgroepen |[Logboekanalyses voor netwerkbeveiligingsgroepen (NSG's)](../../virtual-network/virtual-network-nsg-manage-log.md) |
 | DDoS-beveiliging | [Logboek registratie voor Azure DDoS Protection Standard](../../ddos-protection/diagnostic-logging.md#log-schemas) |
 | Power BI Dedicated | [Logboek registratie voor Power BI Embedded in azure](/power-bi/developer/azure-pbie-diag-logs) |
 | Recovery Services | [Gegevens model voor Azure Backup](../../backup/backup-azure-reports-data-model.md)|
-| Zoeken |[Zoek Traffic Analytics inschakelen en gebruiken](../../search/search-traffic-analytics.md) |
+| Search |[Zoek Traffic Analytics inschakelen en gebruiken](../../search/search-traffic-analytics.md) |
 | Service Bus |[Azure Service Bus logboeken](../../service-bus-messaging/service-bus-diagnostic-logs.md) |
 | SQL Database | [Azure SQL Database logboek registratie](../../azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure.md) |
 | Stream Analytics |[Taaklogboeken](../../stream-analytics/stream-analytics-job-diagnostic-logs.md) |

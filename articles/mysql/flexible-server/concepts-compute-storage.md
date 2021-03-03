@@ -6,12 +6,12 @@ ms.author: bahusse
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 1/28/2021
-ms.openlocfilehash: 765ff76578e48135d2e7d4d9200c1868d2501df4
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 9b5a2c5d004e63c602a30f7808586e97a0e436e8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99581445"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101720933"
 ---
 # <a name="compute-and-storage-options-in-azure-database-for-mysql---flexible-server-preview"></a>Berekenings-en opslag opties in Azure Database for MySQL-flexibele server (preview-versie)
 
@@ -72,7 +72,7 @@ De gedetailleerde specificaties van de beschik bare server typen zijn als volgt:
 Voor meer informatie over de beschik bare reken reeks raadpleegt u de Azure VM-documentatie voor de [Burstable (B-serie)](../../virtual-machines/sizes-b-series-burstable.md), [Algemeen (Ddsv4-serie)](../../virtual-machines/ddv4-ddsv4-series.md)en [geoptimaliseerd voor geheugen (Edsv4-serie)](../../virtual-machines/edv4-edsv4-series.md).
 
 >[!NOTE]
->Voor een [Bebreek bare (B-serie) Compute-laag](../../virtual-machines/sizes-b-series-burstable.md) als de VM is gestart/gestopt of opnieuw gestart, kunnen de tegoeden verloren gaan. Zie [Veelgestelde vragen over Burstable (B-serie)](https://docs.microsoft.com/azure/virtual-machines/sizes-b-series-burstable#q-why-is-my-remaining-credit-set-to-0-after-a-redeploy-or-a-stopstart)voor meer informatie.
+>Voor een [Bebreek bare (B-serie) Compute-laag](../../virtual-machines/sizes-b-series-burstable.md) als de VM is gestart/gestopt of opnieuw gestart, kunnen de tegoeden verloren gaan. Zie [Veelgestelde vragen over Burstable (B-serie)](../../virtual-machines/sizes-b-series-burstable.md#q-why-is-my-remaining-credit-set-to-0-after-a-redeploy-or-a-stopstart)voor meer informatie.
 
 ## <a name="storage"></a>Storage
 
@@ -83,7 +83,7 @@ De opslag ruimte die u hebt ingericht, is de opslag capaciteit die beschikbaar i
 
 U kunt uw opslag verbruik in de Azure Portal (met Azure Monitor) bewaken met behulp van de opslag limiet, het opslag percentage en de gebruikte metrische gegevens over opslag. Raadpleeg het [controle artikel](./concepts-monitoring.md) voor meer informatie over metrische gegevens. 
 
-### <a name="reaching-the-storage-limit"></a>De opslag limiet wordt bereikt
+### <a name="reaching-the-storage-limit"></a>De opslaglimiet wordt bereikt
 
 Wanneer de door de server verbruikte opslag ruimte bijna is bereikt, wordt de server ingesteld op de modus alleen-lezen om de verloren schrijf bewerkingen op de server te beveiligen. Servers die kleiner zijn dan of gelijk zijn aan 100 GiB ingerichte opslag zijn gemarkeerd als alleen-lezen als de beschik bare opslag minder is dan 5% van de ingerichte opslag grootte. Servers met meer dan 100 ingerichte GiB zijn gemarkeerd als alleen-lezen wanneer de vrije opslag minder is dan 5 GiB.
 

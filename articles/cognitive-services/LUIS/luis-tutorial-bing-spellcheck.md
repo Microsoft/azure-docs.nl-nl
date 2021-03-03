@@ -9,16 +9,16 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 01/12/2021
-ms.openlocfilehash: ef9cb083c9bbe6eae5c34cd3799debde771231b6
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 509d1dc0b94bdfa9be5185df0bad793f7702eb26
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100558221"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101731031"
 ---
 # <a name="correct-misspelled-words-with-bing-resource"></a>Verkeerd gespelde woorden corrigeren met Bing-resource
 
-De V3 API voor voor spellingen ondersteunt nu de [Bing-spelling-API](https://docs.microsoft.com/bing/search-apis/bing-spell-check/overview). Voeg de spelling controle toe aan uw toepassing door de sleutel van de Bing zoeken-resource op te nemen in de koptekst van uw aanvragen. U kunt een bestaande Bing-Resource gebruiken als u er al een hebt of [een nieuwe bron maakt](https://portal.azure.com/#create/Microsoft.BingSearch) om deze functie te gebruiken. 
+De V3 API voor voor spellingen ondersteunt nu de [Bing-spelling-API](/bing/search-apis/bing-spell-check/overview). Voeg de spelling controle toe aan uw toepassing door de sleutel van de Bing zoeken-resource op te nemen in de koptekst van uw aanvragen. U kunt een bestaande Bing-Resource gebruiken als u er al een hebt of [een nieuwe bron maakt](https://portal.azure.com/#create/Microsoft.BingSearch) om deze functie te gebruiken. 
 
 Voor beeld van voor spelling uitvoer voor een verkeerd gespelde query:
 

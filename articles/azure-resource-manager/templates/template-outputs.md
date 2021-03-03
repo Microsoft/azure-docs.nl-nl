@@ -2,13 +2,13 @@
 title: Uitvoer in sjablonen
 description: Hierin wordt beschreven hoe u uitvoer waarden definieert in een Azure Resource Manager sjabloon (ARM-sjabloon) en Bicep-bestand.
 ms.topic: conceptual
-ms.date: 02/17/2021
-ms.openlocfilehash: 0371a5293b302a2eb0febb010fc16caa8355eb18
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.date: 02/19/2021
+ms.openlocfilehash: 91feb1a0b653e4b6e96e38df57f87af27e4676f5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653795"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703831"
 ---
 # <a name="outputs-in-arm-templates"></a>Uitvoer in ARM-sjablonen
 
@@ -35,7 +35,21 @@ Voor JSON voegt u de `outputs` sectie toe aan de sjabloon. De uitvoer waarde kri
 }
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+Gebruik het `output` sleutel woord voor Bicep.
+
+In het volgende voor beeld `publicIP` is de id van een openbaar IP-adres dat is geïmplementeerd in het Bicep-bestand. De uitvoer waarde krijgt de Fully Qualified Domain Name voor het open bare IP-adres.
+
+```bicep
+output hostname string = publicIP.properties.dnsSettings.fqdn
+```
+
+---
+
 Als u een eigenschap wilt uitvoeren die een koppel teken in de naam heeft, gebruikt u haakjes rond de naam in plaats van punt notatie. Gebruik bijvoorbeeld  `['property-name']` in plaats van `.property-name` .
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 {
@@ -58,16 +72,6 @@ Als u een eigenschap wilt uitvoeren die een koppel teken in de naam heeft, gebru
 ```
 
 # <a name="bicep"></a>[Bicep](#tab/bicep)
-
-Gebruik het `output` sleutel woord voor Bicep.
-
-In het volgende voor beeld `publicIP` is de symbolische naam van een openbaar IP-adres dat is geïmplementeerd in het Bicep-bestand. De uitvoer waarde krijgt de Fully Qualified Domain Name voor het open bare IP-adres.
-
-```bicep
-output hostname string = publicIP.properties.dnsSettings.fqdn
-```
-
-Als u een eigenschap wilt uitvoeren die een koppel teken in de naam heeft, gebruikt u haakjes rond de naam in plaats van punt notatie. Gebruik bijvoorbeeld  `['property-name']` in plaats van `.property-name` .
 
 ```bicep
 var user = {
@@ -99,9 +103,7 @@ Voeg in JSON het `condition` element toe om te definiëren of de uitvoer wordt g
 
 # <a name="bicep"></a>[Bicep](#tab/bicep)
 
-Voorwaardelijke uitvoer is momenteel niet beschikbaar voor Bicep.
-
-U kunt echter de operator gebruiken `?` om een van twee waarden te retour neren, afhankelijk van een voor waarde.
+Als u een voorwaardelijke uitvoer wilt opgeven in Bicep, gebruikt u de `?` operator. Het volgende voor beeld retourneert een eind punt-URL of een lege teken reeks, afhankelijk van een voor waarde.
 
 ```bicep
 param deployStorage bool = true

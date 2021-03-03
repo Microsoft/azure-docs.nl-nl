@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: tutorial
 ms.date: 10/08/2020
 ms.author: duau
-ms.openlocfilehash: 641d7eeef96af84f0f058aebd19d795083e3567f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 7cfd378ae621192cd98b482b66c85c3dcd3ca454
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91855341"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101721936"
 ---
 # <a name="tutorial-create-and-modify-peering-for-an-expressroute-circuit-using-powershell"></a>Zelfstudie: Peering voor een ExpressRoute-circuit maken en wijzigen met PowerShell
 
@@ -163,6 +163,11 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 
 Deze sectie helpt u bij het maken, verkrijgen, bijwerken en verwijderen van de configuratie voor een persoonlijke Azure-peering voor een ExpressRoute-circuit.
 
+> [!IMPORTANT]
+> IPv6-ondersteuning voor persoonlijke peering is momenteel beschikbaar als **open bare preview**. 
+> 
+> 
+
 ### <a name="to-create-azure-private-peering"></a>Persoonlijke Azure-peering maken
 
 1. Importeer de PowerShell-module voor ExpressRoute.
@@ -233,8 +238,10 @@ Deze sectie helpt u bij het maken, verkrijgen, bijwerken en verwijderen van de c
    ```
 4. Configureer persoonlijke Azure-peering voor het circuit. Zorg ervoor dat u de volgende items hebt voordat u verdergaat met de volgende stappen:
 
-   * Een /30-subnet voor de primaire koppeling. Het subnet mag geen deel uitmaken van een adresruimte die is gereserveerd voor virtuele netwerken.
-   * Een /30-subnet voor de secundaire koppeling. Het subnet mag geen deel uitmaken van een adresruimte die is gereserveerd voor virtuele netwerken.
+   * Een paar subnetten die geen deel uitmaken van een adres ruimte die is gereserveerd voor virtuele netwerken. Eén /30-subnet wordt gebruikt voor de primaire koppeling en het andere wordt gebruikt voor de secundaire koppeling. Vanuit deze subnetten wijst u het eerste bruikbare IP-adres toe aan uw router, aangezien Microsoft de tweede bruikbare IP voor de eigen router gebruikt. Er zijn drie opties voor dit paar subnetten:
+       * IPv4: twee/30 subnetten.
+       * IPv6: twee/126 subnetten.
+       * Beide: twee/30 subnetten en twee/126 subnetten.
    * Een geldige VLAN-id waarop u deze peering wilt instellen. Controleer of er geen andere peering in het circuit is die dezelfde VLAN-id gebruikt.
    * AS-nummer voor peering. U kunt 2-bytes en 4-bytes AS-nummers gebruiken. U kunt een persoonlijk AS-nummer voor deze peering gebruiken. Gebruik niet 65515.
    * Optioneel:
@@ -245,6 +252,8 @@ Deze sectie helpt u bij het maken, verkrijgen, bijwerken en verwijderen van de c
    ```azurepowershell-interactive
    Add-AzExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -ExpressRouteCircuit $ckt -PeeringType AzurePrivatePeering -PeerASN 100 -PrimaryPeerAddressPrefix "10.0.0.0/30" -SecondaryPeerAddressPrefix "10.0.0.4/30" -VlanId 200
 
+   Add-AzExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -ExpressRouteCircuit $ckt -PeeringType AzurePrivatePeering -PeerASN 100 -PrimaryPeerAddressPrefix "3FFE:FFFF:0:CD30::/126" -SecondaryPeerAddressPrefix "3FFE:FFFF:0:CD30::4/126" -VlanId 200 -PeerAddressType IPv6
+
    Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
    ```
 
@@ -252,6 +261,8 @@ Deze sectie helpt u bij het maken, verkrijgen, bijwerken en verwijderen van de c
 
    ```azurepowershell-interactive
    Add-AzExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -ExpressRouteCircuit $ckt -PeeringType AzurePrivatePeering -PeerASN 100 -PrimaryPeerAddressPrefix "10.0.0.0/30" -SecondaryPeerAddressPrefix "10.0.0.4/30" -VlanId 200  -SharedKey "A1B2C3D4"
+
+   Add-AzExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -ExpressRouteCircuit $ckt -PeeringType AzurePrivatePeering -PeerASN 100 -PrimaryPeerAddressPrefix "3FFE:FFFF:0:CD30::/126" -SecondaryPeerAddressPrefix "3FFE:FFFF:0:CD30::4/126" -VlanId 200 -PeerAddressType IPv6 -SharedKey "A1B2C3D4"
    ```
 
    > [!IMPORTANT]
@@ -271,10 +282,10 @@ Get-AzExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -ExpressRoute
 
 ### <a name="to-update-azure-private-peering-configuration"></a><a name="updateprivate"></a>De configuratie van persoonlijke Azure-peering bijwerken
 
-U kunt elk deel van de configuratie bijwerken met het volgende voorbeeld. In dit voorbeeld wordt de VLAN-id van het circuit gewijzigd van 100 in 500.
+U kunt elk deel van de configuratie bijwerken met het volgende voorbeeld. In dit voor beeld wordt de VLAN-ID van het circuit bijgewerkt van 200 naar 500.
 
 ```azurepowershell-interactive
-Set-AzExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -ExpressRouteCircuit $ckt -PeeringType AzurePrivatePeering -PeerASN 100 -PrimaryPeerAddressPrefix "10.0.0.0/30" -SecondaryPeerAddressPrefix "10.0.0.4/30" -VlanId 200
+Set-AzExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -ExpressRouteCircuit $ckt -PeeringType AzurePrivatePeering -PeerASN 100 -PrimaryPeerAddressPrefix "10.0.0.0/30" -SecondaryPeerAddressPrefix "10.0.0.4/30" -VlanId 500
 
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 ```

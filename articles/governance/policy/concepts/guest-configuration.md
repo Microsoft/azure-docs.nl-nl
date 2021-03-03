@@ -3,14 +3,15 @@ title: Meer informatie over het controleren van de inhoud van virtuele machines
 description: Meer informatie over hoe Azure Policy de gast configuratie-client gebruikt om instellingen in virtuele machines te controleren.
 ms.date: 01/14/2021
 ms.topic: conceptual
-ms.openlocfilehash: 5d1503680ea2ca7d0ff7c8adae19c05abfe441c0
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: 33a492eb3c8c175bfcdc6a13cb467ed2f180c1e1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100104804"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101702875"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Gastconfiguratie van Azure Policy begrijpen
+
 
 Azure Policy kunt instellingen in een computer controleren, zowel voor machines die worden uitgevoerd in azure als [met Arc verbonden computers](../../../azure-arc/servers/overview.md). De validatie wordt uitgevoerd door de extensie en client voor gastconfiguratie. De extensie valideert, via de client, instellingen zoals:
 
@@ -20,13 +21,15 @@ Azure Policy kunt instellingen in een computer controleren, zowel voor machines 
 
 Op dit moment worden in de meeste Azure Policy beleids definities voor gast configuratie alleen de instellingen van de computer gecontroleerd. U kunt ze niet om configuraties toepassen. De uitzonde ring hierop is één ingebouwd beleid [waarnaar hieronder wordt verwezen](#applying-configurations-using-guest-configuration).
 
+[Er is een video-overzicht van dit document beschikbaar](https://youtu.be/Y6ryD3gTHOs).
+
 ## <a name="enable-guest-configuration"></a>Gast configuratie inschakelen
 
 Als u de status van machines in uw omgeving wilt controleren, inclusief machines in Azure en Arc Connected machines, raadpleegt u de volgende details.
 
 ## <a name="resource-provider"></a>Resourceprovider
 
-Voordat u de gast configuratie kunt gebruiken, moet u de resource provider registreren. De resource provider wordt automatisch geregistreerd als de toewijzing van een gast configuratie beleid wordt uitgevoerd via de portal. U kunt hand matig registreren via de [Portal](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-portal), [Azure POWERSHELL](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-powershell)of [Azure cli](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-cli).
+Voordat u de gast configuratie kunt gebruiken, moet u de resource provider registreren. Als de toewijzing van een gast configuratie beleid wordt uitgevoerd via de portal, of als het abonnement is geregistreerd bij Azure Security Center, wordt de resource provider automatisch geregistreerd. U kunt hand matig registreren via de [Portal](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-portal), [Azure POWERSHELL](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-powershell)of [Azure cli](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-cli).
 
 ## <a name="deploy-requirements-for-azure-virtual-machines"></a>Vereisten voor Azure virtual machines implementeren
 
@@ -60,15 +63,15 @@ De gast configuratie client controleert elke vijf minuten op nieuwe inhoud. Zodr
 
 Beleids definities voor gast configuratie zijn inclusief nieuwe versies. Oudere versies van besturings systemen die beschikbaar zijn in azure Marketplace, worden uitgesloten als de gast configuratie-client niet compatibel is. In de volgende tabel ziet u een lijst met ondersteunde besturings systemen in azure-installatie kopieën:
 
-|Publisher|Naam|Versies|
+|Publisher|Name|Versies|
 |-|-|-|
-|Canonical|Ubuntu Server|14,04-18,04|
-|Credativ|Debian|8 en hoger|
-|Microsoft|Windows Server|2012 en hoger|
+|Canonical|Ubuntu Server|14,04-20,04|
+|Credativ|Debian|8 - 10|
+|Microsoft|Windows Server|2012-2019|
 |Microsoft|Windows-client|Windows 10|
-|OpenLogic|CentOS|7,3 en hoger|
-|Red Hat|Red Hat Enterprise Linux|7,4-7,8|
-|SuSE|SLES|12 SP3-SP5|
+|OpenLogic|CentOS|7,3-8|
+|Red Hat|Red Hat Enterprise Linux|7,4-8|
+|SuSE|SLES|12 SP3-SP5, 15|
 
 Aangepaste installatie kopieën van virtuele machines worden ondersteund door beleids definities voor gast configuraties zolang ze een van de besturings systemen in de bovenstaande tabel zijn.
 
@@ -114,9 +117,26 @@ Beleids definities voor gast configuraties gebruiken het **AuditIfNotExists** -e
 De **AuditIfNotExists** -beleids definities retour neren geen compliantie resultaten totdat aan alle vereisten wordt voldaan op de computer. De vereisten worden beschreven in de sectie [vereisten voor Azure virtual machines implementeren](#deploy-requirements-for-azure-virtual-machines)
 
 > [!IMPORTANT]
-> In een eerdere versie van de gast configuratie was een initiatief vereist om **DeployIfNoteExists** -en **AuditIfNotExists** -definities te combi neren. **DeployIfNotExists** -definities zijn niet meer vereist. De definities en intiaitives hebben een label, `[Deprecated]` maar bestaande toewijzingen blijven functioneren. Zie voor meer informatie het blog bericht: [belang rijke wijziging vrijgegeven voor controle beleid gast configuratie](https://techcommunity.microsoft.com/t5/azure-governance-and-management/important-change-released-for-guest-configuration-audit-policies/ba-p/1655316)
+> In een eerdere versie van de gast configuratie was een initiatief vereist om **DeployIfNoteExists** -en **AuditIfNotExists** -definities te combi neren. **DeployIfNotExists** -definities zijn niet meer vereist. De definities en initiatieven hebben een label, `[Deprecated]` maar bestaande toewijzingen blijven functioneren. Zie voor meer informatie het blog bericht: [belang rijke wijziging vrijgegeven voor controle beleid gast configuratie](https://techcommunity.microsoft.com/t5/azure-governance-and-management/important-change-released-for-guest-configuration-audit-policies/ba-p/1655316)
 
-Azure Policy maakt gebruik van de eigenschap **complianceStatus** van de gast configuratie resource provider om naleving te rapporteren in het knoop punt **naleving** . Zie [nalevings gegevens ophalen](../how-to/get-compliance-data.md)voor meer informatie.
+### <a name="what-is-a-guest-assignment"></a>Wat is een gast toewijzing?
+
+Als er een Azure Policy is toegewezen, als het zich in de categorie gast configuratie bevindt, zijn de meta gegevens opgenomen om een gast toewijzing te beschrijven.
+U kunt een gast toewijzing beschouwen als een koppeling tussen een computer en een Azure Policy scenario.
+Het onderstaande fragment koppelt bijvoorbeeld de Azure Windows-basis lijn configuratie met de minimale versie `1.0.0` aan alle computers binnen het bereik van het beleid. De gast toewijzing voert standaard alleen een controle uit van de machine.
+
+```json
+"metadata": {
+    "category": "Guest Configuration",
+    "guestConfiguration": {
+        "name": "AzureWindowsBaseline",
+        "version": "1.*"
+    }
+//additional metadata properties exist
+```
+
+Gast toewijzingen worden automatisch per computer gemaakt door de gast configuratie service. Het resourcetype is `Microsoft.GuestConfiguration/guestConfigurationAssignments`.
+Azure Policy gebruikt de eigenschap **complianceStatus** van de resource van de gast toewijzing om de nalevings status te rapporteren. Zie [nalevings gegevens ophalen](../how-to/get-compliance-data.md)voor meer informatie.
 
 #### <a name="auditing-operating-system-settings-following-industry-baselines"></a>De instellingen van het besturings systeem controleren volgens de industrie basislijnen
 
@@ -201,6 +221,12 @@ De ingebouwde beleids voorbeelden van de gast configuratie zijn beschikbaar op d
 - [Ingebouwde beleids definities-gast configuratie](../samples/built-in-policies.md#guest-configuration)
 - [Ingebouwde initiatieven-gast configuratie](../samples/built-in-initiatives.md#guest-configuration)
 - [Azure Policy-voor beelden GitHub opslag plaats](https://github.com/Azure/azure-policy/tree/master/built-in-policies/policySetDefinitions/Guest%20Configuration)
+
+### <a name="video-overview"></a>Video-overzicht
+
+Het volgende overzicht van Azure Policy gast configuratie is van ITOps lezingen 2021.
+
+[Basis lijnen in hybride server omgevingen met Azure Policy gast configuratie beheren](https://techcommunity.microsoft.com/t5/itops-talk-blog/ops114-governing-baselines-in-hybrid-server-environments-using/ba-p/2109245)
 
 ## <a name="next-steps"></a>Volgende stappen
 

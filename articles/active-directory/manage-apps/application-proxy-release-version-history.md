@@ -11,17 +11,17 @@ ms.workload: identity
 ms.date: 07/22/2020
 ms.subservice: app-mgmt
 ms.author: kenwith
-ms.openlocfilehash: a4b029a1397a2522dfaa6eba9c0206dd5a031875
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 6ba622bd52dc13fb0053b61b65529db6e6912611
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99258130"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686713"
 ---
 # <a name="azure-ad-application-proxy-version-release-history"></a>Azure AD-toepassingsproxy: release geschiedenis van versie
 In dit artikel vindt u een overzicht van de versies en functies van de toepassings proxy van Azure Active Directory (Azure AD) die is uitgebracht. Het Azure AD-team werkt de toepassings proxy regel matig bij met nieuwe functies en functionaliteit. Application proxy-connectors worden automatisch bijgewerkt wanneer een nieuwe versie wordt uitgebracht. 
 
-We raden u aan om ervoor te zorgen dat automatische updates zijn ingeschakeld voor uw connectors om ervoor te zorgen dat u beschikt over de nieuwste functies en oplossingen voor fouten. Micro soft biedt direct ondersteuning voor de recentste connector versie en één versie eerder.
+We raden u aan om ervoor te zorgen dat automatische updates zijn ingeschakeld voor uw connectors om ervoor te zorgen dat u beschikt over de nieuwste functies en oplossingen voor fouten. Micro soft biedt direct ondersteuning voor de nieuwste connector versie en één versie voor.
 
 Hier volgt een lijst met verwante resources:
 
@@ -44,7 +44,7 @@ Downloaden van Azure AD-toepassingsproxy-connector |  [Down load de nieuwste con
 
 ### <a name="fixed-issues"></a>Opgeloste problemen
 - Er is een fout opgetreden bij een WebSocket met geforceerde kleine teken reeksen.
-- Er is een probleem opgelost dat ervoor zorgt dat connectors Occassionally niet meer reageren.
+- Er is een probleem opgelost waardoor connectors af en toe niet reageren.
 
 ## <a name="1516260"></a>1.5.1626.0
 
@@ -60,7 +60,7 @@ Downloaden van Azure AD-toepassingsproxy-connector |  [Down load de nieuwste con
 
 ### <a name="release-status"></a>Status van de release
 
-7 april 2020: uitgebracht voor downloaden
+2020 april 07: uitgebracht voor down loads deze versie is alleen beschikbaar voor installatie via de download pagina. Een release van de automatische upgrade van deze versie wordt op een later tijdstip vrijgegeven.
 
 ### <a name="new-features-and-improvements"></a>Nieuwe functies en verbeteringen
 -   Connectors gebruiken alleen TLS 1,2 voor alle verbindingen. Zie [vereisten voor connectors](application-proxy-add-on-premises-application.md#prerequisites) voor meer informatie.

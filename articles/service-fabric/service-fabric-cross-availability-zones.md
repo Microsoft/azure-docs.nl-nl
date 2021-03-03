@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: 50ab66a1f98d06d79a46d61f683d56822b619721
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.openlocfilehash: ef1a49301cf150f92d30c163dee262a22f1515d9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100007037"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101714949"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-across-availability-zones"></a>Een Azure Service Fabric-cluster implementeren via Beschikbaarheidszones
 Beschikbaarheidszones in Azure is een aanbieding met hoge Beschik baarheid die uw toepassingen en gegevens beveiligt tegen Data Center-fouten. Een beschikbaarheids zone is een unieke fysieke locatie die is voorzien van onafhankelijke voeding, koeling en netwerken binnen een Azure-regio.
@@ -345,7 +345,7 @@ Als u zones op een schaalset voor virtuele machines wilt inschakelen, moet u de 
 
 * De eerste waarde is de eigenschap **zones** , waarmee de Beschikbaarheidszones aanwezig in de schaalset van de virtuele machine worden opgegeven.
 * De tweede waarde is de eigenschap ' singlePlacementGroup ', die moet worden ingesteld op True. **De schaalset voor 3 AZ kan worden geschaald tot Maxi maal 300 Vm's, zelfs met ' singlePlacementGroup = True '.**
-* De derde waarde is "zoneBalance", waarmee de strikte zone verdeling wordt gegarandeerd, indien ingesteld op waar. We raden u aan dit in te stellen op waar, om te voor komen dat de virtuele machines niet in evenwicht worden verdeeld over zones. Meer informatie over [zoneBalancing](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md#zone-balancing).
+* De derde waarde is "zoneBalance", waarmee de strikte zone verdeling wordt gegarandeerd. Dit moet ' waar ' zijn om te voor komen dat de virtuele machines niet in evenwicht worden verdeeld over zones. Een cluster met een niet-gebalanceerde VM-distributie over zones is minder waarschijnlijk in de zone scenatio. Meer informatie over [zoneBalancing](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md#zone-balancing).
 * De FaultDomain-en upgrade Domain-onderdrukkingen hoeven niet te worden geconfigureerd.
 
 ```json
@@ -409,7 +409,7 @@ Het Service Fabric nodeType moet zijn ingeschakeld voor de ondersteuning van mee
 > * Open bare IP-en Load Balancer-resources moeten gebruikmaken van de standaard-SKU zoals eerder in het artikel is beschreven.
 > * de eigenschap multipleAvailabilityZones van het nodeType kan alleen worden gedefinieerd op het moment dat het nodeType wordt gemaakt en kan later niet worden gewijzigd. Bestaande nodeTypes kan daarom niet worden geconfigureerd met deze eigenschap.
 > * Als "sfZonalUpgradeMode" wordt wegge laten of is ingesteld op hiërarchisch, worden de cluster-en toepassings implementaties langzamer naarmate er meer upgrade domeinen in het cluster zijn. Het is belang rijk dat u de time-outs voor upgrade beleid op de juiste wijze bijwerkt voor de upgrade tijd voor 15-upgrade domeinen.
-> * Het is raadzaam om het niveau van de cluster betrouwbaarheid in te stellen op Platinum om ervoor te zorgen dat het cluster het scenario van één zone in het vervolg houdt.
+> * Stel het cluster **reliabilityLevel = Platinum** in om ervoor te zorgen dat het cluster het scenario van één zone in het vervolg houdt.
 
 >[!NOTE]
 > Voor best practice wordt aangeraden sfZonalUpgradeMode ingesteld op hiërarchisch of worden wegge laten. De implementatie volgt de zonegebonden-distributie van Vm's die van invloed zijn op een kleinere hoeveelheid replica's en/of exemplaren waardoor ze veiliger zijn.

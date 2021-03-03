@@ -6,33 +6,33 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.subservice: alerts
-ms.openlocfilehash: 88643663c2f14cb7d8883eb1210bdee07b00eece
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 5e7909725f5e390f4e42a7d62e80f90f897c840f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609544"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101714150"
 ---
 # <a name="log-alerts-in-azure-monitor"></a>Waarschuwingen registreren in Azure Monitor
 
 ## <a name="overview"></a>Overzicht
 
-Logboek waarschuwingen zijn een van de waarschuwings typen die worden ondersteund in [Azure-waarschuwingen](../platform/alerts-overview.md). Met logboek waarschuwingen kunnen gebruikers een [log Analytics](../log-query/log-analytics-tutorial.md) query gebruiken om resources te evalueren elke ingestelde frequentie, en wordt een waarschuwing gestart op basis van de resultaten. Regels kunnen een of meer acties activeren met behulp van [actie groepen](../platform/action-groups.md).
+Logboek waarschuwingen zijn een van de waarschuwings typen die worden ondersteund in [Azure-waarschuwingen](./alerts-overview.md). Met logboek waarschuwingen kunnen gebruikers een [log Analytics](../logs/log-analytics-tutorial.md) query gebruiken om resources te evalueren elke ingestelde frequentie, en wordt een waarschuwing gestart op basis van de resultaten. Regels kunnen een of meer acties activeren met behulp van [actie groepen](./action-groups.md).
 
 > [!NOTE]
-> Logboek gegevens van een [log Analytics-werk ruimte](../log-query/log-analytics-tutorial.md) kunnen worden verzonden naar de Azure monitor metrische gegevens opslag. Waarschuwingen voor metrische gegevens hebben een [ander gedrag](alerts-metric-overview.md), wat wenselijker is, afhankelijk van de data waarmee u werkt. Zie [metrische waarschuwingen voor logboeken](alerts-metric-logs.md)voor meer informatie over hoe en hoe u Logboeken kunt routeren naar metrische gegevens.
+> Logboek gegevens van een [log Analytics-werk ruimte](../logs/log-analytics-tutorial.md) kunnen worden verzonden naar de Azure monitor metrische gegevens opslag. Waarschuwingen voor metrische gegevens hebben een [ander gedrag](alerts-metric-overview.md), wat wenselijker is, afhankelijk van de data waarmee u werkt. Zie [metrische waarschuwingen voor logboeken](alerts-metric-logs.md)voor meer informatie over hoe en hoe u Logboeken kunt routeren naar metrische gegevens.
 
 > [!NOTE]
 > Er zijn momenteel geen extra kosten verbonden aan de API-versie en de waarschuwingen over de `2020-05-01-preview` resource-georiënteerde Logboeken.  Prijzen voor functies die in de preview-versie zijn opgenomen, worden in de toekomst aangekondigd en er is een kennisgeving gegeven vóór het begin van de facturering. Als u ervoor kiest om door te gaan met het gebruik van de nieuwe API-versie en de waarschuwingen van resource gerichte logboeken na de kennisgevings periode, wordt u gefactureerd tegen het toepasselijke rente bedrag.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Logboek waarschuwingen voeren query's uit op Log Analytics gegevens. Eerst moet u beginnen met het [verzamelen van logboek gegevens](../platform/resource-logs.md) en het uitvoeren van een query op de logboek gegevens voor problemen. U kunt het [onderwerp voor beelden van waarschuwings query's](../log-query/example-queries.md) in log Analytics gebruiken om te begrijpen wat u kunt detecteren of [aan de slag gaat met het schrijven van uw eigen query](../log-query/log-analytics-tutorial.md).
+Logboek waarschuwingen voeren query's uit op Log Analytics gegevens. Eerst moet u beginnen met het [verzamelen van logboek gegevens](../essentials/resource-logs.md) en het uitvoeren van een query op de logboek gegevens voor problemen. U kunt het [onderwerp voor beelden van waarschuwings query's](../logs/example-queries.md) in log Analytics gebruiken om te begrijpen wat u kunt detecteren of [aan de slag gaat met het schrijven van uw eigen query](../logs/log-analytics-tutorial.md).
 
-Beheer van [Azure-bewaking](../platform/roles-permissions-security.md) is een algemene rol die nodig is om logboek waarschuwingen te maken, te wijzigen en bij te werken. Er zijn ook toegangs rechten voor het uitvoeren van & voor de bron logboeken nodig. Gedeeltelijke toegang tot bron logboeken kan mislukken van query's of gedeeltelijke resultaten retour neren. Meer [informatie over het configureren van logboek waarschuwingen in azure](./alerts-log.md).
+Beheer van [Azure-bewaking](../roles-permissions-security.md) is een algemene rol die nodig is om logboek waarschuwingen te maken, te wijzigen en bij te werken. Er zijn ook toegangs rechten voor het uitvoeren van & voor de bron logboeken nodig. Gedeeltelijke toegang tot bron logboeken kan mislukken van query's of gedeeltelijke resultaten retour neren. Meer [informatie over het configureren van logboek waarschuwingen in azure](./alerts-log.md).
 
 > [!NOTE]
-> Logboek waarschuwingen voor Log Analytics die worden beheerd met behulp van de verouderde [log Analytics-waarschuwings-API](../platform/api-alerts.md). [Meer informatie over overschakelen naar de huidige ScheduledQueryRules-API](../alerts/alerts-log-api-switch.md).
+> Logboek waarschuwingen voor Log Analytics die worden beheerd met behulp van de verouderde [log Analytics-waarschuwings-API](./api-alerts.md). [Meer informatie over overschakelen naar de huidige ScheduledQueryRules-API](../alerts/alerts-log-api-switch.md).
 
 ## <a name="query-evaluation-definition"></a>Definitie van de query-evaluatie
 
@@ -44,17 +44,17 @@ Definitie van de voor waarden voor logboek zoeken van regels wordt gestart vanaf
 In de volgende secties worden de verschillende para meters beschreven die u kunt gebruiken om de bovenstaande logica in te stellen.
 
 ### <a name="log-query"></a>Logboekquery
-De [log Analytics](../log-query/log-analytics-tutorial.md) query die wordt gebruikt om de regel te evalueren. De resultaten die door deze query worden geretourneerd, worden gebruikt om te bepalen of een waarschuwing moet worden geactiveerd. Het bereik van de query kan worden toegewezen aan:
+De [log Analytics](../logs/log-analytics-tutorial.md) query die wordt gebruikt om de regel te evalueren. De resultaten die door deze query worden geretourneerd, worden gebruikt om te bepalen of een waarschuwing moet worden geactiveerd. Het bereik van de query kan worden toegewezen aan:
 
 - Een specifieke resource, zoals een virtuele machine.
 - Een at-schaal resource, zoals een abonnement of resource groep.
-- Meerdere resources met behulp van een [Cross-resource query](../log-query/cross-workspace-query.md#querying-across-log-analytics-workspaces-and-from-application-insights). 
+- Meerdere resources met behulp van een [Cross-resource query](../logs/cross-workspace-query.md#querying-across-log-analytics-workspaces-and-from-application-insights). 
  
 > [!IMPORTANT]
 > Waarschuwings query's hebben beperkingen om te zorgen voor optimale prestaties en de relevantie van de resultaten. [Klik hier voor meer informatie](./alerts-log-query.md).
 
 > [!IMPORTANT]
-> Resource gerichte en [query's op meerdere bronnen](../log-query/cross-workspace-query.md#querying-across-log-analytics-workspaces-and-from-application-insights) worden alleen ondersteund met de huidige SCHEDULEDQUERYRULES-API. Als u de verouderde [log Analytics alert-API](../platform/api-alerts.md)gebruikt, moet u overschakelen. [Meer informatie over scha kelen](./alerts-log-api-switch.md)
+> Resource gerichte en [query's op meerdere bronnen](../logs/cross-workspace-query.md#querying-across-log-analytics-workspaces-and-from-application-insights) worden alleen ondersteund met de huidige SCHEDULEDQUERYRULES-API. Als u de verouderde [log Analytics alert-API](./api-alerts.md)gebruikt, moet u overschakelen. [Meer informatie over scha kelen](./alerts-log-api-switch.md)
 
 #### <a name="query-time-range"></a>Query tijds bereik
 
@@ -154,7 +154,7 @@ U wilt bijvoorbeeld fouten bewaken voor meerdere virtuele machines waarop uw web
 Deze regel controleert of een virtuele machine fout gebeurtenissen bevat in de afgelopen 15 minuten. Elke virtuele machine wordt afzonderlijk bewaakt en de acties worden afzonderlijk geactiveerd.
 
 > [!NOTE]
-> De dimensies splitsen op basis van waarschuwingen zijn alleen beschikbaar voor de huidige scheduledQueryRules-API. Als u de verouderde [log Analytics alert-API](../platform/api-alerts.md)gebruikt, moet u overschakelen. Meer [informatie over overschakelen](./alerts-log-api-switch.md). Resource gerichte waarschuwingen op schaal worden alleen ondersteund in de API-versie `2020-05-01-preview` en hoger.
+> De dimensies splitsen op basis van waarschuwingen zijn alleen beschikbaar voor de huidige scheduledQueryRules-API. Als u de verouderde [log Analytics alert-API](./api-alerts.md)gebruikt, moet u overschakelen. Meer [informatie over overschakelen](./alerts-log-api-switch.md). Resource gerichte waarschuwingen op schaal worden alleen ondersteund in de API-versie `2020-05-01-preview` en hoger.
 
 ## <a name="alert-logic-definition"></a>Definitie van waarschuwings logica
 
@@ -197,17 +197,17 @@ De prijs informatie bevindt zich op de [pagina met Azure monitor prijzen](https:
 
 - Waarschuwingen in het logboek vastleggen op Application Insights die worden weer gegeven met de exacte resource naam samen met de eigenschappen van de resource groep en de waarschuwing.
 - Waarschuwingen in het logboek vastleggen op Log Analytics die worden weer gegeven met de exacte resource naam samen met de eigenschappen van de resource groep en de waarschuwing. Wanneer deze is gemaakt met behulp van de [scheduledQueryRules-API](/rest/api/monitor/scheduledqueryrules).
-- Logboek waarschuwingen die zijn gemaakt op basis van [verouderde log Analytics-API](../platform/api-alerts.md) , worden niet bijgehouden in [Azure-resources](../../azure-resource-manager/management/overview.md) en hebben geen unieke resource namen afgedwongen. Deze waarschuwingen worden nog steeds gemaakt `microsoft.insights/scheduledqueryrules` als verborgen resources, die deze resource naamgevings structuur hebben `<WorkspaceName>|<savedSearchId>|<scheduleId>|<ActionId>` . Logboek waarschuwingen op een verouderde API worden weer gegeven met de naam van de verborgen resource, samen met de eigenschappen van de resource groep en de waarschuwing.
+- Logboek waarschuwingen die zijn gemaakt op basis van [verouderde log Analytics-API](./api-alerts.md) , worden niet bijgehouden in [Azure-resources](../../azure-resource-manager/management/overview.md) en hebben geen unieke resource namen afgedwongen. Deze waarschuwingen worden nog steeds gemaakt `microsoft.insights/scheduledqueryrules` als verborgen resources, die deze resource naamgevings structuur hebben `<WorkspaceName>|<savedSearchId>|<scheduleId>|<ActionId>` . Logboek waarschuwingen op een verouderde API worden weer gegeven met de naam van de verborgen resource, samen met de eigenschappen van de resource groep en de waarschuwing.
 
 > [!NOTE]
 > Niet-ondersteunde resource tekens zoals `<, >, %, &, \, ?, /` worden vervangen door `_` in de namen van de verborgen resources. dit wordt ook weer gegeven in de facturerings gegevens.
 
 > [!NOTE]
-> Logboek waarschuwingen voor Log Analytics die worden beheerd met behulp van de verouderde [log Analytics waarschuwings-API](../platform/api-alerts.md) en verouderde sjablonen van [log Analytics opgeslagen Zoek opdrachten en waarschuwingen](../insights/solutions.md). [Meer informatie over overschakelen naar de huidige ScheduledQueryRules-API](../alerts/alerts-log-api-switch.md). Het beheer van waarschuwings regels moet worden uitgevoerd met behulp van [verouderde log Analytics-API](../platform/api-alerts.md) totdat u besluit om over te scha kelen en u de verborgen resources niet kunt gebruiken.
+> Logboek waarschuwingen voor Log Analytics die worden beheerd met behulp van de verouderde [log Analytics waarschuwings-API](./api-alerts.md) en verouderde sjablonen van [log Analytics opgeslagen Zoek opdrachten en waarschuwingen](../insights/solutions.md). [Meer informatie over overschakelen naar de huidige ScheduledQueryRules-API](../alerts/alerts-log-api-switch.md). Het beheer van waarschuwings regels moet worden uitgevoerd met behulp van [verouderde log Analytics-API](./api-alerts.md) totdat u besluit om over te scha kelen en u de verborgen resources niet kunt gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * Meer informatie over [het maken van waarschuwingen in Logboeken in azure](./alerts-log.md).
 * Informatie [over webhooks in logboek waarschuwingen in azure](../alerts/alerts-log-webhook.md).
-* Meer informatie over [Azure-waarschuwingen](../platform/alerts-overview.md).
-* Meer informatie over [log Analytics](../log-query/log-query-overview.md).
+* Meer informatie over [Azure-waarschuwingen](./alerts-overview.md).
+* Meer informatie over [log Analytics](../logs/log-query-overview.md).

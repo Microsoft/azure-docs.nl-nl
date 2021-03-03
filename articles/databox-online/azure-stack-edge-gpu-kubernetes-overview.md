@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 08/28/2020
+ms.date: 03/01/2021
 ms.author: alkohli
-ms.openlocfilehash: 5b96e568b57c34fec1c93727aabe8e739a2a45cd
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 6e9ae9b8d9d1154d55991d078af0faef65ff654b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448650"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699569"
 ---
 # <a name="kubernetes-on-your-azure-stack-edge-pro-gpu-device"></a>Kubernetes op uw Azure Stack Edge Pro GPU-apparaat
 
@@ -107,6 +107,16 @@ Ga voor meer informatie over het implementeren van toepassingen op uw Kubernetes
 ### <a name="kubernetes-and-azure-arc"></a>Kubernetes en Azure Arc
 
 Azure Arc is een Hybrid management tool waarmee u toepassingen kunt implementeren in uw Kubernetes-clusters. Met Azure Arc kunt u ook Azure Monitor voor containers gebruiken om uw clusters weer te geven en te bewaken. Ga naar [Wat is Azure-Arc ingeschakeld Kubernetes?](../azure-arc/kubernetes/overview.md)voor meer informatie. Voor informatie over de prijzen voor Azure-arctangens gaat u naar [Azure-Arc-prijzen](https://azure.microsoft.com/services/azure-arc/#pricing).
+
+Vanaf 2021 maart is Azure Arc enabled Kubernetes algemeen beschikbaar voor de gebruikers en gelden de standaard gebruiks kosten. Als een klant met een waardevolle preview-versie is de Azure Arc enabled Kubernetes gratis beschikbaar voor Azure Stack edge-apparaten. Als u de preview-aanbieding wilt beschik bare, maakt u een [ondersteuningsaanvraag](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest):
+
+1. Onder **Probleemtype** selecteert u **Facturering**.
+2. Selecteer onder **Abonnement** uw abonnement.
+3. Onder **service** selecteert u **Mijn services** en selecteert u **Azure stack rand**.
+4. Onder **resource** selecteert u uw resource.
+5. Typ onder **samen vatting** een beschrijving van het probleem.
+6. Onder **probleem type** selecteert u **onverwachte kosten**.
+7. Onder **subtype** van het probleem selecteert u **Help me begrijpen van de kosten voor mijn gratis proef versie**.
 
 
 ## <a name="next-steps"></a>Volgende stappen

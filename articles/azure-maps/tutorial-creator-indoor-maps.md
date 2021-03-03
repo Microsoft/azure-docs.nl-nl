@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: dac5a434d7f7c62d7a20e971294992ea91c79d2b
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 9ac53dab29feddd36a95b8b2b041caaf5c3598d5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625012"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101720134"
 ---
 # <a name="tutorial-use-creator-preview-to-create-indoor-maps"></a>Zelfstudie: Creator (preview) gebruiken om indoorplattegronden te maken
 
@@ -116,6 +116,7 @@ De API voor het uploaden van gegevens is een langdurige transactie die het hier 
 
     >[!IMPORTANT]
     > De API-URL's in dit document moeten mogelijk worden aangepast op basis van de locatie van de Creator-resource. Zie [Toegang tot Creator-services (preview)](how-to-manage-creator.md#access-to-creator-services) voor meer informatie.
+    > Als er een fout met de code wordt weer gegeven `"RequiresCreatorResource"` , moet u ervoor zorgen dat u [een Azure Maps Maker-bron hebt ingericht](how-to-manage-creator.md) Azure Maps account.
 
 3. Klik op de knop **Send** en wacht tot de aanvraag is verwerkt. Zodra de aanvraag is voltooid, gaat u naar het tabblad **Headers** van het antwoord en zoekt u de **Location**-sleutel. Kopieer de waarde van de **Location**-sleutel; dit is de `status URL` voor de aanvraag van de conversie. U gebruikt deze in de volgende stap.
 
@@ -314,7 +315,7 @@ Een tegelset is een set vectortegels die op de kaart worden weergegeven. Tegelse
     https://atlas.microsoft.com/featureState/stateset?api-version=1.0&datasetId={datasetId}&subscription-key={Azure-Maps-Primary-Subscription-key}
     ```
 
-3. Stel in de **headers** van de **POST**-aanvraag `Content-Type` in op `application/json`. Geef in de **hoofdtekst** de onderstaande stijlen op om wijzigingen in de *statussen* `occupied` en `temperature` van kracht te laten worden. Wanneer u klaar bent, klikt u op **Send**.
+3. Stel in de **headers** van de **POST**-aanvraag `Content-Type` in op `application/json`. Geef in de **hoofd tekst** de onbewerkte JSON-stijlen op om wijzigingen aan te brengen in de `occupied` en de `temperature` *status*. Wanneer u klaar bent, klikt u op **Send**.
 
     ```json
     {

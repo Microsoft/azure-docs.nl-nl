@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 06f1d34e7d8da9a3ece206fc1ff804accf9454ff
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 7d2a21a30cefbc6e83e48c29d81191323387b8f2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493851"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101705540"
 ---
 # <a name="quickstart-create-and-provision-an-x509-device-using-c-device-sdk-for-iot-hub-device-provisioning-service"></a>Snelstartgids: een X. 509-apparaat maken en inrichten met behulp van de SDK voor C#-apparaten voor IoT Hub Device Provisioning Service
 
@@ -22,7 +22,9 @@ ms.locfileid: "99493851"
 
 In deze stappen wordt uitgelegd hoe u met behulp van de programma code van de [Azure IOT-voor beelden voor C#](https://github.com/Azure-Samples/azure-iot-samples-csharp) een X. 509-apparaat inricht. In dit artikel voert u voorbeeld code van het apparaat uit op uw ontwikkel computer om verbinding te maken met een IoT Hub met behulp van de Device Provisioning Service.
 
-Raadpleeg het overzicht [Inrichten](about-iot-dps.md#provisioning-process) als u niet bekend bent met het proces van automatisch inrichten. Controleer ook of u de stappen in [IoT Hub Device Provisioning Service instellen met Azure Portal](./quick-setup-auto-provision.md) hebt voltooid voordat u verdergaat. 
+## <a name="prerequisites"></a>Vereisten
+
+Raadpleeg het overzicht [Inrichten](about-iot-dps.md#provisioning-process) als u niet bekend bent met het proces van automatisch inrichten. Controleer ook of u de stappen in [IoT Hub Device Provisioning Service instellen met Azure Portal](./quick-setup-auto-provision.md) hebt voltooid voordat u verdergaat.
 
 Azure IoT Device Provisioning Service ondersteunt twee typen inschrijvingen:
 - [Inschrijvingsgroepen](concepts-service.md#enrollment-group): Wordt gebruikt om meerdere gerelateerde apparaten in te schrijven.
@@ -48,8 +50,6 @@ In dit artikel worden afzonderlijke inschrijvingen gedemonstreerd.
     ```bash
     dotnet --info
     ```
-
-
 
 ## <a name="create-a-self-signed-x509-device-certificate"></a>Een zelfondertekend X.509-apparaatcertificaat maken
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 32027695f914257ef245d920f00fc1d1976fa791
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 94044e95e83742487a0d4d650814a5324f07011a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98956261"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750245"
 ---
 Het implementatiemanifest geeft aan welke modules op een edge-apparaat worden geïmplementeerd. Ook bevat het de configuratie-instellingen voor deze modules. 
 
@@ -42,9 +42,9 @@ In de RTSP-simulatormodule wordt een livevideostream gesimuleerd met behulp van 
 > Als u uw eigen Edge-apparaat gebruikt in plaats van een van de apparaten die via ons installatiescript is ingericht, gaat u naar uw Edge-apparaat en voert u de volgende opdrachten uit met **beheerdersrechten** om het voorbeeld van het videobestand dat voor deze quickstart is gebruikt, op te halen en op te slaan:  
 
 ```
-mkdir /home/lvaadmin/samples      
-mkdir /home/lvaadmin/samples/input    
-curl https://lvamedia.blob.core.windows.net/public/camera-300s.mkv > /home/lvaadmin/samples/input/camera-300s.mkv  
-chown -R lvaadmin /home/lvaadmin/samples/  
+mkdir /home/lvaedgeuser/samples      
+mkdir /home/lvaedgeuser/samples/input    
+curl https://lvamedia.blob.core.windows.net/public/camera-300s.mkv > /home/lvaedgeuser/samples/input/camera-300s.mkv  
+chown -R lvalvaedgeuser:localusergroup /home/lvaedgeuser/samples/  
 ```
 In deze fase zijn de modules geïmplementeerd, maar zijn er geen mediagrafen actief.

@@ -4,45 +4,50 @@ titleSuffix: Azure Digital Twins
 description: Zie telemetrie van Azure Digital Apparaatdubbels streamen naar clients met behulp van Azure-Signa lering
 author: dejimarquis
 ms.author: aymarqui
-ms.date: 09/02/2020
+ms.date: 02/12/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 86d0c75d8b4c7c331e3e7ad90271e3fb42ff1964
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 8828b2dc48a8865e43a176757dc973a5cf85b784
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99980725"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101702974"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-signalr-service"></a>Azure Digital Apparaatdubbels integreren met de Azure signalerings service
 
 In dit artikel leert u hoe u Azure Digital Apparaatdubbels integreert met de [Azure signalerings service](../azure-signalr/signalr-overview.md).
 
-Met de oplossing die in dit artikel wordt beschreven, kunt u digitale dubbele telemetriegegevens naar verbonden clients pushen, zoals een enkele webpagina of een mobiele toepassing. Als gevolg hiervan worden clients bijgewerkt met metrische gegevens over realtime en status van IoT-apparaten, zonder de nood zaak om de server te pollen of nieuwe HTTP-aanvragen voor updates te verzenden.
+Met de oplossing die in dit artikel wordt beschreven, kunt u digitale dubbele telemetriegegevens naar verbonden clients pushen, zoals een enkele webpagina of een mobiele toepassing. Als gevolg hiervan worden clients bijgewerkt met realtime metrische gegevens en status van IoT-apparaten, zonder de nood zaak om de server te pollen of nieuwe HTTP-aanvragen voor updates te verzenden.
 
 ## <a name="prerequisites"></a>Vereisten
 
 Hier volgen de vereisten die u moet volt ooien voordat u doorgaat:
 
-* Voordat u uw oplossing integreert met de Azure Signalr-service in dit artikel, moet u de zelf studie over Azure Digital Apparaatdubbels [_**: verbinding maken met een end-to-end-oplossing**_](tutorial-end-to-end.md), omdat u deze procedure kunt samen stellen. In deze zelf studie wordt u begeleid bij het instellen van een Azure Digital Apparaatdubbels-exemplaar dat werkt met een virtueel IoT-apparaat om digitale dubbele updates te activeren. Met deze procedure worden deze updates verbonden met een voor beeld-web-app met behulp van de Azure signalerings service.
-    - U hebt de naam van het **Event grid-onderwerp** dat u hebt gemaakt in de zelf studie nodig.
-* [**Node.js**](https://nodejs.org/) op uw computer zijn geïnstalleerd.
+* Voordat u uw oplossing integreert met de Azure signalerings service in dit artikel, moet u de zelf studie over Azure Digital Apparaatdubbels [_**: verbinding maken met een end-to-end-oplossing**_](tutorial-end-to-end.md), omdat dit artikel op basis van de hand leiding wordt gebouwd. In deze zelf studie wordt u begeleid bij het instellen van een Azure Digital Apparaatdubbels-exemplaar dat werkt met een virtueel IoT-apparaat om digitale dubbele updates te activeren. In dit artikel wordt beschreven hoe u deze updates verbindt met een voor beeld-web-app met behulp van de Azure signalerings service.
 
-U kunt ook door gaan en u aanmelden bij de [Azure Portal](https://portal.azure.com/) met uw Azure-account.
+* U hebt de volgende waarden nodig in de zelf studie:
+  - Event grid-onderwerp
+  - Resourcegroep
+  - Naam app service/function-app
+    
+* U moet [**Node.js**](https://nodejs.org/) op uw computer zijn geïnstalleerd.
+
+U moet zich ook verder aanmelden bij de [Azure Portal](https://portal.azure.com/) met uw Azure-account.
 
 ## <a name="solution-architecture"></a>Architectuur voor de oplossing
 
-U gaat de Azure signalerings Service koppelen aan Azure Digital Apparaatdubbels via het onderstaande pad. De secties A, B en C in het diagram zijn afkomstig uit het architectuur diagram van de [end-to-end zelf studie](tutorial-end-to-end.md). in deze procedure maakt u dit door sectie D toe te voegen.
+U voegt de Azure signalerings service aan Azure Digital Apparaatdubbels toe via het onderstaande pad. De secties A, B en C in het diagram worden opgehaald uit het architectuur diagram van de [end-to-end zelf studie](tutorial-end-to-end.md). In dit procedure-artikel maakt u sectie D op basis van de bestaande architectuur.
 
 :::image type="content" source="media/how-to-integrate-azure-signalr/signalr-integration-topology.png" alt-text="Een weer gave van Azure-Services in een end-to-end-scenario. Toont gegevens die vanuit een apparaat naar IoT Hub worden gestroomd, via een Azure-functie (pijl B) naar een Azure Digital Apparaatdubbels-exemplaar (sectie A) en vervolgens via Event Grid naar een andere Azure-functie voor verwerking (pijl C). Sectie D toont gegevens stromen van hetzelfde Event Grid in pijl C naar een Azure-functie met het label ' Broadcast '. broadcast communiceert met een andere Azure-functie met het label Negotiate en zowel broadcast als Negotiate communiceren met computer apparaten." lightbox="media/how-to-integrate-azure-signalr/signalr-integration-topology.png":::
 
 ## <a name="download-the-sample-applications"></a>De voorbeeld toepassingen downloaden
 
 Down load eerst de vereiste voor beeld-apps. U hebt het volgende nodig:
-* [**Azure Digital apparaatdubbels end-to-end-voor beelden**](/samples/azure-samples/digital-twins-samples/digital-twins-samples/): dit voor beeld bevat een *AdtSampleApp* met twee Azure-functies voor het verplaatsen van gegevens over een Azure Digital apparaatdubbels-exemplaar (u vindt meer informatie in dit scenario in de [*zelf studie: verbinding maken met een end-to-end oplossing*](tutorial-end-to-end.md)). Het bevat ook een *DeviceSimulator* -voorbeeld toepassing voor het simuleren van een IOT-apparaat, waarbij elke seconde een nieuwe temperatuur waarde wordt gegenereerd. 
-    - Als u het voor beeld nog niet hebt gedownload als onderdeel van de zelf studie in [*vereisten*](#prerequisites), navigeert u naar de voorbeeld koppeling en selecteert u de knop *door de code bladeren* onder de titel. Hiermee gaat u naar de GitHub-opslag plaats voor de voor beelden, die u als een kunt downloaden *. ZIP* door de *code* knop te selecteren en de *zip te downloaden*.
+* [**Azure Digital apparaatdubbels end-to-end-voor beelden**](/samples/azure-samples/digital-twins-samples/digital-twins-samples/): dit voor beeld bevat een *AdtSampleApp* met twee Azure-functies voor het verplaatsen van gegevens van een Azure Digital apparaatdubbels-exemplaar (u vindt hier meer informatie over dit scenario [*: Verbind een end-to-end oplossing*](tutorial-end-to-end.md)). Het bevat ook een *DeviceSimulator* -voorbeeld toepassing voor het simuleren van een IOT-apparaat, waarbij elke seconde een nieuwe temperatuur waarde wordt gegenereerd.
+    - Als u het voor beeld nog niet hebt gedownload als onderdeel van de zelf studie in [*vereisten*](#prerequisites), navigeert u naar de voorbeeld [koppeling](/samples/azure-samples/digital-twins-samples/digital-twins-samples/) en selecteert u de knop *door de code bladeren* onder de titel. Hiermee gaat u naar de GitHub-opslag plaats voor de voor beelden, die u als een kunt downloaden *. ZIP* door de *code* knop te selecteren en de *zip te downloaden*.
 
-    :::image type="content" source="media/includes/download-repo-zip.png" alt-text="Weer gave van de opslag plaats van Digital-apparaatdubbels-samples op GitHub. De knop code is geselecteerd en er wordt een klein dialoog venster geproduceerd waarin de knop voor het downloaden van een ZIP is gemarkeerd." lightbox="media/includes/download-repo-zip.png":::
+        :::image type="content" source="media/includes/download-repo-zip.png" alt-text="Weer gave van de opslag plaats van Digital-apparaatdubbels-samples op GitHub. De knop code is geselecteerd en er wordt een klein dialoog venster geproduceerd waarin de knop voor het downloaden van een ZIP is gemarkeerd." lightbox="media/includes/download-repo-zip.png":::
 
     Hiermee wordt een kopie van de voor beeld-opslag plaats gedownload naar uw computer, zoals **digital-twins-samples-master.zip**. Pak de map uit.
 * Voor beeld van een web-app voor de [**Signa lering-integratie**](/samples/azure-samples/digitaltwins-signalr-webapp-sample/digital-twins-samples/): dit is een voor beeld van een reactie op een web-app die gebruikmaakt van Azure Digital apparaatdubbels-telemetriegegevens van een Azure signalerings service.
@@ -52,22 +57,13 @@ Down load eerst de vereiste voor beeld-apps. U hebt het volgende nodig:
 
 Sluit het browser venster geopend voor de Azure Portal, omdat u het opnieuw gebruikt in de volgende sectie.
 
-## <a name="configure-and-run-the-azure-functions-app"></a>De Azure Functions-app configureren en uitvoeren
+## <a name="publish-and-configure-the-azure-functions-app"></a>De Azure Functions-app publiceren en configureren
 
 In deze sectie gaat u twee Azure-functies instellen:
 * **onderhandelen** -een http-activerings functie. Er wordt gebruikgemaakt van de *SignalRConnectionInfo* -invoer binding voor het genereren en retour neren van geldige verbindings gegevens.
 * **broadcast** : een [Event grid](../event-grid/overview.md) -activerings functie. Het ontvangt een Azure Digital Apparaatdubbels-telemetrie-gegevens via het event grid en gebruikt de uitvoer binding van het *seingevings* exemplaar dat u in de vorige stap hebt gemaakt om het bericht naar alle verbonden client toepassingen te verzenden.
 
-Ga eerst naar de browser waar de Azure Portal is geopend en voer de volgende stappen uit om de **Connection String** te verkrijgen voor de seingevings instantie die u hebt ingesteld. U hebt deze nodig om de functies te configureren.
-1. Controleer of het exemplaar van de seingevings service dat u eerder hebt geïmplementeerd, is gemaakt. U kunt dit doen door te zoeken naar de naam in het zoekvak boven aan de portal. Selecteer het exemplaar om het te openen.
-
-1. Selecteer **sleutels** in het menu van de instantie om de verbindings reeksen voor het exemplaar van de seingevings service weer te geven.
-
-1. Selecteer het pictogram om de primaire connection string te kopiëren.
-
-    :::image type="content" source="media/how-to-integrate-azure-signalr/signalr-keys.png" alt-text="Scherm afbeelding van de Azure Portal die de pagina sleutels voor de seingevings instantie weergeeft. Het pictogram kopiëren naar klem bord naast de primaire VERBINDINGS reeks is gemarkeerd." lightbox="media/how-to-integrate-azure-signalr/signalr-keys.png":::
-
-Start vervolgens Visual Studio (of een andere code-editor van uw keuze) en open de code oplossing in de map *Digital-apparaatdubbels-samples-master > ADTSampleApp* . Voer vervolgens de volgende stappen uit om de functies te maken:
+Start Visual Studio (of een andere code-editor van uw keuze) en open de code oplossing in de map *Digital-apparaatdubbels-samples-master > ADTSampleApp* . Voer vervolgens de volgende stappen uit om de functies te maken:
 
 1. Maak in het project *SampleFunctionsApp* een nieuwe C#-klasse met de naam **SignalRFunctions.cs**.
 
@@ -75,25 +71,24 @@ Start vervolgens Visual Studio (of een andere code-editor van uw keuze) en open 
     
     :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/signalRFunction.cs":::
 
-1. Voer in het *console venster package manager* van Visual Studio of een opdracht venster op uw computer in de map *Digital-Twins-samples-master\AdtSampleApp\SampleFunctionsApp* de volgende opdracht uit om het `SignalRService` NuGet-pakket te installeren op het project:
+1. Navigeer in het *console venster package manager* van Visual Studio, of een opdracht venster op uw computer, naar de map *Digital-Twins-samples-master\AdtSampleApp\SampleFunctionsApp* en voer de volgende opdracht uit om het `SignalRService` NuGet-pakket te installeren op het project:
     ```cmd
     dotnet add package Microsoft.Azure.WebJobs.Extensions.SignalRService --version 1.2.0
     ```
 
     Hiermee worden eventuele afhankelijkheids problemen in de klasse opgelost.
 
-Publiceer vervolgens uw functie in azure, met behulp van de stappen die worden beschreven in het [gedeelte *de app publiceren*](tutorial-end-to-end.md#publish-the-app) van de zelf studie *een end-to-end oplossing verbinden* . U kunt het publiceren naar dezelfde app service/function-app die u hebt gebruikt in de end-to-end [-zelf studie](#prerequisites), of een nieuwe maken, maar u kunt ook dezelfde versie gebruiken om de duplicatie te minimaliseren. 
+1. Publiceer uw functie in azure met behulp van de stappen die worden beschreven in het [gedeelte *de app publiceren*](tutorial-end-to-end.md#publish-the-app) van de zelf studie *een end-to-end oplossing verbinden* . U kunt het publiceren naar dezelfde app service/function-app die u hebt gebruikt in de end-to-end [-zelf studie](#prerequisites), of een nieuwe maken, maar u kunt ook dezelfde versie gebruiken om de duplicatie te minimaliseren. 
 
-Voltooi vervolgens de app met de volgende stappen:
-1. De **http-eind punt-URL** van de *onderhandelings* functie verzamelen. Ga hiervoor naar de pagina [functie-apps](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2Fsites/kind/functionapp) van Azure Portal en selecteer de functie-app in de lijst. Selecteer in het menu app *functies* en kies de functie *onderhandelen* .
+Configureer vervolgens de functies om te communiceren met uw Azure signalerings instantie. U begint met het verzamelen van de **Connection String** van de signaale-instantie en deze vervolgens toe te voegen aan de instellingen van de app met functies.
 
-    :::image type="content" source="media/how-to-integrate-azure-signalr/functions-negotiate.png" alt-text="Azure Portal weer gave van de functie-app, waarbij ' functies ' in het menu is gemarkeerd. De lijst met functies wordt weer gegeven op de pagina en de functie Negotiate is ook gemarkeerd.":::
+1. Ga naar de [Azure Portal](https://portal.azure.com/) en zoek de naam van uw seingevings instantie in de zoek balk boven aan de portal. Selecteer het exemplaar om het te openen.
+1. Selecteer **sleutels** in het menu van de instantie om de verbindings reeksen voor het exemplaar van de seingevings service weer te geven.
+1. Selecteer het *Kopieer* pictogram om de primaire Connection String te kopiëren.
 
-    Klik op *URL ophalen* en kopieer de waarde naar **boven op _/API_ (Neem de laatste _/Negotiate_ niet op?)**. U gaat dit later doen.
+    :::image type="content" source="media/how-to-integrate-azure-signalr/signalr-keys.png" alt-text="Scherm afbeelding van de Azure Portal die de pagina sleutels voor de seingevings instantie weergeeft. Het pictogram kopiëren naar klem bord naast de primaire VERBINDINGS reeks is gemarkeerd." lightbox="media/how-to-integrate-azure-signalr/signalr-keys.png":::
 
-    :::image type="content" source="media/how-to-integrate-azure-signalr/get-function-url.png" alt-text="Azure Portal weer gave van de functie Negotiate. De knop functie-URL ophalen is gemarkeerd en het gedeelte van de URL vanaf het begin tot en met '/API '":::
-
-1. Voeg ten slotte uw Azure-seingevings **Connection String** van vóór de app-instellingen van de functie toe met behulp van de volgende Azure cli-opdracht. De opdracht kan worden uitgevoerd in [Azure Cloud shell](https://shell.azure.com)of lokaal als u de Azure cli [op uw computer hebt geïnstalleerd](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true):
+1. Voeg ten slotte uw Azure-seingevings **Connection String** toe aan de app-instellingen van de functie, met behulp van de volgende Azure cli-opdracht. Vervang ook de tijdelijke aanduidingen door de naam van uw resource groep en app service/functie-app uit de [vereiste zelf studie](how-to-integrate-azure-signalr.md#prerequisites). De opdracht kan worden uitgevoerd in [Azure Cloud shell](https://shell.azure.com)of lokaal als u de Azure cli [op uw computer hebt geïnstalleerd](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true):
  
     ```azurecli-interactive
     az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "AzureSignalRConnectionString=<your-Azure-SignalR-ConnectionString>"
@@ -105,9 +100,9 @@ Voltooi vervolgens de app met de volgende stappen:
 
 #### <a name="connect-the-function-to-event-grid"></a>De functie verbinden met Event Grid
 
-Abonneer u vervolgens op de functie *broadcast* Azure in het **gebeurtenis grid-onderwerp** dat u hebt gemaakt tijdens de [*zelf studie: verbinding maken met een end-to-end oplossing*](tutorial-end-to-end.md) vereisten. Hierdoor kunnen telemetrie-gegevens uit de *thermostat67* stromen, naar gelang het event grid-onderwerp, worden verzonden naar de functie. deze kan aan alle clients worden door gegeven.
+Abonneer u vervolgens op de functie *broadcast* Azure in het **onderwerp Event grid** dat u tijdens de [vereiste zelf studie](how-to-integrate-azure-signalr.md#prerequisites)hebt gemaakt. Dit zorgt ervoor dat telemetriegegevens van de thermostat67 tussen het gebeurtenis grid-onderwerp en de functie kunnen stromen. Hier kan de functie de gegevens naar alle clients verzenden.
 
-Als u dit wilt doen, maakt u een **Event grid-abonnement** vanuit uw event grid-onderwerp naar uw *broadcast* Azure-functie als een eind punt.
+Hiervoor maakt u een **gebeurtenis abonnement** vanuit uw event grid-onderwerp naar uw *broadcast* Azure-functie als een eind punt.
 
 Ga in de [Azure-portal](https://portal.azure.com/)naar uw gebeurtenisrasteronderwerp door de naam ervan te zoeken in de bovenste zoekbalk. Selecteer *+ Gebeurtenisabonnement*.
 
@@ -124,20 +119,33 @@ Vul de velden op de pagina *Gebeurtenisabonnement maken* als volgt in (velden di
 
 Klik op **Maken** op de pagina *Gebeurtenisabonnement maken*.
 
+Op dit moment ziet u twee gebeurtenis abonnementen op de pagina met *Event grid onderwerp* .
+
+:::image type="content" source="media/how-to-integrate-azure-signalr/view-event-subscriptions.png" alt-text="Azure Portal weer gave van twee gebeurtenis abonnementen op de pagina Event grid-onderwerp." lightbox="media/how-to-integrate-azure-signalr/view-event-subscriptions.png":::
+
 ## <a name="configure-and-run-the-web-app"></a>De web-app configureren en uitvoeren
 
 In deze sectie ziet u het resultaat in actie. Configureer eerst de voor **beeld-client-web-app** om verbinding te maken met de Azure seingevings stroom die u hebt ingesteld. Vervolgens start u de voor beeld- **app voor gesimuleerde apparaten** die telemetriegegevens verzendt via uw Azure Digital apparaatdubbels-exemplaar. Daarna bekijkt u de voor beeld-web-app om de gesimuleerde apparaatgegevens te zien die de voor beeld-web-app in realtime bijwerken.
 
 ### <a name="configure-the-sample-client-web-app"></a>De voor beeld-client-web-app configureren
 
-Stel het voor **beeld van een signalerings integratie-web-app** in met de volgende stappen:
+Vervolgens configureert u de voor beeld-Web-App van de client. Begin met het verzamelen van de **http-eind punt-URL** van de functie *Negotiate* en gebruik deze om de app-code op uw computer te configureren.
+
+1. Ga naar de pagina [functie-apps](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2Fsites/kind/functionapp) van Azure Portal en selecteer de functie-app in de lijst. Selecteer in het menu app *functies* en kies de functie *onderhandelen* .
+
+    :::image type="content" source="media/how-to-integrate-azure-signalr/functions-negotiate.png" alt-text="Azure Portal weer gave van de functie-app, waarbij ' functies ' in het menu is gemarkeerd. De lijst met functies wordt op de pagina weer gegeven en de functie Negotiate is ook gemarkeerd.":::
+
+1. Klik op *URL ophalen* en kopieer de waarde naar **boven op _/API_ (Neem de laatste _/Negotiate_ niet op?)**. U gebruikt deze in de volgende stap.
+
+    :::image type="content" source="media/how-to-integrate-azure-signalr/get-function-url.png" alt-text="Azure Portal weer gave van de functie Negotiate. De knop functie-URL ophalen is gemarkeerd en het gedeelte van de URL vanaf het begin tot en met '/API '":::
+
 1. Open met behulp van Visual Studio of een wille keurige code-editor de map ungezipted _**Azure_Digital_Twins_SignalR_integration_web_app_sample**_ die u hebt gedownload in het gedeelte [*de voorbeeld toepassingen downloaden*](#download-the-sample-applications) .
 
-1. Open het bestand *src/App.js* en vervang de URL in `HubConnectionBuilder` door de http-eind punt-URL van de **onderhandelings** functie die u eerder hebt opgeslagen:
+1. Open het bestand *src/App.js* en vervang de functie-URL in `HubConnectionBuilder` door de http-eind punt-URL van de **onderhandelings** functie die u in de vorige stap hebt opgeslagen:
 
     ```javascript
         const hubConnection = new HubConnectionBuilder()
-            .withUrl('<URL>')
+            .withUrl('<Function URL>')
             .build();
     ```
 1. Navigeer in de *ontwikkelaars opdracht prompt* van Visual Studio of een opdracht venster op de computer naar de map *Azure_Digital_Twins_SignalR_integration_web_app_sample \src* . Voer de volgende opdracht uit om de afhankelijke knooppunt pakketten te installeren:
@@ -148,6 +156,7 @@ Stel het voor **beeld van een signalerings integratie-web-app** in met de volgen
 
 Stel vervolgens in het Azure Portal machtigingen in uw functie-app in:
 1. Selecteer op de pagina [functie-apps](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2Fsites/kind/functionapp) van de Azure Portal het exemplaar van de functie-app.
+
 1. Schuif omlaag in het menu exemplaar en selecteer *CORS*. Voeg op de CORS-pagina `http://localhost:3000` als een toegestane oorsprong toe door deze in het lege vak in te voeren. Schakel het selectie vakje *Access-Control-Allow-credentials* in en klik op *Opslaan*.
 
     :::image type="content" source="media/how-to-integrate-azure-signalr/cors-setting-azure-function.png" alt-text="CORS-instelling in azure function":::

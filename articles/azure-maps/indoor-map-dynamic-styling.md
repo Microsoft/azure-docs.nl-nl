@@ -8,17 +8,17 @@ ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 266dc5d62f6224495075546528ad71d806d415ac
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: a23c492d4a81703c0dc6612928a56b5b31d52cae
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96903442"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101726309"
 ---
 # <a name="implement-dynamic-styling-for-creator-preview-indoor-maps"></a>Dynamische stijlen voor het maken van de maker (preview-versie) implementeren
 
 > [!IMPORTANT]
-> Azure Maps Creator-Services zijn momenteel beschikbaar als open bare preview.
+> Azure Maps Creator-services zijn momenteel beschikbaar als openbare preview.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Azure Maps- [functie status service](/rest/api/maps/featurestate) maakt het mogelijk om stijlen toe te passen op basis van de dynamische eigenschappen van de functies van de gegevens van de binnenste kaart.  U kunt bijvoorbeeld faciliteit Vergader zalen met een specifieke kleur weer geven om de status van bezetting weer te geven. In dit artikel laten we u zien hoe u met behulp van de [functie status service](/rest/api/maps/featurestate) en de [WEBMODULE](how-to-use-indoor-module.md)over een dynamisch overzicht kunt weer geven van de toewijzings functies.
@@ -27,7 +27,7 @@ Azure Maps- [functie status service](/rest/api/maps/featurestate) maakt het moge
 
 1. [Een Azure Maps-account maken](quick-demo-map-app.md#create-an-azure-maps-account)
 2. [Een primaire sleutel voor een abonnement verkrijgen](quick-demo-map-app.md#get-the-primary-key-for-your-account), ook wel bekend als de primaire sleutel of de abonnementssleutel.
-3. [Een bron voor het maken van een maker (preview-resource)](how-to-manage-creator.md)
+3. [Een resource voor Creator (preview) maken](how-to-manage-creator.md)
 4. Down load het [voorbeeld teken pakket](https://github.com/Azure-Samples/am-creator-indoor-data-examples).
 5. [Maak een kaart voor binnenste](tutorial-creator-indoor-maps.md) om een en te verkrijgen `tilesetId` `statesetId` .
 6. Bouw een webtoepassing met behulp van de stappen in [de module voor de binnenste kaart gebruiken](how-to-use-indoor-module.md).
@@ -54,11 +54,11 @@ map.events.add("click", function(e){
 
     var features = map.layers.getRenderedShapes(e.position, "indoor");
 
-    var result = features.reduce(function (ids, feature) {
-        if (feature.layer.id == "indoor_unit_office") {
+    features.forEach(function (feature) {
+        if (feature.layer.id == 'indoor_unit_office') {
             console.log(feature);
         }
-    }, []);
+    });
 });
 ```
 
@@ -78,7 +78,7 @@ In de volgende sectie wordt de bezettings *status* van Office ingesteld `UNIT26`
     https://atlas.microsoft.com/featureState/state?api-version=1.0&statesetID={statesetId}&featureID=UNIT26&subscription-key={Azure-Maps-Primary-Subscription-key}
     ```
 
-3. Stel in de **headers** van de **POST**-aanvraag `Content-Type` in op `application/json`. In de **hoofd tekst** van de **post** -aanvraag schrijft u de volgende JSON met de functie-updates. De update wordt alleen opgeslagen als de tijds tempel na het tijds tempel dat is gebruikt in de vorige functie status update aanvragen voor dezelfde functie is `ID` . Geef de ' bezette ' door `keyName` om de waarde bij te werken.
+3. Stel in de **headers** van de **POST**-aanvraag `Content-Type` in op `application/json`. In de **hoofd tekst** van de **post** -aanvraag schrijft u de volgende onbewerkte JSON met de functie-updates. De update wordt alleen opgeslagen als de tijds tempel na het tijds tempel dat is gebruikt in de vorige functie status update aanvragen voor dezelfde functie is `ID` . Geef de ' bezette ' door `keyName` om de waarde bij te werken.
 
     ```json
     {
@@ -108,9 +108,11 @@ In de volgende sectie wordt de bezettings *status* van Office ingesteld `UNIT26`
 
 ### <a name="visualize-dynamic-styles-on-a-map"></a>Dynamische stijlen op een kaart visualiseren
 
-De webtoepassing die u eerder hebt geopend in een browser, moet nu de bijgewerkte status van de kaart functies weer geven. `UNIT27`(151) moet groen worden weer gegeven en `UNIT26` (157) moet rood worden weer gegeven.
+De webtoepassing die u eerder hebt geopend in een browser, moet nu de bijgewerkte status van de kaart functies weer geven. `UNIT27`(142) moet groen worden weer gegeven en `UNIT26` (143) moet rood worden weer gegeven.
 
 ![Beschik bare ruimte in groen en bezette kamer rood](./media/indoor-map-dynamic-styling/room-state.png)
+
+[Live demo bekijken](https://azuremapscodesamples.azurewebsites.net/?sample=Creator%20indoor%20maps)
 
 ## <a name="next-steps"></a>Volgende stappen
 

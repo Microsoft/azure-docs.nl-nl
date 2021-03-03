@@ -7,12 +7,12 @@ ms.reviewer: maghan
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/09/2019
-ms.openlocfilehash: 51cf396fb6f1fcc86a0187e9f3be6b81487b86c2
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 615fb1b9f5a9d87a8d69778930b7359823e1ec39
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100383397"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738018"
 ---
 # <a name="azure-function-activity-in-azure-data-factory"></a>Azure functions-activiteit in Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -42,7 +42,7 @@ Het retour type van de Azure-functie moet geldig zijn `JObject` . (Houd er wel b
 | gekoppelde service | De gekoppelde Azure-functie service voor de bijbehorende Azure-functie-app  | Verwijzing naar gekoppelde service | ja |
 | functie naam  | De naam van de functie in de Azure-functie-app die deze activiteit aanroept | Tekenreeks | ja |
 | method  | REST API methode voor de functie aanroep | Ondersteunde typen teken reeksen: ' ophalen ', ' POST ', ' PUT '   | ja |
-| koptekst  | Kopteksten die naar de aanvraag worden verzonden. Als u bijvoorbeeld de taal en het type van een aanvraag wilt instellen: ' headers ': {' Accept-Language ': ' nl-nl ', ' content-type ': ' application/json '} | Teken reeks (of expressie met het resultType van de teken reeks) | No |
+| koptekst  | Kopteksten die naar de aanvraag worden verzonden. Als u bijvoorbeeld de taal en het type van een aanvraag wilt instellen: ' headers ': {' Accept-Language ': ' nl-nl ', ' content-type ': ' application/json '} | Teken reeks (of expressie met het resultType van de teken reeks) | Nee |
 | body  | hoofd tekst die samen met de aanvraag wordt verzonden naar de functie-API-methode  | Teken reeks (of expressie met het resultType van de teken reeks) of het object.   | Vereist voor PUT/POST-methoden |
 |   |   |   | |
 

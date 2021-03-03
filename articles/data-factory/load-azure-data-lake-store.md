@@ -6,17 +6,17 @@ author: linda33wj
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 01/17/2018
-ms.openlocfilehash: 2d307a279bee56440f7354ad2c92664fd2af86b9
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 02/18/2021
+ms.openlocfilehash: 1e75fc65b4afea9dc895580e4711e0050cb7c64f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100370764"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101716411"
 ---
 # <a name="load-data-into-azure-data-lake-storage-gen1-by-using-azure-data-factory"></a>Gegevens in Azure Data Lake Storage Gen1 laden met behulp van Azure Data Factory
 
-[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 [Azure data Lake Storage gen1](../data-lake-store/data-lake-store-overview.md) (voorheen bekend als Azure data Lake Store) is een bedrijfsbrede opslag ruimte voor Big Data analytische werk belastingen. Met Data Lake Storage Gen1 kunt u gegevens van elke grootte, type en opname snelheid vastleggen. De gegevens worden op één plek vastgelegd voor operationele en experimentele analyses.
 

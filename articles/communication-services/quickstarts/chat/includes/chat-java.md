@@ -10,12 +10,12 @@ ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 72e00306563e8cccdd476cf0ae5bfb4ddaa63ecf
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: b402dec76f88bfdb0bc4758f94cc6e8e279d8040
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101661644"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750139"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -66,7 +66,7 @@ Voor verificatie moet uw client het pakket `azure-communication-common` verwijze
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-communication-common</artifactId>
-    <version>1.0.0</version> 
+    <version>1.0.0-beta.4</version> 
 </dependency>
 ```
 
@@ -141,11 +141,11 @@ Het antwoord `chatThreadClient` wordt gebruikt om bewerkingen uit te voeren op d
 List<ChatParticipant> participants = new ArrayList<ChatParticipant>();
 
 ChatParticipant firstThreadParticipant = new ChatParticipant()
-    .setUser(firstUser)
+    .setCommunicationIdentifier(firstUser)
     .setDisplayName("Participant Display Name 1");
     
 ChatParticipant secondThreadParticipant = new ChatParticipant()
-    .setUser(secondUser)
+    .setCommunicationIdentifier(secondUser)
     .setDisplayName("Participant Display Name 2");
 
 participants.add(firstThreadParticipant);
@@ -207,13 +207,15 @@ chatThreadClient.listMessages().iterableByPage().forEach(resp -> {
 
 `listMessages` retourneert verschillende typen berichten die kunnen worden geïdentificeerd door `chatMessage.getType()`. Deze typen zijn:
 
-- `Text`: Het normale chat bericht dat door een thread deelnemer wordt verzonden.
+- `text`: Het normale chat bericht dat door een thread deelnemer wordt verzonden.
 
-- `ThreadActivity/TopicUpdate`: Systeembericht dat aangeeft dat het onderwerp is bijgewerkt.
+- `html`: HTML-chat bericht verzonden door een thread deelnemer.
 
-- `ThreadActivity/AddMember`: Systeembericht dat aangeeft dat een of meer leden zijn toegevoegd aan de chat-thread.
+- `topicUpdated`: Systeembericht dat aangeeft dat het onderwerp is bijgewerkt.
 
-- `ThreadActivity/DeleteMember`: Een systeembericht dat aangeeft dat een lid is verwijderd uit de chat-thread.
+- `participantAdded`: Systeem bericht dat aangeeft dat een of meer deel nemers zijn toegevoegd aan de chat thread.
+
+- `participantRemoved`: Systeem bericht dat aangeeft dat een deel nemer is verwijderd uit de chat thread.
 
 Zie [Berichttypen](../../../concepts/chat/concepts.md#message-types)voor meer informatie.
 
@@ -224,7 +226,7 @@ Zodra u een chat-thread hebt gemaakt, kunt u gebruikers toevoegen en verwijderen
 Gebruik `addParticipants` methode om deel nemers toe te voegen aan de thread die wordt geïdentificeerd door thread.
 
 - Gebruik `listParticipants` om de deel nemers weer te geven die moeten worden toegevoegd aan de chat-thread.
-- `user`, vereist, is het CommunicationUserIdentifier dat u hebt gemaakt door de CommunicationIdentityClient in de Snelstartgids voor [gebruikers toegangs tokens](../../access-tokens.md) .
+- `communicationIdentifier`, vereist, is het CommunicationIdentifier dat u hebt gemaakt door de CommunicationIdentityClient in de Snelstartgids voor [gebruikers toegangs tokens](../../access-tokens.md) .
 - `display_name`, optioneel, is de weergave naam voor de deel nemer aan de thread.
 - `share_history_time`, optioneel, is de tijd waarop de chat geschiedenis wordt gedeeld met de deel nemer. Als u de geschiedenis wilt delen sinds het begin van de chat-thread, stelt u deze eigenschap in op een willekeurige datum die gelijk is aan of kleiner is dan de aanmaaktijd van de thread. Als u geen geschiedenis wilt delen vóór wanneer de deel nemer is toegevoegd, stelt u deze in op de huidige datum. Als u gedeeltelijke geschiedenis wilt delen, stelt u deze in op de vereiste datum.
 
@@ -232,11 +234,11 @@ Gebruik `addParticipants` methode om deel nemers toe te voegen aan de thread die
 List<ChatParticipant> participants = new ArrayList<ChatParticipant>();
 
 ChatParticipant firstThreadParticipant = new ChatParticipant()
-    .setUser(user1)
+    .setCommunicationIdentifier(identity1)
     .setDisplayName("Display Name 1");
 
 ChatParticipant secondThreadParticipant = new ChatParticipant()
-    .setUser(user2)
+    .setCommunicationIdentifier(identity2)
     .setDisplayName("Display Name 2");
 
 participants.add(firstThreadParticipant);
@@ -247,14 +249,14 @@ AddChatParticipantsOptions addChatParticipantsOptions = new AddChatParticipantsO
 chatThreadClient.addParticipants(addChatParticipantsOptions);
 ```
 
-## <a name="remove-user-from-a-chat-thread"></a>Gebruiker verwijderen uit een chat-thread
+## <a name="remove-participant-from-a-chat-thread"></a>Deel nemer verwijderen uit een chat-thread
 
-Net als bij het toevoegen van een gebruiker aan een thread, kunt u gebruikers uit een chat-thread verwijderen. Hiervoor moet u de gebruikers identiteiten bijhouden van de deel nemers die u hebt toegevoegd.
+Net als bij het toevoegen van een deel nemer aan een thread, kunt u deel nemers uit een chat-thread verwijderen. Hiervoor moet u de identiteiten bijhouden van de deel nemers die u hebt toegevoegd.
 
-Gebruik `removeParticipant` , waarbij `user` de CommunicationUserIdentifier die u hebt gemaakt.
+Gebruik `removeParticipant` , waarbij `identifier` de CommunicationIdentifier die u hebt gemaakt.
 
 ```Java
-chatThreadClient.removeParticipant(user);
+chatThreadClient.removeParticipant(identity);
 ```
 
 ## <a name="run-the-code"></a>De code uitvoeren

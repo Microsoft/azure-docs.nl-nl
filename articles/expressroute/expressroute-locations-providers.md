@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 02/10/2021
 ms.author: duau
-ms.openlocfilehash: 201998c1fc6a198383096b2304ce3ba6dbca510f
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 53c4f7868b808b5785c1d6d5ac100bb5a6186faa
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100377887"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101739021"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Partners en peeringlocaties voor ExpressRoute
 
@@ -80,15 +80,15 @@ De volgende tabel geeft de connectiviteitslocaties en de serviceproviders voor e
 | **Amsterdam** | [Equinix AM5](https://www.equinix.com/locations/europe-colocation/netherlands-colocation/amsterdam-data-centers/am5/) | 1 | Europa -west | 10G, 100G | Aryaka Networks, AT&T netbond, British Telecom, Colt, Equinix, euNetworks, GÉANT, intercloud, Interxion, KPN, IX REACH, Level 3 Communications, Mega Port, NTT Communications, oranje, Tata Communications, Telefonica, Telenor, Telia Carrier, Verizon, Zayo |
 | **Amsterdam2** | [Interxion AMS8](https://www.interxion.com/Locations/amsterdam/schiphol/) | 1 | Europa -west | 10G, 100G | British Telecom, CenturyLink Cloud Connect, Colt, DE CIX, Equinix, euNetworks, GÉANT, Interxion, NOS, NTT Global Data Centers EMEA, oranje, Vodafone |
 | **Atlanta** | [Equinix AT2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/atlanta-data-centers/at2/) | 1 | n.v.t. | 10G, 100G | Equinix, Megaport |
-| **Auckland** | [Vocus groep NZ Albany](https://www.vocus.co.nz/business/cloud-data-centres) | 2 | n.v.t. | 10G | Devoli, Kordia, Mega Port, Spark NZ, Vocus groep NZ |
+| **Auckland** | [Vocus groep NZ Albany](https://www.vocus.co.nz/business/cloud-data-centres) | 2 | n.v.t. | 10G | Devoli, Kordia, Mega Port, REANNZ, Spark NZ, Vocus groep NZ |
 | **Bangkok** | [AIS](https://business.ais.co.th/solution/en/azure-expressroute.html) | 2 | n.v.t. | 10G | AIS, UIH |
 | **Berlijn** | [NTT GDC](https://www.e-shelter.de/en/location/berlin-1-data-center) | 1 | Duitsland - noord | 10G | Equinix, NTT Global Data Centers EMEA|
-| **Bogotá** | [Equinix BG1](https://www.equinix.com/locations/americas-colocation/colombia-colocation/bogota-data-centers/bg1/) | 4 | n.v.t. | 10G | |
+| **Bogotá** | [Equinix BG1](https://www.equinix.com/locations/americas-colocation/colombia-colocation/bogota-data-centers/bg1/) | 4 | n.v.t. | 10G | Equinix |
 | **Busan** | [LG CNS](https://www.lgcns.com/En/Service/DataCenter) | 2 | Korea - zuid | n.v.t. | LG CNS |
 | **Canberra** | [CDC](https://cdcdatacentres.com.au/content/about-cdc) | 1 | Australië - centraal | 10G, 100G | CDC |
 | **Canberra2** | [CDC](https://cdcdatacentres.com.au/content/about-cdc) | 1 | Australië - centraal 2| 10G, 100G | CDC, Equinix |
 | **Kaapstad** | [Teraco CT1](https://www.teraco.co.za/data-centre-locations/cape-town/) | 3 | Zuid-Afrika - west | 10G | BCX, Internet Solutions-Cloud Connect, Liquid Telecom, Teraco |
-| **Chennai** | Tata Communications | 2 | India - zuid | 10G | Global CloudXchange (GCX), SIFY, Tata Communications |
+| **Chennai** | Tata Communications | 2 | India - zuid | 10G | Global CloudXchange (GCX), SIFY, Tata Communications, VodafoneIdea |
 | **Chennai2** | Airtel | 2 | India - zuid | 10G | Airtel |
 | **Chicago** | [Equinix CH1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/chicago-data-centers/ch1/) | 1 | VS - noord-centraal | 10G, 100G | Aryaka Networks, AT&T netbond, British Telecom, CenturyLink Cloud Connect, Cologix, Colt, Comcast, CoreSite, Equinix, intercloud, Internet2, Level 3 Communications, Mega Port, PacketFabric, PCCW Global Limited, Sprint, Telia Carrier, Verizon, Zayo |
 | **Kopen** | [Interxion CPH1](https://www.interxion.com/Locations/copenhagen/) | 1 | n.v.t. | 10G | Interxion |
@@ -98,7 +98,7 @@ De volgende tabel geeft de connectiviteitslocaties en de serviceproviders voor e
 | **Dubai2** | [du datamena](http://datamena.com/solutions/data-centre) | 3 | VAE - noord | n.v.t. | DE CIX, du datamena, Equinix, Mega Port, oranje, Orixcom |
 | **Dublin** | [Equinix DB3](https://www.equinix.com/locations/europe-colocation/ireland-colocation/dublin-data-centers/db3/) | 1 | Europa - noord | 10G, 100G | CenturyLink Cloud Connect, Colt, EIR, Equinix, GEANT, euNetworks, Interxion, Mega Port |
 | **Frankfurt** | [Interxion FRA11](https://www.interxion.com/Locations/frankfurt/) | 1 | Duitsland - west-centraal | 10G, 100G | BIJ&T netobligatie, CenturyLink Cloud Connect, Colt, DE CIX, Equinix, euNetworks, GEANT, intercloud, Interxion, Mega Port, oranje, Telia-Carrier, T-Systems |
-| **Frankfurt2** | [Equinix FR7](https://www.equinix.com/locations/europe-colocation/germany-colocation/frankfurt-data-centers/fr7/) | 1 | Duitsland - west-centraal | 10G, 100G | |
+| **Frankfurt2** | [Equinix FR7](https://www.equinix.com/locations/europe-colocation/germany-colocation/frankfurt-data-centers/fr7/) | 1 | Duitsland - west-centraal | 10G, 100G | Equinix |
 | **Voortvloei** | [Equinix GV2](https://www.equinix.com/locations/europe-colocation/switzerland-colocation/geneva-data-centers/gv2/) | 1 | Zwitserland - west | 10G, 100G | Equinix, Mega Port, Swisscom |
 | **Hongkong** | [Equinix HK1](https://www.equinix.com/locations/asia-colocation/hong-kong-colocation/hong-kong-data-center/hk1/) | 2 | Azië - oost | 10G | Aryaka Networks, British Telecom, CenturyLink Cloud Connect, Chief Telecom, China Telecom Global, China Unicom, Equinix, intercloud, Mega Port, NTT Communications, oranje, PCCW Global Limited, Tata Communications, Telia Carrier, Verizon |
 | **Hongkong Kong2** | [MEGA-i](https://www.iadvantage.net/index.php/locations/mega-i) | 2 | Azië - oost | 10G | China Mobile International, China Telecom Global, Mega Port, PCCW Global Limited, SingTel |
@@ -110,6 +110,7 @@ De volgende tabel geeft de connectiviteitslocaties en de serviceproviders voor e
 | **London2** | [Twee-House-Noord](https://www.telehouse.net/data-centres/emea/uk-data-centres/london-data-centres/north-two) | 1 | Verenigd Koninkrijk Zuid | 10G, 100G | British Telecom, CenturyLink Cloud Connect, Colt, GTT, IX REACH, Equinix, Mega Port, SES, Sohonet, telehouse-KDDI |
 | **Los Angeles** | [CoreSite LA1](https://www.coresite.com/data-centers/locations/los-angeles/one-wilshire) | 1 | n.v.t. | 10G, 100G | CoreSite, Equinix, Megaport, Neutrona Networks, NTT, Zayo |
 | **Los-Angeles2** | [Equinix LA1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/los-angeles-data-centers/la1/) | 1 | n.v.t. | 10G, 100G | Equinix |
+| **Madrid** | [Interxion MAD1](https://www.interxion.com/es/donde-estamos/europa/madrid) | 1 | Europa -west | 10G, 100G | |
 | **Marseille** |[Interxion MRS1](https://www.interxion.com/Locations/marseille/) | 1 | Frankrijk - zuid | n.v.t. | DE CIX, GEANT, Interxion, Jaguar Network, Ooredoo Cloud Connect |
 | **Melbourne** | [NextDC M1](https://www.nextdc.com/data-centres/m1-melbourne-data-centre) | 2 | Australië - zuidoost | 10G, 100G | AARNet, Devoli, Equinix, Mega Port, NEXTDC, Optus, Telstra Corporation, TPG Telecom |
 | **Miami** | [Equinix MI1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/miami-data-centers/mi1/) | 1 | n.v.t. | 10G, 100G | Claro, C3ntro, Equinix, Mega Port, Neutrona netwerken |
@@ -123,14 +124,15 @@ De volgende tabel geeft de connectiviteitslocaties en de serviceproviders voor e
 | **Newport (Wales)** | [Next Generation Data](https://www.nextgenerationdata.co.uk) | 1 | Verenigd Koninkrijk West | n.v.t. | British Telecom, Colt, jisc, Level 3 Communications, gegevens van de volgende generatie |
 | **Osaka** | [Equinix OS1](https://www.equinix.com/locations/asia-colocation/japan-colocation/osaka-data-centers/os1/) | 2 | Japan - west | 10G, 100G | OP TOKYO, Colt, Equinix, Internet Initiative Japan Inc.-IIJ, Mega Port, NTT Communications, NTT SmartConnect, Softbank, Tokai Communications |
 | **Oslo** | [DigiPlex Ulven](https://www.digiplex.com/locations/oslo-datacentre) | 1 | Noorwegen - oost | 10G, 100G | GlobalConnect, Mega Port, Telenor, Telia-Carrier |
-| **Parijs** | [Interxion PAR5](https://www.interxion.com/Locations/paris/) | 1 | Frankrijk - centraal | 10G, 100G | British Telecom, CenturyLink Cloud Connect, Colt, Equinix, intercloud, Interxion, Jaguar Network, oranje, Telia Carrier, Zayo |
+| **Parijs** | [Interxion PAR5](https://www.interxion.com/Locations/paris/) | 1 | Frankrijk - centraal | 10G, 100G | British Telecom, CenturyLink Cloud Connect, Colt, Equinix, intercloud, Interxion, Jaguar Network, Mega Port, oranje, Telia Carrier, Zayo |
 | **Perth** | [NextDC P1](https://www.nextdc.com/data-centres/p1-perth-data-centre) | 2 | n.v.t. | 10G | Mega Port, NextDC |
 | **Phoenix** | [EdgeConneX PHX01](https://www.edgeconnex.com/locations/north-america/phoenix-az/) | 1 | n.v.t. | 10G, 100G | |
-| **Quebec** | [Vantage](https://vantage-dc.com/data_centers/quebec-city-data-center-campus/) | 1 | Canada - oost | n.v.t. | Bell Canada, Mega Port, Telus |
+| **Quebec** | [Vantage](https://vantage-dc.com/data_centers/quebec-city-data-center-campus/) | 1 | Canada - oost | 10G, 100G | Bell Canada, Mega Port, Telus |
 | **Queretaro (Mexico)** | [KIO-netwerken QR01](https://www.kionetworks.com/es-mx/) | 4 | n.v.t. | 10G | Transtelco|
-| **Quincy** | [Sabey Data Center-een maken](https://sabeydatacenters.com/data-center-locations/central-washington-data-centers/quincy-data-center) | 1 | VS - west 2 | 10G, 100G | | 
+| **Quincy** | [Sabey Data Center-een maken](https://sabeydatacenters.com/data-center-locations/central-washington-data-centers/quincy-data-center) | 1 | VS - west 2 | 10G, 100G | |
+| **Rio de Janeiro, Brazilië** | [Equinix-RJ2](https://www.equinix.com/locations/americas-colocation/brazil-colocation/rio-de-janeiro-data-centers/rj2/) | 3 | Brazilië-Zuidoost | 10G | Equinix |
 | **San Antonio** | [CyrusOne SA1](https://cyrusone.com/locations/texas/san-antonio-texas/) | 1 | VS - zuid-centraal | 10G, 100G | CenturyLink Cloud Connect, Megaport |
-| **Sao Paulo** | [Equinix SP2](https://www.equinix.com/locations/americas-colocation/brazil-colocation/sao-paulo-data-centers/sp2/) | 3 | Brazilië - zuid | n.v.t. | Aryaka Networks, Ascenty Data Centers, British Telecom, Equinix, Level 3 Communications, Neutrona Networks, Orange, Tata Communications, Telefonica, UOLDIVEO |
+| **Sao Paulo** | [Equinix SP2](https://www.equinix.com/locations/americas-colocation/brazil-colocation/sao-paulo-data-centers/sp2/) | 3 | Brazilië - zuid | 10G, 100G | Aryaka Networks, Ascenty Data Centers, British Telecom, Equinix, Level 3 Communications, Neutrona Networks, Orange, Tata Communications, Telefonica, UOLDIVEO |
 | **Seattle** | [Equinix SE2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/seattle-data-centers/se2/) | 1 | VS - west 2 | 10G, 100G | Aryaka Networks, Equinix, Level 3 Communications, Mega Port, Telus, Zayo |
 | **Seoul** | [KINX Gasan IDC](https://www.kinx.net/?lang=en) | 2 | Korea - centraal | 10G, 100G | KINX, KT, LG CNS, Equinix, Sejong Telecom |
 | **Silicon Valley** | [Equinix SV1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/silicon-valley-data-centers/sv1/) | 1 | VS - west | 10G, 100G | Aryaka Networks, bij&T netbond, British Telecom, CenturyLink Cloud Connect, Colt, Comcast, CoreSite, Equinix, intercloud, Internet2, IX REACH, pakket, PacketFabric, Level 3 Communications, Mega Port, oranje, Sprint, Tata Communications, Telia Carrier, Verizon, Zayo |
@@ -145,10 +147,11 @@ De volgende tabel geeft de connectiviteitslocaties en de serviceproviders voor e
 | **Tokio** | [Equinix TY4](https://www.equinix.com/locations/asia-colocation/japan-colocation/tokyo-data-centers/ty4/) | 2 | Japan - oost | 10G, 100G | Aryaka Networks, AT&T netbond, BBIX, British Telecom, CenturyLink Cloud Connect, Colt, Equinix, Internet Initiative Japan Inc.-IIJ, Mega Port, NTT Communications, NTT Oost, oranje, Softbank, Verizon |
 | **Tokyo2** | [OP TOKYO](https://www.attokyo.com/) | 2 | Japan - oost | 10G, 100G | OP TOKYO, Mega Port, Tokai Communications |
 | **Toronto** | [Cologix TOR1](https://www.cologix.com/data-centers/toronto/tor1/) | 1 | Canada - midden | 10G, 100G | BIJ&T netbond, Bell Canada, CenturyLink Cloud Connect, Cologix, Equinix, IX Mega Port, Telus, Verizon, Zayo |
+| **Toronto2** | [Cologix TOR2](https://www.cologix.com/data-centers/toronto/tor2/) | 1 | Canada - midden | 10G, 100G | |
 | **Vancouver** | [Cologix VAN1](https://www.cologix.com/data-centers/vancouver/van1/) | 1 | n.v.t. | 10G | Cologix, Mega Port, Telus |
 | **Washington DC** | [Equinix DC2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/washington-dc-data-centers/dc2/) | 1 | VS-Oost, VS-Oost 2 | 10G, 100G | Aryaka Networks, AT&T netbond, British Telecom, CenturyLink Cloud Connect, Cologix, Colt, Comcast, CoreSite, Equinix, Internet2, intercloud, ijzer Mountain, IX REACH, Level 3 Communications, Mega Port, Neutrona Networks, NTT Communications, oranje, PacketFabric, SES, Sprint, Tata Communications, Telia-Carrier, Verizon, Zayo |
 | **Washington DC2** | [CoreSite Reston](https://www.coresite.com/data-center-locations/northern-virginia-washington-dc) | 1 | VS-Oost, VS-Oost 2 | 10G, 100G | CenturyLink Cloud Connect, CoreSite, INTELSAT, Mega Port, Viasat, Zayo | 
-| **Zurich** | [Interxion ZUR2](https://www.interxion.com/Locations/zurich/) | 1 | Zwitserland - noord | 10G, 100G | Eqinix, intercloud, Interxion, Mega Port, Swisscom |
+| **Zurich** | [Interxion ZUR2](https://www.interxion.com/Locations/zurich/) | 1 | Zwitserland - noord | 10G, 100G | Equinix, intercloud, Interxion, Mega Port, Swisscom |
 
  **+** geeft binnenkort een volgende melding
 

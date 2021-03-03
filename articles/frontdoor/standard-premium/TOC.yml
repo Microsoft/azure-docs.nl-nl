@@ -49,14 +49,16 @@
       href: how-to-configure-https-custom-domain.md
     - name: Route koppeling
       href: how-to-configure-route.md
+    - name: Een regelset configureren
+      href: how-to-configure-rule-set.md
     - name: Beveiligings headers configureren met een regelset
       href: how-to-add-security-headers.md
     - name: Cache opschonen
       href: how-to-cache-purge.md
     - name: Compressie
       href: how-to-compression.md
-    - name: Persoonlijke koppeling inschakelen
-      href: how-to-enable-private-link.md
+    - name: Persoonlijke koppeling naar web-app inschakelen
+      href: how-to-enable-private-link-web-app.md
     - name: Logboekregistratie
       href: how-to-logs.md
     - name: Bewaking en waarschuwingen

@@ -1,19 +1,18 @@
 ---
 title: Details van de structuur van de beleids definitie
 description: Hierin wordt beschreven hoe beleids definities worden gebruikt om conventies voor Azure-resources in uw organisatie in te richten.
-ms.date: 10/22/2020
+ms.date: 02/17/2021
 ms.topic: conceptual
-ms.openlocfilehash: 607d1d85dbb370305d0337cc311433c37e36c4c0
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 741cfce56554e05d0c5f5a9242a33502b8a6fbe6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493308"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699416"
 ---
 # <a name="azure-policy-definition-structure"></a>Structuur van Azure-beleidsdefinities
 
-Azure Policy legt conventies voor resources vast. Beleids definities beschrijven de nalevings [voorwaarden voor](#conditions) bronnen en het effect dat moet worden genomen als aan een voor waarde wordt voldaan. Met een voor waarde wordt een resource-eigenschaps [veld](#fields) of een [waarde](#value) naar een vereiste waarde vergeleken. Resource-eigenschaps velden worden geopend met behulp van [aliassen](#aliases). Wanneer een resource-eigenschaps veld een matrix is, kan een speciale [matrix alias](#understanding-the--alias) worden gebruikt om waarden van alle matrix leden te selecteren en een voor waarde toe te passen op elk van deze elementen.
-Meer informatie over [voor waarden](#conditions).
+Azure Policy legt conventies voor resources vast. Beleids definities beschrijven de nalevings [voorwaarden voor](#conditions) bronnen en het effect dat moet worden genomen als aan een voor waarde wordt voldaan. Met een voor waarde wordt een resource-eigenschaps [veld](#fields) of een [waarde](#value) naar een vereiste waarde vergeleken. Resource-eigenschaps velden worden geopend met behulp van [aliassen](#aliases). Wanneer een resource-eigenschaps veld een matrix is, kan een speciale [matrix alias](#understanding-the--alias) worden gebruikt om waarden van alle matrix leden te selecteren en een voor waarde toe te passen op elk van deze elementen. Meer informatie over [voor waarden](#conditions).
 
 Als u conventies definieert, kunt u kosten besparen en uw resources eenvoudiger beheren. U kunt bijvoorbeeld opgeven dat alleen bepaalde typen virtuele machines zijn toegestaan. Of u kunt vereisen dat resources een bepaalde tag hebben. Beleids toewijzingen worden overgenomen door onderliggende resources. Als een beleids toewijzing wordt toegepast op een resource groep, is deze van toepassing op alle resources in die resource groep.
 
@@ -118,7 +117,7 @@ De volgende resource provider modi worden momenteel ondersteund als een **Previe
 
 ## <a name="metadata"></a>Metagegevens
 
-De optionele `metadata` eigenschap bevat informatie over de beleids definitie. Klanten kunnen alle eigenschappen en waarden definiëren die van toepassing zijn op hun organisatie in `metadata` . Er zijn echter enkele _algemene_ eigenschappen die worden gebruikt door Azure Policy en in ingebouwde modules.
+De optionele `metadata` eigenschap bevat informatie over de beleids definitie. Klanten kunnen alle eigenschappen en waarden definiëren die van toepassing zijn op hun organisatie in `metadata` . Er zijn echter enkele _algemene_ eigenschappen die worden gebruikt door Azure Policy en in ingebouwde modules. Elke `metadata` eigenschap heeft een limiet van 1024 tekens.
 
 ### <a name="common-metadata-properties"></a>Algemene eigenschappen van meta gegevens
 
@@ -286,15 +285,13 @@ Met een voor waarde wordt geëvalueerd of een waarde aan bepaalde criteria voldo
 
 Voor **minder**, **lessOrEquals**, **meer** en **greaterOrEquals** als het eigenschaps type niet overeenkomt met het type voor waarde, wordt een fout gegenereerd. Teken reeks vergelijkingen worden gemaakt met `InvariantCultureIgnoreCase` .
 
-Wanneer u de voor waarden **like** en **notLike** gebruikt, geeft u een Joker teken `*` op in de waarde.
-De waarde mag niet meer dan één Joker teken bevatten `*` .
+Wanneer u de voor waarden **like** en **notLike** gebruikt, geeft u een Joker teken `*` op in de waarde. De waarde mag niet meer dan één Joker teken bevatten `*` .
 
 Wanneer u de voor waarden **match** en **notMatch** gebruikt, moet `#` u een cijfer, voor een letter, overeenkomen met een `?` `.` wille keurig teken en elk ander teken dat overeenkomt met het werkelijke teken. **Identieke** en **notMatch** zijn hoofdletter gevoelig. alle andere voor waarden die een _stringValue_ evalueren, zijn niet hoofdletter gevoelig. Hoofdletter gevoelige alternatieven zijn beschikbaar in **matchInsensitively** en **notMatchInsensitively**.
 
 ### <a name="fields"></a>Velden
 
-Voor waarden die evalueren of de waarden van eigenschappen in de resource-aanvraag lading voldoen aan bepaalde criteria kunnen worden gevormd met behulp van een **veld** expressie.
-De volgende velden worden ondersteund:
+Voor waarden die evalueren of de waarden van eigenschappen in de resource-aanvraag lading voldoen aan bepaalde criteria kunnen worden gevormd met behulp van een **veld** expressie. De volgende velden worden ondersteund:
 
 - `name`
 - `fullName`
@@ -324,8 +321,7 @@ De volgende velden worden ondersteund:
 > `tags.<tagName>`, `tags[tagName]` en `tags[tag.with.dots]` zijn nog steeds acceptabele manieren om een label veld te declareren. De voorkeurs expressies zijn echter die in de bovenstaande lijst.
 
 > [!NOTE]
-> In **veld** expressies die verwijzen naar een **\[ \* \] alias**, wordt elk element in de matrix afzonderlijk geëvalueerd met logische **en** tussen elementen.
-> Zie [verwijzing naar de bron eigenschappen](../how-to/author-policies-for-arrays.md#referencing-array-resource-properties)van een matrix voor meer informatie.
+> In **veld** expressies die verwijzen naar een **\[ \* \] alias**, wordt elk element in de matrix afzonderlijk geëvalueerd met logische **en** tussen elementen. Zie [verwijzing naar de bron eigenschappen](../how-to/author-policies-for-arrays.md#referencing-array-resource-properties)van een matrix voor meer informatie.
 
 #### <a name="use-tags-with-parameters"></a>Tags gebruiken met para meters
 
@@ -472,6 +468,7 @@ Expressies voor **veld tellingen** kunnen dezelfde veld matrix Maxi maal drie ke
 Zie [verwijzen naar eigenschappen van matrix bronnen](../how-to/author-policies-for-arrays.md#referencing-array-resource-properties)voor meer informatie over het werken met matrix eigenschappen in azure Policy, waaronder gedetailleerde uitleg over het evalueren van de expressie **aantal veld tellingen** .
 
 #### <a name="value-count"></a>Aantal waarden
+
 Tel hoeveel leden van een matrix aan een voor waarde voldoen. De matrix kan een letterlijke matrix of een [verwijzing naar een matrix parameter](#using-a-parameter-value)zijn. De structuur van expressies voor **aantal waarden** is:
 
 ```json
@@ -496,7 +493,7 @@ De volgende eigenschappen worden gebruikt met het **aantal waarden**:
 
 De volgende limieten worden afgedwongen:
 - Maxi maal tien **waarden** van expressies kunnen worden gebruikt in één **policyRule** definitie.
-- Elke expressie voor **aantal waarden** kan maxi maal 100 iteraties uitvoeren. Dit nummer bevat het aantal iteraties dat wordt uitgevoerd door de expressies voor het **aantal bovenliggende waarden** .
+- Elke expressie voor **aantal waarden** kan maxi maal 100 herhalingen uitvoeren. Dit nummer bevat het aantal iteraties dat wordt uitgevoerd door de expressies voor het **aantal bovenliggende waarden** .
 
 #### <a name="the-current-function"></a>De huidige functie
 
@@ -505,14 +502,14 @@ De `current()` functie is alleen beschikbaar in de `count.where` voor waarde. He
 **Gebruik van aantal waarden**
 
 - `current(<index name defined in count.name>)`. Bijvoorbeeld: `current('arrayMember')`.
-- `current()`. Alleen toegestaan als de expressie voor **aantal waarden** geen onderliggend item is van een andere **Count** -expressie. Retourneert dezelfde waarde als hierboven.
+- `current()`. Alleen toegestaan als de expressie voor **aantal waarden** geen onderliggend item van een andere **Count** -expressie is. Retourneert dezelfde waarde als hierboven.
 
 Als de waarde die door de aanroep wordt geretourneerd een object is, worden eigenschaps-toegangs rechten ondersteund. Bijvoorbeeld: `current('objectArrayMember').property`.
 
 **Gebruik van veld aantal**
 
 - `current(<the array alias defined in count.field>)`. Bijvoorbeeld `current('Microsoft.Test/resource/enumeratedArray[*]')`.
-- `current()`. Alleen toegestaan als de expressie **aantal velden** is niet een onderliggend element van een andere **Count** -expressie. Retourneert dezelfde waarde als hierboven.
+- `current()`. Alleen toegestaan als de **veld telling** expressie geen onderliggend item is van een andere **Count** -expressie. Retourneert dezelfde waarde als hierboven.
 - `current(<alias of a property of the array member>)`. Bijvoorbeeld `current('Microsoft.Test/resource/enumeratedArray[*].property')`.
 
 #### <a name="field-count-examples"></a>Voor beelden van veld tellingen
@@ -600,7 +597,7 @@ Voor beeld 5: Controleer of ten minste één matrixlid overeenkomt met meerdere 
 }
 ```
 
-Voor beeld 6: gebruik de `current()` functie binnen de `where` voor waarden om toegang te krijgen tot de waarde van het momenteel genummerde matrixlid in een sjabloon functie. Met deze voor waarde wordt gecontroleerd of een virtueel netwerk een adres voorvoegsel bevat dat zich niet in het CIDR-bereik 10.0.0.0/24 bevindt.
+Voor beeld 6: gebruik de `current()` functie binnen de `where` voor waarden om toegang te krijgen tot de waarde van het momenteel genummerde matrixlid in een sjabloon functie. Met deze voor waarde wordt gecontroleerd of een virtueel netwerk een adres voorvoegsel bevat dat zich niet onder het bereik 10.0.0.0/24 CIDR bevindt.
 
 ```json
 {
@@ -615,7 +612,7 @@ Voor beeld 6: gebruik de `current()` functie binnen de `where` voor waarden om t
 }
 ```
 
-Voor beeld 7: gebruik de `field()` functie binnen de `where` voor waarden om toegang te krijgen tot de waarde van het momenteel genummerde matrixlid. Met deze voor waarde wordt gecontroleerd of een virtueel netwerk een adres voorvoegsel bevat dat zich niet in het CIDR-bereik 10.0.0.0/24 bevindt.
+Voor beeld 7: gebruik de `field()` functie binnen de `where` voor waarden om toegang te krijgen tot de waarde van het momenteel genummerde matrixlid. Met deze voor waarde wordt gecontroleerd of een virtueel netwerk een adres voorvoegsel bevat dat zich niet onder het bereik 10.0.0.0/24 CIDR bevindt.
 
 ```json
 {
@@ -769,7 +766,7 @@ Azure Policy ondersteunt de volgende typen effect:
 - **Weigeren**: er wordt een gebeurtenis in het activiteiten logboek gegenereerd en de aanvraag mislukt
 - **DeployIfNotExists**: implementeert een gerelateerde resource als deze nog niet bestaat
 - **Uitgeschakeld**: resources worden niet geëvalueerd voor naleving van de beleids regel
-- **Wijzigen**: de gedefinieerde labels worden toegevoegd, bijgewerkt of verwijderd uit een resource
+- **Wijzigen**: de gedefinieerde labels worden toegevoegd, bijgewerkt of verwijderd uit een resource of abonnement
 - **EnforceOPAConstraint** (afgeschaft): Hiermee configureert u de open Policy Agent Admissions-controller met gate keeper v3 voor zelf-beheerde Kubernetes-clusters in azure
 - **EnforceRegoPolicy** (afgeschaft): Hiermee configureert u de open Policy Agent Admissions-controller met gate keeper v2 in de Azure Kubernetes-service
 
@@ -822,18 +819,18 @@ De volgende functies zijn alleen beschikbaar in beleids regels:
   ```
 
 - `ipRangeContains(range, targetRange)`
-    - **Range**: [required] string-teken reeks die een bereik van IP-adressen aangeeft.
-    - **targetRange**: [vereist] teken reeks-teken reeks die een bereik van IP-adressen aangeeft.
+  - **Range**: [required] string-teken reeks die een bereik van IP-adressen aangeeft.
+  - **targetRange**: [vereist] teken reeks-teken reeks die een bereik van IP-adressen aangeeft.
 
-    Retourneert of het opgegeven IP-adres bereik het doel-IP-adres bereik bevat. Lege bereiken of combi neren tussen IP-families is niet toegestaan en resulteert in een evaluatie fout.
+  Retourneert of het opgegeven IP-adres bereik het doel-IP-adres bereik bevat. Lege bereiken of combi neren tussen IP-families is niet toegestaan en resulteert in een evaluatie fout.
 
-    Ondersteunde indelingen:
-    - Eén IP-adres (voor beelden: `10.0.0.0` , `2001:0DB8::3:FFFE` )
-    - CIDR-bereik (voor beelden: `10.0.0.0/24` , `2001:0DB8::/110` )
-    - Het bereik dat is gedefinieerd door de begin-en eind-IP-adressen (voor beelden: `192.168.0.1-192.168.0.9` , `2001:0DB8::-2001:0DB8::3:FFFF` )
+  Ondersteunde indelingen:
+  - Eén IP-adres (voor beelden: `10.0.0.0` , `2001:0DB8::3:FFFE` )
+  - CIDR-bereik (voor beelden: `10.0.0.0/24` , `2001:0DB8::/110` )
+  - Het bereik dat is gedefinieerd door de begin-en eind-IP-adressen (voor beelden: `192.168.0.1-192.168.0.9` , `2001:0DB8::-2001:0DB8::3:FFFF` )
 
 - `current(indexName)`
-    - Een speciale functie die alleen in [expressies in aantal](#count)kan worden gebruikt.
+  - Speciale functie die alleen mag worden gebruikt binnen [Count-expressies](#count).
 
 #### <a name="policy-function-example"></a>Voor beeld van beleids functie
 
@@ -918,7 +915,7 @@ De **\[\*\]** alias vertegenwoordigt een verzameling van waarden die zijn gesele
 | `Microsoft.Storage/storageAccounts/networkAcls.ipRules[*]` | De elementen van de `ipRules` matrix. |
 | `Microsoft.Storage/storageAccounts/networkAcls.ipRules[*].action` | De waarden van de `action` eigenschap van elk element van de `ipRules` matrix. |
 
-Bij gebruik in een [veld](#fields) voorwaarde maakt de matrix alias het mogelijk om elk afzonderlijk matrix element te vergelijken met een doel waarde. Als u with [Count](#count) -expressie gebruikt, is het volgende mogelijk:
+Bij gebruik van een [veld](#fields) voorwaarde kunnen met matrix aliassen elk afzonderlijk matrix element worden vergeleken met een doel waarde. Bij gebruik met de expressie [aantal](#count) is het volgende mogelijk:
 
 - De grootte van een matrix controleren
 - Controleren of de all\any\none van de matrix elementen voldoen aan een complexe voor waarde

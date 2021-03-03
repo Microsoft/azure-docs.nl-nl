@@ -7,12 +7,12 @@ author: DaleKoetke
 ms.author: dalek
 ms.date: 2/7/2021
 ms.reviewer: mbullwin
-ms.openlocfilehash: db5506f1f1fcabf3a922115c24aa64e35b888fbd
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 1f19366ac8fd7aedadcca0287540262516ad060c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100573755"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101726174"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Gebruik en kosten van Application Insights beheren
 
@@ -294,7 +294,7 @@ Zie [Application Insights prijzen](https://azure.microsoft.com/pricing/details/a
 
 ### <a name="understanding-billed-usage-on-the-legacy-enterprise-per-node-tier"></a>Gefactureerd gebruik in de verouderde Enter prise-laag (per knoop punt) 
 
-Zoals hieronder wordt beschreven, combineert de verouderde onderneming (per knoop punt) het gebruik van in alle Application Insights resources in een abonnement om het aantal knoop punten en de gegevens overschrijding te berekenen. Als gevolg van dit combinatie proces **worden het gebruik voor alle Application Insights resources in een abonnement gerapporteerd op basis van een van de resources**.  Dit maakt het mogelijk om het [gefactureerde gebruik](https://docs.microsoft.com/azure/azure-monitor/app/pricing#viewing-application-insights-usage-on-your-azure-bill) te reconciliëren met het gebruik dat u voor elke Application Insights resources zeer ingewikkeld hebt. 
+Zoals hieronder wordt beschreven, combineert de verouderde onderneming (per knoop punt) het gebruik van in alle Application Insights resources in een abonnement om het aantal knoop punten en de gegevens overschrijding te berekenen. Als gevolg van dit combinatie proces **worden het gebruik voor alle Application Insights resources in een abonnement gerapporteerd op basis van een van de resources**.  Dit maakt het mogelijk om het [gefactureerde gebruik](#viewing-application-insights-usage-on-your-azure-bill) te reconciliëren met het gebruik dat u voor elke Application Insights resources zeer ingewikkeld hebt. 
 
 > [!WARNING]
 > Vanwege de complexiteit van het bijhouden en leren van het gebruik van Application Insights resources in de laag verouderde onderneming (per knoop punt), raden we u ten zeerste aan de huidige prijs categorie voor betalen naar gebruik te gebruiken. 

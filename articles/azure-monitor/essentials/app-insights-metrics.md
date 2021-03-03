@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 07/03/2019
 ms.author: vitalyg
 ms.subservice: application-insights
-ms.openlocfilehash: 400f239f3e7b736196bf950e81148fa2e39aca96
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: ca19fdfa617b71b1465e4710d8ca52b18c9ebff5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609141"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101731677"
 ---
 # <a name="application-insights-log-based-metrics"></a>Metrische gegevens op basis van het logboek Application Insights
 
@@ -21,13 +21,13 @@ Met Application Insights metrische gegevens op basis van een logboek kunt u de s
 * [Metrische gegevens op basis](../app/pre-aggregated-metrics-log-metrics.md#log-based-metrics) van een logboek achter de scène worden omgezet in [Kusto-query's](/azure/kusto/query/) van opgeslagen gebeurtenissen.
 * [Standaard metrische gegevens](../app/pre-aggregated-metrics-log-metrics.md#pre-aggregated-metrics) worden opgeslagen als vooraf samengestelde tijd reeksen.
 
-Aangezien *standaard metrische gegevens* vooraf worden geaggregeerd tijdens het verzamelen, hebben ze betere prestaties op het moment van de query. Dit maakt ze een betere keuze voor het maken van Dash boards en in realtime waarschuwingen. De *metrische gegevens op basis van een logboeken* hebben meer dimensies, waardoor ze de superieure optie zijn voor het analyseren van analyses en ad-hoc diagnostiek. Gebruik de [naam ruimte kiezer](../platform/metrics-getting-started.md#create-your-first-metric-chart) om te scha kelen tussen op logboek gebaseerde en standaard metrische gegevens in [Metrics Explorer](../platform/metrics-getting-started.md).
+Aangezien *standaard metrische gegevens* vooraf worden geaggregeerd tijdens het verzamelen, hebben ze betere prestaties op het moment van de query. Dit maakt ze een betere keuze voor het maken van Dash boards en in realtime waarschuwingen. De *metrische gegevens op basis van een logboeken* hebben meer dimensies, waardoor ze de superieure optie zijn voor het analyseren van analyses en ad-hoc diagnostiek. Gebruik de [naam ruimte kiezer](./metrics-getting-started.md#create-your-first-metric-chart) om te scha kelen tussen op logboek gebaseerde en standaard metrische gegevens in [Metrics Explorer](./metrics-getting-started.md).
 
 ## <a name="interpret-and-use-queries-from-this-article"></a>Query's in dit artikel interpreteren en gebruiken
 
 In dit artikel worden metrische gegevens weer gegeven met ondersteunde aggregaties en dimensies. De details over metrische gegevens op basis van een logboek bevatten de onderliggende Kusto-query-instructies. Voor het gemak gebruikt elke query standaard waarden voor de tijd granulatie, het grafiek type en soms het splitsen van de query in Log Analytics zonder dat u wijzigingen hoeft aan te brengen.
 
-Wanneer u dezelfde metriek in [Metrics Explorer](../platform/metrics-getting-started.md)uitzet, zijn er geen standaard waarden. de query wordt dynamisch aangepast op basis van de instellingen van de grafiek:
+Wanneer u dezelfde metriek in [Metrics Explorer](./metrics-getting-started.md)uitzet, zijn er geen standaard waarden. de query wordt dynamisch aangepast op basis van de instellingen van de grafiek:
 
 - Het geselecteerde **tijds bereik** wordt omgezet in een extra *Where Time Stamp...* -component, zodat alleen de gebeurtenissen uit het geselecteerde tijds bereik worden gekozen. Bijvoorbeeld een grafiek met gegevens gedurende de meest recente 24 uur, bevat de query *| waar tijds tempel > geleden (24 uur)*.
 
@@ -38,7 +38,7 @@ Wanneer u dezelfde metriek in [Metrics Explorer](../platform/metrics-getting-sta
 - De geselecteerde dimensie voor **gesplitste grafieken** wordt vertaald naar een extra samenvattings eigenschap. Als u bijvoorbeeld uw grafiek op *locatie* splitst en uitgeeft met een tijd granulatie van 5 minuten, wordt *de component samenvatten* samenvatten *... per bak (tijds tempel, 5 m), locatie*.
 
 > [!NOTE]
-> Als u geen ervaring hebt met de Kusto-query taal, kunt u beginnen met het kopiëren en plakken van Kusto-instructies in het query deel venster Log Analytics zonder dat u wijzigingen hoeft aan te brengen. Klik op **uitvoeren** om de basis grafiek weer te geven. U begint met het maken van de syntaxis van de query taal, maar u kunt nu kleine wijzigingen aanbrengen en de gevolgen van de wijziging bekijken. Het verkennen van uw eigen gegevens is een uitstekende manier om te beginnen met het realiseren van de volledige kracht van [log Analytics](../log-query/log-analytics-tutorial.md) en [Azure monitor](../overview.md).
+> Als u geen ervaring hebt met de Kusto-query taal, kunt u beginnen met het kopiëren en plakken van Kusto-instructies in het query deel venster Log Analytics zonder dat u wijzigingen hoeft aan te brengen. Klik op **uitvoeren** om de basis grafiek weer te geven. U begint met het maken van de syntaxis van de query taal, maar u kunt nu kleine wijzigingen aanbrengen en de gevolgen van de wijziging bekijken. Het verkennen van uw eigen gegevens is een uitstekende manier om te beginnen met het realiseren van de volledige kracht van [log Analytics](../logs/log-analytics-tutorial.md) en [Azure monitor](../overview.md).
 
 ## <a name="availability-metrics"></a>Metrische beschikbaarheids gegevens
 

@@ -3,16 +3,16 @@ title: Inzichten verkrijgen met behulp van Back-upcentrum
 description: Meer informatie over het analyseren van historische trends en het verkrijgen van meer inzicht in uw back-ups met Back-upcentrum.
 ms.topic: conceptual
 ms.date: 09/01/2020
-ms.openlocfilehash: 3086224e4dbb1be2ccfadbfcfcb7441b68a5ff6b
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 47158e53e6248b2b9cef4ff6fd6b5da5972786eb
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100592012"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719454"
 ---
-# <a name="obtain-insights-using-backup-center-preview"></a>Inzichten verkrijgen met behulp van Back-upcentrum (preview-versie)
+# <a name="obtain-insights-using-backup-center"></a>Inzichten verkrijgen met behulp van Back-upcentrum
 
-Voor het analyseren van historische trends en het verkrijgen van diepere inzichten op uw back-ups biedt Back-upcentrum een interface voor het [maken van back-uprapporten (preview)](configure-reports.md), waarin [Azure monitor-logboeken](../azure-monitor/logs/data-platform-logs.md) en [Azure-werkmappen](../azure-monitor/visualize/workbooks-overview.md)worden gebruikt. Back-uprapporten bieden de volgende mogelijkheden:
+Voor het analyseren van historische trends en het verkrijgen van diepere inzichten op uw back-ups biedt Back-upcentrum een interface voor het [maken van back-uprapporten](configure-reports.md), die gebruikmaakt van [Azure monitor-logboeken](../azure-monitor/logs/data-platform-logs.md) en [Azure-werkmappen](../azure-monitor/visualize/workbooks-overview.md). Back-uprapporten bieden de volgende mogelijkheden:
 
 - Het toewijzen en voors pellen van verbruikte Cloud opslag.
 
@@ -24,7 +24,7 @@ Voor het analyseren van historische trends en het verkrijgen van diepere inzicht
 
 ## <a name="supported-scenarios"></a>Ondersteunde scenario's
 
-- Back-uprapporten (preview) zijn momenteel niet beschikbaar voor back-up van Azure Database for PostgreSQL server.
+- Er zijn momenteel geen back-uprapporten beschikbaar voor back-up van Azure Database for PostgreSQL server.
 
 - Raadpleeg de [ondersteunings matrix](backup-center-support-matrix.md) voor een gedetailleerde lijst met ondersteunde en niet-ondersteunde scenario's.
 
@@ -53,6 +53,8 @@ Hieronder ziet u de beschik bare weer gaven:
 1. **Beleid** : gebruik dit tabblad om informatie weer te geven over al uw actieve beleids regels, zoals het aantal gekoppelde items en de totale Cloud opslag die wordt gebruikt door items waarvan een back-up is gemaakt onder een bepaald beleid. [Meer informatie](./configure-reports.md#policies)
 
 1. **Optimaliseer** : gebruik dit tabblad om inzicht te krijgen in potentiële mogelijkheden voor kosten optimalisatie voor uw back-ups. [Meer informatie](./configure-reports.md#optimize)
+
+1. Naleving van **beleid** : gebruik dit tabblad om inzicht te krijgen in de vraag of elk back-upexemplaar ten minste één geslaagde back-up per dag heeft.
 
 ## <a name="next-steps"></a>Volgende stappen
 

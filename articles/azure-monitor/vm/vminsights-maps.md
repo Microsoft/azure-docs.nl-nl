@@ -1,22 +1,22 @@
 ---
-title: App-afhankelijkheden weergeven met Azure Monitor voor VM's
-description: De kaart is een functie van Azure Monitor voor VM's. Het detecteert automatisch toepassings onderdelen op Windows-en Linux-systemen en wijst de communicatie tussen services toe. In dit artikel vindt u informatie over het gebruik van de kaart functie in verschillende scenario's.
+title: App-afhankelijkheden weer geven met VM Insights
+description: De kaart is een functie van VM Insights. Het detecteert automatisch toepassings onderdelen op Windows-en Linux-systemen en wijst de communicatie tussen services toe. In dit artikel vindt u informatie over het gebruik van de kaart functie in verschillende scenario's.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/20/2020
-ms.openlocfilehash: ea11a2dbff9c05400f24ecfa86c66395032b8ac9
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 19da3e3e02581ce9fad080bb23bc48dcb9a3ceb3
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612156"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719641"
 ---
-# <a name="use-the-map-feature-of-azure-monitor-for-vms-to-understand-application-components"></a>De kaart functie van Azure Monitor voor VM's gebruiken om inzicht te krijgen in toepassings onderdelen
-In Azure Monitor voor VM's kunt u gedetecteerde toepassings onderdelen weer geven op virtuele Windows-en Linux-machines (Vm's) die worden uitgevoerd in azure of in uw omgeving. U kunt de virtuele machines op twee manieren bekijken. Een kaart rechtstreeks vanuit een virtuele machine weer geven of een kaart van Azure Monitor weer geven om de onderdelen van verschillende Vm's te bekijken. In dit artikel vindt u meer informatie over deze twee weergave methoden en over het gebruik van de kaart functie. 
+# <a name="use-the-map-feature-of-vm-insights-to-understand-application-components"></a>De toewijzings functie van VM Insights gebruiken om inzicht te krijgen in toepassings onderdelen
+In VM Insights kunt u gedetecteerde toepassings onderdelen weer geven op virtuele Windows-en Linux-machines (Vm's) die worden uitgevoerd in azure of in uw omgeving. U kunt de virtuele machines op twee manieren bekijken. Een kaart rechtstreeks vanuit een virtuele machine weer geven of een kaart van Azure Monitor weer geven om de onderdelen van verschillende Vm's te bekijken. In dit artikel vindt u meer informatie over deze twee weergave methoden en over het gebruik van de kaart functie. 
 
-Zie [Azure monitor voor VM's inschakelen](../insights/vminsights-enable-overview.md)voor meer informatie over het configureren van Azure monitor voor VM's.
+Zie voor meer informatie over het configureren van VM Insights [VM Insights inschakelen](./vminsights-enable-overview.md).
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 Meld u aan bij de [Azure-portal](https://portal.azure.com).
@@ -49,7 +49,7 @@ Als u de kaart functie relevante waarschuwingen wilt laten weer geven, maakt u e
 - Neem een component op voor het groeperen van waarschuwingen per computer (bijvoorbeeld **per computer interval van 1 minuut**).
 - De waarschuwing baseren op een metrieke waarde.
 
-Zie [Unified Alerts in azure monitor](../platform/alerts-overview.md)voor meer informatie over Azure-waarschuwingen en het maken van waarschuwings regels.
+Zie [Unified Alerts in azure monitor](../alerts/alerts-overview.md)voor meer informatie over Azure-waarschuwingen en het maken van waarschuwings regels.
 
 In de rechter bovenhoek worden de symbolen en rollen op de kaart in de **legenda** -optie beschreven. Voor een beter overzicht van uw kaart en om deze te verplaatsen, gebruikt u de Zoom knoppen in de rechter benedenhoek. U kunt het zoom niveau instellen en de kaart passend maken voor de grootte van de pagina.  
 
@@ -85,7 +85,7 @@ Als de groep bewaakte en niet-bewaakte servers bevat, kunt u de juiste sectie va
 
 ## <a name="view-a-map-from-a-vm"></a>Een kaart van een virtuele machine weer geven 
 
-Rechtstreeks vanaf een virtuele machine toegang tot Azure Monitor voor VM's:
+Voor toegang tot de VM-inzichten rechtstreeks vanuit een VM:
 
 1. Selecteer **virtual machines** In het Azure Portal. 
 2. Kies een virtuele machine in de lijst. Kies **inzichten** in het gedeelte **bewaking** .  
@@ -99,7 +99,7 @@ Standaard toont de kaart de laatste 30 minuten. Als u wilt zien hoe afhankelijkh
 
 ## <a name="view-a-map-from-a-virtual-machine-scale-set"></a>Een kaart uit een schaalset voor virtuele machines weer geven
 
-Direct toegang tot Azure Monitor voor VM's vanuit een schaalset voor virtuele machines:
+Voor toegang tot de VM-inzichten rechtstreeks vanuit een schaalset voor virtuele machines:
 
 1. Selecteer in de Azure Portal **virtuele-machine schaal sets**.
 2. Kies een virtuele machine in de lijst. Klik vervolgens in de sectie **bewaking** op **inzichten**.  
@@ -128,11 +128,10 @@ In Azure Monitor biedt de kaart functie een globaal overzicht van uw Vm's en de 
 
 Kies een werk ruimte met behulp van de **werkruimte** kiezer boven aan de pagina. Als u meer dan één Log Analytics-werk ruimte hebt, kiest u de werk ruimte die is ingeschakeld met de oplossing en waar u Vm's aan rapporteert. 
 
-De **groeps** kiezer retourneert abonnementen, resource groepen, [computer groepen](../platform/computer-groups.md)en virtuele-machine schaal sets van computers die zijn gerelateerd aan de geselecteerde werk ruimte. Uw selectie is alleen van toepassing op de kaart functie en heeft geen betrekking op de prestaties of de status.
+De **groeps** kiezer retourneert abonnementen, resource groepen, [computer groepen](../logs/computer-groups.md)en virtuele-machine schaal sets van computers die zijn gerelateerd aan de geselecteerde werk ruimte. Uw selectie is alleen van toepassing op de kaart functie en heeft geen betrekking op de prestaties of de status.
 
 Standaard toont de kaart de laatste 30 minuten. Als u wilt zien hoe afhankelijkheden in het verleden worden weer geven, kunt u een query uitvoeren voor historische Peri Oden van Maxi maal één uur. Als u de query wilt uitvoeren, gebruikt u de **time Range** kiezer. U kunt een query uitvoeren, bijvoorbeeld tijdens een incident of de status voor een wijziging bekijken.  
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [prestatie status weer geven voor Azure monitor voor VM's](vminsights-performance.md)om knel punten te identificeren, prestaties te controleren en het algehele gebruik van uw vm's te begrijpen. 
-
+Zie prestaties van de [virtuele machine bekijken voor](vminsights-performance.md)meer informatie over het identificeren van knel punten, het controleren van de prestaties en het algehele gebruik van uw vm's.

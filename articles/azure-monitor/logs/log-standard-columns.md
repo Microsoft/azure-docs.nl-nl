@@ -5,13 +5,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 09/09/2020
-ms.openlocfilehash: e8d89de079a50159bbed9c38487effb0c89448c2
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.date: 02/25/2021
+ms.openlocfilehash: c479f525435139b2f92838bf15edf4563aeed4e2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610125"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101704120"
 ---
 # <a name="standard-columns-in-azure-monitor-logs"></a>Standaard kolommen in Azure Monitor-logboeken
 Gegevens in Azure Monitor logboeken worden [opgeslagen als een set records in een log Analytics werk ruimte of Application Insights toepassing](../logs/data-platform-logs.md), elk met een bepaald gegevens type met een unieke set kolommen. Veel gegevens typen hebben standaard kolommen die gemeen schappelijk zijn voor meerdere typen. In dit artikel worden deze kolommen beschreven en vindt u voor beelden van hoe u deze kunt gebruiken in query's.
@@ -20,6 +20,10 @@ Op werk ruimte gebaseerde toepassingen in Application Insights slaan hun gegeven
 
 > [!NOTE]
 > Sommige standaard kolommen worden niet weer gegeven in de schema weergave of IntelliSense in Log Analytics en ze worden niet weer gegeven in query resultaten tenzij u de kolom expliciet opgeeft in de uitvoer.
+> 
+
+## <a name="tenantid"></a>TenantId
+De kolom **TenantId** bevat de werk ruimte-id voor de log Analytics-werk ruimte.
 
 ## <a name="timegenerated-and-timestamp"></a>TimeGenerated en tijds tempel
 De kolommen **TimeGenerated** (log Analytics werk ruimte) en **tijds tempel** (Application Insights toepassing) bevatten de datum en tijd waarop de record is gemaakt door de gegevens bron. Zie [opname tijd van logboek gegevens in azure monitor](../logs/data-ingestion-time.md) voor meer informatie.
@@ -49,6 +53,10 @@ exceptions
 
 ## <a name="_timereceived"></a>\_TimeReceived
 De kolom **\_ TimeReceived** bevat de datum en tijd waarop de record is ontvangen door het Azure monitor opname punt in de Azure-Cloud. Dit kan handig zijn om latentie problemen tussen de gegevens bron en de cloud te identificeren. Een voor beeld hiervan is een netwerk probleem dat een vertraging veroorzaakt bij het verzenden van gegevens van een agent. Zie [opname tijd van logboek gegevens in azure monitor](../logs/data-ingestion-time.md) voor meer informatie.
+
+> [!NOTE]
+> De kolom **\_ TimeReceived** wordt berekend telkens wanneer deze wordt gebruikt. Dit proces is resource-intensief. Verfijnen van het gebruiken om een groot aantal records te filteren. Als u deze functie opnieuw gebruikt, kan dit leiden tot een verhoogde duur van de query uitvoering.
+
 
 De volgende query geeft de gemiddelde latentie per uur voor gebeurtenis records van een agent. Dit omvat de tijd van de agent naar de Cloud en de totale tijd voor de record die beschikbaar is voor logboek query's.
 
@@ -238,6 +246,6 @@ union withsource = tt *
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Lees meer over hoe [Azure monitor logboek gegevens worden opgeslagen](../log-query/log-query-overview.md).
-- Lees een les over het [schrijven van logboek query's](../log-query/get-started-queries.md).
+- Lees meer over hoe [Azure monitor logboek gegevens worden opgeslagen](./log-query-overview.md).
+- Lees een les over het [schrijven van logboek query's](./get-started-queries.md).
 - Maak een les over het [koppelen van tabellen in logboek query's](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#joins).

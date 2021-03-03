@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/12/2021
 ms.author: trbye
 ms.custom: contperf-fy21q2; references_regions
-ms.openlocfilehash: f2dca513b4413f1761ea1b21bf71f90bb27d3053
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 39370659e71a7d281914b360eea83eb0b68b25ba
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100388648"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101716564"
 ---
 # <a name="what-is-custom-speech"></a>Wat is Custom Speech?
 
@@ -45,7 +45,9 @@ Dit diagram markeert de onderdelen waaruit het [Custom speech gebied van de spee
 U moet een Azure-account en een spraak service-abonnement hebben voordat u de [Speech Studio](https://speech.microsoft.com/customspeech) kunt gebruiken om een aangepast model te maken. Als u geen account en abonnement hebt, [kunt u de Speech-service gratis uitproberen](overview.md#try-the-speech-service-for-free).
 
 > [!NOTE]
-> Als u van plan bent een aangepast model met **Audio gegevens** te trainen, kiest u een van de volgende regio's met specifieke hardware die beschikbaar is voor training. Dit verkort de tijd die nodig is voor het trainen van een model.
+> Zorg ervoor dat u een Standard-abonnement (S0) maakt. Gratis (F0) abonnementen worden niet ondersteund.
+
+Als u van plan bent een aangepast model met **Audio gegevens** te trainen, kiest u een van de volgende regio's met specifieke hardware die beschikbaar is voor training. Dit verkort de tijd die nodig is om een model te trainen en biedt u de mogelijkheid om meer audio voor training te gebruiken. In deze regio's gebruikt de speech-service Maxi maal 20 uur aan audio voor training. in andere regio's zal het Maxi maal acht uur duren.
 
 * Australië - oost
 * Canada - midden
@@ -61,9 +63,6 @@ U moet een Azure-account en een spraak service-abonnement hebben voordat u de [S
 * VS (overheid) - Virginia
 * Europa -west
 * VS - west 2
-
-> [!NOTE]
-> Zorg ervoor dat u een Standard-abonnement (S0) maakt. Gratis (F0) abonnementen worden niet ondersteund.
 
 Nadat u een Azure-account en een spraak service-abonnement hebt gemaakt, moet u zich aanmelden bij de [Speech Studio](https://speech.microsoft.com/customspeech) en verbinding maken met uw abonnement.
 

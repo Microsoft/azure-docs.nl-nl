@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 02/01/2021
 ms.author: alkohli
-ms.openlocfilehash: 7c1f78f405a67687168457448f62d46a39da165f
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 5c95da8d6ee88786ff983b4963c1cb96394886cf
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99225121"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101727546"
 ---
 # <a name="azure-stack-edge-pro-with-fpga-2101-release-notes"></a>Azure Stack Edge Pro met FPGA 2101-release opmerkingen
 
@@ -42,7 +42,7 @@ Deze release bevat ook de volgende updates:
 
 ## <a name="known-issues-in-this-release"></a>Bekende problemen in deze release
 
-Er worden geen nieuwe problemen vermeld voor deze release. Alle vermelde release problemen zijn overgenomen uit de vorige releases. Als u een lijst met bekende problemen wilt zien, gaat u naar [bekende problemen in de Ga-release](data-box-gateway-release-notes.md#known-issues-in-ga-release).
+Er worden geen nieuwe problemen vermeld voor deze release. Alle vermelde release problemen zijn overgenomen uit de vorige releases. Als u een lijst met bekende problemen wilt zien, gaat u naar [bekende problemen in de Ga-release](../databox-gateway/data-box-gateway-release-notes.md#known-issues-in-ga-release).
 
 ## <a name="next-steps"></a>Volgende stappen
 

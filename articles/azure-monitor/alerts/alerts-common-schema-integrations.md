@@ -4,12 +4,12 @@ description: Meer informatie over het maken van een logische app die gebruikmaak
 ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 05/27/2019
-ms.openlocfilehash: 4553ecc8d2df20ffdf9b76d381ecf3b88d84ef38
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 4824c5ab1826260ee1eb3639712d7138c7c85bfe
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609685"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738664"
 ---
 # <a name="how-to-integrate-the-common-alert-schema-with-logic-apps"></a>Het algemene waarschuwings schema integreren met Logic Apps
 
@@ -23,8 +23,8 @@ Het [algemene waarschuwings schema](./alerts-common-schema.md) voorziet in een g
 ## <a name="prerequisites"></a>Vereisten 
 
 In dit artikel wordt ervan uitgegaan dat de lezer bekend is met 
-* Waarschuwings regels instellen ([metrische gegevens](../alerts/alerts-metric.md), [Logboeken](../platform/alerts-log.md), [activiteiten logboeken](../platform/alerts-activity-log.md))
-* [Actie groepen](../platform/action-groups.md) instellen
+* Waarschuwings regels instellen ([metrische gegevens](../alerts/alerts-metric.md), [Logboeken](./alerts-log.md), [activiteiten logboeken](./alerts-activity-log.md))
+* [Actie groepen](./action-groups.md) instellen
 * Het [algemene waarschuwings schema](./alerts-common-schema.md#how-do-i-enable-the-common-alert-schema) inschakelen vanuit actie groepen
 
 ## <a name="create-a-logic-app-leveraging-the-common-alert-schema"></a>Een logische app maken met behulp van het gemeen schappelijke waarschuwings schema
@@ -137,5 +137,5 @@ In dit artikel wordt ervan uitgegaan dat de lezer bekend is met
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Meer informatie over actiegroepen](../platform/action-groups.md).
+* [Meer informatie over actiegroepen](./action-groups.md).
 * Meer [informatie over het algemene waarschuwings schema](./alerts-common-schema.md).

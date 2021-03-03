@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 02/16/2021
+ms.date: 02/23/2021
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: 3205e96bca6ce13afdfe06fede1112e6ddb1ab39
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 629b40567ad9a1126413f5a97d1dc6264b4b10ca
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653914"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101736630"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Wat is er nieuw in de Text Analytics-API?
 
@@ -24,7 +24,12 @@ De Text Analytics-API wordt doorlopend bijgewerkt. In dit artikel vindt u inform
 
 ## <a name="february-2021"></a>Februari 2021
 
+* De `2021-01-15` model versie voor het PII-eind punt in [benoemde entiteit herkenning](how-tos/text-analytics-how-to-entity-linking.md) v 3.1-Preview. x, waarmee 
+  * Uitgebreide ondersteuning voor 9 nieuwe talen
+  * Verbeterde AI-kwaliteit van benoemde entiteits categorieën voor ondersteunde talen.
 * De prijs categorieën S0 tot en met S4 worden op 8 maart 2021 buiten gebruik gesteld. Als u een bestaande Text Analytics resource hebt met de prijs categorie S0 via S4, moet u deze bijwerken om de [prijs categorie](how-tos/text-analytics-how-to-call-api.md#change-your-pricing-tier)Standard (S) te gebruiken.
+* De [taal detectie container](how-tos/text-analytics-how-to-install-containers.md?tabs=sentiment) is nu algemeen beschikbaar.
+* v 2.1 van de API wordt buiten gebruik gesteld. 
 
 ## <a name="january-2021"></a>Januari 2021
 

@@ -7,12 +7,12 @@ ms.author: allensu
 ms.service: load-balancer
 ms.topic: tutorial
 ms.date: 02/10/2021
-ms.openlocfilehash: b1a249bac4a1a46e52bf52eccd56649153eefe8e
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 88e400cea764be84521c003a681aa74885dc29ce
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100360921"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101721341"
 ---
 # <a name="tutorial-create-a-cross-region-azure-load-balancer-using-azure-powershell"></a>Zelf studie: een Azure Load Balancer voor meerdere regio's maken met behulp van Azure PowerShell
 
@@ -195,7 +195,7 @@ Set-AzLoadBalancerBackendAddressPool @bepoolcr
 
 In deze sectie gaat u de load balancer voor meerdere regio's testen. U maakt verbinding met het openbare IP-adres in een webbrowser.  U stopt de virtuele machines in een van de back-end-pools van de regionale load balancer en bekijkt de failover.
 
-1. Gebruik [Get-AzPublicIPAddress](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress) om het openbare IP-adres van de load balancer op te halen:
+1. Gebruik [Get-AzPublicIPAddress](/powershell/module/az.network/get-azpublicipaddress) om het openbare IP-adres van de load balancer op te halen:
 
 ```azurepowershell-interactive
 $ip = @{

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 48501a2796f4d826a20af559058490a14785b53e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0503f6910186b42bf381c662c7942e37c28bfdf0
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84738631"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101709509"
 ---
 # <a name="visualize-network-traffic-patterns-to-and-from-your-vms-using-open-source-tools"></a>Netwerk verkeers patronen visualiseren van en naar uw Vm's met open source-hulpprogram ma's
 
@@ -47,7 +47,7 @@ U kunt rechtstreeks een pakket opname van Network Watcher uploaden met behulp va
 
 Wanneer u een koppeling naar CapAnalysis, moet u een SAS-token toevoegen aan de URL van de opslag-blob.  Hiertoe gaat u naar de hand tekening voor gedeelde toegang vanuit het opslag account, wijst u de toegestane machtigingen aan en klikt u op de knop SAS genereren om een token te maken. U kunt vervolgens de SAS-token toevoegen aan de URL voor de opslag-blob van de pakket opname.
 
-De resulterende URL ziet er ongeveer als volgt uit: `http:\//storageaccount.blob.core.windows.net/container/location?addSASkeyhere`
+De resulterende URL ziet er ongeveer als volgt uit: `http://storageaccount.blob.core.windows.net/container/location?addSASkeyhere`
 
 
 ### <a name="analyzing-packet-captures"></a>Pakket opnames analyseren

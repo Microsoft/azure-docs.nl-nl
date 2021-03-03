@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/17/2021
+ms.date: 02/18/2021
 ms.author: memildin
-ms.openlocfilehash: 837ba5a0fd5ff94cc4f55cd4b01b8cb8a27425fd
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: e34d5520e13d45d15079a5f11775d2ef930fc62a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100634257"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101727087"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -37,9 +37,10 @@ De updates in februari zijn onder andere:
 
 - [Pagina nieuwe beveiligings waarschuwingen in de Azure Portal uitgebracht voor algemene Beschik baarheid (GA)](#new-security-alerts-page-in-the-azure-portal-released-for-general-availability-ga)
 - [Aanbevelingen voor de beveiliging van Kubernetes-werk belasting uitgebracht voor algemene Beschik baarheid (GA)](#kubernetes-workload-protection-recommendations-released-for-general-availability-ga)
+- [Micro soft Defender voor endpoint Integration met Azure Defender ondersteunt nu Windows Server 2019 en Windows 10 virtueel bureau blad (WVD) (in preview-versie)](#microsoft-defender-for-endpoint-integration-with-azure-defender-now-supports-windows-server-2019-and-windows-10-virtual-desktop-wvd-in-preview)
 - [Pagina direct koppelen aan beleid van aanbevelings gegevens](#direct-link-to-policy-from-recommendation-details-page)
 - [Aanbeveling voor SQL-gegevens classificatie heeft geen invloed meer op uw beveiligde Score](#sql-data-classification-recommendation-no-longer-affects-your-secure-score)
-- [Werk stroom automatisering kan worden geactiveerd door wijzigingen in de nalevings evaluaties van de regelgeving (preview-versie)](#workflow-automations-can-be-triggered-by-changes-to-regulatory-compliance-assessments-preview)
+- [Werk stroom automatisering kan worden geactiveerd door wijzigingen in de nalevings evaluaties van de regelgeving (in preview-versie)](#workflow-automations-can-be-triggered-by-changes-to-regulatory-compliance-assessments-in-preview)
 - [Pagina-uitbrei dingen Asset Inventory](#asset-inventory-page-enhancements)
 
 
@@ -75,6 +76,17 @@ Meer informatie vindt u in [Aanbevolen procedures voor workloadbeveiliging met b
 > Hoewel de aanbevelingen in Preview waren, hebben ze geen AKS-cluster bron gerenderd en zijn ze niet opgenomen in de berekeningen van uw beveiligde Score. deze aankondiging wordt opgenomen in de berekening van de score. Als u deze nog niet hebt doorgevoerd, kan dit leiden tot een geringe invloed op uw beveiligde Score. Herstel ze waar mogelijk, zoals beschreven in [aanbevelingen herstellen in azure Security Center](security-center-remediate-recommendations.md).
 
 
+### <a name="microsoft-defender-for-endpoint-integration-with-azure-defender-now-supports-windows-server-2019-and-windows-10-virtual-desktop-wvd-in-preview"></a>Micro soft Defender voor endpoint Integration met Azure Defender ondersteunt nu Windows Server 2019 en Windows 10 virtueel bureau blad (WVD) (in preview-versie)
+
+Micro soft Defender voor eind punt is een holistische, Cloud geleverde endpoint-beveiligings oplossing. Het biedt risico beheer en-evaluatie op basis van Risico's, evenals endpoint Detection en respons (EDR). Voor een volledige lijst van de voor delen van het gebruik van Defender voor eind punt met Azure Security Center raadpleegt [u uw eind punten beveiligen met de geïntegreerde EDR-oplossing van Security Center: micro soft Defender voor eind punt](security-center-wdatp.md).
+
+Wanneer u Azure Defender voor servers op een Windows-Server inschakelt, wordt er een licentie voor Defender voor eind punt in het plan opgenomen. Als u Azure Defender voor servers al hebt ingeschakeld en u Windows 2019-servers in uw abonnement hebt, ontvangt deze automatisch Defender voor het eind punt met deze update. Er is geen hand matige actie vereist. 
+
+De ondersteuning is nu uitgebreid naar Windows Server 2019 en [Windows Virtual Desktop (WVD)](../virtual-desktop/overview.md).
+
+> [!NOTE]
+> Als u Defender voor eind punt inschakelt op een computer met Windows Server 2019, moet u ervoor zorgen dat het voldoet aan de vereisten die worden beschreven in [de micro soft Defender voor endpoint integration in te scha kelen](security-center-wdatp.md#enabling-the-microsoft-defender-for-endpoint-integration).
+
 ### <a name="direct-link-to-policy-from-recommendation-details-page"></a>Pagina direct koppelen aan beleid van aanbevelings gegevens
 
 Wanneer u de details van een aanbeveling bekijkt, is het vaak handig om het onderliggende beleid te kunnen zien. Voor elke aanbeveling die wordt ondersteund door een beleid, is er een nieuwe koppeling op de pagina met aanbevelings Details:
@@ -91,9 +103,12 @@ Als u de lijst met aanbevelingen in onze [Naslag Gids voor beveiligings aanbevel
 ### <a name="sql-data-classification-recommendation-no-longer-affects-your-secure-score"></a>Aanbeveling voor SQL-gegevens classificatie heeft geen invloed meer op uw beveiligde Score
 De aanbeveling **gevoelige gegevens in uw SQL-data bases moeten worden geclassificeerd** die niet langer van invloed zijn op uw beveiligde Score. Dit is de enige aanbeveling in het beveiligings beheer **gegevens classificatie Toep assen** , zodat het besturings element nu een beveiligde Score waarde van 0 heeft.
 
+Zie [beveiligings controles en de bijbehorende aanbevelingen](secure-score-security-controls.md#security-controls-and-their-recommendations)voor een volledige lijst met alle beveiligings controles in Security Center, samen met hun scores en een lijst met aanbevelingen.
 
-### <a name="workflow-automations-can-be-triggered-by-changes-to-regulatory-compliance-assessments-preview"></a>Werk stroom automatisering kan worden geactiveerd door wijzigingen in de nalevings evaluaties van de regelgeving (preview-versie)
+### <a name="workflow-automations-can-be-triggered-by-changes-to-regulatory-compliance-assessments-in-preview"></a>Werk stroom automatisering kan worden geactiveerd door wijzigingen in de nalevings evaluaties van de regelgeving (in preview-versie)
 We hebben een derde gegevens type toegevoegd aan de trigger opties voor uw werk stroom Automatiseringen: wijzigingen in de nalevings beoordeling van de regelgeving.
+
+Meer informatie over het gebruik van de werk stroom automatiserings Programma's bij het [automatiseren van reacties op Security Center triggers](workflow-automation.md).
 
 :::image type="content" source="media/release-notes/regulatory-compliance-triggers-workflow-automation.png" alt-text="Wijzigingen in de nalevings beoordeling van de regelgeving gebruiken om een werk stroom automatisering te activeren" lightbox="media/release-notes/regulatory-compliance-triggers-workflow-automation.png":::
 

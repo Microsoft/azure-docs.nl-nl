@@ -21,7 +21,7 @@
       href: tutorial-configure-ldaps.md
     - name: Wachtwoord-hashsynchronisatie configureren
       href: tutorial-configure-password-hash-sync.md
-    - name: Een replicaset maken (preview)
+    - name: Een replicaset maken
       href: tutorial-create-replica-set.md
     - name: Een aangepast beheerd domein maken
       href: tutorial-create-instance-advanced.md
@@ -43,7 +43,7 @@
       href: administration-concepts.md
     - name: Veel voorkomende implementatiescenario's
       href: scenarios.md
-    - name: Replicasets (preview)
+    - name: Replicasets
       href: concepts-replica-sets.md
     - name: Forests en vertrouwensrelaties
       items:

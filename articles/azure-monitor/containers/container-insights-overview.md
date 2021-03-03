@@ -1,18 +1,18 @@
 ---
-title: Overzicht van Azure Monitor voor containers | Microsoft Docs
-description: In dit artikel worden Azure Monitor beschreven voor containers die de AKS-container Insights-oplossing bewaakt en de waarde die wordt geleverd door de status van uw AKS-clusters en Container Instances in azure te controleren.
+title: Overzicht van container Insights | Microsoft Docs
+description: In dit artikel wordt container Insights beschreven waarmee de AKS container Insights-oplossing en de waarde die wordt geleverd, worden bewaakt door de status van uw AKS-clusters en Container Instances in azure te controleren.
 ms.topic: conceptual
 ms.date: 09/08/2020
-ms.openlocfilehash: a9b9e155884b20c19b9b82994a3b9b1bdf53f27a
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 1055e2228c6625ae24e6bf388cf297e3e3363666
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100613020"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723381"
 ---
-# <a name="azure-monitor-for-containers-overview"></a>Overzicht van Azure Monitor voor containers
+# <a name="container-insights-overview"></a>Overzicht van container Insights
 
-Azure Monitor voor containers is een functie die is ontworpen voor het bewaken van de prestaties van container werkbelastingen die zijn geïmplementeerd op:
+Container Insights is een functie die is ontworpen voor het bewaken van de prestaties van container werkbelastingen die zijn geïmplementeerd op:
 
 - Managed Kubernetes-clusters die worden gehost op de [Azure Kubernetes-service (AKS)](../../aks/intro-kubernetes.md)
 - Zelf beheerde Kubernetes-clusters die worden gehost op Azure met behulp van de [AKS-engine](https://github.com/Azure/aks-engine)
@@ -21,17 +21,17 @@ Azure Monitor voor containers is een functie die is ontworpen voor het bewaken v
 - [Azure Red Hat OpenShift](../../openshift/intro-openshift.md)
 - [Kubernetes voor Azure-Arc ingeschakeld](../../azure-arc/kubernetes/overview.md) (preview-versie)
 
-Azure Monitor voor containers ondersteunt clusters met het besturings systeem Linux en Windows Server 2019. De container runtimes die worden ondersteund, zijn docker, Moby en een CRI compatibele runtime, zoals CRI-O en Containered.
+Container Insights ondersteunt clusters met het besturings systeem Linux en Windows Server 2019. De container runtimes die worden ondersteund, zijn docker, Moby en een CRI compatibele runtime, zoals CRI-O en Containered.
 
 Het bewaken van uw containers is van cruciaal belang, vooral wanneer u een productie cluster op schaal uitvoert met meerdere toepassingen.
 
-Azure Monitor voor containers biedt u inzicht in de prestaties door het verzamelen van geheugen-en processor metrieken van controllers, knoop punten en containers die beschikbaar zijn in Kubernetes via de API voor metrische gegevens. Er worden ook containerlogboeken verzameld.  Nadat u bewaking vanuit Kubernetes-clusters hebt ingeschakeld, worden metrische gegevens en logboeken automatisch voor u verzameld via een container versie van de Log Analytics-agent voor Linux. Metrische gegevens worden naar de metrische opslag opgeslagen en logboeken worden geschreven naar de logboeken archief die aan uw [log Analytics](../log-query/log-query-overview.md) -werk ruimte is gekoppeld.
+Met container Insights krijgt u inzicht in de prestaties door geheugen-en processor metrieken te verzamelen van controllers, knoop punten en containers die beschikbaar zijn in Kubernetes via de API voor metrische gegevens. Er worden ook containerlogboeken verzameld.  Nadat u bewaking vanuit Kubernetes-clusters hebt ingeschakeld, worden metrische gegevens en logboeken automatisch voor u verzameld via een container versie van de Log Analytics-agent voor Linux. Metrische gegevens worden naar de metrische opslag opgeslagen en logboeken worden geschreven naar de logboeken archief die aan uw [log Analytics](../logs/log-query-overview.md) -werk ruimte is gekoppeld.
 
-![Azure Monitor voor de architectuur van containers](./media/container-insights-overview/azmon-containers-architecture-01.png)
+![Architectuur van container Insights](./media/container-insights-overview/azmon-containers-architecture-01.png)
 
-## <a name="what-does-azure-monitor-for-containers-provide"></a>Wat biedt Azure Monitor voor containers?
+## <a name="what-does-container-insights-provide"></a>Wat biedt container Insights?
 
-Azure Monitor voor containers biedt een uitgebreide bewakings ervaring met behulp van verschillende functies van Azure Monitor. Met deze functies kunt u inzicht krijgen in de prestaties en status van uw Kubernetes-cluster met Linux-en Windows Server 2019-besturings systeem en de container werkbelastingen. Met Azure Monitor voor containers kunt u:
+Container Insights biedt een uitgebreide bewakings ervaring met behulp van verschillende functies van Azure Monitor. Met deze functies kunt u inzicht krijgen in de prestaties en status van uw Kubernetes-cluster met Linux-en Windows Server 2019-besturings systeem en de container werkbelastingen. U kunt met behulp van container Insights het volgende doen:
 
 * Identificeer AKS-containers die worden uitgevoerd op het knoop punt en hun gemiddelde processor-en geheugen gebruik. Deze kennis kan u helpen bij het identificeren van knel punten in de resource.
 * Identificeer het processor-en geheugen gebruik van container groepen en de containers die worden gehost in Azure Container Instances.
@@ -56,19 +56,18 @@ De belangrijkste verschillen in het bewaken van een Windows Server-cluster in ve
 - Alleen pod omgevingen worden bewaakt, niet-docker-omgevingen.
 - Met de preview-versie worden Maxi maal 30 Windows Server-containers ondersteund. Deze beperking is niet van toepassing op Linux-containers.
 
-Bekijk de volgende video over een dieper niveau waarmee u meer informatie kunt over het bewaken van uw AKS-cluster met Azure Monitor voor containers.
+Bekijk de volgende video over een dieper niveau waarmee u meer informatie kunt over het controleren van uw AKS-cluster met behulp van container Insights.
 
-> [!VIDEO https://www.youtube.com/embed/RjsNmapggPU]
+> [!VIDEO https://youtu.be/XEdwGvS2AwA]
 
 ## <a name="how-do-i-access-this-feature"></a>Hebt u toegang tot deze functie Hoe kan ik?
 
-U kunt op twee manieren toegang krijgen tot Azure Monitor voor containers, vanuit Azure Monitor of rechtstreeks vanuit het geselecteerde AKS-cluster. Vanuit Azure Monitor hebt u een wereld wijd perspectief van alle geïmplementeerde containers, die worden bewaakt en die niet, zodat u kunt zoeken en filteren in uw abonnementen en resource groepen en vervolgens kunt inzoomen op Azure Monitor voor containers uit de geselecteerde container.  Als dat niet het geval is, kunt u de functie rechtstreeks vanuit een geselecteerde AKS-container openen via de pagina AKS.
+U kunt toegang krijgen tot container Insights twee manieren, van Azure Monitor of rechtstreeks vanuit het geselecteerde AKS-cluster. Vanuit Azure Monitor hebt u een wereld wijd perspectief van alle geïmplementeerde containers, die worden gecontroleerd en die niet, zodat u uw abonnementen en resource groepen kunt zoeken en filteren, en vervolgens inzoomt op container Insights vanuit de geselecteerde container.  Als dat niet het geval is, kunt u de functie rechtstreeks vanuit een geselecteerde AKS-container openen via de pagina AKS.
 
-![Overzicht van methoden voor toegang tot Azure Monitor voor containers](./media/container-insights-overview/azmon-containers-experience.png)
+![Overzicht van methoden voor toegang tot container inzichten](./media/container-insights-overview/azmon-containers-experience.png)
 
-Als u geïnteresseerd bent in het bewaken en beheren van uw docker-en Windows-container hosts die buiten AKS worden uitgevoerd om de configuratie, controle en het gebruik van bronnen weer te geven, raadpleegt u de [container bewakings oplossing](../insights/containers.md).
+Als u geïnteresseerd bent in het bewaken en beheren van uw docker-en Windows-container hosts die buiten AKS worden uitgevoerd om de configuratie, controle en het gebruik van bronnen weer te geven, raadpleegt u de [container bewakings oplossing](./containers.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u wilt beginnen met het bewaken van uw Kubernetes-cluster, raadpleegt u [How to Enable the Azure monitor for containers](container-insights-onboard.md) voor meer informatie over de vereisten en beschik bare methoden voor het inschakelen van
-
+Als u wilt beginnen met het bewaken van uw Kubernetes-cluster, raadpleegt u [hoe u container Insights kunt gebruiken](container-insights-onboard.md) om de vereisten en beschik bare methoden te begrijpen voor het inschakelen van

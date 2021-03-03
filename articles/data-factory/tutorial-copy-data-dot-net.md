@@ -4,18 +4,18 @@ description: Deze zelfstudie bevat stapsgewijze instructies voor het kopiëren v
 author: linda33wj
 ms.service: data-factory
 ms.topic: tutorial
-ms.date: 11/08/2019
+ms.date: 02/18/2021
 ms.author: jingwang
-ms.openlocfilehash: b2ec4a65f1001d6d1c93a23964d59972419f651e
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 2a9e19f24c4889a194c85e33317860db1d3a68d2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100380879"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101736556"
 ---
 # <a name="copy-data-from-azure-blob-to-azure-sql-database-using-azure-data-factory"></a>Gegevens met Azure Data Factory kopiëren van Azure Blob Storage naar SQL Database
 
-[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 In deze zelfstudie maakt u een data factory met een pijplijn die gegevens kopieert van Azure Blob Storage naar Azure SQL Database. Het configuratiepatroon in deze zelfstudie geldt voor het kopiëren van een gegevensarchief op basis van bestanden naar een relationeel gegevensarchief. Zie [Ondersteunde gegevensarchieven en -indelingen](copy-activity-overview.md#supported-data-stores-and-formats) voor een lijst met gegevensarchieven die worden ondersteund als bron en als sink.
 

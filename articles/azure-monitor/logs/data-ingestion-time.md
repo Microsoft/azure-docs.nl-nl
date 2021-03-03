@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/18/2019
-ms.openlocfilehash: 17d89414a762dd6bf68176b5044787179eb80250
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 501e395cf91630789824cc111614e7150dddaa7c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609400"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101700606"
 ---
 # <a name="log-data-ingestion-time-in-azure-monitor"></a>Opnametijd van gegevens vastleggen in een logboek in Azure Monitor
 Azure Monitor is een grootschalige gegevensservice die elke maand een groeiend aantal terabytes aan gegevens van duizenden klanten verwerkt. Er zijn vaak vragen over de tijd die nodig is om te zorgen dat logboek gegevens beschikbaar worden nadat deze zijn verzameld. In dit artikel worden de verschillende factoren beschreven die van invloed zijn op deze latentie.
@@ -57,7 +57,7 @@ Sommige oplossingen verzamelen geen gegevens van een agent en kunnen een verzame
 Raadpleeg de documentatie voor elke oplossing om de verzamelings frequentie te bepalen.
 
 ### <a name="pipeline-process-time"></a>Pijp lijn-verwerkings tijd
-Zodra logboek records zijn opgenomen in de Azure Monitor-pijp lijn (zoals aangegeven in de eigenschap [_TimeReceived](../platform/log-standard-columns.md#_timereceived) ), worden ze geschreven naar tijdelijke opslag om Tenant isolatie te garanderen en ervoor te zorgen dat de gegevens niet verloren gaan. Dit proces voegt doorgaans 5-15 seconden toe. Sommige beheer oplossingen implementeren zwaarere algoritmen voor het verzamelen van gegevens en het afleiden van inzichten naarmate gegevens worden gestreamd. Zo worden met de bewaking van netwerk prestaties inkomende gegevens in intervallen van drie minuten geaggregeerd, waardoor er een latentie van drie minuten wordt toegevoegd. Een ander proces dat latentie toevoegt, is het proces waarmee aangepaste logboeken worden verwerkt. In sommige gevallen kan dit proces enkele minuten latentie toevoegen aan logboeken die worden verzameld van bestanden door de agent.
+Zodra logboek records zijn opgenomen in de Azure Monitor-pijp lijn (zoals aangegeven in de eigenschap [_TimeReceived](./log-standard-columns.md#_timereceived) ), worden ze geschreven naar tijdelijke opslag om Tenant isolatie te garanderen en ervoor te zorgen dat de gegevens niet verloren gaan. Dit proces voegt doorgaans 5-15 seconden toe. Sommige beheer oplossingen implementeren zwaarere algoritmen voor het verzamelen van gegevens en het afleiden van inzichten naarmate gegevens worden gestreamd. Zo worden met de bewaking van netwerk prestaties inkomende gegevens in intervallen van drie minuten geaggregeerd, waardoor er een latentie van drie minuten wordt toegevoegd. Een ander proces dat latentie toevoegt, is het proces waarmee aangepaste logboeken worden verwerkt. In sommige gevallen kan dit proces enkele minuten latentie toevoegen aan logboeken die worden verzameld van bestanden door de agent.
 
 ### <a name="new-custom-data-types-provisioning"></a>Nieuwe aangepaste gegevens typen inrichten
 Wanneer er een nieuw type aangepaste gegevens wordt gemaakt op basis van een [aangepast logboek](../agents/data-sources-custom-logs.md) of de [Data Collector-API](../logs/data-collector-api.md), maakt het systeem een speciale opslag container. Dit is een eenmalige overhead die alleen optreedt bij de eerste keer dat dit gegevenstype wordt gebruikt.
@@ -77,8 +77,8 @@ De opname tijd kan variëren voor verschillende bronnen onder verschillende omst
 
 | Stap | Eigenschap of functie | Opmerkingen |
 |:---|:---|:---|
-| Record gemaakt in gegevens bron | [TimeGenerated](../platform/log-standard-columns.md#timegenerated-and-timestamp) <br>Als de gegevens bron deze waarde niet instelt, wordt deze ingesteld op dezelfde tijd als _TimeReceived. |
-| Record ontvangen door Azure Monitor opname-eind punt | [_TimeReceived](../platform/log-standard-columns.md#_timereceived) | |
+| Record gemaakt in gegevens bron | [TimeGenerated](./log-standard-columns.md#timegenerated-and-timestamp) <br>Als de gegevens bron deze waarde niet instelt, wordt deze ingesteld op dezelfde tijd als _TimeReceived. |
+| Record ontvangen door Azure Monitor opname-eind punt | [_TimeReceived](./log-standard-columns.md#_timereceived) | |
 | Record opgeslagen in de werk ruimte en beschikbaar voor query's | [ingestion_time ()](/azure/kusto/query/ingestiontimefunction) | |
 
 ### <a name="ingestion-latency-delays"></a>Vertragingen bij opname latentie

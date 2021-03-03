@@ -5,28 +5,32 @@ author: linda33wj
 ms.author: jingwang
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 10/14/2020
-ms.openlocfilehash: 5f46e2871aa0017f0a4b33df04a8ae9058c59e17
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 02/25/2021
+ms.openlocfilehash: 4b2fb49899b6a676520fe0912dd122dd72cce023
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100385469"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101712909"
 ---
 # <a name="lookup-activity-in-azure-data-factory"></a>Opzoek activiteit in Azure Data Factory
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
-Met opzoek activiteit kan een gegevensset worden opgehaald uit een van de Azure Data Factory ondersteunde gegevens bronnen. Gebruik het in het volgende scenario:
-- Bepaal dynamisch welke objecten in een volgende activiteit moeten worden gebruikt, in plaats van de naam van het object vast te schrijven. Enkele voor beelden van objecten zijn bestanden en tabellen.
+Met opzoek activiteit kan een gegevensset worden opgehaald uit een van de Azure Data Factory ondersteunde gegevens bronnen. u kunt deze gebruiken om dynamisch te bepalen welke objecten in een volgende activiteit moeten worden gebruikt, in plaats van de naam van het object vast te schrijven. Enkele voor beelden van objecten zijn bestanden en tabellen.
 
-Met opzoek activiteit wordt de inhoud van een configuratie bestand of-tabel gelezen en geretourneerd. Het resultaat van het uitvoeren van een query of opgeslagen procedure wordt ook geretourneerd. De uitvoer van de opzoek activiteit kan worden gebruikt in een volgende Kopieer-of transformatie activiteit als dit een singleton waarde is. De uitvoer kan worden gebruikt in een ForEach-activiteit als dit een matrix met kenmerken is.
+Met opzoek activiteit wordt de inhoud van een configuratie bestand of-tabel gelezen en geretourneerd. Het resultaat van het uitvoeren van een query of opgeslagen procedure wordt ook geretourneerd. De uitvoer kan een singleton-waarde zijn of een matrix met kenmerken die kan worden gebruikt in een volgende Kopieer-, trans formatie-of controle stroom activiteiten zoals ForEach-activiteit.
 
 ## <a name="supported-capabilities"></a>Ondersteunde mogelijkheden
 
-De volgende gegevens bronnen worden ondersteund voor opzoek activiteiten. 
+Houd rekening met het volgende:
 
-De opzoek activiteit kan Maxi maal 5000 rijen opleveren. Als de resultatenset meer records bevat, worden de eerste 5000 rijen geretourneerd. De uitvoer van de opzoek activiteit ondersteunt Maxi maal ongeveer 4 MB. de activiteit mislukt als de grootte de limiet overschrijdt. Momenteel is de langste duur voor de opzoek activiteit voordat de time-out 24 uur is.
+- De opzoek activiteit kan Maxi maal **5000 rijen** opleveren. Als de resultatenset meer records bevat, worden de eerste 5000 rijen geretourneerd.
+- De uitvoer van de opzoek activiteit ondersteunt Maxi maal **4 MB** . de activiteit mislukt als de grootte de limiet overschrijdt. 
+- De langste duur voor de opzoek activiteit voordat de time-out **24 uur** is.
+- Wanneer u een query of opgeslagen procedure gebruikt voor het opzoeken van gegevens, moet u ervoor zorgen dat er één en exact één resultaatset wordt geretourneerd. Anders mislukt de opzoek activiteit.
+
+De volgende gegevens bronnen worden ondersteund voor opzoek activiteiten. 
 
 [!INCLUDE [data-factory-v2-supported-data-stores](../../includes/data-factory-v2-supported-data-stores-for-lookup-activity.md)]
 
@@ -53,8 +57,8 @@ De opzoek activiteit kan Maxi maal 5000 rijen opleveren. Als de resultatenset me
 
 Naam | Beschrijving | Type | Vereist?
 ---- | ----------- | ---- | --------
-sets | Bevat de referentie voor de gegevensset voor de zoek actie. Details ophalen uit de sectie **Eigenschappen van gegevensset** in elk bijbehorend connector artikel. | Sleutel/waarde-paar | Yes
-source | Bevat eigenschappen van een gegevensset, hetzelfde als de bron van de Kopieer activiteit. Details ophalen uit de sectie **Eigenschappen van Kopieer activiteit** in elk bijbehorende connector-artikel. | Sleutel/waarde-paar | Yes
+sets | Bevat de referentie voor de gegevensset voor de zoek actie. Details ophalen uit de sectie **Eigenschappen van gegevensset** in elk bijbehorend connector artikel. | Sleutel/waarde-paar | Ja
+source | Bevat eigenschappen van een gegevensset, hetzelfde als de bron van de Kopieer activiteit. Details ophalen uit de sectie **Eigenschappen van Kopieer activiteit** in elk bijbehorende connector-artikel. | Sleutel/waarde-paar | Ja
 firstRowOnly | Geeft aan of alleen de eerste rij of alle rijen worden geretourneerd. | Booleaans | Nee. De standaardwaarde is `true`.
 
 > [!NOTE]
@@ -381,7 +385,7 @@ Hier volgen enkele beperkingen van de opzoek activiteit en voorgestelde tijdelij
 
 | Beperking | Tijdelijke oplossing |
 |---|---|
-| De opzoek activiteit heeft Maxi maal 5.000 rijen en een maximale grootte van 2 MB. | Ontwerp een tweedelige pijp lijn waarbij de buitenste pijp lijn zich herhaalt over een interne pijp lijn, waarmee gegevens worden opgehaald die niet groter zijn dan de maximum rijen of-grootte. |
+| De opzoek activiteit heeft Maxi maal 5.000 rijen en een maximale grootte van 4 MB. | Ontwerp een tweedelige pijp lijn waarbij de buitenste pijp lijn zich herhaalt over een interne pijp lijn, waarmee gegevens worden opgehaald die niet groter zijn dan de maximum rijen of-grootte. |
 | | |
 
 ## <a name="next-steps"></a>Volgende stappen

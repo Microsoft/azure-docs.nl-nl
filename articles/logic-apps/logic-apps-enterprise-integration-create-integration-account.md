@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: estfan, logicappspm
 ms.topic: conceptual
 ms.date: 11/04/2020
-ms.openlocfilehash: 191832ab227e854b40938183e335c1b6ea52199c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 51059dd1c4c5c93e155cd7a2d34c3cbaf29db6e2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000047"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101705582"
 ---
 # <a name="create-and-manage-integration-accounts-for-b2b-enterprise-integrations-in-azure-logic-apps"></a>Integratieaccounts voor B2B-ondernemingsintegraties maken en beheren met behulp van Azure Logic Apps
 
@@ -21,21 +21,29 @@ Voordat u [bedrijfsintegratie en B2B-oplossingen](../logic-apps/logic-apps-enter
 
 U kunt B2B-artefacten bijvoorbeeld maken, opslaan en beheren, zoals handels partners, overeenkomsten, kaarten, schema's, certificaten en batch configuraties. Voordat uw logische app met deze artefacten kan werken en de Logische apps B2B-connectors gebruikt, moet u ook [uw integratie account koppelen](#link-account) aan uw logische app. Het integratie account en de logische app moeten zich op *dezelfde* locatie of regio bevinden.
 
-> [!TIP]
-> Zie [integratie accounts maken in een ISE](../logic-apps/add-artifacts-integration-service-environment-ise.md#create-integration-account-environment)voor meer informatie over het maken van een integratie account in een [integratie service omgeving](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md).
+> [!IMPORTANT]
+> Op basis van het type integratie account dat u selecteert, worden er kosten in rekening gebracht bij het maken van een integratie account. Zie [Logic apps prijzen en facturerings modellen](logic-apps-pricing.md#integration-accounts) en [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps/)voor meer informatie.
 
 In dit onderwerp wordt beschreven hoe u deze taken uitvoert:
 
 * Maak uw integratie account.
+
+  > [!TIP]
+  > Zie [integratie accounts maken in een ISE](../logic-apps/add-artifacts-integration-service-environment-ise.md#create-integration-account-environment)voor meer informatie over het maken van een integratie account in een [integratie service omgeving](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md).
+
 * Koppel uw integratie account aan een logische app.
+
 * Wijzig de prijs categorie voor uw integratie account.
+
 * Uw integratie account ontkoppelen van een logische app.
+
 * Verplaats uw integratie account naar een andere Azure-resource groep of-abonnement.
+
 * Verwijder het integratie account.
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een Azure-abonnement. Als u nog geen abonnement op Azure hebt, [registreer u dan nu voor een gratis Azure-account](https://azure.microsoft.com/free/).
+* Een Azure-account en -abonnement. Als u nog geen abonnement op Azure hebt, [registreer u dan nu voor een gratis Azure-account](https://azure.microsoft.com/free/).
 
 ## <a name="create-integration-account"></a>Integratieaccount maken
 
@@ -62,12 +70,12 @@ Voor deze taak kunt u de Azure Portal gebruiken door de stappen in deze sectie, 
    | **Naam** | Ja | <*integratie-account-naam*> | De naam van uw integratie account, die alleen letters, cijfers, afbreek streepjes ( `-` ), onderstrepings tekens ( `_` ), haakjes ( `(` , `)` ) en punten ( `.` ) kan bevatten. In dit voor beeld wordt ' fabrikam-Integration ' gebruikt. |
    | **Abonnement** | Ja | <*Azure-subscription-name*> | De naam van uw Azure-abonnement |
    | **Resourcegroep** | Ja | <*Naam-van-Azure-resourcegroep*> | De naam voor de [Azure-resource groep](../azure-resource-manager/management/overview.md) die moet worden gebruikt voor het ordenen van verwante resources. Voor dit voor beeld maakt u een nieuwe resource groep met de naam ' FabrikamIntegration-RG '. |
-   | **Prijscategorie** | Yes | <*prijs niveau*> | De prijs categorie voor het integratie account, dat u later kunt wijzigen. Voor dit voor beeld selecteert u **gratis**. Raadpleeg de volgende onderwerpen voor meer informatie: <p>- [Logic Apps prijs model](../logic-apps/logic-apps-pricing.md#integration-accounts) <p>- [Logic Apps limieten en configuratie](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits) <p>- [Logic Apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps/) |
+   | **Prijscategorie** | Ja | <*prijs niveau*> | De prijs categorie voor het integratie account, dat u later kunt wijzigen. Voor dit voor beeld selecteert u **gratis**. Raadpleeg de volgende onderwerpen voor meer informatie: <p>- [Logic Apps prijs model](../logic-apps/logic-apps-pricing.md#integration-accounts) <p>- [Logic Apps limieten en configuratie](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits) <p>- [Logic Apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps/) |
    | **Locatie** | Ja | <*Azure-regio*> | De regio waar de meta gegevens van uw integratie account moeten worden opgeslagen. Selecteer dezelfde locatie als uw logische app of maak uw Logic apps op dezelfde locatie als uw integratie account. Gebruik voor dit voor beeld ' vs-West '. <p>**Opmerking**: als u een integratie account in een [Integration service Environment (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)wilt maken, selecteert u die ISE als de locatie. Zie [integratie accounts maken in een ISE](../logic-apps/add-artifacts-integration-service-environment-ise.md#create-integration-account-environment)voor meer informatie. |
-   | **Log Analytics** | No | Uit, op | Laat de instelling **uitgeschakeld** voor dit voor beeld. |
+   | **Log Analytics** | Nee | Uit, op | Laat de instelling **uitgeschakeld** voor dit voor beeld. |
    |||||
 
-1. Wanneer u klaar bent, selecteert u **maken**.
+1. Wanneer u klaar bent, selecteert u **Maken**.
 
    Nadat de implementatie is voltooid, opent Azure uw integratie account.
 
@@ -75,7 +83,7 @@ Voor deze taak kunt u de Azure Portal gebruiken door de stappen in deze sectie, 
 
 1. Voordat uw logische app uw integratie account kan gebruiken, volgt u de volgende stappen om uw integratie account en logische app samen te koppelen.
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 U kunt een integratie account maken met behulp van de Azure CLI-opdrachten in deze sectie.
 
@@ -207,7 +215,7 @@ Als u deze wijziging wilt aanbrengen, kunt u de Azure Portal of de Azure CLI geb
 
 <a name="upgrade-tier-azure-cli"></a>
 
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+#### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 1. Als u dit nog niet hebt gedaan, [installeert u de vereisten voor Azure cli](/cli/azure/get-started-with-azure-cli).
 

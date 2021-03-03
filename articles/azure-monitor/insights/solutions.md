@@ -1,18 +1,17 @@
 ---
 title: Bewakings oplossingen in Azure Monitor | Microsoft Docs
 description: Bewakings oplossingen in Azure Monitor zijn een verzameling regels voor logica, visualisatie en gegevens aanschaf die gegevens over een bepaald probleem gebied hebben gedraaid.  Dit artikel bevat informatie over het installeren en gebruiken van bewakings oplossingen.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/16/2020
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: d2e898c6401ff9959298e5e435d68b4c4a452c4c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: a63db154d055675b834e2949a330375633a5761d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100587289"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728583"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Bewakings oplossingen in Azure Monitor
 

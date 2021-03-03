@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/13/2020
 ms.author: kumud
-ms.openlocfilehash: 5070b64c3900aa4ee1cf51519c7b64362ac37413
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 5de909d0d57ae212fa562eb31551e2271d307d47
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100596664"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101694254"
 ---
 # <a name="create-change-or-delete-a-network-security-group"></a>Een netwerkbeveiligingsgroep maken, wijzigen of verwijderen
 
@@ -361,6 +361,11 @@ Om taken uit te voeren op netwerk beveiligings groepen, beveiligings regels en t
 | Micro soft. Network/networkSecurityGroups/schrijven                 |   Een netwerk beveiligings groep maken of bijwerken                             |
 | Micro soft. Network/networkSecurityGroups/verwijderen                |   Netwerk beveiligings groep verwijderen                                       |
 | Micro soft. Network/networkSecurityGroups/samen voegen/actie           |   Een netwerk beveiligings groep aan een subnet of netwerk interface koppelen 
+
+
+>[!NOTE]
+> Voor `write` het uitvoeren van bewerkingen voor een netwerk beveiligings groep moet het abonnements account ten minste `read` machtigingen hebben voor de resource groep en de `Microsoft.Network/networkSecurityGroups/write` machtiging.
+
 
 ### <a name="network-security-group-rule"></a>Regel voor netwerk beveiligings groep
 

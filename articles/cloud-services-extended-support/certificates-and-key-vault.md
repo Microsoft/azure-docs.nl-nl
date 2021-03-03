@@ -8,16 +8,16 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 9e69b4e9279f9147c2ee13d42a42aec0c5a15d96
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: d9ff86eeb0e64e7edbad0eeca51b04cabbd191e9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98744475"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101722650"
 ---
 # <a name="use-certificates-with-azure-cloud-services-extended-support"></a>Certificaten gebruiken met Azure Cloud Services (uitgebreide ondersteuning)
 
-Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan Cloud Services (uitgebreide ondersteuning). Sleutel kluizen kunnen worden gemaakt via [Azure Portal](https://docs.microsoft.com/azure/key-vault/general/quick-create-portal) en [Power shell](https://docs.microsoft.com/azure/key-vault/general/quick-create-powershell). Voeg de certificaten toe aan Key Vault en verwijs vervolgens naar de certificaat vingerafdrukken in het service configuratie bestand. U moet ook Key Vault inschakelen voor de juiste machtigingen, zodat Cloud Services (uitgebreide ondersteunings resource) het certificaat kan ophalen dat is opgeslagen als geheimen van Key Vault.  
+Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan Cloud Services (uitgebreide ondersteuning). Sleutel kluizen kunnen worden gemaakt via [Azure Portal](../key-vault/general/quick-create-portal.md) en [Power shell](../key-vault/general/quick-create-powershell.md). Voeg de certificaten toe aan Key Vault en verwijs vervolgens naar de certificaat vingerafdrukken in het service configuratie bestand. U moet ook Key Vault inschakelen voor de juiste machtigingen, zodat Cloud Services (uitgebreide ondersteunings resource) het certificaat kan ophalen dat is opgeslagen als geheimen van Key Vault.  
 
 ## <a name="upload-a-certificate-to-key-vault"></a>Een certificaat uploaden naar Key Vault 
 

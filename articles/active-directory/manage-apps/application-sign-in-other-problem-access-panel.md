@@ -12,12 +12,12 @@ ms.date: 07/11/2017
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 5d314331059a96388f23cd43667fca20a689f167
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 2a0411e97f78104de1356d482e4e43a42701c073
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99258843"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101687621"
 ---
 # <a name="troubleshoot-problems-signing-in-to-an-application-from-azure-ad-my-apps"></a>Problemen oplossen bij het aanmelden bij een toepassing vanuit Azure AD mijn apps
 
@@ -141,14 +141,15 @@ Voer de volgende stappen uit om de groepslid maatschappen van een gebruiker te c
 7.  Selecteer **groepen** om te zien van welke groepen de gebruiker lid is.
 
 ### <a name="check-if-a-user-has-more-than-999-app-role-assignments"></a>Controleren of een gebruiker meer dan 999 app-roltoewijzingen heeft
-Als aan een gebruiker meer dan 999 app-roltoewijzingen zijn toegewezen, worden mogelijk niet alle apps in mijn apps weer geven.
+Als een gebruiker meer dan 999 app-roltoewijzingen heeft, worden mogelijk niet alle apps in mijn apps weer geven.
 
 Dit komt doordat mijn apps momenteel Maxi maal 999 app-roltoewijzingen lezen om te bepalen aan welke apps gebruikers worden toegewezen. Als een gebruiker is toegewezen aan meer dan 999 apps, is het niet mogelijk om te bepalen welke van deze apps wordt weer gegeven in de portal mijn apps.
 
-Ga als volgt te werk om het aantal toegewezen app-roltoewijzingen voor een gebruiker te controleren:
+Voer de volgende stappen uit om te controleren of een gebruiker meer dan 999 app-roltoewijzingen heeft:
 1. Installeer de Power shell-module [**micro soft. Graph**](https://github.com/microsoftgraph/msgraph-sdk-powershell) .
-2. Voer uit `Connect-MgGraph -Scopes "Directory.Read.All"` en verifieer als **globale beheerder.**
-3. Voer uit `$m = Get-MgUserAppRoleAssignment -UserId "<userId>" | Measure; $m.Count` om te bepalen hoeveel app-roltoewijzingen aan de gebruiker momenteel zijn verleend.
+2. Voer `Connect-MgGraph -Scopes "User.ReadBasic.All Application.Read.All"` uit.
+3. Voer uit `(Get-MgUserAppRoleAssignment -UserId "<userId>" -Top 999).Count` om te bepalen hoeveel app-roltoewijzingen aan de gebruiker momenteel zijn verleend.
+4. Als het resultaat 999 is, heeft de gebruiker waarschijnlijk meer dan 999 app-rollen toegewezen.
 
 ### <a name="check-a-users-assigned-licenses"></a>De toegewezen licenties van een gebruiker controleren
 Voer de volgende stappen uit om de toegewezen licenties van een gebruiker te controleren:

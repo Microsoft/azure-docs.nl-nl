@@ -7,13 +7,14 @@ ms.subservice: redhat
 ms.collection: linux
 ms.topic: article
 ms.date: 02/10/2020
-ms.author: alsin
-ms.openlocfilehash: 03c033ac5d0f20bbfd4f5dccfb5c2900596d2a41
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.author: mathapli
+ms.reviewer: cynthn
+ms.openlocfilehash: 42e0788a25efa5124f24a77b48469d6ed8265dfc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101673120"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101694679"
 ---
 # <a name="overview-of-red-hat-enterprise-linux-images"></a>Overzicht van Red Hat Enterprise Linux installatie kopieën
 
@@ -108,6 +109,8 @@ Details voor RHEL 8-afbeeldings typen vindt u hieronder.
 |----------|-------|------------|---------|--------
 |RedHat | RHEL | 8 | Samengevoegde waarden van de RHEL secundaire versie en de publicatie datum (bijvoorbeeld 8.0.20191023) | Deze installatie kopieën zijn RHEL 8 gepartitioneerde installatie kopieën die zijn verbonden met standaard Red Hat-opslag plaatsen.
 |RedHat | RHEL | 8-Gen2 | Samengevoegde waarden van de RHEL secundaire versie en de publicatie datum (bijvoorbeeld 8.0.20191024) | Deze installatie kopieën zijn Hyper-V-generatie 2 RHEL 8 gepartitioneerde installatie kopieën die zijn verbonden met Standard Red Hat-opslag plaatsen. Zie [ondersteuning voor virtuele machines van de tweede generatie op Azure](../../generation-2.md)voor meer informatie over virtuele machines van de tweede generatie in Azure.
+|RedHat | RHEL | RHEL-SAP-APPS | Samengevoegde waarden van de RHEL secundaire versie en de publicatie datum (bijvoorbeeld 8.1.2021012201) | Deze installatie kopieën zijn RHEL voor SAP-toepassingen installatie kopieën. Ze zijn gerechtigd om toegang te krijgen tot SAP-toepassings opslagplaatsen en RHEL-opslag plaatsen.
+|RedHat | RHEL | RHEL-SAP-HA | Samengevoegde waarden van de RHEL secundaire versie en de publicatie datum (bijvoorbeeld 8.1.2021010602) | Deze installatie kopieën zijn RHEL voor SAP met hoge Beschik baarheid en installatie kopieën van Update Services. Ze hebben het recht om toegang te krijgen tot de SAP-oplossingen en-opslag plaatsen en de opslag plaatsen met hoge Beschik baarheid, evenals RHEL E4S-opslag plaatsen. Billing bevat de Premium van RHEL Premium, SAP Premium en hoge Beschik baarheid boven op de basis reken kosten.
 
 ## <a name="rhel-extended-support-add-ons"></a>Uitgebreide ondersteuning voor RHEL-invoeg toepassingen
 

@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: conceptual
 ms.date: 12/09/2020
 ms.author: cherylmc
-ms.openlocfilehash: 4fe22e0dae73df7af4fc24ba508ecbecf72dfd05
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: b6a0dee4c3fef1be4f4b9f910b4c6256b4924a2d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97795365"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101700215"
 ---
 # <a name="working-with-nsg-access-and-azure-bastion"></a>Werken met NSG-toegang en Azure Bastion
 
@@ -32,11 +32,15 @@ In dit diagram:
 
 In deze sectie ziet u het netwerk verkeer tussen de gebruiker en Azure Bastion, en tot doel-Vm's in uw virtuele netwerk:
 
+> [!IMPORTANT]
+> Als u ervoor kiest om een NSG te gebruiken met uw Azure Bastion-resource, **moet** u alle volgende regels voor binnenkomend en uitgaand verkeer maken. Als u een van de volgende regels in uw NSG weglaat, zal uw Azure Bastion-resource de vereiste updates in de toekomst niet meer kunnen ontvangen en kan de bron daarom worden geopend voor toekomstige beveiligings problemen.
+> 
+
 ### <a name="azurebastionsubnet"></a><a name="apply"></a>AzureBastionSubnet
 
-Azure Bastion wordt specifiek geïmplementeerd voor ***AzureBastionSubnet** _.
+Azure Bastion wordt specifiek geïmplementeerd voor ***AzureBastionSubnet***.
 
-_ Binnenkomend **verkeer:**
+* **Binnenkomend verkeer:**
 
    * **Binnenkomend verkeer via het open bare Internet:** De Azure-Bastion maakt een openbaar IP-adres waarvoor poort 443 is ingeschakeld op het open bare IP-adres voor binnenkomend verkeer. Poort 3389/22 hoeft niet te worden geopend op de AzureBastionSubnet.
    * **Binnenkomend verkeer vanuit het Azure Bastion-besturings vlak:** Schakel voor de connectiviteit van het besturings element het argument poort 443 binnenkomend van de **GatewayManager** -service in. Hiermee wordt het besturings vlak ingeschakeld, dat wil zeggen dat gateway beheer met Azure Bastion kan communiceren.

@@ -4,18 +4,18 @@ description: Ontvang een melding via SMS, webhook, SMS, e-mail en meer wanneer b
 ms.subservice: alerts
 ms.topic: conceptual
 ms.date: 09/17/2018
-ms.openlocfilehash: cfe44fb5220b217b73c17280d5c8aaf87c57ebaf
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: a8ab9520527a0d5ebc1de698f84e9f64e28b869a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610465"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101718111"
 ---
 # <a name="alerts-on-activity-log"></a>Meldingen over activiteitenlogboek
 
 ## <a name="overview"></a>Overzicht
 
-Waarschuwingen voor activiteiten logboeken zijn waarschuwingen die worden geactiveerd wanneer een nieuwe [activiteiten logboek gebeurtenis](../essentials/activity-log-schema.md) optreedt die overeenkomt met de voor waarden die zijn opgegeven in de waarschuwing. Op basis van de volg orde en het volume van de gebeurtenissen die zijn vastgelegd in het [activiteiten logboek van Azure](../platform/platform-logs-overview.md), wordt de waarschuwings regel geactiveerd. Waarschuwings regels voor activiteiten logboeken zijn Azure-resources, zodat ze kunnen worden gemaakt met behulp van een Azure Resource Manager sjabloon. Ze kunnen ook worden gemaakt, bijgewerkt of verwijderd in de Azure Portal. In dit artikel worden de concepten geïntroduceerd van waarschuwingen voor activiteiten Logboeken. Zie [waarschuwingen voor activiteiten logboek maken en beheren](alerts-activity-log.md)voor meer informatie over het maken of gebruiken van waarschuwings regels voor activiteiten Logboeken.
+Waarschuwingen voor activiteiten logboeken zijn waarschuwingen die worden geactiveerd wanneer een nieuwe [activiteiten logboek gebeurtenis](../essentials/activity-log-schema.md) optreedt die overeenkomt met de voor waarden die zijn opgegeven in de waarschuwing. Op basis van de volg orde en het volume van de gebeurtenissen die zijn vastgelegd in het [activiteiten logboek van Azure](../essentials/platform-logs-overview.md), wordt de waarschuwings regel geactiveerd. Waarschuwings regels voor activiteiten logboeken zijn Azure-resources, zodat ze kunnen worden gemaakt met behulp van een Azure Resource Manager sjabloon. Ze kunnen ook worden gemaakt, bijgewerkt of verwijderd in de Azure Portal. In dit artikel worden de concepten geïntroduceerd van waarschuwingen voor activiteiten Logboeken. Zie [waarschuwingen voor activiteiten logboek maken en beheren](alerts-activity-log.md)voor meer informatie over het maken of gebruiken van waarschuwings regels voor activiteiten Logboeken.
 
 > [!NOTE]
 > * Er **kunnen geen** waarschuwingen worden gemaakt voor gebeurtenissen in de categorie waarschuwing van het activiteiten logboek.
@@ -54,12 +54,12 @@ Wanneer een waarschuwing voor een activiteiten logboek wordt geactiveerd, wordt 
 * Een bestaande actie groep gebruiken in uw activiteiten logboek waarschuwing.
 * Maak een nieuwe actie groep.
 
-Zie voor meer informatie over actie groepen [actie groepen maken en beheren in de Azure Portal](../platform/action-groups.md).
+Zie voor meer informatie over actie groepen [actie groepen maken en beheren in de Azure Portal](./action-groups.md).
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Een [overzicht van waarschuwingen](../platform/alerts-overview.md)weer geven.
+- Een [overzicht van waarschuwingen](./alerts-overview.md)weer geven.
 - Meer informatie over het [maken en wijzigen van waarschuwingen voor activiteiten logboeken](alerts-activity-log.md).
 - Bekijk het [webhookschema voor waarschuwingen voor het activiteitenlogboek](../alerts/activity-log-alerts-webhook.md).
 - Meer informatie over [servicestatusmeldingen](../../service-health/service-notifications.md).

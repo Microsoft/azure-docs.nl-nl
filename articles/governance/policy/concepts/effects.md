@@ -1,14 +1,14 @@
 ---
 title: Inzicht krijgen in de werking van effecten
 description: Azure Policy definities hebben verschillende effecten die bepalen hoe de naleving wordt beheerd en gerapporteerd.
-ms.date: 10/05/2020
+ms.date: 02/17/2021
 ms.topic: conceptual
-ms.openlocfilehash: e72e94766dce2660409e729bc43eb107fb9ab39a
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 67445b3d0d63b3827f82822de00412bdab67c5ab
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97883075"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101741817"
 ---
 # <a name="understand-azure-policy-effects"></a>Azure Policy effecten begrijpen
 
@@ -266,8 +266,7 @@ Net als bij AuditIfNotExists voert een DeployIfNotExists-beleids definitie een s
 
 ### <a name="deployifnotexists-evaluation"></a>DeployIfNotExists-evaluatie
 
-DeployIfNotExists wordt ongeveer 15 minuten uitgevoerd nadat een resource provider een aanvraag voor het maken of bijwerken van een resource heeft afgehandeld en een status code voor geslaagd heeft geretourneerd. Een sjabloon implementatie treedt op als er geen gerelateerde resources zijn of als de resources die zijn gedefinieerd door **ExistenceCondition** niet naar waar worden geëvalueerd.
-De duur van de implementatie is afhankelijk van de complexiteit van de resources die in de sjabloon zijn opgenomen.
+DeployIfNotExists wordt ongeveer 15 minuten uitgevoerd nadat een resource provider een abonnement of resource aanvraag voor maken of bijwerken heeft afgehandeld en de status code geslaagd heeft geretourneerd. Een sjabloon implementatie treedt op als er geen gerelateerde resources zijn of als de resources die zijn gedefinieerd door **ExistenceCondition** niet naar waar worden geëvalueerd. De duur van de implementatie is afhankelijk van de complexiteit van de resources die in de sjabloon zijn opgenomen.
 
 Tijdens een evaluatie cyclus worden beleids definities met een DeployIfNotExists-effect dat overeenkomt met resources, gemarkeerd als niet-compatibel, maar wordt er geen actie ondernomen voor die bron. Bestaande niet-compatibele resources kunnen worden hersteld met een [herstel taak](../how-to/remediate-resources.md).
 
@@ -482,8 +481,7 @@ Voor beeld: gate keeper v2 Admission Control regel om alleen de opgegeven contai
 
 ## <a name="modify"></a>Wijzigen
 
-Modify wordt gebruikt om eigenschappen of tags toe te voegen, bij te werken of te verwijderen tijdens het maken of bijwerken van een resource.
-Een voor beeld hiervan is het bijwerken van tags op resources, zoals costCenter. Bestaande niet-compatibele resources kunnen worden hersteld met een [herstel taak](../how-to/remediate-resources.md). Eén wijzigings regel kan elk wille keurig aantal bewerkingen hebben.
+Modify wordt gebruikt om eigenschappen of tags toe te voegen, bij te werken of te verwijderen tijdens het maken of bijwerken van een abonnement of resource. Een voor beeld hiervan is het bijwerken van tags op resources, zoals costCenter. Bestaande niet-compatibele resources kunnen worden hersteld met een [herstel taak](../how-to/remediate-resources.md). Eén wijzigings regel kan elk wille keurig aantal bewerkingen hebben.
 
 De volgende bewerkingen worden ondersteund door modify:
 

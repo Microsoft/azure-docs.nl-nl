@@ -1,19 +1,19 @@
 ---
-title: Metrische gegevens in realtime weer geven met Azure Monitor voor containers | Microsoft Docs
-description: In dit artikel wordt een overzicht gegeven van de real-time weergave van metrische gegevens zonder kubectl te gebruiken met Azure Monitor voor containers.
+title: Metrische gegevens in realtime weer geven met container Insights | Microsoft Docs
+description: In dit artikel wordt een overzicht gegeven van de real-time weergave van metrische gegevens zonder kubectl te gebruiken met container Insights.
 ms.topic: conceptual
 ms.date: 10/15/2019
 ms.custom: references_regions
-ms.openlocfilehash: 81d7210778fd6b5d75fb4b4fa8e066d2e015174f
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 2e3a8a417a934374c2c0b256bb65a471d98fdebe
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610252"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101731847"
 ---
 # <a name="how-to-view-metrics-in-real-time"></a>Metrische gegevens weer geven in realtime
 
-Met Azure Monitor voor de functie Live data (preview) van containers kunt u metrische gegevens over de status van het knoop punt en de pod in realtime visualiseren. Het emuleert directe toegang tot de `kubectl top nodes` -, `kubectl get pods –all-namespaces` -en- `kubectl get nodes` opdrachten voor het aanroepen, parseren en visualiseren van de gegevens in prestatie grafieken die deel uitmaken van dit inzicht.
+Met de functie container Insights live data (preview) kunt u metrische gegevens over de status van het knoop punt en de pod in realtime visualiseren. Het emuleert directe toegang tot de `kubectl top nodes` -, `kubectl get pods –all-namespaces` -en- `kubectl get nodes` opdrachten voor het aanroepen, parseren en visualiseren van de gegevens in prestatie grafieken die deel uitmaken van dit inzicht.
 
 Dit artikel bevat een gedetailleerd overzicht en helpt u inzicht te krijgen in het gebruik van deze functie.
 
@@ -26,7 +26,7 @@ Raadpleeg de [installatie handleiding](container-insights-livedata-setup.md)voor
 
 De functie voor Live gegevens (preview) heeft rechtstreeks toegang tot de Kubernetes-API en aanvullende informatie over het verificatie model vindt u [hier](https://kubernetes.io/docs/concepts/overview/kubernetes-api/).
 
-Deze functie voert een polling bewerking uit op basis van de metrische gegevens (inclusief `/api/v1/nodes` , `/apis/metrics.k8s.io/v1beta1/nodes` en `/api/v1/pods` ), die standaard elke vijf seconden zijn. Deze gegevens worden in de cache opgeslagen in uw browser en gegrafeerd in de vier prestatie grafieken die zijn opgenomen in Azure Monitor voor containers op het tabblad **cluster** door **Go Live (preview)** te selecteren. Elke volgende poll wordt gediagrameerd in een visualisatie venster van vijf minuten.
+Deze functie voert een polling bewerking uit op basis van de metrische gegevens (inclusief `/api/v1/nodes` , `/apis/metrics.k8s.io/v1beta1/nodes` en `/api/v1/pods` ), die standaard elke vijf seconden zijn. Deze gegevens worden in de cache opgeslagen in uw browser en gegrafeerd in de vier prestatie grafieken die zijn opgenomen in container Insights op het tabblad **cluster** door **Go Live (preview-versie)** te selecteren. Elke volgende poll wordt gediagrameerd in een visualisatie venster van vijf minuten.
 
 ![De optie Live go in de cluster weergave](./media/container-insights-livedata-metrics/cluster-view-go-live-example-01.png)
 

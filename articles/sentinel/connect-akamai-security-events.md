@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/03/2021
 ms.author: yelevin
-ms.openlocfilehash: c833d87b8d85c75c4f050f0130ddfd74342f4c52
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 8aa5a52a06713b4f00b43205a57148049a8ef8da
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99566770"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711957"
 ---
 # <a name="connect-your-akamai-security-events-collector-to-azure-sentinel"></a>Uw Akamai-beveiligings gebeurtenissen verzamelaar koppelen aan Azure Sentinel
 
@@ -35,7 +35,7 @@ In dit artikel wordt uitgelegd hoe u de Akamai-beveiligings gebeurtenissen verza
 
 - U moet lees-en schrijf machtigingen hebben voor uw Azure-Sentinel-werk ruimte.
 
-- U moet Lees machtigingen hebben voor gedeelde sleutels voor de werk ruimte. [Meer informatie over werkruimte sleutels](../azure-monitor/platform/log-analytics-agent.md#workspace-id-and-key).
+- U moet Lees machtigingen hebben voor gedeelde sleutels voor de werk ruimte. [Meer informatie over werkruimte sleutels](../azure-monitor/agents/log-analytics-agent.md#workspace-id-and-key).
 
 ## <a name="send-akamai-security-events-logs-to-azure-sentinel"></a>Akamai-beveiligings gebeurtenis logboeken naar Azure Sentinel verzenden
 

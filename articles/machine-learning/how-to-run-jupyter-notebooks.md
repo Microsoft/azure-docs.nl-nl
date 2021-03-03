@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 01/19/2021
-ms.openlocfilehash: 18ccadcf43d41c677a665ed068d093f51389b576
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 82c11b913d38695c8738de88f3ce69b198ee099e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101657329"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101691872"
 ---
 # <a name="run-jupyter-notebooks-in-your-workspace"></a>Jupyter-notebooks uitvoeren in uw werk ruimte
 
@@ -190,7 +190,7 @@ Meer informatie over de compute-exemplaren vindt u in [Studio](https://ml.azure.
 
 * Als u geen verbinding kunt maken met een notitie blok, moet u ervoor zorgen dat de communicatie tussen websockets **niet** is uitgeschakeld. De functionaliteit van de reken instantie Jupyter werkt alleen als de WebSocket-communicatie is ingeschakeld. Zorg ervoor dat uw netwerk WebSocket-verbindingen toestaat naar *. instances.azureml.net en *. instances.azureml.ms. 
 
-* Wanneer reken instantie wordt geïmplementeerd in een persoonlijke koppelings werkruimte, kan deze alleen worden geopend vanuit een virtueel netwerk. Als u een aangepast DNS-of hosts-bestand gebruikt, voegt u een vermelding toe voor <exemplaar naam>. <region> . instances.azureml.ms met het privé-IP-adres van het persoonlijke eind punt van de werk ruimte. Zie het [aangepaste DNS-](./how-to-custom-dns.md?tabs=azure-cli) artikel voor meer informatie.
+* Wanneer reken instantie wordt geïmplementeerd in een persoonlijke koppelings werkruimte, kan deze alleen worden [geopend vanuit een virtueel netwerk](https://docs.microsoft.com/azure/machine-learning/how-to-secure-training-vnet#compute-instance). Als u een aangepast DNS-of hosts-bestand gebruikt, voegt u een vermelding toe voor <exemplaar naam>. <region> . instances.azureml.ms met het privé-IP-adres van het persoonlijke eind punt van de werk ruimte. Zie het [aangepaste DNS-](./how-to-custom-dns.md?tabs=azure-cli) artikel voor meer informatie.
     
 ## <a name="next-steps"></a>Volgende stappen
 

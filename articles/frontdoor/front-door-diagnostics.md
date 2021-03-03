@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/23/2020
 ms.author: yuajia
-ms.openlocfilehash: d1f3e59cc88ea9cb30e7eacbd26591e08d71be61
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 58db217ca173acbe0356596de916216c4ab7f241
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100575253"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101715544"
 ---
 # <a name="monitoring-metrics-and-logs-in-azure-front-door"></a>Metrische gegevens en logboeken bewaken in azure front deur
 
@@ -25,7 +25,7 @@ Met behulp van de voor deur van Azure kunt u resources op de volgende manieren c
 - **Metrische gegevens**. Azure front-deur heeft momenteel acht metrische gegevens om prestatie meter items weer te geven.
 - **Logboeken**. Met activiteiten en Diagnostische logboeken kunnen prestaties, toegang en andere gegevens worden opgeslagen of verbruikt vanuit een resource voor bewakings doeleinden.
 
-### <a name="metrics"></a>Metrische gegevens
+##  <a name="metrics"></a><a name="metrics"></a>Metrische gegevens
 
 Metrische gegevens zijn een functie voor bepaalde Azure-resources waarmee u prestatie meter items in de portal kunt weer geven. Hieronder vindt u de beschik bare metrische gegevens voor de voor deur:
 

@@ -7,12 +7,12 @@ ms.date: 02/23/2020
 ms.author: rogarana
 ms.subservice: files
 ms.topic: conceptual
-ms.openlocfilehash: 266862a1691387caf1b1ffa9a47b0e60e84970d8
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 739e1dea23f87403a4aded50d5c9f254a55c64cc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492128"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737610"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Lees de veelgestelde vragen (FAQ) over Azure Files
 [Azure files](storage-files-introduction.md) biedt volledig beheerde bestands shares in de cloud die toegankelijk zijn via het industrie standaard [SMB-protocol (Server Message Block)](/windows/win32/fileio/microsoft-smb-protocol-and-cifs-protocol-overview) en het [NFS-protocol (Network File System](https://en.wikipedia.org/wiki/Network_File_System) ) (preview). U kunt Azure-bestands shares gelijktijdig koppelen aan Cloud-of on-premises implementaties van Windows, Linux en macOS. U kunt ook Azure-bestands shares op Windows Server-computers in de cache opslaan met behulp van Azure File Sync voor snelle toegang, waarbij de gegevens worden gebruikt.
@@ -73,7 +73,7 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over Azure Files-functi
 
 * <a id="tier-options"></a>
   **Welke opslag lagen worden ondersteund in Azure Files?**  
-    Azure Files ondersteunt twee opslag lagen: Premium en Standard. Standaard bestands shares worden gemaakt in de opslag accounts voor algemeen gebruik (GPv1 of GPv2) en Premium-bestands shares worden gemaakt in FileStorage-opslag accounts. Meer informatie over het maken van [standaard bestands shares](storage-how-to-create-file-share.md) en [Premium-bestands shares](storage-how-to-create-premium-fileshare.md). 
+    Azure Files ondersteunt twee opslag lagen: Premium en Standard. Standaard bestands shares worden gemaakt in de opslag accounts voor algemeen gebruik (GPv1 of GPv2) en Premium-bestands shares worden gemaakt in FileStorage-opslag accounts. Meer informatie over het maken van [standaard bestands shares](storage-how-to-create-file-share.md) en [Premium-bestands shares](./storage-how-to-create-file-share.md). 
     
     > [!NOTE]
     > U kunt geen Azure-bestands shares maken op basis van Blob Storage-accounts of *Premium* -opslag accounts voor algemeen gebruik (GPv1 of GPv2). Standaard-Azure-bestands shares moeten alleen worden gemaakt in *standaard* accounts voor algemeen gebruik en Premium Azure-bestands shares moeten alleen worden gemaakt in FileStorage-opslag accounts. *Premium* -opslag accounts voor algemeen gebruik (GPv1 en GPv2) zijn alleen voor Premium-pagina-blobs. 

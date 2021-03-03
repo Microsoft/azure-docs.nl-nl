@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
-ms.openlocfilehash: dc301cf7149ad9fcd5bd5c02226afedc4df5e3ee
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 63db8375379144b2ede78d9e7010a350b3f69b12
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94833092"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101726407"
 ---
 # <a name="orchestrator-function-code-constraints"></a>Functie code beperkingen van Orchestrator
 
@@ -31,7 +31,7 @@ De volgende tabel bevat voor beelden van Api's die u moet vermijden omdat deze *
 | API-categorie | Reden | Tijdelijke oplossing |
 | ------------ | ------ | ---------- |
 | Datums en tijden  | Api's die de huidige datum of tijd retour neren, zijn niet-deterministisch, omdat de geretourneerde waarde voor elke herhaling afwijkt. | Gebruik de eigenschap [CurrentUtcDateTime](/dotnet/api/microsoft.azure.webjobs.extensions.durabletask.idurableorchestrationcontext.currentutcdatetime) in .net, de `currentUtcDateTime` API in Java script of de `current_utc_datetime` API in Python, die veilig is voor opnieuw afspelen. |
-| GUID'S en UUID  | Api's die een wille keurige GUID of UUID retour neren, zijn niet-deterministisch, omdat de gegenereerde waarde voor elke herhaling verschillend is. | Gebruik [NewGuid](/dotnet/api/microsoft.azure.webjobs.extensions.durabletask.idurableorchestrationcontext.newguid) in .net of `newGuid` in Java script om wille keurige guid's veilig te genereren. |
+| GUID'S en UUID  | Api's die een wille keurige GUID of UUID retour neren, zijn niet-deterministisch, omdat de gegenereerde waarde voor elke herhaling verschillend is. | Gebruik [NewGuid](/dotnet/api/microsoft.azure.webjobs.extensions.durabletask.idurableorchestrationcontext.newguid) in .net, `newGuid` in Java script en `new_guid` in Python, voor het veilig genereren van wille keurige guid's. |
 | Wille keurige getallen | Api's die wille keurige getallen retour neren, zijn niet-deterministisch omdat de gegenereerde waarde voor elke herhaling verschillend is. | Gebruik een functie activiteit om wille keurige getallen te retour neren naar een indeling. De retour waarden van de activiteit functies zijn altijd veilig voor opnieuw afspelen. |
 | Bindingen | Invoer-en uitvoer bindingen worden normaal gesp roken I/O en niet-deterministisch. Een Orchestrator-functie mag niet rechtstreeks gebruikmaken van de client bindingen van de [Orchestration-client](durable-functions-bindings.md#orchestration-client) en- [entiteit](durable-functions-bindings.md#entity-client) . | Gebruik invoer-en uitvoer bindingen binnen client-of activiteit functies. |
 | Netwerk | Netwerk aanroepen zijn vereist voor externe systemen en zijn niet-deterministisch. | Gebruik activiteit functies om netwerk aanroepen te maken. Als u een HTTP-aanroep van uw Orchestrator-functie wilt maken, kunt u ook de [duurzame HTTP-api's](durable-functions-http-features.md#consuming-http-apis)gebruiken. |

@@ -3,12 +3,12 @@ title: Azure-toepassing gateway gebruiken voor het beveiligen van uw web-apps op
 description: Configureer Azure-toepassing gateway zo dat uw web-apps die worden uitgevoerd op een Azure VMware-oplossing, veilig zichtbaar zijn.
 ms.topic: how-to
 ms.date: 02/10/2021
-ms.openlocfilehash: 9b10c206114ca922cc11bd8cb0321941b8ba672c
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 1ad615efe0de86a49714914507227b7cc1dca4cb
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100384194"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733581"
 ---
 # <a name="use-azure-application-gateway-to-protect-your-web-apps-on-azure-vmware-solution"></a>Azure-toepassing gateway gebruiken voor het beveiligen van uw web-apps op de Azure VMware-oplossing
 
@@ -35,7 +35,7 @@ Het diagram toont het test scenario dat wordt gebruikt om de Application Gateway
 
 :::image type="content" source="media/hub-spoke/azure-vmware-solution-second-level-traffic-segmentation.png" alt-text="Diagram van het test scenario dat wordt gebruikt om de Application Gateway te valideren met Azure VMware Solution-webtoepassingen." border="false":::
 
-Het Application Gateway exemplaar wordt geïmplementeerd op de hub in een toegewezen subnet. Het heeft een openbaar IP-adres van Azure. Het is raadzaam om de standaard DDoS-beveiliging voor het virtuele netwerk te activeren. De webserver wordt gehost op een privécloud van Azure VMware-oplossing achter NSX t0 en T1-gateways. De Azure VMware-oplossing maakt gebruik van [ExpressRoute Global Reach](../expressroute/expressroute-global-reach.md) om communicatie met de hub en on-premises systemen mogelijk te maken.
+Het Application Gateway exemplaar wordt geïmplementeerd op de hub in een toegewezen subnet. Het heeft een openbaar IP-adres van Azure. Het wordt aanbevolen [Azure DDoS Protection standaard](../ddos-protection/ddos-protection-overview.md) voor het virtuele netwerk te activeren. De webserver wordt gehost op een privécloud van Azure VMware-oplossing achter NSX t0 en T1-gateways. De Azure VMware-oplossing maakt gebruik van [ExpressRoute Global Reach](../expressroute/expressroute-global-reach.md) om communicatie met de hub en on-premises systemen mogelijk te maken.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -193,3 +193,4 @@ Nu u hebt gebruikgemaakt van Application Gateway voor het beveiligen van een web
 - [Azure-toepassing gateway configureren voor verschillende scenario's](../application-gateway/configuration-overview.md).
 - [Implementatie van Traffic Manager om werk belastingen van Azure VMware-oplossingen te verdelen](deploy-traffic-manager-balance-workloads.md).
 - [Integratie van Azure NetApp files met op Azure VMware-oplossingen gebaseerde workloads](netapp-files-with-azure-vmware-solution.md).
+- [Azure-resources in virtuele netwerken beveiligen](../ddos-protection/ddos-protection-overview.md)

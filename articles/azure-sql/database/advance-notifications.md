@@ -1,6 +1,6 @@
 ---
 title: Advance Notifications (preview) voor geplande onderhouds gebeurtenissen
-description: Ontvang een melding vóór gepland onderhoud voor Azure SQL Database of een beheerd exemplaar van Azure SQL.
+description: Ontvang een melding vóór gepland onderhoud voor Azure SQL Database.
 services: sql-database
 ms.service: sql-db-mi
 ms.subservice: service
@@ -11,24 +11,26 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/02/2021
-ms.openlocfilehash: 3f63a8d2f75a58a771d837128c2b2498c28948ef
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 07f6267a14a4604e1a43dd1a1a9930d63a419336
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662654"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101690886"
 ---
 # <a name="advance-notifications-for-planned-maintenance-events-preview"></a>Voorafgaande meldingen voor geplande onderhouds gebeurtenissen (preview-versie)
-[!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
+[!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 Voorafgaande meldingen (preview) is beschikbaar voor data bases die zijn geconfigureerd voor [onderhouds venster (preview-versie)](maintenance-window.md). Met voorschot meldingen kunnen klanten meldingen configureren zodat ze Maxi maal 24 uur vóór elke geplande gebeurtenis kunnen worden verzonden.
 
 Meldingen kunnen worden geconfigureerd zodat u teksten, e-mails, Azure push meldingen en voice mails kunt ophalen wanneer gepland onderhoud moet beginnen in de komende 24 uur. Er worden extra meldingen verzonden wanneer onderhoud begint en wanneer onderhoud wordt beëindigd.
 
+> [!Note]
+> De mogelijkheid om een onderhouds venster te kiezen voor Azure SQL Managed instances is momenteel niet beschikbaar voor Azure SQL Managed instances.
 
 ## <a name="create-an-advance-notification"></a>Een voor schot melding maken
 
-Er zijn geavanceerde meldingen beschikbaar voor Azure SQL-data bases en beheerde exemplaren waarvoor het onderhouds venster is geconfigureerd. 
+Er zijn geavanceerde meldingen beschikbaar voor Azure SQL-data bases waarvoor het onderhouds venster is geconfigureerd. 
 
 Voer de volgende stappen uit om een melding in te scha kelen.  
 

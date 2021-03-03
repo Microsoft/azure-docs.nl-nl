@@ -1,17 +1,16 @@
 ---
 title: Office 365-beheer oplossing in azure
 description: Dit artikel bevat informatie over de configuratie en het gebruik van de Office 365-oplossing in Azure.  Het bevat een gedetailleerde beschrijving van de Office 365-records die zijn gemaakt in Azure Monitor.
-ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/30/2020
-ms.openlocfilehash: d031b64b36bd7ff91c64960642cfbf00fb1682ab
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: be5409f7130f0e79b77871a2657609e8ddb76e36
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100587297"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728634"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Office 365-beheer oplossing in azure (preview-versie)
 
@@ -462,7 +461,7 @@ Deze records worden gemaakt als reactie op Bestands bewerkingen in share point.
 
 De volgende tabel bevat voorbeeld logboek query's voor update records die door deze oplossing zijn verzameld.
 
-| Query’s uitvoeren | Description |
+| Query’s uitvoeren | Beschrijving |
 | --- | --- |
 |Aantal bewerkingen voor uw Office 365-abonnement |Aantal OfficeActivity &#124;-overzicht () per bewerking |
 |Gebruik van share point-sites|OfficeActivity &#124; waarbij OfficeWorkload = ~ ' share point ' &#124; samenvattings aantal () door de waarde voor SiteUrl \| sorteren op aantal ASC|

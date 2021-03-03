@@ -1,19 +1,19 @@
 ---
-title: Azure Monitor voor de regio toewijzingen voor containers
-description: Hierin worden de regio toewijzingen beschreven die worden ondersteund tussen Azure Monitor voor containers, Log Analytics werk ruimte en aangepaste metrische gegevens.
+title: Regionale toewijzingen voor container Insights
+description: Hierin worden de regio toewijzingen beschreven die worden ondersteund tussen container Insights, Log Analytics-werk ruimte en aangepaste metrische gegevens.
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.custom: references_regions
-ms.openlocfilehash: 9b77242de3e7845a97874b663266103bf00a8e66
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: f9e910b1352109608becb82609e85e26d27d2cd1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611958"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728872"
 ---
-# <a name="region-mappings-supported-by-azure-monitor-for-containers"></a>Regio toewijzingen die worden ondersteund door Azure Monitor voor containers
+# <a name="region-mappings-supported-by-container-insights"></a>Regionale toewijzingen die worden ondersteund door container Insights
 
- Als Azure Monitor voor containers wordt ingeschakeld, worden alleen bepaalde regio's ondersteund voor het koppelen van een Log Analytics-werk ruimte en een AKS-cluster en het verzamelen van aangepaste metrische gegevens die aan Azure Monitor zijn verzonden.
+ Bij het inschakelen van container Insights worden alleen bepaalde regio's ondersteund voor het koppelen van een Log Analytics-werk ruimte en een AKS-cluster en het verzamelen van aangepaste metrische gegevens die worden verzonden naar Azure Monitor.
 
 ## <a name="log-analytics-workspace-supported-mappings"></a>Ondersteunde toewijzingen Log Analytics werk ruimte
 
@@ -53,4 +53,4 @@ Het verzamelen van metrische gegevens van knoop punten van Azure Kubernetes Serv
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u wilt beginnen met het bewaken van uw AKS-cluster, raadpleegt u [How to Enable the Azure monitor for containers](container-insights-onboard.md) voor meer informatie over de vereisten en beschik bare methoden voor het inschakelen van  
+Als u het AKS-cluster wilt bewaken, raadpleegt u [hoe u de container Insights inschakelt](container-insights-onboard.md) om de vereisten en beschik bare methoden te begrijpen voor het inschakelen van bewaking.  

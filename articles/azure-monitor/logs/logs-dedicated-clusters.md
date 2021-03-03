@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 09/16/2020
-ms.openlocfilehash: 818cf97a640952de79e84184c52c20575a0cc92b
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: fe7bd4b9f800b59d2c16d4aa3dadd3626c55b7e1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609389"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101707639"
 ---
 # <a name="azure-monitor-logs-dedicated-clusters"></a>Azure Monitor logboeken toegewezen clusters
 
@@ -34,7 +34,7 @@ Zodra het cluster is gemaakt, kan het worden geconfigureerd en worden de werk ru
 
 Gegevens die zijn opgenomen in toegewezen clusters, worden twee maal versleuteld: eenmaal op service niveau met door micro soft beheerde sleutels of door de [klant beheerde sleutel](../logs/customer-managed-keys.md), en eenmaal op het niveau van de infra structuur met twee verschillende versleutelings algoritmen en twee verschillende sleutels. [Dubbele versleuteling](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) beschermt tegen een scenario waarbij een van de versleutelings algoritmen of-sleutels mogelijk is aangetast. In dit geval blijft de extra laag versleuteling uw gegevens beveiligen. Met toegewezen cluster kunt u uw gegevens ook beveiligen met behulp van een [lockbox](../logs/customer-managed-keys.md#customer-lockbox-preview) -besturings element.
 
-Voor alle bewerkingen op het cluster niveau is de `Microsoft.OperationalInsights/clusters/write` actie machtiging vereist voor het cluster. Deze machtiging kan worden verleend via de eigenaar of Inzender die de `*/write` actie bevat of via de log Analytics rol Inzender die de `Microsoft.OperationalInsights/*` actie bevat. Zie [toegang tot logboek gegevens en werk ruimten in azure monitor beheren](../platform/manage-access.md)voor meer informatie over log Analytics machtigingen. 
+Voor alle bewerkingen op het cluster niveau is de `Microsoft.OperationalInsights/clusters/write` actie machtiging vereist voor het cluster. Deze machtiging kan worden verleend via de eigenaar of Inzender die de `*/write` actie bevat of via de log Analytics rol Inzender die de `Microsoft.OperationalInsights/*` actie bevat. Zie [toegang tot logboek gegevens en werk ruimten in azure monitor beheren](./manage-access.md)voor meer informatie over log Analytics machtigingen. 
 
 
 ## <a name="cluster-pricing-model"></a>Prijs model voor cluster
@@ -77,7 +77,7 @@ De volgende eigenschappen moeten worden opgegeven:
 - **Clustername**: wordt gebruikt voor administratieve doel einden. Gebruikers worden niet blootgesteld aan deze naam.
 - **ResourceGroupName**: voor elke Azure-resource behoren clusters tot een resource groep. We raden u aan een centrale IT-resource groep te gebruiken omdat clusters meestal worden gedeeld door veel teams in de organisatie. Raadpleeg [uw implementatie van Azure monitor-logboeken ontwerpen](../logs/design-logs-deployment.md) voor meer overwegingen bij het ontwerpen
 - **Locatie**: een cluster bevindt zich in een specifieke Azure-regio. Alleen werk ruimten in deze regio kunnen worden gekoppeld aan dit cluster.
-- **SkuCapacity**: u moet het *capaciteits reserverings* niveau (SKU) opgeven bij het maken van een *cluster* bron. Het *capaciteits reserverings* niveau kan zich in het bereik van 1.000 gb tot 3.000 GB per dag bevindt. U kunt deze indien nodig bijwerken in de stappen van 100. Als u een capaciteits reserverings niveau nodig hebt dat hoger is dan 3.000 GB per dag, neemt u contact met ons op LAIngestionRate@microsoft.com . Zie [kosten voor log Analytics clusters beheren](../platform/manage-cost-storage.md#log-analytics-dedicated-clusters) voor meer informatie over de cluster kosten
+- **SkuCapacity**: u moet het *capaciteits reserverings* niveau (SKU) opgeven bij het maken van een *cluster* bron. Het *capaciteits reserverings* niveau kan zich in het bereik van 1.000 gb tot 3.000 GB per dag bevindt. U kunt deze indien nodig bijwerken in de stappen van 100. Als u een capaciteits reserverings niveau nodig hebt dat hoger is dan 3.000 GB per dag, neemt u contact met ons op LAIngestionRate@microsoft.com . Zie [kosten voor log Analytics clusters beheren](./manage-cost-storage.md#log-analytics-dedicated-clusters) voor meer informatie over de cluster kosten
 
 Nadat u de *cluster* bron hebt gemaakt, kunt u extra eigenschappen bewerken, zoals *SKU*, * keyVaultProperties of *billingType*. Zie hieronder voor meer informatie.
 
@@ -300,7 +300,7 @@ Nadat u de *cluster* bron hebt gemaakt en volledig is ingericht, kunt u aanvulle
 - **keyVaultProperties** : Hiermee wordt de sleutel in azure Key Vault bijgewerkt. Zie [update cluster met sleutel-id Details](../logs/customer-managed-keys.md#update-cluster-with-key-identifier-details). Het bevat de volgende para meters: *KeyVaultUri*, *naam* van de *versie*. 
 - **billingType** : de eigenschap *billingType* bepaalt het facturerings kenmerk voor de *cluster* bron en de bijbehorende gegevens.
   - **Cluster** (standaard): de kosten voor de capaciteits reservering voor uw cluster worden toegeschreven aan de *cluster* bron.
-  - **Werk ruimten** : de kosten voor de capaciteits reservering voor uw cluster worden proportioneel toegeschreven aan de werk ruimten in het cluster, waarbij een deel van de *cluster* resource wordt gefactureerd als de totale opgenomen gegevens voor de dag onder de capaciteits reservering vallen. Zie [log Analytics toegewezen clusters](../platform/manage-cost-storage.md#log-analytics-dedicated-clusters) voor meer informatie over het prijs model van het cluster. 
+  - **Werk ruimten** : de kosten voor de capaciteits reservering voor uw cluster worden proportioneel toegeschreven aan de werk ruimten in het cluster, waarbij een deel van de *cluster* resource wordt gefactureerd als de totale opgenomen gegevens voor de dag onder de capaciteits reservering vallen. Zie [log Analytics toegewezen clusters](./manage-cost-storage.md#log-analytics-dedicated-clusters) voor meer informatie over het prijs model van het cluster. 
 
 > [!NOTE]
 > De eigenschap *billingType* wordt niet ondersteund in Power shell.
@@ -573,5 +573,5 @@ Gebruik de volgende REST-aanroep om een cluster te verwijderen:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [log Analytics toegewezen cluster facturering](../platform/manage-cost-storage.md#log-analytics-dedicated-clusters)
+- Meer informatie over [log Analytics toegewezen cluster facturering](./manage-cost-storage.md#log-analytics-dedicated-clusters)
 - Meer informatie over het [goede ontwerp van log Analytics-werk ruimten](../logs/design-logs-deployment.md)

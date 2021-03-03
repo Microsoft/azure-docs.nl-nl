@@ -1,17 +1,17 @@
 ---
-title: Een AKS-cluster maken in de portal
+title: 'Quick Start: een AKS-cluster implementeren met behulp van de Azure Portal'
 titleSuffix: Azure Kubernetes Service
 description: Lees hoe u met Azure Portal snel een Kubernetes-cluster kunt maken, een toepassing kunt implementeren en de prestaties kunt bewaken in Azure Kubernetes Service (AKS).
 services: container-service
 ms.topic: quickstart
 ms.date: 01/13/2021
-ms.custom: mvc, seo-javascript-october2019
-ms.openlocfilehash: 7f59924b2a50f29e01d46e12389e5ca52769225d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.custom: mvc, seo-javascript-october2019, contperfq3
+ms.openlocfilehash: 443c9e0cebe2a45386b63b3a0bc4a813d243e49e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100578697"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101714558"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-the-azure-portal"></a>Quickstart: Een AKS-cluster (Azure Kubernetes Service) implementeren met Azure Portal
 
@@ -47,7 +47,7 @@ Voltooi de volgende stappen om een AKS-cluster te maken:
 
 4. Behoud de standaardopties op de pagina **Knooppuntgroepen**. Klik boven aan het venster op **Volgende: Verificatie**.
     > [!CAUTION]
-    > Het kan enige minuten duren voordat nieuwe AAD-service-principals worden doorgegeven en beschikbaar worden nadat ze zijn gemaakt, en dit kan fouten wegens 'service-principal niet gevonden' en validatiefouten in de Azure-portal veroorzaken. Als dit gebeurt, vindt u [hier](troubleshooting.md#received-an-error-saying-my-service-principal-wasnt-found-or-is-invalid-when-i-try-to-create-a-new-cluster) een oplossing.
+    > Het kan enige minuten duren voordat nieuwe AAD-service-principals worden doorgegeven en beschikbaar worden nadat ze zijn gemaakt, en dit kan fouten wegens 'service-principal niet gevonden' en validatiefouten in de Azure-portal veroorzaken. Als u dit hebt bereikt, kunt u [veelvoorkomende problemen met de Azure Kubernetes-service oplossen](troubleshooting.md#received-an-error-saying-my-service-principal-wasnt-found-or-is-invalid-when-i-try-to-create-a-new-cluster) voor de oplossing.
 
 5. Configureer de volgende opties op de pagina **Verificatie**:
     - Maak een nieuwe service-principal door het veld **Service-principal** ingesteld te laten op **(nieuwe) standaardservice-principal**. U kunt ook *Service-principal configureren* kiezen om een bestaande te gebruiken. Als u een bestaande service-principal gebruikt, moet u de SPN-client-id en het geheim opgeven.
@@ -78,7 +78,7 @@ Gebruik de opdracht [az aks get-credentials][az-aks-get-credentials] om `kubectl
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
 
-Als u de verbinding met uw cluster wilt controleren, gebruikt u de opdracht [kubectl get][kubectl-get] om een lijst met clusterknooppunten te retourneren.
+Als u de verbinding met uw cluster wilt controleren, gebruikt u de `kubectl get` opdracht om een lijst met cluster knooppunten te retour neren.
 
 ```console
 kubectl get nodes
@@ -93,7 +93,7 @@ aks-agentpool-14693408-0   Ready     agent     15m       v1.11.5
 
 ## <a name="run-the-application"></a>De toepassing uitvoeren
 
-In een Kubernetes-manifestbestand wordt een gewenste status voor het cluster gedefinieerd, zoals welke containerinstallatiekopieën moeten worden uitgevoerd. In deze snelstart worden met behulp van een manifest alle objecten gemaakt die nodig zijn om de Azure Vote-toepassing uit te voeren. Dit manifest bevat twee [Kubernetes-implementaties][kubernetes-deployment], een voor de Azure Vote Python-voorbeeldtoepassingen en een voor een instantie van Redis. Er worden bovendien twee [Kubernetes-services][kubernetes-service] gemaakt: een interne service voor de Redis-instantie en een externe service voor toegang tot de Azure Vote-toepassing vanaf internet.
+In een Kubernetes-manifestbestand wordt een gewenste status voor het cluster gedefinieerd, zoals welke containerinstallatiekopieën moeten worden uitgevoerd. In deze snelstart worden met behulp van een manifest alle objecten gemaakt die nodig zijn om de Azure Vote-toepassing uit te voeren. Dit manifest bevat twee Kubernetes-implementaties, een voor de Azure Vote Python-voorbeeldtoepassingen en een voor een instantie van Redis. Er worden bovendien twee Kubernetes-services gemaakt: een interne service voor de Redis-instantie en een externe service voor toegang tot de Azure Vote-toepassing vanaf internet.
 
 In de Cloud Shell gebruikt u een editor om een bestand met de naam `azure-vote.yaml` te maken, zoals `code azure-vote.yaml`, `nano azure-vote.yaml` of `vi azure-vote.yaml`. Kopieer de volgende YAML-definitie naar het bestand:
 
@@ -185,7 +185,7 @@ spec:
     app: azure-vote-front
 ```
 
-Implementeer de toepassing met de opdracht [kubectl apply][kubectl-apply] en geef de naam op van uw YAML-manifest:
+Implementeer de toepassing met behulp van de `kubectl apply` opdracht en geef de naam van het yaml-manifest op:
 
 ```console
 kubectl apply -f azure-vote.yaml
@@ -204,7 +204,7 @@ service "azure-vote-front" created
 
 Wanneer de toepassing wordt uitgevoerd, maakt een Kubernetes-service de front-end van de toepassing beschikbaar op internet. Dit proces kan enkele minuten duren.
 
-Gebruik de opdracht [kubectl get service][kubectl-get] met het argument `--watch` om de voortgang te controleren.
+Als u de voortgang wilt bewaken, gebruikt u de `kubectl get service` opdracht met het `--watch` argument.
 
 ```console
 kubectl get service azure-vote-front --watch
@@ -267,7 +267,7 @@ In deze snelstartgids zijn vooraf gemaakte containerinstallatiekopieën gebruikt
 
 In deze snelstart hebt u een Kubernetes-cluster geïmplementeerd en vervolgens een toepassing met meerdere containers geïmplementeerd.
 
-Voor meer informatie over AKS en een volledig stapsgewijs voorbeeld van code tot implementatie gaat u naar de zelfstudie over Kubernetes-clusters.
+Ga verder met de zelf studie voor het Kubernetes-cluster voor meer informatie over AKS door door loop een volledig voor beeld, waaronder het bouwen van een toepassing, het implementeren van een implementatie vanuit Azure Container Registry, het bijwerken van een actieve toepassing, het schalen en upgraden van uw cluster.
 
 > [!div class="nextstepaction"]
 > [AKS-zelfstudie][aks-tutorial]
@@ -288,6 +288,3 @@ Voor meer informatie over AKS en een volledig stapsgewijs voorbeeld van code tot
 [aks-tutorial]: ./tutorial-kubernetes-prepare-app.md
 [http-routing]: ./http-application-routing.md
 [sp-delete]: kubernetes-service-principal.md#additional-considerations
-[azure-dev-spaces]: ../dev-spaces/index.yml
-[kubernetes-deployment]: concepts-clusters-workloads.md#deployments-and-yaml-manifests
-[kubernetes-service]: concepts-network.md#services

@@ -4,12 +4,12 @@ description: Hiermee wordt een overzicht gegeven van de ondersteuning voor herst
 ms.topic: article
 ms.date: 11/29/2020
 ms.author: raynew
-ms.openlocfilehash: 522af9738cac098dcc9e8cb73183c0bd6b3b4902
-ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
+ms.openlocfilehash: 7e9cb2397017c428c3a5251ed0d0c4f9a076c72f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100534670"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101735536"
 ---
 # <a name="support-matrix-for-azure-vm-disaster-recovery-between-azure-regions"></a>Ondersteuningsmatrix voor herstel na noodgeval van Azure-VM's tussen Azure-regio's
 
@@ -258,6 +258,7 @@ Dubbele versleuteling bij rest | Ondersteund | Meer informatie over ondersteunde
 Azure Disk Encryption (ADE) voor Windows-besturings systeem | Ondersteund voor virtuele machines met beheerde schijven. | Vm's met niet-beheerde schijven worden niet ondersteund. <br/><br/> Met HSM beveiligde sleutels worden niet ondersteund. <br/><br/> Het versleutelen van afzonderlijke volumes op één schijf wordt niet ondersteund. |
 Azure Disk Encryption (ADE) voor Linux-besturings systeem | Ondersteund voor virtuele machines met beheerde schijven. | Vm's met niet-beheerde schijven worden niet ondersteund. <br/><br/> Met HSM beveiligde sleutels worden niet ondersteund. <br/><br/> Het versleutelen van afzonderlijke volumes op één schijf wordt niet ondersteund. <br><br> Bekend probleem bij het inschakelen van replicatie. [Meer informatie.](./azure-to-azure-troubleshoot-errors.md#enable-protection-failed-as-the-installer-is-unable-to-find-the-root-disk-error-code-151137) |
 Rotatie van SAS-sleutel | Niet ondersteund | Als de SAS-sleutel voor opslag accounts is geroteerd, moet de klant de replicatie uitschakelen en opnieuw inschakelen. |
+Host-caching | Ondersteund
 Hot add    | Ondersteund | Het inschakelen van replicatie voor een gegevens schijf die u toevoegt aan een gerepliceerde Azure-VM wordt ondersteund voor virtuele machines die gebruikmaken van beheerde schijven. <br/><br/> Er kan slechts één schijf dynamisch worden toegevoegd aan een virtuele machine van Azure. Het gelijktijdig toevoegen van meerdere schijven wordt niet ondersteund. |
 Hot Remove-schijf    | Niet ondersteund | Als u de gegevens schijf op de virtuele machine verwijdert, moet u de replicatie uitschakelen en de replicatie opnieuw inschakelen voor de virtuele machine.
 Schijf uitsluiten | Voor. U moet [Power shell](azure-to-azure-exclude-disks.md) gebruiken om te configureren. |    Tijdelijke schijven worden standaard uitgesloten.

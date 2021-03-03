@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: nolavime
 ms.date: 04/12/2020
-ms.openlocfilehash: 991d37b097587e8e4a524c4fc8bc21e9b6af20b5
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: a01005231b5d775f79555ec10dedeb3f30b3426a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610440"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737202"
 ---
 # <a name="troubleshoot-problems-in-it-service-management-connector"></a>Problemen in IT Service Management-connector oplossen
 
@@ -55,7 +55,7 @@ In de volgende secties worden veelvoorkomende symptomen, mogelijke oorzaken en o
 
 * De referenties zijn onjuist.
 * De bevoegdheden zijn onvoldoende.
-* De web-app is onjuist geïmplementeerd.
+* Voor Service Manager verbindingen: de web-app is onjuist geïmplementeerd.
 
 **Oplossing**:
 
@@ -95,3 +95,12 @@ In de volgende secties worden veelvoorkomende symptomen, mogelijke oorzaken en o
 **Oorzaak**: een nieuw gemaakt ITSMC-exemplaar heeft nog de eerste synchronisatie voltooid.
 
 **Oplossing**: Controleer de [veelvoorkomende fouten en hun oplossingen](itsmc-dashboard-errors.md).
+
+### <a name="sync-connection"></a>Verbinding synchroniseren 
+
+**Oorzaak**: er kunnen verschillende redenen zijn voor dit symptoom:
+
+* Sjablonen worden niet weer gegeven als onderdeel van de actie definitie.
+* Incedents/events worden niet gemaakt in ServiceNow.
+
+**Oplossing**: [Synchroniseer de connector](itsmc-resync-servicenow.md).

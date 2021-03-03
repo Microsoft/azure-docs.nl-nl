@@ -3,12 +3,12 @@ title: Een functie in Go of Rust maken met behulp van Visual Studio Code - Azure
 description: Leer hoe u een Go-functie maakt als een aangepaste Azure Functies-handler en publiceer vervolgens het lokale project naar serverloze hosting in Azure Functions met behulp van de Azure Functions-extensie in Visual Studio Code.
 ms.topic: quickstart
 ms.date: 12/4/2020
-ms.openlocfilehash: a3ef7bdd19badf7a7deaa8376440016e39e0d14b
-ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.openlocfilehash: 1142ff76425e2e4bff0d3881be1378d9da07806e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99809560"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101704732"
 ---
 # <a name="quickstart-create-a-go-or-rust-function-in-azure-using-visual-studio-code"></a>Quickstart: Een Go- of Rust-functie maken in Azure met behulp van Visual Studio Code
 
@@ -89,14 +89,14 @@ Het bestand *function.json* in de map *HttpExample* declareert een HTTP-triggerf
 
     ```go
     package main
-
+    
     import (
         "fmt"
         "log"
         "net/http"
         "os"
     )
-
+    
     func helloHandler(w http.ResponseWriter, r *http.Request) {
         message := "This HTTP triggered function executed successfully. Pass a name in the query string for a personalized response.\n"
         name := r.URL.Query().Get("name")
@@ -105,7 +105,7 @@ Het bestand *function.json* in de map *HttpExample* declareert een HTTP-triggerf
         }
         fmt.Fprint(w, message)
     }
-
+    
     func main() {
         listenAddr := ":8080"
         if val, ok := os.LookupEnv("FUNCTIONS_CUSTOMHANDLER_PORT"); ok {

@@ -9,12 +9,12 @@ ms.subservice: synapse-link
 ms.date: 03/02/2021
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 5850644aac9c3324d9ffb17817195cbaaa6020ae
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: a8626174e157e79d0250824e0a3cfa97141d50dc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101667559"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101695036"
 ---
 # <a name="connect-to-azure-synapse-link-for-azure-cosmos-db"></a>Verbinding maken met Azure Synapse Link voor Azure Cosmos DB
 
@@ -67,5 +67,5 @@ Als u met de rechtermuisknop op een container klikt, ziet u een lijst met gebare
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Krijg inzicht in wat wordt ondersteund tussen Azure Synapse en Azure Cosmos DB](./concept-synapse-link-cosmos-db-support.md)
-* [Persoonlijke eind punten configureren voor Azure Cosmos DB-analytische opslag](../cosmos-db/analytical-store-private-endpoints.md)
+* [Persoonlijke eind punten configureren voor Azure Cosmos DB-analytische opslag](../../cosmos-db/analytical-store-private-endpoints.md)
 * [Leer hoe u de analytische opslag doorzoekt met Spark](./how-to-query-analytical-store-spark.md)

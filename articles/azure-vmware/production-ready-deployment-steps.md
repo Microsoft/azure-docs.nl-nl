@@ -2,13 +2,13 @@
 title: De implementatie van Azure VMware Solution plannen
 description: In dit artikel vindt u een overzicht van de implementatiewerkstroom voor Azure VMware Solution.  Het uiteindelijke resultaat is een omgeving die gereed is om virtuele machines te maken en te migreren.
 ms.topic: tutorial
-ms.date: 10/16/2020
-ms.openlocfilehash: 8b1d69f3f953b43177a3b1d0611b51ca2cfb1a75
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.date: 02/22/2021
+ms.openlocfilehash: f9d49d7ff8109364c9fc1eee4388b30ccc1a61b6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762855"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733654"
 ---
 # <a name="planning-the-azure-vmware-solution-deployment"></a>De implementatie van Azure VMware Solution plannen
 
@@ -51,12 +51,6 @@ Bepaal de omvang van de hosts die u wilt gebruiken om Azure VMware Solution te i
 Definieer het aantal hosts dat u wilt implementeren in de Azure VMware Solution-privécloud.  Het minimum aantal hosts is drie, en het maximum is 16 per cluster.  Raadpleeg voor meer informatie de documentatie van [Azure VMware Solution-privéclouds en -clusters](concepts-private-clouds-clusters.md#clusters).
 
 U kunt de cluster later altijd uitbreiden als u verder moet gaan dan het oorspronkelijke implementatie-aantal.
-
-## <a name="vcenter-admin-password"></a>Beheerderswachtwoord van vCenter
-Stel het beheerderswachtwoord van vCenter in.  Tijdens de implementatie maakt u een beheerderswachtwoord voor vCenter. Het wacht woord is voor het cloudadmin@vsphere.local-beheerdersaccount tijdens de vCenter-build. U gebruikt het om u aan te melden bij vCenter.
-
-## <a name="nsx-t-admin-password"></a>NSX-T-beheerderswachtwoord
-Definieer het NSX-T-beheerderswachtwoord.  Tijdens de implementatie maakt u een NSX-T-beheerderswachtwoord. Het wachtwoord wordt toegewezen aan de gebruiker met beheerdersrechten in het NSX-account tijdens de NSX-build. U gebruikt het om u aan te melden bij NSX-T Manager.
 
 ## <a name="ip-address-segment"></a>Segment IP-adres
 

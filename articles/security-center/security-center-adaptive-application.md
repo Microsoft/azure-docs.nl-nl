@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/07/2021
 ms.author: memildin
-ms.openlocfilehash: a7ad5f661d4eca07deb0942c7684b89ac59931a2
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: b18b498f250e9ff62180ba21c3bcbda562b13b8c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99834388"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101735859"
 ---
 # <a name="use-adaptive-application-controls-to-reduce-your-machines-attack-surfaces"></a>Besturings elementen voor adaptieve toepassingen gebruiken om de kwets bare Opper vlakken van uw computers te verminderen
 
@@ -219,7 +219,7 @@ Wanneer u een machine van de ene naar de andere groep verplaatst, wordt het toep
 
 Als u de besturings elementen voor adaptieve toepassingen programmatisch wilt beheren, gebruikt u onze REST API. 
 
-De volledige API-documentatie is [hier](/rest/api/securitycenter/adaptiveapplicationcontrols).
+De relevante API-documentatie is beschikbaar in [het gedeelte met besturings elementen voor adaptieve toepassingen van de API-documenten van Security Center](/rest/api/securitycenter/adaptiveapplicationcontrols).
 
 Enkele van de functies die beschikbaar zijn via de REST API:
 

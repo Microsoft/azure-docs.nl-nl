@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 02/09/2021
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: 328bfe57c675d49aa951388e2808fcecfe8da8b5
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: ae0112292994fdcf88e80abff8ab52e5971cb0ed
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100096528"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101731082"
 ---
 # <a name="how-to-improve-your-custom-vision-model"></a>Uw Custom Vision model verbeteren
 
-In deze hand leiding leert u hoe u de kwaliteit van uw Custom Vision Service model kunt verbeteren. De kwaliteit van uw [classificatie](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier) of [object detectie](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/get-started-build-detector) is afhankelijk van het aantal, de kwaliteit en de verscheidenheid van de gelabelde gegevens die u opgeeft en de verdeling van de algemene gegevensset. Een goed model heeft een gebalanceerde trainings gegevensset die representatief is voor wat er wordt verzonden. Het proces van het bouwen van een dergelijk model is een terugkerende methode; het is gebruikelijk om enkele ronden te volgen om de verwachte resultaten te bereiken.
+In deze hand leiding leert u hoe u de kwaliteit van uw Custom Vision Service model kunt verbeteren. De kwaliteit van uw [classificatie](./getting-started-build-a-classifier.md) of [object detectie](./get-started-build-detector.md) is afhankelijk van het aantal, de kwaliteit en de verscheidenheid van de gelabelde gegevens die u opgeeft en de verdeling van de algemene gegevensset. Een goed model heeft een gebalanceerde trainings gegevensset die representatief is voor wat er wordt verzonden. Het proces van het bouwen van een dergelijk model is een terugkerende methode; het is gebruikelijk om enkele ronden te volgen om de verwachte resultaten te bereiken.
 
 Hier volgt een algemeen patroon waarmee u een nauw keuriger model kunt trainen:
 

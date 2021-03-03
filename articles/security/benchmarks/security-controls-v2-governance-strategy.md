@@ -4,15 +4,15 @@ description: Azure Security Bench Mark v2 governance en strategie
 author: msmbaldwin
 ms.service: security
 ms.topic: conceptual
-ms.date: 09/20/2020
+ms.date: 02/22/2021
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 935a6b41152ff914889e299b6455fbb30b2f0447
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: 277033e41ec7e02b89eca8cf74fe6854acb51cc1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97369052"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101727019"
 ---
 # <a name="security-control-v2-governance-and-strategy"></a>Beveiligings controle v2: governance en strategie
 
@@ -24,15 +24,15 @@ Governance en strategie biedt richt lijnen voor het garanderen van een samenhang
 |--|--|--|--|
 | GS-1 | 2, 13 | SC, AC |
 
-Zorg ervoor dat u een duidelijke strategie documenteert en communiceert voor continue bewaking en bescherming van systemen en gegevens. Ken hogere prioriteiten toe aan de detectie, beoordeling, beveiliging en bewaking van bedrijfskritieke gegevens en systemen. 
+Zorg ervoor dat u een duidelijke strategie documenteert en communiceert voor continue bewaking en bescherming van systemen en gegevens. Ken hogere prioriteiten toe aan de detectie, beoordeling, beveiliging en bewaking van bedrijfskritieke gegevens en systemen.
 
 Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten voor de volgende elementen: 
 
 - Standaard voor gegevensclassificatie in overeenstemming met de bedrijfsrisico's
 
-- Inzicht van beveiligingsorganisaties in risico's en asset-inventaris 
+- Inzicht van beveiligingsorganisaties in risico's en asset-inventaris
 
-- Goedkeuring door beveiligingsorganisaties van Azure-services voor gebruik 
+- Goedkeuring door beveiligingsorganisaties van Azure-services voor gebruik
 
 - Beveiliging van assets op grond van hun levenscyclus
 
@@ -127,9 +127,9 @@ Zorg ervoor dat u een duidelijke strategie voor rollen en verantwoordelijkheden 
 |--|--|--|--|
 | GS-5 | 9 | CA, SC |
 
-Stel een Azure-netwerk beveiligings benadering in als onderdeel van de algehele strategie voor het toegangs beheer van uw organisatie.  
+Stel een Azure-netwerk beveiligings benadering in als onderdeel van de algehele strategie voor het toegangs beheer van uw organisatie.
 
-Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten voor de volgende elementen: 
+Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten voor de volgende elementen:
 
 - Gecentraliseerd netwerkbeheer en verantwoordelijkheid voor beveiliging
 
@@ -141,7 +141,7 @@ Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten 
 
 - Strategie voor hybride cloud- en on-premises interconnectiviteit
 
-- Up-to-date netwerkbeveiligingsartefacten (zoals netwerkdiagrammen, architectuur van referentienetwerk)
+- Up-to-date netwerk beveiligings artefacten (zoals netwerk diagrammen, referentie netwerk architectuur)
 
 Raadpleeg de volgende bronnen voor meer informatie:
 
@@ -165,9 +165,9 @@ Raadpleeg de volgende bronnen voor meer informatie:
 |--|--|--|--|
 | GS-6 | 16, 4 | AC, AU, SC |
 
-Stel een Azure Identity and privileged Access benaderingen in als onderdeel van de algehele strategie voor beveiligings beheer van uw organisatie.  
+Stel een Azure Identity and privileged Access benaderingen in als onderdeel van de algehele strategie voor beveiligings beheer van uw organisatie.
 
-Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten voor de volgende elementen: 
+Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten voor de volgende elementen:
 
 - Een gecentraliseerd identiteits- en verificatiesysteem en bijbehorende interconnectiviteit met andere interne en externe identiteitssystemen
 
@@ -175,7 +175,7 @@ Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten 
 
 - Bescherming van gebruikers met zeer uitgebreide bevoegdheden
 
-- Bewaking en verwerking van afwijkende gebruikersactiviteiten  
+- Bewaking en verwerking van afwijkende gebruikersactiviteiten
 
 - Proces voor het beoordelen en op elkaar afstemmen van de identiteit en toegangsrechten van gebruikers
 
@@ -205,7 +205,7 @@ Stel een strategie voor logboek registratie en reactie op bedreigingen in om bed
 
 Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten voor de volgende elementen: 
 
-- De rol en verantwoordelijkheden van de personen of groepen die binnen de organisatie beveiligingsactiviteiten (SecOps) uitvoeren 
+- De rol en verantwoordelijkheden van de organisatie voor beveiligings bewerkingen (SecOps) 
 
 - Een goed gedefinieerd proces voor het reageren op incidenten dat is afgestemd op het NIST of een ander framework binnen de branche 
 

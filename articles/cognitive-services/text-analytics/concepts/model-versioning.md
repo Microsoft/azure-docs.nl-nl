@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 07/16/2020
+ms.date: 02/17/2021
 ms.author: aahi
-ms.openlocfilehash: 463e3d594013f2c6fe8ee3ec52d1351ff208f8ac
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 278c8a48d2d0644f63a3e265ea81d3f62c68bae2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99225222"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101725302"
 ---
 # <a name="model-versioning-in-the-text-analytics-api"></a>Model versie beheer in de Text Analytics-API
 
@@ -32,7 +32,7 @@ Gebruik de onderstaande tabel om te bepalen welke model versies worden ondersteu
 | `/languages`                    | `2019-10-01`, `2020-07-01`, `2020-09-01`, `2021-01-05` | `2021-01-05`   |
 | `/entities/linking`             | `2019-10-01`, `2020-02-01`                             | `2020-02-01`   |
 | `/entities/recognition/general` | `2019-10-01`, `2020-02-01`, `2020-04-01`,`2021-01-15`  | `2021-01-15`   |
-| `/entities/recognition/pii`     | `2019-10-01`, `2020-02-01`, `2020-04-01`,`2020-07-01`  | `2020-07-01`   |
+| `/entities/recognition/pii`     | `2019-10-01`, `2020-02-01`, `2020-04-01`,`2020-07-01`, `2021-01-15`  | `2021-01-15`   |
 | `/entities/health`              | `2020-09-03`                           | `2020-09-03`   |
 | `/keyphrases`                   | `2019-10-01`, `2020-07-01`                             | `2020-07-01`   |
 

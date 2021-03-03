@@ -10,17 +10,17 @@ ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: cea87f23bcd9dc21ab9f594d6cb0d6008ef98f13
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: ca6ef57db062ff22b20a8e968eaac39388b9551f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101661661"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750268"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
-- Maak een Azure-account met een actief abonnement. Zie [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voor meer informatie.
-- [Visual Studio](https://visualstudio.microsoft.com/downloads/) installeren
+- Maak een Azure-account met een actief abonnement. Zie [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voor meer informatie. 
+- [Visual Studio](https://visualstudio.microsoft.com/downloads/) installeren 
 - Maak een Azure Communication Services-resource. Zie [Een Azure Communication-resource maken](../../create-communication-resource.md) voor meer informatie. Voor deze quickstart moet u het **eindpunt** van uw resource vastleggen.
 - Een [toegangstoken voor gebruikers](../../access-tokens.md). Zorg ervoor dat u het bereik instelt op ‘chat’ en noteer de tokenreeks en ook de gebruikersId-reeks.
 
@@ -47,7 +47,7 @@ De Azure Communication chat-clientbibliotheek installeren voor .NET
 
 ```PowerShell
 dotnet add package Azure.Communication.Chat --version 1.0.0-beta.4
-```
+``` 
 
 ## <a name="object-model"></a>Objectmodel
 
@@ -60,15 +60,17 @@ De volgende klassen verwerken enkele van de belangrijkste functies van de Azure 
 
 ## <a name="create-a-chat-client"></a>Een chat-client maken
 
-Als u een chat-client wilt maken, gebruikt u uw communicatie Services-eind punt en het toegangs token dat is gegenereerd als onderdeel van de vereiste stappen. U moet de `CommunicationIdentityClient` klasse van de identiteits-client bibliotheek gebruiken om een gebruiker te maken en een token uit te geven om door te geven aan uw chat-client.
+Als u een chat-client wilt maken, gebruikt u uw communicatie Services-eind punt en het toegangs token dat is gegenereerd als onderdeel van de vereiste stappen. U moet de klasse `CommunicationIdentityClient` uit de clientbibliotheek `Administration` gebruiken om een gebruiker te maken en een token uit te geven om aan uw chat-client door te geven.
 
-Meer informatie over [tokens voor gebruikerstoegang](../../access-tokens.md).
+Meer informatie over [toegangstokens voor gebruikers](../../access-tokens.md).
 
 Deze Snelstartgids heeft geen betrekking op het maken van een servicelaag voor het beheren van tokens voor uw chat toepassing, hoewel dit wordt aanbevolen. Meer informatie over de [architectuur van chatten](../../../concepts/chat/concepts.md)
 
 ```csharp
 using Azure.Communication.Identity;
 using Azure.Communication.Chat;
+using Azure;
+using Azure.Communication
 
 // Your unique Azure Communication service endpoint
 Uri endpoint = new Uri("https://<RESOURCE_NAME>.communication.azure.com");
@@ -83,7 +85,7 @@ Gebruik de- `createChatThread` methode op de chatClient om een chat-thread te ma
 - Gebruik `topic` om een onderwerp te geven aan deze chat. Het onderwerp kan worden bijgewerkt nadat de chat-thread is gemaakt met behulp van de functie `UpdateTopic`.
 - Gebruik de eigenschap `participants` om een lijst met `ChatParticipant`-objecten door te geven om aan de chat-thread toe te voegen. Het `ChatParticipant`-object wordt geïnitialiseerd met een `CommunicationIdentifier`-object. `CommunicationIdentifier` kan van het type `CommunicationUserIdentifier` `MicrosoftTeamsUserIdentifier` of zijn `PhoneNumberIdentifier` . Als u bijvoorbeeld een object wilt ophalen `CommunicationIdentifier` , moet u een toegangs-id door geven die u hebt gemaakt met behulp van de volgende instructie voor [het maken van een gebruiker](../../access-tokens.md#create-an-identity)
 
-Het antwoord object van de `createChatThread` methode bevat de `chatThread` Details. Voor interactie met de bewerkingen van de chat-thread, zoals het toevoegen van deel nemers, het verzenden van een bericht, het verwijderen van een bericht, enzovoort, `chatThreadClient` moet een client exemplaar worden geïnstantieerd met behulp `GetChatThreadClient` van de methode op de `ChatClient` client.
+Het antwoord object van de methode createChatThread bevat de chatThread-gegevens. Als u wilt communiceren met de bewerkingen van de chat-thread, zoals het toevoegen van deel nemers, het verzenden van een bericht, het verwijderen van een bericht, enzovoort, moet een chatThreadClient-client exemplaar worden geïnstantieerd met de methode GetChatThreadClient op de ChatClient-client. 
 
 ```csharp
 var chatParticipant = new ChatParticipant(communicationIdentifier: new CommunicationUserIdentifier(id: "<Access_ID>"))
@@ -112,7 +114,7 @@ Gebruiken `SendMessage` om een bericht naar een thread te verzenden.
 - Gebruik `senderDisplayName` om de weergavenaam van de afzender te geven. Als u niets opgeeft, wordt er een lege teken reeks ingesteld.
 
 ```csharp
-var messageId = await chatThreadClient.SendMessageAsync(content:"hello world", type: );
+var messageId = await chatThreadClient.SendMessageAsync(content:"hello world", type: ChatMessageType.Text);
 ```
 ## <a name="get-a-message"></a>Een bericht ontvangen
 
@@ -133,7 +135,7 @@ U kunt chatberichten ophalen door de methode `GetMessages` op de chat-thread-cli
 AsyncPageable<ChatMessage> allMessages = chatThreadClient.GetMessagesAsync();
 await foreach (ChatMessage message in allMessages)
 {
-    Console.WriteLine($"{message.Id}:{message.Sender.Id}:{message.Content}");
+    Console.WriteLine($"{message.Id}:{message.Id}:{message.Content}");
 }
 ```
 

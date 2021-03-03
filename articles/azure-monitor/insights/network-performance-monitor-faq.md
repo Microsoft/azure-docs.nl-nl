@@ -1,24 +1,23 @@
 ---
 title: Veelgestelde vragen-Netwerkprestatiemeter oplossing in azure | Microsoft Docs
 description: In dit artikel worden de veelgestelde vragen over Netwerkprestatiemeter in azure vastgelegd. Met Netwerkprestatiemeter (NPM) kunt u de prestaties van uw netwerken nagenoeg in realtime bewaken en netwerk prestatie knelpunten detecteren en vinden.
-ms.subservice: logs
 ms.topic: conceptual
 author: vinynigam
 ms.author: vinigam
 ms.date: 10/12/2018
-ms.openlocfilehash: c58f94bcdb659eed67ebf023af473545d8cee1a7
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 909cbd6174fe7eceaa8b53b5ba44fe72990b56d9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100587268"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708047"
 ---
 # <a name="network-performance-monitor-solution-faq"></a>Veelgestelde vragen over Netwerkprestatiemeter oplossingen
 
 ![Netwerkprestatiemeter-symbool](media/network-performance-monitor-faq/npm-symbol.png)
 
 > [!IMPORTANT]
-> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor](https://docs.microsoft.com/azure/network-watcher/migrate-to-connection-monitor-from-network-performance-monitor) in azure Network Watcher vóór 29 februari 2024.
+> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor](../../network-watcher/migrate-to-connection-monitor-from-network-performance-monitor.md) in azure Network Watcher vóór 29 februari 2024.
 
 In dit artikel worden de veelgestelde vragen over Netwerkprestatiemeter (NPM) in azure vastgelegd
 

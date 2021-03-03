@@ -1,70 +1,62 @@
 ---
 title: Telemetrie-processors (preview)-Azure Monitor Application Insights voor Java
-description: Telemetrie-processors configureren in Azure Monitor Application Insights voor Java
+description: Meer informatie over het configureren van telemetrie-processors in Azure Monitor Application Insights voor Java.
 ms.topic: conceptual
 ms.date: 10/29/2020
 author: kryalama
 ms.custom: devx-track-java
 ms.author: kryalama
-ms.openlocfilehash: c0745dd4069c64292fbcaef666d843ae2d25f7b3
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 35e53454e5b2c6265082bbedb4a8b60e82df7191
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98632577"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734567"
 ---
 # <a name="telemetry-processors-preview---azure-monitor-application-insights-for-java"></a>Telemetrie-processors (preview)-Azure Monitor Application Insights voor Java
 
 > [!NOTE]
-> Deze functie bevindt zich nog in de preview-versie.
+> De functie voor telemetrie-processors is beschikbaar als preview-versie.
 
-De Java 3,0-agent voor Application Insights heeft nu de mogelijkheid om telemetriegegevens te verwerken voordat de gegevens worden geëxporteerd.
+De Java 3,0-agent voor Application Insights kan telemetrie-gegevens verwerken voordat de gegevens worden geëxporteerd.
 
-Hier volgen enkele gebruiks voorbeelden van telemetrie-processors:
- * Masker gevoelige gegevens
- * Aangepaste dimensies voorwaardelijk toevoegen
- * De naam bijwerken die wordt gebruikt voor aggregatie en weer geven in de Azure Portal
- * Kenmerken van de drop span om opname kosten te bepalen
+Hier volgen enkele gebruiks voorbeelden voor telemetrie-processors:
+ * Gevoelige gegevens maken.
+ * Aangepaste dimensies voorwaardelijk toevoegen.
+ * Werk de naam van de span bij, die wordt gebruikt voor het samen voegen van vergelijk bare telemetrie in de Azure Portal.
+ * Drop span-kenmerken om opname kosten te bepalen.
 
 ## <a name="terminology"></a>Terminologie
 
-Voordat we naar telemetrie-processors gaan, is het belang rijk om te begrijpen waar de term vallen naar verwijst.
+Voordat u meer informatie over telemetrie-processors, moet u de term *span* begrijpen. Een reeks is een algemene term voor:
 
-Een reeks is een algemene term voor een van de volgende drie dingen:
+* Een binnenkomende aanvraag.
+* Een uitgaande afhankelijkheid (bijvoorbeeld een externe aanroep naar een andere service).
+* Een in-process afhankelijkheid (werk dat wordt gedaan door subonderdelen van de service).
 
-* Een binnenkomende aanvraag
-* Een uitgaande afhankelijkheid (bijvoorbeeld een externe aanroep naar een andere service)
-* Een in-process afhankelijkheid (bijvoorbeeld werk dat door subonderdelen van de service wordt uitgevoerd)
-
-Voor de telemetrie-processors zijn de belang rijke onderdelen van een reeks:
+Voor telemetrie-processors zijn deze onderdelen van het bereik belang rijk:
 
 * Name
 * Kenmerken
 
-De naam van de reeks is de primaire weer gave die wordt gebruikt voor aanvragen en afhankelijkheden in de Azure Portal.
-
-De span-kenmerken vertegenwoordigen zowel de standaard eigenschappen als de aangepaste eigenschap van een bepaalde aanvraag of afhankelijkheid.
+De bereik naam is de primaire weer gave voor aanvragen en afhankelijkheden in de Azure Portal. Reeks kenmerken vertegenwoordigen zowel de standaard eigenschappen als de aangepaste eigenschap van een bepaalde aanvraag of afhankelijkheid.
 
 ## <a name="telemetry-processor-types"></a>Typen telemetrie-processor
 
-Er zijn momenteel twee soorten telemetrie-processors.
-
-#### <a name="attribute-processor"></a>Kenmerk processor
+Op dit moment zijn de twee typen telemetrie-processors kenmerk processors en-processors.
 
 Een kenmerk processor kan kenmerken invoegen, bijwerken, verwijderen of hashen.
-Het kan ook worden geëxtraheerd (via een reguliere expressie) een of meer nieuwe kenmerken van een bestaand kenmerk.
+Het kan ook een reguliere expressie gebruiken om een of meer nieuwe kenmerken van een bestaand kenmerk op te halen.
 
-#### <a name="span-processor"></a>Span processor
-
-Een bereik processor biedt de mogelijkheid om de naam van de telemetrie bij te werken.
-Het kan ook worden geëxtraheerd (via een reguliere expressie) een of meer nieuwe kenmerken van de span-naam.
+Een bereik processor kan de naam van de telemetrie bijwerken.
+Het kan ook een reguliere expressie gebruiken om een of meer nieuwe kenmerken uit de span-naam op te halen.
 
 > [!NOTE]
-> De huidige telemetrie-processors verwerken alleen kenmerken van het type teken reeks en verwerken geen kenmerken van het type Boolean of getal.
+> Op dit moment verwerken telemetrie-processors alleen kenmerken van het type teken reeks. Ze verwerken geen kenmerken van het type Boolean of getal.
 
 ## <a name="getting-started"></a>Aan de slag
 
-Maak een configuratie bestand met de naam `applicationinsights.json` en plaats het in dezelfde map als `applicationinsights-agent-*.jar` de volgende sjabloon.
+Maak een configuratie bestand met de naam *applicationinsights.jsop* om te beginnen. Sla het bestand op in dezelfde map als *applicationinsights-agent- \* . jar*. Gebruik de volgende sjabloon.
 
 ```json
 {
@@ -88,29 +80,27 @@ Maak een configuratie bestand met de naam `applicationinsights.json` en plaats h
 }
 ```
 
-## <a name="includeexclude-criteria"></a>Criteria voor opnemen/uitsluiten
+## <a name="include-criteria-and-exclude-criteria"></a>Criteria opnemen en criteria uitsluiten
 
 Zowel kenmerk-processors als-processors ondersteunen optionele `include` en `exclude` criteria.
-Een processor wordt alleen toegepast op de beschik bare reeksen die voldoen aan de `include` criteria (indien van toepassing) _en_ komen niet overeen met de bijbehorende `exclude` criteria (indien opgegeven).
+Een processor wordt alleen toegepast op de insluitingen die overeenkomen met de `include` criteria (als deze zijn opgegeven) _en_ voldoen niet aan de `exclude` criteria (indien deze zijn opgegeven).
 
-Als u deze optie wilt configureren, onder `include` en/of `exclude` ten minste één of `matchType` `spanNames` `attributes` is vereist.
-De configuratie voor opnemen/uitsluiten wordt ondersteund om meer dan één opgegeven voor waarde te hebben.
-Alle opgegeven voor waarden moeten worden geëvalueerd als waar om een overeenkomst te vinden. 
+Als u deze optie wilt configureren onder `include` of `exclude` (of beide), geeft u ten minste één `matchType` en of op `spanNames` `attributes` .
+De configuratie include-exclude heeft meer dan een opgegeven voor waarde.
+Alle opgegeven voor waarden moeten worden geëvalueerd als waar om te leiden tot een overeenkomst. 
 
-**Vereist veld**: 
-* `matchType` Hiermee wordt bepaald hoe items in `spanNames` en `attributes` matrices worden geïnterpreteerd. Mogelijke waarden zijn `regexp` en `strict`. 
+* **Vereist veld**: `matchType` bepaalt hoe items in `spanNames` matrices en `attributes` matrices worden geïnterpreteerd. Mogelijke waarden zijn `regexp` en `strict` . 
 
-**Optionele velden**: 
-* `spanNames` moet overeenkomen met ten minste één van de items. 
-* `attributes` Hiermee geeft u de lijst met kenmerken op die moeten worden vergeleken. Al deze kenmerken moeten exact overeenkomen om een overeenkomst te vinden.
-
+* **Optionele velden**: 
+    * `spanNames` moet overeenkomen met ten minste één van de items. 
+    * `attributes` Hiermee geeft u de lijst met kenmerken die moeten worden vergeleken. Al deze kenmerken moeten exact overeenkomen om te resulteren in een overeenkomst.
+    
 > [!NOTE]
-> Als beide `include` en `exclude` worden opgegeven, `include` worden de eigenschappen gecontroleerd voor de `exclude` Eigenschappen.
+> Als beide `include` en `exclude` worden opgegeven, `include` worden de eigenschappen gecontroleerd voordat de `exclude` eigenschappen worden gecontroleerd.
 
-#### <a name="sample-usage"></a>Voorbeeldgebruik
+### <a name="sample-usage"></a>Voorbeeldgebruik
 
 ```json
-
 "processors": [
   {
     "type": "attribute",
@@ -143,15 +133,20 @@ Alle opgegeven voor waarden moeten worden geëvalueerd als waar om een overeenko
   }
 ]
 ```
-Raadpleeg de documentatie van de [telemetrie-processor](./java-standalone-telemetry-processors-examples.md) voor voor meer informatie.
+Zie voor [beelden van telemetrie-processor](./java-standalone-telemetry-processors-examples.md)voor meer informatie.
 
 ## <a name="attribute-processor"></a>Kenmerk processor
 
-De kenmerken processor wijzigt kenmerken van een reeks. Het biedt optioneel ondersteuning voor de mogelijkheid om reeksen op te nemen of uit te sluiten. Er wordt een lijst weer gegeven met acties die worden uitgevoerd in de volg orde die is opgegeven in het configuratie bestand. De ondersteunde acties zijn:
+De kenmerk processor wijzigt kenmerken van een reeks. Het kan de mogelijkheid bieden om reeksen op te nemen of uit te sluiten. Er wordt een lijst met acties gebruikt die worden uitgevoerd in de volg orde waarin het configuratie bestand is opgegeven. De processor ondersteunt de volgende acties:
 
+- `insert`
+- `update`
+- `delete`
+- `hash`
+- `extract`
 ### `insert`
 
-Hiermee wordt een nieuw kenmerk ingevoegd in de spans waar de sleutel nog niet bestaat.   
+`insert`Met deze actie wordt een nieuw kenmerk ingevoegd in de spans waar de sleutel nog niet bestaat.   
 
 ```json
 "processors": [
@@ -167,14 +162,14 @@ Hiermee wordt een nieuw kenmerk ingevoegd in de spans waar de sleutel nog niet b
   }
 ]
 ```
-Voor de `insert` actie zijn de volgende acties vereist
-  * `key`
-  * een van `value` of `fromAttribute`
-  * `action`:`insert`
+Voor de `insert` actie zijn de volgende instellingen vereist:
+* `key`
+* Ofwel `value` of `fromAttribute`
+* `action`: `insert`
 
 ### `update`
 
-Hiermee wordt een kenmerk bijgewerkt in de beslagen waar de sleutel bestaat
+`update`Met de actie wordt een kenmerk bijgewerkt in reeksen waar de sleutel al bestaat.
 
 ```json
 "processors": [
@@ -190,15 +185,15 @@ Hiermee wordt een kenmerk bijgewerkt in de beslagen waar de sleutel bestaat
   }
 ]
 ```
-Voor de `update` actie zijn de volgende acties vereist
-  * `key`
-  * een van `value` of `fromAttribute`
-  * `action`:`update`
+Voor de `update` actie zijn de volgende instellingen vereist:
+* `key`
+* Ofwel `value` of `fromAttribute`
+* `action`: `update`
 
 
 ### `delete` 
 
-Hiermee wordt een kenmerk uit een bereik verwijderd
+`delete`Met deze actie wordt een kenmerk uit een bereik verwijderd.
 
 ```json
 "processors": [
@@ -213,13 +208,13 @@ Hiermee wordt een kenmerk uit een bereik verwijderd
   }
 ]
 ```
-Voor de `delete` actie zijn de volgende acties vereist
-  * `key`
-  * `action`: `delete`
+Voor de `delete` actie zijn de volgende instellingen vereist:
+* `key`
+* `action`: `delete`
 
 ### `hash`
 
-Hashes (SHA1) een bestaande kenmerk waarde
+De `hash` actie hashes (SHA1) is een bestaande kenmerk waarde.
 
 ```json
 "processors": [
@@ -234,16 +229,16 @@ Hashes (SHA1) een bestaande kenmerk waarde
   }
 ]
 ```
-Voor de `hash` actie zijn de volgende acties vereist
+Voor de `hash` actie zijn de volgende instellingen vereist:
 * `key`
-* `action` : `hash`
+* `action`: `hash`
 
 ### `extract`
 
 > [!NOTE]
-> Deze functie is alleen in 3.0.2 en hoger
+> De `extract` functie is alleen beschikbaar in versie 3.0.2 en hoger.
 
-Retourneert waarden met behulp van een reguliere expressie regel van de invoer sleutel naar de doel sleutels die in de regel zijn opgegeven. Als er al een doel sleutel bestaat, wordt deze overschreven. Het gedraagt zich op dezelfde manier als de instelling voor het bereik van de [processor](#extract-attributes-from-span-name) `toAttributes` met het bestaande kenmerk als de bron.
+`extract`Met de actie worden waarden geëxtraheerd met behulp van een reguliere expressie regel van de invoer sleutel naar de doel sleutels die in de regel zijn opgegeven. Als er al een doel sleutel bestaat, wordt deze overschreven. Deze actie gedraagt zich als de instelling voor de [bereik processor](#extract-attributes-from-the-span-name) `toAttributes` , waarbij het bestaande kenmerk de bron is.
 
 ```json
 "processors": [
@@ -259,28 +254,24 @@ Retourneert waarden met behulp van een reguliere expressie regel van de invoer s
   }
 ]
 ```
-Voor de `extract` actie zijn de volgende acties vereist
+Voor de `extract` actie zijn de volgende instellingen vereist:
 * `key`
 * `pattern`
-* `action` : `extract`
+* `action`: `extract`
 
-Raadpleeg de documentatie van de [telemetrie-processor](./java-standalone-telemetry-processors-examples.md) voor voor meer informatie.
+Zie voor [beelden van telemetrie-processor](./java-standalone-telemetry-processors-examples.md)voor meer informatie.
 
 ## <a name="span-processor"></a>Span processor
 
-De reeks processor wijzigt de naam van de reeks of kenmerken van een reeks op basis van de naam van de span. Het biedt optioneel ondersteuning voor de mogelijkheid om reeksen op te nemen of uit te sluiten.
+De reeks processor wijzigt de naam van de reeks of kenmerken van een reeks op basis van de naam van de span. Het kan de mogelijkheid bieden om reeksen op te nemen of uit te sluiten.
 
 ### <a name="name-a-span"></a>Een reeks een naam
 
-De volgende instelling is vereist als onderdeel van de sectie Naam:
+De `name` sectie vereist de `fromAttributes` instelling. De waarden van deze kenmerken worden gebruikt voor het maken van een nieuwe naam, samengevoegd in de volg orde waarin de configuratie is opgegeven. De processor krijgt alleen de bereik naam te wijzigen als al deze kenmerken aanwezig zijn op de reeks.
 
-* `fromAttributes`: De kenmerk waarde voor de sleutels wordt gebruikt om een nieuwe naam te maken in de volg orde die is opgegeven in de configuratie. Alle kenmerk sleutels moeten worden opgegeven in de reik wijdte van de processor om de naam ervan te wijzigen.
-
-De volgende instelling kan eventueel worden geconfigureerd:
-
-* `separator`: Een teken reeks die wordt opgegeven, wordt gebruikt om waarden te splitsen
+De `separator` instelling is optioneel. Deze instelling is een teken reeks. Het is opgegeven om waarden te splitsen.
 > [!NOTE]
-> Als het wijzigen van de naam afhankelijk is van de kenmerken die worden gewijzigd door de attributen processor, moet u ervoor zorgen dat de bereik processor is opgegeven na de kenmerken processor in de pijplijn specificatie.
+> Als het wijzigen van de naam afhankelijk is van de kenmerken processor om kenmerken aan te passen, moet u ervoor zorgen dat de bereik processor is opgegeven na de kenmerken processor in de pijplijn specificatie.
 
 ```json
 "processors": [
@@ -297,16 +288,26 @@ De volgende instelling kan eventueel worden geconfigureerd:
 ] 
 ```
 
-### <a name="extract-attributes-from-span-name"></a>Kenmerken uit de span-naam extra heren
+### <a name="extract-attributes-from-the-span-name"></a>Kenmerken uit de bereik naam extra heren
 
-Hiermee wordt een lijst met reguliere expressies gemaakt die overeenkomen met de naam van de reeks en de kenmerken uit de subexpressies worden opgehaald. Moet worden opgegeven in de `toAttributes` sectie.
+De `toAttributes` sectie bevat een lijst met de reguliere expressies die overeenkomen met de naam van het bereik. Hiermee worden kenmerken geëxtraheerd op basis van subexpressies.
 
-De volgende instellingen zijn vereist:
+De `rules` instelling is vereist. Met deze instelling worden de regels vermeld die worden gebruikt om kenmerk waarden uit de bereik naam op te halen. 
 
-`rules` : Een lijst met regels om kenmerk waarden te extra heren uit een span-naam. De waarden in de bereik naam worden vervangen door geëxtraheerde kenmerk namen. Elke regel in de lijst is regex-patroon teken reeks. De naam van de span wordt gecontroleerd op basis van de regex. Als de regex overeenkomt, worden alle benoemde subexpressies van de regex geëxtraheerd als kenmerken en worden deze toegevoegd aan de reeks. Elke naam van een subexpressie wordt een kenmerk naam en een subexpressie die overeenkomt met een deel wordt de kenmerk waarde. Het overeenkomende deel in de bereik naam wordt vervangen door de geëxtraheerde kenmerk naam. Als de kenmerken al bestaan in de reeks, worden deze overschreven. Het proces wordt herhaald voor alle regels in de volg orde waarin ze zijn opgegeven. Elke volgende regel werkt op de naam van de span die de uitvoer na het verwerken van de vorige regel.
+De waarden in de bereik naam worden vervangen door geëxtraheerde kenmerk namen. Elke regel in de lijst is een teken reeks met een reguliere expressie (regex). 
+
+Dit zijn de waarden die worden vervangen door geëxtraheerde kenmerk namen:
+
+1. De naam van de span wordt gecontroleerd op basis van de regex. 
+1. Als de regex overeenkomt, worden alle benoemde subexpressies van de regex geëxtraheerd als kenmerken. 
+1. De geëxtraheerde kenmerken worden toegevoegd aan de reeks. 
+1. Elke naam van een subexpressie wordt een kenmerk naam. 
+1. De subexpressie die overeenkomt met een deel wordt de kenmerk waarde. 
+1. Het overeenkomende deel in de bereik naam wordt vervangen door de naam van het geëxtraheerde kenmerk. Als de kenmerken al bestaan in de reeks, worden deze overschreven. 
+ 
+Dit proces wordt herhaald voor alle regels in de volg orde waarin ze zijn opgegeven. Elke volgende regel werkt op de naam van het bereik dat de uitvoer van de vorige regel is.
 
 ```json
-
 "processors": [
   {
     "type": "span",
@@ -324,26 +325,26 @@ De volgende instellingen zijn vereist:
 
 ```
 
-## <a name="list-of-attributes"></a>Lijst met kenmerken
+## <a name="common-span-attributes"></a>Algemene span kenmerken
 
-Hieronder vindt u een lijst met enkele algemene span-kenmerken die kunnen worden gebruikt in de telemetrie-processors.
+In deze sectie vindt u enkele algemene span-kenmerken die door telemetrie-processors kunnen worden gebruikt.
 
 ### <a name="http-spans"></a>HTTP-reeksen
 
 | Kenmerk  | Type | Description | 
 |---|---|---|
 | `http.method` | tekenreeks | HTTP-aanvraag methode.|
-| `http.url` | tekenreeks | Volledige URL van de HTTP-aanvraag in het formulier `scheme://host[:port]/path?query[#fragment]` . Normaal gesp roken wordt het fragment niet via HTTP verzonden, maar als dit wel bekend is, moet het echter wel worden opgenomen.|
+| `http.url` | tekenreeks | Volledige URL van de HTTP-aanvraag in het formulier `scheme://host[:port]/path?query[#fragment]` . Het fragment wordt meestal niet via HTTP verzonden. Maar als het fragment bekend is, moet het worden opgenomen.|
 | `http.status_code` | getal | [Status code van http-antwoord](https://tools.ietf.org/html/rfc7231#section-6).|
-| `http.flavor` | tekenreeks | Type gebruikt HTTP-protocol |
+| `http.flavor` | tekenreeks | Type HTTP-protocol. |
 | `http.user_agent` | tekenreeks | Waarde van de [http-](https://tools.ietf.org/html/rfc7231#section-5.5.3) header van de agent die door de client is verzonden. |
 
 ### <a name="jdbc-spans"></a>JDBC-reeksen
 
 | Kenmerk  | Type | Description  |
 |---|---|---|
-| `db.system` | tekenreeks | Een id voor het Database Management System DBMS-product dat wordt gebruikt. |
-| `db.connection_string` | tekenreeks | De connection string die wordt gebruikt om verbinding te maken met de data base. Het wordt aanbevolen om Inge sloten referenties te verwijderen.|
+| `db.system` | tekenreeks | Id voor het Database Management System DBMS-product dat wordt gebruikt. |
+| `db.connection_string` | tekenreeks | Verbindings reeks die wordt gebruikt om verbinding te maken met de data base. Het is raadzaam om Inge sloten referenties te verwijderen.|
 | `db.user` | tekenreeks | Gebruikers naam voor toegang tot de data base. |
-| `db.name` | tekenreeks | Dit kenmerk wordt gebruikt om de naam te rapporteren van de data base die wordt geopend. Voor opdrachten waarmee de data base wordt overgeschakeld, moet dit worden ingesteld op de doel database (zelfs als de opdracht mislukt).|
+| `db.name` | tekenreeks | De teken reeks die wordt gebruikt voor het rapporteren van de naam van de data base die wordt geopend. Voor opdrachten waarmee de data base wordt overgeschakeld, moet deze teken reeks worden ingesteld op de doel database, zelfs als de opdracht mislukt.|
 | `db.statement` | tekenreeks | De data base-instructie die wordt uitgevoerd.|

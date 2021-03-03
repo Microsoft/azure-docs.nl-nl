@@ -4,15 +4,15 @@ description: Overzicht van de App Service Environment
 author: ccompy
 ms.assetid: 3d37f007-d6f2-4e47-8e26-b844e47ee919
 ms.topic: article
-ms.date: 11/16/2020
+ms.date: 03/02/2021
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: fbc498fcd654d16936c2548528e2600be68a2ad9
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 23b23340550ded3642d19500270f06cfb6faf8cb
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94663619"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101735094"
 ---
 # <a name="app-service-environment-overview"></a>Overzicht van App Service Environment 
 
@@ -53,7 +53,7 @@ De App Service Environment heeft veel gebruiks voorbeelden, waaronder:
 Er zijn een aantal netwerk functies die apps in de multi tenant-App Service in staat stellen om geïsoleerde netwerk bronnen te bereiken of netwerk geïsoleerd te worden. Deze functies zijn ingeschakeld op toepassings niveau.  Met een ASE is er geen aanvullende configuratie voor de apps die zich in het VNet bevinden. De apps worden geïmplementeerd in een geïsoleerde netwerk omgeving die zich al in een VNet bevindt. Boven op de ASE die geïsoleerde netwerken hosten, is het ook een systeem met één Tenant. Er zijn geen andere klanten die de ASE gebruiken. Als u een volledig isolatie verhaal nodig hebt, kunt u uw ASE ook implementeren op toegewezen hardware. Tussen netwerk-geïsoleerde toepassingen hosten, enkel pacht en de mogelijkheid 
 
 ## <a name="dedicated-environment"></a>Toegewezen omgeving
-Een ASE is exclusief toegewezen aan één abonnement en kan instanties van 200 App Service-abonnement hosten. Het bereik loopt van 100 exemplaren in één App Service-plan tot 100 App Service-plannen met één exemplaar, en alles hier tussenin.
+Een ASE is exclusief toegewezen aan één abonnement en kan het totale App Service aantal exemplaren van 200 in meerdere App Service plannen hosten. Het woord ' instance ' verwijst naar App Service schema horizon taal schalen. Elk exemplaar is gelijk aan een worker-rol. Hoewel een ASE een totaal aantal exemplaren kan 200 hebben, kan één geïsoleerd v2-App Service plan 100 instanties bevatten. De ASE kan twee App Service-abonnementen bevatten met 100 exemplaren in elk, 200 App Service plannen voor één instantie of alles tussen.
 
 Een AS-omgeving bestaat uit front-ends en werkrollen. Front-ends zijn verantwoordelijk voor HTTP/HTTPS-beëindiging en automatische taakverdeling van app-aanvragen in een AS-omgeving. Front-ends worden automatisch toegevoegd wanneer de App Service-plannen in de AS-omgeving worden uitgeschaald.
 
@@ -77,7 +77,7 @@ Apps hebben ook vaak toegang nodig tot bedrijfsresources zoals interne databases
 ## <a name="preview"></a>Preview
 De App Service Environment V3 bevindt zich in de open bare preview.  Sommige functies worden toegevoegd tijdens de voortgang van de preview-fase. De huidige beperkingen van ASEv3 zijn:
 
-- Het is niet mogelijk om een App Service plan te schalen na vijf instanties
+- Het is niet mogelijk om een App Service plan te schalen dat groter is dan 50 exemplaren
 - Het is niet mogelijk om een container op te halen uit een persoonlijk REGI ster
 - Niet-ondersteunde App Service-functies voor het door lopen van het klant-VNet
 - Geen extern implementatie model met een Internet toegankelijk eind punt

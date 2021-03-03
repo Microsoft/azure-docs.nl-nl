@@ -6,42 +6,28 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 6/3/2020
-ms.openlocfilehash: 8033117d9e3c31f8aa9bba06afb7c3b1b7bba67f
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 920f6a4fec1ec8a260a98641888268e4955bbf44
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95751025"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101718774"
 ---
 # <a name="supported-azure-database-for-mysql-server-versions"></a>Ondersteunde Azure Database for MySQL server versies
 
-Azure Database for MySQL is ontwikkeld vanuit de [MySQL Community Edition](https://www.mysql.com/products/community/), met behulp van de InnoDB-engine.
-
-MySQL maakt gebruik van het schema X. Y. Z. X is de primaire versie, Y de secundaire versie en Z de release van de fout correctie. Zie de [MySQL-documentatie](https://dev.mysql.com/doc/refman/5.7/en/which-version.html)voor meer informatie over het schema.
-
+Azure Database for MySQL is ontwikkeld vanuit de [MySQL Community Edition](https://www.mysql.com/products/community/), met behulp van de InnoDB-opslag engine. De service ondersteunt alle huidige primaire versie die wordt ondersteund door de community, namelijk MySQL 5,6, 5,7 en 8,0. MySQL maakt gebruik van het schema X. Y. Z waarbij X de primaire versie is, Y de secundaire versie en Z de release van de fout correctie. Zie de [MySQL-documentatie](https://dev.mysql.com/doc/refman/5.7/en/which-version.html)voor meer informatie over het schema.
 
 > [!NOTE]
-> In de service wordt een gateway gebruikt om de verbindingen met serverinstanties om te leiden. Nadat de verbinding tot stand is gebracht, wordt in de MySQL-client de versie van MySQL weergegeven die in de gateway is ingesteld, niet de feitelijke versie die wordt uitgevoerd op de MySQL-serverinstantie. Als u de versie van uw MySQL-serverinstantie wilt vaststellen, gebruikt u de `SELECT VERSION();`-opdracht bij de MySQL-prompt.
+> In de implementatie optie voor één server wordt een gateway gebruikt om de verbindingen met Server exemplaren om te leiden. Nadat de verbinding tot stand is gebracht, wordt in de MySQL-client de versie van MySQL weergegeven die in de gateway is ingesteld, niet de feitelijke versie die wordt uitgevoerd op de MySQL-serverinstantie. Als u de versie van uw MySQL-serverinstantie wilt vaststellen, gebruikt u de `SELECT VERSION();`-opdracht bij de MySQL-prompt.
 
-Azure Database for MySQL ondersteunt momenteel de volgende versies:
+Azure Database for MySQL ondersteunt momenteel de volgende primaire en secundaire versies van MySQL:
 
-## <a name="mysql-version-56"></a>MySQL-versie 5,6
 
-Release van de fout oplossing: 5.6.47
-
-Raadpleeg de opmerkingen bij de [versie](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-47.html) van MySQL voor meer informatie over verbeteringen en oplossingen in deze versie.
-
-## <a name="mysql-version-57"></a>MySQL-versie 5,7
-
-Release van de fout oplossing: 5.7.29
-
-Raadpleeg de opmerkingen bij de [versie](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-29.html) van MySQL voor meer informatie over verbeteringen en oplossingen in deze versie.
-
-## <a name="mysql-version-80"></a>MySQL-versie 8,0
-
-Release van de fout oplossing: 8.0.15
-
-Raadpleeg de opmerkingen bij de [versie](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-15.html) van MySQL voor meer informatie over verbeteringen en oplossingen in deze versie.
+| Versie | Enkele server <br/> Huidige secundaire versie |Flexibele server (preview) <br/> Huidige secundaire versie  |
+|:-------------------|:-------------------------------------------|:---------------------------------------------|
+|MySQL-versie 5,6 |  [5.6.47](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-47.html) | Niet ondersteund|
+|MySQL-versie 5,7 | [5.7.29](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-29.html) | [5.7.29](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-29.html)|
+|MySQL-versie 8,0 | [8.0.15](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-15.html) | [8.0.21](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-21.html)|
 
 ## <a name="managing-updates-and-upgrades"></a>Updates en upgrades beheren
 De service beheert automatisch patches voor het oplossen van problemen met versie-updates. Bijvoorbeeld 5.7.20 installeren naar 5.7.21.  

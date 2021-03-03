@@ -4,22 +4,22 @@ description: Meer informatie over het wijzigen van uw webhooks, Logic apps en ru
 author: yanivlavi
 ms.author: yalavi
 ms.topic: conceptual
-ms.date: 03/19/2018
+ms.date: 02/14/2021
 ms.subservice: alerts
-ms.openlocfilehash: 1d6fc8e4b9baecf02531fc1baa617b87a9d3255c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: c88d0b8595434298eb564034a44665c5375457c4
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609620"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701039"
 ---
 # <a name="prepare-your-logic-apps-and-runbooks-for-migration-of-classic-alert-rules"></a>Uw logische apps en runbooks voorbereiden voor de migratie van klassieke waarschuwingsregels
 
 > [!NOTE]
-> Zoals [eerder aangekondigd](../platform/monitoring-classic-retirement.md), worden klassieke waarschuwingen in azure monitor buiten gebruik gesteld voor open bare Cloud gebruikers, maar nog steeds beperkt in beperkte mate van resources die de nieuwe waarschuwingen nog niet ondersteunen. De datum van beëindiging voor deze waarschuwingen is verder uitgebreid. Binnenkort wordt een nieuwe datum aangekondigd.
+> Zoals [eerder aangekondigd](monitoring-classic-retirement.md), worden klassieke waarschuwingen in azure monitor buiten gebruik gesteld voor open bare Cloud gebruikers, maar nog maar in beperkte mate, tot **31 mei 2021**. Klassieke waarschuwingen voor Azure Government Cloud en Azure China 21Vianet worden op **29 februari 2024** buiten gebruik gesteld.
 >
 
-Als u ervoor kiest om uw klassieke waarschuwings regels vrijwillig te migreren naar nieuwe waarschuwings regels, moet u er rekening mee houden dat er verschillen zijn tussen de twee systemen. In dit artikel worden deze verschillen beschreven en wordt uitgelegd hoe u de wijziging kunt voor bereiden.
+Als u ervoor kiest om uw klassieke waarschuwings regels vrijwillig te migreren naar nieuwe waarschuwings regels, zijn er enkele verschillen tussen de twee systemen. In dit artikel worden deze verschillen beschreven en wordt uitgelegd hoe u de wijziging kunt voor bereiden.
 
 ## <a name="api-changes"></a>API-wijzigingen
 
@@ -36,7 +36,7 @@ De volgende tabel bevat een verwijzing naar de programmatische interfaces voor z
 
 ## <a name="notification-payload-changes"></a>Wijzigingen aan de meldings lading
 
-De indeling van de meldings lading verschilt enigszins van de [klassieke waarschuwings regels](../platform/alerts-webhooks.md) en de [nieuwe metrische waarschuwingen](alerts-metric-near-real-time.md#payload-schema). Als u een webhook, een logische app of runbook-acties hebt die worden geactiveerd door de regels van de klassieke waarschuwing, moet u deze meldings eindpunten bijwerken om de indeling van de nettolading van nieuwe metrische waarschuwingen te accepteren.
+De indeling van de meldings lading verschilt enigszins van de [klassieke waarschuwings regels](alerts-webhooks.md) en de [nieuwe metrische waarschuwingen](alerts-metric-near-real-time.md#payload-schema). Als u klassieke waarschuwings regels met webhook, logische app of runbook-acties hebt, moet u de doelen bijwerken om de nieuwe indeling van de nettolading te accepteren.
 
 Gebruik de volgende tabel om de velden voor de nettolading van webhooks van de klassieke indeling toe te wijzen aan de nieuwe indeling:
 
@@ -153,13 +153,13 @@ Zie de [Azure Automation-documentatie](../../automation/automation-create-alert-
 
 ## <a name="partner-integration-via-webhooks"></a>Partner integratie via webhooks
 
-De meeste van [onze partners die integreren met klassieke waarschuwingen](../platform/partners.md) , ondersteunen reeds nieuwere metrische waarschuwingen via hun integraties. Bekende integraties die al werken met nieuwe metrische waarschuwingen zijn:
+De meeste van [onze partners die integreren met klassieke waarschuwingen](../partners.md) , ondersteunen reeds nieuwere metrische waarschuwingen via hun integraties. Bekende integraties die al werken met nieuwe metrische waarschuwingen zijn:
 
 - [PagerDuty](https://www.pagerduty.com/docs/guides/azure-integration-guide/)
 - [OpsGenie](https://docs.opsgenie.com/docs/microsoft-azure-integration)
 - [Signl4](https://www.signl4.com/blog/mobile-alert-notifications-azure-monitor/)
 
-Als u een partner integratie gebruikt die hier niet wordt vermeld, controleert u met de integratie provider waarmee de integratie werkt met nieuwe metrische waarschuwingen.
+Als u een partner integratie gebruikt die hier niet wordt vermeld, bevestigt u met de provider die ze met nieuwe metrische waarschuwingen werken.
 
 ## <a name="next-steps"></a>Volgende stappen
 

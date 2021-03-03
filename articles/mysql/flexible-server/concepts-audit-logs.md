@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 9/21/2020
-ms.openlocfilehash: d38a0ea7307584c25ddec9389feaef7518bcf925
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 1232a0753c988f5a28ebba28f9819aa67ce28603
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100591755"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101718740"
 ---
 # <a name="track-database-activity-with-audit-logs-in-azure-database-for-mysql-flexible-server"></a>Database activiteiten bijhouden met audit Logboeken in Azure Database for MySQL flexibele server
 
@@ -46,7 +46,7 @@ Andere para meters die u kunt aanpassen om het gedrag van de controle logboek re
 | `DCL` | Query's zoals ' machtiging verlenen ' |
 | `ADMIN` | Query's als "STATUS weer geven" |
 | `GENERAL` | Alles in DML_SELECT, DML_NONSELECT, DML, DDL, DCL en beheerder |
-| `TABLE_ACCESS` | -Alleen beschikbaar voor MySQL 5,7 <br> -Lees instructies voor tabellen, zoals selecteren of invoegen in... UITGESCHAKELD <br> -Instructies voor het verwijderen van tabellen, zoals verwijderen of TRUNCATE TABLE <br> -Instructies voor het invoegen van tabellen, zoals invoegen of vervangen <br> -Update-instructies voor tabellen, zoals UPDATE |
+| `TABLE_ACCESS` | -Lees instructies voor tabellen, zoals selecteren of invoegen in... UITGESCHAKELD <br> -Instructies voor het verwijderen van tabellen, zoals verwijderen of TRUNCATE TABLE <br> -Instructies voor het invoegen van tabellen, zoals invoegen of vervangen <br> -Update-instructies voor tabellen, zoals UPDATE |
 
 ## <a name="access-audit-logs"></a>Auditlogboeken inzien
 
@@ -72,7 +72,7 @@ In de volgende secties wordt de uitvoer van MySQL-audit Logboeken beschreven op 
 | `OperationName` | `LogEvent` |
 | `LogicalServerName_s` | Naam van de server |
 | `event_class_s` | `connection_log` |
-| `event_subclass_s` | `CONNECT`, `DISCONNECT` , `CHANGE USER` (alleen beschikbaar voor MySQL 5,7) |
+| `event_subclass_s` | `CONNECT`, `DISCONNECT`, `CHANGE USER` |
 | `connection_id_d` | Unieke verbindings-ID die is gegenereerd door MySQL |
 | `host_s` | Leeg |
 | `ip_s` | IP-adres van de client die verbinding maakt met MySQL |
@@ -116,7 +116,7 @@ Schema hieronder is van toepassing op de gebeurtenis typen algemeen, DML_SELECT,
 ### <a name="table-access"></a>Tabel toegang
 
 > [!NOTE]
-> Logboeken voor tabel toegang worden alleen uitgevoerd voor MySQL 5,7.<br>Voor wordt `sql_text_s` het logboek afgekapt als dit langer is dan 2048 tekens.
+> Voor wordt `sql_text_s` het logboek afgekapt als dit langer is dan 2048 tekens.
 
 | **Eigenschap** | **Beschrijving** |
 |---|---|

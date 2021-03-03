@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/02/2020
-ms.openlocfilehash: 040c487df83c117e177b8a8b0e8fddde8682c67f
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: ae95580a8c192f0815623461fb21ec9ecf52ae26
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609381"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101700640"
 ---
 # <a name="archive-data-from-log-analytics-workspace-to-azure-storage-using-logic-app"></a>Gegevens archiveren van Log Analytics werk ruimte naar Azure Storage met behulp van Logic app
 In dit artikel wordt een methode beschreven voor het gebruik van [Azure Logic apps](../../logic-apps/index.yml) om gegevens op te vragen uit een log Analytics-werk ruimte in azure monitor en te verzenden naar Azure Storage. Gebruik dit proces wanneer u uw Azure Monitor-logboek gegevens wilt exporteren voor controle-en nalevings scenario's of als u wilt toestaan dat een andere service deze gegevens ophaalt.  
@@ -118,7 +118,7 @@ AzureActivity
     ResourceId = _ResourceId 
 ```
 
-In het **tijds bereik** worden de records opgegeven die worden opgenomen in de query op basis van de kolom **TimeGenerated** . Dit moet worden ingesteld op een waarde die gelijk is aan of hoger is dan het tijds bereik dat u hebt geselecteerd in de query. Omdat deze query niet de kolom **TimeGenerated** gebruikt, is de optie **in query** niet beschikbaar. Zie [query bereik](../log-query/scope.md) voor meer informatie over het tijds bereik. 
+In het **tijds bereik** worden de records opgegeven die worden opgenomen in de query op basis van de kolom **TimeGenerated** . Dit moet worden ingesteld op een waarde die gelijk is aan of hoger is dan het tijds bereik dat u hebt geselecteerd in de query. Omdat deze query niet de kolom **TimeGenerated** gebruikt, is de optie **in query** niet beschikbaar. Zie [query bereik](./scope.md) voor meer informatie over het tijds bereik. 
 
 Selecteer de **laatste vier uur** voor het **tijds bereik**. Dit zorgt ervoor dat records met een opname tijd groter dan **TimeGenerated** worden opgenomen in de resultaten.
    
@@ -210,6 +210,6 @@ Ga naar het menu **opslag accounts** in de Azure Portal en selecteer uw opslag a
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [logboek query's vindt u in azure monitor](../log-query/log-query-overview.md).
+- Meer informatie over [logboek query's vindt u in azure monitor](./log-query-overview.md).
 - Meer informatie over [Logic apps](../../logic-apps/index.yml)
 - Meer informatie over het [automatiseren van energie](https://flow.microsoft.com).

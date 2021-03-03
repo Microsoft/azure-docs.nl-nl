@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 02/02/2021
 ms.author: alkohli
-ms.openlocfilehash: 0ab7cdfb3d699a8415739565aae5d4326002bc43
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: c621584fa1dbed06873ac0867e20201e94c4a757
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100389141"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699678"
 ---
 # <a name="manage-device-event-alert-notifications-on-azure-stack-edge-pro-resources"></a>Meldingen voor gebeurtenis waarschuwingen voor apparaten beheren op Azure Stack Edge Pro-resources
 
@@ -23,7 +23,7 @@ In dit artikel wordt beschreven hoe u actie regels maakt in de Azure Portal voor
 
 Een actie regel kan waarschuwings meldingen activeren of onderdrukken. De actie regel wordt toegevoegd aan een *actie groep* : een set meldings voorkeuren die wordt gebruikt om gebruikers op de hoogte te stellen die moeten reageren op waarschuwingen die zijn geactiveerd in verschillende contexten voor een resource of set resources.
 
-Zie [een actie regel configureren](/azure/azure-monitor/platform/alerts-action-rules?tabs=portal#configuring-an-action-rule)voor meer informatie over actie regels. Zie voor meer informatie over actie groepen [actie groepen maken en beheren in de Azure Portal](/azure/azure-monitor/platform/action-groups).
+Zie [een actie regel configureren](../azure-monitor/alerts/alerts-action-rules.md?tabs=portal#configuring-an-action-rule)voor meer informatie over actie regels. Zie voor meer informatie over actie groepen [actie groepen maken en beheren in de Azure Portal](../azure-monitor/alerts/action-groups.md).
 
 > [!NOTE]
 > De functie voor actie regels is beschikbaar als preview-versie. Sommige schermen en stappen kunnen veranderen naarmate het proces wordt verfijnd.
@@ -34,7 +34,7 @@ Zie [een actie regel configureren](/azure/azure-monitor/platform/alerts-action-r
 Voer de volgende stappen uit in de Azure Portal om een actie regel te maken voor uw Azure Stack edge-apparaat.
 
 > [!NOTE]
-> Met deze stappen maakt u een actie regel die meldingen naar een actie groep verzendt. Zie [een actie regel configureren](/azure/azure-monitor/platform/alerts-action-rules?tabs=portal#configuring-an-action-rule)voor meer informatie over het maken van een actie regel om meldingen te onderdrukken.
+> Met deze stappen maakt u een actie regel die meldingen naar een actie groep verzendt. Zie [een actie regel configureren](../azure-monitor/alerts/alerts-action-rules.md?tabs=portal#configuring-an-action-rule)voor meer informatie over het maken van een actie regel om meldingen te onderdrukken.
 
 1. Ga naar het Azure Stack edge-apparaat in de Azure Portal en ga vervolgens naar **bewaking > waarschuwingen**. Selecteer **acties beheren**.
 
@@ -72,7 +72,7 @@ Voer de volgende stappen uit in de Azure Portal om een actie regel te maken voor
 
    2. Voeg onder **filters** elk filter toe dat u wilt Toep assen. Selecteer voor elk filter het filter type, de **operator** en de **waarde**.
    
-      Zie [filter criteria](/azure/azure-monitor/platform/alerts-action-rules?tabs=portal#filter-criteria)voor een lijst met filter opties.
+      Zie [filter criteria](../azure-monitor/alerts/alerts-action-rules.md?tabs=portal#filter-criteria)voor een lijst met filter opties.
 
       De onderstaande voorbeeld filters zijn van toepassing op alle waarschuwingen op Ernst niveau 2, 3 en 4 die de bewakende service voor Azure Stack rand bronnen heeft gegenereerd.
 
@@ -85,11 +85,11 @@ Voer de volgende stappen uit in de Azure Portal om een actie regel te maken voor
    ![Actie groeps optie voor het maken van een actie regel die meldingen verzendt](media/azure-stack-edge-gpu-manage-device-event-alert-notifications/new-action-rule-action-group-01.png)
 
    > [!NOTE]
-   > Als u een regel wilt maken die meldingen onderdrukt, kiest u **onderdrukken**. Zie [een actie regel configureren](/azure/azure-monitor/platform/alerts-action-rules?tabs=portal#configuring-an-action-rule)voor meer informatie.
+   > Als u een regel wilt maken die meldingen onderdrukt, kiest u **onderdrukken**. Zie [een actie regel configureren](../azure-monitor/alerts/alerts-action-rules.md?tabs=portal#configuring-an-action-rule)voor meer informatie.
 
 6. Selecteer de actie groep die u met deze actie regel wilt gebruiken. Kies dan de optie **Selecteren**. Uw nieuwe actie regel wordt toegevoegd aan de meldings voorkeuren van de geselecteerde actie groep.
 
-   Als u een nieuwe actie groep wilt maken, selecteert u **+ actie groep maken** en volgt u de stappen in [een actie groep maken met behulp van de Azure Portal](/azure/azure-monitor/platform/action-groups#create-an-action-group-by-using-the-azure-portal).
+   Als u een nieuwe actie groep wilt maken, selecteert u **+ actie groep maken** en volgt u de stappen in [een actie groep maken met behulp van de Azure Portal](../azure-monitor/alerts/action-groups.md#create-an-action-group-by-using-the-azure-portal).
 
    ![Selecteer een actie groep die u met de regel wilt gebruiken en kies vervolgens selecteren.](media/azure-stack-edge-gpu-manage-device-event-alert-notifications/new-action-rule-action-group-02.png)
 
@@ -123,8 +123,8 @@ De e-mail melding ziet er ongeveer als volgt uit.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-<!-- - See [Create and manage action groups in the Azure portal](/azure/azure-monitor/platform/action-groups) for guidance on creating a new action group.
-- See [Configure an action rule](/azure/azure-monitor/platform/alerts-action-rules?tabs=portal#configuring-an-action-rule) for more info about creating action rules that send or suppress alert notifications. -2 bullets referenced above. Making room for local tasks in "Next Steps." --> 
+<!-- - See [Create and manage action groups in the Azure portal](../azure-monitor/alerts/action-groups.md) for guidance on creating a new action group.
+- See [Configure an action rule](../azure-monitor/alerts/alerts-action-rules.md?tabs=portal#configuring-an-action-rule) for more info about creating action rules that send or suppress alert notifications. -2 bullets referenced above. Making room for local tasks in "Next Steps." --> 
 - Zie [uw Azure stack Edge Pro bewaken](azure-stack-edge-monitor.md) voor meer informatie over het controleren van Apparaatinstellingen, de status van de hardware en de metrische grafieken. 
 - Zie [Azure monitor gebruiken](azure-stack-edge-gpu-enable-azure-monitor.md) voor informatie over het optimaliseren van Azure Monitor voor Azure stack Edge Pro GPU-apparaten.
-- Zie [metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor koppelings doel](/azure/azure-monitor/platform/alerts-metric) voor informatie over het beheren van afzonderlijke waarschuwingen.
+- Zie [metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor koppelings doel](../azure-monitor/alerts/alerts-metric.md) voor informatie over het beheren van afzonderlijke waarschuwingen.

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/11/2019
 ms.author: benoah
-ms.openlocfilehash: 9a7a8868497433ea0de8f2f8b32f8e8fbaa497eb
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 3a0b645acd7c21ff0416c748cdd2caf7041be508
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99537181"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101730810"
 ---
 # <a name="guidelines-for-responsible-deployment-of-synthetic-voice-technology"></a>Richt lijnen voor de verantwoordelijke implementatie van synthetische spraak technologie
 
@@ -64,6 +64,6 @@ Personen met spraak immuunziekten willen updates aan hun synthetische stem aanbr
 
 ## <a name="see-also"></a>Zie ook
 
-* [Openbaar making voor spraak-talen](https://docs.microsoft.com/legal/cognitive-services/speech-service/disclosure-voice-talent?context=/azure/cognitive-services/speech-service/context/context)
+* [Openbaar making voor spraak-talen](/legal/cognitive-services/speech-service/disclosure-voice-talent?context=%2fazure%2fcognitive-services%2fspeech-service%2fcontext%2fcontext)
 * [Vrijgeven](concepts-disclosure-guidelines.md)
 * [Ontwerp patronen voor openbaar making](concepts-disclosure-patterns.md)

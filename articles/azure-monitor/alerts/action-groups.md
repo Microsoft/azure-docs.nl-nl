@@ -3,15 +3,15 @@ title: Actiegroepen maken en beheren in Azure Portal
 description: Meer informatie over het maken en beheren van actie groepen in de Azure Portal.
 author: dkamstra
 ms.topic: conceptual
-ms.date: 01/28/2021
+ms.date: 02/25/2021
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: 8905c3e4dfa1053646ede5c0b62149844e21ee7d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 50fb898e1ea55d0bcc09fc10dfee051ca7b1d809
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610672"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701158"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Actiegroepen maken en beheren in Azure Portal
 Een actie groep is een verzameling voor keuren voor meldingen die zijn gedefinieerd door de eigenaar van een Azure-abonnement. Azure Monitor-en Service Health-waarschuwingen gebruiken actie groepen om gebruikers te laten weten dat een waarschuwing is geactiveerd. Verschillende waarschuwingen kunnen dezelfde actie groep of verschillende actie groepen gebruiken, afhankelijk van de vereisten van de gebruiker. 
@@ -118,6 +118,8 @@ Raadpleeg de [service limieten](../../azure-resource-manager/management/azure-su
 Mogelijk hebt u een beperkt aantal Runbook-acties in een actie groep. 
 
 ### <a name="azure-app-push-notifications"></a>Push meldingen van Azure-app
+Schakel push meldingen in voor de [Azure Mobile App](https://azure.microsoft.com/features/azure-portal/mobile-app/) door het e-mail adres op te geven dat u gebruikt als uw account-id bij het configureren van de Azure Mobile App.
+
 Mogelijk hebt u een beperkt aantal Azure-app-acties in een actie groep.
 
 ### <a name="email"></a>E-mail
@@ -139,11 +141,11 @@ Als u geen meldingen ontvangt op uw *primaire e-mail*, kunt u de volgende stappe
 2. Klik op alle gebruikers (in het linkerdeel venster). er wordt een lijst met gebruikers weer gegeven (in het rechterdeel venster).
 3. Selecteer de gebruiker voor wie u de *primaire e-mail* gegevens wilt controleren.
 
-  :::image type="content" source="media/action-groups/active-directory-user-profile.png" alt-text="Voor beeld voor het controleren van het gebruikers profiel."border="true":::
+  :::image type="content" source="media/action-groups/active-directory-user-profile.png" alt-text="Voor beeld voor het controleren van het gebruikers profiel." border="true":::
 
 4. Klik in het gebruikers profiel onder contact gegevens op het tabblad E-mail op de knop *bewerken* bovenaan en voeg uw *primaire e-mail* toe en klik bovenaan op de knop *Opslaan* .
 
-  :::image type="content" source="media/action-groups/active-directory-add-primary-email.png" alt-text="Voor beeld voor het toevoegen van een primair e-mail bericht."border="true":::
+  :::image type="content" source="media/action-groups/active-directory-add-primary-email.png" alt-text="Voor beeld voor het toevoegen van een primair e-mail bericht." border="true":::
 
 Mogelijk hebt u een beperkt aantal e-mail acties in een actie groep. Zie het artikel [informatie over de frequentie beperking](./alerts-rate-limiting.md) .
 
@@ -153,7 +155,7 @@ Hiermee wordt een bestaand HTTP trigger-eind punt aangeroepen in [Azure function
 Mogelijk hebt u een beperkt aantal functie acties in een actie groep.
 
 ### <a name="itsm"></a>ITSM
-Voor de actie ITSM is een ITSM-verbinding vereist. Meer informatie over het maken van een [ITSM-verbinding](../platform/itsmc-overview.md).
+Voor de actie ITSM is een ITSM-verbinding vereist. Meer informatie over het maken van een [ITSM-verbinding](./itsmc-overview.md).
 
 Mogelijk hebt u een beperkt aantal ITSM-acties in een actie groep. 
 
@@ -191,7 +193,7 @@ Met de actie groepen webhook kunt u gebruikmaken van Azure Active Directory om d
 Connect-AzureAD -TenantId "<provide your Azure AD tenant ID here>"
     
 # This is your Azure AD Application's ObjectId. 
-$myAzureADApplicationObjectId = "<the Object Id of your Azure AD Application>"
+$myAzureADApplicationObjectId = "<the Object ID of your Azure AD Application>"
     
 # This is the Action Groups Azure AD AppId
 $actionGroupsAppId = "461e8683-5575-4561-ac7f-899cc907d62a"
@@ -334,7 +336,7 @@ Zie [IP-adressen van actie groepen](../app/ip-addresses.md) voor bron-IP-adresbe
 ## <a name="next-steps"></a>Volgende stappen
 * Meer informatie over het [gedrag van SMS-waarschuwingen](./alerts-sms-behavior.md).  
 * Krijg [inzicht in het webhook-schema van waarschuwingen voor activiteiten logboeken](./activity-log-alerts-webhook.md).  
-* Meer informatie over [ITSM-connector](../platform/itsmc-overview.md).
+* Meer informatie over [ITSM-connector](./itsmc-overview.md).
 * Meer informatie over de [frequentie limiet](./alerts-rate-limiting.md) voor waarschuwingen.
-* Een [overzicht van waarschuwingen voor het activiteitenlogboek](../platform/alerts-overview.md) en meer informatie over het ontvangen van waarschuwingen.  
+* Een [overzicht van waarschuwingen voor het activiteitenlogboek](./alerts-overview.md) en meer informatie over het ontvangen van waarschuwingen.  
 * Meer informatie over het [configureren van waarschuwingen wanneer een service status melding wordt geplaatst](../../service-health/alerts-activity-log-service-notifications-portal.md).

@@ -3,12 +3,12 @@ title: Over het herstel proces van de virtuele Azure-machine
 description: Meer informatie over hoe de Azure Backup-service virtuele Azure-machines herstelt
 ms.topic: conceptual
 ms.date: 05/20/2020
-ms.openlocfilehash: 436859bfb3cee37501e0605465d8e19856a846d6
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 62d1ff7973693f29c77c77fe2ad4fbbb598a5fa4
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98806833"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738409"
 ---
 # <a name="about-azure-vm-restore"></a>Over Azure-VM herstellen
 
@@ -50,6 +50,6 @@ In dit artikel wordt beschreven hoe de [Azure backup-service](./backup-overview.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Veelgestelde vragen over het terugzetten van de VM](https://docs.microsoft.com/azure/backup/backup-azure-vm-backup-faq#restore)
+- [Veelgestelde vragen over het terugzetten van de VM](/azure/backup/backup-azure-vm-backup-faq#restore)
 - [Ondersteunde herstel methoden](./backup-support-matrix-iaas.md#supported-restore-methods)
 - [Problemen met herstellen oplossen](./backup-azure-vms-troubleshoot.md#restore)

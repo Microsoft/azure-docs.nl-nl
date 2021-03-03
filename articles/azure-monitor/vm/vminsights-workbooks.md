@@ -1,19 +1,19 @@
 ---
-title: "Interactieve rapporten maken: Azure Monitor voor VM's met werkmappen"
-description: Vereenvoudig complexe rapportage met vooraf gedefinieerde en aangepaste werkmappen met para meters voor Azure Monitor voor VM's.
+title: Interactieve rapporten maken VM Insights met werkmappen
+description: Vereenvoudig complexe rapportage met vooraf gedefinieerde en aangepaste werkmappen met para meters voor VM Insights.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/12/2020
-ms.openlocfilehash: 43cdb9de111bdea5486e49a56d58d38279b685c7
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 1e2f6c7a6b4a36eb1aa4230f62ee4b0c2a1c57c3
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612066"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101731286"
 ---
-# <a name="create-interactive-reports-azure-monitor-for-vms-with-workbooks"></a>Interactieve rapporten maken: Azure Monitor voor VM's met werkmappen
+# <a name="create-interactive-reports-vm-insights-with-workbooks"></a>Interactieve rapporten maken VM Insights met werkmappen
 
 Werkmappen combi neren tekst, [logboek query's](/azure/data-explorer/kusto/query/), metrische gegevens en para meters in uitgebreide interactieve rapporten. Werkmappen kunnen worden bewerkt door andere teamleden die toegang hebben tot dezelfde Azure-resources.
 
@@ -24,9 +24,9 @@ Werkmappen zijn handig voor scenario's zoals:
 * Het delen van de resultaten van een experiment voor het wijzigen van de grootte van uw virtuele machine met andere leden van uw team. U kunt de doel stellingen voor het experiment uitleggen met tekst, vervolgens elk gebruik van metrische gegevens en analyse query's weer geven die worden gebruikt voor het evalueren van het experiment, samen met duidelijke aanroep-outs voor of elke metriek boven of onder het doel ligt.
 * Rapportage van de impact van een storing in het gebruik van uw virtuele machine, het combi neren van gegevens, tekst uitleg en een bespreking van de volgende stappen om te voor komen dat er storingen in de toekomst worden vermeden.
 
-In de volgende tabel ziet u een overzicht van de werkmappen die Azure Monitor voor VM's bevat om aan de slag te gaan.
+De volgende tabel bevat een overzicht van de werkmappen die door VM Insights worden opgenomen om aan de slag te gaan.
 
-| Werkmap | Description | Bereik |
+| Werkmap | Beschrijving | Bereik |
 |----------|-------------|-------|
 | Prestaties | Biedt een aanpas bare versie van onze weer gave top N-lijsten en-diagrammen in één werkmap die gebruikmaakt van alle Log Analytics prestatie meter items die u hebt ingeschakeld.| Op schaal |
 | Prestatiemeteritems | Een bovenste N grafiek weergave in een breed scala aan prestatie meter items. | Op schaal |
@@ -96,7 +96,7 @@ Query secties zijn zeer flexibel en kunnen worden gebruikt om vragen te beantwoo
 
 U kunt ook niet alleen een query uitvoeren vanuit de context van de virtuele machine waaruit u de werkmap hebt gestart. U kunt een query uitvoeren op meerdere virtuele machines, evenals Log Analytics werk ruimten, zolang u hiervoor toegangs rechten voor deze resources hebt.
 
-Voor het toevoegen van gegevens uit andere Log Analytics werk ruimten of van een specifieke Application Insights-app met behulp van de **werk ruimte** -id. Raadpleeg de [officiële richt lijnen](../log-query/cross-workspace-query.md)voor meer informatie over query's voor meerdere resources.
+Voor het toevoegen van gegevens uit andere Log Analytics werk ruimten of van een specifieke Application Insights-app met behulp van de **werk ruimte** -id. Raadpleeg de [officiële richt lijnen](../logs/cross-workspace-query.md)voor meer informatie over query's voor meerdere resources.
 
 ### <a name="advanced-analytic-query-settings"></a>Geavanceerde instellingen voor analytische query's
 
@@ -137,7 +137,7 @@ VMConnection
 
 ## <a name="adding-metrics-sections"></a>Secties voor metrische gegevens toevoegen
 
-Met metrische secties beschikt u over volledige toegang tot het opnemen van Azure Monitor metrische gegevens in uw interactieve rapporten. In Azure Monitor voor VM's bevatten de vooraf gemaakte werkmappen meestal analytische query gegevens in plaats van metrische gegevens.  U kunt ervoor kiezen om werkmappen met metrische gegevens te maken, zodat u optimaal kunt profiteren van het beste van beide functies op één plek. U hebt ook de mogelijkheid om de metrische gegevens van resources op te halen in een van de abonnementen waartoe u toegang hebt.
+Met metrische secties beschikt u over volledige toegang tot het opnemen van Azure Monitor metrische gegevens in uw interactieve rapporten. In VM Insights bevatten de vooraf gemaakte werkmappen meestal analytische query gegevens in plaats van metrische gegevens.  U kunt ervoor kiezen om werkmappen met metrische gegevens te maken, zodat u optimaal kunt profiteren van het beste van beide functies op één plek. U hebt ook de mogelijkheid om de metrische gegevens van resources op te halen in een van de abonnementen waartoe u toegang hebt.
 
 Hier volgt een voor beeld van gegevens van virtuele machines die worden opgehaald in een werkmap om een raster visualisatie van CPU-prestaties te bieden:
 
@@ -244,4 +244,4 @@ Een koppeling naar een werkmap vastmaken aan een Azure-dash board:
 
 - Zie [Azure-VM-prestaties weer geven](vminsights-performance.md)om beperkingen en algemene VM-prestaties te identificeren.
 
-- Zie [Azure monitor voor VM's kaart weer geven](vminsights-maps.md)voor meer informatie over gedetecteerde toepassings afhankelijkheden.
+- Zie de [overzichts weergave van Vm's weer geven](vminsights-maps.md)voor meer informatie over gedetecteerde toepassings afhankelijkheden.

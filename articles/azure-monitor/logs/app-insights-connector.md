@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/13/2019
-ms.openlocfilehash: 2e103bb3cce364aeb5c25dcc2b54bf78c6993ca0
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 2dda18232e0cf3afa63a01814e776b90988e0b10
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611514"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101704341"
 ---
 # <a name="application-insights-connector-management-solution-deprecated"></a>Application Insights-connector-beheer oplossing (afgeschaft)
 
@@ -22,7 +22,7 @@ ms.locfileid: "100611514"
 >
 >Bestaande verbindingen blijven werken tot en met 30 juni 2019.  In de OMS-Portal is het niet mogelijk om bestaande verbindingen te configureren en te verwijderen vanuit de portal. Zie [de onderstaande connector verwijderen met Power shell](#removing-the-connector-with-powershell) voor een script in Power shell gebruiken om bestaande verbindingen te verwijderen.
 >
->Zie [meerdere Azure Monitor Application Insights resources](../log-query/unify-app-resource-data.md)samen voegen voor hulp bij het opvragen van Application Insights logboek gegevens voor meerdere toepassingen. Voor meer informatie over de afschaffing van de OMS-Portal raadpleegt [u OMS Portal verplaatsen naar Azure](../platform/oms-portal-transition.md).
+>Zie [meerdere Azure Monitor Application Insights resources](./unify-app-resource-data.md)samen voegen voor hulp bij het opvragen van Application Insights logboek gegevens voor meerdere toepassingen. Voor meer informatie over de afschaffing van de OMS-Portal raadpleegt [u OMS Portal verplaatsen naar Azure](./oms-portal-transition.md).
 >
 > 
 
@@ -42,12 +42,12 @@ Wanneer u de oplossing gebruikt, kunt u het volgende doen:
 
 In tegens telling tot de meeste andere Log Analytics oplossingen, worden er geen gegevens verzameld voor de Application Insights-connector door agents. Alle gegevens die door de oplossing worden gebruikt, zijn rechtstreeks afkomstig van Azure.
 
-| Verbonden bron | Ondersteund | Description |
+| Verbonden bron | Ondersteund | Beschrijving |
 | --- | --- | --- |
-| [Windows-agents](./../agents/agent-windows.md) | No | De oplossing verzamelt geen gegevens van Windows-agents. |
-| [Linux-agents](../vm/quick-collect-linux-computer.md) | No | De oplossing verzamelt geen gegevens van Linux-agents. |
-| [SCOM-beheer groep](../agents/om-agents.md) | No | De oplossing verzamelt geen gegevens van agents in een verbonden SCOM-beheer groep. |
-| [Azure Storage-account](../essentials/resource-logs.md#send-to-log-analytics-workspace) | No | De oplossing verzamelt geen gegevens uit Azure Storage. |
+| [Windows-agents](./../agents/agent-windows.md) | Nee | De oplossing verzamelt geen gegevens van Windows-agents. |
+| [Linux-agents](../vm/quick-collect-linux-computer.md) | Nee | De oplossing verzamelt geen gegevens van Linux-agents. |
+| [SCOM-beheer groep](../agents/om-agents.md) | Nee | De oplossing verzamelt geen gegevens van agents in een verbonden SCOM-beheer groep. |
+| [Azure Storage-account](../essentials/resource-logs.md#send-to-log-analytics-workspace) | Nee | De oplossing verzamelt geen gegevens uit Azure Storage. |
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -318,5 +318,4 @@ ApplicationInsights | summarize by ApplicationName
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Gebruik [Zoeken in Logboeken](../log-query/log-query-overview.md) om gedetailleerde informatie weer te geven voor uw Application Insights-apps.
-
+- Gebruik [Zoeken in Logboeken](./log-query-overview.md) om gedetailleerde informatie weer te geven voor uw Application Insights-apps.

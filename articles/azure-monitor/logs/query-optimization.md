@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/30/2019
-ms.openlocfilehash: 53f189921a44d63d7e344fb733519661f5b17dc6
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: e7ab83b2b16a1340b354b9333d00c8166b5cfdf9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612054"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101722956"
 ---
 # <a name="optimize-log-queries-in-azure-monitor"></a>Logboek query's in Azure Monitor optimaliseren
 Azure Monitor logboeken maakt gebruik van [Azure Data Explorer (ADX)](/azure/data-explorer/) om logboek gegevens op te slaan en query's uit te voeren voor het analyseren van die gegevens. Het maakt, beheert en onderhoudt de ADX-clusters en optimaliseert deze voor de werk belasting van uw logboek analyse. Wanneer u een query uitvoert, wordt deze geoptimaliseerd en doorgestuurd naar het juiste ADX-cluster waarin de werkruimte gegevens worden opgeslagen. Zowel Azure Monitor-Logboeken als Azure Data Explorer maakt gebruik van veel automatische optimalisatie mechanismen voor query's. Automatische optimalisaties bieden een aanzienlijke Boost, maar er zijn enkele gevallen waarin u de query prestaties aanzienlijk kunt verbeteren. In dit artikel worden de prestatie overwegingen en verschillende technieken uitgelegd om ze op te lossen.
@@ -322,7 +322,7 @@ Alle logboeken in Azure Monitor-logboeken worden gepartitioneerd op basis van de
 
 Query's met een tijds duur van meer dan 15 dagen worden beschouwd als een query die overmatige resources verbruikt. Query's met een tijds panne van meer dan 90 dagen worden beschouwd als een beledigende query en worden mogelijk beperkt.
 
-Het tijds bereik kan worden ingesteld met behulp van de tijds bereik kiezer in het Log Analytics scherm, zoals wordt beschreven in het [logboek query bereik en het tijds bereik in Azure Monitor Log Analytics](../log-query/scope.md#time-range). Dit is de aanbevolen methode als het geselecteerde tijds bereik wordt door gegeven aan de back-end met behulp van de meta gegevens van de query. 
+Het tijds bereik kan worden ingesteld met behulp van de tijds bereik kiezer in het Log Analytics scherm, zoals wordt beschreven in het [logboek query bereik en het tijds bereik in Azure Monitor Log Analytics](./scope.md#time-range). Dit is de aanbevolen methode als het geselecteerde tijds bereik wordt door gegeven aan de back-end met behulp van de meta gegevens van de query. 
 
 Een alternatieve methode is het expliciet toevoegen van een [where](/azure/kusto/query/whereoperator) -voor waarde voor **TimeGenerated** in de query. U moet deze methode gebruiken om er zeker van te zijn dat de tijds Panne vast is, zelfs wanneer de query wordt gebruikt vanuit een andere interface.
 Zorg ervoor dat alle onderdelen van de query **TimeGenerated** filters hebben. Wanneer een query subquery's heeft om gegevens op te halen uit verschillende tabellen of dezelfde tabel, moet elk een eigen [where](/azure/kusto/query/whereoperator) -voor waarde bevatten.

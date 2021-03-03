@@ -9,13 +9,13 @@ manager: diviso
 ms.topic: quickstart
 ms.workload: big-data
 ms.custom: mvc seodec18
-ms.date: 01/11/2021
-ms.openlocfilehash: cb5bac06ab6eeaa00e72ba6068328a972b8ac37b
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.date: 03/01/2021
+ms.openlocfilehash: 25340af243217313ce6d3f7205c102d4bcd350b4
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98119326"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101698107"
 ---
 # <a name="quickstart-explore-the-azure-time-series-insights-gen2-demo-environment"></a>Quickstart: De demo-omgeving van Azure Time Series Insights Gen2 verkennen
 
@@ -129,13 +129,6 @@ Door Azure Time Series Insights Gen2 en sensortelemetrie te gebruiken, hebben we
     * Wijzig de weergave bij zodat alle sensoren in het **Generator System** als overlay op dezelfde grafiekschaal worden weergegeven.
 
       [![Wijzig de weergave zodat deze alle gegevens bevat](media/v2-update-quickstart/quick-start-generator-system.png)](media/v2-update-quickstart/quick-start-generator-system.png#lightbox)
-
-## <a name="clean-up-resources"></a>Resources opschonen
-
-Nu u de quickstart hebt voltooid, kunt u de resources die u hebt gemaakt opschonen:
-
-1. Selecteer in het linkermenu in de [Azure Portal](https://portal.azure.com) de optie **Alle resources** en zoek uw Azure Time Series Insights Gen2-resourcegroep.
-1. U kunt de hele resourcegroep (en alle resources erin) verwijderen door **Verwijderen** te selecteren of elke resource afzonderlijk verwijderen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

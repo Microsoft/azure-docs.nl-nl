@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 11/18/2020
+ms.date: 03/01/2021
 ms.author: victorh
-ms.openlocfilehash: 01f7aa61d3bfb3c712320bbf138160a7ff8197c7
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: bbf838cfa2a6addc665df4b62e2322d056778b49
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95502197"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101741358"
 ---
 # <a name="configure-azure-firewall-rules"></a>Azure Firewall-regels configureren
 U kunt NAT-regels, netwerk regels en toepassings regels configureren op Azure Firewall. Regel verzamelingen worden verwerkt op basis van het regel type in volg orde van prioriteit, waarbij een lager aantal is van 100 tot 65.000. De naam van een regel verzameling mag alleen letters, cijfers, onderstrepings tekens, punten of afbreek streepjes bevatten. De naam moet beginnen met een letter of cijfer en eindigen op een letter, cijfer of onderstrepings teken. De maximale naam mag Maxi maal 80 tekens lang zijn.
@@ -38,7 +38,7 @@ Vóór 9 november 2020 **alle** bewarende **TCP**, **UDP** of **ICMP**. Het is d
 
 ### <a name="nat-rules"></a>NAT-regels
 
-Inkomende Internet connectiviteit kan worden ingeschakeld door DNAT (Destination Network Address Translation) te configureren, zoals beschreven in [zelf studie: inkomend verkeer filteren met Azure firewall DNAT met behulp van de Azure Portal](tutorial-firewall-dnat.md). NAT-regels worden vóór netwerk regels op prioriteit toegepast. Als er een overeenkomst wordt gevonden, wordt er een impliciet overeenkomende netwerk regel toegevoegd om het vertaalde verkeer toe te staan. U kunt dit gedrag overschrijven door expliciet een verzameling netwerkregels toe te voegen met regels voor weigeren die overeenkomen met het omgezette verkeer.
+Inkomende Internet connectiviteit kan worden ingeschakeld door DNAT (Destination Network Address Translation) te configureren, zoals beschreven in [zelf studie: inkomend verkeer filteren met Azure firewall DNAT met behulp van de Azure Portal](tutorial-firewall-dnat.md). NAT-regels worden vóór netwerk regels op prioriteit toegepast. Als er een overeenkomst wordt gevonden, wordt er een impliciet overeenkomende netwerk regel toegevoegd om het vertaalde verkeer toe te staan. Uit veiligheids overwegingen is het raadzaam een specifieke Internet bron toe te voegen om DNAT toegang te geven tot het netwerk en om te voor komen dat Joker tekens worden gebruikt.
 
 Toepassings regels worden niet toegepast voor binnenkomende verbindingen. Als u echter het binnenkomende HTTP/S-verkeer wilt filteren, gebruikt u Web Application firewall (WAF). Zie [Wat is Azure Web Application firewall?](../web-application-firewall/overview.md) voor meer informatie.
 
@@ -57,7 +57,7 @@ De verbinding met google.com is toegestaan vanwege een overeenkomende netwerk re
 
 |naam  |Protocol  |Brontype  |Bron  |Doeltype  |Doel adres  |Doelpoorten|
 |---------|---------|---------|---------|----------|----------|--------|
-|Toestaan-Web     |TCP|Het IP-adres|*|Het IP-adres|*|80.443
+|Toestaan-Web     |TCP|IP-adres|*|IP-adres|*|80.443
 
 **Toepassings regel**
 
@@ -65,7 +65,7 @@ De verbinding met google.com is toegestaan vanwege een overeenkomende netwerk re
 
 |naam  |Brontype  |Bron  |Protocol:Poort|Doel-FQDN-naam|
 |---------|---------|---------|---------|----------|----------|
-|Weigeren: Google     |Het IP-adres|*|http: 80, https: 443|google.com
+|Weigeren: Google     |IP-adres|*|http: 80, https: 443|google.com
 
 **Resultaat**
 
@@ -83,7 +83,7 @@ SSH-verkeer wordt geweigerd omdat de verzameling netwerk regels voor *weigeren* 
 
 |naam  |Protocol  |Brontype  |Bron  |Doeltype  |Doel adres  |Doelpoorten|
 |---------|---------|---------|---------|----------|----------|--------|
-|Toestaan-SSH     |TCP|Het IP-adres|*|Het IP-adres|*|22
+|Toestaan-SSH     |TCP|IP-adres|*|IP-adres|*|22
 
 **Verzameling van netwerk regels 2**
 
@@ -93,7 +93,7 @@ SSH-verkeer wordt geweigerd omdat de verzameling netwerk regels voor *weigeren* 
 
 |naam  |Protocol  |Brontype  |Bron  |Doeltype  |Doel adres  |Doelpoorten|
 |---------|---------|---------|---------|----------|----------|--------|
-|Weigeren-SSH     |TCP|Het IP-adres|*|Het IP-adres|*|22
+|Weigeren-SSH     |TCP|IP-adres|*|IP-adres|*|22
 
 **Resultaat**
 

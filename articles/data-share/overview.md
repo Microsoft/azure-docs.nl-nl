@@ -5,13 +5,14 @@ author: jifems
 ms.author: jife
 ms.service: data-share
 ms.topic: overview
-ms.date: 10/30/2020
-ms.openlocfilehash: b9fb5d6537d2c8dffef397c56128dd4891c939b7
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
-ms.translationtype: HT
+ms.date: 02/23/2021
+ms.custom: references_regions
+ms.openlocfilehash: 3a7c73e4a5ba00155ab905f28edbcb0eb42c0539
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578124"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101724860"
 ---
 # <a name="what-is-azure-data-share"></a>Wat is Azure Data Share?
 
@@ -47,7 +48,7 @@ Gegevensproviders kunnen hun gegevensgebruiker incrementele updates voor de met 
 
 Wanneer een gegevensgebruiker een gegevensshare accepteert, dan kan hij de gegevens ontvangen in een gegevensarchief naar keuze. Als de gegevensprovider bijvoorbeeld gegevens deelt met Azure Blob Storage, kan de gegevensgebruiker deze gegevens in Azure Data Lake Store ontvangen. En als de gegevensprovider gegevens deelt vanuit een Azure Synapse Analytics, kan de gegevensgebruiker kiezen om de gegevens te ontvangen in een Azure Data Lake Store, een Azure SQL Database of een Azure Synapse Analytics. Wanneer er gedeeld wordt vanuit SQL-gebaseerde bronnen, dan kan de gegevensgebruiker ook kiezen of hij gegevens ontvangt in parquet of csv. 
 
-Met delen op locatie kunnen gegevensproviders gegevens delen waar deze zich bevinden zonder de gegevens te kopiëren. Nadat de machtiging voor delen is verleend via de uitnodigingsstroom, wordt een symbolische link gemaakt tussen de brongegevensopslag van de gegevensprovider en de doelgegevensopslag van de gegevensgebruiker. De gegevensgebruiker kan de gegevens in real time lezen en doorzoeken met behulp van zijn eigen gegevensopslag. Wijzigingen in de brongegevensopslag worden onmiddellijk beschikbaar voor de gegevensgebruiker. Delen op locatie is momenteel in preview voor Azure Data Explorer.
+Met delen op locatie kunnen gegevensproviders gegevens delen waar deze zich bevinden zonder de gegevens te kopiëren. Nadat de machtiging voor delen is verleend via de uitnodigingsstroom, wordt een symbolische link gemaakt tussen de brongegevensopslag van de gegevensprovider en de doelgegevensopslag van de gegevensgebruiker. De gegevensgebruiker kan de gegevens in real time lezen en doorzoeken met behulp van zijn eigen gegevensopslag. Wijzigingen in de brongegevensopslag worden onmiddellijk beschikbaar voor de gegevensgebruiker. In-place delen is momenteel beschikbaar voor Azure Data Explorer.
 
 ## <a name="key-capabilities"></a>Belangrijkste mogelijkheden
 
@@ -81,7 +82,7 @@ Alle belangrijke mogelijkheden die hierboven worden vermeld, worden ondersteund 
 
 Voor een lijst met Azure-regio's waar Azure Data Share beschikbaar is, raadpleegt u de pagina [beschikbare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=data-share) en zoekt u naar Azure Data Share. 
 
-Azure Data Share slaat geen kopie op van de gegevens zelf. De gegevens worden opgeslagen in de onderliggende gegevensopslag die gedeeld wordt. Als een gegevensproducten bijvoorbeeld gegevens opslaat in een Azure Data Lake Storage-account in het westen van de VS, dan zijn de gegevens daar opgeslagen. Als ze via een momentopname gegevens delen met een Azure Storage-account in West-Europa, dan worden de gegevens meestal rechtstreeks overgedragen naar het Azure Storage-account in West-Europa.
+Voor meta gegevens die zijn opgeslagen door Azure data share, in Zuidoost-Azië (Singapore), wordt deze opgeslagen in de regio en voor alle andere ondersteunde regio's. deze worden opgeslagen in de geo. De Azure-gegevens share slaat geen kopie op van de gedeelde gegevens zelf. De gegevens worden opgeslagen in de onderliggende gegevensopslag die gedeeld wordt. Bijvoorbeeld, als een gegevens provider hun gegevens opslaat in een Azure Data Lake Storage account dat zich in VS West bevindt, waarbij de gegevens worden opgeslagen. Als ze via een momentopname gegevens delen met een Azure Storage-account in West-Europa, dan worden de gegevens meestal rechtstreeks overgedragen naar het Azure Storage-account in West-Europa. 
 
 De Azure Data Share-service hoeft niet beschikbaar te zijn in uw regio om gebruik te kunnen maken van de service. Als u bijvoorbeeld gegevens heeft opgeslagen in een Azure Storage-account dat zich bevindt in een regio waar Azure Data Share nog niet beschikbaar is, kunt u de service gebruiken om uw gegevens te delen. 
 

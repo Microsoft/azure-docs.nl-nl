@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 12/04/2018
-ms.openlocfilehash: 29393126f94d77dbced0ef896616b945443184fd
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 8f6c35fd1bb6b46f512f9245d8e3d41df428692b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612312"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733938"
 ---
 # <a name="parse-text-data-in-azure-monitor-logs"></a>Tekst gegevens parseren in Azure Monitor logboeken
 Sommige logboek gegevens die worden verzameld door Azure Monitor, bevatten meerdere stukjes informatie in één eigenschap. Het parseren van deze gegevens in meerdere eigenschappen maakt het gemakkelijker om in query's te gebruiken. Een veelvoorkomend voor beeld is een [aangepast logboek](../agents/data-sources-custom-logs.md) dat een volledige logboek vermelding met meerdere waarden in één eigenschap verzamelt. Door afzonderlijke eigenschappen voor de verschillende waarden te maken, kunt u zoeken en samen voegen.
@@ -188,4 +188,4 @@ MyCustomCSVLog
 
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over [logboek query's](../log-query/log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen.
+* Meer informatie over [logboek query's](./log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen.

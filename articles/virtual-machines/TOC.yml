@@ -860,87 +860,71 @@
                   href: windows/disks-enable-double-encryption-at-rest-powershell.md
                 - name: CLI
                   href: linux/disks-enable-double-encryption-at-rest-cli.md
-        - name: Azure Disk Encryption scenario's
+        - name: Azure Disk Encryption
           items:
-            - name: Azure Disk Encryption overzichten
-              items:
-                - name: Windows
-                - name: Linux
             - name: Linux
-              href: ./linux/disk-encryption-linux.md
-            - name: Windows
-              href: ./windows/disk-encryption-windows.md
-            - name: CLI
-              items:
-                - name: Linux
-                  href: ./linux/disk-encryption-cli-quickstart.md
-                - name: Windows
-                  href: ./windows/disk-encryption-cli-quickstart.md
-            - name: PowerShell
-              items:
-                - name: Linux
-                  href: ./linux/disk-encryption-powershell-quickstart.md
-                - name: Windows
-                  href: ./windows/disk-encryption-powershell-quickstart.md
-            - name: Portal
-              items:
-                - name: Linux
-                  href: ./linux/disk-encryption-portal-quickstart.md
-                - name: Windows
-                  href: ./windows/disk-encryption-portal-quickstart.md
-            - name: Sleutelkluis voor Azure Disk Encryption
-              items:
-                - name: Linux
-                  href: ./linux/disk-encryption-key-vault.md
-                - name: Windows
-                  href: ./windows/disk-encryption-key-vault.md
-            - name: Voorbeeldscripts
-              items:
-                - name: Linux
-                  href: ./linux/disk-encryption-sample-scripts.md
-                - name: Windows
-                  href: ./windows/disk-encryption-sample-scripts.md
-            - name: Azure Disk Encryption in een geïsoleerd netwerk
-              href: ./linux/disk-encryption-isolated-network.md
-            - name: De versleutelingsstatus controleren
-              href: ./linux/how-to-verify-encryption-status.md
-            - name: LVM RAID configureren op crypt
-              href: ./linux/how-to-configure-lvm-raid-on-crypt.md
-            - name: Het formaat van versleutelde LVM-volumes wijzigen
-              href: ./linux/how-to-resize-encrypted-lvm.md
-            - name: Grootte van Linux GPT-besturings systemen aanpassen
-              href: linux/resize-os-disk-gpt-partition.md
-            - name: problemen oplossen
-              items:
-                - name: Linux
-                  href: ./linux/disk-encryption-troubleshooting.md
-                - name: Windows
-                  href: ./windows/disk-encryption-troubleshooting.md
-            - name: Veelgestelde vragen
-              items:
-                - name: Linux
-                  href: ./linux/disk-encryption-faq.md
-                - name: Windows
-                  href: ./windows/disk-encryption-faq.md
-            - name: Azure Disk Encryption-vorige versie
               items:
                 - name: Overzicht
+                  href: ./linux/disk-encryption-overview.md
+                - name: Snelstartgidsen
                   items:
-                    - name: Linux
-                      href: ./linux/disk-encryption-overview-aad.md
-                    - name: Windows
-                      href: ./windows/disk-encryption-overview-aad.md
+                    - name: Azure CLI
+                      href: ./linux/disk-encryption-cli-quickstart.md
+                    - name: Azure PowerShell
+                      href: ./linux/disk-encryption-powershell-quickstart.md
+                    - name: Azure Portal
+                      href: ./linux/disk-encryption-portal-quickstart.md
                 - name: Sleutelkluis voor Azure Disk Encryption
+                  href: ./linux/disk-encryption-key-vault.md
+                - name: Voorbeeldscripts voor schijfversleuteling
+                  href: ./linux/disk-encryption-sample-scripts.md
+                - name: Schijfversleuteling op een geïsoleerd netwerk
+                  href: ./linux/disk-encryption-isolated-network.md
+                - name: De versleutelingsstatus controleren
+                  href: ./linux/how-to-verify-encryption-status.md
+                - name: LVM RAID configureren op crypt
+                  href: ./linux/how-to-configure-lvm-raid-on-crypt.md
+                - name: Versleutelde Ivm-volumes in formaat wijzigen
+                  href: ./linux/how-to-resize-encrypted-lvm.md
+                - name: Problemen met schijfversleuteling oplossen
+                  href: ./linux/disk-encryption-troubleshooting.md
+                - name: Veelgestelde vragen over schijfversleuteling
+                  href: ./linux/disk-encryption-faq.md
+                - name: Schijfversleuteling - vorige versie
                   items:
-                    - name: Linux
+                    - name: Overzicht
+                      href: ./linux/disk-encryption-overview-aad.md
+                    - name: Sleutelkluis voor Azure Disk Encryption
                       href: ./linux/disk-encryption-key-vault-aad.md
-                    - name: Windows
-                      href: ./windows/disk-encryption-key-vault-aad.md
-                - name: Scenario's voor schijf versleuteling
-                  items:
-                    - name: Linux
+                    - name: Schijfversleutelingsscenario's voor Linux
                       href: ./linux/disk-encryption-linux-aad.md
-                    - name: Windows
+            - name: Windows
+              items:
+                - name: Schijfversleutelingsscenario's voor Windows
+                  href: ./windows/disk-encryption-windows.md
+                - name: Quickstarts
+                  items:
+                    - name: Azure CLI
+                      href: ./windows/disk-encryption-cli-quickstart.md
+                    - name: Azure PowerShell
+                      href: ./windows/disk-encryption-powershell-quickstart.md
+                    - name: Azure Portal
+                      href: ./windows/disk-encryption-portal-quickstart.md
+                - name: Sleutelkluis voor Azure Disk Encryption
+                  href: ./windows/disk-encryption-key-vault.md
+                - name: Voorbeeldscripts voor schijfversleuteling
+                  href: ./windows/disk-encryption-sample-scripts.md
+                - name: Problemen met schijfversleuteling oplossen
+                  href: ./windows/disk-encryption-troubleshooting.md
+                - name: Veelgestelde vragen over schijfversleuteling
+                  href: ./windows/disk-encryption-faq.md
+                - name: Schijfversleuteling - vorige versie
+                  items:
+                    - name: Overzicht
+                      href: ./windows/disk-encryption-overview-aad.md
+                    - name: Sleutelkluis voor Azure Disk Encryption
+                      href: ./windows/disk-encryption-key-vault-aad.md
+                    - name: Schijfversleutelingsscenario's voor Windows
                       href: ./windows/disk-encryption-windows-aad.md
     - name: Prestaties en kosten optimalisatie
       items:

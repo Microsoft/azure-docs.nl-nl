@@ -1,26 +1,26 @@
 ---
-title: Voorkeurs netwerk routering configureren (preview-versie)
+title: Voorkeurs netwerk routering
 titleSuffix: Azure Storage
-description: Configureer netwerk routering (voor beeld) voor uw Azure Storage-account om op te geven hoe netwerk verkeer via internet naar uw account wordt doorgestuurd.
+description: Met voorkeurs instellingen voor netwerk routering kunt u opgeven hoe netwerk verkeer via internet wordt doorgestuurd naar uw account van clients.
 services: storage
 author: santoshc
 ms.service: storage
 ms.topic: conceptual
-ms.date: 05/12/2020
+ms.date: 02/11/2021
 ms.author: santoshc
-ms.reviewer: tamram
+ms.reviewer: normesta
 ms.subservice: common
 ms.custom: references_regions
-ms.openlocfilehash: 601c8dfb4b4e2f16da5c560f67e2d251a5d3072a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 6b6c90259c552895360281b393e15773c6e101e3
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100362740"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101726934"
 ---
-# <a name="configure-network-routing-preference-for-azure-storage-preview"></a>Netwerk routering configureren voor Azure Storage (preview-versie)
+# <a name="network-routing-preference-for-azure-storage"></a>Voor keur voor netwerk routering voor Azure Storage
 
-U kunt de [Voorkeurs netwerk routering](../../virtual-network/routing-preference-overview.md) (preview) voor uw Azure Storage-account configureren om op te geven hoe netwerk verkeer via internet naar uw account wordt doorgestuurd. Verkeer van Internet wordt standaard doorgestuurd naar het open bare eind punt van uw opslag account via het [globale micro soft-netwerk](../../networking/microsoft-global-network.md). Azure Storage biedt aanvullende opties voor het configureren van de manier waarop verkeer wordt gerouteerd naar uw opslag account.
+U kunt netwerk [Routering](../../virtual-network/routing-preference-overview.md) voor uw Azure Storage-account configureren om op te geven hoe netwerk verkeer via internet naar uw account wordt doorgestuurd. Verkeer van Internet wordt standaard doorgestuurd naar het open bare eind punt van uw opslag account via het [globale micro soft-netwerk](../../networking/microsoft-global-network.md). Azure Storage biedt aanvullende opties voor het configureren van de manier waarop verkeer wordt gerouteerd naar uw opslag account.
 
 Door routerings voorkeur te configureren, hebt u de flexibiliteit om uw verkeer te optimaliseren voor Premium-netwerk prestaties of voor kosten. Wanneer u een routerings voorkeur configureert, geeft u op hoe verkeer standaard wordt omgeleid naar het open bare eind punt voor uw opslag account. U kunt ook route-specifieke eind punten voor uw opslag account publiceren.
 
@@ -37,9 +37,11 @@ In het volgende diagram ziet u hoe verkeer loopt tussen de client en het opslag 
 
 ![Overzicht van routerings opties voor Azure Storage](media/network-routing-preference/routing-options-diagram.png)
 
-Zie [Wat is routerings voorkeur (preview)?](../../virtual-network/routing-preference-overview.md)voor meer informatie over routerings voorkeur in Azure.
+Zie [Wat is routerings voorkeur?](../../virtual-network/routing-preference-overview.md)voor meer informatie over routerings voorkeur in Azure.
 
 ## <a name="routing-configuration"></a>Routerings configuratie
+
+Zie [netwerk routering configureren voor Azure Storage](configure-network-routing-preference.md)voor stapsgewijze instructies voor het configureren van de routerings voorkeur en de route-specifieke eind punten.
 
 U kunt kiezen tussen het globale netwerk van micro soft en Internet routering als de standaard routerings voorkeur voor het open bare eind punt van uw opslag account. De standaard routerings voorkeur is van toepassing op alle verkeer van clients buiten Azure en is van invloed op de eind punten voor Azure Data Lake Storage Gen2, Blob Storage, Azure Files en statische websites. Het configureren van de routerings voorkeur wordt niet ondersteund voor Azure-wacht rijen of Azure-tabellen.
 
@@ -65,7 +67,7 @@ Als u een geografisch redundante opslag met lees toegang (RA-GRS) of een opslag 
 
 De verbindings reeksen voor de gepubliceerde route-specifieke eind punten kunnen worden gekopieerd via de [Azure Portal](https://portal.azure.com). Deze verbindings reeksen kunnen worden gebruikt voor gedeelde sleutel autorisatie met alle bestaande Azure Storage Sdk's en Api's.
 
-## <a name="about-the-preview"></a>Over de preview-versie
+## <a name="regional-availability"></a>Regionale beschikbaarheid
 
 Routerings voorkeur voor Azure Storage is beschikbaar in de volgende regio's:
 
@@ -100,16 +102,17 @@ Routerings voorkeur voor Azure Storage is beschikbaar in de volgende regio's:
 - Australië - oost 
 - Australië - zuidoost 
 
-De volgende bekende problemen zijn van invloed op het voor beeld van de route ring-voor Azure Storage:
+De volgende bekende problemen zijn van invloed op de routerings voorkeur voor Azure Storage:
 
 - Toegangs aanvragen voor het route-specifieke eind punt voor het micro soft Global Network mislukken met HTTP-fout 404 of een gelijkwaardige waarde. Route ring via het globale micro soft-netwerk werkt zoals verwacht wanneer het is ingesteld als de standaard routerings voorkeur voor het open bare eind punt.
 
 ## <a name="pricing-and-billing"></a>Prijzen en facturering
 
-Zie de sectie **prijzen** in [Wat is routerings voorkeur (preview)?](../../virtual-network/routing-preference-overview.md#pricing)voor prijzen en facturerings gegevens.
+Zie de sectie **prijzen** in [Wat is routerings voorkeur?](../../virtual-network/routing-preference-overview.md#pricing)voor prijzen en facturerings gegevens.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Wat is routerings voorkeur (preview)?](../../virtual-network/routing-preference-overview.md)
+- [Wat is een routeringsvoorkeur?](../../virtual-network/routing-preference-overview.md)
+- [Netwerkrouternigsvoorkeur configureren](configure-network-routing-preference.md)
 - [Azure Storage-firewalls en virtuele netwerken configureren](storage-network-security.md)
 - [Beveiligings aanbevelingen voor Blob Storage](../blobs/security-recommendations.md)

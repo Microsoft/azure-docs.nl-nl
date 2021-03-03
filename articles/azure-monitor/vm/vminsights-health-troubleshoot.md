@@ -1,20 +1,20 @@
 ---
-title: Problemen met gaststatus van Azure Monitor voor VM's oplossen (preview)
-description: Hierin worden de stappen beschreven die u kunt uitvoeren wanneer u problemen ondervindt met Azure Monitor voor VM's status.
+title: Problemen met VM Insights-gast status oplossen (preview-versie)
+description: Hierin worden de stappen beschreven die u kunt uitvoeren wanneer u problemen ondervindt met de status van de VM Insights.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/08/2020
-ms.openlocfilehash: da8097341f8499be4e28fa37c06d963d057966ea
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 6ae0a9e20d6aad7200729419ece333d80e652c3c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609717"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703916"
 ---
-# <a name="troubleshoot-azure-monitor-for-vms-guest-health-preview"></a>Problemen met gaststatus van Azure Monitor voor VM's oplossen (preview)
-In dit artikel worden de stappen beschreven die u kunt uitvoeren wanneer u problemen ondervindt met Azure Monitor voor VM's status.
+# <a name="troubleshoot-vm-insights-guest-health-preview"></a>Problemen met VM Insights-gast status oplossen (preview-versie)
+In dit artikel worden de stappen beschreven die u kunt uitvoeren wanneer u problemen ondervindt met de status van de VM Insights.
 
 ## <a name="error-message-that-no-data-is-available"></a>Fout bericht dat er geen gegevens beschikbaar zijn 
 
@@ -34,7 +34,7 @@ Controleer of de uitbrei ding van de Azure Monitor agent en de status agent van 
 ![VM-extensies](media/vminsights-health-troubleshoot/extensions.png)
 
 ### <a name="verify-the-system-assigned-identity-is-enabled-on-the-virtual-machine"></a>Controleren of de door het systeem toegewezen identiteit is ingeschakeld op de virtuele machine
-Controleer of de door het systeem toegewezen identiteit is ingeschakeld op de virtuele machine. Selecteer **identiteit** in het menu van de virtuele machine in de Azure Portal. 
+Controleer of de door het systeem toegewezen identiteit is ingeschakeld op de virtuele machine. Selecteer **identiteit** in het menu van de virtuele machine in de Azure Portal. Als door de gebruiker beheerde identiteit is ingeschakeld, kan Azure Monitor agent niet communiceren met de configuratie service, ongeacht de status van de door het systeem beheerde identiteit, en zal de uitbrei ding voor de gast status niet werken.
 
 ![Door het systeem toegewezen identiteit](media/vminsights-health-troubleshoot/system-identity.png)
 
@@ -48,4 +48,4 @@ Deze fout geeft aan dat de resource provider **micro soft. WorkloadMonitor** nie
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Bekijk een overzicht van de functie gast status van Azure Monitor voor VM's](vminsights-health-overview.md)
+- [Bekijk een overzicht van de functie gast status van VM Insights](vminsights-health-overview.md)

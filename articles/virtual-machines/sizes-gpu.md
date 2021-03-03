@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 58987523d86b0e3acb63d3dc220f68753501830e
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: b88cc2d70d38d84436beaff41b5b40b9c06debca
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101666029"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101695546"
 ---
 # <a name="gpu-optimized-virtual-machine-sizes"></a>Grootten van virtuele machines geoptimaliseerd voor GPU
 
@@ -43,7 +43,7 @@ Als u gebruik wilt maken van de GPU-mogelijkheden van Vm's in de Azure N-serie, 
 
 - Vm's uit de N-serie kunnen alleen worden geïmplementeerd in het Resource Manager-implementatie model.
 
-- Vm's uit de N-serie verschillen in het type Azure Storage ze voor hun schijven ondersteunen. NC-en NV-Vm's bieden alleen ondersteuning voor VM-schijven die worden ondersteund door de standaard Disk Storage (HDD). NCv2-, NCv3-, ND-, NDv2-en NVv2-Vm's bieden alleen ondersteuning voor VM-schijven die worden ondersteund door Premium-Disk Storage (SSD).
+- Vm's uit de N-serie verschillen in het type Azure Storage ze voor hun schijven ondersteunen. NC-en NV-Vm's bieden alleen ondersteuning voor VM-schijven die worden ondersteund door de standaard Disk Storage (HDD). Alle andere GPU-Vm's ondersteunen VM-schijven die worden ondersteund door Standard Disk Storage en Premium Disk Storage (SSD).
 
 - Als u meer dan een paar virtuele machines uit de N-serie wilt implementeren, kunt u een abonnement op basis van betalen naar gebruik of andere aankoop opties overwegen. Als u een [gratis account van Azure](https://azure.microsoft.com/free/) gebruikt, kunt u slechts een paar Azure Compute-resources van Azure gebruiken.
 

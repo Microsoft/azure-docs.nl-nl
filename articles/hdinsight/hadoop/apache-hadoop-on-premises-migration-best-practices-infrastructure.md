@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/06/2019
-ms.openlocfilehash: f66e13046a34bddfd27912e23ce51f75006fd9fa
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 309053c2d7a0f9482016f1bd83e0c61dcd31bec5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98932144"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101740661"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---infrastructure-best-practices"></a>On-premises Apache Hadoop clusters migreren naar de aanbevolen procedures voor Azure HDInsight-infra structuur
 
@@ -36,7 +36,7 @@ Zie het artikel [capaciteits planning voor HDInsight-clusters](../hdinsight-capa
 
 ## <a name="use-recommended-virtual-machine-type-for-cluster"></a>Aanbevolen type virtuele machine voor cluster gebruiken
 
-Zie [standaard knooppunt configuratie en grootte van virtuele machines voor clusters](../hdinsight-component-versioning.md#default-node-configuration-and-virtual-machine-sizes-for-clusters) voor aanbevolen typen virtuele machines voor elk type HDInsight-cluster.
+Zie [standaard knooppunt configuratie en grootte van virtuele machines voor clusters](../hdinsight-supported-node-configuration.md) voor aanbevolen typen virtuele machines voor elk type HDInsight-cluster.
 
 ## <a name="check-hadoop-components-availability-in-hdinsight"></a>Beschik baarheid van Hadoop-onderdelen in HDInsight controleren
 
@@ -73,7 +73,7 @@ Toepassingen of onderdelen die beschikbaar waren in on-premises clusters, maar d
 |Palantir|IaaS 
 |Sailpoint|IaaS 
 
-Zie het artikel [Apache Hadoop onderdelen die beschikbaar zijn in verschillende versies van HDInsight](../hdinsight-component-versioning.md#apache-components-available-with-different-hdinsight-versions) voor meer informatie
+Zie het artikel [Apache Hadoop onderdelen die beschikbaar zijn in verschillende versies van HDInsight](../hdinsight-component-versioning.md) voor meer informatie
 
 ## <a name="customize-hdinsight-clusters-using-script-actions"></a>HDInsight-clusters aanpassen met behulp van script acties
 

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/02/2021
-ms.openlocfilehash: 0af868f62f9bc62ee6b4b2a10d16f8eed632b6d3
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 7551ef88c2251b64cf6f6db1de4fed22db2c69e2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101679838"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101693642"
 ---
 # <a name="create-a-semantic-query-in-cognitive-search"></a>Een semantische query maken in Cognitive Search
 
@@ -82,7 +82,7 @@ POST https://[service name].search.windows.net/indexes/hotels-sample-index/docs/
 
 ### <a name="formulate-the-request"></a>De aanvraag formuleren
 
-1. Stel ' query type ' in op ' semantisch ' en ' queryLanguage ' in ' en-us '. Beide para meters zijn vereist.
+1. Stel **`"queryType"`** in op ' semantisch ' en **`"queryLanguage"`** ' en-us '. Beide para meters zijn vereist.
 
    De queryLanguage moet consistent zijn met alle [taal analyse](index-add-language-analyzers.md) functies die zijn toegewezen aan veld definities in het index schema. Als queryLanguage "en-US" is, moeten alle taal analysen ook een Engelse variant ("en. micro soft" of "en. lucene") zijn. Alle taal neutraal-analyse functies, zoals sleutel woord of eenvoudig, hebben geen conflict met queryLanguage-waarden.
 
@@ -90,7 +90,9 @@ POST https://[service name].search.windows.net/indexes/hotels-sample-index/docs/
 
    Terwijl inhoud in een zoek index in meerdere talen kan worden samengesteld, is de query-invoer waarschijnlijk in één taal. De zoek machine controleert niet op compatibiliteit van queryLanguage, language Analyzer en de taal waarin inhoud is samengesteld. Zorg er daarom voor dat u query's moet uitvoeren om te voor komen dat er onjuiste resultaten worden geproduceerd.
 
-1. Optioneel, maar aanbevolen: Stel ' searchFields ' in.
+<a name="searchfields"></a>
+
+1. Set **`"searchFields"`** (optioneel, maar wordt aanbevolen).
 
    In een semantische query weerspiegelt de volg orde van de velden in ' searchFields ' de prioriteit of het relatieve belang van het veld in semantische classificaties. Alleen teken reeks velden op het hoogste niveau (zelfstandig of in een verzameling) worden gebruikt. Omdat searchFields andere gedragingen heeft in eenvoudige en volledige lucene-query's (waarbij er geen geïmpliceerde prioriteits volgorde is), hebben niet-teken reeks velden en subvelden geen fout, maar worden ze ook niet gebruikt in semantische volg orde.
 
@@ -104,9 +106,9 @@ POST https://[service name].search.windows.net/indexes/hotels-sample-index/docs/
 
    + Als er geen velden zijn opgegeven, worden alle Doorzoek bare velden gezien als semantische rang schikking van documenten. Dit wordt echter niet aanbevolen, omdat het mogelijk niet de meest optimale resultaten van uw zoek index oplevert.
 
-1. Verwijder de componenten orderBy als deze in een bestaande aanvraag aanwezig zijn. De semantische score wordt gebruikt voor het best Ellen van resultaten en als u expliciete Sorteer logica opneemt, wordt een HTTP 400-fout geretourneerd.
+1. Verwijder **`"orderBy"`** componenten als deze in een bestaande aanvraag aanwezig zijn. De semantische score wordt gebruikt voor het best Ellen van resultaten en als u expliciete Sorteer logica opneemt, wordt een HTTP 400-fout geretourneerd.
 
-1. Voeg eventueel ' antwoorden ' toe die zijn ingesteld op ' extra heren ' en geef het aantal antwoorden op als u meer dan 1 wilt.
+1. Voeg eventueel **`"answers"`** ingesteld op ' extra heren ' toe en geef het aantal antwoorden op als u meer dan 1 wilt.
 
 1. Desgewenst kunt u de markerings stijl aanpassen die wordt toegepast op bijschriften. Met bijschriften past u de markerings opmaak toe op de sleutel door gang in het document waarin het antwoord wordt samenvatten. De standaardwaarde is `<em>`. Als u het type opmaak (bijvoorbeeld gele achtergrond) wilt opgeven, kunt u de highlightPreTag en highlightPostTag instellen.
 

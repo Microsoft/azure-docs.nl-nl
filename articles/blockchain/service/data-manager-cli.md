@@ -4,12 +4,12 @@ description: Een Block Chain-Data Manager voor de Azure Block Chain-service make
 ms.date: 03/30/2020
 ms.topic: how-to
 ms.reviewer: ravastra
-ms.openlocfilehash: f067f4413f6ad8541cd36a7581f9243bed4e195f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 867a51b60afa56005bbb297b345f8a9260160ab8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87023735"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101722633"
 ---
 # <a name="configure-blockchain-data-manager-using-azure-cli"></a>Blockchain Data Manager configureren met behulp van Azure CLI
 
@@ -73,9 +73,9 @@ Voor beeld van JSON-configuratie voor het maken van een Block chain manager-exem
 
 ``` json
 {
-    "location": "eastus",
-    "properties": {
-    }
+    "location": "eastus",
+    "properties": {
+    }
 }
 ```
 
@@ -126,7 +126,7 @@ az resource create \
 | resource-group | De naam van de resource groep waar de invoer bron wordt gemaakt. |
 | naam | De naam van de invoer. |
 | naamruimte | Gebruik de naam ruimte van de **micro soft. Block Chain** -provider. |
-| resource-type | Het resource type voor een Block Chain-Data Manager invoer **is**inputs. |
+| resource-type | Het resource type voor een Block Chain-Data Manager invoer **is** inputs. |
 | schijf | Het pad naar de Watcher waaraan de invoer is gekoppeld. Bijvoorbeeld volgers **/mywatcher**. |
 | is-full-object | Hiermee wordt aangegeven dat eigenschappen opties voor de invoer bron bevatten. |
 | properties | JSON-indelings teken reeks met eigenschappen voor de invoer bron. Kan worden door gegeven als een teken reeks of een bestand. |
@@ -137,11 +137,11 @@ Configuratie-JSON-voor beeld voor het maken van een invoer bron in de regio *VS 
 
 ``` json
 {
-    "location": "eastus",
-    "properties": {
-        "inputType": "Ethereum",
-        "dataSource": {
-            "resourceId": "/subscriptions/<Subscription ID>/resourceGroups/<Resource group>/providers/Microsoft.Blockchain/blockchainMembers/<Blockchain member>/transactionNodes/transaction-node"
+    "location": "eastus",
+    "properties": {
+        "inputType": "Ethereum",
+        "dataSource": {
+            "resourceId": "/subscriptions/<Subscription ID>/resourceGroups/<Resource group>/providers/Microsoft.Blockchain/blockchainMembers/<Blockchain member>/transactionNodes/transaction-node"
         }
     }
 }
@@ -209,11 +209,11 @@ Voor beeld van JSON-configuratie om een uitvoer bron te maken in de regio *VS-Oo
 
 ``` json
 {
-    "location": "eastus",
-    "properties": {
-        "outputType": "EventGrid",
-        "dataSource": {
-            "resourceId": "/subscriptions/<Subscription ID>/resourceGroups/<Resource group>/providers/Microsoft.EventGrid/topics/<event grid topic>"
+    "location": "eastus",
+    "properties": {
+        "outputType": "EventGrid",
+        "dataSource": {
+            "resourceId": "/subscriptions/<Subscription ID>/resourceGroups/<Resource group>/providers/Microsoft.EventGrid/topics/<event grid topic>"
         }
     }
 }
@@ -286,9 +286,9 @@ Configuratie-JSON-voor beeld om een toepassings bron te maken in de regio *VS-Oo
 
 ``` json
 {
-    "location": "eastus",
-    "properties": {
-        "artifactType": "EthereumSmartContract",
+    "location": "eastus",
+    "properties": {
+        "artifactType": "EthereumSmartContract",
         "content": {
             "abiFileUrl": "<ABI URL>",
             "bytecodeFileUrl": "<Bytecode URL>",
@@ -306,7 +306,7 @@ Configuratie-JSON-voor beeld om een toepassings bron te maken in de regio *VS-Oo
 | location | De regio waar de toepassings resource moet worden gemaakt. |
 | artifactType | Type toepassing. Momenteel wordt **EthereumSmartContract** ondersteund. |
 | abiFileUrl | URL voor het JSON-bestand van het ABI voor Smart contract. Voor meer informatie over het verkrijgen van contract ABI en het maken van een URL raadpleegt u [contract Abi en byte code ophalen](data-manager-portal.md#get-contract-abi-and-bytecode) en [contract-Abi en byte code-URL maken](data-manager-portal.md#create-contract-abi-and-bytecode-url). |
-| bytecodeFileUrl | URL voor het JSON-bestand van de geïmplementeerde byte code van het slimme contract. Zie voor meer informatie over het verkrijgen van de gedistribueerde gegevensbyte code voor het slimme contract en het maken van een URL [Get contract Abi en byte code](data-manager-portal.md#get-contract-abi-and-bytecode) en [Create contract Abi en byte code-URL](data-manager-portal.md#create-contract-abi-and-bytecode-url). Opmerking: voor Block Chain Data Manager is de **geïmplementeerde byte code**vereist. |
+| bytecodeFileUrl | URL voor het JSON-bestand van de geïmplementeerde byte code van het slimme contract. Zie voor meer informatie over het verkrijgen van de gedistribueerde gegevensbyte code voor het slimme contract en het maken van een URL [Get contract Abi en byte code](data-manager-portal.md#get-contract-abi-and-bytecode) en [Create contract Abi en byte code-URL](data-manager-portal.md#create-contract-abi-and-bytecode-url). Opmerking: voor Block Chain Data Manager is de **geïmplementeerde byte code** vereist. |
 | queryTargetTypes | Gepubliceerde bericht typen. Opgeven van **ContractProperties** publiceert *ContractPropertiesMsg* -bericht type. Opgeven van **ContractEvents** publiceert *DecodedContractEventsMsg* -bericht type. Opmerking: *RawBlockAndTransactionMsg* -en *RawTransactionContractCreationMsg* -bericht typen worden altijd gepubliceerd. |
 
 Maak een toepassing met de naam *mijn toepassing* voor *mywatcher* die een slim contract bewaakt dat is gedefinieerd door een JSON-teken reeks.

@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla, rarayudu
 ms.topic: conceptual
-ms.date: 02/12/2021
-ms.openlocfilehash: d7ed3fb268920d6f4d015886c560b2d9fcbdc632
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.date: 02/18/2021
+ms.openlocfilehash: 642fa044b3272e311769ddbcc5462cb396563652
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100104498"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101702552"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Beveiligde toegang en gegevens in Azure Logic Apps
 
@@ -349,9 +349,9 @@ In de [Azure Portal](https://portal.azure.com)beïnvloedt dit filter zowel trigg
 
 Geef in uw ARM-sjabloon de toegestane binnenkomende IP-adresbereiken in de resource definitie van de logische app op met behulp van de `accessControl` sectie. In deze sectie gebruikt u de `triggers` , `actions` , en de optionele `contents` secties, afhankelijk van de `allowedCallerIpAddresses` sectie met de `addressRange` eigenschap en stelt u de waarde van de eigenschap in op het toegestane IP-adres bereik in *x.* x. x. x/x of *x. x. x. x-x,* x. x. x-indeling.
 
-* Als uw geneste logische app gebruikmaakt van de **enige andere Logic apps** optie, waarmee binnenkomende oproepen alleen worden toegestaan vanuit andere Logic apps die de Azure Logic apps actie gebruiken, stelt `addressRange` u de eigenschap in op een lege matrix (**[]**).
+* Als uw geneste logische app gebruikmaakt van de **enige andere Logic apps** optie, waarmee binnenkomende oproepen alleen worden toegestaan vanuit andere logische apps die gebruikmaken van de ingebouwde Azure Logic apps actie, stelt `allowedCallerIpAddresses` u de eigenschap in op een lege matrix (**[]**) en *laat* u de `addressRange` eigenschap weg.
 
-* Als uw geneste logische app gebruikmaakt van de **specifieke IP-bereiken** voor andere inkomende oproepen, zoals andere logische apps die gebruikmaken van de http-actie, stelt `addressRange` u de eigenschap in op het toegestane IP-bereik.
+* Als uw geneste logische app gebruikmaakt van de **specifieke IP-bereiken** voor andere inkomende oproepen, zoals andere logische apps die gebruikmaken van de http-actie, neemt `allowedCallerIpAddresses` u de sectie op en stelt `addressRange` u de eigenschap in op het toegestane IP-bereik.
 
 In dit voor beeld ziet u een resource definitie voor een geneste logische app waarmee inkomende oproepen alleen worden toegestaan vanuit Logic apps die gebruikmaken van de ingebouwde Azure Logic Apps actie:
 
@@ -378,18 +378,14 @@ In dit voor beeld ziet u een resource definitie voor een geneste logische app wa
             },
             "accessControl": {
                "triggers": {
-                  "allowedCallerIpAddresses": [
-                     {
-                        "addressRange": []
-                     }
-                  ]
+                  "allowedCallerIpAddresses": []
                },
                "actions": {
-                  "allowedCallerIpAddresses": [
-                     {
-                        "addressRange": []
-                     }
-                  ]
+                  "allowedCallerIpAddresses": []
+               },
+               // Optional
+               "contents": {
+                  "allowedCallerIpAddresses": []
                }
             },
             "endpointsConfiguration": {}

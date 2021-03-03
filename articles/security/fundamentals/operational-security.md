@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: 7380c0d9679fe74bc91eea269f53fea750922b79
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 7d71820db3d58931f2fcd8d18441534ad36183c2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100575009"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711991"
 ---
 # <a name="azure-operational-security"></a>Operationele Azure-beveiliging
 ## <a name="introduction"></a>Inleiding
@@ -244,7 +244,7 @@ Network Watcher heeft momenteel de volgende mogelijkheden:
 
 Deze informatie kan worden gebruikt voor het bewaken van afzonderlijke aanvragen en voor het vaststellen van problemen met een opslagservice. Aanvragen worden op de beste basis geregistreerd. Logboek vermeldingen worden alleen gemaakt als er aanvragen worden gedaan voor het service-eind punt. Als een opslag account bijvoorbeeld activiteit heeft in het BLOB-eind punt, maar niet in de tabel-of wachtrij-eind punten, worden alleen logboeken die betrekking hebben op de Blob service gemaakt.
 
-Als u Opslaganalyse wilt gebruiken, moet u deze afzonderlijk inschakelen voor elke service die u wilt bewaken. U kunt deze inschakelen in de [Azure Portal](https://portal.azure.com/); Zie [een opslag account bewaken in de Azure Portal](../../storage/common/storage-monitor-storage-account.md)voor meer informatie. U kunt Opslaganalyse ook via een programma inschakelen via de REST API of de client bibliotheek. Gebruik de bewerking service-eigenschappen instellen om Opslaganalyse afzonderlijk in te scha kelen voor elke service.
+Als u Opslaganalyse wilt gebruiken, moet u deze afzonderlijk inschakelen voor elke service die u wilt bewaken. U kunt deze inschakelen in de [Azure Portal](https://portal.azure.com/); Zie [een opslag account bewaken in de Azure Portal](../../storage/common/manage-storage-analytics-logs.md)voor meer informatie. U kunt Opslaganalyse ook via een programma inschakelen via de REST API of de client bibliotheek. Gebruik de bewerking service-eigenschappen instellen om Opslaganalyse afzonderlijk in te scha kelen voor elke service.
 
 De geaggregeerde gegevens worden opgeslagen in een bekende BLOB (voor logboek registratie) en in bekende tabellen (voor metrieken), die mogelijk worden geopend met behulp van de Blob service-en Table service-Api's.
 

@@ -3,12 +3,12 @@ title: Versleuteling van back-upgegevens met door de klant beheerde sleutels
 description: Meer informatie over hoe u met Azure Backup uw back-upgegevens kunt versleutelen met behulp van door de klant beheerde sleutels (CMK).
 ms.topic: conceptual
 ms.date: 07/08/2020
-ms.openlocfilehash: 230669e0a3543a0709dda3f7fee35a0cae300d5a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 474f4238276f460abde3d600422e309171875a0c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100369455"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101716734"
 ---
 # <a name="encryption-of-backup-data-using-customer-managed-keys"></a>Versleuteling van back-upgegevens met door de klant beheerde sleutels
 
@@ -235,11 +235,11 @@ InfrastructureEncryptionState : Disabled
 >[!NOTE]
 > Dit proces blijft hetzelfde wanneer u de versleutelings sleutel wilt bijwerken of wijzigen. Als u een sleutel van een andere Key Vault wilt bijwerken en gebruiken (anders dan de versie die momenteel wordt gebruikt), zorgt u ervoor dat:
 >
-> - De Key Vault bevindt zich in dezelfde regio als de Recovery Services kluis
+> - De sleutel kluis bevindt zich in dezelfde regio als de Recovery Services kluis
 >
 > - De sleutel kluis heeft de beveiliging voorlopig verwijderen en leegmaken is ingeschakeld
 >
-> - De Recovery Services kluis heeft de vereiste machtigingen voor toegang tot de Key Vault.
+> - De Recovery Services kluis heeft de vereiste machtigingen voor toegang tot de sleutel kluis.
 
 ## <a name="backing-up-to-a-vault-encrypted-with-customer-managed-keys"></a>Back-ups maken naar een kluis die is versleuteld met door de klant beheerde sleutels
 

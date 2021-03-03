@@ -6,12 +6,12 @@ ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 02/10/2021
-ms.openlocfilehash: 45cbd0fc2a3a6a059274f33e25b577fde1f4a4ab
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: b21e5ea8e25844e3e025915b0b9f15162c642f25
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100585537"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101713436"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Wat is er nieuw de documentatie van Azure Monitor?
 
@@ -22,15 +22,15 @@ In dit artikel vindt u een lijst met Azure Monitor-artikelen die nieuw of aanzie
 ### <a name="general"></a>Algemeen 
 - [Azure monitor Veelgestelde vragen](faq.md) : er is informatie toegevoegd over de apparaatgegevens voor Application Insights.
 ### <a name="agents"></a>Agents  
-- Het [verzamelen van Event Tracing for Windows gebeurtenissen (etw) voor analyse Azure monitor-logboeken](platform/data-sources-event-tracing-windows.md) -nieuw artikel.
-- [Regels voor gegevens verzameling in azure monitor (preview)](platform/data-collection-rule-overview.md) : toegevoegde koppelingen naar Power shell en CLI-voor beelden.
+- Het [verzamelen van Event Tracing for Windows gebeurtenissen (etw) voor analyse Azure monitor-logboeken](./agents/data-sources-event-tracing-windows.md) -nieuw artikel.
+- [Regels voor gegevens verzameling in azure monitor (preview)](./agents/data-collection-rule-overview.md) : toegevoegde koppelingen naar Power shell en CLI-voor beelden.
 
 ### <a name="alerts"></a>Waarschuwingen  
-- [Configureer Azure om verbinding te maken met ITSM-hulpprogram ma's met behulp van veilig exporteren](platform/itsm-connector-secure-webhook-connections-azure-configuration.md) -nieuw artikel.
-- [Connector status fouten in het nieuwe artikel ITSMC dash board](platform/itsmc-dashboard-errors.md) .
-- [Onderzoek fouten met behulp van het artikel ITSMC dash board](platform/itsmc-dashboard.md) -nieuw.
-- [Problemen met Azure metrische waarschuwingen oplossen](platform/alerts-troubleshoot-metric.md) -secties toegevoegd voor dynamische drempel waarden.
-- [Problemen oplossen in IT Service Management-connector](platform/itsmc-troubleshoot-overview.md) -nieuw artikel.
+- [Configureer Azure om verbinding te maken met ITSM-hulpprogram ma's met behulp van veilig exporteren](./alerts/itsm-connector-secure-webhook-connections-azure-configuration.md) -nieuw artikel.
+- [Connector status fouten in het nieuwe artikel ITSMC dash board](./alerts/itsmc-dashboard-errors.md) .
+- [Onderzoek fouten met behulp van het artikel ITSMC dash board](./alerts/itsmc-dashboard.md) -nieuw.
+- [Problemen met Azure metrische waarschuwingen oplossen](./alerts/alerts-troubleshoot-metric.md) -secties toegevoegd voor dynamische drempel waarden.
+- [Problemen oplossen in IT Service Management-connector](./alerts/itsmc-troubleshoot-overview.md) -nieuw artikel.
 
 ### <a name="application-insights"></a>Application Insights
 - [Azure-toepassing Insights-correlatie van de telemetrie](app/correlation.md) heeft een tracering correlatie toegevoegd wanneer de ene module een andere aanroept in opentellingen python.
@@ -47,25 +47,25 @@ In dit artikel vindt u een lijst met Azure Monitor-artikelen die nieuw of aanzie
 - [Azure monitor voor Azure Data Explorer (preview)](insights/data-explorer.md) -nieuw artikel.
 
 ### <a name="logs"></a>Logboeken    
-- [Azure monitor door de klant beheerde sleutel](platform/customer-managed-keys.md) : een door de gebruiker toegewezen beheerde identiteit introduceren.
-- [Azure monitor registreert toegewezen clusters](log-query/logs-dedicated-clusters.md) -bijgewerkte respons code.
-- [Query-Azure monitor van meerdere services en Azure Data Explorer (preview)](platform/azure-monitor-troubleshooting-logs.md) -nieuw artikel.
+- [Azure monitor door de klant beheerde sleutel](./logs/customer-managed-keys.md) : een door de gebruiker toegewezen beheerde identiteit introduceren.
+- [Azure monitor registreert toegewezen clusters](./logs/logs-dedicated-clusters.md) -bijgewerkte respons code.
+- [Query-Azure monitor van meerdere services en Azure Data Explorer (preview)](/azure/azure-monitor/platform/azure-data-explorer-monitor-cross-service-query) -nieuw artikel.
 
 ### <a name="metrics"></a>Metrische gegevens
-- [Azure monitor metrische gegevens aggregatie en weer gave](platform/metrics-aggregation-explained.md) van statistieken: nieuw artikel.
+- [Azure monitor metrische gegevens aggregatie en weer gave](./essentials/metrics-aggregation-explained.md) van statistieken: nieuw artikel.
 
 ### <a name="platform-logs"></a>Platform logboeken
-- [Azure monitor resource logboeken ondersteunde services en categorieën](platform/resource-logs-categories.md) : nieuw artikel.
+- [Azure monitor resource logboeken ondersteunde services en categorieën](./essentials/resource-logs-categories.md) : nieuw artikel.
 
 ### <a name="visualizations"></a>Visualisaties
-- [Azure monitor werkmappen gegevens bronnen](platform/workbooks-data-sources.md) : toegevoegde samenvoeg-en wijzigings analyse.
+- [Azure monitor werkmappen gegevens bronnen](./visualize/workbooks-data-sources.md) : toegevoegde samenvoeg-en wijzigings analyse.
 
 
 ## <a name="december-2020"></a>December 2020
 
 ### <a name="general"></a>Algemeen
 - [Door klant beheerde sleutels in Azure Monitor](logs/customer-managed-keys.md): foutberichten toegevoegd.
-- [Partners die integreren met Azure Monitor door](/partners.md): sectie over Event Hub-integratie toegevoegd.
+- [Partners die integreren met Azure Monitor door](partners.md): sectie over Event Hub-integratie toegevoegd.
 
 ### <a name="agents"></a>Agents
 - [Query's uitvoeren op meerdere bronnen in Azure Data Explorer met behulp van Azure Monitor](logs/azure-monitor-data-explorer-proxy.md): nieuw artikel.
@@ -96,7 +96,7 @@ In dit artikel vindt u een lijst met Azure Monitor-artikelen die nieuw of aanzie
 - [Problemen met Azure Monitor Application Insights voor Java oplossen](app/java-standalone-troubleshoot.md): nieuw artikel.
 
 ### <a name="containers"></a>Containers
-- [Rapporten in Azure Monitor voor containers](insights/container-insights-reports.md): nieuw artikel.
+- [Rapporten in container Insights](insights/container-insights-reports.md) -nieuw artikel.
 
 ### <a name="logs"></a>Logboeken
 - [Toegewezen Azure Monitor Logs-clusters](logs/logs-dedicated-clusters.md): geautomatiseerde opdrachten, methoden voor ontkoppelen en verwijderen en probleemoplossing toegevoegd.
@@ -168,16 +168,16 @@ Nieuwe en bijgewerkte artikelen na opnieuw indelen van de inhoud van logboekquer
 
 ### <a name="virtual-machines"></a>Virtuele machines
 
-- [Overzicht Azure Monitor voor VM's inschakelen](vm/vminsights-enable-overview.md): ondersteunde regio's toegevoegd.
+- [Overzicht van VM Insights inschakelen](vm/vminsights-enable-overview.md) -ondersteunde regio's toegevoegd.
 
-Nieuwe artikelen voor gaststatus van Azure Monitor voor VM's (preview)
+Nieuwe artikelen voor VM Insights-gast status (preview-versie)
 
-- [Gaststatus van Azure Monitor voor VM's (preview)](vm/vminsights-health-overview.md)
-- [Gaststatuswaarschuwingen van Azure Monitor voor VM's (preview)](vm/vminsights-health-alerts.md)
-- [Bewaking configureren in gaststatus van Azure Monitor voor VM's (preview)](vm/vminsights-health-configure.md)
-- [Bewaking configureren in gaststatus van Azure Monitor voor VM's met behulp van gegevensverzamelingsregels (preview)](vm/vminsights-health-configure-dcr.md)
-- [Gaststatus van Azure Monitor voor VM's inschakelen (preview)](vm/vminsights-health-enable.md)
-- [Problemen met gaststatus van Azure Monitor voor VM's oplossen (preview)](vm/vminsights-health-troubleshoot.md)
+- [VM Insights-gast status (preview-versie)](vm/vminsights-health-overview.md)
+- [VM Insights-status waarschuwingen voor gast (preview-versie)](vm/vminsights-health-alerts.md)
+- [Bewaking configureren in VM Insights-gast status (preview-versie)](vm/vminsights-health-configure.md)
+- [Bewaking configureren in VM Insights-gast status met behulp van regels voor gegevens verzameling (preview)](vm/vminsights-health-configure-dcr.md)
+- [VM Insights-gast status inschakelen (preview)](vm/vminsights-health-enable.md)
+- [Problemen met VM Insights-gast status oplossen (preview-versie)](vm/vminsights-health-troubleshoot.md)
 
 
 
@@ -210,9 +210,9 @@ Nieuwe artikelen voor gaststatus van Azure Monitor voor VM's (preview)
 - [Aan de slag met automatisch schaalaanpassing in Azure](autoscale/autoscale-get-started.md): sectie over het verplaatsen van Automatisch schaalaanpassing naar een andere regio toegevoegd.
 
 ### <a name="containers"></a>Containers
-- [PV-bewaking configureren met Azure Monitor voor containers](containers/container-insights-persistent-volumes.md): nieuw artikel.
-- [Het beheren van de agent van Azure Monitor voor containers](containers/container-insights-manage-agent.md): ondersteuning toegevoegd voor Kubernetes-cluster waarop Azure Arc is ingeschakeld.
-- [Metrische waarschuwingen van Azure Monitor voor containers](containers/container-insights-metric-alerts.md): ondersteuning toegevoegd voor Kubernetes-cluster waarop Azure Arc is ingeschakeld.
+- [PowerVault-bewaking configureren met container Insights](containers/container-insights-persistent-volumes.md) -nieuw artikel.
+- [De container Insights-agent beheren](containers/container-insights-manage-agent.md) : er is ondersteuning toegevoegd voor Azure Arc enabled Kubernetes-cluster.
+- [Metrische waarschuwingen van container Insights](containers/container-insights-metric-alerts.md) : er is ondersteuning toegevoegd voor Azure Arc enabled Kubernetes-cluster.
 
 ### <a name="insights-and-solutions"></a>Inzicht en oplossingen
 - [IT Service Management-connector: veilig exporteren in Azure Monitor](alerts/it-service-management-connector-secure-webhook-connections.md): sectie over ServiceNow toegevoegd.
@@ -234,7 +234,7 @@ Nieuwe artikelen voor gaststatus van Azure Monitor voor VM's (preview)
 ### <a name="virtual-machines"></a>Virtuele machines
 - [Wijzigingsanalyse in Azure Monitor voor VM's](vm/vminsights-change-analysis.md): nieuw artikel.
 - [Overzicht Azure Monitor voor VM's inschakelen](vm/vminsights-enable-overview.md): ondersteunde regio's toegevoegd.
-- [Het bijwerken van de agent van Azure Monitor voor containers voor metrische gegevens](containers/container-insights-update-metrics.md): ondersteuning toegevoegd voor Azure Arc-cluster waarop Kubernetes is ingeschakeld.
+- [Container Insights bijwerken voor metrische gegevens](containers/container-insights-update-metrics.md) : extra ondersteuning voor Azure Arc enabled Kubernetes-cluster.
 
 
 
@@ -265,8 +265,8 @@ Nieuwe artikelen voor gaststatus van Azure Monitor voor VM's (preview)
 
 
 ### <a name="containers"></a>Containers
-- [Kubernetes-cluster met Azure Arc configureren met Azure Monitor voor containers](containers/container-insights-enable-arc-enabled-clusters.md): richtlijnen toegevoegd voor het inschakelen van bewaking met behulp van een service-principal.
-- [Implementatie en metrische HPA-gegevens met Azure Monitor voor containers](containers/container-insights-deployment-hpa-metrics.md): nieuw artikel.
+- Het [Kubernetes-cluster met Azure-Arc configureren met](containers/container-insights-enable-arc-enabled-clusters.md) behulp van container Insights-Toegevoegde richt lijnen voor het inschakelen van bewaking met Service-Principal.
+- [Implementatie & hpa-metrische gegevens met container Insights](containers/container-insights-deployment-hpa-metrics.md) -nieuw artikel.
 
 ### <a name="insights-and-solutions"></a>Inzicht en oplossingen
 - [Azure Monitor voor Azure Cache voor Redis](insights/redis-cache-insights-overview.md): preview-functie verwijderd.
@@ -319,7 +319,7 @@ Nieuwe artikelen voor gaststatus van Azure Monitor voor VM's (preview)
 
 
 #### <a name="new-and-updated-articles-from-restructure-of-agent-content"></a>Nieuwe en bijgewerkte artikelen van het opnieuw indelen van de inhoud over agents
-- [Overzicht Azure Monitor voor VM's inschakelen](vm/vminsights-enable-overview.md)
+- [Overzicht van VM Insights inschakelen](vm/vminsights-enable-overview.md)
 - [Log Analytics-agent installeren op Linux-computers](agents/agent-linux.md)
 - [Log Analytics-agent installeren op Windows-computers](agents/agent-windows.md)
 - [Overzicht van Log Analytics-agent](agents/log-analytics-agent.md)
@@ -344,7 +344,7 @@ Nieuwe artikelen voor gaststatus van Azure Monitor voor VM's (preview)
 
 
 ### <a name="containers"></a>Containers
-- [Implementatie en metrische HPA-gegevens met Azure Monitor voor containers](containers/container-insights-deployment-hpa-metrics.md): nieuw artikel.
+- [Implementatie & hpa-metrische gegevens met container Insights](containers/container-insights-deployment-hpa-metrics.md) -nieuw artikel.
 
 ### <a name="insights"></a>Inzichten
 - [Bewakingsoplossing in Azure Monitor](insights/solutions.md): bijgewerkt voor nieuwe UI.
@@ -372,7 +372,7 @@ Nieuwe artikelen voor gaststatus van Azure Monitor voor VM's (preview)
 ## <a name="july-2020"></a>Juli 2020
 
 ### <a name="general"></a>Algemeen
-- [Azure Monitor implementeren](deploy-scale.md) - Opnieuw indelen van onboarding-inhoud van Azure Monitor voor VM's.
+- [Implementeer de Azure monitor](deploy-scale.md) herstructureren van de voor bereiding van VM Insights-onboarding.
 - [Azure Private Link gebruiken om netwerken veilig te verbinden met Azure Monitor](logs/private-link-security.md) - Sectie toegevoegd over limieten.
 
 ### <a name="alerts"></a>Waarschuwingen
@@ -389,8 +389,8 @@ Nieuwe artikelen voor gaststatus van Azure Monitor voor VM's (preview)
 - [Problemen oplossen met de Azure Application Insights Profiler](app/profiler-troubleshooting.md) - Opmerking toegevoegd over een fout bij het uitvoeren van de profiler voor ASP.NET Core Apps op Azure App Service. 
 
 ### <a name="containers"></a>Containers
-- [Waarschuwingen bijhouden van Azure Monitor voor containers](containers/container-insights-log-alerts.md) - Nieuw artikel.
-- [Metrische waarschuwingen van Azure Monitor voor containers](containers/container-insights-metric-alerts.md) - Nieuw artikel.
+- [Logboek waarschuwingen vanuit container Insights](containers/container-insights-log-alerts.md) -nieuw artikel.
+- [Metrische waarschuwingen van container Insights](containers/container-insights-metric-alerts.md) -nieuw artikel.
 
 ### <a name="logs"></a>Logboeken
 - [Door klant beheerde sleutel van Azure Monitor](logs/customer-managed-keys.md) - Er is een foutbericht en sectie over CMK-configuratie voor query's toegevoegd.
@@ -408,18 +408,18 @@ Nieuwe artikelen voor gaststatus van Azure Monitor voor VM's (preview)
 
 ### <a name="virtual-machines"></a>Virtuele machines
 
-Nieuwe en bijgewerkte artikelen van het opnieuw indelen van de inhoud van Azure Monitor voor VM's
+Nieuwe en bijgewerkte artikelen van het herstructureren van de inhoud van de VM Insights
 
-- [ Wat is Azure Monitor voor VM's?](vm/vminsights-overview.md)
-- [Log Analytics-werkruimte voor Azure Monitor voor VM's configureren](vm/vminsights-configure-workspace.md)
+- [Wat is VM Insights?](vm/vminsights-overview.md)
+- [Log Analytics werkruimte configureren voor VM Insights](vm/vminsights-configure-workspace.md)
 - [Linux-computers verbinden met Azure Monitor](agents/agent-linux.md)
 - [Azure Monitor inschakelen voor een hybride omgeving](vm/vminsights-enable-hybrid.md)
 - [Azure Monitor inschakelen voor een enkele virtuele-machine of een virtuele-machineschaalset in Azure Portal](vm/vminsights-enable-portal.md)
-- [Azure Monitor voor VM's inschakelen met Azure Policy](./vm/vminsights-enable-policy.md)
-- [Overzicht Azure Monitor voor VM's inschakelen](vm/vminsights-enable-overview.md)
-- [Azure Monitor voor VM's inschakelen met behulp van PowerShell](vm/vminsights-enable-powershell.md)
-- [Azure Monitor voor VM's inschakelen met behulp van Resource Manager-sjablonen](vm/vminsights-enable-resource-manager.md)
-- [Azure Monitor voor VM's inschakelen met PowerShell of sjablonen](./vm/vminsights-enable-powershell.md)
+- [VM Insights inschakelen met behulp van Azure Policy](./vm/vminsights-enable-policy.md)
+- [Overzicht van VM Insights inschakelen](vm/vminsights-enable-overview.md)
+- [VM Insights inschakelen met Power shell](vm/vminsights-enable-powershell.md)
+- [VM Insights inschakelen met behulp van Resource Manager-sjablonen](vm/vminsights-enable-resource-manager.md)
+- [VM Insights inschakelen met Power shell of sjablonen](./vm/vminsights-enable-powershell.md)
 
 
 ### <a name="visualizations"></a>Visualisaties
@@ -453,9 +453,9 @@ Nieuwe en bijgewerkte artikelen van het opnieuw indelen van de inhoud van Azure 
 
 ### <a name="containers"></a>Containers
 - [De bewaking van uw hybride Kubernetes-cluster stopzetten](containers/container-insights-optout-hybrid.md) - Sectie toegevoegd voor Kubernetes met ingeschakelde Arc.
-- [Kubernetes-cluster met ingeschakelde Azure Arc configureren met Azure Monitor voor containers](containers/container-insights-enable-arc-enabled-clusters.md): nieuw artikel.
-- [Azure Red Hat OpenShift v4.x configureren met Azure Monitor voor containers](containers/container-insights-azure-redhat4-setup.md) - Vereisten bijgewerkt.
-- [Azure Monitor voor containers Live Data (preview) instellen](containers/container-insights-livedata-setup.md) -Opmerking dat functie niet beschikbaar is in Azure US Government verwijderd.
+- [Configureer Azure Arc enabled Kubernetes-cluster met container Insights](containers/container-insights-enable-arc-enabled-clusters.md) -nieuw artikel.
+- [Azure Red Hat open Shift v4. x configureren met container Insights](containers/container-insights-azure-redhat4-setup.md) -bijgewerkte vereisten.
+- [Container Insights live data (preview) instellen](containers/container-insights-livedata-setup.md) -verwijderde opmerking over de functie die niet beschikbaar is in de Amerikaanse overheid van Azure.
 
 ### <a name="insights"></a>Inzichten
 - [Veelgestelde vragen - Netwerkprestatiemeter-oplossing in Azure](insights/network-performance-monitor-faq.md) - Veelgestelde vragen toegevoegd voor ExpressRoute Monitor.
@@ -495,9 +495,9 @@ Nieuwe en bijgewerkte artikelen over de herstructurering en consolidatie van de 
 - [Azure Activity-logboekgebeurtenissen weergeven in Azure Monitor](./essentials/activity-log.md#view-the-activity-log)
 
 ### <a name="virtual-machines"></a>Virtuele machines
-- [Azure Monitor inschakelen voor VM's in het Azure-portal](./vm/vminsights-enable-portal.md) - Bijgewerkt met Azure Arc.
-- [Overzicht Azure Monitor voor VM's inschakelen](vm/vminsights-enable-overview.md) - Bijgewerkt met Azure Arc.
-- [ Wat is Azure Monitor voor VM's?](vm/vminsights-overview.md) - Bijgewerkt met Azure-Arc.
+- [Schakel VM Insights in azure Portal](./vm/vminsights-enable-portal.md) -bijgewerkt om Azure-Arc op te stellen.
+- [Overzicht van VM Insights inschakelen](vm/vminsights-enable-overview.md) -bijgewerkt zodat Azure-Arc wordt vermeld.
+- [Wat is VM Insights?](vm/vminsights-overview.md) - Bijgewerkt met Azure-Arc.
 
 
 ### <a name="visualizations"></a>Visualisaties
@@ -523,8 +523,8 @@ Nieuwe en bijgewerkte artikelen over de herstructurering en consolidatie van de 
 - [Resource Manager-voorbeeldsjablonen voor Azure Monitor](/resource-manager-samples.md)
 - [Resource Manager-voorbeeldsjablonen voor actiegroepen](alerts/resource-manager-action-groups.md)
 - [Resource Manager-voorbeeldsjablonen voor agents](agents/resource-manager-agent.md)
-- [Resource Manager-voorbeeldsjablonen voor Azure Monitor voor containers](containers/resource-manager-container-insights.md)
-- [Resource Manager-voorbeeldsjablonen voor Azure Monitor voor VM’s](vm/resource-manager-vminsights.md)
+- [Voor beelden van Resource Manager-sjablonen voor container Insights](containers/resource-manager-container-insights.md)
+- [Voor beelden van Resource Manager-sjablonen voor VM Insights](vm/resource-manager-vminsights.md)
 - [Resource Manager-voorbeeldsjablonen voor diagnostische instellingen](essentials/resource-manager-diagnostic-settings.md)
 - [Resource Manager-voorbeeldsjablonen voor Log Analytics-werkruimten](logs/resource-manager-workspace.md)
 - [Resource Manager-voorbeeldsjablonen voor logboekquery’s](logs/resource-manager-log-queries.md)
@@ -559,10 +559,10 @@ Nieuwe en bijgewerkte artikelen over de herstructurering en consolidatie van de 
 
 
 ### <a name="containers"></a>Containers
-- [Azure Monitor voor containers inschakelen](containers/container-insights-onboard.md): bijgewerkte firewall-configuratietabel.
-- [Azure Monitor voor containers bijwerken voor metrische gegevens](containers/container-insights-update-metrics.md): update voor gebruik van beheerde identiteiten om metrische gegevens te verzamelen.
-- [Kosten bewaken voor Azure Monitor voor containers](containers/container-insights-cost.md): nieuw artikel.
-- [Azure Monitor voor containers Live Data (preview) instellen](containers/container-insights-livedata-setup.md): ondersteuning voor nieuwe clusterrolbinding.
+- [Container Insights inschakelen](containers/container-insights-onboard.md) -bijgewerkte firewall configuratie tabel.
+- [Container Insights bijwerken voor metrische gegevens](containers/container-insights-update-metrics.md) -bijwerken voor het gebruik van beheerde identiteiten voor het verzamelen van metrische gegevens.
+- Bewaak de [kosten voor container Insights](containers/container-insights-cost.md) -nieuw artikel.
+- [Container Insights live data (preview) instellen](containers/container-insights-livedata-setup.md) : ondersteuning voor nieuwe cluster functie binding.
 
 ### <a name="insights"></a>Inzichten
 - [Azure Monitor voor Azure Cache voor Redis (preview)](insights/redis-cache-insights-overview.md): nieuw artikel.
@@ -588,12 +588,12 @@ Nieuwe en bijgewerkte artikelen over de herstructurering en consolidatie van de 
 
 
 ### <a name="virtual-machines"></a>Virtuele machines
-- [Overzicht van Azure Monitor voor VM's inschakelen](vm/vminsights-enable-overview.md): ondersteunde versies van Ubuntu Server toegevoegd. Ondersteunde regio's voor Log Analytics-werkruimte toegevoegd.
-- [Prestaties in kaart brengen met Azure Monitor voor VM's](vm/vminsights-performance.md): sectie beperkingen toegevoegd voor niet-beschikbare metrische gegevens.
+- [Overzicht van VM Insights inschakelen](vm/vminsights-enable-overview.md) : wordt toegevoegd aan ondersteunde versies van de Ubuntu-Server. Ondersteunde regio's voor Log Analytics-werkruimte toegevoegd.
+- [Grafieken van prestaties met](vm/vminsights-performance.md) de sectie beperkingen van de toegevoegde virtuele machine voor niet-beschik bare metrische gegevens.
 
 ### <a name="visualizations"></a>Visualisaties
 - [Azure Monitor-werkmappen en Azure Resource Manager-sjablonen](visualize/workbooks-automate.md): Resource Manager-update toegevoegd voor implementeren van een workbooksjabloon.
-- [Azure Monitor-workbookgroepen](platform/workbooks-groups.md): nieuw artikel.
+- [Azure Monitor-workbookgroepen](./visualize/workbooks-groups.md): nieuw artikel.
 - [Azure Monitor-workbooks, JSON-gegevens transformeren met JSONPath](visualize/workbooks-jsonpath.md): nieuw artikel.
 
 
@@ -623,7 +623,7 @@ Nieuwe en bijgewerkte artikelen over de herstructurering en consolidatie van de 
 
 ### <a name="containers"></a>Containers
 
-- [Azure Red Hat OpenShift v4.x configureren met Azure Monitor voor containers](containers/container-insights-azure-redhat4-setup.md): nieuw artikel.
+- [Azure Red Hat open Shift v4. x configureren met container Insights](containers/container-insights-azure-redhat4-setup.md) -nieuw artikel.
 - [Handmatig ServiceNow-synchronisatieproblemen oplossen](alerts/itsmc-resync-servicenow.md): nieuw artikel.
 - [Bewaking van Azure- en Red Hat OpenShift v4-cluster beëindigen](containers/container-insights-optout-openshift-v4.md): nieuw artikel.
 - [Bewaking van Azure Red Hat OpenShift v3-cluster beëindigen](containers/container-insights-optout-openshift-v3.md): nieuw artikel.
@@ -671,8 +671,8 @@ Nieuwe en bijgewerkte artikelen over de herstructurering en consolidatie van de 
 
 ### <a name="containers"></a>Containers
 
-- [Veelgestelde vragen over Azure Monitor](faq.md): update voor Azure Monitor voor containers.
-- [GPU-bewaking configureren met Azure Monitor voor containers](containers/container-insights-gpu-monitoring.md): nieuw artikel.
+- [Veelgestelde vragen over Azure monitor](faq.md) -update voor container Insights.
+- [CONFIGUREER GPU-bewaking met container Insights](containers/container-insights-gpu-monitoring.md) -nieuw artikel.
 
 ### <a name="insights"></a>Inzichten
 
@@ -696,18 +696,18 @@ Nieuwe en bijgewerkte artikelen over de herstructurering en consolidatie van de 
 ### <a name="virtual-machines"></a>Virtuele machines
 
 - [Virtuele Azure-machines bewaken met Azure Monitor](vm/monitor-vm-azure.md): nieuw artikel.
-- [Snelstart: Virtuele Azure-machines bewaken met Azure Monitor](vm/quick-monitor-azure-vm.md): bijgewerkt om Azure Monitor voor VM's toe te voegen.
-- [Waarschuwingen van Azure Monitor voor VM's](vm/vminsights-alerts.md): nieuw artikel.
-- [Overzicht Azure Monitor voor VM's inschakelen](vm/vminsights-enable-overview.md): downloadkoppelingen bijgewerkt voor agent.
+- [Snelstartgids: virtuele machines van Azure bewaken met Azure monitor](vm/quick-monitor-azure-vm.md) -bijgewerkt om VM Insights toe te voegen.
+- [Waarschuwingen van](vm/vminsights-alerts.md) het nieuwe artikel over VM Insights.
+- [Overzicht van VM Insights inschakelen](vm/vminsights-enable-overview.md) -bijgewerkte koppelingen naar de agent downloaden.
 
-Algemene updates voor algemene beschikbaarheid van Azure Monitor voor VM's
+Algemene updates voor algemene Beschik baarheid van VM Insights
 
-- [ Wat is Azure Monitor voor VM's?](vm/vminsights-overview.md)
-- [Veelgestelde vragen over Azure Monitor voor VM's (GA)](vm/vminsights-ga-release-faq.md) 
-- [Azure Monitor voor VM's inschakelen met Azure Policy](./vm/vminsights-enable-policy.md) 
-- [Prestaties in kaart brengen met Azure Monitor voor VM's](vm/vminsights-performance.md)
-- [Query's uitvoeren op logboeken van Azure Monitor voor VM's](vm/vminsights-log-search.md)
-- [App-afhankelijkheden weergeven met Azure Monitor voor VM's](vm/vminsights-maps.md) 
+- [Wat is VM Insights?](vm/vminsights-overview.md)
+- [Veelgestelde vragen over VM Insights (GA)](vm/vminsights-ga-release-faq.md) 
+- [VM Insights inschakelen met behulp van Azure Policy](./vm/vminsights-enable-policy.md) 
+- [Prestaties presen teren met VM Insights](vm/vminsights-performance.md)
+- [Logboeken vanuit VM Insights doorzoeken](vm/vminsights-log-search.md)
+- [App-afhankelijkheden weer geven met VM Insights](vm/vminsights-maps.md) 
 
 ### <a name="visualizations"></a>Visualisaties
 
@@ -735,13 +735,13 @@ Meerdere updates als onderdeel van het herschrijven van inhoud van extensie voor
 
 ### <a name="insights-and-solutions"></a>Inzicht en oplossingen
 
-#### <a name="azure-monitor-for-containers"></a>Azure Monitor voor containers
+#### <a name="container-insights"></a>Container inzichten
 
-- [Azure Active Directory integreren met Azure Kubernetes Service](../aks/azure-ad-integration-cli.md): opmerking toegevoegd voor het maken van een clienttoepassing om Kubernetes RBAC-enabled cluster te ondersteunen voor de ondersteuning van Azure Monitor voor containers.
+- [Integreer Azure Active Directory met de door Azure Kubernetes service](../aks/azure-ad-integration-cli.md) toegevoegde opmerking voor het maken van een client toepassing ter ondersteuning van Kubernetes RBAC-enabled-cluster ter ondersteuning van container Insights.
 
-#### <a name="azure-monitor-for-vms"></a>Azure Monitor voor virtuele machines
+#### <a name="vm-insights"></a>VM Insights
 
-- [Veelgestelde vragen over Azure Monitor voor VM's (GA)](vm/vminsights-ga-release-faq.md): wijziging in hoe prestatiegegevens worden opgeslagen.
+- [Veelgestelde vragen over VM Insights (ga)](vm/vminsights-ga-release-faq.md) : Wijzig hoe prestatie gegevens worden opgeslagen.
 
 #### <a name="office-365"></a>Office 365
 
@@ -796,20 +796,20 @@ Meerdere nieuwe artikelen voor conversiegids View Designer naar werkmappen.
 
 ### <a name="insights-and-solutions"></a>Inzicht en oplossingen
 
-#### <a name="azure-monitor-for-containers"></a>Azure Monitor voor containers
+#### <a name="container-insights"></a>Container inzichten
 
-- [Gegevensverzameling van agents configureren voor Azure Monitor voor containers](containers/container-insights-agent-config.md): details toegevoegd voor upgrade van agent in Azure Red Hat OpenShift en extra informatie toegevoegd om onderscheid te maken tussen de methodes voor upgrade van agent.
-- [Prestatiewaarschuwingen maken voor Azure Monitor voor containers](./containers/container-insights-log-alerts.md): herziene informatie en bijgewerkte stappen voor het maken van een waarschuwing over prestatiegegevens die zijn opgeslagen in de werkruimte met werkruimte-contextwaarschuwingen.
-- [Kubernetes bewaking met Azure Monitor voor containers](containers/container-insights-analyze.md): overzichts- en analyse-artikel bijgewerkt met betrekking tot Windows Kubernetes-clusters.
-- [Azure Red Hat OpenShift-clusters configureren met Azure Monitor voor containers](containers/container-insights-azure-redhat-setup.md): details toegevoegd voor upgrade van agent in Azure Red Hat OpenShift en extra informatie toegevoegd om onderscheid te maken tussen de methodes voor upgrade van agent.
-- [Hybride Kubernetes-clusters configureren met Azure Monitor voor containers](containers/container-insights-hybrid-setup.md): bijgewerkt om toegevoegde ondersteuning weer te geven voor beveiligde poort:10250 met de cAdvisor van Kubelet.
-- [De agent van Azure Monitor voor containers beheren](containers/container-insights-manage-agent.md): details bijgewerkt met betrekking tot gedrag en configuratie van scraping van metrische gegevens met Azure Red Hat OpenShift vergeleken met andere typen Kubernetes-clusters.
-- [Azure Monitor voor containers Prometheus-integratie configureren](containers/container-insights-prometheus-integration.md): details bijgewerkt met betrekking tot gedrag en configuratie van scraping van metrische gegevens met Azure Red Hat OpenShift vergeleken met andere typen Kubernetes-clusters.
-- [Azure Monitor voor containers voor metrische gegevens bijwerken](containers/container-insights-update-metrics.md): details bijgewerkt met betrekking tot gedrag en configuratie van scraping van metrische gegevens met Azure Red Hat OpenShift vergeleken met andere typen Kubernetes-clusters.
+- [Container Insights-agent gegevens verzameling configureren](containers/container-insights-agent-config.md) : Details toegevoegd voor het bijwerken van de agent op Azure Red Hat open Shift en aanvullende informatie is toegevoegd om de methoden voor het bijwerken van de agent te onderscheiden.
+- [Maak prestatie waarschuwingen voor container Insights](./containers/container-insights-log-alerts.md) : herziene informatie en bijgewerkte stappen voor het maken van een waarschuwing voor prestatie gegevens die in de werk ruimte zijn opgeslagen met behulp van de werk ruimte-context waarschuwingen.
+- [Kubernetes bewaking met container Insights](containers/container-insights-analyze.md) : het artikel overzicht en het artikel analyseren met betrekking tot ondersteuning van Windows Kubernetes-clusters bijgewerkt.
+- [Azure Red Hat open Shift-clusters configureren met container Insights](containers/container-insights-azure-redhat-setup.md) -Details toegevoegd voor het bijwerken van de agent op Azure Red Hat open Shift en extra informatie toevoegen om de methoden voor het bijwerken van de agent te onderscheiden.
+- [Configureer hybride Kubernetes-clusters met container Insights](containers/container-insights-hybrid-setup.md) -bijgewerkt om toegevoegde ondersteuning voor beveiligde poort: 10250 met de Kubelet-cAdvisor te weer spie gelen.
+- [Instructies voor het beheren van de container Insights-agent](containers/container-insights-manage-agent.md) -bijgewerkte details met betrekking tot gedrag en configuratie van metrische uitval met Azure Red Hat open Shift vergeleken met andere typen Kubernetes-clusters.
+- [Prometheus-integratie met container Insights configureren](containers/container-insights-prometheus-integration.md) -bijgewerkte details met betrekking tot gedrag en configuratie van metrische uitval tijd met Azure Red Hat open Shift vergeleken met andere typen Kubernetes-clusters.
+- [Container Insights bijwerken voor metrische](containers/container-insights-update-metrics.md) gegevens-bijgewerkte details met betrekking tot gedrag en configuratie van metrische uitval tijd met Azure Red Hat open Shift vergeleken met andere typen Kubernetes-clusters.
 
-#### <a name="azure-monitor-for-vms"></a>Azure Monitor voor virtuele machines
+#### <a name="vm-insights"></a>VM Insights
 
-- [Veelgestelde vragen over Azure Monitor voor VM's (GA)](vm/vminsights-ga-release-faq.md): informatie toegevoegd over upgrade van werkruimte en agents naar nieuwe versie.
+- [Veelgestelde vragen over VM Insights (ga)](vm/vminsights-ga-release-faq.md) : er is informatie toegevoegd over de upgrade van de werk ruimte en agents naar de nieuwe versie.
 
 #### <a name="office-365"></a>Office 365
 
@@ -860,10 +860,10 @@ Meerdere nieuwe artikelen voor conversiegids View Designer naar werkmappen.
 
 ### <a name="insights-and-solutions"></a>Inzicht en oplossingen
 
-- [Veelgestelde vragen over Azure Monitor voor containers](./faq.md): vraag toegevoegd over velden installatiekopie en naam.
+- [Veelgestelde vragen over container Insights](./faq.md) : er is een vraag toegevoegd over de velden afbeelding en naam.
 - [Azure SQL-analyseoplossing in Azure Monitor](insights/azure-sql.md): ondersteuning bijgewerkt voor database wacht op beheerd exemplaar.
-- [Gegevensverzameling agents Azure Monitor voor containers configureren](containers/container-insights-agent-config.md): instelling toegevoegd voor enrich_container_logs.
-- [Hybride Kubernetes-clusters configureren met Azure Monitor voor containers](containers/container-insights-hybrid-setup.md): sectie probleemoplossing toegevoegd.
+- [Container Insights-agent voor het verzamelen van gegevens configureren](containers/container-insights-agent-config.md) : toegevoegde instelling voor enrich_container_logs.
+- [Configureer hybride Kubernetes-clusters met container Insights](containers/container-insights-hybrid-setup.md) -toegevoegde probleemoplossings sectie.
 - [Active Directory-replicatiestatus bewaken met Azure Monitor](insights/ad-replication-status.md): vereisten .NET Framework bijgewerkt.
 - [Netwerkprestatiemeter-oplossing in Azure](insights/network-performance-monitor.md): ondersteunde regio's bijgewerkt.
 - [Active Directory-omgeving optimaliseren met Azure Monitor](insights/ad-assessment.md): vereisten .NET Framework bijgewerkt.

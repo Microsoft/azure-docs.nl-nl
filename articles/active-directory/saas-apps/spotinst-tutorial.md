@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/03/2020
 ms.author: jeedes
-ms.openlocfilehash: d9c9ac87e655cf9178d58f04b502f7e781d1fef7
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.openlocfilehash: 402b5a975b3ded8327edcea81b680e9990bac39e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96181404"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686560"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-spotinst"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Spotinst
 
@@ -171,9 +171,9 @@ Het doel van dit gedeelte is het maken van een gebruiker met de naam van Britta 
 
     ![Schermopname van de sectie Gebruiker toevoegen waarin u de beschreven waarden kunt invoeren.](./media/spotinst-tutorial/adduser2.png)
 
-    * Voer in het tekstvak **Volledige naam** de volledige naam van de gebruiker in, bijvoorbeeld **BrittaSimon**.
+    * Voer in het tekstvak **volledige naam** de volledige naam van de gebruiker in `BrittaSimon` .
 
-    * Voer in het tekstvak **E-mail** het e-mailadres van de gebruiker in, bijvoorbeeld `brittasimon\@contoso.com`.
+    * Voer in het tekstvak **E-mail** het e-mailadres van de gebruiker in, bijvoorbeeld `brittasimon@contoso.com`.
 
     * Selecteer de organisatie-specifieke gegevens voor de **Organisatierol, de Account-rol en Accounts**.
 

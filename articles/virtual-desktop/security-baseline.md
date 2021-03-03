@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/25/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 42795e2dda6df24e656c9c06f6a9424bd9e4b5cb
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 393495dabb77a5d177c97d37313433bb00ce5a36
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101092979"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101726747"
 ---
 # <a name="azure-security-baseline-for-windows-virtual-desktop"></a>Azure-beveiligings basislijn voor Windows virtueel bureau blad
 
@@ -24,7 +24,7 @@ Voor een overzicht van de manier waarop Windows virtueel bureau blad volledig is
 
 ## <a name="network-security"></a>Netwerkbeveiliging
 
-*Zie [Azure Security Benchmark: netwerkbeveiliging](/azure/security/benchmarks/security-controls-v2-network-security) voor meer informatie.*
+*Zie [Azure Security Benchmark: netwerkbeveiliging](../security/benchmarks/security-controls-v2-network-security.md) voor meer informatie.*
 
 ### <a name="ns-1-implement-security-for-internal-traffic"></a>NS-1: beveiliging voor intern verkeer implementeren
 
@@ -64,7 +64,7 @@ Gebruik peering op virtueel netwerk om twee of meer virtuele netwerken in azure 
 
 - [Overzicht van Azure VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md) 
 
-- [Peering op virtueel netwerk](/azure/virtual-network/virtual-network-peering-overview)
+- [Peering op virtueel netwerk](../virtual-network/virtual-network-peering-overview.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -76,9 +76,9 @@ Gebruik peering op virtueel netwerk om twee of meer virtuele netwerken in azure 
 
 Virtueel bureau blad van Windows is niet bedoeld voor het uitvoeren van webtoepassingen. u hoeft geen extra instellingen te configureren of extra netwerk services te implementeren om deze te beveiligen tegen aanvallen van buitenaf in externe netwerken.
 
-- [Documentatie over Azure Firewall](/azure/firewall)
+- [Documentatie over Azure Firewall](../firewall/index.yml)
 
-- [Azure DDoS Protection Standard beheren met de Azure Portal](/azure/virtual-network/manage-ddos-protection) 
+- [Azure DDoS Protection Standard beheren met de Azure Portal](../ddos-protection/manage-ddos-protection.md) 
 
 - [Aanbevelingen voor Azure Security Center](../security-center/recommendations-reference.md#networking-recommendations)
 
@@ -116,7 +116,7 @@ Als u een wettelijke of andere vereiste hebt voor het gebruik van inbraak detect
 
 ## <a name="identity-management"></a>Identiteitsbeheer
 
-*Zie [Azure Security Benchmark: Identiteitsbeheer](/azure/security/benchmarks/security-controls-v2-identity-management) voor meer informatie.*
+*Zie [Azure Security Benchmark: Identiteitsbeheer](../security/benchmarks/security-controls-v2-identity-management.md) voor meer informatie.*
 
 ### <a name="im-1-standardize-azure-active-directory-as-the-central-identity-and-authentication-system"></a>IM-1: Azure Active Directory standaardiseren als het centrale identiteits--en verificatiesysteem
 
@@ -132,7 +132,7 @@ Azure AD biedt ondersteuning voor externe identiteiten waarmee gebruikers zonder
 
 - [Tenancy in Azure AD](../active-directory/develop/single-and-multi-tenant-apps.md)
 
-- [Externe ID-providers voor een toepassing gebruiken](/azure/active-directory/b2b/identity-providers)
+- [Externe ID-providers voor een toepassing gebruiken](../active-directory/external-identities/identity-providers.md)
 
 - [Wat is de id-beveiligingsscore in Azure AD?](../active-directory/fundamentals/identity-secure-score.md)
 
@@ -210,7 +210,7 @@ Deze gegevens bronnen kunnen worden geïntegreerd met Azure Monitor, Azure Senti
 
 - [Rapporten van activiteiten controleren in azure AD](../active-directory/reports-monitoring/concept-audit-logs.md)
 
-- [Riskante Azure AD-aanmeldingen weergeven](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Riskante Azure AD-aanmeldingen weergeven](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Waarschuwingen in de module Threat Intelligence Protection van Azure Security Center](../security-center/alerts-reference.md)
 
@@ -240,7 +240,7 @@ Daarnaast kan een gedetailleerd beheer beleid voor verificatie sessies ook worde
 
 ## <a name="privileged-access"></a>Bevoegde toegang
 
-*Zie [Azure Security Benchmark: uitgebreide toegang](/azure/security/benchmarks/security-controls-v2-privileged-access) voor meer informatie.*
+*Zie [Azure Security Benchmark: uitgebreide toegang](../security/benchmarks/security-controls-v2-privileged-access.md) voor meer informatie.*
 
 ### <a name="pa-2-restrict-administrative-access-to-business-critical-systems"></a>PA-2: Beheerderstoegang tot essentiële bedrijfssystemen beperken
 
@@ -286,7 +286,7 @@ Sommige Azure-Services ondersteunen lokale gebruikers en rollen die niet worden 
 
 Zorg ervoor dat de referenties (zoals wachtwoord, certificaat of smartcard) voor accounts voor noodtoegang veilig worden bewaard en alleen bekend zijn bij personen die deze alleen in een noodgeval mogen gebruiken.
 
-- [Accounts voor noodtoegang beheren in Azure AD](/azure/active-directory/users-groups-roles/directory-emergency-access)
+- [Accounts voor noodtoegang beheren in Azure AD](../active-directory/roles/security-emergency-access.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -312,7 +312,7 @@ Gebruik Azure Active Directory (Azure AD), micro soft Defender Advanced Threat P
 
 - [Meer informatie over privileged Access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/) 
 
-- [Een werkstation met uitgebreide toegang gebruiken](/azure/active-directory/devices/howto-azure-managed-workstation)
+- [Een werkstation met uitgebreide toegang gebruiken](/security/compass/privileged-access-deployment)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -350,7 +350,7 @@ Daarnaast kunt u ingebouwde rollen gebruiken om machtigingen toe te wijzen en al
 
 ## <a name="data-protection"></a>Gegevensbeveiliging
 
-*Zie [Azure Security Benchmark: gegevensbescherming](/azure/security/benchmarks/security-controls-v2-data-protection) voor meer informatie.*
+*Zie [Azure Security Benchmark: gegevensbescherming](../security/benchmarks/security-controls-v2-data-protection.md) voor meer informatie.*
 
 ### <a name="dp-1-discovery-classify-and-label-sensitive-data"></a>DP-1: Detectie, classificatie en labeling van gevoelige gegevens
 
@@ -362,7 +362,7 @@ U kunt Azure SQL Information Protection gebruiken bij het classificeren en label
 
 - [Gevoelige gegevens labelen met Azure Information Protection](/azure/information-protection/what-is-information-protection) 
 
-- [Azure SQL-gegevensdetectie implementeren](/azure/sql-database/sql-database-data-discovery-and-classification)
+- [Azure SQL-gegevensdetectie implementeren](../azure-sql/database/data-discovery-and-classification-overview.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -396,7 +396,7 @@ Gebruik oplossingen voor preventie van gegevens verlies, zoals de hosts, om dete
 
 - [Azure SQL ATP inschakelen](../azure-sql/database/threat-detection-overview.md) 
 
-- [Azure Storage ATP inschakelen](https://docs.microsoft.com/azure/storage/common/storage-advanced-threat-protection?tabs=azure-security-center)
+- [Azure Storage ATP inschakelen](../storage/common/azure-defender-storage-configure.md?tabs=azure-security-center)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -404,7 +404,7 @@ Gebruik oplossingen voor preventie van gegevens verlies, zoals de hosts, om dete
 
 ## <a name="asset-management"></a>Asset-management
 
-*Zie [Azure Security Benchmark: assetmanagement](/azure/security/benchmarks/security-controls-v2-asset-management) voor meer informatie.*
+*Zie [Azure Security Benchmark: assetmanagement](../security/benchmarks/security-controls-v2-asset-management.md) voor meer informatie.*
 
 ### <a name="am-1-ensure-security-team-has-visibility-into-risks-for-assets"></a>AM-1: Beveiligingsteam inzicht geven in risico's voor assets
 
@@ -434,7 +434,7 @@ Gebruik Azure virtual machine Inventory om het verzamelen van informatie over so
 
 - [Azure Security Center Asset Inventory Management](../security-center/asset-inventory.md) 
 
-- [Handleiding voor beslissingen over taggen en naamgeving voor resources](https://docs.microsoft.com/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json)
+- [Handleiding voor beslissingen over taggen en naamgeving voor resources](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%2fazure%2fazure-resource-manager%2fmanagement%2ftoc.json)
 
 - [Inventarisatie van virtuele Azure-machines inschakelen](../automation/automation-tutorial-installed-software.md)
 
@@ -488,7 +488,7 @@ Het is raadzaam dat de klant een proces maakt om het kenmerk en de wijzigingen i
 
 ## <a name="logging-and-threat-detection"></a>Logboekregistratie en detectie van bedreigingen
 
-*Zie [Azure Security Benchmark: logboekregistratie en detectie van bedreigingen](/azure/security/benchmarks/security-controls-v2-logging-threat-detection) voor meer informatie.*
+*Zie [Azure Security Benchmark: logboekregistratie en detectie van bedreigingen](../security/benchmarks/security-controls-v2-logging-threat-detection.md) voor meer informatie.*
 
 ### <a name="lt-1-enable-threat-detection-for-azure-resources"></a>LT-1: detectie van bedreigingen inschakelen voor Azure-resources
 
@@ -496,7 +496,7 @@ Het is raadzaam dat de klant een proces maakt om het kenmerk en de wijzigingen i
 
 Door sturen van alle logboeken van virtueel bureau blad van Windows naar uw SIEM-oplossing (Security Information Event Management) die kan worden gebruikt om aangepaste bedreigings detecties in te stellen. Zorg ervoor dat u verschillende typen Azure-assets bewaakt voor mogelijke dreigingen en afwijkingen. Richt u op het ophalen van waarschuwingen met hoge kwaliteit om te voor komen dat de fout-positieven worden gereduceerd. Waarschuwingen kunnen worden gebrond op basis van logboek gegevens, agents of andere gegevens.
 
-- [Bescherming tegen bedreiging in Azure Security Center](/azure/security-center/threat-protection) 
+- [Bescherming tegen bedreiging in Azure Security Center](../security-center/azure-defender.md) 
 
 - [Naslag Gids voor beveiligings waarschuwingen Azure Security Center](../security-center/alerts-reference.md)
 
@@ -526,7 +526,7 @@ Azure Security Center kunt ook waarschuwen voor bepaalde verdachte activiteiten,
 
 - [Azure AD Identity Protection inschakelen](../active-directory/identity-protection/overview-identity-protection.md) 
 
-- [Bescherming tegen bedreiging in Azure Security Center](/azure/security-center/threat-protection)
+- [Bescherming tegen bedreiging in Azure Security Center](../security-center/azure-defender.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -540,7 +540,7 @@ De resource-en stroom logboeken van de netwerk beveiligings groep inschakelen en
 
 - [Stroom logboeken van netwerk beveiligings groepen inschakelen](../network-watcher/network-watcher-nsg-flow-logging-portal.md) 
 
-- [Azure Firewall-logboeken en metrische gegevens](/azure/firewall/logs-and-metrics) 
+- [Azure Firewall-logboeken en metrische gegevens](../firewall/logs-and-metrics.md) 
 
 - [Traffic Analytics inschakelen en gebruiken](../network-watcher/traffic-analytics.md) 
 
@@ -554,9 +554,9 @@ De resource-en stroom logboeken van de netwerk beveiligings groep inschakelen en
 
 **Hulp**: activiteiten logboeken, die automatisch worden ingeschakeld, bevatten alle schrijf bewerkingen (put, post, Delete) voor uw virtuele bureau blad-resources van Windows, met uitzonde ring van Lees bewerkingen (Get). Activiteiten logboeken kunnen worden gebruikt om een fout te vinden bij het oplossen van problemen of om te controleren hoe een gebruiker in uw organisatie een resource heeft gewijzigd.
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/platform/platform-logs-overview.md)
+- [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/essentials/platform-logs-overview.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -570,7 +570,7 @@ Zorg ervoor dat u Azure-activiteiten logboeken integreert in uw centrale logboek
 
 Daarnaast kunt u gegevens inschakelen en vrijgeven aan Azure Sentinel of een SIEM (Security Information Event Management) van derden. Veel organisaties kiezen voor het gebruik van Azure Sentinel voor ' hot ' gegevens die regel matig worden gebruikt en die worden Azure Storage voor ' koude ' gegevens die minder vaak worden gebruikt.
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -580,7 +580,7 @@ Daarnaast kunt u gegevens inschakelen en vrijgeven aan Azure Sentinel of een SIE
 
 ## <a name="incident-response"></a>Reageren op incidenten
 
-*Zie [Azure Security Benchmark: respons op incidenten](/azure/security/benchmarks/security-controls-v2-incident-response) voor meer informatie.*
+*Zie [Azure Security Benchmark: respons op incidenten](../security/benchmarks/security-controls-v2-incident-response.md) voor meer informatie.*
 
 ### <a name="ir-1-preparation--update-incident-response-process-for-azure"></a>IR-1: Voorbereiding: responsproces voor incidenten bijwerken voor Azure
 
@@ -662,7 +662,7 @@ Daarnaast kunt u resources markeren met behulp van tags en een naamgevingssystee
 
 - [Beveiligingswaarschuwingen in Azure Security Center](../security-center/security-center-alerts-overview.md)
 
-- [Tags gebruiken om Azure-resources te organiseren](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags gebruiken om Azure-resources te organiseren](../azure-resource-manager/management/tag-resources.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -684,7 +684,7 @@ Daarnaast kunt u resources markeren met behulp van tags en een naamgevingssystee
 
 ## <a name="posture-and-vulnerability-management"></a>Beveiligingspostuur en beveiligingsproblemen beheren
 
-*Zie [Azure Security Benchmark: beveiligingspostuur en beveiligingsproblemen beheren](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management) voor meer informatie.*
+*Zie [Azure Security Benchmark: beveiligingspostuur en beveiligingsproblemen beheren](../security/benchmarks/security-controls-v2-posture-vulnerability-management.md) voor meer informatie.*
 
 ### <a name="pv-3-establish-secure-configurations-for-compute-resources"></a>PV-3: veilige configuraties voor reken bronnen instellen
 
@@ -710,7 +710,7 @@ Azure Marketplace-installatie kopieën voor virtuele machines die door micro sof
 
 Azure Security Center kunt ook beveiligings problemen in container installatie kopie scannen en doorlopende bewaking uitvoeren van uw docker-configuratie in containers op basis van de docker-Bench Mark van het Internet beveiligings centrum. U kunt de pagina aanbevelingen voor Azure Security Center gebruiken om aanbevelingen te bekijken en problemen op te lossen.
 
-- [Aanbevelingen voor de evaluatie van Azure Security Center-beveiligings problemen implementeren](/azure/security-center/security-center-vulnerability-assessment-recommendations) 
+- [Aanbevelingen voor de evaluatie van Azure Security Center-beveiligings problemen implementeren](../security-center/deploy-vulnerability-assessment-vm.md) 
 
 - [Een virtuele Azure-machine maken op basis van een ARM-sjabloon](../virtual-machines/windows/ps-template.md) 
 
@@ -730,7 +730,7 @@ Azure Security Center kunt ook beveiligings problemen in container installatie k
 
 - [Azure RBAC configureren](../role-based-access-control/quickstart-assign-role-user-portal.md) 
 
-- [Overzicht van Galerie gedeelde afbeeldingen](/azure/virtual-machines/windows/shared-image-galleries)
+- [Overzicht van Galerie gedeelde afbeeldingen](../virtual-machines/shared-image-galleries.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -748,9 +748,9 @@ Volg de aanbevelingen van Azure Security Center voor het uitvoeren van evaluatie
 
 Zoals vereist, worden scan resultaten consistent door lopen en worden de resultaten vergeleken met de vorige scans om te controleren of beveiligings problemen zijn opgelost. Wanneer u aanbevelingen voor beveiligings beheer gebruikt die worden voorgesteld door Azure Security Center, kunt u in de portal van de geselecteerde oplossing draaien om historische scan gegevens weer te geven.
 
-- [Aanbevelingen voor de evaluatie van Azure Security Center-beveiligings problemen implementeren](/azure/security-center/security-center-vulnerability-assessment-recommendations) 
+- [Aanbevelingen voor de evaluatie van Azure Security Center-beveiligings problemen implementeren](../security-center/deploy-vulnerability-assessment-vm.md) 
 
-- [Geïntegreerde scanner voor beveiligings problemen voor virtuele machines](/azure/security-center/built-in-vulnerability-assessment) 
+- [Geïntegreerde scanner voor beveiligings problemen voor virtuele machines](../security-center/deploy-vulnerability-assessment-vm.md) 
 - [Evaluatie van SQL-beveiligings problemen](../azure-sql/database/sql-vulnerability-assessment.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
@@ -765,9 +765,9 @@ Gebruik Azure Automation Updatebeheer of een oplossing van derden om ervoor te z
 
 Gebruik een patch beheer oplossing van derden voor software van derden of System Center Updates Publisher voor Configuration Manager.
 
-- [Updatebeheer configureren voor virtuele machines in azure](/azure/automation/update-management/overview) 
+- [Updatebeheer configureren voor virtuele machines in azure](../automation/update-management/overview.md) 
 
-- [Updates en patches voor uw Azure-VM's beheren](/azure/automation/update-management/manage-updates-for-vm)
+- [Updates en patches voor uw Azure-VM's beheren](../automation/update-management/manage-updates-for-vm.md)
 
 - [Micro soft endpoint Configuration Manager configureren voor virtueel bureau blad van Windows](configure-automatic-updates.md)
 
@@ -785,7 +785,7 @@ Gebruik een patch beheer oplossing van derden voor software van derden of System
 
 ## <a name="endpoint-security"></a>Endpoint Security
 
-*Zie [Azure Security Bench Mark: Endpoint Security](/azure/security/benchmarks/security-controls-v2-endpoint-security)(Engelstalig) voor meer informatie.*
+*Zie [Azure Security Bench Mark: Endpoint Security](../security/benchmarks/security-controls-v2-endpoint-security.md)(Engelstalig) voor meer informatie.*
 
 ### <a name="es-1-use-endpoint-detection-and-response-edr"></a>ES-1: eindpunt detectie en-antwoord gebruiken (EDR)
 
@@ -817,7 +817,7 @@ Micro soft antimalware voor Azure Cloud Services is de standaard anti-malware vo
 
 - [Micro soft antimalware configureren voor Cloud Services en Virtual Machines](../security/fundamentals/antimalware.md) 
 
-- [Ondersteunde Endpoint Protection-oplossingen](https://docs.microsoft.com/azure/security-center/security-center-services?tabs=features-windows#supported-endpoint-protection-solutions)
+- [Ondersteunde Endpoint Protection-oplossingen](../security-center/security-center-services.md?tabs=features-windows#supported-endpoint-protection-solutions-)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -841,7 +841,7 @@ Micro soft antimalware installeert standaard automatisch de nieuwste hand tekeni
 
 ## <a name="backup-and-recovery"></a>Back-up en herstel
 
-*Zie [Azure Security Benchmark: back-up en herstel](/azure/security/benchmarks/security-controls-v2-backup-recovery) voor meer informatie.*
+*Zie [Azure Security Benchmark: back-up en herstel](../security/benchmarks/security-controls-v2-backup-recovery.md) voor meer informatie.*
 
 ### <a name="br-1-ensure-regular-automated-backups"></a>BR-1: controleren op regel matige automatische back-ups
 
@@ -853,9 +853,9 @@ Voor een hoger redundantie niveau kunt u geografisch redundante opslag optie ins
 
 - [Bedrijfscontinuïteit en herstel na noodgevallen](/azure/cloud-adoption-framework/ready/enterprise-scale/business-continuity-and-disaster-recovery) 
 
-- [Azure Backup inschakelen](/azure/backup/) 
+- [Azure Backup inschakelen](../backup/index.yml) 
 
-- [Hoe kan ik herstellen naar een andere regio instellen?](/azure/backup/backup-azure-arm-restore-vms#cross-region-restore) 
+- [Hoe kan ik herstellen naar een andere regio instellen?](../backup/backup-azure-arm-restore-vms.md#cross-region-restore) 
 
 - [Een plan voor bedrijfs continuïteit en herstel na nood gevallen instellen in het virtuele bureau blad van Windows](disaster-recovery.md)
 
@@ -873,11 +873,11 @@ Gebruik op rollen gebaseerd toegangs beheer in Azure Backup, Azure Key Vault of 
 
 Overzicht van beveiligings functies in Azure Backup/Azure/backup/Security-Overview 
 
-- [Versleuteling van back-upgegevens met door de klant beheerde sleutels](/azure/backup/encryption-at-rest-with-cmk) 
+- [Versleuteling van back-upgegevens met door de klant beheerde sleutels](../backup/encryption-at-rest-with-cmk.md) 
 
-- [Back-ups maken van Key Vault sleutels in azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0&amp;preserve-view=true)
+- [Back-ups maken van Key Vault sleutels in azure](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?preserve-view=true&view=azurermps-6.13.0)
 
-- [Beveiligings functies voor het beveiligen van hybride back-ups van aanvallen](/azure/backup/backup-azure-security-feature#prevent-attacks)
+- [Beveiligings functies voor het beveiligen van hybride back-ups van aanvallen](../backup/backup-azure-security-feature.md#prevent-attacks)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -887,9 +887,9 @@ Overzicht van beveiligings functies in Azure Backup/Azure/backup/Security-Overvi
 
 **Hulp**: het wordt aangeraden de gegevens integriteit op back-upmedia regel matig te valideren door een herstel proces voor gegevens uit te voeren om ervoor te zorgen dat de back-up correct werkt.
 
-- [Bestanden herstellen vanuit back-up van Azure virtual machine](/azure/backup/backup-azure-restore-files-from-vm)
+- [Bestanden herstellen vanuit back-up van Azure virtual machine](../backup/backup-azure-restore-files-from-vm.md)
 
-- [Beveiligings implementatie](/azure/backup/backup-azure-restore-files-from-vm#security-implementations)
+- [Beveiligings implementatie](../backup/backup-azure-restore-files-from-vm.md#security-implementations)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -897,7 +897,7 @@ Overzicht van beveiligings functies in Azure Backup/Azure/backup/Security-Overvi
 
 ## <a name="governance-and-strategy"></a>Governance en strategie
 
-*Zie [Azure Security Benchmark: governance en strategie](/azure/security/benchmarks/security-controls-v2-governance-strategy).*
+*Zie [Azure Security Benchmark: governance en strategie](../security/benchmarks/security-controls-v2-governance-strategy.md).*
 
 ### <a name="gs-1-define-asset-management-and-data-protection-strategy"></a>GS-1: Strategie voor asset-management en gegevensbescherming definiëren 
 
@@ -922,15 +922,15 @@ Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten 
 -   Juiste cryptografische standaarden
 
 Raadpleeg de volgende bronnen voor meer informatie:
-- [Azure Security Architecture Recommendation - Storage, data, and encryption](https://docs.microsoft.com/azure/architecture/framework/security/storage-data-encryption?toc=/security/compass/toc.json&amp;bc=/security/compass/breadcrumb/toc.json) (Aanbeveling voor Azure-beveiligingsarchitectuur: opslag, gegevens en versleuteling)
+- [Azure Security Architecture Recommendation - Storage, data, and encryption](/azure/architecture/framework/security/storage-data-encryption?bc=%2fsecurity%2fcompass%2fbreadcrumb%2ftoc.json&toc=%2fsecurity%2fcompass%2ftoc.json) (Aanbeveling voor Azure-beveiligingsarchitectuur: opslag, gegevens en versleuteling)
 
 - [Azure Security Fundamentals - Azure Data security, encryption, and storage](../security/fundamentals/encryption-overview.md) (Basisprincipes van Azure-beveiliging: Azure-gegevensbeveiliging, -versleuteling en -opslag)
 
-- [Cloud Adoption Framework - Azure data security and encryption best practices](https://docs.microsoft.com/azure/security/fundamentals/data-encryption-best-practices?toc=/azure/cloud-adoption-framework/toc.json&amp;bc=/azure/cloud-adoption-framework/_bread/toc.json) (Cloud Adoption Framework: best practices voor Azure-gegevensbeveiliging en -versleuteling)
+- [Cloud Adoption Framework - Azure data security and encryption best practices](../security/fundamentals/data-encryption-best-practices.md?bc=%2fazure%2fcloud-adoption-framework%2f_bread%2ftoc.json&toc=%2fazure%2fcloud-adoption-framework%2ftoc.json) (Cloud Adoption Framework: best practices voor Azure-gegevensbeveiliging en -versleuteling)
 
-- [Azure Security Benchmark - Asset management](/azure/security/benchmarks/security-controls-v2-asset-management) (Azure Security Benchmark: assetmanagement)
+- [Azure Security Benchmark - Asset management](../security/benchmarks/security-controls-v2-asset-management.md) (Azure Security Benchmark: assetmanagement)
 
-- [Azure Security Benchmark - Data Protection](/azure/security/benchmarks/security-controls-v2-data-protection) (Azure Security Benchmark: gegevensbeveiliging)
+- [Azure Security Benchmark - Data Protection](../security/benchmarks/security-controls-v2-data-protection.md) (Azure Security Benchmark: gegevensbeveiliging)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -958,7 +958,7 @@ Zorg ervoor dat de segmentatiestrategie consistent wordt geïmplementeerd voor a
 
 **Richtlijnen**: Meet en beperk voortdurend de risico's die alle individuele assets en de omgeving die ze hosten, lopen. Ken hogere prioriteiten toe aan hoogwaardige assets en assets die zeer kwetsbaar zijn voor aanvallen, zoals gepubliceerde toepassingen, punten voor binnenkomend en uitgaand netwerkverkeer, gebruikers- en beheerderseindpunten enzovoort.
 
-- [Azure Security Benchmark: beveiligingspostuur en beveiligingsproblemen beheren](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management)
+- [Azure Security Benchmark: beveiligingspostuur en beveiligingsproblemen beheren](../security/benchmarks/security-controls-v2-posture-vulnerability-management.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -999,7 +999,7 @@ Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten 
 Raadpleeg de volgende bronnen voor meer informatie:
 - [Azure Security Best Practice 11: architectuur. Eén uniforme beveiligingsstrategie](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
-- [Azure Security Benchmark: netwerkbeveiliging](/azure/security/benchmarks/security-controls-v2-network-security)
+- [Azure Security Benchmark: netwerkbeveiliging](../security/benchmarks/security-controls-v2-network-security.md)
 
 - [Overzicht van Azure-netwerkbeveiliging](../security/fundamentals/network-overview.md)
 
@@ -1027,9 +1027,9 @@ Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten 
 
 Raadpleeg de volgende bronnen voor meer informatie:
 
-- [Azure Security Benchmark: Identity management](/azure/automation/update-management/overview) (Azure Security Benchmark: identiteitsbeheer)
+- [Azure Security Benchmark: Identity management](../automation/update-management/overview.md) (Azure Security Benchmark: identiteitsbeheer)
 
-- [Azure Security Benchmark - Privileged access](/azure/security/benchmarks/security-controls-v2-privileged-access) (Azure Security Benchmark: uitgebreide toegang)
+- [Azure Security Benchmark - Privileged access](../security/benchmarks/security-controls-v2-privileged-access.md) (Azure Security Benchmark: uitgebreide toegang)
 
 - [Azure Security Best Practice 11: architectuur. Eén uniforme beveiligingsstrategie](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
@@ -1061,9 +1061,9 @@ Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten 
 
 Raadpleeg de volgende bronnen voor meer informatie:
 
-- [Azure Security Benchmark: logboekregistratie en detectie van bedreigingen](/azure/security/benchmarks/security-controls-v2-logging-threat-detection)
+- [Azure Security Benchmark: logboekregistratie en detectie van bedreigingen](../security/benchmarks/security-controls-v2-logging-threat-detection.md)
 
-- [Azure Security Benchmark: respons op incidenten](/azure/security/benchmarks/security-controls-v2-incident-response)
+- [Azure Security Benchmark: respons op incidenten](../security/benchmarks/security-controls-v2-incident-response.md)
 
 - [Azure Security Best Practice 4: proces. Processen voor respons op incidenten bijwerken voor de cloud](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
 
@@ -1077,5 +1077,5 @@ Raadpleeg de volgende bronnen voor meer informatie:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

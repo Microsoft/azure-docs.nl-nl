@@ -12,16 +12,16 @@ ms.date: 02/15/2021
 ms.author: lajanuar
 ms.custom: cog-serv-seo-aug-2020
 keywords: translator, tekstvertaling, machine translation, vertaalservice
-ms.openlocfilehash: 12f6d22f263747a8c43b2d98e6ade1de78aea1ce
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 72df700d38cad3ee31ef438d7df1c890acde9e6b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100556255"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101727971"
 ---
 # <a name="what-is-the-translator-service"></a>Wat is de Translator-service?
 
-Translator is een cloudservice voor automatische vertaling en maakt deel uit van de [Azure Cognitive Services](../../index.yml?panel=ai&pivot=products)-familie van cognitieve API's voor het bouwen van intelligente apps. Translator is eenvoudig in uw toepassingen, websites, hulpprogramma's en oplossingen te integreren. U kunt meertalige gebruikers ervaringen toevoegen in [meer dan 70 talen](./language-support.md). En kan worden gebruikt op elk platform met elk besturings systeem voor tekst vertaling.
+Translator is een cloudservice voor automatische vertaling en maakt deel uit van de [Azure Cognitive Services](../../index.yml?panel=ai&pivot=products)-familie van cognitieve API's voor het bouwen van intelligente apps. Translator is eenvoudig in uw toepassingen, websites, hulpprogramma's en oplossingen te integreren. Hiermee kunt u meertalige gebruikers ervaringen toevoegen in [90 talen en dialecten](./language-support.md). En kan worden gebruikt op elk platform met elk besturings systeem voor tekst vertaling.
 
 ## <a name="about-microsoft-translator"></a>Over Microsoft Translator
 

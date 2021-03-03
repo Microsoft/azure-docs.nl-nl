@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/09/2020
 ms.author: duau
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 7a482e268137946222f1c8b427424598bd78f935
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
-ms.translationtype: HT
+ms.openlocfilehash: 2c56e847e3b112d50285cd2c116c8f22efbc507f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92735091"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101715527"
 ---
 # <a name="tutorial-create-and-modify-peering-for-an-expressroute-circuit-using-cli"></a>Zelfstudie: Peering voor een ExpressRoute-circuit maken en wijzigen met CLI
 
@@ -49,7 +49,7 @@ U kunt persoonlijke peering en Microsoft-peering configureren voor een ExpressRo
 Deze sectie helpt u bij het maken, verkrijgen, bijwerken en verwijderen van de configuratie voor Microsoft-peering voor een ExpressRoute-circuit.
 
 > [!IMPORTANT]
-> Microsoft-peering van ExpressRoute-circuits die zijn geconfigureerd vóór 1 augustus 2017, heeft alle servicevoorvoegsels die worden geadverteerd via de Microsoft-peering, zelfs als er geen routefilters zijn gedefinieerd. Microsoft-peering van ExpressRoute-circuits die zijn geconfigureerd op of na 1 augustus 2017, heeft geen voorvoegsels die worden geadverteerd totdat een routefilter aan het circuit is gekoppeld. Zie [Een routefilter configureren voor Microsoft-peering](how-to-routefilter-powershell.md) voor meer informatie.
+> Microsoft-peering voor ExpressRoute-circuits die zijn geconfigureerd vóór 1 augustus 2017, heeft alle servicevoorvoegsels die worden geadverteerd via de Microsoft-peering, zelfs als er geen routefilters zijn gedefinieerd. Microsoft-peering voor ExpressRoute-circuits die zijn geconfigureerd op of na 1 augustus 2017, heeft geen voorvoegsels die worden geadverteerd totdat een routefilter aan het circuit is gekoppeld. Zie [Een routefilter configureren voor Microsoft-peering](how-to-routefilter-powershell.md) voor meer informatie.
 > 
 
 
@@ -69,7 +69,7 @@ Deze sectie helpt u bij het maken, verkrijgen, bijwerken en verwijderen van de c
 
 1. Maak een ExpressRoute-circuit. Volg de instructies voor het [maken van een ExpressRoute-circuit](howto-circuit-cli.md) en laat het circuit inrichten door de connectiviteitsprovider. Als uw connectiviteitsprovider beheerde Laag-3-services biedt, kunt u de connectiviteitsprovider vragen om Microsoft-peering voor u in te schakelen. In dat geval hoeft u de instructies in de volgende secties niet te volgen. Als u het circuit hebt gemaakt en uw connectiviteitsprovider routering niet voor u beheert, gaat u verder met de volgende configuratiestappen. 
 
-1. Controleer of het ExpressRoute-circuit is ingericht en ook is ingeschakeld. Gebruik het volgende voorbeeld:
+1. Controleer of het ExpressRoute-circuit is ingericht en ingeschakeld. Gebruik het volgende voorbeeld:
 
    ```azurecli
    az network express-route list
@@ -106,7 +106,7 @@ Deze sectie helpt u bij het maken, verkrijgen, bijwerken en verwijderen van de c
    "type": "Microsoft.Network/expressRouteCircuits]
    ```
 
-4. Configureer Microsoft-peering voor het circuit. Zorg ervoor dat u over de volgende informatie beschikt voordat u verder gaat.
+4. Configureer Microsoft-peering voor het circuit. Zorg ervoor dat u over de volgende informatie beschikt voordat u verdergaat.
 
    * Een /30-subnet voor de primaire koppeling. Het adresblok moet een geldig openbaar IPv4-voorvoegsel zijn waarvan u eigenaar bent en dat is geregistreerd in een RIR/IRR.
    * Een /30-subnet voor de secundaire koppeling. Het adresblok moet een geldig openbaar IPv4-voorvoegsel zijn waarvan u eigenaar bent en dat is geregistreerd in een RIR/IRR.
@@ -204,7 +204,7 @@ Deze sectie helpt u bij het maken, verkrijgen, bijwerken en verwijderen van de c
    ```
 1. Maak een ExpressRoute-circuit. Volg de instructies voor het [maken van een ExpressRoute-circuit](howto-circuit-cli.md) en laat het circuit inrichten door de connectiviteitsprovider. Als uw connectiviteitsprovider beheerde Laag-3-services biedt, kunt u de connectiviteitsprovider vragen om persoonlijke Azure-peering voor u in te schakelen. In dat geval hoeft u de instructies in de volgende secties niet te volgen. Als u het circuit hebt gemaakt en uw connectiviteitsprovider routering niet voor u beheert, gaat u verder met de volgende configuratiestappen.
 
-1. Controleer of het ExpressRoute-circuit is ingericht en ook is ingeschakeld. Gebruik het volgende voorbeeld:
+1. Controleer of het ExpressRoute-circuit is ingericht en ingeschakeld. Gebruik het volgende voorbeeld:
 
    ```azurecli
    az network express-route show --resource-group ExpressRouteResourceGroup --name MyCircuit
@@ -243,8 +243,10 @@ Deze sectie helpt u bij het maken, verkrijgen, bijwerken en verwijderen van de c
 
 1. Configureer persoonlijke Azure-peering voor het circuit. Zorg ervoor dat u de volgende items hebt voordat u verdergaat met de volgende stappen:
 
-   * Een /30-subnet voor de primaire koppeling. Het subnet mag geen deel uitmaken van een adresruimte die is gereserveerd voor virtuele netwerken.
-   * Een /30-subnet voor de secundaire koppeling. Het subnet mag geen deel uitmaken van een adresruimte die is gereserveerd voor virtuele netwerken.
+   * Een paar subnetten die geen deel uitmaken van een adres ruimte die is gereserveerd voor virtuele netwerken. Eén /30-subnet wordt gebruikt voor de primaire koppeling en het andere wordt gebruikt voor de secundaire koppeling. Vanuit deze subnetten wijst u het eerste bruikbare IP-adres toe aan uw router, aangezien Microsoft de tweede bruikbare IP voor de eigen router gebruikt. Er zijn drie opties voor dit paar subnetten:
+       * IPv4: twee/30 subnetten.
+       * IPv6: twee/126 subnetten.
+       * Beide: twee/30 subnetten en twee/126 subnetten.
    * Een geldige VLAN-id waarop u deze peering wilt instellen. Controleer of er geen andere peering in het circuit is die dezelfde VLAN-id gebruikt.
    * AS-nummer voor peering. U kunt 2-bytes en 4-bytes AS-nummers gebruiken. U kunt een persoonlijk AS-nummer voor deze peering gebruiken. Gebruik niet 65515.
    * **Optioneel -** Een MD5-hash, als u er een wilt gebruiken.

@@ -6,16 +6,16 @@ ms.reviewer: estfan, logicappspm, azla
 ms.topic: how-to
 ms.custom: subject-cost-optimization
 ms.date: 01/29/2021
-ms.openlocfilehash: 58e12862cf00b500bced105d67fede8599c2a257
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 44351497ed58c8d49404c094f6800b52186edabb
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99180452"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101709628"
 ---
 # <a name="plan-and-manage-costs-for-azure-logic-apps"></a>Kosten plannen en beheren voor Azure Logic Apps
 
-Dit artikel helpt u bij het plannen en beheren van de kosten voor Azure Logic Apps. Voordat u resources maakt of toevoegt met behulp van deze service, kunt u een schatting maken van uw kosten met behulp van de Azure-prijs calculator. Nadat u Logic Apps-resources hebt gebruikt, kunt u budgetten instellen en kosten bewaken met behulp van [Azure Cost Management](https://docs.microsoft.com/azure/cost-management-billing/cost-management-billing-overview?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn). Als u gebieden wilt identificeren waar u mogelijk wilt handelen, kunt u ook prognose kosten bekijken en uitgaven trends bewaken.
+Dit artikel helpt u bij het plannen en beheren van de kosten voor Azure Logic Apps. Voordat u resources maakt of toevoegt met behulp van deze service, kunt u een schatting maken van uw kosten met behulp van de Azure-prijs calculator. Nadat u Logic Apps-resources hebt gebruikt, kunt u budgetten instellen en kosten bewaken met behulp van [Azure Cost Management](../cost-management-billing/cost-management-billing-overview.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn). Als u gebieden wilt identificeren waar u mogelijk wilt handelen, kunt u ook prognose kosten bekijken en uitgaven trends bewaken.
 
 Houd er rekening mee dat de kosten voor Logic Apps slechts een deel uitmaken van de maandelijkse kosten in uw Azure-factuur. Hoewel in dit artikel wordt uitgelegd hoe u de kosten voor Logic Apps kunt schatten en beheren, wordt u gefactureerd voor alle Azure-Services en-resources die worden gebruikt in uw Azure-abonnement, inclusief alle services van derden. Nadat u vertrouwd bent met het beheren van de kosten voor Logic Apps, kunt u soort gelijke methoden Toep assen om de kosten te beheren voor alle Azure-Services die in uw abonnement worden gebruikt.
 
@@ -23,9 +23,9 @@ Houd er rekening mee dat de kosten voor Logic Apps slechts een deel uitmaken van
 
 <!--Note for Azure service writer: This section covers prerequisites for the Cost Management's Cost Analysis feature. Add other prerequisites needed for your service after the Cost Management prerequisites. -->
 
-[Azure Cost Management](https://docs.microsoft.com/azure/cost-management-billing/cost-management-billing-overview?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) ondersteunt de meeste typen Azure-accounts. Zie [inzicht in cost management gegevens](https://docs.microsoft.com/azure/cost-management-billing/costs/understand-cost-mgt-data?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)om alle ondersteunde account typen weer te geven. Als u kostengegevens wilt weergeven, hebt u minimaal leestoegang voor uw Azure-account nodig.
+[Azure Cost Management](../cost-management-billing/cost-management-billing-overview.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) ondersteunt de meeste typen Azure-accounts. Zie [inzicht in cost management gegevens](../cost-management-billing/costs/understand-cost-mgt-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)om alle ondersteunde account typen weer te geven. Als u kostengegevens wilt weergeven, hebt u minimaal leestoegang voor uw Azure-account nodig.
 
-Zie [Toegang tot gegevens toewijzen](https://docs.microsoft.com/azure/cost-management/assign-access-acm-data?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) voor meer informatie over het toewijzen van toegang tot de gegevens in Azure Cost Management.
+Zie [Toegang tot gegevens toewijzen](../cost-management-billing/costs/assign-access-acm-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) voor meer informatie over het toewijzen van toegang tot de gegevens in Azure Cost Management.
 
 <!--Note for Azure service writer: If you have other prerequisites for your service, add them here -->
 
@@ -101,9 +101,9 @@ Voordat u resources maakt met Azure Logic Apps, kunt u de kosten schatten met be
 
 ## <a name="create-budgets-and-alerts"></a>Maak budgetten en waarschuwingen
 
-Om u te helpen de kosten voor uw Azure-account of-abonnement proactief te beheren, kunt u [budgetten](https://docs.microsoft.com/azure/cost-management/tutorial-acm-create-budgets?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) en [waarschuwingen](https://docs.microsoft.com/azure/cost-management/cost-mgt-alerts-monitor-usage-spending?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) maken met behulp van de [Azure Cost Management-en facturerings](https://docs.microsoft.com/azure/cost-management-billing/cost-management-billing-overview?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) service en-mogelijkheden.  Budgetten en waarschuwingen worden gemaakt voor Azure-abonnementen en-resource groepen, dus zijn ze nuttig als onderdeel van een strategie voor de kosten bewaking.
+Om u te helpen de kosten voor uw Azure-account of-abonnement proactief te beheren, kunt u [budgetten](../cost-management-billing/costs/tutorial-acm-create-budgets.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) en [waarschuwingen](../cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) maken met behulp van de [Azure Cost Management-en facturerings](../cost-management-billing/cost-management-billing-overview.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) service en-mogelijkheden.  Budgetten en waarschuwingen worden gemaakt voor Azure-abonnementen en-resource groepen, dus zijn ze nuttig als onderdeel van een strategie voor de kosten bewaking.
 
-Waarschuwingen die zijn gebaseerd op uitgaven vergeleken met budget-en kosten drempels, melden automatisch belanghebbenden over het uitgeven van afwijkingen en het overeden van Risico's. Als u meer granulatie wilt gebruiken in uw bewaking, kunt u ook budgetten maken die gebruikmaken van filters voor specifieke resources of services in Azure. Filters zorgen ervoor dat u niet per ongeluk nieuwe resources maakt die u extra geld kosten. Zie [groeps-en filter opties](https://docs.microsoft.com/azure/cost-management-billing/costs/group-filter?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)voor meer informatie over de filter opties.
+Waarschuwingen die zijn gebaseerd op uitgaven vergeleken met budget-en kosten drempels, melden automatisch belanghebbenden over het uitgeven van afwijkingen en het overeden van Risico's. Als u meer granulatie wilt gebruiken in uw bewaking, kunt u ook budgetten maken die gebruikmaken van filters voor specifieke resources of services in Azure. Filters zorgen ervoor dat u niet per ongeluk nieuwe resources maakt die u extra geld kosten. Zie [groeps-en filter opties](../cost-management-billing/costs/group-filter.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)voor meer informatie over de filter opties.
 
 <a name="monitor-costs"></a>
 
@@ -115,7 +115,7 @@ Nadat u de kosten hebt bespaard voor resources die in Azure worden gemaakt of ge
 
 * [Logische app-uitvoeringen en opslag verbruik bewaken](#monitor-billing-metrics) met behulp van Azure monitor
 
-* [Kosten analyse](https://docs.microsoft.com/azure/cost-management/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) uitvoeren met behulp van [Azure Cost Management en facturering](https://docs.microsoft.com/azure/cost-management-billing/cost-management-billing-overview?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
+* [Kosten analyse](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) uitvoeren met behulp van [Azure Cost Management en facturering](../cost-management-billing/cost-management-billing-overview.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
 
 <a name="monitor-billing-metrics"></a>
 
@@ -170,7 +170,7 @@ Met Azure Monitor kunt u deze metrische gegevens weer geven voor een specifieke 
 
 ### <a name="run-cost-analysis-by-using-azure-cost-management-and-billing"></a>Kosten analyse uitvoeren met behulp van Azure Cost Management en facturering
 
-Als u de kosten voor de Logic Apps-service wilt bekijken op basis van een bepaald bereik, bijvoorbeeld een Azure-abonnement, kunt u de [kosten analyse](https://docs.microsoft.com/azure/cost-management/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) mogelijkheden in [Azure Cost Management en facturering](https://docs.microsoft.com/azure/cost-management-billing/cost-management-billing-overview?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)gebruiken.
+Als u de kosten voor de Logic Apps-service wilt bekijken op basis van een bepaald bereik, bijvoorbeeld een Azure-abonnement, kunt u de [kosten analyse](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) mogelijkheden in [Azure Cost Management en facturering](../cost-management-billing/cost-management-billing-overview.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)gebruiken.
 
 1. Open in het Azure Portal het bereik dat u wilt, zoals uw Azure-abonnement. Selecteer in het linkermenu onder **Cost Management** **kosten analyse**.
 
@@ -197,7 +197,7 @@ Als u de kosten voor de Logic Apps-service wilt bekijken op basis van een bepaal
 
 ### <a name="export-cost-data"></a>Kostengegevens exporteren
 
-Als u meer gegevens analyse op kosten wilt uitvoeren, kunt u [kosten gegevens exporteren](https://docs.microsoft.com/azure/cost-management-billing/costs/tutorial-export-acm-data?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) naar een opslag account. Een financieel team kan deze gegevens bijvoorbeeld analyseren met Excel of Power BI. U kunt uw kosten op een dagelijks, wekelijks of maandelijks schema exporteren en een aangepast datum bereik instellen. Het exporteren van kosten gegevens is de aanbevolen manier om kosten sets op te halen.
+Als u meer gegevens analyse op kosten wilt uitvoeren, kunt u [kosten gegevens exporteren](../cost-management-billing/costs/tutorial-export-acm-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) naar een opslag account. Een financieel team kan deze gegevens bijvoorbeeld analyseren met Excel of Power BI. U kunt uw kosten op een dagelijks, wekelijks of maandelijks schema exporteren en een aangepast datum bereik instellen. Het exporteren van kosten gegevens is de aanbevolen manier om kosten sets op te halen.
 
 ## <a name="other-ways-to-manage-and-reduce-costs"></a>Andere manieren om kosten te beheren en te verlagen
 
@@ -228,9 +228,7 @@ Probeer de volgende opties om u te helpen bij het verminderen van de kosten voor
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Uw investeringen in de cloud optimaliseren met Azure Cost Management](https://docs.microsoft.com/azure/cost-management-billing/costs/cost-mgt-best-practices?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
-* [Kosten beheren met kosten analyse](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
-* [Onverwachte kosten voorkomen](https://docs.microsoft.com/azure/cost-management-billing/understand/analyze-unexpected-charges?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
-* Neem de [Cost Management](https://docs.microsoft.com/learn/paths/control-spending-manage-bills?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) begeleide training door
-
-
+* [Uw investeringen in de cloud optimaliseren met Azure Cost Management](../cost-management-billing/costs/cost-mgt-best-practices.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
+* [Kosten beheren met kosten analyse](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
+* [Onverwachte kosten voorkomen](../cost-management-billing/understand/analyze-unexpected-charges.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
+* Neem de [Cost Management](/learn/paths/control-spending-manage-bills?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) begeleide training door

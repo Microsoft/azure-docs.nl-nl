@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: conceptual
 ms.date: 04/23/2019
 tags: connectors
-ms.openlocfilehash: 198a5da63ed90937c53f7f12f3559f15100e8f19
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 65da8e07c01561577fe7eff449bfc10348c7f277
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88031333"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101716598"
 ---
 # <a name="monitor-receive-and-send-events-with-azure-event-hubs-and-azure-logic-apps"></a>Gebeurtenissen bewaken, ontvangen en verzenden met Azure Event Hubs en Azure Logic Apps
 
@@ -37,20 +37,20 @@ Als u ervoor wilt zorgen dat uw logische app toegang heeft tot uw event hub, con
 
 1. Ga naar uw Event Hubs *naam ruimte*, niet een specifieke Event hub. 
 
-1. Selecteer in het menu naam ruimte onder **instellingen**de optie **beleid voor gedeelde toegang**. Onder **claims**controleert u of u machtigingen voor het **beheren** van die naam ruimte hebt.
+1. Selecteer in het menu naam ruimte onder **instellingen** de optie **beleid voor gedeelde toegang**. Onder **claims** controleert u of u machtigingen voor het **beheren** van die naam ruimte hebt.
 
    ![Machtigingen voor uw event hub-naam ruimte beheren](./media/connectors-create-api-azure-event-hubs/event-hubs-namespace.png)
 
 1. Als u de verbindings gegevens later hand matig wilt invoeren, haalt u de connection string voor uw Event Hubs naam ruimte op.
 
-   1. Kies onder **beleid**de optie **RootManageSharedAccessKey**.
+   1. Kies onder **beleid** de optie **RootManageSharedAccessKey**.
 
    1. Zoek de connection string van uw primaire sleutel. Kies de knop kopiëren en sla de connection string op voor later gebruik.
 
       ![Event Hubs naam ruimte connection string kopiëren](media/connectors-create-api-azure-event-hubs/find-event-hub-namespace-connection-string.png)
 
       > [!TIP]
-      > Als u wilt controleren of uw connection string is gekoppeld aan uw Event Hubs naam ruimte of met een specifieke Event Hub, moet u ervoor zorgen dat de connection string geen `EntityPath`   para meter heeft. Als u deze para meter vindt, is het connection string voor een specifieke Event hub-entiteit en is het niet de juiste teken reeks voor gebruik met uw logische app.
+      > Als u wilt controleren of uw connection string is gekoppeld aan uw Event Hubs naam ruimte of met een specifieke Event Hub, moet u ervoor zorgen dat de connection string geen `EntityPath` para meter heeft. Als u deze para meter vindt, is het connection string voor een specifieke Event hub-entiteit en is het niet de juiste teken reeks voor gebruik met uw logische app.
 
 1. Ga nu verder met [het toevoegen van een event hubs trigger](#add-trigger) of [het toevoegen van een event hubs actie](#add-action).
 
@@ -79,7 +79,7 @@ In dit voor beeld ziet u hoe u een werk stroom van een logische app kunt starten
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Event Hub-naam** | Ja | De naam van de Event hub die u wilt bewaken |
+   | **Naam van de Event Hub** | Ja | De naam van de Event hub die u wilt bewaken |
    | **Inhoudstype** | Nee | Het inhouds type van de gebeurtenis. De standaardwaarde is `application/octet-stream`. |
    | **Naam van consumentengroep** | Nee | De [naam van de Event hub-consumenten groep](../event-hubs/event-hubs-features.md#consumer-groups) die moet worden gebruikt voor het lezen van gebeurtenissen. Als niet wordt opgegeven, wordt de standaard Consumer groep gebruikt. |
    | **Maximum aantal gebeurtenissen** | Nee | Het maximum aantal gebeurtenissen. De trigger retourneert tussen één en het aantal gebeurtenissen dat door deze eigenschap is opgegeven. |
@@ -98,7 +98,7 @@ In dit voor beeld ziet u hoe u een werk stroom van een logische app kunt starten
    | **Begin tijd** | Nee | Geef een begin tijd op in deze notatie: <p>JJJJ-MM-DDTuu: mm: SS als u een tijd zone selecteert<p>-of-<p>JJJJ-MM-DDTuu: mm: ssZ als u geen tijd zone selecteert<p>Zie [terugkerende taken en werk stromen maken en uitvoeren met Azure Logic apps](../connectors/connectors-native-recurrence.md)voor meer informatie. |
    ||||
 
-1. Wanneer u klaar bent, kiest u **Opslaan**op de werk balk van de ontwerp functie.
+1. Wanneer u klaar bent, kiest u **Opslaan** op de werk balk van de ontwerp functie.
 
 1. Ga nu verder met het toevoegen van een of meer acties aan uw logische app voor de taken die u wilt uitvoeren met de trigger resultaten. 
 
@@ -112,7 +112,7 @@ In Azure Logic Apps is een [actie](../logic-apps/logic-apps-overview.md#logic-ap
 
 1. Open in de Azure Portal of Visual Studio uw logische app in Logic Apps Designer. In dit voor beeld wordt de Azure Portal gebruikt.
 
-1. Kies **nieuwe stap**onder de trigger of actie.
+1. Kies **nieuwe stap** onder de trigger of actie.
 
    Als u een actie wilt toevoegen tussen de bestaande stappen, plaatst u de muis aanwijzer op de verbindings pijl. 
    Kies het plus teken ( **+** ) dat wordt weer gegeven en selecteer vervolgens **een actie toevoegen**.
@@ -130,7 +130,7 @@ Selecteer in de lijst acties deze actie: **gebeurtenis verzenden-Event hubs**
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Event Hub-naam** | Ja | De Event hub waarnaar u de gebeurtenis wilt verzenden |
+   | **Naam van de Event Hub** | Ja | De Event hub waarnaar u de gebeurtenis wilt verzenden |
    | **Inhoud** | Nee | De inhoud voor de gebeurtenis die u wilt verzenden |
    | **Eigenschappen** | Nee | De app-eigenschappen en-waarden die moeten worden verzonden |
    | **Partitiesleutel** | Nee | De [partitie](../event-hubs/event-hubs-features.md#partitions) -id voor het verzenden van de gebeurtenis |
@@ -140,7 +140,7 @@ Selecteer in de lijst acties deze actie: **gebeurtenis verzenden-Event hubs**
 
    ![Voor beeld van gebeurtenis verzenden](./media/connectors-create-api-azure-event-hubs/event-hubs-send-event-action-example.png)
 
-1. Wanneer u klaar bent, kiest u **Opslaan**op de werk balk van de ontwerp functie.
+1. Wanneer u klaar bent, kiest u **Opslaan** op de werk balk van de ontwerp functie.
 
 <a name="create-connection"></a>
 

@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 09/22/2020
+ms.date: 03/01/2021
 ms.author: alkohli
-ms.openlocfilehash: ef840b3d9db4e82eeecea37079a08ccb0858a77b
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: aac4278c6ce03c43418e99978cd039e24dc01194
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448526"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719267"
 ---
 # <a name="kubernetes-workload-management-on-your-azure-stack-edge-pro-device"></a>Beheer van Kubernetes-werk belasting op uw Azure Stack Edge Pro-apparaat
 
@@ -54,6 +54,17 @@ Er zijn drie manieren om uw workloads te implementeren. Met elk van deze impleme
 - **Azure Arc enabled Kubernetes-implementatie**: Azure Arc enabled Kubernetes is een Hybrid management tool waarmee u toepassingen kunt implementeren in uw Kubernetes-clusters. U maakt verbinding met het Kubernetes-cluster op uw Azure Stack Edge Pro-apparaat via de `azure-arc namespace` . De agents die in deze naam ruimte zijn geïmplementeerd, zijn verantwoordelijk voor de connectiviteit met Azure. U past de implementatie configuratie toe met behulp van het GitOps-configuratie beheer. 
     
     Met Azure Arc enabled Kubernetes kunt u ook Azure Monitor voor containers gebruiken om uw cluster weer te geven en te controleren. Ga naar [Wat is Azure Arc enabled Kubernetes?](../azure-arc/kubernetes/overview.md)voor meer informatie.
+    
+    Vanaf 2021 maart is Azure Arc enabled Kubernetes algemeen beschikbaar voor de gebruikers en gelden de standaard gebruiks kosten. Als een klant met een waardevolle preview-versie is de Azure Arc enabled Kubernetes gratis beschikbaar voor Azure Stack edge-apparaten. Als u de preview-aanbieding wilt beschik bare, maakt u een [ondersteuningsaanvraag](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest):
+
+    1. Onder **Probleemtype** selecteert u **Facturering**.
+    2. Selecteer onder **Abonnement** uw abonnement.
+    3. Onder **service** selecteert u **Mijn services** en selecteert u **Azure stack rand**.
+    4. Onder **resource** selecteert u uw resource.
+    5. Typ onder **samen vatting** een beschrijving van het probleem.
+    6. Onder **probleem type** selecteert u **onverwachte kosten**.
+    7. Onder **subtype** van het probleem selecteert u **Help me begrijpen van de kosten voor mijn gratis proef versie**.
+
 
 ## <a name="choose-the-deployment-type"></a>Het implementatie type kiezen
 

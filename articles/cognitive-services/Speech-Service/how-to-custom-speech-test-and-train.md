@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/12/2021
 ms.author: trbye
-ms.openlocfilehash: 2e6f79643493457a587f907f2649c7ab50b963f4
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: f7e29fab542db79b22a9ace7371bc22d3526ac33
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100634733"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101710495"
 ---
 # <a name="prepare-data-for-custom-speech"></a>Gegevens voorbereiden voor Custom Speech
 
@@ -46,9 +46,9 @@ In deze tabel worden de geaccepteerde gegevens typen vermeld, wanneer elk gegeve
 
 | Gegevenstype | Gebruikt voor testen | Aanbevolen aantal | Gebruikt voor training | Aanbevolen aantal |
 |-----------|-----------------|----------|-------------------|----------|
-| [Audio](#audio-data-for-testing) | Yes<br>Gebruikt voor visuele inspectie | 5 + audio bestanden | No | N.v.t. |
-| [Audio en Transcripten met menselijke labels](#audio--human-labeled-transcript-data-for-testingtraining) | Yes<br>Wordt gebruikt om de nauw keurigheid te evalueren | 0,5-5 uur audio | Yes | 1-20 uur aan audio |
-| [Gerelateerde tekst](#related-text-data-for-training) | No | N.v.t. | Yes | 1-200 MB aan Verwante tekst |
+| [Audio](#audio-data-for-testing) | Ja<br>Gebruikt voor visuele inspectie | 5 + audio bestanden | Nee | N.v.t. |
+| [Audio en Transcripten met menselijke labels](#audio--human-labeled-transcript-data-for-testingtraining) | Ja<br>Wordt gebruikt om de nauw keurigheid te evalueren | 0,5-5 uur audio | Ja | 1-20 uur aan audio |
+| [Gerelateerde tekst](#related-text-data-for-training) | Nee | N.v.t. | Ja | 1-200 MB aan Verwante tekst |
 
 Wanneer u een nieuw model traint, begint u met [Verwante tekst](#related-text-data-for-training). Met deze gegevens wordt de herkenning van speciale termen en zinsdelen al verbeterd. Training met tekst is veel sneller dan training met audio (minuten versus dagen).
 
@@ -64,6 +64,8 @@ Bestanden moeten worden gegroepeerd op type in een gegevensset en worden geüplo
 > Als u het basis model dat wordt gebruikt voor de training wijzigt en u audio hebt in de trainings-gegevensset, moet u *altijd* controleren of het nieuwe basis model [training voor audio gegevens ondersteunt](language-support.md#speech-to-text). Als het eerder gebruikte basis model geen training met audio gegevens ondersteunt, en de training-gegevensset bevat audio, wordt de trainings tijd met het nieuwe basis model **drastisch** verhoogd en kan het enkele uren tot enkele dagen en langer duren. Dit geldt vooral als uw abonnement op de spraak service zich **niet** in een regio bevindt [met de speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training.
 >
 > Als u het probleem voor komt dat in de bovenstaande alinea wordt beschreven, kunt u de trainings tijd snel verlagen door de hoeveelheid audio in de gegevensset te verminderen of deze volledig te verwijderen en alleen de tekst te verlaten. De laatste optie wordt sterk aanbevolen als uw abonnement op de spraak service zich **niet** in een regio bevindt [met de speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training.
+>
+> In regio's met speciale hardware voor training gebruikt de speech-service Maxi maal 20 uur aan audio voor training. In andere regio's wordt er Maxi maal 8 uur aan audio gebruikt.
 
 ## <a name="upload-data"></a>Gegevens uploaden
 
@@ -101,7 +103,7 @@ Gebruik deze tabel om ervoor te zorgen dat uw audio bestanden correct zijn inged
 
 Gebruik <a href="http://sox.sourceforge.net" target="_blank" rel="noopener">Sox <span class="docon docon-navigate-external x-hidden-focus"></span> </a> om audio-eigenschappen te controleren of bestaande audio om te zetten in de juiste notaties. Hieronder ziet u enkele voor beelden van de manier waarop elk van deze activiteiten kan worden uitgevoerd via de SoX-opdracht regel:
 
-| Activiteit | Description | SoX-opdracht |
+| Activiteit | Beschrijving | SoX-opdracht |
 |----------|-------------|-------------|
 | Audio-indeling controleren | Gebruik deze opdracht om te controleren<br>de indeling van het audio bestand. | `sox --i <filename>` |
 | Audio-indeling converteren | Gebruik deze opdracht om te converteren<br>het audio bestand op één kanaal, 16-bits, 16 KHz. | `sox <input> -b 16 -e signed-integer -c 1 -r 16k -t wav <output>.wav` |
@@ -127,7 +129,7 @@ Audio bestanden kunnen stilte aan het begin en het einde van de opname hebben. I
 > [!NOTE]
 > Bij het uploaden van training en het testen van gegevens, mag de zip-bestand niet groter zijn dan 2 GB. U kunt alleen testen vanuit *één* gegevensset, zorg ervoor dat deze binnen de juiste bestands grootte blijft. Daarnaast kan elk trainings bestand niet groter zijn dan 60 seconden, anders wordt er een fout opgetreden.
 
-Voor het oplossen van problemen zoals het verwijderen of vervangen van woorden, is een aanzienlijke hoeveelheid gegevens vereist om de herkenning te verbeteren. Over het algemeen is het raadzaam om per woord transcripties te bieden voor ongeveer 10 tot 20 uur aan audio. De transcripties voor alle WAV-bestanden moeten worden opgenomen in één bestand met tekst zonder opmaak. Elke regel van het transcriptiebestand moet de naam van een van de audiobestanden bevatten, gevolgd door de bijbehorende transcriptie. De bestandsnaam en transcriptie moeten worden gescheiden door een tab (\t).
+Voor het oplossen van problemen zoals het verwijderen of vervangen van woorden, is een aanzienlijke hoeveelheid gegevens vereist om de herkenning te verbeteren. Over het algemeen is het raadzaam om te voorzien in een woord-voor-Word-transcripties van 1 tot 20 uur aan audio. Maar zelfs maar 30 minuten kunnen bijdragen aan betere herkennings resultaten. De transcripties voor alle WAV-bestanden moeten worden opgenomen in één bestand met tekst zonder opmaak. Elke regel van het transcriptiebestand moet de naam van een van de audiobestanden bevatten, gevolgd door de bijbehorende transcriptie. De bestandsnaam en transcriptie moeten worden gescheiden door een tab (\t).
 
 Bijvoorbeeld:
 

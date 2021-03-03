@@ -6,12 +6,12 @@ ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 10/07/2020
-ms.openlocfilehash: 038663a6b8fe015f36f70b7bf13d25accb470903
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: a7a6ba395769677fe46ddfff675640f6e15060a0
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100627389"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723177"
 ---
 # <a name="log-analytics-tutorial"></a>Log Analytics-zelfstudie
 Log Analytics is een hulpprogramma in Azure Portal om logboekquery's te bewerken en uit te voeren op basis van gegevens die zijn verzameld door Azure Monitor-logboeken en om de resultaten interactief te analyseren. U kunt Log Analytics-query's gebruiken om records op te halen die overeenkomen met bepaalde criteria, trends te identificeren, patronen te analyseren en een verscheidenheid aan inzichten in uw gegevens te bieden. 
@@ -33,7 +33,7 @@ In deze tutorial wordt u begeleid door de Log Analytics-interface, wordt u op we
 In deze zelfstudie wordt gebruik gemaakt van de [Log Analytics-demo-omgeving](https://ms.portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade), die veel voorbeeldgegevens bevat die de voorbeeldquery's ondersteunen. U kunt ook uw eigen Azure-abonnement gebruiken, maar mogelijk hebt u geen gegevens in dezelfde tabellen.
 
 ## <a name="open-log-analytics"></a>Log Analytics openen
-Open de [Log Analytics-demo-omgeving](https://ms.portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade) of selecteer **Logboeken** in het Azure Monitor-menu in uw abonnement. Hiermee wordt het oorspronkelijke bereik ingesteld op een Log Analytics-werkruimte, wat betekent dat uw query wordt geselecteerd uit alle gegevens in die werkruimte. Als u **Logboeken** selecteert in het menu van een Azure-resource, wordt het bereik ingesteld op alleen records van die resource. Zie [Bereik van logboekquery's](../log-query/scope.md) voor details over het bereik.
+Open de [Log Analytics-demo-omgeving](https://ms.portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade) of selecteer **Logboeken** in het Azure Monitor-menu in uw abonnement. Hiermee wordt het oorspronkelijke bereik ingesteld op een Log Analytics-werkruimte, wat betekent dat uw query wordt geselecteerd uit alle gegevens in die werkruimte. Als u **Logboeken** selecteert in het menu van een Azure-resource, wordt het bereik ingesteld op alleen records van die resource. Zie [Bereik van logboekquery's](./scope.md) voor details over het bereik.
 
 U kunt het bereik weergeven in de linkerbovenhoek van het scherm. Als u uw eigen omgeving gebruikt, ziet u een optie om een ​​ander bereik te selecteren, maar deze optie is niet beschikbaar in de demo-omgeving.
 

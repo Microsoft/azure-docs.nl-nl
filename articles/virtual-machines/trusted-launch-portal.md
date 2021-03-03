@@ -7,14 +7,14 @@ ms.reviewer: cynthn
 ms.service: virtual-machines
 ms.subservice: security
 ms.topic: how-to
-ms.date: 02/26/2021
+ms.date: 03/02/2021
 ms.custom: template-how-to
-ms.openlocfilehash: cd39ec9653efba9adabb9ae2076e5a042c69abe2
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 4c4ad2a1350632d381cc258049ee85c87766f9b5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101679763"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101694118"
 ---
 # <a name="deploy-a-vm-with-trusted-launch-enabled-preview"></a>Een VM implementeren met behulp van vertrouwde start ingeschakeld (preview-versie)
 
@@ -31,7 +31,7 @@ ms.locfileid: "101679763"
 
 Een virtuele machine maken waarvoor vertrouwde start is ingeschakeld.
 
-1. Meld u aan bij de Azure [Portal](https://portal.azure.com).
+1. Meld u aan bij de Azure [Portal](https://aka.ms/TL_preview).
 1. Zoeken naar **virtual machines**.
 1. Selecteer **virtuele machines** onder **Services**.
 1. Selecteer op de pagina **virtuele machines** de optie **toevoegen** en selecteer vervolgens **virtuele machine**.

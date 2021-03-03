@@ -3,12 +3,12 @@ title: Via het netwerk beperkt REGI ster openen met behulp van een vertrouwde Az
 description: Een vertrouwd exemplaar van Azure service inschakelen voor een veilige toegang tot pull-of push-installatie kopieën in een container register met netwerk beperkingen
 ms.topic: article
 ms.date: 01/29/2021
-ms.openlocfilehash: 2e6b6ee3736f98f53ebb0aa43d707d42ba4cc058
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 3cc32630ea689891e7ba75163c33bc499a38becd
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99527670"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101716479"
 ---
 # <a name="allow-trusted-services-to-securely-access-a-network-restricted-container-registry-preview"></a>Vertrouwde services veilig toegang geven tot een container register in het netwerk (preview-versie)
 
@@ -41,7 +41,6 @@ Instanties van de volgende services hebben toegang tot een container register wa
 |Vertrouwde service  |Ondersteunde gebruiks scenario's  |
 |---------|---------|
 |ACR-taken     | [Toegang tot een ander REGI ster vanuit een ACR-taak](container-registry-tasks-cross-registry-authentication.md)       |
-|Machine Learning | Een model [implementeren](../machine-learning/how-to-deploy-custom-docker-image.md) of [trainen](../machine-learning/how-to-train-with-custom-image.md) in een machine learning-werk ruimte met behulp van een aangepaste docker-container installatie kopie |
 |Azure Container Registry | [Installatie kopieën importeren uit een ander Azure container Registry](container-registry-import-images.md#import-from-an-azure-container-registry-in-the-same-ad-tenant) | 
 
 > [!NOTE]

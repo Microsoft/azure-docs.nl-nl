@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: bfcd1e600c722cf3a4951da60097c7c373f9b1a6
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: ef2d0eb409cbef2fdd3579ae5e8b409e24bdda2f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99592038"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101735961"
 ---
 # <a name="tutorial-viewing-a-remotely-rendered-model"></a>Zelfstudie: U bekijkt een model dat extern wordt weergegeven
 
@@ -55,43 +55,9 @@ In dit voorbeeld wordt ervan uitgegaan dat het project wordt gemaakt in een map 
 
 ## <a name="include-the-azure-remote-rendering-package"></a>Het Azure Remote Rendering-pakket toevoegen
 
-U moet het bestand wijzigen `Packages/manifest.json` dat zich in de Unity-projectmap bevindt. Open het bestand in een tekstverwerker en voeg de volgende regels toe bovenaan uw manifest:
+[Volg de instructies](../../../how-tos/unity/install-remote-rendering-unity-package.md) voor het toevoegen van het pakket voor externe rendering van Azure aan een Unity-project.
 
-```json
-{
-    "scopedRegistries": [
-    {
-        "name": "Azure Mixed Reality Services",
-        "url": "https://api.bintray.com/npm/microsoft/AzureMixedReality-NPM/",
-        "scopes": ["com.microsoft.azure"]
-    }
-    ],
-    "dependencies": {
-        "com.unity.render-pipelines.universal": "7.3.1",
-        "com.microsoft.azure.remote-rendering": "0.1.31",
-        ...existing dependencies...
-    }
-}
-```
 
-Nadat u het manifest hebt gewijzigd en opgeslagen, wordt Unity automatisch vernieuwd. Controleer of de pakketten zijn geladen in het venster *Project*:
-
-:::image type="content" source="./media/confirm-packages.png" alt-text="invoer van pakketten bevestigen":::
-
-Als uw pakketten niet laden, controleer dan uw Unity-console op fouten. Als er geen fouten zijn en er nog steeds geen pakketten worden weergeven in de map **Pakketten**, controleer dan de wisselknop voor zichtbaarheid van pakketten.\
-![Schermopname met een pijl die verwijst naar de wisselknop voor de zichtbaarheid van pakketten.](./media/unity-package-visibility.png)
-
-## <a name="ensure-you-have-the-latest-version-of-the-package"></a>Zorg ervoor dat u de nieuwste versie van het pakket hebt
-
-Volg de volgende stappen om ervoor te zorgen dat uw project de nieuwste versie van het pakket voor remote rendering gebruikt.
-
-1. Open in het bovenste menu van de Unity Editor *Venster-> Pakketbeheerder*.
-1. Selecteer het pakket **Microsoft Azure Remote Rendering**.
-1. Kijk op de pakketbeheerpagina voor het **Microsoft Azure Remote Rendering**-pakket of de knop **Bijwerken** beschikbaar is. Als dit het geval is, kunt u het pakket naar de meest recente beschikbare versie bijwerken door erop te klikken:\
-![Het ARR-pakket in Pakketbeheer](./media/package-manager.png)
-1. Het pakket bijwerken kan soms tot consolefouten leiden. Als dit het geval is, sluit u het project en opent u het opnieuw.
-1. Wanneer het pakket bijgewerkt is, wordt Pakketbeheer weergegeven als **Bijgewerkt** in plaats van een knop Bijwerken.\
-![Bijgewerkt pakket](./media/package-up-to-date.png)
 ## <a name="configure-the-camera"></a>De camera configureren
 
 1. Selecteer het **hoofdcamera**-knooppunt.

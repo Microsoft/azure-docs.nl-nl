@@ -8,12 +8,12 @@ ms.subservice: ip-services
 ms.topic: how-to
 ms.date: 02/22/2021
 ms.author: allensu
-ms.openlocfilehash: 5c5650d896442f10846e16903a1231010d032a44
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: e6b7648188e2307da4ef40e0ab3daf6201f9d89d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101675217"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101694866"
 ---
 # <a name="create-a-public-ip-address-using-the-azure-portal"></a>Een openbaar IP-adres maken met behulp van de Azure Portal
 
@@ -74,7 +74,6 @@ In deze sectie maakt u een open bare basis-IP-adres met de naam **myBasicPublicI
     | IP-versie              | IPv4 selecteren                 |    
     | SKU                     | Selecteer **Basic**         |
     | Name                    | *MyBasicPublicIP* invoeren          |
-    | Routerings voorkeur      | De standaard instelling van het **micro soft-netwerk** behouden. </br> Zie [Wat is routerings voorkeur (preview)?](./routing-preference-overview.md)voor meer informatie over routerings voorkeur. |
     | IP-adrestoewijzing   | **Statisch** selecteren (zie opmerking hieronder)                                     |
     | Time-out voor inactiviteit (minuten)  | De standaard waarde van **4** behouden.       |
     | DNS-naamlabel          | Laat de waarde leeg    |
@@ -82,7 +81,7 @@ In deze sectie maakt u een open bare basis-IP-adres met de naam **myBasicPublicI
     | Resourcegroep          | Selecteer **nieuwe maken** en voer **myResourceGroup** in. </br> Selecteer **OK**. |
     | Locatie                | Selecteer **US - oost 2**      |
 
-:::image type="content" source="./media/create-public-ip-portal/create-standard-ip.png" alt-text="Standaard-IP-adres maken in Azure Portal" border="false":::
+:::image type="content" source="./media/create-public-ip-portal/create-basic-ip.png" alt-text="Standaard-IP-adres maken in Azure Portal" border="false":::
 
 Als het IP-adres acceptabel is om na verloop van tijd te wijzigen, kan **dynamische** IP-toewijzing worden geselecteerd.
 

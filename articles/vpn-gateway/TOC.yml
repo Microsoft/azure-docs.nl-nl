@@ -85,7 +85,7 @@
               href: create-routebased-vpn-gateway-cli.md
         - name: Een VPN-gatewayverbinding verifiëren
           href: vpn-gateway-verify-connection-resource-manager.md
-        - name: Een VPN-gateway opnieuw instellen
+        - name: Een VPN-gateway of-verbinding opnieuw instellen
           href: reset-gateway.md
         - name: Een VPN-gateway verwijderen
           items:
@@ -177,6 +177,10 @@
               href: about-vpn-profile-download.md
             - name: Intune - VPN-clientprofiel implementeren
               href: vpn-profile-intune.md
+        - name: Meerdere verificatie typen
+          items:
+            - name: Azure Portal
+              href: howto-point-to-site-multi-auth.md
         - name: OpenVPN
           items:
             - name: OpenVPN-tunnel type configureren
@@ -205,6 +209,8 @@
               href: vpn-gateway-bgp-resource-manager-ps.md
             - name: Azure CLI
               href: bgp-how-to-cli.md
+        - name: BGP-diagnose
+          href: bgp-diagnostics.md
         - name: Geforceerde tunneling configureren
           items:
             - name: Azure PowerShell

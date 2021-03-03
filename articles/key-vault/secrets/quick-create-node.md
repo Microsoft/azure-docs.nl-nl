@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: afb0e04d6f8a34d844df382081d53a32899e9a5c
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
-ms.translationtype: HT
+ms.openlocfilehash: 70416daced2cbdebb70fb8e1defbcbcb599710f1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934761"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101705480"
 ---
 # <a name="quickstart-azure-key-vault-secret-client-library-for-javascript-version-4"></a>Quickstart: Azure Key Vault-clientbibliotheek voor geheimen voor JavaScript (versie 4)
 
@@ -56,13 +56,13 @@ Maak vervolgens een Node.js-toepassing die kan worden geïmplementeerd in de clo
 
 1. Maak in een opdrachtshell een map met de naam `key-vault-node-app`:
 
-```azurecli
+```terminal
 mkdir key-vault-node-app
 ```
 
 1. Ga naar de map van de zojuist gemaakte *key-vault-node-app* en voer de opdracht 'init' uit om het node-project te initialiseren:
 
-```azurecli
+```terminal
 cd key-vault-node-app
 npm init -y
 ```
@@ -71,13 +71,13 @@ npm init -y
 
 Installeer vanuit het consolevenster de Azure Key Vault-[geheimenbibliotheek](https://www.npmjs.com/package/@azure/keyvault-secrets) voor Node.js.
 
-```azurecli
+```terminal
 npm install @azure/keyvault-secrets
 ```
 
 Installeer het [azure.identity](https://www.npmjs.com/package/@azure/identity)-pakket om te verifiëren bij een Key Vault
 
-```azurecli
+```terminal
 npm install @azure/identity
 ```
 
@@ -154,7 +154,7 @@ const { SecretClient } = require("@azure/keyvault-secrets");
 
 In deze quickstart wordt de aangemelde gebruiker gebruikt voor de verificatie bij de sleutelkluis. Dit is de voorkeursmethode voor lokale ontwikkeling. Voor toepassingen die zijn geïmplementeerd in Azure, moet beheerde identiteit worden toegewezen aan App Service of aan Virtuele machine. Zie [Overzicht van beheerde identiteiten](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) voor meer informatie.
 
-In het onderstaande voorbeeld wordt de naam van de sleutelkluis uitgebreid naar de sleutelkluis-URI, met de indeling https://\<your-key-vault-name\>.vault.azure.net. In dit voorbeeld wordt de klasse [DefaultAzureCredential()](https://docs.microsoft.com/javascript/api/@azure/identity/defaultazurecredential) uit [Azure Identity Library](https://docs.microsoft.com/javascript/api/overview/azure/identity-readme) gebruikt. Hiermee kunt u dezelfde code gebruiken in verschillende omgevingen, met verschillende opties om identiteiten te bieden. Zie [Gids voor ontwikkelaars](https://docs.microsoft.com/azure/key-vault/general/developers-guide#authenticate-to-key-vault-in-code) voor meer informatie over het verifiëren van een sleutelkluis.
+In het onderstaande voorbeeld wordt de naam van de sleutelkluis uitgebreid naar de sleutelkluis-URI, met de indeling https://\<your-key-vault-name\>.vault.azure.net. In dit voor beeld wordt de klasse [DefaultAzureCredential ()](https://docs.microsoft.com/javascript/api/@azure/identity/defaultazurecredential) uit de [Azure Identity-bibliotheek](https://docs.microsoft.com/javascript/api/overview/azure/identity-readme)gebruikt, waarmee we dezelfde code kunnen gebruiken in verschillende omgevingen met verschillende opties om identiteiten te bieden. Zie [Gids voor ontwikkelaars](https://docs.microsoft.com/azure/key-vault/general/developers-guide#authenticate-to-key-vault-in-code) voor meer informatie over het verifiëren van een sleutelkluis.
 
 Voeg de volgende code aan de 'main()'-functie
 
@@ -168,7 +168,7 @@ const client = new SecretClient(KVUri, credential);
 
 ### <a name="save-a-secret"></a>Een geheim opslaan
 
-Nu uw toepassing is geverifieerd, kunt u een geheim in uw sleutelkluis plaatsen met behulp van de [methode SetSecret](/javascript/api/@azure/keyvault-secrets/secretclient?#setsecret-string--string--setsecretoptions-). Hiervoor is een naam vereist voor het geheim. In dit voorbeeld gebruiken we 'mySecret'.  
+Nu uw toepassing is geverifieerd, kunt u een geheim in uw sleutelkluis plaatsen met behulp van de [methode SetSecret](/javascript/api/@azure/keyvault-secrets/secretclient?view=azure-node-latest#setSecret_string__string__SetSecretOptions_). Hiervoor is een naam vereist voor het geheim. In dit voorbeeld gebruiken we 'mySecret'.  
 
 ```javascript
 await client.setSecret(secretName, secretValue);
@@ -176,7 +176,7 @@ await client.setSecret(secretName, secretValue);
 
 ### <a name="retrieve-a-secret"></a>Een geheim ophalen
 
-U kunt nu de eerder ingestelde waarde ophalen met de [methode getSecret](/javascript/api/@azure/keyvault-secrets/secretclient?#getsecret-string--getsecretoptions-).
+U kunt nu de eerder ingestelde waarde ophalen met de [methode getSecret](/javascript/api/@azure/keyvault-secrets/secretclient?view=azure-node-latest#getSecret_string__GetSecretOptions_).
 
 ```javascript
 const retrievedSecret = await client.getSecret(secretName);
@@ -258,9 +258,9 @@ main().then(() => console.log('Done')).catch((ex) => console.log(ex.message));
 
 1. Voer de volgende opdrachten uit om de app uit te voeren.
 
-    ```azurecli
+    ```terminal
     npm install
-    npm index.js
+    node index.js
     ```
 
 1. Voer een geheime waarde in wanneer u hierom wordt gevraagd. Bijvoorbeeld mySecretPassword (mijn geheime wachtwoord).

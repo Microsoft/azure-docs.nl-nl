@@ -1,17 +1,16 @@
 ---
 title: Overzicht van Azure Diagnostics-extensie
 description: Diagnostische gegevens van Azure gebruiken voor het opsporen van fouten, het meten van prestaties, bewaking, verkeers analyse in Cloud Services, virtuele machines en service Fabric
-ms.subservice: diagnostic-extension
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/14/2020
-ms.openlocfilehash: f3cde32178449169b07f57d4abbc346d8ca89df4
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 3c0e348e62184f839ce38e4c364fb5c6b81f1131
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610713"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101726220"
 ---
 # <a name="azure-diagnostics-extension-overview"></a>Overzicht van Azure Diagnostics-extensie
 Azure Diagnostics extensie is een [agent in azure monitor](../agents/agents-overview.md) die bewakings gegevens verzamelt van het gast besturingssysteem van Azure Compute-resources, inclusief virtuele machines. Dit artikel bevat een overzicht van Azure Diagnostics extensie, inclusief specifieke functionaliteit die wordt ondersteund en opties voor installatie en configuratie. 
@@ -33,8 +32,8 @@ De Log Analytics-agent in Azure Monitor kan ook worden gebruikt voor het verzame
 De belangrijkste verschillen die u moet overwegen:
 
 - Azure Diagnostics extensie kan alleen worden gebruikt met virtuele machines van Azure. De Log Analytics-agent kan worden gebruikt met virtuele machines in azure, andere Clouds en on-premises.
-- Met Azure Diagnostics extensie worden gegevens naar Azure Storage verzonden, worden [Azure monitor metriek](../platform/data-platform-metrics.md) (alleen Windows) en Event hubs. De Log Analytics-agent verzamelt gegevens naar [Azure monitor-logboeken](../platform/data-platform-logs.md).
-- De Log Analytics-agent is vereist voor [oplossingen](../monitor-reference.md#insights-and-core-solutions), [Azure monitor voor VM's](../insights/vminsights-overview.md)en andere services, zoals [Azure Security Center](../../security-center/index.yml).
+- Met Azure Diagnostics extensie worden gegevens naar Azure Storage verzonden, worden [Azure monitor metriek](../essentials/data-platform-metrics.md) (alleen Windows) en Event hubs. De Log Analytics-agent verzamelt gegevens naar [Azure monitor-logboeken](../logs/data-platform-logs.md).
+- De Log Analytics-agent is vereist voor [oplossingen](../monitor-reference.md#insights-and-core-solutions), [VM Insights](../vm/vminsights-overview.md)en andere services, zoals [Azure Security Center](../../security-center/index.yml).
 
 ## <a name="costs"></a>Kosten
 Er zijn geen kosten verbonden aan de diagnostische Azure-extensie, maar mogelijk worden er kosten in rekening gebracht voor de gegevens die zijn opgenomen. Controleer [Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/) voor de bestemming waar u gegevens verzamelt.
@@ -44,7 +43,7 @@ De volgende tabellen geven een lijst van de gegevens die kunnen worden verzameld
 
 ### <a name="windows-diagnostics-extension-wad"></a>Windows diagnostische gegevens extensie (WAD)
 
-| Gegevensbron | Description |
+| Gegevensbron | Beschrijving |
 | --- | --- |
 | Windows-gebeurtenis logboeken   | Gebeurtenissen van het Windows-gebeurtenis logboek. |
 | Prestatiemeteritems | Numerieke waarden meten de prestaties van verschillende aspecten van het besturings systeem en de werk belastingen. |
@@ -59,7 +58,7 @@ De volgende tabellen geven een lijst van de gegevens die kunnen worden verzameld
 
 ### <a name="linux-diagnostics-extension-lad"></a>Linux-extensie voor diagnostische gegevens (LAD)
 
-| Gegevensbron | Description |
+| Gegevensbron | Beschrijving |
 | --- | --- |
 | Syslog | Gebeurtenissen die worden verzonden naar het systeem van de Linux-gebeurtenis registratie.   |
 | Prestatiemeteritems  | Numerieke waarden meten de prestaties van verschillende aspecten van het besturings systeem en de werk belastingen. |
@@ -72,9 +71,9 @@ Configureer een of meer *gegevens-sinks* voor het verzenden van gegevens naar an
 
 ### <a name="windows-diagnostics-extension-wad"></a>Windows diagnostische gegevens extensie (WAD)
 
-| Doel | Description |
+| Doel | Beschrijving |
 |:---|:---|
-| Metrische gegevens van Azure Monitor | Verzamelen van prestatie gegevens naar Azure Monitor meet waarden. Zie [metrische gegevens van het gast besturingssysteem verzenden naar de data base van de Azure monitor metriek](../platform/collect-custom-metrics-guestos-resource-manager-vm.md).  |
+| Metrische gegevens van Azure Monitor | Verzamelen van prestatie gegevens naar Azure Monitor meet waarden. Zie [metrische gegevens van het gast besturingssysteem verzenden naar de data base van de Azure monitor metriek](../essentials/collect-custom-metrics-guestos-resource-manager-vm.md).  |
 | Event Hubs | Azure Event Hubs gebruiken om gegevens buiten Azure te verzenden. Zie [Azure Diagnostics gegevens streamen naar Event hubs](diagnostics-extension-stream-event-hubs.md) |
 | Azure Storage blobs | Schrijf naast tabellen ook gegevens naar blobs in Azure Storage. |
 | Application Insights | Gegevens verzamelen van toepassingen die worden uitgevoerd in uw virtuele machine naar Application Insights om te integreren met andere toepassings bewaking. Zie [Diagnostische gegevens naar Application Insights verzenden](diagnostics-extension-to-application-insights.md). |
@@ -85,11 +84,11 @@ U kunt ook WAD-gegevens uit opslag verzamelen in een Log Analytics-werk ruimte o
 ### <a name="linux-diagnostics-extension-lad"></a>Linux-extensie voor diagnostische gegevens (LAD)
 LAD schrijft gegevens naar tabellen in Azure Storage. Het ondersteunt de sinks in de volgende tabel.
 
-| Doel | Description |
+| Doel | Beschrijving |
 |:---|:---|
 | Event Hubs | Azure Event Hubs gebruiken om gegevens buiten Azure te verzenden. |
 | Azure Storage blobs | Schrijf naast tabellen ook gegevens naar blobs in Azure Storage. |
-| Metrische gegevens van Azure Monitor | Installeer naast LAD de telegrafa-agent. Zie [aangepaste metrische gegevens verzamelen voor een virtuele Linux-machine met de InfluxData-Telegraf-agent](../platform/collect-custom-metrics-linux-telegraf.md).
+| Metrische gegevens van Azure Monitor | Installeer naast LAD de telegrafa-agent. Zie [aangepaste metrische gegevens verzamelen voor een virtuele Linux-machine met de InfluxData-Telegraf-agent](../essentials/collect-custom-metrics-linux-telegraf.md).
 
 
 ## <a name="installation-and-configuration"></a>Installatie en configuratie

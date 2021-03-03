@@ -14,12 +14,12 @@ ms.devlang: csharp
 ms.topic: tutorial
 ms.date: 07/25/2020
 ms.author: abarora
-ms.openlocfilehash: 553c5081947ad784a8cdae6ad0eb92fc3e2a2c85
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 977982bf1a36b4b85524df2513f2272fe4a8d1bf
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99982197"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701515"
 ---
 # <a name="tutorial-use-dynamic-configuration-using-push-refresh-in-a-net-core-app"></a>Zelf studie: dynamische configuratie gebruiken met push-vernieuwing in een .NET core-app
 
@@ -27,7 +27,7 @@ De app-configuratie .NET core client library ondersteunt het bijwerken van confi
 
 1. Poll model: dit is het standaard gedrag dat polling gebruikt om wijzigingen in de configuratie te detecteren. Zodra de waarde in de cache van een instelling verloopt, wordt de volgende aanroep naar `TryRefreshAsync` `RefreshAsync` de server verzonden of een aanvraag naar het te verzenden om te controleren of de configuratie is gewijzigd en wordt de bijgewerkte configuratie zo nodig opgehaald.
 
-1. Push model: dit maakt gebruik van [app-configuratie gebeurtenissen](./concept-app-configuration-event.md) om wijzigingen in de configuratie te detecteren. Zodra de configuratie van de app is ingesteld voor het verzenden van belang rijke wijzigings gebeurtenissen naar Azure Event Grid, kan de toepassing deze gebeurtenissen gebruiken om het totale aantal aanvragen te optimaliseren dat nodig is om de configuratie bij te werken. Toepassingen kunnen ervoor kiezen om zich rechtstreeks vanuit Event Grid aan te melden, of een van de [ondersteunde gebeurtenis-handlers](https://docs.microsoft.com/azure/event-grid/event-handlers) zoals een webhook, een Azure-functie of een service bus onderwerp.
+1. Push model: dit maakt gebruik van [app-configuratie gebeurtenissen](./concept-app-configuration-event.md) om wijzigingen in de configuratie te detecteren. Zodra de configuratie van de app is ingesteld voor het verzenden van belang rijke wijzigings gebeurtenissen naar Azure Event Grid, kan de toepassing deze gebeurtenissen gebruiken om het totale aantal aanvragen te optimaliseren dat nodig is om de configuratie bij te werken. Toepassingen kunnen ervoor kiezen om zich rechtstreeks vanuit Event Grid aan te melden, of een van de [ondersteunde gebeurtenis-handlers](../event-grid/event-handlers.md) zoals een webhook, een Azure-functie of een service bus onderwerp.
 
 Toepassingen kunnen ervoor kiezen om zich te abonneren op deze gebeurtenissen, hetzij rechtstreeks vanuit Event Grid, hetzij via een webhook, hetzij door het door sturen van gebeurtenissen naar Azure Service Bus. De Azure Service Bus SDK biedt een API voor het registreren van een bericht-handler die dit proces vereenvoudigt voor toepassingen die geen HTTP-eind punt hebben of waarvoor het gebeurtenis raster niet voortdurend moet worden doorzocht.
 
@@ -50,7 +50,7 @@ Als u deze zelfstudie wilt uitvoeren, installeert u de [.NET Core SDK](https://d
 
 ## <a name="set-up-azure-service-bus-topic-and-subscription"></a>Azure Service Bus onderwerp en-abonnement instellen
 
-In deze zelf studie wordt gebruikgemaakt van de Service Bus-integratie voor Event Grid om de detectie van configuratie wijzigingen te vereenvoudigen voor toepassingen die de app-configuratie niet voortdurend willen controleren op wijzigingen. De Azure Service Bus SDK biedt een API voor het registreren van een bericht-handler die kan worden gebruikt om de configuratie bij te werken wanneer er wijzigingen worden gedetecteerd in de app-configuratie. Volg de stappen in de [Quick Start: gebruik de Azure Portal om een service bus onderwerp en een abonnement te maken](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal) om een service bus-naam ruimte, een onderwerp en een abonnement te maken.
+In deze zelf studie wordt gebruikgemaakt van de Service Bus-integratie voor Event Grid om de detectie van configuratie wijzigingen te vereenvoudigen voor toepassingen die de app-configuratie niet voortdurend willen controleren op wijzigingen. De Azure Service Bus SDK biedt een API voor het registreren van een bericht-handler die kan worden gebruikt om de configuratie bij te werken wanneer er wijzigingen worden gedetecteerd in de app-configuratie. Volg de stappen in de [Quick Start: gebruik de Azure Portal om een service bus onderwerp en een abonnement te maken](../service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal.md) om een service bus-naam ruimte, een onderwerp en een abonnement te maken.
 
 Wanneer de resources zijn gemaakt, voegt u de volgende omgevings variabelen toe. Deze worden gebruikt voor het registreren van een gebeurtenis-handler voor configuratie wijzigingen in de toepassings code.
 
@@ -81,7 +81,7 @@ Wanneer de resources zijn gemaakt, voegt u de volgende omgevings variabelen toe.
     ![App-configuratie gebeurtenis abonnementen](./media/event-subscription-view.png)
 
 > [!NOTE]
-> Bij het abonneren op configuratie wijzigingen kunnen een of meer filters worden gebruikt om het aantal gebeurtenissen dat naar uw toepassing wordt verzonden, te verminderen. Deze kunnen worden geconfigureerd als [Event grid-abonnements filters](https://docs.microsoft.com/azure/event-grid/event-filtering) of [Service Bus-abonnements filters](https://docs.microsoft.com/azure/service-bus-messaging/topic-filters). U kunt bijvoorbeeld een abonnements filter gebruiken om alleen te abonneren op gebeurtenissen op wijzigingen in een sleutel die begint met een specifieke teken reeks.
+> Bij het abonneren op configuratie wijzigingen kunnen een of meer filters worden gebruikt om het aantal gebeurtenissen dat naar uw toepassing wordt verzonden, te verminderen. Deze kunnen worden geconfigureerd als [Event grid-abonnements filters](../event-grid/event-filtering.md) of [Service Bus-abonnements filters](../service-bus-messaging/topic-filters.md). U kunt bijvoorbeeld een abonnements filter gebruiken om alleen te abonneren op gebeurtenissen op wijzigingen in een sleutel die begint met een specifieke teken reeks.
 
 ## <a name="register-event-handler-to-reload-data-from-app-configuration"></a>Gebeurtenis-handler registreren om gegevens van de app-configuratie opnieuw te laden
 
@@ -171,7 +171,7 @@ namespace TestConsole
 }
 ```
 
-De methode [SetDirty](https://docs.microsoft.com/dotnet/api/microsoft.extensions.configuration.azureappconfiguration.iconfigurationrefresher.setdirty) wordt gebruikt om de waarde in cache in te stellen voor sleutel waarden die zijn geregistreerd voor vernieuwen als gewijzigd. Dit zorgt ervoor dat de volgende keer `RefreshAsync` dat `TryRefreshAsync` de in de cache opgeslagen waarden worden aangeroepen of opnieuw worden gevalideerd met de app-configuratie en worden bijgewerkt als dat nodig is.
+De methode [SetDirty](/dotnet/api/microsoft.extensions.configuration.azureappconfiguration.iconfigurationrefresher.setdirty) wordt gebruikt om de waarde in cache in te stellen voor sleutel waarden die zijn geregistreerd voor vernieuwen als gewijzigd. Dit zorgt ervoor dat de volgende keer `RefreshAsync` dat `TryRefreshAsync` de in de cache opgeslagen waarden worden aangeroepen of opnieuw worden gevalideerd met de app-configuratie en worden bijgewerkt als dat nodig is.
 
 Er wordt een wille keurige vertraging toegevoegd voordat de waarde in de cache is gemarkeerd als vuil om mogelijke beperking te verminderen wanneer meerdere exemplaren tegelijkertijd worden vernieuwd. De standaard maximum vertraging voordat de waarde in de cache is gemarkeerd als vuil, is 30 seconden, maar kan worden overschreven door een optionele `TimeSpan` para meter door te geven aan de `SetDirty` methode.
 

@@ -7,15 +7,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: sample
-ms.date: 05/29/2019
+ms.date: 02/23/2021
 ms.author: pafarley
 ms.custom: devx-track-csharp
-ms.openlocfilehash: fe9cc44542e97880b076d871dde82f5a02a58957
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: cec466fc420e435159e2882d7b39ef6d03eeea7c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88928969"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733479"
 ---
 # <a name="use-the-headpose-attribute"></a>Het kenmerk HeadPose gebruiken
 

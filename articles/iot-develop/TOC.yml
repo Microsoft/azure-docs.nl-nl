@@ -1,8 +1,8 @@
-- name: IoT-apparaten en-toepassingen ontwikkelen
+- name: IoT-apparaten ontwikkelen
   href: index.yml
 - name: Overzicht
   items:
-    - name: Wat is IoT-apparaat en toepassings ontwikkeling?
+    - name: Wat is IoT Device Development?
       href: about-iot-develop.md
     - name: Welke SDK moet ik gebruiken?
       href: about-iot-sdks.md
@@ -22,7 +22,7 @@
 - name: Zelfstudies
   items:
     - name: IoT-apparaten veilig verbinden met de cloud
-      href: 'https://docs.microsoft.com/learn/paths/securely-connect-iot-devices/'
+      href: /learn/paths/securely-connect-iot-devices/
 - name: Concepten
   items:
     - name: Verbindings opties voor ontwikkel aars van apparaten

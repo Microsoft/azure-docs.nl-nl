@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 02/10/2021
 ms.author: duau
-ms.openlocfilehash: c686902ed23e0f1a94bc9548d0a876ecbbce8f31
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 5fedb9d09e61540d0ee8a1fe21fbd25f31390f5d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100377870"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101742446"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Partners en peeringlocaties voor ExpressRoute-connectiviteit
 
@@ -43,8 +43,8 @@ In de volgende tabel vindt u een toewijzing van Azure-regio's aan ExpressRoute-l
 | **Geopolitieke regio** | **Azure-regio's** | **ExpressRoute-locaties** |
 | --- | --- | --- |
 | **Australië - overheid** |Australië Centraal, Australië Centraal 2 |Canberra, Canberra2 |
-| **Europa** | Frankrijk-centraal, Frankrijk-zuid, Duitsland-noord, Duitsland-west-centraal, Europa-noord, Noor wegen Oost, Noor wegen West, Zwitserland-noord, Zwitserland-west, UK-west, UK-zuid, Europa-west |Amsterdam, Amsterdam2, Berlijn, kopen Hagen, Dublin, Frankfurt, Genève, Londen, London2, Marseille, Milaan, München, Newport (Wales), Utrecht, Parijs, Stavanger, Stockholm, Zürich |
-| **Noord-Amerika** |VS - oost, VS - west, VS - oost 2, VS - west 2, VS - centraal, VS - zuid-centraal, VS - noord-centraal, VS - west-centraal, Canada - centraal, Canada - oost |Atlanta, Chicago, Amsterdam, Denver, Las, Groningen, los Angeles2, Miami, Minneapolis, Montreal, New York, Phoenix, Quebec, Queretaro (Mexico), Quincy, San Antonio, Seattle, silicone dal, Silicon Valley2, Toronto, Vancouver, Washington DC, Washington DC2 |
+| **Europa** | Frankrijk-centraal, Frankrijk-zuid, Duitsland-noord, Duitsland-west-centraal, Europa-noord, Noor wegen Oost, Noor wegen West, Zwitserland-noord, Zwitserland-west, UK-west, UK-zuid, Europa-west |Amsterdam, Amsterdam2, Berlijn, kopen Hagen, Dublin, Frankfurt, Frankfurt2, Genève, Londen, London2, Madrid, Marseille, Milaan, München, Newport (Wales), Utrecht, Parijs, Stavanger, Stockholm, Zürich |
+| **Noord-Amerika** |VS - oost, VS - west, VS - oost 2, VS - west 2, VS - centraal, VS - zuid-centraal, VS - noord-centraal, VS - west-centraal, Canada - centraal, Canada - oost |Atlanta, Chicago, Rotterdam, Denver, Las, Groningen, los Angeles2, Miami, Minneapolis, Montreal, New York, Groningen, Quebec City, Queretaro (Mexico), Quincy, San Antonio, Seattle, Silicon dal, Silicon Valley2, Toronto, Toronto2, Vancouver, Washington DC, Washington DC2 |
 | **Azië** | Azië - oost, Azië - zuidoost | Bangkok, Hongkong, Hongkong Kong2, Jakarta, Kuala Lumpur, Singapore, Singapore2, Taiwan |
 | **India** | India - west, India - centraal, India - zuid |Chennai, Chennai2, Mumbai, Mumbai2 |
 | **Japan** | Japan - west, Japan - oost |Osaka, Tokio, Tokyo2 |
@@ -52,7 +52,7 @@ In de volgende tabel vindt u een toewijzing van Azure-regio's aan ExpressRoute-l
 | **Zuid-Korea** | Korea - centraal, Korea - zuid |Busan, Seoul|
 | **VAE** | UAE-centraal, UAE-noord | Dubai, Dubai2 |
 | **Zuid-Afrika** | Zuid-Afrika-west, Zuid-Afrika-noord |Kaapstad, Johannesburg |
-| **Zuid-Amerika** | Brazilië - zuid |Bogotá, Sao Paulo |
+| **Zuid-Amerika** | Brazilië - zuid |Bogotá, Rio de Janeiro, Sao Paulo |
 
 
 ## <a name="regions-and-geopolitical-boundaries-for-national-clouds"></a>Regio's en geopolitieke grenzen voor nationale clouds
@@ -105,7 +105,7 @@ De volgende tabel toont de locaties per serviceprovider. Als u alle beschikbare 
 | **du datamena** |Ondersteund |Ondersteund | Dubai2 |
 | **eir** |Ondersteund |Ondersteund |Dublin|
 | **[Wereld wijde communicatie met Epsilon](https://www.epsilontel.com/solutions/direct-cloud-connect)** |Ondersteund |Ondersteund |Singapore, Singapore2 |
-| **[Equinix](https://www.equinix.com/partners/microsoft-azure/)** |Ondersteund |Ondersteund |Amsterdam, Amsterdam2, Atlanta, Berlijn, Canberra2, Chicago, Rotterdam, Dubai2, Dublin, Frankfurt, Genève, Hongkong SAR, Londen, London2, Los Angeles, los Angeles2, Melbourne, Miami, Milaan, New York, Osaka, Parijs, Sao Paulo, Seattle, Seoul, silicone dal, Singapore, Stockholm, Sydney, Tokio, Toronto, Washington DC, Zürich |
+| **[Equinix](https://www.equinix.com/partners/microsoft-azure/)** |Ondersteund |Ondersteund |Amsterdam, Amsterdam2, Atlanta, Berlijn, Bogotá, Canberra2, Chicago, Rotterdam, Dubai2, Dublin, Frankfurt, Frankfurt2, Genève, Hongkong SAR, Londen, London2, Los Angeles, los Angeles2, Melbourne, Miami, Milaan, New York, Osaka, Parijs, Rio de Janeiro, Sao Paulo, Seattle, Seoul, Utrecht, Toronto, Washington |
 | **Etisalat VAE** |Ondersteund |Ondersteund |Dubai|
 | **[euNetworks](https://eunetworks.com/services/solutions/cloud-connect/microsoft-azure-expressroute/)** |Ondersteund |Ondersteund |Amsterdam, Amsterdam2, Dublin, Frankfurt, Londen |
 | **[FarEasTone](https://www.fetnet.net/corporate/en/Enterprise.html)** |Ondersteund |Ondersteund |Taipei|
@@ -133,7 +133,7 @@ De volgende tabel toont de locaties per serviceprovider. Als u alle beschikbare 
 | **[Level 3 Communications](http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** |Ondersteund |Ondersteund |Amsterdam, Chicago, Dallas, Londen, Newport (Wales), Sao Paulo, Seattle, Silicon Valley, Singapore, Washington DC |
 | **LG CNS** |Ondersteund |Ondersteund |Busan, Seoul |
 | **[Liquid Telecom](https://www.liquidtelecom.com/products-and-services/cloud.html)** |Ondersteund |Ondersteund |Kaapstad, Johannesburg |
-| **[Mega Port](https://www.megaport.com/services/microsoft-expressroute/)** |Ondersteund |Ondersteund |Amsterdam, Atlanta, Auckland, Chicago, Rotterdam, Denver, Dubai2, Dublin, Frankfurt, Genève, Hongkong, Hongkong, Kong2, Las London2, Londen,, Los Angeles, Melbourne, Miami, Minneapolis, Montreal, New York, Osaka, Utrecht, Perth, Quebec City, San Antonio, Seattle, Silicon dal, Singapore, Singapore2, Stavanger, Stockholm, Sydney, Sydney2, Tokyo, Tokyo2, Vancouver, Washington DC, Washington DC2, Zürich |
+| **[Mega Port](https://www.megaport.com/services/microsoft-expressroute/)** |Ondersteund |Ondersteund |Amsterdam, Atlanta, Auckland, Chennai, Chicago, Rotterdam, Denver, Dubai2, Dublin, Frankfurt, Genève, Hongkong, Hongkong, Kong2, Las London2, Londen,, Los Angeles, Melbourne, Miami, Minneapolis, Montreal, New York, Osaka, Utrecht, Parijs, Perth, Quebec City, San Antonio, Seattle, Silicon dal, Singapore, Singapore2, Stavanger, Stockholm, Sydney, Sydney2, Tokio, Tokyo2 Toronto, Vancouver, Washington DC, Washington DC2, Zürich |
 | **[MTN](https://www.mtnbusiness.co.za/en/Cloud-Solutions/Pages/microsoft-express-route.aspx)** |Ondersteund |Ondersteund |Londen |
 | **[Neutrona Networks](https://www.neutrona.com/index.php/azure-expressroute/)** |Ondersteund |Ondersteund |Rotterdam, Los Angeles, Miami, Sao Paulo, Washington DC |
 | **[Next Generation Data](https://vantage-dc-cardiff.co.uk/)** |Ondersteund |Ondersteund |Newport (Wales) |
@@ -149,6 +149,7 @@ De volgende tabel toont de locaties per serviceprovider. Als u alle beschikbare 
 | **[Orixcom](https://www.orixcom.com/cloud-solutions/)** | Ondersteund | Ondersteund | Dubai2 |
 | **[PacketFabric](https://www.packetfabric.com/cloud-connectivity/microsoft-azure)** |Ondersteund |Ondersteund |Chicago, Las, Groningen, silicium dal, Washington DC |
 | **[PCCW Global Limited](https://consoleconnect.com/clouds/#azureRegions)** |Ondersteund |Ondersteund |Chicago, Hongkong, Hong Kong2, Londen, Singapore2 |
+| **[REANNZ](https://www.reannz.co.nz/products-and-services/cloud-connect/)** | Ondersteund | Ondersteund | Auckland |
 | **[Retelit](https://www.retelit.it/EN/Home.aspx)** | Ondersteund | Ondersteund | Milaan | 
 | **[Sejong Telecom](https://www.sejongtelecom.net/en/pages/service/cloud_ms)** |Ondersteund |Ondersteund |Seoul |
 | **[SES](https://www.ses.com/networks/signature-solutions/signature-cloud/ses-and-azure-expressroute)** | Ondersteund |Ondersteund | London2, Washington DC |

@@ -11,10 +11,10 @@ ms.topic: tutorial
 ms.date: 02/04/2021
 ms.author: ambapat
 ms.openlocfilehash: 1e7ea0dc929fdbb4ca306405e6ed8993ed2e4afe
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/03/2021
 ms.locfileid: "100386098"
 ---
 # <a name="import-hsm-protected-keys-to-key-vault-byok"></a>Met HSM beveiligde sleutels importeren in Key Vault (BYOK)

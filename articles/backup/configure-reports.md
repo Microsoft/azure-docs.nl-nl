@@ -3,14 +3,14 @@ title: Azure Backup-rapporten configureren
 description: Rapporten voor Azure Backup configureren en weer geven met behulp van Log Analytics en Azure-werkmappen
 ms.topic: conceptual
 ms.date: 02/10/2020
-ms.openlocfilehash: 78ab22bece54caa15e23021e594eaa0742505f79
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 62bb59a8a77d11e30e54298317a35e1f883a9622
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100591972"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101710614"
 ---
-# <a name="configure-azure-backup-reports-preview"></a>Azure Backup rapporten configureren (preview-versie)
+# <a name="configure-azure-backup-reports"></a>Azure Backup-rapporten configureren
 
 Een veelvoorkomende vereiste voor back-upbeheerders is het verkrijgen van inzichten over back-ups op basis van gegevens die een lange periode bevallen. Voor deze oplossing gelden de volgende cases:
 
@@ -139,6 +139,20 @@ Als u de tegel **beleids optimalisatie** selecteert, gevolgd door de tegel **opt
 Het filter **type back-upbeheer** boven aan het tabblad moet de items **SQL hebben in azure VM** en **SAP Hana in azure VM** geselecteerd, zodat het raster de data bases op de verwachte manier kan weer geven.
 
 ![Optimalisatie van het tabblad optimaliseren](./media/backup-azure-configure-backup-reports/optimize-backup-schedule.png)
+
+###### <a name="policy-adherence"></a>Inachtneming van beleid
+
+Op dit tabblad kunt u aangeven of al uw back-upinstanties elke dag minstens één geslaagde back-up hebben. U kunt de beleids regels weer geven op basis van de tijds periode of het back-upexemplaar.
+
+###### <a name="email-azure-backup-reports"></a>E-mail Azure Backup rapporten
+
+Met de functie voor **e-mail** rapporten die beschikbaar is in back-uprapporten, kunt u geautomatiseerde taken maken voor het ontvangen van periodieke rapporten via e-mail. Deze functie werkt door een logische app te implementeren in uw Azure-omgeving die gegevens opvraagt van uw geselecteerde Log Analytics (LA)-werk ruimten, op basis van de invoer die u opgeeft.
+
+Zodra de logische app is gemaakt, moet u verbindingen met Azure Monitor-logboeken en Office 365 autoriseren. Als u dit wilt doen, gaat u naar **Logic apps** in de Azure Portal en zoekt u naar de naam van de taak die u hebt gemaakt. Als u het menu-item **API-verbindingen** selecteert, wordt de lijst met API-verbindingen weer gegeven die u moet autoriseren.
+
+###### <a name="customize-azure-backup-reports"></a>Azure Backup-rapporten aanpassen
+
+Back-uprapporten gebruiken functies in Azure Monitor Logboeken. Deze functies werken op gegevens in de onbewerkte Azure Backup tabellen in LA en retour neren gegevens die u helpen bij het ophalen van gegevens van al uw back-upentiteiten, met behulp van eenvoudige query's.
 
 ## <a name="export-to-excel"></a>Exporteren naar Excel
 

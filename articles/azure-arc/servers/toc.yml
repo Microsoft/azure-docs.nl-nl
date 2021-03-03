@@ -31,6 +31,8 @@
       items:
         - name: Overzicht van Connected Machine-agent
           href: agent-overview.md
+        - name: Plannen voor implementatie op schaal
+          href: plan-at-scale-deployment.md
         - name: Machines verbinden met Azure Arc vanuit de Azure-portal
           href: onboard-portal.md
         - name: Machines op schaal verbinden met een service-principal

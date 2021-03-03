@@ -8,38 +8,42 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: eb59bb43d493609ae408a402eaea2dcc9c6fab29
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 71217e6379c02191311f5d93cb439d9da20080bc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100548774"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101706959"
 ---
 # <a name="deploy-a-cloud-service-extended-support-using-arm-templates"></a>Een Cloud service (uitgebreide ondersteuning) implementeren met ARM-sjablonen
 
-In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud service (uitgebreide ondersteuning) maakt met [arm-sjablonen](https://docs.microsoft.com/azure/azure-resource-manager/templates/overview). 
+In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud service (uitgebreide ondersteuning) maakt met [arm-sjablonen](../azure-resource-manager/templates/overview.md). 
 
 > [!IMPORTANT]
 > Cloud Services (uitgebreide ondersteuning) is momenteel beschikbaar als open bare preview.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
+> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 
 ## <a name="before-you-begin"></a>Voordat u begint
-1. Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud Services (uitgebreide ondersteuning) en maak de bijbehorende resources. 
 
-2. Maak een nieuwe resource groep met behulp van de [Azure Portal](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal) of [Power shell](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-powershell). Deze stap is optioneel als u een bestaande resource groep gebruikt. 
+1. Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud Services (uitgebreide ondersteuning) en maak de bijbehorende resources.
+
+2. Maak een nieuwe resource groep met behulp van de [Azure Portal](/azure/azure-resource-manager/management/manage-resource-groups-portal) of [Power shell](/azure/azure-resource-manager/management/manage-resource-groups-powershell). Deze stap is optioneel als u een bestaande resource groep gebruikt.
  
-3. Maak een nieuw opslag account met behulp van de [Azure Portal](https://docs.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-portal) of [Power shell](https://docs.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-powershell). Deze stap is optioneel als u een bestaand opslag account gebruikt. 
+3. Maak een nieuw opslag account met behulp van de [Azure Portal](/azure/storage/common/storage-account-create?tabs=azure-portal) of [Power shell](/azure/storage/common/storage-account-create?tabs=azure-powershell). Deze stap is optioneel als u een bestaand opslag account gebruikt.
 
-4. Upload uw service definition (csdef) en service configuratie bestanden (. cscfg) naar het opslag account met behulp van de [Azure Portal](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal#upload-a-block-blob), [AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-blobs-upload?toc=/azure/storage/blobs/toc.json) of [Power shell](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-powershell#upload-blobs-to-the-container). Verkrijg de SAS-Uri's van beide bestanden die u later in deze zelf studie moet toevoegen aan de ARM-sjabloon. 
+4. Upload uw service definition (csdef) en service configuratie bestanden (. cscfg) naar het opslag account met behulp van de [Azure Portal](/azure/storage/blobs/storage-quickstart-blobs-portal#upload-a-block-blob), [AzCopy](/azure/storage/common/storage-use-azcopy-blobs-upload?toc=/azure/storage/blobs/toc.json) of [Power shell](/azure/storage/blobs/storage-quickstart-blobs-powershell#upload-blobs-to-the-container). Verkrijg de SAS-Uri's van beide bestanden die u later in deze zelf studie moet toevoegen aan de ARM-sjabloon.
 
-5. Beschrijving Maak een sleutel kluis en upload de certificaten. 
-    -  Certificaten kunnen worden gekoppeld aan Cloud Services om beveiligde communicatie van en naar de service mogelijk te maken. Om certificaten te kunnen gebruiken, moeten hun vinger afdrukken worden opgegeven in het service configuratie bestand (. cscfg) en worden geüpload naar een sleutel kluis. Een Key Vault kan worden gemaakt via de [Azure Portal](https://docs.microsoft.com/azure/key-vault/general/quick-create-portal) of [Power shell](https://docs.microsoft.com/azure/key-vault/general/quick-create-powershell). 
-    - De gekoppelde Key Vault moeten zich in dezelfde regio en hetzelfde abonnement bevinden als de Cloud service.   
-    - Voor de bijbehorende Key Vault voor moeten de juiste machtigingen zijn ingeschakeld, zodat Cloud Services (uitgebreide ondersteunings resource) het certificaat kan ophalen van Key Vault. Zie [certificaten en Key Vault](certificates-and-key-vault.md) voor meer informatie.
-    - Er moet worden verwezen naar de sleutel kluis in de sectie OsProfile van de ARM-sjabloon die in de onderstaande stappen wordt weer gegeven.
+5. Beschrijving Maak een sleutel kluis en upload de certificaten.
 
-## <a name="deploy-a-cloud-service-extended-support"></a>Een Cloud service implementeren (uitgebreide ondersteuning) 
+    -  Certificaten kunnen worden gekoppeld aan Cloud Services om beveiligde communicatie van en naar de service mogelijk te maken. Om certificaten te kunnen gebruiken, moeten hun vinger afdrukken worden opgegeven in het service configuratie bestand (. cscfg) en worden geüpload naar een sleutel kluis. Een sleutel kluis kan worden gemaakt via de [Azure Portal](/azure/key-vault/general/quick-create-portal) of [Power shell](/azure/key-vault/general/quick-create-powershell).
+    - De bijbehorende sleutel kluis moet zich in dezelfde regio en hetzelfde abonnement bevinden als de Cloud service.
+    - Voor de bijbehorende sleutel kluis voor moeten de juiste machtigingen zijn ingeschakeld, zodat de Cloud Services (uitgebreide ondersteunings resource) certificaten kan ophalen van Key Vault. Zie [certificaten en Key Vault](certificates-and-key-vault.md) voor meer informatie.
+    - In de sectie OsProfile van de ARM-sjabloon die wordt weer gegeven in de onderstaande stappen, moet worden verwezen naar de sleutel kluis.
+
+## <a name="deploy-a-cloud-service-extended-support"></a>Een Cloud service implementeren (uitgebreide ondersteuning)
+
 1. Virtueel netwerk maken. De naam van het virtuele netwerk moet overeenkomen met de verwijzingen in het service configuratie bestand (. cscfg). Als u een bestaand virtueel netwerk gebruikt, laat u deze sectie uit de ARM-sjabloon weg.
 
     ```json
@@ -68,7 +72,7 @@ In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud servic
     ] 
     ```
     
-     Als u een nieuw virtueel netwerk maakt, voegt u het volgende toe aan de `dependsOn` sectie om ervoor te zorgen dat het platform het virtuele netwerk maakt voordat de Cloud service wordt gemaakt. 
+     Als u een nieuw virtueel netwerk maakt, voegt u het volgende toe aan de `dependsOn` sectie om ervoor te zorgen dat het platform het virtuele netwerk maakt voordat de Cloud service wordt gemaakt.
 
     ```json
     "dependsOn": [ 
@@ -100,7 +104,7 @@ In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud servic
     ] 
     ```
      
-     Als u een nieuw IP-adres maakt, voegt u het volgende toe aan de `dependsOn` sectie om ervoor te zorgen dat het platform het IP-adres maakt voordat de Cloud service wordt gemaakt. 
+     Als u een nieuw IP-adres maakt, voegt u het volgende toe aan de `dependsOn` sectie om ervoor te zorgen dat het platform het IP-adres maakt voordat de Cloud service wordt gemaakt.
     
     ```json
     "dependsOn": [ 
@@ -108,7 +112,7 @@ In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud servic
           ] 
     ```
  
-3. Maak een object voor een netwerk profiel en koppel het open bare IP-adres aan de front-end van de load balancer. Er wordt automatisch een Load Balancer gemaakt door het platform.  
+3. Maak een object voor een netwerk profiel en koppel het open bare IP-adres aan de front-end van de load balancer. Er wordt automatisch een Load Balancer gemaakt door het platform.
 
     ```json
     "networkProfile": { 
@@ -134,7 +138,7 @@ In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud servic
     ```
  
 
-4. Voeg uw sleutel kluis referentie toe in het  `OsProfile`   gedeelte van de arm-sjabloon. Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan Cloud Services (uitgebreide ondersteuning). Voeg de certificaten toe aan Key Vault en verwijs vervolgens naar de certificaat vingerafdrukken in het service configuratie bestand (. cscfg). U moet ook Key Vault inschakelen voor de juiste machtigingen, zodat Cloud Services (uitgebreide ondersteunings resource) het certificaat kan ophalen dat is opgeslagen als geheimen van Key Vault. De Key Vault moet zich in dezelfde regio en hetzelfde abonnement bevinden als de Cloud service en een unieke naam hebben. Zie [certificaten gebruiken met Cloud Services (uitgebreide ondersteuning)](certificates-and-key-vault.md)voor meer informatie.
+4. Voeg uw sleutel kluis referentie toe in het  `OsProfile`   gedeelte van de arm-sjabloon. Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan Cloud Services (uitgebreide ondersteuning). Voeg de certificaten toe aan Key Vault en verwijs vervolgens naar de certificaat vingerafdrukken in het service configuratie bestand (. cscfg). U moet ook Key Vault inschakelen voor de juiste machtigingen, zodat Cloud Services (uitgebreide ondersteunings resource) het certificaat kan ophalen dat is opgeslagen als geheimen van Key Vault. De sleutel kluis moet zich in dezelfde regio en hetzelfde abonnement bevinden als de Cloud service en een unieke naam hebben. Zie [certificaten gebruiken met Cloud Services (uitgebreide ondersteuning)](certificates-and-key-vault.md)voor meer informatie.
      
     ```json
     "osProfile": { 
@@ -154,71 +158,70 @@ In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud servic
     ```
   
     > [!NOTE]
-    > SourceVault is de ARM-Resource-ID voor uw Key Vault. U kunt deze informatie vinden door de resource-ID te zoeken in de sectie eigenschappen van uw Key Vault. 
+    > SourceVault is de ARM-Resource-ID voor uw sleutel kluis. U kunt deze informatie vinden door de resource-ID te zoeken in de sectie eigenschappen van uw sleutel kluis.
     > - u kunt certificateUrl vinden door te navigeren naar het certificaat in de sleutel kluis die als **geheime id** is gemarkeerd.  
    >  - certificateUrl moet de notatie https://{endpoin}/geheimen/{geheimnaam}/{Secret-id} hebben.
 
-5. Een rollen profiel maken. Zorg ervoor dat het aantal rollen, rolnaams, het aantal instanties in elke rol en groottes hetzelfde zijn in de sectie Service configuratie (. cscfg), service definitie (. csdef) en roltype in de ARM-sjabloon. 
+5. Een rollen profiel maken. Zorg ervoor dat het aantal rollen, rolnaams, het aantal instanties in elke rol en groottes hetzelfde zijn in de sectie Service configuratie (. cscfg), service definitie (. csdef) en roltype in de ARM-sjabloon.
     
     ```json
-    "roleProfile": { 
-          "roles": { 
-          "value": [ 
-            { 
-              "name": "WebRole1", 
-              "sku": { 
-                "name": "Standard_D1_v2", 
-                "capacity": "1" 
-              } 
-            }, 
-            { 
-              "name": "WorkerRole1", 
-              "sku": { 
-                "name": "Standard_D1_v2", 
-                "capacity": "1" 
-              } 
+    "roleProfile": {
+      "roles": {
+        "value": [
+          {
+            "name": "WebRole1",
+            "sku": {
+              "name": "Standard_D1_v2",
+              "capacity": "1"
+            }
+          },
+          {
+            "name": "WorkerRole1",
+            "sku": {
+              "name": "Standard_D1_v2",
+              "capacity": "1"
             } 
-        }
+          } 
+        ]
+      }
     }   
     ```
 
-6. Beschrijving Maak een extensie profiel om uitbrei dingen toe te voegen aan uw Cloud service. In dit voor beeld voegen we de extern bureau blad-en Windows Azure Diagnostics-extensie toe. 
+6. Beschrijving Maak een extensie profiel om uitbrei dingen toe te voegen aan uw Cloud service. In dit voor beeld voegen we de extern bureau blad-en Windows Azure Diagnostics-extensie toe.
     
     ```json
         "extensionProfile": {
-              "extensions": [
-                {
-                  "name": "RDPExtension",
-                  "properties": {
-                    "autoUpgradeMinorVersion": true,
-                    "publisher": "Microsoft.Windows.Azure.Extensions",
-                    "type": "RDP",
-                    "typeHandlerVersion": "1.2.1",
-                    "settings": "<PublicConfig>\r\n <UserName>[Insert Username]</UserName>\r\n <Expiration>1/21/2022 12:00:00 AM</Expiration>\r\n</PublicConfig>",
-                    "protectedSettings": "<PrivateConfig>\r\n <Password>[Insert Password]</Password>\r\n</PrivateConfig>"
-                  }
-                },
-                {
-                  "name": "Microsoft.Insights.VMDiagnosticsSettings_WebRole1",
-                  "properties": {
-                    "autoUpgradeMinorVersion": true,
-                    "publisher": "Microsoft.Azure.Diagnostics",
-                    "type": "PaaSDiagnostics",
-                    "typeHandlerVersion": "1.5",
-                    "settings": "[parameters('wadPublicConfig_WebRole1')]",
-                    "protectedSettings": "[parameters('wadPrivateConfig_WebRole1')]",
-                    "rolesAppliedTo": [
-                      "WebRole1"
-              ]
+          "extensions": [
+            {
+              "name": "RDPExtension",
+              "properties": {
+                "autoUpgradeMinorVersion": true,
+                "publisher": "Microsoft.Windows.Azure.Extensions",
+                "type": "RDP",
+                "typeHandlerVersion": "1.2.1",
+                "settings": "<PublicConfig>\r\n <UserName>[Insert Username]</UserName>\r\n <Expiration>1/21/2022 12:00:00 AM</Expiration>\r\n</PublicConfig>",
+                "protectedSettings": "<PrivateConfig>\r\n <Password>[Insert Password]</Password>\r\n</PrivateConfig>"
+              }
+            },
+            {
+              "name": "Microsoft.Insights.VMDiagnosticsSettings_WebRole1",
+              "properties": {
+                "autoUpgradeMinorVersion": true,
+                "publisher": "Microsoft.Azure.Diagnostics",
+                "type": "PaaSDiagnostics",
+                "typeHandlerVersion": "1.5",
+                "settings": "[parameters('wadPublicConfig_WebRole1')]",
+                "protectedSettings": "[parameters('wadPrivateConfig_WebRole1')]",
+                "rolesAppliedTo": [
+                  "WebRole1"
+                ]
+              }
             }
-          }
-        ]
-      }
+          ]
+        }
+    ```
 
-  
-    ```    
-
-7. Bekijk de volledige sjabloon. 
+7. Bekijk de volledige sjabloon.
 
     ```json
     {
@@ -266,12 +269,12 @@ In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud servic
           "metadata": {
              "description": "Public configuration of Windows Azure Diagnostics extension"
           }
-         },
+        },
         "wadPrivateConfig_WebRole1": {
           "type": "securestring",
           "metadata": {
             "description": "Private configuration of Windows Azure Diagnostics extension"
-         }
+          }
         },
         "vnetName": {
           "type": "string",
@@ -411,7 +414,7 @@ In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud servic
                 }
               ]
             },
-        "extensionProfile": {
+            "extensionProfile": {
               "extensions": [
                 {
                   "name": "RDPExtension",
@@ -445,14 +448,15 @@ In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud servic
       ]
     }
     ```
- 
+
 8. Implementeer de sjabloon en het parameter bestand (para meters in sjabloon bestand definiëren) om de implementatie van de Cloud service (uitgebreide ondersteuning) te maken. Ga naar deze [voorbeeld sjablonen](https://github.com/Azure-Samples/cloud-services-extended-support) als dat nodig is.
 
     ```powershell
-    New-AzResourceGroupDeployment -ResourceGroupName “ContosOrg"  -TemplateFile "file path to your template file” -TemplateParameterFile "file path to your parameter file"
+    New-AzResourceGroupDeployment -ResourceGroupName "ContosOrg" -TemplateFile "file path to your template file" -TemplateParameterFile "file path to your parameter file"
     ```
- 
+
 ## <a name="next-steps"></a>Volgende stappen 
+
 - Bekijk [Veelgestelde vragen](faq.md) over Cloud Services (uitgebreide ondersteuning).
 - Implementeer een Cloud service (uitgebreide ondersteuning) met behulp van de [Azure Portal](deploy-portal.md), [Power shell](deploy-powershell.md), [sjabloon](deploy-template.md) of [Visual Studio](deploy-visual-studio.md).
 - Ga naar de [opslag plaats voor beelden van Cloud Services (uitgebreide ondersteuning)](https://github.com/Azure-Samples/cloud-services-extended-support)

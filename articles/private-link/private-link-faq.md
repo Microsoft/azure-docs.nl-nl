@@ -1,5 +1,5 @@
 ---
-title: Veelgestelde vragen over persoonlijke koppelingen van Azure
+title: Veelgestelde vragen (FAQ) over Azure Private Link
 description: Meer informatie over persoonlijke Azure-koppelingen.
 services: private-link
 author: malopMSFT
@@ -7,14 +7,14 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 10/05/2019
 ms.author: allensu
-ms.openlocfilehash: b56c57a0b803a41c095f6f25f69a18a815d182f1
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 4e81d8f88a7c01b6d302bcdaa88559159bed04ea
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99582006"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101709403"
 ---
-# <a name="azure-private-link-frequently-asked-questions-faq"></a>Veelgestelde vragen over persoonlijke koppelingen van Azure
+# <a name="azure-private-link-frequently-asked-questions-faq"></a>Veelgestelde vragen (FAQ) over Azure Private Link
 
 ## <a name="private-link"></a>Private Link
 
@@ -65,6 +65,12 @@ U kunt uw persoonlijke koppelings service op een aantal verschillende manieren s
 - Back-end-Vm's toevoegen aan de groep achter uw Standard Load Balancer 
 - Voeg een IP-adres toe aan de persoonlijke koppelings service. We hebben Maxi maal 8 Ip's per privé koppelings service toegestaan.  
 - Voeg een nieuwe persoonlijke koppelings service toe aan Standard Load Balancer. We hebben Maxi maal acht Services voor persoonlijke koppelingen per load balancer toegestaan.   
+
+### <a name="what-is-natnetwork-address-translation-ip-configuration-used-in-private-link-service-how-can-i-scale-in-terms-of-available-ports-and-connections"></a>Wat is NAT (netwerkadresomzetting) IP-configuratie die wordt gebruikt in de privé koppelings service? Hoe kan ik de schaal van beschik bare poorten en verbindingen schalen? 
+
+De NAT IP-configuratie zorgt ervoor dat er geen IP-conflict is tussen de bron-en doel ruimte van de bronnen (client provider) door middel van de bron-NAT op het privé koppelings verkeer aan de doel kant (aan de kant van de service provider). Het NAT IP-adres wordt weer gegeven als bron-IP voor alle pakketten die door uw service en doel-IP worden ontvangen voor alle pakketten die door uw service worden verzonden.  NAT IP kan worden gekozen uit elk subnet in het virtuele netwerk van een service provider. 
+
+Elk NAT IP biedt 64 KB TCP-verbindingen (64 KB poorten) per VM achter de Standard Load Balancer. U kunt meer verbindingen schalen en toevoegen door nieuwe NAT-Ip's toe te voegen of meer virtuele machines achter de Standard Load Balancer toe te voegen. Hierdoor wordt de beschik baarheid van de poort geschaald en worden meer verbindingen toegestaan. Verbindingen worden gedistribueerd via NAT Ip's en virtuele machines achter de Standard Load Balancer.
 
 ### <a name="can-i-connect-my-service-to-multiple-private-endpoints"></a>Kan ik mijn Service koppelen aan meerdere persoonlijke eind punten?
 Ja. Een service voor persoonlijke koppelingen kan verbindingen van meerdere persoonlijke eind punten ontvangen. Een persoonlijk eind punt kan echter alleen verbinding maken met één privé koppelings service.  

@@ -1,24 +1,24 @@
 ---
 title: Het bewaken van uw Azure Kubernetes service-cluster stoppen | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u de bewaking van uw Azure AKS-cluster kunt stoppen met Azure Monitor voor containers.
+description: In dit artikel wordt beschreven hoe u de bewaking van uw Azure AKS-cluster met container Insights kunt stoppen.
 ms.topic: conceptual
 ms.date: 08/19/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 476934d84d8ffc63336ec620432db3507b2cbb34
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: eab34f27d1e33b166971203082cce99fb2b0e106
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610248"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723534"
 ---
-# <a name="how-to-stop-monitoring-your-azure-kubernetes-service-aks-with-azure-monitor-for-containers"></a>Stoppen met controleren van Azure Kubernetes Service (AKS) met Azure Monitor voor containers
+# <a name="how-to-stop-monitoring-your-azure-kubernetes-service-aks-with-container-insights"></a>Het bewaken van uw Azure Kubernetes-service (AKS) stoppen met container Insights
 
 Nadat u de bewaking van uw AKS-cluster hebt ingeschakeld, kunt u stoppen met het bewaken van het cluster als u besluit dat u het niet meer wilt bewaken. In dit artikel wordt beschreven hoe u dit kunt doen met behulp van de Azure CLI of met de meegeleverde Azure Resource Manager sjablonen.  
 
 
 ## <a name="azure-cli"></a>Azure CLI
 
-Gebruik de opdracht [AZ AKS Disable-addons](/cli/azure/aks#az-aks-disable-addons) om Azure monitor voor containers uit te scha kelen. Met de opdracht wordt de agent uit de cluster knooppunten verwijderd, wordt de oplossing niet verwijderd of worden de gegevens die al zijn verzameld en opgeslagen in uw Azure Monitor-resource.  
+Gebruik de opdracht [AZ AKS Disable-addons](/cli/azure/aks#az-aks-disable-addons) om container Insights uit te scha kelen. Met de opdracht wordt de agent uit de cluster knooppunten verwijderd, wordt de oplossing niet verwijderd of worden de gegevens die al zijn verzameld en opgeslagen in uw Azure Monitor-resource.  
 
 ```azurecli
 az aks disable-addons -a monitoring -n MyExistingManagedCluster -g MyExistingManagedClusterRG
@@ -165,4 +165,4 @@ ProvisioningState       : Succeeded
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als de werk ruimte alleen is gemaakt ter ondersteuning van het bewaken van het cluster en u deze niet meer nodig hebt, moet u deze hand matig verwijderen. Als u niet bekend bent met het verwijderen van een werk ruimte, raadpleegt u [een Azure log Analytics-werk ruimte verwijderen met de Azure Portal](../platform/delete-workspace.md). Vergeet niet om de **resource-id van de werk ruimte** die u eerder in stap 4 hebt gekopieerd, te zien.
+Als de werk ruimte alleen is gemaakt ter ondersteuning van het bewaken van het cluster en u deze niet meer nodig hebt, moet u deze hand matig verwijderen. Als u niet bekend bent met het verwijderen van een werk ruimte, raadpleegt u [een Azure log Analytics-werk ruimte verwijderen met de Azure Portal](../logs/delete-workspace.md). Vergeet niet om de **resource-id van de werk ruimte** die u eerder in stap 4 hebt gekopieerd, te zien.

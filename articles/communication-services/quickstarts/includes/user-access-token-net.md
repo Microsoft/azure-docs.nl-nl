@@ -10,16 +10,16 @@ ms.date: 08/20/2020
 ms.topic: include
 ms.custom: include file
 ms.author: tchladek
-ms.openlocfilehash: 49c4179432c0b57dfe68de563621807b1141fc67
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 2213da7b9c6e4776a0e463e6a43d0cc645a1e911
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101657073"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750845"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
-- Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+- Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) 
 - De nieuwste versie van [.NET Core-clientbibliotheek](https://dotnet.microsoft.com/download/dotnet-core) voor uw besturingssysteem.
 - Een actieve Communication Services-resource en verbindingsreeks. [Een Communication Services-resource maken](../create-communication-resource.md).
 
@@ -45,7 +45,7 @@ dotnet build
 Terwijl u nog steeds in de toepassingsmap, installeert u het Azure Communication Services-identiteits bibliotheek voor .NET-pakket met behulp van de `dotnet add package` opdracht.
 
 ```console
-dotnet add package Azure.Communication.Identity --version 1.0.0
+dotnet add package Azure.Communication.Identity
 ```
 
 ### <a name="set-up-the-app-framework"></a>Het app-framework instellen
@@ -89,21 +89,6 @@ string connectionString = Environment.GetEnvironmentVariable("COMMUNICATION_SERV
 var client = new CommunicationIdentityClient(connectionString);
 ```
 
-U kunt ook het eind punt en de toegangs sleutel afzonderlijk scheiden.
-```csharp
-// This code demonstrates how to fetch your endpoint and access key
-// from an environment variable.
-string endpoint = Environment.GetEnvironmentVariable("COMMUNICATION_SERVICES_ENDPOINT");
-string accessKey = Environment.GetEnvironmentVariable("COMMUNICATION_SERVICES_ACCESSKEY");
-var client = new CommunicationIdentityClient(new Uri(endpoint), new AzureKeyCredential(accessKey));
-```
-
-Als u beheerde identiteit hebt ingesteld, raadpleegt u beheerde identiteiten [gebruiken](../managed-identity.md). u kunt ook verifiëren met beheerde identiteit.
-```csharp
-TokenCredential tokenCredential = new DefaultAzureCredential();
-var client = new CommunicationIdentityClient(endpoint, tokenCredential);
-```
-
 ## <a name="create-an-identity"></a>Een identiteit maken
 
 Azure Communication Services onderhoudt een lichte identiteitsmap. Gebruik de methode `createUser` om een nieuwe vermelding in de map te maken met een unieke `Id`. Sla de ontvangen identiteit op met een toewijzing aan gebruikers van uw toepassing. U kunt dit bijvoorbeeld doen door ze op te slaan in de database van uw toepassingsserver. De identiteit is later vereist voor het uitgeven van toegangstokens.
@@ -116,34 +101,46 @@ Console.WriteLine($"\nCreated an identity with ID: {identity.Id}");
 
 ## <a name="issue-identity-access-tokens"></a>Toegangstokens voor de identiteit verlenen
 
-Gebruik de methode `GetToken` om een toegangstoken voor de al bestaande Communication Services-identiteit uit te geven. Met de parameter `scopes` wordt een set primitieven gedefinieerd, waarmee dit toegangstoken wordt geautoriseerd. Raadpleeg de [lijst met ondersteunde acties](../../concepts/authentication.md). Er kan een nieuw exemplaar van de parameter `communicationUser` worden samengesteld op basis van de tekenreeksweergave van de Azure Communication Service-identiteit.
+Gebruik de methode `issueToken` om een toegangstoken voor de al bestaande Communication Services-identiteit uit te geven. Met de parameter `scopes` wordt een set primitieven gedefinieerd, waarmee dit toegangstoken wordt geautoriseerd. Raadpleeg de [lijst met ondersteunde acties](../../concepts/authentication.md). Er kan een nieuw exemplaar van de parameter `communicationUser` worden samengesteld op basis van de tekenreeksweergave van de Azure Communication Service-identiteit.
 
 ```csharp
 // Issue an access token with the "voip" scope for an identity
-var tokenResponse = await client.GetTokenAsync(identity, scopes: new [] { CommunicationTokenScope.VoIP });
+var tokenResponse = await client.IssueTokenAsync(identity, scopes: new [] { CommunicationTokenScope.VoIP });
 var token =  tokenResponse.Value.Token;
 var expiresOn = tokenResponse.Value.ExpiresOn;
 Console.WriteLine($"\nIssued an access token with 'voip' scope that expires at {expiresOn}:");
 Console.WriteLine(token);
 ```
 
-Toegangstokens zijn kortdurende referenties die opnieuw moeten worden uitgegeven. Als u dit niet doet, kan dit leiden tot onderbrekingen van de gebruikerservaring van uw toepassing. De antwoordeigenschap `expiresOn` geeft de levensduur van het toegangstoken aan.
+Toegangstokens zijn kortdurende referenties die opnieuw moeten worden uitgegeven. Als u dit niet doet, kan dit leiden tot onderbrekingen van de gebruikerservaring van uw toepassing. De antwoordeigenschap `expiresOn` geeft de levensduur van het toegangstoken aan. 
+
+## <a name="create-an-identity-and-issue-an-access-token-within-the-same-request"></a>Een identiteit maken en binnen dezelfde aanvraag een toegangs token uitgeven
+
+Gebruik de `createUserWithToken` methode voor het maken van een communicatie Services-identiteit en het uitgeven van een toegangs token. Met de parameter `scopes` wordt een set primitieven gedefinieerd, waarmee dit toegangstoken wordt geautoriseerd. Raadpleeg de [lijst met ondersteunde acties](../../concepts/authentication.md).
+
+```csharp  
+// Issue an identity and an access token with the "voip" scope for the new identity
+var identityWithTokenResponse = await client.CreateUserWithTokenAsync(scopes: new[] { CommunicationTokenScope.VoIP });
+var identity = identityWithTokenResponse.Value.user.Id;
+var token = identityWithTokenResponse.Value.token.Token;
+var expiresOn = identityWithTokenResponse.Value.token.ExpiresOn;
+```
 
 ## <a name="refresh-access-tokens"></a>Toegangstokens vernieuwen
 
-Als u een toegangstoken wilt vernieuwen, geeft u een exemplaar van het `CommunicationUserIdentifier`-object door aan `GetTokenAsync`. Als u deze `Id` hebt opgeslagen en een nieuwe `CommunicationUserIdentifier` wilt maken, kunt u dit doen door uw opgeslagen `Id` als volgt door te geven aan de `CommunicationUserIdentifier`-constructor:
+Als u een toegangstoken wilt vernieuwen, geeft u een exemplaar van het `CommunicationUser`-object door aan `IssueTokenAsync`. Als u deze `Id` hebt opgeslagen en een nieuwe `CommunicationUser` wilt maken, kunt u dit doen door uw opgeslagen `Id` als volgt door te geven aan de `CommunicationUser`-constructor:
 
-```csharp
+```csharp  
 // In this example, userId is a string containing the Id property of a previously-created CommunicationUser
-var identityToRefresh = new CommunicationUserIdentifier(userId);
-var tokenResponse = await client.GetTokenAsync(identityToRefresh, scopes: new [] { CommunicationTokenScope.VoIP });
+identityToRefresh = new CommunicationUser(userId);
+tokenResponse = await client.IssueTokenAsync(identityToRefresh, scopes: new [] { CommunicationTokenScope.VoIP });
 ```
 
 ## <a name="revoke-access-tokens"></a>Toegangstokens intrekken
 
 In sommige gevallen kunt u toegangstokens expliciet intrekken. Wanneer de gebruiker van een toepassing bijvoorbeeld het wachtwoord wijzigt dat wordt gebruikt voor verificatie bij uw service. Met de methode `RevokeTokensAsync` worden alle actieve toegangstokens die zijn verleend aan de identiteit ongeldig gemaakt.
 
-```csharp
+```csharp  
 await client.RevokeTokensAsync(identity);
 Console.WriteLine($"\nSuccessfully revoked all access tokens for identity with ID: {identity.Id}");
 ```

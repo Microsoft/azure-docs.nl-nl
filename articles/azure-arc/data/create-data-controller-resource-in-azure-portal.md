@@ -7,14 +7,14 @@ ms.subservice: azure-arc-data
 author: twright-msft
 ms.author: twright
 ms.reviewer: mikeray
-ms.date: 09/22/2020
+ms.date: 03/02/2021
 ms.topic: how-to
-ms.openlocfilehash: bd8c079e91a6765dff8ad347085c44d0aa2f8d82
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 9c928040aa2ff5a6ebfb7102c03450d3d7297b59
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737300"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686475"
 ---
 # <a name="create-an-azure-arc-data-controller-in-the-azure-portal"></a>Een Azure-Arc-gegevens controller maken in de Azure Portal
 
@@ -48,6 +48,10 @@ Volg de onderstaande stappen om een Azure-Arc-gegevens controller te maken met b
 1. Selecteer een configuratie profiel voor de implementatie.
 1. Klik op de knop **openen in azure Studio** .
 1. In het volgende scherm ziet u een samen vatting van uw selecties en een notitie blok dat wordt gegenereerd.  U kunt op de knop **inrichtings notitieblok downloaden** klikken om het notitie blok te downloaden.
+
+   > [!IMPORTANT]
+   > Op Azure Red Hat open Shift of Red Hat open Shift container platform moet u de beveiligings context beperking Toep assen voordat u de gegevens controller maakt. Volg de instructies in [een beveiligings context beperking Toep assen voor Azure Arc enabled Data Services op open Shift](how-to-apply-security-context-constraint.md).
+
 1. Open het notitie blok in Azure Data Studio en klik bovenaan op de knop **alles uitvoeren** .
 1. Volg de aanwijzingen en instructies in het notitie blok om het maken van de gegevens controller te volt ooien.
 

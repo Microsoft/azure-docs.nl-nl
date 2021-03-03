@@ -7,12 +7,12 @@ ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: MVC
-ms.openlocfilehash: e57084dab00210802edbd46e3380313e034eb036
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: c1c56edacbc777b5e8b53da588bc763201379964
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98566749"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101718801"
 ---
 # <a name="tutorial-assess-vmware-vms-for-migration-to-avs"></a>Zelfstudie: VMware-VM's evalueren voor migratie naar AVS
 
@@ -50,6 +50,9 @@ Beslis of u een evaluatie wilt uitvoeren met behulp van de groottecriteria op ba
 **As-is on-premises** | Beoordeling op basis van configuratiegegevens/metagegevens van de machine.  | De aanbevolen knooppuntgrootte in AVS is gebaseerd op de grootte van de on-premises virtuele machine, samen met de instellingen die u opgeeft in de evaluatie van het knooppunttype, het opslagtype en de instelling voor fouttolerantie.
 **Op basis van prestaties** | Evaluaties op basis van verzamelde dynamische prestatiegegevens. | De aanbevolen knooppuntgrootte in AVS is gebaseerd op de gegevens over het CPU- en geheugengebruik, samen met de instellingen die u opgeeft in de evaluatie van het knooppunttype, het opslagtype en de instelling voor fouttolerantie.
 
+> [!NOTE]
+> De evaluatie van de Azure VMware-oplossing (AVS) kan alleen worden gemaakt voor virtuele VMware-machines.
+
 ## <a name="run-an-assessment"></a>Een evaluatie uitvoeren
 
 Voer als volgt een evaluatie uit:
@@ -60,7 +63,7 @@ Voer als volgt een evaluatie uit:
 
 1. In **Azure Migrate: Serverevaluatie** klikt u op **Evalueren**.
 
-1. Selecteer onder **Servers evalueren** > **Type evaluatie**, **Azure VMware Solution (AVS) (preview)** .
+1. Selecteer in het  >  **beoordelings type** servers beoordelen de **Azure VMware-oplossing (AVS)**.
 
 1. In **Detectiebron**:
 
@@ -76,14 +79,14 @@ Voer als volgt een evaluatie uit:
 
     - Geef onder **Doelregio** de Azure-regio op waarnaar u de migratie wilt uitvoeren.
        - De aanbevelingen voor grootte en kosten zijn gebaseerd op de locatie die u opgeeft.
-       - U kunt op dit moment evalueren voor vier regio's (Australië-oost, VS-Oost, Europa-west, VS-West)
    - Het **opslag type** wordt standaard ingesteld op **vSAN**. Dit is het standaard opslagtype voor een privécloud.
    - **Gereserveerde instanties** worden momenteel niet ondersteund voor AVS-knooppunten.
 1. In **VM-grootte**:
     - Het **knooppunt type** wordt standaard ingesteld op **AV36**. Azure Migrate adviseert het knooppunt van knooppunten die nodig zijn om de virtuele machines naar AVS te migreren.
     - In de **instelling FTT, RAID-niveau**, selecteert u de combi natie van niet-toegestaan en RAID.  De geselecteerde FTT-optie bepaalt samen met de schijfvereiste voor de on-premises virtuele machine de totale vSAN-opslag die is vereist in AVS.
     - Geef bij **CPU-overbezetting** de verhouding op van virtuele kerngeheugens die zijn gekoppeld aan één fysiek kerngeheugen in het AVS-knooppunt. Een overschrijding van meer dan 4:1 kan leiden tot verminderde prestaties, maar kan worden gebruikt voor werkbelastingen van het type webserver.
-
+    - Geef in **geheugen overdoorvoer factor** de verhouding van geheugen op dat op het cluster moet worden doorgevoerd. Een waarde van 1 betekent 100% geheugen gebruik, 0,5 bijvoorbeeld 50%, en 2 maakt gebruik van 200% van het beschik bare geheugen. U kunt alleen waarden van 0,5 tot en met 10 tot één decimaal positie toevoegen.
+    - Geef bij ontdubbeling **en compressie factor** de verwachte ontdubbeling en compressie factor op voor uw workloads. De werkelijke waarde kan worden verkregen via on-premises vSAN of opslag configuratie. Dit kan per werk belasting verschillen. Een waarde van 3 zou betekenen dat er voor 300 GB schijf ruimte alleen 100 GB mag worden gebruikt. Een waarde van 1 betekent dat u geen duplicaten of compressie ontdubbelt. U kunt alleen waarden van 1 tot en met 10 tot één decimaal positie toevoegen.
 1. In **Knooppuntgrootte**: 
     - Selecteer onder **Criterium voor het aanpassen van de grootte** of u de evaluatie wilt baseren op statische metagegevens of op gegevens op basis van de prestaties. Als u prestatiegegevens gebruikt:
         - Geef onder **Prestatiegeschiedenis** de gegevensduur aan waarop u de evaluatie wilt baseren
@@ -127,7 +130,6 @@ Een AVS-evaluatie beschrijft het volgende:
 - Aantal AVS-knooppunten: Geschat aantal AVS-knooppunten dat is vereist om de virtuele machines uit te voeren.
 - Gebruik over AVS-knooppunten: Geprojecteerde CPU-, geheugen- en opslaggebruik op alle knooppunten.
     - Gebruik is een vooraf prefactorie in de volgende overhead van Cluster beheer, zoals de vCenter Server, NSX Manager (groot), NSX Edge, als HCX is geïmplementeerd, ook de HCX Manager en IX toestellen die ~ 44vCPU (11 CPU), 75GB aan RAM en 722GB aan opslag gebruiken vóór compressie en ontdubbeling. 
-    - Geheugen, ontdubbeling en compressie zijn momenteel ingesteld op 100% gebruik voor geheugen en 1,5 ontdubbeling en compressie, een door de gebruiker gedefinieerde invoer in komende releases, waardoor de gebruiker de vereiste grootte kan aanpassen.
 - Schatting van de maandelijkse kosten: De geschatte maandelijkse kosten voor alle knooppunten van de Azure VMware Solution (AVS) die de on-premises virtuele machines uitvoeren.
 
 ## <a name="view-an-assessment"></a>Een evaluatie weergeven
@@ -155,7 +157,7 @@ U geeft een evaluatie als volgt weer:
 
 3. Bekijk het voorgestelde hulpprogramma.
 
-    - VMware HCX of Enterprise: Voor VMware-machines is de VMWare HCX-oplossing (Hybrid Cloud Extension) het voorgestelde hulpprogramma voor migratie voor het migreren van uw on-premises workload naar uw AVS-privécloud (Azure VMware Solution). Meer informatie
+    - VMware HCX of ENTER prise: voor VMware-machines is de VMware Hybrid Cloud extension (HCX)-oplossing het aanbevolen migratie programma voor het migreren van uw on-premises werk belasting naar uw Azure VMware-oplossing (AVS) Private Cloud. Meer informatie
     - Onbekend: Voor machines die zijn geïmporteerd via een CSV-bestand, is het standaardhulpprogramma voor migratie onbekend. Voor VMware-machines wordt echter aanbevolen om de VMWare HCX-oplossing (Hybrid Cloud Extension) te gebruiken.
 4. Klik op een Azure-gereedheidsstatus. U kunt details van de VM-gereedheid weergeven en inzoomen op de details van de VM, inclusief berekenings-, opslag- en netwerkinstellingen.
 
@@ -167,7 +169,7 @@ Het evaluatieoverzicht toont de geschatte reken- en opslagkosten om virtuele mac
 
     - Kostenramingen zijn gebaseerd op het aantal AVS-knooppunten dat is vereist op basis van de resourcevereisten van alle virtuele machines bij elkaar.
     - Omdat de prijzen voor AVS per knooppunt gelden, zijn de totale kosten zonder verdeling van de rekenkosten en opslagkosten.
-    - De schatting van de kosten is voor het uitvoeren van de on-premises virtuele machines in AVS. Azure Migrate Serverevaluatie houdt geen rekening met PaaS-of SaaS-kosten.
+    - De schatting van de kosten is voor het uitvoeren van de on-premises virtuele machines in AVS. AVS-evaluatie houdt geen rekening met PaaS of SaaS-kosten.
 
 2. Controleer de geschatte de maandelijkse opslag. In deze weergave worden de samengevoegde opslagkosten voor de geëvalueerde groep weergegeven, gesplitst over verschillende typen opslagschijven. 
 3. U kunt inzoomen om de kostendetails voor specifieke VM's te bekijken.

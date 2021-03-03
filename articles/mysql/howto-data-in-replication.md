@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 01/13/2021
-ms.openlocfilehash: 22974a47a6b1e9d49e5055a85f46286497cfe149
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 29ac0c5991964de48cedd15622d15e929bc9d733
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250529"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101709543"
 ---
 # <a name="how-to-configure-azure-database-for-mysql-data-in-replication"></a>Azure Database for MySQL Replicatie van inkomende gegevens configureren
 
@@ -101,9 +101,23 @@ De volgende stappen maken en configureren van de MySQL-server die on-premises wo
    ```
 
    Als de variabele [`log_bin`](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_log_bin) wordt geretourneerd met de waarde ' on ', wordt de binaire logboek registratie ingeschakeld op de server.
-
-   Als `log_bin` wordt geretourneerd met de waarde uit, schakelt u binaire logboek registratie in door het bestand My. cnf te bewerken, zodat de `log_bin=ON` server opnieuw wordt opgestart om de wijziging van kracht te laten worden.
-
+   
+   Als `log_bin` wordt geretourneerd met de waarde uit, 
+   1. Zoek uw MySQL-configuratie bestand (My. cnf) op de bron server. Bijvoorbeeld:/etc/my.cnf
+   2. Open het configuratie bestand om het te bewerken en de sectie **mysqld** in het bestand te zoeken.
+   3.  Voeg in de sectie mysqld de volgende regel toe:
+   
+       ```bash
+       log-bin=mysql-bin.log
+       ```
+     
+   4. Start de MySQL-bron server opnieuw op om de wijzigingen van kracht te laten worden.
+   5. Wanneer de server opnieuw is opgestart, controleert u of binaire logboek registratie is ingeschakeld door dezelfde query uit te voeren als voor:
+   
+      ```sql
+      SHOW VARIABLES LIKE 'log_bin';
+      ```
+   
 4. Bron-serverinstellingen
 
    Replicatie van inkomende gegevens moet para meter `lower_case_table_names` consistent zijn tussen de bron-en replica servers. Deze para meter is standaard 1 in Azure Database for MySQL.

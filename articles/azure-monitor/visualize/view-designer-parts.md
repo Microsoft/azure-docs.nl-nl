@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/12/2018
-ms.openlocfilehash: 7b670cafa4d643e37fae068a4c0033fc97a96ccd
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 074c5dda8ff8d5f837e8ea2a85c183c69421bedb
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609349"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101710869"
 ---
 # <a name="reference-guide-to-view-designer-visualization-parts-in-azure-monitor"></a>Naslag Gids voor het weer geven van visualisatie onderdelen van designer in Azure Monitor
 Met behulp van View designer in Azure Monitor kunt u verschillende aangepaste weer gaven maken in de Azure Portal die u kan helpen bij het visualiseren van gegevens in uw Log Analytics-werk ruimte. Dit artikel bevat een Naslag Gids voor de instellingen voor de visualisatie onderdelen die beschikbaar zijn in uw aangepaste weer gaven.
@@ -24,7 +24,7 @@ Zie voor meer informatie over de ontwerp functie voor weer gaven:
 
 De beschik bare tegel typen voor weergave ontwerp worden beschreven in de volgende tabel:
 
-| Weergave type | Description |
+| Weergave type | Beschrijving |
 |:--- |:--- |
 | [Lijst met query's](#list-of-queries-part) |Hiermee wordt een lijst met logboek query's weer gegeven. U kunt elke query selecteren om de resultaten weer te geven. |
 | [Nummer en lijst](#number-and-list-part) |In de koptekst wordt één getal weer gegeven dat een aantal records uit een logboek query weergeeft. In de lijst worden de tien belangrijkste resultaten van een query weer gegeven, met een grafiek die de relatieve waarde van een numerieke kolom aangeeft of de wijziging in de loop van de tijd. |
@@ -39,7 +39,7 @@ De beschik bare tegel typen voor weergave ontwerp worden beschreven in de volgen
 In de volgende secties worden de tegel typen en de bijbehorende eigenschappen uitvoerig beschreven.
 
 > [!NOTE]
-> Onderdelen in weer gaven zijn gebaseerd op [logboek query's](../log-query/log-query-overview.md) in uw log Analytics-werk ruimte. Dit biedt momenteel geen ondersteuning voor [Cross-resource query's](../log-query/cross-workspace-query.md) om gegevens op te halen uit Application Insights.
+> Onderdelen in weer gaven zijn gebaseerd op [logboek query's](../logs/log-query-overview.md) in uw log Analytics-werk ruimte. Dit biedt momenteel geen ondersteuning voor [Cross-resource query's](../logs/cross-workspace-query.md) om gegevens op te halen uit Application Insights.
 
 ## <a name="list-of-queries-part"></a>Lijst met query onderdelen
 In de lijst met onderdeel query's wordt een lijst met logboek query's weer gegeven. U kunt elke query selecteren om de resultaten weer te geven. De weer gave bevat standaard één query en u kunt **+ query** selecteren om extra query's toe te voegen.
@@ -318,7 +318,7 @@ De naam en het scheidings teken voor waarden is het scheidings teken voor één 
 Denk bijvoorbeeld aan een eigenschap met de naam *locatie* die waarden bevat, zoals *Redmond-gebouw 41* en *Bellevue-gebouw 12*. U kunt een streepje (-) opgeven voor de naam en het scheidings teken voor waarden en de *plaats* voor de naam. Deze aanpak parseert elke waarde in twee eigenschappen met de naam *City* en *buil ding*.
 
 ### <a name="click-through-navigation"></a><a name="click-through-navigation"></a>Navigatie door klikken
-Door klikken en navigeren bepaalt welke actie wordt ondernomen wanneer u op een koptekst of lijst item in een weer gave klikt.  Hiermee opent u een query in de [log Analytics](../log-query/log-query-overview.md) of start u een andere weer gave.
+Door klikken en navigeren bepaalt welke actie wordt ondernomen wanneer u op een koptekst of lijst item in een weer gave klikt.  Hiermee opent u een query in de [log Analytics](../logs/log-query-overview.md) of start u een andere weer gave.
 
 In de volgende tabel worden de instellingen voor door klik navigatie beschreven.
 
@@ -357,4 +357,4 @@ De volgende tabel beschrijft de instellingen voor drempel waarden:
 | Kleur |De kleur die de drempel waarde aangeeft. |
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over [logboek query's](../log-query/log-query-overview.md) voor het ondersteunen van query's in visualisatie onderdelen.
+* Meer informatie over [logboek query's](../logs/log-query-overview.md) voor het ondersteunen van query's in visualisatie onderdelen.

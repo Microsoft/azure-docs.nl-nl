@@ -5,20 +5,20 @@ services: azure-monitor
 ms.topic: reference
 ms.date: 07/22/2020
 ms.subservice: metrics
-ms.openlocfilehash: 8f503623031b7071c5e0a206d078175e16a7e919
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: d48dcb4e45bbaf3d516f2a45e14a6be0837b55c0
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610616"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734380"
 ---
 # <a name="azure-monitor-platform-metrics-exportable-via-diagnostic-settings"></a>De metrische gegevens van het Azure Monitor-platform exporteerbaar via Diagnostische instellingen
 
-Azure Monitor biedt standaard [platform metrieken](../essentials/data-platform-metrics.md) zonder configuratie. Het biedt verschillende manieren om te communiceren met platform metrieken, zoals het maken van grafieken in de portal, het openen ervan via de REST API of het opvragen van query's via Power shell of CLI. Bekijk [metrische gegevens: ondersteund](../platform/metrics-supported.md) voor een volledige lijst met platform metrieken die momenteel beschikbaar zijn met de geconsolideerde metrische pijp lijn van Azure monitor. Als u deze metrische gegevens wilt opvragen en openen, gebruikt u de [2018-01-01-API-versie](/rest/api/monitor/metricdefinitions). Andere metrische gegevens zijn mogelijk beschikbaar in de portal of met behulp van verouderde Api's.
+Azure Monitor biedt standaard [platform metrieken](../essentials/data-platform-metrics.md) zonder configuratie. Het biedt verschillende manieren om te communiceren met platform metrieken, zoals het maken van grafieken in de portal, het openen ervan via de REST API of het opvragen van query's via Power shell of CLI. Bekijk [metrische gegevens: ondersteund](./metrics-supported.md) voor een volledige lijst met platform metrieken die momenteel beschikbaar zijn met de geconsolideerde metrische pijp lijn van Azure monitor. Als u deze metrische gegevens wilt opvragen en openen, gebruikt u de [2018-01-01-API-versie](/rest/api/monitor/metricdefinitions). Andere metrische gegevens zijn mogelijk beschikbaar in de portal of met behulp van verouderde Api's.
 
 ## <a name="metrics-not-exportable-via-diagnostic-settings"></a>De metrische gegevens zijn niet exporteerbaar via Diagnostische instellingen
 
-De inhoud die op deze locatie werd gebruikt, is verplaatst naar de [lijst met ondersteunde Azure monitor metrische gegevens](../platform/metrics-supported.md#exporting-platform-metrics-to-other-locations).
+De inhoud die op deze locatie werd gebruikt, is verplaatst naar de [lijst met ondersteunde Azure monitor metrische gegevens](./metrics-supported.md#exporting-platform-metrics-to-other-locations).
 
 Er gelden beperkingen voor het exporteren van metrische gegevens via Diagnostische instellingen. Alle metrische gegevens kunnen worden geëxporteerd met behulp van de REST API. 
 
@@ -548,5 +548,4 @@ Hier volgt een lijst met de metrische gegevens waarvan het gedrag is gewijzigd.
 | Micro soft. SQL/servers/elasticPools | xtp_storage_percent | Percentage In-Memory OLTP-opslag | 
 | Microsoft.Sql/servers | dtu_consumption_percent | DTU-percentage | 
 | Microsoft.Sql/servers | dtu_used | DTU gebruikt | 
-| Micro soft. SQL/managedInstances | avg_cpu_percent | Gemiddeld CPU-percentage | 
-
+| Micro soft. SQL/managedInstances | avg_cpu_percent | Gemiddeld CPU-percentage |

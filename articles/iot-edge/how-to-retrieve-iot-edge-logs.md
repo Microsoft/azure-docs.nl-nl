@@ -10,12 +10,12 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 ms.custom: devx-track-azurecli
 services: iot-edge
-ms.openlocfilehash: 69f7ec5114ad650f33eae740a54a3821b76ef2ac
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 65d95533e4cff02866111881f036225f9f544852
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99475536"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719012"
 ---
 # <a name="retrieve-logs-from-iot-edge-deployments"></a>Logboeken ophalen uit IoT Edge-implementaties
 
@@ -33,7 +33,18 @@ Hoewel dit niet vereist is, voor de beste compatibiliteit met deze functie is de
 <{Log Level}> {Timestamp} {Message Text}
 ```
 
-`{Log Level}` moet de indeling voor het [Ernst niveau van syslog](https://wikipedia.org/wiki/Syslog#Severity_level) volgen en `{Timestamp}` moet worden opgemaakt als `yyyy-MM-dd hh:mm:ss.fff zzz` .
+`{Timestamp}` moet worden opgemaakt als `yyyy-MM-dd hh:mm:ss.fff zzz` en `{Log Level}` moet volgen op de onderstaande tabel, die de ernst niveaus van de [Ernst code in de syslog-standaard](https://wikipedia.org/wiki/Syslog#Severity_level)afleidt.
+
+| Waarde | Ernst |
+|-|-|
+| 0 | Urgentie |
+| 1 | Waarschuwing |
+| 2 | Kritiek |
+| 3 | Fout |
+| 4 | Waarschuwing |
+| 5 | Kennisgeving |
+| 6 | Informatief |
+| 7 | Fouten opsporen |
 
 De [logger-klasse in IOT Edge](https://github.com/Azure/iotedge/blob/master/edge-util/src/Microsoft.Azure.Devices.Edge.Util/Logger.cs) fungeert als een canonieke implementatie.
 

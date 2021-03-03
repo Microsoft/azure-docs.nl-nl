@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/07/2020
 ms.author: alexeyo
-ms.openlocfilehash: 9b923ba208dd2a5111a59f67401b1e4f080b7187
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: f5566276f4555e2480434e385bf2129f5b8cdd24
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96754161"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699977"
 ---
 # <a name="speech-services-quotas-and-limits"></a>Quota en limieten voor Speech Services
 
@@ -104,14 +104,14 @@ Gelijktijdige aanvraag limieten voor **basis** -en **aangepaste** modellen moete
 De bestaande waarde van de para meter voor gelijktijdige aanvraag limiet is **niet** zichtbaar via Azure Portal, Command-Line-hulpprogram MA'S of API-aanvragen. Als u de bestaande waarde wilt verifiëren, maakt u een ondersteunings aanvraag voor Azure.
 
 >[!NOTE]
->Voor [spraak containers](speech-container-howto.md) is geen verhoging van de limiet van gelijktijdige aanvragen vereist, omdat containers alleen worden beperkt door de cpu's van de hardware waarop ze worden gehost. Spraak containers hebben echter hun eigen capaciteits beperkingen die moeten worden opgenomen in het account. Zie de vraag *"kunt u helpen met capaciteits planning en kosten schatting van on-premises spraak-naar-tekst containers?"* uit de [Veelgestelde vragen over spraak containers](speech-container-faq.md).
+>Voor [spraak containers](speech-container-howto.md) is geen verhoging van de limiet van gelijktijdige aanvragen vereist, omdat containers alleen worden beperkt door de cpu's van de hardware waarop ze worden gehost. Spraak containers hebben echter hun eigen capaciteits beperkingen die moeten worden opgenomen in het account. Zie de vraag *"kunt u helpen met capaciteits planning en kosten schatting van on-premises spraak-naar-tekst containers?"* uit de [Veelgestelde vragen over spraak containers](./speech-container-howto.md).
 
 #### <a name="have-the-required-information-ready"></a>De vereiste gegevens zijn gereed:
 - Voor **basis model**:
   - Spraak Resource-ID
-  - Regio
+  - Region
 - Voor **aangepast model**: 
-  - Regio
+  - Region
   - Aangepaste eind punt-ID
 
 - **Informatie over het ophalen van gegevens (basis model)**:  
@@ -205,4 +205,3 @@ Begin met het verhogen van de limiet voor gelijktijdige aanvragen voor uw resour
   - Azure-resource gegevens die u hebt [verzameld vóór](#prepare-the-required-information) 
   - Voer de vereiste gegevens in en klik op de knop *maken* op het tabblad *controleren en maken*
   - Noteer het nummer van de ondersteunings aanvraag in Azure Portal meldingen. U neemt binnenkort contact met u op voor verdere verwerking
-

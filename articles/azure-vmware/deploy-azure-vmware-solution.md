@@ -4,12 +4,12 @@ description: Meer informatie over het gebruik van de gegevens die zijn verzameld
 ms.topic: tutorial
 ms.custom: contperf-fy21q3
 ms.date: 02/17/2021
-ms.openlocfilehash: bfd057a19ebe26a66d11b52ddf17c285a1f9a308
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 6f1e587894d51eae2af4e9f76114f53f27ffefe1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652731"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703852"
 ---
 # <a name="deploy-and-configure-azure-vmware-solution"></a>Azure VMware Solution implementeren en configureren
 
@@ -62,7 +62,14 @@ In dit voorbeeld werd het 10.74.72.0/22-netwerk ingevoerd tijdens de implementat
 
 Meld u aan bij de jumpbox die u in de vorige stap hebt aangemaakt. Wanneer u bent aangemeld, opent u een webbrowser en navigeert u naar en meldt u zich aan in de vCenter-en NSX-beheer console.  
 
-U kunt de NSX van de vCenter en de IP-adressen en referenties van de beheer console in de Azure Portal identificeren.  Selecteer uw privécloud en selecteer vervolgens in de weergave **Overzicht** de optie **Identiteit > Standaard**. 
+U kunt de NSX van de vCenter en de IP-adressen en referenties van de beheer console in de Azure Portal identificeren.  Selecteer uw privécloud en vervolgens identiteit **beheren**  >  .
+
+>[!TIP]
+>Selecteer **een nieuw wacht woord genereren** om nieuwe vCenter-en NSX-T-wacht woorden te genereren.
+
+:::image type="content" source="media/tutorial-access-private-cloud/ss4-display-identity.png" alt-text="URL's en referenties weergeven van vCenter en NSX-beheer van de privécloud." border="true":::
+
+
 
 ## <a name="create-a-network-segment-on-azure-vmware-solution"></a>Een netwerksegment maken in Azure VMware Solution
 

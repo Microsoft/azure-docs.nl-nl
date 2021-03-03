@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 04/30/2020
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: f7301809b3befc41110a32062d6e478c412fa56e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: be5000b6f9153839b926932c82c9f8fa3ab93f5f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90981110"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101704834"
 ---
 # <a name="secure-a-custom-dns-name-with-a-tlsssl-binding-in-azure-app-service"></a>Een aangepaste DNS-naam beveiligen met een TLS/SSL-binding in Azure App Service
 
@@ -61,7 +61,7 @@ Open vanuit de linkernavigatiebalk van uw app het dialoogvenster **TLS/SSL-bindi
 
 ![Binding aan domein toevoegen](./media/configure-ssl-bindings/secure-domain-launch.png)
 
-Selecteer in **Aangepast domein**het aangepaste domein waarvoor u een binding wilt toevoegen.
+Selecteer in **Aangepast domein** het aangepaste domein waarvoor u een binding wilt toevoegen.
 
 Als uw app al een certificaat voor het geselecteerde aangepaste domein heeft, gaat u direct naar [Binding maken](#create-binding). Anders gaat u verder.
 
@@ -159,11 +159,11 @@ Taalspecifieke configuratiehandleidingen, zoals de handleiding [Node.js-configur
 
 ### <a name="azure-cli"></a>Azure CLI
 
-[!code-azurecli[main](../../cli_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.sh?highlight=3-5 "Bind a custom TLS/SSL certificate to a web app")] 
+[!code-azurecli[main](../../cli_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.sh?highlight=3-5 "Bind a custom TLS/SSL certificate to a web app")] 
 
 ### <a name="powershell"></a>PowerShell
 
-[!code-powershell[main](../../powershell_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.ps1?highlight=1-3 "Bind a custom TLS/SSL certificate to a web app")]
+[!code-powershell[main](../../powershell_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.ps1?highlight=1-3 "Bind a custom TLS/SSL certificate to a web app")]
 
 ## <a name="more-resources"></a>Meer bronnen
 

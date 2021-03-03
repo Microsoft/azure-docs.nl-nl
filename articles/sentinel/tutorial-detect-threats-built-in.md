@@ -14,22 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/06/2020
 ms.author: yelevin
-ms.openlocfilehash: 5d73337c25c812363b7a542bf42372ca3baa10e8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f1cfd941d8205a9bdc100ab69b115618af9f736d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88605436"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101726968"
 ---
 # <a name="tutorial-detect-threats-out-of-the-box"></a>Zelfstudie: Bedreigingen standaard detecteren
 
-
-> [!IMPORTANT]
-> Out-of-the-box-bedreigings detectie is momenteel beschikbaar als open bare preview.
-> Deze functie wordt zonder service level agreement gegeven en wordt niet aanbevolen voor productie werkbelastingen.
-> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
-
-Zodra u [uw gegevens bronnen](quickstart-onboard.md)   aan Azure Sentinel hebt gekoppeld, moet u een melding ontvangen wanneer er iets verdacht is. Daarom biedt Azure Sentinel out-of-the-box-ingebouwde sjablonen die u helpen bij het maken van regels voor het detecteren van bedreigingen. Deze sjablonen zijn ontworpen door het team van beveiligings experts en analisten van micro soft op basis van bekende bedreigingen, veelvoorkomende aanvals vectoren en escalatie ketens van verdachte activiteiten. Regels die zijn gemaakt op basis van deze sjablonen, doorzoeken automatisch in uw omgeving op alle activiteiten die er verdacht uitzien. Veel sjablonen kunnen worden aangepast om te zoeken naar activiteiten of ze te filteren op basis van uw behoeften. De waarschuwingen die door deze regels worden gegenereerd, maken incidenten die u kunt toewijzen en onderzoeken in uw omgeving.
+Zodra u [uw gegevens bronnen](quickstart-onboard.md) aan Azure Sentinel hebt gekoppeld, moet u een melding ontvangen wanneer er iets verdacht is. Daarom biedt Azure Sentinel out-of-the-box-ingebouwde sjablonen die u helpen bij het maken van regels voor het detecteren van bedreigingen. Deze sjablonen zijn ontworpen door het team van beveiligings experts en analisten van micro soft op basis van bekende bedreigingen, veelvoorkomende aanvals vectoren en escalatie ketens van verdachte activiteiten. Regels die zijn gemaakt op basis van deze sjablonen, doorzoeken automatisch in uw omgeving op alle activiteiten die er verdacht uitzien. Veel sjablonen kunnen worden aangepast om te zoeken naar activiteiten of ze te filteren op basis van uw behoeften. De waarschuwingen die door deze regels worden gegenereerd, maken incidenten die u kunt toewijzen en onderzoeken in uw omgeving.
 
 Deze zelf studie helpt u bij het detecteren van bedreigingen met Azure Sentinel:
 
@@ -53,9 +47,17 @@ De volgende sjabloon typen zijn beschikbaar:
 
     Op basis van de Fusion Technology maakt geavanceerde aanvals detectie in azure Sentinel gebruik van schaal bare machine learning algoritmen die een groot aantal waarschuwingen en gebeurtenissen met een lage kwaliteit kunnen verlichten over meerdere producten tot hoge betrouw baarheid en bruikbare incidenten. Fusion is standaard ingeschakeld. Omdat de logica verborgen is en daarom niet kan worden aangepast, kunt u slechts één regel met deze sjabloon maken.
 
-- **Gedrags analyse voor machine learning**
+    > [!IMPORTANT]
+    > Enkele van de detecties in de Fusion Rule-sjabloon zijn momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
+    >
+    > Als u wilt zien welke detecties in Preview zijn, raadpleegt u [Geavanceerde detectie van aanvals mogelijkheden in azure](fusion.md).
+
+- **Analyse van machine learning-gedrag**
 
     Deze sjablonen zijn gebaseerd op eigen algoritmen van micro soft machine learning, zodat u niet de interne logica kunt zien van hoe ze werken en wanneer ze worden uitgevoerd. Omdat de logica verborgen is en daarom niet kan worden aangepast, kunt u slechts één regel maken met elke sjabloon van dit type.
+
+    > [!IMPORTANT]
+    > De machine learning gedrags analyse regel sjablonen zijn momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
 
 - **Gepland**
 
@@ -65,7 +67,7 @@ De volgende sjabloon typen zijn beschikbaar:
 
 1. Als u een ingebouwde sjabloon wilt gebruiken, klikt u op de naam van de sjabloon en klikt u vervolgens op de knop **regel maken** in het detail venster om een nieuwe actieve regel te maken op basis van deze sjabloon. Elke sjabloon bevat een lijst met vereiste gegevens bronnen. Wanneer u de sjabloon opent, worden de gegevens bronnen automatisch gecontroleerd op Beschik baarheid. Als er een beschikbaarheids probleem is, kan de knop **regel maken** worden uitgeschakeld of wordt er een waarschuwing weer gegeven.
   
-    :::image type="content" source="media/tutorial-detect-built-in/use-built-in-template.png" alt-text="Ingebouwde detecties gebruiken om bedreigingen te vinden met Azure Sentinel":::
+    :::image type="content" source="media/tutorial-detect-built-in/use-built-in-template.png" alt-text="Paneel voor beeld van detectie regel":::
  
 1. Als u op de knop **regel maken** klikt, wordt de wizard regel maken geopend op basis van de geselecteerde sjabloon. Alle details worden aangevuld en met de **geplande** of **micro soft-beveiligings** sjablonen kunt u de logica en andere regel instellingen aanpassen aan uw specifieke behoeften. U kunt dit proces herhalen om extra regels te maken op basis van de ingebouwde sjabloon. Nadat u de stappen in de wizard voor het maken van de regel hebt uitgevoerd, hebt u een regel gemaakt op basis van de sjabloon. De nieuwe regels worden weer gegeven op het tabblad **actieve regels** .
 

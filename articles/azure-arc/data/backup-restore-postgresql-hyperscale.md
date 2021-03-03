@@ -7,92 +7,28 @@ ms.subservice: azure-arc-data
 author: TheJY
 ms.author: jeanyd
 ms.reviewer: mikeray
-ms.date: 09/22/2020
+ms.date: 12/09/2020
 ms.topic: how-to
-ms.openlocfilehash: d27537f017707e937303dd0c08a589db28aac6ef
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 8b3304c673e8606667246a7d0df9ad8f3be11d9b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92071435"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686696"
 ---
-# <a name="backup-and-restore-for-azure-arc-enabled-postgresql-hyperscale-server-groups"></a>Back-ups maken en herstellen voor Azure Arc ingeschakelde PostgreSQL grootschalige-Server groepen
+# <a name="back-up-and-restore-azure-arc-enabled-postgresql-hyperscale-server-groups"></a>Back-ups maken en herstellen van Azure Arc ingeschakelde PostgreSQL grootschalige-Server groepen
 
-U kunt een volledige back-up maken/herstellen van uw PostgreSQL grootschalige-Server groep voor Azure Arc. Wanneer u dit doet, wordt er een back-up gemaakt van de hele set data bases op alle knoop punten van de PostgreSQL grootschalige-Server groep van Azure.
-Als u een back-up wilt maken en herstellen, moet u ervoor zorgen dat er een back-upopslag klasse is geconfigureerd voor uw server groep. Voor nu moet u een back-upopslag klasse opgeven op het moment dat u de Server groep maakt. Het is nog niet mogelijk om uw server groep te configureren voor het gebruik van een back-upopslag klasse nadat deze is gemaakt.
+[!INCLUDE [azure-arc-common-prerequisites](../../../includes/azure-arc-common-prerequisites.md)]
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
-> [!CAUTION]
-> Preview biedt geen ondersteuning voor back-up/herstel voor versie 11 van de post gres-engine. Het ondersteunt alleen Backup/Restore voor post gres versie 12.
+Wanneer u een back-up maakt of herstelt van uw Azure-PostgreSQL grootschalige-Server groep, wordt een back-up gemaakt van de hele set data bases op alle PostgreSQL-knoop punten van de Server groep.
 
-## <a name="verify-configuration"></a>Configuratie controleren
-
-Controleer eerst of de bestaande server groep is geconfigureerd voor het gebruik van de back-upopslag klasse.
-
-Voer de volgende opdracht uit nadat u de naam van de Server groep hebt ingesteld:
-```console
- azdata arc postgres server show -n postgres01
-```
-Bekijk de sectie opslag van de uitvoer:
-```console
-...
-"storage": {
-      "backups": {
-        "className": "local-storage"
-      },
-      "data": {
-        "className": "local-storage",
-        "size": "5Gi"
-      },
-      "logs": {
-        "className": "local-storage",
-        "size": "5Gi"
-      }
-    }
-...
-```
-Als de naam van een opslag klasse wordt weer gegeven in de sectie ' back-ups ' van de uitvoer van die opdracht, betekent dit dat uw server groep is geconfigureerd voor het gebruik van een back-upopslag klasse en dat u klaar bent om back-ups te maken en op te slaan. Als u geen sectie back-ups ziet, moet u de Server groep verwijderen en opnieuw maken om de back-upopslag klasse te configureren. Op dit moment is het nog niet mogelijk om een back-upopslag klasse te configureren nadat de Server groep is gemaakt.
-
->[!IMPORTANT]
->Als uw server groep al is geconfigureerd voor het gebruik van een back-upopslag klasse, slaat u de volgende stap over en gaat u rechtstreeks naar stap ' hand matige volledige back-up maken '.
-
-## <a name="create-a-server-group"></a>Een server groep maken 
-
-Maak vervolgens een server groep die is geconfigureerd voor back-up/herstel.
-
-Als u back-ups wilt maken en deze wilt herstellen, moet u een server die is geconfigureerd met een opslag klasse.
-
-Voer de volgende opdracht uit om een lijst op te halen van de opslag klassen die beschikbaar zijn op uw Kubernetes-cluster:
-
-```console
-kubectl get sc
-```
-
-<!--The general format of create server group command is documented [here](create-postgresql-instances.md)-->
-
-```console
-azdata arc postgres server create -n <name> --workers 2 --storage-class-backups <storage class name> [--storage-class-data <storage class name>] [--storage-class-logs <storage class name>]
-```
-
-Als u bijvoorbeeld een eenvoudige omgeving hebt gemaakt op basis van kubeadm:
-```console
-azdata arc postgres server create -n postgres01 --workers 2 --storage-class-backups local-storage
-```
-
-## <a name="take-manual-full-backup"></a>Hand matige volledige back-up maken
-
-
-Maak vervolgens een hand matige volledige back-up.
-
-> [!CAUTION]
-> **Alleen voor gebruikers van de Azure Kubernetes-service (AKS):** we zijn op de hoogte van een probleem met het maken van back-ups van een server groep die wordt gehost op Azure Kubernetes service (AKS). We werken al aan het herstellen ervan. Voordat u een back-up maakt, moet u de meeste Server groepen verwijderen totdat de update is geïmplementeerd in een toekomstige release/update. Voor elk van de peulen van uw server groep (u vermeldt u het gehele aantal door **kubectl ophalen \<namespace name> van Peule-n **) te verwijderen door **kubectl delete pod \<server group pod name> -n \<namespace name> **uit te voeren. Verwijder geen peulen die geen deel uitmaken van uw server groep. Als u een Peul verwijdert, worden uw gegevens niet risico. Wacht totdat alle peulen weer online zijn en STATUS = actief zijn voordat u een back-up maakt. De status van de Pod wordt weer gegeven in de uitvoer van de opdracht kubectl Get Peule.
-
+## <a name="take-a-manual-full-backup"></a>Een hand matige volledige back-up maken
 
 Voer de volgende opdracht uit om een volledige back-up te maken van de volledige gegevens en logboek mappen van uw server groep:
-
 ```console
-azdata arc postgres backup create [--name <backup name>] --server-name <server group name> [--no-wait] 
+azdata arc postgres backup create [--name <backup name>] --server-name <server group name> [--no-wait] 
 ```
 Waar:
 - __naam__ geeft de naam van een back-up aan
@@ -102,18 +38,22 @@ Waar:
 Met deze opdracht wordt een gedistribueerde volledige back-up gecoördineerd op alle knoop punten die de PostgreSQL grootschalige-Server groep voor Azure Arc ondersteunen. Met andere woorden, Hiermee maakt u een back-up van alle gegevens in uw coördinator en worker-knoop punten.
 
 Bijvoorbeeld:
+
 ```console
-azdata arc postgres backup create --name MyBackup_Aug31_0730amPST --server-name postgres01
+azdata arc postgres backup create --name backup12082020-0250pm --server-name postgres01
 ```
 
-Wanneer de back-up is voltooid, worden de ID, de naam en de status van de back-up geretourneerd. Bijvoorbeeld:
+Wanneer de back-up is voltooid, worden de ID, naam, grootte, status en tijds tempel van de back-up geretourneerd. Bijvoorbeeld:
 ```console
 {
-  "ID": "d134f51aa87f4044b5fb07cf95cf797f",
-  "name": "MyBackup_Aug31_0730amPS",
-  "state": "Done"
+  "ID": "8085723fcbae4aafb24798c1458f4bb7",
+  "name": "backup12082020-0250pm",
+  "size": "9.04 MiB",
+  "state": "Done",
+  "timestamp": "2020-12-08 22:50:22+00:00"
 }
 ```
+`+xx:yy` Hiermee wordt de tijd zone aangegeven voor het tijdstip waarop de back-up is gemaakt. In dit voor beeld betekent ' + 00:00 ' de UTC-tijd (UTC + 00 uur 00 minuten).
 
 > [!NOTE]
 > Het is nog niet mogelijk om:
@@ -122,8 +62,6 @@ Wanneer de back-up is voltooid, worden de ID, de naam en de status van de back-u
 
 ## <a name="list-backups"></a>Back-ups weergeven
 
-De back-ups weer geven die beschikbaar zijn voor herstel.
-
 Voer de volgende opdracht uit om de back-ups weer te geven die beschikbaar zijn voor herstel:
 
 ```console
@@ -131,55 +69,124 @@ azdata arc postgres backup list --server-name <servergroup name>
 ```
 
 Bijvoorbeeld:
+
 ```console
 azdata arc postgres backup list --server-name postgres01
 ```
 
-Er wordt een uitvoer geretourneerd zoals:
-```console
-ID                                Name                      State    Timestamp
---------------------------------  ------------------------  -------  ------------------------------
-d134f51aa87f4044b5fb07cf95cf797f  MyBackup_Aug31_0730amPST  Done     2020-08-31 14:30:00:00+00:00
+Retourneert een uitvoer als:
+
+```output
+ID                                Name                   Size       State    Timestamp
+--------------------------------  ---------------------  ---------  -------  -------------------------
+d744303b1b224ef48be9cba4f58c7cb9  backup12072020-0731pm  13.83 MiB  Done     2020-12-08 03:32:09+00:00
+c4f964d28da34318a420e6d14374bd36  backup12072020-0819pm  9.04 MiB   Done     2020-12-08 04:19:49+00:00
+a304c6ef99694645a2a90ce339e94714  backup12072020-0822pm  9.1 MiB    Done     2020-12-08 04:22:26+00:00
+47d1f57ec9014328abb0d8fe56020760  backup12072020-0827pm  9.06 MiB   Done     2020-12-08 04:27:22+00:00
+8085723fcbae4aafb24798c1458f4bb7  backup12082020-0250pm  9.04 MiB   Done     2020-12-08 22:50:22+00:00
 ```
 
-Tijds tempel geeft het punt aan van de tijd waarop de back-up is gemaakt.
+De time stamp-kolom geeft het punt aan van de tijd UTC waarop de back-up is gemaakt.
 
 ## <a name="restore-a-backup"></a>Een back-up terugzetten
+In deze sectie wordt uitgelegd hoe u een volledige herstel bewerking of een herstel tijdstip kunt uitvoeren. Wanneer u een volledige back-up herstelt, herstelt u de volledige inhoud van de back-up. Wanneer u een herstel punt in de tijd maakt, herstelt u het tijdstip dat u opgeeft. Trans acties die later zijn uitgevoerd dan dit tijdstip, worden niet hersteld.
 
-Voer de volgende opdracht uit om de back-up van een hele server groep te herstellen:
-
+### <a name="restore-a-full-backup"></a>Een volledige back-up herstellen
+Als u de volledige inhoud van een back-up wilt herstellen, voert u de volgende opdracht uit:
 ```console
-azdata arc postgres backup restore --server-name <server group name> --backup-id <backup id>
+azdata arc postgres backup restore --server-name <target server group name> [--source-server-name <source server group name> --backup-id <backup id>]
+or
+azdata arc postgres backup restore -sn <target server group name> [-ssn <source server group name> --backup-id <backup id>]
 ```
+<!--To read the general format of restore command, run: azdata arc postgres backup restore --help -->
 
 Waar:
-- __Backup-id__ is de id van de back-up die wordt weer gegeven in de back-upopdracht van de lijst (zie stap 3).
+- __Backup-id__ is de id van de back-up die wordt weer gegeven in de lijst met weer gegeven back-upopdrachten hierboven.
 Hiermee coördineert u een gedistribueerd volledig herstel op alle knoop punten die de PostgreSQL grootschalige-Server groep van Azure Arc ondersteunen. Met andere woorden, Hiermee worden alle gegevens in uw coördinator en worker-knoop punten hersteld.
 
-Bijvoorbeeld:
+#### <a name="examples"></a>Voorbeelden:
+
+__Herstel de postgres01 van de Server groep op zichzelf:__
+
 ```console
-azdata arc postgres backup restore --server-name postgres01 --backup-id d134f51aa87f4044b5fb07cf95cf797f
+azdata arc postgres backup restore -sn postgres01 --backup-id d134f51aa87f4044b5fb07cf95cf797f
 ```
 
-Wanneer de herstel bewerking is voltooid, wordt de uitvoer als volgt geretourneerd naar de opdracht regel:
+Deze bewerking wordt alleen ondersteund voor PostgreSQL versie 12 en hoger.
+
+__Herstel de postgres01 van de Server groep naar een andere server groep postgres02:__
+
 ```console
+azdata arc postgres backup restore -sn postgres02 -ssn postgres01 --backup-id d134f51aa87f4044b5fb07cf95cf797f
+```
+Deze bewerking wordt ondersteund voor alle versies van PostgreSQL vanaf versie 11. De doel server groep moet worden gemaakt voordat de herstel bewerking moet dezelfde configuratie hebben en moet dezelfde back-uppvc gebruiken als de bron Server groep.
+
+Wanneer de herstel bewerking is voltooid, wordt de uitvoer als volgt geretourneerd naar de opdracht regel:
+
+```json
 {
   "ID": "d134f51aa87f4044b5fb07cf95cf797f",
   "state": "Done"
 }
 ```
+
 > [!NOTE]
 > Het is nog niet mogelijk om:
 > - Een back-up herstellen door de naam ervan aan te geven
-> - Een server groep herstellen onder een andere naam of op een andere server groep
+> - De voortgang van een herstel bewerking weer geven
+
+
+### <a name="do-a-point-in-time-restore"></a>Een herstel punt in de tijd herstellen
+
+Voer de volgende opdracht uit om een server groep te herstellen tot een specifieke punt tijd:
+```console
+azdata arc postgres backup restore --server-name <target server group name> --source-server-name <source server group name> --time <point in time to restore to>
+or
+azdata arc postgres backup restore -sn <target server group name> -ssn <source server group name> -t <point in time to restore to>
+```
+
+Als u de algemene indeling van de opdracht herstellen wilt lezen, voert u uit: `azdata arc postgres backup restore --help` .
+
+Waar `time` is het tijdstip waarop u wilt herstellen. Geef een tijds tempel of een nummer en achtervoegsel ( `m` voor minuten, `h` uren, `d` dagen of `w` weken) op. Gaat bijvoorbeeld `1.5h` 90 minuten terug.
+
+#### <a name="examples"></a>Voorbeelden:
+__Maak een herstel punt van de Server groep postgres01 op zichzelf:__
+
+Het is nog niet mogelijk om een herstel punt van een server groep naar zichzelf te herstellen.
+
+__Maak een herstel punt van de Server groep postgres01 naar een andere server groep postgres02 naar een specifieke tijds tempel:__
+```console
+azdata arc postgres backup restore -sn postgres02 -ssn postgres01 -t "2020-12-08 04:23:48.751326+00"
+``` 
+
+In dit voor beeld wordt de status van de postgres02-Server groep in de Server groep teruggezet op postgres01 december 2020 om 04:23:48.75 UTC. Houd er rekening mee dat "+ 00" de tijd zone aangeeft van het punt in de tijd dat u opgeeft. Als u geen tijd zone opgeeft, wordt de tijd zone van de client van waaruit u de herstel bewerking uitvoert, gebruikt.
+
+Bijvoorbeeld:
+- `2020-12-08 04:23:48.751326+00` wordt geïnterpreteerd als `2020-12-08 04:23:48.751326` UTC
+- Als u zich in de Pacific Standard Time zone (PST = UTC + 08) bevindt, `2020-12-08 04:23:48.751326` wordt geïnterpreteerd als `2020-12-08 12:23:48.751326` UTC. deze bewerking wordt ondersteund voor alle versies van postgresql vanaf versie 11. De doel server groep moet worden gemaakt vóór de herstel bewerking en moet dezelfde back-uppvc gebruiken als de bron Server groep.
+
+
+__Maak een herstel punt van de Server groep postgres01 naar een andere server groep postgres02 naar een specifieke hoeveelheid tijd in het verleden:__
+```console
+azdata arc postgres backup restore -sn postgres02 -ssn postgres01 -t "22m"
+```
+
+In dit voor beeld wordt in Server groep teruggezet postgres02 de status van de Server groep postgres01 22 minuten geleden.
+Deze bewerking wordt ondersteund voor alle versies van PostgreSQL vanaf versie 11. De doel server groep moet worden gemaakt vóór de herstel bewerking en moet dezelfde back-uppvc gebruiken als de bron Server groep.
+
+> [!NOTE]
+> Het is nog niet mogelijk om:
 > - De voortgang van een herstel bewerking weer geven
 
 ## <a name="delete-backups"></a>Back-ups verwijderen
+
 Het bewaren van back-ups kan niet worden ingesteld in de preview-versie. U kunt back-ups die u niet nodig hebt, echter hand matig verwijderen.
 De algemene opdracht voor het verwijderen van back-ups is:
+
 ```console
 azdata arc postgres backup delete  [--server-name, -sn] {[--name, -n], -id}
 ```
+
 Hierbij
 - `--server-name` is de naam van de Server groep waaruit de gebruiker een back-up wil verwijderen
 - `--name` is de naam van de back-up die u wilt verwijderen
@@ -188,17 +195,8 @@ Hierbij
 > [!NOTE]
 > `--name` en `-id` sluiten elkaar wederzijds uit.
 
-U kunt de naam en de ID van uw back-ups ophalen door de opdracht lijst back-up uit te voeren, zoals wordt beschreven in de vorige alinea.
+Bijvoorbeeld:
 
-U kunt bijvoorbeeld de volgende back-ups weer gegeven:
-```console
-azdata arc postgres backup list -sn postgres01
-ID                                Name                    State
---------------------------------  ----------------------  -------
-5b0481dfc1c94b4cac79dd56a1bb21f4  MyBackup091720200110am  Done
-0cf39f1e92344e6db4cfa285d36c7b14  MyBackup091720200111am  Done
-```
-en u het eerste wilt verwijderen, voert u de volgende opdracht uit:
 ```console
 azdata arc postgres backup delete -sn postgres01 -n MyBackup091720200110am
 {
@@ -207,15 +205,11 @@ azdata arc postgres backup delete -sn postgres01 -n MyBackup091720200110am
   "state": "Done"
 }
 ```
-Als u de back-ups op dat moment zou vermelden, krijgt u de volgende uitvoer:
-```console
-azdata arc postgres backup list -sn postgres01
-ID                                Name                    State
---------------------------------  ----------------------  -------
-0cf39f1e92344e6db4cfa285d36c7b14  MyBackup091720200111am  Done
-```
+
+U kunt de naam en de ID van uw back-ups ophalen door de opdracht lijst back-up uit te voeren, zoals wordt beschreven in de vorige alinea.
 
 Voor meer informatie over de opdracht verwijderen voert u het volgende uit:
+
 ```console
 azdata arc postgres backup delete --help
 ```

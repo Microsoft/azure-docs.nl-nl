@@ -7,14 +7,14 @@ ms.subservice: azure-arc-data
 author: twright-msft
 ms.author: twright
 ms.reviewer: mikeray
-ms.date: 02/11/2021
+ms.date: 03/02/2021
 ms.topic: how-to
-ms.openlocfilehash: dd20a76ebc833320050c87862ad5022e99cd453a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 329df78bb5829695b95fcca5b7ed7e1439ced821
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100384959"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101688362"
 ---
 # <a name="create-the-azure-arc-data-controller"></a>De Azure Arc-gegevens controller maken
 
@@ -37,7 +37,7 @@ Momenteel zijn de ondersteunde lijst met Kubernetes-Services en-distributies de 
 
 > [!IMPORTANT]
 > * De mini maal ondersteunde versie van Kubernetes is v 1.17. Zie [bekende problemen](./release-notes.md#known-issues) voor meer informatie. 
-> * De mini maal ondersteunde versie van OCP is 4,3.
+> * De mini maal ondersteunde versie van OCP is 4,5.
 > * Bekijk de [connectiviteits vereisten](connectivity.md) om te begrijpen welke connectiviteit vereist is tussen uw omgeving en Azure.
 > * Zie de [richt lijnen voor opslag configuratie](storage-configuration.md) voor meer informatie over het configureren van uw permanente opslag.
 > * Als u de Azure Kubernetes-service gebruikt, moet de VM-grootte van het werk knooppunt van het cluster ten minste **Standard_D8s_v3** zijn en **Premium-schijven gebruiken.** Het cluster mag niet meerdere beschikbaarheids zones omvatten. 

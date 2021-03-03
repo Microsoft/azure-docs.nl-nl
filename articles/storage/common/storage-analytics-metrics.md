@@ -9,12 +9,12 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: 8f698aadc24d0dc0691743f1d8dd54c5d5fd287e
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: d900ffa4481ba2b6deb21a8325f3f8def8084f84
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99220953"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101714728"
 ---
 # <a name="azure-storage-analytics-metrics-classic"></a>Azure Opslaganalyse metrische gegevens (klassiek)
 
@@ -25,7 +25,7 @@ Azure Storage gebruikt de Opslaganalyse oplossing voor het opslaan van metrische
 - Problemen vaststellen met aanvragen die zijn gedaan voor de opslag service.
 - Verbeter de prestaties van toepassingen die gebruikmaken van een service.
 
- Opslaganalyse metrische gegevens zijn standaard ingeschakeld voor nieuwe opslag accounts. U kunt metrische gegevens configureren in de [Azure Portal](https://portal.azure.com/), met behulp van Power shell of met behulp van de Azure cli. Zie [Azure Storage analytic-metrische gegevens (klassiek) inschakelen en beheren](./storage-monitor-storage-account.md)voor stapsgewijze instructies. U kunt Opslaganalyse ook via een programma inschakelen via de REST API of de client bibliotheek. Gebruik de bewerkingen voor het instellen van service-eigenschappen om Opslaganalyse in te scha kelen voor elke service.  
+ Opslaganalyse metrische gegevens zijn standaard ingeschakeld voor nieuwe opslag accounts. U kunt metrische gegevens configureren in de [Azure Portal](https://portal.azure.com/), met behulp van Power shell of met behulp van de Azure cli. Zie [Azure Storage analytic-metrische gegevens (klassiek) inschakelen en beheren](./manage-storage-analytics-logs.md)voor stapsgewijze instructies. U kunt Opslaganalyse ook via een programma inschakelen via de REST API of de client bibliotheek. Gebruik de bewerkingen voor het instellen van service-eigenschappen om Opslaganalyse in te scha kelen voor elke service.  
 
 > [!NOTE]
 > Er zijn Opslaganalyse metrische gegevens beschikbaar voor Azure Blob-opslag, Azure Queue-opslag, Azure-tabel opslag en Azure Files.
@@ -69,7 +69,7 @@ Azure Storage gebruikt de Opslaganalyse oplossing voor het opslaan van metrische
  Deze tabellen worden automatisch gemaakt wanneer Opslaganalyse is ingeschakeld voor een opslag service-eind punt. Ze worden geopend via de naam ruimte van het opslag account, bijvoorbeeld `https://<accountname>.table.core.windows.net/Tables("$MetricsTransactionsBlob")` . De metrische tabellen worden niet weer gegeven in een vermelding en moeten rechtstreeks via de tabel naam worden geopend.
 
 ## <a name="metrics-alerts"></a>Waarschuwingen voor metrische gegevens
-U kunt waarschuwingen instellen in de [Azure Portal](https://portal.azure.com) zodat u automatisch een melding ontvangt van belang rijke wijzigingen in het gedrag van uw opslag Services. Zie [Create Metrics Alerts](storage-monitor-storage-account.md#create-metric-alerts)voor stapsgewijze instructies.
+U kunt waarschuwingen instellen in de [Azure Portal](https://portal.azure.com) zodat u automatisch een melding ontvangt van belang rijke wijzigingen in het gedrag van uw opslag Services. Zie [Create Metrics Alerts](./manage-storage-analytics-logs.md)voor stapsgewijze instructies.
 
 Als u een Storage Explorer-hulp programma gebruikt om deze metrische gegevens in een indeling met scheidings tekens te downloaden, kunt u micro soft Excel gebruiken voor het analyseren van de gegevens. Zie [Azure Storage-client hulpprogramma's](./storage-explorers.md)voor een lijst met beschik bare Storage Explorer-hulpprogram ma's.
 

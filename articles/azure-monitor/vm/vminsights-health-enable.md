@@ -1,24 +1,24 @@
 ---
-title: Gaststatus van Azure Monitor voor VM's inschakelen (preview)
-description: Hierin wordt beschreven hoe u Azure Monitor voor VM's gast status inschakelt in uw abonnement en hoe u virtuele machines kunt voorbereiden.
+title: VM Insights-gast status inschakelen (preview)
+description: Hierin wordt beschreven hoe u de status van een VM Insights-gast in uw abonnement kunt inschakelen en hoe u virtuele machines kunt voorbereiden.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/16/2020
 ms.custom: references_regions
-ms.openlocfilehash: 5a65a986e95f333b6179c71a46edc69ca61acdea
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 3747e9190010bd3c0b88dfdbe9da01009316c275
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610601"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733717"
 ---
-# <a name="enable-azure-monitor-for-vms-guest-health-preview"></a>Gaststatus van Azure Monitor voor VM's inschakelen (preview)
-Met Azure Monitor voor VM's gast status kunt u de status van een virtuele machine weer geven zoals gedefinieerd door een set prestatie metingen die regel matig worden steek proeven. In dit artikel wordt beschreven hoe u deze functie inschakelt in uw abonnement en hoe u gast bewaking voor elke virtuele machine inschakelt.
+# <a name="enable-vm-insights-guest-health-preview"></a>VM Insights-gast status inschakelen (preview)
+Met de VM Insights-gast status kunt u de status van een virtuele machine bekijken, zoals gedefinieerd door een set prestatie metingen die regel matig worden steek proeven. In dit artikel wordt beschreven hoe u deze functie inschakelt in uw abonnement en hoe u gast bewaking voor elke virtuele machine inschakelt.
 
 ## <a name="current-limitations"></a>Huidige beperkingen
-De open bare preview heeft de volgende beperkingen Azure Monitor voor VM's de gast status:
+De status van de VM Insights-gast heeft de volgende beperkingen in de open bare Preview:
 
 - Er worden momenteel alleen virtuele Azure-machines ondersteund. Azure Arc voor servers wordt momenteel niet ondersteund.
 
@@ -36,19 +36,25 @@ De virtuele machine moet zich in een van de volgende regio's bevinden:
 - Australië - centraal
 - Australië - oost
 - Australië - zuidoost
+- Canada - midden
 - India - centraal
 - Central US
 - Azië - oost
 - VS - oost
 - VS - oost 2
 - VS-Oost 2 EUAP
+- Frankrijk - centraal
 - Duitsland - west-centraal
 - Japan - oost
+- Korea - centraal
 - VS - noord-centraal
 - Europa - noord
 - VS - zuid-centraal
+- Zuid-Afrika - noord
 - Azië - zuidoost
+- Zwitserland - noord
 - Verenigd Koninkrijk Zuid
+- Verenigd Koninkrijk West
 - VS - west-centraal
 - Europa -west
 - VS - west
@@ -57,24 +63,36 @@ De virtuele machine moet zich in een van de volgende regio's bevinden:
 
 Log Analytics werk ruimte moet zich in een van de volgende regio's bevinden:
 
-- VS - centraal
+- Australië - centraal
+- Australië - oost
+- Australië - zuidoost
+- Canada - midden
+- Canada India
+- Central US
+- Azië - oost
 - VS - oost
 - VS - oost 2
 - VS-Oost 2 EUAP
+- Frankrijk - centraal
+- Japan - oost
+- VS - noord-centraal
 - Europa - noord
+- VS - zuid-centraal
 - Azië - zuidoost
+- Zwitserland - noord
 - Verenigd Koninkrijk Zuid
 - Europa-west regio
+- VS - west
 - VS - west 2
 
 ## <a name="prerequisites"></a>Vereisten
 
-- De virtuele machine moet onboarded zijn voor Azure Monitor voor VM's.
+- De virtuele machine moet onboarded zijn voor VM Insights.
 - De door de gebruiker uitgevoerde stappen voor het uitvoeren van de voor bereiding moeten een mini maal niveau van Inzender toegang hebben tot het abonnement waar de virtuele machine en gegevens verzamelings regel zich bevinden.
 - Vereiste Azure-resource providers moeten zijn geregistreerd, zoals wordt beschreven in de volgende sectie.
 
 ## <a name="register-required-azure-resource-providers"></a>Vereiste Azure-resource providers registreren
-De volgende Azure-resource providers worden geregistreerd voor uw abonnement om Azure Monitor voor VM's gast status in te scha kelen. 
+De volgende Azure-resource providers worden geregistreerd voor uw abonnement om de gast status van de VM Insights in te scha kelen. 
 
 - Micro soft. WorkloadMonitor
 - Microsoft.Insights
@@ -90,7 +108,7 @@ POST https://management.azure.com/subscriptions/[subscriptionId]/providers/Micro
 ## <a name="enable-a-virtual-machine-using-the-azure-portal"></a>Schakel een virtuele machine in met behulp van Azure Portal
 Wanneer u gaststatus inschakelt voor een virtuele machine in Azure Portal, wordt de hele vereiste configuratie voor u uitgevoerd. Dit omvat het maken van de regel voor het verzamelen van gegevens, het installeren van de gast status uitbreiding op de virtuele machine en het maken van een koppeling met de regel voor het verzamelen van gegevens.
 
-Klik in de weer gave **aan de slag** in azure monitor voor VM's op de koppeling naast het upgrade bericht voor een virtuele machine en klik vervolgens op de knop **upgrade** . U kunt ook meerdere virtuele machines selecteren om ze samen te upgraden.
+Klik in de weer gave **aan de slag** in VM Insights op de koppeling naast het upgrade bericht voor een virtuele machine en klik vervolgens op de knop **bijwerken** . U kunt ook meerdere virtuele machines selecteren om ze samen te upgraden.
 
 ![Status functie inschakelen op virtuele machine](media/vminsights-health-enable/enable-agent.png)
 
@@ -107,10 +125,10 @@ Er zijn drie stappen vereist om virtuele machines in te scha kelen met behulp va
 > [!NOTE]
 > Als u een virtuele machine inschakelt met behulp van de Azure Portal, wordt de regel voor gegevens verzameling die hier wordt beschreven, voor u gemaakt. In dit geval hoeft u deze stap niet uit te voeren.
 
-De configuratie voor de monitors in Azure Monitor voor VM's gast status wordt opgeslagen in de [regels voor gegevens verzameling (DCR)](../agents/data-collection-rule-overview.md). Elke virtuele machine met de gast status uitbreiding heeft een koppeling met deze regel nodig.
+Configuratie voor de monitors in de VM Insights-status van de gast wordt opgeslagen in de [regels voor gegevens verzameling (DCR)](../agents/data-collection-rule-overview.md). Elke virtuele machine met de gast status uitbreiding heeft een koppeling met deze regel nodig.
 
 > [!NOTE]
-> U kunt aanvullende regels voor het verzamelen van gegevens maken om de standaard configuratie van monitors te wijzigen, zoals beschreven in [bewaking configureren in azure monitor voor VM's gast status (preview)](vminsights-health-configure.md).
+> U kunt aanvullende regels voor het verzamelen van gegevens maken om de standaard configuratie van monitors te wijzigen, zoals beschreven in [bewaking configureren in VM Insights-gast status (preview)](vminsights-health-configure.md).
 
 Voor de sjabloon zijn waarden vereist voor de volgende para meters:
 
@@ -414,4 +432,4 @@ az deployment group create --name GuestHealthDeployment --resource-group my-reso
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Monitors aanpassen ingeschakeld door Azure Monitor voor VM's](vminsights-health-configure.md)
+- [Monitors aanpassen die worden ingeschakeld door VM Insights](vminsights-health-configure.md)

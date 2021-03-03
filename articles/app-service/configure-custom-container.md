@@ -2,14 +2,14 @@
 title: Een aangepaste container configureren
 description: Meer informatie over het configureren van een aangepaste container in Azure App Service. In dit artikel worden de meest algemene configuratietaken beschreven.
 ms.topic: article
-ms.date: 09/22/2020
+ms.date: 02/23/2021
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: a7582bbb866a63820abbd959e06628eda5d57e29
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 8083c3c0c88d904ccb3ec75ae69a699867bd0f25
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97007633"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101704868"
 ---
 # <a name="configure-a-custom-container-for-azure-app-service"></a>Een aangepaste container configureren voor Azure App Service
 
@@ -111,7 +111,7 @@ In PowerShell:
 Set-AzWebApp -ResourceGroupName <group-name> -Name <app-name> -AppSettings @{"DB_HOST"="myownserver.mysql.database.azure.com"}
 ```
 
-Wanneer uw app wordt uitgevoerd, worden de App Service app-instellingen automatisch in het proces geïnjecteerd als omgevings variabelen. 
+Wanneer uw app wordt uitgevoerd, worden de App Service app-instellingen automatisch in het proces geïnjecteerd als omgevings variabelen. U kunt container omgevings variabelen controleren met de URL `https://<app-name>.scm.azurewebsites.net/Env)` .
 
 ::: zone pivot="container-windows"
 Voor IIS-of .NET Framework (4,0 of hoger)-containers worden ze `System.ConfigurationManager` door app service als .net-app-instellingen en verbindings reeksen automatisch ingevoegd. Voor alle andere talen of Framework worden ze als omgevings variabelen voor het proces geboden, met een van de volgende corresponderende voor voegsels:
@@ -292,44 +292,55 @@ Beheerde service accounts voor groepen (Gmsa's) worden momenteel niet ondersteun
 
 ## <a name="enable-ssh"></a>SSH inschakelen
 
-SSH maakt veilige communicatie tussen een container en een client mogelijk. Als u een aangepaste container SSH wilt ondersteunen, moet u deze toevoegen aan de Dockerfile zelf.
+SSH maakt veilige communicatie tussen een container en een client mogelijk. Als u een aangepaste container SSH wilt ondersteunen, moet u deze toevoegen aan uw docker-installatie kopie zelf.
 
 > [!TIP]
-> Alle ingebouwde Linux-containers hebben de SSH-instructies toegevoegd aan hun afbeeldings opslagplaatsen. U kunt de volgende instructies door lopen met de [ opslag plaatsNode.js 10,14](https://github.com/Azure-App-Service/node/blob/master/10.14) om te zien hoe deze er wordt ingeschakeld.
+> Voor alle ingebouwde Linux-containers in App Service zijn de SSH-instructies toegevoegd aan de opslag plaatsen met installatie kopieën. U kunt de volgende instructies door lopen met de [ opslag plaatsNode.js 10,14](https://github.com/Azure-App-Service/node/blob/master/10.14) om te zien hoe deze er wordt ingeschakeld. De configuratie in de Node.js ingebouwde installatie kopie is iets anders, maar hetzelfde in principe.
 
-- Gebruik de instructie [Run](https://docs.docker.com/engine/reference/builder/#run) om de SSH-server te installeren en stel het wacht woord voor het hoofd account in op `"Docker!"` . Voor een installatie kopie op basis van [Alpine Linux](https://hub.docker.com/_/alpine)hebt u bijvoorbeeld de volgende opdrachten nodig:
+- Voeg [een sshd_config-bestand](https://man.openbsd.org/sshd_config) toe aan uw opslag plaats, zoals in het volgende voor beeld.
 
-    ```Dockerfile
-    RUN apk add openssh \
-         && echo "root:Docker!" | chpasswd 
     ```
-
-    Deze configuratie staat geen externe verbindingen naar de container toe. SSH is alleen beschikbaar via `https://<app-name>.scm.azurewebsites.net` en geverifieerd met de publicatie referenties.
-
-- Voeg [dit sshd_config bestand](https://github.com/Azure-App-Service/node/blob/master/10.14/sshd_config) toe aan uw opslag plaats voor installatie kopieën en gebruik de [Kopieer](https://docs.docker.com/engine/reference/builder/#copy) instructie om het bestand te kopiëren naar de */etc/ssh/* -map. Zie [OpenBSD-documentatie](https://man.openbsd.org/sshd_config)voor meer informatie over *sshd_config* -bestanden.
-
-    ```Dockerfile
-    COPY sshd_config /etc/ssh/
+    Port            2222
+    ListenAddress       0.0.0.0
+    LoginGraceTime      180
+    X11Forwarding       yes
+    Ciphers aes128-cbc,3des-cbc,aes256-cbc,aes128-ctr,aes192-ctr,aes256-ctr
+    MACs hmac-sha1,hmac-sha1-96
+    StrictModes         yes
+    SyslogFacility      DAEMON
+    PasswordAuthentication  yes
+    PermitEmptyPasswords    no
+    PermitRootLogin     yes
+    Subsystem sftp internal-sftp
     ```
 
     > [!NOTE]
-    > Het *sshd_config*-bestand moet de volgende items bevatten:
+    > Dit bestand configureert OpenSSH en moet de volgende items bevatten:
+    > - `Port` moet worden ingesteld op 2222.
     > - `Ciphers`moet ten minste één item in deze lijst bevatten: `aes128-cbc,3des-cbc,aes256-cbc`.
     > - `MACs`moet ten minste één item in deze lijst bevatten: `hmac-sha1,hmac-sha1-96`.
 
-- Gebruik de instructie [beschikbaar](https://docs.docker.com/engine/reference/builder/#expose) maken om poort 2222 in de container te openen. Hoewel het Hoofdwacht woord bekend is, is poort 2222 niet toegankelijk via internet. Het is alleen toegankelijk voor containers in het brug netwerk van een particulier virtueel netwerk.
+- Voeg in uw Dockerfile de volgende opdrachten toe:
 
     ```Dockerfile
+    # Install OpenSSH and set the password for root to "Docker!". In this example, "apk add" is the install instruction for an Alpine Linux-based image.
+    RUN apk add openssh \
+         && echo "root:Docker!" | chpasswd 
+
+    # Copy the sshd_config file to the /etc/ssh/ directory
+    COPY sshd_config /etc/ssh/
+
+    # Open port 2222 for SSH access
     EXPOSE 80 2222
     ```
+
+    Deze configuratie staat geen externe verbindingen naar de container toe. Poort 2222 van de container is alleen toegankelijk in het brug netwerk van een particulier virtueel netwerk en is niet toegankelijk voor een aanvaller op internet.
 
 - Start de SSH-server in het opstart script voor uw container.
 
     ```bash
     /usr/sbin/sshd
     ```
-
-    Voor een voor beeld ziet u hoe de standaard [ containerNode.js 10,14](https://github.com/Azure-App-Service/node/blob/master/10.14/startup/init_container.sh) de SSH-server start.
 
 ## <a name="access-diagnostic-logs"></a>Toegang tot diagnostische logboeken
 

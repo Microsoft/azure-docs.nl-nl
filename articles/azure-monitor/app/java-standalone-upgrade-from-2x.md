@@ -6,12 +6,12 @@ ms.date: 11/25/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: d815c919c2b2d63b093c4290a661cbf508c56012
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: e9208e617eb73786bcb003dc1b55d0d77ca6650f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96601064"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101704426"
 ---
 # <a name="upgrading-from-application-insights-java-2x-sdk"></a>Upgraden van Application Insights Java 2. x SDK
 
@@ -220,3 +220,16 @@ Het is ook mogelijk dat u voor sommige toepassingen de voor keur geeft aan de ge
 Eerder in de 2. x SDK werd de naam van de bewerking van de telemetrie van de aanvraag ook ingesteld op de telemetrie van de afhankelijkheid.
 Application Insights Java 3,0 niet langer de bewerkings naam van de telemetrie van de afhankelijkheid invult.
 Als u de naam van de bewerking wilt weer geven voor de aanvraag die het bovenliggende is van de telemetrie van de afhankelijkheid, kunt u een Kusto-query (logboek registratie) schrijven om een koppeling te maken tussen de afhankelijkheids tabel en de aanvraag tabel.
+
+## <a name="2x-sdk-logging-appenders"></a>2. x SDK-logboek registratie-toevoegers
+
+De 3,0 [-agent verzamelt automatisch logboek registratie](./java-standalone-config#auto-collected-logging) zonder de nood zaak voor het configureren van toevoeg-en logboek registratie.
+Als u 2. x SDK-logboek registraties gebruikt, kunnen die worden verwijderd, omdat ze toch door de 3,0-agent worden onderdrukt.
+
+## <a name="2x-sdk-spring-boot-starter"></a>2. x SDK lente boot starter
+
+Er is geen 3,0 lente boot starter.
+De installatie en configuratie van de 3,0-agent volgen dezelfde [eenvoudige stappen](./java-in-process-agent.md#quickstart) , ongeacht of u de nood opstartdiskette gebruikt of niet.
+
+Wanneer u een upgrade uitvoert van de 2. x SDK lente boot starter, moet u er rekening mee houden dat de naam van de Cloud rolnaam niet langer standaard is `spring.application.name` .
+Zie de [3,0-configuratie docs](./java-standalone-config.md#cloud-role-name) voor het instellen van de naam van de Cloud functie in 3,0 via JSON-configuratie of omgevings variabele.

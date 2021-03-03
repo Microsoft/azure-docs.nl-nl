@@ -1,0 +1,131 @@
+---
+title: De ABAP-functie module voor het uitpakken van meta gegevens implementeren voor de SAP R3-familie van bruggen in azure controle sfeer liggen
+description: Dit artikel bevat een overzicht van de stappen voor het implementeren van de ABAP-functie module in SAP server
+author: chandrakavya
+ms.author: kchandra
+ms.service: purview
+ms.subservice: purview-data-catalog
+ms.topic: conceptual
+ms.date: 11/13/2020
+ms.openlocfilehash: 1d9f1c5beafb7b54c5fd0189dd738ff8e346a3e8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101695948"
+---
+# <a name="deploy-the-metadata-extraction-abap-function-module-for-the-sap-r3-family-of-bridges"></a>De ABAP-functie module voor het uitpakken van meta gegevens implementeren voor de SAP R3-familie van bruggen 
+Dit artikel bevat een overzicht van de stappen voor het implementeren van de ABAP-functie module in SAP server
+## <a name="overview"></a>Overzicht 
+
+SAP Business Suite 4 HANA (S/4HANA), ECC en R/3 ERP Bridge kan worden gebruikt om meta gegevens van de SAP-server op te halen. Dit wordt bereikt door de ABAP-functie module op de SAP-server te plaatsen. Deze functie module is op afstand toegankelijk voor de Bridge voor het opvragen en downloaden (als een tekst bestand) de meta gegevens die zich in de SAP-server bevindt.
+Wanneer de Bridge wordt uitgevoerd, dan:
+
+1.  Hiermee worden meta gegevens uit een bestaand bestand geïmporteerd dat al lokaal is gedownload van een eerdere Bridge-uitvoering.
+
+2.  Hiermee wordt de ABAP-module-API aangeroepen, wordt gewacht op downloaden en worden vervolgens meta gegevens uit dat bestand geïmporteerd.
+
+In dit document worden de stappen beschreven die nodig zijn voor het implementeren van deze module.
+
+> [!Note] 
+>De volgende instructies zijn gecompileerd op basis van SAP GUI v. 7.2
+
+## <a name="deployment-of-the-module"></a>Implementatie van de module 
+
+### <a name="create-a-package"></a>Een pakket maken 
+
+Deze stap is optioneel en een bestaand pakket kan worden gebruikt.
+
+1.  Meld u aan bij de SAP S/4HANA of SAP ECC-server en open \" object Navigator \" (SE80-trans actie).
+
+2.  Selecteer optie \" pakket \" in de lijst en voer een naam in voor het nieuwe pakket (bijvoorbeeld Z \_ MITI) en druk op de knop weer geven
+
+3.  Klik op Ja in het venster pakket maken. Daarom wordt een venster \" pakket Builder: Create pakket \" geopend. Voer een waarde in het veld korte beschrijving in en druk op het \" pictogram door gaan \" .
+
+4.  Druk op ' eigen aanvragen ' in het venster vraag naar lokale Workbench-aanvraag. Selecteer de aanvraag voor ontwikkeling.
+
+### <a name="create-a-function-group"></a>Een functie groep maken 
+
+Selecteer in object Navigator \" de functie groep in \" de lijst en typ de naam in het onderstaande veld voor invoer (bijvoorbeeld Z \_ MITI \_ FGROUP). Druk op weergave pictogram.
+
+1.  \" \" Druk in het venster object maken op Ja om een nieuwe functie groep te maken.
+
+2.  Geef in het korte tekst veld een passende beschrijving op \" \" en druk op de knop \" Opslaan \" .
+
+3.  Kies een pakket dat in de vorige stap is voor bereid \" . Maak een pakket \" en klik op pictogram \" Opslaan \" .
+
+4.  Bevestig een aanvraag door door te drukken op het pictogram \" \" .
+
+5.  Activeer deze functie groep.
+
+### <a name="create-the-abap-function-module"></a>De functie module ABAP maken 
+
+Nadat de functie groep is gemaakt en geselecteerd, klikt u met de rechter muisknop op de naam in de bibliotheek browser en selecteert u \" Create = \> Function module \" .
+
+Voer \" Z \_ MITI \_ \" in het \" veld functie module in \" en vul de \" korte tekst \" invoer met de juiste beschrijving in.
+
+Wanneer de module is gemaakt, geeft u de volgende informatie op:
+
+1.  Navigeer naar het \" tabblad Attributes \" .
+
+2.  Selecteer verwerkings type = Remote-Enabled functie module.
+
+    :::image type="content" source="media/abap-functions-deployment-guide/processing-type.png" alt-text="opties voor bronnen registreren" border="true":::
+
+3.  Navigeer naar het \" tabblad Bron code \" . Er zijn twee manieren om code te implementeren voor de functie:
+
+    a.  In het hoofd menu uploadt \_ u het bestand Z MITI \_DOWNLOAD.txt door Utilities = \> meer Utilities = \> Upload/down load = upload te selecteren \> .
+
+    b.  U kunt ook het bestand openen, de inhoud ervan kopiëren en plakken in het \" bron code \" gebied.
+
+4.  Ga naar het \" \" tabblad importeren en maak de volgende para meters:
+
+    a.  P \_ -gebieds type DD02L-TABNAME (optioneel = True)
+
+    b.  *P \_ \_Teken reeks voor het type lokale pad* (optioneel = True)
+
+    c.  *P \_ -taal type L001TAB-data standaard \' E\'*
+
+    d.  *ROWSKIPS TYPE dus \_ int standaard 0*
+
+    e.  *ROWCOUNT-TYPE dus \_ int standaard 0*
+
+    > [!Note]
+    > Kies een \" door Geef \" voor al deze waarden
+
+    :::image type="content" source="media/abap-functions-deployment-guide/import.png" alt-text="opties voor bronnen registreren" border="true":::
+
+5.  Ga naar het tabblad Tables en definieer het volgende:
+
+    *\_Tabel exporteren zoals TAB512*
+
+    :::image type="content" source="media/abap-functions-deployment-guide/export-table.png" alt-text="opties voor bronnen registreren" border="true":::
+
+6.  Ga naar het \" tabblad uitzonde ringen \" en definieer de volgende uitzonde ring:
+
+    *E \_ exp \_ \_ DOWNLOADFAILED*
+
+    :::image type="content" source="media/abap-functions-deployment-guide/exceptions.png" alt-text="opties voor bronnen registreren" border="true":::
+
+7.  Sla de functie op (druk op CTRL + S of kies function module = \> opslaan in het hoofd menu).
+
+8.  Klik \" op \" het pictogram activeren op de werk balk (CTRL + F3) en druk op de \" knop door gaan \" in het dialoog venster. Als u hierom wordt gevraagd, moet u de gegenereerde includes selecteren om samen met de functie module te activeren.
+
+### <a name="testing-the-function"></a>De functie testen 
+
+Wanneer alle vorige stappen zijn voltooid, volgt u de onderstaande stappen om de functie te testen:
+
+1.  Open de Z \_ MITI- \_ functie module voor downloaden.
+
+2.  Kies \" functie module = \> test = \> functie module testen \" in het hoofd menu (of druk op F8).
+
+3.  Geef een pad op naar de map op het lokale bestands systeem in para meter P \_ lokaal \_ pad en druk op \" \" het pictogram uitvoeren op de werk balk (of druk op F8).
+
+4.  Plaats de naam van het gedeelte van de interesse in het veld P- \_ gebied als een bestand met meta gegevens moet worden gedownload of bijgewerkt. Wanneer de functie is voltooid, moet de map die is aangegeven in de \_ para meter voor het lokale pad, een \_ aantal bestanden met meta gegevens bevatten. De namen van bestanden worden aangeduid met gebieden die in het veld P-gebied kunnen worden opgegeven \_ .
+
+De uitvoering van de functie wordt voltooid en meta gegevens worden veel sneller gedownload in het geval van het starten op de computer met een snelle netwerk verbinding met SAP S/4HANA of ECC server.
+
+## <a name="next-steps"></a>Volgende stappen
+
+- [SAP ECC-bron registreren en scannen](register-scan-sapecc-source.md)
+- [SAP S/4HANA-bron registreren en scannen](register-scan-saps4hana-source.md)

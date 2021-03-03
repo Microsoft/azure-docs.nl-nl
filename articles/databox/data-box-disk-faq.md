@@ -8,12 +8,13 @@ ms.subservice: disk
 ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: alkohli
-ms.openlocfilehash: f4f1924ce19ccb0f48aa1a7c9a0515fa89505dae
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.custom: references_regions
+ms.openlocfilehash: 7212fc4113c1de0a7aee4c6c02e8fa65f9828680
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652306"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101724826"
 ---
 # <a name="azure-data-box-disk-frequently-asked-questions"></a>Azure Data Box Disk: veelgestelde vragen
 
@@ -48,7 +49,7 @@ A. Ga naar de [pagina Prijzen](https://azure.microsoft.com/pricing/details/datab
 A.  Als u Azure Data Box-schijven wilt aanschaffen, meldt u zich aan bij Azure Portal en plaatst u een Data Box-bestelling voor schijven. Geef uw contactgegevens en overige informatie op. Zodra u een bestelling hebt geplaatst, worden de schijven op basis van beschikbaarheid binnen tien dagen verzonden.
 
 ### <a name="q-what-is-the-maximum-amount-of-data-i-can-transfer-with-data-box-disks-in-one-instance"></a>V. Wat is de maximale hoeveelheid gegevens die ik met Data Box Disks in één keer kan overdragen?
-A. Voor vijf schijven, elk met een capaciteit van 8 TB (7 TB aan bruikbare capaciteit), is de Maxi maal bruikbare capaciteit 35 TB. U kunt dus 35 TB aan gegevens overdragen in één exemplaar. Als u meer gegevens wilt overdragen, moet u meer schijven bestellen.
+A. Voor vijf schijven, elk met een capaciteit van 8 TB (7 TB aan bruikbare capaciteit), is de maximale bruikbare capaciteit 35 TB. U kunt dus 35 TB aan gegevens overdragen in één exemplaar. Als u meer gegevens wilt overdragen, moet u meer schijven bestellen.
 
 ### <a name="q-how-can-i-check-if-data-box-disks-are-available-in-my-region"></a>V. Hoe kan ik controleren of Data Box Disks in mijn regio beschikbaar is? 
 A.  Als u wilt zien waar de Data Box schijven op dit moment beschikbaar zijn, gaat u naar de [Beschik baarheid](data-box-disk-overview.md#region-availability)van de regio.  
@@ -72,6 +73,18 @@ Verzend een [ondersteunde schijf](../import-export/storage-import-export-require
 2. Nadat de gegevens van uw on-premises server naar de schijven zijn gekopieerd, gaat u terug naar het Azure-Data Center in Canada met behulp van de micro soft-retour labels. De gegevens die aanwezig zijn op de Data Box Disk, worden vervolgens geüpload naar het doel-opslag account in de Canada Azure-regio die u hebt gekozen tijdens het maken van de order.
 
 3. U kunt vervolgens een hulp programma als AzCopy gebruiken om de gegevens naar een opslag account in VS-West te kopiëren. Met deze stap worden [standaard](https://azure.microsoft.com/pricing/details/storage/) kosten voor opslag en [band breedte](https://azure.microsoft.com/pricing/details/bandwidth/) in rekening gebracht die niet zijn opgenomen in de facturering van data Box disk.
+
+#### <a name="q-does-data-box-disk-store-any-customer-data-outside-of-the-service-region"></a>V. Worden er klant gegevens buiten de service regio opgeslagen Data Box Disk?
+
+A. Nee. Data Box Disk slaat geen klant gegevens buiten de service regio op. De klant heeft volledig eigendom van hun gegevens en kan de gegevens opslaan op een opgegeven locatie op basis van het opslag account dat ze selecteren tijdens het maken van de order.  
+
+Naast de klant gegevens zijn er Data Box Disk gegevens die meta gegevens en bewakings logboeken bevatten. In alle regio's (met uitzonde ring van Brazilië-zuid en Zuidoost-Azië) worden Data Box Disk gegevens opgeslagen en gerepliceerd in een [gepaard gebied](../best-practices-availability-paired-regions.md) via een geografisch redundant opslag account om te beschermen tegen gegevens verlies.  
+
+Als gevolg van de [vereisten voor gegevens locatie](https://azure.microsoft.com/global-infrastructure/data-residency/#more-information) in Brazilië-Zuid en Zuidoost-Azië, worden data Box Disk gegevens opgeslagen in een ZRS-account (zone-redundante opslag), zodat het deel uitmaakt van een enkele regio. Voor Zuidoost-Azië worden alle Data Box Disk gegevens opgeslagen in Singapore en voor Brazilië-zuid worden de gegevens opgeslagen in Brazilië. 
+
+Als er sprake is van een onderbreking van de service in Brazilië-zuid en Zuidoost-Azië, kunnen klanten nieuwe orders van een andere regio maken. De nieuwe orders worden geleverd vanuit de regio waarin ze zijn gemaakt en de klanten zijn verantwoordelijk voor de verzen ding naar en van de Data Box Disk.
+
+
 
 ### <a name="q-how-can-i-recover-my-data-if-an-entire-region-fails"></a>V. Hoe kan ik mijn gegevens herstellen als een hele regio is mislukt?
 
@@ -110,7 +123,7 @@ Deze lever tijden zijn *schattingen*. De tijd voor elke fase van de order verwer
 ## <a name="configure-and-connect"></a>Configureren en verbinding maken
  
 ### <a name="q-can-i-specify-the-number-of-data-box-disks-in-the-order"></a>V. Kan ik het aantal Data Box-schijven in de bestelling opgeven?
-A.  Nee. U krijgt 8 TB schijven (Maxi maal 5 schijven), afhankelijk van de grootte van de gegevens en de beschik baarheid van de schijven.  
+A.  Nee. U krijgt schijven van 8 TB (Maxi maal vijf schijven), afhankelijk van de grootte van de gegevens en de beschik baarheid van de schijven.  
 
 ### <a name="q-how-do-i-unlock-the-data-box-disks"></a>V. Hoe ontgrendel ik de Data Box-schijven? 
 A.  Ga in Azure Portal naar uw Data Box Disk-bestelling en vervolgens naar **Apparaatdetails**. Kopieer de wachtwoordsleutel. Download in de Azure-portal het ontgrendelingsprogramma van Data Box Disk voor uw besturingssysteem en pak het programma uit. Voer het hulpprogramma uit op de computer waarop de gegevens staan die u wilt kopiëren naar de schijven. Geef de wachtwoordsleutel op om de schijven te ontgrendelen. U kunt alle schijven met dezelfde wachtwoordsleutel ontgrendelen. 

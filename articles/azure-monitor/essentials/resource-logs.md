@@ -7,27 +7,27 @@ ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: 3560152ce5e3185e79c7a7ff34e5360f10236980
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: dcd6522c46b6ca35031092c634803267a8486647
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610356"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101731456"
 ---
 # <a name="azure-resource-logs"></a>Azure-resourcelogboeken
-Azure-resource logboeken zijn [platform logboeken](../essentials/platform-logs-overview.md) die inzicht bieden in bewerkingen die zijn uitgevoerd in een Azure-resource. De inhoud van bron Logboeken is afhankelijk van de Azure-service en het resource type. Bron logboeken worden niet standaard verzameld. U moet een diagnostische instelling maken voor elke Azure-resource om de resource logboeken te verzenden naar een Log Analytics-werk ruimte die u wilt gebruiken met [Azure monitor-logboeken](../platform/data-platform-logs.md), Azure Event hubs om buiten Azure door te sturen of om te Azure Storage voor archivering.
+Azure-resource logboeken zijn [platform logboeken](../essentials/platform-logs-overview.md) die inzicht bieden in bewerkingen die zijn uitgevoerd in een Azure-resource. De inhoud van bron Logboeken is afhankelijk van de Azure-service en het resource type. Bron logboeken worden niet standaard verzameld. U moet een diagnostische instelling maken voor elke Azure-resource om de resource logboeken te verzenden naar een Log Analytics-werk ruimte die u wilt gebruiken met [Azure monitor-logboeken](../logs/data-platform-logs.md), Azure Event hubs om buiten Azure door te sturen of om te Azure Storage voor archivering.
 
 Zie [Diagnostische instellingen maken om platform logboeken en metrische gegevens naar verschillende bestemmingen te verzenden](../essentials/diagnostic-settings.md) voor meer informatie over het maken van een diagnostische instelling en het [implementeren van Azure monitor op schaal met behulp van Azure Policy](../deploy-scale.md) voor meer informatie over het gebruik van Azure Policy om automatisch een diagnostische instelling te maken voor elke Azure-resource die u maakt.
 
 ## <a name="send-to-log-analytics-workspace"></a>Verzenden naar Log Analytics-werkruimte
- Verzend resource logboeken naar een Log Analytics-werk ruimte om de functies van [Azure monitor logboeken](../platform/data-platform-logs.md) in te scha kelen. Dit omvat het volgende:
+ Verzend resource logboeken naar een Log Analytics-werk ruimte om de functies van [Azure monitor logboeken](../logs/data-platform-logs.md) in te scha kelen. Dit omvat het volgende:
 
 - Correleer bron logboek gegevens met andere bewakings gegevens die zijn verzameld door Azure Monitor.
 - Consolideer logboek vermeldingen van meerdere Azure-resources,-abonnementen en-tenants naar één locatie voor analyse tegelijk.
 - Gebruik logboek query's om complexe analyses uit te voeren en grondige inzichten op logboek gegevens te verkrijgen.
 - Gebruik logboek waarschuwingen met complexe logica voor waarschuwingen.
 
-[Een diagnostische instelling maken](../essentials/diagnostic-settings.md) om bron logboeken te verzenden naar een log Analytics-werk ruimte. Deze gegevens worden opgeslagen in tabellen zoals beschreven in de [structuur van Azure monitor logboeken](../platform/data-platform-logs.md). De tabellen die door resource logboeken worden gebruikt, zijn afhankelijk van het type verzameling dat de resource gebruikt:
+[Een diagnostische instelling maken](../essentials/diagnostic-settings.md) om bron logboeken te verzenden naar een log Analytics-werk ruimte. Deze gegevens worden opgeslagen in tabellen zoals beschreven in de [structuur van Azure monitor logboeken](../logs/data-platform-logs.md). De tabellen die door resource logboeken worden gebruikt, zijn afhankelijk van het type verzameling dat de resource gebruikt:
 
 - Azure Diagnostics-alle gegevens die zijn geschreven, worden naar de tabel _AzureDiagnostics_ .
 - Resource-specifiek: gegevens worden naar afzonderlijke tabellen geschreven voor elke categorie van de resource.
@@ -90,7 +90,7 @@ Met de meeste Azure-resources worden gegevens naar de werk ruimte geschreven in 
    ![Selector voor de modus Diagnostische instellingen](media/resource-logs/diagnostic-settings-mode-selector.png)
 
 > [!NOTE]
-> Zie voor een voor beeld van het instellen van de verzamelings modus met een resource manager-sjabloon [voor beelden van Resource Manager-sjablonen voor Diagnostische instellingen in azure monitor](../samples/resource-manager-diagnostic-settings.md#diagnostic-setting-for-recovery-services-vault).
+> Zie voor een voor beeld van het instellen van de verzamelings modus met een resource manager-sjabloon [voor beelden van Resource Manager-sjablonen voor Diagnostische instellingen in azure monitor](./resource-manager-diagnostic-settings.md#diagnostic-setting-for-recovery-services-vault).
 
 
 U kunt een bestaande diagnostische instelling wijzigen in de resource-specifieke modus. In dit geval blijven de gegevens die al zijn verzameld in de tabel _AzureDiagnostics_ totdat deze is verwijderd volgens de Bewaar instelling voor de werk ruimte. Nieuwe gegevens worden verzameld in de toegewezen tabel. Gebruik de operator [Union](/azure/kusto/query/unionoperator) om gegevens op te vragen over beide tabellen.

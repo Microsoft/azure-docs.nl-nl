@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/15/2021
 ms.author: memildin
-ms.openlocfilehash: 5a0fefd91e0aa60f6a3813513aa82a75b3557c7c
-ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
+ms.openlocfilehash: b9095d78d902bf5e44bffaba5db19bf2c26e0845
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100526966"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101727002"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Bescherm uw eind punten met de geïntegreerde EDR-oplossing van Security Center: micro soft Defender voor eind punt
 
@@ -42,8 +42,8 @@ Micro soft Defender voor eind punt is een holistische, Cloud geleverde endpoint-
 |---------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Releasestatus:                  | Algemeen verkrijgbaar (GA)                                                                                                                                                                                                                                                                                      |
 | Prijzen:                        | [Azure Defender voor servers](security-center-pricing.md) is vereist                                                                                                                                                                                                                                             |
-| Ondersteunde platformen:            | Azure-machines met Windows<br>Azure-Arc-machines met Windows|
-| Ondersteunde versies van Windows:  |  • Security Center detectie ondersteunt Windows Server 2019, 2016, 2012 R2 en 2008 R2 SP1<br> • Server eindpunt bewaking met behulp van deze integratie is uitgeschakeld voor Office 365 GCC-klanten<br> • [Windows 10 Enter prise-meerdere sessies](../virtual-desktop/windows-10-multisession-faq.md) (voorheen Enter prise voor virtuele Bureau bladen (EVD)<br> •  [Virtueel bureau blad van Windows (WVD)](../virtual-desktop/overview.md)|
+| Ondersteunde platformen:            |  • Azure-machines met Windows<br> • Azure-Arc-machines met Windows|
+| Ondersteunde versies van Windows:  |   • **Algemene Beschik baarheid (ga)-** detectie op Windows Server 2016, 2012 r2 en 2008 R2 SP1<br> • **Preview-** detectie op windows server 2019, [Windows Virtual Desktop (WVD)](../virtual-desktop/overview.md)en [Windows 10 Enter prise multi-session](../virtual-desktop/windows-10-multisession-faq.md) (voorheen Enter PRISE voor Virtual Bureau bladen (EVD)<br>Server eindpunt bewaking met behulp van deze integraties is uitgeschakeld voor Office 365 GCC-klanten|
 | Niet-ondersteunde besturings systemen:  |  • Windows 10 (met uitzonde ring van EVD of WVD)<br> • Linux|
 | Vereiste rollen en machtigingen: | De integratie: **beveiligings beheerder** of **eigenaar** inschakelen/uitschakelen<br>MDATP-waarschuwingen weer geven in Security Center: **beveiligings lezer**, **lezer**, **Inzender voor resource groep**, **eigenaar van resource groep**, **beveiligings beheerder**, **abonnements eigenaar** of **mede werker** van het abonnement|
 | Clouds:                         | ![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov<br>![Nee](./media/icons/no-icon.png) GCC-klanten die werk belastingen uitvoeren in wereld wijde Azure-Clouds                                                        |
@@ -76,10 +76,15 @@ Nadat u de locatie hebt geconfigureerd, kunt u deze niet meer wijzigen. Als u uw
 
 ## <a name="enabling-the-microsoft-defender-for-endpoint-integration"></a>De integratie van micro soft Defender voor endpoint inschakelen
 
+1. Controleren of uw computer voldoet aan de vereiste vereisten voor Defender voor eind punt:
+
+    - Voor **alle versies van Windows**:
+        - Configureer de netwerk instellingen die worden beschreven in [instellingen voor apparaat proxy en Internet connectiviteit configureren](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-proxy-internet)
+        - Als u Defender naar een eind punt implementeert op een on-premises computer, verbindt u deze met Azure Arc zoals uitgelegd in [hybride computers verbinden met servers met Azure-Arc](../azure-arc/servers/learn/quick-enable-hybrid-vm.md)
+    - Voor **Windows Server 2019-computers** moet u bovendien controleren of ze een geldige agent uitvoeren en de MicrosoftMonitoringAgent-extensie hebben
+
 1. Schakel **Azure Defender voor servers** in. Zie de [prijzen van Azure Security Center](security-center-pricing.md#enable-azure-defender).
 
-    > [!NOTE]
-    > Volg de instructies in [Quick Start: Hybrid machine Connect with Azure Arc enabled servers](../azure-arc/servers/learn/quick-enable-hybrid-vm.md)om uw Azure Arc-machines te beveiligen.
 
 1. Als u al een gelicentieerde en geïmplementeerde versie van micro soft Defender voor eind punten op uw servers hebt, verwijdert u deze met behulp van de procedure die wordt beschreven in [niet meer vrijgeven Windows-servers](/windows/security/threat-protection/microsoft-defender-atp/configure-server-endpoints#offboard-windows-servers).
 1. Selecteer **Prijzen en instellingen** in het hoofdmenu van Security Center.
@@ -94,7 +99,7 @@ Nadat u de locatie hebt geconfigureerd, kunt u deze niet meer wijzigen. Als u uw
 
 ## <a name="access-the-microsoft-defender-for-endpoint-portal"></a>Toegang tot de micro soft Defender voor endpoint-Portal
 
-1. Zorg ervoor dat het gebruikers account over de benodigde machtigingen beschikt. [Meer informatie](/windows/security/threat-protection/microsoft-defender-atp/assign-portal-access).
+1. Zorg ervoor dat het gebruikers account over de benodigde machtigingen beschikt. Meer informatie over [het toewijzen van gebruikers toegang tot micro soft Defender Security Center](/windows/security/threat-protection/microsoft-defender-atp/assign-portal-access).
 
 1. Controleer of u een proxy of firewall hebt die anonieme verkeer blokkeert. De Defender for Endpoint-sensor maakt verbinding vanaf de systeem context, zodat anonieme verkeer moet worden toegestaan. Volg de instructies in [Enable Access to service URLs in the proxy server](/windows/security/threat-protection/microsoft-defender-atp/configure-proxy-internet#enable-access-to-microsoft-defender-atp-service-urls-in-the-proxy-server)om een onbelemmerde toegang tot de Defender voor endpoint portal te garanderen.
 

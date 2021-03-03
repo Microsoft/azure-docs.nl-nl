@@ -6,17 +6,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 01/27/2021
+ms.date: 02/19/2021
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 38978982baea41d23958a857b19a1edf2e454f37
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 412e5ac661761d5fda1d375c59511c053a6354a6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98938725"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101714779"
 ---
 # <a name="change-how-a-storage-account-is-replicated"></a>Wijzigen hoe een opslagaccount wordt gerepliceerd
 
@@ -41,7 +41,7 @@ De volgende tabel bevat een overzicht van de manier waarop u van elk type replic
 |--------------------|----------------------------------------------------|---------------------------------------------------------------------|----------------------------------------------------|---------------------------------------------------------------------|
 | <b>... van LRS</b> | N.v.t. | Gebruik Azure Portal, Power shell of CLI om de replicatie-instelling<sup>1, 2</sup> te wijzigen | Een hand matige migratie uitvoeren <br /><br /> OF <br /><br /> Een Live migratie aanvragen | Een hand matige migratie uitvoeren <br /><br /> OF <br /><br /> Schakel eerst over naar GRS/RA-GRS en vraag vervolgens een Livemigratie aan.<sup>1</sup> |
 | <b>... van GRS/RA-GRS</b> | Azure Portal, Power shell of CLI gebruiken om de replicatie-instelling te wijzigen | N.v.t. | Een hand matige migratie uitvoeren <br /><br /> OF <br /><br /> Schakel eerst over naar LRS en vraag vervolgens een Livemigratie aan | Een hand matige migratie uitvoeren <br /><br /> OF <br /><br /> Een Live migratie aanvragen |
-| <b>... van ZRS</b> | Een hand matige migratie uitvoeren | Een hand matige migratie uitvoeren | N.v.t. | Gebruik Azure Portal, Power shell of CLI om de replicatie-instelling<sup>1, 3</sup> te wijzigen |
+| <b>... van ZRS</b> | Een hand matige migratie uitvoeren | Een hand matige migratie uitvoeren | N.v.t. | Een Live migratie aanvragen |
 | <b>... van GZRS/RA-GZRS</b> | Een hand matige migratie uitvoeren | Een hand matige migratie uitvoeren | Azure Portal, Power shell of CLI gebruiken om de replicatie-instelling te wijzigen | N.v.t. |
 
 <sup>1</sup> maakt een eenmalige uitvulling van kosten.<br />

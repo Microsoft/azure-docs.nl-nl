@@ -6,12 +6,12 @@ ms.author: elhorton
 ms.service: iot-develop
 ms.topic: overview
 ms.date: 02/11/2021
-ms.openlocfilehash: 4935037ec0152b089c7c685b6bdd0e605d89f3f2
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 4d9546c8a912176117e42f2a6bbef3058331383b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100654940"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101702671"
 ---
 # <a name="overview-of-azure-iot-device-sdks"></a>Overzicht van de Sdk's van het Azure IoT-apparaat
 
@@ -70,7 +70,7 @@ Deze Sdk's zijn gespecialiseerd om te worden uitgevoerd op apparaten met beperkt
 
 * [GitHub-opslag plaats](https://github.com/azure-rtos/threadx)
 * [Aan de slag-hand leidingen](https://github.com/azure-rtos/getting-started) en [meer voor beelden](https://github.com/azure-rtos/samples)
-* [Referentie documentatie](https://docs.microsoft.com/azure/rtos/threadx/)
+* [Referentie documentatie](/azure/rtos/threadx/)
 
 ### <a name="unconstrained-device-sdks"></a>Niet-beperkende apparaat-Sdk's
 Deze Sdk's kunnen worden uitgevoerd op elk apparaat dat een meertalige taal versie kan ondersteunen. Dit omvat apparaten zoals Pc's, Raspberry Pis en smartphones. Ze worden voornamelijk per taal onderscheiden, zodat u kunt kiezen welke bibliotheek het beste past bij uw team en scenario.
@@ -125,7 +125,7 @@ Azure IoT biedt ook service-Sdk's waarmee u toepassingen aan de oplossings zijde
 
 Met de IoT Hub service-Sdk's kunt u toepassingen bouwen die eenvoudig met uw IoT Hub kunnen communiceren om apparaten en beveiliging te beheren. U kunt deze Sdk's gebruiken om Cloud-naar-apparaat-berichten te verzenden, direct methoden op uw apparaten aan te roepen, apparaateigenschappen bij te werken, en meer.
 
-[**Meer informatie over IOT hub**](https://azure.microsoft.com/services/iot-hub/)  |  [ **Beheer van een apparaat proberen**](/azure/iot-hub/quickstart-control-device-python)
+[**Meer informatie over IOT hub**](https://azure.microsoft.com/services/iot-hub/)  |  [ **Beheer van een apparaat proberen**](../iot-hub/quickstart-control-device-python.md)
 
 Naslag documentatie voor voor beelden van **C# IOT hub Service-SDK**: [github opslagplaats](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/iothub/service)  |  [pakket](https://www.nuget.org/packages/Microsoft.Azure.Devices/)  |  [](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/iothub/service/samples)  |  [](/dotnet/api/microsoft.azure.devices)
 
@@ -139,7 +139,7 @@ GitHub van **python IOT hub Service-SDK**: [](https://github.com/Azure/azure-iot
 
 Azure Digital Twins is een PaaS-aanbieding (Platform as a Service) dat het maken van infografieken op basis van digitale modellen van hele omgevingen mogelijk maakt. Deze omgevingen kunnen gebouwen, fabrieken, boerderijen, energienetwerken, spoorwegen, stadiums en meer zijn, zelfs steden. Deze digitale modellen kunnen worden gebruikt om inzichten te verkrijgen die betere producten, geoptimaliseerde bewerkingen, lagere kosten en baanbrekende klantervaringen opleveren. Azure IoT biedt service-Sdk's waarmee u eenvoudig toepassingen kunt bouwen die gebruikmaken van de kracht van Azure Digital Apparaatdubbels.
 
-[**Meer informatie over Azure Digital apparaatdubbels**](https://azure.microsoft.com/services/digital-twins/)  |  [ **Een ADT-toepassing coderen**](/azure/digital-twins/tutorial-code)
+[**Meer informatie over Azure Digital apparaatdubbels**](https://azure.microsoft.com/services/digital-twins/)  |  [ **Een ADT-toepassing coderen**](../digital-twins/tutorial-code.md)
 
 Naslag documentatie voor voor beelden van **C# ADT Service SDK**: [github-opslag plaats](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core)  |  [pakket](https://www.nuget.org/packages/Azure.DigitalTwins.Core)  |  [](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core/samples)  |  [](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true)
 
@@ -153,7 +153,7 @@ Naslag documentatie voor **Node.js ADT Service SDK**: [github-opslag plaats](htt
 
 IoT Hub Device Provisioning Service (DPS) is een helper-service die zero-touch mogelijk maakt, het Just-In-Time inrichten naar de juiste IoT Hub zonder tussenkomst van de gebruiker. Met DPS kunnen miljoenen apparaten op een veilige en schaal bare manier worden ingericht. Met de Sdk's van de DPS-service kunt u toepassingen bouwen die uw apparaten veilig kunnen beheren door registratie groepen te maken en bulk bewerkingen uit te voeren.
 
-[**Meer informatie over Device Provisioning Service**](/azure/iot-dps/)  |  [ **Probeer een groeps registratie te maken voor X. 509-apparaten**](/azure/iot-dps/quick-enroll-device-x509-csharp)
+[**Meer informatie over Device Provisioning Service**](../iot-dps/index.yml)  |  [ **Probeer een groeps registratie te maken voor X. 509-apparaten**](../iot-dps/quick-enroll-device-x509-csharp.md)
 
 **SDK voor C# Device Provisioning Service**: [github opslag plaats](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/provisioning/service)  |  [pakket](https://www.nuget.org/packages/Microsoft.Azure.Devices.Provisioning.Service/)voor  |  [beelden](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/provisioning/service/samples)  |  [referentie documentatie](/dotnet/api/microsoft.azure.devices.provisioning.service?view=azure-dotnet&preserve-view=true)
 

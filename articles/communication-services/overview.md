@@ -8,14 +8,19 @@ ms.author: mikben
 ms.date: 07/20/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 45ce295ceee9d5bd1c2393eaed854e8f2c5643ba
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 27b1a2654a52c136c0b827b536f5cf99928e5947
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101659236"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101691583"
 ---
 # <a name="what-is-azure-communication-services"></a>Wat is Azure Communication Services?
+
+[!INCLUDE [Public Preview Notice](./includes/public-preview-include.md)]
+
+> [!IMPORTANT]
+> Toepassingen die u met Azure Communication Services bouwt, kunnen communiceren met micro soft teams. Ga voor meer informatie naar onze [teams Interop](./quickstarts/voice-video-calling/get-started-teams-interop.md) -documentatie.
 
 Met Azure Communication Services kunt u eenvoudig realtime multimediafuncties voor spraak, video en IP-telefonie toevoegen aan uw toepassingen. De Communication Services-clientbibliotheken bieden u ook de mogelijkheid om chat- en sms-functionaliteit toe te voegen aan uw communicatie-oplossingen.
 

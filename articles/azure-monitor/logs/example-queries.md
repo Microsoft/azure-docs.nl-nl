@@ -6,12 +6,12 @@ ms.topic: article
 author: rboucher
 ms.author: robb
 ms.date: 06/16/2020
-ms.openlocfilehash: e1b6ba22c41e2061acfdf33351619512f9d7f424
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: e421676ab8c44abc3432ab7ac45aecf98c98c304
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611868"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708030"
 ---
 # <a name="example-queries-in-azure-monitor-log-analytics"></a>Voorbeeld query's in Azure Monitor Log Analytics
 Log Analytics biedt sets met voorbeeld query's die u zelf kunt uitvoeren of gebruiken als uitgangs punt voor uw eigen query's. In dit artikel worden voorbeeld query's en hoe u deze gebruikt.
@@ -109,5 +109,4 @@ De query Explorer-ervaring voor het opslaan en delen van door gebruikers gegener
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Aan de slag met KQL-Query's](../log-query/get-started-queries.md)
-
+[Aan de slag met KQL-Query's](./get-started-queries.md)

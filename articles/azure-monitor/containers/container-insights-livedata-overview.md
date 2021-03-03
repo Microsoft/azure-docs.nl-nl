@@ -1,26 +1,26 @@
 ---
-title: Live data (preview) weer geven met Azure Monitor voor containers | Microsoft Docs
-description: In dit artikel wordt een overzicht gegeven van de real-time weer gave van Kubernetes-logboeken, gebeurtenissen en pod-metrische gegevens zonder gebruik te maken van kubectl in Azure Monitor voor containers.
+title: Live-gegevens weer geven (preview) met container Insights | Microsoft Docs
+description: In dit artikel wordt een overzicht gegeven van de real-time weer gave van Kubernetes-logboeken, gebeurtenissen en pod-metrische gegevens zonder gebruik te maken van kubectl in container Insights.
 ms.topic: conceptual
 ms.date: 12/17/2020
 ms.custom: references_regions
-ms.openlocfilehash: 3655ff8e5879aa4113753b5529c1e484fb079401
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 7e644680916097bc453c30be63a7db324df5f8f6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609501"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711226"
 ---
 # <a name="how-to-view-kubernetes-logs-events-and-pod-metrics-in-real-time"></a>Kubernetes-logboeken, gebeurtenissen en metrische gegevens over pod in realtime weer geven
 
-Azure Monitor voor containers bevat de functie Live data (preview). Dit is een geavanceerde diagnostische functie waarmee u toegang krijgt tot de AKS-container Logboeken (Kubernetes), gebeurtenissen en pod-metrische gegevens van de Azure-service. Hiermee wordt directe toegang tot `kubectl logs -c` , `kubectl get` gebeurtenissen en weer gegeven `kubectl top pods` . In een console venster worden de logboeken, gebeurtenissen en metrische gegevens weer gegeven die door de container-Engine zijn gegenereerd voor verdere hulp bij het oplossen van problemen in realtime.
+Container Insights bevat de functie Live data (preview). Dit is een geavanceerde diagnose functie waarmee u toegang hebt tot uw AKS-container Logboeken (Kubernetes service) (stdout/stderr), gebeurtenissen en pod-metrische gegevens. Hiermee wordt directe toegang tot `kubectl logs -c` , `kubectl get` gebeurtenissen en weer gegeven `kubectl top pods` . In een console venster worden de logboeken, gebeurtenissen en metrische gegevens weer gegeven die door de container-Engine zijn gegenereerd voor verdere hulp bij het oplossen van problemen in realtime.
 
 Dit artikel bevat een gedetailleerd overzicht en helpt u inzicht te krijgen in het gebruik van deze functie.
 
 Lees onze [installatie handleiding](container-insights-livedata-setup.md)voor hulp bij het instellen of oplossen van problemen met de functie van live data (preview). Deze functie heeft rechtstreeks toegang tot de Kubernetes-API en aanvullende informatie over het verificatie model vindt u [hier](https://kubernetes.io/docs/concepts/overview/kubernetes-api/).
 
 ## <a name="view-deployment-live-logs-preview"></a>Live-logboeken voor implementaties weer geven (preview)
-Gebruik de volgende procedure om de Live-logboeken weer te geven voor implementaties die deel uitmaken van AKS-clusters die niet worden bewaakt door Azure Monitor voor containers. Als uw cluster Azure Monitor voor containers gebruikt, gebruikt u de onderstaande procedure om de Live gegevens voor knoop punten, controllers, containers en implementaties weer te geven.
+Gebruik de volgende procedure om de Live-logboeken weer te geven voor implementaties die deel uitmaken van AKS-clusters die niet worden bewaakt door container Insights. Als in uw cluster container Insights wordt gebruikt, gebruikt u de onderstaande procedure om de Live gegevens voor knoop punten, controllers, containers en implementaties weer te geven.
 
 1. Blader in het Azure Portal naar de cluster resource groep AKS en selecteer uw AKS-resource.
 
@@ -104,7 +104,7 @@ Nadat de verificatie is voltooid, wordt het console venster voor Live gegevens (
 ## <a name="using-live-data-views"></a>Live data views gebruiken
 In de volgende secties wordt de functionaliteit beschreven die u kunt gebruiken in de verschillende dynamische gegevens weergaven.
 
-### <a name="search"></a>Zoeken
+### <a name="search"></a>Search
 De functie voor Live gegevens (preview) omvat zoek functionaliteit. In het **Zoek** veld kunt u de resultaten filteren door een sleutel woord of-term te typen en alle overeenkomende resultaten zijn gemarkeerd om snelle controle toe te staan. Tijdens het weer geven van gebeurtenissen kunt u de resultaten ook beperken met behulp van de **filter** Pill rechts van de zoek balk. Afhankelijk van de resource die u hebt geselecteerd, wordt in de Pill een Pod, naam ruimte of cluster weer gegeven waaruit u kunt kiezen.
 
 ![Filter voorbeeld van live data console-deel venster](./media/container-insights-livedata-overview/livedata-pane-filter-example.png)

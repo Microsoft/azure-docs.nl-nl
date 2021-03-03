@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: db410133bab530db731eee58048d1f9d26a1a3fb
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 65f18a21be48b6f78605b10950a2b38709b66f2d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609131"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101713657"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-by-using-an-azure-resource-manager-template-for-a-windows-virtual-machine-scale-set"></a>De metrische gegevens van het gast besturingssysteem naar het Azure Monitor metrische archief verzenden met behulp van een Azure Resource Manager sjabloon voor een Windows-schaalset voor virtuele machines
 
@@ -30,7 +30,7 @@ Als u niet bekend bent met Resource Manager-sjablonen, kunt u meer te weten kome
 
 - U moet [Azure PowerShell](/powershell/azure) hebben geïnstalleerd of u kunt [Azure Cloud shell](../../cloud-shell/overview.md)gebruiken. 
 
-- De VM-resource moet zich in een regio bevinden [die aangepaste metrische gegevens ondersteunt](../platform/metrics-custom-overview.md#supported-regions).
+- De VM-resource moet zich in een regio bevinden [die aangepaste metrische gegevens ondersteunt](./metrics-custom-overview.md#supported-regions).
 
 ## <a name="set-up-azure-monitor-as-a-data-sink"></a>Azure Monitor instellen als een gegevens Sink 
 De uitbrei ding Azure Diagnostics gebruikt een functie met de naam **Data sinks** om metrische gegevens en logboeken naar verschillende locaties te routeren. In de volgende stappen ziet u hoe u een resource manager-sjabloon en Power shell gebruikt om een virtuele machine te implementeren met behulp van de nieuwe Azure Monitor Data sink. 
@@ -252,7 +252,7 @@ Als u de Resource Manager-sjabloon wilt implementeren, gebruikt u Azure PowerShe
    ```
 
    > [!NOTE]  
-   > Vergeet niet om een Azure-regio te gebruiken waarvoor aangepaste metrische gegevens zijn ingeschakeld. Vergeet niet om een [Azure-regio te gebruiken waarvoor aangepaste metrische gegevens zijn ingeschakeld](../platform/metrics-custom-overview.md#supported-regions).
+   > Vergeet niet om een Azure-regio te gebruiken waarvoor aangepaste metrische gegevens zijn ingeschakeld. Vergeet niet om een [Azure-regio te gebruiken waarvoor aangepaste metrische gegevens zijn ingeschakeld](./metrics-custom-overview.md#supported-regions).
  
 1. Voer de volgende opdrachten uit om de virtuele machine te implementeren:  
 
@@ -292,4 +292,4 @@ U kunt er ook voor kiezen om de dimensies op deze metrische waarde te gebruiken 
 
 
 ## <a name="next-steps"></a>Volgende stappen
-- Meer informatie over [aangepaste metrische gegevens](../platform/metrics-custom-overview.md).
+- Meer informatie over [aangepaste metrische gegevens](./metrics-custom-overview.md).

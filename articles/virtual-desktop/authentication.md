@@ -5,15 +5,15 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 09/04/2020
+ms.date: 02/26/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 5681228e5da2708912d69f16a4b09a4a93d8bb04
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 04a4366bfee6b1d9c5f52d649910163269962684
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89500297"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101709254"
 ---
 # <a name="supported-authentication-methods"></a>Ondersteunde verificatie methoden
 
@@ -21,14 +21,14 @@ In dit artikel krijgt u een beknopt overzicht van wat voor soort verificatie u k
 
 ## <a name="session-host-authentication"></a>Session Host-verificatie
 
-Virtueel bureau blad van Windows ondersteunt zowel NT LAN Manager (NTLM) als Kerberos voor authenticatie van sessie-hosts. Voor het gebruik van Kerberos moet de client echter Kerberos-beveiligings tickets ontvangen van een Key Distribution Center-service (KDC) die wordt uitgevoerd op een domein controller. Om tickets te krijgen, moet de client een directe regel van het gezichts vermogen aan de domein controller hebben. U kunt een directe gezichts lijn krijgen met behulp van uw bedrijfs netwerk. U kunt ook een VPN-verbinding met uw bedrijfs netwerk gebruiken.
+Virtueel bureau blad van Windows ondersteunt zowel NT LAN Manager (NTLM) als Kerberos voor authenticatie van sessie-hosts. Voor het gebruik van Kerberos moet de client echter Kerberos-beveiligings tickets ontvangen van een Key Distribution Center-service (KDC) die wordt uitgevoerd op een domein controller. Om tickets te krijgen, moet de client een directe regel van het gezichts vermogen aan de domein controller hebben. U kunt een directe gezichts lijn krijgen met behulp van uw bedrijfs netwerk. U kunt ook een VPN-verbinding met uw bedrijfs netwerk gebruiken of een [KDC-proxy server](key-distribution-center-proxy.md)instellen.
 
 Dit zijn de momenteel ondersteunde aanmeldings methoden:
 
 - Windows Desktop-client
     - Gebruikersnaam en wachtwoord
     - Cards
-    - Windows Hello
+    - Windows hello voor bedrijven (alleen certificaat vertrouwen)
 - Windows Store-client
     - Gebruikersnaam en wachtwoord
 - Webclient
@@ -41,7 +41,7 @@ Dit zijn de momenteel ondersteunde aanmeldings methoden:
     - Gebruikersnaam en wachtwoord
 
 >[!NOTE]
->Smart Card en Windows hello kunnen alleen Kerberos gebruiken om zich aan te melden. Aanmelden met Kerberos vereist een regel voor het gezichts vermogen van de domein controller.
+>Voor Smart Card en Windows hello voor bedrijven kan Kerberos alleen worden gebruikt om u aan te melden. Aanmelden met Kerberos vereist een regel van het gezichts vermogen van de domein controller of een [KDC-proxy server](key-distribution-center-proxy.md).
 
 ## <a name="hybrid-identity"></a>Hybride identiteit
 

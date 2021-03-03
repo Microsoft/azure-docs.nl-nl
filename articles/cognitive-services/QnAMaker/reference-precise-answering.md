@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 11/09/2020
-ms.openlocfilehash: 5dde3da693d87d537fd2177a6f12b55297b5776e
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 6c597e8fd48eb157b69c918ae5fd5f699611ad75
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99582193"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703402"
 ---
 # <a name="precise-answering"></a>Nauwkeurige antwoorden
 
@@ -32,7 +32,7 @@ De service retourneert ook de betrouwbaarheids Score van het exacte antwoord als
 
 ## <a name="publishing-a-qna-maker-bot"></a>Een QnA Maker-bot publiceren
 
-Wanneer u een bot publiceert, krijgt u de exacte antwoord ervaring standaard in uw toepassing, waar u een kort antwoord ziet samen met het antwoord dat u ontvangt. Raadpleeg de API-verwijzing voor het [genereren van antwoord](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerv5.0-preview.1/knowledgebase/generateanswer#answerspan) voor meer informatie over het gebruik van het exacte antwoord (AnswerSpan) in het antwoord. De gebruiker heeft de flexibiliteit om andere ervaringen te kiezen door de sjabloon bij te werken via de app service van bot. 
+Wanneer u een bot publiceert, krijgt u de exacte antwoord ervaring standaard in uw toepassing, waar u een kort antwoord ziet samen met het antwoord dat u ontvangt. Raadpleeg de API-verwijzing voor het [genereren van antwoord](/rest/api/cognitiveservices/qnamakerv5.0-preview.1/knowledgebase/generateanswer#answerspan) voor meer informatie over het gebruik van het exacte antwoord (AnswerSpan) in het antwoord. De gebruiker heeft de flexibiliteit om andere ervaringen te kiezen door de sjabloon bij te werken via de app service van bot. 
 
 ## <a name="language-support"></a>Taalondersteuning
 

@@ -5,43 +5,66 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/26/2020
 ms.topic: how-to
-ms.openlocfilehash: 3704d1a418baeec18c3303b8203a0185790cbcc7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9454bef52798650fc431f8df994e1a964662b453
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85564312"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101720818"
 ---
 # <a name="install-the-remote-rendering-package-for-unity"></a>Het Remote Rendering-pakket voor Unity installeren
 
 Azure remote rendering maakt gebruik van een eenheids pakket om de integratie in Unit te integreren.
-
-## <a name="manage-the-remote-rendering-packages-in-unity"></a>De externe rendering-pakketten in eenheid beheren
-
-Unity-pakketten zijn containers die kunnen worden beheerd via [Package Manager](https://docs.unity3d.com/Packages/com.unity.package-manager-ui@1.8/manual/index.html)van Unity.
 Dit pakket bevat de volledige C# API en alle binaire bestanden voor invoeg toepassingen die vereist zijn voor het gebruik van externe rendering van Azure met eenheid.
-Het naam schema van de volgende eenheid voor pakketten wordt het pakket **com. micro soft. Azure. remote-rendering**genoemd.
+Het naam schema van de volgende eenheid voor pakketten wordt het pakket **com. micro soft. Azure. remote-rendering** genoemd.
 
-Het pakket maakt geen deel uit van de [opslag plaats ARR](https://github.com/Azure/azure-remote-rendering)-voor beelden en is niet beschikbaar in het interne pakket register van de eenheid. Als u het aan een project wilt toevoegen, moet u het bestand van het project hand matig bewerken `manifest.md` om het volgende toe te voegen:
+U kunt een van de volgende opties kiezen om het Unity-pakket te installeren.
 
-```json
-{
-  "scopedRegistries": [
-    {
-      "name": "Azure Mixed Reality Services",
-      "url": "https://api.bintray.com/npm/microsoft/AzureMixedReality-NPM/",
-      "scopes": ["com.microsoft.azure"]
-    }
-   ],
-  "dependencies": {
-    "com.microsoft.azure.remote-rendering": "0.1.31",
-    ...existing dependencies...
-  }
-}
-```
+## <a name="install-remote-rendering-package-using-the-mixed-reality-feature-tool"></a>Extern rendering-pakket installeren met het onderdeel hulp programma Mixed Reality
 
-Zodra dit is toegevoegd, kunt u unit package manager gebruiken om te controleren of u de meest recente versie hebt.
-Meer uitgebreide instructies vindt u in de [zelf studie: externe modellen weer geven](../../tutorials/unity/view-remote-models/view-remote-models.md).
+[Het hulp programma Mixed Reality](https://aka.ms/MRFeatureToolDocs) ([down load](https://aka.ms/mrfeaturetool)) is een hulp programma dat wordt gebruikt om de functie pakketten voor gemengde realiteit te integreren in Unity-projecten. Het pakket maakt geen deel uit van de [opslag plaats ARR](https://github.com/Azure/azure-remote-rendering)-voor beelden en is niet beschikbaar in het interne pakket register van de eenheid.
+
+Als u het pakket aan een project wilt toevoegen, moet u het volgende doen:
+1. [Het hulp programma voor de functie voor gemengde realiteit downloaden](https://aka.ms/mrfeaturetool)
+1. Volg de [volledige instructies](https://aka.ms/MRFeatureToolDocs) voor het gebruik van het hulp programma.
+1. Tik op de pagina **functies ontdekken** het selectie vakje voor het **Microsoft Azure externe rendering** -pakket in en selecteer de versie van het pakket dat u aan uw project wilt toevoegen
+
+![Mixed_Reality_feature_tool_package](media/mixed-reality-feature-tool-package.png)
+
+Als u uw lokale pakket wilt bijwerken, selecteert u een nieuwere versie van het onderdeel hulp programma voor gemengde realiteit en installeert u dit. Het pakket bijwerken kan soms tot consolefouten leiden. Als dit het geval is, sluit u het project en opent u het opnieuw.
+
+## <a name="install-remote-rendering-package-manually"></a>Het pakket voor de externe rendering hand matig installeren
+
+Als u het externe rendering-pakket hand matig wilt installeren, moet u het volgende doen:
+
+1. Down load het pakket van de NPM-feed van de Mixed Reality-pakketten op `https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry` .
+    * U kunt [NPM](https://www.npmjs.com/get-npm) gebruiken en de volgende opdracht uitvoeren om het pakket te downloaden naar de huidige map.
+      ```
+      npm pack com.microsoft.azure.remote-rendering --registry https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry
+      ```
+
+    * U kunt ook het Power shell-script gebruiken in `Scripts/DownloadUnityPackages.ps1` de [github-opslag plaats Azure-remote-rendering](https://github.com/Azure/azure-remote-rendering).
+        * De inhoud van wijzigen `Scripts/unity_sample_dependencies.json` in
+          ```json
+          {
+            "packages": [
+              {
+                "name": "com.microsoft.azure.remote-rendering", 
+                "version": "latest", 
+                "registry": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
+              }
+            ]
+          }
+          ```
+
+        * Voer de volgende opdracht uit in Power shell om het pakket te downloaden naar de beschik bare doelmap.
+          ```
+          DownloadUnityPackages.ps1 -DownloadDestDir <destination directory>
+          ```
+
+1. [Installeer het gedownloade pakket](https://docs.unity3d.com/Manual/upm-ui-tarball.html) met package manager unit.
+
+Als u uw lokale pakket wilt bijwerken, voert u de desbetreffende opdracht die u hebt gebruikt opnieuw uit en importeert u het pakket opnieuw. Het pakket bijwerken kan soms tot consolefouten leiden. Als dit het geval is, sluit u het project en opent u het opnieuw.
 
 ## <a name="unity-render-pipelines"></a>Unit weergave-pijp lijnen
 

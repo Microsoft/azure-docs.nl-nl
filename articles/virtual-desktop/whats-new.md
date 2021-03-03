@@ -3,17 +3,17 @@ title: Nieuwe functies in Windows Virtual Desktop - Azure
 description: Nieuwe functies en productupdates voor Windows Virtual Desktop.
 author: Heidilohr
 ms.topic: overview
-ms.date: 01/29/2021
+ms.date: 02/23/2021
 ms.author: helohr
 ms.reviewer: thhickli; darank
 manager: lizross
 ms.custom: references_regions
-ms.openlocfilehash: 1deec49cfeca65628485ed105e0919f2c2b18b17
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: a2afd47db01725c56f4fe571f1b464818653081d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575310"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737491"
 ---
 # <a name="whats-new-in-windows-virtual-desktop"></a>Nieuwe functies in Windows Virtual Desktop
 
@@ -39,6 +39,26 @@ Bekijk deze artikelen voor meer informatie over updates voor onze clients voor W
 ## <a name="fslogix-updates"></a>FSLogix updates
 
 Nieuws gierig over de nieuwste updates voor FSLogix? Bekijk [wat er nieuw is op FSLogix](/fslogix/whats-new).
+
+## <a name="february-2021"></a>Februari 2021
+
+Dit is gewijzigd in februari 2021.
+
+### <a name="portal-experience"></a>Portalervaring
+
+De Azure Portal-ervaring is op de volgende manieren verbeterd:
+
+- Bulk afvoer modus op hosts op het tabblad raster van sessie-host. 
+- MSIX app attach is nu beschikbaar voor open bare preview.
+- Overzicht van de informatie over de vaste hostgroep voor de donkere modus.
+
+### <a name="eu-metadata-storage-now-in-public-preview"></a>Opslag van EU-meta gegevens nu in open bare preview
+
+We hosten nu een open bare preview van de Geografie van Europa (EU) als een opslag optie voor meta gegevens van de service in het virtuele bureau blad van Windows. Klanten kunnen kiezen tussen West of Europa-noord wanneer ze hun service objecten maken. De service objecten en meta gegevens voor de hostgroepen worden opgeslagen in de Azure-geografie die aan elke regio is gekoppeld. Lees voor meer informatie [onze blog post die de open bare preview aankondigt](https://techcommunity.microsoft.com/t5/windows-virtual-desktop/announcing-public-preview-of-windows-virtual-desktop-service/m-p/2143939).
+
+### <a name="teams-on-windows-virtual-desktop-plugin-updates"></a>Teams in Windows-invoeg toepassing voor Virtual Desktop-updates
+
+We hebben de video gespreks kwaliteit verbeterd op de Windows-invoeg toepassing voor virtueel bureau blad door de meest voorkomende problemen op te lossen, zoals wanneer het scherm plotseling donker gaat of de video en het geluid zijn gesynchroniseerd. Deze verbeteringen moeten de prestaties van de weer gave met één video met de actieve luidspreker wisseling verhogen. Er is ook een probleem opgelost waarbij hardwareapparaten met speciale tekens niet beschikbaar zijn in teams.
 
 ## <a name="january-2021"></a>Januari 2021
 

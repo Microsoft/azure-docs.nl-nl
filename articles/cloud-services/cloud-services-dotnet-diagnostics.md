@@ -8,19 +8,19 @@ ms.author: tagore
 author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
-ms.openlocfilehash: e4b5372a2b6e9b833f3a0213d69649b75ae2589b
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 97e68d338580132b6927c4cc8b206db60fe93ba2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100578195"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703504"
 ---
 # <a name="enabling-azure-diagnostics-in-azure-cloud-services-classic"></a>Inschakelen van Azure Diagnostics in azure Cloud Services (klassiek)
 
 > [!IMPORTANT]
 > [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
 
-Zie [Azure Diagnostics overzicht](../azure-diagnostics.md) voor een achtergrond op Azure Diagnostics.
+Zie [Azure Diagnostics overzicht](../azure-monitor/agents/diagnostics-extension-overview.md) voor een achtergrond op Azure Diagnostics.
 
 ## <a name="how-to-enable-diagnostics-in-a-worker-role"></a>Diagnostische gegevens inschakelen in een worker-rol
 In dit scenario wordt beschreven hoe u een Azure worker-rol implementeert die telemetriegegevens verzendt met behulp van de .NET Event source-klasse. Azure Diagnostics wordt gebruikt om de telemetriegegevens te verzamelen en op te slaan in een Azure-opslag account. Wanneer u een werknemersrol maakt, schakelt Visual Studio automatisch diagnostische gegevens van 1,0 in als onderdeel van de oplossing in azure Sdk's voor .NET 2,4 en eerdere versies. De volgende instructies beschrijven het proces voor het maken van de rol van werk nemers, het uitschakelen van diagnose 1,0 van de oplossing en het implementeren van diagnostische gegevens 1,2 of 1,3 voor uw werknemersrol.

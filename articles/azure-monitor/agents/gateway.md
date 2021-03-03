@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 12/24/2019
-ms.openlocfilehash: a9b93cf05141442901531e745971ee16348cdaae
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: d83ee4b53d4ccda9cb2af21fa0cb4c91822ec7c4
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609992"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101732017"
 ---
 # <a name="connect-computers-without-internet-access-by-using-the-log-analytics-gateway-in-azure-monitor"></a>Computers zonder Internet toegang verbinden met behulp van de Log Analytics-gateway in Azure Monitor
 
@@ -89,7 +89,7 @@ De Log Analytics gateway is beschikbaar in de volgende talen:
 
 De Log Analytics-gateway ondersteunt alleen Transport Layer Security (TLS) 1,0, 1,1 en 1,2.  Secure Sockets Layer (SSL) wordt niet ondersteund.  Configureer de gateway voor het gebruik van ten minste TLS 1,2 om te zorgen voor de beveiliging van gegevens die onderweg zijn naar Log Analytics. Oudere versies van TLS of SSL zijn kwetsbaar. Hoewel ze momenteel achterwaartse compatibiliteit toestaan, kunt u ze beter niet gebruiken.  
 
-Raadpleeg voor meer informatie [veilig verzenden van gegevens met behulp van TLS 1,2](../platform/data-security.md#sending-data-securely-using-tls-12). 
+Raadpleeg voor meer informatie [veilig verzenden van gegevens met behulp van TLS 1,2](../logs/data-security.md#sending-data-securely-using-tls-12). 
 
 ### <a name="supported-number-of-agent-connections"></a>Ondersteund aantal agent verbindingen
 

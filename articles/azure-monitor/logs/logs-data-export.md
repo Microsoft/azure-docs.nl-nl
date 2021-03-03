@@ -7,12 +7,12 @@ ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 02/07/2021
-ms.openlocfilehash: 8de92e1f64389824e02882c02a860e9731a62b25
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: df165b83a6635fbcf72c94a4d16cbdf16c337636
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610767"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101713589"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics werkruimte gegevens exporteren in Azure Monitor (preview-versie)
 Met Log Analytics werkruimte gegevens exporteren in Azure Monitor kunt u voortdurend gegevens exporteren uit geselecteerde tabellen in uw Log Analytics-werk ruimte naar een Azure Storage-account of Azure-Event Hubs wanneer het wordt verzameld. Dit artikel bevat informatie over deze functie en de stappen voor het configureren van gegevens export in uw werk ruimten.
@@ -40,9 +40,11 @@ Log Analytics werk ruimte gegevens exporteren doorlopend exporteert gegevens uit
 - Als de regel voor het exporteren van gegevens een niet-ondersteunde tabel bevat, wordt de bewerking uitgevoerd, maar worden er geen gegevens voor die tabel geëxporteerd totdat de tabel wordt ondersteund. 
 - Als de regel voor het exporteren van gegevens een tabel bevat die niet bestaat, mislukt de fout ```Table <tableName> does not exist in the workspace``` .
 - Uw Log Analytics-werk ruimte kan zich in elke regio bevinden, met uitzonde ring van het volgende:
-  - Zwitserland - noord
-  - Zwitserland - west
   - Azure Government-regio's
+  - Japan - west
+  - Brazilië-Zuidoost
+  - Noorwegen - oost
+  - VAE - noord
 - U kunt twee regels voor exporteren in een werk ruimte maken: in kan één regel Event Hub en één regel voor het opslag account zijn.
 - Het doel-opslag account of het Event Hub moet zich in dezelfde regio bevinden als de Log Analytics-werk ruimte.
 - De namen van de tabellen die moeten worden geëxporteerd mogen niet langer zijn dan 60 tekens voor een opslag account en Maxi maal 47 tekens voor een Event Hub. Tabellen met meer namen worden niet geëxporteerd.
@@ -72,6 +74,9 @@ Log Analytics gegevens export kan toevoeg-blobs schrijven naar onveranderlijke o
 
 ### <a name="event-hub"></a>Event Hub
 Gegevens worden bijna in realtime naar uw Event Hub verzonden, omdat deze Azure Monitor bereikt. Er wordt een Event Hub gemaakt voor elk gegevens type dat u exporteert *,* gevolgd door de naam van de tabel. De tabel *SecurityEvent* wordt bijvoorbeeld verzonden naar een event hub met de naam *am-SecurityEvent*. Als u wilt dat de geëxporteerde gegevens een specifieke Event Hub bereiken, of als u een tabel hebt met een naam die groter is dan de limiet van 47 tekens, kunt u uw eigen Event Hub naam opgeven en alle gegevens voor gedefinieerde tabellen naar de groep exporteren.
+
+> [!IMPORTANT]
+> Het [aantal ondersteunde Event hubs per naam ruimte is 10](../../event-hubs/event-hubs-quotas#common-limits-for-all-tiers). Als u meer dan 10 tabellen exporteert, geeft u uw eigen Event Hub naam op om alle tabellen naar die Event Hub te exporteren. 
 
 Overwegingen:
 1. ' Basic ' Event Hub SKU ondersteunt een lagere [limiet](../../event-hubs/event-hubs-quotas.md#basic-vs-standard-tiers) voor de grootte van de gebeurtenis en sommige Logboeken in uw werk ruimte kunnen deze overschrijden en worden verwijderd. U wordt aangeraden ' Standard ' of ' dedicated ' te gebruiken Event Hub als export bestemming.

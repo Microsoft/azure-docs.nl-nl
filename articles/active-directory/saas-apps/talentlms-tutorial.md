@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/25/2021
 ms.author: jeedes
-ms.openlocfilehash: 1b65191e97402f2fb352c56664dad085c448242c
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 84d50d19a8356418a5cbf1f93784e5b8816d4be5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101650619"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101689348"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-talentlms"></a>Zelfstudie: Azure Active Directory-integratie met TalentLMS
 
@@ -170,11 +170,11 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij TalentLMS, moeten z
 
     ![Gebruiker toevoegen](./media/talentlms-tutorial/IC777299.png "Gebruiker toevoegen")  
 
-    a. Voer in het tekstvak **First name** de voornaam van de gebruiker in, zoals **Britta**.
+    a. Voer in het tekstvak **voor de voor naam** de voor naam van de gebruiker in `Britta` .
 
-    b. Voer in het tekstvak **Last name** de achternaam van de gebruiker in, zoals **Simon**.
+    b. Voer in het tekstvak **Achternaam** de achternaam van de gebruiker in `Simon` .
  
-    c. Typ in het tekstvak **Email-adres** het e-mailadres van de gebruiker, bijvoorbeeld `brittasimon\@contoso.com`.
+    c. Typ in het tekstvak **Email-adres** het e-mailadres van de gebruiker, bijvoorbeeld `brittasimon@contoso.com`.
 
     d. Klik op **Add User**.
 

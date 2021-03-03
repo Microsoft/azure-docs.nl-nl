@@ -1,25 +1,25 @@
 ---
-title: Query's uitvoeren op logboeken van Azure Monitor voor VM's
-description: Met Azure Monitor voor VM's oplossing worden metrische gegevens verzameld en wordt er informatie vastgelegd in en in dit artikel worden de records beschreven en worden voorbeeld query's opgenomen.
+title: Logboeken vanuit VM Insights doorzoeken
+description: Met de oplossing voor de VM-Insights worden metrische gegevens verzameld en er logboeken geregistreerd in en in dit artikel worden de records beschreven en worden voorbeeld query's opgenomen.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/12/2020
-ms.openlocfilehash: ae0bc6ea35d5c6e3ebe0cd7f232e5c8b1e637d9d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: bbecb15173c929aee46e7d1eeb5e83aab86430f5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612174"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101713521"
 ---
-# <a name="how-to-query-logs-from-azure-monitor-for-vms"></a>Logboeken van Azure Monitor voor VM's opvragen
+# <a name="how-to-query-logs-from-vm-insights"></a>Logboeken vanuit VM Insights doorzoeken
 
-Azure Monitor voor VM's verzamelt metrische gegevens over prestaties en verbindingen, computer-en proces inventarisgegevens en status gegevens, en stuurt deze door naar de werk ruimte Log Analytics in Azure Monitor.  Deze gegevens zijn beschikbaar voor [query's](../log-query/log-query-overview.md) in azure monitor. U kunt deze gegevens Toep assen op scenario's met inbegrip van migratie planning, capaciteits analyse, detectie en prestatie problemen oplossen op aanvraag.
+Met VM Insights worden metrische prestatie-en verbindings gegevens, computer-en proces inventarisgegevens en status gegevens verzameld en doorgestuurd naar de Log Analytics-werk ruimte in Azure Monitor.  Deze gegevens zijn beschikbaar voor [query's](../logs/log-query-overview.md) in azure monitor. U kunt deze gegevens Toep assen op scenario's met inbegrip van migratie planning, capaciteits analyse, detectie en prestatie problemen oplossen op aanvraag.
 
 ## <a name="map-records"></a>Records toewijzen
 
-Er wordt één record per uur gegenereerd voor elke unieke computer en elk proces, naast de records die worden gegenereerd wanneer een proces of computer wordt gestart of op Azure Monitor voor VM's kaart-functie wordt uitgevoerd. Deze records hebben de eigenschappen in de volgende tabellen. De velden en waarden in de ServiceMapComputer_CL gebeurtenissen worden toegewezen aan velden van de machine resource in de ServiceMap Azure Resource Manager-API. De velden en waarden in de ServiceMapProcess_CL gebeurtenissen worden toegewezen aan de velden van de proces resource in de ServiceMap Azure Resource Manager-API. Het veld ResourceName_s komt overeen met het veld naam in de bijbehorende resource manager-resource. 
+Er wordt één record per uur gegenereerd voor elke unieke computer en elk proces, naast de records die worden gegenereerd wanneer een proces of computer wordt gestart of op het moment dat de functie van de VM Insights-kaart op is. Deze records hebben de eigenschappen in de volgende tabellen. De velden en waarden in de ServiceMapComputer_CL gebeurtenissen worden toegewezen aan velden van de machine resource in de ServiceMap Azure Resource Manager-API. De velden en waarden in de ServiceMapProcess_CL gebeurtenissen worden toegewezen aan de velden van de proces resource in de ServiceMap Azure Resource Manager-API. Het veld ResourceName_s komt overeen met het veld naam in de bijbehorende resource manager-resource. 
 
 Er zijn intern gegenereerde eigenschappen die u kunt gebruiken om unieke processen en computers te identificeren:
 
@@ -112,7 +112,7 @@ Elke eigenschap RemoteIp in de tabel *VMConnection* wordt gecontroleerd op basis
 |:--|:--|
 |MaliciousIp |Het RemoteIp-adres |
 |IndicatorThreadType |Gedetecteerde bedreigings indicator is een van de volgende waarden: *botnet*, *C2*, *CryptoMining*, *Darknet*, *DDoS*, *MaliciousUrl*, *malware*, *phishing*, *proxy*, *pua's geblokkeerd*, *Watch list*.   |
-|Description |Beschrijving van de waargenomen bedreiging. |
+|Beschrijving |Beschrijving van de waargenomen bedreiging. |
 |TLPLevel |TLP-niveau (Traffic Light Protocol) is een van de gedefinieerde waarden, *wit*, *groen*, *geel*, *rood*. |
 |Betrouwbaarheid |De waarden zijn *0 – 100*. |
 |Severity |De waarden zijn *0 – 5*, waarbij *5* het ernstigste en *0* is. De standaard waarde is *3*.  |
@@ -233,7 +233,7 @@ Records met een type *VMProcess* hebben inventaris gegevens voor met TCP verbond
 |Groep | Naam van de proces groep. Processen in dezelfde groep zijn logisch gerelateerd, bijvoorbeeld een deel van hetzelfde product of systeem onderdeel. |
 |StartTime | De begin tijd van de proces groep |
 |FirstPid | De eerste pincode in de proces groep |
-|Description | De proces beschrijving |
+|Beschrijving | De proces beschrijving |
 |CompanyName | De naam van het bedrijf |
 |Internenaam | De interne naam |
 |ProductName | De naam van het product |
@@ -473,6 +473,6 @@ De prestatie meter items die momenteel zijn verzameld in de tabel *InsightsMetri
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Als u geen logboek query's in Azure Monitor kunt schrijven, raadpleegt u [hoe u log Analytics](../log-query/log-analytics-tutorial.md) in de Azure Portal gebruikt om logboek query's te schrijven.
+* Als u geen logboek query's in Azure Monitor kunt schrijven, raadpleegt u [hoe u log Analytics](../logs/log-analytics-tutorial.md) in de Azure Portal gebruikt om logboek query's te schrijven.
 
-* Meer informatie over het [schrijven van zoek query's](../log-query/get-started-queries.md).
+* Meer informatie over het [schrijven van zoek query's](../logs/get-started-queries.md).

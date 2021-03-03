@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7b9ed5dda925793eff4f85408c5eb494f5ac0925
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: cd3c615a296934d8e06a062125a72c322d05dd7e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99569643"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750944"
 ---
 ### <a name="examine-and-edit-the-sample-files"></a>De voorbeeld bestanden bekijken en bewerken
 
@@ -69,10 +69,10 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
         > Bij de bovenstaande stappen wordt ervan uitgegaan dat u gebruikmaakt van de virtuele machine die is gemaakt door het installatie script. Als u in plaats daarvan uw eigen edge-apparaat gebruikt, gaat u naar uw edge-apparaat en voert u de volgende opdrachten uit met **beheerders rechten** om het voor beeld-video bestand dat voor deze Quick Start wordt gebruikt, op te halen en op te slaan:  
         
         ```
-        mkdir /home/lvaadmin/samples
-        mkdir /home/lvaadmin/samples/input    
-        curl https://lvamedia.blob.core.windows.net/public/camera-300s.mkv > /home/lvaadmin/samples/input/camera-300s.mkv  
-        chown -R lvaadmin /home/lvaadmin/samples/  
+        mkdir /home/lvaedgeuser/samples
+        mkdir /home/lvaedgeuser/samples/input    
+        curl https://lvamedia.blob.core.windows.net/public/camera-300s.mkv > /home/lvaedgeuser/samples/input/camera-300s.mkv  
+        chown -R lvalvaedgeuser:localusergroup /home/lvaedgeuser/samples/  
         ```
     * De **yolov3**-module, het YOLOv3-objectdetectiemodel dat computer vision toepast op de afbeeldingen en meerdere klassen objecttypen retourneert
  

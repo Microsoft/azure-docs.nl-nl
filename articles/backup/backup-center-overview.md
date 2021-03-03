@@ -3,14 +3,14 @@ title: Overzicht van Back-upcentrum
 description: Dit artikel bevat een overzicht van Back-upcentrum voor Azure.
 ms.topic: conceptual
 ms.date: 09/30/2020
-ms.openlocfilehash: 93f9e5dc064d264e0cc111d8ddb093639307c55b
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 0acf3a17e41b89b462a7fb07c5d3ebd55d4052af
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100592029"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101725370"
 ---
-# <a name="overview-of-backup-center-preview"></a>Overzicht van Back-upcentrum (preview-versie)
+# <a name="overview-of-backup-center"></a>Overzicht van Back-upcentrum
 
 Backup Center biedt bedrijven een **uniforme beheer ervaring** in azure voor ondernemingen om op schaal back-ups te beheren, te bewaken, te beheren en te analyseren. Daarom is het consistent met de systeem eigen beheer ervaringen van Azure.
 
@@ -18,11 +18,11 @@ Enkele van de belangrijkste voor delen van Back-upcentrum zijn:
 
 * **Eén venster van glas voor het beheren van back-ups** – backup Center is ontworpen voor een grote en gedistribueerde Azure-omgeving. U kunt Back-upcentrum gebruiken om efficiënt back-ups te beheren met meerdere werkbelasting typen, kluizen, abonnementen, regio's en [Azure Lighthouse](../lighthouse/overview.md) -tenants.
 * **Data Source-gericht beheer** : Back-upcentrum biedt weer gaven en filters die zijn gecentreerd op de gegevens bronnen waarvan u een back-up maakt (bijvoorbeeld vm's en data bases). Hiermee kan een resource-eigenaar of een back-upbeheerder back-ups van items bewaken en uitvoeren, zonder dat u zich hoeft te concentreren op welke kluis een item wordt opgeslagen. Een belang rijke functie van dit ontwerp is de mogelijkheid om weer gaven te filteren op Data Source-specifieke eigenschappen, zoals een Data Source-abonnement, resource groep voor gegevens bronnen en data source-Tags. Als uw organisatie bijvoorbeeld een oefening volgt met het toewijzen van verschillende labels aan Vm's die tot verschillende afdelingen behoren, kunt u Back-upcentrum gebruiken om de back-upgegevens te filteren op basis van de labels van de onderliggende Vm's waarvan een back-up wordt gemaakt, zonder dat u zich hoeft te concentreren op de tag van de kluis.
-* **Verbonden ervaringen** – backup Center biedt systeem eigen integraties voor bestaande Azure-Services waarmee beheer op schaal kan worden ingeschakeld. Back-upcentrum gebruikt bijvoorbeeld de [Azure Policy](../governance/policy/overview.md) -ervaring om u te helpen bij het beheren van uw back-ups. Het maakt ook gebruik van [Azure-werkmappen](../azure-monitor/visualize/workbooks-overview.md) en [Azure monitor logboeken](../azure-monitor/logs/data-platform-logs.md) om u te helpen gedetailleerde rapporten over back-ups te bekijken. U hoeft dus geen nieuwe principes te ontdekken voor het gebruik van de verschillende functies van het Back-upcentrum.
+* **Verbonden ervaringen** – backup Center biedt systeem eigen integraties voor bestaande Azure-Services waarmee beheer op schaal kan worden ingeschakeld. Back-upcentrum gebruikt bijvoorbeeld de [Azure Policy](../governance/policy/overview.md) -ervaring om u te helpen bij het beheren van uw back-ups. Het maakt ook gebruik van [Azure-werkmappen](../azure-monitor/visualize/workbooks-overview.md) en [Azure monitor logboeken](../azure-monitor/logs/data-platform-logs.md) om u te helpen gedetailleerde rapporten over back-ups te bekijken. U hoeft dus geen nieuwe principes te ontdekken voor het gebruik van de verschillende functies van het Back-upcentrum. U kunt ook community-resources ontdekken vanuit het Back-upcentrum.
 
 ## <a name="supported-scenarios"></a>Ondersteunde scenario's
 
-* Het Back-upcentrum wordt momenteel ondersteund voor Azure VM backup, SQL in azure VM backup, SAP HANA in azure VM backup, Azure Files backup en Azure Database for PostgreSQL Server Backup.
+* Het Back-upcentrum wordt momenteel ondersteund voor Azure VM backup, SQL in azure VM backup, SAP HANA in azure VM backup, Azure Files backup, Azure blobs backup, Azure Managed Disks backup en Azure Database for PostgreSQL Server Backup.
 * Raadpleeg de [ondersteunings matrix](backup-center-support-matrix.md) voor een gedetailleerde lijst met ondersteunde en niet-ondersteunde scenario's.
 
 ## <a name="get-started"></a>Aan de slag

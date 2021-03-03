@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: d9624fd899649f4e54c5bd509ed5961b862632dd
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 66faa2b3e6d24c264e2fe26ab42eeaffd48384f6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100581587"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101732833"
 ---
 # <a name="azure-database-for-postgresql-single-server-data-encryption-with-a-customer-managed-key"></a>Azure Database for PostgreSQL gegevens versleuteling met één server met een door de klant beheerde sleutel
 
@@ -60,7 +60,7 @@ Wanneer de server is geconfigureerd voor het gebruik van de door de klant beheer
 Hier volgen de vereisten voor het configureren van Key Vault:
 
 * Key Vault en Azure Database for PostgreSQL één server moeten tot dezelfde Azure Active Directory (Azure AD)-Tenant behoren. Cross-Tenant Key Vault en server interacties worden niet ondersteund. Als u de Key Vault resource later wilt verplaatsen, moet u de gegevens versleuteling opnieuw configureren.
-* Sleutel kluis moet worden ingesteld met 90 dagen voor dagen dat verwijderde kluizen worden bewaard. Als de bestaande sleutel kluis is geconfigureerd met een lager nummer, moet u een nieuwe sleutel kluis maken, aangezien deze niet meer kan worden gewijzigd nadat deze is gemaakt.
+* De sleutel kluis moet worden ingesteld op een waarde van 90 dagen voor dagen dat verwijderde kluizen worden bewaard. Als de bestaande sleutel kluis is geconfigureerd met een lager nummer, moet u een nieuwe sleutel kluis maken, aangezien deze niet meer kan worden gewijzigd nadat deze is gemaakt.
 * Schakel de functie voor het voorlopig verwijderen van de sleutel kluis in om te beschermen tegen gegevens verlies als een onbedoelde sleutel (of Key Vault) wordt verwijderd. Voorlopig verwijderde bronnen worden 90 dagen bewaard, tenzij de gebruiker deze in de tussen tijd herstelt of verwijdert. De herstel-en opschoon acties hebben hun eigen machtigingen die zijn gekoppeld aan een Key Vault toegangs beleid. De functie voor voorlopig verwijderen is standaard uitgeschakeld, maar u kunt deze inschakelen via Power shell of de Azure CLI (Houd er rekening mee dat u deze niet via de Azure Portal hoeft in te scha kelen). 
 * Leegmaken van beveiliging inschakelen voor het afdwingen van een verplichte Bewaar periode voor verwijderde kluizen en kluis objecten
 * Verleen de Azure Database for PostgreSQL enkele server toegang tot de sleutel kluis met de machtigingen Get, wrapKey en sleutel uitpakken met behulp van de unieke beheerde identiteit. In de Azure Portal wordt de unieke service-identiteit automatisch gemaakt wanneer gegevens versleuteling is ingeschakeld op de PostgreSQL één server. Zie [gegevens versleuteling voor Azure database for PostgreSQL Eén server met behulp van de Azure Portal](howto-data-encryption-portal.md) voor gedetailleerde, stapsgewijze instructies voor het gebruik van de Azure Portal.

@@ -1,5 +1,5 @@
 ---
-title: Privé-eindpunten maken en verwijderen in een Azure Stream Analytics-cluster
+title: Beheerde privé-eind punten maken en verwijderen in een Azure Stream Analytics-cluster
 description: Meer informatie over het beheren van privé-eindpunten in een Azure Stream Analytics cluster.
 author: sidramadoss
 ms.author: sidram
@@ -7,28 +7,28 @@ ms.service: stream-analytics
 ms.topic: overview
 ms.custom: mvc
 ms.date: 09/22/2020
-ms.openlocfilehash: cff02bb4b7d0f7e969589a9977a89f89e2674ffc
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: 9939130782594c03a497d98ce6cd9b33b28eadec
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019411"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101718400"
 ---
-# <a name="create-and-delete-private-endpoints-in-an-azure-stream-analytics-cluster"></a>Privé-eindpunten maken en verwijderen in een Azure Stream Analytics-cluster
+# <a name="create-and-delete-managed-private-endpoints-in-an-azure-stream-analytics-cluster"></a>Beheerde privé-eind punten maken en verwijderen in een Azure Stream Analytics-cluster
 
-U kunt uw Azure Stream Analytics-taken die worden uitgevoerd op een cluster verbinden met invoer- en uitvoerbronnen die zich achter een firewall of een Azure Virtual Network (VNet) bevinden. Eerst maakt u een privé-eindpunt voor een resource, zoals Azure Event Hub of Azure SQL Database, in uw Stream Analytics-cluster. Vervolgens keurt u de verbinding met het privé-eindpunt goed vanuit uw invoer of uitvoer.
+U kunt uw Azure Stream Analytics-taken die worden uitgevoerd op een cluster verbinden met invoer- en uitvoerbronnen die zich achter een firewall of een Azure Virtual Network (VNet) bevinden. Eerst maakt u een beheerd privé-eind punt voor een resource, zoals Azure Event hub of Azure SQL Database, in uw Stream Analytics cluster. Vervolgens keurt u de verbinding met het privé-eindpunt goed vanuit uw invoer of uitvoer.
 
 Zodra u de verbinding hebt goedgekeurd, heeft elke taak die in uw Stream Analytics-cluster wordt uitgevoerd toegang tot de resource via het privé-eindpunt. In dit artikel wordt beschreven hoe u privé-eindpunten maakt en verwijdert in een Stream Analytics-cluster. U kunt privé-eindpunten maken voor Azure SQL Database, Azure Storage, Azure Data Lake Storage Gen2, Azure Event Hub en Azure Service Bus. Privé-eindpunten voor andere services worden binnenkort toegevoegd. 
 
-## <a name="create-private-endpoint-in-stream-analytics-cluster"></a>Een privé-eindpunt in een Stream Analytics-cluster maken
+## <a name="create-managed-private-endpoint-in-stream-analytics-cluster"></a>Een beheerd privé-eind punt in Stream Analytics cluster maken
 
 In dit gedeelte leert u hoe u een privé-eindpunt in een Stream Analytics cluster maakt.
 
 1. Zoek en selecteer uw Stream Analytics-cluster in Azure Portal.
 
-1. Selecteer onder **Alle instellingen** de optie **Privé-eindpunten**.
+1. Onder **instellingen** selecteert u **beheerde persoonlijke eind punten**.
 
-1. Selecteer **Privé-eindpunt toevoegen** en voer de volgende gegevens in om de resource te kiezen die u veilig wilt openen via een privé-eindpunt.
+1. Selecteer **Nieuw** en voer de volgende informatie in om de resource te kiezen die u veilig wilt openen via een persoonlijk eind punt.
 
    |Instelling|Waarde|
    |---|---|
@@ -47,11 +47,11 @@ In dit gedeelte leert u hoe u een privé-eindpunt in een Stream Analytics cluste
 
 1. U kunt teruggaan naar uw Stream Analytics-cluster om de status van **Goedkeuring klant in behandeling** in **In afwachting van de DNS-instelling** in **Setup voltooid** te zien wijzigen. Dit duurt enkele minuten.
 
-## <a name="delete-a-private-endpoint-in-a-stream-analytics-cluster"></a>Een privé-eindpunt in een Stream Analytics-cluster verwijderen
+## <a name="delete-a-managed-private-endpoint-in-a-stream-analytics-cluster"></a>Een beheerd privé-eind punt in een Stream Analytics cluster verwijderen
 
 1. Zoek en selecteer uw Stream Analytics-cluster in Azure Portal.
 
-1. Selecteer onder **Alle instellingen** de optie **Privé-eindpunten**.
+1. Onder **instellingen** selecteert u **beheerde persoonlijke eind punten**.
 
 1. Selecteer het privé-eindpunt dat u wilt verwijderen en selecteer **Verwijderen**.
 

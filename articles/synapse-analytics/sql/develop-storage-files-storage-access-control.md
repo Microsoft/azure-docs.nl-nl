@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 06/11/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 116fb10956b02b5f6fe578565b9049d9fad54837
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 1ee631e3e4a13a18bb61ee6237ff67a49f663179
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101674206"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101693897"
 ---
 # <a name="control-storage-account-access-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Toegang tot opslagaccounts beheren voor serverloze SQL-pools in Azure Synapse Analytics
 
@@ -122,7 +122,7 @@ Volg deze stappen om de firewall voor uw opslagaccount te configureren en een ui
     Connect-AzAccount
     ```
 4. Variabelen definiëren in PowerShell: 
-    - Naam van resourcegroep: u vindt deze in de Azure-portal, in het overzicht van Synapse-werkruimte.
+    - Naam van de resource groep: u vindt deze in Azure Portal in het overzicht van het opslag account.
     - Accountnaam: naam van het opslagaccount dat wordt beveiligd met firewallregels.
     - Tenant-id: u vindt deze in de Azure-portal in Azure Active Directory, bij tenantgegevens.
     - Werkruimte naam: naam van de Synapse-werk ruimte.

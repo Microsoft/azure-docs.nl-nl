@@ -4,21 +4,21 @@ description: Meer informatie over het gebruik van Azure Portal, CLI of Power she
 author: yanivlavi
 ms.author: yalavi
 ms.topic: conceptual
-ms.date: 09/18/2018
-ms.openlocfilehash: 015a84ab6f81875407f460c4a45423f3f5e22b7f
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.date: 02/14/2021
+ms.openlocfilehash: 854867bb6f40bdd8f0fac28e69d936a4027760b5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612891"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101714371"
 ---
 # <a name="create-view-and-manage-classic-metric-alerts-using-azure-monitor"></a>Klassieke metrische waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor
 
 > [!WARNING]
-> In dit artikel wordt beschreven hoe u oudere klassieke metrische waarschuwingen maakt. Azure Monitor ondersteunt nu [nieuwere bijna realtime waarschuwingen voor metrische gegevens en een nieuwe meldings ervaring](../platform/alerts-overview.md). Klassieke waarschuwingen worden [buiten gebruik gesteld](../platform/monitoring-classic-retirement.md) voor open bare Cloud gebruikers, maar zijn nog steeds beperkt in beperkte mate voor resources die de nieuwe waarschuwingen nog niet ondersteunen.
+> In dit artikel wordt beschreven hoe u oudere klassieke metrische waarschuwingen maakt. Azure Monitor ondersteunt nu [nieuwere bijna realtime waarschuwingen voor metrische gegevens en een nieuwe meldings ervaring](./alerts-overview.md). Klassieke waarschuwingen worden [buiten gebruik gesteld](./monitoring-classic-retirement.md) voor open bare Cloud gebruikers, maar blijven beperkt tot **31 mei 2021**. Klassieke waarschuwingen voor Azure Government Cloud en Azure China 21Vianet worden op **29 februari 2024** buiten gebruik gesteld.
 >
 
-Klassieke metrische waarschuwingen in Azure Monitor bieden een manier om een melding te ontvangen wanneer een van uw metrische gegevens een drempel waarde overschrijdt. Klassieke waarschuwingen voor metrische gegevens is een oudere functie die alleen waarschuwingen voor niet-dimensionale metrische gegevens toestaat. Er is een bestaande nieuwere functie met de naam metrische waarschuwingen, waarmee de functionaliteit van klassieke metrische waarschuwingen wordt verbeterd. Meer informatie over de nieuwe functies voor metrische waarschuwingen vindt u in [overzicht van metrische waarschuwingen](../platform/alerts-metric-overview.md). In dit artikel wordt beschreven hoe u klassieke metrische waarschuwings regels maakt, weergeeft en beheert via Azure Portal, Azure CLI en Power shell.
+Klassieke metrische waarschuwingen in Azure Monitor bieden een manier om een melding te ontvangen wanneer een van uw metrische gegevens een drempel waarde overschrijdt. Klassieke waarschuwingen voor metrische gegevens is een oudere functie die alleen waarschuwingen voor niet-dimensionale metrische gegevens toestaat. Er is een bestaande nieuwere functie met de naam metrische waarschuwingen, waarmee de functionaliteit van klassieke metrische waarschuwingen wordt verbeterd. Meer informatie over de nieuwe functies voor metrische waarschuwingen vindt u in [overzicht van metrische waarschuwingen](./alerts-metric-overview.md). In dit artikel wordt beschreven hoe u klassieke metrische waarschuwings regels maakt, weergeeft en beheert via Azure Portal, Azure CLI en Power shell.
 
 ## <a name="with-azure-portal"></a>Met Azure Portal
 
@@ -134,6 +134,5 @@ In deze secties ziet u hoe u met Power shell-opdrachten klassieke metrische waar
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Een klassieke waarschuwing voor metrische gegevens maken met een resource manager-sjabloon](../platform/alerts-enable-template.md).
-- Een [klassieke metrische waarschuwing laten weten dat een niet-Azure-systeem gebruikmaakt van een webhook](../platform/alerts-webhooks.md).
-
+- [Een klassieke waarschuwing voor metrische gegevens maken met een resource manager-sjabloon](./alerts-enable-template.md).
+- Een [klassieke metrische waarschuwing laten weten dat een niet-Azure-systeem gebruikmaakt van een webhook](./alerts-webhooks.md).

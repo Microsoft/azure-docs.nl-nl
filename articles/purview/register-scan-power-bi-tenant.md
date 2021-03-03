@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/19/2020
-ms.openlocfilehash: a4883bfce2469af0ee8bcc34933f94b0b5329959
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 2ecc5df9db51bb6c923b9e0f47163e492bd76cfa
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100518076"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101695738"
 ---
 # <a name="register-and-scan-a-power-bi-tenant-preview"></a>Een Power BI-Tenant registreren en scannen (preview)
 
@@ -98,11 +98,13 @@ Voeg eerst een speciale functie markering toe aan uw controle sfeer liggen-URL
     > Voor Power BI is registratie van gegevens bronnen en scans alleen toegestaan voor één exemplaar.
 
 
-4. Geef een naam op voor de scan. U ziet dat de enige verificatie methode die wordt ondersteund, **beheerde identiteit** is.
+4. Geef een naam op voor de scan. Selecteer vervolgens de optie om de persoonlijke werk ruimten op te nemen of uit te sluiten. U ziet dat de enige verificatie methode die wordt ondersteund, **beheerde identiteit** is.
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-scan-setup.png" alt-text="Afbeelding van installatie van Power BI scanner":::
 
-    De scan naam moet tussen de 3-63 tekens lang zijn en mag alleen letters, cijfers, onderstrepings tekens en afbreek streepjes bevatten.  Spaties zijn niet toegestaan.
+    > [!Note]
+    > * Als u de configuratie van een scan wijzigt om een persoonlijke werk ruimte op te nemen of uit te sluiten, wordt een volledige scan van de Power bi-bron geactiveerd
+    > * De scan naam moet tussen de 3-63 tekens lang zijn en mag alleen letters, cijfers, onderstrepings tekens en afbreek streepjes bevatten. Spaties zijn niet toegestaan.
 
 5. Stel een scan trigger in. Uw opties zijn **eenmaal**, **elke 7 dagen** en **om de 30 dagen**.
 

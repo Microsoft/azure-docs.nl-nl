@@ -11,12 +11,12 @@ ms.reviewer: larryfr, vaidyas, laobri, tracych
 ms.author: trmccorm
 author: tmccrmck
 ms.date: 09/23/2020
-ms.openlocfilehash: a907bf61cb7ccb8b6d287840c12a00451cad782f
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: ee41ae2a705ceaa0e9742c91552d6bdae26820ce
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101657856"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101690274"
 ---
 # <a name="troubleshooting-the-parallelrunstep"></a>Probleem met de ParallelRunStep oplossen
 
@@ -119,7 +119,7 @@ Maak de ParallelRunStep met het script, de omgevingsconfiguratie en de parameter
 - `parallel_run_config`: Een `ParallelRunConfig`-object, zoals eerder gedefinieerd.
 - `inputs`: Een of meer Azure Machine Learning-gegevenssets van één type die moeten worden gepartitioneerd voor parallelle verwerking.
 - `side_inputs`: Een of meer referentiegegevens of gegevenssets die worden gebruikt als aanvullende invoerwaarden en niet gepartitioneerd moeten worden.
-- `output`: Een `OutputDatasetConfig` of een `PipelineData` object dat overeenkomt met de uitvoermap.
+- `output`: Een `OutputFileDatasetConfig` object dat het mappad vertegenwoordigt waarop de uitvoer gegevens worden opgeslagen.
 - `arguments`: Een lijst van argumenten die worden doorgegeven aan het gebruikersscript. Gebruik unknown_args om deze op te halen in uw invoerscript (optioneel).
 - `allow_reuse`: Of de stap vorige resultaten moet hergebruiken wanneer dezelfde instellingen/invoerwaarden worden uitgevoerd. Als deze parameter `False` is, dan wordt er altijd een nieuwe uitvoering gegenereerd voor deze stap tijdens pijplijnuitvoering. (optioneel; de standaardwaarde is `True`.)
 

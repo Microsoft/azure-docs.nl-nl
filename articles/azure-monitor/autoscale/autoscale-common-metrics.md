@@ -4,12 +4,12 @@ description: Meer informatie over de metrische gegevens die vaak worden gebruikt
 ms.topic: conceptual
 ms.date: 12/6/2016
 ms.subservice: autoscale
-ms.openlocfilehash: f358efb8f99066dc1d7a564ad36d6ed1290853e0
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 4b763f39d3b88a7884e89dddbc2c483c1bb84d31
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610950"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717771"
 ---
 # <a name="azure-monitor-autoscaling-common-metrics"></a>Azure Monitor automatisch schalen van algemene metrische gegevens
 
@@ -33,8 +33,8 @@ Als een van beide voor waarden waar is, raadpleegt u [Power shell gebruiken om A
 ### <a name="host-metrics-for-resource-manager-based-windows-and-linux-vms"></a>Metrische gegevens van de host voor Windows-en Linux-Vm's op basis van Resource Manager
 De volgende metrische gegevens op hostniveau worden standaard verzonden voor Azure VM en VMSS in zowel Windows-als Linux-exemplaren. Deze metrische gegevens beschrijven uw Azure VM, maar worden verzameld van de Azure VM-host, in plaats van via een agent die is geïnstalleerd op de gast-VM. U kunt deze metrische gegevens gebruiken in regels voor automatisch schalen.
 
-- [Metrische gegevens van de host voor Windows-en Linux-Vm's op basis van Resource Manager](../platform/metrics-supported.md#microsoftcomputevirtualmachines)
-- [Metrische gegevens van de host voor Windows-en Linux-VM Scale Sets op basis van Resource Manager](../platform/metrics-supported.md#microsoftcomputevirtualmachinescalesets)
+- [Metrische gegevens van de host voor Windows-en Linux-Vm's op basis van Resource Manager](../essentials/metrics-supported.md#microsoftcomputevirtualmachines)
+- [Metrische gegevens van de host voor Windows-en Linux-VM Scale Sets op basis van Resource Manager](../essentials/metrics-supported.md#microsoftcomputevirtualmachinescalesets)
 
 ### <a name="guest-os-metrics-for-resource-manager-based-windows-vms"></a>Metrische gegevens van het gast besturingssysteem voor Windows-Vm's op basis van Resource Manager
 Wanneer u een virtuele machine in azure maakt, wordt Diagnostische gegevens ingeschakeld met behulp van de diagnostische extensie. Met de uitbrei ding voor diagnostische gegevens wordt een set metrische gegevens verzonden die zijn gemaakt van binnen van de virtuele machine. Dit betekent dat u automatisch de metrische gegevens die niet standaard worden verzonden, kunt uitschalen.
@@ -186,4 +186,3 @@ Voor VM-schaal sets kunt u de instelling voor automatisch schalen in het Resourc
 > Voor Service Bus bestaat het concept van de resource groep niet, maar Azure Resource Manager maakt een standaard resource groep per regio. De resource groep bevindt zich doorgaans in de indeling ' default-ServiceBus-[regio] '. Bijvoorbeeld ' default-ServiceBus-oostelijke ', ' default-ServiceBus-Westus ', ' default-ServiceBus-AustraliaEast ' enzovoort.
 >
 >
-

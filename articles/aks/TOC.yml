@@ -5,7 +5,7 @@
     - name: Meer informatie over AKS
       href: intro-kubernetes.md
     - name: Oplossingsarchitecturen
-      href: /azure/architecture/reference-architectures/containers/aks-start-here?bc=%2fazure%2faks%2fbreadcrumb%2ftoc.json&toc=%2fazure%2faks%2ftoc.json
+      href: /azure/architecture/reference-architectures/containers/aks-start-here?bc=%2fazure%2faks%2fbreadcrumb%2ftoc.json&toc=%2fazure%2faks%2ftoc.json?WT.mc_id=AKSDOCSTOC
 - name: Quickstarts
   expanded: true
   items:
@@ -294,14 +294,14 @@
     - name: Bewaking en registratie
       items:
         - name: Azure Monitor voor containers
-          href: ../azure-monitor/insights/container-insights-overview.md
+          href: ../azure-monitor/containers/container-insights-overview.md
           maintainContext: true
         - name: De logboeken van de onderdelen van het besturings element weer geven
           href: view-control-plane-logs.md
         - name: Kubelet-logboeken weergeven
           href: kubelet-logs.md
         - name: Container gegevens in realtime weergeven
-          href: ../azure-monitor/insights/container-insights-livedata-overview.md
+          href: ../azure-monitor/containers/container-insights-livedata-overview.md
           maintainContext: true
     - name: Windows Server-containers gebruiken
       items:

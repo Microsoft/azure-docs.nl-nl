@@ -6,25 +6,25 @@ ms.author: harelbr
 ms.topic: troubleshooting
 ms.date: 01/21/2021
 ms.subservice: alerts
-ms.openlocfilehash: 1908232184218316a1a887f17f2fc8104529a0e7
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 79cc7e1e4b574533fcad4592134109c52897e9ba
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609584"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737253"
 ---
 # <a name="troubleshooting-problems-in-azure-monitor-metric-alerts"></a>Problemen met metrische waarschuwingen in Azure Monitor oplossen 
 
 In dit artikel worden veelvoorkomende problemen in Azure Monitor [metrische waarschuwingen](alerts-metric-overview.md) beschreven en wordt uitgelegd hoe u deze problemen kunt oplossen.
 
-Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Hiermee kunt u problemen identificeren en verhelpen voordat de gebruikers van uw systeem ze merken. Zie [overzicht van waarschuwingen in Microsoft Azure](../platform/alerts-overview.md)voor meer informatie over waarschuwingen.
+Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Hiermee kunt u problemen identificeren en verhelpen voordat de gebruikers van uw systeem ze merken. Zie [overzicht van waarschuwingen in Microsoft Azure](./alerts-overview.md)voor meer informatie over waarschuwingen.
 
 ## <a name="metric-alert-should-have-fired-but-didnt"></a>De metrische waarschuwing moet worden geactiveerd, maar niet 
 
 Als u denkt dat een metrische waarschuwing moet worden geactiveerd, maar niet is geactiveerd en niet wordt gevonden in de Azure Portal, probeert u de volgende stappen uit te voeren:
 
 1. **Configuratie** : Controleer de configuratie van de metrische waarschuwings regel om er zeker van te zijn dat deze correct is geconfigureerd:
-    - Controleer of het **aggregatie type** en de granulatie van de **aggregatie (punt)** zijn geconfigureerd zoals verwacht. **Aggregatie type** bepaalt hoe metrische waarden worden geaggregeerd ( [hier](../platform/metrics-aggregation-explained.md#aggregation-types)vindt u meer informatie) en **aggregatie granulatie (period)** bepaalt hoe ver terug de evaluatie de metrische waarden opstelt wanneer de waarschuwings regel wordt uitgevoerd.
+    - Controleer of het **aggregatie type** en de granulatie van de **aggregatie (punt)** zijn geconfigureerd zoals verwacht. **Aggregatie type** bepaalt hoe metrische waarden worden geaggregeerd ( [hier](../essentials/metrics-aggregation-explained.md#aggregation-types)vindt u meer informatie) en **aggregatie granulatie (period)** bepaalt hoe ver terug de evaluatie de metrische waarden opstelt wanneer de waarschuwings regel wordt uitgevoerd.
     -  Controleer of de **drempel waarde** of **gevoeligheid** is geconfigureerd zoals verwacht.
     - Voor een waarschuwings regel die gebruikmaakt van dynamische drempel waarden, controleert u of geavanceerde instellingen zijn geconfigureerd, omdat het **aantal schendingen** mogelijk waarschuwingen kan filteren en **gegevens kan negeren voordat** de drempel waarden worden berekend.
 
@@ -69,10 +69,10 @@ Als u denkt dat uw metrische waarschuwing niet hoeft te worden geactiveerd, maar
 ## <a name="cant-find-the-metric-to-alert-on---virtual-machines-guest-metrics"></a>Kan de metrische gegevens niet vinden voor waarschuwingen over de metrische gegevens van de gast voor virtuele machines
 
 Als u een waarschuwing wilt ontvangen voor de metrische gegevens van het gast besturingssysteem van virtuele machines (bijvoorbeeld: geheugen, schijf ruimte), moet u ervoor zorgen dat u de vereiste agent hebt geïnstalleerd voor het verzamelen van deze informatie voor Azure Monitor metrieken:
-- [Voor Windows-VM's](../platform/collect-custom-metrics-guestos-resource-manager-vm.md)
-- [Voor Linux-VM's](../platform/collect-custom-metrics-linux-telegraf.md)
+- [Voor Windows-VM's](../essentials/collect-custom-metrics-guestos-resource-manager-vm.md)
+- [Voor Linux-VM's](../essentials/collect-custom-metrics-linux-telegraf.md)
 
-Zie [hier](../insights/monitor-vm-azure.md#guest-operating-system)voor meer informatie over het verzamelen van gegevens uit het gast besturingssysteem van een virtuele machine.
+Zie [hier](../vm/monitor-vm-azure.md#guest-operating-system)voor meer informatie over het verzamelen van gegevens uit het gast besturingssysteem van een virtuele machine.
 
 > [!NOTE] 
 > Als u de metrische gegevens van de gast hebt geconfigureerd om te worden verzonden naar een Log Analytics-werk ruimte, worden de metrische gegevens weer gegeven onder de Log Analytics werkruimte resource en worden **alleen** data weer gegeven nadat u een waarschuwings regel hebt gemaakt waarmee deze worden gecontroleerd. Volg hiervoor de stappen voor het [configureren van een metrische waarschuwing voor logboeken](./alerts-metric-logs.md#configuring-metric-alert-for-logs).
@@ -84,8 +84,8 @@ Zie [hier](../insights/monitor-vm-azure.md#guest-operating-system)voor meer info
 
 Als u een specifieke metrische waarschuwing wilt instellen maar deze niet ziet bij het maken van een waarschuwingsregel, controleert u het volgende:
 - Als u geen metrische gegevens ziet voor de resource, [controleert u of het resourcetype metrische waarschuwingen ondersteunt](./alerts-metric-near-real-time.md).
-- Als u bepaalde metrische gegevens niet ziet terwijl andere wel worden weergegeven, [controleert u of de metrische gegevens beschikbaar zijn](../platform/metrics-supported.md). Zo ja, dan raadpleegt u de beschrijving om te controleren of de metrische gegevens alleen beschikbaar zijn in specifieke versies of edities van de resource.
-- Als de metrische gegevens niet beschikbaar zijn voor de resource, zijn ze mogelijk wel beschikbaar in de resourcelogboeken en kunt u ze bewaken met behulp van logboekwaarschuwingen. Hier vindt u meer informatie over het [verzamelen en analyseren van resourcelogboeken van een Azure-resource](../learn/tutorial-resource-logs.md).
+- Als u bepaalde metrische gegevens niet ziet terwijl andere wel worden weergegeven, [controleert u of de metrische gegevens beschikbaar zijn](../essentials/metrics-supported.md). Zo ja, dan raadpleegt u de beschrijving om te controleren of de metrische gegevens alleen beschikbaar zijn in specifieke versies of edities van de resource.
+- Als de metrische gegevens niet beschikbaar zijn voor de resource, zijn ze mogelijk wel beschikbaar in de resourcelogboeken en kunt u ze bewaken met behulp van logboekwaarschuwingen. Hier vindt u meer informatie over het [verzamelen en analyseren van resourcelogboeken van een Azure-resource](../essentials/tutorial-resource-logs.md).
 
 ## <a name="cant-find-the-metric-dimension-to-alert-on"></a>Kan de metrische dimensie niet vinden om te waarschuwen
 
@@ -211,7 +211,7 @@ Zorg ervoor dat u de juiste CLI-opdrachten gebruikt voor metrische waarschuwinge
 
 - Als u een `Metric not found` fout bericht ontvangt:
 
-   - Voor een platform metriek: Zorg ervoor dat u de naam van de **metrische gegevens** gebruikt op [de pagina Azure monitor ondersteunde metrische gegevens](../platform/metrics-supported.md)en niet de **weergave naam van de metrische gegevens**
+   - Voor een platform metriek: Zorg ervoor dat u de naam van de **metrische gegevens** gebruikt op [de pagina Azure monitor ondersteunde metrische gegevens](../essentials/metrics-supported.md)en niet de **weergave naam van de metrische gegevens**
 
    - Voor een aangepaste metriek: Zorg ervoor dat de metriek al wordt verzonden (u kunt geen waarschuwings regel maken op een aangepaste metriek die nog niet bestaat) en dat u de naam ruimte van de aangepaste metriek opgeeft (Bekijk [hier](./alerts-metric-create-templates.md#template-for-a-static-threshold-metric-alert-that-monitors-a-custom-metric)een voor beeld van een resource manager-sjabloon)
 

@@ -4,19 +4,21 @@ description: Uitgebreide toegang voor Azure Security Bench Mark v2
 author: msmbaldwin
 ms.service: security
 ms.topic: conceptual
-ms.date: 09/20/2020
+ms.date: 02/22/2021
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: fd39f5e0af34c702cddc8e08b6a94e428c7f0167
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: a4f1c6e32bbc679a7ec946384903b2bda3887d05
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99092047"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101720576"
 ---
 # <a name="security-control-v2-privileged-access"></a>Beveiligings controle v2: Privileged Access
 
 Uitgebreide toegang heeft betrekking op besturings elementen voor het beveiligen van bevoegde toegang tot uw Azure-Tenant en-resources. Dit omvat een reeks besturings elementen voor het beveiligen van uw beheer model, beheerders accounts en geprivilegieerde toegangs werk stations tegen opzettelijke en onbedoelde Risico's.
+
+Voor een overzicht van de toepasselijke ingebouwde Azure Policy raadpleegt u [de details van het ingebouwde initiatief voor Azure Security Bench Mark-naleving: Privileged Access](../../governance/policy/samples/azure-security-benchmark#privileged-access)
 
 ## <a name="pa-1-protect-and-limit-highly-privileged-users"></a>PA-1: Gebruikers met zeer uitgebreide bevoegdheden beveiligen en beperken
 
@@ -30,7 +32,7 @@ Beperk het aantal gebruikers accounts met zeer privileged en beveilig deze accou
 
 - Beheerder van geprivilegieerde rol: gebruikers met deze rol kunnen roltoewijzingen beheren in azure AD, en in Azure AD Privileged Identity Management (PIM). Daarnaast kunt u met deze rol alle aspecten van PIM en administratieve eenheden beheren.
 
-Opmerking: u kunt andere essentiële rollen hebben die moeten worden onderhevig aan de hand van aangepaste rollen waaraan bepaalde privileged permissions zijn toegewezen. Het is ook mogelijk dat u vergelijk bare besturings elementen wilt Toep assen op het beheerders account van essentiële bedrijfs activa.  
+Opmerking: u kunt andere essentiële rollen hebben die moeten worden onderhevig aan de hand van aangepaste rollen waaraan bepaalde privileged permissions zijn toegewezen. Het is ook mogelijk dat u vergelijk bare besturings elementen wilt Toep assen op het beheerders account van essentiële bedrijfs activa.
 
 U kunt bevoegdheden JIT-toegang (Just-In-Time) verlenen voor Azure-resources en Azure AD met behulp van Azure AD Privileged Identity Management (PIM). JIT verleent gebruikers alleen tijdelijke machtigingen voor het uitvoeren van bevoegde taken op het moment dat ze deze nodig hebben. PIM kan ook beveiligingswaarschuwingen genereren wanneer er verdachte of onveilige activiteiten worden vastgesteld in uw Azure AD-organisatie.
 
@@ -155,11 +157,11 @@ Gebruik Azure AD-functies voor rechten beheer om werk stromen voor toegangs aanv
 |--|--|--|--|
 | PA-6 | 4,6, 11,6, 12,12 | AC-2, SC-3, SC-7 |
 
-Beveiligde, geïsoleerde werk stations zijn van cruciaal belang voor de beveiliging van gevoelige rollen als beheerders, ontwikkel aars en essentiële service operators. Gebruik zeer beveiligde werk stations van gebruikers en/of Azure Bastion voor beheer taken. Gebruik Azure Active Directory, Microsoft Defender Advanced Threat Protection (ATP) en/of Microsoft Intune als u een beveiligd en beheerd gebruikerswerkstation voor beheertaken wilt implementeren. De beveiligde werk stations kunnen centraal worden beheerd voor het afdwingen van beveiligde configuratie, inclusief sterke authenticatie, software-en hardware-basis lijnen en beperkte logische en netwerk toegang. 
+Beveiligde, geïsoleerde werk stations zijn zeer belang rijk voor de beveiliging van gevoelige rollen zoals beheerder, ontwikkelaar en kritische service operator. Gebruik zeer beveiligde werk stations van gebruikers en/of Azure Bastion voor beheer taken. Gebruik Azure Active Directory, Microsoft Defender Advanced Threat Protection (ATP) en/of Microsoft Intune als u een beveiligd en beheerd gebruikerswerkstation voor beheertaken wilt implementeren. De beveiligde werk stations kunnen centraal worden beheerd voor het afdwingen van beveiligde configuratie, inclusief sterke authenticatie, software-en hardware-basis lijnen en beperkte logische en netwerk toegang. 
 
-- [Meer informatie over privileged Access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
+- [Meer informatie over privileged Access workstations](/security/compass/privileged-access-deployment)
 
-- [Een werkstation met uitgebreide toegang gebruiken](/security/compass/privileged-access-deployment)
+- [Een werkstation met uitgebreide toegang gebruiken](../../active-directory/devices/howto-azure-managed-workstation)
 
 **Verantwoordelijkheid**: Klant
 
@@ -178,7 +180,8 @@ Beveiligde, geïsoleerde werk stations zijn van cruciaal belang voor de beveilig
 | PA-7 | 14,6 | AC-2, AC-3, SC-3 |
 
 Met Azure op rollen gebaseerd toegangs beheer (Azure RBAC) kunt u toegang tot Azure-resources beheren via roltoewijzingen. U kunt deze rollen toewijzen aan gebruikers, groeps service-principals en beheerde identiteiten. Er zijn vooraf gedefinieerde ingebouwde rollen voor bepaalde resources, en deze rollen kunnen worden geïnventariseerd of opgevraagd via hulpprogram ma's als Azure CLI, Azure PowerShell en de Azure Portal. De bevoegdheden die u toewijst aan resources via Azure RBAC, moeten altijd beperkt zijn tot wat is vereist voor de rollen. Beperkte bevoegdheden vormen een aanvulling op de just-in-time (JIT) benadering van Azure AD Privileged Identity Management (PIM), en deze bevoegdheden moeten regel matig worden gecontroleerd.
-Gebruik ingebouwde rollen om machtigingen toe te wijzen en definieer alleen aangepaste rollen wanneer dit echt nodig is. 
+
+Gebruik ingebouwde rollen om machtigingen toe te wijzen en alleen aangepaste rollen te maken wanneer dat nodig is.
 
 - [Wat is Azure Role-based Access Control (Azure RBAC)](../../role-based-access-control/overview.md)
 
@@ -192,9 +195,9 @@ Gebruik ingebouwde rollen om machtigingen toe te wijzen en definieer alleen aang
 
 - [Toepassingsbeveiliging en DevSecOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)
 
-- [Beheer van beveiligings naleving](/azure/cloud-adoption-framework/organize/cloud-security-compliance-management) 
+- [Beheer van beveiligings naleving](/azure/cloud-adoption-framework/organize/cloud-security-compliance-management)
 
-- [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)    
+- [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)
 
 - [Identiteits-en sleutel beheer](/azure/cloud-adoption-framework/organize/cloud-security-identity-keys)
 

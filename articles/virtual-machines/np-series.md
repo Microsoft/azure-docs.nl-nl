@@ -7,16 +7,17 @@ ms.subservice: hpc
 ms.topic: conceptual
 ms.date: 02/09/2021
 ms.author: vikancha
-ms.openlocfilehash: 8d350e248d09f29496f4461b902eba96d8375732
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 4fe6df5a9eabc6e5088618039fdea450ee8314ce
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101668279"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101693846"
 ---
-# <a name="np-series-preview"></a>NP-serie (preview-versie)
-
+# <a name="np-series-preview"></a>NP-serie (preview-versie) 
 De virtuele machines van de NP-serie worden aangedreven door [Xilinx U250 ](https://www.xilinx.com/products/boards-and-kits/alveo/u250.html) fpga's voor het versnellen van werk belastingen, zoals machine learning interferentie, video transcode ring en zoek & analyses in data bases. Virtuele machines uit de NP-serie worden ook aangedreven door Cpu's van de Intel Xeon 8171M (Skylake) met alle core Turbo clock-snelheid van 3,2 GHz.
+
+Dien een aanvraag in met behulp van het [voorbeeld formulier](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR9x_QCQkJXxHl4qOI4jC9YtUOVI0VkgwVjhaTFFQMTVBTDFJVFpBMzJSSCQlQCN0PWcu) als onderdeel van het NP-serie voorbeeld programma.
 
 
 [Premium Storage](premium-storage-performance.md): ondersteund<br>

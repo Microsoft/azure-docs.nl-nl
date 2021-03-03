@@ -5,18 +5,18 @@ author: harelbr
 ms.author: harelbr
 ms.topic: how-to
 ms.custom: subject-moving-resources
-ms.date: 06/26/2020
+ms.date: 02/14/2021
 ms.subservice: alerts
-ms.openlocfilehash: b09c7f1ff429a3daf675b0f44cc8b64f27e79a07
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 435f7b9b585b4effe6b06d78587845bf53a7d051
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609588"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101714201"
 ---
 # <a name="how-to-update-alert-rules-or-action-rules-when-their-target-resource-moves-to-a-different-azure-region"></a>Waarschuwings regels of actie regels bijwerken wanneer de doel resource wordt verplaatst naar een andere Azure-regio
 
-In dit artikel wordt beschreven waarom de bestaande [waarschuwings regels](../platform/alerts-overview.md) en [actie regels](./alerts-action-rules.md) kunnen worden beïnvloed wanneer u andere Azure-resources tussen regio's verplaatst en hoe u deze problemen kunt identificeren en oplossen. Raadpleeg de documentatie over het verplaatsen van de hoofd [resource](../../azure-resource-manager/management/move-region.md) voor meer informatie over de resource verplaatsing tussen regio's nuttig en een controle lijst voor het ontwerpen van een Verplaats proces.
+In dit artikel wordt beschreven waarom de bestaande [waarschuwings regels](./alerts-overview.md) en [actie regels](./alerts-action-rules.md) kunnen worden beïnvloed wanneer u andere Azure-resources tussen regio's verplaatst en hoe u deze problemen kunt identificeren en oplossen. Raadpleeg de documentatie over het verplaatsen van de hoofd [resource](../../azure-resource-manager/management/move-region.md) voor meer informatie over de resource verplaatsing tussen regio's nuttig en een controle lijst voor het ontwerpen van een Verplaats proces.
 
 ## <a name="why-the-problem-exists"></a>Waarom het probleem zich voordoet
 
@@ -48,7 +48,6 @@ Het probleem is van toepassing op deze regel typen:
 
 - Waarschuwingsregels voor activiteitenlogboek
 - Actieregels
-- Klassieke waarschuwingen
 - Metrische waarschuwingen: Zie de volgende sectie [waarschuwings regels op basis van metrische](#alert-rules-based-on-metrics)gegevens voor meer informatie.
 
 > [!NOTE]
@@ -112,4 +111,4 @@ Als **slechts een deel** van de resources in het bereik is verplaatst, moet u de
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het oplossen van andere problemen met [waarschuwings meldingen](alerts-troubleshoot.md), [metrische waarschuwingen](alerts-troubleshoot-metric.md)en [logboek waarschuwingen](alerts-troubleshoot-log.md). 
+Meer informatie over het oplossen van andere problemen met [waarschuwings meldingen](alerts-troubleshoot.md), [metrische waarschuwingen](alerts-troubleshoot-metric.md)en [logboek waarschuwingen](alerts-troubleshoot-log.md).

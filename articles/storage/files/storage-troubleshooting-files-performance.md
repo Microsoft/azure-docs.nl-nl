@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 11/16/2020
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: 54b92c24b5a50ef1674dcb47df555b27259a350b
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 388a4f06d79116c42bf80cb25d0b133474c02192
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100393850"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737627"
 ---
 # <a name="troubleshoot-azure-file-shares-performance-issues"></a>Prestatie problemen met Azure file shares oplossen
 
@@ -50,7 +50,7 @@ Als u wilt controleren of uw share wordt beperkt, kunt u Azure-metrische gegeven
     - ClientShareIngressThrottlingError
     - ClientShareIopsThrottlingError
 
-    Zie [metrische dimensies](https://docs.microsoft.com/azure/storage/files/storage-files-monitoring-reference#metrics-dimensions)voor meer informatie over elk antwoord type.
+    Zie [metrische dimensies](./storage-files-monitoring-reference.md#metrics-dimensions)voor meer informatie over elk antwoord type.
 
     ![Scherm afbeelding van de opties voor de metrische gegevens voor Premium-bestands shares, met een eigenschappen Filter van het type antwoord.](media/storage-troubleshooting-premium-fileshares/metrics.png)
 
@@ -258,13 +258,12 @@ U kunt de metrische gegevens van Azure in de portal gebruiken om te bevestigen.
    > [!NOTE]
    > Als de antwoord typen niet worden weer gegeven in de vervolg keuzelijst **dimensie waarden** , betekent dit dat de resource niet is beperkt. Als u de dimensie waarden wilt toevoegen, klikt u naast de vervolg keuzelijst **dimensie waarden** op **aangepaste waarde toevoegen**, voert u het type antwoord in (bijvoorbeeld **SuccessWithThrottling**), selecteert u **OK** en herhaalt u deze stappen om alle toepasselijke antwoord typen voor de bestands share toe te voegen.
 
-8. Klik op de vervolg keuzelijst **dimensie naam** en selecteer **Bestands share**.
-9. Klik op de vervolg keuzelijst **dimensie waarden** en selecteer de bestands share (s) waarop u een waarschuwing wilt ontvangen.
-
+8. Voor **Premium-bestands shares** klikt u op de vervolg keuzelijst **dimensie naam** en selecteert u **Bestands share**. Ga naar **stap #10** voor **standaard bestands shares**.
 
    > [!NOTE]
-   > Als de bestands share een standaard bestands share is, selecteert u **alle huidige en toekomstige waarden**. De vervolg keuzelijst met dimensie waarden bevat niet de bestands share (s) omdat metrische gegevens per share niet beschikbaar zijn voor standaard bestands shares. Het beperken van waarschuwingen voor standaard bestands shares wordt geactiveerd als een bestands share binnen het opslag account wordt beperkt en de waarschuwing niet kan bepalen welke bestands share is beperkt. Aangezien metrische gegevens per aandeel niet beschikbaar zijn voor standaard bestands shares, is de aanbeveling één bestands share per opslag account.
+   > Als de bestands share een standaard bestands share is, worden de bestands shares niet vermeld in de dimensie **Bestands share** omdat er geen metrische gegevens per share beschikbaar zijn voor standaard bestands shares. Het beperken van waarschuwingen voor standaard bestands shares wordt geactiveerd als een bestands share binnen het opslag account wordt beperkt en de waarschuwing niet kan bepalen welke bestands share is beperkt. Aangezien metrische gegevens per aandeel niet beschikbaar zijn voor standaard bestands shares, is de aanbeveling één bestands share per opslag account.
 
+9. Klik op de vervolg keuzelijst **dimensie waarden** en selecteer de bestands share (s) waarop u een waarschuwing wilt ontvangen.
 10. Definieer de **waarschuwings parameters** (drempel waarde, operator, aggregatie granulatie en frequentie van evaluatie) en klik op **gereed**.
 
     > [!TIP]

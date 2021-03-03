@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 09/19/2019
 ms.author: duau
-ms.openlocfilehash: 436e866969d620389818bcebca3c5c37b8805309
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 0dc2b48d02eb8a69afc947891c263ef1510257a7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629031"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101721834"
 ---
 # <a name="expressroute-routing-requirements"></a>Routeringsvereisten voor ExpressRoute
 Als u ExpressRoute wilt gebruiken om verbinding te maken met Microsoft Cloud-services, moet u routering instellen en beheren. Sommige connecitiviteitsproviders bieden het instellen en beheren van routering aan als een beheerde service. Neem contact op met uw connectiviteitsprovider om na te gaan of ze deze service leveren. Als dat niet het geval is, moet u voldoen aan de volgende vereisten:
@@ -30,13 +30,22 @@ U moet enkele blokken met IP-adressen reserveren om routering tussen uw netwerk 
 ### <a name="ip-addresses-used-for-azure-private-peering"></a>IP-adressen die worden gebruikt voor persoonlijke Azure-peering
 U kunt privé IP-adressen of openbare IP-adressen gebruiken om de peerings te configureren. Het adresbereik dat wordt gebruikt voor het configureren van routes mag geen adresbereiken overlappen die worden gebruikt voor het maken van virtuele netwerken in Azure. 
 
-* U moet een /29-subnet of twee /30-subnetten voor routeringsinterfaces reserveren.
-* De subnetten voor routering kunnen privé of openbare IP-adressen zijn.
-* De subnetten mogen geen conflicten opleveren met het bereik dat door de klant is gereserveerd voor gebruik in de Microsoft Cloud.
-* Als er een /29-subnet wordt gebruikt, wordt dit verdeeld in twee /30-subnetten. 
-  * Het eerste /30-subnet wordt gebruikt voor de primaire koppeling en het tweede /30-subnet voor de secundaire koppeling.
-  * Voor beide /30-subnetten moet u het eerste IP-adres van het /30-subnet op de router gebruiken. Microsoft gebruikt het tweede IP-adres van het /30-subnet voor het instellen van een BGP-sessie.
-  * Onze [beschikbaarheids-SLA](https://azure.microsoft.com/support/legal/sla/) is alleen geldig als beide BGP-sessies zijn ingesteld.  
+* IPv6
+    * U moet een /29-subnet of twee /30-subnetten voor routeringsinterfaces reserveren.
+    * De subnetten voor routering kunnen privé of openbare IP-adressen zijn.
+    * De subnetten mogen geen conflicten opleveren met het bereik dat door de klant is gereserveerd voor gebruik in de Microsoft Cloud.
+    * Als er een /29-subnet wordt gebruikt, wordt dit verdeeld in twee /30-subnetten. 
+      * Het eerste /30-subnet wordt gebruikt voor de primaire koppeling en het tweede /30-subnet voor de secundaire koppeling.
+      * Voor beide /30-subnetten moet u het eerste IP-adres van het /30-subnet op de router gebruiken. Microsoft gebruikt het tweede IP-adres van het /30-subnet voor het instellen van een BGP-sessie.
+      * Onze [beschikbaarheids-SLA](https://azure.microsoft.com/support/legal/sla/) is alleen geldig als beide BGP-sessies zijn ingesteld.
+* Ipconfiguration
+    * U moet een/125-subnet of twee/126-subnetten voor routerings interfaces reserveren.
+    * De subnetten voor routering kunnen privé of openbare IP-adressen zijn.
+    * De subnetten mogen geen conflicten opleveren met het bereik dat door de klant is gereserveerd voor gebruik in de Microsoft Cloud.
+    * Als er een /125-subnet wordt gebruikt, wordt dit verdeeld in twee /126-subnetten. 
+      * Het eerste/126-subnet wordt gebruikt voor de primaire koppeling en het tweede/30-subnet wordt gebruikt voor de secundaire koppeling.
+      * Voor beide /126-subnetten moet u het eerste IP-adres van het /126-subnet op de router gebruiken. Microsoft gebruikt het tweede IP-adres van het /126-subnet voor het instellen van een BGP-sessie.
+      * Onze [beschikbaarheids-SLA](https://azure.microsoft.com/support/legal/sla/) is alleen geldig als beide BGP-sessies zijn ingesteld.
 
 #### <a name="example-for-private-peering"></a>Voorbeeld voor persoonlijke peering
 Als u a.b.c.d/29 gebruikt om de peering in te stellen, wordt dit gesplitst in twee /30-subnetten. In het volgende voor beeld ziet u hoe het subnet a. b. c. d/29 wordt gebruikt:
@@ -122,7 +131,7 @@ Microsoft gebruikt AS 12076 voor openbare Azure-peering, privé Azure-peering en
 Er zijn geen vereisten met betrekking tot gegevensoverdrachtsymmetrie. De inkomende en uitgaande paden lopen mogelijk langs verschillende routerparen. Identieke routes moeten worden geadverteerd van beide zijden over meerdere circuit paren die bij u horen. Route metrics hoeven niet identiek te zijn.
 
 ## <a name="route-aggregation-and-prefix-limits"></a>Limieten voor route-aggregatie en voorvoegsel
-Wij ondersteunen maximaal 4000 voorvoegsels die aan ons zijn geadverteerd door middel van de persoonlijke Azure-peering. Dit aantal kan worden verhoogd tot 10.000 voorvoegsels als de Premium-invoegtoepassing voor ExpressRoute wordt ingeschakeld. We accepteren maximaal 200 voorvoegsels per BGP-sessie voor openbare Azure-peering en Microsoft-peering. 
+We ondersteunen Maxi maal 4000 IPv4-voor voegsels en 100 IPv6-voor voegsels die aan ons zijn geadverteerd via de persoonlijke Azure-peering. Dit kan worden verhoogd tot 10.000 IPv4-voor voegsels als de Premium-invoeg toepassing voor ExpressRoute is ingeschakeld. We accepteren maximaal 200 voorvoegsels per BGP-sessie voor openbare Azure-peering en Microsoft-peering. 
 
 De BGP-sessie wordt verwijderd als het aantal voorvoegsels de limiet overschrijdt. Standaardroutes worden alleen geaccepteerd op de persoonlijke peeringkoppeling. Provider moet standaardroute- en privé IP-adressen (RFC 1918) uit de paden voor openbare Azure- en Microsoft-peering filteren. 
 
@@ -157,17 +166,17 @@ U kunt meer dan één ExpressRoute-circuit per geopolitieke regio aanschaffen. H
 | --- | --- | --- | --- | --- | --- |
 | **Noord-Amerika** | |
 | VS - oost | 12076:51004 | 12076:52004 | 12076:53004 | 12076:54004 | 12076:55004 |
-| US - oost 2 | 12076:51005 | 12076:52005 | 12076:53005 | 12076:54005 | 12076:55005 |
+| VS - oost 2 | 12076:51005 | 12076:52005 | 12076:53005 | 12076:54005 | 12076:55005 |
 | VS - west | 12076:51006 | 12076:52006 | 12076:53006 | 12076:54006 | 12076:55006 |
-| West US 2 | 12076:51026 | 12076:52026 | 12076:53026 | 12076:54026 | 12076:55026 |
+| VS - west 2 | 12076:51026 | 12076:52026 | 12076:53026 | 12076:54026 | 12076:55026 |
 | VS - west-centraal | 12076:51027 | 12076:52027 | 12076:53027 | 12076:54027 | 12076:55027 |
 | VS - noord-centraal | 12076:51007 | 12076:52007 | 12076:53007 | 12076:54007 | 12076:55007 |
-| South Central US | 12076:51008 | 12076:52008 | 12076:53008 | 12076:54008 | 12076:55008 |
-| Central US | 12076:51009 | 12076:52009 | 12076:53009 | 12076:54009 | 12076:55009 |
+| VS - zuid-centraal | 12076:51008 | 12076:52008 | 12076:53008 | 12076:54008 | 12076:55008 |
+| VS - centraal | 12076:51009 | 12076:52009 | 12076:53009 | 12076:54009 | 12076:55009 |
 | Canada - midden | 12076:51020 | 12076:52020 | 12076:53020 | 12076:54020 | 12076:55020 |
 | Canada - oost | 12076:51021 | 12076:52021 | 12076:53021 | 12076:54021 | 12076:55021 |
 | **Zuid-Amerika** | |
-| Brazil South | 12076:51014 | 12076:52014 | 12076:53014 | 12076:54014 | 12076:55014 |
+| Brazilië - zuid | 12076:51014 | 12076:52014 | 12076:53014 | 12076:54014 | 12076:55014 |
 | **Europa** | |
 | Europa - noord | 12076:51003 | 12076:52003 | 12076:53003 | 12076:54003 | 12076:55003 |
 | Europa -west | 12076:51002 | 12076:52002 | 12076:53002 | 12076:54002 | 12076:55002 |
@@ -185,11 +194,11 @@ U kunt meer dan één ExpressRoute-circuit per geopolitieke regio aanschaffen. H
 | Azië - oost | 12076:51010 | 12076:52010 | 12076:53010 | 12076:54010 | 12076:55010 |
 | Azië - zuidoost | 12076:51011 | 12076:52011 | 12076:53011 | 12076:54011 | 12076:55011 |
 | **Japan** | |
-| Japan East | 12076:51012 | 12076:52012 | 12076:53012 | 12076:54012 | 12076:55012 |
+| Japan - oost | 12076:51012 | 12076:52012 | 12076:53012 | 12076:54012 | 12076:55012 |
 | Japan - west | 12076:51013 | 12076:52013 | 12076:53013 | 12076:54013 | 12076:55013 |
 | **Australië** | |
 | Australië - oost | 12076:51015 | 12076:52015 | 12076:53015 | 12076:54015 | 12076:55015 |
-| Australia Southeast | 12076:51016 | 12076:52016 | 12076:53016 | 12076:54016 | 12076:55016 |
+| Australië - zuidoost | 12076:51016 | 12076:52016 | 12076:53016 | 12076:54016 | 12076:55016 |
 | **Australië - overheid** | |
 | Australië - centraal | 12076:51032 | 12076:52032 | 12076:53032 | 12076:54032 | 12076:55032 |
 | Australië - centraal 2 | 12076:51033 | 12076:52033 | 12076:53033 | 12076:54033 | 12076:55033 |

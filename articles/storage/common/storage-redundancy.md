@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 01/19/2021
+ms.date: 03/02/2021
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 78958dc0f95d2bc7a9e393ac2e769a97f7e92efa
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 955d3330d3f08d7e7f024ec2c36941d02244d9ba
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100556453"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101726833"
 ---
 # <a name="azure-storage-redundancy"></a>Azure Storage-redundantie
 
@@ -87,10 +87,11 @@ Wanneer u een opslag account maakt, selecteert u de primaire regio voor het acco
 
 Azure Storage biedt twee opties voor het kopiëren van uw gegevens naar een secundaire regio:
 
-- **Geografisch redundante opslag (GRS)**: uw gegevens worden drie keer synchroon gekopieerd binnen één fysieke locatie in de primaire regio met LRS. Vervolgens worden uw gegevens asynchroon gekopieerd naar één fysieke locatie in de secundaire regio.
-- **Geo-zone-redundante opslag (GZRS)** kopieert uw gegevens synchroon over drie Azure-beschikbaarheids zones in de primaire regio met behulp van ZRS. Vervolgens worden uw gegevens asynchroon gekopieerd naar één fysieke locatie in de secundaire regio.
+- **Geografisch redundante opslag (GRS)**: uw gegevens worden drie keer synchroon gekopieerd binnen één fysieke locatie in de primaire regio met LRS. Vervolgens worden uw gegevens asynchroon gekopieerd naar één fysieke locatie in de secundaire regio. Binnen de secundaire regio worden uw gegevens synchroon drie keer gekopieerd met behulp van LRS.
+- **Geo-zone-redundante opslag (GZRS)** kopieert uw gegevens synchroon over drie Azure-beschikbaarheids zones in de primaire regio met behulp van ZRS. Vervolgens worden uw gegevens asynchroon gekopieerd naar één fysieke locatie in de secundaire regio. Binnen de secundaire regio worden uw gegevens synchroon drie keer gekopieerd met behulp van LRS.
 
-Het belangrijkste verschil tussen GRS en GZRS is hoe gegevens worden gerepliceerd in de primaire regio. Binnen de secundaire regio worden gegevens altijd synchroon drie keer gerepliceerd met behulp van LRS. LRS in de secundaire regio beschermt uw gegevens tegen hardwarestoringen.
+> [!NOTE]
+> Het belangrijkste verschil tussen GRS en GZRS is hoe gegevens worden gerepliceerd in de primaire regio. Binnen de secundaire regio worden gegevens altijd synchroon drie keer gerepliceerd met behulp van LRS. LRS in de secundaire regio beschermt uw gegevens tegen hardwarestoringen.
 
 Met GRS of GZRS zijn de gegevens in de secundaire regio niet beschikbaar voor lees-of schrijf toegang, tenzij er een failover naar de secundaire regio wordt gemaakt. Configureer voor lees toegang tot de secundaire regio uw opslag account voor het gebruik van geografisch redundante opslag met lees toegang (RA-GRS) of geografisch redundante opslag met lees toegang (RA-GZRS). Zie [Lees toegang tot gegevens in de secundaire regio](#read-access-to-data-in-the-secondary-region)voor meer informatie.
 
@@ -180,7 +181,7 @@ In de volgende tabel wordt aangegeven of uw gegevens duurzaam zijn en beschikbaa
 | Storings scenario | LRS | ZRS | GRS/RA-GRS | GZRS/RA-GZRS |
 |:-|:-|:-|:-|:-|
 | Een knoop punt in een Data Center wordt niet meer beschikbaar | Ja | Ja | Ja | Ja |
-| Een volledig Data Center (zonegebonden of niet-zonegebonden) is niet meer beschikbaar | Nee | Ja | Ja<sup>1</sup> | Yes |
+| Een volledig Data Center (zonegebonden of niet-zonegebonden) is niet meer beschikbaar | Nee | Ja | Ja<sup>1</sup> | Ja |
 | Er treedt een storing op de hele regio op in de primaire regio | Nee | Nee | Ja<sup>1</sup> | Ja<sup>1</sup> |
 | Lees toegang tot de secundaire regio is beschikbaar als de primaire regio niet beschikbaar is | Nee | Nee | Ja (met RA-GRS) | Ja (met RA-GZRS) |
 

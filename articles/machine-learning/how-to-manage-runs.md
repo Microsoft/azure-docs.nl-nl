@@ -12,12 +12,12 @@ ms.reviewer: nibaccam
 ms.date: 12/04/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: ec006636ed7e975b696aa32300b32089e3209bb5
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 3eaab31d3948e41a216eaa402c2a11e470a6545d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96600469"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101691498"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Trainings uitvoeringen in python starten, controleren en annuleren
 
@@ -76,7 +76,7 @@ U hebt de volgende items nodig:
         notebook_run.log(name="message", value="Hello from run!")
         ```
         
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+    # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
     
     Gebruik de volgende stappen om een uitvoering van uw experiment te starten:
     
@@ -112,17 +112,7 @@ U hebt de volgende items nodig:
         > Zie voor meer voor beelden van runconfig-bestanden [https://github.com/MicrosoftDocs/pipelines-azureml/](https://github.com/MicrosoftDocs/pipelines-azureml/) .
     
         Zie [AZ ml run-script uitvoeren](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-submit-script)voor meer informatie.
-    
-    # <a name="studio"></a>[Studio](#tab/azure-studio)
-    
-    Voer de volgende stappen uit om een pijplijn uitvoering in de ontwerp functie te starten:
-    
-    1. Stel een standaard computie doel in voor de pijp lijn.
-    
-    1. Selecteer **uitvoeren** boven aan het pijp lijn-canvas.
-    
-    1. Selecteer een experiment om de pijplijn uitvoeringen te groeperen.
-    
+
     ---
 
 * De status van een uitvoering controleren
@@ -158,7 +148,7 @@ U hebt de volgende items nodig:
         print(notebook_run.get_status())
         ```
     
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+    # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
     
     * Gebruik de volgende opdracht om een lijst met uitvoeringen voor uw experiment weer te geven. Vervang door `experiment` de naam van uw experiment:
     
@@ -183,24 +173,128 @@ U hebt de volgende items nodig:
     
     # <a name="studio"></a>[Studio](#tab/azure-studio)
     
-    Om het aantal actieve uitvoeringen voor uw experiment in de Studio weer te geven.
+    U kunt als volgt uw uitvoeringen weer geven in Studio: 
     
-    1. Navigeer naar het gedeelte **experimenten** .
+    1. Navigeer naar het tabblad **experimenten** .
     
-    1. Selecteer een experiment.
+    1. Selecteer **alle experimenten** om alle uitvoeringen in een experiment weer te geven of selecteer **alle uitvoeringen** om alle uitvoeringen weer te geven die in de werk ruimte zijn verzonden.
     
-        Op de pagina experiment ziet u het aantal actieve Compute-doelen en de duur van elke uitvoering. 
+        Op de pagina **alle uitvoeringen** kunt u de lijsten met uitvoeringen filteren op Tags, experimenten, compute target en meer om uw werk beter te organiseren en te bereiken.  
     
-    1. Maak aanpassingen aan het experiment door uitvoeringen te selecteren om te vergelijken, grafieken toe te voegen of filters toe te passen. Deze wijzigingen kunnen worden opgeslagen als een **aangepaste weer gave** , zodat u gemakkelijk kunt terugkeren naar uw werk. Gebruikers met werkruimte machtigingen kunnen de aangepaste weer gave bewerken of weer geven. U kunt ook de aangepaste weer gave delen met anderen door de URL te kopiëren en te plakken in de browser.  
+    1. Maak aanpassingen aan de pagina door uitvoeringen te selecteren om te vergelijken, grafieken toe te voegen of filters toe te passen. Deze wijzigingen kunnen worden opgeslagen als een **aangepaste weer gave** , zodat u gemakkelijk kunt terugkeren naar uw werk. Gebruikers met werkruimte machtigingen kunnen de aangepaste weer gave bewerken of weer geven. U kunt ook de aangepaste weer gave delen met team leden voor verbeterde samen werking door de **weer gave delen** te selecteren.   
     
         :::image type="content" source="media/how-to-manage-runs/custom-views.gif" alt-text="Scherm afbeelding: een aangepaste weer gave maken":::
     
-    1. Selecteer een specifiek uitvoerings nummer.
-    
-    1. Op het tabblad **Logboeken** vindt u diagnostische en fout logboeken voor de pijplijn uitvoering.
+    1. Als u de uitvoerings logboeken wilt weer geven, selecteert u een specifieke uitvoering en op het tabblad **uitvoer en logboeken** kunt u diagnostische en fout logboeken vinden voor de uitvoering.
     
     ---
+
+## <a name="run-description"></a>Beschrijving van de uitvoering 
+
+Een uitvoerings beschrijving kan worden toegevoegd aan een uitvoering om meer context en informatie te bieden aan de uitvoering. U kunt ook in de lijst met uitvoeringen zoeken naar deze beschrijvingen en de beschrijving van de uitvoeringsrun toevoegen als een kolom in de lijst met uitvoeringen. 
+
+Navigeer naar de pagina **uitvoerings Details** voor de uitvoering en selecteer het pictogram bewerken of potlood om beschrijvingen voor uw uitvoering toe te voegen, te bewerken of te verwijderen. Als u de wijzigingen in de lijst met uitvoeringen wilt behouden, slaat u de wijzigingen in uw bestaande aangepaste weer gave of een nieuwe aangepaste weer gave op. De indeling voor prijs verlaging wordt ondersteund voor uitvoerings beschrijvingen waarmee de installatie kopie kan worden inge sloten en deep linking zoals hieronder wordt weer gegeven.
+
+:::image type="content" source="media/how-to-manage-runs/rundescription.gif" alt-text="Scherm afbeelding: een beschrijving van de uitvoeringsrun maken"::: 
     
+
+## <a name="tag-and-find-runs"></a>Uitvoeringen coderen en zoeken
+
+In Azure Machine Learning kunt u eigenschappen en tags gebruiken om uw uitvoeringen te organiseren en query's uit te voeren op belang rijke informatie.
+
+* Eigenschappen en Tags toevoegen
+
+    # <a name="python"></a>[Python](#tab/python)
+    
+    Als u Doorzoek bare meta gegevens aan uw uitvoeringen wilt toevoegen, gebruikt u de- [`add_properties()`](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=trueadd-properties-properties-) methode. Met de volgende code wordt de eigenschap bijvoorbeeld toegevoegd `"author"` aan de uitvoeren:
+    
+    ```Python
+    local_run.add_properties({"author":"azureml-user"})
+    print(local_run.get_properties())
+    ```
+    
+    Eigenschappen zijn onveranderbaar, zodat ze een permanente record voor controle doeleinden maken. In het volgende code voorbeeld wordt een fout veroorzaakt, omdat we `"azureml-user"` `"author"` in de voor gaande code al zijn toegevoegd als eigenschaps waarde:
+    
+    ```Python
+    try:
+        local_run.add_properties({"author":"different-user"})
+    except Exception as e:
+        print(e)
+    ```
+    
+    In tegens telling tot eigenschappen zijn Tags onveranderbaar. Gebruik de-methode om Doorzoek bare en nuttige informatie voor gebruikers van uw experiment toe te voegen [`tag()`](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truetag-key--value-none-) .
+    
+    ```Python
+    local_run.tag("quality", "great run")
+    print(local_run.get_tags())
+    
+    local_run.tag("quality", "fantastic run")
+    print(local_run.get_tags())
+    ```
+    
+    U kunt ook eenvoudige teken reeks Tags toevoegen. Wanneer deze tags worden weer gegeven in de code woordenlijst als sleutels, hebben ze een waarde van `None` .
+    
+    ```Python
+    local_run.tag("worth another look")
+    print(local_run.get_tags())
+    ```
+    
+    # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+    
+    > [!NOTE]
+    > Met de CLI kunt u alleen Tags toevoegen of bijwerken.
+    
+    Gebruik de volgende opdracht om een tag toe te voegen of bij te werken:
+    
+    ```azurecli-interactive
+    az ml run update -r runid --add-tag quality='fantastic run'
+    ```
+    
+    Zie [AZ ml run update](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-update)(Engelstalig) voor meer informatie.
+    
+    # <a name="studio"></a>[Studio](#tab/azure-studio)
+    
+    U kunt uit de Studio run-Tags toevoegen, bewerken of verwijderen. Navigeer naar de pagina **uitvoerings Details** voor de uitvoering en selecteer het pictogram bewerken of potlood om labels voor uw uitvoeringen toe te voegen, te bewerken of te verwijderen. U kunt deze labels ook zoeken en filteren op de pagina uitvoerings lijst.
+    
+    :::image type="content" source="media/how-to-manage-runs/run-tags.gif" alt-text="Scherm opname: uitvoer Tags toevoegen, bewerken of verwijderen":::
+    
+    ---
+
+* Query-eigenschappen en-labels
+
+    U kunt binnen een experiment een query uitvoeren om een lijst met uitvoeringen te retour neren die overeenkomen met specifieke eigenschappen en tags.
+
+    # <a name="python"></a>[Python](#tab/python)
+    
+    ```Python
+    list(exp.get_runs(properties={"author":"azureml-user"},tags={"quality":"fantastic run"}))
+    list(exp.get_runs(properties={"author":"azureml-user"},tags="worth another look"))
+    ```
+    
+    # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+    
+    De Azure CLI ondersteunt [JMESPath](http://jmespath.org) -query's, die kunnen worden gebruikt voor het filteren van uitvoeringen op basis van eigenschappen en labels. Als u een JMESPath-query wilt gebruiken met de Azure CLI, geeft u deze op met de `--query` para meter. In de volgende voor beelden ziet u enkele query's met behulp van eigenschappen en Tags:
+    
+    ```azurecli-interactive
+    # list runs where the author property = 'azureml-user'
+    az ml run list --experiment-name experiment [?properties.author=='azureml-user']
+    # list runs where the tag contains a key that starts with 'worth another look'
+    az ml run list --experiment-name experiment [?tags.keys(@)[?starts_with(@, 'worth another look')]]
+    # list runs where the author property = 'azureml-user' and the 'quality' tag starts with 'fantastic run'
+    az ml run list --experiment-name experiment [?properties.author=='azureml-user' && tags.quality=='fantastic run']
+    ```
+    
+    Zie voor meer informatie over het uitvoeren van query's in azure CLI-resultaten query uitvoeren op [uitvoer van Azure cli-opdracht](/cli/azure/query-azure-cli?preserve-view=true&view=azure-cli-latest).
+    
+    # <a name="studio"></a>[Studio](#tab/azure-studio)
+    
+    1. Ga naar de lijst  **alle uitvoeringen** .
+    
+    1. Gebruik de zoek balk om de meta gegevens van de uitvoering te filteren, zoals de tags, beschrijvingen, namen van experimenten en naam indiener. Het filter tags kan ook worden gebruikt om op de tags te filteren. 
+    
+    ---
+
+
 ## <a name="cancel-or-fail-runs"></a>Annuleren of mislukken wordt uitgevoerd
 
 Als u een fout melding krijgt of als de uitvoering te lang duurt om te volt ooien, kunt u de uitvoering annuleren.
@@ -226,7 +320,7 @@ local_run.fail()
 print(local_run.get_status())
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u een uitvoering wilt annuleren met de CLI, gebruikt u de volgende opdracht. Vervangen `runid` door de id van de uitvoering
 
@@ -344,101 +438,6 @@ current_child_run = Run.get_context()
 root_run(current_child_run).log("MyMetric", f"Data from child run {current_child_run.id}")
 
 ```
-
-
-## <a name="tag-and-find-runs"></a>Uitvoeringen coderen en zoeken
-
-In Azure Machine Learning kunt u eigenschappen en tags gebruiken om uw uitvoeringen te organiseren en query's uit te voeren op belang rijke informatie.
-
-* Eigenschappen en Tags toevoegen
-
-    # <a name="python"></a>[Python](#tab/python)
-    
-    Als u Doorzoek bare meta gegevens aan uw uitvoeringen wilt toevoegen, gebruikt u de- [`add_properties()`](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=trueadd-properties-properties-) methode. Met de volgende code wordt de eigenschap bijvoorbeeld toegevoegd `"author"` aan de uitvoeren:
-    
-    ```Python
-    local_run.add_properties({"author":"azureml-user"})
-    print(local_run.get_properties())
-    ```
-    
-    Eigenschappen zijn onveranderbaar, zodat ze een permanente record voor controle doeleinden maken. In het volgende code voorbeeld wordt een fout veroorzaakt, omdat we `"azureml-user"` `"author"` in de voor gaande code al zijn toegevoegd als eigenschaps waarde:
-    
-    ```Python
-    try:
-        local_run.add_properties({"author":"different-user"})
-    except Exception as e:
-        print(e)
-    ```
-    
-    In tegens telling tot eigenschappen zijn Tags onveranderbaar. Gebruik de-methode om Doorzoek bare en nuttige informatie voor gebruikers van uw experiment toe te voegen [`tag()`](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truetag-key--value-none-) .
-    
-    ```Python
-    local_run.tag("quality", "great run")
-    print(local_run.get_tags())
-    
-    local_run.tag("quality", "fantastic run")
-    print(local_run.get_tags())
-    ```
-    
-    U kunt ook eenvoudige teken reeks Tags toevoegen. Wanneer deze tags worden weer gegeven in de code woordenlijst als sleutels, hebben ze een waarde van `None` .
-    
-    ```Python
-    local_run.tag("worth another look")
-    print(local_run.get_tags())
-    ```
-    
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-    
-    > [!NOTE]
-    > Met de CLI kunt u alleen Tags toevoegen of bijwerken.
-    
-    Gebruik de volgende opdracht om een tag toe te voegen of bij te werken:
-    
-    ```azurecli-interactive
-    az ml run update -r runid --add-tag quality='fantastic run'
-    ```
-    
-    Zie [AZ ml run update](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-update)(Engelstalig) voor meer informatie.
-    
-    # <a name="studio"></a>[Studio](#tab/azure-studio)
-    
-    U kunt de eigenschappen en tags weer geven in Studio, maar deze kunnen hier niet worden gewijzigd.
-    
-    ---
-
-* Query-eigenschappen en-labels
-
-    U kunt binnen een experiment een query uitvoeren om een lijst met uitvoeringen te retour neren die overeenkomen met specifieke eigenschappen en tags.
-
-    # <a name="python"></a>[Python](#tab/python)
-    
-    ```Python
-    list(exp.get_runs(properties={"author":"azureml-user"},tags={"quality":"fantastic run"}))
-    list(exp.get_runs(properties={"author":"azureml-user"},tags="worth another look"))
-    ```
-    
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-    
-    De Azure CLI ondersteunt [JMESPath](http://jmespath.org) -query's, die kunnen worden gebruikt voor het filteren van uitvoeringen op basis van eigenschappen en labels. Als u een JMESPath-query wilt gebruiken met de Azure CLI, geeft u deze op met de `--query` para meter. In de volgende voor beelden ziet u enkele query's met behulp van eigenschappen en Tags:
-    
-    ```azurecli-interactive
-    # list runs where the author property = 'azureml-user'
-    az ml run list --experiment-name experiment [?properties.author=='azureml-user']
-    # list runs where the tag contains a key that starts with 'worth another look'
-    az ml run list --experiment-name experiment [?tags.keys(@)[?starts_with(@, 'worth another look')]]
-    # list runs where the author property = 'azureml-user' and the 'quality' tag starts with 'fantastic run'
-    az ml run list --experiment-name experiment [?properties.author=='azureml-user' && tags.quality=='fantastic run']
-    ```
-    
-    Zie voor meer informatie over het uitvoeren van query's in azure CLI-resultaten query uitvoeren op [uitvoer van Azure cli-opdracht](/cli/azure/query-azure-cli?preserve-view=true&view=azure-cli-latest).
-    
-    # <a name="studio"></a>[Studio](#tab/azure-studio)
-    
-    1. Navigeer naar het gedeelte **pijp lijnen** .
-    
-    1. Gebruik de zoek balk om pijp lijnen te filteren met behulp van tags, beschrijvingen, namen van experimenten en naam indiener.
-    
-    ---
 
 ## <a name="example-notebooks"></a>Voorbeeldnotebooks
 

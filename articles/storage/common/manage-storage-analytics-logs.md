@@ -9,16 +9,16 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring
-ms.openlocfilehash: bc6632b55ba8fd90317a8b5046a3e84d863bf0ef
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 0c182e1093c29206d27a0e55a46dd9a5607fa6ec
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99221611"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701702"
 ---
 # <a name="enable-and-manage-azure-storage-analytics-logs-classic"></a>Azure Opslaganalyse logboeken inschakelen en beheren (klassiek)
 
-[Azure Opslaganalyse](storage-analytics.md) biedt logboeken voor blobs, wacht rijen en tabellen. U kunt de [Azure Portal](https://portal.azure.com) gebruiken om logboeken te configureren worden vastgelegd voor uw account. In dit artikel leest u hoe u Logboeken kunt inschakelen en beheren. Zie [Azure Opslaganalyse metrische gegevens inschakelen en beheren (klassiek)](storage-monitor-storage-account.md)voor meer informatie over het inschakelen van metrische gegevens.  Er zijn kosten verbonden aan het onderzoeken en opslaan van bewakings gegevens in de Azure Portal. Zie [Opslaganalyse](storage-analytics.md) voor meer informatie.
+[Azure Opslaganalyse](storage-analytics.md) biedt logboeken voor blobs, wacht rijen en tabellen. U kunt de [Azure Portal](https://portal.azure.com) gebruiken om logboeken te configureren worden vastgelegd voor uw account. In dit artikel leest u hoe u Logboeken kunt inschakelen en beheren. Zie [Azure Opslaganalyse metrische gegevens inschakelen en beheren (klassiek)]()voor meer informatie over het inschakelen van metrische gegevens.  Er zijn kosten verbonden aan het onderzoeken en opslaan van bewakings gegevens in de Azure Portal. Zie [Opslaganalyse](storage-analytics.md) voor meer informatie.
 
 > [!NOTE]
 > U wordt aangeraden Azure Storage-Logboeken in Azure Monitor te gebruiken in plaats van Opslaganalyse Logboeken. Azure Storage-Logboeken in Azure Monitor bevinden zich in de open bare preview en is beschikbaar voor preview-tests in alle open bare Cloud regio's. Met deze preview-versie kunt u logboeken maken voor blobs (waaronder Azure Data Lake Storage Gen2), bestanden, wacht rijen en tabellen. Zie een van de volgende artikelen voor meer informatie:
@@ -191,7 +191,7 @@ Logboek gegevens kunnen gedurende een periode in uw account worden verzameld, wa
 
    * Vervang de waarde van de tijdelijke plaatsaanduiding `<storage-account-name>` door de naam van uw opslagaccount. 
 
-6. Gebruik de [Get-AzStorageServiceLoggingProperty](https://docs.microsoft.com/powershell/module/az.storage/get-azstorageserviceloggingproperty) om het huidige beleid voor het bewaren van logboeken weer te geven. In het volgende voor beeld wordt de Bewaar periode voor Blob-en Queue Storage-services afgedrukt op de console.
+6. Gebruik de [Get-AzStorageServiceLoggingProperty](/powershell/module/az.storage/get-azstorageserviceloggingproperty) om het huidige beleid voor het bewaren van logboeken weer te geven. In het volgende voor beeld wordt de Bewaar periode voor Blob-en Queue Storage-services afgedrukt op de console.
 
    ```powershell
    Get-AzStorageServiceLoggingProperty -ServiceType Blob, Queue -Context $ctx
@@ -202,7 +202,7 @@ Logboek gegevens kunnen gedurende een periode in uw account worden verzameld, wa
    > [!div class="mx-imgBorder"]
    > ![Bewaar beleid in Power shell-uitvoer](./media/manage-storage-analytics-logs/retention-period-powershell.png)
 
-7. Gebruik de [set-AzStorageServiceLoggingProperty](https://docs.microsoft.com/powershell/module/az.storage/set-azstorageserviceloggingproperty) om de Bewaar periode te wijzigen. In het volgende voor beeld wordt de Bewaar periode gewijzigd in 4 dagen.  
+7. Gebruik de [set-AzStorageServiceLoggingProperty](/powershell/module/az.storage/set-azstorageserviceloggingproperty) om de Bewaar periode te wijzigen. In het volgende voor beeld wordt de Bewaar periode gewijzigd in 4 dagen.  
 
    ```powershell
    Set-AzStorageServiceLoggingProperty -ServiceType Blob, Queue -RetentionDays 4 -Context $ctx
@@ -290,7 +290,6 @@ Wanneer u uw logboek gegevens hebt gedownload, kunt u de logboek vermeldingen in
 ## <a name="next-steps"></a>Volgende stappen
 
 * Zie [Opslaganalyse](storage-analytics.md) voor Opslaganalyse voor meer informatie over Opslaganalyse.
-* [Opslaganalyse metrische gegevens configureren](storage-monitor-storage-account.md).
 * Zie voor meer informatie over het gebruik van een .NET-taal voor het configureren van opslag logboek registratie de [referentie opslag-client bibliotheek](/previous-versions/azure/dn261237(v=azure.100)). 
 * Zie [Opslaganalyse inschakelen en configureren](/rest/api/storageservices/Enabling-and-Configuring-Storage-Analytics)voor algemene informatie over het configureren van opslag logboek registratie met behulp van de rest API.
 * Meer informatie over de indeling van Opslaganalyse-Logboeken. Zie [Opslaganalyse-logboek indeling](/rest/api/storageservices/storage-analytics-log-format).

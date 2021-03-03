@@ -10,12 +10,12 @@ ms.date: 2/11/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: d006168de89a2709ed607568f36cacf5f924efcb
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 5c79ea68e648cd3d78f94eb2272b6f32e3c4806f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653500"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750996"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
@@ -53,9 +53,11 @@ pod 'AzureCommunicationChat', '~> 1.0.0-beta.8'
 
 De afhankelijkheden installeren, wordt er ook een Xcode-werk ruimte gemaakt: `pod install`
 
+**Nadat u de pod-installatie hebt uitgevoerd, opent u het project opnieuw in Xcode door de zojuist gemaakte optie te selecteren `.xcworkspace` .**
+
 ### <a name="setup-the-placeholders"></a>De tijdelijke aanduidingen instellen
 
-Open het werkruimte bestand `ChatQuickstart.xcworkspace` in Xcode en open het `ViewController.swift` .
+Open de werk ruimte `ChatQuickstart.xcworkspace` in Xcode en open `ViewController.swift` .
 
 In deze Snelstartgids voegen we onze code toe aan `viewController` en bekijken we de uitvoer in de Xcode-console. In deze Quick Start wordt het bouwen van een gebruikers interface in iOS niet geadresseerd. 
 

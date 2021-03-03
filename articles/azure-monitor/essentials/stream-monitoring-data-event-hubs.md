@@ -7,12 +7,12 @@ ms.author: bwren
 ms.topic: conceptual
 ms.date: 07/15/2020
 ms.subservice: ''
-ms.openlocfilehash: e541869d040cc1eead2d295583c42016b64d5edb
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: db8f8628f77ef2a04a7e6d42d6470f254e458e01
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610348"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708081"
 ---
 # <a name="stream-azure-monitoring-data-to-an-event-hub-or-external-partner"></a>Azure-bewakings gegevens streamen naar een Event Hub of externe partner
 
@@ -48,20 +48,19 @@ Voor gegevens die u niet rechtstreeks naar een Event Hub kunt streamen, schrijft
 
 Door uw bewakings gegevens te routeren naar een Event Hub met Azure Monitor kunt u eenvoudig integreren met externe hulpprogram ma's voor SIEM en controle. Voor beelden van hulpprogram ma's met Azure Monitor-integratie zijn onder andere:
 
-| Hulpprogramma | Gehost in azure | Description |
+| Hulpprogramma | Gehost in azure | Beschrijving |
 |:---|:---| :---|
-|  IBM QRadar | No | Het Microsoft Azure DSM en Microsoft Azure Event hub-protocol kunnen worden gedownload via [de website van IBM-ondersteuning](https://www.ibm.com/support). Meer informatie over de integratie met Azure vindt u in de [configuratie van QRADAR DSM](https://www.ibm.com/support/knowledgecenter/SS42VS_DSM/c_dsm_guide_microsoft_azure_overview.html?cp=SS42VS_7.3.0). |
-| Splunk | No | [Microsoft Azure Add-On voor Splunk](https://splunkbase.splunk.com/app/3757/) is een open-source project dat beschikbaar is in Splunkbase. <br><br> Als u een invoeg toepassing in uw Splunk-exemplaar niet kunt installeren, als u bijvoorbeeld een proxy gebruikt of wordt uitgevoerd op Splunk Cloud, kunt u deze gebeurtenissen door sturen naar de Splunk HTTP-gebeurtenis verzamelaar met de [Azure-functie voor Splunk](https://github.com/Microsoft/AzureFunctionforSplunkVS), die wordt geactiveerd door nieuwe berichten in de Event hub. |
-| SumoLogic | No | Instructies voor het instellen van SumoLogic om gegevens van een Event Hub te gebruiken, zijn beschikbaar in [Logboeken verzamelen voor de Azure audit-app vanuit Event hub](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure-Audit/02Collect-Logs-for-Azure-Audit-from-Event-Hub). |
-| ArcSight | No | De ArcSight Azure Event hub Smart connector is beschikbaar als onderdeel van [de verzameling van de ArcSight slimme connector](https://community.softwaregrp.com/t5/Discussions/Announcing-General-Availability-of-ArcSight-Smart-Connectors-7/m-p/1671852). |
-| Syslog-server | No | Als u Azure Monitor gegevens rechtstreeks naar een syslog-server wilt streamen, kunt u een [oplossing gebruiken op basis van een Azure-functie](https://github.com/miguelangelopereira/azuremonitor2syslog/).
-| LogRhythm | No| Instructies voor het instellen van LogRhythm voor het verzamelen van logboeken van een Event Hub zijn [hier](https://logrhythm.com/six-tips-for-securing-your-azure-cloud-environment/)beschikbaar. 
-|Logz.io | Yes | Zie voor meer informatie aan de slag [met bewaking en logboek registratie met behulp van Logz.io voor java-apps die worden uitgevoerd op Azure](/azure/developer/java/fundamentals/java-get-started-with-logzio)
+|  IBM QRadar | Nee | Het Microsoft Azure DSM en Microsoft Azure Event hub-protocol kunnen worden gedownload via [de website van IBM-ondersteuning](https://www.ibm.com/support). Meer informatie over de integratie met Azure vindt u in de [configuratie van QRADAR DSM](https://www.ibm.com/support/knowledgecenter/SS42VS_DSM/c_dsm_guide_microsoft_azure_overview.html?cp=SS42VS_7.3.0). |
+| Splunk | Nee | [Microsoft Azure Add-On voor Splunk](https://splunkbase.splunk.com/app/3757/) is een open-source project dat beschikbaar is in Splunkbase. <br><br> Als u een invoeg toepassing in uw Splunk-exemplaar niet kunt installeren, als u bijvoorbeeld een proxy gebruikt of wordt uitgevoerd op Splunk Cloud, kunt u deze gebeurtenissen door sturen naar de Splunk HTTP-gebeurtenis verzamelaar met de [Azure-functie voor Splunk](https://github.com/Microsoft/AzureFunctionforSplunkVS), die wordt geactiveerd door nieuwe berichten in de Event hub. |
+| SumoLogic | Nee | Instructies voor het instellen van SumoLogic om gegevens van een Event Hub te gebruiken, zijn beschikbaar in [Logboeken verzamelen voor de Azure audit-app vanuit Event hub](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure-Audit/02Collect-Logs-for-Azure-Audit-from-Event-Hub). |
+| ArcSight | Nee | De ArcSight Azure Event hub Smart connector is beschikbaar als onderdeel van [de verzameling van de ArcSight slimme connector](https://community.softwaregrp.com/t5/Discussions/Announcing-General-Availability-of-ArcSight-Smart-Connectors-7/m-p/1671852). |
+| Syslog-server | Nee | Als u Azure Monitor gegevens rechtstreeks naar een syslog-server wilt streamen, kunt u een [oplossing gebruiken op basis van een Azure-functie](https://github.com/miguelangelopereira/azuremonitor2syslog/).
+| LogRhythm | Nee| Instructies voor het instellen van LogRhythm voor het verzamelen van logboeken van een Event Hub zijn [hier](https://logrhythm.com/six-tips-for-securing-your-azure-cloud-environment/)beschikbaar. 
+|Logz.io | Ja | Zie voor meer informatie aan de slag [met bewaking en logboek registratie met behulp van Logz.io voor java-apps die worden uitgevoerd op Azure](/azure/developer/java/fundamentals/java-get-started-with-logzio)
 
-Er zijn mogelijk ook andere partners beschikbaar. Zie [Azure monitor partner integraties](../platform/partners.md)voor een volledig overzicht van alle Azure monitor partners en hun mogelijkheden.
+Er zijn mogelijk ook andere partners beschikbaar. Zie [Azure monitor partner integraties](../partners.md)voor een volledig overzicht van alle Azure monitor partners en hun mogelijkheden.
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Het activiteiten logboek archiveren in een opslag account](./activity-log.md#legacy-collection-methods)
 * [Lees het overzicht van het Azure-activiteiten logboek](../essentials/platform-logs-overview.md)
 * [Een waarschuwing instellen op basis van een gebeurtenis in een activiteiten logboek](../alerts/alerts-log-webhook.md)
-

@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 01/03/2021
-ms.openlocfilehash: 6c5d758f94a4ad4e70a8b02a02c7c61097725f63
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: b02572f8f6f6531afba9e24af1d2eab53f5cb6ad
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101094833"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101742106"
 ---
 # <a name="tutorial-migrate-sql-server-to-azure-sql-database-offline-using-dms"></a>Zelfstudie: SQL Server migreren naar een offline exemplaar van Azure SQL Database met behulp van DMS
 
@@ -33,10 +33,6 @@ U leert het volgende:
 > - Maak een migratieproject met behulp van Azure Database Migration Service.
 > - De migratie uitvoeren.
 > - Houd de migratie in de gaten.
-
-[!INCLUDE [online-offline](../../includes/database-migration-service-offline-online.md)]
-
-In dit artikel wordt een offline migratie uit SQL Server naar een database in Azure SQL Database beschreven. Zie [SQL Server online migreren naar Azure SQL Database met behulp van DMS](tutorial-sql-server-azure-sql-online.md) voor informatie over een online migratie.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -275,7 +271,5 @@ Nadat de service is gemaakt, zoek deze op in de Azure-portal, open hem en maak v
 
 ### <a name="additional-resources"></a>Aanvullende bronnen
 
-- [SQL-migratie met behulp van Azure Data Migration Service](https://www.microsoft.com/handsonlabs/SelfPacedLabs/?storyGuid=3b671509-c3cd-4495-8e8f-354acfa09587) hands-on lab.
-- Zie het artikel [Bekende problemen met en tijdelijke oplossingen voor online migraties naar Azure SQL Database](known-issues-azure-sql-online.md) voor informatie over bekende problemen en beperkingen bij het uitvoeren van online migraties naar Azure SQL Database.
 - Zie het artikel [Wat is de Azure Database Migration Service?](./dms-overview.md) voor informatie over Azure Database Migration Service.
 - Zie het artikel [Wat is de service Azure SQL Database?](../azure-sql/database/sql-database-paas-overview.md) voor informatie over Azure SQL Database.

@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: c70e4a097a56b76089a26510bcf33b4c7c24c266
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: be7f15b5221be8b3acb7f64c4435e40f40f21f8f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96018712"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101720916"
 ---
 # <a name="azure-database-for-mysql-pricing-tiers"></a>Azure Database for MySQL prijs Categorieën
 
@@ -65,9 +65,9 @@ De laag basis biedt geen IOPS-garantie. In de prijs Categorieën Algemeen en geo
 
 U kunt uw I/O-gebruik bewaken in de Azure Portal of met behulp van Azure CLI-opdrachten. De relevante metrische gegevens die moeten worden bewaakt [, zijn opslag limiet, opslag percentage, gebruikte opslag en i/o-percentage](concepts-monitoring.md).
 
-### <a name="reaching-the-storage-limit"></a>De opslag limiet wordt bereikt
+### <a name="reaching-the-storage-limit"></a>De opslaglimiet wordt bereikt
 
-Servers met minder dan 100 GB ingerichte opslag zijn gemarkeerd als alleen-lezen als de vrije opslag minder is dan 5% van de ingerichte opslag grootte. Servers met meer dan 100 GB ingerichte opslag worden als alleen-lezen gemarkeerd als de vrije opslag minder is dan 5 GB.
+Servers met precies 100 GB ingerichte opslag, of minder, worden gemarkeerd als alleen-lezen, wanneer de vrije opslag minder dan 5% van de ingerichte opslaggrootte beslaat. Servers met meer dan 100 GB ingerichte opslag worden als alleen-lezen gemarkeerd als de vrije opslag minder is dan 5 GB.
 
 Als u bijvoorbeeld 110 GB aan opslag hebt ingericht en het werkelijke gebruik meer dan 105 GB overschrijdt, is de server gemarkeerd als alleen-lezen. Als u 5 GB aan opslag hebt ingericht, is de server gemarkeerd als alleen-lezen wanneer de vrije opslag minder dan 256 MB bedraagt.
 
@@ -91,7 +91,7 @@ Azure Database for MySQL biedt Maxi maal 100% van uw ingerichte Server opslag al
 
 Nadat u de server hebt gemaakt, kunt u de vCores, de generatie van de hardware, de prijs categorie (met uitzonde ring van en van basis), de hoeveelheid opslag en de Bewaar periode voor back-ups afzonderlijk wijzigen. U kunt het opslag type voor back-ups niet wijzigen nadat een server is gemaakt. Het aantal vCores kan omhoog of omlaag worden geschaald. De Bewaar periode van de back-up kan worden uitgebreid of omlaag van 7 tot 35 dagen. De opslag grootte kan alleen worden verhoogd. U kunt de resources verg Roten of verkleinen via de portal of Azure CLI. Zie [een Azure database for mysql server bewaken en schalen met behulp van Azure cli](scripts/sample-scale-server.md)voor een voor beeld van schalen met behulp van Azure cli.
 
-Wanneer u het aantal vCores, het genereren van de hardware of de prijs categorie wijzigt, wordt er een kopie van de oorspronkelijke server gemaakt met de nieuwe reken toewijzing. Wanneer de nieuwe server actief is, worden de verbindingen hiernaartoe overgeschakeld. Op het moment dat het systeem overschakelt naar de nieuwe server, kunnen er geen nieuwe verbindingen worden vastgelegd en worden alle niet-doorgevoerde transacties teruggedraaid. Dit tijdvenster is variabel, maar is in de meeste gevallen minder dan een minuut.
+Wanneer u het aantal vCores, het genereren van de hardware of de prijs categorie wijzigt, wordt er een kopie van de oorspronkelijke server gemaakt met de nieuwe reken toewijzing. Wanneer de nieuwe server actief is, worden de verbindingen hiernaartoe overgeschakeld. Op het moment dat het systeem overschakelt naar de nieuwe server, kunnen er geen nieuwe verbindingen worden vastgelegd en worden alle niet-doorgevoerde transacties teruggedraaid. Deze downtime tijdens het schalen kan ongeveer 60-120 seconden duren. De downtime tijdens het schalen is afhankelijk van de herstel tijd van de data base, wat kan ertoe leiden dat de data base langer online is als u op de server op het moment van de schaal bewerking een zware trans actie uitvoert. U wordt aangeraden schaal bewerkingen uit te voeren tijdens peri Oden met lage transactionele activiteit op de server om de herstart tijd te voor komen.
 
 Het schalen van de opslag en het wijzigen van de Bewaar periode voor back-ups is waar online bewerkingen. Er is geen downtime en uw toepassing heeft geen last van dit probleem. Als IOPS wordt geschaald met de grootte van de ingerichte opslag, kunt u de IOPS die beschikbaar is voor uw server verhogen door opslag ruimte te schalen.
 

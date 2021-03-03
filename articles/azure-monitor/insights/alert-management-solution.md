@@ -1,17 +1,16 @@
 ---
 title: Waarschuwingenbeheer oplossing in azure Log Analytics | Microsoft Docs
 description: De Waarschuwingenbeheer oplossing in Log Analytics helpt u bij het analyseren van alle waarschuwingen in uw omgeving.  Naast het samen voegen van waarschuwingen die zijn gegenereerd in Log Analytics, worden er waarschuwingen van verbonden System Center Operations Manager beheer groepen in Log Analytics geïmporteerd.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/19/2018
-ms.openlocfilehash: 1771801068b08b987fc9b756af6099d45ae5ea9e
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 6f3761b1c933d113bf65c70370c29bcfa7950eea
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610337"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728651"
 ---
 # <a name="alert-management-solution-in-azure-log-analytics"></a>Waarschuwingenbeheer oplossing in azure Log Analytics
 
@@ -40,11 +39,11 @@ Zie [Operations Manager koppelen aan Log Analytics](../agents/om-agents.md) voor
 ### <a name="agents"></a>Agents
 De volgende tabel beschrijft de verbonden bronnen die worden ondersteund door deze oplossing.
 
-| Verbonden bron | Ondersteuning | Description |
+| Verbonden bron | Ondersteuning | Beschrijving |
 |:--- |:--- |:--- |
-| [Windows-agents](../agents/agent-windows.md) | No |Directe Windows-agents genereren geen waarschuwingen.  Log Analytics waarschuwingen kunnen worden gemaakt op basis van gebeurtenissen en prestatie gegevens die zijn verzameld van Windows-agents. |
-| [Linux-agents](../vm/quick-collect-linux-computer.md) | No |Direct Linux-agents genereren geen waarschuwingen.  Log Analytics waarschuwingen kunnen worden gemaakt op basis van gebeurtenissen en prestatie gegevens die zijn verzameld uit Linux-agents.  Nagios-en zabbix-waarschuwingen worden verzameld van de servers waarvoor de Linux-agent is vereist. |
-| [Beheergroep System Center Operations Manager](../agents/om-agents.md) |Yes |Waarschuwingen die op Operations Manager agents worden gegenereerd, worden aan de beheer groep geleverd en vervolgens doorgestuurd naar Log Analytics.<br><br>Een directe verbinding van Operations Manager agents naar Log Analytics is niet vereist. Waarschuwings gegevens worden doorgestuurd van de beheer groep naar de Log Analytics opslag plaats. |
+| [Windows-agents](../agents/agent-windows.md) | Nee |Directe Windows-agents genereren geen waarschuwingen.  Log Analytics waarschuwingen kunnen worden gemaakt op basis van gebeurtenissen en prestatie gegevens die zijn verzameld van Windows-agents. |
+| [Linux-agents](../vm/quick-collect-linux-computer.md) | Nee |Direct Linux-agents genereren geen waarschuwingen.  Log Analytics waarschuwingen kunnen worden gemaakt op basis van gebeurtenissen en prestatie gegevens die zijn verzameld uit Linux-agents.  Nagios-en zabbix-waarschuwingen worden verzameld van de servers waarvoor de Linux-agent is vereist. |
+| [Beheergroep System Center Operations Manager](../agents/om-agents.md) |Ja |Waarschuwingen die op Operations Manager agents worden gegenereerd, worden aan de beheer groep geleverd en vervolgens doorgestuurd naar Log Analytics.<br><br>Een directe verbinding van Operations Manager agents naar Log Analytics is niet vereist. Waarschuwings gegevens worden doorgestuurd van de beheer groep naar de Log Analytics opslag plaats. |
 
 
 ### <a name="collection-frequency"></a>Verzamelingsfrequentie
@@ -101,7 +100,7 @@ De oplossing importeert waarschuwingen van System Center Operations Manager en m
 ## <a name="sample-log-searches"></a>Voorbeeldzoekopdrachten in logboeken
 De volgende tabel bevat voor beelden van zoek opdrachten in Logboeken voor waarschuwings records die door deze oplossing worden verzameld: 
 
-| Query’s uitvoeren | Description |
+| Query’s uitvoeren | Beschrijving |
 |:---|:---|
 | Waarschuwing &#124; waarbij hebben = = "OpsManager" en AlertSeverity = = "Error" en TimeRaised > geleden (24 uur) |Kritieke waarschuwingen die zijn opgetreden in de afgelopen 24 uur |
 | Waarschuwing &#124; waarbij AlertSeverity = = "waarschuwing" en TimeRaised > geleden (24 uur) |Waarschuwingen die in de afgelopen 24 uur zijn geactiveerd |

@@ -1,31 +1,46 @@
 ---
-title: bestand opnemen
-description: bestand opnemen
-services: virtual-wan
 author: cherylmc
+ms.author: cherylmc
+ms.date: 02/23/2021
 ms.service: virtual-wan
 ms.topic: include
-ms.date: 09/12/2018
-ms.author: cherylmc
-ms.custom: include file
-ms.openlocfilehash: 411c28c0bbbf5ea659c6b6cca1e5bfae847ddd7b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: b5c0bdbb29af7b8894d86233520ff09854faa201
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91812678"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101732481"
 ---
-1. Ga naar **Alle resources**.
-1. Selecteer de virtuele WAN die u hebt gemaakt.
-1. Selecteer **+VPN-configuratie voor gebruikers maken** aan de bovenkant van de pagina om de pagina **Nieuwe VPN-configuratie voor gebruikers maken** te openen.
+1. Ga naar **alle resources** en selecteer het virtuele WAN dat u hebt gemaakt en selecteer vervolgens **gebruikers VPN-configuraties** in het menu aan de linkerkant.
+1. Selecteer op de pagina **configuratie van gebruikers-VPN** de optie **+ gebruikers VPN-configuratie maken** boven aan de pagina om de pagina **nieuwe gebruiker VPN-configuratie maken** te openen.
 
-   :::image type="content" source="media/virtual-wan-p2s-configuration/user-vpn.jpg" alt-text="VPN-configuraties voor gebruikers":::
+   :::image type="content" source="media/virtual-wan-p2s-configuration/user-vpn.png" alt-text="Scherm afbeelding van de pagina met VPN-configuraties voor gebruikers.":::
 
-1. Vul op de pagina **Nieuwe VPN-configuratie voor gebruikers maken** de volgende velden in:
+1. Voer op het tabblad **basis** **informatie onder Details van exemplaar** de **naam** in die u wilt toewijzen aan uw VPN-configuratie.
+1. Selecteer bij **Tunnel Type**, in de vervolg keuzelijst, het tunnel type dat u wilt. De opties voor het tunnel type zijn: **IKEV2 VPN**, **openvpn** en **openvpn en IKEv2**.
+1. Gebruik de volgende stappen die overeenkomen met het tunnel type dat u hebt geselecteerd. Nadat alle waarden zijn opgegeven, klikt u op **controleren + maken** en vervolgens op **maken** om de configuratie te maken.
 
-   * **Naam van configuratie**, dit is de naam waarmee u naar uw configuratie wilt verwijzen.
-   * **Type tunnel**, het protocol dat voor de tunnel moet worden gebruikt.
-   * **Certificaatnaam van hoofdmap**, een beschrijvende naam voor het certificaat.
-   * **Openbare certificaatgegevens**, Base-64-gecodeerde X.509-certificaatgegevens.
-  
-1. Selecteer **Maken** om de configuratie te maken.
+   **IKEv2 VPN**
+
+   * **Vereisten:** Wanneer u het **IKEv2** -Tunnel Type selecteert, wordt er een bericht weer gegeven waarin u wordt omgeleid om een verificatie methode te selecteren. Voor IKEv2 kunt u slechts één verificatie methode opgeven. U kunt kiezen voor Azure-certificaat, Azure Active Directory of verificatie op basis van RADIUS.
+ 
+   * **Aangepaste IPSec-para meters:** Als u de para meters voor IKE fase 1 en IKE fase 2 wilt aanpassen, schakelt u de IPsec-switch in op **aangepast** en selecteert u de parameter waarden. Zie het [aangepaste IPsec-](../articles/virtual-wan/point-to-site-ipsec.md) artikel voor meer informatie over aanpas bare para meters.
+
+     :::image type="content" source="media/virtual-wan-p2s-configuration/custom.png" alt-text="Scherm opname van IPsec-switch naar aangepast.":::
+
+   * **Verificatie:** Navigeer naar het verificatie mechanisme dat u wilt gebruiken door te klikken op **volgende** onder aan de pagina om naar de verificatie methode te gaan of klik op het juiste tabblad boven aan de pagina. Schakel de optie in op **Ja** om de methode te selecteren.
+
+     In dit voor beeld wordt RADIUS-verificatie geselecteerd. Voor RADIUS-gebaseerde verificatie kunt u een IP-adres en server geheim voor een secundaire RADIUS-server opgeven.
+
+     :::image type="content" source="media/virtual-wan-p2s-configuration/ike-radius.png" alt-text="Scherm opname van IKE.":::
+
+   **OpenVPN**
+
+   * **Vereisten:** Wanneer u het tunnel type **openvpn** selecteert, wordt er een bericht weer gegeven waarin u wordt omgeleid om een verificatie mechanisme te selecteren. Als OpenVPN is geselecteerd als het tunnel type, kunt u meerdere verificatie methoden opgeven. U kunt kiezen uit een subset van Azure-certificaat, Azure Active Directory of verificatie op basis van RADIUS. Voor RADIUS-gebaseerde verificatie kunt u een IP-adres en server geheim voor een secundaire RADIUS-server opgeven.
+
+   * **Verificatie:** Ga naar de verificatie methode (s) die u wilt gebruiken door te klikken op **volgende** onder aan de pagina om naar de verificatie methode te gaan of klik op het juiste tabblad boven aan de pagina.
+   Voor elke methode die u wilt selecteren, schakelt u over naar **Ja** en voert u de juiste waarden in.
+
+     In dit voor beeld is Azure Active Directory geselecteerd.
+
+     :::image type="content" source="media/virtual-wan-p2s-configuration/openvpn.png" alt-text="Scherm opname van de pagina OpenVPN.":::

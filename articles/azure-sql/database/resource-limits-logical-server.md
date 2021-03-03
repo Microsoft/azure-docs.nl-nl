@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: sashan,moslake,josack
 ms.date: 02/02/2021
-ms.openlocfilehash: aa18baf9739663c7132a49d3d07434b9d187f02b
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 34613633b6b27fc3387e6a9fa63caf4a194ba963
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100588753"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101691226"
 ---
 # <a name="resource-limits-for-azure-sql-database-and-azure-synapse-analytics-servers"></a>Resource limieten voor Azure SQL Database en Azure Synapse Analytics-servers
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -70,7 +70,7 @@ Wanneer u gebruik maakt van hoge ruimte, kunt u onder andere het volgende doen:
 - De maximale grootte van de data base of elastische pool verg Roten of meer opslag toevoegen. Zie bronnen van [één data base schalen](single-database-scale.md) en [elastische pool resources schalen](elastic-pool-scale.md).
 - Als de data base zich in een elastische pool bevindt, kan de data base buiten de pool worden geplaatst, zodat de opslag ruimte niet wordt gedeeld met andere data bases.
 - Een Data Base verkleinen om ongebruikte ruimte te claimen. Zie [Bestands ruimte beheren in Azure SQL database](file-space-manage.md)voor meer informatie.
-- Controleer of het gebruik van hoge ruimte wordt veroorzaakt door een piek in de grootte van de permanente versie opslag (PVS). PVS maakt deel uit van elke Data Base en wordt gebruikt om  [versneld database herstel](../accelerated-database-recovery.md)te implementeren. Zie [PVS Troubleshooting](https://docs.microsoft.com/sql/relational-databases/accelerated-database-recovery-management#troubleshooting)(Engelstalig) om de huidige grootte van de PVS te bepalen. Een veelvoorkomende reden voor grote PVS is een trans actie die lange tijd (uren) is geopend, waardoor het opruimen van oudere versies in PVS wordt voor komen.
+- Controleer of het gebruik van hoge ruimte wordt veroorzaakt door een piek in de grootte van de permanente versie opslag (PVS). PVS maakt deel uit van elke Data Base en wordt gebruikt om  [versneld database herstel](../accelerated-database-recovery.md)te implementeren. Zie [PVS Troubleshooting](/sql/relational-databases/accelerated-database-recovery-management#troubleshooting)(Engelstalig) om de huidige grootte van de PVS te bepalen. Een veelvoorkomende reden voor grote PVS is een trans actie die lange tijd (uren) is geopend, waardoor het opruimen van oudere versies in PVS wordt voor komen.
 
 ### <a name="sessions-and-workers-requests"></a>Sessies en werk nemers (aanvragen)
 
@@ -97,7 +97,7 @@ Als er geheugen fouten optreden, zijn de volgende opties beschikbaar:
 - De servicelaag of de reken grootte van de data base of elastische pool wordt verhoogd. Zie bronnen van [één data base schalen](single-database-scale.md) en [elastische pool resources schalen](elastic-pool-scale.md).
 - Query's en configuratie optimaliseren om het geheugen gebruik te beperken. Algemene oplossingen worden beschreven in de volgende tabel.
 
-|Oplossing|Description|
+|Oplossing|Beschrijving|
 | :----- | :----- |
 |De grootte van geheugen subsidies verminderen|Voor meer informatie over geheugen subsidies, zie het blog bericht [over SQL Server geheugen toekenning](https://techcommunity.microsoft.com/t5/sql-server/understanding-sql-server-memory-grant/ba-p/383595) . Een gemeen schappelijke oplossing om te voor komen dat buitensporig grote geheugen subsidies worden gebruikt, houdt [Statistieken](/sql/relational-databases/statistics/statistics) up-to-date. Dit resulteert in een nauw keurige schatting van het geheugen verbruik door de query-engine, waardoor onnodig grote geheugen subsidies worden voor komen.</br></br>In data bases die gebruikmaken van het compatibiliteits niveau 140 en hoger, kan de data base-engine automatisch de grootte van het geheugen toewijzen met behulp van [feedback van geheugen toekenning in batch modus](/sql/relational-databases/performance/intelligent-query-processing#batch-mode-memory-grant-feedback) In data bases die gebruikmaken van het compatibiliteits niveau 150 en hoger, gebruikt de data base-engine ook [feedback over geheugen toekenning](/sql/relational-databases/performance/intelligent-query-processing#row-mode-memory-grant-feedback)in de rij, voor meer veelgebruikte query's in de rij-modus. Deze ingebouwde functionaliteit helpt bij het vermijden van geheugen fouten als gevolg van onnodig grote geheugen subsidies.|
 |De grootte van de cache voor query plannen beperken|De data base-engine slaat query plannen op in het geheugen, om te voor komen dat een query plan wordt gecompileerd voor elke uitvoering van de query. Schakel de OPTIMIZE_FOR_AD_HOC_WORKLOADS [database bereik configuratie](/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql)in om te voor komen dat de cache van het query plan wordt veroorzaakt door schema's die slechts één keer worden gebruikt.|

@@ -40,8 +40,18 @@
           href: 'https://azure.microsoft.com/resources/samples/?service=hdinsight'
     - name: Concepten
       items:
-        - name: Apache-onderdelen in HDInsight
-          href: ./hdinsight-component-versioning.md
+        - name: Versiebeheer
+          items:
+            - name: Introductie van versies
+              href: ./hdinsight-overview-versioning.md
+            - name: HDInsight-versies
+              href: ./hdinsight-component-versioning.md
+            - name: 'HDInsight-versie 4,0'
+              href: ./hdinsight-40-component-versioning.md
+            - name: HDInsight-versie 3.6
+              href: ./hdinsight-36-component-versioning.md
+            - name: Verouderde HDInsight-versies
+              href: ./hdinsight-retired-versions.md
         - name: Enterprise Security Package
           href: ./enterprise-security-package.md
         - name: Opmerkingen bij de release van Hortonworks
@@ -650,7 +660,7 @@
             - name: Apache Kafka gebruiken met IoT Hub
               href: ./kafka/apache-kafka-connector-iot-hub.md
             - name: Samenkomend schemaregister
-              href: ./kafka/schema-registry.md
+              href: ./kafka/apache-kafka-producer-consumer-api.md
             - name: Streaming-pijplijnen maken
               items:
                 - name: 'Apache Spark, Apache Kafka en Azure Cosmos DB'
@@ -817,6 +827,10 @@
               href: ./interactive-query/apache-hive-query-odbc-driver-powershell.md
         - name: Beheren
           items:
+            - name: Hive-tabellen kopiëren tussen opslag accounts
+              href: ./interactive-query/hive-migration-across-storage-accounts.md
+            - name: Standaard Hive-metastore migreren naar externe meta Store in azure HDInsight
+              href: ./interactive-query/hive-default-metastore-export-import.md
             - name: Hive-workloads migreren naar HDInsight 4.0
               href: ./interactive-query/apache-hive-migrate-workloads.md
             - name: Apache Hive-query's optimaliseren

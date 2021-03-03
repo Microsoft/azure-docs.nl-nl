@@ -6,12 +6,12 @@ ms.author: brjones
 ms.service: notification-hubs
 ms.topic: article
 ms.date: 01/29/2021
-ms.openlocfilehash: b532dca6ceba44a32132bf64b322e1b4764fd5fa
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: b98a04a70062461cec603bea83052c4f1224819e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417309"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101736233"
 ---
 # <a name="enable-diagnostics-logs-for-notification-hubs"></a>Diagnostische logboeken voor Notification Hubs inschakelen
 
@@ -141,8 +141,7 @@ De nieuwe instellingen worden in ongeveer 10 minuten van kracht. De logboeken wo
 ## <a name="next-steps"></a>Volgende stappen
 
 Zie voor meer informatie over het configureren van diagnostische instellingen:
-* [Overzicht van Azure Diagnostics-logboeken](../azure-monitor/platform/platform-logs-overview.md).
+* [Overzicht van Azure Diagnostics-logboeken](../azure-monitor/essentials/platform-logs-overview.md).
 
 Zie voor meer informatie over Azure Notification Hubs:
 * [Wat is Azure Notification Hubs?](notification-hubs-push-notification-overview.md)
-

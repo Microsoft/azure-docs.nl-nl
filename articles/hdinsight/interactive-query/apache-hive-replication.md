@@ -4,12 +4,12 @@ description: Meer informatie over het gebruik van Hive-replicatie in HDInsight-c
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/08/2020
-ms.openlocfilehash: 3dd894a46b666703f64e44336c0bf022da8a063a
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 2e57b7d8121ac0bd6fc9cb693750c41a0ef6a5bc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98941339"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733054"
 ---
 # <a name="how-to-use-apache-hive-replication-in-azure-hdinsight-clusters"></a>Apache Hive replicatie gebruiken in azure HDInsight-clusters
 
@@ -17,9 +17,9 @@ In de context van data bases en magazijnen, is replicatie het proces van het dup
 
 Hive-replicatie is in de loop van de jaren ontwikkeld met nieuwere versies, waardoor er betere functionaliteit is en sneller en minder bronnen worden intensief. In dit artikel bespreken we Hive Replication (Replv2), die wordt ondersteund in cluster typen van zowel HDInsight 3,6 als HDInsight 4,0.
 
-## <a name="advantages-of-replv2"></a>Voor delen van Replv2
+## <a name="advantages-of-replv2"></a>Voor delen van replv2
 
-[Hive ReplicationV2](https://cwiki.apache.org/confluence/display/Hive/HiveReplicationv2Development) of (Replv2) heeft de volgende voor delen ten opzichte van de eerste versie van Hive-replicatie waarvoor Hive [import-export](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ImportExport)is gebruikt:
+[Hive ReplicationV2](https://cwiki.apache.org/confluence/display/Hive/HiveReplicationv2Development) (ook wel Replv2 genoemd) heeft de volgende voor delen ten opzichte van de eerste versie van Hive-replicatie waarvoor Hive [import-export](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ImportExport)is gebruikt:
 
 - Incrementele replicatie op basis van gebeurtenissen
 - Punt-in-time-replicatie  

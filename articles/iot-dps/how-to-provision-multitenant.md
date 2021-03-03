@@ -7,12 +7,12 @@ ms.date: 04/10/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: d0c132d1aa7a37dc8e7620352bb7b9a078d79a09
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: eebcfb98d4e155ca965b9e4c68a862afa08a46ca
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96571603"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101727427"
 ---
 # <a name="how-to-provision-for-multitenancy"></a>Inrichten voor multitenancy 
 
@@ -184,7 +184,7 @@ Als u het opschonen eenvoudiger wilt maken, worden deze Vm's toegevoegd aan deze
 
 
 
-## <a name="prepare-the-azure-iot-c-sdk-development-environment"></a>De Azure IoT C SDK-ontwikkel omgeving voorbereiden
+## <a name="prepare-the-azure-iot-c-sdk-development-environment"></a>De ontwikkelomgeving voorbereiden voor de Azure IoT C-SDK
 
 In deze sectie kloont u de Azure IoT C SDK op elke VM. De SDK bevat een voor beeld waarmee de inrichting van een Tenant apparaat van elke regio wordt gesimuleerd.
 
@@ -417,16 +417,8 @@ U verwijdert als volgt de resourcegroep op naam:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [IOT hub-concepten](concepts-device-reprovision.md) voor het opnieuw inrichten van apparaten voor meer informatie. 
-- Zie voor meer informatie over het ongedaan maken van de inrichting van [apparaten die eerder automatisch zijn ingericht](how-to-unprovision-devices.md) , ongedaan maken 
+> [!div class="nextstepaction"]
+> Zie IoT Hub voor het opnieuw inrichten van [apparaten](concepts-device-reprovision.md) voor meer informatie.
 
-
-
-
-
-
-
-
-
-
-
+> [!div class="nextstepaction"]
+> Zie voor meer informatie over het ongedaan maken van de inrichting van [apparaten die eerder automatisch zijn ingericht](how-to-unprovision-devices.md) , ongedaan maken

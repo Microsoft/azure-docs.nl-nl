@@ -1,22 +1,22 @@
 ---
-title: Bewaken van de kosten voor Azure Monitor voor containers | Microsoft Docs
-description: In dit artikel worden de bewakings kosten beschreven voor metrische gegevens & door Azure Monitor voor containers verzamelde inventaris van de bewerkings capaciteit, zodat klanten hun gebruik en de bijbehorende kosten kunnen beheren.
+title: Bewaken van de kosten voor container Insights | Microsoft Docs
+description: In dit artikel worden de bewakings kosten beschreven voor metrische gegevens & door de container inzichten verzamelde inventarisatie-informatie om klanten te helpen hun gebruik en de bijbehorende kosten te beheren.
 ms.topic: conceptual
 ms.date: 05/29/2020
-ms.openlocfilehash: 0a3118e1dd839eced5e1f15d28feff4bbb58014f
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 78387e950d476126d7c2065a530844e44fd59b4f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612363"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728906"
 ---
-# <a name="understand-monitoring-costs-for-azure-monitor-for-containers"></a>Inzicht in het bijhouden van de kosten voor Azure Monitor voor containers
+# <a name="understand-monitoring-costs-for-container-insights"></a>Bewaken van de berekenings kosten voor container Insights
 
-In dit artikel vindt u de richt lijnen voor het Azure Monitor van containers voor meer informatie over het volgende:
+In dit artikel vindt u richt lijnen voor de prijs informatie voor container Insights, zodat u inzicht krijgt in het volgende:
 
 * Een schatting maken van de kosten vooraf voordat u dit inzicht inschakelt
 
-* Kosten meten na Azure Monitor voor containers is ingeschakeld voor een of meer containers
+* Kosten meten nadat container Insights is ingeschakeld voor een of meer containers
 
 * Het verzamelen van gegevens en het maken van kosten reducties
 
@@ -27,7 +27,7 @@ Het prijs model voor Azure Monitor is voornamelijk gebaseerd op de hoeveelheid g
 >[!NOTE]
 >Alle grootten en prijzen zijn alleen voor de voorbeeld schatting. Raadpleeg de pagina met [prijzen](https://azure.microsoft.com/pricing/details/monitor/) voor Azure monitor voor de meest recente prijzen op basis van uw Azure monitor log Analytics prijs model en Azure-regio.
 
-Hier volgt een samen vatting van de typen gegevens die worden verzameld uit een Kubernetes-cluster met Azure Monitor voor containers die invloed hebben op de kosten en kunnen worden aangepast op basis van uw gebruik:
+Hier volgt een samen vatting van de typen gegevens die worden verzameld uit een Kubernetes-cluster met container inzichten die invloed hebben op de kosten en kunnen worden aangepast op basis van uw gebruik:
 
 - Stdout, stderr-container logboeken van elke bewaakte container in elke Kubernetes-naam ruimte in het cluster
 
@@ -37,11 +37,11 @@ Hier volgt een samen vatting van de typen gegevens die worden verzameld uit een 
 
 - Actieve uitval van Prometheus-metrische gegevens
 
-- [Diagnostische logboek verzameling](../../aks/view-master-logs.md) van Kubernetes-hoofd knooppunt Logboeken in uw AKS-cluster voor het analyseren van logboek gegevens die zijn gegenereerd door hoofd onderdelen, zoals de *uitvoeren-apiserver* en *uitvoeren-Controller-Manager*.
+- [Diagnostische logboek verzameling](../../aks/view-control-plane-logs.md) van Kubernetes-hoofd knooppunt Logboeken in uw AKS-cluster voor het analyseren van logboek gegevens die zijn gegenereerd door hoofd onderdelen, zoals de *uitvoeren-apiserver* en *uitvoeren-Controller-Manager*.
 
 ## <a name="what-is-collected-from-kubernetes-clusters"></a>Wat wordt verzameld uit Kubernetes-clusters
 
-Azure Monitor voor containers bevat een vooraf gedefinieerde set metrische gegevens en inventaris items die zijn verzameld als logboek in uw Log Analytics-werk ruimte. Alle hieronder weer gegeven metrische gegevens worden standaard elke minuut verzameld.
+Container Insights bevat een vooraf gedefinieerde set metrische gegevens en inventarisatie-items die zijn opgeslagen in de logboeken van uw Log Analytics-werk ruimte. Alle hieronder weer gegeven metrische gegevens worden standaard elke minuut verzameld.
 
 ### <a name="node-metrics-collected"></a>Metrische knooppunt gegevens verzameld
 
@@ -194,10 +194,10 @@ Als u [Prometheus metrische uitval](container-insights-prometheus-integration.md
 
 - Controleer of de uitval frequentie optimaal is ingesteld (de standaard waarde is 60 seconden). U kunt de frequentie verhogen tot 15 seconden, zodat u zeker weet dat de metrische gegevens die u wilt opvallen, op die frequentie worden gepubliceerd. Als dat niet het geval is, worden er veel dubbele metrische gegevens bespaard en naar uw Log Analytics-werk ruimte verzonden met intervallen die worden toegevoegd aan de gegevens opname en de Bewaar kosten, maar die minder waarde hebben. 
 
-- Azure Monitor voor containers ondersteunt uitsluitingen & lijsten met metrische namen. Als u bijvoorbeeld **kubedns** metrische gegevens in uw cluster wilt opwaarderen, kunnen er honderden worden opgehaald die standaard worden geknipseld, maar u bent waarschijnlijk alleen geïnteresseerd in een subset. Controleer of u een lijst met metrische gegevens hebt opgegeven die u wilt opvallen, of sluit anderen uit, behalve enkele om op te slaan op het volume met gegevens opname. Het is eenvoudig om uitval in te scha kelen en niet veel van deze metrische gegevens te gebruiken, zodat er geen extra kosten aan uw Log Analytics factuur worden toegevoegd.
+- Container Insights ondersteunt uitsluitingen & lijsten met metrische naam. Als u bijvoorbeeld **kubedns** metrische gegevens in uw cluster wilt opwaarderen, kunnen er honderden worden opgehaald die standaard worden geknipseld, maar u bent waarschijnlijk alleen geïnteresseerd in een subset. Controleer of u een lijst met metrische gegevens hebt opgegeven die u wilt opvallen, of sluit anderen uit, behalve enkele om op te slaan op het volume met gegevens opname. Het is eenvoudig om uitval in te scha kelen en niet veel van deze metrische gegevens te gebruiken, zodat er geen extra kosten aan uw Log Analytics factuur worden toegevoegd.
 
 - Zorg ervoor dat u op naam ruimte filtert bij het uitvallen van pod-aantekeningen, zodat u de uitvallen van pod-metrische gegevens uit naam ruimten die u niet gebruikt (bijvoorbeeld de naam ruimte **dev-test** ) uitsluit.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [uw gebruik en geschatte kosten beheren](../platform/manage-cost-storage.md)voor meer informatie over het begrijpen van de kosten die waarschijnlijk zijn gebaseerd op recente gebruiks patronen van gegevens die zijn verzameld met Azure monitor voor containers.
+Zie [uw gebruik en geschatte kosten beheren](../logs/manage-cost-storage.md)voor meer informatie over het begrijpen van de kosten die waarschijnlijk worden gebaseerd op recente gebruiks patronen van gegevens die zijn verzameld met container Insights.

@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: divswa, logicappspm
 ms.topic: article
 ms.date: 09/24/2020
-ms.openlocfilehash: d72e3ffc8698d9f3a2df170bd87f2969475ca9ed
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: d1c095be1d0525cc843c04a3b83e14bb4211b175
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100580693"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101721256"
 ---
 # <a name="set-up-azure-monitor-logs-and-collect-diagnostics-data-for-azure-logic-apps"></a>Azure Monitor logboeken instellen en diagnostische gegevens verzamelen voor Azure Logic Apps
 
@@ -142,9 +142,6 @@ Wanneer de logische app wordt uitgevoerd, kunt u de gegevens over die uitvoering
    Hier volgt een voor beeld waarin alle uitvoeringen voor een specifieke logische app worden weer gegeven:
 
    ![Uitvoeringen en status van logische apps weer geven](./media/monitor-logic-apps-log-analytics/logic-app-run-details.png)
-
-   > [!NOTE]
-   > De functie voor **opnieuw verzenden** op deze pagina is momenteel niet beschikbaar.
 
    Voor acties waarbij u [bijgehouden eigenschappen instelt](#extend-data), kunt u deze eigenschappen ook weer geven door **weer gave** te selecteren in de kolom **bijgehouden eigenschappen** . Gebruik het kolom filter om de bijgehouden eigenschappen te doorzoeken.
 

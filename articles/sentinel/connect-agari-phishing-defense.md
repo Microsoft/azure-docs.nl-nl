@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/03/2021
 ms.author: yelevin
-ms.openlocfilehash: 3684b5a8069a6b683ae562c527af89814362a7f9
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: a60a0291d6669b2a9115dffa8e0d4d63fae4a440
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99806983"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101724435"
 ---
 # <a name="connect-your-agari-phishing-defense-and-brand-protection-solutions-to-azure-sentinel"></a>Verbind uw Agari-beschermings-en merk beveiligings oplossingen met Azure Sentinel
 
@@ -39,7 +39,7 @@ Het volgende is vereist voor de verbinding tussen de Agari van de phishing-en me
 
 - Lees-en schrijf machtigingen voor de Azure-Sentinel-werk ruimte.
 
-- Lees machtigingen voor gedeelde sleutels voor de werk ruimte. [Meer informatie over werkruimte sleutels](../azure-monitor/platform/log-analytics-agent.md#workspace-id-and-key).
+- Lees machtigingen voor gedeelde sleutels voor de werk ruimte. [Meer informatie over werkruimte sleutels](../azure-monitor/agents/log-analytics-agent.md#workspace-id-and-key).
 
 - Lees-en schrijf machtigingen voor Azure Functions om een functie-app te maken. Meer [informatie over Azure functions](../azure-functions/index.yml).
 

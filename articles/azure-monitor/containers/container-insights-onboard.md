@@ -1,18 +1,18 @@
 ---
-title: Azure Monitor inschakelen voor containers | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u Azure Monitor voor containers inschakelt en configureert, zodat u kunt zien hoe uw container presteert en welke problemen met betrekking tot de prestaties zijn geïdentificeerd.
+title: Container Insights inschakelen | Microsoft Docs
+description: In dit artikel wordt beschreven hoe u container Insights inschakelt en configureert, zodat u kunt begrijpen hoe uw container presteert en welke prestatie problemen zijn geïdentificeerd.
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 56f60b58cff351aa37e98cdba933c929aaaedab6
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 58797221fa3380e4f7533a710e2f8dc658cb676c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611580"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708353"
 ---
-# <a name="enable-azure-monitor-for-containers"></a>Azure Monitor inschakelen voor containers
+# <a name="enable-container-insights"></a>Container Insights inschakelen
 
-Dit artikel bevat een overzicht van de opties die beschikbaar zijn voor het instellen van Azure Monitor voor containers voor het bewaken van de prestaties van werk belastingen die in Kubernetes-omgevingen worden geïmplementeerd en die worden gehost op:
+Dit artikel bevat een overzicht van de opties die beschikbaar zijn voor het instellen van container Insights voor het bewaken van de prestaties van werk belastingen die zijn geïmplementeerd in Kubernetes omgevingen en die worden gehost op:
 
 - [Azure Kubernetes Service (AKS)](../../aks/index.yml)  
 - [Azure Red Hat open Shift](../../openshift/intro-openshift.md) versie 3. x en 4. x  
@@ -23,7 +23,7 @@ U kunt ook de prestaties bewaken van werk belastingen die zijn geïmplementeerd 
 - Azure, met behulp van de [AKS-engine](https://github.com/Azure/aks-engine)
 - [Azure stack](/azure-stack/user/azure-stack-kubernetes-aks-engine-overview) of on-premises, met behulp van de AKS-engine.
 
-U kunt Azure Monitor voor containers inschakelen voor een nieuwe implementatie of voor een of meer bestaande implementaties van Kubernetes door gebruik te maken van een van de volgende ondersteunde methoden:
+U kunt container Insights inschakelen voor een nieuwe implementatie of voor een of meer bestaande implementaties van Kubernetes door gebruik te maken van een van de volgende ondersteunde methoden:
 
 - Azure Portal
 - Azure PowerShell
@@ -44,37 +44,37 @@ Voordat u begint, moet u ervoor zorgen dat u aan de volgende vereisten voldoet:
 
 - U hebt een Log Analytics-werk ruimte.
 
-   Azure Monitor voor containers ondersteunt een Log Analytics-werk ruimte in de regio's die worden vermeld in [beschik bare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=monitor).
+   Container Insights biedt ondersteuning voor een Log Analytics-werk ruimte in de regio's die worden vermeld in [beschik bare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=monitor).
 
    U kunt een werk ruimte maken wanneer u controle inschakelt voor uw nieuwe AKS-cluster, of u kunt de voorbereidings ervaring laten maken van een standaardwerk ruimte in de standaard resource groep van het AKS-cluster abonnement. 
    
    Als u ervoor kiest om de werk ruimte zelf te maken, kunt u deze maken via: 
-   - [Azure Resource Manager](../samples/resource-manager-workspace.md)
-   - [PowerShell](../scripts/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json)
-   - [Azure Portal](../learn/quick-create-workspace.md) 
+   - [Azure Resource Manager](../logs/resource-manager-workspace.md)
+   - [PowerShell](../logs/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json)
+   - [Azure Portal](../logs/quick-create-workspace.md) 
    
-   Zie [regio toewijzing voor Azure monitor voor containers](container-insights-region-mapping.md)voor een lijst met de ondersteunde toewijzings paren voor de standaardwerk ruimte.
+   Zie [regio toewijzing voor container Insights](container-insights-region-mapping.md)voor een lijst met de ondersteunde toewijzings paren die voor de standaardwerk ruimte moeten worden gebruikt.
 
-- U bent lid van de groep *log Analytics Inzender* voor het inschakelen van container bewaking. Zie [werk ruimten beheren](../platform/manage-access.md)voor meer informatie over het controleren van de toegang tot een log Analytics-werk ruimte.
+- U bent lid van de groep *log Analytics Inzender* voor het inschakelen van container bewaking. Zie [werk ruimten beheren](../logs/manage-access.md)voor meer informatie over het controleren van de toegang tot een log Analytics-werk ruimte.
 
 - U bent lid van de groep [ *eigenaar*](../../role-based-access-control/built-in-roles.md#owner) op de AKS-cluster bron.
 
    [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
 
-- Als u de bewakings gegevens wilt bekijken, moet u de rol van [*log Analytics lezer*](../platform/manage-access.md#manage-access-using-azure-permissions) hebben in de log Analytics-werk ruimte, geconfigureerd met Azure monitor voor containers.
+- Als u de bewakings gegevens wilt bekijken, moet u de rol van [*log Analytics lezer*](../logs/manage-access.md#manage-access-using-azure-permissions) hebben in de log Analytics-werk ruimte, geconfigureerd met container Insights.
 
 - Prometheus-metrische gegevens worden niet standaard verzameld. Voordat u [de agent configureert](container-insights-prometheus-integration.md) voor het verzamelen van de metrische gegevens, is het belang rijk om de [Prometheus-documentatie](https://prometheus.io/) te controleren om te begrijpen welke informatie kan worden verzameld en welke methoden worden ondersteund.
 
 ## <a name="supported-configurations"></a>Ondersteunde configuraties
 
-Azure Monitor voor containers officiële ondersteunt de volgende configuraties:
+Container Insights officieel ondersteunt de volgende configuraties:
 
 - Omgevingen: Azure Red Hat open Shift, Kubernetes on-premises en de AKS-engine op Azure en Azure Stack. Zie [de AKS-engine op Azure stack](/azure-stack/user/azure-stack-kubernetes-aks-engine-overview)voor meer informatie.
 - De versies van Kubernetes en het ondersteunings beleid zijn hetzelfde als die welke worden [ondersteund in de Azure Kubernetes-service (AKS)](../../aks/supported-kubernetes-versions.md). 
 
 ## <a name="network-firewall-requirements"></a>Netwerk firewall vereisten
 
-De volgende tabel geeft een lijst van de proxy-en firewall configuratie-informatie die is vereist voor de container agent om te communiceren met Azure Monitor voor containers. Al het netwerk verkeer van de agent is uitgaand naar Azure Monitor.
+De volgende tabel geeft een lijst van de proxy-en firewall configuratie-informatie die is vereist voor de container agent om te communiceren met container Insights. Al het netwerk verkeer van de agent is uitgaand naar Azure Monitor.
 
 |Agentresource|Poort |
 |--------------|------|
@@ -102,7 +102,7 @@ De volgende tabel geeft een overzicht van de proxy-en firewall configuratie-info
 
 ## <a name="components"></a>Onderdelen
 
-Uw vermogen om de prestaties te bewaken, is afhankelijk van een Log Analytics agent voor Linux die specifiek is ontwikkeld voor de Azure Monitor voor containers. Deze gespecialiseerde agent verzamelt prestatie-en gebeurtenis gegevens van alle knoop punten in het cluster en de agent wordt automatisch geïmplementeerd en geregistreerd bij de opgegeven Log Analytics-werk ruimte tijdens de implementatie. 
+De mogelijkheid om de prestaties te bewaken is afhankelijk van een container Log Analytics-agent voor Linux die specifiek is ontwikkeld voor container Insights. Deze gespecialiseerde agent verzamelt prestatie-en gebeurtenis gegevens van alle knoop punten in het cluster en de agent wordt automatisch geïmplementeerd en geregistreerd bij de opgegeven Log Analytics-werk ruimte tijdens de implementatie. 
 
 De agent versie is micro soft/OMS: ciprod04202018 of hoger en wordt weer gegeven met een datum in de volgende notatie: *mmddyyyy*.
 
@@ -116,7 +116,7 @@ Wanneer een nieuwe versie van de agent wordt uitgebracht, wordt deze automatisch
 >
 > De sjabloon moet worden geïmplementeerd in dezelfde resource groep als het cluster.
 
-Als u Azure Monitor voor containers wilt inschakelen, gebruikt u een van de methoden die worden beschreven in de volgende tabel:
+Als u container Insights wilt inschakelen, gebruikt u een van de methoden die worden beschreven in de volgende tabel:
 
 | Implementatie status | Methode | Beschrijving |
 |------------------|--------|-------------|
@@ -136,4 +136,4 @@ Als u Azure Monitor voor containers wilt inschakelen, gebruikt u een van de meth
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u bewaking hebt ingeschakeld, kunt u beginnen met het analyseren van de prestaties van uw Kubernetes-clusters die worden gehost op Azure Kubernetes service (AKS), Azure Stack of een andere omgeving. Zie [Kubernetes-cluster prestaties weer geven](container-insights-analyze.md)voor meer informatie over het gebruik van Azure monitor voor containers.
+Nu u bewaking hebt ingeschakeld, kunt u beginnen met het analyseren van de prestaties van uw Kubernetes-clusters die worden gehost op Azure Kubernetes service (AKS), Azure Stack of een andere omgeving. Zie [Kubernetes-cluster prestaties weer geven](container-insights-analyze.md)voor meer informatie over het gebruik van container Insights.

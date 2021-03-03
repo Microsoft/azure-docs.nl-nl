@@ -6,12 +6,12 @@ ms.topic: quickstart
 author: bwren
 ms.author: bwren
 ms.date: 12/15/2019
-ms.openlocfilehash: cab41c025f9f3e5b03f042a2bf5686cb08dbd0a9
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 62afc0ab4e65da53adb35510503051d39e0edc4e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100628702"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734227"
 ---
 # <a name="quickstart-monitor-an-azure-resource-with-azure-monitor"></a>Quickstart: Een Azure-resource bewaken met Azure Monitor
 [Azure Monitor](../overview.md) begint met het verzamelen van gegevens van Azure-resources op het moment dat ze worden gemaakt. In deze quickstart krijgt u een beknopt overzicht van de gegevens die automatisch worden verzameld voor een resource en ziet u hoe u deze kunt weergeven in Azure Portal. U kunt later een configuratie toevoegen voor het verzamelen van aanvullende gegevens. Via het menu van Azure Monitor kunt u ook dezelfde hulpprogramma's gebruiken voor toegang tot gegevens die zijn verzameld voor alle resources in uw abonnement.
@@ -67,7 +67,7 @@ Metrische gegevens zijn numerieke waarden waarmee een bepaald aspect van uw reso
 
 
 ## <a name="next-steps"></a>Volgende stappen
-In deze quickstart hebt u het activiteitenlogboek en de metrische gegevens weergegeven voor een Azure-resource die automatisch worden verzameld door Azure Monitor. Ga door naar de volgende quickstart waarin wordt uitgelegd hoe u het activiteitenlogboek kunt verzamelen in een Log Analytics-werkruimte, waar de gegevens kunnen worden geanalyseerd met behulp van [logboekquery's](../log-query/log-query-overview.md).
+In deze quickstart hebt u het activiteitenlogboek en de metrische gegevens weergegeven voor een Azure-resource die automatisch worden verzameld door Azure Monitor. Ga door naar de volgende quickstart waarin wordt uitgelegd hoe u het activiteitenlogboek kunt verzamelen in een Log Analytics-werkruimte, waar de gegevens kunnen worden geanalyseerd met behulp van [logboekquery's](../logs/log-query-overview.md).
 
 > [!div class="nextstepaction"]
-> [Azure-activiteitenlogboek naar Log Analytics-werkruimte verzenden](../learn/quick-collect-activity-log-portal.md)
+> [Azure-activiteitenlogboek naar Log Analytics-werkruimte verzenden](./quick-collect-activity-log-portal.md)

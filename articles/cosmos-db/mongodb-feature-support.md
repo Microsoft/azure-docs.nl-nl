@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 10/16/2019
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: 652be939136139620f6ec024fe98463113c6fb4a
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 61c034d6365909ca6255adcdc0c75e5a8ddd6cb4
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101657516"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101692242"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-32-version-supported-features-and-syntax"></a>De API van Azure Cosmos DB voor MongoDB (versie 3.2): ondersteunde functies en syntaxis
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -22,7 +22,7 @@ Azure Cosmos DB is de wereldwijd gedistribueerde multimodel-databaseservice van 
 Door gebruik te maken van de API van Azure Cosmos DB voor MongoDB hebt u de beschikking over de voordelen van de vertrouwde MongoDB, met alle zakelijke mogelijkheden die Cosmos DB biedt: [wereldwijde distributie](distribute-data-globally.md), [automatische sharding](partitioning-overview.md), garanties voor beschikbaarheid en latentie, automatisch indexeren van alle velden, versleuteling van niet-actieve gegevens, het maken van back-ups, en meer.
 
 > [!NOTE]
-> Dit artikel is voor de API van Azure Cosmos DB voor MongoDB 3.2. Zie voor MongoDB 3,6 en 4,0 versies [MongoDB 3,6 ondersteunde functies en syntaxis](mongodb-feature-support-36.md) en [MongoDb 4,0 ondersteunde functies en syntaxis](mongodb-feature-support-40.md) artikelen.
+> Versie 3,2 van de Cosmos DB-API voor MongoDB heeft geen huidige plannen voor end-of-Life (EOL). De minimale kennisgeving voor een toekomstige EOL is drie jaar.
 
 ## <a name="protocol-support"></a>Ondersteuning voor protocol
 

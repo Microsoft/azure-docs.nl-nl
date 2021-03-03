@@ -6,12 +6,12 @@ author: cweining
 ms.author: cweining
 ms.date: 03/07/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 6e926211a0d86fef55608ede574dca53487f267c
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: c9813108c05cabbd071a9d919452682bd6ad69e7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98732724"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101731949"
 ---
 # <a name="troubleshoot-problems-enabling-application-insights-snapshot-debugger-or-viewing-snapshots"></a><a id="troubleshooting"></a> Problemen oplossen met het inschakelen van Application Insights Snapshot Debugger of het weer geven van moment opnamen
 Als u Application Insights Snapshot Debugger voor uw toepassing hebt ingeschakeld, maar geen moment opnamen voor uitzonde ringen ziet, kunt u deze instructies gebruiken om problemen op te lossen.
@@ -35,9 +35,10 @@ Als het probleem hiermee niet is opgelost, raadpleegt u de volgende hand matige 
 
 Zorg ervoor dat u de juiste instrumentatie sleutel gebruikt in de gepubliceerde toepassing. Normaal gesp roken wordt de instrumentatie sleutel gelezen uit het ApplicationInsights.config-bestand. Controleer of de waarde gelijk is aan de instrumentatie sleutel voor de Application Insights bron die u in de portal ziet.
 
-## <a name="check-ssl-client-settings-aspnet"></a><a id="SSL"></a>SSL-client instellingen controleren (ASP.NET)
+## <a name="check-tlsssl-client-settings-aspnet"></a><a id="SSL"></a>TLS/SSL-client instellingen controleren (ASP.NET)
 
-Als u een ASP.NET-toepassing hebt gehost in Azure App Service of in IIS op een virtuele machine, kan uw toepassing geen verbinding maken met de Snapshot Debugger-service vanwege een ontbrekend SSL-beveiligings protocol.
+Als u een ASP.NET-toepassing hebt die wordt gehost in Azure App Service of in IIS op een virtuele machine, kan uw toepassing geen verbinding maken met de Snapshot Debugger-service vanwege een ontbrekend SSL-beveiligings protocol.
+
 [Het snapshot debugger-eind punt vereist TLS-versie 1,2](snapshot-debugger-upgrade.md?toc=/azure/azure-monitor/toc.json). De set SSL-beveiligings protocollen is een van de quirks die is ingeschakeld door de httpRuntime targetFramework-waarde in de sectie System. Web van web.config. Als de httpRuntime targetFramework is ingesteld op 4.5.2 of lager, is TLS 1,2 niet standaard opgenomen.
 
 > [!NOTE]
@@ -64,6 +65,10 @@ Als u een preview-versie van .NET Core gebruikt of als uw toepassing verwijst na
 
 ## <a name="check-the-diagnostic-services-site-extension-status-page"></a>De status pagina van de site-uitbrei ding voor diagnostische services controleren
 Als Snapshot Debugger via het [deel venster Application Insights](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json) in de portal is ingeschakeld, is het ingeschakeld door de site-extensie van de diagnostische services.
+
+> [!NOTE]
+> Voor codeloze installatie van Application Insights Snapshot Debugger volgt het .NET core-ondersteunings beleid.
+> Zie [.net core-ondersteunings beleid](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)voor meer informatie over ondersteunde Runtimes.
 
 U kunt de pagina status van deze uitbrei ding controleren door naar de volgende URL te gaan: `https://{site-name}.scm.azurewebsites.net/DiagnosticServices`
 

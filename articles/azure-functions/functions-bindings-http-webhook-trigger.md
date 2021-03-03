@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/21/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: e64f8cded851427636a19e16cccd78932dd6baac
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: a9bb87206ccb0dca56c1744d5578eac7a17418c7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054954"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101726390"
 ---
 # <a name="azure-functions-http-trigger"></a>HTTP-trigger Azure Functions
 
@@ -751,7 +751,7 @@ In de volgende configuratie ziet u hoe de `{id}` para meter wordt door gegeven a
 
 Wanneer u route parameters gebruikt, `invoke_URL_template` wordt er automatisch een gemaakt voor uw functie. Uw clients kunnen de URL-sjabloon gebruiken om inzicht te krijgen in de para meters die moeten worden door gegeven in de URL wanneer de functie wordt aangeroepen met behulp van de URL. Navigeer naar een van de functies die door HTTP worden geactiveerd in de [Azure Portal](https://portal.azure.com) en selecteer **functie-URL ophalen**.
 
-U kunt via een programma toegang krijgen tot de `invoke_URL_template` met behulp van de Azure Resource Manager-api's voor [lijst functies](https://docs.microsoft.com/rest/api/appservice/webapps/listfunctions) of [Get-functie](https://docs.microsoft.com/rest/api/appservice/webapps/getfunction).
+U kunt via een programma toegang krijgen tot de `invoke_URL_template` met behulp van de Azure Resource Manager-api's voor [lijst functies](/rest/api/appservice/webapps/listfunctions) of [Get-functie](/rest/api/appservice/webapps/getfunction).
 
 ## <a name="working-with-client-identities"></a>Werken met client identiteiten
 

@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: tutorial
-ms.date: 10/16/2020
+ms.date: 03/01/2021
 ms.author: alkohli
-ms.openlocfilehash: dfbc63ccbdf6f0a8abe1e955b43240d799d6783d
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
-ms.translationtype: HT
+ms.openlocfilehash: 948005942be193c8b15c363282aa06c006eb244e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96580299"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101727614"
 ---
 # <a name="tutorial-provision-azure-data-box-gateway-in-vmware"></a>Zelfstudie: Azure Data Box Gateway inrichten in VMware
 
@@ -55,7 +55,7 @@ Voordat u een virtueel apparaat implementeert, controleert u of:
 * Het hostsysteem kan de volgende resources reserveren voor het inrichten van uw virtuele apparaat:
 
   * Minimaal 4 kerngeheugens.
-  * Ten minste 8 GB RAM-geheugen.
+  * Ten minste 8 GB RAM-geheugen. We raden u ten zeerste aan om ten minste 16 GB RAM-geheugen.
   * Eén netwerkinterface.
   * Een besturingssysteemschijf van 250 GB.
   * Een virtuele schijf van 2 TB voor systeemgegevens

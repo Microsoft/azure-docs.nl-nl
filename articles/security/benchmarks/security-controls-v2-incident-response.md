@@ -4,19 +4,21 @@ description: Reactie van Azure Security Bench Mark v2-incident
 author: msmbaldwin
 ms.service: security
 ms.topic: conceptual
-ms.date: 09/20/2020
+ms.date: 002/22/2021
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 043e365bfe27db516a42386a91bc0433e27e2068
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: 40a88349040482b3325e63d7035dea35df444cdb
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97368831"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101698583"
 ---
 # <a name="security-control-v2-incident-response"></a>Beveiligings controle v2: reactie op incidenten
 
 Reactie op incidenten heeft betrekking op besturings elementen in de levens cyclus van incidenten-voor bereiding, detectie en analyse, insluiting en activiteiten na incidenten. Dit geldt ook voor het gebruik van Azure-Services, zoals Azure Security Center en Sentinel, om het respons proces van het incident te automatiseren.
+
+Als u wilt zien welke ingebouwde Azure Policy van toepassing is, raadpleegt u [de details van de Azure Security Bench Mark compliantie van de naleving van de regelgeving: reactie op incidenten](../../governance/policy/samples/azure-security-benchmark#incident-response)
 
 ## <a name="ir-1-preparation--update-incident-response-process-for-azure"></a>IR-1: Voorbereiding: responsproces voor incidenten bijwerken voor Azure
 
@@ -38,7 +40,7 @@ Zorg ervoor dat uw organisatie processen heeft om te reageren op beveiligings in
 
 - [Incidentvoorbereiding](/azure/cloud-adoption-framework/organize/cloud-security-incident-preparation)
 
-- [Informatie over bedreigingen](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
+- [Bedreigings informatie](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
 
 ## <a name="ir-2-preparation--setup-incident-notification"></a>IR-2: Voorbereiding: melding van incidenten instellen
 
@@ -64,7 +66,7 @@ Contact gegevens voor beveiligings incidenten in Azure Security Center instellen
 |--|--|--|--|
 | IR-3 | 19,6 | IR-4, IR-5 |
 
-Zorg ervoor dat u een proces hebt om waarschuwingen van hoge kwaliteit te maken en de kwaliteit van waarschuwingen te meten. Zo kunt u leren van eerdere incidenten en prioriteit toekennen aan waarschuwingen voor analisten, zodat ze geen tijd verspillen aan fout-positieven. 
+Zorg ervoor dat u een proces hebt om waarschuwingen van hoge kwaliteit te maken en de kwaliteit van waarschuwingen te meten. Zo kunt u lessen uit eerdere incidenten ontdekken en waarschuwingen voor analisten prioriteiten geven, zodat ze geen tijd verspillen op valse positieven. 
 
 Waarschuwingen van hoge kwaliteit kunnen worden samengesteld op basis van ervaringen met eerdere incidenten, gevalideerde communitybronnen, en tools die zijn ontworpen om waarschuwingen te genereren en op te schonen door verschillende signaalbronnen samen te voegen en te correleren. 
 
@@ -84,7 +86,7 @@ Exporteer de waarschuwingen en aanbevelingen van Azure Security Center met behul
 
 - [Incidentvoorbereiding](/azure/cloud-adoption-framework/organize/cloud-security-incident-preparation)
 
-- [Informatie over bedreigingen](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
+- [Bedreigings informatie](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
 
 ## <a name="ir-4-detection-and-analysis--investigate-an-incident"></a>IR-4: Detectie en analyse: een incident onderzoeken
 
@@ -92,7 +94,7 @@ Exporteer de waarschuwingen en aanbevelingen van Azure Security Center met behul
 |--|--|--|--|
 | IR-4 | 19 | IR-4 |
 
-Zorg ervoor dat analisten verschillende gegevens bronnen kunnen opvragen en gebruiken bij het onderzoeken van mogelijke incidenten, om een volledig overzicht te maken van wat er is gebeurd. Er moeten verschillende logboeken worden verzameld om de activiteiten van een mogelijke aanvaller in de kill chain te volgen om zo blinde vlekken te voorkomen.  U moet er ook voor zorgen dat inzichten en resultaten worden vastgelegd voor andere analisten, zodat deze kunnen worden geraadpleegd als historische naslaginformatie.  
+Zorg ervoor dat analisten verschillende gegevens bronnen kunnen opvragen en gebruiken bij het onderzoeken van mogelijke incidenten, om een volledig overzicht te maken van wat er is gebeurd. Er moeten verschillende logboeken worden verzameld om de activiteiten van een mogelijke aanvaller in de kill chain te volgen om zo blinde vlekken te voorkomen. U moet er ook voor zorgen dat inzichten en resultaten worden vastgelegd voor andere analisten, zodat deze kunnen worden geraadpleegd als historische naslaginformatie.
 
 De gegevensbronnen voor onderzoek zijn niet alleen de gecentraliseerde logboekbronnen die al worden verzameld door de services binnen het bereik en de actieve systemen, maar kunnen ook de volgende zijn:
 
@@ -124,19 +126,19 @@ Azure Sentinel biedt uitgebreide voorzieningen voor gegevensanalyse voor vrijwel
 
 - [Incidentvoorbereiding](/azure/cloud-adoption-framework/organize/cloud-security-incident-preparation)
 
-- [Informatie over bedreigingen](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
+- [Bedreigings informatie](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
 
 ## <a name="ir-5-detection-and-analysis--prioritize-incidents"></a>IR-5: Detectie en analyse: prioriteiten toekennen aan incidenten
 
 | Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
-| IR-5 | 19,8 | CA-2, IR-4 |
+| IR-5 | 19.8 | CA-2, IR-4 |
 
 Bied de context aan analisten waarop incidenten zich richten op basis van ernst van waarschuwingen en de gevoeligheid van een activa. 
 
 Azure Security Center wijst aan elke waarschuwing een ernst toe om u te helpen bepalen welke waarschuwingen het eerst moeten worden onderzocht. De ernst is gebaseerd op hoeveel vertrouwen Security Center heeft in de zoekactie of de analysefunctie die is gebruikt om de waarschuwing te genereren, evenals in welke mate kan worden aangetoond dat er sprake is van schadelijke opzet achter de activiteit die tot de waarschuwing heeft geleid.
 
-Daarnaast kunt u resources markeren met behulp van tags en een naamgevingssysteem opzetten om Azure-resources te identificeren en categoriseren, met name voor resources die gevoelige gegevens verwerken.  Het is uw verantwoordelijkheid om prioriteit te geven aan het oplossen van waarschuwingen op basis van de ernst van de Azure-resources en -omgeving waarin het incident heeft plaatsgevonden.
+Daarnaast kunt u resources markeren met behulp van tags en een naamgevingssysteem opzetten om Azure-resources te identificeren en categoriseren, met name voor resources die gevoelige gegevens verwerken. Het is uw verantwoordelijkheid om prioriteit te geven aan het oplossen van waarschuwingen op basis van de ernst van de Azure-resources en -omgeving waarin het incident heeft plaatsgevonden.
 
 - [Beveiligingswaarschuwingen in Azure Security Center](../../security-center/security-center-alerts-overview.md)
 
@@ -150,7 +152,7 @@ Daarnaast kunt u resources markeren met behulp van tags en een naamgevingssystee
 
 - [Incidentvoorbereiding](/azure/cloud-adoption-framework/organize/cloud-security-incident-preparation)
 
-- [Informatie over bedreigingen](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
+- [Bedreigings informatie](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
 
 ## <a name="ir-6-containment-eradication-and-recovery--automate-the-incident-handling"></a>IR-6: Insluiting, uitschakeling en herstel: het afhandelen van incidenten automatiseren
 
@@ -174,4 +176,4 @@ Automatiseer hand matige terugkerende taken om de reactie tijd te versnellen en 
 
 - [Incidentvoorbereiding](/azure/cloud-adoption-framework/organize/cloud-security-incident-preparation)
 
-- [Informatie over bedreigingen](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
+- [Bedreigings informatie](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)

@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 12/15/2020
 ms.custom: devx-track-java
 ms.author: pafarley
-ms.openlocfilehash: 6eec9cf199068db6b87e69dd97dd0e105f629a14
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: c8435d250f95f861f2a84e91d673eb59c3a6d44b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98948567"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750108"
 ---
 <a name="HOLTop"></a>
 
@@ -105,7 +105,7 @@ Voeg in de **hoofdmethode** van de toepassing aanroepen toe voor de methoden die
 [!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_maincalls)]
 
 > [!div class="nextstepaction"]
-> [Ik heb de client ingesteld](?success=set-up-client#object-model) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=set-up-client)
+> [Ik heb de client ingesteld](?success=set-up-client#object-model) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Java&Section=set-up-client)
 
 ## <a name="object-model"></a>Objectmodel
 
@@ -132,7 +132,7 @@ Instantieer in een nieuwe methode een [ComputerVisionClient](/java/api/com.micro
 [!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_auth)]
 
 > [!div class="nextstepaction"]
-> [Ik heb de client geverifieerd](?success=authenticate-client#analyze-an-image) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=authenticate-client)
+> [Ik heb de client geverifieerd](?success=authenticate-client#analyze-an-image) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Java&Section=authenticate-client)
 
 ## <a name="analyze-an-image"></a>Een afbeelding analyseren
 
@@ -215,7 +215,7 @@ Met de volgende code wordt informatie over het type afbeelding afgedrukt&mdash;,
 [!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_imagetype)]
 
 > [!div class="nextstepaction"]
-> [Ik heb een afbeelding geanalyseerd](?success=analyze-image#read-printed-and-handwritten-text) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=analyze-image)
+> [Ik heb een afbeelding geanalyseerd](?success=analyze-image#read-printed-and-handwritten-text) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Java&Section=analyze-image)
 
 ## <a name="read-printed-and-handwritten-text"></a>Afgedrukte en handgeschreven tekst lezen
 
@@ -261,7 +261,7 @@ Voeg tenslotte de andere gebruikte help-methode toe, waarmee de bewerkings-ID ui
 [!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_opid_extract)]
 
 > [!div class="nextstepaction"]
-> [Ik heb tekst gelezen](?success=read-printed-handwritten-text#run-the-application) [Er is een fout opgetreden](https://www.research.net/r/7QYZKHL?issue=read-printed-handwritten-text)
+> [Ik heb tekst gelezen](?success=read-printed-handwritten-text#run-the-application) [Er is een fout opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Java&Section=read-printed-handwritten-text)
 
 ## <a name="run-the-application"></a>De toepassing uitvoeren
 
@@ -278,7 +278,7 @@ gradle run
 ```
 
 > [!div class="nextstepaction"]
-> [Ik heb de toepassing uitgevoerd](?success=run-the-application#clean-up-resources) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=run-the-application)
+> [Ik heb de toepassing uitgevoerd](?success=run-the-application#clean-up-resources) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Java&Section=run-the-application)
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -288,7 +288,7 @@ Als u een Cognitive Services-abonnement wilt opschonen en verwijderen, kunt u de
 * [Azure-CLI](../../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
 > [!div class="nextstepaction"]
-> [Ik heb resources opgeschoond](?success=clean-up-resources#next-steps) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=clean-up-resources)
+> [Ik heb resources opgeschoond](?success=clean-up-resources#next-steps) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Java&Section=clean-up-resources)
 
 ## <a name="next-steps"></a>Volgende stappen
 

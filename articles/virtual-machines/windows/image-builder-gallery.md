@@ -3,23 +3,23 @@ title: Azure Image Builder gebruiken met een galerie met installatie kopieën vo
 description: Maak installatie kopieën van de gedeelde Azure-galerie met behulp van Azure Image Builder en Azure PowerShell.
 author: cynthn
 ms.author: cynthn
-ms.date: 05/05/2020
+ms.date: 03/02/2021
 ms.topic: how-to
 ms.service: virtual-machines
 ms.subervice: image-builder
 ms.colletion: windows
-ms.openlocfilehash: fd30c2bf4e2c0bc04850704e412aad1db2b10143
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: e8caf9f742217161c60ce90351989999f18adabb
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101677248"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101694084"
 ---
 # <a name="preview-create-a-windows-image-and-distribute-it-to-a-shared-image-gallery"></a>Voor beeld: een Windows-installatie kopie maken en deze distribueren naar een gedeelde installatie kopie galerie 
 
 In dit artikel wordt uitgelegd hoe u de opbouw functie voor installatie kopieën van Azure en Azure PowerShell kunt gebruiken om een installatie kopie versie te maken in een [Galerie met gedeelde afbeeldingen](../shared-image-galleries.md)en vervolgens de installatie kopie wereld wijd te distribueren. U kunt dit ook doen met behulp van de [Azure cli](../linux/image-builder-gallery.md).
 
-Er wordt een JSON-sjabloon gebruikt om de installatie kopie te configureren. Het JSON-bestand dat we gebruiken, is hier: [armTemplateWinSIG.jsop](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image/armTemplateWinSIG.json). We gaan een lokale versie van de sjabloon downloaden en bewerken, zodat dit artikel wordt geschreven met behulp van een lokale Power shell-sessie.
+Er wordt een JSON-sjabloon gebruikt om de installatie kopie te configureren. Het JSON-bestand dat we gebruiken, is hier: [armTemplateWinSIG.jsop](https://raw.githubusercontent.com/azure/azvmimagebuilder/master/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image/armTemplateWinSIG.json). We gaan een lokale versie van de sjabloon downloaden en bewerken, zodat dit artikel wordt geschreven met behulp van een lokale Power shell-sessie.
 
 De sjabloon maakt gebruik van [sharedImage](../linux/image-builder-json.md#distribute-sharedimage) als de waarde voor de `distribute` sectie van de sjabloon om de installatie kopie naar een galerie met gedeelde afbeeldingen te distribueren.
 
@@ -53,6 +53,7 @@ Get-AzResourceProvider -ProviderNamespace Microsoft.VirtualMachineImages | Forma
 Get-AzResourceProvider -ProviderNamespace Microsoft.Storage | Format-table -Property ResourceTypes,RegistrationState 
 Get-AzResourceProvider -ProviderNamespace Microsoft.Compute | Format-table -Property ResourceTypes,RegistrationState
 Get-AzResourceProvider -ProviderNamespace Microsoft.KeyVault | Format-table -Property ResourceTypes,RegistrationState
+Get-AzResourceProvider -ProviderNamespace Microsoft.Network | Format-table -Property ResourceTypes,RegistrationState
 ```
 
 Als ze niet retour neren `Registered` , gebruikt u het volgende om de providers te registreren:
@@ -62,6 +63,12 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.VirtualMachineImages
 Register-AzResourceProvider -ProviderNamespace Microsoft.Storage
 Register-AzResourceProvider -ProviderNamespace Microsoft.Compute
 Register-AzResourceProvider -ProviderNamespace Microsoft.KeyVault
+Register-AzResourceProvider -ProviderNamespace Microsoft.Network
+```
+
+Power shell-modules installeren:
+```powerShell
+'Az.ImageBuilder', 'Az.ManagedServiceIdentity' | ForEach-Object {Install-Module -Name $_ -AllowPrerelease}
 ```
 
 ## <a name="create-variables"></a>Variabelen maken
@@ -123,7 +130,7 @@ $identityNamePrincipalId=$(Get-AzUserAssignedIdentity -ResourceGroupName $imageR
 Met deze opdracht wordt een Azure Role definition-sjabloon gedownload en wordt de sjabloon bijgewerkt met de para meters die u eerder hebt opgegeven.
 
 ```powershell
-$aibRoleImageCreationUrl="https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/solutions/12_Creating_AIB_Security_Roles/aibRoleImageCreation.json"
+$aibRoleImageCreationUrl="https://raw.githubusercontent.com/azure/azvmimagebuilder/master/solutions/12_Creating_AIB_Security_Roles/aibRoleImageCreation.json"
 $aibRoleImageCreationPath = "aibRoleImageCreation.json"
 
 # download config
@@ -190,7 +197,7 @@ Down load de JSON-sjabloon en configureer deze met de variabelen.
 $templateFilePath = "armTemplateWinSIG.json"
 
 Invoke-WebRequest `
-   -Uri "https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image/armTemplateWinSIG.json" `
+   -Uri "https://raw.githubusercontent.com/azure/azvmimagebuilder/master/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image/armTemplateWinSIG.json" `
    -OutFile $templateFilePath `
    -UseBasicParsing
 
@@ -220,7 +227,7 @@ Uw sjabloon moet worden verzonden naar de service. Hierdoor worden alle afhankel
 New-AzResourceGroupDeployment `
    -ResourceGroupName $imageResourceGroup `
    -TemplateFile $templateFilePath `
-   -apiversion "2019-05-01-preview" `
+   -apiversion "2020-02-14" `
    -imageTemplateName $imageTemplateName `
    -svclocation $location
 ```
@@ -232,14 +239,17 @@ Invoke-AzResourceAction `
    -ResourceName $imageTemplateName `
    -ResourceGroupName $imageResourceGroup `
    -ResourceType Microsoft.VirtualMachineImages/imageTemplates `
-   -ApiVersion "2019-05-01-preview" `
+   -ApiVersion "2020-02-14" `
    -Action Run
 ```
 
 Het maken van de installatie kopie en het repliceren naar beide regio's kan enige tijd duren. Wacht tot dit onderdeel is voltooid voordat u doorgaat met het maken van een virtuele machine.
 
-Zie het [Leesmij-bestand](https://github.com/danielsollondon/azvmimagebuilder/blob/master/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image/readme.md#get-status-of-the-image-build-and-query) voor deze sjabloon op github voor informatie over opties voor het automatiseren van de status van de installatie kopie.
-
+Zie [Leesmij] voor informatie over opties voor het automatiseren van het ophalen van de installatie kopie status.
+```powershell
+Get-AzImageBuilderTemplate -ImageTemplateName $imageTemplateName -ResourceGroupName $imageResourceGroup |
+  Select-Object -Property Name, LastRunStatusRunState, LastRunStatusMessage, ProvisioningState
+```
 
 ## <a name="create-the-vm"></a>De VM maken
 
@@ -310,7 +320,7 @@ Verwijder eerst de sjabloon voor de resource groep, anders wordt de staging-reso
 Haal ResourceID van de afbeeldings sjabloon op. 
 
 ```powerShell
-$resTemplateId = Get-AzResource -ResourceName $imageTemplateName -ResourceGroupName $imageResourceGroup -ResourceType Microsoft.VirtualMachineImages/imageTemplates -ApiVersion "2019-05-01-preview"
+$resTemplateId = Get-AzResource -ResourceName $imageTemplateName -ResourceGroupName $imageResourceGroup -ResourceType Microsoft.VirtualMachineImages/imageTemplates -ApiVersion "2020-02-14"
 ```
 
 Verwijder de afbeeldings sjabloon.

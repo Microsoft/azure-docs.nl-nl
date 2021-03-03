@@ -1,15 +1,15 @@
 ---
 title: 'Quickstart: Nieuwe beleidstoewijzing met Python'
 description: In deze quickstart gebruikt u Python om een Azure Policy-toewijzing te maken om niet-compatibele resources te identificeren.
-ms.date: 10/14/2020
+ms.date: 03/02/2021
 ms.topic: quickstart
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: aa67b3a2bae2beb62daa6e64871411ee760f802b
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
-ms.translationtype: HT
+ms.openlocfilehash: e600f97dafdd1040c22b6e4d9e333f638334b663
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94832192"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101742327"
 ---
 # <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources-using-python"></a>Quickstart: Een beleidstoewijzing maken om niet-compatibele resources met Python te identificeren
 
@@ -40,7 +40,7 @@ Om Python te laten werken met Azure Policy, moet de bibliotheek worden toegevoeg
    az login
    ```
 
-1. Installeer in de gewenste Python-omgeving de vereiste bibliotheken voor Azure Resource Graph:
+1. Installeer in de gewenste python-omgeving de vereiste bibliotheken voor Azure Policy:
 
    ```bash
    # Add the Python library for Python
@@ -65,7 +65,7 @@ Om Python te laten werken met Azure Policy, moet de bibliotheek worden toegevoeg
 
 ## <a name="create-a-policy-assignment"></a>Een beleidstoewijzing maken
 
-In deze quickstart maakt u een beleidstoewijzing en wijst u de definitie **VM's controleren die niet gebruikmaken van beheerde schijven** (`06a78e20-9358-41c9-923c-fb736d382a4d`) toe. Deze beleidsdefinitie identificeert resources die niet voldoen aan de voorwaarden die zijn vastgelegd in de beleidsdefinitie.
+In deze quickstart maakt u een beleidstoewijzing en wijst u de definitie **Controleer virtuele machines die niet gebruikmaken van beheerde schijven** (`06a78e20-9358-41c9-923c-fb736d382a4d`) toe. Deze beleidsdefinitie identificeert resources die niet voldoen aan de voorwaarden die zijn vastgelegd in de beleidsdefinitie.
 
 Voer de volgende code uit om een nieuwe beleidstoewijzing te maken:
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/28/2020
 ms.author: jeedes
-ms.openlocfilehash: ab21c6dc95ef39e6273dac405ba58e748890fc1a
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
-ms.translationtype: HT
+ms.openlocfilehash: 547d96a9591b99318a74977106e99511c9c80507
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968429"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101687104"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sap-fiori"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met SAP Fiori
 
@@ -146,7 +146,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![Metagegevensbestand kiezen](common/browse-upload-metadata.png)
 
-    c. Wanneer het bestand met metagegevens is geüpload, worden de waarden voor **Id** en **Antwoord-URL** automatisch ingevuld in het deelvenster **Standaard SAML-configuratie**. Typ in het tvak **Aanmeldings-URL** een URL met het volgende patroon: `https:\//\<your company instance of SAP Fiori\>`.
+    c. Wanneer het bestand met metagegevens is geüpload, worden de waarden voor **Id** en **Antwoord-URL** automatisch ingevuld in het deelvenster **Standaard SAML-configuratie**. Typ in het tvak **Aanmeldings-URL** een URL met het volgende patroon: `https://<your company instance of SAP Fiori>`.
 
     > [!NOTE]
     > Een aantal klanten melden fouten met betrekking tot onjuist geconfigureerde waarden voor **Antwoord-URL**. Als u deze foutmelding krijgt, kunt u het volgende PowerShell-script gebruiken om de juiste Antwoord-URL voor uw exemplaar in te stellen:

@@ -10,6 +10,8 @@
       href: quickstart-create-templates-use-the-portal.md
     - name: Sjablonen maken - VS Code
       href: quickstart-create-templates-use-visual-studio-code.md
+    - name: Bicep-VS-code maken
+      href: quickstart-create-bicep-use-visual-studio-code.md
     - name: SjabSjabloonspecificaties maken en implementeren maken en implementeren
       href: quickstart-create-template-specs.md
     - name: Azure-services
@@ -141,7 +143,7 @@
             - name: Managed Applications
               href: ../managed-applications/publish-service-catalog-app.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Controleren
-              href: ../../azure-monitor/learn/quick-collect-activity-log-arm.md?toc=/azure/azure-resource-manager/templates/toc.json
+              href: ../../azure-monitor/essentials/quick-collect-activity-log-arm.md?toc=%2fazure%2fazure-resource-manager%2ftemplates%2ftoc.json
             - name: Beleid
               href: ../../governance/policy/assign-policy-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Portal
@@ -220,7 +222,7 @@
               href: ../../azure-signalr/signalr-quickstart-azure-signalr-service-arm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
 - name: Zelfstudies
   items:
-    - name: Sjablonen voor beginners
+    - name: JSON-sjablonen voor beginners
       items:
         - name: '1: Uw eerste sjabloon maken'
           href: template-tutorial-create-first-template.md
@@ -242,6 +244,28 @@
           href: template-tutorial-add-tags.md
         - name: '10: Parameterbestand gebruiken'
           href: template-tutorial-use-parameter-file.md
+    - name: Beginners Bicep
+      items:
+        - name: '1: Uw eerste sjabloon maken'
+          href: bicep-tutorial-create-first-bicep.md
+        - name: 2-para meters toevoegen
+          href: bicep-tutorial-add-parameters.md
+        - name: 3-sjabloon functies toevoegen
+          href: bicep-tutorial-add-functions.md
+        - name: 4-variabelen toevoegen
+          href: bicep-tutorial-add-variables.md
+        - name: '5: uitvoer toevoegen'
+          href: bicep-tutorial-add-outputs.md
+        - name: 6-geëxporteerde sjabloon gebruiken
+          href: bicep-tutorial-export-template.md
+        - name: 7-Quick Start-sjabloon gebruiken
+          href: bicep-tutorial-quickstart-template.md
+        - name: 8-labels toevoegen
+          href: bicep-tutorial-add-tags.md
+        - name: 9-parameter bestand gebruiken
+          href: bicep-tutorial-use-parameter-file.md
+        - name: 10-modules toevoegen
+          href: bicep-tutorial-add-modules.md
     - name: Implementatie
       items:
         - name: 1 - Een lokale sjabloon implementeren
@@ -298,6 +322,12 @@
   items:
     - name: Best practices voor sjablonen
       href: template-best-practices.md
+    - name: Bicep
+      items:
+        - name: Overzicht
+          href: bicep-overview.md
+        - name: Van JSON naar Bicep
+          href: compare-template-syntax.md
     - name: Veelgestelde vragen
       href: frequently-asked-questions.md
     - name: Sjablonen voor de consistentie van de cloud
@@ -333,6 +363,8 @@
           href: template-user-defined-functions.md
         - name: Resources
           items:
+            - name: Resource declaratie
+              href: resource-declaration.md
             - name: Naam en type van onderliggende resource
               href: child-resource-name-type.md
             - name: Voorwaardelijke implementatie
@@ -491,6 +523,8 @@
       items:
         - name: Alle functies
           href: template-functions.md
+        - name: Een functie (Bicep)
+          href: template-functions-any.md
         - name: Matrixfuncties
           href: template-functions-array.md
         - name: Vergelijkingsfuncties

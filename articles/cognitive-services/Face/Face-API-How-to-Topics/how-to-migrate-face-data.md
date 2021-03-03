@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: conceptual
-ms.date: 09/06/2019
+ms.date: 02/22/2021
 ms.author: nitinme
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b2b3ebdf61349d88d088ebeff5443a9c3e947d73
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: c8d3c5b10c670e7aa4f1fd00f47ef47e772416cc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98943621"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101706857"
 ---
 # <a name="migrate-your-face-data-to-a-different-face-subscription"></a>Uw gezichts gegevens migreren naar een ander gezichts abonnement
 

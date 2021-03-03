@@ -4,14 +4,14 @@ description: Meer informatie over het kopiëren van gegevens van ondersteunde br
 author: linda33wj
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 09/28/2020
+ms.date: 02/20/2021
 ms.author: jingwang
-ms.openlocfilehash: bba1ae991f2a4702a0d55a8dc3f6c7a44b9e7b65
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: ebafac024593767e884be908acbf0efb9ead50e9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100381338"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703300"
 ---
 # <a name="copy-data-from-and-to-oracle-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar Oracle met behulp van Azure Data Factory
 
@@ -67,8 +67,8 @@ De gekoppelde Oracle-Service ondersteunt de volgende eigenschappen:
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
 | type | De eigenschap type moet worden ingesteld op **Oracle**. | Ja |
-| connectionString | Hiermee geeft u de gegevens op die nodig zijn om verbinding te maken met het Oracle Database-exemplaar. <br/>U kunt ook een wacht woord in Azure Key Vault plaatsen en de `password` configuratie uit de Connection String halen. Raadpleeg de volgende voor beelden en [Sla referenties op in azure Key Vault](store-credentials-in-key-vault.md) met meer informatie. <br><br>**Ondersteund verbindings type**: u kunt de **Oracle-sid** of **Oracle-Service naam** gebruiken om uw data base te identificeren:<br>-Als u SID gebruikt: `Host=<host>;Port=<port>;Sid=<sid>;User Id=<username>;Password=<password>;`<br>-Als u de service naam gebruikt: `Host=<host>;Port=<port>;ServiceName=<servicename>;User Id=<username>;Password=<password>;`<br>Voor geavanceerde Oracle native-verbindings opties kunt u ervoor kiezen om een vermelding toe te voegen in [bestand Tnsnames. ORA](http://www.orafaq.com/wiki/Tnsnames.ora) -bestand op de Oracle-Server, en in ADF Oracle gekoppelde service, kiest u voor het gebruiken van de Oracle-Service naam verbindings type en configureert u de bijbehorende service naam. | Yes |
-| connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie vindt u in de sectie [vereisten](#prerequisites) . Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |No |
+| connectionString | Hiermee geeft u de gegevens op die nodig zijn om verbinding te maken met het Oracle Database-exemplaar. <br/>U kunt ook een wacht woord in Azure Key Vault plaatsen en de `password` configuratie uit de Connection String halen. Raadpleeg de volgende voor beelden en [Sla referenties op in azure Key Vault](store-credentials-in-key-vault.md) met meer informatie. <br><br>**Ondersteund verbindings type**: u kunt de **Oracle-sid** of **Oracle-Service naam** gebruiken om uw data base te identificeren:<br>-Als u SID gebruikt: `Host=<host>;Port=<port>;Sid=<sid>;User Id=<username>;Password=<password>;`<br>-Als u de service naam gebruikt: `Host=<host>;Port=<port>;ServiceName=<servicename>;User Id=<username>;Password=<password>;`<br>Voor geavanceerde Oracle native-verbindings opties kunt u ervoor kiezen om een vermelding toe te voegen in [bestand Tnsnames. ORA](http://www.orafaq.com/wiki/Tnsnames.ora) -bestand op de Oracle-Server, en in ADF Oracle gekoppelde service, kiest u voor het gebruiken van de Oracle-Service naam verbindings type en configureert u de bijbehorende service naam. | Ja |
+| connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie vindt u in de sectie [vereisten](#prerequisites) . Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |Nee |
 
 >[!TIP]
 >Als er een fout optreedt, wordt de waarde ' ORA-01025: UPI-para meter buiten bereik ' weer geven en is uw Oracle-versie 8i `WireProtocolMode=1` . Voeg aan uw connection string toe. Probeer het opnieuw.
@@ -173,7 +173,7 @@ Als u gegevens wilt kopiëren van en naar Oracle, stelt u de eigenschap type van
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de DataSet moet worden ingesteld op `OracleTable` . | Yes |
+| type | De eigenschap type van de DataSet moet worden ingesteld op `OracleTable` . | Ja |
 | schema | De naam van het schema. |Nee voor bron, ja voor Sink  |
 | tabel | De naam van de tabel/weer gave. |Nee voor bron, ja voor Sink  |
 | tableName | De naam van de tabel/weer gave met schema. Deze eigenschap wordt ondersteund voor achterwaartse compatibiliteit. Gebruik en voor nieuwe werk `schema` belasting `table` . | Nee voor bron, ja voor Sink |
@@ -212,14 +212,14 @@ Als u gegevens van Oracle wilt kopiëren, stelt u het bron type in de Kopieer ac
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet worden ingesteld op `OracleSource` . | Yes |
-| oracleReaderQuery | Gebruik de aangepaste SQL-query om gegevens te lezen. Een voorbeeld is `"SELECT * FROM MyTable"`.<br>Wanneer u gepartitioneerde belasting inschakelt, moet u alle bijbehorende ingebouwde partitie parameters in uw query koppelen. Zie de sectie [parallelle kopie van Oracle](#parallel-copy-from-oracle) voor voor beelden. | No |
-| partitionOptions | Hiermee geeft u de opties voor gegevens partities op die worden gebruikt voor het laden van gegevens van Oracle. <br>Toegestane waarden zijn: **geen** (standaard), **PhysicalPartitionsOfTable** en **DynamicRange**.<br>Wanneer een partitie optie is ingeschakeld (dat wil zeggen, niet `None` ), is de mate van parallelle uitvoering om gegevens uit een Oracle-data base gelijktijdig te laden, bepaald door de [`parallelCopies`](copy-activity-performance-features.md#parallel-copy) instelling in de Kopieer activiteit. | No |
-| partitionSettings | Geef de groep van de instellingen voor het partitioneren van gegevens op. <br>Toep assen wanneer de partitie optie niet is `None` . | No |
-| partitionNames | De lijst met fysieke partities die moeten worden gekopieerd. <br>Toep assen wanneer de partitie optie is `PhysicalPartitionsOfTable` . Als u een query gebruikt om de bron gegevens op te halen, Hook `?AdfTabularPartitionName` in de component WHERE. Zie de sectie [parallelle kopie van Oracle](#parallel-copy-from-oracle) voor een voor beeld. | No |
-| partitionColumnName | Geef de naam op van de bron kolom **in een geheel getal** dat wordt gebruikt voor het partitioneren van het bereik voor parallelle kopieën. Als u niets opgeeft, wordt de primaire sleutel van de tabel automatisch gedetecteerd en gebruikt als partitie kolom. <br>Toep assen wanneer de partitie optie is `DynamicRange` . Als u een query gebruikt om de bron gegevens op te halen, Hook  `?AdfRangePartitionColumnName` in de component WHERE. Zie de sectie [parallelle kopie van Oracle](#parallel-copy-from-oracle) voor een voor beeld. | No |
-| partitionUpperBound | De maximum waarde van de partitie kolom waaruit de gegevens moeten worden gekopieerd. <br>Toep assen wanneer de partitie optie is `DynamicRange` . Als u een query gebruikt om de bron gegevens op te halen, Hook `?AdfRangePartitionUpbound` in de component WHERE. Zie de sectie [parallelle kopie van Oracle](#parallel-copy-from-oracle) voor een voor beeld. | No |
-| partitionLowerBound | De minimum waarde van de partitie kolom waaruit de gegevens moeten worden gekopieerd. <br>Toep assen wanneer de partitie optie is `DynamicRange` . Als u een query gebruikt om de bron gegevens op te halen, Hook `?AdfRangePartitionLowbound` in de component WHERE. Zie de sectie [parallelle kopie van Oracle](#parallel-copy-from-oracle) voor een voor beeld. | No |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet worden ingesteld op `OracleSource` . | Ja |
+| oracleReaderQuery | Gebruik de aangepaste SQL-query om gegevens te lezen. Een voorbeeld is `"SELECT * FROM MyTable"`.<br>Wanneer u gepartitioneerde belasting inschakelt, moet u alle bijbehorende ingebouwde partitie parameters in uw query koppelen. Zie de sectie [parallelle kopie van Oracle](#parallel-copy-from-oracle) voor voor beelden. | Nee |
+| partitionOptions | Hiermee geeft u de opties voor gegevens partities op die worden gebruikt voor het laden van gegevens van Oracle. <br>Toegestane waarden zijn: **geen** (standaard), **PhysicalPartitionsOfTable** en **DynamicRange**.<br>Wanneer een partitie optie is ingeschakeld (dat wil zeggen, niet `None` ), is de mate van parallelle uitvoering om gegevens uit een Oracle-data base gelijktijdig te laden, bepaald door de [`parallelCopies`](copy-activity-performance-features.md#parallel-copy) instelling in de Kopieer activiteit. | Nee |
+| partitionSettings | Geef de groep van de instellingen voor het partitioneren van gegevens op. <br>Toep assen wanneer de partitie optie niet is `None` . | Nee |
+| partitionNames | De lijst met fysieke partities die moeten worden gekopieerd. <br>Toep assen wanneer de partitie optie is `PhysicalPartitionsOfTable` . Als u een query gebruikt om de bron gegevens op te halen, Hook `?AdfTabularPartitionName` in de component WHERE. Zie de sectie [parallelle kopie van Oracle](#parallel-copy-from-oracle) voor een voor beeld. | Nee |
+| partitionColumnName | Geef de naam op van de bron kolom **in een geheel getal** dat wordt gebruikt voor het partitioneren van het bereik voor parallelle kopieën. Als u niets opgeeft, wordt de primaire sleutel van de tabel automatisch gedetecteerd en gebruikt als partitie kolom. <br>Toep assen wanneer de partitie optie is `DynamicRange` . Als u een query gebruikt om de bron gegevens op te halen, Hook  `?AdfRangePartitionColumnName` in de component WHERE. Zie de sectie [parallelle kopie van Oracle](#parallel-copy-from-oracle) voor een voor beeld. | Nee |
+| partitionUpperBound | De maximum waarde van de partitie kolom waaruit de gegevens moeten worden gekopieerd. <br>Toep assen wanneer de partitie optie is `DynamicRange` . Als u een query gebruikt om de bron gegevens op te halen, Hook `?AdfRangePartitionUpbound` in de component WHERE. Zie de sectie [parallelle kopie van Oracle](#parallel-copy-from-oracle) voor een voor beeld. | Nee |
+| partitionLowerBound | De minimum waarde van de partitie kolom waaruit de gegevens moeten worden gekopieerd. <br>Toep assen wanneer de partitie optie is `DynamicRange` . Als u een query gebruikt om de bron gegevens op te halen, Hook `?AdfRangePartitionLowbound` in de component WHERE. Zie de sectie [parallelle kopie van Oracle](#parallel-copy-from-oracle) voor een voor beeld. | Nee |
 
 **Voor beeld: gegevens kopiëren met behulp van een basis query zonder partitie**
 
@@ -259,10 +259,10 @@ Als u gegevens wilt kopiëren naar Oracle, stelt u het sink-type in de Kopieer a
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de Sink voor kopieer activiteiten moet worden ingesteld op `OracleSink` . | Yes |
+| type | De eigenschap type van de Sink voor kopieer activiteiten moet worden ingesteld op `OracleSink` . | Ja |
 | writeBatchSize | Voegt gegevens in de SQL-tabel in wanneer de buffer grootte bereikt `writeBatchSize` .<br/>Toegestane waarden zijn integer (aantal rijen). |Nee (de standaard waarde is 10.000) |
-| writeBatchTimeout | De wacht tijd voor het volt ooien van de batch INSERT-bewerking voordat er een time-out optreedt.<br/>Toegestane waarden zijn time span. Een voor beeld is 00:30:00 (30 minuten). | No |
-| preCopyScript | Geef een SQL-query op voor het uitvoeren van de Kopieer activiteit die moet worden uitgevoerd voordat er in elke uitvoering gegevens naar Oracle worden geschreven. U kunt deze eigenschap gebruiken om de vooraf geladen gegevens op te schonen. | No |
+| writeBatchTimeout | De wacht tijd voor het volt ooien van de batch INSERT-bewerking voordat er een time-out optreedt.<br/>Toegestane waarden zijn time span. Een voor beeld is 00:30:00 (30 minuten). | Nee |
+| preCopyScript | Geef een SQL-query op voor het uitvoeren van de Kopieer activiteit die moet worden uitgevoerd voordat er in elke uitvoering gegevens naar Oracle worden geschreven. U kunt deze eigenschap gebruiken om de vooraf geladen gegevens op te schonen. | Nee |
 
 **Voorbeeld:**
 
@@ -363,7 +363,8 @@ Wanneer u gegevens van en naar Oracle kopieert, zijn de volgende toewijzingen va
 | LANGE ONBEWERKTE |Byte [] |
 | NCHAR |Tekenreeks |
 | NCLOB |Tekenreeks |
-| TELWOORD |Decimaal, teken reeks (als precisie > 28) |
+| NUMMER (p, s) |Decimaal, teken reeks (als p > 28) |
+| GETAL zonder precisie en schaal |Dubbel |
 | NVARCHAR2 |Tekenreeks |
 | UITGANG |Byte [] |
 | ROWID |Tekenreeks |

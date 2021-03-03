@@ -1,58 +1,38 @@
 ---
-title: 'Zelfstudie: De invoegtoepassing voor inkomend verkeer inschakelen voor een nieuw AKS-cluster met een nieuwe Azure Application Gateway-instantie'
-description: Gebruik deze zelfstudie om te leren hoe u de Azure CLI kunt gebruiken om de invoegtoepassing voor inkomend verkeer voor uw nieuwe AKS-cluster in kunt schakelen met een nieuwe Application Gateway-instantie.
+title: 'Zelf studie: de invoeg toepassing voor de ingangs controller inschakelen voor een nieuw AKS-cluster met een nieuwe Azure-toepassing gateway'
+description: Gebruik deze zelf studie voor meer informatie over het inschakelen van de invoeg toepassing ingangs controller voor het nieuwe AKS-cluster met een nieuw Application Gateway-exemplaar.
 services: application-gateway
 author: caya
 ms.service: application-gateway
 ms.topic: tutorial
-ms.date: 09/24/2020
+ms.date: 03/02/2021
 ms.author: caya
-ms.openlocfilehash: 775dc2133473354a1e534275fb0d813f299217d1
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: c37168c5165f5402dd4f57c8557bc2b7b3603533
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99593810"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101720185"
 ---
-# <a name="tutorial-enable-the-ingress-controller-add-on-preview-for-a-new-aks-cluster-with-a-new-application-gateway-instance"></a>Zelfstudie: De invoegtoepassing voor inkomend verkeer (preview) inschakelen voor een nieuw AKS-cluster met een nieuwe Application Gateway-instantie
+# <a name="tutorial-enable-the-ingress-controller-add-on-for-a-new-aks-cluster-with-a-new-application-gateway-instance"></a>Zelf studie: de invoeg toepassing voor de ingangs controller inschakelen voor een nieuw AKS-cluster met een nieuw Application Gateway-exemplaar
 
-U kunt de Azure CLI gebruiken om de invoegtoepassing [voor inkomend verkeer van Application Gateway (AGIC)](ingress-controller-overview.md) in te schakelen voor een [AKS-cluster](https://azure.microsoft.com/services/kubernetes-service/) (Azure Kubernetes Services). Deze invoegtoepassing is momenteel in preview.
+U kunt de Azure CLI gebruiken om de invoeg toepassing [Application Gateway ingangs controller (AGIC)](ingress-controller-overview.md) in te scha kelen voor een nieuw [Azure Kubernetes Services-cluster (AKS)](https://azure.microsoft.com/services/kubernetes-service/) .
 
 In deze zelfstudie maakt u een AKS-cluster waarvoor de AGIC-invoegtoepassing is ingeschakeld. Als u het cluster maakt, wordt automatisch een Azure Application Gateway-instantie gemaakt om te gebruiken. Vervolgens implementeert u een voorbeeldtoepassing die gebruikmaakt van de invoegtoepassing om via Application Gateway de toepassing beschikbaar te maken. 
 
-De invoegtoepassing biedt een veel snellere manier om AGIC voor uw AKS-cluster te implementeren dan [voorheen met behulp van helm](ingress-controller-overview.md#difference-between-helm-deployment-and-aks-add-on). Ze biedt ook een volledig beheerde ervaring.    
+De invoegtoepassing biedt een veel snellere manier om AGIC voor uw AKS-cluster te implementeren dan [voorheen met behulp van helm](ingress-controller-overview.md#difference-between-helm-deployment-and-aks-add-on). Ze biedt ook een volledig beheerde ervaring.
 
 In deze zelfstudie leert u het volgende:
 
 > [!div class="checklist"]
 > * Een resourcegroep maken. 
-> * Een nieuw AKS-cluster maken waarvoor de AGIC-invoegtoepassing is ingeschakeld. 
+> * Een nieuw AKS-cluster maken waarvoor de AGIC-invoegtoepassing is ingeschakeld.
 > * Een voorbeeldtoepassing implementeren met behulp van AGIC voor inkomend verkeer op het AKS-cluster.
 > * Controleren of de toepassing bereikbaar is via Application Gateway.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
-
- - Voor deze zelfstudie is versie 2.0.4 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd. Als u Azure CLI gebruikt, moet u de preview-extensie installeren in CLI met de volgende opdracht, als u dat nog niet hebt gedaan:
-    ```azurecli-interactive
-    az extension add --name aks-preview
-    ```
-
- - Registreer de functievlag *AKS-IngressApplicationGatewayAddon* door gebruik te maken van de opdracht [az feature register](/cli/azure/feature#az-feature-register), zoals in het volgende voorbeeld wordt gedemonstreerd. Zolang de invoegtoepassing nog in preview is, hoeft u dit slechts één keer per abonnement te doen.
-    ```azurecli-interactive
-    az feature register --name AKS-IngressApplicationGatewayAddon --namespace Microsoft.ContainerService
-    ```
-
-   Het kan enkele minuten duren voordat de status `Registered` wordt weergegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature#az-feature-register):
-    ```azurecli-interactive
-    az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/AKS-IngressApplicationGatewayAddon')].{Name:name,State:properties.state}"
-    ```
-
- - Wanneer u klaar bent, vernieuwt u de registratie van de resourceprovider Microsoft.ContainerService met behulp van de opdracht [az provider register](/cli/azure/provider#az-provider-register):
-    ```azurecli-interactive
-    az provider register --namespace Microsoft.ContainerService
-    ```
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
@@ -74,10 +54,10 @@ U gaat nu een nieuw AKS-cluster implementeren waarvoor de AGIC-invoegtoepassing 
 
 In het volgende voorbeeld implementeert u een nieuw AKS-cluster met de naam *myCluster* met behulp van [Azure CNI](../aks/concepts-network.md#azure-cni-advanced-networking) en [beheerde identiteiten](../aks/use-managed-identity.md). De AGIC-invoegtoepassing wordt ingeschakeld in de resourcegroep *myResourceGroup* die u hebt gemaakt. 
 
-Als u een nieuw AKS-cluster implementeert terwijl de AGIC-invoegtoepassing is ingeschakeld zonder dat u een bestaande Application Gateway-instantie opgeeft, wordt er automatisch een instantie van de Application Gateway Standard_v2-SKU gemaakt. U geeft dus ook de naam en de adresruimte van het subnet op van de Application Gateway-instantie. De naam van de Application Gateway-instantie wordt *myApplicationGateway* en de adresruimte van het subnet dat we gebruiken is 10.2.0.0/16. Zorg ervoor dat u aan het begin van deze zelfstudie de uitbreiding aks-preview hebt toegevoegd of bijgewerkt. 
+Als u een nieuw AKS-cluster implementeert terwijl de AGIC-invoegtoepassing is ingeschakeld zonder dat u een bestaande Application Gateway-instantie opgeeft, wordt er automatisch een instantie van de Application Gateway Standard_v2-SKU gemaakt. U geeft dus ook de naam en de adresruimte van het subnet op van de Application Gateway-instantie. De naam van de Application Gateway-instantie wordt *myApplicationGateway* en de adresruimte van het subnet dat we gebruiken is 10.2.0.0/16.
 
 ```azurecli-interactive
-az aks create -n myCluster -g myResourceGroup --network-plugin azure --enable-managed-identity -a ingress-appgw --appgw-name myApplicationGateway --appgw-subnet-prefix "10.2.0.0/16" --generate-ssh-keys
+az aks create -n myCluster -g myResourceGroup --network-plugin azure --enable-managed-identity -a ingress-appgw --appgw-name myApplicationGateway --appgw-subnet-cidr "10.2.0.0/16" --generate-ssh-keys
 ```
 
 Zie [dit referentiemateriaal](/cli/azure/aks#az-aks-create) voor meer informatie over het configureren van aanvullende parameters voor de opdracht `az aks create`. 

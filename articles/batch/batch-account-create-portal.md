@@ -2,14 +2,14 @@
 title: Een account maken in de Azure Portal
 description: Informatie over het maken van een Azure Batch-account in Azure Portal voor het uitvoeren van grootschalige parallelle workloads in de cloud
 ms.topic: how-to
-ms.date: 01/26/2021
+ms.date: 02/23/2021
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: bd9dd9b6d6d3a8d6938427b83528746ae5d09318
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 36759a0caef41af9307bf621a1b6b634ddf586cc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100368503"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703661"
 ---
 # <a name="create-a-batch-account-with-the-azure-portal"></a>Een Batch-account maken met behulp van Azure Portal
 
@@ -101,7 +101,7 @@ In de modus gebruikers abonnement is een [Azure Key Vault](../key-vault/general/
 
 Wanneer u het batch-account maakt in de modus gebruikers abonnement, geeft u **gebruikers abonnement** op als de pool toewijzings modus, selecteert u de Key Vault die u hebt gemaakt en schakelt u het selectie vakje Azure batch toegang tot de Key Vault toe.
 
-Als u liever hand matig toegang wilt verlenen aan de Key Vault, gaat u naar de sectie **toegangs beleid** van de Key Vault en selecteert u **toegangs beleid toevoegen**. Selecteer de koppeling naast **Principal selecteren** en zoek naar **Microsoft Azure batch** (toepassings-id **ddbf3205-c6bd-46ae-8127-60eb93363864**). Selecteer die principal en configureer vervolgens de **geheime machtigingen** via de vervolg keuzelijst. Aan Azure Batch moet mini maal de machtigingen **Get**, **List**, **set** en **Delete** worden opgegeven.
+Als u liever hand matig toegang wilt verlenen aan de Key Vault, gaat u naar de sectie **toegangs beleid** van de Key Vault en selecteert u **toegangs beleid toevoegen**. Selecteer de koppeling naast **Principal selecteren** en zoek naar **Microsoft Azure batch** (toepassings-id **ddbf3205-c6bd-46ae-8127-60eb93363864**). Selecteer die principal en configureer vervolgens de **geheime machtigingen** via de vervolg keuzelijst. Aan Azure Batch moet mini maal de machtigingen **Get**, **List**, **set** en **Delete** worden opgegeven. Voor [sleutel kluizen waarvoor zacht verwijderen is ingeschakeld](../key-vault/general/soft-delete-overview.md), moet Azure batch ook de machtiging **herstellen** hebben.
 
 :::image type="content" source="media/batch-account-create-portal/secret-permissions.png" alt-text="Scherm afbeelding van de selecties van geheime machtigingen voor Azure Batch":::
 

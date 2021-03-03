@@ -7,13 +7,13 @@ ms.author: bagol
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: conceptual
-ms.date: 02/04/2021
-ms.openlocfilehash: 9136947767bffb7bea800cdd2a735794baf8f329
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.date: 02/22/2021
+ms.openlocfilehash: 887245bbbefa1c0232313b638203206b623d506b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100007360"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101729705"
 ---
 # <a name="whats-new-in-azure-sentinel"></a>Wat is er nieuw in azure Sentinel
 
@@ -29,6 +29,37 @@ Genoteerde functies zijn momenteel beschikbaar als PREVIEW-versie. De [Aanvullen
 >
 > U kunt ook bijdragen leveren. Doe mee aan de [Azure-omgeving voor Sentinel-dreigingen github-Community](https://github.com/Azure/Azure-Sentinel/wiki).
 > 
+
+## <a name="february-2021"></a>Februari 2021
+
+- [UEBA Insights op de pagina entiteit](#ueba-insights-in-the-entity-page)
+- [Verbeterde incidenten zoeken](#improved-incident-search)
+
+### <a name="ueba-insights-in-the-entity-page"></a>UEBA Insights op de pagina entiteit
+
+De pagina's Details van de Azure-Sentinel-entiteit bieden een [inzichten venster](identify-threats-with-entity-behavior-analytics.md#entity-insights)waarin gedrags inzichten op de entiteit worden weer gegeven en snel afwijkingen en beveiligings Risico's kunnen worden geïdentificeerd.
+
+Als u [UEBA hebt ingeschakeld](ueba-enrichments.md)en een periode van ten minste vier dagen hebt geselecteerd, bevat dit Insights-deel venster nu ook de volgende nieuwe secties voor UEBA Insights:
+
+|Sectie  |Beschrijving  |
+|---------|---------|
+|**UEBA Insights**     | Een overzicht van afwijkende gebruikers activiteiten: <br>-Over geografische locaties, apparaten en omgevingen<br>-In periode en frequentie horizon taal, vergeleken met de eigen geschiedenis van de gebruiker <br>-Vergeleken met gedrag van peers <br>-Vergeleken met het gedrag van de organisatie     |
+|**Gebruikers peers op basis van lidmaatschap van een beveiligings groep**     |   Geeft een lijst van de peers van de gebruiker op basis van het lidmaatschap van een Azure AD-beveiligings groep, waarmee beveiligings bewerkingen teams kunnen maken van andere gebruikers die vergelijk bare machtigingen delen.  |
+|**Gebruikers toegangs machtigingen voor het Azure-abonnement**     |     Toont de toegangs machtigingen van de gebruiker voor de Azure-abonnementen die rechtstreeks toegankelijk zijn, of via Azure AD-groepen/service-principals.   |
+|**Bedreigings indicatoren met betrekking tot de gebruiker**     |  Een lijst met bekende bedreigingen met betrekking tot IP-adressen die worden weer gegeven in de activiteiten van de gebruiker. Bedreigingen worden weer gegeven op het type bedreiging en familie, en worden verrijkt door de Threat Intelligence-Service van micro soft.       |
+|     |         |
+
+### <a name="improved-incident-search"></a>Verbeterde incidenten zoeken
+
+We hebben de Azure-Zoek ervaring voor Sentinel-incidenten verbeterd, waardoor u sneller kunt navigeren door incidenten wanneer u een specifieke bedreiging onderzoekt.
+
+Bij het zoeken naar incidenten in azure Sentinel kunt u nu zoeken op de volgende incident Details:
+
+- Id
+- Titel
+- Product
+- Eigenaar
+- Tag
 
 ## <a name="january-2021"></a>Januari 2021
 
@@ -47,7 +78,7 @@ De Azure Sentinel Scheduled Analytics regel wizard biedt nu de volgende verbeter
 
 -   Een uitbreidbaar bewerkings venster dat u meer scherm ruimte biedt om uw query te bekijken.
 -   Het markeren van belang rijke woorden in uw query code.
--   Uitgebreide ondersteuning voor automatisch volt ooien.
+-   Uitgebreide ondersteuning voor automatisch aanvullen.
 -   Validatie van query's in realtime. Fouten in uw query worden nu weer gegeven als een rood blok in de schuif balk en als een rode stip op de naam van het tabblad **regel logica instellen** . Daarnaast kan een query met fouten niet worden opgeslagen.
 
 Zie voor meer informatie [zelf studie: Threats out-of-the-box detecteren](tutorial-detect-threats-built-in.md).
@@ -57,7 +88,7 @@ Azure Sentinel ondersteunt nu de nieuwe [AZ. SecurityInsights](https://www.power
 
 De **AZ. SecurityInsights** -module ondersteunt algemene Azure Sentinel use-cases, zoals interactie met incidenten voor het wijzigen van Statues, Ernst, eigenaar, enzovoort, het toevoegen van opmerkingen en labels aan incidenten en het maken van blad wijzers.
 
-We raden u aan om [Azure Resource Manager-sjablonen (arm)](/azure/azure-resource-manager/templates/) te gebruiken voor uw CI/cd-pijp lijn, de module **AZ. SecurityInsights** is handig voor taken na de implementatie en is bedoeld voor Soc Automation.  Uw SOC-automatisering kan bijvoorbeeld stappen bevatten voor het configureren van gegevens connectors, het maken van analyse regels of het toevoegen van automatiserings acties aan Analytics-regels.
+We raden u aan om [Azure Resource Manager-sjablonen (arm)](../azure-resource-manager/templates/index.yml) te gebruiken voor uw CI/cd-pijp lijn, de module **AZ. SecurityInsights** is handig voor taken na de implementatie en is bedoeld voor Soc Automation.  Uw SOC-automatisering kan bijvoorbeeld stappen bevatten voor het configureren van gegevens connectors, het maken van analyse regels of het toevoegen van automatiserings acties aan Analytics-regels.
 
 Zie de [documentatie van AZ. SecurityInsights Power shell](/powershell/module/az.securityinsights/)(Engelstalig) voor meer informatie, inclusief een volledige lijst en een beschrijving van de beschik bare cmdlets, parameter beschrijvingen en voor beelden.
 
@@ -85,7 +116,7 @@ Azure Sentinel ondersteunt nu toegewezen Log Analytics clusters als een implemen
 
 Met toegewezen clusters kunt u functies gebruiken zoals door de klant beheerde sleutels, lockbox, dubbele versleuteling en snellere query's in meerdere werk ruimten wanneer u meerdere werk ruimten op hetzelfde cluster hebt.
 
-Zie [Azure monitor specifieke clusters vastleggen in Logboeken](https://docs.microsoft.com/azure/azure-monitor/log-query/logs-dedicated-clusters)voor meer informatie.
+Zie [Azure monitor specifieke clusters vastleggen in Logboeken](../azure-monitor/logs/logs-dedicated-clusters.md)voor meer informatie.
 
 ### <a name="logic-apps-managed-identities"></a>Beheerde identiteiten van Logic apps
 
@@ -97,7 +128,7 @@ Azure Sentinel ondersteunt nu beheerde identiteiten voor de Azure Sentinel Logic
 
 Zie voor meer informatie:
 
-- [Verifiëren met beheerde identiteit in Azure Logic Apps](/azure/logic-apps/create-managed-service-identity)
+- [Verifiëren met beheerde identiteit in Azure Logic Apps](../logic-apps/create-managed-service-identity.md)
 - [Documentatie voor Azure Sentinel Logic Apps-Connector](/connectors/azuresentinel) 
 
 ### <a name="improved-rule-tuning-with-the-analytics-rule-preview-graphs-public-preview"></a>Verbeterde regel afstemming met de voorbeeld grafieken van Analytics-regels (open bare preview)
@@ -151,18 +182,18 @@ Azure Sentinel gebruikt de Log Analytics-agent voor het verzenden van gebeurteni
 > De Log Analytics-agent wordt soms ook wel de OMS-agent of de micro soft Monitoring Agent (MMA) genoemd. 
 > 
 
-Zie de [documentatie van log Analytics](/azure/azure-monitor/platform/log-analytics-agent) en de [release opmerkingen voor log Analytics agent](https://github.com/microsoft/OMS-Agent-for-Linux/releases)voor meer informatie.
+Zie de [documentatie van log Analytics](../azure-monitor/agents/log-analytics-agent.md) en de [release opmerkingen voor log Analytics agent](https://github.com/microsoft/OMS-Agent-for-Linux/releases)voor meer informatie.
 ## <a name="november-2020"></a>November 2020
 
 - [Uw Logic Apps Playbooks in azure-Sentinel controleren](#monitor-your-logic-apps-playbooks-in-azure-sentinel)
 - [Microsoft 365 Defender-connector (open bare preview)](#microsoft-365-defender-connector-public-preview)
 ### <a name="monitor-your-logic-apps-playbooks-in-azure-sentinel"></a>Uw Logic Apps Playbooks in azure-Sentinel controleren
 
-Azure Sentinel kan nu worden geïntegreerd met [Azure-logboek-apps](/azure/logic-apps/), een Cloud service die u helpt bij het plannen, automatiseren en organiseren van taken, bedrijfs processen en werk stromen.
+Azure Sentinel kan nu worden geïntegreerd met [Azure-logboek-apps](../logic-apps/index.yml), een Cloud service die u helpt bij het plannen, automatiseren en organiseren van taken, bedrijfs processen en werk stromen.
 
 Gebruik een Azure Logic-app in azure Sentinel als een Playbook, die automatisch kan worden aangeroepen wanneer een incident wordt gemaakt, of wanneer uitsorteren en werken met incidenten. 
 
-Om inzicht te krijgen in de status, prestaties en het gebruik van uw playbooks, inclusief alle die u toevoegt met Azure Logic Apps, hebben we een [Azure-werkmap](/azure/azure-monitor/platform/workbooks-overview) met de naam **playbooks Health Monitoring** toegevoegd. 
+Om inzicht te krijgen in de status, prestaties en het gebruik van uw playbooks, inclusief alle die u toevoegt met Azure Logic Apps, hebben we een [Azure-werkmap](../azure-monitor/visualize/workbooks-overview.md) met de naam **playbooks Health Monitoring** toegevoegd. 
 
 Gebruik de **Playbooks-status controle** werkmap om de status van uw Playbooks te controleren of om afwijkingen op te sporen in de hoeveelheid geslaagde of mislukte uitvoeringen. 
 
@@ -172,9 +203,9 @@ De **Playbooks Health Monitoring** -werkmap is nu beschikbaar in de Azure Sentin
 
 Zie voor meer informatie:
 
-- [Documentatie over Logic Apps](/azure/logic-apps/monitor-logic-apps-log-analytics#set-up-azure-monitor-logs)
+- [Documentatie over Logic Apps](../logic-apps/monitor-logic-apps-log-analytics.md#set-up-azure-monitor-logs)
 
-- [Azure Monitor-documentatie](/azure/azure-monitor/platform/activity-log#send-to-log-analytics-workspace)
+- [Azure Monitor-documentatie](../azure-monitor/essentials/activity-log.md#send-to-log-analytics-workspace)
 
 ### <a name="microsoft-365-defender-connector-public-preview"></a>Microsoft 365 Defender-connector (open bare preview)
  

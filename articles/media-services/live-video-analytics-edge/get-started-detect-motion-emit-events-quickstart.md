@@ -3,12 +3,12 @@ title: Aan de slag met Live Video Analytics in IoT Edge - Azure
 description: Deze quickstart laat zien hoe u aan de slag kunt met Live Video Analytics in IoT Edge. Leer hoe u beweging kunt detecteren in een live-videostream.
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: d9f2637166c3807e36f4304e9394bf2ecf91d88c
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 57edf1721249f839f5c781756b3e09bf59888dab
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99573803"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101730283"
 ---
 # <a name="quickstart-get-started---live-video-analytics-on-iot-edge"></a>Quickstart: Over Live Video Analytics in IoT Edge
 
@@ -69,10 +69,10 @@ Voor deze quickstart wordt u aangeraden gebruik te maken van het [installatiescr
     1. **Netwerk interface** : Hierdoor kan een virtuele machine van Azure communiceren met internet, Azure en andere resources.
     1. **Bastion-verbinding** : Hiermee kunt u verbinding maken met uw virtuele machine met behulp van uw browser en de Azure Portal.
     1. **Openbaar IP-adres** : Hiermee kunnen Azure-resources communiceren met internet en open bare Azure-Services
-    1. **Virtueel netwerk** : Hiermee kunnen veel soorten Azure-resources, zoals uw virtuele machine, veilig communiceren met elkaar, het internet en on-premises netwerken. Meer informatie over [virtuele netwerken](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview).
+    1. **Virtueel netwerk** : Hiermee kunnen veel soorten Azure-resources, zoals uw virtuele machine, veilig communiceren met elkaar, het internet en on-premises netwerken. Meer informatie over [virtuele netwerken](../../virtual-network/virtual-networks-overview.md).
     1. **IOT hub** : dit fungeert als een centrale Message hub voor bidirectionele communicatie tussen uw IOT-toepassing, IOT Edge modules en de apparaten die worden beheerd.
     1. **Media service-account** : dit helpt bij het beheren en streamen van media-inhoud in Azure.
-    1. **Opslag account** : u moet één primair opslag account hebben en u kunt elk gewenst aantal secundaire opslag accounts aan uw Media Services-account koppelen. Raadpleeg [Azure Storage-accounts met Azure Media Services-accounts](https://docs.microsoft.com/azure/media-services/latest/storage-account-concept) voor meer informatie.
+    1. **Opslag account** : u moet één primair opslag account hebben en u kunt elk gewenst aantal secundaire opslag accounts aan uw Media Services-account koppelen. Raadpleeg [Azure Storage-accounts met Azure Media Services-accounts](../latest/storage-account-concept.md) voor meer informatie.
     1. **Container Registry** : dit helpt bij het opslaan en beheren van uw persoonlijke docker-container installatie kopieën en gerelateerde artefacten.
 
 In de scriptuitvoer bevat een tabel met resources de naam van de IoT-hub. Zoek het resourcetype **`Microsoft.Devices/IotHubs`** en noteer de naam. U hebt deze naam nodig in de volgende stap.  

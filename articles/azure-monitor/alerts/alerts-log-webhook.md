@@ -7,16 +7,16 @@ services: monitoring
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.subservice: alerts
-ms.openlocfilehash: f90709431ea54a640554b642b96a63c7edac472e
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 19cf900b8e943b4f9ee69a6241ebc7ddb5a3dba6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610464"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101704392"
 ---
 # <a name="webhook-actions-for-log-alert-rules"></a>Webhook-acties voor waarschuwingsregels voor logboeken
 
-[Logboek waarschuwing](alerts-log.md) ondersteunt het [configureren van webhook-actie groepen](../platform/action-groups.md#webhook). In dit artikel wordt beschreven welke eigenschappen beschikbaar zijn en hoe u een aangepaste JSON-webhook configureert.
+[Logboek waarschuwing](alerts-log.md) ondersteunt het [configureren van webhook-actie groepen](./action-groups.md#webhook). In dit artikel wordt beschreven welke eigenschappen beschikbaar zijn en hoe u een aangepaste JSON-webhook configureert.
 
 > [!NOTE]
 > Aangepaste op JSON gebaseerde webhook wordt momenteel niet ondersteund in de API-versie `2020-05-01-preview`
@@ -47,7 +47,7 @@ Standaard eigenschappen van de webhook-actie en hun aangepaste JSON-parameter na
 | *Search query* |#searchquery |Zoek query in logboek die wordt gebruikt door de waarschuwings regel. |
 | *SearchResults* |"IncludeSearchResults": True|Records die worden geretourneerd door de query als een JSON-tabel, beperkt tot de eerste 1.000 records. "IncludeSearchResults": True wordt toegevoegd aan een aangepaste JSON-webhook-definitie als eigenschap op het hoogste niveau. |
 | *Dimensies* |"IncludeDimensions": True|Combi Naties van dimensie waarden die de waarschuwing hebben geactiveerd als JSON-gedeelte. "IncludeDimensions": True wordt toegevoegd aan een aangepaste JSON-webhook-definitie als eigenschap op het hoogste niveau. |
-| *Waarschuwings type*| #alerttype | Het type waarschuwings regel voor het logboek dat is geconfigureerd als [metrische meet waarde of aantal resultaten](../platform/alerts-unified-log.md#measure).|
+| *Waarschuwings type*| #alerttype | Het type waarschuwings regel voor het logboek dat is geconfigureerd als [metrische meet waarde of aantal resultaten](./alerts-unified-log.md#measure).|
 | *WorkspaceID* |#workspaceid |ID van uw Log Analytics-werk ruimte. |
 | *Toepassings-id* |#applicationid |ID van uw Application Insights-app. |
 | *Abonnements-id* |#subscriptionid |De ID van uw Azure-abonnement dat wordt gebruikt. |
@@ -84,7 +84,7 @@ In deze sectie vindt u voor beelden van nettoladingen voor webhooks voor logboek
 De volgende voor beeld-nettolading is voor een standaard webhook-actie die wordt gebruikt voor waarschuwingen op basis van Log Analytics:
 
 > [!NOTE]
-> De waarde van het veld ernst wordt gewijzigd als u bent [overgeschakeld naar de huidige scheduledQueryRules-API](../alerts/alerts-log-api-switch.md) van de [verouderde log Analytics alert-API](../platform/api-alerts.md).
+> De waarde van het veld ernst wordt gewijzigd als u bent [overgeschakeld naar de huidige scheduledQueryRules-API](../alerts/alerts-log-api-switch.md) van de [verouderde log Analytics alert-API](./api-alerts.md).
 
 ```json
 {
@@ -318,8 +318,8 @@ De volgende voor beeld-nettolading is voor een aangepaste webhook-actie voor een
 ```
 
 ## <a name="next-steps"></a>Volgende stappen
-- Meer informatie over [logboek waarschuwingen in azure-waarschuwingen](../platform/alerts-unified-log.md).
+- Meer informatie over [logboek waarschuwingen in azure-waarschuwingen](./alerts-unified-log.md).
 - Meer informatie over het [beheren van logboek waarschuwingen in azure](alerts-log.md).
-- Actie groepen maken en beheren [in azure](../platform/action-groups.md).
-- Meer informatie over [Application Insights](../log-query/log-query-overview.md).
-- Meer informatie over [logboek query's](../log-query/log-query-overview.md). 
+- Actie groepen maken en beheren [in azure](./action-groups.md).
+- Meer informatie over [Application Insights](../logs/log-query-overview.md).
+- Meer informatie over [logboek query's](../logs/log-query-overview.md).

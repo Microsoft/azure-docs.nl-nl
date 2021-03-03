@@ -1,17 +1,16 @@
 ---
 title: VMWare-bewaking oplossing in Azure Monitor | Microsoft Docs
 description: Meer informatie over hoe de VMWare-bewaking-oplossing kan helpen bij het beheren van Logboeken en het controleren van ESXi-hosts.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/04/2018
-ms.openlocfilehash: 9dc31cd4f492a4e95ce8232a8df28f07206e23b1
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 9ade5a51e2251669daee6fbaca9aa4c50f7e9bfc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100587166"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101704358"
 ---
 # <a name="vmware-monitoring-deprecated-solution-in-azure-monitor"></a>Oplossing VMWare-bewaking (afgeschaft) in Azure Monitor
 

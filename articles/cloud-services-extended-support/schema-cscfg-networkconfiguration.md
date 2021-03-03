@@ -8,12 +8,12 @@ author: gachandw
 ms.author: gachandw
 ms.reviewer: mimckitt
 ms.custom: ''
-ms.openlocfilehash: 13fe83710c94c1ca37f05d59cb91f31aa8ca1bae
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 2650da2579f13ec1588af7a25e5b28908209bc82
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98744636"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101700181"
 ---
 # <a name="azure-cloud-services-extended-support-config-networkconfiguration-schema"></a>Azure Cloud Services (uitgebreide ondersteuning) config networkConfiguration-schema
 
@@ -23,7 +23,7 @@ U kunt de volgende resource gebruiken voor meer informatie over virtuele netwerk
 
 - [Configuratie schema van Cloud service (uitgebreide ondersteuning)](schema-cscfg-file.md).
 - [Definitie schema van Cloud service (uitgebreide ondersteuning)](schema-csdef-file.md).
-- [Maak een Virtual Network](https://docs.microsoft.com/azure/virtual-network/manage-virtual-network).
+- [Maak een Virtual Network](../virtual-network/manage-virtual-network.md).
 
 ## <a name="networkconfiguration-element"></a>NetworkConfiguration-element
 In het volgende voor beeld ziet u het `NetworkConfiguration` element en de onderliggende elementen.

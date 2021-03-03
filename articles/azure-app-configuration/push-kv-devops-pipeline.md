@@ -5,14 +5,14 @@ services: azure-app-configuration
 author: AlexandraKemperMS
 ms.service: azure-app-configuration
 ms.topic: how-to
-ms.date: 07/27/2020
+ms.date: 02/23/2021
 ms.author: alkemper
-ms.openlocfilehash: c5e0cc3eb29fb612460b16d8de9dee62949b5bd2
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 7d343e07414dd1c3f9786c1684eb6f14d5f45e51
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99979603"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101718179"
 ---
 # <a name="push-settings-to-app-configuration-with-azure-pipelines"></a>Instellingen pushen naar app-configuratie met Azure-pijp lijnen
 
@@ -80,7 +80,7 @@ De volgende para meters worden gebruikt door de taak app-configuratie push:
 
 - **Azure-abonnement**: een vervolg keuzelijst met uw beschik bare Azure-service verbindingen. Als u de lijst met beschik bare Azure-service verbindingen wilt bijwerken en vernieuwen, klikt u op de knop **Azure-abonnement vernieuwen** rechts van het tekstvak.
 - **App-configuratie naam**: een vervolg keuzelijst waarmee uw beschik bare configuratie archieven worden geladen onder het geselecteerde abonnement. Als u de lijst met beschik bare configuratie archieven wilt bijwerken en vernieuwen, klikt u op de knop **app-configuratie naam vernieuwen** rechts van het tekstvak.
-- **Pad naar configuratie bestand**: het pad naar het configuratie bestand. U kunt door uw build-artefact bladeren om een configuratie bestand te selecteren. ( `...` knop rechts van het tekstvak).
+- **Pad naar configuratie bestand**: het pad naar het configuratie bestand. U kunt door uw build-artefact bladeren om een configuratie bestand te selecteren. ( `...` knop rechts van het tekstvak). De ondersteunde bestands indelingen zijn: YAML, JSON, Properties.
 - **Scheidings teken**: het scheidings teken dat wordt gebruikt voor het samen voegen van JSON-en yml-bestanden.
 - **Diepte**: de diepte waarmee de JSON-en yml-bestanden worden afgevlakt.
 - **Voor voegsel**: een teken reeks die wordt toegevoegd aan het begin van elke sleutel die wordt gepusht naar de app-configuratie opslag.

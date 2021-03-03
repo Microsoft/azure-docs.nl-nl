@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: conceptual
 ms.date: 12/09/2020
 ms.author: cherylmc
-ms.openlocfilehash: 472261666c86b666efd09c7217d12e5a795a50d9
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: f72a3739fac1e7d6afdafd2676ea6fcefe847b2a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97094881"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101710580"
 ---
 # <a name="vnet-peering-and-azure-bastion-preview"></a>VNet-peering en Azure Bastion (preview-versie)
 
@@ -40,9 +40,15 @@ In deze afbeelding ziet u de architectuur van een Azure Bastion-implementatie in
 **Stappen**
 
 1. Maak verbinding met de Azure Portal met behulp van een HTML5-browser.
-1. Selecteer de virtuele machine waarmee u verbinding wilt maken.
-1. Azure Bastion wordt naadloos gedetecteerd in het gekoppelde VNet.
-1. Wordt de RDP-/SSH-sessie met één klik geopend in de browser. Zie [RDP-en SSH-sessies](bastion-faq.md#limits)voor limieten voor gelijktijdige sessies met RDP en SSH.
+2. Zorg ervoor dat u **Lees** toegang hebt tot zowel de doel-VM als de peered VNet. Controleer bovendien onder IAM dat u lees toegang hebt tot de volgende bronnen:
+   * De lezerrol op de virtuele machine.
+   * De lezerrol op de NIC met het privé-IP-adres van de virtuele machine.
+   * De rol van Lezer in de Azure Bastion-resource.
+   * De rol van lezer op de Virtual Network (niet nodig als er geen gekoppeld virtueel netwerk is).
+3. Als u de Bastion in de vervolg keuzelijst **verbinding** wilt zien, moet u het abonnement dat u hebt geopend, selecteren **> wereld wijde abonnement**.
+4. Selecteer de virtuele machine waarmee u verbinding wilt maken.
+5. Azure Bastion wordt naadloos gedetecteerd in het gekoppelde VNet.
+6. Wordt de RDP-/SSH-sessie met één klik geopend in de browser. Zie [RDP-en SSH-sessies](bastion-faq.md#limits)voor limieten voor gelijktijdige sessies met RDP en SSH.
 
   :::image type="content" source="../../includes/media/bastion-vm-rdp/connect-vm.png" alt-text="Verbinding maken":::
 

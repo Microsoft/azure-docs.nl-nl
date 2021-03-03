@@ -8,16 +8,18 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 91ef5ca35cc96aa2028522d370ffbade45ecc2de
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: de67e356e54328944c55f41dc0c9670e2540e82e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96779767"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101694373"
 ---
 # <a name="azure-disk-encryption-for-linux-vms"></a>Azure Disk Encryption voor Linux-VM's 
 
-Azure Disk Encryption helpt om uw gegevens te beschermen en te beveiligen, zodat u aan de beveiligings- en nalevingsafspraken van uw organisatie voldoet. Het maakt gebruik van de [DM-cryptografie](https://en.wikipedia.org/wiki/Dm-crypt) functie van Linux om volume versleuteling te bieden voor het besturings systeem en de gegevens schijven van Azure virtual machines (vm's), en is geïntegreerd met [Azure Key Vault](../../key-vault/index.yml) om u te helpen de coderings sleutels en geheimen voor schijven te controleren en te beheren. 
+Azure Disk Encryption helpt om uw gegevens te beschermen en te beveiligen, zodat u aan de beveiligings- en nalevingsafspraken van uw organisatie voldoet. Het maakt gebruik van de [DM-cryptografie](https://en.wikipedia.org/wiki/Dm-crypt) functie van Linux om volume versleuteling te bieden voor het besturings systeem en de gegevens schijven van Azure virtual machines (vm's), en is geïntegreerd met [Azure Key Vault](../../key-vault/index.yml) om u te helpen de coderings sleutels en geheimen voor schijven te controleren en te beheren.
+
+Azure Disk Encryption zone is flexibel, op dezelfde manier als Virtual Machines. Zie [Azure-Services die ondersteuning bieden voor Beschikbaarheidszones](../../availability-zones/az-region.md)voor meer informatie.
 
 Als u [Azure Security Center](../../security-center/index.yml)gebruikt, wordt u gewaarschuwd als u virtuele machines hebt die niet zijn versleuteld. De waarschuwingen worden weer gegeven als hoge ernst en de aanbeveling is om deze Vm's te versleutelen.
 
@@ -26,7 +28,6 @@ Als u [Azure Security Center](../../security-center/index.yml)gebruikt, wordt u 
 > [!WARNING]
 > - Als u eerder Azure Disk Encryption met Azure AD hebt gebruikt om een virtuele machine te versleutelen, moet u deze optie blijven gebruiken om uw virtuele machine te versleutelen. Zie [Azure Disk Encryption met Azure AD (vorige versie)](disk-encryption-overview-aad.md) voor meer informatie. 
 > - Bepaalde aanbevelingen kunnen leiden tot meer gegevens, het netwerk of het gebruik van reken bronnen, wat leidt tot extra licentie-of abonnements kosten. U moet een geldig actief Azure-abonnement hebben om resources te maken in Azure in de ondersteunde regio's.
-> - Virtuele machines van generatie 2 bieden geen ondersteuning voor Azure Disk Encryption. Zie [ondersteuning voor virtuele machines van de tweede generatie op Azure](../generation-2.md) voor meer informatie.
 
 Meer informatie over de basis principes van Azure Disk Encryption voor Linux in slechts enkele minuten kunt u met behulp van [een virtuele Linux-machine maken en versleutelen met Azure cli Quick](disk-encryption-cli-quickstart.md) start of [met behulp van een virtuele Linux-machine maken en versleutelen met Azure PowerShell Snelstartgids](disk-encryption-powershell-quickstart.md).
 
@@ -34,7 +35,11 @@ Meer informatie over de basis principes van Azure Disk Encryption voor Linux in 
 
 ### <a name="supported-vms"></a>Ondersteunde Vm's
 
-Virtuele Linux-machines zijn beschikbaar in [verschillende grootten](../sizes.md). Azure Disk Encryption is niet beschikbaar op [de Basic-, a-Series vm's](https://azure.microsoft.com/pricing/details/virtual-machines/series/)of op virtuele machines die niet voldoen aan deze minimale geheugen vereisten:
+Virtuele Linux-machines zijn beschikbaar in [verschillende grootten](../sizes.md). Azure Disk Encryption wordt ondersteund op Vm's van generatie 1 en generatie 2. Azure Disk Encryption is ook beschikbaar voor virtuele machines met Premium Storage.
+
+Zie [Azure VM-grootten zonder lokale tijdelijke schijf](../azure-vms-no-temp-disk.md).
+
+Azure Disk Encryption is ook niet beschikbaar op [de Basic-, a-Series vm's](https://azure.microsoft.com/pricing/details/virtual-machines/series/)of op virtuele machines die niet voldoen aan deze minimale geheugen vereisten:
 
 | Virtuele machine | Minimale geheugen vereiste |
 |--|--|
@@ -42,13 +47,9 @@ Virtuele Linux-machines zijn beschikbaar in [verschillende grootten](../sizes.md
 | Linux-Vm's bij het versleutelen van gegevens en OS-volumes, waarbij het gebruik van het basis-(/) bestands systeem 4 GB of minder is | 8 GB |
 | Linux-Vm's bij het versleutelen van gegevens en besturingssysteem volumes, waarbij het gebruik van het root-(/) bestands systeem groter is dan 4 GB | Het root-bestandssysteem gebruik * 2. Een voor beeld: voor een 16 GB aan root File System-gebruik is ten minste GB RAM vereist |
 
-Zodra het versleutelings proces van de besturingssysteem schijf is voltooid op virtuele Linux-machines, kan de virtuele machine worden geconfigureerd om te worden uitgevoerd met minder geheugen. 
+Zodra het versleutelings proces van de besturingssysteem schijf is voltooid op virtuele Linux-machines, kan de virtuele machine worden geconfigureerd om te worden uitgevoerd met minder geheugen.
 
-Azure Disk Encryption is ook beschikbaar voor virtuele machines met Premium Storage.
-
-Azure Disk Encryption is niet beschikbaar op virtuele machines van de [2e generatie](../generation-2.md#generation-1-vs-generation-2-capabilities) en [Lsv2-serie](../lsv2-series.md). Zie [Azure Disk Encryption: niet-ondersteunde scenario's](disk-encryption-linux.md#unsupported-scenarios)voor meer uitzonde ringen.
-
-Azure Disk Encryption is niet beschikbaar op VM-installatie kopieën zonder tijdelijke schijven (Dv4, Dsv4, Ev4 en Esv4).  Zie [Azure VM-grootten zonder lokale tijdelijke schijf](../azure-vms-no-temp-disk.md).
+Zie [Azure Disk Encryption: niet-ondersteunde scenario's](disk-encryption-linux.md#unsupported-scenarios)voor meer uitzonde ringen.
 
 ### <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 
@@ -58,6 +59,7 @@ Azure Disk Encryption wordt ondersteund op een subset van de door [Azure goedgek
 
 Linux-server distributies die niet zijn goedgekeurd door Azure, bieden geen ondersteuning voor Azure Disk Encryption; van degenen die zijn goedgekeurd, worden alleen de volgende distributies en versies ondersteund Azure Disk Encryption:
 
+
 | Uitgever | Aanbieding | SKU | URN | Ondersteund volume type voor versleuteling |
 | --- | --- |--- | --- |
 | Canonical | Ubuntu | 18.04-LTS | Canoniek: UbuntuServer: 18.04-LTS: nieuwste | Besturings systeem en gegevens schijf |
@@ -65,9 +67,12 @@ Linux-server distributies die niet zijn goedgekeurd door Azure, bieden geen onde
 | Canonical | Ubuntu 16.04 | 16,04-DAGELIJKS-LTS | Canoniek: UbuntuServer: 16.04-DAILY-LTS: nieuwste | Besturings systeem en gegevens schijf |
 | Canonical | Ubuntu 14.04.5</br>[met een afgestemde kernel van Azure bijgewerkt tot 4,15 of hoger](disk-encryption-troubleshooting.md) | 14.04.5-LTS | Canoniek: UbuntuServer: 14.04.5-LTS: nieuwste | Besturings systeem en gegevens schijf |
 | Canonical | Ubuntu 14.04.5</br>[met een afgestemde kernel van Azure bijgewerkt tot 4,15 of hoger](disk-encryption-troubleshooting.md) | 14.04.5-DAILY-LTS | Canoniek: UbuntuServer: 14.04.5-DAILY-LTS: nieuwste | Besturings systeem en gegevens schijf |
+| RedHat | RHEL 8-LVM | 8-LVM | RedHat: RHEL: 8-LVM: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
+| RedHat | RHEL 8,2 | 8,2 | RedHat: RHEL: 8.2: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
+| RedHat | RHEL 8,1 | 8.1 | RedHat: RHEL: 8.1: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
+| RedHat | RHEL 7-LVM | 7-LVM | RedHat: RHEL: 7-LVM: 7.8.2020111201 | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
 | RedHat | RHEL 7,8 | 7,8 | RedHat: RHEL: 7,8: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
 | RedHat | RHEL 7,7 | 7,7 | RedHat: RHEL: 7,7: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
-| RedHat | RHEL 7-LVM | 7-LVM | RedHat: RHEL: 7-LVM: 7.8.2020111201 | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
 | RedHat | RHEL 7,6 | 7.6 | RedHat: RHEL: 7,6: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
 | RedHat | RHEL 7.5 | 7,5 | RedHat: RHEL: 7.5: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
 | RedHat | RHEL 7,4 | 7.4 | RedHat: RHEL: 7.4: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
@@ -75,9 +80,12 @@ Linux-server distributies die niet zijn goedgekeurd door Azure, bieden geen onde
 | RedHat | RHEL 7,2 | 7.2 | RedHat: RHEL: 7.2: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
 | RedHat | RHEL 6,8 | 6.8 | RedHat: RHEL: 6,8: nieuwste | Gegevens schijf (zie opmerking hieronder) |
 | RedHat | RHEL 6,7 | 6.7 | RedHat: RHEL: 6,7: nieuwste | Gegevens schijf (zie opmerking hieronder) |
+| OpenLogic | CentOS 8-LVM | 8-LVM | Open Logic: CentOS-LVM: 8-LVM: nieuwste | Besturings systeem en gegevens schijf |
+| OpenLogic | CentOS 8,2 | 8_2 | Open Logic: CentOS: 8_2: nieuwste | Besturings systeem en gegevens schijf |
+| OpenLogic | CentOS 8,1 | 8_1 | Open Logic: CentOS: 8_1: nieuwste | Besturings systeem en gegevens schijf |
+| OpenLogic | CentOS 7-LVM | 7-LVM | Open Logic: CentOS-LVM: 7-LVM: 7.8.2020111100 | Besturings systeem en gegevens schijf |
 | OpenLogic | CentOS 7,8 | 7,8 | Open Logic: CentOS: 7_8: nieuwste | Besturings systeem en gegevens schijf |
 | OpenLogic | CentOS 7,7 | 7,7 | Open Logic: CentOS: 7,7: nieuwste | Besturings systeem en gegevens schijf |
-| OpenLogic | CentOS 7-LVM | 7-LVM | Open Logic: CentOS-LVM: 7-LVM: 7.8.2020111100 | Besturings systeem en gegevens schijf |
 | OpenLogic | CentOS 7,6 | 7.6 | Open Logic: CentOS: 7,6: nieuwste | Besturings systeem en gegevens schijf |
 | OpenLogic | CentOS 7.5 | 7,5 | Open Logic: CentOS: 7.5: nieuwste | Besturings systeem en gegevens schijf |
 | OpenLogic | CentOS 7.4 | 7.4 | Open Logic: CentOS: 7.4: nieuwste | Besturings systeem en gegevens schijf |
@@ -148,7 +156,7 @@ In de volgende tabel worden enkele algemene termen gedefinieerd die worden gebru
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Snelstartgids: een virtuele Linux-machine maken en versleutelen met Azure CLI ](disk-encryption-cli-quickstart.md)
-- [Snelstartgids: een virtuele Linux-machine maken en versleutelen met Azure Power shell](disk-encryption-powershell-quickstart.md)
+- [Snelstartgids: een virtuele Linux-machine maken en versleutelen met Azure PowerShell](disk-encryption-powershell-quickstart.md) 
 - [Azure Disk Encryption-scenario's voor virtuele Linux-machines](disk-encryption-linux.md)
 - [SysteemAzure Disk Encryption vereisten CLI-script](https://github.com/ejarvi/ade-cli-getting-started)
 - [Azure Disk Encryption van vereisten Power shell-script](https://github.com/Azure/azure-powershell/tree/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts)

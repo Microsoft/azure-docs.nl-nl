@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/25/2021
-ms.openlocfilehash: ffdafbe991d3cd78e45c4804fd6cc5377099acbc
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 29164bbb205e9f3ad59ac28200b5c6cd1e47bf39
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100589416"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101707571"
 ---
 # <a name="visualizing-data-from-azure-monitor"></a>Gegevens van Azure Monitor visualiseren
 Dit artikel bevat een overzicht van de beschik bare methoden voor het visualiseren van logboek-en metrische gegevens die zijn opgeslagen in Azure Monitor.
@@ -138,7 +138,7 @@ Met [weer gaven in azure monitor](visualize/view-designer.md) kunt u aangepaste 
 - Query's zijn beperkt tot de antwoord grootte tot 8 MB en de uitvoer tijd van de query van 110 seconden.
 
 ## <a name="next-steps"></a>Volgende stappen
-- Meer informatie over de [gegevens die worden verzameld door Azure monitor](/data-platform.md).
+- Meer informatie over de [gegevens die worden verzameld door Azure monitor](data-platform.md).
 - Meer informatie over [Azure-Dash boards](../azure-portal/azure-portal-dashboards.md).
 - Meer informatie over [Metrics Explorer](essentials/metrics-getting-started.md)
 - Meer informatie over [werkmappen](./visualize/workbooks-overview.md).

@@ -5,12 +5,12 @@ ms.assetid: 70fb0e6e-8727-4cca-ba82-98a4d21586ff
 ms.topic: article
 ms.date: 11/30/2020
 ms.custom: seodec18
-ms.openlocfilehash: 6f0ff7a54c2ad1fa1af649c8082498b442783c7e
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: cdcf22a42375949cc4d6be0b4f3062cee26219d6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96608074"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101704851"
 ---
 # <a name="buy-a-custom-domain-name-for-azure-app-service"></a>Aangepaste domeinnaam voor Azure App Service kopen
 
@@ -54,7 +54,7 @@ Ga voor prijs informatie over App Service domeinen naar de [pagina met app servi
    | **Domein** | Typ het gewenste domein. Bijvoorbeeld **contoso.com**. Als het gewenste domein niet beschikbaar is, kunt u een keuze uit een lijst met suggesties van beschik bare domeinen selecteren of een ander domein proberen. |
 
     > [!NOTE]
-    > De volgende [domeinen op het hoogste niveau](https://wikipedia.org/wiki/Top-level_domain) worden ondersteund door app service domeinen: _com_, _net_, _co.uk_, _org_, _nl_, in _,_ _org.uk_ en _in_ _co.in_.
+    > De volgende [domeinen op het hoogste niveau](https://wikipedia.org/wiki/Top-level_domain) worden ondersteund door app service domeinen: _com_, _net_, _co.uk_, _org_, _nl_, in _,_ _org.uk_ en  _co.in_.
     >
     >
     
@@ -211,7 +211,7 @@ Azure behandelt App Service domeinen die verlopen of verlopen zijn als volgt:
 * Als automatische verlenging is uitgeschakeld: 90 dagen vóór het verlopen van het domein, wordt er een e-mail bericht voor het vernieuwen van de e-mail naar u verzonden en wordt de knop voor het vernieuwen van het **domein** geactiveerd in de portal.
 * Als automatische verlenging is ingeschakeld: op de dag na de verval datum van uw domein probeert Azure u te factureren voor het vernieuwen van de domein naam.
 * Als er een fout optreedt tijdens het automatisch verlengen (bijvoorbeeld als uw kaart in het bestand is verlopen) of als automatische verlenging is uitgeschakeld en u toestaat dat het domein verloopt, ontvangt Azure u een melding van het domein verloop en Parken uw domein naam. U kunt uw domein [hand matig verlengen](#renew-the-domain) .
-* Op de dag van de vierde en twaalfde dagen na verloop van tijd stuurt Azure u extra e-mail berichten. U kunt uw domein [hand matig verlengen](#renew-the-domain) .
+* Op de dag van de vierde en twaalfde dagen na verloop van tijd stuurt Azure u extra e-mail berichten. U kunt uw domein [hand matig verlengen](#renew-the-domain) . Op de vijfde dag na de verval datum wordt de DNS-omzetting gestopt voor het verlopen domein.
 * Op de 19e dag na de verval datum blijft uw domein in de wacht staan, maar wordt het onderhouds tarief in rekening gebracht. U kunt klant ondersteuning aanroepen om uw domein naam te vernieuwen, afhankelijk van eventuele verlengings-en activerings kosten.
 * Op de 25e dag na de verval datum brengt Azure uw domein in op veiling met een domeinnaam veiling service. U kunt klant ondersteuning aanroepen om uw domein naam te vernieuwen, afhankelijk van eventuele verlengings-en activerings kosten.
 * Op de 30e dag na de verval datum kunt u uw domein niet meer inwisselen.

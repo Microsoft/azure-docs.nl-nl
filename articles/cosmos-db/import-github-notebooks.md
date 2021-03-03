@@ -6,13 +6,13 @@ ms.author: dech
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: how-to
-ms.date: 05/19/2020
-ms.openlocfilehash: 8315369d2100036a50aae770267aa04bceb2dfb0
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.date: 02/22/2021
+ms.openlocfilehash: f7002b3968e91447a26315f31347ad469aa5daca
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339798"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101690648"
 ---
 # <a name="import-notebooks-from-a-github-repo-into-azure-cosmos-db"></a>Notitie blokken importeren van een GitHub-opslag plaats in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -57,7 +57,12 @@ Na het door voeren van de wijzigingen in de normale GitHub-stroom worden meestal
 
 :::image type="content" source="./media/import-github-notebooks/commit-changes-github.png" alt-text="Notitie blokken bewerken en wijzigingen door voeren in GitHub":::
 
+Nadat u het notitie blok hebt bewerkt, kunt u [het publiceren naar de notitieblok galerie](publish-notebook-gallery.md). 
+
 ## <a name="next-steps"></a>Volgende stappen
 
 * Meer informatie over de voor delen van [Azure Cosmos DB Jupyter-notebooks.](cosmosdb-jupyter-notebooks.md)
-
+* [Galerie met voor beelden van notebook verkennen](https://cosmos.azure.com/gallery.html)
+* [Notitie blokken publiceren naar de galerie met Azure Cosmos DB notebooks](publish-notebook-gallery.md)
+* [Python-notebookfuncties en-opdrachten gebruiken](use-python-notebook-features-and-commands.md)
+* [C#-notebookfuncties en -opdrachten gebruiken](use-csharp-notebook-features-and-commands.md)

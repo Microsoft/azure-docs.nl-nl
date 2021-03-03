@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: d62c4b79fcb86080649c542e34b81d3213978604
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 2a3bf022d178fbd0de3ca800e0a560235c3f33b5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610404"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101731490"
 ---
 # <a name="troubleshooting-metrics-charts"></a>Problemen met grafieken met metrische gegevens oplossen
 
@@ -62,7 +62,7 @@ Het verzamelen van metrische gegevens van een **gastbesturingssysteem** is allee
 
 Dit probleem kan optreden wanneer uw dashboard is gemaakt met een metriek die later is afgeschaft en verwijderd uit Azure. Als u wilt controleren of dit het geval is, opent u het tabblad **metrische gegevens** van uw resource en controleert u de beschik bare metrische gegevens in de metrische kiezer. Als de metriek niet wordt weergegeven, is deze verwijderd uit Azure. Als een metriek is afgeschaft, is er meestal een betere nieuwe metriek die een vergelijkbaar perspectief op de resourcestatus biedt.
 
-**Oplossing:** Werk de tegel fout bij door een alternatieve metriek voor uw grafiek op het dash board te kiezen. U kunt [een lijst met beschikbare metrische gegevens voor Azure-services bekijken](../platform/metrics-supported.md).
+**Oplossing:** Werk de tegel fout bij door een alternatieve metriek voor uw grafiek op het dash board te kiezen. U kunt [een lijst met beschikbare metrische gegevens voor Azure-services bekijken](./metrics-supported.md).
 
 ## <a name="chart-shows-dashed-line"></a>Grafiek toont stippellijn
 
@@ -104,5 +104,5 @@ Metrische gegevens van het gastbesturingssysteem worden standaard opgeslagen in 
 
 * [Meer informatie over het aan de slag gaan met metrische Explorer](metrics-getting-started.md)
 * [Meer informatie over geavanceerde functies van metrische Explorer](../essentials/metrics-charts.md)
-* [Een lijst met beschikbare metrische gegevens voor Azure-services zien](../platform/metrics-supported.md)
+* [Een lijst met beschikbare metrische gegevens voor Azure-services zien](./metrics-supported.md)
 * [Voorbeelden van geconfigureerde grafieken zien](../essentials/metric-chart-samples.md)

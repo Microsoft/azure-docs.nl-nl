@@ -11,12 +11,12 @@ ms.author: sacartac
 ms.reviewer: nibaccam
 ms.date: 12/21/2020
 ms.custom: automl
-ms.openlocfilehash: f0bb354bce0c4696f60e2be5c6186760518c7431
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: ad8a9f7af9ddabe969d090f80378ba5ff891d7f1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99549183"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101691940"
 ---
 # <a name="tutorial-create-a-classification-model-with-automated-ml-in-azure-machine-learning"></a>Zelfstudie: Een classificatiemodel maken met geautomatiseerde ML in Azure Machine Learning
 
@@ -187,6 +187,30 @@ In het volgende gedeelte kunt u naar de tabbladen **Details** en **Metrische geg
 
 ![Details van uitvoeringsiteratie](./media/tutorial-first-experiment-automated-ml/run-detail.gif)
 
+## <a name="model-explanations"></a>Model uitleg
+
+Terwijl u wacht tot de modellen zijn voltooid, kunt u ook de model uitleg bekijken en bekijken welke gegevens functies (onbewerkt of engineerend) invloed hebben op de voor spellingen van een bepaald model. 
+
+Deze model verklaringen kunnen op aanvraag worden gegenereerd en worden in het dash board voor het model uitleg weer gegeven dat deel uitmaakt van het tabblad **uitleg (preview)** .
+
+Voor het genereren van model verklaringen, 
+ 
+1. Selecteer bovenaan **uitvoeren 1** om terug te gaan naar het scherm **modellen** . 
+1. Selecteer het tabblad **modellen** .
+1. Voor deze zelf studie selecteert u het eerste **MaxAbsScaler, LightGBM-** model.
+1. Selecteer de knop voor het **uitleg model** bovenaan. Aan de rechter kant wordt het deel venster **uitleg model** weer gegeven. 
+1. Selecteer de **automl-Compute** die u eerder hebt gemaakt. Dit Compute-Cluster initieert een onderliggende uitvoering om de model verklaringen te genereren.
+1. Selecteer onder **maken** . Er wordt een groen bericht aan de bovenkant van het scherm weer gegeven. 
+    >[!NOTE]
+    > Het uitvoeren van de uitleg kan ongeveer 2-5 minuten duren.
+1. Selecteer de knop **uitleg (preview)** . Dit tabblad wordt ingevuld zodra de uitvoering van de uitleg is voltooid.
+1. Vouw het deel venster aan de linkerkant uit en selecteer de rij **RAW** onder **functies**. 
+1. Selecteer het tabblad urgentie van de **functie Total** aan de rechter kant. Dit diagram toont welke gegevens functies invloed hebben op de voor spellingen van het geselecteerde model. 
+
+    In dit voor beeld lijkt de *duur* om de meeste invloed te hebben op de voor spellingen van dit model.
+    
+    ![Model uitleg van het dash board](media/tutorial-first-experiment-automated-ml/model-explanation-dashboard.png)
+
 ## <a name="deploy-the-best-model"></a>Het beste model implementeren
 
 In de geautomatiseerde machine learning-interface kunt u met enkele stappen het beste model implementeren als webservice. Implementatie is de integratie van het model zodat het nieuwe gegevens kan voorspellen en potentiële kansgebieden kan identificeren. 
@@ -211,7 +235,7 @@ We implementeren dit model, maar houd er rekening mee dat implementatie ongeveer
     Beschrijving van implementatie| Implementatie van mijn eerste geautomatiseerde machine learning-experiment
     Rekentype | Azure Compute Instance (ACI) selecteren
     Verificatie inschakelen| Uitgeschakeld. 
-    Aangepaste implementaties gebruiken| Uitgeschakeld. Staat toe dat het standaard stuurprogrammabestand (scorescript) en het omgevingsbestand automatisch gegenereerd worden. 
+    Aangepaste implementaties gebruiken| Uitgeschakeld. Hiermee staat u toe dat het standaard stuurprogrammabestand (Score script) en het omgevings bestand automatisch worden gegenereerd. 
     
     In dit voorbeeld gebruiken we de standaardwaarden in het menu *Geavanceerd*. 
 

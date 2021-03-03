@@ -1,22 +1,21 @@
 ---
 title: Netwerkprestatiemeter oplossing in azure Log Analytics | Microsoft Docs
 description: Gebruik de ExpressRoute-monitor mogelijkheid in Netwerkprestatiemeter om end-to-end connectiviteit en prestaties tussen uw filialen en Azure te bewaken via Azure ExpressRoute.
-ms.subservice: logs
 ms.topic: conceptual
 author: abshamsft
 ms.author: absha
 ms.date: 11/27/2018
-ms.openlocfilehash: 477512c0b1de8548e2aa1e2971a5d831e84d2139
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 0b005e46e9f9a740fee153e063bebf108c22b303
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100578382"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101725693"
 ---
 # <a name="expressroute-monitor"></a>Monitor voor ExpressRoute
 
 > [!IMPORTANT]
-> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor](https://docs.microsoft.com/azure/network-watcher/migrate-to-connection-monitor-from-network-performance-monitor) in azure Network Watcher vóór 29 februari 2024.
+> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor](../../network-watcher/migrate-to-connection-monitor-from-network-performance-monitor.md) in azure Network Watcher vóór 29 februari 2024.
 
 U kunt de Azure ExpressRoute-monitor mogelijkheid gebruiken in [Netwerkprestatiemeter](network-performance-monitor.md) om end-to-end connectiviteit en prestaties te bewaken tussen uw filialen en Azure, via Azure ExpressRoute. De belangrijkste voor delen zijn: 
 
@@ -112,7 +111,7 @@ Netwerkprestatiemeter helpt u bij het vaststellen van verschillende verbindings 
 
 U kunt de meldings codes bekijken en waarschuwingen instellen via **LogAnalytics**. Op de pagina **Diagnostische gegevens over NPM** ziet u beschrijvingen voor elk geactiveerde diagnostische berichten.
 
-| Meldings code (Logboeken) | Description |
+| Meldings code (Logboeken) | Beschrijving |
 | --- | --- |
 | 5501 | Kan niet door de secundaire verbinding van het ExpressRoute-circuit bladeren |
 | 5502 | Kan niet door de primaire verbinding van het ExpressRoute-circuit bladeren |
@@ -144,4 +143,3 @@ U kunt de meldings codes bekijken en waarschuwingen instellen via **LogAnalytics
 
 ## <a name="next-steps"></a>Volgende stappen
 [Zoek logboeken](../logs/log-query-overview.md) om gedetailleerde gegevens records voor netwerk prestaties weer te geven.
-

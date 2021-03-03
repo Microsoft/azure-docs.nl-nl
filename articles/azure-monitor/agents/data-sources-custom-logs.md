@@ -6,19 +6,19 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/21/2020
-ms.openlocfilehash: 73496e350a5e40a3945343271b76c6d883991b62
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 9ea33c7dca55e22687bd1db873c281caa1a3c4cb
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610569"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719930"
 ---
 # <a name="collect-custom-logs-with-log-analytics-agent-in-azure-monitor"></a>Aangepaste logboeken verzamelen met de Log Analytics-agent in Azure Monitor
 
 Met de gegevens bron aangepaste logboeken voor de Log Analytics-agent in Azure Monitor kunt u gebeurtenissen verzamelen uit tekst bestanden op zowel Windows-als Linux-computers. Veel toepassingen registreren gegevens in tekst bestanden in plaats van standaard logboek registratie Services, zoals Windows-gebeurtenis logboek of syslog. Zodra de gegevens zijn verzameld, kunt u deze in afzonderlijke velden in uw query's parseren of de gegevens tijdens het verzamelen naar afzonderlijke velden extra heren.
 
 > [!IMPORTANT]
-> In dit artikel wordt beschreven hoe u aangepaste logboeken verzamelt met de [log Analytics-agent](../platform/log-analytics-agent.md) die een van de agents die door Azure monitor worden gebruikt. Andere agents verzamelen verschillende gegevens en worden anders geconfigureerd. Zie [overzicht van Azure monitor agents](../agents/agents-overview.md) voor een lijst met beschik bare agents en de gegevens die ze kunnen verzamelen.
+> In dit artikel wordt beschreven hoe u aangepaste logboeken verzamelt met de [log Analytics-agent](./log-analytics-agent.md) die een van de agents die door Azure monitor worden gebruikt. Andere agents verzamelen verschillende gegevens en worden anders geconfigureerd. Zie [overzicht van Azure monitor agents](../agents/agents-overview.md) voor een lijst met beschik bare agents en de gegevens die ze kunnen verzamelen.
 
 ![Aangepaste logboek verzameling](media/data-sources-custom-logs/overview.png)
 
@@ -78,7 +78,7 @@ Een toepassing kan bijvoorbeeld elke dag een logboek bestand maken met de datum 
 
 De volgende tabel bevat voor beelden van geldige patronen om andere logboek bestanden op te geven.
 
-| Description | Pad |
+| Beschrijving | Pad |
 |:--- |:--- |
 | Alle bestanden in *C:\Logs* met de extensie. txt op de Windows-agent |C:\Logs \\ \* . txt |
 | Alle bestanden in *C:\Logs* met een naam die begint met log en een. txt-extensie in Windows-agent |C:\Logs\log \* . txt |
@@ -105,7 +105,7 @@ Zodra Azure Monitor begint met het verzamelen van het aangepaste logboek, zijn r
 > Als de eigenschap RawData ontbreekt in de query, moet u mogelijk uw browser sluiten en opnieuw openen.
 
 ### <a name="step-6-parse-the-custom-log-entries"></a>Stap 6. De aangepaste logboek vermeldingen parseren
-De volledige logboek vermelding wordt opgeslagen in één eigenschap met de naam **RawData**.  Waarschijnlijk wilt u de verschillende delen van de gegevens in elk item scheiden in afzonderlijke eigenschappen voor elke record. Raadpleeg het [parseren van tekst gegevens in azure monitor](../log-query/parse-text.md) voor opties voor het parseren van **RawData** in meerdere eigenschappen.
+De volledige logboek vermelding wordt opgeslagen in één eigenschap met de naam **RawData**.  Waarschijnlijk wilt u de verschillende delen van de gegevens in elk item scheiden in afzonderlijke eigenschappen voor elke record. Raadpleeg het [parseren van tekst gegevens in azure monitor](../logs/parse-text.md) voor opties voor het parseren van **RawData** in meerdere eigenschappen.
 
 ## <a name="removing-a-custom-log"></a>Een aangepast logboek verwijderen
 Gebruik het volgende proces in de Azure Portal om een aangepast logboek te verwijderen dat u eerder hebt gedefinieerd.
@@ -116,7 +116,7 @@ Gebruik het volgende proces in de Azure Portal om een aangepast logboek te verwi
 ## <a name="data-collection"></a>Gegevens verzamelen
 Azure Monitor worden ongeveer elke vijf minuten nieuwe vermeldingen van elk aangepast logboek verzameld.  De agent registreert de locatie in elk logboek bestand dat wordt verzameld.  Als de agent gedurende een bepaalde tijd offline gaat, worden er door Azure Monitor gegevens verzameld van waar deze zich voor het laatst heeft verlaten, zelfs als deze vermeldingen zijn gemaakt terwijl de agent offline was.
 
-De volledige inhoud van de logboek vermelding wordt geschreven naar één eigenschap met de naam **RawData**.  Zie [tekst gegevens parseren in azure monitor](../log-query/parse-text.md) voor methoden om elke geïmporteerde logboek vermelding te parseren in meerdere eigenschappen.
+De volledige inhoud van de logboek vermelding wordt geschreven naar één eigenschap met de naam **RawData**.  Zie [tekst gegevens parseren in azure monitor](../logs/parse-text.md) voor methoden om elke geïmporteerde logboek vermelding te parseren in meerdere eigenschappen.
 
 ## <a name="custom-log-record-properties"></a>Eigenschappen van aangepaste logboek record
 Aangepaste logboek records hebben een type met de naam van het logboek dat u opgeeft en de eigenschappen in de volgende tabel.
@@ -125,7 +125,7 @@ Aangepaste logboek records hebben een type met de naam van het logboek dat u opg
 |:--- |:--- |
 | TimeGenerated |De datum en tijd waarop de record is verzameld door Azure Monitor.  Als in het logboek een scheidings teken op basis van tijd wordt gebruikt, is dit de tijd die van de vermelding is verzameld. |
 | SourceSystem |Type agent waaruit het record is verzameld. <br> OpsManager: Windows-agent, Direct Connect of System Center Operations Manager <br> Linux: alle Linux-agents |
-| RawData |Volledige tekst van het verzamelde item. Waarschijnlijk wilt u [deze gegevens in afzonderlijke eigenschappen parseren](../log-query/parse-text.md). |
+| RawData |Volledige tekst van het verzamelde item. Waarschijnlijk wilt u [deze gegevens in afzonderlijke eigenschappen parseren](../logs/parse-text.md). |
 | ManagementGroupName |Naam van de beheer groep voor System Center Operations-agents.  Voor andere agents is dit AOI-\<workspace ID\> |
 
 
@@ -171,8 +171,8 @@ Hoewel aangepaste logboeken handig zijn als uw gegevens voldoen aan de bovenstaa
 In de gevallen waarin uw gegevens niet kunnen worden verzameld met aangepaste logboeken, moet u rekening houden met de volgende alternatieve strategieën:
 
 - Gebruik een aangepast script of een andere methode om gegevens te schrijven naar [Windows-gebeurtenissen](data-sources-windows-events.md) of [syslog](data-sources-syslog.md) die worden verzameld door Azure monitor. 
-- De gegevens rechtstreeks naar Azure Monitor verzenden met behulp van [http data collector API](../platform/data-collector-api.md). 
+- De gegevens rechtstreeks naar Azure Monitor verzenden met behulp van [http data collector API](../logs/data-collector-api.md). 
 
 ## <a name="next-steps"></a>Volgende stappen
-* Zie [tekst gegevens parseren in azure monitor](../log-query/parse-text.md) voor methoden om elke geïmporteerde logboek vermelding te parseren in meerdere eigenschappen.
-* Meer informatie over [logboek query's](../log-query/log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen.
+* Zie [tekst gegevens parseren in azure monitor](../logs/parse-text.md) voor methoden om elke geïmporteerde logboek vermelding te parseren in meerdere eigenschappen.
+* Meer informatie over [logboek query's](../logs/log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen.

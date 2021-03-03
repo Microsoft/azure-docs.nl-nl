@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: mayg
-ms.openlocfilehash: 7a4408b54b663b2cd8abc22772ac1b799ea50de0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 56ac58e47bffc73c7079af043ad567a77e8f3323
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87083766"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101735502"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-iis-based-web-application"></a>Herstel na noodgeval instellen voor een IIS-webtoepassing met meerdere lagen
 
@@ -118,14 +118,14 @@ Elke site bestaat uit bindings informatie. De bindings informatie omvat het type
 
 > [!NOTE]
 >
-> Als u de site binding instelt op **alle**niet-toegewezen, hoeft u deze binding na failover niet bij te werken. Als het IP-adres dat is gekoppeld aan een site na de failover niet is gewijzigd, hoeft u de site binding niet bij te werken. (Het bewaren van het IP-adres is afhankelijk van de netwerk architectuur en subnetten die zijn toegewezen aan de primaire en herstel sites. Het bijwerken hiervan is mogelijk niet haalbaar voor uw organisatie.)
+> Als u de site binding instelt op **alle** niet-toegewezen, hoeft u deze binding na failover niet bij te werken. Als het IP-adres dat is gekoppeld aan een site na de failover niet is gewijzigd, hoeft u de site binding niet bij te werken. (Het bewaren van het IP-adres is afhankelijk van de netwerk architectuur en subnetten die zijn toegewezen aan de primaire en herstel sites. Het bijwerken hiervan is mogelijk niet haalbaar voor uw organisatie.)
 
 ![Scherm opname van de instelling van de TLS/SSL-binding](./media/site-recovery-iis/sslbinding.png)
 
-Als u het IP-adres met een site hebt gekoppeld, werkt u alle site bindingen bij met het nieuwe IP-adres. Als u de site bindingen wilt wijzigen, moet u een script voor het bijwerken van de [IIS-weblaag](https://aka.ms/asr-web-tier-update-runbook-classic) toevoegen na groep 3 in het herstel plan.
+Als u het IP-adres met een site hebt gekoppeld, werkt u alle site bindingen bij met het nieuwe IP-adres. Als u de site bindingen wilt wijzigen, moet u een script voor het bijwerken van de [IIS-weblaag](/samples/browse/?redirectedfrom=TechNet-Gallery) toevoegen na groep 3 in het herstel plan.
 
 #### <a name="update-the-load-balancer-ip-address"></a>Het load balancer IP-adres bijwerken
-Als u een virtuele ARR-machine hebt, moet u een [IIS ARR-failover-script](https://aka.ms/asr-iis-arrtier-failover-script-classic) toevoegen na groep 4 om het IP-adres bij te werken.
+Als u een virtuele ARR-machine hebt, moet u een [IIS ARR-failover-script](/samples/browse/?redirectedfrom=TechNet-Gallery) toevoegen na groep 4 om het IP-adres bij te werken.
 
 #### <a name="tlsssl-certificate-binding-for-an-https-connection"></a>TLS/SSL-certificaat binding voor een HTTPS-verbinding
 Een website heeft mogelijk een bijbehorend TLS/SSL-certificaat waarmee een beveiligde communicatie tussen de webserver en de browser van de gebruiker kan worden gegarandeerd. Als de website een HTTPS-verbinding heeft en er ook een gekoppelde HTTPS-site is gekoppeld aan het IP-adres van de IIS-server met een TLS/SSL-certificaat binding, moet u een nieuwe site binding voor het certificaat toevoegen met het IP-adres van de virtuele IIS-machine na de failover.

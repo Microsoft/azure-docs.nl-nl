@@ -77,6 +77,8 @@ items:
                 href: manage-data-sources.md
               - name: Overzicht van Purview-connectors
                 href: purview-connector-overview.md
+              - name: Azure meerdere bronnen
+                href: register-scan-azure-multiple-sources.md
               - name: Azure Blob Storage
                 href: register-scan-azure-blob-storage-source.md
                 displayName: Register and scan azure blob storage
@@ -102,8 +104,16 @@ items:
                 href: register-scan-azure-synapse-analytics.md
               - name: On-premises SQL-server
                 href: register-scan-on-premises-sql-server.md
+              - name: Oracle
+                href: register-scan-oracle-source.md
               - name: Power BI-tenant - Portal
                 href: register-scan-power-bi-tenant.md
+              - name: SAP ECC
+                href: register-scan-sapecc-source.md
+              - name: SAP S/4HANA
+                href: register-scan-saps4hana-source.md
+              - name: Teradata
+                href: register-scan-teradata-source.md
               - name: Amazon S3
                 href: register-scan-amazon-s3.md
       - name: Zakelijke woordenlijst
@@ -113,6 +123,10 @@ items:
           - name: Termsjablonen beheren
             href: how-to-manage-term-templates.md
           - name: Assets bulksgewijs bewerken om de termen van een woordenlijst toe te wijzen
+            href: how-to-bulk-edit-assets.md
+      - name: Bulk bewerking
+        items:
+          - name: Activa bulksgewijs bewerken om aantekeningen en contact personen aan te labelen
             href: how-to-bulk-edit-assets.md
       - name: Classificeren
         items:
@@ -158,3 +172,5 @@ items:
     items:
       - name: Ondersteunde classificaties
         href: supported-classifications.md
+      - name: Implementatie handleiding voor ABAP-functies
+        href: abap-functions-deployment-guide.md

@@ -5,12 +5,12 @@ ms.assetid: 6223b6bd-84ec-48df-943f-461d84605694
 ms.topic: article
 ms.date: 10/16/2019
 ms.custom: seodec18
-ms.openlocfilehash: 933ac96d0cf98e0068575e5a70b0f42a157eb611
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7c00205e2931400caa64f35db962d94a732f2524
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91827457"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101714490"
 ---
 # <a name="back-up-your-app-in-azure"></a>Back-up maken van uw app in Azure
 Met de functie voor het maken en terugzetten van back-ups in [Azure app service](overview.md) kunt u eenvoudig hand matig app-back-ups maken of volgens een planning. U kunt instellen dat de back-ups tot een onbeperkte tijd worden bewaard. U kunt de app herstellen naar een moment opname van een vorige status door de bestaande app te overschrijven of te herstellen naar een andere app.
@@ -44,10 +44,10 @@ De volgende database oplossingen worden ondersteund met de back-upfunctie:
 * De functie voor back-up en herstellen vereist dat het App Service plan in de **Standard**-, **Premium** -of **geïsoleerd** -laag is. Zie [een app omhoog schalen in azure](manage-scale-up.md)voor meer informatie over het schalen van uw app service-abonnement voor het gebruik van een hogere laag. **Premium** -en **geïsoleerde** lagen bieden een groter aantal dagelijkse back-ups dan de **Standard** -laag.
 * U hebt een Azure-opslag account en een container nodig in hetzelfde abonnement als de app waarvan u een back-up wilt maken. Zie [overzicht van Azure Storage-account](../storage/common/storage-account-overview.md)voor meer informatie over Azure Storage-accounts.
 * Back-ups kunnen Maxi maal 10 GB aan app-en Data Base-inhoud hebben. Als de back-upgrootte deze limiet overschrijdt, wordt er een fout bericht weer geven.
-* Back-ups van TLS ingeschakeld Azure Database for MySQL worden niet ondersteund. Als er een back-up is geconfigureerd, ontvangt u mislukte back-ups.
-* Back-ups van TLS ingeschakeld Azure Database for PostgreSQL worden niet ondersteund. Als er een back-up is geconfigureerd, ontvangt u mislukte back-ups.
+* Back-ups van TLS ingeschakeld Azure Database for MySQL worden niet ondersteund. Als er een back-up is geconfigureerd, worden er back-upfouten optreden.
+* Back-ups van TLS ingeschakeld Azure Database for PostgreSQL worden niet ondersteund. Als er een back-up is geconfigureerd, worden er back-upfouten optreden.
 * Voor MySQL-data bases in-app wordt automatisch een back-up gemaakt zonder configuratie. Als u hand matige instellingen maakt voor MySQL-data bases in-app, zoals het toevoegen van verbindings reeksen, werken de back-ups mogelijk niet correct.
-* Het gebruik van een opslag account waarvoor Firewall is ingeschakeld als bestemming voor uw back-ups wordt niet ondersteund. Als er een back-up is geconfigureerd, ontvangt u mislukte back-ups.
+* Het gebruik van een opslag account waarvoor Firewall is ingeschakeld als bestemming voor uw back-ups wordt niet ondersteund. Als er een back-up is geconfigureerd, worden er back-upfouten optreden.
 
 
 <a name="manualbackup"></a>
@@ -70,18 +70,18 @@ De volgende database oplossingen worden ondersteund met de back-upfunctie:
 
 3. Klik op de pagina **back-upconfiguratie** op **opslag is niet geconfigureerd** voor het configureren van een opslag account.
 
-    :::image type="content" source="./media/manage-backup/configure-storage.png" alt-text="Scherm afbeelding van een banner met een bericht voor het bijwerken van het App Service-abonnement om toegang te krijgen tot de functie voor maken en herstellen van back-ups.":::
+    :::image type="content" source="./media/manage-backup/configure-storage.png" alt-text="Scherm afbeelding van de sectie Back-upopslag waarvoor de instelling opslag niet geconfigureerd is geselecteerd.":::
 
-4. Kies het doel van de back-up door een **opslag account** en **container**te selecteren. Het opslag account moet deel uitmaken van hetzelfde abonnement als de app waarvan u een back-up wilt maken. Als u wilt, kunt u een nieuw opslag account of een nieuwe container maken op de respectieve pagina's. Wanneer u klaar bent, klikt u op **selecteren**.
+4. Kies het doel van de back-up door een **opslag account** en **container** te selecteren. Het opslag account moet deel uitmaken van hetzelfde abonnement als de app waarvan u een back-up wilt maken. Als u wilt, kunt u een nieuw opslag account of een nieuwe container maken op de respectieve pagina's. Wanneer u klaar bent, klikt u op **selecteren**.
 
-5. Op de pagina **back-upconfiguratie** die nog geopend is, kunt u de **back-updatabase**configureren en vervolgens de data bases selecteren die u wilt toevoegen in de back-ups (SQL database of MySQL). Klik vervolgens op **OK**.
+5. Op de pagina **back-upconfiguratie** die nog geopend is, kunt u de **back-updatabase** configureren en vervolgens de data bases selecteren die u wilt toevoegen in de back-ups (SQL database of MySQL). Klik vervolgens op **OK**.
 
-    :::image type="content" source="./media/manage-backup/configure-database.png" alt-text="Scherm afbeelding van een banner met een bericht voor het bijwerken van het App Service-abonnement om toegang te krijgen tot de functie voor maken en herstellen van back-ups.":::
+    :::image type="content" source="./media/manage-backup/configure-database.png" alt-text="Scherm afbeelding van de sectie back-updatabase met de optie voor het insluiten van back-ups.":::
 
     > [!NOTE]
     > Als u een data base in deze lijst wilt weer geven, moet de connection string bestaan in de sectie **verbindings reeksen** van de pagina **Toepassings instellingen** voor uw app. 
     >
-    > Voor MySQL-data bases in-app wordt automatisch een back-up gemaakt zonder configuratie. Als u hand matige instellingen maakt voor MySQL-data bases in-app, zoals het toevoegen van verbindings reeksen, werken de back-ups mogelijk niet correct.
+    > Voor MySQL-data bases in-app wordt automatisch een back-up gemaakt zonder configuratie. Als u de instellingen voor MySQL-data bases in-app hand matig maakt, zoals het toevoegen van verbindings reeksen, werken de back-ups mogelijk niet correct.
     > 
     > 
 

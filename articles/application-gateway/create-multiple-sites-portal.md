@@ -6,18 +6,18 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: tutorial
-ms.date: 08/21/2020
+ms.date: 02/23/2021
 ms.author: victorh
-ms.openlocfilehash: 16f55dc88ed2d2d019a2fed355a14741263c20af
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
-ms.translationtype: HT
+ms.openlocfilehash: 208bd0fe7f3869cbe15dd27e0b883c467e41c765
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397600"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101735064"
 ---
 # <a name="tutorial-create-and-configure-an-application-gateway-to-host-multiple-web-sites-using-the-azure-portal"></a>Zelfstudie: Een toepassingsgateway maken en configureren waarmee meerdere websites worden gehost via Azure PortaI
 
-U kunt Azure PortaI gebruiken om [het hosten van meerdere websites te configureren](multiple-site-overview.md) wanneer u een [toepassingsgateway](overview.md) maakt. In deze zelfstudie definieert u back-endadresgroepen met behulp van virtuele machines. Vervolgens configureert u listeners en regels op basis van domeinen waarvan u eigenaar bent om er zeker van te zijn dat webverkeer bij de juiste servers in de pools binnenkomen. In deze zelfstudie wordt ervan uitgegaan dat u eigenaar bent van meerdere domeinen en voorbeelden gebruikt van *www.contoso.com* en *www.fabrikam.com*.
+U kunt Azure PortaI gebruiken om [het hosten van meerdere websites te configureren](multiple-site-overview.md) wanneer u een [toepassingsgateway](overview.md) maakt. In deze zelfstudie definieert u back-endadresgroepen met behulp van virtuele machines. Vervolgens configureert u listeners en regels op basis van twee domeinen om te controleren of webverkeer arriveert op de juiste servers in de groepen. In deze zelf studie wordt gebruikgemaakt van voor beelden van *www.contoso.com* en *www.fabrikam.com*.
 
 In deze zelfstudie leert u het volgende:
 
@@ -47,8 +47,8 @@ Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azur
 
 1. Op het tabblad **Basisinformatie** voert u deze waarden in voor de volgende toepassingsgateway-instellingen:
 
-   - **Resourcegroep** : Selecteer **myResourceGroupAG** als de resourcegroep. Als deze nog niet bestaat, selecteert u **Nieuwe maken** om deze te maken.
-   - **Naam toepassingsgateway** : Typ *myAppGateway* als naam voor de toepassingsgateway.
+   - **Resourcegroep**: Selecteer **myResourceGroupAG** als de resourcegroep. Als deze nog niet bestaat, selecteert u **Nieuwe maken** om deze te maken.
+   - **Naam toepassingsgateway**: Typ *myAppGateway* als naam voor de toepassingsgateway.
 
      :::image type="content" source="./media/application-gateway-create-gateway-portal/application-gateway-create-basics.png" alt-text="Een toepassingsgateway maken":::
 
@@ -56,11 +56,11 @@ Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azur
 
     Selecteer onder **Virtueel netwerk configureren** de optie **Nieuw netwerk maken** om een nieuw virtueel netwerk te maken. Voer in het venster **Virtueel netwerk maken** dat wordt geopend, de volgende waarden in om het virtuele netwerk en twee subnetten te maken:
 
-    - **Naam** : Typ *myVnet* als naam voor het virtuele netwerk.
+    - **Naam**: Typ *myVnet* als naam voor het virtuele netwerk.
 
     - **Subnetnaam** (subnet van toepassingsgateway): Het raster **Subnetten** geeft een subnet met de naam *Standaard* weer. Wijzig de naam van dit subnet in *myAGSubnet*.<br>Het subnet van de toepassingsgateway kan alleen bestaan uit toepassingsgateways. Andere resources zijn niet toegestaan.
 
-    - **Subnetnaam** (subnet van back-endserver): In de tweede rij van het raster **Subnetten** voert u in de kolom **Subnetnaam** , *myBackendSubnet* in.
+    - **Subnetnaam** (subnet van back-endserver): In de tweede rij van het raster **Subnetten** voert u in de kolom **Subnetnaam**, *myBackendSubnet* in.
 
     - **Adresbereik** (subnet van back-endserver): In de tweede rij van het raster **Subnetten** voert u een adresbereik in dat niet overlapt met het adresbereik van *myAGSubnet*. Als het adresbereik van *myAGSubnet* bijvoorbeeld 10.0.0.0/24 is, voert u *10.0.1.0/24* in voor het adresbereik van *myBackendSubnet*.
 
@@ -76,7 +76,7 @@ Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azur
    > [!NOTE]
    > Voor de Application Gateway v2 SKU kunt u alleen een **openbare** front-end-IP-configuratie kiezen. De privé frontend-IP-configuratie is op dit moment niet ingeschakeld voor deze v2-SKU.
 
-2. Kies **Nieuw maken** voor het **Openbaar IP-adres** en voer *myAGPublicIPAddress* in als naam voor het openbaar IP-adres en selecteer vervolgens **OK**. 
+2. Selecteer **Nieuw toevoegen** voor het **open bare IP-adres** en voer *myAGPublicIPAddress* in voor de naam van het open bare IP-adres en selecteer vervolgens **OK**. 
 
      :::image type="content" source="./media/application-gateway-create-gateway-portal/application-gateway-create-frontends.png" alt-text="Nog een VNet maken":::
 
@@ -86,15 +86,16 @@ Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azur
 
 De back-endpool word gebruikt om aanvragen te routeren naar de back-endservers die de aanvraag verwerken. Back-endpools kunnen bestaan uit NIC's, virtuele-machineschaalsets, openbare IP-adressen, interne IP-adressen, FQDN's (Fully Qualified Domain Name) en multitenant back-ends als Azure App Service. In dit voorbeeld maakt u een lege back-endpool met uw toepassingsgateway en voegt u vervolgens back-enddoelen toe aan de back-endpool.
 
-1. Selecteer in het tabblad **Back-ends** de optie **+Een back-endpool toevoegen**.
+1. Selecteer op het tabblad **back** -end **een back-end-groep toevoegen**.
 
 2. Voer in het venster **Een back-endpool toevoegen** dat wordt geopend, de volgende waarden in om een lege back-endpool te maken:
 
-    - **Naam** : Voer *contosoPool* in als naam van de back-endpool.
-    - **Een back-endpool zonder doelen toevoegen** : Selecteer **Ja** om een back-endpool zonder doelen te maken. U voegt na het maken van de toepassingsgateway de back-enddoelen toe.
+    - **Naam**: Voer *contosoPool* in als naam van de back-endpool.
+    - **Een back-endpool zonder doelen toevoegen**: Selecteer **Ja** om een back-endpool zonder doelen te maken. U voegt na het maken van de toepassingsgateway de back-enddoelen toe.
 
 3. Selecteer in het venster **Een back-endpool maken** de optie **Toevoegen** om de configuratie van de back-endpool op te slaan en terug te keren naar het tabblad **Back-ends**.
-4. Voeg nu nog een back-endpool toe met de naam *fabrikamPool*.
+4. Voeg nu nog een back-end-groep met de naam *fabrikamPool* toe, op dezelfde manier als u de vorige pool hebt toegevoegd.
+1. Selecteer **Toevoegen**.
 
     :::image type="content" source="./media/create-multiple-sites-portal/backend-pools.png" alt-text="Back-ends maken":::
 
@@ -104,18 +105,19 @@ De back-endpool word gebruikt om aanvragen te routeren naar de back-endservers d
 
 Op het tabblad **Configuratie** verbindt u de front-end- en de back-endpool die u hebt gemaakt met een regel voor doorsturen.
 
-1. Selecteer in de kolom **Routeringsregels** de optie **Een regel toevoegen**.
+1. Selecteer **een regel voor door sturen toevoegen** in de kolom **routerings regels** .
 
 2. Voer in het venster **Een regel voor doorsturen toevoegen** dat wordt geopend, *contosoRule* in als de **regelnaam**.
 
 3. Voor een regel voor doorsturen is een listener vereist. Voer in het tabblad **Listener** in het venster **Een regel voor doorsturen toevoegen** de volgende waarden in voor de listener:
 
-    - **Naam van listener** : Voer *contosoListener* in als de naam van de listener.
-    - **IP van front-end** : Selecteer **Openbaar** om het openbare IP te kiezen dat u voor de front-end hebt gemaakt.
+    - **Regel naam**: *contosoRule*.
+    - **Naam van listener**: *contosoListener*.
+    - **IP van front-end**: Selecteer **Openbaar** om het openbare IP te kiezen dat u voor de front-end hebt gemaakt.
 
-   Onder **Aanvullende instellingen** :
-   - **Type listener** : Meerdere sites
-   - **Hostnaam** : **www.contoso.com**
+   Onder **Aanvullende instellingen**:
+   - **Type listener**: Meerdere sites
+   - **Hostnaam**: **www.contoso.com**
 
    Accepteer de standaardwaarden voor de overige instellingen in het tabblad **Listener** en selecteer vervolgens het tabblad **Back-enddoelen** om de rest van de regel voor doorsturen te configureren.
 
@@ -123,10 +125,10 @@ Op het tabblad **Configuratie** verbindt u de front-end- en de back-endpool die 
 
 4. Selecteer op het tabblad **Back-enddoelen** de optie **contosoPool** als het **back-enddoel**.
 
-5. Selecteer als **HTTP-instelling** de optie **Nieuwe maken** om een nieuwe HTTP-instelling te maken. De HTTP-instelling bepaalt het gedrag van de regel voor doorsturen. Voer in het venster **Een HTTP-instelling toevoegen** dat wordt geopend, *contosoHTTPSetting* in als de **naam van de HTTP-instelling**. Accepteer de standaardwaarden voor de overige instellingen in het venster **Een HTTP-instelling toevoegen** en selecteer vervolgens **Toevoegen** om terug te keren naar het venster **Een regel voor doorsturen toevoegen**. 
+5. Voor de **http-instelling** selecteert u **Nieuw toevoegen** om een nieuwe http-instelling te maken. De HTTP-instelling bepaalt het gedrag van de regel voor doorsturen. Voer in het venster **Een HTTP-instelling toevoegen** dat wordt geopend, *contosoHTTPSetting* in als de **naam van de HTTP-instelling**. Accepteer de standaardwaarden voor de overige instellingen in het venster **Een HTTP-instelling toevoegen** en selecteer vervolgens **Toevoegen** om terug te keren naar het venster **Een regel voor doorsturen toevoegen**. 
 
 6. Selecteer in het venster **Een regel voor doorsturen toevoegen** de optie **Toevoegen** om de routeringsregel op te slaan en terug te keren naar het tabblad **Configuratie**.
-7. Selecteer **Een regel toevoegen** en voeg een vergelijkbare regel, listener, back-enddoel en HTTP-instelling voor Fabrikam toe.
+7. Selecteer **een regel voor door sturen toevoegen** en voeg een soort gelijke regel, listener, back-end en http-instelling voor fabrikam toe.
 
      :::image type="content" source="./media/create-multiple-sites-portal/fabrikam-rule.png" alt-text="Fabrikam-regel":::
 
@@ -151,18 +153,20 @@ Als u back-enddoelen wilt toevoegen, doet u het volgende:
 ### <a name="create-a-virtual-machine"></a>Een virtuele machine maken
 
 1. Selecteer **Een resource maken** in de Azure-portal. Het venster **Nieuw** wordt weergegeven.
-2. Selecteer **Compute** en vervolgens **Windows Server 2016 Datacenter** in de lijst **Populair**. De pagina **Een virtuele machine maken** wordt weergegeven.<br>Toepassingsgateway kan verkeer routeren naar ieder type virtuele machine dat wordt gebruikt in de back-endpool. In dit voorbeeld gebruikt u een Windows Server 2016-gegevenscentrum.
+2. Selecteer in de lijst **Populair** de optie **Windows Server 2016-gegevenscentrum**. De pagina **Een virtuele machine maken** wordt weergegeven.<br>Toepassingsgateway kan verkeer routeren naar ieder type virtuele machine dat wordt gebruikt in de back-endpool. In dit voorbeeld gebruikt u een Windows Server 2016-gegevenscentrum.
 3. Voer deze waarden in op het tabblad **Basisinformatie** voor de volgende instellingen voor de virtuele machine:
 
-    - **Resourcegroep** : Selecteer **myResourceGroupAG** als naam van de resourcegroep.
-    - **Naam van virtuele machine** : Voer *contosoVM* in als de naam voor de virtuele machine.
-    - **Gebruikersnaam** : Voer een naam in voor de gebruikersnaam van de beheerder.
-    - **Wachtwoord** : Voer een wachtwoord in voor de beheerder.
+    - **Abonnement**: Selecteer uw abonnement.
+    - **Resourcegroep**: Selecteer **myResourceGroupAG** als naam van de resourcegroep.
+    - **Naam van virtuele machine**: Voer *contosoVM* in als de naam voor de virtuele machine.
+    - **Regio**: Selecteer de regio die u eerder hebt gebruikt.
+    - **Gebruikersnaam**: Voer een naam in voor de gebruikersnaam van de beheerder.
+    - **Wachtwoord**: Voer een wachtwoord in voor de beheerder.
 1. Accepteer de overige standaardwaarden en klik op **Volgende: Schijven**.  
 2. Accepteer de standaardwaarden op het tabblad **Schijven** en selecteer **Volgende: Netwerken**.
-3. Zorg ervoor dat, op het tabblad **Netwerken** , **myVNet** is geselecteerd bij **Virtueel netwerk** en dat **Subnet** is ingesteld op **myBackendSubnet**. Accepteer de overige standaardwaarden en klik op **Volgende: Beheer**.<br>Toepassingsgateway kan communiceren met instanties die zich buiten het virtuele netwerk van de gateway bevinden, maar u moet ervoor zorgen dat er een IP-verbinding is.
-4. Op het tabblad **Beheer** stelt u **Diagnostische gegevens over opstarten** in op **Uit**. Accepteer de overige standaardwaarden en selecteer **Beoordelen en maken**.
-5. Controleer de instellingen op het tabblad **Beoordelen en maken** , corrigeer eventuele validatiefouten en selecteer vervolgens **Maken**.
+3. Zorg ervoor dat, op het tabblad **Netwerken**, **myVNet** is geselecteerd bij **Virtueel netwerk** en dat **Subnet** is ingesteld op **myBackendSubnet**. Accepteer de overige standaardwaarden en klik op **Volgende: Beheer**.<br>Toepassingsgateway kan communiceren met instanties die zich buiten het virtuele netwerk van de gateway bevinden, maar u moet ervoor zorgen dat er een IP-verbinding is.
+4. Op het tabblad **Beheer** stelt u **Diagnostische gegevens over opstarten** in op **Uitschakelen**. Accepteer de overige standaardwaarden en selecteer **Beoordelen en maken**.
+5. Controleer de instellingen op het tabblad **Beoordelen en maken**, corrigeer eventuele validatiefouten en selecteer vervolgens **Maken**.
 6. Wacht tot de virtuele machine is gemaakt voordat u verder gaat.
 
 ### <a name="install-iis-for-testing"></a>IIS installeren voor testen
@@ -197,9 +201,9 @@ In dit voorbeeld installeert u IIS alleen op de virtuele machines om te controle
 
 3. Selecteer **contosoPool**.
 
-4. Onder **Doelen** selecteert u **Virtuele machine** in de vervolgkeuzelijst.
+4. Onder **doel type**, selecteer **virtuele machine** in de vervolg keuzelijst.
 
-5. Onder **VIRTUELE MACHINE** en **NETWERKINTERFACES** selecteert u de virtuele machine **contosoVM** en de bijbehorende netwerkinterface in de vervolgkeuzelijsten.
+5. Onder **doel** selecteert u de netwerk interface van de virtuele machine **contosoVM** in de vervolg keuzelijst.
 
     ![Back-endservers toevoegen](./media/create-multiple-sites-portal/edit-backend-pool.png)
 
@@ -208,23 +212,57 @@ In dit voorbeeld installeert u IIS alleen op de virtuele machines om te controle
 
 Wacht tot de implementatie is voltooid voordat u doorgaat met de volgende stap.
 
-## <a name="create-a-www-a-record-in-your-domains"></a>Een www A-record in uw domeinen maken
+## <a name="edit-your-hosts-file"></a>Het hosts-bestand bewerken
 
-Als de toepassingsgateway met het bijbehorende openbare IP-adres is gemaakt, kunt u het IP-adres ophalen en dit gebruiken om een A-record in uw domeinen te maken. 
+Nadat de toepassings gateway is gemaakt met het open bare IP-adres, kunt u het IP-adres ophalen en gebruiken om uw hosts-bestand te bewerken om het probleem op te lossen `www.contoso.com` en `www.fabrikam.com` 
 
 1. Klik op **Alle resources** en vervolgens op **myAGPublicIPAddress**.
 
     ![Het DNS-adres van de toepassingsgateway registreren](./media/create-multiple-sites-portal/public-ip.png)
 
-2. Kopieer het IP-adres en gebruik dit als de waarde voor een nieuw *www* A-record in uw domeinen.
+2. Kopieer het IP-adres en gebruik dit als de waarde voor nieuwe vermeldingen in uw `hosts` bestand.
+1. Open op uw lokale computer een opdracht prompt voor beheer en ga naar `c:\Windows\System32\drivers\etc` .
+1. Open het `hosts` bestand en voeg de volgende vermeldingen toe, waarbij `x.x.x.x` het open bare IP-adres van de toepassings gateway is:
+   ```dos
+   # Copyright (c) 1993-2009 Microsoft Corp.
+   #
+   # This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+   #
+   # This file contains the mappings of IP addresses to host names. Each
+   # entry should be kept on an individual line. The IP address should
+   # be placed in the first column followed by the corresponding host name.
+   # The IP address and the host name should be separated by at least one
+   # space.
+   #
+   # Additionally, comments (such as these) may be inserted on individual
+   # lines or following the machine name denoted by a '#' symbol.
+   #
+   # For example:
+   #
+   #      102.54.94.97     rhino.acme.com          # source server
+   #       38.25.63.10     x.acme.com              # x client host
+   
+   # localhost name resolution is handled within DNS itself.
+   #    127.0.0.1       localhost
+   #    ::1             localhost
+   x.x.x.x www.contoso.com
+   x.x.x.x www.fabrikam.com
 
+   ```
+1. Sla het bestand op.
+1. Voer de volgende opdrachten uit om de wijzigingen in uw hosts-bestand te laden en weer te geven:
+   ```dos
+    ipconfig/registerdns
+    ipconfig/displaydns
+   ```
+   
 ## <a name="test-the-application-gateway"></a>De toepassingsgateway testen
 
-1. Voer uw domeinnaam in de adresbalk van de browser in. Bijvoorbeeld `http://www.contoso.com`.
+1. Typ een domein naam in de adres balk van uw browser. Bijvoorbeeld `http://www.contoso.com`.
 
     ![Contoso-site testen in toepassingsgateway](./media/create-multiple-sites-portal/application-gateway-iistest.png)
 
-2. Wijzig het adres in uw andere domein. U krijgt iets te zien zoals in het volgende voorbeeld:
+2. Wijzig het adres voor het andere domein en u ziet iets als in het volgende voor beeld:
 
     ![Fabrikam-site testen in toepassingsgateway](./media/create-multiple-sites-portal/application-gateway-iistest2.png)
 
@@ -238,6 +276,9 @@ Ga als volgt te werk om de resourcegroep te verwijderen:
 2. Zoek en selecteer **myResourceGroupAG** in de lijst op de pagina **Resourcegroepen**.
 3. Selecteer **Resourcegroep verwijderen** op de **pagina van de resourcegroep**.
 4. Voer *myResourceGroupAG* in bij **TYP DE RESOURCEGROEPNAAM** en selecteer vervolgens **Verwijderen**.
+
+Het hosts-bestand herstellen:
+1. Verwijder de `www.contoso.com` `www.fabrikam.com` regels en uit het bestand hosts en voer `ipconfig/registerdns` `ipconfig/flushdns` uit vanaf de opdracht prompt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

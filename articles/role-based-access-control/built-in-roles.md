@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 02/15/2021
+ms.date: 02/25/2021
 ms.custom: generated
-ms.openlocfilehash: 1cd86ac2b9500c15bc32445e1866a40ca1c6b409
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 90c0be8e6df3e489595bdafed1f29d1ed0ef00f8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100577005"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101724503"
 ---
 # <a name="azure-built-in-roles"></a>Ingebouwde Azure-rollen
 
@@ -116,7 +116,7 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Gegevens ontvanger van Azure Event Hubs](#azure-event-hubs-data-receiver) | Hiermee krijgt u toegang tot Azure Event Hubs-resources. | a638d3c7-ab3a-418d-83e6-5f17a39d4fde |
 > | [Afzender van Azure Event Hubs gegevens](#azure-event-hubs-data-sender) | Hiermee wordt toegang tot Azure Event Hubs-resources verzonden. | 2b629674-e913-4c01-ae53-ef4638d8f975 |
 > | [Inzender Data Factory](#data-factory-contributor) | Het maken en beheren van gegevens fabrieken, evenals onderliggende resources. | 673868aa-7521-48a0-acc6-0f60742d39f5 |
-> | [Gegevens opschoner](#data-purger) | Kan Analytics-gegevens verwijderen | 150f5e0c-0603-4f03-8c7f-cf70034c4e90 |
+> | [Gegevens opschoner](#data-purger) | Persoonlijke gegevens verwijderen uit een Log Analytics-werk ruimte. | 150f5e0c-0603-4f03-8c7f-cf70034c4e90 |
 > | [HDInsight-cluster operator](#hdinsight-cluster-operator) | Hiermee kunt u HDInsight-cluster configuraties lezen en wijzigen. | 61ed4efc-fab3-44fd-b111-e24485cc132a |
 > | [Inzender voor HDInsight Domain Services](#hdinsight-domain-services-contributor) | Kan gerelateerde bewerkingen die betrekking hebben op domein services lezen, maken, wijzigen en verwijderen die nodig zijn voor HDInsight-Enterprise Security Package | 8d8d5a11-05d3-4bda-a417-a08778121c7c |
 > | [Inzender van Log Analytics](#log-analytics-contributor) | Log Analytics Inzender kan alle bewakings gegevens lezen en controle-instellingen bewerken. Het bewerken van bewakings instellingen omvat het toevoegen van de VM-extensie aan Vm's; lezen van opslag account sleutels om het verzamelen van logboeken van Azure Storage te kunnen configureren. Automation-accounts maken en configureren; oplossingen toevoegen; en het configureren van Azure Diagnostics voor alle Azure-resources. | 92aaf0da-9dab-42b6-94a3-d43ce8d16293 |
@@ -3944,6 +3944,10 @@ Hiermee kunt u Azure Cosmos DB accounts beheren, maar geen toegang tot gegevens.
 > | [Microsoft.DocumentDB](resource-provider-operations.md#microsoftdocumentdb)/databaseAccounts/regenerateKey/* |  |
 > | [Microsoft.DocumentDB](resource-provider-operations.md#microsoftdocumentdb)/databaseAccounts/listKeys/* |  |
 > | [Microsoft.DocumentDB](resource-provider-operations.md#microsoftdocumentdb)/databaseAccounts/listConnectionStrings/* |  |
+> | [Microsoft.DocumentDB](resource-provider-operations.md#microsoftdocumentdb)/databaseAccounts/sqlRoleDefinitions/write | Een definitie van een SQL-functie maken of bijwerken |
+> | [Microsoft.DocumentDB](resource-provider-operations.md#microsoftdocumentdb)/databaseAccounts/sqlRoleDefinitions/Delete | Een definitie van een SQL-functie verwijderen |
+> | [Microsoft.DocumentDB](resource-provider-operations.md#microsoftdocumentdb)/databaseAccounts/sqlRoleAssignments/write | Een toewijzing van een SQL-functie maken of bijwerken |
+> | [Microsoft.DocumentDB](resource-provider-operations.md#microsoftdocumentdb)/databaseAccounts/sqlRoleAssignments/Delete | Een toewijzing van een SQL-rol verwijderen |
 > | **DataActions** |  |
 > | *geen* |  |
 > | **NotDataActions** |  |
@@ -3973,7 +3977,11 @@ Hiermee kunt u Azure Cosmos DB accounts beheren, maar geen toegang tot gegevens.
         "Microsoft.DocumentDB/databaseAccounts/readonlyKeys/*",
         "Microsoft.DocumentDB/databaseAccounts/regenerateKey/*",
         "Microsoft.DocumentDB/databaseAccounts/listKeys/*",
-        "Microsoft.DocumentDB/databaseAccounts/listConnectionStrings/*"
+        "Microsoft.DocumentDB/databaseAccounts/listConnectionStrings/*",
+        "Microsoft.DocumentDB/databaseAccounts/sqlRoleDefinitions/write",
+        "Microsoft.DocumentDB/databaseAccounts/sqlRoleDefinitions/delete",
+        "Microsoft.DocumentDB/databaseAccounts/sqlRoleAssignments/write",
+        "Microsoft.DocumentDB/databaseAccounts/sqlRoleAssignments/delete"
       ],
       "dataActions": [],
       "notDataActions": []
@@ -4774,7 +4782,7 @@ Het maken en beheren van gegevens fabrieken, evenals onderliggende resources. [M
 
 ### <a name="data-purger"></a>Gegevens opschoner
 
-Kan analyse gegevens opschonen [meer informatie](../azure-monitor/logs/personal-data-mgmt.md)
+Persoonlijke gegevens verwijderen uit een Log Analytics-werk ruimte. [Meer informatie](../azure-monitor/logs/personal-data-mgmt.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |

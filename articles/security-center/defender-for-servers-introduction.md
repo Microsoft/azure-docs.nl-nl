@@ -7,12 +7,12 @@ ms.date: 9/23/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: b7457e258cf8a9936e9a63ab9eec9edc0b54d3eb
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: d9aaa00527462f5bbb999ddb76e125d1dfbee7a4
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98797728"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701991"
 ---
 # <a name="introduction-to-azure-defender-for-servers"></a>Inleiding tot Azure Defender voor servers
 
@@ -27,7 +27,7 @@ Voor Linux verzamelt Azure Defender controlerecords van Linux-machines met behul
 
 De bedreigingsdetectie- en beveiligingsmogelijkheden van Azure Defender voor servers zijn onder andere:
 
-- **Geïntegreerde licentie voor Microsoft Defender voor Eindpunten (alleen Windows)** - Azure Defender voor servers bevat [Microsoft Defender voor Eindpunten](https://www.microsoft.com/microsoft-365/security/endpoint-defender). Samen bieden ze uitgebreide mogelijkheden voor eindpuntdetectie en -reactie (EDR). [Meer informatie](security-center-wdatp.md).
+- **Geïntegreerde licentie voor Microsoft Defender voor Eindpunten (alleen Windows)** - Azure Defender voor servers bevat [Microsoft Defender voor Eindpunten](https://www.microsoft.com/microsoft-365/security/endpoint-defender). Samen bieden ze uitgebreide mogelijkheden voor eindpuntdetectie en -reactie (EDR). Zie [uw eind punten beveiligen](security-center-wdatp.md)voor meer informatie.
 
     Wanneer Defender voor Eindpunten een bedreiging detecteert, wordt er een waarschuwing geactiveerd. De waarschuwing wordt weergegeven in Security Center. Vanuit Security Center kunt u ook naar de Defender voor Eindpunten-console draaien en een gedetailleerd onderzoek uitvoeren om het bereik van de aanval te ontdekken. Meer informatie over Microsoft Defender voor Eindpunten.
 
@@ -36,25 +36,25 @@ De bedreigingsdetectie- en beveiligingsmogelijkheden van Azure Defender voor ser
 
 - **Scannen voor evaluatie van beveiligingsproblemen voor VM's**: de beveiligingsprobleemscanner van Azure Security Center werkt op basis van Qualys. 
 
-    De scanner van Qualys is een van de toonaangevende hulpprogramma's voor het in realtime identificeren van beveiligings problemen in uw Azure Virtual Machines. U hebt geen Qualys-licentie of Qualys-account nodig. De scans worden naadloos uitgevoerd in Security Center. [Meer informatie](deploy-vulnerability-assessment-vm.md).
+    Qualys ' scanner is een van de toonaangevende hulpprogram ma's voor realtime-identificatie van beveiligings problemen in Azure en hybride virtuele machines. U hebt geen Qualys-licentie of Qualys-account nodig. De scans worden naadloos uitgevoerd in Security Center. Zie voor meer informatie [de geïntegreerde oplossing voor de evaluatie van beveiligings problemen van Azure Defender voor Azure-en hybride computers](deploy-vulnerability-assessment-vm.md).
 
 - **Just-in-time-VM-toegang (JIT)** : makers van bedreigingen jagen actief op toegankelijke machines met open beheerpoorten, zoals RDP of SSH. Al uw virtuele machines zijn potentiële doelen voor een aanval. Wanneer het lukt een VM aan te tasten, wordt deze gebruikt als ingangspunt om verdere resources in uw omgeving aan te vallen.
 
-    Wanneer u Azure Defender voor servers inschakelt, kunt u just-in-time-VM-toegang gebruiken om binnenkomend verkeer naar uw Azure-VM's te blokkeren, zodat u minder kwetsbaar bent voor aanvallen maar tegelijkertijd eenvoudig verbinding met VM's kunt maken wanneer dat nodig is. [Meer informatie](just-in-time-explained.md).
+    Wanneer u Azure Defender voor servers inschakelt, kunt u just-in-time-VM-toegang gebruiken om binnenkomend verkeer naar uw Azure-VM's te blokkeren, zodat u minder kwetsbaar bent voor aanvallen maar tegelijkertijd eenvoudig verbinding met VM's kunt maken wanneer dat nodig is. Zie [informatie over JIT-VM-toegang](just-in-time-explained.md)voor meer informatie.
 
 - **FIM (File Integrity Monitoring)** : met bestandsintegriteitscontole (FIM), ook wel bekend als wijzigingscontrole, worden bestanden en registers van het besturingssysteem, toepassingssoftware en andere gecontroleerd op wijzigingen die mogelijk duiden op een aanval. Er wordt een vergelijkingsmethode gebruikt om te bepalen of de huidige toestand van het bestand anders is dan bij de laatste scan van het bestand. U kunt deze vergelijking gebruiken om te bepalen of er geldige of verdachte wijzigingen zijn aangebracht in uw bestanden.
 
-    Wanneer u Azure Defender voor servers inschakelt, kunt u FIM gebruiken om de integriteit van Windows-bestanden, uw Windows-registers en Linux-bestanden te valideren. [Meer informatie](security-center-file-integrity-monitoring.md).
+    Wanneer u Azure Defender voor servers inschakelt, kunt u FIM gebruiken om de integriteit van Windows-bestanden, uw Windows-registers en Linux-bestanden te valideren. Zie [File Integrity Monitoring in azure Security Center](security-center-file-integrity-monitoring.md)voor meer informatie.
 
 - **Adaptive Application Controls (AAC)** : adaptieve toepassingsregelaars zijn een intelligente, automatische oplossing voor het definiëren van lijsten met toegestane toepassingen die bewezen veilig zijn voor uw machines.
 
-    Wanneer u adaptieve toepassingsregelaars hebt ingeschakeld en geconfigureerd, krijgt u beveiligingswaarschuwingen als er andere toepassingen worden uitgevoerd dan degene die u als veilig hebt gedefinieerd. [Meer informatie](security-center-adaptive-application.md).
+    Wanneer u adaptieve toepassingsregelaars hebt ingeschakeld en geconfigureerd, krijgt u beveiligingswaarschuwingen als er andere toepassingen worden uitgevoerd dan degene die u als veilig hebt gedefinieerd. Zie voor meer informatie [besturings elementen voor adaptieve toepassingen gebruiken om de kwets bare Opper vlakken van uw computers te reduceren](security-center-adaptive-application.md).
 
 - **Adaptive Network Hardening (ANH)** : het toepassen van netwerkbeveiligingsgroepen (NSG) om het verkeer van en naar resources te filteren, verbetert uw netwerkbeveiligingspostuur. Maar er kunnen toch nog enkele gevallen zijn waarin het werkelijke verkeer dat via de NSG stroomt een subset is van de gedefinieerde NSG-regels. In dergelijke gevallen kunt u het beveiligingspostuur verder verbeteren door de NSG-regels te versterken op basis van de werkelijke verkeerspatronen.
 
-    Adaptieve netwerkbeveiliging biedt aanbevelingen voor verdere versterking van de NSG-regels. Het maakt gebruik van een machine learning-algoritme dat rekening houdt met werkelijk verkeer, bekende vertrouwde configuratie, bedreigingsinformatie en andere aanwijzingen voor aantasting, en geeft vervolgens aanbevelingen om alleen verkeer van bepaalde IP-/poort-tuples toe te staan. [Meer informatie](security-center-adaptive-network-hardening.md).
+    Adaptieve netwerkbeveiliging biedt aanbevelingen voor verdere versterking van de NSG-regels. Het maakt gebruik van een machine learning-algoritme dat rekening houdt met werkelijk verkeer, bekende vertrouwde configuratie, bedreigingsinformatie en andere aanwijzingen voor aantasting, en geeft vervolgens aanbevelingen om alleen verkeer van bepaalde IP-/poort-tuples toe te staan. Zie [uw netwerk beveiligings postuur verbeteren met adaptieve netwerk](security-center-adaptive-network-hardening.md)beveiliging voor meer informatie.
 
-- **Beveiliging van Docker-host**: Azure Security Center identificeert niet-beheerde containers die worden gehost op IaaS Linux-VM's of andere Linux-machines waarop Docker-containers worden uitgevoerd. Security Center evalueert doorlopend de configuraties van deze containers. Vervolgens worden ze vergeleken met de Docker-benchmark van het CIS (Center for Internet Security). Security Center bevat de volledige regelset van de CIS Docker-benchmark en waarschuwt u als uw containers niet voldoen aan een van de controles. [Meer informatie](harden-docker-hosts.md).
+- **Beveiliging van Docker-host**: Azure Security Center identificeert niet-beheerde containers die worden gehost op IaaS Linux-VM's of andere Linux-machines waarop Docker-containers worden uitgevoerd. Security Center evalueert doorlopend de configuraties van deze containers. Vervolgens worden ze vergeleken met de Docker-benchmark van het CIS (Center for Internet Security). Security Center bevat de volledige regelset van de CIS Docker-benchmark en waarschuwt u als uw containers niet voldoen aan een van de controles. Zie [hard uw docker-hosts beveiligen](harden-docker-hosts.md)voor meer informatie.
 
 - **Detectie van bestandsloze aanvallen (alleen Windows)** : aanvallen zonder bestanden injecteren schadelijke payloads in het geheugen, om detectie door schijfscantechnieken te voorkomen. De payload van de aanvaller blijft vervolgens achter in het geheugen met aangetaste processen en kan allerlei schadelijke activiteiten uitvoeren.
 

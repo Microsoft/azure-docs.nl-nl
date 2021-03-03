@@ -4,15 +4,15 @@ description: In dit artikel wordt uitgelegd hoe u gestructureerde toepassings lo
 author: MikeDodaro
 ms.service: spring-cloud
 ms.topic: conceptual
-ms.date: 01/13/2021
+ms.date: 02/05/2021
 ms.author: brendanm
 ms.custom: devx-track-java
-ms.openlocfilehash: c5c35fe8a352a1bc3467e9512a7fcbc068375bfb
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: e846da81444ae1632cb7f9a4cd413bc3f9b7b232
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99055773"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701940"
 ---
 # <a name="structured-application-log-for-azure-spring-cloud"></a>Gestructureerd toepassings logboek voor Azure lente-Cloud
 
@@ -23,16 +23,16 @@ Om de ervaring van de logboek query te verbeteren, moet een toepassings logboek 
 
 **Vereisten voor het JSON-schema:**
 
-| JSON-sleutel      | Type JSON-waarde|  Vereist | Kolom in Log Analytics| Description |
+| JSON-sleutel      | Type JSON-waarde|  Vereist | Kolom in Log Analytics| Beschrijving |
 | --------------| ------------|-----------|-----------------|--------------------------|
-| tijdstempel     | tekenreeks      |     Yes   | AppTimestamp    | tijds tempel in UTC-notatie  |
+| tijdstempel     | tekenreeks      |     Ja   | AppTimestamp    | tijds tempel in UTC-notatie  |
 | logger        | tekenreeks      |     No    | Logger          | logger                   |
 | niveau         | tekenreeks      |     No    | CustomLevel     | logboek niveau                |
 | reeks        | tekenreeks      |     No    | Reeks          | reeks                   |
 | message       | tekenreeks      |     No    | Bericht         | logboek bericht              |
 | stackTrace    | tekenreeks      |     No    | StackTrace      | stacktrace van uitzonde ring    |
 | exceptionClass| tekenreeks      |     No    | ExceptionClass  | naam uitzonderings klasse     |
-| mdc           | geneste JSON |     No    |                 | gekoppelde context voor diagnostische gegevens|
+| mdc           | geneste JSON |     Nee    |                 | gekoppelde context voor diagnostische gegevens|
 | mdc.traceId   | tekenreeks      |     No    | TraceId         |Trace-id voor gedistribueerde tracering|
 | mdc.spanId    | tekenreeks      |     No    | SpanId          |span-ID voor gedistribueerde tracering |
 |               |             |           |                 |                          |
@@ -238,4 +238,4 @@ AppPlatformLogsforSpring
 ```
 
 ## <a name="next-steps"></a>Volgende stappen
-* Zie aan de [slag met logboek query's in azure monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries) voor meer informatie over de logboek query
+* Zie aan de [slag met logboek query's in azure monitor](../azure-monitor/logs/get-started-queries.md) voor meer informatie over de logboek query

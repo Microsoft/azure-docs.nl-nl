@@ -16,12 +16,12 @@ ms.date: 07/17/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b45decd2f2cf9c99cffb0e08d4d6a5c5cfafc67
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: e10aa5d96722b414d7384ceb81f393575d57e2a2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96858396"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101688770"
 ---
 # <a name="azure-ad-connect-how-to-recover-from-localdb-10-gb-limit"></a>Azure AD Connect: problemen met LocalDB met een limiet van 10 GB oplossen
 Azure AD Connect vereist een SQL Server-database voor het opslaan van identiteitsgegevens. U kunt de standaard SQL Server 2012 Express LocalDB gebruiken die samen met Azure AD Connect is geïnstalleerd, maar ook uw eigen volledige SQL. Voor SQL Server Express geldt een limiet van 10 GB. Wanneer u LocalDB gebruikt en deze limiet is bereikt, kan de Azure AD Connect-synchronisatieservice niet langer starten of goed synchroniseren. In dit artikel worden de herstel stappen beschreven.
@@ -74,7 +74,7 @@ De naam van de data base die is gemaakt voor Azure AD Connect is **ADSync**. Als
 
 4. Start **Sqlcmd** Utility door de opdracht uit `./SQLCMD.EXE -S "(localdb)\.\ADSync" -U <Username> -P <Password>` te voeren met de referentie van een sysadmin of de data base dbo.
 
-5. Als u de Data Base wilt verkleinen, typt u bij het Sqlcmd-prompt (1>), `DBCC Shrinkdatabase(ADSync,1);` gevolgd door `GO` in de volgende regel.
+5. Als u de Data Base wilt verkleinen, typt u bij het Sqlcmd-prompt ( `1>` ), `DBCC Shrinkdatabase(ADSync,1);` gevolgd door `GO` in de volgende regel.
 
 6. Als de bewerking is geslaagd, probeert u de synchronisatie service opnieuw te starten. Als u de synchronisatie service kunt starten, gaat u naar de stap [Run History-gegevens verwijderen](#delete-run-history-data) . Zo niet, neem dan contact op met de ondersteuning.
 

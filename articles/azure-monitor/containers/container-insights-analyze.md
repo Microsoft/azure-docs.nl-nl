@@ -1,26 +1,26 @@
 ---
-title: Kubernetes bewaking met Azure Monitor voor containers | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u de prestaties van een Kubernetes-cluster kunt weer geven en analyseren met Azure Monitor voor containers.
+title: Kubernetes bewaking met container Insights | Microsoft Docs
+description: In dit artikel wordt beschreven hoe u de prestaties van een Kubernetes-cluster met container Insights kunt bekijken en analyseren.
 ms.topic: conceptual
 ms.date: 03/26/2020
-ms.openlocfilehash: 9bb21f7a651d773806a96bb19044abf3bc7dda5d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 432de02d22a418e92a7487001ae8c128323f3685
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612429"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711345"
 ---
-# <a name="monitor-your-kubernetes-cluster-performance-with-azure-monitor-for-containers"></a>Uw Kubernetes-cluster prestaties bewaken met Azure Monitor voor containers
+# <a name="monitor-your-kubernetes-cluster-performance-with-container-insights"></a>De prestaties van uw Kubernetes-cluster bewaken met container Insights
 
-Met Azure Monitor voor containers kunt u de prestatie diagrammen en de integriteits status gebruiken om de werk belasting te bewaken van Kubernetes-clusters die worden gehost op Azure Kubernetes service (AKS), Azure Stack of een andere omgeving van twee perspectieven. U kunt rechtstreeks vanuit het cluster bewaken of u kunt alle clusters in een abonnement weer geven vanuit Azure Monitor. Het weer geven van Azure Container Instances is ook mogelijk bij het bewaken van een specifiek AKS-cluster.
+Met container Insights kunt u de prestatie diagrammen en de status gebruiken om de werk belasting te bewaken van Kubernetes-clusters die worden gehost op Azure Kubernetes service (AKS), Azure Stack of een andere omgeving dan twee perspectieven. U kunt rechtstreeks vanuit het cluster bewaken of u kunt alle clusters in een abonnement weer geven vanuit Azure Monitor. Het weer geven van Azure Container Instances is ook mogelijk bij het bewaken van een specifiek AKS-cluster.
 
 Dit artikel helpt u bij het begrijpen van de twee perspectieven en hoe Azure Monitor u helpt om gedetecteerde problemen snel te evalueren, te onderzoeken en op te lossen.
 
-Voor informatie over het inschakelen van Azure Monitor voor containers raadpleegt u [Onboarding Azure monitor voor containers](container-insights-onboard.md).
+Zie voor meer informatie over het inschakelen van container Insights [onboarding container Insights](container-insights-onboard.md).
 
 Azure Monitor biedt een weer gave met meerdere clusters waarin de status van alle bewaakte Kubernetes-clusters met Linux-en Windows Server 2019-implementaties in uw abonnementen worden weer gegeven. Er worden clusters weer gegeven die zijn gedetecteerd in alle omgevingen die niet worden bewaakt door de oplossing. U kunt de cluster status direct begrijpen en u kunt hier inzoomen op de prestaties van het knoop punt en de controller of navigeren om prestatie grafieken voor het cluster weer te geven. Voor AKS-clusters die zijn gedetecteerd en geïdentificeerd als niet-bewaakt, kunt u op elk gewenst moment de bewaking inschakelen.
 
-De belangrijkste verschillen in het bewaken van een Windows Server-cluster met Azure Monitor voor containers in vergelijking met een Linux-cluster worden [hier](container-insights-overview.md#what-does-azure-monitor-for-containers-provide) beschreven in het overzichts artikel.
+De belangrijkste verschillen in het bewaken van een Windows Server-cluster met container Insights in vergelijking met een Linux-cluster worden [hier](container-insights-overview.md#what-does-azure-monitor-for-containers-provide) beschreven in het overzichts artikel.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
 
@@ -37,7 +37,7 @@ U kunt de resultaten die in het raster worden weer gegeven, bereiken om clusters
 * **Azure** -AKS en AKS-Engine-clusters die worden gehost in de Azure Kubernetes-service
 * **Azure stack (preview)** : AKS-Engine-clusters die worden gehost op Azure stack
 * **Niet-Azure (preview)** -Kubernetes-clusters die on-premises worden gehost
-* **Alle** -alle Kubernetes-clusters weer geven die worden gehost in Azure, Azure stack en on-premises omgevingen die zijn onboarded voor Azure monitor voor containers
+* **Alle** -alle Kubernetes-clusters weer geven die worden gehost in Azure, Azure stack en on-premises omgevingen die zijn onboarding voor container Insights
 
 Als u clusters uit een specifieke omgeving wilt weer geven, selecteert u deze in de **omgevingen** Pill in de linkerbovenhoek van de pagina.
 
@@ -59,7 +59,7 @@ De volgende statussen zijn opgenomen:
 * **Niet gevonden**: de werk ruimte, de resource groep of het abonnement dat de werk ruimte voor deze oplossing bevat, is verwijderd.
 * Niet **gemachtigd**: de gebruiker heeft niet de vereiste machtigingen om de gegevens in de werk ruimte te lezen.
 * **Fout**: er is een fout opgetreden tijdens het lezen van gegevens uit de werk ruimte.
-* Onjuist **geconfigureerd**: Azure monitor voor containers is niet juist geconfigureerd in de opgegeven werk ruimte.
+* **Onjuist geconfigureerd**: container Insights is niet juist geconfigureerd in de opgegeven werk ruimte.
 * **Geen gegevens**: de gegevens zijn gedurende de laatste 30 minuten niet gerapporteerd aan de werk ruimte.
 
 Met de status wordt de algehele cluster status berekend als het *slechtste van* de drie statussen met één uitzonde ring. Als een van de drie statussen onbekend is, wordt de status van het algehele cluster **onbekend** weer gegeven.
@@ -88,7 +88,7 @@ In de lijst met clusters kunt u inzoomen op de **cluster** pagina door de naam v
 
 ## <a name="view-performance-directly-from-a-cluster"></a>Prestaties direct vanuit een cluster weer geven
 
-Toegang tot Azure monitor voor containers is rechtstreeks beschikbaar vanuit een AKS-cluster door **Insights**  >  -**cluster** te selecteren in het linkerdeel venster of wanneer u een cluster hebt geselecteerd in de weer gave met meerdere clusters. Informatie over uw cluster is onderverdeeld in vier perspectieven:
+Toegang tot container Insights is rechtstreeks beschikbaar vanuit een AKS-cluster door **Insights**  >  -**cluster** te selecteren in het linkerdeel venster of wanneer u een cluster hebt geselecteerd in de weer gave met meerdere clusters. Informatie over uw cluster is onderverdeeld in vier perspectieven:
 
 - Cluster
 - Knooppunten
@@ -109,13 +109,13 @@ In de prestatie grafieken worden vier prestatie gegevens weer gegeven:
 - **Aantal knoop punten**: het aantal knoop punten en de status van Kubernetes. Statussen van de cluster knooppunten worden weer gegeven in totaal, gereed en niet gereed. Ze kunnen afzonderlijk worden gefilterd of gecombineerd in de selector boven de grafiek.
 - **Aantal actieve pod**: een pod-aantal en-status van Kubernetes. De statussen van het Peul worden weer gegeven in totaal, in behandeling, actief, onbekend, geslaagd of mislukt. Ze kunnen afzonderlijk worden gefilterd of gecombineerd in de selector boven de grafiek.
 
-Gebruik de pijl naar links en naar rechts om elk gegevens punt in de grafiek te door lopen. Gebruik de pijl-omhoog-en-omlaag-toets om de percentiel lijnen te door lopen. Selecteer het speld pictogram in de rechter bovenhoek van een van de grafieken om de geselecteerde grafiek vast te maken aan het laatste Azure-dash board dat u hebt bekeken. Vanuit het dash board kunt u het formaat en de positie van de grafiek wijzigen. Als u de grafiek in het dash board selecteert, wordt u omgeleid naar Azure Monitor voor containers en wordt het juiste bereik en de weer gave geladen.
+Gebruik de pijl naar links en naar rechts om elk gegevens punt in de grafiek te door lopen. Gebruik de pijl-omhoog-en-omlaag-toets om de percentiel lijnen te door lopen. Selecteer het speld pictogram in de rechter bovenhoek van een van de grafieken om de geselecteerde grafiek vast te maken aan het laatste Azure-dash board dat u hebt bekeken. Vanuit het dash board kunt u het formaat en de positie van de grafiek wijzigen. Als u de grafiek in het dash board selecteert, wordt u omgeleid naar container Insights en wordt het juiste bereik en de weer gave geladen.
 
-Azure Monitor voor containers biedt ook ondersteuning voor Azure Monitor [Metrics Explorer](../essentials/metrics-getting-started.md), waar u uw eigen plot grafieken kunt maken, trends en onderzoeken en vastmaakt aan dash boards. Vanuit Metrics Explorer kunt u ook de criteria gebruiken die u hebt ingesteld om uw metrische gegevens te visualiseren als basis voor een [regel op basis van metrische gegevens](../alerts/alerts-metric.md).
+Container Insights biedt ook ondersteuning voor Azure Monitor [Metrics Explorer](../essentials/metrics-getting-started.md), waarin u uw eigen plot grafieken kunt maken, trends en onderzoeken en vastmaakt aan dash boards. Vanuit Metrics Explorer kunt u ook de criteria gebruiken die u hebt ingesteld om uw metrische gegevens te visualiseren als basis voor een [regel op basis van metrische gegevens](../alerts/alerts-metric.md).
 
 ## <a name="view-container-metrics-in-metrics-explorer"></a>Metrische container gegevens weer geven in Metrics Explorer
 
-In Metrics Explorer kunt u geaggregeerde gegevens over knoop punt-en pod-gebruik weer geven van Azure Monitor voor containers. De volgende tabel bevat een overzicht van de Details om u te helpen begrijpen hoe u de metrische grafieken kunt gebruiken voor het visualiseren van metrische gegevens over containers.
+In Metrics Explorer kunt u het geaggregeerde knoop punt en de metrische gegevens over het Pod-gebruik in container Insights weer geven. De volgende tabel bevat een overzicht van de Details om u te helpen begrijpen hoe u de metrische grafieken kunt gebruiken voor het visualiseren van metrische gegevens over containers.
 
 |Naamruimte | Metrisch | Beschrijving |
 |----------|--------|-------------|
@@ -297,12 +297,12 @@ Azure Network Policy Manager bevat informatieve Prometheus-metrische gegevens di
 
 ## <a name="workbooks"></a>Werkmappen
 
-Werkmappen combi neren tekst, logboek query's, metrische gegevens en para meters in uitgebreide interactieve rapporten waarmee u de prestaties van het cluster kunt analyseren. Zie [werkmappen in azure monitor voor containers](../insights/container-insights-reports.md) voor een beschrijving van de werkmappen die beschikbaar zijn voor Azure monitor voor containers.
+Werkmappen combi neren tekst, logboek query's, metrische gegevens en para meters in uitgebreide interactieve rapporten waarmee u de prestaties van het cluster kunt analyseren. Zie [werkmappen in container Insights](../insights/container-insights-reports.md) voor een beschrijving van de werkmappen die beschikbaar zijn voor container Insights.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Bekijk [prestatie waarschuwingen maken met Azure monitor voor containers](./container-insights-log-alerts.md) voor meer informatie over het maken van waarschuwingen voor hoog CPU-en geheugen gebruik ter ondersteuning van uw DevOps-of operationele processen en procedures.
+- Bekijk [prestatie waarschuwingen maken met container Insights](./container-insights-log-alerts.md) voor meer informatie over het maken van waarschuwingen voor hoog CPU-en geheugen gebruik ter ondersteuning van uw DevOps-of operationele processen en procedures.
 
 - Bekijk de [voor beelden van logboek query's](container-insights-log-search.md#search-logs-to-analyze-data) om vooraf gedefinieerde query's en voor beelden te bekijken om te evalueren of aan te passen om uw clusters te waarschuwen, te visualiseren of te analyseren.
 

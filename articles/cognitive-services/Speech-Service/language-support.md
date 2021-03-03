@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/07/2021
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: 502f93df8d9948a6d6682b14ea13b59e324833cb
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 4e626cb5cac29a0e5133eb77cbaff3f4131b8456
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101091473"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101722344"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Taal-en spraak ondersteuning voor de spraak service
 
@@ -38,8 +38,8 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 
 | Taal                 | Land instelling (BCP-47) | Aanpassingen  | [Taaldetectie](how-to-automatic-language-detection.md) |
 |------------------------------------|--------|---------------------------------------------------|-------------------------------|
-| Arabisch (Bahrein), modern, standaard  | `ar-BH` | Tekst                                   | Yes                           | 
-| Arabisch (Egypte)                     | `ar-EG` | Tekst                                   | Yes                          |
+| Arabisch (Bahrein), modern, standaard  | `ar-BH` | Tekst                                   | Ja                           | 
+| Arabisch (Egypte)                     | `ar-EG` | Tekst                                   | Ja                          |
 | Arabisch (Irak)                      | `ar-IQ` | Tekst                                   |                           |
 | Arabisch (Israël)                    | `ar-IL` | Tekst                                   |                           |
 | Arabisch (Jordanië)                    | `ar-JO` | Tekst                                   |                           |
@@ -47,54 +47,61 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | Arabisch (Libanon)                   | `ar-LB` | Tekst                                   |                           |
 | Arabisch (Oman)                      | `ar-OM` | Tekst                                   |                           |
 | Arabisch (Qatar)                     | `ar-QA` | Tekst                                   |                           |
-| Arabisch (Saoedi-Arabië)              | `ar-SA` | Tekst                                   | Yes                          |
+| Arabisch (Saoedi-Arabië)              | `ar-SA` | Tekst                                   | Ja                          |
 | Arabisch (status van Palestijnse)        | `ar-PS` | Tekst                                   |                           |
-| Arabisch (Syrië)                     | `ar-SY` | Tekst                                   | Yes                          |
+| Arabisch (Syrië)                     | `ar-SY` | Tekst                                   | Ja                          |
 | Arabisch (Verenigde Arabische Emiraten)      | `ar-AE` | Tekst                                   |                           |
 | Bulgaars (Bulgarije)               | `bg-BG` | Tekst                                   |                           |
-| Catalaans (Spanje)                    | `ca-ES` | Tekst                                   | Yes                          |
-| Chinees (Kantonees, traditioneel)   | `zh-HK` | Audio (20201015)<br>Tekst                 |        Yes                   |
-| Chinees (Mandarijn, vereenvoudigd)     | `zh-CN` | Audio (20200910)<br>Tekst                 |     Yes                      |
-| Chinees (Taiwan Mandarijn)       | `zh-TW` | Audio (20190701, 20201015)<br>Tekst                 |           Yes                |
+| Catalaans (Spanje)                    | `ca-ES` | Tekst                                   | Ja                          |
+| Chinees (Kantonees, traditioneel)   | `zh-HK` | Audio (20201015)<br>Tekst                 |        Ja                   |
+| Chinees (Mandarijn, vereenvoudigd)     | `zh-CN` | Audio (20200910)<br>Tekst                 |     Ja                      |
+| Chinees (Taiwan Mandarijn)       | `zh-TW` | Audio (20190701, 20201015)<br>Tekst                 |           Ja                |
 | Kroatisch (Kroatië)                 | `hr-HR` | Tekst                                   |                           |
 | Tsjechisch (Tsjechische Republiek)             | `cs-CZ` | Tekst                                   |                           |
-| Deens (Denemarken)                   | `da-DK` | Tekst                                   | Yes                          |
-| Nederlands (Nederland)                | `nl-NL` | Audio (20201015)<br>Tekst                                   |    Yes                       |
-| Engels (Australië)                | `en-AU` | Audio (20201019)<br>Tekst                 | Yes                          |
-| Engels (Canada)                   | `en-CA` | Audio (20201019)<br>Tekst                 | Yes                          |
+| Deens (Denemarken)                   | `da-DK` | Tekst                                   | Ja                          |
+| Nederlands (Nederland)                | `nl-NL` | Audio (20201015)<br>Tekst                                   |    Ja                       |
+| Engels (Australië)                | `en-AU` | Audio (20201019)<br>Tekst                 | Ja                          |
+| Engels (Canada)                   | `en-CA` | Audio (20201019)<br>Tekst                 | Ja                          |
+| Engels (Ghana)                    | `en-GH` | Tekst                                   |                           |
 | Engels (Hongkong)                | `en-HK` | Tekst                                   |                           |
-| Engels (India)                    | `en-IN` | Audio (20200923)<br>Tekst                 | Yes                          |
+| Engels (India)                    | `en-IN` | Audio (20200923)<br>Tekst                 | Ja                          |
 | Engels (Ierland)                  | `en-IE` | Tekst                                   |                           |
-| Engels (Nieuw-Zeeland)              | `en-NZ` | Audio (20201019)<br>Tekst                 |  Yes                         |
+| Engels (Kenia)                    | `en-KE` | Tekst                                   |                           |
+| Engels (Nieuw-Zeeland)              | `en-NZ` | Audio (20201019)<br>Tekst                 |  Ja                         |
 | Engels (Nigeria)                  | `en-NG` | Tekst                                   |                           |
 | Engels (Filipijnen)              | `en-PH` | Tekst                                   |                           |
 | Engels (Singapore)                | `en-SG` | Tekst                                   |                           |
 | Engels (Zuid-Afrika)             | `en-ZA` | Tekst                                   |                           |
-| Engels (Verenigd Koninkrijk)           | `en-GB` | Audio (20201019)<br>Tekst<br>Uitspraak van| Yes                          |
-| Engels (Verenigde Staten)            | `en-US` | Audio (20201019)<br>Tekst<br>Uitspraak van| Yes                          |
+| Engels (Tanzania)                 | `en-TZ` | Tekst                                   |                           |
+| Engels (Verenigd Koninkrijk)           | `en-GB` | Audio (20201019)<br>Tekst<br>Uitspraak van| Ja                          |
+| Engels (Verenigde Staten)            | `en-US` | Audio (20201019)<br>Tekst<br>Uitspraak van| Ja                          |
 | Estisch (Estland)                  | `et-EE` | Tekst                                   |                           |
-| Fins (Finland)                  | `fi-FI` | Tekst                                   |     Yes                      |
-| Frans (Canada)                    | `fr-CA` | Audio (20201015)<br>Tekst                 |     Yes                      |
-| Frans (Frankrijk)                    | `fr-FR` | Audio (20201015)<br>Tekst<br>Uitspraak van|      Yes                     |
-| Duits (Duitsland)                   | `de-DE` | Audio (20190701, 20200619, 20201127)<br>Tekst<br>Uitspraak van|  Yes                         |
+| Filipijns (Filipijnen)             | `fil-PH`| Tekst                                   |                           |
+| Fins (Finland)                  | `fi-FI` | Tekst                                   |     Ja                      |
+| Frans (Canada)                    | `fr-CA` | Audio (20201015)<br>Tekst                 |     Ja                      |
+| Frans (Frankrijk)                    | `fr-FR` | Audio (20201015)<br>Tekst<br>Uitspraak van|      Ja                     |
+| Frans (Zwitserland)               | `fr-CH` | Tekst                                   |                           |
+| Duits (Oostenrijk)                   | `de-AT` | Tekst                                   |                           |
+| Duits (Duitsland)                   | `de-DE` | Audio (20190701, 20200619, 20201127)<br>Tekst<br>Uitspraak van|  Ja                         |
 | Grieks (Griekenland)                     | `el-GR` | Tekst                                   |                           |
 | Gujarati (Indiase)                  | `gu-IN` | Tekst                                   |                           |
-| Hindi (India)                      | `hi-IN` | Audio (20200701)<br>Tekst                 |     Yes                      |
+| Hindi (India)                      | `hi-IN` | Audio (20200701)<br>Tekst                 |     Ja                      |
 | Hongaars (Hongarije)                | `hu-HU` | Tekst                                   |                           |
+| Indonesisch (Indonesië)             | `id-ID` | Tekst                                   |                           |
 | Ierse (Ierland)                     | `ga-IE` | Tekst                                   |                           |
-| Italiaans (Italië)                    | `it-IT` | Audio (20201016)<br>Tekst<br>Uitspraak van|      Yes                     |
-| Japans (Japan)                   | `ja-JP` | Tekst                                   |      Yes                     |
-| Koreaans (Korea)                     | `ko-KR` | Audio (20201015)<br>Tekst                 |      Yes                     |
+| Italiaans (Italië)                    | `it-IT` | Audio (20201016)<br>Tekst<br>Uitspraak van|      Ja                     |
+| Japans (Japan)                   | `ja-JP` | Tekst                                   |      Ja                     |
+| Koreaans (Korea)                     | `ko-KR` | Audio (20201015)<br>Tekst                 |      Ja                     |
 | Lets (Letland)                   | `lv-LV` | Tekst                                   |                           |
 | Litouws (Litouwen)             | `lt-LT` | Tekst                                   |                           |
 | Maltees (Malta)                     | `mt-MT` | Tekst                                   |                           |
 | Marathi (India)                    | `mr-IN` | Tekst                                   |                           |
-| Noors (Bokmål, Noorwegen)         | `nb-NO` | Tekst                                   |     Yes                      |
-| Pools (Polen)                    | `pl-PL` | Tekst                                   |       Yes                    |
-| Portugees (Brazilië)                | `pt-BR` | Audio (20190620, 20201015)<br>Tekst<br>Uitspraak van|          Yes                 |
-| Portugees (Portugal)              | `pt-PT` | Tekst                                   |             Yes              |
+| Noors (Bokmål, Noorwegen)         | `nb-NO` | Tekst                                   |     Ja                      |
+| Pools (Polen)                    | `pl-PL` | Tekst                                   |       Ja                    |
+| Portugees (Brazilië)                | `pt-BR` | Audio (20190620, 20201015)<br>Tekst<br>Uitspraak van|          Ja                 |
+| Portugees (Portugal)              | `pt-PT` | Tekst                                   |             Ja              |
 | Roemeens (Roemenië)                 | `ro-RO` | Tekst                                   |                           |
-| Russisch (Rusland)                   | `ru-RU` | Audio (20200907)<br>Tekst                 |                Yes           |
+| Russisch (Rusland)                   | `ru-RU` | Audio (20200907)<br>Tekst                 |                Ja           |
 | Slowaaks (Slowakije)                  | `sk-SK` | Tekst                                   |                           |
 | Sloveens (Slovenië)               | `sl-SI` | Tekst                                   |                           |
 | Spaans (Argentinië)                | `es-AR` | Tekst                                   |                           |
@@ -109,21 +116,22 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | Spaans (Equatoriaal-Guinea)        | `es-GQ` | Tekst                                   |                           |
 | Spaans (Guatemala)                | `es-GT` | Tekst                                   |                           |
 | Spaans (Honduras)                 | `es-HN` | Tekst                                   |                           |
-| Spaans (Mexico)                   | `es-MX` | Audio (20200907)<br>Tekst                 |    Yes                       |
+| Spaans (Mexico)                   | `es-MX` | Audio (20200907)<br>Tekst                 |    Ja                       |
 | Spaans (Nicaragua)                | `es-NI` | Tekst                                   |                           |
 | Spaans (Panama)                   | `es-PA` | Tekst                                   |                           |
 | Spaans (Paraguay)                 | `es-PY` | Tekst                                   |                           |
 | Spaans (Peru)                     | `es-PE` | Tekst                                   |                           |
 | Spaans (Puerto Rico)              | `es-PR` | Tekst                                   |                           |
-| Spaans (Spanje)                    | `es-ES` | Audio (20201015)<br>Tekst                 |  Yes                         |
+| Spaans (Spanje)                    | `es-ES` | Audio (20201015)<br>Tekst                 |  Ja                         |
 | Spaans (Uruguay)                  | `es-UY` | Tekst                                   |                           |
 | Spaans (Verenigde Staten)                      | `es-US` | Tekst                                   |                           |
 | Spaans (Venezuela)                | `es-VE` | Tekst                                   |                           |
-| Zweeds (Zweden)                   | `sv-SE` | Tekst                                   |   Yes                        |
+| Zweeds (Zweden)                   | `sv-SE` | Tekst                                   |   Ja                        |
 | Tamil (India)                      | `ta-IN` | Tekst                                   |                           |
 | Telugu (India)                     | `te-IN` | Tekst                                   |                           |
-| Thai (Thailand)                    | `th-TH` | Tekst                                   |      Yes                     |
+| Thai (Thailand)                    | `th-TH` | Tekst                                   |      Ja                     |
 | Turks (Turkije)                   | `tr-TR` | Tekst                                   |                           |
+| Vietnamees (Vietnam)               | `vi-VN` | Tekst                                   |                           |
 
 ## <a name="text-to-speech"></a>Tekst naar spraak
 

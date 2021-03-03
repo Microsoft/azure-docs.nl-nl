@@ -7,16 +7,16 @@ ms.custom: subject-armqs, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 06/25/2020
-ms.openlocfilehash: 7465127ed9c52941d6c3ccfd40446546f0795455
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 0a740b4c6c6e89c9a4990651779ea4f0b376c971
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100635469"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734346"
 ---
 # <a name="quickstart-send-azure-activity-log-to-log-analytics-workspace-using-an-arm-template"></a>Quickstart: Azure-activiteitenlogboek verzenden naar Log Analytics-werkruimte met behulp van een ARM-sjabloon
 
-Het activiteitenlogboek is een platformlogboek in Azure dat inzicht biedt in gebeurtenissen op abonnementsniveau. Dit geldt ook voor gegevens zoals wanneer een resource wordt gewijzigd of wanneer een virtuele machine wordt gestart. U kunt het activiteitenlogboek weergeven in de Azure-portal, of items ophalen met PowerShell en CLI. Deze Quick Start laat zien hoe u Azure Resource Manager sjablonen (ARM-sjablonen) kunt gebruiken voor het maken van een Log Analytics-werkruimte en een diagnostische instelling om het activiteitenlogboek te verzenden naar Azure Monitor-logboeken waar u het kunt analyseren met behulp van [logboekquery's](../log-query/log-query-overview.md) en om andere functies, zoals [logboekwaarschuwingen](../alerts/alerts-log-query.md) en [werkmappen](../visualize/workbooks-overview.md), in te schakelen.
+Het activiteitenlogboek is een platformlogboek in Azure dat inzicht biedt in gebeurtenissen op abonnementsniveau. Dit geldt ook voor gegevens zoals wanneer een resource wordt gewijzigd of wanneer een virtuele machine wordt gestart. U kunt het activiteitenlogboek weergeven in de Azure-portal, of items ophalen met PowerShell en CLI. Deze Quick Start laat zien hoe u Azure Resource Manager sjablonen (ARM-sjablonen) kunt gebruiken voor het maken van een Log Analytics-werkruimte en een diagnostische instelling om het activiteitenlogboek te verzenden naar Azure Monitor-logboeken waar u het kunt analyseren met behulp van [logboekquery's](../logs/log-query-overview.md) en om andere functies, zoals [logboekwaarschuwingen](../alerts/alerts-log-query.md) en [werkmappen](../visualize/workbooks-overview.md), in te schakelen.
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
@@ -321,7 +321,7 @@ Remove-AzResourceGroup -Name my-resource-group
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze quickstart hebt u het activiteitenlogboek geconfigureerd om te worden verzonden naar een Log Analytics-werkruimte. U kunt nu andere gegevens configureren die moeten worden verzameld in de werkruimte, waar u ze kunt analyseren met [logboekquery's](../log-query/log-query-overview.md) in Azure Monitor, en gebruikmaken van functies zoals [logboekwaarschuwingen](../alerts/alerts-log-query.md) en [werkmappen](../visualize/workbooks-overview.md). Vervolgens moet u de [resourcelogboeken](../essentials/resource-logs.md) uit uw Azure-resources verzamelen, die de gegevens in het Activiteitenlogboek aanvullen en die inzicht geven in de bewerkingen die binnen elke resource zijn uitgevoerd.
+In deze quickstart hebt u het activiteitenlogboek geconfigureerd om te worden verzonden naar een Log Analytics-werkruimte. U kunt nu andere gegevens configureren die moeten worden verzameld in de werkruimte, waar u ze kunt analyseren met [logboekquery's](../logs/log-query-overview.md) in Azure Monitor, en gebruikmaken van functies zoals [logboekwaarschuwingen](../alerts/alerts-log-query.md) en [werkmappen](../visualize/workbooks-overview.md). Vervolgens moet u de [resourcelogboeken](../essentials/resource-logs.md) uit uw Azure-resources verzamelen, die de gegevens in het Activiteitenlogboek aanvullen en die inzicht geven in de bewerkingen die binnen elke resource zijn uitgevoerd.
 
 > [!div class="nextstepaction"]
 > [Resourcelogboeken verzamelen en analyseren met Azure Monitor](../essentials/tutorial-resource-logs.md)

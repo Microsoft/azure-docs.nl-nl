@@ -11,35 +11,39 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 12/16/2020
-ms.openlocfilehash: 983fc2cd7e9863361776d5a9d5bc02359fccd510
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: fad19d360f7c476ba71a9bbe00b58387b92f8ac4
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100580818"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101690550"
 ---
 # <a name="manage-azure-sql-database-long-term-backup-retention"></a>Azure SQL Database lange termijn retentie van back-ups beheren
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
 
-In Azure SQL Database kunt u een Data Base configureren met een [Bewaar beleid voor lange termijn back-ups](long-term-retention-overview.md) (LTR) om de back-ups van de data base automatisch in afzonderlijke Azure Blob-opslag containers te bewaren gedurende Maxi maal tien jaar. U kunt vervolgens met behulp van de Azure Portal of Power shell een Data Base herstellen met behulp van deze back-ups. U kunt ook lange termijn retentie voor een [Azure SQL Managed instance](../managed-instance/long-term-backup-retention-configure.md) configureren, maar dit is momenteel een beperkte open bare preview-versie.
+Met Azure SQL Database kunt u een Bewaar beleid voor [lange termijn back-ups](long-term-retention-overview.md) (LTR) instellen om automatisch back-ups te bewaren in afzonderlijke Azure Blob Storage-containers voor Maxi maal tien jaar. U kunt vervolgens met behulp van de Azure Portal of Power shell een Data Base herstellen met behulp van deze back-ups. Bewaar beleidsregels voor de lange termijn worden ook ondersteund voor [Azure SQL Managed instance](../managed-instance/long-term-backup-retention-configure.md).
 
 ## <a name="using-the-azure-portal"></a>Azure Portal gebruiken
 
-In de volgende secties ziet u hoe u de Azure Portal kunt gebruiken voor het configureren van de lange termijn retentie, het weer geven van back-ups voor lange termijn retentie en het terugzetten van back-ups voor lange termijn retentie.
+In de volgende secties ziet u hoe u de Azure Portal kunt gebruiken voor het instellen van een Bewaar beleid voor lange termijn, het beheren van beschik bare back-ups voor lange termijn retentie en het herstellen van een beschik bare back-up.
 
 ### <a name="configure-long-term-retention-policies"></a>Beleid voor lange termijn retentie configureren
 
 U kunt SQL Database configureren om [automatische back-ups te bewaren](long-term-retention-overview.md) gedurende een periode die langer is dan de retentie periode voor uw servicelaag.
 
-1. Selecteer in de Azure Portal uw SQL Server-exemplaar en klik vervolgens op **back-ups beheren**. Schakel op het tabblad **beleid configureren** het selectie vakje in voor de data base waarvoor u het Bewaar beleid voor back-ups op lange termijn wilt instellen of wijzigen. Als het selectie vakje naast de data base niet is ingeschakeld, zijn de wijzigingen voor het beleid niet van toepassing op die data base.  
+1. Ga in het Azure Portal naar de server en selecteer vervolgens **back-ups**. Selecteer het tabblad **Bewaar beleid** om de instellingen voor het bewaren van back-ups te wijzigen.
 
-   ![koppeling back-ups beheren](./media/long-term-backup-retention-configure/ltr-configure-ltr.png)
+   ![ervaring met Bewaar beleid](./media/long-term-backup-retention-configure/ltr-policies-tab.png)
 
-2. Selecteer in het deel venster **beleid configureren** of u wekelijkse, maandelijkse of jaarlijkse back-ups wilt behouden en geef de Bewaar periode voor elk op.
+2. Op het tabblad Bewaar beleid selecteert u de data base (s) waarop u het Bewaar beleid voor back-ups op lange termijn wilt instellen of wijzigen. Niet-geselecteerde data bases worden niet beïnvloed.
 
-   ![beleid configureren](./media/long-term-backup-retention-configure/ltr-configure-policies.png)
+   ![data base selecteren voor het configureren van het Bewaar beleid voor back-ups](./media/long-term-backup-retention-configure/ltr-policies-tab-configure.png)
 
-3. Wanneer u klaar bent, klikt u op **Toep assen**.
+3. Geef in het deel venster **beleid configureren** de gewenste Bewaar periode op voor wekelijkse, maandelijkse of jaarlijkse back-ups. Kies een Bewaar periode van ' 0 ' om aan te geven dat het bewaren van back-ups op lange termijn niet moet worden ingesteld.
+
+   ![het deel venster beleid configureren](./media/long-term-backup-retention-configure/ltr-configure-policies.png)
+
+4. Selecteer **Toep assen** om de gekozen Bewaar instellingen toe te passen op alle geselecteerde data bases.
 
 > [!IMPORTANT]
 > Wanneer u een lange termijn beleid voor het bewaren van back-ups inschakelt, kan het tot zeven dagen duren voordat de eerste back-up zichtbaar is en beschikbaar is voor herstel. Zie [lange termijn retentie van back-ups](long-term-retention-overview.md)voor meer informatie over de CADANCE voor LTR-back-ups.
@@ -48,21 +52,23 @@ U kunt SQL Database configureren om [automatische back-ups te bewaren](long-term
 
 Bekijk de back-ups die worden bewaard voor een specifieke data base met een LTR-beleid en herstel van deze back-ups.
 
-1. Selecteer uw server in de Azure Portal en klik vervolgens op **back-ups beheren**. Selecteer de data base waarvoor u beschik bare back-ups wilt weer geven op het tabblad **beschik bare back-ups** .
+1. Ga in het Azure Portal naar de server en selecteer vervolgens **back-ups**. Selecteer **beheren** onder de kolom beschik bare LTR-back-ups om de beschik bare LTR-back-ups voor een specifieke Data Base weer te geven. Er wordt een deel venster weer gegeven met een lijst met de beschik bare LTR-back-ups voor de geselecteerde data base.
 
-   ![data base selecteren](./media/long-term-backup-retention-configure/ltr-available-backups-select-database.png)
+   ![beschik bare back-ups](./media/long-term-backup-retention-configure/ltr-available-backups-tab.png)
 
-1. Bekijk de beschik bare back-ups in het deel venster **beschik bare back-ups** .
+1. Bekijk de beschik bare back-ups in het deel venster **beschik bare LTR-back-ups** dat wordt weer gegeven. U kunt een back-up selecteren om deze te herstellen of te verwijderen.
 
-   ![back-ups weer geven](./media/long-term-backup-retention-configure/ltr-available-backups.png)
+   ![beschik bare LTR-back-ups weer geven](./media/long-term-backup-retention-configure/ltr-available-backups-manage.png)
 
-1. Selecteer de back-up van waaruit u wilt herstellen en geef vervolgens de naam van de nieuwe Data Base op.
+1. Als u een beschik bare LTR-back-up wilt herstellen, selecteert u de back-up van waaruit u wilt herstellen en selecteert u vervolgens **herstellen**.
 
-   ![De pagina Restore](./media/long-term-backup-retention-configure/ltr-restore.png)
+   ![herstellen vanaf beschik bare LTR-back-up](./media/long-term-backup-retention-configure/ltr-available-backups-restore.png)
 
-1. Klik op **OK** om de data base terug te zetten van de back-up in azure Storage naar de nieuwe data base.
+1. Kies een naam voor de nieuwe data base en selecteer vervolgens **controleren + maken** om de details van de herstel bewerking te bekijken. Selecteer **maken** om de data base terug te zetten vanuit de gekozen back-up.
 
-1. Klik op de werkbalk op het meldingspictogram om de status van de hersteltaak weer te geven.
+   ![Herstel Details configureren](./media/long-term-backup-retention-configure/restore-ltr.png)
+
+1. Selecteer het meldings pictogram op de werk balk om de status van de herstel taak weer te geven.
 
    ![voortgang hersteltaak](./media/long-term-backup-retention-configure/restore-job-progress-long-term.png)
 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/21/2019
-ms.openlocfilehash: 7e01d234b5b94997cbfd275c4b4566ec4fa332a0
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 136e063f6d272589c609bad93532df025a15a68d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609213"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723619"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Problemen met de Log Analytics-agent voor Linux oplossen 
 
@@ -92,7 +92,7 @@ We hebben gezien dat een schone herinstallatie van de agent de meeste problemen 
 | NOT_DEFINED | Omdat de benodigde afhankelijkheden niet zijn geïnstalleerd, wordt de auoms-invoeg toepassing voor controle niet geïnstalleerd | De installatie van auoms is mislukt, de installatie van het pakket is gecontroleerd. |
 | 2 | Er is een ongeldige optie aan de shell-bundel door gegeven. Uitvoeren `sudo sh ./omsagent-*.universal*.sh --help` voor gebruik |
 | 3 | Er is geen optie aan de shell-bundel door gegeven. Uitvoeren `sudo sh ./omsagent-*.universal*.sh --help` voor gebruik. |
-| 4 | Ongeldig pakket type of ongeldige proxy instellingen. omsagent-*rpm*. sh-pakketten kunnen alleen worden geïnstalleerd op installaties op basis van rpm en omsagent-*deb*. sh-pakketten kunnen alleen worden geïnstalleerd op Debian-systemen. Het is raadzaam om het universele installatie programma van de [meest recente release](../learn/quick-collect-linux-computer.md#install-the-agent-for-linux)te gebruiken. Controleer ook de verificatie van uw proxy-instellingen. |
+| 4 | Ongeldig pakket type of ongeldige proxy instellingen. omsagent-*rpm*. sh-pakketten kunnen alleen worden geïnstalleerd op installaties op basis van rpm en omsagent-*deb*. sh-pakketten kunnen alleen worden geïnstalleerd op Debian-systemen. Het is raadzaam om het universele installatie programma van de [meest recente release](../vm/quick-collect-linux-computer.md#install-the-agent-for-linux)te gebruiken. Controleer ook de verificatie van uw proxy-instellingen. |
 | 5 | De shell bundel moet worden uitgevoerd als root of er is een 403-fout geretourneerd tijdens het onboarden. Voer de opdracht uit met `sudo` . |
 | 6 | Ongeldige pakket architectuur of er is een fout opgetreden 200 fout opgetreden tijdens het voorbereiden; omsagent-*x64.sh-pakketten kunnen alleen worden geïnstalleerd op 64-bits systemen en omsagent-x86.sh-* pakketten kunnen alleen worden geïnstalleerd op 32-bits systemen. Down load het juiste pakket voor uw architectuur vanuit de [nieuwste versie](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/latest). |
 | 17 | Installatie van het OMS-pakket is mislukt. Bekijk de uitvoer van de opdracht voor de hoofd fout. |
@@ -116,7 +116,7 @@ We hebben gezien dat een schone herinstallatie van de agent de meeste problemen 
 | --- | --- |
 | 2 | Er is een ongeldige optie aan het omsadmin-script door gegeven. Uitvoeren `sudo sh /opt/microsoft/omsagent/bin/omsadmin.sh -h` voor gebruik. |
 | 3 | Er is een ongeldige configuratie aan het omsadmin-script door gegeven. Uitvoeren `sudo sh /opt/microsoft/omsagent/bin/omsadmin.sh -h` voor gebruik. |
-| 4 | Er is een ongeldige proxy aan het omsadmin-script door gegeven. Controleer de proxy en Raadpleeg onze [documentatie voor het gebruik van een HTTP-proxy](../platform/log-analytics-agent.md#firewall-requirements). |
+| 4 | Er is een ongeldige proxy aan het omsadmin-script door gegeven. Controleer de proxy en Raadpleeg onze [documentatie voor het gebruik van een HTTP-proxy](./log-analytics-agent.md#firewall-requirements). |
 | 5 | 403 HTTP-fout ontvangen van Azure Monitor. Zie de volledige uitvoer van het script omsadmin voor meer informatie. |
 | 6 | Er is een niet-200 HTTP-fout ontvangen van Azure Monitor. Zie de volledige uitvoer van het script omsadmin voor meer informatie. |
 | 7 | Kan geen verbinding maken met Azure Monitor. Zie de volledige uitvoer van het script omsadmin voor meer informatie. |
@@ -198,7 +198,7 @@ Verwijder onder de invoeg toepassing voor uitvoer de opmerking de volgende secti
 
 2. Raadpleeg de sectie [proxy-instellingen bijwerken](agent-manage.md#update-proxy-settings) om te controleren of u de agent op de juiste manier hebt geconfigureerd om te communiceren via een proxy server.    
 
-3. Controleer of de eind punten die zijn beschreven in de lijst Azure Monitor [netwerk firewall vereisten](../platform/log-analytics-agent.md#firewall-requirements) , correct worden toegevoegd aan een lijst met toegestane producten. Als u Azure Automation gebruikt, worden de benodigde stappen voor de netwerk configuratie ook hierboven gekoppeld.
+3. Controleer of de eind punten die zijn beschreven in de lijst Azure Monitor [netwerk firewall vereisten](./log-analytics-agent.md#firewall-requirements) , correct worden toegevoegd aan een lijst met toegestane producten. Als u Azure Automation gebruikt, worden de benodigde stappen voor de netwerk configuratie ook hierboven gekoppeld.
 
 ## <a name="issue-you-receive-a-403-error-when-trying-to-onboard"></a>Probleem: er wordt een 403-fout bericht weer gegeven wanneer u probeert onboarding uit te voeren
 
@@ -447,7 +447,7 @@ U kunt door gaan met het gebruik van de `--purge` optie
 ### <a name="resolution"></a>Oplossing 
 Voer de volgende stappen uit om het probleem te verhelpen.
 1. Verwijder de extensie uit Azure Portal.
-2. Installeer de agent volgens de [instructies](../learn/quick-collect-linux-computer.md).
+2. Installeer de agent volgens de [instructies](../vm/quick-collect-linux-computer.md).
 3. Start de agent opnieuw door de volgende opdracht uit te voeren: `sudo /opt/microsoft/omsagent/bin/service_control restart` .
 * Wacht enkele minuten en de inrichtings status is gewijzigd in **inrichting geslaagd**.
 

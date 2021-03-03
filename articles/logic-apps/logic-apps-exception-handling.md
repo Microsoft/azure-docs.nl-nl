@@ -5,15 +5,15 @@ services: logic-apps
 ms.suite: integration
 author: dereklee
 ms.author: deli
-ms.reviewer: klam, estfan, logicappspm
-ms.date: 01/11/2020
+ms.reviewer: estfan, logicappspm, azla
+ms.date: 02/18/2021
 ms.topic: article
-ms.openlocfilehash: a0c8286b2fb36642723ae28b8bc88e9e49f8a8fb
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: fbe797937021763bb97ca09e1da792d9a7010f9a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100577941"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101702501"
 ---
 # <a name="handle-errors-and-exceptions-in-azure-logic-apps"></a>Fouten en uitzonderingen in Azure Logic Apps afhandelen
 
@@ -27,7 +27,7 @@ Voor de meest eenvoudige uitzonde ring en fout afhandeling kunt u een *beleid vo
 
 Dit zijn de beleids typen voor opnieuw proberen:
 
-| Type | Description |
+| Type | Beschrijving |
 |------|-------------|
 | **Prijs** | Met dit beleid worden Maxi maal vier nieuwe pogingen verzonden met *exponentieel toenemende* intervallen. deze worden geschaald op 7,5 seconden, maar worden tussen 5 en 45 seconden gelimiteerd. |
 | **Exponentieel interval**  | Dit beleid wacht een wille keurig interval dat is geselecteerd uit een exponentieel groeiend bereik voordat de volgende aanvraag wordt verzonden. |
@@ -69,7 +69,7 @@ Of u kunt het beleid voor opnieuw proberen hand matig opgeven in de `inputs` sec
 
 *Vereist*
 
-| Waarde | Type | Description |
+| Waarde | Type | Beschrijving |
 |-------|------|-------------|
 | <*opnieuw proberen-beleid-type*> | Tekenreeks | Het type beleid voor opnieuw proberen dat u wilt gebruiken: `default` , `none` , `fixed` , of `exponential` |
 | <*nieuwe poging-interval*> | Tekenreeks | Het interval voor nieuwe pogingen waarbij de waarde de [ISO 8601-notatie](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations)moet gebruiken. Het minimale standaard interval is `PT5S` en het maximum interval `PT1D` . Wanneer u het beleid voor exponentiële intervallen gebruikt, kunt u verschillende minimum-en maximum waarden opgeven. |
@@ -78,7 +78,7 @@ Of u kunt het beleid voor opnieuw proberen hand matig opgeven in de `inputs` sec
 
 *Optioneel*
 
-| Waarde | Type | Description |
+| Waarde | Type | Beschrijving |
 |-------|------|-------------|
 | <*minimum-interval*> | Tekenreeks | Voor het beleid voor exponentiële intervallen wordt het kleinste interval voor het wille keurig geselecteerde interval in [ISO 8601-indeling](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) |
 | <*maximum-interval*> | Tekenreeks | Voor het beleid voor exponentiële intervallen is het grootste interval voor het wille keurig geselecteerde interval in [ISO 8601-indeling](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) |
@@ -263,13 +263,14 @@ Zie [limieten en configuratie](../logic-apps/logic-apps-limits-and-config.md)voo
 
 ### <a name="get-context-and-results-for-failures"></a>Context en resultaten ophalen voor fouten
 
-Hoewel het niet nuttig is om een bereik te bereiken, is het mogelijk dat u ook wilt weten welke acties zijn mislukt plus eventuele fouten of status codes die zijn geretourneerd.
+Hoewel het niet nuttig is om een bereik te bereiken, is het mogelijk dat u ook wilt weten welke acties zijn mislukt plus eventuele fouten of status codes die zijn geretourneerd. De [ `result()` functie](../logic-apps/workflow-definition-language-functions-reference.md#result) retourneert de resultaten van de acties op het hoogste niveau in een bereik actie door één para meter te accepteren, de naam van het bereik en een matrix te retour neren die de resultaten van de acties van het eerste niveau bevat. Deze actie objecten bevatten dezelfde kenmerken als die worden geretourneerd door de `actions()` functie, zoals de begin tijd van de actie, de eind tijd, status, invoer, correlatie-id's en uitvoer. 
 
-De [`result()`](../logic-apps/workflow-definition-language-functions-reference.md#result) functie biedt context over de resultaten van alle acties in een bereik. De `result()` functie accepteert één para meter, de naam van het bereik en retourneert een matrix die alle actie resultaten van binnen dat bereik bevat. Deze actie objecten bevatten dezelfde kenmerken als het `actions()` object, zoals de begin tijd van de actie, de eind tijd, status, invoer, correlatie-id's en uitvoer. Als u context wilt verzenden voor acties die zijn mislukt binnen een bereik, kunt u eenvoudig een `@result()` expressie koppelen aan de `runAfter` eigenschap.
+> [!NOTE]
+> De `result()` functie retourneert de resultaten van *alleen* de acties op het hoogste niveau en niet van diep geneste acties, zoals de acties voor de schakelaar of de voor waarde.
 
-Als u een actie wilt uitvoeren voor elke actie in een bereik dat een `Failed` resultaat heeft en als u de matrix met resultaten wilt filteren op de mislukte acties, kunt u een `@result()` expressie koppelen met een [**filter matrix**](logic-apps-perform-data-operations.md#filter-array-action) actie en een [**voor elke**](../logic-apps/logic-apps-control-flow-loops.md) lus. U kunt de gefilterde resultaat matrix nemen en een actie uitvoeren voor elke fout met behulp van de `For_each` lus.
+Als u context wilt ontvangen over de acties die zijn mislukt in een bereik, kunt u de `@result()` expressie gebruiken met de naam van het bereik en de `runAfter` eigenschap. Als u de geretourneerde matrix wilt filteren op acties met `Failed` de status, kunt u de [actie **filter matrix**](logic-apps-perform-data-operations.md#filter-array-action)toevoegen. Als u een actie wilt uitvoeren voor een geretourneerde mislukte actie, neemt u de geretourneerde gefilterde matrix op en gebruikt u een [ **voor elke** lus](../logic-apps/logic-apps-control-flow-loops.md).
 
-Hier volgt een voor beeld, gevolgd door een gedetailleerde uitleg, waarmee een HTTP POST-aanvraag wordt verzonden met de antwoord tekst voor acties die zijn mislukt binnen de scope ' My_Scope ':
+Hier volgt een voor beeld, gevolgd door een gedetailleerde uitleg die een HTTP POST-aanvraag verzendt met de antwoord tekst voor acties die zijn mislukt binnen de bereik actie met de naam ' My_Scope ':
 
 ```json
 "Filter_array": {

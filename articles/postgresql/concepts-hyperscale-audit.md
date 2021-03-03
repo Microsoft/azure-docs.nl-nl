@@ -6,12 +6,12 @@ ms.author: jonels
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/29/2021
-ms.openlocfilehash: d8a21a5583ec4655a2ee8593e50be5c7b5f702b7
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 8a36062a2d29bcec10279d73211526a0dcba619e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99227591"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101702110"
 ---
 # <a name="audit-logging-in-azure-database-for-postgresql---hyperscale-citus"></a>Audit logboek registratie in Azure Database for PostgreSQL-grootschalige (Citus)
 
@@ -20,7 +20,7 @@ Controle logboek registratie van database activiteiten in Azure Database for Pos
 > [!IMPORTANT]
 > pgAudit is in preview op Azure Database for PostgreSQL-grootschalige (Citus)
 
-Als u Azure-logboeken op resource niveau wilt voor bewerkingen als Compute en opslag schalen, raadpleegt u het [Azure-activiteiten logboek](../azure-monitor/platform/platform-logs-overview.md).
+Als u Azure-logboeken op resource niveau wilt voor bewerkingen als Compute en opslag schalen, raadpleegt u het [Azure-activiteiten logboek](../azure-monitor/essentials/platform-logs-overview.md).
 
 ## <a name="usage-considerations"></a>Gebruiks overwegingen
 Standaard worden pgAudit-logboekinstructies samen met uw reguliere logboeken verzonden met behulp van de standaardfunctie voor logboekregistratie van Postgres. In Azure Database for PostgreSQL-grootschalige (Citus) kunt u alle logboeken configureren voor verzen ding naar Azure Monitor logboek Archief voor latere analyses in Log Analytics. Als u Azure Monitor bron logboek registratie inschakelt, worden uw logboeken automatisch verzonden (in JSON-indeling) naar Azure Storage, Event Hubs en/of Azure Monitor logboeken, afhankelijk van uw keuze.
@@ -54,9 +54,9 @@ Elke controle vermelding wordt aan `AUDIT:` het begin van de logboek regel aange
 Als u snel aan de slag wilt gaan, stelt `pgaudit.log` u in `WRITE` en opent u de logboeken van de server om de uitvoer te controleren. 
 
 ## <a name="viewing-audit-logs"></a>Audit logboeken weer geven
-De manier waarop u de logboeken opent, is afhankelijk van het eind punt dat u kiest. Zie het artikel over het [opslag account voor logboeken](../azure-monitor/platform/resource-logs.md#send-to-azure-storage) voor Azure Storage. Zie het artikel [Stream Azure logs](../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs) voor Event hubs.
+De manier waarop u de logboeken opent, is afhankelijk van het eind punt dat u kiest. Zie het artikel over het [opslag account voor logboeken](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage) voor Azure Storage. Zie het artikel [Stream Azure logs](../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs) voor Event hubs.
 
-Voor Azure Monitor-logboeken worden logboeken verzonden naar de werk ruimte die u hebt geselecteerd. De post gres-Logboeken gebruiken de **AzureDiagnostics** -verzamelings modus, zodat ze kunnen worden opgevraagd vanuit de tabel AzureDiagnostics. De velden in de tabel worden hieronder beschreven. Meer informatie over het uitvoeren van query's en waarschuwingen vindt u in het overzicht van de [Azure monitor-logboeken](../azure-monitor/log-query/log-query-overview.md) .
+Voor Azure Monitor-logboeken worden logboeken verzonden naar de werk ruimte die u hebt geselecteerd. De post gres-Logboeken gebruiken de **AzureDiagnostics** -verzamelings modus, zodat ze kunnen worden opgevraagd vanuit de tabel AzureDiagnostics. De velden in de tabel worden hieronder beschreven. Meer informatie over het uitvoeren van query's en waarschuwingen vindt u in het overzicht van de [Azure monitor-logboeken](../azure-monitor/logs/log-query-overview.md) .
 
 U kunt deze query gebruiken om aan de slag te gaan. U kunt waarschuwingen configureren op basis van query's.
 

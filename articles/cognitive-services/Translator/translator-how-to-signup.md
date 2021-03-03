@@ -10,12 +10,12 @@ ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: how-to
 ms.date: 02/16/2021
-ms.openlocfilehash: 37b9860546f9fd16045906ce9385a1590c46b970
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: a0d8532d19aff41bc5e7defb3b58462e81018749
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100556349"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101712926"
 ---
 # <a name="create-a-translator-resource"></a>Een Translator-resource maken
 
@@ -57,7 +57,7 @@ De Translator-service kan worden geopend via twee verschillende resource typen:
 
 1. **Resourcegroep**. De Azure-resource groep die u als een virtuele container wilt gebruiken voor uw nieuwe resource. U kunt een nieuwe resource groep maken of uw resource toevoegen aan een vooraf bestaande resource groep die dezelfde levens cyclus, machtigingen en beleids regels deelt.
 
-1. **Resource regio**. Kies **globaal** tenzij uw bedrijf of toepassing een specifieke regio vereist. Translator is een niet-regionale service: er is geen afhankelijkheid voor een specifieke Azure-regio. *Zie* [regio's en Beschikbaarheidszones in azure](/azure/availability-zones/az-overview).
+1. **Resource regio**. Kies **globaal** tenzij uw bedrijf of toepassing een specifieke regio vereist. Translator is een niet-regionale service: er is geen afhankelijkheid voor een specifieke Azure-regio. *Zie* [regio's en Beschikbaarheidszones in azure](../../availability-zones/az-overview.md).
 
 1. **Naam**. Voer de naam in die u voor uw resource hebt gekozen. De naam die u kiest, moet uniek zijn in Azure.
 

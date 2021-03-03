@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
-ms.openlocfilehash: b0cafcbc9fa6f0fcb31f44b44dfbe4fc3e10c17d
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 1fe36dc7b3c04f033c1b693b657e07bcf42e3223
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94656068"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101715000"
 ---
 # <a name="connect-data-from-microsoft-defender-for-identity-formerly-azure-advanced-threat-protection"></a>Gegevens van micro soft Defender verbinden voor identiteit (voorheen Azure Advanced Threat Protection)
 
@@ -27,7 +27,9 @@ ms.locfileid: "94656068"
 > De micro soft Defender for Identity Data Connector in azure Sentinel is momenteel beschikbaar als open bare preview.
 > Deze functie wordt zonder service level agreement gegeven en wordt niet aanbevolen voor productie werkbelastingen. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-U kunt Logboeken van [micro soft Defender streamen voor identiteiten](/azure-advanced-threat-protection/what-is-atp) in azure Sentinel met één klik.
+In dit artikel wordt beschreven hoe u beveiligings waarschuwingen van [micro soft Defender streamt voor identiteit](/azure-advanced-threat-protection/what-is-atp) in azure Sentinel. 
+
+Voor het door sturen van status waarschuwingen naast beveiligings waarschuwingen, integreert u micro soft Defender voor identiteit met een syslog-server. Zie de [documentatie van micro soft Defender voor Identity](/defender-for-identity/setting-syslog)voor meer informatie. 
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -46,7 +48,7 @@ Als micro soft Defender voor identiteit wordt geïmplementeerd en uw gegevens wo
 
 1. U kunt selecteren of u wilt dat de waarschuwingen van micro soft Defender voor identiteit automatisch incidenten in azure Sentinel automatisch genereren. Selecteer **inschakelen** onder **incidenten maken** om de standaard analyse regel in te scha kelen waarmee incidenten automatisch worden gemaakt op basis van waarschuwingen die zijn gegenereerd in de verbonden beveiligings service. U kunt deze regel vervolgens bewerken onder **analyse** en vervolgens op **actieve regels**.
 
-1. Klik op **Verbinding maken**.
+1. Klik op **Verbinden**.
 
 1. Zoek naar **SecurityAlert** om het relevante schema in log Analytics voor micro soft Defender voor identiteits waarschuwingen te gebruiken.
 

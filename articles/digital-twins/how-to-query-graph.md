@@ -8,12 +8,12 @@ ms.date: 11/19/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 47883c742d77a88adb662e8dded0723f0e105385
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 3a5c98b3fad76d2206d1fcba79663063e22ecdbc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98044183"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737967"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Query's uitvoeren op de Azure Digital Apparaatdubbels dubbele grafiek
 
@@ -21,7 +21,7 @@ In dit artikel vindt u voor beelden van query's en gedetailleerde instructies vo
 
 Dit artikel begint met voorbeeld query's die de query taal structuur en algemene query bewerkingen voor digitale apparaatdubbels illustreren. Vervolgens wordt beschreven hoe u uw query's uitvoert nadat u ze hebt geschreven, met behulp van de Azure Digital Apparaatdubbels- [query-API](/rest/api/digital-twins/dataplane/query) of een [SDK](how-to-use-apis-sdks.md#overview-data-plane-apis).
 
-> [!TIP]
+> [!NOTE]
 > Als u de onderstaande voorbeeld query's uitvoert met een API of SDK-aanroep, moet u de query tekst in één regel verkleinen.
 
 ## <a name="show-all-digital-twins"></a>Alle digitale apparaatdubbels weer geven
@@ -36,8 +36,8 @@ Digitale apparaatdubbels ophalen op basis van **Eigenschappen** (waaronder id en
 
 :::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryByProperty1":::
 
-> [!TIP]
-> De ID van een digitale dubbele query wordt uitgevoerd met behulp van het veld meta gegevens `$dtId` .
+> [!NOTE]
+> De id van een digitale dubbel wordt opgevraagd met behulp van het metagegevensveld `$dtId`.
 
 U kunt ook apparaatdubbels ophalen op basis van **het feit of een bepaalde eigenschap is gedefinieerd**. Hier volgt een query waarmee apparaatdubbels worden opgehaald die een gedefinieerde *locatie* -eigenschap hebben:
 
@@ -50,6 +50,10 @@ Dit kan u helpen apparaatdubbels te verkrijgen op basis van de *code* -eigenscha
 U kunt ook apparaatdubbels ophalen op basis van het **type van een eigenschap**. Dit is een query die apparaatdubbels ophaalt waarvan de eigenschap *Tempe ratuur* een getal is:
 
 :::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryByProperty3":::
+
+>[!TIP]
+> Als een eigenschap van het type is `Map` , kunt u de sleutels en waarden van de kaart rechtstreeks in de query gebruiken, zoals:
+> :::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryByProperty4":::
 
 ## <a name="query-by-model"></a>Query op model
 
@@ -88,10 +92,10 @@ Hier volgt een query voorbeeld waarin een waarde voor alle drie de para meters w
 
 Bij het uitvoeren van query's op basis van de **relaties** van Digital apparaatdubbels heeft de Azure Digital apparaatdubbels-query taal een speciale syntaxis.
 
-Relaties worden opgehaald in het query bereik in de- `FROM` component. Een belang rijk verschil van ' klassiek ' SQL-type talen is dat elke expressie in deze `FROM` component geen tabel is. in plaats daarvan wordt in de `FROM` component een kruis entiteits relatie door lopen en is deze geschreven met een Azure Digital apparaatdubbels-versie van `JOIN` .
+Relaties worden in het querybereik gehaald in de `FROM`-component. Een belang rijk verschil van ' klassiek ' SQL-type talen is dat elke expressie in deze `FROM` component geen tabel is. in plaats daarvan wordt in de `FROM` component een kruis entiteits relatie door lopen en is deze geschreven met een Azure Digital apparaatdubbels-versie van `JOIN` .
 
-Voor de mogelijkheden van het Azure Digital Apparaatdubbels [model](concepts-models.md) zijn relaties niet onafhankelijk van apparaatdubbels. Dit betekent dat de Azure Digital Apparaatdubbels-query taal `JOIN` iets anders is dan de algemene SQL `JOIN` , omdat hier geen query's kunnen worden uitgevoerd en moeten ze zijn gekoppeld aan een dubbele.
-Om dit verschil op te nemen, wordt het sleutel woord `RELATED` in de- `JOIN` component gebruikt om te verwijzen naar een dubbele set relaties.
+Voor de mogelijkheden van het Azure Digital Apparaatdubbels [model](concepts-models.md) zijn relaties niet onafhankelijk van apparaatdubbels. Dit betekent dat de `JOIN` van de Azure Digital Twins-querytaal iets verschilt van de algemene SQL-`JOIN`, omdat de relaties hier niet onafhankelijk van elkaar kunnen worden opgevraagd en aan een dubbel moeten worden gekoppeld.
+Voor het inbouwen van dit verschil wordt het trefwoord `RELATED` gebruikt in de `JOIN`-component om te verwijzen naar een reeks relaties van een dubbel.
 
 In de volgende sectie vindt u enkele voor beelden van hoe dit eruitziet.
 
@@ -107,11 +111,11 @@ Hier volgt een voor beeld van een op relaties gebaseerde query. Dit code fragmen
 :::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryByRelationship1":::
 
 > [!NOTE]
-> De ontwikkelaar hoeft dit niet te correleren `JOIN` met een sleutel waarde in de `WHERE` -component (of geef een sleutel waarde op in de `JOIN` definitie). Deze correlatie wordt automatisch berekend door het systeem, omdat de relatie-eigenschappen zelf de doel entiteit identificeren.
+> De ontwikkelaar hoeft dit niet te correleren `JOIN` met een sleutel waarde in de `WHERE` -component (of geef een sleutel waarde op in de `JOIN` definitie). Deze correlatie wordt automatisch berekend door het systeem, omdat de relatie-eigenschappen zelf de doelentiteit aanduiden.
 
-### <a name="query-the-properties-of-a-relationship"></a>De eigenschappen van een relatie opvragen
+### <a name="query-the-properties-of-a-relationship"></a>Een query uitvoeren op de eigenschappen van een relatie
 
-Net zoals bij digitale apparaatdubbels eigenschappen beschreven via DTDL, kunnen relaties ook eigenschappen hebben. U kunt apparaatdubbels query's uitvoeren op **basis van de eigenschappen van hun relaties**.
+Net zoals digitale dubbels over eigenschappen beschikken die via DTDL zijn beschreven, kunnen relaties ook over eigenschappen beschikken. U kunt apparaatdubbels query's uitvoeren op **basis van de eigenschappen van hun relaties**.
 Met de Azure Digital Apparaatdubbels-query taal kunnen relaties worden gefilterd en geprojectied door een alias toe te wijzen aan de relatie binnen de `JOIN` component.
 
 Denk bijvoorbeeld aan een *servicedBy* -relatie die een *reportedCondition* -eigenschap heeft. In de onderstaande query krijgt deze relatie een alias van ' R ' om te kunnen verwijzen naar de eigenschap.
@@ -220,7 +224,12 @@ Het volgende code fragment illustreert de [.net (C#) SDK-](/dotnet/api/overview/
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/queries.cs" id="RunQuery":::
 
-Deze aanroep retourneert query resultaten in de vorm van een [BasicDigitalTwin](/dotnet/api/azure.digitaltwins.core.basicdigitaltwin?view=azure-dotnet&preserve-view=true) -object.
+De query die wordt gebruikt in deze aanroep retourneert een lijst met digitale apparaatdubbels, die het bovenstaande voor beeld vertegenwoordigt met [BasicDigitalTwin](/dotnet/api/azure.digitaltwins.core.basicdigitaltwin?view=azure-dotnet&preserve-view=true) -objecten. Het retour type van uw gegevens voor elke query is afhankelijk van de voor waarden die u opgeeft met de `SELECT` instructie:
+* Query's die beginnen met bevatten `SELECT * FROM ...` , retour neren een lijst met digitale apparaatdubbels (die kunnen worden geserialiseerd als `BasicDigitalTwin` objecten of andere aangepaste, digitale twee typen die u mogelijk hebt gemaakt).
+* Query's die in de notatie beginnen, `SELECT <A>, <B>, <C> FROM ...` retour neren een woorden lijst met sleutels `<A>` , `<B>` en `<C>` .
+* Andere indelingen van- `SELECT` instructies kunnen worden ontworpen om aangepaste gegevens te retour neren. U kunt overwegen uw eigen klassen te maken voor het verwerken van zeer aangepaste resultaten sets. 
+
+### <a name="query-with-paging"></a>Query met paginering
 
 Query aanroepen ondersteunen paginering. Hier volgt een volledig voor beeld `BasicDigitalTwin` dat wordt gebruikt als query resultaat type met fout afhandeling en paging:
 

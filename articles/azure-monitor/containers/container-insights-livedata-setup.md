@@ -1,19 +1,19 @@
 ---
-title: Azure Monitor instellen voor containers live data (preview) | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u de real-time-weer gave van container Logboeken (stdout/stderr) en gebeurtenissen kunt instellen zonder kubectl te gebruiken met Azure Monitor voor containers.
+title: Container Insights live data instellen (preview) | Microsoft Docs
+description: In dit artikel wordt beschreven hoe u de realtime-weer gave van container Logboeken (stdout/stderr) en gebeurtenissen kunt instellen zonder gebruik te maken van kubectl met container Insights.
 ms.topic: conceptual
 ms.date: 01/08/2020
 ms.custom: references_regions
-ms.openlocfilehash: 3c176b2db659577d585ac077eebe0484203eb9cf
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 4302bdbb3d71c890f7fb0cfb82ab5f8d5aecbd43
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609500"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101713776"
 ---
 # <a name="how-to-set-up-the-live-data-preview-feature"></a>De functie voor live data (preview) instellen
 
-Als u live data (preview) wilt weer geven met Azure Monitor voor containers uit Azure Kubernetes service (AKS)-clusters, moet u verificatie configureren om toegang te verlenen tot uw Kubernetes-gegevens. Met deze beveiligings configuratie kunt u in realtime toegang krijgen tot uw gegevens via de Kubernetes-API rechtstreeks in het Azure Portal.
+Als u live data (preview) wilt weer geven met container Insights vanuit Azure Kubernetes service (AKS)-clusters, moet u verificatie configureren om toegang te verlenen tot uw Kubernetes-gegevens. Met deze beveiligings configuratie kunt u in realtime toegang krijgen tot uw gegevens via de Kubernetes-API rechtstreeks in het Azure Portal.
 
 Deze functie biedt ondersteuning voor de volgende methoden voor het beheren van de toegang tot de logboeken, gebeurtenissen en metrische gegevens:
 
@@ -46,7 +46,7 @@ De Azure Portal vraagt u uw aanmeldings referenties voor een Azure Active Direct
 
 Als u wilt voor komen dat er extra configuratie wijzigingen worden toegepast om de Kubernetes- **clusterUser** toegang te geven tot de functie Live data (preview) nadat [Kubernetes RBAC](#configure-kubernetes-rbac-authorization) -autorisatie is ingeschakeld, heeft aks een nieuwe Kubernetes-cluster functie binding met de naam **clusterMonitoringUser** toegevoegd. Deze binding van de cluster functie heeft alle machtigingen die nodig zijn om toegang te krijgen tot de Kubernetes-API en de eind punten voor het gebruik van de functie Live data (preview).
 
-Als u de functie Live data (preview) wilt gebruiken met deze nieuwe gebruiker, moet u lid zijn van de [Azure Kubernetes service-cluster gebruiker](../../role-based-access-control/built-in-roles.md#azure-kubernetes-service-cluster-user-role) of [Inzender](../../role-based-access-control/built-in-roles.md#contributor) functie op de AKS-cluster bron. Azure Monitor voor containers, wanneer ingeschakeld, is geconfigureerd om standaard te verifiëren met behulp van de clusterMonitoringUser. Als de clusterMonitoringUser-functie binding niet bestaat in een cluster, wordt in plaats daarvan **clusterUser** gebruikt voor verificatie. Inzender geeft u toegang tot de clusterMonitoringUser (als deze bestaat) en de Azure Kuberenetes service-cluster gebruiker krijgt u toegang tot de clusterUser. Een van deze twee rollen geeft voldoende toegangs rechten voor het gebruik van deze functie.
+Als u de functie Live data (preview) wilt gebruiken met deze nieuwe gebruiker, moet u lid zijn van de [Azure Kubernetes service-cluster gebruiker](../../role-based-access-control/built-in-roles.md#azure-kubernetes-service-cluster-user-role) of [Inzender](../../role-based-access-control/built-in-roles.md#contributor) functie op de AKS-cluster bron. Container Insights, wanneer ingeschakeld, is geconfigureerd voor verificatie met behulp van de clusterMonitoringUser standaard. Als de clusterMonitoringUser-functie binding niet bestaat in een cluster, wordt in plaats daarvan **clusterUser** gebruikt voor verificatie. Inzender geeft u toegang tot de clusterMonitoringUser (als deze bestaat) en de Azure Kuberenetes service-cluster gebruiker krijgt u toegang tot de clusterUser. Een van deze twee rollen geeft voldoende toegangs rechten voor het gebruik van deze functie.
 
 AKS heeft deze nieuwe functie binding in januari 2020 vrijgegeven, zodat de clusters die zijn gemaakt voor de januari 2020 niet. Als u een cluster hebt dat is gemaakt vóór 2020 januari, kan de nieuwe **clusterMonitoringUser** worden toegevoegd aan een bestaand cluster door een put-bewerking uit te voeren op het cluster, of een andere bewerking uit te voeren op het cluster waarmee een put-bewerking op het cluster wordt uitgevoerd, zoals het bijwerken van de Cluster versie.
 
@@ -106,7 +106,7 @@ De registratie van de Azure AD-client moet opnieuw worden geconfigureerd zodat d
 Raadpleeg de [Kubernetes-documentatie](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)voor meer informatie over geavanceerde beveiligings instellingen in Kubernetes.
 
 >[!NOTE]
->Als u een nieuw Kubernetes-cluster met RBAC wilt maken, raadpleegt u [Azure Active Directory integreren met de Azure Kubernetes-service](../../aks/azure-ad-integration-cli.md) en volgt u de stappen voor het configureren van Azure AD-verificatie. Tijdens de stappen voor het maken van de client toepassing, worden in deze sectie de twee omleidings-Url's beschreven die u moet maken voor Azure Monitor voor containers die overeenkomen met die in stap 3 hieronder.
+>Als u een nieuw Kubernetes-cluster met RBAC wilt maken, raadpleegt u [Azure Active Directory integreren met de Azure Kubernetes-service](../../aks/azure-ad-integration-cli.md) en volgt u de stappen voor het configureren van Azure AD-verificatie. Tijdens de stappen voor het maken van de client toepassing, worden in deze sectie de twee omleidings-Url's beschreven die u moet maken voor container inzichten die zijn opgegeven in stap 3 hieronder.
 
 ### <a name="client-registration-reconfiguration"></a>Client registratie opnieuw configureren
 

@@ -2,15 +2,15 @@
 title: SjabSjabloonspecificaties maken en implementeren maken en implementeren
 description: Hierin wordt beschreven hoe u sjabloon specificaties maakt en deze deelt met andere gebruikers in uw organisatie.
 ms.topic: conceptual
-ms.date: 01/14/2021
+ms.date: 03/02/2021
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 762c483883d391c436065b13b54f127f1618d7f9
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: e4efc63ffa49b1c8ca44fc806e37e4aa91cd76c8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98734912"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101700385"
 ---
 # <a name="azure-resource-manager-template-specs-preview"></a>Azure Resource Manager sjabloon specificaties (preview-versie)
 
@@ -246,6 +246,78 @@ az deployment group create \
 
 ---
 
+## <a name="versioning"></a>Versiebeheer
+
+Wanneer u een sjabloon specificatie maakt, geeft u er een versie naam voor op. Wanneer u de sjabloon code herhaalt, kunt u een bestaande versie bijwerken (voor hotfixes) of een nieuwe versie publiceren. De versie is een teken reeks. U kunt ervoor kiezen om een versie systeem te volgen, met inbegrip van semantische versie beheer. Gebruikers van de sjabloon specificatie kunnen de versie naam opgeven die ze willen gebruiken bij het implementeren ervan.
+
+## <a name="use-tags"></a>Tags gebruiken
+
+[Tags](../management/tag-resources.md) zijn een hulpmiddel bij het logisch ordenen van uw resources. U kunt labels toevoegen aan sjabloon specificaties met behulp van Azure PowerShell en Azure CLI:
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+```azurepowershell
+New-AzTemplateSpec `
+  -Name storageSpec `
+  -Version 1.0a `
+  -ResourceGroupName templateSpecsRg `
+  -Location westus2 `
+  -TemplateFile ./mainTemplate.json `
+  -Tag @{Dept="Finance";Environment="Production"}
+```
+
+# <a name="cli"></a>[CLI](#tab/azure-cli)
+
+```azurecli
+az ts create \
+  --name storageSpec \
+  --version "1.0a" \
+  --resource-group templateSpecRG \
+  --location "westus2" \
+  --template-file "./mainTemplate.json" \
+  --tags Dept=Finance Environment=Production
+```
+
+---
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+```azurepowershell
+Set-AzTemplateSpec `
+  -Name storageSpec `
+  -Version 1.0a `
+  -ResourceGroupName templateSpecsRg `
+  -Location westus2 `
+  -TemplateFile ./mainTemplate.json `
+  -Tag @{Dept="Finance";Environment="Production"}
+```
+
+# <a name="cli"></a>[CLI](#tab/azure-cli)
+
+```azurecli
+az ts update \
+  --name storageSpec \
+  --version "1.0a" \
+  --resource-group templateSpecRG \
+  --location "westus2" \
+  --template-file "./mainTemplate.json" \
+  --tags Dept=Finance Environment=Production
+```
+
+---
+
+Bij het maken of wijzigen van een sjabloon spec met de opgegeven versie parameter, maar zonder de tag/Tags-para meter:
+
+- Als de sjabloon specificatie bestaat en labels heeft, maar de versie niet bestaat, neemt de nieuwe versie dezelfde tags over als de bestaande sjabloon specificatie.
+
+Bij het maken of wijzigen van een sjabloon spec met de para meter tag/Tags en de opgegeven versie parameter:
+
+- Als de sjabloon specificatie en de versie niet bestaan, worden de tags toegevoegd aan zowel de nieuwe sjabloon specificatie als de nieuwe versie.
+- Als de sjabloon specificatie bestaat, maar de versie niet bestaat, worden de tags alleen toegevoegd aan de nieuwe versie.
+- Als zowel de sjabloon specificatie als de versie bestaan, zijn de labels alleen van toepassing op de versie.
+
+Wanneer u een sjabloon wijzigt waarvoor de para meter tag/Tags is opgegeven, maar er geen versie parameter is opgegeven, worden de tags alleen toegevoegd aan de sjabloon specificatie.
+
 ## <a name="create-a-template-spec-with-linked-templates"></a>Een sjabloon specificatie met gekoppelde sjablonen maken
 
 Als de hoofd sjabloon voor uw sjabloon specificatie verwijst naar gekoppelde sjablonen, kunnen de Power shell-en CLI-opdrachten de gekoppelde sjablonen automatisch vinden en verpakken vanaf uw lokale station. U hoeft Storage-accounts of opslag plaatsen niet hand matig te configureren voor het hosten van de sjabloon specificaties: alles is zelf opgenomen in de sjabloon specificatie resource.
@@ -331,10 +403,6 @@ Het volgende voor beeld is vergelijkbaar met het vorige voor beeld, maar u gebru
 ```
 
 Zie [zelf studie: een sjabloon specificatie implementeren als gekoppelde sjabloon](template-specs-deploy-linked-template.md)voor meer informatie over het koppelen van sjabloon specificaties.
-
-## <a name="versioning"></a>Versiebeheer
-
-Wanneer u een sjabloon specificatie maakt, geeft u er een versie naam voor op. Wanneer u de sjabloon code herhaalt, kunt u een bestaande versie bijwerken (voor hotfixes) of een nieuwe versie publiceren. De versie is een teken reeks. U kunt ervoor kiezen om een versie systeem te volgen, met inbegrip van semantische versie beheer. Gebruikers van de sjabloon specificatie kunnen de versie naam opgeven die ze willen gebruiken bij het implementeren ervan.
 
 ## <a name="next-steps"></a>Volgende stappen
 

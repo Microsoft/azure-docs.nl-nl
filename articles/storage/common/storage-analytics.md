@@ -9,18 +9,18 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring
-ms.openlocfilehash: 5465fa63a3dff71de2e370281df9351e2bac76c7
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: a5ccaa95c8f29395770395076f75f36019a4355c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790522"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737678"
 ---
 # <a name="storage-analytics"></a>Storage Analytics
 
 Azure Opslaganalyse voert logboek registratie uit en geeft metrische gegevens voor een opslag account. U kunt deze gegevens gebruiken om aanvragen te traceren, gebruiks trends te analyseren en problemen met uw opslag account op te sporen.
 
-Als u Opslaganalyse wilt gebruiken, moet u deze afzonderlijk inschakelen voor elke service die u wilt bewaken. U kunt deze functie inschakelen via de [Azure Portal](https://portal.azure.com). Zie [een opslag account bewaken in de Azure Portal](storage-monitor-storage-account.md)voor meer informatie. U kunt Opslaganalyse ook via een programma inschakelen via de REST API of de client bibliotheek. Gebruik de [Eigenschappen van de set BLOB service](/rest/api/storageservices/set-blob-service-properties), [Stel Queue service](/rest/api/storageservices/set-queue-service-properties)-eigenschappen in, [Stel Table service-eigenschappen](/rest/api/storageservices/set-table-service-properties)in en [Stel bestands service-eigenschappen](/rest/api/storageservices/Get-File-Service-Properties) bewerkingen in om Opslaganalyse voor elke service in te scha kelen.
+Als u Opslaganalyse wilt gebruiken, moet u deze afzonderlijk inschakelen voor elke service die u wilt bewaken. U kunt deze functie inschakelen via de [Azure Portal](https://portal.azure.com). Zie [een opslag account bewaken in de Azure Portal](./manage-storage-analytics-logs.md)voor meer informatie. U kunt Opslaganalyse ook via een programma inschakelen via de REST API of de client bibliotheek. Gebruik de [Eigenschappen van de set BLOB service](/rest/api/storageservices/set-blob-service-properties), [Stel Queue service](/rest/api/storageservices/set-queue-service-properties)-eigenschappen in, [Stel Table service-eigenschappen](/rest/api/storageservices/set-table-service-properties)in en [Stel bestands service-eigenschappen](/rest/api/storageservices/Get-File-Service-Properties) bewerkingen in om Opslaganalyse voor elke service in te scha kelen.
 
 De geaggregeerde gegevens worden opgeslagen in een bekende BLOB (voor logboek registratie) en in bekende tabellen (voor metrieken), die mogelijk worden geopend met behulp van de Blob service-en Table service-Api's.
 
@@ -46,6 +46,6 @@ Elke aanvraag voor de opslag service van een account is Factureerbaar of niet fa
 Wanneer u Opslaganalyse gegevens bekijkt, kunt u de tabellen in het onderwerp [Opslaganalyse vastgelegde bewerkingen en status berichten](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages) gebruiken om te bepalen welke aanvragen Factureerbaar zijn. Vervolgens kunt u uw logboeken en metrische gegevens vergelijken met de status berichten om te zien of er een bepaalde aanvraag in rekening is gebracht. U kunt ook de tabellen in het vorige onderwerp gebruiken om de beschik baarheid voor een opslag service of afzonderlijke API-bewerking te onderzoeken.
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Een Storage-account bewaken in de Azure-portal](storage-monitor-storage-account.md)
+* [Een Storage-account bewaken in de Azure-portal](./manage-storage-analytics-logs.md)
 * [Opslaganalyse metrische gegevens](storage-analytics-metrics.md)
 * [Logboekregistratie van Opslaganalyse](storage-analytics-logging.md)

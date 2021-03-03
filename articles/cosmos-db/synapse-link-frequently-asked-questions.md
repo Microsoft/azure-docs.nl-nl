@@ -6,12 +6,12 @@ ms.author: rosouz
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.openlocfilehash: 885aab68c769c0705994bad34bee6aaa4fdc3f3d
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 9fb6e94062639d32707f52f66e0b99531884a636
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101658466"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101692263"
 ---
 # <a name="frequently-asked-questions-about-azure-synapse-link-for-azure-cosmos-db"></a>Veelgestelde vragen over Azure Synapse Link voor Azure Cosmos DB
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -73,6 +73,10 @@ Azure Cosmos DB garandeert de prestaties van de isolatie tussen transactionele e
 Ja, u kunt een [beheerd privé-eind punt](analytical-store-private-endpoints.md) configureren en netwerk toegang tot de analytische opslag beperken tot het virtuele Azure Synapse-netwerk dat wordt beheerd. Beheerde persoonlijke eind punten maken een persoonlijke koppeling naar uw analytische opslag. Dit persoonlijke eind punt beperkt ook schrijf toegang tot transactionele Store, onder andere Azure Data Services.
 
 U kunt zowel transactionele opslag als persoonlijke eind punten van een analytische opslag toevoegen aan hetzelfde Azure Cosmos DB-account in een Azure Synapse Analytics-werk ruimte. Als u alleen analytische query's wilt uitvoeren, wilt u mogelijk alleen het analytische persoonlijke eind punt toewijzen.
+
+### <a name="can-i-use-customer-managed-keys-with-the-azure-cosmos-db-analytical-store"></a>Kan ik door de klant beheerde sleutels gebruiken met de Azure Cosmos DB Analytical Store?
+
+U kunt de gegevens op een automatische en transparante manier naadloos versleutelen over transactionele en analytische archieven met dezelfde door de klant beheerde sleutels. Voor het gebruik van door de klant beheerde sleutels met de Azure Cosmos DB analytische opslag is momenteel extra configuratie vereist voor uw account. Neem contact op met het [Azure Cosmos DB team](mailto:azurecosmosdbcmk@service.microsoft.com)  voor meer informatie.
 
 ### <a name="are-delete-and-update-operations-on-the-transactional-store-reflected-in-the-analytical-store"></a>Worden de bewerkingen voor verwijderen en bijwerken in de transactionele Store weer gegeven in de analytische opslag?
 

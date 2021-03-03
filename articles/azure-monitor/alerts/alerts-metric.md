@@ -6,18 +6,18 @@ ms.author: harelbr
 ms.topic: conceptual
 ms.date: 01/11/2021
 ms.subservice: alerts
-ms.openlocfilehash: e3a9810aef356b7acf5ae2522645c14ee445812b
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: bf55d66f7099717079190a538bad8bf777581825
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609609"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723551"
 ---
 # <a name="create-view-and-manage-metric-alerts-using-azure-monitor"></a>Metrische waarschuwing maken, bekijken en beheren met Azure Monitor
 
-Metrische waarschuwingen in Azure Monitor bieden een manier om een melding te ontvangen wanneer een van uw metrische gegevens een drempel waarde overschrijdt. Metrische waarschuwingen werken voor verschillende metrische gegevens op platforms met meerdere dimensies, voor aangepaste metrische gegevens, en voor metrische Application Insights-gegevens (standaard en aangepast). In dit artikel wordt beschreven hoe u metrische waarschuwings regels kunt maken, weer geven en beheren via Azure Portal en Azure CLI. U kunt ook metrische waarschuwings regels maken met behulp van Azure Resource Manager sjablonen, die in [een afzonderlijk artikel](../platform/alerts-metric-create-templates.md)worden beschreven.
+Metrische waarschuwingen in Azure Monitor bieden een manier om een melding te ontvangen wanneer een van uw metrische gegevens een drempel waarde overschrijdt. Metrische waarschuwingen werken voor verschillende metrische gegevens op platforms met meerdere dimensies, voor aangepaste metrische gegevens, en voor metrische Application Insights-gegevens (standaard en aangepast). In dit artikel wordt beschreven hoe u metrische waarschuwings regels kunt maken, weer geven en beheren via Azure Portal en Azure CLI. U kunt ook metrische waarschuwings regels maken met behulp van Azure Resource Manager sjablonen, die in [een afzonderlijk artikel](./alerts-metric-create-templates.md)worden beschreven.
 
-Meer informatie over de werking van metrische waarschuwingen vindt u in [overzicht van metrische waarschuwingen](../platform/alerts-metric-overview.md).
+Meer informatie over de werking van metrische waarschuwingen vindt u in [overzicht van metrische waarschuwingen](./alerts-metric-overview.md).
 
 ## <a name="create-with-azure-portal"></a>Maken met Azure Portal
 
@@ -32,7 +32,7 @@ In de volgende procedure wordt beschreven hoe u een regel voor metrische waarsch
 
 3. Klik op **doel selecteren** in het context deel venster dat wordt geladen, selecteer een doel resource waarop u een waarschuwing wilt ontvangen. Gebruik de vervolg keuzelijst **abonnement** en **resource type** om de resource te vinden die u wilt bewaken. U kunt ook de zoek balk gebruiken om uw bron te vinden.
 
-4. Als de geselecteerde resource metrische gegevens bevat, kunt u waarschuwingen maken op **beschik bare signalen** onder aan de rechter kant, zoals metrische gegevens. U kunt de volledige lijst met resource typen die worden ondersteund voor metrische waarschuwingen in dit [artikel](../platform/alerts-metric-near-real-time.md#metrics-and-dimensions-supported)weer geven.
+4. Als de geselecteerde resource metrische gegevens bevat, kunt u waarschuwingen maken op **beschik bare signalen** onder aan de rechter kant, zoals metrische gegevens. U kunt de volledige lijst met resource typen die worden ondersteund voor metrische waarschuwingen in dit [artikel](./alerts-metric-near-real-time.md#metrics-and-dimensions-supported)weer geven.
 
 5. Wanneer u een doel resource hebt geselecteerd, klikt u op **voor waarde toevoegen**.
 
@@ -45,7 +45,7 @@ In de volgende procedure wordt beschreven hoe u een regel voor metrische waarsch
     - Als de dimensie waarde die u zoekt niet wordt weer gegeven, klikt u op aangepaste waarde toevoegen om een aangepaste dimensie waarde toe te voegen.
     - U kunt ook **alle huidige en toekomstige waarden** voor een van de dimensies selecteren. Hiermee wordt de selectie dynamisch geschaald naar alle huidige en toekomstige waarden voor een dimensie.
 
-    De metrische waarschuwings regel evalueert de voor waarde voor alle combi Naties van geselecteerde waarden. Meer [informatie over hoe waarschuwingen voor multidimensionale metrische gegevens werken](../platform/alerts-metric-overview.md).
+    De metrische waarschuwings regel evalueert de voor waarde voor alle combi Naties van geselecteerde waarden. Meer [informatie over hoe waarschuwingen voor multidimensionale metrische gegevens werken](./alerts-metric-overview.md).
 
 9. Selecteer het type **drempel waarde** , de **operator** en het **samenvoegings type**. Hiermee wordt de logica bepaald die door de metrische waarschuwings regel wordt geëvalueerd.
     - Als u een **statische** drempel waarde gebruikt, gaat u door met het definiëren van een **drempelwaarde**. De metrische grafiek kan helpen om te bepalen wat een redelijke drempel waarde kan hebben.
@@ -154,8 +154,8 @@ Er zijn speciale Power shell-cmdlets beschikbaar voor metrische waarschuwings re
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Waarschuwingen voor metrische gegevens maken met behulp van Azure Resource Manager sjablonen](../platform/alerts-metric-create-templates.md)
-- [Begrijpen hoe metrische waarschuwingen werken](../platform/alerts-metric-overview.md)
+- [Waarschuwingen voor metrische gegevens maken met behulp van Azure Resource Manager sjablonen](./alerts-metric-create-templates.md)
+- [Begrijpen hoe metrische waarschuwingen werken](./alerts-metric-overview.md)
 - [Begrijpen hoe metrische waarschuwingen met dynamische drempel waarden werken](../alerts/alerts-dynamic-thresholds.md)
-- [Informatie over het web Hook-schema voor metrische waarschuwingen](../platform/alerts-metric-near-real-time.md#payload-schema)
-- [Problemen met metrische waarschuwingen oplossen](../platform/alerts-troubleshoot-metric.md)
+- [Informatie over het web Hook-schema voor metrische waarschuwingen](./alerts-metric-near-real-time.md#payload-schema)
+- [Problemen met metrische waarschuwingen oplossen](./alerts-troubleshoot-metric.md)

@@ -4,19 +4,19 @@ description: Meer informatie over het gebruik van een resource manager-sjabloon 
 author: rboucher
 ms.author: robb
 ms.topic: conceptual
-ms.date: 03/09/2020
+ms.date: 02/14/2021
 ms.subservice: alerts
-ms.openlocfilehash: 418dde8311c2555f8df5929dd96ce72611422ee9
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 0923be317d497e471724b7611fe6b831a4be6f37
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611187"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101718043"
 ---
 # <a name="create-a-classic-metric-alert-with-a-resource-manager-template"></a>Een klassieke waarschuwing voor metrische gegevens maken met een Resource Manager-sjabloon
 
 > [!WARNING]
-> In dit artikel wordt beschreven hoe u oudere klassieke metrische waarschuwingen maakt. Azure Monitor ondersteunt nu [nieuwere bijna realtime waarschuwingen voor metrische gegevens en een nieuwe meldings ervaring](../platform/alerts-overview.md). Klassieke waarschuwingen worden [buiten gebruik gesteld](../platform/monitoring-classic-retirement.md) voor open bare Cloud gebruikers, maar zijn nog steeds beperkt in beperkte mate voor resources die de nieuwe waarschuwingen nog niet ondersteunen.
+> In dit artikel wordt beschreven hoe u oudere klassieke metrische waarschuwingen maakt. Azure Monitor ondersteunt nu [nieuwere bijna realtime waarschuwingen voor metrische gegevens en een nieuwe meldings ervaring](./alerts-overview.md). Klassieke waarschuwingen worden [buiten gebruik gesteld](./monitoring-classic-retirement.md) voor open bare Cloud gebruikers, maar blijven beperkt tot **31 mei 2021**. Klassieke waarschuwingen voor Azure Government Cloud en Azure China 21Vianet worden op **29 februari 2024** buiten gebruik gesteld.
 >
 
 In dit artikel wordt beschreven hoe u een [Azure Resource Manager sjabloon](../../azure-resource-manager/templates/template-syntax.md) kunt gebruiken voor het configureren van klassieke Azure-waarschuwingen. Hierdoor kunt u automatisch waarschuwingen instellen voor uw resources wanneer ze worden gemaakt om ervoor te zorgen dat alle resources correct worden gecontroleerd.
@@ -399,6 +399,6 @@ Een waarschuwing voor een resource manager-sjabloon is het vaakst handig bij het
 ```
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Meer informatie over waarschuwingen](../platform/alerts-overview.md)
-* [Diagnostische instellingen toevoegen](../samples/resource-manager-diagnostic-settings.md) aan uw Resource Manager-sjabloon
+* [Meer informatie over waarschuwingen](./alerts-overview.md)
+* [Diagnostische instellingen toevoegen](../essentials/resource-manager-diagnostic-settings.md) aan uw Resource Manager-sjabloon
 * Zie [micro soft. Insights/alertrules-](/azure/templates/microsoft.insights/alertrules) sjabloon Naslag informatie voor de JSON-syntaxis en-eigenschappen.

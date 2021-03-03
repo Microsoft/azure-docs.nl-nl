@@ -1,20 +1,20 @@
 ---
-title: Sens oren onboarding en beheren in de Defender voor IoT-Portal
+title: Sens oren en abonnementen beheren in de Defender voor IoT-Portal
 description: Meer informatie over het voorbereiden, weer geven en beheren van Sens oren in de Defender voor IoT-Portal.
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 12/27/2020
+ms.date: 2/18/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 7cc4fe4e2b675fb1b46bb4404d892c02a1f00553
-ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
+ms.openlocfilehash: 63b3b450e289b40aa9acbfb0d5170e8eb57f9e58
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100526853"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733258"
 ---
-# <a name="onboard-and-manage-sensors-in-the-defender-for-iot-portal"></a>Sens oren onboarding en beheren in de Defender voor IoT-Portal
+# <a name="onboard-and-manage-sensors-and-subscriptions-in-the-defender-for-iot-portal"></a>Sens oren en abonnementen beheren in de Defender voor IoT-Portal
 
 In dit artikel wordt beschreven hoe u Sens oren in de [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started)kunt uitschakelen, weer geven en beheren.
 
@@ -64,7 +64,7 @@ In de [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure
 
 ## <a name="manage-onboarded-sensors"></a>Onboarded Sens oren beheren
 
-U gebruikt de [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started) voor beheer taken die betrekking hebben op Sens oren.
+Gebruik de [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started) voor beheer taken die betrekking hebben op Sens oren.
 
 Onboarded Sens oren kunnen worden weer gegeven op de pagina **sites en Sens oren** . U kunt ook sensor gegevens van deze pagina bewerken.
 
@@ -78,8 +78,8 @@ Gebruik de bewerkings opties voor **sites en Sens oren** om de naam en zone van 
 
 Bewerken:
 
-1. Klik met de rechter muisknop op het weglatings teken (**...**) voor de sensor die u wilt bewerken.
-1. Selecteer Bewerken.
+1. Selecteer het **beletsel teken** (**...**) voor de sensor die u wilt bewerken.
+1. Selecteer **Bewerken**.
 1. Werk de sensor zone bij of maak een nieuwe zone.
 
 ### <a name="delete-a-sensor"></a>Een sensor verwijderen
@@ -122,6 +122,24 @@ Een sensor opnieuw activeren:
 8. Selecteer **uploaden** en selecteer het bestand dat u hebt opgeslagen op de pagina voor de onboarding-sensor.
 
 9. Selecteer **Activate**.
+
+## <a name="offboard-a-subscription"></a>Een abonnement niet meer vrijgeven
+
+Abonnementen worden maandelijks beheerd. Wanneer u een abonnement niet meer vrijgeven, wordt u gefactureerd voor dat abonnement tot het einde van de maand. 
+
+Verwijder alle Sens oren die zijn gekoppeld aan het abonnement vóór offboarding van het abonnement. Zie [een sensor verwijderen](#delete-a-sensor)voor meer informatie over het verwijderen van een sensor. 
+
+Een abonnement niet meer vrijgeven:
+
+1. Navigeer naar de pagina met **prijzen** .
+1. Selecteer het abonnement en selecteer vervolgens het pictogram **verwijderen** :::image type="icon" source="media/how-to-manage-sensors-on-the-cloud/delete-icon.png" border="false"::: .
+1. Schakel in de pop-upvenster het selectie vakje in om te bevestigen dat u alle Sens oren hebt verwijderd die aan het abonnement zijn gekoppeld.
+
+    :::image type="content" source="media/how-to-manage-sensors-on-the-cloud/offboard-popup.png" alt-text="Schakel het selectie vakje in en selecteer niet meer vrijgeven om uw sensor te niet meer vrijgeven.":::
+
+1. Selecteer de knop **niet meer vrijgeven** . 
+
+De on-premises omgeving wordt niet beïnvloed, maar u moet de sensor verwijderen uit de on-premises omgeving of de sensor opnieuw toewijzen aan een ander abonnement, zodat u kunt voor komen dat gerelateerde gegevens stromen naar de on-premises beheer console. 
 
 ## <a name="see-also"></a>Zie ook
 

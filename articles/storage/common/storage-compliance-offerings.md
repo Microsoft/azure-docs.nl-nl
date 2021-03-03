@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: fryu
 ms.subservice: common
-ms.openlocfilehash: ca0e95d311adedf613ed168927491dfa85b1cabd
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 7ec938a13d04cf3400e4d3df0eeda051c61d35ad
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97095318"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101724265"
 ---
 # <a name="azure-storage-compliance-offerings"></a>Nalevings aanbod Azure Storage
 
 Om organisaties te helpen te voldoen aan de nationale, regionale en branchespecifieke vereisten voor het verzamelen en het gebruik van gegevens van individuen, Microsoft Azure & Azure Storage de meest uitgebreide set certificeringen en verklaringen van elke Cloud serviceprovider aanbieden.
 
-U kunt de onderstaande nalevings aanbiedingen vinden op Azure Storage om ervoor te zorgen dat uw service wordt geregeld in Azure Storage-service. Ze zijn van toepassing op de volgende Azure Storage-aanbiedingen: blobs, bestanden, wacht rijen, tabellen, schijven, koele opslag en Premium Storage.
+U kunt de onderstaande nalevings aanbiedingen vinden op Azure Storage om ervoor te zorgen dat uw service wordt geregeld in Azure Storage-service. Ze zijn van toepassing op de volgende Azure Storage-aanbiedingen: blobs (ADLS Gen2), bestanden, wacht rijen, tabellen, schijven, koele opslag en Premium Storage.
 
 ## <a name="global"></a>Globaal
 

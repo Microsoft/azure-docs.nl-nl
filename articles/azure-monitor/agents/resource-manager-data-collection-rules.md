@@ -6,15 +6,15 @@ ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 11/17/2020
-ms.openlocfilehash: f98e22ba28dcd05d164f40c301a2e43df66898de
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 60de25231f5fad3e7b1ddec21048d048e31f3416
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100627179"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737321"
 ---
 # <a name="resource-manager-template-samples-for-data-collection-rules-in-azure-monitor"></a>Resource Manager-voorbeeldsjablonen voor gegevensverzamelingsregels in Azure Monitor
-Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het implementeren en configureren van de [Log Analytics-agent](../platform/log-analytics-agent.md) en [de diagnostische extensie](../platform/diagnostics-extension-overview.md) voor virtuele machines in Azure Monitor. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.
+Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het implementeren en configureren van de [Log Analytics-agent](./log-analytics-agent.md) en [de diagnostische extensie](./diagnostics-extension-overview.md) voor virtuele machines in Azure Monitor. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.
 
 [!INCLUDE [azure-monitor-samples](../../../includes/azure-monitor-resource-manager-samples.md)]
 
@@ -144,6 +144,6 @@ In het volgende voor beeld wordt een koppeling gemaakt tussen een Azure-server m
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Meer voorbeeldsjablonen voor Azure Monitor](../samples/resource-manager-samples.md).
-* [Meer informatie over Log Analytics-agent](../platform/log-analytics-agent.md).
-* [Meer informatie over de diagnostische extensie](../platform/diagnostics-extension-overview.md).
+* [Meer voorbeeldsjablonen voor Azure Monitor](../resource-manager-samples.md).
+* [Meer informatie over Log Analytics-agent](./log-analytics-agent.md).
+* [Meer informatie over de diagnostische extensie](./diagnostics-extension-overview.md).

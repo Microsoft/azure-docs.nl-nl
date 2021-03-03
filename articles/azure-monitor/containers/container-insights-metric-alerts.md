@@ -1,22 +1,22 @@
 ---
-title: Metrische waarschuwingen van Azure Monitor voor containers
-description: In dit artikel worden de aanbevolen metrische waarschuwingen weer gegeven die beschikbaar zijn via Azure Monitor voor containers in de open bare preview.
+title: Metrische waarschuwingen van container Insights
+description: In dit artikel worden de aanbevolen metrische waarschuwingen weer gegeven die beschikbaar zijn via container Insights in open bare preview.
 ms.topic: conceptual
 ms.date: 10/28/2020
-ms.openlocfilehash: 59c8d7b58809c981130d2ce92406fb5b1ce146ff
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: f19959c76d31422a0bdf898a6fa41e6b168e2e61
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611586"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728889"
 ---
-# <a name="recommended-metric-alerts-preview-from-azure-monitor-for-containers"></a>Aanbevolen metrische waarschuwingen (preview) van Azure Monitor voor containers
+# <a name="recommended-metric-alerts-preview-from-container-insights"></a>Aanbevolen metrische waarschuwingen (preview) van container Insights
 
-Als u een waarschuwing wilt ontvangen over problemen met de systeem bronnen wanneer er sprake is van piek vraag en de buurt van de capaciteit wordt uitgevoerd, kunt u met Azure Monitor voor containers een logboek waarschuwing maken op basis van de prestatie gegevens die zijn opgeslagen in Azure Monitor Logboeken. Azure Monitor voor containers bevat nu vooraf geconfigureerde metrische waarschuwings regels voor uw AKS en Azure Arc Kubernetes-cluster, dat in de open bare preview-versie wordt gebruikt.
+Als u een waarschuwing wilt ontvangen over problemen met de systeem bronnen wanneer er sprake is van piek vraag en de nabije capaciteit wordt uitgevoerd, kunt u met container Insights een logboek waarschuwing maken op basis van de prestatie gegevens die zijn opgeslagen in Azure Monitor Logboeken. Container Insights bevat nu vooraf geconfigureerde metrische waarschuwings regels voor uw AKS en Azure Arc Kubernetes-cluster, dat zich in de open bare preview bevindt.
 
 In dit artikel wordt de ervaring beoordeeld en vindt u richt lijnen voor het configureren en beheren van deze waarschuwings regels.
 
-Als u niet bekend bent met Azure Monitor waarschuwingen, raadpleegt u [overzicht van waarschuwingen in Microsoft Azure](../platform/alerts-overview.md) voordat u begint. Zie [metrische waarschuwingen in azure monitor](../alerts/alerts-metric-overview.md)voor meer informatie over metrische waarschuwingen.
+Als u niet bekend bent met Azure Monitor waarschuwingen, raadpleegt u [overzicht van waarschuwingen in Microsoft Azure](../alerts/alerts-overview.md) voordat u begint. Zie [metrische waarschuwingen in azure monitor](../alerts/alerts-metric-overview.md)voor meer informatie over metrische waarschuwingen.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -31,13 +31,13 @@ Voordat u begint, controleert u het volgende:
     * Voer de opdracht uit: `kubectl describe <omsagent-pod-name> --namespace=kube-system` . In de status die is geretourneerd, noteert u de waarde onder **afbeelding** voor omsagent in de sectie *containers* van de uitvoer. 
     * Op het tabblad **knoop punten** selecteert u het cluster knooppunt en in het deel venster **Eigenschappen** aan de rechter kant, noteer de waarde onder **Agent-installatie kopie code**.
 
-    De waarde die wordt weer gegeven voor AKS moet versie **ciprod05262020** of hoger zijn. De waarde die wordt weer gegeven voor Azure Arc enabled Kubernetes cluster moet versie **ciprod09252020** of hoger zijn. Als uw cluster een oudere versie heeft, raadpleegt u [de Azure monitor van de agent voor containers bijwerken](container-insights-manage-agent.md#upgrade-agent-on-aks-cluster) voor stappen om de nieuwste versie te verkrijgen.
+    De waarde die wordt weer gegeven voor AKS moet versie **ciprod05262020** of hoger zijn. De waarde die wordt weer gegeven voor Azure Arc enabled Kubernetes cluster moet versie **ciprod09252020** of hoger zijn. Als uw cluster een oudere versie heeft, raadpleegt [u de container Insights-agent bijwerken](container-insights-manage-agent.md#upgrade-agent-on-aks-cluster) voor stappen om de nieuwste versie te verkrijgen.
 
     Zie [release geschiedenis van agent](https://github.com/microsoft/docker-provider/tree/ci_feature_prod)voor meer informatie over de agent release. U kunt controleren of de metrische gegevens worden verzameld door Azure Monitor Metrics Explorer te gebruiken **en te controleren** in de **metrische naam ruimte** die wordt weer gegeven. Als dat het geval is, kunt u door gaan met het instellen van de waarschuwingen. Als er geen metrische gegevens worden verzameld, ontbreken de benodigde machtigingen voor de Cluster-service-principal of MSI. Als u wilt controleren of de SPN of MSI lid is van de Publisher-rol **bewakings metrieken** , volgt u de stappen die worden beschreven in de sectie [upgrade per cluster met behulp van Azure cli](container-insights-update-metrics.md#upgrade-per-cluster-using-azure-cli) om de roltoewijzing te bevestigen en in te stellen.
 
 ## <a name="alert-rules-overview"></a>Overzicht van waarschuwings regels
 
-Azure Monitor voor containers bevatten de volgende metrische waarschuwingen voor uw AKS-en Azure Arc ingeschakelde Kubernetes-clusters:
+Container Insights bevat de volgende metrische waarschuwingen voor uw AKS-en Azure Arc ingeschakelde Kubernetes-clusters om te waarschuwen over welke zaken u moet doen:
 
 |Naam| Beschrijving |Standaard drempelwaarde |
 |----|-------------|------------------|
@@ -108,15 +108,15 @@ Volg deze stappen om de metrische waarschuwingen in Azure Monitor van de Azure P
 
 ### <a name="from-the-azure-portal"></a>Vanuit Azure Portal
 
-In deze sectie wordt beschreven hoe u Azure Monitor voor de metrische waarschuwing voor containers (preview) inschakelt vanuit de Azure Portal.
+In deze sectie wordt uitgelegd hoe u container Insights-metrische waarschuwing (preview) inschakelt vanuit de Azure Portal.
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
-2. Toegang tot de Azure Monitor voor de functie waarschuwing voor metrische gegevens van containers (preview) is rechtstreeks beschikbaar vanuit een AKS-cluster door **inzichten** te selecteren in het linkerdeel venster van de Azure Portal.
+2. Toegang tot de functie waarschuwing over metrische gegevens van de container Insights (preview) is rechtstreeks beschikbaar vanuit een AKS-cluster door **inzichten** te selecteren in het linkerdeel venster van de Azure Portal.
 
 3. Selecteer de **Aanbevolen waarschuwingen** op de opdracht balk.
 
-    ![Aanbevolen waarschuwings opties in Azure Monitor voor containers](./media/container-insights-metric-alerts/command-bar-recommended-alerts.png)
+    ![Aanbevolen waarschuwings opties in container Insights](./media/container-insights-metric-alerts/command-bar-recommended-alerts.png)
 
 4. Het eigenschappen venster **Aanbevolen waarschuwingen** wordt automatisch weer gegeven aan de rechter kant van de pagina. Standaard zijn alle waarschuwings regels in de lijst uitgeschakeld. Nadat u **inschakelen** hebt geselecteerd, wordt de waarschuwings regel gemaakt en wordt de regel naam bijgewerkt met een koppeling naar de resource van de waarschuwing.
 
@@ -198,7 +198,7 @@ De basis stappen zijn als volgt:
 
 ## <a name="edit-alert-rules"></a>Waarschuwings regels bewerken
 
-U kunt Azure Monitor voor de waarschuwings regels voor containers weer geven en beheren om de drempel waarde te bewerken of om een [actie groep](../alerts/action-groups.md) voor uw AKS-cluster te configureren. Hoewel u deze acties kunt uitvoeren vanuit het Azure Portal en Azure CLI, kan het ook rechtstreeks vanuit uw AKS-cluster in Azure Monitor voor containers worden uitgevoerd.
+U kunt de container Insights-waarschuwings regels weer geven en beheren, de drempel waarde bewerken of een [actie groep](../alerts/action-groups.md) voor uw AKS-cluster configureren. Hoewel u deze acties kunt uitvoeren vanuit het Azure Portal en Azure CLI, kan het ook rechtstreeks vanuit uw AKS-cluster in container Insights worden uitgevoerd.
 
 1. Selecteer de **Aanbevolen waarschuwingen** op de opdracht balk.
 

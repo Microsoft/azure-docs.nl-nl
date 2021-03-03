@@ -1,18 +1,18 @@
 ---
-title: Waarschuwingen registreren van Azure Monitor voor containers | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u aangepaste logboek waarschuwingen maakt voor geheugen-en CPU-gebruik van Azure Monitor voor containers.
+title: Waarschuwingen registreren vanuit container Insights | Microsoft Docs
+description: In dit artikel wordt beschreven hoe u aangepaste logboek waarschuwingen maakt voor geheugen-en CPU-gebruik vanuit container Insights.
 ms.topic: conceptual
 ms.date: 01/05/2021
-ms.openlocfilehash: 4239567c60afda6ca165e097562cb888c731f15a
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 64d499d69194ac338d367ae094e42f4c8af23bef
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609496"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711192"
 ---
-# <a name="how-to-create-log-alerts-from-azure-monitor-for-containers"></a>Logboekwaarschuwingen maken van Azure Monitor voor containers
+# <a name="how-to-create-log-alerts-from-container-insights"></a>Logboek waarschuwingen maken vanuit container Insights
 
-Azure Monitor voor containers bewaakt de prestaties van container werkbelastingen die zijn geïmplementeerd op beheerde of zelf beheerde Kubernetes-clusters. In dit artikel wordt beschreven hoe u waarschuwingen op basis van Logboeken maakt voor de volgende situaties met AKS-clusters:
+Container Insights bewaakt de prestaties van container werkbelastingen die zijn geïmplementeerd op beheerde of zelf beheerde Kubernetes-clusters. In dit artikel wordt beschreven hoe u waarschuwingen op basis van Logboeken maakt voor de volgende situaties met AKS-clusters:
 
 - Wanneer het CPU-of geheugen gebruik op cluster knooppunten een drempel waarde overschrijdt
 - Wanneer het CPU-of geheugen gebruik in een container binnen een controller een drempel waarde overschrijdt, vergeleken met een limiet die is ingesteld voor de bijbehorende resource
@@ -20,9 +20,9 @@ Azure Monitor voor containers bewaakt de prestaties van container werkbelastinge
 - *Aantal mislukte Pod is mislukt*, *in behandeling*, *onbekend*, *actief* of *geslaagd*
 - Wanneer vrije schijf ruimte op cluster knooppunten een drempel waarde overschrijdt
 
-Als u een waarschuwing wilt ontvangen voor hoog CPU-of geheugen gebruik, of weinig vrije schijf ruimte op cluster knooppunten, gebruikt u de query's die worden gegeven om een metrische waarschuwing of metrische meting waarschuwing te maken. Hoewel metrische waarschuwingen een lagere latentie hebben dan logboek waarschuwingen, bieden logboek waarschuwingen geavanceerde query's en grotere verfijning. Waarschuwings query's voor logboeken vergelijken een datum/tijd *met de huidige operator en* gaan één uur terug. (Azure Monitor voor containers worden alle datums opgeslagen in UTC-notatie (Coordinated Universal Time).)
+Als u een waarschuwing wilt ontvangen voor hoog CPU-of geheugen gebruik, of weinig vrije schijf ruimte op cluster knooppunten, gebruikt u de query's die worden gegeven om een metrische waarschuwing of metrische meting waarschuwing te maken. Hoewel metrische waarschuwingen een lagere latentie hebben dan logboek waarschuwingen, bieden logboek waarschuwingen geavanceerde query's en grotere verfijning. Waarschuwings query's voor logboeken vergelijken een datum/tijd *met de huidige operator en* gaan één uur terug. (In container Insights worden alle datums opgeslagen in UTC-notatie (Coordinated Universal Time).)
 
-Als u niet bekend bent met Azure Monitor waarschuwingen, raadpleegt u [overzicht van waarschuwingen in Microsoft Azure](../platform/alerts-overview.md) voordat u begint. Zie [waarschuwingen in Logboeken vastleggen in azure monitor](../alerts/alerts-unified-log.md)voor meer informatie over waarschuwingen die gebruikmaken van logboek query's. Zie [metrische waarschuwingen in azure monitor](../alerts/alerts-metric-overview.md)voor meer informatie over metrische waarschuwingen.
+Als u niet bekend bent met Azure Monitor waarschuwingen, raadpleegt u [overzicht van waarschuwingen in Microsoft Azure](../alerts/alerts-overview.md) voordat u begint. Zie [waarschuwingen in Logboeken vastleggen in azure monitor](../alerts/alerts-unified-log.md)voor meer informatie over waarschuwingen die gebruikmaken van logboek query's. Zie [metrische waarschuwingen in azure monitor](../alerts/alerts-metric-overview.md)voor meer informatie over metrische waarschuwingen.
 
 ## <a name="resource-utilization-log-search-queries"></a>Zoek opdrachten in Logboeken van resource gebruik
 
@@ -275,7 +275,7 @@ InsightsMetrics
 
 ## <a name="create-an-alert-rule"></a>Een waarschuwingsregel maken
 
-In deze sectie wordt uitgelegd hoe u een waarschuwings regel voor metrische metingen maakt met behulp van prestatie gegevens van Azure Monitor voor containers. U kunt dit basis proces met verschillende logboek query's gebruiken om te waarschuwen voor verschillende prestatie meter items. Gebruik een van de zoek query's in het logboek die eerder zijn gegeven om te beginnen met. Als u met een ARM-sjabloon wilt maken, raadpleegt u voor [beelden van het maken van logboek waarschuwingen met Azure-resource sjabloon](../alerts/alerts-log-create-templates.md).
+In deze sectie wordt uitgelegd hoe u een waarschuwings regel voor metrische metingen maakt met behulp van prestatie gegevens uit container Insights. U kunt dit basis proces met verschillende logboek query's gebruiken om te waarschuwen voor verschillende prestatie meter items. Gebruik een van de zoek query's in het logboek die eerder zijn gegeven om te beginnen met. Als u met een ARM-sjabloon wilt maken, raadpleegt u voor [beelden van het maken van logboek waarschuwingen met Azure-resource sjabloon](../alerts/alerts-log-create-templates.md).
 
 >[!NOTE]
 >Met de volgende procedure voor het maken van een waarschuwings regel voor container resource gebruik moet u overschakelen naar een nieuwe API voor logboek waarschuwingen, zoals beschreven in de voor [keur voor de switch-API voor logboek waarschuwingen](../alerts/alerts-log-api-switch.md).
@@ -283,7 +283,7 @@ In deze sectie wordt uitgelegd hoe u een waarschuwings regel voor metrische meti
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Zoek in het Azure Portal naar en selecteer **log Analytics-werk ruimten**.
-3. Selecteer de werk ruimte die Azure Monitor ondersteunt voor containers in de lijst met Log Analytics-werk ruimten. 
+3. Selecteer in de lijst met Log Analytics-werk ruimten de werk ruimte die container inzichten ondersteunt. 
 4. Selecteer in het deel venster aan de linkerkant **Logboeken** om de pagina Azure monitor logboeken te openen. U gebruikt deze pagina om Azure-logboek query's te schrijven en uit te voeren.
 5. Plak op de pagina **Logboeken** een van de eerder genoemde [query's](#resource-utilization-log-search-queries) in het veld **Zoek query** en selecteer vervolgens **uitvoeren** om de resultaten te valideren. Als u deze stap niet uitvoert, is de optie **+ nieuwe waarschuwing** niet beschikbaar om te selecteren.
 6. Selecteer **+ nieuwe waarschuwing** om een logboek waarschuwing te maken.

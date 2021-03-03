@@ -1,19 +1,19 @@
 ---
-title: Azure Monitor voor containers bijwerken voor metrische gegevens | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u Azure Monitor voor containers bijwerkt om de functie voor aangepaste metrische gegevens in te scha kelen die ondersteuning biedt voor het verkennen en waarschuwen van geaggregeerde metrische gegevens.
+title: Container Insights bijwerken voor metrische gegevens | Microsoft Docs
+description: In dit artikel wordt beschreven hoe u container Insights bijwerkt om de functie voor aangepaste metrische gegevens in te scha kelen die ondersteuning biedt voor het verkennen en waarschuwen van geaggregeerde metrische gegevens.
 ms.topic: conceptual
 ms.date: 10/09/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 37c19cd074e9ce1985d5d0e82137d8603913d4bd
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: edca7e4e8f6a9ea8dd9efdaafab8c906efd671b6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609892"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708268"
 ---
-# <a name="how-to-update-azure-monitor-for-containers-to-enable-metrics"></a>Azure Monitor voor containers bijwerken om metrische gegevens in te schakelen
+# <a name="how-to-update-container-insights-to-enable-metrics"></a>Container Insights bijwerken om metrische gegevens in te scha kelen
 
-Azure Monitor voor containers wordt ondersteuning geïntroduceerd voor het verzamelen van metrische gegevens van Azure Kubernetes Services (AKS) en Azure Arc enabled Kubernetes-clusters knoop punten en een Peul en schrijf ze naar de opslag voor de Azure Monitor metrische gegevens. Deze wijziging is bedoeld om een verbeterde tijd lijn te bieden bij het presen teren van geaggregeerde berekeningen (Gem, aantal, Max, min, Sum) in prestatie grafieken, ondersteuning voor het vastmaken van prestatie grafieken in Azure Portal Dash boards en het ondersteunen van metrische waarschuwingen.
+Container Insights introduceert de ondersteuning voor het verzamelen van metrische gegevens van Azure Kubernetes Services (AKS) en Azure Arc enabled Kubernetes-clusters knoop punten en een Peul en schrijf ze naar het opslag Azure Monitor metrische gegevens. Deze wijziging is bedoeld om een verbeterde tijd lijn te bieden bij het presen teren van geaggregeerde berekeningen (Gem, aantal, Max, min, Sum) in prestatie grafieken, ondersteuning voor het vastmaken van prestatie grafieken in Azure Portal Dash boards en het ondersteunen van metrische waarschuwingen.
 
 >[!NOTE]
 >Deze functie biedt momenteel geen ondersteuning voor Azure Red Hat open Shift-clusters.
@@ -47,7 +47,7 @@ Als u ervoor kiest om de Azure CLI te gebruiken, moet u de CLI eerst lokaal inst
 
 ## <a name="upgrade-a-cluster-from-the-azure-portal"></a>Een cluster upgraden van de Azure Portal
 
-Voor bestaande AKS-clusters die worden bewaakt door Azure Monitor voor containers, na het selecteren van het cluster om de status weer te geven van de weer gave met meerdere clusters in Azure Monitor of rechtstreeks vanuit het cluster door **inzichten** te selecteren in het linkerdeel venster, ziet u boven aan de portal een banner.
+Voor bestaande AKS-clusters die worden bewaakt door container Insights, wordt na het selecteren van het cluster de status van de weer gave met meerdere clusters in Azure Monitor of rechtstreeks vanuit het cluster **te selecteren,** een banner weer gegeven boven aan de portal.
 
 ![Span doek voor AKS-cluster bijwerken in Azure Portal](./media/container-insights-update-metrics/portal-banner-enable-01.png)
 

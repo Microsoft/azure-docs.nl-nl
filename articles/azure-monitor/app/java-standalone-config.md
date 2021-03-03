@@ -6,12 +6,12 @@ ms.date: 11/04/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 397c650d1d7a593a855c8f26e61dbf12ec6360fa
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 3806578f5d1af61329e2e32fa3e8eceb9afa4d42
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98631318"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101713963"
 ---
 # <a name="configuration-options---azure-monitor-application-insights-for-java"></a>Configuratie opties-Azure Monitor Application Insights voor Java
 
@@ -217,6 +217,9 @@ Dit zijn de geldige `level` waarden die u in het bestand kunt opgeven `applicati
 | KLEINERE             | FOUTOPSPORING  | FOUTOPSPORING   | KLEINERE   |
 | TRACERen (of het kleinste) | TRACERINGS  | TRACERINGS   | MEEST  |
 | ALL               | ALL    | ALL     | ALL     |
+
+> [!NOTE]
+> Als er een uitzonde ring wordt door gegeven aan de logboek registratie, wordt het logboek bericht (en uitzonde ring) weer gegeven in de Azure Portal in `exceptions` plaats van de `traces` tabel.
 
 ## <a name="auto-collected-micrometer-metrics-including-spring-boot-actuator-metrics"></a>Automatisch verzamelde metrische gegevens over micrometer (inclusief lente-metrische gegevens over het starten van de klep)
 

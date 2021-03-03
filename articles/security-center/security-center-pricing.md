@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/14/2021
 ms.author: memildin
-ms.openlocfilehash: 845697b9d2fd8d43caa3a9992fea8a780b7d9b7c
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 8d8ef4236a9dd993faaaa2aacfd40a7592e9017f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100522866"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101698668"
 ---
 # <a name="pricing-of-azure-security-center"></a>Prijzen van Azure Security Center
 Azure Security Center biedt geïntegreerd beveiligingsbeheer en geavanceerde bedreigingsbeveiliging voor werkbelastingen die worden uitgevoerd in Azure, on-premises en in andere clouds. Het biedt zichtbaarheid en controle over hybride cloudwerkbelastingen, actieve beveiligingen die uw blootstelling aan bedreigingen verminderen en intelligente detectie om u te helpen snel ontwikkelende cyberrisico's voor te blijven.
 
 
-## <a name="free-option-vs-azure-defender-enabled"></a>Gratis optie vs Azure Defender
+## <a name="security-center-free-vs-azure-defender-enabled"></a>Security Center gratis VS Azure Defender ingeschakeld
 
 Security Center wordt op twee manieren aangeboden:
 

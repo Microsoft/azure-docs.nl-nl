@@ -10,12 +10,12 @@ ms.date: 12/09/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: blobs
-ms.openlocfilehash: b0003384676f420c5ece043b1eb6120ed8ee2435
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 53f29c2b8f7a17ac2a23cc081660e8dcb4b9f387
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100574902"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701855"
 ---
 # <a name="prevent-anonymous-public-read-access-to-containers-and-blobs"></a>Anonieme open bare Lees toegang voor containers en blobs voor komen
 
@@ -78,7 +78,6 @@ Azure Storage logboek registratie in Azure Monitor ondersteunt het gebruik van l
 
 Als u Azure Storage gegevens wilt registreren met Azure Monitor en deze wilt analyseren met Azure Log Analytics, moet u eerst een diagnostische instelling maken die aangeeft welke typen aanvragen en voor welke opslag Services u gegevens wilt registreren. Voer de volgende stappen uit om een diagnostische instelling te maken in de Azure Portal:
 
-1. Schrijf u in [voor de Azure Storage registratie in azure monitor preview](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxW65f1VQyNCuBHMIMBV8qlUM0E0MFdPRFpOVTRYVklDSE1WUTcyTVAwOC4u).
 1. Maak een nieuwe Log Analytics-werk ruimte in het abonnement dat uw Azure Storage-account bevat. Nadat u logboek registratie voor uw opslag account hebt geconfigureerd, zijn de logboeken beschikbaar in de werk ruimte Log Analytics. Raadpleeg [Een Log Analytics-werkruimte maken in Azure Portal](../../azure-monitor/logs/quick-create-workspace.md) voor meer informatie.
 1. Ga in Azure Portal naar uw opslagaccount.
 1. Selecteer in de sectie controle de optie **Diagnostische instellingen (preview)**.

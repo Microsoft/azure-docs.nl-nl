@@ -1,0 +1,54 @@
+### YamlMime:Landing
+title: Azure Managed instance voor Apache Cassandra-documentatie
+summary: Een door Azure beheerde instantie voor Apache Cassandra biedt geautomatiseerde implementatie-en schaal bewerkingen voor beheerde open source Apache Cassandra-data centers. Het versnelt hybride scenario's en vermindert het doorlopende onderhoud.
+metadata:
+  title: Door Azure beheerde instantie voor Apache Cassandra
+  description: Een door Azure beheerde instantie voor Apache Cassandra biedt geautomatiseerde implementatie-en schaal bewerkingen voor beheerde open source Apache Cassandra-data centers. Het versnelt hybride scenario's en vermindert het doorlopende onderhoud.
+  services: service
+  ms.service: managed-instance-apache-cassandra
+  ms.topic: landing-page
+  ms.collection: collection
+  author: TheovanKraay
+  ms.author: thvankra
+  ms.date: 01/18/2021
+  ms.openlocfilehash: 8300012954756f1083c93745299ca57e4c4db0d3
+  ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+  ms.translationtype: MT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 03/03/2021
+  ms.locfileid: "101749106"
+landingContent:
+- title: Over een beheerd exemplaar van Azure voor Apache Cassandra
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is een beheerd exemplaar van Azure voor Apache Cassandra?
+      url: introduction.md
+  - linkListType: get-started
+    links:
+    - text: Door Azure beheerde instantie voor Apache Cassandra VS Azure Cosmos DB Cassandra-API
+      url: compare-cosmosdb-managed-instance.md
+  - linkListType: quickstart
+    links:
+    - text: Een cluster maken-Portal
+      url: create-cluster-portal.md
+    - text: Een cluster maken-CLI
+      url: create-cluster-cli.md
+    - text: Een Spark-cluster implementeren met Azure Databricks
+      url: deploy-cluster-databricks.md
+  - linkListType: concept
+    links:
+    - text: Veelgestelde vragen
+      url: faq.md
+- title: De cluster resources configureren en beheren
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Een hybride cluster configureren
+      url: configure-hybrid-cluster.md
+  - linkListType: how-to-guide
+    links:
+    - text: Resources beheren met Azure CLI
+      url: manage-resources-cli.md
+    - text: Metrische gegevens visualiseren in Prometheus met Grafana
+      url: visualize-prometheus-grafana.md

@@ -10,12 +10,12 @@ ms.author: wiassaf
 ms.reviewer: sstein
 ms.custom: references_regions
 ms.date: 03/02/2021
-ms.openlocfilehash: 4006cedf5f24ab2fc08e41b58f8acf90c404f668
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 9dc4d17ea95362dd915bd1dfdfd82f4cdec611b8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101679615"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101692807"
 ---
 # <a name="maintenance-window-preview"></a>Onderhouds venster (preview-versie)
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -28,7 +28,7 @@ Zie voor meer informatie over onderhouds gebeurtenissen [plannen voor Azure-onde
 
 Azure voert regel matig geplande onderhouds updates uit op Azure SQL Database en SQL Managed Instance-bronnen, die vaak updates bevatten voor onderliggende hardware, software zoals een onderliggend besturings systeem (OS) en de SQL-engine. Tijdens een onderhouds update zijn resources volledig beschikbaar en toegankelijk, maar sommige onderhouds updates vereisen een failover als Azure exemplaren gedurende korte tijd offline neemt om de onderhouds updates toe te passen (acht seconden in de duur van het gemiddelde).  Geplande onderhouds updates worden eenmaal per 35 dagen uitgevoerd, wat betekent dat de klant ongeveer één gepland onderhouds gebeurtenis per maand per Azure SQL Database of een door SQL beheerd exemplaar kan verwachten en alleen tijdens de door de klant geselecteerde sleuven voor het onderhouds venster.   
 
-Het onderhouds venster is bedoeld voor zakelijke workloads die gevoelig zijn voor de mogelijke connectiviteits onderbrekingen die kunnen voortvloeien uit gepland onderhouds gebeurtenissen tijdens het standaard venster.  
+Het onderhouds venster is bedoeld voor zakelijke workloads die niet zijn overbelast tot onregelmatige verbindings problemen die kunnen voortvloeien uit geplande onderhouds gebeurtenissen.
 
 Het onderhouds venster kan worden geconfigureerd met behulp van de Azure Portal, Power shell, CLI of de Azure-API. Het kan worden geconfigureerd bij het maken of voor bestaande SQL-data bases en SQL Managed instances.
 
@@ -37,15 +37,15 @@ Het onderhouds venster kan worden geconfigureerd met behulp van de Azure Portal,
 Standaard worden alle Azure SQL-data bases en beheerde exemplaar databases alleen bijgewerkt tijdens tot 17:00 uur naar de lokale tijd van 8 A.M. om te voor komen dat er piek onderbrekingen in de kantoor uren zijn. De lokale tijd wordt bepaald door de [Azure-regio](https://azure.microsoft.com/global-infrastructure/geographies/) die als host fungeert voor de resource. U kunt de onderhouds updates verder aanpassen aan een tijd die geschikt is voor uw data base door te kiezen uit twee extra onderhouds venster sleuven:
 
 * **Standaard** venster, tot 17:00 uur naar 8 a.m. lokale tijd van maandag tot zondag 
-* Het venster weekdag, 10PM naar 06.00 lokale tijd maandag – donderdag: **vereist de klant opt-in** 
-* Weekend Window 10PM to 06.00 local time vrijdag-zondag: **vereist een klant opt-in**  
+* Venster weekdag, 10PM naar 06.00 lokale tijd maandag – donderdag
+* Weekend Window 10PM to 06.00 local time vrijdag-zondag
 
 Zodra het onderhouds venster is geselecteerd, worden alle geplande onderhouds updates alleen uitgevoerd in het venster van uw keuze.   
 
 > [!Note]
 > Naast geplande onderhouds updates kunnen ongeplande onderhouds gebeurtenissen niet worden Beschik baarheid veroorzaakt. 
 
-### <a name="cost"></a>Kosten
+### <a name="cost-and-eligibility"></a>Kosten en geschiktheid
 
 Het kiezen van een onderhouds venster is gratis voor de volgende [typen abonnements aanbiedingen](https://azure.microsoft.com/support/legal/offer-details/): betalen per gebruik, Cloud Solution Provider (CSP), micro soft Enter prise of micro soft-klant overeenkomst.
 

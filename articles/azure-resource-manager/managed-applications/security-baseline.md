@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 2a5c31270f18c2e6149d93fa522818704b9747d8
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 42aea886e38622c773ac1ca0ea2533d8aa1c47bb
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100588605"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717023"
 ---
 # <a name="azure-security-baseline-for-azure-managed-applications"></a>Azure-beveiligings basislijn voor Azure Managed Applications
 
@@ -447,7 +447,7 @@ In Azure Monitor kunt u de Bewaar periode voor uw Log Analytics werk ruimte inst
 
 - [De Bewaar periode van Log Analytics Workspace configureren](../../azure-monitor/logs/manage-cost-storage.md)
 
-- [Bron logboeken opslaan in een Azure Storage-account](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
+- [Bron logboeken opslaan in een Azure Storage-account](../../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)
 
 **Monitoring door Azure Security Center**: Ja
 

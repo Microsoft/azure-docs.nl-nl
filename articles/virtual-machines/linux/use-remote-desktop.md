@@ -1,26 +1,23 @@
 ---
-title: Extern bureaublad gebruiken voor een virtuele Linux-machine in azure
+title: Xrdp gebruiken met Linux
 description: Meer informatie over het installeren en configureren van Extern bureaublad (xrdp) om verbinding te maken met een virtuele Linux-machine in azure met grafische hulpprogram ma's
 services: virtual-machines-linux
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-editor: ''
-ms.assetid: ''
 ms.service: virtual-machines-linux
+ms.collection: linux
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
 ms.topic: how-to
-ms.date: 09/12/2019
+ms.date: 03/01/2021
 ms.author: cynthn
-ms.openlocfilehash: bea7e38c35ceddafb64937d6e1a6f69d7c727f44
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 448e9f6487b5afc51be9b3dee8e07007c8534a0b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98196381"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101695172"
 ---
-# <a name="install-and-configure-remote-desktop-to-connect-to-a-linux-vm-in-azure"></a>Extern bureaublad installeren en configureren om verbinding te maken met een virtuele Linux-machine in azure
+# <a name="install-and-configure-xrdp-to-use-remote-desktop-with-a-linux-vm"></a>Xrdp installeren en configureren voor het gebruik van Extern bureaublad met een virtuele Linux-machine
+
 Virtuele Linux-machines (Vm's) in Azure worden meestal beheerd vanaf de opdracht regel met behulp van een SSH-verbinding (Secure Shell). Wanneer u geen ervaring hebt met Linux of voor snelle probleemoplossings scenario's, is het gebruik van extern bureau blad mogelijk eenvoudiger. In dit artikel wordt beschreven hoe u een desktop-omgeving ([xfce](https://www.xfce.org)) en extern bureau blad ([xrdp](http://xrdp.org)) installeert en configureert voor uw virtuele Linux-machine met behulp van het Resource Manager-implementatie model.
 
 
@@ -32,6 +29,7 @@ Voor dit artikel is een bestaande Ubuntu 18,04 LTS-VM vereist in Azure. Als u ee
 
 
 ## <a name="install-a-desktop-environment-on-your-linux-vm"></a>Een desktop omgeving installeren op uw virtuele Linux-machine
+
 Voor de meeste Linux-Vm's in Azure is geen bureaublad omgeving standaard geïnstalleerd. Virtuele Linux-machines worden vaak beheerd met SSH-verbindingen in plaats van een desktop omgeving. Er zijn verschillende desktop omgevingen in Linux die u kunt kiezen. Afhankelijk van uw keuze van de bureaublad omgeving, kan het één tot 2 GB aan schijf ruimte verbruiken en vijf tot tien minuten duren om alle vereiste pakketten te installeren en te configureren.
 
 In het volgende voor beeld wordt de licht gewicht [xfce4](https://www.xfce.org/) Desktop Environment geïnstalleerd op een Ubuntu 18,04 LTS-VM. Opdrachten voor andere distributies variëren enigszins per `yum` Red Hat Enterprise Linux, configureren van de juiste `selinux` regels of gebruiken `zypper` om te installeren op Suse, bijvoorbeeld).
@@ -94,9 +92,14 @@ az vm open-port --resource-group myResourceGroup --name myVM --port 3389
 
 
 ## <a name="connect-your-linux-vm-with-a-remote-desktop-client"></a>Uw virtuele Linux-machine verbinden met een Extern bureaublad-client
-Open uw lokale extern bureau blad-client en maak verbinding met het IP-adres of de DNS-naam van uw virtuele Linux-machine. Voer de gebruikers naam en het wacht woord voor het gebruikers account op uw virtuele machine als volgt in:
 
-![Verbinding maken met xrdp met behulp van uw Extern bureaublad-client](./media/use-remote-desktop/remote-desktop-client.png)
+Open uw lokale extern bureau blad-client en maak verbinding met het IP-adres of de DNS-naam van uw virtuele Linux-machine. 
+
+:::image type="content" source="media/use-remote-desktop/remote-desktop.png" alt-text="Scherm afbeelding van de extern bureau blad-client.":::
+
+Voer de gebruikers naam en het wacht woord voor het gebruikers account op uw virtuele machine als volgt in:
+
+:::image type="content" source="media/use-remote-desktop/xrdp-login.png" alt-text="Scherm opname van het xrdp-logboek.":::
 
 Nadat de verificatie is gelukt, wordt de xfce-desktop omgeving geladen en ziet deze er ongeveer uit zoals in het volgende voor beeld:
 

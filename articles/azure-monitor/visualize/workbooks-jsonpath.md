@@ -9,12 +9,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/06/2020
 ms.author: lagayhar
-ms.openlocfilehash: e0be5523cb3846760644d0c81b06d5caa5a35378
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 142853f0d5ed787d0b7aaee1bb118a001f144227
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610480"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101722922"
 ---
 # <a name="how-to-use-jsonpath-to-transform-json-data-in-workbooks"></a>JSONPath gebruiken om JSON-gegevens in werkmappen te transformeren
 
@@ -22,7 +22,7 @@ Werkmappen kan gegevens uit een groot aantal bronnen opvragen. Sommige eind punt
 
 JSONPath is een query taal voor JSON die vergelijkbaar is met XPath voor XML. Net als XPath biedt JSONPath de mogelijkheid om gegevens uit de JSON-structuur te extra heren en te filteren.
 
-Met behulp van JSONPath-trans formatie kunnen schrijvers van werkmappen JSON omzetten in een tabel structuur. De tabel kan vervolgens worden gebruikt voor het uitzetten van [werkmap visualisaties](../platform/workbooks-overview.md#visualizations).
+Met behulp van JSONPath-trans formatie kunnen schrijvers van werkmappen JSON omzetten in een tabel structuur. De tabel kan vervolgens worden gebruikt voor het uitzetten van [werkmap visualisaties](./workbooks-overview.md#visualizations).
 
 ## <a name="using-jsonpath"></a>JSONPath gebruiken
 
@@ -84,5 +84,5 @@ We gaan ervan uit dat we het bovenstaande JSON-object hebben gezien als een repr
 ![ Query-item bewerken met JSON-gegevens bron en resultaat indeling van JSON-pad](./media/workbooks-jsonpath/query-jsonpath.png)
 
 ## <a name="next-steps"></a>Volgende stappen
-- [Overzicht van werkmappen](../platform/workbooks-overview.md)
+- [Overzicht van werkmappen](./workbooks-overview.md)
 - [Groepen in Azure Monitor werkmappen](workbooks-groups.md)

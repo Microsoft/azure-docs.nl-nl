@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/12/2018
-ms.openlocfilehash: 89ce214ef9686d2704878304b8b324871ad9473f
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 0ca6185d829e5941145905e1bc63cc2fb9ac781e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100579496"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101731643"
 ---
 # <a name="continuous-monitoring-with-azure-monitor"></a>Doorlopende bewaking met Azure Monitor
 
@@ -36,7 +36,7 @@ U moet bewaking inschakelen voor al uw webtoepassingen en-services om de beschik
 Toepassingen zijn alleen betrouwbaar als de onderliggende infra structuur. Als u bewaking hebt ingeschakeld in uw hele infra structuur, kunt u de volledige waarneming optimaal benutten en kunt u gemakkelijker een mogelijke hoofd oorzaak ontdekken wanneer er iets mislukt. Azure Monitor helpt u bij het volgen van de status en prestaties van uw volledige hybride infra structuur, inclusief bronnen zoals Vm's, containers, opslag en netwerk.
 
 - U krijgt automatisch [platform metrieken, activiteiten logboeken en Diagnostische logboeken](agents/data-sources.md) van uw Azure-resources zonder configuratie.
-- Schakel diep gaande bewaking in voor Vm's met [Azure monitor voor VM's](vm/vminsights-overview.md).
+- Schakel diep gaande bewaking in voor Vm's met [VM Insights](vm/vminsights-overview.md).
 -  Schakel diep gaande bewaking in voor AKS-clusters met [Azure monitor voor containers](containers/container-insights-overview.md).
 - Voeg [bewakings oplossingen](./monitor-reference.md) toe voor verschillende toepassingen en services in uw omgeving.
 

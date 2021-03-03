@@ -12,12 +12,12 @@ metadata:
   ms.author: kumud
   manager: mtillman
   ms.date: 09/28/2020
-  ms.openlocfilehash: 0f0536c259bb8b4168ab5fcf3e05016a281b05d5
-  ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
-  ms.translationtype: HT
+  ms.openlocfilehash: 40effbde3ad1c0676eae4c79f72b84d04dbd62e7
+  ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 01/15/2021
-  ms.locfileid: "98233947"
+  ms.lasthandoff: 03/03/2021
+  ms.locfileid: "101698651"
 highlightedContent:
   items:
   - title: Wat is Azure-netwerken?
@@ -115,7 +115,7 @@ conceptualContent:
       text: Wat is Azure Load Balancer?
     - url: https://azure.microsoft.com/updates/?category=networking&query=load%20balancer
       itemType: whats-new
-      text: Nieuwe functies
+      text: Nieuw
     - url: ../load-balancer/quickstart-load-balancer-standard-public-portal.md
       itemType: quickstart
       text: Internetverkeer gelijkmatig verdelen over VM's
@@ -159,20 +159,20 @@ conceptualContent:
     footerLink:
       url: ../application-gateway/index.yml
       text: Meer informatie
-  - title: Globale load balancer
+  - title: Veilige Cloud-CDN en wereld wijde load balancer
     links:
     - url: ../frontdoor/front-door-overview.md
       itemType: overview
       text: Wat is Azure Front Door Service?
+    - url: ../frontdoor/standard-premium/overview.md
+      itemType: overview
+      text: Wat is Azure front deur Standard/Premium (preview)?
     - url: ../frontdoor/front-door-custom-domain.md
       itemType: how-to-guide
       text: Een aangepast domein toevoegen aan de Azure Front Door Service
     - url: ../frontdoor/front-door-how-to-redirect-https.md
       itemType: how-to-guide
       text: Omleiding van HTTP naar HTTPS
-    - url: ../frontdoor/front-door-troubleshoot-routing.md
-      itemType: how-to-guide
-      text: Problemen met routering oplossen
     footerLink:
       url: ../frontdoor/index.yml
       text: Meer informatie

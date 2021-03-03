@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: travisw
-ms.openlocfilehash: 77d756bc0c7bbdfa38bb1262638ef85b051fc234
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: b50b98095cdfe0e6ec19c89b57887ebc4a0f6317
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95026485"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101713045"
 ---
 # <a name="getting-started-with-voice-assistants-on-windows"></a>Aan de slag met spraak assistenten in Windows
 
@@ -34,7 +34,7 @@ Als u een spraak assistent voor Windows wilt gaan ontwikkelen, moet u ervoor zor
 
 Voor sommige resources die nodig zijn voor een volledig aangepaste spraak agent in Windows, zijn resources van micro soft vereist. Het [UWP Voice Assistant](windows-voice-assistants-faq.md#the-uwp-voice-assistant-sample) -voor beeld bevat een aantal voor beelden van deze bronnen voor de eerste ontwikkeling en tests, waardoor deze sectie niet nodig is voor de eerste ontwikkeling.
 
-- **Trefwoord model:** Voor spraak activering is een trefwoord model van micro soft vereist in de vorm van een bin-bestand. Het. bin-bestand in het voor beeld van de UWP Voice Assistant is getraind op het tref woord ' Contoso '.
+- **Trefwoord model:** Voor spraak activering is een trefwoord model van micro soft vereist in de vorm van een bin-bestand. Het. bin-bestand in het voor beeld van de UWP Voice Assistant is getraind op het tref woord *Contoso*.
 - **Token voor beperkte toegang:** Omdat de ConversationalAgent-Api's toegang bieden tot de microfoon audio, worden ze beschermd onder beperkingen voor beperkte toegang. Als u een beperkte toegangs functie wilt gebruiken, moet u een token met beperkte toegang verkrijgen dat is verbonden met de pakket-id van uw toepassing van micro soft.
 
 ## <a name="establish-a-dialog-service"></a>Een dialoog service maken

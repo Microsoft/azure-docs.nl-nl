@@ -2,18 +2,18 @@
 title: bestand opnemen
 description: bestand opnemen
 services: multiple
-author: sharad4u
+author: duongau
 ms.service: multiple
 ms.topic: include
 ms.date: 10/30/2020
-ms.author: sharadag
+ms.author: duau
 ms.custom: include file
-ms.openlocfilehash: eb3cc6a37e9116b2a28b72fc7a3779aafb2a1e21
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1196ec0c3e92df6c359461ea7d1d53c8aea0bd88
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96026454"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101749939"
 ---
 De volgende Ca's zijn toegestaan wanneer u uw eigen certificaat maakt:
 
@@ -38,7 +38,7 @@ De volgende Ca's zijn toegestaan wanneer u uw eigen certificaat maakt:
 - CA voor DigiCert SHA2 uitgebreide validatie server
 - DigiCert SHA2 High Assurance Server-CA
 - DigiCert SHA2 Secure Server CA
-- De DST-basis-CA x3
+- DST Root CA X3
 - D-vertrouwde basis klasse 3 CA 2 2009
 - Versleutelen overal DV TLS-CA
 - Basis certificerings instantie vertrouwen
@@ -54,6 +54,7 @@ De volgende Ca's zijn toegestaan wanneer u uw eigen certificaat maakt:
 - GlobalSign basis-CA
 - Go Daddy-basis certificerings instantie-G2
 - Go Daddy Secure Certificate Authority-G2
+- Hongkong post-basis-CA 1
 - De CA-x3 versleutelen
 - Microsec e-Szigno-basis-CA 2009
 - QuoVadis root CA2 G3
@@ -61,6 +62,7 @@ De volgende Ca's zijn toegestaan wanneer u uw eigen certificaat maakt:
 - Beveiligings communicatie RootCA1
 - Beveiligings communicatie RootCA2
 - Beveiligings communicatie RootCA3
+- Staat der Nederlanden EV-basis certificerings instantie
 - Symantec Class 3 EV SSL CA-G3
 - Symantec Class 3 Secure Server CA-G4
 - Symantec Enter prise Mobile-hoofdmap voor micro soft

@@ -8,19 +8,19 @@ ms.subservice: core
 ms.reviewer: sgilley
 ms.author: nilsp
 author: NilsPohlmann
-ms.date: 12/10/2020
+ms.date: 03/02/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: 18d93a1a6ac9661b18054611015b02e41219bc14
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 75d241840ecfc8520989342d9def8186de922c0d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101659644"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101691855"
 ---
 # <a name="create-and-run-machine-learning-pipelines-with-azure-machine-learning-sdk"></a>machine learning-pijp lijnen maken en uitvoeren met Azure Machine Learning SDK
 
-In dit artikel leert u hoe u [machine learning-pijp lijnen](concept-ml-pipelines.md) kunt maken en uitvoeren met behulp van de [Azure machine learning SDK](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py). Gebruik **ml-pijp lijnen** om een werk stroom te maken die verschillende stadia van de ml combineert. Publiceer vervolgens die pijp lijn voor later gebruik of delen met anderen. Houd ML-pijp lijnen bij om te zien hoe uw model in de praktijk wordt uitgevoerd en om gegevens drift te detecteren. ML-pijp lijnen zijn ideaal voor batch Score scenario's, met behulp van verschillende reken processen, het opnieuw gebruiken van stappen in plaats van deze opnieuw uit te voeren, evenals het delen van werk stromen met anderen.
+In dit artikel leert u hoe u [machine learning-pijp lijnen](concept-ml-pipelines.md) kunt maken en uitvoeren met behulp van de [Azure machine learning SDK](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py). Gebruik **ml-pijp lijnen** om een werk stroom te maken die verschillende stadia van de ml combineert. Publiceer vervolgens die pijp lijn voor later gebruik of delen met anderen. Houd ML-pijp lijnen bij om te zien hoe uw model in de praktijk wordt uitgevoerd en om gegevens drift te detecteren. ML-pijp lijnen zijn ideaal voor batch Score scenario's, met behulp van verschillende reken processen, het opnieuw gebruiken van stappen in plaats van deze opnieuw uit te voeren en om ML werk stromen met anderen te delen.
 
 Dit artikel is geen zelf studie. Voor hulp bij het maken van uw eerste pijp lijn raadpleegt u [zelf studie: een Azure machine learning-pijp lijn bouwen voor batch scores](tutorial-pipeline-batch-scoring-classification.md) of [geautomatiseerd ml gebruiken in een Azure machine learning pijp lijn in python](how-to-use-automlstep-in-pipelines.md). 
 
@@ -53,16 +53,13 @@ Maak de resources die vereist zijn voor het uitvoeren van een ML-pijp lijn:
 
 * Stel een gegevens archief in dat wordt gebruikt voor toegang tot de gegevens die nodig zijn in de pijplijn stappen.
 
-* Een `Dataset` object configureren om te verwijzen naar permanente gegevens die zich in bevinden of toegankelijk zijn in, een gegevens opslag. Een `PipelineData` object configureren voor tijdelijke gegevens die tussen de pijplijn stappen worden door gegeven. 
-
-    > [!TIP]
-    > Een verbeterde ervaring voor het door geven van tijdelijke gegevens tussen pijplijn stappen is beschikbaar in de open bare preview-klasse  [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) .  Deze klasse is een [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#&preserve-view=truestable-vs-experimental) preview-functie en kan op elk gewenst moment worden gewijzigd.
+* Een `Dataset` object configureren om te verwijzen naar permanente gegevens die zich in bevinden of toegankelijk zijn in, een gegevens opslag. Een `OutputFileDatasetConfig` object configureren voor tijdelijke gegevens die tussen de pijplijn stappen worden door gegeven. 
 
 * De [reken doelen](concept-azure-machine-learning-architecture.md#compute-targets) instellen waarop de pijplijn stappen worden uitgevoerd.
 
 ### <a name="set-up-a-datastore"></a>Een gegevens opslag instellen
 
-In een Data Store worden de gegevens voor de pijp lijn opgeslagen voor toegang. Elke werk ruimte heeft een standaard gegevens opslag. U kunt aanvullende gegevens opslag registreren. 
+In een Data Store worden de gegevens voor de pijp lijn opgeslagen voor toegang. Elke werk ruimte heeft een standaard gegevens opslag. U kunt meer gegevens opslag registreren. 
 
 Wanneer u uw werk ruimte maakt, worden [Azure files](../storage/files/storage-files-introduction.md) en [Azure Blob-opslag](../storage/blobs/storage-blobs-introduction.md) gekoppeld aan de werk ruimte. Er is een standaard gegevens opslag geregistreerd om verbinding te maken met de Azure Blob-opslag. Zie [bepalen wanneer u Azure files, Azure-blobs of Azure-schijven wilt gebruiken](../storage/common/storage-introduction.md)voor meer informatie. 
 
@@ -80,10 +77,9 @@ def_file_store = Datastore(ws, "workspacefilestore")
 
 De stappen gebruiken meestal gegevens en produceren uitvoer gegevens. Een stap kan gegevens zoals een model, een directory met model en afhankelijke bestanden of tijdelijke gegevens maken. Deze gegevens zijn vervolgens later in de pijp lijn beschikbaar voor andere stappen. Zie voor meer informatie over het verbinden van uw pijp lijn met uw gegevens de artikelen [over toegang tot gegevens](how-to-access-data.md) en [het registreren van data sets](how-to-create-register-datasets.md). 
 
-### <a name="configure-data-with-dataset-and-pipelinedata-objects"></a>Gegevens configureren met `Dataset` en `PipelineData` objecten
+### <a name="configure-data-with-dataset-and-outputfiledatasetconfig-objects"></a>Gegevens configureren met `Dataset` en `OutputFileDatasetConfig` objecten
 
 De voorkeurs manier om gegevens op te geven voor een pijp lijn is een object [DataSet](/python/api/azureml-core/azureml.core.dataset.Dataset) . Het `Dataset` object verwijst naar gegevens die in of toegankelijk zijn vanuit een gegevens opslag of op een web-URL. De `Dataset` klasse is abstract, dus u maakt een instantie van ofwel een `FileDataset` (verwijzen naar een of meer bestanden) of een `TabularDataset` die wordt gemaakt door uit een of meer bestanden met gescheiden gegevens kolommen.
-
 
 U maakt een `Dataset` gebruik van methoden als [from_files](/python/api/azureml-core/azureml.data.dataset_factory.filedatasetfactory?preserve-view=true&view=azure-ml-py#&preserve-view=truefrom-files-path--validate-true-) of [from_delimited_files](/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?preserve-view=true&view=azure-ml-py#&preserve-view=truefrom-delimited-files-path--validate-true--include-path-false--infer-column-types-true--set-column-types-none--separator------header-true--partition-format-none--support-multi-line-false-).
 
@@ -93,20 +89,21 @@ from azureml.core import Dataset
 my_dataset = Dataset.File.from_files([(def_blob_store, 'train-images/')])
 ```
 
-Tussenliggende gegevens (of uitvoer van een stap) worden vertegenwoordigd door een [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?preserve-view=true&view=azure-ml-py) -object. `output_data1` wordt geproduceerd als uitvoer van een stap en wordt gebruikt als invoer van een of meer toekomstige stappen. `PipelineData` introduceert een gegevens afhankelijkheid tussen de stappen en maakt een impliciete uitvoerings volgorde in de pijp lijn. Dit object wordt later gebruikt bij het maken van pijplijn stappen.
+Tussenliggende gegevens (of uitvoer van een stap) worden vertegenwoordigd door een [OutputFileDatasetConfig](/python/api/azureml-pipeline-core/azureml.data.output_dataset_config.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) -object. `output_data1` wordt geproduceerd als de uitvoer van een stap. Deze gegevens kunnen eventueel worden geregistreerd als een gegevensset door aan te roepen `register_on_complete` . Als u een `OutputFileDatasetConfig` in één stap maakt en deze gebruikt als invoer voor een andere stap, maakt die gegevens afhankelijkheid tussen de stappen een impliciete uitvoerings volgorde in de pijp lijn.
+
+`OutputFileDatasetConfig` objecten retour neren een map en schrijft standaard uitvoer naar de standaard gegevens opslag van de werk ruimte.
 
 ```python
-from azureml.pipeline.core import PipelineData
+from azureml.data import OutputFileDatasetConfig
 
-output_data1 = PipelineData(
-    "output_data1",
-    datastore=def_blob_store,
-    output_name="output_data1")
+output_data1 = OutputFileDatasetConfig(destination = (datastore, 'outputdataset/{run-id}'))
+output_data_dataset = output_data1.register_on_complete(name = 'prepared_output_data')
 
 ```
 
-> [!TIP]
-> Het persistent maken van tussenliggende gegevens tussen pijplijn stappen is ook mogelijk met de open bare preview-klasse [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) . `OutputFileDatasetConfig`Zie [een pijp lijn met twee stappen maken](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/pipeline-with-datasets/pipeline-for-image-classification.ipynb)voor een code voorbeeld met behulp van de-klasse.
+> [!IMPORTANT]
+> Tussenliggende gegevens die worden opgeslagen met `OutputFileDatasetConfig` , worden niet automatisch verwijderd door Azure.
+> U moet op een programmatische manier tussenliggende gegevens verwijderen aan het einde van een pijplijn uitvoering, een gegevens opslag gebruiken met een beperkt beleid voor het bewaren van data-en hand matig opschonen.
 
 > [!TIP]
 > Upload alleen bestanden die relevant zijn voor de huidige taak. Wijzigingen in bestanden in de data directory worden gezien als de reden voor het opnieuw uitvoeren van de stap de volgende keer dat de pijp lijn wordt uitgevoerd, zelfs als hergebruik is opgegeven. 
@@ -177,7 +174,7 @@ else:
         pin_sdk_version=False)
 ```
 
-De bovenstaande code bevat twee opties voor het afhandelen van afhankelijkheden. Zoals weer gegeven, `USE_CURATED_ENV = True` is de configuratie gebaseerd op een gecuratore omgeving. Met de geprebakedeerde omgevingen is de gemeen schappelijke onderlinge Interdependent-tape wisselaars en kunnen ze aanzienlijk sneller online worden gebracht. In de [micro soft-container Registry](https://hub.docker.com/publishers/microsoftowner)hebben geconstrueerde omgevingen vooraf ingebouwde docker-installatie kopieën. Zie [Azure machine learning gecuratorde omgevingen](resource-curated-environments.md)voor meer informatie.
+De bovenstaande code bevat twee opties voor het afhandelen van afhankelijkheden. Zoals weer gegeven, `USE_CURATED_ENV = True` is de configuratie gebaseerd op een gecuratore omgeving. Met de geprebakedeerde omgevingen is de gemeen schappelijke Interdependent-tape wisselaars en kunnen ze sneller online worden gebracht. In de [micro soft-container Registry](https://hub.docker.com/publishers/microsoftowner)hebben geconstrueerde omgevingen vooraf ingebouwde docker-installatie kopieën. Zie [Azure machine learning gecuratorde omgevingen](resource-curated-environments.md)voor meer informatie.
 
 Het pad dat u hebt gemaakt `USE_CURATED_ENV` , `False` wordt weer gegeven met het patroon voor het expliciet instellen van afhankelijkheden. In dat scenario wordt een nieuwe aangepaste docker-installatie kopie gemaakt en geregistreerd in een Azure Container Registry binnen de resource groep (Zie [Inleiding tot privé-docker-container registers in azure](../container-registry/container-registry-intro.md)). Het maken en registreren van deze installatie kopie kan enkele minuten duren.
 
@@ -197,8 +194,6 @@ data_prep_step = PythonScriptStep(
     script_name=entry_point,
     source_directory=dataprep_source_dir,
     arguments=["--input", ds_input.as_download(), "--output", output_data1],
-    inputs=[ds_input],
-    outputs=[output_data1],
     compute_target=compute_target,
     runconfig=aml_run_config,
     allow_reuse=True
@@ -207,9 +202,7 @@ data_prep_step = PythonScriptStep(
 
 De bovenstaande code toont een typische stap in de pijp lijn. De code voor gegevens voorbereiding bevindt zich in een submap (in dit voor beeld `"prepare.py"` in de map `"./dataprep.src"` ). Als onderdeel van het proces voor het maken van de pijp lijn wordt deze directory ingepakt en geüpload naar de `compute_target` en wordt het script uitgevoerd dat is opgegeven als de waarde voor `script_name` .
 
-De `arguments` `inputs` waarden, en `outputs` opgeven de invoer en uitvoer van de stap. In het bovenstaande voor beeld zijn de basislijn gegevens de `my_dataset` gegevensset. De bijbehorende gegevens worden gedownload naar de compute-resource, aangezien deze door de code wordt opgegeven als `as_download()` . Het script `prepare.py` zorgt voor de gegevens transformatie taken die bij de hand worden betrokken en levert de gegevens naar `output_data1` , van het type `PipelineData` . Zie [gegevens verplaatsen naar en tussen ml-pijplijn stappen (python)](how-to-move-data-in-out-of-pipelines.md)voor meer informatie. 
-
-De stap wordt uitgevoerd op de computer `compute_target` die is gedefinieerd door met behulp van de configuratie `aml_run_config` . 
+De `arguments` waarden geven de invoer en uitvoer van de stap aan. In het bovenstaande voor beeld zijn de basislijn gegevens de `my_dataset` gegevensset. De bijbehorende gegevens worden gedownload naar de compute-resource, aangezien deze door de code wordt opgegeven als `as_download()` . Het script `prepare.py` zorgt voor de gegevens transformatie taken die bij de hand worden betrokken en levert de gegevens naar `output_data1` , van het type `OutputFileDatasetConfig` . Zie [gegevens verplaatsen naar en tussen ml-pijplijn stappen (python)](how-to-move-data-in-out-of-pipelines.md)voor meer informatie. De stap wordt uitgevoerd op de computer `compute_target` die is gedefinieerd door met behulp van de configuratie `aml_run_config` . 
 
 Hergebruik van vorige resultaten ( `allow_reuse` ) is Key wanneer u pijp lijnen in een samenwerkings omgeving gebruikt, omdat overbodige reacties minder flexibel zijn. Hergebruik is het standaard gedrag wanneer de script_name, invoer en de para meters van een stap hetzelfde blijven. Wanneer hergebruik is toegestaan, worden de resultaten van de vorige uitvoering onmiddellijk naar de volgende stap verzonden. Als `allow_reuse` is ingesteld op `False` , wordt voor deze stap altijd een nieuwe uitvoering gegenereerd tijdens de uitvoering van de pijp lijn.
 
@@ -219,9 +212,8 @@ Het is mogelijk om een pijp lijn met één stap te maken, maar u zult er bijna a
 train_source_dir = "./train_src"
 train_entry_point = "train.py"
 
-training_results = PipelineData(name = "training_results", 
-                                datastore=def_blob_store,
-                                output_name="training_results")
+training_results = OutputFileDatasetConfig(name = "training_results",
+    destination = def_blob_store)
 
     
 train_step = PythonScriptStep(
@@ -234,11 +226,9 @@ train_step = PythonScriptStep(
 )
 ```
 
-De bovenstaande code is vergelijkbaar met die voor de stap voor het voorbereiden van gegevens. De code van de training bevindt zich in een andere map dan die van de code voor gegevens voorbereiding. De `PipelineData` uitvoer van de stap voor het voorbereiden van gegevens `output_data1` wordt gebruikt als _invoer_ voor de trainings stap. Er wordt een nieuw `PipelineData` object `training_results` gemaakt om de resultaten voor een volgende vergelijking of implementatie stap te bewaren. 
+De bovenstaande code is vergelijkbaar met de code in de stap voor het voorbereiden van gegevens. De code van de training bevindt zich in een andere map dan die van de code voor gegevens voorbereiding. De `OutputFileDatasetConfig` uitvoer van de stap voor het voorbereiden van gegevens `output_data1` wordt gebruikt als _invoer_ voor de trainings stap. Er wordt een nieuw `OutputFileDatasetConfig` object `training_results` gemaakt om de resultaten voor een volgende vergelijking of implementatie stap te bewaren. 
 
-
-> [!TIP]
-> Voor een verbeterde ervaring en de mogelijkheid om tussenliggende gegevens terug te schrijven naar uw gegevens opslag aan het eind van de pijplijn uitvoering, gebruikt u de open bare preview-klasse [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) . Zie voor code voorbeelden [een twee stap ml-pijp lijn maken](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/pipeline-with-datasets/pipeline-for-image-classification.ipynb) en [gegevens terugschrijven naar data stores bij het volt ooien van de uitvoering](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/scriptrun-with-data-input-output/how-to-use-scriptrun.ipynb).
+Zie voor voor beelden van andere code [een twee stap ml-pijp lijn maken](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/pipeline-with-datasets/pipeline-for-image-classification.ipynb) en [gegevens terugschrijven naar data stores na voltooiing](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/scriptrun-with-data-input-output/how-to-use-scriptrun.ipynb)van de uitvoering.
 
 Nadat u de stappen hebt gedefinieerd, bouwt u de pijp lijn met behulp van enkele of al deze stappen.
 
@@ -255,26 +245,12 @@ from azureml.pipeline.core import Pipeline
 pipeline1 = Pipeline(workspace=ws, steps=[compare_models])
 ```
 
-### <a name="how-python-environments-work-with-pipeline-parameters"></a>Hoe python-omgevingen werken met pijplijn parameters
-
-Zoals eerder besproken in [de omgeving van de trainings uitvoering configureren](#configure-the-training-runs-environment), worden de omgevings status-en python-bibliotheek afhankelijkheden opgegeven met behulp van een- `Environment` object. Over het algemeen kunt u een bestaand item opgeven `Environment` door te verwijzen naar de naam en eventueel een versie:
-
-```python
-aml_run_config = RunConfiguration()
-aml_run_config.environment.name = 'MyEnvironment'
-aml_run_config.environment.version = '1.0'
-```
-
-Als u echter `PipelineParameter` objecten wilt gebruiken voor het dynamisch instellen van variabelen tijdens runtime voor uw pijplijn stappen, kunt u deze techniek niet gebruiken om te verwijzen naar een bestaande `Environment` . Als u objecten wilt gebruiken `PipelineParameter` , moet u in plaats daarvan het `environment` veld van de `RunConfiguration` aan een object instellen `Environment` . Het is uw verantwoordelijkheid om ervoor te zorgen dat een `Environment` van de afhankelijkheden op externe Python-pakketten correct is ingesteld.
-
 ### <a name="use-a-dataset"></a>Een gegevensset gebruiken 
 
-Gegevens sets die zijn gemaakt op basis van Azure Blob-opslag, Azure Files, Azure Data Lake Storage Gen1, Azure Data Lake Storage Gen2, Azure SQL Database en Azure Database for PostgreSQL kunnen worden gebruikt als invoer voor elke pijplijn stap. U kunt een uitvoer schrijven naar een [DataTransferStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.datatransferstep?preserve-view=true&view=azure-ml-py), [DatabricksStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.databricks_step.databricksstep?preserve-view=true&view=azure-ml-py)of als u gegevens wilt schrijven naar een specifieke Data Store- [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?preserve-view=true&view=azure-ml-py). 
+Gegevens sets die zijn gemaakt op basis van Azure Blob-opslag, Azure Files, Azure Data Lake Storage Gen1, Azure Data Lake Storage Gen2, Azure SQL Database en Azure Database for PostgreSQL kunnen worden gebruikt als invoer voor elke pijplijn stap. U kunt een uitvoer schrijven naar een [DataTransferStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.datatransferstep?preserve-view=true&view=azure-ml-py), [DatabricksStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.databricks_step.databricksstep?preserve-view=true&view=azure-ml-py)of als u gegevens wilt schrijven naar een specifieke Data Store- [OutputFileDatasetConfig](/python/api/azureml-pipeline-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py). 
 
 > [!IMPORTANT]
-> Het schrijven van uitvoer gegevens naar een gegevens opslag met behulp van PipelineData wordt alleen ondersteund voor Azure Blob en Azure file share-gegevens opslag. 
->
-> Voor het terugschrijven van uitvoer gegevens naar Azure Blob, een Azure-bestands share, ADLS gen 1 en ADLS gen 2-gegevens opslag gebruiken de open bare preview-klasse [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.output_dataset_config.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) .
+> Het schrijven van uitvoer gegevens naar een gegevens opslag met `OutputFileDatasetConfig` wordt alleen ondersteund voor Azure Blob, Azure file share, ADLS gen 1 en gen 2 data stores. 
 
 ```python
 dataset_consuming_step = PythonScriptStep(
@@ -345,7 +321,7 @@ Wanneer u een pijp lijn voor het eerst uitvoert, Azure Machine Learning:
 * Downloadt de moment opname van het project naar het reken doel van de Blob-opslag die is gekoppeld aan de werk ruimte.
 * Bouwt een docker-installatie kopie die overeenkomt met elke stap in de pijp lijn.
 * Downloadt de docker-installatie kopie voor elke stap naar het reken doel vanuit het container register.
-* Hiermee configureert u de toegang tot `Dataset` en `PipelineData` objecten. Voor als `as_mount()` toegangs modus wordt zeker gebruikt voor het bieden van virtuele toegang. Als koppelen niet wordt ondersteund of als de gebruiker toegang heeft opgegeven als `as_download()` , worden de gegevens in plaats daarvan gekopieerd naar het reken doel.
+* Hiermee configureert u de toegang tot `Dataset` en `OutputFileDatasetConfig` objecten. Voor de `as_mount()` toegangs modus wordt zeker gemaakt van de mogelijkheid om virtuele toegang te bieden. Als koppelen niet wordt ondersteund of als de gebruiker toegang heeft opgegeven als `as_upload()` , worden de gegevens in plaats daarvan gekopieerd naar het reken doel.
 
 * Voert de stap uit in het berekenings doel dat is opgegeven in de stap definitie. 
 * Maakt artefacten, zoals Logboeken, stdout, stderr, metrische gegevens en uitvoer die zijn opgegeven door de stap. Deze artefacten worden vervolgens geüpload en opgeslagen in de standaard gegevens opslag van de gebruiker.
@@ -355,6 +331,31 @@ Wanneer u een pijp lijn voor het eerst uitvoert, Azure Machine Learning:
 Zie voor meer informatie de referentie over de experimentele [klasse](/python/api/azureml-core/azureml.core.experiment.experiment?preserve-view=true&view=azure-ml-py) .
 
 ## <a name="use-pipeline-parameters-for-arguments-that-change-at-inference-time"></a>Pijplijn parameters gebruiken voor argumenten die tijdens de inschakel tijd veranderen
+
+Soms hebben de argumenten voor afzonderlijke stappen binnen een pijp lijn betrekking op de ontwikkelings-en trainings periode: zaken als trainings tarieven en momentum, of paden naar gegevens of configuratie bestanden. Als er een model wordt geïmplementeerd, wilt u echter de argumenten die u wilt denemen dynamisch door geven (dat wil zeggen, de query die u het model hebt gemaakt om te beantwoorden!). U moet deze typen argumenten pijplijn parameters maken. Als u dit wilt doen in Python, gebruikt u de `azureml.pipeline.core.PipelineParameter` -klasse, zoals wordt weer gegeven in het volgende code fragment:
+
+```python
+from azureml.pipeline.core import PipelineParameter
+
+pipeline_param = PipelineParameter(name="pipeline_arg", default_value="default_val")
+train_step = PythonScriptStep(script_name="train.py",
+                            arguments=["--param1", pipeline_param],
+                            target=compute_target,
+                            source_directory=project_folder)
+```
+
+### <a name="how-python-environments-work-with-pipeline-parameters"></a>Hoe python-omgevingen werken met pijplijn parameters
+
+Zoals eerder besproken in [de omgeving van de trainings uitvoering configureren](#configure-the-training-runs-environment), worden de omgevings status en de afhankelijkheden van python-bibliotheken opgegeven met behulp van een- `Environment` object. Over het algemeen kunt u een bestaand item opgeven `Environment` door te verwijzen naar de naam en eventueel een versie:
+
+```python
+aml_run_config = RunConfiguration()
+aml_run_config.environment.name = 'MyEnvironment'
+aml_run_config.environment.version = '1.0'
+```
+
+Als u echter `PipelineParameter` objecten wilt gebruiken voor het dynamisch instellen van variabelen tijdens runtime voor uw pijplijn stappen, kunt u deze techniek niet gebruiken om te verwijzen naar een bestaande `Environment` . Als u objecten wilt gebruiken `PipelineParameter` , moet u in plaats daarvan het `environment` veld van de `RunConfiguration` aan een object instellen `Environment` . Het is uw verantwoordelijkheid om ervoor te zorgen dat een `Environment` van de afhankelijkheden op externe Python-pakketten correct is ingesteld.
+
 
 ## <a name="view-results-of-a-pipeline"></a>Resultaten van een pijp lijn weer geven
 

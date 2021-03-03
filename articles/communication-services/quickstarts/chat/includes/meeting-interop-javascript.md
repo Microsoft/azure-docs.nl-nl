@@ -5,12 +5,12 @@ ms.author: askaur
 ms.date: 02/17/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 93cbc693e340174cf92aa2515d5e09f1ff3c1b31
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 0c5ff52e5d3769124cd101b2483f18aea6963d25
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101656114"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750998"
 ---
 ## <a name="joining-the-meeting-chat"></a>Deel nemen aan de chat functie van de vergadering 
 
@@ -304,6 +304,7 @@ Open uw browser en ga naar http://localhost:8080/. U ziet nu het volgende:
 
 :::image type="content" source="../acs-join-teams-meeting-chat-quickstart.png" alt-text="Schermopname van de voltooide JavaScript-toepassing.":::
 
-Plaats de koppeling teams en thread-ID in de tekst vakken. Klik op *deel nemen teams* om deel te nemen aan de team vergadering en chat vanuit uw communicatie Services-toepassing. Ga naar de onderkant van de pagina om te beginnen met chatten.
+Plaats de koppeling teams en thread-ID in de tekst vakken. Klik op *deel nemen teams* om deel te nemen aan de vergadering van teams. Nadat de ACS-gebruiker in de vergadering is toegelaten, kunt u chatten vanuit uw communicatie Services-toepassing. Ga naar het vak onder aan de pagina om te beginnen met chatten.
 
-**Opmerking** : momenteel worden alleen berichten verzonden, ontvangen en bewerkt die worden ondersteund voor interoperabiliteits Scenario's met teams. Andere functies zoals het typen van indicatoren en Communication Services-gebruikers die andere gebruikers toevoegen aan of verwijderen uit de Teams-vergadering, worden nog niet ondersteund.  
+> [!NOTE] 
+> Momenteel worden alleen berichten verzonden, ontvangen en bewerkt die worden ondersteund voor interoperabiliteits scenario's met teams. Andere functies zoals het typen van indicatoren en Communication Services-gebruikers die andere gebruikers toevoegen aan of verwijderen uit de Teams-vergadering, worden nog niet ondersteund.  

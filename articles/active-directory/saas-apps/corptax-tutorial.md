@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/02/2019
 ms.author: jeedes
-ms.openlocfilehash: dfb18281ad558832e4b06d1c0d24654d351ed01d
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.openlocfilehash: 4209e609420e610b9f3456da26b0afe0bf839d43
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92455184"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101689076"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-corptax"></a>Zelfstudie: Azure Active Directory-integratie met Corptax
 
@@ -49,7 +49,7 @@ Voor het configureren van de integratie van Corptax in Azure AD moet u Corptax v
 
 **Voer de volgende stappen uit om Corptax toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select_azuread.png)
 
@@ -109,13 +109,13 @@ Voer de volgende stappen uit om Azure AD-eenmalige aanmelding bij Corptax te con
 
 ### <a name="configure-corptax-single-sign-on"></a>Eenmalige aanmelding voor Corptax configureren
 
-Als u eenmalige aanmelding wilt configureren aan de kant van **Corptax** , moet u het gedownloade **XML-bestand met federatieve metagegevens** verzenden naar het [ondersteuningsteam van Corptax](https://connect.corptax.com/). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren aan de kant van **Corptax**, moet u het gedownloade **XML-bestand met federatieve metagegevens** verzenden naar het [ondersteuningsteam van Corptax](https://connect.corptax.com/). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -129,8 +129,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     a. Voer in het veld **Naam** **Britta Simon** in.
 
-    b. Typ in het veld **Gebruikersnaam** de tekst `brittasimon\@yourcompanydomain.extension`  
-    Bijvoorbeeld: BrittaSimon@contoso.com
+    b. Typ in het veld **Gebruikersnaam** de tekst `brittasimon@<yourcompanydomain.extension>`. Bijvoorbeeld: `brittasimon@contoso.com`.
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 

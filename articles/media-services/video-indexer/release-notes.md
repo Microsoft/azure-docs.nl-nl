@@ -12,12 +12,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 02/16/2021
 ms.author: juliako
-ms.openlocfilehash: c8fcd6e662a0beff61209de4b5c4331618b45ea1
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 3a64bb261db39efb63b35004f1daa0452b4f0672
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653297"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101715153"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Release opmerkingen bij Azure Media Services Video Indexer
 
@@ -47,7 +47,7 @@ De functie voor nieuw toegevoegde audio is beschikbaar wanneer u een bestand ind
 
 Het gebeurtenis type **Clapping** dat is opgenomen in het vorige model voor audio-effecten, is nu geëxtraheerd door een deel van het gebeurtenis type voor de **reactie** van de hoeveelheid.
 
-Wanneer u ervoor kiest om de **InSites** van uw video op de [video indexer](https://www.videoindexer.ai/) website te bekijken, worden de audio-effecten op de pagina weer gegeven.
+Wanneer u ervoor kiest om **inzichten** van uw video op de [video indexer](https://www.videoindexer.ai/) website te bekijken, worden de audio-effecten op de pagina weer gegeven.
 
 :::image type="content" source="./media/release-notes/audio-detection.png" alt-text="Geluids gebeurtenis detectie":::
 

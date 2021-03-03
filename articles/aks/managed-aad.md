@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 02/1/2021
 ms.author: miwithro
-ms.openlocfilehash: 7f6cf503a459175e3109a515b666bbeaa3a25b4d
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 78eed4086c04ceca677a96f03875481e56206e0c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99549996"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723978"
 ---
 # <a name="aks-managed-azure-active-directory-integration"></a>AKS-beheerde Azure Active Directory-integratie
 
@@ -231,6 +231,70 @@ Ga in het Azure Portal naar Azure Active Directory, selecteer *zakelijke toepass
 
 :::image type="content" source="./media/managed-aad/conditional-access-sign-in-activity.png" alt-text="Mislukte aanmeldings vermelding vanwege beleid voor voorwaardelijke toegang":::
 
+## <a name="configure-just-in-time-cluster-access-with-azure-ad-and-aks"></a>Just-in-time-cluster toegang configureren met Azure AD en AKS
+
+Een andere optie voor cluster toegangs beheer is het gebruik van Privileged Identity Management (PIM) voor Just-in-time-aanvragen.
+
+>[!NOTE]
+> PIM is een Azure AD Premium capaciteit waarvoor een Premium P2-SKU is vereist. Zie de [prijs handleiding][aad-pricing]voor meer informatie over Azure AD sku's.
+
+Voer de volgende stappen uit om just-in-time-toegangs aanvragen te integreren met een AKS-cluster met behulp van AKS-beheerde Azure AD-integratie:
+
+1. Zoek en selecteer Azure Active Directory aan de bovenkant van de Azure Portal.
+1. Noteer de Tenant-ID, waarnaar wordt verwezen voor de rest van deze instructies `<tenant-id>` :::image type="content" source="./media/managed-aad/jit-get-tenant-id.png" alt-text=", zoals in een webbrowser, het Azure portal scherm voor Azure Active Directory wordt weer gegeven met de id van de Tenant gemarkeerd.":::
+1. Klik in het menu voor Azure Active Directory aan de linkerkant onder Selecteer *groepen* *beheren* vervolgens *nieuwe groep*.
+    :::image type="content" source="./media/managed-aad/jit-create-new-group.png" alt-text="Toont het scherm Azure Portal Active Directory groepen met de optie ' nieuwe groep ' gemarkeerd.":::
+1. Zorg ervoor dat het groeps type *beveiliging* is geselecteerd en voer een groeps naam in, zoals *myJITGroup*. Onder *Azure AD-rollen kunnen worden toegewezen aan deze groep (preview)*. Selecteer *Ja*. Selecteer tot slot *maken*.
+    :::image type="content" source="./media/managed-aad/jit-new-group-created.png" alt-text="Toont het nieuwe scherm voor het maken van een groep Azure Portal.":::
+1. U gaat terug naar de pagina *groepen* . Selecteer de zojuist gemaakte groep en noteer de object-ID, waarnaar wordt verwezen voor de rest van deze instructies als `<object-id>` .
+    :::image type="content" source="./media/managed-aad/jit-get-object-id.png" alt-text="Hiermee wordt het Azure Portal scherm voor de zojuist gemaakte groep weer gegeven, waarbij de object-id wordt gemarkeerd":::
+1. Implementeer een AKS-cluster met door AKS beheerde Azure AD-integratie met behulp `<tenant-id>` `<object-id>` van de waarden en uit eerdere versies:
+    ```azurecli-interactive
+    az aks create -g myResourceGroup -n myManagedCluster --enable-aad --aad-admin-group-object-ids <object-id> --aad-tenant-id <tenant-id>
+    ```
+1. In het Azure Portal, in het menu voor *activiteit* aan de linkerkant selecteert u *privileged Access (preview)* en selecteert u *bevoorrechte toegang inschakelen*.
+    :::image type="content" source="./media/managed-aad/jit-enabling-priv-access.png" alt-text="De pagina privileged Access (preview) van de Azure Portal wordt weer gegeven, waarbij ' geprivilegieerde toegang inschakelen ' is gemarkeerd":::
+1. Selecteer *toewijzingen toevoegen* om toegang te verlenen.
+    :::image type="content" source="./media/managed-aad/jit-add-active-assignment.png" alt-text="Het scherm privileged Access (preview) van Azure Portal wordt weer gegeven nadat het inschakelen is ingeschakeld. De optie voor het toevoegen van toewijzingen is gemarkeerd.":::
+1. Selecteer een rol van *lid* en selecteer de gebruikers en groepen waaraan u toegang tot het cluster wilt verlenen. Deze toewijzingen kunnen op elk gewenst moment worden gewijzigd door een groeps beheerder. Wanneer u klaar bent om door te gaan, selecteert u *volgende*.
+    :::image type="content" source="./media/managed-aad/jit-adding-assignment.png" alt-text="Het scherm toewijzings leden toevoegen van de Azure Portal wordt weer gegeven, waarbij een voor beeld van een gebruiker is geselecteerd om te worden toegevoegd als een lid. De optie volgende is gemarkeerd.":::
+1. Kies een toewijzings type *actief*, de gewenste duur en geef een reden op. Wanneer u klaar bent om door te gaan, selecteert u *toewijzen*. Zie [geschiktheid voor een bevoegde toegangs groep (preview) toewijzen in privileged Identity Management][aad-assignments]voor meer informatie over toewijzings typen.
+    :::image type="content" source="./media/managed-aad/jit-set-active-assignment-details.png" alt-text="Het scherm instellingen voor toewijzingen toevoegen van de Azure Portal wordt weer gegeven. Een toewijzings type van ' actief ' is geselecteerd en er is een voor beeld van een uitvulling gegeven. De optie Assign is gemarkeerd.":::
+
+Nadat de toewijzingen zijn gemaakt, controleert u of just-in-time toegang werkt door het cluster te openen. Bijvoorbeeld:
+
+```azurecli-interactive
+ az aks get-credentials --resource-group myResourceGroup --name myManagedCluster
+```
+
+Volg de stappen om u aan te melden.
+
+Gebruik de `kubectl get nodes` opdracht voor het weer geven van knoop punten in het cluster:
+
+```azurecli-interactive
+kubectl get nodes
+```
+
+Noteer de verificatie vereiste en volg de stappen om te verifiëren. Als dit lukt, ziet u uitvoer die lijkt op het volgende:
+
+```output
+To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code AAAAAAAAA to authenticate.
+NAME                                STATUS   ROLES   AGE     VERSION
+aks-nodepool1-61156405-vmss000000   Ready    agent   6m36s   v1.18.14
+aks-nodepool1-61156405-vmss000001   Ready    agent   6m42s   v1.18.14
+aks-nodepool1-61156405-vmss000002   Ready    agent   6m33s   v1.18.14
+```
+
+### <a name="troubleshooting"></a>Problemen oplossen
+
+Als er `kubectl get nodes` een fout wordt geretourneerd die lijkt op het volgende:
+
+```output
+Error from server (Forbidden): nodes is forbidden: User "aaaa11111-11aa-aa11-a1a1-111111aaaaa" cannot list resource "nodes" in API group "" at the cluster scope
+```
+
+Zorg ervoor dat de beheerder van de beveiligings groep heeft opgegeven dat uw account een *actieve* toewijzing heeft.
+
 ## <a name="next-steps"></a>Volgende stappen
 
 * Meer informatie over [Azure RBAC-integratie voor Kubernetes-autorisatie][azure-rbac-integration]
@@ -243,6 +307,7 @@ Ga in het Azure Portal naar Azure Active Directory, selecteer *zakelijke toepass
 [kubernetes-webhook]:https://kubernetes.io/docs/reference/access-authn-authz/authentication/#webhook-token-authentication
 [kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
 [aks-arm-template]: /azure/templates/microsoft.containerservice/managedclusters
+[aad-pricing]: /azure/pricing/details/active-directory
 
 <!-- LINKS - Internal -->
 [aad-conditional-access]: ../active-directory/conditional-access/overview.md
@@ -260,3 +325,4 @@ Ga in het Azure Portal naar Azure Active Directory, selecteer *zakelijke toepass
 [azure-ad-cli]: azure-ad-integration-cli.md
 [access-cluster]: #access-an-azure-ad-enabled-cluster
 [aad-migrate]: #upgrading-to-aks-managed-azure-ad-integration
+[aad-assignments]: ../active-directory/privileged-identity-management/groups-assign-member-owner.md#assign-an-owner-or-member-of-a-group

@@ -6,17 +6,17 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/28/2018
-ms.openlocfilehash: 4d4e868a181c216c29eeb5772b3e4c6108f514b1
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: cd216e277a64d6e3edc87dc4027550bc8c7c5bfa
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610528"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101726237"
 ---
 # <a name="collecting-custom-json-data-sources-with-the-log-analytics-agent-for-linux-in-azure-monitor"></a>Aangepaste JSON-gegevens bronnen met de Log Analytics-agent voor Linux verzamelen in Azure Monitor
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
 
-Aangepaste JSON-gegevens bronnen kunnen worden verzameld in [Azure monitor](../platform/data-platform.md) met behulp van de log Analytics-agent voor Linux.  Deze aangepaste gegevens bronnen kunnen eenvoudige scripts zijn die JSON als resultaat hebben, zoals [krul](https://curl.haxx.se/) of een van [de 300 + invoeg toepassingen met een vloeiende](https://www.fluentd.org/plugins/all)waarde. In dit artikel wordt de configuratie beschreven die vereist is voor het verzamelen van gegevens.
+Aangepaste JSON-gegevens bronnen kunnen worden verzameld in [Azure monitor](../data-platform.md) met behulp van de log Analytics-agent voor Linux.  Deze aangepaste gegevens bronnen kunnen eenvoudige scripts zijn die JSON als resultaat hebben, zoals [krul](https://curl.haxx.se/) of een van [de 300 + invoeg toepassingen met een vloeiende](https://www.fluentd.org/plugins/all)waarde. In dit artikel wordt de configuratie beschreven die vereist is voor het verzamelen van gegevens.
 
 
 > [!NOTE]
@@ -104,4 +104,4 @@ Geneste JSON-gegevens bronnen worden ondersteund, maar worden geïndexeerd op ba
 
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over [logboek query's](../log-query/log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen. 
+* Meer informatie over [logboek query's](../logs/log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen.

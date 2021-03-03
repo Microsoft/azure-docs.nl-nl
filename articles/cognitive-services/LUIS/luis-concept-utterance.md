@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.openlocfilehash: 96b9754908f437ccf81e002e9e9dd17af0bab4e3
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 46004d81756809958e359c2a0b72c143599c2853
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95019072"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101706755"
 ---
 # <a name="understand-what-good-utterances-are-for-your-luis-app"></a>Begrijpen wat goede uitingen zijn voor uw LUIS-app
 
@@ -21,7 +21,7 @@ Verzamel uitingen die u denkt dat gebruikers worden ingevoerd. Neem uitingen op.
 * Lengte van Utterance-short, medium en Long voor uw client-app
 * Lengte van woord en woord groep
 * Plaatsing van woorden: entiteit aan het begin, Midden en einde van utterance
-* Gecontroleerd
+* Grammatica
 * Pluralization
 * Als gevolg
 * Keuze uit zelfstandig naam woord en werk woord
@@ -54,7 +54,7 @@ Doe het volgende voor beeld uitingen:
 |Ik wil een computer verkrijgen, hoe ga ik daar naartoe?|
 |Wanneer kan ik een computer?|
 
-De basis term hier, ' computer ', is niet gevarieerd. Gebruik alternatieven als desktop computer, laptop, werk station of zelfs alleen machine. LUIS kan op intelligente wijze synoniemen uit de context afleiden, maar wanneer u uitingen voor training maakt, is het altijd beter om ze te variëren.
+De kern term hier, *computer*, is niet gevarieerd. Gebruik alternatieven als desktop computer, laptop, werk station of zelfs alleen machine. LUIS kan op intelligente wijze synoniemen uit de context afleiden, maar wanneer u uitingen voor training maakt, is het altijd beter om ze te variëren.
 
 ## <a name="example-utterances-in-each-intent"></a>Voor beeld van uitingen in elke intentie
 
@@ -138,7 +138,7 @@ Als het woord of de rang schikking van Word hetzelfde is, maar niet hetzelfde is
 
 De volgende uitingen, het woord `fair` is een homograph. De spelling is hetzelfde, maar heeft een andere betekenis:
 
-|Utterance|
+|Uiting|
 |--|
 |Wat voor soort graafschap komt in het gebied Seattle van deze zomer?|
 |Is de huidige beoordeling voor de Seattle-beoordeling eerlijk?|

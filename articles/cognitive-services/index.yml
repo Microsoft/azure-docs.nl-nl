@@ -12,12 +12,12 @@ metadata:
   manager: nitinme
   ms.custom: custom-portals-hub
   ms.date: 08/28/2020
-  ms.openlocfilehash: a2329333268ca6aec0a33794a342f63aa2bda53f
-  ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+  ms.openlocfilehash: ad77a891f85c2bff7bba3c165cbafdf80403fc47
+  ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 02/14/2021
-  ms.locfileid: "100379536"
+  ms.lasthandoff: 03/03/2021
+  ms.locfileid: "101699960"
 highlightedContent:
   items:
   - title: Wat is Cognitive Services?
@@ -52,7 +52,7 @@ conceptualContent:
     - url: ./computer-vision/index.yml
       itemType: overview
       text: Computer Vision
-    - url: ./Custom-Vision-Service/index.yml
+    - url: ./custom-vision-service/index.yml
       itemType: overview
       text: Custom Vision
     - url: ./face/index.yml

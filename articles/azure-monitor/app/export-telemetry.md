@@ -2,16 +2,20 @@
 title: Doorlopend exporteren van telemetrie uit Application Insights | Microsoft Docs
 description: Exporteer diagnostische en gebruiks gegevens naar opslag in Microsoft Azure en down load deze vanaf daar.
 ms.topic: conceptual
-ms.date: 05/26/2020
-ms.openlocfilehash: 23405faeb7d2151ce0f6492c0d522e0a7f9b84a8
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.date: 02/19/2021
+ms.custom: references_regions
+ms.openlocfilehash: e7831123834df9186310453106c50261373160ec
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100584240"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737032"
 ---
 # <a name="export-telemetry-from-application-insights"></a>Telemetrie exporteren vanuit Application Insights
 Wilt u de telemetrie langer houden dan de standaard retentie periode? Of verwerk het op een specifieke manier? Continue export is ideaal voor dit. De gebeurtenissen die u in de Application Insights Portal ziet, kunnen worden geëxporteerd naar de opslag in Microsoft Azure in JSON-indeling. Van daaruit kunt u uw gegevens downloaden en de code schrijven die u nodig hebt om deze te verwerken.  
+
+> [!IMPORTANT]
+> Continue export is afgeschaft. [Migreer naar een Application Insights bron op basis van een werk ruimte](convert-classic-resource.md) voor het gebruik van [Diagnostische instellingen](#diagnostic-settings-based-export) voor het exporteren van telemetrie.
 
 > [!NOTE]
 > Continue export wordt alleen ondersteund voor klassieke Application Insights-resources. [Pp werkruimte gebaseerde Application Insights-resources](./create-workspace-resource.md) moeten [diagnostische instellingen](./create-workspace-resource.md#export-telemetry) gebruiken.
@@ -27,6 +31,44 @@ Voordat u doorlopend exporteren instelt, zijn er enkele alternatieven die u well
 * U kunt ook instellen dat [doorlopende export via Power shell wordt uitgevoerd](/powershell/module/az.applicationinsights/new-azapplicationinsightscontinuousexport).
 
 Nadat u uw gegevens hebt gekopieerd naar de opslag ruimte (waar u deze zo lang mogelijk kunt blijven), is deze nog steeds beschikbaar in Application Insights voor de gebruikelijke [Bewaar periode](./data-retention-privacy.md).
+
+## <a name="supported-regions"></a>Ondersteunde regio's
+
+Continue export wordt ondersteund in de volgende regio's:
+
+* Azië - zuidoost
+* Canada - midden
+* India - centraal
+* Europa - noord
+* Verenigd Koninkrijk Zuid
+* Australië - oost
+* Japan - oost
+* Korea - centraal
+* Frankrijk - centraal
+* Azië - oost
+* VS - west
+* US - centraal
+* US - oost 2
+* VS - zuid-centraal
+* VS - west 2
+* Zuid-Afrika - noord
+* VS - noord-centraal
+* Brazilië - zuid
+* Zwitserland - noord
+* Australië - zuidoost
+* Verenigd Koninkrijk West
+* Duitsland - west-centraal
+* Zwitserland - west
+* Australië - centraal 2
+* UAE - centraal
+* Brazilië-Zuidoost
+* Australië - centraal
+* VAE - noord
+* Noorwegen - oost
+* Japan - west
+
+> [!NOTE]
+> Toepassingen die al zijn geconfigureerd in **Europa-West** en **VS-Oost** worden ondersteund, maar het onboarden van nieuwe toepassingen in deze regio's wordt niet ondersteund.
 
 ## <a name="continuous-export-advanced-storage-configuration"></a>Geavanceerde opslag configuratie voor continue export
 

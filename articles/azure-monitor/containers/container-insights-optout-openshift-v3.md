@@ -1,14 +1,14 @@
 ---
 title: Stoppen met het bewaken van uw Azure Red Hat open Shift v3-cluster | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u de bewaking van uw Azure Red Hat open Shift-cluster kunt stoppen met Azure Monitor voor containers.
+description: In dit artikel wordt beschreven hoe u de bewaking van uw Azure Red Hat open Shift-cluster met container Insights kunt stoppen.
 ms.topic: conceptual
 ms.date: 04/24/2020
-ms.openlocfilehash: 7e6ab46940ed29a98b3988c00c92d6c691d6e0f0
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 6a278898942e40d3347791d31a3c38341df01f7c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100613032"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101731813"
 ---
 # <a name="how-to-stop-monitoring-your-azure-red-hat-openshift-v3-cluster"></a>Het bewaken van uw Azure Red Hat open Shift v3-cluster stoppen
 
@@ -21,7 +21,7 @@ ms.locfileid: "100613032"
 > Volg deze hand leiding voor het [maken van een Azure Red Hat open Shift 4-cluster](../../openshift/tutorial-create-cluster.md).
 > Als u specifieke vragen hebt, [kunt u contact met ons](mailto:aro-feedback@microsoft.com)opnemen.
 
-Nadat u de bewaking van uw Azure Red Hat open Shift versie 3. x-cluster hebt ingeschakeld, kunt u stoppen met het bewaken van het cluster met Azure Monitor voor containers als u besluit dat u het niet meer wilt controleren. In dit artikel wordt beschreven hoe u dit kunt doen met behulp van de Azure Resource Manager sjabloon.  
+Nadat u de bewaking van uw Azure Red Hat open Shift versie 3. x-cluster hebt ingeschakeld, kunt u stoppen met het bewaken van het cluster met container Insights als u besluit dat u het niet meer wilt bewaken. In dit artikel wordt beschreven hoe u dit kunt doen met behulp van de Azure Resource Manager sjabloon.  
 
 ## <a name="azure-resource-manager-template"></a>Azure Resource Manager-sjabloon
 
@@ -137,4 +137,4 @@ ProvisioningState       : Succeeded
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als de werk ruimte alleen is gemaakt ter ondersteuning van het bewaken van het cluster en u deze niet meer nodig hebt, moet u deze hand matig verwijderen. Zie [een Azure log Analytics-werk ruimte verwijderen](../platform/delete-workspace.md)als u niet bekend bent met het verwijderen van een werk ruimte.
+Als de werk ruimte alleen is gemaakt ter ondersteuning van het bewaken van het cluster en u deze niet meer nodig hebt, moet u deze hand matig verwijderen. Zie [een Azure log Analytics-werk ruimte verwijderen](../logs/delete-workspace.md)als u niet bekend bent met het verwijderen van een werk ruimte.

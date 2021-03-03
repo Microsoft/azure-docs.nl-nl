@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 12/21/2020
 ms.author: alkohli
-ms.openlocfilehash: 7534052412c2bee0f31e352fc577d376c11215c3
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: cb6b8e310f46cd98c4d3343d44fd83a3cc714a32
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98804935"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101730708"
 ---
 # <a name="gpu-vms-for-your-azure-stack-edge-pro-device"></a>GPU-Vm's voor uw Azure Stack Edge Pro-apparaat
 
@@ -110,8 +110,8 @@ Volg deze stappen wanneer u GPU-Vm's implementeert op uw apparaat:
 1. Nadat de VM is gemaakt, implementeert u de GPU-extensie met behulp van de extensie sjabloon. Zie GPU-extensie voor [Linux](#gpu-extension-for-linux) en voor virtuele Windows-machines installeren voor virtuele Linux-machines. Zie [GPU-extensie voor Windows installeren](#gpu-extension-for-windows).
 
 1. Als u wilt controleren of de GPU-extensie is geïnstalleerd, maakt u verbinding met de GPU-VM:
-    1. Als u een virtuele Windows-machine gebruikt, volgt u de stappen in [verbinding maken met een virtuele Windows-machine](azure-stack-edge-gpu-deploy-virtual-machine-powershell.md#connect-to-windows-vm). [Controleer de installatie](#verify-windows-driver-installation).
-    1. Als u een virtuele Linux-machine gebruikt, volgt u de stappen in [verbinding maken met een virtuele Linux-machine](azure-stack-edge-gpu-deploy-virtual-machine-powershell.md#connect-to-linux-vm). [Controleer de installatie](#verify-linux-driver-installation).
+    1. Als u een virtuele Windows-machine gebruikt, volgt u de stappen in [verbinding maken met een virtuele Windows-machine](azure-stack-edge-gpu-deploy-virtual-machine-powershell.md#connect-to-a-windows-vm). [Controleer de installatie](#verify-windows-driver-installation).
+    1. Als u een virtuele Linux-machine gebruikt, volgt u de stappen in [verbinding maken met een virtuele Linux-machine](azure-stack-edge-gpu-deploy-virtual-machine-powershell.md#connect-to-a-linux-vm). [Controleer de installatie](#verify-linux-driver-installation).
 
 1. Als dat nodig is, kunt u het berekenings netwerk weer op de gewenste manier overschakelen. 
 
@@ -545,7 +545,7 @@ De uitvoer van de uitbrei ding voor uitvoering wordt geregistreerd in het volgen
 
 Voer de volgende stappen uit om de installatie van het stuur programma te controleren:
 
-1. Verbinding maken met de GPU-VM. Volg de instructies in [verbinding maken met een virtuele Linux-machine](azure-stack-edge-gpu-deploy-virtual-machine-powershell.md#connect-to-linux-vm). 
+1. Verbinding maken met de GPU-VM. Volg de instructies in [verbinding maken met een virtuele Linux-machine](azure-stack-edge-gpu-deploy-virtual-machine-powershell.md#connect-to-a-linux-vm). 
 
     Hier volgt een voorbeeld van uitvoer:
 

@@ -74,10 +74,14 @@
           href: azure-monitor-insights.md
     - name: Site-naar-site
       items:
-        - name: Over IPSec-beleid
+        - name: Over S2S IPsec-beleid
           href: virtual-wan-ipsec.md
         - name: Meerdere ISP-koppelingen - selectie van Azure-pad
           href: path-selection-multiple-links.md
+    - name: Punt-naar-site
+      items:
+        - name: Over P2S IPsec-beleid
+          href: point-to-site-ipsec.md
     - name: Beveiliging
       items:
         - name: Beveiligingsbasislijn
@@ -108,6 +112,8 @@
           href: connect-virtual-network-gateway-vwan.md
         - name: Aangepast IPsec-beleid configureren
           href: virtual-wan-custom-ipsec-portal.md
+        - name: NAT-regels configureren
+          href: nat-rules-vpn-gateway.md
     - name: Gebruikers-VPN (punt-naar-site)
       items:
         - name: Gebruikers-VPN-verbinding maken

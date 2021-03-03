@@ -4,12 +4,12 @@ description: In dit artikel vindt u informatie over het maken en configureren va
 ms.topic: conceptual
 ms.date: 05/30/2019
 ms.custom: references_regions
-ms.openlocfilehash: 4022838575ca53608a802a6be95e150778db6ac7
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 1a20cd2b1245febea5fd18a9f6fe6e7a7bb6f04b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99525971"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101716751"
 ---
 # <a name="create-and-configure-a-recovery-services-vault"></a>Een Recovery Services kluis maken en configureren
 
@@ -71,7 +71,7 @@ Aangezien dit proces zich op het opslag niveau bevindt, zijn er [prijs implicati
 >- Na het inbrengen kan het tot 48 uur duren voordat de back-upitems beschikbaar zijn in secundaire regio's.
 >- Momenteel wordt CRR voor Azure-Vm's alleen ondersteund voor Azure Resource Manager Azure-Vm's. Klassieke Azure-Vm's worden niet ondersteund.  Wanneer extra beheer typen CRR ondersteunen, worden ze **automatisch** Inge schreven.
 >- Het terugzetten van meerdere regio's **kan op dit moment niet worden teruggedraaid** naar GRS of LRS zodra de beveiliging voor de eerste keer wordt gestart.
->- De [productie-RPO](azure-backup-glossary.md#rpo-recovery-point-objective) van de secundaire regio is momenteel tot 12 uur van de primaire regio, zelfs als [geo-redundante opslag met lees toegang (RA-GRS)](https://docs.microsoft.com/azure/storage/common/storage-redundancy#redundancy-in-a-secondary-region) 15 minuten is.
+>- De [productie-RPO](azure-backup-glossary.md#rpo-recovery-point-objective) van de secundaire regio is momenteel tot 12 uur van de primaire regio, zelfs als [geo-redundante opslag met lees toegang (RA-GRS)](../storage/common/storage-redundancy.md#redundancy-in-a-secondary-region) 15 minuten is.
 
 ### <a name="configure-cross-region-restore"></a>Herstel van meerdere regio's configureren
 

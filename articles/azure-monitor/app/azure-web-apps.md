@@ -4,16 +4,16 @@ description: Bewaking van toepassings prestaties voor Azure app Services. Grafie
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.custom: devx-track-js, devx-track-dotnet
-ms.openlocfilehash: 74b39219b3b18c8de0214367d141085f6dc5f674
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 7661066bc2666070c8b3ed9263b1223c09d6c720
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100573996"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734720"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Azure App Service-prestaties bewaken
 
-Het inschakelen van controle op uw ASP.NET-en ASP.NET Core op webtoepassingen die worden uitgevoerd op [Azure-app Services](../../app-service/index.yml) is nu nog eenvoudiger dan ooit. Voordat u een site-uitbrei ding hand matig moest installeren, is de meest recente extensie/agent nu standaard in de app service-installatie kopie ingebouwd. Dit artikel begeleidt u bij het inschakelen van Application Insights bewaking en voorziet in voorlopige richt lijnen voor het automatiseren van het proces voor grootschalige implementaties.
+Het inschakelen van bewaking op uw ASP.NET, ASP.NET Core en Node.js op webtoepassingen die worden uitgevoerd op [Azure-app Services](../../app-service/index.yml) is nu nog eenvoudiger dan ooit. Voordat u een site-uitbrei ding hand matig moest installeren, is de meest recente extensie/agent nu standaard in de app service-installatie kopie ingebouwd. Dit artikel begeleidt u bij het inschakelen van Application Insights bewaking en voorziet in voorlopige richt lijnen voor het automatiseren van het proces voor grootschalige implementaties.
 
 > [!NOTE]
 > Het hand matig toevoegen van een Application Insights site-uitbrei ding via **hulpprogram ma's voor ontwikkel aars**  >   is afgeschaft. Deze methode van extensie-installatie is afhankelijk van hand matige updates voor elke nieuwe versie. De laatste stabiele versie van de uitbrei ding is nu  [vooraf geïnstalleerd](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions) als onderdeel van de app service-installatie kopie. De bestanden bevinden zich in `d:\Program Files (x86)\SiteExtensions\ApplicationInsightsAgent` en worden automatisch bijgewerkt met elke stabiele versie. Als u de op agents gebaseerde instructies volgt om de controle hieronder in te scha kelen, wordt de afgeschafte uitbrei ding automatisch verwijderd.
@@ -65,7 +65,7 @@ Er zijn twee manieren om toepassings bewaking in te scha kelen voor door Azure-a
 | Verzamelt gebruikstrends en maakt correlatie mogelijk van beschikbaarheidsresultaten tot transacties | Ja |Ja |
 | Verzamelt uitzonderingen die niet zijn verwerkt door het hostproces | Ja |Ja |
 | Verbetert de nauwkeurigheid van metrische APM-gegevens onder belasting, wanneer steekproeven worden gebruikt | Ja |Ja |
-| Correleert microservices over aanvraag-/afhankelijkheidsgrenzen | Nee (alleen APM-mogelijkheden met één instantie) |Yes |
+| Correleert microservices over aanvraag-/afhankelijkheidsgrenzen | Nee (alleen APM-mogelijkheden met één instantie) |Ja |
 
 3. Voor het configureren van instellingen zoals steek proeven, die u eerder kunt beheren via het applicationinsights.config-bestand, hebt u nu de opdracht om te communiceren met dezelfde instellingen via toepassings instellingen met een bijbehorend voor voegsel. 
 
@@ -97,7 +97,7 @@ Het is **niet mogelijk** om het volledige Framework te richten op basis van ASP.
 
 # <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
-Selecteer in de app service-Web-app onder **instellingen** de  >  **optie Application Insights**  >  **inschakelen**. Node.js bewaking op basis van agents is momenteel beschikbaar als preview-versie.
+Bewaking op basis van Windows-agents wordt niet ondersteund, om in te scha kelen met Linux Ga naar de [Node.js app service documentatie](../../app-service/configure-language-nodejs.md?pivots=platform-linux#monitor-with-application-insights).
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -170,6 +170,7 @@ Als u telemetrie-verzameling met Application Insights wilt inschakelen, moeten a
 |XDT_MicrosoftApplicationInsights_Mode |  In de standaard modus worden alleen essentiële functies ingeschakeld om optimale prestaties te garanderen. | `default` of `recommended`. |
 |InstrumentationEngine_EXTENSION_VERSION | Hiermee wordt bepaald of de engine voor het herschrijven van binaire bestanden `InstrumentationEngine` wordt ingeschakeld. Deze instelling heeft invloed op de prestaties en is koude start/Startup-tijd. | `~1` |
 |XDT_MicrosoftApplicationInsights_BaseExtensions | Hiermee wordt bepaald of SQL & Azure-tabel tekst wordt vastgelegd samen met de afhankelijkheids aanroepen. Prestatie waarschuwing: de start tijd van de toepassing wordt beïnvloed. Deze instelling vereist de `InstrumentationEngine` . | `~1` |
+|XDT_MicrosoftApplicationInsights_PreemptSdk | Alleen voor ASP.NET Core-Apps. Hiermee wordt Interop (samen werking) met Application Insights SDK ingeschakeld. Hiermee wordt de uitbrei ding naast de SDK geladen en wordt deze gebruikt voor het verzenden van telemetrie (schakelt de Application Insights SDK). |`1`|
 
 ### <a name="app-service-application-settings-with-azure-resource-manager"></a>Toepassings instellingen App Service met Azure Resource Manager
 

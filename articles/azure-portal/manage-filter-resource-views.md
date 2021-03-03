@@ -3,12 +3,12 @@ title: Azure-resourcegegevens bekijken en filteren
 description: Filter gegevens en gebruik verschillende weergaven om uw Azure-resources beter te begrijpen.
 ms.topic: how-to
 ms.date: 09/11/2020
-ms.openlocfilehash: d1bd00a9e7f8c9c18484378f7c21d3bacdac2d3f
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
-ms.translationtype: HT
+ms.openlocfilehash: d3ad0c225a260fd0ae6b131b951b53c28042f4d9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96745890"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738630"
 ---
 # <a name="view-and-filter-azure-resource-information"></a>Azure-resourcegegevens bekijken en filteren
 
@@ -49,6 +49,18 @@ Een weergave verwijderen:
 1. Selecteer **Weergave beheren** en vervolgens **In alle weergaven bladeren**.
 
 1. Selecteer de weergave in het deelvenster **Opgeslagen weergaven voor Alle resources**, en selecteer vervolgens het pictogram **Verwijderen** ![pictogram Weergave verwijderen](media/manage-filter-resource-views/icon-delete.png).
+
+## <a name="export-information-from-a-view"></a>Informatie exporteren uit een weer gave
+
+U kunt de resource gegevens exporteren vanuit een weer gave. Informatie exporteren in CSV-indeling:
+
+1. Selecteer **exporteren naar CSV**.
+
+    :::image type="content" source="media/manage-filter-resource-views/export-csv.png" alt-text="Scherm opname van exporteren naar CSV-indeling":::
+
+1. Sla het bestand lokaal op en open het in Excel of een andere toepassing die ondersteuning biedt voor de CSV-indeling. 
+
+Wanneer u door de portal gaat, ziet u andere gebieden waar u gegevens kunt exporteren, zoals een afzonderlijke resource groep.
 
 ## <a name="summarize-resources-with-visuals"></a>Resources samenvatten met visuals
 

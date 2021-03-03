@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 04/10/2019
-ms.openlocfilehash: f16e5363af7de2152a7fa73bb52219d87971a249
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: bc03d8cdcaf0079ef15e648d16fd5656d9da368c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101091202"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101725676"
 ---
 # <a name="manage-access-to-log-data-and-workspaces-in-azure-monitor"></a>Toegang tot logboekgegevens en werkruimten beheren in Azure Monitor
 
@@ -285,7 +285,7 @@ In de bovenstaande voor beelden wordt een lijst met toegestane tabellen gedefini
 
 ### <a name="custom-logs"></a>Aangepaste logboeken
 
- Aangepaste logboeken worden gemaakt op basis van gegevens bronnen, zoals aangepaste logboeken en HTTP-gegevens verzamelaar-API. De eenvoudigste manier om het type logboek te identificeren, is door de tabellen die worden vermeld onder [aangepaste Logboeken in het logboek schema](../log-query/log-analytics-tutorial.md#table-schema)te controleren.
+ Aangepaste logboeken worden gemaakt op basis van gegevens bronnen, zoals aangepaste logboeken en HTTP-gegevens verzamelaar-API. De eenvoudigste manier om het type logboek te identificeren, is door de tabellen die worden vermeld onder [aangepaste Logboeken in het logboek schema](./log-analytics-tutorial.md#table-schema)te controleren.
 
  U kunt geen toegang verlenen aan afzonderlijke aangepaste logboeken, maar u hebt toegang tot alle aangepaste Logboeken. Als u een rol wilt maken met toegang tot alle aangepaste logboeken, maakt u een aangepaste rol met behulp van de volgende acties:
 
@@ -312,4 +312,4 @@ Soms zijn aangepaste logboeken afkomstig uit bronnen die niet rechtstreeks zijn 
 
 * Zie [overzicht van log Analytics agent](../agents/log-analytics-agent.md) voor het verzamelen van gegevens van computers in uw Data Center of een andere cloud omgeving.
 
-* Zie [gegevens verzamelen over Azure virtual machines](../learn/quick-collect-azurevm.md) voor het configureren van gegevens verzameling vanuit Azure vm's.
+* Zie [gegevens verzamelen over Azure virtual machines](../vm/quick-collect-azurevm.md) voor het configureren van gegevens verzameling vanuit Azure vm's.

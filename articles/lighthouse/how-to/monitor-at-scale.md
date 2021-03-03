@@ -3,12 +3,12 @@ title: Gedelegeerde resources op schaal controleren
 description: Meer informatie over het effectief gebruiken van Azure Monitor-logboeken op schaal bare wijze over de tenants van de klant die u beheert.
 ms.date: 02/11/2021
 ms.topic: how-to
-ms.openlocfilehash: aadd14bb3e4aad61fb2afc0735b5714deedfe301
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 98fd984492276dbdfbc2f8001bca19560764a2a7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100593116"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101742582"
 ---
 # <a name="monitor-delegated-resources-at-scale"></a>Gedelegeerde resources op schaal controleren
 
@@ -49,7 +49,7 @@ Nadat u uw beleid hebt geïmplementeerd, worden de gegevens vastgelegd in de Log
 
 U kunt [waarschuwingen](../../azure-monitor/alerts/alerts-overview.md) weer geven voor de gedelegeerde abonnementen in de tenants van de klant die u beheert.
 
-Vanuit uw Tenant beheren kunt u [waarschuwingen voor activiteiten logboeken maken, weer geven en beheren](../../azure-monitor/platform/alerts-activity-log.md) in de Azure portal of via api's en beheer hulpprogramma's.
+Vanuit uw Tenant beheren kunt u [waarschuwingen voor activiteiten logboeken maken, weer geven en beheren](../../azure-monitor/alerts/alerts-activity-log.md) in de Azure portal of via api's en beheer hulpprogramma's.
 
 Als u waarschuwingen automatisch over meerdere klanten wilt vernieuwen, gebruikt u een [Azure resource Graph](../../governance/resource-graph/overview.md) -query om te filteren op waarschuwingen. U kunt de query aan uw dash board vastmaken en alle relevante klanten en abonnementen selecteren. Met de onderstaande query worden bijvoorbeeld de waarschuwingen Ernst 0 en 1 weer gegeven, die elke 60 minuten worden vernieuwd.
 

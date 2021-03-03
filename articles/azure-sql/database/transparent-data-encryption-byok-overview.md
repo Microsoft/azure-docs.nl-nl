@@ -12,12 +12,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 02/01/2021
-ms.openlocfilehash: 62bdafd2dba31d875b0befccca0fb4a0e94f4e79
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: e096e21e7d20c992e18634d684f663f149cc3c55
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100582819"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101691243"
 ---
 # <a name="azure-sql-transparent-data-encryption-with-customer-managed-key"></a>Azure SQL Transparent Data Encryption met door de klant beheerde sleutels
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -187,7 +187,7 @@ Aanvullende overwegingen voor logboek bestanden: back-ups van logboek bestanden 
 
 Zelfs als er geen geo-redundantie is geconfigureerd voor de server, wordt het ten zeerste aanbevolen om de server te configureren voor het gebruik van twee verschillende sleutel kluizen in twee verschillende regio's met hetzelfde sleutel materiaal. De sleutel in de secundaire sleutel kluis in de andere regio mag niet worden gemarkeerd als TDE-Protector en is niet zelfs toegestaan. Als er een storing optreedt in de primaire sleutel kluis en alleen dan wordt het systeem automatisch overgeschakeld naar de andere gekoppelde sleutel met dezelfde vinger afdruk in de secundaire sleutel kluis als deze bestaat. Houd er rekening mee dat de switch niet wordt uitgevoerd als TDE-Protector niet toegankelijk is vanwege ingetrokken toegangs rechten, of omdat de sleutel of sleutel kluis is verwijderd, omdat dit kan erop wijzen dat de klant opzettelijk de toegang tot de sleutel wil beperken. Het bieden van hetzelfde sleutel materiaal voor twee sleutel kluizen in verschillende regio's kan worden gedaan door de sleutel te maken buiten de sleutel kluis en deze te importeren in de sleutel kluizen. 
 
-Het kan ook worden bereikt door sleutel te genereren met behulp van de primaire sleutel kluis die zich in dezelfde regio bevindt als de-server en de sleutel te klonen in een sleutel kluis in een andere Azure-regio. Gebruik de cmdlet [Backup-AzKeyVaultKey](https://docs.microsoft.com/powershell/module/az.keyvault/Backup-AzKeyVaultKey) om de sleutel in een versleutelde indeling op te halen uit de primaire sleutel kluis en gebruik vervolgens de cmdlet [Restore-AzKeyVaultKey](https://docs.microsoft.com/powershell/module/az.keyvault/restore-azkeyvaultkey) en geef in de tweede regio een sleutel kluis op om de sleutel te klonen. U kunt ook de Azure Portal gebruiken om een back-up te maken van de sleutel en deze te herstellen. Sleutel back-up/herstel bewerking is alleen toegestaan tussen sleutel kluizen binnen hetzelfde Azure-abonnement en [Azure-geografie](https://azure.microsoft.com/global-infrastructure/geographies/).  
+Het kan ook worden bereikt door sleutel te genereren met behulp van de primaire sleutel kluis die zich in dezelfde regio bevindt als de-server en de sleutel te klonen in een sleutel kluis in een andere Azure-regio. Gebruik de cmdlet [Backup-AzKeyVaultKey](/powershell/module/az.keyvault/Backup-AzKeyVaultKey) om de sleutel in een versleutelde indeling op te halen uit de primaire sleutel kluis en gebruik vervolgens de cmdlet [Restore-AzKeyVaultKey](/powershell/module/az.keyvault/restore-azkeyvaultkey) en geef in de tweede regio een sleutel kluis op om de sleutel te klonen. U kunt ook de Azure Portal gebruiken om een back-up te maken van de sleutel en deze te herstellen. Sleutel back-up/herstel bewerking is alleen toegestaan tussen sleutel kluizen binnen hetzelfde Azure-abonnement en [Azure-geografie](https://azure.microsoft.com/global-infrastructure/geographies/).  
 
 ![Single-Server HA](./media/transparent-data-encryption-byok-overview/customer-managed-tde-with-ha.png)
 

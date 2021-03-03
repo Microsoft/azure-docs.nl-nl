@@ -5,18 +5,14 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/05/2020
 ms.topic: overview
-ms.openlocfilehash: 14ebe9dfd11bed2dfaded9f18e23f73d33a708ae
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 6001fff54b86b7c18684092aad6c7fdf64f81990
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91650456"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101729943"
 ---
 # <a name="about-azure-remote-rendering"></a>Over Azure Remote Rendering
-
-> [!IMPORTANT]
-> **Azure Remote Rendering** is momenteel beschikbaar als openbare preview-versie.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 *Azure Remote Rendering* (ARR) is een service waarmee u kwalitatief hoogwaardige, interactieve 3D-inhoud in de cloud kunt weergeven en deze in realtime kunt streamen naar apparaten, zoals HoloLens 2.
 

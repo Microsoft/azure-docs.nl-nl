@@ -5,22 +5,18 @@ services: active-directory
 documentationcenter: na
 author: rolyon
 manager: mtillman
-editor: ''
-ms.assetid: 1f90228a-7aac-4ea7-ad82-b57d222ab128
 ms.service: role-based-access-control
 ms.workload: multiple
 ms.tgt_pltfrm: rest-api
-ms.devlang: na
 ms.topic: how-to
-ms.date: 05/06/2020
+ms.date: 02/27/2021
 ms.author: rolyon
-ms.reviewer: bagovind
-ms.openlocfilehash: 1d90e83405cf9c560f644277a04012571e1a5a9d
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 9780902a1c5f4a711e1abffa6b508c28efe269ac
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100556905"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101735877"
 ---
 # <a name="list-azure-role-assignments-using-the-rest-api"></a>Azure-roltoewijzingen weer geven met behulp van de REST API
 
@@ -28,6 +24,8 @@ ms.locfileid: "100556905"
 
 > [!NOTE]
 > Als uw organisatie uitbestede beheer functies heeft voor een service provider die gebruikmaakt van [Azure delegated resource management](../lighthouse/concepts/azure-delegated-resource-management.md), worden roltoewijzingen die door die service provider worden toegestaan, hier niet weer gegeven.
+
+[!INCLUDE [gdpr-dsr-and-stp-note](../../includes/gdpr-dsr-and-stp-note.md)]
 
 ## <a name="list-role-assignments"></a>Lijst met roltoewijzingen weergeven
 
@@ -54,7 +52,7 @@ In azure RBAC kunt u de roltoewijzingen weer geven om toegang te krijgen. Als u 
 1. Vervang *{filter}* door de voor waarde die u wilt Toep assen om de roltoewijzings lijst te filteren.
 
     > [!div class="mx-tableFixed"]
-    > | Filter | Description |
+    > | Filter | Beschrijving |
     > | --- | --- |
     > | `$filter=atScope()` | Hier worden roltoewijzingen voor alleen het opgegeven bereik weer gegeven, met inbegrip van de roltoewijzingen in subbereiken. |
     > | `$filter=assignedTo('{objectId}')` | Hier worden roltoewijzingen voor een opgegeven gebruiker of Service-Principal weer gegeven.<br/>Als de gebruiker lid is van een groep die een roltoewijzing heeft, wordt die roltoewijzing ook weer gegeven. Dit filter is transitief voor groepen. Dit betekent dat als de gebruiker lid is van een groep en die groep lid is van een andere groep die een roltoewijzing heeft, die roltoewijzing ook wordt vermeld.<br/>Dit filter accepteert alleen een object-ID voor een gebruiker of een service-principal. U kunt geen object-ID door geven voor een groep. |

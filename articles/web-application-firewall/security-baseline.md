@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: d1f0b0b36c8f0ed5ede7b5c3113207ae3cce10fd
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: f29e6f0de3286b04321207b4c469f34aeaee8ef5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100581254"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737406"
 ---
 # <a name="azure-security-baseline-for-azure-web-application-firewall"></a>Azure-beveiligings basislijn voor Azure Web Application firewall
 
@@ -164,7 +164,7 @@ Azure Sentinel heeft een ingebouwde Azure WAF-werkmap, die een overzicht geeft v
 ### <a name="25-configure-security-log-storage-retention"></a>2,5: Bewaar beveiliging van het beveiligings logboek configureren
 
 **Richt lijnen**: verzend de Azure Web Application firewall-Logboeken (WAF) naar een aangepast opslag account en definieer het Bewaar beleid. Gebruik Azure Monitor om de Bewaar periode van uw Log Analytics werk ruimte in te stellen op basis van de nalevings vereisten van uw organisatie.
-- [Bewaking configureren voor een opslag account](../storage/common/storage-monitor-storage-account.md#configure-logging)
+- [Bewaking configureren voor een opslag account](../storage/common/manage-storage-analytics-logs.md#configure-logging)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 

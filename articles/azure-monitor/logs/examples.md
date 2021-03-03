@@ -6,17 +6,17 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/16/2020
-ms.openlocfilehash: 213437e68efb27c483c8013d209261408ab9d4ea
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: e2050784d03b1f01e743df9b00916ec286a3e7ef
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612792"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101736947"
 ---
 # <a name="azure-monitor-log-query-examples"></a>Voor beelden van Azure Monitor-logboek query
-Dit artikel bevat verschillende voor beelden van [query's](../log-query/log-query-overview.md) met behulp van de [Kusto-query taal](/azure/kusto/query/) om verschillende soorten logboek gegevens op te halen uit Azure monitor. Er worden verschillende methoden gebruikt om gegevens samen te voegen en te analyseren. u kunt deze voor beelden gebruiken om verschillende strategieën te identificeren die u voor uw eigen vereisten kunt gebruiken.  
+Dit artikel bevat verschillende voor beelden van [query's](./log-query-overview.md) met behulp van de [Kusto-query taal](/azure/kusto/query/) om verschillende soorten logboek gegevens op te halen uit Azure monitor. Er worden verschillende methoden gebruikt om gegevens samen te voegen en te analyseren. u kunt deze voor beelden gebruiken om verschillende strategieën te identificeren die u voor uw eigen vereisten kunt gebruiken.  
 
-Zie de [Kusto-taal referentie](/azure/kusto/query/) voor meer informatie over de verschillende tref woorden die in deze voor beelden worden gebruikt. Door loop een [Les over het maken van query's](../log-query/get-started-queries.md) als u geen ervaring hebt met Azure monitor.
+Zie de [Kusto-taal referentie](/azure/kusto/query/) voor meer informatie over de verschillende tref woorden die in deze voor beelden worden gebruikt. Door loop een [Les over het maken van query's](./get-started-queries.md) als u geen ervaring hebt met Azure monitor.
 
 ## <a name="events"></a>Gebeurtenissen
 
@@ -375,7 +375,7 @@ suspicious_users_that_later_logged_in
 
 ## <a name="usage"></a>Gebruik
 
-Het `Usage` gegevens type kan worden gebruikt om het opgenomen gegevens volume op basis van de oplossing of het gegevens type bij te houden. Er zijn andere technieken voor het onderzoeken van opgenomen gegevens volumes door de [computer](../platform/manage-cost-storage.md#data-volume-by-computer) of het [Azure-abonnement, de resource groep of de resource](../platform/manage-cost-storage.md#data-volume-by-azure-resource-resource-group-or-subscription).
+Het `Usage` gegevens type kan worden gebruikt om het opgenomen gegevens volume op basis van de oplossing of het gegevens type bij te houden. Er zijn andere technieken voor het onderzoeken van opgenomen gegevens volumes door de [computer](./manage-cost-storage.md#data-volume-by-computer) of het [Azure-abonnement, de resource groep of de resource](./manage-cost-storage.md#data-volume-by-azure-resource-resource-group-or-subscription).
 
 #### <a name="data-volume-by-solution"></a>Gegevensvolume per oplossing
 
@@ -438,4 +438,4 @@ Update
 ## <a name="next-steps"></a>Volgende stappen
 
 - Raadpleeg de [Naslag Gids voor Kusto](/azure/kusto/query) voor meer informatie over de taal.
-- Door loop een [Les over het schrijven van logboek query's in azure monitor](../log-query/get-started-queries.md).
+- Door loop een [Les over het schrijven van logboek query's in azure monitor](./get-started-queries.md).

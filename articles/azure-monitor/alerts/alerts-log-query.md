@@ -6,19 +6,19 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.subservice: alerts
-ms.openlocfilehash: cfe6aa489bcc771213ec04ca9cddd1267ccf1338
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: cda3af012a83342d5650c542fafdcd6bc36bd8e3
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610285"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717975"
 ---
 # <a name="optimizing-log-alert-queries"></a>Logboek waarschuwings query's optimaliseren
-In dit artikel wordt beschreven hoe u [logboek waarschuwings](../platform/alerts-unified-log.md) query's schrijft en converteert om optimale prestaties te krijgen. Geoptimaliseerde query's verminderen de latentie en het laden van waarschuwingen, die regel matig worden uitgevoerd.
+In dit artikel wordt beschreven hoe u [logboek waarschuwings](./alerts-unified-log.md) query's schrijft en converteert om optimale prestaties te krijgen. Geoptimaliseerde query's verminderen de latentie en het laden van waarschuwingen, die regel matig worden uitgevoerd.
 
 ## <a name="how-to-start-writing-an-alert-log-query"></a>Beginnen met het schrijven van een query voor een waarschuwings logboek
 
-Waarschuwings query's beginnen met [het uitvoeren van query's in de logboek gegevens in log Analytics](alerts-log.md#create-a-log-alert-rule-with-the-azure-portal) die het probleem aangeven. U kunt het [onderwerp voor beelden van waarschuwings query's](../log-query/example-queries.md) gebruiken om te begrijpen wat u kunt ontdekken. U kunt ook aan [de slag gaan met het schrijven van uw eigen query](../log-query/log-analytics-tutorial.md). 
+Waarschuwings query's beginnen met [het uitvoeren van query's in de logboek gegevens in log Analytics](alerts-log.md#create-a-log-alert-rule-with-the-azure-portal) die het probleem aangeven. U kunt het [onderwerp voor beelden van waarschuwings query's](../logs/example-queries.md) gebruiken om te begrijpen wat u kunt ontdekken. U kunt ook aan [de slag gaan met het schrijven van uw eigen query](../logs/log-analytics-tutorial.md). 
 
 ### <a name="queries-that-indicate-the-issue-and-not-the-alert"></a>Query's die het probleem aangeven en niet de waarschuwing
 
@@ -44,7 +44,7 @@ U hoeft geen waarschuwings logica aan de query toe te voegen en dat kan zelfs pr
 Met behulp van `limit` en `take` in query's kan de latentie toenemen en waarschuwingen worden geladen omdat de resultaten gedurende een bepaalde periode niet consistent zijn. U kunt het beste alleen gebruiken als dat nodig is.
 
 ## <a name="log-query-constraints"></a>Query beperkingen voor logboek
-[Logboek query's in azure monitor](../log-query/log-query-overview.md) beginnen met een tabel, [`search`](/azure/kusto/query/searchoperator) [`union`](/azure/kusto/query/unionoperator) operator of.
+[Logboek query's in azure monitor](../logs/log-query-overview.md) beginnen met een tabel, [`search`](/azure/kusto/query/searchoperator) [`union`](/azure/kusto/query/unionoperator) operator of.
 
 Query's voor waarschuwings regels in het logboek moeten altijd beginnen met een tabel om een duidelijk bereik te definiëren. Dit verbetert de prestaties van query's en de relevantie van de resultaten. Query's in waarschuwings regels worden regel matig uitgevoerd, dus met `search` en `union` kunnen leiden tot buitensporige overhead bij het toevoegen van latentie aan de waarschuwing, omdat er moet worden gescand in meerdere tabellen. Deze opera tors verminderen ook de mogelijkheid van de service waarschuwingen om de query te optimaliseren.
 
@@ -57,7 +57,7 @@ SecurityEvent
 | where EventID == 4624
 ```
 
-Het vastleggen van waarschuwings regels in [meerdere bron query's](../log-query/cross-workspace-query.md) wordt niet beïnvloed door deze wijziging omdat query's voor meerdere bronnen gebruikmaken van een type `union` , waarmee het query bereik wordt beperkt tot specifieke resources. Het volgende voor beeld is een geldige query voor een logboek waarschuwing:
+Het vastleggen van waarschuwings regels in [meerdere bron query's](../logs/cross-workspace-query.md) wordt niet beïnvloed door deze wijziging omdat query's voor meerdere bronnen gebruikmaken van een type `union` , waarmee het query bereik wordt beperkt tot specifieke resources. Het volgende voor beeld is een geldige query voor een logboek waarschuwing:
 
 ```Kusto
 union
@@ -67,7 +67,7 @@ workspace('Contoso-workspace1').Perf
 ```
 
 >[!NOTE]
-> [Query's voor meerdere resources](../log-query/cross-workspace-query.md) worden ondersteund in de nieuwe [scheduledQueryRules-API](/rest/api/monitor/scheduledqueryrules). Als u nog steeds de [verouderde API voor log Analytics waarschuwingen](../platform/api-alerts.md) gebruikt voor het maken van logboek waarschuwingen, kunt u [hier](../alerts/alerts-log-api-switch.md)meer informatie over het overschakelen.
+> [Query's voor meerdere resources](../logs/cross-workspace-query.md) worden ondersteund in de nieuwe [scheduledQueryRules-API](/rest/api/monitor/scheduledqueryrules). Als u nog steeds de [verouderde API voor log Analytics waarschuwingen](./api-alerts.md) gebruikt voor het maken van logboek waarschuwingen, kunt u [hier](../alerts/alerts-log-api-switch.md)meer informatie over het overschakelen.
 
 ## <a name="examples"></a>Voorbeelden
 De volgende voor beelden zijn logboek query's die gebruikmaken van `search` en `union` en stappen bieden die u kunt gebruiken om deze query's te wijzigen voor gebruik in waarschuwings regels.
@@ -217,4 +217,4 @@ SecurityEvent
 
 ## <a name="next-steps"></a>Volgende stappen
 - Meer informatie over [logboek waarschuwingen](alerts-log.md) in azure monitor.
-- Meer informatie over [logboek query's](../log-query/log-query-overview.md).
+- Meer informatie over [logboek query's](../logs/log-query-overview.md).

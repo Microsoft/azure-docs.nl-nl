@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure Maps?
       href: about-azure-maps.md
-- name: Snelstartgidsen
+- name: Quickstarts
   expanded: true
   items:
     - name: Een webtoepassing maken
@@ -160,10 +160,10 @@
               href: create-data-source-web-sdk.md
             - name: Een symboollaag toevoegen
               href: map-add-pin.md
-            - name: Een pop-up toevoegen
-              href: map-add-popup.md
             - name: Een bubbellaag toevoegen
               href: map-add-bubble-layer.md
+            - name: Een pop-up toevoegen
+              href: map-add-popup.md
             - name: HTML-markeringen toevoegen
               href: map-add-custom-html.md
             - name: Een lijnlaag toevoegen
@@ -250,14 +250,14 @@
           href: how-to-add-symbol-to-android-map.md
         - name: Een bubbellaag toevoegen
           href: map-add-bubble-layer-android.md
-        - name: Vormen toevoegen
+        - name: Functie-informatie weergeven
+          href: display-feature-information-android.md
+        - name: Een lijnlaag toevoegen
+          href: android-map-add-line-layer.md
+        - name: Een polygoonlaag toevoegen
           href: how-to-add-shapes-to-android-map.md
         - name: Heatmap-laag toevoegen
           href: map-add-heat-map-layer-android.md
-        - name: Een lijnlaag toevoegen
-          href: android-map-add-line-layer.md
-        - name: Functie-informatie weergeven
-          href: display-feature-information-android.md
         - name: Een titellaag toevoegen
           href: how-to-add-tile-layer-android-map.md
         - name: Verkeergegevens weergeven

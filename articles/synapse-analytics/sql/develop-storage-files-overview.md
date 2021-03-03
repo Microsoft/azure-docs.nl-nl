@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/19/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: f398f80e4e283f971e0d947d0dda131e12fe88a7
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.openlocfilehash: 855765648d68756598f2942e0c994fa939bcbda0
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120390"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101695665"
 ---
 # <a name="access-external-storage-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Toegang tot externe opslag met behulp van een serverloze SQL-pool in Azure Synapse Analytics
 
@@ -49,7 +49,7 @@ EXECUTE AS somepoweruser
 CREATE CREDENTIAL [https://<storage_account>.dfs.core.windows.net/<container>]
  WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 'sas token';
 
-GRANT REFERENCES CREDENTIAL::[https://<storage_account>.dfs.core.windows.net/<container>] TO sqluser
+GRANT REFERENCES ON CREDENTIAL::[https://<storage_account>.dfs.core.windows.net/<container>] TO sqluser
 ```
 
 Als er geen CREDENTIAL op serverniveau is die overeenkomt met de URL, of als de SQL-gebruiker geen referentiemachtiging voor deze referentie heeft, wordt de fout geretourneerd. SQL-principals kunnen niet imiteren met een Azure AD-identiteit.

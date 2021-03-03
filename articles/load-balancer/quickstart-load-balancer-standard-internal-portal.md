@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 07/30/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: f70116847a8743cf8b3cb56ff35f9d913f13f359
-ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
+ms.openlocfilehash: de179ab2fe1c02b3912262ee57fbb41a23d56164
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98562349"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101715435"
 ---
 # <a name="quickstart-create-an-internal-load-balancer-to-load-balance-vms-using-the-azure-portal"></a>Quickstart: Een interne load balancer maken met Azure Portal om taken te verdelen over VM's
 
@@ -68,7 +68,7 @@ In deze sectie gaat u een virtueel netwerk en een subnet maken.
     | Resourcegroep   | Selecteer **CreateIntLBQS-rg** |
     | **Exemplaardetails** |                                                                 |
     | Naam             | Voer **myVNet** in                                    |
-    | Regio           | Selecteer **Europa - west** |
+    | Regio           | Selecteren **(Europa) Europa-West** |
 
 3. Selecteer het tabblad **IP-adressen** of klik op de knop **Volgende: IP-adressen** onderaan de pagina.
 
@@ -106,16 +106,17 @@ In deze sectie gaat u een virtueel netwerk en een subnet maken.
 
 ## <a name="create-load-balancer"></a>Load balancer maken
 
-1. Selecteer linksboven in het scherm de optie **Een resource maken** > **Netwerken** > **Load balancer**.
-
-2. Typ of selecteer de volgende informatie op het tabblad **Basisbeginselen** van de pagina **Load balancer maken**: 
+1. Selecteer **Een resource maken**. 
+2. Voer in het zoekvak **Load Balancer** in. Selecteer **Load Balancer** in de zoek resultaten.
+3. Selecteer op de pagina **Load Balancer** de optie **maken**.
+4. Op de pagina **Load Balancer maken** voert u de volgende informatie in: 
 
     | Instelling                 | Waarde                                              |
     | ---                     | ---                                                |
     | Abonnement               | Selecteer uw abonnement.    |    
     | Resourcegroep         | Selecteer **CreateIntLBQS** die u in de vorige stap hebt gemaakt.|
     | Naam                   | Voer **myLoadBalancer** in                                   |
-    | Regio         | Selecteer **Europa - west**.                                        |
+    | Regio         | Selecteer **(Europe) Europa-West**.                                        |
     | Type          | selecteer **Intern**.                                        |
     | SKU           | selecteer **Standard** |
     | Virtueel netwerk | Selecteer **myVNet** die u in de vorige stap hebt gemaakt. |
@@ -228,7 +229,7 @@ Deze VM's worden toegevoegd aan de back-endpool van de load balancer die eerder 
     | Resourcegroep | Selecteer **CreateIntLBQS-rg** |
     | **Exemplaardetails** |  |
     | Naam van de virtuele machine | Voer **myVM1** in |
-    | Regio | Selecteer **Europa - west** |
+    | Regio | Selecteren **(Europa) Europa-West** |
     | Beschikbaarheidsopties | Selecteer **Beschikbaarheidszones** |
     | Beschikbaarheidszone | Selecteer **1** |
     | Installatiekopie | Selecteer **Windows Server 2019 Datacenter** |
@@ -303,7 +304,7 @@ In deze sectie gaat u een virtueel netwerk en een subnet maken.
     | Resourcegroep   | Selecteer **CreateIntLBQS-rg** |
     | **Exemplaardetails** |                                                                 |
     | Naam             | Voer **myVNet** in                                    |
-    | Regio           | Selecteer **Europa - west** |
+    | Regio           | Selecteren **(Europa) Europa-West** |
 
 3. Selecteer het tabblad **IP-adressen** of klik op de knop **Volgende: IP-adressen** onderaan de pagina.
 
@@ -350,7 +351,7 @@ In deze sectie gaat u een virtueel netwerk en een subnet maken.
     | Abonnement               | Selecteer uw abonnement.    |    
     | Resourcegroep         | Selecteer **CreateIntLBQS** die u in de vorige stap hebt gemaakt.|
     | Naam                   | Voer **myLoadBalancer** in                                   |
-    | Regio         | Selecteer **Europa - west**.                                        |
+    | Regio         | Selecteer **(Europe) Europa-West**.                                        |
     | Type          | selecteer **Intern**.                                        |
     | SKU           | Selecteer **Basic** |
     | Virtueel netwerk | Selecteer **myVNet** die u in de vorige stap hebt gemaakt. |

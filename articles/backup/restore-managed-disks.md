@@ -3,12 +3,12 @@ title: Azure Managed Disks herstellen
 description: Meer informatie over het herstellen van Azure Managed Disks vanuit de Azure Portal.
 ms.topic: conceptual
 ms.date: 01/07/2021
-ms.openlocfilehash: b9c9a22f25a8003151217bec15b618e3c380e67e
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 995217cd17d1e2a16cd7a5f963ee88aa7116d4a7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737373"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703746"
 ---
 # <a name="restore-azure-managed-disks-in-preview"></a>Azure Managed Disks herstellen (in preview-versie)
 
@@ -66,7 +66,7 @@ De volgende vereisten zijn vereist voor het uitvoeren van een herstel bewerking:
     >
     >Tijdens geplande back-ups of een back-upbewerking op aanvraag, Azure Backup slaat de incrementele moment opnamen van de schijf op in de momentopname resource groep die is gegeven tijdens het configureren van de back-up van de schijf. Azure Backup maakt gebruik van deze incrementele moment opnamen tijdens de herstel bewerking. Als de moment opnamen worden verwijderd of verplaatst van de resource groep voor moment opnamen of als de functie toewijzingen van de back-upkluis zijn ingetrokken voor de resource groep voor moment opnamen, mislukt de herstel bewerking.
 
-1. Als de schijf die moet worden hersteld, is versleuteld met door de [klant beheerde sleutels (CMK)](https://docs.microsoft.com/azure/virtual-machines/disks-enable-customer-managed-keys-portal) of met [dubbele versleuteling met door het platform beheerde sleutels en door de klant beheerde sleutels](https://docs.microsoft.com/azure/virtual-machines/disks-enable-double-encryption-at-rest-portal), wijst u de machtiging **Lees** functie toe aan de beheerde identiteit van de back-upkluis op de **schijf Encryption set** resource.
+1. Als de schijf die moet worden hersteld, is versleuteld met door de [klant beheerde sleutels (CMK)](../virtual-machines/disks-enable-customer-managed-keys-portal.md) of met [dubbele versleuteling met door het platform beheerde sleutels en door de klant beheerde sleutels](../virtual-machines/disks-enable-double-encryption-at-rest-portal.md), wijst u de machtiging **Lees** functie toe aan de beheerde identiteit van de back-upkluis op de **schijf Encryption set** resource.
 
 Als aan de vereisten wordt voldaan, voert u de volgende stappen uit om de herstel bewerking uit te voeren.
 

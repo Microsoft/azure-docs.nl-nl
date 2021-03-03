@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: erhopf
-ms.openlocfilehash: 1cd90bc1906140e6e559c1557234458035e54042
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 22db0006e6abb38439a2db46584559dcd9ce3f3a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99524699"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101722361"
 ---
 # <a name="prepare-data-to-create-a-custom-voice"></a>Gegevens voorbereiden voor het maken van een aangepaste spraak
 
@@ -27,9 +27,9 @@ Voordat u uw eigen stem model voor tekst naar spraak kunt trainen, hebt u audio-
 > Als u een Neural-stem wilt trainen, moet u een profiel voor spraak-talen opgeven met het bestand met de bestands toestemming van de stem talen bevestiging dat zijn/haar spraak gegevens worden gebruikt voor het trainen van een aangepast spraak model. Zorg ervoor dat u de onderstaande zin opneemt wanneer u het opname script voorbereidt. 
 
 > "I [Geef uw voor-en achternaam op] Houd er rekening mee dat de opnamen van mijn stem worden gebruikt door [de naam van het bedrijf te vermelden] om een synthetische versie van mijn stem te maken en te gebruiken."
-Deze zin wordt gebruikt om te controleren of de trainings gegevens worden uitgevoerd door dezelfde persoon die de toestemming doet. Lees hier meer over de [Voice-talen verificatie](https://aka.ms/CNV-data-privacy) .
+Deze zin wordt gebruikt om te controleren of de trainings gegevens worden uitgevoerd door dezelfde persoon die de toestemming doet. Lees hier meer over de [Voice-talen verificatie](/legal/cognitive-services/speech-service/custom-neural-voice/data-privacy-security-custom-neural-voice?context=%2fazure%2fcognitive-services%2fspeech-service%2fcontext%2fcontext) .
 
-> Aangepaste Neural Voice is beschikbaar met beperkte toegang. Zorg ervoor dat u bekend bent met de [vereiste AI-vereisten](https://aka.ms/gating-overview) en [Pas de toegang hier toe](https://aka.ms/customneural). 
+> Aangepaste Neural Voice is beschikbaar met beperkte toegang. Zorg ervoor dat u bekend bent met de [vereiste AI-vereisten](/legal/cognitive-services/speech-service/custom-neural-voice/limited-access-custom-neural-voice?context=%2fazure%2fcognitive-services%2fspeech-service%2fcontext%2fcontext) en [Pas de toegang hier toe](https://aka.ms/customneural). 
 
 ## <a name="data-types"></a>Gegevenstypen
 

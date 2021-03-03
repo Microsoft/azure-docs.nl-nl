@@ -3,16 +3,18 @@ title: Webhooks om te reageren op register acties
 description: Meer informatie over het gebruik van webhooks om gebeurtenissen te activeren wanneer push-of pull-acties worden uitgevoerd in uw register opslagplaatsen.
 ms.topic: article
 ms.date: 05/24/2019
-ms.openlocfilehash: 1db1098da81e6cf9ecb262c99f705b77af2efd26
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5374b58ba72727500294a173c26e9a131b29fe34
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004480"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101722242"
 ---
 # <a name="using-azure-container-registry-webhooks"></a>Azure Container Registry-webhooks gebruiken
 
 Een Azure-containerregister slaat persoonlijke Docker-containerinstallatiekopieën op en beheert ze, vergelijkbaar met de manier waarop Docker Hub openbare Docker-installatiekopieën opslaat. Het kan ook opslag plaatsen hosten voor [helm-grafieken](container-registry-helm-repos.md) (preview), een verpakkings indeling voor het implementeren van toepassingen naar Kubernetes. U kunt webhooks gebruiken om gebeurtenissen te activeren wanneer bepaalde acties in een van uw register opslagplaatsen worden uitgevoerd. Webhooks kunnen reageren op gebeurtenissen op het register niveau of de scope kan worden beperkt tot een specifieke opslagplaats label. Met een  [geo-gerepliceerd](container-registry-geo-replication.md) REGI ster configureert u elke webhook om te reageren op gebeurtenissen in een specifieke regionale replica.
+
+Het eind punt voor een webhook moet openbaar toegankelijk zijn vanuit het REGI ster. U kunt register-webhook-aanvragen configureren om te verifiëren bij een beveiligd eind punt.
 
 Zie [Azure container Registry webhook-schema verwijzing](container-registry-webhook-reference.md)voor meer informatie over webhook-aanvragen.
 
@@ -23,7 +25,7 @@ Zie [Azure container Registry webhook-schema verwijzing](container-registry-webh
 
 ## <a name="create-webhook---azure-portal"></a>Webhook-Azure Portal maken
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Navigeer naar het container register waarin u een webhook wilt maken.
 1. Onder **Services** selecteert u **webhooks**.
 1. Selecteer **toevoegen** op de werk balk van de webhook.

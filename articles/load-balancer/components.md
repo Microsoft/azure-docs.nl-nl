@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/04/2020
 ms.author: allensu
-ms.openlocfilehash: 6ddfe581bb3f2f584fdec0229981321297c9a77f
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
-ms.translationtype: HT
+ms.openlocfilehash: 6bf090cde7262fdae9c98ef55227bf2925937dbf
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97399188"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101739828"
 ---
 # <a name="azure-load-balancer-components"></a>Azure Load Balancer-componenten
 
@@ -131,6 +131,7 @@ Basic Load Balancer biedt geen ondersteuning voor uitgaande regels.
 - Uitgaande stroom van een back-end-VM naar een front-end van een interne Load Balancer mislukt.
 - Een regel voor een load balancer kan niet twee virtuele netwerken omvatten.  Front-ends en de bijbehorende back-endinstanties moeten zich in hetzelfde virtuele netwerk bevinden.  
 - Het doorsturen van IP-fragmenten wordt niet ondersteund voor taakverdelingsregels. IP-fragmentatie van UDP- en TCP-pakketten wordt niet ondersteund in taakverdelingsregels. De taakverdelingsregels voor HA-poorten kunnen worden gebruikt voor het doorsturen van bestaande IP-fragmenten. Zie [Overzicht van poorten met hoge beschikbaarheid](load-balancer-ha-ports-overview.md) voor meer informatie.
+- U kunt slechts één openbaar Load Balancer en één interne Load Balancer per beschikbaarheidsset hebben
 
 ## <a name="next-steps"></a>Volgende stappen
 

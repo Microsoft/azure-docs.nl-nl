@@ -4,19 +4,18 @@ description: Leer hoe u uw eerste serverloze Azure-functie kunt maken met behulp
 ms.topic: how-to
 ms.date: 03/26/2020
 ms.custom: devx-track-csharp, mvc, devcenter, cc996988-fb4f-47
-ms.openlocfilehash: 63e9c87d1d94d6b803c27862bc9f2755e02f3111
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 8d394a6f71fc5d31bd72a67a876a24a500a7cf01
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99980934"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101732175"
 ---
 # <a name="create-your-first-function-in-the-azure-portal"></a>Uw eerste functie maken in Azure Portal
 
 Met Azure Functions kunt u uw code in een serverloze omgeving uitvoeren zonder dat u eerst een virtuele machine (VM) hoeft te maken of een webtoepassing moet publiceren. In dit artikel leert u hoe u Azure Functions kunt gebruiken om een ' Hallo wereld ' HTTP-trigger functie te maken in de Azure Portal.
 
->[!NOTE]
->Bewerken in de portal wordt alleen ondersteund voor Java script-, Power shell-, type script-en C#-scripts.<br><br>Voor C#-klassen bibliotheek-, Java-en python-functies kunt u de functie-app maken in de portal, maar u moet ook de functies lokaal maken en deze vervolgens publiceren naar Azure. 
+[!INCLUDE [functions-in-portal-editing-note](../../includes/functions-in-portal-editing-note.md)] 
 
 In plaats daarvan wordt u aangeraden [uw functies lokaal te ontwikkelen](functions-develop-local.md) en te publiceren naar een functie-app in Azure.  
 Gebruik een van de volgende koppelingen om aan de slag te gaan met de gekozen lokale ontwikkel omgeving en-taal:

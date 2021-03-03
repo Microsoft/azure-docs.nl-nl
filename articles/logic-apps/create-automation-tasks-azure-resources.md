@@ -3,15 +3,15 @@ title: Automation-taken maken om Azure-resources te beheren en te controleren
 description: Stel geautomatiseerde taken in die u helpen bij het beheren van Azure-resources en het bewaken van kosten door werk stromen te maken die worden uitgevoerd op Azure Logic Apps.
 services: logic-apps
 ms.suite: integration
-ms.reviewer: deli, jonfan, logicappspm
+ms.reviewer: logicappspm
 ms.topic: conceptual
-ms.date: 09/23/2020
-ms.openlocfilehash: 2b3b40b5958df52dabf92155a1de809578f1d374
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.date: 02/19/2021
+ms.openlocfilehash: 8180fe8554e5fff83e4caef8c245839518649ca1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92201117"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719046"
 ---
 # <a name="manage-azure-resources-and-monitor-costs-by-creating-automation-tasks-preview"></a>Azure-resources beheren en kosten bewaken door automatiserings taken te maken (preview)
 
@@ -71,13 +71,15 @@ Azure Automation is een op de cloud gebaseerde automatiserings-en configuratie s
 
    ![Scherm opname van het gedeelte taken van het opslag account waarin de werk balk ' toevoegen ' is geselecteerd](./media/create-automation-tasks-azure-resources/add-automation-task.png)
 
-1. Selecteer in het deel venster **een taak toevoegen** onder **Selecteer een sjabloon**de sjabloon voor de taak die u wilt maken en selecteer **volgende: authenticatie**.
+1. Selecteer in het deel venster **een taak toevoegen** onder **Selecteer een sjabloon** de sjabloon voor de taak die u wilt maken. Als de volgende pagina niet wordt weer gegeven, selecteert u **volgende: authenticatie**.
 
    In dit voor beeld wordt de sjabloon **maandelijkse kosten voor resource taak verzenden** geselecteerd.
 
    ![Scherm afbeelding met de selecties ' maandelijks verzend kosten voor resource ' en ' volgende: verificatie '](./media/create-automation-tasks-azure-resources/select-task-template.png)
 
-1. Onder **verificatie**selecteert u in de sectie **verbindingen** de optie **maken** voor elke verbinding, zodat u verificatie referenties voor die verbinding kunt opgeven. De verbindings typen in elke taak variëren op basis van de taak.
+1. Onder **verificatie** selecteert u in de sectie **verbindingen** de optie **maken** voor elke verbinding die wordt weer gegeven in de taak, zodat u verificatie referenties kunt opgeven voor alle verbindingen. De verbindings typen in elke taak variëren op basis van de taak.
+
+   In dit voor beeld ziet u slechts één van de verbindingen die voor deze taak zijn vereist.
 
    ![Scherm opname van de geselecteerde optie ' maken ' voor de Azure Resource Manager verbinding](./media/create-automation-tasks-azure-resources/create-authenticate-connections.png)
 
@@ -89,9 +91,9 @@ Azure Automation is een op de cloud gebaseerde automatiserings-en configuratie s
 
    ![Scherm opname van de verbinding die is gemaakt](./media/create-automation-tasks-azure-resources/create-connection-success.png)
 
-1. Nadat u alle vereiste verbindingen hebt geverifieerd, selecteert u **volgende: Configuratie**.
+1. Nadat u alle verbindingen hebt geverifieerd, selecteert u **volgende: Configuratie** als de volgende pagina niet wordt weer gegeven.
 
-1. Geef onder **configuratie**een naam op voor de taak en eventuele andere informatie die nodig is voor de taak. Als u gereed bent, selecteert u **Maken**.
+1. Geef onder **configuratie** een naam op voor de taak en eventuele andere informatie die nodig is voor de taak. Selecteer **Maken** als u klaar bent.
 
    > [!NOTE]
    > U kunt de naam van de taak niet wijzigen nadat deze is gemaakt. Overweeg daarom een naam die nog steeds van toepassing is als u [de onderliggende werk stroom bewerkt](#edit-task-workflow). Wijzigingen die u aanbrengt in de onderliggende werk stroom gelden alleen voor de taak die u hebt gemaakt, niet van de taak sjabloon.
@@ -107,7 +109,7 @@ Azure Automation is een op de cloud gebaseerde automatiserings-en configuratie s
    ![Scherm afbeelding van de lijst met automatiserings taken](./media/create-automation-tasks-azure-resources/automation-tasks-list.png)
 
    > [!TIP]
-   > Als de taak niet onmiddellijk wordt weer gegeven, probeert u de lijst met taken te vernieuwen of wacht u even voordat u de gegevens vernieuwt. Selecteer **vernieuwen**op de werk balk.
+   > Als de taak niet onmiddellijk wordt weer gegeven, probeert u de lijst met taken te vernieuwen of wacht u even voordat u de gegevens vernieuwt. Selecteer **vernieuwen** op de werk balk.
 
    Nadat de geselecteerde taak is uitgevoerd, ontvangt u een e-mail bericht dat er als volgt uitziet:
 
@@ -121,7 +123,7 @@ Voer de volgende stappen uit om de geschiedenis van de uitvoeringen van een taak
 
 1. Zoek in het [Azure Portal](https://portal.azure.com)naar de resource die de taak geschiedenis bevat die u wilt controleren.
 
-1. Selecteer in het menu van de resource onder **instellingen**de optie **automation tasks**.
+1. Selecteer in het menu van de resource onder **instellingen** de optie **automation tasks**.
 
 1. Zoek in de lijst taken de taak die u wilt controleren. Selecteer in de kolom **runs** van de taak **weer gave**.
 
@@ -182,7 +184,7 @@ Als u een taak wilt wijzigen, hebt u de volgende opties:
 
 1. Zoek in het [Azure Portal](https://portal.azure.com)de resource met de taak die u wilt bijwerken.
 
-1. Selecteer **taken**in het resource menu onder **Automation**.
+1. Selecteer **taken** in het resource menu onder **Automation**.
 
 1. Zoek in de lijst taken de taak die u wilt bijwerken. Open het menu met weglatings tekens (**...**) van de taak en selecteer **in-line bewerken**.
 
@@ -213,7 +215,7 @@ Wanneer u de onderliggende werk stroom voor een Automation-taak wijzigt, zijn de
 
 1. Zoek in het [Azure Portal](https://portal.azure.com)de resource met de taak die u wilt bijwerken.
 
-1. Selecteer **taken**in het resource menu onder **Automation**.
+1. Selecteer **taken** in het resource menu onder **Automation**.
 
 1. Zoek in de lijst taken de taak die u wilt bijwerken. Open het menu met weglatings tekens (**...**) van de taak en selecteer **openen in Logic apps**.
 
@@ -231,15 +233,15 @@ Wanneer u de onderliggende werk stroom voor een Automation-taak wijzigt, zijn de
 
 1. Voer de volgende stappen uit om uw werk stroom te klonen en in plaats daarvan de gekopieerde versie te bewerken:
 
-   1. Selecteer **overzicht**in het menu werk stroom van de logische app.
+   1. Selecteer **overzicht** in het menu werk stroom van de logische app.
 
-   1. Selecteer **klonen**op de werk balk van het overzichts venster.
+   1. Selecteer **klonen** op de werk balk van het overzichts venster.
 
-   1. Voer in het deel venster Logic-app maken onder **naam**een nieuwe naam in voor de gekopieerde logische app-werk stroom.
+   1. Voer in het deel venster Logic-app maken onder **naam** een nieuwe naam in voor de gekopieerde logische app-werk stroom.
 
-      Met uitzonde ring van de status van de **logische app**zijn de andere eigenschappen niet beschikbaar om te bewerken. 
+      Met uitzonde ring van de status van de **logische app** zijn de andere eigenschappen niet beschikbaar om te bewerken. 
       
-   1. Selecteer onder **status van logische app**de optie **uitgeschakeld** zodat de gekloonde werk stroom niet wordt uitgevoerd wanneer u de wijzigingen aanbrengt. U kunt de werk stroom inschakelen wanneer u klaar bent om uw wijzigingen te testen.
+   1. Selecteer onder **status van logische app** de optie **uitgeschakeld** zodat de gekloonde werk stroom niet wordt uitgevoerd wanneer u de wijzigingen aanbrengt. U kunt de werk stroom inschakelen wanneer u klaar bent om uw wijzigingen te testen.
 
    1. Nadat Azure de inrichting van uw gekloonde werk stroom heeft voltooid, kunt u die werk stroom vinden en openen in de ontwerp functie voor logische apps.
 
@@ -255,7 +257,7 @@ Wanneer u de onderliggende werk stroom voor een Automation-taak wijzigt, zijn de
 
    ![Scherm opname van de werk balk ontwerpen en de geselecteerde opdracht opslaan](./media/create-automation-tasks-azure-resources/save-updated-workflow.png)
 
-1. Selecteer **uitvoeren**op de werk balk van de ontwerp functie om de bijgewerkte werk stroom te testen en uit te voeren.
+1. Selecteer **uitvoeren** op de werk balk van de ontwerp functie om de bijgewerkte werk stroom te testen en uit te voeren.
 
    Nadat de uitvoering is voltooid, worden in de ontwerp functie Details van de werk stroom weer gegeven.
 
@@ -265,7 +267,7 @@ Wanneer u de onderliggende werk stroom voor een Automation-taak wijzigt, zijn de
 
 ## <a name="provide-feedback"></a>Feedback geven
 
-We horen graag van u. [Neem contact op met het Azure Logic apps team](mailto:logicapps@microsoft.com)om fouten te rapporteren, feedback te geven of vragen over deze preview-functie te stellen.
+We horen graag van u. [Neem contact op met het Azure Logic apps team](mailto:logicappspm@microsoft.com)om fouten te rapporteren, feedback te geven of vragen over deze preview-functie te stellen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

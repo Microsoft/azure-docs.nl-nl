@@ -16,12 +16,12 @@ ms.date: 10/20/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78dcd9d020923251439a05316569b559c19057d1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: effdd156858caf5717aac92433e8bc5f4f6147ad
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89661456"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686866"
 ---
 # <a name="renew-federation-certificates-for-microsoft-365-and-azure-active-directory"></a>Federatie certificaten voor Microsoft 365 en Azure Active Directory vernieuwen
 ## <a name="overview"></a>Overzicht
@@ -157,10 +157,10 @@ Als **AutoCertificateRollover** echter is ingesteld op **True**, maar uw federat
    >
 3. Bekijk de uitvoer van de opdracht op alle certificaten die worden weer gegeven. Als AD FS een nieuw certificaat hebt gegenereerd, ziet u in de uitvoer twee certificaten: een waarvoor de **IsPrimary** -waarde **waar** is en de **NotAfter** -datum ligt binnen 5 dagen en een waarvoor **IsPrimary** **Onwaar** is en **NotAfter** ongeveer een jaar in de toekomst ligt.
 4. Als u slechts één certificaat ziet en de **NotAfter** -datum binnen vijf dagen valt, moet u een nieuw certificaat genereren.
-5. Als u een nieuw certificaat wilt genereren, voert u de volgende opdracht uit in een Power shell-opdracht prompt: `PS C:\>Update-ADFSCertificate –CertificateType token-signing` .
+5. Als u een nieuw certificaat wilt genereren, voert u de volgende opdracht uit in een Power shell-opdracht prompt: `PS C:\Update-ADFSCertificate –CertificateType token-signing` .
 6. Controleer de update door de volgende opdracht opnieuw uit te voeren: PS C: \> Get-ADFSCertificate – CertificateType token ondertekening
 
-Twee certificaten moeten nu worden vermeld, waarvan een van de **NotAfter** datum ongeveer één jaar in de toekomst heeft en waarvoor de **IsPrimary** -waarde **False**is.
+Twee certificaten moeten nu worden vermeld, waarvan een van de **NotAfter** datum ongeveer één jaar in de toekomst heeft en waarvoor de **IsPrimary** -waarde **False** is.
 
 ### <a name="step-2-update-the-new-token-signing-certificates-for-the-microsoft-365-trust"></a>Stap 2: de nieuwe token handtekening certificaten bijwerken voor de vertrouwens relatie van de Microsoft 365
 Werk Microsoft 365 met de nieuwe token handtekening certificaten die voor de vertrouwens relatie moeten worden gebruikt als volgt bij.

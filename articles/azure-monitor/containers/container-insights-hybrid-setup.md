@@ -1,22 +1,22 @@
 ---
-title: Hybride Kubernetes-clusters met Azure Monitor voor containers configureren | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u Azure Monitor voor containers kunt configureren voor het bewaken van Kubernetes-clusters die worden gehost op Azure Stack of een andere omgeving.
+title: Hybride Kubernetes-clusters configureren met container Insights | Microsoft Docs
+description: In dit artikel wordt beschreven hoe u container Insights kunt configureren om Kubernetes-clusters te bewaken die worden gehost op Azure Stack of een andere omgeving.
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 12901b1d2d7edd85fbe1650600856d09105c15b2
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: d2692b4a634d60ef62339f68277591d711260712
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610284"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711243"
 ---
-# <a name="configure-hybrid-kubernetes-clusters-with-azure-monitor-for-containers"></a>Hybride Kubernetes-clusters met Azure Monitor voor containers configureren
+# <a name="configure-hybrid-kubernetes-clusters-with-container-insights"></a>Hybride Kubernetes-clusters met container Insights configureren
 
-Azure Monitor voor containers biedt uitgebreide bewakings ervaring voor de Azure Kubernetes-service (AKS) en [AKS-engine op Azure](https://github.com/Azure/aks-engine), een zelf beheerd Kubernetes-cluster dat wordt gehost op Azure. In dit artikel wordt beschreven hoe u de bewaking van Kubernetes-clusters die buiten Azure worden gehost, inschakelt en een vergelijk bare bewakings ervaring krijgt.
+Container Insights biedt uitgebreide bewakings ervaring voor de Azure Kubernetes-service (AKS) en [AKS-engine op Azure](https://github.com/Azure/aks-engine), een zelf beheerd Kubernetes-cluster dat wordt gehost op Azure. In dit artikel wordt beschreven hoe u de bewaking van Kubernetes-clusters die buiten Azure worden gehost, inschakelt en een vergelijk bare bewakings ervaring krijgt.
 
 ## <a name="supported-configurations"></a>Ondersteunde configuraties
 
-De volgende configuraties worden officieel ondersteund met Azure Monitor voor containers. Als u een andere versie van Kubernetes-en besturingssysteem versies hebt, kunt u een e-mail sturen naar askcoin@microsoft.com .
+De volgende configuraties worden officieel ondersteund met container Insights. Als u een andere versie van Kubernetes-en besturingssysteem versies hebt, kunt u een e-mail sturen naar askcoin@microsoft.com .
 
 - Verschillend
 
@@ -36,19 +36,19 @@ De volgende configuraties worden officieel ondersteund met Azure Monitor voor co
 
 Voordat u begint, moet u ervoor zorgen dat u over het volgende beschikt:
 
-- Een [Log Analytics-werkruimte](../platform/design-logs-deployment.md).
+- Een [Log Analytics-werkruimte](../logs/design-logs-deployment.md).
 
-    Azure Monitor voor containers ondersteunt een Log Analytics-werk ruimte in de regio's die worden vermeld in azure- [producten per regio](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=monitor). Om uw eigen werk ruimte te maken, kan deze worden gemaakt via [Azure Resource Manager](../samples/resource-manager-workspace.md), via [Power shell](../scripts/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json)of in de [Azure Portal](../learn/quick-create-workspace.md).
+    Container Insights ondersteunt een Log Analytics-werk ruimte in de regio's die worden vermeld in azure- [producten per regio](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=monitor). Om uw eigen werk ruimte te maken, kan deze worden gemaakt via [Azure Resource Manager](../logs/resource-manager-workspace.md), via [Power shell](../logs/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json)of in de [Azure Portal](../logs/quick-create-workspace.md).
 
     >[!NOTE]
     >Het inschakelen van de bewaking van meerdere clusters met dezelfde cluster naam op dezelfde Log Analytics werk ruimte wordt niet ondersteund. Cluster namen moeten uniek zijn.
     >
 
-- U bent lid van de **rol log Analytics Inzender** om container bewaking in te scha kelen. Voor meer informatie over het beheren van de toegang tot een Log Analytics-werk ruimte raadpleegt [u toegang tot de werk ruimte en de gegevens](../platform/manage-access.md)van een logboek.
+- U bent lid van de **rol log Analytics Inzender** om container bewaking in te scha kelen. Voor meer informatie over het beheren van de toegang tot een Log Analytics-werk ruimte raadpleegt [u toegang tot de werk ruimte en de gegevens](../logs/manage-access.md)van een logboek.
 
-- Als u de bewakings gegevens wilt bekijken, moet u de rol van [*log Analytics lezer*](../platform/manage-access.md#manage-access-using-azure-permissions) hebben in de log Analytics-werk ruimte, geconfigureerd met Azure monitor voor containers.
+- Als u de bewakings gegevens wilt bekijken, moet u de rol van [*log Analytics lezer*](../logs/manage-access.md#manage-access-using-azure-permissions) hebben in de log Analytics-werk ruimte, geconfigureerd met container Insights.
 
-- [Helm-client](https://helm.sh/docs/using_helm/) voor het voorbereiden van de grafiek Azure monitor voor containers voor het opgegeven Kubernetes-cluster.
+- [Helm-client](https://helm.sh/docs/using_helm/) voor het onboarden van de container Insights-grafiek voor het opgegeven Kubernetes-cluster.
 
 - De volgende proxy-en firewall configuratie gegevens zijn vereist voor de container versie van de Log Analytics-agent voor Linux om te communiceren met Azure Monitor:
 
@@ -67,11 +67,11 @@ Voordat u begint, moet u ervoor zorgen dat u over het volgende beschikt:
 
 ## <a name="enable-monitoring"></a>Bewaking inschakelen
 
-Het inschakelen van Azure Monitor voor containers voor het hybride Kubernetes-cluster bestaat uit de volgende stappen in de aangegeven volg orde uit te voeren.
+Het inschakelen van container Insights voor het hybride Kubernetes-cluster bestaat uit het uitvoeren van de volgende stappen in de aangegeven volg orde.
 
 1. Configureer uw Log Analytics-werk ruimte met de container Insights-oplossing.   
 
-2. Schakel de Azure Monitor-grafiek voor containers HELM in met Log Analytics werk ruimte.
+2. Schakel het HELM-diagram voor container Insights in met Log Analytics werk ruimte.
 
 Zie [hier](../../azure-monitor/insights/solutions.md)voor meer informatie over het controleren van oplossingen in azure monitor.
 
@@ -252,7 +252,7 @@ Deze methode bevat twee JSON-sjablonen. Met één sjabloon geeft u de configurat
 
 ## <a name="install-the-helm-chart"></a>Het HELM-diagram installeren
 
-In deze sectie installeert u de container agent voor Azure Monitor voor containers. Voordat u doorgaat, moet u de werk ruimte-ID identificeren die is vereist voor de `omsagent.secret.wsid` para meter en de primaire sleutel die vereist is voor de `omsagent.secret.key` para meter. U kunt deze informatie vinden door de volgende stappen uit te voeren en vervolgens de opdrachten uit te voeren om de agent te installeren met behulp van de HELM-grafiek.
+In deze sectie installeert u de container agent voor container Insights. Voordat u doorgaat, moet u de werk ruimte-ID identificeren die is vereist voor de `omsagent.secret.wsid` para meter en de primaire sleutel die vereist is voor de `omsagent.secret.key` para meter. U kunt deze informatie vinden door de volgende stappen uit te voeren en vervolgens de opdrachten uit te voeren om de agent te installeren met behulp van de HELM-grafiek.
 
 1. Voer de volgende opdracht uit om de werk ruimte-ID te identificeren:
 
@@ -325,14 +325,14 @@ Ondersteunde API-definities voor het Azure Stack hub-cluster vindt u in dit voor
 
 Als u een stert met grafiek versie 1.0.0, worden de instellingen voor het verzamelen van agents bepaald vanuit de ConfigMap. Raadpleeg [hier](container-insights-agent-config.md)de documentatie over het verzamelen van instellingen voor agent gegevens.
 
-Nadat u de grafiek hebt geïmplementeerd, kunt u de gegevens voor uw hybride Kubernetes-cluster in Azure Monitor voor containers in de Azure Portal controleren.  
+Nadat u de grafiek hebt geïmplementeerd, kunt u de gegevens voor uw hybride Kubernetes-cluster in container Insights bekijken via de Azure Portal.  
 
 >[!NOTE]
 >De latentie van de opname is ongeveer vijf tot tien minuten van de agent die moet worden doorgevoerd in de Azure Log Analytics-werk ruimte. De status van het cluster toont de waarde **geen gegevens** of is **onbekend** totdat alle vereiste bewakings gegevens beschikbaar zijn in azure monitor.
 
 ## <a name="configure-proxy-endpoint"></a>Proxy-eind punt configureren
 
-Vanaf grafiek versie 2.7.1 wordt de grafiek ondersteund om het proxy-eind punt op te geven met de `omsagent.proxy` grafiek parameter. Hierdoor kan het communiceren via uw proxy server. De communicatie tussen de Azure Monitor voor containers agent en Azure Monitor kan een HTTP-of HTTPS-proxy server zijn en zowel anonieme als basis verificatie (gebruikers naam/wacht woord) worden ondersteund.
+Vanaf grafiek versie 2.7.1 wordt de grafiek ondersteund om het proxy-eind punt op te geven met de `omsagent.proxy` grafiek parameter. Hierdoor kan het communiceren via uw proxy server. De communicatie tussen de container Insights-agent en Azure Monitor kan een HTTP-of HTTPS-proxy server zijn, en zowel anonieme als basis verificatie (gebruikers naam en wacht woord) worden ondersteund.
 
 De waarde van de proxy configuratie heeft de volgende syntaxis: `[protocol://][user:password@]proxyhost[:port]`
 
@@ -356,7 +356,7 @@ Als u het protocol als **http** opgeeft, worden de HTTP-aanvragen gemaakt met be
 Als er een fout optreedt bij het inschakelen van bewaking voor uw hybride Kubernetes-cluster, kopieert u het Power shell-script [TroubleshootError_nonAzureK8s.ps1](https://aka.ms/troubleshoot-non-azure-k8s) en slaat u het op in een map op uw computer. Dit script wordt verstrekt om te helpen bij het detecteren en oplossen van de gevonden problemen. De problemen waarmee het volgende kan worden opgelost:
 
 - De opgegeven Log Analytics werk ruimte is geldig
-- De Log Analytics-werk ruimte is geconfigureerd met de Azure Monitor voor containers. Als dat niet het geval is, configureert u de werk ruimte.
+- De Log Analytics-werk ruimte is geconfigureerd met de container Insights-oplossing. Als dat niet het geval is, configureert u de werk ruimte.
 - De OmsAgent-replicaset wordt uitgevoerd
 - OmsAgent-daemonset-peulen worden uitgevoerd
 - De OmsAgent Health-Service wordt uitgevoerd
@@ -372,4 +372,4 @@ Als u wilt uitvoeren met Azure PowerShell, gebruikt u de volgende opdrachten in 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als bewaking is ingeschakeld voor het verzamelen van het status-en resource gebruik van uw hybride Kubernetes-cluster en werk belastingen die hierop worden uitgevoerd, leert [u hoe u Azure monitor gebruikt](container-insights-analyze.md) voor containers.
+Als controle is ingeschakeld voor het verzamelen van het status-en resource gebruik van uw hybride Kubernetes-cluster en werk belastingen die hierop worden uitgevoerd, leert [u hoe u container Insights kunt gebruiken](container-insights-analyze.md) .

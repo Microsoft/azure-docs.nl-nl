@@ -5,15 +5,15 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: conceptual
-ms.date: 01/14/2021
+ms.date: 02/22/2021
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 99521a746a16a2d0de310fc6cfb2d2272e7b2593
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 0bfc09a372584a25c23060cef33d1f698e6d5ff3
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98706489"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101712603"
 ---
 # <a name="azure-importexport-system-requirements"></a>Systeemvereisten voor Azure Import/Export
 
@@ -43,7 +43,10 @@ De Azure import/export-service ondersteunt de volgende typen opslag accounts:
 
 - Standard Algemeen v2-opslag accounts (aanbevolen voor de meeste scenario's)
 - Blob Storage-accounts
-- Algemeen v1-opslag accounts (klassiek of Azure Resource Manager implementaties),
+- Algemeen v1-opslag accounts (klassiek of Azure Resource Manager implementaties)
+
+> [!IMPORTANT]
+> Ondersteuning voor het protocol Network File System (NFS) 3,0 in Azure Blob-opslag wordt niet ondersteund met Azure import/export.
 
 Zie [overzicht van Azure Storage-accounts](../storage/common/storage-account-overview.md)voor meer informatie over opslag accounts.
 

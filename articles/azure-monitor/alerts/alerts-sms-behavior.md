@@ -7,12 +7,12 @@ services: monitoring
 ms.topic: conceptual
 ms.date: 02/16/2018
 ms.subservice: alerts
-ms.openlocfilehash: 3ca776a1869874042a6a97cdd59dc00d3a917d33
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 98558c2b1525094277dd6c165349f25ce5cd3b23
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609573"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717873"
 ---
 # <a name="sms-alert-behavior-in-action-groups"></a>Gedrag van waarschuwingen via sms in actiegroepen
 
@@ -30,7 +30,7 @@ Een SMS-ontvanger die is geconfigureerd als onderdeel van een actie groep ontvan
 * De kortenaam van de actie groep waaraan deze waarschuwing is verzonden
 * Titel van de waarschuwing
 
-| REPLY | Description |
+| REPLY | Beschrijving |
 | ----- | ----------- |
 | SCHA `<Action Group Short name>` | Schakelt verdere SM'S uit van de actie groep |
 | KUNT `<Action Group Short name>` | Hiermee schakelt u SMS opnieuw in voor de actie groep |
@@ -42,7 +42,6 @@ Een SMS-ontvanger die is geconfigureerd als onderdeel van een actie groep ontvan
 >Als een gebruiker zich afmeldt bij SMS-waarschuwingen, maar vervolgens wordt toegevoegd aan een nieuwe actie groep; ze ontvangen SMS-waarschuwingen voor die nieuwe actie groep, maar blijven afgemeld bij alle vorige actie groepen.
 
 ## <a name="next-steps"></a>Volgende stappen
-Bekijk een [overzicht van waarschuwingen voor activiteiten logboeken](../platform/alerts-overview.md) en lees hoe u waarschuwingen ontvangt  
+Bekijk een [overzicht van waarschuwingen voor activiteiten logboeken](./alerts-overview.md) en lees hoe u waarschuwingen ontvangt  
 Meer informatie over de [limiet voor SMS-tarieven](alerts-rate-limiting.md)  
-Meer informatie over [actie groepen](../platform/action-groups.md)
-
+Meer informatie over [actie groepen](./action-groups.md)

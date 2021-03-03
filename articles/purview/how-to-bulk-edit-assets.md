@@ -7,12 +7,12 @@ ms.service: data-catalog
 ms.subservice: data-catalog-gen2
 ms.topic: conceptual
 ms.date: 11/24/2020
-ms.openlocfilehash: c42a6894c33993dc9aee5a9fdd10b1c3a3627320
-ms.sourcegitcommit: 287c20509c4cf21d20eea4619bbef0746a5cd46e
+ms.openlocfilehash: 77bfa3d22d628cf179e95cd4892ec030f22ab35f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97372110"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101693761"
 ---
 # <a name="how-to-bulk-edit-assets-to-tag-glossary-terms"></a>Activa bulksgewijs bewerken voor het labelen van termen in de woorden lijst
 
@@ -63,11 +63,15 @@ In dit artikel wordt beschreven hoe u meerdere woordenlijst termen in één acti
    
     :::image type="content" source="media/how-to-bulk-edit-assets/replace-list.png" alt-text="Scherm afbeelding van de voor waarden verwijderen.":::
 
-7. Als u klaar bent, sluit u de Blade bulksgewijs bewerken door **sluiten** of **Alles verwijderen en sluiten** te selecteren. Als u sluiten selecteert, worden de geselecteerde assets niet verwijderd. met alle verwijderen en sluiten worden alle geselecteerde assets verwijderd.
+7. Herhaal bovenstaande stappen voor classificaties, eigen aren en experts.
+
+    :::image type="content" source="media/how-to-bulk-edit-assets/all-list.png" alt-text="Scherm afbeelding van de voor waarden verwijderen.":::
+
+8. Als u klaar bent, sluit u de Blade bulksgewijs bewerken door **sluiten** of **Alles verwijderen en sluiten** te selecteren. Als u sluiten selecteert, worden de geselecteerde assets niet verwijderd. met alle verwijderen en sluiten worden alle geselecteerde assets verwijderd.
     :::image type="content" source="media/how-to-bulk-edit-assets/close-list.png" alt-text="Scherm opname van de afsluiting.":::
 
    > [!Important]
-   > Het aanbevolen aantal assets voor bulk bewerking is 15. Als u meer dan 15 selecteert, kunnen er prestatie problemen optreden.
+   > Het aanbevolen aantal assets voor bulk bewerking is 15. Als u meer dan 25 selecteert, kunnen er prestatie problemen optreden.
    > Het **geselecteerde vak weer geven** wordt alleen weer gegeven als er ten minste één activum is geselecteerd.
 
 

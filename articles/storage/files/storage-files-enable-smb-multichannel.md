@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 11/16/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 2444ec28a2618b638f78926e214de468f56c5e52
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 2f867fa6d4b7e1d864a85106b5d957a53d38eb76
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "95995463"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101732532"
 ---
 # <a name="enable-smb-multichannel-on-a-filestorage-account-preview"></a>SMB meerdere kanalen inschakelen op een FileStorage-account (preview-versie) 
 
@@ -28,7 +28,7 @@ Azure FileStorage-accounts ondersteunen SMB meerdere kanalen (preview), waardoor
 
 ## <a name="prerequisites"></a>Vereisten
 
-- [Maak een FileStorage-account](storage-how-to-create-premium-fileshare.md).
+- [Maak een FileStorage-account](./storage-how-to-create-file-share.md).
 - Als u van plan bent de Azure PowerShell-module te gebruiken, [installeert u de 3.0.1-Preview-versie van de module](https://www.powershellgallery.com/packages/Az.Storage/3.0.1-preview).
 
 ## <a name="getting-started"></a>Aan de slag
@@ -81,7 +81,7 @@ Stel de variabelen `$resourceGroupName` en de `$storageAccountName` resource gro
 Update-AzStorageFileServiceProperty -ResourceGroupName $resourceGroupName -StorageAccountName $storageAccountName -EnableSmbMultichannel $true 
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 Azure CLI biedt nog geen ondersteuning voor het configureren van SMB meerdere kanalen. Zie de portal instructies voor het configureren van SMB meerdere kanalen in het opslag account.
 
 ---

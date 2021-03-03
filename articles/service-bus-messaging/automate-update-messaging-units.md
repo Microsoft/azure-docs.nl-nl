@@ -3,12 +3,12 @@ title: Azure Service Bus-bericht eenheden automatisch bijwerken
 description: In dit artikel wordt beschreven hoe u de bericht eenheden van een Service Bus naam ruimte automatisch bijwerken kunt gebruiken.
 ms.topic: how-to
 ms.date: 09/15/2020
-ms.openlocfilehash: 932c7bb1235cb54aefe67253e38e1683187f4d2c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 594f9987bfa5a7a439fb862a0345d0004785b189
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100581644"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101720593"
 ---
 # <a name="automatically-update-messaging-units-of-an-azure-service-bus-namespace"></a>Bericht eenheden van een Azure Service Bus naam ruimte automatisch bijwerken 
 Met automatisch schalen kunt u de juiste hoeveelheid resources uitvoeren om de belasting van uw toepassing te verwerken. U kunt hiermee resources toevoegen voor het afhandelen van toename van de belasting en bespaart u geld door resources te verwijderen die niet actief zijn. Zie [overzicht van automatisch schalen in Microsoft Azure](../azure-monitor/autoscale/autoscale-overview.md) voor meer informatie over de functie voor automatisch schalen van Azure monitor. 
@@ -57,7 +57,7 @@ U kunt automatisch schalen van Messa ging-eenheden configureren door voor waarde
 U kunt een planning niet instellen op automatisch schalen op een specifieke dag of in een datum bereik voor een standaard voorwaarde. Deze schaal voorwaarde wordt uitgevoerd wanneer geen van de andere schaal voorwaarden met schema overeenkomt. 
 
 ### <a name="scale-based-on-a-metric"></a>Schalen op basis van een metrische waarde
-De volgende procedure laat zien hoe u een voor waarde toevoegt om automatisch bericht eenheden te verg Roten (uitschalen) wanneer het CPU-gebruik groter is dan 75% en de bericht eenheden verlagen (schalen in) wanneer het CPU-gebruik lager is dan 25%. Stappen worden uitgevoerd van 1 tot 2, 2 tot 4 en 4 tot en met 8. Op dezelfde manier worden er verlaagt tussen 8 en 4, 4 en 2 en 2 tot 1. 
+De volgende procedure laat zien hoe u een voor waarde toevoegt om automatisch bericht eenheden te verg Roten (uitschalen) wanneer het CPU-gebruik groter is dan 75% en de bericht eenheden verlagen (schalen in) wanneer het CPU-gebruik lager is dan 25%. Stappen worden uitgevoerd van 1 tot 2, 2 tot 4, 4 tot 8 en 8 tot 16. Op dezelfde manier worden er verlaagt, van 16 tot 8, 8 tot 4, 4 en 2, en 2 tot en met 1. 
 
 1. Selecteer op de pagina **instellingen** voor automatisch schalen **aangepaste schaal aanpassing** voor de optie **kiezen hoe u uw resource wilt schalen** . 
 1. In de **standaard** sectie van de pagina geeft u een **naam** op voor de standaard voorwaarde. Selecteer het **Potlood** pictogram om de tekst te bewerken. 
@@ -74,7 +74,7 @@ De volgende procedure laat zien hoe u een voor waarde toevoegt om automatisch be
         :::image type="content" source="./media/automate-update-messaging-units/scale-rule-cpu-75.png" alt-text="Standaard-uitschalen als het CPU-gebruik groter is dan 75%":::       
 
         > [!NOTE]
-        > De functie voor automatisch schalen verhoogt de Messa ging-eenheden voor de naam ruimte als het totale CPU-gebruik in dit voor beeld meer dan 75% overschrijdt. Stappen worden uitgevoerd van 1 tot 2, 2 tot 4 en 4 tot en met 8. 
+        > De functie voor automatisch schalen verhoogt de Messa ging-eenheden voor de naam ruimte als het totale CPU-gebruik in dit voor beeld meer dan 75% overschrijdt. Stappen worden uitgevoerd van 1 tot 2, 2 tot 4, 4 tot 8 en 8 tot 16. 
 1. Selecteer **+ een regel opnieuw toevoegen** en voer de volgende stappen uit op de pagina **schaal regel** :
     1. Selecteer een waarde in de vervolg keuzelijst **metrische naam** . In dit voor beeld is het **CPU**. 
     1. Selecteer een operator en drempel waarden. In dit voor beeld zijn ze **minder dan** en **25** voor **metrische drempel waarden voor het activeren van schaal acties**. 
@@ -84,7 +84,7 @@ De volgende procedure laat zien hoe u een voor waarde toevoegt om automatisch be
         :::image type="content" source="./media/automate-update-messaging-units/scale-rule-cpu-25.png" alt-text="Standaard: schaal in als het CPU-gebruik lager is dan 25%":::       
 
         > [!NOTE]
-        > Met de functie voor automatisch schalen worden de Messa ging-eenheden voor de naam ruimte verminderd als het totale CPU-gebruik in dit voor beeld meer dan 25% overschrijdt. Verlaagt de tussen 8 en 4, 4 tot en met 2 en 2 tot en met 1. 
+        > Met de functie voor automatisch schalen worden de Messa ging-eenheden voor de naam ruimte verminderd als het totale CPU-gebruik in dit voor beeld meer dan 25% overschrijdt. Verlaagt de tussen 16 en 8, 8 tot 4, 4 en 2 en 2 tot en met 1. 
 1. Stel het **minimale** en **maximum** en het **standaard** aantal Messa ging-eenheden in.
 
     :::image type="content" source="./media/automate-update-messaging-units/default-scale-metric-based.png" alt-text="Standaard regel op basis van een metrische waarde":::

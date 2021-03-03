@@ -7,13 +7,13 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 10/30/2020
-ms.openlocfilehash: 7ed1d9db09357b0702188c01a802600ff6350aff
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.date: 02/19/2021
+ms.openlocfilehash: b8754742c572a8dbc1f55c64e47bec640d757d65
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93147263"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101739365"
 ---
 # <a name="lookup-transformation-in-mapping-data-flow"></a>Trans formatie opzoeken in toewijzings gegevens stroom
 
@@ -38,8 +38,6 @@ Een zoek transformatie is vergelijkbaar met een left outer join. Alle rijen van 
 **Zoeken op:** Alleen zichtbaar als ' overeenkomen met meerdere rijen ' niet is geselecteerd. Kies of u wilt zoeken naar een wille keurige rij, de eerste of de laatste overeenkomst. Elke rij wordt aanbevolen omdat deze het snelst uitvoert. Als de eerste rij of laatste rij is geselecteerd, moet u de sorteer voorwaarden opgeven.
 
 **Zoek voorwaarden:** Selecteer de kolommen die u wilt laten overeenkomen. Als aan de gelijkheids voorwaarde wordt voldaan, worden de rijen als een overeenkomst beschouwd. Houd de muis aanwijzer en selecteer berekende kolom om een waarde op te halen met behulp van de taal van de [Data flow-expressie](data-flow-expression-functions.md).
-
-De zoek transformatie ondersteunt alleen gelijkheids overeenkomsten. Als u de opzoek expressie wilt aanpassen om andere opera tors op te nemen, zoals groter dan, kunt u het beste een [Cross-koppeling gebruiken in de trans formatie voor samen voegen](data-flow-join.md#custom-cross-join). Een cross-koppeling voor komt mogelijke Cartesisch product fouten bij de uitvoering.
 
 Alle kolommen van beide stromen worden opgenomen in de uitvoer gegevens. Als u dubbele of ongewenste kolommen wilt verwijderen, voegt u een [selectie transformatie](data-flow-select.md) toe na uw lookup-trans formatie. Kolommen kunnen ook worden verwijderd of de naam ervan worden gewijzigd in een Sink-trans formatie.
 
@@ -69,7 +67,7 @@ In samen voegingen, zoek acties en bestaande trans formatie, als een of beide ge
 
 Het is niet raadzaam om Broadcasting uit te scha kelen via de optie **uit** , tenzij uw samen voegingen worden uitgevoerd in time-outfouten.
 
-## <a name="cached-lookup"></a>Opzoek in cache
+## <a name="cached-lookup"></a>In de cache opgeslagen zoekopdrachten
 
 Als u meerdere kleinere zoek acties uitvoert op dezelfde bron, is een gefilterde Sink en zoek actie mogelijk een betere use-case dan de lookup-trans formatie. Veelvoorkomende voor beelden waarbij een cache-Sink beter is, opzoeken een maximum waarde in een gegevens archief en overeenkomende fout codes aan een Data Base met fout berichten. Meer informatie vindt u in de [cache-sinks](data-flow-sink.md#cache-sink) en [Zoek acties in de cache](concepts-data-flow-expression-builder.md#cached-lookup).
 

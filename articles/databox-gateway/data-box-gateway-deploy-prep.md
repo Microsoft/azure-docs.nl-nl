@@ -6,14 +6,14 @@ author: v-dalc
 ms.service: databox
 ms.subservice: gateway
 ms.topic: tutorial
-ms.date: 10/15/2020
+ms.date: 03/01/2021
 ms.author: alkohli
-ms.openlocfilehash: 40de216a9bcb173d9dfebf39d05fb9cb12579301
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: ceda5015770ad0b9898def181fa7199f119920db
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937344"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101706092"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-data-box-gateway"></a>Zelfstudie: Voorbereidingen voor de implementatie van Azure Data Box Gateway
 
@@ -65,7 +65,7 @@ Voordat u een virtueel apparaat implementeert, controleert u of:
 - Het hostsysteem kan de volgende resources volledig toewijzen aan het inrichten van uw virtuele Data Box-apparaat:
   
   - Minimaal 4 virtuele processors.
-  - Ten minste 8 GB RAM-geheugen.
+  - Ten minste 8 GB RAM-geheugen. We raden u ten zeerste aan om ten minste 16 GB RAM-geheugen.
   - Eén netwerkinterface.
   - Een besturingssysteemschijf van 250 GB.
   - Een virtuele schijf van 2 TB voor systeemgegevens

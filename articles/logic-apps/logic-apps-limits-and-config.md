@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
-ms.date: 02/05/2021
-ms.openlocfilehash: 19c7d37d62ec54e57127f5993e8bae4d4e9a2908
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 02/18/2021
+ms.openlocfilehash: b80c5cb469f881ee0950d618c3bae5fa1fc1e026
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100388529"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699042"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Informatie over limieten en configuratie voor Azure Logic Apps
 
@@ -139,7 +139,7 @@ Dit zijn de limieten voor een definitie van een enkele logische app:
 
 | Name | Limiet | Notities |
 | ---- | ----- | ----- |
-| Actie: uitvoeringen per 5 minuten | 100.000 is de standaard limiet, maar 300.000 is de maximum limiet. | Als u de standaard limiet voor de logische app wilt verhogen, raadpleegt u [uitvoeren in de modus voor hoge door](#run-high-throughput-mode)Voer, in de preview-versie. Of u kunt [de werk belasting indien nodig verdelen over meerdere logische apps](../logic-apps/handle-throttling-problems-429-errors.md#logic-app-throttling) . |
+| Actie: uitvoeringen per interval van 5 minuten | -100.000 uitvoeringen (standaard) <p><p>-300.000 uitvoeringen (Maxi maal in de modus voor hoge door Voer)  | Als u de standaard limiet wilt verhogen voor de maximum limiet voor uw logische app, raadpleegt u [uitvoeren in de modus voor hoge door](#run-high-throughput-mode)Voer, in de preview-versie. Of u kunt [de werk belasting indien nodig verdelen over meerdere logische apps](../logic-apps/handle-throttling-problems-429-errors.md#logic-app-throttling) . |
 | Actie: gelijktijdige uitgaande oproepen | ~2500 | U kunt het aantal gelijktijdige aanvragen verminderen of de duur beperken als dat nodig is. |
 | Runtime-eind punt: gelijktijdige inkomende aanroepen | ~ 1.000 | U kunt het aantal gelijktijdige aanvragen verminderen of de duur beperken als dat nodig is. |
 | Runtime-eind punt: Lees oproepen per vijf minuten  | 60.000 | Deze limiet is van toepassing op aanroepen die de onbewerkte invoer en uitvoer ophalen uit de uitvoerings geschiedenis van een logische app. U kunt de werk belasting naar meerdere apps distribueren als dat nodig is. |
@@ -151,7 +151,7 @@ Dit zijn de limieten voor een definitie van een enkele logische app:
 
 #### <a name="run-in-high-throughput-mode"></a>Uitvoeren in de modus voor hoge door Voer
 
-Voor een definitie van een enkele Logic-app is het aantal acties dat elke 5 minuten wordt uitgevoerd een [standaard limiet](../logic-apps/logic-apps-limits-and-config.md#throughput-limits). Als u de standaard limiet wilt verhogen naar het maximum voor uw logische app, kunt u de modus voor hoge door Voer inschakelen, in de preview-versie. Of u kunt [de werk belasting indien nodig verdelen over meerdere logische apps](../logic-apps/handle-throttling-problems-429-errors.md#logic-app-throttling) .
+Voor een definitie van een enkele Logic-app is het aantal acties dat elke 5 minuten wordt uitgevoerd een [standaard limiet](../logic-apps/logic-apps-limits-and-config.md#throughput-limits). Als u de standaard limiet wilt verhogen tot de [maximum limiet](../logic-apps/logic-apps-limits-and-config.md#throughput-limits) voor uw logische app, drie keer de standaard limiet, kunt u de modus voor hoge door Voer inschakelen, in de preview-versie. Of u kunt [de werk belasting indien nodig verdelen over meerdere logische apps](../logic-apps/handle-throttling-problems-429-errors.md#logic-app-throttling) .
 
 1. Selecteer in het Azure Portal, in het menu van de logische app, onder **instellingen** de **werk stroom instellingen**.
 

@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/13/2020
 ms.topic: reference
-ms.openlocfilehash: fe684d15e2ce9b8d302db4eb6bd31dd1416abf21
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fd8686cc396d5fcee20590fbac8bccaf187b024d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83196535"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101735944"
 ---
 # <a name="network-requirements"></a>Netwerkvereisten
 
@@ -20,11 +20,13 @@ Een stabiele netwerk verbinding met lage latentie met een Azure-Data Center is e
 
 De exacte netwerk vereisten zijn afhankelijk van uw specifieke use-case, zoals het aantal en de frequentie van wijzigingen in het externe scène diagram en de complexiteit van de weer gave, maar er zijn een aantal richt lijnen om ervoor te zorgen dat uw ervaring zo goed mogelijk is:
 
-* Uw Internet connectiviteit moet ten minste **40 Mbps downstream** en **5 Mbps upstream** consistent ondersteunen voor één gebruikers sessie van Azure remote rendering, ervan uitgaande dat er geen concurrerend verkeer op het netwerk is. We raden hogere tarieven aan voor betere ervaring. Met meer gebruikers op hetzelfde netwerk worden deze vereisten dienovereenkomstig geschaald.
+* Uw Internet connectiviteit moet ten minste **40 Mbps downstream** en **5 Mbps upstream** consistent ondersteunen voor één gebruikers sessie van Azure remote rendering, ervan uitgaande dat er geen concurrerend verkeer op het netwerk is. We raden hogere tarieven aan voor betere ervaring. 
+* **Wi-Fi** is het aanbevolen netwerk type omdat het een lage latentie, hoge band breedte en stabiele verbinding ondersteunt. Sommige mobiele netwerken introduceren een jitter die kan leiden tot een slechte ervaring. 
 * Het gebruik van de **5-gigahertz Wi-Fi-band** levert doorgaans betere resultaten op dan de Wi-Fi-band van 2,4 GHz, hoewel beide moeten werken.
 * Als er andere Wi-Fi netwerken in de buurt zijn, vermijd dan het gebruik van Wi-Fi-kanalen die door deze andere netwerken worden gebruikt. U kunt de hulpprogram ma's voor netwerk scans zoals [WifiInfoView](https://www.nirsoft.net/utils/wifi_information_view.html) gebruiken om te controleren of de kanalen die uw Wi-Fi netwerk gebruikt, geen concurrerend verkeer zijn.
 * **Vermijd het gebruik van Wi-Fi herhalingen** of LAN-over-via-netwerken door sturen strikt.
 * **Vermijd concurrerend band breedte-intensief verkeer** , zoals video-of game streaming, op hetzelfde Wi-Fi netwerk.
+* Als u meerdere apparaten op hetzelfde toegangs punt hebt, worden de vereisten dienovereenkomstig geschaald. Als u meerdere toegangs punten in een omgeving hebt, moet u de taken verdelen over de toegangs punten, zodat ze gelijkmatig worden gedistribueerd.
 * Een **goede Wi-Fi signaal sterkte** is essentieel. Als dat mogelijk is, houdt u de Wi-Fi toegangs punt in de buurt en vermijdt u obstakels tussen uw client apparaat en de toegangs punten.
 * Zorg ervoor dat u altijd verbinding maakt met het **dichtstbijzijnde Azure Data Center** voor uw [regio](regions.md). Dichter bij het Data Center, de lagere netwerk latentie, die een enorme invloed heeft op de stabiliteit van de hologram.
 
@@ -42,9 +44,9 @@ Kies een server die het dichtst bij u ligt en voer de test uit. Hoewel de server
    * **Minimale vereiste** voor Azure Remote Rendering: ong. 40 Mbps downstream en 5 Mbps upstream.
    * **Aanbevolen** voor Azure Remote Rendering: ong. 100 Mbps downstream en 10 Mbps upstream.
 Het is raadzaam om de test meerdere keren uit te voeren en de slechtste resultaten te nemen.
-1. **Gebruik een hulp programma zoals www.azurespeed.com dat latentie meet naar Azure-data centers**. Selecteer het Azure-data centrum dat wordt ondersteund door de externe rendering van Azure die het dichtst bij u ligt (Zie [ondersteunde regio's](regions.md)) en voer een **latentie test**uit. Als er variatie is in de getallen die u ziet, geeft u de resultaten enige tijd om te stabiliseren.
-   * **Minimum vereiste** voor Azure-rendering op afstand: de latentie moet consequent kleiner zijn dan 100 MS.
-   * **Aanbevolen** voor externe rendering van Azure: de latentie moet consequent kleiner zijn dan 70 MS.
+1. **Gebruik een hulp programma zoals www.azurespeed.com dat latentie meet naar Azure-data centers**. Selecteer het Azure-data centrum dat wordt ondersteund door de externe rendering van Azure die het dichtst bij u ligt (Zie [ondersteunde regio's](regions.md)) en voer een **latentie test** uit. Als er variatie is in de getallen die u ziet, geeft u de resultaten enige tijd om te stabiliseren.
+   * **Minimum vereiste** voor Azure-rendering op afstand: de latentie moet consequent kleiner zijn dan 80 MS.
+   * **Aanbevolen** voor externe rendering van Azure: de latentie moet consequent kleiner zijn dan 40 MS.
 
 Hoewel lage latentie geen garantie is dat de externe rendering van Azure goed werkt op uw netwerk, hebben we normaal gesp roken problemen gezien in situaties waarin deze tests worden geslaagd.
 Raadpleeg de [hand leiding](../resources/troubleshoot.md)voor het oplossen van problemen als u artefacten ondervindt zoals onstabiel, jitter of het springen van hologrammen wanneer u Azure remote rendering uitvoert.

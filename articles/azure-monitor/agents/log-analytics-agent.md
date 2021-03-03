@@ -6,32 +6,32 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/12/2021
-ms.openlocfilehash: c046ddbaf0fd1afbabaa87d1594f0161c71606c8
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: c2a97e5e54fea8d80160c1df7007d51871501ef8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609956"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101714388"
 ---
 # <a name="log-analytics-agent-overview"></a>Overzicht van Log Analytics-agent
 
-De Azure Log Analytics-agent verzamelt telemetrie van virtuele Windows-en Linux-machines in elke Cloud, on-premises machines en die worden bewaakt door [System Center Operations Manager](/system-center/scom/) en verzendt de verzamelde gegevens naar uw log Analytics-werk ruimte in azure monitor. De Log Analytics-agent biedt ook ondersteuning voor inzichten en andere services in Azure Monitor zoals [Azure monitor voor VM's](../insights/vminsights-enable-overview.md), [Azure Security Center](../../security-center/index.yml)en [Azure Automation](../../automation/automation-intro.md). Dit artikel bevat een gedetailleerd overzicht van de agent-, systeem-en netwerk vereisten en implementatie methoden.
+De Azure Log Analytics-agent verzamelt telemetrie van virtuele Windows-en Linux-machines in elke Cloud, on-premises machines en die worden bewaakt door [System Center Operations Manager](/system-center/scom/) en verzendt de verzamelde gegevens naar uw log Analytics-werk ruimte in azure monitor. De Log Analytics-agent biedt ook ondersteuning voor inzichten en andere services in Azure Monitor zoals [VM Insights](../vm/vminsights-enable-overview.md), [Azure Security Center](../../security-center/index.yml)en [Azure Automation](../../automation/automation-intro.md). Dit artikel bevat een gedetailleerd overzicht van de agent-, systeem-en netwerk vereisten en implementatie methoden.
 
 > [!NOTE]
 > Mogelijk ziet u ook de Log Analytics agent waarnaar wordt verwezen als de micro soft Monitoring Agent (MMA) of OMS Linux-agent.
 
 ## <a name="comparison-to-azure-diagnostics-extension"></a>Vergelijking met de Azure Diagnostics-extensie
-De [Azure Diagnostics-extensie](../platform/diagnostics-extension-overview.md) in azure monitor kan ook worden gebruikt voor het verzamelen van bewakings gegevens van het gast besturingssysteem van virtuele machines van Azure. U kunt ervoor kiezen om ofwel of beide afhankelijk van uw vereisten te gebruiken. Zie [overzicht van de Azure monitor agents](../agents/agents-overview.md) voor een gedetailleerde vergelijking van de Azure monitor agents. 
+De [Azure Diagnostics-extensie](./diagnostics-extension-overview.md) in azure monitor kan ook worden gebruikt voor het verzamelen van bewakings gegevens van het gast besturingssysteem van virtuele machines van Azure. U kunt ervoor kiezen om ofwel of beide afhankelijk van uw vereisten te gebruiken. Zie [overzicht van de Azure monitor agents](../agents/agents-overview.md) voor een gedetailleerde vergelijking van de Azure monitor agents. 
 
 De belangrijkste verschillen die u moet overwegen:
 
 - Azure Diagnostics extensie kan alleen worden gebruikt met virtuele machines van Azure. De Log Analytics-agent kan worden gebruikt met virtuele machines in azure, andere Clouds en on-premises.
-- Met Azure Diagnostics extensie worden gegevens naar Azure Storage verzonden, worden [Azure monitor metriek](../platform/data-platform-metrics.md) (alleen Windows) en Event hubs. De Log Analytics agent verzendt gegevens naar [Azure monitor logboeken](../platform/data-platform-logs.md).
-- De Log Analytics-agent is vereist voor [oplossingen](../monitor-reference.md#insights-and-core-solutions), [Azure monitor voor VM's](../insights/vminsights-overview.md)en andere services, zoals [Azure Security Center](../../security-center/index.yml).
+- Met Azure Diagnostics extensie worden gegevens naar Azure Storage verzonden, worden [Azure monitor metriek](../essentials/data-platform-metrics.md) (alleen Windows) en Event hubs. De Log Analytics agent verzendt gegevens naar [Azure monitor logboeken](../logs/data-platform-logs.md).
+- De Log Analytics-agent is vereist voor [oplossingen](../monitor-reference.md#insights-and-core-solutions), [VM Insights](../vm/vminsights-overview.md)en andere services, zoals [Azure Security Center](../../security-center/index.yml).
 
 ## <a name="costs"></a>Kosten
 
-Er zijn geen kosten verbonden aan Log Analytics-agent, maar mogelijk worden er kosten in rekening gebracht voor de gegevens die zijn opgenomen. Controleer het [gebruik en de kosten beheren met Azure monitor logboeken](../platform/manage-cost-storage.md) voor gedetailleerde informatie over de prijzen voor gegevens die zijn verzameld in een log Analytics-werk ruimte.
+Er zijn geen kosten verbonden aan Log Analytics-agent, maar mogelijk worden er kosten in rekening gebracht voor de gegevens die zijn opgenomen. Controleer het [gebruik en de kosten beheren met Azure monitor logboeken](../logs/manage-cost-storage.md) voor gedetailleerde informatie over de prijzen voor gegevens die zijn verzameld in een log Analytics-werk ruimte.
 
 ## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 
@@ -41,7 +41,7 @@ Er zijn geen kosten verbonden aan Log Analytics-agent, maar mogelijk worden er k
 
 De volgende tabel bevat de typen gegevens die u kunt configureren voor het verzamelen van een Log Analytics werkruimte van alle verbonden agents. Zie [wat wordt bewaakt door Azure monitor?](../monitor-reference.md) voor een lijst met inzichten, oplossingen en andere oplossingen die gebruikmaken van de log Analytics-agent voor het verzamelen van andere soorten gegevens.
 
-| Gegevensbron | Description |
+| Gegevensbron | Beschrijving |
 | --- | --- |
 | [Windows-gebeurtenis logboeken](../agents/data-sources-windows-events.md) | Gegevens die worden verzonden naar het Windows-systeem voor gebeurtenis registratie. |
 | [Syslog](../agents/data-sources-syslog.md)                     | Informatie die wordt verzonden naar het systeem voor het registreren van Linux-gebeurtenissen. |
@@ -77,10 +77,10 @@ Er zijn meerdere methoden om de Log Analytics-agent te installeren en uw compute
 
 ### <a name="azure-virtual-machine"></a>Azure virtuele machine
 
-- [Azure monitor voor VM's](../insights/vminsights-enable-overview.md) biedt meerdere methoden om agents op schaal in te scha kelen. Dit omvat de installatie van de Log Analytics agent en de afhankelijkheids agent. 
+- [VM Insights](../vm/vminsights-enable-overview.md) biedt meerdere methoden om agents op schaal in te scha kelen. Dit omvat de installatie van de Log Analytics agent en de afhankelijkheids agent. 
 - [Azure Security Center kunt de log Analytics agent inrichten](../../security-center/security-center-enable-data-collection.md) op alle ondersteunde Azure-vm's en eventuele nieuwe virtuele machines die worden gemaakt als u deze inschakelt om te controleren op beveiligings problemen en bedreigingen.
 - Log Analytics VM-extensie voor [Windows](../../virtual-machines/extensions/oms-windows.md) of [Linux](../../virtual-machines/extensions/oms-linux.md) kan worden geïnstalleerd met de Azure Portal, Azure CLI, Azure PowerShell of een Azure Resource Manager sjabloon.
-- Installeer voor afzonderlijke virtuele Azure-machines [hand matig vanuit het Azure Portal](../learn/quick-collect-azurevm.md?toc=%2fazure%2fazure-monitor%2ftoc.json).
+- Installeer voor afzonderlijke virtuele Azure-machines [hand matig vanuit het Azure Portal](../vm/quick-collect-azurevm.md?toc=%2fazure%2fazure-monitor%2ftoc.json).
 
 ### <a name="windows-virtual-machine-on-premises-or-in-another-cloud"></a>Virtuele Windows-machine on-premises of in een andere Cloud
 
@@ -92,7 +92,7 @@ Er zijn meerdere methoden om de Log Analytics-agent te installeren en uw compute
 ### <a name="linux-virtual-machine-on-premises-or-in-another-cloud"></a>Virtuele Linux-machine on-premises of in een andere Cloud
 
 - Gebruik [Azure Arc servers](../../azure-arc/servers/overview.md) om de log Analytics VM-extensie te implementeren en te beheren.
-- [Hand matig](../learn/quick-collect-linux-computer.md) de agent installeren die een wrapper-script aanroept dat wordt gehost op github.
+- [Hand matig](../vm/quick-collect-linux-computer.md) de agent installeren die een wrapper-script aanroept dat wordt gehost op github.
 - Integreer [System Center Operations Manager](./om-agents.md) met Azure monitor voor het door sturen van verzamelde gegevens van Windows-computers die rapporteren aan een beheer groep.
 
 ## <a name="workspace-id-and-key"></a>Werk ruimte-ID en-sleutel
@@ -103,7 +103,7 @@ Ongeacht de gebruikte installatie methode hebt u de werk ruimte-ID en-sleutel no
 
 ## <a name="tls-12-protocol"></a>TLS 1,2-protocol
 
-We raden u ten zeerste aan de agent te configureren om ten minste Transport Layer Security (TLS) 1,2 te gebruiken om de beveiliging van gegevens die onderweg zijn naar Azure Monitor logboeken te garanderen. Er zijn oudere versies van TLS/Secure Sockets Layer (SSL) gevonden die kwetsbaar zijn en terwijl ze nog steeds werken om achterwaartse compatibiliteit mogelijk te maken, worden ze **niet aanbevolen**.  Raadpleeg voor meer informatie [veilig verzenden van gegevens met behulp van TLS 1,2](../platform/data-security.md#sending-data-securely-using-tls-12). 
+We raden u ten zeerste aan de agent te configureren om ten minste Transport Layer Security (TLS) 1,2 te gebruiken om de beveiliging van gegevens die onderweg zijn naar Azure Monitor logboeken te garanderen. Er zijn oudere versies van TLS/Secure Sockets Layer (SSL) gevonden die kwetsbaar zijn en terwijl ze nog steeds werken om achterwaartse compatibiliteit mogelijk te maken, worden ze **niet aanbevolen**.  Raadpleeg voor meer informatie [veilig verzenden van gegevens met behulp van TLS 1,2](../logs/data-security.md#sending-data-securely-using-tls-12). 
 
 ## <a name="network-requirements"></a>Netwerkvereisten
 
@@ -117,10 +117,10 @@ De volgende tabel geeft een lijst van de proxy-en firewall configuratie gegevens
 
 |Agentresource|Poorten |Richting |HTTPS-controle overslaan|
 |------|---------|--------|--------|
-|*.ods.opinsights.azure.com |Poort 443 |Uitgaand|Yes |  
-|*.oms.opinsights.azure.com |Poort 443 |Uitgaand|Yes |  
-|*.blob.core.windows.net |Poort 443 |Uitgaand|Yes |
-|*.azure-automation.net |Poort 443 |Uitgaand|Yes |
+|*.ods.opinsights.azure.com |Poort 443 |Uitgaand|Ja |  
+|*.oms.opinsights.azure.com |Poort 443 |Uitgaand|Ja |  
+|*.blob.core.windows.net |Poort 443 |Uitgaand|Ja |
+|*.azure-automation.net |Poort 443 |Uitgaand|Ja |
 
 Zie [Azure Government Management](../../azure-government/compare-azure-government-global-azure.md#azure-monitor)voor informatie over de firewall die vereist is voor Azure Government. 
 
@@ -150,5 +150,5 @@ Bijvoorbeeld: `https://user01:password@proxy01.contoso.com:30443`
 ## <a name="next-steps"></a>Volgende stappen
 
 * Bekijk [gegevens bronnen](../agents/agent-data-sources.md) om inzicht te krijgen in de gegevens bronnen die beschikbaar zijn voor het verzamelen van gegevens uit uw Windows-of Linux-systeem. 
-* Meer informatie over [logboek query's](../log-query/log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen. 
+* Meer informatie over [logboek query's](../logs/log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen. 
 * Meer informatie over het [controleren van oplossingen](../insights/solutions.md) voor het toevoegen van functionaliteit aan Azure monitor en het verzamelen van gegevens in de log Analytics-werk ruimte.

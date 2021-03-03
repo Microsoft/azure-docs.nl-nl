@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/21/2019
 ms.author: xpouyat
-ms.openlocfilehash: 8e2217c04f5c39ad93185273d537324f4b56e456
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: f6c43f943bb12e8230772f2d195589ecc4543030
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100099537"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101705310"
 ---
 # <a name="licensing-microsoftreg-smooth-streaming-client-porting-kit"></a>Licenties voor micro soft &reg; Smooth streaming client Porting kit
 
@@ -32,7 +32,7 @@ Hieronder vindt u een architectuur op hoog niveau en het vak IIS Smooth Streamin
 
 ![SSPK](./media/media-services-sspk/sspk-arch.png)
 
-## <a name="description"></a>Description
+## <a name="description"></a>Beschrijving
 SSPK wordt in licentie gegeven voor termen die uitstekende bedrijfs waarde bieden. SSPK-licentie biedt de branche de volgende mogelijkheden:
 
 * Smooth Streaming Porting kit-bron in C++ 
@@ -46,7 +46,7 @@ SSPK wordt in licentie gegeven voor termen die uitstekende bedrijfs waarde biede
   * programmeer interfaces voor interactie met hardware A/V-decoders (decoderen, rendering)
 * Digital Rights Management (DRM)-interface 
   * programmeer interfaces voor het verwerken van DRM via de DRM Abstraction Layer (DAL)
-  * Micro soft PlayReady Porting kit wordt afzonderlijk verzonden, maar via deze interface geïntegreerd. Klik [hier](https://www.microsoft.com/playready/licensing/device_technology.mspx#pddipdl)voor meer informatie over de licentie verlening voor micro soft PlayReady-apparaten.
+  * Micro soft PlayReady Porting kit wordt afzonderlijk verzonden, maar via deze interface geïntegreerd. [Bekijk meer informatie over micro soft PlayReady-apparaat-licenties](https://www.microsoft.com/playready/licensing/device_technology.mspx#pddipdl).
 * Implementatie voorbeelden 
   * voor beeld PAL-implementatie voor Linux
   * voor beeld van een HAL-implementatie voor GStreamer
@@ -148,6 +148,7 @@ Interim-en definitieve SSPK-licenties kunnen technische vragen verzenden naar [s
 * Shenzhen Skyworth Digital Technology Co., Ltd
 * Sichuan Changhong Electric Co., Ltd.
 * Skardin industrieel Corp.
+* Lucht CP Ltd
 * Deutschland Fernsehen GmbH & co. KG
 * SMARDTV GLOBAL SAS
 * SoftAtHome

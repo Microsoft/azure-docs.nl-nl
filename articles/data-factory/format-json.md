@@ -6,12 +6,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/29/2020
 ms.author: jingwang
-ms.openlocfilehash: 30b8cb2b5c8b1ccd0c927a6ff8a3a282d3d43c69
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: f19f8fb3811435e9bbc207d2d130c0655a6dee02
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100386540"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101706063"
 ---
 # <a name="json-format-in-azure-data-factory"></a>JSON-indeling in Azure Data Factory
 
@@ -27,12 +27,12 @@ Zie het artikel [gegevens sets](concepts-datasets-linked-services.md) voor een v
 
 | Eigenschap         | Beschrijving                                                  | Vereist |
 | ---------------- | ------------------------------------------------------------ | -------- |
-| type             | De eigenschap type van de gegevensset moet worden ingesteld op **JSON**. | Yes      |
-| location         | Locatie-instellingen van bestand (en). Elke connector op basis van bestanden heeft een eigen locatie type en ondersteunde eigenschappen onder `location` . **Zie de sectie Details in connector artikel-> eigenschappen van gegevensset**. | Yes      |
-| encodingName     | Het coderings type dat wordt gebruikt voor het lezen/schrijven van test bestanden. <br>Toegestane waarden zijn als volgt: ' UTF-8 ', ' UTF-16 ', ' UTF-16BE ', ' UTF-32 ', ' UTF-32BE ', ' VS-ASCII ', ' UTF-7 ', ' BIG5 ', ' EUC-JP ', ' EUC-KR ', ' GB2312 "," GB18030 "," JOHAB "," SHIFT-JIS "," CP875 "," CP866 "," IBM00858 "," IBM037 "," IBM273 "," IBM437 "," IBM500 "," IBM737 "," IBM775 "," IBM850 "," IBM852 "," IBM855 "," IBM857 "," IBM860 "," IBM861 ', ' IBM863 ', ' IBM864 ', ' IBM865 ', ' IBM869 ', ' IBM870 ', ' IBM01140 ', ' IBM01141 ', ' IBM01142 ', ' IBM01143 ', ' IBM01144 ', IBM01145 "," IBM01146 "," IBM01147 "," IBM01148 "," IBM01149 "," ISO-2022-JP "," ISO-2022-KR "," ISO-8859-1 "," ISO-8859-2 "," ISO-8859-3 "," ISO-8859-4 "," ISO-8859-5 "," ISO-8859-6 "," ISO-8859-7 "," ISO-8859-8 "," ISO-8859-9 "," ISO-8859-13 " , "ISO-8859-15", "WINDOWS-874", "WINDOWS-1250", "WINDOWS-1251", "WINDOWS-1252", "WINDOWS-1253", "WINDOWS-1254", "WINDOWS-1255", "WINDOWS-1256", "WINDOWS-1257", "WINDOWS-1258".| No       |
-| compressie | Groep eigenschappen voor het configureren van bestands compressie. Configureer deze sectie als u compressie/decompressie wilt uitvoeren tijdens de uitvoering van de activiteit. | No |
+| type             | De eigenschap type van de gegevensset moet worden ingesteld op **JSON**. | Ja      |
+| location         | Locatie-instellingen van bestand (en). Elke connector op basis van bestanden heeft een eigen locatie type en ondersteunde eigenschappen onder `location` . **Zie de sectie Details in connector artikel-> eigenschappen van gegevensset**. | Ja      |
+| encodingName     | Het coderings type dat wordt gebruikt voor het lezen/schrijven van test bestanden. <br>Toegestane waarden zijn als volgt: ' UTF-8 ', ' UTF-16 ', ' UTF-16BE ', ' UTF-32 ', ' UTF-32BE ', ' VS-ASCII ', ' UTF-7 ', ' BIG5 ', ' EUC-JP ', ' EUC-KR ', ' GB2312 "," GB18030 "," JOHAB "," SHIFT-JIS "," CP875 "," CP866 "," IBM00858 "," IBM037 "," IBM273 "," IBM437 "," IBM500 "," IBM737 "," IBM775 "," IBM850 "," IBM852 "," IBM855 "," IBM857 "," IBM860 "," IBM861 ', ' IBM863 ', ' IBM864 ', ' IBM865 ', ' IBM869 ', ' IBM870 ', ' IBM01140 ', ' IBM01141 ', ' IBM01142 ', ' IBM01143 ', ' IBM01144 ', IBM01145 "," IBM01146 "," IBM01147 "," IBM01148 "," IBM01149 "," ISO-2022-JP "," ISO-2022-KR "," ISO-8859-1 "," ISO-8859-2 "," ISO-8859-3 "," ISO-8859-4 "," ISO-8859-5 "," ISO-8859-6 "," ISO-8859-7 "," ISO-8859-8 "," ISO-8859-9 "," ISO-8859-13 " , "ISO-8859-15", "WINDOWS-874", "WINDOWS-1250", "WINDOWS-1251", "WINDOWS-1252", "WINDOWS-1253", "WINDOWS-1254", "WINDOWS-1255", "WINDOWS-1256", "WINDOWS-1257", "WINDOWS-1258".| Nee       |
+| compressie | Groep eigenschappen voor het configureren van bestands compressie. Configureer deze sectie als u compressie/decompressie wilt uitvoeren tijdens de uitvoering van de activiteit. | Nee |
 | type<br/>(*onder `compression`*) | De compressie-codec die wordt gebruikt voor het lezen/schrijven van JSON-bestanden. <br>Toegestane waarden zijn **bzip2**, **gzip**, **Deflate**, **ZipDeflate**, **TarGzip**, **tar**, **Snappy** of **LZ4**. De standaard waarde is niet gecomprimeerd.<br>**Houd er rekening mee** dat de Kopieer activiteit geen ondersteuning biedt voor "snappy" & "LZ4" en de toewijzing van gegevens stroom geen ondersteuning biedt voor "ZipDeflate" "," TarGzip "en" tar ".<br>**Opmerking** wanneer u Kopieer activiteit gebruikt om **ZipDeflate** / **TarGzip** / **tar** -bestand (en) te decomprimeren en te schrijven naar Sink-gegevens archief op basis van een bestand, worden standaard bestanden uitgepakt naar de map:. `<path specified in dataset>/<folder named as source compressed file>/` Gebruik de `preserveZipFileNameAsFolder` / `preserveCompressionFileNameAsFolder` bron van de [Kopieer activiteit](#json-as-source) om te bepalen of u de naam van de gecomprimeerde bestanden als mapstructuur wilt behouden.| Nee.  |
-| niveau<br/>(*onder `compression`*) | De compressie ratio. <br>Toegestane waarden zijn **optimaal** of **snelst**.<br>- **Snelst:** De compressie bewerking moet zo snel mogelijk worden voltooid, zelfs als het resulterende bestand niet optimaal is gecomprimeerd.<br>- **Optimaal**: de compressie bewerking moet optimaal worden gecomprimeerd, zelfs als het volt ooien van de bewerking langer duurt. Zie het onderwerp [compressie niveau](/dotnet/api/system.io.compression.compressionlevel) voor meer informatie. | No       |
+| niveau<br/>(*onder `compression`*) | De compressie ratio. <br>Toegestane waarden zijn **optimaal** of **snelst**.<br>- **Snelst:** De compressie bewerking moet zo snel mogelijk worden voltooid, zelfs als het resulterende bestand niet optimaal is gecomprimeerd.<br>- **Optimaal**: de compressie bewerking moet optimaal worden gecomprimeerd, zelfs als het volt ooien van de bewerking langer duurt. Zie het onderwerp [compressie niveau](/dotnet/api/system.io.compression.compressionlevel) voor meer informatie. | Nee       |
 
 Hieronder ziet u een voor beeld van JSON-gegevensset op Azure Blob Storage:
 
@@ -72,18 +72,18 @@ De volgende eigenschappen worden ondersteund in de sectie ***\* bron \**** van d
 
 | Eigenschap      | Beschrijving                                                  | Vereist |
 | ------------- | ------------------------------------------------------------ | -------- |
-| type          | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **JSONSource**. | Yes      |
-| formatSettings | Een groep eigenschappen. Raadpleeg de onderstaande tabel voor **JSON-Lees instellingen** . | No       |
-| storeSettings | Een groep eigenschappen voor het lezen van gegevens uit een gegevens archief. Elke connector op basis van een bestand heeft zijn eigen ondersteunde Lees instellingen onder `storeSettings` . **Zie de sectie Details in connector artikel-> eigenschappen van de Kopieer activiteit**. | No       |
+| type          | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **JSONSource**. | Ja      |
+| formatSettings | Een groep eigenschappen. Raadpleeg de onderstaande tabel voor **JSON-Lees instellingen** . | Nee       |
+| storeSettings | Een groep eigenschappen voor het lezen van gegevens uit een gegevens archief. Elke connector op basis van een bestand heeft zijn eigen ondersteunde Lees instellingen onder `storeSettings` . **Zie de sectie Details in connector artikel-> eigenschappen van de Kopieer activiteit**. | Nee       |
 
 Ondersteunde **instellingen voor json lezen** onder `formatSettings` :
 
 | Eigenschap      | Beschrijving                                                  | Vereist |
 | ------------- | ------------------------------------------------------------ | -------- |
-| type          | Het type formatSettings moet zijn ingesteld op **JsonReadSettings**. | Yes      |
-| compressionProperties | Een groep eigenschappen voor het decomprimeren van gegevens voor een bepaalde compressie-codec. | No       |
-| preserveZipFileNameAsFolder<br>(*onder `compressionProperties` -> `type` als `ZipDeflateReadSettings`*)  | Van toepassing wanneer de invoer-gegevensset is geconfigureerd met **ZipDeflate** -compressie. Hiermee wordt aangegeven of de naam van het bron-zip-bestand tijdens het kopiëren moet worden bewaard als mapstructuur.<br>-Als deze eigenschap is ingesteld op **True (standaard)**, wordt in Data Factory ongecomprimeerde bestanden naar `<path specified in dataset>/<folder named as source zip file>/` .<br>-Als deze eigenschap is ingesteld op **Onwaar**, wordt door Data Factory ongecomprimeerde bestanden rechtstreeks naar te schrijven `<path specified in dataset>` . Zorg ervoor dat u geen dubbele bestands namen in verschillende zip-bron bestanden hebt om te voor komen dat u racet of onverwacht gedrag.  | No |
-| preserveCompressionFileNameAsFolder<br>(*onder `compressionProperties` -> `type` as `TarGZipReadSettings` of `TarReadSettings`*) | Van toepassing wanneer de invoer-gegevensset is geconfigureerd met **TarGzip** / **tar** -compressie. Hiermee wordt aangegeven of de gecomprimeerde bestands naam van de bron moet worden behouden als mapstructuur tijdens het kopiëren.<br>-Als deze eigenschap is ingesteld op **True (standaard)**, schrijft Data Factory gedecomprimeerde bestanden naar `<path specified in dataset>/<folder named as source compressed file>/` . <br>-Als deze eigenschap is ingesteld op **Onwaar**, schrijft Data Factory de gedecomprimeerde bestanden rechtstreeks naar `<path specified in dataset>` . Zorg ervoor dat u geen dubbele bestands namen in verschillende bron bestanden hebt om te voor komen dat u racet of onverwacht gedrag. | No |
+| type          | Het type formatSettings moet zijn ingesteld op **JsonReadSettings**. | Ja      |
+| compressionProperties | Een groep eigenschappen voor het decomprimeren van gegevens voor een bepaalde compressie-codec. | Nee       |
+| preserveZipFileNameAsFolder<br>(*onder `compressionProperties` -> `type` als `ZipDeflateReadSettings`*)  | Van toepassing wanneer de invoer-gegevensset is geconfigureerd met **ZipDeflate** -compressie. Hiermee wordt aangegeven of de naam van het bron-zip-bestand tijdens het kopiëren moet worden bewaard als mapstructuur.<br>-Als deze eigenschap is ingesteld op **True (standaard)**, wordt in Data Factory ongecomprimeerde bestanden naar `<path specified in dataset>/<folder named as source zip file>/` .<br>-Als deze eigenschap is ingesteld op **Onwaar**, wordt door Data Factory ongecomprimeerde bestanden rechtstreeks naar te schrijven `<path specified in dataset>` . Zorg ervoor dat u geen dubbele bestands namen in verschillende zip-bron bestanden hebt om te voor komen dat u racet of onverwacht gedrag.  | Nee |
+| preserveCompressionFileNameAsFolder<br>(*onder `compressionProperties` -> `type` as `TarGZipReadSettings` of `TarReadSettings`*) | Van toepassing wanneer de invoer-gegevensset is geconfigureerd met **TarGzip** / **tar** -compressie. Hiermee wordt aangegeven of de gecomprimeerde bestands naam van de bron moet worden behouden als mapstructuur tijdens het kopiëren.<br>-Als deze eigenschap is ingesteld op **True (standaard)**, schrijft Data Factory gedecomprimeerde bestanden naar `<path specified in dataset>/<folder named as source compressed file>/` . <br>-Als deze eigenschap is ingesteld op **Onwaar**, schrijft Data Factory de gedecomprimeerde bestanden rechtstreeks naar `<path specified in dataset>` . Zorg ervoor dat u geen dubbele bestands namen in verschillende bron bestanden hebt om te voor komen dat u racet of onverwacht gedrag. | Nee |
 
 ### <a name="json-as-sink"></a>JSON als Sink
 
@@ -91,16 +91,16 @@ De volgende eigenschappen worden ondersteund in het gedeelte ***\* sink \**** va
 
 | Eigenschap      | Beschrijving                                                  | Vereist |
 | ------------- | ------------------------------------------------------------ | -------- |
-| type          | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **JSONSink**. | Yes      |
-| formatSettings | Een groep eigenschappen. Raadpleeg de onderstaande tabel voor **JSON-schrijf instellingen** . | No       |
-| storeSettings | Een groep eigenschappen voor het schrijven van gegevens naar een gegevens archief. Elke connector op basis van bestanden heeft eigen ondersteunde schrijf instellingen onder `storeSettings` . **Zie de sectie Details in connector artikel-> eigenschappen van de Kopieer activiteit**. | No       |
+| type          | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **JSONSink**. | Ja      |
+| formatSettings | Een groep eigenschappen. Raadpleeg de onderstaande tabel voor **JSON-schrijf instellingen** . | Nee       |
+| storeSettings | Een groep eigenschappen voor het schrijven van gegevens naar een gegevens archief. Elke connector op basis van bestanden heeft eigen ondersteunde schrijf instellingen onder `storeSettings` . **Zie de sectie Details in connector artikel-> eigenschappen van de Kopieer activiteit**. | Nee       |
 
 Ondersteunde **instellingen voor json-schrijf bewerkingen** onder `formatSettings` :
 
 | Eigenschap      | Beschrijving                                                  | Vereist                                              |
 | ------------- | ------------------------------------------------------------ | ----------------------------------------------------- |
-| type          | Het type formatSettings moet zijn ingesteld op **JsonWriteSettings**. | Yes                                                   |
-| filePattern |Hiermee geeft u het patroon aan van gegevens die zijn opgeslagen in elk JSON-bestand. Toegestane waarden zijn: **setOfObjects** (JSON Lines) en **arrayOfObjects**. De **standaardwaarde** is **setOfObjects**. Zie het gedeelte [JSON-bestandpatronen](#json-file-patterns) voor meer informatie over deze patronen. |No |
+| type          | Het type formatSettings moet zijn ingesteld op **JsonWriteSettings**. | Ja                                                   |
+| filePattern |Hiermee geeft u het patroon aan van gegevens die zijn opgeslagen in elk JSON-bestand. Toegestane waarden zijn: **setOfObjects** (JSON Lines) en **arrayOfObjects**. De **standaardwaarde** is **setOfObjects**. Zie het gedeelte [JSON-bestandpatronen](#json-file-patterns) voor meer informatie over deze patronen. |Nee |
 
 ### <a name="json-file-patterns"></a>JSON-bestandpatronen
 
@@ -218,7 +218,7 @@ De onderstaande tabel geeft een lijst van de eigenschappen die door een JSON-bro
 
 ### <a name="source-format-options"></a>Opties voor bron indeling
 
-U kunt met behulp van een JSON-gegevensset als bron in uw gegevens stroom vijf extra instellingen instellen. Deze instellingen kunt u vinden onder de accordeon van de **JSON-instellingen** op het tabblad **bron opties** .  
+U kunt met behulp van een JSON-gegevensset als bron in uw gegevens stroom vijf extra instellingen instellen. Deze instellingen kunt u vinden onder de accordeon van de **JSON-instellingen** op het tabblad **bron opties** . Voor de instelling **document formulier** kunt u een van de typen document, **document per regel** en **matrix van documenten** selecteren.
 
 ![JSON-instellingen](media/data-flow/json-settings.png "JSON-instellingen")
 

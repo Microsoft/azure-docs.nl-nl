@@ -4,16 +4,16 @@ description: Slimme groepen beheren die zijn gemaakt via uw waarschuwings instan
 ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 09/24/2018
-ms.openlocfilehash: c36162f35c152fd5b9898d92b57e2e12044635a7
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 564440336bf6a90cbd40aba6c8284cbc6c5e3ff3
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609948"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701073"
 ---
 # <a name="manage-smart-groups"></a>Slimme groepen beheren
 
-[Slimme groepen](../platform/alerts-smartgroups-overview.md?toc=%2fazure%2fazure-monitor%2ftoc.json) gebruiken machine learning algoritmen om waarschuwingen te groeperen op basis van een co-voorval of een soort gelijke toepassing, zodat de gebruiker nu slimme groepen kan beheren in plaats van elke waarschuwing afzonderlijk te beheren. In dit artikel vindt u informatie over het openen en gebruiken van slimme groepen in Azure Monitor.
+[Slimme groepen](./alerts-smartgroups-overview.md?toc=%2fazure%2fazure-monitor%2ftoc.json) gebruiken machine learning algoritmen om waarschuwingen te groeperen op basis van een co-voorval of een soort gelijke toepassing, zodat de gebruiker nu slimme groepen kan beheren in plaats van elke waarschuwing afzonderlijk te beheren. In dit artikel vindt u informatie over het openen en gebruiken van slimme groepen in Azure Monitor.
 
 1. Voor een overzicht van de slimme groepen die zijn gemaakt voor uw waarschuwings instanties kunt u het volgende doen:
 

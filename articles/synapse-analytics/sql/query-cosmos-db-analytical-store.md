@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 03/02/2021
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 4337d8935c10ce17ad5d3747468d55b2fe6daa21
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: a574cacbabf1c0d1730430153a3c0afcad6582c6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101677535"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101694356"
 ---
 # <a name="query-azure-cosmos-db-data-with-a-serverless-sql-pool-in-azure-synapse-link"></a>Azure Cosmos DB gegevens opvragen met een serverloze SQL-groep in azure Synapse-koppeling
 
@@ -22,10 +22,7 @@ Met een serverloze SQL-pool kunt u gegevens in uw Azure Cosmos DB containers die
 
 Voor het uitvoeren van query's in Azure Cosmos DB wordt de volledige [selectie](/sql/t-sql/queries/select-transact-sql?view=azure-sqldw-latest&preserve-view=true) Surface Area ondersteund door de functie [OpenRowSet](develop-openrowset.md) , die het meren deel van [SQL-functies en-Opera tors](overview-features.md)bevat. U kunt ook resultaten van de query opslaan die gegevens uit Azure Cosmos DB leest, samen met gegevens in Azure Blob Storage of Azure Data Lake Storage met behulp van de [optie externe tabel maken als Select](develop-tables-cetas.md#cetas-in-serverless-sql-pool) (CETAS). U kunt momenteel geen serverloze query resultaten van SQL-groep in Azure Cosmos DB opslaan met behulp van CETAS.
 
-In dit artikel leert u hoe u een query schrijft met een serverloze SQL-groep die gegevens opvraagt uit Azure Cosmos DB containers die zijn ingeschakeld met de koppeling Azure Synapse. In [deze zelf studie](./tutorial-data-analyst.md)vindt u meer informatie over het bouwen van SERVERloze SQL-pool weergaven over Azure Cosmos DB containers en het verbinden ervan met Power bi modellen.
-
-> [!IMPORTANT]
-> In deze zelf studie wordt een container met een [Azure Cosmos DB goed gedefinieerd schema](../../cosmos-db/analytical-store-introduction.md#schema-representation)gebruikt.  Vertrouw niet op het schema van de resultatenset van de `OPENROWSET` functie zonder de- `WITH` component waarmee gegevens worden gelezen uit een container met een schema met volledige betrouw baarheid, omdat de query-ervaring mogelijk kan worden uitgelijnd en wordt gewijzigd op basis van het goed gedefinieerde schema. U kunt uw feedback plaatsen in het [Feedback forum van Azure Synapse Analytics](https://feedback.azure.com/forums/307516-azure-synapse-analytics). U kunt ook contact opnemen met het [product team van de Azure Synapse-koppeling](mailto:cosmosdbsynapselink@microsoft.com) om feedback te geven.
+In dit artikel leert u hoe u een query schrijft met een serverloze SQL-groep die gegevens opvraagt uit Azure Cosmos DB containers die zijn ingeschakeld met de koppeling Azure Synapse. In [deze zelf studie](./tutorial-data-analyst.md)vindt u meer informatie over het bouwen van SERVERloze SQL-pool weergaven over Azure Cosmos DB containers en het verbinden ervan met Power bi modellen. In deze zelf studie wordt een container met een [Azure Cosmos DB goed gedefinieerd schema](../../cosmos-db/analytical-store-introduction.md#schema-representation)gebruikt.
 
 ## <a name="overview"></a>Overzicht
 
@@ -377,7 +374,7 @@ Als u Azure Cosmos DB accounts van de Mongo DB API-soort wilt opvragen, kunt u m
 
 ### <a name="query-items-with-full-fidelity-schema"></a>Een query uitvoeren op items met een volledig beeld schema
 
-Tijdens het uitvoeren van een query op een volledig Fidelity-schema moet u expliciet het SQL-type en het verwachte Azure Cosmos DB eigenschaps type opgeven in de `WITH` component. Gebruik niet `OPENROWSET` zonder een `WITH` component in de rapporten omdat de indeling van de resultatenset kan worden gewijzigd op basis van feedback.
+Tijdens het uitvoeren van een query op een volledig Fidelity-schema moet u expliciet het SQL-type en het verwachte Azure Cosmos DB eigenschaps type opgeven in de `WITH` component.
 
 In het volgende voor beeld wordt ervan uitgegaan dat het `string` juiste type voor de `geo_id` eigenschap is en `int32` het juiste type voor de `cases` eigenschap:
 
@@ -415,7 +412,6 @@ In dit voor beeld wordt het aantal cases opgeslagen als `int32` , `int64` of `fl
 
 ## <a name="known-issues"></a>Bekende problemen
 
-- Vertrouw niet op het schema dat de `OPENROWSET` functie zonder de- `WITH` component levert omdat de query-ervaring mogelijk is uitgelijnd met een goed gedefinieerd schema op basis van feedback van klanten. Als u feedback wilt geven, neemt u contact op met het [Azure Synapse link-product team](mailto:cosmosdbsynapselink@microsoft.com).
 - Een serverloze SQL-groep retourneert een compileer tijd waarschuwing als de `OPENROWSET` kolom sortering geen UTF-8-code ring heeft. U kunt eenvoudig de standaard sortering wijzigen voor alle `OPENROWSET` functies die worden uitgevoerd in de huidige Data Base met behulp van de T-SQL-instructie `alter database current collate Latin1_General_100_CI_AS_SC_UTF8` .
 
 In de volgende tabel worden mogelijke fouten en acties voor het oplossen van problemen weer gegeven.

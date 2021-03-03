@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: noakup
 ms.author: noakuper
 ms.date: 09/03/2020
-ms.openlocfilehash: 3c5a528ada9e7239f5c53da1cae6df7ceffac918
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 4161f2f4ced848eb02d395dfb2da35d64f0c0fb6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610791"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723058"
 ---
 # <a name="using-customer-managed-storage-accounts-in-azure-monitor-log-analytics"></a>Door de klant beheerde opslagaccounts gebruiken in Azure Monitor Log Analytics
 
@@ -51,6 +51,7 @@ Het opslag account kan alleen verbinding maken met uw persoonlijke koppeling als
 * Azure Monitor toegang tot het opslag account toestaan. Als u ervoor hebt gekozen om alleen netwerken te selecteren voor toegang tot uw opslag account, moet u de uitzonde ring: ' vertrouwde micro soft-Services toestaan voor toegang tot dit opslag account ' selecteren.
 ![Afbeelding van de MS-Service vertrouwens relatie van het opslag account](./media/private-storage/storage-trust.png)
 * Als uw werk ruimte ook verkeer afhandelt vanuit andere netwerken, moet u het opslag account configureren om binnenkomend verkeer van de relevante netwerken/internet toe te staan.
+* Het coördineren van TLS-versie tussen de agents en het opslag account. het is raadzaam om gegevens te verzenden naar Log Analytics met behulp van TLS 1,2 of hoger. Bekijk [platformspecifieke richt lijnen](https://docs.microsoft.com/azure/azure-monitor/logs/data-security#sending-data-securely-using-tls-12)en configureer, indien nodig, [uw agents om TLS 1,2 te gebruiken](https://docs.microsoft.com/azure/azure-monitor/agents/agent-windows#configure-agent-to-use-tls-12). Als dit om een bepaalde reden niet mogelijk is, configureert u het opslag account voor het accepteren van TLS 1,0.
 
 ### <a name="using-a-customer-managed-storage-account-for-cmk-data-encryption"></a>Een door de klant beheerd opslag account gebruiken voor CMK-gegevens versleuteling
 Azure Storage versleutelt alle gegevens in rust in een opslag account. Standaard maakt deze gebruik van door micro soft beheerde sleutels (MMK) om de gegevens te versleutelen. Met Azure Storage kunt u echter ook CMK van Azure sleutel kluis gebruiken om uw opslag gegevens te versleutelen. U kunt uw eigen sleutels importeren in Azure Key Vault, of u kunt de Azure Key Vault-Api's gebruiken om sleutels te genereren.

@@ -5,13 +5,13 @@ author: jifems
 ms.author: jife
 ms.service: data-share
 ms.topic: how-to
-ms.date: 12/16/2020
-ms.openlocfilehash: 242980ac1b89345ed9d8ff903e65129cff3cb917
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.date: 02/23/2021
+ms.openlocfilehash: dc309e85373193e4f5d431f543ff3e59ea5bebc7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97964096"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101739259"
 ---
 # <a name="share-and-receive-data-from-azure-blob-storage-and-azure-data-lake-storage"></a>Gegevens delen en ontvangen van Azure Blob Storage en Azure Data Lake Storage
 
@@ -24,6 +24,7 @@ De Azure-gegevens share ondersteunt het delen van bestanden, mappen en bestands 
 Wanneer bestands systemen, containers of mappen worden gedeeld in delen op basis van moment opnamen, kunnen gegevens gebruikers ervoor kiezen om een volledige kopie van de share gegevens te maken. Of ze kunnen de mogelijkheid van de incrementele moment opname gebruiken om alleen nieuwe of bijgewerkte bestanden te kopiëren. De functie incrementele moment opname is gebaseerd op de tijd van de laatste wijziging van de bestanden. 
 
 Bestaande bestanden met dezelfde naam worden overschreven tijdens een moment opname. Een bestand dat wordt verwijderd uit de bron, wordt niet verwijderd op het doel. Lege submappen op de bron worden niet naar het doel gekopieerd. 
+
 ## <a name="share-data"></a>Gegevens delen
 
 Gebruik de informatie in de volgende secties om gegevens te delen met behulp van de Azure-gegevens share. 
@@ -184,7 +185,7 @@ Volg de stappen in deze sectie om een locatie te configureren voor het ontvangen
 ### <a name="trigger-a-snapshot"></a>Een momentopname activeren
 De stappen in deze sectie zijn alleen van toepassing op delen op basis van moment opnamen.
 
-1. U kunt een moment opname activeren op het tabblad **Details** . Op het tabblad, selecteert u **moment opname activeren**. U kunt ervoor kiezen om een volledige moment opname of incrementele moment opname van uw gegevens te activeren. Als u voor de eerste keer gegevens van uw gegevens provider ontvangt, selecteert u **volledig kopiëren**. 
+1. U kunt een moment opname activeren op het tabblad **Details** . Op het tabblad, selecteert u **moment opname activeren**. U kunt ervoor kiezen om een volledige moment opname of incrementele moment opname van uw gegevens te activeren. Als u voor de eerste keer gegevens van uw gegevens provider ontvangt, selecteert u **volledig kopiëren**. Wanneer een moment opname wordt uitgevoerd, worden volgende moment opnamen niet gestart totdat de vorige is voltooid.
 
    ![Scherm afbeelding van de selectie van de moment opname van de trigger.](./media/trigger-snapshot.png "Moment opname activeren.") 
 
@@ -194,6 +195,14 @@ De stappen in deze sectie zijn alleen van toepassing op delen op basis van momen
 
 ### <a name="view-history"></a>Geschiedenis weergeven
 U kunt de geschiedenis van uw moment opnamen alleen bekijken in delen op basis van moment opnamen. Open het tabblad **geschiedenis** om de geschiedenis weer te geven. Hier ziet u de geschiedenis van alle moment opnamen die in de afgelopen 30 dagen zijn gegenereerd. 
+
+## <a name="storage-snapshot-performance"></a>Prestaties van opslag momentopname
+De prestaties van de opslag momentopname worden beïnvloed door een aantal factoren naast het aantal bestanden en de grootte van de gedeelde gegevens. Het wordt altijd aanbevolen uw eigen prestatie tests uit te voeren. Hieronder ziet u enkele voor beelden van factoren die invloed hebben op de prestaties.
+
+* Gelijktijdige toegang tot de bron-en doel gegevens archieven.  
+* Locatie van bron-en doel gegevens archieven. 
+* Voor incrementele moment opnamen kan het aantal bestanden in de gedeelde gegevensset van invloed zijn op de tijd om de lijst met bestanden te vinden waarvan het tijdstip voor het laatst is gewijzigd na de laatste geslaagde moment opname. 
+
 
 ## <a name="next-steps"></a>Volgende stappen
 U hebt geleerd hoe u gegevens kunt delen en ontvangen van een opslag account met behulp van de Azure data share-service. Zie [ondersteunde gegevens archieven](supported-data-stores.md)voor meer informatie over het delen van andere gegevens bronnen.

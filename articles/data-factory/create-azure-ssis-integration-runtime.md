@@ -3,15 +3,15 @@ title: Een Azure SSIS Integration runtime in Azure Data Factory maken
 description: Meer informatie over het maken van een Azure SSIS Integration runtime in Azure Data Factory zodat u SSIS-pakketten kunt implementeren en uitvoeren in Azure.
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 10/13/2020
+ms.date: 02/22/2021
 author: swinarko
 ms.author: sawinark
-ms.openlocfilehash: 4e3137b08c558c8e9dfadda07f0b8bb66433ee83
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 4b26abe1d1340e4e8c5f034fad72f612f0b246a2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100389413"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101739403"
 ---
 # <a name="create-an-azure-ssis-integration-runtime-in-azure-data-factory"></a>Een Azure SSIS Integration runtime in Azure Data Factory maken
 
@@ -147,15 +147,21 @@ Als u het selectievakje inschakelt, moet u de volgende stappen uitvoeren om uw e
    
       Op basis van de geselecteerde databaseserver kan het SSISDB-exemplaar namens u worden gemaakt als een enkele database, als onderdeel van een elastische pool of in een beheerd exemplaar. Deze is toegankelijk in een openbaar netwerk of kan worden toegevoegd aan een virtueel netwerk. Zie [SQL Database en een beheerd exemplaar van SQL vergelijken](../data-factory/create-azure-ssis-integration-runtime.md#comparison-of-sql-database-and-sql-managed-instance) voor hulp bij het kiezen van het type databaseserver om SSISDB te hosten.   
 
-      Als u een Azure SQL Database-server met IP-firewall regels/service-eindpunten voor virtuele netwerken of een beheerd exemplaar met een privé-eindpunt selecteert om SSISDB te hosten, of als u toegang tot on-premises gegevens nodig hebt zonder een zelf-hostende IR te configureren, moet u uw Azure-SSIS IR toevoegen aan een virtueel netwerk. Zie [Een Azure-SSIS IR maken in een virtueel netwerk]() voor meer informatie.
+      Als u een Azure SQL Database-server met IP-firewall regels/service-eindpunten voor virtuele netwerken of een beheerd exemplaar met een privé-eindpunt selecteert om SSISDB te hosten, of als u toegang tot on-premises gegevens nodig hebt zonder een zelf-hostende IR te configureren, moet u uw Azure-SSIS IR toevoegen aan een virtueel netwerk. Zie [een Azure-SSIS IR toevoegen aan een virtueel netwerk](./join-azure-ssis-integration-runtime-virtual-network.md)voor meer informatie.
 
    1. Schakel het selectievakje **Azure Active Directory-verificatie gebruiken met de beheerde identiteit voor uw ADF** om de verificatiemethode voor uw databaseserver voor het hosten van SSISDB te kiezen. U kiest SQL-verificatie of Azure Active Directory-verificatie met de beheerde identiteit voor uw data factory.
 
-      Als u het selectievakje selecteert, moet u de beheerde identiteit voor uw data factory toevoegen aan een Azure Active Directory-groep met toegangsmachtigingen tot de databaseserver. Zie [Een Azure-SSIS IR met Azure Active Directory-verificatie maken]() voor meer informatie.
+      Als u het selectievakje selecteert, moet u de beheerde identiteit voor uw data factory toevoegen aan een Azure Active Directory-groep met toegangsmachtigingen tot de databaseserver. Zie [Azure AD-verificatie inschakelen voor een Azure-SSIS IR](./enable-aad-authentication-azure-ssis-ir.md)voor meer informatie.
    
    1. Voer bij **Gebruikersnaam van beheerder** de gebruikersnaam voor SQL-verificatie voor uw databaseserver voor het hosten van SSISDB in. 
 
    1. Voer bij **Beheerderswachtwoord** het wachtwoord voor SQL-verificatie voor uw databaseserver voor het hosten van SSISDB in. 
+
+   1. Schakel het selectie vakje **dubbele stand-by Azure-SSIS Integration runtime koppelen met SSISDB-failover** in om een dubbele stand-by-standby Azure SSIS IR-paar te configureren die wordt gesynchroniseerd met een Azure SQL database/Managed instance failover groep voor bedrijfs continuïteit en herstel na nood gevallen (BCDR).
+   
+      Als u het selectie vakje inschakelt, voert u een naam in om uw paar primaire en secundaire Azure-SSIS-IRs te identificeren in het tekstvak **naam van dubbele stand-by-koppeling** . U moet dezelfde paar naam invoeren bij het maken van uw primaire en secundaire Azure-SSIS-IRs.
+
+      Zie [uw Azure-SSIS IR configureren voor BCDR](./configure-bcdr-azure-ssis-integration-runtime.md)voor meer informatie.
 
    1. Selecteer bij **Serverlaag catalogusdatabase** de servicelaag voor uw databaseserver voor het hosten van SSISDB. Selecteer de laag Basic, Standard of Premium of selecteer de naam van een elastische pool.
 

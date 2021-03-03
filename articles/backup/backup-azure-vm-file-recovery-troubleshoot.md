@@ -3,12 +3,12 @@ title: Problemen met Azure VM File Recovery oplossen
 description: Problemen oplossen bij het herstellen van bestanden en mappen vanuit een Azure VM-back-up.
 ms.topic: troubleshooting
 ms.date: 07/12/2020
-ms.openlocfilehash: c4d0d233237cb477d72efea0b91d4e5288e2a302
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 0ee856b10c6a5fbea6f6f76b2082949ab9c1e0db
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735874"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101700300"
 ---
 # <a name="troubleshoot-issues-in-file-recovery-of-an-azure-vm-backup"></a>Problemen oplossen in bestands herstel van een Azure VM-back-up
 
@@ -36,7 +36,7 @@ In deze sectie vindt u de stappen voor het oplossen van fout berichten die u kun
 
 **Aanbevolen actie**: 12 uur nadat u het script hebt gedownload, wordt het ongeldig en kan het niet worden uitgevoerd. Ga naar de portal en down load een nieuw script om door te gaan met het herstellen van bestanden.
 
-### <a name="iscsi_tcp-module-cant-be-loaded-or-iscsi_tcp_module-not-found"></a>iscsi_tcp module kan niet worden geladen (of) iscsi_tcp_module niet gevonden
+### <a name="iscsi_tcp-module-cant-be-loaded-or-iscsi_tcp_module-not-found"></a>iscsi_tcp module kan niet worden geladen (of) iscsi_tcp_module is niet gevonden
 
 **Aanbevolen actie**: als u dit probleem wilt oplossen, volgt u de stappen in [het script downloaden geslaagd, maar kunnen ze niet worden uitgevoerd](#the-script-downloads-successfully-but-fails-to-run).
 
@@ -88,7 +88,7 @@ Los dit probleem op door de stappen voor uw besturings systeem te volgen.
 Wanneer u het script voor de eerste keer uitvoert op Windows Server 2012 R2 en Windows Server 2016 (met opslag groepen), kan de opslag groep worden gekoppeld aan de virtuele machine in alleen-lezen.
 
 >[!Tip]
-> Zorg ervoor dat u de [juiste computer hebt om het script uit te voeren](https://docs.microsoft.com/azure/backup/backup-azure-restore-files-from-vm#step-2-ensure-the-machine-meets-the-requirements-before-executing-the-script).
+> Zorg ervoor dat u de [juiste computer hebt om het script uit te voeren](./backup-azure-restore-files-from-vm.md#step-2-ensure-the-machine-meets-the-requirements-before-executing-the-script).
 
 U kunt dit probleem oplossen door hand matig lees-/schrijftoegang te verlenen aan de opslag groep en de virtuele schijven te koppelen:
 
@@ -108,7 +108,7 @@ U kunt dit probleem oplossen door hand matig lees-/schrijftoegang te verlenen aa
 
 Tijdens het herstel van bestanden detecteert de back-upservice volumes en automatische koppeling. Als de schijven met een back-up echter onbewerkte partities hebben, worden deze schijven niet automatisch gekoppeld en kunt u de gegevens schijf niet voor herstel zien.
 
-Als u dit probleem wilt oplossen, gaat u naar [bestanden herstellen vanuit back-up van virtuele Azure-machines](https://docs.microsoft.com/azure/backup/backup-azure-restore-files-from-vm#lvmraid-arrays-for-linux-vms).
+Als u dit probleem wilt oplossen, gaat u naar [bestanden herstellen vanuit back-up van virtuele Azure-machines](./backup-azure-restore-files-from-vm.md#lvmraid-arrays-for-linux-vms).
 
 #### <a name="linux-file-recovery-fails-because-the-os-couldnt-identify-the-file-system"></a>Linux-bestands herstel mislukt omdat het bestands systeem niet kan worden geïdentificeerd door het besturings systeem
 
@@ -122,7 +122,7 @@ U kunt dit probleem oplossen door te controleren of het volume is versleuteld me
 
    ![Scherm opname van de resultaten van de opdracht voor het weer geven van blok apparaten.](./media/backup-azure-restore-files-from-vm/disk-without-volume-5.png)
 
-1. Controleer het bestands systeem en de versleuteling. Als het volume is versleuteld, wordt bestands herstel niet ondersteund. Meer informatie vindt u in de [ondersteunings matrix voor Azure VM-back-up](https://docs.microsoft.com/azure/backup/backup-support-matrix-iaas#support-for-file-level-restore).
+1. Controleer het bestands systeem en de versleuteling. Als het volume is versleuteld, wordt bestands herstel niet ondersteund. Meer informatie vindt u in de [ondersteunings matrix voor Azure VM-back-up](./backup-support-matrix-iaas.md#support-for-file-level-restore).
 
 ### <a name="disks-are-attached-but-the-volumes-arent-mounted"></a>Schijven zijn gekoppeld, maar de volumes zijn niet gekoppeld
 
@@ -139,7 +139,7 @@ Wanneer u het script voor bestands herstel voor Windows uitvoert, wordt het beri
 Voer de volgende stappen uit om dit probleem op te sporen en op te lossen:
 
 >[!Tip]
->Zorg ervoor dat u de [juiste computer hebt om het script uit te voeren](https://docs.microsoft.com/azure/backup/backup-azure-restore-files-from-vm#step-2-ensure-the-machine-meets-the-requirements-before-executing-the-script).
+>Zorg ervoor dat u de [juiste computer hebt om het script uit te voeren](./backup-azure-restore-files-from-vm.md#step-2-ensure-the-machine-meets-the-requirements-before-executing-the-script).
 
 1. Voer in het **cmd** -venster **diskmgmt** uit om **schijf beheer** te openen.
 1. Zoek naar extra schijven. In het volgende voor beeld is **schijf 2** een extra schijf.
@@ -159,9 +159,9 @@ Voer de volgende stappen uit om dit probleem op te sporen en op te lossen:
 #### <a name="linux"></a>Linux
 
 >[!Tip]
->Zorg ervoor dat u de [juiste computer hebt om het script uit te voeren](https://docs.microsoft.com/azure/backup/backup-azure-restore-files-from-vm#step-2-ensure-the-machine-meets-the-requirements-before-executing-the-script).
+>Zorg ervoor dat u de [juiste computer hebt om het script uit te voeren](./backup-azure-restore-files-from-vm.md#step-2-ensure-the-machine-meets-the-requirements-before-executing-the-script).
 
-Als de beveiligde virtuele Linux-machine gebruikmaakt van LVM-of RAID-matrices, volgt u de stappen in [bestanden herstellen van back-up van virtuele Azure-machines](https://docs.microsoft.com/azure/backup/backup-azure-restore-files-from-vm#lvmraid-arrays-for-linux-vms).
+Als de beveiligde virtuele Linux-machine gebruikmaakt van LVM-of RAID-matrices, volgt u de stappen in [bestanden herstellen van back-up van virtuele Azure-machines](./backup-azure-restore-files-from-vm.md#lvmraid-arrays-for-linux-vms).
 
 ### <a name="you-cant-copy-the-files-from-mounted-volumes"></a>U kunt de bestanden niet van gekoppelde volumes kopiëren
 

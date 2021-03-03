@@ -1,17 +1,16 @@
 ---
 title: Wire data-oplossing in Azure Monitor | Microsoft Docs
 description: Wiregegevens zijn gegevens van het netwerk en de prestaties van computers met Log Analytics agents. Netwerkgegevens worden gecombineerd met uw logboekgegevens om te helpen bij het correleren van gegevens.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/29/2020
-ms.openlocfilehash: 563104a82da3b6b2263fce46792cf4f627c8f6ad
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 5981a5f136d613ffcedda86797d807d2eecfab0d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100572333"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101713623"
 ---
 # <a name="wire-data-20-preview-solution-in-azure-monitor"></a>Wire Data 2.0 (preview)-oplossing in Azure Monitor
 
@@ -26,7 +25,7 @@ Naast de Log Analytics-agent maakt de Wire data-oplossing gebruik van micro soft
 > 
 >Bestaande klanten die gebruikmaken van de Wire data-oplossing, kunnen deze blijven gebruiken. Er worden richt lijnen gepubliceerd voor een migratie tijdlijn voor het verplaatsen naar Servicetoewijzing.
 >
->Nieuwe klanten moeten de [servicetoewijzing-oplossing](../vm/service-map.md) of [Azure monitor voor VM's](../vm/vminsights-overview.md)installeren.  De Servicetoewijzing gegevensset is vergelijkbaar met Wired data.  Azure Monitor voor VM's bevat de Servicetoewijzing gegevensset met aanvullende prestatie gegevens en-functies voor analyse. 
+>Nieuwe klanten moeten de [servicetoewijzing-oplossing](../vm/service-map.md) of [VM Insights](../vm/vminsights-overview.md)installeren.  De Servicetoewijzing gegevensset is vergelijkbaar met Wired data.  VM Insights bevat de Servicetoewijzing gegevensset met aanvullende prestatie gegevens en-functies voor analyse. 
 
 
 Azure Monitor registreert standaard gegevens voor CPU-, geheugen-, schijf-en netwerk prestatie gegevens van tellers die zijn ingebouwd in Windows en Linux, evenals andere prestatie meter items die u kunt opgeven. Het verzamelen van netwerk- en andere gegevens wordt voor elke agent in realtime uitgevoerd, met inbegrip van subnetten en protocollen op toepassingsniveau die door de computer worden gebruikt.  Wire Data kijkt naar netwerkgegevens op toepassingsniveau, niet naar die op de TCP-transportlaag.  De oplossing kijkt niet naar afzonderlijke ACK's en SYN's.  Zodra de handshake is voltooid, wordt dit als een live-verbinding beschouwd en wordt deze gemarkeerd als verbonden. Die verbinding blijft actief zolang beide zijden het erover eens zijn dat de socket geopend is en gegevens heen en weer kunnen worden gestuurd.  Zodra de verbinding is gesloten, wordt deze als losgekoppeld gemarkeerd.  Daarom wordt alleen de bandbreedte van voltooide pakketten meegeteld en wordt niet gemeld of pakketten opnieuw of niet zijn verzonden.
@@ -56,10 +55,10 @@ Wire Data haalt zijn gegevens uit de Microsoft-agent voor afhankelijkheden. De D
 
 | **Verbonden bron** | **Ondersteund** | **Beschrijving** |
 | --- | --- | --- |
-| Windows-agents | Yes | Wire Data analyseert en verzamelt gegevens van Windows-agentcomputers. <br><br> Naast de Log Analytics- [agent voor Windows](../agents/agent-windows.md)vereist Windows-agents de micro soft-afhankelijkheids agent. Zie de [ondersteunde besturingssystemen](../vm/vminsights-enable-overview.md#supported-operating-systems) voor een volledige lijst met versies van besturingssystemen. |
-| Linux-agents | Yes | Wire Data analyseert en verzamelt gegevens van Linux-agentcomputers.<br><br> Naast de Log Analytics- [agent voor Linux is voor](../vm/quick-collect-linux-computer.md)Linux-agents de micro soft-afhankelijkheids agent vereist. Zie de [ondersteunde besturingssystemen](../vm/vminsights-enable-overview.md#supported-operating-systems) voor een volledige lijst met versies van besturingssystemen. |
-| Beheergroep System Center Operations Manager | Yes | Wire Data analyseert en verzamelt gegevens van Windows- en Linux-agents in een verbonden [System Center Operations Manager-beheergroep](../agents/om-agents.md). <br><br> Er is een directe verbinding van de System Center Operations Manager agent computer naar Azure Monitor vereist. |
-| Azure Storage-account | No | Omdat Wire Data gegevens van agentcomputers verzamelt, zijn er geen gegevens te verzamelen van Azure Storage. |
+| Windows-agents | Ja | Wire Data analyseert en verzamelt gegevens van Windows-agentcomputers. <br><br> Naast de Log Analytics- [agent voor Windows](../agents/agent-windows.md)vereist Windows-agents de micro soft-afhankelijkheids agent. Zie de [ondersteunde besturingssystemen](../vm/vminsights-enable-overview.md#supported-operating-systems) voor een volledige lijst met versies van besturingssystemen. |
+| Linux-agents | Ja | Wire Data analyseert en verzamelt gegevens van Linux-agentcomputers.<br><br> Naast de Log Analytics- [agent voor Linux is voor](../vm/quick-collect-linux-computer.md)Linux-agents de micro soft-afhankelijkheids agent vereist. Zie de [ondersteunde besturingssystemen](../vm/vminsights-enable-overview.md#supported-operating-systems) voor een volledige lijst met versies van besturingssystemen. |
+| Beheergroep System Center Operations Manager | Ja | Wire Data analyseert en verzamelt gegevens van Windows- en Linux-agents in een verbonden [System Center Operations Manager-beheergroep](../agents/om-agents.md). <br><br> Er is een directe verbinding van de System Center Operations Manager agent computer naar Azure Monitor vereist. |
+| Azure Storage-account | Nee | Omdat Wire Data gegevens van agentcomputers verzamelt, zijn er geen gegevens te verzamelen van Azure Storage. |
 
 In Windows wordt micro soft Monitoring Agent (MMA) zowel door System Center Operations Manager als Azure Monitor gebruikt voor het verzamelen en verzenden van gegevens. Afhankelijk van de context heet de agent de System Center Operations Manager agent, Log Analytics agent, MMA of direct agent. System Center Operations Manager en Azure Monitor bieden enigszins verschillende versies van de MMA. Deze versies kunnen elk rapport System Center Operations Manager, Azure Monitor of aan beide.
 

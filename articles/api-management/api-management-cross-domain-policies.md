@@ -11,14 +11,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 07/14/2020
+ms.date: 03/01/2021
 ms.author: apimpm
-ms.openlocfilehash: 77d9d20f3321aa5bb6c5ea47a3949a82bdd1ad75
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 85abf30d792b24b92685e191f5b460a42dc29142
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131238"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101688413"
 ---
 # <a name="api-management-cross-domain-policies"></a>API Management-beleid voor meerdere domeinen
 In dit onderwerp vindt u een verwijzing naar de volgende API Management-beleids regels. Zie [beleid in API Management](./api-management-policies.md)voor meer informatie over het toevoegen en configureren van beleid.
@@ -62,7 +62,10 @@ Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management
 - **Beleids bereik:** alle bereiken
 
 ## <a name="cors"></a><a name="CORS"></a> VOORBEREIDENDE
-Met het `cors` beleid wordt ondersteuning geboden voor het gebruik van een CORS (cross-Origin Resource Sharing) aan een bewerking of een API voor het toestaan van interdomein-aanroepen vanuit clients die zijn gebaseerd op de browser.
+Met het `cors` beleid wordt ondersteuning geboden voor het gebruik van een CORS (cross-Origin Resource Sharing) aan een bewerking of een API voor het toestaan van interdomein-aanroepen vanuit clients die zijn gebaseerd op de browser. 
+
+> [!NOTE]
+> Als de aanvraag overeenkomt met een bewerking met een optie methode die is gedefinieerd in de API, wordt de logica voor de verwerking van aanvragen vóór de vlucht die is gekoppeld aan het CORS-beleid niet uitgevoerd. Daarom kunnen dergelijke bewerkingen worden gebruikt voor het implementeren van aangepaste logica voor de verwerking van vóór de vlucht.
 
 Met CORS kunnen een browser en een server communiceren en bepalen of specifieke cross-Origin-aanvragen (XMLHttpRequests-aanroepen van Java script op een webpagina naar andere domeinen) al dan niet mogen worden uitgevoerd. Dit biedt meer flexibiliteit dan alleen het toestaan van niet-oorspronkelijke aanvragen, maar is veiliger dan het toestaan van alle cross-Origin-aanvragen.
 
@@ -71,7 +74,7 @@ U moet het CORS-beleid Toep assen om de interactieve console in de ontwikkelaars
 ### <a name="policy-statement"></a>Beleids verklaring
 
 ```xml
-<cors allow-credentials="false|true">
+<cors allow-credentials="false|true" terminate-unmatched-request="true|false">
     <allowed-origins>
         <origin>origin uri</origin>
     </allowed-origins>
@@ -137,7 +140,8 @@ In dit voor beeld wordt gedemonstreerd hoe aanvragen voorafgaand aan de vlucht w
 
 |Naam|Beschrijving|Vereist|Standaard|
 |----------|-----------------|--------------|-------------|
-|toestaan-referenties|De `Access-Control-Allow-Credentials` header in het Preflight-antwoord wordt ingesteld op de waarde van dit kenmerk en is van invloed op de mogelijkheid van de client om referenties in meerdere domein aanvragen in te dienen.|Nee|false|
+|toestaan-referenties|De `Access-Control-Allow-Credentials` header in het Preflight-antwoord wordt ingesteld op de waarde van dit kenmerk en is van invloed op de mogelijkheid van de client om referenties in meerdere domein aanvragen in te dienen.|Nee|onjuist|
+|Terminate-Request niet-overeenkomend|Dit kenmerk bepaalt de verwerking van cross-Origin-aanvragen die niet overeenkomen met de CORS-beleids instellingen. Wanneer de OPTIONS-aanvraag wordt verwerkt als een aanvraag vóór de vlucht en niet overeenkomt met de instellingen voor het CORS-beleid: als het kenmerk is ingesteld op `true` , wordt de aanvraag onmiddellijk beëindigd met een leeg 200 OK-antwoord. Als het kenmerk is ingesteld op `false` , moet u inkomend controleren op een ander CORS-beleid in de scope dat directe onderliggende elementen van het inkomende element is en deze Toep assen.  Als er geen CORS-beleid wordt gevonden, beëindigt u de aanvraag met een leeg 200 OK-antwoord. Als GET-of HEAD-aanvraag de oorspronkelijke header bevat (en dus als een cross-Origin-aanvraag is verwerkt) en niet overeenkomt met de instellingen voor het CORS-beleid: als het kenmerk is ingesteld op `true` , wordt de aanvraag onmiddellijk beëindigd met een leeg 200 OK-antwoord. Als het kenmerk is ingesteld op `false` , laat u de aanvraag gewoon door gaan en voegt u geen CORS-headers toe aan het antwoord.|Nee|true|
 |Preflight: resultaat-Max-Age|De `Access-Control-Max-Age` header in het Preflight-antwoord wordt ingesteld op de waarde van dit kenmerk en heeft invloed op de mogelijkheid van de gebruikers agent om een reactie in de cache op te slaan.|Nee|0|
 
 ### <a name="usage"></a>Gebruik
@@ -190,4 +194,4 @@ Zie voor meer informatie over het gebruik van beleid:
 + [Beleid in API Management](api-management-howto-policies.md)
 + [Api's transformeren](transform-api.md)
 + [Beleids verwijzing](./api-management-policies.md) voor een volledige lijst met beleids instructies en hun instellingen
-+ [Voor beelden van beleid](./policy-reference.md)
++ [Voorbeelden van beleid](./policy-reference.md)

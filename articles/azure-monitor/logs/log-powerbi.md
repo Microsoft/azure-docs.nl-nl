@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: roygalMS
 ms.author: roygal
 ms.date: 11/03/2020
-ms.openlocfilehash: 80a508aeb7eff9567bea67cb84350fc2e77551da
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: d1db5f5e4164d971dff3ec6b042fa4b0a969e508
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609392"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101704239"
 ---
 # <a name="log-analytics-integration-with-power-bi"></a>Integratie met Power BI Log Analytics
 
@@ -19,7 +19,7 @@ Dit artikel richt zich op manieren om gegevens van Log Analytics te voeren in mi
 
 ## <a name="background"></a>Achtergrond 
 
-Azure Monitor-Logboeken is een platform dat een end-to-end oplossing biedt voor opname van Logboeken. [Azure Monitor Log Analytics](../platform/data-platform.md#) is de interface voor het opvragen van deze logboeken. Zie [Azure monitor data platform](../platform/data-platform.md)(Engelstalig) voor meer informatie over het hele Azure monitor gegevens platform, inclusief log Analytics. 
+Azure Monitor-Logboeken is een platform dat een end-to-end oplossing biedt voor opname van Logboeken. [Azure Monitor Log Analytics](../platform/data-platform.md#) is de interface voor het opvragen van deze logboeken. Zie [Azure monitor data platform](../data-platform.md)(Engelstalig) voor meer informatie over het hele Azure monitor gegevens platform, inclusief log Analytics. 
 
 Micro soft Power BI is het gegevens visualisatie platform van micro soft. Zie [de Home page van Power bi](https://powerbi.microsoft.com/)voor meer informatie over hoe u aan de slag kunt gaan. 
 
@@ -82,4 +82,4 @@ Meer informatie vindt u in [integreren log Analytics en Excel](log-excel.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Aan de slag met [log Analytics query's](../log-query/log-query-overview.md).
+Aan de slag met [log Analytics query's](./log-query-overview.md).

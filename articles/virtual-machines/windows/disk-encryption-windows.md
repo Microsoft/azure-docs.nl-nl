@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: df74a15a84ba04addb75b021d3b77b06cfe2ea48
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 29a63d598ada8c413316fbf18bb87597afdf62de
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96781110"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101693829"
 ---
 # <a name="azure-disk-encryption-scenarios-on-windows-vms"></a>Azure Disk Encryption-scenario's voor Windows-VM's
 
@@ -151,7 +151,7 @@ Versleuteling inschakelen op NVMe-schijven:
 
 Versleuteling wordt op de NVMe-schijven bewaard in de volgende scenario's:
 - VM opnieuw opstarten
-- VMSS-installatie kopie
+- Installatie kopie van de schaalset voor virtuele machines opnieuw instellen
 - Besturings systeem wisselen
 
 NVMe-schijven zullen de volgende scenario's niet initialiseren:
@@ -260,9 +260,8 @@ Azure Disk Encryption werkt niet voor de volgende scenario's, functies en techno
 - Windows Server-containers, waarmee dynamische volumes worden gemaakt voor elke container.
 - Tijdelijke OS-schijven.
 - Versleuteling van gedeelde/gedistribueerde bestands systemen zoals (maar niet beperkt tot) DFS, GFS, DRDB en CephFS.
-- Een versleutelde virtuele machine verplaatsen naar een ander abonnement of nieuwe regio.
+- Een versleutelde VM verplaatsen naar een ander abonnement of nieuwe regio.
 - Een installatie kopie of moment opname van een versleutelde virtuele machine maken en deze gebruiken voor het implementeren van extra Vm's.
-- Gen2 Vm's (zie: [ondersteuning voor virtuele machines van generatie 2 op Azure](../generation-2.md#generation-1-vs-generation-2-capabilities))
 - Vm's uit de M-serie met Write Accelerator-schijven.
 - ADE Toep assen op een virtuele machine met schijven die zijn versleuteld met versleuteling aan de [server zijde met door de klant beheerde sleutels](../disk-encryption.md) (SSE + CMK). Het Toep assen van SSE en CMK op een gegevens schijf op een virtuele machine die is versleuteld met ADE, is ook een niet-ondersteund scenario.
 - Migratie van een VM die is versleuteld met ADE of **ooit** is versleuteld met ADE, voor versleuteling aan de [server zijde met door de klant beheerde sleutels](../disk-encryption.md).

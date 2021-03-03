@@ -5,12 +5,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 02/01/2021
 ms.topic: conceptual
-ms.openlocfilehash: a784127cfd6019629f1c2714d0f36850406c3b9d
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 3f8e23fdeb0a05d2c19f131cf79a079426a9b494
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99548765"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101726492"
 ---
 # <a name="manage-modules-in-azure-automation"></a>Modules beheren in Azure Automation
 
@@ -142,6 +142,7 @@ Wanneer u een AZ-module importeert in uw Automation-account, wordt de module nie
 
 * Wanneer een runbook een cmdlet aanroept vanuit een module.
 * Wanneer een runbook de module expliciet importeert met de cmdlet [import-module](/powershell/module/microsoft.powershell.core/import-module) .
+* Wanneer een runbook de module expliciet importeert met de instructie [using module](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-7.1#module-syntax) . De instructie using wordt ondersteund vanaf Windows Power shell 5,0 en ondersteunt klassen en het importeren van het type Enum.
 * Wanneer een runbook een andere afhankelijke module importeert.
 
 U kunt de AZ-modules in de Azure Portal importeren. Vergeet niet om alleen de AZ-modules te importeren die u nodig hebt, niet de volledige AZ. Automation-module. Omdat [AZ. accounts](https://www.powershellgallery.com/packages/Az.Accounts/1.1.0) een afhankelijkheid voor de andere AZ-modules zijn, moet u deze module vóór andere importeren.

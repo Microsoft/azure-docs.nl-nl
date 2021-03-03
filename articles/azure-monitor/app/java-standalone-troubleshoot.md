@@ -4,12 +4,12 @@ description: Meer informatie over het oplossen van problemen met de Java-Agent v
 ms.topic: conceptual
 ms.date: 11/30/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 90e0ceb6ba9d696eb446d607ed2f2f134733618e
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 286354ecf508dec7b9ba7633bf3b5c7ddc6bfd91
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881129"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737054"
 ---
 # <a name="troubleshooting-guide-azure-monitor-application-insights-for-java"></a>Gids voor probleem oplossing: Azure Monitor Application Insights voor Java
 
@@ -45,15 +45,23 @@ Logboek registratie wordt alleen vastgelegd als het eerst voldoet aan de geconfi
 
 De beste manier om te bepalen of een bepaalde logboek registratie-instructie voldoet aan de geconfigureerde drempel waarde voor registratie raamwerken is om te bevestigen dat deze wordt weer gegeven in uw normale toepassings logboek (bijvoorbeeld bestand of console).
 
+Houd er ook rekening mee dat als een uitzonde ring wordt door gegeven aan de logboek registratie, het logboek bericht (en uitzonde ring) wordt weer gegeven in de Azure Portal in `exceptions` plaats van de `traces` tabel.
+
 Zie de [configuratie voor automatisch verzamelde logboek registratie](./java-standalone-config.md#auto-collected-logging) voor meer informatie.
 
 ## <a name="import-ssl-certificates"></a>SSL-certificaten importeren
 
 Deze sectie helpt u bij het oplossen van problemen met de uitzonde ringen met betrekking tot SSL-certificaten bij gebruik van de Java-Agent.
 
-Er zijn twee verschillende paden om dit probleem op te lossen.
+Er zijn twee verschillende onderstaande paden voor het oplossen van dit probleem:
+* Als u een standaard Java-opslag archief gebruikt
+* Als u een aangepast Java-opslag archief gebruikt
 
-### <a name="if-using-a-default-java-keystore"></a>Als u een standaard Java-opslag archief gebruikt:
+Als u niet zeker weet welk pad u moet volgen, controleert u of u een JVM ARG hebt `-Djavax.net.ssl.trustStore=...` .
+Als u _geen_ dergelijk JVMe ARG hebt, gebruikt u waarschijnlijk de standaard Java-opslag.
+Als u een dergelijk JVMe _ARG hebt, gebruikt u waarschijnlijk_ een aangepaste opslag voor de JVM en gaat u naar uw aangepaste opslag locatie.
+
+### <a name="if-using-the-default-java-keystore"></a>Als u het standaard Java-opslag archief gebruikt:
 
 Normaal gesp roken bevat het standaard Java-opslag archief al alle CA-basis certificaten. Er kunnen echter enkele uitzonde ringen zijn, zoals het inslikken van het eind punt certificaat kan worden ondertekend door een ander basis certificaat. We raden u daarom aan de volgende drie stappen uit te voeren om dit probleem op te lossen:
 

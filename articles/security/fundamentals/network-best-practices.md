@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/02/2019
 ms.author: TomSh
-ms.openlocfilehash: 68f3b9f9cfa8ea74a8240fab6e47bf737788081f
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 4793216a12b17c4e4ea03f62d5a0ba512febc232
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99094321"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101735723"
 ---
 # <a name="azure-best-practices-for-network-security"></a>Best practices van Azure voor netwerkbeveiliging
 In dit artikel wordt een verzameling van aanbevolen procedures voor Azure beschreven om uw netwerk beveiliging te verbeteren. Deze aanbevolen procedures zijn afgeleid van onze ervaring met Azure-netwerken en de ervaringen van klanten, zoals uzelf.
@@ -206,7 +206,7 @@ Persoonlijke Azure-koppeling bieden de volgende voor delen:
 - **Globaal bereik**: Maak privé verbinding met services die in andere regio's worden uitgevoerd. Het virtuele netwerk van de consument kan zich in regio A bevinden en kan verbinding maken met Services in regio B.
 - **Eenvoudig in te stellen en te beheren**: u hebt geen gereserveerde open bare IP-adressen meer nodig in uw virtuele netwerken om Azure-resources te beveiligen via een IP-firewall. Er zijn geen NAT-of gateway apparaten vereist voor het instellen van de persoonlijke eind punten. Privé-eind punten worden geconfigureerd via een eenvoudige werk stroom. Aan de kant van de service kunt u ook de verbindings aanvragen op uw Azure-service resource met gemak beheren. Persoonlijke Azure-koppeling werkt ook voor consumenten en services die deel uitmaken van verschillende Azure Active Directory tenants. 
     
-Zie [persoonlijke Azure-koppeling](https://docs.microsoft.com/azure/private-link/private-link-overview)voor meer informatie over persoonlijke eind punten en de Azure-Services en-regio's waarvoor privé-eind punten beschikbaar zijn.
+Zie [persoonlijke Azure-koppeling](../../private-link/private-link-overview.md)voor meer informatie over persoonlijke eind punten en de Azure-Services en-regio's waarvoor privé-eind punten beschikbaar zijn.
 
 
 ## <a name="next-steps"></a>Volgende stappen

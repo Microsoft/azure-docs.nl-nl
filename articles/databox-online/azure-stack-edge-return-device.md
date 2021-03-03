@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 07/27/2020
+ms.date: 02/26/2021
 ms.author: alkohli
-ms.openlocfilehash: 0c35bde40cac9629f084d69d52f119651b5655f7
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 6c9e8938feb3c3444d01f9d37476589776707425
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98784474"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703181"
 ---
 # <a name="return-your-azure-stack-edge-pro-device"></a>Uw Azure Stack Edge Pro-apparaat retour neren
 
@@ -30,26 +30,16 @@ In dit artikel leert u het volgende:
 
 ## <a name="erase-data-from-the-device"></a>Gegevens van het apparaat wissen
 
-Als u de gegevens van de gegevens schijven van uw apparaat wilt wissen, moet u uw apparaat opnieuw instellen. U kunt uw apparaat opnieuw instellen met behulp van de lokale webgebruikersinterface of de Power shell-interface.
+Als u de gegevens van de gegevens schijven van uw apparaat wilt wissen, moet u uw apparaat opnieuw instellen.
 
-Voordat u opnieuw instelt, maakt u indien nodig een kopie van de lokale gegevens op het apparaat. U kunt de gegevens van het apparaat naar een Azure Storage-container kopiëren.
+Voordat u opnieuw instelt, maakt u indien nodig een kopie van de lokale gegevens op het apparaat. U kunt de gegevens van het apparaat naar een Azure Storage-container kopiëren. 
 
-U kunt het retour neren van het apparaat starten, zelfs voordat het apparaat opnieuw wordt ingesteld. 
+U kunt het retour neren van het apparaat starten, zelfs voordat het apparaat opnieuw wordt ingesteld.
 
-Voer de volgende stappen uit om uw apparaat opnieuw in te stellen met behulp van de lokale web-UI.
+U kunt uw apparaat opnieuw instellen in de lokale webgebruikersinterface of in Power shell. Zie [uw apparaat opnieuw instellen](./azure-stack-edge-connect-powershell-interface.md#reset-your-device)voor instructies voor Power shell.
 
-1. Ga in de lokale web-UI naar **onderhoud > apparaat opnieuw instellen**.
-2. Selecteer **apparaat opnieuw instellen**.
 
-    ![Apparaat opnieuw instellen](media/azure-stack-edge-return-device/device-reset-1.png)
-
-3. Als u om bevestiging wordt gevraagd, controleert u de waarschuwing en selecteert u **Ja** om door te gaan.
-
-    ![Opnieuw instellen bevestigen](media/azure-stack-edge-return-device/device-reset-2.png)  
-
-Met de reset worden de gegevens van de gegevens schijven van apparaten gewist. Afhankelijk van de hoeveelheid gegevens op uw apparaat, neemt dit proces ongeveer 30-40 minuten in beslag.
-
-U kunt ook verbinding maken met de Power shell-interface van het apparaat en de `Reset-HcsAppliance` cmdlet gebruiken om de gegevens van de gegevens schijven te wissen. Zie [uw apparaat opnieuw instellen](azure-stack-edge-connect-powershell-interface.md#reset-your-device)voor meer informatie.
+[! INCLUDe] [gegevens van het apparaat opnieuw instellen](../../includes/azure-stack-edge-device-reset.md)
 
 > [!NOTE]
 > - Als u uitwisselt of een upgrade naar een nieuw apparaat uitvoert, raden wij u aan uw apparaat opnieuw in te stellen nadat u het nieuwe apparaat hebt ontvangen.
@@ -67,15 +57,15 @@ Voer de volgende stappen uit om het retour proces te starten.
 
     1. Geef het serie nummer van het apparaat op. Als u het serie nummer van het apparaat wilt ophalen, gaat u naar de lokale web-UI van het apparaat en gaat u naar **overzicht**.  
     
-    ![Serie nummer 1 van apparaat](media/azure-stack-edge-return-device/device-serial-number-1.png) 
+       ![Serie nummer 1 van apparaat](media/azure-stack-edge-return-device/device-serial-number-1.png) 
 
-    2. Voer het servicetag nummer in dat een unieke teken-id voor uw apparaat is. De servicetag bevindt zich in de rechter benedenhoek van het apparaat (als u het apparaat bewaart). Haal het informatie label uit (dit is een deel venster voor een uitgaand label). Dit paneel bevat systeem informatie zoals service tags, NIC, MAC-adres, enzovoort. 
+    2. Voer het servicetag nummer in. Het servicetag nummer is een id met vijf of meer tekens die uniek is voor uw apparaat. De servicetag bevindt zich in de rechter benedenhoek van het apparaat (als u het apparaat bewaart). Haal het informatie label uit (dit is een deel venster voor een uitgaand label). Dit paneel bevat systeem informatie zoals service tags, NIC, MAC-adres, enzovoort. 
     
-    ![Servicetag nummer 1](media/azure-stack-edge-return-device/service-tag-number-1.png)
+       ![Servicetag nummer 1](media/azure-stack-edge-return-device/service-tag-number-1.png)
 
     3. Kies in de vervolg keuzelijst een reden voor de retour nering.
 
-    ![Apparaat 2 retour neren](media/azure-stack-edge-return-device/return-device-2.png) 
+       ![Apparaat 2 retour neren](media/azure-stack-edge-return-device/return-device-2.png) 
 
 3. Onder **Verzend gegevens**:
 
@@ -109,7 +99,7 @@ Als u een ophaling wilt plannen, voert u de volgende stappen uit.
 
     1. Bel met UPS (gratis land-/regiospecifiek nummer).
     2. Neem in uw gesprek het tracerings nummer van omgekeerde verzen ding op zoals op het afgedrukte label wordt weer gegeven.
-    3. Als het tracking nummer niet wordt vermeld, moet u een extra kosten betalen tijdens het ophalen.
+    3. Als het tracking nummer niet wordt vermeld, moet u tijdens het ophalen een extra kosten betalen.
 
     In plaats van het ophalen te plannen, kunt u ook de Azure Stack Edge Pro verwijderen op de dichtstbijzijnde uitval locatie.
 
@@ -123,8 +113,8 @@ Nadat het apparaat is ontvangen in het Azure-Data Center, wordt het apparaat ge�
 
 U kunt het apparaat verwijderen in de Azure Portal:
 
-- Nadat u de order hebt geplaatst en voordat het apparaat door micro soft wordt voor bereid.
-- Nadat u het apparaat hebt geretourneerd naar micro soft, wordt de fysieke inspectie door gegeven aan het Azure-Data Center en worden Azure Stack Edge Pro Operations-team aangeroepen om te bevestigen dat het apparaat is geretourneerd.
+- Nadat u een bestelling hebt geplaatst en voordat het apparaat door micro soft wordt voor bereid.
+- Nadat u een apparaat hebt geretourneerd naar micro soft, en het Azure Stack Edge Pro Operations-team heeft opgeroepen om te bevestigen dat het apparaat is geretourneerd. Het operations-team belt pas wanneer het geretourneerde apparaat de fysieke inspectie in het Azure-Data Center doorgeeft.
 
 Als u het apparaat hebt geactiveerd op basis van een ander abonnement of een andere locatie, zal micro soft uw bestelling binnen één werkdag naar het nieuwe abonnement of deze locatie verplaatsen. Nadat de order is verplaatst, kunt u deze resource verwijderen.
 

@@ -7,18 +7,17 @@ ms.service: machine-learning
 ms.subservice: core
 ms.author: laobri
 author: lobrien
-ms.date: 02/01/2021
+ms.date: 02/26/2021
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy20q4, devx-track-python, data4ml
-ms.openlocfilehash: 894b0fcddaead6ce60e1becc7221c4f5e608de48
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 5a83211654ad1abafff59d5968c191ec1fa63616
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99492294"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101692399"
 ---
 # <a name="moving-data-into-and-between-ml-pipeline-steps-python"></a>Gegevens verplaatsen naar en tussen ML-pijplijnstappen (Python)
-
 
 Dit artikel bevat code voor het importeren, transformeren en verplaatsen van gegevens tussen stappen in een Azure Machine Learning-pijp lijn. Zie [toegang tot gegevens in azure Storage-services](how-to-access-data.md)voor een overzicht van de werking van gegevens in azure machine learning. Zie [Wat zijn Azure machine learning pijp lijnen?](concept-ml-pipelines.md)voor de voor delen en de structuur van Azure machine learning pijp lijnen.
 
@@ -29,7 +28,7 @@ In dit artikel wordt uitgelegd hoe u:
 - `Dataset`Gegevens splitsen in subsets, zoals training en validatie subsets
 - `OutputFileDatasetConfig`Objecten maken voor het overdragen van gegevens naar de volgende pijplijn stap
 - `OutputFileDatasetConfig`Objecten gebruiken als invoer voor pijplijn stappen
-- Nieuwe `Dataset` objecten maken die `OutputFileDatasetConfig` u wilt behouden
+- Nieuwe `Dataset` objecten van de `OutputFileDatasetConfig` wisƒh maken die u wilt behouden
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -64,10 +63,12 @@ Er zijn veel manieren om objecten te maken en te registreren `Dataset` . Tabella
 datastore = Datastore.get(workspace, 'training_data')
 iris_dataset = Dataset.Tabular.from_delimited_files(DataPath(datastore, 'iris.csv'))
 
-cats_dogs_dataset = Dataset.File.from_files(
-    paths='https://download.microsoft.com/download/3/E/1/3E1C3F21-ECDB-4869-8368-6DEBA77B919F/kagglecatsanddogs_3367a.zip',
-    archive_options=ArchiveOptions(archive_type=ArchiveType.ZIP, entry_glob='**/*.jpg')
-)
+datastore_path = [
+    DataPath(datastore, 'animals/dog/1.jpg'),
+    DataPath(datastore, 'animals/dog/2.jpg'),
+    DataPath(datastore, 'animals/cat/*.jpg')
+]
+cats_dogs_dataset = Dataset.File.from_files(path=datastore_path)
 ```
 
 Zie [Azure machine learning gegevens sets maken](how-to-create-register-datasets.md)voor meer opties voor het maken van gegevens sets met verschillende opties en uit verschillende bronnen, het registreren van de gegevens in de gebruikers interface van de Azure machine learning. 
@@ -200,7 +201,7 @@ with open(args.output_path, 'w') as f:
 
 Nadat de eerste pijplijn stap enkele gegevens naar het `OutputFileDatasetConfig` pad heeft geschreven en deze een uitvoer van die eerste stap wordt, kan deze worden gebruikt als invoer voor een latere stap. 
 
-In de volgende code, 
+In de volgende code: 
 
 * `step1_output_data` geeft aan dat de uitvoer van de PythonScriptStep, `step1` wordt geschreven naar het gegevens archief van ADLS gen 2 `my_adlsgen2` in de modus voor het uploaden van toegang. Meer informatie over het [instellen van rolmachtigingen](how-to-access-data.md#azure-data-lake-storage-generation-2) voor het terugschrijven van gegevens naar ADLS gen 2-gegevens opslag. 
 
@@ -223,7 +224,7 @@ step2 = PythonScriptStep(
     script_name="step2.py",
     compute_target=compute,
     runconfig = aml_run_config,
-    arguments = ["--pd", step1_output_data.as_input]
+    arguments = ["--pd", step1_output_data.as_input()]
 
 )
 
@@ -239,6 +240,15 @@ step1_output_ds = step1_output_data.register_on_complete(name='processed_data',
                                                          description = 'files from step1`)
 ```
 
+## <a name="delete-outputfiledatasetconfig-contents-when-no-longer-needed"></a>`OutputFileDatasetConfig`Inhoud verwijderen wanneer deze niet meer nodig is
+
+Tussenliggende gegevens die zijn geschreven met, worden niet automatisch door Azure verwijderd `OutputFileDatasetConfig` . Om opslag kosten te voor komen voor grote hoeveel heden gegevens die niet meer nodig zijn, moet u:
+
+* Verwijder programmatisch tussenliggende gegevens aan het einde van een pijplijn uitvoering, wanneer deze niet meer nodig is
+* Blob-opslag gebruiken met een opslag beleid voor de korte termijn voor tussenliggende gegevens (Zie [kosten optimaliseren door Azure Blob Storage Access-lagen te automatiseren](../storage/blobs/storage/blobs/storage-lifecycle-management-concepts.md)) 
+* Gegevens die niet meer nodig zijn, regel matig controleren en verwijderen
+
+Zie [kosten plannen en beheren voor Azure machine learning](concept-plan-manage-cost.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

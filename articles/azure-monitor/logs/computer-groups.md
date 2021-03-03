@@ -6,15 +6,15 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/05/2019
-ms.openlocfilehash: 92603165ac399415ec4fb6daeea1641065671a83
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 3dffab040b8ee17760e23aa8b1d8fb65aa0417e7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611367"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734125"
 ---
 # <a name="computer-groups-in-azure-monitor-log-queries"></a>Computer groepen in Azure Monitor-logboek query's
-Met computer groepen in Azure Monitor kunt u [logboek query's](../log-query/log-query-overview.md) op een bepaalde set computers bereiken.  Elke groep wordt gevuld met computers met behulp van een query die u definieert of door groepen te importeren uit verschillende bronnen.  Wanneer de groep is opgenomen in een logboek query, zijn de resultaten beperkt tot records die overeenkomen met de computers in de groep.
+Met computer groepen in Azure Monitor kunt u [logboek query's](./log-query-overview.md) op een bepaalde set computers bereiken.  Elke groep wordt gevuld met computers met behulp van een query die u definieert of door groepen te importeren uit verschillende bronnen.  Wanneer de groep is opgenomen in een logboek query, zijn de resultaten beperkt tot records die overeenkomen met de computers in de groep.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -135,5 +135,4 @@ Er wordt een record gemaakt in de werk ruimte Log Analytics voor elk lidmaatscha
 | `TimeGenerated` |De datum en tijd waarop de computer groep is gemaakt of bijgewerkt. |
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over [logboek query's](../log-query/log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen.  
-
+* Meer informatie over [logboek query's](./log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen.

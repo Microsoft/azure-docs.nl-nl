@@ -7,15 +7,15 @@ author: bwren
 ms.author: bwren
 ms.date: 10/05/2018
 ms.custom: mvc
-ms.openlocfilehash: e790486758d6a5e3181df01f85e1213cca3fa12d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 67d03636b118db71502a6245e60f71c94afdddf6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100627320"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701005"
 ---
 # <a name="respond-to-events-with-azure-monitor-alerts"></a>Reageren op gebeurtenissen met Azure Monitor-waarschuwingen
-Waarschuwingen in Azure Monitor kunnen belangrijke informatie in uw Log Analytics-opslagplaats aangeven. Ze worden gemaakt door waarschuwingsregels die automatisch met regelmatige tussenpozen zoekopdrachten in logboeken uitvoeren. Als de resultaten van de logboekzoekactie aan bepaalde criteria voldoen, wordt een waarschuwingsrecord gemaakt en kan deze worden geconfigureerd voor het uitvoeren van een automatische reactie.  Deze zelfstudie is een vervolg van de zelfstudie [Dashboards van Log Analytics-gegevens maken en delen](../learn/tutorial-logs-dashboards.md).   
+Waarschuwingen in Azure Monitor kunnen belangrijke informatie in uw Log Analytics-opslagplaats aangeven. Ze worden gemaakt door waarschuwingsregels die automatisch met regelmatige tussenpozen zoekopdrachten in logboeken uitvoeren. Als de resultaten van de logboekzoekactie aan bepaalde criteria voldoen, wordt een waarschuwingsrecord gemaakt en kan deze worden geconfigureerd voor het uitvoeren van een automatische reactie.  Deze zelfstudie is een vervolg van de zelfstudie [Dashboards van Log Analytics-gegevens maken en delen](../visualize/tutorial-logs-dashboards.md).   
 
 In deze zelfstudie leert u het volgende:
 
@@ -31,7 +31,7 @@ Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azur
 ## <a name="create-alerts"></a>Waarschuwingen maken
 Waarschuwingen worden gemaakt door regels voor waarschuwingen in Azure Monitor en kunnen automatisch opgeslagen query's uitvoeren of aangepaste zoekopdrachten in logboeken met regelmatige tussenpozen.  U kunt waarschuwingen maken op basis van specifieke prestatiemetrieken of wanneer bepaalde gebeurtenissen worden gemaakt, de afwezigheid van een gebeurtenis of een aantal gebeurtenissen die binnen een bepaalde periode worden gemaakt.  Waarschuwingen kunnen bijvoorbeeld worden gebruikt om u te waarschuwen wanneer het gemiddelde CPU-gebruik een bepaalde drempelwaarde overschrijdt, er een ontbrekende update wordt gedetecteerd of er een gebeurtenis wordt gegenereerd omdat een specifieke Windows-service of Linux-daemon niet wordt uitgevoerd.  Als de resultaten van de logboekzoekopdracht aan bepaalde criteria voldoen, wordt er een waarschuwing gemaakt. De regel kan vervolgens automatisch een of meer acties uitvoeren, bijvoorbeeld om u te informeren over de waarschuwing of om een ander proces aan te roepen. 
 
-In het volgende voorbeeld maakt u een waarschuwingsregel voor een metrische meting die is gebaseerd op de query *Azure VMs - Processor Utilization* die u hebt opgeslagen in de [zelfstudie Gegevens visualiseren](../learn/tutorial-logs-dashboards.md).  Er wordt een waarschuwing gemaakt voor elke virtuele machine die een drempel van 90% overschrijdt.  
+In het volgende voorbeeld maakt u een waarschuwingsregel voor een metrische meting die is gebaseerd op de query *Azure VMs - Processor Utilization* die u hebt opgeslagen in de [zelfstudie Gegevens visualiseren](../visualize/tutorial-logs-dashboards.md).  Er wordt een waarschuwing gemaakt voor elke virtuele machine die een drempel van 90% overschrijdt.  
 
 1. Klik in Azure Portal op **Alle services**. Typ in de lijst met resources **Log Analytics**. Als u begint te typen, wordt de lijst gefilterd op basis van uw invoer. Selecteer **Log Analytics**.
 2. Selecteer in het linkerdeelvenster **Waarschuwingen** en klik vervolgens bovenaan de pagina op **Nieuwe waarschuwingsregel** om een nieuwe waarschuwing te maken.<br><br> ![Nieuwe waarschuwingsregel maken](./media/tutorial-response/alert-rule-02.png)<br>
@@ -69,4 +69,4 @@ In deze zelfstudie hebt u geleerd hoe waarschuwingsregels een probleem proactief
 Volg deze link om voorbeelden te zien van vooraf gemaakte Log Analytics-scripts.  
 
 > [!div class="nextstepaction"]
-> [Voorbeelden van Log Analytics-scripts](../samples/powershell-samples.md)
+> [Voorbeelden van Log Analytics-scripts](../powershell-samples.md)

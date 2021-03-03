@@ -6,12 +6,12 @@ manager: nitinme
 ms.author: lajanuar
 author: laujan
 ms.date: 02/11/2021
-ms.openlocfilehash: 5508ffc758b08642b05b1f77b66c9f29be1c85a2
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 886889ef9a42e358fca22a9d86955a23c5419dfa
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100650776"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738154"
 ---
 # <a name="get-started-with-document-translation-preview"></a>Aan de slag met document vertalingen (preview-versie)
 
@@ -26,6 +26,8 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 * Een [**Translator**](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextTranslation) -service resource (**niet** een Cognitive Services resource). 
 
 * Een [**Azure Blob-opslag account**](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM). Alle toegang tot Azure Storage vindt plaats via een opslagaccount.
+
+* Een volledig [**formulier voor het vertalen van documenten (preview)**](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR-riVR3Xj0tOnIRdZOALbM9UOEE4UVdFQVBRQVBWWDBRQUM3WjYxUEpUTC4u) om uw Azure-abonnement in te scha kelen voor gebruik van de nieuwe functie voor document vertalingen.
 
 > [!NOTE]
 > Document vertalingen worden momenteel alleen ondersteund in de Translator-resource (single-service), **niet** de Cognitive Services resource (meerdere services).
@@ -64,7 +66,7 @@ Aanvragen voor de Translator-service vereisen een alleen-lezen sleutel voor het 
 
 ## <a name="create-your-azure-blob-storage-containers"></a>Uw Azure Blob-opslag containers maken
 
-U moet in uw [**Azure Blob Storage-account**](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM) [**containers maken**](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container) voor bron-, doel-en optionele woordenlijst bestanden.
+U moet in uw [**Azure Blob Storage-account**](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM) [**containers maken**](../../../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container) voor bron-, doel-en optionele woordenlijst bestanden.
 
 * **Bron container**. In deze container uploadt u uw bestanden voor vertaling (vereist).
 * **Doel container**. In deze container worden uw vertaalde bestanden opgeslagen (vereist).  
@@ -184,7 +186,7 @@ Er wordt een aanvraag voor een batch-document vertaling verzonden naar het Verta
 
 De volgende headers zijn opgenomen in elke document Translator API-aanvraag:
 
-|HTTP-header|Description|
+|HTTP-header|Beschrijving|
 |---|--|
 |Ocp-Apim-Subscription-Key|**Vereist**: de waarde is de Azure-abonnements sleutel voor uw Translator of Cognitive Services resource.|
 |Content-Type|**Vereist**: Hiermee geeft u het inhouds type van de payload op. Geaccepteerde waarden zijn application/json of charset = UTF-8.|
@@ -201,26 +203,7 @@ De volgende headers zijn opgenomen in elke document Translator API-aanvraag:
 >[!NOTE]
 > Als er al een bestand met dezelfde naam in het doel bestaat, wordt dit overschreven.
 
-### <a name="post-a-translation-request"></a>Een Vertaal aanvraag plaatsen
-
-> [!IMPORTANT]
->
-> * Voor de voorbeeld code moet u mogelijk de volgende velden bijwerken, afhankelijk van de bewerking:
-
->> [!div class="checklist"]
->>
->> * `endpoint`
->> * `subscriptionKey`
->> * `sourceURL`
->> * `targetURL`
->> * `glossaryURL`
->> * `id`  (taak-ID)
->>
-> * U vindt de taak `id`  in de URL-waarde van de antwoord header van de methode post `Operation-Location`  . De laatste para meter van de URL is de taak van de bewerking **`id`** .  
-> * U kunt ook een aanvraag voor het ophalen van taken gebruiken om de taak `id`  voor een document Vertaal bewerking op te halen.
-> * In de onderstaande voor beelden kunt u uw sleutel en het eind punt op de aangegeven wijze in een code vastleggen. Vergeet niet om de sleutel uit uw code te verwijderen wanneer u klaar bent en deze nooit openbaar te plaatsen.  
->
-> Zie [Azure Cognitive Services Security](/azure/cognitive-services/cognitive-services-security?tabs=command-line%2Ccsharp) voor manieren om uw referenties veilig op te slaan en te openen.
+## <a name="post-a-translation-request"></a>Een Vertaal aanvraag plaatsen
 
 <!-- markdownlint-disable MD024 -->
 ### <a name="post-request-body-without-optional-glossaryurl"></a>POST-aanvraag hoofdtekst zonder optionele glossaryURL
@@ -286,7 +269,26 @@ De volgende headers zijn opgenomen in elke document Translator API-aanvraag:
 }
 ```
 
-## <a name="_post-document-translation_-request-code-samples"></a>Code voorbeelden van de aanvraag voor _document vertaling verzenden_
+> [!IMPORTANT]
+>
+> Voor de voorbeeld code moet u mogelijk de volgende velden bijwerken, afhankelijk van de bewerking:
+>>>
+>> * `endpoint`
+>> * `subscriptionKey`
+>> * `sourceURL`
+>> * `targetURL`
+>> * `glossaryURL`
+>> * `id`  (taak-ID)
+>>
+> Waar de waarde moet worden gezocht `id` :
+> * U vindt de taak `id`  in de URL-waarde van de antwoord header van de methode post `Operation-Location`  . De laatste para meter van de URL is de taak van de bewerking **`id`** .  
+> * U kunt ook een aanvraag voor het ophalen van taken gebruiken om de taak `id`  voor een document Vertaal bewerking op te halen.
+>
+> Voor de onderstaande code voorbeelden geeft u uw sleutel en het eind punt op waar aangegeven. Vergeet niet om de sleutel uit uw code te verwijderen wanneer u klaar bent en deze nooit openbaar te plaatsen.  
+>
+> Zie [Azure Cognitive Services Security](/azure/cognitive-services/cognitive-services-security?tabs=command-line%2Ccsharp) voor manieren om uw referenties veilig op te slaan en te openen.
+
+## <a name="_post-document-translation_-request"></a>Aanvraag voor _document vertaling boeken_
 
 Een conversie aanvraag voor een batch-document verzenden naar de Vertaal service.
 
@@ -519,7 +521,7 @@ if err != nil {
 
 ---
 
-## <a name="_get-file-formats_-code-samples"></a>Code voorbeelden voor _Bestands indelingen ophalen_
+## <a name="_get-file-formats_"></a>_Bestands indelingen ophalen_ 
 
 Een lijst met ondersteunde bestands indelingen ophalen. Als deze methode is geslaagd, wordt een `200 OK` antwoord code geretourneerd.
 
@@ -696,7 +698,7 @@ func main() {
 
 ---
 
-## <a name="_get-job-status_-code-samples"></a>Voor beelden van _taak status code ophalen_
+## <a name="_get-job-status_"></a>_Taak status ophalen_ 
 
 De huidige status ophalen voor één taak en een samen vatting van alle taken in een aanvraag voor document vertaling. Als deze methode is geslaagd, wordt een `200 OK` antwoord code geretourneerd.
 <!-- markdownlint-disable MD024 -->
@@ -875,7 +877,7 @@ func main() {
 
 ---
 
-## <a name="_get-document-status_-code-samples"></a>Voor beelden van _document status code ophalen_
+## <a name="_get-document-status_"></a>_Document status ophalen_
 
 ### <a name="brief-overview"></a>Beknopt overzicht
 
@@ -1055,7 +1057,7 @@ func main() {
 
 ---
 
-## <a name="_delete-job_-code-samples"></a>_Taak_ code voorbeelden verwijderen
+## <a name="_delete-job_"></a>_Taak verwijderen_ 
 
 ### <a name="brief-overview"></a>Beknopt overzicht
 
@@ -1254,7 +1256,7 @@ De volgende tabel bevat de limieten voor gegevens die u naar document vertalinge
 
 * [Translator v3 API-verwijzing](../reference/v3-0-reference.md)
 * [Taalondersteuning](../language-support.md)
-* [Abonnementen in Azure API Management](/azure/api-management/api-management-subscriptions).
+* [Abonnementen in Azure API Management](../../../api-management/api-management-subscriptions.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

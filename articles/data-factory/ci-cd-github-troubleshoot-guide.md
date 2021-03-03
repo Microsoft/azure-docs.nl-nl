@@ -7,12 +7,12 @@ ms.reviewer: susabat
 ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 12/03/2020
-ms.openlocfilehash: 091c0cb20877090453f38ab922cc2bd277e90093
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 5c33ef9559d9ce67eea62ee7f78425d18010c1cb
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100393748"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101727954"
 ---
 # <a name="troubleshoot-ci-cd-azure-devops-and-github-issues-in-adf"></a>Problemen met CI-CD-, Azure DevOps-en GitHub oplossen in ADF 
 
@@ -162,7 +162,7 @@ Tot die tijd kunt u alleen ADF-pijp lijn publiceren voor implementaties met behu
 
 #### <a name="resolution"></a>Oplossing
 
-Het CI/CD-proces is verbeterd. Met de functie voor **automatisch publiceren** worden alle Azure Resource Manager (arm)-sjabloon functies van de ADF UX gevalideerd en geëxporteerd. De logica kan worden verbruikt met behulp van een openbaar beschikbaar NPM-pakket [@microsoft/azure-data-factory-utilities](https://www.npmjs.com/package/@microsoft/azure-data-factory-utilities) . Zo kunt u deze acties programmatisch activeren in plaats van dat u naar de ADF-gebruikers interface hoeft te gaan en op een knop klikt. Dit geeft uw CI/CD-pijp lijnen een **echte** voortdurende integratie-ervaring. Volg de [verbeteringen voor ADF CI/CD-publicatie](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment-improvements) voor meer informatie. 
+Het CI/CD-proces is verbeterd. Met de functie voor **automatisch publiceren** worden alle Azure Resource Manager (arm)-sjabloon functies van de ADF UX gevalideerd en geëxporteerd. De logica kan worden verbruikt met behulp van een openbaar beschikbaar NPM-pakket [@microsoft/azure-data-factory-utilities](https://www.npmjs.com/package/@microsoft/azure-data-factory-utilities) . Zo kunt u deze acties programmatisch activeren in plaats van dat u naar de ADF-gebruikers interface hoeft te gaan en op een knop klikt. Dit geeft uw CI/CD-pijp lijnen een **echte** voortdurende integratie-ervaring. Volg de [verbeteringen voor ADF CI/CD-publicatie](./continuous-integration-deployment-improvements.md) voor meer informatie. 
 
 ###  <a name="cannot-publish-because-of-4mb-arm-template-limit"></a>Kan niet publiceren vanwege een limiet van 4 MB ARM-sjablonen  
 
@@ -176,7 +176,45 @@ Azure Resource Manager beperkt de sjabloon grootte tot 4 MB. Beperk de grootte v
 
 #### <a name="resolution"></a>Oplossing
 
-Voor kleine tot middelgrote oplossingen is één sjabloon eenvoudiger te begrijpen en te onderhouden. U kunt alle resources en waarden in één bestand bekijken. Voor geavanceerde scenario's kunt u met gekoppelde sjablonen de oplossing opsplitsen in de beoogde onderdelen. Voer de best practice uit [met behulp van gekoppelde en geneste sjablonen](https://docs.microsoft.com/azure/azure-resource-manager/templates/linked-templates?tabs=azure-powershell).
+Voor kleine tot middelgrote oplossingen is één sjabloon eenvoudiger te begrijpen en te onderhouden. U kunt alle resources en waarden in één bestand bekijken. Voor geavanceerde scenario's kunt u met gekoppelde sjablonen de oplossing opsplitsen in de beoogde onderdelen. Voer de best practice uit [met behulp van gekoppelde en geneste sjablonen](../azure-resource-manager/templates/linked-templates.md?tabs=azure-powershell).
+
+### <a name="cannot-connect-to-git-enterprise"></a>Kan geen verbinding maken met GIT Enter prise 
+
+##### <a name="issue"></a>Probleem
+
+U kunt geen verbinding maken met een GIT-onderneming vanwege machtigings problemen. U ziet fout als **422-entiteit** die niet kan worden verwerkt.
+
+#### <a name="cause"></a>Oorzaak
+
+U hebt OAuth voor ADF niet geconfigureerd. De URL is onjuist geconfigureerd.
+
+##### <a name="resolution"></a>Oplossing
+
+U verleent eerst OAuth-toegang tot ADF. Vervolgens moet u de juiste URL gebruiken om verbinding te maken met een GIT-onderneming. De configuratie moet worden ingesteld op de klant organisatie (s), omdat de ADF-service eerst probeert https://hostname/api/v3/search/repositories?q=user%3 <customer credential> .... en mislukt. Vervolgens wordt het geprobeerd https://hostname/api/v3/orgs/ <vaorg> / <repo> . 
+ 
+### <a name="recover-from-a-deleted-data-factory"></a>Herstellen van een verwijderde data factory
+
+#### <a name="issue"></a>Probleem
+Klant heeft Data Factory verwijderd of de resource groep met de Data Factory. Hij wil graag weten hoe u een verwijderde data factory kunt herstellen.
+
+#### <a name="cause"></a>Oorzaak
+
+Het is mogelijk om de Data Factory alleen te herstellen als de klant broncode beheer (DevOps of Git) heeft geconfigureerd. Hiermee wordt de meest recente gepubliceerde resource gemaakt en **wordt de niet** -gepubliceerde pijp lijn, gegevensset en gekoppelde service niet hersteld.
+
+Als er geen broncode beheer is, is het herstellen van een verwijderde Data Factory van de back-end niet mogelijk omdat de service de verwijderde opdracht heeft ontvangen, het exemplaar is verwijderd en er geen back-up is opgeslagen.
+
+#### <a name="resoloution"></a>Resoloution
+Ga als volgt te werk om de verwijderde Data Factory met broncode beheer te herstellen:
+
+ * Maak een nieuwe Azure Data Factory.
+
+ * Configureer Git opnieuw met dezelfde instellingen, maar zorg ervoor dat u bestaande Data Factory resources importeert in de geselecteerde opslag plaats en kies nieuwe vertakking.
+
+ * Maak een pull-aanvraag om de wijzigingen in de vertakking samen te voegen en te publiceren.
+
+ * Als de klant een zelf-hosted Integration Runtime in een verwijderde ADF had, moet deze een nieuw exemplaar maken in een nieuwe ADF, het exemplaar ook verwijderen en opnieuw installeren op de on-premises machine/VM met de nieuwe sleutel die is verkregen. Nadat de installatie van IR is voltooid, moet de klant de gekoppelde service wijzigen zodat deze naar de nieuwe IR wijst en de verbinding testen of er treedt een fout op bij een **Ongeldige verwijzing.**
+
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

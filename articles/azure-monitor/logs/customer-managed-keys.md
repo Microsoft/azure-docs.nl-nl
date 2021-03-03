@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 01/10/2021
-ms.openlocfilehash: 9d8d37e1b161dfc8344d7ff03bc0093d23f86101
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: fa826e951b9fe34eb27481718b8f026747011e4e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609433"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717414"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Door de klant beheerde sleutel van Azure Monitor 
 
@@ -25,11 +25,11 @@ U wordt aangeraden [beperkingen en beperkingen](#limitationsandconstraints) hier
 
 Azure Monitor zorgt ervoor dat alle gegevens en opgeslagen query's op rest worden versleuteld met behulp van door micro soft beheerde sleutels (MMK). Azure Monitor biedt ook een optie voor versleuteling met behulp van uw eigen sleutel die is opgeslagen in uw [Azure Key Vault](../../key-vault/general/overview.md), waarmee u de toegang tot uw gegevens op elk gewenst moment kunt intrekken. Azure Monitor versleuteling is hetzelfde als de manier waarop [Azure Storage versleuteling](../../storage/common/storage-service-encryption.md#about-azure-storage-encryption) werkt.
 
-Door de klant beheerde sleutel wordt geleverd op [toegewezen clusters](../log-query/logs-dedicated-clusters.md) met een hoger beveiligings niveau en controle. Gegevens die zijn opgenomen in toegewezen clusters, worden twee maal versleuteld: eenmaal op service niveau met door micro soft beheerde sleutels of door de klant beheerde sleutels, en eenmaal op het niveau van de infra structuur met twee verschillende versleutelings algoritmen en twee verschillende sleutels. [Dubbele versleuteling](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) beschermt tegen een scenario waarbij een van de versleutelings algoritmen of-sleutels mogelijk is aangetast. In dit geval blijft de extra laag versleuteling uw gegevens beveiligen. Met toegewezen cluster kunt u uw gegevens ook beveiligen met behulp van een [lockbox](#customer-lockbox-preview) -besturings element.
+Door de klant beheerde sleutel wordt geleverd op [toegewezen clusters](./logs-dedicated-clusters.md) met een hoger beveiligings niveau en controle. Gegevens die zijn opgenomen in toegewezen clusters, worden twee maal versleuteld: eenmaal op service niveau met door micro soft beheerde sleutels of door de klant beheerde sleutels, en eenmaal op het niveau van de infra structuur met twee verschillende versleutelings algoritmen en twee verschillende sleutels. [Dubbele versleuteling](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) beschermt tegen een scenario waarbij een van de versleutelings algoritmen of-sleutels mogelijk is aangetast. In dit geval blijft de extra laag versleuteling uw gegevens beveiligen. Met toegewezen cluster kunt u uw gegevens ook beveiligen met behulp van een [lockbox](#customer-lockbox-preview) -besturings element.
 
 De gegevens die in de afgelopen 14 dagen zijn opgenomen, worden ook opgeslagen in de Hot-cache (met SSD-back-ups) voor een efficiënte query-engine bewerking. Deze gegevens blijven versleuteld met micro soft-sleutels, ongeacht de configuratie van de door de klant beheerde sleutel, maar uw controle over SSD-gegevens voldoet aan de [sleutel intrekking](#key-revocation). Er wordt gewerkt aan SSD-gegevens die zijn versleuteld met door de klant beheerde sleutel in de eerste helft van 2021.
 
-Log Analytics toegewezen clusters gebruiken een [prijs model](../log-query/logs-dedicated-clusters.md#cluster-pricing-model) voor capaciteits reservering, te beginnen bij 1000 GB per dag.
+Log Analytics toegewezen clusters gebruiken een [prijs model](./logs-dedicated-clusters.md#cluster-pricing-model) voor capaciteits reservering, te beginnen bij 1000 GB per dag.
 
 ## <a name="how-customer-managed-key-works-in-azure-monitor"></a>Hoe door de klant beheerde sleutel werkt in Azure Monitor
 
@@ -145,7 +145,7 @@ Clusters ondersteunen twee [beheerde identiteits typen](../../active-directory/m
 > [!IMPORTANT]
 > U kunt door de gebruiker toegewezen beheerde identiteit niet gebruiken als uw Key Vault zich in Private-Link (vNet) bevindt. In dit scenario kunt u door het systeem toegewezen beheerde identiteit gebruiken.
 
-Volg de procedure die wordt geïllustreerd in het [artikel dedicated clusters](../log-query/logs-dedicated-clusters.md#creating-a-cluster). 
+Volg de procedure die wordt geïllustreerd in het [artikel dedicated clusters](./logs-dedicated-clusters.md#creating-a-cluster). 
 
 ## <a name="grant-key-vault-permissions"></a>Key Vault machtigingen verlenen
 
@@ -253,7 +253,7 @@ Een antwoord op de GET-aanvraag moet er als volgt uitzien wanneer de sleutel upd
 
 U moet schrijf machtigingen hebben voor uw werk ruimte en cluster om deze bewerking uit te voeren, waaronder `Microsoft.OperationalInsights/workspaces/write` en `Microsoft.OperationalInsights/clusters/write` .
 
-Volg de procedure die wordt geïllustreerd in het [artikel dedicated clusters](../log-query/logs-dedicated-clusters.md#link-a-workspace-to-cluster).
+Volg de procedure die wordt geïllustreerd in het [artikel dedicated clusters](./logs-dedicated-clusters.md#link-a-workspace-to-cluster).
 
 ## <a name="key-revocation"></a>Intrekking van sleutel
 
@@ -387,7 +387,7 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
 
 ## <a name="customer-managed-key-operations"></a>Sleutel bewerkingen Customer-Managed
 
-Customer-Managed sleutel wordt op toegewezen cluster gegeven en deze bewerkingen worden vermeld in een [toegewezen cluster artikel](../log-query/logs-dedicated-clusters.md#change-cluster-properties)
+Customer-Managed sleutel wordt op toegewezen cluster gegeven en deze bewerkingen worden vermeld in een [toegewezen cluster artikel](./logs-dedicated-clusters.md#change-cluster-properties)
 
 - Alle clusters in de resource groep ophalen  
 - Alle clusters in het abonnement ophalen
@@ -470,8 +470,8 @@ Customer-Managed sleutel wordt op toegewezen cluster gegeven en deze bewerkingen
 
   **Cluster update**
   -  400--de status van het cluster wordt verwijderd. De asynchrone bewerking wordt uitgevoerd. Het cluster moet de bewerking volt ooien voordat een update bewerking wordt uitgevoerd.
-  -  400--KeyVaultProperties is niet leeg, maar heeft een ongeldige indeling. Zie [sleutel-id bijwerken](../platform/customer-managed-keys.md#update-cluster-with-key-identifier-details).
-  -  400--kan de sleutel in Key Vault niet valideren. Kan worden veroorzaakt door onvoldoende machtigingen of wanneer de sleutel niet bestaat. Controleer of u het [sleutel-en toegangs beleid hebt ingesteld](../platform/customer-managed-keys.md#grant-key-vault-permissions) in Key Vault.
+  -  400--KeyVaultProperties is niet leeg, maar heeft een ongeldige indeling. Zie [sleutel-id bijwerken](#update-cluster-with-key-identifier-details).
+  -  400--kan de sleutel in Key Vault niet valideren. Kan worden veroorzaakt door onvoldoende machtigingen of wanneer de sleutel niet bestaat. Controleer of u het [sleutel-en toegangs beleid hebt ingesteld](#grant-key-vault-permissions) in Key Vault.
   -  400--sleutel kan niet worden hersteld. Key Vault moet worden ingesteld op zacht verwijderen en de beveiliging op te schonen. Raadpleeg de [documentatie van Key Vault](../../key-vault/general/soft-delete-overview.md)
   -  400--bewerking kan nu niet worden uitgevoerd. Wacht tot de asynchrone bewerking is voltooid en probeer het opnieuw.
   -  400--de status van het cluster wordt verwijderd. Wacht tot de asynchrone bewerking is voltooid en probeer het opnieuw.
@@ -492,5 +492,5 @@ Customer-Managed sleutel wordt op toegewezen cluster gegeven en deze bewerkingen
   -  409--werk ruimte koppeling of ontkoppelen bewerking in verwerking.
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [log Analytics toegewezen cluster facturering](../platform/manage-cost-storage.md#log-analytics-dedicated-clusters)
-- Meer informatie over het [goede ontwerp van log Analytics-werk ruimten](../platform/design-logs-deployment.md)
+- Meer informatie over [log Analytics toegewezen cluster facturering](./manage-cost-storage.md#log-analytics-dedicated-clusters)
+- Meer informatie over het [goede ontwerp van log Analytics-werk ruimten](./design-logs-deployment.md)

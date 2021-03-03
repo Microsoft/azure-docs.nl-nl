@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.topic: troubleshooting
 ms.date: 02/22/2021
 ms.author: deanwe
-ms.openlocfilehash: 214730733780ef3492048f697b1c5e180434a527
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 0b4e116210cf68dc672122ad4ddc98f85067f3b8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101654014"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101688005"
 ---
 # <a name="frequently-asked-questions-for-azure-automanage-for-vms"></a>Veelgestelde vragen over Azure automanage voor Vm's
 
@@ -80,7 +80,7 @@ Azure automanage is gratis beschikbaar als open bare preview. Als er Azure-resou
 
 **Kan ik automanage Toep assen via Azure Policy?**
 
-Ja, er is een ingebouwd beleid voor automatisch beheer van alle virtuele machines binnen uw gedefinieerde bereik. U geeft ook het configuratie Profiel (DevTest of productie) samen met uw account voor automatisch beheren op. Meer informatie over het inschakelen van [het beleid voor](virtual-machines-policy-enable.md)autobeheren via Azure.
+Ja, er is een ingebouwd beleid voor automatisch beheer van alle virtuele machines binnen uw gedefinieerde bereik. U geeft ook de omgevings configuratie (DevTest of productie) op in combi natie met uw account voor automatisch beheren. Meer informatie over het inschakelen van [het beleid voor](virtual-machines-policy-enable.md)autobeheren via Azure.
 
 
 **Wat is een automanage-account?**
@@ -93,9 +93,9 @@ Het account voor automatisch beheer is een MSI-bestand (Managed Service Identity
 Als uw virtuele machine is gekoppeld aan een bestaande Log Analytics-werk ruimte, wordt die werk ruimte opnieuw gebruikt voor het Toep assen van deze oplossingen: Wijzigingen bijhouden, inventarisatie en Updatebeheer. Voor alle Vm's die zijn verbonden met deze werk ruimte, zijn deze oplossingen ingeschakeld.
 
 
-**Kan ik het configuratie Profiel van mijn VM wijzigen?**
+**Kan ik de omgeving van mijn VM wijzigen?**
 
-Op dit moment moet u automatisch beheer voor die virtuele machine uitschakelen en vervolgens automanage opnieuw inschakelen met het gewenste configuratie profiel en voor keuren.
+Op dit moment moet u automatisch beheer voor die virtuele machine uitschakelen en vervolgens automanage opnieuw inschakelen met de gewenste omgeving en voor keuren.
 
 
 **Als mijn virtuele machine al is geconfigureerd voor een service, zoals Updatebeheer, wordt deze dan automatisch beheerd opnieuw geconfigureerd?**

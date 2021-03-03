@@ -7,20 +7,20 @@ ms.topic: conceptual
 ms.author: jamesfit
 author: jimmyfit
 ms.date: 01/29/2021
-ms.openlocfilehash: 6239cf48794c74c5dd810fda42476df399300578
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: d0ded409d76d0b26a76aebb47b8de8f6143ceba5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610553"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719896"
 ---
 # <a name="collecting-event-tracing-for-windows-etw-events-for-analysis-azure-monitor-logs"></a>Het verzamelen van Event Tracing for Windows gebeurtenissen (ETW) voor analyse Azure Monitor-logboeken
 
-*Event Tracing for Windows (etw)* biedt een mechanisme voor instrumentatie van toepassingen in gebruikers modus en stuur Programma's voor kernelmodus. De Log Analytics-agent wordt gebruikt voor het [verzamelen van Windows-gebeurtenissen](https://docs.microsoft.com/azure/azure-monitor/platform/data-sources-windows-events) die worden geschreven naar de beheer-en operationele etw- [kanalen](https://docs.microsoft.com/windows/win32/wes/eventmanifestschema-channeltype-complextype). Het is echter af en toe nood zakelijk om andere gebeurtenissen vast te leggen en te analyseren, zoals die naar het analytische kanaal zijn geschreven.  
+*Event Tracing for Windows (etw)* biedt een mechanisme voor instrumentatie van toepassingen in gebruikers modus en stuur Programma's voor kernelmodus. De Log Analytics-agent wordt gebruikt voor het [verzamelen van Windows-gebeurtenissen](./data-sources-windows-events.md) die worden geschreven naar de beheer-en operationele etw- [kanalen](/windows/win32/wes/eventmanifestschema-channeltype-complextype). Het is echter af en toe nood zakelijk om andere gebeurtenissen vast te leggen en te analyseren, zoals die naar het analytische kanaal zijn geschreven.  
 
 ## <a name="event-flow"></a>Gebeurtenis stroom
 
-Als u op het [manifest gebaseerde etw-gebeurtenissen](https://docs.microsoft.com/windows/win32/etw/about-event-tracing#types-of-providers) wilt verzamelen voor analyse in azure monitor logboeken, moet u de [Azure Diagnostics-extensie](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostics-extension-overview) voor Windows (WAD) gebruiken. In dit scenario fungeert de diagnostische uitbrei ding als de ETW-consument, waarbij gebeurtenissen naar Azure Storage (tabellen) worden geschreven als een tussenliggende opslag. Hier wordt het opgeslagen in een tabel met de naam **WADETWEventTable**. Log Analytics worden de tabel gegevens vervolgens verzameld uit Azure Storage en gepresenteerd als een tabel met de naam **ETWEvent**.
+Als u op het [manifest gebaseerde etw-gebeurtenissen](/windows/win32/etw/about-event-tracing#types-of-providers) wilt verzamelen voor analyse in azure monitor logboeken, moet u de [Azure Diagnostics-extensie](./diagnostics-extension-overview.md) voor Windows (WAD) gebruiken. In dit scenario fungeert de diagnostische uitbrei ding als de ETW-consument, waarbij gebeurtenissen naar Azure Storage (tabellen) worden geschreven als een tussenliggende opslag. Hier wordt het opgeslagen in een tabel met de naam **WADETWEventTable**. Log Analytics worden de tabel gegevens vervolgens verzameld uit Azure Storage en gepresenteerd als een tabel met de naam **ETWEvent**.
 
 ![Gebeurtenis stroom](./media/data-sources-event-tracing-windows/event-flow.png)
 
@@ -46,7 +46,7 @@ Noteer de naam en GUID van de ETW-provider die wordt uitgelijnd op het analyse l
 
 ### <a name="step-2-diagnostics-extension"></a>Stap 2: uitbrei ding van diagnostische gegevens
 
-Controleer of de *Windows diagnostische uitbrei ding* is [geïnstalleerd](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostics-extension-windows-install#install-with-azure-portal) op alle bron systemen.
+Controleer of de *Windows diagnostische uitbrei ding* is [geïnstalleerd](./diagnostics-extension-windows-install.md#install-with-azure-portal) op alle bron systemen.
 
 ### <a name="step-3-configure-etw-log-collection"></a>Stap 3: ETW-logboek verzameling configureren
 
@@ -58,13 +58,13 @@ Controleer of de *Windows diagnostische uitbrei ding* is [geïnstalleerd](https:
 
 4. Stel de provider-GUID of provider klasse in op basis van de provider waarvoor u de verzameling configureert
 
-5. Stel het [**logboek niveau**](https://docs.microsoft.com/windows/win32/etw/configuring-and-starting-an-event-tracing-session) zo nodig in
+5. Stel het [**logboek niveau**](/windows/win32/etw/configuring-and-starting-an-event-tracing-session) zo nodig in
 
 6. Klik op het weglatings teken naast de opgegeven provider en klik op **configureren**
 
 7. Zorg ervoor dat de **standaard doel tabel** is ingesteld op **etweventtable**
 
-8. Zo nodig een [**trefwoord filter**](https://docs.microsoft.com/windows/win32/wes/defining-keywords-used-to-classify-types-of-events) instellen
+8. Zo nodig een [**trefwoord filter**](/windows/win32/wes/defining-keywords-used-to-classify-types-of-events) instellen
 
 9. De provider-en logboek instellingen opslaan
 
@@ -72,8 +72,8 @@ Zodra overeenkomende gebeurtenissen zijn gegenereerd, moet u beginnen met het we
 
 ### <a name="step-4-configure-log-analytics-storage-account-collection"></a>Stap 4: Log Analytics verzameling opslag accounts configureren
 
-Volg [deze instructies](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostics-extension-logs#collect-logs-from-azure-storage) voor het verzamelen van de logboeken van Azure Storage. Zodra de gegevens van de ETW-gebeurtenis zijn geconfigureerd, moeten deze worden weer gegeven in Log Analytics onder de tabel **ETWEvent** .
+Volg [deze instructies](/azure/azure-monitor/agents/diagnostics-extension-logs#collect-logs-from-azure-storage) voor het verzamelen van de logboeken van Azure Storage. Zodra de gegevens van de ETW-gebeurtenis zijn geconfigureerd, moeten deze worden weer gegeven in Log Analytics onder de tabel **ETWEvent** .
 
 ## <a name="next-steps"></a>Volgende stappen
-- [Aangepaste velden](https://docs.microsoft.com/azure/azure-monitor/platform/custom-fields) gebruiken voor het maken van een structuur in uw etw-gebeurtenissen
-- Meer informatie over [logboek query's](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen.
+- [Aangepaste velden](../logs/custom-fields.md) gebruiken voor het maken van een structuur in uw etw-gebeurtenissen
+- Meer informatie over [logboek query's](../logs/log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen.

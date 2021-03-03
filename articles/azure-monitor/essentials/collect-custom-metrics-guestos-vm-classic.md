@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: ''
-ms.openlocfilehash: 48c7323a630f5c79c7ecb16e26c9ec79ec2014a1
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: f0c97d128837e77325e68ae28161a98938510ff8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609128"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723279"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metrics-database-for-a-windows-virtual-machine-classic"></a>Metrische gegevens van het gast besturingssysteem verzenden naar de data base van de Azure Monitor metrics voor een virtuele Windows-machine (klassiek)
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Met de [uitbrei ding voor de Azure monitor diagnostische gegevens](../agents/diagnostics-extension-overview.md) (bekend als ' wad ' of ' diagnostiek ') kunt u metrische gegevens en logboeken verzamelen van het gast besturingssysteem (gast besturingssysteem) dat wordt uitgevoerd als onderdeel van een virtuele machine, Cloud service of service Fabric cluster. De uitbrei ding kan telemetrie verzenden naar een [groot aantal verschillende locaties.](../platform/data-platform.md?toc=/azure/azure-monitor/toc.json)
+Met de [uitbrei ding voor de Azure monitor diagnostische gegevens](../agents/diagnostics-extension-overview.md) (bekend als ' wad ' of ' diagnostiek ') kunt u metrische gegevens en logboeken verzamelen van het gast besturingssysteem (gast besturingssysteem) dat wordt uitgevoerd als onderdeel van een virtuele machine, Cloud service of service Fabric cluster. De uitbrei ding kan telemetrie verzenden naar een [groot aantal verschillende locaties.](../data-platform.md?toc=%2fazure%2fazure-monitor%2ftoc.json)
 
 In dit artikel wordt het proces beschreven voor het verzenden van de prestatie gegevens voor het gast besturingssysteem voor een Windows-virtuele machine (klassiek) naar de data base van de Azure Monitor metriek. Te beginnen met diagnostische gegevens van versie 1,11, kunt u metrische gegevens rechtstreeks naar de opslag voor metrische gegevens van Azure Monitor schrijven, waar de metrische gegevens van het standaard platform al zijn verzameld. 
 
@@ -34,7 +34,7 @@ Het proces dat wordt beschreven in dit artikel, werkt alleen op klassieke virtue
 
 - U moet [Azure PowerShell](/powershell/azure) of [Azure Cloud shell](../../cloud-shell/overview.md) hebben geïnstalleerd.
 
-- De VM-resource moet zich in een regio bevinden [die aangepaste metrische gegevens ondersteunt](../platform/metrics-custom-overview.md#supported-regions).
+- De VM-resource moet zich in een regio bevinden [die aangepaste metrische gegevens ondersteunt](./metrics-custom-overview.md#supported-regions).
 
 ## <a name="create-a-classic-virtual-machine-and-storage-account"></a>Een klassieke virtuele machine en een opslag account maken
 
@@ -203,4 +203,4 @@ Geef deze app ' bewaking metrische gegevens Uitgever ' door aan de resource waar
 
 
 ## <a name="next-steps"></a>Volgende stappen
-- Meer informatie over [aangepaste metrische gegevens](../platform/metrics-custom-overview.md).
+- Meer informatie over [aangepaste metrische gegevens](./metrics-custom-overview.md).

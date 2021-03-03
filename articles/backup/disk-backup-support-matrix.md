@@ -4,12 +4,12 @@ description: Hierin wordt een overzicht gegeven van de ondersteunings instelling
 ms.topic: conceptual
 ms.date: 01/07/2021
 ms.custom: references_regions
-ms.openlocfilehash: 7d6de863a45bcadd73e847cbf407c13363952151
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 922bd532275cdd6b09df83b0e9d36fdec1da0b47
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99806101"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101707214"
 ---
 # <a name="azure-disk-backup-support-matrix-in-preview"></a>Ondersteunings matrix voor Azure Disk Backup (in Preview)
 
@@ -58,7 +58,7 @@ Er worden meer regio's aangekondigd wanneer deze beschikbaar komen.
 
 - Het gebruik van Power shell en Azure CLI voor het configureren van back-ups en het terugzetten van schijven wordt momenteel niet ondersteund (tijdens de preview-versie).
 
-- Bij het configureren van de back-up moet de schijf die u hebt geselecteerd om een back-up te maken en de resource groep met moment opnamen waarvan de moment opnamen moeten worden opgeslagen, deel uitmaken van hetzelfde abonnement. U kunt geen incrementele moment opname maken voor een bepaalde schijf buiten het abonnement van de schijf. Meer informatie over [incrementele moment opnamen](../virtual-machines/windows/disks-incremental-snapshots-portal.md#restrictions) voor beheerde schijven. Zie  [back-up configureren](backup-managed-disks.md#configure-backup)voor meer informatie over het kiezen van een resource groep voor moment opnamen.
+- Bij het configureren van de back-up moet de schijf die u hebt geselecteerd om een back-up te maken en de resource groep met moment opnamen waarvan de moment opnamen moeten worden opgeslagen, deel uitmaken van hetzelfde abonnement. U kunt geen incrementele moment opname maken voor een bepaalde schijf buiten het abonnement van de schijf. Meer informatie over [incrementele moment opnamen](../virtual-machines/disks-incremental-snapshots.md#restrictions) voor beheerde schijven. Zie  [back-up configureren](backup-managed-disks.md#configure-backup)voor meer informatie over het kiezen van een resource groep voor moment opnamen.
 
 - Voor geslaagde back-up-en herstel bewerkingen zijn roltoewijzingen vereist voor de beheerde identiteit van de back-upkluis. Gebruik alleen de roldefinities die in de documentatie zijn opgenomen. Het gebruik van andere rollen, zoals owner, Inzender, enzovoort, wordt niet ondersteund. U kunt machtigings problemen ondervinden als u na het toewijzen van rollen begint met het configureren van back-up-of herstel bewerkingen. Dit komt doordat het enkele minuten duren voordat de roltoewijzingen van kracht worden.
 

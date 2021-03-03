@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: include
 ms.date: 12/15/2020
 ms.author: pafarley
-ms.openlocfilehash: df171b74014179c36466a2683a8d0d7c0c3b5e90
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
-ms.translationtype: HT
+ms.openlocfilehash: 37c1b81f2396eff1613a6af604b2490b18b93ea8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97560879"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750249"
 ---
 <a name="HOLTop"></a>
 
@@ -89,7 +89,7 @@ Declareer ook een context in de hoofdsectie van uw script. U hebt dit object nod
 Vervolgens begint u met het toevoegen van code voor het uitvoeren van verschillende Computer Vision-servicebewerkingen.
 
 > [!div class="nextstepaction"]
-> [Ik heb de client ingesteld](?success=set-up-client#object-model) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=set-up-client)
+> [Ik heb de client ingesteld](?success=set-up-client#object-model) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Go&Section=set-up-client)
 
 ## <a name="object-model"></a>Objectmodel
 
@@ -120,7 +120,7 @@ Maak een `main`-functie en voeg de volgende code toe om een client te instantië
 [!code-go[](~/cognitive-services-quickstart-code/go/ComputerVision/ComputerVisionQuickstart.go?name=snippet_client)]
 
 > [!div class="nextstepaction"]
-> [Ik heb de client geverifieerd](?success=authenticate-client#analyze-an-image) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=authenticate-client)
+> [Ik heb de client geverifieerd](?success=authenticate-client#analyze-an-image) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Go&Section=authenticate-client)
 
 ## <a name="analyze-an-image"></a>Een afbeelding analyseren
 
@@ -214,7 +214,7 @@ Met de volgende functie wordt informatie over het type afbeelding afgedrukt&mdas
 [!code-go[](~/cognitive-services-quickstart-code/go/ComputerVision/ComputerVisionQuickstart.go?name=snippet_type)]
 
 > [!div class="nextstepaction"]
-> [Ik heb een afbeelding geanalyseerd](?success=analyze-image#read-printed-and-handwritten-text) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=analyze-image)
+> [Ik heb een afbeelding geanalyseerd](?success=analyze-image#read-printed-and-handwritten-text) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Go&Section=analyze-image)
 
 ## <a name="read-printed-and-handwritten-text"></a>Afgedrukte en handgeschreven tekst lezen
 
@@ -246,7 +246,7 @@ Voeg de volgende code toe om de opgehaalde tekstgegevens te parseren en weer te 
 [!code-go[](~/cognitive-services-quickstart-code/go/ComputerVision/ComputerVisionQuickstart.go?name=snippet_read_display)]
 
 > [!div class="nextstepaction"]
-> [Ik heb tekst gelezen](?success=read-printed-handwritten-text#run-the-application) [Er is een fout opgetreden](https://www.research.net/r/7QYZKHL?issue=read-printed-handwritten-text)
+> [Ik heb tekst gelezen](?success=read-printed-handwritten-text#run-the-application) [Er is een fout opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Go&Section=read-printed-handwritten-text)
 
 ## <a name="run-the-application"></a>De toepassing uitvoeren
 
@@ -257,7 +257,7 @@ go run sample-app.go
 ```
 
 > [!div class="nextstepaction"]
-> [Ik heb de toepassing uitgevoerd](?success=run-the-application#clean-up-resources) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=run-the-application)
+> [Ik heb de toepassing uitgevoerd](?success=run-the-application#clean-up-resources) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Go&Section=run-the-application)
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -267,7 +267,7 @@ Als u een Cognitive Services-abonnement wilt opschonen en verwijderen, kunt u de
 * [Azure-CLI](../../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
 > [!div class="nextstepaction"]
-> [Ik heb resources opgeschoond](?success=clean-up-resources#next-steps) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=clean-up-resources)
+> [Ik heb resources opgeschoond](?success=clean-up-resources#next-steps) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Go&Section=clean-up-resources)
 
 ## <a name="next-steps"></a>Volgende stappen
 

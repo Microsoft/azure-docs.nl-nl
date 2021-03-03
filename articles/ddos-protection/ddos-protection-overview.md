@@ -1,5 +1,5 @@
 ---
-title: Azure DDoS Protection standaard overzicht
+title: Overzicht van Azure DDoS Protection Standard
 description: Meer informatie over hoe de Azure DDoS Protection Standard in combinatie met best practices in toepassingsontwerp verdediging biedt tegen DDoS-aanvallen.
 services: virtual-network
 documentationcenter: na
@@ -11,14 +11,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/9/2020
 ms.author: yitoh
-ms.openlocfilehash: 71eada0dcd7f7684e6c6be935bcb44405eb95322
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: 2b0f8a73a6852883f87ba9fc4333cb6fa8101a39
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99626203"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703113"
 ---
-# <a name="azure-ddos-protection-standard-overview"></a>Overzicht van Azure DDoS Protection Standard
+# <a name="azure-ddos-protection-standard-overview"></a>Azure DDoS Protection standaard overzicht
 
 DDoS-aanvallen (Distributed Denial of Service-aanvallen) vormen een van de grootste beschikbaarheids- en beveiligingsproblemen voor klanten die hun toepassingen verplaatsen naar de cloud. Met een DDoS-aanval wordt geprobeerd de resources van een toepassing uit te putten, waardoor de toepassing niet meer beschikbaar is voor legitieme gebruikers. DDoS-aanvallen kunnen worden gericht op elk eindpunt dat openbaar bereikbaar is via internet.
 
@@ -54,7 +54,7 @@ Zie [Azure DDoS Protection Standard-prijzen](https://azure.microsoft.com/pricing
 
 ## <a name="reference-architectures"></a>Referentiearchitecturen
 
-DDoS Protection Standard is ontworpen voor [Services die zijn geïmplementeerd in een virtueel netwerk](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services). Voor andere services is de standaard DDoS Protection Basic-service van toepassing. Zie [DDoS Protection referentie architecturen](https://docs.microsoft.com/azure/ddos-protection/ddos-protection-reference-architectures)voor meer informatie over ondersteunde architecturen. 
+DDoS Protection Standard is ontworpen voor [Services die zijn geïmplementeerd in een virtueel netwerk](../virtual-network/virtual-network-for-azure-services.md). Voor andere services is de standaard DDoS Protection Basic-service van toepassing. Zie [DDoS Protection referentie architecturen](./ddos-protection-reference-architectures.md)voor meer informatie over ondersteunde architecturen. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

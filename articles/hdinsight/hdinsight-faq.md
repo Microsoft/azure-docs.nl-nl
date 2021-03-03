@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,seoapr2020
 ms.topic: conceptual
 ms.date: 11/20/2019
-ms.openlocfilehash: 13282962886d8682b6056d10f8f0cc5a7f626d60
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 84124f33f6aa02f63c0c47a24bd7d2a71ced2d11
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98946028"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699297"
 ---
 # <a name="azure-hdinsight-frequently-asked-questions"></a>Azure HDInsight: veelgestelde vragen
 
@@ -61,7 +61,7 @@ Ja. Als u extra onderdelen wilt installeren of cluster configuratie wilt aanpass
 
 - [HDInsight-toepassings platform](https://azure.microsoft.com/services/hdinsight/partner-ecosystem/) voor het installeren van toepassingen.
 
-Zie [Wat zijn de Apache Hadoop onderdelen en versies die beschikbaar zijn in HDInsight?](./hdinsight-component-versioning.md#apache-components-available-with-different-hdinsight-versions) voor een lijst met ondersteunde onderdelen?
+Zie [Wat zijn de Apache Hadoop onderdelen en versies die beschikbaar zijn in HDInsight?](./hdinsight-component-versioning.md) voor een lijst met ondersteunde onderdelen?
 
 ### <a name="can-i-upgrade-the-individual-components-that-are-pre-installed-on-the-cluster"></a>Kan ik een upgrade uitvoeren voor de afzonderlijke onderdelen die vooraf zijn geïnstalleerd op het cluster?
 
@@ -234,7 +234,7 @@ Voer een van de volgende acties uit:
 
 ### <a name="how-can-i-set-up-auditing-for-my-blob-storage-account"></a>Hoe kan ik controle instellen voor mijn Blob Storage-account?
 
-Als u Blob Storage-accounts wilt controleren, configureert u bewaking met behulp van de procedure bij het [controleren van een opslag account in de Azure Portal](../storage/common/storage-monitor-storage-account.md). Een HDFS-audit logboek biedt alleen controle-informatie voor het lokale bestands systeem HDFS (hdfs://mycluster).  Het bevat geen bewerkingen die worden uitgevoerd op externe opslag.
+Als u Blob Storage-accounts wilt controleren, configureert u bewaking met behulp van de procedure bij het [controleren van een opslag account in de Azure Portal](../storage/common/manage-storage-analytics-logs.md). Een HDFS-audit logboek biedt alleen controle-informatie voor het lokale bestands systeem HDFS (hdfs://mycluster).  Het bevat geen bewerkingen die worden uitgevoerd op externe opslag.
 
 ### <a name="how-can-i-transfer-files-between-a-blob-container-and-an-hdinsight-head-node"></a>Hoe kan ik bestanden overdragen tussen een BLOB-container en een HDInsight-hoofd knooppunt?
 
@@ -277,7 +277,7 @@ Nadat u een Edge-knoop punt hebt gemaakt, kunt u er verbinding mee maken via SSH
 
 U gebruikt persistente scripts om nieuwe worker-knoop punten die aan het cluster worden toegevoegd, aan te passen via schaal bewerkingen. Persistente scripts zijn niet van toepassing op Edge-knoop punten.
 
-## <a name="rest-api"></a>REST API
+## <a name="rest-api"></a>REST-API
 
 ### <a name="what-are-the-rest-api-calls-to-pull-a-tez-query-view-from-the-cluster"></a>Wat zijn de REST API-aanroepen om een TEZ-query weergave uit het cluster te halen?
 

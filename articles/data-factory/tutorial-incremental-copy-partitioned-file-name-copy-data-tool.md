@@ -6,17 +6,17 @@ ms.author: yexu
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 11/09/2020
-ms.openlocfilehash: 8e68852434a4a8bea43b575523a60c9346b2a569
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 02/18/2021
+ms.openlocfilehash: aa6c0d9035f172cc7fb520ff58f233a82fca228a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100384772"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101741069"
 ---
 # <a name="incrementally-copy-new-files-based-on-time-partitioned-file-name-by-using-the-copy-data-tool"></a>Kopieer incrementeel nieuwe bestanden op basis van een gepartitioneerde bestands naam met behulp van het Gegevens kopiëren-hulp programma
 
-[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 In deze zelfstudie gebruikt u Azure Portal om een gegevensfactory te maken. Vervolgens gebruikt u het hulp programma Gegevens kopiëren om een pijp lijn te maken waarmee nieuwe bestanden incrementeel worden gekopieerd op basis van een gepartitioneerde bestands naam van Azure Blob-opslag naar Azure Blob-opslag.
 

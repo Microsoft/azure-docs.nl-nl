@@ -12,12 +12,12 @@ author: davidtrigano
 ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 07/11/2019
-ms.openlocfilehash: 936e4f8f54e92ba90372fff1c9d8dfc1982bbd62
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
-ms.translationtype: HT
+ms.openlocfilehash: c84c81fa81cf4ba9be454eea5782927a09c3252a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96325112"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101690954"
 ---
 # <a name="getting-started-with-azure-sql-managed-instance"></a>Aan de slag met Azure SQL Managed Instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -44,7 +44,7 @@ Als eerste stap moet u uw eerste SQL Managed Instance maken met de netwerkomgevi
   > - U kunt ook een ExpressRoute- of site-naar-site-verbinding van uw lokale netwerk gebruiken. Deze methoden worden echter niet besproken in deze quickstarts.
   > - Als u de retentieperiode van 0 (onbeperkte retentie) wijzigt in een andere waarde, moet u er rekening mee houden dat retentie alleen van toepassing is op logboeken die zijn geschreven nadat de waarde is gewijzigd, (logboeken die zijn geschreven tijdens de periode waarin de retentie was ingesteld op onbeperkt, blijven behouden, zelfs nadat retentie is ingeschakeld).
 
-Als alternatief voor het handmatig maken van SQL Managed Instance kunt u [PowerShell](scripts/create-configure-managed-instance-powershell.md), [PowerShell met een Resource Manager-sjabloon](scripts/create-powershell-azure-resource-manager-template.md) of [Azure CLI](/cli/azure/sql/mi#az-sql-mi-create) gebruiken om dit proces te scripten en automatiseren.
+Als alternatief voor het handmatig maken van SQL Managed Instance kunt u [PowerShell](scripts/create-configure-managed-instance-powershell.md), [PowerShell met een Resource Manager-sjabloon](./create-template-quickstart.md) of [Azure CLI](/cli/azure/sql/mi#az-sql-mi-create) gebruiken om dit proces te scripten en automatiseren.
 
 ### <a name="migrate-your-databases"></a>Uw databases migreren
 

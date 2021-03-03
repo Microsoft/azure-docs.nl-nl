@@ -5,30 +5,30 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, sneshaf, pinath, logicappspm
 ms.topic: conceptual
-ms.date: 01/20/2021
-ms.openlocfilehash: a90f75db6961ea06b1cf9c2958556c1c2ef24805
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 02/22/2021
+ms.openlocfilehash: f2b4e09ec9b50bb6993c89d90b0f33c0c905cbf0
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100380131"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699093"
 ---
 # <a name="export-flows-from-power-automate-and-deploy-to-azure-logic-apps"></a>Stromen exporteren vanuit Power Automate en implementeren in Azure Logic Apps
 
-> Voor stromen die na oktober 2020 zijn gemaakt, kunt u niet meer exporteren uit automatische stroom en implementeren naar Azure Logic Apps.
-
 Om de mogelijkheden van uw stroom uit te breiden en uit te breiden, kunt u die stroom migreren van [Automatische stroom](https://flow.microsoft.com) naar [Azure Logic apps](../logic-apps/logic-apps-overview.md). U kunt uw stroom exporteren als een Azure Resource Manager sjabloon voor een logische app, de sjabloon Logic app implementeren naar een Azure-resource groep en die logische app vervolgens openen in de ontwerp functie voor logische apps.
 
-> [!NOTE]
-> Niet alle stroom verautomatiseerde connectors zijn beschikbaar in Azure Logic Apps. U kunt alleen stroom geautomatiseerde stromen met de equivalente connectors in Azure Logic Apps migreren. De knop trigger, de goedkeurings connector en de notification connector zijn bijvoorbeeld specifiek voor het automatiseren van het energie verbruik. Op dit moment worden OpenAPI stromen in energie automatisering niet ondersteund voor exporteren en implementeren als sjablonen voor logische apps.
->
-> * Als u wilt weten welke stroom lijnen voor automatische automatisering geen Logic Apps equivalenten hebben, raadpleegt u [connectors](/connectors/connector-reference/connector-reference-powerautomate-connectors)voor het automatiseren van de stroom.
->
-> * Zie [Logic apps connectors](/connectors/connector-reference/connector-reference-logicapps-connectors)als u wilt weten welke Logic apps connectors geen energie automatisering hebben.
+> [!IMPORTANT]
+> Exporteren naar Logic Apps is niet beschikbaar voor energie automatisering stromen die na augustus 2020 zijn gemaakt. In oktober 2020 wordt standaard het maken van nieuwe stromen op het [OpenAPI 2,0-protocol](https://swagger.io/specification/v2/)geautomatiseerd. Nieuwe stromen op basis van dit protocol zijn incompatibel met Logic Apps werk stromen, dus het exporteren van deze stromen naar Logic Apps is uitgeschakeld. In plaats daarvan moet u hand matig [Logic apps](quickstart-create-first-logic-app-workflow.md) voor deze stromen maken.
+
+Niet alle stroom verautomatiseerde connectors zijn beschikbaar in Azure Logic Apps. U kunt alleen stroom geautomatiseerde stromen met de equivalente connectors in Azure Logic Apps migreren. De knop trigger, de goedkeurings connector en de notification connector zijn bijvoorbeeld specifiek voor het automatiseren van het energie verbruik. 
+
+* Als u wilt weten welke stroom lijnen voor automatische automatisering geen Logic Apps equivalenten hebben, raadpleegt u [connectors](/connectors/connector-reference/connector-reference-powerautomate-connectors)voor het automatiseren van de stroom.
+
+* Zie [Logic apps connectors](/connectors/connector-reference/connector-reference-logicapps-connectors)als u wilt weten welke Logic apps connectors geen energie automatisering hebben.
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een Azure-abonnement. Als u nog geen abonnement op Azure hebt, [registreer u dan nu voor een gratis Azure-account](https://azure.microsoft.com/free/).
+* Een Azure-account en -abonnement. Als u nog geen abonnement op Azure hebt, [registreer u dan nu voor een gratis Azure-account](https://azure.microsoft.com/free/).
 
 * De stroom die u wilt exporteren uit automatische energie
 

@@ -2,13 +2,13 @@
 title: Toepassingen en gegevens kopiëren naar pool knooppunten
 description: Meer informatie over het kopiëren van toepassingen en gegevens naar pool knooppunten.
 ms.topic: how-to
-ms.date: 02/10/2021
-ms.openlocfilehash: a5933a1c52e2848b6b414f1750bb24515fb9f28a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 02/18/2021
+ms.openlocfilehash: 0109171fd78dc11058daa30bf4604bebc1eeb857
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100378499"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703644"
 ---
 # <a name="copy-applications-and-data-to-pool-nodes"></a>Toepassingen en gegevens kopiëren naar pool knooppunten
 
@@ -33,10 +33,6 @@ Als elke taak die wordt uitgevoerd in de pool, een toepassing (. exe) uitvoert d
 Voor toepassingen of gegevens die op elk knoop punt in de pool moeten worden geïnstalleerd, kunt u gebruikmaken van [toepassings pakketten](batch-application-packages.md). Er is geen installatie opdracht gekoppeld aan een toepassings pakket, maar u kunt een begin taak gebruiken om elke installatie opdracht uit te voeren. Als voor uw toepassing geen installatie of een groot aantal bestanden is vereist, kunt u deze methode gebruiken.
 
 Toepassings pakketten zijn handig wanneer u een groot aantal bestanden hebt, omdat ze veel bestands verwijzingen kunnen combi neren in een kleine nettolading. Als u meer dan 100 afzonderlijke bron bestanden wilt toevoegen aan één taak, kan de batch-service worden uitgevoerd op basis van interne systeem beperkingen voor één taak. Toepassings pakketten zijn ook handig wanneer u veel verschillende versies van dezelfde toepassing hebt en er een moet kiezen.
-
-## <a name="extensions"></a>Uitbreidingen
-
-[Uitbrei dingen](create-pool-extensions.md) zijn kleine toepassingen die de configuratie van het achteraf inrichten en instellen voor batch Compute-knoop punten vergemakkelijken. Wanneer u een pool maakt, kunt u een ondersteunde uitbrei ding selecteren die moet worden geïnstalleerd op de reken knooppunten wanneer deze worden ingericht. Daarna kan de uitbrei ding de beoogde bewerking uitvoeren.
 
 ## <a name="job-preparation-task-resource-files"></a>Resource bestanden voor taak voorbereidings taak
 

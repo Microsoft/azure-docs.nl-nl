@@ -8,19 +8,20 @@ ms.topic: quickstart
 ms.service: iot-central
 services: iot-central
 manager: corywink
-ms.openlocfilehash: c5e357824652077acab299e0e27678f528f23b9a
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: a1492593c24c2bc350205536006b648608cc5e46
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99833895"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101712637"
 ---
 # <a name="quickstart---create-an-azure-iot-central-application"></a>Snelstart - Een Azure IoT Central-app maken
 
 In deze quickstart ziet u hoe u een Azure IoT Central-toepassing maakt.
 
+## <a name="prerequisite"></a>Vereiste 
 
-[!INCLUDE [Warning About Access Required](../../../includes/iot-central-warning-contribitorrequireaccess.md)]
+U hebt een Azure-abonnement met *Inzender* toegang nodig.
 
 ## <a name="create-an-application"></a>Een app maken
 

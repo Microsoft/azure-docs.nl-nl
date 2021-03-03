@@ -4,19 +4,21 @@ description: Azure Security Bench Mark v2-gegevens beveiliging
 author: msmbaldwin
 ms.service: security
 ms.topic: conceptual
-ms.date: 09/20/2020
+ms.date: 02/22/2021
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 687c344aefc70729c85fb37d615ec0a272ff4fde
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: c8d907062835f18393946b04f1f1e9d5ec345411
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97368865"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101735757"
 ---
 # <a name="security-control-v2-data-protection"></a>Beveiligings controle v2: gegevens beveiliging
 
 Gegevens bescherming is van toepassing op controle van gegevens beveiliging op rest, onderweg en via geautoriseerde toegangs mechanismen. Dit omvat het detecteren, classificeren, beveiligen en bewaken van gevoelige gegevens assets met behulp van toegangs beheer, versleuteling en logboek registratie in Azure.
+
+Voor een overzicht van de toepasselijke ingebouwde Azure Policy raadpleegt u [de details van het ingebouwde initiatief Azure Security Bench Mark-naleving van voor Schriften: gegevens beveiliging](../../governance/policy/samples/azure-security-benchmark#data-protection)
 
 ## <a name="dp-1-discovery-classify-and-label-sensitive-data"></a>DP-1: Detectie, classificatie en labeling van gevoelige gegevens
 
@@ -24,9 +26,9 @@ Gegevens bescherming is van toepassing op controle van gegevens beveiliging op r
 |--|--|--|--|
 | DP-1 | 13,1, 14,5, 14,7 | SC-28 |
 
-Ontdek, classificeer en voorzie uw gevoelige gegevens zodat u de juiste besturings elementen kunt ontwerpen om ervoor te zorgen dat gevoelige informatie wordt opgeslagen, verwerkt en veilig wordt verzonden door de technologie systemen van de organisatie. 
+Ontdek, classificeer en voorzie uw gevoelige gegevens zodat u de juiste besturings elementen kunt ontwerpen om ervoor te zorgen dat gevoelige informatie wordt opgeslagen, verwerkt en veilig wordt verzonden door de technologie systemen van de organisatie.
 
-Gebruik Azure Information Protection (en de bijbehorende scantool) voor gevoelige informatie binnen Office-documenten in Azure, on-premises, in Office 365 en op andere locaties. 
+Gebruik Azure Information Protection (en de bijbehorende scantool) voor gevoelige informatie binnen Office-documenten in Azure, on-premises, in Office 365 en op andere locaties.
 
 U kunt Azure SQL Information Protection gebruiken bij het classificeren en labelen van informatie die is opgeslagen in Azure SQL-databases.
 
@@ -38,7 +40,7 @@ U kunt Azure SQL Information Protection gebruiken bij het classificeren en label
 
 **Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
-- [Toepassings beveiliging en DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)  
+- [Toepassings beveiliging en DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)
 
 - [Gegevens beveiliging](/azure/cloud-adoption-framework/organize/cloud-security-data-security) 
 
@@ -84,9 +86,9 @@ Azure Information Protection (AIP) biedt controlevoorzieningen voor informatie d
 
 Als dit nodig is voor de naleving van preventie van gegevensverlies (DLP), kunt u een DLP-oplossing op een host gebruiken om detectie en/of preventieve controles af te dwingen om gegevensexfiltratie te voorkomen.
 
-- [Azure SQL ATP inschakelen](../../azure-sql/database/threat-detection-overview.md)
+- [Azure Defender voor SQL](../../azure-sql/database/azure-defender-for-sql.md)
 
-- [Azure Storage ATP inschakelen](../../storage/common/azure-defender-storage-configure.md?tabs=azure-security-center)
+- [Azure Defender voor Storage](../../storage/common/azure-defender-storage-configure.md?tabs=azure-security-center)
 
 **Verantwoordelijkheid**: Gedeeld
 
@@ -102,13 +104,13 @@ Als dit nodig is voor de naleving van preventie van gegevensverlies (DLP), kunt 
 
 | Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
-| DP-4 | 14,4 | SC-8 |
+| DP-4 | 14.4 | SC-8 |
 
-Ter aanvulling van de toegangs controle moeten gegevens die onderweg zijn, worden beschermd tegen buiten-band-aanvallen (zoals het vastleggen van verkeer) met behulp van versleuteling om ervoor te zorgen dat aanvallers de gegevens niet eenvoudig kunnen lezen of wijzigen. 
+Ter aanvulling van de toegangs controle moeten gegevens in transit worden beschermd tegen buiten-band-aanvallen (zoals het vastleggen van verkeer) met behulp van versleuteling om ervoor te zorgen dat aanvallers de gegevens niet eenvoudig kunnen lezen of wijzigen.
 
-Hoewel dit optioneel is voor verkeer op particuliere netwerken, is dit van cruciaal belang voor verkeer op externe en open bare netwerken. Voor HTTP-verkeer moet u ervoor zorgen dat clients die verbinding maken met uw Azure-resources, TLS v 1.2 of hoger kunnen onderhandelen. Voor extern beheer gebruikt u SSH (voor Linux) of RDP/TLS (voor Windows) in plaats van een niet-versleuteld protocol. Verouderde SSL-, TLS-en SSH-versies en-protocollen en zwakke cijfers moeten worden uitgeschakeld.  
+Hoewel dit optioneel is voor verkeer op particuliere netwerken, is dit van cruciaal belang voor verkeer op externe en open bare netwerken. Voor HTTP-verkeer moet u ervoor zorgen dat clients die verbinding maken met uw Azure-resources, TLS v 1.2 of hoger kunnen onderhandelen. Voor extern beheer gebruikt u SSH (voor Linux) of RDP/TLS (voor Windows) in plaats van een niet-versleuteld protocol. Verouderde SSL-, TLS-en SSH-versies en-protocollen en zwakke cijfers moeten worden uitgeschakeld.
 
-Azure biedt standaard versleuteling voor gegevens in transit tussen Azure-data centers. 
+Azure biedt standaard versleuteling voor gegevens in transit tussen Azure-data centers.
 
 - [Meer informatie over versleuteling in transit met Azure](../fundamentals/encryption-overview.md#encryption-of-data-in-transit)
 
@@ -132,7 +134,7 @@ Azure biedt standaard versleuteling voor gegevens in transit tussen Azure-data c
 
 | Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
-| DP-5 | 14,8 | SC-28, SC-12 |
+| DP-5 | 14.8 | SC-28, SC-12 |
 
 Ter aanvulling van de toegangs controle moeten gegevens in rust worden beschermd tegen buiten-band-aanvallen (zoals toegang tot onderliggende opslag) met behulp van versleuteling. Dit helpt ervoor te zorgen dat aanvallers de gegevens niet eenvoudig kunnen lezen of wijzigen. 
 

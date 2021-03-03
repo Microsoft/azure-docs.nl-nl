@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/25/2019
-ms.openlocfilehash: 77220fabc78dd10b4299219ef84c1f6eb32ba82e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 7d732f0e42bc5eef8f72a2b9ce2adee28deb9a67
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85987296"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101690964"
 ---
 # <a name="azure-powershell-samples-for-azure-sql-database-and-azure-sql-managed-instance"></a>Azure PowerShell-voorbeelden voor Azure SQL Database en door Azure SQL beheerde exemplaren
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -68,7 +68,7 @@ De volgende tabel bevat links naar Azure PowerShell-voorbeeldscripts voor Azure 
 |---|---|
 |**Beheerde exemplaren maken en configureren**||
 | [Een beheerd exemplaar maken en beheren](../managed-instance/scripts/create-configure-managed-instance-powershell.md) | Dit PowerShell-script laat zien hoe u een beheerd exemplaar maakt en beheert met Azure PowerShell. |
-| [Een beheerd exemplaar maken met behulp van de Azure Resource Manager-sjabloon](../managed-instance/scripts/create-powershell-azure-resource-manager-template.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Dit PowerShell-script laat zien hoe u een beheerd exemplaar maakt en beheert met Azure PowerShell en de Azure Resource Manager-sjabloon.|
+| [Een beheerd exemplaar maken met behulp van de Azure Resource Manager-sjabloon](../managed-instance/create-template-quickstart.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Dit PowerShell-script laat zien hoe u een beheerd exemplaar maakt en beheert met Azure PowerShell en de Azure Resource Manager-sjabloon.|
 | [Een database herstellen naar een beheerd exemplaar in een ander geografisch gebied](../managed-instance/scripts/restore-geo-backup.md) | Dit PowerShell-script neemt een back-up van een database en zet deze terug in een andere regio. Dit staat bekend als herstel na noodgevallen met geo-herstel. |
 | **Transparante gegevensversleuteling configureren**||
 | [Transparante gegevensversleuteling beheren in een beheerd exemplaar met behulp van uw eigen sleutel uit Azure Key Vault](../managed-instance/scripts/transparent-data-encryption-byok-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Dit PowerShell-script configureert transparante gegevensversleuteling in een Bring Your Own Key-scenario voor Azure SQL Managed Instance, met behulp van een sleutel uit Azure Key Vault.|

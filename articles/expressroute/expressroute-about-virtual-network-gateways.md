@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 10/14/2019
 ms.author: duau
-ms.openlocfilehash: b721a9b8d8bdff3f3aaf05f15857c00347e7abb4
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 45b059784cc0b442b615a2a1cb50386da6ee990f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92202375"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101740916"
 ---
 # <a name="about-expressroute-virtual-network-gateways"></a>Info over virtuele ExpressRoute-netwerkgateways voor meer informatie over de virtuele ExpressRoute-netwerkgateway
 
@@ -53,7 +53,7 @@ Voordat u een ExpressRoute-gateway maakt, moet u een gateway-subnet maken. Het g
 
 Wanneer u het gatewaysubnet maakt, geeft u op hoeveel IP-adressen het subnet bevat. De IP-adressen in het gateway-subnet worden toegewezen aan de gateway-Vm's en Gateway Services. Sommige configuraties vereisen meer IP-adressen dan andere. 
 
-Wanneer u de grootte van het gateway-subnet plant, raadpleegt u de documentatie voor de configuratie die u wilt maken. Zo is voor de configuratie ExpressRoute/VPN Gateway naast elkaar een groter gateway-subnet vereist dan de meeste andere configuraties. Daarnaast wilt u er mogelijk voor zorgen dat uw gateway subnet voldoende IP-adressen bevat voor mogelijke toekomstige extra configuraties. Hoewel u een gateway-subnet kunt maken als/29, raden we u aan een gateway-subnet van/27 of groter te maken (/27,/26 enzovoort) als u over de beschik bare adres ruimte beschikt. Dit is geschikt voor de meeste configuraties.
+Wanneer u de grootte van het gateway-subnet plant, raadpleegt u de documentatie voor de configuratie die u wilt maken. Zo is voor de configuratie ExpressRoute/VPN Gateway naast elkaar een groter gateway-subnet vereist dan de meeste andere configuraties. Daarnaast wilt u er mogelijk voor zorgen dat uw gateway subnet voldoende IP-adressen bevat voor mogelijke toekomstige extra configuraties. Hoewel u een gateway-subnet kunt maken als/29, raden we u aan een gateway-subnet van/27 of groter te maken (/27,/26 enzovoort) als u over de beschik bare adres ruimte beschikt. Als u een gateway-subnet met dubbele stacks maakt, raden we u aan om ook een IPv6-bereik van/64 of groter te gebruiken. Dit is geschikt voor de meeste configuraties.
 
 In het volgende voor beeld van Resource Manager Power shell wordt een gateway-subnet met de naam GatewaySubnet weer gegeven. U kunt in de CIDR-notatie een/27 opgeven, zodat er voldoende IP-adressen zijn voor de meeste configuraties die momenteel bestaan.
 
@@ -77,6 +77,11 @@ Zone-redundante gateways gebruiken specifieke nieuwe gateway-Sku's voor ExpressR
 
 De nieuwe gateway-Sku's bieden ook ondersteuning voor andere implementatie opties die het beste aansluiten bij uw behoeften. Wanneer u een virtuele netwerk gateway maakt met behulp van de nieuwe gateway-Sku's, hebt u ook de mogelijkheid om de gateway in een specifieke zone te implementeren. Dit wordt een zonegebonden-gateway genoemd. Wanneer u een zonegebonden-gateway implementeert, worden alle exemplaren van de gateway geïmplementeerd in dezelfde beschikbaarheids zone.
 
+> [!IMPORTANT]
+> Als u van plan bent om op IPv6 gebaseerde privé-peering te gebruiken via ExpressRoute, moet u ervoor zorgen dat u een AZ-SKU selecteert voor de gateway die u in een subnet met dubbele stack gateway implementeert.
+> 
+>
+
 ## <a name="fastpath"></a><a name="fastpath"></a>FastPath
 
 ExpressRoute virtuele netwerk gateway is ontworpen voor het uitwisselen van netwerk routes en het routeren van netwerk verkeer. FastPath is ontworpen om de prestaties van het gegevenspad tussen uw on-premises netwerk en het virtuele netwerk te verbeteren. Als deze functie is ingeschakeld, verzendt FastPath netwerk verkeer rechtstreeks naar virtuele machines in het virtuele netwerk, waarbij de gateway wordt omzeild.
@@ -86,7 +91,7 @@ Zie [about FastPath](about-fastpath.md)(Engelstalig) voor meer informatie over F
 ## <a name="rest-apis-and-powershell-cmdlets"></a><a name="resources"></a>REST Api's en Power shell-cmdlets
 Zie de volgende pagina's voor aanvullende technische bronnen en specifieke syntaxis vereisten voor het gebruik van REST Api's en Power shell-cmdlets voor configuraties van virtuele netwerk gateways:
 
-| **Klassiek** | **Resource Manager** |
+| **Klassieke** | **Resource Manager** |
 | --- | --- |
 | [PowerShell](/powershell/module/servicemanagement/azure.service/?view=azuresmps-4.0.0#azure) |[PowerShell](/powershell/module/az.network#networking) |
 | [REST API](/previous-versions/azure/reference/jj154113(v=azure.100)) |[REST API](/rest/api/virtual-network/) |

@@ -3,12 +3,12 @@ title: Toegewezen hosting Azure Functions
 description: Meer informatie over de voor delen van het uitvoeren van Azure Functions op een speciaal App Service hosting abonnement.
 ms.topic: conceptual
 ms.date: 10/29/2020
-ms.openlocfilehash: 0ee32d4c4a7d33664da88b133a1f7011fc09f298
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: a9f976eda4a551c302ba7df92fbdbbf7a4fce1d7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100591055"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101704562"
 ---
 # <a name="dedicated-hosting-plans-for-azure-functions"></a>Toegewezen hosting plannen voor Azure Functions
 
@@ -41,7 +41,7 @@ Met een App Service-abonnement kunt u hand matig uitschalen door meer VM-exempla
 
 ## <a name="app-service-environments"></a>App Service-omgevingen
 
-Met een [app service Environment](../app-service/environment/intro.md) (ASE) kunt u uw functies volledig isoleren en profiteren van meer exemplaren dan een app service plan. Zie als u aan de slag wilt gaan.
+Met een App Service Environment (ASE) kunt u uw functies volledig isoleren en profiteren van meer exemplaren dan een App Service plan. Zie [Introduction to the app service environments](../app-service/environment/intro.md)(Engelstalig) om aan de slag te gaan.
 
 Als u de functie-app in een virtueel netwerk wilt uitvoeren, kunt u dit doen met behulp van het [Premium-abonnement](functions-premium-plan.md). Zie [Azure functions toegang tot persoonlijke sites instellen](functions-create-private-site-access.md)voor meer informatie. 
 

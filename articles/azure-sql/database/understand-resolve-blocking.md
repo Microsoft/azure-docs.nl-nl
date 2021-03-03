@@ -13,13 +13,13 @@ ms.topic: conceptual
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ''
-ms.date: 1/14/2020
-ms.openlocfilehash: 1341d0e64a01ff428fe42735d198c5e6b74b0ce8
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.date: 2/24/2021
+ms.openlocfilehash: b829d7045ac520cfe908c3c8809ae17702d6175d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99093305"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101691430"
 ---
 # <a name="understand-and-resolve-azure-sql-database-blocking-problems"></a>Problemen met het Azure SQL Database blok keren begrijpen en oplossen
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -31,7 +31,7 @@ In dit artikel wordt de blok kering in Azure SQL-data bases beschreven en wordt 
 In dit artikel verwijst de term verbinding naar één aangemelde sessie van de data base. Elke verbinding wordt weer gegeven als een sessie-ID (SPID) of session_id in veel Dmv's. Elk van deze SPID'S wordt vaak een proces genoemd, hoewel het geen afzonderlijke proces context is in de gebruikelijke zin. In plaats daarvan bestaat elke SPID uit de Server bronnen en gegevens structuren die nodig zijn om de aanvragen van een enkele verbinding van een bepaalde client te verwerken. Eén client toepassing kan een of meer verbindingen hebben. Vanuit het perspectief van Azure SQL Database is er geen verschil tussen meerdere verbindingen van één client toepassing op één client computer en meerdere verbindingen van meerdere client toepassingen of meerdere client computers; ze zijn atomisch. Met één verbinding kan een andere verbinding worden geblokkeerd, ongeacht de bron-client.
 
 > [!NOTE]
-> **Deze inhoud is specifiek voor Azure SQL Database.** Azure SQL Database is gebaseerd op de nieuwste stabiele versie van de Microsoft SQL Server data base-engine, waardoor de inhoud er ongeveer hetzelfde uitziet als probleemoplossings opties en hulpprogram ma's kunnen verschillen. Zie [SQL Server problemen oplossen](/troubleshoot/sql/performance/understand-resolve-blocking)voor meer informatie over blok keren in SQL Server.
+> **Deze inhoud is gericht op Azure SQL Database.** Azure SQL Database is gebaseerd op de nieuwste stabiele versie van de Microsoft SQL Server data base-engine, waardoor de inhoud er ongeveer hetzelfde uitziet als probleemoplossings opties en hulpprogram ma's kunnen verschillen. Zie [SQL Server problemen oplossen](/troubleshoot/sql/performance/understand-resolve-blocking)voor meer informatie over blok keren in SQL Server.
 
 ## <a name="understand-blocking"></a>Meer informatie over blok keren 
  
@@ -105,7 +105,7 @@ SELECT * FROM sys.dm_exec_input_buffer (66,0);
 
 * Raadpleeg de sys.dm_exec_requests en verwijs naar de kolom blocking_session_id. Als blocking_session_id = 0, wordt een sessie niet geblokkeerd. Tijdens sys.dm_exec_requests worden alleen aanvragen weer gegeven die momenteel worden uitgevoerd, worden alle verbindingen (actief of niet) vermeld in sys.dm_exec_sessions. Bouw op deze algemene koppeling tussen sys.dm_exec_requests en sys.dm_exec_sessions in de volgende query.
 
-* Voer deze voorbeeld query uit om de actief uitgevoerde query's en de huidige SQL batch-tekst of invoer buffer tekst te vinden met behulp van de [sys.dm_exec_sql_text](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql) of [sys.dm_exec_input_buffer](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-input-buffer-transact-sql) dmv's. Als de gegevens die door het `text` veld van sys.dm_exec_sql_text zijn geretourneerd, null is, wordt de query momenteel niet uitgevoerd. In dat geval bevat het `event_info` veld van sys.dm_exec_input_buffer de laatste opdracht reeks die is door gegeven aan de SQL-engine. 
+* Voer deze voorbeeld query uit om de actief uitgevoerde query's en de huidige SQL batch-tekst of invoer buffer tekst te vinden met behulp van de [sys.dm_exec_sql_text](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql) of [sys.dm_exec_input_buffer](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-input-buffer-transact-sql) dmv's. Als de gegevens die door het `text` veld van sys.dm_exec_sql_text zijn geretourneerd, null is, wordt de query momenteel niet uitgevoerd. In dat geval bevat het `event_info` veld van sys.dm_exec_input_buffer de laatste opdracht reeks die is door gegeven aan de SQL-engine. Deze query kan ook worden gebruikt om sessies te identificeren die andere sessies blok keren, inclusief een lijst met session_ids geblokkeerd per session_id. 
 
 ```sql
 WITH cteBL (session_id, blocking_these) AS 
@@ -125,6 +125,49 @@ OUTER APPLY sys.dm_exec_sql_text (r.sql_handle) t
 OUTER APPLY sys.dm_exec_input_buffer(s.session_id, NULL) AS ib
 WHERE blocking_these is not null or r.blocking_session_id > 0
 ORDER BY len(bl.blocking_these) desc, r.blocking_session_id desc, r.session_id;
+```
+
+* Voer deze meer uitgebreide voorbeeld query uit, die door Microsoft Ondersteuning wordt gegeven om de hoofd van een meervoudige sessie blokkerings keten te identificeren, met inbegrip van de query tekst van de sessies die deel uitmaken van een blokkerende keten.
+
+```sql
+WITH cteHead ( session_id,request_id,wait_type,wait_resource,last_wait_type,is_user_process,request_cpu_time
+,request_logical_reads,request_reads,request_writes,wait_time,blocking_session_id,memory_usage
+,session_cpu_time,session_reads,session_writes,session_logical_reads
+,percent_complete,est_completion_time,request_start_time,request_status,command
+,plan_handle,sql_handle,statement_start_offset,statement_end_offset,most_recent_sql_handle
+,session_status,group_id,query_hash,query_plan_hash) 
+AS ( SELECT sess.session_id, req.request_id, LEFT (ISNULL (req.wait_type, ''), 50) AS 'wait_type'
+    , LEFT (ISNULL (req.wait_resource, ''), 40) AS 'wait_resource', LEFT (req.last_wait_type, 50) AS 'last_wait_type'
+    , sess.is_user_process, req.cpu_time AS 'request_cpu_time', req.logical_reads AS 'request_logical_reads'
+    , req.reads AS 'request_reads', req.writes AS 'request_writes', req.wait_time, req.blocking_session_id,sess.memory_usage
+    , sess.cpu_time AS 'session_cpu_time', sess.reads AS 'session_reads', sess.writes AS 'session_writes', sess.logical_reads AS 'session_logical_reads'
+    , CONVERT (decimal(5,2), req.percent_complete) AS 'percent_complete', req.estimated_completion_time AS 'est_completion_time'
+    , req.start_time AS 'request_start_time', LEFT (req.status, 15) AS 'request_status', req.command
+    , req.plan_handle, req.[sql_handle], req.statement_start_offset, req.statement_end_offset, conn.most_recent_sql_handle
+    , LEFT (sess.status, 15) AS 'session_status', sess.group_id, req.query_hash, req.query_plan_hash
+    FROM sys.dm_exec_sessions AS sess
+    LEFT OUTER JOIN sys.dm_exec_requests AS req ON sess.session_id = req.session_id
+    LEFT OUTER JOIN sys.dm_exec_connections AS conn on conn.session_id = sess.session_id 
+    )
+, cteBlockingHierarchy (head_blocker_session_id, session_id, blocking_session_id, wait_type, wait_duration_ms,
+wait_resource, statement_start_offset, statement_end_offset, plan_handle, sql_handle, most_recent_sql_handle, [Level])
+AS ( SELECT head.session_id AS head_blocker_session_id, head.session_id AS session_id, head.blocking_session_id
+    , head.wait_type, head.wait_time, head.wait_resource, head.statement_start_offset, head.statement_end_offset
+    , head.plan_handle, head.sql_handle, head.most_recent_sql_handle, 0 AS [Level]
+    FROM cteHead AS head
+    WHERE (head.blocking_session_id IS NULL OR head.blocking_session_id = 0)
+    AND head.session_id IN (SELECT DISTINCT blocking_session_id FROM cteHead WHERE blocking_session_id != 0)
+    UNION ALL
+    SELECT h.head_blocker_session_id, blocked.session_id, blocked.blocking_session_id, blocked.wait_type,
+    blocked.wait_time, blocked.wait_resource, h.statement_start_offset, h.statement_end_offset,
+    h.plan_handle, h.sql_handle, h.most_recent_sql_handle, [Level] + 1
+    FROM cteHead AS blocked
+    INNER JOIN cteBlockingHierarchy AS h ON h.session_id = blocked.blocking_session_id and h.session_id!=blocked.session_id --avoid infinite recursion for latch type of blocking
+    WHERE h.wait_type COLLATE Latin1_General_BIN NOT IN ('EXCHANGE', 'CXPACKET') or h.wait_type is null
+    )
+SELECT bh.*, txt.text AS blocker_query_or_most_recent_query 
+FROM cteBlockingHierarchy AS bh 
+OUTER APPLY sys.dm_exec_sql_text (ISNULL ([sql_handle], most_recent_sql_handle)) AS txt;
 ```
 
 * Als u langlopende of niet-doorgevoerde trans acties wilt uitvoeren, gebruikt u een andere set Dmv's voor het weer geven van huidige openstaande trans acties, waaronder [sys.dm_tran_database_transactions](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-database-transactions-transact-sql), [sys.dm_tran_session_transactions](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-session-transactions-transact-sql), [sys.dm_exec_connections](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql)en sys.dm_exec_sql_text. Er zijn verschillende Dmv's gekoppeld aan het bijhouden van trans acties. Zie hier meer [dmv's voor trans acties](/sql/relational-databases/system-dynamic-management-views/transaction-related-dynamic-management-views-and-functions-transact-sql) . 
@@ -371,7 +414,7 @@ De volgende scenario's worden in deze scenario's uitgebreid.
 
 ## <a name="see-also"></a>Zie ook
 
-* [Bewaking en prestatieafstemming van Azure SQL Database en Azure SQL Managed Instance](/azure/azure-sql/database/monitor-tune-overview)
+* [Bewaking en prestatieafstemming van Azure SQL Database en Azure SQL Managed Instance](./monitor-tune-overview.md)
 * [Prestaties bewaken met behulp van de query Store](/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store)
 * [Handleiding voor transactievergrendeling en versiebeheer van rijen](/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide)
 * [ISOLATIE NIVEAU VAN DE TRANS ACTIE INSTELLEN](/sql/t-sql/statements/set-transaction-isolation-level-transact-sql)

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 09/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: aa1693ba2b17c344475b96db42fa55514cf6b4db
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 9d967884193ee228b67ab094059ce4e050f4c7ca
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100380573"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101741239"
 ---
 # <a name="use-azure-rbac-for-kubernetes-authorization-preview"></a>Azure RBAC gebruiken voor Kubernetes-autorisatie (preview)
 
@@ -159,12 +159,12 @@ Kopieer de onderstaande JSON naar een bestand met de naam `deploy-view.json` .
     "Actions": [],
     "NotActions": [],
     "DataActions": [
-        "Microsoft.ContainerService/managedClusters/apps/deployments/read"  
+        "Microsoft.ContainerService/managedClusters/apps/deployments/read"
     ],
     "NotDataActions": [],
     "assignableScopes": [
         "/subscriptions/<YOUR SUBSCRIPTION ID>"
-    ]   
+    ]
 }
 ```
 

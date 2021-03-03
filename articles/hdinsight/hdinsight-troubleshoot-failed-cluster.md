@@ -5,16 +5,16 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: troubleshooting
 ms.date: 08/15/2019
-ms.openlocfilehash: de5fa6c881f808bcd580f6fae3329d579573d876
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: eae5b5e1430f4e9bf1db62a4413e3b7abe3744cc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98931531"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699314"
 ---
 # <a name="troubleshoot-a-slow-or-failing-job-on-a-hdinsight-cluster"></a>Problemen met een trage of niet werkende taak in een HDInsight-cluster oplossen
 
-Als een toepassing die gegevens verwerkt op een HDInsight-cluster langzaam wordt uitgevoerd of als er een fout optreedt, hebt u verschillende opties voor probleem oplossing. Als uw taken langer duren dan verwacht of als u een trage reactie tijd in het algemeen ziet, is er mogelijk een fout opgetreden in de upstream van het cluster, zoals de services waarop het cluster wordt uitgevoerd. De meest voorkomende oorzaak van deze vertragingen is echter onvoldoende schalen. Wanneer u een nieuw HDInsight-cluster maakt, selecteert u de juiste grootte van de [virtuele machine](hdinsight-component-versioning.md#default-node-configuration-and-virtual-machine-sizes-for-clusters).
+Als een toepassing die gegevens verwerkt op een HDInsight-cluster langzaam wordt uitgevoerd of als er een fout optreedt, hebt u verschillende opties voor probleem oplossing. Als uw taken langer duren dan verwacht of als u een trage reactie tijd in het algemeen ziet, is er mogelijk een fout opgetreden in de upstream van het cluster, zoals de services waarop het cluster wordt uitgevoerd. De meest voorkomende oorzaak van deze vertragingen is echter onvoldoende schalen. Wanneer u een nieuw HDInsight-cluster maakt, selecteert u de juiste grootte van de [virtuele machine](hdinsight-supported-node-configuration.md).
 
 Als u een langzame of mislukte cluster wilt vaststellen, verzamelt u informatie over alle aspecten van de omgeving, zoals gekoppelde Azure-Services, cluster configuratie en informatie over taak uitvoering. Een nuttige diagnose is om te proberen de fout status te reproduceren op een ander cluster.
 

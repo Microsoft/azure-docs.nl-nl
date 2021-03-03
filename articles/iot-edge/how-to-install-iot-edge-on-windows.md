@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: v-tcassi
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: 049c24beb6bb1573458779bf0796357fa634898f
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.openlocfilehash: ba1401696092f5a16ffa21859a9b485e94c5d792
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100008567"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101736505"
 ---
 # <a name="install-and-provision-azure-iot-edge-for-linux-on-a-windows-device-preview"></a>Azure IoT Edge voor Linux installeren en inrichten op een Windows-apparaat (preview)
 
@@ -85,7 +85,7 @@ Azure IoT Edge voor Linux in Windows ondersteunt de volgende inrichtings methode
 
 Hand matige inrichting is eenvoudiger om aan de slag te gaan met enkele apparaten. De Device Provisioning Service is handig voor het inrichten van een groot aantal apparaten.
 
-Als u van plan bent een van de DPS-methoden te gebruiken om uw apparaat of apparaten in te richten, volgt u de stappen in het desbetreffende artikel hierboven om een instantie van DPS te maken, uw DPS-exemplaar te koppelen aan uw IoT Hub en een DPS-inschrijving te maken. U kunt een *afzonderlijke inschrijving* voor één apparaat of een *groeps registratie* voor een groep apparaten maken. Ga voor meer informatie over de inschrijvings typen naar de [concepten van Azure IOT hub Device Provisioning Service](https://docs.microsoft.com/azure/iot-dps/concepts-service#enrollment).
+Als u van plan bent een van de DPS-methoden te gebruiken om uw apparaat of apparaten in te richten, volgt u de stappen in het desbetreffende artikel hierboven om een instantie van DPS te maken, uw DPS-exemplaar te koppelen aan uw IoT Hub en een DPS-inschrijving te maken. U kunt een *afzonderlijke inschrijving* voor één apparaat of een *groeps registratie* voor een groep apparaten maken. Ga voor meer informatie over de inschrijvings typen naar de [concepten van Azure IOT hub Device Provisioning Service](../iot-dps/concepts-service.md#enrollment).
 
 ## <a name="create-a-new-deployment"></a>Een nieuwe implementatie maken
 
@@ -97,7 +97,7 @@ Op de start pagina van het Windows-beheer centrum wordt onder de lijst met verbi
 
 U kunt Windows-beheer centrum gebruiken voor het installeren en beheren van Azure IoT Edge voor Linux in Windows op uw lokale apparaat of op externe beheerde apparaten. In deze hand leiding wordt de verbinding van de lokale host als doel apparaat gebruikt voor de implementatie van Azure IoT Edge voor Linux in Windows.
 
-Als u wilt implementeren op een extern doel apparaat in plaats van uw lokale apparaat en u het gewenste doel apparaat niet in de lijst ziet, volgt u de [instructies om uw apparaat toe te voegen.](https://docs.microsoft.com/windows-server/manage/windows-admin-center/use/get-started#connecting-to-managed-nodes-and-clusters)
+Als u wilt implementeren op een extern doel apparaat in plaats van uw lokale apparaat en u het gewenste doel apparaat niet in de lijst ziet, volgt u de [instructies om uw apparaat toe te voegen.](/windows-server/manage/windows-admin-center/use/get-started#connecting-to-managed-nodes-and-clusters)
 
    ![Eerste Windows-beheer centrum-dash board met weer gegeven doel apparaat](./media/how-to-install-iot-edge-on-windows/windows-admin-center-initial-dashboard.png)
 
@@ -136,7 +136,7 @@ Zodra de implementatie is voltooid, bent u klaar om uw apparaat in te richten. S
 Installeer IoT Edge voor Linux in Windows op uw doel apparaat als u dat nog niet hebt gedaan.
 
 > [!NOTE]
-> In het volgende Power Shell-proces wordt beschreven hoe u een implementatie van een lokale host maakt van Azure IoT Edge voor Linux in Windows. Als u een implementatie wilt maken op een extern doel apparaat met behulp van Power shell, kunt u [externe Power shell](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote) gebruiken om een verbinding met een extern apparaat tot stand te brengen en deze opdrachten op afstand op dat apparaat uit te voeren.
+> In het volgende Power Shell-proces wordt beschreven hoe u een implementatie van een lokale host maakt van Azure IoT Edge voor Linux in Windows. Als u een implementatie wilt maken op een extern doel apparaat met behulp van Power shell, kunt u [externe Power shell](/powershell/module/microsoft.powershell.core/about/about_remote) gebruiken om een verbinding met een extern apparaat tot stand te brengen en deze opdrachten op afstand op dat apparaat uit te voeren.
 
 1. Voer in een Power shell-sessie met verhoogde bevoegdheid elk van de volgende opdrachten uit om IoT Edge voor Linux te downloaden in Windows.
 
@@ -173,9 +173,8 @@ Installeer IoT Edge voor Linux in Windows op uw doel apparaat als u dat nog niet
    Deploy-Eflow
    ```
 
-   <!-- Most likely temporary until cmdlet is fully documented -->
    > [!NOTE]
-   > U kunt deze opdracht zonder para meters uitvoeren of implementatie optioneel aanpassen met para meters. Inspecteer de Power shell-module AzureEFLOW. psm1 om de para meters en hun betekenis te bekijken (zie onder C:\Program Files\WindowsPowerShell\Modules\AzureEFLOW).
+   > U kunt deze opdracht zonder para meters uitvoeren of implementatie optioneel aanpassen met para meters. Raadpleeg [de naslag informatie over het IOT Edge voor Linux op Windows Power shell-scripts](reference-iot-edge-for-linux-on-windows-scripts.md#Deploy-Eflow) om de betekenis ervan te bekijken.
 
 1. Voer ' Y ' in om de licentie voorwaarden te accepteren.
 
@@ -319,7 +318,10 @@ In deze sectie wordt beschreven hoe u uw apparaat automatisch inricht met behulp
 
 Controleer of IoT Edge voor Linux in Windows is geïnstalleerd en geconfigureerd op uw IoT Edge-apparaat.
 
+# <a name="windows-admin-center"></a>[Windows-beheer centrum](#tab/windowsadmincenter)
+
 1. Selecteer uw IoT Edge-apparaat in de lijst met verbonden apparaten in het Windows-beheer centrum om er verbinding mee te maken.
+
 1. Op de overzichts pagina van het apparaat wordt een aantal informatie over het apparaat weer gegeven:
 
     1. In de sectie **lijst van IOT Edge module** worden de actieve modules op het apparaat weer gegeven. Wanneer de IoT Edge-service voor de eerste keer wordt gestart, ziet u alleen de **edgeAgent** -module. De edgeAgent-module wordt standaard uitgevoerd en helpt bij het installeren en starten van aanvullende modules die u op uw apparaat implementeert.
@@ -338,6 +340,38 @@ Controleer of IoT Edge voor Linux in Windows is geïnstalleerd en geconfigureerd
        ```bash
        sudo iotedge check
        ```
+
+---
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+1. Meld u aan bij uw IoT Edge voor Linux op virtuele Windows-machine met behulp van de volgende opdracht in uw Power shell-sessie:
+
+   ```azurepowershell-interactive
+   Ssh-EflowVm
+   ```
+
+1. Wanneer u bent aangemeld, kunt u de lijst met actieve IoT Edge-modules controleren met behulp van de volgende Linux-opdracht:
+
+   ```bash
+   iotedge list
+   ```
+
+1. Als u de IoT Edge-service moet oplossen, gebruikt u de volgende Linux-opdrachten.
+
+    1. Als u problemen met de service moet oplossen, haalt u de servicelogboeken op.
+
+       ```bash
+       journalctl -u iotedge
+       ```
+
+    2. Gebruik het `check` hulp programma om de configuratie en verbindings status van het apparaat te controleren.
+
+       ```bash
+       sudo iotedge check
+       ```
+
+---
 
 ## <a name="next-steps"></a>Volgende stappen
 

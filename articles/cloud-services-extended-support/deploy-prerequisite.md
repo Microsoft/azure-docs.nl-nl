@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 42416b1fc06ff59a68a6f5044b8bcca5dc7f035f
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 1473305d7da57d1216ef05c0b88a0f69d586784b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98880183"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728107"
 ---
 # <a name="prerequisites-for-deploying-azure-cloud-services-extended-support"></a>Vereisten voor het implementeren van Azure Cloud Services (uitgebreide ondersteuning)
 
@@ -42,7 +42,7 @@ CloudServices           Microsoft.Compute    Registered
 ## <a name="required-service-configuration-cscfg-file-updates"></a>Vereiste updates voor het service configuratie bestand (. cscfg)
 
 ### <a name="1-virtual-network"></a>1) Virtual Network
-Implementaties van Cloud service (uitgebreide ondersteuning) moeten zich in een virtueel netwerk bestaan. U kunt een virtueel netwerk maken via [Azure Portal](https://docs.microsoft.com/azure/virtual-network/quick-create-portal), [Power shell](https://docs.microsoft.com/azure/virtual-network/quick-create-powershell), de [Azure cli](https://docs.microsoft.com/azure/virtual-network/quick-create-cli) -of [arm-sjabloon](https://docs.microsoft.com/azure/virtual-network/quick-create-template). Naar het virtuele netwerk en subnetten moet ook worden verwezen in de service configuratie (. cscfg) onder de sectie [NetworkConfiguration](schema-cscfg-networkconfiguration.md) . 
+Implementaties van Cloud service (uitgebreide ondersteuning) moeten zich in een virtueel netwerk bestaan. U kunt een virtueel netwerk maken via [Azure Portal](../virtual-network/quick-create-portal.md), [Power shell](../virtual-network/quick-create-powershell.md), de [Azure cli](../virtual-network/quick-create-cli.md) -of [arm-sjabloon](../virtual-network/quick-create-template.md). Naar het virtuele netwerk en subnetten moet ook worden verwezen in de service configuratie (. cscfg) onder de sectie [NetworkConfiguration](schema-cscfg-networkconfiguration.md) . 
 
 Voor een virtueel netwerk dat deel uitmaakt van dezelfde resource groep als de Cloud service, is alleen het verwijzen naar de naam van het virtuele apparaat in het service configuratie bestand (. cscfg) voldoende. Als het virtuele netwerk en de Cloud service zich in twee verschillende resource groepen bevinden, moet de volledige Azure Resource Manager-ID van het virtuele netwerk worden opgegeven in het bestand met de service configuratie (. cscfg).
  
@@ -103,7 +103,7 @@ De volgende grootten zijn afgeschaft in Azure Resource Manager. Als u ze echter 
  Dit wordt bijvoorbeeld `<WorkerRole name="WorkerRole1" vmsize="Medium"` `<WorkerRole name="WorkerRole1" vmsize="Standard_A2"` .
  
 > [!NOTE]
-> Als u een lijst met beschik bare grootten wilt ophalen, raadpleegt u [resource sku's-List](https://docs.microsoft.com/rest/api/compute/resourceskus/list) en past u de volgende filters toe: <br>
+> Als u een lijst met beschik bare grootten wilt ophalen, raadpleegt u [resource sku's-List](/rest/api/compute/resourceskus/list) en past u de volgende filters toe: <br>
 `ResourceType = virtualMachines ` <br>
 `VMDeploymentTypes = PaaS `
 
@@ -120,7 +120,7 @@ Voor implementaties die de oude extern bureau blad-invoeg toepassingen hebben ge
 
 ## <a name="key-vault-creation"></a>Key Vault maken 
 
-Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan Cloud Services (uitgebreide ondersteuning). Voeg de certificaten toe aan Key Vault en verwijs vervolgens naar de certificaat vingerafdrukken in het service configuratie bestand. U moet ook Key Vault inschakelen voor de juiste machtigingen, zodat Cloud Services (uitgebreide ondersteunings resource) het certificaat kan ophalen dat is opgeslagen als geheimen van Key Vault. Key Vault kunnen worden gemaakt via [Azure Portal](https://docs.microsoft.com/azure/key-vault/general/quick-create-portal)en  [Power shell](https://docs.microsoft.com/azure/key-vault/general/quick-create-powershell). De Key Vault moet in dezelfde regio en hetzelfde abonnement worden gemaakt als de Cloud service. Zie [certificaten met Azure Cloud Services gebruiken (uitgebreide ondersteuning)](certificates-and-key-vault.md)voor meer informatie.
+Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan Cloud Services (uitgebreide ondersteuning). Voeg de certificaten toe aan Key Vault en verwijs vervolgens naar de certificaat vingerafdrukken in het service configuratie bestand. U moet ook Key Vault inschakelen voor de juiste machtigingen, zodat Cloud Services (uitgebreide ondersteunings resource) het certificaat kan ophalen dat is opgeslagen als geheimen van Key Vault. Key Vault kunnen worden gemaakt via [Azure Portal](../key-vault/general/quick-create-portal.md)en  [Power shell](../key-vault/general/quick-create-powershell.md). De Key Vault moet in dezelfde regio en hetzelfde abonnement worden gemaakt als de Cloud service. Zie [certificaten met Azure Cloud Services gebruiken (uitgebreide ondersteuning)](certificates-and-key-vault.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen 
 - Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud Services (uitgebreide ondersteuning).

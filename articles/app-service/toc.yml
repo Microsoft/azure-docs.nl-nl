@@ -248,7 +248,7 @@
         - name: PremiumV3-laag configureren
           href: app-service-configure-premium-tier.md
         - name: Uitschalen naar meerdere exemplaren
-          href: ../azure-monitor/platform/autoscale-get-started.md?toc=%2fazure%2fapp-service%2ftoc.json
+          href: ../azure-monitor/autoscale/autoscale-get-started.md?toc=%2fazure%2fapp-service%2ftoc.json
         - name: Hosting met hoge dichtheid
           href: manage-scale-per-app.md
     - name: App controleren

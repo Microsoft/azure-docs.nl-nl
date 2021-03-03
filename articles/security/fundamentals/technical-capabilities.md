@@ -11,19 +11,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/04/2021
 ms.author: terrylan
-ms.openlocfilehash: 6e0642a2124d58bb3af483313ac824568b6bbb39
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 00a44bd0a6176270e70eca030fcfada46effe3a5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99585140"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101735774"
 ---
 # <a name="azure-security-technical-capabilities"></a>Technische mogelijkheden van Azure-beveiliging
 Dit artikel bevat een inleiding tot beveiligings Services in azure waarmee u uw gegevens, resources en toepassingen in de cloud kunt beveiligen en voldoen aan de beveiligings behoeften van uw bedrijf.
 
 ## <a name="azure-platform"></a>Azure-platform
 
-[Microsoft Azure](https://azure.microsoft.com/overview/what-is-azure/) is een Cloud platform dat bestaat uit infra structuur-en toepassings Services, met geïntegreerde gegevens Services en geavanceerde analyses, en hulpprogram ma's en services voor ontwikkel aars, die worden gehost in de open bare Cloud data centers van micro soft. Klanten gebruiken Azure voor veel verschillende capaciteiten en scenario's, van basis berekeningen, netwerken en opslag, tot mobiele en web-app-Services, op volledige Cloud scenario's zoals Internet of Things, en kunnen worden gebruikt met open-source technologieën, en worden geïmplementeerd als hybride Cloud of gehost in het Data Center van een klant. Azure biedt Cloud technologie als bouw stenen waarmee bedrijven kosten kunnen besparen, snel kunnen worden geautomatiseerd en systemen proactief kunnen worden beheerd. Wanneer u IT-assets bouwt op of migreert naar een Cloud provider, bent u afhankelijk van de mogelijkheden van die organisatie om uw toepassingen en gegevens te beschermen met de services en de besturings elementen die ze bieden om de beveiliging van uw cloud-gebaseerde assets te beheren.
+[Microsoft Azure](https://azure.microsoft.com/overview/what-is-azure/) is een Cloud platform dat bestaat uit infra structuur-en toepassings Services, met geïntegreerde gegevens Services en geavanceerde analyses, en hulpprogram ma's en services voor ontwikkel aars, die worden gehost in de open bare Cloud data centers van micro soft. Klanten gebruiken Azure voor veel verschillende capaciteiten en scenario's, van basis berekeningen, netwerken en opslag, tot mobiele en web-app-Services, op volledige Cloud scenario's zoals Internet of Things, en kunnen worden gebruikt met open-source technologieën en worden geïmplementeerd als hybride Cloud of worden gehost in het Data Center van een klant. Azure biedt Cloud technologie als bouw stenen waarmee bedrijven kosten kunnen besparen, snel kunnen worden geautomatiseerd en systemen proactief kunnen worden beheerd. Wanneer u IT-assets bouwt op of migreert naar een Cloud provider, bent u afhankelijk van de mogelijkheden van die organisatie om uw toepassingen en gegevens te beschermen met de services en de besturings elementen die ze bieden om de beveiliging van uw cloud-gebaseerde assets te beheren.
 
 Microsoft Azure is de enige Cloud Computing provider die beschikt over een veilig, consistent toepassings platform en een infra structuur-as-a-service waarmee teams kunnen werken binnen hun verschillende Cloud vaardig heden en-niveaus van project complexiteit, met geïntegreerde gegevens Services en analyses waarmee informatie wordt gedetecteerd van gegevens waar deze zich bevinden, kunt u in zowel micro soft als niet-micro soft-platformen open frameworks en hulpprogram ma's, waarmee u de mogelijkheid biedt om de Cloud met on-premises te integreren en Azure-Cloud Services te implementeren in on-premises data centers. Als onderdeel van de micro soft-vertrouwde Cloud vertrouwen klanten op Azure voor een toonaangevende beveiliging, betrouw baarheid, naleving, privacy en het enorme netwerk van mensen, partners en processen om organisaties in de cloud te ondersteunen.
 
@@ -37,7 +37,7 @@ Met Microsoft Azure kunt u het volgende doen:
 
 - Bescherm hun bedrijf.
 
-## <a name="security-technical-capabilities-to-fulfil-your-responsibility"></a>Technische mogelijkheden voor beveiliging om aan uw verantwoordelijkheid te voldoen
+## <a name="security-technical-capabilities-to-fulfill-your-responsibility"></a>Technische mogelijkheden voor beveiliging om aan uw verantwoordelijkheid te voldoen
 
 Microsoft Azure biedt services die u helpen bij het voldoen aan uw behoeften op het gebied van beveiliging, privacy en naleving. De volgende afbeelding bevat een uitleg van de verschillende Azure-Services die beschikbaar zijn om een veilige en compatibele toepassings infrastructuur te maken op basis van industrie normen.
 
@@ -184,7 +184,7 @@ Gebruik [punt-naar-site-VPN](../../vpn-gateway/vpn-gateway-howto-point-to-site-c
 
 Grotere gegevens sets kunnen worden verplaatst via een speciale WAN-verbinding met hoge snelheid, zoals [ExpressRoute](https://azure.microsoft.com/services/expressroute/). Als u ervoor kiest om ExpressRoute te gebruiken, kunt u de gegevens op toepassings niveau ook versleutelen met behulp van [SSL/TLS](https://web.archive.org/web/20150221085231/http://support.microsoft.com:80/kb/257591) of andere protocollen voor extra beveiliging.
 
-Als u werkt met Azure Storage via de Azure-Portal, worden alle trans acties uitgevoerd via HTTPS. [Opslag rest API](/rest/api/storageservices/) via https kan ook worden gebruikt om te communiceren met [Azure Storage](https://azure.microsoft.com/services/storage/) en [Azure SQL database](https://azure.microsoft.com/services/sql-database/).
+Als u werkt met Azure Storage via de Azure Portal, worden alle trans acties uitgevoerd via HTTPS. [Opslag rest API](/rest/api/storageservices/) via https kan ook worden gebruikt om te communiceren met [Azure Storage](https://azure.microsoft.com/services/storage/) en [Azure SQL database](https://azure.microsoft.com/services/sql-database/).
 
 Organisaties die gegevens in de overdracht niet kunnen beveiligen, zijn gevoeliger voor [man-in-the-middle-aanvallen](/previous-versions/office/skype-server-2010/gg195821(v=ocs.14)), [afluis teren](/previous-versions/office/skype-server-2010/gg195641(v=ocs.14))en het overnemen van sessies. Deze aanvallen kunnen de eerste stap zijn om toegang te krijgen tot vertrouwelijke gegevens.
 
@@ -194,7 +194,7 @@ Meer informatie over de Azure VPN-optie vindt u in het artikel [planning en ontw
 
 [Azure RMS](/azure/information-protection/what-is-azure-rms) maakt gebruik van beleids regels voor versleuteling, identiteit en verificatie om uw bestanden en e-mail te beveiligen. Azure RMS werkt op meerdere apparaten: telefoons, Tablets en Pc's door zowel binnen uw organisatie als buiten uw organisatie te beveiligen. Deze mogelijkheid is mogelijk omdat Azure RMS een beveiligings niveau toevoegt dat bij de gegevens blijft, zelfs wanneer het de grenzen van uw organisatie verlaat.
 
-Wanneer u Azure RMS gebruikt om uw bestanden te beveiligen, gebruikt u gestandaardiseerde crypto grafie met volledige ondersteuning van [FIPS 140-2](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.140-2.pdf). Wanneer u gebruikmaakt van Azure RMS voor gegevens bescherming, hebt u de zekerheid dat de beveiliging bij het bestand blijft, zelfs als dit wordt gekopieerd naar een opslag die niet onder het beheer van de service valt, zoals een Cloud-opslag. Hetzelfde gebeurt voor bestanden die worden gedeeld via e-mail, het bestand wordt beveiligd als bijlage bij een e-mail bericht met instructies voor het openen van de beveiligde bijlage.
+Wanneer u Azure RMS gebruikt om uw bestanden te beveiligen, gebruikt u gestandaardiseerde crypto grafie met volledige ondersteuning van [FIPS 140-2](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.140-2.pdf). Wanneer u Azure RMS gebruikt voor gegevens bescherming, hebt u de zekerheid dat de beveiliging bij het bestand blijft, zelfs als dit wordt gekopieerd naar een opslag die niet onder het beheer van de service valt, zoals een Cloud-opslag. Hetzelfde gebeurt voor bestanden die worden gedeeld via e-mail, het bestand wordt beveiligd als bijlage bij een e-mail bericht met instructies voor het openen van de beveiligde bijlage.
 Bij het plannen van Azure RMS aanneming, raden we het volgende aan:
 
 - Installeer de [app RMS sharing](/azure/information-protection/rms-client/sharing-app-windows). Deze app is geïntegreerd met Office-toepassingen door een Office-invoeg toepassing te installeren, zodat gebruikers bestanden eenvoudig rechtstreeks kunnen beveiligen.
@@ -278,6 +278,8 @@ Azure-netwerken bieden ondersteuning voor de mogelijkheid om het routerings gedr
 
 Azure biedt ondersteuning voor speciale WAN-koppelings connectiviteit met uw on-premises netwerk en een Azure-Virtual Network met [ExpressRoute](../../expressroute/expressroute-introduction.md). De koppeling tussen Azure en uw site maakt gebruik van een speciale verbinding die niet via het open bare Internet gaat. Als uw Azure-toepassing wordt uitgevoerd in meerdere data centers, kunt u [Azure Traffic Manager](../../traffic-manager/traffic-manager-overview.md) gebruiken om aanvragen van gebruikers op intelligente wijze te routeren in verschillende exemplaren van de toepassing. U kunt ook verkeer routeren naar services die niet worden uitgevoerd in azure als ze toegankelijk zijn via internet.
 
+Azure biedt ook ondersteuning voor persoonlijke en veilige verbindingen met uw PaaS-bronnen (bijvoorbeeld Azure Storage en SQL Database) vanuit uw Azure Virtual Network met de [persoonlijke Azure-koppeling](https://docs.microsoft.com/azure/private-link/private-link-overview). PaaS-resource is toegewezen aan een [persoonlijk eind punt](https://docs.microsoft.com/azure/private-link/private-endpoint-overview) in uw virtuele netwerk. De koppeling tussen het persoonlijke eind punt in uw virtuele netwerk en uw PaaS-resource maakt gebruik van het micro soft backbone-netwerk en gaat niet over op het open bare Internet. U hoeft uw service niet langer bloot te stellen aan het openbare internet. U kunt ook een persoonlijke Azure-koppeling gebruiken om toegang te krijgen tot Azure gehoste klanten-en partner services in uw virtuele netwerk.  Daarnaast kunt u met Azure private link uw eigen [persoonlijke koppelings service](https://docs.microsoft.com/azure/private-link/private-link-service-overview) maken in uw virtuele netwerk en deze privé leveren aan uw klanten in hun virtuele netwerken. Het instellen en gebruiken van Azure Private Link is consistent voor Azure PaaS-services, services die eigendom zijn van klanten en gedeelde partnerservices.
+
 ## <a name="virtual-machine-security"></a>Beveiliging van virtuele machines
 
 Met [Azure virtual machines](../../virtual-machines/index.yml) kunt u een breed scala aan computer oplossingen implementeren op een flexibele manier. Met ondersteuning voor micro soft Windows, Linux, Microsoft SQL Server, Oracle, IBM, SAP en Azure BizTalk Services kunt u elke workload en elke taal implementeren op vrijwel elk besturings systeem.
@@ -304,7 +306,7 @@ Daarnaast is de controle lijst:
 
 - Beschrijft belang rijke discussie onderwerpen voor besluit vormers aan het begin van het Cloud-acceptatie proces.
 
-- Biedt ondersteuning voor uitgebreide zakelijke discussies over voor schriften en de eigen doel stellingen van de organisatie voor privacy, persoonlijk identificeer bare informatie (PII) en gegevens beveiliging.
+- Biedt uitgebreide zakelijke discussies over regels en de eigen doel stellingen van de organisatie voor privacy, persoonlijke gegevens en gegevens beveiliging.
 
 - Helpt organisaties bij het identificeren van mogelijke problemen die van invloed kunnen zijn op een Cloud project.
 
@@ -316,7 +318,7 @@ Daarnaast is de controle lijst:
 
 ![beveiligings validatie (detectie)](./media/technical-capabilities/azure-security-technical-capabilities-fig7.png)
 
-Azure Operational Security is gebaseerd op een Framework met de kennis die is opgedaan via een aantal mogelijkheden die uniek zijn voor micro soft, waaronder micro soft Security Development Lifecycle (SDL), het micro soft Security Response Center-programma en dieper inzicht in de Cyber beveiliging Threat-landschap.
+Azure Operational Security is gebaseerd op een Framework met de kennis die is opgedaan via een aantal mogelijkheden die uniek zijn voor micro soft, waaronder micro soft Security Development Lifecycle (SDL), het micro soft Security Response Center-programma en diepe kennis van de Cyber beveiliging Threat-landschap.
 
 ### <a name="microsoft-azure-monitor"></a>Microsoft Azure monitor
 
@@ -383,7 +385,7 @@ Het controleren van de netwerk beveiliging is essentieel voor het detecteren van
 
 ### <a name="application-insights"></a>Application Insights
 
-[Application Insights](../../azure-monitor/app/app-insights-overview.md) is een UITBREID bare apm-service (Application Performance Management) voor webontwikkelaars op meerdere platforms. Hiermee kunt u uw livewebtoepassing controleren. Afwijkende prestaties worden automatisch gedetecteerd. Het bevat krachtige analyse hulpprogramma's waarmee u problemen kunt vaststellen en inzicht kunt krijgen in wat gebruikers met uw app doen. Het is bedoeld om u te helpen de prestaties en bruikbaarheid continu te verbeteren. Het werkt voor apps op een groot aantal verschillende platformen, waaronder .NET, Node.js en Java EE, lokaal gehost of in de Cloud. Het wordt geïntegreerd met uw devOps-proces en heeft verbindings punten naar verschillende ontwikkel hulpprogramma's.
+[Application Insights](../../azure-monitor/app/app-insights-overview.md) is een UITBREID bare apm-service (Application Performance Management) voor webontwikkelaars op meerdere platforms. Hiermee kunt u uw livewebtoepassing controleren. Afwijkende prestaties worden automatisch gedetecteerd. Het bevat krachtige analyse hulpprogramma's waarmee u problemen kunt vaststellen en inzicht kunt krijgen in wat gebruikers met uw app doen. Het is bedoeld om u te helpen de prestaties en bruikbaarheid continu te verbeteren. Het werkt voor apps op een groot aantal verschillende platformen, waaronder .NET, Node.js en Java EE, lokaal gehost of in de Cloud. Het wordt geïntegreerd met uw DevOps-proces en heeft verbindings punten naar verschillende ontwikkel hulpprogramma's.
 
 Met deze service kunt u het volgende controleren:
 

@@ -5,15 +5,15 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: tutorial
-ms.date: 07/15/2020
+ms.date: 02/19/2021
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 40e4a3d3a819280255ee931e5e12206f99ef28fe
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.openlocfilehash: 54900b7b9089d4a4c6cbc742ecf09aa19ff2a550
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98051510"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101741953"
 ---
 # <a name="tutorial-deploy-and-configure-azure-firewall-using-the-azure-portal"></a>Zelfstudie: Azure Firewall implementeren en configureren met de Azure-portal
 
@@ -62,30 +62,32 @@ De resourcegroep bevat alle resources voor de zelfstudie.
 
 1. Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azure.com).
 2. Selecteer in het menu van Azure-portal de optie **Resourcegroepen** of zoek ernaar en selecteer *Resourcegroepen* vanaf een willekeurige pagina. Selecteer vervolgens **Toevoegen**.
-3. Bij **Resourcegroepnaam** typt u *Test-FW-RG*.
 4. Bij **Abonnement** selecteert u uw abonnement.
-5. Bij **Resourcegroeplocatie** selecteert u een locatie. Alle andere resources die u maakt, moeten zich op dezelfde locatie bevinden.
-6. Selecteer **Maken**.
+1. Bij **Resourcegroepnaam** typt u *Test-FW-RG*.
+1. Bij **Resourcegroeplocatie** selecteert u een locatie. Alle andere resources die u maakt, moeten zich op dezelfde locatie bevinden.
+1. Selecteer **Controleren + maken**.
+1. Selecteer **Maken**.
 
 ### <a name="create-a-vnet"></a>Een VNet maken
 
-Dit VNet bevat drie subnetten.
+Dit VNet heeft drie subnetten.
 
 > [!NOTE]
 > De grootte van het subnet AzureFirewallSubnet is /26. Zie [Veelgestelde vragen over Azure Firewall](firewall-faq.yml#why-does-azure-firewall-need-a--26-subnet-size) voor meer informatie over de grootte van het subnet.
 
 1. Selecteer in het menu van de Azure-portal of op de **startpagina** de optie **Een resource maken**.
 1. Selecteer **Netwerk** > **Virtueel netwerk**.
-2. Bij **Abonnement** selecteert u uw abonnement.
-3. Bij **Resourcegroep** selecteert u **Test-FW-RG**.
-4. Bij **Naam** typt u **Test-FW-VN**.
-5. Bij **Regio** selecteert u dezelfde locatie die u eerder hebt gebruikt.
-6. Selecteer **Volgende: IP-adressen**.
-7. Bij **IPv4-adresruimte** typt u **10.0.0.0/16**.
-8. Onder **Subnet** selecteert u **standaard**.
-9. Bij **Subnetnaam** typt u **AzureFirewallSubnet**. De firewall zal zich in dit subnet bevinden, en de subnetnaam **moet** AzureFirewallSubnet zijn.
-10. Bij **Adresbereik** typt u **10.0.1.0/26**.
-11. Selecteer **Opslaan**.
+1. Selecteer **Maken**.
+1. Bij **Abonnement** selecteert u uw abonnement.
+1. Bij **Resourcegroep** selecteert u **Test-FW-RG**.
+1. Bij **Naam** typt u **Test-FW-VN**.
+1. Bij **Regio** selecteert u dezelfde locatie die u eerder hebt gebruikt.
+1. Selecteer **Volgende: IP-adressen**.
+1. Bij **IPv4-adresruimte** typt u **10.0.0.0/16**.
+1. Onder **Subnet** selecteert u **standaard**.
+1. Bij **Subnetnaam** typt u **AzureFirewallSubnet**. De firewall zal zich in dit subnet bevinden, en de subnetnaam **moet** AzureFirewallSubnet zijn.
+1. Bij **Adresbereik** typt u **10.0.1.0/26**.
+1. Selecteer **Opslaan**.
 
    Maak hierna een subnet voor de werkbelastingserver.
 
@@ -101,8 +103,7 @@ Dit VNet bevat drie subnetten.
 Maak nu de virtuele machine voor de werkbelasting en plaats deze in het subnet **Workload-SN**.
 
 1. Selecteer in het menu van de Azure-portal of op de **startpagina** de optie **Een resource maken**.
-2. Selecteer **Compute** en vervolgens **Virtuele machine**.
-3. **Windows Server 2016 Datacenter** in the de lijst Aanbevolen.
+2. Selecteer **Windows Server 2016 Data Center**.
 4. Voer deze waarden in voor de virtuele machine:
 
    |Instelling  |Waarde  |
@@ -120,7 +121,7 @@ Maak nu de virtuele machine voor de werkbelasting en plaats deze in het subnet *
 8. Zorg ervoor dat **Test-FW-VN** is geselecteerd voor het virtuele netwerk en dat het subnet **Workload-SN** is.
 9. Selecteer **Geen** voor **Openbaar IP**.
 11. Accepteer de overige standaardwaarden en selecteer **Volgende: Beheer**.
-12. Selecteer **Uit** om diagnostische gegevens over opstarten uit te schakelen. Accepteer de overige standaardwaarden en selecteer **Beoordelen en maken**.
+12. Selecteer **uitschakelen** om diagnostische gegevens over opstarten uit te scha kelen. Accepteer de overige standaardwaarden en selecteer **Beoordelen en maken**.
 13. Controleer de instellingen op de overzichtspagina en selecteer **Maken**.
 
 ## <a name="deploy-the-firewall"></a>De firewall implementeren
@@ -137,11 +138,12 @@ Implementeer de firewall in het VNet.
    |Abonnement     |\<your subscription\>|
    |Resourcegroep     |**Test-FW-RG** |
    |Naam     |**Test-FW01**|
-   |Locatie     |Selecteer dezelfde locatie die u eerder hebt gebruikt|
+   |Region     |Selecteer dezelfde locatie die u eerder hebt gebruikt|
+   |Firewall beheer|**Firewall regels (klassiek) gebruiken voor het beheren van deze firewall**|
    |Een virtueel netwerk kiezen     |**Bestaande gebruiken**: **Test-FW-VN**|
    |Openbaar IP-adres     |**Nieuwe toevoegen**<br>**Naam**:  **fw-pip**|
 
-5. Selecteer **Controleren + maken**.
+5. Accepteer de andere standaard waarden en selecteer vervolgens **controleren + maken**.
 6. Controleer de samenvatting en selecteer vervolgens **Maken** om de firewall te maken.
 
    Het duurt enkele minuten voordat deze is geïmplementeerd.
@@ -155,15 +157,18 @@ Voor het subnet **Workload-SN** configureert u de standaardroute voor uitgaand v
 1. Selecteer in het menu van Azure-portal de optie **Alle services** of zoek naar en selecteer *Alle services* vanaf elke willekeurige pagina.
 2. Selecteer onder **Netwerken** de optie **Routetabellen**.
 3. Selecteer **Toevoegen**.
-4. Bij **Naam** typt u **Firewall-route**.
 5. Bij **Abonnement** selecteert u uw abonnement.
 6. Bij **Resourcegroep** selecteert u **Test-FW-RG**.
-7. Bij **Locatie** selecteert u dezelfde locatie die u eerder hebt gebruikt.
-8. Selecteer **Maken**.
-9. Selecteer **Vernieuwen** en selecteer vervolgens de routetabel **Firewall-route**.
-10. Selecteer **Subnetten** en selecteer vervolgens **Koppelen**.
-11. Selecteer **Virtueel netwerk** > **Test-FW-VN**.
-12. Bij **Subnet** selecteert u **Workload-SN**. Zorg ervoor dat u alleen het subnet **Workload-SN** selecteert voor deze route, anders werkt de firewall niet correct.
+7. Bij **Regio** selecteert u dezelfde locatie die u eerder hebt gebruikt.
+4. Bij **Naam** typt u **Firewall-route**.
+1. Selecteer **Controleren + maken**.
+1. Selecteer **Maken**.
+
+Nadat de implementatie is voltooid, selecteert **u naar resource**.
+
+1. Selecteer op de pagina Firewall-route de optie **subnetten** en selecteer vervolgens **koppelen**.
+1. Selecteer **Virtueel netwerk** > **Test-FW-VN**.
+1. Bij **Subnet** selecteert u **Workload-SN**. Zorg ervoor dat u alleen het subnet **Workload-SN** selecteert voor deze route, anders werkt de firewall niet correct.
 
 13. Selecteer **OK**.
 14. Selecteer **Routes** en vervolgens **Toevoegen**.
@@ -180,7 +185,7 @@ Voor het subnet **Workload-SN** configureert u de standaardroute voor uitgaand v
 Dit is de toepassingsregel waarmee uitgaande toegang tot `www.google.com` wordt toegestaan.
 
 1. Open de resourcegroep **Test-FW-RG** en selecteer de firewall **Test-FW01**.
-2. Selecteer op de pagina **Test-FW01** onder **Instellingen** de optie **Regels**.
+2. Selecteer op de pagina **test-FW01** onder **instellingen** de optie **regels (klassiek)**.
 3. Selecteer het tabblad **Verzameling met toepassingsregels**.
 4. Selecteer **Toepassingsregelverzameling toevoegen**.
 5. Bij **Naam** typt u **App-Coll01**.
@@ -226,8 +231,8 @@ Met deze regel kunt u een extern bureaublad via de firewall verbinden met de vir
 5. Onder **Regels** typt u bij **Naam** de naam **rdp-nat**.
 6. Bij **Protocol** selecteert u **TCP**.
 7. Selecteer **IP-adres** bij **Brontype**.
-8. Typ * *\** _ bij **Bron**.
-9. Typ bij _*Doeladressen** het openbare IP-adres van de firewall.
+8. Typ bij **Bron** **\*** .
+9. Bij **Doeladressen** typt u het openbare IP-adres van de firewall.
 10. Typ bij **Doelpoorten** **3389**.
 11. Bij **Omgezet adres** typt u het privé-IP-adres voor **Srv-work**.
 12. Bij **Vertaalde poort** typt u **3389**.

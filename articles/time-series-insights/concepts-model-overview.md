@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 01/22/2021
 ms.custom: seodec18
-ms.openlocfilehash: 7b37934ff3b867b83c2c958d52bea2dd4db01354
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 37c24f2d785bbdd9847e0dadaa47969f5b090ef2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736798"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101698090"
 ---
 # <a name="time-series-model-in-azure-time-series-insights-gen2"></a>Time Series-model in Azure Time Series Insights Gen2
 
@@ -75,7 +75,7 @@ Deze onderdelen worden gecombineerd om een time series-model op te geven en om u
 
 [![Overzichts grafiek voor tijdreeks model](media/v2-update-tsm/time-series-model-overview.png)](media/v2-update-tsm/time-series-model-overview.png#lightbox)
 
-Een time series-model kan worden gemaakt en beheerd via de [Azure time series Insights Explorer](https://docs.microsoft.com/azure/time-series-insights/concepts-ux-panels). Instellingen voor tijdreeks modellen kunnen worden beheerd via de [API voor model instellingen](/rest/api/time-series-insights/reference-model-apis).
+Een time series-model kan worden gemaakt en beheerd via de [Azure time series Insights Explorer](./concepts-ux-panels.md). Instellingen voor tijdreeks modellen kunnen worden beheerd via de [API voor model instellingen](/rest/api/time-series-insights/reference-model-apis).
 
 ## <a name="time-series-model-instances"></a>Exemplaren van de time series-model
 

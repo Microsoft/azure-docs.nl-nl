@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: erhopf
-ms.openlocfilehash: 0650a173b02e1b8f1f829953be1dd852024e6f65
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 541448f08e4ce9961d34063dcc225bf89d969a73
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99524512"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703368"
 ---
 # <a name="create-a-custom-voice"></a>Een Custom Voice maken
 
@@ -60,7 +60,7 @@ U kunt een uitingen met lage uitspraak scores of slecht signaal-naar-ruis-verhou
 
 > [!NOTE]
 > Als u aangepaste Neural Voice gebruikt, moet u uw stem talen hand Steren op het tabblad spraak- **talen** . Wanneer u het opname script voorbereidt, moet u de onderstaande zin gebruiken om de stem-talen bevestiging te verkrijgen van het gebruik van hun stem gegevens om een TTS-spraak model te maken en synthetische spraak te genereren. "I [Geef uw voor-en achternaam op] Houd er rekening mee dat de opnamen van mijn stem worden gebruikt door [de naam van het bedrijf te vermelden] om een synthetische versie van mijn stem te maken en te gebruiken."
-Deze zin wordt gebruikt om te controleren of de opnamen in uw trainings gegevens sets worden uitgevoerd door dezelfde persoon die de toestemming doet. [Lees hier meer over hoe uw gegevens worden verwerkt en hoe Voice-talen worden geverifieerd](https://aka.ms/CNV-data-privacy). 
+Deze zin wordt gebruikt om te controleren of de opnamen in uw trainings gegevens sets worden uitgevoerd door dezelfde persoon die de toestemming doet. [Lees hier meer over hoe uw gegevens worden verwerkt en hoe Voice-talen worden geverifieerd](/legal/cognitive-services/speech-service/custom-neural-voice/data-privacy-security-custom-neural-voice?context=%2fazure%2fcognitive-services%2fspeech-service%2fcontext%2fcontext). 
 
 ## <a name="build-your-custom-voice-model"></a>Uw aangepaste spraak model bouwen
 
@@ -87,7 +87,7 @@ Nadat uw gegevensset is gevalideerd, kunt u deze gebruiken om uw aangepaste spra
 5. Selecteer in de volgende stap de **methode training** . 
 
     > [!NOTE]
-    > Als u een Neural-stem wilt trainen, moet u een profiel voor spraak-talen opgeven met het bestand met de bestands toestemming van de stem talen bevestiging dat zijn/haar spraak gegevens worden gebruikt voor het trainen van een aangepast spraak model. Aangepaste Neural Voice is beschikbaar met beperkte toegang. Zorg ervoor dat u bekend bent met de [vereiste AI-vereisten](https://aka.ms/gating-overview) en [Pas de toegang hier toe](https://aka.ms/customneural). 
+    > Als u een Neural-stem wilt trainen, moet u een profiel voor spraak-talen opgeven met het bestand met de bestands toestemming van de stem talen bevestiging dat zijn/haar spraak gegevens worden gebruikt voor het trainen van een aangepast spraak model. Aangepaste Neural Voice is beschikbaar met beperkte toegang. Zorg ervoor dat u bekend bent met de [vereiste AI-vereisten](/legal/cognitive-services/speech-service/custom-neural-voice/limited-access-custom-neural-voice?context=%2fazure%2fcognitive-services%2fspeech-service%2fcontext%2fcontext) en [Pas de toegang hier toe](https://aka.ms/customneural). 
     
     Op deze pagina kunt u ook selecteren om uw script te uploaden om het te testen. Het test script moet een txt-bestand zijn dat kleiner is dan 1 MB. De ondersteunde coderings indeling bevat ANSI/ASCII, UTF-8, UTF-8-BOM, UTF-16-LE of UTF-16-to. Elke alinea van de utterance resulteert in een afzonderlijke audio. Als u alle zinnen wilt combi neren in één audio, maakt u ze op één alinea. 
 
@@ -126,7 +126,7 @@ Elke training genereert 100 voor beeld van audio bestanden automatisch, zodat u 
 
 3.  Op de detail pagina van het model vindt u de voor beeld-audio bestanden op het tabblad **testen** . 
 
-De kwaliteit van de stem is afhankelijk van een aantal factoren, zoals de grootte van de trainings gegevens, de kwaliteit van de opname, de nauw keurigheid van het transcript bestand, hoe goed de vastgelegde stem in de trainings gegevens overeenkomt met de persoonlijkheid van de ontworpen stem voor uw beoogde gebruiks voorbeeld, en nog veel meer. [Bekijk hier meer informatie over de mogelijkheden en beperkingen van onze technologie en de best practice om de kwaliteit van uw model te verbeteren](https://aka.ms/CNV-limits). 
+De kwaliteit van de stem is afhankelijk van een aantal factoren, zoals de grootte van de trainings gegevens, de kwaliteit van de opname, de nauw keurigheid van het transcript bestand, hoe goed de vastgelegde stem in de trainings gegevens overeenkomt met de persoonlijkheid van de ontworpen stem voor uw beoogde gebruiks voorbeeld, en nog veel meer. [Bekijk hier meer informatie over de mogelijkheden en beperkingen van onze technologie en de best practice om de kwaliteit van uw model te verbeteren](/legal/cognitive-services/speech-service/custom-neural-voice/characteristics-and-limitations-custom-neural-voice?context=%2fazure%2fcognitive-services%2fspeech-service%2fcontext%2fcontext). 
 
 ## <a name="create-and-use-a-custom-voice-endpoint"></a>Een aangepast spraak eindpunt maken en gebruiken
 

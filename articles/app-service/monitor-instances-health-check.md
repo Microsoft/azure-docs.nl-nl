@@ -6,18 +6,18 @@ author: msangapu-msft
 ms.topic: article
 ms.date: 12/03/2020
 ms.author: msangapu
-ms.openlocfilehash: 8892723ec1a53c59e3e6183b5d53c2e61db4e5d0
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 7d6f9564328f81b71c62a4243c5f4cc209a29d8f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575225"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101714473"
 ---
 # <a name="monitor-app-service-instances-using-health-check"></a>App Service instanties controleren met status controle
 
 ![Status controle is mislukt][2]
 
-In dit artikel wordt gebruikgemaakt van de status controle in de Azure Portal om App Service-exemplaren te bewaken. Met status controle wordt de beschik baarheid van uw toepassing verhoogd door beschadigde instanties te verwijderen. Uw [app service plan](/azure/app-service/overview-hosting-plans) moet worden geschaald naar twee of meer instanties voor het gebruik van de status controle. Het Health Check-pad moet de essentiële onderdelen van uw toepassing controleren. Als uw toepassing bijvoorbeeld afhankelijk is van een Data Base en een berichten systeem, moet het eind punt van de status controle verbinding maken met deze onderdelen. Als de toepassing geen verbinding kan maken met een kritiek onderdeel, moet het pad een respons code op 500-niveau retour neren om aan te geven dat de app slecht is.
+In dit artikel wordt gebruikgemaakt van de status controle in de Azure Portal om App Service-exemplaren te bewaken. Met status controle wordt de beschik baarheid van uw toepassing verhoogd door beschadigde instanties te verwijderen. Uw [app service plan](./overview-hosting-plans.md) moet worden geschaald naar twee of meer instanties voor het gebruik van de status controle. Het Health Check-pad moet de essentiële onderdelen van uw toepassing controleren. Als uw toepassing bijvoorbeeld afhankelijk is van een Data Base en een berichten systeem, moet het eind punt van de status controle verbinding maken met deze onderdelen. Als de toepassing geen verbinding kan maken met een kritiek onderdeel, moet het pad een respons code op 500-niveau retour neren om aan te geven dat de app slecht is.
 
 ## <a name="what-app-service-does-with-health-checks"></a>Wat App Service doet met status controles
 
@@ -48,7 +48,7 @@ In dit artikel wordt gebruikgemaakt van de status controle in de Azure Portal om
 
 Naast het configureren van de opties voor de status controle kunt u ook de volgende [app-instellingen](configure-common.md)configureren:
 
-| Naam van app-instelling | Toegestane waarden | Description |
+| Naam van app-instelling | Toegestane waarden | Beschrijving |
 |-|-|-|
 |`WEBSITE_HEALTHCHECK_MAXPINGFAILURES` | 2 - 10 | Het maximum aantal ping-fouten. Wanneer bijvoorbeeld is ingesteld op `2` , worden uw instanties verwijderd na `2` mislukte pings. Bovendien, wanneer u omhoog of omlaag schaalt, App Service pingt het Health Check-pad om ervoor te zorgen dat er nieuwe exemplaren gereed zijn. |
 |`WEBSITE_HEALTHCHECK_MAXUNHEALTYWORKERPERCENT` | 0 - 100 | Om te voor komen dat er overweldigende instanties zijn, worden niet meer dan de helft van de instanties uitgesloten. Als bijvoorbeeld een App Service plan wordt geschaald naar vier instanties en drie de status niet in orde hebben, worden er Maxi maal twee uitgesloten. De andere twee instanties (een gezonde en een slechte status) blijven aanvragen ontvangen. In het slechtste scenario waarbij alle instanties een slechte status hebben, wordt geen uitgesloten. Als u dit gedrag wilt overschrijven, stelt u de app-instelling in op een waarde tussen `0` en `100` . Een hogere waarde betekent dat er meer beschadigde instanties worden verwijderd (standaard is 50). |

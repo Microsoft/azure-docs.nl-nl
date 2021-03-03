@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: 33be57832d9364b859042cd38349c2437bcfcb18
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
-ms.translationtype: HT
+ms.openlocfilehash: a7735de9763f3924cd6baae6af1258f6448c874e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97358143"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101690920"
 ---
 # <a name="failover-cluster-instances-with-sql-server-on-azure-virtual-machines"></a>Exemplaren van failoverclusters met SQL Server op virtuele Azure-machines (VM's).
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -47,7 +47,7 @@ In traditionele on-premises geclusterde omgevingen gebruikt een Windows-failover
 
 SQL Server op Azure-VM's biedt verschillende opties als een oplossing voor gedeelde opslag voor een implementatie van exemplaren van failoverclusters met SQL Server: 
 
-||[Gedeelde Azure-schijven](../../../virtual-machines/disks-shared.md)|[Premiumbestandsshares](../../../storage/files/storage-how-to-create-premium-fileshare.md) |[S2D (Storage Spaces Direct)](/windows-server/storage/storage-spaces/storage-spaces-direct-overview)|
+||[Gedeelde Azure-schijven](../../../virtual-machines/disks-shared.md)|[Premiumbestandsshares](../../../storage/files/storage-how-to-create-file-share.md) |[S2D (Storage Spaces Direct)](/windows-server/storage/storage-spaces/storage-spaces-direct-overview)|
 |---------|---------|---------|---------|
 |**Minimale versie van het besturingssysteem**| Alles |Windows Server 2012|Windows Server 2016|
 |**Minimale versie van SQL Server**|Alles|SQL Server 2012|SQL Server 2016|
@@ -107,7 +107,7 @@ Zie [Create an FCI with Storage Spaces Direct (SQL Server on Azure VMs)](failove
 
 ### <a name="premium-file-share"></a>Premium-bestandsshare
 
-[Premium-bestandsshares](../../../storage/files/storage-how-to-create-premium-fileshare.md) zijn een functie van [Azure Files](../../../storage/files/index.yml). Premium-bestandsshares worden opgeslagen op een SSD en hebben een consistent lage latentie. Ze worden volledig ondersteund voor gebruik met exemplaren van failoverclusters voor SQL Server 2012 of hoger met Windows Server 2012 of hoger. Premium-bestandsshares bieden meer flexibiliteit, omdat u een bestandsshare zonder downtime kunt vergroten of verkleinen en schalen.
+[Premium-bestandsshares](../../../storage/files/storage-how-to-create-file-share.md) zijn een functie van [Azure Files](../../../storage/files/index.yml). Premium-bestandsshares worden opgeslagen op een SSD en hebben een consistent lage latentie. Ze worden volledig ondersteund voor gebruik met exemplaren van failoverclusters voor SQL Server 2012 of hoger met Windows Server 2012 of hoger. Premium-bestandsshares bieden meer flexibiliteit, omdat u een bestandsshare zonder downtime kunt vergroten of verkleinen en schalen.
 
 **Ondersteund besturingssysteem**: Windows Server 2012 en hoger   
 **Ondersteunde SQL-versie**: SQL Server 2012 en hoger   

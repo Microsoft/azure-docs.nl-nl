@@ -5,14 +5,14 @@ services: application-gateway
 author: caya
 ms.service: application-gateway
 ms.topic: article
-ms.date: 06/10/2020
+ms.date: 03/02/2021
 ms.author: caya
-ms.openlocfilehash: 26f53a8f93d4d51ec8f8fd91051496a46670f432
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 2564fd38056241fd48f58f5f6039bf64f92b6741
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397345"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101714405"
 ---
 # <a name="what-is-application-gateway-ingress-controller"></a>Wat is Application Gateway ingangs controller?
 De Application Gateway ingangs controller (AGIC) is een Kubernetes-toepassing, waardoor [Azure Kubernetes service (AKS)](https://azure.microsoft.com/services/kubernetes-service/) -klanten de systeem eigen [Application Gateway](https://azure.microsoft.com/services/application-gateway/) N7-Load Balancer van Azure kunnen gebruiken om cloud software op internet beschikbaar te stellen. AGIC bewaakt het Kubernetes-cluster dat wordt gehost op een Application Gateway, zodat de geselecteerde services worden blootgesteld aan Internet.
@@ -37,7 +37,7 @@ AGIC wordt geconfigureerd via de [ingangs bron](https://kubernetes.io/docs/user-
   - Geïntegreerde Web Application Firewall
 
 ## <a name="difference-between-helm-deployment-and-aks-add-on"></a>Verschil tussen helm-implementatie en AKS-Add-On
-Er zijn twee manieren om AGIC te implementeren voor uw AKS-cluster. De eerste manier is via helm. de tweede is door AKS als een invoeg toepassing. Het belangrijkste voor deel van het implementeren van AGIC als een AKS-invoeg toepassing is dat het veel eenvoudiger is dan implementatie via helm. Voor een nieuwe installatie kunt u een nieuwe Application Gateway en een nieuw AKS-cluster implementeren met AGIC ingeschakeld als een invoeg toepassing op één regel in azure CLI. De invoeg toepassing is ook een volledig beheerde service die extra voor delen biedt, zoals automatische updates en verbeterde ondersteuning. AGIC die zijn geïmplementeerd via helm wordt niet ondersteund door AKS, maar de AGIC die is geïmplementeerd als een AKS-invoeg toepassing, wordt ondersteund door AKS. 
+Er zijn twee manieren om AGIC te implementeren voor uw AKS-cluster. De eerste manier is via helm. de tweede is door AKS als een invoeg toepassing. Het belangrijkste voor deel van het implementeren van AGIC als een AKS-invoeg toepassing is dat het veel eenvoudiger is dan implementatie via helm. Voor een nieuwe installatie kunt u een nieuwe Application Gateway en een nieuw AKS-cluster implementeren met AGIC ingeschakeld als een invoeg toepassing op één regel in azure CLI. De invoeg toepassing is ook een volledig beheerde service die extra voor delen biedt, zoals automatische updates en verbeterde ondersteuning. Beide manieren waarop u AGIC (helm en AKS-invoeg toepassing) implementeert, worden volledig ondersteund door micro soft. Daarnaast biedt de invoeg toepassing een betere integratie met AKS als een eerste klasse-invoeg toepassing.
 
 De AGIC-invoeg toepassing wordt nog steeds geïmplementeerd als een pod in het AKS-cluster van de klant. er zijn echter enkele verschillen tussen de implementatie versie van helm en de invoeg toepassing van AGIC. Hieronder vindt u een lijst met verschillen tussen de twee versies: 
   - Helm implementatie waarden kunnen niet worden gewijzigd in de AKS-invoeg toepassing:
@@ -50,27 +50,7 @@ De AGIC-invoeg toepassing wordt nog steeds geïmplementeerd als een pod in het A
   - Omdat de AGIC-invoeg toepassing een beheerde service is, worden klanten automatisch bijgewerkt naar de nieuwste versie van AGIC-invoeg toepassing, in tegens telling tot AGIC geïmplementeerd via helm, waarbij de klant AGIC hand matig moet bijwerken. 
 
 > [!NOTE]
-> De AGIC AKS-invoeg toepassings methode voor implementatie is momenteel beschikbaar als preview-versie. Het wordt afgeraden om productie werkbelastingen uit te voeren op functies die nog niet in de preview-versie zijn, dus als u het programma wilt uitproberen, raden we u aan een nieuw cluster in te stellen om het te testen met. 
-
-In de volgende tabellen worden de scenario's beschreven die momenteel worden ondersteund met de helm-implementatie versie en de AKS-invoeg versie van AGIC. 
-
-### <a name="aks-add-on-agic-single-aks-cluster"></a>AGIC voor AKS-invoeg toepassing (één AKS-cluster)
-|                  |1 Application Gateway |2 + toepassings gateways |
-|------------------|---------|--------|
-|**1 AGIC**|Ja, dit wordt ondersteund |Nee, dit is in onze achterstand |
-|**2 + AGICs**|Nee, slechts 1 AGIC ondersteund/cluster |Nee, slechts 1 AGIC ondersteund/cluster |
-
-### <a name="helm-deployed-agic-single-aks-cluster"></a>Helm geïmplementeerde AGIC (single AKS cluster)
-|                  |1 Application Gateway |2 + toepassings gateways |
-|------------------|---------|--------|
-|**1 AGIC**|Ja, dit wordt ondersteund |Nee, dit is in onze achterstand |
-|**2 + AGICs**|U moet gedeelde ProhibitedTarget-functionaliteit gebruiken en afzonderlijke naam ruimten bekijken |Ja, dit wordt ondersteund |
-
-### <a name="helm-deployed-agic-2-aks-clusters"></a>Helm geïmplementeerde AGIC (2 + AKS-clusters)
-|                  |1 Application Gateway |2 + toepassings gateways |
-|------------------|---------|--------|
-|**1 AGIC**|N.v.t. |N.v.t. |
-|**2 + AGICs**|Gedeelde ProhibitedTarget-functionaliteit moet worden gebruikt |N.v.t. |
+> Klanten kunnen slechts één AGIC-invoeg toepassing per AKS-cluster implementeren en elke AGIC-invoeg toepassing op dit moment kan slechts één Application Gateway als doel hebben. Voor implementaties die meer dan één AGIC per cluster of meerdere AGICs hebben die zijn gericht op een Application Gateway, kunt u AGIC gebruiken die via helm is geïmplementeerd. 
 
 ## <a name="next-steps"></a>Volgende stappen
 - [**AKS Add-On ontwikkel-implementatie**](tutorial-ingress-controller-add-on-new.md): instructies voor het installeren van AGIC add-on, AKS en Application Gateway op een lege infra structuur.

@@ -4,45 +4,34 @@ description: Meer informatie over het gebruik van de activiteit meta gegevens op
 author: linda33wj
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 09/23/2020
+ms.date: 02/25/2021
 ms.author: jingwang
-ms.openlocfilehash: f860225862dcbfb79535acfbd6eeb89a217e7ae9
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 91cb10d601f0a44cf9895fffe558c03fdbe06eef
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100385486"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101710223"
 ---
 # <a name="get-metadata-activity-in-azure-data-factory"></a>Activiteit van meta gegevens in Azure Data Factory ophalen
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
-U kunt de activiteit meta gegevens ophalen gebruiken om de meta gegevens van alle gegevens in de Azure Data Factory op te halen. U kunt deze activiteit gebruiken in de volgende scenario's:
+U kunt de activiteit meta gegevens ophalen gebruiken om de meta gegevens van alle gegevens in de Azure Data Factory op te halen. U kunt de uitvoer van de activiteit meta gegevens ophalen in voorwaardelijke expressies gebruiken om validatie uit te voeren of de meta gegevens in volgende activiteiten te consumeren.
 
-- Valideer de meta gegevens van alle gegevens.
-- Een pijp lijn activeren wanneer de gegevens gereed/beschikbaar zijn.
+## <a name="supported-capabilities"></a>Ondersteunde mogelijkheden
 
-De volgende functionaliteit is beschikbaar in de controle stroom:
-
-- U kunt de uitvoer van de activiteit meta gegevens ophalen in voorwaardelijke expressies gebruiken om validatie uit te voeren.
-- U kunt een pijp lijn activeren wanneer aan een voor waarde wordt voldaan via do until-lus.
-
-## <a name="capabilities"></a>Functies
-
-De activiteit meta gegevens ophalen neemt een gegevensset als invoer en retourneert meta gegevens als uitvoer. Op dit moment worden de volgende connectors en de bijbehorende opgehaalde meta gegevens ondersteund. De maximale grootte van de geretourneerde meta gegevens is ongeveer 4 MB.
-
->[!NOTE]
->Als u de activiteit meta gegevens ophalen uitvoert op een zelf-hostende Integration runtime, worden de meest recente mogelijkheden ondersteund in versie 3,6 of hoger.
+De activiteit meta gegevens ophalen neemt een gegevensset als invoer en retourneert meta gegevens als uitvoer. Momenteel worden de volgende connectors en de bijbehorende opgehaalde meta gegevens ondersteund. De maximale grootte van de geretourneerde meta gegevens is **4 MB**.
 
 ### <a name="supported-connectors"></a>Ondersteunde connectors
 
 **File Storage**
 
-| Connector/meta gegevens | itemName<br>(bestand/map) | Item type<br>(bestand/map) | grootte<br>Profiler | toegevoegd<br>(bestand/map) | lastModified<br>(bestand/map) |childItems<br>map |contentMD5<br>Profiler | structuur<br/>Profiler | Aantal<br>Profiler | reeds<br>(bestand/map) |
+| Connector/meta gegevens | itemName<br>(bestand/map) | Item type<br>(bestand/map) | grootte<br>Profiler | toegevoegd<br>(bestand/map) | lastModified<sup>1</sup><br>(bestand/map) |childItems<br>map |contentMD5<br>Profiler | structuur<sup>2</sup><br/>Profiler | aantal kolommen<sup>2</sup><br>Profiler | bestaat<sup>3</sup><br>(bestand/map) |
 |:--- |:--- |:--- |:--- |:--- |:--- |:--- |:--- |:--- |:--- |:--- |
-| [Amazon S3](connector-amazon-simple-storage-service.md) | √/√ | √/√ | √ | x/x | √/√* | √ | x | √ | √ | √/√* |
-| [Google Cloud Storage](connector-google-cloud-storage.md) | √/√ | √/√ | √ | x/x | √/√* | √ | x | √ | √ | √/√* |
-| [Azure Blob Storage](connector-azure-blob-storage.md) | √/√ | √/√ | √ | x/x | √/√* | √ | √ | √ | √ | √/√ |
+| [Amazon S3](connector-amazon-simple-storage-service.md) | √/√ | √/√ | √ | x/x | √/√ | √ | x | √ | √ | √/√ |
+| [Google Cloud Storage](connector-google-cloud-storage.md) | √/√ | √/√ | √ | x/x | √/√ | √ | x | √ | √ | √/√ |
+| [Azure Blob Storage](connector-azure-blob-storage.md) | √/√ | √/√ | √ | x/x | √/√ | √ | √ | √ | √ | √/√ |
 | [Azure Data Lake Storage Gen1](connector-azure-data-lake-store.md) | √/√ | √/√ | √ | x/x | √/√ | √ | x | √ | √ | √/√ |
 | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage.md) | √/√ | √/√ | √ | x/x | √/√ | √ | √ | √ | √ | √/√ |
 | [Azure Files](connector-azure-file-storage.md) | √/√ | √/√ | √ | √/√ | √/√ | √ | x | √ | √ | √/√ |
@@ -50,12 +39,23 @@ De activiteit meta gegevens ophalen neemt een gegevensset als invoer en retourne
 | [SFTP](connector-sftp.md) | √/√ | √/√ | √ | x/x | √/√ | √ | x | √ | √ | √/√ |
 | [FTP](connector-ftp.md) | √/√ | √/√ | √ | x/x | x/x | √ | x | √ | √ | √/√ |
 
-- Wanneer u activiteit voor het ophalen van meta gegevens voor een map gebruikt, moet u ervoor zorgen dat u beschikt over de machtiging lijst/uitvoeren voor de opgegeven map.
-- Voor Amazon S3 en Google Cloud Storage `lastModified` is van toepassing op de Bucket en de sleutel, maar niet op de virtuele map, en `exists` is van toepassing op de Bucket en de sleutel, maar niet op het voor voegsel of de virtuele map.
+<sup>1</sup> meta gegevens `lastModified` :
+- Voor Amazon S3 en Google Cloud Storage `lastModified` is van toepassing op de Bucket en de sleutel, maar niet op de virtuele map, en `exists` is van toepassing op de Bucket en de sleutel, maar niet op het voor voegsel of de virtuele map. 
 - Voor Azure Blob Storage `lastModified` geldt voor de container en de blob, maar niet voor de virtuele map.
-- `lastModified` filter is momenteel van toepassing op het filteren van onderliggende items, maar niet voor de opgegeven map/bestand zelf.
+
+<sup>2</sup> meta gegevens `structure` en `columnCount` worden niet ondersteund bij het ophalen van meta gegevens van binaire, JSON-of XML-bestanden.
+
+<sup>3</sup> meta gegevens `exists` : voor Amazon S3 en Google Cloud Storage, `exists` is van toepassing op de Bucket en de sleutel, maar niet op het voor voegsel of de virtuele map.
+
+Houd rekening met het volgende:
+
+- Wanneer u activiteit voor het ophalen van meta gegevens voor een map gebruikt, moet u ervoor zorgen dat u beschikt over de machtiging lijst/uitvoeren voor de opgegeven map.
 - Het Joker teken filter voor mappen/bestanden wordt niet ondersteund voor de activiteit meta gegevens ophalen.
-- `structure` en `columnCount` worden niet ondersteund bij het ophalen van meta gegevens van binaire, JSON-of XML-bestanden.
+- `modifiedDatetimeStart` en `modifiedDatetimeEnd` filter ingesteld op connector:
+
+    - Deze twee eigenschappen worden gebruikt om de onderliggende items te filteren bij het ophalen van meta gegevens uit een map. Het is niet van toepassing wanneer u meta gegevens ophaalt uit een bestand.
+    - Wanneer een dergelijk filter wordt gebruikt, `childItems` bevat de uitvoer alleen de bestanden die zijn gewijzigd binnen het opgegeven bereik, maar niet op mappen.
+    - Als u een dergelijk filter wilt Toep assen, worden alle bestanden in de opgegeven map geïnventariseerd met GetMetadata-activiteit en wordt de gewijzigde tijd gecontroleerd. Wijs niet naar een map met een groot aantal bestanden toe, zelfs niet als het verwachte aantal in aanmerking komende bestanden klein is. 
 
 **Relationele database**
 
@@ -70,7 +70,7 @@ De activiteit meta gegevens ophalen neemt een gegevensset als invoer en retourne
 
 U kunt de volgende typen meta gegevens opgeven in de velden lijst activiteit meta gegevens ophalen om de bijbehorende gegevens op te halen:
 
-| Meta gegevens type | Description |
+| Meta gegevens type | Beschrijving |
 |:--- |:--- |
 | itemName | De naam van het bestand of de map. |
 | Item type | Het type van het bestand of de map. Geretourneerde waarde is `File` of `Folder` . |
@@ -85,9 +85,6 @@ U kunt de volgende typen meta gegevens opgeven in de velden lijst activiteit met
 
 >[!TIP]
 >Als u wilt controleren of een bestand, map of tabel bestaat, geeft u `exists` in de velden lijst activiteit van meta gegevens ophalen op. U kunt vervolgens het `exists: true/false` resultaat controleren in de uitvoer van de activiteit. Als `exists` niet wordt opgegeven in de lijst met velden, mislukt de activiteit meta gegevens ophalen als het object niet is gevonden.
-
->[!NOTE]
->Wanneer u meta gegevens ophaalt uit het bestand archieven en configureren `modifiedDatetimeStart` of `modifiedDatetimeEnd` , `childItems` bevat de uitvoer alleen bestanden in het opgegeven pad met een tijd die het laatst is gewijzigd binnen het opgegeven bereik. In zijn geen items in submappen inbegrepen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -162,10 +159,10 @@ Op dit moment kunnen met de activiteit meta gegevens ophalen de volgende typen m
 
 Eigenschap | Beschrijving | Vereist
 -------- | ----------- | --------
-Velden | De typen meta gegevens die zijn vereist. Zie de sectie [meta gegevens opties](#metadata-options) in dit artikel voor meer informatie over ondersteunde meta gegevens. | Yes 
-sets | De referentie gegevensset waarvan de meta gegevens moeten worden opgehaald door de activiteit meta gegevens ophalen. Zie de sectie [mogelijkheden](#capabilities) voor informatie over ondersteunde connectors. Raadpleeg de onderwerpen over de specifieke connector voor de syntaxis van de gegevensset. | Yes
-formatSettings | Toep assen bij gebruik van gegevensset voor indelings type. | No
-storeSettings | Toep assen bij gebruik van gegevensset voor indelings type. | No
+Velden | De typen meta gegevens die zijn vereist. Zie de sectie [meta gegevens opties](#metadata-options) in dit artikel voor meer informatie over ondersteunde meta gegevens. | Ja 
+sets | De referentie gegevensset waarvan de meta gegevens moeten worden opgehaald door de activiteit meta gegevens ophalen. Zie de sectie [mogelijkheden](#capabilities) voor informatie over ondersteunde connectors. Raadpleeg de onderwerpen over de specifieke connector voor de syntaxis van de gegevensset. | Ja
+formatSettings | Toep assen bij gebruik van gegevensset voor indelings type. | Nee
+storeSettings | Toep assen bij gebruik van gegevensset voor indelings type. | Nee
 
 ## <a name="sample-output"></a>Voorbeelduitvoer
 

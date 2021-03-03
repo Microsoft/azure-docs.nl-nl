@@ -4,15 +4,15 @@ description: Informatie over het inrichten van de Azure-SSIS-integratieruntime i
 ms.service: data-factory
 ms.topic: tutorial
 ms.custom: seo-lt-2019
-ms.date: 10/13/2020
+ms.date: 02/22/2021
 author: swinarko
 ms.author: sawinark
-ms.openlocfilehash: e0b84bb65e71b023121a5deae8295ddaf8879311
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 7c439d71806d2deba508ce35131f21ebfbd7a3ec
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100391351"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101740406"
 ---
 # <a name="provision-the-azure-ssis-integration-runtime-in-azure-data-factory"></a>De Azure-SSIS-integratieruntime inrichten in Azure Data Factory
 
@@ -149,6 +149,12 @@ Als u het selectievakje inschakelt, moet u de volgende stappen uitvoeren om uw e
    1. Voer bij **Gebruikersnaam van beheerder** de gebruikersnaam voor SQL-verificatie voor uw databaseserver voor het hosten van SSISDB in. 
 
    1. Voer bij **Beheerderswachtwoord** het wachtwoord voor SQL-verificatie voor uw databaseserver voor het hosten van SSISDB in. 
+
+   1. Schakel het selectie vakje **dubbele stand-by Azure-SSIS Integration runtime koppelen met SSISDB-failover** in om een dubbele stand-by-standby Azure SSIS IR-paar te configureren die wordt gesynchroniseerd met een Azure SQL database/Managed instance failover groep voor bedrijfs continuïteit en herstel na nood gevallen (BCDR).
+   
+      Als u het selectie vakje inschakelt, voert u een naam in om uw paar primaire en secundaire Azure-SSIS-IRs te identificeren in het tekstvak **naam van dubbele stand-by-koppeling** . U moet dezelfde paar naam invoeren bij het maken van uw primaire en secundaire Azure-SSIS-IRs.
+
+      Zie [uw Azure-SSIS IR configureren voor BCDR](./configure-bcdr-azure-ssis-integration-runtime.md)voor meer informatie.
 
    1. Selecteer bij **Serverlaag catalogusdatabase** de servicelaag voor uw databaseserver voor het hosten van SSISDB. Selecteer de laag Basic, Standard of Premium of selecteer de naam van een elastische pool.
 

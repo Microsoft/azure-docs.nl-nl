@@ -1,19 +1,19 @@
 ---
-title: Azure Monitor voor implementaties van containers weer geven (preview) | Microsoft Docs
-description: In dit artikel wordt een overzicht gegeven van de real-time weergave van Kubernetes-implementaties zonder kubectl te gebruiken in Azure Monitor voor containers.
+title: Implementaties van container-Insights weer geven (preview) | Microsoft Docs
+description: In dit artikel wordt een overzicht gegeven van de real-time weergave van Kubernetes-implementaties zonder kubectl in container Insights te gebruiken.
 ms.topic: conceptual
 ms.date: 10/15/2019
 ms.custom: references_regions
-ms.openlocfilehash: 2f1eac82ce67818c7bf86ce3ca8924155d8ee2aa
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: c6eaac209234f7352395502c6761312cf258108f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610277"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101713912"
 ---
 # <a name="how-to-view-deployments-preview-in-real-time"></a>Implementaties (preview) in realtime weer geven
 
-Met Azure Monitor voor containers wordt met de functie voor weer gave-implementaties (preview) direct toegang tot Kubernetes-implementatie objecten in realtime geëmuleerd door de opdrachten en weer te geven `kubeclt get deployments` `kubectl describe deployment {your deployment}` .
+Met behulp van de functie voor het implementeren van de weer gave (preview-versie) wordt in realtime direct toegang tot Kubernetes-implementatie objecten geëmuleerd door de opdrachten en beschikbaar te maken `kubeclt get deployments` `kubectl describe deployment {your deployment}` .
 
 >[!NOTE]
 >AKS-clusters die zijn ingeschakeld als [persoonlijke clusters](https://azure.microsoft.com/updates/aks-private-cluster/) , worden niet ondersteund met deze functie. Deze functie is afhankelijk van directe toegang tot de Kubernetes-API vanuit de browser via een proxyserver. Als u netwerkbeveiliging inschakelt om de Kubernetes-API te blokkeren voor deze proxy, wordt dit verkeer geblokkeerd.
@@ -56,7 +56,7 @@ Wanneer u een implementatie uit de lijst selecteert, wordt er automatisch een ei
 
 Wanneer u de implementatie details bekijkt, kunt u de container logboeken en gebeurtenissen in realtime zien. Selecteer de console venster **Live-console weer geven** en de weer gave live data (preview) onder het gegevens raster implementaties waarin u live-logboek gegevens in een doorlopende stroom kunt bekijken. Als de status indicator ophalen een groen vinkje bevat dat helemaal rechts in het deel venster staat, betekent dit dat de gegevens kunnen worden opgehaald en streamen naar uw-console.
 
-U kunt ook filteren op naam ruimte of gebeurtenissen op cluster niveau. Zie voor meer informatie over de realtime weergave gegevens in de-console [Live gegevens weer geven (preview) met Azure monitor voor containers](container-insights-livedata-overview.md).
+U kunt ook filteren op naam ruimte of gebeurtenissen op cluster niveau. Zie voor meer informatie over de realtime weergave gegevens in de-console [Live gegevens weer geven (preview) met container Insights](container-insights-livedata-overview.md).
 
 ![Implementaties Live-gegevens weer geven in de-console](./media/container-insights-livedata-deployments/deployments-console-view-events.png)
 

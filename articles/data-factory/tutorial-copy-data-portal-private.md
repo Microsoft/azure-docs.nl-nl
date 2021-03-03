@@ -5,18 +5,18 @@ author: linda33wj
 ms.service: data-factory
 ms.topic: tutorial
 ms.custom: seo-lt-2019
-ms.date: 01/15/2021
+ms.date: 02/18/2021
 ms.author: jingwang
-ms.openlocfilehash: 002ceba60853908e381f084e95ec1ee58e8580cb
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: a3cc3686d4b256fc7b8702f34cdf393dc1b0e25f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100375813"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101740389"
 ---
 # <a name="copy-data-securely-from-azure-blob-storage-to-a-sql-database-by-using-private-endpoints"></a>Kopieer de gegevens veilig vanuit Azure Blob-opslag naar een SQL-database met privé-eindpunten
 
-[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 In deze zelfstudie maakt u een data factory met behulp van de Azure Data Factory-gebruikersinterface. *Met de pijplijn in deze data factory worden gegevens veilig gekopieerd van Azure Blob-opslag naar een Azure SQL-database (beide verlenen toegang aan geselecteerde netwerken) met behulp van privé-eindpunten in het door [Azure Data Factory beheerde virtueel netwerk](managed-virtual-network-private-endpoint.md).* Het configuratiepatroon in deze zelfstudie geldt voor het kopiëren van een gegevensarchief op basis van bestanden naar een relationeel gegevensarchief. Zie tabel [Ondersteunde gegevensarchieven en -indelingen](./copy-activity-overview.md) voor een lijst met gegevensarchieven die als bron en als sink worden ondersteund.
 

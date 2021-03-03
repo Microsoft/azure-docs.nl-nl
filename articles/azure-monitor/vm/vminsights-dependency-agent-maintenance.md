@@ -1,21 +1,21 @@
 ---
-title: De Azure Monitor voor VM's-afhankelijkheids agent bijwerken
-description: In dit artikel wordt beschreven hoe u de Azure Monitor voor VM's dependency agent bijwerkt met behulp van de opdracht regel, de installatie wizard en andere methoden.
+title: Een upgrade uitvoeren van de VM Insights-afhankelijkheids agent
+description: In dit artikel wordt beschreven hoe u de machine Insights-afhankelijkheids agent bijwerkt met behulp van de opdracht regel, de installatie wizard en andere methoden.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 04/16/2020
-ms.openlocfilehash: 05358c560c70396d4e165abd174178378aad517b
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 14ca614c1e108ce43f05f98520cff6ff215ec5cc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612228"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101722905"
 ---
-# <a name="how-to-upgrade-the-azure-monitor-for-vms-dependency-agent"></a>De Azure Monitor voor VM's-afhankelijkheids agent bijwerken
+# <a name="how-to-upgrade-the-vm-insights-dependency-agent"></a>Een upgrade uitvoeren van de VM Insights-afhankelijkheids agent
 
-Na de eerste implementatie van de Azure Monitor voor VM's-afhankelijkheids agent worden er updates uitgebracht met oplossingen voor problemen of ondersteuning van nieuwe functies of functionaliteit.  In dit artikel wordt uitgelegd hoe u de beschik bare methoden en de upgrade hand matig of via Automation kunt begrijpen.
+Na de eerste implementatie van de VM Insights-afhankelijkheids agent, worden er updates uitgebracht met oplossingen voor problemen of ondersteuning van nieuwe functies of functionaliteit.  In dit artikel wordt uitgelegd hoe u de beschik bare methoden en de upgrade hand matig of via Automation kunt begrijpen.
 
 ## <a name="upgrade-options"></a>Upgrade opties 
 
@@ -70,4 +70,4 @@ Als de afhankelijkheids agent niet kan worden gestart, raadpleegt u de logboeken
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u wilt stoppen met het bewaken van uw Vm's gedurende een bepaalde periode of Azure Monitor voor VM's volledig wilt verwijderen, raadpleegt u [de bewaking van uw vm's in azure monitor voor VM's uitschakelen](../vm/vminsights-optout.md).
+Als u wilt stoppen met het bewaken van uw Vm's gedurende een bepaalde periode of als u VM Insights volledig wilt verwijderen, raadpleegt u [de bewaking van uw vm's in VM Insights uitschakelen](../vm/vminsights-optout.md).

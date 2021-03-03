@@ -1,20 +1,20 @@
 ---
-title: Azure Monitor voor VM's inschakelen met Azure Policy
-description: Hierin wordt beschreven hoe u Azure Monitor voor VM's inschakelt voor meerdere virtuele machines van Azure of virtuele-machine schaal sets met behulp van Azure Policy.
+title: VM Insights inschakelen met behulp van Azure Policy
+description: Hierin wordt beschreven hoe u VM Insights inschakelt voor meerdere virtuele machines van Azure of virtuele-machine schaal sets met behulp van Azure Policy.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
-ms.openlocfilehash: 4da0610de1f71cd422ec684ea633a4474c078862
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: a63a647f3d76e3cc2616f05fe96d86dbdd36e74d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612204"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101707537"
 ---
-# <a name="enable-azure-monitor-for-vms-by-using-azure-policy"></a>Azure Monitor voor VM's inschakelen met Azure Policy
-In dit artikel wordt uitgelegd hoe u Azure Monitor voor VM's kunt inschakelen voor virtuele machines van Azure of een hybride virtuele machine die is verbonden met Azure Arc (preview) met behulp van Azure Policy. Met Azure Policy kunt u beleids definities toewijzen waarmee de vereiste agents voor Azure Monitor voor VM's in uw Azure-omgeving worden geïnstalleerd en de bewaking voor Vm's automatisch worden ingeschakeld als elke virtuele machine wordt gemaakt. Azure Monitor voor VM's biedt een functie waarmee niet-compatibele Vm's in uw omgeving kunnen worden gedetecteerd en hersteld. Gebruik deze functie in plaats van rechtstreeks te werken met Azure Policy.
+# <a name="enable-vm-insights-by-using-azure-policy"></a>VM Insights inschakelen met behulp van Azure Policy
+In dit artikel wordt uitgelegd hoe u met Azure Policy VM-inzichten kunt inschakelen voor virtuele Azure-machines of een hybride virtuele machine die is verbonden met Azure Arc (preview). Met Azure Policy kunt u beleids definities toewijzen waarmee de vereiste agents voor VM-inzichten in uw Azure-omgeving worden geïnstalleerd en de bewaking voor Vm's automatisch wordt ingeschakeld wanneer elke virtuele machine wordt gemaakt. VM Insights biedt een functie waarmee niet-compatibele Vm's in uw omgeving kunnen worden gedetecteerd en hersteld. Gebruik deze functie in plaats van rechtstreeks te werken met Azure Policy.
 
 Als u niet bekend bent met Azure Policy, kunt u een korte inleiding vinden op de [implementatie Azure monitor op schaal met behulp van Azure Policy](../deploy-scale.md).
 
@@ -22,15 +22,15 @@ Als u niet bekend bent met Azure Policy, kunt u een korte inleiding vinden op de
 > Als u Azure Policy wilt gebruiken met virtuele-machine schaal sets van Azure, of als u rechtstreeks met Azure Policy wilt werken om virtuele Azure-machines in te scha kelen, raadpleegt u [Azure monitor op schaal implementeren met behulp van Azure Policy](../deploy-scale.md#azure-monitor-for-vms).
 
 ## <a name="prerequisites"></a>Vereisten
-- [Een log Analytics-werk ruimte maken en configureren](../insights/vminsights-configure-workspace.md).
-- Zie [ondersteunde besturings systemen](../insights/vminsights-enable-overview.md#supported-operating-systems) om ervoor te zorgen dat het besturings systeem van de virtuele machine of virtuele-machine schaalset die u inschakelt, wordt ondersteund. 
+- [Een log Analytics-werk ruimte maken en configureren](./vminsights-configure-workspace.md).
+- Zie [ondersteunde besturings systemen](./vminsights-enable-overview.md#supported-operating-systems) om ervoor te zorgen dat het besturings systeem van de virtuele machine of virtuele-machine schaalset die u inschakelt, wordt ondersteund. 
 
 
-## <a name="azure-monitor-for-vms-initiative"></a>Azure Monitor voor VM's initiatief
-Azure Monitor voor VM's voorziet in ingebouwde beleids definities voor het installeren van de Log Analytics agent en de afhankelijkheids agent op virtuele machines van Azure. Het initiatief **inschakelen Azure monitor voor VM's** een van deze beleids definities bevat. Wijs dit initiatief toe aan een beheer groep, abonnement of resource groep om de agents automatisch te installeren op virtuele Windows-of Linux Azure-machines in dat bereik.
+## <a name="vm-insights-initiative"></a>VM Insights-initiatief
+VM Insights biedt ingebouwde beleids definities voor het installeren van de Log Analytics agent en de afhankelijkheids agent op virtuele machines van Azure. Het initiatief **schakelt VM Insights in** met elk van deze beleids definities. Wijs dit initiatief toe aan een beheer groep, abonnement of resource groep om de agents automatisch te installeren op virtuele Windows-of Linux Azure-machines in dat bereik.
 
 ## <a name="open-policy-coverage-feature"></a>Functie beleids dekking openen
-Als u toegang wilt krijgen tot **Azure monitor voor VM's-beleids dekking**, gaat u naar de **virtuele machines** in het menu **Azure monitor** van de Azure Portal. Selecteer **andere opties voor onboarding** en **Schakel vervolgens inschakelen** **via beleid inschakelen** in.
+Als u toegang wilt krijgen tot de **beleids dekking van de VM Insights**, gaat u naar de **virtuele machines** in het menu **Azure monitor** van de Azure Portal. Selecteer **andere opties voor onboarding** en **Schakel vervolgens inschakelen** **via beleid inschakelen** in.
 
 [![Azure Monitor van het tabblad aan de slag met Vm's](./media/vminsights-enable-policy/get-started-page.png)](./media/vminsights-enable-policy/get-started-page.png#lightbox)
 
@@ -39,7 +39,7 @@ Als u nog geen toewijzing hebt, maakt u een nieuwe en klikt u op **beleid toewij
 
 [![Toewijzing maken](media/vminsights-enable-policy/create-assignment.png)](media/vminsights-enable-policy/create-assignment.png#lightbox)
 
-Dit is dezelfde pagina om een initiatief in Azure Policy toe te wijzen, behalve dat het is vastgelegd in het bereik dat u hebt geselecteerd en de definitie van Azure Monitor voor VM's-initiatief **inschakelen** . U kunt desgewenst de naam van de **toewijzing** wijzigen en een **Beschrijving** toevoegen. Selecteer **uitsluitingen** als u een uitsluiting wilt maken voor het bereik. Uw bereik kan bijvoorbeeld een beheer groep zijn, en u kunt een abonnement opgeven in die beheer groep die moet worden uitgesloten van de toewijzing.
+Dit is dezelfde pagina om een initiatief in Azure Policy toe te wijzen, behalve dat het is vastgelegd in het bereik dat u hebt geselecteerd en de definitie van de **VM Insights** -initiatief inschakelen. U kunt desgewenst de naam van de **toewijzing** wijzigen en een **Beschrijving** toevoegen. Selecteer **uitsluitingen** als u een uitsluiting wilt maken voor het bereik. Uw bereik kan bijvoorbeeld een beheer groep zijn, en u kunt een abonnement opgeven in die beheer groep die moet worden uitgesloten van de toewijzing.
 
 [![Initiatief toewijzen](media/vminsights-enable-policy/assign-initiative.png)](media/vminsights-enable-policy/assign-initiative.png#lightbox)
 
@@ -48,14 +48,14 @@ Selecteer op de pagina **para meters** een **log Analytics werkruimte** die door
    > [!NOTE]
    > Als de werk ruimte zich buiten het bereik van de toewijzing bevindt, moet u *log Analytics Inzender* machtigingen verlenen aan de principal-id van de beleids toewijzing. Als u dit niet doet, ziet u mogelijk een implementatie fout zoals `The client '343de0fe-e724-46b8-b1fb-97090f7054ed' with object id '343de0fe-e724-46b8-b1fb-97090f7054ed' does not have authorization to perform action 'microsoft.operationalinsights/workspaces/read' over scope ...`
 
-[![Werkruimte](media/vminsights-enable-policy/assignment-workspace.png)](media/vminsights-enable-policy/assignment-workspace.png#lightbox)
+[![Werk ruimte](media/vminsights-enable-policy/assignment-workspace.png)](media/vminsights-enable-policy/assignment-workspace.png#lightbox)
 
 Klik op **controleren + maken** om de details van de toewijzing te controleren voordat u op **maken** klikt om deze te maken. Maak op dit moment geen herstel taak, omdat u waarschijnlijk meerdere herstel taken nodig hebt om bestaande virtuele machines in te scha kelen. Zie [nalevings resultaten herstellen](#remediate-compliance-results) hieronder.
 
 ## <a name="review-compliance"></a>Naleving controleren
-Zodra een toewijzing is gemaakt, kunt u de dekking controleren en beheren voor het **inschakelen van Azure monitor voor VM's** -initiatief in uw beheer groepen en abonnementen. Hiermee wordt weer gegeven hoeveel virtuele machines er bestaan in elk van de beheer groepen of-abonnementen en de nalevings status ervan.
+Zodra een toewijzing is gemaakt, kunt u de dekking voor het inschakelen van **VM Insights** -initiatief in uw beheer groepen en abonnementen controleren en beheren. Hiermee wordt weer gegeven hoeveel virtuele machines er bestaan in elk van de beheer groepen of-abonnementen en de nalevings status ervan.
 
-[![Pagina beleid Azure Monitor voor VM's beheren](media/vminsights-enable-policy/manage-policy-page-01.png)](media/vminsights-enable-policy/manage-policy-page-01.png#lightbox)
+[![Pagina beleid voor beheer van virtuele machines](media/vminsights-enable-policy/manage-policy-page-01.png)](media/vminsights-enable-policy/manage-policy-page-01.png#lightbox)
 
 
 De volgende tabel bevat een beschrijving van de informatie in deze weer gave.
@@ -105,11 +105,11 @@ Klik op **herstellen** om de herstel taak te maken en vervolgens te **herstellen
 [![Scherm opname toont het deel venster voor het herstellen van beleid voor monitor | Virtual Machines.](media/vminsights-enable-policy/remediation.png)](media/vminsights-enable-policy/remediation.png#lightbox)
 
 
-Zodra de herstel taken zijn voltooid, moeten de virtuele machines voldoen aan de agents die zijn geïnstalleerd en ingeschakeld voor Azure Monitor voor VM's. 
+Zodra de herstel taken zijn voltooid, moeten de virtuele machines voldoen aan de agents die zijn geïnstalleerd en ingeschakeld voor VM Insights. 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu de bewaking voor uw virtuele machines is ingeschakeld, is deze informatie beschikbaar voor analyse met Azure Monitor voor VM's. 
+Nu de bewaking voor uw virtuele machines is ingeschakeld, is deze informatie beschikbaar voor analyse met VM Insights. 
 
-- Zie [Azure monitor voor VM's kaart weer geven](vminsights-maps.md)om gedetecteerde toepassings afhankelijkheden weer te geven. 
-- Zie [Azure-VM-prestaties weer geven](vminsights-performance.md)om knel punten en het algehele gebruik van de VM-prestaties te identificeren. 
+- Als u gedetecteerde toepassings afhankelijkheden wilt weer geven, raadpleegt u [VM Insights-toewijzing weer geven](vminsights-maps.md). 
+- Zie [Azure-VM-prestaties weer geven](vminsights-performance.md)om knel punten en het algehele gebruik van de VM-prestaties te identificeren.

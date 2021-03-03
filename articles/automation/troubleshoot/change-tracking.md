@@ -5,12 +5,12 @@ services: automation
 ms.subservice: change-inventory-management
 ms.date: 02/15/2021
 ms.topic: troubleshooting
-ms.openlocfilehash: 9fe53a343a9f6675519b60d37d077886adaf8a9d
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: dd027f94edad580836f0afb8c7293c81ca77605a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100651154"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723823"
 ---
 # <a name="troubleshoot-change-tracking-and-inventory-issues"></a>Problemen met Wijzigingen bijhouden en inventaris oplossen
 
@@ -34,7 +34,7 @@ De machine is al geïmplementeerd in een andere werk ruimte voor Wijzigingen bij
 
 ### <a name="resolution"></a>Oplossing
 
-1. Zorg ervoor dat uw computer rapporteert aan de juiste werk ruimte. Zie [agent connectiviteit controleren op Azure monitor](../../azure-monitor/platform/agent-windows.md#verify-agent-connectivity-to-azure-monitor)voor meer informatie over hoe u dit kunt controleren. Zorg er ook voor dat deze werk ruimte is gekoppeld aan uw Azure Automation-account. Als u wilt bevestigen, gaat u naar uw Automation-account en selecteert u **gekoppelde werk ruimte** onder **gerelateerde resources**.
+1. Zorg ervoor dat uw computer rapporteert aan de juiste werk ruimte. Zie [agent connectiviteit controleren op Azure monitor](../../azure-monitor/agents/agent-windows.md#verify-agent-connectivity-to-azure-monitor)voor meer informatie over hoe u dit kunt controleren. Zorg er ook voor dat deze werk ruimte is gekoppeld aan uw Azure Automation-account. Als u wilt bevestigen, gaat u naar uw Automation-account en selecteert u **gekoppelde werk ruimte** onder **gerelateerde resources**.
 
 1. Zorg ervoor dat de computers worden weer gegeven in de Log Analytics werkruimte die aan uw Automation-account is gekoppeld. Voer de volgende query uit in de werk ruimte Log Analytics.
 

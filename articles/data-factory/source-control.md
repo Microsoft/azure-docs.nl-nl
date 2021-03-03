@@ -6,13 +6,13 @@ author: dcstwh
 ms.author: weetok
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 11/02/2020
-ms.openlocfilehash: 5bf1877edaa6c13cb0c645eb2d1c7ec2dc53ad00
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 02/26/2021
+ms.openlocfilehash: 7691c285bcc1c490878f5055468b0a57b6248679
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100392439"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719379"
 ---
 # <a name="source-control-in-azure-data-factory"></a>Broncode beheer in Azure Data Factory
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
@@ -67,7 +67,7 @@ Selecteer in het Azure Data Factory UX-bewerkings canvas de vervolg keuzelijst *
 
 ### <a name="configuration-method-3-management-hub"></a>Configuratie methode 3: Management hub
 
-Ga naar de beheer hub in de ADF-UX. Selecteer **Git-configuratie** in de sectie **bron beheer** . Als u geen opslag plaats hebt verbonden, klikt u op **code opslagplaats instellen**.
+Ga naar de beheer hub in de ADF-UX. Selecteer **Git-configuratie** in de sectie **bron beheer** . Als u geen opslag plaats hebt verbonden, klikt u op **configureren**.
 
 ![De instellingen van de code opslagplaats van de Management hub configureren](media/author-visually/configure-repo-3.png)
 

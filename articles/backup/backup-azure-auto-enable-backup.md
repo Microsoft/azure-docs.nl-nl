@@ -3,18 +3,18 @@ title: Back-up automatisch inschakelen bij het maken van VM's met Azure Policy
 description: Een artikel met informatie over het gebruik van Azure Policy om back-up automatisch in te scha kelen voor alle Vm's die in een bepaald bereik zijn gemaakt
 ms.topic: conceptual
 ms.date: 11/08/2019
-ms.openlocfilehash: 7e8195d22f54f29b36549b966322623ed0987d72
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: dfa4364eeaa9f5b60af3f5d6a19aaeb188d4f65e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896864"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101707299"
 ---
 # <a name="auto-enable-backup-on-vm-creation-using-azure-policy"></a>Back-up automatisch inschakelen bij het maken van VM's met Azure Policy
 
 Een van de belangrijkste verantwoordelijkheden van een back-up-of nalevings beheerder in een organisatie is ervoor te zorgen dat alle bedrijfs kritieke computers een back-up maken met de juiste Bewaar periode.
 
-Azure Backup biedt nu diverse ingebouwde beleids regels (met behulp van [Azure Policy](https://docs.microsoft.com/azure/governance/policy/overview)) waarmee u automatisch kunt controleren of uw virtuele machines van Azure zijn geconfigureerd voor back-up. Afhankelijk van hoe uw back-upteams en-resources zijn georganiseerd, kunt u een van de onderstaande beleids regels gebruiken:
+Azure Backup biedt nu diverse ingebouwde beleids regels (met behulp van [Azure Policy](../governance/policy/overview.md)) waarmee u automatisch kunt controleren of uw virtuele machines van Azure zijn geconfigureerd voor back-up. Afhankelijk van hoe uw back-upteams en-resources zijn georganiseerd, kunt u een van de onderstaande beleids regels gebruiken:
 
 ## <a name="policy-1---configure-backup-on-vms-without-a-given-tag-to-an-existing-recovery-services-vault-in-the-same-location"></a>Beleid 1: back-up op Vm's zonder een bepaalde tag configureren voor een bestaande Recovery Services-kluis op dezelfde locatie
 
@@ -29,7 +29,7 @@ Als u toepassingen indeelt in specifieke resource groepen en u wilt dat ze van d
 ## <a name="policy-4---preview-configure-backup-on-vms-with-a-given-tag-to-a-new-recovery-services-vault-with-a-default-policy"></a>Beleid 4-[Preview] Configureer back-up op Vm's met een bepaalde tag naar een nieuwe Recovery Services-kluis met een standaard beleid
 Dit beleid werkt hetzelfde als beleids 3 hierboven, met het enige verschil dat u dit beleid kunt gebruiken om vm's op te **nemen** die een bepaalde tag bevatten, in het bereik van dit beleid. 
 
-Naast de bovenstaande procedure, bevat Azure Backup ook een beleid voor [alleen controle](https://docs.microsoft.com/azure/governance/policy/concepts/effects#audit) - **Azure backup moet worden ingeschakeld voor virtual machines**. Met dit beleid wordt aangegeven op welke virtuele machines geen back-up is ingeschakeld, maar worden back-ups voor deze Vm's niet automatisch geconfigureerd. Dit is handig wanneer u alleen de algemene compatibiliteit van de virtuele machines wilt evalueren, maar niet onmiddellijk actie moet ondernemen.
+Naast de bovenstaande procedure, bevat Azure Backup ook een beleid voor [alleen controle](../governance/policy/concepts/effects.md#audit) - **Azure backup moet worden ingeschakeld voor virtual machines**. Met dit beleid wordt aangegeven op welke virtuele machines geen back-up is ingeschakeld, maar worden back-ups voor deze Vm's niet automatisch geconfigureerd. Dit is handig wanneer u alleen de algemene compatibiliteit van de virtuele machines wilt evalueren, maar niet onmiddellijk actie moet ondernemen.
 
 ## <a name="supported-scenarios"></a>Ondersteunde scenario's
 

@@ -7,19 +7,19 @@ ms.subservice: azure-arc-data
 author: twright-msft
 ms.author: twright
 ms.reviewer: mikeray
-ms.date: 09/22/2020
+ms.date: 03/02/2021
 ms.topic: how-to
-ms.openlocfilehash: 9da725c433ad5d6233fd164d256692ca407714fc
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 16546432c8c0a23d5c9dc471fe8c62ced5eca993
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92206449"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101687529"
 ---
 # <a name="upload-billing-data-to-azure-and-view-it-in-the-azure-portal"></a>Upload facturerings gegevens naar Azure en Bekijk deze in de Azure Portal
 
 > [!IMPORTANT] 
->  Er zijn geen kosten voor het gebruik van Azure Arc ingeschakelde gegevens Services tijdens de preview-periode. Hoewel het facturerings systeem end-to-end is, wordt de facturerings meter ingesteld op $0.  Als u dit scenario volgt, worden er vermeldingen in uw factuur weer gegeven voor een service met de naam **Hybrid Data Services** en voor resources van een type genaamd **micro soft. Azureworden/ `<resource type>` **. U kunt een record bekijken voor elke gegevens service-Azure-Arc die u maakt, maar elke record wordt in rekening gebracht voor $0.
+>  Er zijn geen kosten voor het gebruik van Azure Arc ingeschakelde gegevens Services tijdens de preview-periode. Hoewel het facturerings systeem end-to-end is, wordt de facturerings meter ingesteld op $0.  Als u dit scenario volgt, worden er vermeldingen in uw factuur weer gegeven voor een service met de naam **Hybrid Data Services** en voor resources van een type genaamd **micro soft. Azureworden/ `<resource type>`**. U kunt een record bekijken voor elke gegevens service-Azure-Arc die u maakt, maar elke record wordt in rekening gebracht voor $0.
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
@@ -111,8 +111,9 @@ azdata arc dc upload -p usage.json
 
 Volg deze stappen om facturerings gegevens weer te geven in de Azure Portal:
 
-1. Open de Azure Portal met behulp van de speciale URL:  [https://aka.ms/arcdata](https://aka.ms/arcdata) .
+1. Open de [Azure Portal](https://portal.azure.com).
 1. In het zoekvak boven aan het scherm typt u in **Cost Management** en klikt u op de Cost Management-service.
+1. Klik onder **Cost Management-overzicht** op het tabblad **Cost Management** .
 1. Klik op het tabblad **kosten analyse** aan de linkerkant.
 1. Klik op de knop **kosten per resource** aan de bovenkant van de weer gave.
 1. Zorg ervoor dat uw bereik is ingesteld op het abonnement waarin uw gegevens service resources zijn gemaakt.
@@ -139,7 +140,7 @@ Volg deze stappen om een export taak voor facturering in te stellen:
 1. Klik op **Add**.
 1. Voer een naam en een export frequentie in en klik op volgende.
 1. Kies of u een nieuw opslag account wilt maken of een bestaand wilt gebruiken en vul het formulier in om het opslag account, de container en het mappad op te geven waarnaar u de facturerings gegevens bestanden wilt exporteren en klik op volgende.
-1. Klik op **Maken**.
+1. Klik op **Create**.
 
 De export bestanden van de facturerings gegevens zijn ongeveer 4 uur beschikbaar en worden geëxporteerd volgens het schema dat u hebt opgegeven bij het maken van de export taak voor facturering.
 
@@ -158,5 +159,5 @@ U kunt de facturerings gegevens bestanden in de Azure Portal valideren.
 7. Zoom in op de gegenereerde mappen en bestanden en klik op een van de gegenereerde CSV-bestanden.
 8. Klik op de knop **downloaden** , waarmee het bestand wordt opgeslagen in de lokale map met Down loads.
 9. Open het bestand met behulp van een CSV-bestands viewer zoals Excel.
-10. De resultaten filteren om alleen de rijen met het **resource type**weer te geven  =  `Microsoft.AzureData/<data service resource type` .
+10. De resultaten filteren om alleen de rijen met het **resource type** weer te geven  =  `Microsoft.AzureData/<data service resource type` .
 11. U ziet het aantal uren dat het exemplaar is gebruikt in de huidige periode van 24 uur in de kolom UsageQuantity.

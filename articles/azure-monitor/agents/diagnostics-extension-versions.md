@@ -1,17 +1,16 @@
 ---
 title: Versie geschiedenis van configuratie schema voor Windows Azure Diagnostics extension (WAD)
 description: Relevant voor het verzamelen van prestatie meter items in azure Virtual Machines, VM Scale Sets, Service Fabric en Cloud Services.
-ms.subservice: diagnostic-extension
 ms.topic: reference
 author: bwren
 ms.author: bwren
 ms.date: 01/29/2020
-ms.openlocfilehash: 3b6dc0e19c181ebf4df2778633f981258023e046
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 57ba1c760fe8919fff95493c5c81da4368894f73
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610700"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719811"
 ---
 # <a name="windows-azure-diagnostics-extension-wad-configuration-schema-versions-and-history"></a>Versies en geschiedenis van configuratie schema's voor Windows Azure Diagnostics extension (WAD)
 Dit artikel bevat de versie geschiedenis van de [wad-schema versies (Azure Diagnostics extension for Windows)](diagnostics-extension-overview.md) die als onderdeel van de Microsoft Azure SDK worden geleverd.  
@@ -47,7 +46,7 @@ Verschillende versies van Azure Diagnostics gebruiken verschillende configuratie
 ### <a name="diagnostics-extension-111"></a>Uitbrei ding voor diagnostische gegevens 1,11
 Er is ondersteuning toegevoegd voor de Azure Monitor sink. Deze sink is alleen van toepassing op prestatie meter items. Hiermee wordt het verzenden van prestatie meter items die zijn verzameld op uw virtuele machine, VMSS of Cloud service, mogelijk om Azure Monitor als aangepaste metrische gegevens. De Azure Monitor Sink ondersteunt:
 * Ophalen van alle prestatie meter items die zijn verzonden naar Azure Monitor via de [API voor Azure monitor metrische gegevens.](/rest/api/monitor/metrics/list)
-* Waarschuwingen voor alle prestatie meter items die worden verzonden naar Azure Monitor via de nieuwe [Unified Alerts-ervaring](../platform/alerts-overview.md) in azure monitor
+* Waarschuwingen voor alle prestatie meter items die worden verzonden naar Azure Monitor via de nieuwe [Unified Alerts-ervaring](../alerts/alerts-overview.md) in azure monitor
 * De operator wild behandelen in prestatie meter items als de dimensie ' instance ' op uw metrische waarde. Als u bijvoorbeeld het \* prestatie meter item ' Logical ()/DiskWrites/sec ' hebt verzameld, kunt u de dimensie ' instance ' filteren en splitsen voor het uitzetten of waarschuwen van schrijf bewerkingen per seconde voor elke logische schijf (C:, D:, enzovoort).
 
 Azure Monitor definiëren als een nieuwe sink in de configuratie van de diagnostische gegevens
@@ -190,4 +189,3 @@ Als u uw project bijwerkt vanuit Azure SDK 2,4 naar Azure SDK 2,5 of hoger, moet
 * **Diagnostische gegevens voor Cloud service toepassingen kunnen alleen worden geconfigureerd op het niveau van de rol, niet op het niveau van de instantie.**
 * **Elke keer dat u uw app implementeert, wordt de diagnostische configuratie bijgewerkt.** dit kan leiden tot pariteits problemen als u de diagnostische configuratie wijzigt van Server Explorer en vervolgens uw app opnieuw implementeert.
 * **In azure SDK 2,5 en hoger zijn crash dumps geconfigureerd in het configuratie bestand voor diagnostische gegevens, niet in code** – als u crash dumps in code hebt geconfigureerd, moet u de configuratie hand matig overbrengen van code naar het configuratie bestand, omdat de crash dumps niet worden overgedragen tijdens de migratie naar Azure SDK 2,6.
-

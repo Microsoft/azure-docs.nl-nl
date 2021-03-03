@@ -6,13 +6,13 @@ author: asudbring
 ms.author: allensu
 ms.service: load-balancer
 ms.topic: tutorial
-ms.date: 11/24/2020
-ms.openlocfilehash: d94736656f691da9e893e4619a2299a061acd8e8
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.date: 02/24/2021
+ms.openlocfilehash: 7fc964abf7e6832341ad8b1ad55711b3a9993506
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98611199"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101712505"
 ---
 # <a name="tutorial-create-a-cross-region-azure-load-balancer-using-the-azure-portal"></a>Zelfstudie: Een Azure Load Balancer voor meerdere regio's maken met behulp van Azure Portal
 
@@ -41,28 +41,29 @@ Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://az
 
 ## <a name="sign-in-to-azure-portal"></a>Meld u aan bij Azure Portal
 
-[Meld u aan](https://portal.azure.com) bij de Azure Preview-portal.
+[Meld u aan](https://preview.portal.azure.com) bij de Azure Preview-portal.
 
 ## <a name="create-cross-region-load-balancer"></a>Een load balancer voor meerdere regio's maken
 
 In deze sectie maakt u een load balancer voor meerdere regio's en een openbaar IP-adres.
 
-1. Selecteer in de linkerbovenhoek van het scherm **Een resource maken > Netwerken > Load Balancer** of zoek naar **Load Balancer** in het zoekvak.
-
-2. Typ of selecteer de volgende informatie op het tabblad **Basisbeginselen** van de pagina **Load balancer maken**: 
+1. Selecteer **Een resource maken**. 
+2. Voer in het zoekvak **Load Balancer** in. Selecteer **Load Balancer** in de zoek resultaten.
+3. Selecteer op de pagina **Load Balancer** de optie **maken**.
+4. Typ of selecteer de volgende informatie op het tabblad **Basisbeginselen** van de pagina **Load balancer maken**: 
 
     | Instelling                 | Waarde                                              |
     | ---                     | ---                                                |
     | Abonnement               | Selecteer uw abonnement.    |    
     | Resourcegroep         | Selecteer **Nieuwe maken** en voer **CreateCRLBTutorial-rg** in het tekstvak in.|
     | Naam                   | Voer **myLoadBalancer-CR** in                                   |
-    | Regio         | Selecteer **VS - west**.                                        |
+    | Regio         | Selecteer **VS West**.                                        |
     | Type          | Selecteer **Openbaar**.                                        |
-    | SKU           | selecteer **Standard** |
+    | SKU           | Behoud de standaard instelling **standaard**. |
     | Laag           | Selecteer **Globaal** |
     | Openbaar IP-adres | Selecteer **Nieuw maken**.|
     | Naam openbaar IP-adres | Typ **myPublicIP-CR** in het tekstvak.|
-    | Routeringsvoorkeur| Selecteer **Microsoft-netwerk** |
+    | Routeringsvoorkeur| Selecteer **micro soft-netwerk**. </br> Zie [Wat is routerings voorkeur (preview)?](../virtual-network/routing-preference-overview.md)voor meer informatie over routerings voorkeur. |
 
     > [!NOTE]
     > Een load balancer voor meerdere regio's kan alleen worden geïmplementeerd in de volgende basisregio's: **VS - oost 2, VS - west, Europa - west, Azië - zuidoost, VS - centraal, Europa - noord, Azië - oost**. Zie **https://aka.ms/homeregionforglb** voor meer informatie.

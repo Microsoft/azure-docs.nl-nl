@@ -9,12 +9,12 @@ ms.subservice: spot
 ms.date: 02/26/2021
 ms.reviewer: cynthn
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 33aa553e688b595551c20e8b1432163152865537
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: b20a5bd9c06c3948097389d5439defa219a7931b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101675011"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101694985"
 ---
 # <a name="azure-spot-virtual-machines-for-virtual-machine-scale-sets"></a>Azure Spot Virtual Machines voor schaal sets voor virtuele machines 
 
@@ -68,13 +68,56 @@ Deze nieuwe functie op platform niveau gebruikt AI om automatisch te proberen ve
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Probeer & herstel voordelen:
-- Standaard ingeschakeld bij het implementeren van een virtuele Azure-machine in een schaalset.
 - Pogingen om Azure spot te herstellen Virtual Machines verwijderd als gevolg van capaciteit.
 - De herstelde Azure Spot-Virtual Machines worden naar verwachting uitgevoerd voor een langere duur met een lagere kans op activering van capaciteit.
 - Verbetert de levens duur van een virtuele machine met Azure-steun, zodat workloads gedurende een langere periode worden uitgevoerd.
 - Helpt Virtual Machine Scale Sets om het aantal doelen voor Azure Spot Virtual Machines te onderhouden, vergelijkbaar met het onderhouden van de functie aantal doelen die al bestaan voor Vm's met betalen per gebruik.
 
 Probeer & herstellen is uitgeschakeld in schaal sets die gebruikmaken van [automatisch schalen](virtual-machine-scale-sets-autoscale-overview.md). Het aantal virtuele machines in de schaalset wordt bepaald door de regels voor automatisch schalen.
+
+### <a name="register-for-try--restore"></a>Registreren voor proberen & herstellen
+
+Voordat u de functie try & Restore kunt gebruiken, moet u uw abonnement registreren voor de preview-versie. Het volt ooien van de registratie kan enkele minuten duren. U kunt de Azure CLI of Power shell gebruiken om de functie registratie te volt ooien.
+
+
+**CLI gebruiken**
+
+Gebruik [AZ feature Regis](/cli/azure/feature#az-feature-register) om de preview voor uw abonnement in te scha kelen. 
+
+```azurecli-interactive
+az feature register --namespace Microsoft.Compute --name SpotTryRestore 
+```
+
+De registratie van onderdelen kan Maxi maal 15 minuten duren. De registratiestatus controleren: 
+
+```azurecli-interactive
+az feature show --namespace Microsoft.Compute --name SpotTryRestore 
+```
+
+Zodra de functie is geregistreerd voor uw abonnement, voltooit u het aanmeldings proces door de wijziging door te geven aan de provider van de reken resource. 
+
+```azurecli-interactive
+az provider register --namespace Microsoft.Compute 
+```
+**PowerShell gebruiken** 
+
+Gebruik de cmdlet [REGI ster-AzProviderFeature](/powershell/module/az.resources/register-azproviderfeature) om de preview voor uw abonnement in te scha kelen. 
+
+```azurepowershell-interactive
+Register-AzProviderFeature -FeatureName SpotTryRestore -ProviderNamespace Microsoft.Compute 
+```
+
+De registratie van onderdelen kan Maxi maal 15 minuten duren. De registratiestatus controleren: 
+
+```azurepowershell-interactive
+Get-AzProviderFeature -FeatureName SpotTryRestore -ProviderNamespace Microsoft.Compute 
+```
+
+Zodra de functie is geregistreerd voor uw abonnement, voltooit u het aanmeldings proces door de wijziging door te geven aan de provider van de reken resource. 
+
+```azurepowershell-interactive
+Register-AzResourceProvider -ProviderNamespace Microsoft.Compute 
+```
 
 ## <a name="placement-groups"></a>Plaatsings groepen
 

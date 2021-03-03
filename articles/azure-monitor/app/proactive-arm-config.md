@@ -4,14 +4,14 @@ description: Beheer en configuratie automatiseren van Azure-toepassing Insights-
 ms.topic: conceptual
 author: harelbr
 ms.author: harelbr
-ms.date: 06/26/2019
+ms.date: 02/14/2021
 ms.reviewer: mbullwin
-ms.openlocfilehash: 169ad40e32f688ae20a9d02f61db161844b1254a
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: e3a7b71cd8975957754ba014ecc700484c27a6d7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92890510"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101726118"
 ---
 # <a name="manage-application-insights-smart-detection-rules-using-azure-resource-manager-templates"></a>Application Insights Slimme detectie regels beheren met Azure Resource Manager sjablonen
 
@@ -21,12 +21,12 @@ Deze methode kan worden gebruikt bij het implementeren van nieuwe Application In
 ## <a name="smart-detection-rule-configuration"></a>Configuratie van de detectie regel voor Smart
 
 U kunt de volgende instellingen configureren voor een regel voor Slimme detectie:
-- Als de regel is ingeschakeld (de standaard waarde is **waar** .)
-- Als er e-mail berichten moeten worden verzonden naar gebruikers die zijn gekoppeld aan de [bewakings lezer](../../role-based-access-control/built-in-roles.md#monitoring-reader) van het abonnement en bij het [bewaken van Inzender](../../role-based-access-control/built-in-roles.md#monitoring-contributor) rollen wanneer een detectie wordt gevonden (de standaard waarde is **waar** .)
+- Als de regel is ingeschakeld (de standaard waarde is **waar**.)
+- Als er e-mail berichten moeten worden verzonden naar gebruikers die zijn gekoppeld aan de [bewakings lezer](../../role-based-access-control/built-in-roles.md#monitoring-reader) van het abonnement en bij het [bewaken van Inzender](../../role-based-access-control/built-in-roles.md#monitoring-contributor) rollen wanneer een detectie wordt gevonden (de standaard waarde is **waar**.)
 - Aanvullende e-mail ontvangers die een melding moeten ontvangen wanneer een detectie wordt gevonden.
     -  De e-mail configuratie is niet beschikbaar voor slimme detectie regels die als _Preview_ zijn gemarkeerd.
 
-Om het configureren van de regel instellingen via Azure Resource Manager toe te staan, is de configuratie van de detectie regel nu beschikbaar als binnenste resource binnen de Application Insights resource met de naam **ProactiveDetectionConfigs** .
+Om het configureren van de regel instellingen via Azure Resource Manager toe te staan, is de configuratie van de detectie regel nu beschikbaar als binnenste resource binnen de Application Insights resource met de naam **ProactiveDetectionConfigs**.
 Voor een maximale flexibiliteit kan elke Slimme detectie regel worden geconfigureerd met unieke meldings instellingen.
 
 ## <a name="examples"></a>Voorbeelden
@@ -152,7 +152,7 @@ Hieronder ziet u een tabel met namen van Slimme detectie regels zoals ze worden 
 
 ### <a name="failure-anomalies-alert-rule"></a>Waarschuwings regel voor afwijkingen van de fout
 
-Deze Azure Resource Manager sjabloon demonstreert het configureren van een waarschuwings regel voor fout afwijkingen met de ernst 2. Deze nieuwe versie van de waarschuwings regel voor afwijkingen van de fout maakt deel uit van het nieuwe Azure Alerting platform en vervangt de klassieke versie die buiten gebruik wordt gesteld als onderdeel van het buiten gebruik stellen van [klassieke waarschuwingen](https://azure.microsoft.com/updates/classic-alerting-monitoring-retirement/).
+Deze Azure Resource Manager sjabloon demonstreert het configureren van een waarschuwings regel voor fout afwijkingen met de ernst 2.
 
 > [!NOTE]
 > Fout afwijkingen is een globale service, dus de locatie van de regel wordt gemaakt op de algemene locatie.

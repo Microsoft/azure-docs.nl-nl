@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 08/30/2016
 ms.author: stefsch
 ms.custom: seodec18
-ms.openlocfilehash: ab26ad08947a4a9929ae0d41b669160b3d159224
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 813160ee19c8447fdfcb705e7a9162a41a0c308c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150234"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101739505"
 ---
 # <a name="implementing-a-layered-security-architecture-with-app-service-environments"></a>Een gelaagde beveiligings architectuur implementeren met App Service omgevingen
 Omdat App Service omgevingen een geïsoleerde runtime-omgeving bieden die is geïmplementeerd in een virtueel netwerk, kunnen ontwikkel aars een gelaagde beveiligings architectuur maken die verschillende niveaus van netwerk toegang biedt voor elke fysieke toepassingslaag.

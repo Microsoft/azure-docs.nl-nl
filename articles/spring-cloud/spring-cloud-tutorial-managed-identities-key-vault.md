@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 07/08/2020
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: fc44dd6cf91d687f47afadf1c3378956d838bc9d
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
-ms.translationtype: HT
+ms.openlocfilehash: c091241a4928b3f498be7944559aa5b91c6fecf0
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579501"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101705055"
 ---
 # <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-spring-cloud-app"></a>Zelfstudie: Een beheerde identiteit gebruiken om Key Vault te koppelen met een Azure Spring Cloud-app
 
@@ -69,7 +69,7 @@ az spring-cloud app create -n "springapp" -s "myspringcloud" -g "myResourceGroup
 export SERVICE_IDENTITY=$(az spring-cloud app show --name "springapp" -s "myspringcloud" -g "myResourceGroup" | jq -r '.identity.principalId')
 ```
 
-Noteer de geretourneerde `url`, die de notatie "https://<your-app-name>.azuremicroservices.io" heeft. Deze wordt in de volgende stap gebruikt.
+Noteer de geretourneerde `url` , die de indeling heeft `https://<your-app-name>.azuremicroservices.io` . Deze wordt in de volgende stap gebruikt.
 
 
 ## <a name="grant-your-app-access-to-key-vault"></a>Uw app toegang verlenen tot Key Vault

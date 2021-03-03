@@ -6,18 +6,14 @@ ms.author: flborn
 ms.date: 02/03/2020
 ms.topic: article
 ms.custom: references_regions
-ms.openlocfilehash: 4380f14610fb0775c82aa79ec7cda9dc70cf0715
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: dd91622344263dc366a76c913ce0be95718550cd
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97722688"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101705157"
 ---
 # <a name="system-requirements"></a>Systeemvereisten
-
-> [!IMPORTANT]
-> **Azure Remote Rendering** is momenteel beschikbaar als openbare preview-versie.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Dit hoofd stuk bevat de minimale systeem vereisten voor het werken met *Azure remote rendering* (arr).
 
@@ -71,7 +67,7 @@ Raadpleeg de [hand leiding](../resources/troubleshoot.md#unstable-holograms)voor
 
 Externe rendering van virtuele machines gebruiken gedeelde IP-adressen uit de volgende IP-adresbereiken:
 
-| Naam             | Regio         | IP-voor voegsel         |
+| Name             | Region         | IP-voor voegsel         |
 |------------------|:---------------|:------------------|
 | Australië - oost   | australiaeast  | 20.53.44.240/28   |
 | VS - oost          | eastus         | 20.62.129.224/28  |

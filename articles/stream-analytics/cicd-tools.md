@@ -7,12 +7,12 @@ ms.author: sujie
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 09/10/2020
-ms.openlocfilehash: 3ed3ff44b927fa230dedf16387c1daca889d7c66
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: d1a0a6ad5b45af2157b960f8990574e47d10eeb2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100388699"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101718417"
 ---
 # <a name="automate-builds-tests-and-deployments-of-an-azure-stream-analytics-job-using-cicd-tools"></a>Bouw-, test-en implementaties van een Azure Stream Analytics-taak automatiseren met CI/CD-hulpprogram ma's
 
@@ -166,6 +166,9 @@ Als u wilt dat de test validatie een bepaalde uitvoer negeert, stelt u het **ver
   ]
 }
 ```
+
+> [!NOTE]
+> Op dit moment is de enige toegestane waarde voor het `ScriptType` element `InputMock` , dat ook de standaard waarde is. Als u deze instelt op een andere waarde, wordt dit genegeerd en wordt de standaard waarde ( `InputMock` ) gebruikt. 
 
 ### <a name="run-a-unit-test"></a>Een eenheids test uitvoeren
 

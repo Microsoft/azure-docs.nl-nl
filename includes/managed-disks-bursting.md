@@ -8,13 +8,13 @@ ms.topic: include
 ms.date: 04/27/2020
 ms.author: albecker1
 ms.custom: include file
-ms.openlocfilehash: 634deb655620f99c7b7b2b55819c58308eaa5a92
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0f85f2770b98507618d5cbfdec1b55f397c7f514
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91275151"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750237"
 ---
-In azure bieden we de mogelijkheid om de IOPS en MB/s-prestaties van schijf opslag te verhogen als bursting op Virtual Machines en schijven. Bursting is handig in veel scenario's, zoals het afhandelen van onverwacht schijf verkeer of het verwerken van batch taken. U kunt effectief gebruikmaken van de burstisatie van virtuele machines en schijven voor een uitstekende basis lijn en burst-prestaties op zowel uw virtuele machines als uw schijf. Op deze manier kunt u uw virtuele machine en de prestaties van de basis lijn optimaal benutten. 
+Azure biedt de mogelijkheid om de IOPS-en MB-prestaties van schijf opslag te verhogen. dit wordt bursting genoemd voor zowel virtuele machines (VM) als schijven. U kunt effectief gebruikmaken van VM-en schijf bursting om betere burst-prestaties op zowel uw virtuele machines als schijf te maken.
 
-Houd er rekening mee dat bursting op schijven en Vm's onafhankelijk van elkaar zijn. Als u een bursting-schijf hebt, hebt u geen bursting-VM nodig om de schijf te laten burstiseren. Als u een burst-VM hebt, hebt u geen bursting-schijf nodig om uw virtuele machine te laten burstiseren. 
+Het burstiseren van Azure-Vm's en schijf bronnen is niet afhankelijk van elkaar. U hoeft geen met bursts compatibele VM te hebben voor een gekoppelde schijf met burst-ondersteuning tot burst. Op dezelfde manier hoeft u geen schijf met burst-ondersteuning te hebben die is gekoppeld aan uw met burst compatibele VM voor de virtuele machine.

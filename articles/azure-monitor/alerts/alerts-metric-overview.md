@@ -4,16 +4,16 @@ description: Bekijk een overzicht van wat u met metrische waarschuwingen kunt do
 ms.date: 01/19/2021
 ms.topic: conceptual
 ms.subservice: alerts
-ms.openlocfilehash: 989c3b8a50c3e613e67726684f35c6adce9c8b96
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: fc0f41f23f1d9387f806c947ac27e6f31cc0e053
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609612"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723602"
 ---
 # <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Begrijpen hoe waarschuwingen voor metrische gegevens werken in Azure Monitor
 
-Metrische waarschuwingen in Azure Monitor werken bovenop meerdere dimensies. Deze metrische gegevens zijn mogelijk [platform metrieken](alerts-metric-near-real-time.md#metrics-and-dimensions-supported), [aangepaste metrische gegevens](../platform/metrics-custom-overview.md), [populaire logboeken van Azure monitor geconverteerd naar metrische gegevens](./alerts-metric-logs.md) en Application Insights metrische gegevens. Metrische waarschuwingen bepalen regel matig of er voor waarden in een of meer metrische time-series waar zijn en u wordt gewaarschuwd wanneer aan de evaluaties wordt voldaan. Metrische waarschuwingen zijn stateful, dat wil zeggen dat ze alleen meldingen verzenden wanneer de status wordt gewijzigd.
+Metrische waarschuwingen in Azure Monitor werken bovenop meerdere dimensies. Deze metrische gegevens zijn mogelijk [platform metrieken](alerts-metric-near-real-time.md#metrics-and-dimensions-supported), [aangepaste metrische gegevens](../essentials/metrics-custom-overview.md), [populaire logboeken van Azure monitor geconverteerd naar metrische gegevens](./alerts-metric-logs.md) en Application Insights metrische gegevens. Metrische waarschuwingen bepalen regel matig of er voor waarden in een of meer metrische time-series waar zijn en u wordt gewaarschuwd wanneer aan de evaluaties wordt voldaan. Metrische waarschuwingen zijn stateful, dat wil zeggen dat ze alleen meldingen verzenden wanneer de status wordt gewijzigd.
 
 ## <a name="how-do-metric-alerts-work"></a>Hoe werken metrische waarschuwingen?
 
@@ -26,7 +26,7 @@ Stel dat u als volgt een eenvoudige waarschuwings regel voor een statische dremp
 - Doel resource (de Azure-resource die u wilt bewaken): myVM
 - Metriek: percentage CPU
 - Voorwaarde type: statisch
-- Aggregatie type (een statistiek dat wordt uitgevoerd boven onbewerkte meet waarden. [Ondersteunde aggregatie typen](../platform/metrics-aggregation-explained.md#aggregation-types) zijn minimum, maximum, gemiddelde, totaal, aantal): gemiddeld
+- Aggregatie type (een statistiek dat wordt uitgevoerd boven onbewerkte meet waarden. [Ondersteunde aggregatie typen](../essentials/metrics-aggregation-explained.md#aggregation-types) zijn minimum, maximum, gemiddelde, totaal, aantal): gemiddeld
 - Periode (het venster terugkijken waarover metrische waarden worden gecontroleerd): in de afgelopen 5 minuten
 - Frequentie (de frequentie waarmee met de metrische waarschuwing wordt gecontroleerd of aan de voor waarden wordt voldaan): 1 min.
 - Operator: groter dan
@@ -43,7 +43,7 @@ Stel dat u een regel voor metrische waarschuwing voor eenvoudige dynamische drem
 - Doel resource (de Azure-resource die u wilt bewaken): myVM
 - Metriek: percentage CPU
 - Voorwaarde type: dynamisch
-- Aggregatie type (een statistiek dat wordt uitgevoerd boven onbewerkte meet waarden. [Ondersteunde aggregatie typen](../platform/metrics-aggregation-explained.md#aggregation-types) zijn minimum, maximum, gemiddelde, totaal, aantal): gemiddeld
+- Aggregatie type (een statistiek dat wordt uitgevoerd boven onbewerkte meet waarden. [Ondersteunde aggregatie typen](../essentials/metrics-aggregation-explained.md#aggregation-types) zijn minimum, maximum, gemiddelde, totaal, aantal): gemiddeld
 - Periode (het venster terugkijken waarover metrische waarden worden gecontroleerd): in de afgelopen 5 minuten
 - Frequentie (de frequentie waarmee met de metrische waarschuwing wordt gecontroleerd of aan de voor waarden wordt voldaan): 1 min.
 - Operator: groter dan
@@ -180,9 +180,8 @@ In dit [artikel](./alerts-metric-near-real-time.md#metrics-and-dimensions-suppor
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Meer informatie over het maken, weer geven en beheren van metrische waarschuwingen in azure](../alerts/alerts-metric.md)
-- [Meer informatie over het maken van waarschuwingen in azure Montior Metrics Explorer](../platform/metrics-charts.md#alert-rules)
+- [Meer informatie over het maken van waarschuwingen in azure Montior Metrics Explorer](../essentials/metrics-charts.md#alert-rules)
 - [Meer informatie over het implementeren van metrische waarschuwingen met behulp van Azure Resource Manager sjablonen](./alerts-metric-create-templates.md)
-- [Meer informatie over actie groepen](../platform/action-groups.md)
+- [Meer informatie over actie groepen](./action-groups.md)
 - [Meer informatie over het type voor waarde van dynamische drempel waarden](../alerts/alerts-dynamic-thresholds.md)
 - [Meer informatie over het oplossen van problemen met metrische waarschuwingen](alerts-troubleshoot-metric.md)
-

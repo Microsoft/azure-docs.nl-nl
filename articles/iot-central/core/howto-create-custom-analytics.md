@@ -1,24 +1,24 @@
 ---
 title: Azure IoT Central uitbreiden met aangepaste analyses | Microsoft Docs
 description: Configureer als ontwikkelaar van oplossingen een IoT Central-toepassing om aangepaste analyses en visualisaties uit te voeren. Deze oplossing maakt gebruik van Azure Databricks.
-author: dominicbetts
-ms.author: dobett
-ms.date: 12/02/2019
+author: TheJasonAndrew
+ms.author: v-anjaso
+ms.date: 02/18/2020
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: 1e261e8d5d9cd147f3157303b7a2a50db7c33e58
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 86f94b8059d85b892a87c82537b1e9b02552f8f7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92123042"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101741678"
 ---
 # <a name="extend-azure-iot-central-with-custom-analytics-using-azure-databricks"></a>Azure IoT Central uitbreiden met aangepaste analyses met behulp van Azure Databricks
 
-In deze hand leiding wordt uitgelegd hoe u, als oplossings ontwikkelaar, uw IoT Central-toepassing kunt uitbreiden met aangepaste analyses en visualisaties. In het voor beeld wordt een [Azure Databricks](/azure/azure-databricks/) -werk ruimte gebruikt voor het analyseren van de IOT Central telemetrische stroom en voor het genereren van visualisaties zoals [box plots](https://wikipedia.org/wiki/Box_plot).
+In deze hand leiding wordt uitgelegd hoe u, als oplossings ontwikkelaar, uw IoT Central-toepassing kunt uitbreiden met aangepaste analyses en visualisaties. In het voor beeld wordt een [Azure Databricks](/azure/azure-databricks/) -werk ruimte gebruikt voor het analyseren van de IOT Central telemetrische stroom en voor het genereren van visualisaties zoals [box plots](https://wikipedia.org/wiki/Box_plot).  
 
 In deze hand leiding wordt uitgelegd hoe u IoT Central uitbreidt dan wat u al kunt doen met de [ingebouwde analyse hulpprogramma's](./howto-create-custom-analytics.md).
 
@@ -45,7 +45,7 @@ Maak een IoT Central-toepassing op de website van [Azure IOT Central Application
 | URL | Accepteer de standaard waarde of kies uw eigen unieke URL-voor voegsel |
 | Directory | Uw Azure Active Directory-Tenant |
 | Azure-abonnement | Uw Azure-abonnement |
-| Regio | Uw dichtstbijzijnde regio |
+| Region | Uw dichtstbijzijnde regio |
 
 In de voor beelden en scherm afbeeldingen in dit artikel wordt gebruikgemaakt van de **Verenigde Staten** regio. Kies een locatie dicht bij u en zorg ervoor dat u alle resources in dezelfde regio maakt.
 
@@ -89,8 +89,8 @@ Wanneer u de vereiste resources hebt gemaakt, ziet uw **IoTCentralAnalysis** -re
 U kunt een IoT Central-toepassing configureren om voortdurend telemetrie te exporteren naar een Event Hub. In deze sectie maakt u een Event Hub voor het ontvangen van telemetrie van uw IoT Central-toepassing. De Event Hub levert de telemetrie naar uw Stream Analytics-taak voor verwerking.
 
 1. Ga in het Azure Portal naar uw Event Hubs-naam ruimte en selecteer **+ Event hub**.
-1. Geef uw Event Hub **centralexport**een naam en selecteer **maken**.
-1. Selecteer **centralexport**in de lijst met Event hubs in uw naam ruimte. Kies vervolgens **beleid voor gedeelde toegang**.
+1. Geef uw Event Hub **centralexport** een naam en selecteer **maken**.
+1. Selecteer **centralexport** in de lijst met Event hubs in uw naam ruimte. Kies vervolgens **beleid voor gedeelde toegang**.
 1. Selecteer **+ Toevoegen**. Maak een beleid met de naam **listen** met de **listener** -claim.
 1. Wanneer het beleid gereed is, selecteert u het in de lijst en kopieert u vervolgens de **verbindings reeks-primaire sleutel** waarde.
 1. Noteer deze connection string. u kunt dit later doen wanneer u uw Databricks-notebook configureert om te lezen van de Event Hub.
@@ -103,7 +103,7 @@ De naam ruimte van uw Event Hubs ziet eruit als in de volgende scherm afbeelding
 
 Ga op de website van [Azure IOT Central Application Manager](https://aka.ms/iotcentral) naar de IOT Central toepassing die u hebt gemaakt op basis van de contoso-sjabloon. In deze sectie configureert u de toepassing voor het streamen van de telemetrie van de gesimuleerde apparaten naar uw Event Hub. Het exporteren configureren:
 
-1. Ga naar de pagina voor het **exporteren van gegevens** , selecteer **+ Nieuw**en klik vervolgens op **Azure Event hubs**.
+1. Ga naar de pagina voor het **exporteren van gegevens (verouderd)** , selecteer **+ Nieuw** en klik vervolgens op **Azure Event hubs**.
 1. Gebruik de volgende instellingen om het exporteren te configureren en selecteer vervolgens **Opslaan**:
 
     | Instelling | Waarde |
@@ -134,7 +134,7 @@ Gebruik de informatie in de volgende tabel om uw cluster te maken:
 | ------- | ----- |
 | Clusternaam | centralanalysis |
 | Cluster modus | Standard |
-| Databricks Runtime versie | 5,5 LTS (scala 2,11, Spark 2.4.3) |
+| Databricks Runtime versie | 5,5 LTS (scala 2,11, Spark 2.4.5) |
 | Python-versie | 3 |
 | Automatisch schalen inschakelen | Nee |
 | Beëindigen na minuten van inactiviteit | 30 |
@@ -146,7 +146,7 @@ Het maken van een cluster kan enkele minuten duren. wacht totdat het maken van h
 
 ### <a name="install-libraries"></a>Bibliotheken installeren
 
-Wacht op de pagina **clusters** totdat de cluster status **actief**is.
+Wacht op de pagina **clusters** totdat de cluster status **actief** is.
 
 De volgende stappen laten zien hoe u de bibliotheek kunt importeren die nodig is voor uw voor beeld in het cluster:
 
@@ -174,7 +174,7 @@ Gebruik de volgende stappen om een Databricks-notebook te importeren dat de pyth
 
 1. Kies uit een URL om te importeren en voer het volgende adres in: [https://github.com/Azure-Samples/iot-central-docs-samples/blob/master/databricks/IoT%20Central%20Analysis.dbc?raw=true](https://github.com/Azure-Samples/iot-central-docs-samples/blob/master/databricks/IoT%20Central%20Analysis.dbc?raw=true)
 
-1. Kies **importeren**om het notitie blok te importeren.
+1. Kies **importeren** om het notitie blok te importeren.
 
 1. Selecteer de **werk ruimte** om het geïmporteerde notitie blok weer te geven:
 

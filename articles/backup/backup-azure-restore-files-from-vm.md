@@ -4,12 +4,12 @@ description: In dit artikel vindt u informatie over het herstellen van bestanden
 ms.topic: conceptual
 ms.date: 03/12/2020
 ms.custom: references_regions
-ms.openlocfilehash: 9bd66c1e3c89c8974adc3970f8595e5100878088
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: c5a027773a55347b71c1e6a66d24d7fdb99220d0
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567133"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101725506"
 ---
 # <a name="recover-files-from-azure-virtual-machine-backup"></a>Bestanden herstellen vanuit de back-up van Azure-virtuele machine
 
@@ -76,6 +76,11 @@ U kunt het gedownloade uitvoer bare bestand niet uitvoeren op de virtuele machin
 ### <a name="virtual-machine-backups-having-large-disks"></a>Back-ups van virtuele machines met grote schijven
 
 Als de back-upcomputer een groot aantal schijven (>16) of grote schijven heeft (> 4 TB elk), is het niet raadzaam om het script uit te voeren op dezelfde computer voor herstel, omdat het een aanzienlijke invloed heeft op de virtuele machine. In plaats daarvan wordt het aanbevolen een afzonderlijke VM te hebben voor bestands herstel (Azure VM D2v3 Vm's) en deze vervolgens af te sluiten wanneer deze niet is vereist. 
+
+Bekijk de vereisten voor het herstellen van bestanden van back-ups van virtuele machines met een grote schijf:<br>
+[Windows OS](#for-backed-up-vms-with-large-disks-windows)<br>
+[Linux-besturings systeem](#for-backed-up-vms-with-large-disks-linux)
+
 
 ## <a name="step-3-os-requirements-to-successfully-run-the-script"></a>Stap 3: vereisten voor het besturings systeem om het script uit te voeren
 

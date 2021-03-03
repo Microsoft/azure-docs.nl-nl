@@ -6,12 +6,12 @@ manager: nitinme
 ms.author: lajanuar
 author: laujan
 ms.date: 02/11/2021
-ms.openlocfilehash: 1425be4fc4e462185f9fee573dc87b04a68bfea4
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 104329928c507c288537704fbbef4e35b65cb445
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100650742"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101739433"
 ---
 # <a name="create-sas-tokens-for-document-translation"></a>SAS-tokens maken voor document vertalingen
 
@@ -21,8 +21,8 @@ In dit artikel leert u hoe u SAS-tokens (Shared Access Signature) kunt maken met
 
 ### <a name="prerequisites"></a>Vereisten
 
-* U hebt een [**Azure Storage Explorer**](/azure/vs-azure-tools-storage-manage-with-storage-explorer) -app nodig die is geïnstalleerd in uw Windows-, macOS-of Linux-ontwikkel omgeving. Azure Storage Explorer is een gratis hulp programma waarmee u eenvoudig uw Azure Cloud Storage-resources kunt beheren.
-* Nadat de Azure Storage Explorer-app is geïnstalleerd, [verbindt u deze met het opslag account](/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=windows#connect-to-a-storage-account-or-service) dat u gebruikt voor document vertalingen.
+* U hebt een [**Azure Storage Explorer**](../../../vs-azure-tools-storage-manage-with-storage-explorer.md) -app nodig die is geïnstalleerd in uw Windows-, macOS-of Linux-ontwikkel omgeving. Azure Storage Explorer is een gratis hulp programma waarmee u eenvoudig uw Azure Cloud Storage-resources kunt beheren.
+* Nadat de Azure Storage Explorer-app is geïnstalleerd, [verbindt u deze met het opslag account](../../../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows#connect-to-a-storage-account-or-service) dat u gebruikt voor document vertalingen.
 
 ### <a name="create-your-tokens"></a>Uw tokens maken
 
@@ -65,7 +65,7 @@ In dit artikel leert u hoe u SAS-tokens (Shared Access Signature) kunt maken met
 ## <a name="create-sas-tokens-for-blobs-in-the-azure-portal"></a>SAS-tokens maken voor blobs in de Azure Portal
 
 > [!NOTE]
-> Het maken van SAS-tokens voor containers rechtstreeks in het Azure Portal wordt momenteel niet ondersteund. U kunt echter een SAS-token met [**Azure Storage Explorer**](#create-sas-tokens-with-azure-storage-explorer) maken of de taak [via een programma](/azure/storage/blobs/sas-service-create)volt ooien.
+> Het maken van SAS-tokens voor containers rechtstreeks in het Azure Portal wordt momenteel niet ondersteund. U kunt echter een SAS-token met [**Azure Storage Explorer**](#create-sas-tokens-with-azure-storage-explorer) maken of de taak [via een programma](../../../storage/blobs/sas-service-create.md)volt ooien.
 
 <!-- markdownlint-disable MD024 -->
 ### <a name="prerequisites"></a>Vereisten
@@ -104,7 +104,7 @@ Ga naar het [Azure Portal](https://ms.portal.azure.com/#home) en navigeert u als
 
 ## <a name="learn-more"></a>Lees meer
 
-* [SAS-tokens maken voor blobs of containers via een programma](/azure/storage/blobs/sas-service-create)
+* [SAS-tokens maken voor blobs of containers via een programma](../../../storage/blobs/sas-service-create.md)
 * [Machtigingen voor een map, container of BLOB](/rest/api/storageservices/create-service-sas#permissions-for-a-directory-container-or-blob)
 
 ## <a name="next-steps"></a>Volgende stappen

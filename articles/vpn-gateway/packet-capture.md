@@ -2,17 +2,17 @@
 title: 'Azure VPN Gateway: pakket opname configureren'
 description: Meer informatie over de functionaliteit voor het vastleggen van pakketten die u kunt gebruiken op VPN-gateways om de oorzaak van een probleem te beperken.
 services: vpn-gateway
-author: radwiv
+author: anzaman
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 12/2/2020
-ms.author: radwiv
-ms.openlocfilehash: caa9a0869d7d4bca58b91a0c682177e1408f8300
-ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
+ms.date: 02/22/2021
+ms.author: alzam
+ms.openlocfilehash: 0983139d1c9af235eba4c9f99da7bc9dea3f231b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97733803"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101726611"
 ---
 # <a name="configure-packet-capture-for-vpn-gateways"></a>Pakket opname voor VPN-gateways configureren
 
@@ -27,6 +27,7 @@ U kunt VPN Gateway pakket opname uitvoeren op de gateway of op een specifieke ve
 Het is handig om een vijf-tuple filter (bron subnet, doel-subnet, bron poort, doel poort, Protocol) en TCP-vlaggen (SYN, ACK, FIN, URG, PSH, RST) te gebruiken wanneer u problemen isoleert met veel volume verkeer.
 
 De volgende voor beelden van JSON en een JSON-schema geven uitleg over elke eigenschap. Hier volgen enkele beperkingen die u moet onthouden wanneer u pakket opnames uitvoert:
+
 - In het schema dat hier wordt weer gegeven, is het filter een matrix, maar op dit moment kan slechts één filter tegelijkertijd worden gebruikt.
 - Het is niet mogelijk om meerdere pakket opnames voor de gateway tegelijk uit te voeren.
 - Het is niet mogelijk om meerdere pakket opnames op één verbinding tegelijk uit te voeren. U kunt meerdere pakket opnames op verschillende verbindingen tegelijk uitvoeren.
@@ -317,7 +318,13 @@ De volgende voor beelden van JSON en een JSON-schema geven uitleg over elke eige
 }
 ```
 
-## <a name="set-up-packet-capture-by-using-powershell"></a>Pakket opname instellen met behulp van Power shell
+## <a name="packet-capture---portal"></a>Pakket opname-Portal
+
+U kunt pakket opname instellen in de Azure Portal.
+
+:::image type="content" source="./media/packet-capture/portal.jpg" alt-text="Scherm opname van pakket opname in de portal." lightbox="./media/packet-capture/portal.jpg":::
+
+## <a name="packet-capture---powershell"></a>Pakket opname-Power shell
 
 In de volgende voor beelden ziet u Power shell-opdrachten die pakket opnames starten en stoppen. Zie [Start-AzVirtualnetworkGatewayPacketCapture](/powershell/module/az.network/start-azvirtualnetworkgatewaypacketcapture)voor meer informatie over de parameter opties.
 

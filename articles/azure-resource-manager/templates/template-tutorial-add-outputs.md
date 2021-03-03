@@ -6,12 +6,12 @@ ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 7acfb168462354017168ee333ea0b1ecaea434c1
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
-ms.translationtype: HT
+ms.openlocfilehash: 7e022822f1306a5351cef43498f00a0ac0f2ef63
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107121"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101707282"
 ---
 # <a name="tutorial-add-outputs-to-your-arm-template"></a>Zelfstudie: Uitvoer aan uw ARM-sjabloon toevoegen
 
@@ -21,7 +21,7 @@ In deze zelfstudie leert u hoe u een waarde uit uw ARM-sjabloon (Azure Resource 
 
 U wordt aangeraden om eerst de [zelfstudie over variabelen](template-tutorial-add-variables.md) te voltooien, maar dit is niet verplicht.
 
-U moet beschikken over Visual Studio Code met de extensie Resource Manager Tools (hulpprogramma's voor resourcebeheer), plus Azure PowerShell of Azure CLI. Zie de [hulpprogramma's voor sjablonen](template-tutorial-create-first-template.md#get-tools) voor meer informatie.
+U moet beschikken over Visual Studio Code met de extensie Resource Manager Tools (hulpprogramma's voor resourcebeheer), plus Azure PowerShell of Azure CLI. Zie [Hulpprogramma's voor sjablonen](template-tutorial-create-first-template.md#get-tools) voor meer informatie.
 
 ## <a name="review-template"></a>Sjabloon controleren
 
@@ -41,11 +41,11 @@ In het volgende voorbeeld ziet u de wijziging in de sjabloon die nodig is om een
 
 Er zijn enkele belangrijke dingen die u moet weten over de uitvoerwaarde die u hebt toegevoegd.
 
-Het type van de geretourneerde waarde is ingesteld op `object`, wat betekent dat er een JSON-object wordt geretourneerd.
+Het type van de geretourneerde waarde is ingesteld op `object` , wat betekent dat er een JSON-object wordt geretourneerd.
 
 Er wordt gebruikgemaakt van de [reference](template-functions-resource.md#reference)-functie om de runtimestatus van het opslagaccount op te halen. Als u de runtimestatus van een resource wilt ophalen, geeft u de naam of id van een resource door. In dit geval gebruikt u de variabele die u hebt gebruikt voor het maken van de naam van het opslagaccount.
 
-Ten slotte wordt de eigenschap `primaryEndpoints` uit het opslagaccount geretourneerd
+Ten slotte wordt de `primaryEndpoints` eigenschap van het opslag account geretourneerd.
 
 ## <a name="deploy-template"></a>Sjabloon implementeren
 

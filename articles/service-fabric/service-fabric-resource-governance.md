@@ -3,12 +3,12 @@ title: Resourcebeheer voor containers en services
 description: Met Azure Service Fabric kunt u resource aanvragen en limieten opgeven voor services die als processen of containers worden uitgevoerd.
 ms.topic: conceptual
 ms.date: 8/9/2017
-ms.openlocfilehash: 889fce77c1a3a743e9805ec482a9c87b9bf8da65
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: d760766870c8c2be0a2d2384f6d012b75bc92fbd
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92172875"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101735655"
 ---
 # <a name="resource-governance"></a>Resourcebeheer
 
@@ -95,12 +95,12 @@ Hier volgt een voor beeld van het instrueren van Service Fabric om 50% van de be
 Voor de meeste klanten en scenario's is automatische detectie van knooppunt capaciteit voor CPU en geheugen de aanbevolen configuratie (automatische detectie is standaard ingeschakeld). Als u echter volledige hand matige configuratie van knooppunt capaciteit nodig hebt, kunt u ze per knooppunt type configureren met behulp van het mechanisme voor het beschrijven van knoop punten in het cluster. Hier volgt een voor beeld van het instellen van het knooppunt type met vier kernen en 2 GB aan geheugen:
 
 ```xml
-    <NodeType Name="MyNodeType">
-      <Capacities>
-        <Capacity Name="servicefabric:/_CpuCores" Value="4"/>
-        <Capacity Name="servicefabric:/_MemoryInMB" Value="2048"/>
-      </Capacities>
-    </NodeType>
+    <NodeType Name="MyNodeType">
+      <Capacities>
+        <Capacity Name="servicefabric:/_CpuCores" Value="4"/>
+        <Capacity Name="servicefabric:/_MemoryInMB" Value="2048"/>
+      </Capacities>
+    </NodeType>
 ```
 
 Als automatische detectie van beschik bare bronnen is ingeschakeld en knooppunt capaciteit hand matig is gedefinieerd in het cluster manifest, Service Fabric controleert of het knoop punt voldoende bronnen heeft ter ondersteuning van de capaciteit die de gebruiker heeft gedefinieerd:
@@ -120,8 +120,8 @@ Het automatisch detecteren van beschik bare bronnen kan worden uitgeschakeld als
 Voor optimale prestaties moet u ook de volgende instelling inschakelen in het cluster manifest:
 
 ```xml
-<Section Name="PlacementAndLoadBalancing">
-    <Parameter Name="PreventTransientOvercommit" Value="true" />
+<Section Name="PlacementAndLoadBalancing">
+    <Parameter Name="PreventTransientOvercommit" Value="true" />
     <Parameter Name="AllowConstraintCheckFixesDuringApplicationUpgrade" Value="true" />
 </Section>
 ```
@@ -156,11 +156,11 @@ Aanvragen en limieten voor resource beheer worden opgegeven in het manifest van 
   </ServiceManifestImport>
 ```
 
-In dit voor beeld `CpuCores` wordt het kenmerk gebruikt om een aanvraag van 1 CPU core voor **ServicePackageA**op te geven. Aangezien de CPU-limiet ( `CpuCoresLimit` kenmerk) niet is opgegeven, gebruikt service Fabric ook de opgegeven aanvraag waarde van 1 kern als CPU-limiet voor het service pakket.
+In dit voor beeld `CpuCores` wordt het kenmerk gebruikt om een aanvraag van 1 CPU core voor **ServicePackageA** op te geven. Aangezien de CPU-limiet ( `CpuCoresLimit` kenmerk) niet is opgegeven, gebruikt service Fabric ook de opgegeven aanvraag waarde van 1 kern als CPU-limiet voor het service pakket.
 
 **ServicePackageA** wordt alleen geplaatst op een knoop punt waar de resterende CPU-capaciteit na het aftrekken **van de som van de CPU-aanvragen van alle service pakketten die op het knoop punt worden geplaatst** , groter is dan of gelijk is aan 1 kern. Het service pakket op het knoop punt is beperkt tot één kern. Het service pakket bevat twee code pakketten (**CodeA1** en **CodeA2**) en beide het kenmerk opgeven `CpuShares` . Het aandeel van kunnen 512:256 wordt gebruikt om de CPU-limieten voor de afzonderlijke code pakketten te berekenen. Daarom is CodeA1 beperkt tot twee derde van een kern, en CodeA2 is beperkt tot een derde van een kern. Als kunnen niet zijn opgegeven voor alle code pakketten, wordt Service Fabric de CPU-limiet gelijkmatig verdeeld.
 
-Hoewel kunnen die zijn opgegeven voor code pakketten het relatieve aandeel van de totale CPU-limiet van het service pakket vertegenwoordigen, worden de geheugen waarden voor code pakketten opgegeven in absolute voor waarden. In dit voor beeld `MemoryInMB` wordt het kenmerk gebruikt voor het opgeven van geheugen aanvragen van 1024 MB voor zowel CodeA1 als CodeA2. Aangezien de geheugen limiet ( `MemoryInMBLimit` kenmerk) niet is opgegeven, gebruikt service Fabric ook de opgegeven aanvraag waarden als de limieten voor de code pakketten. De geheugen aanvraag (en limiet) voor het service pakket wordt berekend als de som van de geheugen aanvraag-en limieten waarden van de code pakketten van de component. Daarom worden **de**geheugen aanvraag en de limiet berekend als 2048 MB.
+Hoewel kunnen die zijn opgegeven voor code pakketten het relatieve aandeel van de totale CPU-limiet van het service pakket vertegenwoordigen, worden de geheugen waarden voor code pakketten opgegeven in absolute voor waarden. In dit voor beeld `MemoryInMB` wordt het kenmerk gebruikt voor het opgeven van geheugen aanvragen van 1024 MB voor zowel CodeA1 als CodeA2. Aangezien de geheugen limiet ( `MemoryInMBLimit` kenmerk) niet is opgegeven, gebruikt service Fabric ook de opgegeven aanvraag waarden als de limieten voor de code pakketten. De geheugen aanvraag (en limiet) voor het service pakket wordt berekend als de som van de geheugen aanvraag-en limieten waarden van de code pakketten van de component. Daarom worden **de** geheugen aanvraag en de limiet berekend als 2048 MB.
 
 **ServicePackageA** wordt alleen geplaatst op een knoop punt waarvan de resterende geheugen capaciteit na het aftrekken **van de som van geheugen aanvragen van alle service pakketten die op dat knoop punt zijn geplaatst** , groter is dan of gelijk is aan 2048 MB. Op het knoop punt worden beide code pakketten beperkt tot 1024 MB aan geheugen. Code pakketten (containers of processen) kunnen niet meer geheugen toewijzen dan deze limiet. Als u dit toch probeert, worden er uitzonde ringen buiten het geheugen.
 
@@ -177,7 +177,7 @@ Hoewel kunnen die zijn opgegeven voor code pakketten het relatieve aandeel van d
     </Policies>
   </ServiceManifestImport>
 ```
-In dit voor beeld worden `CpuCoresLimit` `MemoryInMBLimit` -en-kenmerken gebruikt die alleen beschikbaar zijn in SF-versies 7,2 en hoger. Het kenmerk CpuCoresLimit wordt gebruikt om een CPU-limiet van 1 kern voor **ServicePackageA**op te geven. Omdat het CPU-verzoek ( `CpuCores` kenmerk) niet is opgegeven, wordt het beschouwd als 0. `MemoryInMBLimit` het kenmerk wordt gebruikt om geheugen limieten van 1024 MB op te geven voor CodeA1 en CodeA2 en omdat er geen aanvragen ( `MemoryInMB` kenmerk) zijn opgegeven, wordt ervan uitgegaan dat ze 0 zijn. De geheugen aanvraag en limiet voor **ServicePackageA** worden daarom berekend als respectievelijk 0 en 2048. Omdat de CPU-en geheugen aanvragen voor **ServicePackageA** 0 zijn, is er geen belasting voor CRM om te kunnen nadenken voor de `servicefabric:/_CpuCores` en `servicefabric:/_MemoryInMB` metrische gegevens. Daarom kan vanuit een resource governance-perspectief **ServicePackageA** op elk knoop punt worden geplaatst, **ongeacht de resterende capaciteit**. Net als bij voor beeld 1, op het knoop punt, is CodeA1 beperkt tot twee derde van een kern geheugen van 1024 MB en is CodeA2 beperkt tot een van de kernen en 1024 MB aan geheugen.
+In dit voor beeld worden `CpuCoresLimit` `MemoryInMBLimit` -en-kenmerken gebruikt die alleen beschikbaar zijn in SF-versies 7,2 en hoger. Het kenmerk CpuCoresLimit wordt gebruikt om een CPU-limiet van 1 kern voor **ServicePackageA** op te geven. Omdat het CPU-verzoek ( `CpuCores` kenmerk) niet is opgegeven, wordt het beschouwd als 0. `MemoryInMBLimit` het kenmerk wordt gebruikt om geheugen limieten van 1024 MB op te geven voor CodeA1 en CodeA2 en omdat er geen aanvragen ( `MemoryInMB` kenmerk) zijn opgegeven, wordt ervan uitgegaan dat ze 0 zijn. De geheugen aanvraag en limiet voor **ServicePackageA** worden daarom berekend als respectievelijk 0 en 2048. Omdat de CPU-en geheugen aanvragen voor **ServicePackageA** 0 zijn, is er geen belasting voor CRM om te kunnen nadenken voor de `servicefabric:/_CpuCores` en `servicefabric:/_MemoryInMB` metrische gegevens. Daarom kan vanuit een resource governance-perspectief **ServicePackageA** op elk knoop punt worden geplaatst, **ongeacht de resterende capaciteit**. Net als bij voor beeld 1, op het knoop punt, is CodeA1 beperkt tot twee derde van een kern geheugen van 1024 MB en is CodeA2 beperkt tot een van de kernen en 1024 MB aan geheugen.
 
 **Voor beeld 3: RequestsAndLimits-specificatie**
 ```xml
@@ -249,7 +249,7 @@ Bij het Toep assen van resource governance op uw Service Fabric Services zorgt u
 * Knoop punten die eindigen met een slechte status
 * Niet reageren Service Fabric-Api's voor cluster beheer
 
-Om te voor komen dat deze situaties zich voordoen, kunt u met Service Fabric *de resource limieten afdwingen voor alle service Fabric gebruikers services die op het knoop punt worden uitgevoerd* (zowel onder-als onbepaald) om te garanderen dat gebruikers services nooit meer gebruiken dan de opgegeven hoeveelheid resources. Dit wordt bereikt door de waarde voor de EnforceUserServiceMetricCapacities-configuratie in de sectie PlacementAndLoadBalancing van de ClusterManifest in te stellen op True. Deze instelling is standaard uitgeschakeld.
+Om te voor komen dat deze situaties zich voordoen, kunt u met Service Fabric *de resource limieten afdwingen voor alle service Fabric gebruikers services die op het knoop punt worden uitgevoerd* (zowel onder-als onbepaald) om te garanderen dat gebruikers services nooit meer gebruiken dan de opgegeven hoeveelheid resources. Dit wordt bereikt door de waarde voor de EnforceUserServiceMetricCapacities-configuratie in de sectie PlacementAndLoadBalancing van de ClusterManifest in te stellen op True. Deze instelling is standaard uitgeschakeld.
 
 ```xml
 <SectionName="PlacementAndLoadBalancing">
@@ -260,7 +260,7 @@ Om te voor komen dat deze situaties zich voordoen, kunt u met Service Fabric *d
 Aanvullende opmerkingen:
 
 * Het afdwingen van de resource limiet is alleen van toepassing op de `servicefabric:/_CpuCores` `servicefabric:/_MemoryInMB` metrische gegevens en de resource.
-* Het afdwingen van resources werkt alleen als de capaciteit van knoop punten voor de metrische gegevens van de resource beschikbaar is voor Service Fabric, hetzij via een mechanisme voor automatische detectie, hetzij via gebruikers hand matig de knooppunt capaciteit opgeven (zoals wordt uitgelegd in de sectie [cluster installatie voor het inschakelen van resource governance](service-fabric-resource-governance.md#cluster-setup-for-enabling-resource-governance) ).Als de knooppunt capaciteit niet is geconfigureerd, kan de functie voor het afdwingen van resources niet worden gebruikt omdat Service Fabric niet weet hoeveel bronnen er moeten worden gereserveerd voor gebruikers services.Service Fabric geeft een status waarschuwing als ' EnforceUserServiceMetricCapacities ' waar ' is, maar de knooppunt capaciteit niet is geconfigureerd.
+* Het afdwingen van resources werkt alleen als de capaciteit van knoop punten voor de metrische gegevens van de resource beschikbaar is voor Service Fabric, hetzij via een mechanisme voor automatische detectie, hetzij via gebruikers hand matig de knooppunt capaciteit opgeven (zoals wordt uitgelegd in de sectie [cluster installatie voor het inschakelen van resource governance](service-fabric-resource-governance.md#cluster-setup-for-enabling-resource-governance) ). Als de knooppunt capaciteit niet is geconfigureerd, kan de functie voor het afdwingen van resources niet worden gebruikt omdat Service Fabric niet weet hoeveel bronnen er moeten worden gereserveerd voor gebruikers services. Service Fabric geeft een status waarschuwing als ' EnforceUserServiceMetricCapacities ' waar ' is, maar de knooppunt capaciteit niet is geconfigureerd.
 
 ## <a name="other-resources-for-containers"></a>Andere resources voor containers
 

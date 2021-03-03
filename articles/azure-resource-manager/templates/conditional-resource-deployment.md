@@ -2,79 +2,143 @@
 title: Voorwaardelijke implementatie met sjablonen
 description: Hierin wordt beschreven hoe u een resource voorwaardelijk kunt implementeren in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
-ms.date: 12/17/2020
-ms.openlocfilehash: 5650f7fb9f1483f2dc7059607732ecc68cbb7b9d
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.date: 03/02/2021
+ms.openlocfilehash: 409d258d7dfe3ed186e5cf97cc0dbe6dc149b849
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934778"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101741171"
 ---
 # <a name="conditional-deployment-in-arm-templates"></a>Voorwaardelijke implementatie in ARM-sjablonen
 
-Soms moet u optioneel een resource implementeren in een Azure Resource Manager sjabloon (ARM-sjabloon). Gebruik het- `condition` element om op te geven of de resource is geïmplementeerd. De waarde voor dit element wordt omgezet in True of false. Als de waarde True is, wordt de resource gemaakt. Als de waarde False is, wordt de resource niet gemaakt. De waarde kan alleen worden toegepast op de hele resource.
+Soms moet u optioneel een resource implementeren in een Azure Resource Manager sjabloon (ARM-sjabloon) of Bicep-bestand. Gebruik voor JSON-sjablonen het `condition` element om op te geven of de resource is geïmplementeerd. Gebruik voor Bicep het `if` sleutel woord om op te geven of de resource is geïmplementeerd. De waarde voor de voor waarde wordt omgezet in True of false. Als de waarde True is, wordt de resource gemaakt. Als de waarde False is, wordt de resource niet gemaakt. De waarde kan alleen worden toegepast op de hele resource.
 
 > [!NOTE]
 > Voorwaardelijke implementatie kan niet worden gecascaded op [onderliggende resources](child-resource-name-type.md). Als u een resource en de onderliggende resources voorwaardelijk wilt implementeren, moet u dezelfde voor waarde Toep assen op elk resource type.
 
-## <a name="new-or-existing-resource"></a>Nieuwe of bestaande resource
+## <a name="deploy-condition"></a>Voor waarde implementeren
 
-U kunt voorwaardelijke implementatie gebruiken om een nieuwe resource te maken of een bestaande te gebruiken. In het volgende voor beeld ziet u hoe u kunt gebruiken `condition` om een nieuw opslag account te implementeren of een bestaand opslag account te gebruiken.
+U kunt een parameter waarde door geven die aangeeft of een resource is geïmplementeerd. In het volgende voor beeld wordt een DNS-zone geïmplementeerd.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 {
-  "condition": "[equals(parameters('newOrExisting'),'new')]",
-  "type": "Microsoft.Storage/storageAccounts",
-  "apiVersion": "2017-06-01",
-  "name": "[variables('storageAccountName')]",
-  "location": "[parameters('location')]",
-  "sku": {
-    "name": "[variables('storageAccountType')]"
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "deployZone": {
+      "type": "bool"
+    }
   },
-  "kind": "Storage",
-  "properties": {}
+  "functions": [],
+  "resources": [
+    {
+      "condition": "[parameters('deployZone')]",
+      "type": "Microsoft.Network/dnsZones",
+      "apiVersion": "2018-05-01",
+      "name": "myZone",
+      "location": "global"
+    }
+  ]
 }
 ```
 
-Wanneer de para meter `newOrExisting` is ingesteld op **Nieuw**, resulteert de voor waarde in waar. Het opslag account wordt geïmplementeerd. Wanneer echter `newOrExisting` is ingesteld op **bestaand**, wordt de voor waarde geëvalueerd als onwaar en wordt het opslag account niet geïmplementeerd.
+# <a name="bicep"></a>[Bicep](#tab/bicep)
 
-`condition`Zie [VM met een nieuwe of bestaande Virtual Network, opslag en openbaar IP-adres](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-new-or-existing-conditions)voor een complete voorbeeld sjabloon die gebruikmaakt van het-element.
+```bicep
+param deployZone bool
 
-## <a name="allow-condition"></a>Voor waarde toestaan
+resource dnsZone 'Microsoft.Network/dnszones@2018-05-01' = if (deployZone) {
+  name: 'myZone'
+  location: 'global'
+}
+```
 
-U kunt een parameter waarde door geven die aangeeft of een voor waarde is toegestaan. In het volgende voor beeld wordt een SQL-Server geïmplementeerd en worden optioneel Azure Ip's toegestaan.
+---
+
+Zie [logische Azure SQL-Server](https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-logical-server)voor een complexere voor beeld.
+
+## <a name="new-or-existing-resource"></a>Nieuwe of bestaande resource
+
+U kunt voorwaardelijke implementatie gebruiken om een nieuwe resource te maken of een bestaande te gebruiken. In het volgende voor beeld ziet u hoe u een nieuw opslag account implementeert of een bestaand opslag account gebruikt.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 {
-  "type": "Microsoft.Sql/servers",
-  "apiVersion": "2015-05-01-preview",
-  "name": "[parameters('serverName')]",
-  "location": "[parameters('location')]",
-  "properties": {
-    "administratorLogin": "[parameters('administratorLogin')]",
-    "administratorLoginPassword": "[parameters('administratorLoginPassword')]",
-    "version": "12.0"
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageAccountName": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]"
+    },
+    "newOrExisting": {
+      "type": "string",
+      "defaultValue": "new",
+      "allowedValues": [
+        "new",
+        "existing"
+      ]
+    }
   },
+  "functions": [],
   "resources": [
     {
-      "condition": "[parameters('allowAzureIPs')]",
-      "type": "firewallRules",
-      "apiVersion": "2015-05-01-preview",
-      "name": "AllowAllWindowsAzureIps",
+      "condition": "[equals(parameters('newOrExisting'), 'new')]",
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2019-06-01",
+      "name": "[parameters('storageAccountName')]",
       "location": "[parameters('location')]",
-      "dependsOn": [
-        "[resourceId('Microsoft.Sql/servers/', parameters('serverName'))]"
-      ],
+      "sku": {
+        "name": "Standard_LRS",
+        "tier": "Standard"
+      },
+      "kind": "StorageV2",
       "properties": {
-        "endIpAddress": "0.0.0.0",
-        "startIpAddress": "0.0.0.0"
+        "accessTier": "Hot"
       }
     }
   ]
 }
 ```
 
-Zie voor de volledige sjabloon de [logische Azure SQL-Server](https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-logical-server).
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param storageAccountName string
+param location string = resourceGroup().location
+
+@allowed([
+  'new'
+  'existing'
+])
+param newOrExisting string = 'new'
+
+resource sa 'Microsoft.Storage/storageAccounts@2019-06-01' = if (newOrExisting == 'new') {
+  name: storageAccountName
+  location: location
+  sku: {
+    name: 'Standard_LRS'
+    tier: 'Standard'
+  }
+  kind: 'StorageV2'
+  properties: {
+    accessTier: 'Hot'
+  }
+}
+```
+
+---
+
+Wanneer de para meter `newOrExisting` is ingesteld op **Nieuw**, resulteert de voor waarde in waar. Het opslag account wordt geïmplementeerd. Wanneer echter `newOrExisting` is ingesteld op **bestaand**, wordt de voor waarde geëvalueerd als onwaar en wordt het opslag account niet geïmplementeerd.
+
+`condition`Zie [VM met een nieuwe of bestaande Virtual Network, opslag en openbaar IP-adres](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-new-or-existing-conditions)voor een complete voorbeeld sjabloon die gebruikmaakt van het-element.
 
 ## <a name="runtime-functions"></a>Runtime-functies
 

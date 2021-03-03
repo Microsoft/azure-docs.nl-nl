@@ -1,26 +1,26 @@
 ---
-title: Begrippen begrijpen van de opslag plaats voor Apparaatbeheer | Microsoft Docs
-description: Als oplossings ontwikkelaar of IT-Professional leert u meer over de basis concepten van de opslag plaats van het model van het apparaat.
+title: Inzicht in de concepten van de opslag plaats voor apparaat modellen | Microsoft Docs
+description: Als oplossings ontwikkelaar of IT-Professional leert u meer over de basis concepten van de opslag plaats voor apparaat modellen.
 author: rido-min
 ms.author: rmpablos
 ms.date: 11/17/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: b567efe2541bb33c905def73bb78398799b4ed69
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: 1a58a2f69b9c6c6742c4b9daf32dd0e13341aac1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920539"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101742140"
 ---
-# <a name="device-model-repository"></a>Opslag plaats voor device model
+# <a name="device-models-repository"></a>Opslag plaats voor apparaat modellen
 
-Met de device model-opslag plaats (DMR) kunnen apparaats modellen IoT Plug en Play-apparaten beheren en delen. De modellen van het apparaat zijn JSON-bestanden die zijn gedefinieerd met de [Digital Apparaatdubbels Modeling Language (DTDL)](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md).
+Met de Device models-opslag plaats (DMR) kunnen apparaats bouwers IoT Plug en Play-apparaten beheren en delen. De modellen van het apparaat zijn JSON-bestanden die zijn gedefinieerd met de [Digital Apparaatdubbels Modeling Language (DTDL)](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md).
 
 De DMR definieert een patroon voor het opslaan van DTDL-interfaces in een mappen structuur op basis van de dubbele model-id van het apparaat (DTMI). U kunt een interface vinden in de DMR door de DTMI te converteren naar een relatief pad. Bijvoorbeeld, de `dtmi:com:example:Thermostat;1` DTMI vertaalt naar `/dtmi/com/example/thermostat-1.json` .
 
-## <a name="public-device-model-repository"></a>Model opslagplaats voor open bare apparaten
+## <a name="public-device-models-repository"></a>Opslag plaats voor modellen voor open bare apparaten
 
 Micro soft host een open bare DMR met de volgende kenmerken:
 
@@ -28,7 +28,7 @@ Micro soft host een open bare DMR met de volgende kenmerken:
 - Onveranderbaarheid.  Nadat deze is gepubliceerd, kan een interface niet worden bijgewerkt.
 - Hyper-scale. Micro soft biedt de vereiste infra structuur voor het maken van een veilig, schaalbaar eind punt waar u apparaten modellen kunt publiceren en gebruiken.
 
-## <a name="custom-device-model-repository"></a>Aangepaste opslag plaats voor model apparaten
+## <a name="custom-device-models-repository"></a>Opslag plaats voor aangepaste apparaat modellen
 
 Gebruik hetzelfde DMR-patroon voor het maken van een aangepaste DMR in een opslag medium, zoals het lokale bestands systeem of aangepaste HTTP-webservers. U kunt de modellen van de aangepaste DMR op dezelfde manier ophalen als uit de open bare DMR door de basis-URL te wijzigen die wordt gebruikt voor toegang tot de DMR.
 
@@ -37,9 +37,9 @@ Gebruik hetzelfde DMR-patroon voor het maken van een aangepaste DMR in een opsla
 
 ## <a name="public-models"></a>Open bare modellen
 
-De modellen voor open bare apparaten die zijn opgeslagen in de model opslagplaats, kunnen iedereen gebruiken en integreren in hun toepassingen. Modellen voor open bare apparaten bieden een open eco-systeem voor apparaten en oplossings ontwikkelaars om hun IoT Plug en Play-apparaatklassen te delen en opnieuw te gebruiken.
+De modellen voor open bare apparaten die zijn opgeslagen in de bibliotheek modellen, zijn beschikbaar voor iedereen die ze in hun toepassingen kan gebruiken en integreren. Modellen voor open bare apparaten bieden een open eco-systeem voor apparaten en oplossings ontwikkelaars om hun IoT Plug en Play-apparaatklassen te delen en opnieuw te gebruiken.
 
-Raadpleeg de sectie [een model publiceren](#publish-a-model) voor instructies over het publiceren van een model in de model opslagplaats om het openbaar te maken.
+Raadpleeg de sectie [een model publiceren](#publish-a-model) voor instructies over het publiceren van een model in de opslag plaats modellen om het openbaar te maken.
 
 Gebruikers kunnen open bare interfaces zoeken, doorzoeken en weer geven vanuit de officiële [github-opslag plaats](https://github.com/Azure/iot-plugandplay-models).
 

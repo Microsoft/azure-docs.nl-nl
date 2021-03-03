@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/04/2021
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 8fc3ad3e1597d9b38bd095875c8a6f11260e8711
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: f64bb0dd0841e89d05a4399db4373a9eaaec48a2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100515071"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101751061"
 ---
 U kunt profielen voor Azure VPN-clients (Windows 10) implementeren met behulp van Microsoft Intune. Dit artikel helpt u bij het maken van een intune-profiel met aangepaste instellingen.
 
@@ -30,7 +30,7 @@ In de volgende stappen gebruiken we een voor beeld-XML voor een aangepast OMA-UR
 * Automatisch verbinding maken op
 * Detectie van vertrouwd netwerk is ingeschakeld.
 
-Zie het artikel over [VPNV2 CSP](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp) voor andere ondersteunde opties.
+Zie het artikel over [VPNV2 CSP](/windows/client-management/mdm/vpnv2-csp) voor andere ondersteunde opties.
 
 1. Down load het VPN-profiel vanuit het Azure Portal en pak het *azurevpnconfig.xml* bestand uit in het pakket.
 1. Kopieer en plak de onderstaande tekst in een nieuw tekst editor-bestand.
@@ -82,4 +82,4 @@ In deze sectie maakt u een Microsoft Intune profiel met aangepaste instellingen.
 1. Selecteer op de pagina **controleren en maken** de optie **maken**.
 
     :::image type="content" source="./media/vpn-gateway-virtual-wan-vpn-profile-intune/create-profile.png" alt-text="Profiel maken":::
-1. Uw aangepaste profiel wordt nu gemaakt. Zie [gebruikers-en apparaatprofielen toewijzen](https://docs.microsoft.com/mem/intune/configuration/device-profile-assign)voor de Microsoft intune stappen voor het implementeren van dit profiel.
+1. Uw aangepaste profiel wordt nu gemaakt. Zie [gebruikers-en apparaatprofielen toewijzen](/mem/intune/configuration/device-profile-assign)voor de Microsoft intune stappen voor het implementeren van dit profiel.

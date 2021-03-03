@@ -6,24 +6,24 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/04/2020
-ms.openlocfilehash: 485c2cc6c95f5922025fe887f7c25131e849a01d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: ef8be3d1fd815362971d5ae2beb27edf47766c94
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612783"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723160"
 ---
 # <a name="overview-of-log-analytics-in-azure-monitor"></a>Overzicht van Log Analytics in Azure Monitor
 Log Analytics is een hulp programma in de Azure Portal dat wordt gebruikt om logboek query's met gegevens in Azure Monitor logboeken te bewerken en uit te voeren. U kunt een eenvoudige query schrijven die een set records retourneert en vervolgens functies van Log Analytics gebruiken om ze te sorteren, te filteren en te analyseren. U kunt ook een meer geavanceerde query schrijven om statistische analyses uit te voeren en de resultaten in een grafiek te visualiseren om een bepaalde trend te identificeren. Of u nu interactief met de resultaten van uw query's werkt of ze gebruikt met andere Azure Monitor functies, zoals waarschuwingen voor logboek query's of werkmappen, Log Analytics is het hulp programma dat u wilt gebruiken om ze te schrijven en te testen. 
 
 
 > [!TIP]
-> In dit artikel vindt u een beschrijving van Log Analytics en elk van de bijbehorende functies. Als u direct naar een zelf studie wilt gaan, raadpleegt u [log Analytics zelf studie](../log-query/log-analytics-tutorial.md).
+> In dit artikel vindt u een beschrijving van Log Analytics en elk van de bijbehorende functies. Als u direct naar een zelf studie wilt gaan, raadpleegt u [log Analytics zelf studie](./log-analytics-tutorial.md).
 
 
 
 ## <a name="starting-log-analytics"></a>Log Analytics starten
-Start Log Analytics vanuit de **Logboeken** in het **Azure monitor** menu van de Azure Portal. U ziet deze optie ook in het menu voor de meeste Azure-resources. Ongeacht waar u het start vanaf, is dit hetzelfde Log Analytics hulp programma. Het menu dat u gebruikt om Log Analytics te starten, bepaalt welke gegevens er wel beschikbaar zijn. Als u het opent vanuit het menu **Azure monitor** of het menu **log Analytics werk ruimten** , hebt u toegang tot alle records in een werk ruimte. Als u **Logboeken** van een ander type resource selecteert, zijn uw gegevens beperkt tot logboek gegevens voor die bron. Zie de [logboek query bereik en het tijds bereik in Azure Monitor Log Analytics](../log-query/scope.md) voor meer informatie.
+Start Log Analytics vanuit de **Logboeken** in het **Azure monitor** menu van de Azure Portal. U ziet deze optie ook in het menu voor de meeste Azure-resources. Ongeacht waar u het start vanaf, is dit hetzelfde Log Analytics hulp programma. Het menu dat u gebruikt om Log Analytics te starten, bepaalt welke gegevens er wel beschikbaar zijn. Als u het opent vanuit het menu **Azure monitor** of het menu **log Analytics werk ruimten** , hebt u toegang tot alle records in een werk ruimte. Als u **Logboeken** van een ander type resource selecteert, zijn uw gegevens beperkt tot logboek gegevens voor die bron. Zie de [logboek query bereik en het tijds bereik in Azure Monitor Log Analytics](./scope.md) voor meer informatie.
 
 [![Log Analytics starten](media/log-analytics-overview/start-log-analytics.png)](media/log-analytics-overview/start-log-analytics.png#lightbox)
 
@@ -39,9 +39,9 @@ Besturings elementen voor het werken met de query in het query venster.
 
 | Optie | Beschrijving |
 |:---|:---|
-| Bereik | Hiermee geeft u het bereik van de gegevens op die worden gebruikt voor de query. Dit kunnen alle gegevens in een Log Analytics werk ruimte of gegevens voor een bepaalde resource in meerdere werk ruimten zijn. Zie [query bereik](../log-query/scope.md). |
+| Bereik | Hiermee geeft u het bereik van de gegevens op die worden gebruikt voor de query. Dit kunnen alle gegevens in een Log Analytics werk ruimte of gegevens voor een bepaalde resource in meerdere werk ruimten zijn. Zie [query bereik](./scope.md). |
 | Knop uitvoeren | Klik hierop om de geselecteerde query uit te voeren in het query venster. U kunt ook op SHIFT + ENTER drukken om een query uit te voeren. |
-| Tijdkiezer | Selecteer het tijds bereik voor de gegevens die beschikbaar zijn voor de query. Dit wordt genegeerd als u in de query een tijd filter opneemt. Zie de [logboek query bereik en het tijds bereik in Azure Monitor Log Analytics](../log-query/scope.md). |
+| Tijdkiezer | Selecteer het tijds bereik voor de gegevens die beschikbaar zijn voor de query. Dit wordt genegeerd als u in de query een tijd filter opneemt. Zie de [logboek query bereik en het tijds bereik in Azure Monitor Log Analytics](./scope.md). |
 | De knop Opslaan | Sla de query op in de query Verkenner voor de werk ruimte. |
  knop Kopiëren | Een koppeling naar de query, de query tekst of de query resultaten naar het klem bord kopiëren. |
 | Knop nieuwe waarschuwings regel | Maak een nieuw tabblad met een lege query. |
@@ -91,5 +91,5 @@ Hiermee worden de resultaten weer gegeven als een van meerdere beschik bare graf
 Als u al bekend bent met de Web-UI van Azure Data Explorer, moet Log Analytics vertrouwd zijn. Dat komt doordat het is gebouwd op Azure Data Explorer en gebruikmaakt van dezelfde Kusto query language (KQL). Log Analytics voegt functies toe die specifiek zijn voor Azure Monitor, zoals filteren op tijds bereik, en de mogelijkheid om een waarschuwings regel te maken op basis van een query. Beide hulpprogram ma's bevatten een Explorer waarmee u de structuur van beschik bare tabellen kunt scannen, maar de Azure Data Explorer-webinterface werkt voornamelijk samen met tabellen in azure Data Explorer-data bases terwijl Log Analytics werkt met tabellen in een Log Analytics-werk ruimte. 
 
 ## <a name="next-steps"></a>Volgende stappen
-- Door loop een [zelf studie over het gebruik van log Analytics in het Azure Portal](../log-query/log-analytics-tutorial.md).
-- Door loop een [zelf studie over het schrijven van query's](../log-query/get-started-queries.md).
+- Door loop een [zelf studie over het gebruik van log Analytics in het Azure Portal](./log-analytics-tutorial.md).
+- Door loop een [zelf studie over het schrijven van query's](./get-started-queries.md).

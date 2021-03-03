@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: hafowler
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92a0cc93b4d159a4ba87c1cadc2d0dedc0a28b2d
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 0aea468c64f70bd7f35dd25206faa9ea33459999
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98683807"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101688906"
 ---
 # <a name="manage-device-identities-using-the-azure-portal"></a>Apparaat-id's beheren in Azure Portal
 
@@ -38,7 +38,7 @@ Op de pagina **alle apparaten** kunt u het volgende doen:
 
 U kunt de portal voor apparaten openen met de volgende stappen:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Blader naar **Azure Active Directory**  >  **apparaten**.
 
 ## <a name="manage-devices"></a>Apparaten beheren
@@ -139,7 +139,7 @@ De functie voor beeld filtering inschakelen in de weer gave **alle apparaten** :
 
 ![Preview-functionaliteit voor filteren inschakelen](./media/device-management-azure-portal/device-filter-preview-enable.png)
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Blader naar **Azure Active Directory**  >  **apparaten**.
 1. Selecteer de banner waarin wordt **vermeld, probeer de nieuwe verbeteringen voor het filteren van apparaten uit. Klik om de preview-versie in te scha kelen.**
 
@@ -161,7 +161,7 @@ U moet een van de volgende rollen zijn toegewezen om Apparaatinstellingen weer t
 - **Gebruikers kunnen apparaten toevoegen aan Azure AD** : met deze instelling kunt u de gebruikers selecteren die hun apparaten als aan Azure AD gekoppelde apparaten kunnen registreren. De standaardwaarde is **alle**.
 
 > [!NOTE]
-> **Gebruikers mogen apparaten toevoegen aan de Azure AD** -instelling is alleen van toepassing op Azure AD-deelname op Windows 10.
+> **Gebruikers mogen apparaten toevoegen aan de Azure AD** -instelling is alleen van toepassing op Azure AD-deelname op Windows 10. Deze instelling is niet van toepassing op hybride Azure AD gekoppelde apparaten, [Azure AD gekoppelde virtuele machines in azure](./howto-vm-sign-in-azure-ad-windows.md#enabling-azure-ad-login-in-for-windows-vm-in-azure) en aan Azure AD gekoppelde apparaten met behulp van de [zelf-implementatie modus van Windows auto pilot](/mem/autopilot/self-deploying) , omdat deze methoden in een context zonder gebruikers werken.
 
 - **Aanvullende lokale beheerders op aan Azure AD gekoppelde apparaten** : u kunt de gebruikers selecteren die lokale beheerders rechten op een apparaat krijgen. Deze gebruikers worden toegevoegd aan de rol van het *apparaat Administrators* in azure AD. Globale beheerders in azure AD en eigen aren van apparaten krijgen standaard lokale beheerders rechten. Deze optie is een Premium Edition-mogelijkheid die beschikbaar is via producten als Azure AD Premium of de Enter prise Mobility Suite (EMS).
 - **Gebruikers kunnen hun apparaten registreren bij Azure AD** . u moet deze instelling configureren zodat Windows 10 Personal-, Ios-, Android-en macOS-apparaten kunnen worden geregistreerd bij Azure AD. Als u **geen** selecteert, mogen apparaten zich niet registreren bij Azure AD. Inschrijving met Microsoft Intune of het beheer van mobiele apparaten (MDM) voor Microsoft 365 vereist registratie. Als u een van deze services hebt geconfigureerd, is **Alles** **geselecteerd en is er geen beschikbaar** .

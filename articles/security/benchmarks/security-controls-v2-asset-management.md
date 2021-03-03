@@ -4,19 +4,21 @@ description: Asset Management van Azure Security Bench Mark v2
 author: msmbaldwin
 ms.service: security
 ms.topic: conceptual
-ms.date: 09/20/2020
+ms.date: 02/22/2021
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: f0c2fe78c32357798e1f9acb43f5867df9148b38
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: 32b0a7e31fc0d595eacc2bf5257f41e4ce35566b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97368899"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101735808"
 ---
 # <a name="security-control-v2-asset-management"></a>Beveiligings controle v2: beheer van middelen
 
 Asset Management bestrijkt de controles om de zicht baarheid van de beveiliging en het beheer van Azure-resources te garanderen. Dit omvat aanbevelingen voor machtigingen voor beveiligings personeel, beveiliging van de inventaris en het beheren van goed keuringen voor services en resources (inventaris, bijhouden en corrigeren).
+
+Voor een overzicht van de toepasselijke ingebouwde Azure Policy raadpleegt u [de details van het ingebouwde initiatief Azure Security Bench Mark compliance compliantie: netwerk beveiliging](../../governance/policy/samples/azure-security-benchmark#asset-management)
 
 ## <a name="am-1-ensure-security-team-has-visibility-into-risks-for-assets"></a>AM-1: Zorg ervoor dat het beveiligingsteam inzicht heeft in risico's voor assets
 
@@ -24,13 +26,13 @@ Asset Management bestrijkt de controles om de zicht baarheid van de beveiliging 
 |--|--|--|--|
 | AM-1 | 1,1, 1,2 | CM-8, PM-5 |
 
-Zorg ervoor dat aan beveiligings teams machtigingen voor beveiligings lezers worden verleend in uw Azure-Tenant en-abonnementen zodat ze kunnen controleren op beveiligings Risico's met behulp van Azure Security Center. 
+Zorg ervoor dat aan beveiligings teams machtigingen voor beveiligings lezers worden verleend in uw Azure-Tenant en-abonnementen zodat ze kunnen controleren op beveiligings Risico's met behulp van Azure Security Center.
 
-Afhankelijk van de manier waarop de verantwoordelijkheden van het beveiligingsteam zijn gestructureerd, kan de controle op beveiligingsrisico's de verantwoordelijkheid zijn van een centraal beveiligingsteam of een lokaal team. Om die reden moeten beveiligingsinzichten en -risico's altijd centraal worden verzameld in een organisatie. 
+Afhankelijk van de manier waarop de verantwoordelijkheden van het beveiligings team zijn gestructureerd, kan bewaking voor beveiligings Risico's de verantwoordelijkheid zijn van een centraal beveiligings team of een lokaal team. Om die reden moeten beveiligingsinzichten en -risico's altijd centraal worden verzameld in een organisatie. 
 
 De machtiging Beveiligingslezer kan breed worden toegepast op een hele tenant (hoofdbeheergroep) of in het bereik van beheergroepen of specifieke abonnementen. 
 
-Opmerking: Er zijn mogelijk extra machtigingen vereist om inzicht te krijgen in workloads en services. 
+Opmerking: Er zijn mogelijk extra machtigingen vereist om inzicht te krijgen in workloads en services.
 
 - [Overzicht van rol Beveiligingslezer](../../role-based-access-control/built-in-roles.md#security-reader)
 
@@ -52,9 +54,9 @@ Opmerking: Er zijn mogelijk extra machtigingen vereist om inzicht te krijgen in 
 
 Zorg ervoor dat beveiligings teams toegang hebben tot een voortdurend bijgewerkte inventaris van assets in Azure. Beveiligingsteams hebben deze inventaris vaak nodig om de mogelijke blootstelling van hun organisatie aan toekomstige risico's te evalueren, en willen deze inventaris gebruiken als invoer waarmee ze de beveiliging constant kunnen verbeteren. 
 
-Met de functie voor Azure Security Center Inventory en Azure resource Graph kunt u alle resources in uw abonnementen opvragen en detecteren, inclusief Azure-Services,-toepassingen en-netwerk bronnen.  
+Met de functie voor Azure Security Center Inventory en Azure resource Graph kunt u alle resources in uw abonnementen opvragen en detecteren, inclusief Azure-Services,-toepassingen en-netwerk bronnen.
 
-Organiseer op logische wijze assets op basis van de taxonomie van uw organisatie met behulp van tags en andere metagegevens in Azure (Naam, Beschrijving en Categorie).  
+Organiseer op logische wijze activa op basis van de taxonomie van uw organisatie met behulp van tags en andere meta gegevens in azure (naam, beschrijving en categorie).
 
 - [Query's maken met Azure Resource Graph Explorer](../../governance/resource-graph/first-query-portal.md)
 
@@ -76,7 +78,7 @@ Organiseer op logische wijze assets op basis van de taxonomie van uw organisatie
 |--|--|--|--|
 | AM-3 | 2,3, 2,4 | CM-7, CM-8 |
 
-Gebruik Azure Policy om te controleren welke services gebruikers in uw omgeving kunnen inrichten en beperken. Gebruik Azure Resource Graph om resources binnen hun abonnementen op te vragen en te detecteren.  U kunt Azure Monitor ook gebruiken om regels te maken voor het activeren van waarschuwingen wanneer een niet-goedgekeurde service wordt gedetecteerd.
+Gebruik Azure Policy om te controleren welke services gebruikers in uw omgeving kunnen inrichten en beperken. Gebruik Azure Resource Graph om resources binnen hun abonnementen op te vragen en te detecteren. U kunt Azure Monitor ook gebruiken om regels te maken voor het activeren van waarschuwingen wanneer een niet-goedgekeurde service wordt gedetecteerd.
 
 - [Azure Policy configureren en beheren](../../governance/policy/tutorials/create-and-manage.md)
 
@@ -90,7 +92,7 @@ Gebruik Azure Policy om te controleren welke services gebruikers in uw omgeving 
 
 - [Beheer van beveiligings naleving](/azure/cloud-adoption-framework/organize/cloud-security-compliance-management)
 
-- [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)  
+- [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)
 
 ## <a name="am-4-ensure-security-of-asset-lifecycle-management"></a>AM-4: Beveiliging van levenscyclusbeheer van assets garanderen
 
@@ -110,7 +112,7 @@ Verwijder Azure-resources wanneer deze ze niet meer nodig zijn.
 
 - [Infrastructuur- en eindpuntbeveiliging](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
 
-- [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)  
+- [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)
 
 - [Beheer van beveiligings naleving](/azure/cloud-adoption-framework/organize/cloud-security-compliance-management)
 
@@ -128,7 +130,7 @@ Gebruik voorwaardelijke toegang van Azure AD om de interactie van gebruikers met
 
 **Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
-- [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)  
+- [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)
 
 - [Infrastructuur- en eindpuntbeveiliging](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
 
@@ -144,7 +146,7 @@ Gebruik Azure Security Center (ASC) adaptieve toepassings besturings elementen v
 
 Gebruik Azure Automation Wijzigingen bijhouden en inventaris om het verzamelen van inventaris gegevens van uw Windows-en Linux-Vm's te automatiseren. De software naam, versie, uitgever en tijd van vernieuwen zijn beschikbaar via de Azure Portal. Als u de software-installatie datum en andere informatie wilt ophalen, schakelt u Diagnostische gegevens op gast niveau in en stuurt u de Windows-gebeurtenis logboeken naar Log Analytics werk ruimte.
 
-Afhankelijk van het type scripts kunt u specifieke configuraties van het besturings systeem of bronnen van derden gebruiken om de mogelijkheid van gebruikers om scripts uit te voeren in azure Compute-resources te beperken. 
+Afhankelijk van het type scripts kunt u specifieke configuraties van het besturings systeem of bronnen van derden gebruiken om de mogelijkheid van gebruikers om scripts uit te voeren in azure Compute-resources te beperken.
 
 U kunt ook een oplossing van derden gebruiken om niet-goedgekeurde software te detecteren en te identificeren.
 
@@ -160,6 +162,6 @@ U kunt ook een oplossing van derden gebruiken om niet-goedgekeurde software te d
 
 - [Infrastructuur- en eindpuntbeveiliging](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
 
-- [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)  
+- [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)
 
 - [Beheer van beveiligings naleving](/azure/cloud-adoption-framework/organize/cloud-security-compliance-management)

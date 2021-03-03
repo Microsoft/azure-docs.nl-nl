@@ -176,7 +176,7 @@
     - name: Rapportage
       items:
         - name: Activiteit verificatie methoden
-          href: howto-authentication-methods-usage-insights.md
+          href: howto-authentication-methods-activity.md
         - name: Rapportage van selfservice voor wachtwoordherstel
           href: howto-sspr-reporting.md
         - name: MFA-rapporten

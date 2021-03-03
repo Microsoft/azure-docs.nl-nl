@@ -7,12 +7,12 @@ ms.date: 05/11/2018
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: 37099b551e004ebfc702dce37c2a1499aa46ff10
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 7c91cd8cbb1a927a88f05fcea603c6a4ed6e1c14
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94950719"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719029"
 ---
 # <a name="how-to-deprovision-devices-that-were-previously-auto-provisioned"></a>De inrichting van apparaten die eerder automatisch zijn ingericht, ongedaan maken 
 
@@ -23,7 +23,7 @@ Over het algemeen is het ongedaan maken van de inrichting van een apparaat twee 
 1. De registratie van het apparaat bij de inrichtings service ongedaan maken om de toekomst automatisch inrichten te voor komen. Afhankelijk van of u de toegang tijdelijk of permanent wilt intrekken, wilt u mogelijk een inschrijvings vermelding uitschakelen of verwijderen. Voor apparaten die X. 509-Attestation gebruiken, wilt u mogelijk een vermelding in de hiërarchie van uw bestaande registratie groepen uitschakelen of verwijderen.  
  
    - Zie [een apparaat uitschrijven van Azure IOT hub Device Provisioning Service](how-to-revoke-device-access-portal.md)voor meer informatie over het ongedaan maken van de registratie van een apparaat.
-   - Zie [inschrijven van apparaten met Service-sdk's](how-to-manage-enrollments-sdks.md)voor meer informatie over het programmatisch verwijderen van een apparaat met een van de sdk's van de inrichtings service.
+   - Zie [inschrijven van apparaten met Service-sdk's](./quick-enroll-device-x509-java.md)voor meer informatie over het programmatisch verwijderen van een apparaat met een van de sdk's van de inrichtings service.
 
 2. Hef de registratie van het apparaat uit uw IoT Hub op om toekomstige communicatie en gegevens overdracht te voor komen. U kunt de vermelding van het apparaat ook tijdelijk uitschakelen of permanent verwijderen in het identiteits register voor het IoT Hub waar het is ingericht. Zie [apparaten uitschakelen](../iot-hub/iot-hub-devguide-identity-registry.md#disable-devices) voor meer informatie over uitschakeling. Zie Apparaatbeheer/IoT-apparaten voor uw IoT Hub-resource in de [Azure Portal](https://portal.azure.com).
 

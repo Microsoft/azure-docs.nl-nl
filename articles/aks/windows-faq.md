@@ -5,12 +5,12 @@ description: Raadpleeg de veelgestelde vragen over het uitvoeren van Windows Ser
 services: container-service
 ms.topic: article
 ms.date: 10/12/2020
-ms.openlocfilehash: b20ebe82556bb4db6844511ec0953f4d4e75f383
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: cc5a5ec2bbfb64a1e787277bf67579bad0543cd6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100574735"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101739573"
 ---
 # <a name="frequently-asked-questions-for-windows-server-node-pools-in-aks"></a>Veelgestelde vragen over Windows Server-knooppunt groepen in AKS
 
@@ -54,6 +54,8 @@ Als u de nieuwste patches voor Windows-knoop punten wilt downloaden, kunt u [de 
 
 AKS-clusters met Windows-knooppunt Pools moeten het netwerk model van Azure CNI (Geavanceerd) gebruiken. Kubenet (Basic)-netwerken worden niet ondersteund. Zie [Network concepten for Applications in AKS][azure-network-models](Engelstalig) voor meer informatie over de verschillen in netwerk modellen. Het Azure CNI-netwerk model vereist aanvullende planning en overwegingen voor het beheer van IP-adressen. Zie [Azure cni-netwerken configureren in AKS][configure-azure-cni]voor meer informatie over het plannen en implementeren van Azure cni.
 
+Windows-knoop punten op AKS-clusters hebben ook [direct server Return (DSR)][dsr] ingeschakeld wanneer Calico is ingeschakeld.
+
 ## <a name="is-preserving-the-client-source-ip-supported"></a>Wordt het IP-adres van de client ondersteund?
 
 Op dit moment wordt het [IP-behoud van client bronnen][client-source-ip] niet ondersteund met Windows-knoop punten.
@@ -91,7 +93,7 @@ U moet de naam Maxi maal 6 (zes) tekens gebruiken. Dit is een huidige beperking 
 
 ## <a name="are-all-features-supported-with-windows-nodes"></a>Worden alle functies ondersteund met Windows-knoop punten?
 
-Netwerk beleid en kubenet worden momenteel niet ondersteund met Windows-knoop punten.
+Kubenet wordt momenteel niet ondersteund met Windows-knoop punten.
 
 ## <a name="can-i-run-ingress-controllers-on-windows-nodes"></a>Kan ik ingangs controllers uitvoeren op Windows-knoop punten?
 
@@ -197,3 +199,4 @@ Om aan de slag te gaan met Windows Server-containers in AKS, [maakt u een knoopp
 [managed-identity]: use-managed-identity.md
 [hybrid-vms]: ../virtual-machines/windows/hybrid-use-benefit-licensing.md
 [resource-groups]: faq.md#why-are-two-resource-groups-created-with-aks
+[dsr]: ../load-balancer/load-balancer-multivip-overview.md#rule-type-2-backend-port-reuse-by-using-floating-ip

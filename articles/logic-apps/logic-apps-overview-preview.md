@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
-ms.date: 02/01/2021
-ms.openlocfilehash: 5db0214e9b985df5c5aedb1dbe9878e484af2a55
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.date: 03/02/2021
+ms.openlocfilehash: 9d8d3cb4bf68f7da2bddabd21272d1011ce92f66
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430794"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101715204"
 ---
 # <a name="overview-azure-logic-apps-preview"></a>Overzicht: Azure Logic Apps Preview
 
@@ -38,7 +38,7 @@ In dit overzicht worden de volgende gebieden beschreven:
 
 * [Limieten in azure Logic Apps Preview](#limits).
 
-Zie de volgende artikelen voor meer informatie:
+Raadpleeg de volgende onderwerpen voor meer informatie:
 
 * [Azure Logic Apps uitvoeren van Anywhere-runtime dieper](https://techcommunity.microsoft.com/t5/integrations-on-azure/azure-logic-apps-running-anywhere-runtime-deep-dive/ba-p/1835564)
 
@@ -50,7 +50,7 @@ Zie de volgende artikelen voor meer informatie:
 
 De Azure Logic Apps Preview-runtime gebruikt [Azure functions](../azure-functions/functions-overview.md) uitbreid baarheid en wordt gehost als een uitbrei ding van de Azure functions runtime. Met deze architectuur kunt u het type van de nieuwe logische app uitvoeren waar Azure Functions wordt uitgevoerd. U kunt de runtime van Azure Logic Apps Preview hosten op bijna elke gewenste netwerk topologie en een beschik bare reken grootte kiezen voor het afhandelen van de benodigde werk belasting die uw werk stroom nodig heeft. Zie [Webjobs SDK: aangepaste invoer-en uitvoer bindingen maken](https://github.com/Azure/azure-webjobs-sdk/wiki/Creating-custom-input-and-output-bindings)voor meer informatie over Azure functions uitbreid baarheid.
 
-Met deze nieuwe benadering zijn de runtime van Azure Logic Apps Preview en uw werk stromen beide deel uit van uw app die u kunt inpakken. Met deze mogelijkheid kunt u uw werk stromen implementeren en uitvoeren door simpelweg artefacten naar de hostomgeving te kopiëren en de app te starten. Deze benadering biedt ook een meer gestandaardiseerde ervaring voor het bouwen van DevOps-pijp lijnen rond de werk stroom projecten voor het uitvoeren van de vereiste tests en validaties voordat u wijzigingen in productie omgevingen implementeert. Zie Azure Logic Apps de uitvoering van [Anywhere-runtime grondig](https://techcommunity.microsoft.com/t5/integrations-on-azure/azure-logic-apps-running-anywhere-runtime-deep-dive/ba-p/1835564)uit voor meer informatie.
+Met deze nieuwe benadering zijn de runtime van Azure Logic Apps Preview en uw werk stromen beide deel uit van uw app die u kunt inpakken. Met deze mogelijkheid kunt u uw werk stromen implementeren en uitvoeren door simpelweg artefacten naar de hostomgeving te kopiëren en de app te starten. Deze benadering biedt ook een meer gestandaardiseerde ervaring voor het bouwen van implementatie pijplijnen rond de werk stroom projecten voor het uitvoeren van de vereiste tests en validaties voordat u wijzigingen in productie omgevingen implementeert. Zie Azure Logic Apps de uitvoering van [Anywhere-runtime grondig](https://techcommunity.microsoft.com/t5/integrations-on-azure/azure-logic-apps-running-anywhere-runtime-deep-dive/ba-p/1835564)uit voor meer informatie.
 
 De volgende tabel geeft een overzicht van de verschillen in de manier waarop werk stromen resources delen, op basis van de omgeving waar ze worden uitgevoerd. Zie [limieten in azure Logic Apps Preview](#limits)voor verschillen in limieten.
 
@@ -139,10 +139,17 @@ Azure Logic Apps Preview bevat een groot aantal huidige en aanvullende mogelijkh
 
 * Schakel diagnostische logboek registratie en tracerings mogelijkheden in voor uw logische app door gebruik te maken van [Application Insights](../azure-monitor/app/app-insights-overview.md) als dit wordt ondersteund door uw Azure-abonnement en de instellingen van de logische app.
 
+* Toegang tot netwerk mogelijkheden, zoals verbinding maken en integreren met Azure Virtual Networks, vergelijkbaar met Azure Functions wanneer u uw Logic apps maakt en implementeert met behulp van het [Premium-abonnement van Azure functions](../azure-functions/functions-premium-plan.md). Raadpleeg de volgende onderwerpen voor meer informatie:
+
+  * [Netwerkopties van Azure Functions](../azure-functions/functions-networking-options.md)
+
+  * [Azure Logic Apps Anywhere-netwerk mogelijkheden uitvoeren met Azure Logic Apps Preview](https://techcommunity.microsoft.com/t5/integrations-on-azure/logic-apps-anywhere-networking-possibilities-with-logic-app/ba-p/2105047)
+
 * Opnieuw genereren van toegangs sleutels voor beheerde verbindingen die door afzonderlijke werk stromen worden gebruikt in een **logische app (preview)-** resource. Volg voor deze taak [dezelfde stappen voor de **Logic apps** resource, maar op het individuele werk stroom niveau](logic-apps-securing-a-logic-app.md#regenerate-access-keys), niet op het resource niveau van de logische app.
 
-> [!NOTE]
-> Raadpleeg de [pagina met bekende problemen Logic apps open bare preview in github](https://github.com/Azure/logicapps/blob/master/articles/logic-apps-public-preview-known-issues.md)voor meer informatie over bekende problemen.
+* Voeg parallelle vertakkingen in de nieuwe ontwerp functie toe door dezelfde stappen te volgen als de ontwerp functie voor niet-preview-versie.
+ 
+Zie voor meer informatie [gewijzigde, beperkte, niet-beschik bare en niet-ondersteunde mogelijkheden](#limited-unavailable-unsupported) en de [pagina met bekende problemen met de Logic apps open bare preview in github](https://github.com/Azure/logicapps/blob/master/articles/logic-apps-public-preview-known-issues.md).
 
 <a name="pricing-model"></a>
 
@@ -171,7 +178,9 @@ In Azure Logic Apps Preview zijn deze mogelijkheden gewijzigd, of ze zijn moment
 
 * **Ondersteuning voor besturings systeem**: momenteel werkt de ontwerp functie in Visual Studio code niet in Linux-besturings systeem, maar u kunt wel logische Apps implementeren die gebruikmaken van de Logic Apps Preview-runtime voor op Linux gebaseerde virtuele machines. Voor Taan kunt u uw Logic apps in Visual Studio code op Windows of macOS bouwen en vervolgens implementeren op een virtuele machine op basis van Linux.
 
-* **Triggers en acties**: sommige ingebouwde triggers zijn niet beschikbaar, zoals het schuif venster en batch. Als u uw werk stroom wilt starten, gebruikt u de trigger voor het [ingebouwde terugkeer patroon, aanvraag, http, HTTP-webhook, Event hubs of service bus](../connectors/apis-list.md). Ingebouwde triggers en acties worden standaard uitgevoerd in de runtime van Azure Logic Apps Preview, terwijl beheerde connectors worden geïmplementeerd in Azure. In de ontwerp functie worden ingebouwde triggers en acties weer gegeven onder het **ingebouwde** tabblad, terwijl beheerde connector triggers en acties worden weer gegeven op het tabblad **Azure** .
+* **Triggers en acties**: ingebouwde triggers en acties worden standaard uitgevoerd in de runtime van Azure Logic Apps Preview, terwijl beheerde connectors worden geïmplementeerd in Azure. Sommige ingebouwde triggers zijn niet beschikbaar, zoals verschuivend venster en batch.
+
+  Als u uw werk stroom wilt starten, gebruikt u de trigger voor het [ingebouwde terugkeer patroon, aanvraag, http, HTTP-webhook, Event hubs of service bus](../connectors/apis-list.md). In de ontwerp functie worden ingebouwde triggers en acties weer gegeven onder het **ingebouwde** tabblad, terwijl beheerde connector triggers en acties worden weer gegeven op het tabblad **Azure** .
 
   > [!NOTE]
   > Als u lokaal wilt uitvoeren in Visual Studio code, moeten triggers en acties op basis van webhooks extra worden ingesteld. Zie [stateful en stateless werk stromen maken in Visual Studio code](create-stateful-stateless-workflows-visual-studio-code.md#webhook-setup)voor meer informatie.
@@ -199,11 +208,11 @@ In Azure Logic Apps Preview zijn deze mogelijkheden gewijzigd, of ze zijn moment
 
       * Acties voor inline code bewerkingen hebben geen integratie account meer nodig.
 
-      * Als u macOS of Linux gebruikt, zijn **inline-bewerkingen** op dit moment niet beschikbaar wanneer u de extensie Azure Logic apps (preview) in Visual Studio code gebruikt.
+      * Voor macOS en Linux worden **inline code bewerkingen** nu ondersteund wanneer u de extensie Azure Logic apps (preview) in Visual Studio code gebruikt.
 
-      * Als u wijzigingen aanbrengt in een actie voor inline code bewerkingen, moet u de logische app opnieuw starten.
+      * U hoeft de logische app niet meer opnieuw op te starten als u wijzigingen aanbrengt in een actie voor **inline code bewerkingen** .
 
-      * Acties voor inline code bewerkingen hebben [bijgewerkte limieten](logic-apps-overview-preview.md#inline-code-limits).
+      * Acties voor **inline code bewerkingen** hebben [bijgewerkte limieten](logic-apps-overview-preview.md#inline-code-limits).
 
     * Sommige [ingebouwde B2B-triggers en-acties voor integratie accounts](../connectors/apis-list.md#integration-account-connectors) zijn niet beschikbaar, bijvoorbeeld de acties voor **platte bestands** codering en decoderen.
 
@@ -211,17 +220,15 @@ In Azure Logic Apps Preview zijn deze mogelijkheden gewijzigd, of ze zijn moment
 
 * **Beschik baarheid hosting plan**: ongeacht of u een nieuwe **logische app (preview)** -resource type maakt in de Azure portal of implementeren vanuit Visual Studio code, kunt u alleen het Premium-of app service-hosting abonnement in azure gebruiken. Abonnementen voor het hosten van verbruik zijn niet beschikbaar en worden niet ondersteund voor de implementatie van dit bron type. U kunt implementeren vanuit Visual Studio code naar een docker-container, maar niet naar een [integratie service omgeving (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md).
 
-* **Parallelle vertakkingen**: op dit moment kunt u geen parallelle vertakkingen toevoegen via de nieuwe ontwerp ervaring. U kunt deze branches echter nog steeds toevoegen via de oorspronkelijke ontwerp ervaring en ze worden weer gegeven in de nieuwe ontwerp functie.
-
-  1. Schakel de nieuwe ervaring onder aan de ontwerp functie uit door het nieuwe besturings element **canvas** te selecteren.
-
-  1. Voeg de parallelle vertakkingen toe aan uw werk stroom.
-
-  1. Schakel de nieuwe ervaring in door opnieuw het besturings element **nieuw papier** te selecteren.
+* **Fout opsporing in Visual Studio code voor onderbrekings** punten: Hoewel u onderbrekings punten kunt toevoegen en gebruiken in het **workflow.js** bestand voor een werk stroom, worden onderbrekings punten alleen ondersteund voor acties die op dit moment niet worden uitgevoerd. Zie [stateful en stateless werk stromen maken in Visual Studio code](create-stateful-stateless-workflows-visual-studio-code.md#manage-breakpoints)voor meer informatie.
 
 * **Zoom besturings element**: het zoom besturings element is momenteel niet beschikbaar in de ontwerp functie.
 
-* **Fout opsporing in Visual Studio code voor onderbrekings** punten: Hoewel u onderbrekings punten kunt toevoegen en gebruiken in het **workflow.js** bestand voor een werk stroom, worden onderbrekings punten alleen ondersteund voor acties die op dit moment niet worden uitgevoerd. Zie [stateful en stateless werk stromen maken in Visual Studio code](create-stateful-stateless-workflows-visual-studio-code.md#manage-breakpoints)voor meer informatie.
+* **Trigger geschiedenis en uitvoerings geschiedenis**: voor het resource type **logische app (preview-versie)** , trigger geschiedenis en uitvoerings geschiedenis in de Azure portal wordt weer gegeven op werk stroom niveau, niet op het niveau van de logische app. Voer de volgende stappen uit om deze historische gegevens te vinden:
+
+   * Als u de uitvoerings geschiedenis wilt weer geven, opent u de werk stroom in uw logische app. Selecteer in het menu werk stroom onder **ontwikkelaar** de optie **monitor**.
+
+   * Als u de trigger geschiedenis wilt bekijken, opent u de werk stroom in uw logische app. Selecteer in het menu werk stroom onder **ontwikkelaar** **trigger GESCHIEDENISS**.
 
 <a name="limits"></a>
 

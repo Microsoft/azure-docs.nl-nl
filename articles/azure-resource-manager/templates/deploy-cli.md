@@ -1,18 +1,18 @@
 ---
 title: Resources implementeren met Azure CLI en sjabloon
-description: Gebruik Azure Resource Manager en Azure CLI om resources te implementeren in Azure. De resources zijn gedefinieerd in een Resource Manager-sjabloon.
+description: Gebruik Azure Resource Manager en Azure CLI om resources te implementeren in Azure. De resources worden gedefinieerd in een resource manager-sjabloon of een Bicep-bestand.
 ms.topic: conceptual
-ms.date: 01/26/2021
-ms.openlocfilehash: 6a8efcebcd6ae18eaf91c6ec1e7df184db8c244c
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 03/02/2021
+ms.openlocfilehash: 547b860869738f3cfe12d6a22262829ef132a671
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100378669"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101741120"
 ---
 # <a name="deploy-resources-with-arm-templates-and-azure-cli"></a>Resources implementeren met ARM-sjablonen en Azure CLI
 
-In dit artikel wordt uitgelegd hoe u Azure CLI gebruikt met Azure Resource Manager sjablonen (ARM-sjablonen) om uw resources te implementeren in Azure. Als u niet bekend bent met de concepten van het implementeren en beheren van uw Azure-oplossingen, raadpleegt u [overzicht van sjabloon implementatie](overview.md).
+In dit artikel wordt uitgelegd hoe u Azure CLI gebruikt met Azure Resource Manager sjablonen (ARM-sjablonen) of Bicep-bestand om uw resources te implementeren in Azure. Als u niet bekend bent met de concepten van het implementeren en beheren van uw Azure-oplossingen, raadpleegt u overzicht van [sjabloon implementatie](overview.md) of [Bicep overzicht](bicep-overview.md).
 
 De implementatie-opdrachten zijn gewijzigd in azure CLI-versie 2.2.0. Voor de voor beelden in dit artikel is Azure CLI-versie 2.2.0 of hoger vereist.
 
@@ -27,13 +27,13 @@ U kunt uw implementatie richten op een resource groep, een abonnement, een behee
 * Gebruik [AZ Deployment Group Create](/cli/azure/deployment/group#az-deployment-group-create)om te implementeren in een **resource groep**:
 
   ```azurecli-interactive
-  az deployment group create --resource-group <resource-group-name> --template-file <path-to-template>
+  az deployment group create --resource-group <resource-group-name> --template-file <path-to-template-or-bicep>
   ```
 
 * Gebruik [AZ Deployment sub Create](/cli/azure/deployment/sub#az-deployment-sub-create)om te implementeren in een **abonnement**:
 
   ```azurecli-interactive
-  az deployment sub create --location <location> --template-file <path-to-template>
+  az deployment sub create --location <location> --template-file <path-to-template-or-bicep>
   ```
 
   Zie [resource groepen en-resources op abonnements niveau maken](deploy-to-subscription.md)voor meer informatie over implementaties op abonnements niveau.
@@ -41,7 +41,7 @@ U kunt uw implementatie richten op een resource groep, een abonnement, een behee
 * Gebruik [AZ Deployment mg Create](/cli/azure/deployment/mg#az-deployment-mg-create)om te implementeren in een **beheer groep**:
 
   ```azurecli-interactive
-  az deployment mg create --location <location> --template-file <path-to-template>
+  az deployment mg create --location <location> --template-file <path-to-template-or-bicep>
   ```
 
   Zie [resources maken op het niveau van de beheer groep](deploy-to-management-group.md)voor meer informatie over implementaties op het niveau van beheer groepen.
@@ -49,14 +49,14 @@ U kunt uw implementatie richten op een resource groep, een abonnement, een behee
 * Gebruik [AZ Deployment Tenant Create](/cli/azure/deployment/tenant#az-deployment-tenant-create)om te implementeren naar een **Tenant**:
 
   ```azurecli-interactive
-  az deployment tenant create --location <location> --template-file <path-to-template>
+  az deployment tenant create --location <location> --template-file <path-to-template-or-bicep>
   ```
 
   Zie [resources maken op Tenant niveau](deploy-to-tenant.md)voor meer informatie over implementaties op Tenant niveau.
 
-Voor elk bereik moet de gebruiker die de sjabloon implementeert, over de vereiste machtigingen beschikken om resources te maken.
+Voor elk bereik moet de gebruiker die de sjabloon implementeert of het Bicep-bestand de vereiste machtigingen hebben voor het maken van resources.
 
-## <a name="deploy-local-template"></a>Een lokale sjabloon implementeren
+## <a name="deploy-local-template-or-bicep-file"></a>Lokale sjabloon of Bicep-bestand implementeren
 
 U kunt een sjabloon implementeren vanaf uw lokale computer of een die extern is opgeslagen. In deze sectie wordt het implementeren van een lokale sjabloon beschreven.
 
@@ -66,13 +66,13 @@ Als u implementeert in een resource groep die niet bestaat, maakt u de resource 
 az group create --name ExampleGroup --location "Central US"
 ```
 
-Als u een lokale sjabloon wilt implementeren, gebruikt u de `--template-file` para meter in de implementatie opdracht. In het volgende voor beeld ziet u ook hoe u een parameter waarde instelt die afkomstig is uit de sjabloon.
+Als u een lokaal sjabloon-of Bicep-bestand wilt implementeren, gebruikt u de `--template-file` para meter in de implementatie opdracht. In het volgende voor beeld ziet u ook hoe u een parameter waarde instelt.
 
 ```azurecli-interactive
 az deployment group create \
   --name ExampleDeployment \
   --resource-group ExampleGroup \
-  --template-file azuredeploy.json \
+  --template-file <path-to-template-or-bicep> \
   --parameters storageAccountType=Standard_GRS
 ```
 
@@ -83,6 +83,9 @@ De implementatie kan enkele minuten duren. Wanneer het is voltooid, ziet u een b
 ```
 
 ## <a name="deploy-remote-template"></a>Externe sjabloon implementeren
+
+> [!NOTE]
+> Op dit moment biedt Azure CLI geen ondersteuning voor het implementeren van Remove Bicep-bestanden.
 
 In plaats van ARM-sjablonen op uw lokale computer op te slaan, kunt u ze beter opslaan op een externe locatie. U kunt sjablonen opslaan in een opslagplaats voor broncodebeheer (zoals GitHub). U kunt de sjablonen ook opslaan in een Azure-opslagaccount voor gedeelde toegang in uw organisatie.
 
@@ -144,6 +147,9 @@ Geef elke implementatie een unieke naam om conflicten met gelijktijdige implemen
 
 ## <a name="deploy-template-spec"></a>Sjabloonspecificatie implementeren
 
+> [!NOTE]
+> Momenteel biedt Azure CLI geen ondersteuning voor het maken van sjabloon specificaties door Bicep-bestanden op te geven. U kunt echter een ARM-sjabloon of een Bicep-bestand maken met de resource [micro soft. resources/templateSpecs](/azure/templates/microsoft.resources/templatespecs) voor het implementeren van een sjabloon specificatie. Hier volgt een [voor beeld](https://github.com/Azure/azure-docs-json-samples/blob/master/create-template-spec-using-template/azuredeploy.bicep).
+
 In plaats van een lokale of externe sjabloon te implementeren, kunt u een [sjabloon specificatie](template-specs.md)maken. De sjabloon specificatie is een resource in uw Azure-abonnement die een ARM-sjabloon bevat. Het is eenvoudig om de sjabloon veilig te delen met gebruikers in uw organisatie. U gebruikt op rollen gebaseerd toegangs beheer van Azure (Azure RBAC) om toegang te verlenen tot de sjabloon specificatie. Deze functie is momenteel beschikbaar als preview-versie.
 
 In de volgende voor beelden ziet u hoe u een sjabloon specificatie maakt en implementeert.
@@ -186,7 +192,7 @@ Geef de waarden op in om inline-para meters door te geven `parameters` . Als u b
 ```azurecli-interactive
 az deployment group create \
   --resource-group testgroup \
-  --template-file demotemplate.json \
+  --template-file <path-to-template-or-bicep> \
   --parameters exampleString='inline string' exampleArray='("value1", "value2")'
 ```
 
@@ -197,7 +203,7 @@ U kunt ook de inhoud van het bestand ophalen en deze inhoud als een inline-para 
 ```azurecli-interactive
 az deployment group create \
   --resource-group testgroup \
-  --template-file demotemplate.json \
+  --template-file <path-to-template-or-bicep> \
   --parameters exampleString=@stringContent.txt exampleArray=@arrayContent.json
 ```
 
@@ -236,7 +242,7 @@ Gebruik dubbele aanhalings tekens rond de JSON die u wilt door geven aan het obj
 
 ### <a name="parameter-files"></a>Parameter bestanden
 
-In plaats van parameters als inline waarden door te geven in uw script, is het wellicht eenvoudiger een JSON-bestand te gebruiken dat de parameterwaarden bevat. Het parameter bestand moet een lokaal bestand zijn. Externe parameter bestanden worden niet ondersteund met Azure CLI.
+In plaats van parameters als inline waarden door te geven in uw script, is het wellicht eenvoudiger een JSON-bestand te gebruiken dat de parameterwaarden bevat. Het parameter bestand moet een lokaal bestand zijn. Externe parameter bestanden worden niet ondersteund met Azure CLI. Zowel de ARM-sjabloon als het Bicep-bestand gebruiken JSON-parameter bestanden.
 
 Zie [Een Resource Manager-parameterbestand maken](parameter-files.md) voor meer informatie over het parameterbestand.
 
@@ -274,7 +280,7 @@ Als u een sjabloon wilt implementeren met reeksen met meerdere regels of opmerki
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Als u wilt terugkeren naar een geslaagde implementatie wanneer u een fout krijgt, raadpleegt u [herstellen bij fout naar geslaagde implementatie](rollback-on-error.md).
-- Zie [Azure Resource Manager implementatie modi](deployment-modes.md)om op te geven hoe u resources wilt afhandelen die in de resource groep aanwezig zijn, maar die niet zijn gedefinieerd in de sjabloon.
-- Zie [inzicht in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor informatie over het definiëren van para meters in uw sjabloon.
-- Zie [problemen met algemene Azure-implementatie fouten oplossen met Azure Resource Manager](common-deployment-errors.md)voor tips over het oplossen van veelvoorkomende implementatie fouten.
+* Als u wilt terugkeren naar een geslaagde implementatie wanneer u een fout krijgt, raadpleegt u [herstellen bij fout naar geslaagde implementatie](rollback-on-error.md).
+* Zie [Azure Resource Manager implementatie modi](deployment-modes.md)om op te geven hoe u resources wilt afhandelen die in de resource groep aanwezig zijn, maar die niet zijn gedefinieerd in de sjabloon.
+* Zie [inzicht in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor informatie over het definiëren van para meters in uw sjabloon.
+* Zie [problemen met algemene Azure-implementatie fouten oplossen met Azure Resource Manager](common-deployment-errors.md)voor tips over het oplossen van veelvoorkomende implementatie fouten.

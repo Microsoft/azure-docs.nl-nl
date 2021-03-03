@@ -86,8 +86,10 @@
               href: add-user-without-invite.md
             - name: Uitnodigingen aanpassen met behulp van API
               href: customize-invitation-api.md
-        - name: Communiceren met externe ID-providers
+        - name: Id-providers
           items:
+            - name: Micro soft-account (preview-versie)
+              href: microsoft-account.md
             - name: Google-federatie
               href: google-federation.md
             - name: Facebook-federatie

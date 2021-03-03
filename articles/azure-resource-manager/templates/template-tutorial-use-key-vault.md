@@ -2,16 +2,16 @@
 title: Azure Key Vault gebruiken in sjablonen
 description: Ontdek hoe u Azure Key Vault gebruikt om veilig parameterwaarden door te geven tijdens het implementeren van ARM-sjablonen (Azure Resource Manager).
 author: mumian
-ms.date: 04/23/2020
+ms.date: 03/01/2021
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: 44a5131a7ad90feeeeff56e95b64e65f3f18855c
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
-ms.translationtype: HT
+ms.openlocfilehash: 388996dc0054192f6d9f3c87e11ca1d15e8a85e1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97674154"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703882"
 ---
 # <a name="tutorial-integrate-azure-key-vault-in-your-arm-template-deployment"></a>Zelfstudie: Azure Key Vault integreren in ARM-sjabloonimplementatie
 
@@ -93,7 +93,14 @@ Wanneer u de ID kopieert en plakt, kan deze over meerdere regels worden verdeeld
 Als u de implementatie wilt valideren, voert u de volgende Power shell-opdracht uit in hetzelfde shell-deelvenster om de geheime waarde als leesbare tekst op te halen. De opdracht werkt alleen in dezelfde shell-sessie, omdat deze de variabele `$keyVaultName` gebruikt, die in het vorige PowerShell-script is gedefinieerd.
 
 ```azurepowershell
-(Get-AzKeyVaultSecret -vaultName $keyVaultName  -name "vmAdminPassword").SecretValueText
+$secret = Get-AzKeyVaultSecret -VaultName $keyVaultName -Name "vmAdminPassword"
+$ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secret.SecretValue)
+try {
+   $secretValueText = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
+} finally {
+   [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
+}
+Write-Output $secretValueText
 ```
 
 Nu heeft u de voorbereidende stappen voor de sleutelkluis en geheime waarde uitgevoerd. In de volgende secties ziet u hoe u een bestaande sjabloon kunt aanpassen om de geheime waarde op te halen tijdens de implementatie.
@@ -141,7 +148,7 @@ Als u een statische ID gebruikt, hoeft u geen wijzigingen aan te brengen in het 
     "adminPassword": {
         "reference": {
             "keyVault": {
-            "id": "/subscriptions/<SubscriptionID>/resourceGroups/mykeyvaultdeploymentrg/providers/Microsoft.KeyVault/vaults/<KeyVaultName>"
+                "id": "/subscriptions/<SubscriptionID>/resourceGroups/mykeyvaultdeploymentrg/providers/Microsoft.KeyVault/vaults/<KeyVaultName>"
             },
             "secretName": "vmAdminPassword"
         }

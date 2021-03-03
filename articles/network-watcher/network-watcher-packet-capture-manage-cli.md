@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/07/2021
 ms.author: damendo
-ms.openlocfilehash: 838a5255c013b530aa3bfdb857a2ba34b7dbeeed
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: efb8fba655570a661b6b001eb93942475eb2170d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98010962"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101698634"
 ---
 # <a name="manage-packet-captures-with-azure-network-watcher-using-the-azure-cli"></a>Pakket opnames beheren met Azure Network Watcher met behulp van de Azure CLI
 
@@ -25,7 +25,7 @@ ms.locfileid: "98010962"
 > - [Azure-portal](network-watcher-packet-capture-manage-portal.md)
 > - [PowerShell](network-watcher-packet-capture-manage-powershell.md)
 > - [Azure-CLI](network-watcher-packet-capture-manage-cli.md)
-> - [Azure REST API](network-watcher-packet-capture-manage-rest.md)
+> - [Azure REST-API](network-watcher-packet-capture-manage-rest.md)
 
 Met Network Watcher-pakket opname kunt u opname sessies maken om verkeer van en naar een virtuele machine bij te houden. Er worden filters voor de opname sessie gegeven om ervoor te zorgen dat u alleen het gewenste verkeer vastlegt. Met pakket opname kunt u netwerk afwijkingen zowel reactief als proactief vaststellen. Andere gebruiken zijn onder andere het verzamelen van netwerk statistieken, het verkrijgen van informatie over inbreuken op het netwerk, het opsporen van fouten in client-server communicatie en nog veel meer. Doordat pakket opnames op afstand kunnen worden geactiveerd, vereenvoudigt deze mogelijkheid de belasting van het hand matig uitvoeren van een pakket opname en op de gewenste computer, waardoor kost bare tijd wordt bespaard.
 
@@ -193,8 +193,7 @@ Het volgende voor beeld is de uitvoer van de `az network watcher packet-capture 
     "status": "Succeeded"
   },
   "captureStartTime": "2016-12-06T17:20:01.5671279Z",
-  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_westcentralus/pa
-cketCaptures/packetCaptureName",
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_westcentralus/packetCaptures/packetCaptureName",
   "name": "packetCaptureName",
   "packetCaptureError": [],
   "packetCaptureStatus": "Stopped",

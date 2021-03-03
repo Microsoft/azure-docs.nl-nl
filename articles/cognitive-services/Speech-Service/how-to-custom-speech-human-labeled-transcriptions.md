@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/12/2021
 ms.author: erhopf
-ms.openlocfilehash: db3d8f4424f59d8432221753af776a5b55859882
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: af6ced49071b7fbae983508e68964aa064ef38e1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100388852"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101700028"
 ---
 # <a name="how-to-create-human-labeled-transcriptions"></a>Transcripties met menselijke labels maken
 
 Als u de nauw keurigheid van de herkenning wilt verbeteren, met name problemen die worden veroorzaakt wanneer woorden worden verwijderd of onjuist zijn vervangen, kunt u transcripties met menselijke labels samen met uw audio gegevens gebruiken. Wat zijn transcripties van menselijke labels? Dat is eenvoudig, ze zijn woord-voor-Word, Verbatim transcripties van een audio bestand.
 
-Er is een grote steek proef van transcriptie-gegevens vereist om de herkenning te verbeteren, maar we raden u aan om te bieden tussen 10 en 20 uur aan transcriptie-gegevens. Op deze pagina bekijken we richt lijnen die zijn ontworpen om u te helpen bij het maken van transcripties met hoge kwaliteit. Deze hand leiding is opgedeeld op land instellingen, met secties voor Engels (Verenigde Staten), Mandarijn Chinees en Duits.
+Er is een grote steek proef van transcriptie-gegevens vereist om de herkenning te verbeteren. we raden u aan om te voorzien in een waarde van 1 tot 20 uur aan transcriptie-gegevens. De spraak service maakt gebruik van Maxi maal 20 uur aan audio voor training. Op deze pagina bekijken we richt lijnen die zijn ontworpen om u te helpen bij het maken van transcripties met hoge kwaliteit. Deze hand leiding is opgedeeld op land instellingen, met secties voor Engels (Verenigde Staten), Mandarijn Chinees en Duits.
 
 > [!NOTE]
 > Niet alle basis modellen ondersteunen aanpassing met audio bestanden. Als een basis model dit niet ondersteunt, wordt de tekst van de transcripties op dezelfde manier gebruikt als gerelateerde tekst. Zie [taal ondersteuning](language-support.md#speech-to-text) voor een lijst met basis modellen die ondersteuning bieden voor training met audio gegevens.

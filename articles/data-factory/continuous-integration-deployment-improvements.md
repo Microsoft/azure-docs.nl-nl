@@ -7,12 +7,12 @@ ms.author: abnarain
 ms.reviewer: maghan
 ms.topic: conceptual
 ms.date: 02/02/2021
-ms.openlocfilehash: b5becd8ddaf74ab2acd059054a095ce9d21c178f
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 49ec43e59989f3fdad8f5731867953cc7cbb5757
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100366837"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699705"
 ---
 # <a name="automated-publishing-for-continuous-integration-and-delivery"></a>Automatische publicatie voor continue integratie en levering
 
@@ -22,7 +22,7 @@ ms.locfileid: "100366837"
 
 Continue integratie is de praktijk van het testen van elke wijziging die in uw code basis wordt doorgevoerd en zo snel mogelijk doorlopende levering volgt de tests die optreden tijdens continue integratie en worden wijzigingen naar een staging-of productie systeem gepusht.
 
-In Azure Data Factory wordt doorlopende integratie en levering (CI/CD) de mogelijkheid Data Factory pijp lijnen te verplaatsen van de ene omgeving (ontwikkeling, test, productie) naar de andere. Azure Data Factory gebruikt [Azure Resource Manager sjablonen](../azure-resource-manager/templates/overview.md) voor het opslaan van de configuratie van uw verschillende ADF-entiteiten (pijp lijnen, gegevens sets, data stromen, enzovoort). Er zijn twee aanbevolen methoden om een data factory te promo veren naar een andere omgeving:
+In Azure Data Factory wordt onder continue integratie en levering (CI/CD) de mogelijkheid verstaan dat Data Factory-pijplijnen van de ene omgeving (ontwikkeling, test, productie) naar de andere worden verplaatst. Azure Data Factory gebruikt [Azure Resource Manager sjablonen](../azure-resource-manager/templates/overview.md) voor het opslaan van de configuratie van uw verschillende ADF-entiteiten (pijp lijnen, gegevens sets, data stromen, enzovoort). Er zijn twee aanbevolen methoden om een data factory te promo veren naar een andere omgeving:
 
 - Geautomatiseerde implementatie met behulp van de integratie van Data Factory met [Azure-pijp lijnen](/azure/devops/pipelines/get-started/what-is-azure-pipelines).
 - Een resource manager-sjabloon hand matig uploaden met behulp van Data Factory UX-integratie met Azure Resource Manager.
@@ -119,7 +119,7 @@ Volg de onderstaande stappen om aan de slag te gaan:
             "build":"node node_modules/@microsoft/azure-data-factory-utilities/lib/index"
         },
         "dependencies":{
-            "@microsoft/azure-data-factory-utilities":"^0.1.2"
+            "@microsoft/azure-data-factory-utilities":"^0.1.3"
         }
     } 
     ```

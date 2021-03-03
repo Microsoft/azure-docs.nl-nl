@@ -1,19 +1,19 @@
 ---
 title: Eenvoudige lucene-query syntaxis gebruiken
 titleSuffix: Azure Cognitive Search
-description: Lees dit voor beeld door query's uit te voeren op basis van de eenvoudige syntaxis voor zoeken in volledige tekst, filteren op filters, geo-Zoek opdrachten, facet zoeken op basis van een Azure Cognitive Search-index.
+description: Query voorbeelden met de eenvoudige syntaxis voor zoeken in volledige tekst, filteren op filters en geo-Zoek opdrachten voor een Azure Cognitive Search-index.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 12/12/2020
-ms.openlocfilehash: ff9495e37a499b5502d8f8ced79b69608fa9552a
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.date: 03/03/2021
+ms.openlocfilehash: 2abe19351c92bf9cea85c85dd55f47b5ee6d1625
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97401743"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101694033"
 ---
 # <a name="use-the-simple-search-syntax-in-azure-cognitive-search"></a>Gebruik de eenvoudige Zoek syntaxis in azure Cognitive Search
 
@@ -22,309 +22,508 @@ In azure Cognitive Search roept de [syntaxis van de eenvoudige query](query-simp
 > [!NOTE]
 > Een alternatieve query syntaxis is [volledige lucene](query-lucene-syntax.md), waarmee complexere query structuren worden ondersteund, zoals fuzzy en zoek opdrachten met Joker tekens. Zie [de syntaxis Full lucene gebruiken](search-query-lucene-examples.md)voor meer informatie en voor beelden.
 
-## <a name="nyc-jobs-examples"></a>Voor beelden van NYC-taken
+## <a name="hotels-sample-index"></a>Voor beeld-index van hotels
 
-De volgende voor beelden maken gebruik van de [zoek index](https://azjobsdemo.azurewebsites.net/) van de NYC-taken die bestaat uit taken die beschikbaar zijn op basis van een gegevensset die wordt verschaft door de [stad van New York open data Initiative](https://nycopendata.socrata.com/). Deze gegevens mogen niet als actueel of volledig worden beschouwd. De index bevindt zich op een sandbox-service van micro soft. Dit betekent dat u geen Azure-abonnement of Azure Cognitive Search nodig hebt om deze query's uit te proberen.
+De volgende query's zijn gebaseerd op de voor beeld-index van hotels, die u kunt maken door de instructies in deze [Snelstartgids](search-get-started-portal.md)te volgen.
 
-Wat u nodig hebt, is postman of een gelijkwaardig hulp programma voor het uitgeven van een HTTP-aanvraag op GET of POST. Als u niet bekend bent met deze hulpprogram ma's, raadpleegt u [Quick Start: Azure Cognitive Search verkennen rest API](search-get-started-rest.md).
+Voorbeeld query's worden gegeleeerd met behulp van de REST API en POST-aanvragen. U kunt deze plakken en uitvoeren in [postman](search-get-started-rest.md) of [Visual Studio code met de extensie Cognitive Search](search-get-started-vs-code.md).
 
-## <a name="set-up-the-request"></a>De aanvraag instellen
+Aanvraag headers moeten de volgende waarden hebben:
 
-1. Aanvraag headers moeten de volgende waarden hebben:
+| Sleutel | Waarde |
+|-----|-------|
+| Content-Type | application/json|
+| API-sleutel  | `<your-search-service-api-key>`, een query of beheerder sleutel |
 
-   | Sleutel | Waarde |
-   |-----|-------|
-   | Content-Type | `application/json`|
-   | API-sleutel  | `252044BE3886FE4A8E3BAA4F595114BB` </br> (dit is de daad werkelijke query-API-sleutel voor de sandbox-zoek service die als host fungeert voor de index van de NYC-taken) |
-
-1. Stel de bewerking in op **`GET`** .
-
-1. Stel de URL in op **`https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&search=*&$count=true`** . 
-
-   + De documenten verzameling in de index bevat alle Doorzoek bare inhoud. De query-API-sleutel die in de aanvraag header is gegeven, werkt alleen voor lees bewerkingen die zijn gericht op de verzameling documenten.
-
-   + **`$count=true`** retourneert een telling van de documenten die voldoen aan de zoek criteria. In een lege Zoek reeks zijn de aantallen alle documenten in de index (ongeveer 2558 in het geval van NYC-taken).
-
-   + **`search=*`** is een niet-opgegeven query die gelijk is aan Null of een lege zoek opdracht. Het is niet erg nuttig, maar het is de eenvoudigste zoek opdracht die u kunt uitvoeren. alle velden die kunnen worden opgehaald, worden weer gegeven in de index, met alle waarden.
-
-1. Plak, als een verificatie stap, de volgende aanvraag in GET en klik op **verzenden**. Resultaten worden geretourneerd als uitgebreide JSON-documenten.
-
-   ```http
-   https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&search=*&queryType=full
-   ```
-
-### <a name="how-to-invoke-simple-query-parsing"></a>Eenvoudig parseren van query's aanroepen
-
-Voor interactieve query's hoeft u niets op te geven: eenvoudig is de standaard waarde. Als u in code eerder hebt aangeroepen **`queryType=full`** , kunt u de standaard waarde opnieuw instellen met **`queryType=simple`** .
+URI-para meters moeten uw zoek service-eind punt bevatten met de index naam, documenten verzamelingen, zoek opdracht en API-versie, vergelijkbaar met het volgende voor beeld:
 
 ```http
-POST /indexes/nycjobs/docs/search?api-version=2020-06-30
-{
-    "queryType": "simple"
-}
+https://{{service-name}}.search.windows.net/indexes/hotels-sample-index/docs/search?api-version=2020-06-30
 ```
 
-## <a name="example-1-full-text-search-on-specific-fields"></a>Voor beeld 1: zoeken in volledige tekst in specifieke velden
+De aanvraag tekst moet worden gevormd als een geldige JSON:
 
-Dit eerste voor beeld is geen parser-specifiek, maar we leiden ernaar om het eerste fundamentele query concept te introduceren: containment. In dit voor beeld worden zowel de uitvoering van query's als de reactie op slechts enkele specifieke velden beperkt. Het is belang rijk dat u weet hoe u een lees bare JSON-respons structureert wanneer uw hulp programma postman of Search Explorer is. 
-
-Deze query streeft alleen naar *business_title* in **`searchFields`** , waarbij via de **`select`** para meter hetzelfde veld in het antwoord wordt opgegeven.
-
-```http
-POST /indexes/nycjobs/docs/search?api-version=2020-06-30
+```json
 {
-    "count": true,
-    "queryType": "simple",
     "search": "*",
-    "searchFields": "business_title",
-    "select": "business_title"
+    "queryType": "simple",
+    "select": "HotelId, HotelName, Category, Tags, Description",
+    "count": true
 }
 ```
 
-Antwoord voor deze query moet er ongeveer uitzien als in de volgende scherm afbeelding.
++ ' Search ' is ingesteld op `*` is een niet-opgegeven query die gelijk is aan Null of een lege zoek opdracht. Het is niet erg nuttig, maar het is de eenvoudigste zoek opdracht die u kunt uitvoeren. alle velden die kunnen worden opgehaald, worden weer gegeven in de index, met alle waarden.
 
-  :::image type="content" source="media/search-query-lucene-examples/postman-sample-results.png" alt-text="Postman-voorbeeld antwoord" border="false":::
++ ' query type ' is ingesteld op ' Simple ' is de standaard waarde en kan worden wegge laten, maar is wel opgenomen om verder te versterken dat de query voorbeelden in dit artikel in de eenvoudige syntaxis worden weer gegeven.
 
-Mogelijk hebt u de zoek Score in het antwoord gezien. Een uniforme Score van **1** treedt op als er geen positie is, omdat de zoek opdracht niet in volledige tekst is gezocht, of omdat er geen criteria zijn ingesteld. Voor een lege zoek opdracht worden rijen in een wille keurige volg orde weer gegeven. Wanneer u werkelijke criteria opneemt, ziet u dat zoek scores worden weer geven in betekenis volle waarden.
++ Stel set in op een door komma's gescheiden lijst met velden wordt gebruikt voor samen stelling van zoek resultaten, met inbegrip van alleen die velden die nuttig zijn in de context van de zoek resultaten.
+
++ ' count ' retourneert het aantal documenten dat overeenkomt met de zoek criteria. In een lege Zoek reeks zijn de aantallen alle documenten in de index (50 in het geval van hotels-voor beeld-index).
+
+## <a name="example-1-full-text-search"></a>Voor beeld 1: zoeken in volledige tekst
+
+Zoek opdrachten in volledige tekst kunnen elk wille keurig aantal zelfstandige voor waarden of citaten zijn, met of zonder Booleaanse Opera tors. 
+
+```http
+POST /indexes/hotel-samples-index/docs/search?api-version=2020-06-30
+{
+    "search": "pool spa +airport",
+    "searchMode": any,
+    "queryType": "simple",
+    "select": "HotelId, HotelName, Category, Description",
+    "count": true
+}
+```
+
+Een zoek opdracht met tref woorden die bestaat uit belang rijke termen of zinsdelen is het meest geschikt voor u. Teken reeks velden worden tekst analyse tijdens het indexeren en uitvoeren van query's, het weghalen van niet-essentiële woorden zoals ' de ', ' en ', '. Als u wilt zien hoe een query reeks in de index wordt getokend, geeft u de teken reeks door in een [analyse van tekst analyseren](/rest/api/searchservice/test-analyzer) naar de index.
+
+De para meter ' Search mode ' bepaalt de precisie en het terughalen. Als u meer intrekken wilt, gebruikt u de standaard waarde ' any ', die een resultaat retourneert als een deel van de query reeks overeenkomt. Als u de precisie wilt aanpassen, waarbij alle delen van de teken reeks moeten overeenkomen, wijzigt u Search mode in ' alle '. Voer de bovenstaande query uit om te zien hoe Search mode het resultaat wijzigt.
+
+De reactie voor de query ' groep beveiligd-wachtwoord verificatie en lucht haven ' moet er ongeveer uitzien als in het volgende voor beeld, afgekapt voor de boog.
+
+```json
+"@odata.count": 6,
+"value": [
+    {
+        "@search.score": 7.3617697,
+        "HotelId": "21",
+        "HotelName": "Nova Hotel & Spa",
+        "Description": "1 Mile from the airport.  Free WiFi, Outdoor Pool, Complimentary Airport Shuttle, 6 miles from the beach & 10 miles from downtown.",
+        "Category": "Resort and Spa",
+        "Tags": [
+            "pool",
+            "continental breakfast",
+            "free parking"
+        ]
+    },
+    {
+        "@search.score": 2.5560288,
+        "HotelId": "25",
+        "HotelName": "Scottish Inn",
+        "Description": "Newly Redesigned Rooms & airport shuttle.  Minutes from the airport, enjoy lakeside amenities, a resort-style pool & stylish new guestrooms with Internet TVs.",
+        "Category": "Luxury",
+        "Tags": [
+            "24-hour front desk service",
+            "continental breakfast",
+            "free wifi"
+        ]
+    },
+    {
+        "@search.score": 2.2988036,
+        "HotelId": "35",
+        "HotelName": "Suites At Bellevue Square",
+        "Description": "Luxury at the mall.  Located across the street from the Light Rail to downtown.  Free shuttle to the mall and airport.",
+        "Category": "Resort and Spa",
+        "Tags": [
+            "continental breakfast",
+            "air conditioning",
+            "24-hour front desk service"
+        ]
+    }
+```
+
+Let op de zoek Score in het antwoord. Dit is de relevantie Score van de overeenkomst. Standaard retourneert een zoek service de beste 50 overeenkomsten op basis van deze score.
+
+Uniforme scores van ' 1,0 ' treden op wanneer er geen positie is, omdat de zoek opdracht niet in volledige tekst is gezocht, of omdat er geen criteria zijn ingesteld. Bijvoorbeeld, in een lege zoek opdracht (Search = `*` ), worden rijen weer gegeven in een wille keurige volg orde. Wanneer u werkelijke criteria opneemt, ziet u dat zoek scores worden weer geven in betekenis volle waarden.
 
 ## <a name="example-2-look-up-by-id"></a>Voor beeld 2: opzoeken op basis van ID
 
-Wanneer u zoek resultaten in een query retourneert, is een logische volgende stap het opgeven van een detail pagina die meer velden uit het document bevat. Dit voor beeld laat zien hoe u één document kunt retour neren met behulp van een [opzoek bewerking](/rest/api/searchservice/lookup-document) die in de document-id wordt door gegeven.
-
-Alle documenten hebben een unieke id. Als u de syntaxis voor een opzoek query wilt uitproberen, moet u eerst een lijst met document-Id's retour neren, zodat u er een kunt vinden om te gebruiken. Voor NYC-taken worden de id's in het veld opgeslagen `id` .
+Wanneer u zoek resultaten in een query retourneert, is een logische volgende stap het opgeven van een detail pagina die meer velden uit het document bevat. Dit voor beeld laat zien hoe u één document kunt retour neren met behulp van [opzoek document](/rest/api/searchservice/lookup-document) door de document-id door te geven.
 
 ```http
-GET /indexes/nycjobs/docs?api-version=2020-06-30&search=*&$select=id&$count=true
+GET /indexes/hotels-sample-index/docs/41?api-version=2020-06-30
 ```
 
-Vervolgens haalt u een document op uit de verzameling op basis van `id` ' 9E1E3AF9-0660-4E00-AF51-9B654925A2D5 ', dat het eerst in het vorige antwoord voor komt. Met de volgende query worden alle ophaalbaar velden voor het hele document geretourneerd.
+Alle documenten hebben een unieke id. Als u de portal gebruikt, selecteert u het tabblad index uit **indexen** en bekijkt u de veld definities om te bepalen welk veld de sleutel is. Als u REST gebruikt, retourneert de aanroep [index ophalen](/rest/api/searchservice/get-index) de index definitie in de hoofd tekst van het antwoord.
 
-```http
-GET /indexes/nycjobs/docs/9E1E3AF9-0660-4E00-AF51-9B654925A2D5?api-version=2020-06-30
+Het antwoord voor de bovenstaande query bestaat uit het document waarvan de sleutel 41 is. Elk veld dat is gemarkeerd als ' ophalen ' in de index definitie kan worden geretourneerd in Zoek resultaten en worden weer gegeven in uw app.
+
+```json
+{
+    "HotelId": "41",
+    "HotelName": "Ocean Air Motel",
+    "Description": "Oceanfront hotel overlooking the beach features rooms with a private balcony and 2 indoor and outdoor pools. Various shops and art entertainment are on the boardwalk, just steps away.",
+    "Description_fr": "L'hôtel front de mer surplombant la plage dispose de chambres avec balcon privé et 2 piscines intérieures et extérieures. Divers commerces et animations artistiques sont sur la promenade, à quelques pas.",
+    "Category": "Budget",
+    "Tags": [
+        "pool",
+        "air conditioning",
+        "bar"
+    ],
+    "ParkingIncluded": true,
+    "LastRenovationDate": "1951-05-10T00:00:00Z",
+    "Rating": 3.5,
+    "Location": {
+        "type": "Point",
+        "coordinates": [
+            -157.846817,
+            21.295841
+        ],
+        "crs": {
+            "type": "name",
+            "properties": {
+                "name": "EPSG:4326"
+            }
+        }
+    },
+    "Address": {
+        "StreetAddress": "1450 Ala Moana Blvd 2238 Ala Moana Ctr",
+        "City": "Honolulu",
+        "StateProvince": "HI",
+        "PostalCode": "96814",
+        "Country": "USA"
+    },
 ```
 
-## <a name="example-3-filter-queries"></a>Voor beeld 3: query's filteren
+## <a name="example-3-filter-on-text"></a>Voor beeld 3: filteren op tekst
 
-[Filter syntaxis](./search-query-odata-filter.md) is een OData-expressie die u zelf kunt gebruiken of met **`search`** . Een zelfstandig filter, zonder een zoek parameter, is handig wanneer de filter expressie volledig kan kwalificeren op interessante documenten. Zonder een query reeks is er geen lexicale of linguïstische analyse, geen Score (alle scores zijn 1) en geen classificatie. U ziet dat de zoek teken reeks leeg is.
+De [filter syntaxis](search-query-odata-filter.md) is een OData-expressie die u zelf of met ' zoeken ' kunt gebruiken. Wordt samen gebruikt, wordt ' filter ' toegepast op de volledige index. vervolgens wordt de zoek opdracht uitgevoerd op de resultaten van het filter. Filters zijn dus nuttig om de resultaten van de zoekopdracht te verbeteren, doordat het aantal documenten dat moet worden doorzocht, wordt verminderd.
+
+Filters kunnen worden gedefinieerd in elk veld dat is gemarkeerd als ' filterbaar ' in de index definitie. Voor hotels-voor beeld-index kunt u filter bare velden bevatten categorie, tags, ParkingIncluded, classificatie en de meeste adres velden.
 
 ```http
-POST /indexes/nycjobs/docs/search?api-version=2020-06-30
+POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
+{
+    "search": "art tours",
+    "queryType": "simple",
+    "filter": "Category eq 'Resort and Spa'",
+    "select": "HotelId,HotelName,Description,Category",
+    "count": true
+}
+```
+
+De reactie voor de bovenstaande query is beperkt tot alleen de hotels die zijn gecategoriseerd als ' rapport en beveiligd-wachtwoord verificatie ', waaronder de termen ' Art ' of ' rond leidingen '. In dit geval is er slechts één overeenkomst.
+
+```json
+{
+    "@search.score": 2.8576312,
+    "HotelId": "31",
+    "HotelName": "Santa Fe Stay",
+    "Description": "Nestled on six beautifully landscaped acres, located 2 blocks from the Plaza. Unwind at the spa and indulge in art tours on site.",
+    "Category": "Resort and Spa"
+}
+```
+
+## <a name="example-4-filter-functions"></a>Voor beeld 4: filter functies
+
+Filter expressies kunnen [' Search. ismatch ' en ' Search. ismatchscoring '](search-query-odata-full-text-search-functions.md)bevatten, zodat u een zoek query kunt bouwen in het filter. Deze filter expressie maakt *gebruik van een* Joker teken om voorzieningen te selecteren, inclusief gratis WiFi, gratis parkeren, enzovoort.
+
+```http
+POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
+  {
+    "search": "",
+    "filter": "search.ismatch('free*', 'Tags', 'full', 'any')",
+    "select": "HotelId, HotelName, Category, Description",
+    "count": true
+  }
+```
+
+Antwoord voor de bovenstaande query komt overeen met 19 hotels die gratis voorzieningen aanbieden. U ziet dat de zoek Score een uniform ' 1,0 ' in de resultaten heeft. Dit komt doordat de zoek expressie Null of leeg is, wat resulteert in Verbatim-filter overeenkomsten, maar geen zoek opdracht in volledige tekst. Relevantie scores worden alleen geretourneerd voor Zoek opdrachten in volledige tekst. Als u filters gebruikt zonder ' zoeken ', moet u ervoor zorgen dat u voldoende Sorteer bare velden hebt zodat u de zoek positie kunt beheren.
+
+```json
+"@odata.count": 19,
+"value": [
     {
-      "count": true,
-      "search": "",
-      "filter": "salary_frequency eq 'Annual' and salary_range_from gt 90000",
-      "select": "job_id, business_title, agency, salary_range_from"
+        "@search.score": 1.0,
+        "HotelId": "31",
+        "HotelName": "Santa Fe Stay",
+        "Tags": [
+            "view",
+            "restaurant",
+            "free parking"
+        ]
+    },
+    {
+        "@search.score": 1.0,
+        "HotelId": "27",
+        "HotelName": "Super Deluxe Inn & Suites",
+        "Tags": [
+            "bar",
+            "free wifi"
+        ]
+    },
+    {
+        "@search.score": 1.0,
+        "HotelId": "39",
+        "HotelName": "Whitefish Lodge & Suites",
+        "Tags": [
+            "continental breakfast",
+            "free parking",
+            "free wifi"
+        ]
+    },
+    {
+        "@search.score": 1.0,
+        "HotelId": "11",
+        "HotelName": "Regal Orb Resort & Spa",
+        "Tags": [
+            "free wifi",
+            "restaurant",
+            "24-hour front desk service"
+        ]
+    },
+```
+
+## <a name="example-5-range-filters"></a>Voor beeld 5: bereik filters
+
+Bereik filtering wordt ondersteund via filter expressies voor elk gegevens type. De volgende voor beelden illustreren numerieke en teken reeks bereik. Gegevens typen zijn belang rijk in bereik filters en werken het beste als numerieke gegevens zich in numerieke velden bevinden en teken reeks gegevens in teken reeks velden. Numerieke gegevens in teken reeks velden zijn niet geschikt voor bereiken, omdat numerieke teken reeksen niet vergelijkbaar zijn.
+
+De volgende query is een numeriek bereik. In hotels-voor beeld-index is het enige filterbaar numeriek veld een classificatie.
+
+```http
+POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
+{
+    "search": "*",
+    "filter": "Rating ge 2 and Rating lt 4",
+    "select": "HotelId, HotelName, Rating",
+    "orderby": "Rating desc",
+    "count": true
+}
+```
+
+Antwoord voor deze query moet er ongeveer uitzien als in het volgende voor beeld, afgekapt voor de boog.
+
+```json
+"@odata.count": 27,
+"value": [
+    {
+        "@search.score": 1.0,
+        "HotelId": "22",
+        "HotelName": "Stone Lion Inn",
+        "Rating": 3.9
+    },
+    {
+        "@search.score": 1.0,
+        "HotelId": "25",
+        "HotelName": "Scottish Inn",
+        "Rating": 3.8
+    },
+    {
+        "@search.score": 1.0,
+        "HotelId": "2",
+        "HotelName": "Twin Dome Motel",
+        "Rating": 3.6
     }
 ```
 
-Samen gebruikt, wordt het filter eerst op de volledige index toegepast, waarna de zoek opdracht wordt uitgevoerd op de resultaten van het filter. Filters zijn dus nuttig om de resultaten van de zoekopdracht te verbeteren, doordat het aantal documenten dat moet worden doorzocht, wordt verminderd.
-
-  :::image type="content" source="media/search-query-simple-examples/filtered-query.png" alt-text="Query-antwoord filteren" border="false":::
-
-Een andere krachtige manier om filters en zoek opdrachten te combi neren, is via **`search.ismatch*()`** een filter expressie, waarin u een zoek query kunt gebruiken in het filter. Deze filter expressie maakt gebruik van een Joker teken op het *abonnement* om business_title te selecteren, inclusief de term plan, planner, planning, enzovoort.
+De volgende query is een bereik filter voor een teken reeks veld (adres/StateProvince):
 
 ```http
-POST /indexes/nycjobs/docs/search?api-version=2020-06-30
-    {
-      "count": true,
-      "search": "",
-      "filter": "search.ismatch('plan*', 'business_title', 'full', 'any')",
-      "select": "job_id, business_title, agency, salary_range_from"
-    }
+POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
+{
+    "search": "*",
+    "filter": "Address/StateProvince ge 'A*' and Address/StateProvince lt 'D*'",
+    "select": "HotelId, HotelName, Address/StateProvince",
+    "count": true
+}
 ```
 
-Zie [Search. ismatch in ' filter voorbeelden '](./search-query-odata-full-text-search-functions.md#examples)voor meer informatie over de functie.
+Antwoord voor deze query moet er ongeveer zo uitzien als in het onderstaande voor beeld, afgekapt voor de boog. In dit voor beeld is het niet mogelijk om te sorteren op StateProvince omdat het veld niet als ' sorteerbaar ' wordt weer in de index definitie.
 
-## <a name="example-4-range-filters"></a>Voor beeld 4: bereik filters
+```json
+"@odata.count": 9,
+"value": [
+    {
+        "@search.score": 1.0,
+        "HotelId": "9",
+        "HotelName": "Smile Hotel",
+        "Address": {
+            "StateProvince": "CA "
+        }
+    },
+    {
+        "@search.score": 1.0,
+        "HotelId": "39",
+        "HotelName": "Whitefish Lodge & Suites",
+        "Address": {
+            "StateProvince": "CO"
+        }
+    },
+    {
+        "@search.score": 1.0,
+        "HotelId": "7",
+        "HotelName": "Countryside Resort",
+        "Address": {
+            "StateProvince": "CA "
+        }
+    },
+```
 
-Bereik filtering wordt ondersteund via **`$filter`** expressies voor elk gegevens type. In de volgende voor beelden wordt gezocht naar numerieke en teken reeks velden. 
+## <a name="example-6-geo-search"></a>Voor beeld 6: geografisch zoeken
 
-Gegevens typen zijn belang rijk in bereik filters en werken het beste als numerieke gegevens zich in numerieke velden bevinden en teken reeks gegevens in teken reeks velden. Numerieke gegevens in teken reeks velden zijn niet geschikt voor bereiken, omdat numerieke teken reeksen niet vergelijkbaar zijn in azure Cognitive Search.
-
-De volgende query is een numeriek bereik:
+De voor beeld-index van de hotels bevat een geo_location veld met breedte-en breedte coördinaten. In dit voor beeld wordt de [functie geo. Distance](search-query-odata-geo-spatial-functions.md#examples) gebruikt waarmee wordt gefilterd op documenten in de omtrek van een begin punt, tot een wille keurige afstand (in kilo meters) die u opgeeft. U kunt de laatste waarde in de query (10) aanpassen om de surface area van de query te verminderen of te verg Roten.
 
 ```http
-POST /indexes/nycjobs/docs/search?api-version=2020-06-30
-    {
-      "count": true,
-      "search": "",
-      "filter": "num_of_positions ge 5 and num_of_positions lt 10",
-      "select": "job_id, business_title, num_of_positions, agency",
-      "orderby": "agency"
-    }
-```
-Antwoord voor deze query moet er ongeveer uitzien als in de volgende scherm afbeelding.
-
-  :::image type="content" source="media/search-query-simple-examples/rangefilternumeric.png" alt-text="Bereik filter voor numerieke bereiken" border="false":::
-
-In deze query is het bereik een teken reeks veld (business_title):
-
-```http
-POST /indexes/nycjobs/docs/search?api-version=2020-06-30
-    {
-      "count": true,
-      "search": "",
-      "filter": "business_title ge 'A*' and business_title lt 'C*'",
-      "select": "job_id, business_title, agency",
-      "orderby": "business_title"
-    }
+POST /indexes/v/docs/search?api-version=2020-06-30
+{
+    "search": "*",
+    "filter": "geo.distance(Location, geography'POINT(-122.335114 47.612839)') le 10",
+    "select": "HotelId, HotelName, Address/City, Address/StateProvince",
+    "count": true
+}
 ```
 
-Antwoord voor deze query moet er ongeveer uitzien als in de volgende scherm afbeelding.
+Antwoord voor deze query retourneert alle hotels binnen een afstand van 10 kilo meter van de beschik bare coördinaten:
 
-  :::image type="content" source="media/search-query-simple-examples/rangefiltertext.png" alt-text="Bereik filter voor tekstbereiken" border="false":::
-
-> [!NOTE]
-> Facet overschrijding van bereik waarden is een algemene vereiste voor het zoeken van toepassingen. Zie [een facet filter bouwen](search-filters-facets.md)voor meer informatie en voor beelden.
-
-## <a name="example-5-geo-search"></a>Voor beeld 5: geografisch zoeken
-
-De voor beeld-index bevat een geo_location veld met de breedte graad en lengte graad. In dit voor beeld wordt de [functie geo. Distance](search-query-odata-geo-spatial-functions.md#examples) gebruikt waarmee wordt gefilterd op documenten in de omtrek van een begin punt, tot een wille keurige afstand (in kilo meters) die u opgeeft. U kunt de laatste waarde in de query (4) aanpassen om de surface area van de query te verkleinen of te verg Roten.
-
-```http
-POST /indexes/nycjobs/docs/search?api-version=2020-06-30
-    {
-      "count": true,
-      "search": "",
-      "filter": "geo.distance(geo_location, geography'POINT(-74.11734 40.634384)') le 4",
-      "select": "business_title, work_location"
-    }
+```json
+{
+    "@odata.count": 3,
+    "value": [
+        {
+            "@search.score": 1.0,
+            "HotelId": "45",
+            "HotelName": "Arcadia Resort & Restaurant",
+            "Address": {
+                "City": "Seattle",
+                "StateProvince": "WA"
+            }
+        },
+        {
+            "@search.score": 1.0,
+            "HotelId": "24",
+            "HotelName": "Gacc Capital",
+            "Address": {
+                "City": "Seattle",
+                "StateProvince": "WA"
+            }
+        },
+        {
+            "@search.score": 1.0,
+            "HotelId": "16",
+            "HotelName": "Double Sanctuary Resort",
+            "Address": {
+                "City": "Seattle",
+                "StateProvince": "WA"
+            }
+        }
+    ]
+}
 ```
-
-Voor meer Lees bare resultaten worden de zoek resultaten afgekapt met de functie en de werk locatie. De begin coördinaten zijn verkregen van een wille keurig document in de index (in dit geval voor een werk locatie op Staten-eiland).
-
-  :::image type="content" source="media/search-query-simple-examples/geo-search.png" alt-text="Kaart van Staten-eiland" border="false":::
-
-## <a name="example-6-search-precision"></a>Voor beeld 6: Zoek precisie
-
-Term query's zijn enkele termen, misschien veel hiervan, die onafhankelijk van elkaar worden geëvalueerd. Woordgroepen query's worden tussen aanhalings tekens geplaatst en geëvalueerd als een Verbatim teken reeks. De nauw keurigheid van de overeenkomst wordt bepaald door Opera tors en Search mode.
-
-Voor beeld 1: `search=fire`  komt overeen met 140 resultaten, waarbij alle overeenkomsten het woord ergens in het document kunnen bevatten.
-
-```http
-POST /indexes/nycjobs/docs/search?api-version=2020-06-30
-    {
-      "count": true,
-      "search": "fire"
-    }
-```
-
-Voor beeld 2: `search=fire department` retourneert 2002 resultaten. Er worden overeenkomsten geretourneerd voor documenten die hetzij brand of Department bevatten.
-
-```http
-POST /indexes/nycjobs/docs/search?api-version=2020-06-30
-    {
-      "count": true,
-      "search": "fire department"
-    }
-```
-
-Voor beeld 3: `search="fire department"` retourneert 77 resultaten. Als u de teken reeks tussen aanhalings tekens insluit, wordt een woordgroepen zoekopdracht gemaakt die bestaat uit beide termen en worden er overeenkomsten gevonden voor termen met een token in de index die uit de gecombineerde termen bestaan. Dit legt uit waarom een zoek actie als `search=+fire +department` niet gelijk is. Beide termen zijn vereist, maar worden onafhankelijk gescand. 
-
-```http
-POST /indexes/nycjobs/docs/search?api-version=2020-06-30
-    {
-    "count": true,
-    "search": "\"fire department\""
-    }
-```
-
-> [!Note]
-> Omdat een woordgroepen query is opgegeven via aanhalings tekens, wordt in dit voor beeld een escape-teken ( `\` ) toegevoegd om de syntaxis te behouden.
 
 ## <a name="example-7-booleans-with-searchmode"></a>Voor beeld 7: booleans met Search mode
 
-Eenvoudige syntaxis ondersteunt Booleaanse Opera tors in de vorm van tekens ( `+, -, |` ). De para meter Search mode informeert de afwegingen tussen Precision en intrekken, met als voor keur **`searchMode=any`** intrekken (overeenkomt met een criterium dat in aanmerking komt voor een document voor de resultatenset), en om te voldoen aan de **`searchMode=all`** nauw keurigheid (alle criteria moeten overeenkomen). 
+Eenvoudige syntaxis biedt ondersteuning voor Booleaanse Opera tors in de vorm van tekens ( `+, -, |` ) om de logica te ondersteunen en, of en niet op te vragen. Booleaanse zoek acties gedraagt zich zoals u kunt verwachten, met een paar uitzonde ringen. 
 
-De standaard waarde is **`searchMode=any`** , wat verwarrend kan zijn als u een query stapelt met meerdere opera tors en brederere resultaten ophaalt. Dit is met name het geval bij niet, waarbij alle resultaten alle documenten bevatten die geen specifieke term zijn.
+In de vorige voor beelden werd de para meter ' Search mode ' geïntroduceerd als een mechanisme voor het bepalen van de precisie en het intrekken van ' Search mode = any ' (een document dat aan een van de criteria voldoet, wordt beschouwd als een overeenkomst) en ' Search mode = all ' om de nauw keurigheid te bepalen (alle criteria moeten overeenkomen in een document). 
 
-Met behulp van de standaard Search mode (alle) worden 2800-documenten geretourneerd: degene die de zinsnede ' Fire Department ' bevat, plus alle documenten die niet de zin ' Metrotech Center ' hebben.
+In de context van een Boole-zoek opdracht kan het standaard ' Search mode = any ' verwarrend zijn als u een query met meerdere opera tors stapelt en breder wordt in plaats van smallere resultaten. Dit is met name het geval wanneer de resultaten alle documenten bevatten die geen specifieke term of woord groep zijn.
 
-```http
-POST /indexes/nycjobs/docs/search?api-version=2020-06-30
-    {
-      "count": true,
-      "search": "\"fire department\"-\"Metrotech Center\"",
-      "searchMode": "any"
-    }
-```
+In het volgende voor beeld ziet u een afbeelding. De volgende query uitvoeren met Search mode (any), 42-documenten worden geretourneerd: de woorden die de term ' restaurant ' bevatten, plus alle documenten die niet de zin ' Airconditioning ' hebben. 
 
-Antwoord voor deze query moet er ongeveer uitzien als in de volgende scherm afbeelding.
-
-  :::image type="content" source="media/search-query-simple-examples/searchmodeany.png" alt-text="Zoek modus any" border="false":::
-
-Als u wijzigingen aanbrengt **`searchMode=all`** , wordt een cumulatief effect op criteria afgedwongen en wordt er een kleinere set resultaten weer gegeven-21 documenten-die bestaan uit documenten met de volledige zin "brand Department", min die taken op het Metrotech Center-adres.
+U ziet dat er geen spatie tussen de Booleaanse operator ( `-` ) en de zin ' Airconditioning ' is.
 
 ```http
-POST /indexes/nycjobs/docs/search?api-version=2020-06-30
-    {
-      "count": true,
-      "search": "\"fire department\"-\"Metrotech Center\"",
-      "searchMode": "all"
-    }
+POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
+{
+    "search": "restaurant -\"air conditioning\"",
+    "searchMode": "any",
+    "searchFields": "Tags",
+    "select": "HotelId, HotelName, Tags",
+    "count": true
+}
 ```
 
-  :::image type="content" source="media/search-query-simple-examples/searchmodeall.png" alt-text="Zoek modus Alles" border="false":::
+Als u ' Search mode = all ' wijzigt, wordt een cumulatief effect op criteria afgedwongen en wordt een kleinere resultatenset geretourneerd (7 overeenkomsten) die bestaat uit documenten met de term ' restaurant ', met inbegrip van de woorden met de zin ' Airconditioning '.
 
-## <a name="example-8-structuring-results"></a>Voor beeld 8: resultaten structureren
+Antwoord voor deze query ziet er nu uit als in het volgende voor beeld, afgekapt voor de boog.
 
-Verschillende para meters bepalen welke velden worden weer gegeven in de zoek resultaten, het aantal geretourneerde documenten in elke batch en de sorteer volgorde. In dit voor beeld worden enkele van de voor gaande voor beelden opnieuw weer gegeven, waarbij de resultaten worden beperkt tot specifieke velden met de **`$select`** zoek criteria voor de instructie en Verbatim, waarbij 82 overeenkomsten worden geretourneerd.
+```json
+"@odata.count": 7,
+"value": [
+    {
+        "@search.score": 2.5460577,
+        "HotelId": "11",
+        "HotelName": "Regal Orb Resort & Spa",
+        "Tags": [
+            "free wifi",
+            "restaurant",
+            "24-hour front desk service"
+        ]
+    },
+    {
+        "@search.score": 2.166792,
+        "HotelId": "10",
+        "HotelName": "Countryside Hotel",
+        "Tags": [
+            "24-hour front desk service",
+            "coffee in lobby",
+            "restaurant"
+        ]
+    },
+```
+
+## <a name="example-8-paging-results"></a>Voor beeld 8: paginerings resultaten
+
+In de vorige voor beelden hebt u geleerd over para meters die van invloed zijn op de samen stelling van de zoek resultaten, waaronder "selecteren", die bepaalt welke velden een resultaat oplevert, de sorteer volgorde en hoe u een telling van alle overeenkomsten opneemt. Dit voor beeld is een voortzetting van de samen stelling van zoek resultaten in de vorm van paginerings parameters waarmee u het aantal resultaten kunt Batchen dat op een wille keurige pagina wordt weer gegeven. 
+
+Standaard retourneert een zoek service de meest overeenkomende 50-overeenkomsten. Als u het aantal overeenkomsten op elke pagina wilt beheren, gebruikt u ' top ' om de grootte van de batch te definiëren en gebruikt u vervolgens ' overs Laan ' om volgende batches op te halen.
+
+In het volgende voor beeld wordt een filter en sorteer volgorde gebruikt voor het veld classificatie (classificatie is zowel filterbaar als sorteerbaar), omdat het eenvoudiger is om de effecten van paginering op gesorteerde resultaten te zien. In een normale volledige Zoek query worden de beste overeenkomsten gerangschikt en gewisseld door @search.score .
 
 ```http
-POST /indexes/nycjobs/docs/search?api-version=2020-06-30
-    {
-      "count": true,
-      "search": "\"fire department\"",
-      "searchMode": "any",
-      "select": "job_id,agency,business_title,civil_service_title,work_location,job_description"
-    }
+POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
+{
+    "search": "*",
+    "filter": "Rating gt 4",
+    "select": "HotelName, Rating",
+    "orderby": "Rating desc",
+    "top": "5",
+    "count": true
+}
 ```
 
-In het vorige voor beeld kunt u sorteren op titel. Deze sortering werkt omdat civil_service_title in de index moet worden *gesorteerd* .
-
-```http
-POST /indexes/nycjobs/docs/search?api-version=2020-06-30
-    {
-      "count": true,
-      "search": "\"fire department\"",
-      "searchMode": "any",
-      "select": "job_id,agency,business_title,civil_service_title,work_location,job_description",
-      "orderby": "civil_service_title"
-    }
-```
-
-Paginerings resultaten worden geïmplementeerd met behulp **`$top`** van de para meter. in dit geval worden de vijf beste documenten geretourneerd:
-
-```http
-POST /indexes/nycjobs/docs/search?api-version=2020-06-30
-    {
-      "count": true,
-      "search": "\"fire department\"",
-      "searchMode": "any",
-      "select": "job_id,agency,business_title,civil_service_title,work_location,job_description",
-      "orderby": "civil_service_title",
-      "top": "5"
-    }
-```
+Met de query worden 21 overeenkomende documenten gevonden, maar omdat u ' top ' hebt opgegeven, retourneert de reactie alleen de vijf meest overeenkomende treffers, met de classificaties vanaf 4,9, en eindigt om 4,7 met ' Cora van de Lake B & B '. 
 
 Als u de volgende 5 wilt ophalen, slaat u de eerste batch over:
 
 ```http
-POST /indexes/nycjobs/docs/search?api-version=2020-06-30
+POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
+{
+    "search": "*",
+    "filter": "Rating gt 4",
+    "select": "HotelName, Rating",
+    "orderby": "Rating desc",
+    "top": "5",
+    "skip": "5",
+    "count": true
+}
+```
+
+Het antwoord voor de tweede batch slaat de eerste vijf overeenkomsten over, waarbij de volgende vijf worden geretourneerd, te beginnen met "Pull'r Inn Motel". Als u wilt door gaan met aanvullende batches, kunt u ' top ' op 5 houden en vervolgens ' overs Laan ' door 5 op elke nieuwe aanvraag verhogen (overs Laan = 5, overs Laan = 10, overs laan = 15, enzovoort).
+
+```json
+"value": [
     {
-      "count": true,
-      "search": "\"fire department\"",
-      "searchMode": "any",
-      "select": "job_id,agency,business_title,civil_service_title,work_location,job_description",
-      "orderby": "civil_service_title",
-      "top": "5",
-      "skip": "5"
+        "@search.score": 1.0,
+        "HotelName": "Pull'r Inn Motel",
+        "Rating": 4.7
+    },
+    {
+        "@search.score": 1.0,
+        "HotelName": "Sublime Cliff Hotel",
+        "Rating": 4.6
+    },
+    {
+        "@search.score": 1.0,
+        "HotelName": "Antiquity Hotel",
+        "Rating": 4.5
+    },
+    {
+        "@search.score": 1.0,
+        "HotelName": "Nordick's Motel",
+        "Rating": 4.5
+    },
+    {
+        "@search.score": 1.0,
+        "HotelName": "Winter Panorama Resort",
+        "Rating": 4.5
     }
+]
 ```
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Probeer query's in code op te geven. In de volgende koppelingen wordt uitgelegd hoe u zoek query's kunt instellen met behulp van de Azure Sdk's.
+Nu u een van de procedures met de basis query syntaxis hebt uitgevoerd, kunt u query's in code opgeven. In de volgende koppelingen wordt uitgelegd hoe u zoek query's kunt instellen met behulp van de Azure Sdk's.
 
 + [Query's uitvoeren op uw index met behulp van de .NET SDK](search-get-started-dotnet.md)
 + [Query's uitvoeren op uw index met behulp van de python-SDK](search-get-started-python.md)
@@ -334,6 +533,6 @@ Aanvullende Naslag informatie over syntaxis, query architectuur en voor beelden 
 
 + [Voor beelden van Lucene-syntaxis query's voor het maken van geavanceerde query's](search-query-lucene-examples.md)
 + [Hoe zoeken in de volledige tekst werkt in Azure Cognitive Search](search-lucene-query-architecture.md)
-+ [Eenvoudige query syntaxis](query-simple-syntax.md)
-+ [Volledige lucene-query syntaxis](query-lucene-syntax.md)
++ [Vereenvoudigde querysyntaxis](query-simple-syntax.md)
++ [Volledige Lucene-querysyntaxis](query-lucene-syntax.md)
 + [Filter syntaxis](search-query-odata-filter.md)

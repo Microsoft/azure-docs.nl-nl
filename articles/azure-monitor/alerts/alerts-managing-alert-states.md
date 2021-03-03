@@ -5,16 +5,16 @@ ms.subservice: alerts
 ms.topic: conceptual
 author: anantr
 ms.date: 09/24/2018
-ms.openlocfilehash: fc79ac8853cb441e9d6d49997c03ab983aa4dbf4
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: fa1701c59f099f5222ab6454cc67b9dc20d1e7e7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611145"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701107"
 ---
 # <a name="manage-alert-and-smart-group-states"></a>Statussen van waarschuwingen en slimme groepen beheren
 
-Waarschuwingen in Azure Monitor hebben nu een [waarschuwings status en een monitor voorwaarde](../platform/alerts-overview.md) , en op dezelfde manier hebben slimme groepen de status van een [slimme groep](../platform/alerts-smartgroups-overview.md?toc=%2fazure%2fazure-monitor%2ftoc.json). Wijzigingen in de status worden nu vastgelegd in de geschiedenis die is gekoppeld aan de betreffende waarschuwing of slimme groep. Dit artikel begeleidt u bij het wijzigen van de status, zowel voor een waarschuwing als voor een slimme groep.
+Waarschuwingen in Azure Monitor hebben nu een [waarschuwings status en een monitor voorwaarde](./alerts-overview.md) , en op dezelfde manier hebben slimme groepen de status van een [slimme groep](./alerts-smartgroups-overview.md?toc=%2fazure%2fazure-monitor%2ftoc.json). Wijzigingen in de status worden nu vastgelegd in de geschiedenis die is gekoppeld aan de betreffende waarschuwing of slimme groep. Dit artikel begeleidt u bij het wijzigen van de status, zowel voor een waarschuwing als voor een slimme groep.
 
 ## <a name="change-the-state-of-an-alert"></a>De status van een waarschuwing wijzigen
 

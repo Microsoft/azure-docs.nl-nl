@@ -3,22 +3,22 @@ title: Een Azure Image Builder-sjabloon maken (preview)
 description: Meer informatie over het maken van een sjabloon voor gebruik met Azure Image Builder.
 author: danielsollondon
 ms.author: danis
-ms.date: 02/18/2021
+ms.date: 03/02/2021
 ms.topic: reference
 ms.service: virtual-machines
 ms.subservice: image-builder
 ms.collection: linux
 ms.reviewer: cynthn
-ms.openlocfilehash: c2e4a2c2700af99a074dfd640177a6baefe763e2
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: eb02bff77ffedc0a1f2fee0a186d544c39374dbf
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101670433"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101693863"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Voor beeld: een Azure Image Builder-sjabloon maken 
 
-Azure Image Builder gebruikt een. JSON-bestand om informatie door te geven aan de Image Builder-service. In dit artikel gaan we verder met de secties van het JSON-bestand, zodat u uw eigen kunt bouwen. Zie de [Azure Image Builder github](https://github.com/danielsollondon/azvmimagebuilder/tree/master/quickquickstarts)voor meer voor beelden van de volledige json-bestanden.
+Azure Image Builder gebruikt een. JSON-bestand om informatie door te geven aan de Image Builder-service. In dit artikel gaan we verder met de secties van het JSON-bestand, zodat u uw eigen kunt bouwen. Zie de [Azure Image Builder github](https://github.com/Azure/azvmimagebuilder/tree/main/quickquickstarts)voor meer voor beelden van de volledige json-bestanden.
 
 Dit is de basis indeling van de sjabloon:
 
@@ -249,7 +249,7 @@ Bij gebruik van `customize` :
 - Als een aanpassings functie mislukt, mislukt het hele aanpassings onderdeel en wordt er een fout melding weer gegeven.
 - U wordt aangeraden het script grondig te testen voordat u het in een sjabloon kunt gebruiken. Fout opsporing van het script op uw eigen VM is eenvoudiger.
 - Plaats geen gevoelige gegevens in de scripts. 
-- De script locaties moeten openbaar toegankelijk zijn, tenzij u [MSI](https://github.com/danielsollondon/azvmimagebuilder/tree/master/quickquickstarts/7_Creating_Custom_Image_using_MSI_to_Access_Storage)gebruikt.
+- De script locaties moeten openbaar toegankelijk zijn, tenzij u [MSI](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-user-assigned-identity)gebruikt.
 
 ```json
         "customize": [
@@ -697,4 +697,4 @@ az resource invoke-action \
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Er zijn voor beelden van json-bestanden voor verschillende scenario's in de [Azure Image Builder-github](https://github.com/danielsollondon/azvmimagebuilder).
+Er zijn voor beelden van json-bestanden voor verschillende scenario's in de [Azure Image Builder-github](https://github.com/azure/azvmimagebuilder).

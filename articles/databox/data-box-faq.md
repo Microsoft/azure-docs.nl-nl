@@ -6,14 +6,15 @@ author: v-dalc
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 02/17/2021
+ms.date: 02/25/2021
 ms.author: alkohli
-ms.openlocfilehash: 46a60642e177a2bfb9e8fb996427ea45f6777468
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.custom: references_regions
+ms.openlocfilehash: a692aeba312b6fcad580eac901f4b7bc65f059fc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652782"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101730572"
 ---
 # <a name="azure-data-box-frequently-asked-questions"></a>Azure Data Box: veelgestelde vragen
 
@@ -68,6 +69,16 @@ Als u in het scenario voor importeren bijvoorbeeld de bron gegevens in Canada ha
 2. Als de on-premises gegevens kopie naar de Data Box is voltooid, gaat u terug naar het Azure-Data Center in Canada. De gegevens die aanwezig zijn op de Data Box, worden vervolgens geüpload naar het doel opslag account in de Canada Azure-regio die u hebt gekozen tijdens het maken van de order.
 
 3. U kunt vervolgens een hulp programma als AzCopy gebruiken om de gegevens naar een opslag account in VS-West te kopiëren. Met deze stap worden [standaard](https://azure.microsoft.com/pricing/details/storage/) kosten voor opslag en [band breedte](https://azure.microsoft.com/pricing/details/bandwidth/) in rekening gebracht die niet zijn opgenomen in de facturering van data box.
+
+#### <a name="q-does-data-box-store-any-customer-data-outside-of-the-service-region"></a>V. Worden er klant gegevens buiten de service regio opgeslagen Data Box?
+
+A. Nee. Data Box slaat geen klant gegevens buiten de service regio op. De klant heeft volledig eigendom van hun gegevens en kan de gegevens opslaan op een opgegeven locatie op basis van het opslag account dat ze selecteren tijdens het maken van de order.  
+
+Naast de klant gegevens worden er Data Box gegevens met betrekking tot het apparaat, de bewakings logboeken voor het apparaat en de service en meta gegevens over de service. In alle regio's (met uitzonde ring van Brazilië-zuid en Zuidoost-Azië) worden Data Box gegevens opgeslagen en gerepliceerd in de gekoppelde regio via een geografisch redundant opslag account om te beschermen tegen gegevens verlies.  
+
+Als gevolg van de [vereisten voor gegevens locatie](https://azure.microsoft.com/global-infrastructure/data-residency/#more-information) in Brazilië-Zuid en Zuidoost-Azië, worden data Box gegevens opgeslagen in een ZRS-account (zone-redundante opslag), zodat het deel uitmaakt van een enkele regio. Voor Zuidoost-Azië worden alle Data Box gegevens opgeslagen in Singapore en voor Brazilië-zuid worden de gegevens opgeslagen in Brazilië. 
+
+Als er sprake is van een onderbreking van de service in Brazilië-zuid en Zuidoost-Azië, kunnen klanten nieuwe orders van een andere regio maken. De nieuwe orders worden geleverd vanuit de regio waarin ze zijn gemaakt en de klanten zijn verantwoordelijk voor de verzen ding naar en van de Data Box-apparaat.
 
 ### <a name="q-how-can-i-recover-my-data-if-an-entire-region-fails"></a>V. Hoe kan ik mijn gegevens herstellen als een hele regio is mislukt?
 

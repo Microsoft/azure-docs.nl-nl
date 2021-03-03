@@ -1,0 +1,31 @@
+- name: Azure Storage gevalideerde partner oplossingen
+  href: /azure/storage/solution-integration
+- name: Azure Opslaganalyse-en Big Data-partners
+  items:
+    - name: Overzicht van gevalideerde partners
+      href: .\validated-partners\analytics\partner-overview.md
+  expanded: false
+- name: 'Azure Storage-partners voor archiveren, back-ups en BCDR'
+  items:
+    - name: Overzicht van gevalideerde partners
+      href: .\validated-partners\backup-archive-disaster-recovery\partner-overview.md
+    - name: Hand leiding voor CommVault Snelstartgids
+      href: .\validated-partners\backup-archive-disaster-recovery\commvault\commvault-solution-guide.md
+    - name: Gids voor Veeam Quick Start
+      href: .\validated-partners\backup-archive-disaster-recovery\veeam\veeam-solution-guide.md
+  expanded: false
+- name: Azure Storage container oplossings partners
+  items:
+    - name: Overzicht van gevalideerde partners
+      href: .\validated-partners\container-solutions\partner-overview.md
+  expanded: false
+- name: Gegevens beheer en migratie partners Azure Storage
+  items:
+    - name: Overzicht van gevalideerde partners
+      href: .\validated-partners\data-management\partner-overview.md
+  expanded: false
+- name: Primaire en secundaire opslag partners Azure Storage
+  items:
+    - name: Overzicht van gevalideerde partners
+      href: .\validated-partners\primary-secondary-storage\partner-overview.md
+  expanded: false

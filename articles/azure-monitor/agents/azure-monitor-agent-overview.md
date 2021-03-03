@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/10/2020
-ms.openlocfilehash: 5c4cfe47fce07a09eeb48e2da76d3b10c1d204af
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: e4837de70e9f00308b440933e0cd433ad5b27cf9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609181"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711532"
 ---
 # <a name="azure-monitor-agent-overview-preview"></a>Overzicht van Azure Monitor-agent (preview)
 De Azure Monitor-agent (AMA) verzamelt bewakings gegevens van het gast besturingssysteem van virtuele machines en levert deze aan Azure Monitor. In deze artikelen vindt u een overzicht van de Azure Monitor-agent, inclusief hoe u deze kunt installeren en hoe u gegevens verzameling kunt configureren.
@@ -19,9 +19,9 @@ De Azure Monitor-agent (AMA) verzamelt bewakings gegevens van het gast besturing
 ## <a name="relationship-to-other-agents"></a>Relatie met andere agents
 De Azure Monitor-agent vervangt de volgende agents die momenteel worden gebruikt door Azure Monitor om gast gegevens van virtuele machines te verzamelen:
 
-- [Log Analytics agent](../platform/log-analytics-agent.md) : verzendt gegevens naar log Analytics-werk ruimte en ondersteunt Azure monitor voor VM's-en bewakings oplossingen.
-- [Diagnostische extensie](../platform/diagnostics-extension-overview.md) : verzendt gegevens naar Azure monitor meet waarden (alleen Windows), Azure Event Hubs en Azure Storage.
-- [Telegrafa-agent](../platform/collect-custom-metrics-linux-telegraf.md) : Hiermee worden gegevens verzonden naar Azure monitor metrieken (alleen voor Linux).
+- [Log Analytics-agent](./log-analytics-agent.md) : verzendt gegevens naar log Analytics-werk ruimte en biedt ondersteuning voor de mogelijkheden van de VM Insights-en bewakings oplossing.
+- [Diagnostische extensie](./diagnostics-extension-overview.md) : verzendt gegevens naar Azure monitor meet waarden (alleen Windows), Azure Event Hubs en Azure Storage.
+- [Telegrafa-agent](../essentials/collect-custom-metrics-linux-telegraf.md) : Hiermee worden gegevens verzonden naar Azure monitor metrieken (alleen voor Linux).
 
 Naast het consolideren van deze functionaliteit in één agent biedt de Azure Monitor-agent de volgende voor delen ten opzichte van de bestaande agents:
 
@@ -52,7 +52,7 @@ Azure Monitor agent naast de [Algemeen beschik bare agents voor Azure monitor](a
 ## <a name="current-limitations"></a>Huidige beperkingen
 De volgende beperkingen zijn van toepassing tijdens de open bare preview van de Azure Monitor-agent:
 
-- De Azure Monitor-agent biedt geen ondersteuning voor oplossingen en inzichten zoals Azure Monitor voor VM's en Azure Security Center. Het enige scenario dat momenteel wordt ondersteund, is het verzamelen van gegevens met behulp van de regels voor gegevens verzameling die u configureert. 
+- De Azure Monitor-agent biedt geen ondersteuning voor oplossingen en inzichten zoals VM Insights en Azure Security Center. Het enige scenario dat momenteel wordt ondersteund, is het verzamelen van gegevens met behulp van de regels voor gegevens verzameling die u configureert. 
 - Regels voor het verzamelen van gegevens moeten in dezelfde regio worden gemaakt als de Log Analytics werk ruimte die als bestemming wordt gebruikt.
 - Virtuele machines van Azure, virtuele-machine schaal sets en Azure Arc-servers worden momenteel ondersteund. De Azure Kubernetes-service en andere compute-resource typen worden momenteel niet ondersteund.
 - De virtuele machine moet toegang hebben tot de volgende HTTPS-eind punten:
@@ -64,7 +64,7 @@ De volgende beperkingen zijn van toepassing tijdens de open bare preview van de 
 ## <a name="coexistence-with-other-agents"></a>Samen werking met andere agents
 De Azure Monitor-agent kan naast de bestaande agents worden gebruikt, zodat u de bestaande functionaliteit ervan kunt blijven gebruiken tijdens de evaluatie of migratie. Dit is met name belang rijk vanwege de beperkingen in de open bare Preview bij de ondersteuning van bestaande oplossingen. Wees voorzichtig met het verzamelen van dubbele gegevens, omdat dit ertoe kan leiden dat query resultaten worden gescheefd en dat er extra kosten in rekening worden gebracht voor gegevens opname en-retentie.
 
-Azure Monitor voor VM's gebruikt bijvoorbeeld de Log Analytics-agent om prestatie gegevens naar een Log Analytics-werk ruimte te verzenden. Mogelijk hebt u de werk ruimte ook geconfigureerd voor het verzamelen van Windows-gebeurtenissen en syslog-gebeurtenissen van agents. Als u de Azure Monitor Agent installeert en een regel voor het verzamelen van gegevens voor dezelfde gebeurtenissen en prestatie gegevens maakt, worden er dubbele gegevens geretourneerd.
+Zo gebruikt VM Insights de Log Analytics-agent voor het verzenden van prestatie gegevens naar een Log Analytics-werk ruimte. Mogelijk hebt u de werk ruimte ook geconfigureerd voor het verzamelen van Windows-gebeurtenissen en syslog-gebeurtenissen van agents. Als u de Azure Monitor Agent installeert en een regel voor het verzamelen van gegevens voor dezelfde gebeurtenissen en prestatie gegevens maakt, worden er dubbele gegevens geretourneerd.
 
 
 ## <a name="costs"></a>Kosten
@@ -76,7 +76,7 @@ De volgende tabel bevat de gegevens typen die u op dit moment kunt verzamelen me
 
 De Azure Monitor-agent verzendt gegevens naar Azure Monitor metrieken of een Log Analytics-werk ruimte die Azure Monitor logboeken ondersteunt.
 
-| Gegevensbron | Bestemmingen | Description |
+| Gegevensbron | Bestemmingen | Beschrijving |
 |:---|:---|:---|
 | Prestaties        | Metrische gegevens van Azure Monitor<br>Log Analytics-werkruimte | Numerieke waarden meten de prestaties van verschillende aspecten van het besturings systeem en de werk belastingen. |
 | Windows-gebeurtenis logboeken | Log Analytics-werkruimte | Gegevens die worden verzonden naar het Windows-systeem voor gebeurtenis registratie. |

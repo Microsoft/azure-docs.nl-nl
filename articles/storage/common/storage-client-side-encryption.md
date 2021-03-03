@@ -10,12 +10,12 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-csharp
-ms.openlocfilehash: eb1891b7201d8e1d3d18b0e01817ee943ae6341f
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 9d00b6aa09ef19b1e6892e0e90536e45dd3bce79
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100548179"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101718519"
 ---
 # <a name="client-side-encryption-and-azure-key-vault-for-microsoft-azure-storage"></a>Client-Side versleuteling en Azure Key Vault voor Microsoft Azure Storage
 
@@ -132,6 +132,8 @@ Er zijn twee vereiste pakketten voor de integratie van Key Vault:
 * Azure. Core bevat de `IKeyEncryptionKey` en- `IKeyEncryptionKeyResolver` interfaces. De Storage-client bibliotheek voor .NET definieert deze al als een afhankelijkheid.
 * Azure. Security. keys (v4. x) bevat de Key Vault REST-client, evenals cryptografische clients die worden gebruikt met versleuteling aan de client zijde.
 
+Key Vault is ontworpen voor hoogwaardige hoofd sleutels en beperkings limieten per Key Vault zijn met dit doel ontworpen. Vanaf Azure. Security. Keys 4.1.0 is er geen `IKeyEncryptionKeyResolver` implementatie die ondersteuning biedt voor sleutel opslag. Als u de cache nodig hebt om te beperken, kan [dit voor beeld](https://docs.microsoft.com/samples/azure/azure-sdk-for-net/azure-key-vault-proxy/) worden gevolgd om een cache-laag in een-exemplaar te injecteren `Azure.Security.KeyVault.Keys.Cryptography.KeyResolver` .
+
 # <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 Er zijn drie Key Vault pakketten:
@@ -140,15 +142,15 @@ Er zijn drie Key Vault pakketten:
 * Micro soft. Azure. de sleutel kluis (v3. x) bevat de Key Vault REST-client.
 * Micro soft. Azure. de sleutel kluis. Extensions (v3. x) bevat extensie code die implementaties van cryptografische algoritmen en een RSAKey en een SymmetricKey bevat. Dit is afhankelijk van de core-en de naam ruimte van de hoofd kluis en biedt functionaliteit voor het definiëren van een aggregatie resolver (wanneer gebruikers meerdere sleutel providers willen gebruiken) en een cache sleutel conflict Oplosser. Hoewel de opslag-client bibliotheek niet rechtstreeks afhankelijk is van dit pakket, moet u dit pakket hebben als gebruikers Azure Key Vault willen gebruiken om hun sleutels op te slaan of de Key Vault extensies te gebruiken voor het gebruik van de lokale en Cloud cryptografie providers.
 
-Meer informatie over Key Vault gebruik in V11 vindt u in de voor [beelden van V11](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/EncryptionSamples)-code ring.
-
----
-
 Key Vault is ontworpen voor hoogwaardige hoofd sleutels en beperkings limieten per Key Vault zijn met dit doel ontworpen. Bij het uitvoeren van versleuteling aan de client zijde met Key Vault moet het voorkeurs model gebruikmaken van symmetrische hoofd sleutels die zijn opgeslagen als geheimen in Key Vault en lokaal in de cache worden geplaatst. Gebruikers moeten het volgende doen:
 
 1. Maak een geheim offline en upload het naar Key Vault.
 2. Gebruik de basis-id van het geheim als para meter om de huidige versie van het geheim voor versleuteling op te lossen en deze gegevens lokaal op te slaan in de cache. CachingKeyResolver gebruiken voor caching; gebruikers worden niet verwacht hun eigen cache logica te implementeren.
 3. Gebruik de caching-resolver als invoer bij het maken van het versleutelings beleid.
+
+Meer informatie over Key Vault gebruik in V11 vindt u in de voor [beelden van V11](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/EncryptionSamples)-code ring.
+
+---
 
 ## <a name="best-practices"></a>Aanbevolen procedures
 

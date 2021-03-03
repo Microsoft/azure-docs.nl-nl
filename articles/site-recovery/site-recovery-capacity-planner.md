@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
-ms.openlocfilehash: a5764e44db31755110ac99a3e8e8e0984cdf9604
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa96845a2bd2f4659da1155c4f75281268dce76d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87490571"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737712"
 ---
 # <a name="plan-capacity-for-hyper-v-vm-disaster-recovery"></a>Capaciteit plannen voor herstel na noodgevallen van Hyper-V-VM's 
 
@@ -43,7 +43,7 @@ U kunt het hulp programma uitvoeren in twee modi:
 
 
 ## <a name="run-the-quick-planner"></a>De snelle planner uitvoeren
-1. Down load en open [Site Recovery capacity planner](https://aka.ms/asr-capacity-planner-excel). U moet macro's uitvoeren. Wanneer u hierom wordt gevraagd, selecteert u selecties om bewerken en inhoud in te scha kelen.
+1. Down load en open [Site Recovery capacity planner](/samples/browse/?redirectedfrom=TechNet-Gallery). U moet macro's uitvoeren. Wanneer u hierom wordt gevraagd, selecteert u selecties om bewerken en inhoud in te scha kelen.
 
 2. Selecteer in de keuze lijst **een planner type selecteren** de optie **snelle planner**.
 
@@ -51,13 +51,13 @@ U kunt het hulp programma uitvoeren in twee modi:
 
 3. Voer de vereiste gegevens in op het werk blad **capacity planner** . Vul alle velden in die rood in de volgende scherm afbeelding worden omcirkeld:
 
-   a. In **Selecteer uw scenario**kiest u **Hyper-V naar Azure** of **VMware/fysiek naar Azure**.
+   a. In **Selecteer uw scenario** kiest u **Hyper-V naar Azure** of **VMware/fysiek naar Azure**.
 
    b. Geef de **gemiddelde dagelijkse gegevens wijzigings frequentie (%)** op door de gegevens die u verzamelt met het [hulp programma voor capaciteits planning voor Hyper-V](./hyper-v-deployment-planner-overview.md) of [site Recovery Deployment planner](./site-recovery-deployment-planner.md).
 
    c. De **compressie** -instelling wordt niet gebruikt wanneer u virtuele Hyper-V-machines naar Azure repliceert. Gebruik voor compressie een apparaat van derden, zoals Riverbed.
 
-   d. In **dagen**bewaren geeft u in dagen op hoe lang replica's moeten worden bewaard.
+   d. In **dagen** bewaren geeft u in dagen op hoe lang replica's moeten worden bewaard.
 
    e. In het **aantal uren waarin de initiële replicatie voor de batch van virtuele machines moet worden voltooid** en het **aantal virtuele machines per initiële replicatie batch**, voert u de instellingen in die worden gebruikt voor het berekenen van de initiële replicatie vereisten. Wanneer Site Recovery is geïmplementeerd, wordt de volledige initiële gegevensset geüpload.
 
@@ -81,7 +81,7 @@ U kunt het hulp programma uitvoeren in twee modi:
 
 ## <a name="run-the-detailed-planner"></a>De gedetailleerde planner uitvoeren
 
-1. Down load en open [Site Recovery capacity planner](https://aka.ms/asr-capacity-planner-excel). U moet macro's uitvoeren. Wanneer u hierom wordt gevraagd, selecteert u selecties om bewerken en inhoud in te scha kelen.
+1. Down load en open [Site Recovery capacity planner](/samples/browse/?redirectedfrom=TechNet-Gallery). U moet macro's uitvoeren. Wanneer u hierom wordt gevraagd, selecteert u selecties om bewerken en inhoud in te scha kelen.
 
 2. Selecteer in **Selecteer een planner type** **gedetailleerde planner** in de keuze lijst.
 
@@ -89,25 +89,25 @@ U kunt het hulp programma uitvoeren in twee modi:
 
 3. Voer de vereiste gegevens in op het werk blad **kwalificaties werk belasting** . U moet alle velden die zijn gemarkeerd invullen.
 
-   a. Geef in **processor cores**het totale aantal kernen op een bron server op.
+   a. Geef in **processor cores** het totale aantal kernen op een bron server op.
 
    b. Geef in **geheugen toewijzing (in MB)** de RAM-grootte op van een bron server.
 
-   c. Geef in **aantal nic's**het aantal netwerk adapters op een bron server op.
+   c. Geef in **aantal nic's** het aantal netwerk adapters op een bron server op.
 
    d. Geef in **totale opslag (in GB)** de totale grootte van de VM-opslag op. Als de bron server bijvoorbeeld drie schijven heeft met elk 500 GB, is de totale opslag grootte 1.500 GB.
 
-   e. Geef bij **aantal gekoppelde schijven**het totale aantal schijven van een bron server op.
+   e. Geef bij **aantal gekoppelde schijven** het totale aantal schijven van een bron server op.
 
    f. Geef het gemiddelde gebruik op in **schijf capaciteits gebruik (%)**.
 
    g. In **dagelijkse gegevens wijzigings percentage (%)** geeft u de dagelijkse gegevens wijzigings frequentie van een bron server op.
 
-   h. Voer in **Azure VM-grootte toewijzen**de Azure VM-grootte in die u wilt toewijzen. Als u dit niet hand matig wilt doen, selecteert u **Compute IaaS vm's**. Als u een hand matige instelling invoert en vervolgens **Compute IaaS vm's**selecteert, kan de hand matige instelling worden overschreven. Het reken proces identificeert automatisch de beste overeenkomst op de Azure VM-grootte.
+   h. Voer in **Azure VM-grootte toewijzen** de Azure VM-grootte in die u wilt toewijzen. Als u dit niet hand matig wilt doen, selecteert u **Compute IaaS vm's**. Als u een hand matige instelling invoert en vervolgens **Compute IaaS vm's** selecteert, kan de hand matige instelling worden overschreven. Het reken proces identificeert automatisch de beste overeenkomst op de Azure VM-grootte.
 
    ![Scherm afbeelding van het werk blad werk belasting kwalificatie, met daarin de vereiste invoer gegevens.](./media/site-recovery-capacity-planner/workload-qualification.png)
 
-4. Als u **Compute IaaS vm's**selecteert, doet u het volgende:
+4. Als u **Compute IaaS vm's** selecteert, doet u het volgende:
 
    * Valideert de verplichte invoer.
    * Berekent IOPS en stelt de beste overeenkomst van de Azure VM-grootte voor elke VM die in aanmerking komt voor replicatie naar Azure. Als er geen geschikte grootte voor Azure VM kan worden gedetecteerd, wordt een fout weer gegeven. Als bijvoorbeeld het aantal gekoppelde schijven 65 is, wordt er een fout weer gegeven omdat de hoogste grootte voor een virtuele machine van Azure 64 is.

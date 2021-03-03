@@ -4,7 +4,7 @@
   items:
     - name: Over toepassingsgateways
       href: overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   expanded: true
   items:
     - name: Een toepassingsgateway maken - Portal
@@ -158,6 +158,8 @@
           href: ingress-controller-install-existing.md
         - name: Inkomend verkeer voor AKS via Helm (Greenfield)
           href: ingress-controller-install-new.md
+        - name: Migreren van helm-implementatie naar AKS-invoeg toepassing
+          href: ingress-controller-migration.md
         - name: Invoegtoepassing voor inkomend verkeer voor AKS uitschakelen en opnieuw inschakelen
           href: ingress-controller-disable-addon.md
         - name: Cookieaffiniteit inschakelen

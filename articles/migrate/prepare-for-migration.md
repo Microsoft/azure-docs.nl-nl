@@ -6,12 +6,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.topic: how-to
 ms.date: 06/08/2020
-ms.openlocfilehash: 979f40e13aab71f02a316e4ddf60306170166845
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
-ms.translationtype: HT
+ms.openlocfilehash: 543fb7474c0a9efc41667945c89489054a44d657
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96753923"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101724486"
 ---
 # <a name="prepare-on-premises-machines-for-migration-to-azure"></a>On-premises machines voorbereiden voor migratie naar Azure
 
@@ -35,7 +35,7 @@ De tabel geeft een overzicht van de limieten voor detectie, beoordeling en migra
 
 **Scenario** | **Project** | **Detectie/Evaluatie** | **Migratie**
 --- | --- | --- | ---
-**VMware-VM's** | Detecteer en evalueer tot 35.000 VM's in één Azure Migrate-project. | Detecteer tot 10.000 VMware-VM's met één [Azure Migrate-apparaat](common-questions-appliance.md) voor VMware. | **Migratie zonder agents**: u kunt maximaal 300 VM's tegelijk repliceren. Voor de beste prestaties raden we u aan meerdere batches met VM's te maken als u er meer dan 50 hebt.<br/><br/> **Migratie met agents**: u kunt het [replicatieapparaat](migrate-replication-appliance.md) [uitschalen](./agent-based-migration-architecture.md#performance-and-scaling) om grote aantallen VM's te repliceren.<br/><br/> U kunt in de portal maximaal 10 machines tegelijk selecteren voor replicatie. Als u meer machines wilt repliceren, voegt u die toe in batches van 10.
+**VMware-VM's** | Detecteer en evalueer tot 35.000 VM's in één Azure Migrate-project. | Detecteer tot 10.000 VMware-VM's met één [Azure Migrate-apparaat](common-questions-appliance.md) voor VMware. | **Migratie zonder agent**: u kunt vanaf elke vCenter Server gelijktijdig een maximum van 500 vm's repliceren. **Migratie met agents**: u kunt het [replicatieapparaat](migrate-replication-appliance.md) [uitschalen](./agent-based-migration-architecture.md#performance-and-scaling) om grote aantallen VM's te repliceren.<br/><br/> U kunt in de portal maximaal 10 machines tegelijk selecteren voor replicatie. Als u meer machines wilt repliceren, voegt u die toe in batches van 10.
 **Virtuele Hyper-V-machines** | Detecteer en evalueer tot 35.000 VM's in één Azure Migrate-project. | Detecteer tot 5.000 Hyper-V-VM's met één Azure Migrate-apparaat | Voor Hyper-V-migratie wordt geen apparaat gebruikt. In plaats daarvan wordt de Hyper-V Replication Provider uitgevoerd op elke Hyper-V-host.<br/><br/> De replicatiecapaciteit wordt beïnvloed door prestatiefactoren zoals VM-verloop en uploadbandbreedte voor de replicatiegegevens.<br/><br/> U kunt in de portal maximaal 10 machines tegelijk selecteren voor replicatie. Als u meer machines wilt repliceren, voegt u die toe in batches van 10.
 **Fysieke machines** | Detecteer en evalueer tot 35.000 virtuele machines in één Azure Migrate-project. | Detecteer tot 250 fysieke servers met één Azure Migrate-apparaat voor fysieke servers. | U kunt het [replicatieapparaat](migrate-replication-appliance.md) [uitschalen](./agent-based-migration-architecture.md#performance-and-scaling) om grote aantallen servers te repliceren.<br/><br/> U kunt in de portal maximaal 10 machines tegelijk selecteren voor replicatie. Als u meer machines wilt repliceren, voegt u die toe in batches van 10.
 
@@ -116,7 +116,7 @@ Azure Migrate voert deze acties automatisch uit voor deze versies
 - SUSE Linux Enterprise Server 12 SP1+
 - SUSE Linux Enterprise Server 15 SP1
 - Ubuntu 19.04, 19.10, 18.04LTS, 16.04LTS, 14.04LTS
-- Debian 8, 7
+- Debian 9, 8, 7
 - Oracle Linux 7.7, 7.7CI
 
 Bereid voor andere versies de machines voor zoals samengevat in de tabel.  

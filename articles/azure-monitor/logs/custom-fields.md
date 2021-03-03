@@ -6,20 +6,20 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/23/2019
-ms.openlocfilehash: 685c54131e4a82950ea64e5374d9e1d260ffabc7
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: f35100d703e56d1fda731aab5e6a96c791c8f0d9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611910"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101713674"
 ---
 # <a name="create-custom-fields-in-a-log-analytics-workspace-in-azure-monitor-preview"></a>Aangepaste velden in een Log Analytics-werk ruimte maken in Azure Monitor (preview)
 
 > [!NOTE]
-> In dit artikel wordt beschreven hoe u tekst gegevens kunt parseren in een Log Analytics werkruimte die wordt verzameld. Het is raadzaam om tekst gegevens in een query filter te parseren nadat deze zijn verzameld volgens de richt lijnen die worden beschreven in [tekst gegevens parseren in azure monitor](../log-query/parse-text.md). Het biedt verschillende voor delen ten opzichte van het gebruik van aangepaste velden.
+> In dit artikel wordt beschreven hoe u tekst gegevens kunt parseren in een Log Analytics werkruimte die wordt verzameld. Het is raadzaam om tekst gegevens in een query filter te parseren nadat deze zijn verzameld volgens de richt lijnen die worden beschreven in [tekst gegevens parseren in azure monitor](./parse-text.md). Het biedt verschillende voor delen ten opzichte van het gebruik van aangepaste velden.
 
 > [!IMPORTANT]
-> Aangepaste velden verg Roten de hoeveelheid gegevens die in de Log Analytics werkruimte wordt verzameld, waardoor uw kosten kunnen worden verhoogd. Zie [gebruik en kosten beheren met Azure monitor logboeken](../platform/manage-cost-storage.md#pricing-model) voor meer informatie.
+> Aangepaste velden verg Roten de hoeveelheid gegevens die in de Log Analytics werkruimte wordt verzameld, waardoor uw kosten kunnen worden verhoogd. Zie [gebruik en kosten beheren met Azure monitor logboeken](./manage-cost-storage.md#pricing-model) voor meer informatie.
 
 Met de functie voor **aangepaste velden** van Azure monitor kunt u bestaande records in uw log Analytics-werk ruimte uitbreiden door uw eigen Doorzoek bare velden toe te voegen.  Aangepaste velden worden automatisch ingevuld op basis van gegevens die zijn geëxtraheerd uit andere eigenschappen in dezelfde record.
 
@@ -42,9 +42,9 @@ In de volgende secties vindt u de procedure voor het maken van een aangepast vel
 > 
 
 ### <a name="step-1--identify-records-that-will-have-the-custom-field"></a>Stap 1: records identificeren die het aangepaste veld bevatten
-De eerste stap is het identificeren van de records waarmee het aangepaste veld wordt opgehaald.  U begint met een [standaard logboek query](../log-query/log-query-overview.md) en selecteert vervolgens een record om te fungeren als het model dat Azure monitor leert van.  Wanneer u opgeeft dat u gegevens wilt extra heren in een aangepast veld, wordt de **wizard veld uitpakken** geopend, waarin u de criteria kunt valideren en verfijnen.
+De eerste stap is het identificeren van de records waarmee het aangepaste veld wordt opgehaald.  U begint met een [standaard logboek query](./log-query-overview.md) en selecteert vervolgens een record om te fungeren als het model dat Azure monitor leert van.  Wanneer u opgeeft dat u gegevens wilt extra heren in een aangepast veld, wordt de **wizard veld uitpakken** geopend, waarin u de criteria kunt valideren en verfijnen.
 
-1. Ga naar **Logboeken** en gebruik een [query om de records op te halen](../log-query/log-query-overview.md) die het aangepaste veld zullen bevatten.
+1. Ga naar **Logboeken** en gebruik een [query om de records op te halen](./log-query-overview.md) die het aangepaste veld zullen bevatten.
 2. Selecteer een record die Log Analytics gebruikt als model voor het extra heren van gegevens om het aangepaste veld in te vullen.  U kunt de gegevens die u wilt extra heren uit deze record identificeren en Log Analytics gebruikt deze informatie om te bepalen wat de logica is om het aangepaste veld voor alle vergelijk bare records te vullen.
 3. Vouw de record eigenschappen uit, klik op het weglatings teken links van de bovenste eigenschap van de record en selecteer **velden extra heren uit**.
 4. De **wizard voor het uitpakken van velden** wordt geopend en de record die u hebt geselecteerd, wordt weer gegeven in de **hoofd voorbeeld** kolom.  Het aangepaste veld wordt gedefinieerd voor records met dezelfde waarden in de eigenschappen die zijn geselecteerd.  
@@ -128,6 +128,5 @@ We kunnen nu het aangepaste veld gebruiken, net als elke andere record eigenscha
 ![Groeperen op query](media/custom-fields/query-group.png)
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over [logboek query's](../log-query/log-query-overview.md) voor het bouwen van query's met aangepaste velden voor criteria.
+* Meer informatie over [logboek query's](./log-query-overview.md) voor het bouwen van query's met aangepaste velden voor criteria.
 * Bewaak [aangepaste logboek bestanden](../agents/data-sources-custom-logs.md) die u parseert met behulp van aangepaste velden.
-

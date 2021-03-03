@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
 ms.date: 08/06/2020
-ms.openlocfilehash: 4e81ccb541b188fedfefd150233082e9cb1f8c22
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: a04d976ed3d9be253425b4c8a5a5c0effb6f80b8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98945542"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101741834"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-apache-hadoop-apache-spark-apache-kafka-and-more"></a>Clusters in HDInsight instellen met Apache Hadoop, Apache Spark, Apache Kafka en meer
 
@@ -29,7 +29,7 @@ Als u meerdere clusters tegelijk gebruikt, wilt u een virtueel netwerk maken. Al
 
 In de volgende tabel ziet u de verschillende methoden die u kunt gebruiken om een HDInsight-cluster in te stellen.
 
-| Clusters die zijn gemaakt met | Webbrowser | Opdrachtregel | REST API | SDK |
+| Clusters die zijn gemaakt met | Webbrowser | Opdrachtregel | REST-API | SDK |
 | --- |:---:|:---:|:---:|:---:|
 | [Azure-portal](hdinsight-hadoop-create-linux-clusters-portal.md) |✔ |&nbsp; |&nbsp; |&nbsp; |
 | [Azure Data Factory](hdinsight-hadoop-create-linux-clusters-adf.md) |✔ |✔ |✔ |✔ |
@@ -60,7 +60,7 @@ Voor de namen van HDInsight-clusters gelden de volgende beperkingen:
 * Het bereik van de cluster naamgeving geldt voor alle Azure, in alle abonnementen. De cluster naam moet dus wereld wijd uniek zijn.
 * De eerste zes tekens moeten uniek zijn in een virtueel netwerk
 
-#### <a name="region"></a>Regio
+#### <a name="region"></a>Region
 
 U hoeft de cluster locatie niet expliciet op te geven: het cluster bevindt zich op dezelfde locatie als de standaard opslag. Voor een lijst met ondersteunde regio's selecteert u de vervolg keuzelijst **regio** voor prijzen voor [HDInsight](https://go.microsoft.com/fwLink/?LinkID=282635&clcid=0x409).
 
@@ -216,7 +216,7 @@ Elk cluster type heeft een eigen aantal knoop punten, terminologie voor knoop pu
 | Storm |Nimbus-knoop punt (2), supervisor server (1 +), ZooKeeper-knoop punt (3) |![Instellingen voor het cluster type voor HDInsight Storm](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-storm-cluster-type-setup.png) |
 | Spark |Hoofd knooppunt (2), Worker-knoop punt (1 +), ZooKeeper-knoop punt (3) (gratis voor de VM-grootte van a1 ZooKeeper) |![Setup van HDInsight Spark-cluster type](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-spark-cluster-type-setup.png) |
 
-Zie [standaard knooppunt configuratie en grootten voor virtuele machines](hdinsight-component-versioning.md#default-node-configuration-and-virtual-machine-sizes-for-clusters) in ' wat zijn de Hadoop-onderdelen en versies in HDInsight? ' voor meer informatie.
+Zie [standaard knooppunt configuratie en grootten voor virtuele machines](hdinsight-supported-node-configuration.md) in ' wat zijn de Hadoop-onderdelen en versies in HDInsight? ' voor meer informatie.
 
 De kosten voor HDInsight-clusters worden bepaald door het aantal knoop punten en de grootte van de virtuele machines voor de knoop punten.
 

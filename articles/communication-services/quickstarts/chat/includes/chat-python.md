@@ -10,17 +10,17 @@ ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: deec1dabe405d13d6009311c8b2d68a930e7aa29
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 0225c948fddf65b9312c689144ecc567a70aa27e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101661660"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750112"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
 
-- Maak een Azure-account met een actief abonnement. Zie [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voor meer informatie.
+- Maak een Azure-account met een actief abonnement. Zie [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voor meer informatie. 
 - [Python](https://www.python.org/downloads/) installeren
 - Maak een Azure Communication Services-resource. Zie [Een Azure Communication-resource maken](../../create-communication-resource.md) voor meer informatie. Voor deze snelstart moet u het **eindpunt** van uw resource vastleggen
 - Een[Token voor gebruikerstoegang](../../access-tokens.md). Zorg ervoor dat u het bereik instelt op ‘chat’ en noteer de tokenreeks en ook de gebruikersId-reeks.
@@ -42,6 +42,7 @@ import os
 # Add required client library components from quickstart here
 
 try:
+    print('Azure Communication Services - Chat Quickstart')
     # Quickstart code goes here
 except Exception as ex:
     print('Exception:')
@@ -72,7 +73,7 @@ Als u een chat-client wilt maken, gebruikt u het Communications Service-eindpunt
 Deze Snelstartgids heeft geen betrekking op het maken van een servicelaag voor het beheren van tokens voor uw chat toepassing, hoewel dit wordt aanbevolen. Raadpleeg de volgende documentatie voor meer informatie over de [architectuur van chatten](../../../concepts/chat/concepts.md)
 
 ```console
-pip install azure-communication-identity
+pip install azure-communication-administration
 ```
 
 ```python
@@ -125,11 +126,11 @@ chat_thread_client = chat_client.create_chat_thread(topic, participants, repeata
 ```
 
 ## <a name="get-a-chat-thread-client"></a>Een chat-thread-client ophalen
-De methode `get_chat_thread` retourneert een thread-client voor een thread die al bestaat. Het kan worden gebruikt voor het uitvoeren van bewerkingen op de gemaakte thread: deel nemers toevoegen, bericht verzenden thread_id enzovoort is de unieke ID van de bestaande chat-thread.
+De methode `get_chat_thread_client` retourneert een thread-client voor een thread die al bestaat. Het kan worden gebruikt voor het uitvoeren van bewerkingen op de gemaakte thread: deel nemers toevoegen, bericht verzenden thread_id enzovoort is de unieke ID van de bestaande chat-thread.
 
 ```python
-thread_id = 'id'
-chat_thread = chat_client.get_chat_thread(thread_id)
+thread_id = chat_thread_client.thread_id
+chat_thread_client = chat_client.get_chat_thread_client(thread_id)
 ```
 
 ## <a name="list-all-chat-threads"></a>Alle chat-threads weer geven
@@ -140,14 +141,16 @@ De `list_chat_threads` methode retourneert een iterator van het type `ChatThread
 
 ```python
 from datetime import datetime, timedelta
+import pytz
 
 start_time = datetime.utcnow() - timedelta(days=2)
 start_time = start_time.replace(tzinfo=pytz.utc)
 chat_thread_infos = chat_client.list_chat_threads(results_per_page=5, start_time=start_time)
 
-for info in chat_thread_infos:
-    # Iterate over all chat threads
-    print("thread id:", info.id)
+for chat_thread_info_page in chat_thread_infos.by_page():
+    for chat_thread_info in chat_thread_info_page:
+        # Iterate over all chat threads
+        print("thread id:", chat_thread_info.id)
 ```
 
 ## <a name="delete-a-chat-thread"></a>Een chatgesprek verwijderen
@@ -156,7 +159,7 @@ De `delete_chat_thread` wordt gebruikt om een chat-thread te verwijderen.
 - Gebruik `thread_id` om de thread_id op te geven van een bestaande chat-thread die moet worden verwijderd
 
 ```python
-thread_id='id'
+thread_id = chat_thread_client.thread_id
 chat_client.delete_chat_thread(thread_id)
 ```
 
@@ -172,6 +175,7 @@ Het antwoord is een ' id ' van `str` het type. Dit is de unieke id van het beric
 
 #### <a name="message-type-not-specified"></a>Er is geen bericht type opgegeven
 ```python
+chat_thread_client = chat_client.create_chat_thread(topic, participants)
 
 content='hello world'
 sender_display_name='sender name'
@@ -196,12 +200,12 @@ send_message_result_id_w_str = chat_thread_client.send_message(content=content, 
 ## <a name="get-a-specific-chat-message-from-a-chat-thread"></a>Een specifiek chat bericht ophalen van een chat-thread
 De `get_message` functie kan worden gebruikt om een specifiek bericht op te halen dat wordt geïdentificeerd door een message_id
 
-- Gebruiken `message_id` om de bericht-id op te geven
+- Gebruiken `message_id` om de bericht-id op te geven.
 
 Het antwoord van het type `ChatMessage` bevat alle informatie met betrekking tot het afzonderlijke bericht.
 
 ```python
-message_id = 'message_id'
+message_id = send_message_result_id
 chat_message = chat_thread_client.get_message(message_id)
 ```
 
@@ -214,6 +218,10 @@ U kunt chatberichten ophalen door de methode `list_messages` op opgegeven interv
 
 ```python
 chat_messages = chat_thread_client.list_messages(results_per_page=1, start_time=start_time)
+for chat_message_page in chat_messages.by_page():
+    for chat_message in chat_message_page:
+        print('ChatMessage: ', chat_message)
+        print('ChatMessage: ', chat_message.content.message)
 ```
 
 `list_messages` retourneert de meest recente versie van het bericht, inclusief eventuele bewerkingen of verwijderingen die zijn opgetreden in het bericht met `update_message` en `delete_message`. Voor verwijderde berichten retourneert `ChatMessage.deleted_on` een datum/tijd-waarde die aangeeft wanneer het bericht verwijderd werd. Voor bewerkte berichten retourneert `ChatMessage.edited_on` een datum/tijd die aangeeft wanneer het bericht is bewerkt. Het oorspronkelijke tijdstip waarop het bericht is gemaakt, kan worden geraadpleegd met `ChatMessage.created_on` en kan worden gebruikt om de berichten te ordenen.
@@ -238,6 +246,8 @@ U kunt het onderwerp van een chat thread bijwerken met behulp van de- `update_to
 ```python
 topic = "updated thread topic"
 chat_thread_client.update_topic(topic=topic)
+updated_topic = chat_client.get_chat_thread(chat_thread_client.thread_id).topic
+print('Updated topic: ', updated_topic)
 ```
 
 ## <a name="update-a-message"></a>Een bericht bijwerken
@@ -247,18 +257,23 @@ U kunt de inhoud van een bestaand bericht bijwerken met behulp van de `update_me
 - Gebruiken `content` om de nieuwe inhoud van het bericht in te stellen
 
 ```python
-message_id='id'
-content = 'updated content'
-chat_thread_client.update_message(message_id=message_id, content=content)
+content = 'Hello world!'
+send_message_result_id = chat_thread_client.send_message(content=content, sender_display_name=sender_display_name)
+
+content = 'Hello! I am updated content'
+chat_thread_client.update_message(message_id=send_message_result_id, content=content)
+
+chat_message = chat_thread_client.get_message(send_message_result_id)
+print('Updated message content: ', chat_message.content.message)
 ```
 
 ## <a name="send-read-receipt-for-a-message"></a>Lees bevestiging verzenden voor een bericht
 De `send_read_receipt` methode kan worden gebruikt om een gebeurtenis voor een lees bevestiging te posten naar een thread, namens een gebruiker.
 
-- Gebruiken `message_id` om de id op te geven van het laatste bericht dat door de huidige gebruiker is gelezen
+- Gebruiken `message_id` om de id op te geven van het laatste bericht dat door de huidige gebruiker is gelezen.
 
 ```python
-message_id='id'
+message_id=send_message_result_id
 chat_thread_client.send_read_receipt(message_id=message_id)
 ```
 
@@ -271,9 +286,9 @@ De `list_read_receipts` methode kan worden gebruikt om Lees bevestigingen voor e
 ```python
 read_receipts = chat_thread_client.list_read_receipts(results_per_page=2, skip=0)
 
-for page in read_receipts.by_page():
-    for item in page:
-        print(item)
+for read_receipt_page in read_receipts.by_page():
+    for read_receipt in read_receipt_page:
+        print('ChatMessageReadReceipt: ', read_receipt)
 ```
 
 ## <a name="send-typing-notification"></a>Bericht over verzend type
@@ -289,7 +304,7 @@ De `delete_message` methode kan worden gebruikt om een bericht te verwijderen, g
 - Gebruiken `message_id` om de message_id op te geven
 
 ```python
-message_id='id'
+message_id=send_message_result_id
 chat_thread_client.delete_message(message_id=message_id)
 ```
 
@@ -341,7 +356,7 @@ Gebruik `remove_participant` methode om de thread deelnemer te verwijderen uit d
 - `user` is de `CommunicationUserIdentifier` moet worden verwijderd uit de thread.
 
 ```python
-chat_thread_client.remove_participant(user)
+chat_thread_client.remove_participant(new_user)
 ```
 
 ## <a name="run-the-code"></a>De code uitvoeren

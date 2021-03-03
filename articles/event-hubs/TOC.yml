@@ -214,7 +214,7 @@
         - name: Diagnostische logboeken instellen
           href: event-hubs-diagnostic-logs.md
         - name: Gegevens van Azure Diagnostics streamen met behulp van Event Hubs
-          href: ../azure-monitor/platform/diagnostics-extension-stream-event-hubs.md
+          href: ../azure-monitor/agents/diagnostics-extension-stream-event-hubs.md
         - name: Doorvoereenheden automatisch schalen
           href: event-hubs-auto-inflate.md
         - name: Event Hubs-beheerbibliotheken

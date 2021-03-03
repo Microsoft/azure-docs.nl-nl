@@ -1,22 +1,21 @@
 ---
 title: Prestatie meter in Netwerkprestatiemeter
 description: Met de functie prestatie meter in Netwerkprestatiemeter kunt u de netwerk connectiviteit op verschillende punten in uw netwerk bewaken. U kunt Cloud implementaties en on-premises locaties, meerdere data centers en filialen, en bedrijfskritische toepassingen voor multi-tier of micro services bewaken.
-ms.subservice: logs
 ms.topic: conceptual
 author: abshamsft
 ms.author: absha
 ms.date: 02/20/2018
-ms.openlocfilehash: 5335882c11ee6a1a7352ef3dc9822cfa88eda196
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 505584abbe573c94056888b07406437650b09611
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100573504"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728617"
 ---
 # <a name="network-performance-monitor-solution-performance-monitoring"></a>Netwerkprestatiemeter oplossing: prestatie bewaking
 
 > [!IMPORTANT]
-> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor](https://docs.microsoft.com/azure/network-watcher/migrate-to-connection-monitor-from-network-performance-monitor) in azure Network Watcher vóór 29 februari 2024.
+> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor](../../network-watcher/migrate-to-connection-monitor-from-network-performance-monitor.md) in azure Network Watcher vóór 29 februari 2024.
 
 Met de functie prestatie meter in [Netwerkprestatiemeter](network-performance-monitor.md) kunt u de netwerk connectiviteit op verschillende punten in uw netwerk bewaken. U kunt Cloud implementaties en on-premises locaties, meerdere data centers en filialen, en bedrijfskritische toepassingen voor multi-tier of micro services bewaken. Met prestatie meter kunt u netwerk problemen detecteren voordat uw gebruikers klagen. De belangrijkste voor delen zijn: 
 
@@ -132,4 +131,3 @@ In de volgende afbeelding wordt de hoofd oorzaak van de probleem gebieden naar d
 
 ## <a name="next-steps"></a>Volgende stappen
 [Zoek logboeken](../logs/log-query-overview.md) om gedetailleerde gegevens records voor netwerk prestaties weer te geven.
-

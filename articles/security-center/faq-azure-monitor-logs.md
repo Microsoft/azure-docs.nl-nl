@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/25/2020
 ms.author: memildin
-ms.openlocfilehash: 3a2854f4124a570de4fb467eb6a5d49a3214742e
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 1a52b2fec6155959a570f2438a59c14d9f79f368
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341818"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701957"
 ---
 # <a name="faq-for-customers-already-using-azure-monitor-logs"></a>Veelgestelde vragen voor klanten die Azure Monitor-logboeken al gebruiken<a name="existingloganalyticscust"></a>
 
@@ -45,4 +45,4 @@ Als de Log Analytics-agent al is geïnstalleerd op een virtuele machine als Azur
 Als Security Center de Log Analytics-agent op Vm's installeert, worden de standaardwerk ruimte (n) gebruikt die door Security Center is gemaakt als Security Center niet naar een bestaande werk ruimte wijst.
 
 ## <a name="i-already-have-security-solution-on-my-workspaces-what-are-the-billing-implications"></a>Ik heb al een beveiligings oplossing voor mijn werk ruimten. Wat zijn de gevolgen voor facturering?
-De oplossing beveiligings & controle wordt gebruikt om **Azure Defender voor servers**in te scha kelen. Als de oplossing beveiligings & controle al is geïnstalleerd op een werk ruimte, gebruikt Security Center de bestaande oplossing. Er is geen wijziging in de facturering.
+De oplossing beveiligings & controle wordt gebruikt om **Azure Defender voor servers** in te scha kelen. Als de oplossing beveiligings & controle al is geïnstalleerd op een werk ruimte, gebruikt Security Center de bestaande oplossing. Er is geen wijziging in de facturering.

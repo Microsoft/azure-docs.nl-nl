@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/30/2020
-ms.openlocfilehash: 540ca293afdd7514793b8eec390b4751885859df
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: f2d2670b974555b83ec622b22eb2dae8f3c9899b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611382"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101710975"
 ---
 # <a name="connect-configuration-manager-to-azure-monitor"></a>Configuration Manager verbinden met Azure Monitor
 U kunt uw micro soft endpoint Configuration Manager-omgeving verbinden met Azure Monitor om gegevens van de apparaatgegevens te synchroniseren en naar deze verzamelingen te verwijzen in Azure Monitor en Azure Automation.  
@@ -44,7 +44,7 @@ In de volgende stappen vindt u een overzicht van de stappen voor het configurere
 
 ## <a name="grant-configuration-manager-with-permissions-to-log-analytics"></a>Configuration Manager machtigingen verlenen voor Log Analytics
 
-In de volgende procedure verleent u de rol *Inzender* in uw log Analytics-werk ruimte aan de AD-toepassing en service-principal die u eerder hebt gemaakt voor Configuration Manager. Als u nog geen werk ruimte hebt, raadpleegt u [een werk ruimte maken in azure monitor](../learn/quick-create-workspace.md) voordat u doorgaat. Hiermee kan Configuration Manager uw Log Analytics-werk ruimte verifiëren en er verbinding mee maken.  
+In de volgende procedure verleent u de rol *Inzender* in uw log Analytics-werk ruimte aan de AD-toepassing en service-principal die u eerder hebt gemaakt voor Configuration Manager. Als u nog geen werk ruimte hebt, raadpleegt u [een werk ruimte maken in azure monitor](./quick-create-workspace.md) voordat u doorgaat. Hiermee kan Configuration Manager uw Log Analytics-werk ruimte verifiëren en er verbinding mee maken.  
 
 > [!NOTE]
 > U moet machtigingen opgeven in de werk ruimte Log Analytics voor Configuration Manager. Anders wordt er een fout bericht weer gegeven wanneer u de configuratie wizard gebruikt in Configuration Manager.
@@ -148,9 +148,8 @@ Nadat de verzamelingen zijn geïmporteerd, kunt u zien hoeveel computers met ver
 
 ![Scherm afbeelding van de geavanceerde instellingen van de computer groepen voor S C C M met de optie voor importeren Configuration Manager verzamelings lidmaatschappen geselecteerd.](./media/collect-sccm/sccm-computer-groups02.png)
 
-Wanneer u op een van beide klikt, worden alle geïmporteerde groepen of alle computers die deel uitmaken van elke groep weer gegeven. Met [Zoeken in Logboeken](../log-query/log-query-overview.md)kunt u verdere uitgebreide analyse van de gegevens van het lidmaatschap van de verzameling uitvoeren.
+Wanneer u op een van beide klikt, worden alle geïmporteerde groepen of alle computers die deel uitmaken van elke groep weer gegeven. Met [Zoeken in Logboeken](./log-query-overview.md)kunt u verdere uitgebreide analyse van de gegevens van het lidmaatschap van de verzameling uitvoeren.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Gebruik [Zoeken in Logboeken](../log-query/log-query-overview.md) om gedetailleerde informatie over uw Configuration Manager gegevens weer te geven.
-
+Gebruik [Zoeken in Logboeken](./log-query-overview.md) om gedetailleerde informatie over uw Configuration Manager gegevens weer te geven.

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 692b52e8ea6a88a119ca98985864cb9e1daa14c3
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 7dacec1521787e55ee4c7fd5f08b9e56d9dd4842
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100595755"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101735995"
 ---
 # <a name="azure-security-baseline-for-azure-private-link"></a>Azure-beveiligings basislijn voor persoonlijke Azure-koppeling
 
@@ -82,7 +82,7 @@ U kunt ook gegevens voor Azure Sentinel of een SIEM van derden inschakelen op ba
 
 - [De Bewaar periode voor gegevens wijzigen in Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
-- [Bewaar beleid configureren voor logboeken van Azure Storage-account](../storage/common/storage-monitor-storage-account.md#configure-logging)
+- [Bewaar beleid configureren voor logboeken van Azure Storage-account](../storage/common/manage-storage-analytics-logs.md#configure-logging)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 

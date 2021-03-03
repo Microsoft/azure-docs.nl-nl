@@ -6,14 +6,14 @@ manager: nberdy
 ms.service: iot-dps
 services: iot-dps
 ms.topic: conceptual
-ms.date: 09/09/2019
+ms.date: 02/14/2021
 ms.author: xujing
-ms.openlocfilehash: 2d27c4eb1ea4586e0f2eac48930d86217052b2d8
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: ba81be54592e591f734b05235bb3ce183a07a11c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100585443"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101709883"
 ---
 # <a name="troubleshooting-with-azure-iot-hub-device-provisioning-service"></a>Problemen oplossen met Azure IoT Hub Device Provisioning Service
 
@@ -32,7 +32,7 @@ In de volgende procedure wordt beschreven hoe u een waarschuwing kunt weer geven
 4. Selecteer de gewenste waarde. 
    <br />Er zijn momenteel drie metrische gegevens voor DPS:
 
-    | Naam meetwaarde | Description |
+    | Naam meetwaarde | Beschrijving |
     |-------|------------|
     | Attestation-pogingen | Aantal apparaten dat is geprobeerd te verifiëren met Device Provisioning Service|
     | Registratie pogingen | Aantal apparaten dat is geprobeerd bij IoT Hub te registreren na een geslaagde verificatie|
@@ -44,7 +44,7 @@ In de volgende procedure wordt beschreven hoe u een waarschuwing kunt weer geven
 
 7. Selecteer **voor waarde toevoegen** en selecteer vervolgens de gewenste metrische gegevens en drempel waarde door de volgende aanwijzingen te volgen.
 
-Zie [Wat zijn klassieke waarschuwingen in Microsoft Azure?](../azure-monitor/alerts/alerts-overview.md) voor meer informatie.
+Zie [waarschuwingen in azure monitor](../azure-monitor/platform/alerts-overview.md)voor meer informatie.
 
 ## <a name="using-log-analytic-to-view-and-resolve-errors"></a>Logboek analyse gebruiken om fouten weer te geven en op te lossen
 
@@ -58,7 +58,7 @@ Zie [Wat zijn klassieke waarschuwingen in Microsoft Azure?](../azure-monitor/ale
 
 5. De gewenste logboeken kunnen worden verzameld.
 
-    | Logboeknaam | Description |
+    | Logboeknaam | Beschrijving |
     |-------|------------|
     | DeviceOperations | Logboeken met betrekking tot verbindings gebeurtenissen voor apparaten |
     | ServiceOperations | Gebeurtenis logboeken met betrekking tot het gebruik van Service SDK (bijvoorbeeld voor het maken of bijwerken van inschrijvings groepen)|
@@ -75,7 +75,7 @@ Zie [Wat zijn klassieke waarschuwingen in Microsoft Azure?](../azure-monitor/ale
 ## <a name="common-error-codes"></a>Veelvoorkomende foutcodes
 Gebruik deze tabel om veelvoorkomende fouten te begrijpen en op te lossen.
 
-| Foutcode| Description | HTTP-status code |
+| Foutcode| Beschrijving | HTTP-status code |
 |-------|------------|------------|
 | 400 | De hoofd tekst van de aanvraag is ongeldig. het kan bijvoorbeeld niet worden geparseerd of het object kan niet worden gevalideerd.| 400 onjuiste indeling |
 | 401 | Het autorisatie token kan niet worden gevalideerd; het is bijvoorbeeld verlopen of is niet van toepassing op de URI van de aanvraag. Deze fout code wordt ook geretourneerd naar apparaten als onderdeel van de TPM-attest stroom. | 401 Onbevoegd|

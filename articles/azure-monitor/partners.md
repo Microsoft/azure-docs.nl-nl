@@ -3,13 +3,13 @@ title: Partners die integreren met Azure Monitor
 description: Meer informatie over de partners van Azure Monitor en hoe u toegang kunt krijgen tot documentatie voor de integratie met deze.
 ms.subservice: ''
 ms.topic: conceptual
-ms.date: 09/21/2020
-ms.openlocfilehash: 5f97097d21beab12c5f58161751a1bc340fa6cf7
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.date: 02/19/2021
+ms.openlocfilehash: 8b4a30fb26a0b66d31fe16016e0a88fbfb9bbd03
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610496"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101710980"
 ---
 # <a name="azure-monitor-partner-integrations"></a>Integraties van Azure Monitor-partner
 
@@ -101,6 +101,8 @@ Met de nieuwe integratie van Azure-Datadog kunnen organisaties hun oude en Cloud
 -   Profiteer van Unified billing voor de Datadog-service via de facturering van een Azure-abonnement.
 
 Meld u aan voor de [open bare preview](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR4z3T2aGXUZPslUNJ3YpcapURFBHSUJIMVJTWDM5VUFPMVkyTVhMVlYzMS4u) van de nieuwe Datadog-integratie met Azure.  Open bare preview is beschikbaar op Azure Marketplace vanaf oktober 2020.
+
+Abonneer u op de preview-versie van ' Datadog Integration with Azure ' beschikbaar op de [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/datadog1591740804488.dd_liftr_v2?tab=Overview)
 
 Als u nog steeds de vorige hand matig geconfigureerde integratie gebruikt, raadpleegt u de [documentatie op de DataDog-website](https://docs.datadoghq.com/integrations/azure/).
 
@@ -333,15 +335,15 @@ Turbonomic levert werkbelasting automatisering voor hybride Clouds door tegelijk
 
 Met Azure Monitor voor het door sturen van bewakings gegevens naar een Azure Event hub kunt u eenvoudig integreren met een aantal externe SIEM en controle hulpprogramma's. De volgende partners zijn bekend als integratie via event hub. 
 
-| Hulpprogramma | Gehost in azure | Description |
+| Hulpprogramma | Gehost in azure | Beschrijving |
 |:---|:---| :---|
-|  IBM QRadar | No | Het Microsoft Azure DSM en Microsoft Azure Event hub-protocol kunnen worden gedownload via [de website van IBM-ondersteuning](https://www.ibm.com/support). Meer informatie over de integratie met Azure vindt u in de [configuratie van QRADAR DSM](https://www.ibm.com/support/knowledgecenter/SS42VS_DSM/c_dsm_guide_microsoft_azure_overview.html?cp=SS42VS_7.3.0). |
-| Splunk | No | [Microsoft Azure Add-On voor Splunk](https://splunkbase.splunk.com/app/3757/) is een open-source project dat beschikbaar is in Splunkbase. <br><br> Als u een invoeg toepassing in uw Splunk-exemplaar niet kunt installeren, als u bijvoorbeeld een proxy gebruikt of wordt uitgevoerd op Splunk Cloud, kunt u deze gebeurtenissen door sturen naar de Splunk HTTP-gebeurtenis verzamelaar met de [Azure-functie voor Splunk](https://github.com/Microsoft/AzureFunctionforSplunkVS), die wordt geactiveerd door nieuwe berichten in de Event hub. |
-| SumoLogic | No | Instructies voor het instellen van SumoLogic om gegevens van een Event Hub te gebruiken, zijn beschikbaar in [Logboeken verzamelen voor de Azure audit-app vanuit Event hub](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure-Audit/02Collect-Logs-for-Azure-Audit-from-Event-Hub). |
-| ArcSight | No | De ArcSight Azure Event hub Smart connector is beschikbaar als onderdeel van [de verzameling van de ArcSight slimme connector](https://community.softwaregrp.com/t5/Discussions/Announcing-General-Availability-of-ArcSight-Smart-Connectors-7/m-p/1671852). |
-| Syslog-server | No | Als u Azure Monitor gegevens rechtstreeks naar een syslog-server wilt streamen, kunt u een [oplossing gebruiken op basis van een Azure-functie](https://github.com/miguelangelopereira/azuremonitor2syslog/).
-| LogRhythm | No| Instructies voor het instellen van LogRhythm voor het verzamelen van logboeken van een Event Hub zijn [hier](https://logrhythm.com/six-tips-for-securing-your-azure-cloud-environment/)beschikbaar. 
-|Logz.io | Yes | Zie voor meer informatie aan de slag [met bewaking en logboek registratie met behulp van Logz.io voor java-apps die worden uitgevoerd op Azure](/azure/developer/java/fundamentals/java-get-started-with-logzio)
+|  IBM QRadar | Nee | Het Microsoft Azure DSM en Microsoft Azure Event hub-protocol kunnen worden gedownload via [de website van IBM-ondersteuning](https://www.ibm.com/support). Meer informatie over de integratie met Azure vindt u in de [configuratie van QRADAR DSM](https://www.ibm.com/support/knowledgecenter/SS42VS_DSM/c_dsm_guide_microsoft_azure_overview.html?cp=SS42VS_7.3.0). |
+| Splunk | Nee | [Microsoft Azure Add-On voor Splunk](https://splunkbase.splunk.com/app/3757/) is een open-source project dat beschikbaar is in Splunkbase. <br><br> Als u een invoeg toepassing in uw Splunk-exemplaar niet kunt installeren, als u bijvoorbeeld een proxy gebruikt of wordt uitgevoerd op Splunk Cloud, kunt u deze gebeurtenissen door sturen naar de Splunk HTTP-gebeurtenis verzamelaar met de [Azure-functie voor Splunk](https://github.com/Microsoft/AzureFunctionforSplunkVS), die wordt geactiveerd door nieuwe berichten in de Event hub. |
+| SumoLogic | Nee | Instructies voor het instellen van SumoLogic om gegevens van een Event Hub te gebruiken, zijn beschikbaar in [Logboeken verzamelen voor de Azure audit-app vanuit Event hub](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure-Audit/02Collect-Logs-for-Azure-Audit-from-Event-Hub). |
+| ArcSight | Nee | De ArcSight Azure Event hub Smart connector is beschikbaar als onderdeel van [de verzameling van de ArcSight slimme connector](https://community.softwaregrp.com/t5/Discussions/Announcing-General-Availability-of-ArcSight-Smart-Connectors-7/m-p/1671852). |
+| Syslog-server | Nee | Als u Azure Monitor gegevens rechtstreeks naar een syslog-server wilt streamen, kunt u een [oplossing gebruiken op basis van een Azure-functie](https://github.com/miguelangelopereira/azuremonitor2syslog/).
+| LogRhythm | Nee| Instructies voor het instellen van LogRhythm voor het verzamelen van logboeken van een Event Hub zijn [hier](https://logrhythm.com/six-tips-for-securing-your-azure-cloud-environment/)beschikbaar. 
+|Logz.io | Ja | Zie voor meer informatie aan de slag [met bewaking en logboek registratie met behulp van Logz.io voor java-apps die worden uitgevoerd op Azure](/azure/developer/java/fundamentals/java-get-started-with-logzio)
 
 
 ## <a name="next-steps"></a>Volgende stappen

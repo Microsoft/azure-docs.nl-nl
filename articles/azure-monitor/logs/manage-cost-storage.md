@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/31/2021
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: d4ead88fb34d6475dae66d9708d7203eb94eaef1
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 4e711eb70c1fa099dd67b1ec23a0e8014ee11e47
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610604"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101731388"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Gebruik en kosten beheren met Azure Monitor-logboeken    
 
@@ -268,7 +268,7 @@ Om aan de slag te gaan, zijn hier de aanbevolen instellingen voor de waarschuwin
 - Naam van waarschuwings regel: dagelijkse gegevens limiet bereikt
 - Ernst: waarschuwing (Ernst 1)
 
-Zodra een waarschuwing is gedefinieerd en de limiet is bereikt, wordt er een waarschuwing geactiveerd en wordt de reactie uitgevoerd die is gedefinieerd in de actie groep. Dit kan uw team op de hoogte stellen via e-mail en SMS-berichten, of acties automatiseren met webhooks, Automation-runbooks of [integreren met een externe ITSM-oplossing](../platform/itsmc-definition.md#create-itsm-work-items-from-azure-alerts). 
+Zodra een waarschuwing is gedefinieerd en de limiet is bereikt, wordt er een waarschuwing geactiveerd en wordt de reactie uitgevoerd die is gedefinieerd in de actie groep. Dit kan uw team op de hoogte stellen via e-mail en SMS-berichten, of acties automatiseren met webhooks, Automation-runbooks of [integreren met een externe ITSM-oplossing](../alerts/itsmc-definition.md#create-itsm-work-items-from-azure-alerts). 
 
 ## <a name="troubleshooting-why-usage-is-higher-than-expected"></a>Het oplossen van problemen met een hoger gebruik dan verwacht
 
@@ -488,8 +488,8 @@ Hieronder vindt u enkele suggesties voor het verkleinen van het aantal logboeken
 | AzureDiagnostics           | Wijzig de [resource logboek verzameling](../essentials/diagnostic-settings.md#create-in-azure-portal) in: <br> - Het aantal resources dat logboeken naar Log Analytics verzendt te verkleinen <br> - Alleen vereiste logboeken te verzamelen |
 | Oplossingsgegevens van computers die de oplossing niet nodig hebben | Gebruik een [oplossing als doel](../insights/solution-targeting.md) voor het verzamelen van gegevens van alleen vereiste groepen computers. |
 | Application Insights | Beoordelings opties voor [https://docs.microsoft.com/azure/azure-monitor/app/pricing#managing-your-data-volume](managing Application Insights data volume) |
-| [SQL-analyse](https://docs.microsoft.com/azure/azure-monitor/insights/azure-sql) | Gebruik [set-AzSqlServerAudit](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserveraudit) om de controle-instellingen af te stemmen. |
-| Azure Sentinel | Bekijk alle [Sentinel-gegevens bronnen](https://docs.microsoft.com/azure/sentinel/connect-data-sources) die u onlangs hebt ingeschakeld als bronnen van extra gegevens volume. |
+| [SQL-analyse](../insights/azure-sql.md) | Gebruik [set-AzSqlServerAudit](/powershell/module/az.sql/set-azsqlserveraudit) om de controle-instellingen af te stemmen. |
+| Azure Sentinel | Bekijk alle [Sentinel-gegevens bronnen](../../sentinel/connect-data-sources.md) die u onlangs hebt ingeschakeld als bronnen van extra gegevens volume. |
 
 ### <a name="getting-nodes-as-billed-in-the-per-node-pricing-tier"></a>Knoop punten ophalen als gefactureerd in de prijs categorie per knoop punt
 

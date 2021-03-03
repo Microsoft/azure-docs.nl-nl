@@ -5,12 +5,12 @@ ms.subservice: metrics
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.custom: has-adal-ref
-ms.openlocfilehash: 41c2432c3c80be7d28e8f33372dea44ba108c5d3
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: b22387272ebeae7a7db8f0e0940841415e345279
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610349"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734210"
 ---
 # <a name="azure-monitoring-rest-api-walkthrough"></a>Azure Monitoring REST API-overzicht
 
@@ -462,9 +462,9 @@ Zodra de beschik bare metrische definities bekend zijn, is het mogelijk om de ge
 >
 >
 
-**Methode**: ophalen
+**Methode**: `GET`
 
-**Aanvraag-URI**: `https:\//management.azure.com/subscriptions/\*{subscription-id}*/resourceGroups/*{resource-group-name}*/providers/*{resource-provider-namespace}*/*{resource-type}*/*{resource-name}*/providers/microsoft.insights/metrics?$filter=*{filter}*&api-version=*{apiVersion}*`
+**Aanvraag-URI**: `https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider-namespace}/{resource-type}/{resource-name}/providers/microsoft.insights/metrics?$filter={filter}&api-version={apiVersion}`
 
 Als u bijvoorbeeld de RunsSucceeded metric data Points wilt ophalen voor het opgegeven tijds bereik en voor een tijd korrel van 1 uur, zou de aanvraag er als volgt uitzien:
 
@@ -734,7 +734,6 @@ GET https://management.azure.com/subscriptions/089bd33f-d4ec-47fe-8ba5-0753aa5c5
 ## <a name="next-steps"></a>Volgende stappen
 
 * Bekijk het [overzicht van bewaking](../overview.md).
-* Bekijk de [ondersteunde metrische gegevens met Azure monitor](../platform/metrics-supported.md).
+* Bekijk de [ondersteunde metrische gegevens met Azure monitor](./metrics-supported.md).
 * Raadpleeg de [rest API-naslag informatie over Microsoft Azure controle](/rest/api/monitor/).
 * Bekijk de [Azure Management Library](/previous-versions/azure/reference/mt417623(v=azure.100)).
-

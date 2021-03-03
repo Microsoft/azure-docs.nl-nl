@@ -4,19 +4,21 @@ description: Azure Security Bench Mark v2 Identity Management
 author: msmbaldwin
 ms.service: security
 ms.topic: conceptual
-ms.date: 09/20/2020
+ms.date: 02/22/2021
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 33f5dff65fa7ad8274051f784f2e61dc8366d389
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: f76ebf8609b5f4ac587800359a5cbb0c6f967f3c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97368848"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101698600"
 ---
 # <a name="security-control-v2-identity-management"></a>Beveiligings controle v2: identiteits beheer
 
 Identiteits beheer is van toepassing op besturings elementen voor het instellen van een beveiligde identiteits-en toegangs beheer met Azure Active Directory. Dit geldt ook voor het gebruik van eenmalige aanmelding, sterke verificaties, beheerde identiteiten (en service principes) voor toepassingen, voorwaardelijke toegang en het controleren van afwijkingen van accounts.
+
+Voor een overzicht van de toepasselijke ingebouwde Azure Policy raadpleegt u [de details van het ingebouwde initiatief voor Azure Security Bench Mark-naleving: identiteits beheer](../../governance/policy/samples/azure-security-benchmark#identity-management)
 
 ## <a name="im-1-standardize-azure-active-directory-as-the-central-identity-and-authentication-system"></a>IM-1: Azure Active Directory standaardiseren als het centrale identiteits--en verificatiesysteem
 
@@ -24,12 +26,12 @@ Identiteits beheer is van toepassing op besturings elementen voor het instellen 
 |--|--|--|--|
 | CHAT-1 | 16,1, 16,2, 16,4, 16,5 | IA-2, IA-8, AC-2, AC-3 |
 
-Azure Active Directory (Azure AD) is de standaard service voor identiteits-en toegangs beheer van Azure. U moet standaardiseren in overeenstemming met Azure AD om het identiteits- en toegangsbeheer van uw organisatie te regelen in:
+Azure Active Directory (Azure AD) is de standaard service voor identiteits-en toegangs beheer van Azure. U moet de standaardisatie van Azure AD gebruiken om het identiteits-en toegangs beheer van uw organisatie in te bepalen:
 - Microsoft-cloudresources, zoals Azure Portal, Azure Storage, Azure Virtual Machines (Linux en Windows), Azure Key Vault, PaaS en SaaS-toepassingen.
 
 - De resources van uw organisatie, zoals toepassingen in Azure of resources van uw bedrijfsnetwerk.
 
-Het beveiligen van Azure AD moet een hoge prioriteit hebben bij het nemen van beveiligingsmaatregelen voor de cloud in uw organisatie. Azure AD biedt een id-beveiligingsscore om u te helpen uw postuur voor identiteitsbeveiliging te bepalen ten opzichte van de best practices die Microsoft aanbeveelt. Gebruik de score om te meten hoe goed uw configuratie aansluit bij de aanbevelingen en om verbeteringen door te voeren in uw beveiligingspostuur.
+Het beveiligen van Azure AD moet een hoge prioriteit hebben in de Cloud beveiligings procedure van uw organisatie. Azure AD biedt een beveiligde score voor identiteiten om u te helpen bij het beoordelen van uw identiteits beveiligings postuur ten opzichte van de best practice aanbevelingen van micro soft. Gebruik de score om te meten hoe goed uw configuratie aansluit bij de aanbevelingen en om verbeteringen door te voeren in uw beveiligingspostuur.
 
 Opmerking: Azure AD biedt ondersteuning voor externe iD-providers, zodat gebruikers zonder Microsoft-account zich met hun externe identiteit kunnen aanmelden bij hun toepassingen en resources.
 
@@ -37,7 +39,7 @@ Opmerking: Azure AD biedt ondersteuning voor externe iD-providers, zodat gebruik
 
 - [Een Azure AD-instantie maken en configureren](../../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
-- [Azure AD-tenants definiëren](https://azure.microsoft.com/resources/securing-azure-environments-with-azure-active-directory/)  
+- [Azure AD-tenants definiëren](https://azure.microsoft.com/resources/securing-azure-environments-with-azure-active-directory/)
 
 - [Externe id-providers gebruiken voor een toepassing](../../active-directory/external-identities/identity-providers.md)
 
@@ -63,7 +65,7 @@ Opmerking: Azure AD biedt ondersteuning voor externe iD-providers, zodat gebruik
 
 Voor niet-humane accounts, zoals services of automatisering, gebruikt u Azure Managed Identities in plaats van een krachtig menselijk account te maken voor toegang tot resources of code uit te voeren. Door Azure beheerde identiteiten kunnen worden geverifieerd bij Azure-Services en-resources die ondersteuning bieden voor Azure AD-verificatie. Verificatie wordt ingeschakeld via vooraf gedefinieerde regels voor toegangs verlening, waardoor het niet mogelijk is om in code vastgelegde referenties in de bron code-of configuratie bestanden te gebruiken. 
 
-Voor services die geen beheerde identiteiten ondersteunen, gebruikt u Azure AD om in plaats daarvan een service-principal te maken met beperkte machtigingen op het resource niveau.  Het is raadzaam Service-principals met certificaat referenties te configureren en terug te vallen op client geheimen. In beide gevallen kunnen Azure Key Vault worden gebruikt in combi natie met door Azure beheerde identiteiten, zodat de runtime-omgeving (zoals een Azure function) de referentie kan ophalen uit de sleutel kluis.
+Voor services die geen beheerde identiteiten ondersteunen, gebruikt u Azure AD om in plaats daarvan een service-principal te maken met beperkte machtigingen op het resource niveau. Het is raadzaam Service-principals met certificaat referenties te configureren en terug te vallen op client geheimen. In beide gevallen kunnen Azure Key Vault worden gebruikt in combi natie met door Azure beheerde identiteiten, zodat de runtime-omgeving (zoals een Azure function) de referentie kan ophalen uit de sleutel kluis.
 
 - [Door Azure beheerde identiteiten](../../active-directory/managed-identities-azure-resources/overview.md)
 
@@ -111,16 +113,17 @@ Gebruik eenmalige aanmelding (SSO) van Azure AD voor het beheren en beveiligen v
 |--|--|--|--|
 | CHAT-4 | 4,2, 4,4 4,5, 11,5, 12,11, 16,3 | AC-2, AC-3, IA-2, IA-4 |
 
-Azure AD biedt ondersteuning voor sterke verificatie controles via multi-factor Authentication (MFA) en krachtige methoden met een eigen wacht woord.  
-- Multi-factor Authentication: Schakel Azure AD MFA in en volg Azure Security Center aanbevelingen voor identiteits-en toegangs beheer voor uw MFA-installatie. MFA kan worden afgedwongen voor alle gebruikers, gebruikers selecteren of op het niveau per gebruiker op basis van aanmeldings voorwaarden en risico factoren. 
+Azure AD biedt ondersteuning voor sterke verificatie controles via multi-factor Authentication (MFA) en krachtige methoden met een eigen wacht woord.
 
-- Verificatie met wacht woord: er zijn drie verificatie opties met een wacht woord beschikbaar: Windows hello voor bedrijven, Microsoft Authenticator-app en on-premises verificatie methoden zoals Smart Cards. 
+- Multi-factor Authentication: Schakel Azure AD MFA in en volg Azure Security Center aanbevelingen voor identiteits-en toegangs beheer voor uw MFA-installatie. MFA kan worden afgedwongen voor alle gebruikers, gebruikers selecteren of op het niveau per gebruiker op basis van aanmeldings voorwaarden en risico factoren.
+
+- Verificatie met wacht woord: er zijn drie verificatie opties met een wacht woord beschikbaar: Windows hello voor bedrijven, Microsoft Authenticator-app en on-premises verificatie methoden zoals Smart Cards.
 
 Voor beheerders en bevoegde gebruikers zorgt u ervoor dat het hoogste niveau van de methode voor sterke verificatie wordt gebruikt, gevolgd door het juiste beleid voor sterke authenticatie voor andere gebruikers te implementeren.
 
-Als er nog steeds verouderde verificatie op basis van wacht woorden wordt gebruikt voor Azure AD-verificatie, moet u er rekening mee houden dat alleen Cloud accounts (gebruikers accounts die rechtstreeks in azure zijn gemaakt) een standaard wachtwoord beleid voor de basis lijn hebben. En hybride accounts (gebruikers accounts die afkomstig zijn van on-premises Active Directory) volgen het on-premises wachtwoord beleid. Wanneer u gebruikmaakt van verificatie op basis van wacht woorden, biedt Azure AD een functie voor wachtwoord beveiliging waarmee wordt voor komen dat gebruikers wacht woorden kunnen instellen die gemakkelijk te raden zijn. Micro soft biedt een algemene lijst met verboden wacht woorden die worden bijgewerkt op basis van de telemetrie, en klanten kunnen de lijst uitbreiden op basis van hun behoeften (bijvoorbeeld branding, culturele verwijzingen, enzovoort). Deze wachtwoord beveiliging kan worden gebruikt voor Cloud-en hybride accounts. 
+Als er nog steeds verouderde verificatie op basis van wacht woorden wordt gebruikt voor Azure AD-verificatie, moet u er rekening mee houden dat alleen Cloud accounts (gebruikers accounts die rechtstreeks in azure zijn gemaakt) een standaard wachtwoord beleid voor de basis lijn hebben. En hybride accounts (gebruikers accounts die afkomstig zijn van on-premises Active Directory) volgen het on-premises wachtwoord beleid. Wanneer u gebruikmaakt van verificatie op basis van wacht woorden, biedt Azure AD een functie voor wachtwoord beveiliging waarmee wordt voor komen dat gebruikers wacht woorden kunnen instellen die gemakkelijk te raden zijn. Micro soft biedt een algemene lijst met verboden wacht woorden die worden bijgewerkt op basis van de telemetrie, en klanten kunnen de lijst uitbreiden op basis van hun behoeften (zoals een huis stijl, culturele verwijzingen enz.). Deze wachtwoord beveiliging kan worden gebruikt voor Cloud-en hybride accounts.
 
-Opmerking: verificatie op basis van wachtwoord referenties is alleen vatbaar voor populaire aanvals methoden. Voor een betere beveiliging gebruikt u sterke verificatie zoals MFA en een sterk wachtwoord beleid. Voor toepassingen van derden en Marketplace-services die standaard wachtwoorden kunnen hebben, moet u deze wijzigen tijdens de initiële service-instelling. 
+Opmerking: verificatie op basis van wachtwoord referenties is alleen vatbaar voor populaire aanvals methoden. Voor een betere beveiliging gebruikt u sterke verificatie zoals MFA en een sterk wachtwoord beleid. Voor toepassingen van derden en Marketplace-services die standaard wachtwoorden kunnen hebben, moet u deze wijzigen tijdens de initiële service-instelling.
 
 - [MFA inschakelen in Azure](../../active-directory/authentication/howto-mfa-getstarted.md)
 
@@ -155,7 +158,7 @@ Azure AD biedt de volgende gegevens bronnen:
 
 -   Gebruikers voor wie wordt aangegeven dat ze risico lopen - Een riskante gebruiker is een indicator van een gebruikersaccount dat mogelijk is aangetast.
 
-Deze gegevensbronnen kunnen worden geïntegreerd met Azure Monitor, Azure Sentinel of SIEM-systemen van derden.
+Deze gegevens bronnen kunnen worden geïntegreerd met Azure Monitor, Azure Sentinel of SIEM-systemen van derden.
 
 Azure Security Center kan ook worden gewaarschuwd voor bepaalde verdachte activiteiten, zoals een uitzonderlijk aantal mislukte verificatie pogingen en afgeschafte accounts in het abonnement. 
 
@@ -175,7 +178,7 @@ Azure Advanced Threat Protection (ATP) is een beveiligings oplossing die on-prem
 
 - [Verbinding maken met gegevens van Azure AD Identity Protection](../../sentinel/connect-azure-ad-identity-protection.md)
 
-- [Azure Advanced Threat Protection](/azure-advanced-threat-protection/what-is-atp)
+- [Microsoft Defender for Identity](/azure-advanced-threat-protection/what-is-atp)
 
 **Verantwoordelijkheid**: Klant
 
@@ -209,7 +212,7 @@ Gebruik voorwaardelijke toegang voor Azure AD voor meer gedetailleerd toegangs b
 
 - [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)
 
-- [Informatie over bedreigingen](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
+- [Bedreigings informatie](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
 
 ## <a name="im-7-eliminate-unintended-credential-exposure"></a>IM-7: Onbedoelde blootstelling van referenties elimineren
 
@@ -219,7 +222,7 @@ Gebruik voorwaardelijke toegang voor Azure AD voor meer gedetailleerd toegangs b
 
 Implementeer de Azure DevOps-referentie scanner om referenties in de code te identificeren. Credential scanner stimuleert ook het verplaatsen van gedetecteerde referenties naar veiliger locaties, zoals Azure Key Vault.
 
-Voor GitHub kunt u de systeemeigen functie voor het scannen op geheimen gebruiken om referenties of een andere vormen van geheimen binnen de code te identificeren.
+Voor GitHub kunt u de systeem eigen geheime scan functie gebruiken om referenties of een andere vorm van geheimen in de code te identificeren.
 
 - [Referentie scanner instellen](https://secdevtools.azurewebsites.net/helpcredscan.html)
 
@@ -241,9 +244,9 @@ Voor GitHub kunt u de systeemeigen functie voor het scannen op geheimen gebruike
 
 Zorg ervoor dat u beschikt over moderne toegangs beheer en sessie bewaking voor oudere toepassingen en de gegevens die ze opslaan en verwerken. Hoewel Vpn's vaak worden gebruikt voor toegang tot oudere toepassingen, hebben ze vaak alleen elementaire toegangs beheer en beperkte sessie bewaking.
 
-Met Azure AD-toepassingsproxy kunt u oude on-premises toepassingen publiceren naar externe gebruikers met eenmalige aanmelding (SSO), waarbij u de betrouw baarheid van zowel externe gebruikers als apparaten expliciet valideert met voorwaardelijke toegang van Azure AD. 
+Met Azure AD-toepassingsproxy kunt u oude on-premises toepassingen publiceren naar externe gebruikers met eenmalige aanmelding (SSO), waarbij u de betrouw baarheid van zowel externe gebruikers als apparaten expliciet valideert met voorwaardelijke toegang van Azure AD.
 
-Microsoft Cloud App Security is ook een CASB-service (Cloud Access Security Broker) die besturings elementen kan bieden voor het bewaken van toepassings sessies van een gebruiker en het blok keren van acties (voor zowel oudere on-premises toepassingen als voor de cloud software als een service (SaaS)-toepassingen). 
+Microsoft Cloud App Security is ook een CASB-service (Cloud Access Security Broker) die besturings elementen kan bieden voor het bewaken van toepassings sessies van een gebruiker en het blok keren van acties (voor zowel oudere on-premises toepassingen als voor de cloud software als een service (SaaS)-toepassingen).
 
 - [Azure AD-toepassingsproxy](../../active-directory/manage-apps/application-proxy.md#what-is-application-proxy)
 

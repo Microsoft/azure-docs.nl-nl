@@ -4,12 +4,12 @@ description: Met de Log Analytics waarschuwing REST API kunt u waarschuwingen ma
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: 6c347b7b8ddaac103019e15e32fb5c06219e0064
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 4acb6cdcb544e8774fb60bf1ead1a4a13140024a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612855"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717805"
 ---
 # <a name="create-and-manage-alert-rules-in-log-analytics-with-rest-api"></a>Waarschuwings regels in Log Analytics maken en beheren met REST API 
 
@@ -21,7 +21,7 @@ Met de Log Analytics waarschuwing REST API kunt u waarschuwingen in Log Analytic
 De Log Analytics Zoek REST API bevindt zich in de REST en is toegankelijk via de Azure Resource Manager REST API. In dit document vindt u voor beelden waarin de API wordt geopend vanuit een Power shell-opdracht regel met behulp van  [ARMClient](https://github.com/projectkudu/ARMClient), een open-source opdracht regel programma waarmee de Azure Resource Manager-API wordt vereenvoudigd. Het gebruik van ARMClient en Power shell is een van de vele opties om toegang te krijgen tot de Log Analytics Search-API. Met deze hulpprogram ma's kunt u gebruikmaken van de REST-Azure Resource Manager-API om aanroepen naar Log Analytics werk ruimten te maken en zoek opdrachten in deze te voeren. De API voert Zoek resultaten naar u in JSON-indeling uit, zodat u de zoek resultaten op verschillende manieren programmatisch kunt gebruiken.
 
 ## <a name="prerequisites"></a>Vereisten
-Waarschuwingen kunnen momenteel alleen worden gemaakt met een opgeslagen zoek opdracht in Log Analytics.  Raadpleeg de [rest API voor zoeken in Logboeken](../log-query/log-query-overview.md) voor meer informatie.
+Waarschuwingen kunnen momenteel alleen worden gemaakt met een opgeslagen zoek opdracht in Log Analytics.  Raadpleeg de [rest API voor zoeken in Logboeken](../logs/log-query-overview.md) voor meer informatie.
 
 ## <a name="schedules"></a>Schema's
 Een opgeslagen zoek opdracht kan een of meer planningen hebben. De planning bepaalt hoe vaak de zoek actie wordt uitgevoerd en het tijds interval waarover de criteria worden geïdentificeerd.
@@ -387,7 +387,6 @@ armclient put /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Na
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Gebruik de [rest API om Zoek opdrachten](../log-query/log-query-overview.md) in het logboek in log Analytics uit te voeren.
+* Gebruik de [rest API om Zoek opdrachten](../logs/log-query-overview.md) in het logboek in log Analytics uit te voeren.
 * Meer informatie over [logboek waarschuwingen in azure monitor](./alerts-unified-log.md)
 * [Waarschuwings regels voor logboeken maken, bewerken of beheren in azure monitor](./alerts-log.md)
-

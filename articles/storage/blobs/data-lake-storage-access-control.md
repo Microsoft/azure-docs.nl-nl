@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: c1e2b6abe378df1450967ee0e1df6021ca0d5744
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: d8ef616ef059424846d5c42a91262881b8f6d30b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100650368"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701804"
 ---
 # <a name="access-control-lists-acls-in-azure-data-lake-storage-gen2"></a>Toegangs beheer lijsten (Acl's) in Azure Data Lake Storage Gen2
 
@@ -285,7 +285,7 @@ Toewijzingen van Azure-rollen nemen toe. Toewijzingen stroomt van de resources v
 
 ### <a name="does-data-lake-storage-gen2-support-inheritance-of-acls"></a>Ondersteunt Data Lake Storage Gen2 overname van Acl's?
 
-Standaard-Acl's kunnen worden gebruikt om Acl's in te stellen voor nieuwe onderliggende submappen en bestanden die zijn gemaakt in de bovenliggende map. Als u Acl's voor bestaande onderliggende items wilt bijwerken, moet u de Acl's voor de gewenste Directory hiërarchie recursief toevoegen, bijwerken of verwijderen. Zie [acl's (Access Control Lists) recursief instellen voor Azure data Lake Storage Gen2](recursive-access-control-lists.md)voor meer informatie. 
+Standaard-Acl's kunnen worden gebruikt om Acl's in te stellen voor nieuwe onderliggende submappen en bestanden die zijn gemaakt in de bovenliggende map. Als u Acl's voor bestaande onderliggende items wilt bijwerken, moet u de Acl's voor de gewenste Directory hiërarchie recursief toevoegen, bijwerken of verwijderen. Zie [acl's (Access Control Lists) recursief instellen voor Azure data Lake Storage Gen2](#set-access-control-lists)voor meer informatie. 
 
 ### <a name="which-permissions-are-required-to-recursively-delete-a-directory-and-its-contents"></a>Welke machtigingen zijn vereist voor het recursief verwijderen van een map en de inhoud ervan?
 

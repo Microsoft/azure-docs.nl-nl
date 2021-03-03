@@ -7,26 +7,27 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: eb08bb262806cb662822a75898196546a5c1058e
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 23bcfcb92a7fa642e111a67bf92c1306a606bb2a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762541"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101704800"
 ---
 # <a name="claim-sets"></a>Claimsets
 
 Claims die worden gegenereerd in het proces van het attesten van enclaves met behulp van Microsoft Azure Attestation kunnen worden onderverdeeld in de volgende categorieën:
 
-- **Binnenkomende claims**: claims die zijn gegenereerd door Microsoft Azure Attestation na het parseren van het Attestation-bewijs en kunnen worden gebruikt door auteurs van beleid om autorisatie regels in een aangepast beleid te definiëren
+- **Binnenkomende claims**: de claims die zijn gegenereerd door Microsoft Azure Attestation na het parseren van het Attestation-bewijs en kunnen worden gebruikt door auteurs van beleid om autorisatie regels in een aangepast beleid te definiëren
 
-- **Uitgaande claims**: claims die zijn gegenereerd door Azure Attestation en bevatten alle claims die in het Attestation-token eindigen
+- **Uitgaande claims**: de claims die zijn gegenereerd door Azure Attestation en bevat alle claims die in het Attestation-token eindigen
 
-- **Eigenschapsclaims**: Claims die zijn gemaakt als uitvoer door Azure Attestation. Het bevat alle claims die eigenschappen van het Attestation-token vertegenwoordigen, zoals het coderen van het rapport, de geldigheidsduur van het rapport, enzovoort.
+- **Eigenschaps claims**: de claims die zijn gemaakt als uitvoer door Azure Attestation. Het bevat alle claims die eigenschappen van het Attestation-token vertegenwoordigen, zoals het coderen van het rapport, de geldigheidsduur van het rapport, enzovoort.
 
 ### <a name="common-incoming-claims-across-all-attestation-types"></a>Algemene binnenkomende claims voor alle Attestation-typen
 
-Onderstaande claims worden gegenereerd door Azure Attestation en kunnen worden gebruikt voor het definiëren van autorisatie regels in een aangepast beleid:
+Onderstaande claims worden gegenereerd door Azure Attestation en kunnen worden gebruikt door auteurs van beleid om autorisatie regels te definiëren in een aangepast beleid voor alle Attestation-typen.
+
 - **x-MS-ver**: JWT-schema versie (verwacht wordt ' 1,0 ')
 - **x-MS-Attestation-type**: teken reeks waarde voor Attestation-type 
 - **x-MS-Policy-hash**: hash van het Azure Attestation-evaluatie beleid berekend als BASE64URL (sha256 (UTF8 (BASE64URL) (UTF8 (Policy text))))
@@ -44,7 +45,9 @@ policy_signer | x-MS-Policy-Signer
 
 ### <a name="common-outgoing-claims-across-all-attestation-types"></a>Veelvoorkomende uitgaande claims voor alle Attestation-typen
 
-Onder de claims die zijn gedefinieerd door de [IETF JWT](https://tools.ietf.org/html/rfc7519) en die worden gebruikt door Azure Attestation in het antwoord object:
+Onder claims zijn opgenomen in het Attestation-token voor alle Attestation-typen door de service.
+
+Bron: zoals gedefinieerd door [IETF JWT](https://tools.ietf.org/html/rfc7519)
 
 - **Claim ' JTI ' (JWT-ID)**
 - **Claim ' ISS ' (verlener)**
@@ -52,10 +55,12 @@ Onder de claims die zijn gedefinieerd door de [IETF JWT](https://tools.ietf.org/
 - **Claim ' exp ' (verval tijd)**
 - **Claim ' NBF ' (niet voor)**
 
-Onder de claims die zijn gedefinieerd door de [IETF-eten](https://tools.ietf.org/html/draft-ietf-rats-eat-03#page-9) en die worden gebruikt door Azure Attestation in het antwoord object:
+Bron: zoals gedefinieerd door de [IETF-eten](https://tools.ietf.org/html/draft-ietf-rats-eat-03#page-9)
+
 - **Nonce-claim (nonce)**
 
-Hieronder worden claims standaard gegenereerd op basis van de binnenkomende claims
+Onder claims worden standaard opgenomen in het Attestation-token op basis van de binnenkomende claims:
+
 - **x-MS-ver**: JWT-schema versie (verwacht wordt ' 1,0 ')
 - **x-MS-Attestation-type**: teken reeks waarde voor Attestation-type 
 - **x-MS-Policy-hash**: teken reeks waarde met SHA256 hash van de beleids tekst berekend door BASE64URL (sha256 (UTF8 (BASE64URL)))
@@ -65,7 +70,8 @@ Hieronder worden claims standaard gegenereerd op basis van de binnenkomende clai
 
 ### <a name="incoming-claims-specific-to-sgx-attestation"></a>Binnenkomende claims die specifiek zijn voor SGX-Attestation
 
-Hieronder worden claims gegenereerd door de service voor SGX-Attestation en kunnen worden gebruikt voor het definiëren van autorisatie regels in een aangepast beleid:
+Onderstaande claims worden gegenereerd door Azure Attestation en kunnen worden gebruikt door auteurs van beleid om autorisatie regels te definiëren in een aangepast beleid voor SGX-Attestation.
+
 - **x-MS-SGX-is-** debuggable: een Booleaanse waarde die aangeeft of fout opsporing is ingeschakeld voor de enclave of niet
 - **x-MS-SGX-product-id**
 - **x-MS-SGX-mrsigner**: hex-gecodeerde waarde van het veld ' mrsigner ' van de prijs opgave
@@ -74,7 +80,8 @@ Hieronder worden claims gegenereerd door de service voor SGX-Attestation en kunn
 
 ### <a name="outgoing-claims-specific-to-sgx-attestation"></a>Uitgaande claims die specifiek zijn voor SGX-Attestation
 
-Hieronder worden claims gegenereerd door de service en opgenomen in het antwoord object voor SGX-Attestation:
+Hieronder worden claims gegenereerd en opgenomen in het Attestation-token door de service voor SGX-Attestation.
+
 - **x-MS-SGX-is-** debuggable: een Booleaanse waarde die aangeeft of fout opsporing is ingeschakeld voor de enclave of niet
 - **x-MS-SGX-product-id**
 - **x-MS-SGX-mrsigner**: hex-gecodeerde waarde van het veld ' mrsigner ' van de prijs opgave

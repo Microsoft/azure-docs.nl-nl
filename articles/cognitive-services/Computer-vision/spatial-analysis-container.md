@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: a43a27a8e880c76ba21639437c0c20f583620d50
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: af028499d84a767ccb2a888ec7e7f92c80dbdd36
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653615"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101710563"
 ---
 # <a name="install-and-run-the-spatial-analysis-container-preview"></a>De container voor ruimtelijke analyse installeren en uitvoeren (preview-versie)
 
@@ -295,7 +295,7 @@ Installeer de 1.0.9-release:
 sudo apt-get install iotedge=1.0.9* libiothsm-std=1.0.9*
 ```
 
-Registreer vervolgens de hostcomputer als IoT Edge apparaat in uw IoT Hub-exemplaar met behulp van een [Connection String](../../iot-edge/how-to-manual-provision-symmetric-key.md?view=iotedge-2018-06).
+Registreer vervolgens de hostcomputer als IoT Edge apparaat in uw IoT Hub-exemplaar met behulp van een [Connection String](../../iot-edge/how-to-register-device.md?view=iotedge-2018-06).
 
 U moet het IoT Edge apparaat verbinden met uw Azure-IoT Hub. U moet de connection string kopiëren van het IoT Edge apparaat dat u eerder hebt gemaakt. U kunt ook de onderstaande opdracht uitvoeren in de Azure CLI.
 
@@ -446,7 +446,7 @@ Installeer de 1.0.9-release:
 sudo apt-get install iotedge=1.0.9* libiothsm-std=1.0.9*
 ```
 
-Registreer vervolgens de virtuele machine als IoT Edge apparaat in uw IoT Hub-exemplaar met behulp van een [Connection String](../../iot-edge/how-to-manual-provision-symmetric-key.md?view=iotedge-2018-06).
+Registreer vervolgens de virtuele machine als IoT Edge apparaat in uw IoT Hub-exemplaar met behulp van een [Connection String](../../iot-edge/how-to-register-device.md?view=iotedge-2018-06).
 
 U moet het IoT Edge apparaat verbinden met uw Azure-IoT Hub. U moet de connection string kopiëren van het IoT Edge apparaat dat u eerder hebt gemaakt. U kunt ook de onderstaande opdracht uitvoeren in de Azure CLI.
 

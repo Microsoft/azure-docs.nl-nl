@@ -7,12 +7,12 @@ ms.manager: bsiva
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: mvc
-ms.openlocfilehash: a858bcc0e6f6364a1eb5c37d555f5f1e7064b650
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 17d9d3bf787b67716fb2270cd055e30a4fefbe0f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879458"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101702195"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>VMware-VM's migreren naar Azure (zonder agent)
 
@@ -29,8 +29,8 @@ In deze zelfstudie leert u het volgende:
 > [!div class="checklist"]
 > * Het hulpprogramma Azure Migrate: Servermigratie toevoegen.
 > * Ontdekken welke VM's u wilt migreren.
-> * Beginnen met repliceren van VM’s.
-> * Een testmigratie uitvoeren om te controleren of alles goed werkt.
+> * Beginnen met repliceren van VM's.
+> * Voer een testmigratie uit om te controleren of alles goed werkt.
 > * Een volledige VM-migratie uitvoeren.
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/pricing/free-trial/) aan voordat u begint.
@@ -57,7 +57,7 @@ Nadat u het apparaat hebt gemaakt, controleert u of er verbinding kan worden gem
 
 Nadat u het apparaat hebt ingesteld en de detectie hebt voltooid, kunt u beginnen met de replicatie van VMware-VM’s in Azure. 
 
-- U kunt maximaal 300 replicaties tegelijk uitvoeren.
+- U kunt Maxi maal 500 replicaties tegelijk uitvoeren.
 - In de portal kunt u maximaal 10 VM's tegelijk selecteren voor migratie. Als u meer machines wilt migreren, voegt u ze toe aan groepen in batches van 10.
 
 Schakel als volgt replicatie in:
@@ -88,9 +88,10 @@ Schakel als volgt replicatie in:
 9. Selecteer in **Type schijfversleuteling**:
     - Versleuteling at-rest van gegevens met door platform beheerde sleutel
     - Versleuteling at-rest van gegevens met door klant beheerde sleutel
+    - Dubbele versleuteling met door platform en door klant beheerde sleutels
 
    > [!NOTE]
-   > Als u VM's met CMK wilt repliceren, moet u [een schijfversleutelingsset maken](../virtual-machines/disks-enable-customer-managed-keys-portal.md#set-up-your-disk-encryption-set) in de doelresourcegroep. Met een schijfversleutelingssetobject worden beheerde schijven toegewezen aan een sleutelkluis die de CMK bevat die moet worden gebruikt voor SSE.
+   > Als u VM's met CMK wilt repliceren, moet u [een schijfversleutelingsset maken](https://go.microsoft.com/fwlink/?linkid=2151800) in de doelresourcegroep. Met een schijfversleutelingssetobject worden beheerde schijven toegewezen aan een sleutelkluis die de CMK bevat die moet worden gebruikt voor SSE.
   
 10. In **Azure Hybrid Benefit**:
 

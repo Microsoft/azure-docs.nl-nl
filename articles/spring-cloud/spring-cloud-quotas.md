@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 20ebeb23fe09ba4fd70a724828afadfaa3901abd
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: b02ccb3acb4546e08e7d58159ab9d85bca2d0eed
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101095674"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711872"
 ---
 # <a name="quotas-and-service-plans-for-azure-spring-cloud"></a>Quota's en service plannen voor Azure lente-Cloud
 
@@ -32,7 +32,7 @@ Aangepaste domeinen | Cloud service-exemplaar per Azure-veer | 0 | 25
 Permanente volumes | Cloud service-exemplaar per Azure-veer | 1 GB/app x 10 apps | 50 GB/app x 10-apps
 
 > [!TIP]
-> De vermelde tarieven voor het totale aantal app-exemplaren per service-exemplaar gelden voor apps/implementaties met de status gestopt. Verwijder apps/implementaties die niet worden gebruikt.
+> De vermelde limieten voor het totale aantal app-exemplaren per service-exemplaar gelden voor apps en implementaties in elke status, inclusief de status gestopt. Verwijder apps of implementaties die niet in gebruik zijn.
 
 ## <a name="next-steps"></a>Volgende stappen
 

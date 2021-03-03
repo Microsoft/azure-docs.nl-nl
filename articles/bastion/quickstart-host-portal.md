@@ -6,14 +6,14 @@ services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: quickstart
-ms.date: 10/15/2020
+ms.date: 02/18/2021
 ms.author: cherylmc
-ms.openlocfilehash: 325f39b695d80c14ed7097d071380b937458546c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 8aeba13954283ca35c3eb0060a0e588ba6a7adbe
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96021483"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101707137"
 ---
 # <a name="quickstart-connect-to-a-vm-securely-through-a-browser-via-private-ip-address"></a>Quickstart: veilig verbinding maken met een VM via een browser door middel van een privé IP-adres
 
@@ -46,21 +46,21 @@ U kunt de volgende voorbeeldwaarden gebruiken bij het maken van deze configurati
 |**Naam** | **Waarde** |
 | --- | --- |
 | Virtuele machine| TestVM |
-| Resourcegroep | TestRG |
+| Resourcegroep | TestRG1 |
 | Regio | VS - oost |
-| Virtueel netwerk | TestVNet1 |
-| Adresruimte | 10.0.0.0/16 |
-| Subnetten | FrontEnd: 10.0.0.0/24 |
+| Virtueel netwerk | VNet1 |
+| Adresruimte | 10.1.0.0/16 |
+| Subnetten | Front-end: 10.1.0.0/24 |
 
 **Azure Bastion-waarden:**
 
 |**Naam** | **Waarde** |
 | --- | --- |
-| Naam | TestVNet1-bastion |
+| Naam | VNet1-Bastion |
 | + Subnet-naam | AzureBastionSubnet |
-| AzureBastionSubnet-adressen | Een subnet binnen uw VNet-adresruimte met een /27-subnetmasker. Bijvoorbeeld 10.0.1.0/27.  |
+| AzureBastionSubnet-adressen | Een subnet binnen uw VNet-adresruimte met een /27-subnetmasker. Bijvoorbeeld 10.1.1.0/27.  |
 | Openbaar IP-adres |  Nieuwe maken |
-| Naam openbaar IP-adres | VNet1BastionPIP  |
+| Naam openbaar IP-adres | VNet1-IP  |
 | Openbaar IP-adres SKU |  Standard  |
 | Toewijzing  | Statisch |
 
@@ -71,34 +71,34 @@ U kunt een bastion-host op verschillende manieren configureren. In de volgende s
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Ga naar de VM waarmee u verbinding wilt maken en selecteer **Verbinding maken**.
 
-   :::image type="content" source="./media/quickstart-host-portal/vm-settings.png" alt-text="Instellingen van virtuele machines" lightbox="./media/quickstart-host-portal/vm-settings.png":::
+   :::image type="content" source="./media/quickstart-host-portal/vm-connect.png" alt-text="Scherm opname van de instellingen van de virtuele machine." lightbox="./media/quickstart-host-portal/vm-connect.png":::
 1. In de vervolgkeuzelijst selecteert u **Bastion**.
+
+   :::image type="content" source="./media/quickstart-host-portal/bastion.png" alt-text="Scherm opname van Bastion vervolg keuzelijst." lightbox="./media/quickstart-host-portal/bastion.png":::
 1. Op de **pagina TestVM | Verbinding maken** selecteer **Bastion gebruiken**.
 
-   :::image type="content" source="./media/quickstart-host-portal/select-bastion.png" alt-text="Bastion selecteren" border="false":::
+   :::image type="content" source="./media/quickstart-host-portal/select-bastion.png" alt-text="Scherm opname van use Bastion.":::
 
-1. Vul op de pagina **Bastion** de volgende instellingsvelden in:
+1. Configureer de waarden op de pagina **verbinding maken met Azure Bastion** .
 
-   * **Naam**: Geef de Bastion-host een naam.
-   * **Subnet**: Dit is de adresruimte van het virtuele netwerk waarop de Bastion-resource wordt geïmplementeerd. Het subnet moet worden gemaakt met de naam **AzureBastionSubnet**. U moet een subnet van minimaal /27 of groter (/27, /26, /25, enzovoort) gebruiken.
-   * Selecteer **Subnetconfiguratie beheren**.
-1. Op de pagina **Subnetten** selecteert u **+Subnet**.
+   * **Stap 1:** De waarden zijn vooraf ingevuld omdat u de bastion-host rechtstreeks vanuit uw VM maakt.
 
-   :::image type="content" source="./media/quickstart-host-portal/subnet.png" alt-text="+ Subnet":::
-    
-1. Op de pagina **Subnet toevoegen** typt u voor **Naam** **AzureBastionSubnet**.
-   * Kies voor het subnetadresbereik een subnetadres dat zich binnen de adresruimte van uw virtuele netwerk bevindt.
-   * Pas geen andere instellingen aan. Selecteer **OK** om de wijzigingen aan het subnet te accepteren en op te slaan.
+   * **Stap 2:** De adres ruimte is vooraf ingevuld met een aanbevolen adres ruimte. De AzureBastionSubnet moet een adres ruimte hebben van/27 of groter (/26,/25, enzovoort)...
 
-   :::image type="content" source="./media/quickstart-host-portal/add-subnet.png" alt-text="Subnet toevoegen":::
-1. Klik op de knop Terug in de browser om terug te gaan naar de pagina **Bastion** en door te gaan met het opgeven van waarden.
-   * **Openbaar IP-adres**: laten staan als **Nieuwe maken**.
-   * **Openbare IP-adresnaam**: De naam van de resource voor het openbare IP-adres.
-   * **Toewijzing**: wordt standaard ingesteld op Statisch. U kunt geen dynamische toewijzing voor Azure Bastion gebruiken.
+   :::image type="content" source="./media/quickstart-host-portal/create-subnet.png" alt-text="Scherm opname van het Bastion-subnet maken.":::
+
+1. Klik op **subnet maken** om de AzureBastionSubnet te maken.
+1. Nadat het subnet is gemaakt, wordt de pagina automatisch door **lopen naar stap 3**. Gebruik voor stap 3 de volgende waarden:
+
+   * **Naam:** Noem de bastion-host.
+   * **Openbaar IP-adres**: selecteer **Nieuwe maken**.
+   * **Naam van openbaar IP-adres:** De naam van de resource voor het open bare IP-adres.
+   * **SKU openbaar IP-adres:** Vooraf geconfigureerd als **standaard**
+   * **Toewijzing:** Vooraf geconfigureerd naar **statisch**. U kunt geen dynamische toewijzing voor Azure Bastion gebruiken.
    * **Resourcegroep**: Dezelfde resourcegroep als de VM.
 
-   :::image type="content" source="./media/quickstart-host-portal/validate.png" alt-text="Maak de bastion-host":::
-1. Selecteer **Maken** om de bastion-host te maken. Azure valideert uw instellingen en maakt vervolgens de host. Het duurt ongeveer vijf minuten om de host en de resources te maken en te implementeren.
+   :::image type="content" source="./media/quickstart-host-portal/create-bastion.png" alt-text="Scherm afbeelding van stap 3.":::
+1. Nadat u de waarden hebt voltooid, selecteert **u Azure Bastion maken met de standaard instellingen**. Azure valideert uw instellingen en maakt vervolgens de host. Het duurt ongeveer vijf minuten om de host en de resources te maken en te implementeren.
 
 ## <a name="connect"></a><a name="connect"></a>Verbinding maken
 
@@ -106,7 +106,7 @@ Nadat Bastion in het virtuele netwerk is geïmplementeerd, verschijnt de pagina 
 
 1. Voer de gebruikersnaam en het wachtwoord voor uw virtuele machine in. Selecteer vervolgens **Verbinding maken**.
 
-   :::image type="content" source="./media/quickstart-host-portal/connect-vm.png" alt-text="Schermopname van het dialoogvenster Verbinding maken met behulp van Azure Bastion.":::
+   :::image type="content" source="./media/quickstart-host-portal/connect.png" alt-text="Schermopname van het dialoogvenster Verbinding maken met behulp van Azure Bastion.":::
 1. De RDP-verbinding met deze virtuele machine wordt rechtstreeks geopend in Azure Portal (via HTML5) met behulp van poort 443 en de Bastion-service.
 
    :::image type="content" source="./media/quickstart-host-portal/connected.png" alt-text="Verbinding maken met RDP":::

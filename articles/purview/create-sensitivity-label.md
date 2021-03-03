@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 01/19/2021
-ms.openlocfilehash: c8d0ea43410b8d191d3d0b08c2f232bd72c80b20
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: b86414758c3b644725e5aa29ca3b314f489508aa
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101669621"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101693523"
 ---
 # <a name="automatically-label-your-data-in-azure-purview"></a>Voorzie uw gegevens automatisch in azure controle sfeer liggen
 
@@ -102,7 +102,10 @@ Door de gevoeligheids labels van MIP uit te breiden met Azure controle sfeer lig
 
 **Gevoeligheids labels uitbreiden naar controle sfeer liggen:**
 
-Ga in Microsoft 365 naar de pagina **Information Protection** . Selecteer in de **uitbrei ding labelen naar assets in azure controle sfeer liggen** de knop **inschakelen** en selecteer vervolgens **Ja** in het bevestigings venster dat wordt weer gegeven.
+Met de volgende stappen kunt u uw gevoeligheids labels beschikbaar maken voor gebruik in azure controle sfeer liggen, waarmee u uw gevoeligheids labels op assets, zoals SQL-kolommen, bestanden in Azure Blob Storage, en meer.
+
+1. Ga in Microsoft 365 naar de pagina **Information Protection** . 
+1. Selecteer in de **uitbrei ding labelen naar assets in azure controle sfeer liggen** de knop **inschakelen** en selecteer vervolgens **Ja** in het bevestigings venster dat wordt weer gegeven.
 
 Bijvoorbeeld:
 

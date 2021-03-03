@@ -1,14 +1,14 @@
 ---
 title: Voor beeld van Azure Security Bench Mark Foundation blauw punt implementeren
 description: Implementeer stappen voor het voor beeld van de Azure Security Bench Mark Foundation-blauw druk, inclusief details van de artefact parameter.
-ms.date: 02/17/2020
+ms.date: 02/18/2020
 ms.topic: sample
-ms.openlocfilehash: aaaabc8767c6d80548a26d64d8557587180fb6f3
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: e48f3da383bdb6d5c9960595f3c0fdcabc27dc75
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101095288"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101740678"
 ---
 # <a name="deploy-the-azure-security-benchmark-foundation-blueprint-sample"></a>Het voor beeld van Azure Security Bench Mark Foundation blauw punt implementeren
 
@@ -136,7 +136,7 @@ De volgende tabel bevat een lijst met de para meters van de blauw druk:
 |Virtual Network spoke-sjabloon voor Azure|Resource Manager-sjabloon|Adres voorvoegsels (optioneel)|Matrix met IP-adres voorvoegsels voor optionele subnetten voor het spoke-virtuele netwerk; bijvoorbeeld "10.0.7.0/24", "10.0.8.0/24"|
 |Virtual Network spoke-sjabloon voor Azure|Resource Manager-sjabloon|Spoke implementeren|Voer ' waar ' of ' onwaar ' in om op te geven of met de toewijzing de spoke-onderdelen van de architectuur worden geïmplementeerd|
 |Azure Network Watcher-sjabloon|Resource Manager-sjabloon|Network Watcher locatie|Locatie voor de Network Watcher resource|
-|Azure Network Watcher-sjabloon|Resource Manager-sjabloon|Locatie van de resource groep Network Watcher|Als Network Watcher al is ingeschakeld, **moet** deze parameter waarde overeenkomen met de naam van de bestaande Network Watcher resource groep.|
+|Azure Network Watcher-sjabloon|Resource Manager-sjabloon|Locatie van de resource groep Network Watcher|Als Network Watcher al is ingeschakeld, **moet** deze parameter waarde overeenkomen met de locatie van de bestaande Network Watcher resource groep.|
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 

@@ -8,26 +8,26 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 482c11395ff5dbbf2dd5bb8100451c3442f2f333
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: cfa5be01a0d36764086c6c9adf97e6cb166d2bb6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98744515"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728158"
 ---
 # <a name="configure-scaling-options-with-azure-cloud-services-extended-support"></a>Schaal opties configureren met Azure Cloud Services (uitgebreide ondersteuning) 
 
 Voor waarden kunnen worden geconfigureerd om de implementaties van Cloud Services (uitgebreide ondersteuning) in en uit te scha kelen. Deze voor waarden kunnen worden gebaseerd op CPU-gebruik, schijf belasting en netwerk belasting. 
 
 Houd rekening met de volgende informatie bij het configureren van schalen van uw Cloud service-implementaties:
-- Het schalen van het basis gebruik. Grotere rolinstanties verbruiken meer kernen en u kunt alleen binnen de kern limiet van uw abonnement schalen. Zie [Azure-abonnement- en servicelimieten, quota en beperkingen](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits) voor meer informatie.
-- Schalen op basis van de wachtrij bericht drempel wordt ondersteund. Zie [Aan de slag met Azure Queue Storage](https://docs.microsoft.com/azure/storage/queues/storage-dotnet-how-to-use-queues) voor meer informatie.
+- Het schalen van het basis gebruik. Grotere rolinstanties verbruiken meer kernen en u kunt alleen binnen de kern limiet van uw abonnement schalen. Zie [Azure-abonnement- en servicelimieten, quota en beperkingen](../azure-resource-manager/management/azure-subscription-service-limits.md) voor meer informatie.
+- Schalen op basis van de wachtrij bericht drempel wordt ondersteund. Zie [Aan de slag met Azure Queue Storage](../storage/queues/storage-dotnet-how-to-use-queues.md) voor meer informatie.
 - Om te zorgen voor een hoge Beschik baarheid van uw Cloud service (uitgebreide ondersteunings toepassingen), moet u ervoor zorgen dat deze wordt geïmplementeerd met twee of meer rolinstanties.
 - Aangepaste automatisch schalen kan alleen plaatsvinden als alle rollen de status **gereed** hebben.
 
 ## <a name="configure-and-manage-scaling"></a>Schalen configureren en beheren
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
 2. Selecteer de implementatie van de Cloud service (uitgebreide ondersteuning) waarvoor u het schalen wilt configureren. 
 3. Selecteer de Blade **schaal** . 
 

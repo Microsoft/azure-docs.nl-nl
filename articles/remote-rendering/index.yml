@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Documentatie voor Azure Remote Rendering
-summary: Azure Remote Rendering (ARR) is een service waarmee u zeer complexe 3D-modellen in realtime kunt weergeven op apparaten zoals HoloLens 2. ARR is momenteel in openbare preview.
+summary: Azure Remote Rendering (ARR) is een service waarmee u zeer complexe 3D-modellen in realtime kunt weergeven op apparaten zoals HoloLens 2.
 metadata:
   title: Documentatie voor Azure Remote Rendering
   description: Meer informatie over hoe u de Azure Remote Rendering-service (ARR) gebruik om zeer complexe 3D-modellen extern en in realtime te renderen en het resultaat weer te geven op apparaten als HoloLens 2.
@@ -9,12 +9,12 @@ metadata:
   author: florianborn71
   ms.author: flborn
   ms.date: 03/26/2020
-  ms.openlocfilehash: e740fd08dc3e616b0768c6c15fd4191cb58e261a
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-  ms.translationtype: HT
+  ms.openlocfilehash: c60dfe8febb76936a41be48e5e8749be7a0ef3e7
+  ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "85565423"
+  ms.lasthandoff: 03/03/2021
+  ms.locfileid: "101732697"
 landingContent:
 - title: Over Azure Remote Rendering
   linkLists:

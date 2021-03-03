@@ -8,14 +8,14 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: luquinta
 author: luisquintanilla
-ms.date: 12/21/2020
+ms.date: 02/25/2021
 ms.custom: responsible-ml
-ms.openlocfilehash: 7124fdd6e7d137e21234ff40426e13dc65b4f9e0
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: f849968c16d2c3d8940a71da0e0cda536882d9c8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223105"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101692059"
 ---
 # <a name="what-is-responsible-machine-learning-preview"></a>Wat is er verantwoordelijk machine learning? (preview)
 
@@ -42,7 +42,7 @@ Aangezien kunst matige intelligentie en autonome systemen meer kunnen worden ge√
 
 Moeilijk te verklaren of ondoorzichtige systemen kunnen problemen veroorzaken omdat het moeilijk is voor belanghebbenden zoals systeem ontwikkelaars, regelgevende instanties, gebruikers en besluit vormers om te begrijpen waarom systemen bepaalde beslissingen nemen. Sommige AI-systemen zijn beter verklaren dan andere en er is soms een afweging tussen een systeem met nauw keurigheid en een meer uitleg.
 
-Gebruik [InterpretML](https://github.com/interpretml/interpret), een open-source pakket dat is gebouwd door micro soft, voor het bouwen van interpretatieve AI-systemen. [InterpretML kan worden gebruikt in azure machine learning](how-to-machine-learning-interpretability.md) voor [het interpreteren en uitleggen van uw machine learning modellen](how-to-machine-learning-interpretability-aml.md), inclusief [geautomatiseerde machine learning modellen](how-to-machine-learning-interpretability-automl.md).
+Gebruik [InterpretML](https://github.com/interpretml/interpret), een open-source pakket dat is gebouwd door micro soft, voor het bouwen van interpretatieve AI-systemen. Het InterpretML-pakket ondersteunt een groot aantal verschillende methoden voor het interpreteren, zoals SHapley additieve toelichtingen (SHAP), het nabootsen van uitleg en de permutatie functie (PFI).  [InterpretML kan worden gebruikt in azure machine learning](how-to-machine-learning-interpretability.md) voor [het interpreteren en uitleggen van uw machine learning modellen](how-to-machine-learning-interpretability-aml.md), inclusief [geautomatiseerde machine learning modellen](how-to-machine-learning-interpretability-automl.md).
 
 ## <a name="mitigate-fairness-in-machine-learning-models"></a>Verdeling in machine learning modellen beperken
 
@@ -92,7 +92,7 @@ Sommige model gegevens die u mogelijk wilt documenteren als onderdeel van een ge
 
 Raadpleeg het volgende voor beeld om te leren hoe u de Azure Machine Learning SDK kunt gebruiken om [gegevens bladen voor modellen](https://github.com/microsoft/MLOps/blob/master/pytorch_with_datasheet/model_with_datasheet.ipynb)te implementeren.
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 
 - Raadpleeg voor meer informatie de [verantwoordelijke vernieuwings Toolkit](/azure/architecture/guide/responsible-innovation/) voor informatie over best practices.
 - Meer informatie over de set met richt lijnen [over milliliters](https://www.partnershiponai.org/about-ml/) voor machine learning systeem documentatie.

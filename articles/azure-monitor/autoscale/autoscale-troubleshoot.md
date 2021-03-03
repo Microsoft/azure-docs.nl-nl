@@ -4,12 +4,12 @@ description: Het bijhouden van problemen met Azure-automatisch schalen die wordt
 ms.topic: conceptual
 ms.date: 11/4/2019
 ms.subservice: autoscale
-ms.openlocfilehash: 8936d1b94082291f5c081c47f8331cc64042896b
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: a0fed6c2d06edcb2c9eb8d715feb0ef6c6ade46f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610866"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711396"
 ---
 # <a name="troubleshooting-azure-autoscale"></a>Problemen oplossen met Azure automatisch schalen
  
@@ -24,14 +24,14 @@ De service voor automatisch schalen biedt u metrische gegevens en Logboeken om t
   
 ## <a name="autoscale-metrics"></a>Metrische gegevens automatisch schalen
 
-Automatisch schalen biedt u [vier metrische gegevens](../platform/metrics-supported.md#microsoftinsightsautoscalesettings) om inzicht te krijgen in de werking ervan. 
+Automatisch schalen biedt u [vier metrische gegevens](../essentials/metrics-supported.md#microsoftinsightsautoscalesettings) om inzicht te krijgen in de werking ervan. 
 
 - **Waargenomen metrische waarde** : de waarde van de metrische gegevens die u hebt gekozen om de schaal actie op te halen, zoals wordt weer gegeven of berekend door de engine voor automatisch schalen. Omdat één instelling voor automatisch schalen meerdere regels en daarom meerdere metrische bronnen kan hebben, kunt u filteren met metrische bronnen als een dimensie.
 - **Drempel waarde voor metrische gegevens** : de drempel waarde die u hebt ingesteld om de schaal actie uit te voeren. Omdat één instelling voor automatisch schalen meerdere regels en daarom meerdere metrische bronnen kan hebben, kunt u filteren met metrische regel als een dimensie.
 - **Waargenomen capaciteit** : het actieve aantal exemplaren van de doel resource, zoals wordt gezien door de engine voor automatisch schalen.
 - **Gestarte schaalacties**: het aantal acties voor uit- en inschalen dat door de engine voor automatisch schalen wordt gestart. U kunt filteren op uitschalen versus schalen in acties.
 
-U kunt de [Metrics Explorer](../platform/metrics-getting-started.md) gebruiken om de bovenstaande metrische gegevens op één plek te diagram. In de grafiek moet het volgende worden weer gegeven:
+U kunt de [Metrics Explorer](../essentials/metrics-getting-started.md) gebruiken om de bovenstaande metrische gegevens op één plek te diagram. In de grafiek moet het volgende worden weer gegeven:
 
   - de werkelijke metrische waarde
   - de metrische gegevens zoals weer gegeven/berekend door de engine voor automatisch schalen
@@ -87,7 +87,7 @@ In de grafiek onderaan ziet u een aantal waarden.
  - De **waargenomen capaciteit** (paars) toont het aantal instanties dat wordt weer gegeven door de engine voor automatisch schalen. 
  - De **metrische drempel** waarde (licht groen) is ingesteld op 10. 
 
-Als er meerdere schaal actie regels zijn, kunt u splitsen of de optie **filter toevoegen** gebruiken in de grafiek metrische gegevens Verkenner om de metrische gegevens te bekijken op basis van een specifieke bron of regel. Zie [geavanceerde functies van metrische grafieken-splitsen](../platform/metrics-charts.md#apply-splitting) voor meer informatie over het splitsen van een metrische grafiek
+Als er meerdere schaal actie regels zijn, kunt u splitsen of de optie **filter toevoegen** gebruiken in de grafiek metrische gegevens Verkenner om de metrische gegevens te bekijken op basis van een specifieke bron of regel. Zie [geavanceerde functies van metrische grafieken-splitsen](../essentials/metrics-charts.md#apply-splitting) voor meer informatie over het splitsen van een metrische grafiek
 
 ## <a name="example-3---understanding-autoscale-events"></a>Voor beeld 3: informatie over automatisch schalen
 
@@ -97,13 +97,13 @@ In het scherm instelling voor automatisch schalen gaat u naar het tabblad **uitv
 
 ## <a name="autoscale-resource-logs"></a>Resource logboeken automatisch schalen
 
-Net als elke andere Azure-resource biedt de service voor automatisch schalen [resource logboeken](../platform/platform-logs-overview.md). Er zijn twee soorten logboeken.
+Net als elke andere Azure-resource biedt de service voor automatisch schalen [resource logboeken](../essentials/platform-logs-overview.md). Er zijn twee soorten logboeken.
 
 - **Evaluaties automatisch schalen** : de engine voor automatisch schalen legt logboek vermeldingen voor elke evaluatie van één voor waarde vast telkens wanneer er een controle wordt gedaan.  De vermelding bevat details over de waargenomen waarden van de metrische gegevens, de regels die zijn geëvalueerd en als de evaluatie een schaal actie heeft veroorzaakt.
 
 - **Schaal acties** voor automatisch schalen: de engine registreert actie gebeurtenissen die zijn geïnitieerd door de service voor automatisch schalen en de resultaten van deze schalen (geslaagd, mislukt, en hoeveel schalen er is opgetreden, zoals gezien door de service voor automatisch schalen).
 
-Net als bij elke Azure Monitor ondersteunde service kunt u [Diagnostische instellingen](../platform/diagnostic-settings.md) gebruiken om deze logboeken te routeren:
+Net als bij elke Azure Monitor ondersteunde service kunt u [Diagnostische instellingen](../essentials/diagnostic-settings.md) gebruiken om deze logboeken te routeren:
 
 - naar uw Log Analytics-werk ruimte voor gedetailleerde analyse
 - Event Hubs en vervolgens naar niet-Azure-hulpprogram ma's
@@ -206,4 +206,4 @@ Maak waarschuwings regels om op de hoogte te worden gesteld van acties voor auto
 Zie [resource logboeken automatisch schalen](autoscale-resource-log-schema.md) voor meer informatie
 
 ## <a name="next-steps"></a>Volgende stappen
-Lees informatie over [Aanbevolen procedures voor automatisch schalen](autoscale-best-practices.md). 
+Lees informatie over [Aanbevolen procedures voor automatisch schalen](autoscale-best-practices.md).

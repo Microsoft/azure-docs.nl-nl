@@ -4,12 +4,12 @@ description: In deze zelfstudie wordt beschreven hoe u een on-premises WCF REST-
 ms.topic: tutorial
 ms.custom: devx-track-dotnet
 ms.date: 06/23/2020
-ms.openlocfilehash: bb2b9b5ed7c263762cc24b8eb2e6d66215147c4c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 7669bc07ad91933cd31bd2ccd10eaf830d98de7c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88935701"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101710784"
 ---
 # <a name="tutorial-expose-an-on-premises-wcf-rest-service-to-external-client-by-using-azure-wcf-relay"></a>Zelfstudie: Een on-premises WCF REST-service zichtbaar maken voor een externe client met behulp van Azure WCF Relay
 
@@ -185,7 +185,7 @@ Het configuratiebestand lijkt op een WCF-configuratiebestand. Het bevat de servi
 1. In de `<system.serviceModel>`-tags voegt u een `<services>`-element toe. U kunt meerdere relay-toepassingen definiëren in een enkel configuratiebestand. In deze zelfstudie wordt er echter maar één gedefinieerd.
 
     ```xml
-    <?xmlversion="1.0"encoding="utf-8"?>
+    <?xmlversion="1.0" encoding="utf-8"?>
     <configuration>
       <system.serviceModel>
         <services>
@@ -513,7 +513,7 @@ In deze stap maakt u een *App.config*-bestand voor een eenvoudige clienttoepassi
 1. In het `system.serviceModel`-element voegt u een `<client>`-element toe.
 
     ```xml
-    <?xmlversion="1.0"encoding="utf-8"?>
+    <?xmlversion="1.0" encoding="utf-8"?>
     <configuration>
       <system.serviceModel>
         <client>

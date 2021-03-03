@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 02/24/2021
 ms.custom: template-quickstart
 keywords: Kubernetes, Arc, azure, cluster
-ms.openlocfilehash: 8eb177f0c80d7ed2df70c75ca476a1dfe33c8425
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: c50266ce0afd6dd3f5860e3259d2b22af817834c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101665404"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101689246"
 ---
 # <a name="quickstart-connect-an-existing-kubernetes-cluster-to-azure-arc"></a>Quick Start: een bestaand Kubernetes-cluster verbinden met Azure Arc 
 
@@ -25,7 +25,7 @@ In deze Quick start gaan we profiteren van de voor delen van Azure Arc enabled K
 
 * Controleer of u het volgende hebt:
     * Een up-en-actief Kubernetes-cluster.
-    * Een `kubeconfig` bestand.
+    * Een `kubeconfig` bestand dat verwijst naar het cluster dat u wilt verbinden met Azure Arc.
     * Lees-en schrijf machtigingen voor de gebruiker of Service-Principal waarmee verbinding wordt gemaakt met het resource type Azure Arc enabled Kubernetes ( `Microsoft.Kubernetes/connectedClusters` ).
 * Installeer de [nieuwste versie van helm 3](https://helm.sh/docs/intro/install).
 * Installeer de volgende Kubernetes CLI-uitbrei dingen van Azure Arc enabled van versie >= 1.0.0:
@@ -68,16 +68,6 @@ In deze Quick start gaan we profiteren van de voor delen van Azure Arc enabled K
 | `https://login.microsoftonline.com`                                                                            | Vereist om Azure Resource Manager-tokens op te halen en bij te werken.                                                                                    |  
 | `https://mcr.microsoft.com`                                                                            | Vereist voor het ophalen van container installatie kopieën voor Azure Arc-agents.                                                                  |  
 | `https://eus.his.arc.azure.com`, `https://weu.his.arc.azure.com`, `https://wcus.his.arc.azure.com`, `https://scus.his.arc.azure.com`, `https://sea.his.arc.azure.com`, `https://uks.his.arc.azure.com`, `https://wus2.his.arc.azure.com`, `https://ae.his.arc.azure.com`, `https://eus2.his.arc.azure.com`, `https://ne.his.arc.azure.com` |  Vereist voor het ophalen van door het systeem toegewezen Managed Service Identity-certificaten (MSI).                                                                  |
-
-
-## <a name="install-the-azure-arc-enabled-kubernetes-cli-extensions"></a>De Azure Arc enabled Kubernetes CLI-extensies installeren
-
-Voer de volgende opdrachten in:  
-
-    ```azurecli
-    az extension add --name connectedk8s
-    az extension add --name k8s-configuration
-    ```
 
 ## <a name="register-the-two-providers-for-azure-arc-enabled-kubernetes"></a>Registreer de twee providers voor Azure Arc enabled Kubernetes
 
@@ -147,6 +137,9 @@ eastus      AzureArcTest
       "type": "Microsoft.Kubernetes/connectedClusters"
     }
     ```
+
+> [!TIP]
+> De bovenstaande opdracht zonder de opgegeven locatie parameter maakt de Azure-Kubernetes-resource op dezelfde locatie als de resource groep. Als u de Azure-Kubernetes-resource wilt maken op een andere locatie, geeft u `--location <region>` of op `-l <region>` Wanneer u de `az connectedk8s connect` opdracht uitvoert.
 
 ## <a name="verify-cluster-connection"></a>Cluster verbinding controleren
 

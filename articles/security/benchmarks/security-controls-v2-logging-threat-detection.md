@@ -4,19 +4,21 @@ description: Azure Security Bench Mark v2-logboek registratie en detectie van be
 author: msmbaldwin
 ms.service: security
 ms.topic: conceptual
-ms.date: 09/20/2020
+ms.date: 02/22/2021
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 2a0ce52c094739ffbbce2f93a41b2533222066b8
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 43119a51be2359ed2ddfb4e5d5fa629badedb054
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100576804"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101720678"
 ---
 # <a name="security-control-v2-logging-and-threat-detection"></a>Beveiligings controle v2: logboek registratie en detectie van bedreigingen
 
-Logboek registratie en detectie van bedreigingen omvatten besturings elementen voor het detecteren van bedreigingen op Azure en het inschakelen, verzamelen en opslaan van audit logboeken voor Azure-Services. Dit omvat het inschakelen van detectie-, onderzoek-en herstel processen met besturings elementen voor het genereren van waarschuwingen met een hoge kwaliteit met systeem eigen bedreigingen detectie in Azure-Services. Het omvat ook het verzamelen van logboeken met Azure Monitor, het centraliseren van beveiligings analyse met Azure Sentinel, tijd synchronisatie en logboek registratie. 
+Logboek registratie en detectie van bedreigingen omvatten besturings elementen voor het detecteren van bedreigingen op Azure en het inschakelen, verzamelen en opslaan van audit logboeken voor Azure-Services. Dit omvat het inschakelen van detectie-, onderzoek-en herstel processen met besturings elementen voor het genereren van waarschuwingen met een hoge kwaliteit met systeem eigen bedreigingen detectie in Azure-Services. Het omvat ook het verzamelen van logboeken met Azure Monitor, het centraliseren van beveiligings analyse met Azure Sentinel, tijd synchronisatie en logboek registratie.
+
+Als u wilt zien welke ingebouwde Azure Policy van toepassing is, raadpleegt u [de details van het ingebouwde initiatief Azure Security Bench Mark-naleving: logboek registratie en detectie van bedreigingen](../../governance/policy/samples/azure-security-benchmark#logging-and-threat-detection)
 
 ## <a name="lt-1-enable-threat-detection-for-azure-resources"></a>LT-1: detectie van bedreigingen inschakelen voor Azure-resources
 
@@ -46,7 +48,7 @@ Daarnaast kunt u Azure Sentinel gebruiken om analyse regels te bouwen, die de be
 
 - [Beveiligingsbewerkingen](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
-- [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)   
+- [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)
 
 - [Toepassings beveiliging en DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops) 
 
@@ -83,9 +85,9 @@ Azure Security Center kan ook worden gewaarschuwd voor bepaalde verdachte activi
 
 - [Beveiligingsbewerkingen](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
-- [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)   
+- [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)
 
-- [Toepassings beveiliging en DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops) 
+- [Toepassings beveiliging en DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)
 
 - [Bedreigings informatie](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
 
@@ -95,7 +97,9 @@ Azure Security Center kan ook worden gewaarschuwd voor bepaalde verdachte activi
 |--|--|--|--|
 | LT-3 | 9,3, 12,2, 12,5, 12,8 | AU-3, AU-6, AU-12, SI-4 |
 
-NSG-bron Logboeken (netwerk beveiligings groep), NSG-stroom logboeken, Azure Firewall-logboeken en Web Application firewall-Logboeken (WAF) inschakelen en verzamelen voor beveiligings analyse ter ondersteuning van incident onderzoek, de jacht van dreigingen en het genereren van beveiligings waarschuwingen. U kunt de stroom logboeken naar een Azure Monitor Log Analytics werk ruimte verzenden en vervolgens Traffic Analytics gebruiken om inzichten te geven. Zorg ervoor dat u DNS-query logboeken verzamelt om te helpen bij het correleren van andere netwerk gegevens.
+NSG-bron Logboeken (netwerk beveiligings groep), NSG-stroom logboeken, Azure Firewall-logboeken en Web Application firewall-Logboeken (WAF) inschakelen en verzamelen voor beveiligings analyse ter ondersteuning van incident onderzoek, de jacht van dreigingen en het genereren van beveiligings waarschuwingen. U kunt de stroom logboeken naar een Azure Monitor Log Analytics werk ruimte verzenden en vervolgens Traffic Analytics gebruiken om inzichten te geven.
+
+Zorg ervoor dat u DNS-query logboeken verzamelt om te helpen bij het correleren van andere netwerk gegevens.
 
 - [Stroom logboeken van netwerk beveiligings groepen inschakelen](../../network-watcher/network-watcher-nsg-flow-logging-portal.md)
 
@@ -117,7 +121,7 @@ NSG-bron Logboeken (netwerk beveiligings groep), NSG-stroom logboeken, Azure Fir
 
 - [Beveiligingsbewerkingen](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
-- [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)   
+- [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)
 
 - [Toepassings beveiliging en DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops) 
 
@@ -131,7 +135,7 @@ NSG-bron Logboeken (netwerk beveiligings groep), NSG-stroom logboeken, Azure Fir
 
 Schakel logboek registratie in voor Azure-resources om te voldoen aan de vereisten voor naleving, detectie van bedreigingen, jacht en incident onderzoek. 
 
-U kunt Azure Security Center en Azure Policy gebruiken om resource Logboeken in te scha kelen en gegevens verzamelen op Azure-resources te registreren voor toegang tot controle-, beveiligings-en bron Logboeken. Activiteiten logboeken, die automatisch beschikbaar zijn, omvatten gebeurtenis bron, datum, gebruiker, tijds tempel, bron adressen, doel adressen en andere nuttige elementen. 
+U kunt Azure Security Center en Azure Policy gebruiken om resource Logboeken in te scha kelen en gegevens verzamelen op Azure-resources te registreren voor toegang tot controle-, beveiligings-en bron Logboeken. Activiteiten logboeken, die automatisch beschikbaar zijn, omvatten gebeurtenis bron, datum, gebruiker, tijds tempel, bron adressen, doel adressen en andere nuttige elementen.
 
 - [Logboek registratie en verschillende logboek typen in azure](../../azure-monitor/essentials/platform-logs-overview.md)
 
@@ -145,7 +149,7 @@ U kunt Azure Security Center en Azure Policy gebruiken om resource Logboeken in 
 
 Infrastructuur- en eindpuntbeveiliging 
 
-- [Toepassings beveiliging en DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops) 
+- [Toepassings beveiliging en DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)
 
 - [Bedreigings informatie](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
 
@@ -155,13 +159,13 @@ Infrastructuur- en eindpuntbeveiliging
 |--|--|--|--|
 | LT-5 | 6,5, 6,6 | AU-3, SI-4 |
 
-Centraliseer logboek opslag en-analyse om correlatie in te scha kelen. Zorg ervoor dat u voor elke logboek bron een gegevens eigenaar hebt toegewezen, toegangs richtlijnen, opslag locatie, welke hulpprogram ma's worden gebruikt voor het verwerken en openen van de gegevens en vereisten voor gegevens behoud.
+Centraliseer logboek opslag en-analyse om correlatie in te scha kelen. Zorg ervoor dat u voor elke logboek bron een gegevens eigenaar hebt toegewezen, toegangs richtlijnen, opslag locatie, welke hulpprogram ma's worden gebruikt voor het verwerken en openen van de gegevens, en vereisten voor het bewaren van gegevens.
 
 Zorg ervoor dat u Azure-activiteiten logboeken integreert in uw centrale logboek registratie. Opname logboeken via Azure Monitor voor het verzamelen van beveiligings gegevens die zijn gegenereerd door eindpunt apparaten, netwerk bronnen en andere beveiligings systemen. Gebruik in Azure Monitor Log Analytics-werk ruimten om analyses uit te voeren en te uitvoeren en gebruik Azure Storage accounts voor lange termijn-en archiverings opslag.
 
 Daarnaast kunt u gegevens inschakelen en vrijgeven aan Azure Sentinel of een SIEM van derden.
 
-Veel organisaties kiezen voor het gebruik van Azure Sentinel voor ' hot ' gegevens die regel matig worden gebruikt en die worden Azure Storage voor ' koude ' gegevens die minder vaak worden gebruikt. 
+Veel organisaties kiezen voor het gebruik van Azure Sentinel voor ' hot ' gegevens die regel matig worden gebruikt en die worden Azure Storage voor ' koude ' gegevens die minder vaak worden gebruikt.
 
 - [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../../azure-monitor/essentials/diagnostic-settings.md)
 
@@ -189,7 +193,7 @@ In Azure Monitor kunt u de Bewaar periode voor uw Log Analytics werk ruimte inst
 
 - [De Bewaar periode voor gegevens wijzigen in Log Analytics](../../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
-- [Bewaar beleid configureren voor logboeken van Azure Storage-account](../../storage/common/storage-monitor-storage-account.md#configure-logging)
+- [Bewaar beleid configureren voor logboeken van Azure Storage-account](../../storage/common/manage-storage-analytics-logs.md#configure-logging)
 
 - [Azure Security Center-waarschuwingen en aanbevelingen exporteren](../../security-center/continuous-export.md)
 
@@ -199,9 +203,9 @@ In Azure Monitor kunt u de Bewaar periode voor uw Log Analytics werk ruimte inst
 
 - [Beveiligingsarchitectuur](/azure/cloud-adoption-framework/organize/cloud-security-architecture)
 
-- [Toepassings beveiliging en DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops) 
+- [Toepassings beveiliging en DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)
 
-- [Beveiligingsbewerkingen](/azure/cloud-adoption-framework/organize/cloud-security-operations-center) 
+- [Beveiligingsbewerkingen](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
 - [Beveiligingsnalevingsbeheer](/azure/cloud-adoption-framework/organize/cloud-security-compliance-management)
 
@@ -211,7 +215,7 @@ In Azure Monitor kunt u de Bewaar periode voor uw Log Analytics werk ruimte inst
 |--|--|--|--|
 | LT-7 | 6.1 | AU-8 |
 
-Micro soft onderhoudt tijd bronnen voor de meeste Azure PaaS-en SaaS-Services. Gebruik voor uw virtuele machines micro soft standaard NTP-server voor tijd synchronisatie, tenzij u een specifieke vereiste hebt.  Als u uw eigen NTP-server (Network Time Protocol) wilt maken, moet u ervoor zorgen dat u de UDP-service poort 123 beveiligt.
+Micro soft onderhoudt tijd bronnen voor de meeste Azure PaaS-en SaaS-Services. Gebruik voor uw virtuele machines micro soft standaard NTP-server voor tijd synchronisatie, tenzij u een specifieke vereiste hebt. Als u uw eigen NTP-server (Network Time Protocol) wilt maken, moet u ervoor zorgen dat u de UDP-service poort 123 beveiligt.
 
 Alle logboeken die zijn gegenereerd door resources binnen Azure bieden tijds tempels met de tijd zone die standaard is opgegeven.
 

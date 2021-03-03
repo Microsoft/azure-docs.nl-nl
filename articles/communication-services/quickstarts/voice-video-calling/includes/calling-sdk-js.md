@@ -4,16 +4,16 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: 3830025d761c94e2b0b0bc3e66389d66794b946c
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 4a9454abc2c4e41d711a4aef6a30438a72d27edb
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101661523"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750061"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
-- Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+- Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) 
 - Een geïmplementeerde Communication Services-resource. [Een Communication Services-resource maken](../../create-communication-resource.md).
 - Een `User Access Token` om de aanroepende client in te schakelen. Voor meer informatie over het [verkrijgen van een `User Access Token`](../../access-tokens.md)
 - Optioneel: Voltooi de Snelstartgids om aan de [slag te gaan met het toevoegen van een oproep aan uw toepassing](../getting-started-with-calling.md)
@@ -63,7 +63,7 @@ const deviceManager = await callClient.getDeviceManager()
 
 ## <a name="place-an-outgoing-call"></a>Een uitgaande oproep plaatsen
 
-Als u een gesprek wilt maken en starten, moet u een van de Api's op CallAgent gebruiken en een gebruiker bieden die u hebt gemaakt via de client bibliotheek van de communicatie Services-identiteit.
+Als u een gesprek wilt maken en starten, moet u een van de Api's op CallAgent gebruiken en een gebruiker bieden die u hebt gemaakt via de client bibliotheek voor communicatie Services-beheer.
 
 Aanroepen maken en starten is synchroon. Met het gesprek exemplaar kunt u zich abonneren op het aanroepen van gebeurtenissen.
 
@@ -254,10 +254,10 @@ U kunt de `mute` en asynchrone api's gebruiken om het lokale eind punt te dempen
 
 ```js
 
-//mute local device
+//mute local device 
 await call.mute();
 
-//unmute local device
+//unmute local device 
 await call.unmute();
 
 ```
@@ -401,7 +401,7 @@ Als u de video stromen en de streams voor het delen van externe deel nemers wilt
 const remoteVideoStream: RemoteVideoStream = call.remoteParticipants[0].videoStreams[0];
 const streamType: MediaStreamType = remoteVideoStream.mediaStreamType;
 ```
-
+ 
 Als u een wilt weer geven `RemoteVideoStream` , moet u zich abonneren op een `isAvailableChanged` gebeurtenis.
 Als de `isAvailable` eigenschap wordt gewijzigd in `true` , wordt een stroom door een externe deel nemer verzonden.
 Als dat gebeurt, maakt u een nieuw exemplaar van `Renderer` en maakt u vervolgens een nieuw `RendererView` exemplaar met behulp van de asynchrone `createView` methode.  U kunt vervolgens `view.target` aan elk UI-element worden gekoppeld.
@@ -581,7 +581,7 @@ const isRecordingActiveChangedHandler = () => {
 };
 
 callRecordingApi.on('isRecordingActiveChanged', isRecordingActiveChangedHandler);
-
+               
 ```
 
 ## <a name="call-transfer-management"></a>Beheer van oproep overdracht

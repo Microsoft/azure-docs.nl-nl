@@ -3,12 +3,12 @@ title: Label ondersteuning voor bronnen
 description: Hier wordt weer gegeven welke Azure-resource typen tags ondersteunen. Geeft Details voor alle Azure-Services.
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: 73f58dbda0e7c073cf4a8d2e846132a102192e93
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: b1f9e61b409c395a13cc6a18d21d17530f38ac7e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100635911"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101722888"
 ---
 # <a name="tag-support-for-azure-resources"></a>Ondersteuning voor labels voor Azure-resources
 In dit artikel wordt beschreven of een resource type [labels](tag-resources.md)ondersteunt. De kolom met de naam **ondersteunt labels** geeft aan of het resource type een eigenschap voor de tag heeft. De kolom label **in het kosten rapport** geeft aan of dit resource type de tag doorgeeft aan het kosten rapport. U kunt kosten op labels weer geven in de [Cost Management kosten analyse](../../cost-management-billing/costs/group-filter.md) en de gegevens voor de [factuur en dagelijks gebruik van Azure](../../cost-management-billing/manage/download-azure-invoice-daily-usage-date.md).
@@ -1767,9 +1767,9 @@ Ga naar de naam ruimte van een resource provider:
 > | expressRoutePorts | Ja | Ja |
 > | expressRouteServiceProviders | Nee | Nee |
 > | firewallPolicies | Ja | Ja |
-> | frontdoors | Ja, maar beperkt (Zie [Opmerking hieronder](#frontdoor)) | Yes |
-> | frontdoorWebApplicationFirewallManagedRuleSets | Ja, maar beperkt (Zie [Opmerking hieronder](#frontdoor)) | No |
-> | frontdoorWebApplicationFirewallPolicies | Ja, maar beperkt (Zie [Opmerking hieronder](#frontdoor)) | Yes |
+> | frontdoors | Ja, maar beperkt (Zie [Opmerking hieronder](#frontdoor)) | Ja |
+> | frontdoorWebApplicationFirewallManagedRuleSets | Ja, maar beperkt (Zie [Opmerking hieronder](#frontdoor)) | Nee |
+> | frontdoorWebApplicationFirewallPolicies | Ja, maar beperkt (Zie [Opmerking hieronder](#frontdoor)) | Ja |
 > | getDnsResourceReference | Nee | Nee |
 > | internalNotify | Nee | Nee |
 > | ipGroups | Ja | Ja |
@@ -2265,16 +2265,18 @@ Ga naar de naam ruimte van een resource provider:
 > | managedInstances/sleutels | Nee | Nee |
 > | managedInstances / restorableDroppedDatabases / backupShortTermRetentionPolicies | Nee | Nee |
 > | managedInstances / vulnerabilityAssessments | Nee | Nee |
+> | longtermRetentionManagedInstance/longtermRetentionDatabase/longtermRetentionBackup | Nee | Nee |
 > | Server | Ja | Ja |
 > | servers/beheerders | Nee | Nee |
 > | servers/communicationLinks | Nee | Nee |
-> | servers/data bases | Ja (Zie [Opmerking hieronder](#sqlnote)) | Yes |
+> | servers/data bases | Ja (Zie [Opmerking hieronder](#sqlnote)) | Ja |
 > | servers/encryptionProtector | Nee | Nee |
 > | servers/firewallRules | Nee | Nee |
 > | servers/sleutels | Nee | Nee |
 > | servers/restorableDroppedDatabases | Nee | Nee |
 > | servers/serviceobjectives | Nee | Nee |
 > | servers/tdeCertificates | Nee | Nee |
+> | longtermRetentionServer/longtermRetentionDatabase/longtermRetentionBackup | Nee | Nee |
 > | virtualClusters | Nee | Nee |
 
 <a id="sqlnote"></a>
@@ -2372,7 +2374,7 @@ Ga naar de naam ruimte van een resource provider:
 > | ------------- | ----------- | ----------- |
 > | clusters | Ja | Ja |
 > | clusters/privateEndpoints | Nee | Nee |
-> | streamingjobs | Ja (zie opmerking hieronder) | Yes |
+> | streamingjobs | Ja (zie opmerking hieronder) | Ja |
 
 > [!NOTE]
 > U kunt geen tag toevoegen wanneer streamingjobs wordt uitgevoerd. Stop de resource om een tag toe te voegen.

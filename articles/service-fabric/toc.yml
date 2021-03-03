@@ -448,12 +448,14 @@
           href: how-to-managed-cluster-vmss-extension.md
         - name: Uw beheerde cluster configureren
           href: how-to-managed-cluster-configuration.md
+        - name: NSG-regels en andere opties voor beheerde cluster netwerken toevoegen
+          href: how-to-managed-cluster-networking.md
         - name: Beheerde cluster toepassingen implementeren met ARM-sjabloon
           href: how-to-managed-cluster-app-deployment-template.md
-        - name: Een beheerd cluster met beheerde identiteit configureren
-          href: how-to-managed-identity-managed-cluster-virtual-machine-scale-sets.md
         - name: Schijf versleuteling inschakelen voor beheerde cluster knooppunten
           href: how-to-enable-managed-cluster-disk-encryption.md
+        - name: Beheerde identiteit voor beheerde cluster knooppunten gebruiken
+          href: how-to-managed-identity-managed-cluster-virtual-machine-scale-sets.md
     - name: Plannen en voorbereiden
       items:
         - name: Clustercapaciteit plannen

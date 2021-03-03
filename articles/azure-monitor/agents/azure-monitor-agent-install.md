@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/17/2020
-ms.openlocfilehash: f0d062766f0a5d58fbcaaa32b1df5a5e40c783b4
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 17c7609afeef8b5129e3bfe252def74b45cb4208
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609184"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719947"
 ---
 # <a name="install-the-azure-monitor-agent-preview"></a>De Azure Monitor-agent installeren (preview-versie)
 In dit artikel vindt u de verschillende opties die momenteel beschikbaar zijn voor het installeren van de [Azure monitor-agent](azure-monitor-agent-overview.md) op virtuele machines van Azure en Azure Arc-servers en de opties voor het maken [van koppelingen met regels voor gegevens verzameling](data-collection-rule-azure-monitor-agent.md) waarmee wordt gedefinieerd welke gegevens de agent moet verzamelen.
@@ -42,7 +42,7 @@ U kunt Resource Manager-sjablonen gebruiken om de Azure Monitor-agent te install
 Bekijk voorbeeld sjablonen voor het installeren van de agent en het maken van de koppeling van de volgende: 
 
 - [Sjabloon voor het installeren van Azure Monitor agent (Azure en Azure Arc)](../agents/resource-manager-agent.md#azure-monitor-agent-preview) 
-- [Sjabloon voor het maken van een koppeling met een regel voor het verzamelen van gegevens](../samples/resource-manager-data-collection-rules.md)
+- [Sjabloon voor het maken van een koppeling met een regel voor het verzamelen van gegevens](./resource-manager-data-collection-rules.md)
 
 Installeer de sjablonen met behulp [van een implementatie methode voor Resource Manager-sjablonen](../../azure-resource-manager/templates/deploy-powershell.md) , zoals de volgende opdrachten.
 

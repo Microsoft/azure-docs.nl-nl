@@ -4,12 +4,12 @@ description: Meer informatie over het gebruik van Azure Custom Vision om een con
 ms.topic: tutorial
 ms.date: 09/08/2020
 zone_pivot_groups: ams-lva-edge-programming-languages
-ms.openlocfilehash: 0b5d011ac7832436edf1f5c898b1fe1e239d0aea
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: e6b911ad555c4ce10a9576861e1c2e650e63cd94
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99055362"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101698804"
 ---
 # <a name="tutorial-analyze-live-video-with-live-video-analytics-on-iot-edge-and-azure-custom-vision"></a>Zelfstudie: Live video analyseren met Live Video Analytics op IoT Edge en Azure Custom Vision
 
@@ -221,7 +221,7 @@ Als u de grafiektopologie voor deze zelfstudie in een browser opent, ziet u dat 
         
    ```
         {
-          "@apiVersion": "1.0",
+          "@apiVersion": "2.0",
           "name": "Sample-Graph-1",
           "properties": {
             "topologyName": "CustomVisionWithHttpExtension",

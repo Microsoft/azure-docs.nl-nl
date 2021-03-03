@@ -12,12 +12,12 @@ ms.custom:
 - amqp
 - mqtt
 - device-developer
-ms.openlocfilehash: 028088087b16ded182042aadec4be08a4b8a9589
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: 4db7c9fdfd439e049ca76fec6f0e66bd4a37fffd
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99062675"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101702705"
 ---
 # <a name="get-connected-to-azure-iot-central"></a>Verbinding maken met Azure IoT Central
 
@@ -217,7 +217,44 @@ Wanneer een echt apparaat verbinding maakt met uw IoT Central-toepassing, verand
 
 ## <a name="best-practices"></a>Aanbevolen procedures
 
-Zorg dat het apparaat niet persistent is of niet in de cache is opgeslagen connection string dat DPS retourneert wanneer u het apparaat voor het eerst aansluit. Als u opnieuw verbinding wilt maken met een apparaat, gaat u naar de standaard apparaat registratie stroom om de juiste connection string van het apparaat op te halen. Als het apparaat de connection string opslaat, wordt de software van het apparaat uitgevoerd met een verouderd connection string. Als IoT Central de onderliggende Azure IoT-hub die wordt gebruikt, bijwerkt, kan een apparaat met een verouderde connection string geen verbinding maken.
+Deze aanbevelingen laten zien hoe u apparaten implementeert om te profiteren van de ingebouwde herstel na nood gevallen en automatisch schalen in IoT Central.
+
+In de volgende lijst wordt de stroom op hoog niveau weer gegeven wanneer een apparaat verbinding maakt met IoT Central:
+
+1. Gebruik DPS om het apparaat in te richten en een apparaat connection string op te halen.
+
+1. Gebruik de connection string om verbinding te maken met het interne IoT Hub-eind punt van IoT Central. Gegevens verzenden naar en ontvangen van uw IoT Central-toepassing.
+
+1. Als het apparaat verbindings fouten krijgt, moet u, afhankelijk van het type fout, de verbinding opnieuw proberen of het apparaat opnieuw inrichten.
+
+### <a name="use-dps-to-provision-the-device"></a>DPS gebruiken om het apparaat in te richten
+
+Als u een apparaat wilt inrichten met DPS, gebruikt u de scope-ID, de referenties en de apparaat-ID van uw IoT Central-toepassing. Zie voor meer informatie over de referentie typen [X. 509 groep registratie](#x509-group-enrollment) en [SAS-groeps inschrijving](#sas-group-enrollment). Zie [apparaatregistratie](#device-registration)voor meer informatie over apparaat-id's.
+
+Bij voltooiing retourneert DPS een connection string het apparaat kan gebruiken om verbinding te maken met uw IoT Central-toepassing. Zie [de inrichtings status van uw apparaat controleren om de](troubleshoot-connection.md#check-the-provisioning-status-of-your-device)inrichtings fouten op te lossen.
+
+Het apparaat kan de connection string in de cache opslaan voor gebruik in latere verbindingen. Het apparaat moet echter worden voor bereid voor het [afhandelen van verbindings fouten](#handle-connection-failures).
+
+### <a name="connect-to-iot-central"></a>Verbinding maken met IoT Central
+
+Gebruik de connection string om verbinding te maken met het interne IoT Hub-eind punt van IoT Central. Met de verbinding kunt u telemetrie naar uw IoT Central-toepassing verzenden, eigenschaps waarden synchroniseren met uw IoT Central toepassing en reageren op opdrachten die door uw IoT Central-toepassing worden verzonden.
+
+### <a name="handle-connection-failures"></a>Verbindings fouten verwerken
+
+Voor schalen of herstel na nood gevallen kan IoT Central de onderliggende IoT-hub bijwerken. Als u de connectiviteit wilt behouden, moet uw apparaatcode specifieke verbindings fouten verwerken door verbinding te maken met het nieuwe IoT Hub-eind punt.
+
+Als het apparaat een van de volgende fouten ontvangt wanneer de verbinding tot stand wordt gebracht, wordt de inrichtings stap opnieuw met DPS opnieuw uitvoeren om een nieuwe connection string te krijgen. Deze fouten betekenen de connection string het apparaat niet meer geldig is:
+
+- Onbereikbaar IoT Hub-eind punt.
+- Verlopen beveiligings token.
+- Het apparaat is uitgeschakeld in IoT Hub.
+
+Als het apparaat een van de volgende fouten ontvangt wanneer er verbinding mee wordt gemaakt, moet het een back-up-strategie gebruiken om de verbinding opnieuw te proberen. Deze fouten betekenen de connection string het apparaat nog steeds geldig is, maar de tijdelijke omstandigheden stoppen het apparaat om verbinding te maken:
+
+- Door operator geblokkeerd apparaat.
+- Interne fout 500 van de service.
+
+Zie [problemen met apparaattoewijzing oplossen](troubleshoot-connection.md)voor meer informatie over fout codes voor apparaten.
 
 ## <a name="sdk-support"></a>SDK-ondersteuning
 

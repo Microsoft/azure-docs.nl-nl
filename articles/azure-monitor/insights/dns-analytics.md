@@ -1,17 +1,16 @@
 ---
 title: DNS-analyse oplossing in Azure Monitor | Microsoft Docs
 description: Stel de DNS-analyse-oplossing in Azure Monitor in en gebruik deze om inzicht te krijgen in de DNS-infra structuur voor beveiliging, prestaties en bewerkingen.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/20/2018
-ms.openlocfilehash: c3934af1af040b8b45175bacde43237802ab82cf
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: df9efef1000ab6a824c869e6684ab1424e8462f4
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100582393"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708098"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Inzichten over uw DNS-infra structuur verzamelen met de preview-oplossing van DNS-analyse
 
@@ -35,10 +34,10 @@ De volgende tabel beschrijft de verbonden bronnen die worden ondersteund door de
 
 | **Verbonden bron** | **Ondersteuning** | **Beschrijving** |
 | --- | --- | --- |
-| [Windows-agents](../agents/agent-windows.md) | Yes | De oplossing verzamelt DNS-gegevens van Windows-agents. |
-| [Linux-agents](../vm/quick-collect-linux-computer.md) | No | De oplossing verzamelt geen DNS-gegevens van direct Linux-agents. |
-| [Beheergroep System Center Operations Manager](../agents/om-agents.md) | Yes | De oplossing verzamelt DNS-gegevens van agents in een verbonden Operations Manager-beheer groep. Een directe verbinding van de Operations Manager agent naar Azure Monitor is niet vereist. Gegevens worden doorgestuurd van de beheer groep naar de Log Analytics-werk ruimte. |
-| [Azure Storage-account](../essentials/resource-logs.md#send-to-log-analytics-workspace) | No | Azure Storage wordt niet gebruikt door de oplossing. |
+| [Windows-agents](../agents/agent-windows.md) | Ja | De oplossing verzamelt DNS-gegevens van Windows-agents. |
+| [Linux-agents](../vm/quick-collect-linux-computer.md) | Nee | De oplossing verzamelt geen DNS-gegevens van direct Linux-agents. |
+| [Beheergroep System Center Operations Manager](../agents/om-agents.md) | Ja | De oplossing verzamelt DNS-gegevens van agents in een verbonden Operations Manager-beheer groep. Een directe verbinding van de Operations Manager agent naar Azure Monitor is niet vereist. Gegevens worden doorgestuurd van de beheer groep naar de Log Analytics-werk ruimte. |
+| [Azure Storage-account](../essentials/resource-logs.md#send-to-log-analytics-workspace) | Nee | Azure Storage wordt niet gebruikt door de oplossing. |
 
 ### <a name="data-collection-details"></a>Details van gegevens verzameling
 

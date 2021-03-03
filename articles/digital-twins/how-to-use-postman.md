@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: how-to
 ms.date: 11/10/2020
-ms.openlocfilehash: 96872a067d2414254aec3f212542dadabdf2bd6f
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: d99ec80308152ce9e4870da809acaa25c663d98d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98791738"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101715697"
 ---
 # <a name="how-to-use-postman-to-send-requests-to-the-azure-digital-twins-apis"></a>Postman gebruiken om aanvragen te verzenden naar de Azure Digital Apparaatdubbels-Api's
 
@@ -140,7 +140,7 @@ Om door te gaan met een voorbeeld query, wordt in dit artikel de query-API (en d
 1. Controleer of de kopteksten die voor de aanvraag op het tabblad *headers* worden weer gegeven, overeenkomen met de headers die in de referentie documentatie zijn beschreven. Voor deze aanvraag zijn verschillende headers automatisch gevuld. Voor de query-API zijn geen van de opties voor de header vereist, dus deze stap is voltooid.
 1. Controleer of de hoofd tekst die voor de aanvraag in het tabblad *hoofd tekst* wordt weer gegeven, overeenkomt met de vereisten die in de referentie documentatie zijn beschreven. Voor de query-API is een JSON-hoofd tekst vereist voor het opgeven van de query tekst. Hier volgt een voor beeld van een hoofd tekst voor deze aanvraag die een query uitvoert voor alle digitale apparaatdubbels in het exemplaar:
 
-   :::image type="content" source="media/how-to-use-postman/postman-request-body.png" alt-text="In de details van de nieuwe aanvraag wordt het tabblad hoofd tekst weer gegeven. Het bevat een onbewerkte JSON-hoofd tekst met een query van ' SELECT * FROM DIGITALTWINS '."lightbox="media/how-to-use-postman/postman-request-body.png":::
+   :::image type="content" source="media/how-to-use-postman/postman-request-body.png" alt-text="In de details van de nieuwe aanvraag wordt het tabblad hoofd tekst weer gegeven. Het bevat een onbewerkte JSON-hoofd tekst met een query van ' SELECT * FROM DIGITALTWINS '." lightbox="media/how-to-use-postman/postman-request-body.png":::
 
    Zie [*How-to: query the dubbele Graph*](how-to-query-graph.md)(Engelstalig) voor meer informatie over het opstellen van Azure Digital apparaatdubbels-query's.
 

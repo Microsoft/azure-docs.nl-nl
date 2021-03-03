@@ -1,20 +1,20 @@
 ### YamlMime:Landing
 title: Documentatie voor Azure Functions
-summary: Azure Functions is een cloudservice die beschikbaar is op aanvraag en alle voortdurend bijgewerkte infrastructuur en resources biedt die nodig zijn om uw toepassingen uit te voeren. U richt zich op de stukken code die voor u het belangrijkst zijn en Azure Functions doet de rest. U kunt Azure Functions ook gebruiken om web-API's te maken, te reageren op databasewijzigingen, IoT-gegevensstromen te verwerken, berichtenwachtrijen te beheren en nog veel meer.
+summary: Azure Functions is een cloudservice die beschikbaar is op aanvraag en alle voortdurend bijgewerkte infrastructuur en resources biedt die nodig zijn om uw toepassingen uit te voeren. U richt zich op de stukjes code die het meest voor u belang rijk zijn, en met functies wordt de rest afhandelen. Functies bieden serverloze reken kracht voor Azure. U kunt functies gebruiken om Web-Api's te bouwen, te reageren op database wijzigingen, IoT-stromen te verwerken, berichten wachtrijen te beheren en meer.
 metadata:
   title: Documentatie voor Azure Functions
-  description: Azure Functions is een cloudservice die beschikbaar is op aanvraag en alle voortdurend bijgewerkte infrastructuur en resources biedt die nodig zijn om uw toepassingen uit te voeren. U richt zich op de stukken code die voor u het belangrijkst zijn en Azure Functions doet de rest. U kunt Azure Functions ook gebruiken om web-API's te maken, te reageren op databasewijzigingen, IoT-gegevensstromen te verwerken, berichtenwachtrijen te beheren en nog veel meer.
+  description: Azure Functions is een cloudservice die beschikbaar is op aanvraag en alle voortdurend bijgewerkte infrastructuur en resources biedt die nodig zijn om uw toepassingen uit te voeren. U richt zich op de stukken code die voor u het belangrijkst zijn en Azure Functions doet de rest. Functies bieden serverloze reken kracht voor Azure. U kunt Azure Functions ook gebruiken om web-API's te maken, te reageren op databasewijzigingen, IoT-gegevensstromen te verwerken, berichtenwachtrijen te beheren en nog veel meer.
   ms.service: azure-functions
   ms.topic: landing-page
   author: ggailey777
   ms.author: azfundocs
   ms.date: 09/17/2019
-  ms.openlocfilehash: 65b2c25bde616f8a2bbc9abf6439871d288306b9
-  ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+  ms.openlocfilehash: 4d856232d2f0780852a1f369548b08012d124834
+  ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 02/14/2021
-  ms.locfileid: "100363029"
+  ms.lasthandoff: 03/03/2021
+  ms.locfileid: "101729161"
 landingContent:
 - title: Over Azure Functions
   linkLists:

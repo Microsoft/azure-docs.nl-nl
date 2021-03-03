@@ -5,23 +5,23 @@ author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 02/20/2020
+ms.date: 02/25/2021
 ms.author: tisande
 ms.custom: devx-track-js
-ms.openlocfilehash: a2e4e14927932575c9da42392329eea279f922fe
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: b20c72ae3ed8a8fffa02fc3a2c86f9f73ba2663b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93336160"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101692127"
 ---
 # <a name="geospatial-and-geojson-location-data-in-azure-cosmos-db"></a>Georuimtelijke en geojson-locatie gegevens in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
-Dit artikel is een inleiding tot de georuimtelijke functionaliteit in Azure Cosmos DB. Het opslaan en openen van georuimtelijke gegevens wordt momenteel alleen ondersteund door Azure Cosmos DB SQL-API-accounts. Nadat u onze documentatie voor georuimtelijk indexeren hebt gelezen, kunt u de volgende vragen beantwoorden:
+Dit artikel is een inleiding tot de georuimtelijke functionaliteit in Azure Cosmos DB. Nadat u onze documentatie voor georuimtelijk indexeren hebt gelezen, kunt u de volgende vragen beantwoorden:
 
 * Hoe kan ik ruimtelijke gegevens in Azure Cosmos DB op te slaan?
-* Hoe kan ik een query uitvoeren op georuimtelijke gegevens in Azure Cosmos DB in SQL en LINQ?
+* Hoe kan ik ruimtelijke gegevens opvragen in Azure Cosmos DB in SQL en LINQ?
 * Ruimtelijke indexering in Azure Cosmos DB Hoe kan ik in-of uitschakelen?
 
 ## <a name="spatial-data-use-cases"></a>Gebruiks voorbeelden van ruimtelijke gegevens
@@ -121,9 +121,9 @@ Een **veelhoek** is een grens van verbonden punten die een gesloten Lines Tring 
     "type":"Polygon",
     "coordinates":[ [
         [ 31.8, -5 ],
-        [ 31.8, -4.7 ],
-        [ 32, -4.7 ],
         [ 32, -5 ],
+        [ 32, -4.7 ],
+        [ 31.8, -4.7 ],
         [ 31.8, -5 ]
     ] ]
 }

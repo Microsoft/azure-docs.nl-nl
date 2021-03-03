@@ -18,6 +18,9 @@
           href: get-started-cli.md
 - name: Concepten
   items:
+    - name: Configuratie
+      href: configuration.md
+      displayName: Routing
     - name: API-ondersteuning met Azure Functions
       href: apis.md
     - name: Routes
@@ -42,6 +45,8 @@
       href: application-settings.md
     - name: Front-end-frameworks en -bibliotheken configureren
       href: front-end-frameworks.md
+    - name: Implementatie tokens opnieuw instellen
+      href: deployment-token-management.md
 - name: Zelfstudies
   items:
     - name: Publiceren vanuit een statische sitegenerator

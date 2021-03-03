@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/31/2020
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 5cde7e677bd0121954b01cf9bb8defe45111a5b2
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 8d518d540e50d96486fa98eea3c3267685776668
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94369185"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101706279"
 ---
 # <a name="natural-language-support-for-azure-cognitive-services"></a>Ondersteuning voor natuurlijke taal voor Azure Cognitive Services
 
@@ -24,7 +24,7 @@ Met Azure Cognitive Services kunt u toepassingen ontwikkelen die uw gebruikers z
 Deze Cognitive Services zijn taal neutraal en hebben geen beperkingen op basis van de menselijke taal.
 
 * [Anomalie detectie (preview-versie)](./anomaly-detector/index.yml)
-* [Custom Vision](./Custom-Vision-Service/index.yml)
+* [Custom Vision](./custom-vision-service/index.yml)
 * [Face](./face/index.yml)
 * [Personalizer](./personalizer/index.yml)
 
@@ -32,7 +32,7 @@ Deze Cognitive Services zijn taal neutraal en hebben geen beperkingen op basis v
 
 * [Computer Vision](./computer-vision/language-support.md)
 * [Formulier herkenning (preview-versie)](./form-recognizer/language-support.md)
-* [Ink Recognizer (preview)](./ink-recognizer/language-support.md)
+* [Ink Recognizer (preview)](/previous-versions/azure/cognitive-services/Ink-Recognizer/language-support)
 * [Video Indexer](../media-services/video-indexer/language-identification-model.md#guidelines-and-limitations)
 
 ## <a name="language"></a>Taal
@@ -43,7 +43,7 @@ Deze Cognitive Services zijn taal neutraal en hebben geen beperkingen op basis v
 * [Tekstanalyse](./text-analytics/language-support.md)
 * [Translator](./translator/language-support.md)
 
-## <a name="speech"></a>Speech
+## <a name="speech"></a>Spraak
 
 * [Speech-Service: spraak naar tekst](./speech-service/language-support.md#speech-to-text)
 * [Speech-Service: tekst-naar-spraak](./speech-service/language-support.md#text-to-speech)

@@ -1,17 +1,17 @@
 ---
-title: Rapporten in Azure Monitor voor containers
-description: Beschrijft rapporten die beschikbaar zijn voor het analyseren van gegevens die zijn verzameld door Azure Monitor voor containers.
+title: Rapporten in container Insights
+description: Beschrijft rapporten die beschikbaar zijn voor het analyseren van gegevens die zijn verzameld door container Insights.
 ms.topic: conceptual
 ms.date: 12/07/2020
-ms.openlocfilehash: 94709cf4a8b579447c11f91f9bc6863ab4b4fe08
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: ab704ed184d9d67ddfba5aede385899faf2a56de
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100582317"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101704273"
 ---
-# <a name="reports-in-azure-monitor-for-containers"></a>Rapporten in Azure Monitor voor containers
-Rapporten in Azure Monitor voor containers worden in het vervolg van [Azure-werkmappen](../visualize/workbooks-overview.md)aanbevolen. In dit artikel worden de verschillende rapporten beschreven die beschikbaar zijn en hoe u deze kunt openen.
+# <a name="reports-in-container-insights"></a>Rapporten in container Insights
+Rapporten in container Insights worden aanbevolen voor [Azure-werkmappen](../visualize/workbooks-overview.md). In dit artikel worden de verschillende rapporten beschreven die beschikbaar zijn en hoe u deze kunt openen.
 
 ## <a name="viewing-reports"></a>Rapporten weer geven
 Selecteer in het menu **Azure monitor** in het Azure Portal **containers**. Selecteer **inzichten** in de sectie **bewaking** , kies een bepaald cluster en selecteer vervolgens de pagina **rapporten (voor beeld)** . 

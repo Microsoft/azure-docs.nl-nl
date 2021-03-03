@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 16e7f04c62f25e787c3cab44b85a075e1c7d7277
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 8be747d2027291203272a960efe6b26368471a50
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100386744"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101735043"
 ---
 # <a name="azure-maps-community---open-source-projects"></a>Azure Maps community-open-source projecten
 
@@ -24,7 +24,7 @@ Hieronder vindt u enkele van de populairste Azure Maps open source-projecten en 
 
 **Bots**
 
-| Projectnaam | Description |
+| Projectnaam | Beschrijving |
 |-|-|
 | [Bot Framework-positie van belang rijke vaardigheid](https://github.com/microsoft/botframework-solutions/tree/488093ac2fddf16096171f6a926315aa45e199e7/skills/csharp/pointofinterestskill) | Het belangrijkste vaardigheids punt biedt POI-gerelateerde mogelijkheden voor een virtuele assistent met behulp van Azure Maps met Azure Bot Service en bot Framework. |
 | [Locatie van BotBuilder](https://github.com/Microsoft/BotBuilder-Location) | Een open-source locatie kiezer-besturings element voor het micro soft bot Framework dat wordt aangedreven door de REST-services van Bing Maps. |
@@ -35,7 +35,7 @@ Hieronder vindt u enkele van de populairste Azure Maps open source-projecten en 
 
 Hier volgt een lijst van open-source projecten die de mogelijkheden van de Azure Maps Web-SDK uitbreiden.
 
-| Projectnaam | Description |
+| Projectnaam | Beschrijving |
 |-|-|
 | [Module Azure Maps animatie](https://github.com/Azure-Samples/azure-maps-animations) | Een uitgebreide bibliotheek met animaties voor gebruik met de Azure Maps Web-SDK. |
 | [Gegevens Azure Maps in de controle module voor weer gave](https://github.com/Azure-Samples/azure-maps-bring-data-into-view-control) | Een Azure Maps Web SDK-module waarmee u eenvoudig alle gegevens kunt weer geven die zijn geladen op de kaart. |
@@ -55,7 +55,7 @@ Hier volgt een lijst van open-source projecten die de mogelijkheden van de Azure
 
 **Voorbeelden**
 
-| Projectnaam | Description |
+| Projectnaam | Beschrijving |
 |-|-|
 | [Voor beelden van Azure Maps code](https://github.com/Azure-Samples/AzureMapsCodeSamples) | Een verzameling code voorbeelden voor het gebruik van Azure Maps in op het web gebaseerde apps. |
 | [Voor beelden van gov-Cloud code Azure Maps](https://github.com/Azure-Samples/AzureMapsCodeSamples) | Een verzameling code voorbeelden voor het gebruik van Azure Maps via Azure Government Cloud. |
@@ -68,15 +68,15 @@ Hier volgt een lijst van open-source projecten die de mogelijkheden van de Azure
 **Invoeg toepassingen van het kaart besturings element van derden**
 <a name="third-part-map-control-plugins"></a>
 
-| Projectnaam | Description |
+| Projectnaam | Beschrijving |
 |-|-|
-| [Azure Maps cesium-invoeg toepassing](https://github.com/azure-samples/azure-maps-cesium) | Een [CESIUM js](https://cesium.com/cesiumjs/) -invoeg toepassing waarmee u eenvoudig Azure Maps Services kunt integreren, zoals [tegel lagen](https://docs.microsoft.com/rest/api/maps/renderv2/getmaptilepreview) en [geocoderings Services](https://docs.microsoft.com/rest/api/maps/search). |
-| [Azure Maps-bijsluiter](https://github.com/azure-samples/azure-maps-leaflet) | Een [Folder](https://leafletjs.com/) -invoeg toepassing voor Java script waarmee u eenvoudig tegel lagen kunt bedekken vanuit de [Azure Maps-tegel Services](https://docs.microsoft.com/rest/api/maps/renderv2/getmaptilepreview). |
- | [Azure Maps-invoeg toepassing openlagen](https://github.com/azure-samples/azure-maps-openlayers) | Een [openlagen](https://www.openlayers.org/) java script-invoeg toepassing waarmee u eenvoudig tegel lagen kunt bedekken vanuit de [Azure Maps-tegel Services](https://docs.microsoft.com/rest/api/maps/renderv2/getmaptilepreview). |
+| [Azure Maps cesium-invoeg toepassing](https://github.com/azure-samples/azure-maps-cesium) | Een [CESIUM js](https://cesium.com/cesiumjs/) -invoeg toepassing waarmee u eenvoudig Azure Maps Services kunt integreren, zoals [tegel lagen](/rest/api/maps/renderv2/getmaptilepreview) en [geocoderings Services](/rest/api/maps/search). |
+| [Azure Maps-bijsluiter](https://github.com/azure-samples/azure-maps-leaflet) | Een [Folder](https://leafletjs.com/) -invoeg toepassing voor Java script waarmee u eenvoudig tegel lagen kunt bedekken vanuit de [Azure Maps-tegel Services](/rest/api/maps/renderv2/getmaptilepreview). |
+ | [Azure Maps-invoeg toepassing openlagen](https://github.com/azure-samples/azure-maps-openlayers) | Een [openlagen](https://www.openlayers.org/) java script-invoeg toepassing waarmee u eenvoudig tegel lagen kunt bedekken vanuit de [Azure Maps-tegel Services](/rest/api/maps/renderv2/getmaptilepreview). |
 
 **Hulpprogramma's en informatiebronnen**
 
-| Projectnaam | Description |
+| Projectnaam | Beschrijving |
 |-|-|
 | [Azure Maps docs](https://github.com/MicrosoftDocs/azure-docs/tree/master/articles/azure-maps) | Bron voor alle Azure Location Based Services documentatie. |
 | [Azure Maps Creator-Hulpprogram Ma's (preview-versie)](https://github.com/Azure-Samples/AzureMapsCreator) | Python-hulpprogram ma's voor Azure Maps Creator-Hulpprogram Ma's (preview). |

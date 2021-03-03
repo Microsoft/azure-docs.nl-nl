@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/23/2020
 ms.author: vinigam
-ms.openlocfilehash: 61cb37e727808566db1bc9b1161960926e03cb91
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: edf671c8005fa67f6161f383c503ca278dba3105
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100570893"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101702161"
 ---
 # <a name="create-a-monitor-in-connection-monitor-by-using-the-azure-portal"></a>Een monitor maken in de verbindings monitor met behulp van de Azure Portal
 
@@ -121,7 +121,7 @@ Als u in de Azure Portal een test groep wilt maken in een verbindings monitor, g
 
    * Als u on-premises agents wilt kiezen, selecteert u het tabblad **niet-Azure-eind punten** . Standaard worden agents gegroepeerd in werk ruimten per regio. Voor al deze werk ruimten is Netwerkprestatiemeter geconfigureerd. 
    
-       Als u Netwerkprestatiemeter aan uw werk ruimte wilt toevoegen, haalt u deze op via [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.NetworkMonitoringOMS?tab=Overview). Zie [oplossingen controleren in azure monitor](../azure-monitor/insights/solutions.md)voor informatie over het toevoegen van Netwerkprestatiemeter. 
+       Als u Netwerkprestatiemeter aan uw werk ruimte wilt toevoegen, haalt u deze op via [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/solarwinds.solarwinds-orion-network-performance-monitor?tab=Overview). Zie [oplossingen controleren in azure monitor](../azure-monitor/insights/solutions.md)voor informatie over het toevoegen van Netwerkprestatiemeter. 
    
        Klik onder **verbindings monitor maken** op het tabblad **basis beginselen** , de standaard regio is geselecteerd. Als u de regio wijzigt, kunt u agents kiezen uit werk ruimten in de nieuwe regio. U kunt een of meer agents of subnetten selecteren. In de weer gave **subnet** kunt u specifieke IP-adressen voor bewaking selecteren. Als u meerdere subnetten toevoegt, wordt er een aangepast on-premises netwerk met de naam **OnPremises_Network_1** gemaakt. U kunt ook de **Group by** -selector wijzigen om te groeperen op agents.
 

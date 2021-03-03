@@ -8,12 +8,12 @@ ms.author: tagore
 author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
-ms.openlocfilehash: bda066dd50d2f95776981eafc01e3ddd04d33e54
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 606510940460db963a2aa63deb57b6dba77de3ac
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98741057"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101700130"
 ---
 # <a name="workflow-of-windows-azure-classic-vm-architecture"></a>Werk stroom van de klassieke Windows Azure-VM-architectuur 
 
@@ -80,7 +80,7 @@ Het volgende diagram toont de architectuur van Azure-resources.
 5. WindowsAzureGuestAgent stelt het gast besturingssysteem (firewall, Acl's, LocalStorage, enzovoort) in, kopieert een nieuw XML-configuratie bestand naar c:\Config en start vervolgens het WaHostBootstrapper proces.
 6. Voor volledige IIS-webfuncties start WaHostBootstrapper IISConfigurator en geeft het aan dat alle bestaande AppPools voor de webrole uit IIS moeten worden verwijderd.
 7. WaHostBootstrapper leest de **opstart** taken van E:\RoleModel.xml en begint met het uitvoeren van opstart taken. WaHostBootstrapper wacht totdat alle eenvoudige opstart taken zijn voltooid en het bericht ' geslaagd ' heeft geretourneerd.
-8. Voor volledige IIS-webfuncties vertelt WaHostBootstrapper IISConfigurator het configureren van de IIS-AppPool en wijst de site naar `E:\Sitesroot\<index>` , waarbij `<index>` een 0-index is in het aantal elementen dat is `<Sites>` gedefinieerd voor de service.
+8. Voor volledige IIS-webfuncties vertelt WaHostBootstrapper IISConfigurator het configureren van de IIS-AppPool en verwijst de site naar `E:\Sitesroot\<index>` , waar `<index>` is een op nul gebaseerde index in het aantal elementen dat is `<Sites>` gedefinieerd voor de service.
 9. WaHostBootstrapper start het host proces, afhankelijk van het type rol:
     1. **Worker-rol**: WaWorkerHost.exe is gestart. WaHostBootstrapper voert de methode onstart () uit. Nadat deze is geretourneerd, begint WaHostBootstrapper met het uitvoeren van de methode Run () en wordt de functie vervolgens gelijktijdig gemarkeerd als gereed en wordt deze in de load balancer draaiing geplaatst (als InputEndpoints zijn gedefinieerd). WaHostBootsrapper gaat vervolgens naar een lus voor het controleren van de functie status.
     2. **Volledige IIS-webrole**: aIISHost is gestart. WaHostBootstrapper voert de methode onstart () uit. Nadat deze is geretourneerd, wordt de methode Run () gestart en wordt de functie vervolgens gelijktijdig gemarkeerd als gereed en wordt deze in de load balancer draaiing geplaatst. WaHostBootsrapper gaat vervolgens naar een lus voor het controleren van de functie status.

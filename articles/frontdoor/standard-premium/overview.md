@@ -8,27 +8,27 @@ ms.topic: overview
 ms.workload: infrastructure-services
 ms.date: 02/18/2021
 ms.author: duau
-ms.openlocfilehash: 32654f743301f9f2f6c010947d73d957c96dceac
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: bcfff1a2c8490a05f4b96a8e2ff68186348f596f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101100829"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101742361"
 ---
 # <a name="what-is-azure-front-door-standardpremium-preview"></a>Wat is Azure front deur Standard/Premium (preview)?
 
 > [!IMPORTANT]
 > Deze documentatie is voor Azure front deur Standard/Premium (preview). Zoekt u informatie over de voor deur van Azure? [Documenten voor de front-deur van Azure](../front-door-overview.md)weer geven.
 
-Azure front deur Standard/Premium is een snelle, betrouw bare en veilige moderne CDN voor Clouds die gebruikmaakt van het wereld wijde Edge-netwerk van micro soft en dat kan worden geïntegreerd met intelligente beveiliging tegen bedreigingen. Het combineert de mogelijkheden van Azure CDN Standard van micro soft, Azure front deur, Azure Web Application firewall (WAF) in één veilig cloud-CDN-platform.
+Azure front deur Standard/Premium is een snelle, betrouw bare en veilige moderne CDN voor Clouds die gebruikmaakt van het wereld wijde Edge-netwerk van micro soft en dat kan worden geïntegreerd met intelligente beveiliging tegen bedreigingen. Het combineert de mogelijkheden van Azure front-deur, Azure Content Delivery Network (CDN) Standard en Azure Web Application firewall (WAF) in één veilig cloud CDN-platform.
 
-Met Azure front deur Standard/Premium kunt u uw wereld wijde consumenten-en bedrijfs toepassingen omzetten in veilige en hoogwaardige, persoonlijke moderne toepassingen met inhoud die een wereld wijd publiek met lage latentie bereiken.
+Met Azure front deur Standard/Premium kunt u uw wereld wijde consumenten-en bedrijfs toepassingen omzetten in veilige en hoogwaardige, persoonlijke moderne toepassingen met inhoud die een wereld wijd publiek in de buurt van de rand van het netwerk bereikt. Ook kan uw toepassing worden uitgeschaald zonder te worden opgewarmd tijdens het profiteert van de globale HTTP-taak verdeling met directe failover.
 
    :::image type="content" source="../media/overview/front-door-overview.png" alt-text="Azure front deur Standard/Premium-architectuur" lightbox="../media/overview/front-door-overview-expanded.png":::
 
-Azure front deur Standard/Premium werkt op laag 7 (HTTP/HTTPS-laag) met behulp van het anycast-protocol met Split TCP en het wereld wijde netwerk van micro soft om de wereld wijde connectiviteit te verbeteren. Op basis van uw routerings methode kunt u ervoor zorgen dat Azure front-deur uw client aanvragen naar de snelste en meest beschik bare oorsprong stuurt. Een toepassingsback-end is een internetgerichte service die binnen of buiten Azure wordt gehost. AzureFront deur Standard/Premium biedt een reeks methoden voor het routeren van verkeer en de status bewakings opties voor de oorsprong voor verschillende toepassings behoeften en automatische failover-scenario's. Front Door is vergelijkbaar met Traffic Manager en bestand tegen storingen, waaronder het uitvallen van een hele Azure-regio.
+Azure front deur Standard/Premium werkt op laag 7 (HTTP/HTTPS-laag) met behulp van het anycast-protocol met Split TCP en het wereld wijde netwerk van micro soft om de wereld wijde connectiviteit te verbeteren. Op basis van uw aangepaste routerings methode met behulp van de ingestelde regels, kunt u ervoor zorgen dat de Azure-front-deur uw client aanvragen doorstuurt naar de snelste en meest beschik bare oorsprong. Een oorsprong van een toepassing is een Internet gerichte service die binnen of buiten Azure wordt gehost. Azure front deur Standard/Premium biedt een reeks methoden voor het routeren van verkeer en de status bewakings opties voor de oorsprong voor verschillende toepassings behoeften en automatische failover-scenario's. Front Door is vergelijkbaar met Traffic Manager en bestand tegen storingen, waaronder het uitvallen van een hele Azure-regio.
 
-Azure front-deur beveiligt ook uw app op de randen met Web Application firewall, bot-beveiliging en ingebouwde ruimte voor 3/laag 4 DDoS Protection. Ook wordt uw persoonlijke back-ends beveiligd met een privé koppelings service. Azure front-deur biedt u de best practice-beveiliging van micro soft op wereld wijde schaal.  
+Azure front-deur beveiligt ook uw app aan de rand met geïntegreerde firewall beveiliging van webtoepassingen, bot-beveiliging en ingebouwde set DDoS-beveiliging (Distributed Denial of service) van 3 of laag 4. Ook wordt uw persoonlijke back-ends beveiligd met een privé koppelings service. Azure front-deur biedt u de best practice-beveiliging van micro soft op wereld wijde schaal.  
 
 >[!NOTE]
 > Azure biedt een pakket volledig beheerde oplossingen voor taakverdeling voor uw scenario's.
@@ -47,19 +47,19 @@ Azure front-deur beveiligt ook uw app op de randen met Web Application firewall,
 
 ## <a name="why-use-azure-front-door-standardpremium-preview"></a>Waarom Azure front deur Standard/Premium (preview) gebruiken?
 
-Azure front deur Standard/Premium biedt één uniform platform voor statische inhoud en dynamische toepassings versnelling, met verbeterde beveiligings mogelijkheden. Met de voor deur kunt u ook de wereld wijde route ring voor uw app definiëren, beheren en bewaken.
+Azure front deur Standard/Premium biedt één uniform platform dat voldoet aan zowel dynamische als statische versnelling met ingebouwde kant-en-klare beveiligings integratie, en een eenvoudig en voorspelbaar prijs model. Met de voor deur kunt u ook de wereld wijde route ring voor uw app definiëren, beheren en bewaken.
 
 Belangrijkste functies die zijn opgenomen in azure front deur Standard/Premium (preview):
 
-- Versnelde toepassingsprestaties met het gebruik van gesplitste TCP -gebaseerd anycast-protocol .
+- Versnelde toepassings prestaties met behulp van een **[gesplitste op TCP gebaseerd anycast-](../front-door-routing-architecture#splittcp.md)** protocol.
 
 - Intelligent **[Health probe](concept-health-probes.md)** monitoring en taak verdeling tussen **[oorsprong](concept-origin.md)**.
 
-- Definieer uw eigen aangepaste domein met flexibele domein validatie.
+- Definieer uw eigen **[aangepaste domein](how-to-add-custom-domain.md)** met flexibele domein validatie.
 
-- Toepassings beveiliging met geïntegreerde [Web Application firewall (WAF)](../../web-application-firewall/afds/afds-overview.md).
+- Toepassings beveiliging met geïntegreerde **[Web Application firewall (WAF)](../../web-application-firewall/afds/afds-overview.md)**.
 
-- SSL-offload en geïntegreerd certificaat beheer.
+- SSL-offload en geïntegreerd **[certificaat beheer](how-to-configure-https-custom-domain.md)**.
 
 - Beveilig uw oorsprong met **[persoonlijke koppeling](concept-private-link.md)**.  
 

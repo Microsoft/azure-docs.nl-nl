@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: overview
 ms.date: 07/16/2020
-ms.openlocfilehash: 85a5493e1d1c06a68aa9f4b64cd0f3d55c4f5f63
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: afef6b0b868455d806b085a2e1f15f497e8c6799
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99580884"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101706721"
 ---
 # <a name="whats-new-in-qna-maker"></a>Nieuwe functies in QnA Maker
 
@@ -64,11 +64,11 @@ Lees meer over de nieuwe functies van QnA Maker.
 
 ### <a name="october-2019"></a>Oktober 2019
 
-* [De taal expliciet instellen](./index.yml) voor alle Knowledge Bases in de service QnA Maker.
+* De taal expliciet instellen voor alle Knowledge Bases in de service QnA Maker.
 
 ### <a name="september-2019"></a>September 2019
 
-* Importeren en exporteren met behulp van de [XLS-bestandsindeling](./index.yml)
+* Importeren en exporteren met de XLS-bestands indeling.
 
 ### <a name="june-2019"></a>Juni 2019
 

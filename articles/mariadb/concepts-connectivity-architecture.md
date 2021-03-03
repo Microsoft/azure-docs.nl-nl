@@ -6,12 +6,12 @@ ms.author: bahusse
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 2/11/2021
-ms.openlocfilehash: a83b570637d18fd0e92cd80ed87acbef8c7a9d77
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: b166e2f648446ac1672ead00a774d71d34699380
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100368061"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101724639"
 ---
 # <a name="connectivity-architecture-in-azure-database-for-mariadb"></a>Connectiviteits architectuur in Azure Database for MariaDB
 In dit artikel wordt uitgelegd wat de Azure Database for MariaDB connectiviteits architectuur is en hoe het verkeer wordt omgeleid naar uw Azure Database for MariaDB exemplaar van clients, zowel binnen als buiten Azure.
@@ -65,7 +65,7 @@ De volgende tabel geeft een lijst van de IP-adressen van de gateway van de Azure
 | India - centraal | 104.211.96.159     | | |
 | India - zuid | 104.211.224.146  | | |
 | India - west | 104.211.160.80    | | |
-| Japan - oost | 40.79.192.23 | 13.78.61.196 | |
+| Japan - oost | 40.79.192.23, 40.79.184.8 | 13.78.61.196 | |
 | Japan - west | 191.238.68.11, 40.74.96.6, 40.74.96.7     | 104.214.148.156 | |
 | Korea - centraal | 52.231.17.13   | 52.231.32.42 | |
 | Korea - zuid | 52.231.145.3     | 52.231.200.86 | |

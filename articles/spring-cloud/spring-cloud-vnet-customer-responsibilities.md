@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 12/02/2020
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 5ecf9e49887eb584269f724d5199cbfb014351e0
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: 0c73d0394486472c2c3c92450aab6a1a0d329cf7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98986850"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101698209"
 ---
 # <a name="customer-responsibilities-for-running-azure-spring-cloud-in-vnet"></a>Verantwoordelijkheden van klanten voor het uitvoeren van Azure lente Cloud in VNET
 Dit document bevat specificaties voor het gebruik van Azure lente-Cloud in een virtueel netwerk.
@@ -34,13 +34,13 @@ Hier volgt een lijst met resource vereisten voor Azure lente-Cloud Services. Als
 
   | Doel eindpunt | Poort | Gebruik | Notitie |
   |------|------|------|
-  | *: 1194 *of* [ServiceTag](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) -Cloud: 1194 | UDP: 1194 | Onderliggend Kubernetes-Cluster beheer. | |
-  | *: 443 *of* [ServiceTag](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) -Cloud: 443 | TCP: 443 | Azure lente-Cloud Service beheer. | Informatie over het service-exemplaar ' requiredTraffics ' kan bekend zijn bij resource Payload, onder ' networkProfile '. |
-  | *: 9000 *of* [ServiceTag](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) -Cloud: 9000 | TCP: 9000 | Onderliggend Kubernetes-Cluster beheer. |
+  | *: 1194 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) -Cloud: 1194 | UDP: 1194 | Onderliggend Kubernetes-Cluster beheer. | |
+  | *: 443 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) -Cloud: 443 | TCP: 443 | Azure lente-Cloud Service beheer. | Informatie over het service-exemplaar ' requiredTraffics ' kan bekend zijn bij resource Payload, onder ' networkProfile '. |
+  | *: 9000 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) -Cloud: 9000 | TCP: 9000 | Onderliggend Kubernetes-Cluster beheer. |
   | *: 123 *of* ntp.Ubuntu.com:123 | UDP: 123 | NTP-tijd synchronisatie op Linux-knoop punten. | |
-  | *. azure.io:443 *of* [ServiceTag](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) -AzureContainerRegistry: 443 | TCP: 443 | Azure Container Registry. | Kan worden vervangen door *Azure container Registry* [service-eind punt in](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview)te scha kelen in het virtuele netwerk. |
-  | *. core.windows.net:443 en *. core.windows.net:445 *of* [ServiceTag](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) -Storage: 443 en Storage: 445 | TCP: 443, TCP: 445 | Azure File Storage | Kan worden vervangen door *Azure Storage* [service-eind punt in](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview)te scha kelen in het virtuele netwerk. |
-  | *. servicebus.windows.net:443 *of* [ServiceTag](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) -EventHub: 443 | TCP: 443 | Azure Event hub. | Kan worden vervangen door *Azure Event hubs* [service-eind punt in](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview)te scha kelen in het virtuele netwerk. |
+  | *. azure.io:443 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) -AzureContainerRegistry: 443 | TCP: 443 | Azure Container Registry. | Kan worden vervangen door *Azure container Registry* [service-eind punt in](../virtual-network/virtual-network-service-endpoints-overview.md)te scha kelen in het virtuele netwerk. |
+  | *. core.windows.net:443 en *. core.windows.net:445 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) -Storage: 443 en Storage: 445 | TCP: 443, TCP: 445 | Azure File Storage | Kan worden vervangen door *Azure Storage* [service-eind punt in](../virtual-network/virtual-network-service-endpoints-overview.md)te scha kelen in het virtuele netwerk. |
+  | *. servicebus.windows.net:443 *of* [ServiceTag](../virtual-network/service-tags-overview.md#available-service-tags) -EventHub: 443 | TCP: 443 | Azure Event hub. | Kan worden vervangen door *Azure Event hubs* [service-eind punt in](../virtual-network/virtual-network-service-endpoints-overview.md)te scha kelen in het virtuele netwerk. |
   
 
 ## <a name="azure-spring-cloud-fqdn-requirements--application-rules"></a>FQDN-vereisten/toepassings regels voor Azure lente Cloud
@@ -63,4 +63,4 @@ Azure Firewall biedt een Fully Qualified Domain Name (FQDN)-tag **AzureKubernete
 
 ## <a name="see-also"></a>Zie ook
 * [Toegang tot uw toepassing in een privé netwerk](spring-cloud-access-app-virtual-network.md)
-* [Apps beschikbaar maken met Application Gateway en Azure Firewall](spring-cloud-expose-apps-gateway-azure-firewall.md) 
+* [Apps beschikbaar maken met Application Gateway en Azure Firewall](spring-cloud-expose-apps-gateway-azure-firewall.md)

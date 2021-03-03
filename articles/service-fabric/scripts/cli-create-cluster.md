@@ -13,18 +13,18 @@ ms.topic: sample
 ms.date: 01/18/2018
 ms.author: atsenthi
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 675f6b9ac3ebb05539432b5febc279275f9de7f6
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 8a6f23a5f4ce497c38358f06394f0f0aa97f9889
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98785766"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101739658"
 ---
 # <a name="create-a-secure-service-fabric-linux-cluster-in-azure"></a>Een beveiligd Service Fabric Linux-cluster maken in Azure
 
 Met deze opdracht wordt een zelfondertekend certificaat gemaakt, wordt dit toegevoegd aan een sleutelkluis en wordt het certificaat lokaal gedownload.  Het nieuwe certificaat wordt gebruikt om het cluster te beveiligen wanneer het wordt geïmplementeerd.  U kunt ook een bestaand certificaat gebruiken in plaats van een nieuw te maken.  In beide gevallen moet de onderwerpnaam van het certificaat overeenkomen met het domein dat u gebruikt om toegang te krijgen tot het Service Fabric-cluster. Deze overeenkomst is vereist om TLS te kunnen verstrekken voor de HTTPS-beheereindpunten van het cluster en Service Fabric Explorer. U kunt geen TLS/SSL-certificaat verkrijgen van een certificeringsinstantie voor het domein `.cloudapp.azure.com`. U hebt voor uw cluster een aangepaste domeinnaam nodig. Wanneer u een certificaat van een CA aanvraagt, moet de onderwerpnaam van het certificaat overeenkomen met de aangepaste domeinnaam die u voor uw cluster gebruikt.
 
-Installeer zo nodig [Azure CLI](/en-us/cli/azure/install-azure-cli).
+Installeer zo nodig [Azure CLI](cli/azure/install-azure-cli).
 
 ## <a name="sample-script"></a>Voorbeeldscript
 

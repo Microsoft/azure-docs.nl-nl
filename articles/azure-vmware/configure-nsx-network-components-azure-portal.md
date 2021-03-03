@@ -3,12 +3,12 @@ title: NSX-netwerk onderdelen configureren in azure VMware-oplossing
 description: Meer informatie over het gebruik van de Azure VMware-oplossings console voor het configureren van NSX-T-netwerk segmenten.
 ms.topic: how-to
 ms.date: 02/16/2021
-ms.openlocfilehash: dbed29fb1063b78386f9ec1e2ee00d9c685a944e
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 0478582a9bc4fb77a1784c27ec4f5c302d6b89fc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417315"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101716918"
 ---
 # <a name="configure-nsx-network-components-in-azure-vmware-solution"></a>NSX-netwerk onderdelen configureren in azure VMware-oplossing
 
@@ -36,13 +36,9 @@ U kunt een NSX-T-segment maken en configureren vanuit de Azure VMware-oplossings
 >[!NOTE]
 >Als u DHCP wilt gebruiken, moet u [een DHCP-server of DHCP-Relay configureren](#create-a-dhcp-server-or-dhcp-relay-in-the-azure-portal) voordat u een NSX-T-segment kunt maken en configureren.
 
-1. Selecteer in uw Azure VMware-oplossing privécloud onder **werkbelasting netwerk** de optie **segmenten**  >  **toevoegen**.
+1. Selecteer in uw Azure VMware-oplossing privécloud onder **werkbelasting netwerk** de optie **segmenten**  >  **toevoegen**. Geef de Details voor het nieuwe logische segment op en selecteer **OK**.
 
    :::image type="content" source="media/configure-nsx-network-components-azure-portal/add-new-nsxt-segment.png" alt-text="Scherm opname waarin wordt getoond hoe een nieuw segment moet worden toegevoegd.":::
-
-1. Geef de Details voor het nieuwe logische segment op.
-
-   :::image type="content" source="media/configure-nsx-network-components-azure-portal/create-new-segment-details.png" alt-text="Scherm opname met de details van het nieuwe segment.":::
    
    - **Segment naam** : naam van de logische switch die zichtbaar is in vCenter.
    - **Subnet gateway** -gateway-IP-adres voor het subnet van de logische switch met een subnetmasker. Vm's zijn gekoppeld aan een logische switch en alle virtuele machines die verbinding maken met deze switch, behoren tot hetzelfde subnet.  Daarnaast moeten alle Vm's die aan dit logische segment zijn gekoppeld, een IP-adres van hetzelfde segment bevatten.
@@ -50,8 +46,6 @@ U kunt een NSX-T-segment maken en configureren vanuit de Azure VMware-oplossings
    - **Verbonden gateway**  -  *Standaard geselecteerd en alleen-lezen.*  Laag-1-gateway en type segment informatie. 
       - **T1** : naam van de laag-1-gateway in NSX-T-beheer. Een persoonlijke cloud van Azure VMware-oplossing wordt geleverd met een NSX-T-laag-0-gateway in de modus actief/actief en een standaard NSX-T-laag in de modus actief/stand-by.  Segmenten die zijn gemaakt via de Azure VMware-oplossings console, maken alleen verbinding met de standaard-laag-1-gateway, en de werk belastingen van deze segmenten krijgen East-West en North-South verbinding. U kunt alleen meer laag-1-gateways maken via NSX-T-beheer. Laag-1-gateways die zijn gemaakt op basis van de NSX-T-beheer console zijn niet zichtbaar in de Azure VMware-oplossings console. 
       - **Type** overlay-segment dat wordt ondersteund door de Azure VMware-oplossing.
-
-1. Selecteer **OK** om het segment te maken en het aan de laag-1-gateway te koppelen. 
 
    Het segment is nu zichtbaar in de Azure VMware-oplossings console, NSX-T Manager en vCenter.
 
@@ -157,24 +151,12 @@ U configureert een standaard-DNS-zone en FQDN-zone om DNS-query's naar de upstre
 
 ### <a name="step-2-configure-dns-service"></a>Stap 2. DNS-service configureren
 
-1. Selecteer het tabblad **DNS-service** , selecteer **toevoegen** en geef het volgende op:
+1. Selecteer het tabblad **DNS-service** en selecteer **toevoegen**. Geef de details op en selecteer **OK**.
 
    :::image type="content" source="media/configure-nsx-network-components-azure-portal/nsxt-workload-networking-configure-dns-service.png" alt-text="Scherm afbeelding met de informatie die vereist is voor de DNS-service.":::
 
-   1. Een naam voor de DNS-service.
-
-   1. Voer het IP-adres voor de DNS-service in.
-
-   1. Selecteer de standaard-DNS-zone die u hebt gemaakt op het tabblad DNS-zones.
-
-   1. Selecteer de FQDN-zones die u hebt toegevoegd op het tabblad DNS-zones.
-
-   1. Selecteer het **logboek niveau**.
-
    >[!TIP]
    >**Tier-1-gateway** is standaard geselecteerd en weerspiegelt de gateway die is gemaakt bij het implementeren van de Azure VMware-oplossing.
-
-1. Selecteer **OK**. 
 
    De DNS-service is toegevoegd.
 

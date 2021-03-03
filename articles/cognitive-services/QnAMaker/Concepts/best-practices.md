@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: 77d4a1cad4843578419be54465a06e87834dd186
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: 90d526a58f4223fc70be5414ce5722238ce2c735
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100104515"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733428"
 ---
 # <a name="best-practices-of-a-qna-maker-knowledge-base"></a>Aanbevolen procedures voor een QnA Maker Knowledge Base
 
@@ -18,7 +18,7 @@ De [Knowledge Base-ontwikkelings levenscyclus](../Concepts/development-lifecycle
 
 ## <a name="extraction"></a>Extractie
 
-De QnA Maker-service verbetert de algoritmen die QnAs extra heren uit inhoud en breiden de lijst met ondersteunde bestands-en HTML-indelingen voortdurend uit. Volg de [richt lijnen](../index.yml) voor gegevens extractie op basis van uw document type.
+De QnA Maker-service verbetert de algoritmen die QnAs extra heren uit inhoud en breiden de lijst met ondersteunde bestands-en HTML-indelingen voortdurend uit. Volg de [richt lijnen](../Concepts/data-sources-and-content.md) voor gegevens extractie op basis van uw document type.
 
 Over het algemeen moeten pagina's met veelgestelde vragen zelfstandig zijn en niet worden gecombineerd met andere informatie. Product handleidingen moeten duidelijke kopteksten en bij voor keur een index pagina bevatten.
 

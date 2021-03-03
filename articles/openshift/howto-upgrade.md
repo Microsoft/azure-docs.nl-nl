@@ -7,12 +7,12 @@ ms.date: 1/10/2021
 author: sakthi-vetrivel
 ms.author: suvetriv
 keywords: Aro, open Shift, AZ Aro, Red Hat, cli
-ms.openlocfilehash: 2c2c8607374493aa4e1135bbef0156b9c0b66fa6
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 742da12bd3a10cd1f541e9c43f654cfe7df04340
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100634972"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101720882"
 ---
 # <a name="upgrade-an-azure-red-hat-openshift-aro-cluster"></a>Een Azure Red Hat open Shift (ARO)-cluster bijwerken
 
@@ -20,7 +20,7 @@ Voor een deel van de levens cyclus van het ARO-cluster moeten periodieke upgrade
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Voor dit artikel moet u de Azure CLI-versie 2.0.65 van later uitvoeren. Voer `az --version` uit om uw huidige versie te vinden. Als u Azure CLI wilt installeren of upgraden, raadpleegt u [Azure CLI installeren](https://docs.microsoft.com/cli/azure/install-azure-cli).
+Voor dit artikel moet u de Azure CLI-versie 2.0.65 van later uitvoeren. Voer `az --version` uit om uw huidige versie te vinden. Als u Azure CLI wilt installeren of upgraden, raadpleegt u [Azure CLI installeren](/cli/azure/install-azure-cli).
 
 In dit artikel wordt ervan uitgegaan dat u toegang hebt tot een bestaand Azure Red Hat open Shift-cluster als gebruiker met `admin` bevoegdheden.
 
@@ -39,4 +39,3 @@ Selecteer een versie om bij te werken naar en selecteert u **bijwerken**. U ziet
 ## <a name="next-steps"></a>Volgende stappen
 - [Meer informatie over het upgraden van een ARO-cluster met behulp van de OC CLI](https://docs.openshift.com/container-platform/4.6/updating/updating-cluster-between-minor.html)
 - Meer informatie over beschik bare open Shift container platform advies en updates vindt u in de [sectie errata](https://access.redhat.com/downloads/content/290/ver=4.6/rhel---8/4.6.0/x86_64/product-errata) van de klanten Portal.
-  

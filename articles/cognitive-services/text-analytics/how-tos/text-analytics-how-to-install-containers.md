@@ -9,20 +9,20 @@ ms.custom: seodec18, cog-serv-seo-aug-2020
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 09/28/2020
+ms.date: 02/10/2021
 ms.author: aahi
 keywords: on-premises, docker, container, sentiment analyse, natuurlijke taal verwerking
-ms.openlocfilehash: f785a5e6749e46b34723af11b4d61a98b5d94384
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: e815ecafe5d00f92a5430fdb71bcf952bc8984c8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97862488"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101736709"
 ---
 # <a name="install-and-run-text-analytics-containers"></a>De Text Analytics-containers installeren en uitvoeren
 
 > [!NOTE]
-> * De container voor Sentimentanalyse v3 is nu algemeen beschikbaar. De containers voor sleuteltermextractie en taaldetectie zijn beschikbaar als een openbare preview-versie.
+> * De container voor Sentimentanalyse en taal detectie is nu algemeen beschikbaar. De container voor het uitpakken van sleutel woorden is beschikbaar als een open bare preview-versie.
 > * Entiteits koppelingen en NER zijn momenteel niet beschikbaar als container.
 > * Voor toegang tot de Text Analytics voor de status container is een [aanvraag formulier](https://aka.ms/csgate)vereist. Op dit moment wordt er geen kosten in rekening gebracht voor het gebruik.
 > * De locaties van de container installatie kopie zijn mogelijk onlangs gewijzigd. Lees dit artikel om de bijgewerkte locatie voor deze container te bekijken.
@@ -46,7 +46,7 @@ U moet voldoen aan de volgende vereisten voordat u Text Analytics containers geb
 |--|--|
 |Docker-engine| De docker-engine moet zijn geïnstalleerd op een [hostcomputer](#the-host-computer). Docker biedt pakketten waarmee de Docker-omgeving op [MacOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) en [Linux](https://docs.docker.com/engine/installation/#supported-platforms) kan worden geconfigureerd. Zie het [Docker-overzicht](https://docs.docker.com/engine/docker-overview/) voor een inleiding tot de basisprincipes van Docker en containers.<br><br> Docker moet worden geconfigureerd zodat de containers verbinding kunnen maken met en facturerings gegevens kunnen verzenden naar Azure. <br><br> **In Windows** moet docker ook worden geconfigureerd voor de ondersteuning van Linux-containers.<br><br>|
 |Vertrouwd met docker | U moet een basis kennis hebben van docker-concepten, zoals registers, opslag plaatsen, containers en container installatie kopieën, en kennis van basis `docker` opdrachten.| 
-|Text Analytics resource |Als u de container wilt gebruiken, hebt u het volgende nodig:<br><br>Een Azure [Text Analytics-resource](../../cognitive-services-apis-create-account.md) om de bijbehorende API-sleutel en eind punt-URI op te halen. Beide waarden zijn beschikbaar op het Text Analytics overzicht van de Azure Portal en de pagina sleutels en zijn vereist om de container te starten.<br><br>**{API_KEY}**: een van de twee beschik bare bron sleutels op de pagina **sleutels**<br><br>**{ENDPOINT_URI}**: het eind punt op de pagina **overzicht**|
+|Text Analytics resource |Als u de container wilt gebruiken, hebt u het volgende nodig:<br><br>Een Azure [Text Analytics-resource](../../cognitive-services-apis-create-account.md) met de gratis (F0) of Standard (S) [prijs categorie](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/). U moet de bijbehorende API-sleutel en eind punt-URI ophalen door te navigeren naar de **sleutel en de eindpunt** pagina van uw resource in de Azure Portal. <br><br>**{API_KEY}**: een van de twee beschik bare resource sleutels. <br><br>**{ENDPOINT_URI}**: het eind punt voor uw resource. |
 
 [!INCLUDE [Gathering required parameters](../../containers/includes/container-gathering-required-parameters.md)]
 
@@ -61,7 +61,7 @@ In de volgende tabel worden de minimale en aanbevolen specificaties voor de Text
 |  | Minimale specificaties van de host | Aanbevolen specificaties voor de host | Minimale TPS | Maximum aantal TPS|
 |---|---------|-------------|--|--|
 | **Taal detectie, extractie van sleutel woorden**   | 1 Core, 2 GB geheugen | 1 kern geheugen van 4 GB |15 | 30|
-| **Sentimentanalyse v3**   | 1 Core, 2 GB geheugen | 4 kernen, 8 GB geheugen |15 | 30|
+| **Sentimentanalyse**   | 1 Core, 2 GB geheugen | 4 kernen, 8 GB geheugen |15 | 30|
 | **Text Analytics voor status-1 document/aanvraag**   |  4-core, 10 GB geheugen | 6 kern geheugen van 12 GB |15 | 30|
 | **Text Analytics voor status-10 documenten/aanvraag**   |  6 core, 16 GB geheugen | 8 kern geheugen van 20 GB |15 | 30|
 
@@ -73,7 +73,7 @@ De CPU-kern en het geheugen komen overeen met de `--cpus` `--memory` instellinge
 
 Container installatie kopieën voor Text Analytics zijn beschikbaar op de micro soft-Container Registry.
 
-# <a name="sentiment-analysis-v3"></a>[Sentimentanalyse v3](#tab/sentiment)
+# <a name="sentiment-analysis"></a>[Sentimentanalyse ](#tab/sentiment)
 
 [!INCLUDE [docker-pull-sentiment-analysis-container](../includes/docker-pull-sentiment-analysis-container.md)]
 
@@ -81,7 +81,7 @@ Container installatie kopieën voor Text Analytics zijn beschikbaar op de micro 
 
 [!INCLUDE [docker-pull-key-phrase-extraction-container](../includes/docker-pull-key-phrase-extraction-container.md)]
 
-# <a name="language-detection-preview"></a>[Taaldetectie (preview-versie)](#tab/language)
+# <a name="language-detection"></a>[Taaldetectie](#tab/language)
 
 [!INCLUDE [docker-pull-language-detection-container](../includes/docker-pull-language-detection-container.md)]
 
@@ -89,7 +89,7 @@ Container installatie kopieën voor Text Analytics zijn beschikbaar op de micro 
 
 [!INCLUDE [docker-pull-health-container](../includes/docker-pull-health-container.md)]
 
-**_
+***
 
 ## <a name="how-to-use-the-container"></a>De container gebruiken
 
@@ -103,11 +103,11 @@ Wanneer de container zich op de [hostcomputer](#the-host-computer)bevindt, gebru
 Gebruik de opdracht [docker run](https://docs.docker.com/engine/reference/commandline/run/) om de containers uit te voeren. De container blijft actief totdat u deze stopt.
 
 > [!IMPORTANT]
-> De docker-opdrachten in de volgende secties gebruiken de back slash, `\` , als een regel voortzetting teken. Vervang of verwijder dit op basis van de vereisten van uw host-besturings systeem. 
+> * De docker-opdrachten in de volgende secties gebruiken de back slash, `\` , als een regel voortzetting teken. Vervang of verwijder dit op basis van de vereisten van uw host-besturings systeem. 
 > * De `Eula` `Billing` Opties, en `ApiKey` moeten worden opgegeven om de container uit te voeren. anders wordt de container niet gestart.  Zie [facturering](#billing)voor meer informatie.
-> * De sentiment Analysis v3-container is nu algemeen beschikbaar, waardoor [sentiment-labels](../how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features) in het antwoord worden geretourneerd. De sleutel woorden extractie en taal detectie containers gebruiken v2 van de API en zijn in preview.
+> * De sentiment-analyse-en taal detectie containers zijn algemeen beschikbaar. De container voor de extractie van sleutel woorden gebruikt v2 van de API en is in preview.
 
-# <a name="sentiment-analysis-v3"></a>[Sentimentanalyse v3](#tab/sentiment)
+# <a name="sentiment-analysis"></a>[Sentimentanalyse](#tab/sentiment)
 
 [!INCLUDE [docker-run-sentiment-analysis-container](../includes/docker-run-sentiment-analysis-container.md)]
 
@@ -115,7 +115,7 @@ Gebruik de opdracht [docker run](https://docs.docker.com/engine/reference/comman
 
 [!INCLUDE [docker-run-key-phrase-extraction-container](../includes/docker-run-key-phrase-extraction-container.md)]
 
-# <a name="language-detection-preview"></a>[Taaldetectie (preview-versie)](#tab/language)
+# <a name="language-detection"></a>[Taaldetectie](#tab/language)
 
 [!INCLUDE [docker-run-language-detection-container](../includes/docker-run-language-detection-container.md)]
 
@@ -162,7 +162,7 @@ In dit artikel hebt u concepten en werk stromen geleerd om Text Analytics contai
 * Text Analytics biedt drie Linux-containers voor docker, met inkapseling van diverse mogelijkheden:
    * *Sentimentanalyse*
    * *Sleuteltermextractie (preview-versie)* 
-   * *Taaldetectie (preview-versie)*
+   * *Taaldetectie*
    * *Text Analytics voor status (preview)*
 * Container installatie kopieën worden gedownload uit de micro soft Container Registry (MCR) of de voor beeld-container opslagplaats.
 * Container installatie kopieën worden uitgevoerd in docker.

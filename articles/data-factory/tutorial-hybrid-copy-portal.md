@@ -6,17 +6,17 @@ author: nabhishek
 ms.service: data-factory
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
-ms.date: 11/09/2020
-ms.openlocfilehash: f16f034af18e0076da555aed0c7159de66da995b
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.date: 02/18/2021
+ms.openlocfilehash: fa251b80f8e44f48de565685a0841f57f48620f1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101094695"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101724962"
 ---
 # <a name="copy-data-from-a-sql-server-database-to-azure-blob-storage"></a>Gegevens kopiëren van een SQL Server-database naar Azure Blob-opslag
 
-[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 In deze zelfstudie gebruikt u de gebruikersinterface (UI) van Azure Data Factory om een pijplijn voor een data factory te maken waarmee gegevens worden gekopieerd van een SQL Server-database naar Azure Blob-opslag. U gaat een zelf-hostende Integration Runtime maken en gebruiken. Deze verplaatst gegevens van on-premises gegevensarchieven en gegevensarchieven in de cloud en omgekeerd.
 

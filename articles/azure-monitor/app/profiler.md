@@ -6,12 +6,12 @@ author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: b1158a614da9ba32f628aba5dd2ed2cc71b4b455
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: b743b5be195f44c03adbee75c3108f4908d8d4e8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98947033"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717754"
 ---
 # <a name="profile-live-azure-app-service-apps-with-application-insights"></a>Live Azure App Service-apps met Application Insights profiel
 
@@ -25,8 +25,12 @@ Als u Profiler voor een app wilt inschakelen, volgt u de onderstaande instructie
 
 Application Insights Profiler wordt vooraf geïnstalleerd als onderdeel van de App Services runtime. In de onderstaande stappen ziet u hoe u deze functie inschakelt voor uw App Service. Volg deze stappen, zelfs als u de app Insights-SDK in uw toepassing hebt opgenomen tijdens het bouwen.
 
+> [!NOTE]
+> Voor code-installatie van Application Insights Profiler wordt het .NET core-ondersteunings beleid gevolgd.
+> Zie [.net core-ondersteunings beleid](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)voor meer informatie over ondersteunde Runtimes.
+
 1. Ga naar het onderdeel Azure van het configuratie scherm voor uw App Service.
-1. Schakel de instelling altijd on in voor uw app service. U kunt deze instelling vinden onder **instellingen**, **configuratie** pagina (zie scherm afbeelding in de volgende stap) en klik op het tabblad **algemene instellingen** .
+1. Schakel de instelling altijd on in voor uw app service. U kunt deze instelling vinden onder **instellingen**, **configuratie** pagina (zie scherm opname in de volgende stap) en selecteer het tabblad **algemene instellingen** .
 1. Navigeer naar **instellingen > pagina Application Insights** .
 
    ![App Insights inschakelen op App Services portal](./media/profiler/AppInsights-AppServices.png)
@@ -63,7 +67,7 @@ Als u de Profiler voor andere Clouds wilt inschakelen, kunt u de onderstaande ap
 
 ## <a name="disable-profiler"></a>Profiler uitschakelen
 
-Als u Profiler wilt stoppen of opnieuw wilt opstarten voor een exemplaar van een afzonderlijke app, onder **webjobs** en stop de Webtaak met de naam ApplicationInsightsProfiler3. Zelfs als de Profiler is uitgeschakeld met behulp van de schakel optie op de pagina Application Insights zoals hierboven wordt beschreven, wordt het profilerings proces nog steeds uitgevoerd. Er wordt gecontroleerd of de Profiler is ingeschakeld. Als de optie is uitgeschakeld, wordt deze gedurende een periode in de slaap stand gezet voordat deze opnieuw wordt gecontroleerd. Als deze functie is uitgeschakeld, wordt deze niet door een profile ring uitgevoerd. Als u deze Webtaak uitschakelt, wordt het profilerings proces helemaal niet uitgevoerd, zelfs om te controleren of deze is ingeschakeld.
+Als u Profiler wilt stoppen of opnieuw wilt opstarten voor een exemplaar van een afzonderlijke app, selecteert u op de zijbalk links de optie **webjobs** en stopt u de naam van de Webtaak `ApplicationInsightsProfiler3` .
 
   ![Profiler voor een Webtaak uitschakelen][disable-profiler-webjob]
 

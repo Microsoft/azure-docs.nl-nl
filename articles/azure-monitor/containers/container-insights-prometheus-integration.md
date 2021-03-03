@@ -1,18 +1,18 @@
 ---
-title: Azure Monitor configureren voor containers Prometheus-integratie | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u de Azure Monitor voor containers agent kunt configureren voor het opwaarderen van metrische gegevens uit Prometheus met uw Kubernetes-cluster.
+title: Prometheus-integratie met container Insights configureren | Microsoft Docs
+description: In dit artikel wordt beschreven hoe u de container Insights-agent zo kunt configureren dat metrische gegevens worden afgeleid van Prometheus met uw Kubernetes-cluster.
 ms.topic: conceptual
 ms.date: 04/22/2020
-ms.openlocfilehash: f5a9b364bc3e51307bd44d8338485f482bda6e1e
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 8affeb472b9452e4d234e99e5ea6bb4509770fac
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611568"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101731728"
 ---
-# <a name="configure-scraping-of-prometheus-metrics-with-azure-monitor-for-containers"></a>Scraping van metrische gegevens voor Prometheus configureren met Azure Monitor voor containers
+# <a name="configure-scraping-of-prometheus-metrics-with-container-insights"></a>Het terugvallen van Prometheus-metrische gegevens met container Insights configureren
 
-[Prometheus](https://prometheus.io/) is een populaire open source-bewakings oplossing en maakt deel uit van de [eigen Cloud Compute Foundation](https://www.cncf.io/). Azure Monitor voor containers biedt een naadloze voorbereidings ervaring voor het verzamelen van metrische gegevens over Prometheus. Als u Prometheus wilt gebruiken, moet u normaal gesp roken een Prometheus-server met een archief instellen en beheren. Door te integreren met Azure Monitor is een Prometheus-server niet vereist. U hoeft het Prometheus-eind punt voor metrische gegevens alleen zichtbaar te maken via uw Exporters of peulen (toepassing), en de door de container geplaatste agent voor Azure Monitor voor containers kan de metrische gegevens voor u oplopen. 
+[Prometheus](https://prometheus.io/) is een populaire open source-bewakings oplossing en maakt deel uit van de [eigen Cloud Compute Foundation](https://www.cncf.io/). Container Insights biedt een naadloze onboarding-ervaring voor het verzamelen van Prometheus-metrische gegevens. Als u Prometheus wilt gebruiken, moet u normaal gesp roken een Prometheus-server met een archief instellen en beheren. Door te integreren met Azure Monitor is een Prometheus-server niet vereist. U hoeft het Prometheus-eind punt voor metrische gegevens alleen zichtbaar te maken via uw Exporters of peulen (toepassing), en de container-agent voor container Insights kan de metrische gegevens voor u oplopen. 
 
 ![Architectuur voor container bewaking voor Prometheus](./media/container-insights-prometheus-integration/monitoring-kubernetes-architecture.png)
 
@@ -42,20 +42,20 @@ Actieve uitval van metrische gegevens van Prometheus wordt uitgevoerd vanuit een
 | Kubernetes-service | Cluster-breed | `http://my-service-dns.my-namespace:9100/metrics` <br>`https://metrics-server.kube-system.svc.cluster.local/metrics` |
 | URL/eind punt | Per knoop punt en/of gehele cluster | `http://myurl:9101/metrics` |
 
-Wanneer een URL is opgegeven, wordt het eind punt alleen door Azure Monitor voor containers. Wanneer de Kubernetes-service is opgegeven, wordt de service naam opgelost met de cluster-DNS-server om het IP-adres op te halen. vervolgens wordt de opgeloste service geuitval.
+Wanneer een URL is opgegeven, wordt het eind punt alleen door container Insights in het uitvallen. Wanneer de Kubernetes-service is opgegeven, wordt de service naam opgelost met de cluster-DNS-server om het IP-adres op te halen. vervolgens wordt de opgeloste service geuitval.
 
 |Bereik | Sleutel | Gegevenstype | Waarde | Beschrijving |
 |------|-----|-----------|-------|-------------|
 | Cluster-breed | | | | Geef een van de volgende drie methoden op om eind punten voor metrische gegevens af te vallen. |
-| | `urls` | Tekenreeks | Door komma's gescheiden matrix | HTTP-eind punt (ofwel een IP-adres of een geldig URL-pad opgegeven). Bijvoorbeeld: `urls=[$NODE_IP/metrics]`. ($NODE _IP is een specifiek Azure Monitor voor de para meter containers en kan worden gebruikt in plaats van het IP-adres van het knoop punt. Mag alleen hoofd letters zijn.) |
+| | `urls` | Tekenreeks | Door komma's gescheiden matrix | HTTP-eind punt (ofwel een IP-adres of een geldig URL-pad opgegeven). Bijvoorbeeld: `urls=[$NODE_IP/metrics]`. ($NODE _IP is een specifieke container Insights-para meter en kan worden gebruikt in plaats van het IP-adres van het knoop punt. Mag alleen hoofd letters zijn.) |
 | | `kubernetes_services` | Tekenreeks | Door komma's gescheiden matrix | Een matrix met Kubernetes-Services voor het opwaarderen van metrische gegevens uit uitvoeren. Bijvoorbeeld `kubernetes_services = ["https://metrics-server.kube-system.svc.cluster.local/metrics",http://my-service-dns.my-namespace:9100/metrics]`.|
-| | `monitor_kubernetes_pods` | Booleaans | waar of onwaar | Als deze optie `true` is ingesteld op in de instellingen voor het hele cluster, worden de Kubernetes voor de volgende Prometheus-aantekeningen door Azure monitor voor de agent van containers.<br> `prometheus.io/scrape:`<br> `prometheus.io/scheme:`<br> `prometheus.io/path:`<br> `prometheus.io/port:` |
+| | `monitor_kubernetes_pods` | Booleaans | waar of onwaar | Als deze optie is ingesteld op `true` in de instellingen voor het hele cluster, wordt in de container Insights-agent Kubernetes peul voor het hele cluster geschroot voor de volgende Prometheus-aantekeningen:<br> `prometheus.io/scrape:`<br> `prometheus.io/scheme:`<br> `prometheus.io/path:`<br> `prometheus.io/port:` |
 | | `prometheus.io/scrape` | Booleaans | waar of onwaar | Hiermee schakelt u de pod in. `monitor_kubernetes_pods` moet worden ingesteld op `true` . |
 | | `prometheus.io/scheme` | Tekenreeks | http of https | De standaard instelling is het uitvallen van HTTP. Stel, indien nodig, in op `https` . | 
 | | `prometheus.io/path` | Tekenreeks | Door komma's gescheiden matrix | Het HTTP-bronpad waarvan de metrische gegevens moeten worden opgehaald. Als het pad naar metrische gegevens niet is `/metrics` , definieert u dit met deze aantekening. |
 | | `prometheus.io/port` | Tekenreeks | 9102 | Geef een poort op waarvan u wilt uitvallen. Als poort niet is ingesteld, wordt de standaard waarde van 9102. |
 | | `monitor_kubernetes_pods_namespaces` | Tekenreeks | Door komma's gescheiden matrix | Een lijst met toegestane naam ruimten die de metrische gegevens van Kubernetes peul opwaarderen.<br> Bijvoorbeeld: `monitor_kubernetes_pods_namespaces = ["default1", "default2", "default3"]` |
-| Knooppunt-breed | `urls` | Tekenreeks | Door komma's gescheiden matrix | HTTP-eind punt (ofwel een IP-adres of een geldig URL-pad opgegeven). Bijvoorbeeld: `urls=[$NODE_IP/metrics]`. ($NODE _IP is een specifiek Azure Monitor voor de para meter containers en kan worden gebruikt in plaats van het IP-adres van het knoop punt. Mag alleen hoofd letters zijn.) |
+| Knooppunt-breed | `urls` | Tekenreeks | Door komma's gescheiden matrix | HTTP-eind punt (ofwel een IP-adres of een geldig URL-pad opgegeven). Bijvoorbeeld: `urls=[$NODE_IP/metrics]`. ($NODE _IP is een specifieke container Insights-para meter en kan worden gebruikt in plaats van het IP-adres van het knoop punt. Mag alleen hoofd letters zijn.) |
 | Het hele knoop punt of het hele cluster | `interval` | Tekenreeks | 60s | De standaard waarde voor de verzamelings interval is 1 minuut (60 seconden). U kunt de verzameling voor *[prometheus_data_collection_settings. node]* en/of *[prometheus_data_collection_settings. cluster]* wijzigen in tijds eenheden zoals s, m, h. |
 | Het hele knoop punt of het hele cluster | `fieldpass`<br> `fielddrop`| Tekenreeks | Door komma's gescheiden matrix | U kunt bepaalde metrische gegevens opgeven die u wilt verzamelen of niet van het eind punt door de vermelding toestaan ( `fieldpass` ) en weigeren () in te stellen `fielddrop` . U moet eerst de acceptatie lijst instellen. |
 
@@ -124,7 +124,7 @@ Voer de volgende stappen uit om uw ConfigMap-configuratie bestand voor de volgen
         ```
 
         >[!NOTE]
-        >$NODE _IP is een specifieke Azure Monitor voor containers para meter en kan worden gebruikt in plaats van het IP-adres van het knoop punt. Deze moet allemaal hoofd letters zijn. 
+        >$NODE _IP is een specifieke container Insights-para meter en kan worden gebruikt in plaats van het IP-adres van het knoop punt. Deze moet allemaal hoofd letters zijn. 
 
     - Voer de volgende stappen uit om het uitvallen van metrische gegevens over Prometheus te configureren door een pod-aantekening op te geven:
 
@@ -241,7 +241,7 @@ Voer de volgende stappen uit om uw ConfigMap-configuratie bestand voor uw Azure 
         ```
 
         >[!NOTE]
-        >$NODE _IP is een specifieke Azure Monitor voor containers para meter en kan worden gebruikt in plaats van het IP-adres van het knoop punt. Deze moet allemaal hoofd letters zijn. 
+        >$NODE _IP is een specifieke container Insights-para meter en kan worden gebruikt in plaats van het IP-adres van het knoop punt. Deze moet allemaal hoofd letters zijn. 
 
     - Voer de volgende stappen uit om het uitvallen van metrische gegevens over Prometheus te configureren door een pod-aantekening op te geven:
 
@@ -330,7 +330,7 @@ Als u de metrische gegevens van Prometheus wilt weer geven die door Azure Monito
 
 ## <a name="view-prometheus-metrics-in-grafana"></a>Metrische Prometheus-gegevens weer geven in Grafana
 
-Azure Monitor voor containers biedt ondersteuning voor het weer geven van gegevens die zijn opgeslagen in uw Log Analytics-werk ruimte in Grafana-Dash boards. We hebben een sjabloon die u kunt downloaden uit de Grafana van het [dash board](https://grafana.com/grafana/dashboards?dataSource=grafana-azure-monitor-datasource&category=docker) van micro soft om aan de slag te gaan en te verwijzen naar informatie over het zoeken naar extra gegevens van uw bewaakte clusters om te visualiseren in aangepaste Grafana-Dash boards. 
+Container Insights ondersteunt het weer geven van metrische gegevens die zijn opgeslagen in uw Log Analytics-werk ruimte in Grafana-Dash boards. We hebben een sjabloon die u kunt downloaden uit de Grafana van het [dash board](https://grafana.com/grafana/dashboards?dataSource=grafana-azure-monitor-datasource&category=docker) van micro soft om aan de slag te gaan en te verwijzen naar informatie over het zoeken naar extra gegevens van uw bewaakte clusters om te visualiseren in aangepaste Grafana-Dash boards. 
 
 ## <a name="review-prometheus-data-usage"></a>Prometheus-gegevens gebruik controleren
 
@@ -364,8 +364,8 @@ De uitvoer ziet er ongeveer als volgt uit:
 
 ![Query resultaten van het volume gegevens opname vastleggen](./media/container-insights-prometheus-integration/log-query-example-usage-02.png)
 
-Meer informatie over het bewaken van het gebruik van gegevens en het analyseren van de kosten is beschikbaar in het [beheer van gebruik en kosten met Azure monitor-logboeken](../platform/manage-cost-storage.md).
+Meer informatie over het bewaken van het gebruik van gegevens en het analyseren van de kosten is beschikbaar in het [beheer van gebruik en kosten met Azure monitor-logboeken](../logs/manage-cost-storage.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het configureren van de instellingen van de agent verzameling voor stdout-, stderr-en omgevings variabelen van container werkbelastingen [hier](container-insights-agent-config.md). 
+Meer informatie over het configureren van de instellingen van de agent verzameling voor stdout-, stderr-en omgevings variabelen van container werkbelastingen [hier](container-insights-agent-config.md).

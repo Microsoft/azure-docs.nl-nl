@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 01/12/2020
 ms.subservice: metrics
-ms.openlocfilehash: c47c316c82d8c510b4446e4335a219f400d476e4
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: a88a52163f03d2bffb0c9c4eab53fd814d9554fb
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609864"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101725863"
 ---
 # <a name="azure-monitor-metrics-metrics-aggregation-and-display-explained"></a>Azure Monitor metrische gegevens aggregatie en weer gave wordt uitgelegd
 
@@ -101,7 +101,7 @@ Metrische gegevens worden vastgelegd voor elke afzonderlijke resource. Het nivea
 
 Wanneer u een metriek in metrische Explorer benadert, hebt u de mogelijkheid om de grafiek te splitsen op basis van een dimensie.  Het splitsen van een grafiek houdt in dat u de onderliggende gegevens bekijkt om meer details te bekijken en om te zien dat gegevens in metrische Explorer zijn gediagrameerd of gefilterd.
 
-Bijvoorbeeld: [micro soft. ApiManagement/service](../platform/metrics-supported.md#microsoftapimanagementservice) heeft *locatie* als een dimensie voor veel metrische gegevens. 
+Bijvoorbeeld: [micro soft. ApiManagement/service](./metrics-supported.md#microsoftapimanagementservice) heeft *locatie* als een dimensie voor veel metrische gegevens. 
 
 - De **capaciteit** is een van deze metrische gegevens. Het hebben van de *locatie* dimensie impliceert dat het onderliggende systeem een metrische record voor de capaciteit van elke locatie opslaat, in plaats van slechts één voor het geaggregeerde bedrag. U kunt deze gegevens vervolgens ophalen of splitsen in een metrieke grafiek.  
 
@@ -109,7 +109,7 @@ Bijvoorbeeld: [micro soft. ApiManagement/service](../platform/metrics-supported.
 
 - Een van de flexibele metrische gegevens, **aanvragen**, heeft 7 verschillende dimensies. 
  
-Controleer het artikel Azure Monitor [metrische gegevens](../platform/metrics-supported.md) dat wordt ondersteund voor meer informatie over elke metriek en de beschik bare dimensies. Daarnaast kan de documentatie voor elke resource provider en elk type aanvullende informatie geven over de dimensies en wat ze meten.
+Controleer het artikel Azure Monitor [metrische gegevens](./metrics-supported.md) dat wordt ondersteund voor meer informatie over elke metriek en de beschik bare dimensies. Daarnaast kan de documentatie voor elke resource provider en elk type aanvullende informatie geven over de dimensies en wat ze meten.
 
 U kunt splitsen en filteren samen gebruiken om een probleem te verhelpen. Hieronder ziet u een voor beeld van een afbeelding met de *gemiddelde schrijf bewerkingen voor schijven* voor een groep virtuele machines in een resource groep. We hebben een samen telling van alle virtuele machines met deze metrische gegevens, maar het is mogelijk dat u wilt zien wat er daad werkelijk verantwoordelijk is voor de pieken rondom 06.00. Bevinden ze zich op dezelfde computer? Hoeveel computers zijn er betrokken?  
 

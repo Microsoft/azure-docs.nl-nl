@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 02/11/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 19ce054ce29b744f900676ecf4e55af3487d9891
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: c775d81b88c891d6d8ea0a4597b4fa4fee29c86a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100373467"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737542"
 ---
 # <a name="set-up-msix-app-attach-with-the-azure-portal"></a>MSIX-app-koppeling instellen met de Azure-portal
 
@@ -36,6 +36,7 @@ Dit is wat u nodig hebt om de MSIX-app-koppeling te configureren:
 - Een MSIX-toepassing die is uitgepakt in een MSIX-installatie kopie die is geüpload naar een bestands share.
 - Een bestands share in uw Windows-implementatie voor virtueel bureau blad waar het MSIX-pakket wordt opgeslagen.
 - De bestands share waar u de MSIX-installatie kopie hebt geüpload, moet ook toegankelijk zijn voor alle virtuele machines (Vm's) in de hostgroep. Gebruikers hebben alleen-lezen-machtigingen nodig voor toegang tot de installatie kopie.
+- Als het certificaat niet openbaar wordt vertrouwd, volgt u de instructies in [certificaten installeren](app-attach.md#install-certificates).
 
 ## <a name="turn-off-automatic-updates-for-msix-app-attach-applications"></a>Automatische updates voor MSIX app attach-toepassingen uitschakelen
 

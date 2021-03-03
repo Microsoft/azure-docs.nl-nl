@@ -1,30 +1,24 @@
 ---
-title: Problemen met ConstrainedAllocationFailed oplossen bij het implementeren van een Cloud service in azure | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u een ConstrainedAllocationFailed-uitzonde ring oplost bij het implementeren van een Cloud service in Azure.
+title: Problemen met ConstrainedAllocationFailed oplossen bij het implementeren van een Cloud service (klassiek) in azure | Microsoft Docs
+description: In dit artikel wordt beschreven hoe u een ConstrainedAllocationFailed-uitzonde ring oplost bij het implementeren van een Cloud service (klassiek) naar Azure.
 services: cloud-services
 author: mibufo
 ms.author: v-mibufo
 ms.service: cloud-services
 ms.topic: troubleshooting
-ms.date: 02/04/2020
-ms.openlocfilehash: de344bbcd89158676bacf2a8aa1743d282700b9d
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.date: 02/22/2021
+ms.openlocfilehash: 346e7eb77039ab80e6f9dffb8ea8360198040504
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100521072"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738277"
 ---
-# <a name="troubleshoot-constrainedallocationfailed-when-deploying-a-cloud-service-to-azure"></a>Problemen met ConstrainedAllocationFailed oplossen bij het implementeren van een Cloud service in azure
+# <a name="troubleshoot-constrainedallocationfailed-when-deploying-a-cloud-service-classic-to-azure"></a>Problemen met ConstrainedAllocationFailed oplossen bij het implementeren van een Cloud service (klassiek) naar Azure
 
-In dit artikel lost u de toewijzings fouten op waarbij Azure Cloud Services niet kan worden geïmplementeerd vanwege beperkingen.
+In dit artikel lost u de toewijzings fouten op waarbij Azure Cloud Services (klassiek) niet kan worden geïmplementeerd vanwege toewijzings beperkingen.
 
-Microsoft Azure wijst de volgende handelingen uit:
-
-- Cloud Services-instanties bijwerken
-
-- Nieuwe web-of werk rollen instanties toevoegen
-
-- Instanties implementeren in een Cloud service
+Bij het implementeren van exemplaren in een Cloud service (klassiek) of het toevoegen van nieuwe web-of worker-rolinstanties, Microsoft Azure het toewijzen van reken resources.
 
 U kunt af en toe fouten ontvangen tijdens deze bewerkingen, zelfs voordat u de limiet voor Azure-abonnementen bereikt.
 
@@ -33,9 +27,11 @@ U kunt af en toe fouten ontvangen tijdens deze bewerkingen, zelfs voordat u de l
 
 ## <a name="symptom"></a>Symptoom
 
-Ga in Azure Portal naar uw Cloud service en selecteer in de zijbalk *bewerkings Logboeken (klassiek)* om de logboeken weer te geven.
+Ga in Azure Portal naar uw Cloud service (klassiek) en selecteer in de zijbalk het *bewerkings logboek (klassiek)* om de logboeken weer te geven.
 
-Wanneer u de logboeken van uw Cloud service inspecteert, ziet u de volgende uitzonde ring:
+![Afbeelding toont de Blade bewerkings logboek (klassiek).](./media/cloud-services-troubleshoot-constrained-allocation-failed/cloud-services-troubleshoot-allocation-logs.png)
+
+Wanneer u de logboeken van uw Cloud service (klassiek) inspecteert, ziet u de volgende uitzonde ring:
 
 |Uitzonderings type  |Foutbericht  |
 |---------|---------|
@@ -43,99 +39,42 @@ Wanneer u de logboeken van uw Cloud service inspecteert, ziet u de volgende uitz
 
 ## <a name="cause"></a>Oorzaak
 
-Er is een probleem met de capaciteit van de regio of het cluster dat u implementeert. Deze gebeurtenis treedt op wanneer de resource-SKU die u hebt geselecteerd, niet beschikbaar is voor de opgegeven locatie.
+Wanneer de eerste instantie wordt geïmplementeerd in een Cloud service (in staging of productie), wordt die Cloud service vastgemaakt aan een cluster.
 
-> [!NOTE]
-> Wanneer het eerste knoop punt van een Cloud service is geïmplementeerd, wordt het *vastgemaakt* aan een resource groep. Een resource groep kan één cluster of een groep clusters zijn.
->
-> Na verloop van tijd kunnen de resources in deze resource groep volledig worden gebruikt. Als een Cloud service een toewijzings aanvraag voor aanvullende resources maakt wanneer er onvoldoende resources beschikbaar zijn in de vastgemaakte resource groep, leidt de aanvraag tot een [toewijzings fout](cloud-services-allocation-failures.md).
+Na verloop van tijd kunnen de bronnen in dit cluster volledig worden gebruikt. Als een Cloud service (klassiek) een toewijzings aanvraag voor meer resources maakt wanneer er onvoldoende bronnen beschikbaar zijn in het vastgemaakte cluster, resulteert de aanvraag in een toewijzings fout. Zie de [algemene problemen toewijzings fout](cloud-services-allocation-failures.md#common-issues)voor meer informatie.
 
 ## <a name="solution"></a>Oplossing
 
-In dit scenario moet u een andere regio of SKU selecteren om uw Cloud service te implementeren in. Voordat u uw Cloud service implementeert of bijwerkt, kunt u bepalen welke Sku's beschikbaar zijn in een regio of beschikbaarheids zone. Volg de onderstaande [Azure cli](#list-skus-in-region-using-azure-cli)-, [Power shell](#list-skus-in-region-using-powershell)-of [rest API](#list-skus-in-region-using-rest-api) -processen.
+Bestaande Cloud Services zijn *vastgemaakt* aan een cluster. Eventuele verdere implementaties voor de Cloud service (klassiek) worden uitgevoerd in hetzelfde cluster.
 
-### <a name="list-skus-in-region-using-azure-cli"></a>Sku's in regio weer geven met behulp van Azure CLI
+Wanneer u een toewijzings fout in dit scenario ondervindt, is het raadzaam om opnieuw te implementeren naar een nieuwe Cloud service (klassiek) (en de *CNAME* bij te werken).
 
-U kunt de opdracht [AZ VM List-sku's](https://docs.microsoft.com/cli/azure/vm.html#az_vm_list_skus) gebruiken.
+> [!TIP]
+> Deze oplossing is waarschijnlijk het meest succesvol omdat het platform een keuze kan maken uit alle clusters in die regio.
 
-- Gebruik de `--location` para meter voor het filteren van uitvoer naar de locatie die u gebruikt.
-- Gebruik de `--size` para meter om te zoeken op een gedeeltelijke grootte naam.
-- Zie de gids [fout oplossen voor niet-beschik bare SKU](../azure-resource-manager/templates/error-sku-not-available.md#solution-2---azure-cli) voor meer informatie.
+> [!NOTE]
+> Deze oplossing moet een downtime van nul tot gevolg hebben.
 
-    **Bijvoorbeeld:**
+1. Implementeer de werk belasting op een nieuwe Cloud service (klassiek).
+    - Zie de hand leiding voor het [maken en implementeren van een Cloud service (klassiek)](cloud-services-how-to-create-deploy-portal.md) voor verdere instructies.
 
-    ```azurecli
-    az vm list-skus --location southcentralus --size Standard_F --output table
-    ```
+    > [!WARNING]
+    > Als u het IP-adres dat is gekoppeld aan deze implementatie site niet wilt verliezen, kunt u [het IP-adres van de oplossing 3](cloud-services-allocation-failures.md#solutions)gebruiken.
 
-    **Voorbeeld resultaten:** ![ Azure CLI-uitvoer van het uitvoeren van de opdracht AZ VM List-sku's--location southcentralus--size Standard_F--Output Table, waarin de beschik bare Sku's worden weer gegeven.](./media/cloud-services-troubleshoot-constrained-allocation-failed/cloud-services-troubleshoot-constrained-allocation-failed-1.png)
+1. Werk de *CNAME* -of *A* -record bij om verkeer naar de nieuwe Cloud service (klassiek) te verwijzen.
+    - Zie de hand leiding [een aangepaste domein naam configureren voor een klassieke Azure-Cloud service (Engelstalig)](cloud-services-custom-domain-name-portal.md#understand-cname-and-a-records) voor verdere instructies.
 
-#### <a name="list-skus-in-region-using-powershell"></a>Sku's in regio weer geven met behulp van Power shell
+1. Wanneer het verkeer naar de oude site wordt verzonden, kunt u de oude Cloud service (klassiek) verwijderen.
+    - Zie de hand leiding [implementaties en Cloud service verwijderen (klassiek)](cloud-services-how-to-manage-portal.md#delete-deployments-and-a-cloud-service) voor verdere instructies.
+    - Zie de [bewaking Inleiding tot Cloud service (klassiek)](cloud-services-how-to-monitor.md)om het netwerk verkeer in uw Cloud service (klassiek) te bekijken.
 
-U kunt de opdracht [Get-AzComputeResourceSku](https://docs.microsoft.com/powershell/module/az.compute/get-azcomputeresourcesku) gebruiken.
-
-- De resultaten filteren op locatie.
-- U moet de meest recente versie van Power shell voor deze opdracht hebben.
-- Zie de gids [fout oplossen voor niet-beschik bare SKU](../azure-resource-manager/templates/error-sku-not-available.md#solution-1---powershell) voor meer informatie.
-
-**Bijvoorbeeld:**
-
-```azurepowershell
-Get-AzComputeResourceSku | where {$_.Locations -icontains "centralus"}
-```
-
-**Enkele andere handige opdrachten:**
-
-De locaties die de grootte bevatten (Standard_DS14_v2) uitfilteren:
-
-```azurepowershell
-Get-AzComputeResourceSku | where {$_.Locations.Contains("centralus") -and $_.ResourceType.Contains("virtualMachines") -and $_.Name.Contains("Standard_DS14_v2")}
-```
-
-Alle locaties met een grootte filteren (v3):
-
-```azurepowershell
-Get-AzComputeResourceSku | where {$_.Locations.Contains("centralus") -and $_.ResourceType.Contains("virtualMachines") -and $_.Name.Contains("v3")} | fc
-```
-
-#### <a name="list-skus-in-region-using-rest-api"></a>Sku's in regio weer geven met REST API
-
-U kunt de bewerking [resource-sku's-List](https://docs.microsoft.com/rest/api/compute/resourceskus/list) gebruiken. Het retourneert beschik bare Sku's en regio's in de volgende indeling:
-
-```json
-{
-  "value": [
-    {
-      "resourceType": "virtualMachines",
-      "name": "Standard_A0",
-      "tier": "Standard",
-      "size": "A0",
-      "locations": [
-        "eastus"
-      ],
-      "restrictions": []
-    },
-    {
-      "resourceType": "virtualMachines",
-      "name": "Standard_A1",
-      "tier": "Standard",
-      "size": "A1",
-      "locations": [
-        "eastus"
-      ],
-      "restrictions": []
-    },
-    <Rest_of_your_file_is_located_here...>
-  ]
-}
-    
-```
+Zie [problemen met de toewijzing van Cloud Services (klassiek) oplossen | Microsoft Docs](cloud-services-allocation-failures.md#common-issues) voor verdere herstel stappen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Voor meer oplossingen voor toewijzings fouten en om beter te begrijpen hoe ze worden gegenereerd:
+Voor meer toewijzings fout oplossingen en achtergrond informatie:
 
 > [!div class="nextstepaction"]
-> [Toewijzings fouten (Cloud Services)](cloud-services-allocation-failures.md)
+> [Toewijzings fouten-Cloud service (klassiek)](cloud-services-allocation-failures.md)
 
 Als uw Azure-probleem niet in dit artikel wordt behandeld, gaat u naar de Azure-forums op [MSDN en stack overflow](https://azure.microsoft.com/support/forums/). U kunt uw probleem in deze forums plaatsen of een bericht sturen naar [@AzureSupport op Twitter](https://twitter.com/AzureSupport). U kunt ook een Azure-ondersteuningsaanvraag indienen. Als u een ondersteuningsaanvraag wilt indienen, selecteert u op de pagina [Azure-ondersteuning](https://azure.microsoft.com/support/options/) *Ondersteuning krijgen*.

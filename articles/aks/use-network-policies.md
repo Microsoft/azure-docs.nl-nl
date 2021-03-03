@@ -5,12 +5,12 @@ description: Meer informatie over het beveiligen van verkeer dat in en uit het m
 services: container-service
 ms.topic: article
 ms.date: 05/06/2019
-ms.openlocfilehash: 598747c0d64db2ae62f740dca4c3e4141f2562f2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1d3aa49a749890783fdae589edab3d1910b2ac73
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87050480"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101729416"
 ---
 # <a name="secure-traffic-between-pods-using-network-policies-in-azure-kubernetes-service-aks"></a>Verkeer beveiligen tussen een Peul netwerk beleid dat wordt gebruikt in azure Kubernetes service (AKS)
 
@@ -20,7 +20,7 @@ In dit artikel wordt beschreven hoe u de Network Policy Engine installeert en ho
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-U moet de Azure CLI-versie 2.0.61 of hoger hebben geïnstalleerd en geconfigureerd. Voer  `az --version` uit om de versie te bekijken. Als u wilt installeren of upgraden, raadpleegt u [Azure cli installeren][install-azure-cli].
+U moet de Azure CLI-versie 2.0.61 of hoger hebben geïnstalleerd en geconfigureerd. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][install-azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 > [!TIP]
 > Als u de functie netwerk beleid hebt gebruikt tijdens de preview-versie, wordt u aangeraden [een nieuw cluster te maken](#create-an-aks-cluster-and-enable-network-policy).
@@ -43,7 +43,7 @@ Deze regels voor netwerk beleid worden gedefinieerd als YAML-manifesten. Netwerk
 
 Azure biedt twee manieren om netwerk beleid te implementeren. U kiest een optie voor netwerk beleid wanneer u een AKS-cluster maakt. De beleids optie kan niet worden gewijzigd nadat het cluster is gemaakt:
 
-* De eigen implementatie van Azure, het *Azure-netwerk beleid*genoemd.
+* De eigen implementatie van Azure, het *Azure-netwerk beleid* genoemd.
 * *Calico network policies*, een open-source netwerk-en netwerk beveiligings oplossing die is gegrondvest door [tigera][tigera].
 
 Beide implementaties gebruiken Linux *iptables* om het opgegeven beleid af te dwingen. Beleids regels worden omgezet in sets toegestane en niet-toegestane IP-paren. Deze paren worden vervolgens geprogrammeerd als IPTable-filter regels.
@@ -52,8 +52,8 @@ Beide implementaties gebruiken Linux *iptables* om het opgegeven beleid af te dw
 
 | Mogelijkheid                               | Azure                      | Calico                      |
 |------------------------------------------|----------------------------|-----------------------------|
-| Ondersteunde platforms                      | Linux                      | Linux                       |
-| Ondersteunde netwerk opties             | Azure-CNI                  | Azure CNI en kubenet       |
+| Ondersteunde platforms                      | Linux                      | Linux, Windows Server 2019 (preview-versie)  |
+| Ondersteunde netwerk opties             | Azure-CNI                  | Azure CNI (Windows Server 2019 en Linux) en kubenet (Linux)  |
 | Compatibiliteit met Kubernetes-specificatie | Alle beleids typen die worden ondersteund |  Alle beleids typen die worden ondersteund |
 | Aanvullende functies                      | Geen                       | Uitgebreide beleids model dat bestaat uit globaal netwerk beleid, een globaal netwerk en een host-eind punt. `calicoctl`Zie [calicoctl User Reference][calicoctl](Engelstalig) voor meer informatie over het gebruik van de CLI voor het beheren van deze uitgebreide functies. |
 | Ondersteuning                                  | Ondersteund door ondersteunings-en technisch team van Azure | Ondersteuning voor Calico-community. Zie voor meer informatie over aanvullende betaalde ondersteuning [project Calico-ondersteunings opties][calico-support]. |
@@ -67,7 +67,7 @@ Voor een overzicht van het netwerk beleid in actie, gaan we maken en vervolgens 
 * Verkeer op basis van pod-labels toestaan.
 * Verkeer toestaan op basis van naam ruimte.
 
-Eerst gaan we een AKS-cluster maken dat netwerk beleid ondersteunt. 
+Eerst gaan we een AKS-cluster maken dat netwerk beleid ondersteunt.
 
 > [!IMPORTANT]
 >
@@ -85,7 +85,7 @@ Het volgende voorbeeld script:
 
 Houd er rekening mee dat u, in plaats van een Service-Principal, een beheerde identiteit voor machtigingen kunt gebruiken. Zie [Beheerde identiteiten gebruiken](use-managed-identity.md) voor meer informatie.
 
-Geef uw eigen beveiligde *SP_PASSWORD*op. U kunt de *RESOURCE_GROUP_NAME* en *CLUSTER_NAME* variabelen vervangen:
+Geef uw eigen beveiligde *SP_PASSWORD* op. U kunt de *RESOURCE_GROUP_NAME* en *CLUSTER_NAME* variabelen vervangen:
 
 ```azurecli-interactive
 RESOURCE_GROUP_NAME=myResourceGroup-NP
@@ -120,25 +120,101 @@ az role assignment create --assignee $SP_ID --scope $VNET_ID --role Contributor
 
 # Get the virtual network subnet resource ID
 SUBNET_ID=$(az network vnet subnet show --resource-group $RESOURCE_GROUP_NAME --vnet-name myVnet --name myAKSSubnet --query id -o tsv)
+```
 
-# Create the AKS cluster and specify the virtual network and service principal information
-# Enable network policy by using the `--network-policy` parameter
+### <a name="create-an-aks-cluster-for-azure-network-policies"></a>Een AKS-cluster maken voor Azure-netwerk beleid
+
+Maak het AKS-cluster en geef het virtuele netwerk, de gegevens van de Service-Principal en *Azure* op voor de netwerk-plugin en het netwerk beleid.
+
+```azurecli
 az aks create \
     --resource-group $RESOURCE_GROUP_NAME \
     --name $CLUSTER_NAME \
     --node-count 1 \
     --generate-ssh-keys \
-    --network-plugin azure \
     --service-cidr 10.0.0.0/16 \
     --dns-service-ip 10.0.0.10 \
     --docker-bridge-address 172.17.0.1/16 \
     --vnet-subnet-id $SUBNET_ID \
     --service-principal $SP_ID \
     --client-secret $SP_PASSWORD \
+    --network-plugin azure \
     --network-policy azure
 ```
 
 Het duurt een paar minuten om het cluster te maken. Wanneer het cluster gereed is, configureert `kubectl` u om verbinding te maken met uw Kubernetes-cluster met behulp van de opdracht [AZ AKS Get-credentials][az-aks-get-credentials] . Met deze opdracht worden referenties gedownload en wordt de Kubernetes CLI geconfigureerd voor het gebruik ervan:
+
+```azurecli-interactive
+az aks get-credentials --resource-group $RESOURCE_GROUP_NAME --name $CLUSTER_NAME
+```
+
+### <a name="create-an-aks-cluster-for-calico-network-policies"></a>Een AKS-cluster maken voor Calico-netwerk beleid
+
+Maak het AKS-cluster en geef het virtuele netwerk, service-principalgegevens, *Azure* voor de netwerk-plugin en *Calico* voor het netwerk beleid op. Als u *Calico* gebruikt als netwerk beleid, is Calico-netwerken mogelijk in zowel Linux-als Windows-knooppunt groepen.
+
+Als u van plan bent om Windows-knooppunt groepen aan uw cluster toe te voegen, moet u de `windows-admin-username` `windows-admin-password` para meters en toevoegen aan die voldoen aan de [vereisten voor Windows Server-wacht woorden][windows-server-password]. Als u Calico met Windows-knooppunt groepen wilt gebruiken, moet u ook de registreren `Microsoft.ContainerService/EnableAKSWindowsCalico` .
+
+Registreer de `EnableAKSWindowsCalico` functie vlag met de opdracht [AZ feature REGI ster][az-feature-register] , zoals weer gegeven in het volgende voor beeld:
+
+```azurecli-interactive
+az feature register --namespace "Microsoft.ContainerService" --name "EnableAKSWindowsCalico"
+```
+
+ U kunt de registratiestatus controleren met behulp van de opdracht [az feature list][az-feature-list]:
+
+```azurecli-interactive
+az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/EnableAKSWindowsCalico')].{Name:name,State:properties.state}"
+```
+
+Als u klaar bent, vernieuwt u de registratie van de resource provider *micro soft. container service* met de opdracht [AZ provider REGI ster][az-provider-register] :
+
+```azurecli-interactive
+az provider register --namespace Microsoft.ContainerService
+```
+
+> [!IMPORTANT]
+> Op dit moment is het gebruik van Calico-netwerk beleid met Windows-knoop punten beschikbaar op nieuwe clusters met Kubernetes versie 1,20 of hoger met Calico 3.17.2 en is vereist dat Azure CNI-netwerken worden gebruikt. Windows-knoop punten op AKS-clusters met Calico ingeschakeld hebben ook [direct server Return (DSR)][dsr] ingeschakeld.
+>
+> Voor clusters met alleen Linux-knooppunt Pools met Kubernetes 1,20 met eerdere versies van Calico, wordt de Calico-versie automatisch bijgewerkt naar 3.17.2.
+
+Er is momenteel een preview-versie van Calico-netwerk beleid met Windows-knoop punten.
+
+[!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
+
+```azurecli
+PASSWORD_WIN="P@ssw0rd1234"
+
+az aks create \
+    --resource-group $RESOURCE_GROUP_NAME \
+    --name $CLUSTER_NAME \
+    --node-count 1 \
+    --generate-ssh-keys \
+    --service-cidr 10.0.0.0/16 \
+    --dns-service-ip 10.0.0.10 \
+    --docker-bridge-address 172.17.0.1/16 \
+    --vnet-subnet-id $SUBNET_ID \
+    --service-principal $SP_ID \
+    --client-secret $SP_PASSWORD \
+    --windows-admin-password $PASSWORD_WIN \
+    --windows-admin-username azureuser \
+    --vm-set-type VirtualMachineScaleSets \
+    --kubernetes-version 1.20.2 \
+    --network-plugin azure \
+    --network-policy calico
+```
+
+Het duurt een paar minuten om het cluster te maken. Standaard wordt uw cluster gemaakt met alleen een Linux-knooppunt groep. Als u Windows-knooppunt groepen wilt gebruiken, kunt u er een toevoegen. Bijvoorbeeld:
+
+```azurecli
+az aks nodepool add \
+    --resource-group $RESOURCE_GROUP_NAME \
+    --cluster-name $CLUSTER_NAME \
+    --os-type Windows \
+    --name npwin \
+    --node-count 1
+```
+
+Wanneer het cluster gereed is, configureert `kubectl` u om verbinding te maken met uw Kubernetes-cluster met behulp van de opdracht [AZ AKS Get-credentials][az-aks-get-credentials] . Met deze opdracht worden referenties gedownload en wordt de Kubernetes CLI geconfigureerd voor het gebruik ervan:
 
 ```azurecli-interactive
 az aks get-credentials --resource-group $RESOURCE_GROUP_NAME --name $CLUSTER_NAME
@@ -191,7 +267,7 @@ exit
 
 ### <a name="create-and-apply-a-network-policy"></a>Een netwerk beleid maken en Toep assen
 
-Nu u hebt bevestigd, kunt u de NGINX-webpagina van het voor beeld van de back-end pod gebruiken, een netwerk beleid maken om al het verkeer te weigeren. Maak een bestand `backend-policy.yaml` met de naam en plak het volgende YAML-manifest. Dit manifest maakt gebruik van een *podSelector* om het beleid te koppelen aan een Peul met de *app: webapp, Role: back-end* label, zoals uw voor beeld-NGINX pod. Er worden geen regels gedefinieerd bij inkomend *verkeer, waardoor*al het binnenkomende pod wordt geweigerd:
+Nu u hebt bevestigd, kunt u de NGINX-webpagina van het voor beeld van de back-end pod gebruiken, een netwerk beleid maken om al het verkeer te weigeren. Maak een bestand `backend-policy.yaml` met de naam en plak het volgende YAML-manifest. Dit manifest maakt gebruik van een *podSelector* om het beleid te koppelen aan een Peul met de *app: webapp, Role: back-end* label, zoals uw voor beeld-NGINX pod. Er worden geen regels gedefinieerd bij inkomend *verkeer, waardoor* al het binnenkomende pod wordt geweigerd:
 
 ```yaml
 kind: NetworkPolicy
@@ -286,7 +362,7 @@ In de shell-prompt kunt u gebruiken `wget` om te controleren of u toegang hebt t
 wget -qO- http://backend
 ```
 
-Omdat de ingangs regel verkeer met de labels *app: webapp, Role: frontend*toestaat, is het verkeer van de front-end-pod toegestaan. In de volgende voorbeeld uitvoer ziet u de standaard NGINX webpagina die wordt geretourneerd:
+Omdat de ingangs regel verkeer met de labels *app: webapp, Role: frontend* toestaat, is het verkeer van de front-end-pod toegestaan. In de volgende voorbeeld uitvoer ziet u de standaard NGINX webpagina die wordt geretourneerd:
 
 ```output
 <!DOCTYPE html>
@@ -487,3 +563,7 @@ Zie [Kubernetes network policies][kubernetes-network-policies](Engelstalig) voor
 [az-feature-register]: /cli/azure/feature#az-feature-register
 [az-feature-list]: /cli/azure/feature#az-feature-list
 [az-provider-register]: /cli/azure/provider#az-provider-register
+[windows-server-password]: /windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements#reference
+[az-extension-add]: /cli/azure/extension?view=azure-cli-latest#az-extension-add
+[az-extension-update]: /cli/azure/extension?view=azure-cli-latest#az-extension-update
+[dsr]: ../load-balancer/load-balancer-multivip-overview.md#rule-type-2-backend-port-reuse-by-using-floating-ip

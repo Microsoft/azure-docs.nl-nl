@@ -696,7 +696,7 @@
           href: azure-ssis-integration-runtime-package-store.md
     - name: Triggers maken
       items:
-        - name: Een trigger op basis van gebeurtenissen maken
+        - name: Een opslag gebeurtenis trigger maken
           href: how-to-create-event-trigger.md
         - name: Een planningstrigger maken
           href: how-to-create-schedule-trigger.md

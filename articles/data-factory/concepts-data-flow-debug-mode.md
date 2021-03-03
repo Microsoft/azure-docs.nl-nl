@@ -6,13 +6,13 @@ author: kromerm
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/04/2020
-ms.openlocfilehash: 5b2197950d5dbb95bd0a90f15506756ee3ed0b2d
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 02/19/2021
+ms.openlocfilehash: 0aa472aca40acbaf3f8c8a09469d08fe6b37187a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100369829"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699756"
 ---
 # <a name="mapping-data-flow-debug-mode"></a>Fout opsporings modus gegevens stroom toewijzen
 
@@ -39,9 +39,9 @@ In de meeste gevallen is het een goed idee om uw gegevens stromen te bouwen in d
 
 ## <a name="cluster-status"></a>De clusterstatus
 
-De cluster status indicator boven aan het ontwerp oppervlak wordt groen wanneer het cluster gereed is voor fout opsporing. Als uw cluster al warm is, wordt de groene indicator bijna onmiddellijk weer gegeven. Als uw cluster niet al actief is op het moment dat u de foutopsporingsmodus hebt opgegeven, moet u 5-7 minuten wachten totdat het cluster naar boven wordt gebrand. De indicator wordt gedraaid tot aan de voor bereiding.
+De cluster status indicator boven aan het ontwerp oppervlak wordt groen wanneer het cluster gereed is voor fout opsporing. Als uw cluster al warm is, wordt de groene indicator bijna onmiddellijk weer gegeven. Als uw cluster niet al wordt uitgevoerd op het moment dat u de foutopsporingsmodus hebt geactiveerd, wordt het in het Spark-cluster koud opgestart. De indicator wordt gedraaid tot de omgeving gereed is voor interactieve fout opsporing.
 
-Wanneer u klaar bent met de fout opsporing, schakelt u de schakel optie voor fout opsporing uit zodat uw Azure Databricks-cluster kan worden beëindigd en worden er geen kosten in rekening gebracht voor debug-activiteiten.
+Wanneer u klaar bent met de fout opsporing, schakelt u de schakel optie voor fout opsporing uit zodat uw Spark-cluster kan worden beëindigd en worden er geen kosten in rekening gebracht voor debug-activiteiten.
 
 ## <a name="debug-settings"></a>Instellingen voor fout opsporing
 
@@ -50,6 +50,8 @@ Wanneer u de foutopsporingsmodus inschakelt, kunt u de weer gave van gegevens in
 ![Instellingen voor fout opsporing](media/data-flow/debug-settings.png "Instellingen voor fout opsporing")
 
 Als u para meters hebt in uw gegevens stroom of een van de data sets waarnaar wordt verwezen, kunt u opgeven welke waarden moeten worden gebruikt tijdens de fout opsporing door het tabblad **para meters** te selecteren.
+
+Gebruik de bemonsterings instellingen hier om te verwijzen naar voorbeeld bestanden of voorbeeld tabellen met gegevens, zodat u de bron gegevens sets niet hoeft te wijzigen. Met behulp van een voorbeeld bestand of-tabel kunt u de instellingen voor de logica en eigenschappen in uw gegevens stroom behouden tijdens het testen op basis van een subset van gegevens.
 
 ![Para meters voor fout opsporing](media/data-flow/debug-settings2.png "Para meters voor fout opsporing")
 

@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: a8ab7195958a6c2d5a730c38232eb348d505deda
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: d1310e3c4b4a56a27219cce613e8f6109d32c8c2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99593600"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101729385"
 ---
 # <a name="quickstart-set-up-azure-attestation-by-using-the-azure-portal"></a>Snelstartgids: Azure-Attestation instellen met behulp van de Azure Portal
 
@@ -90,7 +90,7 @@ Volg de stappen in deze sectie om beleids handtekening certificaten te bekijken,
 1. Ga naar het menu Azure Portal of de start pagina en selecteer **alle resources**.
 1. Voer in het vak Filter de naam van de Attestation-provider in.
 1. Selecteer de Attestation-provider en ga naar de pagina overzicht.
-1. Selecteer **beleids handtekening certificaten** in het menu resource aan de linkerkant van het venster of in het onderste deel venster.
+1. Selecteer **beleids handtekening certificaten** in het menu resource aan de linkerkant van het venster of in het onderste deel venster. U ziet een prompt om certificaat voor verificatie te selecteren. Kies de juiste optie om door te gaan.
 1. Selecteer **certificaat voor beleids handtekening downloaden**. De knop wordt uitgeschakeld voor Attestation-providers die zijn gemaakt zonder de vereiste voor beleids ondertekening.
 1. Het gedownloade tekst bestand heeft alle certificaten in een JWS-indeling.
 1. Controleer het aantal certificaten en de gedownloade certificaten.
@@ -122,7 +122,7 @@ In deze sectie wordt beschreven hoe u een Attestation-beleid bekijkt en beleids 
 1.  Ga naar het menu Azure Portal of de start pagina en selecteer **alle resources**.
 1.  Voer in het vak Filter de naam van de Attestation-provider in.
 1.  Selecteer de Attestation-provider en ga naar de pagina overzicht.
-1.  Selecteer **beleid** in het menu resource aan de linkerkant van het venster of in het onderste deel venster.
+1.  Selecteer **beleid** in het menu resource aan de linkerkant van het venster of in het onderste deel venster. U ziet een prompt om certificaat voor verificatie te selecteren. Kies de juiste optie om door te gaan.
 1.  Selecteer het **type voorkeurs attest** en Bekijk het **huidige beleid**.
 
 ### <a name="configure-an-attestation-policy"></a>Een Attestation-beleid configureren
@@ -144,6 +144,7 @@ Volg deze stappen voor het uploaden van een beleid in de JWT-of tekst indeling a
    Voor de optie voor het uploaden van bestanden wordt de voor beeld van het beleid weer gegeven in de tekst indeling en kan het niet worden bewerkt.
 
 1. Selecteer **vernieuwen** in het bovenste menu om het geconfigureerde beleid weer te geven.
+
 
 Als de Attestation-provider is gemaakt met een vereiste voor beleids ondertekening, voert u de volgende stappen uit om een beleid te uploaden in JWT-indeling.
 

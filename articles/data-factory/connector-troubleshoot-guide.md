@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 02/08/2021
 ms.author: jingwang
 ms.custom: has-adal-ref
-ms.openlocfilehash: 63a690ffaaefc506de296d43e7de13020fbd584a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 574c4967c1e45ce1ae2be92d8648d654322e2244
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100366922"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101727818"
 ---
 # <a name="troubleshoot-azure-data-factory-connectors"></a>Problemen met Azure Data Factory-connectors oplossen
 
@@ -28,7 +28,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 - **Oorzaak**: er is een probleem met de Blob Storage bewerking.
 
-- **Aanbeveling**: als u de fout details wilt controleren, raadpleegt u [Blob Storage fout codes](https://docs.microsoft.com/rest/api/storageservices/blob-service-error-codes). Neem contact op met het Blob Storage team voor meer informatie.
+- **Aanbeveling**: als u de fout details wilt controleren, raadpleegt u [Blob Storage fout codes](/rest/api/storageservices/blob-service-error-codes). Neem contact op met het Blob Storage team voor meer informatie.
 
 
 ### <a name="invalid-property-during-copy-activity"></a>Ongeldige eigenschap tijdens de Kopieer activiteit
@@ -164,7 +164,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
   | Oorzaak van analyse                                               | Aanbeveling                                               |
   | :----------------------------------------------------------- | :----------------------------------------------------------- |
   | Als Azure Data Lake Storage Gen2 een fout genereert die een bepaalde bewerking is mislukt.| Controleer het gedetailleerde fout bericht dat wordt gegenereerd door Azure Data Lake Storage Gen2. Als de fout een tijdelijke fout is, voert u de bewerking opnieuw uit. Neem contact op met Azure Storage ondersteuning voor meer informatie en geef de aanvraag-ID op in een fout bericht. |
-  | Als het fout bericht de teken reeks ' verboden ' bevat, is de service-principal of beheerde identiteit die u gebruikt mogelijk niet gemachtigd om toegang te krijgen tot Azure Data Lake Storage Gen2. | Zie [gegevens in azure data Lake Storage Gen2 kopiëren en transformeren met behulp van Azure Data Factory](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication)om deze fout op te lossen. |
+  | Als het fout bericht de teken reeks ' verboden ' bevat, is de service-principal of beheerde identiteit die u gebruikt mogelijk niet gemachtigd om toegang te krijgen tot Azure Data Lake Storage Gen2. | Zie [gegevens in azure data Lake Storage Gen2 kopiëren en transformeren met behulp van Azure Data Factory](./connector-azure-data-lake-storage.md#service-principal-authentication)om deze fout op te lossen. |
   | Als het fout bericht de teken reeks "InternalServerError" bevat, wordt de fout geretourneerd door Azure Data Lake Storage Gen2. | De fout wordt mogelijk veroorzaakt door een tijdelijke fout. Als dat het geval is, voert u de bewerking opnieuw uit. Als het probleem zich blijft voordoen, neemt u contact op met Azure Storage ondersteuning en geeft u de aanvraag-ID op uit het fout bericht. |
 
 ### <a name="request-to-azure-data-lake-storage-gen2-account-caused-a-timeout-error"></a>De aanvraag voor het Azure Data Lake Storage Gen2-account heeft een time-outfout veroorzaakt
@@ -204,7 +204,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 - **Oorzaak**: er is een probleem met de opslag bewerking van Azure files.
 
-- **Aanbeveling**: Zie [Azure files Help](https://docs.microsoft.com/rest/api/storageservices/file-service-error-codes)voor informatie over het controleren van de fout Details. Neem contact op met het Azure Files team voor meer informatie.
+- **Aanbeveling**: Zie [Azure files Help](/rest/api/storageservices/file-service-error-codes)voor informatie over het controleren van de fout Details. Neem contact op met het Azure Files team voor meer informatie.
 
 
 ## <a name="azure-synapse-analytics-azure-sql-database-and-sql-server"></a>Azure Synapse Analytics, Azure SQL Database en SQL Server
@@ -216,12 +216,12 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
     | Oorzaak van analyse                                               | Aanbeveling                                               |
     | :----------------------------------------------------------- | :----------------------------------------------------------- |
-    | Als het fout bericht de teken reeks ' SqlErrorNumber = 47073 ' bevat, betekent dit dat de open bare netwerk toegang wordt geweigerd in de connectiviteits instelling. | Stel op de Azure SQL-firewall de optie **open bare netwerk toegang weigeren** in op *Nee*. Zie [Azure SQL-connectiviteits instellingen](https://docs.microsoft.com/azure/azure-sql/database/connectivity-settings#deny-public-network-access)voor meer informatie. |
-    | Raadpleeg de Azure SQL-probleemoplossings handleiding als het fout bericht een SQL-fout code zoals "SqlErrorNumber = [error code]" bevat voor Azure SQL. | Zie [verbindings problemen en andere fouten oplossen met Azure SQL database en Azure SQL Managed instance](https://docs.microsoft.com/azure/azure-sql/database/troubleshoot-common-errors-issues)(Engelstalig) voor een aanbeveling. |
-    | Controleer of poort 1433 wordt weer geven in de lijst met toegestane firewalls. | Zie [poorten die worden gebruikt door SQL Server](https://docs.microsoft.com/sql/sql-server/install/configure-the-windows-firewall-to-allow-sql-server-access#ports-used-by-)voor meer informatie. |
-    | Als het fout bericht de teken reeks ' SqlException ' bevat, SQL Database de fout geeft aan dat een bepaalde bewerking is mislukt. | Zoek op SQL-fout code in [Data Base Engine-fouten](https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors)voor meer informatie. Neem contact op met de ondersteuning van Azure SQL voor meer informatie. |
-    | Als dit een tijdelijk probleem is (bijvoorbeeld een instabiele netwerk verbinding), voegt u de nieuwe poging in het activiteiten beleid toe om de oplossing te verkleinen. | Zie [pijp lijnen en activiteiten in azure Data Factory](https://docs.microsoft.com/azure/data-factory/concepts-pipelines-activities#activity-policy)voor meer informatie. |
-    | Als het fout bericht de teken reeks ' client met IP-adres '... ' bevat heeft geen toegang tot de server, en u probeert verbinding te maken met Azure SQL Database, de fout wordt meestal veroorzaakt door een probleem met de Azure SQL Database firewall. | Schakel in de configuratie van de Azure SQL Server-firewall de optie **Azure-Services en-resources toestaan toegang tot deze server** in. Zie [Azure SQL database en Azure Synapse IP-firewall regels](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure)voor meer informatie. |
+    | Als het fout bericht de teken reeks ' SqlErrorNumber = 47073 ' bevat, betekent dit dat de open bare netwerk toegang wordt geweigerd in de connectiviteits instelling. | Stel op de Azure SQL-firewall de optie **open bare netwerk toegang weigeren** in op *Nee*. Zie [Azure SQL-connectiviteits instellingen](../azure-sql/database/connectivity-settings.md#deny-public-network-access)voor meer informatie. |
+    | Raadpleeg de Azure SQL-probleemoplossings handleiding als het fout bericht een SQL-fout code zoals "SqlErrorNumber = [error code]" bevat voor Azure SQL. | Zie [verbindings problemen en andere fouten oplossen met Azure SQL database en Azure SQL Managed instance](../azure-sql/database/troubleshoot-common-errors-issues.md)(Engelstalig) voor een aanbeveling. |
+    | Controleer of poort 1433 wordt weer geven in de lijst met toegestane firewalls. | Zie [poorten die worden gebruikt door SQL Server](/sql/sql-server/install/configure-the-windows-firewall-to-allow-sql-server-access#ports-used-by-)voor meer informatie. |
+    | Als het fout bericht de teken reeks ' SqlException ' bevat, SQL Database de fout geeft aan dat een bepaalde bewerking is mislukt. | Zoek op SQL-fout code in [Data Base Engine-fouten](/sql/relational-databases/errors-events/database-engine-events-and-errors)voor meer informatie. Neem contact op met de ondersteuning van Azure SQL voor meer informatie. |
+    | Als dit een tijdelijk probleem is (bijvoorbeeld een instabiele netwerk verbinding), voegt u de nieuwe poging in het activiteiten beleid toe om de oplossing te verkleinen. | Zie [pijp lijnen en activiteiten in azure Data Factory](./concepts-pipelines-activities.md#activity-policy)voor meer informatie. |
+    | Als het fout bericht de teken reeks ' client met IP-adres '... ' bevat heeft geen toegang tot de server, en u probeert verbinding te maken met Azure SQL Database, de fout wordt meestal veroorzaakt door een probleem met de Azure SQL Database firewall. | Schakel in de configuratie van de Azure SQL Server-firewall de optie **Azure-Services en-resources toestaan toegang tot deze server** in. Zie [Azure SQL database en Azure Synapse IP-firewall regels](../azure-sql/database/firewall-configure.md)voor meer informatie. |
     
 ### <a name="error-code-sqloperationfailed"></a>Foutcode: SqlOperationFailed
 
@@ -231,9 +231,9 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
     | Oorzaak van analyse                                               | Aanbeveling                                               |
     | :----------------------------------------------------------- | :----------------------------------------------------------- |
-    | Als het fout bericht de teken reeks "SqlException" bevat, genereert SQL Database een fout die aangeeft dat een bepaalde bewerking is mislukt. | Als de SQL-fout niet duidelijk is, probeert u de data base te wijzigen in het meest recente compatibiliteits niveau ' 150 '. Het kan de meest recente versie van SQL-fouten genereren. Raadpleeg de [documentatie](/sql/t-sql/statements/alter-database-transact-sql-compatibility-level#backwardCompat) voor meer informatie. <br/> Zoek op SQL-fout code in [Data Base Engine-fouten](https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors)voor meer informatie over het oplossen van SQL-problemen. Neem contact op met de ondersteuning van Azure SQL voor meer informatie. |
+    | Als het fout bericht de teken reeks "SqlException" bevat, genereert SQL Database een fout die aangeeft dat een bepaalde bewerking is mislukt. | Als de SQL-fout niet duidelijk is, probeert u de data base te wijzigen in het meest recente compatibiliteits niveau ' 150 '. Het kan de meest recente versie van SQL-fouten genereren. Raadpleeg de [documentatie](/sql/t-sql/statements/alter-database-transact-sql-compatibility-level#backwardCompat) voor meer informatie. <br/> Zoek op SQL-fout code in [Data Base Engine-fouten](/sql/relational-databases/errors-events/database-engine-events-and-errors)voor meer informatie over het oplossen van SQL-problemen. Neem contact op met de ondersteuning van Azure SQL voor meer informatie. |
     | Als het fout bericht de teken reeks ' PdwManagedToNativeInteropException ' bevat, wordt dit meestal veroorzaakt door een niet-overeenkomende waarde voor de grootte van de bron-en Sink-kolom. | Controleer de grootte van de kolommen source en Sink. Neem contact op met de ondersteuning van Azure SQL voor meer informatie. |
-    | Als het fout bericht de teken reeks "InvalidOperationException" bevat, wordt dit meestal veroorzaakt door ongeldige invoer gegevens. | Als u wilt identificeren in welke rij het probleem zich heeft voorgedaan, schakelt u de functie fout tolerantie in voor de Kopieer activiteit, waarmee problematische rijen kunnen worden omgeleid naar de opslag voor verdere onderzoek. Zie [fout tolerantie van Kopieer activiteit in azure Data Factory](https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance)voor meer informatie. |
+    | Als het fout bericht de teken reeks "InvalidOperationException" bevat, wordt dit meestal veroorzaakt door ongeldige invoer gegevens. | Als u wilt identificeren in welke rij het probleem zich heeft voorgedaan, schakelt u de functie fout tolerantie in voor de Kopieer activiteit, waarmee problematische rijen kunnen worden omgeleid naar de opslag voor verdere onderzoek. Zie [fout tolerantie van Kopieer activiteit in azure Data Factory](./copy-activity-fault-tolerance.md)voor meer informatie. |
 
 
 ### <a name="error-code-sqlunauthorizedaccess"></a>Fout code: SqlUnauthorizedAccess
@@ -331,7 +331,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 - **Oorzaak**: het bulksgewijs kopiëren van SQL is mislukt omdat het een ongeldige kolom lengte heeft ontvangen van de BCP-client (Bulk Copy Program Utility).
 
-- **Aanbeveling**: als u wilt identificeren in welke rij het probleem is opgetreden, schakelt u de functie fout tolerantie in voor de Kopieer activiteit. Dit kan problematische rijen omleiden naar de opslag voor verdere onderzoek. Zie [fout tolerantie van Kopieer activiteit in azure Data Factory](https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance)voor meer informatie.
+- **Aanbeveling**: als u wilt identificeren in welke rij het probleem is opgetreden, schakelt u de functie fout tolerantie in voor de Kopieer activiteit. Dit kan problematische rijen omleiden naar de opslag voor verdere onderzoek. Zie [fout tolerantie van Kopieer activiteit in azure Data Factory](./copy-activity-fault-tolerance.md)voor meer informatie.
 
 
 ### <a name="error-code-sqlconnectionisclosed"></a>Fout code: SqlConnectionIsClosed
@@ -470,7 +470,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 - **Bericht**: `Error thrown from driver. Sql code: '%code;'`
 
-- **Oorzaak**: als het fout bericht de teken reeks ' SQLSTATE = 51002 SQLCODE =-805 ' bevat, volgt u de tip in [gegevens van DB2 kopiëren met behulp van Azure Data Factory](https://docs.microsoft.com/azure/data-factory/connector-db2#linked-service-properties).
+- **Oorzaak**: als het fout bericht de teken reeks ' SQLSTATE = 51002 SQLCODE =-805 ' bevat, volgt u de tip in [gegevens van DB2 kopiëren met behulp van Azure Data Factory](./connector-db2.md#linked-service-properties).
 
 - **Aanbeveling**: probeer ' NULLID ' in de eigenschap in te stellen `packageCollection`  .
 
@@ -647,7 +647,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 - **Oorzaak**: de Parquet-indeling wordt niet ondersteund in azure Data Factory.
 
-- **Aanbeveling**: Controleer de bron gegevens met behulp van [ondersteunde bestands indelingen en compressie-codecs op basis van de kopieer activiteit in azure Data Factory](https://docs.microsoft.com/azure/data-factory/supported-file-formats-and-compression-codecs).
+- **Aanbeveling**: Controleer de bron gegevens met behulp van [ondersteunde bestands indelingen en compressie-codecs op basis van de kopieer activiteit in azure Data Factory](./supported-file-formats-and-compression-codecs.md).
 
 
 ### <a name="error-code-parquetmisseddecimalprecisionscale"></a>Fout code: ParquetMissedDecimalPrecisionScale
@@ -683,7 +683,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 - **Oorzaak**: de gegevens kunnen niet worden geconverteerd naar het type dat is opgegeven in de toewijzingen. source.
 
-- **Aanbeveling**: Controleer de bron gegevens of geef het juiste gegevens type voor deze kolom op in de kolom toewijzing van de Kopieer activiteit. Zie [ondersteunde bestands indelingen en compressie-codecs per Kopieer activiteit in azure Data Factory](https://docs.microsoft.com/azure/data-factory/supported-file-formats-and-compression-codecs)voor meer informatie.
+- **Aanbeveling**: Controleer de bron gegevens of geef het juiste gegevens type voor deze kolom op in de kolom toewijzing van de Kopieer activiteit. Zie [ondersteunde bestands indelingen en compressie-codecs per Kopieer activiteit in azure Data Factory](./supported-file-formats-and-compression-codecs.md)voor meer informatie.
 
 
 ### <a name="error-code-parquetdatacountnotmatchcolumncount"></a>Fout code: ParquetDataCountNotMatchColumnCount
@@ -831,7 +831,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
     Als de inhoud van de persoonlijke sleutel van uw sleutel kluis is, kan het bestand van de oorspronkelijke sleutel werken als u het rechtstreeks naar de gekoppelde service van SFTP uploadt.
 
-    Zie [gegevens kopiëren van en naar de sftp-server met behulp van Azure Data Factory](https://docs.microsoft.com/azure/data-factory/connector-sftp#using-ssh-public-key-authentication)voor meer informatie. De inhoud van de persoonlijke sleutel is base64-gecodeerde SSH-inhoud met een persoonlijke sleutel.
+    Zie [gegevens kopiëren van en naar de sftp-server met behulp van Azure Data Factory](./connector-sftp.md#using-ssh-public-key-authentication)voor meer informatie. De inhoud van de persoonlijke sleutel is base64-gecodeerde SSH-inhoud met een persoonlijke sleutel.
 
     Versleutel het *hele* oorspronkelijke persoonlijke sleutel bestand met base64-code ring en sla de versleutelde teken reeks op in uw sleutel kluis. Het oorspronkelijke persoonlijke-sleutel bestand is de naam die kan worden gebruikt voor de gekoppelde service van SFTP als u **uploaden** selecteert in het bestand.
 
@@ -902,7 +902,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
     Als u de lage door voer wilt verhogen, neemt u contact op met de SFTP-beheerder om de limiet voor gelijktijdige verbindingen te verhogen. u kunt ook een van de volgende handelingen uitvoeren:
 
     * Als u een zelf-hostende IR gebruikt, voegt u het IP-adres van de zelf-hostende IR toe aan de acceptatie lijst.
-    * Als u Azure IR gebruikt, voegt u [Azure Integration runtime IP-adressen](https://docs.microsoft.com/azure/data-factory/azure-integration-runtime-ip-addresses)toe. Als u geen bereik van IP-adressen wilt toevoegen aan de acceptatie lijst van de SFTP-server, gebruikt u in plaats daarvan zelf-hostende IR.
+    * Als u Azure IR gebruikt, voegt u [Azure Integration runtime IP-adressen](./azure-integration-runtime-ip-addresses.md)toe. Als u geen bereik van IP-adressen wilt toevoegen aan de acceptatie lijst van de SFTP-server, gebruikt u in plaats daarvan zelf-hostende IR.
 
 ## <a name="sharepoint-online-list"></a>SharePoint Online-lijst
 
@@ -961,7 +961,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 - **Oorzaak**: de zelf-hostende IR kan Java runtime niet vinden. Java runtime is vereist voor het lezen van bepaalde bronnen.
 
-- **Aanbeveling**: Controleer uw Integration runtime-omgeving, Zie [zelf-hostende Integration runtime gebruiken](https://docs.microsoft.com/azure/data-factory/format-parquet#using-self-hosted-integration-runtime).
+- **Aanbeveling**: Controleer uw Integration runtime-omgeving, Zie [zelf-hostende Integration runtime gebruiken](./format-parquet.md#using-self-hosted-integration-runtime).
 
 
 ### <a name="error-code-wildcardpathsinknotsupported"></a>Fout code: WildcardPathSinkNotSupported

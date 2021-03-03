@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 01/22/2021
 ms.author: aahi
-ms.openlocfilehash: 0faa7a6f5a3d2efc8bbef11308b308e3305a00d5
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 416ef4ceddbb43e9f1606d44a66ffd5295cee4e6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99096318"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699892"
 ---
 # <a name="migrate-to-version-3x-of-the-text-analytics-api"></a>Migreren naar versie 3. x van de Text Analytics-API
 
@@ -29,7 +29,7 @@ Sentimentanalyse in versie 2,1 retourneert sentiment scores tussen 0 en 1 voor e
 
 ### <a name="steps-to-migrate"></a>Te migreren stappen
 
-#### <a name="rest-api"></a>REST API
+#### <a name="rest-api"></a>REST-API
 
 Als uw toepassing het REST API gebruikt, werkt u het aanvraag eindpunt bij naar het v3-eind punt voor sentiment analyse. Bijvoorbeeld: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/sentiment` . U moet de toepassing ook bijwerken om de sentiment-labels te gebruiken die in de [API-reactie](how-tos/text-analytics-how-to-sentiment-analysis.md#view-the-results)worden geretourneerd. 
 
@@ -50,7 +50,7 @@ In versie 2,1 gebruikt de Text Analytics-API één eind punt voor benoemde entit
 
 ### <a name="steps-to-migrate"></a>Te migreren stappen
 
-#### <a name="rest-api"></a>REST API
+#### <a name="rest-api"></a>REST-API
 
 Als uw toepassing het REST API gebruikt, werkt u het aanvraag eindpunt bij naar de V3-eind punten voor NER en/of entiteits koppeling.
 
@@ -104,11 +104,11 @@ De volgende tabel geeft een lijst van de entiteits categorieën die voor NER v 2
 
 ### <a name="feature-changes"></a>Functie wijzigingen 
 
-De functie voor taal detectie is niet gewijzigd in v3 buiten de eindpunt versie, maar het JSON-antwoord zal `ConfidenceScore` in plaats van worden opgenomen `score` . V3 retourneert ook slechts één taal in de uitvoer. 
+De functie voor het uitvoeren van taal detectie is gewijzigd in v3. De JSON-reactie bevat `ConfidenceScore` in plaats van `score` . V3 retourneert ook slechts één taal in een  `detectedLanguage` kenmerk voor elk document.
 
 ### <a name="steps-to-migrate"></a>Te migreren stappen
 
-#### <a name="rest-api"></a>REST API
+#### <a name="rest-api"></a>REST-API
 
 Als uw toepassing het REST API gebruikt, werkt u het aanvraag eindpunt bij naar het v3-eind punt voor taal detectie. Bijvoorbeeld: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/languages` . U moet ook de toepassing bijwerken zodat deze wordt gebruikt `ConfidenceScore` in plaats van `score` in de [reactie](how-tos/text-analytics-how-to-language-detection.md#step-3-view-the-results)van de API. 
 
@@ -129,7 +129,7 @@ De functie voor het uitpakken van sleutel woorden is niet gewijzigd in v3 buiten
 
 ### <a name="steps-to-migrate"></a>Te migreren stappen
 
-#### <a name="rest-api"></a>REST API
+#### <a name="rest-api"></a>REST-API
 
 Als uw toepassing het REST API gebruikt, werkt u het aanvraag eindpunt bij naar het v3-eind punt voor het uitpakken van de sleutel woord groep. Bijvoorbeeld: `https://<your-custom-subdomain>.api.cognitiveservices.azure.com/text/analytics/v3.0/keyPhrases`
 

@@ -3,18 +3,18 @@ title: Een functie-app in Linux maken op basis van de Azure Portal
 description: Meer informatie over het maken van uw eerste Azure-functie in Linux met behulp van de Azure Portal.
 ms.topic: how-to
 ms.date: 04/29/2020
-ms.openlocfilehash: 34a93795b5e041ccef8e9576f97092e16c429444
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: d6787e1dd8312e368964a1f555025beff9a06a23
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97937175"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101732255"
 ---
 # <a name="create-a-function-app-on-linux-in-an-azure-app-service-plan"></a>Een functie-app in Linux maken in een Azure App Service plan
 
 Met Azure Functions kunt u uw functies voor Linux hosten in een standaardcontainer van Azure App Service. In dit artikel wordt uitgelegd hoe u de [Azure Portal](https://portal.azure.com) gebruikt voor het maken van een door Linux gehoste functie-app die wordt uitgevoerd in een [app service plan](dedicated-plan.md). U kunt ook [uw eigen aangepaste container](functions-create-function-linux-custom-image.md) gebruiken.
 
-![Functie-app maken in Azure Portal](./media/create-function-app-linux-app-service-plan/function-app-in-portal-editor.png)
+[!INCLUDE [functions-in-portal-editing-note](../../includes/functions-in-portal-editing-note.md)] 
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 

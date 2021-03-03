@@ -150,8 +150,10 @@
           href: disable-user-sign-in-portal.md
         - name: Selfservice-app-toewijzing configureren
           href: manage-self-service-access.md
-        - name: Home Realm Discovery
+        - name: Automatische versnelling afdwingen via beleid voor het detecteren van realms
           href: configure-authentication-for-federated-users-portal.md
+        - name: Aanmelden voor automatische versnelling voor komen met behulp van beleid voor het detecteren van een thuis domein
+          href: prevent-domain-hints-with-home-realm-discovery.md
     - name: Identiteitsbeheer migreren naar Azure AD
       items:
         - name: Migratieresources

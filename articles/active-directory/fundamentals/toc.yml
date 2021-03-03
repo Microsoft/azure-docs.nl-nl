@@ -51,6 +51,14 @@
               href: 9-secure-access-teams-sharepoint.md
         - name: Service accounts beveiligen
           items:
+            - name: Inleiding tot Azure-service accounts
+              href: service-accounts-introduction-azure.md
+            - name: Beheerde identiteiten beveiligen
+              href: service-accounts-managed-identities.md
+            - name: Service-principals beveiligen
+              href: service-accounts-principal.md
+            - name: Azure-service accounts beheren
+              href: service-accounts-governing-azure.md
             - name: Inleiding tot on-premises service accounts
               href: service-accounts-on-premises.md
             - name: Groeps Msa's beveiligen

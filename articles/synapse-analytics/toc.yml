@@ -552,6 +552,10 @@
           href: ./spark/apache-spark-machine-learning-mllib-notebook.md
         - name: Spark-taakdefinities verzenden
           href: ./spark/apache-spark-job-definitions.md
+        - name: De metrische gegevens van Azure Synapse Spark-toepassings niveau verbinden en bewaken
+          href: ./spark/connect-monitor-azure-synapse-spark-application-level-metrics.md
+        - name: Apache Spark metrische gegevens op toepassings niveau bewaken met Prometheus en Grafana
+          href: ./spark/use-prometheus-grafana-to-monitor-apache-spark-application-level-metrics.md
     - name: Concepten
       items:
         - name: Apache Spark
@@ -566,17 +570,21 @@
           href: ./spark/apache-spark-machine-learning-concept.md
         - name: Notebooks
           href: ./spark/apache-spark-notebook-concept.md
+        - name: Pakketbeheer
+          href: ./spark/apache-spark-azure-portal-add-libraries.md
         - name: Bewakingsprogramma's
           href: monitoring/how-to-monitor-spark-applications.md
     - name: Instructiegidsen
       items:
         - name: Werken met Delta Lake
           href: ./spark/apache-spark-delta-lake-overview.md
-        - name: Bibliotheken beheren
+        - name: Pakketten beheren
           items:
-            - name: Bibliotheken toevoegen en beheren
-              href: ./spark/apache-spark-azure-portal-add-libraries.md
-            - name: Problemen met de bibliotheek installatie oplossen
+            - name: Python-pakketten beheren
+              href: ./spark/apache-spark-manage-python-packages.md
+            - name: Scala-pakketten beheren
+              href: ./spark/apache-spark-manage-scala-packages.md
+            - name: Problemen met installatie fouten van Python-pakketten oplossen
               href: ./spark/apache-spark-troubleshoot-library-errors.md
         - name: Notebooks en IDE-hulpprogramma's gebruiken
           items:

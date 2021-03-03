@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/17/2018
-ms.openlocfilehash: b73fa9702a95897afbca53e2de70dcabc04a4665
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: abcd95a0c433b59df6e7a564e5db948ea2a9eaf5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609332"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717210"
 ---
 # <a name="reference-guide-to-view-designer-tiles-in-azure-monitor"></a>Naslag Gids voor het weer geven van ontwerp tegels in Azure Monitor
 Met behulp van View designer in Azure Monitor kunt u verschillende aangepaste weer gaven maken in de Azure Portal die u kan helpen bij het visualiseren van gegevens in uw Log Analytics-werk ruimte. Dit artikel bevat een Naslag Gids voor de instellingen voor de tegels die beschikbaar zijn in uw aangepaste weer gaven.
@@ -24,7 +24,7 @@ Zie voor meer informatie over de ontwerp functie voor weer gaven:
 
 De beschik bare weer gave Designer-tegels worden in de volgende tabel beschreven:  
 
-| Tegel | Description |
+| Tegel | Beschrijving |
 |:--- |:--- |
 | [Number](#number-tile) |Het aantal records van een query. |
 | [Twee getallen](#two-numbers-tile) |Het aantal records van twee verschillende query's. |
@@ -36,7 +36,7 @@ De beschik bare weer gave Designer-tegels worden in de volgende tabel beschreven
 In de volgende secties worden de tegel typen en de bijbehorende eigenschappen uitvoerig beschreven.
 
 > [!NOTE]
-> Tegels in weer gaven zijn gebaseerd op [logboek query's](../log-query/log-query-overview.md) in uw log Analytics-werk ruimte. Dit biedt momenteel geen ondersteuning voor [Cross-resource query's](../log-query/cross-workspace-query.md) om gegevens op te halen uit Application Insights.
+> Tegels in weer gaven zijn gebaseerd op [logboek query's](../logs/log-query-overview.md) in uw log Analytics-werk ruimte. Dit biedt momenteel geen ondersteuning voor [Cross-resource query's](../logs/cross-workspace-query.md) om gegevens op te halen uit Application Insights.
 
 ## <a name="number-tile"></a>Nummer tegel
 Op de tegel **getal** wordt zowel het aantal records uit een logboek query als een label weer gegeven.
@@ -46,7 +46,7 @@ Op de tegel **getal** wordt zowel het aantal records uit een logboek query als e
 | Instelling | Beschrijving |
 |:--- |:--- |
 | Name |De tekst die boven aan de tegel wordt weer gegeven. |
-| Description |De tekst die wordt weer gegeven onder de naam van de tegel. |
+| Beschrijving |De tekst die wordt weer gegeven onder de naam van de tegel. |
 | **Tegel** | |
 | Legenda |De tekst die wordt weer gegeven onder de waarde. |
 | Query’s uitvoeren |De query die wordt uitgevoerd. Het aantal records dat door de query wordt geretourneerd, wordt weer gegeven. |
@@ -64,7 +64,7 @@ Deze tegel toont het aantal records uit twee verschillende logboek query's en ee
 | Instelling | Beschrijving |
 |:--- |:--- |
 | Name |De tekst die boven aan de tegel wordt weer gegeven. |
-| Description |De tekst die wordt weer gegeven onder de naam van de tegel. |
+| Beschrijving |De tekst die wordt weer gegeven onder de naam van de tegel. |
 | **Eerste tegel** | |
 | Legenda |De tekst die wordt weer gegeven onder de waarde. |
 | Query’s uitvoeren |De query die wordt uitgevoerd. Het aantal records dat door de query wordt geretourneerd, wordt weer gegeven. |
@@ -85,7 +85,7 @@ De **ring** tegel geeft één getal weer dat een kolom waarde in een logboek que
 | Instelling | Beschrijving |
 |:--- |:--- |
 | Name |De tekst die boven aan de tegel wordt weer gegeven. |
-| Description |De tekst die wordt weer gegeven onder de naam van de tegel. |
+| Beschrijving |De tekst die wordt weer gegeven onder de naam van de tegel. |
 | **Ringdiagram** | |
 | Query’s uitvoeren |De query die wordt uitgevoerd voor de ring. De eerste eigenschap is een tekst waarde en de tweede eigenschap is een numerieke waarde. Deze query gebruikt normaal gesp roken het sleutel woord *Measure* om de resultaten samen te vatten. |
 | **Ringdiagram** |**> Center** |
@@ -109,7 +109,7 @@ Deze tegel is een lijn diagram dat gedurende een bepaalde periode meerdere reeks
 | Instelling | Beschrijving |
 |:--- |:--- |
 | Name |De tekst die boven aan de tegel wordt weer gegeven. |
-| Description |De tekst die wordt weer gegeven onder de naam van de tegel. |
+| Beschrijving |De tekst die wordt weer gegeven onder de naam van de tegel. |
 | **Lijn diagram** | |
 | Query’s uitvoeren |De query die wordt uitgevoerd voor het lijn diagram. De eerste eigenschap is een tekst waarde en de tweede eigenschap is een numerieke waarde. Deze query gebruikt normaal gesp roken het sleutel woord *Measure* om de resultaten samen te vatten. Als de query het gereserveerde woord *interval* gebruikt, gebruikt de x-as dit tijds interval. Als de query geen gebruik maakt van het *interval* sleutelwoord, gebruikt de x-as uur intervallen. |
 | **Lijn diagram** |**> Y-as** |
@@ -130,7 +130,7 @@ Deze tegel heeft een lijn diagram dat meerdere reeksen uit een logboek query in 
 | Instelling | Beschrijving |
 |:--- |:--- |
 | Name |De tekst die boven aan de tegel wordt weer gegeven. |
-| Description |De tekst die wordt weer gegeven onder de naam van de tegel. |
+| Beschrijving |De tekst die wordt weer gegeven onder de naam van de tegel. |
 | **Lijn diagram** | |
 | Query’s uitvoeren |De query die wordt uitgevoerd voor het lijn diagram. De eerste eigenschap is een tekst waarde en de tweede eigenschap is een numerieke waarde. Deze query gebruikt normaal gesp roken het sleutel woord *Measure* om de resultaten samen te vatten. Als de query het gereserveerde woord *interval* gebruikt, gebruikt de x-as dit tijds interval. Als de query geen gebruik maakt van het *interval* sleutelwoord, gebruikt de x-as uur intervallen. |
 | **Lijn diagram** |**> bijschrift** |
@@ -155,7 +155,7 @@ In de tegel **twee tijd lijnen** worden de resultaten van twee logboek query's i
 | Instelling | Beschrijving |
 |:--- |:--- |
 | Name |De tekst die boven aan de tegel wordt weer gegeven. |
-| Description |De tekst die wordt weer gegeven onder de naam van de tegel. |
+| Beschrijving |De tekst die wordt weer gegeven onder de naam van de tegel. |
 | Eerste grafiek | |
 | Legenda |De tekst die wordt weer gegeven onder de toelichting voor de eerste reeks. |
 | Kleur |De kleur die wordt gebruikt voor de kolommen in de eerste reeks. |
@@ -173,5 +173,5 @@ In de tegel **twee tijd lijnen** worden de resultaten van twee logboek query's i
 
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over [logboek query's](../log-query/log-query-overview.md) voor de ondersteuning van query's in tegels.
+* Meer informatie over [logboek query's](../logs/log-query-overview.md) voor de ondersteuning van query's in tegels.
 * [Visualisatie onderdelen](view-designer-parts.md) toevoegen aan uw aangepaste weer gave.

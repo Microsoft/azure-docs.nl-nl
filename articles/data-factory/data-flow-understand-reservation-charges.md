@@ -6,12 +6,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/05/2021
 ms.author: makromer
-ms.openlocfilehash: 3b97f09c2b6f4c5f5352bbaa081e0bcae900ebd5
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 12b640fd97f48e293320593b33ab2fdc54980c0f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99808314"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101716292"
 ---
 # <a name="how-a-reservation-discount-is-applied-to-azure-data-factory-data-flows"></a>Hoe een reserverings korting wordt toegepast op Azure Data Factory gegevens stromen
 
@@ -32,7 +32,7 @@ In de volgende voor beelden ziet u hoe de gereserveerde capaciteit van de ADF-ge
 - Scenario 1: u koopt een data transport-reserve ring van ADF voor 1 uur 80 kern geheugens van de reken kracht door 80 in te voeren als de hoeveelheid voor het reken type geoptimaliseerd voor geheugen. U voert een gegevens stroom uit met een Azure Integration runtime-set op 144 kern geheugens die gedurende één uur zijn geoptimaliseerd. U betaalt de betalen naar gebruik-prijs voor 64 kernen van het gebruik van gegevens stromen gedurende één uur. U krijgt de reserverings korting voor een uur van 80 kern geheugen gebruik.
 - Scenario 2: u koopt een data transport-reserve ring van ADF voor 1 uur van 32 kernen van algemene doel einden door 32 in te voeren als het aantal voor het reken type voor algemene doel einden. U kunt gedurende één uur fouten opsporen in uw gegevens stromen met behulp van 32 kernen van algemene Compute Azure Integration runtime. U krijgt de reserverings korting voor het hele uur gebruik.
 
-Raadpleeg [Meer informatie over Azure-reserveringsgebruik](https://docs.microsoft.com/azure/cost-management-billing/reservations/understand-reserved-instance-usage-ea) voor meer informatie over en inzicht in hoe uw Azure-reserveringen worden toegepast in uw gebruiksrapporten voor facturering.
+Raadpleeg [Meer informatie over Azure-reserveringsgebruik](../cost-management-billing/reservations/understand-reserved-instance-usage-ea.md) voor meer informatie over en inzicht in hoe uw Azure-reserveringen worden toegepast in uw gebruiksrapporten voor facturering.
 
 ## <a name="need-help-contact-us"></a>Hebt u hulp nodig? Contact opnemen
 
@@ -42,4 +42,4 @@ Als u vragen hebt of hulp nodig hebt, [kunt u een ondersteuningsaanvraag maken](
 
 Zie het volgende artikel voor meer informatie over Azure Reservations:
 
-- [Wat zijn Azure-reserveringen?](https://docs.microsoft.com/azure/cost-management-billing/reservations/save-compute-costs-reservations)
+- [Wat zijn Azure-reserveringen?](../cost-management-billing/reservations/save-compute-costs-reservations.md)

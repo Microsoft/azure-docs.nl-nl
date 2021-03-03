@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: a2348e0578b60c59fd7205037bd42d7bb1e84fae
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 6f677c8753f09e146d300186e19217568952b417
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98953696"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101705395"
 ---
 # <a name="terminology-and-entity-changes-between-media-services-v2-and-v3"></a>Terminologie en entiteits wijzigingen tussen Media Services v2 en v3
 
@@ -56,7 +56,7 @@ Bekijk de naamgevings regels die worden toegepast op Media Services v3-resources
 | `Job`<!-- row --> | `Job` | Maak een `Transform` voordat u een maakt `Job` . | Nee | Nee |
 | `JobTemplate`<!-- row --> | `Transform` | Gebruik `Transform` in plaats daarvan een. Een trans formatie is een afzonderlijke entiteit van een taak en kan worden hergebruikt. | Nee | Nee |
 | `Locator`<!-- row --> | `StreamingLocator` | <!--empty --> | Ja | Nee |
-| `MediaProcessor`<!-- row --> | <!-- empty --> | In plaats van te zoeken `MediaProcessor` op naam, gebruikt u de gewenste voor instelling wanneer u een trans formatie definieert. De voor instelling die wordt gebruikt, bepaalt de media processor die wordt gebruikt door het taak systeem. Zie de onderwerpen over het coderen van [op scenario's gebaseerde code ring](migrate-v-2-v-3-migration-scenario-based-encoding.md). <!--Probably needs a link to its own article so customers know Indexerv1 maps to AudioAnalyzerPreset in basic mode, etc.--> | No | N.V.T. (alleen-lezen in v2) |
+| `MediaProcessor`<!-- row --> | <!-- empty --> | In plaats van te zoeken `MediaProcessor` op naam, gebruikt u de gewenste voor instelling wanneer u een trans formatie definieert. De voor instelling die wordt gebruikt, bepaalt de media processor die wordt gebruikt door het taak systeem. Zie de onderwerpen over het coderen van [op scenario's gebaseerde code ring](migrate-v-2-v-3-migration-scenario-based-encoding.md). <!--Probably needs a link to its own article so customers know Indexerv1 maps to AudioAnalyzerPreset in basic mode, etc.--> | Nee | N.V.T. (alleen-lezen in v2) |
 | `NotificationEndPoint`<!-- row --> | <!--empty --> | Meldingen in v3 worden verwerkt via Azure Event Grid. De `NotificationEndpoint` wordt vervangen door de registratie van het event grid-abonnement, waarmee ook de configuratie wordt ingekapseld voor de typen meldingen die moeten worden ontvangen (die in v2 zijn verwerkt door de `JobNotificationSubscription` van de taak, het `TaskNotificationSubscription` van de taken en de telemetrie `ComponentMonitoringSetting` ). De versie van de v2-telemetrie is gesplitst tussen Azure Event Grid en Azure Monitor om in de verbeteringen van het grotere Azure-ecosysteem te passen. | Nee | Nee |
 | `Program`<!-- row --> | `LiveOutput` | Live outputs vervangt nu Program Ma's in de V3 API.  | Nee | Nee |
 | `StreamingEndpoint`<!-- row --> | `StreamingEndpoint` | Streaming-eind punten blijven voornamelijk hetzelfde. Ze worden gebruikt voor dynamische verpakking, versleuteling en levering van HLS-en streepje-inhoud voor zowel live als on-demand streaming rechtstreeks van oorsprong, hetzij via het CDN. Nieuwe functies zijn onder meer ondersteuning voor betere Azure Monitor integratie en grafieken. |  Ja | Ja |
@@ -73,7 +73,7 @@ Bekijk de naamgevings regels die worden toegepast op Media Services v3-resources
 | **Codering** <!--new row --> |||
 | Bitsnelheid voor versleuteling <!--new row --> | bitsnelheden gemeten in kbps: 128 (kbps)| bits per seconde, bijvoorbeeld: 128000 (bits/seconde)|
 | DRM-FairPlay coderen <!--new row --> | In Media Services v2 kunt u de initialisatie vector (IV) opgeven. | In Media Services v3 kan de FairPlay IV niet worden opgegeven.|
-| Premium encoder <!--new row --> | Premium encoder en verouderde Indexer| De [Premium encoder](https://docs.microsoft.com/azure/media-services/previous/media-services-encode-asset) en de verouderde [Media Analytics-processors](https://docs.microsoft.com/azure/media-services/previous/legacy-components) (Azure Media Services indexer 2, Face Redactor, enzovoort) zijn niet toegankelijk via v3. Er is ondersteuning toegevoegd voor audio kanaal toewijzing aan de standaard encoder.  Zie [Audio in de Media Services code ring Swagger-documentatie](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2020-05-01/Encoding.json).  | Zie de onderwerpen over het coderen van [op scenario's gebaseerde code ring](migrate-v-2-v-3-migration-scenario-based-encoding.md) |
+| Premium encoder <!--new row --> | Premium encoder en verouderde Indexer| De [Premium encoder](../previous/media-services-encode-asset.md) en de verouderde [Media Analytics-processors](../previous/legacy-components.md) (Azure Media Services indexer 2, Face Redactor, enzovoort) zijn niet toegankelijk via v3. Er is ondersteuning toegevoegd voor audio kanaal toewijzing aan de standaard encoder.  Zie [Audio in de Media Services code ring Swagger-documentatie](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2020-05-01/Encoding.json).  | Zie de onderwerpen over het coderen van [op scenario's gebaseerde code ring](migrate-v-2-v-3-migration-scenario-based-encoding.md) |
 | **Transformaties en taken** <!--new row -->|||
 | Op taak gebaseerde verwerking HTTPS <!--new row --> |<!-- empty -->| Voor taak verwerking op basis van een bestand kunt u een HTTPS-URL gebruiken als invoer. U hoeft inhoud niet al in azure te hebben opgeslagen en u hoeft geen assets te maken. |
 | ARM-sjablonen voor taken <!--new row --> | Er zijn geen ARM-sjablonen aanwezig in v2. | Een trans formatie kan worden gebruikt om herbruikbare configuraties te bouwen, Azure Resource Manager-sjablonen te maken en verwerkings instellingen te isoleren tussen meerdere klanten of tenants. |

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 2/11/2020
 ms.author: amgowda
 ms.service: container-service
-ms.openlocfilehash: bf92e7f28d6a5804886d093671f4b7e33878f1ec
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: a5db93f096c73679c1b6b6ae464897db843f2e8b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652667"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101706262"
 ---
 # <a name="confidential-containers"></a>Vertrouwelijke containers
 
@@ -90,7 +90,7 @@ Occlum biedt ondersteuning voor AKS-implementaties. Volg de instructies voor de 
 
 
 ## <a name="confidential-containers-demo"></a>Demo van vertrouwelijke containers
-Bekijk de demo van de vertrouwelijke gezondheids zorg met vertrouwelijke containers. Voor beeld is [hier](https://docs.microsoft.com/azure/architecture/example-scenario/confidential/healthcare-inference)beschikbaar. 
+Bekijk de demo van de vertrouwelijke gezondheids zorg met vertrouwelijke containers. Voor beeld is [hier](/azure/architecture/example-scenario/confidential/healthcare-inference)beschikbaar. 
 
 > [!VIDEO https://www.youtube.com/embed/PiYCQmOh0EI]
 

@@ -7,12 +7,12 @@ ms.service: route-server
 ms.topic: quickstart
 ms.date: 03/02/2021
 ms.author: duau
-ms.openlocfilehash: 518baa47fd16d69bf935cd3253f5bebeb413b513
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: c24d88e47569da430153dedfd1ff68a584083775
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101680615"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101695240"
 ---
 # <a name="quickstart-create-and-configure-route-server-using-azure-cli"></a>Snelstartgids: route server maken en configureren met behulp van Azure CLI 
 
@@ -33,7 +33,23 @@ Dit artikel helpt u bij het configureren van Azure route server naar peer met vi
 
 ###  <a name="sign-in-to-your-azure-account-and-select-your-subscription"></a>Meld u aan bij uw Azure-account en selecteer uw abonnement. 
 
-[!INCLUDE [sign in](../../includes/expressroute-cloud-shell-connect.md)] 
+Meld u aan bij uw Azure-account om de configuratie te starten. Als u de Cloud Shell gebruikt via de knop 'Proberen', wordt u automatisch aangemeld. Gebruik de volgende voorbeelden als hulp bij het maken van verbinding:
+
+```azurecli-interactive
+az login
+```
+
+Controleer de abonnementen voor het account.
+
+```azurecli-interactive
+az account list
+```
+
+Selecteer het abonnement waarvoor u een ExpressRoute-circuit wilt maken.
+
+```azurecli-interactive
+az account set --subscription "<subscription ID>"
+```
 
 ### <a name="create-a-resource-group-and-virtual-network"></a>Een resource groep en een virtueel netwerk maken 
 

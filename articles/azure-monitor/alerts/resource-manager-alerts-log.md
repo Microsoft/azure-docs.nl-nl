@@ -6,12 +6,12 @@ ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 09/22/2020
-ms.openlocfilehash: 64bdbf1005f0283438777b3bb2ba1d3312b6e140
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 8dac947aea95dc79118032eb0996b6ba14f16363
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100627183"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101714104"
 ---
 # <a name="resource-manager-template-samples-for-log-alert-rules-in-azure-monitor"></a>Resource Manager-voorbeeldsjablonen voor logboekwaarschuwingsregels in Azure Monitor
 Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het maken en configureren van logboekquerywaarschuwingen in Azure Monitor. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.
@@ -479,4 +479,4 @@ In het volgende voorbeeld wordt een regel gemaakt die elke resource als doel kan
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Meer voorbeeldsjablonen voor Azure Monitor](../resource-manager-samples.md).
-* [Meer informatie over waarschuwingsregels](../platform/alerts-overview.md).
+* [Meer informatie over waarschuwingsregels](./alerts-overview.md).

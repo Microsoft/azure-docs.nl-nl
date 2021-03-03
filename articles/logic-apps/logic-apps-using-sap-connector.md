@@ -9,16 +9,16 @@ ms.reviewer: estfan, daviburg, logicappspm
 ms.topic: article
 ms.date: 02/01/2021
 tags: connectors
-ms.openlocfilehash: cbbc0edf710b8823c1a36daa66bc01d89acf63da
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: e52c4acb4b59414e89e87bf5a6ee2cfae8207cae
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575480"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101712450"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Verbinding maken met SAP-systemen in Azure Logic Apps
 
-In dit artikel wordt uitgelegd hoe u vanaf Logic Apps toegang kunt krijgen tot uw SAP-resources via de [SAP-connector](https://docs.microsoft.com/connectors/sap/).
+In dit artikel wordt uitgelegd hoe u vanaf Logic Apps toegang kunt krijgen tot uw SAP-resources via de [SAP-connector](/connectors/sap/).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -547,14 +547,14 @@ Voor on-premises gegevens gateway releases van 2020 april en eerder zijn Logboek
 
 Als u een [on-premises gegevens gateway gebruikt voor Logic apps](../logic-apps/logic-apps-gateway-install.md), kunt u een uitgebreid logboek bestand voor de SAP-connector configureren. U kunt uw on-premises gegevens gateway gebruiken om Event Tracing for Windows-gebeurtenissen (ETW) om te leiden naar roulerende logboek bestanden die zijn opgenomen in de logboek bestanden van uw gateway. 
 
-U kunt [alle configuratie-en service logboeken van uw gateway exporteren](https://docs.microsoft.com/data-integration/gateway/service-gateway-tshoot#collect-logs-from-the-on-premises-data-gateway-app) naar een zip-bestand in de instellingen van de gateway-app.
+U kunt [alle configuratie-en service logboeken van uw gateway exporteren](/data-integration/gateway/service-gateway-tshoot#collect-logs-from-the-on-premises-data-gateway-app) naar een zip-bestand in de instellingen van de gateway-app.
 
 > [!NOTE]
 > Uitgebreide logboek registratie kan van invloed zijn op de prestaties van uw Logic apps wanneer altijd is ingeschakeld. Het is een best practice om uitgebreide logboek bestanden uit te scha kelen nadat u klaar bent met het analyseren van een probleem en het oplossen van problemen.
 
 #### <a name="capture-etw-events"></a>ETW-gebeurtenissen vastleggen
 
-Geavanceerde gebruikers kunnen optioneel ETW-gebeurtenissen rechtstreeks vastleggen. U kunt vervolgens [uw gegevens in azure Diagnostics gebruiken in Event hubs](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostics-extension-stream-event-hubs) of [uw gegevens verzamelen in azure monitor logboeken](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostics-extension-logs). Zie voor meer informatie de [Aanbevolen procedures voor het verzamelen en opslaan van gegevens](https://docs.microsoft.com/azure/architecture/best-practices/monitoring#collecting-and-storing-data). U kunt [PerfView](https://github.com/Microsoft/perfview/blob/master/README.md) gebruiken om te werken met de resulterende etl-bestanden of u kunt uw eigen programma schrijven. In deze walkthrough wordt gebruikgemaakt van PerfView:
+Geavanceerde gebruikers kunnen optioneel ETW-gebeurtenissen rechtstreeks vastleggen. U kunt vervolgens [uw gegevens in azure Diagnostics gebruiken in Event hubs](../azure-monitor/agents/diagnostics-extension-stream-event-hubs.md) of [uw gegevens verzamelen in azure monitor logboeken](/azure/azure-monitor/agents/diagnostics-extension-logs). Zie voor meer informatie de [Aanbevolen procedures voor het verzamelen en opslaan van gegevens](/azure/architecture/best-practices/monitoring#collecting-and-storing-data). U kunt [PerfView](https://github.com/Microsoft/perfview/blob/master/README.md) gebruiken om te werken met de resulterende etl-bestanden of u kunt uw eigen programma schrijven. In deze walkthrough wordt gebruikgemaakt van PerfView:
 
 1. Selecteer in het menu **PerfView verzamelen Collect** &gt;  om de gebeurtenissen vast te leggen.
 
@@ -1336,7 +1336,7 @@ Zie voor meer informatie over het gebruik van de actie BAPI aanroepen de [XML-vo
 
 ### <a name="send-idoc-action"></a>IDoc-actie verzenden
 
-Met de actie [IDOC verzenden ( `SendIDoc` )](https://docs.microsoft.com/connectors/sap/#send-idoc-(preview)) wordt het IDOC-bericht naar uw SAP-server verzonden.
+Met de actie [IDOC verzenden ( `SendIDoc` )](/connectors/sap/) wordt het IDOC-bericht naar uw SAP-server verzonden.
 
 U moet de volgende para meters met uw gesprek gebruiken: 
 

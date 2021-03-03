@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/24/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 49762b1844aec85ff55ae2a16243a231414b263f
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: aca6981e2214b9dbd03e6808e77c26fcd67c13cd
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98071575"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711566"
 ---
 # <a name="azure-cosmos-db-input-binding-for-azure-functions-2x-and-higher"></a>Invoer binding Azure Cosmos DB voor Azure Functions 2. x en hoger
 
@@ -1211,24 +1211,24 @@ De Cosmos DB invoer binding wordt als eerste weer gegeven in de lijst met bindin
 
 ```json
 {
-  "name": "InputDocumentIn",
-  "type": "cosmosDB",
-  "databaseName": "MyDatabase",
-  "collectionName": "MyCollection",
-  "id" : "{queueTrigger_payload_property}",
-  "partitionKey": "{queueTrigger_payload_property}",
-  "connectionStringSetting": "CosmosDBConnection",
-  "direction": "in"
+  "name": "InputDocumentIn",
+  "type": "cosmosDB",
+  "databaseName": "MyDatabase",
+  "collectionName": "MyCollection",
+  "id": "{queueTrigger_payload_property}",
+  "partitionKey": "{queueTrigger_payload_property}",
+  "connectionStringSetting": "CosmosDBConnection",
+  "direction": "in"
 },
 {
-  "name": "InputDocumentOut",
-  "type": "cosmosDB",
-  "databaseName": "MyDatabase",
-  "collectionName": "MyCollection",
-  "createIfNotExists": false,
-  "partitionKey": "{queueTrigger_payload_property}",
-  "connectionStringSetting": "CosmosDBConnection",
-  "direction": "out"
+  "name": "InputDocumentOut",
+  "type": "cosmosDB",
+  "databaseName": "MyDatabase",
+  "collectionName": "MyCollection",
+  "createIfNotExists": false,
+  "partitionKey": "{queueTrigger_payload_property}",
+  "connectionStringSetting": "CosmosDBConnection",
+  "direction": "out"
 }
 ```
 

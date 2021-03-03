@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: quickstart
 ms.date: 11/15/2020
 ms.author: memildin
-ms.openlocfilehash: 8fa2a06b1310e7cd825c918e92ea7af9b9b488de
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 6130572cedaaabb9d63758a2bc25f6ebd0396562
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100596160"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101729858"
 ---
 # <a name="auto-provisioning-agents-and-extensions-from-azure-security-center"></a>Automatische inrichting van agents en extensies van Azure Security Center
 
@@ -85,7 +85,7 @@ Automatische inrichting van de Log Analytics-agent inschakelen:
 
         Als u al een bestaande Log Analytics-werkruimte hebt, wilt u mogelijk dezelfde werkruimte gebruiken (vereist lees- en schrijfmachtigingen voor de werkruimte). Deze optie is handig als u een centrale werkruimte gebruikt in uw organisatie en u deze ook wilt gebruiken voor het verzamelen van beveiligingsgegevens. Meer informatie vindt u in [Toegang tot logboekgegevens en werkruimten beheren in Azure Monitor](../azure-monitor/logs/manage-access.md).
 
-        Als voor uw werkruimte al een Security- of SecurityCenterFree-oplossing is ingeschakeld, wordt de prijs automatisch ingesteld. Als dat niet het geval is, installeert u een Security Center-oplossing in de werkruimte:
+        Als voor de geselecteerde werk ruimte al een ' Security '-of ' SecurityCenterFree-oplossing is ingeschakeld, worden de prijzen automatisch ingesteld. Als dat niet het geval is, installeert u een Security Center-oplossing in de werkruimte:
 
         1. Open **Prijzen en instellingen** vanuit het menu van Security Center.
         1. Selecteer de werkruimte waarmee u verbinding wilt maken met de agents.
@@ -235,7 +235,7 @@ In de volgende use-cases wordt aangegeven hoe automatische inrichting werkt in g
 
 - **Log Analytics-agent is geïnstalleerd op de computer, maar niet als een extensie (directe agent)** : als de Log Analytics-agent rechtstreeks op de VM is geïnstalleerd (niet als een Azure-extensie), installeert Security Center de Log Analytics-agentextensie, en wordt de Log Analytics-agent mogelijk bijgewerkt naar de nieuwste versie.
 De geïnstalleerde agent blijft rapporteren aan de reeds geconfigureerde werkruimte(n), en rapporteert bovendien aan de in Security Center geconfigureerde werkruimte (multihoming wordt ondersteund op Windows-machines).
-Als de geconfigureerde werkruimte een gebruikerswerkruimte is (niet de standaardwerkruimte van Security Center), moet u de oplossing 'security/securityFree' erin installeren voor Security Center kan beginnen met het verwerken van gebeurtenissen van VM's en computers aan die werkruimte kunnen gaan rapporteren.
+Als de geconfigureerde werk ruimte een gebruikers werkruimte is (niet Security Center de standaard werkruimte), moet u de oplossing ' Security ' of ' SecurityCenterFree ' installeren voor Security Center om te beginnen met het verwerken van gebeurtenissen van Vm's en computers die aan die werk ruimte rapporteren.
 
     Voor Linux-machines wordt Agent-multihoming nog niet ondersteund. Als er een bestaande agentinstallatie wordt gedetecteerd, treedt er geen automatische inrichting op en wordt de configuratie van de machine niet gewijzigd.
 
@@ -244,8 +244,8 @@ Als de geconfigureerde werkruimte een gebruikerswerkruimte is (niet de standaard
 - **System Center Operations Manager-agent is geïnstalleerd op de machine**: Security Center installeert de Log Analytics-agentextensie naast de bestaande Operations Manager. De bestaande Operations Manager-agent blijft normaal aan de Operations Manager-server rapporteren. De Operations Manager-agent en Log Analytics-agent hebben gemeenschappelijke runtime-bibliotheken, die tijdens dit proces worden bijgewerkt naar de nieuwste versie. Als Operations Manager-agent versie 2012 is geïnstalleerd, schakel automatische inrichting dan **niet** in.
 
 - **Er is een reeds bestaande VM-extensie aanwezig**:
-    - Wanneer de bewakingsagent is geïnstalleerd als een extensie, staat de extensieconfiguratie slechts rapportage aan één werkruimte toe. Security Center overschrijft bestaande verbindingen met gebruikerswerkruimten niet. Security Center slaat beveiligingsgegevens van de VM op in de reeds verbonden werkruimte, mits de oplossing 'security' of 'securityFree' erop is geïnstalleerd. Tijdens die proces kan Security Center de extensie upgraden naar de nieuwste versie.  
-    - Als u wilt zien naar welke werkruimte de bestaande extensie gegevens verzendt, voert u de test uit om de [verbinding met Azure Security Center te valideren](/archive/blogs/yuridiogenes/validating-connectivity-with-azure-security-center). U kunt ook Log Analytics-werkruimten openen, een werkruimte selecteren, de VM selecteren en kijken naar de verbinding met de Log Analytics-agent. 
+    - Wanneer de bewakingsagent is geïnstalleerd als een extensie, staat de extensieconfiguratie slechts rapportage aan één werkruimte toe. Security Center overschrijft bestaande verbindingen met gebruikerswerkruimten niet. Security Center worden beveiligings gegevens van de virtuele machine opgeslagen in de werk ruimte die al is verbonden, op voor waarde dat de oplossing Security of SecurityCenterFree is geïnstalleerd. Tijdens die proces kan Security Center de extensie upgraden naar de nieuwste versie.
+    - Als u wilt zien naar welke werkruimte de bestaande extensie gegevens verzendt, voert u de test uit om de [verbinding met Azure Security Center te valideren](/archive/blogs/yuridiogenes/validating-connectivity-with-azure-security-center). U kunt ook Log Analytics-werkruimten openen, een werkruimte selecteren, de VM selecteren en kijken naar de verbinding met de Log Analytics-agent.
     - Als u een omgeving hebt waarin de Log Analytics-agent is geïnstalleerd op clientwerkstations en rapporteert aan een bestaande Log Analytics-werkruimte, kunt u de lijst met [door Azure Security Center ondersteunde besturingssystemen](security-center-os-coverage.md) bekijken om u ervan te verzekeren dat uw besturingssysteem wordt ondersteund. Zie [bestaande Log Analytics-klanten](./faq-azure-monitor-logs.md)voor meer informatie.
  
 

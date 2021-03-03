@@ -11,17 +11,17 @@ ms.topic: include
 ms.date: 10/15/2020
 ms.author: erhopf
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 58ce8dc67488c42485f2fac73e514c5639b11cf9
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 895943b00ef2c2541b7de6cc81648877c9a73c0d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100551310"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750990"
 ---
 In deze gids ontdekt u hoe u de [Speech-SDK](~/articles/cognitive-services/speech-service/speech-sdk.md) kunt installeren voor [Unity](https://unity3d.com/).
 
 > [!NOTE]
-> De Speech-SDK voor Unity ondersteunt Windows Desktop (x86 en x64) of Universeel Windows-platform (x86, x64, ARM/ARM64), Android (x86, ARM32/64) en iOS (x64-simulator, ARM32 en ARM64)
+> De Speech SDK voor unit ondersteunt Windows Desktop (x86 en x64) of Universeel Windows-platform (x86, x64, ARM/ARM64), Android (x86, ARM32/64) en iOS (x64 Simulator en ARM64)
 
 [!INCLUDE [License Notice](~/includes/cognitive-services-speech-service-license-notice.md)]
 

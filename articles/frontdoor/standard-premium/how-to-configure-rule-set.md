@@ -7,24 +7,19 @@ ms.service: frontdoor
 ms.topic: how-to
 ms.date: 02/18/2021
 ms.author: yuajia
-ms.openlocfilehash: e2fe475b171a99ec27ed162511db289891066e00
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 6863c492059ccee152ecf3d03a09e61793576bcb
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101098880"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101715595"
 ---
-# <a name="configure-a-rule-set"></a>Een regelset configureren
+# <a name="configure-a-rule-set-with-azure-front-door-standardpremium-preview"></a>Een regelset configureren met Azure front-deur Standard/Premium (preview)
 
 > [!Note]
 > Deze documentatie is voor Azure front deur Standard/Premium (preview). Zoekt u informatie over de voor deur van Azure? [Hier](../front-door-overview.md)weer geven.
 
-In deze zelf studie ziet u hoe u een regelset en uw eerste set regels maakt in de Azure Portal. 
-
-In deze zelfstudie leert u het volgende:
-> [!div class="checklist"]
-> - Configureer de regelset met behulp van de portal.
-> - Regel instellingen uit uw AFD-profiel verwijderen via de portal
+In dit artikel wordt beschreven hoe u een regelset en uw eerste set regels maakt in de Azure Portal. Vervolgens leert u hoe u de regelset kunt koppelen aan een route via de pagina regel instellingen of vanuit Endpoint Manager.
 
 > [!IMPORTANT]
 > Azure front deur Standard/Premium (preview) is momenteel beschikbaar als open bare preview.
@@ -33,7 +28,7 @@ In deze zelfstudie leert u het volgende:
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Voordat u de stappen in deze zelf studie kunt volt ooien, moet u eerst een Azure front-deur standaard/Premium maken. Zie [Quick Start: een Azure front deur Standard/Premium-profiel maken](create-front-door-portal.md)voor meer informatie.
+* Voordat u een regelset kunt configureren, moet u eerst een Azure front-deur standaard/Premium maken. Zie [Quick Start: een Azure front deur Standard/Premium-profiel maken](create-front-door-portal.md)voor meer informatie.
 
 ## <a name="configure-rule-set-in-azure-portal"></a>Regel instellingen in Azure Portal configureren
 
@@ -65,11 +60,11 @@ In deze zelfstudie leert u het volgende:
     1. Selecteer de koppeling *die niet is gekoppeld* .
      
 
-    1. Selecteer vervolgens op de Blade **een route koppelen** het eind punt en de route die u wilt koppelen aan de regelset. 
+    1. Selecteer vervolgens op de pagina **een route koppelen** het eind punt en de route die u wilt koppelen aan de regelset. 
     
         :::image type="content" source="../media/how-to-configure-rule-set/front-door-associate-rule-set.png" alt-text="Scherm afbeelding van een route pagina maken.":::    
         
-    1. Klik op *volgende* om regel reeks orders te wijzigen als er meerdere regel sets onder de geselecteerde route zijn. De regel instellingen worden van boven naar beneden uitgevoerd. U kunt de volg orde van de orders wijzigen door de regelset te selecteren en omhoog of omlaag te verplaatsen. Selecteer vervolgens *koppelen*.
+    1. Selecteer *volgende* om regel reeks orders te wijzigen als er meerdere regel sets onder de geselecteerde route zijn. De regel instellingen worden van boven naar beneden uitgevoerd. U kunt de volg orde van de orders wijzigen door de regelset te selecteren en omhoog of omlaag te verplaatsen. Selecteer vervolgens *koppelen*.
     
         > [!Note]
         > U kunt slechts één regelset koppelen aan één route op deze pagina. Als u een regelset met meerdere routes wilt koppelen, gebruikt u eindpunt beheerder.
@@ -86,15 +81,15 @@ In deze zelfstudie leert u het volgende:
     
         :::image type="content" source="../media/how-to-configure-rule-set/front-door-associate-rule-set-endpoint-manager-1.png" alt-text="Scherm opname van het selecteren van een eind punt in Endpoint Manager." lightbox="../media/how-to-configure-rule-set/front-door-associate-rule-set-endpoint-manager-1-expanded.png":::
 
-    1. Klik op *eind punt bewerken*  
+    1. Selecteer *eind punt bewerken*.  
     
         :::image type="content" source="../media/how-to-configure-rule-set/front-door-associate-rule-set-endpoint-manager-2.png" alt-text="Scherm opname van het selecteren van het eind punt bewerken in Endpoint Manager." lightbox="../media/how-to-configure-rule-set/front-door-associate-rule-set-endpoint-manager-2-expanded.png":::
 
-    1. Klik op de route. 
+    1. Selecteer de route. 
     
          :::image type="content" source="../media/how-to-configure-rule-set/front-door-associate-rule-set-endpoint-manager-3.png" alt-text="Scherm opname van het selecteren van een route.":::
     
-    1. Selecteer in de Blade *route bijwerken* in *regels* de regel sets die u wilt koppelen aan de route uit de vervolg keuzelijst. Vervolgens kunt u de orders wijzigen door de regel instellingen omhoog en omlaag te verplaatsen. 
+    1. Selecteer op de pagina *route bijwerken* in *regels* de regel sets die u wilt koppelen aan de route in de vervolg keuzelijst. Vervolgens kunt u de orders wijzigen door de regel instellingen omhoog en omlaag te verplaatsen. 
     
         :::image type="content" source="../media/how-to-configure-rule-set/front-door-associate-rule-set-endpoint-manager-4.png" alt-text="Scherm afbeelding van de pagina een route bijwerken.":::
     
@@ -106,7 +101,7 @@ In de voor gaande stappen hebt u een regel ingesteld en gekoppeld aan de route. 
 
 1. Ga naar de **pagina regelset** onder **instellingen** om de regelset van alle gekoppelde routes te ontkoppelen.
 
-1. Vouw de route uit en klik op de drie puntjes om *de route bewerken* te selecteren.
+1. Vouw de route uit, selecteer de drie punten. Selecteer vervolgens *de route bewerken*.
 
    :::image type="content" source="../media/how-to-configure-rule-set/front-door-disassociate-rule-set-1.png" alt-text="Scherm opname van uitgevouwen route in regel reeks.":::
 
@@ -126,13 +121,4 @@ In de voor gaande stappen hebt u een regel ingesteld en gekoppeld aan de route. 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie heeft u het volgende geleerd:
-
-* Een regelset maken
-* Een regel die is ingesteld aan uw AFD-route koppelen.
-* Een regelset uit uw AFD-profiel verwijderen
-
-Ga door naar de volgende zelf studie voor meer informatie over het toevoegen van beveiligings headers met een regel set.
-
-> [!div class="nextstepaction"]
-> [Beveiligings headers met de ingestelde regels]()
+Meer informatie over het toevoegen [van beveiligings headers met de ingestelde regels](how-to-add-security-headers.md).

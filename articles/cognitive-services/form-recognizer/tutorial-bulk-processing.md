@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: tutorial
 ms.date: 01/04/2021
 ms.author: pafarley
-ms.openlocfilehash: 1780aebc113fa68a9a89cfce9fd67c9b5911fc58
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 6faa612f55b4114b4242c48d43aae9aac8c56582
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98606672"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699994"
 ---
 # <a name="tutorial-extract-form-data-in-bulk-using-azure-data-factory"></a>Zelfstudie: formuliergegevens bulksgewijs extraheren met behulp van Azure Data Factory
 
@@ -65,7 +65,7 @@ De Azure Databricks-notebook gebruikt vervolgens de getrainde modellen om formul
 
 Uw achterstand aan formulieren bevindt zich mogelijk in uw on-premises omgeving of op een (S)FTP-server. In deze zelfstudie wordt gebruikgemaakt van formulieren in een Azure Data Lake Gen 2-opslagaccount. U kunt uw bestanden daarnaar overzetten met Azure Data Factory, Azure Storage Explorer of AzCopy. De gegevenssets voor training en scores kunnen zich in verschillende containers bevinden, maar de gegevenssets voor training voor alle formuliertypen moeten zich in dezelfde container bevinden (hoewel ze in verschillende mappen mogen zitten).
 
-Volg de instructies in [Een opslagaccount maken voor gebruik met Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/create-data-lake-storage-account) als u een nieuwe data lake wilt maken.
+Volg de instructies in [Een opslagaccount maken voor gebruik met Azure Data Lake Storage Gen2](../../storage/blobs/create-data-lake-storage-account.md) als u een nieuwe data lake wilt maken.
 
 ## <a name="create-a-parameterization-table"></a>Een parametriseringstabel maken
 
@@ -89,7 +89,7 @@ De volgende velden worden in de tabel gebruikt:
 
 ### <a name="create-the-table"></a>De tabel maken
 
-[Maak een Azure SQL-database](https://ms.portal.azure.com/#create/Microsoft.SQLDatabase) en voer vervolgens het volgende SQL-script in de [query-editor](https://docs.microsoft.com/azure/azure-sql/database/connect-query-portal) uit om de benodigde tabel te maken.
+[Maak een Azure SQL-database](https://ms.portal.azure.com/#create/Microsoft.SQLDatabase) en voer vervolgens het volgende SQL-script in de [query-editor](../../azure-sql/database/connect-query-portal.md) uit om de benodigde tabel te maken.
 
 ```sql
 CREATE TABLE dbo.ParamFormRecogniser(
@@ -142,7 +142,7 @@ U gebruikt Azure Databricks voor het opslaan en uitvoeren van de Python-code die
 
 ### <a name="create-a-secret-scope-backed-by-azure-key-vault"></a>Een geheim bereik maken dat door Azure Key Vault wordt ondersteund
 
-Als u wilt verwijzen naar de geheimen in de Azure-sleutelkluis die hierboven zijn gemaakt, moet u een geheim bereik maken in Databricks. Volg de stappen onder [Een geheim bereik maken dat door Azure Key Vault wordt ondersteund](https://docs.microsoft.com/azure/databricks/security/secrets/secret-scopes#--create-an-azure-key-vault-backed-secret-scope).
+Als u wilt verwijzen naar de geheimen in de Azure-sleutelkluis die hierboven zijn gemaakt, moet u een geheim bereik maken in Databricks. Volg de stappen onder [Een geheim bereik maken dat door Azure Key Vault wordt ondersteund](/azure/databricks/security/secrets/secret-scopes#--create-an-azure-key-vault-backed-secret-scope).
 
 ### <a name="create-a-databricks-cluster"></a>Een Databricks-cluster maken
 
@@ -461,7 +461,7 @@ Nu kunt u een scorenotebook maken. Net als de trainingsnotebook worden de bestan
 
 ## <a name="automate-training-and-scoring-with-azure-data-factory"></a>Trainen en scores geven automatiseren met Azure Data Factory
 
-De resterende stap bestaat uit het instellen van de Azure Data Factory-service (ADF) om de trainings- en scoreprocessen te automatiseren. Volg eerst de stappen onder [Een data factory maken](https://docs.microsoft.com/azure/data-factory/quickstart-create-data-factory-portal#create-a-data-factory). Nadat u de ADF-resource hebt gemaakt, moet u drie pijplijnen maken: één voor de training en twee voor het toewijzen van scores (zie hieronder).
+De resterende stap bestaat uit het instellen van de Azure Data Factory-service (ADF) om de trainings- en scoreprocessen te automatiseren. Volg eerst de stappen onder [Een data factory maken](../../data-factory/quickstart-create-data-factory-portal.md#create-a-data-factory). Nadat u de ADF-resource hebt gemaakt, moet u drie pijplijnen maken: één voor de training en twee voor het toewijzen van scores (zie hieronder).
 
 ### <a name="training-pipeline"></a>Trainingspijplijn
 

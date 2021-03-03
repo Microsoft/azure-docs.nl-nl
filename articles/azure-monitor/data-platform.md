@@ -9,12 +9,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2019
 ms.author: bwren
-ms.openlocfilehash: bccd1f001cca67a5be3d14c50e6a6db96cb6584c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 7356b9bb814f8bca5465fe74d48409b9dbca6d3b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609885"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101731694"
 ---
 # <a name="azure-monitor-data-platform"></a>Azure Monitor gegevens platform
 
@@ -28,7 +28,7 @@ Het inschakelen van de betrouw bare waarde voor de complexe reken omgevingen van
 ## <a name="observability-data-in-azure-monitor"></a>Waarneem bare gegevens in Azure Monitor
 Metrische gegevens, logboeken en gedistribueerde traceringen worden meestal aangeduid als de drie pijlers van de waarneem baarheid. Dit zijn de verschillende soorten gegevens die een bewakings programma moet verzamelen en analyseren om voldoende waarneem bare informatie te bieden over een bewaakt systeem. De berekenings functie kan worden bereikt door gegevens van meerdere pijlers te correleren en gegevens samen te voegen over de volledige set van resources die worden bewaakt. Omdat Azure Monitor gegevens uit meerdere bronnen tegelijk opslaat, kunnen de gegevens worden gecorreleerd en geanalyseerd met behulp van een gemeen schappelijke set hulpprogram ma's. Daarnaast worden gegevens over meerdere Azure-abonnementen en-tenants gecorreleerd, naast het hosten van gegevens voor andere services.
 
-Azure-resources genereren een aanzienlijke hoeveelheid bewakings gegevens. Azure Monitor consolideert deze gegevens samen met de bewaking van gegevens van andere bronnen in een meet-of Logboeken platform. Elk is geoptimaliseerd voor bepaalde bewakings scenario's en elk ondersteunt verschillende functies in Azure Monitor. Voor functies als gegevens analyse, visualisaties of waarschuwingen moet u inzicht krijgen in de verschillen zodat u uw vereiste scenario op de meest efficiënte en rendabele manier kunt implementeren. Inzichten in Azure Monitor zoals [Application Insights](app/app-insights-overview.md) of [Azure monitor voor VM's](vm/vminsights-overview.md) hulpprogram ma's voor analyse hebben waarmee u zich kunt richten op het specifieke bewakings scenario zonder dat u de verschillen tussen de twee typen gegevens hoeft te begrijpen. 
+Azure-resources genereren een aanzienlijke hoeveelheid bewakings gegevens. Azure Monitor consolideert deze gegevens samen met de bewaking van gegevens van andere bronnen in een meet-of Logboeken platform. Elk is geoptimaliseerd voor bepaalde bewakings scenario's en elk ondersteunt verschillende functies in Azure Monitor. Voor functies als gegevens analyse, visualisaties of waarschuwingen moet u inzicht krijgen in de verschillen zodat u uw vereiste scenario op de meest efficiënte en rendabele manier kunt implementeren. Inzichten in Azure Monitor zoals [Application Insights](app/app-insights-overview.md) of [VM Insights](vm/vminsights-overview.md) hebben analyse hulpprogramma's waarmee u zich kunt richten op het specifieke bewakings scenario zonder dat u de verschillen tussen de twee typen gegevens hoeft te begrijpen. 
 
 
 ### <a name="metrics"></a>Metrische gegevens

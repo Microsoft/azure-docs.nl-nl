@@ -3,12 +3,12 @@ title: Wat is er nieuw in Azure Backup
 description: Meer informatie over nieuwe functies in Azure Backup.
 ms.topic: conceptual
 ms.date: 11/11/2020
-ms.openlocfilehash: 5343ec2ae04853492abbaace2432cf94c9fb5a07
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: dd9546002e63072ce9631f5b8e7ac09ab0f5352b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762375"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728175"
 ---
 # <a name="whats-new-in-azure-backup"></a>Wat is er nieuw in Azure Backup
 
@@ -18,6 +18,8 @@ Meer informatie over de nieuwe releases vindt u in blad wijzers op deze pagina o
 
 ## <a name="updates-summary"></a>Samen vatting van updates
 
+- Februari 2021
+  - [Back-ups voor Azure-blobs (in preview-versie)](#backup-for-azure-blobs-in-preview)
 - Januari 2021
   - [Back-ups van Azure-schijf (in preview-versie)](#azure-disk-backup-in-preview)
   - [Versleuteling in rust met door de klant beheerde sleutels (algemene Beschik baarheid)](#encryption-at-rest-using-customer-managed-keys)
@@ -34,6 +36,14 @@ Meer informatie over de nieuwe releases vindt u in blad wijzers op deze pagina o
   - [Back-SAP HANA in RHEL Azure Virtual Machines (in preview-versie)](#backup-sap-hana-in-rhel-azure-virtual-machines-in-preview)
   - [Zone redundant Storage (ZRS) voor back-upgegevens (in preview-versie)](#zone-redundant-storage-zrs-for-backup-data-in-preview)
   - [Zacht verwijderen voor SQL Server en SAP HANA workloads in azure-Vm's](#soft-delete-for-sql-server-and-sap-hana-workloads)
+
+## <a name="backup-for-azure-blobs-in-preview"></a>Back-ups voor Azure-blobs (in preview-versie)
+
+Operationele back-ups voor blobs is een beheerde, lokale oplossing voor gegevens bescherming waarmee u uw blok-blobs kunt beveiligen tegen verschillende scenario's voor gegevens verlies zoals beschadigingen, Blob-verwijderingen en verwijdering van onbedoelde opslag accounts. De gegevens worden lokaal opgeslagen in het opslag account van de bron zelf en kunnen op elk gewenst moment worden hersteld naar een geselecteerd punt. Het biedt dus een eenvoudige, veilige en rendabele manier om uw blobs te beveiligen.
+
+Operationele back-ups voor blobs worden met behulp van het Back-upcentrum, onder andere mogelijkheden voor back-upbeheer, voorzien van een enkel glas venster waarmee u back-ups op schaal kunt beheren, bewaken, gebruiken en analyseren.
+
+Zie [overzicht van operationele back-ups voor Azure-blobs (in de preview-versie)](blob-backup-overview.md)voor meer informatie.
 
 ## <a name="azure-disk-backup-in-preview"></a>Back-ups van Azure-schijf (in preview-versie)
 

@@ -6,12 +6,12 @@ ms.author: bahusse
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 1/28/2021
-ms.openlocfilehash: 46c7952247babd528b230dfa0e70b0eb47878912
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 7b5223bc08c470a0e8722b76b80473aaa235b51a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99217751"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101727155"
 ---
 # <a name="best-practices-for-optimal-performance-of-your-azure-database-for-mysql---single-server"></a>Aanbevolen procedures voor optimale prestaties van uw Azure Database for MySQL-één server
 
@@ -65,7 +65,7 @@ Het is raadzaam om de herstarttijd te testen en te controleren om ervoor te zorg
 Als u de status van de buffer groep wilt opslaan bij het afsluiten van de server, stelt u de server parameter `innodb_buffer_pool_dump_at_shutdown` in op `ON` . Stel op dezelfde manier de server parameter in om `innodb_buffer_pool_load_at_startup` `ON` de status van de buffer groep te herstellen bij het opstarten van de server. U kunt de invloed op het opstarten en opnieuw opstarten bepalen door de waarde van de server parameter te verlagen en af te stemmen `innodb_buffer_pool_dump_pct` . Deze para meter is standaard ingesteld op `25` .
 
 > [!Note]
-> De opwarm-para meters van de InnoDB-buffer groep worden alleen ondersteund in de opslag servers voor algemeen gebruik met Maxi maal 16 TB opslag. Meer informatie over [Azure database for MySQL opslag opties vindt u hier](https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers#storage).
+> De opwarm-para meters van de InnoDB-buffer groep worden alleen ondersteund in de opslag servers voor algemeen gebruik met Maxi maal 16 TB opslag. Meer informatie over [Azure database for MySQL opslag opties vindt u hier](./concepts-pricing-tiers.md#storage).
 
 ## <a name="next-steps"></a>Volgende stappen
 

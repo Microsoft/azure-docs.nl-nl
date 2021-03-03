@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/16/2021
+ms.date: 02/25/2021
 ms.author: b-juche
-ms.openlocfilehash: f36a7827b9351b5565eab19abd4bfdb3d8b4a273
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 756cadd42e8cda557a90c39e2412f5d4f3290835
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100635401"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101741205"
 ---
 # <a name="solution-architectures-using-azure-netapp-files"></a>Oplossingsarchitecturen op basis van Azure NetApp Files
 Dit artikel bevat verwijzingen naar aanbevolen procedures waarmee u inzicht krijgt in de oplossings architecturen voor het gebruik van Azure NetApp Files.  
@@ -86,6 +86,7 @@ Deze sectie bevat Naslag informatie over SAP on Azure oplossingen.
 ### <a name="sap-iq-nls"></a>SAP IQ-NLS
 
 *   [SAP IQ-NLS HA-oplossing implementeren met behulp van Azure NetApp Files op SUSE Linux Enterprise Server](https://techcommunity.microsoft.com/t5/running-sap-applications-on-the/deploy-sap-iq-nls-ha-solution-using-azure-netapp-files-on-suse/ba-p/1651172#.X2tDfpNzBh4.linkedin)
+* [SAP IQ-licentie in HA scenario beheren](https://techcommunity.microsoft.com/t5/running-sap-applications-on-the/how-to-manage-sap-iq-license-in-ha-scenario/ba-p/2052583)
 
 ### <a name="sap-tech-community-and-blog-posts"></a>SAP-technische community-en blog berichten 
 

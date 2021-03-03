@@ -6,19 +6,19 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 09/22/2020
+ms.date: 02/17/2021
 ms.author: cherylmc
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 51480a49aab2c1277eeb846c593fcb2bc858d1f0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c1a2a54bf2d4c5de3e6cfca66256f60592fc1f3e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90983711"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737508"
 ---
 # <a name="about-virtual-hub-routing"></a>Over virtuele hub-routering
 
-De routerings mogelijkheden in een virtuele hub worden geboden door een router die alle route ring beheert tussen gateways met behulp van Border Gateway Protocol (BGP). Een virtuele hub kan meerdere gateways bevatten, zoals een site-naar-site-VPN-gateway, ExpressRoute-gateway, punt-naar-site-gateway Azure Firewall. Deze router biedt ook transit connectiviteit tussen virtuele netwerken die verbinding maken met een virtuele hub en die een geaggregeerde door Voer van 50 Gbps kan ondersteunen. Deze routerings mogelijkheden zijn van toepassing op standaard virtuele WAN-klanten. 
+De routerings mogelijkheden in een virtuele hub worden geboden door een router die alle route ring beheert tussen gateways met behulp van Border Gateway Protocol (BGP). Een virtuele hub kan meerdere gateways bevatten, zoals een site-naar-site-VPN-gateway, ExpressRoute-gateway, punt-naar-site-gateway Azure Firewall. Deze router biedt ook transit connectiviteit tussen virtuele netwerken die verbinding maken met een virtuele hub en die een geaggregeerde door Voer van 50 Gbps kan ondersteunen. Deze routerings mogelijkheden zijn van toepassing op standaard virtuele WAN-klanten.
 
 Zie [route ring van virtuele hub configureren voor meer informatie over het](how-to-virtual-hub-routing.md)configureren van route ring.
 
@@ -28,9 +28,9 @@ In de volgende secties worden de belangrijkste concepten in virtuele hub-route r
 
 ### <a name="hub-route-table"></a><a name="hub-route"></a>Route tabel van de hub
 
-Een route tabel van de virtuele hub kan een of meer routes bevatten. Een route bevat de naam, een label, een doel type, een lijst met doel voorvoegsels en de volgende hop-informatie voor een pakket dat moet worden doorgestuurd. Een **verbinding** heeft meestal een routerings configuratie die aan een route tabel is gekoppeld of door gegeven
+Een route tabel van de virtuele hub kan een of meer routes bevatten. Een route bevat de naam, een label, een doel type, een lijst met doel voorvoegsels en de volgende hop-informatie voor een pakket dat moet worden doorgestuurd. Een **verbinding** heeft meestal een routerings configuratie die aan een route tabel is gekoppeld of door gegeven.
 
-### <a name="connection"></a><a name="connection"></a>Verbinding
+### <a name="connections"></a><a name="connection"></a>Verbindingen
 
 Verbindingen zijn Resource Manager-resources die een routerings configuratie hebben. De vier typen verbindingen zijn:
 
@@ -55,29 +55,33 @@ Verbindingen geven dynamische routes door aan een route tabel. Met een VPN-verbi
 
 Er is ook een **route tabel geen** beschikbaar voor elke virtuele hub. Door door te geven aan de geen route tabel, houdt in dat er geen routes moeten worden door gegeven van de verbinding. VPN-, ExpressRoute-en gebruikers-VPN-verbindingen sturen routes door naar dezelfde set route tabellen.
 
-:::image type="content" source="./media/about-virtual-hub-routing/concepts-propagation.png" alt-text="Organisatie":::
+:::image type="content" source="./media/about-virtual-hub-routing/concepts-propagation.png" alt-text="Doorgifte":::
 
-### <a name="labels"></a><a name="static"></a>Labels
-Labels bieden een mechanisme voor het logisch groeperen van route tabellen. Dit is met name handig tijdens het door geven van routes van verbindingen naar meerdere route tabellen. De standaard route tabel heeft bijvoorbeeld een ingebouwd label met de naam default. Wanneer gebruikers verbindings routes door geven naar een standaard label, wordt deze automatisch toegepast op alle standaard route tabellen voor elke hub in het virtuele WAN. 
+### <a name="labels"></a><a name="labels"></a>Labels
+
+Labels bieden een mechanisme voor het logisch groeperen van route tabellen. Dit is met name handig tijdens het door geven van routes van verbindingen naar meerdere route tabellen. De **standaard route tabel** heeft bijvoorbeeld een ingebouwd label met de naam default. Wanneer gebruikers verbindings routes door geven naar een standaard label, wordt deze automatisch toegepast op alle standaard route tabellen voor elke hub in het virtuele WAN.
 
 ### <a name="configuring-static-routes-in-a-virtual-network-connection"></a><a name="static"></a>Statische routes configureren in een virtuele netwerk verbinding
 
 Het configureren van statische routes biedt een mechanisme voor het stuur verkeer via een volgende hop-IP. Dit kan een virtueel netwerk apparaat (NVA) zijn dat is ingericht in een spoke-VNet dat is gekoppeld aan een virtuele hub. De statische route bestaat uit een route naam, een lijst met doel voorvoegsels en het volgende hop-IP-adres.
 
-## <a name="reset-hub"></a><a name="route"></a>Hub opnieuw instellen
-Deze optie is alleen beschikbaar in de Azure Portal, maar biedt de gebruiker een manier om mislukte resources zoals route tabellen, hub-router of de virtuele-hub-resource zelf terug te brengen naar de inrichtings status Rightful. Dit is een extra optie waarmee de gebruiker rekening moet houden voordat u contact opneemt met micro soft voor ondersteuning. Met deze bewerking worden de gateways in een virtuele hub niet opnieuw ingesteld. 
+## <a name="route-tables-for-pre-existing-routes"></a><a name="route"></a>Route tabellen voor reeds bestaande routes
 
-## <a name="route-tables-in-basic-and-standard-virtual-wans-prior-to-the-feature-set-of-association-and-propagation"></a><a name="route"></a>Route tabellen in de Basic-en Standard-standaard-virtuele Wan's vóór de functieset van koppeling en doorgifte
-
-Routeringstabellen hebben nu functies voor koppeling en doorgifte. Een vooraf bestaande routeringstabel is een routeringstabel die deze functies niet heeft. Als u al bestaande routes in Hub Routing hebt en u de nieuwe mogelijkheden wilt gebruiken, moet u rekening houden met het volgende:
+Routeringstabellen hebben nu functies voor koppeling en doorgifte. Een vooraf bestaande routeringstabel is een routeringstabel die deze functies niet heeft. Als u al bestaande routes in hubroutering hebt en u de nieuwe mogelijkheden wilt gebruiken, moet u rekening houden met het volgende:
 
 * **Standaard virtuele WAN-klanten met al bestaande routes in de virtuele hub**:
 
-Als u al bestaande routes in de sectie route ring voor de hub in Azure Portal hebt, moet u deze eerst verwijderen en vervolgens proberen nieuwe route tabellen te maken (beschikbaar in de sectie route tabellen van de hub in Azure Portal)
+   Als u bestaande routes hebt in de sectie Routering voor de hub in Azure Portal, verwijder die dan eerst en probeer vervolgens nieuwe routetabellen te maken (beschikbaar in de sectie Routeringstabellen voor de hub in Azure Portal).
 
-* **Eenvoudige virtuele WAN-klanten met reeds bestaande routes in de virtuele hub**: als u al bestaande routes in de sectie route ring voor de hub in azure Portal hebt, moet u deze eerst verwijderen en vervolgens uw virtuele standaard-WAN **upgraden** naar standaard virtuele WAN. Zie [Een virtueel WAN upgraden van Basic naar Standard](upgrade-virtual-wan.md).
+* **Eenvoudige virtuele WAN-klanten met al bestaande routes in de virtuele hub**:
 
-## <a name="virtual-wan-routing-considerations"></a><a name="considerations"></a>Aandachtspunten voor virtuele WAN-route ring
+   Als u bestaande routes hebt in de sectie Routering voor de hub in Azure Portal, verwijder die dan eerst en **upgrade** uw virtuele WAN Basic naar Standard. Zie [Een virtueel WAN upgraden van Basic naar Standard](upgrade-virtual-wan.md).
+
+## <a name="hub-reset"></a><a name="reset"></a>Hub opnieuw instellen
+
+**Resetten** van de virtuele hub zijn alleen beschikbaar in de Azure Portal. Opnieuw instellen biedt een manier om mislukte resources zoals route tabellen, hub-router of de virtuele-hub-resource zelf terug te brengen naar de inrichtings status Rightful. Overweeg de hub opnieuw in te stellen voordat u contact opneemt met micro soft voor ondersteuning. Met deze bewerking worden de gateways in een virtuele hub niet opnieuw ingesteld.
+
+## <a name="additional-considerations"></a><a name="considerations"></a>Aanvullende overwegingen
 
 Houd rekening met het volgende bij het configureren van virtuele WAN-route ring:
 
@@ -86,11 +90,8 @@ Houd rekening met het volgende bij het configureren van virtuele WAN-route ring:
 * Vertakking-naar-vertakking via Azure Firewall wordt momenteel niet ondersteund.
 * Wanneer u Azure Firewall in meerdere regio's gebruikt, moeten alle spoke-virtuele netwerken aan dezelfde route tabel zijn gekoppeld. Als er bijvoorbeeld een subset van de VNets door de Azure Firewall, terwijl andere VNets overs Laan, is het niet mogelijk om de Azure Firewall in dezelfde virtuele hub over te slaan.
 * Eén volgende hop-IP kan per VNet-verbinding worden geconfigureerd.
-* Virtuele hub biedt geen ondersteuning voor een statische route voor 0.0.0.0/0 en de volgende hop Virtual Network verbinding (of een IP-adres van een apparaat in de VNet-verbinding)
-* Alle informatie met betrekking tot de route 0.0.0.0/0 wordt beperkt tot de route tabel van een lokale hub. Deze route wordt niet door gegeven tussen hubs.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [route ring van virtuele hub configureren voor meer informatie over het](how-to-virtual-hub-routing.md)configureren van route ring.
-
-Raadpleeg de [Veelgestelde vragen](virtual-wan-faq.md)voor meer informatie over Virtual WAN.
+* Zie [route ring van virtuele hub configureren voor meer informatie over het](how-to-virtual-hub-routing.md)configureren van route ring.
+* Raadpleeg de [Veelgestelde vragen](virtual-wan-faq.md)voor meer informatie over Virtual WAN.

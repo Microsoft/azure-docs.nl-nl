@@ -4,12 +4,12 @@ description: Overzicht van Service Bus toegangs beheer met behulp van hand teken
 ms.topic: article
 ms.date: 01/19/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6bdc167c437a79d609db25a2e3c48b71e0a748b2
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: d210da4b653a20dd273dfce723f0bf9d5dbf743b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98598821"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737814"
 ---
 # <a name="service-bus-access-control-with-shared-access-signatures"></a>Toegangs beheer Service Bus met hand tekeningen voor gedeelde toegang
 
@@ -130,9 +130,9 @@ Als u weet of vermoedt dat een sleutel is aangetast en u de sleutels moet intrek
 
 ## <a name="shared-access-signature-authentication-with-service-bus"></a>Verificatie Shared Access Signature met Service Bus
 
-De scenario's die hieronder worden beschreven, zijn onder andere het configureren van autorisatie regels, het genereren van SAS-tokens en client autorisatie.
+Het scenario dat hieronder wordt beschreven, omvat het configureren van de verificatie regels, het genereren van SAS-tokens en client autorisatie.
 
-Zie [Shared Access Signature Authentication with Service Bus](https://code.msdn.microsoft.com/Shared-Access-Signature-0a88adf8)voor een volledig werkend voor beeld van een service bus toepassing die de configuratie illustreert en gebruikmaakt van SAS-autorisatie. Een verwant voor beeld dat het gebruik van SAS-autorisatie regels aangeeft die zijn geconfigureerd op naam ruimten of onderwerpen om Service Bus-abonnementen te beveiligen, is hier: [Using Shared Access Signature (SAS)-verificatie met Service Bus-abonnementen](https://code.msdn.microsoft.com/Using-Shared-Access-e605b37c).
+Zie [Shared Access Signature Authentication with Service Bus](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/ManagingEntities/SASAuthorizationRule)voor een voor beeld van een service bus toepassing die de configuratie illustreert en gebruikmaakt van SAS-autorisatie.
 
 ## <a name="access-shared-access-authorization-rules-on-an-entity"></a>Toegang tot de autorisatie regels voor gedeelde toegang voor een entiteit
 

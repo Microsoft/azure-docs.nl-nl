@@ -6,18 +6,18 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 09/08/2020
-ms.openlocfilehash: 6b273b864c8329547ef91eb7063a064e0f5cb77d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: b1295904f25d38c97578fa6fd6ede4ecd50c0456
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612831"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728974"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-secure-export"></a>Verbinding maken tussen Azure en ITSM-hulpprogram ma's met behulp van beveiligde export
 
 In dit artikel wordt beschreven hoe u de verbinding tussen het ITSM-product of de service van uw IT-Service beheer (met behulp van beveiligde export) kunt configureren.
 
-Secure export is een bijgewerkte versie van [IT Service Management-connector (ITSMC)](../platform/itsmc-overview.md). Met beide versies kunt u werk items maken in een ITSM-hulp programma wanneer Azure Monitor waarschuwingen verzendt. De functionaliteit omvat metrische, logboek-en activiteiten logboek waarschuwingen.
+Secure export is een bijgewerkte versie van [IT Service Management-connector (ITSMC)](./itsmc-overview.md). Met beide versies kunt u werk items maken in een ITSM-hulp programma wanneer Azure Monitor waarschuwingen verzendt. De functionaliteit omvat metrische, logboek-en activiteiten logboek waarschuwingen.
 
 ITSMC maakt gebruik van gebruikers naam en wacht woord. Beveiligd exporteren heeft sterkere verificatie omdat deze gebruikmaakt van Azure Active Directory (Azure AD). Azure AD is de identiteits- en toegangsbeheerservice van Microsoft op basis van de cloud. Het helpt gebruikers zich aan te melden en toegang te krijgen tot interne of externe resources. Met Azure AD met ITSM kunt u Azure-waarschuwingen identificeren (via de Azure AD-toepassings-ID) die naar het externe systeem zijn verzonden.
 
@@ -55,4 +55,4 @@ De belangrijkste voor delen van de integratie zijn:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [ITSM-werk items maken op basis van Azure-waarschuwingen](../platform/itsmc-overview.md)
+* [ITSM-werk items maken op basis van Azure-waarschuwingen](./itsmc-overview.md)

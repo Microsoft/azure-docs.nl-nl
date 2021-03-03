@@ -8,42 +8,34 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 12/17/2020
+ms.date: 02/23/2021
 ms.author: aahi
-ms.openlocfilehash: af7c3f85a75cfb425003b0da2af268fbba1d1d10
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: f6a109c10491ad2eabb12069157e9e6f394bc1f4
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99092581"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101736607"
 ---
 # <a name="text-analytics-api-v3-language-support"></a>Ondersteuning voor Text Analytics-API v3-taal 
 
 #### <a name="sentiment-analysis"></a>[Sentimentanalyse](#tab/sentiment-analysis)
 
-| Taal              | Taalcode | v2-ondersteuning | v3-ondersteuning | De versie van het v3-model wordt gestart: |              Notities |
-|:----------------------|:-------------:|:----------:|:----------:|:--------------------------:|-------------------:|
-| Chinese-Simplified    |   `zh-hans`   |     ✓      |     ✓      |         2019-10-01         | `zh` ook geaccepteerd |
-| Chinese-Traditional   |   `zh-hant`   |            |     ✓      |         2019-10-01         |                    |
-| Deens               |     `da`      |     ✓      |            |                            |                    |
-| Nederlands                 |     `nl`      |     ✓      |            |                            |                    |
-| Engels               |     `en`      |     ✓      |     ✓      |         2019-10-01         |                    |
-| Fins               |     `fi`      |     ✓      |            |                            |                    |
-| Frans                |     `fr`      |     ✓      |     ✓      |         2019-10-01         |                    |
-| Duits                |     `de`      |     ✓      |     ✓      |         2019-10-01         |                    |
-| Grieks                 |     `el`      |     ✓      |            |                            |                    |
-| Hindi                 |     `hi`      |            |      ✓     |          2020-04-01        |                    |
-| Italiaans               |     `it`      |     ✓      |     ✓      |         2019-10-01         |                    |
-| Japans              |     `ja`      |     ✓      |     ✓      |         2019-10-01         |                    |
-| Koreaans                |     `ko`      |            |     ✓      |         2019-10-01         |                    |
-| Noors (Bokmål)   |     `no`      |     ✓      |     ✓      |         2020-07-01         |                    |
-| Pools                |     `pl`      |     ✓      |            |                            |                    |
-| Portugees (Brazilië)   |    `pt-BR`    |            |     ✓      |         2020-04-01         |                    |
-| Portugees (Portugal) |    `pt-PT`    |     ✓      |     ✓      |         2019-10-01         | `pt` ook geaccepteerd |
-| Russisch               |     `ru`      |     ✓      |            |                            |                    |
-| Spaans               |     `es`      |     ✓      |     ✓      |         2019-10-01         |                    |
-| Zweeds               |     `sv`      |     ✓      |            |                            |                    |
-| Turks               |     `tr`      |     ✓      |     ✓       |         2020-07-01        |                    |
+| Taal              | Taalcode | v3-ondersteuning | De versie van het v3-model wordt gestart: |              Notities |
+|:----------------------|:-------------:|:----------:|:--------------------------:|-------------------:|
+| Chinese-Simplified    |   `zh-hans`   |     ✓      |         2019-10-01         | `zh` ook geaccepteerd |
+| Chinese-Traditional   |   `zh-hant`   |    ✓      |         2019-10-01         |                    |
+| Engels               |     `en`      |     ✓      |         2019-10-01         |                    |
+| Frans                |     `fr`      |     ✓      |         2019-10-01         |                    |
+| Duits                |     `de`      |     ✓      |         2019-10-01         |                    |
+| Italiaans               |     `it`      |     ✓      |         2019-10-01         |                    |
+| Japans              |     `ja`      |     ✓      |         2019-10-01         |                    |
+| Koreaans                |     `ko`      |    ✓      |         2019-10-01         |                    |
+| Noors (Bokmål)   |     `no`      |     ✓      |         2020-07-01         |                    |
+| Portugees (Brazilië)   |    `pt-BR`    |     ✓      |         2020-04-01         |                    |
+| Portugees (Portugal) |    `pt-PT`    |     ✓      |         2019-10-01         | `pt` ook geaccepteerd |
+| Spaans               |     `es`      |     ✓      |         2019-10-01         |                    |
+| Turks               |     `tr`      |     ✓       |         2020-07-01        |                    |
 
 ### <a name="opinion-mining-v31-preview-only"></a>Opinie-analyse (alleen v 3.1-Preview-versie)
 
@@ -85,31 +77,46 @@ ms.locfileid: "99092581"
 
 #### <a name="key-phrase-extraction"></a>[Sleuteltermextractie](#tab/key-phrase-extraction)
 
-| Taal              | Taalcode | v2-ondersteuning | v3-ondersteuning | Beschikbaar vanaf versie van v3-model: |       Notities        |
-|:----------------------|:-------------:|:----------:|:----------:|:-----------------------------------------:|:------------------:|
-| Deens                |     `da`      |     ✓      |      ✓     |                2019-10-01                 |                    |
-| Nederlands                 |     `nl`      |     ✓      |     ✓      |                2019-10-01                 |                    |
-| Engels               |     `en`      |     ✓      |     ✓      |                2019-10-01                 |                    |
-| Fins               |     `fi`      |     ✓      |     ✓      |                2019-10-01                 |                    |
-| Frans                |     `fr`      |     ✓      |     ✓      |                2019-10-01                 |                    |
-| Duits                |     `de`      |     ✓      |     ✓      |                2019-10-01                 |                    |
-| Italiaans               |     `it`      |     ✓      |     ✓      |                2019-10-01                 |                    |
-| Japans              |     `ja`      |     ✓      |     ✓      |                2019-10-01                 |                    |
-| Koreaans                |     `ko`      |     ✓      |     ✓      |                2019-10-01                 |                    |
-| Noors (Bokmål)   |     `no`      |     ✓      |     ✓      |                2020-07-01                 | `nb` ook geaccepteerd |
-| Pools                |     `pl`      |     ✓      |     ✓      |                2019-10-01                 |                    |
-| Portugees (Brazilië)   |    `pt-BR`    |     ✓      |     ✓      |                2019-10-01                 |                    |
-| Portugees (Portugal) |    `pt-PT`    |     ✓      |     ✓      |                2019-10-01                 | `pt` ook geaccepteerd |
-| Russisch               |     `ru`      |     ✓      |     ✓      |                2019-10-01                 |                    |
-| Spaans               |     `es`      |     ✓      |     ✓      |                2019-10-01                 |                    |
-| Zweeds               |     `sv`      |     ✓      |     ✓      |                2019-10-01                 |                    |
+| Taal              | Taalcode |  v3-ondersteuning | Beschikbaar vanaf versie van v3-model: |       Notities        |
+|:----------------------|:-------------:|:----------:|:-----------------------------------------:|:------------------:|
+| Deens                |     `da`      |     ✓     |                2019-10-01                 |                    |
+| Nederlands                 |     `nl`      |     ✓      |                2019-10-01                 |                    |
+| Engels               |     `en`      |     ✓      |                2019-10-01                 |                    |
+| Fins               |     `fi`      |     ✓      |                2019-10-01                 |                    |
+| Frans                |     `fr`      |     ✓      |                2019-10-01                 |                    |
+| Duits                |     `de`      |     ✓      |                2019-10-01                 |                    |
+| Italiaans               |     `it`      |     ✓      |                2019-10-01                 |                    |
+| Japans              |     `ja`      |     ✓      |                2019-10-01                 |                    |
+| Koreaans                |     `ko`      |     ✓      |                2019-10-01                 |                    |
+| Noors (Bokmål)   |     `no`      |     ✓      |                2020-07-01                 | `nb` ook geaccepteerd |
+| Pools                |     `pl`      |    ✓      |                2019-10-01                 |                    |
+| Portugees (Brazilië)   |    `pt-BR`    |     ✓      |                2019-10-01                 |                    |
+| Portugees (Portugal) |    `pt-PT`    |    ✓      |                2019-10-01                 | `pt` ook geaccepteerd |
+| Russisch               |     `ru`      |     ✓      |                2019-10-01                 |                    |
+| Spaans               |     `es`      |     ✓      |                2019-10-01                 |                    |
+| Zweeds               |     `sv`      |     ✓      |                2019-10-01                 |                    |
 
 #### <a name="entity-linking"></a>[Entiteiten koppelen](#tab/entity-linking)
 
-| Taal | Taalcode | v2-ondersteuning | v3-ondersteuning | Beschikbaar vanaf versie van v3-model: | Notities |
-|:---------|:-------------:|:----------:|:----------:|:-----------------------------------------:|:-----:|
-| Engels  |     `en`      |     ✓      |     ✓      |                2019-10-01                 |       |
-| Spaans  |     `es`      |     ✓      |     ✓      |                2019-10-01                 |       |
+| Taal | Taalcode |  v3-ondersteuning | Beschikbaar vanaf versie van v3-model: | Notities |
+|:---------|:-------------:|:----------:|:-----------------------------------------:|:-----:|
+| Engels  |     `en`      |     ✓      |                2019-10-01                 |       |
+| Spaans  |     `es`      |    ✓      |                2019-10-01                 |       |
+
+#### <a name="personally-identifiable-information-pii"></a>[Persoonlijk identificeer bare informatie (PII)](#tab/pii)
+
+| Taal               | Taalcode | v3-ondersteuning | Starten met versie van v3-model: |       Notities        |
+|:-----------------------|:-------------:|:----------:|:-------------------------------:|:------------------:|
+| Chinese-Simplified     |   `zh-hans`   |     ✓      |               2021-01-15        | `zh` ook geaccepteerd |
+| Engels                |     `en`      |     ✓      |               2020-07-01        |                    |
+| Frans                 |     `fr`      |     ✓      |               2021-01-15        |                    |
+| Duits                 |     `de`      |     ✓      |               2021-01-15        |                    |
+| Italiaans               |     `it`      |     ✓       |               2021-01-15        |                    |
+| Japans              |     `ja`      |     ✓       |               2021-01-15        |                    |
+| Koreaans                |     `ko`      |     ✓       |               2021-01-15        |                    |
+| Portugees (Brazilië)   |    `pt-BR`    |     ✓       |               2021-01-15        |                    |
+| Portugees (Portugal) |    `pt-PT`    |     ✓       |               2021-01-15        | `pt` ook geaccepteerd |
+| Spaans               |     `es`      |     ✓       |               2020-04-01        |                    |
 
 #### <a name="language-detection"></a>[Taaldetectie](#tab/language-detection)
 
@@ -222,6 +229,7 @@ Als er inhoud in een minder vaak gebruikte taal wordt weer gegeven, kunt u Taald
 |Tibetaanse|`bo`|✓|2021-01-05|
 |Tigrinya|`ti`|✓|2021-01-05|
 |Tongaans|`to`|✓|2020-09-01|
+|Turks|`tr`|✓|2021-01-05|
 |Turkmeens|`tk`|✓|2021-01-05|
 |Xhosa|`xh`|✓|2021-01-05|
 |Yoruba|`yo`|✓|2021-01-05|

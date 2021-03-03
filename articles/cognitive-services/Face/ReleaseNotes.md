@@ -10,19 +10,19 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 12/11/2020
 ms.author: pafarley
-ms.openlocfilehash: 5e537166352f242d54819477a4dc0051aad684b0
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 49d8eeaa8d1160659a456f147a6a5e27f923af33
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99258079"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733462"
 ---
 # <a name="whats-new-in-face-service"></a>Wat is er nieuw in de Face-service?
 
 De Azure face-service wordt doorlopend bijgewerkt. Gebruik dit artikel om op de hoogte te blijven van de functie verbeteringen, oplossingen en documentatie-updates.
 
 ## <a name="january-2021"></a>Januari 2021
-* Latentie beperken bij het gebruik van de Face-API: het gezichts team heeft een nieuw artikel gepubliceerd met een gedetailleerde beschrijving van potentiële oorzaken van latentie bij het gebruik van de service en mogelijke beperkende strategieën. Zie [latentie beperken bij het gebruik van de face-service](https://docs.microsoft.com/azure/cognitive-services/face/face-api-how-to-topics/how-to-mitigate-latency).
+* Latentie beperken bij het gebruik van de Face-API: het gezichts team heeft een nieuw artikel gepubliceerd met een gedetailleerde beschrijving van potentiële oorzaken van latentie bij het gebruik van de service en mogelijke beperkende strategieën. Zie [latentie beperken bij het gebruik van de face-service](./face-api-how-to-topics/how-to-mitigate-latency.md).
 
 ## <a name="december-2020"></a>December 2020
 * Klant configuratie voor opslag van Face-ID: Hoewel de face-service geen afbeeldingen van de klant opslaat, worden de geëxtraheerde gezichts functie (s) opgeslagen op de server. De face-ID is een id van het gezichts onderdeel en wordt gebruikt bij [gezicht identificeren](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239), [Face-verify](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a)en [Face-vind vergelijkbaar](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237). De opgeslagen gezichts functies verlopen en worden 24 uur na de oorspronkelijke detectie oproep verwijderd. Klanten kunnen nu bepalen hoe lang deze gezichts-Id's in de cache worden opgeslagen. De maximum waarde is nog Maxi maal 24 uur, maar een minimum waarde van 60 seconden kan nu worden ingesteld. De nieuwe Peri Oden voor gezichts-Id's die in de cache worden opgeslagen, zijn een waarde tussen 60 seconden en 24 uur. Meer informatie vindt u in de naslag informatie [over API (de para](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) meter *faceIdTimeToLive* ).
@@ -31,10 +31,10 @@ De Azure face-service wordt doorlopend bijgewerkt. Gebruik dit artikel om op de 
 * Een voor beeld van een inschrijvings-app gepubliceerd om aanbevolen procedures voor het vaststellen van zinvolle toestemming te demonstreren en hoogwaardige gezichts herkennings systemen te maken met inschrijvingen van hoge kwaliteit. Het open source-voor beeld is te vinden in de hand leiding [een inschrijvings-app bouwen](build-enrollment-app.md) en op [github](https://github.com/Azure-Samples/cognitive-services-FaceAPIEnrollmentSample), klaar voor ontwikkel aars om te implementeren of aan te passen. 
 
 ## <a name="august-2020"></a>Augustus 2020
-* Door de klant beheerde versleuteling van gegevens in rust: met de face-service worden uw gegevens automatisch versleuteld wanneer deze persistent worden gemaakt in de Cloud. Met de face service-versleuteling worden uw gegevens beschermd, zodat u kunt voldoen aan de verplichtingen voor beveiliging en naleving van uw organisatie. Uw abonnement maakt standaard gebruik van door Microsoft beheerde versleutelingssleutels. Er is ook een nieuwe optie voor het beheren van uw abonnement met uw eigen sleutels, genaamd door de klant beheerde sleutels (CMK). Meer informatie vindt u op door de [klant beheerde sleutels](https://docs.microsoft.com/azure/cognitive-services/face/face-encryption-of-data-at-rest).
+* Door de klant beheerde versleuteling van gegevens in rust: met de face-service worden uw gegevens automatisch versleuteld wanneer deze persistent worden gemaakt in de Cloud. Met de face service-versleuteling worden uw gegevens beschermd, zodat u kunt voldoen aan de verplichtingen voor beveiliging en naleving van uw organisatie. Uw abonnement maakt standaard gebruik van door Microsoft beheerde versleutelingssleutels. Er is ook een nieuwe optie voor het beheren van uw abonnement met uw eigen sleutels, genaamd door de klant beheerde sleutels (CMK). Meer informatie vindt u op door de [klant beheerde sleutels](./encrypt-data-at-rest.md).
 
 ## <a name="april-2020"></a>April 2020
-* Nieuw Face-API herkennings model: het nieuwe model van de erkenning 03 is het meest nauw keurige model dat momenteel beschikbaar is. Als u een nieuwe klant bent, raden we u aan dit model te gebruiken. De erkenning 03 biedt een verbeterde nauw keurigheid voor de vergelijking van overeenkomsten en de matching van personen. Meer informatie vindt u in [een gezichts herkennings model opgeven](https://docs.microsoft.com/azure/cognitive-services/face/face-api-how-to-topics/specify-recognition-model).
+* Nieuw Face-API herkennings model: het nieuwe model van de erkenning 03 is het meest nauw keurige model dat momenteel beschikbaar is. Als u een nieuwe klant bent, raden we u aan dit model te gebruiken. De erkenning 03 biedt een verbeterde nauw keurigheid voor de vergelijking van overeenkomsten en de matching van personen. Meer informatie vindt u in [een gezichts herkennings model opgeven](./face-api-how-to-topics/specify-recognition-model.md).
 
 ## <a name="june-2019"></a>Juni 2019
 

@@ -4,12 +4,12 @@ description: Een virtuele Azure-machine herstellen vanaf een herstel punt met be
 ms.reviewer: geg
 ms.topic: conceptual
 ms.date: 08/02/2020
-ms.openlocfilehash: 256998f2e687152bb63c9368af1a56f05bba7672
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: c15b2dc39202c6f8386031bcf055688aa2d279df
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820565"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101722684"
 ---
 # <a name="how-to-restore-azure-vm-data-in-azure-portal"></a>Azure VM-gegevens herstellen in Azure Portal
 
@@ -160,7 +160,7 @@ Als CRR is ingeschakeld, kunt u de back-upitems in de secundaire regio weer geve
 
 De gebruikers ervaring voor het herstellen van de secundaire regio is vergelijkbaar met de gebruikers ervaring voor het herstellen van de primaire regio. Wanneer u details in het configuratie venster voor herstellen configureert om uw herstel te configureren, wordt u gevraagd om alleen para meters van secundaire regio's op te geven.
 
-De [productie-RPO](azure-backup-glossary.md#rpo-recovery-point-objective) van de secundaire regio is momenteel tot 12 uur van de primaire regio, zelfs als [geo-redundante opslag met lees toegang (RA-GRS)](https://docs.microsoft.com/azure/storage/common/storage-redundancy#redundancy-in-a-secondary-region) 15 minuten is.
+De [productie-RPO](azure-backup-glossary.md#rpo-recovery-point-objective) van de secundaire regio is momenteel tot 12 uur van de primaire regio, zelfs als [geo-redundante opslag met lees toegang (RA-GRS)](../storage/common/storage-redundancy.md#redundancy-in-a-secondary-region) 15 minuten is.
 
 ![Selecteer de VM die u wilt herstellen](./media/backup-azure-arm-restore-vms/sec-restore.png)
 
@@ -179,7 +179,7 @@ De [productie-RPO](azure-backup-glossary.md#rpo-recovery-point-objective) van de
 >- De functie voor het terugzetten van meerdere regio's herstelt CMK (door de klant beheerde sleutels) ingeschakelde Azure-Vm's waarvoor geen back-up wordt gemaakt in een CMK ingeschakeld Recovery Services kluis als niet-CMK ingeschakelde virtuele machines in de secundaire regio.
 >- De Azure-rollen die nodig zijn voor het herstellen van de secundaire regio, zijn hetzelfde als die in de primaire regio.
 
-Met [Azure zone vastgemaakte vm's](https://docs.microsoft.com/azure/virtual-machines/windows/create-portal-availability-zone) kunnen worden hersteld in alle [beschikbaarheids zones](https://docs.microsoft.com/azure/availability-zones/az-overview) van dezelfde regio.
+Met [Azure zone vastgemaakte vm's](../virtual-machines/windows/create-portal-availability-zone.md) kunnen worden hersteld in alle [beschikbaarheids zones](../availability-zones/az-overview.md) van dezelfde regio.
 
 In het herstel proces ziet u de optie **beschikbaarheids zone.** U ziet eerst uw standaard zone. Als u een andere zone wilt kiezen, kiest u het gewenste nummer voor de zone. Als de zone vastgemaakt niet beschikbaar is, kunt u de gegevens niet herstellen naar een andere zone, omdat de gegevens waarvan een back-up is gemaakt, niet zonally worden gerepliceerd.
 

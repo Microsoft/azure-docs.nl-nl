@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/1/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: e783e5dd3b0f1952928d1c36c682c5be1cba2599
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 924397c9c81d2a38ae74b95a8f7133ced8bde0d4
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98044387"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101736539"
 ---
 # <a name="auto-manage-devices-in-azure-digital-twins-using-device-provisioning-service-dps"></a>Apparaten in azure Digital Apparaatdubbels automatisch beheren met behulp van de Device Provisioning Service (DPS)
 
@@ -174,7 +174,7 @@ Volg de stappen die worden beschreven in de Snelstartgids [*Create a Event hub*]
 
 ### <a name="create-an-azure-function"></a>Een Azure-functie maken
 
-Vervolgens maakt u een door Event Hubs geactiveerde functie binnen een functie-app. U kunt de functie-app die u in de end-to-end zelf studie hebt gemaakt, gebruiken ([*zelf studie: een end-to-end-oplossing verbinden*](tutorial-end-to-end.md)) of uw eigen. 
+Vervolgens maakt u een door Event Hubs geactiveerde functie in een functie-app. U kunt de functie-app die u in de end-to-end zelf studie hebt gemaakt, gebruiken ([*zelf studie: een end-to-end-oplossing verbinden*](tutorial-end-to-end.md)) of uw eigen. 
 
 Noem uw Event Hub trigger *lifecycleevents* en verbind de Event hub trigger met de Event hub die u in de vorige stap hebt gemaakt. Als u een andere Event Hub naam hebt gebruikt, wijzigt u deze in overeenkomstig de naam van de trigger hieronder.
 
@@ -223,7 +223,7 @@ Als u het proces van het buiten gebruik wilt stellen, moet u het apparaat hand m
 
 In de [eerste helft van dit artikel](#auto-provision-device-using-device-provisioning-service)hebt u een apparaat gemaakt in IOT hub en een bijbehorende digitale twee. 
 
-Ga nu naar het IoT Hub en verwijder dat apparaat (u kunt dit doen met een [Azure cli-opdracht](/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity?view=azure-cli-latest&preserve-view=true#ext-azure-cli-iot-ext-az-iot-hub-device-identity-delete) of in de [Azure Portal](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Devices%2FIotHubs)). 
+Ga nu naar het IoT Hub en verwijder dat apparaat (u kunt dit doen met een [Azure cli-opdracht](/cli/azure/ext/azure-iot/iot/hub/module-identity?view=azure-cli-latest#ext_azure_iot_az_iot_hub_module_identity_delete) of in de [Azure Portal](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Devices%2FIotHubs)). 
 
 Het apparaat wordt automatisch uit Azure Digital Apparaatdubbels verwijderd. 
 

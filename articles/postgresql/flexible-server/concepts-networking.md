@@ -5,13 +5,13 @@ author: niklarin
 ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 09/23/2020
-ms.openlocfilehash: c30c01a18a17981b4e034c9df2cf822e6580430e
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.date: 02/21/2021
+ms.openlocfilehash: a6f049670a6860bbc195b92458945d1a53029b4f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567730"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101732799"
 ---
 # <a name="networking-overview---azure-database-for-postgresql---flexible-server"></a>Overzicht van netwerken-Azure Database for PostgreSQL-flexibele server
 
@@ -62,6 +62,8 @@ Hier volgen enkele concepten die u moet kennen bij het gebruik van virtuele netw
 
    De flexibele server van PostgreSQL moet zich in een subnet bevinden dat wordt **overgedragen** voor postgresql flexibel server gebruik. Deze overdracht houdt in dat alleen Azure Database for PostgreSQL flexibele servers dat subnet kunnen gebruiken. Er kunnen zich geen andere Azure-resourcetypen in het gedelegeerde subnet bevinden. U delegeert een subnet door de eigenschap Delegation toe te wijzen als micro soft. DBforPostgreSQL/flexibleServers.
 
+   Voeg toe `Microsoft.Storage` aan het service-eind punt voor het subnet dat is overgedragen aan flexibele servers. 
+
 * **Netwerk beveiligings groepen (NSG)** Met beveiligings regels in netwerk beveiligings groepen kunt u het type netwerk verkeer filteren dat in en uit de subnetten van het virtuele netwerk en netwerk interfaces kan stromen. Bekijk het [overzicht van de netwerk beveiligings groep](../../virtual-network/network-security-groups-overview.md) voor meer informatie.
 
 
@@ -83,7 +85,7 @@ De kenmerken van de open bare toegangs methode zijn onder andere:
 * Uw flexibele server bevindt zich niet in een van uw virtuele Azure-netwerken
 * Netwerk verkeer van en naar de server gaat niet via een particulier netwerk. Het verkeer maakt gebruik van de algemene Internet routes.
 
-### <a name="firewall-rules"></a>Firewallregels
+### <a name="firewall-rules"></a>Firewall-regels
 Het verlenen van machtigingen aan een IP-adres wordt een firewall regel genoemd. Als een verbindings poging afkomstig is van een IP-adres dat u niet hebt toegestaan, wordt er een fout melding weer geven op de oorspronkelijke client.
 
 Meer informatie over het maken van een flexibele server met open bare toegang (toegestane IP-adressen) in [de Azure Portal](how-to-manage-firewall-portal.md) of [de Azure cli](how-to-manage-firewall-cli.md).

@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/01/2020
 ms.author: trbye
-ms.openlocfilehash: baa48ede04b9de98bd69de69753c97b5fcee7329
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 36885e4673b83d1db7972f03c4a6309f766206c5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99525259"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101713096"
 ---
 # <a name="what-is-custom-neural-voice"></a>Wat is aangepaste neurale Voice?
 
-Aangepaste Neural Voice is een TTS-functie ( [Text-to-speech](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech) ) waarmee u een aangepaste, gepersonaliseerde stem kunt maken voor uw toepassingen door uw eigen audio gegevens als voor beeld op te geven. Tekst-naar-spraak werkt door tekst naar synthetische spraak te converteren met behulp van een machine learning model dat klinkt als een gekozen stem. Met de [rest API](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-text-to-speech)kunt u uw apps laten praten met [vooraf gemaakte stemmen](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#neural-voices) of uw eigen [aangepaste spraak](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-custom-voice-prepare-data) modellen die zijn ontwikkeld met behulp van de aangepaste Neural Voice-functie. Aangepaste Neural Voice is gebaseerd op Neural TTS-technologie die een natuurlijke geluids spraak maakt die vaak niet te onderscheiden is in vergelijking met een menselijke stem.
+Aangepaste Neural Voice is een TTS-functie ( [Text-to-speech](./text-to-speech.md) ) waarmee u een aangepaste, gepersonaliseerde stem kunt maken voor uw toepassingen door uw eigen audio gegevens als voor beeld op te geven. Tekst-naar-spraak werkt door tekst naar synthetische spraak te converteren met behulp van een machine learning model dat klinkt als een gekozen stem. Met de [rest API](./rest-text-to-speech.md)kunt u uw apps laten praten met [vooraf gemaakte stemmen](./language-support.md#neural-voices) of uw eigen [aangepaste spraak](./how-to-custom-voice-prepare-data.md) modellen die zijn ontwikkeld met behulp van de aangepaste Neural Voice-functie. Aangepaste Neural Voice is gebaseerd op Neural TTS-technologie die een natuurlijke geluids spraak maakt die vaak niet te onderscheiden is in vergelijking met een menselijke stem.
 De realistische en natuurlijke geluids spraak van aangepaste Neural-stem kunnen merken en Personify-machines vertegenwoordigen en gebruikers in staat stellen om op een natuurlijke manier te communiceren met toepassingen.
 
 > [!NOTE]
@@ -35,7 +35,7 @@ Vervolgens wordt de foneem-reeks in het Neural akoestische model geplaatst om ge
 
 Neural TTS Voice-modellen worden getraind met behulp van diepe Neural-netwerken op basis van de opname voorbeelden van menselijke stemmen. In deze [blog](https://techcommunity.microsoft.com/t5/azure-ai/neural-text-to-speech-extends-support-to-15-more-languages-with/ba-p/1505911)beschrijven we hoe Neural TTS werkt met geavanceerde Neural-spraakherkennings modellen. De blog legt ook uit hoe een universeel basis model kan worden aangepast met minder dan 2 uur aan spraak gegevens (of minder dan 2.000 vastgelegde uitingen) van een doel spreker, en leren om te spreken in de stem van de doel spreker. Zie het [blog bericht](https://techcommunity.microsoft.com/t5/azure-ai/azure-neural-tts-upgraded-with-hifinet-achieving-higher-audio/ba-p/1847860)voor meer informatie over hoe een Neural-Vocoder wordt getraind.
 
-Met de aanpassings mogelijkheid van aangepaste Neural Voice kunt u de Neural TTS-engine aanpassen zodat deze beter aansluit bij uw gebruikers scenario's. Als u een aangepaste Neural-stem wilt maken, gebruikt u [Speech Studio](https://speech.microsoft.com/customvoice) om de opgenomen audio en bijbehorende scripts te uploaden, het model te trainen en de stem op een aangepast eind punt te implementeren. Afhankelijk van de use-aanvraag kan aangepaste Neural-stem worden gebruikt om tekst in realtime te converteren (bijvoorbeeld gebruikt in een Smart virtuele assistent) of om audio-inhoud offline te maken (bijvoorbeeld gebruikt in audio boek of instructies in e-learning toepassingen) met de tekst invoer van de gebruiker. Dit wordt beschikbaar gesteld via de [rest API](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-text-to-speech), de [spraak-SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started-text-to-speech?tabs=script%2Cwindowsinstall&pivots=programming-language-csharp)of een [webportal](https://speech.microsoft.com/audiocontentcreation).
+Met de aanpassings mogelijkheid van aangepaste Neural Voice kunt u de Neural TTS-engine aanpassen zodat deze beter aansluit bij uw gebruikers scenario's. Als u een aangepaste Neural-stem wilt maken, gebruikt u [Speech Studio](https://speech.microsoft.com/customvoice) om de opgenomen audio en bijbehorende scripts te uploaden, het model te trainen en de stem op een aangepast eind punt te implementeren. Afhankelijk van de use-aanvraag kan aangepaste Neural-stem worden gebruikt om tekst in realtime te converteren (bijvoorbeeld gebruikt in een Smart virtuele assistent) of om audio-inhoud offline te maken (bijvoorbeeld gebruikt in audio boek of instructies in e-learning toepassingen) met de tekst invoer van de gebruiker. Dit wordt beschikbaar gesteld via de [rest API](./rest-text-to-speech.md), de [spraak-SDK](./get-started-text-to-speech.md?pivots=programming-language-csharp&tabs=script%2cwindowsinstall)of een [webportal](https://speech.microsoft.com/audiocontentcreation).
 
 ## <a name="terms-and-definitions"></a>Termen en definities
 

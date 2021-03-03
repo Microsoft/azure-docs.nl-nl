@@ -1,18 +1,18 @@
 ---
-title: Azure Monitor configureren voor het verzamelen van gegevens van containers en agents | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u de Azure Monitor voor containers-agent kunt configureren voor het beheren van de logboek verzameling van stdout/stderr en omgevings variabelen.
+title: Container Insights-agent gegevens verzameling configureren | Microsoft Docs
+description: In dit artikel wordt beschreven hoe u de container Insights-agent kunt configureren voor het beheren van de logboek verzameling stdout/stderr en omgevings variabelen.
 ms.topic: conceptual
 ms.date: 10/09/2020
-ms.openlocfilehash: f21b841bc129012b684d2a1c59eb72989fe9e0e0
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: d866fec2013daf9b8edfdbfd703c7b1098ae91bd
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612426"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708387"
 ---
-# <a name="configure-agent-data-collection-for-azure-monitor-for-containers"></a>Verzamelen van agentgegevens voor Azure Monitor voor containers configureren
+# <a name="configure-agent-data-collection-for-container-insights"></a>Agent gegevens verzameling configureren voor container Insights
 
-Azure Monitor voor containers worden stdout-, stderr-en omgevings variabelen verzameld van container werkbelastingen die zijn geïmplementeerd op beheerde Kubernetes-clusters vanuit de container agent. U kunt instellingen voor het verzamelen van agent gegevens configureren door een aangepaste Kubernetes ConfigMaps te maken om deze ervaring te beheren. 
+Met container Insights worden stdout-, stderr-en omgevings variabelen verzameld van container werkbelastingen die zijn geïmplementeerd op beheerde Kubernetes-clusters vanuit de container agent. U kunt instellingen voor het verzamelen van agent gegevens configureren door een aangepaste Kubernetes ConfigMaps te maken om deze ervaring te beheren. 
 
 In dit artikel wordt beschreven hoe u ConfigMap maakt en hoe u gegevens verzameling kunt configureren op basis van uw vereisten.
 
@@ -142,8 +142,8 @@ De uitvoer ziet er ongeveer als volgt uit met het aantekening schema-versies:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Azure Monitor voor containers bevat geen vooraf gedefinieerde set met waarschuwingen. Raadpleeg de procedures [voor het maken van prestatie waarschuwingen met Azure monitor voor containers](./container-insights-log-alerts.md) voor meer informatie over het maken van aanbevolen waarschuwingen voor hoog CPU-en geheugen gebruik ter ondersteuning van uw DevOps-of operationele processen en procedures.
+- Container Insights bevat geen vooraf gedefinieerde set met waarschuwingen. Bekijk de [prestatie waarschuwingen maken met container Insights](./container-insights-log-alerts.md) voor meer informatie over het maken van aanbevolen waarschuwingen voor hoog CPU-en geheugen gebruik ter ondersteuning van uw DevOps-of operationele processen en procedures.
 
-- Als bewaking is ingeschakeld voor het verzamelen van het status-en resource gebruik van uw AKS-of hybride cluster en werk belastingen die hierop worden uitgevoerd, leert [u hoe u Azure monitor gebruikt](container-insights-analyze.md) voor containers.
+- Als controle is ingeschakeld voor het verzamelen van het status-en resource gebruik van uw AKS-of hybride cluster en werk belastingen die hierop worden uitgevoerd, leert [u hoe u container Insights kunt gebruiken](container-insights-analyze.md) .
 
 - Bekijk de [voor beelden van logboek query's](container-insights-log-search.md#search-logs-to-analyze-data) om vooraf gedefinieerde query's en voor beelden te bekijken voor het evalueren of aanpassen van waarschuwingen, het visualiseren of analyseren van uw clusters.

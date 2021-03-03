@@ -10,19 +10,19 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2020
 ms.author: sausin
-ms.openlocfilehash: 0f932eed2f1d58e8470a24ea595e21712deb7f03
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 89d7a6f8beb004f57a00dfe75e4cc387c8591b1e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95021895"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101716581"
 ---
 # <a name="custom-commands-encryption-of-data-at-rest"></a>Versleuteling van data-at-rest met aangepaste opdrachten
 
 Met aangepaste opdrachten worden uw gegevens automatisch versleuteld wanneer deze persistent worden gemaakt in de Cloud. Met de Custom commands service-versleuteling worden uw gegevens beveiligd en kunt u voldoen aan de beveiligings-en nalevings verplichtingen van uw organisatie.
 
 > [!NOTE]
-> Met de service voor aangepaste opdrachten wordt versleuteling niet automatisch ingeschakeld voor de LUIS-resources die zijn gekoppeld aan uw toepassing. Indien nodig moet u de versleuteling van uw LUIS-resource inschakelen [.](./../LUIS/luis-encryption-of-data-at-rest.md)
+> Met de service voor aangepaste opdrachten wordt versleuteling niet automatisch ingeschakeld voor de LUIS-resources die zijn gekoppeld aan uw toepassing. Indien nodig moet u de versleuteling van uw LUIS-resource inschakelen [.](../luis/encrypt-data-at-rest.md)
 
 ## <a name="about-cognitive-services-encryption"></a>Over Cognitive Services versleuteling
 Gegevens worden versleuteld en ontsleuteld met behulp van [FIPS 140-2](https://en.wikipedia.org/wiki/FIPS_140-2) [-compatibele 256-bits AES-](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) versleuteling. Versleuteling en ontsleuteling zijn transparant, wat betekent dat versleuteling en toegang voor u worden beheerd. Uw gegevens zijn standaard beveiligd en u hoeft uw code of toepassingen niet te wijzigen om van versleuteling te kunnen profiteren.

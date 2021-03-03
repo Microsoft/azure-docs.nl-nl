@@ -7,12 +7,12 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: tutorial
 ms.date: 10/20/2019
-ms.openlocfilehash: 9d7c4d2afa8eaf197ec05bcb0aed654153fb8f0d
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: 40b0d7eeb77f165c50c5470e1b5869e240d36534
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99831294"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101702688"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-digital-distribution-center-application-template"></a>Zelfstudie: Een toepassingssjabloon voor een digitaal distributiecentrum implementeren en doorlopen
 
@@ -21,7 +21,8 @@ In deze zelfstudie leert u hoe u aan de slag gaat door een toepassingssjabloon v
 In deze zelfstudie leert u het volgende: 
 
 > [!div class="checklist"]
-> Een digitale distributie centrum-toepassing maken door middel van de toepassing 
+> * Een toepassing voor een digitaal distributiecentrum maken 
+> * De toepassing doorlopen 
 
 ## <a name="prerequisites"></a>Vereisten
 * Er zijn geen specifieke vereisten voor het implementeren van deze app

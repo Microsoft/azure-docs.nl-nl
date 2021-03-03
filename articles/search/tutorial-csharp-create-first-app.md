@@ -7,14 +7,14 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 01/26/2021
+ms.date: 02/26/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 961e30cf17bf385647f4482c6f767641c6b891af
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 0a57e45b264badffd0305eb6ac5b3c8f7c42adf3
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98791675"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101695121"
 ---
 # <a name="tutorial-create-your-first-search-app-using-the-net-sdk"></a>Zelfstudie: Uw eerste zoek-app maken met behulp van de .NET SDK
 
@@ -49,9 +49,11 @@ Slechts één aanroep voert een query uit op de index en retourneert resultaten.
 
 ## <a name="overview"></a>Overzicht
 
-In deze zelf studie wordt een bestaande, gehoste voorbeeld index gebruikt, zodat u zich kunt richten op het bouwen van een zoek pagina waarmee een query reeks voor de aanvraag wordt verzameld en resultaten worden geretourneerd. De index bevat fictieve hotelgegevens. Zodra u een basispagina hebt, kunt u deze in de volgende lessen uitbreiden met paginering, facetten en automatisch aanvullen.
+In deze zelf studie wordt gebruikgemaakt van de hotels-voor beeld-index, die u snel kunt maken in uw eigen zoek service door de Snelstartgids voor het [importeren van gegevens](search-get-started-portal.md)stapsgewijs te door lopen. De index bevat fictieve Hotel gegevens, beschikbaar als ingebouwde gegevens bron in elke zoek service.
 
-Een voltooide versie van de code in deze zelfstudie vindt u in het volgende project:
+In de eerste les in deze zelf studie maakt u een eenvoudige query structuur en zoek pagina, die u in volgende lessen kunt uitbreiden met paginering, facetten en een type-ahead ervaring.
+
+Een voltooide versie van de code kunt u vinden in het volgende project:
 
 * [1-basis-zoeken-pagina (GitHub)](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/create-first-app/v11/1-basic-search-page)
 
@@ -59,7 +61,9 @@ Deze zelfstudie is bijgewerkt voor het gebruik van het pakket Azure.Search.Docum
 
 ## <a name="prerequisites"></a>Vereisten
 
-Omdat u een zoek opdracht voor open bare voor beelden gebruikt die wordt gehost door micro soft, hebt u geen zoek service of een Azure-account nodig voor deze zelf studie.
+* [Een bestaande zoek service](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) [maken](search-create-service-portal.md) of zoeken.
+
+* Het hotels-voor beeld-index maken met behulp van de instructies in [Quick Start: een zoek index maken](search-get-started-portal.md).
 
 * [Visual Studio](https://visualstudio.microsoft.com/)
 
@@ -103,12 +107,12 @@ Begin met een Visual Studio-project om dit project helemaal zelf te maken en zod
 
 Voor dit voor beeld gebruikt u openbaar beschik bare Hotel gegevens. Deze gegevens zijn een willekeurige verzameling van 50 fictieve hotelnamen en beschrijvingen die alleen zijn gemaakt voor het leveren van demogegevens. Geef een naam en API-sleutel op om toegang te krijgen tot deze gegevens.
 
-1. Open **appsettings.jsop** en vervang de standaard regels door de volgende naam en sleutel. De API-sleutel die hier wordt weergegeven, is geen voorbeeld van een sleutel. Dit is *exact* de sleutel die u nodig hebt voor toegang tot de hotelgegevens. Het bestand moet er nu als volgt uitzien.
+1. Open **appsettings.jsop** en vervang de standaard regels door de URL van de zoek service (in de indeling `https://<service-name>.search.windows.net` ) en een [beheerder-of query-API-sleutel](search-security-api-keys.md) van uw zoek service. Omdat u geen index hoeft te maken of bij te werken, kunt u de query sleutel gebruiken voor deze zelf studie.
 
     ```csharp
     {
-        "SearchServiceName": "azs-playground",
-        "SearchServiceQueryApiKey": "EA4510A6219E14888741FCFC19BFBB82"
+        "SearchServiceName": "<YOUR-SEARCH-SERVICE-URI>",
+        "SearchServiceQueryApiKey": "<YOUR-SEARCH-SERVICE-API-KEY>"
     }
     ```
 

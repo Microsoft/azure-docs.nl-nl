@@ -4,12 +4,12 @@ ms.service: databox
 ms.author: alkohli
 ms.topic: include
 ms.date: 02/05/2021
-ms.openlocfilehash: b06b91e972fd07543cf02105360cb0400ef6b0f1
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: ad981264a99bd48e27f745a789ebe857b7f17d80
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99831537"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101751145"
 ---
 Gebruik de IoT Edge runtime-antwoorden van agent om problemen met betrekking tot berekeningen op te lossen. Hier volgt een lijst met mogelijke reacties:
 
@@ -20,7 +20,7 @@ Gebruik de IoT Edge runtime-antwoorden van agent om problemen met betrekking tot
 * 406-het IoT Edge apparaat is offline of stuurt geen status rapporten.
 * 500-er is een fout opgetreden in de IoT Edge-runtime.
 
-Zie [IOT Edge-agent](/azure/iot-edge/iot-edge-runtime?view=iotedge-2018-06&preserve-view=true#iot-edge-agent)voor meer informatie.
+Zie [IOT Edge-agent](../articles/iot-edge/iot-edge-runtime.md?preserve-view=true&view=iotedge-2018-06#iot-edge-agent)voor meer informatie.
 
 De volgende fout is gerelateerd aan de IoT Edge-service op uw Azure Stack Edge Pro<!--/ Data Box Gateway--> apparaat.
 

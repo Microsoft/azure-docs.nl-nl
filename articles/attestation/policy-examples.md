@@ -7,18 +7,39 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 51e8f01726c732604199ff08323f073d508da66e
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 6a5460a691658bda1cd60e503be8c98433c9c343
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98602317"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101720151"
 ---
 # <a name="examples-of-an-attestation-policy"></a>Voorbeelden van een attestation-beleid
 
-Attestation-beleid wordt gebruikt om de attestation-bewijzen te verwerken en te bepalen of Azure Attestation een attestation-token zal uitgeven. Het genereren van attestion-tokens kan worden beheerd met aangepast beleid. Hieronder ziet u enkele voorbeelden van een attestation-beleid.
+Attestation-beleid wordt gebruikt om de attestation-bewijzen te verwerken en te bepalen of Azure Attestation een attestation-token zal uitgeven. Het genereren van attestion-tokens kan worden beheerd met aangepast beleid. Hieronder ziet u enkele voorbeelden van een attestation-beleid. 
 
-## <a name="default-policy-for-an-sgx-enclave"></a>Standaardbeleid voor een SGX-enclave 
+## <a name="sample-custom-policy-for-an-sgx-enclave"></a>Voorbeeld van standaardbeleid voor een SGX-enclave 
+
+```
+version= 1.0;
+authorizationrules
+{
+       [ type=="x-ms-sgx-is-debuggable", value==false ]
+        && [ type=="x-ms-sgx-product-id", value==<product-id> ]
+        && [ type=="x-ms-sgx-svn", value>= 0 ]
+        && [ type=="x-ms-sgx-mrsigner", value=="<mrsigner>"]
+    => permit();
+};
+issuancerules {
+c:[type=="x-ms-sgx-mrsigner"] => issue(type="<custom-name>", value=c.value);
+};
+
+```
+Zie [claim sets](/azure/attestation/claim-sets)voor meer informatie over de binnenkomende claims die door Azure Attestation worden gegenereerd. Binnenkomende claims kunnen door auteurs van beleid worden gebruikt om autorisatie regels in een aangepast beleid te definiëren. 
+
+De sectie uitgifte regels is niet verplicht. Deze sectie kan door de gebruikers worden gebruikt voor het genereren van extra uitgaande claims in het Attestation-token met aangepaste namen. Zie [claim sets](/azure/attestation/claim-sets)voor meer informatie over de uitgaande claims die door de service in de Attestation-token worden gegenereerd.
+
+## <a name="default-policy-for-an-sgx-enclave"></a>Standaardbeleid voor een SGX-enclave
 
 ```
 version= 1.0;
@@ -38,17 +59,18 @@ issuancerules
 };
 ```
 
-## <a name="sample-custom-policy-for-an-sgx-enclave"></a>Voorbeeld van standaardbeleid voor een SGX-enclave 
+Claims die worden gebruikt in het standaard beleid, worden beschouwd als afgeschaft, maar worden wel volledig ondersteund en blijven in de toekomst opgenomen. Het is raadzaam om de niet-afgeschafte claim namen te gebruiken. Zie [claim sets](/azure/attestation/claim-sets)voor meer informatie over de aanbevolen claim namen. 
+
+## <a name="sample-custom-policy-to-support-multiple-sgx-enclaves"></a>Voor beeld van een aangepast beleid ter ondersteuning van meerdere SGX-enclaves
 
 ```
 version= 1.0;
-authorizationrules
+authorizationrules 
 {
-       [ type=="x-ms-sgx-is-debuggable", value==false ]
-        && [ type=="x-ms-sgx-product-id", value==<product-id> ]
-        && [ type=="x-ms-sgx-svn", value>= 0 ]
-        && [ type=="x-ms-sgx-mrsigner", value=="<mrsigner>"]
-    => permit();
+    [ type=="x-ms-sgx-is-debuggable", value==true ]&&
+    [ type=="x-ms-sgx-mrsigner", value=="mrsigner1"] => permit(); 
+    [ type=="x-ms-sgx-is-debuggable", value==true ]&& 
+    [ type=="x-ms-sgx-mrsigner", value=="mrsigner2"] => permit(); 
 };
 ```
 

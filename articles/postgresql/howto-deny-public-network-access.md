@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 03/10/2020
-ms.openlocfilehash: bd777fe42dc8fa3ec4643fa9607f5ca8b7aac795
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: e195c005676df27385e5e00736b04bdb689fafc5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93240321"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101727104"
 ---
 # <a name="deny-public-network-access-in-azure-database-for-postgresql-single-server-using-azure-portal"></a>Open bare netwerk toegang tot Azure Database for PostgreSQL één server weigeren met Azure Portal
 
@@ -21,7 +21,7 @@ In dit artikel wordt beschreven hoe u een Azure Database for PostgreSQL één se
 
 U hebt het volgende nodig om deze hand leiding te volt ooien:
 
-* Een [Azure database for PostgreSQL enkele server](quickstart-create-server-database-portal.md)
+* Een [Azure database for PostgreSQL één server](quickstart-create-server-database-portal.md) met een algemeen of een prijs categorie geoptimaliseerd voor geheugen.
 
 ## <a name="set-deny-public-network-access"></a>Instellen van open bare netwerk toegang weigeren
 

@@ -1,146 +1,68 @@
 ---
-title: Bibliotheken voor Apache Spark beheren
+title: Bibliotheek beheer
 description: Meer informatie over het toevoegen en beheren van bibliotheken die worden gebruikt door Apache Spark in azure Synapse Analytics.
 services: synapse-analytics
 author: midesa
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.date: 10/16/2020
+ms.date: 03/01/2020
 ms.author: midesa
 ms.reviewer: jrasnick
 ms.subservice: spark
-ms.openlocfilehash: 0458fb8b140166b7bdf0fc0df41dbb207fdce3c9
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 955d7f8c2d2ce5ea126d4cce67b0e4e55152ac72
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100518518"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101695087"
 ---
 # <a name="manage-libraries-for-apache-spark-in-azure-synapse-analytics"></a>Bibliotheken voor Apache Spark beheren in azure Synapse Analytics
+Bibliotheken bieden herbruikbare code die u mogelijk wilt toevoegen aan uw Program ma's of projecten. 
 
-Bibliotheken bieden herbruikbare code die u mogelijk wilt toevoegen aan uw Program ma's of projecten. Als u een derde of lokaal gemaakte code beschikbaar wilt maken voor uw toepassingen, kunt u een bibliotheek installeren op een van de serverloze Apache Spark groepen. Zodra een bibliotheek is geïnstalleerd voor een Spark-groep, is deze beschikbaar voor alle sessies die gebruikmaken van dezelfde groep. 
+Mogelijk moet u uw serverloze Apache Spark pool omgeving om verschillende redenen bijwerken. U kunt bijvoorbeeld het volgende doen:
+- een van de kern afhankelijkheden heeft een nieuwe versie uitgegeven.
+- u hebt een extra pakket nodig om uw machine learning model te trainen of uw gegevens voor te bereiden.
+- u hebt een beter pakket gevonden en hebt het oudere pakket niet meer nodig.
+- uw team heeft een aangepast pakket gebouwd dat u nodig hebt in uw Apache Spark groep.
 
-## <a name="before-you-begin"></a>Voordat u begint
-- Als u bibliotheken wilt installeren en bijwerken, moet u de machtigingen voor de **gegevens eigenaar** van de **Storage BLOB-data bijdrager** of opslag-BLOB hebben voor het primaire Gen2-opslag account dat is gekoppeld aan de Azure Synapse Analytics-werk ruimte.
+Als u een derde of lokaal gemaakte code beschikbaar wilt maken voor uw toepassingen, kunt u een bibliotheek installeren op een van de serverloze Apache Spark Pools of de notitieblok sessie.
   
 ## <a name="default-installation"></a>Standaard installatie
 Apache Spark in azure Synapse Analytics beschikt over een volledige Anacondas-installatie plus extra bibliotheken. De lijst met volledige bibliotheken vindt u op [Apache Spark-versie ondersteuning](apache-spark-version-support.md). 
 
-Wanneer een Spark-exemplaar wordt gestart, worden deze bibliotheken automatisch opgenomen. Extra python en aangepaste pakketten kunnen worden toegevoegd op het niveau van de Spark-groep.
+Wanneer een Spark-exemplaar wordt gestart, worden deze bibliotheken automatisch opgenomen. Extra pakketten kunnen worden toegevoegd op het niveau van de Spark-groep of het sessie niveau.
 
+## <a name="workspace-packages"></a>Werkruimte pakketten
+Bij het ontwikkelen van aangepaste toepassingen of modellen kan uw team verschillende code artefacten, zoals Wheel-of jar-bestanden, ontwikkelen om uw code te pakken. 
 
-## <a name="manage-python-packages"></a>Python-pakketten beheren
-Zodra u de bibliotheken hebt geïdentificeerd die u wilt gebruiken voor uw Spark-toepassing, kunt u deze in een Spark-groep installeren. 
+In Synapse kunnen werkruimte pakketten aangepaste of privé-wielen of jar-bestanden zijn. U kunt deze pakketten uploaden naar uw werk ruimte en deze later toewijzen aan een specifieke Spark-groep. Na de toewijzing worden deze werkruimte pakketten automatisch geïnstalleerd op alle Spark-groeps sessies.
 
- Een *requirements.txt* -bestand (uitvoer van de `pip freeze` opdracht) kan worden gebruikt voor het bijwerken van de virtuele omgeving. De pakketten die in dit bestand voor installatie of upgrade worden vermeld, worden vanaf PyPI gedownload op het moment dat de pool wordt gestart. Dit vereisten bestand wordt gebruikt wanneer een Spark-exemplaar wordt gemaakt vanuit die Spark-groep.
+Voor meer informatie over het beheren van werkruimte bibliotheken raadpleegt u de volgende hand leidingen:
+- [Python-werkruimte pakketten: ](./apache-spark-manage-python-packages.md#Install-wheel-files) Upload python-wiel bestanden als een werkruimte pakket en voeg deze pakketten later toe aan specifieke serverloze Apache Spark groepen.
+- [Scala/Java Workspace-pakketten (preview): ](./apache-spark-manage-scala-packages.md#Workspace-packages) Upload scala-en java jar-bestanden als een werkruimte pakket en voeg deze pakketten later toe aan specifieke serverloze Apache Spark groepen.
+
+## <a name="pool-management"></a>Groeps beheer
+In sommige gevallen wilt u mogelijk de set met pakketten die worden gebruikt in een bepaalde Apache Spark groep standaardiseren. Deze standaardisatie kan nuttig zijn als dezelfde pakketten worden geïnstalleerd door meerdere personen in uw team. 
+
+Met de Azure Synapse Analytics-groeps beheer mogelijkheden kunt u de standaardset bibliotheken configureren die u wilt installeren op een gegeven serverloze Apache Spark groep. Deze bibliotheken worden boven op de basis- [runtime](./apache-spark-version-support.md)geïnstalleerd. 
+
+Groeps beheer wordt momenteel alleen ondersteund voor python. Voor python gebruiken Synapse Spark-Pools Conda om python-pakket afhankelijkheden te installeren en te beheren. Wanneer u uw bibliotheken op groeps niveau opgeeft, kunt u nu een requirements.txt of een omgeving. yml opgeven. Dit omgevings configuratie bestand wordt gebruikt wanneer een Spark-exemplaar wordt gemaakt vanuit die Spark-groep. 
+
+Raadpleeg de documentatie over [python-groeps beheer](./apache-spark-manage-python-packages.md#Pool-libraries)voor meer informatie over deze mogelijkheden.
 
 > [!IMPORTANT]
 > - Als het pakket dat u installeert groot is of veel tijd nodig heeft om te worden geïnstalleerd, is dit van invloed op de start tijd van de Spark-instantie.
-> - Pakketten die compileerondersteuning op het moment van installatie vereisen, zoals GCC, worden niet ondersteund.
-> - Pakketten kunnen niet worden gedowngraded, alleen toegevoegd of geüpgraded.
 > - Het wijzigen van de PySpark-, Python-, scala/Java-, .NET-of Spark-versie wordt niet ondersteund.
 > - Het installeren van pakketten van PyPI wordt niet ondersteund in werk ruimten waarvoor DEP is ingeschakeld.
 
+## <a name="session-scoped-packages"></a>Pakketten met sessie bereik
+Bij het uitvoeren van interactieve gegevens analyse of machine learning, kunt u er vaak voor zorgen dat u nieuwere pakketten wilt proberen of dat u pakketten nodig hebt die nog niet beschikbaar zijn in uw Apache Spark groep. In plaats van de pool configuratie bij te werken, kunnen gebruikers nu pakketten met sessie bereik gebruiken om sessie afhankelijkheden toe te voegen, te beheren en bij te werken.
 
-### <a name="requirements-format"></a>Indeling van vereisten
+Met pakketten met sessie bereik kunnen gebruikers aan het begin van hun sessie pakket afhankelijkheden definiëren. Wanneer u een pakket met sessie bereik installeert, heeft alleen de huidige sessie toegang tot de opgegeven pakketten. Als gevolg hiervan zijn deze pakketten met sessie bereik niet van invloed op andere sessies of taken die gebruikmaken van dezelfde Apache Spark pool. Daarnaast worden deze bibliotheken boven op de basis-runtime-en pool level-pakketten geïnstalleerd. 
 
-Het volgende code fragment toont de indeling voor het vereisten bestand. De naam van het PyPi-pakket wordt samen met een exacte versie weer gegeven. Dit bestand heeft de indeling die wordt beschreven in de hand leiding voor het [blok keren](https://pip.pypa.io/en/stable/reference/pip_freeze/) van de PIP. In dit voor beeld wordt een specifieke versie gespeld. 
-
-```
-absl-py==0.7.0
-adal==1.2.1
-alabaster==0.7.10
-```
-
-### <a name="install-python-packages"></a>Python-pakketten installeren
-Tijdens het ontwikkelen van uw Spark-toepassing is het mogelijk dat u bestaande of nieuwe bibliotheken moet bijwerken. Bibliotheken kunnen worden bijgewerkt tijdens of na het maken van de groep.
-
-> [!IMPORTANT]
-> Als u bibliotheken wilt installeren, moet u de machtigingen voor Storage BLOB data contributor of Storage BLOB data owner hebben voor het primaire Gen2-opslag account dat is gekoppeld aan de Synapse-werk ruimte.
-
-#### <a name="install-packages-during-pool-creation"></a>Pakketten installeren tijdens het maken van een groep
-Bibliotheken installeren op een Spark-groep tijdens het maken van de groep:
-   
-1. Ga vanuit het Azure Portal naar uw Azure Synapse Analytics-werk ruimte.
-   
-2. Selecteer **Apache Spark groep maken** en selecteer vervolgens het tabblad **aanvullende instellingen** . 
-   
-3. Upload het omgevings configuratie bestand met behulp van de bestands kiezer in het gedeelte **pakketten** van de pagina. 
-   
-    ![Python-bibliotheken toevoegen tijdens het maken van een groep](./media/apache-spark-azure-portal-add-libraries/apache-spark-azure-portal-add-library-python.png "Python-bibliotheken toevoegen")
- 
-
-#### <a name="install-packages-from-the-synapse-workspace"></a>Pakketten installeren vanuit de Synapse-werk ruimte
-Meer bibliotheken bijwerken of toevoegen aan een Spark-groep vanuit de Azure Synapse Analytics-portal:
-
-1.  Ga vanuit het Azure Portal naar uw Azure Synapse Analytics-werk ruimte.
-   
-2.  Start uw Azure Synapse Analytics-werk ruimte vanuit het Azure Portal.
-
-3.  Selecteer **beheren** in het hoofd paneel navigatie en selecteer vervolgens **Apache Spark groepen**.
-   
-4. Selecteer één Spark-groep en upload het omgevings configuratie bestand met behulp van de bestands kiezer in het gedeelte  **pakketten** van de pagina.
-
-    ![Python-bibliotheken toevoegen in Synapse](./media/apache-spark-azure-portal-add-libraries/apache-spark-azure-portal-update.png)
-   
-#### <a name="install-packages-from-the-azure-portal"></a>Pakketten van de Azure Portal installeren
-Een bibliotheek rechtstreeks vanuit de Azure Portal op een Spark-groep installeren:
-   
- 1. Ga vanuit het Azure Portal naar uw Azure Synapse Analytics-werk ruimte.
-   
- 2. Selecteer in de sectie **Synapse resources** het tabblad **Apache Spark groepen** en selecteer een Spark-groep in de lijst.
-   
- 3. Selecteer **pakketten** in de sectie **instellingen** van de Spark-groep. 
-
- 4. Upload het omgevings configuratie bestand met de bestands kiezer.
-
-    ![Scherm afbeelding van de knop configuratie bestand voor het uploaden van de omgeving.](./media/apache-spark-azure-portal-add-libraries/apache-spark-add-library-azure.png "Python-bibliotheken toevoegen")
-
-### <a name="verify-installed-libraries"></a>Geïnstalleerde bibliotheken verifiëren
-
-Voer de volgende code uit om te controleren of de juiste versies van de juiste bibliotheken zijn geïnstalleerd
-
-```python
-import pkg_resources
-for d in pkg_resources.working_set:
-     print(d)
-```
-### <a name="update-python-packages"></a>Python-pakketten bijwerken
-Pakketten kunnen op elk moment tussen sessies worden toegevoegd of gewijzigd. De bestaande pakketten en versies worden overschreven door een nieuw pakket configuratie bestand.  
-
-Een bibliotheek bijwerken of verwijderen:
-1. Navigeer naar uw Azure Synapse Analytics-werk ruimte. 
-
-2. Selecteer de **Apache Spark-groep** die u wilt bijwerken met behulp van de Azure portal of de Azure Synapse-werk ruimte.
-
-3. Ga naar de sectie **pakketten** en upload een nieuw configuratie bestand voor de omgeving
-   
-4. Zodra u de wijzigingen hebt opgeslagen, moet u actieve sessies beëindigen en de pool opnieuw opstarten. Desgewenst kunt u actieve sessies geforceerd beëindigen door het selectie vakje in te scha kelen om **nieuwe instellingen** af te dwingen.
-
-    ![Python-bibliotheken toevoegen](./media/apache-spark-azure-portal-add-libraries/update-libraries.png "Python-bibliotheken toevoegen")
-   
-
-> [!IMPORTANT]
-> Als u de optie selecteert om **nieuwe instellingen** af te dwingen, beëindigt u de alle huidige sessies voor de geselecteerde Spark-pool. Zodra de sessies zijn beëindigd, moet u wachten tot de groep opnieuw is opgestart. 
->
-> Als deze instelling niet is ingeschakeld, moet u wachten tot de huidige Spark-sessie is beëindigd of het hand matig stoppen. Zodra de sessie is beëindigd, moet u de pool opnieuw opstarten. 
-
-
-## <a name="manage-a-python-wheel"></a>Een python-wiel beheren
-
-### <a name="install-a-custom-wheel-file"></a>Een aangepast wiel bestand installeren
-Aangepaste, ingebouwde wiel pakketten kunnen worden geïnstalleerd op de Apache Spark groep door alle wiel bestanden te uploaden naar het Azure Data Lake Storage-account (Gen2) dat is gekoppeld aan de werk ruimte Synapse. 
-
-De bestanden moeten worden geüpload naar het volgende pad in de standaard container van het opslag account: 
-
-```
-abfss://<file_system>@<account_name>.dfs.core.windows.net/synapse/workspaces/<workspace_name>/sparkpools/<pool_name>/libraries/python/
-```
-
-Mogelijk moet u de ```python``` map in de map toevoegen ```libraries``` als deze nog niet bestaat.
-
->[!IMPORTANT]
->Aangepaste pakketten kunnen worden toegevoegd of gewijzigd tussen sessies. U moet echter wachten tot de groep en de sessie opnieuw worden opgestart om het bijgewerkte pakket weer te geven.
+Voor meer informatie over het beheren van pakketten met sessie bereik raadpleegt u de volgende hand leidingen:
+- [Python-sessie pakketten (preview-versie):](./apache-spark-manage-python-packages.md#Session-scoped-libraries-(preview)) Aan het begin van een sessie geeft u een Conda- *omgeving. yml* extra Python-pakketten installeren vanuit populaire opslag plaatsen. 
+- [Scala/Java-sessie pakketten: ](./apache-spark-manage-scala-packages.md#Workspace-packages) Aan het begin van uw sessie geeft u een lijst van jar-bestanden op die moeten worden geïnstalleerd met ```%%configure``` .
 
 ## <a name="next-steps"></a>Volgende stappen
 - De standaard bibliotheken weer geven: [ondersteuning van Apache Spark-versie](apache-spark-version-support.md)

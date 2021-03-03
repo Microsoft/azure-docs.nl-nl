@@ -6,17 +6,17 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/29/2020
-ms.openlocfilehash: 6564e7263639f0a78df6f2674ce7a4b610fb0fc1
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 03e534564b4a32f112c2aaff44a187b10eb2a537
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610797"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723109"
 ---
 # <a name="operationalinsights-api-version-retirement"></a>OperationalInsights API-versie buiten gebruik stellen
 Micro soft biedt een kennisgeving van ten minste twaalf maanden voor het buiten gebruik stellen van een API om de overgang naar een nieuwere/ondersteunde versie te versoepelen. We hebben een nieuwe versie (2020-08-01) uitgebracht voor de Api's van de **OperationalInsights** -resource provider en zullen eerdere API-versies op 29 februari 2024 buiten gebruik stellen.
 
-We raden u aan om versie 2020-08-01 nu te gaan gebruiken om te profiteren van de voor delen van nieuwe functionaliteit, zoals een [toegewezen cluster](../log-query/logs-dedicated-clusters.md), door de [klant beheerde sleutels](../logs/customer-managed-keys.md), [persoonlijke koppeling](./private-link-security.md) en [gegevens export](./logs-data-export.md). Daarnaast worden nieuwe functies en functionaliteit en optimalisaties alleen toegevoegd aan de huidige API.
+We raden u aan om versie 2020-08-01 nu te gaan gebruiken om te profiteren van de voor delen van nieuwe functionaliteit, zoals een [toegewezen cluster](./logs-dedicated-clusters.md), door de [klant beheerde sleutels](../logs/customer-managed-keys.md), [persoonlijke koppeling](./private-link-security.md) en [gegevens export](./logs-data-export.md). Daarnaast worden nieuwe functies en functionaliteit en optimalisaties alleen toegevoegd aan de huidige API.
 
 Na 29 februari 2024 biedt Azure Monitor geen ondersteuning meer voor eerdere versies van Api's dan 2020-08-01. Als u liever geen upgrade uitvoert, worden aanvragen die zijn verzonden vanuit eerdere versies, nog steeds verwerkt door de Azure Monitor-service tot en met 29 februari 2024.
 

@@ -11,16 +11,37 @@ ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
 ms.author: marsma
-ms.openlocfilehash: 11f32d893ccc26dd30d9997d4348661d45f84eb8
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 56e6d859293b91a56252372574f59c8dcc2cd80e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99225476"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101687325"
 ---
 # <a name="microsoft-identity-platform-docs-whats-new"></a>Micro soft Identity platform docs: What's New
 
 Welkom bij wat er nieuw is in de documentatie voor micro soft Identity platform. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden.
+
+## <a name="february-2021"></a>Februari 2021
+
+### <a name="new-articles"></a>Nieuwe artikelen
+
+- [Quick Start: een toegangs token verkrijgen en de Microsoft Graph-API aanroepen vanuit een Elektror bureau blad-app](quickstart-v2-nodejs-desktop.md)
+- [Zelf studie: gebruikers aanmelden en de Microsoft Graph-API aanroepen in een Elektroon-desktop-app](tutorial-v2-nodejs-desktop.md)
+- [Quick Start: een token verkrijgen en Microsoft Graph-API aanroepen vanuit een Node.js console-app met behulp van de identiteit van de app](quickstart-v2-nodejs-console.md)
+- [Zelf studie: de Microsoft Graph-API aanroepen in een Node.js-console-app](tutorial-v2-nodejs-console.md)
+- [Zelf studie: aanmeldings gebruikers in een Node.js & snelle web-app](tutorial-v2-nodejs-webapp-msal.md)
+- [Ondersteuning voor verificatie zonder wacht woord met FIDO2-sleutels in apps die u ontwikkelt](support-fido2-authentication.md)
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+
+- [Wat is er nieuw voor verificatie?](reference-breaking-changes.md)
+- [MSAL.NET gebruiken om gebruikers aan te melden met sociale identiteiten](msal-net-aad-b2c-considerations.md)
+- [Codevoorbeelden voor Microsoft identity platform (v2.0-eindpunt)](sample-v2-code.md)
+- [Microsoft Identity Platform-video's](identity-videos.md)
+- [Quickstart: een tenant instellen](quickstart-create-new-tenant.md)
+- [Snelstart: Een toepassing registreren bij het Microsoft-identiteitsplatform](quickstart-register-app.md)
+- [Quick Start: een token verkrijgen en Microsoft Graph-API aanroepen vanuit een Java-Console-app met behulp van de identiteit van de app](quickstart-v2-java-daemon.md)
 
 ## <a name="january-2021"></a>Januari 2021
 
@@ -66,17 +87,3 @@ Welkom bij wat er nieuw is in de documentatie voor micro soft Identity platform.
 - [Toegangs tokens van micro soft Identity platform](access-tokens.md)
 - [Een web-API die web-Api's aanroept: een Token ophalen voor de app](scenario-web-api-call-api-acquire-token.md)
 
-
-## <a name="november-2020"></a>November 2020
-
-### <a name="new-articles"></a>Nieuwe artikelen
-
-- [Continue toegang-Api's voor evaluatie inschakelen in uw toepassingen](app-resilience-continuous-access-evaluation.md)
-
-### <a name="updated-articles"></a>Bijgewerkte artikelen
-
-- [Toegangs tokens van micro soft Identity platform](access-tokens.md)
-- [Configuratie opties voor toepassingen (MSAL)](msal-client-application-configuration.md)
-- [Procedure: optionele claims voor uw app opgeven](active-directory-optional-claims.md)
-- [Uw app publiceren in de app-galerie van Azure AD](v2-howto-app-gallery-listing.md)
-- [Procedure: app-rollen toevoegen aan uw toepassing en deze ontvangen in het token](howto-add-app-roles-in-azure-ad-apps.md)

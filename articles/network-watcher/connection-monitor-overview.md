@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: vinigam
 ms.custom: mvc
-ms.openlocfilehash: ccc2b6baba0e97320a5352013dbecfc121188457
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 7abaae033d2dbdb329a1f99d8f9845e5965d806c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100361023"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101712314"
 ---
 # <a name="network-connectivity-monitoring-with-connection-monitor"></a>Netwerk connectiviteit controleren met verbindings monitor
 
@@ -89,7 +89,7 @@ Voor Linux-machines moet portNumbers die moeten worden gebruikt, hand matig word
 
  Houd er rekening mee dat gebruikte poort nummers hetzelfde moeten zijn voor alle agents die worden gebruikt in een werk ruimte. 
 
-Het script maakt register sleutels die vereist zijn voor de oplossing. Er worden ook Windows Firewall regels gemaakt waarmee agents TCP-verbindingen met elkaar kunnen maken. De register sleutels die door het script zijn gemaakt, geven aan of de logboeken voor fout opsporing en het pad voor het logboek bestand moeten worden geregistreerd. Het script definieert ook de TCP-poort van de agent die wordt gebruikt voor communicatie. De waarden voor deze sleutels worden automatisch ingesteld door het script. Wijzig deze sleutels niet hand matig. De poort die standaard wordt geopend, is 8084. U kunt een aangepaste poort gebruiken door de para meter poort nummer toe te voegen aan het script. Gebruik dezelfde poort op alle computers waarop het script wordt uitgevoerd. [Meer](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-requirements) informatie over de netwerk vereisten voor log Analytics agents
+Het script maakt register sleutels die vereist zijn voor de oplossing. Er worden ook Windows Firewall regels gemaakt waarmee agents TCP-verbindingen met elkaar kunnen maken. De register sleutels die door het script zijn gemaakt, geven aan of de logboeken voor fout opsporing en het pad voor het logboek bestand moeten worden geregistreerd. Het script definieert ook de TCP-poort van de agent die wordt gebruikt voor communicatie. De waarden voor deze sleutels worden automatisch ingesteld door het script. Wijzig deze sleutels niet hand matig. De poort die standaard wordt geopend, is 8084. U kunt een aangepaste poort gebruiken door de para meter poort nummer toe te voegen aan het script. Gebruik dezelfde poort op alle computers waarop het script wordt uitgevoerd. [Meer](../azure-monitor/agents/log-analytics-agent.md#network-requirements) informatie over de netwerk vereisten voor log Analytics agents
 
 Het script configureert alleen Windows Firewall lokaal. Als u een netwerk firewall hebt, controleert u of het verkeer dat is bestemd voor de TCP-poort die wordt gebruikt door Netwerkprestatiemeter, is toegestaan.
 
@@ -287,7 +287,7 @@ In verbindings monitors die zijn gemaakt voor de ervaring van de verbindings mon
 
 Wanneer u metrische gegevens gebruikt, stelt u het resource type in als micro soft. Network/networkWatchers/connectionMonitors
 
-| Metrisch | Weergavenaam | Eenheid | Type aggregatie | Description | Dimensies |
+| Metrisch | Weergavenaam | Eenheid | Type aggregatie | Beschrijving | Dimensies |
 | --- | --- | --- | --- | --- | --- |
 | ProbesFailedPercent (klassiek) | % Tests mislukt (klassiek) | Percentage | Gemiddeld | Het percentage van de connectiviteits controle tests is mislukt. | Geen dimensies |
 | AverageRoundtripMs (klassiek) | Gem. retour tijd (MS) (klassiek) | Milliseconden | Gemiddeld | Gemiddelde netwerk-RTT voor connectiviteits controle tests die zijn verzonden tussen de bron en de bestemming. |             Geen dimensies |

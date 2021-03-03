@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 01/14/2020
 ms.author: anavin
 ms.custom: include file
-ms.openlocfilehash: 59329fccda77f16e4a595e9b1789ef684c5cbf95
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
-ms.translationtype: HT
+ms.openlocfilehash: 44245bc3cd9fd1afcfe9a74d60e2f51135a247ee
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98256491"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734031"
 ---
 ### <a name="networking-limits---azure-resource-manager"></a><a name="azure-resource-manager-virtual-networking-limits"></a>Netwerklimieten - Azure Resource Manager
 De volgende beperkingen gelden alleen voor netwerkresources die worden beheerd via **Azure Resource Manager**. De beperkingen gelden per regio en per abonnement. Meer informatie over het [bekijken van uw huidige resourcegebruik op basis van uw abonnementslimieten](../articles/networking/check-usage-against-limits.md).
@@ -69,7 +69,7 @@ De volgende beperkingen gelden alleen voor netwerkresources die worden beheerd v
 | Resource                                | Limiet         |
 |-----------------------------------------|-------------------------------|
 | Load balancers                          | 1000                         |
-| Regels per resource                      | 1500                         |
+| Regels (Load Balancer + inkomende NAT) per resource                      | 1500                         |
 | Regels per NIC (voor alle IP-adressen op een NIC) | 300                           |
 | Frontend-IP-configuraties              | 600                           |
 | Grootte van back-end-pool                       | 1000 IP-configuraties, één virtueel netwerk |
@@ -78,7 +78,7 @@ De volgende beperkingen gelden alleen voor netwerkresources die worden beheerd v
 | Uitgaande regels per load balancer        | 600                           |
 | Load balancers per VM                   | 2 (1 openbaar en 1 intern)   |
 
-<sup>1</sup>De limiet is maximaal 150 resources, bestaande uit een willekeurige combinatie van zelfstandige VM-resources, resources voor beschikbaarheidssets en plaatsingsgroepen op VM-schaal.
+<sup>1</sup> de limiet is maxi maal 150 resources, in een combi natie van zelfstandige virtuele-machine resources, bronnen voor beschikbaarheids sets en schaal sets voor virtuele machines.
 
 **Basic Load Balancer**
 
@@ -87,10 +87,12 @@ De volgende beperkingen gelden alleen voor netwerkresources die worden beheerd v
 | Load balancers                          | 1000                        |
 | Regels per resource                      | 250                          |
 | Regels per NIC (voor alle IP-adressen op een NIC) | 300                          |
-| Frontend-IP-configuraties              | 200                          |
+| Front-end-IP-configuraties <sup> 2<sup>  | 200                          |
 | Grootte van back-end-pool                       | 300 IP-configuraties, één beschikbaarheidsset |
 | Beschikbaarheidssets per load balancer     | 1                            |
 | Load balancers per VM                   | 2 (1 openbaar en 1 intern)  |
+
+<sup>2</sup> de limiet voor één afzonderlijke resource in een back-end-groep (zelfstandige virtuele machine, beschikbaarheidsset of schaal groep instellen voor virtuele machines) is om maxi maal 250 front-end-IP-configuraties te hebben in een open bare Load Balancer van de Basic en interne Load Balancer.
 
 <a name="virtual-networking-limits-classic"></a>De volgende beperkingen gelden alleen voor netwerkresources die worden beheerd via het **klassieke** implementatiemodel voor elk abonnement. Meer informatie over het [bekijken van uw huidige resourcegebruik op basis van uw abonnementslimieten](../articles/networking/check-usage-against-limits.md).
 
@@ -99,7 +101,7 @@ De volgende beperkingen gelden alleen voor netwerkresources die worden beheerd v
 | Virtuele netwerken |100 |100 |
 | Lokale netwerksites |20 |50 |
 | DNS-servers per virtueel netwerk |20 |20 |
-| Privé-IP-adressen per virtueel netwerk |4096 |4096 |
+| Privé-IP-adressen per virtueel netwerk |4.096 |4.096 |
 | Gelijktijdige TCP-of UDP-stromen per NIC van een virtuele machine of rolinstantie |500.000 tot 1.000.000 voor twee of meer NIC's. |500.000 tot 1.000.000 voor twee of meer NIC's. |
 | Netwerkbeveiligingsgroepen (NSG's) |200 |200 |
 | NSG-regels per NSG |200 |1000 |

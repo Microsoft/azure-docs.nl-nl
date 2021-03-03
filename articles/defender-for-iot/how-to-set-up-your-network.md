@@ -4,15 +4,15 @@ description: Meer informatie over de architectuur van de oplossing, netwerk voor
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 01/03/2021
+ms.date: 02/18/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 4ceedf4d05c6f92e5c32da95f8b54fc6c95de01c
-ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
+ms.openlocfilehash: 0f85eebbfa8fcdfd9ad6e31a564f27b5d9bfbdfc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100526507"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733241"
 ---
 # <a name="about-azure-defender-for-iot-network-setup"></a>Over de installatie van het Azure Defender for IoT-netwerk
 
@@ -22,7 +22,7 @@ Azure Defender voor IoT biedt voortdurende bewaking van Internet bedreigingen en
 
 **Defender voor IOT on-premises beheer console**: de on-premises beheer console bevat een geconsolideerde weer gave van alle netwerk apparaten. Het biedt een real-time weer gave van Key OT-en IoT-risico indicatoren en waarschuwingen over al uw faciliteiten. Het is nauw geïntegreerd met uw SOC-werk stromen en playbooks en maakt het eenvoudig om de prioriteit van de oplossings activiteiten en de correlatie van bedreigingen op meerdere locaties te verbeteren. 
 
-**Defender voor IOT voor IOT-portal:** De app Defender voor IoT kan u helpen bij het kopen van oplossings apparaten, het installeren en bijwerken van software en het bijwerken van TI-pakketten. 
+**Defender voor IOT-portal:** De app Defender voor IoT kan u helpen bij het kopen van oplossings apparaten, het installeren en bijwerken van software en het bijwerken van TI-pakketten. 
 
 Dit artikel bevat informatie over de oplossings architectuur, netwerk voorbereiding, vereisten en meer om u te helpen uw netwerk zo in te stellen dat het werkt met Defender voor IoT-apparaten. Lezers die werken met de informatie in dit artikel, moeten ervaring hebben met het gebruik en beheer van netwerken van OT en IoT. Voor beelden zijn onder andere automatiserings engineers, plant aardige managers, OT met netwerk infrastructuur service providers, Cyber beveiliging teams, CISOs of Cio's.
 

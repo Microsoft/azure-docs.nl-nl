@@ -7,14 +7,14 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 02/09/2021
+ms.date: 03/01/2021
 ms.reviewer: sngun
-ms.openlocfilehash: ee05cbdfb2634ed7c299f736b3343ce2dfbd3520
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 979194efc5ea956c99943cba15efc4a5e3fea2f9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100548400"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101691600"
 ---
 # <a name="change-feed-pull-model-in-azure-cosmos-db"></a>Pull-model voor feed wijzigen in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -48,7 +48,7 @@ Hier volgen enkele belang rijke verschillen tussen de Change feed-processor en h
 | Navragen voor toekomstige wijzigingen | Controleert automatisch op wijzigingen op basis van door de gebruiker opgegeven `WithPollInterval` | Handmatig |
 | Gedrag waarbij er geen nieuwe wijzigingen zijn | Automatisch wachten `WithPollInterval` en opnieuw controleren | Moet uitzonde ring afvangen en hand matig opnieuw controleren |
 | Wijzigingen van de hele container verwerken | Ja, en automatisch geparallelleerd voor meerdere threads/machine die uit dezelfde container worden verbruikt| Ja, en hand matig geparallelleerd met behulp van FeedTokens |
-| Wijzigingen van slechts één partitie sleutel verwerken | Niet ondersteund | Yes|
+| Wijzigingen van slechts één partitie sleutel verwerken | Niet ondersteund | Ja|
 | Ondersteunings niveau | Algemeen beschikbaar | Preview |
 
 > [!NOTE]
@@ -91,7 +91,7 @@ while (iteratorForTheEntireContainer.HasMoreResults)
     }
     catch {
         Console.WriteLine($"No new changes");
-        Thread.Sleep(5000);
+        await Task.Delay(TimeSpan.FromSeconds(5));
     }
 }
 ```
@@ -120,7 +120,7 @@ while (iteratorForThePartitionKey.HasMoreResults)
     catch (CosmosException exception) when (exception.StatusCode == System.Net.HttpStatusCode.NotModified)
     {
         Console.WriteLine($"No new changes");
-        Thread.Sleep(5000);
+        await Task.Delay(TimeSpan.FromSeconds(5));
     }
 }
 ```
@@ -163,7 +163,7 @@ while (iteratorA.HasMoreResults)
     catch (CosmosException exception) when (exception.StatusCode == System.Net.HttpStatusCode.NotModified)
     {
         Console.WriteLine($"No new changes");
-        Thread.Sleep(5000);
+        await Task.Delay(TimeSpan.FromSeconds(5));
     }
 }
 ```
@@ -185,7 +185,7 @@ while (iteratorB.HasMoreResults)
     catch (CosmosException exception) when (exception.StatusCode == System.Net.HttpStatusCode.NotModified)
     {
         Console.WriteLine($"No new changes");
-        Thread.Sleep(5000);
+        await Task.Delay(TimeSpan.FromSeconds(5));
     }
 }
 ```
@@ -213,7 +213,7 @@ while (iterator.HasMoreResults)
     catch (CosmosException exception) when (exception.StatusCode == System.Net.HttpStatusCode.NotModified)
     {
         Console.WriteLine($"No new changes");
-        Thread.Sleep(5000);
+        await Task.Delay(TimeSpan.FromSeconds(5));
     }   
 }
 

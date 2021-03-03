@@ -12,12 +12,12 @@ ms.topic: overview
 ms.date: 10/22/2020
 ms.author: nitinme
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: d134532e7f285f391b6791a9fc73d5e3251ddac8
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
-ms.translationtype: HT
+ms.openlocfilehash: 1a7e1cc2303438a904b95a378a14bd02ac88c179
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94369406"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101736626"
 ---
 # <a name="what-are-azure-cognitive-services"></a>Wat zijn Azure Cognitive Services?
 
@@ -43,7 +43,7 @@ In de volgende secties in dit artikel vindt u een lijst met services die deel ui
 |[Custom Vision Service](./custom-vision-service/overview.md "Custom Vision Service")|Met de Custom Vision Service kunt u aangepaste classificeerders voor afbeeldingen bouwen.|
 |[Face](./face/index.yml "Face")| De Face-service biedt toegang tot geavanceerde gezichtsalgoritmen, waardoor detectie en herkenning van gezichtskenmerken mogelijk worden.|
 |[Form Recognizer](./form-recognizer/index.yml "Form Recognizer")|Form Recognizer identificeert en extraheert sleutel-waardeparen en tabelgegevens uit formulierdocumenten. Vervolgens voert het gestructureerde gegevens uit, inclusief de relaties in het oorspronkelijke bestand.|
-|[Ink Recognizer](./ink-recognizer/index.yml "Ink Recognizer") (wordt buiten gebruik gesteld)|Met Ink Recognize kunt u gegevens over digitale pennenstreken, vormen en handgeschreven inhoud herkennen en analyseren en een documentstructuur met alle herkende entiteiten uitvoeren.|
+|[Ink Recognizer](/previous-versions/azure/cognitive-services/Ink-Recognizer/ "Ink Recognizer") (wordt buiten gebruik gesteld)|Met Ink Recognize kunt u gegevens over digitale pennenstreken, vormen en handgeschreven inhoud herkennen en analyseren en een documentstructuur met alle herkende entiteiten uitvoeren.|
 |[Video Indexer](../media-services/video-indexer/video-indexer-overview.md "Video Indexer")|Extraheer inzichten uit uw video met Video Indexer.|
 
 ## <a name="speech-apis"></a>Speech-API's

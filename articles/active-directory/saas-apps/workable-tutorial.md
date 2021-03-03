@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: jeedes
-ms.openlocfilehash: e6cf8b0ea7064b99cf6f630a83b2800900f29c47
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
-ms.translationtype: HT
+ms.openlocfilehash: f705ca1e001d3b7852c5bec5b494f23eb7943626
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636082"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101687767"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workable"></a>Zelfstudie: Integratie van Azure Active Directory met Workable
 
@@ -42,7 +42,7 @@ Als u Azure AD wilt integreren met Workable, hebt u het volgende nodig:
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
 * Workable biedt ondersteuning voor door **SP en IDP** geïnitieerde eenmalige aanmelding (SSO)
-* Workable biedt ondersteuning voor **Just-In-Time** -inrichting van gebruikers
+* Workable biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
 
 ## <a name="adding-workable-from-the-gallery"></a>Workable toevoegen vanuit de galerie
 
@@ -50,7 +50,7 @@ Als u de integratie van Workable met Azure AD wilt configureren, dient u Workabl
 
 **Voer de volgende stappen uit als u Workable vanuit de galerie wilt toevoegen:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -74,10 +74,10 @@ Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure 
 Als u eenmalige aanmelding van Azure AD met Workable wilt testen en configureren, dient u de volgende bouwstenen te voltooien:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Workable-eenmalige aanmelding configureren](#configure-workable-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de clientzijde wil configureren.
+2. **[Workable-eenmalige aanmelding configureren](#configure-workable-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de clientzijde wil configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Workable-testgebruiker maken](#create-workable-test-user)** : als u een tegenhanger van Britta Simon in Workable wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
+5. **[Workable-testgebruiker maken](#create-workable-test-user)**: als u een tegenhanger van Britta Simon in Workable wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -143,7 +143,7 @@ Zodra eenmalige aanmelding is ingeschakeld, wordt u hiervan op de hoogte gesteld
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -157,7 +157,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     a. Voer in het veld **Naam** **Britta Simon** in.
   
-    b. In het veld **Gebruikersnaam** typt u `brittasimon\@yourcompanydomain.extension`. Bijvoorbeeld BrittaSimon@contoso.com.
+    b. In het veld type **gebruikers naam** `brittasimon@yourcompanydomain.extension` , bijvoorbeeld: `brittasimon@contoso.com` .
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 

@@ -7,15 +7,15 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: bwren
 ms.subservice: metrics
-ms.openlocfilehash: 0ab7d8548494e96b4a7570ef26ccde39456bf690
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 0051ec15cafc60af6a0523631f77a9b52294e69c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609137"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101731711"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-by-using-an-azure-resource-manager-template-for-a-windows-virtual-machine"></a>De metrische gegevens van het gast besturingssysteem naar het Azure Monitor metrische archief verzenden met behulp van een Azure Resource Manager sjabloon voor een virtuele Windows-machine
-Prestatie gegevens van het gast besturingssysteem van de virtuele machines van Azure worden niet automatisch verzameld, zoals andere [platform metrische gegevens](../insights/monitor-azure-resource.md#monitoring-data). Installeer de Azure Monitor [Diagnostics-extensie](../agents/diagnostics-extension-overview.md) voor het verzamelen van metrische gegevens van het gast besturingssysteem in de data base Metrics, zodat deze kan worden gebruikt met alle functies van Azure monitor metrische gegevens, waaronder bijna realtime waarschuwingen, grafieken, route ring en toegang vanaf een rest API. In dit artikel wordt het proces beschreven voor het verzenden van de prestaties van een virtuele Windows-machine naar de metrische data base met behulp van een resource manager-sjabloon. 
+Prestatie gegevens van het gast besturingssysteem van de virtuele machines van Azure worden niet automatisch verzameld, zoals andere [platform metrische gegevens](./monitor-azure-resource.md#monitoring-data). Installeer de Azure Monitor [Diagnostics-extensie](../agents/diagnostics-extension-overview.md) voor het verzamelen van metrische gegevens van het gast besturingssysteem in de data base Metrics, zodat deze kan worden gebruikt met alle functies van Azure monitor metrische gegevens, waaronder bijna realtime waarschuwingen, grafieken, route ring en toegang vanaf een rest API. In dit artikel wordt het proces beschreven voor het verzenden van de prestaties van een virtuele Windows-machine naar de metrische data base met behulp van een resource manager-sjabloon. 
 
 > [!NOTE]
 > Zie [Windows Azure Diagnostics extension (WAD) installeren en configureren](../agents/diagnostics-extension-windows-install.md)voor meer informatie over het configureren van de diagnostische extensie voor het verzamelen van metrische gegevens voor het gast besturingssysteem met behulp van de Azure Portal.
@@ -29,7 +29,7 @@ Als u niet bekend bent met Resource Manager-sjablonen, kunt u meer te weten kome
 
 - U moet [Azure PowerShell](/powershell/azure) of [Azure Cloud shell](../../cloud-shell/overview.md) hebben geïnstalleerd.
 
-- De VM-resource moet zich in een regio bevinden [die aangepaste metrische gegevens ondersteunt](../platform/metrics-custom-overview.md#supported-regions). 
+- De VM-resource moet zich in een regio bevinden [die aangepaste metrische gegevens ondersteunt](./metrics-custom-overview.md#supported-regions). 
 
 
 ## <a name="set-up-azure-monitor-as-a-data-sink"></a>Azure Monitor instellen als een gegevens Sink
@@ -250,7 +250,7 @@ We maken gebruik van Azure PowerShell om de Resource Manager-sjabloon te impleme
     New-AzResourceGroup -Name "<Name of Resource Group>" -Location "<Azure Region>"
    ```
    > [!NOTE]
-   > Vergeet niet [een Azure-regio te gebruiken die is ingeschakeld voor aangepaste metrische gegevens](../platform/metrics-custom-overview.md).
+   > Vergeet niet [een Azure-regio te gebruiken die is ingeschakeld voor aangepaste metrische gegevens](./metrics-custom-overview.md).
 
 1. Voer de volgende opdrachten uit om de virtuele machine te implementeren met behulp van de Resource Manager-sjabloon.
    > [!NOTE]
@@ -285,4 +285,4 @@ We maken gebruik van Azure PowerShell om de Resource Manager-sjabloon te impleme
 
 
 ## <a name="next-steps"></a>Volgende stappen
-- Meer informatie over [aangepaste metrische gegevens](../platform/metrics-custom-overview.md).
+- Meer informatie over [aangepaste metrische gegevens](./metrics-custom-overview.md).

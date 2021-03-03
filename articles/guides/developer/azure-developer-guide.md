@@ -6,12 +6,12 @@ ms.service: azure
 ms.topic: article
 ms.date: 11/18/2019
 ms.author: glenga
-ms.openlocfilehash: 1caab392af1dab4f2e706d7372b0a1d9b5e62db6
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 12b90bf709cb20bed844940570663a76052a540d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101091211"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738936"
 ---
 # <a name="get-started-guide-for-azure-developers"></a>Introductiehandleiding voor Azure-ontwikkelaars
 
@@ -63,7 +63,7 @@ U kunt uw bestaande toepassingen migreren naar App Service met behulp van het [h
 
 Als IaaS-provider (Infrastructure as a Service) kunt u met Azure uw toepassing implementeren naar of migreren naar virtuele Windows-of Linux-machines. In combi natie met Azure Virtual Network ondersteunt Azure Virtual Machines de implementatie van Windows-of Linux-Vm's naar Azure. Met Vm's hebt u de volledige controle over de configuratie van de computer. Wanneer u Vm's gebruikt, bent u verantwoordelijk voor alle patches voor de server software-installatie, configuratie, onderhoud en besturings systemen.
 
-Vanwege het beheer niveau dat u met Vm's hebt, kunt u een groot aantal server werkbelastingen uitvoeren op Azure die niet in een PaaS-model passen. Tot deze werk belastingen behoren database servers, Windows Server Active Directory en micro soft share point. Zie de Virtual Machines-documentatie voor [Linux](../../virtual-machines/linux/index.yml) of [Windows](../../virtual-machines/windows/index.yml)voor meer informatie.
+Vanwege het beheer niveau dat u met Vm's hebt, kunt u een groot aantal server werkbelastingen uitvoeren op Azure die niet in een PaaS-model passen. Tot deze werk belastingen behoren database servers, Windows Server Active Directory en micro soft share point. Zie de Virtual Machines-documentatie voor [Linux](../../virtual-machines/index.yml) of [Windows](../../virtual-machines/index.yml)voor meer informatie.
 
 > **Wanneer gebruiken**: gebruik virtual machines als u volledige controle over uw toepassings infrastructuur wilt of de werk belasting van on-premises toepassingen naar Azure wilt migreren zonder dat u wijzigingen hoeft aan te brengen.
 >

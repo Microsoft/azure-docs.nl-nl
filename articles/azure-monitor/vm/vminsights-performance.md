@@ -1,24 +1,24 @@
 ---
-title: Prestaties in kaart brengen met Azure Monitor voor VM's
-description: Prestaties is een functie van de Azure Monitor voor VM's die toepassings onderdelen automatisch detecteert op Windows-en Linux-systemen en de communicatie tussen services toewijst. In dit artikel vindt u informatie over het gebruik ervan in verschillende scenario's.
+title: Prestaties presen teren met VM Insights
+description: Prestaties is een functie van de VM-inzichten die automatisch toepassings onderdelen op Windows-en Linux-systemen detecteert en de communicatie tussen services toewijst. In dit artikel vindt u informatie over het gebruik ervan in verschillende scenario's.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/31/2020
-ms.openlocfilehash: f9578fadfbe057b723af63e338bf8bda63cf6f21
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 9c69ea3da71063d7e20ebf31ae2eb3df9a51e2c2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612099"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101725438"
 ---
-# <a name="how-to-chart-performance-with-azure-monitor-for-vms"></a>Prestaties in kaart brengen met Azure Monitor voor VM's
+# <a name="how-to-chart-performance-with-vm-insights"></a>Prestaties presen teren met VM Insights
 
-Azure Monitor voor VM's bevat een reeks prestatiegrafieken die gericht zijn op verschillende Key Performance Indicators (KPI's), waarmee u de prestaties van een virtuele machine kunt vaststellen. In de grafieken wordt het resource gebruik gedurende een bepaalde periode weer gegeven, zodat u knel punten, afwijkingen kunt identificeren of overschakelen naar een perspectief waarin elke machine wordt weer gegeven op basis van de geselecteerde metriek. Hoewel er talrijke elementen zijn waarmee u rekening moet houden bij de prestaties, wordt Azure Monitor voor VM's bewaakt de prestatie-indica tors van het sleutel besturings systeem die betrekking hebben op de processor, het geheugen, de netwerk adapter en het schijf gebruik. Prestaties vormen een aanvulling op de status controle functie en helpen problemen op te lossen die duiden op een mogelijke systeem onderdeel fout, ondersteuning voor afstemming en Optima Lise ring om efficiëntie te beleven of capaciteits planning te ondersteunen.  
+VM Insights bevat een reeks prestatie diagrammen die gericht zijn op verschillende Key Performance Indica tors (Kpi's) waarmee u kunt bepalen hoe goed een virtuele machine wordt uitgevoerd. In de grafieken wordt het resource gebruik gedurende een bepaalde periode weer gegeven, zodat u knel punten, afwijkingen kunt identificeren of overschakelen naar een perspectief waarin elke machine wordt weer gegeven op basis van de geselecteerde metriek. Hoewel er talrijke elementen zijn waarmee u rekening moet houden bij de uitvoering van prestaties, bewaakt VM Insights de prestatie-indica toren van het sleutel besturings systeem, gerelateerd aan de processor, het geheugen, de netwerk adapter en het schijf gebruik. Prestaties vormen een aanvulling op de status controle functie en helpen problemen op te lossen die duiden op een mogelijke systeem onderdeel fout, ondersteuning voor afstemming en Optima Lise ring om efficiëntie te beleven of capaciteits planning te ondersteunen.  
 
 ## <a name="limitations"></a>Beperkingen
-Hieronder vindt u beperkingen in de prestatie verzameling met Azure Monitor voor VM's.
+Hieronder vindt u beperkingen bij het verzamelen van prestaties met VM Insights.
 
 - **Beschikbaar geheugen** is niet beschikbaar voor virtuele machines waarop Red Hat Linux (RHEL) 6 wordt uitgevoerd. Deze metriek wordt berekend op basis van **MemAvailable** die is geïntroduceerd in [kernel versie 3,14](http://www.man7.org/linux/man-pages/man1/free.1.html).
 - Metrieken zijn alleen beschikbaar voor gegevens schijven op virtuele Linux-machines met behulp van XFS File System of EXT File System-familie (EXT2, EXT3, EXT4).
@@ -33,7 +33,7 @@ De functie prestaties van Azure Monitor biedt een overzicht van alle bewaakte Vm
 
 ![Top N lijst weergave van VM Insights-prestaties](media/vminsights-performance/vminsights-performance-aggview-01.png)
 
-Als u meer dan één Log Analytics-werk ruimte hebt, kiest u in het tabblad **eerste N grafieken** de werk ruimte die is ingeschakeld met de oplossing van de **werkruimte** kiezer boven aan de pagina. De **groeps** kiezer retourneert abonnementen, resource groepen, [computer groepen](../platform/computer-groups.md)en virtuele-machine schaal sets van computers die zijn gerelateerd aan de geselecteerde werk ruimte, die u kunt gebruiken om de resultaten verder te filteren die in de grafieken op deze pagina en op de andere pagina's worden weer gegeven. Uw selectie is alleen van toepassing op de prestatie functie en de status of kaart wordt niet overgedragen.  
+Als u meer dan één Log Analytics-werk ruimte hebt, kiest u in het tabblad **eerste N grafieken** de werk ruimte die is ingeschakeld met de oplossing van de **werkruimte** kiezer boven aan de pagina. De **groeps** kiezer retourneert abonnementen, resource groepen, [computer groepen](../logs/computer-groups.md)en virtuele-machine schaal sets van computers die zijn gerelateerd aan de geselecteerde werk ruimte, die u kunt gebruiken om de resultaten verder te filteren die in de grafieken op deze pagina en op de andere pagina's worden weer gegeven. Uw selectie is alleen van toepassing op de prestatie functie en de status of kaart wordt niet overgedragen.  
 
 Standaard worden in de grafieken de afgelopen 24 uur weer gegeven. Met de **time Range** selector kunt u een query uitvoeren voor historische Peri Oden van Maxi maal 30 dagen om te laten zien hoe de prestaties in het verleden zijn bekeken.
 
@@ -45,7 +45,7 @@ De grafieken met vijf capaciteits gebruik die op de pagina worden weer gegeven, 
 * Aantal verzonden bytes: toont de vijf meest voorkomende computers met het hoogste gemiddelde aan verzonden bytes 
 * Aantal ontvangen bytes: toont de vijf meest voorkomende computers met het hoogste gemiddelde van ontvangen bytes 
 
-Als u op het speld pictogram in de rechter bovenhoek van een van de vijf grafieken klikt, wordt de geselecteerde grafiek vastgemaakt aan het laatste Azure-dash board dat u het laatst hebt bekeken.  Vanuit het dash board kunt u het formaat en de positie van de grafiek wijzigen. Als u de grafiek in het dash board selecteert, wordt u omgeleid naar Azure Monitor voor VM's en het juiste bereik en de weer gave te laden.  
+Als u op het speld pictogram in de rechter bovenhoek van een van de vijf grafieken klikt, wordt de geselecteerde grafiek vastgemaakt aan het laatste Azure-dash board dat u het laatst hebt bekeken.  Vanuit het dash board kunt u het formaat en de positie van de grafiek wijzigen. Als u de grafiek in het dash board selecteert, wordt u omgeleid naar VM Insights en wordt het juiste bereik en de weer gave geladen.  
 
 Als u op het pictogram aan de linkerkant van het speld pictogram op een van de vijf grafieken klikt, wordt de **bovenste N lijst** weergave geopend.  Hier ziet u het resource gebruik voor de metrische prestatie gegevens per afzonderlijke VM in een lijst weergave en welke machine het hoogst mogelijk maakt.  
 
@@ -104,7 +104,7 @@ De volgende grafieken voor capaciteits gebruik zijn opgenomen:
 * Aantal verzonden bytes: standaard waarden die het gemiddelde aantal verzonden bytes weer geven 
 * Aantal ontvangen bytes-standaard waarden voor ontvangen bytes
 
-Als u op het speld pictogram in de rechter bovenhoek van een van de grafieken klikt, wordt het geselecteerde diagram gespeld naar het laatste Azure-dash board dat u hebt bekeken. Vanuit het dash board kunt u het formaat en de positie van de grafiek wijzigen. Als u de grafiek in het dash board selecteert, wordt u omgeleid naar Azure Monitor voor VM's en wordt de detail weergave van de prestaties voor de virtuele machine geladen.  
+Als u op het speld pictogram in de rechter bovenhoek van een van de grafieken klikt, wordt het geselecteerde diagram gespeld naar het laatste Azure-dash board dat u hebt bekeken. Vanuit het dash board kunt u het formaat en de positie van de grafiek wijzigen. Als u de grafiek in het dash board selecteert, wordt u omgeleid naar de weer gave van de prestatie gegevens voor de virtuele machine.  
 
 ![Prestaties van de VM-inzichten rechtstreeks vanuit de VM-weer gave](./media/vminsights-performance/vminsights-performance-directvm-01.png)
 
@@ -117,7 +117,7 @@ Voer de volgende stappen uit om rechtstreeks toegang te krijgen tot de schaalset
 
 Op deze pagina wordt de weer gave Azure Monitor prestaties geladen, waarbij het bereik is ingesteld op de geselecteerde schaalset. Zo kunt u de eerste N instanties in de schaalset bekijken over de set bewaakte metrische gegevens, de statistische prestaties van de schaalset bekijken en de trends voor geselecteerde metrische gegevens in de afzonderlijke exemplaren van de schaalset bekijken. Als u een instantie in de lijst weergave selecteert, kunt u de kaart laden of naar een gedetailleerde weer gave van de prestaties voor die instantie navigeren.
 
-Als u op het speld pictogram in de rechter bovenhoek van een van de grafieken klikt, wordt het geselecteerde diagram gespeld naar het laatste Azure-dash board dat u hebt bekeken. Vanuit het dash board kunt u het formaat en de positie van de grafiek wijzigen. Als u de grafiek in het dash board selecteert, wordt u omgeleid naar Azure Monitor voor VM's en wordt de detail weergave van de prestaties voor de virtuele machine geladen.  
+Als u op het speld pictogram in de rechter bovenhoek van een van de grafieken klikt, wordt het geselecteerde diagram gespeld naar het laatste Azure-dash board dat u hebt bekeken. Vanuit het dash board kunt u het formaat en de positie van de grafiek wijzigen. Als u de grafiek in het dash board selecteert, wordt u omgeleid naar de weer gave van de prestatie gegevens voor de virtuele machine.  
 
 ![Prestaties van de VM-inzichten rechtstreeks vanuit de weer gave virtuele-machine schaal sets](./media/vminsights-performance/vminsights-performance-directvmss-01.png)
 
@@ -128,6 +128,6 @@ Als u op het speld pictogram in de rechter bovenhoek van een van de grafieken kl
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het gebruik van [werkmappen](vminsights-workbooks.md) die zijn opgenomen in azure monitor voor VM's om prestaties en netwerk gegevens verder te analyseren.  
+- Meer informatie over het gebruik van [werkmappen](vminsights-workbooks.md) die zijn opgenomen in VM Insights om de prestaties en netwerk gegevens verder te analyseren.  
 
-- Zie [Azure monitor voor VM's kaart weer geven](vminsights-maps.md)voor meer informatie over gedetecteerde toepassings afhankelijkheden.
+- Zie de [overzichts weergave van Vm's weer geven](vminsights-maps.md)voor meer informatie over gedetecteerde toepassings afhankelijkheden.

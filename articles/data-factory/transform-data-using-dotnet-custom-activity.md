@@ -7,12 +7,12 @@ ms.author: abnarain
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/26/2018
-ms.openlocfilehash: ab49c294fb8923c9a1a47af016e5224a8bba846c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 64588d5968df635c3bb017bd1ff1d10951968f32
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100576355"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101724945"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Use custom activities in an Azure Data Factory pipeline (Aangepaste activiteiten gebruiken in een Azure Data Factory-pijplijn)
 
@@ -37,7 +37,7 @@ Zie de volgende artikelen als u geen ervaring hebt met Azure Batch-service:
 * De cmdlet [New-AzBatchPool](/powershell/module/az.batch/New-AzBatchPool) om een Azure batch groep te maken.
 
 > [!IMPORTANT]
-> Bij het maken van een nieuwe Azure Batch pool moet ' VirtualMachineConfiguration ' worden gebruikt en niet ' CloudServiceConfiguration '. Raadpleeg de [richt lijnen](https://docs.microsoft.com/azure/batch/batch-pool-cloud-service-to-virtual-machine-configuration)voor de migratie van Azure batch voor groepen voor meer informatie. 
+> Bij het maken van een nieuwe Azure Batch pool moet ' VirtualMachineConfiguration ' worden gebruikt en niet ' CloudServiceConfiguration '. Raadpleeg de [richt lijnen](../batch/batch-pool-cloud-service-to-virtual-machine-configuration.md)voor de migratie van Azure batch voor groepen voor meer informatie. 
 
 ## <a name="azure-batch-linked-service"></a>Azure Batch gekoppelde service
 
@@ -102,16 +102,16 @@ In de volgende tabel worden namen en beschrijvingen van eigenschappen beschreven
 
 | Eigenschap              | Beschrijving                              | Vereist |
 | :-------------------- | :--------------------------------------- | :------- |
-| naam                  | Naam van de activiteit in de pijp lijn     | Yes      |
-| beschrijving           | Tekst die beschrijft wat de activiteit doet.  | No       |
-| type                  | Voor aangepaste activiteit is het type activiteit **aangepast**. | Yes      |
-| linkedServiceName     | Gekoppelde service aan Azure Batch. Zie het artikel [Compute linked Services](compute-linked-services.md) (Engelstalig) voor meer informatie over deze gekoppelde service.  | Yes      |
-| command               | Opdracht van de aangepaste toepassing die moet worden uitgevoerd. Als de toepassing al beschikbaar is op het Azure Batch groeps knooppunt, kunnen de resourceLinkedService en folderPath worden overgeslagen. U kunt bijvoorbeeld de opdracht opgeven `cmd /c dir` , die wordt ondersteund door het knoop punt Windows Batch-groep. | Yes      |
+| naam                  | Naam van de activiteit in de pijp lijn     | Ja      |
+| beschrijving           | Tekst die beschrijft wat de activiteit doet.  | Nee       |
+| type                  | Voor aangepaste activiteit is het type activiteit **aangepast**. | Ja      |
+| linkedServiceName     | Gekoppelde service aan Azure Batch. Zie het artikel [Compute linked Services](compute-linked-services.md) (Engelstalig) voor meer informatie over deze gekoppelde service.  | Ja      |
+| command               | Opdracht van de aangepaste toepassing die moet worden uitgevoerd. Als de toepassing al beschikbaar is op het Azure Batch groeps knooppunt, kunnen de resourceLinkedService en folderPath worden overgeslagen. U kunt bijvoorbeeld de opdracht opgeven `cmd /c dir` , die wordt ondersteund door het knoop punt Windows Batch-groep. | Ja      |
 | resourceLinkedService | Azure Storage gekoppelde service naar het opslag account waarin de aangepaste toepassing is opgeslagen | Geen &#42;       |
 | folderPath            | Pad naar de map van de aangepaste toepassing en alle bijbehorende afhankelijkheden<br/><br/>Als er afhankelijkheden zijn opgeslagen in submappen, dat wil zeggen, in een hiërarchische mappen structuur onder *FolderPath* : de mapstructuur wordt op dit moment afgevlakt wanneer de bestanden worden gekopieerd naar Azure batch. Dat wil zeggen dat alle bestanden naar één map zonder submappen worden gekopieerd. U kunt dit probleem omzeilen door de bestanden te comprimeren, het gecomprimeerde bestand te kopiëren en deze vervolgens te uitgepakt met aangepaste code op de gewenste locatie. | Geen &#42;       |
-| referenceObjects      | Een matrix met bestaande gekoppelde services en gegevens sets. De gekoppelde services en gegevens sets waarnaar wordt verwezen, worden door gegeven aan de aangepaste toepassing in JSON-indeling zodat uw aangepaste code kan verwijzen naar resources van de Data Factory | No       |
-| extendedProperties    | Door de gebruiker gedefinieerde eigenschappen die kunnen worden door gegeven aan de aangepaste toepassing in JSON-indeling zodat uw aangepaste code kan verwijzen naar aanvullende eigenschappen | No       |
-| retentionTimeInDays | De retentie tijd voor de bestanden die zijn verzonden voor aangepaste activiteit. De standaard waarde is 30 dagen. | No |
+| referenceObjects      | Een matrix met bestaande gekoppelde services en gegevens sets. De gekoppelde services en gegevens sets waarnaar wordt verwezen, worden door gegeven aan de aangepaste toepassing in JSON-indeling zodat uw aangepaste code kan verwijzen naar resources van de Data Factory | Nee       |
+| extendedProperties    | Door de gebruiker gedefinieerde eigenschappen die kunnen worden door gegeven aan de aangepaste toepassing in JSON-indeling zodat uw aangepaste code kan verwijzen naar aanvullende eigenschappen | Nee       |
+| retentionTimeInDays | De retentie tijd voor de bestanden die zijn verzonden voor aangepaste activiteit. De standaard waarde is 30 dagen. | Nee |
 
 &#42; de eigenschappen `resourceLinkedService` en `folderPath` moet beide worden opgegeven of beide worden wegge laten.
 
@@ -301,7 +301,7 @@ Activity Error section:
 Als u de inhoud van stdout.txt in stroomafwaartse activiteiten wilt gebruiken, kunt u het pad naar het stdout.txt bestand in de expressie ' \@ activiteit ' (' MyCustomActivity '). output. outputs [0] '.
 
 > [!IMPORTANT]
-> - De activity.jsop, linkedServices.jsop en datasets.jsop worden opgeslagen in de map runtime van de batch-taak. Voor dit voor beeld worden de activity.jsop, linkedServices.json en datasets.json opgeslagen in het `"https://adfv2storage.blob.core.windows.net/adfjobs/\<GUID>/runtime/"` pad. Als dat nodig is, moet u deze afzonderlijk opschonen.
+> - De activity.jsop, linkedServices.jsop en datasets.jsop worden opgeslagen in de map runtime van de batch-taak. Voor dit voor beeld worden de activity.jsop, linkedServices.json en datasets.json opgeslagen in het `https://adfv2storage.blob.core.windows.net/adfjobs/<GUID>/runtime/` pad. Als dat nodig is, moet u deze afzonderlijk opschonen.
 > - Voor gekoppelde services die gebruikmaken van de Self-Hosted Integration Runtime, de gevoelige informatie zoals sleutels of wacht woorden worden versleuteld door de Self-Hosted Integration Runtime om ervoor te zorgen dat de referenties blijven bestaan in een door de klant gedefinieerde particuliere netwerk omgeving. Er ontbreken mogelijk enkele gevoelige velden wanneer ernaar wordt verwezen door uw aangepaste toepassings code. Gebruik SecureString in extendedProperties in plaats van een gekoppelde service verwijzing zo nodig te gebruiken.
 
 ## <a name="pass-outputs-to-another-activity"></a>Uitvoer door geven aan een andere activiteit

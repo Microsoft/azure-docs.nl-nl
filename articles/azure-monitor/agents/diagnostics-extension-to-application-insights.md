@@ -1,17 +1,16 @@
 ---
 title: Azure Diagnostics gegevens naar Application Insights verzenden
 description: De Azure Diagnostics open bare configuratie bijwerken om gegevens te verzenden naar Application Insights.
-ms.subservice: diagnostic-extension
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/19/2016
-ms.openlocfilehash: 5af0eb20f9766369caa7351719b63b213c394e5d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: b9e9d6b1b5939804b24fd523bf8b7444ed41178f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610704"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708591"
 ---
 # <a name="send-cloud-service-virtual-machine-or-service-fabric-diagnostic-data-to-application-insights"></a>De diagnostische gegevens voor de Cloud service, virtuele machine of Service Fabric verzenden naar Application Insights
 Cloud Services, Virtual Machines, Virtual Machine Scale Sets en Service Fabric gebruiken allemaal de Azure Diagnostics extensie voor het verzamelen van gegevens.  Diagnostische gegevens van Azure worden verzonden naar Azure Storage tabellen.  U kunt echter ook alle of een subset van de gegevens naar andere locaties pipeen met Azure Diagnostics extensie 1,5 of hoger.
@@ -172,10 +171,11 @@ In de vorige configuratie hebben de volgende regels de volgende betekenis:
 
 ### <a name="send-all-the-data-that-is-being-collected-by-azure-diagnostics"></a>Alle gegevens die worden verzameld door Azure Diagnostics verzenden
 
-```XML
+```xml
 <DiagnosticMonitorConfiguration overallQuotaInMB="4096" sinks="ApplicationInsights">
 ```
-```JSON
+
+```json
 "DiagnosticMonitorConfiguration": {
     "overallQuotaInMB": 4096,
     "sinks": "ApplicationInsights",
@@ -184,10 +184,11 @@ In de vorige configuratie hebben de volgende regels de volgende betekenis:
 
 ### <a name="send-only-error-logs-to-the-application-insights-sink"></a>Alleen fouten logboeken naar de Application Insights-Sink verzenden
 
-```XML
+```xml
 <DiagnosticMonitorConfiguration overallQuotaInMB="4096" sinks="ApplicationInsights.MyTopDiagdata">
 ```
-```JSON
+
+```json
 "DiagnosticMonitorConfiguration": {
     "overallQuotaInMB": 4096,
     "sinks": "ApplicationInsights.MyTopDiagData",

@@ -7,16 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/11/2020
+ms.date: 03/02/2021
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b83c9b0ece933ad71810c50e89ae296aa218ec75
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: ac247b9dc70c565621d3544d14e2f76ff12fda47
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98613306"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101689314"
 ---
 # <a name="prerequisites-for-azure-ad-connect-cloud-sync"></a>Vereisten voor Azure AD Connect Cloud synchronisatie
 Dit artikel bevat richt lijnen voor het kiezen en gebruiken van Azure Active Directory (Azure AD) Connect Cloud Sync als uw identiteits oplossing.
@@ -26,16 +26,16 @@ U hebt het volgende nodig om Azure AD Connect Cloud synchronisatie te kunnen geb
 
 - Domein beheerder of ondernemings Administrator referenties voor het maken van de Azure AD Connect Cloud Sync gMSA (door groep beheerd service account) voor het uitvoeren van de Agent service. 
 - Een hybride identiteits beheerders account voor uw Azure AD-Tenant die geen gast gebruiker is.
-- Een on-premises server voor de inrichtings agent met Windows 2012 R2 of hoger.  Deze server moet een laag 0-server zijn op basis van het [Active Directory administratieve laag model](/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material).
+- Een on-premises server voor de inrichtings agent met Windows 2016 of hoger.  Deze server moet een laag 0-server zijn op basis van het [Active Directory administratieve laag model](/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material).
 - On-premises firewall configuraties.
 
 ## <a name="group-managed-service-accounts"></a>Door groep beheerde serviceaccounts
 Een beheerd service account voor een groep is een beheerd domein account dat automatische wachtwoord beheer, vereenvoudigd Service Principal Name (SPN)-beheer biedt, de mogelijkheid om het beheer te delegeren aan andere beheerders en deze functionaliteit uit te breiden op meerdere servers.  Azure AD Connect Cloud Sync ondersteunt en maakt gebruik van een gMSA voor het uitvoeren van de agent.  Tijdens de installatie wordt u gevraagd om beheerders referenties, om dit account te maken.  Het account wordt weer gegeven als (domain\provAgentgMSA $).  Zie [beheerde service accounts voor groepen](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview) voor meer informatie over een gMSA 
 
 ### <a name="prerequisites-for-gmsa"></a>Vereisten voor gMSA:
-1.  Het Active Directory schema in het forest van het gMSA-domein moet worden bijgewerkt naar Windows Server 2012
+1.  Het Active Directory schema in het forest van het gMSA-domein moet worden bijgewerkt naar Windows Server 2012.
 2.  [Power shell RSAT-modules](/windows-server/remote/remote-server-administration-tools) op een domein controller
-3.  Op ten minste één domein controller in het domein moet Windows Server 2012 worden uitgevoerd.
+3.  Op ten minste één domein controller in het domein moet Windows Server 201 worden uitgevoerd.
 4.  Een server die lid is van een domein waarop de agent wordt geïnstalleerd, moet Windows Server 2012 of hoger zijn.
 
 ### <a name="custom-gmsa-account"></a>Aangepast gMSA-account
@@ -65,7 +65,7 @@ Voer het [hulp programma IdFix](/office365/enterprise/prepare-directory-attribut
 
 ### <a name="in-your-on-premises-environment"></a>In uw on-premises omgeving
 
-1. Identificeer een hostserver die lid is van een domein en waarop Windows Server 2012 R2 of hoger wordt uitgevoerd, met een minimum van 4 GB RAM en .NET 4.7.1 + runtime.
+1. Identificeer een hostserver die lid is van een domein en waarop Windows Server 2016 of hoger wordt uitgevoerd, met een minimum van 4 GB RAM en .NET 4.7.1 + runtime.
 
 2. Het Power shell-uitvoerings beleid op de lokale server moet worden ingesteld op niet-gedefinieerde of RemoteSigned.
 
@@ -130,4 +130,4 @@ Hier volgen enkele bekende beperkingen:
 ## <a name="next-steps"></a>Volgende stappen 
 
 - [Wat is inrichting?](what-is-provisioning.md)
-- [Wat is Azure AD Connect Cloud synchronisatie?](what-is-cloud-sync.md)
+- [Wat is Azure AD Connect--cloudsynchronisatie?](what-is-cloud-sync.md)

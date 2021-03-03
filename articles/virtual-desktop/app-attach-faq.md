@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 78c21e9515965f1c15315967f6a19a0df2838dc2
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 395c274630131c2ae5f451443913e1e69c7c422a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97591192"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738698"
 ---
 # <a name="msix-app-attach-faq"></a>Veelgestelde vragen over het koppelen van MSIX-apps
 
@@ -61,7 +61,7 @@ Alle virtuele machines (Vm's) in een hostgroep die gebruikmaakt van een MSIX-app
 
 ## <a name="can-i-use-msix-app-attach-for-http-or-https"></a>Kan ik de MSIX-app attach voor HTTP of HTTPs gebruiken?
 
-Alle virtuele machines die deel uitmaken van een hostgroep die gebruikmaakt van een MSIX-app-koppeling, moeten lees machtigingen hebben op de bestands share waar MSIX-installatie kopieën worden opgeslagen. Als Azure Files wordt gebruikt, moet zowel RBAC-als NTFS-machtigingen worden verleend.
+Het gebruik van de MSIX-app attach via HTTP of HTTPs wordt momenteel niet ondersteund.
 
 ## <a name="can-i-restage-the-same-msix-application"></a>Kan ik dezelfde MSIX-toepassing opnieuw instellen?
 
@@ -69,7 +69,7 @@ Ja. U kunt toepassingen die u al hebt gestage, opnieuw bezetten en dit zou geen 
 
 ## <a name="does-msix-app-attach-support-self-signed-certificates"></a>Ondersteunt MSIX-app zelfondertekende certificaten?
 
-Het gebruik van de MSIX-app attach via HTTP of HTTPs wordt momenteel niet ondersteund.
+Ja. U moet het zelfondertekende certificaat installeren op alle host-Vm's van de sessiehost waarbij MSIX app attach wordt gebruikt om de zelfondertekende toepassing te hosten.
 
 
 ## <a name="next-steps"></a>Volgende stappen

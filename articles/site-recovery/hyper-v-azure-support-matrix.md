@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 7/14/2020
 ms.author: raynew
-ms.openlocfilehash: 79558bd2c8e9bfec0aff47d254944977d271a762
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 8d748f93337a770e0d565bab79fdfb3625bda70d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97587811"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101735519"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Ondersteunings matrix voor herstel na nood gevallen van on-premises virtuele Hyper-V-machines naar Azure
 
@@ -53,8 +53,8 @@ Gastbesturingssysteem | Elk gast besturingssysteem dat wordt [ondersteund voor A
 
 **Actie** | **Details**
 --- | ---
-Grootte van schijf op gerepliceerde Hyper-V-VM wijzigen | Niet ondersteund. Schakel replicatie uit, breng de wijziging aan en schakel de replicatie voor de virtuele machine opnieuw in.
-Een schijf toevoegen aan een gerepliceerde Hyper-V-VM | Niet ondersteund. Schakel replicatie uit, breng de wijziging aan en schakel de replicatie voor de virtuele machine opnieuw in.
+Grootte van schijf op gerepliceerde Hyper-V-VM wijzigen | Wordt niet ondersteund. Schakel replicatie uit, breng de wijziging aan en schakel de replicatie voor de virtuele machine opnieuw in.
+Een schijf toevoegen aan een gerepliceerde Hyper-V-VM | Wordt niet ondersteund. Schakel replicatie uit, breng de wijziging aan en schakel de replicatie voor de virtuele machine opnieuw in.
 
 ## <a name="hyper-v-network-configuration"></a>Configuratie van Hyper-V-netwerk
 
@@ -143,7 +143,7 @@ Standard Storage | Ja | Ja
 Import/export-service | Nee | Nee
 Azure Storage accounts waarvoor Firewall is ingeschakeld | Ja. Voor doel opslag en cache. | Ja. Voor doel opslag en cache.
 Opslag account wijzigen | Nee. Het doel Azure Storage account kan niet worden gewijzigd nadat de replicatie is ingeschakeld. Als u herstel na nood gevallen wilt wijzigen, uitschakelen en opnieuw inschakelen. | Nee
-Optie voor beveiligde overdracht | Ja
+Optie voor beveiligde overdracht | Ja | Ja
 
 
 ## <a name="azure-compute-features"></a>Azure Compute-functies

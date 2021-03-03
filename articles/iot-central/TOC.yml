@@ -66,10 +66,8 @@
     - name: Branchespecifieke oplossingen
       items:
         - name: Retail
-          href: retail/overview-iot-central-retail.md
           items:
             - name: In-Store Analytics-betaling
-              href: retail/store-analytics-architecture.md
               items:
                 - name: 1 - Een retailtoepassing maken
                   href: retail/tutorial-in-store-analytics-create-app.md
@@ -77,28 +75,15 @@
                   href: retail/tutorial-in-store-analytics-customize-dashboard.md
                 - name: 3 - Gegevens exporteren en inzichten virtualiseren
                   href: retail/tutorial-in-store-analytics-export-data-visualize-insights.md
-            - name: Slim voorraadbeheer
-              href: retail/architecture-smart-inventory-management.md
-              items:
-                - name: Een toepassing voor slim voorraadbeheer maken
-                  href: retail/tutorial-iot-central-smart-inventory-management.md
-            - name: Verbonden logistiek
-              href: retail/architecture-connected-logistics.md
-              items:
-                - name: Een verbonden logistieke app maken
-                  href: retail/tutorial-iot-central-connected-logistics.md
-            - name: Digitaal distributiecentrum
-              href: retail/architecture-digital-distribution-center.md
-              items:
-                - name: Een toepassing voor een digitaal distributiecentrum maken
-                  href: retail/tutorial-iot-central-digital-distribution-center.md
-            - name: Micro-uitvoeringscentrum
-              href: retail/architecture-micro-fulfillment-center.md
-              items:
-                - name: Een micro-uitvoeringscentrumtoepassing maken
-                  href: retail/tutorial-micro-fulfillment-center.md
+            - name: Een toepassing voor slim voorraadbeheer maken
+              href: retail/tutorial-iot-central-smart-inventory-management.md
+            - name: Een verbonden logistieke app maken
+              href: retail/tutorial-iot-central-connected-logistics.md
+            - name: Een toepassing voor een digitaal distributiecentrum maken
+              href: retail/tutorial-iot-central-digital-distribution-center.md
+            - name: Een micro-uitvoeringscentrumtoepassing maken
+              href: retail/tutorial-micro-fulfillment-center.md
             - name: 'Videoanalyse: object- en bewegingsdetectie'
-              href: retail/architecture-video-analytics.md
               items:
                 - name: 0 - Een toepassing voor object- en bewegingsdetectie implementeren
                   href: retail/tutorial-video-analytics-deploy.md
@@ -119,38 +104,21 @@
                 - name: 4 - De gatewaymodules voor Live Video Analytics wijzigen en ontwikkelen
                   href: retail/tutorial-video-analytics-build-module.md
         - name: Energie
-          href: energy/overview-iot-central-energy.md
           items:
-            - name: Architectuur voor een app voor slimme meters
-              href: energy/concept-iot-central-smart-meter-app.md
             - name: Een app maken om slimme meters te bewaken
               href: energy/tutorial-smart-meter-app.md
-            - name: Architectuur voor een app voor zonnepanelen
-              href: energy/concept-iot-central-solar-panel-app.md
             - name: Een app maken om zonnepanelen te bewaken
               href: energy/tutorial-solar-panel-app.md
         - name: Overheid
-          href: government/overview-iot-central-government.md
           items:
-            - name: Referentiearchitectuur voor verbonden afvalverwerking
-              href: government/concepts-connectedwastemanagement-architecture.md
             - name: Een verbonden app voor afvalbeheer maken
               href: government/tutorial-connected-waste-management.md
-            - name: Referentiearchitectuur voor de bewaking van waterverbruik
-              href: government/concepts-waterconsumptionmonitoring-architecture.md
             - name: Een app voor bewaking van waterverbruik maken
               href: government/tutorial-water-consumption-monitoring.md
-            - name: Referentiearchitectuur voor de bewaking van waterkwaliteit
-              href: government/concepts-waterqualitymonitoring-architecture.md
             - name: Een app voor bewaking van de waterkwaliteit maken
               href: government/tutorial-water-quality-monitoring.md
-            - name: Uw Azure IoT Central-toepassing verbinden met Dynamics 365 Field Services
-              href: government/how-to-configure-connected-field-services.md
         - name: Gezondheidszorg
-          href: healthcare/overview-iot-central-healthcare.md
           items:
-            - name: Architectuur van continue patiëntbewaking
-              href: healthcare/concept-continuous-patient-monitoring-architecture.md
             - name: Een app voor continue patiëntbewaking maken
               href: healthcare/tutorial-continuous-patient-monitoring.md
             - name: Een triagedashboard maken met gezondheidsgegevens
@@ -162,9 +130,51 @@
     - name: Handleiding van apparaatontiwkkelaar
       href: core/overview-iot-central-developer.md
     - name: Solution Builder-hand leiding
-      href: core/overview-iot-central-developer.md
+      href: core/overview-iot-central-solution-builder.md
     - name: Wat zijn toepassingssjablonen?
       href: core/concepts-app-templates.md
+    - name: Branchespecifieke toepassings sjablonen
+      items:
+        - name: Retail
+          items:
+            - name: Overzicht
+              href: retail/overview-iot-central-retail.md
+            - name: Incheck-architectuur in de Store-analyses
+              href: retail/store-analytics-architecture.md
+            - name: Beheer architectuur slimme inventaris
+              href: retail/architecture-smart-inventory-management.md
+            - name: Architectuur van verbonden logistiek
+              href: retail/architecture-connected-logistics.md
+            - name: Digitaal distributiecentrum
+              href: retail/architecture-digital-distribution-center.md
+            - name: Architectuur voor het micro-uitvoeringscentrum
+              href: retail/architecture-micro-fulfillment-center.md
+            - name: 'Videoanalyse: object- en bewegingsdetectie'
+              href: retail/architecture-video-analytics.md
+        - name: Energie
+          items:
+            - name: Overzicht
+              href: energy/overview-iot-central-energy.md
+            - name: Architectuur voor een app voor slimme meters
+              href: energy/concept-iot-central-smart-meter-app.md
+            - name: Architectuur voor een app voor zonnepanelen
+              href: energy/concept-iot-central-solar-panel-app.md
+        - name: Overheid
+          items:
+            - name: Overzicht
+              href: government/overview-iot-central-government.md
+            - name: Architectuur van verbonden afval bewaking
+              href: government/concepts-connectedwastemanagement-architecture.md
+            - name: Architectuur voor bewaking van waterverbruik maken
+              href: government/concepts-waterconsumptionmonitoring-architecture.md
+            - name: Architectuur voor bewaking van de waterkwaliteit
+              href: government/concepts-waterqualitymonitoring-architecture.md
+        - name: Gezondheidszorg
+          items:
+            - name: Overzicht
+              href: healthcare/overview-iot-central-healthcare.md
+            - name: Architectuur van continue patiëntbewaking
+              href: healthcare/concept-continuous-patient-monitoring-architecture.md
     - name: Wat zijn apparaatsjablonen?
       href: core/concepts-device-templates.md
     - name: Connectiviteit van apparaten
@@ -221,6 +231,8 @@
           href: core/howto-create-custom-analytics.md
         - name: Uw gegevens visualiseren in Power BI
           href: core/howto-connect-powerbi.md
+        - name: Uw toepassing verbinden met Dynamics 365 Field Services
+          href: government/how-to-configure-connected-field-services.md
     - name: Uw apparaten beheren
       items:
         - name: Apparaten toevoegen en verwijderen

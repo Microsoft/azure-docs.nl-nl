@@ -8,22 +8,20 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 07/16/2020
+ms.date: 02/26/2021
 ms.author: justinha
-ms.openlocfilehash: 5359a955ea97b559b7e3d244bfb6c4fb09e8681b
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 8eb1560887c08c3f64fa599c39e5577242d2a1e8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96620032"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101689059"
 ---
-# <a name="replica-sets-concepts-and-features-for-azure-active-directory-domain-services-preview"></a>Replica sets-concepten en functies voor Azure Active Directory Domain Services (preview-versie)
+# <a name="replica-sets-concepts-and-features-for-azure-active-directory-domain-services"></a>Replica sets van concepten en functies voor Azure Active Directory Domain Services
 
 Wanneer u een beheerd domein van Azure Active Directory Domain Services (Azure AD DS) maakt, definieert u een unieke naam ruimte. Deze naamruimte bestaat uit de domeinnaam, zoals *aaddscontoso.com*, en er worden twee domeincontrollers (DC's) geïmplementeerd in uw geselecteerde Azure-regio. Deze implementatie van DC's wordt een replicaset genoemd.
 
 U kunt een beheerd domein uitbreiden als u meer dan één replicaset per Azure AD-tenant wilt hebben. Replicasets kunnen worden toegevoegd aan elk gekoppeld virtueel netwerk in een Azure-regio die Azure AD DS ondersteunt. Extra replica sets in verschillende Azure-regio's bieden geografisch herstel na noodgeval voor oudere toepassingen als een Azure-regio offline gaat.
-
-Replicasets zijn momenteel beschikbaar in preview.
 
 > [!NOTE]
 > Met replica sets kunt u geen meerdere unieke beheerde domeinen implementeren in één Azure-Tenant. Elke replicaset bevat dezelfde gegevens.
@@ -56,15 +54,11 @@ In het volgende voor beeld ziet u een beheerd domein met drie replica sets om ve
 
 De standaard-SKU voor een beheerd domein is de *Enter prise* -SKU, die ondersteuning biedt voor meerdere replica sets. Als u aanvullende replica sets wilt maken als u de *standaard* -SKU hebt gewijzigd, moet u [het beheerde domein upgraden](change-sku.md) naar *Enter prise* of *Premium*.
 
-Het maximum aantal replica sets dat wordt ondersteund tijdens de preview-periode is vier, met inbegrip van de eerste replica die is gemaakt tijdens het maken van het beheerde domein.
+Het ondersteunde maximum aantal replica sets is vier, met inbegrip van de eerste replica die is gemaakt tijdens het maken van het beheerde domein.
 
 Facturering voor elke replicaset is gebaseerd op de domein configuratie-SKU. Als u bijvoorbeeld een beheerd domein hebt dat gebruikmaakt van de *Enter prise* -SKU en u drie replica sets hebt, wordt uw abonnement per uur gefactureerd voor elk van de drie replica sets.
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
-
-### <a name="can-i-use-my-production-managed-domain-with-this-preview"></a>Kan ik mijn productie-beheerde domein gebruiken met deze preview?
-
-Replicasets zijn een openbare preview-functie in Azure AD Domain Services. U kunt een beheerd productie domein gebruiken, maar u moet rekening houden met de ondersteunings verschillen voor functies die nog in de preview-versie zijn opgenomen. Raadpleeg de [Azure Active Directory Preview SLA](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie over de previews.
 
 ### <a name="can-i-create-a-replica-set-in-subscription-different-from-my-managed-domain"></a>Kan ik een replicaset maken in een ander abonnement dan mijn beheerde domein?
 
@@ -72,7 +66,7 @@ Nee. Replica sets moeten zich in hetzelfde abonnement bevallen als het beheerde 
 
 ### <a name="how-many-replica-sets-can-i-create"></a>Hoeveel replica sets kan ik maken?
 
-De preview-versie is beperkt tot Maxi maal vier replica sets: de initiële replicaset voor het beheerde domein, plus drie extra replica sets.
+U kunt Maxi maal vier replica sets maken: de eerste replicaset voor het beheerde domein, plus drie extra replica sets.
 
 ### <a name="how-does-user-and-group-information-get-synchronized-to-my-replica-sets"></a>Hoe worden de gebruikers-en groeps gegevens gesynchroniseerd met mijn replica sets?
 

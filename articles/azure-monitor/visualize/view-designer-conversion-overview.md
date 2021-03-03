@@ -6,19 +6,19 @@ ms.author: aul
 ms.subservice: ''
 ms.topic: conceptual
 ms.date: 08/04/2020
-ms.openlocfilehash: d6731673c2b9918b3b19d14f45d51a6424ef86f3
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 7c43d1e4dda10cca6b868ef814ec8298d6e21fd0
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611964"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101736964"
 ---
 # <a name="azure-monitor-view-designer-to-workbooks-transition-guide"></a>Overgangs gids voor Azure Monitor Designer naar werkmappen
 [View Designer](view-designer.md) is een functie van Azure monitor waarmee u aangepaste weer gaven kunt maken waarmee u gegevens in uw werk ruimte log Analytics kunt visualiseren, met grafieken, lijsten en tijd lijnen. Ze zijn overgegaan naar werkmappen om een flexibel canvas te bieden voor gegevens analyse en het maken van uitgebreide visuele rapporten in de Azure Portal. Dit artikel helpt u bij het maken van de overgang van de weer gave Designer naar werkmappen. 
 
 
 ## <a name="workbooks-overview"></a>Overzicht van werkmappen
-[Werkmappen](../insights/vminsights-workbooks.md) combi neren tekst, [logboek query's](/azure/data-explorer/kusto/query/), metrische gegevens en para meters in uitgebreide interactieve rapporten. Team leden met dezelfde toegang tot Azure-resources kunnen ook werkmappen bewerken.
+[Werkmappen](../vm/vminsights-workbooks.md) combi neren tekst, [logboek query's](/azure/data-explorer/kusto/query/), metrische gegevens en para meters in uitgebreide interactieve rapporten. Team leden met dezelfde toegang tot Azure-resources kunnen ook werkmappen bewerken.
 
 Werkmappen zijn handig voor scenario's zoals:
 

@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 02/01/2021
 ms.reviewer: astay; kraigb
 ms.custom: mvc, seodec18, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 83c49eea8bda10d665c0a08666276e905c60c584
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: cfbbb7064fcadc06714b237066bb6a009246baac
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493699"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101709084"
 ---
 # <a name="configure-a-linux-python-app-for-azure-app-service"></a>Een Linux Python-app voor Azure App Service configureren
 
@@ -372,6 +372,7 @@ In de volgende secties vindt u aanvullende richtlijnen voor specifieke problemen
 - [De app wordt niet weergegeven - de standaard-app wordt weergegeven](#app-doesnt-appear)
 - [De app wordt niet weergegeven - bericht 'Service niet beschikbaar'](#service-unavailable)
 - [Kan setup.py of requirements.txt niet vinden](#could-not-find-setuppy-or-requirementstxt)
+- [ModuleNotFoundError bij opstarten](#modulenotfounderror-when-app-starts)
 - [Wachtwoorden worden niet weergegeven in SSH-sessies wanneer deze worden getypt](#other-issues)
 - [Opdrachten in de SSH-sessie worden afgekapt weergegeven](#other-issues)
 - [Statische assets worden niet weergegeven in een Django-app](#other-issues)
@@ -404,6 +405,10 @@ In de volgende secties vindt u aanvullende richtlijnen voor specifieke problemen
 - **De logboekstream bevat 'Kan setup.py of requirements.txt niet vinden; PIP-installatie wordt niet uitgevoerd.'** : Het bestand *requirements.txt* is niet gevonden door het Oryx-bouwproces.
 
     - Maak verbinding met de container van de web-app via [SSH](#open-ssh-session-in-browser) en controleer of de naam *requirements.txt* correct is en zich direct onder *site/wwwroot* bevindt. Als dat niet het geval is, moet u ervoor zorgen dat het bestand in uw opslagplaats staat en deel uitmaakt van uw implementatie. Als het zich in een afzonderlijke map bevindt, verplaatst u het naar de hoofdmap.
+
+#### <a name="modulenotfounderror-when-app-starts"></a>ModuleNotFoundError wanneer de app wordt gestart
+
+Als er een fout melding wordt weer geven `ModuleNotFoundError: No module named 'example'` , betekent dit dat python een of meer van de modules niet kan vinden toen de toepassing werd gestart. Dit gebeurt meestal wanneer u uw virtuele omgeving met uw code implementeert. Virtuele omgevingen zijn niet draagbaar, zodat een virtuele omgeving niet met de code van uw toepassing kan worden geïmplementeerd. In plaats daarvan kunt u Oryx een virtuele omgeving maken en uw pakketten op de web-app installeren door een app-instelling te maken `SCM_DO_BUILD_DURING_DEPLOYMENT` en in te stellen op `1` . Dit dwingt Oryx uw pakketten te installeren wanneer u deze implementeert in App Service. Raadpleeg [dit artikel over de draag baarheid van de virtuele omgeving](https://azure.github.io/AppService/2020/12/11/cicd-for-python-apps.html)voor meer informatie.
 
 #### <a name="other-issues"></a>Overige problemen
 

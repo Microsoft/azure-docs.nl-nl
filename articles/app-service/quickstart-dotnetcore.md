@@ -6,12 +6,16 @@ ms.topic: quickstart
 ms.date: 11/23/2020
 ms.custom: devx-track-csharp, mvc, devcenter, vs-azure, seodec18, contperf-fy21q1
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: d7b7d8845eda87132cbfa7981c20c39bb210aa5c
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+adobe-target: true
+adobe-target-activity: DocsExp–386541–A/B–Enhanced-Readability-Quickstarts–2.19.2021
+adobe-target-experience: Experience B
+adobe-target-content: ./quickstart-dotnetcore-uiex
+ms.openlocfilehash: 77e0768a617ef79ab8510f88bfdcd41d5647f9bf
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032691"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701634"
 ---
 # <a name="quickstart-create-an-aspnet-core-web-app-in-azure"></a>Quickstart: Een ASP.NET Core-web-app maken in Azure
 
@@ -187,7 +191,7 @@ Ga door met het volgende artikel om te leren hoe u een .NET Core-app maakt en de
 ::: zone-end  
 
 ::: zone pivot="platform-linux"
-[App Service onder Linux](overview.md#app-service-on-linux) biedt een uiterst schaalbare webhostingservice met self-patchfunctie onder het Linux-besturingssysteem. Deze quickstart laat zien hoe u een [.NET Core](/aspnet/core/)-app maakt in App Service on Linux. U maakt de app via de [Azure CLI](/cli/azure/get-started-with-azure-cli) en gebruikt Git om de .NET Core-code in de app te implementeren.
+[App Service onder Linux](overview.md#app-service-on-linux) biedt een uiterst schaalbare webhostingservice met self-patchfunctie onder het Linux-besturingssysteem. In deze Quick start ziet u hoe u een [.net core](/aspnet/core/) -app maakt en implementeert in een door Linux gehoste app service met behulp van de [Azure cli](/cli/azure/get-started-with-azure-cli).
 
 ![Voorbeeld-app die wordt uitgevoerd in Azure](media/quickstart-dotnetcore/dotnet-browse-azure.png)
 
@@ -258,7 +262,7 @@ az login
 Implementeer de code in uw lokale map (*hellodotnetcore*) met behulp van de `az webapp up`-opdracht:
 
 ```azurecli
-az webapp up --sku F1 --name <app-name> --os-type linux
+az webapp up --sku F1 --name <app-name>
 ```
 
 - Als de `az`-opdracht niet wordt herkend, controleert u of de Azure CLI is geïnstalleerd volgens de beschrijving in [Uw initiële omgeving instellen](#set-up-your-initial-environment).

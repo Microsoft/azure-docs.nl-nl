@@ -6,13 +6,13 @@ author: dcstwh
 ms.author: weetok
 ms.reviewer: maghan
 ms.topic: conceptual
-ms.date: 12/17/2020
-ms.openlocfilehash: c0d3ba8d9bea9fade58ed4a65c6d3ae43ef6acb3
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 02/18/2021
+ms.openlocfilehash: 2fd8911ca11ee6dfcf795347e1fe7f2c36a2b636
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100383599"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101716518"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Continue integratie en levering in Azure Data Factory
 
@@ -20,9 +20,9 @@ ms.locfileid: "100383599"
 
 ## <a name="overview"></a>Overzicht
 
-Continue integratie is de praktijk van het testen van elke wijziging die wordt aangebracht in uw code basis automatisch en zo snel mogelijk. Continue levering volgt de tests die optreden tijdens continue integratie en het pushen van wijzigingen in een staging-of productie systeem.
+Continue integratie is de praktijk van het testen van elke wijziging die wordt aangebracht in uw code basis automatisch en zo snel mogelijk. Continue levering volgt de tests die tijdens continue integratie worden uitgevoerd en pusht wijzigingen naar een faserings- of productiesysteem.
 
-In Azure Data Factory wordt doorlopende integratie en levering (CI/CD) de mogelijkheid Data Factory pijp lijnen te verplaatsen van de ene omgeving (ontwikkeling, test, productie) naar de andere. Azure Data Factory gebruikt [Azure Resource Manager sjablonen](../azure-resource-manager/templates/overview.md) voor het opslaan van de configuratie van uw verschillende ADF-entiteiten (pijp lijnen, gegevens sets, data stromen, enzovoort). Er zijn twee aanbevolen methoden om een data factory te promo veren naar een andere omgeving:
+In Azure Data Factory wordt onder continue integratie en levering (CI/CD) de mogelijkheid verstaan dat Data Factory-pijplijnen van de ene omgeving (ontwikkeling, test, productie) naar de andere worden verplaatst. Azure Data Factory gebruikt [Azure Resource Manager sjablonen](../azure-resource-manager/templates/overview.md) voor het opslaan van de configuratie van uw verschillende ADF-entiteiten (pijp lijnen, gegevens sets, data stromen, enzovoort). Er zijn twee aanbevolen methoden om een data factory te promo veren naar een andere omgeving:
 
 -    Geautomatiseerde implementatie met de integratie van Data Factory met [Azure-pijp lijnen](/azure/devops/pipelines/get-started/what-is-azure-pipelines)
 -    Een resource manager-sjabloon hand matig uploaden met behulp van Data Factory UX-integratie met Azure Resource Manager.
@@ -199,7 +199,7 @@ Het data factory-team heeft een voor beeld van een [script voor voorafgaande en 
 
 ## <a name="use-custom-parameters-with-the-resource-manager-template"></a>Aangepaste parameters gebruiken met Resource Manager-sjabloon
 
-Als uw Development Factory een bijbehorende Git-opslag plaats heeft, kunt u de standaard para meters voor Resource Manager-sjablonen van de Resource Manager-sjabloon die is gegenereerd door het publiceren of exporteren van de sjabloon negeren. In deze scenario's wilt u mogelijk de standaard sjabloon parameterisering overschrijven:
+Als uw Development Factory een bijbehorende Git-opslag plaats heeft, kunt u de standaard para meters voor Resource Manager-sjablonen van de Resource Manager-sjabloon die is gegenereerd door het publiceren of exporteren van de sjabloon negeren. In deze scenario's wilt u mogelijk de standaard configuratie van de Resource Manager-para meter overschrijven:
 
 * U gebruikt automatische CI/CD en u wilt enkele eigenschappen wijzigen tijdens de implementatie van Resource Manager, maar de eigenschappen zijn niet standaard ingesteld op para meters.
 * Uw fabriek is zo groot dat de standaard Resource Manager-sjabloon ongeldig is omdat deze meer dan de Maxi maal toegestane para meters (256) heeft.
@@ -210,11 +210,14 @@ Als uw Development Factory een bijbehorende Git-opslag plaats heeft, kunt u de s
     * De logica van een refactorion in de gegevens stroom om para meters te reduceren, bijvoorbeeld de pijplijn parameters hebben allemaal dezelfde waarde, maar u kunt in plaats daarvan globale para meters gebruiken.
     * Een data factory op meerdere gegevens stromen splitsen.
 
-Als u de standaard sjabloon voor parameterisering wilt overschrijven, gaat u naar de beheer hub en selecteert u **parameterisering-sjabloon** in het gedeelte bron beheer. Selecteer **sjabloon bewerken** om de parameterisering-sjabloon code-editor te openen. 
+Als u de standaard configuratie van de Resource Manager-para meter wilt onderdrukken, gaat u naar de hub **beheren** en selecteert u **arm-sjabloon** in de sectie Bron beheer. Klik in de sectie configuratie van **arm-para meter** op pictogram **bewerken** in para meter configuratie bewerken om de configuratie code-editor van de Resource Manager-para meter te openen.
 
 ![Aangepaste para meters beheren](media/author-management-hub/management-hub-custom-parameters.png)
 
-Als u een aangepaste parameterisering-sjabloon maakt, maakt u een bestand met de naam **arm-template-parameters-definition.js** in de hoofdmap van uw Git-vertakking. U moet die exacte bestands naam gebruiken.
+> [!NOTE]
+> **Configuratie van arm-para meter** is alleen ingeschakeld in de modus git. Het is momenteel uitgeschakeld in de modus ' Live-modus ' of ' Data Factory '.
+
+Als u een aangepaste Configuration Manager-parameter configuratie maakt, maakt u een bestand met de naam **arm-template-parameters-definition.js** in de hoofdmap van uw Git-vertakking. U moet die exacte bestands naam gebruiken.
 
 ![Bestand met aangepaste para meters](media/continuous-integration-deployment/custom-parameters.png)
 
@@ -223,7 +226,7 @@ Wanneer u publiceert vanuit de collaboration Branch, wordt dit bestand door Data
 Wanneer u een resource manager-sjabloon exporteert, wordt dit bestand door Data Factory gelezen van de vertakking waaraan u momenteel werkt, niet met de vertakking voor samen werking. U kunt het bestand maken of bewerken vanuit een persoonlijke vertakking, waar u uw wijzigingen kunt testen door **arm-sjabloon exporteren** te selecteren in de gebruikers interface. U kunt het bestand vervolgens samen voegen in de vertakking voor samen werking.
 
 > [!NOTE]
-> Een aangepaste parameterisering-sjabloon wijzigt niet de limiet van de ARM-sjabloon parameters van 256. Hiermee kunt u het aantal geparametriseerde eigenschappen kiezen en verlagen.
+> Een aangepaste configuratie van de Resource Manager-para meter wijzigt niet de limiet van de ARM-sjabloon parameter 256. Hiermee kunt u het aantal geparametriseerde eigenschappen kiezen en verlagen.
 
 ### <a name="custom-parameter-syntax"></a>Syntaxis van aangepaste para meter
 
@@ -244,7 +247,7 @@ Hieronder vindt u enkele richt lijnen die u moet volgen wanneer u het bestand me
  
 ### <a name="sample-parameterization-template"></a>Voor beeld van parameterisering-sjabloon
 
-Hier volgt een voor beeld van hoe een parameterisering-sjabloon eruit kan zien:
+Hier volgt een voor beeld van hoe een configuratie van de Resource Manager-para meter eruit kan zien:
 
 ```json
 {

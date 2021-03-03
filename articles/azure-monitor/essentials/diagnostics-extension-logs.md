@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/14/2020
-ms.openlocfilehash: 703a5f145aee93fe7ec4ad2f8ec102f98bdd4174
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 2b7648155c28ec9b6cf2048246c17805b5f22404
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610524"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101700725"
 ---
 # <a name="collect-data-from-azure-diagnostics-extension-to-azure-monitor-logs"></a>Gegevens verzamelen van de Azure Diagnostics-extensie naar Azure Monitor-logboeken
 Azure Diagnostics-extensie is een [agent in azure monitor](../agents/agents-overview.md) die bewakings gegevens verzamelt van het gast besturingssysteem van Azure Compute-resources, waaronder virtuele machines. In dit artikel wordt beschreven hoe u gegevens verzamelt die worden verzameld door de uitbrei ding van de diagnose van Azure Storage naar Azure Monitor-Logboeken.
@@ -63,7 +63,6 @@ In ongeveer 30 minuten kunt u de gegevens van het opslag account in de werk ruim
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Verzamel logboeken en metrische gegevens voor Azure-Services](../platform/resource-logs.md#send-to-log-analytics-workspace) voor ondersteunde Azure-Services.
+* [Verzamel logboeken en metrische gegevens voor Azure-Services](./resource-logs.md#send-to-log-analytics-workspace) voor ondersteunde Azure-Services.
 * [Schakel oplossingen](../insights/solutions.md) in om inzicht te krijgen in de gegevens.
-* [Gebruik Zoek query's](../log-query/log-query-overview.md) om de gegevens te analyseren.
-
+* [Gebruik Zoek query's](../logs/log-query-overview.md) om de gegevens te analyseren.

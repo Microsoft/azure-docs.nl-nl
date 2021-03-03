@@ -5,18 +5,17 @@ services: storage
 author: twooley
 ms.service: storage
 ms.topic: include
-ms.date: 06/22/2018
+ms.date: 02/22/2021
 ms.author: twooley
 ms.custom: include file
-ms.openlocfilehash: 8bae952db0bb1617bddcd736fba6fd60652f2ebc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: f4f7490e93e5b0ea94d22f4959ecfd8b911e3e09
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "68968852"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101749929"
 ---
 > [!NOTE]
-> Azure Data Lake Storage Gen2 is nu overal algemeen beschikbaar. We raden aan vandaag nog hierop over te stappen. Zie de [productpagina](https://aka.ms/adlsgen2-product) voor meer informatie.
-> 
+> Op **29 februari 2024** wordt Azure data Lake Storage gen1 buiten gebruik gesteld. Zie de [officiële aankondiging](https://azure.microsoft.com/updates/action-required-switch-to-azure-data-lake-storage-gen2-by-29-february-2024/) voor meer informatie. Als u Azure Data Lake Storage Gen1 gebruikt, moet u ervoor zorgen dat u vóór die datum naar Azure Data Lake Storage Gen2 migreert. Zie [Azure data Lake Storage migreren van gen1 naar Gen2](../articles/storage/blobs/data-lake-storage-migrate-gen1-to-gen2.md) voor meer informatie. 
 
 

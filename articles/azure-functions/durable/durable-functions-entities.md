@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: overview
 ms.date: 12/17/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 496b315e23beeb97d08befca13e05c4797268f36
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 8b1c4077c036cbb75738115437d29ffd14b160ff
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85341559"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723670"
 ---
 # <a name="entity-functions"></a>Entiteitsfuncties
 
@@ -24,7 +24,10 @@ Entiteiten bieden een manier om toepassingen uit te schalen door het werk over e
 
 Entiteiten gedragen zich een beetje als kleine services die communiceren via berichten. Elke entiteit heeft een unieke id en een interne status (indien aanwezig). Net zoals services of objecten voeren entiteiten bewerkingen uit wanneer daarom wordt gevraagd. Wanneer een bewerking wordt uitgevoerd, kan de interne status van de entiteit worden bijgewerkt. Er kunnen ook externe services worden aanroepen en er kan worden gewacht op een reactie. Entiteiten communiceren met andere entiteiten, orchestrations en clients door gebruik te maken van berichten die impliciet worden verzonden via betrouwbare wachtrijen. 
 
-Om conflicten te voorkomen, worden alle bewerkingen op een entiteit serieel (dat wil zeggen, een voor een) uitgevoerd. 
+Om conflicten te voorkomen, worden alle bewerkingen op een entiteit serieel (dat wil zeggen, een voor een) uitgevoerd.
+
+> [!NOTE]
+> Wanneer een entiteit wordt aangeroepen, wordt de payload verwerkt om te worden voltooid en wordt vervolgens een nieuwe uitvoering gepland om te activeren zodra toekomstige invoer arriveren. Als gevolg hiervan kunnen de uitvoerings logboeken van de entiteit een extra uitvoering tonen na elke entiteit aanroep; Dit wordt verwacht.
 
 ### <a name="entity-id"></a>Entiteits-id
 Entiteiten worden geopend via een unieke id, de *entiteits-id*. Een entiteits-id bestaat uit een paar tekenreeksen waarmee een exemplaar van een entiteit uniek wordt geïdentificeerd. Het bestaat uit:
@@ -149,7 +152,48 @@ module.exports = df.entity(function(context) {
     }
 });
 ```
+# <a name="python"></a>[Python](#tab/python)
 
+### <a name="example-python-entity"></a>Voor beeld: python-entiteit
+
+De volgende code is de `Counter` entiteit die is geïmplementeerd als een duurzame functie die in python is geschreven.
+
+**Counter/function.json**
+```json
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "context",
+      "type": "entityTrigger",
+      "direction": "in"
+    }
+  ]
+}
+```
+
+**Counter/__init__. py**
+```Python
+import azure.functions as func
+import azure.durable_functions as df
+
+
+def entity_function(context: df.DurableEntityContext):
+    current_value = context.get_state(lambda: 0)
+    operation = context.operation_name
+    if operation == "add":
+        amount = context.get_input()
+        current_value += amount
+    elif operation == "reset":
+        current_value = 0
+    elif operation == "get":
+        context.set_result(current_value)
+    context.set_state(current_value)
+
+
+
+main = df.Entity.create(entity_function)
+```
 ---
 
 ## <a name="access-entities"></a>Toegang tot entiteiten
@@ -201,6 +245,19 @@ module.exports = async function (context) {
 };
 ```
 
+# <a name="python"></a>[Python](#tab/python)
+
+```Python
+from azure.durable_functions import DurableOrchestrationClient
+import azure.functions as func
+
+
+async def main(req: func.HttpRequest, starter: str, message):
+    client = DurableOrchestrationClient(starter)
+    entityId = df.EntityId("Counter", "myCounter")
+    await client.signal_entity(entityId, "add", 1)
+```
+
 ---
 
 De term *signaleren* staat voor het asynchroon aanroepen van de entiteits-API met eenrichtingscommunicatie. Bij een clientfunctie is het niet mogelijk om te weten wanneer de bewerking door de entiteit is verwerkt. Er kunnen ook geen resultaatwaarden of uitzonderingen worden waargenomen. 
@@ -235,6 +292,11 @@ module.exports = async function (context) {
     return stateResponse.entityState;
 };
 ```
+
+# <a name="python"></a>[Python](#tab/python)
+
+> [!NOTE]
+> Python biedt momenteel geen ondersteuning voor het lezen van entiteits statussen van een client. Gebruik `callEntity` in plaats daarvan een Orchestrator.
 
 ---
 
@@ -279,6 +341,21 @@ module.exports = df.orchestrator(function*(context){
 > [!NOTE]
 > JavaScript biedt momenteel geen ondersteuning voor het signaleren van een entiteit vanuit een orchestrator. Gebruik in plaats daarvan `callEntity`.
 
+# <a name="python"></a>[Python](#tab/python)
+
+```Python
+import azure.functions as func
+import azure.durable_functions as df
+
+
+def orchestrator_function(context: df.DurableOrchestrationContext):
+    entityId = df.EntityId("Counter", "myCounter")
+    current_value = yield context.call_entity(entityId, "get")
+    if current_value < 10:
+        context.signal_entity(entityId, "add", 1)
+    return state
+```
+
 ---
 
 Alleen met orchestrations kan een entiteit worden aangeroepen en een reactie worden verkregen, wat een geretourneerde waarde of een uitzondering kan zijn. Clientfuncties die gebruikmaken van de [clientbinding](durable-functions-bindings.md#entity-client) kunnen alleen entiteiten signaleren.
@@ -318,6 +395,11 @@ Zo kunnen we het voorbeeld van de vorige `Counter`-entiteit aanpassen zodat er e
         context.df.setState(currentValue + amount);
         break;
 ```
+
+# <a name="python"></a>[Python](#tab/python)
+
+> [!NOTE]
+> Python biedt nog geen ondersteuning voor entiteit-naar-entiteit signalen. Gebruik in plaats daarvan een Orchestrator voor de Signa lering van entiteiten.
 
 ---
 
@@ -421,7 +503,6 @@ Er vallen echter enkele belangrijke verschillen op te merken:
 * Aanvraag-antwoordpatronen in entiteiten zijn beperkt tot orchestrations. Vanuit entiteiten is alleen eenrichtingscommunicatie (ook wel signalering genoemd) toegestaan, zoals in het oorspronkelijke actor-model en niet zoals bij korrels in Orleans. 
 * Duurzame entiteiten kunnen niet in een impasse raken. In Orleans kunnen impasses optreden die pas worden opgelost na een time-out van berichten.
 * Duurzame entiteiten kunnen worden gebruikt in combinatie met duurzame orchestrations en bieden ondersteuning voor gedistribueerde vergrendelingsmechanismen. 
-
 
 ## <a name="next-steps"></a>Volgende stappen
 

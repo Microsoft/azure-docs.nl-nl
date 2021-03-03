@@ -1,18 +1,16 @@
 ---
 title: Apache Oozie-werk stromen & Enter prise Security-Azure HDInsight
 description: Beveilig Apache Oozie-werk stromen met behulp van de Enterprise Security Package van Azure HDInsight. Meer informatie over het definiëren van een Oozie-werk stroom en het verzenden van een Oozie-taak.
-author: omidm1
-ms.author: omidm
 ms.service: hdinsight
 ms.topic: conceptual
-ms.custom: hdinsightactive,seodec18,seoapr2020
+ms.custom: seoapr2020
 ms.date: 05/14/2020
-ms.openlocfilehash: 559779e3979ab2ada2191f55cfc06ceb2470bd7d
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: dc20a258028bb76351ae70362234e7c4c8c741a5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98933477"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699399"
 ---
 # <a name="run-apache-oozie-in-azure-hdinsight-clusters-with-enterprise-security-package"></a>Apache Oozie uitvoeren in azure HDInsight-clusters met Enterprise Security Package
 

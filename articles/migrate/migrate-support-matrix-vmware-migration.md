@@ -6,12 +6,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: 0b671fbdfe16848012ac94671ce68e8a33a8b3e8
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: fc3ba062f4995e975015d7c4db145ccde0c3f701
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98703866"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101705208"
 ---
 # <a name="support-matrix-for-vmware-migration"></a>Ondersteuningsmatrix voor VMware-migratie
 
@@ -29,8 +29,8 @@ Lees [dit artikel](server-migrate-overview.md) als u wilt weten welke methode u 
 
 ## <a name="migration-limitations"></a>Migratiebeperkingen
 
-- U kunt Maxi maal 10 Vm's tegelijk selecteren voor replicatie. Als u meer machines wilt migreren, repliceert u in groepen van 10.
-- Voor VMware-agentloze migratie kunt u Maxi maal 300 replicaties tegelijk uitvoeren.
+- U kunt Maxi maal 10 Vm's tegelijk selecteren voor replicatie via de Azure Portal. Als u meer machines wilt migreren, repliceert u in groepen van 10. Er is geen limiet voor het aantal Vm's dat kan worden gerepliceerd via Power shell-cmdlets. Onze aanbeveling is niet meer dan 500 Vm's tegelijk te repliceren vanuit één vCenter via Power shell om optimale prestaties te garanderen.
+- Voor VMware-agentloze migratie kunt u vanaf elke vCenter Server Maxi maal 500 replicaties tegelijk uitvoeren.
 
 ## <a name="agentless-migration"></a>Migratie zonder agent 
 
@@ -56,7 +56,7 @@ De tabel bevat een overzicht van de migratie vereisten zonder agent voor virtuel
 --- | ---
 **Ondersteunde besturingssystemen** | U kunt [Windows](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines) -en [Linux](../virtual-machines/linux/endorsed-distros.md) -besturings systemen migreren die worden ondersteund door Azure.
 **Windows-Vm's in azure** | Mogelijk moet u [enkele wijzigingen aanbrengen](prepare-for-migration.md#verify-required-changes-before-migrating) op vm's vóór de migratie. 
-**Virtuele Linux-machines in azure** | Voor sommige Vm's zijn mogelijk wijzigingen vereist zodat ze kunnen worden uitgevoerd in Azure.<br/><br/> Voor Linux worden de wijzigingen automatisch door Azure Migrate voor deze besturings systemen aangebracht:<br/> -Red Hat Enterprise Linux 7,8, 7,7, 7,6, 7,5, 7,4, 7,0, 6. x<br/> -Cent OS 7,7, 7,6, 7,5, 7,4, 6. x</br> -SUSE Linux Enterprise Server 12 SP1 +<br/> -SUSE Linux Enterprise Server 15 SP1 <br/>-Ubuntu 19,04, 19,10, 14.04 LTS, 16.04 LTS, 18.04 LTS<br/> -Debian 7, 8 <br/> Oracle Linux 7.7, 7.7CI<br/> Voor andere besturings systemen voert u de [vereiste wijzigingen](prepare-for-migration.md#verify-required-changes-before-migrating) hand matig uit.
+**Virtuele Linux-machines in azure** | Voor sommige Vm's zijn mogelijk wijzigingen vereist zodat ze kunnen worden uitgevoerd in Azure.<br/><br/> Voor Linux worden de wijzigingen automatisch door Azure Migrate voor deze besturings systemen aangebracht:<br/> -Red Hat Enterprise Linux 7,8, 7,7, 7,6, 7,5, 7,4, 7,0, 6. x<br/> -Cent OS 7,7, 7,6, 7,5, 7,4, 6. x</br> -SUSE Linux Enterprise Server 12 SP1 +<br/> -SUSE Linux Enterprise Server 15 SP1 <br/>-Ubuntu 19,04, 19,10, 14.04 LTS, 16.04 LTS, 18.04 LTS<br/> -Debian 7, 8, 9 <br/> Oracle Linux 7.7, 7.7CI<br/> Voor andere besturings systemen voert u de [vereiste wijzigingen](prepare-for-migration.md#verify-required-changes-before-migrating) hand matig uit.
 **Linux-opstart** | Als/boot zich op een toegewezen partitie bevindt, moet deze zich op de besturingssysteem schijf bevinden en niet over meerdere schijven worden verspreid.<br/> Als/boot deel uitmaakt van de hoofd partitie (/), moet de partitie '/' zich op de besturingssysteem schijf bevindt en niet over andere schijven beschikken.
 **UEFI-opstart** | Ondersteund. Vm's op basis van UEFI worden gemigreerd naar virtuele machines van Azure Generation 2. 
 **Schijf grootte** | 2 TB besturingssysteem schijf;  32 TB voor gegevens schijven.
@@ -72,7 +72,7 @@ De tabel bevat een overzicht van de migratie vereisten zonder agent voor virtuel
 **Team kaarten** | Wordt niet ondersteund.
 **IPv6** | Wordt niet ondersteund.
 **Doel schijf** | Vm's kunnen alleen worden gemigreerd naar Managed disks (standaard HDD, standaard SSD, Premium SSD) in Azure.
-**Gelijktijdige replicatie** | 300 Vm's per vCenter Server. Als u meer hebt, migreert u deze in batches van 300.
+**Gelijktijdige replicatie** | 500 Vm's per vCenter Server. Als u meer hebt, migreert u deze in batches van 500.
 **Automatische installatie van de Azure VM-agent (Windows-agent)** | Ondersteund voor Windows Server 2008 R2.
 
 ### <a name="appliance-requirements-agentless"></a>Vereisten voor apparaten (zonder agent)

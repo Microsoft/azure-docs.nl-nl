@@ -4,12 +4,12 @@ description: Knooppunt typen, duurzaamheid, betrouw baarheid en andere zaken waa
 ms.topic: conceptual
 ms.date: 05/21/2020
 ms.author: pepogors
-ms.openlocfilehash: 03ec9b411f13f22a74b864a745acfed922e78b12
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: b3361337bb0cf60e47efe198aad7aa8cc20ae7b3
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98790695"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101714932"
 ---
 # <a name="service-fabric-cluster-capacity-planning-considerations"></a>Overwegingen bij het plannen van Service Fabric cluster capaciteit
 
@@ -39,21 +39,21 @@ Het primaire knooppunt type is geconfigureerd met behulp `isPrimary` van het ken
 
 Het aantal eerste typen knoop punten is afhankelijk van het doel van het cluster en de toepassingen en services die erop worden uitgevoerd. Denk na over de volgende vragen:
 
-* *Heeft **uw toepassing meerdere services en moeten ze openbaar of Internet zijn gericht?** _
+* ***Biedt uw toepassing meerdere services en moeten hiervan een of meer service openbaar zijn of op internet gericht?***
 
     Typische toepassingen bevatten een front-end Gateway Service die invoer ontvangt van een client en een of meer back-end-services die communiceren met de front-end-services, met afzonderlijke netwerken tussen de front-end-en back-end-services. Deze gevallen vereisen doorgaans drie knooppunt typen: één primair knooppunt type en twee niet-primaire knooppunt typen (één voor de front-en back-end-service).
 
-_ ***De services waaruit uw toepassing beschikt, hebben verschillende vereisten voor de infra structuur, zoals meer RAM-geheugen of hogere CPU-cycli?** _
+* ***Hebben de services die uw toepassing vormen, verschillende vereisten voor de infra structuur, zoals meer RAM-geheugen of hogere CPU-cycli?***
 
-    Often, front-end service can run on smaller VMs (VM sizes like D2) that have ports open to the internet.  Computationally intensive back-end services might need to run on larger VMs (with VM sizes like D4, D6, D15) that are not internet-facing. Defining different node types for these services allow you to make more efficient and secure use of underlying Service Fabric VMs, and enables them to scale them independently. For more on estimating the amount of resources you'll need, see [Capacity planning for Service Fabric applications](service-fabric-capacity-planning.md)
+    De front-end-service kan vaak worden uitgevoerd op kleinere Vm's (VM-grootten zoals D2) die poorten hebben geopend op internet.  Computerintensieve back-end-services moeten mogelijk worden uitgevoerd op grotere Vm's (met VM-grootten zoals D4, D6, D15) die niet Internet gericht zijn. Als u verschillende knooppunt typen voor deze services definieert, kunt u het gebruik van onderliggende Service Fabric Vm's efficiënter en veilig maken en kunnen ze onafhankelijk van elkaar worden geschaald. Zie [capaciteits planning voor service Fabric-toepassingen](service-fabric-capacity-planning.md) voor meer informatie over het schatten van de hoeveelheid resources die u nodig hebt
 
-_ ***Uw toepassings services moeten buiten de 100-knoop punten uitschalen?** _
+* ***Moeten uw toepassings services buiten 100 knoop punten uitschalen?***
 
-    A single node type can't reliably scale beyond 100 nodes per virtual machine scale set for Service Fabric applications. Running more than 100 nodes requires additional virtual machine scale sets (and therefore additional node types).
+    Een type knoop punt kan niet betrouwbaar worden geschaald naast 100 knoop punten per virtuele-machine schaalset voor Service Fabric toepassingen. Voor het uitvoeren van meer dan 100-knoop punten zijn extra virtuele-machine schaal sets (en dus extra knooppunt typen) vereist.
 
-_ ***Is uw cluster over Beschikbaarheidszones?** _
+* ***Bespant uw cluster zich over Beschikbaarheidszones?***
 
-    Service Fabric supports clusters that span across [Availability Zones](../availability-zones/az-overview.md) by deploying node types that are pinned to specific zones, ensuring high-availability of your applications. Availability Zones require additional node type planning and minimum requirements. For details, see [Recommended topology for primary node type of Service Fabric clusters spanning across Availability Zones](service-fabric-cross-availability-zones.md#recommended-topology-for-primary-node-type-of-azure-service-fabric-clusters-spanning-across-availability-zones). 
+    Service Fabric ondersteunt clusters die over meerdere [Beschikbaarheidszones](../availability-zones/az-overview.md) beschikken door knooppunt typen te implementeren die zijn vastgemaakt aan specifieke zones, waardoor uw toepassingen een hoge Beschik baarheid bieden. Beschikbaarheidszones vereisen extra planning van het type knoop punt en minimale vereisten. Zie voor meer informatie [aanbevolen topologie voor het primaire knooppunt type van service Fabric clusters over Beschikbaarheidszones](service-fabric-cross-availability-zones.md#recommended-topology-for-primary-node-type-of-azure-service-fabric-clusters-spanning-across-availability-zones). 
 
 Bij het bepalen van het aantal en de eigenschappen van knooppunt typen voor het maken van de eerste keer dat u uw cluster maakt, moet u ervoor zorgen dat u altijd (niet-primaire) knooppunt typen kunt toevoegen, wijzigen of verwijderen zodra het cluster is geïmplementeerd. [Primaire knooppunt typen kunnen ook worden gewijzigd](service-fabric-scale-up-primary-node-type.md) in actieve clusters (hoewel voor dergelijke bewerkingen veel planning en waarschuwing in productie omgevingen nodig zijn).
 
@@ -61,7 +61,7 @@ Een verdere overweging voor de eigenschappen van het knooppunt type is duurzaamh
 
 ## <a name="durability-characteristics-of-the-cluster"></a>Duurzaamheids kenmerken van het cluster
 
-Met het _durability niveau * worden de bevoegdheden aangegeven die uw Service Fabric Vm's hebben met de onderliggende Azure-infra structuur. Met deze bevoegdheid kunnen Service Fabric alle infrastructuur aanvragen op VM-niveau (zoals opnieuw opstarten, opnieuw installatie kopieën of migratie) onderbreken die van invloed zijn op de quorum vereisten voor Service Fabric systeem services en uw stateful Services.
+Het *duurzaamheids niveau* geeft u de bevoegdheden op die uw service Fabric vm's hebben met de onderliggende Azure-infra structuur. Met deze bevoegdheid kunnen Service Fabric alle infrastructuur aanvragen op VM-niveau (zoals opnieuw opstarten, opnieuw installatie kopieën of migratie) onderbreken die van invloed zijn op de quorum vereisten voor Service Fabric systeem services en uw stateful Services.
 
 > [!IMPORTANT]
 > Duurzaamheids niveau is ingesteld per knooppunt type. Als er geen is opgegeven, wordt de categorie *Bronze* gebruikt, maar biedt deze geen automatische upgrades van besturings systemen. *Silver* -of *Gold* -duurzaamheid wordt aanbevolen voor productie werkbelastingen.
@@ -73,6 +73,9 @@ De volgende tabel bevat een lijst met Service Fabric duurzaamheids lagen, hun ve
 | Goud             | 5                              | Volledige grootten die zijn toegewezen aan één klant (bijvoorbeeld L32s, GS5, G5, DS15_v2, D15_v2) | Kan worden uitgesteld tot goedgekeurd door het Service Fabric-cluster | Kan gedurende 2 uur per upgrade domein worden onderbroken om meer tijd te bieden voor het herstellen van eerdere fouten in replica's |
 | Zilver           | 5                              | Vm's van één kern of hoger met ten minste 50 GB lokale SSD                      | Kan worden uitgesteld tot goedgekeurd door het Service Fabric-cluster | Kan gedurende een belang rijke periode niet worden uitgesteld                                                    |
 | Bron          | 1                              | Vm's met ten minste 50 GB lokale SSD                                              | Wordt niet vertraagd door het Service Fabric cluster           | Kan gedurende een belang rijke periode niet worden uitgesteld                                                    |
+
+> [!NOTE]
+> Het hierboven vermelde minimum aantal Vm's is een vereiste vereiste voor elk niveau van de duurzaamheid. Er zijn geldige validaties waardoor het maken of aanpassen van bestaande virtuele-scalesets die niet aan deze vereisten voldoen, wordt voor komen.
 
 > [!WARNING]
 > Met Bronze duurzaamheid is de automatische upgrade van de installatie kopie van het besturings systeem niet beschikbaar. Hoewel [patch Orchestration-toepassing](service-fabric-patch-orchestration-application.md) (alleen bedoeld voor niet door Azure gehoste clusters) *niet wordt aanbevolen* voor Silver-of hogere duurzaamheids niveaus, is dit de enige optie om Windows-updates te automatiseren met betrekking tot service Fabric upgrade domeinen.

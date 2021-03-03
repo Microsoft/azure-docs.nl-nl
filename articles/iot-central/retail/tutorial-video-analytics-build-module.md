@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.author: nandab
 author: KishorIoT
 ms.date: 07/31/2020
-ms.openlocfilehash: e5236bb7034ae4d5f86ab2f8f965bdbfbc3d6ccd
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: cbff2e774fae1f71624aa3cdbd83bfb21e3a9586
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99832042"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101721460"
 ---
 # <a name="tutorial-modify-and-build-the-live-video-analytics-gateway-modules"></a>Zelfstudie: De gatewaymodules voor livevideoanalyse wijzigen en bouwen
 
@@ -25,11 +25,13 @@ In de voorgaande zelfstudies worden vooraf gemaakte installatiekopieën van de m
 
 Voor het voltooien van de stappen in deze zelfstudie hebt u het volgende nodig:
 
-* [Node.js](https://nodejs.org/en/download/) V10 of hoger
-* [Visual Studio Code](https://code.visualstudio.com/Download) met de [TSLint](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin)-extensie geïnstalleerd
-* [Docker](https://www.docker.com/products/docker-desktop)-engine
-* Een [Azure Container Registry](../../container-registry/index.yml) om uw versies van de modules te hosten.
-* Een [Azure Media Services](../../media-services/index.yml)-account. Als u de vorige zelfstudies hebt voltooid, kunt u het eerder gemaakte account opnieuw gebruiken.
+
+> [!div class="checklist"]
+> * [Node.js](https://nodejs.org/en/download/) V10 of hoger
+> * [Visual Studio Code](https://code.visualstudio.com/Download) met de [TSLint](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin)-extensie geïnstalleerd
+> * [Docker](https://www.docker.com/products/docker-desktop)-engine
+> * Een [Azure Container Registry](../../container-registry/index.yml) om uw versies van de modules te hosten.
+> * Een [Azure Media Services](../../media-services/index.yml)-account. Als u de vorige zelfstudies hebt voltooid, kunt u het eerder gemaakte account opnieuw gebruiken.
 
 ## <a name="clone-the-repository"></a>De opslagplaats klonen
 

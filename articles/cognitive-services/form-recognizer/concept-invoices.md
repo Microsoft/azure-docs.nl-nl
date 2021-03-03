@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: pafarley
-ms.openlocfilehash: 875fa2ad5a3a18c0e2582425a6528730234ac8ed
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: adcfef19de5987b9b4c54f6765589f2ae9868c11
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99585072"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101736743"
 ---
 # <a name="form-recognizer-prebuilt-invoice-model"></a>Vooraf gebouwd factuur model voor formulier herkenning
 
@@ -41,7 +41,7 @@ U hebt een Azure-abonnement nodig ([Maak er een gratis](https://azure.microsoft.
 
 ### <a name="input-requirements"></a>Vereisten voor invoer 
 
-[!INCLUDE [input reqs](./includes/input-requirements-receipts.md)]
+[!INCLUDE [input requirements](./includes/input-requirements-receipts.md)]
 
 ## <a name="the-analyze-invoice-operation"></a>De bewerking factuur analyseren
 
@@ -74,14 +74,14 @@ De JSON-uitvoer heeft drie delen:
 
 Met de factuur service worden de velden tekst, tabellen en 26 factuur geëxtraheerd. Hieronder vindt u de velden die zijn geëxtraheerd uit een factuur in het JSON-uitvoer antwoord (de onderstaande uitvoer gebruikt deze [voorbeeld factuur](./media/sample-invoice.jpg))  
 
-|Naam| Type | Description | Tekst | Waarde (gestandaardiseerde uitvoer) |
+|Naam| Type | Beschrijving | Tekst | Waarde (gestandaardiseerde uitvoer) |
 |:-----|:----|:----|:----| :----|
 | CustomerName | tekenreeks | Klant wordt gefactureerd | Micro soft Corp |  |
 | CustomerId | tekenreeks | Referentie-ID voor de klant | CID-12345 |  |
 | PurchaseOrder | tekenreeks | Een referentie nummer van een inkoop order | IO-3333 | |  |
 | InvoiceId | tekenreeks | ID voor deze specifieke factuur (vaak factuur nummer) | INV-100 | |  |
-| InvoiceDate | date | Datum waarop de factuur is verzonden | 11/15/2019 | 
-| DueDate | date | De verval datum van de betaling voor deze factuur | 12/15/2019 | 2019-12-15 | 2019-11-15 |
+| InvoiceDate | date | Datum waarop de factuur is verzonden | 11/15/2019 | 2019-11-15 |
+| DueDate | date | De verval datum van de betaling voor deze factuur | 12/15/2019 | 2019-12-15 |
 | Leveranciers naam | tekenreeks | Leverancier die deze factuur heeft gemaakt | CONTOSO LTD. | |
 | VendorAddress | tekenreeks | E-mail adres voor de leverancier | 123 456th St New York, NY, 10001 | |
 | VendorAddressRecipient | tekenreeks | De naam die is gekoppeld aan de VendorAddress | Contoso Headquarters | |

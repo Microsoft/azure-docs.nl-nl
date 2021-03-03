@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/18/2019
 ms.author: TomSh
-ms.openlocfilehash: 56965310c818f8d9089ab244641bdc562428a337
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: f1e56c38353b43faf600fdd8e6405eced7f1b8a0
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100580457"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101720559"
 ---
 # <a name="introduction-to-azure-security"></a>Inleiding tot Azure-beveiliging
 ## <a name="overview"></a>Overzicht
@@ -53,7 +53,7 @@ De volgende functies zijn mogelijkheden die u kunt bekijken om de zekerheid te g
 | [Verplichte beveiligings training, achtergrond controles](https://downloads.cloudsecurityalliance.org/star/self-assessment/StandardResponsetoRequestforInformationWindowsAzureSecurityPrivacy.docx) |  [Controle op gegevens locatie](https://www.microsoft.com/trustcenter/Privacy/Where-your-data-is-located) |  [Hub met algemene besturings elementen](https://www.microsoft.com/trustcenter/Common-Controls-Hub) |[Hoe micro soft de gegevens locatie in Azure-Services beheert](https://azuredatacentermap.azurewebsites.net/)|
 | [Indringings tests](https://downloads.cloudsecurityalliance.org/star/self-assessment/StandardResponsetoRequestforInformationWindowsAzureSecurityPrivacy.docx), [inbraak detectie, DDoS](https://www.microsoft.com/trustcenter/Security/ThreatManagement), [controles & logboek registratie](https://www.microsoft.com/trustcenter/Security/AuditingAndLogging) | [Gegevens toegang bieden voor uw voor waarden](https://www.microsoft.com/trustcenter/Privacy/Who-can-access-your-data-and-on-what-terms) |  [De controle lijst voor de Cloud Services de verval datum](https://www.microsoft.com/trustcenter/Compliance/Due-Diligence-Checklist) |[Wie in micro soft heeft toegang tot uw gegevens met betrekking tot de voor waarden](https://www.microsoft.com/trustcenter/Privacy/Who-can-access-your-data-and-on-what-terms)|
 | [Status van het Art Data Center, de](https://www.microsoft.com/cloud-platform/global-datacenters)fysieke beveiliging, het [beveiligde netwerk](network-overview.md) | [Reageren op wets afdwinging](https://www.microsoft.com/trustcenter/Privacy/Responding-to-govt-agency-requests-for-customer-data) |  [Naleving per service, locatie & industrie](https://www.microsoft.com/trustcenter/Compliance/default.aspx) |[Hoe micro soft klant gegevens beveiligt in Azure-Services](https://www.microsoft.com/trustcenter/Transparency/default.aspx)|
-|  [Reactie op beveiligings incidenten](https://aka.ms/SecurityResponsepaper), [gedeelde verantwoordelijkheid](./shared-responsibility.md) |[Strenge privacy-standaarden](https://www.microsoft.com/TrustCenter/Privacy/We-set-and-adhere-to-stringent-standards) |  | [Certificering controleren voor Azure-Services, Transparency-hub](https://www.microsoft.com/trustcenter/Compliance/default.aspx)|
+|  [Reactie op beveiligings incidenten](/samples/browse/?redirectedfrom=TechNet-Gallery), [gedeelde verantwoordelijkheid](./shared-responsibility.md) |[Strenge privacy-standaarden](https://www.microsoft.com/TrustCenter/Privacy/We-set-and-adhere-to-stringent-standards) |  | [Certificering controleren voor Azure-Services, Transparency-hub](https://www.microsoft.com/trustcenter/Compliance/default.aspx)|
 
 ### <a name="features-to-secure-data-and-application"></a>Functies voor het beveiligen van gegevens en toepassingen
 Afhankelijk van het Cloud service model, is er een variabele verantwoordelijkheid voor wie verantwoordelijk is voor het beheren van de beveiliging van de toepassing of service. Er zijn mogelijkheden beschikbaar in het Azure-platform om u te helpen bij het beantwoorden van deze verantwoordelijkheden via ingebouwde functies en via partner oplossingen die kunnen worden geïmplementeerd in een Azure-abonnement.

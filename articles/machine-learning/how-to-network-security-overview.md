@@ -11,12 +11,12 @@ author: peterclu
 ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, references_regions, contperf-fy21q1
-ms.openlocfilehash: 857fba6dfa6191163c06c423cefb42d57f25dc1d
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 1a73988b66ba7b47f18ecaaa07df59e9047a933b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99980572"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101691821"
 ---
 # <a name="virtual-network-isolation-and-privacy-overview"></a>Overzicht van virtuele netwerk isolatie en privacy
 
@@ -71,7 +71,7 @@ Gebruik de volgende stappen om uw werk ruimte en de bijbehorende resources te be
 1. Maak een [persoonlijke werk ruimte voor koppelen](how-to-secure-workspace-vnet.md#secure-the-workspace-with-private-endpoint) om communicatie tussen uw VNet en de werk ruimte mogelijk te maken.
 1. Voeg Azure Key Vault toe aan het virtuele netwerk met een [service-eind punt](../key-vault/general/overview-vnet-service-endpoints.md) of een [persoonlijk eind punt](../key-vault/general/private-link-service.md). Stel Key Vault in op [' vertrouwde micro soft-services mogen deze firewall overs Laan '](how-to-secure-workspace-vnet.md#secure-azure-key-vault).
 1. Voeg uw Azure Storage-account toe aan het virtuele netwerk met een [service-eind](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-service-endpoints) punt of een [persoonlijk eind punt](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-private-endpoints).
-1. [Configureer Azure container Registry voor het gebruik van een persoonlijk eind punt](how-to-secure-workspace-vnet.md#enable-azure-container-registry-acr) en [Schakel subnet delegering in azure container instances in](how-to-secure-inferencing-vnet.md#enable-azure-container-instances-aci).
+1. [Configureer Azure container Registry om een persoonlijk eind punt te gebruiken](how-to-secure-workspace-vnet.md#enable-azure-container-registry-acr).
 
 ![Architectuur diagram dat laat zien hoe de werk ruimte en gekoppelde resources met elkaar communiceren via service-eind punten of particuliere eind punten binnen een VNet](./media/how-to-network-security-overview/secure-workspace-resources.png)
 

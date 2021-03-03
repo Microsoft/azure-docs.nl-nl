@@ -3,12 +3,12 @@ title: Azure Service Bus Explorer gebruiken om gegevens bewerkingen op Service B
 description: Dit artikel bevat informatie over het gebruik van de portal Azure Service Bus Explorer voor toegang tot Azure Service Bus gegevens.
 ms.topic: conceptual
 ms.date: 01/20/2020
-ms.openlocfilehash: 06bc2ffffc6b467aa730e16599099bc95117dac9
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 0b5274c492a1dfb2523c52d7aea2b7ebf8eae675
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99092214"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738953"
 ---
 # <a name="use-service-bus-explorer-to-perform-data-operations-on-service-bus-preview"></a>Service Bus Explorer gebruiken om gegevens bewerkingen op Service Bus uit te voeren (preview)
 
@@ -25,7 +25,7 @@ De Azure Service Bus Explorer breidt de functionaliteit van de portal uit tot de
 > [!NOTE]
 > Dit artikel geeft een overzicht van de functionaliteit van de Azure Service Bus Explorer die in de Azure Portal.
 >
-> Het hulp programma Azure Service Bus Explorer is ***niet** _ het OSS-hulp programma van community [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer).
+> Het hulp programma Azure Service Bus Explorer is ***niet*** de OSS-tool van de community [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer).
 >
 
 ## <a name="prerequisites"></a>Vereisten
@@ -37,18 +37,18 @@ Als u het hulp programma Service Bus Explorer wilt gebruiken, moet u de volgende
     - [Snelstartgids-wacht rijen maken](service-bus-quickstart-portal.md)
     - [Snelstartgids: onderwerpen maken](service-bus-quickstart-topics-subscriptions-portal.md)
 - Zorg ervoor dat u lid bent van een van deze rollen op de naam ruimte: 
-    - [Gegevens eigenaar Service Bus](/azure/role-based-access-control/built-in-roles#azure-service-bus-data-owner) 
-    - [Inzender](/azure/role-based-access-control/built-in-roles#contributor) 
-    - [Eigenaar](/azure/role-based-access-control/built-in-roles#owner)
+    - [Gegevens eigenaar Service Bus](../role-based-access-control/built-in-roles.md#azure-service-bus-data-owner) 
+    - [Inzender](../role-based-access-control/built-in-roles.md#contributor) 
+    - [Eigenaar](../role-based-access-control/built-in-roles.md#owner)
 
 
 ## <a name="using-the-service-bus-explorer"></a>De Service Bus Explorer gebruiken
 
 Als u de Azure Service Bus Explorer wilt gebruiken, moet u naar de Service Bus naam ruimte gaan waarop u de bewerkingen voor verzenden, bekijken en ontvangen wilt uitvoeren.
 
-Als u bewerkingen wilt uitvoeren voor een wachtrij, kiest u _ *' wacht rijen '** in het navigatie menu. Als u bewerkingen wilt uitvoeren op een onderwerp (en gerelateerde abonnementen), kiest u **onderwerpen**. 
+Als u bewerkingen wilt uitvoeren voor een wachtrij, kiest u **wacht rijen** in het navigatie menu. Als u bewerkingen wilt uitvoeren op een onderwerp (en gerelateerde abonnementen), kiest u **onderwerpen**. 
 
-:::image type="content" source="./media/service-bus-explorer/queue-topics-left-navigation.png"alt-text="Entiteit selecteren":::
+:::image type="content" source="./media/service-bus-explorer/queue-topics-left-navigation.png" alt-text="Entiteit selecteren":::
 
 Nadat u de **' wacht rijen** ' of **' onderwerpen '** hebt geselecteerd, kiest u de specifieke wachtrij of het onderwerp.
 
@@ -58,11 +58,11 @@ Selecteer de **Service Bus Explorer (preview)** in het navigatie menu links
 
 ### <a name="sending-a-message-to-a-queue-or-topic"></a>Een bericht verzenden naar een wachtrij of onderwerp
 
-Als u een bericht wilt verzenden naar een **wachtrij** of **onderwerp**, klikt u op het tabblad **_verzenden_* _ van de service bus Explorer.
+Als u een bericht wilt verzenden naar een **wachtrij** of **onderwerp**, klikt u op het tabblad **_verzenden_** in de service bus Explorer.
 
 Hier kunt u een bericht opstellen: 
 
-1. Kies _ *inhouds type** als ' text/Plains ', ' Application/XML ' of ' application/json '.
+1. Kies het **inhouds type** om ' text/Plains ', ' Application/XML ' of ' application/json ' te zijn.
 2. Voeg de bericht **inhoud** toe. Zorg ervoor dat deze overeenkomt met het eerder ingestelde **inhouds type** .
 3. Stel de **Geavanceerde eigenschappen** (optioneel) in. Dit zijn onder andere correlatie-id, bericht-id, label, ReplyTo, time to Live (TTL) en geplande tijd in wachtrij (voor geplande berichten).
 4. De **aangepaste eigenschappen** instellen: dit kunnen alle gebruikers eigenschappen zijn die zijn ingesteld op basis van een woordenlijst sleutel.
@@ -86,23 +86,23 @@ Wanneer de verzend bewerking is voltooid,
 Met de functie receive in de Service Bus Explorer kan één bericht tegelijk worden ontvangen. De receive-bewerking wordt uitgevoerd met behulp van de **ReceiveAndDelete** -modus.
 
 > [!IMPORTANT]
-> Houd er rekening mee dat de ontvangst bewerking die door Service Bus Explorer wordt uitgevoerd, een **_destructief ontvangen_* _ is, dat wil zeggen het bericht wordt uit de wachtrij verwijderd wanneer het wordt weer gegeven in het hulp programma service bus Explorer.
+> Houd er rekening mee dat de ontvangst bewerking die door Service Bus Explorer wordt uitgevoerd, een ***destructieve ontvangst*** is. het bericht wordt uit de wachtrij verwijderd wanneer het wordt weer gegeven in het hulp programma service bus Explorer.
 >
-> Als u wilt bladeren in berichten zonder ze uit de wachtrij te verwijderen, kunt u overwegen de functie _*_Peek_*_ te gebruiken.
+> Als u wilt bladeren in berichten zonder ze uit de wachtrij te verwijderen, kunt u overwegen de functie ***Peek*** te gebruiken.
 >
 
 Een bericht van een wachtrij (of de bijbehorende deadletter subwachtrij) ontvangen 
 
-1. Klik op het tabblad _*_ontvangen_*_ in de service bus Explorer.
-2. Controleer de metrische gegevens om te zien of er _ *actieve berichten** of **onbestelbare berichten** moeten worden ontvangen.
+1. Klik op het tabblad ***ontvangen*** in de service bus Explorer.
+2. Controleer de metrische gegevens om te zien of er **actieve berichten** of **onbestelbare berichten** worden ontvangen.
 
     :::image type="content" source="./media/service-bus-explorer/queue-after-send-metrics.png" alt-text="QueueAfterSendMetrics":::
 
-3. Kies tussen de **_wachtrij_* _ of de _*_Deadletter_*_ -subwachtrij.
+3. Kies tussen de subwachtrij ***Queue** _ of _ *_Deadletter_**.
 
     :::image type="content" source="./media/service-bus-explorer/queue-or-deadletter.png" alt-text="QueueOrDeadletter":::
 
-4. Klik op de knop _*_ontvangen_*_ , gevolgd door _*_Ja_*_ om de bewerking ' ontvangen en verwijderen ' te bevestigen.
+4. Klik op de knop ***ontvangen** _, gevolgd door _ *_Ja_** om de bewerking ' ontvangen en verwijderen ' te bevestigen.
 
 
 Wanneer de ontvangst bewerking is gelukt, worden de gegevens van het bericht als hieronder weer gegeven in het raster. U kunt het bericht selecteren in het raster om de details ervan weer te geven.
@@ -114,19 +114,19 @@ Wanneer de ontvangst bewerking is gelukt, worden de gegevens van het bericht als
 
 Met de functie Peek kunt u de Service Bus Explorer gebruiken om de belangrijkste 32-berichten in een wachtrij of de deadletter-wachtrij weer te geven.
 
-1. Als u het bericht in een wachtrij wilt bekijken, klikt u op het tabblad _*_Peek_*_ op de service bus Explorer.
+1. Als u het bericht in een wachtrij wilt bekijken, klikt u op het tabblad ***Peek*** op de service bus Explorer.
 
     :::image type="content" source="./media/service-bus-explorer/peek-tab-selected.png" alt-text="PeekTab":::
 
-2. Controleer de metrische gegevens om te zien of er _ *actieve berichten** of **onbestelbare berichten** moeten worden weer gegeven.
+2. Controleer de metrische gegevens om te zien of er **actieve berichten** of **onbestelbare berichten** moeten worden weer gegeven.
 
     :::image type="content" source="./media/service-bus-explorer/queue-after-send-metrics.png" alt-text="QueueAfterSendMetrics":::
 
-3. Kies vervolgens tussen de **_wachtrij_* _ of de _*_Deadletter_*_ -subwachtrij.
+3. Kies vervolgens tussen de subwachtrij van de *-**wachtrij** _ of de _ *_Deadletter_**.
 
     :::image type="content" source="./media/service-bus-explorer/queue-or-deadletter.png" alt-text="QueueOrDeadletter":::
 
-4. Klik op de knop _*_Peek_*_ . 
+4. Klik op de knop ***Peek*** . 
 
 Zodra de Peek-bewerking is voltooid, worden Maxi maal 32 berichten weer gegeven in het raster. Als u de details van een bepaald bericht wilt weer geven, selecteert u het in het raster. 
 
@@ -134,28 +134,28 @@ Zodra de Peek-bewerking is voltooid, worden Maxi maal 32 berichten weer gegeven 
 
 > [!NOTE]
 >
-> Omdat Peek geen destructieve bewerking is, wordt het bericht _ *niet** uit de wachtrij verwijderd.
+> Omdat Peek geen destructieve bewerking is **, wordt** het bericht niet uit de wachtrij verwijderd.
 >
 
 ### <a name="receiving-a-message-from-a-subscription"></a>Een bericht ontvangen van een abonnement
 
-Net als bij een wachtrij kan de **_Receive_*-bewerking van de * worden uitgevoerd op basis van een abonnement (of de deadletter-entiteit). Omdat een abonnement echter binnen de context van het onderwerp valt, wordt de ontvangst bewerking uitgevoerd door te navigeren naar de Service Bus Explorer voor een bepaald onderwerp.
+Net als bij een wachtrij kan de ***Receive*** -bewerking worden uitgevoerd op een abonnement (of de deadletter-entiteit). Omdat een abonnement echter binnen de context van het onderwerp valt, wordt de ontvangst bewerking uitgevoerd door te navigeren naar de Service Bus Explorer voor een bepaald onderwerp.
 
 > [!IMPORTANT]
-> Houd er rekening mee dat de ontvangst bewerking die door Service Bus Explorer wordt uitgevoerd, een _*_destructieve ontvangst_*_ is. het bericht wordt uit de wachtrij verwijderd wanneer het wordt weer gegeven in het hulp programma service bus Explorer.
+> Houd er rekening mee dat de ontvangst bewerking die door Service Bus Explorer wordt uitgevoerd, een ***destructieve ontvangst*** is. het bericht wordt uit de wachtrij verwijderd wanneer het wordt weer gegeven in het hulp programma service bus Explorer.
 >
-> Als u wilt bladeren in berichten zonder ze uit de wachtrij te verwijderen, kunt u overwegen de functie _*_Peek_*_ te gebruiken.
+> Als u wilt bladeren in berichten zonder ze uit de wachtrij te verwijderen, kunt u overwegen de functie ***Peek*** te gebruiken.
 >
 
-1. Klik op het tabblad _*_ontvangen_*_ en selecteer het specifieke _*_abonnement_*_ in de kiezer voor vervolg keuzelijst.
+1. Klik op het tabblad ***ontvangen** _ en selecteer het specifieke _ *_abonnement_** in de vervolg keuzelijst selecteren.
 
     :::image type="content" source="./media/service-bus-explorer/receive-subscription-tab-selected.png" alt-text="ReceiveTabSelected":::
 
-2. Kiezen tussen het _*_abonnement_*_ of de _*_DeadLetter_*_ -subentiteit.
+2. Kies tussen het *-**abonnement** _ of de _ *_DeadLetter_**-subentiteit.
 
     :::image type="content" source="./media/service-bus-explorer/subscription-or-deadletter.png" alt-text="SubscriptionOrDeadletter":::
 
-3. Klik op de knop _*_ontvangen_*_ , gevolgd door _*_Ja_*_ om de bewerking ' ontvangen en verwijderen ' te bevestigen.
+3. Klik op de knop ***ontvangen** _, gevolgd door _ *_Ja_** om de bewerking ' ontvangen en verwijderen ' te bevestigen.
 
 Wanneer de ontvangst bewerking is gelukt, wordt het ontvangen bericht als volgt weer gegeven in het raster. Klik op het bericht om de details van het bericht weer te geven.
 
@@ -163,17 +163,17 @@ Wanneer de ontvangst bewerking is gelukt, wordt het ontvangen bericht als volgt 
 
 ### <a name="peeking-a-message-from-a-subscription"></a>Een bericht van een abonnement bekijken
 
-Als u alleen door de berichten in een abonnement of de deadletter-subentiteit wilt bladeren, kan de functie _*_Peek_*_ ook worden gebruikt voor het abonnement.
+Als u alleen door de berichten in een abonnement of de deadletter-subentiteit wilt bladeren, kan de functie ***Peek*** ook worden gebruikt voor het abonnement.
 
-1. Klik op het tabblad _*_Peek_*_ en selecteer het specifieke _*_abonnement_*_ in de kiezer voor de vervolg keuzelijst.
+1. Klik op het tabblad ***Peek** _ en selecteer het specifieke _ *_abonnement_** in de vervolg keuzelijst selecteren.
 
     :::image type="content" source="./media/service-bus-explorer/peek-subscription-tab-selected.png" alt-text="PeekTabSelected":::
 
-2. Kiezen tussen het _*_abonnement_*_ of de _*_DeadLetter_*_ -subentiteit.
+2. Kies tussen het *-**abonnement** _ of de _ *_DeadLetter_**-subentiteit.
 
     :::image type="content" source="./media/service-bus-explorer/subscription-or-deadletter.png" alt-text="SubscriptionOrDeadletter":::
 
-3. Klik op de knop _*_Peek_*_ .
+3. Klik op de knop ***Peek*** .
 
 Zodra de Peek-bewerking is voltooid, worden Maxi maal 32 berichten weer gegeven in het raster. Als u de details van een bepaald bericht wilt weer geven, selecteert u het in het raster. 
 
@@ -181,7 +181,7 @@ Zodra de Peek-bewerking is voltooid, worden Maxi maal 32 berichten weer gegeven 
 
 > [!NOTE]
 >
-> Omdat Peek geen destructieve bewerking is, wordt het bericht _ *niet** uit de wachtrij verwijderd.
+> Omdat Peek geen destructieve bewerking is **, wordt** het bericht niet uit de wachtrij verwijderd.
 >
 
 ## <a name="next-steps"></a>Volgende stappen

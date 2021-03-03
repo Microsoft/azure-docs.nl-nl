@@ -1,0 +1,28 @@
+- name: Azure Managed instance voor Apache Cassandra-documentatie
+  href: index.yml
+- name: Overzicht
+  items:
+    - name: Wat is een beheerd exemplaar van Azure voor Apache Cassandra?
+      href: introduction.md
+- name: Concepten
+  items:
+    - name: Veelgestelde vragen
+      href: faq.md
+    - name: Beheerd exemplaar versus Azure Cosmos DB Cassandra-API
+      href: compare-cosmosdb-managed-instance.md
+- name: Quickstarts
+  items:
+    - name: Een cluster maken-Portal
+      href: create-cluster-portal.md
+    - name: Een cluster maken-CLI
+      href: create-cluster-cli.md
+    - name: Een hybride cluster configureren
+      href: configure-hybrid-cluster.md
+    - name: Spark-cluster implementeren met Databricks
+      href: deploy-cluster-databricks.md
+- name: Instructiegidsen
+  items:
+    - name: Beheren met Azure CLI
+      href: manage-resources-cli.md
+    - name: Metrische gegevens visualiseren in Prometheus met Grafana
+      href: visualize-prometheus-grafana.md

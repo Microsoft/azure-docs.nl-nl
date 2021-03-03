@@ -10,20 +10,20 @@ ms.custom: how-to, responsible-ml
 ms.author: mithigpe
 author: minthigpen
 ms.reviewer: Luis.Quintanilla
-ms.date: 11/16/2020
-ms.openlocfilehash: 6784361dde67d7dcc1423d9edbcc92ec513ff6d4
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.date: 02/25/2021
+ms.openlocfilehash: 2c61cfaf0e97f7d483239a23e5eea52b51c6a126
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222629"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101690206"
 ---
 # <a name="model-interpretability-in-azure-machine-learning-preview"></a>Interpreteer van modellen in Azure Machine Learning (preview-versie)
 
 
-## <a name="overview-of-model-interpretability"></a>Overzicht van de interpretatie van modellen
+## <a name="model-interpretability-overview"></a>Overzicht van het model interpreteren
 
-Interpretbaarheid is van cruciaal belang voor gegevens wetenschappers, Audi tors en besluit vormers van de onderneming om te zorgen voor naleving van het bedrijfs beleid, de industrie normen en regerings voorschriften:
+Model Interpretation is van cruciaal belang voor gegevens wetenschappers, Audi tors en zakelijke besluit vormers om te zorgen voor naleving van het bedrijfs beleid, de industrie normen en regerings voorschriften:
 
 + Gegevens wetenschappers hebben de mogelijkheid nodig om hun modellen te uitleggen aan leidinggevenden en belanghebbenden, zodat ze inzicht hebben in de waarde en nauw keurigheid van hun bevindingen. Ze moeten ook interpreteren om fouten in hun modellen op te sporen en weloverwogen beslissingen te nemen over hoe ze kunnen worden verbeterd. 
 
@@ -31,15 +31,15 @@ Interpretbaarheid is van cruciaal belang voor gegevens wetenschappers, Audi tors
 
 + Zakelijke besluit vormers hebben gemoeds rust door de mogelijkheid om transparantie voor eind gebruikers te bieden. Op die manier kunnen ze vertrouwens relaties verdienen en onderhouden.
 
-
 Het inschakelen van de mogelijkheid om een machine learning model uit te leggen, is belang rijk tijdens twee belang rijke fasen van model ontwikkeling:
+
 + Tijdens de trainings fase kunnen model ontwerpers en evaluatoren de interpretatieve uitvoer van een model gebruiken om hypo Thesen te controleren en om vertrouwen te bouwen met belanghebbenden. Ze gebruiken ook de inzichten in het model voor het opsporen van fouten, het valideren van het model gedrag aan hun doel stellingen en het controleren op modelloze of onbeduidende functies.
 
 + Tijdens de versterkings fase is het met transparantie rond geïmplementeerde modellen het mogelijk dat leidinggevenden begrijpen "wanneer geïmplementeerd" hoe het model werkt en hoe de beslissingen in werkelijkheid worden behandeld en wat van invloed is op mensen in het leven. 
 
 ## <a name="interpretability-with-azure-machine-learning"></a>Interpretiteit met Azure Machine Learning
 
-De interpretatieve klassen worden beschikbaar gesteld via het volgende SDK-pakket: (informatie over het [installeren van SDK-pakketten voor Azure machine learning](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py))
+De klassen interpreteer baarheid van modellen worden beschikbaar gesteld via het volgende SDK-pakket: (informatie over het [installeren van SDK-pakketten voor Azure machine learning](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py))
 
 * `azureml.interpret`, bevat functionaliteiten die door micro soft worden ondersteund.
 
@@ -52,11 +52,7 @@ Met de klassen en methoden in de SDK kunt u het volgende doen:
 + Behaal de model interpreteer baarheid van de gegevens sets op schaal, tijdens de training en de interferentie.
 + Gebruik een interactief visualisatie dashboard om patronen in gegevens en uitleg te ontdekken tijdens de trainings tijd
 
-
 In machine learning zijn **functies** de gegevens velden die worden gebruikt om een doel gegevens punt te voors pellen. Bijvoorbeeld, om het krediet risico te voors pellen, kunnen gegevens velden voor leeftijd, account grootte en account leeftijd worden gebruikt. In dit geval zijn de leeftijd, de account grootte en de account duur **functies**. Functie belang vertelt u hoe elk gegevens veld de voor spellingen van het model beïnvloedt. Leeftijd kan bijvoorbeeld intensief worden gebruikt in de voor spelling, terwijl de grootte van het account en de leeftijd geen invloed hebben op de Voorspellings waarden. Met dit proces kunnen gegevens wetenschappers de resulterende voor spellingen uitleggen, zodat de belanghebbenden inzicht hebben in de functies die het belangrijkst zijn in het model.
-
-Meer informatie over ondersteunde technieken voor interpretatie, ondersteunde machine learning modellen en ondersteunde uitvoerings omgevingen.
-
 
 ## <a name="supported-interpretability-techniques"></a>Ondersteunde technieken voor interpretatie
 
@@ -70,9 +66,6 @@ Meer informatie over ondersteunde technieken voor interpretatie, ondersteunde ma
 |SHAP-kernel-uitleg| De kernel-uitleg van SHAP maakt gebruik van een speciaal gewogen lokale lineaire regressie om SHAP-waarden voor **elk model** te schatten.|Model-neutraal|
 |Nabooter (globaal surrogaat)| Nabooter is gebaseerd op het idee van [globale surrogaat modellen](https://christophm.github.io/interpretable-ml-book/global.html) met training om blackbox modellen te simuleren. Een globaal surrogaat model is een intrinsiek interpretable model dat is getraind om de voor spellingen van **een zwart box-model** zo nauw keurig mogelijk te benaderen. Gegevens wetenschappers kunnen het surrogaat model interpreteren om conclusies over het zwarte box-model te tekenen. U kunt een van de volgende verwerkte modellen gebruiken als surrogaat model: LightGBM (LGBMExplainableModel), lineaire regressie (LinearExplainableModel), stochastische Gradient Daal verklarend model (SGDExplainableModel) en beslissings structuur (DecisionTreeExplainableModel).|Model-neutraal|
 |Beschrijving van de permutatie functie (PFI)| Het belang van de permutatie functie is een techniek die wordt gebruikt om classificatie-en regressie modellen te verklaren die zijn geïnspireerd op [het breiman van een wille keurige bossen](https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf) (zie sectie 10). Op hoog niveau kan de manier waarop het werkt, worden uitgevoerd door in wille keurige volg orde de gegevens per functie op te nemen voor de hele gegevensset en te berekenen hoeveel de prestatie metriek van de interesses is gewijzigd. Hoe groter de verandering, des te belang rijker deze functie is. PFI kan het algemene gedrag van **elk onderliggend model** uitleggen, maar verklaart geen afzonderlijke voor spellingen. |Model-neutraal|
-
-
-
 
 Naast de methoden voor het interpreteren die hierboven worden beschreven, ondersteunen we nog een op SHAP gebaseerde uitleg, ook wel genoemd `TabularExplainer` . Afhankelijk van het model `TabularExplainer` gebruikt een van de ondersteunde Shap-uitleg:
 

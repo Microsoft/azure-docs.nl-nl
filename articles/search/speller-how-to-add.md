@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/02/2021
 ms.custom: references_regions
-ms.openlocfilehash: cdc5de8153e8b2e0ea8bb8ea372fe8610ccb895b
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: da172e9a7605876711e4a4f32bf4fac698b35109
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101679830"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101694798"
 ---
 # <a name="add-spell-check-to-queries-in-cognitive-search"></a>Spelling controle toevoegen aan query's in Cognitive Search
 
@@ -36,7 +36,7 @@ U kunt de intrekking verbeteren door de spelling van afzonderlijke zoek termen t
   De queryLanguage is vereist voor de spelling controle en momenteel is ' nl-nl ' de enige geldige waarde.
 
 > [!Note]
-> De para meter speller is beschikbaar op alle lagen, in dezelfde regio's die een semantische zoek opdracht bieden. Zie [Beschik baarheid en prijzen](semantic-search-overview.md#availability-and-pricing)voor meer informatie.
+> De para meter speller is beschikbaar op alle lagen, in dezelfde regio's die een semantische zoek opdracht bieden. U hoeft zich niet aan te melden voor toegang tot deze preview-functie. Zie [Beschik baarheid en prijzen](semantic-search-overview.md#availability-and-pricing)voor meer informatie.
 
 ## <a name="spell-correction-with-simple-search"></a>Spelling correctie met eenvoudige zoek actie
 
@@ -94,7 +94,13 @@ POST https://[service name].search.windows.net/indexes/hotels-sample-index/docs/
 
 ## <a name="language-considerations"></a>Taal overwegingen
 
-De para meter queryLanguage die is vereist voor de spelling controle moet consistent zijn met alle [taal analyse](index-add-language-analyzers.md) functies die zijn toegewezen aan veld definities in het index schema. De queryLanguage bepaalt in een query aanvraag welke lexicons worden gebruikt voor de spelling controle en wordt ook gebruikt als invoer voor het [algoritme voor semantische classificatie](semantic-how-to-query-response.md) als u dit gebruikt. Taal analysen worden gebruikt tijdens het indexeren en tijdens het ophalen van overeenkomende documenten in de zoek index. Als queryLanguage ' en-us ' consistent zijn, moeten alle taal analysen ook een Engelse variant ("en. micro soft" of "en. lucene") zijn. 
+De para meter queryLanguage die is vereist voor de spelling controle moet consistent zijn met alle [taal analyse](index-add-language-analyzers.md) functies die zijn toegewezen aan veld definities in het index schema. 
+
++ queryLanguage bepaalt welke lexicons worden gebruikt voor de spelling controle en wordt ook gebruikt als invoer voor het [algoritme voor semantische classificatie](semantic-how-to-query-response.md) als u ' query type = semantiek ' gebruikt.
+
++ Taal analysen worden gebruikt tijdens het indexeren en uitvoeren van query's om overeenkomende documenten te vinden in de zoek index. Een voor beeld van een veld definitie die gebruikmaakt van een taal analyse is `"name": "Description", "type": "Edm.String", "analyzer": "en.microsoft"` .
+
+Voor de beste resultaten bij het gebruik van de Spellings controle, als queryLanguage "en-US" is, moeten alle taal analysen ook een Engelse variant ("en. micro soft" of "en. lucene") zijn.
 
 > [!NOTE]
 > Taal neutraal-analyse functies (zoals sleutel woord, eenvoudig, standaard, stoppen, spatie of `standardasciifolding.lucene` ) veroorzaken geen conflict met queryLanguage-instellingen.

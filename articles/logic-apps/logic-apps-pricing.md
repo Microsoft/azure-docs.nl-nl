@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: conceptual
 ms.date: 01/29/2021
-ms.openlocfilehash: 103855748c4b5d998dfc81eeb4044f5f53dae9e5
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 2b37308bcbcd489876c21dce56878de7e0daf545
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100372005"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699025"
 ---
 # <a name="pricing-and-billing-models-for-azure-logic-apps"></a>Prijzen en facturerings modellen voor Azure Logic Apps
 
@@ -25,7 +25,7 @@ Een prijs model voor betalen voor gebruik is van toepassing op Logic apps die wo
 
 Zo wordt een aanvraag die een polling trigger maakt, nog steeds als een uitvoering gemeten, zelfs als die trigger wordt overgeslagen en er geen werk stroom exemplaar van de logische app wordt gemaakt.
 
-| Items | Description |
+| Items | Beschrijving |
 |-------|-------------|
 | [Ingebouwde](../connectors/apis-list.md#built-in) triggers en acties | Systeem eigen uitvoeren in de Logic Apps-service en worden gemeten met behulp van de prijs van de [ **actie**](https://azure.microsoft.com/pricing/details/logic-apps/). <p><p>Zo zijn de HTTP-trigger en de aanvraag trigger ingebouwde triggers, terwijl de HTTP-actie en de reactie actie ingebouwde acties zijn. Gegevens bewerkingen, batch bewerkingen, variabele bewerkingen en [werk stroom besturings acties](../connectors/apis-list.md#control-workflow), zoals lussen, voor waarden, Switch, parallelle vertakkingen, enzovoort, zijn ook ingebouwde acties. |
 | [Standaard-connector](../connectors/apis-list.md#managed-connectors) triggers en-acties <p><p>[Aangepaste connector](../connectors/apis-list.md#custom) triggers en-acties | Gemeten met behulp van de [Standard-connector prijs](https://azure.microsoft.com/pricing/details/logic-apps/). |
@@ -70,7 +70,7 @@ Bekijk de volgende tips om u te helpen bij het ramen van nauw keurigere verbruik
 
 Een vast prijs model is van toepassing op Logic apps die worden uitgevoerd in een [ *Integration service Environment* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md). Een ISE wordt gefactureerd op basis van de [Integratieserviceomgeving prijs](https://azure.microsoft.com/pricing/details/logic-apps), die afhankelijk is van het [ISE niveau of de *SKU*](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level) die u maakt. Deze prijzen verschillen van de prijzen voor meerdere tenants wanneer u betaalt voor gereserveerde capaciteit en toegewezen resources, ongeacht of u deze gebruikt.
 
-| ISE SKU | Description |
+| ISE SKU | Beschrijving |
 |---------|-------------|
 | **Premium** | De basis eenheid heeft [vaste capaciteit](logic-apps-limits-and-config.md#integration-service-environment-ise) en wordt [gefactureerd tegen een uurtarief voor de Premium-SKU](https://azure.microsoft.com/pricing/details/logic-apps). Als u meer door voer wilt doen, kunt u [meer schaal eenheden toevoegen](../logic-apps/ise-manage-integration-service-environment.md#add-capacity) wanneer u uw ISE maakt of daarna. Elke schaal eenheid wordt in rekening gebracht tegen een [uurtarief van ongeveer de basis eenheids](https://azure.microsoft.com/pricing/details/logic-apps)prijs. <p><p>Zie [limieten voor ISE in azure Logic apps](logic-apps-limits-and-config.md#integration-service-environment-ise)voor informatie over capaciteit en limieten. |
 | **Developer** | De basis eenheid heeft [vaste capaciteit](logic-apps-limits-and-config.md#integration-service-environment-ise) en wordt [gefactureerd tegen een UURTARIEF voor de SKU van de ontwikkel aars](https://azure.microsoft.com/pricing/details/logic-apps). Deze SKU heeft echter geen SLA (Service Level Agreement), schaal baarheid of redundantie tijdens recycling, wat betekent dat u vertragingen of downtime mogelijk ondervindt. Back-end-updates kunnen de service af en toe onderbreken. <p><p>**Belang rijk**: Zorg ervoor dat u deze SKU alleen gebruikt voor onderzoek, experimenten, ontwikkeling en tests, niet voor productie-of prestatie testen. <p><p>Zie [limieten voor ISE in azure Logic apps](logic-apps-limits-and-config.md#integration-service-environment-ise)voor informatie over capaciteit en limieten. |
@@ -78,7 +78,7 @@ Een vast prijs model is van toepassing op Logic apps die worden uitgevoerd in ee
 
 ### <a name="included-at-no-extra-cost"></a>Zonder extra kosten inbegrepen
 
-| Items | Description |
+| Items | Beschrijving |
 |-------|-------------|
 | [Ingebouwde](../connectors/apis-list.md#built-in) triggers en acties | Geef het **kern** label weer en voer deze uit in dezelfde ISE als uw logische apps. |
 | [Standaardconnectoren](../connectors/apis-list.md#managed-connectors) <p><p>[Bedrijfsconnectoren](../connectors/apis-list.md#enterprise-connectors) | -Beheerde connectors die het label **ISE** weer geven, zijn speciaal ontworpen om te werken zonder de on-premises gegevens gateway en worden uitgevoerd in dezelfde ISE als uw Logic apps. ISE prijzen zijn inclusief een groot aantal zakelijke verbindingen. <p><p>-Connectors die het label ISE niet weer geven, worden uitgevoerd in de multi tenant-Logic Apps service. De prijzen voor ISE zijn echter inclusief de uitvoeringen voor Logic apps die worden uitgevoerd in een ISE. |
@@ -94,7 +94,9 @@ Zie [limieten voor ISE in azure Logic apps](logic-apps-limits-and-config.md#inte
 
 ## <a name="integration-accounts"></a>Integratieaccounts
 
-Een [integratie account](../logic-apps/logic-apps-pricing.md#integration-accounts) is een afzonderlijke resource die u maakt en koppelt aan Logic apps, zodat u B2B-integratie oplossingen kunt verkennen, bouwen en testen die gebruikmaken van [EDI](logic-apps-enterprise-integration-b2b.md) [-en XML-verwerkings](logic-apps-enterprise-integration-xml.md) mogelijkheden. Azure Logic Apps bieden deze niveaus of lagen voor integratie accounts:
+Een [integratie account](../logic-apps/logic-apps-pricing.md#integration-accounts) is een afzonderlijke resource die u maakt en koppelt aan Logic apps, zodat u B2B-integratie oplossingen kunt verkennen, bouwen en testen die gebruikmaken van [EDI](logic-apps-enterprise-integration-b2b.md) [-en XML-verwerkings](logic-apps-enterprise-integration-xml.md) mogelijkheden.
+
+Azure Logic Apps bieden deze niveaus of lagen voor integratie accounts die [variëren in prijs](https://azure.microsoft.com/pricing/details/logic-apps/) -en [facturerings model](logic-apps-pricing.md#integration-accounts), op basis van het feit of uw Logic apps op basis van verbruik of op ISE zijn gebaseerd:
 
 | Laag | Beschrijving |
 |------|-------------|

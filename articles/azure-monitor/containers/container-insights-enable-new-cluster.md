@@ -1,19 +1,19 @@
 ---
 title: Een nieuw Azure Kubernetes service-cluster (AKS) bewaken | Microsoft Docs
-description: Meer informatie over het inschakelen van bewaking voor een nieuw Azure Kubernetes service-cluster (AKS) met Azure Monitor voor containers-abonnement.
+description: Meer informatie over het inschakelen van bewaking voor een nieuw Azure Kubernetes service (AKS)-cluster met een container Insights-abonnement.
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.custom: devx-track-terraform, devx-track-azurecli
-ms.openlocfilehash: 19c4a88cee8776136593b041e94dd14c7c9c28d6
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 9b6c4f8a05b8e7a350ebd5afd677e8bb2ee6e9b4
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612339"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717567"
 ---
 # <a name="enable-monitoring-of-a-new-azure-kubernetes-service-aks-cluster"></a>Bewaking van een nieuw Azure Kubernetes service (AKS)-cluster inschakelen
 
-In dit artikel wordt beschreven hoe u Azure Monitor instelt voor containers voor het bewaken van beheerde Kubernetes-clusters die worden gehost op de [Azure Kubernetes-service](../../aks/index.yml) die u wilt implementeren in uw abonnement.
+In dit artikel wordt beschreven hoe u container Insights instelt voor het bewaken van beheerde Kubernetes-clusters die worden gehost op de [Azure Kubernetes-service](../../aks/index.yml) die u voorbereidt om te worden geïmplementeerd in uw abonnement.
 
 U kunt de bewaking van een AKS-cluster inschakelen met een van de ondersteunde methoden:
 
@@ -34,14 +34,14 @@ Als u [een nieuw AKS-cluster implementeert met behulp van terraform](/azure/deve
 >[!NOTE]
 >Als u ervoor kiest om terraform te gebruiken, moet u de terraform Azure RM-provider versie 1.17.0 of hoger uitvoeren.
 
-Als u Azure Monitor voor containers wilt toevoegen aan de werk ruimte, raadpleegt u [azurerm_log_analytics_solution](https://www.terraform.io/docs/providers/azurerm/r/log_analytics_solution.html) en voltooit u het profiel door de [**addon_profile**](https://www.terraform.io/docs/providers/azurerm/r/kubernetes_cluster.html#addon_profile) op te nemen en **oms_agent** op te geven. 
+Als u container inzichten wilt toevoegen aan de werk ruimte, raadpleegt u [azurerm_log_analytics_solution](https://www.terraform.io/docs/providers/azurerm/r/log_analytics_solution.html) en vult u het profiel in door de [**addon_profile**](https://www.terraform.io/docs/providers/azurerm/r/kubernetes_cluster.html#addon_profile) op te nemen en **oms_agent** op te geven. 
 
 Nadat u bewaking hebt ingeschakeld en alle configuratie taken zijn voltooid, kunt u de prestaties van uw cluster op twee manieren controleren:
 
 * Rechtstreeks in het AKS-cluster door de **status** te selecteren in het linkerdeel venster.
 * Door de tegel **container Insights bewaken** in de AKS-cluster pagina voor het geselecteerde cluster te selecteren. Selecteer in Azure Monitor in het linkerdeel venster **status**. 
 
-  ![Opties voor het selecteren van Azure Monitor voor containers in AKS](./media/container-insights-onboard/kubernetes-select-monitoring-01.png)
+  ![Opties voor het selecteren van container Insights in AKS](./media/container-insights-onboard/kubernetes-select-monitoring-01.png)
 
 Nadat u bewaking hebt ingeschakeld, kan het ongeveer 15 minuten duren voordat u de metrische gegevens van de status voor het cluster kunt weer geven. 
 
@@ -117,5 +117,5 @@ Na enkele minuten is de opdracht voltooid en retourneert deze informatie over de
 
 * Als u problemen ondervindt bij het voorbereiden van de oplossing, raadpleegt u de [hand leiding](container-insights-troubleshoot.md) voor het oplossen van problemen
 
-* Als controle is ingeschakeld voor het verzamelen van het status-en resource gebruik van uw AKS-cluster en werk belastingen die erop worden uitgevoerd, leert [u hoe u Azure monitor gebruikt](container-insights-analyze.md) voor containers.
+* Als controle is ingeschakeld voor het verzamelen van het status-en resource gebruik van uw AKS-cluster en werk belastingen die erop worden uitgevoerd, leert [u hoe u container Insights kunt gebruiken](container-insights-analyze.md) .
 

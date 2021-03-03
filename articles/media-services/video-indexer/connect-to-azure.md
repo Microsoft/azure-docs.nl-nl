@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 01/14/2021
 ms.author: juliako
-ms.openlocfilehash: 4174e63ed12faf5d10029db5b4eb9bf9a40b9b5b
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: fe6be5778997f0ef4a3f53ae45d17352eca60d8e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576275"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101727257"
 ---
 # <a name="create-a-video-indexer-account"></a>Een Video Indexer-account maken
 
@@ -201,7 +201,7 @@ Om het maken van het account te automatiseren, is een proces van twee stappen:
 
 ### <a name="prerequisites-for-connecting-to-azure-government"></a>Vereisten voor het maken van verbinding met Azure Government
 
--   Een Azure-abonnement in [Azure Government](https://docs.microsoft.com/azure/azure-government/).
+-   Een Azure-abonnement in [Azure Government](../../azure-government/index.yml).
 - Een Azure AD-account in Azure Government.
 - Alle vooraf-vereisten van machtigingen en bronnen zoals hierboven beschreven in [vereisten voor het maken van verbinding met Azure](#prerequisites-for-connecting-to-azure).
 
@@ -222,7 +222,7 @@ Een betaald account maken via de Video Indexer portal:
     
 ### <a name="create-new-account-via-the-api-on-azure-government"></a>Maak een nieuw account via de API op Azure Government
 
-Als u een betaald account in Azure Government wilt maken, volgt u de instructies in [Create-betalen-account](/azure/media-services/video-indexer/connect-to-azure). Dit eind punt API bevat alleen overheids Cloud regio's.
+Als u een betaald account in Azure Government wilt maken, volgt u de instructies in [Create-betalen-account](). Dit eind punt API bevat alleen overheids Cloud regio's.
 
 ### <a name="limitations-of-video-indexer-on-azure-government"></a>Beperkingen van Video Indexer op Azure Government
 

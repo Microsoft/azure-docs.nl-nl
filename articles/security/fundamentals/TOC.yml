@@ -10,8 +10,6 @@
   items:
     - name: Technische mogelijkheden voor beveiliging
       href: technical-capabilities.md
-    - name: Ingebouwde beveiligingsmaatregelen
-      href: security-controls.md
 - name: Azure-platform en -infrastructuur
   items:
     - name: Beveiligingsinfrastructuur

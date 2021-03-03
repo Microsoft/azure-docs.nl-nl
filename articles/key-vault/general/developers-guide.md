@@ -8,12 +8,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 40ce5f55b4109fee0099110c17f02b33c3eff808
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 550084ccbb1df24fe0cbc0a4630efe19e6685e5c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98791421"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101709900"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Gids voor Azure Key Vault-ontwikkelaars
 
@@ -41,7 +41,7 @@ Toegang tot de Management-laag wordt beheerd door op [rollen gebaseerd toegangs 
 
 | Azure CLI | PowerShell | REST-API | Resource Manager | .NET | Python | Java | Javascript |  
 |--|--|--|--|--|--|--|--|
-|[Verwijzing](/cli/azure/keyvault)<br>[Snelstartgids](quick-create-cli.md)|[Verwijzing](/powershell/module/az.keyvault)<br>[Snelstartgids](quick-create-powershell.md)|[Verwijzing](/rest/api/keyvault/)|[Verwijzing](/azure/templates/microsoft.keyvault/vaults)<br>[Snelstartgids](https://docs.microsoft.com/azure/key-vault/general/vault-create-template)|[Verwijzing](/dotnet/api/microsoft.azure.management.keyvault)|[Verwijzing](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)|[Verwijzing](/java/api/com.microsoft.azure.management.keyvault)|[Verwijzing](/javascript/api/@azure/arm-keyvault)|
+|[Verwijzing](/cli/azure/keyvault)<br>[Snelstartgids](quick-create-cli.md)|[Verwijzing](/powershell/module/az.keyvault)<br>[Snelstartgids](quick-create-powershell.md)|[Verwijzing](/rest/api/keyvault/)|[Verwijzing](/azure/templates/microsoft.keyvault/vaults)<br>[Snelstartgids](./vault-create-template.md)|[Verwijzing](/dotnet/api/microsoft.azure.management.keyvault)|[Verwijzing](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)|[Verwijzing](/java/api/com.microsoft.azure.management.keyvault)|[Verwijzing](/javascript/api/@azure/arm-keyvault)|
 
 Zie [client bibliotheken](client-libraries.md) voor installatie pakketten en bron code.
 

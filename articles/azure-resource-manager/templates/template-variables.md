@@ -2,13 +2,13 @@
 title: Variabelen in sjablonen
 description: Hierin wordt beschreven hoe u variabelen definieert in een Azure Resource Manager sjabloon (ARM-sjabloon) en Bicep-bestand.
 ms.topic: conceptual
-ms.date: 02/12/2021
-ms.openlocfilehash: cafd42112e5d296cb73f88e292a66ca2203f3810
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 02/19/2021
+ms.openlocfilehash: e00a9e8e1801725707bac2abdc67512477e2cf07
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100364457"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101700334"
 ---
 # <a name="variables-in-arm-templates"></a>Variabelen in ARM-sjablonen
 
@@ -70,10 +70,6 @@ var concatToParam = '${inputValue}-addtoparam'
 
 U kunt [sjabloon functies](template-functions.md) gebruiken om de waarde van de variabele te maken.
 
-In JSON-sjablonen kunt u de functie [Reference](template-functions-resource.md#reference) of een van de [lijst](template-functions-resource.md#list) functies in de variabele declaratie niet gebruiken. Met deze functies wordt de runtime status van een resource opgehaald en kunnen niet worden uitgevoerd voordat de implementatie van variabelen wordt opgelost.
-
-De functies Reference en List zijn geldig wanneer u een variabele declareert in een Bicep-bestand.
-
 In het volgende voor beeld wordt een teken reeks waarde gemaakt voor de naam van een opslag account. Er worden verschillende sjabloon functies gebruikt om een parameter waarde op te halen en deze aan een unieke teken reeks toe te voegen.
 
 # <a name="json"></a>[JSON](#tab/json)
@@ -92,6 +88,10 @@ var storageName = '${toLower(storageNamePrefix)}${uniqueString(resourceGroup().i
 
 ---
 
+In JSON-sjablonen kunt u de functie [Reference](template-functions-resource.md#reference) of een van de [lijst](template-functions-resource.md#list) functies in de variabele declaratie niet gebruiken. Met deze functies wordt de runtime status van een resource opgehaald en kunnen niet worden uitgevoerd voordat de implementatie van variabelen wordt opgelost.
+
+In Bicep-bestanden zijn de functies Reference en List geldig bij het declareren van een variabele.
+
 ## <a name="use-variable"></a>Variabele gebruiken
 
 In het volgende voor beeld ziet u hoe u de variabele voor een resource-eigenschap gebruikt.
@@ -101,6 +101,9 @@ In het volgende voor beeld ziet u hoe u de variabele voor een resource-eigenscha
 In een JSON-sjabloon verwijst u naar de waarde voor de variabele met behulp van de functie [Varia bles](template-functions-deployment.md#variables) .
 
 ```json
+"variables": {
+  "storageName": "[concat(toLower(parameters('storageNamePrefix')), uniqueString(resourceGroup().id))]"
+},
 "resources": [
   {
     "type": "Microsoft.Storage/storageAccounts",
@@ -115,6 +118,8 @@ In een JSON-sjabloon verwijst u naar de waarde voor de variabele met behulp van 
 In een Bicep-bestand verwijst u naar de waarde voor de variabele door de naam van de variabele op te geven.
 
 ```bicep
+var storageName = '${toLower(storageNamePrefix)}${uniqueString(resourceGroup().id)}'
+
 resource demoAccount 'Microsoft.Storage/storageAccounts@2019-06-01' = {
   name: storageName
 ```

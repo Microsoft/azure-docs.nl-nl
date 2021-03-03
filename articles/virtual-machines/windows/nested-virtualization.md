@@ -7,12 +7,12 @@ ms.date: 10/09/2017
 ms.topic: how-to
 ms.service: virtual-machines-windows
 ms.workload: infrastructure
-ms.openlocfilehash: e85ac58c80e1fd695938bf09b6435dba1f4ee083
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: 924ee745804ef31e42dc21437dbb0459f6d37701
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100091343"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101693744"
 ---
 # <a name="how-to-enable-nested-virtualization-in-an-azure-vm"></a>Geneste virtualisatie inschakelen in een Azure VM
 
@@ -22,11 +22,9 @@ In dit artikel wordt beschreven hoe u Hyper-V op een virtuele Azure-machine insc
 
 ## <a name="create-a-nesting-capable-azure-vm"></a>Een voor nesting geschikte Azure-VM maken
 
-Maak een nieuwe Windows Server 2016 Azure-VM. Bekijk het [artikel Azure Compute unit](../acu.md)voor een volledige lijst met grootten voor virtuele machines die ondersteuning bieden voor nesten.
+Maak een nieuwe Windows Server 2016-of Windows Server 2019 Azure VM voor uw host. Zorg ervoor dat u een grootte kiest voor uw virtuele machine die nesten ondersteunt en groot genoeg is om te voldoen aan de vereisten van de gast-Vm's. Zie het artikel [Azure Compute unit](../acu.md) voor een lijst met grootten voor virtuele machines die ondersteuning bieden voor nesten.
 
-Vergeet niet om een VM-grootte te kiezen die groot genoeg is om de vereisten van een virtuele gast machine te ondersteunen. In dit voor beeld gebruiken we een Azure-VM met een grootte van D4_v3. 
-
-U kunt [hier](https://azure.microsoft.com/regions/services/)de regionale Beschik baarheid van virtuele machines van de Dv3-of Ev3-serie bekijken.
+U kunt de regionale Beschik baarheid van VM-grootten weer geven op de pagina [beschik bare producten per regio](https://azure.microsoft.com/regions/services/) .
 
 >[!NOTE]
 >

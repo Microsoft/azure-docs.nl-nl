@@ -6,18 +6,18 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/13/2020
-ms.openlocfilehash: 089c0739ff091d49734cad048c2bfb10d857617c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 96eab2d93ae0212568f8ef23e32a35016cb17248
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610532"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101732051"
 ---
 # <a name="collect-iis-logs-with-log-analytics-agent-in-azure-monitor"></a>IIS-logboeken met Log Analytics agent in Azure Monitor verzamelen
-Internet Information Services (IIS) slaat gebruikers activiteiten op in logboek bestanden die kunnen worden verzameld door de Log Analytics agent en worden opgeslagen in [Azure monitor logboeken](../platform/data-platform.md).
+Internet Information Services (IIS) slaat gebruikers activiteiten op in logboek bestanden die kunnen worden verzameld door de Log Analytics agent en worden opgeslagen in [Azure monitor logboeken](../data-platform.md).
 
 > [!IMPORTANT]
-> In dit artikel wordt beschreven hoe u IIS-logboeken verzamelt met de [log Analytics-agent](../platform/log-analytics-agent.md) , een van de agents die door Azure monitor worden gebruikt. Andere agents verzamelen verschillende gegevens en worden anders geconfigureerd. Zie [overzicht van Azure monitor agents](../agents/agents-overview.md) voor een lijst met beschik bare agents en de gegevens die ze kunnen verzamelen.
+> In dit artikel wordt beschreven hoe u IIS-logboeken verzamelt met de [log Analytics-agent](./log-analytics-agent.md) , een van de agents die door Azure monitor worden gebruikt. Andere agents verzamelen verschillende gegevens en worden anders geconfigureerd. Zie [overzicht van Azure monitor agents](../agents/agents-overview.md) voor een lijst met beschik bare agents en de gegevens die ze kunnen verzamelen.
 
 ![IIS-logboeken](media/data-sources-iis-logs/overview.png)
 
@@ -65,7 +65,7 @@ IIS-logboek records hebben een type **W3CIISLog** en hebben de eigenschappen in 
 ## <a name="log-queries-with-iis-logs"></a>Query's vastleggen in Logboeken met IIS-logboeken
 De volgende tabel bevat verschillende voor beelden van logboek query's waarmee IIS-logboek records worden opgehaald.
 
-| Query’s uitvoeren | Description |
+| Query’s uitvoeren | Beschrijving |
 |:--- |:--- |
 | W3CIISLog |Alle IIS-logboek records. |
 | W3CIISLog &#124; waarbij scStatus = = 500 |Alle IIS-logboek records met de retour status 500. |
@@ -75,4 +75,4 @@ De volgende tabel bevat verschillende voor beelden van logboek query's waarmee I
 
 ## <a name="next-steps"></a>Volgende stappen
 * Configureer Azure Monitor voor het verzamelen van andere [gegevens bronnen](../agents/agent-data-sources.md) voor analyse.
-* Meer informatie over [logboek query's](../log-query/log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen.
+* Meer informatie over [logboek query's](../logs/log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen.

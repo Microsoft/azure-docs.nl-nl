@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 12/16/2020
 ms.author: sefriend
 manager: clarkn
-ms.openlocfilehash: b71c5426b6fba6f232b5a7aa42347f6b25d46299
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: b0fc5bd16aaa455ce3f6d634ce35e9a389a6f13b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101094945"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101732578"
 ---
 # <a name="troubleshoot-common-windows-virtual-desktop-agent-issues"></a>Veelvoorkomende problemen met Windows Virtual Desktop agent oplossen
 
@@ -21,6 +21,14 @@ De Windows Virtual Desktop-agent kan verbindings problemen veroorzaken vanwege m
    - Problemen met de installatie tijdens de installatie van de agent, waardoor de verbinding met de sessie-host wordt verstoord.
 
 Dit artikel leidt u door oplossingen voor deze algemene scenario's en over het oplossen van verbindings problemen.
+
+>[!NOTE]
+>Voor het oplossen van problemen met sessie connectiviteit en de virtuele bureau blad-agent van Windows, raden we u aan de gebeurtenis Logboeken in **Logboeken**  >  **Windows-logboeken**-  >  **toepassing** te controleren. Zoek naar gebeurtenissen met een van de volgende bronnen om het probleem te identificeren:
+>
+>- WVD-Agent
+>- WVD-agent-updater
+>- RDAgentBootLoader
+>- MsiInstaller
 
 ## <a name="error-the-rdagentbootloader-andor-remote-desktop-agent-loader-has-stopped-running"></a>Fout: de RDAgentBootLoader-en/of Extern bureaublad agent-lader is gestopt met uitvoeren
 
@@ -63,9 +71,9 @@ U kunt dit probleem oplossen door een geldig registratie token te maken:
    > [!div class="mx-imgBorder"]
    > ![Scherm opname van IsRegistered 1](media/isregistered-registry.png)
 
-## <a name="error-agent-cannot-connect-to-broker-with-invalid_form-or-not_found-url"></a>Fout: de agent kan geen verbinding maken met de broker met INVALID_FORM of NOT_FOUND. URL
+## <a name="error-agent-cannot-connect-to-broker-with-invalid_form"></a>Fout: de agent kan geen verbinding maken met de broker met INVALID_FORM
 
-Ga naar **Logboeken**  >  **Windows-logboeken**-  >  **toepassing**. Als er een gebeurtenis met ID 3277 wordt weer geven, **INVALID_FORM** of **NOT_FOUND. URL** in de beschrijving, er is iets fout gegaan met de communicatie tussen de agent en de Broker. De agent kan geen verbinding maken met de Broker en kan geen bepaalde URL bereiken. Dit kan worden veroorzaakt door uw firewall-of DNS-instellingen.
+Ga naar **Logboeken**  >  **Windows-logboeken**-  >  **toepassing**. Als er een gebeurtenis met ID 3277 wordt weer geven met de melding ' INVALID_FORM ' in de beschrijving, is er iets mis gegaan met de communicatie tussen de agent en de Broker. De agent kan geen verbinding maken met de Broker of een bepaalde URL bereiken vanwege bepaalde firewall-of DNS-instellingen.
 
 Om dit probleem op te lossen, controleert u of u BrokerURI en BrokerURIGlobal kunt bereiken:
 1. Open de REGI ster-editor. 
@@ -100,13 +108,43 @@ Om dit probleem op te lossen, controleert u of u BrokerURI en BrokerURIGlobal ku
 8. Als het netwerk deze Url's blokkeert, moet u de blok kering van de vereiste Url's opheffen. Zie de [lijst met vereiste url's](safe-url-list.md)voor meer informatie.
 9. Als het probleem hierdoor niet wordt opgelost, controleert u of er geen groeps beleid is met code ringen waarmee de agent wordt geblokkeerd voor de Broker-verbinding. Windows virtueel bureau blad maakt gebruik van dezelfde TLS 1,2-code ringen als [Azure front-deur](../frontdoor/front-door-faq.MD#what-are-the-current-cipher-suites-supported-by-azure-front-door). Zie [Connection Security](network-connectivity.md#connection-security)(Engelstalig) voor meer informatie.
 
-## <a name="error-3703-or-3019"></a>Fout: 3703 of 3019
+## <a name="error-3703"></a>Fout: 3703
 
-Ga naar **Logboeken**  >  **Windows-logboeken**-  >  **toepassing**. Als u een gebeurtenis ziet met de ID 3703, met de tekst **RD-gateway URL: is niet toegankelijk** of een gebeurtenis met id 3019 in de beschrijving, kan de agent de gateway-url's of de url's van de WebSocket-Trans Port niet bereiken. Als u verbinding wilt maken met uw sessiehost en netwerk verkeer naar deze eind punten wilt toestaan om beperkingen te omzeilen, moet u de blok kering van de Url's in de lijst van de [vereiste](safe-url-list.md)url's opheffen. Zorg er ook voor dat uw firewall of proxy instellingen deze Url's niet blok keren. Het blok keren van deze Url's is vereist voor het gebruik van Windows virtueel bureau blad.
+Ga naar **Logboeken**  >  **Windows-logboeken**-  >  **toepassing**. Als er een gebeurtenis met de ID 3703 wordt weer geven met de tekst ' RD-gateway URL: is niet toegankelijk ' in de beschrijving, kan de agent de gateway-Url's niet bereiken. Als u verbinding wilt maken met uw sessiehost en netwerk verkeer naar deze eind punten wilt toestaan om beperkingen te omzeilen, moet u de blok kering van de Url's in de lijst van de [vereiste](safe-url-list.md)url's opheffen. Zorg er ook voor dat uw firewall of proxy instellingen deze Url's niet blok keren. Het blok keren van deze Url's is vereist voor het gebruik van Windows virtueel bureau blad.
 
 U kunt dit probleem oplossen door te controleren of uw firewall en/of DNS-instellingen deze Url's niet blok keren:
 1. [Gebruik Azure firewall om implementaties van Windows virtueel bureau blad te beveiligen.](../firewall/protect-windows-virtual-desktop.md)
 2. Configureer uw [Azure firewall DNS-instellingen](../firewall/dns-settings.md).
+
+## <a name="error-3019"></a>Fout: 3019
+
+Ga naar **Logboeken**  >  **Windows-logboeken**-  >  **toepassing**. Als er een gebeurtenis met ID 3019 wordt weer geven, betekent dit dat de agent de Url's van de Web socket-Trans Port niet kan bereiken. Om verbinding te maken met uw sessiehost en netwerk verkeer toe te staan deze beperkingen te omzeilen, moet u de blok kering van de Url's in de [lijst vereiste URL](safe-url-list.md)opheffen. Werk samen met het netwerk team van Azure om ervoor te zorgen dat uw firewall, proxy en DNS-instellingen deze Url's niet blok keren. U kunt ook de logboeken van de netwerk tracering controleren om te bepalen waar de Windows Virtual Desktop-service wordt geblokkeerd. Als u een ondersteunings aanvraag voor dit specifieke probleem opent, moet u ervoor zorgen dat u uw netwerk traceer logboeken aan de aanvraag koppelt.
+
+## <a name="error-installationhealthcheckfailedexception"></a>Fout: InstallationHealthCheckFailedException
+
+Ga naar **Logboeken**  >  **Windows-logboeken**-  >  **toepassing**. Als u een gebeurtenis ziet met ID 3277 die "InstallationHealthCheckFailedException" in de beschrijving voor komt, betekent dit dat de stack-listener niet werkt omdat de Terminal Server de register sleutel voor de stack-listener heeft in-of uitgeschakeld.
+
+Ga als volgt te werk om het probleem op te lossen:
+1. Controleer of [de stack-listener werkt](#error-stack-listener-isnt-working-on-windows-10-2004-vm).
+2. Als de stack-listener niet werkt, [verwijdert u hand matig het stack onderdeel en installeert u het opnieuw](#error-vms-are-stuck-in-unavailable-or-upgrading-state).
+
+## <a name="error-endpoint_not_found"></a>Fout: ENDPOINT_NOT_FOUND
+
+Ga naar **Logboeken**  >  **Windows-logboeken**-  >  **toepassing**. Als u een gebeurtenis ziet met ID 3277 die "ENDPOINT_NOT_FOUND" in de beschrijving betekent dat de Broker geen eind punt kan vinden voor het maken van een verbinding met. Dit verbindings probleem kan een van de volgende oorzaken hebben:
+
+- Er zijn geen virtuele machines in uw hostgroep
+- De Vm's in uw hostgroep zijn niet actief
+- Alle virtuele machines in uw hostgroep hebben de maximale sessie limiet overschreden
+- Voor geen van de virtuele machines in uw hostgroep wordt de Agent service uitgevoerd
+
+Ga als volgt te werk om het probleem op te lossen:
+
+1. Zorg ervoor dat de virtuele machine is ingeschakeld en niet is verwijderd uit de hostgroep.
+2. Zorg ervoor dat de virtuele machine de limiet voor het maximum aantal sessies niet overschrijdt.
+3. Zorg ervoor dat de [Agent service wordt uitgevoerd](#error-the-rdagentbootloader-andor-remote-desktop-agent-loader-has-stopped-running) en dat de [stack-listener werkt](#error-stack-listener-isnt-working-on-windows-10-2004-vm).
+4. Zorg ervoor dat [de agent verbinding kan maken met de Broker](#error-agent-cannot-connect-to-broker-with-invalid_form).
+5. Zorg ervoor dat [uw virtuele machine een geldig registratie token heeft](#error-invalid_registration_token).
+6. Zorg ervoor dat [het registratie token van de virtuele machine nog niet is verlopen](faq.md#how-often-should-i-turn-my-vms-on-to-prevent-registration-issues). 
 
 ## <a name="error-installmsiexception"></a>Fout: InstallMsiException
 
@@ -176,23 +214,32 @@ Ga als volgt te werk om het probleem op te lossen:
 8. Zoek onder **ClusterSettings** naar **SessionDirectoryListener** en controleer of de gegevens waarde **RDP-SxS is...**.
 9. Als **SessionDirectoryListener** niet is ingesteld op **RDP-SxS...**, moet u de stappen in de sectie [het verwijderen van de agent en de opstart lader](#step-1-uninstall-all-agent-boot-loader-and-stack-component-programs) volgen om eerst de agent, het opstart laad programma en stack onderdelen te verwijderen en vervolgens [de agent en het laad programma voor het opstarten opnieuw te installeren](#step-4-reinstall-the-agent-and-boot-loader). Hiermee wordt de side-by-side-stack opnieuw geïnstalleerd.
 
-## <a name="error-users-keep-getting-disconnected-from-session-hosts"></a>Fout: de gebruikers blijven de verbinding met de sessie-hosts verbreken
+## <a name="error-heartbeat-issue-where-users-keep-getting-disconnected-from-session-hosts"></a>Fout: heartbeat-probleem waarbij gebruikers de verbinding met de sessie-hosts blijven verbreken
 
-Ga naar **Logboeken**  >  **Windows-logboeken**-  >  **toepassing**. Als er een gebeurtenis met ID 0 wordt weer geven met de tekst **CheckSessionHostDomainIsReachableAsync** in de beschrijving en/of gebruikers blijven de verbinding met hun sessie-hosts verbroken, neemt uw server geen heartbeat op van de virtueel-bureaublad service van Windows.
+Als uw server geen heartbeat van de virtueel bureau blad-service van Windows ophaalt, moet u de drempel waarde voor heartbeats wijzigen. Volg de instructies in deze sectie als er een of meer van de volgende scenario's van toepassing zijn:
 
-Wijzig de drempel waarde voor heartbeats om dit probleem op te lossen:
+- U ontvangt een **CheckSessionHostDomainIsReachableAsync** -fout
+- U ontvangt een **ConnectionBrokenMissedHeartbeatThresholdExceeded** -fout
+- U ontvangt een **ConnectionEstablished: UnexpectedNetworkDisconnect** -fout
+- Gebruikers clients blijven de verbinding verbreken
+- Gebruikers blijven de verbinding met hun sessie-hosts verbreken
+
+De drempel waarde voor heartbeats wijzigen:
 1. Open de opdracht prompt als beheerder.
 2. Voer de opdracht **qwinsta** uit en voer deze uit.
 3. Er moeten twee stack onderdelen worden weer gegeven: **RDP-TCP** en **RDP-SxS**. 
-   - Afhankelijk van de versie van het besturings systeem dat u gebruikt, kan **RDP-SxS** worden gevolgd door het build-nummer. Als dat het geval is, moet u ervoor zorgen dat u dit nummer later wegschrijft.
+   - Afhankelijk van de versie van het besturings systeem dat u gebruikt, kan **RDP-SxS** worden gevolgd door het build-nummer. Als dat het geval is, noteert u dit nummer voor later.
 4. Open de register-editor.
 5. Ga naar **HKEY_LOCAL_MACHINE**  >  **System**  >  **CurrentControlSet**  >  **Control**  >  **Terminal Server**-  >  **winst**.
-6. Onder **winst** kunt u enkele mappen zien voor verschillende stack versies. Selecteer de map die overeenkomt met het versie nummer uit stap 3.
+6. Onder **winst**, ziet u mogelijk meerdere mappen voor verschillende stack versies. Selecteer de map die overeenkomt met het versie nummer uit stap 3.
 7. Maak een nieuwe DWORD-register sleutel door met de rechter muisknop op de REGI ster-editor te klikken en vervolgens **nieuwe**  >  **DWORD-waarde (32-bits)** te selecteren. Wanneer u de DWORD maakt, voert u de volgende waarden in:
    - HeartbeatInterval: 10000
    - HeartbeatWarnCount: 30 
    - HeartbeatDropCount: 60 
 8. Start de VM opnieuw op.
+
+>[!NOTE]
+>Als het probleem niet wordt opgelost door de heartbeat-drempel waarde te wijzigen, hebt u mogelijk een onderliggend netwerk probleem dat u nodig hebt om contact op te nemen met het Azure-netwerk team over.
 
 ## <a name="error-downloadmsiexception"></a>Fout: DownloadMsiException
 
@@ -202,6 +249,11 @@ U kunt dit probleem oplossen door de ruimte op uw schijf te maken door:
    - Bestanden verwijderen die niet langer deel uitmaken van de gebruiker
    - De opslag capaciteit van uw virtuele machine verhogen
 
+## <a name="error-agent-fails-to-update-with-missingmethodexception"></a>Fout: kan de agent niet bijwerken met MissingMethodException
+
+Ga naar **Logboeken**  >  **Windows-logboeken**-  >  **toepassing**. Als er een gebeurtenis met ID 3389 wordt weer gegeven met de tekst "MissingMethodException: methode niet gevonden" in de beschrijving, betekent dit dat de virtuele Windows-bureau blad-agent niet is bijgewerkt en naar een eerdere versie is teruggekeerd. Dit komt mogelijk doordat het versie nummer van het .NET Framework dat momenteel op uw Vm's is geïnstalleerd, lager is dan 4.7.2. Om dit probleem op te lossen, moet u de .NET bijwerken naar versie 4.7.2 of hoger door de installatie-instructies te volgen in de [documentatie van .NET Framework](https://support.microsoft.com/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2).
+
+
 ## <a name="error-vms-are-stuck-in-unavailable-or-upgrading-state"></a>Fout: Vm's zijn vastgelopen in niet-beschik bare of upgrade-status
 
 Open een Power shell-venster als beheerder en voer de volgende cmdlet uit:
@@ -210,7 +262,7 @@ Open een Power shell-venster als beheerder en voer de volgende cmdlet uit:
 Get-AzWvdSessionHost -ResourceGroupName <resourcegroupname> -HostPoolName <hostpoolname> | Select-Object *
 ```
 
-Als de status die wordt vermeld voor de sessiehost of hosts in uw hostgroep altijd **niet beschikbaar** is of **een upgrade uitvoert**, is de agent of stack-installatie mogelijk mislukt
+Als de status die wordt vermeld voor de sessiehost of hosts in uw hostgroep altijd ' niet beschikbaar ' of ' upgrade ' bevat, is de agent of stack niet geïnstalleerd.
 
 Om dit probleem op te lossen, installeert u de side-by-side-stack opnieuw:
 1. Open een opdrachtprompt als beheerder.
@@ -253,7 +305,7 @@ De naam van uw virtuele machine is al geregistreerd en is waarschijnlijk een dup
 Ga als volgt te werk om het probleem op te lossen:
 1. Volg de stappen in de sectie [hostgroep verwijderen van](#step-2-remove-the-session-host-from-the-host-pool) de sessiehost.
 2. [Maak een andere VM](expand-existing-host-pool.md#add-virtual-machines-with-the-azure-portal). Zorg ervoor dat u een unieke naam voor deze virtuele machine kiest.
-3. Ga naar de Azure Portal] ( https://portal.azure.com) en open de **overzichts** pagina voor de hostgroep waarin de VM zich bevindt. 
+3. Ga naar de [Azure Portal](https://portal.azure.com) en open de **overzichts** pagina voor de hostgroep waarin de VM zich bevindt. 
 4. Open het tabblad **Session hosts** en controleer of alle sessie-hosts zich in die hostgroepen bevinden.
 5. Wacht 5-10 minuten totdat de status van de sessie-host **beschikbaar is**.
 
@@ -320,12 +372,12 @@ U moet een nieuwe registratie sleutel genereren die wordt gebruikt om uw VM opni
 ### <a name="step-4-reinstall-the-agent-and-boot-loader"></a>Stap 4: de agent en de opstart lader opnieuw installeren
 
 Door de meest recente versie van de agent en de opstart lader opnieuw te installeren, wordt de side-by-side-stack en de bewakings agent voor Genève automatisch geïnstalleerd. De agent en het laad programma voor opstarten opnieuw installeren:
-1. Meld u bij uw virtuele machine aan als beheerder en volg de instructies in [virtuele machines registreren](create-host-pools-powershell.md#register-the-virtual-machines-to-the-windows-virtual-desktop-host-pool) om de **virtuele Windows-bureau blad-agent** en de bootloader van de **virtuele Windows-bureau blad-agent** te downloaden.
+1. Meld u bij uw virtuele machine aan als beheerder en gebruik de juiste versie van het installatie programma van de agent voor uw implementatie, afhankelijk van de versie van Windows die op uw virtuele machine wordt uitgevoerd. Als u een virtuele machine met Windows 10 hebt, volgt u de instructies in [virtuele machines registreren](create-host-pools-powershell.md#register-the-virtual-machines-to-the-windows-virtual-desktop-host-pool) om de **virtuele Windows-bureau blad-agent** en de bootloader van de **Windows Virtual Desktop agent** te downloaden. Als u een virtuele machine met Windows 7 hebt, volgt u stap 13-14 in [virtuele machines registreren](deploy-windows-7-virtual-machine.md#configure-a-windows-7-virtual-machine) om de **virtuele Windows-bureau blad-agent** en het **Windows Virtual Desktop agent-beheer** te downloaden.
 
    > [!div class="mx-imgBorder"]
    > ![Scherm afbeelding van de download pagina van de agent en de bootloader](media/download-agent.png)
 
-2. Klik met de rechter muisknop op de installatie Programma's van agent en opstart lader die u zojuist hebt gedownload.
+2. Klik met de rechter muisknop op de agent-en opstart lader installatie Programma's die u hebt gedownload.
 3. Selecteer **Eigenschappen**.
 4. Selecteer **Blokkering opheffen**.
 5. Selecteer **OK**.

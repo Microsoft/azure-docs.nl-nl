@@ -3,12 +3,12 @@ title: Een groep maken in verschillende beschikbaarheids zones
 description: Meer informatie over het maken van een batch-pool met zonegebonden-beleid om te helpen beschermen tegen fouten.
 ms.topic: how-to
 ms.date: 01/28/2021
-ms.openlocfilehash: 98109e1b74106bc636eaa715575e4b30ab29f9e2
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 56e718bedf504b8e69598c2d99ab8b889a470b89
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99056110"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101725285"
 ---
 # <a name="create-an-azure-batch-pool-across-availability-zones"></a>Een Azure Batch groep maken in Beschikbaarheidszones
 
@@ -22,7 +22,7 @@ Batch houdt pariteit met Azure over ondersteunende Beschikbaarheidszones. Als u 
 
 De Azure-regio waarin de pool wordt gemaakt, moet de aangevraagde VM-SKU in meer dan één zone ondersteunen om ervoor te zorgen dat uw batch-pool kan worden toegewezen aan de verschillende beschikbaarheids zones. U kunt dit valideren door de [API-lijst van resource-sku's](/rest/api/compute/resourceskus/list) aan te roepen en het veld **locationInfo** van [resourceSku](/rest/api/compute/resourceskus/list#resourcesku)te controleren. Zorg ervoor dat er meer dan één zone wordt ondersteund voor de aangevraagde VM-SKU.
 
-Zorg ervoor dat voor de batch-accounts van de [gebruikers abonnements modus](accounts.md#batch-accounts), het abonnement waarin u de pool maakt geen beperking voor de zone aanbieding heeft voor de aangevraagde VM-SKU. U kunt dit controleren door de [API-lijst van resource-sku's](/rest/api/compute/resourceskus/list) aan te roepen en de [ResourceSkuRestrictions](/rest/api/compute/resourceskus/list#resourceskurestrictions)te controleren. Als er een zone beperking bestaat, kunt u een [ondersteunings ticket](../azure-portal/supportability/sku-series-unavailable.md) verzenden om de zone beperking te verwijderen.
+Zorg ervoor dat voor de batch-accounts van de [gebruikers abonnements modus](accounts.md#batch-accounts), het abonnement waarin u de pool maakt geen beperking voor de zone aanbieding heeft voor de aangevraagde VM-SKU. U kunt dit controleren door de [API-lijst van resource-sku's](/rest/api/compute/resourceskus/list) aan te roepen en de [ResourceSkuRestrictions](/rest/api/compute/resourceskus/list#resourceskurestrictions)te controleren. Als er een zone beperking bestaat, kunt u een [ondersteunings ticket](/troubleshoot/azure/general/region-access-request-process) verzenden om de zone beperking te verwijderen.
 
 U kunt ook geen groep maken met een zonegebonden-beleid als er communicatie tussen knoop punten is ingeschakeld en gebruikmaakt van een [VM-SKU die ondersteuning biedt voor InfiniBand](../virtual-machines/workloads/hpc/enable-infiniband.md).
 
@@ -83,4 +83,3 @@ Aanvraagbody
 - Meer informatie over de [Werkstroom van de batch-service en primaire resources](batch-service-workflow-features.md) als pools, knooppunten, jobs en taken.
 - Meer informatie over het [maken van een pool in een subnet van een virtueel Azure-netwerk](batch-virtual-network.md).
 - Meer informatie over [het maken van een Azure batch groep zonder open bare IP-adressen](./batch-pool-no-public-ip-address.md).
-

@@ -7,12 +7,12 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
-ms.openlocfilehash: d064b69f25ada4edf478f9c8b70d7aaad83754a1
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 22078f242ddeb882b39b85769537b9a282741250
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609236"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101725523"
 ---
 # <a name="workbook-text-parameters"></a>Werkmap tekst parameters
 
@@ -85,5 +85,5 @@ Zo ziet de werkmap eruit als Lees modus.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Ga](../platform/workbooks-overview.md#visualizations) voor meer informatie over werkmappen veel uitgebreide visualisaties opties.
-* De toegang tot uw werkmap resources [beheren](../platform/workbooks-access-control.md) en delen.
+* [Ga](./workbooks-overview.md#visualizations) voor meer informatie over werkmappen veel uitgebreide visualisaties opties.
+* De toegang tot uw werkmap resources [beheren](./workbooks-access-control.md) en delen.

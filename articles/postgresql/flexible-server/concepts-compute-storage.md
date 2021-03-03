@@ -5,13 +5,13 @@ author: lfittl-msft
 ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 09/22/2020
-ms.openlocfilehash: a3c8c8b2316a206ba837c0b32fd699dc0ed1eeea
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.date: 02/19/2021
+ms.openlocfilehash: b76b6ff788d3d7f44db33af96944d528282f0ac7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100519385"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101712212"
 ---
 # <a name="compute-and-storage-options-in-azure-database-for-postgresql---flexible-server"></a>Berekenings-en opslag opties in Azure Database for PostgreSQL-flexibele server
 
@@ -120,6 +120,9 @@ U kunt uw I/O-gebruik bewaken in de Azure Portal of met behulp van Azure CLI-opd
 
 Wanneer het is gemarkeerd met een \* , worden IOPS beperkt door het VM-type dat u hebt geselecteerd. Anders wordt IOPS beperkt door de geselecteerde opslag grootte.
 
+>[!NOTE]
+> Als gevolg van bursting op schijf niveau worden er meer IOPS in de metrische gegevens weer gegeven. Raadpleeg de [documentatie](https://docs.microsoft.com/azure/virtual-machines/disk-bursting#disk-level-bursting) voor meer informatie. 
+
 ### <a name="maximum-io-bandwidth-mibsec-for-your-configuration"></a>Maximale I/O-band breedte (MiB/sec) voor uw configuratie
 
 |SKU-naam            |Opslag grootte, GiB                             |32 |64 |128 |256 |512  |1\.024|2048|4.096|8\.192 |16.384|
@@ -147,7 +150,7 @@ Wanneer het is gemarkeerd met een \* , worden IOPS beperkt door het VM-type dat 
 
 Als \* u een I/O-band breedte hebt gemarkeerd, wordt deze beperkt door het VM-type dat u hebt geselecteerd. Anders wordt de I/O-band breedte beperkt door de geselecteerde opslag grootte.
 
-### <a name="reaching-the-storage-limit"></a>De opslag limiet wordt bereikt
+### <a name="reaching-the-storage-limit"></a>De opslaglimiet wordt bereikt
 
 Wanneer u de opslag limiet bereikt, wordt het starten van fouten door de server gestart en wordt voor komen dat er verdere wijzigingen worden aangebracht. Dit kan ook problemen veroorzaken met andere operationele activiteiten, zoals back-ups en WAL archivering.
 

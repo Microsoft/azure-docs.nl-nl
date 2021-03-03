@@ -3,17 +3,16 @@ title: De Windows Azure Diagnostics-extensie (WAD) installeren en configureren
 description: Meer informatie over het installeren en configureren van de Windows diagnostische extensie. Daarnaast leert u hoe u een beschrijving van de manier waarop de gegevens worden opgeslagen in en Azure Storage account kunt lezen.
 services: azure-monitor
 author: bwren
-ms.subservice: diagnostic-extension
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.author: bwren
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 865590ce67acee128863a7913aa844b951d07d56
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 174f372f9dbe8dc0449c7f9b9f5b34c6206f92de
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612939"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708557"
 ---
 # <a name="install-and-configure-windows-azure-diagnostics-extension-wad"></a>De Windows Azure Diagnostics-extensie (WAD) installeren en configureren
 [Azure Diagnostics-extensie](diagnostics-extension-overview.md) is een agent in azure monitor die bewakings gegevens van het gast besturingssysteem en werk belastingen van virtuele Azure-machines en andere reken bronnen verzamelt. Dit artikel bevat informatie over het installeren en configureren van de Windows diagnostische uitbrei ding en een beschrijving van de manier waarop de gegevens worden opgeslagen in en Azure Storage-account.
@@ -192,7 +191,7 @@ Zie ook [Power shell gebruiken om Azure Diagnostics in te scha kelen op een virt
 De volgende tabel geeft een lijst van de verschillende typen gegevens die worden verzameld uit de diagnostische uitbrei ding en of ze worden opgeslagen als een tabel of BLOB. De gegevens die zijn opgeslagen in tabellen kunnen ook worden opgeslagen in blobs, afhankelijk van de [instelling para](diagnostics-extension-schema-windows.md#publicconfig-element) in uw open bare configuratie.
 
 
-| Gegevens | Opslagtype | Description |
+| Gegevens | Opslagtype | Beschrijving |
 |:---|:---|:---|
 | WADDiagnosticInfrastructureLogsTable | Tabel | Diagnostische monitor-en configuratie wijzigingen. |
 | WADDirectoriesTable | Tabel | Mappen die door de diagnostische monitor worden bewaakt.  Dit zijn onder andere IIS-logboeken, IIS-aanvraag logboeken en aangepaste directory's.  De locatie van het BLOB-logboek bestand wordt opgegeven in het container veld en de naam van de BLOB bevindt zich in het veld RelativePath.  Het veld AbsolutePath geeft de locatie en de naam van het bestand aan zoals het aanwezig is op de virtuele Azure-machine. |

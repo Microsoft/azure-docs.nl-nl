@@ -7,25 +7,44 @@ ms.reviewer: mikeray
 services: azure-arc
 ms.service: azure-arc
 ms.subservice: azure-arc-data
-ms.date: 02/11/2021
+ms.date: 03/02/2021
 ms.topic: conceptual
-ms.openlocfilehash: f303ddb4d32da4c4cb6609f3ceec34e5c83529a8
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: d3eb4e4b45a13872a11515dd4f53fcbbc069a954
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100391453"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686679"
 ---
 # <a name="release-notes---azure-arc-enabled-data-services-preview"></a>Release opmerkingen-Azure Arc ingeschakelde Data Services (preview-versie)
 
+In dit artikel worden mogelijkheden, functies en verbeteringen besproken die recent zijn gepubliceerd of verbeterd voor Azure Arc ingeschakelde gegevens Services. 
+
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
+
+## <a name="february-2021"></a>Februari 2021
+
+### <a name="new-capabilities-and-features"></a>Nieuwe mogelijkheden en functies
+
+Azure data CLI ( `azdata` )-versie nummer: 20.3.1. Downloaden op [https://aka.ms/azdata](https://aka.ms/azdata) . U kunt installeren `azdata` vanuit [Azure data cli ( `azdata` ) installeren](/sql/azdata/install/deploy-install-azdata).
+
+Aanvullende updates zijn onder andere:
+
+- SQL Managed Instance met Azure Arc
+   - Hoge Beschik baarheid met AlwaysOn-beschikbaarheids groepen
+
+- Azure Arc enabled PostgreSQL grootschalige Azure Data Studio: 
+   - Op de pagina overzicht wordt nu de status weer gegeven van de Server groep die per knoop punt is gespecificeerd
+   - Er is nu een nieuwe eigenschappen pagina beschikbaar om meer informatie over de Server groep weer te geven
+   - Para meters van de post gres-Engine configureren op de pagina **para meters** =
+
+Zie voor problemen met betrekking tot deze release [bekende problemen-Azure Arc enabled Data Services (preview-versie)](known-issues.md)
 
 ## <a name="january-2021"></a>Januari 2021
 
 ### <a name="new-capabilities-and-features"></a>Nieuwe mogelijkheden en functies
 
 Azure data CLI ( `azdata` )-versie nummer: 20.3.0. Downloaden op [https://aka.ms/azdata](https://aka.ms/azdata) . U kunt installeren `azdata` vanuit [Azure data cli ( `azdata` ) installeren](/sql/azdata/install/deploy-install-azdata).
-
 
 Aanvullende updates zijn onder andere:
 - Gelokaliseerde portal beschikbaar voor 17 nieuwe talen

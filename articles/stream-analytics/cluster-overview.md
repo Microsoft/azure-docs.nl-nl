@@ -1,5 +1,5 @@
 ---
-title: Overzicht van Azure Stream Analytics Clusters (preview)
+title: Overzicht van Azure Stream Analytics clusters
 description: Meer informatie over de speciale aanbieding voor één tenant van Stream Analytics Cluster.
 author: sidramadoss
 ms.author: sidram
@@ -7,14 +7,14 @@ ms.service: stream-analytics
 ms.topic: overview
 ms.custom: mvc
 ms.date: 09/22/2020
-ms.openlocfilehash: 75a95fa4ad36b69ca920f527060644dcc5264ce8
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: e5157a02f97370b20db85bf5e3e8aae98a2d8668
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019530"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101709288"
 ---
-# <a name="overview-of-azure-stream-analytics-cluster-preview"></a>Overzicht van Azure Stream Analytics Cluster (preview)
+# <a name="overview-of-azure-stream-analytics-cluster"></a>Overzicht van Azure Stream Analytics cluster
 
 Azure Stream Analytics Cluster is een implementatie met één tenant die kan worden gebruikt voor complexe en veeleisende streaming-scenario's. Op de volledige schaal kunnen Stream Analytics-clusters in realtime meer dan 200 MB/seconde verwerken. Stream Analytics-taken die worden uitgevoerd op toegewezen clusters kunnen gebruikmaken van alle functies in de standaardaanbieding en biedt ondersteuning voor de connectiviteit van particuliere koppelingen met uw invoer en uitvoer.
 

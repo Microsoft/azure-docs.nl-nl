@@ -5,18 +5,18 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 01/12/2021
-ms.openlocfilehash: 5a7ddcf25993ab4ce87bdc47c5e0ae32fa24b07f
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 7907c81e45680de49f6653891fb4204a59db1002
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98956491"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101710546"
 ---
 # <a name="private-endpoints"></a>Privé-eindpunten
 
 Een privé-eindpunt in Azure is een netwerkinterface waarmee u privé en veilig verbinding maakt met een service die door Azure Private Link mogelijk wordt gemaakt. QnA Maker biedt u nu ondersteuning voor het maken van persoonlijke eind punten voor de Azure Search-service. Deze functionaliteit is beschikbaar in QnA Maker beheerd. 
 
-Privé-eind punten worden als een afzonderlijke service verzorgd door een [persoonlijke Azure-koppeling](https://docs.microsoft.com/azure/private-link/private-link-overview). Zie de [pagina met prijzen](https://azure.microsoft.com/pricing/details/private-link/) voor meer informatie over de kosten. 
+Privé-eind punten worden als een afzonderlijke service verzorgd door een [persoonlijke Azure-koppeling](../../private-link/private-link-overview.md). Zie de [pagina met prijzen](https://azure.microsoft.com/pricing/details/private-link/) voor meer informatie over de kosten. 
 
 ## <a name="prerequisites"></a>Vereisten
 > [!div class="checklist"]

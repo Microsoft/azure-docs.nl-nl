@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: d914c9b5f96cf502247d40a913ce8ad4651a4a14
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 68a9dd5cb24dda54e867580cf7c1bc869e692833
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609812"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734414"
 ---
 # <a name="getting-started-with-azure-metrics-explorer"></a>Aan de slag met Azure Metrics Explorer
 
@@ -29,7 +29,7 @@ Azure Monitor Metrics Explorer is een onderdeel van de Microsoft Azure-portal wa
 
 Als u een metrische grafiek wilt maken, vanuit uw resource, resource groep, abonnement of Azure Monitor weer gave, opent u het tabblad **metrische gegevens** en volgt u deze stappen:
 
-1. Klik op de knop een bereik selecteren om de resource bereik kiezer te openen. Hiermee kunt u de resources selecteren waarvoor u de metrische gegevens wilt bekijken. De resource moet al zijn ingevuld als u metrische gegevens Verkenner hebt geopend vanuit het menu van de resource. [Lees dit artikel](../platform/metrics-dynamic-scope.md)voor meer informatie over het weer geven van metrische gegevens over meerdere resources.
+1. Klik op de knop een bereik selecteren om de resource bereik kiezer te openen. Hiermee kunt u de resources selecteren waarvoor u de metrische gegevens wilt bekijken. De resource moet al zijn ingevuld als u metrische gegevens Verkenner hebt geopend vanuit het menu van de resource. [Lees dit artikel](./metrics-dynamic-scope.md)voor meer informatie over het weer geven van metrische gegevens over meerdere resources.
     > ![Een resource selecteren](./media/metrics-getting-started/scope-picker.png)
 
 2. Voor sommige resources moet u een naam ruimte kiezen. De naamruimte is slechts een manier om metrische gegevens te organiseren, zodat u ze gemakkelijk kunt vinden. Zo hebben opslagaccounts afzonderlijke naamruimten voor het opslaan van bestanden, tabellen, blobs en wachtrijen. Veel resourcetypen hebben slechts één naamruimte.
@@ -72,7 +72,7 @@ U kunt de stijl, titel en geavanceerde instellingen van de grafiek aanpassen. Wa
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Meer informatie over geavanceerde functies van Metrics Explorer](../essentials/metrics-charts.md)
-* [Meerdere resources in Metrics Explorer weer geven](../platform/metrics-dynamic-scope.md)
+* [Meerdere resources in Metrics Explorer weer geven](./metrics-dynamic-scope.md)
 * [Problemen met Metrics Explorer oplossen](metrics-troubleshoot.md)
-* [Een lijst met beschikbare metrische gegevens voor Azure-services zien](../platform/metrics-supported.md)
+* [Een lijst met beschikbare metrische gegevens voor Azure-services zien](./metrics-supported.md)
 * [Voorbeelden van geconfigureerde grafieken zien](../essentials/metric-chart-samples.md)

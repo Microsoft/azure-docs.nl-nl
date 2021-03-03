@@ -12,12 +12,12 @@ ms.date: 02/18/2019
 ms.author: kenwith
 ms.reviewer: luleon, asteen
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: d5a90909345599b2389d1752e00a7bc917d06822
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 97ce1fe43bc831661a8590921d8121a8a82ba7e7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430408"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101687172"
 ---
 # <a name="problems-signing-in-to-saml-based-single-sign-on-configured-apps"></a>Problemen met aanmelden bij apps die zijn geconfigureerd voor eenmalige aanmelding op basis van SAML
 Voor het oplossen van de onderstaande aanmeldings problemen raden we het volgende aan om de oplossings stappen beter te diagnosticeren en te automatiseren:
@@ -41,7 +41,8 @@ Ga als volgt te werk om de configuratiepagina voor eenmalige aanmelding op basis
 1. Selecteer Eenmalige aanmelding op basis van SAML.
 
 ## <a name="application-not-found-in-directory"></a>Kan de toepassing niet vinden in de map
-`Error AADSTS70001: Application with Identifier 'https:\//contoso.com' was not found in the directory.`
+
+`Error AADSTS70001: Application with Identifier 'https://contoso.com' was not found in the directory.`
 
 **Mogelijke oorzaak**
 
@@ -69,7 +70,7 @@ Controleer of werk de waarde in het tekstvak antwoord-URL in op overeenkomst met
 Nadat u de waarde voor de antwoord-URL in azure AD hebt bijgewerkt en deze overeenkomt met de waarde die door de toepassing in de SAML-aanvraag is verzonden, moet u zich kunnen aanmelden bij de toepassing.
 
 ## <a name="user-not-assigned-a-role"></a>Gebruiker heeft geen rol toegewezen
-`Error AADSTS50105: The signed in user 'brian\@contoso.com' is not assigned to a role for the application.`
+`Error AADSTS50105: The signed in user 'brian@contoso.com' is not assigned to a role for the application.`
 
 **Mogelijke oorzaak**
 

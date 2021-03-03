@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive, devx-track-azurecli
 ms.date: 04/07/2020
-ms.openlocfilehash: c36cee8ce7076093499a76ec0952ad37bd7511a7
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 43f9736ce902d4c195d6b07cfdf7011ba9ca0c2c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98945865"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101702739"
 ---
 # <a name="create-apache-hadoop-clusters-in-hdinsight-by-using-resource-manager-templates"></a>Apache Hadoop clusters maken in HDInsight met behulp van Resource Manager-sjablonen
 
@@ -73,7 +73,7 @@ Zie [Vereisten voor toegangsbeheer](hdinsight-hadoop-customize-cluster-linux.md#
 In dit artikel hebt u verschillende manieren geleerd om een HDInsight-cluster te maken. Lees de volgende artikelen voor meer informatie:
 
 * Zie [Azure Quick](https://azure.microsoft.com/resources/templates/?term=hdinsight)start-sjablonen voor meer aan HDInsight gerelateerde sjablonen.
-* Zie [resources implementeren met behulp van .net-bibliotheken en een sjabloon](../virtual-machines/windows/csharp-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)voor een voor beeld van het implementeren van resources via de .net-client bibliotheek.
+* Zie [resources implementeren met behulp van .net-bibliotheken en een sjabloon](/previous-versions/azure/virtual-machines/windows/csharp-template?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)voor een voor beeld van het implementeren van resources via de .net-client bibliotheek.
 * Zie voor een uitgebreid voor beeld van de implementatie van een toepassing micro [services zoals verwacht inrichten en implementeren in azure](../app-service/deploy-complex-application-predictably.md).
 * Zie voor instructies over het implementeren van uw oplossing in verschillende omgevingen [Ontwikkeling en testomgevingen in Microsoft Azure](../devtest-labs/devtest-lab-overview.md).
 * Zie [ontwerp sjablonen](../azure-resource-manager/templates/template-syntax.md)voor meer informatie over de secties van de sjabloon Azure Resource Manager.

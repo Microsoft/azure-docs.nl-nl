@@ -8,12 +8,12 @@ ms.author: shhazam
 ms.date: 1/18/2021
 ms.topic: quickstart
 ms.service: azure
-ms.openlocfilehash: 0841bbd8baa524d3eea3afcbffc0aa5ead41409e
-ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.openlocfilehash: 8d7e6dffcc40ba1e34a4a84ecccccc1f8b181393
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99810153"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703045"
 ---
 # <a name="install-defender-for-iot-micro-agent-preview"></a>Defender installeren voor IoT micro agent (preview)
 
@@ -25,7 +25,7 @@ Voordat u de Defender voor IoT-module installeert, moet u een module-ID maken in
 
 ## <a name="install-the-package"></a>Het pakket installeren
 
-Installeer en configureer de micro soft-pakket opslagplaats door [deze instructies](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software)te volgen. 
+Installeer en configureer de micro soft-pakket opslagplaats door [deze instructies](/windows-server/administration/linux-package-repository-for-microsoft-software)te volgen. 
 
 Voor Debian 9 bevat de instructies niet de opslag plaats die moet worden toegevoegd. Gebruik de volgende opdrachten om de opslag plaats toe te voegen: 
 

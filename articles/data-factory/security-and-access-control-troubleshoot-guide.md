@@ -4,14 +4,14 @@ description: Meer informatie over het oplossen van problemen met beveiligings-en
 author: lrtoyou1223
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 02/04/2021
+ms.date: 02/24/2021
 ms.author: lle
-ms.openlocfilehash: 0dac0dcb272b602be8b921bce0ffc68c05cb9cbd
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: fa410441203c50d96c0de1d9188fb73b6fd4d577
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100375167"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101706154"
 ---
 # <a name="troubleshoot-azure-data-factory-security-and-access-control-issues"></a>Problemen met Azure Data Factory beveiliging en toegangs beheer oplossen
 
@@ -107,7 +107,7 @@ Ga als volgt te werk om het probleem op te lossen:
 
 U kunt de IR-verificatie sleutel niet registreren op de zelf-hostende VM omdat de persoonlijke koppeling is ingeschakeld. Het volgende fout bericht wordt weer gegeven:
 
-Kan het service token niet ophalen uit de ADF-service met de sleutel * * * * * * * * * * * * * * * * en de tijd is: 0,1250079 seconden, de fout code is: InvalidGatewayKey, activityId is: XXXXXXx en gedetailleerd fout bericht is het IP-adres van de client is geen geldige privé-IP veroorzaakt omdat Data Factory geen toegang kan krijgen tot het open bare netwerk.
+Kan het service token niet ophalen uit de ADF-service met de sleutel * * * * * * * * * * * * * * * * en de tijd is: 0,1250079 seconde, de fout code is: InvalidGatewayKey, activityId is: XXXXXXx en gedetailleerd fout bericht is het IP-adres van de client is geen geldige privé-IP veroorzaakt omdat Data Factory geen toegang kan krijgen tot het open bare netwerk.
 
 #### <a name="cause"></a>Oorzaak
 
@@ -142,7 +142,6 @@ Ga als volgt te werk om het probleem op te lossen:
 
 1. Voeg de IR-verificatie sleutel opnieuw toe in de Integration runtime.
 
-
 **Oplossing 2**
 
 Ga naar de [persoonlijke Azure-koppeling voor Azure Data Factory](./data-factory-private-link.md)om het probleem op te lossen.
@@ -150,6 +149,45 @@ Ga naar de [persoonlijke Azure-koppeling voor Azure Data Factory](./data-factory
 Probeer open bare netwerk toegang in te scha kelen op de gebruikers interface, zoals wordt weer gegeven in de volgende scherm afbeelding:
 
 ![Scherm afbeelding van het besturings element ' ingeschakeld ' voor ' open bare netwerk toegang toestaan ' in het deel venster netwerk.](media/self-hosted-integration-runtime-troubleshoot-guide/enable-public-network-access.png)
+
+### <a name="adf-private-dns-zone-overrides-azure-resource-manager-dns-resolution-causing-not-found-error"></a>ADF, persoonlijke DNS-zone onderdrukkingen Azure Resource Manager DNS-omzetting oorzaak fout ' niet gevonden '
+
+#### <a name="cause"></a>Oorzaak
+Zowel Azure Resource Manager als ADF gebruiken dezelfde privé zone als een mogelijk conflict op de privé-DNS van de klant met een scenario waarin de Azure Resource Manager records niet worden gevonden.
+
+#### <a name="solution"></a>Oplossing
+1. Zoek Privé-DNS-zones **privatelink.Azure.com** in azure Portal.
+![Scherm opname van het vinden van Privé-DNS zones.](media/security-access-control-troubleshoot-guide/private-dns-zones.png)
+2. Controleer of er een **ADF** van een record is.
+![Scherm opname van een record.](media/security-access-control-troubleshoot-guide/a-record.png)
+3.  Ga naar **koppelingen naar het virtuele netwerk**, verwijder alle records.
+![Scherm opname van virtuele netwerk koppeling.](media/security-access-control-troubleshoot-guide/virtual-network-link.png)
+4.  Navigeer naar uw data factory in Azure Portal en maak het persoonlijke eind punt voor Azure Data Factory Portal.
+![Scherm opname van het opnieuw maken van een persoonlijk eind punt.](media/security-access-control-troubleshoot-guide/create-private-endpoint.png)
+5.  Ga terug naar Privé-DNS zones en controleer of er een nieuwe privé-DNS-zone **privatelink.ADF.Azure.com** is.
+![Scherm opname van een nieuwe DNS-record.](media/security-access-control-troubleshoot-guide/check-dns-record.png)
+
+### <a name="connection-error-in-public-endpoint"></a>Verbindings fout in openbaar eind punt
+
+#### <a name="symptoms"></a>Symptomen
+
+Wanneer u gegevens kopieert met de open bare toegang van een Azure Blob Storage-account, mislukt de pijp lijn wille keurig met de volgende fout.
+
+Bijvoorbeeld: de Azure Blob Storage-Sink gebruikt Azure IR (openbaar, niet beheerd VNet) en de Azure SQL Database bron gebruikt de beheerde VNet IR. Of bron/Sink beheerde VNet-IR alleen gebruiken met open bare opslag.
+
+`
+<LogProperties><Text>Invoke callback url with req:
+"ErrorCode=UserErrorFailedToCreateAzureBlobContainer,'Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException,Message=Unable to create Azure Blob container. Endpoint: XXXXXXX/, Container Name: test.,Source=Microsoft.DataTransfer.ClientLibrary,''Type=Microsoft.WindowsAzure.Storage.StorageException,Message=Unable to connect to the remote server,Source=Microsoft.WindowsAzure.Storage,''Type=System.Net.WebException,Message=Unable to connect to the remote server,Source=System,''Type=System.Net.Sockets.SocketException,Message=A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond public ip:443,Source=System,'","Details":null}}</Text></LogProperties>.
+`
+
+#### <a name="cause"></a>Oorzaak
+
+ADF kan nog steeds beheerde VNet-IR gebruiken, maar u kunt wel een dergelijke fout tegen komen, omdat het open bare eind punt naar Azure Blob Storage in Managed VNet niet betrouwbaar is op basis van het test resultaat en Azure Blob Storage en Azure Data Lake Gen2 niet worden ondersteund om via een openbaar eind Virtual Network punt te worden verbonden met het beheerde [virtuele netwerk & beheerde persoonlijke eind punten](https://docs.microsoft.com/azure/data-factory/managed-virtual-network-private-endpoint#outbound-communications-through-public-endpoint-from-adf-managed-virtual-network).
+
+#### <a name="solution"></a>Oplossing
+
+- Er is een persoonlijk eind punt ingeschakeld op de bron en ook aan de Sink-zijde wanneer de beheerde VNet-IR wordt gebruikt.
+- Als u het open bare eind punt nog steeds wilt gebruiken, kunt u overschakelen naar open bare IR in plaats van de beheerde VNet-IR te gebruiken voor de bron en de sink. Zelfs als u terugschakelt naar de open bare IR, kan ADF nog steeds gebruikmaken van de beheerde VNet-IR als de beheerde VNet-IR nog steeds is.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -235,3 +235,11 @@
   items:
     - name: Toewijzing tussen ASB en CIS-Bench Mark
       href: v2-cis-benchmark.md
+    - name: Basisbeginselen van Azure Security
+      href: ../fundamentals/index.yml
+    - name: Gedeelde verantwoordelijkheid in de cloud
+      href: ../fundamentals/shared-responsibility.md
+    - name: Azure Security Center
+      href: ../../security-center/index.yml
+    - name: Voor beeld van Azure Security Bench Mark Foundation blauw druk
+      href: ../../governance/blueprints/samples/azure-security-benchmark-foundation/index.yml

@@ -5,16 +5,16 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: how-to
-ms.date: 02/16/2021
+ms.date: 02/24/2021
 ms.author: alkohli
 ms.subservice: common
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: cc9431d08823bd3bfba423fcc5e9dc14d2a37faa
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 2acc3d104786be330e3e799ad7bd96d703587581
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652952"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738987"
 ---
 # <a name="use-the-azure-importexport-service-to-import-data-to-azure-blob-storage"></a>De Azure import/export-service gebruiken om gegevens te importeren in Azure Blob Storage
 
@@ -68,7 +68,7 @@ Voer de volgende stappen uit om de stations voor te bereiden.
 6. Als u de BitLocker-sleutel van het station wilt ophalen, voert u de volgende opdracht uit:
 
     `manage-bde -protectors -get <DriveLetter>:`
-7. Voer de volgende opdracht uit om de schijf voor te bereiden. **Afhankelijk van de gegevens grootte kan dit enkele uren tot dagen duren.**
+7. Voer de volgende opdracht uit om de schijf voor te bereiden. **Afhankelijk van de grootte van de gegevens kan het enkele uren tot dagen duren voordat de schijf is voor bereid.**
 
     ```powershell
     ./WAImportExport.exe PrepImport /j:<journal file name> /id:session<session number> /t:<Drive letter> /bk:<BitLocker key> /srcdir:<Drive letter>:\ /dstdir:<Container name>/ /blobtype:<BlockBlob or PageBlob> /skipwrite
@@ -86,13 +86,14 @@ Voer de volgende stappen uit om de stations voor te bereiden.
     |/bk:     |De BitLocker-sleutel voor het station. Het numerieke wacht woord van de uitvoer van `manage-bde -protectors -get D:`      |
     |/srcdir:     |De stationsletter van de schijf die moet worden verzonden, gevolgd door `:\` . Bijvoorbeeld `D:\`.         |
     |/dstdir:     |De naam van de doel container in Azure Storage.         |
-    |/blobtype:     |Met deze optie geeft u het type blobs op waarnaar u de gegevens wilt importeren. Voor blok-blobs is dit `BlockBlob` en voor pagina-blobs `PageBlob` .         |
-    |/skipwrite:     |De optie waarmee wordt aangegeven dat er geen nieuwe gegevens moeten worden gekopieerd en dat bestaande gegevens op de schijf moeten worden voor bereid.          |
+    |/blobtype:     |Met deze optie geeft u het type blobs op waarnaar u de gegevens wilt importeren. Voor blok-blobs is het type BLOB `BlockBlob` en voor pagina-blobs `PageBlob` .         |
+    |/skipwrite:     | Hiermee geeft u op dat er geen nieuwe gegevens moeten worden gekopieerd en dat bestaande gegevens op de schijf moeten worden voor bereid.          |
     |/enablecontentmd5:     |Als u deze optie inschakelt, zorgt u ervoor dat MD5 wordt berekend en is ingesteld als `Content-md5` eigenschap op elke blob. Gebruik deze optie alleen als u het veld wilt gebruiken `Content-md5` nadat de gegevens zijn geüpload naar Azure. <br> Deze optie is niet van invloed op de gegevens integriteits controle (dit gebeurt standaard). De instelling neemt de benodigde tijd voor het uploaden van gegevens naar de Cloud toe.          |
 8. Herhaal de vorige stap voor elke schijf die moet worden verzonden. Er wordt een logboek bestand met de gegeven naam gemaakt voor elke uitvoering van de opdracht regel.
 
     > [!IMPORTANT]
     > * Samen met het logboek bestand `<Journal file name>_DriveInfo_<Drive serial ID>.xml` wordt ook een bestand gemaakt in de map waarin het hulp programma zich bevindt. Het. XML-bestand wordt gebruikt in plaats van het logboek bestand bij het maken van een taak als het logboek bestand te groot is.
+   > * De maximale grootte van het logboek bestand dat door de portal wordt toegestaan, is 2 MB. Als het logboek bestand deze limiet overschrijdt, wordt er een fout geretourneerd.
 
 ## <a name="step-2-create-an-import-job"></a>Stap 2: een import taak maken
 
@@ -132,7 +133,7 @@ Voer de volgende stappen uit om een import taak te maken in de Azure Portal.
 
    * Selecteer de transporteur in de vervolg keuzelijst. Als u een andere transporteur dan FedEx/DHL wilt gebruiken, kiest u een bestaande optie in de vervolg keuzelijst. Neem contact op met Azure Data Box Operations-team `adbops@microsoft.com`  met de informatie over de provider die u wilt gebruiken.
    * Voer een geldig account nummer van een transporteur in dat u hebt gemaakt met die transporteur. Micro soft gebruikt dit account om de schijven terug naar u te verzenden zodra uw import taak is voltooid. Als u geen account nummer hebt, maakt u een [FedEx](https://www.fedex.com/us/oadr/) -of [DHL](https://www.dhl.com/) -draaggolf account.
-   * Geef een volledige en geldige naam op voor de contact persoon, telefoon, e-mail, adres, plaats, post code, provincie en land/regio.
+   * Geef een volledige en geldige naam voor de contact persoon, telefoon, e-mail, adres, plaats, post code, provincie en land/regio op.
 
        > [!TIP]
        > In plaats van een e-mail adres voor één gebruiker op te geven, moet u een groeps-e-mail opgeven. Dit zorgt ervoor dat u meldingen ontvangt, zelfs als een beheerder deze verlaat.
@@ -323,7 +324,7 @@ Install-Module -Name Az.ImportExport
 
 ## <a name="step-3-optional-configure-customer-managed-key"></a>Stap 3 (optioneel): door de klant beheerde sleutel configureren
 
-Sla deze stap over en ga naar de volgende stap als u de door micro soft beheerde sleutel wilt gebruiken om uw BitLocker-sleutels voor de stations te beveiligen. Als u uw eigen sleutel voor het beveiligen van de BitLocker-sleutel wilt configureren, volgt u de instructies in [door de klant beheerde sleutels configureren met Azure Key Vault voor Azure import/export in het Azure Portal](storage-import-export-encryption-key-portal.md)
+Sla deze stap over en ga naar de volgende stap als u de door micro soft beheerde sleutel wilt gebruiken om uw BitLocker-sleutels voor de stations te beveiligen. Als u uw eigen sleutel voor het beveiligen van de BitLocker-sleutel wilt configureren, volgt u de instructies in [door de klant beheerde sleutels configureren met Azure Key Vault voor Azure import/export in de Azure Portal](storage-import-export-encryption-key-portal.md).
 
 ## <a name="step-4-ship-the-drives"></a>Stap 4: de stations verzenden
 

@@ -1,0 +1,45 @@
+### YamlMime:Landing
+title: Documentatie voor Azure object-ankers
+summary: Object ankerpunten kunnen worden gebruikt voor het detecteren van een object in de fysieke wereld en een schatting maken van de DoF pose van een 3D-model van dat object.
+metadata:
+  title: Documentatie voor Azure object-ankers
+  description: Gebruik Azure object-ankers om een object in de fysieke wereld te detecteren en de 6-DoFe pose te ramen op basis van een 3D-model van dat object.
+  services: azure-object-anchors
+  ms.service: azure-object-anchors
+  ms.topic: landing-page
+  author: craigktreasure
+  ms.author: crtreasu
+  ms.date: 04/01/2020
+  ms.openlocfilehash: 84ef8d771f4471c11dd77422444a5be98d5c8212
+  ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+  ms.translationtype: MT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 03/03/2021
+  ms.locfileid: "101749116"
+landingContent:
+- title: Over Azure object-ankers
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat zijn Azure object-ankers?
+      url: overview.md
+    - text: Opmerkingen bij de release op GitHub bekijken
+      url: https://github.com/Azure/azure-object-anchors/releases
+- title: Informatie over belangrijkste concepten
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Overzicht van SDK
+      url: ./concepts/sdk-overview.md
+- title: Quickstarts
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Modelconversie
+      url: ./quickstarts/get-started-model-conversion.md
+    - text: Unity HoloLens
+      url: ./quickstarts/get-started-unity-hololens.md
+    - text: De eenheid HoloLens met MRTK
+      url: ./quickstarts/get-started-unity-hololens-mrtk.md
+    - text: HoloLens DirectX
+      url: ./quickstarts/get-started-hololens-directx.md

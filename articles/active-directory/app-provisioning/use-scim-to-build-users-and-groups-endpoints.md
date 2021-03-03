@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/27/2021
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: b69e701177c6f017388521ed05c37de1271c7e60
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 4e933000c8e700d8bfd193b542e3855b2fca26f8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101650155"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101689331"
 ---
 # <a name="tutorial-develop-a-sample-scim-endpoint"></a>Zelf studie: een voor beeld van een SCIM-eind punt ontwikkelen
 
@@ -57,6 +57,8 @@ Met de stappen implementeert u het SCIM-eind punt voor een service met behulp va
     ![Scherm opname van het maken van een nieuwe app service.](media/use-scim-to-build-users-and-groups-endpoints/cloud-publish-3.png)
 
 1. Selecteer de resource groep die u wilt gebruiken en selecteer **publiceren**.
+
+    ![Scherm opname van het publiceren van een nieuwe app service.](media/use-scim-to-build-users-and-groups-endpoints/cloud-publish-4.png)
 
 1. Ga naar de toepassing in **Azure app service**  >  **configuratie** en selecteer **nieuwe toepassings instelling** om de instelling *Token__TokenIssuer* met de waarde toe te voegen `https://sts.windows.net/<tenant_id>/` . Vervang door `<tenant_id>` de id van uw Azure AD-Tenant. Als u het SCIM-eind punt wilt testen met behulp van [postman](https://github.com/AzureAD/SCIMReferenceCode/wiki/Test-Your-SCIM-Endpoint), voegt u een *ASPNETCORE_ENVIRONMENT* -instelling toe met de waarde `Development` .
 

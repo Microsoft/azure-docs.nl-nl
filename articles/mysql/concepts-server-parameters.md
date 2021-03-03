@@ -6,12 +6,12 @@ ms.author: bahusse
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 1/26/2021
-ms.openlocfilehash: 1b0bcf528a16e2f75bf21235980424b5375f8824
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 756337ce20c827d0c6549181c20fd843fa60c020
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99539481"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101720950"
 ---
 # <a name="server-parameters-in-azure-database-for-mysql"></a>Server parameters in Azure Database for MySQL
 
@@ -21,7 +21,7 @@ In dit artikel vindt u overwegingen en richt lijnen voor het configureren van se
 
 De MySQL-engine biedt veel verschillende server variabelen/-para meters die kunnen worden gebruikt voor het configureren en het afstemmen van engine gedrag. Sommige para meters kunnen dynamisch worden ingesteld tijdens runtime, terwijl andere ' static ' zijn, zodat de server opnieuw moet worden opgestart om toe te passen.
 
-Azure Database for MySQL beschrijft de mogelijkheid om de waarde van verschillende MySQL-server parameters te wijzigen met behulp van de [Azure Portal](./howto-server-parameters.md), [Azure cli](./howto-configure-server-parameters-using-cli.md)en [Power shell](./howto-configure-server-parameters-using-powershell.md) , die overeenkomen met de behoeften van uw werk belasting.
+Azure Database for MySQL maakt het mogelijk om de waarden van verschillende MySQL-serverparameters te wijzigen, met behulp van [Azure Portal](./howto-server-parameters.md), [Azure CLI](./howto-configure-server-parameters-using-cli.md) en [PowerShell](./howto-configure-server-parameters-using-powershell.md), om te voldoen aan de behoeften van uw workload.
 
 ## <a name="configurable-server-parameters"></a>Configureer bare server parameters
 
@@ -272,7 +272,7 @@ Het is ook belang rijk om te weten dat verbeterde prestaties ten koste gaan van 
 Als u de status van de buffer groep wilt opslaan bij Server para meter instellen voor het afsluiten van servers `innodb_buffer_pool_dump_at_shutdown` in `ON` . Stel op dezelfde manier de server parameter in om `innodb_buffer_pool_load_at_startup` `ON` de status van de buffer groep te herstellen bij het opstarten van de server. U kunt de gevolgen voor het opstarten en opnieuw opstarten bepalen door de waarde van de server parameter te verlagen en te verfijnen `innodb_buffer_pool_dump_pct` . deze para meter is standaard ingesteld op `25` .
 
 > [!Note]
-> De opwarm-para meters van de InnoDB-buffer groep worden alleen ondersteund in de opslag servers voor algemeen gebruik met Maxi maal 16 TB opslag. Meer informatie over [Azure database for MySQL opslag opties vindt u hier](https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers#storage).
+> De opwarm-para meters van de InnoDB-buffer groep worden alleen ondersteund in de opslag servers voor algemeen gebruik met Maxi maal 16 TB opslag. Meer informatie over [Azure database for MySQL opslag opties vindt u hier](./concepts-pricing-tiers.md#storage).
 
 ### <a name="time_zone"></a>time_zone
 

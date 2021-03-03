@@ -5,15 +5,17 @@ ms.author: nihurt
 author: hurtn
 ms.service: data-factory
 ms.topic: tutorial
-ms.date: 05/04/2020
-ms.openlocfilehash: ba4e5c3998c7c6218d2f0232e3c05930ca82e378
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 02/18/2021
+ms.openlocfilehash: a00ec8698b188b8fa87935e498e8cfab3aeab5aa
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100391266"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101724979"
 ---
 # <a name="incrementally-load-data-from-azure-sql-managed-instance-to-azure-storage-using-change-data-capture-cdc"></a>Incrementeel laden van gegevens vanuit Azure SQL Managed Instance naar Azure Storage met behulp van change data capture (CDC)
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 In deze zelfstudie maakt u een Azure data factory met een pijplijn die gewijzigde gegevens laadt op basis van informatie over **change data capture (CDC)** in de Azure SQL Managed Instance-brondatabase naar Azure Blob Storage.  
 

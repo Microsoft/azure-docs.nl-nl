@@ -6,18 +6,18 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/21/2020
-ms.openlocfilehash: 2d7406c1e801a07f10342c47e7334e6a12bfd449
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 0d9804d088e1f193e0adf1fa26adbbe5d3680097
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610301"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101729195"
 ---
 # <a name="collect-syslog-data-sources-with-log-analytics-agent"></a>Syslog-gegevens bronnen verzamelen met Log Analytics agent
 Syslog is een protocol voor gebeurtenis registratie dat algemeen is voor Linux. Toepassingen zullen berichten verzenden die kunnen worden opgeslagen op de lokale computer of worden geleverd aan een syslog-Collector. Wanneer de Log Analytics-agent voor Linux is geïnstalleerd, wordt de lokale syslog-daemon geconfigureerd voor het door sturen van berichten naar de agent. De agent verzendt het bericht vervolgens naar Azure Monitor waar een corresponderende record wordt gemaakt.  
 
 > [!IMPORTANT]
-> Dit artikel heeft betrekking op het verzamelen van syslog-gebeurtenissen met de [log Analytics-agent](../platform/log-analytics-agent.md) , een van de agents die door Azure monitor worden gebruikt. Andere agents verzamelen verschillende gegevens en worden anders geconfigureerd. Zie [overzicht van Azure monitor agents](../agents/agents-overview.md) voor een lijst met beschik bare agents en de gegevens die ze kunnen verzamelen.
+> Dit artikel heeft betrekking op het verzamelen van syslog-gebeurtenissen met de [log Analytics-agent](./log-analytics-agent.md) , een van de agents die door Azure monitor worden gebruikt. Andere agents verzamelen verschillende gegevens en worden anders geconfigureerd. Zie [overzicht van Azure monitor agents](../agents/agents-overview.md) voor een lijst met beschik bare agents en de gegevens die ze kunnen verzamelen.
 
 > [!NOTE]
 > Azure Monitor ondersteunt het verzamelen van berichten die worden verzonden door rsyslog of syslog-ng, waarbij rsyslog de standaard-daemon is. De standaard syslog-daemon op versie 5 van Red Hat Enterprise Linux, CentOS en Oracle Linux versie (sysklog) wordt niet ondersteund voor de verzameling syslog-gebeurtenissen. Als u syslog-gegevens uit deze versie van deze distributies wilt verzamelen, moet de [rsyslog-daemon](http://rsyslog.com) worden geïnstalleerd en geconfigureerd om sysklog te vervangen.
@@ -57,7 +57,7 @@ U kunt een nieuwe faciliteit toevoegen door eerst de optie **op de onderstaande 
 Standaard worden alle configuratie wijzigingen automatisch naar alle agents gepusht. Als u syslog hand matig op elke Linux-agent wilt configureren, schakelt u het selectie vakje de *onderstaande configuratie Toep assen op mijn machines* uit.
 
 ### <a name="configure-syslog-on-linux-agent"></a>Syslog op Linux-agent configureren
-Wanneer de [log Analytics-agent is geïnstalleerd op een Linux-client](../learn/quick-collect-linux-computer.md), wordt een standaard-syslog-configuratie bestand geïnstalleerd waarmee de faciliteit en ernst van de verzamelde berichten worden gedefinieerd. U kunt dit bestand wijzigen om de configuratie te wijzigen. Het configuratie bestand verschilt, afhankelijk van de syslog-daemon die de-client heeft geïnstalleerd.
+Wanneer de [log Analytics-agent is geïnstalleerd op een Linux-client](../vm/quick-collect-linux-computer.md), wordt een standaard-syslog-configuratie bestand geïnstalleerd waarmee de faciliteit en ernst van de verzamelde berichten worden gedefinieerd. U kunt dit bestand wijzigen om de configuratie te wijzigen. Het configuratie bestand verschilt, afhankelijk van de syslog-daemon die de-client heeft geïnstalleerd.
 
 > [!NOTE]
 > Als u de syslog-configuratie bewerkt, moet u de syslog-daemon opnieuw opstarten om de wijzigingen van kracht te laten worden.
@@ -222,7 +222,7 @@ Syslog-records hebben het type **syslog** en hebben de eigenschappen in de volge
 ## <a name="log-queries-with-syslog-records"></a>Query's registreren met syslog-records
 De volgende tabel bevat verschillende voor beelden van logboek query's waarmee syslog-records worden opgehaald.
 
-| Query’s uitvoeren | Description |
+| Query’s uitvoeren | Beschrijving |
 |:--- |:--- |
 | Syslog |Alle syslogs. |
 | Syslog &#124; waarbij SeverityLevel = = "Error" |Alle syslog-records met de ernst van de fout. |
@@ -230,7 +230,6 @@ De volgende tabel bevat verschillende voor beelden van logboek query's waarmee s
 | Syslog &#124; samenvatte AggregatedValue = Count () door faciliteit |Aantal syslog-records per faciliteit. |
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over [logboek query's](../log-query/log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen.
-* Gebruik [aangepaste velden](./../platform/custom-fields.md) voor het parseren van gegevens van syslog-records in afzonderlijke velden.
-* [Configureer Linux-agents](../learn/quick-collect-linux-computer.md) om andere typen gegevens te verzamelen.
-
+* Meer informatie over [logboek query's](../logs/log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen.
+* Gebruik [aangepaste velden](../logs/custom-fields.md) voor het parseren van gegevens van syslog-records in afzonderlijke velden.
+* [Configureer Linux-agents](../vm/quick-collect-linux-computer.md) om andere typen gegevens te verzamelen.

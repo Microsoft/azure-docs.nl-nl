@@ -4,12 +4,12 @@ description: Hierin wordt een overzicht gegeven van de ondersteunings instelling
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.custom: references_regions
-ms.openlocfilehash: ed58bc9e2bf8757cad79c1043459ceb5b845be40
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 2536ae0d33767de5ad53740407622e67c582cc37
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100633900"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101710665"
 ---
 # <a name="support-matrix-for-azure-vm-backup"></a>Ondersteuningsmatrix voor back-up van Azure-VM
 
@@ -115,6 +115,7 @@ Bestanden herstellen van opslag accounts met netwerk beperkingen | Wordt niet on
 Bestanden op Vm's terugzetten met behulp van Windows-opslag ruimten | Terugzetten wordt niet ondersteund op dezelfde VM.<br/><br/> In plaats daarvan herstelt u de bestanden op een compatibele VM.
 Bestanden herstellen op een Linux-VM met behulp van LVM/RAID-matrices | Terugzetten wordt niet ondersteund op dezelfde VM.<br/><br/> Herstel op een compatibele VM.
 Bestanden herstellen met speciale netwerk instellingen | Terugzetten wordt niet ondersteund op dezelfde VM. <br/><br/> Herstel op een compatibele VM.
+Bestanden herstellen vanaf een gedeelde schijf, een tijdelijk station, een ontdubbelde schijf, Ultra disk en schijf waarop schrijf versnelling is ingeschakeld | Herstel wordt niet ondersteund, <br/><br/>Zie [ondersteuning voor Azure VM-opslag](#vm-storage-support).
 
 ## <a name="support-for-vm-management"></a>Ondersteuning voor VM-beheer
 
@@ -149,7 +150,7 @@ Herstellen van op zones vastgemaakte Vm's | Ondersteund (voor een VM waarvan een
 Gen2 Vm's | Ondersteund <br> Azure Backup ondersteunt het maken van back-ups en het herstellen van [Gen2-vm's](https://azure.microsoft.com/updates/generation-2-virtual-machines-in-azure-public-preview/). Wanneer deze Vm's worden hersteld vanaf het herstel punt, worden ze teruggezet als [Gen2 vm's](https://azure.microsoft.com/updates/generation-2-virtual-machines-in-azure-public-preview/).
 Back-ups van virtuele Azure-machines met vergren delingen | Niet ondersteund voor niet-beheerde Vm's. <br><br> Ondersteund voor beheerde Vm's.
 [Spot-VM's](../virtual-machines/spot-vms.md) | Niet-ondersteunde. Azure Backup de locatie van de virtuele machines als gewone virtuele machines van Azure herstelt.
-[Voor Azure toegewezen host](https://docs.microsoft.com/azure/virtual-machines/dedicated-hosts) | Ondersteund
+[Voor Azure toegewezen host](../virtual-machines/dedicated-hosts.md) | Ondersteund
 Windows-opslag ruimten configureren van zelfstandige virtuele machines in azure | Ondersteund
 
 ## <a name="vm-storage-support"></a>Ondersteuning voor VM-opslag
@@ -168,7 +169,7 @@ Grootte van schijf op beveiligde virtuele machine wijzigen | Ondersteund.
 Gedeelde opslag| Het maken van back-ups van virtuele machines met Cluster Shared Volume (CSV) of Scale-Out Bestands server wordt niet ondersteund. CSV-schrijvers mislukken waarschijnlijk tijdens het maken van de back-up. Bij het terugzetten kunnen schijven met CSV-volumes mogelijk niet worden opgehaald.
 [Gedeelde schijven](../virtual-machines/disks-shared-enable.md) | Wordt niet ondersteund.
 Ultra-SSD schijven | Wordt niet ondersteund. Zie deze [beperkingen](selective-disk-backup-restore.md#limitations)voor meer informatie.
-[Tijdelijke schijven](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview#temporary-disk) | Er wordt geen back-up van de tijdelijke schijven gemaakt door Azure Backup.
+[Tijdelijke schijven](../virtual-machines/managed-disks-overview.md#temporary-disk) | Er wordt geen back-up van de tijdelijke schijven gemaakt door Azure Backup.
 
 ## <a name="vm-network-support"></a>VM-netwerk ondersteuning
 

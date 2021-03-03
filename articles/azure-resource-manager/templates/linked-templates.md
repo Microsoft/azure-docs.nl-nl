@@ -3,12 +3,12 @@ title: Koppelings sjablonen voor implementatie
 description: Hierin wordt beschreven hoe u gekoppelde sjablonen gebruikt in een Azure Resource Manager sjabloon (ARM-sjabloon) om een modulaire sjabloon oplossing te maken. Toont hoe parameter waarden worden door gegeven, geef een parameter bestand op en dynamisch gemaakte Url's.
 ms.topic: conceptual
 ms.date: 01/26/2021
-ms.openlocfilehash: aae3947656e475d15bc4f0da770d0398fafa13c5
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: ac987b1390e939ad2b081745396245b432bb836b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98880425"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101741001"
 ---
 # <a name="using-linked-and-nested-templates-when-deploying-azure-resources"></a>Gekoppelde en geneste sjablonen gebruiken bij het implementeren van Azure-resources
 
@@ -668,10 +668,10 @@ In de volgende voorbeeld sjabloon ziet u hoe u `copy` met een geneste sjabloon k
             "kind": "StorageV2"
             // Copy works here when scope is inner
             // But, when scope is default or outer, you get an error
-            //"copy":{
-            //  "name": "storagecopy",
-            //  "count": 2
-            //}
+            // "copy": {
+            //   "name": "storagecopy",
+            //   "count": 2
+            // }
           }
         ]
       }

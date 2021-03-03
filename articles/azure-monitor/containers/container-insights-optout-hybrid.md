@@ -1,18 +1,18 @@
 ---
 title: Stoppen met het bewaken van uw hybride Kubernetes-cluster | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u de bewaking van uw hybride Kubernetes-cluster met Azure Monitor voor containers kunt stoppen.
+description: In dit artikel wordt beschreven hoe u de bewaking van uw hybride Kubernetes-cluster met container Insights kunt stoppen.
 ms.topic: conceptual
 ms.date: 06/16/2020
-ms.openlocfilehash: 2754649cd990b015162be158effa2b85aa1fe27e
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: e8708d6b860683cc96a806160ccc7c8e33949ab2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100613041"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101713691"
 ---
 # <a name="how-to-stop-monitoring-your-hybrid-cluster"></a>Het bewaken van uw hybride cluster stoppen
 
-Nadat u de bewaking van uw Kubernetes-cluster hebt ingeschakeld, kunt u stoppen met het bewaken van het cluster met Azure Monitor voor containers als u besluit dat u het niet meer wilt controleren. In dit artikel wordt beschreven hoe u dit kunt doen voor de volgende omgevingen:
+Nadat u de bewaking van uw Kubernetes-cluster hebt ingeschakeld, kunt u stoppen met het bewaken van het cluster met container Insights als u besluit dat u het niet meer wilt bewaken. In dit artikel wordt beschreven hoe u dit kunt doen voor de volgende omgevingen:
 
 - AKS-engine op Azure en Azure Stack
 - Open Shift versie 4 en hoger
@@ -25,7 +25,7 @@ De volgende stappen zijn van toepassing op de volgende omgevingen:
 - AKS-engine op Azure en Azure Stack
 - Open Shift versie 4 en hoger
 
-1. Voer de volgende helm-opdracht uit als u eerst de Azure Monitor voor de helm-grafiek release van containers op uw cluster wilt identificeren.
+1. Voer de volgende helm-opdracht uit om eerst de helm-grafiek release van container Insights te identificeren die op uw cluster is geïnstalleerd.
 
     ```
     helm list
@@ -38,7 +38,7 @@ De volgende stappen zijn van toepassing op de volgende omgevingen:
     azmon-containers-release-1      default         3               2020-04-21 15:27:24.1201959 -0700 PDT   deployed        azuremonitor-containers-2.7.0   7.0.0-1
     ```
 
-    *azmon-containers-release 1* vertegenwoordigt de helm-grafiek versie voor Azure monitor voor containers.
+    *azmon-containers-release-1* vertegenwoordigt de helm-grafiek release voor container Insights.
 
 2. Als u de grafiek release wilt verwijderen, voert u de volgende helm-opdracht uit.
 
@@ -157,4 +157,4 @@ bash disable-monitoring.sh --resource-id $azureArcClusterResourceId --kube-conte
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als de Log Analytics-werk ruimte alleen is gemaakt ter ondersteuning van het bewaken van het cluster en het niet meer nodig is, moet u het hand matig verwijderen. Zie [een Azure log Analytics-werk ruimte verwijderen](../platform/delete-workspace.md)als u niet bekend bent met het verwijderen van een werk ruimte.
+Als de Log Analytics-werk ruimte alleen is gemaakt ter ondersteuning van het bewaken van het cluster en het niet meer nodig is, moet u het hand matig verwijderen. Zie [een Azure log Analytics-werk ruimte verwijderen](../logs/delete-workspace.md)als u niet bekend bent met het verwijderen van een werk ruimte.

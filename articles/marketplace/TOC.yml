@@ -47,12 +47,19 @@
       items:
         - name: Kies uw marketplace-voordelen
           href: gtm-your-marketplace-benefits.md
-        - name: Betrokkenheid van partner bij collectieve verkoop
-          href: marketplace-co-sell.md
-        - name: Optie voor collectieve verkoop in Partnercentrum
-          href: commercial-marketplace-co-sell.md
-        - name: Co-celoplossingen migreren van OCP GTM
-          href: co-sell-solution-migration.md
+          items: null
+        - name: Collectieve verkoop met Microsoft
+          items:
+            - name: Overzicht van samen verkopen
+              href: marketplace-co-sell.md
+            - name: Vereisten voor co-sell
+              href: co-sell-requirements.md
+            - name: Co-sell configureren
+              href: commercial-marketplace-co-sell.md
+            - name: Co-sell-status verifiëren
+              href: co-sell-status.md
+            - name: Co-celoplossingen migreren van OCP GTM
+              href: co-sell-solution-migration.md
         - name: Doorverkopen via CSP-partners
           href: cloud-solution-providers.md
         - name: Gids voor onboarding van Connect-programma
@@ -203,6 +210,8 @@
           href: partner-center-portal/azure-iot-edge-module-creation.md
         - name: Technische assets voor IoT Edge-module voorbereiden
           href: partner-center-portal/create-iot-edge-module-asset.md
+        - name: Controle lijst voor pre-certificering
+          href: iot-edge-checklist.md
     - name: Aanbieding voor beheerde service
       items:
         - name: Een aanbieding voor beheerde service plannen
@@ -395,6 +404,8 @@
       href: commercial-marketplace-co-sell-countries.md
     - name: Staatcodes voor collectieve verkoop
       href: commercial-marketplace-co-sell-states.md
+    - name: Diagram van referentie architectuur
+      href: reference-architecture-diagram.md
     - name: Categorieën en subcategorieën
       href: categories.md
     - name: Ondersteunde HTML-tags

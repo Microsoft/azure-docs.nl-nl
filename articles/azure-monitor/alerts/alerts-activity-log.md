@@ -4,12 +4,12 @@ description: Waarschuwingen voor activiteiten logboeken maken met behulp van de 
 ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 06/25/2019
-ms.openlocfilehash: 83023cca6b034ee0e9acddfa081f09eb47b9fb1e
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: bb4c1410d046389ae9e82986c6b0ed3d133fcf2a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612921"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101704460"
 ---
 # <a name="create-view-and-manage-activity-log-alerts-by-using-azure-monitor"></a>Waarschuwingen voor activiteiten logboek maken, weer geven en beheren met behulp van Azure Monitor  
 
@@ -26,7 +26,9 @@ Wanneer u waarschuwings regels maakt, moet u het volgende controleren:
 
 - Het abonnement in de scope wijkt niet af van het abonnement waarin de waarschuwing is gemaakt.
 - De criteria moeten het niveau, de status, de beller, de resource groep, de resource-ID of de gebeurtenis categorie van het resource type zijn waarop de waarschuwing is geconfigureerd.
-- Er is geen ' anyOf-voor waarde of geneste voor waarden in de JSON van de waarschuwings configuratie. In principe is slechts één ' overzet-voor waarde toegestaan zonder verdere ' overzet ' of ' anyOf-voor waarden.
+- Er is slechts één ' overzet-voor waarde toegestaan.
+- ' AnyOf ' kan worden gebruikt om meerdere voor waarden toe te staan op meerdere velden (bijvoorbeeld als de velden ' status ' of ' substatus ' gelijk zijn aan een bepaalde waarde). Houd er rekening mee dat het gebruik van ' AnyOf ' momenteel beperkt is tot het maken van de waarschuwings regel met behulp van een ARM-sjabloon implementatie.
+- ' ContainsAny ' kan worden gebruikt om meerdere waarden van hetzelfde veld toe te staan (bijvoorbeeld als ' bewerking ' is gelijk aan ' delete ' of ' Modify '). Houd er rekening mee dat het gebruik van ' ContainsAny ' momenteel beperkt is tot het maken van de waarschuwings regel met behulp van een ARM-sjabloon implementatie.
 - Wanneer de categorie ' beheer ' is, moet u ten minste één van de voor gaande criteria in uw waarschuwing opgeven. U kunt geen waarschuwing maken die telkens wanneer een gebeurtenis wordt gemaakt in de activiteiten Logboeken wordt geactiveerd.
 - Er kunnen geen waarschuwingen worden gemaakt voor gebeurtenissen in de categorie waarschuwing van het activiteiten logboek.
 
@@ -92,7 +94,7 @@ Gebruik de volgende procedure.
     - **Beschrijving**: de beschrijving van de nieuwe waarschuwings regel.
     - **Waarschuwing opslaan in resource groep**: Selecteer de resource groep waar u deze nieuwe regel wilt opslaan.
 
-5. Geef onder **actie groep** in de vervolg keuzelijst de actie groep op die u wilt toewijzen aan deze nieuwe waarschuwings regel. Of [Maak een nieuwe actie groep](../platform/action-groups.md) en wijs deze toe aan de nieuwe regel. Als u een nieuwe groep wilt maken, selecteert u **+ nieuwe groep**.
+5. Geef onder **actie groep** in de vervolg keuzelijst de actie groep op die u wilt toewijzen aan deze nieuwe waarschuwings regel. Of [Maak een nieuwe actie groep](./action-groups.md) en wijs deze toe aan de nieuwe regel. Als u een nieuwe groep wilt maken, selecteert u **+ nieuwe groep**.
 
 6. Als u de regels wilt inschakelen nadat u ze hebt gemaakt, selecteert u **Ja** voor de optie **regel inschakelen bij het maken** .
 7. Selecteer **Waarschuwingsregel maken**.
@@ -287,6 +289,5 @@ Regel resources voor waarschuwings logboeken kunnen worden verwijderd met behulp
 
 - Meer informatie over [webhook-schema voor activiteiten logboeken](./activity-log-alerts-webhook.md).
 - Lees een [overzicht van activiteiten logboeken](./activity-log-alerts.md).
-- Meer informatie over [actiegroepen](../platform/action-groups.md).  
+- Meer informatie over [actiegroepen](./action-groups.md).  
 - Meer informatie over [servicestatusmeldingen](../../service-health/service-notifications.md).
-

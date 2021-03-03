@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/2/2019
 ms.author: terrylan
-ms.openlocfilehash: ed2cb967b24ce5abdebadfe29847ae1a16b4e745
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 036a1d3f8cad4ba9cda03a9001cfec1bb7de86b0
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498741"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101715034"
 ---
 # <a name="azure-virtual-machines-security-overview"></a>Overzicht van Azure Virtual Machines-beveiliging
 Dit artikel bevat een overzicht van de belangrijkste Azure-beveiligings functies die kunnen worden gebruikt met virtuele machines.
@@ -51,7 +51,7 @@ Meer informatie over [micro soft antimalware voor Azure](antimalware.md) en de b
 Meer informatie over antimalware-software om uw virtuele machines te beschermen:
 
 * [Deploying Antimalware Solutions on Azure Virtual Machines](https://azure.microsoft.com/blog/deploying-antimalware-solutions-on-azure-virtual-machines/) (Antimalware-oplossingen implementeren op virtuele machines van Azure)
-* [Trend Micro diepe Security als een service op een Windows-VM installeren en configureren](../../virtual-machines/extensions/trend.md)
+* [Trend Micro diepe Security als een service op een Windows-VM installeren en configureren](/previous-versions/azure/virtual-machines/extensions/trend)
 * [Symantec-Endpoint Protection installeren en configureren op een Windows-VM](../../virtual-machines/extensions/symantec.md)
 * [Beveiligings oplossingen in azure Marketplace](https://azure.microsoft.com/marketplace/?term=security)
 

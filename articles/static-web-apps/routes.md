@@ -7,14 +7,17 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 39950b4d62b7dbfacba94f5ba3c5de50bbb974b3
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 5cbcbcf8914a663a6d039abecd6a4488eaf677b2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653670"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101739641"
 ---
 # <a name="routes-in-azure-static-web-apps-preview"></a>Routes in de preview-versie van statische Web Apps van Azure
+
+> [!IMPORTANT]
+> De functionaliteit die is gedefinieerd in de *routes.jsvoor* het bestand is nu afgeschaft en beter geïmplementeerd in het statische web apps- [configuratie bestand](./configuration.md#routes)van Azure.
 
 Route ring in statische Azure-Web Apps definieert back-end-routerings regels en autorisatie gedrag voor zowel statische inhoud als Api's<sup>1</sup>. De regels worden gedefinieerd als een matrix met regels in de _routes.jsvoor_ het bestand.
 
@@ -29,6 +32,9 @@ Het onderwerp van route ring overlapt aanzienlijk met verificatie-en autorisatie
 Zie het [route bestand voor beeld](#example-route-file) voor meer informatie.
 
 ## <a name="location"></a>Locatie
+
+> [!IMPORTANT]
+> De functionaliteit die is gedefinieerd in de *routes.jsvoor* het bestand is nu afgeschaft en beter geïmplementeerd in het statische web apps- [configuratie bestand](./configuration.md#routes)van Azure.
 
 De _routes.jsin_ het bestand moet bestaan in de hoofdmap van de map build artefact van de app. Als uw web-app een build-stap bevat waarmee ingebouwde bestanden van een specifieke map naar de map build-artefact worden gekopieerd, moet de _routes.jsin_ het bestand zich in die specifieke map bevinden.
 
@@ -46,16 +52,22 @@ De bovenstaande tabel is alleen een vertegenwoordiger van een paar frameworks en
 
 ## <a name="defining-routes"></a>Routes definiëren
 
+> [!IMPORTANT]
+> De functionaliteit die is gedefinieerd in de *routes.jsvoor* het bestand is nu afgeschaft en beter geïmplementeerd in het statische web apps- [configuratie bestand](./configuration.md#routes)van Azure.
+
 Routes worden gedefinieerd in de _routes.jsop_ bestand als een matrix van route regels voor de `routes` eigenschap. Elke regel bestaat uit een route patroon, samen met een of meer van de optionele regel eigenschappen. Zie het [voor beeld van een routerings bestand](#example-route-file) voor gebruiks voorbeelden.
 
 | Regel eigenschap  | Vereist | Standaardwaarde | Opmerking                                                      |
 | -------------- | -------- | ------------- | ------------------------------------------------------------ |
-| `route`        | Yes      | n.v.t.          | Het route patroon dat is aangevraagd door de aanroeper.<ul><li>[Joker tekens](#wildcards) worden aan het einde van route paden ondersteund. De routerings _beheerder/ \*_ komt bijvoorbeeld overeen met een wille keurige route onder het pad van de _beheerder_ .<li>Het standaard bestand van een route is _index.html_.</ul>|
-| `serve`        | No       | n.v.t.          | Hiermee wordt het bestand of het pad gedefinieerd dat door de aanvraag wordt geretourneerd. Het bestandspad en de naam kunnen afwijken van het aangevraagde pad. Als er `serve` geen waarde is gedefinieerd, wordt het aangevraagde pad gebruikt. Query string-para meters worden niet ondersteund; de `serve` waarden moeten verwijzen naar de werkelijke bestanden.  |
-| `allowedRoles` | No       | toegang     | Een matrix met namen van rollen. <ul><li>Geldige tekens zijn `a-z`, `A-Z`, `0-9` en `_`.<li>De ingebouwde rol `anonymous` is van toepassing op alle niet-geverifieerde gebruikers.<li>De ingebouwde rol `authenticated` is van toepassing op elke aangemelde gebruiker.<li>Gebruikers moeten deel uitmaken van ten minste één rol.<li>Rollen worden _op basis van_ elkaar vergeleken. Als een gebruiker zich in een van de vermelde rollen bevindt, wordt de toegang verleend.<li>Afzonderlijke gebruikers zijn gekoppeld aan rollen via [uitnodigingen](authentication-authorization.md).</ul> |
-| `statusCode`   | No       | 200           | Het antwoord van de [HTTP-status code](https://wikipedia.org/wiki/List_of_HTTP_status_codes) voor de aanvraag. |
+| `route`        | Ja      | n.v.t.          | Het route patroon dat is aangevraagd door de aanroeper.<ul><li>[Joker tekens](#wildcards) worden aan het einde van route paden ondersteund. De routerings _beheerder/ \*_ komt bijvoorbeeld overeen met een wille keurige route onder het pad van de _beheerder_ .<li>Het standaard bestand van een route is _index.html_.</ul>|
+| `serve`        | Nee       | n.v.t.          | Hiermee wordt het bestand of het pad gedefinieerd dat door de aanvraag wordt geretourneerd. Het bestandspad en de naam kunnen afwijken van het aangevraagde pad. Als er `serve` geen waarde is gedefinieerd, wordt het aangevraagde pad gebruikt. Query string-para meters worden niet ondersteund; de `serve` waarden moeten verwijzen naar de werkelijke bestanden.  |
+| `allowedRoles` | Nee       | toegang     | Een matrix met namen van rollen. <ul><li>Geldige tekens zijn `a-z`, `A-Z`, `0-9` en `_`.<li>De ingebouwde rol `anonymous` is van toepassing op alle niet-geverifieerde gebruikers.<li>De ingebouwde rol `authenticated` is van toepassing op elke aangemelde gebruiker.<li>Gebruikers moeten deel uitmaken van ten minste één rol.<li>Rollen worden _op basis van_ elkaar vergeleken. Als een gebruiker zich in een van de vermelde rollen bevindt, wordt de toegang verleend.<li>Afzonderlijke gebruikers zijn gekoppeld aan rollen via [uitnodigingen](authentication-authorization.md).</ul> |
+| `statusCode`   | Nee       | 200           | Het antwoord van de [HTTP-status code](https://wikipedia.org/wiki/List_of_HTTP_status_codes) voor de aanvraag. |
 
 ## <a name="securing-routes-with-roles"></a>Routes beveiligen met rollen
+
+> [!IMPORTANT]
+> De functionaliteit die is gedefinieerd in de *routes.jsvoor* het bestand is nu afgeschaft en beter geïmplementeerd in het statische web apps- [configuratie bestand](./configuration.md#routes)van Azure.
 
 Routes worden beveiligd door een of meer rolnaams toe te voegen aan de matrix van een regel `allowedRoles` . Zie het [voor beeld van een routerings bestand](#example-route-file) voor gebruiks voorbeelden.
 
@@ -81,6 +93,9 @@ U kunt indien nodig nieuwe rollen maken in de `allowedRoles` matrix. Als u een r
 - Afzonderlijke gebruikers zijn gekoppeld aan rollen via [uitnodigingen](authentication-authorization.md).
 
 ## <a name="wildcards"></a>Jokertekens
+
+> [!IMPORTANT]
+> De functionaliteit die is gedefinieerd in de *routes.jsvoor* het bestand is nu afgeschaft en beter geïmplementeerd in het statische web apps- [configuratie bestand](./configuration.md#routes)van Azure.
 
 Joker regels komen overeen met alle aanvragen met een bepaald route patroon. Als u een `serve` waarde in uw regel definieert, wordt het genoemde bestand of pad behandeld als het antwoord.
 
@@ -109,6 +124,9 @@ U kunt routes ook beveiligen met Joker tekens. In het volgende voor beeld is voo
 
 ## <a name="fallback-routes"></a>Terugval routes
 
+> [!IMPORTANT]
+> De functionaliteit die is gedefinieerd in de *routes.jsvoor* het bestand is nu afgeschaft en beter geïmplementeerd in het statische web apps- [configuratie bestand](./configuration.md#routes)van Azure.
+
 Toepassingen met één pagina, ongeacht of ze front-end Java script frameworks of-bibliotheken of webassemblers-platformen zoals razendsnelle gebruiken, zijn vaak afhankelijk van route ring aan client zijde voor het navigeren door Web-apps. Deze routerings regels aan de client zijde voeren de venster locatie van de browser bij zonder aanvragen terug te sturen naar de server. Als u de pagina vernieuwt of rechtstreeks navigeert naar locaties die worden gegenereerd door routerings regels aan de client zijde, is er een terugval route aan de server zijde vereist voor de juiste HTML-pagina.
 
 In het volgende voor beeld wordt een algemene terugval route weer gegeven:
@@ -128,6 +146,9 @@ In het volgende voor beeld wordt een algemene terugval route weer gegeven:
 De terugval route moet als laatste worden weer gegeven in uw routerings regels, omdat alle aanvragen die niet door eerder gedefinieerde regels zijn onderschept, worden onderschept.
 
 ## <a name="redirects"></a>Omleidingen
+
+> [!IMPORTANT]
+> De functionaliteit die is gedefinieerd in de *routes.jsvoor* het bestand is nu afgeschaft en beter geïmplementeerd in het statische web apps- [configuratie bestand](./configuration.md#routes)van Azure.
 
 U kunt de HTTP-status codes [301](https://en.wikipedia.org/wiki/HTTP_301) en [302](https://en.wikipedia.org/wiki/HTTP_302) gebruiken om aanvragen van de ene route om te leiden naar een andere.
 
@@ -153,6 +174,9 @@ Omleidingen werken ook met paden die geen afzonderlijke bestanden definiëren.
 
 ## <a name="custom-error-pages"></a>Aangepaste foutpagina's
 
+> [!IMPORTANT]
+> De functionaliteit die is gedefinieerd in de *routes.jsvoor* het bestand is nu afgeschaft en beter geïmplementeerd in het statische web apps- [configuratie bestand](./configuration.md#routes)van Azure.
+
 Gebruikers kunnen een aantal verschillende situaties tegen komen die ertoe kunnen leiden dat er een fout optreedt. Met de `platformErrorOverrides` matrix kunt u een aangepaste ervaring bieden als reactie op deze fouten. Raadpleeg het [voor beeld-route bestand](#example-route-file) voor het plaatsen van de matrix in de _routes.jsin_ het bestand.
 
 > [!NOTE]
@@ -171,6 +195,9 @@ De volgende tabel bevat een overzicht van de beschik bare platform fout onderdru
 | `Unauthorized_Unknown` | 401 | Er is een onbekend probleem opgetreden bij het verifiëren van de gebruiker. Een oorzaak van deze fout is dat de gebruiker niet wordt herkend omdat deze geen toestemming voor de toepassing heeft verleend.|
 
 ## <a name="custom-mime-types"></a>Aangepaste MIME-typen
+
+> [!IMPORTANT]
+> De functionaliteit die is gedefinieerd in de *routes.jsvoor* het bestand is nu afgeschaft en beter geïmplementeerd in het statische web apps- [configuratie bestand](./configuration.md#routes)van Azure.
 
 `mimeTypes`Met het object, dat wordt weer gegeven op hetzelfde niveau als de `routes` matrix, kunt u [MIME-typen](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types) koppelen aan bestands extensies.
 
@@ -194,6 +221,9 @@ De volgende overwegingen zijn belang rijk bij het werken met MIME-typen:
 > Statische Web Apps begrijpt razendsnelle toepassingen en de verwachte MIME-typen voor de WASM-en DLL-bestanden, maar u hoeft geen toewijzingen voor die gebruikers toe te voegen.
 
 ## <a name="default-headers"></a>Standaard headers
+
+> [!IMPORTANT]
+> De functionaliteit die is gedefinieerd in de *routes.jsvoor* het bestand is nu afgeschaft en beter geïmplementeerd in het statische web apps- [configuratie bestand](./configuration.md#routes)van Azure.
 
 Het- `defaultHeaders` object, dat wordt weer gegeven op hetzelfde niveau als de `routes` matrix, biedt u de mogelijkheid om [antwoord headers](https://developer.mozilla.org/docs/Web/HTTP/Headers)toe te voegen, te wijzigen of te verwijderen.
 
@@ -221,6 +251,9 @@ De volgende overwegingen zijn belang rijk bij het werken met kopteksten:
 - De in _routes.js_ gedefinieerde kopteksten gelden alleen voor statische inhoud. U kunt antwoord headers van een API-eind punt aanpassen in de code van de functie.
 
 ## <a name="example-route-file"></a>Voor beeld van een route bestand
+
+> [!IMPORTANT]
+> De functionaliteit die is gedefinieerd in de *routes.jsvoor* het bestand is nu afgeschaft en beter geïmplementeerd in het statische web apps- [configuratie bestand](./configuration.md#routes)van Azure.
 
 In het volgende voor beeld ziet u hoe u route regels voor statische inhoud en Api's maakt in een _routes.jsin_ het bestand. Sommige routes gebruiken de [systeemmap _/.auth_](authentication-authorization.md) die toegang heeft tot de authenticatie-gerelateerde eind punten.
 

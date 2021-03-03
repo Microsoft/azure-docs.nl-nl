@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
-ms.openlocfilehash: c37693bc6c9ce1cc5fed6c06ecb7fe628c315176
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: f5855d7ab1f7ba8e11334f1373fb10166f47003a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100573581"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708251"
 ---
 # <a name="deploy-azure-monitor"></a>Azure Monitor implementeren
 Het inschakelen van Azure Monitor voor het bewaken van al uw Azure-resources is een combi natie van het configureren van Azure Monitor onderdelen en het configureren van Azure-resources voor het genereren van bewakings gegevens voor Azure Monitor voor het verzamelen van In dit artikel worden de verschillende stappen beschreven die nodig zijn voor een volledige implementatie van Azure Monitor met behulp van een gemeen schappelijke configuratie om alle resources in uw Azure-abonnement te controleren. De basis beschrijvingen voor elke stap worden verstrekt met koppelingen naar andere documentatie voor gedetailleerde configuratie vereisten.
@@ -22,7 +22,7 @@ Het inschakelen van Azure Monitor voor het bewaken van al uw Azure-resources is 
 ## <a name="configuration-goals"></a>Configuratie doelen
 Het doel van een volledige implementatie van Azure Monitor is het verzamelen van alle beschik bare gegevens van al uw cloud resources en-toepassingen en zo veel mogelijk functies in Azure Monitor op basis van die gegevens.
 
-De gegevens die door Azure Monitor worden verzameld, worden verzonden naar [Azure monitor metrieken](essentials/data-platform-metrics.md) of [Azure monitor logboeken](logs/data-platform-logs.md). Er worden verschillende soorten gegevens opgeslagen en verschillende soorten analyse en waarschuwingen. Zie [Azure monitor metrische gegevens en logboeken vergelijken](/data-platform.md) voor een vergelijking van de twee en [overzicht van waarschuwingen in Microsoft Azure](alerts/alerts-overview.md) voor een beschrijving van verschillende waarschuwings typen. 
+De gegevens die door Azure Monitor worden verzameld, worden verzonden naar [Azure monitor metrieken](essentials/data-platform-metrics.md) of [Azure monitor logboeken](logs/data-platform-logs.md). Er worden verschillende soorten gegevens opgeslagen en verschillende soorten analyse en waarschuwingen. Zie [Azure monitor metrische gegevens en logboeken vergelijken](data-platform.md) voor een vergelijking van de twee en [overzicht van waarschuwingen in Microsoft Azure](alerts/alerts-overview.md) voor een beschrijving van verschillende waarschuwings typen. 
 
 Sommige gegevens kunnen worden verzonden naar zowel metrieken als Logboeken om gebruik te maken van verschillende functies. In dergelijke gevallen moet u deze mogelijk afzonderlijk configureren. Metrische gegevens worden bijvoorbeeld automatisch verzonden door Azure-resources naar metrieken, die ondersteuning bieden voor Metrics Explorer en metrische waarschuwingen. U moet een diagnostische instelling voor elke resource maken om dezelfde metrische gegevens naar Logboeken te verzenden, waarmee u prestatie trends met andere logboek gegevens kunt analyseren met behulp van Log Analytics. In de volgende secties wordt aangegeven waar gegevens worden verzonden en wordt elke stap opgenomen die nodig is om gegevens te verzenden naar alle mogelijke locaties.
 
@@ -84,32 +84,32 @@ Zie [wat wordt bewaakt door Azure monitor?](monitor-reference.md) voor een lijst
 
 Virtuele machines genereren soort gelijke gegevens als andere Azure-resources, maar u hebt een agent nodig voor het verzamelen van gegevens van het gast besturingssysteem. Zie [overzicht van Azure monitor agents](agents/agents-overview.md) voor een vergelijking van de agents die worden gebruikt door Azure monitor. 
 
-[Azure monitor voor VM's](vm/vminsights-overview.md) gebruikt de log Analytics agent en de afhankelijkheids agent voor het verzamelen van gegevens van het gast besturingssysteem van virtuele machines, zodat u deze agents kunt implementeren als onderdeel van de implementatie van dit inzicht. Hiermee wordt de Log Analytics-agent ingeschakeld voor andere services die deze gebruiken, zoals Azure Security Center.
+[VM Insights](vm/vminsights-overview.md) maakt gebruik van de log Analytics agent en de afhankelijkheids agent voor het verzamelen van gegevens van het gast besturingssysteem van virtuele machines, zodat u deze agents kunt implementeren als onderdeel van de implementatie van dit inzicht. Hiermee wordt de Log Analytics-agent ingeschakeld voor andere services die deze gebruiken, zoals Azure Security Center.
 
 
 [![Azure VM ](media/deploy/deploy-azure-vm.png) implementeren](media/deploy/deploy-azure-vm.png#lightbox)
 
 
-### <a name="configure-workspace-for-azure-monitor-for-vms"></a>Werk ruimte configureren voor Azure Monitor voor VM's
-Voor Azure Monitor voor VM's is een Log Analytics-werk ruimte vereist die meestal hetzelfde is als het item dat is gemaakt voor het verzamelen van gegevens uit andere Azure-resources. Voordat u virtuele machines inschakelt, moet u de vereiste oplossing voor de Azure Monitor voor VM's toevoegen aan de werk ruimte.
+### <a name="configure-workspace-for-vm-insights"></a>Werk ruimte configureren voor VM Insights
+Voor VM-inzichten is een Log Analytics-werk ruimte vereist die normaal gesp roken hetzelfde is als het item dat is gemaakt voor het verzamelen van gegevens van andere Azure-resources. Voordat u virtuele machines inschakelt, moet u de oplossing toevoegen die vereist is voor de VM-inzichten in de werk ruimte.
 
-Zie [log Analytics-werk ruimte configureren voor Azure monitor voor VM's](vm/vminsights-configure-workspace.md) voor meer informatie over het configureren van uw log Analytics-werk ruimte voor Azure monitor voor VM's.
+Zie [log Analytics werkruimte configureren voor VM Insights](vm/vminsights-configure-workspace.md) voor meer informatie over het configureren van uw log Analytics-werk ruimte voor VM Insights.
 
-### <a name="enable-azure-monitor-for-vms-on-each-virtual-machine"></a>Azure Monitor voor VM's op elke virtuele machine inschakelen
-Zodra een werk ruimte is geconfigureerd, kunt u elke virtuele machine inschakelen door de Log Analytics agent en de afhankelijkheids agent te installeren. Er zijn meerdere methoden om deze agents te installeren, met inbegrip van Azure Policy waarmee u elke virtuele machine automatisch kunt configureren wanneer deze wordt gemaakt. Prestatie gegevens en proces gegevens die door Azure Monitor voor VM's worden verzameld, worden opgeslagen in Azure Monitor Logboeken.
+### <a name="enable-vm-insights-on-each-virtual-machine"></a>VM Insights op elke virtuele machine inschakelen
+Zodra een werk ruimte is geconfigureerd, kunt u elke virtuele machine inschakelen door de Log Analytics agent en de afhankelijkheids agent te installeren. Er zijn meerdere methoden om deze agents te installeren, met inbegrip van Azure Policy waarmee u elke virtuele machine automatisch kunt configureren wanneer deze wordt gemaakt. Prestatie gegevens en proces gegevens die door VM Insights worden verzameld, worden opgeslagen in Azure Monitor Logboeken.
 
-Zie [Azure monitor voor VM's overzicht inschakelen](vm/vminsights-enable-overview.md) voor opties om de agents op uw virtuele machines te implementeren en deze in te scha kelen voor bewaking.
+Zie [overzicht van VM Insights inschakelen](vm/vminsights-enable-overview.md) voor opties om de agents op uw virtuele machines te implementeren en deze in te scha kelen voor bewaking.
 
 ### <a name="configure-workspace-to-collect-events"></a>Werk ruimte configureren voor het verzamelen van gebeurtenissen
-Azure Monitor voor VM's verzamelt prestatie gegevens en de details en afhankelijkheden van processen van het gast besturingssysteem van elke virtuele machine. De Log Analytics-agent kan ook logboeken van de gast verzamelen, met inbegrip van het gebeurtenis logboek van Windows en syslog van Linux. De configuratie voor deze logboeken wordt opgehaald uit de Log Analytics werk ruimte waarmee deze is verbonden. U hoeft de werk ruimte slechts eenmaal te configureren en telkens wanneer een agent verbinding maakt, worden eventuele configuratie wijzigingen gedownload. 
+Met VM Insights worden prestatie gegevens en de details en afhankelijkheden van processen verzameld van het gast besturingssysteem van elke virtuele machine. De Log Analytics-agent kan ook logboeken van de gast verzamelen, met inbegrip van het gebeurtenis logboek van Windows en syslog van Linux. De configuratie voor deze logboeken wordt opgehaald uit de Log Analytics werk ruimte waarmee deze is verbonden. U hoeft de werk ruimte slechts eenmaal te configureren en telkens wanneer een agent verbinding maakt, worden eventuele configuratie wijzigingen gedownload. 
 
 Raadpleeg [agent-gegevens bronnen in azure monitor](agents/agent-data-sources.md) voor meer informatie over het configureren van uw log Analytics-werk ruimte voor het verzamelen van aanvullende gegevens van de virtuele machines van de agent.
 
 > [!NOTE]
-> U kunt de werk ruimte ook configureren voor het verzamelen van prestatie meter items, maar dit is waarschijnlijk redundant met de prestatie gegevens die worden verzameld door Azure Monitor voor VM's. De prestatie gegevens die door de werk ruimte worden verzameld, worden opgeslagen in de *prestatie* tabel en de prestatie gegevens die door Azure monitor voor VM's worden verzameld, worden opgeslagen in de tabel *InsightsMetrics* . Configureer de prestatie verzameling alleen in de werk ruimte als u items nodig hebt die niet al zijn verzameld door Azure Monitor voor VM's.
+> U kunt de werk ruimte ook configureren voor het verzamelen van prestatie meter items, maar dit is waarschijnlijk redundant met de prestatie gegevens die worden verzameld door VM Insights. De prestatie gegevens die door de werk ruimte worden verzameld, worden opgeslagen in de *prestatie* tabel en de prestatie gegevens die door de VM-inzichten worden verzameld, worden opgeslagen in de tabel *InsightsMetrics* . Configureer de prestatie verzameling alleen in de werk ruimte als u prestatie meter items nodig hebt die niet al zijn verzameld door VM Insights.
 
 ### <a name="diagnostic-extension-and-telegraf-agent"></a>Diagnostische uitbrei ding en telegrafie agent
-Azure Monitor voor VM's maakt gebruik van de Log Analytics-agent die prestatie gegevens naar een Log Analytics-werk ruimte verzendt, maar niet Azure Monitor meet waarden. Als u deze gegevens naar metrieken verzendt, kan deze worden geanalyseerd met Metrics Explorer en worden gebruikt met metrische waarschuwingen. Hiervoor is de diagnostische uitbrei ding voor Windows en de Telegraf-agent in Linux vereist.
+VM Insights maakt gebruik van de Log Analytics-agent waarmee prestatie gegevens worden verzonden naar een Log Analytics-werk ruimte, maar niet op Azure Monitor meet waarden. Als u deze gegevens naar metrieken verzendt, kan deze worden geanalyseerd met Metrics Explorer en worden gebruikt met metrische waarschuwingen. Hiervoor is de diagnostische uitbrei ding voor Windows en de Telegraf-agent in Linux vereist.
 
 Zie de [Windows Azure Diagnostics-extensie (WAD) installeren en configureren](agents/diagnostics-extension-windows-install.md) en [aangepaste metrische gegevens voor een virtuele Linux-machine met de InfluxData-telegrafie-agent verzamelen](essentials/collect-custom-metrics-linux-telegraf.md) voor meer informatie over het installeren en configureren van deze agents.
 

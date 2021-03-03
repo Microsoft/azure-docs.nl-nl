@@ -1,17 +1,16 @@
 ---
 title: Azure Diagnostics extensie voor problemen oplossen
 description: Los problemen op bij het gebruik van Azure Diagnostics in azure Virtual Machines, Service Fabric of Cloud Services.
-ms.subservice: diagnostic-extension
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/08/2019
-ms.openlocfilehash: de42a70cf2950aca3dbe151407671306c793ed10
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 431b19595fbe2f5bc1f989e712c9c104af8e839b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610701"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711515"
 ---
 # <a name="azure-diagnostics-troubleshooting"></a>Probleemoplossing met Azure Diagnostics
 In dit artikel vindt u informatie over het oplossen van problemen die relevant zijn voor het gebruik van Azure Diagnostics. Zie [Azure Diagnostics Overview](diagnostics-extension-overview.md)voor meer informatie over Azure Diagnostics.

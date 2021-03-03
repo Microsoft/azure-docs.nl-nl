@@ -2,13 +2,13 @@
 title: Diagnostische logboeken instellen-Azure Event hub | Microsoft Docs
 description: Meer informatie over het instellen van activiteiten logboeken en Diagnostische logboeken voor Event hubs in Azure.
 ms.topic: article
-ms.date: 10/27/2020
-ms.openlocfilehash: dc5cbea31583a4e8126897b2dcda63b216438e1b
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.date: 02/25/2021
+ms.openlocfilehash: 538ff86f1ef4c06bb5400af3fbd2394134aa17f3
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100573176"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101742531"
 ---
 # <a name="set-up-diagnostic-logs-for-an-azure-event-hub"></a>Diagnostische logboeken instellen voor een Azure Event Hub
 
@@ -207,7 +207,7 @@ De JSON-verbindings gebeurtenis van het Event Hubs virtuele netwerk (VNet) bevat
 | `Count` | Aantal exemplaren voor de opgegeven actie |
 | `ResourceId` | Azure Resource Manager-resource-id. |
 
-Virtuele netwerk logboeken worden alleen gegenereerd als de naam ruimte toegang toestaat vanuit **geselecteerde netwerken** of van **specifieke IP-adressen** (IP-filter regels). Als u de toegang tot uw naam ruimte niet wilt beperken met behulp van deze functies en toch virtuele netwerk logboeken wilt ophalen om IP-adressen te volgen van clients die verbinding maken met de naam ruimte Event Hubs, kunt u de volgende tijdelijke oplossing gebruiken. Schakel IP-filtering in en voeg het totale adresseer bare IPv4-bereik toe (1.0.0.0/1-255.0.0.0/1). Event Hubs biedt geen ondersteuning voor IPv6-bereiken. 
+Virtuele netwerk logboeken worden alleen gegenereerd als de naam ruimte toegang toestaat vanuit **geselecteerde netwerken** of van **specifieke IP-adressen** (IP-filter regels). Als u de toegang tot uw naam ruimte niet wilt beperken met behulp van deze functies en toch virtuele netwerk logboeken wilt ophalen om IP-adressen te volgen van clients die verbinding maken met de naam ruimte Event Hubs, kunt u de volgende tijdelijke oplossing gebruiken. [Schakel IP-filtering in](event-hubs-ip-filtering.md)en voeg het totale adresseer bare IPv4-bereik toe (1.0.0.0/1-255.0.0.0/1). Event Hubs IP-filtering biedt geen ondersteuning voor IPv6-bereiken. Houd er rekening mee dat u privé-eindpunt adressen in de IPv6-indeling kunt zien in het logboek. 
 
 ### <a name="example"></a>Voorbeeld
 

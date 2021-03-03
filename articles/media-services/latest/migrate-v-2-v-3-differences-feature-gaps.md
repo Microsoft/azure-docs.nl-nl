@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: 2fa827bc2841a0bae4c9646c8a70e42dc2b500e3
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: f77a41a172bc868ad056d74d018b50f734286f0f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98898406"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101702450"
 ---
 # <a name="feature-gaps-between-azure-media-services-v2-and-v3"></a>Hiaten tussen onderdelen tussen Azure Media Services v2 en v3
 
@@ -42,7 +42,7 @@ De V3 API heeft de volgende functie hiaten met de v2 API. Een aantal geavanceerd
     - Er is ondersteuning toegevoegd voor audio kanaal toewijzing aan de standaard encoder.  Zie [Audio in de Media Services code ring Swagger-documentatie](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2020-05-01/Encoding.json).
     - Als u geavanceerde functies of uitvoer indelingen van het gelicentieerde product van derden gebruikt, zoals MXF of ProRes, gebruikt u de Azure-partner oplossing van Telestream, die transactioneel is op het moment dat de v2 buiten gebruik wordt gesteld. U kunt er ook Voorst Ellen communicatie of [Bitmovin](http://bitmovin.com)gebruiken.
 
-- De eigenschap Availability set van het streaming-eind punt in v2 wordt niet meer ondersteund. Bekijk het voorbeeld project en richt lijnen voor VOD-levering met [hoge Beschik baarheid](https://docs.microsoft.com/azure/media-services/latest/media-services-high-availability-encoding) in de V3 API.
+- De eigenschap Availability set van het streaming-eind punt in v2 wordt niet meer ondersteund. Bekijk het voorbeeld project en richt lijnen voor VOD-levering met [hoge Beschik baarheid](./media-services-high-availability-encoding.md) in de V3 API.
 
 - In Media Services v3 kan FairPlay IV niet worden opgegeven. Hoewel dit geen invloed heeft op klanten die Media Services gebruiken voor zowel verpakking als licentie levering, kan het een probleem zijn bij het gebruik van een DRM-systeem van derden voor het leveren van de FairPlay-licenties (hybride modus).
 

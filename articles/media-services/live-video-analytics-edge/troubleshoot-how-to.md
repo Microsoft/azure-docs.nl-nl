@@ -5,12 +5,12 @@ author: IngridAtMicrosoft
 ms.topic: how-to
 ms.author: inhenkel
 ms.date: 12/04/2020
-ms.openlocfilehash: ee5ae7ca8b52d44f21c35df23ef92f61d38fc3c3
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: d766843f58bc2cdd0dcdddfad337b23fefb28768
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99051292"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101698736"
 ---
 # <a name="troubleshoot-live-video-analytics-on-iot-edge"></a>Problemen met live video Analytics op IoT Edge oplossen
 
@@ -105,7 +105,7 @@ U kunt ook problemen ondervinden bij het uitvoeren van het **[installatie script
 * **De sjabloon implementatie is mislukt vanwege een overtreding van het beleid.**
     * Als u dit probleem wilt verhelpen, moet u samen werken met uw IT-beheerder om ervoor te zorgen dat de aanroep (s) voor het maken van de virtuele machine het blok keren van SSH-verificatie overs Laan Dit is niet nodig omdat we een beveiligd Bastion-netwerk gebruiken waarvoor een gebruikers naam en wacht woord zijn vereist om te kunnen communiceren met de Azure-resources. Deze referenties worden opgeslagen in het bestand **~/clouddrive/lva-sample/vm-edge-device-credentials.txt** in Cloud shell, nadat de virtuele machine is gemaakt, geïmplementeerd en gekoppeld aan de IOT hub.
 * Het installatie script kan geen Service-Principal en/of Azure-resources maken.
-    * Als u dit probleem wilt verhelpen, moet u controleren of uw abonnement en de Azure-Tenant hun maximum service limiet niet hebben bereikt. Meer informatie over [Azure AD-service limieten en-beperkingen](https://docs.microsoft.com/azure/active-directory/enterprise-users/directory-service-limits-restrictions) en [limieten, quota's en beperkingen voor Azure-abonnementen en services.](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits)
+    * Als u dit probleem wilt verhelpen, moet u controleren of uw abonnement en de Azure-Tenant hun maximum service limiet niet hebben bereikt. Meer informatie over [Azure AD-service limieten en-beperkingen](../../active-directory/enterprise-users/directory-service-limits-restrictions.md) en [limieten, quota's en beperkingen voor Azure-abonnementen en services.](../../azure-resource-manager/management/azure-subscription-service-limits.md)
 
 > [!TIP]
 > Als er bijkomende problemen zijn die u mogelijk nodig hebt, kunt u **[Logboeken verzamelen en een ondersteunings ticket indienen](#collect-logs-for-submitting-a-support-ticket)**. U kunt ook contact met ons opnemen door ons een e-mail te sturen op **[amshelp@microsoft.com](mailto:amshelp@microsoft.com)** .

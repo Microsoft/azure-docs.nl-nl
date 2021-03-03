@@ -9,12 +9,12 @@ ms.subservice: computer-vision
 ms.topic: include
 ms.date: 12/15/2020
 ms.author: pafarley
-ms.openlocfilehash: 7f1fe99cab46f8d3b87a5c1ef8397cf5f305b11c
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 2ae65cc8799fd507952120129ecef83655a465b7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98947899"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750770"
 ---
 <a name="HOLTop"></a>
 
@@ -68,7 +68,7 @@ Maak dan variabelen voor het Azure-eindpunt en de Azure-sleutel voor uw resource
 > Vergeet niet de sleutel uit uw code te verwijderen wanneer u klaar bent, en plaats deze sleutel nooit in het openbaar. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Bijvoorbeeld [Azure Key Vault](../../../../key-vault/general/overview.md).
 
 > [!div class="nextstepaction"]
-> [Ik heb de client ingesteld](?success=set-up-client#object-model) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=set-up-client)
+> [Ik heb de client ingesteld](?success=set-up-client#object-model) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Python&Section=set-up-client)
 
 ## <a name="object-model"></a>Objectmodel
 
@@ -95,7 +95,7 @@ Instantieer een client met uw eindpunt en sleutel. Maak een [CognitiveServicesCr
 [!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_client)]
 
 > [!div class="nextstepaction"]
-> [Ik heb de client geverifieerd](?success=authenticate-client#analyze-an-image) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=authenticate-client)
+> [Ik heb de client geverifieerd](?success=authenticate-client#analyze-an-image) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Python&Section=authenticate-client)
 
 ## <a name="analyze-an-image"></a>Een afbeelding analyseren
 
@@ -173,7 +173,7 @@ Met de volgende code wordt informatie over het type afbeelding afgedrukt&mdash;,
 [!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_type)]
 
 > [!div class="nextstepaction"]
-> [Ik heb een afbeelding geanalyseerd](?success=analyze-image#read-printed-and-handwritten-text) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=analyze-image)
+> [Ik heb een afbeelding geanalyseerd](?success=analyze-image#read-printed-and-handwritten-text) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Python&Section=analyze-image)
 
 ## <a name="read-printed-and-handwritten-text"></a>Afgedrukte en handgeschreven tekst lezen
 
@@ -195,7 +195,7 @@ Vervolgens haalt u de bewerkings-id op die wordt geretourneerd vanaf de **read**
 [!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_read_response)]
 
 > [!div class="nextstepaction"]
-> [Ik heb tekst gelezen](?success=read-printed-handwritten-text#run-the-application) [Er is een fout opgetreden](https://www.research.net/r/7QYZKHL?issue=read-printed-handwritten-text)
+> [Ik heb tekst gelezen](?success=read-printed-handwritten-text#run-the-application) [Er is een fout opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Python&Section=read-printed-handwritten-text)
 
 ## <a name="run-the-application"></a>De toepassing uitvoeren
 
@@ -206,7 +206,7 @@ python quickstart-file.py
 ```
 
 > [!div class="nextstepaction"]
-> [Ik heb de toepassing uitgevoerd](?success=run-the-application#clean-up-resources) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=run-the-application)
+> [Ik heb de toepassing uitgevoerd](?success=run-the-application#clean-up-resources) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Python&Section=run-the-application)
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -216,7 +216,7 @@ Als u een Cognitive Services-abonnement wilt opschonen en verwijderen, kunt u de
 * [Azure-CLI](../../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
 > [!div class="nextstepaction"]
-> [Ik heb resources opgeschoond](?success=clean-up-resources#next-steps) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=clean-up-resources)
+> [Ik heb resources opgeschoond](?success=clean-up-resources#next-steps) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Python&Section=clean-up-resources)
 
 ## <a name="next-steps"></a>Volgende stappen
 

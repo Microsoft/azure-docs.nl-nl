@@ -7,12 +7,12 @@ ms.date: 08/25/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 97dc0fe5a3720a41dd63583c222762d832d636ea
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 933ddfb5fa5d58231e954dfd54bcc069b53dfe56
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96436994"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101721487"
 ---
 # <a name="create-a-cicd-pipeline-for-iot-edge-with-azure-devops-starter"></a>Een CI/CD-pijp lijn maken voor IoT Edge met Azure DevOps starter
 
@@ -29,6 +29,16 @@ In DevOps Starter wordt een CI/CD-pijplijn gemaakt in Azure DevOps. U kunt een n
 1. Selecteer in het linkerdeel venster **een resource maken** en zoek naar **DevOps starter**.  
 
 1. Selecteer **Maken**.
+
+1. Standaard is de DevOps starter ingesteld met GitHub. Als u gebruik wilt maken van de functies in deze How-to, schakelt u de DevOps starter in op instellen met behulp van Azure DevOps. Volg de koppeling **instellingen wijzigen hier** .
+
+   ![Selecteer instellingen hier wijzigen om over te scha kelen van GitHub naar Azure DevOps](./media/how-to-devops-starter/create-with-github-change-settings.png)
+
+1. Kies in het rechterdeel venster de tegel **Azure DevOps** en selecteer **gereed**.
+
+   ![Selecteer Azure DevOps om uw DevOps starter in te stellen](./media/how-to-devops-starter/select-azure-devops.png)
+
+   U ziet nu dat de DevOps Starter wordt ingesteld met Azure DevOps.
 
 ## <a name="create-a-new-application-pipeline"></a>Een nieuwe toepassings pijplijn maken
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/22/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 0f705aa61f1fe627dc0c8227242538e01ffce1d5
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: e61d2ff3807b65022d72414615af9fa729359358
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99070828"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101715714"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-portal"></a>Eind punten en routes beheren in azure Digital Apparaatdubbels (Portal)
 
@@ -76,7 +76,7 @@ Zodra u de eindpunt resources hebt gemaakt, kunt u deze gebruiken voor een Azure
 1. Het maken van het eind punt volt ooien door _Opslaan_ te selecteren.
 
 >[!IMPORTANT]
-> Als u verificatie op basis van identiteit voor uw eind punt wilt gebruiken, moet u een beheerde identiteit voor uw exemplaar maken door de stappen in [*How to: een beheerde identiteit inschakelen voor routerings gebeurtenissen (preview)*](how-to-enable-managed-identities.md).
+> Als u verificatie op basis van identiteit voor uw eind punt wilt gebruiken, moet u een beheerde identiteit voor uw exemplaar maken door de stappen in [*How to: een beheerde identiteit inschakelen voor routerings gebeurtenissen (preview)*](./how-to-enable-managed-identities-portal.md).
 
 Na het maken van het eind punt kunt u controleren of het eind punt is gemaakt door het meldings pictogram in de bovenste Azure Portal balk te controleren: 
 

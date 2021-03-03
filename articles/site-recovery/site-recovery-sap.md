@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: how-to
 ms.date: 11/27/2018
-ms.openlocfilehash: 69f0a20bdcba23d947e3d1b573c1a359da245161
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: e639762cd1adb7bbbc3fb2ec31f4ce52710e46f9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369417"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711940"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-sap-netweaver-app-deployment"></a>Herstel na nood geval instellen voor een implementatie van SAP NetWeaver met meerdere lagen
 
@@ -119,7 +119,7 @@ Als u de virtuele machines van de SAP-toepassing wilt repliceren naar het Azure 
 
 ## <a name="networking-configuration"></a>Netwerkconfiguratie
 
-Als u een statisch IP-adres gebruikt, kunt u het IP-adres opgeven dat u wilt dat de virtuele machine moet overnemen. Als u het IP-adres wilt instellen **Compute and Network settings**, gaat u naar de  >  **netwerk interface kaart**reken-en netwerk instellingen.
+Als u een statisch IP-adres gebruikt, kunt u het IP-adres opgeven dat u wilt dat de virtuele machine moet overnemen. Als u het IP-adres wilt instellen , gaat u naar de  >  **netwerk interface kaart** reken-en netwerk instellingen.
 
 ![Scherm afbeelding van het instellen van een privé-IP-adres in het deel venster Site Recovery netwerk interface kaart](./media/site-recovery-sap/sap-static-ip.png)
 
@@ -136,7 +136,7 @@ Een herstel plan ondersteunt het sequentiëren van verschillende lagen in een to
 ### <a name="add-scripts-to-the-recovery-plan"></a>Scripts toevoegen aan het herstel plan
 Voor een goede werking van uw toepassingen moet u mogelijk bepaalde bewerkingen uitvoeren op de virtuele machines van Azure. Voer deze bewerkingen uit na de failover of tijdens een testfailover. U kunt ook na failover-bewerkingen automatiseren. U kunt de DNS-vermelding bijvoorbeeld bijwerken en de bindingen en verbindingen wijzigen door de bijbehorende scripts toe te voegen aan het herstel plan.
 
-U kunt de meest gebruikte Site Recovery scripts implementeren in uw Azure Automation-account door **implementeren naar Azure**te selecteren. Wanneer u een gepubliceerd script gebruikt, volgt u de instructies in het script.
+U kunt de meest gebruikte Site Recovery scripts implementeren in uw Azure Automation-account door **implementeren naar Azure** te selecteren. Wanneer u een gepubliceerd script gebruikt, volgt u de instructies in het script.
 
 [![Implementeren in Azure](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/c4803408-340e-49e3-9a1f-0ed3f689813d.png)](https://aka.ms/asr-automationrunbooks-deploy)
 
@@ -153,7 +153,7 @@ U kunt de meest gebruikte Site Recovery scripts implementeren in uw Azure Automa
 1. Selecteer **Failover testen**.
 1. Als u het proces testfailover wilt starten, selecteert u het herstel punt en het virtuele Azure-netwerk.
 1. Voer validaties uit wanneer de secundaire omgeving actief is.
-1. Wanneer validaties zijn voltooid, reinigt u de failover-omgeving door testfailover **opschonen**te selecteren.
+1. Wanneer validaties zijn voltooid, reinigt u de failover-omgeving door testfailover **opschonen** te selecteren.
 
 Zie [failover testen naar Azure in site Recovery](site-recovery-test-failover-to-azure.md)voor meer informatie.
 
@@ -167,5 +167,5 @@ Zie [failover testen naar Azure in site Recovery](site-recovery-test-failover-to
 Zie [failover in site Recovery](site-recovery-failover.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over het bouwen van een oplossing voor herstel na nood gevallen voor SAP NetWeaver-implementaties met behulp van Site Recovery. Zie het Download bare White paper [SAP NetWeaver: een oplossing voor herstel na nood gevallen bouwen met site Recovery](https://aka.ms/asr_sap). In het technisch document worden aanbevelingen besproken voor diverse SAP-architecturen. U kunt ondersteunde toepassingen en VM-typen weer geven voor SAP on Azure. Er zijn ook opties voor het plannen van uw oplossing voor herstel na nood gevallen.
+* Meer informatie over het bouwen van een oplossing voor herstel na nood gevallen voor SAP NetWeaver-implementaties met behulp van Site Recovery. Zie het Download bare White paper [SAP NetWeaver: een oplossing voor herstel na nood gevallen bouwen met site Recovery](/samples/browse/?redirectedfrom=TechNet-Gallery). In het technisch document worden aanbevelingen besproken voor diverse SAP-architecturen. U kunt ondersteunde toepassingen en VM-typen weer geven voor SAP on Azure. Er zijn ook opties voor het plannen van uw oplossing voor herstel na nood gevallen.
 * Meer informatie over het [repliceren van andere werk belastingen](site-recovery-workload.md) met behulp van site Recovery.

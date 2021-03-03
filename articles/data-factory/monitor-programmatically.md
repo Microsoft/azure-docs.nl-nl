@@ -7,12 +7,12 @@ ms.date: 01/16/2018
 author: dcstwh
 ms.author: weetok
 ms.custom: devx-track-python
-ms.openlocfilehash: 038da033c2bdf78a0a2547cc713944bc11bf093d
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 6c913c7c623c77baea0c575d06d2c44709af43fa
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100379893"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101740434"
 ---
 # <a name="programmatically-monitor-an-azure-data-factory"></a>Een Azure-data factory programmatisch bewaken
 
@@ -30,7 +30,7 @@ Als u de gegevens van de pijp lijn langer dan 45 dagen wilt gebruiken, stelt u u
 
 ## <a name="pipeline-run-information"></a>Informatie over pijplijn uitvoering
 
-Raadpleeg de [PIPELINERUN API-naslag informatie](https://docs.microsoft.com/rest/api/datafactory/pipelineruns/get#pipelinerun)voor de eigenschappen van de pijplijn uitvoering. Een pijplijn uitvoering heeft een andere status tijdens de levens cyclus, de mogelijke waarden van de uitvoerings status worden hieronder weer gegeven:
+Raadpleeg de [PIPELINERUN API-naslag informatie](/rest/api/datafactory/pipelineruns/get#pipelinerun)voor de eigenschappen van de pijplijn uitvoering. Een pijplijn uitvoering heeft een andere status tijdens de levens cyclus, de mogelijke waarden van de uitvoerings status worden hieronder weer gegeven:
 
 * In wachtrij
 * InProgress
@@ -163,5 +163,4 @@ Zie [een Data Factory en pijp lijn maken met behulp van Power shell](quickstart-
 Zie [Data Factory Power shell-cmdlet-Naslag informatie](/powershell/module/az.datafactory)voor volledige documentatie over Power shell-cmdlets.
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie [pijp lijnen bewaken met behulp van Azure monitor](monitor-using-azure-monitor.md) artikel voor meer informatie over het gebruik van Azure Monitor om Data Factory pijp lijnen te bewaken. 
-
+Zie [pijp lijnen bewaken met behulp van Azure monitor](monitor-using-azure-monitor.md) artikel voor meer informatie over het gebruik van Azure Monitor om Data Factory pijp lijnen te bewaken.

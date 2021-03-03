@@ -4,15 +4,15 @@ description: Meer informatie over het maken van een actie groep met behulp van e
 author: dkamstra
 services: azure-monitor
 ms.topic: conceptual
-ms.date: 02/16/2018
+ms.date: 02/19/2021
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: 2275ea059b762e81330d3e6150c563e18a64b554
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 978372481513f3d68fdc587ccc1148976640bc80
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609705"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101729127"
 ---
 # <a name="create-an-action-group-with-a-resource-manager-template"></a>Een actie groep maken met een resource manager-sjabloon
 In dit artikel wordt beschreven hoe u een [Azure Resource Manager sjabloon](../../azure-resource-manager/templates/template-syntax.md) gebruikt om actie groepen te configureren. Met behulp van sjablonen kunt u automatisch actie groepen instellen die opnieuw kunnen worden gebruikt in bepaalde typen waarschuwingen. Deze actie groepen zorgen ervoor dat alle juiste partijen worden gewaarschuwd wanneer een waarschuwing wordt geactiveerd.
@@ -50,7 +50,7 @@ Eerste sjabloon, wordt beschreven hoe u een resource manager-sjabloon maakt voor
   "resources": [
     {
       "type": "Microsoft.Insights/actionGroups",
-      "apiVersion": "2018-03-01",
+      "apiVersion": "2019-03-01",
       "name": "[parameters('actionGroupName')]",
       "location": "Global",
       "properties": {
@@ -71,21 +71,26 @@ Eerste sjabloon, wordt beschreven hoe u een resource manager-sjabloon maakt voor
         "emailReceivers": [
           {
             "name": "contosoEmail",
-            "emailAddress": "devops@contoso.com"
+            "emailAddress": "devops@contoso.com",
+            "useCommonAlertSchema": true
+
           },
           {
             "name": "contosoEmail2",
-            "emailAddress": "devops2@contoso.com"
+            "emailAddress": "devops2@contoso.com",
+            "useCommonAlertSchema": true
           }
         ],
         "webhookReceivers": [
           {
             "name": "contosoHook",
-            "serviceUri": "http://requestb.in/1bq62iu1"
+            "serviceUri": "http://requestb.in/1bq62iu1",
+            "useCommonAlertSchema": true
           },
           {
             "name": "contosoHook2",
-            "serviceUri": "http://requestb.in/1bq62iu2"
+            "serviceUri": "http://requestb.in/1bq62iu2",
+            "useCommonAlertSchema": true
           }
         ]
       }
@@ -133,7 +138,7 @@ Eerste sjabloon, wordt beschreven hoe u een resource manager-sjabloon maakt voor
   "resources": [
     {
       "type": "Microsoft.Insights/actionGroups",
-      "apiVersion": "2018-03-01",
+      "apiVersion": "2019-03-01",
       "name": "[parameters('actionGroupName')]",
       "location": "Global",
       "properties": {
@@ -146,7 +151,8 @@ Eerste sjabloon, wordt beschreven hoe u een resource manager-sjabloon maakt voor
         "webhookReceivers": [
           {
             "name": "[parameters('webhookReceiverName')]",
-            "serviceUri": "[parameters('webhookServiceUri')]"
+            "serviceUri": "[parameters('webhookServiceUri')]",
+            "useCommonAlertSchema": true
           }
         ]
       }
@@ -163,7 +169,6 @@ Eerste sjabloon, wordt beschreven hoe u een resource manager-sjabloon maakt voor
 
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over [actiegroepen](../platform/action-groups.md).
-* Meer informatie over [waarschuwingen](../platform/alerts-overview.md).
-* Meer informatie over het toevoegen [van waarschuwingen met behulp van een resource manager-sjabloon](../platform/alerts-activity-log.md).
-
+* Meer informatie over [actiegroepen](./action-groups.md).
+* Meer informatie over [waarschuwingen](./alerts-overview.md).
+* Meer informatie over het toevoegen [van waarschuwingen met behulp van een resource manager-sjabloon](./alerts-activity-log.md).

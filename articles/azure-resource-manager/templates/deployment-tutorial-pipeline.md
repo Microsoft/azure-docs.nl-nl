@@ -1,15 +1,15 @@
 ---
 title: Continue integratie met Azure-pijplijnen
 description: Meer informatie over het continu bouwen, testen en implementeren van ARM-sjablonen (Azure Resource Manager).
-ms.date: 02/16/2021
+ms.date: 03/02/2021
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: d367da33d6b9997d77606e9a77a961808d66ff99
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 3ff98c1c033c6da4b6bdf40c3b8ecb3347601741
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100560903"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101722795"
 ---
 # <a name="tutorial-continuous-integration-of-arm-templates-with-azure-pipelines"></a>Zelfstudie: Continue integratie van ARM-sjablonen met Azure Pipelines
 
@@ -83,8 +83,8 @@ De map _CreateWebApp_ is de map waarin de sjabloon is opgeslagen. Met de opdrach
 
 In plaats van de sjablonen te maken, kunt u de sjablonen downloaden en opslaan in de map _CreateWebApp_.
 
-* De hoofdsjabloon: https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-deployment/pipeline/azuredeploy.json
-* De gekoppelde sjabloon: https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-deployment/pipeline/linkedStorageAccount.json
+* De hoofdsjabloon: https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-deployment/linked-template/azuredeploy.json
+* De gekoppelde sjabloon: https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-deployment/linked-template/linkedStorageAccount.json
 
 Zowel de mapnaam als de bestandsnamen worden gebruikt zoals ze zijn in de pijplijn. Als u deze namen wijzigt, moet u de namen die worden gebruikt in de pijplijn bijwerken.
 
@@ -106,7 +106,7 @@ Het bestand _azuredeploy.json_ is toegevoegd aan de lokale opslagplaats. Vervolg
     Er kan een waarschuwing over LF worden weergegeven. U kunt de waarschuwing negeren. **Hoofd** is de hoofdvertakking.  Doorgaans maakt u een branch (vertakking) voor elke update. Om de zelfstudie te vereenvoudigen gebruikt u de hoofdvertakking rechtstreeks.
 
 1. Blader in een browser naar uw GitHub-opslagplaats. De URL is `https://github.com/[YourAccountName]/[YourGitHubRepository]`. De map _CreateWebApp_ en de twee bestanden in de map worden weer geven.
-1. Selecteer _linkedStorageAccount.json_ om de sjabloon te openen.
+1. Selecteer _azuredeploy.jsin_ om de sjabloon te openen.
 1. Selecteer de knop **Raw** (Onbewerkt). De URL begint met `https://raw.githubusercontent.com`.
 1. Maak een kopie van de URL. U moet deze waarde opgeven wanneer u de pijplijn verderop in de zelfstudie configureert.
 
@@ -174,10 +174,10 @@ Een pijplijn maken met een stap voor het implementeren van een sjabloon:
     * **Actie**: Als u **Resourcegroep maken of bijwerken** selecteert, worden er twee acties uitgevoerd. 1: er wordt een resourcegroep gemaakt als u een nieuwe resourcegroepsnaam opgeeft. 2: de opgegeven sjabloon wordt geïmplementeerd.
     * **Resourcegroep**: Voer een nieuwe resourcegroepsnaam in. Bijvoorbeeld: **AzureRmPipeline-rg**.
     * **Locatie**: Selecteer een locatie voor de resourcegroep, bijvoorbeeld **VS - centraal**.
-    * **Sjabloonlocatie**: Selecteer **Gekoppelde artefact**. Dit betekent dat er rechtstreeks naar het sjabloonbestand wordt gezocht in de verbonden opslagplaats.
-    * **Sjabloon**: Voer _CreateWebApp/azuredeploy.json_ in. Als u de mapnaam en de bestandsnaam hebt gewijzigd, moet u deze waarde wijzigen.
-    * **Sjabloonparameters**: Laat dit veld leeg. U geeft de parameterwaarden op in de parameters voor het **Overschrijven van de sjabloon**.
-    * **Sjabloonparameters overschrijven**: Voer `-projectName [EnterAProjectName] -linkedTemplateUri [EnterTheLinkedTemplateURL]` in. Vervang de projectnaam en de URL van de gekoppelde sjabloon. De URL van de gekoppelde sjabloon is wat u hebt geschreven aan het einde van [Een GitHub-opslagplaats maken](#create-a-github-repository). Begint met `https://raw.githubusercontent.com` .
+    * **Locatie van sjabloon**: Selecteer de **URL van het bestand**, wat betekent dat de taak zoekt naar het sjabloon bestand met behulp van de URL. Omdat _relativePath_ wordt gebruikt in de hoofd sjabloon en _relativePath_ alleen wordt ondersteund voor implementaties op basis van een URI, moet u hier URL gebruiken.
+    * **Sjabloon koppeling**: Voer de URL in die u aan het einde van de sectie [een github-opslag plaats](#prepare-a-github-repository) hebt opgegeven. Begint met `https://raw.githubusercontent.com` .
+    * **Koppeling sjabloon parameters**: laat dit veld leeg. U geeft de parameterwaarden op in de parameters voor het **Overschrijven van de sjabloon**.
+    * **Sjabloonparameters overschrijven**: Voer `-projectName [EnterAProjectName]` in.
     * **Implementatiemodus**: Selecteer **Incrementeel**.
     * **Naam van implementatie**: Voer **DeployPipelineTemplate** in. U moet **Geavanceerd** selecteren om **Naam van implementatie** weer te geven.
 

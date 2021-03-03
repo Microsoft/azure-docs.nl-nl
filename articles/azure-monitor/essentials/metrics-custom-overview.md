@@ -7,16 +7,16 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 01/25/2021
 ms.subservice: metrics
-ms.openlocfilehash: 9fba5b7636bcef68b55528350ea63ce9d386bb16
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: b1e61d0b8eb8312c78acabbd087208bb64a2d0d1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609832"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734448"
 ---
 # <a name="custom-metrics-in-azure-monitor-preview"></a>Aangepaste metrische gegevens in Azure Monitor (preview-versie)
 
-Wanneer u resources en toepassingen in azure implementeert, kunt u beginnen met het verzamelen van telemetrie om inzicht te krijgen in de prestaties en de status. In azure zijn enkele metrische gegevens voor u beschikbaar. Deze metrische gegevens worden [Standard of platform](../platform/metrics-supported.md)genoemd. Ze zijn echter beperkt. 
+Wanneer u resources en toepassingen in azure implementeert, kunt u beginnen met het verzamelen van telemetrie om inzicht te krijgen in de prestaties en de status. In azure zijn enkele metrische gegevens voor u beschikbaar. Deze metrische gegevens worden [Standard of platform](./metrics-supported.md)genoemd. Ze zijn echter beperkt. 
 
 Mogelijk wilt u een aantal aangepaste prestatie-indica toren of bedrijfsspecifieke metrische gegevens verzamelen om meer inzicht te krijgen. Deze **aangepaste** metrische gegevens kunnen worden verzameld via de telemetrie van uw toepassing, een agent die wordt uitgevoerd op uw Azure-resources of zelfs een systeem voor het bewaken van een externe locatie en rechtstreeks aan Azure monitor is verzonden. Nadat u deze hebt gepubliceerd op Azure Monitor, kunt u bladeren, query's en waarschuwingen uitvoeren op aangepaste metrische gegevens voor uw Azure-resources en-toepassingen naast de standaard gegevens die door Azure worden verzonden.
 
@@ -223,5 +223,3 @@ Aangepaste metrische gegevens van verschillende services gebruiken:
  - [Virtuele Linux-machine met behulp van de Telegraf-agent](../essentials/collect-custom-metrics-linux-telegraf.md)
  - [REST API](./metrics-store-custom-rest-api.md)
  - [Klassieke Cloud Services](../essentials/collect-custom-metrics-guestos-vm-cloud-service-classic.md)
- 
-

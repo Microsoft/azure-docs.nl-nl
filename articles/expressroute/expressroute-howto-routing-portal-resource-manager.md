@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: tutorial
 ms.date: 01/11/2021
 ms.author: duau
-ms.openlocfilehash: f780c8c2f932b612ee42e13906f72983b324eefd
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
-ms.translationtype: HT
+ms.openlocfilehash: 11a4798c0cb3bc010bbdbae1fcb709951c67781a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108531"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101721866"
 ---
 # <a name="tutorial-create-and-modify-peering-for-an-expressroute-circuit-using-the-azure-portal"></a>Zelfstudie: Peering voor een ExpressRoute-circuit maken en wijzigen met de Azure-portal
 
@@ -75,14 +75,17 @@ Deze sectie helpt u bij het maken, verkrijgen, bijwerken en verwijderen van de c
 
 2. Configureer Microsoft-peering voor het circuit. Zorg ervoor dat u over de volgende informatie beschikt voordat u verdergaat.
 
-   * Een paar /30-subnetten die eigendom zijn van u en die zijn geregistreerd in een RIR/IRR. Dit moeten geldige openbare IPv4-voorvoegsels zijn. Eén /30-subnet wordt gebruikt voor de primaire koppeling en het andere wordt gebruikt voor de secundaire koppeling. Vanuit deze subnetten wijst u het eerste bruikbare IP-adres toe aan uw router, aangezien Microsoft de tweede bruikbare IP voor de eigen router gebruikt.
-   * Een geldige VLAN-id waarop u deze peering wilt instellen. Controleer of er geen andere peering in het circuit is die dezelfde VLAN-id gebruikt. Zowel primaire als secundaire links moeten dezelfde VLAN-id gebruiken.
+   * Een paar subnetten die eigendom zijn van u en die zijn geregistreerd in een-of-IR. Eén /30-subnet wordt gebruikt voor de primaire koppeling en het andere wordt gebruikt voor de secundaire koppeling. Vanuit deze subnetten wijst u het eerste bruikbare IP-adres toe aan uw router, aangezien Microsoft de tweede bruikbare IP voor de eigen router gebruikt. Er zijn drie opties voor dit paar subnetten:
+       * IPv4: twee/30 subnetten. Dit moeten geldige openbare IPv4-voorvoegsels zijn.
+       * IPv6: twee/126 subnetten. Deze moeten geldige open bare IPv6-voor voegsels zijn.
+       * Beide: twee/30 subnetten en twee/126 subnetten.
+   * Een geldige VLAN-id waarop u deze peering wilt instellen. Controleer of er geen andere peering in het circuit is die dezelfde VLAN-id gebruikt. Voor zowel primaire als secundaire koppelingen moet u dezelfde VLAN-ID gebruiken.
    * AS-nummer voor peering. U kunt 2-bytes en 4-bytes AS-nummers gebruiken.
    * Geadverteerde voorvoegsels: U verstrekt een lijst van alle voorvoegsels die u via de BGP-sessie wilt adverteren. Alleen openbare IP-adresvoorvoegsels worden geaccepteerd. U kunt een met komma's gescheiden lijst verzenden als u een set voorvoegsels wilt verzenden. Deze voorvoegsels moeten voor u zijn geregistreerd in een RIR/IRR.
    * **Optioneel -** Klant-ASN: Als u voorvoegsels adverteert die niet zijn geregistreerd op het AS-nummer van de peering, kunt u het AS-nummer opgeven waarbij ze zijn geregistreerd.
    * Naam van routeringsregister: u kunt het RIR/IRR opgeven waarbij het AS-nummer en de voorvoegsels zijn geregistreerd.
    * **Optioneel -** Een MD5-hash, als u er een wilt gebruiken.
-3. U kunt de peering selecteren die u wilt configureren, zoals in het volgende voorbeeld wordt weergegeven. Selecteer de rij voor Microsoft-peering.
+1. U kunt de peering selecteren die u wilt configureren, zoals in het volgende voorbeeld wordt weergegeven. Selecteer de rij voor Microsoft-peering.
 
    :::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/select-microsoft-peering.png" alt-text="De rij voor Microsoft-peering selecteren":::
 
@@ -120,6 +123,11 @@ U kunt de rij selecteren voor de peering die u wilt wijzigen, de eigenschappen v
 
 Deze sectie helpt u bij het maken, verkrijgen, bijwerken en verwijderen van de configuratie voor een persoonlijke Azure-peering voor een ExpressRoute-circuit.
 
+> [!IMPORTANT]
+> IPv6-ondersteuning voor persoonlijke peering is momenteel beschikbaar als **open bare preview**. Als u uw virtuele netwerk wilt verbinden met een ExpressRoute-circuit met op IPv6 gebaseerde privé-peering geconfigureerd, zorgt u ervoor dat uw virtuele netwerk dual stack is en volgt u de richt lijnen die [hier](https://docs.microsoft.com/azure/virtual-network/ipv6-overview)worden beschreven.
+> 
+> 
+
 ### <a name="to-create-azure-private-peering"></a>Persoonlijke Azure-peering maken
 
 1. Configureer het ExpressRoute-circuit. Zorg dat het circuit volledig is ingericht door de connectiviteitsprovider voordat u verder gaat. 
@@ -136,8 +144,11 @@ Deze sectie helpt u bij het maken, verkrijgen, bijwerken en verwijderen van de c
 
 2. Configureer persoonlijke Azure-peering voor het circuit. Zorg ervoor dat u de volgende items hebt voordat u verdergaat met de volgende stappen:
 
-   * Een paar /30-subnetten in uw bezit. Eén /30-subnet wordt gebruikt voor de primaire koppeling en het andere wordt gebruikt voor de secundaire koppeling. Vanuit deze subnetten wijst u het eerste bruikbare IP-adres toe aan uw router, aangezien Microsoft de tweede bruikbare IP voor de eigen router gebruikt.
-   * Een geldige VLAN-id waarop u deze peering wilt instellen. Controleer of er geen andere peering in het circuit is die dezelfde VLAN-id gebruikt. Zowel primaire als secundaire links moeten dezelfde VLAN-id gebruiken.
+   * Een paar subnetten die geen deel uitmaken van een adres ruimte die is gereserveerd voor virtuele netwerken. Eén /30-subnet wordt gebruikt voor de primaire koppeling en het andere wordt gebruikt voor de secundaire koppeling. Vanuit deze subnetten wijst u het eerste bruikbare IP-adres toe aan uw router, aangezien Microsoft de tweede bruikbare IP voor de eigen router gebruikt. Er zijn drie opties voor dit paar subnetten:
+       * IPv4: twee/30 subnetten.
+       * IPv6: twee/126 subnetten.
+       * Beide: twee/30 subnetten en twee/126 subnetten.
+   * Een geldige VLAN-id waarop u deze peering wilt instellen. Controleer of er geen andere peering in het circuit is die dezelfde VLAN-id gebruikt. Voor zowel primaire als secundaire koppelingen moet u dezelfde VLAN-ID gebruiken.
    * AS-nummer voor peering. U kunt 2-bytes en 4-bytes AS-nummers gebruiken. U kunt een persoonlijk AS-nummer gebruiken voor deze peering, behalve voor 65515 tot en met 65520.
    * U moet de routes van uw on-premises Edge-router naar Azure via BGP adverteren wanneer u persoonlijke peering configureert.
    * **Optioneel -** Een MD5-hash, als u er een wilt gebruiken.

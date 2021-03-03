@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/13/2020
-ms.openlocfilehash: fdd3886dda794ff9a91e2c2be6a3d810086d0ed2
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 9d93e3ec08ff16a1fcca0c914b9e817d4ca89d60
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610092"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101707945"
 ---
 # <a name="azure-monitor-logs-connector-for-logic-apps-and-power-automate"></a>Azure Monitor logs connector voor Logic Apps en energie automatisering
 Met [Azure Logic apps](../../logic-apps/index.yml) en [energie automatisering](https://flow.microsoft.com) kunt u geautomatiseerde werk stromen maken met honderden acties voor diverse services. Met de Azure Monitor logs connector kunt u werk stromen bouwen waarmee gegevens worden opgehaald uit een Log Analytics-werk ruimte of een Application Insights-toepassing in Azure Monitor. In dit artikel worden de acties beschreven die zijn opgenomen in de connector en vindt u een overzicht van het maken van een werk stroom met behulp van deze gegevens.
@@ -125,6 +125,6 @@ Wanneer de logische app is voltooid, controleert u het e-mail adres van de ontva
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [logboek query's vindt u in azure monitor](../log-query/log-query-overview.md).
+- Meer informatie over [logboek query's vindt u in azure monitor](./log-query-overview.md).
 - Meer informatie over [Logic apps](../../logic-apps/index.yml)
 - Meer informatie over het [automatiseren van energie](https://flow.microsoft.com).

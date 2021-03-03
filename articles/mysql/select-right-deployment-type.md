@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 08/26/2020
-ms.openlocfilehash: 000de084cf9375347704cc4d3905ca36bdd77ff8
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 125431e6630ccfdd9e0e5d6b2a4ec5fa9b9e58fd
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92926186"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101736182"
 ---
 # <a name="choose-the-right-mysql-server-option-in-azure"></a>Kies de optie juiste MySQL-server in azure
 
@@ -19,7 +19,7 @@ Met Azure kunnen de werk belasting van uw MySQL-server worden uitgevoerd in een 
 
 Houd rekening met de volgende twee opties bij het nemen van uw beslissing:
 
-- **Azure database for MySQL** . Deze optie is een volledig beheerde MySQL-data base-engine op basis van de stabiele versie van MySQL Community Edition. Deze relationele Database as a Service (DBaaS), die wordt gehost op het Azure-Cloud platform, valt in de branche categorie van PaaS.
+- **Azure database for MySQL**. Deze optie is een volledig beheerde MySQL-data base-engine op basis van de stabiele versie van MySQL Community Edition. Deze relationele Database as a Service (DBaaS), die wordt gehost op het Azure-Cloud platform, valt in de branche categorie van PaaS.
 
   Met een beheerd exemplaar van MySQL in azure kunt u ingebouwde functies gebruiken die gebruikmaken van geautomatiseerde patches, hoge Beschik baarheid, geautomatiseerde back-ups, elastisch schalen, beveiliging op het niveau van de onderneming, naleving en governance, bewaking en waarschuwingen waarvoor een andere uitgebreide configuratie nodig is wanneer de MySQL-server on-premises of in een Azure-VM is. Wanneer u MySQL als een service gebruikt, betaalt u per gebruik, met opties om omhoog of omlaag te schalen voor meer controle zonder onderbreking.
   
@@ -35,25 +35,27 @@ Houd rekening met de volgende twee opties bij het nemen van uw beslissing:
   - Zone-redundante hoge beschikbaarheid
   - Beheerde onderhoudsvensters
 
-- **MySQL op virtuele Azure-machines** . Deze optie valt buiten de branche categorie van IaaS. Met deze service kunt u MySQL-server uitvoeren binnen een beheerde virtuele machine op het Azure-Cloud platform. Alle recente versies en edities van MySQL kunnen worden geïnstalleerd op de virtuele machine.
+- **MySQL op virtuele Azure-machines**. Deze optie valt buiten de branche categorie van IaaS. Met deze service kunt u MySQL-server uitvoeren binnen een beheerde virtuele machine op het Azure-Cloud platform. Alle recente versies en edities van MySQL kunnen worden geïnstalleerd op de virtuele machine.
 
 ## <a name="comparing-the-mysql-deployment-options-in-azure"></a>De MySQL-implementatie opties in azure vergelijken
 
 De belangrijkste verschillen tussen deze opties worden weergegeven in de volgende tabel:
 
-| Kenmerk          | Azure Database for MySQL<br/>Single Server |Azure Database for MySQL<br/>Flexibele server  |MySQL op virtuele Azure-machines                      |
+| Kenmerk          | Azure Database for MySQL<br/>Enkele server |Azure Database for MySQL<br/>Flexibele server  |MySQL op virtuele Azure-machines                      |
 |:-------------------|:-------------------------------------------|:---------------------------------------------|:---------------------------------------|
-| Ondersteuning voor MySQL-versie | 5,6, 5,7 & 8,0| 5.7 | Wille keurige versie|
+| Ondersteuning voor MySQL-versie | 5,6, 5,7 & 8,0| 5,7 & 8,0 | Wille keurige versie|
 | Berekening schalen | Ondersteund (schalen van en naar Basic-laag wordt niet ondersteund)| Ondersteund | Ondersteund|
 | Opslag grootte | 5 GiB tot 16 TiB| 5 GiB tot 16 TiB | 32 GiB tot 32.767 GiB|
 | Online opslag schalen | Ondersteund| Ondersteund| Niet ondersteund|
 | Automatisch schalen van opslag | Ondersteund| Niet ondersteund in preview-versie| Niet ondersteund|
+| Meer IOPs-schaling | Niet ondersteund| Ondersteund| Niet ondersteund|
 | Netwerk verbinding | -Open bare eind punten met Server firewall.<br/> -Persoonlijke toegang met ondersteuning voor persoonlijke koppelingen.|-Open bare eind punten met Server firewall.<br/> -Persoonlijke toegang met Virtual Network-integratie.| -Open bare eind punten met Server firewall.<br/> -Persoonlijke toegang met ondersteuning voor persoonlijke koppelingen.|
 | Service Level Agreement (SLA) | SLA voor 99,99% Beschik baarheid |Geen SLA in preview-versie| 99,99% met Beschikbaarheidszones|
 | Patches besturings systeem| Automatisch  | Automatisch met aangepast besturings element voor onderhouds venster | Beheerd door eind gebruikers |
 | MySQL-patches     | Automatisch  | Automatisch met aangepast besturings element voor onderhouds venster | Beheerd door eind gebruikers |
 | Hoge beschikbaarheid | Ingebouwde HA in één beschikbaarheids zone| Ingebouwde HA binnen en tussen beschikbaarheids zones | Aangepast beheerd met clustering, replicatie, enzovoort.|
 | Zoneredundantie | Niet ondersteund | Ondersteund | Ondersteund|
+| Zone plaatsing | Niet ondersteund | Ondersteund | Ondersteund|
 | Hybride scenario's | Ondersteund met [replicatie van inkomende gegevens](./concepts-data-in-replication.md)| Niet beschikbaar als preview-versie | Beheerd door eind gebruikers |
 | Leesreplica's | Ondersteund (Maxi maal 5 replica's)| Ondersteund (Maxi maal 10 replica's)| Beheerd door eind gebruikers |
 | Backup | Geautomatiseerd met een retentie van 7-35 dagen | Geautomatiseerd met een retentie van 1-35 dagen | Beheerd door eind gebruikers |

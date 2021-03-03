@@ -8,22 +8,20 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 07/16/2020
+ms.date: 02/26/2021
 ms.author: justinha
-ms.openlocfilehash: 059f711269fd5f1eea9675f238a6003eaf1a0534
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
-ms.translationtype: HT
+ms.openlocfilehash: e8887cc39b48f090ff223e5e83c13d65b921dc0b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96618107"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101687495"
 ---
-# <a name="tutorial-create-and-use-replica-sets-for-resiliency-or-geolocation-in-azure-active-directory-domain-services-preview"></a>Zelfstudie: Replicasets maken en gebruiken voor tolerantie of geolocatie in Azure Active Directory Domain Services (preview)
+# <a name="tutorial-create-and-use-replica-sets-for-resiliency-or-geolocation-in-azure-active-directory-domain-services"></a>Zelf studie: replica sets maken en gebruiken voor tolerantie of geolocatie in Azure Active Directory Domain Services
 
 Als u de tolerantie van een beheerd domein in Azure Active Directory Domain Services (Azure AD DS) wilt verbeteren of als u wilt implementeren op aanvullende geografische locaties die dicht bij uw toepassingen staan, kunt u *replicasets* gebruiken. Elke naamruimte van een beheerd domein in Azure AD DS, zoals *aaddscontoso.com*, bevat één initiële replicaset. De mogelijkheid om extra replicasets te maken in andere Azure-regio's leidt tot geografische tolerantie voor een beheerd domein.
 
 U kunt een replicaset toevoegen aan elk gekoppeld virtueel netwerk in een Azure-regio die Azure AD DS ondersteunt.
-
-Replicasets zijn een openbare preview-functie in Azure AD Domain Services. Houd rekening met de ondersteuningsverschillen voor functies die nog in preview zijn. Raadpleeg de [Azure Active Directory Preview SLA](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie over de previews.
 
 In deze zelfstudie leert u het volgende:
 
@@ -78,7 +76,7 @@ Als u een extra replicaset wilt maken, voert u de volgende stappen uit:
 
 1. Zoek en selecteer **Azure AD Domain Services** in de Azure-portal.
 1. Kies uw beheerde domein, bijvoorbeeld *aaddscontoso.com*.
-1. Selecteer aan de linkerkant **Replicasets (preview)** . Elk beheerd domein bevat één initiële replicaset in de geselecteerde regio, zoals wordt weergegeven in de volgende schermopname:
+1. Selecteer aan de linkerkant de optie **replica sets**. Elk beheerd domein bevat één initiële replicaset in de geselecteerde regio, zoals wordt weergegeven in de volgende schermopname:
 
     ![Schermopname van het weergeven en toevoegen van een replicaset in de Azure-portal](./media/tutorial-create-replica-set/replica-set-list.png)
 
@@ -113,7 +111,7 @@ Als u een replicaset wilt verwijderen, voert u de volgende stappen uit:
 
 1. Zoek en selecteer **Azure AD Domain Services** in de Azure-portal.
 1. Kies uw beheerde domein, bijvoorbeeld *aaddscontoso.com*.
-1. Selecteer aan de linkerkant **Replicasets (preview)** . Selecteer in de lijst met replicasets het contextmenu **...** naast de replicaset die u wilt verwijderen.
+1. Selecteer aan de linkerkant de optie **replica sets**. Selecteer in de lijst met replicasets het contextmenu **...** naast de replicaset die u wilt verwijderen.
 1. Selecteer **Verwijderen** in het contextmenu en bevestig dat u de replicaset wilt verwijderen.
 
 > [!NOTE]

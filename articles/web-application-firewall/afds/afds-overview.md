@@ -7,12 +7,12 @@ ms.service: web-application-firewall
 ms.topic: conceptual
 ms.date: 05/22/2020
 ms.author: victorh
-ms.openlocfilehash: e3b3b7a058fbd1235619c01e0dca24a3de9036db
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 66ca039a449e355e47563b689f5f44cced164fea
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89231432"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101724146"
 ---
 # <a name="azure-web-application-firewall-on-azure-front-door"></a>Web Application Firewall voor Azure Front Door
 
@@ -23,6 +23,8 @@ WAF voor Front Door is een wereldwijde en gecentraliseerde oplossing. De service
 WAF voorkomt kwaadaardige aanvallen dicht bij de aanvalsbronnen, voordat ze uw virtuele netwerk binnenkomen. U krijgt wereldwijde beveiliging op schaal zonder prestatieverlies. U kunt eenvoudig een WAF-beleid koppelen aan een Front Door-profiel in uw abonnement. Nieuwe regels kunnen binnen enkele minuten worden geïmplementeerd, zodat u snel kunt reageren op veranderende bedreigingspatronen.
 
 ![Azure Web Application Firewall](../media/overview/wafoverview.png)
+
+Azure front-deur introduceert [twee nieuwe sku's in Preview](https://docs.microsoft.com/azure/frontdoor/standard-premium/overview): voor deur standaard en voor-deur Premium-SKU. WAF is systeem eigen geïntegreerd met de voor deur Premium-SKU met volledige mogelijkheden. Voor de standaard-SKU voor de voor deur worden alleen [aangepaste regels](https://docs.microsoft.com/azure/web-application-firewall/afds/afds-overview#custom-authored-rules) ondersteund.
 
 ## <a name="waf-policy-and-rules"></a>WAF-beleid en -regels
 

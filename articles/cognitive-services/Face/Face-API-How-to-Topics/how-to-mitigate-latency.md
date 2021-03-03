@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 1/5/2021
 ms.author: v-jawe
-ms.openlocfilehash: e7f4293955772697ddeea5fce9daac4b04755274
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 2c771509de5ac246bac0d8e006a5d0b884a410b0
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937283"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101706806"
 ---
 # <a name="how-to-mitigate-latency-when-using-the-face-service"></a>Procedure: latentie beperken bij het gebruik van de face-service
 
@@ -34,7 +34,7 @@ In dit onderwerp vindt u informatie over mogelijke oorzaken van een latentie die
 
 ### <a name="slow-connection-between-the-cognitive-service-and-a-remote-url"></a>Trage verbinding tussen de cognitieve service en een externe URL
 
-Sommige Azure-Cognitive Services bieden methoden die gegevens ophalen van een externe URL die u opgeeft. Wanneer u bijvoorbeeld de [methode DetectWithUrlAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithurlasync#Microsoft_Azure_CognitiveServices_Vision_Face_FaceOperationsExtensions_DetectWithUrlAsync_Microsoft_Azure_CognitiveServices_Vision_Face_IFaceOperations_System_String_System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Collections_Generic_IList_System_Nullable_Microsoft_Azure_CognitiveServices_Vision_Face_Models_FaceAttributeType___System_String_System_Nullable_System_Boolean__System_String_System_Threading_CancellationToken_) van de face-service aanroept, kunt u de URL opgeven van een installatie kopie waarin de service probeert gezichten te detecteren.
+Sommige Azure-Cognitive Services bieden methoden die gegevens ophalen van een externe URL die u opgeeft. Wanneer u bijvoorbeeld de [methode DetectWithUrlAsync](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithurlasync#Microsoft_Azure_CognitiveServices_Vision_Face_FaceOperationsExtensions_DetectWithUrlAsync_Microsoft_Azure_CognitiveServices_Vision_Face_IFaceOperations_System_String_System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Collections_Generic_IList_System_Nullable_Microsoft_Azure_CognitiveServices_Vision_Face_Models_FaceAttributeType___System_String_System_Nullable_System_Boolean__System_String_System_Threading_CancellationToken_) van de face-service aanroept, kunt u de URL opgeven van een installatie kopie waarin de service probeert gezichten te detecteren.
 
 ```csharp
 var faces = await client.Face.DetectWithUrlAsync("https://www.biography.com/.image/t_share/MTQ1MzAyNzYzOTgxNTE0NTEz/john-f-kennedy---mini-biography.jpg");
@@ -42,7 +42,7 @@ var faces = await client.Face.DetectWithUrlAsync("https://www.biography.com/.ima
 
 De face-service moet vervolgens de installatie kopie downloaden van de externe server. Als de verbinding van de face-service met de externe server traag is, heeft dit invloed op de reactie tijd van de detectie methode.
 
-Als u dit wilt verhelpen, kunt u overwegen om [de installatie kopie op te slaan in azure Premium Blob Storage](https://docs.microsoft.com/azure/storage/blobs/storage-upload-process-images?tabs=dotnet). Bijvoorbeeld:
+Als u dit wilt verhelpen, kunt u overwegen om [de installatie kopie op te slaan in azure Premium Blob Storage](../../../storage/blobs/storage-upload-process-images.md?tabs=dotnet). Bijvoorbeeld:
 
 ``` csharp
 var faces = await client.Face.DetectWithUrlAsync("https://csdx.blob.core.windows.net/resources/Face/Images/Family1-Daughter1.jpg");
@@ -50,7 +50,7 @@ var faces = await client.Face.DetectWithUrlAsync("https://csdx.blob.core.windows
 
 ### <a name="large-upload-size"></a>Grote upload grootte
 
-Sommige Azure-Cognitive Services bieden methoden die gegevens ophalen uit een bestand dat u uploadt. Wanneer u bijvoorbeeld de [methode DetectWithStreamAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithstreamasync#Microsoft_Azure_CognitiveServices_Vision_Face_FaceOperationsExtensions_DetectWithStreamAsync_Microsoft_Azure_CognitiveServices_Vision_Face_IFaceOperations_System_IO_Stream_System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Collections_Generic_IList_System_Nullable_Microsoft_Azure_CognitiveServices_Vision_Face_Models_FaceAttributeType___System_String_System_Nullable_System_Boolean__System_String_System_Threading_CancellationToken_) van de face-service aanroept, kunt u een installatie kopie uploaden waarin de service wordt getracht gezichten te detecteren.
+Sommige Azure-Cognitive Services bieden methoden die gegevens ophalen uit een bestand dat u uploadt. Wanneer u bijvoorbeeld de [methode DetectWithStreamAsync](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithstreamasync#Microsoft_Azure_CognitiveServices_Vision_Face_FaceOperationsExtensions_DetectWithStreamAsync_Microsoft_Azure_CognitiveServices_Vision_Face_IFaceOperations_System_IO_Stream_System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Collections_Generic_IList_System_Nullable_Microsoft_Azure_CognitiveServices_Vision_Face_Models_FaceAttributeType___System_String_System_Nullable_System_Boolean__System_String_System_Threading_CancellationToken_) van de face-service aanroept, kunt u een installatie kopie uploaden waarin de service wordt getracht gezichten te detecteren.
 
 ```csharp
 using FileStream fs = File.OpenRead(@"C:\images\face.jpg");
@@ -62,12 +62,12 @@ Als het te uploaden bestand groot is, is dat van invloed op de reactie tijd van 
 - Het duurt langer voordat de service het bestand verwerkt, in verhouding tot de bestands grootte.
 
 Oplossingen
-- Overweeg [de installatie kopie op te slaan in azure Premium Blob Storage](https://docs.microsoft.com/azure/storage/blobs/storage-upload-process-images?tabs=dotnet). Bijvoorbeeld:
+- Overweeg [de installatie kopie op te slaan in azure Premium Blob Storage](../../../storage/blobs/storage-upload-process-images.md?tabs=dotnet). Bijvoorbeeld:
 ``` csharp
 var faces = await client.Face.DetectWithUrlAsync("https://csdx.blob.core.windows.net/resources/Face/Images/Family1-Daughter1.jpg");
 ```
 - Overweeg een kleiner bestand te uploaden.
-    - Zie de richt lijnen met betrekking tot [invoer gegevens voor gezichts detectie](https://docs.microsoft.com/azure/cognitive-services/face/concepts/face-detection#input-data) en [invoer gegevens voor gezichts herkenning](https://docs.microsoft.com/azure/cognitive-services/face/concepts/face-recognition#input-data).
+    - Zie de richt lijnen met betrekking tot [invoer gegevens voor gezichts detectie](../concepts/face-detection.md#input-data) en [invoer gegevens voor gezichts herkenning](../concepts/face-recognition.md#input-data).
     - Bij gezichts detectie, wanneer detectie model wordt gebruikt `DetectionModel.Detection01` , wordt de verwerkings snelheid verhoogd wanneer de grootte van het afbeeldings bestand wordt gereduceerd. Wanneer u detectie model gebruikt `DetectionModel.Detection02` , wordt de verwerkings snelheid van de afbeeldings bestands grootte alleen verhoogd als het afbeeldings bestand kleiner is dan 1920.
     - Voor gezichts herkenning is het verminderen van de face-grootte naar 200x200 pixels niet van invloed op de nauw keurigheid van het herkennings model.
     - De prestaties van de- `DetectWithUrlAsync` en- `DetectWithStreamAsync` methoden zijn ook afhankelijk van het aantal gezichten dat zich in een afbeelding bevindt. De face-service kan tot 100 gezichten retour neren voor een installatie kopie. Gezichten worden gerangschikt op basis van de grootte van het gezichts kader van groot naar klein.

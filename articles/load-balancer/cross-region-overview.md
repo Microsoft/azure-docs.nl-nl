@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: allensu
 ms.custom: references_regions
-ms.openlocfilehash: 89bf920a5a5dd833425f1b41bd206beaae9d30fd
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 64432e2717057c1ff6bb09e0158ddb779d5b5373
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98946252"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101742599"
 ---
 # <a name="cross-region-load-balancer-preview"></a>Load balancer voor meerdere regio's (preview-versie)
 
@@ -35,7 +35,7 @@ Azure Standard Load Balancer ondersteunt taak verdeling tussen regio's, waarbij 
 * [Bouwen op bestaande Load Balancer](#build-cross-region-solution-on-existing-azure-load-balancer) oplossing zonder leer curve
 
 > [!IMPORTANT]
-> De load balancer voor meerdere regio's is momenteel beschikbaar als preview-versie en kan worden geïmplementeerd in de portal. Meld u aan om **https://preview.portal.azure.com** de functie weer te geven en te implementeren.. </br> </br>
+> De load balancer voor meerdere regio's is momenteel beschikbaar als preview-versie.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 De taak verdeling tussen regio's biedt dezelfde voor delen van hoge prestaties en lage latentie als regionale standaard load balancer. 
@@ -79,7 +79,7 @@ Zie [De distributiemodus configureren voor Azure Load Balancer](./load-balancer-
 
 ### <a name="ability-to-scale-updown-behind-a-single-endpoint"></a>Mogelijkheid om omhoog/omlaag te schalen achter een enkel eind punt
 
-Wanneer u het globale eind punt van een kruis regio load balancer voor klanten beschikbaar maakt, kunt u regionale implementaties achter het globale eind punt toevoegen of verwijderen zonder dat dit gevolgen heeft voor de klant. 
+Wanneer u het globale eind punt van een kruis regio load balancer aan klanten beschikbaar maakt, kunt u binnen het globale eind punt zonder onderbreking regionale implementaties toevoegen of verwijderen. 
 
 <!---To learn about how to add or remove a regional deployment from the backend, read more [here](TODO: Insert CLI doc here).--->
 
@@ -94,7 +94,7 @@ De back-end-groep van de load balancer met meerdere regio's bevat een of meer re
 
 Voeg uw bestaande load balancer-implementaties toe aan een kruis regio load balancer voor een Maxi maal beschik bare implementatie voor meerdere regio's.
 
-In de **regio thuis** wordt de Load Balancer van de Kruis regio geïmplementeerd. Deze regio heeft geen invloed op hoe het verkeer wordt doorgestuurd. Als een thuis regio uitvalt, heeft dit geen invloed op de stroom van het verkeer.
+In de **regio thuis** wordt de Load Balancer van de Kruis regio geïmplementeerd. Deze regio heeft geen invloed op hoe het verkeer wordt doorgestuurd. Als een thuis regio uitvalt, wordt de verkeers stroom niet beïnvloed.
 
 ### <a name="home-regions"></a>Thuis regio's
 * VS - oost 2
@@ -137,13 +137,13 @@ De load balancer over meerdere regio's stuurt het verkeer naar de juiste regiona
 
 * Front-end frontend-IP-configuraties zijn alleen openbaar. Een interne frontend wordt momenteel niet ondersteund.
 
-* Privé-of interne load balancer kan niet worden toegevoegd aan de back-end-groep van cross-Regional load balancer 
+* Privé-of interne load balancer kan niet worden toegevoegd aan de back-end-groep van een kruis regio load balancer 
 
 * IPv6-front-end-IP-configuraties voor meerdere regio's worden niet ondersteund. 
 
 * Een status test kan momenteel niet worden geconfigureerd. Met een standaard status test wordt automatisch elke 20 seconden beschikbaarheids gegevens over de regionale load balancer verzameld. 
 
-* Azure kubernetes service (AKS) kan momenteel niet worden geïntegreerd met de Load Balancer voor meerdere regio's. Er moet een verlies van de verbinding worden verwacht bij het instellen van een Load Balancer voor meerdere regio's vóór een open bare Load Balancer die is geïmplementeerd met AKS.
+* Integratie met Azure Kubernetes service (AKS) is momenteel niet beschikbaar. De verbinding wordt verbroken wanneer u een load balancer voor meerdere regio's implementeert met de open bare load balancer van AKS.
 
 ## <a name="pricing-and-sla"></a>Prijzen en SLA
 Load balancer over meerdere regio's, deelt u de [Sla](https://azure.microsoft.com/support/legal/sla/load-balancer/v1_0/ ) van Standard Load Balancer.

@@ -7,23 +7,30 @@ ms.subservice: fhir
 ms.topic: conceptual
 ms.reviewer: dseven
 ms.author: cavoeg
-author: CaitlinV39
-ms.date: 02/03/2021
-ms.openlocfilehash: 220618f93d23ec71ee3246e8bd68bfd724860696
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+author: zxue
+ms.date: 02/24/2021
+ms.openlocfilehash: 73e1db2754749e1fb1142231e7179771bcce8e76
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100581970"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101712772"
 ---
 # <a name="enable-diagnostic-logging-in-azure-api-for-fhir"></a>Diagnostische logboek registratie inschakelen in azure API voor FHIR
 
 In dit artikel wordt beschreven hoe u diagnostische logboek registratie inschakelt in azure API for FHIR en kunt u enkele voorbeeld query's voor deze logboeken bekijken. De toegang tot Diagnostische logboeken is essentieel voor elke gezondheids zorg waarbij naleving van wettelijke vereisten (zoals HIPAA) een moet zijn. De functie in azure API voor FHIR die Diagnostische logboeken mogelijk maakt, is de [**Diagnostische instellingen**](../azure-monitor/essentials/diagnostic-settings.md) in de Azure Portal. 
 
+## <a name="view-and-download-fhir-metrics-data"></a>FHIR metrische gegevens weer geven en downloaden
+
+U kunt de metrische gegevens bekijken onder bewaking | Metrische gegevens uit de portal. De metrische gegevens omvatten het aantal aanvragen, de gemiddelde latentie, het aantal fouten, de grootte van het RUs, het aantal aanvragen dat de capaciteit heeft overschreden en de beschik baarheid (in%). In de onderstaande scherm afbeelding ziet u RUs die wordt gebruikt voor een voorbeeld omgeving met zeer weinig activiteiten in de afgelopen 7 dagen. U kunt de gegevens in JSON-indeling downloaden.
+
+   :::image type="content" source="media/diagnostic-logging/fhir-metrics-rus-screen.png" alt-text="Azure API voor FHIR-metrische gegevens uit de portal" lightbox="media/diagnostic-logging/fhir-metrics-rus-screen.png":::
+
 ## <a name="enable-audit-logs"></a>Audit logboeken inschakelen
 1. Als u diagnostische logboek registratie in azure API voor FHIR wilt inschakelen, selecteert u uw Azure API for FHIR-service in de Azure Portal 
-2. Navigeren naar Diagnostische instellingen voor **Diagnostische instellingen**  
- ![](media/diagnostic-logging/diagnostic-settings-screen.png) 
+2. Navigeren naar **Diagnostische instellingen** 
+
+   :::image type="content" source="media/diagnostic-logging/diagnostic-settings-screen.png" alt-text="Diagnostische instellingen voor Azure FHIR toevoegen." lightbox="media/diagnostic-logging/diagnostic-settings-screen.png":::
 
 3. Selecteer **+ Diagnostische instelling toevoegen**
 
@@ -35,7 +42,7 @@ In dit artikel wordt beschreven hoe u diagnostische logboek registratie inschake
     2. **Stroom om te Event hub** voor opname door een service van derden of een aangepaste analytische oplossing. Voordat u deze stap kunt configureren, moet u een Event Hub naam ruimte en Event Hub-beleid maken.
     3. **Streamen naar de log Analytics** -werk ruimte in azure monitor. U moet de werk ruimte voor logboek analyse maken voordat u deze optie kunt selecteren.
 
-6. Selecteer **audit logs bevat** en/of **AllMetrics**. De metrische gegevens zijn onder andere service naam, Beschik baarheid, gegevens grootte, totale latentie, totaal aantal aanvragen, totaal aantal fouten en tijds tempel.
+6. Selecteer **audit logs bevat** en/of **AllMetrics**. De metrische gegevens zijn onder andere service naam, Beschik baarheid, gegevens grootte, totale latentie, totaal aantal aanvragen, totaal aantal fouten en tijds tempel. U kunt meer informatie vinden over [ondersteunde metrische gegevens](https://docs.microsoft.com/azure/azure-monitor/essentials/metrics-supported#microsofthealthcareapisservices). 
 
    :::image type="content" source="media/diagnostic-logging/fhir-diagnostic-setting.png" alt-text="Diagnostische instellingen voor Azure FHIR. Selecteer audit logs bevat en/of AllMetrics." lightbox="media/diagnostic-logging/fhir-diagnostic-setting.png":::
 

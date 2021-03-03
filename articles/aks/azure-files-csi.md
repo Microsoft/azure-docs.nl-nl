@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 08/27/2020
 author: palma21
-ms.openlocfilehash: b29f4034b12ce43e6c051e454601f196365469f3
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 0fc291403997cdccbfa190fcd5739e97c47eab6a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94636977"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101729433"
 ---
 # <a name="use-azure-files-container-storage-interface-csi-drivers-in-azure-kubernetes-service-aks-preview"></a>Azure Files-Stuur Programma's van de container Storage interface (CSI) gebruiken in azure Kubernetes service (AKS) (preview)
 
@@ -33,13 +33,13 @@ Zie [opslag opties voor toepassingen in AKS][concepts-storage]voor meer informat
 
 ## <a name="dynamically-create-azure-files-pvs-by-using-the-built-in-storage-classes"></a>Azure Files PVs dynamisch maken met behulp van de ingebouwde opslag klassen
 
-Een opslag klasse wordt gebruikt om te bepalen hoe een Azure Files share wordt gemaakt. Er wordt in de resource groep van het [knoop punt][node-resource-group] automatisch een opslag account gemaakt voor gebruik met de opslag klasse om de Azure files-shares op te slaan. Kies een van de volgende [Azure Storage redundantie sku's][storage-skus] voor *skuName* :
+Een opslag klasse wordt gebruikt om te bepalen hoe een Azure Files share wordt gemaakt. Er wordt in de resource groep van het [knoop punt][node-resource-group] automatisch een opslag account gemaakt voor gebruik met de opslag klasse om de Azure files-shares op te slaan. Kies een van de volgende [Azure Storage redundantie sku's][storage-skus] voor *skuName*:
 
-* **Standard_LRS** : lokaal redundante opslag
-* **Standard_GRS** : standaard geografisch redundante opslag
-* **Standard_ZRS** : standaard zone-redundante opslag
-* **Standard_RAGRS** : standaard geografisch redundante opslag met lees toegang
-* **Premium_LRS** : Premium lokaal redundante opslag
+* **Standard_LRS**: lokaal redundante opslag
+* **Standard_GRS**: standaard geografisch redundante opslag
+* **Standard_ZRS**: standaard zone-redundante opslag
+* **Standard_RAGRS**: standaard geografisch redundante opslag met lees toegang
+* **Premium_LRS**: Premium lokaal redundante opslag
 
 > [!NOTE]
 > Azure Files ondersteunt Azure Premium Storage. De minimale Premium-bestands share is 100 GB.
@@ -226,7 +226,7 @@ az provider register --namespace Microsoft.Storage
 
 ### <a name="create-a-storage-account-for-the-nfs-file-share"></a>Een opslag account maken voor de NFS-bestands share
 
-[Maak een `Premium_LRS` Azure Storage-account](../storage/files/storage-how-to-create-premium-fileshare.md) met de volgende configuraties ter ondersteuning van NFS-shares:
+[Maak een `Premium_LRS` Azure Storage-account](../storage/files/storage-how-to-create-file-share.md) met de volgende configuraties ter ondersteuning van NFS-shares:
 - soort account: FileStorage
 - beveiligde overdracht vereist (alleen HTTPS-verkeer inschakelen): onwaar
 - Selecteer het virtuele netwerk van uw agent knooppunten in firewalls en virtuele netwerken. u kunt het beste daarom het opslag account maken in de resource groep MC_.

@@ -3,12 +3,12 @@ title: Live Video Analytics implementeren op Azure Stack Edge
 description: In dit artikel worden de stappen beschreven die u helpen bij het implementeren van live video Analytics op uw Azure Stack-rand.
 ms.topic: how-to
 ms.date: 09/09/2020
-ms.openlocfilehash: cc3dcfaa96034e807d3d82e75eedc0f6a82eff08
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: d49167890009d58b21c3678cb89f608bad665abd
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99551005"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101730266"
 ---
 # <a name="deploy-live-video-analytics-on-azure-stack-edge"></a>Live Video Analytics implementeren op Azure Stack Edge
 
@@ -42,7 +42,7 @@ Azure Stack Edge is een hardware-as-a-service-oplossing en een met AI ingeschake
 * [Azure Stack rand/Data Box Gateway het maken van resources](../../databox-online/azure-stack-edge-deploy-prep.md)
 * [Installeren en instellen](../../databox-online/azure-stack-edge-deploy-install.md)
 * [Verbinding en activering](../../databox-online/azure-stack-edge-deploy-connect-setup-activate.md)
-* [Een IoT Hub aan Azure Stack rand koppelen](https://docs.microsoft.com/azure/databox-online/azure-stack-edge-gpu-deploy-configure-compute#configure-compute)
+* [Een IoT Hub aan Azure Stack rand koppelen](../../databox-online/azure-stack-edge-gpu-deploy-configure-compute.md#configure-compute)
 ### <a name="enable-compute-prerequisites-on-the-azure-stack-edge-local-ui"></a>Berekenings vereisten inschakelen op de lokale gebruikers interface van Azure Stack Edge
 
 Voordat u doorgaat, moet u ervoor zorgen dat:
@@ -234,17 +234,22 @@ Volg deze instructies om verbinding te maken met uw IoT-hub met behulp van de Az
     
 ## <a name="troubleshooting"></a>Problemen oplossen
 
-* Kubernetes API-toegang (kubectl).
+* **Kubernetes API-toegang (kubectl)**
 
-    * Volg de documentatie om uw computer te configureren voor [toegang tot het Kubernetes-cluster](https://review.docs.microsoft.com/azure/databox-online/azure-stack-edge-j-series-create-kubernetes-cluster?toc=%2Fazure%2Fdatabox-online%2Fazure-stack-edge-gpu%2Ftoc.json&bc=%2Fazure%2Fdatabox-online%2Fazure-stack-edge-gpu%2Fbreadcrumb%2Ftoc.json&branch=release-tzl#debug-kubernetes-issues).
-    * Alle geïmplementeerde IoT Edge modules gebruiken de `iotedge` naam ruimte. Zorg ervoor dat u deze opneemt wanneer u kubectl gebruikt.
-* Module Logboeken
+    * Volg de documentatie om uw computer te configureren voor [toegang tot het Kubernetes-cluster](https://docs.microsoft.com/azure/databox-online/azure-stack-edge-gpu-create-kubernetes-cluster).
+    * Alle geïmplementeerde IoT Edge modules gebruiken de `iotedge` naam ruimte. Zorg ervoor dat u deze opneemt wanneer u kubectl gebruikt.  
 
-    Het `iotedge` hulp programma is niet toegankelijk voor het verkrijgen van Logboeken. U moet [kubectl-logboeken](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs)  gebruiken om de logboeken of pipes naar een bestand weer te geven. Voorbeeld: <br/>  `kubectl logs deployments/mediaedge -n iotedge --all-containers`
-* Metrische gegevens voor pod en knoop punten
+* **Module Logboeken**
 
-    Gebruik [kubectl top](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#top)  om de metrische gegevens van Pod en knoop punten weer te geven. (Deze functionaliteit is beschikbaar in de volgende Azure Stack Edge-release. >v2007)<br/>`kubectl top pods -n iotedge`
-* Module netwerken voor module detectie op Azure Stack Edge is vereist dat de module de poort binding van de host in createOptions heeft. De module is vervolgens adresseerbaar `moduleName:hostport` .
+    Het `iotedge` hulp programma is niet toegankelijk voor het verkrijgen van Logboeken. U moet [kubectl-logboeken](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs)  gebruiken om de logboeken of pipes naar een bestand weer te geven. Voorbeeld: <br/>  `kubectl logs deployments/mediaedge -n iotedge --all-containers`  
+
+* **Metrische gegevens voor pod en knoop punten**
+
+    Gebruik [kubectl top](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#top)  om de metrische gegevens van Pod en knoop punten weer te geven.
+    <br/>`kubectl top pods -n iotedge` 
+
+* **Module netwerken**   
+Voor module detectie op Azure Stack Edge is het vereist dat de module de poort binding van de host in createOptions heeft. De module is vervolgens adresseerbaar `moduleName:hostport` .
     
     ```json
     "createOptions": {
@@ -256,10 +261,11 @@ Volg deze instructies om verbinding te maken met uw IoT-hub met behulp van de Az
     }
     ```
     
-* Volume koppelen
+* **Volume koppelen**
 
     Een module kan niet worden gestart als de container een volume probeert te koppelen aan een bestaande en niet-lege map.
-* Gedeeld geheugen
+
+* **Gedeeld geheugen bij gebruik van gRPC**
 
     Gedeeld geheugen op Azure Stack rand bronnen wordt in elke naam ruimte in een wille keurige bezorgings module ondersteund met behulp van host IPC.
     Gedeeld geheugen voor een Edge-module configureren voor implementatie via IoT Hub.
@@ -272,7 +278,7 @@ Volg deze instructies om verbinding te maken met uw IoT-hub met behulp van de Az
         }
     ...
         
-    (Advanced) Configuring shared memory on a K8s Pod or Deployment manifest for deployment via K8s API.
+    //(Advanced) Configuring shared memory on a K8s Pod or Deployment manifest for deployment via K8s API
     spec:
         ...
         template:
@@ -281,14 +287,14 @@ Volg deze instructies om verbinding te maken met uw IoT-hub met behulp van de Az
         ...
     ```
     
-* Gevanceerde Pod-co-locatie
+* **Gevanceerde Pod-co-locatie**
 
     Wanneer u K8s gebruikt om aangepaste afnemende oplossingen te implementeren die communiceren met live video Analytics via gRPC, moet u ervoor zorgen dat het Peul wordt geïmplementeerd op dezelfde knoop punten als live video Analytics-modules.
 
-    * Optie 1: gebruik knooppunt affiniteit en ingebouwde knooppunt labels voor co-locatie.
+    * **Optie 1** : gebruik knooppunt affiniteit en ingebouwde knooppunt labels voor co-locatie.
 
     De NodeSelector aangepaste configuratie lijkt niet een optie omdat de gebruikers geen toegang hebben tot het instellen van labels op de knoop punten. Afhankelijk van de topologie van de klant en naam conventies, kunnen ze echter gebruikmaken van [ingebouwde knooppunt labels](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#built-in-node-labels). Een sectie nodeAffinity die verwijst naar Azure Stack Edge-resources met live video-analyses, kan worden toegevoegd aan het Pod-manifest voor het afleiden van co-locatie.
-    * Optie 2: gebruik pod-affiniteit voor co-locatie (aanbevolen).
+    * **Optie 2** : gebruik pod-affiniteit voor co-locatie (aanbevolen).
 Kubernetes biedt ondersteuning voor [pod-affiniteit](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity)  , waarmee een peul kan worden gepland op hetzelfde knoop punt. Een sectie podAffinity die verwijst naar de live video Analytics-module, kan worden toegevoegd aan het Pod-manifest voor het afleiden van co-locatie.
 
     ```json   
@@ -310,6 +316,31 @@ Kubernetes biedt ondersteuning voor [pod-affiniteit](https://kubernetes.io/docs/
                 values:
                 - mediaedge
             topologyKey: "kubernetes.io/hostname"
+    ```
+* **404-fout code bij het gebruik van `rtspsim` module**  
+In de container worden Video's van exact één map in de container gelezen. Als u een externe map toewijst of koppelt aan het bestand dat al in de container installatie kopie aanwezig is, worden de bestanden in de container installatie kopie verborgen door docker.  
+ 
+    Zonder bindingen kan de container bijvoorbeeld de volgende bestanden bevatten:  
+    ```
+    root@rtspsim# ls /live/mediaServer/media  
+    /live/mediaServer/media/camera-300s.mkv  
+    /live/mediaServer/media/win10.mkv  
+    ```
+     
+    En uw host kan deze bestanden bevatten:
+    ```    
+    C:\MyTestVideos> dir
+    Test1.mkv
+    Test2.mkv
+    ```
+     
+    Maar wanneer de volgende binding wordt toegevoegd in het manifest bestand van de implementatie, wordt de inhoud van/live/mediaServer/media door docker overschreven zodat deze overeenkomt met wat op de host is.
+    `C:\MyTestVideos:/live/mediaServer/media`
+    
+    ```
+    root@rtspsim# ls /live/mediaServer/media
+    /live/mediaServer/media/Test1.mkv
+    /live/mediaServer/media/Test2.mkv
     ```
 
 ## <a name="next-steps"></a>Volgende stappen

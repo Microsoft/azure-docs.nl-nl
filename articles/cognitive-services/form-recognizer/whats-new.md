@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: pafarley
-ms.openlocfilehash: c7b6586f02d14d4e49ce9a5024b19ea15c8d2267
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: f194f0bc7ec8d0bf2265c0863f93bfd11337b5f4
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100364682"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703385"
 ---
 # <a name="whats-new-in-form-recognizer"></a>Wat is er nieuw in Form Recognizer?
 
@@ -91,7 +91,7 @@ De Form Recognizer-service wordt doorlopend bijgewerkt. Gebruik dit artikel om o
 * **Valuta-ondersteuning** -detectie en extractie van globale valuta symbolen.
 * **Azure gov** -formulier herkenning is nu ook beschikbaar in azure gov.
 * **Verbeterde beveiligings functies**: 
-   * Als u **uw eigen sleutel** formulier Recognizer zet, worden uw gegevens automatisch versleuteld wanneer deze worden opgeslagen in de cloud om deze te beschermen en om u te helpen te voldoen aan de beveiligings-en nalevings verplichtingen van uw organisatie. Uw abonnement maakt standaard gebruik van door Microsoft beheerde versleutelingssleutels. U kunt uw abonnement nu ook beheren met uw eigen coderings sleutels. [Door de klant beheerde sleutels, ook wel bekend als uw eigen sleutel (BYOK)](./form-recognizer-encryption-of-data-at-rest.md), bieden meer flexibiliteit voor het maken, draaien, uitschakelen en intrekken van toegangs beheer. U kunt ook de versleutelingssleutels controleren die worden gebruikt voor het beveiligen van uw gegevens.  
+   * Als u **uw eigen sleutel** formulier Recognizer zet, worden uw gegevens automatisch versleuteld wanneer deze worden opgeslagen in de cloud om deze te beschermen en om u te helpen te voldoen aan de beveiligings-en nalevings verplichtingen van uw organisatie. Uw abonnement maakt standaard gebruik van door Microsoft beheerde versleutelingssleutels. U kunt uw abonnement nu ook beheren met uw eigen coderings sleutels. [Door de klant beheerde sleutels, ook wel bekend als uw eigen sleutel (BYOK)](./encrypt-data-at-rest.md), bieden meer flexibiliteit voor het maken, draaien, uitschakelen en intrekken van toegangs beheer. U kunt ook de versleutelingssleutels controleren die worden gebruikt voor het beveiligen van uw gegevens.  
    * **Persoonlijke eind punten** – Hiermee kunt u een virtueel netwerk (VNet) [gebruiken om veilig toegang te krijgen tot gegevens via een privé-koppeling.](../../private-link/private-link-overview.md)
 
 
@@ -123,7 +123,7 @@ De Form Recognizer-service wordt doorlopend bijgewerkt. Gebruik dit artikel om o
 
 ### <a name="security-improvements"></a>Verbeterde beveiliging
 
-* Customer-Managed sleutels zijn nu beschikbaar voor FormRecognizer. Zie voor meer informatie [gegevens versleuteling in rust voor de formulier herkenner](./form-recognizer-encryption-of-data-at-rest.md).
+* Customer-Managed sleutels zijn nu beschikbaar voor FormRecognizer. Zie voor meer informatie [gegevens versleuteling in rust voor de formulier herkenner](./encrypt-data-at-rest.md).
 * Gebruik beheerde identiteiten voor toegang tot Azure-resources met Azure Active Directory. Zie [toegang verlenen voor beheerde identiteiten](../authentication.md#authorize-access-to-managed-identities)voor meer informatie.
 
 ## <a name="march-2020"></a>Maart 2020 

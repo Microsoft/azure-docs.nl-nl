@@ -66,6 +66,8 @@
           href: create-profile-container-adds.md
         - name: Azure Files en AD DS gebruiken
           href: create-file-share.md
+        - name: Office installeren met FSLogix app-containers
+          href: fslogix-office-app-rule-editor.md
     - name: Poolinstellingen van de host configureren
       items:
         - name: RDP-eigenschappen
@@ -104,6 +106,8 @@
           href: app-attach-image-prep.md
         - name: Een bestandsshare instellen
           href: app-attach-file-share.md
+        - name: Het hulp programma MSIXMGR instellen
+          href: app-attach-msixmgr.md
     - name: Microsoft Teams gebruiken
       href: teams-on-wvd.md
     - name: Azure AD Multi-Factor Authentication instellen

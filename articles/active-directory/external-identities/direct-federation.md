@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d07aa283c40a54ba02faa13b07e466e519bd68ae
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 598cbf303c8a87675833b8d87f05055771e46f55
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101649418"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101687240"
 ---
 # <a name="direct-federation-with-ad-fs-and-third-party-providers-for-guest-users-preview"></a>Directe Federatie met AD FS en providers van derden voor gast gebruikers (preview-versie)
 
@@ -42,13 +42,7 @@ Met directe Federatie melden gast gebruikers zich aan bij uw Azure AD-Tenant met
 
 ## <a name="sign-in-endpoints"></a>Aanmeld-eind punten
 
-Gebruikers met een directe Federatie gast kunnen zich nu aanmelden bij uw apps voor meerdere tenants of micro soft-toepassingen met behulp van een [gemeen schappelijk eind punt](redemption-experience.md#redemption-and-sign-in-through-a-common-endpoint) (met andere woorden, een algemene app-URL die uw Tenant context niet bevat). Hier volgen enkele voor beelden van algemene eind punten:
-
-- `https://teams.microsoft.com`
-- `https://myapps.microsoft.com`
-- `https://portal.azure.com`
-
-Tijdens het aanmeldings proces kiest de gast gebruiker de **aanmeldings opties** en selecteert vervolgens **Aanmelden bij een organisatie**. De gebruiker typt vervolgens de naam van uw organisatie en blijft aanmelden met behulp van hun eigen referenties.
+Gebruikers met een directe Federatie gast kunnen zich nu aanmelden bij uw apps voor meerdere tenants of micro soft-toepassingen met behulp van een [gemeen schappelijk eind punt](redemption-experience.md#redemption-and-sign-in-through-a-common-endpoint) (met andere woorden, een algemene app-URL die uw Tenant context niet bevat). Tijdens het aanmeldings proces kiest de gast gebruiker de **aanmeldings opties** en selecteert vervolgens **Aanmelden bij een organisatie**. De gebruiker typt vervolgens de naam van uw organisatie en blijft aanmelden met behulp van hun eigen referenties.
 
 Gebruikers met een directe Federatie gast kunnen ook toepassings eindpunten gebruiken die uw Tenant gegevens bevatten, bijvoorbeeld:
 

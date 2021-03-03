@@ -68,6 +68,12 @@
           href: tutorial-migrate-aws-virtual-machines.md
         - name: GCP-exemplaren migreren
           href: tutorial-migrate-gcp-virtual-machines.md
+    - name: Container plaatsen
+      items:
+        - name: Container plaatsen ASP.NET-Apps en Migreer naar AKS
+          href: tutorial-containerize-aspnet-kubernetes.md
+        - name: Container plaatsen Java-Web-apps en Migreer naar AKS
+          href: tutorial-containerize-java-kubernetes.md
 - name: Concepten
   items:
     - name: Algemeen
@@ -180,6 +186,8 @@
               href: how-to-migrate-vmware-vms-with-cmk-disks.md
         - name: Migratie schalen
           items:
+            - name: Virtuele VMware-machines op schaal migreren met behulp van de replicatie methode zonder agent
+              href: how-to-scale-out-for-migration.md
             - name: Migratie van een groot aantal VM's automatiseren
               href: how-to-migrate-at-scale.md
             - name: Informatie over automatiseren van VMware-migratie

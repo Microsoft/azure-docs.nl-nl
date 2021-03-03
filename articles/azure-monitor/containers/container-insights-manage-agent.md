@@ -1,28 +1,28 @@
 ---
-title: De Azure Monitor voor de agent voor containers beheren | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u de meest voorkomende onderhouds taken beheert met de Log Analytics agent die wordt gebruikt door Azure Monitor voor containers.
+title: De container Insights-agent beheren | Microsoft Docs
+description: In dit artikel wordt beschreven hoe u de meest voorkomende onderhouds taken beheert met de container Log Analytics agent die wordt gebruikt door container Insights.
 ms.topic: conceptual
 ms.date: 07/21/2020
-ms.openlocfilehash: b656b0cc89e40dd732def4ebf56dceae69a033b0
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 2a0c32ef797a953eca794e16fe0ace5e967f339f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612330"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101713793"
 ---
-# <a name="how-to-manage-the-azure-monitor-for-containers-agent"></a>De Azure Monitor voor de agent voor containers beheren
+# <a name="how-to-manage-the-container-insights-agent"></a>De container Insights-agent beheren
 
-Azure Monitor voor containers maakt gebruik van een container versie van de Log Analytics-agent voor Linux. Na de eerste implementatie zijn er routine-of optionele taken die u tijdens de levens cyclus moet uitvoeren. In dit artikel wordt beschreven hoe u de agent hand matig bijwerkt en verzameling van omgevings variabelen uit een bepaalde container kunt uitschakelen. 
+Container Insights maakt gebruik van een container versie van de Log Analytics-agent voor Linux. Na de eerste implementatie zijn er routine-of optionele taken die u tijdens de levens cyclus moet uitvoeren. In dit artikel wordt beschreven hoe u de agent hand matig bijwerkt en verzameling van omgevings variabelen uit een bepaalde container kunt uitschakelen. 
 
-## <a name="how-to-upgrade-the-azure-monitor-for-containers-agent"></a>De Azure Monitor voor de agent voor containers bijwerken
+## <a name="how-to-upgrade-the-container-insights-agent"></a>De container Insights-agent bijwerken
 
-Azure Monitor voor containers maakt gebruik van een container versie van de Log Analytics-agent voor Linux. Wanneer een nieuwe versie van de agent wordt uitgebracht, wordt de agent automatisch bijgewerkt op uw beheerde Kubernetes-clusters die worden gehost op Azure Kubernetes service (AKS) en Azure Red Hat open Shift versie 3. x. Voor een [hybride Kubernetes-cluster](container-insights-hybrid-setup.md) en Azure Red Hat open Shift versie 4. x wordt de agent niet beheerd en moet u de agent hand matig bijwerken.
+Container Insights maakt gebruik van een container versie van de Log Analytics-agent voor Linux. Wanneer een nieuwe versie van de agent wordt uitgebracht, wordt de agent automatisch bijgewerkt op uw beheerde Kubernetes-clusters die worden gehost op Azure Kubernetes service (AKS) en Azure Red Hat open Shift versie 3. x. Voor een [hybride Kubernetes-cluster](container-insights-hybrid-setup.md) en Azure Red Hat open Shift versie 4. x wordt de agent niet beheerd en moet u de agent hand matig bijwerken.
 
 Als de upgrade van de agent mislukt voor een cluster dat wordt gehost op AKS of Azure Red Hat open Shift versie 3. x, wordt in dit artikel ook het proces beschreven voor het hand matig bijwerken van de agent. Zie [Release aankondigingen](https://github.com/microsoft/docker-provider/tree/ci_feature_prod)van de agent als u de gepubliceerde versies wilt volgen.
 
 ### <a name="upgrade-agent-on-aks-cluster"></a>Agent bijwerken op AKS-cluster
 
-Het proces voor het upgraden van de agent op AKS-clusters bestaat uit twee rechte stappen voor door sturen. De eerste stap is het uitschakelen van de bewaking met Azure Monitor voor containers die gebruikmaken van Azure CLI. Volg de stappen die worden beschreven in het artikel [controle uitschakelen](container-insights-optout.md?#azure-cli) . Met behulp van Azure CLI kunnen we de agent van de knoop punten in het cluster verwijderen zonder dat dit van invloed is op de oplossing en de bijbehorende gegevens die in de werk ruimte zijn opgeslagen. 
+Het proces voor het upgraden van de agent op AKS-clusters bestaat uit twee rechte stappen voor door sturen. De eerste stap is het uitschakelen van de bewaking met container Insights met behulp van Azure CLI. Volg de stappen die worden beschreven in het artikel [controle uitschakelen](container-insights-optout.md?#azure-cli) . Met behulp van Azure CLI kunnen we de agent van de knoop punten in het cluster verwijderen zonder dat dit van invloed is op de oplossing en de bijbehorende gegevens die in de werk ruimte zijn opgeslagen. 
 
 >[!NOTE]
 >Terwijl u deze onderhouds activiteit uitvoert, worden de verzamelde gegevens niet door de knoop punten in het cluster doorgestuurd en worden er geen gegevens weer gegeven tussen de tijd die u de agent verwijdert en de nieuwe versie installeert. 
@@ -97,7 +97,7 @@ Zie **Service-Principal gebruiken** in [bewaking inschakelen van Azure Arc enabl
 
 ## <a name="how-to-disable-environment-variable-collection-on-a-container"></a>De verzameling van omgevings variabelen op een container uitschakelen
 
-Azure Monitor voor containers worden omgevings variabelen verzameld uit de containers die worden uitgevoerd in een pod en worden ze weer gegeven in het eigenschappen venster van de geselecteerde container in de weer gave **containers** . U kunt dit gedrag beheren door het verzamelen van een specifieke container tijdens de implementatie van het Kubernetes-cluster uit te scha kelen of door de omgevings variabele *AZMON_COLLECT_ENV* in te stellen. Deze functie is beschikbaar via de agent versie – ciprod11292018 en hoger.  
+Container Insights verzamelt omgevings variabelen uit de containers die worden uitgevoerd in een pod en geeft deze weer in het eigenschappen venster van de geselecteerde container in de **containers** weergave. U kunt dit gedrag beheren door het verzamelen van een specifieke container tijdens de implementatie van het Kubernetes-cluster uit te scha kelen of door de omgevings variabele *AZMON_COLLECT_ENV* in te stellen. Deze functie is beschikbaar via de agent versie – ciprod11292018 en hoger.  
 
 Als u het verzamelen van omgevings variabelen voor een nieuwe of bestaande container wilt uitschakelen, stelt u de variabele **AZMON_COLLECT_ENV** met de waarde **False** in het yaml-configuratie bestand van de Kubernetes-implementatie. 
 
@@ -114,7 +114,7 @@ oc edit configmaps container-azm-ms-agentconfig -n openshift-azure-logging
 
 Hiermee opent u de standaard tekst editor. Sla het bestand op in de editor nadat u de variabele hebt ingesteld.
 
-Als u wilt controleren of de configuratie wijziging is doorgevoerd, selecteert u een container in de weer gave **containers** in azure monitor voor containers en vouwt u **omgevings variabelen** uit in het deel venster Eigenschappen.  In de sectie wordt alleen de variabele weer gegeven die eerder is gemaakt- **AZMON_COLLECT_ENV = False**. Voor alle andere containers moet u in de sectie omgevings variabelen alle gedetecteerde omgevings variabelen weer geven.
+Als u wilt controleren of de configuratie wijziging is doorgevoerd, selecteert u een container in de weer gave **containers** in container Insights en vouwt u **omgevings variabelen** uit in het deel venster Eigenschappen.  In de sectie wordt alleen de variabele weer gegeven die eerder is gemaakt- **AZMON_COLLECT_ENV = False**. Voor alle andere containers moet u in de sectie omgevings variabelen alle gedetecteerde omgevings variabelen weer geven.
 
 Als u de detectie van de omgevings variabelen opnieuw wilt inschakelen, past u hetzelfde proces eerder toe en wijzigt u de waarde van **False** in **True** en voert u de opdracht opnieuw uit `kubectl` om de container bij te werken.  
 

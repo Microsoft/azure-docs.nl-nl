@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 1/21/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 5c216661e45e5ed34a95e8a56002f3ad175b089a
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 1211cd306f10fb349bd42568697443ff103a171c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100545905"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703083"
 ---
 # <a name="enable-a-managed-identity-for-routing-azure-digital-twins-events-preview-azure-portal"></a>Een beheerde identiteit inschakelen voor het routeren van Azure Digital Apparaatdubbels-gebeurtenissen (preview): Azure Portal
 
@@ -89,8 +89,7 @@ Zie voor meer informatie over eind punten, routes en de typen bestemmingen die w
 
 ### <a name="assign-the-role"></a>De rol toewijzen
 
->[!NOTE]
-> Deze sectie moet worden uitgevoerd door een Azure-gebruiker met machtigingen voor het beheren van de gebruikers toegang tot Azure-resources (inclusief het verlenen en delegeren van machtigingen). Algemene rollen die aan deze vereiste voldoen, zijn *eigenaar*, *account beheerder* of de combi natie van beheerder en *mede werker* van de *gebruikers toegang* . Zie [*How-to: instance en Authentication instellen*](how-to-set-up-instance-portal.md#prerequisites-permission-requirements)voor meer informatie over machtigings vereisten voor Azure Digital apparaatdubbels-rollen.
+[!INCLUDE [digital-twins-permissions-required.md](../../includes/digital-twins-permissions-required.md)]
 
 Als u een rol aan de identiteit wilt toewijzen, moet u eerst de [Azure Portal](https://portal.azure.com)openen.
 
@@ -116,7 +115,7 @@ Als u een rol aan de identiteit wilt toewijzen, moet u eerst de [Azure Portal](h
 
 Wanneer u klaar bent met het invoeren van de details, selecteert u **Opslaan**.
 
-## <a name="create-an-endpoint-with-identity-based-authorization"></a>Een eind punt maken met autorisatie op basis van een identiteit
+## <a name="create-an-endpoint-with-identity-based-authentication"></a>Een eind punt maken met verificatie op basis van een identiteit
 
 Nadat u een door een systeem beheerde identiteit hebt ingesteld voor uw Azure Digital Apparaatdubbels-exemplaar en de juiste rol (len) hebt toegewezen, kunt u Azure Digital Apparaatdubbels- [eind punten](how-to-manage-routes-portal.md#create-an-endpoint-for-azure-digital-twins) maken die de identiteit kunnen gebruiken voor verificatie. Deze optie is alleen beschikbaar voor Event hub-en Service Bus-type-eind punten (wordt niet ondersteund voor Event Grid).
 

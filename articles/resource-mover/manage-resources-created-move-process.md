@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: how-to
 ms.date: 09/10/2020
 ms.author: raynew
-ms.openlocfilehash: 7ad0e73a90e733af0dd752100ebc71908f68181a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: d3c4c4e86e2461ea1d05af284e724a5a2991f040
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100388478"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101727036"
 ---
 # <a name="manage-resources-created-for-the-vm-move"></a>Resources beheren die zijn gemaakt voor het verplaatsen van de VM
 
@@ -24,7 +24,7 @@ Na het verplaatsen van Vm's in verschillende regio's, is er een aantal resources
 
 Verwijder hand matig de verzameling verplaatsen en Site Recovery resources die zijn gemaakt voor het verplaatsen van de virtuele machine.
 
-1. Controleer de resources in de resource groep ```ResourceMoverRG-<sourceregion>-<target-region>``` .
+1. Controleer de resources in de resource groep ```ResourceMoverRG-<sourceregion>-<target-region>-<metadataRegionShortName>``` .
 2. Controleer of de virtuele machine en alle andere bron bronnen in de verplaatsings verzameling zijn verplaatst/verwijderd. Zo weet u zeker dat er geen resources in behandeling zijn die hiervan gebruikmaken.
 2. Verwijder deze resources.
 

@@ -122,9 +122,13 @@
         - name: Aanmeldingsbeleid
           href: add-sign-in-policy.md
         - name: Beleid voor het opnieuw instellen van het wachtwoord
-          href: add-password-reset-policy.md
-        - name: Beleid voor het wijzigen van het wachtwoord
-          href: add-password-change-policy.md
+          items:
+            - name: Self-service voor wachtwoord opnieuw instellen
+              href: add-password-reset-policy.md
+            - name: Self-service voor wachtwoord wijziging
+              href: add-password-change-policy.md
+            - name: Wacht woord opnieuw instellen afdwingen
+              href: force-password-reset.md
         - name: Beleid voor profielbewerking
           href: add-profile-editing-policy.md
         - name: Beleid voor wachtwoordreferenties van resource-eigenaar
@@ -520,4 +524,4 @@
       href: ../active-directory/fundamentals/active-directory-troubleshooting-support-howto.md?bc=%2fazure%2factive-directory-b2c%2fbread%2ftoc.json&toc=%2fazure%2factive-directory-b2c%2fTOC.json
       displayName: technical
     - name: Video's
-      href: 'https://azure.microsoft.com/documentation/videos/index/?services=active-directory-b2c'
+      href: azure-ad-external-identities-videos.md

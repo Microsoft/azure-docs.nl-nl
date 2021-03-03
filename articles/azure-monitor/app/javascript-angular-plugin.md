@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: lagayhar
-ms.openlocfilehash: 152ba4b1c8a4e09db0bce759f5b67f577ec5d584
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d45d8bed328dc91dfeeabd6ce878074fa1218623
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91843891"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737015"
 ---
 # <a name="angular-plugin-for-application-insights-javascript-sdk"></a>Hoek-invoeg toepassing voor Application Insights java script SDK
 
 Met de hoek-invoeg toepassing voor de Application Insights java script SDK kunt u:
 
 - Tracering van router wijzigingen
-- Gebruiks statistieken van hoek onderdelen
 
 > [!WARNING]
 > De hoek-invoeg toepassing is niet compatibel met ECMAScript 3 (ES3).
@@ -38,9 +37,9 @@ npm install @microsoft/applicationinsights-angularplugin-js
 Stel een exemplaar van Application Insights in het onderdeel item in uw app in:
 
 ```js
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ApplicationInsights } from '@microsoft/applicationinsights-web';
-import { AngularPlugin, AngularPluginService } from '@microsoft/applicationinsights-angularplugin-js';
+import { AngularPlugin } from '@microsoft/applicationinsights-angularplugin-js';
 import { Router } from '@angular/router';
 
 @Component({
@@ -48,61 +47,20 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-    private appInsights;
+export class AppComponent {
     constructor(
-        private router: Router,
-        private angularPluginService: AngularPluginService 
+        private router: Router
     ){
         var angularPlugin = new AngularPlugin();
-        this.angularPluginService.init(angularPlugin, this.router);
-        this.appInsights = new ApplicationInsights({ config: {
+        const appInsights = new ApplicationInsights({ config: {
         instrumentationKey: 'YOUR_INSTRUMENTATION_KEY_GOES_HERE',
         extensions: [angularPlugin],
         extensionConfig: {
             [angularPlugin.identifier]: { router: this.router }
         }
         } });
+        appInsights.loadAppInsights();
     }
-
-    ngOnInit() {
-        this.appInsights.loadAppInsights();
-    }
-}
-
-```
-
-Als u de `trackMetric` methode wilt gebruiken om het gebruik van hoek onderdelen bij te houden, voegt u toe `AngularPluginService` als provider in de lijst providers in het `app.module.ts` bestand.
-
-```js
-import { AngularPluginService } from '@microsoft/applicationinsights-angularplugin-js';
-
-@NgModule({
-    ...
-  providers: [ AngularPluginService ],
-})
-export class AppModule { }
-```
-
-Als u de levens duur van een onderdeel wilt bijhouden, roept u `trackMetric` de `ngOnDestroy` methode van dat onderdeel aan. Wanneer het onderdeel wordt vernietigd, wordt een gebeurtenis geactiveerd `trackMetric` die de tijd verzendt die de gebruiker op de pagina en de naam van het onderdeel verkrijgt.
-
-```js
-import { Component, OnDestroy, HostListener } from '@angular/core';
-import { AngularPluginService } from '@microsoft/applicationinsights-angularplugin-js';
-
-@Component({
-  selector: 'app-test',
-  templateUrl: './test.component.html',
-  styleUrls: ['./test.component.css']
-})
-export class TestComponent implements OnDestroy {
-
-  constructor(private angularPluginService: AngularPluginService) {}
-
-  @HostListener('window:beforeunload')
-  ngOnDestroy() {
-    this.angularPluginService.trackMetric();
-  }
 }
 ```
 

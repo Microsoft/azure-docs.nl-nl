@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 53763e62e8d7aa5b77ae451ef6427c1e09bff9f0
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: bb28f415b7d08b4c4430ed90a7ccbfe3a333416d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96742694"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101689042"
 ---
 # <a name="configure-mfa-server-settings"></a>MFA-server instellingen configureren
 
@@ -44,7 +44,7 @@ Voer de volgende stappen uit om een eenmalige bypass te maken:
 1. Zoek en selecteer **Azure Active Directory** en ga naar **beveiliging**  >  **MFA**  >  **eenmalig overs Laan**.
 1. Selecteer **Toevoegen**.
 1. Selecteer, indien nodig, de replicatie groep voor de bypass.
-1. Voer de gebruikers naam in als `username\@domain.com` . Voer het aantal seconden in dat de bypass moet duren en de reden voor het overs Laan.
+1. Voer de gebruikers naam in als `username@domain.com` . Voer het aantal seconden in dat de bypass moet duren en de reden voor het overs Laan.
 1. Selecteer **Toevoegen**. De tijds limiet gaat onmiddellijk in werking. De gebruiker moet zich aanmelden voordat de eenmalige bypass verlopen.
 
 U kunt ook het rapport eenmalig overs Laan bekijken vanuit hetzelfde venster.

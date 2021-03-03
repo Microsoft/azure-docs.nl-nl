@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/14/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: f4f040288574a9ddfc5f7c56878c7f1e795b09a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 5ca03336fc60abbb458615e922a2556dd21a79a5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88653848"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101739675"
 ---
 # <a name="prepare-azure-resources-for-hyper-v-disaster-recovery"></a>Azure-resources voorbereiden op herstel na noodgevallen
 
@@ -56,7 +56,7 @@ Installatiekopieën van gerepliceerde machines worden bewaard in Azure Storage. 
 2. Voer in **Opslagaccount maken** een naam voor de account in.  De naam die u kiest, moet uniek zijn binnen Azure, 3 tot 24 tekens lang zijn en mag alleen kleine letters en cijfers bevatten. Gebruik voor deze zelfstudie **contosovmsacct1910171607**.
 3. Selecteer bij **implementatiemodel** **Resource Manager**.
 4. Selecteer bij **Soort account** de optie **Opslag (algemeen v1)** . Selecteer niet blob-opslag.
-5. Selecteer bij **Replicatie** de standaardoptie **Geografisch redundante opslag met leestoegang** voor opslagredundantie. Laat de instelling Veilige overdracht vereist op Uitgeschakeld staan.
+5. Selecteer bij **Replicatie** de standaardoptie **Geografisch redundante opslag met leestoegang** voor opslagredundantie.
 6. Selecteer bij **Prestaties** **Standard**. Selecteer vervolgens bij **Opslaglaag** de standaardoptie **Dynamisch**.
 7. Kies bij **Abonnement** het abonnement waarin u het nieuwe opslagaccount wilt maken.
 8. Geef bij **Resourcegroep** een nieuwe resourcegroep op. Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Gebruik voor deze zelfstudie **ContosoRG**.

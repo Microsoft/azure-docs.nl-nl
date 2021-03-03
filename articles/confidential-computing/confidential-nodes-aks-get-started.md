@@ -4,14 +4,14 @@ description: Meer informatie over het maken van een AKS-cluster met vertrouwelij
 author: agowdamsft
 ms.service: container-service
 ms.topic: quickstart
-ms.date: 2/8/2020
+ms.date: 2/25/2020
 ms.author: amgowda
-ms.openlocfilehash: 866c8340cf9c16d768f4035326aa2ec52dbf1401
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 51b0813849236d9335d1482019f740fc8b23749f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653360"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703283"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-with-confidential-computing-nodes-dcsv2-using-azure-cli"></a>Snelstartgids: een Azure Kubernetes service (AKS)-cluster implementeren met vertrouwelijke computing nodes (DCsv2) met behulp van Azure CLI
 
@@ -26,52 +26,19 @@ In deze Quick Start leert u hoe u een Azure Kubernetes service-cluster (AKS) kun
 
 ### <a name="confidential-computing-node-features-dcxs-v2"></a>Kenmerken van vertrouwelijke rekenknooppunten (DC<x>s-v2)
 
-1. Linux-werkknooppunten bieden alleen ondersteuning voor Linux-containers
+1. Linux-werk knooppunten die Linux-containers ondersteunen
 1. 2e generatie VM met Ubuntu 18.04 Virtual Machines-knooppunten
 1. Intel SGX-gebaseerde CPU met versleutelde paginageheugencache (EPC). [Hier](./faq.md) vindt u meer informatie
 1. Ondersteunende Kubernetes-versie 1.16+
-1. Intel SGX DCAP-stuurprogramma vooraf geïnstalleerd op de AKS-knooppunten. [Hier](./faq.md) vindt u meer informatie
+1. Intel SGX DCAP-stuur programma vooraf geïnstalleerd op de AKS-knoop punten. [Hier](./faq.md) vindt u meer informatie
 
 ## <a name="deployment-prerequisites"></a>Vereisten voor implementatie
 Voor de implementatie-zelf studie hebt u het volgende nodig:
 
 1. Een actief Azure-abonnement. Als u geen Azure-abonnement hebt, kunt u een [gratis account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint
 1. Azure CLI-versie 2.0.64 of hoger geïnstalleerd en geconfigureerd op uw implementatie computer (Voer uit `az --version` om de versie te vinden. Als u Azure CLI wilt installeren of upgraden, raadpleegt u [Azure CLI installeren](../container-registry/container-registry-get-started-azure-cli.md).
-1. Azure [AKS-preview-uitbrei ding](https://github.com/Azure/azure-cli-extensions/tree/master/src/aks-preview) minimum versie 0.5.0
 1. Mini maal zes **DC <x> s-v2** cores die beschikbaar zijn in uw abonnement voor gebruik. Standaard is het quotum van de VM-kernen voor vertrouwelijke machines 8 kernen per Azure-abonnement. Als u van plan bent een cluster in te richten waarvoor meer dan 8 kerngeheugens zijn vereist, volgt u [deze](../azure-portal/supportability/per-vm-quota-requests.md) instructies om een quotumverhogingsticket te genereren
 
-## <a name="cli-based-preparation-steps-required-for-add-on-in-preview---optional-but-recommended"></a>Voorbereidings stappen op basis van CLI (vereist voor invoeg toepassing in Preview-optioneel, maar aanbevolen)
-Volg de onderstaande instructies voor het inschakelen van de add-on voor vertrouwelijke computer op AKS.
-
-### <a name="step-1-installing-the-cli-prerequisites"></a>Stap 1: de CLI-vereisten installeren
-
-Gebruik de volgende Azure CLI-opdrachten om de 0.5.0-uitbrei ding AKS-preview of hoger te installeren:
-
-```azurecli-interactive
-az extension add --name aks-preview
-az extension list
-```
-Gebruik de volgende Azure CLI-opdrachten om de CLI-extensie AKS-preview te installeren:
-
-```azurecli-interactive
-az extension update --name aks-preview
-```
-### <a name="step-2-azure-confidential-computing-addon-feature-registration-on-azure"></a>Stap 2: registratie van invoeg toepassingen voor Azure vertrouwelijk Computing op Azure
-De AKS-ConfidentialComputingAddon registreren op het Azure-abonnement. Met deze functie wordt het stuur programma voor de invoeg toepassing voor SGX-apparaten toegevoegd, zoals [hier](./confidential-nodes-aks-overview.md#confidential-computing-add-on-for-aks)wordt beschreven:
-1. Invoegtoepassing SGX-apparaatstuurprogramma
-```azurecli-interactive
-az feature register --name AKS-ConfidentialComputingAddon --namespace Microsoft.ContainerService
-```
-Het kan enkele minuten duren voordat de status Geregistreerd wordt weergegeven. U kunt de registratiestatus controleren met behulp van de opdracht az feature list. Deze functieregistratie wordt slechts eenmaal per abonnement uitgevoerd. Als deze eerder al is geregistreerd, kunt u de bovenstaande stap overslaan:
-
-```azurecli-interactive
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/AKS-ConfidentialComputingAddon')].{Name:name,State:properties.state}"
-```
-Wanneer de status weergegeven wordt als geregistreerd, vernieuw dan de registratie van de resourceprovider Microsoft.ContainerService met behulp van de opdracht 'az provider register':
-
-```azurecli-interactive
-az provider register --namespace Microsoft.ContainerService
-```
 ## <a name="creating-new-aks-cluster-with-confidential-computing-nodes-and-add-on"></a>Een nieuw AKS-cluster maken met vertrouwelijke computer knooppunten en-invoeg toepassingen
 Volg de onderstaande instructies voor het toevoegen van voor vertrouwelijke computer geschikte knoop punten met invoeg toepassing.
 

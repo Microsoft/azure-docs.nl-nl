@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c99a9086171192e5d954fb5a9bfbe5d2d7ef4ea5
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 8a9149119bc754ff0715f2841925da01301faecd
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99569557"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750616"
 ---
 ### <a name="examine-and-edit-the-sample-files"></a>De voorbeeld bestanden bekijken en bewerken
 
@@ -26,11 +26,11 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
 1. Bewerk het bestand *operations.json*:
  
     * Wijzig de link naar de graaftopologie:
-    * `"topologyUrl"` : `"https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/grpcExtension/2.0/topology.json"`
+    * `"topologyUrl"` : `"https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/motion-with-grpcExtension/2.0/topology.json"`
     * Bewerk onder GraphInstanceSet de naam van de grafiektopologie zodat deze overeenkomt met de waarde in de voorgaande koppeling:
-    * `"topologyName"` : `"InferencingWithGrpcExtension"`
+    * `"topologyName"` : `"EVROnMotionPlusGrpcExtension"`
     * Bewerk de naam onder GraphTopologyDelete:
-    * `"name"` : `"InferencingWithGrpcExtension"`
+    * `"name"` : `"EVROnMotionPlusGrpcExtension"`
 
 > [!NOTE]
 > <p>
@@ -51,7 +51,7 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
 >   },
 >   "dataTransfer": {
 >       "mode": "sharedMemory",
->       "SharedMemorySizeMiB": "5"
+>       "SharedMemorySizeMiB": "256"
 >   },
 >   "image": {
 >       "scale": {
@@ -107,10 +107,10 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
         > Bij de bovenstaande stappen wordt ervan uitgegaan dat u gebruikmaakt van de virtuele machine die is gemaakt door het installatie script. Als u in plaats daarvan uw eigen edge-apparaat gebruikt, gaat u naar uw edge-apparaat en voert u de volgende opdrachten uit met **beheerders rechten** om het voor beeld-video bestand dat voor deze Quick Start wordt gebruikt, op te halen en op te slaan:  
 
         ```
-        mkdir /home/lvaadmin/samples
-        mkdir /home/lvaadmin/samples/input    
-        curl https://lvamedia.blob.core.windows.net/public/camera-300s.mkv > /home/lvaadmin/samples/input/camera-300s.mkv  
-        chown -R lvaadmin /home/lvaadmin/samples/  
+        mkdir /home/lvaedgeuser/samples
+        mkdir /home/lvaedgeuser/samples/input    
+        curl https://lvamedia.blob.core.windows.net/public/camera-300s.mkv > /home/lvaedgeuser/samples/input/camera-300s.mkv  
+        chown -R lvalvaedgeuser:localusergroup /home/lvaedgeuser/samples/  
         ```
     * De **lvaExtension**-module: het YOLOv3-objectdetectiemodel dat gRPC als communicatiemethode gebruikt, computer vision op de afbeeldingen toepast en meerdere klassen objecttypen retourneert.
     
@@ -167,7 +167,7 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
       "@apiVersion": "2.0",
       "name": "Sample-Graph-1",
       "properties": {
-        "topologyName": "InferencingWithGrpcExtension",
+        "topologyName": "EVROnMotionPlusGrpcExtension",
         "description": "Sample graph description",
         "parameters": [
           {

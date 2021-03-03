@@ -2,13 +2,13 @@
 title: Gebeurtenis filtering voor Azure Event Grid
 description: Hierin wordt beschreven hoe u gebeurtenissen filtert bij het maken van een Azure Event Grid-abonnement.
 ms.topic: conceptual
-ms.date: 12/03/2020
-ms.openlocfilehash: bc3e84037693fcd909961ba409871d947ef1de7d
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.date: 02/26/2021
+ms.openlocfilehash: 7253c4a38660b0041f27918309efae21675fdc8f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96574903"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101721953"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Gebeurtenis filters begrijpen voor Event Grid-abonnementen
 
@@ -54,9 +54,493 @@ De JSON-syntaxis voor filteren op onderwerp is:
 Als u wilt filteren op waarden in de gegevens velden en de vergelijkings operator wilt opgeven, gebruikt u de geavanceerde filter optie. In geavanceerde filtering geeft u het volgende op:
 
 * operator type: het type vergelijking.
-* sleutel: het veld in de gebeurtenis gegevens die u gebruikt voor het filteren van. Dit kan een getal, een Booleaanse waarde of een teken reeks zijn.
+* sleutel: het veld in de gebeurtenis gegevens die u gebruikt voor het filteren van. Dit kan een getal, een Booleaanse waarde, een teken reeks of een matrix zijn.
 * waarden: de waarde of waarden die moeten worden vergeleken met de sleutel.
 
+## <a name="key"></a>Sleutel
+Sleutel is het veld in de gebeurtenis gegevens die u gebruikt voor het filteren van. Dit kan een getal, een Booleaanse waarde, een teken reeks of een matrix zijn. Voor gebeurtenissen in het **Event grid schema** gebruikt u de volgende waarden voor de sleutel:,,,,, `ID` `Topic` `Subject` `EventType` `DataVersion` of gebeurtenis gegevens (zoals `data.key1` ).
+
+Voor gebeurtenissen in het **schema voor Cloud gebeurtenissen** gebruikt u de volgende waarden voor de sleutel:,,, `eventid` `source` `eventtype` `eventtypeversion` of gebeurtenis gegevens (zoals `data.key1` ).
+
+Voor het **aangepaste invoer schema** gebruikt u de velden voor gebeurtenis gegevens (zoals `data.key1` ).
+
+Als u toegang wilt krijgen tot velden in de sectie gegevens, gebruikt u de `.` notatie (punt). Bijvoorbeeld, `data.sitename` `data.appEventTypeDetail.action` om toegang te krijgen tot `sitename` of `action` voor de volgende voorbeeld gebeurtenis.
+
+```json
+    "data": {
+        "appEventTypeDetail": {
+            "action": "Started"
+        },
+        "siteName": "<site-name>",
+        "clientRequestId": "None",
+        "correlationRequestId": "None",
+        "requestId": "292f499d-04ee-4066-994d-c2df57b99198",
+        "address": "None",
+        "verb": "None"
+    },
+```
+
+
+## <a name="values"></a>Waarden
+De waarden kunnen zijn: Number, String, Boolean of array
+
+
+## <a name="operators"></a>Operators
+
+De beschik bare Opera tors voor **getallen** zijn:
+
+## <a name="numberin"></a>NumberIn
+De operator NumberIn resulteert in waar als de **sleutel** waarde een van de opgegeven **filter** waarden is. In het volgende voor beeld wordt gecontroleerd of de waarde van het `counter` kenmerk in de `data` sectie 5 of 1 is. 
+
+```json
+"advancedFilters": [{
+    "operatorType": "NumberIn",
+    "key": "data.counter",
+    "values": [
+        5,
+        1
+    ]
+}]
+```
+
+
+Als de sleutel een matrix is, worden alle waarden in de matrix gecontroleerd op basis van de matrix met filter waarden. Dit is de pseudo code met de sleutel: `[v1, v2, v3]` en het filter: `[a, b, c]` . Sleutel waarden met gegevens typen die niet overeenkomen met het gegevens type van het filter, worden genegeerd.
+
+```
+FOR_EACH filter IN (a, b, c)
+    FOR_EACH key IN (v1, v2, v3)
+        IF filter == key
+            MATCH
+```
+
+## <a name="numbernotin"></a>NumberNotIn
+De NumberNotIn resulteert in waar als de **sleutel** waarde **geen** van de opgegeven **filter** waarden is. In het volgende voor beeld wordt gecontroleerd of de waarde van het `counter` kenmerk in de `data` sectie niet 41 en 0 is. 
+
+```json
+"advancedFilters": [{
+    "operatorType": "NumberNotIn",
+    "key": "data.counter",
+    "values": [
+        41,
+        0
+    ]
+}]
+```
+
+Als de sleutel een matrix is, worden alle waarden in de matrix gecontroleerd op basis van de matrix met filter waarden. Dit is de pseudo code met de sleutel: `[v1, v2, v3]` en het filter: `[a, b, c]` . Sleutel waarden met gegevens typen die niet overeenkomen met het gegevens type van het filter, worden genegeerd.
+
+```
+FOR_EACH filter IN (a, b, c)
+    FOR_EACH key IN (v1, v2, v3)
+        IF filter == key
+            FAIL_MATCH
+```
+
+## <a name="numberlessthan"></a>NumberLessThan
+De operator NumberLessThan resulteert in waar als de **sleutel** waarde lager is **dan** de opgegeven **filter** waarde. In het volgende voor beeld wordt gecontroleerd of de waarde van het `counter` kenmerk in de `data` sectie kleiner is dan 100. 
+
+```json
+"advancedFilters": [{
+    "operatorType": "NumberLessThan",
+    "key": "data.counter",
+    "value": 100
+}]
+```
+
+Als de sleutel een matrix is, worden alle waarden in de matrix vergeleken met de filter waarde. Dit is de pseudo code met de sleutel: `[v1, v2, v3]` . Sleutel waarden met gegevens typen die niet overeenkomen met het gegevens type van het filter, worden genegeerd.
+
+```
+FOR_EACH key IN (v1, v2, v3)
+    IF key < filter
+        MATCH
+```
+
+## <a name="numbergreaterthan"></a>NumberGreaterThan
+De operator NumberGreaterThan resulteert in waar als de **sleutel** waarde groter is **dan** de opgegeven **filter** waarde. In het volgende voor beeld wordt gecontroleerd of de waarde van het `counter` kenmerk in de `data` sectie groter is dan 20. 
+
+```json
+"advancedFilters": [{
+    "operatorType": "NumberGreaterThan",
+    "key": "data.counter",
+    "value": 20
+}]
+```
+
+Als de sleutel een matrix is, worden alle waarden in de matrix vergeleken met de filter waarde. Dit is de pseudo code met de sleutel: `[v1, v2, v3]` . Sleutel waarden met gegevens typen die niet overeenkomen met het gegevens type van het filter, worden genegeerd.
+
+```
+FOR_EACH key IN (v1, v2, v3)
+    IF key > filter
+        MATCH
+```
+
+## <a name="numberlessthanorequals"></a>NumberLessThanOrEquals
+De operator NumberLessThanOrEquals resulteert in waar als de **sleutel** waarde kleiner is **dan of gelijk** is aan de opgegeven **filter** waarde. In het volgende voor beeld wordt gecontroleerd of de waarde van het `counter` kenmerk in de `data` sectie kleiner is dan of gelijk is aan 100. 
+
+```json
+"advancedFilters": [{
+    "operatorType": "NumberLessThanOrEquals",
+    "key": "data.counter",
+    "value": 100
+}]
+```
+
+Als de sleutel een matrix is, worden alle waarden in de matrix vergeleken met de filter waarde. Dit is de pseudo code met de sleutel: `[v1, v2, v3]` . Sleutel waarden met gegevens typen die niet overeenkomen met het gegevens type van het filter, worden genegeerd.
+
+```
+FOR_EACH key IN (v1, v2, v3)
+    IF key <= filter
+        MATCH
+```
+
+## <a name="numbergreaterthanorequals"></a>NumberGreaterThanOrEquals
+De operator NumberGreaterThanOrEquals resulteert in waar als de **sleutel** waarde groter is **dan of gelijk** is aan de opgegeven **filter** waarde. In het volgende voor beeld wordt gecontroleerd of de waarde van het `counter` kenmerk in de `data` sectie groter is dan of gelijk is aan 30. 
+
+```json
+"advancedFilters": [{
+    "operatorType": "NumberGreaterThanOrEquals",
+    "key": "data.counter",
+    "value": 30
+}]
+```
+
+Als de sleutel een matrix is, worden alle waarden in de matrix vergeleken met de filter waarde. Dit is de pseudo code met de sleutel: `[v1, v2, v3]` . Sleutel waarden met gegevens typen die niet overeenkomen met het gegevens type van het filter, worden genegeerd.
+
+```
+FOR_EACH key IN (v1, v2, v3)
+    IF key >= filter
+        MATCH
+```
+
+## <a name="numberinrange"></a>NumberInRange
+De operator NumberInRange resulteert in waar als de **sleutel** waarde zich in een van de opgegeven **filter bereik** bevindt. In het volgende voor beeld wordt gecontroleerd of de waarde van het `key1` kenmerk in de `data` sectie zich in een van de twee bereiken bevindt: 3,14159-999,95, 3000-4000. 
+
+```json
+{
+    "operatorType": "NumberInRange",
+    "key": "data.key1",
+    "values": [[3.14159, 999.95], [3000, 4000]]
+}
+```
+
+De `values` eigenschap is een matrix met bereiken. In het vorige voor beeld is het een matrix van twee bereiken. Hier volgt een voor beeld van een matrix met één te controleren bereik. 
+
+**Matrix met één bereik:** 
+```json
+{
+    "operatorType": "NumberInRange",
+    "key": "data.key1",
+    "values": [[3000, 4000]]
+}
+```
+
+Als de sleutel een matrix is, worden alle waarden in de matrix gecontroleerd op basis van de matrix met filter waarden. Dit is de pseudo code met de sleutel: `[v1, v2, v3]` en het filter: een matrix met bereiken. In deze pseudo code `a` en `b` zijn lage en hoge waarden van elk bereik in de matrix. Sleutel waarden met gegevens typen die niet overeenkomen met het gegevens type van het filter, worden genegeerd.
+
+```
+FOR_EACH (a,b) IN filter.Values
+    FOR_EACH key IN (v1, v2, v3)
+       IF key >= a AND key <= b
+           MATCH
+```
+
+
+## <a name="numbernotinrange"></a>NumberNotInRange
+De operator NumberNotInRange resulteert in waar als de **sleutel** waarde zich **niet** in een van de opgegeven **afdrukbereiken** bevindt. In het volgende voor beeld wordt gecontroleerd of de waarde van het `key1` kenmerk in de `data` sectie zich in een van de twee bereiken bevindt: 3,14159-999,95, 3000-4000. Als dat het geval is, retourneert de operator false. 
+
+```json
+{
+    "operatorType": "NumberNotInRange",
+    "key": "data.key1",
+    "values": [[3.14159, 999.95], [3000, 4000]]
+}
+```
+De `values` eigenschap is een matrix met bereiken. In het vorige voor beeld is het een matrix van twee bereiken. Hier volgt een voor beeld van een matrix met één te controleren bereik.
+
+**Matrix met één bereik:** 
+```json
+{
+    "operatorType": "NumberNotInRange",
+    "key": "data.key1",
+    "values": [[3000, 4000]]
+}
+```
+
+Als de sleutel een matrix is, worden alle waarden in de matrix gecontroleerd op basis van de matrix met filter waarden. Dit is de pseudo code met de sleutel: `[v1, v2, v3]` en het filter: een matrix met bereiken. In deze pseudo code `a` en `b` zijn lage en hoge waarden van elk bereik in de matrix. Sleutel waarden met gegevens typen die niet overeenkomen met het gegevens type van het filter, worden genegeerd.
+
+```
+FOR_EACH (a,b) IN filter.Values
+    FOR_EACH key IN (v1, v2, v3)
+        IF key >= a AND key <= b
+            FAIL_MATCH
+```
+
+
+De beschik bare operator voor **Booleaanse** waarden is: 
+
+## <a name="boolequals"></a>BoolEquals
+De operator BoolEquals resulteert in waar als de **sleutel** waarde het opgegeven **filter** voor Booleaanse waarden is. In het volgende voor beeld wordt gecontroleerd of de waarde van het `isEnabled` kenmerk in de `data` sectie is `true` . 
+
+```json
+"advancedFilters": [{
+    "operatorType": "BoolEquals",
+    "key": "data.isEnabled",
+    "value": true
+}]
+```
+
+Als de sleutel een matrix is, worden alle waarden in de matrix vergeleken met de Booleaanse waarde van het filter. Dit is de pseudo code met de sleutel: `[v1, v2, v3]` . Sleutel waarden met gegevens typen die niet overeenkomen met het gegevens type van het filter, worden genegeerd.
+
+```
+FOR_EACH key IN (v1, v2, v3)
+    IF filter == key
+        MATCH
+```
+
+De beschik bare Opera tors voor **teken reeksen** zijn:
+
+## <a name="stringcontains"></a>StringContains
+De **StringContains** resulteert in waar als de **sleutel** waarde een van de opgegeven **filter** waarden (als subtekenreeksen) **bevat** . In het volgende voor beeld wordt gecontroleerd of de waarde van het `key1` kenmerk in de `data` sectie een van de opgegeven subtekenreeksen bevat: `microsoft` of `azure` . `azure data factory`Deze bevat bijvoorbeeld `azure` . 
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringContains",
+    "key": "data.key1",
+    "values": [
+        "microsoft", 
+        "azure"
+    ]
+}]
+```
+
+Als de sleutel een matrix is, worden alle waarden in de matrix gecontroleerd op basis van de matrix met filter waarden. Dit is de pseudo code met de sleutel: `[v1, v2, v3]` en het filter: `[a,b,c]` . Sleutel waarden met gegevens typen die niet overeenkomen met het gegevens type van het filter, worden genegeerd.
+
+```
+FOR_EACH filter IN (a, b, c)
+    FOR_EACH key IN (v1, v2, v3)
+        IF key CONTAINS filter
+            MATCH
+```
+
+## <a name="stringnotcontains"></a>StringNotContains
+De operator **StringNotContains** evalueert naar waar als de **sleutel** de opgegeven **filter** waarden niet als subtekenreeksen **bevat** . Als de sleutel een van de opgegeven waarden als een subtekenreeks bevat, resulteert de operator in ONWAAR. In het volgende voor beeld retourneert de operator alleen True als de waarde van het `key1` kenmerk in de `data` sectie geen `contoso` `fabrikam` subtekenreeksen bevat. 
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringNotContains",
+    "key": "data.key1",
+    "values": [
+        "contoso", 
+        "fabrikam"
+    ]
+}]
+```
+
+Als de sleutel een matrix is, worden alle waarden in de matrix gecontroleerd op basis van de matrix met filter waarden. Dit is de pseudo code met de sleutel: `[v1, v2, v3]` en het filter: `[a,b,c]` . Sleutel waarden met gegevens typen die niet overeenkomen met het gegevens type van het filter, worden genegeerd.
+
+```
+FOR_EACH filter IN (a, b, c)
+    FOR_EACH key IN (v1, v2, v3)
+        IF key CONTAINS filter
+            FAIL_MATCH
+```
+
+## <a name="stringbeginswith"></a>StringBeginsWith
+De operator **StringBeginsWith** evalueert naar waar als de **sleutel** waarde **begint met** een van de opgegeven **filter** waarden. In het volgende voor beeld wordt gecontroleerd of de waarde van het `key1` kenmerk in de `data` sectie begint met `event` of `grid` . `event hubs`Begint bijvoorbeeld met `event` .  
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringBeginsWith",
+    "key": "data.key1",
+    "values": [
+        "event", 
+        "message"
+    ]
+}]
+```
+
+Als de sleutel een matrix is, worden alle waarden in de matrix gecontroleerd op basis van de matrix met filter waarden. Dit is de pseudo code met de sleutel: `[v1, v2, v3]` en het filter: `[a,b,c]` . Sleutel waarden met gegevens typen die niet overeenkomen met het gegevens type van het filter, worden genegeerd.
+
+```
+FOR_EACH filter IN (a, b, c)
+    FOR_EACH key IN (v1, v2, v3)
+        IF key BEGINS_WITH filter
+            MATCH
+```
+
+## <a name="stringnotbeginswith"></a>StringNotBeginsWith
+De operator **StringNotBeginsWith** resulteert in waar als de **sleutel** waarde **niet begint met** een van de opgegeven **filter** waarden. In het volgende voor beeld wordt gecontroleerd of de waarde van het `key1` kenmerk in de `data` sectie niet begint met `event` of `message` .
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringNotBeginsWith",
+    "key": "data.key1",
+    "values": [
+        "event", 
+        "message"
+    ]
+}]
+```
+
+Als de sleutel een matrix is, worden alle waarden in de matrix gecontroleerd op basis van de matrix met filter waarden. Dit is de pseudo code met de sleutel: `[v1, v2, v3]` en het filter: `[a,b,c]` . Sleutel waarden met gegevens typen die niet overeenkomen met het gegevens type van het filter, worden genegeerd.
+
+```
+FOR_EACH filter IN (a, b, c)
+    FOR_EACH key IN (v1, v2, v3)
+        IF key BEGINS_WITH filter
+            FAIL_MATCH
+```
+
+## <a name="stringendswith"></a>StringEndsWith
+De operator **StringEndsWith** evalueert naar waar als de **sleutel** waarde **eindigt met** een van de opgegeven **filter** waarden. In het volgende voor beeld wordt gecontroleerd of de waarde van het `key1` kenmerk in de `data` sectie eindigt met `jpg` of `jpeg` of `png` . Bijvoorbeeld eindigt op `eventgrid.png` `png` .
+
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringEndsWith",
+    "key": "data.key1",
+    "values": [
+        "jpg", 
+        "jpeg", 
+        "png"
+    ]
+}]
+```
+
+Als de sleutel een matrix is, worden alle waarden in de matrix gecontroleerd op basis van de matrix met filter waarden. Dit is de pseudo code met de sleutel: `[v1, v2, v3]` en het filter: `[a,b,c]` . Sleutel waarden met gegevens typen die niet overeenkomen met het gegevens type van het filter, worden genegeerd.
+
+```
+FOR_EACH filter IN (a, b, c)
+    FOR_EACH key IN (v1, v2, v3)
+        IF key ENDS_WITH filter
+            MATCH
+```
+
+## <a name="stringnotendswith"></a>StringNotEndsWith
+De operator **StringNotEndsWith** resulteert in waar als de **sleutel** waarde **niet eindigt met** een van de opgegeven **filter** waarden. In het volgende voor beeld wordt gecontroleerd of de waarde van het `key1` kenmerk in de `data` sectie niet eindigt met `jpg` of `jpeg` of `png` . 
+
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringNotEndsWith",
+    "key": "data.key1",
+    "values": [
+        "jpg", 
+        "jpeg", 
+        "png"
+    ]
+}]
+```
+
+Als de sleutel een matrix is, worden alle waarden in de matrix gecontroleerd op basis van de matrix met filter waarden. Dit is de pseudo code met de sleutel: `[v1, v2, v3]` en het filter: `[a,b,c]` . Sleutel waarden met gegevens typen die niet overeenkomen met het gegevens type van het filter, worden genegeerd.
+
+```
+FOR_EACH filter IN (a, b, c)
+    FOR_EACH key IN (v1, v2, v3)
+        IF key ENDS_WITH filter
+            FAIL_MATCH
+```
+
+## <a name="stringin"></a>StringIn
+De operator **StringIn** controleert of de **sleutel** waarde **exact overeenkomt met** een van de opgegeven **filter** waarden. In het volgende voor beeld wordt gecontroleerd of de waarde van het `key1` kenmerk in de `data` sectie is `exact` of `string` of `matches` . 
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringIn",
+    "key": "data.key1",
+    "values": [
+        "contoso", 
+        "fabrikam", 
+        "factory"
+    ]
+}]
+```
+
+Als de sleutel een matrix is, worden alle waarden in de matrix gecontroleerd op basis van de matrix met filter waarden. Dit is de pseudo code met de sleutel: `[v1, v2, v3]` en het filter: `[a,b,c]` . Sleutel waarden met gegevens typen die niet overeenkomen met het gegevens type van het filter, worden genegeerd.
+
+```
+FOR_EACH filter IN (a, b, c)
+    FOR_EACH key IN (v1, v2, v3)
+        IF filter == key
+            MATCH
+```
+
+## <a name="stringnotin"></a>StringNotIn
+De operator **StringNotIn** controleert of de **sleutel** waarde **niet overeenkomt met** een van de opgegeven **filter** waarden. In het volgende voor beeld wordt gecontroleerd of de waarde van het `key1` kenmerk in de `data` sectie niet is `aws` en `bridge` . 
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringNotIn",
+    "key": "data.key1",
+    "values": [
+        "aws", 
+        "bridge"
+    ]
+}]
+```
+
+Als de sleutel een matrix is, worden alle waarden in de matrix gecontroleerd op basis van de matrix met filter waarden. Dit is de pseudo code met de sleutel: `[v1, v2, v3]` en het filter: `[a,b,c]` . Sleutel waarden met gegevens typen die niet overeenkomen met het gegevens type van het filter, worden genegeerd.
+
+```
+FOR_EACH filter IN (a, b, c)
+    FOR_EACH key IN (v1, v2, v3)
+        IF filter == key
+            FAIL_MATCH
+```
+
+
+Alle teken reeks vergelijkingen zijn niet hoofdletter gevoelig.
+
+> [!NOTE]
+> Als de JSON van de gebeurtenis niet de geavanceerde filter sleutel bevat, is filter evaulated **niet overeenkomt met** de volgende Opera tors: NumberGreaterThan, NumberGreaterThanOrEquals, NumberLessThan, NumberLessThanOrEquals, NumberIn, BoolEquals, StringContains, StringNotContains, StringBeginsWith, StringNotBeginsWith, StringEndsWith, StringNotEndsWith, StringIn.
+> 
+>Het filter is evaulated die **overeenkomt met** de volgende Opera tors: NumberNotIn, StringNotIn.
+
+
+## <a name="isnullorundefined"></a>IsNullOrUndefined
+De operator IsNullOrUndefined resulteert in waar als de waarde van de sleutel NULL of niet gedefinieerd is. 
+
+```json
+{
+    "operatorType": "IsNullOrUndefined",
+    "key": "data.key1"
+}
+```
+
+In het volgende voor beeld ontbreekt Key1, waardoor de operator resulteert in waar. 
+
+```json
+{ 
+    "data": 
+    { 
+        "key2": 5 
+    } 
+}
+```
+
+In het volgende voor beeld is Key1 ingesteld op NULL, zodat de operator resulteert in waar.
+
+```json
+{
+    "data": 
+    { 
+        "key1": null
+    }
+}
+```
+
+Als Key1 een andere waarde in deze voor beelden heeft, resulteert de operator in ONWAAR. 
+
+## <a name="isnotnull"></a>IsNotNull
+De operator IsNotNull resulteert in waar als de waarde van de sleutel niet NULL of niet gedefinieerd is. 
+
+```json
+{
+    "operatorType": "IsNotNull",
+    "key": "data.key1"
+}
+```
+
+## <a name="or-and-and"></a>OF en
 Als u één filter met meerdere waarden opgeeft, wordt een **of** -bewerking uitgevoerd, zodat de waarde van het sleutel veld een van deze waarden moet zijn. Hier volgt een voorbeeld:
 
 ```json
@@ -93,78 +577,45 @@ Als u meerdere verschillende filters opgeeft, wordt er een **en** -bewerking uit
 ]
 ```
 
-### <a name="operators"></a>Operators
+## <a name="cloudevents"></a>CloudEvents 
+Voor gebeurtenissen in het **CloudEvents-schema** gebruikt u de volgende waarden voor de sleutel:,,,, `eventid` `source` `eventtype` `eventtypeversion` of gebeurtenis gegevens (zoals `data.key1` ). 
 
-De beschik bare Opera tors voor **getallen** zijn:
+U kunt ook [extensie context kenmerken gebruiken in CloudEvents 1,0](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#extension-context-attributes). In het volgende voor beeld `comexampleextension1` en `comexampleothervalue` zijn extensie context kenmerken. 
 
-* NumberGreaterThan
-* NumberGreaterThanOrEquals
-* NumberLessThan
-* NumberLessThanOrEquals
-* NumberIn
-* NumberNotIn
+```json
+{
+    "specversion" : "1.0",
+    "type" : "com.example.someevent",
+    "source" : "/mycontext",
+    "id" : "C234-1234-1234",
+    "time" : "2018-04-05T17:31:00Z",
+    "subject": null,
+    "comexampleextension1" : "value",
+    "comexampleothervalue" : 5,
+    "datacontenttype" : "application/json",
+    "data" : {
+        "appinfoA" : "abc",
+        "appinfoB" : 123,
+        "appinfoC" : true
+    }
+}
+```
 
-De beschik bare operator voor **Booleaanse** waarden is: 
-- BoolEquals
+Hier volgt een voor beeld van het gebruik van een uitbreidings context kenmerk in een filter.
 
-De beschik bare Opera tors voor **teken reeksen** zijn:
+```json
+"advancedFilters": [{
+    "operatorType": "StringBeginsWith",
+    "key": "comexampleothervalue",
+    "values": [
+        "5", 
+        "1"
+    ]
+}]
+```
 
-* StringContains
-* StringBeginsWith
-* StringEndsWith
-* StringIn
-* StringNotIn
 
-Alle teken reeks vergelijkingen zijn **niet** hoofdletter gevoelig.
-
-> [!NOTE]
-> Als de JSON van de gebeurtenis niet de geavanceerde filter sleutel bevat, wordt het filter evaulated **niet overeenkomt met** de volgende Opera tors: 
-> - NumberGreaterThan
-> - NumberGreaterThanOrEquals
-> - NumberLessThan
-> - NumberLessThanOrEquals
-> - NumberIn
-> - BoolEquals
-> - StringContains
-> - StringBeginsWith
-> - StringEndsWith
-> - StringIn
-> 
->Het filter is evaulated die **overeenkomt met** de volgende Opera tors:
-> - NumberNotIn
-> - StringNotIn
-
-### <a name="key"></a>Sleutel
-
-Voor gebeurtenissen in het Event Grid schema gebruikt u de volgende waarden voor de sleutel:
-
-* Id
-* Onderwerp
-* Onderwerp
-* EventType
-* DataVersion
-* Gebeurtenis gegevens (zoals data. Key1)
-
-Voor gebeurtenissen in het schema voor Cloud gebeurtenissen gebruikt u de volgende waarden voor de sleutel:
-
-* Gebeurtenis
-* Bron
-* EventType
-* EventTypeVersion
-* Gebeurtenis gegevens (zoals data. Key1)
-
-Voor het aangepaste invoer schema gebruikt u de velden voor gebeurtenis gegevens (zoals data. Key1).
-
-### <a name="values"></a>Waarden
-
-De waarden kunnen zijn:
-
-* getal
-* tekenreeks
-* booleaans
-* matrix
-
-### <a name="limitations"></a>Beperkingen
+## <a name="limitations"></a>Beperkingen
 
 Geavanceerde filtering heeft de volgende beperkingen:
 
@@ -175,153 +626,8 @@ Geavanceerde filtering heeft de volgende beperkingen:
 
 Dezelfde sleutel kan in meer dan één filter worden gebruikt.
 
-### <a name="examples"></a>Voorbeelden
 
-### <a name="stringcontains"></a>StringContains
 
-```json
-"advancedFilters": [{
-    "operatorType": "StringContains",
-    "key": "data.key1",
-    "values": [
-        "microsoft", 
-        "azure"
-    ]
-}]
-```
-
-### <a name="stringbeginswith"></a>StringBeginsWith
-
-```json
-"advancedFilters": [{
-    "operatorType": "StringBeginsWith",
-    "key": "data.key1",
-    "values": [
-        "event", 
-        "grid"
-    ]
-}]
-```
-
-### <a name="stringendswith"></a>StringEndsWith
-
-```json
-"advancedFilters": [{
-    "operatorType": "StringEndsWith",
-    "key": "data.key1",
-    "values": [
-        "jpg", 
-        "jpeg", 
-        "png"
-    ]
-}]
-```
-
-### <a name="stringin"></a>StringIn
-
-```json
-"advancedFilters": [{
-    "operatorType": "StringIn",
-    "key": "data.key1",
-    "values": [
-        "exact", 
-        "string", 
-        "matches"
-    ]
-}]
-```
-
-### <a name="stringnotin"></a>StringNotIn
-
-```json
-"advancedFilters": [{
-    "operatorType": "StringNotIn",
-    "key": "data.key1",
-    "values": [
-        "aws", 
-        "bridge"
-    ]
-}]
-```
-
-### <a name="numberin"></a>NumberIn
-
-```json
-
-"advancedFilters": [{
-    "operatorType": "NumberIn",
-    "key": "data.counter",
-    "values": [
-        5,
-        1
-    ]
-}]
-
-```
-
-### <a name="numbernotin"></a>NumberNotIn
-
-```json
-"advancedFilters": [{
-    "operatorType": "NumberNotIn",
-    "key": "data.counter",
-    "values": [
-        41,
-        0,
-        0
-    ]
-}]
-```
-
-### <a name="numberlessthan"></a>NumberLessThan
-
-```json
-"advancedFilters": [{
-    "operatorType": "NumberLessThan",
-    "key": "data.counter",
-    "value": 100
-}]
-```
-
-### <a name="numbergreaterthan"></a>NumberGreaterThan
-
-```json
-"advancedFilters": [{
-    "operatorType": "NumberGreaterThan",
-    "key": "data.counter",
-    "value": 20
-}]
-```
-
-### <a name="numberlessthanorequals"></a>NumberLessThanOrEquals
-
-```json
-"advancedFilters": [{
-    "operatorType": "NumberLessThanOrEquals",
-    "key": "data.counter",
-    "value": 100
-}]
-```
-
-### <a name="numbergreaterthanorequals"></a>NumberGreaterThanOrEquals
-
-```json
-"advancedFilters": [{
-    "operatorType": "NumberGreaterThanOrEquals",
-    "key": "data.counter",
-    "value": 30
-}]
-```
-
-### <a name="boolequals"></a>BoolEquals
-
-```json
-"advancedFilters": [{
-    "operatorType": "BoolEquals",
-    "key": "data.isEnabled",
-    "value": true
-}]
-```
 
 
 ## <a name="next-steps"></a>Volgende stappen

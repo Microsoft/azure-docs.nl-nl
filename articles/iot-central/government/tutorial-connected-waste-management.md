@@ -7,12 +7,12 @@ ms.date: 12/11/2020
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 65245b3c4b7e18670682f7e9e890453e32337644
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: ff7cfb8c7aa8469111d4531da17c7cd184920f9b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820074"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101727563"
 ---
 # <a name="tutorial-create-a-connected-waste-management-app"></a>Zelfstudie: Een verbonden app voor afvalbeheer maken
 
@@ -21,12 +21,13 @@ In deze zelfstudie leert u hoe u Azure IoT Central kunt gebruiken om een toepass
 U leert met name het volgende: 
 
 > [!div class="checklist"]
-> De Azure IoT Central-sjabloon *Verbonden afvalbeheer* gebruiken om de app te maken.
-> Het dashboard van de operator verkennen en aanpassen. De apparaatsjabloon voor een verbonden afvalbak verkennen.
-> Gesimuleerde apparaten verkennen.
-> Regels verkennen en configureren.
-> Taken configureren.
-> De huisstijl van de toepassing aanpassen.
+> * De Azure IoT Central-sjabloon *Verbonden afvalbeheer* gebruiken om de app te maken.
+> * Het dashboard van de operator verkennen en aanpassen. 
+> * De apparaatsjabloon voor een verbonden afvalbak verkennen.
+> * Gesimuleerde apparaten verkennen.
+> * Regels verkennen en configureren.
+> * Taken configureren.
+> * De huisstijl van de toepassing aanpassen.
 
 ## <a name="prerequisites"></a>Vereisten
 

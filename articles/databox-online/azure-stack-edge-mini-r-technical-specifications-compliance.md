@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 09/22/2020
+ms.date: 03/01/2021
 ms.author: alkohli
-ms.openlocfilehash: e6dff06e92126e2fc4538273e229dcb0904e3101
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 3a0b87f04e60fd56d543c7c7a752cd788e087c78
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96466676"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101727478"
 ---
 # <a name="azure-stack-edge-mini-r-technical-specifications"></a>Technische specificaties voor de Azure Stack Edge-mini
 
@@ -80,9 +80,9 @@ De volgende tabel bevat de specificaties voor de voedings eenheid van Power Supp
 
 ## <a name="included-battery"></a>Batterij inbegrepen
 
-Het Azure Stack Edge mini-R-apparaat bevat ook een onboard-batterij die door de voeding in rekening wordt gebracht. 
+Het Azure Stack Edge mini-R-apparaat bevat ook een onboard-batterij die door de voeding in rekening wordt gebracht.
 
-Een extra batterij van het type 2590 kan worden gebruikt in combi natie met de onboard-batterij om het gebruik van het apparaat tussen de kosten uit te breiden. Deze batterij moet voldoen aan alle veiligheids-, vervoers-en milieu voorschriften die van toepassing zijn in het land van gebruik.
+Een extra [batterij van het Type 2590](https://www.bren-tronics.com/bt-70791ck.html) kan worden gebruikt in combi natie met de onboard-batterij om het gebruik van het apparaat tussen de kosten uit te breiden. Deze batterij moet voldoen aan alle veiligheids-, vervoers-en milieu voorschriften die van toepassing zijn in het land van gebruik.
 
 
 | Specificatie           | Waarde                      |

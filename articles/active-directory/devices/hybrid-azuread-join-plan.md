@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c4ed5dfee80c33009874361ae6b4d23ec00bc26
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 419823086fd7ba05ba5023216be302576350e30a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99573327"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101687279"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Procedure: de implementatie van uw hybride Azure Active Directory-koppeling plannen
 
@@ -95,6 +95,7 @@ Als eerste plannings stap moet u uw omgeving controleren en bepalen of u apparat
 Als uw Windows 10-domein aangesloten apparaten zijn die zijn [geregistreerd](overview.md#getting-devices-in-azure-ad) bij uw Tenant, kan dit leiden tot een dubbele status van hybride Azure AD join en Azure AD geregistreerd apparaat. U wordt aangeraden om een upgrade uit te voeren naar Windows 10 1803 (met KB4489894 toegepast) of hoger om dit scenario automatisch te verhelpen. In versies van vóór 1803 moet u de Azure AD-status geregistreerd hand matig verwijderen voordat u hybride deelname van Azure AD inschakelt. In 1803 en hoger releases zijn de volgende wijzigingen aangebracht om deze dubbele status te voor komen:
 
 - Alle bestaande Azure AD-geregistreerde statussen voor een gebruiker worden automatisch verwijderd <i>nadat het apparaat is toegevoegd aan hybride Azure AD en dezelfde gebruiker zich aanmeldt</i>. Als gebruiker A bijvoorbeeld een status van Azure AD heeft geregistreerd op het apparaat, wordt de dubbele status voor gebruiker A alleen opgeschoond wanneer gebruikers zich aanmelden bij het apparaat. Als er meerdere gebruikers op hetzelfde apparaat zijn, wordt de dubbele status afzonderlijk opgeruimd wanneer deze gebruikers zich aanmelden. Naast het verwijderen van de Azure AD-status geregistreerd, zal Windows 10 ook de registratie van het apparaat bij intune of andere MDM ongedaan maken, als de inschrijving is gebeurd als onderdeel van de Azure AD-registratie via automatische inschrijving.
+- De geregistreerde status van Azure AD voor een lokale account op het apparaat wordt niet beïnvloed door deze wijziging. Het is alleen van toepassing op domein accounts. De geregistreerde status van Azure AD op lokale accounts wordt dus niet automatisch verwijderd, zelfs na de aanmelding van de gebruiker, omdat de gebruiker geen domein gebruiker is. 
 - U kunt voor komen dat uw domein dat lid is van Azure AD, wordt geregistreerd door de volgende register waarde toe te voegen aan HKLM\SOFTWARE\Policies\Microsoft\Windows\WorkplaceJoin: "BlockAADWorkplaceJoin" = dword: 00000001.
 - Als u Windows hello voor bedrijven hebt geconfigureerd in Windows 10 1803, moet de gebruiker Windows hello voor bedrijven opnieuw instellen na het opschonen van de dubbele status. Dit probleem is opgelost met KB4512509
 
@@ -166,7 +167,7 @@ Soms kunnen de UPN-namen van uw on-premises AD-gebruikers afwijken van uw Azure 
 
 De onderstaande tabel bevat gedetailleerde informatie over de ondersteuning voor deze on-premises AD-Upn's in Windows 10 Hybrid Azure AD-deelname
 
-| Type on-premises AD-UPN | Domeintype | Windows 10-versie | Description |
+| Type on-premises AD-UPN | Domeintype | Windows 10-versie | Beschrijving |
 | ----- | ----- | ----- | ----- |
 | Bare | Federatief | Van 1703 release | Algemeen beschikbaar |
 | Niet-routeerbaar | Federatief | Van 1803 release | Algemeen beschikbaar |

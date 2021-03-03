@@ -4,12 +4,12 @@ description: In deze zelfstudie gebruikt u een AI-modelserver van Intel om de li
 ms.topic: tutorial
 ms.date: 09/08/2020
 titleSuffix: Azure
-ms.openlocfilehash: db018c5c8d8f3990fd465f4d586ef4dc70980542
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 68b5b7561cc31e156a745bcfb07e3203de10d425
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98955713"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101702212"
 ---
 # <a name="tutorial-analyze-live-video-by-using-openvino-model-server--ai-extension-from-intel"></a>Zelfstudie: Live video analyseren met OpenVINO™ Model Server – AI Extension van Intel 
 
@@ -88,11 +88,11 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
 
 1. Ga naar de map *src/cloud-to-device-console-app*. Hier ziet u het bestand *appsettings.json* en enkele andere bestanden:
 
-    * ***c2d-console-app.csproj** _: het projectbestand voor Visual Studio Code.
-    _ ***operations.json** _: een lijst met de bewerkingen die u het programma wilt laten uitvoeren.
-    _ ***Program.cs** _: de voorbeeldprogrammacode. Deze code:
+    * ***c2d-console-app.csproj***: het projectbestand voor Visual Studio Code.
+    * ***operations.json***: een lijst met de bewerkingen die u het programma wilt laten uitvoeren.
+    * ***Program.cs***: de voorbeeldcode van het programma. Deze code:
 
-        _ laadt de app-instellingen.
+        * De app-instellingen laden.
         * Roept directe methoden aan die worden weergegeven door de module Live Video Analytics in IoT Edge. U kunt de module gebruiken om livevideostreams te analyseren door de bijbehorende [directe methoden](direct-methods.md) aan te roepen.
         * Pauzeert, zodat u de uitvoer van het programma kunt controleren in het **TERMINAL**-venster en de gebeurtenissen die zijn gegenereerd door de module kunt controleren in het **UITVOER**-venster.
         * Roept directe methoden aan voor het opschonen van resources.
@@ -117,7 +117,7 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
 
     ![IoT Edge-implementatiemanifest genereren](./media/use-intel-openvino-tutorial/generate-deployment-manifest.png)  
 
-    Het manifestbestand *deployment.yolov3.amd64.json* wordt gemaakt in de map *src/edge/config*.
+    De *deployment.openvino.amd64.jsin* het manifest bestand wordt gemaakt in de map *src/Edge/config* .
 
 1. Als u de quickstart [Beweging detecteren en gebeurtenissen verzenden](detect-motion-emit-events-quickstart.md) hebt voltooid, kunt u deze stap overslaan. 
 

@@ -11,12 +11,12 @@ author: shkale-msft
 ms.author: shkale
 ms.reviewer: mathoma, stevestein, danil
 ms.date: 11/18/2020
-ms.openlocfilehash: e4917d03e3c0fb8109f9ad9bdcea9e7c1cdcd5df
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: 862d33e523562511796999d82b67d2b4b11efaf3
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108055"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101690606"
 ---
 # <a name="automated-backups---azure-sql-database--sql-managed-instance"></a>Automatische back-ups-Azure SQL Database & SQL Managed instance
 
@@ -229,17 +229,15 @@ U kunt de standaard retentie periode voor PITR-back-ups wijzigen met behulp van 
 
 ### <a name="change-the-pitr-backup-retention-period-by-using-the-azure-portal"></a>De retentie periode voor PITR-back-ups wijzigen met behulp van de Azure Portal
 
-Als u de retentie periode voor PITR voor actieve data bases met behulp van de Azure Portal wilt wijzigen, gaat u naar de server of het beheerde exemplaar met de data bases waarvan u de Bewaar periode wilt wijzigen. 
+Als u de retentie periode voor PITR voor actieve data bases met behulp van de Azure Portal wilt wijzigen, gaat u naar de server of het beheerde exemplaar met de data bases waarvan u de Bewaar periode wilt wijzigen. Selecteer **back-ups** in het linkerdeel venster en selecteer vervolgens het tabblad **Bewaar beleid** . Selecteer de data base (s) waarvoor u de PITR-back-upbewaaring wilt wijzigen. Selecteer vervolgens **Bewaar periode configureren** op de actie balk.
+
+
 
 #### <a name="sql-database"></a>[SQL Database](#tab/single-database)
-
-Wijzigingen in PITR voor het bewaren van back-ups voor SQL Database worden uitgevoerd op de server pagina in de portal. Als u de retentie van PITR voor data bases op een server wilt wijzigen, gaat u naar de Blade Server overzicht. Selecteer **back-ups beheren** in het linkerdeel venster, selecteer de data bases binnen het bereik van uw wijziging en selecteer vervolgens **retentie configureren** aan de bovenkant van het scherm:
 
 ![PITR-retentie, server niveau wijzigen](./media/automated-backups-overview/configure-backup-retention-sqldb.png)
 
 #### <a name="sql-managed-instance"></a>[SQL Managed Instance](#tab/managed-instance)
-
-Wijzigingen in de retentie van PITR voor een SQL Managed instance worden uitgevoerd op het niveau van een afzonderlijke data base. Ga naar de Blade overzicht van de afzonderlijke Data Base om de PITR-back-up te wijzigen voor een exemplaar database van de Azure Portal. Selecteer vervolgens de optie voor het **bewaren van back-ups configureren** boven aan het scherm:
 
 ![PITR-retentie, beheerd exemplaar wijzigen](./media/automated-backups-overview/configure-backup-retention-sqlmi.png)
 

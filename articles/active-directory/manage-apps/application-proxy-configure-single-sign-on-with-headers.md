@@ -11,14 +11,14 @@ ms.topic: conceptual
 ms.date: 10/05/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: d4cd69a90c4af2f996bd965ffaa145dce761018f
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 512316b78a0d6422daf5e268ef30db72ccbcfaeb
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99259533"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101688311"
 ---
-# <a name="header-based-single-sign-on-for-on-premises-apps-with-azure-ad-app-proxy-preview"></a>Eenmalige aanmelding op basis van een header voor on-premises apps met Azure AD-app proxy (preview-versie)
+# <a name="header-based-single-sign-on-for-on-premises-apps-with-azure-ad-app-proxy"></a>Eenmalige aanmelding op basis van een header voor on-premises apps met Azure AD-app proxy
 
 Azure Active Directory-toepassings proxy (Azure AD) biedt systeem eigen ondersteuning voor eenmalige aanmelding voor toepassingen die gebruikmaken van headers voor authenticatie. U kunt in azure AD vereiste header-waarden configureren voor uw toepassing. De header waarden worden via toepassings proxy verzonden naar de toepassing. Voor delen van het gebruik van systeem eigen ondersteuning voor verificatie op basis van een header met toepassings proxy zijn onder andere:  
 

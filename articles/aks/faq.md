@@ -3,12 +3,13 @@ title: Veelgestelde vragen over Azure Kubernetes service (AKS)
 description: Vind antwoorden op enkele veelgestelde vragen over Azure Kubernetes service (AKS).
 ms.topic: conceptual
 ms.date: 08/06/2020
-ms.openlocfilehash: 6c2eddf3b7002b101fed8face4a58f2d2b2f4878
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.custom: references_regions
+ms.openlocfilehash: 6d7ea48722e6604fe67d7a4ddcb12870623d9354
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820259"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101739624"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Veelgestelde vragen over AKS (Azure Kubernetes Service)
 
@@ -134,7 +135,7 @@ Windows Server-ondersteuning voor de knooppunt groep bevat enkele beperkingen di
 
 AKS biedt SLA-garanties als een optionele invoeg functie met [Sla voor uptime][uptime-sla]. 
 
-De gratis SLA die standaard wordt aangeboden, biedt geen garantie voor een Maxi maal beschik bare API-server eindpunt (onze serviceniveau doelstelling is 99,5%). Het kan gebeuren dat tijdelijke verbindings problemen worden waargenomen in het geval van upgrades, slechte aan-knoop punten, onderhoud van het platform, enzovoort... Als uw workload niet APIServer opnieuw wordt opgestart, wordt u aangeraden om de SLA voor uptime te gebruiken.
+De gratis SKU die standaard wordt aangeboden, heeft geen gekoppelde service *overeenkomst*, maar heeft een serviceniveau *doelstelling* van 99,5%. Het kan gebeuren dat er problemen met de tijdelijke verbinding worden waargenomen in het geval van upgrades, slechte aan-knoop punten, platform onderhoud, toepassing met behulp van aanvragen, de API-server met verzoeken, enzovoort. Als uw werk belasting de API-server niet opnieuw opstart, wordt u aangeraden om de SLA voor uptime te gebruiken.
 
 ## <a name="can-i-apply-azure-reservation-discounts-to-my-aks-agent-nodes"></a>Kan ik Azure-reserverings kortingen Toep assen op mijn AKS-agent knooppunten?
 
@@ -202,7 +203,7 @@ De Log Analytics-agent wordt ondersteund omdat het een extensie is die door micr
 
 ## <a name="does-aks-store-any-customer-data-outside-of-the-clusters-region"></a>Slaat AKS klant gegevens buiten de regio van het cluster op?
 
-De functie voor het opslaan van klant gegevens in één regio is momenteel alleen beschikbaar in de regio Zuidoost-Azië (Singapore) van de Azië en Stille Oceaan geo. Voor alle andere regio's worden klantgegevens opgeslagen in Geo.
+De functie voor het opslaan van klant gegevens in één regio is momenteel alleen beschikbaar in de regio Zuid-Azië (Singapore) van de Azië en Stille Oceaan geo-en Brazilië-zuid (Sao Paulo-staat) van Brazilië geo. Voor alle andere regio's worden klantgegevens opgeslagen in Geo.
 
 ## <a name="are-aks-images-required-to-run-as-root"></a>Moeten AKS-installatie kopieën worden uitgevoerd als root?
 

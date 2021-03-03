@@ -10,12 +10,12 @@ ms.subservice: azure-sentinel
 ms.topic: reference
 ms.custom: ''
 ms.date: 01/14/2021
-ms.openlocfilehash: b5d53ec6c6a8002c72a53d6928d56e55d520ef38
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 0cc1a083e1400b5a3167376e374af6c7bf7ab7c7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100390824"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101698345"
 ---
 # <a name="data-source-schema-reference"></a>Verwijzing naar gegevens bron schema
 
@@ -34,7 +34,7 @@ Dit artikel bevat een lijst met ondersteunde Azure-en gegevens bron schema's van
 | **Netwerk**                          | IIS-logboeken               | W3CIISLog              | [Naslag informatie over Azure Monitor W3CIISLog](/azure/azure-monitor/reference/tables/w3ciislog) |
 | **Netwerk**                          | VMinsights             | VMConnection           | [Naslag informatie over Azure Monitor VMConnection](/azure/azure-monitor/reference/tables/vmconnection) |
 | **Netwerk**                          | Wire data-oplossing     | WireData               | [Naslag informatie over Azure Monitor WireData](/azure/azure-monitor/reference/tables/wiredata) |
-| **Netwerk**                          | NSG-stroom logboeken          | AzureNetworkAnalytics  | [Schema's en gegevens aggregatie in Traffic Analytics](/azure/network-watcher/traffic-analytics-schema) |
+| **Netwerk**                          | NSG-stroom logboeken          | AzureNetworkAnalytics  | [Schema's en gegevens aggregatie in Traffic Analytics](../network-watcher/traffic-analytics-schema.md) |
 | | | | |
 
 > [!NOTE]

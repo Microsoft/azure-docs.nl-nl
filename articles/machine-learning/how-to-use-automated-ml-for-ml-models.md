@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 12/20/2020
 ms.topic: conceptual
 ms.custom: how-to, automl
-ms.openlocfilehash: 1a40fe01240474c2a6df3e028b7d03f3e8bb73fc
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: d7a0832fd15df402c88e1ba565c90a24e0d6eb8a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879744"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101692416"
 ---
 # <a name="create-review-and-deploy-automated-machine-learning-models-with-azure-machine-learning"></a>Automatische machine learning modellen maken, controleren en implementeren met Azure Machine Learning
 
@@ -179,6 +179,21 @@ Het tabblad **Modellen** bevat een lijst met de gemaakte modellen, op volgorde v
 Inzoomen op een van de voltooide modellen om details van de trainings uitvoering te bekijken, zoals een model samenvatting op het tabblad **model** of de grafieken met metrische gegevens over prestaties op het tabblad **metrische gegevens** . meer [informatie over grafieken](how-to-understand-automated-ml.md).
 
 [![Details van herhaling](media/how-to-use-automated-ml-for-ml-models/iteration-details.png)](media/how-to-use-automated-ml-for-ml-models/iteration-details-expanded.png)
+
+## <a name="model-explanations"></a>Model uitleg
+
+Als u meer inzicht wilt krijgen in uw model, kunt u zien welke gegevens functies (onbewerkt of speciaal) invloed hebben op de voor spellingen van het model met het dash board voor model verklaringen. 
+
+Het dash board voor het model uitleg bevat een algemene analyse van het getrainde model samen met de voor spellingen en toelichtingen. Daarnaast kunt u hiermee inzoomen op een afzonderlijk gegevens punt en de afzonderlijke functie-belang rijkheid. Meer [informatie over de visualisaties en specifieke waarnemings punten van het uitleg-dash board](how-to-machine-learning-interpretability-aml.md#visualizations).
+
+Om uitleg voor een bepaald model op te halen, 
+
+1. Selecteer op het tabblad **modellen** het model dat u wilt gebruiken. 
+1. Selecteer de knop **model uitleggen** en geef een berekening op die kan worden gebruikt om de uitleg te genereren.
+1. Controleer het tabblad voor **onderliggende uitvoeringen** voor de status. 
+1. Zodra het proces is voltooid, gaat u naar het tabblad **uitleg (preview)** dat het dash board uitleg bevat. 
+
+    ![Model uitleg van het dash board](media/how-to-use-automated-ml-for-ml-models/model-explanation-dashboard.png)
 
 ## <a name="deploy-your-model"></a>Uw model implementeren
 

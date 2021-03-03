@@ -3,12 +3,12 @@ title: Limieten en quota voor Azure-abonnementen
 description: Biedt een lijst met algemene Azure-abonnementen en service limieten, quota's en beperkingen. Dit artikel bevat informatie over het verhogen van de limieten en maximum waarden.
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 5d003392eeeca56bbfb0033db22e6bde4ae5e136
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: fd9f8c9fff60ea9f7c24eb5d6f35542a197fe366
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100520682"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734030"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Limieten, quota's en beperkingen voor het Azure-abonnement en de Azure-service
 
@@ -187,6 +187,10 @@ De meest recente waarden voor Azure Machine Learning Compute quota vindt u op de
 ## <a name="azure-signalr-service-limits"></a>Limieten voor Azure signalerings service
 
 [!INCLUDE [signalr-service-limits](../../../includes/signalr-service-limits.md)]
+
+## <a name="azure-vmware-solution-limits"></a>Limieten voor Azure VMware-oplossingen
+
+[!INCLUDE [azure-vmware-solutions-limits](../../azure-vmware/includes/azure-vmware-solutions-limits.md)]
 
 ## <a name="backup-limits"></a>Back-uplimieten
 

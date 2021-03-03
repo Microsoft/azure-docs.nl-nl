@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/24/2019
-ms.openlocfilehash: 0374c7d304a40031919bae8816d31477e742b9c8
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 688adcf0012f8871c4034cbba6ce2ddcacdbcc43
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611286"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717142"
 ---
 # <a name="using-service-map-solution-in-azure"></a>Servicetoewijzing gebruiken in Azure
 
@@ -26,7 +26,7 @@ In dit artikel worden de details van het voorbereiden en gebruiken van Serviceto
 * De [afhankelijkheids agent](vminsights-enable-overview.md#agents) die is geïnstalleerd op de Windows-computer of de Linux-server.
 
 >[!NOTE]
->Als u Servicetoewijzing al hebt geïmplementeerd, kunt u nu ook uw Maps in Azure Monitor voor VM's weer geven, inclusief aanvullende functies voor het controleren van de status en prestaties van de virtuele machine. Zie [Azure monitor voor VM's-overzicht](../vm/vminsights-overview.md)voor meer informatie. Zie de volgende [Veelgestelde vragen](../faq.md#azure-monitor-for-vms)voor meer informatie over de verschillen tussen de functie servicetoewijzing solution en Azure monitor voor VM's map.
+>Als u Servicetoewijzing al hebt geïmplementeerd, kunt u nu ook uw kaarten bekijken in VM Insights, waaronder aanvullende functies voor het controleren van de status en prestaties van de virtuele machine. Zie [overzicht van VM Insights](../vm/vminsights-overview.md)voor meer informatie. Zie de volgende [Veelgestelde vragen](../faq.md#azure-monitor-for-vms)voor meer informatie over de verschillen tussen de servicetoewijzing oplossing en de functie van de VM Insights-kaart.
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
@@ -154,7 +154,7 @@ Klik op het menu met weglatings tekens naast de groeps naam in de lijst groep.
 
 Bepaalde processen dienen specifieke rollen op computers: webservers, toepassings servers, Data Base, enzovoort. Met Servicetoewijzing worden de vakken proces en computer met functie pictogrammen gemarkeerd om in één oogopslag de rol te zien die een proces of server speelt.
 
-| Pictogram rol | Description |
+| Pictogram rol | Beschrijving |
 |:--|:--|
 | ![Webserver](media/service-map/role-web-server.png) | Webserver |
 | ![App-server](media/service-map/role-application-server.png) | Toepassings server |
@@ -241,7 +241,7 @@ Servicetoewijzing integreert met zoeken in Logboeken om het aantal beschik bare 
 
 ## <a name="service-desk-integration"></a>Service Desk-integratie
 
-Servicetoewijzing integratie met de IT Service Management-connector automatisch wanneer beide oplossingen zijn ingeschakeld en geconfigureerd in uw Log Analytics-werk ruimte. De integratie in Servicetoewijzing heeft de naam ' Service Desk '. Zie [ITSM-werk items centraal beheren met IT Service Management-connector](../platform/itsmc-overview.md)voor meer informatie.
+Servicetoewijzing integratie met de IT Service Management-connector automatisch wanneer beide oplossingen zijn ingeschakeld en geconfigureerd in uw Log Analytics-werk ruimte. De integratie in Servicetoewijzing heeft de naam ' Service Desk '. Zie [ITSM-werk items centraal beheren met IT Service Management-connector](../alerts/itsmc-overview.md)voor meer informatie.
 
 In het deel venster **Machine Service Bureau** worden alle IT Service Management-gebeurtenissen voor de geselecteerde server weer gegeven in het geselecteerde tijds bereik. Op de server wordt een pictogram weer gegeven als er huidige items zijn en in het deel venster machine Service Desk ze worden weer gegeven.
 
@@ -304,7 +304,7 @@ In het deel venster **computer updates** worden gegevens van de updatebeheer opl
 
 ## <a name="log-analytics-records"></a>Log Analytics-records
 
-Servicetoewijzing computer-en proces inventaris gegevens kunnen worden [doorzocht](../log-query/log-query-overview.md) in log Analytics. U kunt deze gegevens Toep assen op scenario's met inbegrip van migratie planning, capaciteits analyse, detectie en prestatie problemen oplossen op aanvraag.
+Servicetoewijzing computer-en proces inventaris gegevens kunnen worden [doorzocht](../logs/log-query-overview.md) in log Analytics. U kunt deze gegevens Toep assen op scenario's met inbegrip van migratie planning, capaciteits analyse, detectie en prestatie problemen oplossen op aanvraag.
 
 Er wordt één record per uur gegenereerd voor elke unieke computer en elk proces, naast de records die worden gegenereerd wanneer een proces of computer wordt gestart of aan Servicetoewijzing. Deze records hebben de eigenschappen in de volgende tabellen. De velden en waarden in de ServiceMapComputer_CL gebeurtenissen worden toegewezen aan velden van de machine resource in de ServiceMap Azure Resource Manager-API. De velden en waarden in de ServiceMapProcess_CL gebeurtenissen worden toegewezen aan de velden van de proces resource in de ServiceMap Azure Resource Manager-API. Het veld ResourceName_s komt overeen met het veld naam in de bijbehorende resource manager-resource. 
 
@@ -550,7 +550,7 @@ Zie de [privacyverklaring voor micro soft Online Services](https://go.microsoft.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over [Zoek opdrachten in Logboeken](../log-query/log-query-overview.md) in log Analytics om gegevens op te halen die worden verzameld door servicetoewijzing.
+Meer informatie over [Zoek opdrachten in Logboeken](../logs/log-query-overview.md) in log Analytics om gegevens op te halen die worden verzameld door servicetoewijzing.
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 

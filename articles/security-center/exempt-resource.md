@@ -7,12 +7,12 @@ ms.date: 01/22/2021
 ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 4012c7417345678717800f4fdede95947e00b828
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 374ddaa088fba9ae7035f170562e06b7f07eae47
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756705"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101709373"
 ---
 # <a name="exempting-resources-and-recommendations-from-your-secure-score"></a>Resources en aanbevelingen uitsluiten van uw beveiligde Score 
 
@@ -110,9 +110,9 @@ Zoals eerder op deze pagina is uitgelegd, zijn de uitzonderings regels een krach
 
 We hebben een Azure Resource Manager ARM-sjabloon gemaakt waarmee een logische app-Playbook en alle benodigde API-verbindingen worden geïmplementeerd om u te waarschuwen wanneer er een uitzonde ring is gemaakt om bij te houden hoe uw gebruikers deze functie uitoefenen.
 
-- Voor meer informatie over de Playbook raadpleegt u dit bericht in de [technische community-blogs](https://techcommunity.microsoft.com/t5/azure-security-center/how-to-keep-track-of-resource-exemptions-in-azure-security/ba-p/1770580)
+- Voor meer informatie over de Playbook raadpleegt u het tech Community-Blog bericht [over het bijhouden van resource-uitzonde ringen in azure Security Center](https://techcommunity.microsoft.com/t5/azure-security-center/how-to-keep-track-of-resource-exemptions-in-azure-security/ba-p/1770580)
 - U vindt de ARM-sjabloon in de [github-opslag plaats van Azure Security Center](https://github.com/Azure/Azure-Security-Center/tree/master/Workflow%20automation/Notify-ResourceExemption)
-- U kunt [hier](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Security-Center%2Fmaster%2FWorkflow%2520automation%2FNotify-ResourceExemption%2Fazuredeploy.json) klikken om alle benodigde componenten te implementeren 
+- Als u alle benodigde onderdelen wilt implementeren, [gebruikt u dit geautomatiseerde proces](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Security-Center%2Fmaster%2FWorkflow%2520automation%2FNotify-ResourceExemption%2Fazuredeploy.json)
 
 
 ## <a name="find-recommendations-with-exemptions-using-azure-resource-graph"></a>Aanbevelingen met uitzonde ringen zoeken met Azure resource Graph

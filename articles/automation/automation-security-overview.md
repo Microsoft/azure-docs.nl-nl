@@ -4,14 +4,14 @@ description: Dit artikel bevat een overzicht van de verificatie van Azure Automa
 keywords: automation-beveiliging, veilige automation; automation-verificatie
 services: automation
 ms.subservice: process-automation
-ms.date: 02/01/2021
+ms.date: 02/26/2021
 ms.topic: conceptual
-ms.openlocfilehash: e3ed14a0845d90a1b9b951dd5175acf6233f8718
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: c559a81b17b92f48b2d51b7c2d26325d6a1b1cca
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99254996"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708897"
 ---
 # <a name="automation-account-authentication-overview"></a>Overzicht van Automation-accountverificatie
 
@@ -44,6 +44,8 @@ Zie [Resource Manager en klassieke implementatie](../azure-resource-manager/mana
 >Azure Cloud Solution Provider-abonnementen (CSP) ondersteunen alleen het Azure Resource Manager model. Niet-Azure Resource Manager services zijn niet beschikbaar in het programma. Wanneer u een CSP-abonnement gebruikt, wordt het klassieke uitvoeren als-account van Azure niet gemaakt, maar wordt het uitvoeren als-account van Azure gemaakt. Zie [beschik bare Services in CSP-abonnementen](/azure/cloud-solution-provider/overview/azure-csp-available-services)voor meer informatie over CSP-abonnementen.
 
 Wanneer u een Automation-account maakt, wordt het uitvoeren als-account standaard op hetzelfde moment gemaakt. Als u ervoor hebt gekozen om deze niet samen met het Automation-account te maken, kan dit op een later tijdstip afzonderlijk worden gemaakt. Een klassiek uitvoeren als-account van Azure is optioneel en wordt afzonderlijk gemaakt als u klassieke resources moet beheren.
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RWwtF3]
 
 ### <a name="run-as-account"></a>Run As-account
 

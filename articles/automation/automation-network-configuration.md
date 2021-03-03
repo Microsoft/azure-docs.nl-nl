@@ -4,12 +4,12 @@ description: Dit artikel bevat informatie over de netwerk gegevens die vereist z
 ms.author: magoedte
 ms.topic: conceptual
 ms.date: 01/26/2021
-ms.openlocfilehash: 0add7eed6abbe6c137d423ee4a7ef5f0f60072e3
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 36331e9c07926d4d3ffff136aefa2f9a77d47cb4
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98900209"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708880"
 ---
 # <a name="azure-automation-network-configuration-details"></a>Details van de netwerk configuratie Azure Automation
 
@@ -26,7 +26,7 @@ De volgende poort en Url's zijn vereist voor de Hybrid Runbook Worker en voor de
 
 ### <a name="network-planning-for-hybrid-runbook-worker"></a>Hybrid Runbook Worker van het netwerk plannen
 
-Voor een systeem-of gebruikers Hybrid Runbook Worker verbinding maken met en registreren bij Azure Automation, moet deze toegang hebben tot het poort nummer en de Url's die in deze sectie worden beschreven. De werk nemer moet ook toegang hebben tot de [poorten en url's die vereist zijn voor de log Analytics-agent](../azure-monitor/platform/agent-windows.md) om verbinding te maken met de Azure monitor log Analytics-werk ruimte.
+Voor een systeem-of gebruikers Hybrid Runbook Worker verbinding maken met en registreren bij Azure Automation, moet deze toegang hebben tot het poort nummer en de Url's die in deze sectie worden beschreven. De werk nemer moet ook toegang hebben tot de [poorten en url's die vereist zijn voor de log Analytics-agent](../azure-monitor/agents/agent-windows.md) om verbinding te maken met de Azure monitor log Analytics-werk ruimte.
 
 Als u een Automation-account hebt dat is gedefinieerd voor een specifieke regio, kunt u Hybrid Runbook Worker communicatie beperken tot dat regionale Data Center. Controleer de [DNS-records die door Azure Automation worden gebruikt](how-to/automation-region-dns-records.md) voor de vereiste DNS-records.
 

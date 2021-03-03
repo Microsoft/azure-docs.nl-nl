@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 02/04/2021
 ms.topic: conceptual
-ms.openlocfilehash: bed9cd23abc96c51cad0a13e81ee0b64f0d433b6
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.openlocfilehash: a201274bf0c06382da790dd051bf5023337970b8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100012303"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723840"
 ---
 # <a name="remove-startstop-vms-during-off-hours-from-automation-account"></a>VM's buiten bedrijfsuren starten/stoppen verwijderen uit Automation-account
 
@@ -94,7 +94,7 @@ Terwijl de gegevens worden geverifieerd en het account wordt verwijderd, kunt u 
 
 ## <a name="delete-the-feature"></a>De functie verwijderen
 
-Voer de volgende stappen uit om VM's buiten bedrijfsuren starten/stoppen van uw Automation-account te verwijderen. Het Automation-account en de Log Analytics-werk ruimte worden niet verwijderd als onderdeel van dit proces. Als u de Log Analytics-werk ruimte niet wilt gebruiken, moet u deze hand matig verwijderen. Zie [Azure log Analytics-werk ruimte verwijderen en herstellen](../azure-monitor/platform/delete-workspace.md)voor meer informatie over het verwijderen van uw werk ruimte.
+Voer de volgende stappen uit om VM's buiten bedrijfsuren starten/stoppen van uw Automation-account te verwijderen. Het Automation-account en de Log Analytics-werk ruimte worden niet verwijderd als onderdeel van dit proces. Als u de Log Analytics-werk ruimte niet wilt gebruiken, moet u deze hand matig verwijderen. Zie [Azure log Analytics-werk ruimte verwijderen en herstellen](../azure-monitor/logs/delete-workspace.md)voor meer informatie over het verwijderen van uw werk ruimte.
 
 1. Navigeer naar uw Automation-account en selecteer **gekoppelde werk ruimte** onder **gerelateerde resources**.
 

@@ -4,12 +4,12 @@ description: Meer informatie over actie regels in Azure Monitor zijn en hoe u de
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.subservice: alerts
-ms.openlocfilehash: 5fc9b1f75faec7f2be8f9e6126fdacf9697413f6
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 1a837ac9aa94effa021d5395fb4856d1d5df2e90
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612624"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101718145"
 ---
 # <a name="action-rules-preview"></a>Actie regels (preview-versie)
 
@@ -105,7 +105,7 @@ Als u in de wissel knop **actie groep** selecteert, moet u een bestaande actie g
 Configureer als laatste de volgende Details voor de actie regel:
 * Name
 * De resource groep waarin deze is opgeslagen
-* Description
+* Beschrijving
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
@@ -209,7 +209,7 @@ Contoso wil meldingen onderdrukken voor alle logboek waarschuwingen die zijn geg
 
 ### <a name="scenario-3-action-group-defined-at-a-resource-group"></a>Scenario 3: een actie groep die is gedefinieerd voor een resource groep
 
-Contoso heeft [een metrische waarschuwing gedefinieerd op abonnements niveau](../platform/alerts-metric-overview.md#monitoring-at-scale-using-metric-alerts-in-azure-monitor). Maar het wil ook bepalen van de acties die specifiek worden geactiveerd voor waarschuwingen die zijn gegenereerd op basis van de resource groep **ContosoRG**.
+Contoso heeft [een metrische waarschuwing gedefinieerd op abonnements niveau](./alerts-metric-overview.md#monitoring-at-scale-using-metric-alerts-in-azure-monitor). Maar het wil ook bepalen van de acties die specifiek worden geactiveerd voor waarschuwingen die zijn gegenereerd op basis van de resource groep **ContosoRG**.
 
 **Oplossing:** Een actie regel maken met:
 * Scope = **ContosoRG**
@@ -253,11 +253,11 @@ az monitor action-rule delete --resource-group MyResourceGroupName --name MyActi
 
 ## <a name="best-practices"></a>Aanbevolen procedures
 
-Logboek waarschuwingen die u met de optie [aantal resultaten](../platform/alerts-unified-log.md) maakt, genereren één waarschuwings exemplaar met behulp van het hele Zoek resultaat (dat mogelijk meerdere computers kan omvatten). Als in dit scenario een actie regel gebruikmaakt van het filter van de **waarschuwings context (Payload)** , wordt het op de waarschuwings instantie gereageerd zolang er een overeenkomst is. In scenario 2, dat eerder beschreven, wordt de volledige melding onderdrukt als de zoek resultaten voor de gegenereerde logboek waarschuwing zowel **computer-01** als **computer-02** bevatten. Er is helemaal geen melding voor **computer-02** gegenereerd.
+Logboek waarschuwingen die u met de optie [aantal resultaten](./alerts-unified-log.md) maakt, genereren één waarschuwings exemplaar met behulp van het hele Zoek resultaat (dat mogelijk meerdere computers kan omvatten). Als in dit scenario een actie regel gebruikmaakt van het filter van de **waarschuwings context (Payload)** , wordt het op de waarschuwings instantie gereageerd zolang er een overeenkomst is. In scenario 2, dat eerder beschreven, wordt de volledige melding onderdrukt als de zoek resultaten voor de gegenereerde logboek waarschuwing zowel **computer-01** als **computer-02** bevatten. Er is helemaal geen melding voor **computer-02** gegenereerd.
 
 ![In het diagram worden de actie regels en logboek waarschuwingen weer gegeven met één waarschuwings exemplaar gemarkeerd.](media/alerts-action-rules/action-rules-log-alert-number-of-results.png)
 
-Als u het beste logboek waarschuwingen met actie regels wilt gebruiken, maakt u logboek waarschuwingen met de optie [metrische meet](../platform/alerts-unified-log.md) waarde. Afzonderlijke waarschuwings instanties worden gegenereerd door deze optie op basis van het gedefinieerde groeps veld. In scenario 2 worden afzonderlijke waarschuwings instanties gegenereerd voor **computer-01** en **computer-02**. Als gevolg van de actie regel die in het scenario wordt beschreven, wordt alleen de melding voor **computer-01** onderdrukt. De melding voor **computer-02** blijft gewoon actief.
+Als u het beste logboek waarschuwingen met actie regels wilt gebruiken, maakt u logboek waarschuwingen met de optie [metrische meet](./alerts-unified-log.md) waarde. Afzonderlijke waarschuwings instanties worden gegenereerd door deze optie op basis van het gedefinieerde groeps veld. In scenario 2 worden afzonderlijke waarschuwings instanties gegenereerd voor **computer-01** en **computer-02**. Als gevolg van de actie regel die in het scenario wordt beschreven, wordt alleen de melding voor **computer-01** onderdrukt. De melding voor **computer-02** blijft gewoon actief.
 
 ![Actie regels en logboek waarschuwingen (aantal resultaten)](media/alerts-action-rules/action-rules-log-alert-metric-measurement.png)
 
@@ -287,7 +287,7 @@ Nadat u de doel resource voor uw waarschuwings regel hebt gedefinieerd, kunt u d
 
 ### <a name="can-i-see-the-alerts-that-have-been-suppressed-by-an-action-rule"></a>Kan ik de waarschuwingen zien die zijn onderdrukt door een actie regel?
 
-Op de [pagina waarschuwingen lijst](../platform/alerts-managing-alert-instances.md)kunt u een aanvullende kolom met de naam **status onderdrukken** kiezen. Als de melding voor een waarschuwings exemplaar is onderdrukt, wordt deze status in de lijst weer gegeven.
+Op de [pagina waarschuwingen lijst](./alerts-managing-alert-instances.md)kunt u een aanvullende kolom met de naam **status onderdrukken** kiezen. Als de melding voor een waarschuwings exemplaar is onderdrukt, wordt deze status in de lijst weer gegeven.
 
 ![Onderdrukte waarschuwings instanties](media/alerts-action-rules/action-rules-suppressed-alerts.png)
 
@@ -321,4 +321,4 @@ Voor elke waarschuwing op VM1 wordt de AG1 van de actie groep eenmaal geactiveer
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Meer informatie over waarschuwingen in azure](../platform/alerts-overview.md)
+- [Meer informatie over waarschuwingen in azure](./alerts-overview.md)

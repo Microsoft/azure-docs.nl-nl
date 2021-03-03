@@ -6,12 +6,12 @@ author: MS-jgol
 ms.author: jgol
 ms.date: 05/31/2020
 ms.reviewer: mbullwin
-ms.openlocfilehash: 0dda015d820d81fdd13eced384f97362e2ee3339
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 9ead123338a410daf53569ff577dfc8c728a8ddf
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100587563"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708489"
 ---
 # <a name="what-is-auto-instrumentation-or-codeless-attach---azure-monitor-application-insights"></a>Wat is het automatisch instrumenteren of koppelen Azure Monitor Application Insights?
 
@@ -45,27 +45,27 @@ Wanneer er extra integraties worden toegevoegd, wordt de matrix voor automatisch
 Toepassings bewaking op Azure App Service in Windows is beschikbaar voor [.NET-toepassingen](./azure-web-apps.md?tabs=net) .net en is standaard ingeschakeld.
 
 #### <a name="netcore"></a>. NETCore
-Bewaken voor [. ](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps?tabs=netcore) U kunt toepassingen met één klik op Netkernen inschakelen.
+Bewaken voor [. ](./azure-web-apps.md?tabs=netcore) U kunt toepassingen met één klik op Netkernen inschakelen.
 
 #### <a name="java"></a>Java
-De portal-integratie voor de bewaking van Java-toepassingen op App Service in Windows is momenteel niet beschikbaar. u kunt echter Application Insights [Java 3,0 zelfstandige agent](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent) aan uw toepassing toevoegen zonder dat u code hoeft te wijzigen voordat u de apps in app service implementeert. Application Insights Java 3,0-agent is algemeen beschikbaar.
+De portal-integratie voor de bewaking van Java-toepassingen op App Service in Windows is momenteel niet beschikbaar. u kunt echter Application Insights [Java 3,0 zelfstandige agent](./java-in-process-agent.md) aan uw toepassing toevoegen zonder dat u code hoeft te wijzigen voordat u de apps in app service implementeert. Application Insights Java 3,0-agent is algemeen beschikbaar.
 
 #### <a name="nodejs"></a>Node.js
-Bewaking voor Node.js-toepassingen in Windows kan momenteel niet worden ingeschakeld vanuit de portal. Gebruik de [SDK](https://docs.microsoft.com/azure/azure-monitor/app/nodejs)om Node.js toepassingen te controleren.
+Bewaking voor Node.js-toepassingen in Windows kan momenteel niet worden ingeschakeld vanuit de portal. Gebruik de [SDK](./nodejs.md)om Node.js toepassingen te controleren.
 
 ### <a name="linux"></a>Linux
 
 #### <a name="netcore"></a>. NETCore
-Om te bewaken. NetCore-toepassingen die worden uitgevoerd op Linux, gebruiken de [SDK](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core).
+Om te bewaken. NetCore-toepassingen die worden uitgevoerd op Linux, gebruiken de [SDK](./asp-net-core.md).
 
 #### <a name="java"></a>Java 
-Het inschakelen van Java-toepassings bewaking voor App Service op Linux vanuit de portal is niet beschikbaar, maar u kunt [Application Insights Java 3,0-agent](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent) toevoegen aan uw app voordat u de apps op app service implementeert. Application Insights Java 3,0-agent is algemeen beschikbaar.
+Het inschakelen van Java-toepassings bewaking voor App Service op Linux vanuit de portal is niet beschikbaar, maar u kunt [Application Insights Java 3,0-agent](./java-in-process-agent.md) toevoegen aan uw app voordat u de apps op app service implementeert. Application Insights Java 3,0-agent is algemeen beschikbaar.
 
 #### <a name="nodejs"></a>Node.js
-Het [bewaken van Node.js toepassingen in app service op Linux](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps?tabs=nodejs) bevindt zich in de open bare preview en kan worden ingeschakeld in azure Portal, beschikbaar in alle regio's. 
+Het [bewaken van Node.js toepassingen in app service op Linux](./azure-web-apps.md?tabs=nodejs) bevindt zich in de open bare preview en kan worden ingeschakeld in azure Portal, beschikbaar in alle regio's. 
 
 #### <a name="python"></a>Python
-Gebruik de SDK om [uw python-app te bewaken](https://docs.microsoft.com/azure/azure-monitor/app/opencensus-python) 
+Gebruik de SDK om [uw python-app te bewaken](./opencensus-python.md) 
 
 ## <a name="azure-functions"></a>Azure Functions
 
@@ -77,7 +77,7 @@ Er is momenteel code instrumentatie van de Azure Kubernetes-service beschikbaar 
 
 ## <a name="azure-windows-vms-and-virtual-machine-scale-set"></a>Azure Windows-Vm's en schaal sets voor virtuele machines
 
-Automatische instrumentatie voor Azure Vm's en schaal sets voor virtuele machines is beschikbaar voor [.net](./azure-vm-vmss-apps.md) en [Java](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent).  
+Automatische instrumentatie voor Azure Vm's en schaal sets voor virtuele machines is beschikbaar voor [.net](./azure-vm-vmss-apps.md) en [Java](./java-in-process-agent.md).  
 
 ## <a name="on-premises-servers"></a>On-premises servers
 U kunt de bewaking eenvoudig inschakelen voor uw [on-premises Windows-servers voor .NET-toepassingen](./status-monitor-v2-overview.md) en voor [Java-apps](./java-in-process-agent.md).
@@ -90,4 +90,3 @@ De veelzijdige Java-agent werkt op elke omgeving, maar u hoeft uw code niet te i
 * [Overzicht van Application Insights](./app-insights-overview.md)
 * [Toepassings overzicht](./app-map.md)
 * [End-to-end prestatie bewaking](../app/tutorial-performance.md)
-

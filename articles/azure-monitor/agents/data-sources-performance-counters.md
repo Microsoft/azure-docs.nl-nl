@@ -6,18 +6,18 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/21/2020
-ms.openlocfilehash: f885945dfb6910df919038106487db912d87caee
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: c06123b33c7f467e12742cf6180d821e647b5115
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610305"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711549"
 ---
 # <a name="collect-windows-and-linux-performance-data-sources-with-log-analytics-agent"></a>Windows-en Linux-prestatie gegevens bronnen met Log Analytics-agent verzamelen
 Prestatie meter items in Windows en Linux bieden inzicht in de prestaties van hardwareonderdelen, besturings systemen en toepassingen.  Azure Monitor kunt prestatie meter items van Log Analytics agents met veelvuldige intervallen verzamelen voor analyse van bijna realtime (NRT), naast het samen voegen van prestatie gegevens voor langere termijn analyse en rapportage.
 
 > [!IMPORTANT]
-> Dit artikel heeft betrekking op het verzamelen van prestatie gegevens met de [log Analytics-agent](../platform/log-analytics-agent.md) die een van de agents die door Azure monitor worden gebruikt. Andere agents verzamelen verschillende gegevens en worden anders geconfigureerd. Zie [overzicht van Azure monitor agents](../agents/agents-overview.md) voor een lijst met beschik bare agents en de gegevens die ze kunnen verzamelen.
+> Dit artikel heeft betrekking op het verzamelen van prestatie gegevens met de [log Analytics-agent](./log-analytics-agent.md) die een van de agents die door Azure monitor worden gebruikt. Andere agents verzamelen verschillende gegevens en worden anders geconfigureerd. Zie [overzicht van Azure monitor agents](../agents/agents-overview.md) voor een lijst met beschik bare agents en de gegevens die ze kunnen verzamelen.
 
 ![Prestatiemeteritems](media/data-sources-performance-counters/overview.png)
 
@@ -28,7 +28,7 @@ Wanneer u voor het eerst Windows-of Linux-prestatie meter items voor een nieuwe 
 
 Voor Windows-prestatie meter items kunt u een specifiek exemplaar voor elk prestatie meter item kiezen. Voor Linux-prestatie meter items geldt het exemplaar van elk item dat u kiest, van toepassing op alle onderliggende items van het bovenliggende item. In de volgende tabel ziet u de algemene instanties die beschikbaar zijn voor de prestatie meter items Linux en Windows.
 
-| Exemplaarnaam | Description |
+| Exemplaarnaam | Beschrijving |
 | --- | --- |
 | \_Totaal |Totaal van alle exemplaren |
 | \* |Alle instanties |
@@ -77,7 +77,7 @@ Elk object, of elke categorie, van prestatie gegevens die moeten worden verzamel
 
 De para meters in dit element worden in de volgende tabel beschreven.
 
-| Parameters | Description |
+| Parameters | Beschrijving |
 |:--|:--|
 | object \_ naam | Object naam voor de verzameling. |
 | regex-exemplaar \_ |  Een *reguliere expressie* die definieert welke exemplaren moeten worden verzameld. De waarde: `.*` Hiermee geeft u alle exemplaren op. Als u metrische gegevens van de processor alleen voor het \_ totale exemplaar wilt verzamelen, kunt u opgeven `_Total` . Als u proces metrische gegevens alleen voor de crond-of sshd-instanties wilt verzamelen, kunt u het volgende opgeven: `(crond\|sshd)` . |
@@ -205,7 +205,7 @@ Prestatie records hebben het type **perf** en hebben de eigenschappen in de volg
 ## <a name="log-queries-with-performance-records"></a>Query's vastleggen met prestatie records
 De volgende tabel bevat verschillende voor beelden van logboek query's waarmee prestatie records worden opgehaald.
 
-| Query’s uitvoeren | Description |
+| Query’s uitvoeren | Beschrijving |
 |:--- |:--- |
 | Prestaties |Alle prestatie gegevens |
 | Perf &#124; waarbij computer = "mijn systeem" |Alle prestatie gegevens van een bepaalde computer |
@@ -224,5 +224,5 @@ De volgende tabel bevat verschillende voor beelden van logboek query's waarmee p
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Verzamelen van prestatie meter items van Linux-toepassingen](data-sources-linux-applications.md) , waaronder de MySQL-en Apache HTTP-server.
-* Meer informatie over [logboek query's](../log-query/log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen.  
-* Verzamelde gegevens exporteren naar [Power bi](../platform/powerbi.md) voor extra visualisaties en analyse.
+* Meer informatie over [logboek query's](../logs/log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen.  
+* Verzamelde gegevens exporteren naar [Power bi](../visualize/powerbi.md) voor extra visualisaties en analyse.

@@ -10,16 +10,18 @@ ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
 zone_pivot_groups: acs-plat-azp-net
-ms.openlocfilehash: 036df8d4c65ebd6288a526b3af7201e6f2131cd4
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: f40da8b2c9f64da424d43a6679977cda5bf111df
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101656568"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101691770"
 ---
 # <a name="quickstart-create-and-manage-communication-services-resources"></a>Quickstart: Communication Services-resources maken en beheren
+ 
+[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
-Ga aan de slag met Azure Communication Services door uw eerste Communication Services-resource te provisioneren. Communicatie services-resources kunnen worden ingericht via de [Azure Portal](https://portal.azure.com) of met de .net Management-client bibliotheek. Met de beheer-client bibliotheek en de Azure Portal kunt u uw resources en interface maken, configureren, bijwerken en verwijderen met [Azure Resource Manager](../../azure-resource-manager/management/overview.md), de implementatie-en beheer service van Azure. Alle beschikbare functies in de clientbibliotheken zijn beschikbaar in de Azure Portal.
+Ga aan de slag met Azure Communication Services door uw eerste Communication Services-resource te provisioneren. Communicatie services-resources kunnen worden ingericht via de [Azure Portal](https://portal.azure.com) of met de .net Management-client bibliotheek. Met de beheer-client bibliotheek en de Azure Portal kunt u uw resources en interface maken, configureren, bijwerken en verwijderen met [Azure Resource Manager](../../azure-resource-manager/management/overview.md), de implementatie-en beheer service van Azure. Alle beschikbare functies in de clientbibliotheken zijn beschikbaar in de Azure Portal. 
 
 > [!WARNING]
 > Houd er rekening mee dat terwijl communicatie services beschikbaar is in meerdere geographs, om een telefoon nummer op te halen waarvoor de resource een gegevens locatie moet hebben ingesteld op ' US '. Houd er ook rekening mee dat communicatie bronnen niet kunnen worden overgedragen naar een ander abonnement tijdens de openbare preview.
@@ -38,7 +40,7 @@ Ga aan de slag met Azure Communication Services door uw eerste Communication Ser
 
 ## <a name="access-your-connection-strings-and-service-endpoints"></a>Toegang tot uw verbindingsreeksen en service-eindpunten
 
-Met verbindingsreeksen kunnen de Communication Services-clientbibliotheken verbinding maken met en verifiëren bij Azure. U hebt toegang tot uw verbindingsreeksen voor Communication Services en service-eindpunten van de Azure Portal of programmatisch met Azure Resource Manager-API‘s
+Met verbindingsreeksen kunnen de Communication Services-clientbibliotheken verbinding maken met en verifiëren bij Azure. U hebt toegang tot uw verbindingsreeksen voor Communication Services en service-eindpunten van de Azure Portal of programmatisch met Azure Resource Manager-API‘s 
 
 Nadat u naar uw Communication Services-resource hebt genavigeerd, selecteert u **Sleutels** in het navigatiemenu en kopieert u de **Verbindingsreeks**- of **Eindpunt**-waarden voor gebruik door de Communication Services-clientbibliotheken. Houd er rekening mee dat u toegang hebt tot de primaire en secundaire sleutels. Dit kan handig zijn in scenario's waarin u tijdelijke toegang tot uw Communication Services-resources wilt verlenen aan een derde partij of staging-omgeving.
 
@@ -47,7 +49,7 @@ Nadat u naar uw Communication Services-resource hebt genavigeerd, selecteert u *
 U hebt ook toegang tot belang rijke informatie met behulp van Azure CLI:
 
 ```azurecli
-az communication list --resource-group "<resourceGroup>"
+az communication list --resource-group "<resourceGroup>"    
 
 az communication list-key --name "<communicationName>" --resource-group "<resourceGroup>"
 ```
@@ -101,7 +103,7 @@ Nadat u de omgevingsvariabele toevoegt, voert u `source ~/.bash_profile` uit van
 
 Als u een Communication Services-abonnement wilt opschonen en verwijderen, kunt u de resource of resourcegroep verwijderen. Als u de resourcegroep verwijdert, worden ook alle bijbehorende resources verwijderd.
 
-Als er telefoonnummers zijn toegewezen aan uw resource bij het verwijderen van resources, worden de telefoonnummers automatisch van uw resource vrijgegeven.
+Als er telefoonnummers zijn toegewezen aan uw resource bij het verwijderen van resources, worden de telefoonnummers automatisch van uw resource vrijgegeven. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 4f89ace7130e95ba109edcf6becca1e15c8d32c1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d6e27fddceb69efbb2c1697c09ee9b61d7f38ee4
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91273197"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101687971"
 ---
 # <a name="configure-security-for-your-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Beveiliging configureren voor uw PostgreSQL Hyperscale-servergroep met Azure Arc
 
@@ -23,6 +23,7 @@ In dit document worden verschillende aspecten van de beveiliging van uw server g
 - Gebruikersbeheer
    - Algemene perspectieven
    - Het wacht woord van de gebruiker met beheerders rechten voor _post gres_ wijzigen
+- Controleren
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
@@ -35,7 +36,7 @@ Implementeer systeem gegevens versleuteling om alle gegevens te beveiligen die z
 - Schijf versleuteling met `cryptsetup` de opdracht luks Encryption (Linux) (met https://www.cyberciti.biz/security/howto-linux-hard-disk-encryption-with-luks-cryptsetup-command/) name omdat Azure Arc is ingeschakeld Data Services wordt uitgevoerd op de fysieke infra structuur die u opgeeft, bent u verantwoordelijk voor het beveiligen van de infra structuur.
 
 ### <a name="software-use-the-postgresql-pgcrypto-extension-in-your-server-group"></a>Software: gebruik de `pgcrypto` uitbrei ding postgresql in uw server groep
-Naast het versleutelen van de schijven die worden gebruikt voor het hosten van uw Azure Arc-installatie, kunt u uw Azure-PostgreSQL grootschalige-Server groep configureren om mechanismen beschikbaar te maken die uw toepassingen kunnen gebruiken om gegevens in uw data base (s) te versleutelen. De `pgcrypto` uitbrei ding maakt deel uit van de `contrib` uitbrei dingen van post gres en is beschikbaar in uw grootschalige-Server groep voor Azure-Arc ingeschakelde postgresql. Hier vindt u informatie over `pgcrypto` de [here](https://www.postgresql.org/docs/current/pgcrypto.html)uitbrei ding.
+Naast het versleutelen van de schijven die worden gebruikt voor het hosten van uw Azure Arc-installatie, kunt u uw Azure-PostgreSQL grootschalige-Server groep configureren om mechanismen beschikbaar te maken die uw toepassingen kunnen gebruiken om gegevens in uw data base (s) te versleutelen. De `pgcrypto` uitbrei ding maakt deel uit van de `contrib` uitbrei dingen van post gres en is beschikbaar in uw grootschalige-Server groep voor Azure-Arc ingeschakelde postgresql. Hier vindt u informatie over `pgcrypto` de [](https://www.postgresql.org/docs/current/pgcrypto.html)uitbrei ding.
 Samen met de volgende opdrachten kunt u de uitbrei ding inschakelt, kunt u deze maken en gebruiken:
 
 
@@ -159,13 +160,14 @@ De algemene indeling van de opdracht voor het wijzigen van het wacht woord is:
 azdata arc postgres server edit --name <server group name> --admin-password
 ```
 
-Waarbij--Administrator-wacht woord een Booleaanse waarde is die betrekking heeft op de aanwezigheid van een in de omgevings variabele AZDATA_PASSWORD- **sessie**.
-Als de omgevings variabele van de AZDATA_PASSWORD- **sessie**bestaat en een waarde heeft, wordt met de bovenstaande opdracht het wacht woord van de gebruiker post gres ingesteld op de waarde van deze omgevings variabele.
+Waar `--admin-password` is een Booleaanse waarde die betrekking heeft op de aanwezigheid van een in de AZDATA_PASSWORD **sessie** omgevings variabele.
+Als de omgevings **variabele AZDATA_PASSWORD bestaat** en een waarde heeft, wordt met de bovenstaande opdracht het wacht woord van de gebruiker post gres ingesteld op de waarde van deze omgevings variabele.
 
-Als de omgevings variabele van de AZDATA_PASSWORD- **sessie**bestaat maar geen waarde bevat of als de omgevings variabele van de AZDATA_PASSWORD- **sessie**niet bestaat, wordt de gebruiker door de bovenstaande opdracht gevraagd om een wacht woord interactief in te voeren
+Als de variabele voor de AZDATA_PASSWORD- **sessie** bestaat, maar geen waarde heeft of de AZDATA_PASSWORD **sessie** omgevings variabele niet bestaat, wordt de gebruiker door de bovenstaande opdracht gevraagd om een wacht woord interactief in te voeren
 
-#### <a name="changing-the-password-of-the-postgres-administrative-user-in-an-interactive-way"></a>Het wijzigen van het wacht woord van de post gres-gebruiker met beheerders rechten op een interactieve manier:
-1. De omgevings variabele van de AZDATA_PASSWORD **sessie**verwijderen of de waarde ervan verwijderen
+#### <a name="change-the-password-of-the-postgres-administrative-user-in-an-interactive-way"></a>Wijzig het wacht woord van de post gres-gebruiker met beheerders rechten op een interactieve manier
+
+1. De variabele voor de AZDATA_PASSWORD **sessie** omgeving verwijderen of de waarde ervan verwijderen
 2. Voer de opdracht uit:
    ```console
    azdata arc postgres server edit --name <server group name> --admin-password
@@ -186,8 +188,8 @@ Als de omgevings variabele van de AZDATA_PASSWORD- **sessie**bestaat maar geen w
    postgres01 is Ready
    ```
    
-#### <a name="changing-the-password-of-the-postgres-administrative-user-using-the-azdata_password-sessions-environment-variable"></a>Wijzigen van het wacht woord van de gebruiker met post gres-beheer met de omgevings variabele van de AZDATA_PASSWORD- **sessie**:
-1. Stel de waarde van de omgevings variabele AZDATA_PASSWORD- **sessie**in op de gewenste wacht woord.
+#### <a name="change-the-password-of-the-postgres-administrative-user-using-the-azdata_password-session-environment-variable"></a>Wijzig het wacht woord van de post gres-gebruiker met beheerders rechten met behulp van de AZDATA_PASSWORD **sessie** omgevings variabele:
+1. Stel de waarde van de variabele AZDATA_PASSWORD **sessie** omgeving in op de gewenste wacht woord.
 2. Voer de volgende opdracht uit:
    ```console
    azdata arc postgres server edit --name <server group name> --admin-password
@@ -216,9 +218,12 @@ Als de omgevings variabele van de AZDATA_PASSWORD- **sessie**bestaat maar geen w
 > echo $env:AZDATA_PASSWORD
 > ```
 
+## <a name="audit"></a>Controleren
+
+Configureer voor controle scenario's uw server groep voor het gebruik `pgaudit` van de uitbrei dingen van post gres. Raadpleeg voor meer informatie `pgaudit` over [ `pgAudit` github-project](https://github.com/pgaudit/pgaudit/blob/master/README.md). Als u de `pgaudit` uitbrei ding in de Server groep wilt inschakelen, leest [u postgresql-extensies](using-extensions-in-postgresql-hyperscale-server-group.md).
 
 
 ## <a name="next-steps"></a>Volgende stappen
-- Lees hier meer informatie over de `pgcrypto` uitbrei ding. [here](https://www.postgresql.org/docs/current/pgcrypto.html)
-- Lees [hier](using-extensions-in-postgresql-hyperscale-server-group.md)meer informatie over het gebruik van post gres-extensies.
+- Zie [ `pgcrypto` uitbrei ding](https://www.postgresql.org/docs/current/pgcrypto.html)
+- Zie [postgresql-extensies gebruiken](using-extensions-in-postgresql-hyperscale-server-group.md)
 

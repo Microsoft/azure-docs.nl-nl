@@ -6,16 +6,16 @@ services: storage
 ms.service: storage
 ms.subservice: files
 ms.topic: conceptual
-ms.date: 10/26/2020
+ms.date: 3/02/2021
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: e872d28063a3e0671558ee4d388cad280b94f45b
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 620afb0ca5de7c6a89db107fb4616748473f0809
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100596929"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701651"
 ---
 # <a name="monitoring-azure-files"></a>Bewakings Azure Files
 
@@ -481,21 +481,10 @@ Logboek vermeldingen worden alleen gemaakt als er aanvragen worden gedaan voor h
 
 - Geslaagde aanvragen
 - Mislukte aanvragen, inclusief time-out-, beperkings-, netwerk-, autorisatiefouten en overige fouten
-- Aanvragen die gebruikmaken van een Shared Access Signature (SAS) of OAuth, met inbegrip van mislukte en geslaagde aanvragen
-- Aanvragen voor Analytics-gegevens (klassieke logboek gegevens in de **$logs** container en metrische gegevens van klassen in de **$metric** tabellen)
+- Aanvragen die gebruikmaken van Kerberos, NTLM of een Shared Access Signature (SAS), met inbegrip van mislukte en geslaagde aanvragen
+- Aanvragen voor Analytics-gegevens (klassieke logboek gegevens in de **$logs** container en gegevens over de klassieke metriek in de **$metric** tabellen)
 
 Aanvragen die worden gedaan door de Azure Files-service zelf, zoals het maken of verwijderen van een logboek, worden niet geregistreerd. Zie voor een volledige lijst met SMB-en REST-aanvragen die zijn geregistreerd, [opslag logboek bewerkingen en status berichten](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages) en [referentie gegevens voor Azure files bewaking](storage-files-monitoring-reference.md).
-
-### <a name="log-anonymous-requests"></a>Anonieme aanvragen registreren
-
- De volgende typen anonieme aanvragen worden geregistreerd:
-
-- Geslaagde aanvragen
-- Serverfouten
-- Time-outfouten voor zowel de client als de server
-- Kan geen aanvragen ophalen met de fout code 304 (niet gewijzigd)
-
-Alle andere mislukte anonieme aanvragen worden niet geregistreerd. Zie voor een volledige lijst met SMB-en REST-aanvragen die zijn geregistreerd, [opslag logboek bewerkingen en status berichten](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages) en [referentie gegevens voor Azure files bewaking](storage-files-monitoring-reference.md).
 
 ### <a name="accessing-logs-in-a-storage-account"></a>Logboeken openen in een opslag account
 
@@ -631,13 +620,12 @@ De volgende tabel bevat enkele voor beelden van scenario's om te controleren en 
    > [!NOTE]
    > Als de antwoord typen niet worden weer gegeven in de vervolg keuzelijst **dimensie waarden** , betekent dit dat de resource niet is beperkt. Als u de dimensie waarden wilt toevoegen, klikt u naast de vervolg keuzelijst **dimensie waarden** op **aangepaste waarde toevoegen**, voert u het type antwoord in (bijvoorbeeld **SuccessWithThrottling**), selecteert u **OK** en herhaalt u deze stappen om alle toepasselijke antwoord typen voor de bestands share toe te voegen.
 
-8. Klik op de vervolg keuzelijst **dimensie naam** en selecteer **Bestands share**.
-9. Klik op de vervolg keuzelijst **dimensie waarden** en selecteer de bestands share (s) waarop u een waarschuwing wilt ontvangen.
-
+8. Voor **Premium-bestands shares** klikt u op de vervolg keuzelijst **dimensie naam** en selecteert u **Bestands share**. Ga naar **stap #10** voor **standaard bestands shares**.
 
    > [!NOTE]
-   > Als de bestands share een standaard bestands share is, selecteert u **alle huidige en toekomstige waarden**. De vervolg keuzelijst met dimensie waarden bevat niet de bestands share (s) omdat metrische gegevens per share niet beschikbaar zijn voor standaard bestands shares. Het beperken van waarschuwingen voor standaard bestands shares wordt geactiveerd als een bestands share binnen het opslag account wordt beperkt en de waarschuwing niet kan bepalen welke bestands share is beperkt. Aangezien metrische gegevens per aandeel niet beschikbaar zijn voor standaard bestands shares, is de aanbeveling één bestands share per opslag account.
+   > Als de bestands share een standaard bestands share is, worden de bestands shares niet vermeld in de dimensie **Bestands share** omdat er geen metrische gegevens per share beschikbaar zijn voor standaard bestands shares. Het beperken van waarschuwingen voor standaard bestands shares wordt geactiveerd als een bestands share binnen het opslag account wordt beperkt en de waarschuwing niet kan bepalen welke bestands share is beperkt. Aangezien metrische gegevens per aandeel niet beschikbaar zijn voor standaard bestands shares, is de aanbeveling één bestands share per opslag account.
 
+9. Klik op de vervolg keuzelijst **dimensie waarden** en selecteer de bestands share (s) waarop u een waarschuwing wilt ontvangen.
 10. Definieer de **waarschuwings parameters** (drempel waarde, operator, aggregatie granulatie en frequentie van evaluatie) en klik op **gereed**.
 
     > [!TIP]
@@ -654,12 +642,12 @@ De volgende tabel bevat enkele voor beelden van scenario's om te controleren en 
 3. Klik op **Resource bewerken**, selecteer het **Bestands bron type** voor het opslag account en klik vervolgens op **gereed**. Als de naam van het opslag account bijvoorbeeld is `contoso` , selecteert u de `contoso/file` resource.
 4. Klik op **voor waarde toevoegen** om een voor waarde toe te voegen.
 5. U ziet een lijst met signalen die worden ondersteund voor het opslag account. Selecteer de metrische **Bestands capaciteit** .
-6. Klik op de Blade **signaal logica configureren** op de vervolg keuzelijst **dimensie naam** en selecteer **Bestands share**.
-7. Klik op de vervolg keuzelijst **dimensie waarden** en selecteer de bestands share (s) waarop u een waarschuwing wilt ontvangen.
+6. Voor **Premium-bestands shares** klikt u op de vervolg keuzelijst **dimensie naam** en selecteert u **Bestands share**. Ga naar **stap #8** voor **standaard bestands shares**.
 
    > [!NOTE]
-   > Als de bestands share een standaard bestands share is, selecteert u **alle huidige en toekomstige waarden**. De vervolg keuzelijst met dimensie waarden bevat niet de bestands share (s) omdat metrische gegevens per share niet beschikbaar zijn voor standaard bestands shares. Waarschuwingen voor standaard bestands shares zijn gebaseerd op alle bestands shares in het opslag account. Aangezien metrische gegevens per aandeel niet beschikbaar zijn voor standaard bestands shares, is de aanbeveling één bestands share per opslag account.
+   > Als de bestands share een standaard bestands share is, worden de bestands shares niet vermeld in de dimensie **Bestands share** omdat er geen metrische gegevens per share beschikbaar zijn voor standaard bestands shares. Waarschuwingen voor standaard bestands shares zijn gebaseerd op alle bestands shares in het opslag account. Aangezien metrische gegevens per aandeel niet beschikbaar zijn voor standaard bestands shares, is de aanbeveling één bestands share per opslag account.
 
+7. Klik op de vervolg keuzelijst **dimensie waarden** en selecteer de bestands share (s) waarop u een waarschuwing wilt ontvangen.
 8. Voer de **drempel waarde** in bytes in. Als de grootte van de bestands share bijvoorbeeld 100 TiB is en u een waarschuwing wilt ontvangen wanneer de grootte van de bestands share 80% van de capaciteit is, is de drempel waarde in bytes 87960930222080.
 9. Definieer de overige **para meters** voor de waarschuwing (aggregatie granulatie en frequentie van evaluatie) en klik op **gereed**.
 10. Klik op **actie groepen toevoegen** om een **actie groep** (e-mail, SMS, enzovoort) toe te voegen aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
@@ -673,12 +661,12 @@ De volgende tabel bevat enkele voor beelden van scenario's om te controleren en 
 3. Klik op **Resource bewerken**, selecteer het **Bestands bron type** voor het opslag account en klik vervolgens op **gereed**. Als de naam van het opslag account bijvoorbeeld contoso is, selecteert u de resource contoso/file.
 4. Klik op **voor waarde toevoegen** om een voor waarde toe te voegen.
 5. U ziet een lijst met signalen die worden ondersteund voor het opslag account. Selecteer **de waarde** voor uitgaand verkeer.
-6. Klik op de Blade **signaal logica configureren** op de vervolg keuzelijst **dimensie naam** en selecteer **Bestands share**.
-7. Klik op de vervolg keuzelijst **dimensie waarden** en selecteer de bestands share (s) waarop u een waarschuwing wilt ontvangen.
+6. Voor **Premium-bestands shares** klikt u op de vervolg keuzelijst **dimensie naam** en selecteert u **Bestands share**. Ga naar **stap #8** voor **standaard bestands shares**.
 
    > [!NOTE]
-   > Als de bestands share een standaard bestands share is, selecteert u **alle huidige en toekomstige waarden**. De vervolg keuzelijst met dimensie waarden bevat niet de bestands share (s) omdat metrische gegevens per share niet beschikbaar zijn voor standaard bestands shares. Waarschuwingen voor standaard bestands shares zijn gebaseerd op alle bestands shares in het opslag account. Aangezien metrische gegevens per aandeel niet beschikbaar zijn voor standaard bestands shares, is de aanbeveling één bestands share per opslag account.
+   > Als de bestands share een standaard bestands share is, worden de bestands shares niet vermeld in de dimensie **Bestands share** omdat er geen metrische gegevens per share beschikbaar zijn voor standaard bestands shares. Waarschuwingen voor standaard bestands shares zijn gebaseerd op alle bestands shares in het opslag account. Aangezien metrische gegevens per aandeel niet beschikbaar zijn voor standaard bestands shares, is de aanbeveling één bestands share per opslag account.
 
+7. Klik op de vervolg keuzelijst **dimensie waarden** en selecteer de bestands share (s) waarop u een waarschuwing wilt ontvangen.
 8. Voer **536870912000** bytes in voor de drempel waarde. 
 9. Klik op de vervolg keuzelijst **aggregatie granulatie** en selecteer **24 uur**.
 10. Selecteer de **frequentie van de evaluatie** en **Klik op gereed**.

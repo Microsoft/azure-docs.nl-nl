@@ -5,14 +5,14 @@ ms.subservice: ''
 ms.topic: overview
 author: mgoedtel
 ms.author: magoedte
-ms.date: 01/21/2021
+ms.date: 02/23/2021
 ms.custom: references_regions
-ms.openlocfilehash: 8b412fffdda1ce6a2023a8b9ae459a52986cd93d
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 899249c98c3ce0fdf061b1e689182f71c120aa13
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98690861"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101729388"
 ---
 # <a name="whats-new-in-azure-automation"></a>Wat is er nieuw in Azure Automation?
 
@@ -24,7 +24,55 @@ Azure Automation worden doorlopend verbeterd. Om u op de hoogte te houden van de
 
 Deze pagina wordt maandelijks bijgewerkt. Ga daarom regel matig opnieuw te werk.
 
+## <a name="february-2021"></a>Februari 2021
+
+### <a name="support-for-automation-and-state-configuration-declared-ga-in-japan-west"></a>Ondersteuning voor automatisering en status configuratie aangegeven GA in Japan-West
+
+**Type:** Nieuwe functie
+
+Het Automation-account en de status configuratie Beschik baarheid in de regio Japan-West. Lees de [aankondiging](https://azure.microsoft.com/updates/azure-automation-in-japan-west-region/)voor meer informatie.
+
+### <a name="introduced-custom-azure-policy-compliance-to-enforce-runbook-execution-on-hybrid-worker"></a>Aangepaste Azure Policy compatibiliteit geïntroduceerd om het uitvoeren van een runbook op Hybrid Worker af te dwingen
+
+**Type:** Nieuwe functie
+
+U kunt de nieuwe Azure Policy-nalevings regel gebruiken om taken, webhooks en taak planningen te maken die alleen op Hybrid Worker groepen kunnen worden uitgevoerd.
+
+### <a name="update-management-availability-in-east-us-france-central-and-north-europe-regions"></a>Beschik baarheid van Updatebeheer in VS-Oost, Frankrijk-centraal en Europa-noord regio's
+
+**Type:** Nieuwe functie
+
+Automation Updatebeheer-functie is beschikbaar in de regio's VS-Oost, Frankrijk-centraal en Europa-noord. Zie de [ondersteunde regio toewijzing](how-to/region-mappings.md) voor updates in de documentatie die deze wijziging weer geven.
+
 ## <a name="january-2021"></a>Januari 2021
+
+### <a name="support-for-automation-and-state-configuration-declared-ga-in-switzerland-west"></a>Ondersteuning voor automatisering en status configuratie verklaard GA in Zwitserland-west
+
+**Type:** Nieuwe functie
+
+Het Automation-account en de status configuratie Beschik baarheid in de Zwitserland-west regio. Lees de [aankondiging](https://azure.microsoft.com/updates/azure-automation-in-switzerland-west-region/)voor meer informatie.
+
+### <a name="added-python-3-script-to-import-module-with-multiple-dependencies"></a>Het python 3-script is toegevoegd om de module te importeren met meerdere afhankelijkheden
+
+**Type:** Nieuwe functie
+
+Het script is beschikbaar om te worden gedownload vanuit onze [github-opslag plaats](https://github.com/azureautomation/runbooks/blob/master/Utility/Python/import_py3package_from_pypi.py). 
+ 
+### <a name="hybrid-runbook-worker-role-support-for-centos-8xrhel-8xsles-15"></a>Hybrid Runbook Worker functie ondersteuning voor CentOS 8. x/RHEL 8. x/SLES 15
+
+**Voert.** Nieuwe functie
+
+De functie Hybrid Runbook Worker ondersteunt CentOS 8. x-, REHL 8. x-en SLES 15-distributies alleen voor proces automatisering op Hybrid Runbook Workers.  Zie [ondersteunde besturings systemen](automation-linux-hrw-install.md#supported-linux-operating-systems) voor updates in de documentatie om deze wijzigingen weer te geven.
+
+### <a name="update-management--change-tracking-availability-in-australia-east-east-asia-west-us--central-us-regions"></a>Updatebeheer & Wijzigingen bijhouden Beschik baarheid in Australië-oost, Azië-oost, VS-West-& centraal-regio's
+
+**Type:** Nieuwe functie
+
+Het Automation-account, het Wijzigingen bijhouden en de inventarisatie en Updatebeheer zijn beschikbaar in Australië-oost, Azië-oost, VS-West-&-regio's in de VS. 
+
+### <a name="introduced-public-preview-of-python-3-runbooks-in-us-government-cloud"></a>Geïntroduceerde open bare preview van python 3-runbooks in de Amerikaanse overheids Cloud
+
+**Type:** Nieuwe functie Azure Automation introduceert de open bare preview-ondersteuning van python 3-Cloud en hybride runbook-uitvoering in Amerikaanse overheids Cloud regio's.  Zie de [aankondiging](https://azure.microsoft.com/updates/azure-automation-python-3-public-preview/)voor meer informatie.
 
 ### <a name="azure-automation-runbooks-moved-from-technet-script-center-to-github"></a>Azure Automation runbooks verplaatst van het TechNet-Script centrum naar GitHub
 

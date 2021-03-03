@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: overview
 ms.date: 02/16/2021
-ms.openlocfilehash: f4ac384a9b1bce944397369cb93392f179643f96
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: bd70bb1a031b61e77fa84ff5567d95dc6d1e8788
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100558757"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101706738"
 ---
 # <a name="whats-new-in-language-understanding"></a>Nieuwe functies in Language Understanding
 
@@ -56,7 +56,7 @@ Meer informatie over nieuwe functies in de service. Dit kunnen releaseopmerkinge
 * Nieuwe resources voor ontwikkelaars
     * [Hulpprogramma's voor continue integratie](developer-reference-resource.md#continuous-integration-tools)
     * Workshop: Leer de aanbevolen procedures voor [_Natural Language Understanding_ (NLU) met LUIS](developer-reference-resource.md#workshops)
-* [Door de klant beheerde sleutels](luis-encryption-of-data-at-rest.md) -alle gegevens die u in LUIS gebruikt, versleutelen met uw eigen sleutel
+* [Door de klant beheerde sleutels](./encrypt-data-at-rest.md) -alle gegevens die u in LUIS gebruikt, versleutelen met uw eigen sleutel
 * [AI weergeven](https://channel9.msdn.com/Shows/AI-Show/New-Features-in-Language-Understanding) (video): bekijk de nieuwe functies in LUIS
 
 

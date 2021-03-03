@@ -12,12 +12,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: ba17346d5f064b57f98e7ad8745d9f80bdde5116
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: c60aac675a76d8cb25463f8b0ca1b2dc563d1179
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101092301"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101730317"
 ---
 # <a name="how-to-encode-with-a-custom-transform---net"></a>Coderen met een aangepaste trans formatie-.NET
 
@@ -41,10 +41,10 @@ Bij het maken van aangepaste voor instellingen gelden de volgende overwegingen:
 Kloon een GitHub-opslag plaats met het volledige .NET core-voor beeld naar uw machine met behulp van de volgende opdracht:  
 
  ```bash
- git clone https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials.git
+ git clone https://github.com/Azure-Samples/media-services-v3-dotnet.git
  ```
  
-Het voor beeld van een aangepaste voor instelling bevindt zich in de map [EncodeCustomTransform](https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials/blob/master/NETCore/EncodeCustomTransform/) .
+Het voor beeld van een aangepaste voor instelling bevindt zich in de [code ring met een aangepaste voor instelling](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/main/VideoEncoding/EncodingWithMESCustomPreset) met de .net-map.
 
 ## <a name="create-a-transform-with-a-custom-preset"></a>Een trans formatie maken met een aangepaste voor instelling
 
@@ -56,7 +56,7 @@ Bij het maken van een [transformatie](/rest/api/media/transforms) moet u control
 
 In het volgende voor beeld wordt een set uitvoer gedefinieerd die we willen genereren wanneer deze trans formatie wordt gebruikt. We voegen eerst een AacAudio-laag toe voor de audio codering en twee H264Video-lagen voor de video codering. In de video lagen worden labels toegewezen zodat ze kunnen worden gebruikt in de naam van het uitvoer bestand. Vervolgens willen we dat de uitvoer ook miniaturen bevat. In het onderstaande voor beeld geven we afbeeldingen op in PNG-indeling, gegenereerd om 50% van de oplossing van de video-invoer en met drie time Stamps-{25%, 50%, 75%} van de lengte van de invoer video. Ten slotte geven we de indeling voor de uitvoer bestanden op: één voor video en audio, en een andere voor de miniaturen. Omdat we meerdere H264Layers hebben, moeten we macro's gebruiken waarmee unieke namen per laag worden geproduceerd. We kunnen een `{Label}` or `{Bitrate}` -macro gebruiken, maar in het voor beeld wordt het voormalige weer gegeven.
 
-[!code-csharp[Main](../../../media-services-v3-dotnet-core-tutorials/NETCore/EncodeCustomTransform/MediaV3ConsoleApp/Program.cs#EnsureTransformExists)]
+[!code-csharp[Main](../../../media-services-v3-dotnet/blob/main/VideoEncoding/EncodingWithMESCustomPreset/Program.cs#EnsureTransformExists)]
 
 ## <a name="next-steps"></a>Volgende stappen
 

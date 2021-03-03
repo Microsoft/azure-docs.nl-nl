@@ -6,16 +6,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: include
-ms.date: 01/20/2021
+ms.date: 02/09/2021
 ms.custom: devx-track-java
 ms.author: aahi
 ms.reviewer: tasharm, assafi, sumeh
-ms.openlocfilehash: 92b78cae7d1af5dc71509381afd7eaf3f962a8fa
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 4c87dc9f11a6a9780d77b39597e0479ccb6863d8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100515051"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750722"
 ---
 <a name="HOLTop"></a>
 
@@ -26,10 +26,6 @@ ms.locfileid: "100515051"
 # <a name="version-30"></a>[Versie 3.0](#tab/version-3)
 
 [Referentiedocumentatie](/java/api/overview/azure/ai-textanalytics-readme) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-java/blob/azure-ai-textanalytics_5.0.0/sdk/textanalytics/azure-ai-textanalytics) | [Pakket](https://mvnrepository.com/artifact/com.azure/azure-ai-textanalytics/5.0.0) | [Voorbeelden](https://github.com/Azure/azure-sdk-for-java/tree/azure-ai-textanalytics_5.0.0/sdk/textanalytics/azure-ai-textanalytics/src/samples/java/com/azure/ai/textanalytics)
-
-# <a name="version-21"></a>[Versie 2.1](#tab/version-2)
-
-In dit artikel wordt alleen versie 3.x van de API beschreven.
 
 ---
 
@@ -75,11 +71,7 @@ Maak een Maven-project in uw favoriete IDE of ontwikkelomgeving. Voeg vervolgens
 ```
 
 > [!TIP]
-> Wilt u het volledige quickstartcodebestand ineens weergeven? Ga dan naar [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/TextAnalytics/TextAnalyticsSamples.java), waar u de codevoorbeelden uit deze quickstart kunt vinden. 
-
-# <a name="version-21"></a>[Versie 2.1](#tab/version-2)
-
-In dit artikel wordt alleen versie 3.x van de API beschreven.
+> Wilt u het volledige quickstartcodebestand ineens weergeven? U kunt het vinden [op GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/TextAnalytics/TextAnalyticsSamples.java), dat de codevoorbeelden in deze quickstart bevat. 
 
 ---
 
@@ -136,10 +128,6 @@ public static void main(String[] args) {
         AnalyzeOperationExample(client)
 }
 ```
-
-# <a name="version-21"></a>[Versie 2.1](#tab/version-2)
-
-In dit artikel wordt alleen versie 3.x van de API beschreven.
 
 ---
 
@@ -321,10 +309,6 @@ Recognized document sentiment: positive, positive score: 1.0, neutral score: 0.0
 Recognized sentence sentiment: positive, positive score: 1.0, neutral score: 0.0, negative score: 0.0.
 Recognized sentence sentiment: neutral, positive score: 0.21, neutral score: 0.77, negative score: 0.02.
 ```
-
-# <a name="version-21"></a>[Versie 2.1](#tab/version-2)
-
-In dit artikel wordt alleen versie 3.x van de API beschreven.
 
 ---
 
@@ -570,10 +554,6 @@ Matches:
 Text: BASIC, Score: 0.33
 ```
 
-# <a name="version-21"></a>[Versie 2.1](#tab/version-2)
-
-In dit artikel wordt alleen versie 3.x van de API beschreven.
-
 ---
 
 ## <a name="key-phrase-extraction"></a>Sleuteltermextractie
@@ -683,9 +663,5 @@ U kunt ook de bewerking Analyseren ook gebruiken om persoonsgegevens en extracti
 # <a name="version-30"></a>[Versie 3.0](#tab/version-3)
 
 Deze functie is niet beschikbaar in versie 3.0.
-
-# <a name="version-21"></a>[Versie 2.1](#tab/version-2)
-
-Deze functie is niet beschikbaar in versie 2.1.
 
 ---

@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 03/31/2020
 ms.author: tamram
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: b051a4ffe4d24e1ef0e69ab7c18a8ed3388b57e5
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 21fc7e6de38a98e4f0853cf513f9f3441c7e2106
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89078279"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101735349"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-with-powershell"></a>Quickstart: Blobs uploaden, downloaden en vermelden met PowerShell
 
@@ -26,6 +26,8 @@ Gebruik de Azure PowerShell-module om Azure-resources te maken en beheren. Azure
 ## <a name="prerequisites"></a>Vereisten
 
 U hebt een Azure-abonnement nodig voor toegang tot Azure Storage. Als u nog geen abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
+
+U hebt ook de rol gegevensinzender voor opslag BLOB nodig voor het lezen, schrijven en verwijderen van Azure Storage containers en blobs.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -113,7 +115,7 @@ Get-AzStorageBlobContent -Blob "Image002.png" `
 
 ## <a name="data-transfer-with-azcopy"></a>Gegevensoverdracht met AzCopy
 
-Het AzCopy-opdrachtregelprogramma biedt high-performance, scriptbare gegevensoverdracht voor Azure Storage. U kunt met AzCopy gegevens overzetten naar en van Blob Storage en Azure Files. Zie [Aan de slag met AzCopy](../common/storage-use-azcopy-v10.md) voor meer informatie over AzCopy v10, de nieuwste versie van AzCopy. Zie [Gegevens overzetten met AzCopy en Blob Storage](../common/storage-use-azcopy-blobs.md) voor meer informatie over het gebruik van AzCopy v10 met Blob Storage.
+Het AzCopy-opdrachtregelprogramma biedt high-performance, scriptbare gegevensoverdracht voor Azure Storage. U kunt met AzCopy gegevens overzetten naar en van Blob Storage en Azure Files. Zie [Aan de slag met AzCopy](../common/storage-use-azcopy-v10.md) voor meer informatie over AzCopy v10, de nieuwste versie van AzCopy. Zie [Gegevens overzetten met AzCopy en Blob Storage](../common/storage-use-azcopy-v10.md#transfer-data) voor meer informatie over het gebruik van AzCopy v10 met Blob Storage.
 
 In het volgende voorbeeld wordt AzCopy gebruikt om een lokaal bestand te uploaden naar een blob. Vergeet niet om de voorbeeldwaarden te vervangen door uw eigen waarden:
 

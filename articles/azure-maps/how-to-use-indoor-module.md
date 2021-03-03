@@ -9,17 +9,17 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-js
-ms.openlocfilehash: bc80b7dfd433911ef13906db38f59a76827db258
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: e527cf5fa6a7caaeaf56ea19d684dd0830d5ca8a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905278"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708676"
 ---
 # <a name="use-the-azure-maps-indoor-maps-module"></a>De module voor kaarten van Azure Maps gebruiken
 
 > [!IMPORTANT]
-> Azure Maps Creator-Services zijn momenteel beschikbaar als open bare preview.
+> Azure Maps Creator-services zijn momenteel beschikbaar als openbare preview.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 De Azure Maps Web-SDK bevat de module *Azure Maps binnenshuis* . Met de module  *Azure Maps binnenshuis* kunt u kaarten weer geven die zijn gemaakt in azure Maps Creator-Services (preview) 
@@ -27,7 +27,7 @@ De Azure Maps Web-SDK bevat de module *Azure Maps binnenshuis* . Met de module  
 ## <a name="prerequisites"></a>Vereisten
 
 1. [Een Azure Maps-account maken](quick-demo-map-app.md#create-an-azure-maps-account)
-2. [Een bron voor het maken van een maker (preview-resource)](how-to-manage-creator.md)
+2. [Een resource voor Creator (preview) maken](how-to-manage-creator.md)
 3. [Een primaire sleutel voor een abonnement verkrijgen](quick-demo-map-app.md#get-the-primary-key-for-your-account), ook wel bekend als de primaire sleutel of de abonnementssleutel.
 4. Vraag a `tilesetId` en a `statesetId` aan de hand van de [zelf studie voor het maken van plattegronden](tutorial-creator-indoor-maps.md).
  U moet deze id's gebruiken om kaarten weer te geven met de module Azure Maps kaarten.
@@ -67,7 +67,7 @@ const subscriptionKey = "<Your Azure Maps Primary Subscription Key>";
 
 const map = new atlas.Map("map-id", {
   //use your facility's location
-  center: [-122.13315, 47.63637],
+  center: [-122.13203, 47.63645],
   //or, you can use bounds: [# west, # south, # east, # north] and replace # with your map's bounds
   style: "blank",
   view: 'Auto',
@@ -84,24 +84,24 @@ const map = new atlas.Map("map-id", {
 Als u de tilesets en kaart stijl van de tegels wilt laden, moet u een exemplaar maken van de *binnenste Manager*. Maak een exemplaar van de *binnenste Manager* door het *kaart object* en de bijbehorende te voorzien `tilesetId` . Als u de stijl van [dynamische kaarten](indoor-map-dynamic-styling.md)wilt ondersteunen, moet u de door geven `statesetId` . De `statesetId` naam van de variabele is hoofdletter gevoelig. Uw code moet zoals hieronder de Java script.
 
 ```javascript
-const tilesetId = "";
-const statesetId = "";
+const tilesetId = "<tilesetId>";
+const statesetId = "<statesetId>";
 
 const indoorManager = new atlas.indoor.IndoorManager(map, {
-    tilesetId: "<tilesetId>",
-    statesetId: "<statesetId>" // Optional
+    tilesetId: tilesetId,
+    statesetId: statesetId // Optional
 });
 ```
 
 Als u polling van door u verstrekte status gegevens wilt inschakelen, moet u de `statesetId` aanroep en aanroepen `indoorManager.setDynamicStyling(true)` . Met polling status gegevens kunt u de status van dynamische eigenschappen of *statussen* dynamisch bijwerken. Zo kan een functie zoals room een dynamische eigenschap (*State*) met de naam hebben `occupancy` . Het kan voor komen dat uw toepassing een *status* wijziging doorvoert om de wijziging in de visuele kaart weer te geven. De volgende code laat zien hoe u status polling inschakelt:
 
 ```javascript
-const tilesetId = "";
-const statesetId = "";
+const tilesetId = "<tilesetId>";
+const statesetId = "<statesetId>";
 
 const indoorManager = new atlas.indoor.IndoorManager(map, {
-    tilesetId: "<tilesetId>",
-    statesetId: "<statesetId>" // Optional
+    tilesetId: tilesetId,
+    statesetId: statesetId // Optional
 });
 
 if (statesetId.length > 0) {
@@ -218,9 +218,9 @@ Het bestand moet er nu ongeveer als volgt uitzien.
         });
 
         const indoorManager = new atlas.indoor.IndoorManager(map, {
-          levelControl, //level picker
-          tilesetId,
-          statesetId, //optional
+          levelControl: levelControl, //level picker
+          tilesetId: tilesetId,
+          statesetId: statesetId // Optional
         });
 
         if (statesetId.length > 0) {
@@ -244,6 +244,8 @@ Het bestand moet er nu ongeveer als volgt uitzien.
 Als u de kaart wilt weer geven, laadt u deze in een webbrowser. Deze moet eruitzien als de onderstaande afbeelding. Als u op de functie stairwell klikt, wordt de *niveau kiezer* weer gegeven in de rechter bovenhoek.
 
   ![kaart afbeelding binnenste](media/how-to-use-indoor-module/indoor-map-graphic.png)
+
+[Live demo bekijken](https://azuremapscodesamples.azurewebsites.net/?sample=Creator%20indoor%20maps)
 
 ## <a name="next-steps"></a>Volgende stappen
 

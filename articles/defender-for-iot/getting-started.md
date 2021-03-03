@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/26/2020
+ms.date: 2/18/2021
 ms.author: shhazam
-ms.openlocfilehash: 06cf8b5f35bdebed0ebaa9e6949261d7c0d516f2
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: c224dc3f919471e769717f308aff9ae58630d421
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100522560"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101712756"
 ---
 # <a name="get-started-with-defender-for-iot"></a>Aan de slag met Defender voor IoT
 
@@ -69,6 +69,8 @@ Aanmelden:
 1. Selecteer **abonnement voor onboarding**.
 1. Selecteer op de pagina met **prijzen** een abonnement of maak een nieuwe, en voeg het aantal toegewezen apparaten toe.
 1. Selecteer het tabblad **de on-premises beheer console downloaden** en sla het gedownloade activerings bestand op. Dit bestand bevat de geaggregeerde vastgelegde apparaten die u hebt gedefinieerd. Het bestand wordt na de eerste aanmelding geüpload naar de beheer console.
+
+Zie [niet meer vrijgeven a subscription](how-to-manage-sensors-on-the-cloud.md#offboard-a-subscription)(Engelstalig) voor meer informatie over het niet meer vrijgeven van een abonnement.
 
 ## <a name="3-install-and-set-up-the-on-premises-management-console"></a>3. de on-premises beheer console installeren en instellen
 
@@ -126,8 +128,9 @@ Zie [Sens oren verbinden met de on-premises beheer console](how-to-activate-and-
 ## <a name="7-populate-azure-sentinel-with-alert-information-optional"></a>7. Azure Sentinel vullen met waarschuwings gegevens (optioneel)
 
 Waarschuwings gegevens verzenden naar Azure Sentinel door Azure Sentinel te configureren. Zie [uw gegevens verbinden vanuit Defender voor IOT naar Azure Sentinel](how-to-configure-with-sentinel.md).
-## <a name="next-steps"></a>Volgende stappen
 
-[Welkom bij Azure Defender voor IoT](overview.md)
+## <a name="see-also"></a>Zie ook
 
-[Azure Defender voor IoT-architectuur](architecture.md)
+- [Welkom bij Azure Defender voor IoT](overview.md)
+
+- [Azure Defender voor IoT-architectuur](architecture.md)

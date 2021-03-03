@@ -3,12 +3,12 @@ title: Integratie van werk items (preview)-Application Insights
 description: Meer informatie over het maken van werk items in GitHub of Azure DevOps met Inge sloten Application Insights-gegevens.
 ms.topic: conceptual
 ms.date: 02/9/2021
-ms.openlocfilehash: 0c1d6ffd6a5a39fa49eadc558aa80f365f856df2
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: ba0a67bad3ba47191414d6b406ab6cb4e6b7da78
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100101293"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101731915"
 ---
 # <a name="work-item-integration-preview"></a>Integratie van werk items (preview-versie)
 
@@ -53,7 +53,7 @@ Als u uw sjabloon wilt bewerken, gaat u naar het tabblad **werk items** onder *c
 
 :::image type="content" source="./media/work-item-integration/edit-template.png" alt-text=" Scherm afbeelding van het tabblad werk item met het pictogram Potlood bewerken geselecteerd.":::
 
-Selecteer bewerkings ![ pictogram bewerken ](./media/work-item-integration/edit-icon.png) bovenaan om de sjabloon te bewerken. Sjablonen voor werk items zijn gebaseerd op [Azure monitor werkmappen](../platform/workbooks-overview.md). De gegevens van het werk item worden gegenereerd met de query taal van de tref woorden. U kunt de query's wijzigen om meer context essentiële informatie toe te voegen aan uw team. Wanneer u klaar bent met het bewerken, slaat u de werkmap op door ![ ](./media/work-item-integration/save-icon.png) in de bovenste werk balk het pictogram pictogram opslaan op te slaan.
+Selecteer bewerkings ![ pictogram bewerken ](./media/work-item-integration/edit-icon.png) bovenaan om de sjabloon te bewerken. Sjablonen voor werk items zijn gebaseerd op [Azure monitor werkmappen](../visualize/workbooks-overview.md). De gegevens van het werk item worden gegenereerd met de query taal van de tref woorden. U kunt de query's wijzigen om meer context essentiële informatie toe te voegen aan uw team. Wanneer u klaar bent met het bewerken, slaat u de werkmap op door ![ ](./media/work-item-integration/save-icon.png) in de bovenste werk balk het pictogram pictogram opslaan op te slaan.
 
 :::image type="content" source="./media/work-item-integration/edit-workbook.png" alt-text=" Scherm afbeelding van de werkmap met werk item sjabloon in de bewerkings modus." lightbox="./media/work-item-integration/edit-workbook.png":::
 

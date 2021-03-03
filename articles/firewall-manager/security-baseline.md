@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/24/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: f56270d853bf47faebbd6026586111ead6fb0495
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: ec746a5c347db8cb92c95b1d76f3622498f0039f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101091157"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101742378"
 ---
 # <a name="azure-security-baseline-for-azure-firewall-manager"></a>Azure-beveiligings basislijn voor Azure Firewall Manager
 
@@ -437,7 +437,7 @@ In Azure Monitor kunt u de Bewaar periode voor uw Log Analytics werk ruimte inst
 
 - [De Bewaar periode van Log Analytics Workspace configureren](../azure-monitor/logs/manage-cost-storage.md)
 
-- [Bron logboeken opslaan in een Azure Storage-account](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
+- [Bron logboeken opslaan in een Azure Storage-account](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 

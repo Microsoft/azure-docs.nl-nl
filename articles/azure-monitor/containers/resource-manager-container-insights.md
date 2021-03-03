@@ -1,26 +1,26 @@
 ---
-title: Resource Manager-voorbeeldsjablonen voor Azure Monitor voor containers
-description: Azure Resource Manager-voorbeeldsjablonen voor het implementeren en configureren van Azure Monitor voor containers.
+title: Voor beelden van Resource Manager-sjablonen voor container Insights
+description: Voor beelden van Azure Resource Manager sjablonen voor het implementeren en configureContainer van inzichten.
 ms.subservice: logs
 ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 05/18/2020
-ms.openlocfilehash: e33bb6ae04f0b11a25a7ab87362bc243ee19c79c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: f75278663abde8d4b0f47c8df1dbbdbc298bcafb
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100627177"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723330"
 ---
-# <a name="resource-manager-template-samples-for-azure-monitor-for-containers"></a>Resource Manager-voorbeeldsjablonen voor Azure Monitor voor containers
+# <a name="resource-manager-template-samples-for-container-insights"></a>Voor beelden van Resource Manager-sjablonen voor container Insights
 Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het implementeren en configureren van de Log Analytics-agent voor virtuele machines in Azure Monitor. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.
 
 [!INCLUDE [azure-monitor-samples](../../../includes/azure-monitor-resource-manager-samples.md)]
 
 
 ## <a name="enable-for-aks-cluster"></a>Inschakelen voor AKS-cluster
-In het volgende voorbeeld wordt Azure Monitor ingeschakeld voor containers in een AKS-cluster.
+In het volgende voor beeld wordt container Insights op een AKS-cluster ingeschakeld.
 
 
 ### <a name="template-file"></a>Sjabloonbestand
@@ -357,4 +357,4 @@ In het volgende voorbeeld wordt Azure Monitor ingeschakeld voor containers in ee
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Meer voorbeeldsjablonen voor Azure Monitor](../resource-manager-samples.md).
-* [Meer informatie over Azure Monitor voor containers](../containers/container-insights-overview.md).
+* Meer [informatie over container Insights](../containers/container-insights-overview.md).

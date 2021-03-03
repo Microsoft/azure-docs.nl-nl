@@ -7,18 +7,25 @@ ms.date: 05/13/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 429400bb6cb41ede89597dc739a612d1bf9893f2
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: e56142dfc68767945cd0d08c87f14e19551a156e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99831260"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101741460"
 ---
 # <a name="tutorial---use-mqtt-to-develop-an-iot-plug-and-play-device-client"></a>Zelfstudie - Een IoT Plug en Play-apparaatclient ontwikkelen met MQTT
 
 U moet een van de Azure IoT Device SDK's gebruiken om zo mogelijk uw IoT Plug en Play-apparaatclients te bouwen. In bepaalde scenario's, zoals wanneer u een apparaat met beperkt geheugen gebruikt, moet u echter mogelijk een MQTT-bibliotheek gebruiken om met uw IoT-hub te communiceren.
 
 In het voorbeeld in deze zelfstudie wordt gebruikgemaakt van de MQTT-bibliotheek [Eclipse Mosquitto](http://mosquitto.org/) en Visual Studio. In de stappen in deze zelfstudie wordt ervan uitgegaan dat u Windows gebruikt op uw ontwikkelcomputer.
+
+In deze zelfstudie leert u het volgende:
+
+> [!div class="checklist"]
+> * Down load en bouw de eclips Mosquitto-bibliotheek.
+> * Wijzig de op C gebaseerde MQTT-voorbeeld code om het apparaat een IoT Plug en Play-apparaat te maken.
+> * Bepaal de MQTT-onderwerpen die een IoT Plug en Play-apparaat gebruikt.
 
 ## <a name="prerequisites"></a>Vereisten
 

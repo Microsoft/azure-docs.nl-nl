@@ -3,12 +3,12 @@ title: Back-ups maken van een SAP HANA Data Base naar Azure met Azure Backup
 description: In dit artikel vindt u informatie over het maken van een back-up van een SAP HANA Data Base naar Azure virtual machines met de Azure Backup-service.
 ms.topic: conceptual
 ms.date: 11/12/2019
-ms.openlocfilehash: 87111660983e2626d8f61ddc65fdc13394509a4f
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: e7735c4240529cc6fc9bb6470934dd335d22aa77
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97831632"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719607"
 ---
 # <a name="back-up-sap-hana-databases-in-azure-vms"></a>Back-ups maken van SAP HANA-databases in virtuele Azure-machines
 
@@ -172,7 +172,7 @@ Geef als volgt de beleidsinstellingen op:
     ![Beleid voor differentiële back-ups](./media/backup-azure-sap-hana-database/differential-backup-policy.png)
 
     > [!NOTE]
-    > Incrementele back-ups worden nu ondersteund in de open bare preview-versie. U kunt kiezen voor een differentieel of een incrementele dagelijkse back-up, maar niet voor beide.
+    > U kunt kiezen voor een differentieel of een incrementele dagelijkse back-up, maar niet voor beide.
 1. In **Beleid voor een incrementele back-up** selecteert u **Inschakelen** om de frequentie- en bewaarinstellingen te openen.
     * U kunt maximaal één incrementele back-up per dag activeren.
     * Incrementele back-ups kunnen maximaal 180 dagen worden bewaard. Als dat voor u te kort is, moet u volledige back-ups gebruiken.

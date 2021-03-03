@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: conceptual
 ms.date: 07/16/2020
 ms.author: surmb
-ms.openlocfilehash: 93af3183ae9e969d14a35ce4e365d48895ef4e79
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 81eaf95a4918590c6eaa2c17a45e6925a1a67992
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92216671"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101726509"
 ---
 # <a name="rewrite-http-headers-and-url-with-application-gateway"></a>HTTP-headers en URL opnieuw schrijven met Application Gateway
 
@@ -60,9 +60,9 @@ Zie [hier](rewrite-url-portal.md)voor meer informatie over het herschrijven van 
 U gebruikt herschrijf acties om de URL, aanvraag headers of antwoord headers op te geven die u wilt herschrijven en de nieuwe waarde waarnaar u ze wilt herschrijven. De waarde van een URL of een nieuwe of bestaande koptekst kan worden ingesteld op deze typen waarden:
 
 * Tekst
-* Aanvraag header. Als u een aanvraag header wilt opgeven, moet u de syntaxis {http_req_*headernaam*} gebruiken
-* Antwoordheader. Als u een antwoord header wilt opgeven, moet u de syntaxis {http_resp_*headernaam*} gebruiken
-* Server variabele. Als u een server variabele wilt opgeven, moet u de syntaxis {var_*serverVariable*} gebruiken. De lijst met ondersteunde Server variabelen weer geven
+* Aanvraag header. Als u een aanvraag header wilt opgeven, moet u de syntaxis {http_req_ *headernaam*} gebruiken
+* Antwoordheader. Als u een antwoord header wilt opgeven, moet u de syntaxis {http_resp_ *headernaam*} gebruiken
+* Server variabele. Als u een server variabele wilt opgeven, moet u de syntaxis {var_ *serverVariable*} gebruiken. De lijst met ondersteunde Server variabelen weer geven
 * Een combi natie van tekst, een aanvraag header, een reactie header en een server variabele. 
 
 ## <a name="rewrite-conditions"></a>Voor waarden opnieuw schrijven
@@ -100,7 +100,7 @@ Als u de gehele waarde wilt gebruiken, moet u het nummer niet vermelden. Gebruik
 
 ## <a name="server-variables"></a>Server variabelen
 
-Application Gateway gebruikt Server variabelen om nuttige informatie over de server, de verbinding met de client en de huidige aanvraag op de verbinding op te slaan. Voor beelden van opgeslagen informatie zijn het IP-adres van de client en het type webbrowser. Server variabelen worden dynamisch gewijzigd, bijvoorbeeld wanneer een nieuwe pagina wordt geladen of wanneer een formulier wordt gepost. U kunt deze variabelen gebruiken om herschrijf voorwaarden te evalueren en kopteksten opnieuw te schrijven. Als u de waarde van Server variabelen wilt gebruiken om headers opnieuw te schrijven, moet u deze variabelen opgeven in de syntaxis {var_*serverVariableName*}
+Application Gateway gebruikt Server variabelen om nuttige informatie over de server, de verbinding met de client en de huidige aanvraag op de verbinding op te slaan. Voor beelden van opgeslagen informatie zijn het IP-adres van de client en het type webbrowser. Server variabelen worden dynamisch gewijzigd, bijvoorbeeld wanneer een nieuwe pagina wordt geladen of wanneer een formulier wordt gepost. U kunt deze variabelen gebruiken om herschrijf voorwaarden te evalueren en kopteksten opnieuw te schrijven. Als u de waarde van Server variabelen wilt gebruiken om headers opnieuw te schrijven, moet u deze variabelen opgeven in de syntaxis {var_ *serverVariableName*}
 
 Application Gateway biedt ondersteuning voor de volgende server variabelen:
 
@@ -114,7 +114,7 @@ Application Gateway biedt ondersteuning voor de volgende server variabelen:
 | client_tcp_rtt            | Informatie over de TCP-verbinding van de client. Beschikbaar op systemen die ondersteuning bieden voor de TCP_INFO socket optie. |
 | client_user               | Wanneer HTTP-verificatie wordt gebruikt, wordt de gebruikers naam opgegeven voor verificatie. |
 | host                      | In deze volg orde van prioriteit: de hostnaam van de aanvraag regel, de hostnaam uit het veld met de aanvraag header van de host of de server naam die overeenkomt met een aanvraag. Voor beeld: in de aanvraag `http://contoso.com:8080/article.aspx?id=123&title=fabrikam` is de waarde host `contoso.com` |
-| cookie_*naam*             | De *naam* cookie.                                           |
+| cookie_ *naam*             | De *naam* cookie.                                           |
 | http_method               | De methode die wordt gebruikt om de URL-aanvraag te maken. Bijvoorbeeld GET of POST. |
 | http_status               | De sessie status. Bijvoorbeeld 200, 400 of 403.           |
 | http_version              | Het aanvraag protocol. Meestal HTTP/1.0, HTTP/1.1 of HTTP/2.0. |
@@ -164,7 +164,7 @@ Wanneer een back-end-toepassing een omleidings reactie verzendt, wilt u mogelijk
 
 Omdat App Service een multi tenant-service is, gebruikt de host-header in de aanvraag om de aanvraag naar het juiste eind punt te sturen. App-Services hebben een standaard domein naam van *. azurewebsites.net (contoso.azurewebsites.net) die verschilt van de domein naam van de toepassings gateway (zeg contoso.com). Omdat de oorspronkelijke aanvraag van de client de domein naam van de toepassings gateway (contoso.com) als de hostnaam heeft, wijzigt de toepassings gateway de hostnaam in contoso.azurewebsites.net. Deze wijziging wordt aangebracht zodat de app service de aanvraag naar het juiste eind punt kan routeren.
 
-Wanneer de app-service een omleidings reactie verzendt, gebruikt deze dezelfde hostnaam in de locatie header van de reactie als die in de aanvraag die wordt ontvangen van de toepassings gateway. De client gaat de aanvraag dus rechtstreeks naar contoso.azurewebsites.net/path2 in plaats van de Application Gateway (contoso.com/path2). Het overs laan van de toepassings gateway is niet gewenst.
+Wanneer de app-service een omleidings reactie verzendt, gebruikt deze dezelfde hostnaam in de locatie header van de reactie als die in de aanvraag die wordt ontvangen van de toepassings gateway. De client zal de aanvraag dus rechtstreeks laten `contoso.azurewebsites.net/path2` door lopen in plaats van de Application Gateway ( `contoso.com/path2` ). Het overs laan van de toepassings gateway is niet gewenst.
 
 U kunt dit probleem oplossen door de hostnaam in de locatie header in te stellen op de domein naam van de toepassings gateway.
 
@@ -211,13 +211,13 @@ Als u de back-end-pool wilt gebruiken op basis van de waarde van een koptekst, e
 
 * De derde regel heeft een voor waarde die de *QUERY_STRING* variabele voor *Category = Accessories* controleert en een actie heeft waarmee het URL-pad naar/*listing3* opnieuw wordt geschreven en dat **Path map opnieuw wordt geëvalueerd**
 
-:::image type="content" source="./media/rewrite-http-headers-url/url-scenario1-2.png" alt-text="URL-herschrijf scenario 1-1.":::
+:::image type="content" source="./media/rewrite-http-headers-url/url-scenario1-2.png" alt-text="URL-herschrijf scenario 1-2.":::
 
  
 
 **Stap 2 (b):** Deze herschrijfset koppelen aan het standaardpad van de bovenstaande regel op basis van het pad
 
-:::image type="content" source="./media/rewrite-http-headers-url/url-scenario1-3.png" alt-text="URL-herschrijf scenario 1-1.":::
+:::image type="content" source="./media/rewrite-http-headers-url/url-scenario1-3.png" alt-text="URL-herschrijf scenario 1-3.":::
 
 Als de gebruiker zich nu aanvraagt, wordt deze met het standaardpad gematcht omdat geen van de paden in de pad- *contoso.com/Listing?Category=any*(/listing1,/listing2,/listing3) overeenkomt. Omdat u de bovenstaande herschrijfset hebt gekoppeld met dit pad, wordt deze herschrijfset geëvalueerd. Omdat de query reeks niet overeenkomt met de voor waarde in een van de drie regels voor herschrijven in deze herschrijfset, wordt er geen herschrijf actie uitgevoerd en daarom wordt de aanvraag niet gewijzigd naar de back-end die is gekoppeld aan het standaardpad ( *GenericList*).
 
@@ -234,11 +234,11 @@ In dat geval kunnen Application Gateway para meters uit de URL vastleggen en sle
 
 **Voor waarde** -als server variabele `uri_path` gelijk is aan het patroon `/(.+)/(.+)`
 
-:::image type="content" source="./media/rewrite-http-headers-url/url-scenario2-1.png" alt-text="URL-herschrijf scenario 1-1.":::
+:::image type="content" source="./media/rewrite-http-headers-url/url-scenario2-1.png" alt-text="URL-herschrijf scenario 2-1.":::
 
 **Actie** : Stel het URL-pad naar `buy.aspx` en de query reeks naar `category={var_uri_path_1}&product={var_uri_path_2}`
 
-:::image type="content" source="./media/rewrite-http-headers-url/url-scenario2-2.png" alt-text="URL-herschrijf scenario 1-1.":::
+:::image type="content" source="./media/rewrite-http-headers-url/url-scenario2-2.png" alt-text="URL-herschrijf scenario 2-2.":::
 
 Voor een stapsgewijze hand leiding voor het uitvoeren van het hierboven beschreven scenario raadpleegt u [URL herschrijven met Application Gateway met behulp van Azure Portal](rewrite-url-portal.md)
 
@@ -248,7 +248,7 @@ In het geval van een URL-herschrijf bewerking, Application Gateway de URL opnieu
 
 In het geval van een URL-omleiding stuurt Application Gateway een omleidings antwoord naar de client met de nieuwe URL. Op zijn beurt moet de client zijn aanvraag opnieuw verzenden naar de nieuwe URL die in de omleiding wordt vermeld. De URL die de gebruiker in de browser ziet, wordt bijgewerkt naar de nieuwe URL
 
-:::image type="content" source="./media/rewrite-http-headers-url/url-rewrite-vs-redirect.png" alt-text="URL-herschrijf scenario 1-1.":::
+:::image type="content" source="./media/rewrite-http-headers-url/url-rewrite-vs-redirect.png" alt-text="Write versus redirect.":::
 
 ## <a name="limitations"></a>Beperkingen
 

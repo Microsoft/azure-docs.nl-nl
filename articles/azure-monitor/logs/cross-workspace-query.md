@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/22/2020
-ms.openlocfilehash: f878d7cf5fdc2eb6538c1192319405dbde098ba6
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: a765525b12431c68aa0bba0c0f49c477defff0f0
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611301"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723211"
 ---
 # <a name="perform-log-query-in-azure-monitor-that-span-across-workspaces-and-apps"></a>Een logboek query uitvoeren in Azure Monitor die betrekking hebben op alle werk ruimten en apps
 
@@ -19,7 +19,7 @@ Azure Monitor-logboeken ondersteunen query's voor meerdere Log Analytics-werk ru
 
 Er zijn twee methoden voor het opvragen van gegevens die zijn opgeslagen in meerdere werk ruimten en apps:
 1. Expliciet door de werk ruimte en app-Details op te geven. Deze techniek wordt beschreven in dit artikel.
-2. Impliciet met behulp van [resource context query's](../platform/design-logs-deployment.md#access-mode). Wanneer u een query uitvoert in de context van een specifieke resource, resource groep of abonnement, worden de relevante gegevens opgehaald uit alle werk ruimten die gegevens voor deze resources bevatten. Application Insights gegevens die zijn opgeslagen in apps, worden niet opgehaald.
+2. Impliciet met behulp van [resource context query's](./design-logs-deployment.md#access-mode). Wanneer u een query uitvoert in de context van een specifieke resource, resource groep of abonnement, worden de relevante gegevens opgehaald uit alle werk ruimten die gegevens voor deze resources bevatten. Application Insights gegevens die zijn opgeslagen in apps, worden niet opgehaald.
 
 > [!IMPORTANT]
 > Als u een [Application Insights resource-](../app/create-workspace-resource.md) telemetrie op basis van een werk ruimte gebruikt, wordt deze opgeslagen in een log Analytics werk ruimte met alle andere logboek gegevens. Gebruik de werk ruimte ()-expressie voor het schrijven van een query die toepassing bevat in meerdere werk ruimten. Voor meerdere toepassingen in dezelfde werk ruimte hebt u geen query op meerdere werk ruimten nodig.
@@ -28,12 +28,12 @@ Er zijn twee methoden voor het opvragen van gegevens die zijn opgeslagen in meer
 ## <a name="cross-resource-query-limits"></a>Limieten voor meerdere bron query's 
 
 * Het aantal Application Insights resources en Log Analytics werk ruimten die u in één query kunt toevoegen, is beperkt tot 100.
-* Query's voor meerdere resources worden niet ondersteund in View Designer. U kunt een query in Log Analytics ontwerpen en deze vastmaken aan Azure dash board om [een logboek query te visualiseren](../learn/tutorial-logs-dashboards.md). 
+* Query's voor meerdere resources worden niet ondersteund in View Designer. U kunt een query in Log Analytics ontwerpen en deze vastmaken aan Azure dash board om [een logboek query te visualiseren](../visualize/tutorial-logs-dashboards.md). 
 * Query's voor meerdere resources in logboek waarschuwingen worden alleen ondersteund in de huidige [scheduledQueryRules-API](/rest/api/monitor/scheduledqueryrules). Als u de API legacy Log Analytics Alerts gebruikt, moet u [overschakelen naar de huidige API](../alerts/alerts-log-api-switch.md).
 
 
 ## <a name="querying-across-log-analytics-workspaces-and-from-application-insights"></a>Query's uitvoeren voor Log Analytics-werk ruimten en van Application Insights
-Als u wilt verwijzen naar een andere werk ruimte in uw query, gebruikt u de [*werk ruimte*](../logs/workspace-expression.md) -id en gebruikt u voor een app uit Application Insights de [*app*](../log-query/app-expression.md) -id.  
+Als u wilt verwijzen naar een andere werk ruimte in uw query, gebruikt u de [*werk ruimte*](../logs/workspace-expression.md) -id en gebruikt u voor een app uit Application Insights de [*app*](./app-expression.md) -id.  
 
 ### <a name="identifying-workspace-resources"></a>Werkruimte resources identificeren
 In de volgende voor beelden ziet u query's over Log Analytics werk ruimten voor het retour neren van het aantal logboeken dat is opgegeven in de update tabel van een werk ruimte met de naam *contosoretail*. 
@@ -107,9 +107,9 @@ union Update, workspace("contosoretail-it").Update, workspace("b459b4u5-912x-46d
 ```
 
 ## <a name="using-cross-resource-query-for-multiple-resources"></a>Query's voor meerdere bronnen gebruiken voor meer resources
-Bij het gebruik van query's tussen meerdere bronnen voor het correleren van gegevens uit verschillende Log Analytics werk ruimten en Application Insights resources, kan de query complex en lastig worden onderhouden. U moet gebruikmaken van [functies in azure monitor-logboek query's](../log-query/functions.md) om de query logica te scheiden van het bereik van de query resources, waardoor de query structuur wordt vereenvoudigd. In het volgende voor beeld ziet u hoe u meerdere Application Insights resources kunt bewaken en het aantal mislukte aanvragen op toepassings naam visualiseren. 
+Bij het gebruik van query's tussen meerdere bronnen voor het correleren van gegevens uit verschillende Log Analytics werk ruimten en Application Insights resources, kan de query complex en lastig worden onderhouden. U moet gebruikmaken van [functies in azure monitor-logboek query's](./functions.md) om de query logica te scheiden van het bereik van de query resources, waardoor de query structuur wordt vereenvoudigd. In het volgende voor beeld ziet u hoe u meerdere Application Insights resources kunt bewaken en het aantal mislukte aanvragen op toepassings naam visualiseren. 
 
-Maak een query zoals de volgende waarmee wordt verwezen naar het bereik van Application Insights-resources. De `withsource= SourceApp` opdracht voegt een kolom toe die de naam van de toepassing aanduidt die het logboek heeft verzonden. [Sla de query op als functie](../log-query/functions.md#create-a-function) met de alias _applicationsScoping_.
+Maak een query zoals de volgende waarmee wordt verwezen naar het bereik van Application Insights-resources. De `withsource= SourceApp` opdracht voegt een kolom toe die de naam van de toepassing aanduidt die het logboek heeft verzonden. [Sla de query op als functie](./functions.md#create-a-function) met de alias _applicationsScoping_.
 
 ```Kusto
 // crossResource function that scopes my Application Insights resources
@@ -123,7 +123,7 @@ app('Contoso-app5').requests
 
 
 
-U kunt [deze functie nu gebruiken](../log-query/functions.md#use-a-function) in een query voor meerdere resources, zoals in de volgende. De functie alias _applicationsScoping_ retourneert de samen voeging van de tabel aanvragen van alle gedefinieerde toepassingen. De query filtert vervolgens op mislukte aanvragen en visualiseert de trends op basis van de toepassing. In dit voor beeld is de operator _parse_ optioneel. De naam van de toepassing wordt geëxtraheerd uit de eigenschap _SourceApp_ .
+U kunt [deze functie nu gebruiken](./functions.md#use-a-function) in een query voor meerdere resources, zoals in de volgende. De functie alias _applicationsScoping_ retourneert de samen voeging van de tabel aanvragen van alle gedefinieerde toepassingen. De query filtert vervolgens op mislukte aanvragen en visualiseert de trends op basis van de toepassing. In dit voor beeld is de operator _parse_ optioneel. De naam van de toepassing wordt geëxtraheerd uit de eigenschap _SourceApp_ .
 
 ```Kusto
 applicationsScoping 
@@ -142,5 +142,4 @@ applicationsScoping
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Bekijk [logboek gegevens analyseren in azure monitor](../log-query/log-query-overview.md) voor een overzicht van logboek query's en hoe Azure monitor logboek gegevens zijn gestructureerd.
-
+- Bekijk [logboek gegevens analyseren in azure monitor](./log-query-overview.md) voor een overzicht van logboek query's en hoe Azure monitor logboek gegevens zijn gestructureerd.

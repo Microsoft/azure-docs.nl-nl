@@ -6,15 +6,15 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: java
 ms.topic: reference
-ms.date: 08/18/2020
+ms.date: 02/28/2021
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 64054a2bb5c1f7e17eef87c3babb28137b6c912a
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 9c3209895902a11ad0b9f29ff28e9ac7f845b101
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93097121"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101692722"
 ---
 # <a name="spring-data-azure-cosmos-db-v3-for-core-sql-api-release-notes-and-resources"></a>Lente gegevens Azure Cosmos DB v3 voor Core-API (SQL): release opmerkingen en bronnen
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -57,56 +57,39 @@ U kunt lente gegevens Azure Cosmos DB gebruiken in uw [Azure lente-Cloud](https:
 > * [Spring Data Gremlin met Azure Cosmos DB](/azure/developer/java/spring-framework/configure-spring-data-gremlin-java-app-with-cosmos-db)
 >
 
-## <a name="start-here"></a>Hier beginnen
+## <a name="get-started-fast"></a>Snel aan de slag
 
-# <a name="explore"></a>[Verkennen](#tab/explore)
+  Ga aan de slag met lente data Azure Cosmos DB door de [lente boot Starter Guide](https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db)te volgen. De Spring boot-start methode is de aanbevolen manier om aan de slag te gaan met de lente gegevens Azure Cosmos DB-connector.
 
-<img src="media/sql-api-sdk-java-spring-v3/up-arrow.png" alt="explore the tabs above" width="80"/>
-
-#### <a name="these-tabs-contain-basic-spring-data-azure-cosmos-db-samples"></a>Deze tabbladen bevatten elementaire lente gegevens Azure Cosmos DB voor beelden.
-
-# <a name="pomxml"></a>[pom.xml](#tab/pom)
-
-### <a name="configure-dependencies"></a>Afhankelijkheden configureren
+  U kunt ook de lente gegevens Azure Cosmos DB afhankelijkheid toevoegen aan uw `pom.xml` bestand, zoals hieronder wordt weer gegeven:
 
   ```xml
   <dependency>
       <groupId>com.azure</groupId>
       <artifactId>azure-spring-data-cosmos</artifactId>
-      <version>latest</version>
+      <version>latest-version</version>
   </dependency>
   ```
 
-# <a name="connect"></a>[Verbinding maken](#tab/connect)
+## <a name="helpful-content"></a>Nuttige inhoud
 
-### <a name="connect"></a>Verbinding maken
-
-Geef Azure Cosmos DB account en container Details op. Lente gegevens Azure Cosmos DB maakt de client automatisch en maakt verbinding met de container.
-
-[Application. Properties](https://github.com/Azure-Samples/azure-spring-data-cosmos-java-sql-api-getting-started/blob/main/azure-spring-data-cosmos-java-getting-started/src/main/resources/application.properties):
-```
-cosmos.uri=${ACCOUNT_HOST}
-cosmos.key=${ACCOUNT_KEY}
-cosmos.secondaryKey=${SECONDARY_ACCOUNT_KEY}
-
-dynamic.collection.name=spel-property-collection
-# Populate query metrics
-cosmos.queryMetricsEnabled=true
-```
-
-# <a name="doc-ops"></a>[Doc OPS](#tab/docs)
-
-### <a name="document-operations"></a>Document bewerkingen
-
----
-
-## <a name="resources"></a>Resources
-
-* **Bijdragen aan de SDK** : [lente data Azure Cosmos DB opslag plaats op github](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-cosmos)
-
-* **Zelf studie** : [zelf studie over Lente data Azure Cosmos DB op github](https://github.com/Azure-Samples/azure-spring-data-cosmos-java-sql-api-getting-started) 
+| Content | Koppeling |
+|---|---|
+|**SDK downloaden**| [Maven](https://mvnrepository.com/artifact/com.azure/azure-spring-data-cosmos) |
+|**API-documentatie** | [Naslag documentatie voor Java API](/java/api/com.azure.spring.data.cosmos) |
+|**Bijdragen aan SDK** | [Azure SDK voor Java Central opslag plaats op GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-cosmos) | 
+|**Aan de slag** | [Quick Start: een lente data Azure Cosmos DB-app maken voor het beheren van Azure Cosmos DB SQL-API-gegevens](./create-sql-api-spring-data.md) <br> [GitHub opslag plaats met Quick Start-code](https://github.com/Azure-Samples/azure-spring-data-cosmos-java-sql-api-getting-started) | 
+|**Basic-code voorbeelden** | [Azure Cosmos DB: voor beelden van Lente gegevens Azure Cosmos DB voor de SQL-API](sql-api-spring-data-sdk-samples.md) <br> [GitHub opslag plaats met voorbeeld code](https://github.com/Azure-Samples/azure-spring-data-cosmos-java-sql-api-samples)|
+| **Tips voor prestaties**| [Tips voor prestaties voor Java SDK v4 (van toepassing op lente gegevens)](performance-tips-java-sdk-v4-sql.md)| 
+| **Problemen oplossen** | [Problemen met Java SDK v4 oplossen (van toepassing op lente gegevens)](troubleshoot-java-sdk-v4-sql.md) | 
+| **Azure Cosmos DB workshops en Labs** |[Start pagina van Cosmos DB workshops](https://aka.ms/cosmosworkshop)
 
 [!INCLUDE[Release notes](~/azure-sdk-for-java-cosmos-db/sdk/cosmos/azure-spring-data-cosmos/CHANGELOG.md)]
+
+## <a name="additional-notes"></a>Aanvullende opmerkingen
+
+* Lente gegevens Azure Cosmos DB ondersteunen Java JDK 8 en Java JDK 11.
+* Lente data 2,3 wordt momenteel ondersteund. er wordt momenteel geen lente data 2,4 ondersteund.
 
 ## <a name="faq"></a>Veelgestelde vragen
 

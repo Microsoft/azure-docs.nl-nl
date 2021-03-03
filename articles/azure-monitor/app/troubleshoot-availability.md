@@ -4,14 +4,14 @@ description: Problemen met webtests oplossen in Azure-toepassing Insights. Ontva
 ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
-ms.date: 11/19/2020
+ms.date: 02/14/2021
 ms.reviewer: sdash
-ms.openlocfilehash: 849701caf73a4fb289773c67bccaab2e0f39dbd1
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 940a70de81df60f7b6c1545c992e1ee10e69fa9f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100583729"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728923"
 ---
 # <a name="troubleshooting"></a>Problemen oplossen
 
@@ -58,7 +58,7 @@ Met het rapport problemen oplossen kunt u eenvoudig veelvoorkomende problemen va
 
 ### <a name="i-did-not-get-an-email-when-the-alert-triggered-or-resolved-or-both"></a>Ik heb geen e-mail bericht ontvangen toen de waarschuwing werd geactiveerd of is opgelost of beide?
 
-Controleer de configuratie van de klassieke waarschuwingen om te bevestigen dat uw e-mail adres direct wordt weer gegeven of dat een distributie lijst die u op, is geconfigureerd voor het ontvangen van meldingen. Als dat het geval is, controleert u de configuratie van de distributie lijst om te bevestigen dat het externe e-mail berichten kan ontvangen. Controleer ook of de e-mail beheerder mogelijk beleids regels heeft geconfigureerd die dit probleem kunnen veroorzaken.
+Controleer de configuratie van de actie groep van waarschuwingen om te bevestigen dat uw e-mail adres direct wordt weer gegeven of dat een distributie lijst die u aan hebt, is geconfigureerd voor het ontvangen van meldingen. Als dat het geval is, controleert u de configuratie van de distributie lijst om te bevestigen dat het externe e-mail berichten kan ontvangen. Controleer ook of de e-mail beheerder mogelijk beleids regels heeft geconfigureerd die dit probleem kunnen veroorzaken.
 
 ### <a name="i-did-not-receive-the-webhook-notification"></a>Ik heb de webhook-melding niet ontvangen?
 
@@ -110,21 +110,6 @@ Er is een limiet van 100 aanvragen per test. De test wordt ook gestopt als deze 
 ### <a name="how-can-i-run-a-test-with-client-certificates"></a>Hoe voer ik een test uit met clientcertificaten?
 
 Dit wordt momenteel niet ondersteund.
-
-## <a name="who-receives-the-classic-alert-notifications"></a>Wie ontvangt de (klassieke) waarschuwings meldingen?
-
-Deze sectie is alleen van toepassing op klassieke waarschuwingen en helpt u bij het optimaliseren van uw waarschuwings meldingen om ervoor te zorgen dat alleen de gewenste ontvangers meldingen ontvangen. Raadpleeg het [overzichts artikel over waarschuwingen](../alerts/alerts-overview.md)voor meer informatie over het verschil tussen [klassieke waarschuwingen](../alerts/alerts-classic.overview.md)en de nieuwe waarschuwingen. Voor het beheren van waarschuwings meldingen in de nieuwe waarschuwings ervaring gebruikt u [actie groepen](../alerts/action-groups.md).
-
-* We raden u aan specifieke ontvangers te gebruiken voor klassieke waarschuwings meldingen.
-
-* Voor waarschuwingen over storingen van de X-Y-locaties wordt de optie voor het selectie vakje voor **bulk/groep** , indien ingeschakeld, verzonden naar gebruikers met rollen beheerder/mede beheerder.  In wezen worden _alle_ beheerders van het _abonnement_ meldingen ontvangen.
-
-* Voor waarschuwingen over de metrische gegevens over de beschik baarheid wordt de optie voor **bulk/groep** -selectie in-of uitgeschakeld, verzonden naar gebruikers met de rollen eigenaar, bijdrager of lezer in het abonnement. In feite hebben _alle_ gebruikers met toegang tot het abonnement de Application Insights-resource binnen bereik en ontvangen ze meldingen. 
-
-> [!NOTE]
-> Als u momenteel de optie voor het selectie vakje **massaal/groep** gebruikt en deze functie uitschakelt, kunt u de wijziging niet meer ongedaan maken.
-
-Gebruik de nieuwe waarschuwings ervaring/bijna realtime waarschuwingen als u gebruikers op basis van hun rollen wilt waarschuwen. Met [actie groepen](../alerts/action-groups.md)kunt u e-mail meldingen configureren voor gebruikers met een van de rollen Inzender/eigenaar/lezer (niet gecombineerd als één optie).
 
 ## <a name="next-steps"></a>Volgende stappen
 

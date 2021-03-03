@@ -2,17 +2,14 @@
 title: Quota en limieten aanpassen in Azure Data Lake Analytics
 description: Meer informatie over het aanpassen en verg Roten van quota's en limieten in Azure Data Lake Analytics-accounts (ADLA).
 ms.service: data-lake-analytics
-author: omidm1
-ms.author: omidm
-ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 03/15/2018
-ms.openlocfilehash: fd032235f286b5db1930e9c9c6d730b5424aa4eb
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 416b77fd86316acb8098531257e12b591a0ff052
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92220836"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101710172"
 ---
 # <a name="adjust-quotas-and-limits-in-azure-data-lake-analytics"></a>Quota en limieten aanpassen in Azure Data Lake Analytics
 
@@ -53,7 +50,7 @@ Dit is het maximum aantal taken dat gelijktijdig kan worden uitgevoerd in uw acc
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Kies een bestaand ADLA-account.
 3. Klik op **Eigenschappen**.
-4. U kunt de waarden voor het **maximum aantal AUs**, het **maximum van de actieve taken**en de **Verzend limieten** van taken aanpassen aan uw behoeften.
+4. U kunt de waarden voor het **maximum aantal AUs**, het **maximum van de actieve taken** en de **Verzend limieten** van taken aanpassen aan uw behoeften.
 
 ## <a name="increase-maximum-quota-limits"></a>Maximum aantal quotum limieten verhogen
 
@@ -65,7 +62,7 @@ Meer informatie over Azure-limieten vindt u in de documentatie voor de [specifie
 
    ![Nieuwe ondersteunings aanvraag voor Azure Data Lake Analytics Portal](./media/data-lake-analytics-quota-limits/data-lake-analytics-quota-support-request.png)
 
-2. Selecteer het type **quotum**van het probleem.
+2. Selecteer het type **quotum** van het probleem.
 
 3. Selecteer uw **abonnement** (zorg ervoor dat het geen ' proef abonnement ' is).
 

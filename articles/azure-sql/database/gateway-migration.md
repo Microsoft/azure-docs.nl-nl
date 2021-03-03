@@ -10,19 +10,19 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 07/01/2019
-ms.openlocfilehash: 8fa61855b5647c1caefd939af17b70c9d08c2f8f
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: eab1ebb3bf66b28bae80fbf16eaf24dbbc63bfb0
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100517821"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101690529"
 ---
 # <a name="azure-sql-database-traffic-migration-to-newer-gateways"></a>Azure SQL Database verkeer migratie naar nieuwere gateways
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 Naarmate de Azure-infra structuur wordt verbeterd, zal micro soft hardware periodiek vernieuwen om ervoor te zorgen dat we de best mogelijke klant ervaring bieden. In de komende maanden kunnen we gateways toevoegen die zijn gebouwd op nieuwere hardware-generaties, verkeer naar hen migreren en uiteindelijk buiten gebruik stellen van gateways die zijn gebouwd op oudere hardware in sommige regio's.  
 
-Klanten ontvangen een melding via service Health Notifications voordat er wijzigingen zijn in de gateways die beschikbaar zijn in elke regio. Klanten kunnen [de Azure Portal gebruiken om waarschuwingen in het activiteiten logboek in te stellen](https://docs.microsoft.com/azure/service-health/alerts-activity-log-service-notifications-portal).
+Klanten ontvangen een melding via service Health Notifications voordat er wijzigingen zijn in de gateways die beschikbaar zijn in elke regio. Klanten kunnen [de Azure Portal gebruiken om waarschuwingen in het activiteiten logboek in te stellen](../../service-health/alerts-activity-log-service-notifications-portal.md).
 
 De meest recente informatie wordt bewaard in de tabel met [IP-adressen van de Azure SQL database gateway](connectivity-architecture.md#gateway-ip-addresses) .
 

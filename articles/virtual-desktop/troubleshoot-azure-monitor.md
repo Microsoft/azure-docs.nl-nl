@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 12/01/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 1453d43707a3680380e553fe69d738b27fe5ae3a
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: c335c1cf7e5319b812345714dbdc6b87ddc4e81b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100571349"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101709169"
 ---
 # <a name="troubleshoot-azure-monitor-for-windows-virtual-desktop-preview"></a>Problemen met Azure Monitor voor virtueel bureau blad van Windows oplossen (preview-versie)
 
@@ -42,7 +42,7 @@ Als uw gegevens niet correct worden weer gegeven, controleert u uw configuratie,
     - Lees toegang tot de resource groepen van het abonnement die uw Windows Virtual Desktop-sessie hosts bevatten 
     - Lees toegang tot de Log Analytics-werk ruimte
 
-- Mogelijk moet u uitgaande poorten in de firewall van uw server openen zodat Azure Monitor gegevens naar de portal kunt verzenden. Zie [uitgaande poorten](https://docs.microsoft.com/azure/azure-monitor/app/ip-addresses). 
+- Mogelijk moet u uitgaande poorten in de firewall van uw server openen zodat Azure Monitor gegevens naar de portal kunt verzenden. Zie [uitgaande poorten](../azure-monitor/app/ip-addresses.md). 
 
 - Ziet u geen gegevens uit de recente activiteit? Mogelijk wilt u 15 minuten wachten en de feed vernieuwen. Azure Monitor heeft een latentie periode van 15 minuten voor het invullen van de logboek gegevens. Zie [gegevens opname tijd vastleggen in azure monitor](../azure-monitor/logs/data-ingestion-time.md)voor meer informatie.
 
@@ -62,8 +62,8 @@ Meer informatie over de gegevens termen vindt u in de [woorden lijst Azure monit
 
 Als u meer prestatie meter items of gebeurtenissen wilt bewaken, kunt u ze in staat stellen om naar uw Log Analytics-werk ruimte te verzenden en ze te controleren in diagnostische gegevens van hosts: host browser. 
 
-- Zie [prestatie meter items configureren](https://docs.microsoft.com/azure/azure-monitor/platform/data-sources-performance-counters#configuring-performance-counters) voor meer informatie over het toevoegen van prestatie meter items
-- Zie [Windows-gebeurtenis logboeken configureren](https://docs.microsoft.com/azure/azure-monitor/platform/data-sources-windows-events#configuring-windows-event-logs) voor meer informatie over het toevoegen van Windows-gebeurtenissen.
+- Zie [prestatie meter items configureren](../azure-monitor/agents/data-sources-performance-counters.md#configuring-performance-counters) voor meer informatie over het toevoegen van prestatie meter items
+- Zie [Windows-gebeurtenis logboeken configureren](../azure-monitor/agents/data-sources-windows-events.md#configuring-windows-event-logs) voor meer informatie over het toevoegen van Windows-gebeurtenissen.
 
 Kunt u geen gegevens punt vinden om te helpen bij het vaststellen van een probleem? Stuur ons feedback.
 

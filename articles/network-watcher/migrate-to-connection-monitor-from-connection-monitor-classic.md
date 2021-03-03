@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/07/2021
 ms.author: vinigam
-ms.openlocfilehash: ff4882f2146a8b978047df2fcf6c52734534979f
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: d4ab5361d245ad1ee10d43184cc0a2d65fed2054
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99833980"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101730028"
 ---
 # <a name="migrate-to-connection-monitor-from-connection-monitor-classic"></a>Migreren naar verbindings monitor vanuit verbindings monitor (klassiek)
 
@@ -32,7 +32,7 @@ De migratie helpt de volgende resultaten te produceren:
 
 * De agents en Firewall instellingen werken zoals. Er zijn geen wijzigingen vereist. 
 * Bestaande verbindings monitors worden toegewezen aan de verbindings monitor > test groep > test-indeling. Als u **bewerken** selecteert, kunt u de eigenschappen van de nieuwe verbindings monitor weer geven en wijzigen, een sjabloon downloaden om wijzigingen aan te brengen in de verbindings monitor en deze verzenden via Azure Resource Manager. 
-* Virtuele Azure-machines met de extensie Network Watcher verzenden gegevens naar zowel de werk ruimte als de metrieken. Met verbindings monitor worden de gegevens beschikbaar via de nieuwe metrieken (ChecksFailedPercent en RoundTripTimeMs) in plaats van de oude meet waarden (ProbesFailedPercent en AverageRoundtripMs). 
+* Virtuele Azure-machines met de extensie Network Watcher verzenden gegevens naar zowel de werk ruimte als de metrieken. Met verbindings monitor worden de gegevens beschikbaar via de nieuwe metrieken (ChecksFailedPercent en RoundTripTimeMs) in plaats van de oude meet waarden (ProbesFailedPercent en AverageRoundtripMs). De oude metrische gegevens worden gemigreerd naar nieuwe metrische gegevens als ProbesFailedPercent-> ChecksFailedPercent en AverageRoundtripMs-> RoundTripTimeMs.
 * Gegevens bewaking:
    * **Waarschuwingen**: automatisch gemigreerd naar de nieuwe metrische gegevens.
    * **Dash boards en integraties**: vereisen hand matig bewerken van de metrische gegevens sets. 
@@ -49,7 +49,7 @@ Als u een aangepaste werk ruimte gebruikt, zorg er dan voor dat Network Watcher 
     
 1. Selecteer uw abonnement en de monitors voor de verbinding die u wilt migreren en selecteer vervolgens **migreren geselecteerd**. 
 
-Met slechts een paar muis klikken hebt u de bestaande verbindings monitors gemigreerd naar de verbindings monitor. 
+Met slechts een paar muis klikken hebt u de bestaande verbindings monitors gemigreerd naar de verbindings monitor. Nadat u hebt gemigreerd van CM (klassiek) naar CM, kunt u de monitor niet zien onder CM (klassiek)
 
 U kunt nu eigenschappen van de verbindings monitor aanpassen, de standaardwerk ruimte wijzigen, sjablonen downloaden en de migratie status controleren. 
 

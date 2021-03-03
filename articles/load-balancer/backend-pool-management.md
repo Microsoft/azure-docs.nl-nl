@@ -6,14 +6,14 @@ services: load-balancer
 author: asudbring
 ms.service: load-balancer
 ms.topic: how-to
-ms.date: 07/07/2020
+ms.date: 01/28/2021
 ms.author: allensu
-ms.openlocfilehash: e5efbf695b85f474e5d7c84c86809acb2f5a1035
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 65a00cd898ef63dd3194e48ad6dd3fb73a211d6f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99429599"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101709866"
 ---
 # <a name="backend-pool-management"></a>Beheer van back-endpools
 De back-endpool is een essentieel onderdeel van de load balancer. Met de back-endpool wordt de groep resources gedefinieerd die het verkeer verwerken voor een bepaalde taakverdelingsregel.
@@ -255,8 +255,16 @@ Gebruik het IP-adres en virtueel netwerk in scenario's met vooraf gevulde back-e
 
 Alle beheer van de back-endpool wordt rechtstreeks uitgevoerd in het back-endpoolobject, zoals gemarkeerd in de onderstaande voorbeelden.
 
-  >[!IMPORTANT] 
-  >Deze functie is momenteel beschikbaar als preview-product. Raadpleeg het gedeelte [Beperkingen](#limitations) voor huidige beperkingen van deze functie.
+### <a name="limitations"></a>Beperkingen
+Een back-end-pool die is geconfigureerd door IP-adressen heeft de volgende beperkingen:
+  * Kan alleen worden gebruikt voor standaard load balancers
+  * Limiet van 100 IP-adressen in de back-endpool
+  * De back-endresources moeten zich in hetzelfde virtueel netwerk bevinden als de load balancer
+  * Een Load Balancer met een op IP gebaseerde back-end-pool kunnen niet functioneren als Private Link-service
+  * Deze functie wordt momenteel niet ondersteund in de Azure-portal
+  * ACI-containers worden momenteel niet ondersteund door deze functie
+  * Load balancers of services met load balancers aan de voorkant kunnen niet worden opgenomen in de back-endpool van de load balancer
+  * Inkomende NAT-regels kunnen niet per IP-adres worden opgegeven
 
 ### <a name="powershell"></a>PowerShell
 Maak een nieuwe back-endpool:
@@ -517,17 +525,6 @@ JSON-aanvraagtekst:
   }
 }
 ```
-
-## <a name="limitations"></a>Beperkingen
-Een back-end-pool die is geconfigureerd door IP-adressen heeft de volgende beperkingen:
-  * Alleen load balancers van het type Standard
-  * Limiet van 100 IP-adressen in de back-endpool
-  * De back-endresources moeten zich in hetzelfde virtueel netwerk bevinden als de load balancer
-  * Een Load Balancer met een op IP gebaseerde back-end-pool kunnen niet functioneren als Private Link-service
-  * Deze functie wordt momenteel niet ondersteund in de Azure-portal
-  * ACI-containers worden momenteel niet ondersteund door deze functie
-  * Load balancers of services met load balancers aan de voorkant kunnen niet worden opgenomen in de back-endpool van de load balancer
-  * Inkomende NAT-regels kunnen niet per IP-adres worden opgegeven
   
 ## <a name="next-steps"></a>Volgende stappen
 In dit artikel hebt u informatie gekregen over het beheer van back-endpools in Azure Load Balancer en over hoe u een back-endpool kunt configureren op basis van het IP-adres en virtuele netwerk.

@@ -10,16 +10,16 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 06/10/2020
 ms.author: lajanuar
-ms.openlocfilehash: 935a9e92de88c2519dc1a1042315d204e8f60099
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: b114c4f3e6646f68e7a1068be8dd52778a26fb58
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98919915"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738137"
 ---
 # <a name="language-and-region-support-for-text-and-speech-translation"></a>Ondersteuning van talen en regio's voor tekst-en spraak omzetting
 
-Gebruik Translator voor het vertalen van en naar een van de talen voor 70 en tekst vertalingen. Neural machine translation (NMT) is de nieuwe standaard voor automatische vertalingen van een hoge kwaliteit en is beschikbaar als de standaard waarde met behulp van v3 van Translator wanneer er een Neural-systeem beschikbaar is.
+Gebruik Translator om te vertalen van en naar een van de 90-talen en-dialecten voor tekst vertalingen. Neural machine translation (NMT) is de nieuwe standaard voor automatische vertalingen van een hoge kwaliteit en is beschikbaar als de standaard waarde met behulp van v3 van Translator wanneer er een Neural-systeem beschikbaar is.
 
 U kunt Translator ook gebruiken in combi natie met aangepaste vertaler voor het bouwen van Neural-Vertaal systemen die inzicht hebben in de terminologie die wordt gebruikt in uw eigen bedrijf en branche, en met micro soft Speech Service om spraak omzetting toe te voegen aan uw app.
 
@@ -37,8 +37,12 @@ Translator ondersteunt de volgende talen voor tekst vertaling.
 | Taal | Taalcode |
 |:-|:-:|
 | Afrikaans | `af` |
+| Albanees | `sq` |
+| Amhaars | `am` |
 | Arabisch | `ar` |
+| Armeens | `hy` |
 | Assamees | `as` |
+| Azerbeidzjan | `az` |
 | Bengaals | `bn` |
 | Bosnisch (Latijns) | `bs` |
 | Bulgaars | `bg` |
@@ -74,11 +78,13 @@ Translator ondersteunt de volgende talen voor tekst vertaling.
 | Japans | `ja` |
 | Kannada | `kn` |
 | Kazachs | `kk` |
+| Khmer | `km` |
 | Klingon | `tlh-Latn` |
 | Klingon (plqaD) | `tlh-Piqd` |
 | Koreaans | `ko` |
 | Koerdisch (centraal) | `ku` |
 | Koerdisch (noordelijk) | `kmr` |
+| Democratische | `lo` |
 | Lets | `lv` |
 | Litouws | `lt` |
 | Malagassisch | `mg` |
@@ -87,6 +93,8 @@ Translator ondersteunt de volgende talen voor tekst vertaling.
 | Maltees | `mt` |
 | Maori | `mi` |
 | Mahrati | `mr` |
+| Myanmar | `my` |
+| Nepalees | `ne` |
 | Noors | `nb` |
 | Odia | `or` |
 | Pashto | `ps` |
@@ -110,6 +118,7 @@ Translator ondersteunt de volgende talen voor tekst vertaling.
 | Tamil | `ta` |
 | Telugu | `te` |
 | Thai | `th` |
+| Tigrinya | `ti` |
 | Tongaans | `to` |
 | Turks | `tr` |
 | Oekraïens | `uk` |
@@ -130,6 +139,7 @@ Translator detecteert de volgende talen voor vertaal-en vele.
 | Taal | Taalcode |
 |:-|:-:|
 | Afrikaans | `af` |
+| Albanees | `sq` |
 | Arabisch | `ar` |
 | Bulgaars | `bg` |
 | Catalaans | `ca` |
@@ -152,6 +162,7 @@ Translator detecteert de volgende talen voor vertaal-en vele.
 | Hongaars | `hu` |
 | IJslands | `is` |
 | Indonesisch | `id` |
+| Inuktitut | `iu` |
 | Iers | `ga` |
 | Italiaans | `it` |
 | Japans | `ja` |

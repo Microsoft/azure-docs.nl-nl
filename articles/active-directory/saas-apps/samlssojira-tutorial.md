@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/03/2018
 ms.author: jeedes
-ms.openlocfilehash: fe241a3fd74e1421f1bd3d39087fe776ee7b61d9
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
-ms.translationtype: HT
+ms.openlocfilehash: e1440feacd10935b15195110cd7ea3e20b4d523c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92891513"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101687614"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-jira-by-resolution-gmbh"></a>Zelfstudie: Azure Active Directory-integratie met SAML SSO for Jira by resolution GmbH
 
@@ -49,7 +49,7 @@ Om eenmalige aanmelding in te stellen in Azure AD, moet u een nieuwe onderneming
 
 **Voer de volgende stappen uit om SAML SSO for Jira by resolution GmbH toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -89,7 +89,7 @@ Voer de volgende stappen uit om eenmalige aanmelding met SAML SSO for Jira by re
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
-2. Selecteer de **SAML** -modus voor **Eenmalige aanmeldingsmethode selecteren** om eenmalige aanmelding in te schakelen.
+2. Selecteer de **SAML**-modus voor **Eenmalige aanmeldingsmethode selecteren** om eenmalige aanmelding in te schakelen.
 
     ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
 
@@ -200,7 +200,7 @@ Voer de volgende stappen uit om eenmalige aanmelding met SAML SSO for Jira by re
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken. Met de gebruiker wordt eenmalige aanmelding getest.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -295,7 +295,7 @@ Zoals vermeld in de sectie voor, zijn er momenteel twee manieren om eenmalige aa
 
 In essentie worden alle gebruikers die toegang hebben tot Jira, omgeleid naar de eenmalige aanmelding na het activeren van een optie in de invoegtoepassing.
 
-Als u SSO-omleiding wilt activeren, gaat u als volgt te werk in **uw Jira-exemplaar** :
+Als u SSO-omleiding wilt activeren, gaat u als volgt te werk in **uw Jira-exemplaar**:
 
 1. Open de configuratie pagina van de SAML SSO-invoegtoepassing in Jira.
 1. Klik op **Omleiding** in het linkerpaneel.
@@ -308,7 +308,7 @@ Als u SSO-omleiding wilt activeren, gaat u als volgt te werk in **uw Jira-exempl
 
 1. Klik in de rechterbovenhoek op de knop **Instellingen opslaan**.
 
-Nadat u de optie hebt geactiveerd, kunt u nog steeds de prompt voor gebruikersnaam en wachtwoord bereiken als de optie **Nosso inschakelen** is aangevinkt door naar `https://\<server-base-url>/login.jsp?nosso`te navigeren. Zoals gewoonlijk, vervang **\<server-base-url>** met de basis-URL.
+Nadat u de optie hebt geactiveerd, kunt u nog steeds de prompt voor gebruikersnaam en wachtwoord bereiken als de optie **Nosso inschakelen** is aangevinkt door naar `https://<server-base-url>/login.jsp?nosso`te navigeren. Zoals gewoonlijk, vervang **\<server-base-url>** met de basis-URL.
 
 
 ## <a name="additional-resources"></a>Aanvullende bronnen

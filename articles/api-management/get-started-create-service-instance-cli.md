@@ -1,5 +1,5 @@
 ---
-title: 'Quickstart: Een Azure API Management-exemplaar maken met behulp van CLI (preview)'
+title: 'Quick Start: een Azure API Management-exemplaar maken met CLI'
 description: Een nieuw API Management-service-exemplaar maken met behulp van Azure CLI.
 author: dlepow
 ms.service: api-management
@@ -7,18 +7,18 @@ ms.topic: quickstart
 ms.custom: ''
 ms.date: 09/10/2020
 ms.author: apimpm
-ms.openlocfilehash: 863cb6cd10664e14966898045cb2b1861ef75b9f
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
-ms.translationtype: HT
+ms.openlocfilehash: 72d1faac02a21f23d46eb992af1d501bca89e71f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94887447"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101688073"
 ---
-# <a name="quickstart-create-a-new-azure-api-management-service-instance-by-using-the-azure-cli-preview"></a>Quickstart: Een nieuw API Management-service-exemplaar maken met behulp van Azure CLI (preview)
+# <a name="quickstart-create-a-new-azure-api-management-service-instance-by-using-the-azure-cli"></a>Snelstartgids: een nieuw exemplaar van Azure API Management service maken met behulp van de Azure CLI
 
 APIM (API Management) helpt organisaties bij het publiceren van API's naar externe en interne ontwikkelaars, en naar partnerontwikkelaars om alle mogelijkheden van hun gegevens en services te ontsluiten. API Management beschikt over de competenties die belangrijk zijn voor een geslaagd API-programma via ontwikkelaarsbetrokkenheid, zakelijke inzichten, analytische gegevens, beveiliging en bescherming. Met APIM kunt u moderne API-gateways maken en beheren voor bestaande back-endservices die op elke willekeurige locatie worden gehost. Zie het [overzicht](api-management-key-concepts.md) voor meer informatie.
 
-In deze quickstart worden de stappen beschreven voor het maken van een nieuw API Management-exemplaar met behulp van de opdrachten [az apim](/cli/azure/apim) in Azure CLI. De opdrachten in de opdrachtgroep `az apim` zijn momenteel in de preview-fase en zijn mogelijk gewijzigd of verwijderd in een toekomstige release.
+In deze quickstart worden de stappen beschreven voor het maken van een nieuw API Management-exemplaar met behulp van de opdrachten [az apim](/cli/azure/apim) in Azure CLI.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/06/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: e7a4af2c18bfc2b8fbd6149dab12c0bcfc665341
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 7bf71f55e1b49a9280b25cfcc01090afbd0c42db
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878817"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750866"
 ---
 ## <a name="create-an-image-gallery"></a>Een galerie met installatiekopieën maken
 
@@ -93,10 +93,7 @@ Het kan even duren om de installatiekopie naar alle doelregio's te repliceren.
 
 We raden aan om te delen op galerieniveau. Hieronder vindt u instructies voor het delen van de galerie die u zojuist hebt gemaakt.
 
-1. Open de [Azure Portal](https://portal.azure.com).
-1. Selecteer **resource groepen** in het menu aan de linkerkant. 
-1. Selecteer **myGalleryRG** in de lijst met resource groepen. De Blade voor de resource groep wordt geopend.
-1. Selecteer **toegangs beheer (IAM)** in het menu aan de linkerkant van de pagina **myGalleryRG** . 
+1. Selecteer op de pagina voor de nieuwe galerie met installatie kopieën in het menu aan de linkerkant **toegangs beheer (IAM)**. 
 1. Selecteer onder **een roltoewijzing toevoegen de** optie **toevoegen**. Het deel venster **toewijzing van een rol toevoegen** wordt geopend. 
 1. Selecteer onder **rol** **lezer**.
 1. Onder **toegang toewijzen aan**, de standaard waarde van de **gebruiker, groep of Service-Principal van Azure AD** laten staan.

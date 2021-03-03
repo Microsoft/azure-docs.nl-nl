@@ -6,18 +6,18 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 09/22/2020
-ms.openlocfilehash: b877cba794f97dd4736e30a72d91695774c8e688
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 9352b27002162e08d53bc8166ceddd010be3c8d1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609572"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738647"
 ---
 # <a name="troubleshoot-log-alerts-in-azure-monitor"></a>Problemen met logboek waarschuwingen in Azure Monitor oplossen  
 
 In dit artikel wordt beschreven hoe u veelvoorkomende problemen met logboek waarschuwingen in Azure Monitor kunt oplossen. Het bevat ook oplossingen voor veelvoorkomende problemen met de functionaliteit en configuratie van logboek waarschuwingen.
 
-Met logboek waarschuwingen kunnen gebruikers een [log Analytics](../log-query/log-analytics-tutorial.md) query gebruiken om resources te evalueren elke ingestelde frequentie, en wordt een waarschuwing gestart op basis van de resultaten. Regels kunnen een of meer acties activeren met behulp van [actie groepen](../platform/action-groups.md). [Meer informatie over de functionaliteit en termen van logboek waarschuwingen](alerts-unified-log.md).
+Met logboek waarschuwingen kunnen gebruikers een [log Analytics](../logs/log-analytics-tutorial.md) query gebruiken om resources te evalueren elke ingestelde frequentie, en wordt een waarschuwing gestart op basis van de resultaten. Regels kunnen een of meer acties activeren met behulp van [actie groepen](./action-groups.md). [Meer informatie over de functionaliteit en termen van logboek waarschuwingen](alerts-unified-log.md).
 
 > [!NOTE]
 > In dit artikel wordt niet in overweging genomen gevallen waarin de Azure Portal een waarschuwings regel weergeeft en er geen melding wordt uitgevoerd door een gekoppelde actie groep. Zie voor dergelijke gevallen de details over [het oplossen van](./alerts-troubleshoot.md#action-or-notification-on-my-alert-did-not-work-as-expected)problemen.
@@ -26,7 +26,7 @@ Met logboek waarschuwingen kunnen gebruikers een [log Analytics](../log-query/lo
 
 ### <a name="data-ingestion-time-for-logs"></a>Gegevens opname tijd voor logboeken
 
-Azure Monitor verwerkt terabytes aan logboeken van klanten over de hele wereld, wat kan leiden tot [opname latentie van Logboeken](../platform/data-ingestion-time.md).
+Azure Monitor verwerkt terabytes aan logboeken van klanten over de hele wereld, wat kan leiden tot [opname latentie van Logboeken](../logs/data-ingestion-time.md).
 
 Logboeken zijn semi-gestructureerde gegevens en meer laten verlaten, meer dan metrieken. Als u meer dan 4 minuten vertraging in gebrande waarschuwingen ondervindt, kunt u overwegen [metrische waarschuwingen](alerts-metric-overview.md)te gebruiken. U kunt gegevens verzenden naar het metrische archief vanuit Logboeken met [metrische waarschuwingen voor logboeken](alerts-metric-logs.md).
 
@@ -60,7 +60,7 @@ Een geconfigureerde [logboek waarschuwings regel in azure monitor](./alerts-log.
 
 ### <a name="alert-triggered-by-partial-data"></a>Waarschuwing geactiveerd door gedeeltelijke gegevens
 
-Azure Monitor verwerkt terabytes aan logboeken van klanten over de hele wereld, wat kan leiden tot [opname latentie van Logboeken](../platform/data-ingestion-time.md).
+Azure Monitor verwerkt terabytes aan logboeken van klanten over de hele wereld, wat kan leiden tot [opname latentie van Logboeken](../logs/data-ingestion-time.md).
 
 Logboeken zijn semi-gestructureerde gegevens en meer laten verlaten, meer dan metrieken. Als u veel problemen ondervindt bij het starten van waarschuwingen, kunt u overwegen [metrische waarschuwingen](alerts-metric-overview.md)te gebruiken. U kunt gegevens verzenden naar het metrische archief vanuit Logboeken met [metrische waarschuwingen voor logboeken](alerts-metric-logs.md).
 
@@ -87,7 +87,7 @@ SecurityEvent
 
 U hoeft geen waarschuwings logica aan de query toe te voegen en dat kan zelfs problemen veroorzaken. Als u in het bovenstaande voor beeld uw query opneemt `count` , resulteert dit altijd in de waarde 1, omdat de waarschuwings service van wordt `count` uitgevoerd `count` .
 
-De geoptimaliseerde query is wat de logboek waarschuwing service uitvoert. U kunt de gewijzigde query uitvoeren in Log Analytics [Portal](../log-query/log-query-overview.md) of [API](/rest/api/loganalytics/).
+De geoptimaliseerde query is wat de logboek waarschuwing service uitvoert. U kunt de gewijzigde query uitvoeren in Log Analytics [Portal](../logs/log-query-overview.md) of [API](/rest/api/loganalytics/).
 
 Voor werk ruimten en Application Insights wordt de query genoemd, die wordt **uitgevoerd** in het deel venster voor waarde. Selecteer in alle andere resource typen de optie **laatste waarschuwings query weer geven** op het tabblad voor waarde.
 
@@ -108,7 +108,7 @@ Azure Monitor schakelt de logboek waarschuwing na een week uit als deze continu 
 Als er een waarschuwings regel voor het logboek wordt gemaakt, wordt de query gevalideerd voor de juiste syntaxis. Maar soms kan de query die in de waarschuwings regel voor logboeken wordt gegeven, mislukken. Enkele veelvoorkomende oorzaken zijn:
 
 - Er zijn regels gemaakt via de API en de validatie is overgeslagen door de gebruiker.
-- De query [wordt uitgevoerd op meerdere resources](../log-query/cross-workspace-query.md) en een of meer resources zijn verwijderd of verplaatst.
+- De query [wordt uitgevoerd op meerdere resources](../logs/cross-workspace-query.md) en een of meer resources zijn verwijderd of verplaatst.
 - De [query is mislukt](https://dev.loganalytics.io/documentation/Using-the-API/Errors) omdat:
     - De oplossing voor logboek registratie is niet [geïmplementeerd in de werk ruimte](../insights/solutions.md#install-a-monitoring-solution), waardoor er geen tabellen worden gemaakt.
     - Gegevens die niet meer dan 30 dagen naar een tabel in de query zijn gestroomd, worden gestopt.
@@ -219,5 +219,5 @@ Als de query gedurende zeven dagen doorlopend mislukt, wordt de waarschuwing in 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over [logboek waarschuwingen in azure](./alerts-unified-log.md).
-- Meer informatie over het [configureren van logboek waarschuwingen](../log-query/log-query-overview.md).
-- Meer informatie over [logboek query's](../log-query/log-query-overview.md).
+- Meer informatie over het [configureren van logboek waarschuwingen](../logs/log-query-overview.md).
+- Meer informatie over [logboek query's](../logs/log-query-overview.md).

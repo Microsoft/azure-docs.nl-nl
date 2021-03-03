@@ -3,12 +3,12 @@ title: Downtime, SLA en werk stroom voor de werk stroom-Application Insights
 description: SLA het voor webtests op en meld u aan met een enkel glas venster over uw Application Insights resources en Azure-abonnementen.
 ms.topic: conceptual
 ms.date: 02/8/2021
-ms.openlocfilehash: 884d65d10ab0360957360efa8bf9dc4cac59949b
-ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
+ms.openlocfilehash: d225627a27bffd9088956e5aee37ca543e528d4a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99989327"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101714048"
 ---
 # <a name="downtime-sla-and-outages-workbook"></a>De werkmap downtime, SLA en uitval
 
@@ -51,13 +51,13 @@ Het tabblad storingen **en downtime** bevat informatie over het totale aantal ma
 
 ## <a name="edit-the-report"></a>Het rapport bewerken
 
-U kunt het rapport bewerken, net als andere [Azure monitor werkmap](../platform/workbooks-overview.md). U kunt de query's of visualisaties aanpassen op basis van de behoeften van uw team.
+U kunt het rapport bewerken, net als andere [Azure monitor werkmap](../visualize/workbooks-overview.md). U kunt de query's of visualisaties aanpassen op basis van de behoeften van uw team.
 
 :::image type="content" source="./media/sla-report/edit.gif" alt-text=" GIF van het selecteren van de knop bewerken om de visualisatie te wijzigen in een cirkel diagram." lightbox="./media/sla-report/edit.gif":::
 
 ### <a name="log-analytics"></a>Log Analytics
 
-De query's kunnen allemaal worden uitgevoerd in [log Analytics](../log-query/log-analytics-overview.md) en worden gebruikt in andere rapporten of Dash boards. Verwijder de parameter beperking en gebruik de kern query opnieuw.
+De query's kunnen allemaal worden uitgevoerd in [log Analytics](../logs/log-analytics-overview.md) en worden gebruikt in andere rapporten of Dash boards. Verwijder de parameter beperking en gebruik de kern query opnieuw.
 
 :::image type="content" source="./media/sla-report/logs.gif" alt-text=" GIF-bestand van logboek query." lightbox="./media/sla-report/logs.gif":::
 
@@ -69,6 +69,6 @@ Het rapport kan worden gedeeld met uw teams, leiderschap of vastgemaakt aan een 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Tips voor het optimaliseren van query's log Analytics](../log-query/query-optimization.md).
-- Meer informatie over het [maken van een grafiek in werkmappen](../platform/workbooks-chart-visualizations.md).
+- [Tips voor het optimaliseren van query's log Analytics](../logs/query-optimization.md).
+- Meer informatie over het [maken van een grafiek in werkmappen](../visualize/workbooks-chart-visualizations.md).
 - Meer informatie over het bewaken van uw website met [beschikbaarheids tests](monitor-web-app-availability.md).

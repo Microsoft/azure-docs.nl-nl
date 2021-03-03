@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 10/23/2020
 ms.author: inhenkel
-ms.openlocfilehash: 0b223fcedfdead991f7ce374f7f7814749388f90
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: fac823cc43ed4606db3e7f86bc5c1e36ee50fadb
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98955950"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101730300"
 ---
 # <a name="live-events-and-live-outputs-in-media-services"></a>Livegebeurtenissen en live-uitvoer in Media Services
 
@@ -53,7 +53,7 @@ U kunt de bijdragefeed verzenden bij een resolutie tot maximaal 4K en een frames
 > Het gebruik van een Pass-Through-methode is de meest rendabele manier om live streamen uit te voeren wanneer u meerdere gebeurtenissen gedurende een lange periode uitvoert, en u hebt al geïnvesteerd in on-premises encoders. Zie de [prijs](https://azure.microsoft.com/pricing/details/media-services/) informatie.
 >
 
-Zie een .NET-code voorbeeld in [MediaV3LiveApp](https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials/blob/master/NETCore/Live/MediaV3LiveApp/Program.cs#L126).
+Zie het .NET-code voorbeeld voor het maken van een Pass-through live-gebeurtenis in [Live Event met DVR](https://github.com/Azure-Samples/media-services-v3-dotnet/blob/4a436376e77bad57d6cbfdc02d7df6c615334574/Live/LiveEventWithDVR/Program.cs#L214).
 
 ### <a name="live-encoding"></a>Live Encoding  
 

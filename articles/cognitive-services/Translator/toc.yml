@@ -101,7 +101,7 @@
     - name: Referentie
       items:
         - name: Naslag informatie over document vertalingen API
-          href: 'https://docs.microsoft.com/rest/api/cognitiveservices/translator/translation'
+          href: /rest/api/cognitiveservices/translator/documenttranslation
 - name: Custom Translator
   items:
     - name: Overzicht

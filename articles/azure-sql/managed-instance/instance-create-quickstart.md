@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: sstein
 ms.date: 1/29/2021
-ms.openlocfilehash: 95b721f12e4818a77f18d01c99a5c6d60b881169
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: d356cad1b4754875574e19be732fdf6481c61e22
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99089650"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101691209"
 ---
 # <a name="quickstart-create-an-azure-sql-managed-instance"></a>Quickstart: Een Azure SQL Managed Instance maken
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -113,7 +113,7 @@ Als u nog geen abonnement op Azure hebt, [maak dan een gratis account](https://a
 
 ### <a name="tags"></a>Tags
 
-- Tags toevoegen aan resources in uw Azure Resource Manager-sjabloon (ARM-sjabloon). [Tags](/azure/azure-resource-manager/management/tag-resources) zijn een hulpmiddel bij het logisch ordenen van uw resources. De label waarden worden weer gegeven in kosten rapporten en bieden andere beheer activiteiten per tag. 
+- Tags toevoegen aan resources in uw Azure Resource Manager-sjabloon (ARM-sjabloon). [Tags](../../azure-resource-manager/management/tag-resources.md) zijn een hulpmiddel bij het logisch ordenen van uw resources. De label waarden worden weer gegeven in kosten rapporten en bieden andere beheer activiteiten per tag. 
 
 - U kunt het beste uw nieuwe SQL Managed instance met de tag owner identificeren om te bepalen wie is gemaakt, en het label Environment om te bepalen of dit systeem productie, ontwikkeling, enz. is. Zie [uw naamgevings strategie ontwikkelen voor Azure-resources](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging)voor meer informatie.
  

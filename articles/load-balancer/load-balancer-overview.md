@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 1/25/2021
 ms.author: allensu
-ms.openlocfilehash: 716acec51226e9e4ff47605c3ee2bd9a86be1933
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: a514edef1ef1f67fba3efae883ceb46dee249d6e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100588563"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101705497"
 ---
 # <a name="what-is-azure-load-balancer"></a>Wat is Azure Load Balancer?
 
@@ -56,7 +56,7 @@ De belangrijkste scenario's die u kunt uitvoeren met Standard Load Balancer zijn
 
 - Ondersteuning voor **[taakverdeling](../virtual-network/virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell.md)** van **[IPv6](../virtual-network/ipv6-overview.md)** inschakelen.
 
-- Standard Load Balancer biedt multidimensionale metrische gegevens via [Azure Monitor](../azure-monitor/overview.md).  Deze metrische gegevens kunnen worden gefilterd, gegroepeerd en uitgesplitst voor een bepaalde dimensie.  Ze bieden actuele en historische inzichten in de prestaties en status van uw service. [Inzichten voor Azure Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-insights) bieden een vooraf geconfigureerd dash board met handige visualisaties voor deze metrische gegevens.  Resource Health wordt ook ondersteund. Raadpleeg **[Diagnostische tests van Standard Load Balancer](load-balancer-standard-diagnostics.md)** voor meer informatie.
+- Standard Load Balancer biedt multidimensionale metrische gegevens via [Azure Monitor](../azure-monitor/overview.md).  Deze metrische gegevens kunnen worden gefilterd, gegroepeerd en uitgesplitst voor een bepaalde dimensie.  Ze bieden actuele en historische inzichten in de prestaties en status van uw service. [Inzichten voor Azure Load Balancer](./load-balancer-insights.md) bieden een vooraf geconfigureerd dash board met handige visualisaties voor deze metrische gegevens.  Resource Health wordt ook ondersteund. Raadpleeg **[Diagnostische tests van Standard Load Balancer](load-balancer-standard-diagnostics.md)** voor meer informatie.
 
 - Taakverdeling van services toepassen op **[meerdere poorten, meerdere IP-adressen of allebei](./load-balancer-multivip-overview.md)** .
 

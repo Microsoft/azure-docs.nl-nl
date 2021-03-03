@@ -7,12 +7,12 @@ ms.custom: subject-cost-optimization
 ms.service: cognitive-services
 ms.topic: how-to
 ms.date: 12/15/2020
-ms.openlocfilehash: 661af89ad223978abbefd71dd8008577475c5875
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: db99fa5caff27a24aa04e4780b25ade3f7c25496
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99221368"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699926"
 ---
 # <a name="plan-and-manage-costs-for-azure-cognitive-services"></a>Kosten plannen en beheren voor Azure Cognitive Services
 
@@ -68,7 +68,7 @@ U kunt betalen voor Cognitive Services kosten met uw Azure-voor uitbetaling (voo
 
 <!-- Note to Azure service writer: Modify the following as needed for your service. Replace example screenshots with ones taken for your service. If you need assistance capturing screenshots, ask banders for help. -->
 
-Wanneer u Azure-resources met Cognitive Services gebruikt, worden er kosten in rekening gebracht. De kosten voor de Azure resource usage-eenheid variëren per tijds interval (seconden, minuten, uren en dagen) of per eenheids gebruik (bytes, mega bytes, enzovoort). Zodra het gebruik van een cognitieve service (of Cognitive Services) wordt gestart, worden de kosten in rekening gebracht en kunt u de kosten voor de kosten [analyse](../cost-management/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)bekijken.
+Wanneer u Azure-resources met Cognitive Services gebruikt, worden er kosten in rekening gebracht. De kosten voor de Azure resource usage-eenheid variëren per tijds interval (seconden, minuten, uren en dagen) of per eenheids gebruik (bytes, mega bytes, enzovoort). Zodra het gebruik van een cognitieve service (of Cognitive Services) wordt gestart, worden de kosten in rekening gebracht en kunt u de kosten voor de kosten [analyse](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)bekijken.
 
 Wanneer u kosten analyse gebruikt, bekijkt u Cognitive Services kosten in grafieken en tabellen voor verschillende tijds intervallen. Enkele voor beelden zijn de dag, de huidige en de vorige maand en het jaar. Daarnaast bekijkt u de kosten voor budgetten en geraamde kosten. U kunt in de loop van de tijd meer weer gaven gebruiken om de uitgaven trends te identificeren. En u kunt zien waar de overuitgave van het probleem is opgetreden. Als u budgetten hebt gemaakt, kunt u ook gemakkelijk zien waar ze worden overschreden.
 

@@ -6,12 +6,12 @@ ms.author: weetok
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/10/2020
-ms.openlocfilehash: a3b892b5d92feb743d9a538c4e418b1f47e39b03
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: d0fd62c0173bec17c217ece5560119749d1a4fc6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100386302"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101739331"
 ---
 # <a name="azure-data-factory-faq"></a>Veelgestelde vragen over Azure Data Factory
 
@@ -48,7 +48,7 @@ Data Factory biedt vrijheid om alle stroom stijlen te model leren die vereist zi
     - Herhalings containers:
         * Met de foreach-activiteit wordt een opgegeven verzameling activiteiten in een lus herhaald. 
 - Op Triggers gebaseerde stromen:
-    - Pijp lijnen kunnen op aanvraag worden geactiveerd of op basis van de klok tijd.
+    - Pijp lijnen kunnen op aanvraag worden geactiveerd, op basis van de klok tijd of als reactie op de informatie die wordt gestuurd door de onderwerpen in Event grid
 - Delta stromen:
     - Para meters kunnen worden gebruikt voor het definiëren van uw bovengrens voor Delta kopieën terwijl dimensie-of verwijzings tabellen uit een relationele archief worden verplaatst, hetzij on-premises als in de Cloud, om de gegevens in het Lake te laden.
 

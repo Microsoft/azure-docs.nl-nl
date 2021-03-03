@@ -2,43 +2,43 @@
 title: Migratie van Azure Monitor waarschuwingen begrijpen
 description: Begrijp hoe de migratie van waarschuwingen werkt en los problemen op.
 ms.topic: conceptual
-ms.date: 07/10/2019
+ms.date: 02/14/2021
 ms.author: yalavi
 author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: 0c4c36c61b73e5c5625d02ae581d186e7dc2c9de
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: fdac8015cf87ffa0a25a8558668329a8cd82327f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609557"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737185"
 ---
 # <a name="understand-migration-options-to-newer-alerts"></a>Meer informatie over migratie opties voor nieuwere waarschuwingen
 
-Klassieke waarschuwingen worden [buiten gebruik gesteld](../platform/monitoring-classic-retirement.md) voor open bare Cloud gebruikers, maar zijn nog steeds beperkt in beperkte mate voor resources die de nieuwe waarschuwingen nog niet ondersteunen. Binnenkort wordt een nieuwe datum aangekondigd voor de resterende migratie van waarschuwingen, [Azure Government Cloud](../../azure-government/documentation-government-welcome.md)en [Azure China 21vianet](https://docs.azure.cn/).
+Klassieke waarschuwingen worden [buiten gebruik gesteld](./monitoring-classic-retirement.md) voor open bare Cloud gebruikers, maar blijven beperkt tot **31 mei 2021**. Klassieke waarschuwingen voor Azure Government Cloud en Azure China 21Vianet worden op **29 februari 2024** buiten gebruik gesteld.
 
-In dit artikel wordt uitgelegd hoe de hand matige migratie en het hulp programma voor vrijwillige migratie werken, dat wordt gebruikt voor het migreren van resterende waarschuwings regels. Ook worden oplossingen voor enkele veelvoorkomende problemen beschreven.
+In dit artikel wordt uitgelegd hoe de hand matige migratie en het hulp programma voor vrijwillige migratie werken, dat wordt gebruikt voor het migreren van resterende waarschuwings regels. Daarnaast worden oplossingen beschreven voor enkele veelvoorkomende problemen.
 
 > [!IMPORTANT]
-> Waarschuwingen voor activiteiten Logboeken (met inbegrip van service status waarschuwingen) en logboek waarschuwingen worden niet beïnvloed door de migratie. De migratie is alleen van toepassing op de [hier](../platform/monitoring-classic-retirement.md#retirement-of-classic-monitoring-and-alerting-platform)beschreven klassieke waarschuwings regels.
+> Waarschuwingen voor activiteiten Logboeken (met inbegrip van service status waarschuwingen) en logboek waarschuwingen worden niet beïnvloed door de migratie. De migratie is alleen van toepassing op de [hier](./monitoring-classic-retirement.md#retirement-of-classic-monitoring-and-alerting-platform)beschreven klassieke waarschuwings regels.
 
 > [!NOTE]
 > Als uw klassieke waarschuwings regels ongeldig zijn, d.w.z. ze worden [afgeschaft op gedeprecieerde metrische gegevens](#classic-alert-rules-on-deprecated-metrics) of resources die zijn verwijderd, worden ze niet gemigreerd en zijn ze niet beschikbaar nadat de service buiten gebruik is gesteld.
 
 ## <a name="manually-migrating-classic-alerts-to-newer-alerts"></a>Klassieke waarschuwingen hand matig migreren naar nieuwere waarschuwingen
 
-Klanten die hun resterende waarschuwingen hand matig willen migreren, kunnen dit ook doen met behulp van de volgende secties. In deze secties worden ook metrische gegevens gedefinieerd die worden ingetrokken door de resource provider en die momenteel niet rechtstreeks kunnen worden gemigreerd.
+Klanten die hun resterende waarschuwingen hand matig willen migreren, kunnen dit ook doen met behulp van de volgende secties. Het bevat ook metrische gegevens die buiten gebruik zijn gesteld en niet rechtstreeks kunnen worden gemigreerd.
 
 ### <a name="guest-metrics-on-virtual-machines"></a>Metrische gegevens van de gast op virtuele machines
 
-Voordat u nieuwe metrische waarschuwingen kunt maken voor metrische gegevens van de gast, moeten de metrische gegevens van de gast worden verzonden naar het Azure Monitor aangepaste metrische gegevens opslag. Volg deze instructies om de Azure Monitor sink in Diagnostische instellingen in te scha kelen:
+Voordat u nieuwe metrische waarschuwingen kunt maken voor metrische gegevens van de gast, moeten de metrische gegevens van de gast worden verzonden naar de Azure Monitor logboeken Store. Volg deze instructies om waarschuwingen te maken:
 
-- [Metrische gegevens voor gasten inschakelen voor Windows-Vm's](../platform/collect-custom-metrics-guestos-resource-manager-vm.md)
-- [Metrische gegevens van de gast inschakelen voor virtuele Linux-machines](../platform/collect-custom-metrics-linux-telegraf.md)
+- [Verzameling van metrische gegevens voor gasten inschakelen voor log Analytics](../agents/agent-data-sources.md)
+- [Logboek waarschuwingen maken in Azure Monitor](./alerts-log.md)
 
-Nadat u deze stappen hebt uitgevoerd, kunt u nieuwe metrische waarschuwingen maken voor metrische gegevens van de gast. En nadat u nieuwe metrische waarschuwingen hebt gemaakt, kunt u klassieke waarschuwingen verwijderen.
+Er zijn meer opties voor het verzamelen van metrische gegevens over de gast en [waarschuwingen.](../agents/agents-overview.md)
 
-### <a name="storage-account-metrics"></a>Metrische gegevens voor opslagaccount
+### <a name="storage-and-classic-storage-account-metrics"></a>Metrische gegevens over opslag en klassiek opslag account
 
 Alle klassieke waarschuwingen voor opslag accounts kunnen worden gemigreerd, met uitzonde ring van waarschuwingen over deze metrische gegevens:
 
@@ -65,39 +65,22 @@ Alle klassieke waarschuwingen op Cosmos DB metrieken kunnen worden gemigreerd, b
 - Consistentieniveau
 - Http-2xx
 - HTTP-3xx
-- Http 400
-- HTTP 401
-- Interne server fout
 - Maxi maal aantal RUPM verbruikt per minuut
 - Max. RUs per seconde
-- Aantal mislukte aanvragen van Mongo
-- Mislukte aanvragen voor Mongo verwijderen
-- Mongo mislukte aanvragen invoegen
-- Andere mislukte aanvragen Mongo
 - Mongo overige aanvraag kosten
 - Mongo andere aanvraag frequentie
-- Mislukte aanvragen voor Mongo-query
-- Mislukte aanvragen voor Mongo bijwerken
 - Waargenomen lees latentie
 - Waargenomen schrijf latentie
 - Service beschikbaarheid
 - Opslagcapaciteit
-- Vertraagde aanvragen
-- Totaal aantal aanvragen
 
-Gemiddeld aantal aanvragen per seconde, consistentie niveau, maximum aantal RUPM verbruikt per minuut, Max. RUs per seconde, waargenomen lees latentie, geobserveerde schrijf latentie, opslag capaciteit is momenteel niet beschikbaar in het [nieuwe systeem](../platform/metrics-supported.md#microsoftdocumentdbdatabaseaccounts).
+Gemiddeld aantal aanvragen per seconde, consistentie niveau, Maxi maal RUPM verbruikt per minuut, Max. RUs per seconde, waargenomen lees latentie, waargenomen schrijf latentie en opslag capaciteit zijn momenteel niet beschikbaar in het [nieuwe systeem](../essentials/metrics-supported.md#microsoftdocumentdbdatabaseaccounts).
 
-Waarschuwingen voor metrische gegevens van aanvragen zoals http 2xx, HTTP 3xx, HTTP 400, HTTP 401, interne server fout, service beschikbaarheid, vertraagde aanvragen en totaal aantal aanvragen worden niet gemigreerd, omdat de manier waarop aanvragen worden geteld, afwijkt van de klassieke metrische gegevens en de nieuwe metrische gegevens. Waarschuwingen voor deze moeten hand matig opnieuw worden gemaakt met drempel waarden die zijn aangepast.
-
-De metrische gegevens van mislukte aanvragen voor Mongo moeten worden opgesplitst in meerdere waarschuwingen omdat er geen gecombineerde metriek is die dezelfde functionaliteit biedt. Drempel waarden moeten op de juiste manier worden aangepast.
-
-### <a name="classic-compute-metrics"></a>Metrische waarden voor klassieke berekeningen
-
-Waarschuwingen over de klassieke reken metrieken worden niet gemigreerd met het migratie hulpprogramma, omdat klassieke Compute-resources nog niet worden ondersteund met nieuwe waarschuwingen. Ondersteuning voor nieuwe waarschuwingen voor deze resource typen is momenteel beschikbaar als open bare preview-versie en klanten kunnen nieuwe gelijkwaardige waarschuwings regels opnieuw maken op basis van hun klassieke waarschuwings regels.
+Waarschuwingen voor metrische gegevens van aanvragen, zoals http-2xx, HTTP-3xx en service beschikbaarheid, worden niet gemigreerd, omdat de manier waarop aanvragen worden geteld, afwijkt van de klassieke metrische gegevens en de nieuwe metrische gegevens. Waarschuwingen voor deze metrische gegevens moeten hand matig opnieuw worden gemaakt met drempel waarden die zijn aangepast.
 
 ### <a name="classic-alert-rules-on-deprecated-metrics"></a>Klassieke waarschuwings regels voor gedeprecieerde metrische gegevens
 
-Dit zijn klassieke waarschuwings regels voor metrische gegevens die eerder werden ondersteund, maar die uiteindelijk zijn afgeschaft. Een klein percentage van de klant heeft mogelijk ongeldige klassieke waarschuwings regels voor deze metrische gegevens. Omdat deze waarschuwings regels ongeldig zijn, worden ze niet gemigreerd.
+Hieronder vindt u de klassieke waarschuwings regels voor metrische gegevens die eerder werden ondersteund, maar die uiteindelijk zijn afgeschaft. Een klein percentage van de klant heeft mogelijk ongeldige klassieke waarschuwings regels voor deze metrische gegevens. Omdat deze waarschuwings regels ongeldig zijn, worden ze niet gemigreerd.
 
 | Resourcetype| Afgeschafte metriek (en) |
 |-------------|----------------- |
@@ -112,14 +95,14 @@ Dit zijn klassieke waarschuwings regels voor metrische gegevens die eerder werde
 
 Het hulp programma voor migratie converteert uw klassieke waarschuwings regels naar gelijkwaardige nieuwe waarschuwings regels en actie groepen. Voor de meeste klassieke waarschuwings regels worden gelijkwaardige nieuwe waarschuwings regels op dezelfde metrische waarde met dezelfde eigenschappen, zoals `windowSize` en genoemd `aggregationType` . Er zijn echter enkele klassieke waarschuwings regels voor metrische gegevens die een andere, gelijkwaardige metriek hebben in het nieuwe systeem. De volgende principes zijn van toepassing op de migratie van klassieke waarschuwingen, tenzij aangegeven in de volgende sectie:
 
-- **Frequentie**: definieert hoe vaak een klassieke of nieuwe waarschuwings regel controleert op de voor waarde. De `frequency` regel voor klassieke waarschuwingen kan niet door de gebruiker worden geconfigureerd en is altijd 5 minuten voor alle resource typen, met uitzonde ring van Application Insights onderdelen waarvoor het 1 min. De frequentie van gelijkwaardige regels is ook ingesteld op 5 min en 1 min.
+- **Frequentie**: definieert hoe vaak een klassieke of nieuwe waarschuwings regel controleert op de voor waarde. De `frequency` regel voor klassieke waarschuwingen kan niet door de gebruiker worden geconfigureerd en is altijd 5 minuten voor alle resource typen. De frequentie van gelijkwaardige regels is ook ingesteld op 5 minuten.
 - **Aggregatie type**: definieert hoe de metrische gegevens worden geaggregeerd over het venster van belang. De `aggregationType` is ook hetzelfde tussen klassieke waarschuwingen en nieuwe waarschuwingen voor de meeste metrische gegevens. In sommige gevallen, aangezien de metriek verschilt van klassieke waarschuwingen en nieuwe waarschuwingen, gelijkwaardig `aggregationType` of de `primary Aggregation Type` gedefinieerde metrische gegevens worden gebruikt.
-- **Units**: eigenschap van de metrische gegevens waarop een waarschuwing wordt gemaakt. Sommige equivalente metrische gegevens hebben verschillende eenheden. De drempel waarde wordt zo nodig aangepast. Als de oorspronkelijke metrische waarde bijvoorbeeld seconden heeft als eenheden, maar een vergelijk bare nieuwe metrische waarde milliSeconden heeft als eenheden, wordt de oorspronkelijke drempel waarde vermenigvuldigd met 1000 om hetzelfde gedrag te garanderen.
-- **Venster grootte**: definieert het venster waarin metrische gegevens worden geaggregeerd om te vergelijken met de drempel waarde. Voor standaard `windowSize` waarden zoals 5mins, 15mins, 30mins, 1hour, 3hours, 6 uur, 12 uur, 1 dag, is er geen wijziging aangebracht voor een gelijkwaardige nieuwe waarschuwings regel. Voor andere waarden wordt het dichtstbijzijnde `windowSize` gekozen om te worden gebruikt. Voor de meeste klanten is er geen invloed op deze wijziging. Voor een klein percentage klanten is het mogelijk dat de drempel waarde moet worden gewijzigd om precies hetzelfde gedrag te krijgen.
+- **Units**: eigenschap van de metrische gegevens waarop een waarschuwing wordt gemaakt. Sommige equivalente metrische gegevens hebben verschillende eenheden. De drempel waarde wordt zo nodig aangepast. Als de oorspronkelijke metrische waarde bijvoorbeeld seconden heeft als eenheden, maar een vergelijk bare nieuwe metrische waarde milliseconden heeft als eenheden, wordt de oorspronkelijke drempel waarde vermenigvuldigd met 1000 om hetzelfde gedrag te garanderen.
+- **Venster grootte**: definieert het venster waarin metrische gegevens worden geaggregeerd om te vergelijken met de drempel waarde. Voor standaard `windowSize` waarden zoals 5 minuten, 15 minuten, 30 minuten, 1 uur, 3 uur, 6 uur, 12 uur, 1 dag, is er geen wijziging aangebracht voor de equivalente nieuwe waarschuwings regel. Voor andere waarden wordt het dichtstbijzijnde `windowSize` gebruikt. Voor de meeste klanten is er geen effect op deze wijziging. Voor een klein percentage klanten is het mogelijk dat de drempel waarde moet worden gewijzigd om precies hetzelfde gedrag te krijgen.
 
-In de volgende secties beschrijven we de metrische gegevens die een andere, gelijkwaardige metriek hebben in het nieuwe systeem. Alle metrische gegevens die voor klassieke en nieuwe waarschuwings regels hetzelfde blijven, worden niet weer gegeven. U vindt [hier](../platform/metrics-supported.md)een lijst met metrische gegevens die in het nieuwe systeem worden ondersteund.
+In de volgende secties beschrijven we de metrische gegevens die een andere, gelijkwaardige metriek hebben in het nieuwe systeem. Alle metrische gegevens die voor klassieke en nieuwe waarschuwings regels hetzelfde blijven, worden niet weer gegeven. U vindt [hier](../essentials/metrics-supported.md)een lijst met metrische gegevens die in het nieuwe systeem worden ondersteund.
 
-### <a name="microsoftstorageaccountsservices"></a>Micro soft. Storage accounts/Services
+### <a name="microsoftstoragestorageaccounts-and-microsoftclassicstoragestorageaccounts"></a>Micro soft. Storage/Storage accounts en micro soft. ClassicStorage/Storage accounts
 
 Voor Storage-account services, zoals blob, tabel, bestand en wachtrij, worden de volgende metrische gegevens toegewezen aan gelijkwaardige metrische gegevens, zoals hieronder wordt weer gegeven:
 
@@ -156,46 +139,23 @@ Voor Storage-account services, zoals blob, tabel, bestand en wachtrij, worden de
 | TotalIngress | Inkomend verkeer | |
 | TotalRequests | Transacties | |
 
-### <a name="microsoftinsightscomponents"></a>Micro soft. Insights/onderdelen
-
-Voor Application Insights zijn equivalente gegevens zoals hieronder weer gegeven:
-
-| Metrische gegevens in klassieke waarschuwingen | Equivalente metrische gegevens in nieuwe waarschuwingen | Opmerkingen|
-|--------------------------|---------------------------------|---------|
-| Beschik baarheid. availabilityMetric. Value | availabilityResults/availabilityPercentage|   |
-| Beschik baarheid. durationMetric. Value | availabilityResults/duur| De oorspronkelijke drempel waarde vermenigvuldigen met 1000 als eenheden voor de klassieke meet waarden worden in seconden uitgedrukt en voor een nieuwe in milliSeconden.  |
-| basicExceptionBrowser. Count | uitzonde ringen/browser|  Gebruik `aggregationType` ' count ' in plaats van ' sum '. |
-| basicExceptionServer. Count | uitzonde ringen/server| Gebruik `aggregationType` ' count ' in plaats van ' sum '.  |
-| clientPerformance. clientProcess. Value | browserTimings/processingDuration| De oorspronkelijke drempel waarde vermenigvuldigen met 1000 als eenheden voor de klassieke meet waarden worden in seconden uitgedrukt en voor een nieuwe in milliSeconden.  |
-| clientPerformance. networkConnection. Value | browserTimings/networkDuration|  De oorspronkelijke drempel waarde vermenigvuldigen met 1000 als eenheden voor de klassieke meet waarden worden in seconden uitgedrukt en voor een nieuwe in milliSeconden. |
-| clientPerformance. receiveRequest. Value | browserTimings/receiveDuration| De oorspronkelijke drempel waarde vermenigvuldigen met 1000 als eenheden voor de klassieke meet waarden worden in seconden uitgedrukt en voor een nieuwe in milliSeconden.  |
-| clientPerformance. sendRequest. Value | browserTimings/sendDuration| De oorspronkelijke drempel waarde vermenigvuldigen met 1000 als eenheden voor de klassieke meet waarden worden in seconden uitgedrukt en voor een nieuwe in milliSeconden.  |
-| clientPerformance. Total. Value | browserTimings/totalDuration| De oorspronkelijke drempel waarde vermenigvuldigen met 1000 als eenheden voor de klassieke meet waarden worden in seconden uitgedrukt en voor een nieuwe in milliSeconden.  |
-| performanceCounter.available_bytes. waarde | Performance Counters/memoryAvailableBytes|   |
-| performanceCounter.io_data_bytes_per_sec. waarde | Performance Counters/processIOBytesPerSecond|   |
-| performanceCounter.number_of_exceps_thrown_per_sec. waarde | Performance Counters/exceptionsPerSecond|   |
-| performanceCounter.percentage_processor_time_normalized. waarde | Performance Counters/processCpuPercentage|   |
-| performanceCounter.percentage_processor_time. waarde | Performance Counters/processCpuPercentage| De drempel waarde moet op de juiste manier worden gewijzigd, aangezien de oorspronkelijke metriek over alle kernen is en er nieuwe metrische gegevens worden genormaliseerd op één kern. De drempel waarden worden niet gewijzigd in het hulp programma voor migratie.  |
-| performanceCounter.percentage_processor_total. waarde | Performance Counters/processorCpuPercentage|   |
-| performanceCounter.process_private_bytes. waarde | Performance Counters/processPrivateBytes|   |
-| performanceCounter.request_execution_time. waarde | Performance Counters/requestExecutionTime|   |
-| performanceCounter.requests_in_application_queue. waarde | Performance Counters/requestsInQueue|   |
-| performanceCounter.requests_per_sec. waarde | Performance Counters/requestsPerSecond|   |
-| aanvraag. duur | aanvragen/duur| De oorspronkelijke drempel waarde vermenigvuldigen met 1000 als eenheden voor de klassieke meet waarden worden in seconden uitgedrukt en voor een nieuwe in milliSeconden.  |
-| aanvraag. rate | aanvragen/frequentie|   |
-| requestFailed. Count | aanvragen/mislukt| Gebruik `aggregationType` ' count ' in plaats van ' sum '.   |
-| aantal weer gaven | Page views/aantal| Gebruik `aggregationType` ' count ' in plaats van ' sum '.   |
-
 ### <a name="microsoftdocumentdbdatabaseaccounts"></a>Microsoft.DocumentDB/databaseAccounts
 
 Voor Cosmos DB zijn equivalente gegevens zoals hieronder weer gegeven:
 
 | Metrische gegevens in klassieke waarschuwingen | Equivalente metrische gegevens in nieuwe waarschuwingen | Opmerkingen|
 |--------------------------|---------------------------------|---------|
-| AvailableStorage     |AvailableStorage|   |
+| AvailableStorage | AvailableStorage||
 | Gegevensgrootte | DataUsage| |
 | Aantal documenten | DocumentCount||
 | Index grootte | IndexUsage||
+| Service niet beschikbaar | ServiceAvailability||
+| TotalRequestUnits | TotalRequestUnits||
+| Vertraagde aanvragen | TotalRequests met dimensie "status code" = "429"| Gemiddeld aggregatie type is gecorrigeerd voor Count|
+| Interne serverfouten | TotalRequests met dimensie "status code" = "500"}| Gemiddeld aggregatie type is gecorrigeerd voor Count|
+| HTTP 401 | TotalRequests met dimensie "status code" = "401"| Gemiddeld aggregatie type is gecorrigeerd voor Count|
+| Http 400 | TotalRequests met dimensie "status code" = "400"| Gemiddeld aggregatie type is gecorrigeerd voor Count|
+| Totaal aantal aanvragen | TotalRequests| Het aggregatie type ' Max ' is gecorrigeerd voor ' count '|
 | Aanvraag kosten voor aantal Mongo| MongoRequestCharge met dimensie "opdrachtnaam" = "aantal"||
 | Aanvraag frequentie aantal Mongo | MongoRequestsCount met dimensie "opdrachtnaam" = "aantal"||
 | Kosten voor het verwijderen van Mongo-aanvragen | MongoRequestCharge met dimensie "opdrachtnaam" = "verwijderen"||
@@ -205,12 +165,16 @@ Voor Cosmos DB zijn equivalente gegevens zoals hieronder weer gegeven:
 | Kosten voor Mongo-query aanvragen | MongoRequestCharge met dimensie "opdrachtnaam" = "zoeken"||
 | Frequentie van Mongo-query aanvragen | MongoRequestsCount met dimensie "opdrachtnaam" = "zoeken"||
 | Kosten voor Mongo-update aanvragen | MongoRequestCharge met dimensie "opdrachtnaam" = "update"||
-| Service niet beschikbaar| ServiceAvailability||
-| TotalRequestUnits | TotalRequestUnits||
+| Mongo mislukte aanvragen invoegen | MongoRequestCount met de dimensies "opdrachtnaam" = "Insert" en "status" = "Failed"| Gemiddeld aggregatie type is gecorrigeerd voor Count|
+| Mislukte aanvragen voor Mongo-query | MongoRequestCount met de dimensies "opdrachtnaam" = "query" en "status" = "Failed"| Gemiddeld aggregatie type is gecorrigeerd voor Count|
+| Aantal mislukte aanvragen van Mongo | MongoRequestCount met de dimensies "opdrachtnaam" = "Count" en "status" = "Failed"| Gemiddeld aggregatie type is gecorrigeerd voor Count|
+| Mislukte aanvragen voor Mongo bijwerken | MongoRequestCount met de dimensies ' opdrachtnaam ' = ' update ' en ' status ' = ' failed '| Gemiddeld aggregatie type is gecorrigeerd voor Count|
+| Andere mislukte aanvragen Mongo | MongoRequestCount met de dimensies "opdrachtnaam" = "other" en "status" = "Failed"| Gemiddeld aggregatie type is gecorrigeerd voor Count|
+| Mislukte aanvragen voor Mongo verwijderen | MongoRequestCount met de dimensies "opdrachtnaam" = "verwijderen" en "status" = "Failed"| Gemiddeld aggregatie type is gecorrigeerd voor Count|
 
 ### <a name="how-equivalent-action-groups-are-created"></a>Hoe gelijkwaardige actie groepen worden gemaakt
 
-Klassieke waarschuwings regels hebben een e-mail, webhook, een logische app en runbook-acties die zijn gekoppeld aan de waarschuwings regel zelf. Nieuwe waarschuwings regels gebruiken actie groepen die opnieuw kunnen worden gebruikt in meerdere waarschuwings regels. Het hulp programma voor migratie maakt één actie groep voor dezelfde acties, ongeacht het aantal waarschuwings regels dat gebruik maakt van de actie. Actie groepen die zijn gemaakt met het hulp programma voor migratie, gebruiken de naamgevings indeling Migrated_AG *.
+Klassieke waarschuwings regels hebben een e-mail, webhook, een logische app en runbook-acties die zijn gekoppeld aan de waarschuwings regel zelf. Nieuwe waarschuwings regels gebruiken actie groepen die opnieuw kunnen worden gebruikt in meerdere waarschuwings regels. Het hulp programma voor migratie maakt één actie groep voor dezelfde acties, ongeacht het aantal waarschuwings regels dat de actie gebruikt. Actie groepen die zijn gemaakt met het hulp programma voor migratie, gebruiken de naamgevings indeling Migrated_AG *.
 
 > [!NOTE]
 > Klassieke waarschuwingen verzonden gelokaliseerde e-mail berichten op basis van de land instelling van de klassieke beheerder wanneer ze worden gebruikt voor het melden van klassieke beheerders rollen. Nieuwe e-mail meldingen worden verzonden via actie groepen en zijn alleen beschikbaar in het Engels.
@@ -246,17 +210,17 @@ Nadat u [de migratie hebt geactiveerd](alerts-using-migration-tool.md), ontvangt
 
 ### <a name="validation-failed"></a>Validatie is mislukt
 
-Het abonnement kan niet worden gemigreerd vanwege een aantal recente wijzigingen aan de klassieke waarschuwings regels in uw abonnement. Dit probleem is tijdelijk. U kunt de migratie opnieuw starten nadat de migratie status in een paar dagen weer **gereed is voor migratie** .
+Vanwege een aantal recente wijzigingen in de regels voor klassieke waarschuwingen in uw abonnement, kan het abonnement niet worden gemigreerd. Dit probleem is tijdelijk. U kunt de migratie opnieuw starten nadat de migratie status in een paar dagen weer **gereed is voor migratie** .
 
 ### <a name="scope-lock-preventing-us-from-migrating-your-rules"></a>Bereik vergrendeling voor komen dat uw regels worden gemigreerd
 
-Als onderdeel van de migratie worden nieuwe metrische waarschuwingen en nieuwe actie groepen gemaakt en vervolgens worden klassieke waarschuwings regels verwijderd. Een bereik vergrendeling kan er echter voor zorgen dat we geen resources kunnen maken of verwijderen. Afhankelijk van de bereik vergrendeling kunnen sommige of alle regels niet worden gemigreerd. U kunt dit probleem oplossen door de bereik vergrendeling voor het abonnement, de resource groep of de resource die wordt vermeld in het [migratie hulpprogramma](https://portal.azure.com/#blade/Microsoft_Azure_Monitoring/MigrationBladeViewModel), te verwijderen en de migratie opnieuw te activeren. Bereik vergrendeling kan niet worden uitgeschakeld en moet voor de duur van het migratie proces worden verwijderd. Meer [informatie over het beheren van bereik vergrendelingen](../../azure-resource-manager/management/lock-resources.md#portal).
+Als onderdeel van de migratie worden nieuwe metrische waarschuwingen en nieuwe actie groepen gemaakt en vervolgens worden klassieke waarschuwings regels verwijderd. Een bereik vergrendeling kan er echter voor zorgen dat we geen resources kunnen maken of verwijderen. Afhankelijk van de bereik vergrendeling kunnen sommige of alle regels niet worden gemigreerd. U kunt dit probleem oplossen door de bereik vergrendeling voor het abonnement, de resource groep of de resource die wordt vermeld in het [migratie hulpprogramma](https://portal.azure.com/#blade/Microsoft_Azure_Monitoring/MigrationBladeViewModel), te verwijderen en de migratie opnieuw te activeren. Bereik vergrendeling kan niet worden uitgeschakeld en moet worden verwijderd tijdens het migratie proces. Meer [informatie over het beheren van bereik vergrendelingen](../../azure-resource-manager/management/lock-resources.md#portal).
 
 ### <a name="policy-with-deny-effect-preventing-us-from-migrating-your-rules"></a>Beleid met een ' deny '-effect waardoor we uw regels niet kunnen migreren
 
 Als onderdeel van de migratie worden nieuwe metrische waarschuwingen en nieuwe actie groepen gemaakt en vervolgens worden klassieke waarschuwings regels verwijderd. Een [Azure Policy](../../governance/policy/index.yml) toewijzing kan er echter voor zorgen dat we geen resources kunnen maken. Afhankelijk van de beleids toewijzing kunnen sommige of alle regels niet worden gemigreerd. De beleids toewijzingen die het proces blok keren, worden weer gegeven in het [hulp programma voor migratie](https://portal.azure.com/#blade/Microsoft_Azure_Monitoring/MigrationBladeViewModel). Los dit probleem op door een van de volgende:
 
-- Met uitzonde ring van de abonnementen, resource groepen of afzonderlijke resources voor de duur van het migratie proces van de beleids toewijzing. Meer [informatie over het beheren van beleids regels voor uitsluiting](../../governance/policy/tutorials/create-and-manage.md#remove-a-non-compliant-or-denied-resource-from-the-scope-with-an-exclusion).
+- Met uitzonde ring van de abonnementen, resource groepen of afzonderlijke resources tijdens het migratie proces van de beleids toewijzing. Meer [informatie over het beheren van beleids regels voor uitsluiting](../../governance/policy/tutorials/create-and-manage.md#remove-a-non-compliant-or-denied-resource-from-the-scope-with-an-exclusion).
 - Stel de afdwingings modus in op **uitgeschakeld** op de beleids toewijzing. Meer [informatie over de eigenschap enforcementMode van de beleids toewijzing](../../governance/policy/concepts/assignment-structure.md#enforcement-mode).
 - Stel een Azure Policy-uitzonde ring (preview) in voor de abonnementen, resource groepen of afzonderlijke resources aan de beleids toewijzing. Meer [informatie over de Azure Policy](../../governance/policy/concepts/exemption-structure.md)-uitzonderings structuur.
 - Het verwijderen of wijzigen van het effect op ' disabled ', ' audit ', ' append ' of ' Modify ' (dat kan bijvoorbeeld problemen met betrekking tot ontbrekende labels oplossen). Meer [informatie over het beheren van beleids effecten](../../governance/policy/concepts/definition-structure.md#policy-rule).

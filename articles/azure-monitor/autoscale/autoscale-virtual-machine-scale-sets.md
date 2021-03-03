@@ -9,12 +9,12 @@ ms.subservice: autoscale
 ms.date: 06/25/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 96d8c32791bd968dd8740a2d4633496b42e9f3f4
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 26cfdf05847b01d28a8574483acc89cfeced0ffa
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610848"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717737"
 ---
 # <a name="advanced-autoscale-configuration-using-resource-manager-templates-for-vm-scale-sets"></a>Geavanceerde configuratie voor automatisch schalen met Resource Manager-sjablonen voor VM Scale Sets
 U kunt in Virtual Machine Scale Sets schalen en uitschalen op basis van de drempel waarden voor prestatie waarden, een terugkerend schema of een bepaalde datum. U kunt ook e-mail en webhook-meldingen configureren voor schaal acties. In dit scenario ziet u een voor beeld van het configureren van al deze objecten met behulp van een resource manager-sjabloon op een VM-Schaalset.
@@ -36,7 +36,7 @@ In dit scenario gebruiken we [Azure resource Explorer](https://resources.azure.c
 
 3. U kunt nu meer profielen en regels toevoegen op basis van de planning of specifieke vereisten. We maken een instelling voor automatisch schalen met drie profielen. Zie [Aanbevolen procedures voor automatisch schalen](autoscale-best-practices.md)voor meer informatie over profielen en regels in automatisch schalen.  
 
-    | Profielen & regels | Description |
+    | Profielen & regels | Beschrijving |
     |--- | --- |
     | **Profiel** |**Op basis van prestaties/metriek** |
     | Regel |Service Bus aantal wachtrij berichten > x |
@@ -243,9 +243,9 @@ Gebruik deze koppelingen voor meer informatie over automatisch schalen.
 
 [Aanbevolen procedures voor het automatisch schalen van Azure](autoscale-best-practices.md)
 
-[Automatisch schalen beheren met Power shell](../samples/powershell-samples.md#create-and-manage-autoscale-settings)
+[Automatisch schalen beheren met Power shell](../powershell-samples.md#create-and-manage-autoscale-settings)
 
-[Automatisch schalen beheren met CLI](../samples/cli-samples.md#autoscale)
+[Automatisch schalen beheren met CLI](../cli-samples.md#autoscale)
 
 [Webhook & e-mail meldingen configureren voor automatisch schalen](autoscale-webhook-email.md)
 

@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 0a8c30076231aecb17505dd0d7a2fe4e7be485a3
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 0be184921ff0bd6b98dd2975acb4e0d5c8b26ba0
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100522662"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101716190"
 ---
 # <a name="view-and-configure-ddos-protection-telemetry"></a>DDoS-beschermingstelemetrie bekijken en configureren
 
-Azure DDoS Protection Standard biedt uitgebreide aanval en visualisatie met DDoS-aanvals analyses. Klanten die hun virtuele netwerken beschermen tegen DDoS-aanvallen, hebben een gedetailleerde zicht baarheid van het aanvals verkeer en acties die zijn ondernomen om de aanval via rapporten voor aanvallen te beperken & beperkende stroom Logboeken. Uitgebreide telemetrie wordt weer gegeven via Azure Monitor, met inbegrip van gedetailleerde metrische gegevens tijdens de duur van een DDoS-aanval. U kunt waarschuwingen configureren voor een van de Azure Monitor metrische gegevens die door DDoS Protection worden weer gegeven. Logboek registratie kan verder worden geïntegreerd met [Azure Sentinel](../sentinel/connect-azure-ddos-protection.md), Splunk (Azure Event hubs), OMS Log Analytics en Azure Storage voor geavanceerde analyse via de diagnostische-interface voor Azure monitor.
+Azure DDoS Protection Standard biedt uitgebreide aanval en visualisatie met DDoS-aanvals analyses. Klanten die hun virtuele netwerken beschermen tegen DDoS-aanvallen, hebben een gedetailleerde zicht baarheid van het aanvals verkeer en acties die zijn ondernomen om de aanval via rapporten voor aanvallen te beperken & beperkende stroom Logboeken. Uitgebreide telemetrie wordt weer gegeven via Azure Monitor, met inbegrip van gedetailleerde metrische gegevens tijdens de duur van een DDoS-aanval. U kunt waarschuwingen configureren voor alle gewenste metrische Azure Monitor-gegevens die beschikbaar zijn gemaakt via DDoS Protection. Logboek registratie kan verder worden geïntegreerd met [Azure Sentinel](../sentinel/connect-azure-ddos-protection.md), Splunk (Azure Event hubs), OMS Log Analytics en Azure Storage voor geavanceerde analyse via de diagnostische-interface voor Azure monitor.
 
 In deze zelfstudie leert u het volgende:
 
@@ -34,10 +34,10 @@ In deze zelfstudie leert u het volgende:
 > [!NOTE]
 > Terwijl er meerdere opties voor **aggregatie** worden weer gegeven op Azure Portal, worden alleen de aggregatie typen die in de onderstaande tabel staan vermeld, voor elke metriek ondersteund. Onze excuses voor deze Verwar ring en we werken eraan om dit op te lossen.
 
-De volgende [metrische gegevens](../azure-monitor/platform/metrics-supported.md#microsoftnetworkpublicipaddresses) zijn beschikbaar voor Azure DDoS Protection Standard. Deze metrische gegevens kunnen ook worden geëxporteerd via Diagnostische instellingen (Zie [logboek registratie voor diagnostische gegevens van DDoS weer geven en configureren](diagnostic-logging.md)).
+De volgende [metrische gegevens](../azure-monitor/essentials/metrics-supported.md#microsoftnetworkpublicipaddresses) zijn beschikbaar voor Azure DDoS Protection Standard. Deze metrische gegevens kunnen ook worden geëxporteerd via Diagnostische instellingen (Zie [logboek registratie voor diagnostische gegevens van DDoS weer geven en configureren](diagnostic-logging.md)).
 
 
-| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Aggregatietype | Description |
+| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Aggregatietype | Beschrijving |
 | --- | --- | --- | --- | --- |
 | BytesDroppedDDoS | Binnenkomende bytes verloren DDoS | BytesPerSecond | Maximum | Binnenkomende bytes verloren DDoS| 
 | BytesForwardedDDoS | Doorgestuurde binnenkomende bytes DDoS | BytesPerSecond | Maximum | Doorgestuurde binnenkomende bytes DDoS |
@@ -66,11 +66,11 @@ De volgende [metrische gegevens](../azure-monitor/platform/metrics-supported.md#
 
 - Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 - Voordat u de stappen in deze zelf studie kunt volt ooien, moet u eerst een [Azure DDoS Standard-beveiligings plan](manage-ddos-protection.md) maken en moet DDoS Protection standaard zijn ingeschakeld op een virtueel netwerk.
-- DDoS bewaakt open bare IP-adressen die zijn toegewezen aan bronnen in een virtueel netwerk. Als u geen resources met open bare IP-adressen in het virtuele netwerk hebt, moet u eerst een resource met een openbaar IP-adres maken. U kunt het open bare IP-adres van alle resources die zijn geïmplementeerd via Resource Manager (niet klassiek) bewaken in het [virtuele netwerk voor Azure-Services](../virtual-network/virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network) (inclusief Azure load balancers waarbij de virtuele machines in het virtuele netwerk zich bevinden), met uitzonde ring van Azure app service omgevingen. Als u wilt door gaan met deze zelf studie, kunt u snel een virtuele [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -of [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -machine maken.  
+- DDoS bewaakt open bare IP-adressen die zijn toegewezen aan bronnen in een virtueel netwerk. Als u geen resources met openbare IP-adressen in het virtuele netwerk hebt, moet u eerst een resource met een openbaar IP-adres maken. U kunt het open bare IP-adres van alle resources die zijn geïmplementeerd via Resource Manager (niet klassiek) bewaken in het [virtuele netwerk voor Azure-Services](../virtual-network/virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network) (inclusief Azure load balancers waarbij de virtuele machines in het virtuele netwerk zich bevinden), met uitzonde ring van Azure app service omgevingen. Als u wilt door gaan met deze zelf studie, kunt u snel een virtuele [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -of [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -machine maken.  
 
 ## <a name="view-ddos-protection-telemetry"></a>Telemetrie van DDoS-beveiliging weer geven
 
-Telemetrie voor een aanval wordt via Azure Monitor in realtime verschaft. Telemetrie is alleen beschikbaar wanneer een openbaar IP-adres wordt beperkt. 
+Azure Monitor biedt in realtime telemetriegegevens over aanvallen. Telemetrie is alleen beschikbaar wanneer een openbaar IP-adres wordt beperkt. 
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) en blader naar uw DDoS Protection-abonnement.
 2. Selecteer **Metrische gegevens** onder **Bewaking**.

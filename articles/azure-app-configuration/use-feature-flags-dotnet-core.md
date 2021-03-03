@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 09/17/2020
 ms.author: alkemper
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: 701fe4ffc6147086dde740bfdb2dc7db92508e28
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 327bc687c466a30d4f92810e48dc08f822f752ec
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100380233"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101726424"
 ---
 # <a name="tutorial-use-feature-flags-in-an-aspnet-core-app"></a>Zelfstudie: Functievlaggen gebruiken in een ASP.NET Core-app
 
@@ -74,7 +74,7 @@ public class Startup
 ```
 
 
-Als u filters in uw functie vlaggen gebruikt, moet u de naam ruimte [micro soft. FeatureManagement. FeatureFilters](/dotnet/api/microsoft.featuremanagement.featurefilters) opnemen en een aanroep toevoegen aan [AddFeatureFilters](/dotnet/api/microsoft.featuremanagement.ifeaturemanagementbuilder.addfeaturefilter) die de type naam aangeeft van het filter dat u wilt gebruiken als algemeen type van de methode. Zie voor meer informatie over het gebruik van functie filters voor het dynamisch in-en uitschakelen van de functionaliteit voor het inschakelen [van gefaseerde implementatie van functies voor doel groepen](/azure/azure-app-configuration/howto-targetingfilter-aspnet-core).
+Als u filters in uw functie vlaggen gebruikt, moet u de naam ruimte [micro soft. FeatureManagement. FeatureFilters](/dotnet/api/microsoft.featuremanagement.featurefilters) opnemen en een aanroep toevoegen aan [AddFeatureFilters](/dotnet/api/microsoft.featuremanagement.ifeaturemanagementbuilder.addfeaturefilter) die de type naam aangeeft van het filter dat u wilt gebruiken als algemeen type van de methode. Zie voor meer informatie over het gebruik van functie filters voor het dynamisch in-en uitschakelen van de functionaliteit voor het inschakelen [van gefaseerde implementatie van functies voor doel groepen](./howto-targetingfilter-aspnet-core.md).
 
 In het volgende voorbeeld ziet u hoe u een ingebouwd functiefilter gebruikt met de naam `PercentageFilter`:
 
@@ -211,14 +211,14 @@ Standaard wordt het gedeelte `FeatureManagement` van dit JSON-document gebruikt 
 
 * `FeatureA` is *aan*.
 * `FeatureB` is *uit*.
-* Met `FeatureC` geeft u een filter op met de naam `Percentage` met een eigenschap `Parameters`. `Percentage` is een configureerbaar filter. In dit voorbeeld geeft `Percentage` een kans van 50 procent dat de vlag `FeatureC` *aan* is. Zie [functie filters gebruiken om voorwaardelijke functie vlaggen in te scha kelen](/azure/azure-app-configuration/howto-feature-filters-aspnet-core)voor een hand leiding voor het gebruik van functie filters.
+* Met `FeatureC` geeft u een filter op met de naam `Percentage` met een eigenschap `Parameters`. `Percentage` is een configureerbaar filter. In dit voorbeeld geeft `Percentage` een kans van 50 procent dat de vlag `FeatureC` *aan* is. Zie [functie filters gebruiken om voorwaardelijke functie vlaggen in te scha kelen](./howto-feature-filters-aspnet-core.md)voor een hand leiding voor het gebruik van functie filters.
 
 
 
 
 ## <a name="use-dependency-injection-to-access-ifeaturemanager"></a>Afhankelijkheids injectie gebruiken om toegang te krijgen tot IFeatureManager 
 
-Voor sommige bewerkingen, zoals het hand matig controleren van functie vlag waarden, moet u een instantie van [IFeatureManager](https://docs.microsoft.com/dotnet/api/microsoft.featuremanagement.ifeaturemanager?view=azure-dotnet-preview)ophalen. In ASP.NET Core MVC kunt u de functie beheer openen `IFeatureManager` via afhankelijkheids injectie. In het volgende voor beeld wordt een argument van `IFeatureManager` het type toegevoegd aan de hand tekening van de constructor voor een controller. De runtime lost de verwijzing automatisch op en biedt een van de interface bij het aanroepen van de constructor. Als u een toepassings sjabloon gebruikt waarbij de controller al een of meer argumenten voor het invoegen van afhankelijkheden heeft in de constructor, bijvoorbeeld `ILogger` , kunt u gewoon toevoegen `IFeatureManager` als een extra argument:
+Voor sommige bewerkingen, zoals het hand matig controleren van functie vlag waarden, moet u een instantie van [IFeatureManager](/dotnet/api/microsoft.featuremanagement.ifeaturemanager?view=azure-dotnet-preview)ophalen. In ASP.NET Core MVC kunt u de functie beheer openen `IFeatureManager` via afhankelijkheids injectie. In het volgende voor beeld wordt een argument van `IFeatureManager` het type toegevoegd aan de hand tekening van de constructor voor een controller. De runtime lost de verwijzing automatisch op en biedt een van de interface bij het aanroepen van de constructor. Als u een toepassings sjabloon gebruikt waarbij de controller al een of meer argumenten voor het invoegen van afhankelijkheden heeft in de constructor, bijvoorbeeld `ILogger` , kunt u gewoon toevoegen `IFeatureManager` als een extra argument:
 
 ### <a name="net-5x"></a>[.NET 5. x](#tab/core5x)
     

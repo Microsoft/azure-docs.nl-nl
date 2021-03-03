@@ -4,27 +4,27 @@ description: De beveiligings basislijn van de Azure Kubernetes-service biedt pro
 author: msmbaldwin
 ms.service: container-service
 ms.topic: conceptual
-ms.date: 10/01/2020
+ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 8e86679e7531bb70d6d4f1a27718c2fc8f0e8a9c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: de32de5fc78919154bade3895cab6da82b175a93
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100578548"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101740591"
 ---
 # <a name="azure-security-baseline-for-azure-kubernetes-service"></a>Azure-beveiligings basislijn voor Azure Kubernetes-service
 
-De Azure Security Baseline voor Azure Kubernetes-service bevat aanbevelingen waarmee u de beveiligings-postuur van uw implementatie kunt verbeteren.
+Deze beveiligings basislijn is van toepassing op richt lijnen van de [Azure Security Bench Mark-versie 1,0](../security/benchmarks/overview-v1.md) naar Azure Kubernetes. De Azure Security-benchmark biedt aanbevelingen voor hoe u uw cloudoplossingen in Azure kunt beveiligen.
+De inhoud wordt gegroepeerd op basis van de **beveiligings controles** die zijn gedefinieerd door de Azure Security-benchmark en de bijbehorende richt lijnen die van toepassing zijn op Azure Kubernetes. **Besturings elementen** die niet van toepassing zijn op Azure Kubernetes, zijn uitgesloten.
 
-De basis lijn voor deze service wordt opgehaald uit de [Azure Security Bench Mark-versie 1,0](../security/benchmarks/overview.md), die aanbevelingen biedt over hoe u uw cloud oplossingen kunt beveiligen in azure met onze richt lijnen voor best practices.
-
-Zie [overzicht van Azure Security-basis lijnen](../security/benchmarks/security-baselines-overview.md)voor meer informatie.
+ 
+Zie het [volledige Azure Kubernetes Security Baseline-toewijzings bestand](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines)voor meer informatie over hoe Azure Kubernetes volledig is toegewezen aan de beveiligings benchmark van Azure.
 
 ## <a name="network-security"></a>Netwerkbeveiliging
 
-*Zie [Azure Security Bench Mark: Network Security](../security/benchmarks/security-control-network-security.md)(Engelstalig) voor meer informatie.*
+*Zie [Azure Security Benchmark: netwerkbeveiliging](../security/benchmarks/security-control-network-security.md) voor meer informatie.*
 
 ### <a name="11-protect-azure-resources-within-virtual-networks"></a>1,1: Azure-resources in virtuele netwerken beveiligen
 
@@ -40,9 +40,13 @@ U kunt een persoonlijk AKS-cluster implementeren om ervoor te zorgen dat het net
 
 - [Een persoonlijk Azure Kubernetes service-cluster maken](private-clusters.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/home/mbaldwin/docs/asb/azure-docs-pr/articles/governance/policy/samples/azure-security-benchmark.md) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/security-center-recommendations.md). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/azure-defender.md) -plan vereist voor de gerelateerde services.
+
+**Ingebouwde definities Azure Policy-micro soft. container service**:
+
+[!INCLUDE [Resource Policy for Microsoft.ContainerService 1.1](../../includes/policy/standards/asb/rp-controls/microsoft.containerservice-1-1.md)]
 
 ### <a name="12-monitor-and-log-the-configuration-and-traffic-of-virtual-networks-subnets-and-nics"></a>1,2: de configuratie en het verkeer van virtuele netwerken, subnetten en Nic's bewaken en vastleggen
 
@@ -56,9 +60,9 @@ Schakel logboeken stroom van de netwerk beveiligings groep in en verzend de logb
 
 - [Traffic Analytics inschakelen en gebruiken](../network-watcher/traffic-analytics.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="13-protect-critical-web-applications"></a>1,3: essentiële webtoepassingen beveiligen
 
@@ -72,13 +76,14 @@ Gebruik een API-gateway voor verificatie, autorisatie, beperking, caching, trans
 
 - [Azure API Management gebruiken met micro services die zijn geïmplementeerd in azure Kubernetes service](../api-management/api-management-kubernetes.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1,4: communicatie met bekende schadelijke IP-adressen weigeren
 
 **Hulp**: Schakel micro soft Distributed Denial-of-service (DDoS) Standard-beveiliging in op de virtuele netwerken waarin de Azure Kubernetes service (AKS)-onderdelen worden geïmplementeerd voor beveiliging tegen DDoS aanvallen.
+
 Installeer de Network Policy engine en maak Kubernetes-netwerk beleid om de stroom van verkeer tussen peul in AKS te beheren als standaard al het verkeer is toegestaan tussen deze peulen. Netwerk beleid mag alleen worden gebruikt voor Linux-knoop punten en een Peul in AKS. Regels definiëren die de pod-communicatie beperken voor een betere beveiliging. 
 
 Kies deze optie om verkeer toe te staan of te weigeren op basis van instellingen, zoals toegewezen labels, de naam ruimte of de netwerk poort. Het vereiste netwerk beleid kan automatisch worden toegepast wanneer het Peul dynamisch wordt gemaakt in een AKS-cluster. 
@@ -87,21 +92,21 @@ Kies deze optie om verkeer toe te staan of te weigeren op basis van instellingen
 
 - [DDoS-beveiliging configureren](../ddos-protection/manage-ddos-protection.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="15-record-network-packets"></a>1,5: netwerk pakketten opnemen
 
 **Hulp**: gebruik Network Watcher pakket opname zoals vereist voor het onderzoeken van afwijkende activiteiten. 
 
-Network Watcher wordt automatisch ingeschakeld in de regio van uw virtuele netwerk wanneer u een virtueel netwerk in uw abonnement maakt of bijwerkt. U kunt ook nieuwe exemplaren van Network Watcher maken met behulp van Power shell, de Azure CLI, de REST API of de methode ARMClient
+Network Watcher wordt automatisch ingeschakeld in de regio van uw virtuele netwerk wanneer u een virtueel netwerk in uw abonnement maakt of bijwerkt. U kunt ook nieuwe exemplaren van Network Watcher maken met behulp van Power shell, de Azure CLI, de REST API of de methode Azure Resource Manager client
 
 - [Network Watcher inschakelen](../network-watcher/network-watcher-create.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1,6: op netwerk gebaseerde inbreuk detectie/indringings systemen (ID'S/IP-adressen) implementeren
 
@@ -109,29 +114,13 @@ Network Watcher wordt automatisch ingeschakeld in de regio van uw virtuele netwe
 
 Als inbraak detectie en/of preventie op basis van Payload-inspectie of gedrags analyse geen vereiste is, kan een Azure-toepassing gateway met WAF worden gebruikt en geconfigureerd in detectie modus om waarschuwingen en bedreigingen in een logboek te registreren, of "preventie modus" om gedetecteerde indringingen en aanvallen actief te blok keren.
 
-- [Aanbevolen procedures voor het beveiligen van uw AKS-cluster met een WAF](operator-best-practices-network.md#secure-traffic-with-a-web-application-firewall-waf)
+- [Aanbevolen procedures voor het beveiligen van uw AKS-cluster met een WAF](https://docs.microsoft.com/azure/aks/operator-best-practices-network#secure-traffic-with-a-web-application-firewall-waf)
 
 - [Azure-toepassing Gateway implementeren (Azure WAF)](../web-application-firewall/ag/application-gateway-web-application-firewall-portal.md)
-
-**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
-### <a name="17-manage-traffic-to-web-applications"></a>1,7: verkeer naar webtoepassingen beheren
-
-**Hulp**: gebruik een Azure-toepassing met Gateway ingeschakelde Web Application firewall (WAF) voor een AKS-cluster om het binnenkomende verkeer te filteren. Het open Web Application Security-project (OWASP) biedt een set regels die worden gebruikt in de Azure-WAF om aanvallen zoals cross-site scripting of cookie-vergiftiging te bekijken.
-
-Pas FQDN-labels (Fully Qualified Domain Name) toe op toepassingen voor gebruiks gemak bij het instellen van toepassings regels binnen een netwerk beveiligings groep. Nadat u de netwerk regels hebt ingesteld. Voeg een toepassings regel toe met behulp van een FQDN-tag, bijvoorbeeld AzureKubernetesService, die alle vereiste FQDN-codes bevat die toegankelijk zijn via TCP-poort 443 en poort 80. 
-
-- [Aanbevolen procedures voor netwerk connectiviteit en beveiliging in AKS](operator-best-practices-network.md)
-
-- [Verkeer beveiligen tussen een Peul netwerk beleid dat wordt gebruikt in azure Kubernetes service (AKS)](use-network-policies.md)
-
-- [Azure-toepassing Gateway implementeren (Azure WAF)](../web-application-firewall/ag/application-gateway-web-application-firewall-portal.md)
-
-**Azure Security Center-bewaking**: Niet van toepassing
-
-**Verantwoordelijkheid**: niet van toepassing
+**Azure Security Center bewaking**: geen
 
 ### <a name="18-minimize-complexity-and-administrative-overhead-of-network-security-rules"></a>1,8: de complexiteit en administratieve overhead van netwerk beveiligings regels minimaliseren
 
@@ -147,33 +136,38 @@ Pas een Azure-tag toe op knooppunt groepen in uw AKS-cluster. Ze verschillen van
 
 - [Uitgaand verkeer beheren voor cluster knooppunten in azure Kubernetes service (AKS)](limit-egress-traffic.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1,9: standaard beveiligings configuraties voor netwerk apparaten onderhouden
 
-**Richt lijnen**: standaard beveiligings configuraties definiëren en implementeren met Azure Policy voor netwerk bronnen die zijn gekoppeld aan uw AKS-clusters (Azure Kubernetes service). Gebruik Azure Policy aliassen in de naam ruimten ' micro soft. container service ' en ' micro soft. Network ' om aangepaste beleids regels te maken om de netwerk configuratie van uw AKS-clusters te controleren of af te dwingen. 
+**Richt lijnen**: standaard beveiligings configuraties definiëren en implementeren met Azure Policy voor netwerk bronnen die zijn gekoppeld aan uw AKS-clusters (Azure Kubernetes service). 
+
+Gebruik Azure Policy aliassen in de naam ruimten ' micro soft. container service ' en ' micro soft. Network ' om aangepaste beleids regels te maken om de netwerk configuratie van uw AKS-clusters te controleren of af te dwingen. 
 
 Gebruik ook ingebouwde beleids definities met betrekking tot AKS, zoals:
 
-• Geautoriseerde IP-bereiken moeten worden gedefinieerd op Kubernetes Services
+- Geautoriseerde IP-bereiken moeten worden gedefinieerd voor Kubernetes Services
 
-• HTTPS-ingang afdwingen in Kubernetes-cluster
+- Inkomend HTTPS-verkeer afdwingen in Kubernetes-cluster
 
-• Zorg ervoor dat services alleen Luis teren op toegestane poorten in het Kubernetes-cluster
+- Garanderen dat services alleen toegestane poorten kunnen controleren in een Kubernetes-cluster
+
+Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Voor beelden Azure Policy voor netwerken](../governance/policy/samples/built-in-policies.md#network)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Voor beelden Azure Policy voor netwerken](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#network)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="110-document-traffic-configuration-rules"></a>1,10: configuratie regels voor het document verkeer
 
 **Hulp**: Labels gebruiken voor netwerk beveiligings groepen en andere bronnen voor verkeer stroom naar en van Azure Kubernetes Service-clusters (AKS). Gebruik het veld Beschrijving voor afzonderlijke regels voor netwerk beveiligings groepen om de bedrijfs behoeften en/of de duur op te geven, enzovoort voor regels die verkeer van/naar een netwerk toestaan.
+
 Gebruik een van de ingebouwde Azure Policy definities met tags, bijvoorbeeld ' tag en de waarde ', zodat alle resources met tags worden gemaakt en meldingen voor bestaande niet-gelabelde resources kunnen ontvangen.
 
 Kies ervoor om specifieke netwerk paden binnen het cluster toe te staan of te weigeren op basis van naam ruimten en label selectie met netwerk beleid. Gebruik deze naam ruimten en labels als descriptor voor de regels voor het configureren van verkeer. Gebruik Azure PowerShell of de Azure-opdracht regel interface (CLI) om op basis van hun labels acties op te zoeken of uit te voeren op resources.
@@ -184,9 +178,9 @@ Kies ervoor om specifieke netwerk paden binnen het cluster toe te staan of te we
 
 - [Een NSG maken met een beveiligings configuratie](../virtual-network/tutorial-filter-network-traffic.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1,11: gebruik automatische hulpprogram ma's om netwerk bron configuraties te bewaken en wijzigingen te detecteren
 
@@ -196,15 +190,15 @@ Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijziging
 
 Gebruik Azure Monitor Logboeken om de logboeken in te scha kelen en query's uit te voeren op de AKS van de hoofd onderdelen, uitvoeren-apiserver en uitvoeren-Controller-Manager. De knoop punten waarop de kubelet wordt uitgevoerd, maken en beheren met container runtime en hun toepassingen implementeren via de Managed Kubernetes API-server. 
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
+- [Waarschuwingen maken in Azure Monitor](/azure/azure-monitor/platform/alerts-activity-log)
 
-- [Logboeken van Kubernetes-hoofdknooppunten inschakelen en controleren in AKS (Azure Kubernetes Service)](view-master-logs.md)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Logboeken van Kubernetes-hoofdknooppunten inschakelen en controleren in AKS (Azure Kubernetes Service)](/azure/aks/view-master-logs)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="logging-and-monitoring"></a>Logboekregistratie en bewaking
 
@@ -218,19 +212,19 @@ Zorg ervoor dat de NTP-servers toegankelijk zijn voor de cluster knooppunten als
 
 - [Informatie over NTP-domein en-poort vereisten voor AKS-cluster knooppunten](limit-egress-traffic.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="22-configure-central-security-log-management"></a>2,2: Centraal beveiligings logboek beheer configureren
 
 **Hulp**: Schakel Logboeken in van de hoofd onderdelen van Azure Kubernetes Services (AKS), uitvoeren-apiserver en uitvoeren-Controller-Manager, die als beheerde service worden meegeleverd. 
 
-• uitvoeren-auditaksService: de weergave naam in het controle logboek voor de besturings vlak bewerking (van de hcpService) 
+- uitvoeren-auditaksService: de weergave naam in het controle logboek voor de besturings vlak bewerking (van de hcpService) 
 
-• masterclient: de weergave naam in het controle logboek voor MasterClientCertificate, het certificaat dat u ontvangt van AZ AKS Get-credentials 
+- masterclient: de weergave naam in het controle logboek voor MasterClientCertificate, het certificaat dat u ontvangt van AZ AKS Get-credentials 
 
-• nodeclient: de weergave naam voor ClientCertificate, die wordt gebruikt door agent knooppunten
+- nodeclient: de weergave naam voor ClientCertificate, die wordt gebruikt door agent knooppunten
 
 Schakel ook andere audit Logboeken in, zoals uitvoeren-audit. 
 
@@ -238,45 +232,44 @@ Deze logboeken exporteren naar Log Analytics of een ander opslag platform. Gebru
 
 Deze gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derden op basis van uw zakelijke vereisten voor uw organisatie.
 
-- [Controleer het logboek schema inclusief de logboek functies.](view-master-logs.md)
+- [Controleer het logboek schema inclusief de logboek functies.](/azure/aks/view-master-logs)
 
-- [Azure Monitor voor containers begrijpen](../azure-monitor/containers/container-insights-overview.md)
+- [Azure Monitor voor containers begrijpen](/azure/azure-monitor/insights/container-insights-overview)
 
-- [Azure Monitor inschakelen voor containers](../azure-monitor/containers/container-insights-onboard.md)
+- [Azure Monitor inschakelen voor containers](/azure/azure-monitor/insights/container-insights-onboard)
 
-- [Logboeken van Kubernetes-hoofdknooppunten inschakelen en controleren in AKS (Azure Kubernetes Service)](view-master-logs.md)
-
-**Monitoring door Azure Security Center**: Ja
+- [Logboeken van Kubernetes-hoofdknooppunten inschakelen en controleren in AKS (Azure Kubernetes Service)](/azure/aks/view-master-logs)
 
 **Verantwoordelijkheid**: Klant
 
+**Azure Security Center bewaking**: geen
+
 ### <a name="23-enable-audit-logging-for-azure-resources"></a>2,3: controle logboek registratie inschakelen voor Azure-resources
 
-**Hulp**: activiteiten Logboeken gebruiken om acties op Azure Kubernetes service-resources (AKS) te controleren om alle activiteiten en hun status weer te geven. Bepalen welke bewerkingen zijn uitgevoerd op de resources in uw abonnement met activiteiten logboeken: wie de bewerking heeft gestart
+**Hulp**: activiteiten Logboeken gebruiken om acties op Azure Kubernetes service-resources (AKS) te controleren om alle activiteiten en hun status weer te geven. Bepalen welke bewerkingen zijn uitgevoerd op de resources in uw abonnement met activiteiten logboeken: 
 
-Wanneer de bewerking is uitgevoerd
-
-de status van de bewerking
-
-de waarden van andere eigenschappen die u kunnen helpen bij het onderzoeken van de bewerking
+- wie de bewerking heeft gestart
+- Wanneer de bewerking is uitgevoerd
+- de status van de bewerking
+- de waarden van andere eigenschappen die u kunnen helpen bij het onderzoeken van de bewerking
 
 Gegevens ophalen uit het activiteiten logboek via Azure PowerShell, de Azure-opdracht regel interface (CLI), de Azure-REST API of de Azure Portal. 
 
 Schakel audit Logboeken in op AKS-hoofd onderdelen, zoals: 
 
-• uitvoeren-auditaksService: de weergave naam in het controle logboek voor de besturings vlak bewerking (van de hcpService) 
+- uitvoeren-auditaksService: de weergave naam in het controle logboek voor de besturings vlak bewerking (van de hcpService) 
 
-• masterclient: de weergave naam in het controle logboek voor MasterClientCertificate, het certificaat dat u ontvangt van AZ AKS Get-credentials 
+- masterclient: de weergave naam in het controle logboek voor MasterClientCertificate, het certificaat dat u ontvangt van AZ AKS Get-credentials 
 
-• nodeclient: de weergave naam voor ClientCertificate, die wordt gebruikt door agent knooppunten
+- nodeclient: de weergave naam voor ClientCertificate, die wordt gebruikt door agent knooppunten
 
 Schakel ook andere audit Logboeken in, zoals uitvoeren-audit. 
 
-- [Logboeken van Kubernetes-hoofd knooppunten inschakelen en controleren in AKS](view-master-logs.md)
-
-**Monitoring door Azure Security Center**: Ja
+- [Logboeken van Kubernetes-hoofd knooppunten inschakelen en controleren in AKS](/azure/aks/view-master-logs)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="24-collect-security-logs-from-operating-systems"></a>2,4: beveiligings logboeken verzamelen van besturings systemen
 
@@ -286,19 +279,19 @@ Gegevens verzameling is vereist om inzicht te krijgen in ontbrekende updates, on
 
 - [Automatische inrichting van de Log Analytics-agent inschakelen](../security-center/security-center-enable-data-collection.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="25-configure-security-log-storage-retention"></a>2,5: Bewaar beveiliging van het beveiligings logboek configureren
 
 **Hulp**: de AKS-exemplaren (Azure Kubernetes service) voorbereiden op Azure monitor en de bijbehorende Bewaar periode voor de Azure log Analytics-werk ruimte instellen volgens de nalevings vereisten van uw organisatie. 
 
-- [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Para meters voor het bewaren van Logboeken instellen voor Log Analytics-werk ruimten](/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="26-monitor-and-review-logs"></a>2,6: Logboeken bewaken en controleren
 
@@ -308,27 +301,29 @@ Gebruik de Log Analytics werk ruimte van Azure Monitor om logboeken te controler
 
 Bekijk de logboeken die zijn gegenereerd door de AKS-Master onderdelen (uitvoeren-apiserver en uitvoeren-controllermanager) voor het oplossen van problemen met uw toepassing en services. Gegevens in-en uitschakelen voor Azure Sentinel of een SIEM van derden voor gecentraliseerd logboek beheer en controle.
 
-- [Logboeken van Kubernetes-hoofd knooppunten inschakelen en controleren in AKS](view-master-logs.md)
+- [Logboeken van Kubernetes-hoofd knooppunten inschakelen en controleren in AKS](/azure/aks/view-master-logs)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
-
-**Monitoring door Azure Security Center**: Ja
+- [Aangepaste query's uitvoeren in Azure Monitor](/azure/azure-monitor/log-query/get-started-queries)
 
 **Verantwoordelijkheid**: Klant
 
+**Azure Security Center bewaking**: geen
+
 ### <a name="27-enable-alerts-for-anomalous-activities"></a>2,7: waarschuwingen inschakelen voor afwijkende activiteiten
 
-**Hulp**: gebruik Azure Kubernetes service (AKS) samen met Security Center om dieper inzicht te krijgen in AKS-knoop punten. Bekijk Security Center waarschuwingen over bedreigingen en schadelijke activiteiten die zijn gedetecteerd op de host en op het cluster niveau. Security Center implementeert doorlopende analyse van onbewerkte beveiligings gebeurtenissen die optreden in een AKS-cluster, zoals netwerk gegevens, het maken van processen en het Kubernetes-controle logboek. Bepaal of deze activiteit verwacht gedrag vertoont of dat de app niet goed werkt. Gebruik metrische gegevens en Logboeken in Azure Monitor om uw bevindingen te bewijzen. 
+**Hulp**: gebruik Azure Kubernetes service (AKS) samen met Security Center om dieper inzicht te krijgen in AKS-knoop punten. 
+
+Bekijk Security Center waarschuwingen over bedreigingen en schadelijke activiteiten die zijn gedetecteerd op de host en op het cluster niveau. Security Center implementeert doorlopende analyse van onbewerkte beveiligings gebeurtenissen die optreden in een AKS-cluster, zoals netwerk gegevens, het maken van processen en het Kubernetes-controle logboek. Bepaal of deze activiteit verwacht gedrag vertoont of dat de app niet goed werkt. Gebruik metrische gegevens en Logboeken in Azure Monitor om uw bevindingen te bewijzen. 
 
 - [Meer informatie over Azure Kubernetes Services-integratie met Security Center](../security-center/defender-for-kubernetes-introduction.md)
 
 - [Azure Security Center Standard-laag inschakelen](../security-center/security-center-get-started.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="28-centralize-anti-malware-logging"></a>2,8: registratie van anti-malware centraliseren
 
@@ -338,11 +333,11 @@ Bekijk de logboeken die zijn gegenereerd door de AKS-Master onderdelen (uitvoere
 
 - [Naslag Gids voor beveiligings waarschuwingen](../security-center/alerts-reference.md)
 
-- [Waarschuwingen voor containers-Azure Kubernetes Service-clusters](../security-center/alerts-reference.md#alerts-akscluster)
-
-**Monitoring door Azure Security Center**: Ja
+- [Waarschuwingen voor containers-Azure Kubernetes Service-clusters](https://docs.microsoft.com/azure/security-center/alerts-reference#alerts-akscluster)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="29-enable-dns-query-logging"></a>2,9: DNS-query logboek registratie inschakelen
 
@@ -352,9 +347,9 @@ Schakel logboek registratie voor DNS-query's in door gedocumenteerde configurati
 
 - [CoreDNS aanpassen met Azure Kubernetes Service](coredns-custom.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="210-enable-command-line-audit-logging"></a>2,10: controle logboek registratie op opdracht regel inschakelen
 
@@ -364,31 +359,31 @@ Schakel logboek registratie voor DNS-query's in door gedocumenteerde configurati
 
 - [Kubelet-logboeken ophalen van AKS-clusterknooppunten (Azure Kubernetes Service)](kubelet-logs.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="identity-and-access-control"></a>Identiteits- en toegangsbeheer
 
-*Zie [Azure Security Bench Mark: identiteits-en toegangs beheer](../security/benchmarks/security-control-identity-access-control.md)voor meer informatie.*
+*Zie [Azure Security Bench Mark: Identity and Access Control](../security/benchmarks/security-control-identity-access-control.md)voor meer informatie.*
 
 ### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3,1: een inventaris van beheerders accounts onderhouden
 
-**Hulp**: Azure Kubernetes service (AKS) zelf biedt geen oplossing voor identiteits beheer, waarmee reguliere gebruikers accounts en wacht woorden worden opgeslagen. Met de integratie van Azure Active Directory (Azure AD) kunt u gebruikers of groepen toegang verlenen tot Kubernetes bronnen binnen een naam ruimte of in het cluster. 
+**Hulp**: Azure Kubernetes service (AKS) zelf biedt geen oplossing voor identiteits beheer, waarmee reguliere gebruikers accounts en wacht woorden worden opgeslagen. Met de integratie van Azure Active Directory (Azure AD) kunt u gebruikers of groepen toegang verlenen tot Kubernetes bronnen binnen een naam ruimte of in het cluster.
 
 Ad hoc-query's uitvoeren om accounts te detecteren die lid zijn van AKS-beheer groepen met de Azure AD Power shell-module
 
 Gebruik Azure CLI voor bewerkingen als ' Get Access credentials for a Managed Kubernetes cluster ' om te helpen bij het regel matig afstemmen van de toegang. Implementeer dit proces om een bijgewerkte inventaris van de service accounts te maken, die een ander primair gebruikers type in AKS zijn. De aanbevelingen voor identiteits-en toegangs beheer van Security Center afdwingen.
 
-- [AKS integreren met Azure AD](./azure-ad-integration-cli.md)
+- [AKS integreren met Azure AD](azure-ad-integration-cli.md)
 
 - [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember)
 
 - [Identiteit en toegang controleren met Azure Security Center](../security-center/security-center-identity-access.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="32-change-default-passwords-where-applicable"></a>3,2: standaard wachtwoorden wijzigen indien van toepassing
 
@@ -398,9 +393,9 @@ Ad hoc-query's uitvoeren om accounts te detecteren die lid zijn van AKS-beheer g
 
 - [Toegang en identiteits opties voor AKS](concepts-identity.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3,3: speciale beheerders accounts gebruiken
 
@@ -414,44 +409,45 @@ Beleids regels en procedures voor het gebruik van specifieke beheerders accounts
 
 - [Op rollen gebaseerde toegangs beheer functies van Azure gebruiken](control-kubeconfig-access.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3,4: eenmalige aanmelding (SSO) met Azure Active Directory gebruiken
 
 **Hulp**: eenmalige aanmelding gebruiken voor Azure Kubernetes service (AKS) met Azure Active Directory (Azure AD) geïntegreerde verificatie voor een AKS-cluster.
 
-- [Kubernetes-logboeken, gebeurtenissen en metrische gegevens over pod in realtime weer geven](../azure-monitor/containers/container-insights-livedata-overview.md)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Kubernetes-logboeken, gebeurtenissen en metrische gegevens over pod in realtime weer geven](/azure/azure-monitor/insights/container-insights-livedata-overview)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3,5: multi-factor Authentication gebruiken voor alle op Azure Active Directory gebaseerde toegang
 
 **Hulp**: Integreer verificatie voor Azure Kubernetes service (AKS) met Azure Active Directory (Azure AD). 
 
-Schakel Azure AD Multi-Factor Authentication (MFA) in en volg de aanbevelingen voor identiteits-en toegangs beheer van Security Center.
+Schakel Azure AD multi-factor Authentication in en volg de aanbevelingen voor identiteits-en toegangs beheer van Security Center.
 
-- [MFA inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)
+- [Multi-factor Authentication inschakelen in azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
-- [Identiteit en toegang bewaken in Azure Security Center](../security-center/security-center-identity-access.md) 
-
-**Monitoring door Azure Security Center**: Ja
+- [Identiteit en toegang bewaken in Azure Security Center](../security-center/security-center-identity-access.md)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3,6: gebruik speciale machines (privileged Access workstations) voor alle beheer taken
 
 **Richt lijnen**: gebruik een privileged Access Workstation (Paw), met multi-factor Authentication (MFA), dat is geconfigureerd om u aan te melden bij uw opgegeven Azure Kubernetes service (AKS)-clusters en gerelateerde bronnen.
+
 - [Meer informatie over privileged Access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
-- [MFA inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Multi-Factor Authentication (MFA) in azure inschakelen](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="37-log-and-alert-on-suspicious-activities-from-administrative-accounts"></a>3,7: Logboeken en waarschuwingen voor verdachte activiteiten van beheerders accounts
 
@@ -461,9 +457,9 @@ Schakel Azure AD Multi-Factor Authentication (MFA) in en volg de aanbevelingen v
 
 - [Identiteits-en toegangs activiteiten van gebruikers controleren in Azure Security Center](../security-center/security-center-identity-access.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="38-manage-azure-resources-only-from-approved-locations"></a>3,8: beheer Azure-resources alleen op goedgekeurde locaties
 
@@ -475,9 +471,9 @@ Beperk de toegang tot de AKS API-server vanuit een beperkt aantal IP-adresbereik
 
 - [Benoemde locaties configureren in azure](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="39-use-azure-active-directory"></a>3,9: Azure Active Directory gebruiken
 
@@ -487,13 +483,13 @@ Gebruik de ingebouwde functies van AKS met op rollen gebaseerd toegangs beheer (
 
 - [Overzicht van Azure-beleid](../governance/policy/overview.md)
 
-- [Azure AD integreren met AKS](./azure-ad-integration-cli.md) 
+- [Azure AD integreren met AKS](azure-ad-integration-cli.md)
 
 - [Door AKS beheerde Azure AD integreren](managed-aad.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="310-regularly-review-and-reconcile-user-access"></a>3,10: regel matig gebruikers toegang controleren en afstemmen
 
@@ -509,20 +505,20 @@ Houd rekening met de rollen die worden gebruikt voor ondersteunings-of probleemo
 
 - [De identiteits-en toegangs activiteit van de gebruiker in Azure Security Center controleren](../security-center/security-center-identity-access.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="311-monitor-attempts-to-access-deactivated-credentials"></a>3,11: controle pogingen om toegang te krijgen tot gedeactiveerde referenties
 
 **Hulp**: Integreer gebruikers verificatie voor Azure Kubernetes service (AKS) met Azure Active Directory (Azure AD). Diagnostische instellingen voor Azure AD maken, de controle-en aanmeldings logboeken verzenden naar een Azure Log Analytics-werk ruimte. Gewenste waarschuwingen configureren (zoals wanneer een gedeactiveerd account zich probeert aan te melden) binnen een Azure Log Analytics-werk ruimte.
 - [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/alerts/alerts-log.md)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](/azure/azure-monitor/platform/alerts-log)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="312-alert-on-account-login-behavior-deviation"></a>3,12: waarschuwing voor de afwijking van het aanmeldings gedrag van accounts
 
@@ -534,22 +530,13 @@ Houd rekening met de rollen die worden gebruikt voor ondersteunings-of probleemo
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
 
-### <a name="313-provide-microsoft-with-access-to-relevant-customer-data-during-support-scenarios"></a>3,13: micro soft biedt toegang tot relevante klant gegevens tijdens ondersteunings scenario's
-
-**Richt lijnen**: niet van toepassing op de Azure Kubernetes-service (AKS) omdat deze niet wordt ondersteund door klanten-lockbox.
-- [Lijst met door Klanten-lockbox ondersteunde services](../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-general-availability)
-
-**Azure Security Center-bewaking**: Niet van toepassing
-
-**Verantwoordelijkheid**: niet van toepassing
+**Azure Security Center bewaking**: geen
 
 ## <a name="data-protection"></a>Gegevensbeveiliging
 
-*Zie [Azure Security Bench Mark: Data Protection](../security/benchmarks/security-control-data-protection.md)voor meer informatie.*
+*Zie [Azure Security Benchmark: gegevensbescherming](../security/benchmarks/security-control-data-protection.md) voor meer informatie.*
 
 ### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4,1: een inventaris van gevoelige informatie onderhouden
 
@@ -559,9 +546,9 @@ Houd rekening met de rollen die worden gebruikt voor ondersteunings-of probleemo
 
 - [Labels voor beheerde clusters bijwerken](/rest/api/aks/managedclusters/updatetags)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4,2: systemen isoleren die gevoelige informatie opslaan of verwerken
 
@@ -577,9 +564,9 @@ Implementeer afzonderlijke abonnementen en/of beheer groepen voor ontwikkelings-
 
 - [Aanbevolen procedures voor netwerk connectiviteit en beveiliging in AKS](operator-best-practices-network.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4,3: niet-geautoriseerde overdracht van gevoelige gegevens controleren en blok keren
 
@@ -593,9 +580,9 @@ Micro soft beheert het onderliggende platform en behandelt alle inhoud van de kl
 
 - [Informatie over beveiliging van klantgegevens in Azure](../security/fundamentals/protection-customer-data.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4,4: alle gevoelige gegevens in de overdracht versleutelen
 
@@ -609,9 +596,9 @@ Kubernetes uitgangs verkeer wordt standaard versleuteld via HTTPS/TLS. Bekijk ev
 
 - [Lijst met mogelijke poorten en protocollen die worden gebruikt door AKS](limit-egress-traffic.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4,5: een actief detectie hulpprogramma gebruiken om gevoelige gegevens te identificeren
 
@@ -622,9 +609,9 @@ Om ervoor te zorgen dat klant gegevens binnen Azure veilig blijven, heeft micro 
 
 - [Informatie over beveiliging van klantgegevens in Azure](../security/fundamentals/protection-customer-data.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="46-use-azure-rbac-to-manage-access-to-resources"></a>4,6: Azure RBAC gebruiken om de toegang tot resources te beheren
 
@@ -636,9 +623,13 @@ Gebruik de ingebouwde functies van AKS met Azure RBAC-resource Policy contributo
 
 - [Toegang tot cluster bronnen beheren met Azure RBAC en Azure AD-identiteiten in AKS](azure-ad-rbac.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/home/mbaldwin/docs/asb/azure-docs-pr/articles/governance/policy/samples/azure-security-benchmark.md) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/security-center-recommendations.md). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/azure-defender.md) -plan vereist voor de gerelateerde services.
+
+**Ingebouwde definities Azure Policy-micro soft. container service**:
+
+[!INCLUDE [Resource Policy for Microsoft.ContainerService 4.6](../../includes/policy/standards/asb/rp-controls/microsoft.containerservice-4-6.md)]
 
 ### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4,7: voor komen dat gegevens verlies op basis van host wordt gebruikt voor het afdwingen van toegangs beheer
 
@@ -647,9 +638,9 @@ Micro soft beheert het onderliggende platform en behandelt alle inhoud van de kl
 
 - [Informatie over beveiliging van klantgegevens in Azure](../security/fundamentals/protection-customer-data.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="48-encrypt-sensitive-information-at-rest"></a>4,8: gevoelige informatie op rest versleutelen
 
@@ -661,9 +652,9 @@ Versleuteling-op-rust met door de klant beheerde sleutels is beschikbaar voor he
 
 - [Breng uw eigen sleutels (BYOK) met Azure-schijven in azure Kubernetes service (AKS)](azure-disk-customer-managed-keys.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4,9: wijzigingen in essentiële Azure-resources vastleggen en waarschuwen
 
@@ -673,15 +664,15 @@ Waarschuwingen configureren voor proactieve meldingen of het maken van Logboeken
 
 Gebruik Azure-activiteiten logboek om uw AKS-clusters en gerelateerde resources op hoog niveau te bewaken. Integreer met Prometheus om de metrische gegevens van de toepassing en werk belasting weer te geven die worden verzameld van knoop punten en Kubernetes met behulp van query's om aangepaste waarschuwingen, Dash boards en gedetailleerde gedetailleerde analyses te maken.
 
-- [Azure Monitor voor containers begrijpen](../azure-monitor/containers/container-insights-overview.md)
+- [Azure Monitor voor containers begrijpen](/azure/azure-monitor/insights/container-insights-overview)
 
-- [Azure Monitor inschakelen voor containers](../azure-monitor/containers/container-insights-onboard.md)
+- [Azure Monitor inschakelen voor containers](/azure/azure-monitor/insights/container-insights-onboard)
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
-
-**Monitoring door Azure Security Center**: Ja
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log#view-the-activity-log)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="vulnerability-management"></a>Beheer van beveiligingsproblemen
 
@@ -691,7 +682,7 @@ Gebruik Azure-activiteiten logboek om uw AKS-clusters en gerelateerde resources 
 
 **Hulp**: gebruik Security Center om uw Azure container Registry te controleren, waaronder Azure Kubernetes service-exemplaren (AKS) voor beveiligings problemen. Schakel de bundel van container registers in Security Center in om ervoor te zorgen dat Security Center gereed is voor het scannen van installatie kopieën die naar het REGI ster worden gepusht.
 
-Ontvang een melding in het Security Center-dash board wanneer er problemen zijn gevonden nadat Security Center de installatie kopie scant met behulp van Qualys. De functie bundel van container registers biedt een diepere zicht baarheid in de beveiligings lekken van de installatie kopieën die worden gebruikt in op Azure Resource Manager gebaseerde registers. 
+Ontvang een melding in het Security Center-dash board wanneer er problemen zijn gevonden nadat Security Center de installatie kopie scant met behulp van Qualys. De functie bundel van container registers biedt diepere zicht baarheid in beveiligings lekken van de installatie kopieën die worden gebruikt in op Azure Resource Manager gebaseerde registers. 
 
 Gebruik Security Center voor aanbevelingen waarvoor een actie kan worden uitgevoerd voor elk beveiligingslek. Deze aanbevelingen omvatten een Ernst classificatie en richt lijnen voor herstel. 
 
@@ -701,9 +692,9 @@ Gebruik Security Center voor aanbevelingen waarvoor een actie kan worden uitgevo
 
 - [De integratie van container registers begrijpen met Azure Security Center](../security-center/defender-for-container-registries-introduction.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="52-deploy-automated-operating-system-patch-management-solution"></a>5,2: geautomatiseerde oplossing voor patch beheer voor besturings systemen implementeren
 
@@ -713,33 +704,37 @@ Houd er rekening mee dat het proces om Windows Server-knoop punten up-to-date te
 
 - [Begrijpen hoe updates worden toegepast op AKS-cluster knooppunten waarop Linux wordt uitgevoerd](node-updates-kured.md)
 
-- [Een upgrade uitvoeren voor een AKS-knooppunt groep voor AKS-clusters die gebruikmaken van Windows Server-knoop punten](use-multiple-node-pools.md#upgrade-a-node-pool)
+- [Een upgrade uitvoeren voor een AKS-knooppunt groep voor AKS-clusters die gebruikmaken van Windows Server-knoop punten](https://docs.microsoft.com/azure/aks/use-multiple-node-pools#upgrade-a-node-pool)
 
 - [Upgrade van installatie kopie van knoop punt van Azure Kubernetes service (AKS)](node-image-upgrade.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="53-deploy-an-automated-patch-management-solution-for-third-party-software-titles"></a>5,3: een geautomatiseerde oplossing voor patch beheer implementeren voor titels van software van derden
 
 **Richt lijnen**: Implementeer een hand matig proces om ervoor te zorgen dat de toepassingen van derden van de Azure Kubernetes service (AKS) voor de duur van de cluster levensduur worden bijgewerkt. Hiervoor moet u mogelijk automatische updates inschakelen, de knoop punten bewaken of periodieke opnieuw opstarten uitvoeren.
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/home/mbaldwin/docs/asb/azure-docs-pr/articles/governance/policy/samples/azure-security-benchmark.md) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/security-center-recommendations.md). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/azure-defender.md) -plan vereist voor de gerelateerde services.
+
+**Ingebouwde definities Azure Policy-micro soft. container service**:
+
+[!INCLUDE [Resource Policy for Microsoft.ContainerService 5.3](../../includes/policy/standards/asb/rp-controls/microsoft.containerservice-5-3.md)]
 
 ### <a name="54-compare-back-to-back-vulnerability-scans"></a>5,4: vergelijken van back-to-back-problemen
 
-**Hulp**: de resultaten van Security Center scan worden met consistente intervallen geëxporteerd en de resultaten worden vergeleken om te controleren of de beveiligings problemen zijn opgelost. 
+**Hulp**: de resultaten van Security Center scan worden met consistente intervallen geëxporteerd en de resultaten worden vergeleken om te controleren of de beveiligings problemen zijn opgelost.
 
 Gebruik de Power shell-cmdlet ' Get-AzSecurityTask ' om het ophalen van beveiligings taken waarmee Security Center wordt aanbevolen, te automatiseren om de resultaten van de scan van beveiligings problemen postuur en herstel te verbeteren.
 
 - [Power shell gebruiken om beveiligings problemen weer te geven die zijn gedetecteerd door Azure Security Center](/powershell/module/az.security/get-azsecuritytask)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="55-use-a-risk-rating-process-to-prioritize-the-remediation-of-discovered-vulnerabilities"></a>5,5: een risico classificatie proces gebruiken om prioriteit te geven aan het herstel van ontdekte beveiligings problemen
 
@@ -747,11 +742,11 @@ Gebruik de Power shell-cmdlet ' Get-AzSecurityTask ' om het ophalen van beveilig
 
 Gebruik een gemeen schappelijke beveiligings beoordelings systeem (CVSS) (of een andere punten die door het Scan hulpprogramma worden geleverd) als u een ingebouwd hulp programma voor evaluatie van beveiligings problemen (zoals Qualys of Rapid7, aangeboden door Azure) gebruikt.
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
 
-## <a name="inventory-and-asset-management"></a>Inventarisatie en asset-management
+**Azure Security Center bewaking**: geen
+
+## <a name="inventory-and-asset-management"></a>Inventarisatie en Asset Management
 
 *Zie [Azure Security Bench Mark: Inventory and Asset Management](../security/benchmarks/security-control-inventory-asset-management.md)voor meer informatie.*
 
@@ -767,9 +762,9 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 - [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="62-maintain-asset-metadata"></a>6,2: meta gegevens van activa onderhouden
 
@@ -777,9 +772,9 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="63-delete-unauthorized-azure-resources"></a>6,3: niet-geautoriseerde Azure-resources verwijderen
 
@@ -797,19 +792,19 @@ Taints, labels of tags kunnen worden gebruikt om de inventaris regel matig af te
 
 - [Beheerde clusters-Tags bijwerken](/rest/api/aks/managedclusters/updatetags)
 
-- [Een Taint, label of tag voor een knooppunt groep opgeven](use-multiple-node-pools.md#specify-a-taint-label-or-tag-for-a-node-pool)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Een Taint, label of tag voor een knooppunt groep opgeven](https://docs.microsoft.com/azure/aks/use-multiple-node-pools#specify-a-taint-label-or-tag-for-a-node-pool)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="64-define-and-maintain-an-inventory-of-approved-azure-resources"></a>6,4: een inventaris van goedgekeurde Azure-resources definiëren en onderhouden
 
 **Richt lijnen**: een lijst met goedgekeurde Azure-resources en goedgekeurde software voor reken resources definiëren op basis van de bedrijfs behoeften van de organisatie.
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6,5: monitor voor niet-goedgekeurde Azure-resources
 
@@ -824,9 +819,9 @@ Gebruik Azure resource Graph voor het opvragen/detecteren van resources in uw ab
 
 - [Query's maken met Azure Graph](../governance/resource-graph/first-query-portal.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6,6: monitor voor niet-goedgekeurde software toepassingen binnen reken resources
 
@@ -838,9 +833,9 @@ Houd de configuraties van uw machines bij om u te helpen bij het zoeken van oper
 
 - [Inventarisatie van virtuele Azure-machines inschakelen](../automation/automation-tutorial-installed-software.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6,7: niet-goedgekeurde Azure-resources en software toepassingen verwijderen
 
@@ -856,9 +851,9 @@ Houd de configuraties van uw machines bij om u te helpen bij het zoeken van oper
 
 - [Meer informatie over Azure Wijzigingen bijhouden](../automation/change-tracking/overview.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="68-use-only-approved-applications"></a>6,8: alleen goedgekeurde toepassingen gebruiken
 
@@ -872,13 +867,11 @@ Schakel adaptieve toepassings analyse in Security Center in voor toepassingen di
 
 - [Inventarisatie van virtuele Azure-machines inschakelen](../automation/automation-tutorial-installed-software.md)
 
- 
-Azure Security Center Adaptive toepassing gebruiken
-- [Besturingselementen](../security-center/security-center-adaptive-application.md)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Azure Security Center adaptieve toepassings besturings elementen gebruiken](../security-center/security-center-adaptive-application.md)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="69-use-only-approved-azure-services"></a>6,9: alleen goedgekeurde Azure-Services gebruiken
 
@@ -894,11 +887,11 @@ Gebruik Azure resource Graph voor het opvragen/detecteren van resources in uw ab
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/index.md)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Een specifiek resource type weigeren met Azure Policy](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="610-maintain-an-inventory-of-approved-software-titles"></a>6,10: een inventaris van goedgekeurde software titels onderhouden
 
@@ -906,24 +899,24 @@ Gebruik Azure resource Graph voor het opvragen/detecteren van resources in uw ab
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6,11: de mogelijkheid van gebruikers om te communiceren met Azure Resource Manager beperken
 
 **Richt lijnen**: gebruik de voorwaardelijke toegang van Azure om gebruikers de mogelijkheid te bieden om te communiceren met Azure Resource Manager door ' blok toegang ' te configureren voor de app Microsoft Azure management.
 - [Voorwaardelijke toegang configureren om de toegang tot Azure Resource Manager te blok keren](../role-based-access-control/conditional-access-azure-management.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="612-limit-users-ability-to-execute-scripts-in-compute-resources"></a>6,12: de mogelijkheid van gebruikers om scripts in reken bronnen uit te voeren, beperken
 
-**Hulp**: Azure Kubernetes service (AKS) zelf biedt geen oplossing voor identiteits beheer waar reguliere gebruikers accounts en wacht woorden worden opgeslagen. Gebruik in plaats daarvan Azure Active Directory (Azure AD) als geïntegreerde identiteits oplossing voor uw AKS-clusters. 
+**Hulp**: Azure Kubernetes service (AKS) zelf biedt geen oplossing voor identiteits beheer waar reguliere gebruikers accounts en wacht woorden worden opgeslagen. Gebruik in plaats daarvan Azure Active Directory (Azure AD) als geïntegreerde identiteits oplossing voor uw AKS-clusters.
 
-Verleen gebruikers of groepen toegang tot Kubernetes-resources binnen een naam ruimte of in het cluster met behulp van Azure AD-integratie. 
+Verleen gebruikers of groepen toegang tot Kubernetes-resources binnen een naam ruimte of in het cluster met behulp van Azure AD-integratie.
 
 Gebruik de Azure AD Power shell-module om ad hoc-query's uit te voeren om accounts te detecteren die lid zijn van uw AKS-beheer groepen en gebruik deze om de toegang regel matig af te stemmen. Gebruik Azure CLI voor bewerkingen zoals ' toegangs referenties ophalen voor een beheerd Kubernetes-cluster. Implementeer Security Center aanbevelingen voor identiteits-en toegangs beheer.
 
@@ -931,7 +924,7 @@ Gebruik de Azure AD Power shell-module om ad hoc-query's uit te voeren om accoun
 
 - [Meer informatie over AKS en Azure AD-integratie](concepts-identity.md)
 
-- [AKS integreren met Azure AD](./azure-ad-integration-cli.md)
+- [AKS integreren met Azure AD](azure-ad-integration-cli.md)
 
 - [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole)
 
@@ -939,9 +932,9 @@ Gebruik de Azure AD Power shell-module om ad hoc-query's uit te voeren om accoun
 
 - [Identiteit en toegang controleren met Azure Security Center](../security-center/security-center-identity-access.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6,13: toepassingen met een hoog risico fysiek of logisch scheiden
 
@@ -949,7 +942,7 @@ Gebruik de Azure AD Power shell-module om ad hoc-query's uit te voeren om accoun
 
 De naam ruimte in Kubernetes implementeren om een logische isolatie grens te maken. Gebruik Azure Policy aliassen in de naam ruimte ' micro soft. container service ' om aangepaste beleids regels te maken om de configuratie van uw Azure Kubernetes service (AKS)-instanties te controleren of af te dwingen. 
 
-Bekijk en implementeer aanvullende Kubernetes-functies en overwegingen voor isolatie en multitenancy om het volgende toe te voegen: planning, netwerken, verificatie/autorisatie en containers. Gebruik ook afzonderlijke abonnementen en/of beheer groepen voor ontwikkeling, testen en productie. Scheid AKS-clusters met virtuele netwerken, subnetten die op de juiste wijze zijn gelabeld en beveiligd met een Web Application firewall (WAF).
+Bekijk en implementeer aanvullende Kubernetes-functies en overwegingen voor isolatie en multitenancy om het volgende toe te voegen: planning, netwerken, verificatie/autorisatie en containers. Gebruik ook afzonderlijke abonnementen en beheer groepen voor ontwikkeling, testen en productie. Scheid AKS-clusters met virtuele netwerken, subnetten die op de juiste wijze zijn gelabeld en beveiligd met een Web Application firewall (WAF).
 
 - [Meer informatie over Best Practices for cluster-isolatie in AKS](operator-best-practices-cluster-isolation.md)
 
@@ -959,9 +952,9 @@ Bekijk en implementeer aanvullende Kubernetes-functies en overwegingen voor isol
 
 - [Aanbevolen procedures voor netwerk connectiviteit en beveiliging in AKS](operator-best-practices-network.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="secure-configuration"></a>Veilige configuratie
 
@@ -973,13 +966,13 @@ Bekijk en implementeer aanvullende Kubernetes-functies en overwegingen voor isol
 
 Voor beelden van ingebouwde beleids definities voor AKS zijn:
 
-• HTTPS-ingang afdwingen in Kubernetes-cluster
+- Inkomend HTTPS-verkeer afdwingen in Kubernetes-cluster
 
-• Geautoriseerde IP-bereiken moeten worden gedefinieerd op Kubernetes Services
+- Geautoriseerde IP-bereiken moeten worden gedefinieerd voor Kubernetes Services
 
-• Op rollen gebaseerd toegangs beheer (RBAC) moet worden gebruikt voor Kubernetes-Services
+- Op rollen gebaseerde Access Control (RBAC) moet worden gebruikt voor Kubernetes-Services
 
-• Zorg ervoor dat er alleen toegestane container installatie kopieën in het Kubernetes-cluster zijn
+- Alleen toegestane containerinstallatiekopieën garanderen in een Kubernetes-cluster
 
 Exporteer een sjabloon van uw AKS-configuratie in JavaScript Object Notation (JSON) met Azure Resource Manager. Controleer het regel matig om er zeker van te zijn dat deze configuraties voldoen aan de beveiligings vereisten voor uw organisatie. Gebruik de aanbevelingen van Azure Security Center als een veilige configuratie basislijn voor uw Azure-resources. 
 
@@ -987,9 +980,9 @@ Exporteer een sjabloon van uw AKS-configuratie in JavaScript Object Notation (JS
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="72-establish-secure-operating-system-configurations"></a>7,2: veilige configuraties van besturings systemen instellen
 
@@ -1001,9 +994,9 @@ Azure past dagelijkse patches (inclusief beveiligings patches) toe aan AKS van v
 
 - [Meer informatie over beveiligings beveiliging in hosts van virtuele AKS-machines](security-hardened-vm-host-image.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="73-maintain-secure-azure-resource-configurations"></a>7,3: Beveilig Azure-resource configuraties onderhouden
 
@@ -1015,17 +1008,19 @@ Gebruik Azure Policy [deny] en [implementeren indien niet aanwezig] effecten om 
 
 Aangepaste Azure Policy definities maken met behulp van aliassen van de volgende naam ruimten: 
 
-• Micro soft. container service
+- Microsoft.ContainerService
 
-• Micro soft. Network
+- Microsoft.Network
+
+Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
 - [Azure Policy effecten begrijpen](../governance/policy/concepts/effects.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="74-maintain-secure-operating-system-configurations"></a>7,4: veilige configuraties van besturings systemen onderhouden
 
@@ -1035,39 +1030,37 @@ Raadpleeg de lijst met de besturings elementen Center for Internet Security (CIS
 
 - [Beveiligings beveiliging voor AKS-agent knooppunt host-besturings systeem](security-hardened-vm-host-image.md)
 
-- [Informatie over de status configuratie van AKS-clusters](concepts-clusters-workloads.md#control-plane)
+- [Informatie over de status configuratie van AKS-clusters](https://docs.microsoft.com/azure/aks/concepts-clusters-workloads#control-plane)
 
 - [Meer informatie over beveiligings beveiliging in hosts van virtuele AKS-machines](security-hardened-vm-host-image.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="75-securely-store-configuration-of-azure-resources"></a>7,5: de configuratie van Azure-resources veilig opslaan
 
-**Hulp**: Azure opslag plaatsen gebruiken om uw configuraties veilig op te slaan en te beheren als u aangepaste Azure Policy definities gebruikt. Exporteer een sjabloon van de configuratie van de Azure Kubernetes-service (AKS) in JavaScript Object Notation (JSON) met Azure Resource Manager. Controleer deze regel matig om te controleren of de configuraties voldoen aan de beveiligings vereisten voor uw organisatie. 
+**Hulp**: Azure opslag plaatsen gebruiken om uw configuraties veilig op te slaan en te beheren als u aangepaste Azure Policy definities gebruikt. Exporteer een sjabloon van de configuratie van de Azure Kubernetes-service (AKS) in JavaScript Object Notation (JSON) met Azure Resource Manager. Controleer deze regel matig om te controleren of de configuraties voldoen aan de beveiligings vereisten voor uw organisatie.
 
 Implementeer oplossingen van derden, zoals terraform, om een configuratie bestand te maken dat de bronnen voor het Kubernetes-cluster declareert. U kunt uw AKS-implementatie beveiligen door aanbevolen procedures voor beveiliging te implementeren en uw configuratie op te slaan als code op een beveiligde locatie.
 
 - [Een Kubernetes-cluster definiëren](/azure/developer/terraform/create-k8s-cluster-with-tf-and-aks#define-a-kubernetes-cluster)
 
-Beveiligings beveiliging voor AKS-agent knooppunt host-besturings systeem
-
-security-hardened-vm-host-image.md
+- [Beveiligings beveiliging voor AKS-agent knooppunt host-besturings systeem](security-hardened-vm-host-image.md)
 
 - [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="76-securely-store-custom-operating-system-images"></a>7,6: aangepaste installatie kopieën van een besturings systeem veilig opslaan
 
 **Richt lijnen**: niet van toepassing op Azure Kubernetes service (AKS). AKS biedt standaard een geoptimaliseerd host-besturings systeem (OS). Er is geen huidige optie om een alternatief of aangepast besturings systeem te selecteren.
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7,7: hulpprogram ma's voor configuratie beheer voor Azure-resources implementeren
 
@@ -1077,11 +1070,11 @@ Aangepaste beleids regels maken om systeem configuraties te controleren en af te
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Aliassen gebruiken](../governance/policy/concepts/definition-structure.md#aliases)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Aliassen gebruiken](https://docs.microsoft.com/azure/governance/policy/concepts/definition-structure#aliases)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="78-deploy-configuration-management-tools-for-operating-systems"></a>7,8: hulpprogram ma's voor configuratie beheer voor besturings systemen implementeren
 
@@ -1093,11 +1086,11 @@ Raadpleeg de lijst met besturings elementen van het Center voor Internet Securit
 
 - [Meer informatie over beveiligings beveiliging in hosts van virtuele AKS-machines](security-hardened-vm-host-image.md)
 
-- [Informatie over de status configuratie van AKS-clusters](concepts-clusters-workloads.md#control-plane)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Informatie over de status configuratie van AKS-clusters](https://docs.microsoft.com/azure/aks/concepts-clusters-workloads#control-plane)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="79-implement-automated-configuration-monitoring-for-azure-resources"></a>7,9: geautomatiseerde configuratie bewaking voor Azure-resources implementeren
 
@@ -1105,19 +1098,21 @@ Raadpleeg de lijst met besturings elementen van het Center voor Internet Securit
 
 - [Aanbevelingen herstellen in Azure Security Center](../security-center/security-center-remediate-recommendations.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7,10: geautomatiseerde configuratie bewaking voor besturings systemen implementeren
 
-**Hulp**: gebruik Security Center container aanbevelingen in het gedeelte COMPUTE- &amp; apps om basislijn scans uit te voeren voor uw AKS-clusters (Azure Kubernetes service). Ontvang een melding in het Security Center-dash board wanneer er configuratie problemen of beveiligings problemen worden gevonden. Hiervoor moet de optionele container-register bundel worden ingeschakeld, waarmee Security Center de installatie kopie kunt scannen.  
+**Hulp**: gebruik Security Center container aanbevelingen in het gedeelte COMPUTE- &amp; apps om basislijn scans uit te voeren voor uw AKS-clusters (Azure Kubernetes service). 
+
+Ontvang een melding in het Security Center-dash board wanneer er configuratie problemen of beveiligings problemen worden gevonden. Hiervoor moet de optionele container-register bundel worden ingeschakeld, waarmee Security Center de installatie kopie kunt scannen.  
 
 - [Aanbevelingen van Azure Security Center voor containers](../security-center/container-security.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="711-manage-azure-secrets-securely"></a>7,11: Azure-geheimen veilig beheren
 
@@ -1129,27 +1124,27 @@ Vermijd het gebruik van vaste of gedeelde referenties.
 
 - [Beveiligingsconcepten voor toepassingen en clusters in Azure Kubernetes Service (AKS)](concepts-security.md)
 
-- [Key Vault gebruiken met uw AKS-cluster](developer-best-practices-pod-security.md#limit-credential-exposure)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Key Vault gebruiken met uw AKS-cluster](https://docs.microsoft.com/azure/aks/developer-best-practices-pod-security#limit-credential-exposure)
 
 **Verantwoordelijkheid**: Klant
 
+**Azure Security Center bewaking**: geen
+
 ### <a name="712-manage-identities-securely-and-automatically"></a>7,12: identiteiten veilig en automatisch beheren
 
-**Hulp**: Geef geen referenties in de toepassings code op als een beveiligings best practice. Gebruik beheerde identiteiten voor Azure-resources om een pod te laten verifiëren voor elke service in azure die dit ondersteunt, met inbegrip van Azure Key Vault. Aan de Pod is een Azure-identiteit toegewezen om te verifiëren bij Azure Active Directory (Azure AD) en een digitaal token te ontvangen dat kan worden gepresenteerd aan andere Azure-Services die controleren of de Pod is gemachtigd om toegang te krijgen tot de service en de vereiste acties uit te voeren. 
+**Hulp**: Geef geen referenties in de toepassings code op als een beveiligings best practice. Gebruik beheerde identiteiten voor Azure-resources om een pod te laten verifiëren voor elke service in azure die dit ondersteunt, met inbegrip van Azure Key Vault. Aan de Pod is een Azure-identiteit toegewezen om te verifiëren bij Azure Active Directory (Azure AD) en een digitaal token te ontvangen dat kan worden gepresenteerd aan andere Azure-Services die controleren of de Pod is gemachtigd om toegang te krijgen tot de service en de vereiste acties uit te voeren.
 
 Houd er rekening mee dat beheerde identiteiten van pod alleen bedoeld zijn voor gebruik met Linux peul en container installatie kopieën. Azure Key Vault inrichten om digitale sleutels en referenties op te slaan en op te halen. Sleutels, zoals degene die worden gebruikt voor het versleutelen van besturingssysteem schijven, kunnen AKS-cluster gegevens worden opgeslagen in Azure Key Vault.
 
 Service-principals kunnen ook worden gebruikt in AKS-clusters. Clusters die service-principals gebruiken, kunnen echter uiteindelijk een status krijgen waarin de Service-Principal moet worden vernieuwd om het cluster te laten functioneren. Het beheren van service-principals voegt complexiteit toe. Daarom is het eenvoudiger om beheerde identiteiten te gebruiken. Dezelfde machtigings vereisten gelden voor service-principals en beheerde identiteiten.
 
-- [Beheerde identiteiten en Key Vault begrijpen met Azure Kubernetes service (AKS)](developer-best-practices-pod-security.md#limit-credential-exposure)
+- [Beheerde identiteiten en Key Vault begrijpen met Azure Kubernetes service (AKS)](https://docs.microsoft.com/azure/aks/developer-best-practices-pod-security#limit-credential-exposure)
 
-- [Pod-identiteit van Azure Active Directory](https://github.com/Azure/aad-pod-identity)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Azure AD pod-identiteit](https://github.com/Azure/aad-pod-identity)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="713-eliminate-unintended-credential-exposure"></a>7,13: onbedoelde referentie blootstelling elimineren
 
@@ -1161,9 +1156,9 @@ Beperk de bloot stelling van referenties door geen referenties te definiëren in
 
 - [Aanbevolen procedures voor ontwikkel aars voor pod-beveiliging](developer-best-practices-pod-security.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="malware-defense"></a>Beveiliging tegen malware
 
@@ -1175,13 +1170,13 @@ Beperk de bloot stelling van referenties door geen referenties te definiëren in
 
 - [Naslag Gids voor beveiligings waarschuwingen](../security-center/alerts-reference.md)
 
-- [Waarschuwingen voor containers-Azure Kubernetes Service-clusters](../security-center/alerts-reference.md#alerts-akscluster)
+- [Waarschuwingen voor containers-Azure Kubernetes Service-clusters](https://docs.microsoft.com/azure/security-center/alerts-reference#alerts-akscluster)
 
-- [Gedeelde verantwoordelijkheids-en daemon-sets AKS](support-policies.md#shared-responsibility)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Gedeelde verantwoordelijkheids-en daemon-sets AKS](https://docs.microsoft.com/azure/aks/support-policies#shared-responsibility)
 
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="82-pre-scan-files-to-be-uploaded-to-non-compute-azure-resources"></a>8,2: scan bestanden die moeten worden geüpload naar niet-reken resources van Azure
 
@@ -1189,9 +1184,9 @@ Beperk de bloot stelling van referenties door geen referenties te definiëren in
 
 - [Meer informatie over de detectie van bedreigingen van Azure Security Center voor gegevens Services](../security-center/azure-defender.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="83-ensure-antimalware-software-and-signatures-are-updated"></a>8,3: controleren of antimalware-software en hand tekeningen zijn bijgewerkt
 
@@ -1199,13 +1194,13 @@ Beperk de bloot stelling van referenties door geen referenties te definiëren in
 
 - [Naslag Gids voor beveiligings waarschuwingen](../security-center/alerts-reference.md)
 
-- [Waarschuwingen voor containers-Azure Kubernetes Service-clusters](../security-center/alerts-reference.md#alerts-akscluster)
+- [Waarschuwingen voor containers-Azure Kubernetes Service-clusters](https://docs.microsoft.com/azure/security-center/alerts-reference#alerts-akscluster)
 
-- [Gedeelde verantwoordelijkheids-en daemon-sets AKS](support-policies.md#shared-responsibility)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Gedeelde verantwoordelijkheids-en daemon-sets AKS](https://docs.microsoft.com/azure/aks/support-policies#shared-responsibility)
 
 **Verantwoordelijkheid**: Gedeeld
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="data-recovery"></a>Gegevensherstel
 
@@ -1225,19 +1220,15 @@ Verwijder de status van uw toepassingen voordat u een back-up maakt. Als dit nie
 
 - [Velero in azure instellen](https://github.com/vmware-tanzu/velero-plugin-for-microsoft-azure/blob/master/README.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9,2: volledige back-ups van het systeem uitvoeren en een back-up maken van door de klant beheerde sleutels
 
 **Richt lijnen**: Maak een back-up van uw gegevens met behulp van een geschikt hulp programma voor uw opslag type, zoals velero, waarmee back-ups van permanente volumes kunnen worden gemaakt, samen met extra cluster bronnen en-configuraties. 
 
 Maak regel matig automatische back-ups van Key Vault certificaten, sleutels, beheerde opslag accounts en geheimen, met Power shell-opdrachten. 
-
-Bijvoorbeeld:
-
-Backup-AzKeyVaultCertificate Backup-AzKeyVaultKey Backup-AzKeyVaultManagedStorageAccount Backup-AzKeyVaultSecret
 
 - [Back-up maken van Key Vault certificaten](/powershell/module/azurerm.keyvault/backup-azurekeyvaultcertificate)
 
@@ -1247,35 +1238,31 @@ Backup-AzKeyVaultCertificate Backup-AzKeyVaultKey Backup-AzKeyVaultManagedStorag
 
 - [Back-ups maken van Key Vault geheimen](/powershell/module/azurerm.keyvault/backup-azurekeyvaultsecret)
 
-- [Azure Backup inschakelen](../backup/index.yml)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Azure Backup inschakelen](/azure/backup/)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="93-validate-all-backups-including-customer-managed-keys"></a>9,3: alle back-ups valideren, inclusief door de klant beheerde sleutels
 
 **Richt lijnen**: regel matig gegevens herstel van inhoud in Velero-back-up uitvoeren. Test zo nodig het herstellen naar een geïsoleerd virtueel netwerk.
 
-Voer regel matig gegevens herstel uit van Key Vault certificaten, sleutels, beheerde opslag accounts en geheimen, met Power shell-opdrachten. 
+Voer regel matig gegevens herstel uit van Key Vault certificaten, sleutels, beheerde opslag accounts en geheimen, met Power shell-opdrachten.
 
-Bijvoorbeeld:
+- [Key Vault certificaten herstellen](https://docs.microsoft.com/powershell/module/az.keyvault/restore-azkeyvaultcertificate?view=azps-4.8.0&amp;preserve-view=true)
 
-Restore-AzKeyVaultCertificate Restore-AzKeyVaultKey Restore-AzKeyVaultManagedStorageAccount Restore-AzKeyVaultSecret
-
-- [Key Vault certificaten herstellen](/powershell/module/azurerm.keyvault/restore-azurekeyvaultcertificate?view=azurermps-6.13.0)
-
-- [Key Vault sleutels herstellen](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
+- [Key Vault sleutels herstellen](https://docs.microsoft.com/powershell/module/az.keyvault/restore-azkeyvaultkey?view=azps-4.8.0&amp;preserve-view=true)
 
 - [Key Vault beheerde opslag accounts herstellen](/powershell/module/az.keyvault/backup-azkeyvaultmanagedstorageaccount)
 
-- [Key Vault geheimen herstellen](/powershell/module/azurerm.keyvault/restore-azurekeyvaultsecret?view=azurermps-6.13.0)
+- [Key Vault geheimen herstellen](https://docs.microsoft.com/powershell/module/az.keyvault/restore-azkeyvaultsecret?view=azps-4.8.0&amp;preserve-view=true)
 
-- [Bestanden herstellen vanuit back-up van Azure virtual machine](../backup/backup-azure-restore-files-from-vm.md)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Bestanden herstellen vanuit back-up van Azure virtual machine](/azure/backup/backup-azure-restore-files-from-vm)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9,4: zorg voor de bescherming van back-ups en door de klant beheerde sleutels
 
@@ -1285,15 +1272,15 @@ Schakel Soft-Delete in Key Vault in om sleutels te beschermen tegen onbedoelde o
 
 - [Azure Storage service-versleuteling begrijpen](../storage/common/storage-service-encryption.md)
 
-- [Soft-Delete in Key Vault inschakelen](../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Soft-Delete in Key Vault inschakelen](https://docs.microsoft.com/azure/storage/blobs/soft-delete-blob-overview?tabs=azure-portal)
 
 **Verantwoordelijkheid**: Klant
 
+**Azure Security Center bewaking**: geen
+
 ## <a name="incident-response"></a>Reageren op incidenten
 
-*Zie [Azure Security Bench Mark: Incident Response](../security/benchmarks/security-control-incident-response.md)(Engelstalig) voor meer informatie.*
+*Zie [Azure Security Benchmark: respons op incidenten](../security/benchmarks/security-control-incident-response.md) voor meer informatie.*
 
 ### <a name="101-create-an-incident-response-guide"></a>10,1: een hand leiding voor reactie op incidenten maken
 
@@ -1305,62 +1292,66 @@ Schakel Soft-Delete in Key Vault in om sleutels te beschermen tegen onbedoelde o
 
 - [Micro soft Security Response Center anatomie van een incident](https://msrc-blog.microsoft.com/2019/07/01/inside-the-msrc-building-your-own-security-incident-response-process/)
 
-- [Klant kan ook gebruikmaken van de hand leiding voor de verwerking van het computer beveiligings incident van het NIST om hulp te bieden bij het maken van een eigen incident respons plan](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
-
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Hand leiding voor het verwerken van beveiligings incidenten van het NIST](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
 
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10,2: een beoordelings procedure voor incidenten en prioriteits procedures maken
 
-**Richt lijnen**: rang geven aan welke waarschuwingen eerst moeten worden onderzocht met Security Center ernst van de waarschuwing. De ernst is gebaseerd op de manier waarop vertrouwen Security Center is in de zoek actie of het analyse programma dat wordt gebruikt om de waarschuwing te geven, evenals het betrouwbaarheids niveau dat er schadelijke bedoelingen zijn achter de activiteit die tot de waarschuwing heeft geleid.
+**Richt lijnen**: rang geven aan welke waarschuwingen eerst moeten worden onderzocht met Security Center ernst van de waarschuwing. De ernst is gebaseerd op de manier waarop vertrouwen Security Center is in de zoek actie of de analyse die wordt gebruikt om de waarschuwing te geven, evenals het betrouwbaarheids niveau waarvan er sprake is van schadelijke opzet achter de activiteit die tot de waarschuwing heeft geleid.
 Markeer abonnementen duidelijk (bijvoorbeeld productie, niet-productie) en maak een naamgevings systeem om Azure-resources duidelijk te identificeren en te categoriseren.
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="103-test-security-response-procedures"></a>10,3: procedures voor beveiligings antwoorden testen
 
-**Richt lijnen**: oefent oefeningen uit om de respons mogelijkheden van uw systeem op een gewone uitgebracht te testen. Raadpleeg de publicatie van het NIST om zwakke punten en hiaten te identificeren en zo nodig de planning te herzien.
+**Richt lijnen**: oefent oefeningen uit om de incident respons mogelijkheden van uw systeem te testen bij een gewone uitgebracht. Identificeer zwakke punten en tussen ruimten en wijzig indien nodig de incident respons plannen.
 
 - [Hand leiding voor het testen, trainen en uitoefenen van Program Ma's voor IT-plannen en-mogelijkheden](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10,4: contact gegevens van het beveiligings incident opgeven en waarschuwings meldingen configureren voor beveiligings incidenten
 
-**Hulp**: contact gegevens van beveiligings incidenten worden door micro soft gebruikt om contact met u op te nemen als het micro soft Security Response Center (MSRC) detecteert dat de gegevens van de klant zijn geopend door een onrecht matige of niet-gemachtigde partij. Bekijk incidenten na het feit om te controleren of de problemen zijn opgelost.
+**Hulp**: contact gegevens van beveiligings incidenten worden door micro soft gebruikt om contact met u op te nemen als het micro soft Security Response Center (MSRC) detecteert dat de gegevens van de klant zijn geopend door een onrecht matige of niet-gemachtigde partij. 
+
+Bekijk incidenten na het feit om te controleren of de problemen zijn opgelost.
 
 - [De Azure Security Center Security-contact persoon instellen](../security-center/security-center-provide-security-contact-details.md)
 
-**Monitoring door Azure Security Center**: Ja
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10,5: beveiligings waarschuwingen opnemen in uw reactie systeem van uw incident
 
-**Hulp**: Security Center waarschuwingen en aanbevelingen exporteren met de functie continue export. Met doorlopend exporteren kunt u waarschuwingen en aanbevelingen hand matig of op een doorlopende manier exporteren. U kunt ook de Security Center Data Connector kiezen om de waarschuwingen naar Azure Sentinel te streamen op basis van de zakelijke vereisten van de organisatie.
+**Hulp**: Security Center waarschuwingen en aanbevelingen exporteren met behulp van de doorlopende export functie. Met doorlopend exporteren kunt u waarschuwingen en aanbevelingen hand matig of op een doorlopende manier exporteren. 
+
+Kies de Security Center Data Connector om de waarschuwingen te streamen naar Azure Sentinel, op basis van de behoeften van de organisatie.
 
 - [Continue export configureren](../security-center/continuous-export.md)
 
 - [Waarschuwingen streamen naar Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10,6: de reactie op beveiligings waarschuwingen automatiseren
 
-**Hulp**: gebruik de functie werk stroom automatisering in azure Security Center om automatisch reacties te activeren via ' Logic apps ' in beveiligings waarschuwingen en aanbevelingen.
+**Hulp**: gebruik de functie werk stroom automatisering in Security Center om automatisch reacties te activeren via ' Logic apps ' in beveiligings waarschuwingen en aanbevelingen.
 
 - [Werk stroom automatisering en Logic Apps configureren](../security-center/workflow-automation.md)
 
-**Azure Security Center-bewaking**: Niet van toepassing
-
 **Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking**: geen
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Penetratietests en Red Team-oefeningen
 
@@ -1368,15 +1359,17 @@ Markeer abonnementen duidelijk (bijvoorbeeld productie, niet-productie) en maak 
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1: voert regel matig indringings tests van uw Azure-resources uit en zorgt voor herbemiddeling van alle essentiële beveiligings resultaten
 
-**Richt lijnen**: Volg de micro soft-regels om ervoor te zorgen dat de indringings tests niet worden geschonden door het micro soft-beleid: https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1
+**Richt lijnen**: Volg de micro soft-regels om ervoor te zorgen dat de indringings tests niet worden geschonden door het micro soft-beleid. Meer informatie over de strategie van micro soft en de uitvoering van de implementatie van Red Teaming en live site penetratie op basis van door micro soft beheerde Cloud infrastructuur,-services en-toepassingen, vindt u op de koppelingen waarnaar wordt verwezen.
 
-- [U vindt hier meer informatie over de strategie van micro soft en de uitvoering van Red Teaming en live site indringings tests met door micro soft beheerde Cloud infrastructuur,-services en-toepassingen.](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+- [Regels voor het inzetten van penetratietests](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 
-**Azure Security Center-bewaking**: Niet van toepassing
+- [Microsoft Cloud Red Teaming](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 **Verantwoordelijkheid**: Gedeeld
 
+**Azure Security Center bewaking**: geen
+
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie de [Azure Security-Bench Mark](../security/benchmarks/overview.md)
-- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)
+- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
+- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)

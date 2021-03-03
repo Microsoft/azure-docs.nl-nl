@@ -7,12 +7,12 @@ ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 09/11/2020
-ms.openlocfilehash: a95cacafc5b1d00b1e4d04fd84cdda2de72b6a59
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 4545c3529baf92e2f90d9289ec6828ad9a720e3a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100523002"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738001"
 ---
 # <a name="troubleshoot-mapping-data-flows-in-azure-data-factory"></a>Problemen met toewijzing van gegevens stromen in Azure Data Factory oplossen
 
@@ -132,7 +132,7 @@ In dit artikel worden algemene probleemoplossings methoden besproken voor het to
  
 - **Bericht**: er is een fout opgetreden tijdens het uitvoeren van het cluster. Probeer het opnieuw met een Integration runtime met grotere kern aantallen en/of geoptimaliseerd voor geheugen
 - **Oorzaken**: het geheugen van het cluster wordt niet meer gebruikt.
-- **Aanbeveling**: clusters voor fout opsporing zijn bedoeld voor ontwikkelings doeleinden. Profiteer van de bemonsterde gegevens bemonstering van het juiste reken type en de grootte om de payload uit te voeren. Raadpleeg de [hand leiding voor gegevensstroom prestaties](https://docs.microsoft.com/azure/data-factory/concepts-data-flow-performance) voor het afstemmen van de gegevens stromen voor de beste prestaties.
+- **Aanbeveling**: clusters voor fout opsporing zijn bedoeld voor ontwikkelings doeleinden. Profiteer van de bemonsterde gegevens bemonstering van het juiste reken type en de grootte om de payload uit te voeren. Raadpleeg de [hand leiding voor gegevensstroom prestaties](./concepts-data-flow-performance.md) voor het afstemmen van de gegevens stromen voor de beste prestaties.
 
 ### <a name="error-code-df-executor-illegalargument"></a>Fout code: DF-uitvoerder-illegalArgument
 - **Bericht**: Controleer of de toegangs sleutel in de gekoppelde service juist is.
@@ -182,7 +182,7 @@ In dit artikel worden algemene probleemoplossings methoden besproken voor het to
 
 - **Bericht**: er is een ongeldig bereik verstrekt.
 - **Oorzaken**: onbepaald
-- **Aanbeveling**: Controleer de waarde van de para meter en geef een geldig bereik op Referentie: [Excel-eigenschappen](https://docs.microsoft.com/azure/data-factory/format-excel#dataset-properties)op.
+- **Aanbeveling**: Controleer de waarde van de para meter en geef een geldig bereik op Referentie: [Excel-eigenschappen](./format-excel.md#dataset-properties)op.
 
 - **Bericht**: er is een ongeldig Excel-bestand ingevoerd terwijl alleen. XLSX en. xls worden ondersteund
 - **Oorzaken**: onbepaald
@@ -204,7 +204,7 @@ In dit artikel worden algemene probleemoplossings methoden besproken voor het to
 
 ### <a name="error-code-4502"></a>Fout code: 4502
 - **Bericht**: er zijn belang rijke gelijktijdige MappingDataflow-uitvoeringen waardoor storingen worden veroorzaakt door beperking onder Integration runtime.
-- **Oorzaken**: het uitvoeren van een groot aantal gegevensstroom activiteiten wordt gelijktijdig op het Integration runtime. Lees meer over de [Azure Data Factory limieten](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#data-factory-limits).
+- **Oorzaken**: het uitvoeren van een groot aantal gegevensstroom activiteiten wordt gelijktijdig op het Integration runtime. Lees meer over de [Azure Data Factory limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#data-factory-limits).
 - **Aanbeveling**: als u meer gegevens stroom activiteiten parallel wilt uitvoeren, moet u deze distribueren op meerdere integratie-Runtimes.
 
 

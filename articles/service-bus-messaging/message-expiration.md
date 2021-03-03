@@ -3,12 +3,12 @@ title: Azure Service Bus-verlopen van berichten
 description: In dit artikel wordt uitgelegd over de verval tijd en de duur van Azure Service Bus berichten. Na een dergelijke deadline wordt het bericht niet meer bezorgd.
 ms.topic: conceptual
 ms.date: 02/17/2021
-ms.openlocfilehash: a2a568f04c2607832a1fa2a8e32bc6ce8331da4d
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 505a041d2f6129b159166e9f99ce7fef779e1e66
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652068"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101698362"
 ---
 # <a name="message-expiration-time-to-live"></a>Verlopen van berichten (Time to Live)
 De payload in een bericht of een opdracht of query die een bericht overbrengt naar een ontvanger, is bijna altijd onderworpen aan een bepaalde vorm van verval deadline op toepassings niveau. Na deze deadline wordt de inhoud niet meer bezorgd of wordt de aangevraagde bewerking niet meer uitgevoerd.
@@ -20,6 +20,8 @@ De verval datum van elk afzonderlijk bericht kan worden bepaald door de eigensch
 Na het **verstrijken van de verloopt op UTC** , worden berichten niet meer in aanmerking komen voor ophalen. Het verloop heeft geen invloed op berichten die momenteel zijn vergrendeld voor levering. Deze berichten worden nog steeds normaal verwerkt. Als de vergren deling is verlopen of het bericht is afgebroken, wordt de verval datum direct van kracht.
 
 Wanneer het bericht is vergrendeld, is de toepassing mogelijk in bezit van een bericht dat is verlopen. Of de toepassing kan door gaan met het verwerken of ervoor kiest om het bericht af te breken, is de uitvoerder.
+
+U wordt aangeraden de **TTL (time-to-Live)** in te stellen voor een bericht dat in uren of dagen moet worden bewaard. Als u deze instelt op een lage waarde in seconden of milliseconden, kan het bericht verlopen voordat consumenten het kunnen gebruiken. 
 
 ## <a name="entity-level-expiration"></a>Verval datum entiteit-niveau
 Alle berichten die worden verzonden naar een wachtrij of onderwerp, zijn onderhevig aan een standaard verval datum die is ingesteld op het niveau van de entiteit. Het kan ook worden ingesteld in de portal tijdens het maken en later worden aangepast. De standaard vervaldatum wordt gebruikt voor alle berichten die naar de entiteit worden verzonden, waar time to Live niet expliciet is ingesteld. De standaard vervaldatum fungeert ook als een plafond voor de TTL-waarde (time-to-Live). Berichten die een langere time-to-Live-verloop hebben dan de standaard waarde, worden op de achtergrond aangepast aan de time-to-Live-waarde van het standaard bericht voordat deze in de wachtrij wordt gezet.

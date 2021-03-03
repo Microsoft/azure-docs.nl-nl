@@ -4,15 +4,15 @@ description: Meer informatie over Azure File Sync on-premises proxy-en Firewall 
 author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/30/2020
+ms.date: 3/02/2021
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 01ac42cce29f941a90631936ece025f02afedeaf
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: f0dbe7f32f14eb4da3d591811d619eb2e9bea397
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98673617"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101729637"
 ---
 # <a name="azure-file-sync-proxy-and-firewall-settings"></a>Proxy- en firewallinstellingen van Azure File Sync
 Azure File Sync maakt verbinding met uw on-premises servers met Azure Files, waarbij functies voor multi-site synchronisatie en Cloud lagen worden ingeschakeld. Als zodanig moet een on-premises server zijn verbonden met internet. Een IT-beheerder moet het beste pad bepalen dat de server kan bereiken in azure Cloud Services.
@@ -50,6 +50,30 @@ PowerShell-opdrachten voor het configureren van app-specifieke proxyinstellingen
 ```powershell
 Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.ServerCmdlets.dll"
 Set-StorageSyncProxyConfiguration -Address <url> -Port <port number> -ProxyCredential <credentials>
+```
+Als uw proxy server bijvoorbeeld verificatie vereist met een gebruikers naam en wacht woord, voert u de volgende Power shell-opdrachten uit:
+
+```powershell
+# IP address or name of the proxy server.
+$Address="127.0.0.1"  
+
+# The port to use for the connection to the proxy.
+$Port=8080
+
+# The user name for a proxy.
+$UserName="user_name" 
+
+# Please type or paste a string with a password for the proxy.
+$SecurePassword = Read-Host -AsSecureString
+
+$Creds = New-Object System.Management.Automation.PSCredential ($UserName, $SecurePassword)
+
+# Please verify that you have entered the password correctly.
+Write-Host $Creds.GetNetworkCredential().Password
+
+Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.ServerCmdlets.dll"
+
+Set-StorageSyncProxyConfiguration -Address $Address -Port $Port -ProxyCredential $Creds
 ```
 **Proxy-instellingen** voor alle computers zijn transparant voor de Azure file sync-agent, omdat het hele verkeer van de server via de proxy wordt doorgestuurd.
 
@@ -99,8 +123,8 @@ In de volgende tabel worden de vereiste domeinen voor communicatie beschreven:
 | **Azure Active Directory** | https://secure.aadcdn.microsoftonline-p.com | Gebruik de URL van het open bare eind punt. | Deze URL wordt geopend door de Active Directory-verificatie bibliotheek die de gebruikers interface voor de Azure File Sync-Server registratie gebruikt om zich aan te melden bij de beheerder. |
 | **Azure Storage** | &ast;. core.windows.net | &ast;. core.usgovcloudapi.net | Wanneer een bestand door de server wordt gedownload, voert de server de gegevens efficiënter uit wanneer deze rechtstreeks met de Azure-bestands share in het opslag account communiceren. De server heeft een SAS-sleutel die alleen toegang tot de doel bestands shares toestaat. |
 | **Azure File Sync** | &ast;. one.microsoft.com<br>&ast;. afs.azure.net | &ast;. afs.azure.us | Na de eerste registratie van de server ontvangt de server een regionale URL voor het Azure File Sync service-exemplaar in die regio. De-server kan de URL gebruiken om rechtstreeks en efficiënt te communiceren met het exemplaar dat de synchronisatie afhandelt. |
-| **Micro soft PKI** | https://www.microsoft.com/pki/mscorp/cps<br><http://ocsp.msocsp.com> | https://www.microsoft.com/pki/mscorp/cps<br><http://ocsp.msocsp.com> | Zodra de Azure File Sync-agent is geïnstalleerd, wordt de PKI-URL gebruikt voor het downloaden van tussenliggende certificaten die nodig zijn om te communiceren met de Azure File Sync-Service en de Azure-bestands share. De OCSP-URL wordt gebruikt om de status van een certificaat te controleren. |
-| **Microsoft Update** | &ast;.update.microsoft.com<br>&ast;.download.windowsupdate.com<br>&ast;.dl.delivery.mp.microsoft.com<br>&ast;.emdl.ws.microsoft.com | &ast;.update.microsoft.com<br>&ast;.download.windowsupdate.com<br>&ast;.dl.delivery.mp.microsoft.com<br>&ast;.emdl.ws.microsoft.com | Zodra de Azure File Sync-agent is geïnstalleerd, worden de Microsoft Update Url's gebruikt om Azure File Sync agent-updates te downloaden. |
+| **Micro soft PKI** |  https://www.microsoft.com/pki/mscorp/cps<br>http://crl.microsoft.com/pki/mscorp/crl/<br>http://mscrl.microsoft.com/pki/mscorp/crl/<br>http://ocsp.msocsp.com<br>http://ocsp.digicert.com/<br>http://crl3.digicert.com/ | https://www.microsoft.com/pki/mscorp/cps<br>http://crl.microsoft.com/pki/mscorp/crl/<br>http://mscrl.microsoft.com/pki/mscorp/crl/<br>http://ocsp.msocsp.com<br>http://ocsp.digicert.com/<br>http://crl3.digicert.com/ | Zodra de Azure File Sync-agent is geïnstalleerd, wordt de PKI-URL gebruikt voor het downloaden van tussenliggende certificaten die nodig zijn om te communiceren met de Azure File Sync-Service en de Azure-bestands share. De OCSP-URL wordt gebruikt om de status van een certificaat te controleren. |
+| **Microsoft Update** | &ast;.update.microsoft.com<br>&ast;.download.windowsupdate.com<br>&ast;. ctldl.windowsupdate.com<br>&ast;.dl.delivery.mp.microsoft.com<br>&ast;.emdl.ws.microsoft.com | &ast;.update.microsoft.com<br>&ast;.download.windowsupdate.com<br>&ast;. ctldl.windowsupdate.com<br>&ast;.dl.delivery.mp.microsoft.com<br>&ast;.emdl.ws.microsoft.com | Zodra de Azure File Sync-agent is geïnstalleerd, worden de Microsoft Update Url's gebruikt om Azure File Sync agent-updates te downloaden. |
 
 > [!Important]
 > Bij het toestaan van verkeer naar &ast; . AFS.Azure.net is verkeer alleen mogelijk voor de synchronisatie service. Er zijn geen andere micro soft-services die gebruikmaken van dit domein.
@@ -110,7 +134,7 @@ Als &ast; . AFS.Azure.net of &ast; . One.Microsoft.com te breed is, kunt u de co
 
 Voor bedrijfs continuïteit en herstel na nood gevallen (BCDR) kunt u uw Azure-bestands shares opgeven in een globaal redundante (GRS)-opslag account. Als dat het geval is, zal de Azure-bestands shares een failover uitvoeren naar de gekoppelde regio in het geval van een blijvende regionale storing. Azure File Sync gebruikt dezelfde regionale koppeling als opslag. Als u dus GRS-opslag accounts gebruikt, moet u extra Url's inschakelen zodat uw server kan communiceren met de gekoppelde regio voor Azure File Sync. In de volgende tabel wordt deze ' gekoppelde regio ' aangeroepen. Daarnaast is er een Traffic Manager-profiel-URL die ook moet worden ingeschakeld. Zo zorgt u ervoor dat netwerk verkeer naadloos opnieuw kan worden gerouteerd naar de gekoppelde regio in het geval van een failover en wordt "detectie-URL" genoemd in de onderstaande tabel.
 
-| Cloud  | Regio | URL van het primaire eind punt | Gekoppelde regio | Detectie-URL |
+| Cloud  | Region | URL van het primaire eind punt | Gekoppelde regio | Detectie-URL |
 |--------|--------|----------------------|---------------|---------------|
 | Openbaar |Australië - oost | https: \/ /australiaeast01.AFS.Azure.net<br>https: \/ /kailani-Aue.One.Microsoft.com | Australië - zuidoost | https: \/ /TM-australiaeast01.AFS.Azure.net<br>https: \/ /TM-kailani-Aue.One.Microsoft.com |
 | Openbaar |Australië - zuidoost | https: \/ /australiasoutheast01.AFS.Azure.net<br>https: \/ /kailani-aus.One.Microsoft.com | Australië - oost | https: \/ /TM-australiasoutheast01.AFS.Azure.net<br>https: \/ /TM-kailani-aus.One.Microsoft.com |
@@ -137,10 +161,10 @@ Voor bedrijfs continuïteit en herstel na nood gevallen (BCDR) kunt u uw Azure-b
 | Openbaar | Zwitserland - west | https: \/ /switzerlandwest01.AFS.Azure.net<br>https: \/ /TM-switzerlandwest01.AFS.Azure.net | Zwitserland - noord | https: \/ /switzerlandnorth01.AFS.Azure.net<br>https: \/ /TM-switzerlandnorth01.AFS.Azure.net |
 | Openbaar | Verenigd Koninkrijk Zuid | https: \/ /uksouth01.AFS.Azure.net<br>https: \/ /kailani-UKs.One.Microsoft.com | Verenigd Koninkrijk West | https: \/ /TM-uksouth01.AFS.Azure.net<br>https: \/ /TM-kailani-UKs.One.Microsoft.com |
 | Openbaar | Verenigd Koninkrijk West | https: \/ /ukwest01.AFS.Azure.net<br>https: \/ /kailani-UKW.One.Microsoft.com | Verenigd Koninkrijk Zuid | https: \/ /TM-ukwest01.AFS.Azure.net<br>https: \/ /TM-kailani-UKW.One.Microsoft.com |
-| Openbaar | VS - west-centraal | https: \/ /westcentralus01.AFS.Azure.net | West US 2 | https: \/ /TM-westcentralus01.AFS.Azure.net |
+| Openbaar | VS - west-centraal | https: \/ /westcentralus01.AFS.Azure.net | VS - west 2 | https: \/ /TM-westcentralus01.AFS.Azure.net |
 | Openbaar | Europa -west | https: \/ /westeurope01.AFS.Azure.net<br>https: \/ /kailani6.One.Microsoft.com | Europa - noord | https: \/ /TM-westeurope01.AFS.Azure.net<br>https: \/ /TM-kailani6.One.Microsoft.com |
 | Openbaar | VS - west | https: \/ /westus01.AFS.Azure.net<br>https: \/ /kailani.One.Microsoft.com | VS - oost | https: \/ /TM-westus01.AFS.Azure.net<br>https: \/ /TM-kailani.One.Microsoft.com |
-| Openbaar | West US 2 | https: \/ /westus201.AFS.Azure.net | VS - west-centraal | https: \/ /TM-westus201.AFS.Azure.net |
+| Openbaar | VS - west 2 | https: \/ /westus201.AFS.Azure.net | VS - west-centraal | https: \/ /TM-westus201.AFS.Azure.net |
 | Overheid | VS (overheid) - Arizona | https: \/ /usgovarizona01.AFS.Azure.us | VS (overheid) - Texas | https: \/ /TM-usgovarizona01.AFS.Azure.us |
 | Overheid | VS (overheid) - Texas | https: \/ /usgovtexas01.AFS.Azure.us | VS (overheid) - Arizona | https: \/ /TM-usgovtexas01.AFS.Azure.us |
 
@@ -286,5 +310,5 @@ Het instellen van domein beperking van firewall regels kan een maat eenheid zijn
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Planning voor een Azure Files Sync-implementatie](storage-sync-files-planning.md)
-- [Azure File Sync implementeren](storage-sync-files-deployment-guide.md)
+- [Azure Files SYNC implementeren](storage-sync-files-deployment-guide.md)
 - [Azure File Sync bewaken](storage-sync-files-monitoring.md)

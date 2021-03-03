@@ -7,12 +7,12 @@ ms.service: frontdoor
 ms.topic: how-to
 ms.date: 02/18/2021
 ms.author: qixwang
-ms.openlocfilehash: 47134712bb953d9194bd943e228bae681877dcaa
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: ebc71ea2d354caf0c8f31b1231ecc1487237dd29
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101098877"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101741885"
 ---
 # <a name="set-up-an-azure-front-door-standardpremium-preview-origin"></a>Een Azure front deur Standard/Premium-oorsprong (preview) instellen
 
@@ -60,16 +60,16 @@ Voordat u een Azure front-deur standaard/Premium-oorsprong kunt maken, moet u te
     > [!IMPORTANT]
     > Tijdens de configuratie valideert Api's niet als de oorsprong niet toegankelijk is vanuit de front-deur omgevingen. Zorg ervoor dat de front deur uw oorsprong kan bereiken.
 
-1. Selecteer **toevoegen** om de nieuwe oorsprong te maken. De gemaakte oorsprong moet worden weer gegeven in de lijst met oorsprong met de groep
+1. Selecteer **toevoegen** om de nieuwe oorsprong te maken. De gemaakte oorsprong moet worden weer gegeven in de lijst oorsprong met de groep.
   
-    :::image type="content" source="../media/how-to-create-origin/add-origin-view.png" alt-text="Scherm opname van een originele pagina toevoegen.":::
+    :::image type="content" source="../media/how-to-create-origin/origin-list-view.png" alt-text="Scherm opname van de oorsprong in de lijst weergave.":::
 
 1. Selecteer **toevoegen** om de oorspronkelijke groep toe te voegen aan het huidige eind punt. De oorspronkelijke groep moet worden weer gegeven in het deel venster oorspronkelijke groep.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 Als u een oorspronkelijke groep wilt verwijderen wanneer u deze niet meer nodig hebt, klikt u op de **..** . en selecteert u **verwijderen** in de vervolg keuzelijst.
 
-:::image type="content" source="../media/how-to-create-origin/add-origin-view.png" alt-text="Scherm opname van het verwijderen van een oorspronkelijke groep.":::
+:::image type="content" source="../media/how-to-create-origin/delete-origin-group.png" alt-text="Scherm opname van het verwijderen van een oorspronkelijke groep.":::
 
 Als u een oorsprong wilt verwijderen wanneer u deze niet meer nodig hebt, klikt u op de **..** . en selecteert u **verwijderen** in de vervolg keuzelijst. 
 

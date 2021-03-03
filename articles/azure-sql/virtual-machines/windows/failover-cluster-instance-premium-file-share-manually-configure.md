@@ -14,17 +14,17 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/18/2020
 ms.author: mathoma
-ms.openlocfilehash: 2fb9677f0874de1fb715082d58a0e354880e654b
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 86caf39e0d31a41ca454c65311ff2fab52b56f5b
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97358068"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101691158"
 ---
 # <a name="create-an-fci-with-a-premium-file-share-sql-server-on-azure-vms"></a>Een FCI maken met een Premium-bestands share (SQL Server op Azure Vm's)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
-In dit artikel wordt uitgelegd hoe u een FCI (failover cluster instance) maakt met SQL Server op Azure Virtual Machines (Vm's) met behulp van een [Premium-bestands share](../../../storage/files/storage-how-to-create-premium-fileshare.md).
+In dit artikel wordt uitgelegd hoe u een FCI (failover cluster instance) maakt met SQL Server op Azure Virtual Machines (Vm's) met behulp van een [Premium-bestands share](../../../storage/files/storage-how-to-create-file-share.md).
 
 Premium-bestands shares zijn Opslagruimten Direct (SSD), consistente bestands shares met een lage latentie die volledig worden ondersteund voor gebruik met failoverclusters voor SQL Server 2012 of hoger op Windows Server 2012 of hoger. Premium-bestands shares bieden meer flexibiliteit, waardoor u een bestands share zonder uitval tijd kunt verg Roten of verkleinen en schalen.
 
@@ -37,12 +37,12 @@ Voordat u de instructies in dit artikel hebt voltooid, hebt u het volgende nodig
 - Een Azure-abonnement.
 - Een account met machtigingen voor het maken van objecten op zowel virtuele Azure-machines als in Active Directory.
 - [Twee of meer voor bereide virtuele Windows Azure-machines](failover-cluster-instance-prepare-vm.md) in een [beschikbaarheidsset](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set) of verschillende [beschikbaarheids zones](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address).
-- Een [Premium-bestands share](../../../storage/files/storage-how-to-create-premium-fileshare.md) die moet worden gebruikt als het geclusterde station, op basis van de opslag quota van uw Data Base voor uw gegevens bestanden.
+- Een [Premium-bestands share](../../../storage/files/storage-how-to-create-file-share.md) die moet worden gebruikt als het geclusterde station, op basis van de opslag quota van uw Data Base voor uw gegevens bestanden.
 - De meest recente versie van [Power shell](/powershell/azure/install-az-ps). 
 
 ## <a name="mount-premium-file-share"></a>Premium-bestands share koppelen
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). en ga naar uw opslag account.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). en ga naar uw opslag account.
 1. Ga naar **Bestands shares** onder **File Service** en selecteer vervolgens de Premium-bestands share die u wilt gebruiken voor uw SQL-opslag.
 1. Selecteer **verbinding** om de Connection String voor uw bestands share weer te geven.
 1. Selecteer in de vervolg keuzelijst de stationsletter die u wilt gebruiken en Kopieer beide code blokken naar Klad blok.
@@ -209,7 +209,7 @@ Als u verkeer op de juiste manier wilt door sturen naar het huidige primaire kno
 
 ## <a name="limitations"></a>Beperkingen
 
-- Micro soft Distributed Transaction Coordinator (MSDTC) wordt niet ondersteund in Windows Server 2016 en lager. 
+- Micro soft gedistribueerde transactie (MSDTC) wordt niet ondersteund in Windows Server 2016 en lager. 
 - FileStream wordt niet ondersteund voor een failovercluster met een Premium-bestands share. Als u FileStream wilt gebruiken, implementeert u het cluster met behulp van [opslagruimten direct](failover-cluster-instance-storage-spaces-direct-manually-configure.md) of [gedeelde Azure-schijven](failover-cluster-instance-azure-shared-disks-manually-configure.md) .
 - Alleen registreren met de SQL IaaS agent-extensie in de [Lightweight-beheer modus](sql-server-iaas-agent-extension-automate-management.md#management-modes) wordt ondersteund. 
 

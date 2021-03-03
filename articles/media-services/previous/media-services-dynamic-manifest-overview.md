@@ -14,12 +14,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 2d83b114487f882b7ee38d3d71c84b6abec04a2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 96f0c4d4ea7c32e2b58807204ef45b75feae7132
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89266915"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101727325"
 ---
 # <a name="filters-and-dynamic-manifests"></a>Filters en dynamische manifesten
 
@@ -29,7 +29,7 @@ ms.locfileid: "89266915"
 > * [Versie 2](media-services-dynamic-manifest-overview.md)
 > * [Versie 3](../latest/filters-dynamic-manifest-overview.md)
 
-Met ingang van 2,17 versie Media Services kunt u filters voor uw assets definiëren. Deze filters zijn regels aan de server zijde waarmee uw klanten dingen kunnen doen: alleen een sectie van een video afspelen (in plaats van de volledige video afspelen), of alleen een subset van audio-en video weergaven opgeven die het apparaat van de klant kan verwerken (in plaats van alle vertoningen die zijn gekoppeld aan de Asset). Dit filter van uw assets wordt bereikt via de **dynamische manifesten**die worden gemaakt op de aanvraag van uw klant om een video te streamen op basis van opgegeven filter (s).
+Met ingang van 2,17 versie Media Services kunt u filters voor uw assets definiëren. Deze filters zijn regels aan de server zijde waarmee uw klanten dingen kunnen doen: alleen een sectie van een video afspelen (in plaats van de volledige video afspelen), of alleen een subset van audio-en video weergaven opgeven die het apparaat van de klant kan verwerken (in plaats van alle vertoningen die zijn gekoppeld aan de Asset). Dit filter van uw assets wordt bereikt via de **dynamische manifesten** die worden gemaakt op de aanvraag van uw klant om een video te streamen op basis van opgegeven filter (s).
 
 In dit onderwerp worden algemene scenario's besproken waarin het gebruik van filters nuttig is voor uw klanten en koppelingen naar onderwerpen waarin wordt uitgelegd hoe u via een programma filters maakt.
 
@@ -88,11 +88,11 @@ Media Services biedt **dynamische manifesten** op basis van vooraf gedefinieerde
 
 MPEG DASH-URL met filter
 
-`http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=mpd-time-csf,filter=MyLocalFilter)`
+`http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=mpd-time-csf,filter=MyLocalFilter)`
 
 Smooth Streaming URL met filter
 
-`http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(filter=MyLocalFilter)`
+`http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(filter=MyLocalFilter)`
 
 
 Zie overzicht van het [leveren van inhoud](media-services-deliver-content-overview.md)voor meer informatie over het leveren van uw inhoud en het bouwen van streaming-url's.
@@ -111,7 +111,7 @@ Er zijn twee soorten Asset-filters:
 Globale en lokale filter typen hebben precies dezelfde eigenschappen. Het belangrijkste verschil tussen de twee is voor welke scenario's het type bestander geschikter is. Globale filters zijn algemeen geschikt voor apparaatprofielen (weergave filters) waarin lokale filters kunnen worden gebruikt om een specifiek activum te bijsnijden.
 
 ## <a name="common-scenarios"></a><a id="scenarios"></a>Algemene scenario's
-Zoals eerder is vermeld, kunt u bij het leveren van uw inhoud aan klanten (Live-gebeurtenissen of video-on-demand) het doel bieden een video van hoge kwaliteit te leveren aan verschillende apparaten onder verschillende netwerk omstandigheden. Daarnaast hebt u mogelijk andere vereisten voor het filteren van uw assets en het gebruik van **dynamische manifest**s. De volgende secties geven een kort overzicht van verschillende filter scenario's.
+Zoals eerder is vermeld, kunt u bij het leveren van uw inhoud aan klanten (Live-gebeurtenissen of video-on-demand) het doel bieden een video van hoge kwaliteit te leveren aan verschillende apparaten onder verschillende netwerk omstandigheden. Daarnaast hebt u mogelijk andere vereisten voor het filteren van uw assets en het gebruik van **dynamische manifest** s. De volgende secties geven een kort overzicht van verschillende filter scenario's.
 
 * Geef alleen een subset van audio-en video weergaven op die door bepaalde apparaten kunnen worden verwerkt (in plaats van alle vertoningen die zijn gekoppeld aan de Asset). 
 * Alleen een sectie van een video afspelen (in plaats van de hele video af te spelen).

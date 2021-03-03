@@ -3,12 +3,12 @@ title: Back-upfouten van SAP HANA databases oplossen
 description: Hierin wordt beschreven hoe u veelvoorkomende fouten oplost die zich kunnen voordoen wanneer u Azure Backup gebruikt om back-ups te maken van SAP HANA-data bases.
 ms.topic: troubleshooting
 ms.date: 11/7/2019
-ms.openlocfilehash: b9fa73ee38e337a547816432212bc68d419f40bb
-ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
+ms.openlocfilehash: 22800adc323bda8a60278160f24bc559103fb57e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95411322"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101713334"
 ---
 # <a name="troubleshoot-backup-of-sap-hana-databases-on-azure"></a>Problemen met back-ups van SAP HANA-data bases in azure oplossen
 
@@ -46,13 +46,6 @@ Raadpleeg de [vereisten](tutorial-backup-sap-hana-db.md#prerequisites) en [wat h
 | Foutbericht      | <span style="font-weight:normal">De opgegeven SAP HANA bewerking wordt niet ondersteund</span>              |
 | ------------------ | ------------------------------------------------------------ |
 | **Mogelijke oorzaken**    | Azure Backup voor SAP HANA biedt geen ondersteuning voor incrementele back-up en acties die worden uitgevoerd op SAP HANA systeem eigen clients (Studio/cockpit/DBA-cockpit) |
-| **Aanbevolen actie** | Zie [hier](./sap-hana-backup-support-matrix.md#scenario-support)voor meer informatie. |
-
-### <a name="usererrorhanapodoesnotsupportbackuptype"></a>UserErrorHANAPODoesNotSupportBackupType
-
-| Foutbericht      | <span style="font-weight:normal">Deze SAP HANA-Data Base biedt geen ondersteuning voor het aangevraagde back-uptype</span>  |
-| ------------------ | ------------------------------------------------------------ |
-| **Mogelijke oorzaken**    | Azure Backup biedt geen ondersteuning voor incrementele back-ups en back-ups met behulp van moment opnamen |
 | **Aanbevolen actie** | Zie [hier](./sap-hana-backup-support-matrix.md#scenario-support)voor meer informatie. |
 
 ### <a name="usererrorhanalsnvalidationfailure"></a>UserErrorHANALSNValidationFailure

@@ -6,18 +6,18 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/21/2020
-ms.openlocfilehash: c911b3a2ef927bf000513665dfafd735e3bcf181
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: b747a4b58c9c460178d415d0b45ade814723d8fe
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609985"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719862"
 ---
 # <a name="collect-windows-event-log-data-sources-with-log-analytics-agent"></a>Gegevens bronnen van Windows-gebeurtenis logboeken verzamelen met Log Analytics-agent
 Windows-gebeurtenis logboeken zijn een van de meest voorkomende [gegevens bronnen](../agents/agent-data-sources.md) voor log Analytics-agents op virtuele Windows-machines, omdat veel toepassingen naar het Windows-gebeurtenis logboek schrijven.  U kunt gebeurtenissen uit standaard logboeken, zoals systeem en toepassing, verzamelen naast het opgeven van aangepaste logboeken die zijn gemaakt door toepassingen die u wilt bewaken.
 
 > [!IMPORTANT]
-> In dit artikel wordt Inge gaan op het verzamelen van Windows-gebeurtenissen met de [log Analytics agent](../platform/log-analytics-agent.md) , een van de agents die door Azure monitor worden gebruikt. Andere agents verzamelen verschillende gegevens en worden anders geconfigureerd. Zie [overzicht van Azure monitor agents](../agents/agents-overview.md) voor een lijst met beschik bare agents en de gegevens die ze kunnen verzamelen.
+> In dit artikel wordt Inge gaan op het verzamelen van Windows-gebeurtenissen met de [log Analytics agent](./log-analytics-agent.md) , een van de agents die door Azure monitor worden gebruikt. Andere agents verzamelen verschillende gegevens en worden anders geconfigureerd. Zie [overzicht van Azure monitor agents](../agents/agents-overview.md) voor een lijst met beschik bare agents en de gegevens die ze kunnen verzamelen.
 
 ![Windows-gebeurtenissen](media/data-sources-windows-events/overview.png)     
 
@@ -63,7 +63,7 @@ Windows-gebeurtenis records hebben een type **gebeurtenis** en hebben de eigensc
 ## <a name="log-queries-with-windows-events"></a>Query's vastleggen in Logboeken met Windows-gebeurtenissen
 De volgende tabel bevat verschillende voor beelden van logboek query's waarmee Windows-gebeurtenis records worden opgehaald.
 
-| Query’s uitvoeren | Description |
+| Query’s uitvoeren | Beschrijving |
 |:---|:---|
 | Gebeurtenis |Alle Windows-gebeurtenissen. |
 | Gebeurtenis &#124; waarbij EventLevelName = = "Error" |Alle Windows-gebeurtenissen met de ernst van de fout. |
@@ -73,5 +73,5 @@ De volgende tabel bevat verschillende voor beelden van logboek query's waarmee W
 
 ## <a name="next-steps"></a>Volgende stappen
 * Configureer Log Analytics voor het verzamelen van andere [gegevens bronnen](../agents/agent-data-sources.md) voor analyse.
-* Meer informatie over [logboek query's](../log-query/log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen.  
+* Meer informatie over [logboek query's](../logs/log-query-overview.md) voor het analyseren van de gegevens die zijn verzameld uit gegevens bronnen en oplossingen.  
 * Configureer het [verzamelen van prestatie meter items](data-sources-performance-counters.md) van uw Windows-agents.

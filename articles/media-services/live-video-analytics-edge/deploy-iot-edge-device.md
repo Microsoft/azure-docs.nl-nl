@@ -3,12 +3,12 @@ title: Live video Analytics implementeren op een IoT Edge apparaat-Azure
 description: In dit artikel worden de stappen beschreven die u helpen bij het implementeren van live video Analytics op uw IoT Edge-apparaat. U kunt dit bijvoorbeeld doen als u toegang hebt tot een lokale Linux-machine en/of eerder een Azure Media Services-account hebt gemaakt.
 ms.topic: how-to
 ms.date: 09/09/2020
-ms.openlocfilehash: ff5dbc8e643137008aa7819b455adcf97c05bfc9
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 01b98c7a1f4073adcd8dea7cbfbfc57abc3787c1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99491787"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101718927"
 ---
 # <a name="deploy-live-video-analytics-on-an-iot-edge-device"></a>Live video Analytics implementeren op een IoT Edge apparaat
 
@@ -23,7 +23,7 @@ In dit artikel worden de stappen beschreven die u helpen bij het implementeren v
 * Een x86-64-of een ARM64-apparaat met een van de [ondersteunde Linux-besturings systemen](../../iot-edge/support.md#operating-systems)
 * Azure-abonnement waarvoor u [eigenaars bevoegdheden](../../role-based-access-control/built-in-roles.md#owner) hebt
 * [IoT Hub maken en instellen](../../iot-hub/iot-hub-create-through-portal.md)
-* [IoT Edge-apparaat registreren](../../iot-edge/how-to-manual-provision-symmetric-key.md)
+* [IoT Edge-apparaat registreren](../../iot-edge/how-to-register-device.md)
 * [Installeer de Azure IoT Edge runtime op op Debian gebaseerde Linux-systemen](../../iot-edge/how-to-install-iot-edge.md)
 * [Een Azure Media Services-account maken](../latest/create-account-howto.md)
 
@@ -61,8 +61,8 @@ Volg de stappen in dit artikel om referenties op te halen voor toegang tot de me
 Als u de live video Analytics op IoT Edge module wilt uitvoeren, maakt u een lokale gebruikers account met zo min mogelijk bevoegdheden. Voer bijvoorbeeld de volgende opdrachten uit op uw Linux-computer:
 
 ```
-sudo groupadd -g 1010 localuser
-sudo adduser --home /home/edgeuser --uid 1010 -gid 1010 edgeuser
+sudo groupadd -g 1010 localusergroup
+sudo useradd --home-dir /home/edgeuser --uid 1010 --gid 1010 lvaedgeuser
 ```
 
 ## <a name="granting-permissions-to-device-storage"></a>Machtigingen verlenen voor opslag van apparaten
@@ -72,15 +72,15 @@ Nu u een lokaal gebruikers account hebt gemaakt,
 * U hebt een lokale map nodig om de configuratie gegevens van de toepassing op te slaan. Maak een map en verleen machtigingen voor het lokalegebruiker-account naar die map met behulp van de volgende opdrachten:
 
 ```
-sudo mkdir /var/lib/azuremediaservices
-sudo chown -R edgeuser /var/lib/azuremediaservices
+sudo mkdir -p /var/lib/azuremediaservices
+sudo chown -R lvaedgeuser /var/lib/azuremediaservices
 ```
 
 * U hebt ook een map nodig om [Video's op te nemen in een lokaal bestand](event-based-video-recording-concept.md#video-recording-based-on-events-from-other-sources). Gebruik de volgende opdrachten om een lokale map voor hetzelfde te maken:
 
 ```
-sudo mkdir /var/media
-sudo chown -R edgeuser /var/media
+sudo mkdir -p /var/media
+sudo chown -R lvaedgeuser /var/media
 ```
 
 ## <a name="deploy-live-video-analytics-edge-module"></a>Live video Analytics Edge-module implementeren

@@ -7,12 +7,12 @@ ms.date: 01/18/2021
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 3f81ae72af48ec934d1c2c2567ebdd212d8e0499
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 735ad7ad9ded6baded59ab3f08e239d1c8376b74
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98763389"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101702722"
 ---
 # <a name="migrate-your-v2-iot-central-application-to-v3"></a>Uw v2 IoT Central-toepassing migreren naar v3
 
@@ -104,7 +104,7 @@ Nadat de verplaatsing is voltooid, start u alle apparaten opnieuw op om ervoor t
 Nadat u hebt gecontroleerd of alles werkt zoals verwacht in uw nieuwe v3-toepassing, verwijdert u uw oude v2-toepassing. Met deze stap zorgt u ervoor dat er geen kosten in rekening worden gebracht voor een toepassing die u niet meer gebruikt.
 
 > [!Note]
-> Als u een toepassing wilt verwijderen, moet u gemachtigd zijn om resources te verwijderen in het Azure-abonnement dat u hebt gekozen tijdens het maken van de toepassing. Zie op [rollen gebaseerd toegangs beheer gebruiken voor het beheren van de toegang tot uw Azure-abonnements resources](../../active-directory/role-based-access-control-configure.md)voor meer informatie.
+> Als u een toepassing wilt verwijderen, moet u gemachtigd zijn om resources te verwijderen in het Azure-abonnement dat u hebt gekozen tijdens het maken van de toepassing. Zie op [rollen gebaseerd toegangs beheer gebruiken voor het beheren van de toegang tot uw Azure-abonnements resources](../../role-based-access-control/role-assignments-portal.md)voor meer informatie.
 
 1. Selecteer in uw v2-toepassing het tabblad **beheer** in het menu
 2. Selecteer **verwijderen** om uw IOT Central-toepassing permanent te verwijderen. Met deze optie worden alle gegevens die aan de toepassing zijn gekoppeld, permanent verwijderd.

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: absha
 ms.custom: mvc
-ms.openlocfilehash: 79314db13531f1fcf518c7931d4a1aa9158a172b
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: a77476086d6100cbaf49d54791972940cca0644f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397192"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708931"
 ---
 # <a name="rewrite-http-request-and-response-headers-with-azure-application-gateway---azure-portal"></a>HTTP-aanvraag-en-antwoord headers herschrijven met Azure-toepassing gateway-Azure Portal
 
@@ -31,17 +31,17 @@ Als u het opnieuw schrijven van HTTP-headers wilt configureren, moet u deze stap
 
 1. De objecten maken die vereist zijn voor het herschrijven van HTTP-headers:
 
-   - **Herschrijf actie** : wordt gebruikt om de velden aanvraag en aanvraag header op te geven die u wilt herschrijven en de nieuwe waarde voor de kopteksten. U kunt een of meer herschrijf voorwaarden koppelen met een herschrijf actie.
+   - **Herschrijf actie**: wordt gebruikt om de velden aanvraag en aanvraag header op te geven die u wilt herschrijven en de nieuwe waarde voor de kopteksten. U kunt een of meer herschrijf voorwaarden koppelen met een herschrijf actie.
 
-   - **Voor waarde voor herschrijven** : een optionele configuratie. Bij herschrijf voorwaarden wordt de inhoud van HTTP (S)-aanvragen en-antwoorden geëvalueerd. De actie herschrijven vindt plaats als de HTTP (S)-aanvraag of het antwoord overeenkomt met de voor waarde voor herschrijven.
+   - **Voor waarde voor herschrijven**: een optionele configuratie. Bij herschrijf voorwaarden wordt de inhoud van HTTP (S)-aanvragen en-antwoorden geëvalueerd. De actie herschrijven vindt plaats als de HTTP (S)-aanvraag of het antwoord overeenkomt met de voor waarde voor herschrijven.
 
      Als u meer dan één voor waarde aan een actie koppelt, treedt de actie alleen op wanneer aan alle voor waarden wordt voldaan. Met andere woorden, de bewerking is een logische en-bewerking.
 
-   - **Regel voor herschrijven** : bevat meerdere combi Naties van actie voor opnieuw schrijven/voor waarden herschrijven.
+   - **Regel voor herschrijven**: bevat meerdere combi Naties van actie voor opnieuw schrijven/voor waarden herschrijven.
 
-   - **Regel volgorde** : helpt bij het bepalen van de volg orde waarin de regels voor herschrijven worden uitgevoerd. Deze configuratie is handig wanneer u meerdere regels voor herschrijven hebt opgegeven in een herschrijfset. Een regel voor herschrijven met een lagere regel reeks waarde wordt eerst uitgevoerd. Als u dezelfde regel reeks waarde toewijst aan twee regels voor herschrijven, is de volg orde van uitvoering niet-deterministisch.
+   - **Regel volgorde**: helpt bij het bepalen van de volg orde waarin de regels voor herschrijven worden uitgevoerd. Deze configuratie is handig wanneer u meerdere regels voor herschrijven hebt opgegeven in een herschrijfset. Een regel voor herschrijven met een lagere regel reeks waarde wordt eerst uitgevoerd. Als u dezelfde regel reeks waarde toewijst aan twee regels voor herschrijven, is de volg orde van uitvoering niet-deterministisch.
 
-   - **Set opnieuw schrijven** : bevat meerdere herschrijf regels die worden gekoppeld aan een regel voor het door sturen van aanvragen.
+   - **Set opnieuw schrijven**: bevat meerdere herschrijf regels die worden gekoppeld aan een regel voor het door sturen van aanvragen.
 
 2. Koppel de herschrijfset aan een routerings regel. De herschrijf configuratie wordt gekoppeld aan de bron-listener via de routerings regel. Wanneer u een basis regel voor door sturen gebruikt, wordt de configuratie voor het opnieuw schrijven van kopteksten gekoppeld aan een bronhost en is het herschrijven van de globale header. Wanneer u een op pad gebaseerde routerings regel gebruikt, wordt de configuratie voor het herschrijven van kopteksten gedefinieerd op de URL-pad toewijzing. In dat geval geldt dit alleen voor het specifieke pad van een site.
 
@@ -59,7 +59,7 @@ In dit voor beeld wijzigen we een omleidings-URL door de locatie header te hersc
 
 2. Selecteer **herschrijf bewerkingen** in het linkerdeel venster.
 
-3. Selecteer **set herschrijven** :
+3. Selecteer **set herschrijven**:
 
    ![Set voor herschrijven toevoegen](media/rewrite-http-headers-portal/add-rewrite-set.png)
 
@@ -67,7 +67,7 @@ In dit voor beeld wijzigen we een omleidings-URL door de locatie header te hersc
 
    - Voer de naam in voor de herschrijfset in het vak **naam** .
    - Selecteer een of meer regels die worden vermeld in de lijst **gekoppelde routerings regels** . U kunt alleen regels selecteren die niet zijn gekoppeld aan andere herschrijf sets. De regels die al zijn gekoppeld aan andere herschrijf sets, worden grijs weer gegeven.
-   - Selecteer **Volgende**.
+   - Selecteer **Next**.
    
      ![Naam en koppeling toevoegen](media/rewrite-http-headers-portal/name-and-association.png)
 
@@ -99,7 +99,7 @@ In dit voor beeld wijzigen we een omleidings-URL door de locatie header te hersc
 
    - Selecteer in de lijst **operator** de optie **gelijk aan (=)**.
 
-   - Geef een reguliere-expressie patroon op. In dit voor beeld gebruiken we het patroon  `(https?):\/\/.*azurewebsites\.net(.*)$` .
+   - Geef een reguliere-expressie patroon op. In dit voor beeld gebruiken we het patroon `(https?)://.*azurewebsites.net(.*)$` .
 
    - Selecteer **OK**.
 

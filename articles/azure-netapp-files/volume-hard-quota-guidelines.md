@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/05/2021
 ms.author: b-juche
-ms.openlocfilehash: b173342c1c384213e88f216334b5e03cd8b7bea7
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: b25d312e6710a07f523c4acdb0fd4b970ce4a2d7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100374487"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101740083"
 ---
 # <a name="what-changing-to-volume-hard-quota-means-for-your-azure-netapp-files-service"></a>Wat wordt overgeschakeld naar het volume vaste quotum voor uw Azure NetApp Files-service
 
 Vanaf het begin van de service heeft Azure NetApp Files een capaciteits pool inrichten en een mechanisme voor automatische groei gebruikt. Azure NetApp Files volumes worden dun ingericht op een door de klant ingerichte capaciteits groep van een geselecteerde laag en grootte. Volume grootten (quota's) worden gebruikt voor prestaties en capaciteit en de quota's kunnen op elk gewenst moment worden aangepast. Dit gedrag houdt in dat het volume quotum op dit moment een prestatie hendel is die wordt gebruikt om de band breedte naar het volume te beheren. Op dit moment groeien de capaciteits Pools automatisch wanneer de capaciteit omhoog wordt gevuld.   
 
 > [!IMPORTANT] 
-> Het Azure NetApp Files gedrag van het inrichten van het volume en de capaciteits pool wordt gewijzigd in een *hand matig* *en te* bepalen mechanisme. **Vanaf 1 april 2021 worden de bandbreedte prestaties, evenals de ingerichte capaciteit en de onderliggende capaciteits groepen, niet langer automatisch uitgebreid wanneer de grootte van het volume wordt overschreden.** 
+> Het Azure NetApp Files gedrag van het inrichten van het volume en de capaciteits pool wordt gewijzigd in een *hand matig* *en te* bepalen mechanisme. **Vanaf 1 april 2021 (bijgewerkt) worden de bandbreedte prestaties, evenals de ingerichte capaciteit en de onderliggende capaciteits groepen, niet meer automatisch uitgebreid wanneer de volume grootten (quotum) worden beheerd.** 
 
 ## <a name="reasons-for-the-change-to-volume-hard-quota"></a>Redenen voor de wijziging van het volume vaste quotum
 
@@ -185,8 +185,8 @@ In sommige gevallen beschikt de hosting-capaciteits groep niet over voldoende ca
 
 U kunt de [Azure NETAPP files cli-hulpprogram ma's](azure-netapp-files-sdk-cli.md#cli-tools), inclusief de Azure CLI en Azure PowerShell, gebruiken om de grootte van het volume of de capaciteits groep hand matig te wijzigen.  De volgende twee opdrachten kunnen worden gebruikt voor het beheren van Azure NetApp Files volume-en pool bronnen:  
 
-* [`az netappfiles pool`](https://docs.microsoft.com/cli/azure/netappfiles/pool?view=azure-cli-latest&preserve-view=true)
-* [`az netappfiles volume`](https://docs.microsoft.com/cli/azure/netappfiles/volume?view=azure-cli-latest&preserve-view=true)
+* [`az netappfiles pool`](/cli/azure/netappfiles/pool?preserve-view=true&view=azure-cli-latest)
+* [`az netappfiles volume`](/cli/azure/netappfiles/volume?preserve-view=true&view=azure-cli-latest)
 
 Als u Azure NetApp Files resources wilt beheren met behulp van Azure CLI, opent u de Azure Portal en selecteert u de koppeling Azure **Cloud shell** boven aan de menu balk: 
 
@@ -196,13 +196,13 @@ Met deze actie wordt de Azure Cloud Shell geopend:
 
 [![Scherm opname van Cloud shell venster. ](../media/azure-netapp-files/hard-quota-update-cloud-shell-window.png)](../media/azure-netapp-files/hard-quota-update-cloud-shell-window.png#lightbox)
 
-De volgende voor beelden gebruiken de opdrachten om de grootte van een volume [weer te geven](https://docs.microsoft.com/cli/azure/netappfiles/volume?view=azure-cli-latest#az-netappfiles-volume-show&preserve-view=true) en bij te [werken](https://docs.microsoft.com/cli/azure/netappfiles/volume?view=azure-cli-latest#az-netappfiles-volume-update&preserve-view=true) :
+De volgende voor beelden gebruiken de opdrachten om de grootte van een volume [weer te geven](/cli/azure/netappfiles/volume?preserve-view=true&view=azure-cli-latest#az-netappfiles-volume-show) en bij te [werken](/cli/azure/netappfiles/volume?preserve-view=true&view=azure-cli-latest#az-netappfiles-volume-update) :
  
 [![Scherm opname van de weer gave van de volume grootte met Power shell. ](../media/azure-netapp-files/hard-quota-update-powershell-volume-show.png)](../media/azure-netapp-files/hard-quota-update-powershell-volume-show.png#lightbox)
 
 [![Scherm opname van het gebruik van Power shell om de volume grootte bij te werken. ](../media/azure-netapp-files/hard-quota-update-powershell-volume-update.png)](../media/azure-netapp-files/hard-quota-update-powershell-volume-update.png#lightbox)
 
-De volgende voor beelden gebruiken de opdrachten om de grootte van een capaciteits groep [weer te geven](https://docs.microsoft.com/cli/azure/netappfiles/pool?view=azure-cli-latest#az-netappfiles-pool-show&preserve-view=true) en bij te [werken](https://docs.microsoft.com/cli/azure/netappfiles/pool?view=azure-cli-latest#az-netappfiles-pool-update&preserve-view=true) :
+De volgende voor beelden gebruiken de opdrachten om de grootte van een capaciteits groep [weer te geven](/cli/azure/netappfiles/pool?preserve-view=true&view=azure-cli-latest#az-netappfiles-pool-show) en bij te [werken](/cli/azure/netappfiles/pool?preserve-view=true&view=azure-cli-latest#az-netappfiles-pool-update) :
 
 [![Scherm opname van de weer gave van de grootte van de capaciteits pool met Power shell. ](../media/azure-netapp-files/hard-quota-update-powershell-pool-show.png)](../media/azure-netapp-files/hard-quota-update-powershell-pool-show.png#lightbox) 
 
@@ -277,4 +277,4 @@ U kunt fouten en functie aanvragen indienen door te klikken op **nieuw probleem*
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Het formaat van een capaciteitspool of volume wijzigen](azure-netapp-files-resize-capacity-pools-or-volumes.md) 
-* [Metrische gegevens voor Azure NetApp Files](azure-netapp-files-metrics.md) 
+* [Metrische gegevens voor Azure NetApp Files](azure-netapp-files-metrics.md)

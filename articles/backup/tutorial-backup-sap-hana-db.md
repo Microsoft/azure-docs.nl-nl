@@ -3,12 +3,12 @@ title: 'Zelfstudie: back-ups maken van SAP HANA-databases in virtuele Azure-mach
 description: In deze zelfstudie ontdekt u hoe u een back-up naar een Azure Backup Recovery Services-kluis maakt van SAP HANA-databases die op een virtuele Azure-machine worden uitgevoerd.
 ms.topic: tutorial
 ms.date: 02/24/2020
-ms.openlocfilehash: ede8ebab205e814de3988a2b5c432a21f965eb55
-ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
+ms.openlocfilehash: 5548717b25ea3ec027ba5f588e5e28faafbb5d6f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99987777"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101703678"
 ---
 # <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm"></a>Zelfstudie: Een back-up maken van SAP HANA-databases in een Azure-VM
 
@@ -105,7 +105,7 @@ De back-ups (logboek en niet-logboek) in SAP HANA Azure-Vm's die via Backint wor
 
 Het Backint-onderdeel van HANA biedt de ' sluizen ' (een pipe om te lezen van en een pipe om naar te schrijven), verbonden met onderliggende schijven waar database bestanden zich bevinden, die vervolgens worden gelezen door de Azure Backup-service en worden getransporteerd naar Azure Recovery Services kluis. De Azure Backup-service voert ook een controlesom uit voor het valideren van de stromen, naast de systeem eigen validatie controles van backint. Deze validaties zorgen ervoor dat de gegevens die aanwezig zijn in azure Recovery Services kluis inderdaad betrouwbaar zijn en kunnen worden hersteld.
 
-Aangezien de stromen voornamelijk worden verwerkt met schijven, moet u inzicht hebben in de schijf prestaties om de back-up-en herstel prestaties te meten. Raadpleeg [dit artikel](https://docs.microsoft.com/azure/virtual-machines/disks-performance) voor uitgebreide informatie over de door Voer van schijven en prestaties in azure vm's. Deze zijn ook van toepassing op back-up-en herstel prestaties.
+Aangezien de stromen voornamelijk worden verwerkt met schijven, moet u inzicht hebben in de schijf prestaties om de back-up-en herstel prestaties te meten. Raadpleeg [dit artikel](../virtual-machines/disks-performance.md) voor uitgebreide informatie over de door Voer van schijven en prestaties in azure vm's. Deze zijn ook van toepassing op back-up-en herstel prestaties.
 
 **De Azure backup-service probeert Maxi maal ~ 420 Mbps te behalen voor back-ups van niet-Logboeken (zoals volledig, differentieel en incrementeel) en tot 100 Mbps voor logboek back-ups voor Hana**. Zoals hierboven vermeld, zijn dit niet gegarandeerde snelheden en zijn ze afhankelijk van de volgende factoren:
 
@@ -267,8 +267,8 @@ Geef als volgt de beleidsinstellingen op:
    ![Beleid voor differentiële back-ups](./media/tutorial-backup-sap-hana-db/differential-backup-policy.png)
 
    >[!NOTE]
-   >Incrementele back-ups zijn nu beschikbaar in openbare preview. U kunt kiezen voor een differentieel of een incrementele dagelijkse back-up, maar niet voor beide.
-   >
+   >U kunt kiezen voor een differentieel of een incrementele dagelijkse back-up, maar niet voor beide.
+
 7. In **Beleid voor een incrementele back-up** selecteert u **Inschakelen** om de frequentie- en bewaarinstellingen te openen.
     * U kunt maximaal één incrementele back-up per dag activeren.
     * Incrementele back-ups kunnen maximaal 180 dagen worden bewaard. Als dat voor u te kort is, moet u volledige back-ups gebruiken.

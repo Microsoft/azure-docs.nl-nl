@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 06/10/2020
 author: mingshen-ms
 ms.author: mingshen
-ms.openlocfilehash: 0d7259972693b9ca12e0801007cbd3c0af45ca1c
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 2acf5178e7d1cfdf907146d733150a48e9696a5e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97937328"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101712348"
 ---
 # <a name="saas-fulfillment-apis-version-2-in-the-commercial-marketplace"></a>SaaS-fulfillment-Api's versie 2 in de commerciële Marketplace
 
@@ -972,4 +972,4 @@ Zie [ondersteuning voor het programma voor commerciële Marketplace in het partn
 
 Zie de [commerciële Marketplace meter service-api's](marketplace-metering-service-apis.md) voor meer opties voor SaaS-aanbiedingen in de commerciële Marketplace.
 
-Bekijk en gebruik de [SaaS SDK](https://github.com/Azure/Microsoft-commercial-marketplace-transactable-SaaS-offer-SDK) die is gebouwd op basis van de api's die in dit document worden beschreven.
+Controleer en gebruik de [clients voor verschillende programmeer talen en voor beelden](https://github.com/microsoft/commercial-marketplace-samples).

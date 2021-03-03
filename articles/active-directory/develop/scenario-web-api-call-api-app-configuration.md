@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/26/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: d1ab7da9753642093505fa91ea76b9327612a6ac
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 5072ae58d3a9412237e70a9bc98970296ce1e1fa
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99582363"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686577"
 ---
 # <a name="a-web-api-that-calls-web-apis-code-configuration"></a>Een web-API die web-Api's aanroept: code configuratie
 
@@ -245,6 +245,8 @@ class MsalAuthHelper {
 De stroom namens-of (OBO) wordt gebruikt om een token op te halen voor het aanroepen van de stroomafwaartse Web-API. In deze stroom ontvangt uw web-API een Bearer-token met door de gebruiker gedelegeerde machtigingen van de client toepassing. vervolgens wordt dit token door gegeven aan een ander toegangs token om de stroomafwaartse Web-API aan te roepen.
 
 Een python-Web-API moet een middleware gebruiken om het Bearer-token te valideren dat van de client is ontvangen. De Web-API kan vervolgens het toegangs token voor downstream API verkrijgen met behulp van de MSAL python-bibliotheek door de methode aan te roepen [`acquire_token_on_behalf_of`](https://msal-python.readthedocs.io/en/latest/?badge=latest#msal.ConfidentialClientApplication.acquire_token_on_behalf_of) . Voor een voor beeld van het gebruik van deze API raadpleegt u de [test code voor micro soft-Authentication-library-for-python op github](https://github.com/AzureAD/microsoft-authentication-library-for-python/blob/1.2.0/tests/test_e2e.py#L429-L472). Zie ook de bespreking van [probleem 53](https://github.com/AzureAD/microsoft-authentication-library-for-python/issues/53) in diezelfde opslag plaats voor een benadering die de nood zaak van een toepassing voor een middelste laag niet meer hoeft te omzeilen.
+
+U kunt ook een voor beeld bekijken van de implementatie van de OBO-stroom in de [MS-Identity-python-voor](https://github.com/Azure-Samples/ms-identity-python-on-behalf-of) -voor beeld.
 
 ---
 

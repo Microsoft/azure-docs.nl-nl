@@ -7,12 +7,12 @@ ms.date: 12/15/2020
 ms.topic: troubleshooting
 ms.author: susabat
 ms.reviewer: susabat
-ms.openlocfilehash: 1a5f665627da1b08ec57b04863a58f227c673af4
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 2950c175acfdda33394c93649a3e2c41d1264dd2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98944902"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101705990"
 ---
 # <a name="troubleshoot-pipeline-orchestration-and-triggers-in-azure-data-factory"></a>Problemen met het indelen van pijp lijnen en triggers in Azure Data Factory oplossen
 
@@ -78,13 +78,32 @@ Azure Data Factory evalueert het resultaat van alle activiteiten op Leaf-niveau.
 1. Implementeer controles op activiteit niveau door [te volgen hoe er pijp lijn fouten en-fouten worden afgehandeld](https://techcommunity.microsoft.com/t5/azure-data-factory/understanding-pipeline-failures-and-error-handling/ba-p/1630459).
 1. Gebruik Azure Logic Apps voor het bewaken van pijp lijnen met regel matige intervallen na het [uitvoeren van een query op Factory](/rest/api/datafactory/pipelineruns/querybyfactory).
 
-## <a name="monitor-pipeline-failures-in-regular-intervals"></a>Pijp lijn fouten met regel matige intervallen bewaken
+### <a name="how-to-monitor-pipeline-failures-in-regular-intervals"></a>Pijp lijn fouten met regel matige intervallen bewaken
 
 Mogelijk moet u de mislukte Data Factory pijp lijnen in intervallen controleren, bijvoorbeeld 5 minuten. U kunt de pijp lijn uitvoeringen opvragen en filteren vanuit een data factory met behulp van het eind punt. 
 
-Stel een Azure Logic-app in om elke vijf minuten een query uit te zoeken op alle defecte pijp lijnen, zoals beschreven in [query door Factory](/rest/api/datafactory/pipelineruns/querybyfactory). Vervolgens kunt u incidenten melden aan ons ticket systeem.
+**Oplossing** U kunt een Azure Logic-app zo instellen dat elke 5 minuten een query wordt uitgevoerd op alle mislukte pijp lijnen, zoals wordt beschreven in [query op Factory](/rest/api/datafactory/pipelineruns/querybyfactory). Vervolgens kunt u incidenten rapporteren aan uw ticket systeem.
 
 Ga voor meer informatie naar [meldingen verzenden van Data Factory, deel 2](https://www.mssqltips.com/sqlservertip/5962/send-notifications-from-an-azure-data-factory-pipeline--part-2/).
+
+### <a name="degree-of-parallelism--increase-does-not-result-in-higher-throughput"></a>De mate van parallellisme toename resulteert niet in een hogere door Voer
+
+**Oorzaak** 
+
+De mate van parallelle uitvoering in *foreach* is in feite de maximale mate van parallelle uitvoering. Er kan niet worden gegarandeerd dat er op hetzelfde moment een specifiek aantal uitvoeringen wordt uitgevoerd, maar deze para meter garandeert echter nooit meer dan de ingestelde waarde. U ziet dit als een limiet voor gebruik bij het beheren van gelijktijdige toegang tot uw bronnen en Sinks.
+
+Bekende feiten over *foreach*
+ * Foreach heeft een eigenschap met de naam batch Count (n), waarbij de standaard waarde 20 is en het maximum 50 is.
+ * Het aantal batches, n, wordt gebruikt om n wacht rijen samen te stellen. Later bespreken we enkele details over hoe deze wacht rijen worden samengesteld.
+ * Elke wachtrij wordt opeenvolgend uitgevoerd, maar u kunt meerdere wacht rijen tegelijk uitvoeren.
+ * De wacht rijen worden vooraf gemaakt. Dit betekent dat er tijdens de runtime geen herverdeling van de wacht rijen is.
+ * U hebt op elk moment Maxi maal één item per wachtrij verwerken. Dit betekent dat de meeste n items op een bepaald moment worden verwerkt.
+ * De totale verwerkings tijd van foreach is gelijk aan de verwerkings tijd van de langste wachtrij. Dit betekent dat de foreach-activiteit afhankelijk is van de manier waarop de wacht rijen worden samengesteld.
+ 
+**Oplossing**
+
+ * Gebruik geen *SetVariable* -activiteit in *voor elke* die parallel wordt uitgevoerd.
+ * Rekening houdend met de manier waarop de wacht rijen zijn gebouwd, kan de klant de foreach-prestaties verbeteren door meerdere *foreachs* in te stellen waarbij elke foreach items met een vergelijk bare verwerkings tijd bevat. Zo zorgt u ervoor dat lange uitvoeringen parallel op een opeenvolgende volg orde worden verwerkt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

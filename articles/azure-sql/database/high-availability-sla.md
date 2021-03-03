@@ -12,12 +12,12 @@ author: emlisa
 ms.author: emlisa
 ms.reviewer: sstein, emlisa
 ms.date: 10/28/2020
-ms.openlocfilehash: 53b6b4f5d783029cb53de71fe3c47b8cb2d26968
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: 5e84831798ec1c5f42facb04a25da9d8631b9d04
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99593415"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101690580"
 ---
 # <a name="high-availability-for-azure-sql-database-and-sql-managed-instance"></a>Hoge Beschik baarheid voor Azure SQL Database en SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -52,7 +52,7 @@ Zone redundante configuratie voor de servicelaag voor algemeen gebruik [Azure-be
 
 De redundante configuratie zone voor de laag voor algemeen gebruik heeft twee lagen:  
 
-- Een stateful gegevenslaag met de database bestanden (. MDF/. ldf) die zijn opgeslagen in ZRS PFS (zone-redundante [opslag Premium-bestands share](../../storage/files/storage-how-to-create-premium-fileshare.md). Met [zone-redundante opslag](../../storage/common/storage-redundancy.md) worden de gegevens en logboek bestanden synchroon gekopieerd over drie fysiek geïsoleerde Azure-beschikbaarheids zones.
+- Een stateful gegevenslaag met de database bestanden (. MDF/. ldf) die zijn opgeslagen in ZRS PFS (zone-redundante [opslag Premium-bestands share](../../storage/files/storage-how-to-create-file-share.md). Met [zone-redundante opslag](../../storage/common/storage-redundancy.md) worden de gegevens en logboek bestanden synchroon gekopieerd over drie fysiek geïsoleerde Azure-beschikbaarheids zones.
 - Een stateless Compute-laag die het sqlservr.exe proces uitvoert en bevat alleen tijdelijke en in de cache opgeslagen gegevens, zoals TempDB, model databases op de gekoppelde SSD en de plannings cache, de buffer groep en de column Store-groep in het geheugen. Dit stateless knoop punt wordt gebruikt door Azure Service Fabric dat sqlservr.exe initialiseert, de status van het knoop punt beheert en een failover naar een ander knoop punt uitvoert, indien nodig. Voor zone-redundante algemene doel databases zijn knoop punten met reserve capaciteit direct beschikbaar in andere Beschikbaarheidszones voor failover.
 
 De zone redundante versie van de architectuur met hoge Beschik baarheid voor de servicelaag voor algemeen gebruik wordt geïllustreerd in het volgende diagram:

@@ -4,15 +4,15 @@ description: Veelvoorkomende problemen oplossen met betrekking tot het testen en
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: troubleshooting
-author: iqshahmicrosoft
-ms.author: iqshah
+author: mathapli
+ms.author: mathapli
 ms.date: 01/18/2021
-ms.openlocfilehash: 80dc19a58d212bb6ab8d608e222cd3a0bd3990d1
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: adcd91d58b3bb5fde3ffa81c828c58d4b6db48d4
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98600988"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101721154"
 ---
 # <a name="troubleshoot-virtual-machine-certification"></a>Problemen met certificering van virtuele machines oplossen
 
@@ -594,8 +594,37 @@ Publiceer vervolgens de aanbieding opnieuw.
 
 Zie [aanbiedingen bekijken en publiceren](review-publish-offer.md)om het publicatie proces te volt ooien.
 
+### <a name="vm-images-with-limited-access-or-requiring-custom-templates"></a>VM-installatie kopieën met beperkte toegang of waarvoor aangepaste sjablonen zijn vereist
+
+#### <a name="locked-down-or-ssh-disabled-offer"></a>Vergrendelde aanbieding (of) voor SSH uitgeschakeld
+
+  Installatie kopieën die zijn gepubliceerd met SSH uitgeschakeld (voor Linux) of RDP uitgeschakeld (voor Windows) worden beschouwd als vergrendelde Vm's. Er zijn speciale zakelijke scenario's, omdat uitgevers alleen beperkte toegang tot een of meer gebruikers toestaan. Tijdens validatie controles is het mogelijk dat bepaalde certificerings opdrachten niet worden uitgevoerd vanwege vergrendelde Vm's.
+
+
+#### <a name="custom-templates"></a>Aangepaste sjablonen
+
+   Over het algemeen volgen alle installatie kopieën die worden gepubliceerd onder single VM-aanbiedingen, de standaard ARM-sjabloon voor de implementatie. Er zijn echter scenario's waarin Publisher mogelijk moet worden aangepast tijdens het implementeren van Vm's (bijvoorbeeld meerdere NIC ('s) die moeten worden geconfigureerd).
+    
+   Afhankelijk van de onderstaande scenario's (niet-limitatief) gebruiken uitgevers aangepaste sjablonen voor het implementeren van de virtuele machine:
+
+   * VM vereist extra netwerk-subnetten.
+   * Aanvullende meta gegevens die moeten worden ingevoegd in de ARM-sjabloon.
+   * Opdrachten die vereist zijn voor het uitvoeren van een ARM-sjabloon.
+
+### <a name="vm-extensions"></a>VM-extensies   
+
+   Extensies van virtuele Azure-machines (VM's) zijn kleine toepassingen die configuratie na de implementatie en automatiseringstaken voor Azure-VM's bieden. Als op een virtuele machine bijvoorbeeld software of antivirusbeveiliging moet worden geïnstalleerd of een script moet worden uitgevoerd, kan hiervoor een VM-extensie worden gebruikt. 
+
+   Voor de validatie van de Linux VM-extensie moeten de volgende onderdelen deel uitmaken van de installatie kopie:
+* Meer 2.2.41 Azure Linux-agent
+* Python-versie hoger dan 2,8 
+
+
+Ga voor meer informatie naar [VM-extensie](https://docs.microsoft.com/azure/virtual-machines/extensions/diagnostics-linux).
+     
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Eigenschappen van een VM-aanbieding configureren](azure-vm-create-properties.md)
 - [Beloonde actieve Marketplace](partner-center-portal/marketplace-rewards.md)
 - Als u vragen of feedback over verbeteringen hebt, neemt u contact op met het [partner centrum-ondersteuning](https://aka.ms/marketplacepublishersupport).
+ 

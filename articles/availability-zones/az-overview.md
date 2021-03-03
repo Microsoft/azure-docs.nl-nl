@@ -4,16 +4,16 @@ description: Meer informatie over regio's en Beschikbaarheidszones in azure om t
 author: prsandhu
 ms.service: azure
 ms.topic: conceptual
-ms.date: 01/26/2021
+ms.date: 02/23/2021
 ms.author: prsandhu
 ms.reviewer: cynthn
 ms.custom: fasttrack-edit, mvc
-ms.openlocfilehash: dae5319e6c8b87d6a9eef98875ad7e8da623e65c
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 4adfb63ecab72eb42e188af472bb5387a0276a79
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98955797"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723772"
 ---
 # <a name="regions-and-availability-zones-in-azure"></a>Regio's en Beschikbaarheidszones in azure
 
@@ -31,7 +31,7 @@ Als u meer wilt weten over regio's en Beschikbaarheidszones in azure, kunt u de 
 | Aanbevolen regio | Een regio die het breedste scala aan service mogelijkheden biedt en is ontworpen om Beschikbaarheidszones nu of in de toekomst te ondersteunen. Deze worden in de Azure Portal zoals **Aanbevolen** aangeduid. |
 | alternatieve regio (overige) | Een regio die de footprint van Azure uitbreidt binnen een gegevens locatie grens waar een aanbevolen regio ook zich bevindt. Alternatieve regio's helpen latentie te optimaliseren en bieden een tweede regio voor nood herstel behoeften. Ze zijn niet ontworpen ter ondersteuning van Beschikbaarheidszones (hoewel Azure een regel matige evaluatie van deze regio's uitvoert om te bepalen of ze aanbevolen regio's moeten worden). Deze worden in de Azure Portal aangeduid als **andere**. |
 | Foundational service | Een kern service van Azure die beschikbaar is in alle regio's wanneer de regio algemeen beschikbaar is. |
-| mainstream service | Een Azure-service die beschikbaar is in alle aanbevolen regio's binnen 12 maanden na de algemene Beschik baarheid van de regio/service of de beschik baarheid op basis van de vraag in alternatieve regio's. |
+| mainstream service | Een Azure-service die beschikbaar is in alle aanbevolen regio's binnen 90 dagen van de regionale algemene Beschik baarheid of Beschik baarheid op basis van de vraag in alternatieve regio's. |
 | gespecialiseerde service | Een Azure-service die Beschik baarheid via de vraag heeft over regio's die worden ondersteund door aangepaste/gespecialiseerde hardware. |
 | regionale service | Een Azure-service die regionaal wordt geïmplementeerd en de klant in staat stelt de regio op te geven waarin de service wordt geïmplementeerd. Zie voor een volledige lijst [beschik bare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=all). |
 | niet-regionale service | Een Azure-service waarvoor geen afhankelijkheid geldt voor een specifieke Azure-regio. Niet-regionale services worden geïmplementeerd in twee of meer regio's en als er sprake is van een regionale fout, blijft het exemplaar van de service in een andere regio het onderhoud van klanten voort. Zie voor een volledige lijst [beschik bare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=all). |
@@ -69,8 +69,8 @@ De benadering van Azure voor de beschik baarheid van Azure-Services in verschill
 
 Azure-Services zijn onderverdeeld in drie categorieën: Foundational, mainstream en gespecialiseerde services. Het algemene beleid van Azure voor het implementeren van services in een bepaalde regio wordt voornamelijk aangestuurd door regio type, service categorieën en vraag van de klant:
 
-- **Basis** : beschikbaar in alle aanbevolen en alternatieve regio's wanneer de regio algemeen beschikbaar is, of binnen een periode van 12 maanden nadat een nieuwe Foundational service algemeen beschikbaar wordt.
-- **Mainstream** : beschikbaar in alle aanbevolen regio's binnen 12 maanden na de algemene Beschik baarheid van de regio/service; Demand-aangedreven in alternatieve regio's (veel zijn al geïmplementeerd in een grote subset van alternatieve regio's).
+- **Basis** : beschikbaar in alle aanbevolen en alternatieve regio's wanneer de regio algemeen beschikbaar is, of binnen 90 dagen nadat een nieuwe Foundational service algemeen beschikbaar wordt.
+- **Mainstream** : beschikbaar in alle aanbevolen regio's binnen 90 dagen na de algemene Beschik baarheid van de regio; Demand-aangedreven in alternatieve regio's (veel zijn al geïmplementeerd in een grote subset van alternatieve regio's).
 - **Gespecialiseerde** , gerichte service aanbiedingen, vaak in de branche gericht of ondersteund door aangepaste/gespecialiseerde hardware. Beschik baarheid via de vraag in verschillende regio's (veel worden al in een grote subset aanbevolen regio's geïmplementeerd).
 
 Zie [producten beschikbaar per regio](https://azure.microsoft.com/global-infrastructure/services/?products=all)om te zien welke services worden geïmplementeerd in een bepaalde regio, evenals het toekomstige schema voor preview of algemene Beschik baarheid van services in een regio.
@@ -82,78 +82,129 @@ Als een service aanbieding niet beschikbaar is in een specifieke regio, kunt u u
 | Aanbevolen | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | Op aanvraag gebaseerd | :heavy_check_mark: | :heavy_check_mark: |
 | Alternatief | :heavy_check_mark: | :heavy_check_mark: | Op aanvraag gebaseerd | Op aanvraag gebaseerd | N.v.t. | :heavy_check_mark: |
 
-### <a name="services-by-category"></a>Services per categorie
+### <a name="services-by-category-with-availability-zones"></a>Services per categorie met Beschikbaarheidszones
 
-Zoals eerder vermeld, classificeert Azure Services in drie categorieën: basis, mainstream en gespecialiseerd. Service categorieën worden toegewezen aan de algemene Beschik baarheid. Vaak starten Services hun levens cyclus als een gespecialiseerde service en kunnen de benodigde verhogingen worden bevorderd tot mainstream of basis. De volgende tabel bevat de categorie voor services als Foundational, mainstream of gespecialiseerd. Let op het volgende over de tabel:
+Zoals eerder vermeld, classificeert Azure Services in drie categorieën: basis, mainstream en gespecialiseerd. Service categorieën worden toegewezen aan de algemene Beschik baarheid. Vaak starten Services hun levens cyclus als een gespecialiseerde service en kunnen de benodigde verhogingen worden bevorderd tot mainstream of basis. De volgende tabel bevat de categorie voor services als Foundational, mainstream. Let op het volgende over de tabel:
 
 - Sommige services zijn niet regionaal. Zie [producten beschikbaar per regio](https://azure.microsoft.com/global-infrastructure/services/)voor meer informatie en een lijst met niet-regionale Services.
-- Virtuele machines van de vorige generatie worden niet weer gegeven. Raadpleeg voor meer informatie de documentatie bij [eerdere generaties van de grootte van virtuele machines](../virtual-machines/sizes-previous-gen.md)
+- Oudere generatie Services of virtuele machines worden niet weer gegeven. Raadpleeg voor meer informatie de documentatie bij [eerdere generaties van de grootte van virtuele machines](../virtual-machines/sizes-previous-gen.md)
 - . Services zijn niet toegewezen aan een categorie tot de algemene Beschik baarheid (GA). Zie [producten beschikbaar per regio](https://azure.microsoft.com/global-infrastructure/services/)voor meer informatie en een lijst met preview-Services. 
 
 > [!div class="mx-tableFixed"]
-> | Fundamentele                          | Meest                                        | Gespecialiseerd                                          |
-> |---------------------------------------|---------------------------------------------------|------------------------------------------------------|
-> | Storage Accounts                      | API Management                                    | Azure-API voor FHIR                                   |
-> | Application Gateway                   | App-configuratie                                 | Azure Analysis Services                              |
-> | Azure Backup                          | App Service                                       | Azure Cognitive Services: anomalie detectie           |
-> | Azure Cosmos DB                       | Automation                                        | Azure-Cognitive Services: Custom Vision              |
-> | Azure Data Lake Storage Gen2          | Azure Active Directory Domain Services            | Azure Cognitive Services: formulier herkenner            |
-> | Azure ExpressRoute                    | Azure Bastion                                     | Azure Cognitive Services: persoonlijkere               |
-> | Openbaar Azure-IP                       | Azure Cache voor Redis                             | Azure-Cognitive Services: QnA Maker                  |
-> | Azure SQL Database                    | Azure Cognitive Search                            | Azure Database for MariaDB                           |
-> | Azure SQL: beheerd exemplaar          | Azure Cognitive Services                          | Azure Database Migration Service                     |
-> | Cloud Services                        | Azure Cognitive Services: Computer Vision         | Azure toegewezen HSM                                  |
-> | Cloud Services: Av2-Series            | Azure-Cognitive Services: Content Moderator       | Azure Digital Twins                                  |
-> | Cloud Services: Dv2-Series            | Azure Cognitive Services: Face                    | Azure-status bot                                     |
-> | Cloud Services: Dv3-Series            | Azure Cognitive Services: insluitende lezer        | Azure HPC Cache                                      |
-> | Cloud Services: Ev3-Series            | Azure-Cognitive Services: Language Understanding  | Azure Lab-Services                                   |
-> | Cloud Services: Ip's op exemplaar niveau    | Azure-Cognitive Services: spraak Services         | Azure NetApp Files                                   |
-> | Cloud Services: Gereserveerd IP           | Azure Cognitive Services: Text Analytics          | Azure SignalR-service                                |
-> | Disk Storage                          | Azure Cognitive Services: Translator              | Azure lente-Cloud service                           |
-> | Event Hubs                            | Azure Data Explorer                               | Azure Time Series Insights                           |
-> | Key Vault                             | Azure Data Share                                  | Azure VMware Solution                                |
-> | Load balancer                         | Azure Database for MySQL                          | Azure VMware Solution by CloudSimple                 |
-> | Service Bus                           | Azure Database for PostgreSQL                     | Cloud Services: H-serie                             |
-> | Service Fabric                        | Azure Databricks                                  | Data Catalog                                         |
-> | Opslag: warme/koud Blob Storage lagen  | Azure DDoS Protection                             | Data Lake Analytics                                  |
-> | Opslag: Managed Disks                | Azure DevTest Labs                                | Azure Machine Learning Studio (klassiek)              |
-> | Virtuele-machineschaalsets            | Azure Firewall                                    | Spatial Anchors                                      |
-> | Virtual Machines                      | Azure Firewall Manager                            | Opslag: Archive Storage                             |
-> | Virtual Machines: Av2-Series          | Azure Functions                                   | StorSimple                                           |
-> | Virtual Machines: Bs-Series           | Azure IoT Hub                                     | Ultra Disk Storage                                   |
-> | Virtual Machines: DSv2-Series         | Azure Kubernetes Service (AKS)                    | Video Indexer                                        |
-> | Virtual Machines: DSv3-Series         | Azure Machine Learning                            | Virtual Machines: DASv4-Series                       |
-> | Virtual Machines: Dv2-Series          | Azure Monitor: Application Insights               | Virtual Machines: DAv4-Series                        |
-> | Virtual Machines: Dv3-Series          | Azure Monitor: Log Analytics                      | Virtual Machines: DCsv2-serie                       |
-> | Virtual Machines: ESv3-Series         | Azure Private Link                                | Virtual Machines: EASv4-Series                       |
-> | Virtual Machines: Ev3-Series          | Azure Red Hat OpenShift                           | Virtual Machines: EAv4-Series                        |
-> | Virtual Machines: Ip's op exemplaar niveau  | Azure Site Recovery                               | Virtual Machines: HBv1-Series                        |
-> | Virtual Machines: Gereserveerd IP         | Azure Stream Analytics                            | Virtual Machines: HBv2-Series                        |
-> | Virtual Network                       | Azure Synapse Analytics                           | Virtual Machines: HCv1-Series                        |
-> | VPN Gateway                           | Batch                                             | Virtual Machines: H-serie                           |
-> |                                       | Cloud Services: M-serie                          | Virtual Machines: LSv2-Series                        |
-> |                                       | Container Instances                               | Virtual Machines: Mv2-Series                         |
-> |                                       | Container Registry                                | Virtual Machines: NCv3-Series                        |
-> |                                       | Data Factory                                      | Virtual Machines: NDv2-Series                        |
-> |                                       | Event Grid                                        | Virtual Machines: NVv3-Series                        |
-> |                                       | HDInsight                                         | Virtual Machines: NVv4-Series                        |> 
-> |                                       | Logic Apps                                        | Virtual Machines: SAP HANA on Azure Large Instances  |
-> |                                       | Media Services                                    |                                                      |
-> |                                       | Network Watcher                                   |                                                      |
-> |                                       | Notification Hubs                                 |                                                      |
-> |                                       | Premium-Blob Storage                              |                                                      |
-> |                                       | Premium files-opslag                             |                                                      |
-> |                                       | Virtual Machines: Ddsv4-Series                    |                                                      |
-> |                                       | Virtual Machines: Ddv4-Series                     |                                                      |
-> |                                       | Virtual Machines: Dsv4-Series                     |                                                      |
-> |                                       | Virtual Machines: Dv4-Series                      |                                                      |
-> |                                       | Virtual Machines: Edsv4-Series                    |                                                      |
-> |                                       | Virtual Machines: Edv4-Series                     |                                                      |
-> |                                       | Virtual Machines: Esv4-Series                     |                                                      |
-> |                                       | Virtual Machines: Ev4-Series                      |                                                      |
-> |                                       | Virtual Machines: Fsv2-Series                     |                                                      |
-> |                                       | Virtual Machines: M-serie                        |                                                      |
-> |                                       | Virtuele WAN                                       |                                                      |
+> | Fundamentele                           | Meest                                        | 
+> |----------------------------------------|---------------------------------------------------|
+> | Storage Accounts                       | API Management                                    | 
+> | Application Gateway                    | App-configuratie                                 | 
+> | Azure Backup                           | App Service                                       | 
+> | Azure Cosmos DB                        | Automation                                        | 
+> | Azure Data Lake Storage Gen2           | Azure Active Directory Domain Services            | 
+> | Azure ExpressRoute                     | Azure Bastion                                     | 
+> | Openbaar Azure-IP                        | Azure Cache voor Redis                             | 
+> | Azure SQL Database                     | Azure Cognitive Search                            | 
+> | Azure SQL: beheerd exemplaar           | Azure Cognitive Services                          | 
+> | Disk Storage                           | Azure Cognitive Services: Computer Vision         | 
+> | Event Hubs                             | Azure-Cognitive Services: Content Moderator       | 
+> | Key Vault                              | Azure Cognitive Services: Face                    | 
+> | Load balancer                          | Azure Cognitive Services: insluitende lezer        | 
+> | Service Bus                            | Azure-Cognitive Services: Language Understanding  | 
+> | Service Fabric                         | Azure-Cognitive Services: spraak Services         | 
+> | Opslag: warme/koud Blob Storage lagen   | Azure Cognitive Services: Text Analytics          | 
+> | Opslag: Managed Disks                 | Azure Cognitive Services: Translator              | 
+> | Virtuele-machineschaalsets             | Azure Data Explorer                               | 
+> | Virtual Machines                       | Azure Data Share                                  | 
+> | Virtual Machines: toegewezen Azure-host | Azure Database for MySQL                          | 
+> | Virtual Machines: Av2-Series           | Azure Database for PostgreSQL                     | 
+> | Virtual Machines: Bs-Series            | Azure DDoS Protection                             | 
+> | Virtual Machines: DSv2-Series          | Azure Firewall                                    | 
+> | Virtual Machines: DSv3-Series          | Azure Firewall Manager                            | 
+> | Virtual Machines: Dv2-Series           | Azure Functions                                   | 
+> | Virtual Machines: Dv3-Series           | Azure IoT Hub                                     |     
+> | Virtual Machines: ESv3-Series          | Azure Kubernetes Service (AKS)                    | 
+> | Virtual Machines: Ev3-Series           | Azure Machine Learning                            | 
+> | Virtual Network                        | Azure Monitor: Application Insights               | 
+> | VPN Gateway                            | Azure Monitor: Log Analytics                      | 
+> |                                        | Azure Private Link                                | 
+> |                                        | Azure Red Hat OpenShift                           | 
+> |                                        | Azure Site Recovery                               | 
+> |                                        | Azure Stream Analytics                            | 
+> |                                        | Azure Synapse Analytics                           | 
+> |                                        | Batch                                             | 
+> |                                        | Cloud Services: M-serie                          | 
+> |                                        | Container Instances                               | 
+> |                                        | Container Registry                                | 
+> |                                        | Data Factory                                      | 
+> |                                        | Event Grid                                        | 
+> |                                        | HDInsight                                         |  
+> |                                        | Logic Apps                                        | 
+> |                                        | Media Services                                    | 
+> |                                        | Network Watcher                                   | 
+> |                                        | Notification Hubs                                 | 
+> |                                        | Premium-Blob Storage                              | 
+> |                                        | Premium files-opslag                             | 
+> |                                        | Virtual Machines: Ddsv4-Series                    | 
+> |                                        | Virtual Machines: Ddv4-Series                     | 
+> |                                        | Virtual Machines: Dsv4-Series                     | 
+> |                                        | Virtual Machines: Dv4-Series                      | 
+> |                                        | Virtual Machines: Edsv4-Series                    | 
+> |                                        | Virtual Machines: Edv4-Series                     | 
+> |                                        | Virtual Machines: Esv4-Series                     | 
+> |                                        | Virtual Machines: Ev4-Series                      | 
+> |                                        | Virtual Machines: Fsv2-Series                     | 
+> |                                        | Virtual Machines: M-serie                        | 
+> |                                        | Virtuele WAN                                       | 
+
+
+
+### <a name="specialized-services"></a>Gespecialiseerde services
+Zoals eerder vermeld, classificeert Azure Services in drie categorieën: basis, mainstream en gespecialiseerd. Service categorieën worden toegewezen aan de algemene Beschik baarheid. Vaak starten Services hun levens cyclus als een gespecialiseerde service en kunnen de benodigde verhogingen worden bevorderd tot mainstream of basis. De volgende tabel geeft een lijst van gespecialiseerde services. 
+
+> [!div class="mx-tableFixed"]
+> | Gespecialiseerd                                          |
+> |------------------------------------------------------|
+> | Azure-API voor FHIR                                   |
+> | Azure Analysis Services                              |
+> | Azure Cognitive Services: anomalie detectie           |
+> | Azure-Cognitive Services: Custom Vision              |
+> | Azure Cognitive Services: formulier herkenner            |
+> | Azure Cognitive Services: persoonlijkere               |
+> | Azure-Cognitive Services: QnA Maker                  |
+> | Azure Database for MariaDB                           |
+> | Azure Database Migration Service                     |
+> | Azure toegewezen HSM                                  |
+> | Azure Digital Twins                                  |
+> | Azure-status bot                                     |
+> | Azure HPC Cache                                      |
+> | Azure Lab-Services                                   |
+> | Azure NetApp Files                                   |
+> | Azure SignalR-service                                |
+> | Azure lente-Cloud service                           |
+> | Azure Time Series Insights                           |
+> | Azure VMware Solution                                |
+> | Azure VMware Solution by CloudSimple                 |
+> | Data Lake Analytics                                  |
+> | Azure Machine Learning Studio (klassiek)              |
+> | Spatial Anchors                                      |
+> | Opslag: Archive Storage                             |
+> | Ultra Disk Storage                                   |
+> | Video Indexer                                        |
+> | Virtual Machines: DASv4-Series                       |
+> | Virtual Machines: DAv4-Series                        |
+> | Virtual Machines: DCsv2-serie                       |
+> | Virtual Machines: EASv4-Series                       |
+> | Virtual Machines: EAv4-Series                        |
+> | Virtual Machines: HBv1-Series                        |
+> | Virtual Machines: HBv2-Series                        |
+> | Virtual Machines: HCv1-Series                        |
+> | Virtual Machines: H-serie                           |
+> | Virtual Machines: LSv2-Series                        |
+> | Virtual Machines: Mv2-Series                         |
+> | Virtual Machines: NCv3-Series                        |
+> | Virtual Machines: NDv2-Series                        |
+> | Virtual Machines: NVv3-Series                        |
+> | Virtual Machines: NVv4-Series                        | 
+> | Virtual Machines: SAP HANA on Azure Large Instances  |
+
+
 
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/22/2019
-ms.openlocfilehash: 0fc57b87e5ec1d7f47d9f9d74698af56172246ec
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: ab7d4bf0b8d8ca32dafe6f19b46047eca89a7734
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610803"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733972"
 ---
 # <a name="oms-portal-moving-to-azure"></a>OMS-Portal, verplaatsen naar Azure
 
@@ -64,7 +64,7 @@ In beide gevallen moet uw beheerder hand matig de juiste rol toewijzen uit de vo
  
 
 ## <a name="new-workspaces"></a>Nieuwe werk ruimten
-U kunt geen nieuwe werk ruimten meer maken met behulp van de OMS-Portal. Volg de richt lijnen in [een log Analytics-werk ruimte maken in de Azure Portal](../learn/quick-create-workspace.md) om een nieuwe werk ruimte in de Azure portal te maken.
+U kunt geen nieuwe werk ruimten meer maken met behulp van de OMS-Portal. Volg de richt lijnen in [een log Analytics-werk ruimte maken in de Azure Portal](./quick-create-workspace.md) om een nieuwe werk ruimte in de Azure portal te maken.
 
 ## <a name="changes-to-alerts"></a>Wijzigingen in waarschuwingen
 
@@ -73,9 +73,9 @@ U kunt geen nieuwe werk ruimten meer maken met behulp van de OMS-Portal. Volg de
 Er zijn waarschuwingen [uitgebreid naar de Azure Portal](../alerts/alerts-unified-log.md) bestaande waarschuwingen worden weer gegeven in de OMS-Portal, maar u kunt ze alleen beheren in azure Portal. Als u waarschuwingen programmatisch opent met behulp van de Log Analytics waarschuwing REST API of Log Analytics waarschuwing resource sjabloon, moet u actie groepen gebruiken in plaats van acties in uw API-aanroepen, Azure Resource Manager-sjablonen en Power shell-opdrachten.
 
 ### <a name="alert-management-solution"></a>Oplossing voor waarschuwings beheer
-Als wijziging ten opzichte van een eerdere aankondiging blijft de [oplossing voor waarschuwings beheer](../platform/alert-management-solution.md) beschikbaar en wordt deze volledig ondersteund in de Azure Portal. U kunt door gaan met de installatie van de oplossing van Azure Marketplace.
+Als wijziging ten opzichte van een eerdere aankondiging blijft de [oplossing voor waarschuwings beheer](../insights/alert-management-solution.md) beschikbaar en wordt deze volledig ondersteund in de Azure Portal. U kunt door gaan met de installatie van de oplossing van Azure Marketplace.
 
-Hoewel de oplossing voor waarschuwings beheer nog steeds beschikbaar blijft, raden we u aan de [Unified Alerting-interface van Azure monitor](../platform/alerts-overview.md) te gebruiken om alle waarschuwingen in azure te visualiseren en te beheren. Deze nieuwe ervaring voegt systeem eigen waarschuwingen toe van meerdere bronnen in azure, inclusief logboek waarschuwingen van Log Analytics. Als u gebruikmaakt van de Unified Alerting-interface van Azure Monitor, is de oplossing voor het beheer van waarschuwingen alleen nodig om de integratie van waarschuwingen van System Center Operations Manager in azure mogelijk te maken. In Azure Monitor Unified Alerting interface kunt u distributies van uw waarschuwingen bekijken, profiteren van de geautomatiseerde groepering van gerelateerde waarschuwingen via slimme groepen, en waarschuwingen over meerdere abonnementen weer geven terwijl u uitgebreide filters toepast. Toekomstige verbeteringen in waarschuwings beheer zijn voornamelijk beschikbaar via deze nieuwe ervaring. 
+Hoewel de oplossing voor waarschuwings beheer nog steeds beschikbaar blijft, raden we u aan de [Unified Alerting-interface van Azure monitor](../alerts/alerts-overview.md) te gebruiken om alle waarschuwingen in azure te visualiseren en te beheren. Deze nieuwe ervaring voegt systeem eigen waarschuwingen toe van meerdere bronnen in azure, inclusief logboek waarschuwingen van Log Analytics. Als u gebruikmaakt van de Unified Alerting-interface van Azure Monitor, is de oplossing voor het beheer van waarschuwingen alleen nodig om de integratie van waarschuwingen van System Center Operations Manager in azure mogelijk te maken. In Azure Monitor Unified Alerting interface kunt u distributies van uw waarschuwingen bekijken, profiteren van de geautomatiseerde groepering van gerelateerde waarschuwingen via slimme groepen, en waarschuwingen over meerdere abonnementen weer geven terwijl u uitgebreide filters toepast. Toekomstige verbeteringen in waarschuwings beheer zijn voornamelijk beschikbaar via deze nieuwe ervaring. 
 
 De gegevens die worden verzameld door de oplossing voor waarschuwings beheer (records met een type waarschuwing), blijven in Log Analytics zolang de oplossing voor de werk ruimte is geïnstalleerd. 
 
@@ -83,7 +83,7 @@ De gegevens die worden verzameld door de oplossing voor waarschuwings beheer (re
 De OMS-app voor mobiele apps wordt samen met de OMS-Portal sunsetted. In plaats van de OMS-app voor toegang tot informatie over uw IT-infra structuur, Dash boards en opgeslagen query's, kunt u rechtstreeks vanuit uw browser toegang krijgen tot de Azure Portal op uw mobiele apparaat. Als u meldingen wilt ontvangen, moet u [Azure-actie groepen](../alerts/action-groups.md) configureren om meldingen te ontvangen in de vorm van SMS of een telefoon oproep
 
 ## <a name="application-insights-connector-and-solution"></a>Application Insights-connector en oplossing
-[Application Insights-connector](../logs/app-insights-connector.md) biedt een manier om Application Insights gegevens in een log Analytics-werk ruimte te gebruiken. Deze gegevens duplicatie is vereist om inzicht in de infra structuur en toepassings gegevens mogelijk te maken. Met Application Insights uitgebreide ondersteuning voor het bewaren van gegevens in maart, 2019 en de mogelijkheid om [query's](../logs/cross-workspace-query.md) uit te voeren op meerdere resources, maar u hoeft niet alleen [meer Azure monitor Application Insights bronnen weer te geven](../log-query/unify-app-resource-data.md), hoeft u geen gegevens van uw Application Insights resources te dupliceren en deze naar log Analytics te verzenden. Bovendien verzendt de connector een subset van de eigenschappen van de toepassing naar Log Analytics, terwijl de query's voor meerdere bronnen u uitgebreide flexibiliteit bieden.  
+[Application Insights-connector](../logs/app-insights-connector.md) biedt een manier om Application Insights gegevens in een log Analytics-werk ruimte te gebruiken. Deze gegevens duplicatie is vereist om inzicht in de infra structuur en toepassings gegevens mogelijk te maken. Met Application Insights uitgebreide ondersteuning voor het bewaren van gegevens in maart, 2019 en de mogelijkheid om [query's](../logs/cross-workspace-query.md) uit te voeren op meerdere resources, maar u hoeft niet alleen [meer Azure monitor Application Insights bronnen weer te geven](./unify-app-resource-data.md), hoeft u geen gegevens van uw Application Insights resources te dupliceren en deze naar log Analytics te verzenden. Bovendien verzendt de connector een subset van de eigenschappen van de toepassing naar Log Analytics, terwijl de query's voor meerdere bronnen u uitgebreide flexibiliteit bieden.  
 
 Daarom is Application Insights-connector afgeschaft en uit Azure Marketplace verwijderd, samen met de OMS-Portal op 30 maart 2019. Bestaande verbindingen blijven werken tot en met 30 juni 2019. In de OMS-Portal is het niet mogelijk om bestaande verbindingen te configureren en te verwijderen vanuit de portal. Dit wordt ondersteund met behulp van de REST API die beschikbaar worden gesteld in januari, 2019 en er wordt een melding verzonden naar de [updates van Azure](https://azure.microsoft.com/updates/). 
 

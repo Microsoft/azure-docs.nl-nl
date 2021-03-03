@@ -1,28 +1,28 @@
 ---
 title: Azure Monitor inschakelen voor een hybride omgeving
-description: In dit artikel wordt beschreven hoe u Azure Monitor voor VM's inschakelt voor een hybride cloud omgeving die een of meer virtuele machines bevat.
+description: In dit artikel wordt beschreven hoe u VM Insights inschakelt voor een hybride cloud omgeving die een of meer virtuele machines bevat.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
-ms.openlocfilehash: d56b1ed7b4923b054ad6864b713fc2a26d95f7e2
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 6518906f264077ac88a90513a237840f7f814247
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612225"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101731269"
 ---
-# <a name="enable-azure-monitor-for-vms-for-a-hybrid-virtual-machine"></a>Azure Monitor voor VM's inschakelen voor een hybride virtuele machine
-In dit artikel wordt beschreven hoe u Azure Monitor voor VM's inschakelt voor een virtuele machine buiten Azure, met inbegrip van on-premises en andere Cloud omgevingen.
+# <a name="enable-vm-insights-for-a-hybrid-virtual-machine"></a>VM Insights inschakelen voor een hybride virtuele machine
+In dit artikel wordt beschreven hoe u VM Insights inschakelt voor een virtuele machine buiten Azure, met inbegrip van on-premises en andere Cloud omgevingen.
 
 > [!IMPORTANT]
-> De aanbevolen methode voor het inschakelen van hybride Vm's is het eerst inschakelen van [Azure Arc voor servers](../../azure-arc/servers/overview.md) , zodat de vm's kunnen worden ingeschakeld voor Azure monitor voor VM's op basis van processen die vergelijkbaar zijn met Azure-vm's. In dit artikel wordt beschreven hoe u hybride Vm's kunt voorbereiden als u ervoor kiest om Azure Arc niet te gebruiken.
+> De aanbevolen methode voor het inschakelen van hybride Vm's is het eerst inschakelen van [Azure Arc voor servers](../../azure-arc/servers/overview.md) , zodat de vm's kunnen worden ingeschakeld voor VM-inzichten met behulp van processen die vergelijkbaar zijn met Azure vm's. In dit artikel wordt beschreven hoe u hybride Vm's kunt voorbereiden als u ervoor kiest om Azure Arc niet te gebruiken.
 
 ## <a name="prerequisites"></a>Vereisten
 
-- [Een log Analytics-werk ruimte maken en configureren](../insights/vminsights-configure-workspace.md).
-- Zie [ondersteunde besturings systemen](../insights/vminsights-enable-overview.md#supported-operating-systems) om ervoor te zorgen dat het besturings systeem van de virtuele machine of virtuele-machine schaalset die u inschakelt, wordt ondersteund. 
+- [Een log Analytics-werk ruimte maken en configureren](./vminsights-configure-workspace.md).
+- Zie [ondersteunde besturings systemen](./vminsights-enable-overview.md#supported-operating-systems) om ervoor te zorgen dat het besturings systeem van de virtuele machine of virtuele-machine schaalset die u inschakelt, wordt ondersteund. 
 
 
 ## <a name="overview"></a>Overzicht
@@ -31,13 +31,13 @@ Voor virtuele machines buiten Azure zijn dezelfde Log Analytics agent en een afh
 Zie [Windows-computers verbinden met Azure monitor](../agents/agent-windows.md) of [Linux-computers verbinden met Azure monitor](../agents/agent-linux.md) voor meer informatie over het implementeren van de log Analytics agent. In dit artikel vindt u meer informatie over de afhankelijkheids agent. 
 
 ## <a name="firewall-requirements"></a>Firewallvereisten
-De firewall vereisten voor de Log Analytics-agent vindt u in [log Analytics Overzicht](../agents/log-analytics-agent.md#network-requirements)van de agent. De Map en Dependency Agent van Azure Monitor voor VM's stuurt zelf geen gegevens door en u hoeft er geen wijzigingen in de firewalls en poorten voor aan te brengen. De kaart gegevens worden altijd door de Log Analytics agent verzonden naar de Azure Monitor-service, hetzij rechtstreeks of via de [Operations Management Suite-gateway](../../azure-monitor/agents/gateway.md) als uw IT-beveiligings beleid niet toestaat dat computers in het netwerk verbinding maken met internet.
+De firewall vereisten voor de Log Analytics-agent vindt u in [log Analytics Overzicht](../agents/log-analytics-agent.md#network-requirements)van de agent. De VM Insights-toewijzings afhankelijke agent verzendt geen gegevens zelf en vereist geen wijzigingen in firewalls of poorten. De kaart gegevens worden altijd door de Log Analytics agent verzonden naar de Azure Monitor-service, hetzij rechtstreeks of via de [Operations Management Suite-gateway](../../azure-monitor/agents/gateway.md) als uw IT-beveiligings beleid niet toestaat dat computers in het netwerk verbinding maken met internet.
 
 
 ## <a name="dependency-agent"></a>Agent voor afhankelijkheden
 
 >[!NOTE]
->De volgende informatie die in deze sectie wordt beschreven, is ook van toepassing op de [servicetoewijzing oplossing](../insights/service-map.md).  
+>De volgende informatie die in deze sectie wordt beschreven, is ook van toepassing op de [servicetoewijzing oplossing](./service-map.md).  
 
 U kunt de afhankelijkheids agent downloaden van de volgende locaties:
 
@@ -177,8 +177,8 @@ Controleer het bestand C:\Program Files\Microsoft Dependency Agent\logs\wrapper.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu de bewaking voor uw virtuele machines is ingeschakeld, is deze informatie beschikbaar voor analyse met Azure Monitor voor VM's.
+Nu de bewaking voor uw virtuele machines is ingeschakeld, is deze informatie beschikbaar voor analyse met VM Insights.
 
-- Zie [Azure monitor voor VM's kaart weer geven](vminsights-maps.md)om gedetecteerde toepassings afhankelijkheden weer te geven.
+- Als u gedetecteerde toepassings afhankelijkheden wilt weer geven, raadpleegt u [VM Insights-toewijzing weer geven](vminsights-maps.md).
 
 - Zie [Azure-VM-prestaties weer geven](vminsights-performance.md)om knel punten en het algehele gebruik van de VM-prestaties te identificeren.

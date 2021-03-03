@@ -202,7 +202,7 @@
           href: ../../azure-monitor/deploy-scale.md?toc=/azure/governance/policy/toc.json&bc=/azure/governance/policy/breadcrumb/toc.json
         - name: Azure Monitor voor VM's inschakelen (preview)
           displayName: 'monitor, insights, log analytics, builtin'
-          href: ../../azure-monitor/insights/vminsights-enable-policy.md?toc=/azure/governance/policy/toc.json&bc=/azure/governance/policy/breadcrumb/toc.json
+          href: ../../azure-monitor/vm/vminsights-enable-policy.md?bc=%2fazure%2fgovernance%2fpolicy%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fgovernance%2fpolicy%2ftoc.json
     - name: Integratie van Azure Storage
       items:
         - name: TLS controleren met Azure Policy
@@ -323,16 +323,6 @@
       items:
         - name: YouTube-kanaal Governance
           href: 'https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ'
-        - name: Video's over gastconfiguratie
-          items:
-            - name: Aan de slag
-              href: 'https://www.youtube.com/watch?v=mjJw9_EIyHo'
-            - name: Inzicht in initiatieven
-              href: 'https://www.youtube.com/watch?v=4JZH3kuG8bI'
-            - name: Beleid toewijzen
-              href: 'https://www.youtube.com/watch?v=fbZBaxcjA-Y'
-            - name: Hersteltaak
-              href: 'https://www.youtube.com/watch?v=URE4DUYMgmg'
     - name: Azure-roadmap
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Prijscalculator

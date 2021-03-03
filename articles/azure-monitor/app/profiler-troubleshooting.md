@@ -6,17 +6,14 @@ author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 05a2eaeb3b716988a8ae1eddcaa5a5a58cc3776a
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 2ab719b47245f3adc2fba610f9c0473868889a7e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98675693"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711447"
 ---
 # <a name="troubleshoot-problems-enabling-or-viewing-application-insights-profiler"></a>Problemen met het inschakelen of weer geven van Application Insights Profiler oplossen
-
-> [!CAUTION]
-> Er is een fout opgelopende Profiler voor het uitvoeren van ASP.NET Core-Apps op Azure App Service. We hebben een oplossing, maar het duurt enkele weken om de wereld wijde implementatie uit te voeren. U kunt de fout omzeilen door de Application Insights SDK toe te voegen aan uw toepassing met [hier](./asp-net-core.md#enable-application-insights-server-side-telemetry-visual-studio)instructies.
 
 ## <a name="general-troubleshooting"></a><a id="troubleshooting"></a>Algemene probleem oplossing
 
@@ -67,6 +64,7 @@ Normaal gesp roken wordt de thread die snel in een wacht status verkeert gewoon 
 Verzend een ondersteunings ticket in de portal. Zorg ervoor dat u de correlatie-ID uit het fout bericht opneemt.
 
 ## <a name="troubleshoot-profiler-on-azure-app-service"></a>Problemen met Profiler op Azure App Service oplossen
+
 Profiler werkt alleen goed als:
 * Uw web app service-plan moet een basislaag of hoger zijn.
 * Voor uw web-app moet Application Insights zijn ingeschakeld.
@@ -95,6 +93,10 @@ Als Profiler niet werkt voor u, kunt u het logboek downloaden en verzenden naar 
 
 ### <a name="check-the-diagnostic-services-site-extension-status-page"></a>De status pagina van de site-uitbrei ding voor diagnostische services controleren
 Als Profiler is ingeschakeld via het [deel venster Application Insights](profiler.md) in de portal, is het ingeschakeld door de site-extensie van de diagnostische services.
+
+> [!NOTE]
+> Voor code-installatie van Application Insights Profiler wordt het .NET core-ondersteunings beleid gevolgd.
+> Zie [.net core-ondersteunings beleid](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)voor meer informatie over ondersteunde Runtimes.
 
 U kunt de pagina status van deze uitbrei ding controleren door naar de volgende URL te gaan: `https://{site-name}.scm.azurewebsites.net/DiagnosticServices`
 
@@ -140,7 +142,7 @@ Als u uw web-app opnieuw implementeert naar een Web Apps resource waarvoor Profi
 
 *Map is niet leeg d: \\ Home \\ site \\ wwwroot \\ App_Data \\ Jobs*
 
-Deze fout treedt op als u Web Deploy uitvoert vanuit scripts of vanuit de Azure-pijp lijnen. De oplossing is om de volgende aanvullende implementatie parameters toe te voegen aan de Web Deploy-taak:
+Deze fout treedt op als u Web Deploy uitvoert vanuit scripts of vanuit de Azure-pijp lijnen. De oplossing is om de volgende implementatie parameters toe te voegen aan de Web Deploy-taak:
 
 ```
 -skip:Directory='.*\\App_Data\\jobs\\continuous\\ApplicationInsightsProfiler.*' -skip:skipAction=Delete,objectname='dirPath',absolutepath='.*\\App_Data\\jobs\\continuous$' -skip:skipAction=Delete,objectname='dirPath',absolutepath='.*\\App_Data\\jobs$'  -skip:skipAction=Delete,objectname='dirPath',absolutepath='.*\\App_Data$'

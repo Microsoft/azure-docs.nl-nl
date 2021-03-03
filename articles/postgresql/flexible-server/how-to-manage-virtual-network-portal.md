@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
-ms.openlocfilehash: 46d8fe6427b2a3e7811719792ac4bf67ddbcc3c5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 746f15d2d712f4b571d3f27e3535c69f5f4f9732
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90936596"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101732765"
 ---
 # <a name="create-and-manage-virtual-networks-for-azure-database-for-postgresql---flexible-server-using-the-azure-portal"></a>Maak en beheer virtuele netwerken voor Azure Database for PostgreSQL-flexibele server met behulp van de Azure Portal
 
@@ -34,6 +34,13 @@ Als u een flexibele server in een virtueel netwerk wilt maken, hebt u het volgen
     > Het virtuele netwerk en het subnet moeten zich in dezelfde regio en hetzelfde abonnement bevinden als uw flexibele server.
 
 -  [Een subnet delegeren](../../virtual-network/manage-subnet-delegation.md#delegate-a-subnet-to-an-azure-service) naar **micro soft. DBforPostgreSQL/flexibleServers**. Deze overdracht houdt in dat alleen Azure Database for PostgreSQL flexibele servers dat subnet kunnen gebruiken. Er kunnen zich geen andere Azure-resourcetypen in het gedelegeerde subnet bevinden.
+-  Voeg toe `Microsoft.Storage` aan het service-eind punt voor het subnet dat is overgedragen aan flexibele servers. Dit doet u door de volgende stappen uit te voeren:
+     1. Ga naar de pagina van uw virtuele netwerk.
+     2. Selecteer het VNET waarin u de flexibele server wilt implementeren.
+     3. Kies het subnet dat wordt gedelegeerd voor flexibele server.
+     4. Kies in het scherm voor het uitpakken onder **service-eind punt** `Microsoft.storage` de optie in de vervolg keuzelijst.
+     5. Sla de wijzigingen op.
+
 
 ## <a name="create-azure-database-for-postgresql---flexible-server-in-an-already-existing-virtual-network"></a>Azure Database for PostgreSQL-flexibele server maken in een bestaand virtueel netwerk
 

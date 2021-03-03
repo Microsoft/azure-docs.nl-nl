@@ -5,14 +5,14 @@ author: vhorne
 ms.service: firewall
 services: firewall
 ms.topic: conceptual
-ms.date: 02/16/2021
+ms.date: 02/25/2021
 ms.author: victorh
-ms.openlocfilehash: e823e1efc66592e9f48b7ff5e53a176a4e8cb514
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: ff5c6961e64deddc8e52dc92a7c34b5b369a44ed
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100549724"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101715561"
 ---
 # <a name="azure-firewall-premium-preview-features"></a>Preview-functies Azure Firewall Premium
 
@@ -80,7 +80,20 @@ De categorieën zijn ingedeeld op basis van Ernst onder **aansprakelijkheid**, *
 
 #### <a name="category-exceptions"></a>Categorie uitzonderingen
 
-U kunt uitzonde ringen maken voor de Web Category-regels. Maak een afzonderlijke regel verzameling voor toestaan of weigeren met een hogere prioriteit in de regel verzamelings groep. U kunt bijvoorbeeld een regel verzameling configureren die `www.linkedin.com` met prioriteit 100 is toegestaan, met een regel verzameling die **sociale netwerken** met prioriteit 200 weigert. Hiermee maakt u de uitzonde ring voor de website van de vooraf gedefinieerde categorie voor **sociale netwerken** . 
+U kunt uitzonde ringen maken voor de Web Category-regels. Maak een afzonderlijke regel verzameling voor toestaan of weigeren met een hogere prioriteit in de regel verzamelings groep. U kunt bijvoorbeeld een regel verzameling configureren die `www.linkedin.com` met prioriteit 100 is toegestaan, met een regel verzameling die **sociale netwerken** met prioriteit 200 weigert. Hiermee maakt u de uitzonde ring voor de website van de vooraf gedefinieerde categorie voor **sociale netwerken** .
+
+#### <a name="categorization-change"></a>Wijziging categorisatie
+
+U kunt de wijziging van een categorisatie aanvragen als u:
+
+ - denk eraan dat een FQDN of URL zich onder een andere categorie moet bevindt 
+ 
+of 
+
+- een voorgestelde categorie hebben voor een niet-gecategoriseerde FQDN of URL
+
+U kunt een aanvraag indienen bij [https://aka.ms/azfw-webcategories-request](https://aka.ms/azfw-webcategories-request) .
+ 
 
 ## <a name="known-issues"></a>Bekende problemen
 
@@ -98,6 +111,7 @@ Niet-vertrouwde door de klant ondertekende certificaten|Door de klant onderteken
 |Onjuist IP-adres van de bron in waarschuwingen met id voor HTTP (zonder TLS-inspectie).|Wanneer het HTTP-verkeer zonder opmaak wordt gebruikt en id een nieuwe waarschuwing geeft en de bestemming een openbaar IP-adres is, is het IP-adres van de weer gegeven bron onjuist (het interne IP-adres wordt weer gegeven in plaats van het oorspronkelijke IP-adres).|Reparatie gepland voor GA.|
 |Doorgifte van certificaten|Nadat een CA-certificaat is toegepast op de firewall, kan het tussen 5-10 minuten duren voordat het certificaat van kracht wordt.|Reparatie gepland voor GA.|
 |ID bypass|ID bypass werkt niet voor beëindigde TLS-verkeer, en het IP-adres van de bron en IP-bron groepen worden niet ondersteund.|Reparatie gepland voor GA.|
+|TLS 1,3-ondersteuning|TLS 1,3 wordt gedeeltelijk ondersteund. De TLS-tunnel van de client naar de firewall is gebaseerd op TLS 1,2 en van de firewall op de externe webserver is gebaseerd op TLS 1,3.|Updates worden onderzocht.|
 
 
 

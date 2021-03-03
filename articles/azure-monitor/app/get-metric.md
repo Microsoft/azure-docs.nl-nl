@@ -5,12 +5,12 @@ ms.service: azure-monitor
 ms.subservice: application-insights
 ms.topic: conceptual
 ms.date: 04/28/2020
-ms.openlocfilehash: b4a255235b2c6d772ab9a05dffacd4574ddd3280
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 0ce2651d5cfcb1578d78982af109a004aaac11f4
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100584198"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719777"
 ---
 # <a name="custom-metric-collection-in-net-and-net-core"></a>Aangepaste metrische verzameling in .NET en .NET core
 
@@ -33,7 +33,7 @@ Het beperken van een beperking is met name van belang als de steek proef kan lei
 In samen vatting `GetMetric()` is de aanbevolen benadering, omdat deze vooraf aggregatie is, worden waarden van alle track ()-aanroepen verzameld en wordt één keer per minuut een samen vatting/aggregatie verzonden. Dit kan de kosten en de prestatie overhead aanzienlijk verminderen door minder gegevens punten te verzenden, terwijl alle relevante gegevens worden verzameld.
 
 > [!NOTE]
-> Alleen de .NET-en .NET core Sdk's hebben een GetMetric ()-methode. Als u Java gebruikt, kunt u [metrische gegevens over micrometer](./micrometer-java.md) of gebruiken `TrackMetric()` . Voor python kunt u [Opentellingen. stats](./opencensus-python.md#metrics) gebruiken om aangepaste metrische gegevens te verzenden. Voor Java script en Node.js u zou blijven gebruiken `TrackMetric()` , maar houd wel wel de voor behoud die in de vorige sectie werden beschreven.
+> Alleen de .NET-en .NET core Sdk's hebben een GetMetric ()-methode. Als u Java gebruikt, kunt u [metrische gegevens over micrometer](./micrometer-java.md) of gebruiken `TrackMetric()` . Voor Java script en Node.js u zou blijven gebruiken `TrackMetric()` , maar houd wel wel de voor behoud die in de vorige sectie werden beschreven. Voor python kunt u [Opentellingen. stats](./opencensus-python.md#metrics) gebruiken om aangepaste metrische gegevens te verzenden, maar de implementatie van metrische gegevens verschilt.
 
 ## <a name="getting-started-with-getmetric"></a>Aan de slag met GetMetric
 
@@ -69,7 +69,7 @@ namespace WorkerService3
             // Here "computersSold", a custom metric name, is being tracked with a value of 42 every second.
             while (!stoppingToken.IsCancellationRequested)
             {
-                _telemetryClient.GetMetric("computersSold").TrackValue(42);
+                _telemetryClient.GetMetric("ComputersSold").TrackValue(42);
 
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
                 await Task.Delay(1000, stoppingToken);
@@ -89,7 +89,7 @@ Application Insights Telemetry: {"name":"Microsoft.ApplicationInsights.Dev.00000
 "ai.internal.sdkVersion":"m-agg2c:2.12.0-21496",
 "ai.internal.nodeName":"Test-Computer-Name"},
 "data":{"baseType":"MetricData",
-"baseData":{"ver":2,"metrics":[{"name":"computersSold",
+"baseData":{"ver":2,"metrics":[{"name":"ComputersSold",
 "kind":"Aggregation",
 "value":1722,
 "count":41,
@@ -101,6 +101,9 @@ Application Insights Telemetry: {"name":"Microsoft.ApplicationInsights.Dev.00000
 ```
 
 Dit enkelvoudige telemetrie-item vertegenwoordigt een samen stelling van 41 afzonderlijke metrische meet waarden. Omdat we dezelfde waarde voor en tot nu toe hebben verzonden, hebben we een *standaard afwijking (stDev)* van 0 met een identieke *maximum waarde (max)* en *minimum (min)* -waarden. De eigenschap *Value* vertegenwoordigt een som van alle afzonderlijke waarden die zijn geaggregeerd.
+
+> [!NOTE]
+> GetMetric biedt geen ondersteuning voor het bijhouden van de laatste waarde (bijvoorbeeld ' meter ') of het bijhouden van histogrammen/distributies.
 
 Als we onze Application Insights-resource in de logboeken-ervaring onderzoeken, ziet dit afzonderlijke telemetrie-item er als volgt uit:
 
@@ -283,7 +286,7 @@ computersSold.TrackValue(100, "Dim1Value1", "Dim2Value3");
 // The above call does not track the metric, and returns false.
 ```
 
-* `seriesCountLimit` is het maximum aantal gegevens tijd reeksen dat een metrieke waarde kan bevatten. Wanneer deze limiet is bereikt, wordt het aangeroepen `TrackValue()` .
+* `seriesCountLimit` is het maximum aantal gegevens tijd reeksen dat een metrieke waarde kan bevatten. Wanneer deze limiet is bereikt, worden aanroepen naar `TrackValue()` niet bijgehouden.
 * `valuesPerDimensionLimit` beperkt het aantal afzonderlijke waarden per dimensie op een vergelijk bare manier.
 * `restrictToUInt32Values` Hiermee wordt bepaald of alleen niet-negatieve gehele waarden moeten worden bijgehouden.
 

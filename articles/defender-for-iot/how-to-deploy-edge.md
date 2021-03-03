@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/30/2020
 ms.author: mlottner
-ms.openlocfilehash: 9ac283721526488f587fcabc68348dafac1835db
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: cd79c928afdb3563b47374869cff577f9221d360
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98033350"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101705769"
 ---
 # <a name="deploy-a-security-module-on-your-iot-edge-device"></a>Een beveiligings module op uw IoT Edge-apparaat implementeren
 
@@ -34,7 +34,7 @@ Gebruik de volgende stappen om een Defender for IoT-beveiligings module voor IoT
 
 ### <a name="prerequisites"></a>Vereisten
 
-1. Zorg ervoor dat uw apparaat is [geregistreerd als een IOT edge-apparaat](../iot-edge/how-to-manual-provision-symmetric-key.md#register-a-new-device)In uw IOT hub.
+1. Zorg ervoor dat uw apparaat is [geregistreerd als een IOT edge-apparaat](../iot-edge/how-to-register-device.md#register-a-new-device)In uw IOT hub.
 
 1. Voor de module Defender voor IoT Edge moet het [gecontroleerde Framework](https://linux.die.net/man/8/auditd) op het IOT edge-apparaat zijn geïnstalleerd.
 
@@ -179,7 +179,7 @@ Als er een probleem optreedt, zijn container Logboeken de beste manier om meer t
 
 1. Controleer of de volgende containers worden uitgevoerd:
 
-   | Naam | AFBEELDING |
+   | Name | AFBEELDING |
    | --- | --- |
    | azureiotsecurity | mcr.microsoft.com/ascforiot/azureiotsecurity:1.0.2 |
    | edgeHub | mcr.microsoft.com/azureiotedge-hub:1.0.8.3 |

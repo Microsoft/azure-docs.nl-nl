@@ -1,28 +1,28 @@
 ---
-title: Azure Arc enabled Kubernetes-cluster configureren met Azure Monitor voor containers | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u bewaking configureert met Azure Monitor voor containers op Azure Arc ingeschakelde Kubernetes-clusters.
+title: Azure Arc enabled Kubernetes-cluster configureren met container Insights | Microsoft Docs
+description: In dit artikel wordt beschreven hoe u bewaking configureert met container Insights op Azure Arc enabled Kubernetes-clusters.
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: 77b536141f0e7c6094964011719a0e536e8d33f1
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 307f9d9928042410dc9b4443aba5c019c592980c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612357"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711294"
 ---
 # <a name="enable-monitoring-of-azure-arc-enabled-kubernetes-cluster"></a>De bewaking van een Kubernetes-cluster met Azure Arc inschakelen
 
-Azure Monitor voor containers biedt uitgebreide bewakings ervaring voor de Azure Kubernetes-service (AKS) en AKS-engine clusters. In dit artikel wordt beschreven hoe u de bewaking van uw Kubernetes-clusters die buiten Azure worden gehost, inschakelt voor een vergelijk bare bewakings ervaring.
+Container Insights biedt uitgebreide bewakings ervaring voor de Azure Kubernetes-service (AKS) en AKS-engine clusters. In dit artikel wordt beschreven hoe u de bewaking van uw Kubernetes-clusters die buiten Azure worden gehost, inschakelt voor een vergelijk bare bewakings ervaring.
 
-Azure Monitor voor containers kunnen worden ingeschakeld voor een of meer bestaande implementaties van Kubernetes met behulp van een Power shell-of bash-script.
+Container Insights kan worden ingeschakeld voor een of meer bestaande implementaties van Kubernetes met behulp van een Power shell-of bash-script.
 
 ## <a name="supported-configurations"></a>Ondersteunde configuraties
 
-Azure Monitor voor containers ondersteunt bewaking van Azure Arc enabled Kubernetes (preview), zoals beschreven in het [overzichts](container-insights-overview.md) artikel, met uitzonde ring van de volgende functies:
+Container Insights ondersteunt het bewaken van Azure Arc enabled Kubernetes (preview), zoals beschreven in het [overzichts](container-insights-overview.md) artikel, met uitzonde ring van de volgende functies:
 
 - Live-gegevens (preview-versie)
 
-Het volgende wordt officieel ondersteund met Azure Monitor voor containers:
+Het volgende wordt officieel ondersteund met container Insights:
 
 - De versies van Kubernetes en het ondersteunings beleid zijn hetzelfde als de versies van AKS die worden [ondersteund](../../aks/supported-kubernetes-versions.md).
 
@@ -36,15 +36,15 @@ Voordat u begint, moet u ervoor zorgen dat u over het volgende beschikt:
 
 - Een Log Analytics-werkruimte.
 
-    Azure Monitor voor containers ondersteunt een Log Analytics-werk ruimte in de regio's die worden vermeld in azure- [producten per regio](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=monitor). Om uw eigen werk ruimte te maken, kan deze worden gemaakt via [Azure Resource Manager](../samples/resource-manager-workspace.md), via [Power shell](../scripts/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json)of in de [Azure Portal](../learn/quick-create-workspace.md).
+    Container Insights ondersteunt een Log Analytics-werk ruimte in de regio's die worden vermeld in azure- [producten per regio](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=monitor). Om uw eigen werk ruimte te maken, kan deze worden gemaakt via [Azure Resource Manager](../logs/resource-manager-workspace.md), via [Power shell](../logs/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json)of in de [Azure Portal](../logs/quick-create-workspace.md).
 
-- Als u de functies in Azure Monitor voor containers wilt inschakelen en openen, moet u Mini maal lid zijn van de rol Azure *contributor* in het Azure-abonnement en een lid van de rol [*log Analytics Inzender*](../platform/manage-access.md#manage-access-using-azure-permissions) van de werk ruimte log Analytics die is geconfigureerd met Azure monitor voor containers.
+- Als u de functies in container Insights wilt inschakelen en openen, moet u Mini maal lid zijn van de rol Azure *contributor* in het Azure-abonnement en een lid van de rol [*log Analytics inzender*](../logs/manage-access.md#manage-access-using-azure-permissions) van de log Analytics werk ruimte die is geconfigureerd met container Insights.
 
 - U bent lid van de rol [Inzender](../../role-based-access-control/built-in-roles.md#contributor) op de Azure Arc-cluster resource.
 
-- Als u de bewakings gegevens wilt bekijken, bent u lid van de machtiging [*log Analytics lezer*](../platform/manage-access.md#manage-access-using-azure-permissions) -rol met de log Analytics werk ruimte die is geconfigureerd met Azure monitor voor containers.
+- Als u de bewakings gegevens wilt bekijken, bent u lid van de machtiging [*log Analytics lezer*](../logs/manage-access.md#manage-access-using-azure-permissions) -rol met de log Analytics werk ruimte die is geconfigureerd met container Insights.
 
-- [Helm-client](https://helm.sh/docs/using_helm/) voor het voorbereiden van de grafiek Azure monitor voor containers voor het opgegeven Kubernetes-cluster.
+- [Helm-client](https://helm.sh/docs/using_helm/) voor het onboarden van de container Insights-grafiek voor het opgegeven Kubernetes-cluster.
 
 - De volgende proxy-en firewall configuratie gegevens zijn vereist voor de container versie van de Log Analytics-agent voor Linux om te communiceren met Azure Monitor:
 
@@ -247,7 +247,7 @@ bash enable-monitoring.sh --resource-id $azureArcClusterResourceId --client-id $
 
 ## <a name="configure-proxy-endpoint"></a>Proxy-eind punt configureren
 
-Met de container agent voor Azure Monitor voor containers kunt u een proxy-eind punt configureren zodat het kan communiceren via uw proxy server. De communicatie tussen de container agent en Azure Monitor kan een HTTP-of HTTPS-proxy server zijn, en zowel anonieme als basis verificatie (gebruikers naam en wacht woord) worden ondersteund.
+Met de container-agent voor container Insights kunt u een proxy-eind punt configureren zodat het via uw proxy server kan communiceren. De communicatie tussen de container agent en Azure Monitor kan een HTTP-of HTTPS-proxy server zijn, en zowel anonieme als basis verificatie (gebruikers naam en wacht woord) worden ondersteund.
 
 De waarde van de proxy configuratie heeft de volgende syntaxis: `[protocol://][user:password@]proxyhost[:port]`
 
@@ -284,10 +284,10 @@ export proxyEndpoint=https://<user>:<password>@<proxyhost>:<port>
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Als bewaking is ingeschakeld voor het verzamelen van het status-en resource gebruik van uw Kubernetes-cluster met Arc-functionaliteit en workloads die hierop worden uitgevoerd, leert [u hoe u Azure monitor gebruikt](container-insights-analyze.md) voor containers.
+- Als bewaking is ingeschakeld voor het verzamelen van het status-en resource gebruik van uw Kubernetes-cluster met Arc-functionaliteit en workloads die hierop worden uitgevoerd, leert [u hoe u container Insights kunt gebruiken](container-insights-analyze.md) .
 
 - De container agent verzamelt standaard de container/stderr-logboeken van alle containers die worden uitgevoerd in alle naam ruimten, met uitzonde ring van uitvoeren-System. Als u de container logboek verzameling specifiek wilt configureren voor bepaalde naam ruimten of naam ruimten, bekijkt u de configuratie van de [container Insights-agent](container-insights-agent-config.md) om de gewenste instellingen voor het verzamelen van gegevens te configureren voor uw ConfigMap-configuratie bestand.
 
 - Als u Prometheus-metrische gegevens uit uw cluster wilt opwaarderen en analyseren, raadpleegt u [Prometheus metrische gegevens](container-insights-prometheus-integration.md) weer geven
 
-- Zie [How to Stop Monitoring your Hybrid cluster](container-insights-optout-hybrid.md#how-to-stop-monitoring-on-arc-enabled-kubernetes)(Engelstalig) voor meer informatie over het stoppen van het bewaken van uw Kubernetes-cluster met Azure monitor voor containers.
+- Zie [uw hybride cluster niet meer controleren](container-insights-optout-hybrid.md#how-to-stop-monitoring-on-arc-enabled-kubernetes)voor meer informatie over het stoppen van het bewaken van uw Kubernetes-cluster met behulp van container Insights.

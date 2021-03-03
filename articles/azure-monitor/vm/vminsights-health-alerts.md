@@ -1,25 +1,25 @@
 ---
-title: Gaststatuswaarschuwingen van Azure Monitor voor VM's (preview)
-description: Hierin worden de waarschuwingen beschreven die zijn gemaakt door Azure Monitor voor VM's gast status, inclusief het inschakelen en instellen van meldingen.
+title: VM Insights-status waarschuwingen voor gast (preview-versie)
+description: Hierin worden de waarschuwingen beschreven die zijn gemaakt door de VM Insights-gast status, inclusief het inschakelen en meldingen configureren.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/10/2020
-ms.openlocfilehash: 30025f387768aaf1e4d642292c21d5b15ccc7451
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: a32ba9f1c4cf5d6bb9de69e1a6860c858e3ee2a6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612684"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101707503"
 ---
-# <a name="azure-monitor-for-vms-guest-health-alerts-preview"></a>Gaststatuswaarschuwingen van Azure Monitor voor VM's (preview)
-Met Azure Monitor voor VM's gast status kunt u de status van een virtuele machine weer geven zoals gedefinieerd door een set prestatie metingen die regel matig worden steek proeven. Er kan een waarschuwing worden gemaakt wanneer de status van een virtuele machine wordt gewijzigd of als de monitor wordt beschadigd. U kunt deze waarschuwingen weer geven en beheren met [gebruikers die zijn gemaakt door waarschuwings regels in azure monitor](../platform/alerts-overview.md) en ervoor kiezen om proactief te worden gewaarschuwd wanneer er een nieuwe waarschuwing wordt gemaakt.
+# <a name="vm-insights-guest-health-alerts-preview"></a>VM Insights-status waarschuwingen voor gast (preview-versie)
+Met de VM Insights-gast status kunt u de status van een virtuele machine bekijken, zoals gedefinieerd door een set prestatie metingen die regel matig worden steek proeven. Er kan een waarschuwing worden gemaakt wanneer de status van een virtuele machine wordt gewijzigd of als de monitor wordt beschadigd. U kunt deze waarschuwingen weer geven en beheren met [gebruikers die zijn gemaakt door waarschuwings regels in azure monitor](../alerts/alerts-overview.md) en ervoor kiezen om proactief te worden gewaarschuwd wanneer er een nieuwe waarschuwing wordt gemaakt.
 
 ## <a name="configure-alerts"></a>Waarschuwingen configureren
-U kunt geen expliciete waarschuwings regel voor Azure Monitor voor VM's gast status maken als deze functie in preview is. Standaard worden er voor elke virtuele machine waarschuwingen gemaakt, maar niet voor elke monitor.  Dit betekent dat als een monitor verandert in een status die niet van invloed is op de huidige status van de virtuele machine, er geen waarschuwing wordt gemaakt, omdat de status van de virtuele machine niet is gewijzigd. 
+U kunt geen expliciete waarschuwings regel maken voor VM Insights-gast status als deze functie in preview is. Standaard worden er voor elke virtuele machine waarschuwingen gemaakt, maar niet voor elke monitor.  Dit betekent dat als een monitor verandert in een status die niet van invloed is op de huidige status van de virtuele machine, er geen waarschuwing wordt gemaakt, omdat de status van de virtuele machine niet is gewijzigd. 
 
-U kunt waarschuwingen voor een bepaalde virtuele machine uitschakelen of voor een bepaalde monitor op een virtuele machine uit de instelling van de **waarschuwings status** in de configuratie voor de virtuele machine in de Azure Portal. Zie [bewaking configureren in azure monitor voor VM's-gast status (preview)](vminsights-health-configure.md) voor meer informatie over het configureren van monitors in de Azure Portal. Zie [bewaking configureren in azure monitor voor VM's status van de gast met behulp van regels voor gegevens verzameling (preview)](vminsights-health-configure-dcr.md) voor meer informatie over het configureren van monitors in een set virtuele machines.
+U kunt waarschuwingen voor een bepaalde virtuele machine uitschakelen of voor een bepaalde monitor op een virtuele machine uit de instelling van de **waarschuwings status** in de configuratie voor de virtuele machine in de Azure Portal. Zie [bewaking configureren in VM Insights-gast status (preview)](vminsights-health-configure.md) voor meer informatie over het configureren van monitors in de Azure Portal. Zie [bewaking configureren in VM Insights-gast status met behulp van regels voor gegevens verzameling (preview)](vminsights-health-configure-dcr.md) voor meer informatie over het configureren van monitors in een set virtuele machines.
 
 ## <a name="alert-severity"></a>Ernst van waarschuwing
 De ernst van de waarschuwing die is gemaakt door de status van de gast, verwijst rechtstreeks naar de ernst van de virtuele machine of de monitor die de waarschuwing heeft geactiveerd.
@@ -31,12 +31,12 @@ De ernst van de waarschuwing die is gemaakt door de status van de gast, verwijst
 | In orde  | Sev4 |
 
 ## <a name="alert-lifecycle"></a>Waarschuwing levens cyclus
-Er wordt een [Azure-waarschuwing](../platform/alerts-overview.md) gemaakt voor elke virtuele machine telkens wanneer deze wordt gewijzigd in een **waarschuwing** of **kritieke** status. Bekijk de waarschuwing van **waarschuwingen** in het menu **Azure monitor** of in het menu van de virtuele machine in de Azure Portal.
+Er wordt een [Azure-waarschuwing](../alerts/alerts-overview.md) gemaakt voor elke virtuele machine telkens wanneer deze wordt gewijzigd in een **waarschuwing** of **kritieke** status. Bekijk de waarschuwing van **waarschuwingen** in het menu **Azure monitor** of in het menu van de virtuele machine in de Azure Portal.
 
 Als er al een waarschuwing wordt **geactiveerd** wanneer de status van de virtuele machine wordt gewijzigd, wordt er geen tweede waarschuwing gemaakt, maar wordt de ernst van dezelfde waarschuwing gewijzigd zodat deze overeenkomt met de status van de virtuele machine. Als de virtuele machine bijvoorbeeld verandert in een **kritieke** status wanneer er al een **waarschuwing** is **geactiveerd** , wordt de ernst van de waarschuwing gewijzigd in **Sev1**. Als de virtuele machine verandert in een **waarschuwings** status wanneer er al een **Sev1** -waarschuwing is **geactiveerd** , wordt de ernst van de waarschuwing gewijzigd in **Sev2**. Als de virtuele machine weer in de status **in orde** wordt gezet, wordt de waarschuwing opgelost met de ernst gewijzigd in **Sev4**.
 
 ## <a name="viewing-alerts"></a>Waarschuwingen weer geven
-Waarschuwingen weer geven die zijn gemaakt door Azure Monitor voor VM's gast status met andere [waarschuwingen in de Azure Portal](../platform/alerts-overview.md#alerts-experience). U kunt **waarschuwingen** selecteren in het menu **Azure monitor** om waarschuwingen weer te geven voor alle bewaakte resources, of **waarschuwingen** selecteren in het menu van een virtuele machine om waarschuwingen voor de virtuele machine weer te geven.
+Waarschuwingen weer geven die zijn gemaakt door de VM Insights-gast status met andere [waarschuwingen in de Azure Portal](../platform/alerts-overview.md#alerts-experience). U kunt **waarschuwingen** selecteren in het menu **Azure monitor** om waarschuwingen weer te geven voor alle bewaakte resources, of **waarschuwingen** selecteren in het menu van een virtuele machine om waarschuwingen voor de virtuele machine weer te geven.
 
 ## <a name="alert-properties"></a>Waarschuwingseigenschappen
 
@@ -106,6 +106,6 @@ Selecteer in **definiëren voor dit bereik** **actie groep** en selecteer vervol
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Gast status inschakelen in Azure Monitor voor VM's en onboard agents.](vminsights-health-enable.md)
+- [Schakel de gast status in voor de virtuele machine en de onboard-agents.](vminsights-health-enable.md)
 - [Configureer monitors met behulp van de Azure Portal.](vminsights-health-configure.md)
 - [Configureer monitors met behulp van regels voor het verzamelen van gegevens.](vminsights-health-configure-dcr.md)

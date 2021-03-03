@@ -7,17 +7,17 @@ ms.topic: conceptual
 ms.date: 01/22/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: 8d0f1e711b325b1b9ce4e431c1438e511384e8a0
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: b042049c803ad04b54bb6c2a242ca1008bc17dd3
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609852"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734516"
 ---
 # <a name="advanced-features-of-the-azure-metrics-explorer"></a>Geavanceerde functies van de Azure Metrics Explorer
 
 > [!NOTE]
-> In dit artikel wordt ervan uitgegaan dat u bekend bent met de basis functies van de Azure Metrics Explorer-functie van Azure Monitor. Als u een nieuwe gebruiker bent en wilt weten hoe u uw eerste meet diagram maakt, raadpleegt u [aan de slag met de metrics Explorer](../platform/metrics-getting-started.md).
+> In dit artikel wordt ervan uitgegaan dat u bekend bent met de basis functies van de Azure Metrics Explorer-functie van Azure Monitor. Als u een nieuwe gebruiker bent en wilt weten hoe u uw eerste meet diagram maakt, raadpleegt u [aan de slag met de metrics Explorer](./metrics-getting-started.md).
 
 In Azure Monitor zijn [metrische gegevens](data-platform-metrics.md) een reeks gemeten waarden en aantallen die gedurende een bepaalde periode worden verzameld en opgeslagen. Metrische gegevens kunnen standaard (ook wel ' platform ' genoemd) of aangepast zijn. 
 
@@ -49,11 +49,11 @@ Wanneer u tevreden bent met uw selectie, selecteert u **Toep assen**.
 ### <a name="view-metrics-across-multiple-resources"></a>Metrische gegevens over meerdere resources weer geven
 Sommige resource typen kunnen een query uitvoeren op metrische gegevens over meerdere resources. De resources moeten zich in hetzelfde abonnement en dezelfde locatie bevallen. Deze resource typen vindt u boven aan het menu **resource typen** . 
 
-Zie [meerdere resources selecteren](../platform/metrics-dynamic-scope.md#select-multiple-resources)voor meer informatie.
+Zie [meerdere resources selecteren](./metrics-dynamic-scope.md#select-multiple-resources)voor meer informatie.
 
 ![Scherm opname met verschillende typen resources.](./media/metrics-charts/multi-resource-scope.png)
 
-Voor typen die compatibel zijn met meerdere resources kunt u een query uitvoeren voor metrische gegevens over een abonnement of meerdere resource groepen. Zie [een resource groep of een abonnement selecteren](../platform/metrics-dynamic-scope.md#select-a-resource-group-or-subscription)voor meer informatie.
+Voor typen die compatibel zijn met meerdere resources kunt u een query uitvoeren voor metrische gegevens over een abonnement of meerdere resource groepen. Zie [een resource groep of een abonnement selecteren](./metrics-dynamic-scope.md#select-a-resource-group-or-subscription)voor meer informatie.
 
 ## <a name="multiple-metric-lines-and-charts"></a>Meerdere metrische lijnen en grafieken
 
@@ -67,7 +67,7 @@ Stel dat u vijf opslag accounts hebt en u wilt weten hoeveel ruimte er samen wor
 
 ### <a name="multiple-metrics-on-the-same-chart"></a>Meerdere metrische gegevens in hetzelfde diagram
 
-Als u meerdere metrische gegevens in hetzelfde diagram wilt weer geven, maakt u eerst [een nieuwe grafiek](../platform/metrics-getting-started.md#create-your-first-metric-chart). Selecteer vervolgens **metrische gegevens toevoegen**. Herhaal deze stap om nog een metrische waarde toe te voegen aan hetzelfde diagram.
+Als u meerdere metrische gegevens in hetzelfde diagram wilt weer geven, maakt u eerst [een nieuwe grafiek](./metrics-getting-started.md#create-your-first-metric-chart). Selecteer vervolgens **metrische gegevens toevoegen**. Herhaal deze stap om nog een metrische waarde toe te voegen aan hetzelfde diagram.
 
 > [!NOTE]
 > Normaal gesp roken mogen uw grafieken geen metrische gegevens combi neren die gebruikmaken van verschillende maat eenheden. Vermijd bijvoorbeeld het combi neren van één metriek die milliseconden gebruikt met een andere waarde die kilo bytes gebruikt. Vermijd ook het combi neren van metrische gegevens waarvan de schalen aanzienlijk verschillen. 
@@ -86,7 +86,7 @@ Wanneer u een metriek toevoegt aan een grafiek, past de metrics Explorer automat
 
 Voordat u verschillende aggregaties in een grafiek gebruikt, moet u weten hoe de metrische gegevens Verkenner deze verwerkt. Metrische gegevens zijn een reeks metingen (of metrische waarden) die gedurende een bepaalde periode worden vastgelegd. Wanneer u een grafiek uitzet, worden de waarden van de geselecteerde metriek afzonderlijk geaggregeerd tijdens de *tijd korrel*. 
 
-U selecteert de grootte van de tijdgranulariteit door het [deel venster tijd kiezer](../platform/metrics-getting-started.md#select-a-time-range)van de metrieken Explorer te gebruiken. Als u de tijdgranulariteit niet expliciet selecteert, wordt standaard het momenteel geselecteerde tijds bereik gebruikt. Nadat de tijd is vastgesteld, worden de metrische waarden die zijn vastgelegd tijdens elke tijd korrel, geaggregeerd in de grafiek, één gegevens punt per tijd.
+U selecteert de grootte van de tijdgranulariteit door het [deel venster tijd kiezer](./metrics-getting-started.md#select-a-time-range)van de metrieken Explorer te gebruiken. Als u de tijdgranulariteit niet expliciet selecteert, wordt standaard het momenteel geselecteerde tijds bereik gebruikt. Nadat de tijd is vastgesteld, worden de metrische waarden die zijn vastgelegd tijdens elke tijd korrel, geaggregeerd in de grafiek, één gegevens punt per tijd.
 
 Stel bijvoorbeeld dat een grafiek de waarde voor de *reactie tijd* van de server weergeeft. Er wordt gebruikgemaakt van de *gemiddelde* aggregatie over de tijds duur van de *laatste 24 uur*. In dit voorbeeld:
 
@@ -230,6 +230,42 @@ Het deel venster waarschuwings regel maken wordt geopend. In het deel venster zi
 
 Zie [metrische waarschuwingen maken, weer geven en beheren](../alerts/alerts-metric.md)voor meer informatie.
 
+## <a name="correlate-metrics-to-logs"></a>Metrische gegevens correleren aan logboeken
+Om klanten te helpen bij het vaststellen van de hoofd oorzaak van afwijkingen in hun metrische grafiek, hebben we analyse in logboeken gemaakt. Door in Logboeken in te zoomen kunnen klanten pieken in hun metrische grafiek correleren aan logboeken en query's. 
+
+Voordat we de ervaring zien, willen we eerst de verschillende typen logboeken en query's introduceren. 
+
+| Termijn             | Definitie  | 
+|------------------|-------------|
+| Activiteitenlogboeken    | Biedt inzicht in de bewerkingen op elke Azure-resource in het abonnement van buiten (het beheer vlak) naast updates voor Service Health gebeurtenissen. Gebruik het activiteiten logboek om te bepalen wat, wie en wanneer voor schrijf bewerkingen (PUT, POST, DELETE) die zijn uitgevoerd op de resources in uw abonnement. Er is één activiteiten logboek voor elk Azure-abonnement.  |   
+| Diagnostisch logboek   | Verstrek inzicht in de bewerkingen die zijn uitgevoerd in een Azure-resource (het gegevens vlak), bijvoorbeeld om een geheim te verkrijgen van een Key Vault of een aanvraag naar een Data Base te maken. De inhoud van bron Logboeken is afhankelijk van de Azure-service en het resource type. **Opmerking:** Moet worden verschaft door de service en worden ingeschakeld door de klant  | 
+| Aanbevolen logboek | Op scenario's gebaseerde query's die klanten kunnen gebruiken om afwijkingen in hun metrieke Explorer te onderzoeken.  |
+
+Op dit moment zijn er analyse logboeken beschikbaar voor geselecteerde resource providers. De resource providers met de volledige analyse van logboeken zijn: 
+
+* Application Insights 
+* Automatisch schalen 
+* App Services  
+* Storage  
+
+Hieronder ziet u een voor beeld van toepassingen voor de resource provider van Application Insights.
+
+![Pieken in storingen in de Blade metrische gegevens van app Insights](./media/metrics-charts/drill-into-log-ai.png)
+
+Als u de piek in mislukte aanvragen wilt vaststellen, klikt u op Details in Logboeken.
+
+![Scherm opname van de vervolg keuzelijst logboeken](./media/metrics-charts/drill-into-logs-dropdown.png)
+
+Als u op de fout optie klikt, wordt u geleid tot een aangepaste Blade met de fout die de mislukte bewerkingen, de belangrijkste uitzonderings typen en afhankelijkheden bevat. 
+
+![Scherm afbeelding van de Blade fout met app Insights](./media/metrics-charts/ai-failure-blade.png)
+
+### <a name="common-problems-with-drill-into-logs"></a>Veelvoorkomende problemen met Inzoomen op Logboeken
+
+* Het logboek en de query's zijn uitgeschakeld: als u de aanbevolen logboeken en query's wilt weer geven, moet u de diagnostische logboeken naar Log Analytics verzenden. Lees [dit document](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings) voor meer informatie over hoe u dit doet. 
+* Er worden alleen activiteiten logboeken weer gegeven. de functie voor het in-en uitzoomen van Logboeken is alleen beschikbaar voor Select Resource providers. Er worden standaard activiteiten logboeken gegeven. 
+
+ 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
 Als er geen gegevens in uw grafiek worden weer gegeven, raadpleegt u de volgende informatie over het oplossen van problemen:
@@ -242,6 +278,5 @@ Als er geen gegevens in uw grafiek worden weer gegeven, raadpleegt u de volgende
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [aangepaste KPI-Dash boards](../learn/tutorial-app-dashboards.md)maken voor het maken van Dash boards die kunnen worden uitgevoerd met behulp van metrische gegevens.
+Zie [aangepaste KPI-Dash boards](../app/tutorial-app-dashboards.md)maken voor het maken van Dash boards die kunnen worden uitgevoerd met behulp van metrische gegevens.
 
- 

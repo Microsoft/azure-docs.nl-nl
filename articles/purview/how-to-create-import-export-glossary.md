@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 12/02/2020
-ms.openlocfilehash: a693761bcecab87e343014127ad37077c2569e21
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 7466e143f345ea305c7e9ef118d09fb6f685ac16
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96552449"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101694480"
 ---
 # <a name="how-to-create-import-and-export-glossary-terms"></a>Termen van een woorden lijst maken, importeren en exporteren
 
@@ -88,6 +88,10 @@ U moet termen uit de woorden lijst kunnen exporteren zolang de geselecteerde ter
 1. Wanneer u zich in de woorden lijst bevindt, wordt standaard de knop **exporteren** uitgeschakeld. Wanneer u de voor waarden selecteert die u wilt exporteren, wordt de knop **exporteren** ingeschakeld als de geselecteerde termen bij dezelfde sjabloon horen.
 
 2. Selecteer **exporteren** om de geselecteerde voor waarden te downloaden.
+
+ > [!Important]
+   > Als de voor waarden in een hiërarchie deel uitmaken van verschillende term sjablonen, moet u ze in een andere periode splitsen. CSV-bestanden die moeten worden geïmporteerd. Het bijwerken van een bovenliggend item van een term wordt op dit moment niet ondersteund met het import proces.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

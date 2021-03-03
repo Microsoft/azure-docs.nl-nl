@@ -8,14 +8,14 @@ ms.topic: conceptual
 author: DavidTrigano
 ms.author: datrigan
 ms.reviewer: vanto
-ms.date: 02/03/2021
+ms.date: 02/28/2021
 ms.custom: azure-synapse, sqldbrb=1
-ms.openlocfilehash: 0e85019c8f02b8a4a97426d50a30d047b95378a1
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 8635e3590d4196e407dfc591a55ee240806358ed
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100572285"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101691515"
 ---
 # <a name="auditing-for-azure-sql-database-and-azure-synapse-analytics"></a>Controleren op Azure SQL Database en Azure Synapse Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -47,6 +47,8 @@ U kunt SQL Database controle gebruiken voor het volgende:
 - **Premium-opslag** wordt momenteel **niet ondersteund**.
 - **Hiërarchische naam ruimte** voor **Azure data Lake Storage Gen2 opslag account** wordt momenteel **niet ondersteund**.
 - Het inschakelen van controle op een onderbroken **Azure Synapse** wordt niet ondersteund. Als u controle wilt inschakelen, hervat u Azure Synapse.
+- Controle voor **Azure Synapse SQL-Pools** ondersteunt **alleen** standaard controle-actie groepen.
+
 
 #### <a name="define-server-level-vs-database-level-auditing-policy"></a><a id="server-vs-database-level"></a>Het controle beleid op server niveau versus database niveau definiëren
 
@@ -75,7 +77,7 @@ Er kan een controle beleid worden gedefinieerd voor een specifieke data base of 
 - Zie de naslag informatie over de [indeling van BLOB-controle logboeken](./audit-log-format.md)voor meer informatie over de logboek indeling, de hiërarchie van de opslag map en naam conventies.
 - Controle op [alleen-lezen replica's](read-scale-out.md) wordt automatisch ingeschakeld. Voor meer informatie over de hiërarchie van de opslag mappen, naam conventies en logboek indeling raadpleegt u de [SQL database controle logboek indeling](audit-log-format.md).
 - Wanneer u Azure AD-verificatie gebruikt, worden records met mislukte aanmeldingen *niet* weer gegeven in het SQL-controle logboek. Als u mislukte aanmeldings controle records wilt weer geven, gaat u naar de [Azure Active Directory-Portal](../../active-directory/reports-monitoring/reference-sign-ins-error-codes.md), waarin de details van deze gebeurtenissen worden vastgelegd.
-- Aanmeldingen worden door de gateway doorgestuurd naar het specifieke exemplaar waarin de data base zich bevindt.  In het geval van AAD-aanmeldingen worden de referenties gecontroleerd voordat deze wordt gebruikt om u aan te melden bij de aangevraagde data base.  In het geval van een storing wordt de aangevraagde data base nooit geopend, dus wordt er geen controle uitgevoerd.  In het geval van SQL-aanmeldingen worden de referenties gecontroleerd op de aangevraagde gegevens, dus in dit geval kunnen ze worden gecontroleerd.  Geslaagde aanmeldingen die de data base uiteraard bereiken, worden in beide gevallen gecontroleerd.
+- Aanmeldingen worden door de gateway doorgestuurd naar het specifieke exemplaar waarin de database zich bevindt.  In het geval van AAD-aanmeldingen worden de referenties gecontroleerd voordat deze wordt gebruikt om u aan te melden bij de aangevraagde database.  In het geval van een storing wordt de aangevraagde database nooit geopend, dus wordt er geen controle uitgevoerd.  In het geval van SQL-aanmeldingen worden de referenties gecontroleerd op de aangevraagde gegevens, dus in dit geval kunnen ze worden gecontroleerd.  Geslaagde aanmeldingen, die uiteraard de database bereiken, worden in beide gevallen gecontroleerd.
 - Nadat u de controle-instellingen hebt geconfigureerd, kunt u de nieuwe functie voor het detecteren van bedreigingen inschakelen en e-mail berichten configureren voor het ontvangen van beveiligings waarschuwingen. Wanneer u detectie van dreigingen gebruikt, ontvangt u proactieve waarschuwingen over afwijkende database activiteiten die kunnen wijzen op mogelijke beveiligings dreigingen. Zie aan de slag [met detectie van bedreigingen](threat-detection-overview.md)voor meer informatie.
 
 ## <a name="set-up-auditing-for-your-server"></a><a id="setup-auditing"></a>Controle instellen voor uw server
@@ -151,7 +153,7 @@ Als u het schrijven van audit logboeken naar een Event Hub wilt configureren, se
 
 Als u ervoor hebt gekozen om audit logboeken naar Azure Monitor-logboeken te schrijven:
 
-- Gebruik [Azure Portal](https://portal.azure.com). Open de relevante data base. Klik boven aan de **controle** pagina van de Data Base op **audit logboeken weer geven**.
+- Gebruik [Azure Portal](https://portal.azure.com). Open de relevante database. Klik boven aan de **controle** pagina van de Data Base op **audit logboeken weer geven**.
 
     ![audit logboeken weer geven](./media/auditing-overview/auditing-view-audit-logs.png)
 
@@ -175,13 +177,13 @@ Als u ervoor hebt gekozen om audit logboeken naar Azure Monitor-logboeken te sch
 Als u ervoor hebt gekozen om audit logboeken naar Event hub te schrijven:
 
 - Als u gegevens van de audit logboeken van Event hub wilt gebruiken, moet u een stroom instellen om gebeurtenissen te gebruiken en deze naar een doel te schrijven. Zie de [documentatie van Azure Event hubs](../index.yml)voor meer informatie.
-- Audit Logboeken in Event hub worden vastgelegd in de hoofd tekst van [Apache Avro](https://avro.apache.org/) -gebeurtenissen en opgeslagen met behulp van JSON-indeling met UTF-8-code ring. Als u de audit logboeken wilt lezen, kunt u [Avro-Hulpprogram ma's](../../event-hubs/event-hubs-capture-overview.md#use-avro-tools) of gelijksoortige hulp middelen gebruiken waarmee deze indeling wordt verwerkt.
+- Audit Logboeken in Event hub worden vastgelegd in de hoofd tekst van [Apache Avro](https://avro.apache.org/) -gebeurtenissen en opgeslagen met behulp van JSON-indeling met UTF-8-code ring. Als u de auditlogboeken wilt lezen, kunt u [Avro-hulpprogramma's](../../event-hubs/event-hubs-capture-overview.md#use-avro-tools) of gelijksoortige hulpmiddelen gebruiken waarmee deze indeling wordt verwerkt.
 
 Als u ervoor hebt gekozen om audit logboeken naar een Azure Storage-account te schrijven, zijn er verschillende methoden om de logboeken weer te geven:
 
 - Audit logboeken worden geaggregeerd in het account dat u tijdens de installatie hebt gekozen. U kunt audit logboeken verkennen met behulp van een hulp programma zoals [Azure Storage Explorer](https://storageexplorer.com/). In azure Storage worden controle Logboeken opgeslagen als een verzameling BLOB-bestanden in een container met de naam **sqldbauditlogs**. Voor meer informatie over de hiërarchie van de opslag mappen, naam conventies en logboek indeling raadpleegt u de [SQL database controle logboek indeling](./audit-log-format.md).
 
-- Gebruik [Azure Portal](https://portal.azure.com).  Open de relevante data base. Klik boven aan de **controle** pagina van de Data Base op **audit logboeken weer geven**.
+- Gebruik [Azure Portal](https://portal.azure.com).  Open de relevante database. Klik boven aan de **controle** pagina van de Data Base op **audit logboeken weer geven**.
 
     ![Scherm opname van de knop controle logboeken weer geven die is gemarkeerd op de pagina voor het controleren van de data base.](./media/auditing-overview/7_auditing_get_started_blob_view_audit_logs.png)
 

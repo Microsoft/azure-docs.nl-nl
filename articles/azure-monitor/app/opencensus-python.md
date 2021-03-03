@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 09/24/2020
 ms.reviewer: mbullwin
 ms.custom: devx-track-python
-ms.openlocfilehash: f50628395526783face11fcb1438e2716135b640
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: d22174b269ba9cea3b2c9cb9de2b5521df2786fa
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100584033"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101704409"
 ---
 # <a name="set-up-azure-monitor-for-your-python-application"></a>Azure Monitor instellen voor uw python-toepassing
 
@@ -221,6 +221,15 @@ Zie voor meer informatie over het wijzigen van bijgehouden telemetrie voordat de
 
 ### <a name="metrics"></a>Metrische gegevens
 
+Opentelling. statistieken ondersteunt 4 aggregatie methoden, maar biedt gedeeltelijke ondersteuning voor Azure Monitor:
+
+- **Aantal:** Het aantal meet punten. De waarde is cumulatief, kan alleen verhogen en opnieuw instellen op 0 bij opnieuw opstarten. 
+- **Som:** Een som van de meet punten. De waarde is cumulatief, kan alleen verhogen en opnieuw instellen op 0 bij opnieuw opstarten. 
+- **LastValue:** Houdt de laatst vastgelegde waarde bij, alle andere waarden.
+- **Distributie:** De verdeling van de histogrammen van de meet punten. Deze methode wordt **niet ondersteund door de Azure-export functie**.
+
+### <a name="count-aggregation-example"></a>Voor beeld van aantal aggregatie
+
 1. Eerst gaan we een aantal lokale metrische gegevens genereren. We maken een eenvoudige metriek om het aantal keren dat de gebruiker de **Enter** -toets selecteert, te volgen.
 
     ```python
@@ -320,7 +329,7 @@ Zie voor meer informatie over het wijzigen van bijgehouden telemetrie voordat de
         main()
     ```
 
-1. De exporteur verzendt metrische gegevens naar Azure Monitor met een vast interval. De standaard waarde is elke 15 seconden. Er wordt één metrische waarde bijgehouden, dus deze metrische gegevens, met wille keurige waarden en tijds tempels, worden elk interval verzonden. U kunt de gegevens vinden onder `customMetrics` .
+1. De exporteur verzendt metrische gegevens naar Azure Monitor met een vast interval. De standaard waarde is elke 15 seconden. Er wordt één metrische waarde bijgehouden, dus deze metrische gegevens, met wille keurige waarden en tijds tempels, worden elk interval verzonden. De waarde is cumulatief, kan alleen verhogen en opnieuw instellen op 0 bij opnieuw opstarten. U vindt de gegevens onder `customMetrics` , maar de `customMetrics` Eigenschappen ValueCount, ValueSum, ValueMin, ValueMax en valueStdDev worden niet daad werkelijk gebruikt.
 
 #### <a name="performance-counters"></a>Prestatiemeteritems
 

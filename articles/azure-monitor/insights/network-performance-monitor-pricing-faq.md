@@ -1,22 +1,21 @@
 ---
 title: Veelgestelde vragen over prijzen voor Azure Netwerkprestatiemeter | Microsoft Docs
 description: Veelgestelde vragen-Azure Netwerkprestatiemeter
-ms.subservice: logs
 ms.topic: conceptual
 author: agummadi
 ms.author: agummadi
 ms.date: 04/02/2018
-ms.openlocfilehash: 4b9e8a81095a63c667925f8b51d9f9f2aa081f8d
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: 56163d3267a69099cbf6a18266168e9198ea04c6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99832875"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717431"
 ---
 # <a name="pricing-changes-for-azure-network-performance-monitor"></a>Prijs wijzigingen voor Azure Netwerkprestatiemeter
 
 > [!IMPORTANT]
-> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor](https://docs.microsoft.com/azure/network-watcher/migrate-to-connection-monitor-from-network-performance-monitor) in azure Network Watcher vóór 29 februari 2024.
+> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor](../../network-watcher/migrate-to-connection-monitor-from-network-performance-monitor.md) in azure Network Watcher vóór 29 februari 2024.
 
 We hebben geluisterd naar uw feedback en hebben onlangs een [nieuwe prijs ervaring](https://azure.microsoft.com/blog/introducing-a-new-way-to-purchase-azure-monitoring-services/) geïntroduceerd voor verschillende bewakings Services in Azure. In dit artikel worden de prijs wijzigingen met betrekking tot Azure [Netwerkprestatiemeter](../../networking/network-monitoring-overview.md) (NPM) vastgelegd in een gemakkelijk te lezen vraag-en antwoord indeling.
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: 70f64813546c66c0f9e3533e09de192315f75600
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: fb3e09cefa7f87fe2eb1e5013854c7965ea9330e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98955068"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101698838"
 ---
 # <a name="step-1---understand-the-benefits-of-migrating-to-media-services-api-v3"></a>Stap 1: inzicht krijgen in de voor delen van migreren naar Media Services API v3
 
@@ -38,7 +38,7 @@ Er zijn belang rijke verbeteringen aangebracht in Media Services met v3.
 | Azure Portal updates | Het Azure Portal is bijgewerkt met het beheer van v3 API-entiteiten. Klanten kunnen de portal gebruiken om live streamen te starten, v3-transformatie taken te verzenden, beleids regels voor inhouds beveiliging te beheren, streaming-eind punten, API-toegang verkrijgen, gekoppelde opslag accounts beheren en bewakings taken uitvoeren. |
 | **Accounts en opslag** | |
 | Op rollen gebaseerd toegangs beheer (RBAC) van Azure | Klanten kunnen nu hun eigen rollen definiëren en toegang tot elke entiteit beheren in de Media Services ARM-API. Zo kunt u de toegang tot resources beheren via AAD-accounts. |
-| Beheerde identiteiten | Beheerde identiteiten voor komen dat ontwikkel aars referenties kunnen beheren door een identiteit op te geven voor de Azure-resource in azure AD. Zie [hier](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)voor meer informatie over beheerde identiteiten. |
+| Beheerde identiteiten | Beheerde identiteiten voor komen dat ontwikkel aars referenties kunnen beheren door een identiteit op te geven voor de Azure-resource in azure AD. Zie [hier](../../active-directory/managed-identities-azure-resources/overview.md)voor meer informatie over beheerde identiteiten. |
 | Ondersteuning voor persoonlijke koppelingen | Klanten hebben toegang tot Media Services-eind punten voor key delivery, LiveEvents en StreamingEndpoints via een PrivateEndpoint op het VNet. |
 | [Klant-beheerd sleutels](concept-use-customer-managed-keys-byok.md) of uw eigen Key (BYOK)-ondersteuning | Klanten kunnen de gegevens in hun Media Services account versleutelen met behulp van een sleutel in hun Azure Key Vault. |
 | **Assets** | |

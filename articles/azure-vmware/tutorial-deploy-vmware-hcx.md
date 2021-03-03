@@ -3,12 +3,12 @@ title: 'Zelfstudie: VMware HCX implementeren en configureren'
 description: Meer informatie over het implementeren en configureren van een VMware HCX-oplossing voor de privécloud van uw Azure VMware Solution.
 ms.topic: tutorial
 ms.date: 11/25/2020
-ms.openlocfilehash: a792f8dbc646f61377cf0a88e1a6e386340f23e8
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
-ms.translationtype: HT
+ms.openlocfilehash: e1df53a7aea0b7642828bba80cd7237e26a7182f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97357888"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728226"
 ---
 # <a name="deploy-and-configure-vmware-hcx"></a>VMware HCX implementeren en configureren
 
@@ -76,12 +76,15 @@ Voordat u het virtuele apparaat in uw on-premises vCenter implementeert, moet u 
 
    :::image type="content" source="media/tutorial-vmware-hcx/find-hcx-ip-address.png" alt-text="Schermopname van het IP-adres van VMware HCX." lightbox="media/tutorial-vmware-hcx/find-hcx-ip-address.png":::
 
-1. Selecteer **Manage** > **Identity** en selecteer **Center admin password** om te achterhalen wat het wachtwoord is.
+1. Selecteer   >  **identiteit** beheren. 
+
+   De URL's en gebruikersreferenties voor vCenter en NSX-T-beheer van de privécloud worden weergegeven.
 
    > [!TIP]
-   > Het vCenter-wachtwoord is gedefinieerd tijdens het instellen van de privécloud. Het is hetzelfde wachtwoord dat u gebruikt om u aan te melden bij de Azure VMware Solution HCX Manager.
+   > Het vCenter-wachtwoord is gedefinieerd tijdens het instellen van de privécloud. Het is hetzelfde wachtwoord dat u gebruikt om u aan te melden bij de Azure VMware Solution HCX Manager. U kunt **een nieuw wacht woord genereren** selecteren om nieuwe vCenter-en NSX-T-wacht woorden te genereren.
 
-   :::image type="content" source="media/tutorial-vmware-hcx/hcx-admin-password.png" alt-text="hcx-wachtwoord zoeken." lightbox="media/tutorial-vmware-hcx/hcx-admin-password.png":::
+   :::image type="content" source="media/tutorial-access-private-cloud/ss4-display-identity.png" alt-text="URL's en referenties weergeven van vCenter en NSX-beheer van de privécloud." border="true":::
+
 
 1. Open een browservenster, meld u aan bij Azure VMware Solution HCX Manager op `https://x.x.x.9`poort 443 met de gebruikersreferenties **cloudadmin\@vsphere.local**
 

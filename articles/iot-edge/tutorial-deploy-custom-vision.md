@@ -9,12 +9,12 @@ ms.date: 07/30/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 564f19a1be5b3ce8a5267a07bd4f1f6de80fecf1
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
-ms.translationtype: HT
+ms.openlocfilehash: 8e64233ce1d59512e38ce6c366eba889392c4623
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96621277"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101736488"
 ---
 # <a name="tutorial-perform-image-classification-at-the-edge-with-custom-vision-service"></a>Zelfstudie: Custom Vision Service gebruiken om afbeeldingsclassificatie uit te voeren aan de rand
 
@@ -40,7 +40,7 @@ In deze zelfstudie leert u het volgende:
 ## <a name="prerequisites"></a>Vereisten
 
 >[!TIP]
->Deze zelfstudie is een vereenvoudigde versie van het voorbeeldproject [Custom Vision en Azure IoT Edge op een Raspberry Pi 3](https://github.com/Azure-Samples/Custom-vision-service-iot-edge-raspberry-pi). Deze zelfstudie is ontworpen om te worden uitgevoerd op een virtuele machine in de cloud en maakt gebruik van statische afbeeldingen om de functie voor afbeeldingsclassificatie te trainen en te testen, wat handig is voor iemand die net begint met het evalueren van Custom Vision in IoT Edge. Het voorbeeldproject maakt gebruik van fysieke hardware en stelt een live camerafeed in voor het trainen en testen van de functie voor afbeeldingsclassificatie, wat handig is voor iemand die een meer gedetailleerd praktijkscenario wil uitproberen.
+>Deze zelfstudie is een vereenvoudigde versie van het voorbeeldproject [Custom Vision en Azure IoT Edge op een Raspberry Pi 3](https://github.com/Azure-Samples/custom-vision-service-iot-edge-raspberry-pi). Deze zelfstudie is ontworpen om te worden uitgevoerd op een virtuele machine in de cloud en maakt gebruik van statische afbeeldingen om de functie voor afbeeldingsclassificatie te trainen en te testen, wat handig is voor iemand die net begint met het evalueren van Custom Vision in IoT Edge. Het voorbeeldproject maakt gebruik van fysieke hardware en stelt een live camerafeed in voor het trainen en testen van de functie voor afbeeldingsclassificatie, wat handig is voor iemand die een meer gedetailleerd praktijkscenario wil uitproberen.
 
 Voordat u met deze zelfstudie begint, moet u de vorige zelfstudie hebben doorlopen om uw omgeving voor Linux-containerontwikkeling in te stellen: [IoT Edge-modules ontwikkelen voor Linux-apparaten](tutorial-develop-for-linux.md). Als u die zelfstudie hebt voltooid, hebt u de volgende vereisten klaarstaan:
 

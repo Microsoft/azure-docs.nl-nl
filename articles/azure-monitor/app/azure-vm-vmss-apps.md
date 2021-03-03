@@ -3,12 +3,12 @@ title: Prestaties bewaken op virtuele machines van Azure-Azure-toepassing Insigh
 description: Bewaking van toepassings prestaties voor Azure VM en virtuele-machine schaal sets van Azure. Grafiek belasting en respons tijd, afhankelijkheids informatie en waarschuwingen instellen voor prestaties.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: 48441711c8c6209b25974108fd91d1023fd6e6be
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 0951d1d622f59de4780735fad78ac73649ea2369
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493733"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711478"
 ---
 # <a name="deploy-the-azure-monitor-application-insights-agent-on-azure-virtual-machines-and-azure-virtual-machine-scale-sets"></a>De Azure Monitor Application Insights-agent implementeren op virtuele machines van Azure en virtuele-machine schaal sets van Azure
 
@@ -16,7 +16,7 @@ Het inschakelen van bewaking voor uw .NET-of Java-webtoepassingen die worden uit
 
 Dit artikel helpt u bij het inschakelen van Application Insights bewaking met behulp van de Application Insights agent en voorziet in voorlopige richt lijnen voor het automatiseren van het proces voor grootschalige implementaties.
 > [!IMPORTANT]
-> **Java** -toepassingen die worden uitgevoerd op virtuele machines van Azure en VMSS worden bewaakt met **[Application Insights Java 3,0-agent](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent)**, die algemeen beschikbaar is.
+> **Java** -toepassingen die worden uitgevoerd op virtuele machines van Azure en VMSS worden bewaakt met **[Application Insights Java 3,0-agent](./java-in-process-agent.md)**, die algemeen beschikbaar is.
 
 > [!IMPORTANT]
 > Azure-toepassing Insights-agent voor ASP.NET-toepassingen die worden uitgevoerd op **virtuele machines in Azure en VMSS** , is momenteel beschikbaar als open bare preview. Voor het bewaken van uw ASP.Net-toepassingen die **on-premises** worden uitgevoerd, gebruikt u de [Azure-toepassing Insights-agent voor on-premises servers](./status-monitor-v2-overview.md), die algemeen beschikbaar en volledig wordt ondersteund.
@@ -42,7 +42,7 @@ Er zijn twee manieren om toepassings bewaking in te scha kelen voor virtuele mac
   * De Application Insights-agent verzamelt automatisch dezelfde afhankelijkheids signalen als de .NET-SDK. Zie de [Automatische verzameling van afhankelijkheden](./auto-collect-dependencies.md#net) voor meer informatie.
         
 #### <a name="java"></a>Java
-  * Voor Java is **[Application Insights java 3,0-agent](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent)** de aanbevolen methode. De meest populaire bibliotheken en frameworks, evenals logboeken en afhankelijkheden worden [automatisch verzameld](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent#auto-collected-requests-dependencies-logs-and-metrics), met een groot aantal [extra configuraties](https://docs.microsoft.com/azure/azure-monitor/app/java-standalone-config)
+  * Voor Java is **[Application Insights java 3,0-agent](./java-in-process-agent.md)** de aanbevolen methode. De meest populaire bibliotheken en frameworks, evenals logboeken en afhankelijkheden worden [automatisch verzameld](./java-in-process-agent.md#auto-collected-requests-dependencies-logs-and-metrics), met een groot aantal [extra configuraties](./java-standalone-config.md)
 
 ### <a name="code-based-via-sdk"></a>Code gebaseerd via SDK
     
@@ -55,19 +55,19 @@ Er zijn twee manieren om toepassings bewaking in te scha kelen voor virtuele mac
     > Alleen voor .NET-Apps: als zowel bewaking op basis van de agent als hand matige instrumentatie op basis van SDK wordt gedetecteerd, worden alleen de hand matige instrumentatie-instellingen nageleefd. Dit is om te voor komen dat dubbele gegevens worden verzonden. Raadpleeg de [sectie probleem oplossing](#troubleshooting) hieronder voor meer informatie.
 
 #### <a name="net-core"></a>.NET Core
-Als u .NET core-toepassingen wilt bewaken, gebruikt u de [SDK](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core) 
+Als u .NET core-toepassingen wilt bewaken, gebruikt u de [SDK](./asp-net-core.md) 
 
 #### <a name="java"></a>Java 
 
-Als u aanvullende aangepaste telemetrie voor Java-toepassingen nodig hebt, raadpleegt u wat [beschikbaar is](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent#send-custom-telemetry-from-your-application), [aangepaste dimensies](https://docs.microsoft.com/azure/azure-monitor/app/java-standalone-config#custom-dimensions)toevoegen of [telemetrie-processors](https://docs.microsoft.com/azure/azure-monitor/app/java-standalone-telemetry-processors)gebruiken. 
+Als u aanvullende aangepaste telemetrie voor Java-toepassingen nodig hebt, raadpleegt u wat [beschikbaar is](./java-in-process-agent.md#send-custom-telemetry-from-your-application), [aangepaste dimensies](./java-standalone-config.md#custom-dimensions)toevoegen of [telemetrie-processors](./java-standalone-telemetry-processors.md)gebruiken. 
 
 #### <a name="nodejs"></a>Node.js
 
-Gebruik de [SDK](https://docs.microsoft.com/azure/azure-monitor/app/nodejs)om uw Node.js-toepassing te instrumenteren.
+Gebruik de [SDK](./nodejs.md)om uw Node.js-toepassing te instrumenteren.
 
 #### <a name="python"></a>Python
 
-Gebruik de [SDK](https://docs.microsoft.com/azure/azure-monitor/app/opencensus-python)om python-apps te controleren.
+Gebruik de [SDK](./opencensus-python.md)om python-apps te controleren.
 
 ## <a name="manage-application-insights-agent-for-net-applications-on-azure-virtual-machines-using-powershell"></a>Application Insights agent voor .NET-toepassingen op Azure virtual machines beheren met Power shell
 

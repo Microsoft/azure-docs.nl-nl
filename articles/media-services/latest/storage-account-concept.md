@@ -42,7 +42,7 @@ Ter bescherming van uw assets op rest moeten de activa worden versleuteld door d
 
 ## <a name="storage-account-double-encryption"></a>Dubbele versleuteling van opslag account
 
-Opslag accounts ondersteunen dubbele versleuteling, maar de tweede laag moet expliciet worden ingeschakeld. Zie [Azure Storage versleuteling voor Data-at-rest](https://docs.microsoft.com/azure/storage/common/storage-service-encryption#doubly-encrypt-data-with-infrastructure-encryption).  
+Opslag accounts ondersteunen dubbele versleuteling, maar de tweede laag moet expliciet worden ingeschakeld. Zie [Azure Storage versleuteling voor Data-at-rest](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption).  
 
 ## <a name="storage-account-errors"></a>Fouten in het opslag account
 

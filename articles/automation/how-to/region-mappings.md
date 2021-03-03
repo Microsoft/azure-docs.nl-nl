@@ -1,20 +1,24 @@
 ---
 title: Ondersteunde regio's voor gekoppelde Log Analytics-werkruimte
 description: In dit artikel worden de ondersteunde regio toewijzingen beschreven tussen een Automation-account en een Log Analytics-werk ruimte, aangezien deze betrekking hebben op bepaalde functies van Azure Automation.
-ms.date: 01/21/2021
+ms.date: 02/17/2021
 services: automation
 ms.topic: conceptual
 ms.custom: references_regions
-ms.openlocfilehash: 3b744127b51b0e0db63c158feaf463af4cd0bdcf
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 0599dcb57b46d1e48b4035acac8b64edbbe06912
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98704318"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101720168"
 ---
 # <a name="supported-regions-for-linked-log-analytics-workspace"></a>Ondersteunde regio's voor gekoppelde Log Analytics-werkruimte
 
 In Azure Automation kunt u de functies Updatebeheer, Wijzigingen bijhouden en inventarisatie en VM's buiten bedrijfsuren starten/stoppen in te scha kelen voor uw servers en virtuele machines. Deze functies hebben een afhankelijkheid van een Log Analytics-werk ruimte en daarom moet u de werk ruimte koppelen aan een Automation-account. Er worden echter alleen bepaalde regio's ondersteund om ze samen te koppelen. In het algemeen is de toewijzing *niet* van toepassing als u van plan bent om een Automation-account te koppelen aan een werk ruimte waarvoor deze functies niet zijn ingeschakeld.
+
+De toewijzingen die hier worden beschreven, zijn alleen van toepassing op het koppelen van de Log Analytics-werk ruimte aan een Automation-account. Ze zijn niet van toepassing op de virtuele machines (Vm's) die zijn verbonden met de werk ruimte die is gekoppeld aan het Automation-account. Vm's zijn niet beperkt tot de regio's die worden ondersteund door een bepaalde Log Analytics-werk ruimte. Ze kunnen zich in elke regio bevinden. Houd er rekening mee dat de virtuele machines in een andere regio de status, lokale en landspecifieke vereisten of de nalevings vereisten van uw bedrijf kunnen beïnvloeden. Het hebben van Vm's in een andere regio kan ook kosten voor de gegevens bandbreedte veroorzaken.
+
+Voordat u Vm's verbindt met een werk ruimte in een andere regio, moet u de vereisten en mogelijke kosten controleren om te bevestigen en inzicht te krijgen in de juridische en kosten.
 
 In dit artikel worden de ondersteunde toewijzingen beschreven om deze functies in uw Automation-account in te scha kelen en te gebruiken.
 

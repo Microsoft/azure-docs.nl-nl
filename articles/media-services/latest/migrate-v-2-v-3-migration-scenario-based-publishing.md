@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: 90dfc2fd6f6258ec5bfdea38423489c72ee06e03
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: f28a95ce6ef5e87eed6e5efcd013cc40b102fcba
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98928191"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101721086"
 ---
 # <a name="packaging-and-delivery-scenario-based-migration-guidance"></a>Richt lijnen voor migratie op basis van pakketten en levering
 
@@ -55,7 +55,7 @@ Raadpleeg publicatie concepten, zelf studies en de onderstaande hand leidingen v
 - [Een streaming-locator maken en URL's bouwen](create-streaming-locator-build-url.md)
 - [De resultaten van een taak downloaden](download-results-howto.md)
 - [Beschrijvende geluids sporen voor signalen](signal-descriptive-audio-howto.md)
-- [Volledige installatie Azure Media Player](https://docs.microsoft.com/azure/media-services/azure-media-player/azure-media-player-full-setup)
+- [Volledige installatie Azure Media Player](../azure-media-player/azure-media-player-full-setup.md)
 - [De Video.js Player gebruiken met Azure Media Services](how-to-video-js-player.md)
 - [De Shake-speler gebruiken met Azure Media Services](how-to-shaka-player.md)
 

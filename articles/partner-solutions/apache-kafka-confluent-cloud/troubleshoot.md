@@ -3,15 +3,15 @@ title: Problemen oplossen Apache Kafka voor confluente Cloud-Azure-partner oplos
 description: Dit artikel bevat informatie over het oplossen van problemen en veelgestelde vragen voor confluente Cloud op Azure.
 ms.service: partner-services
 ms.topic: conceptual
-ms.date: 01/15/2021
+ms.date: 02/18/2021
 author: tfitzmac
 ms.author: tomfitz
-ms.openlocfilehash: cbf166086a489165e8100dafd7c212ab6c298b41
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: b1e4b06fcbecf11d7d5f58a583fe3bd6643d99ec
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98253408"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101709390"
 ---
 # <a name="troubleshooting-apache-kafka-for-confluent-cloud-solutions"></a>Problemen met Apache Kafka voor confluente cloud oplossingen oplossen
 
@@ -28,6 +28,16 @@ Gebruik de volgende stappen om de aanbieding te vinden in de Azure Marketplace:
 1. Selecteer de tegel toepassing.
 
 Als de aanbieding niet wordt weer gegeven, neemt u contact op met de [ondersteuning voor Confluent](https://support.confluent.io). De Tenant-ID van uw Azure Active Directory moet op de lijst met toegestane tenants staan. Zie [uw Azure Active Directory Tenant-id vinden](../../active-directory/fundamentals/active-directory-how-to-find-tenant.md)voor meer informatie over het vinden van uw Tenant-id.
+
+## <a name="purchase-errors"></a>Inkoop fouten
+
+* De aankoop mislukt omdat een geldige credit card niet is verbonden met het Azure-abonnement of omdat er geen betalings methode aan het abonnement is gekoppeld.
+
+  Gebruik een ander Azure-abonnement. Of Voeg de credit card of betalings methode voor het abonnement toe of werk deze bij. Zie [de credit-en betalings methode bijwerken](../../cost-management-billing/manage/change-credit-card.md)voor meer informatie.
+
+* Het EA-abonnement staat geen Marketplace-aankopen toe.
+
+  Gebruik een ander abonnement. U kunt ook controleren of uw EA-abonnement is ingeschakeld voor Marketplace-aankopen. Zie [Marketplace-aankopen inschakelen](../../cost-management-billing/manage/ea-azure-marketplace.md#enabling-azure-marketplace-purchases)voor meer informatie. Als het probleem hiermee niet is opgelost, neemt u contact op met de [ondersteuning](https://support.confluent.io).
 
 ## <a name="conflict-error"></a>Conflict fout
 

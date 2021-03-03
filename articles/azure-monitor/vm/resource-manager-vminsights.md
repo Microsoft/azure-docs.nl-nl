@@ -1,26 +1,26 @@
 ---
-title: Resource Manager-voorbeeldsjablonen voor Azure Monitor voor VM’s
-description: Azure Resource Manager-voorbeeldsjablonen voor het implementeren en configureren van Azure Monitor voor VM’s.
+title: Voor beelden van Resource Manager-sjablonen voor VM Insights
+description: Voor beelden van Azure Resource Manager sjablonen voor het implementeren en configureVM van inzichten.
 ms.subservice: logs
 ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 05/18/2020
-ms.openlocfilehash: 91c8396795a85cd63fa502c4b091b7ca9a42865b
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: fa18a5f2af79d75c4eba8c6822f1a7ed8ca4efa8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100627181"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733751"
 ---
-# <a name="resource-manager-template-samples-for-azure-monitor-for-vms"></a>Resource Manager-voorbeeldsjablonen voor Azure Monitor voor VM’s
-Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het inschakelen van Azure Monitor voor VM’s op virtuele machines. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.
+# <a name="resource-manager-template-samples-for-vm-insights"></a>Voor beelden van Resource Manager-sjablonen voor VM Insights
+In dit artikel vindt u voor beelden van [Azure Resource Manager sjablonen](../../azure-resource-manager/templates/template-syntax.md) voor het inschakelen van VM Insights op virtuele machines. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.
 
 [!INCLUDE [azure-monitor-samples](../../../includes/azure-monitor-resource-manager-samples.md)]
 
 
 ## <a name="configure-workspace"></a>Werkruimte configureren
-Met het volgende voorbeeld wordt Azure Monitor voor VM’s ingeschakeld voor een Log Analytics-werkruimte.
+In het volgende voor beeld wordt VM Insights voor een Log Analytics-werk ruimte ingeschakeld.
 
 
 ### <a name="template-file"></a>Sjabloonbestand
@@ -98,7 +98,7 @@ Met het volgende voorbeeld wordt Azure Monitor voor VM’s ingeschakeld voor een
 
 
 ## <a name="onboard-an-azure-virtual-machine"></a>Een virtuele Azure-machine onboarden
-Met het volgende voorbeeld wordt een virtuele Azure-machine aan Azure Monitor voor VM’s toegevoegd.
+In het volgende voor beeld wordt een virtuele Azure-machine toegevoegd aan VM Insights.
 
 
 ### <a name="template-file"></a>Sjabloonbestand
@@ -219,7 +219,7 @@ Met het volgende voorbeeld wordt een virtuele Azure-machine aan Azure Monitor vo
 
 
 ## <a name="onboard-an-azure-virtual-machine-scale-set"></a>Een Azure-virtuele-machineschaalset onboarden
-Met het volgende voorbeeld wordt een Azure-virtuele-machineschaalset aan Azure Monitor voor VM’s toegevoegd.
+In het volgende voor beeld wordt een schaalset voor virtuele Azure-machines toegevoegd aan VM Insights.
 
 
 ### <a name="template-file"></a>Sjabloonbestand
@@ -340,5 +340,5 @@ Met het volgende voorbeeld wordt een Azure-virtuele-machineschaalset aan Azure M
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Meer voorbeeldsjablonen voor Azure Monitor](../samples/resource-manager-samples.md).
-* [Meer informatie over Azure Monitor voor VM’s](../vm/vminsights-overview.md).
+* [Meer voorbeeldsjablonen voor Azure Monitor](../resource-manager-samples.md).
+* Meer [informatie over VM Insights](vminsights-overview.md).

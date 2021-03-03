@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 01/23/2020
 ms.topic: quickstart
-ms.openlocfilehash: 525872ca3ad2558c327b7b856254319d3db2dc7f
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: 5b3e9c944aece3b3e22ee7a5a6144751725ddf67
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99593990"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101729960"
 ---
 # <a name="quickstart-render-a-model-with-unity"></a>Quickstart: Een model weergeven met Unity
 
@@ -52,6 +52,7 @@ Voer de volgende opdrachten uit:
 mkdir ARR
 cd ARR
 git clone https://github.com/Azure/azure-remote-rendering
+powershell azure-remote-rendering\Scripts\DownloadUnityPackages.ps1
 ```
 
 Met de laatste opdracht maakt u een submap in de ARR-map die de verschillende voorbeeldprojecten voor Azure Remote Rendering bevat.

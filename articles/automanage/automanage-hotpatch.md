@@ -8,14 +8,14 @@ ms.workload: infrastructure
 ms.topic: conceptual
 ms.date: 02/22/2021
 ms.author: jushiman
-ms.openlocfilehash: bdd5a379afb9603c8966320d85c778632948cfd0
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 710e6902be6ebe28caaf40fb446e4ee7cd2bf4dc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662208"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101687563"
 ---
-# <a name="hotpatch-for-windows-server-azure-edition-preview"></a>Hotpatch voor Windows Server Azure Edition (preview-versie)
+# <a name="hotpatch-for-new-virtual-machines-preview"></a>Hotpatch voor nieuwe virtuele machines (preview-versie)
 
 Hotpatching is een nieuwe manier om updates te installeren op nieuwe virtuele machines met Windows Server Azure Edition (Vm's) die na de installatie niet opnieuw moeten worden opgestart. Dit artikel bevat informatie over de hotpatch voor virtuele machines met Windows Server Azure Edition, die de volgende voor delen biedt:
 * Minder gevolgen voor de werk belasting met weinig opnieuw opstarten
@@ -26,7 +26,7 @@ Hotpatching is een nieuwe manier om updates te installeren op nieuwe virtuele ma
 
 Hotpatch werkt eerst met een basis lijn met een Windows Update meest recente cumulatieve update. Hotpatches worden periodiek vrijgegeven (bijvoorbeeld op de tweede dinsdag van de maand) die op die basis lijn zijn gebouwd. Hotpatches bevat updates die niet opnieuw moeten worden opgestart. Periodiek (beginnend bij elke drie maanden) wordt de basis lijn vernieuwd met een nieuwe cumulatieve update.
 
-    :::image type="content" source="media\automanage-hotpatch\hotpatch-sample-schedule.png" alt-text="Hotpatch Sample Schedule.":::
+:::image type="content" source="media\automanage-hotpatch\hotpatch-sample-schedule.png" alt-text="Voorbeeld schema voor hotpatch.":::
 
 Er zijn twee soorten basis lijnen: **geplande basis lijnen** en niet- **geplande basis lijnen**.
 *  **Geplande basis lijnen** worden vrijgegeven op een reguliere uitgebracht, met hotpatch-releases tussen.  Geplande basis lijnen bevatten alle updates in een vergelijk bare, _meest recente cumulatieve update_ voor die maand, en moeten opnieuw worden opgestart.
@@ -154,7 +154,7 @@ Als u de patch status voor uw virtuele machine wilt bekijken, gaat u naar de sec
 In dit scherm ziet u de status van de hotpatch voor uw VM. U kunt ook controleren of er beschik bare patches beschikbaar zijn voor uw VM die nog niet zijn geïnstalleerd. Zoals beschreven in de sectie patch-installatie hierboven, worden alle beveiligings-en essentiële updates automatisch geïnstalleerd op uw virtuele machine met [automatische VM-gast patches](https://docs.microsoft.com/azure/virtual-machines/automatic-vm-guest-patching) . er zijn geen extra acties vereist. Patches met andere update classificaties worden niet automatisch geïnstalleerd. In plaats daarvan worden ze weer gegeven in de lijst met beschik bare patches op het tabblad Update naleving. U kunt ook de geschiedenis van update-implementaties op uw virtuele machine bekijken via de update geschiedenis. De update geschiedenis van de afgelopen 30 dagen wordt weer gegeven, samen met informatie over de installatie van de patch.
 
 
-    :::image type="content" source="media\automanage-hotpatch\hotpatch-management-ui.png" alt-text="Hotpatch Management.":::
+:::image type="content" source="media\automanage-hotpatch\hotpatch-management-ui.png" alt-text="Hotpatch beheer.":::
 
 Met automatische VM-gast patches wordt uw virtuele machine periodiek en automatisch beoordeeld op beschik bare updates. Deze periodieke evaluaties zorgen ervoor dat er beschik bare patches worden gedetecteerd. U kunt de resultaten van de evaluatie weer geven op het scherm updates hierboven, met inbegrip van de tijd van de laatste evaluatie. U kunt er ook voor kiezen om op elk gewenst moment een patch evaluatie op aanvraag uit te voeren voor uw virtuele machine met behulp van de optie nu evalueren en de resultaten te bekijken nadat de evaluatie is voltooid.
 
@@ -197,7 +197,7 @@ Er zijn enkele belang rijke aandachtspunten voor het uitvoeren van een virtuele 
 
 ### <a name="are-reboots-still-needed-for-a-vm-enrolled-in-hotpatch"></a>Worden er nog steeds opnieuw opgestart voor een virtuele machine die is geregistreerd in hotpatch?
 
-* Opnieuw opstarten is nog steeds vereist om updates te installeren die niet zijn opgenomen in het hotpatch-programma en die regel matig worden vereist nadat een basis lijn (Windows Update meest recente cumulatieve update) is geïnstalleerd. Bij het opnieuw opstarten wordt uw virtuele machine gesynchroniseerd met alle patches die zijn opgenomen in de cumulatieve update. Basis lijnen (die opnieuw moeten worden opgestart) worden uitgevoerd op een uitgebracht van drie maanden en verg Roten de tijd tot 6 + maanden.
+* Opnieuw opstarten is nog steeds vereist om updates te installeren die niet zijn opgenomen in het hotpatch-programma en die regel matig worden vereist nadat een basis lijn (Windows Update meest recente cumulatieve update) is geïnstalleerd. Bij het opnieuw opstarten wordt uw virtuele machine gesynchroniseerd met alle patches die zijn opgenomen in de cumulatieve update. Basis lijnen (die opnieuw moeten worden opgestart) worden uitgevoerd op een uitgebracht van drie maanden en nemen meer tijd in beslag.
 
 ### <a name="are-my-applications-affected-when-a-hotpatch-update-is-installed"></a>Worden mijn toepassingen beïnvloed wanneer een hotpatch-update wordt geïnstalleerd?
 

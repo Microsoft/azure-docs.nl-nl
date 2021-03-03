@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/13/2020
 ms.author: erhopf
-ms.openlocfilehash: a44ff15300d05713e812f5c60ad3bf00d9f13104
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 6d2ad87f6a8c79f61d62140a1549968cd88d83aa
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526853"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101722310"
 ---
 # <a name="record-voice-samples-to-create-a-custom-voice"></a>Stemvoorbeelden vastleggen om een aangepaste stem te maken
 
@@ -29,9 +29,9 @@ Veel kleine, maar belang rijke informatie gaat over het maken van een profession
 > Als u een Neural-stem wilt trainen, moet u een profiel voor spraak-talen opgeven met het bestand met de bestands toestemming van de stem talen bevestiging dat zijn/haar spraak gegevens worden gebruikt voor het trainen van een aangepast spraak model. Zorg ervoor dat u de onderstaande zin opneemt wanneer u het opname script voorbereidt. 
 
 > "I [Geef uw voor-en achternaam op] Houd er rekening mee dat de opnamen van mijn stem worden gebruikt door [de naam van het bedrijf te vermelden] om een synthetische versie van mijn stem te maken en te gebruiken."
-Deze zin wordt gebruikt om te controleren of de trainings gegevens worden uitgevoerd door dezelfde persoon die de toestemming doet. Lees hier meer over de [Voice-talen verificatie](https://aka.ms/CNV-data-privacy) .
+Deze zin wordt gebruikt om te controleren of de trainings gegevens worden uitgevoerd door dezelfde persoon die de toestemming doet. Lees hier meer over de [Voice-talen verificatie](/legal/cognitive-services/speech-service/custom-neural-voice/data-privacy-security-custom-neural-voice?context=%2fazure%2fcognitive-services%2fspeech-service%2fcontext%2fcontext) .
 
-> Aangepaste Neural Voice is beschikbaar met beperkte toegang. Zorg ervoor dat u bekend bent met de [vereiste AI-vereisten](https://aka.ms/gating-overview) en [Pas de toegang hier toe](https://aka.ms/customneural). 
+> Aangepaste Neural Voice is beschikbaar met beperkte toegang. Zorg ervoor dat u bekend bent met de [vereiste AI-vereisten](/legal/cognitive-services/speech-service/custom-neural-voice/limited-access-custom-neural-voice?context=%2fazure%2fcognitive-services%2fspeech-service%2fcontext%2fcontext) en [Pas de toegang hier toe](https://aka.ms/customneural). 
 
 > [!TIP]
 > Voor de hoogst mogelijke kwaliteits resultaten kunt u micro soft helpen bij het ontwikkelen van uw eigen stem. Micro soft heeft uitgebreide ervaring met het produceren van stemmen van hoge kwaliteit voor hun eigen producten, waaronder Cortana en kantoor.
@@ -112,7 +112,7 @@ Onder copyright recht kan een actor het lezen van auteurs rechtelijk beschermde 
 
 Gelukkig is het mogelijk om deze problemen volledig te voor komen. Er zijn veel tekst bronnen die u kunt gebruiken zonder toestemming of licentie.
 
-|Tekst bron|Description|
+|Tekst bron|Beschrijving|
 |-|-|
 |[CMU Arctic verzameling](http://festvox.org/cmu_arctic/)|Ongeveer 1100 zinnen die u hebt geselecteerd in auteurs rechtelijk beschermde werken speciaal voor gebruik in spraak-synthese projecten. Een uitstekend uitgangs punt.|
 |Werkt niet meer<br>onder copyright|Werkt normaal gesp roken vóór 1923. Voor het Engels biedt [Project Gutenberg](https://www.gutenberg.org/) tien duizenden van deze werken. Mogelijk wilt u zich richten op nieuwere werken, omdat de taal dichter bij het moderne Engels ligt.|

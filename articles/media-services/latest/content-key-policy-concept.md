@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 29907a12f7edf7439f9bcfae0a1ad46b395d9ecf
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 1333bbcc7e2ea9219d28fcc1e63f21a833c2bc6f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897204"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101709560"
 ---
 # <a name="content-key-policies"></a>Beleid voor inhoudssleutels
 
@@ -64,4 +64,4 @@ Zie [filteren, ordenen, pagineren van Media Services entiteiten](entities-overvi
 
 * [Gebruik AES-128 dynamische versleuteling en de key delivery service](protect-with-aes128.md)
 * [De Digital Rights Management-service gebruiken voor dynamische versleuteling en licentielevering](protect-with-drm.md)
-* [EncodeHTTPAndPublishAESEncrypted](https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials/tree/master/NETCore/EncodeHTTPAndPublishAESEncrypted)
+* [Voorbeeld code van basis-AES Clear Key-versleuteling en streaming](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/main/ContentProtection/BasicAESClearKey)

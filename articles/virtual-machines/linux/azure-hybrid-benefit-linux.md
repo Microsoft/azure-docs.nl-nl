@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: mathapli
-ms.openlocfilehash: 17b2e260f9a90ddda6e246058cefb1bec8b1ac5e
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 346d58dbe06a29a4ba114ae788dee16e80b8f9df
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101671201"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101695478"
 ---
 # <a name="how-azure-hybrid-benefit-applies-for-linux-virtual-machines"></a>Hoe Azure Hybrid Benefit van toepassing is op virtuele Linux-machines
 
@@ -177,7 +177,7 @@ Zie voor meer informatie over de naleving van Red Hat-abonnementen, software-upd
 
 ### <a name="suse"></a>SUSE
 
-Zie [SuSE Linux Enter prise en Azure Hybrid Benefit](https://www.suse.com/c/suse-linux-enterprise-and-azure-hybrid-benefit/)voor meer informatie over het gebruik van Azure Hybrid Benefit voor uw SLES-vm's en over het overstappen van SLES payg naar BYOS of het verplaatsen van SLES BYOS naar payg. 
+Zie [SuSE Linux Enter prise en Azure Hybrid Benefit](https://www.suse.com/support/kb/doc/?id=000019868)voor meer informatie over het gebruik van Azure Hybrid Benefit voor uw SLES-vm's en over het overstappen van SLES payg naar BYOS of het verplaatsen van SLES BYOS naar payg. 
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 *V: kan ik een licentie type van `RHEL_BYOS` met een SLES-installatie kopie of andersom gebruiken?*

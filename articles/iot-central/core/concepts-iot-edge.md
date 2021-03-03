@@ -3,78 +3,277 @@ title: Azure IoT Edge en Azure IoT Central | Microsoft Docs
 description: Meer informatie over het gebruik van Azure IoT Edge met een IoT Central-toepassing.
 author: dominicbetts
 ms.author: dobett
-ms.date: 12/19/2020
+ms.date: 02/19/2021
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 ms.custom:
 - device-developer
 - iot-edge
-ms.openlocfilehash: 9a7c886ba4dd6e7ab4bd62700f5437855a16a5ad
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: 91869614aef03b819a5f7fbb355004f6e802d673
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97796564"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733007"
 ---
 # <a name="connect-azure-iot-edge-devices-to-an-azure-iot-central-application"></a>Azure IoT Edge-apparaten verbinden met een Azure IoT Central-toepassing
 
 *Dit artikel is van toepassing op oplossingenbouwers en apparaatontwikkelaars.*
 
+Azure IoT Edge kunt Cloud Analytics en aangepaste bedrijfs logica verplaatsen naar apparaten zodat uw organisatie zich kan concentreren op zakelijke inzichten in plaats van gegevens beheer. Breid uw IoT-oplossing uit door uw bedrijfs logica te verpakken in standaard containers, deze containers te implementeren op uw apparaten en ze te controleren vanuit de Cloud.
+
+In dit artikel wordt het volgende beschreven:
+
+* Hoe IoT Edge-apparaten verbinding maken met een IoT Central-toepassing.
+* IoT Central gebruiken om uw IoT Edge-apparaten te beheren.
+
+Zie [Wat is Azure IOT Edge?](../../iot-edge/about-iot-edge.md) voor meer informatie over IOT Edge.
+
+## <a name="iot-edge"></a>IoT Edge
+
 IoT Edge bestaat uit drie onderdelen:
 
-* **IOT Edge modules** zijn containers waarop Azure-Services, partner services of uw eigen code worden uitgevoerd. Modules worden op IoT Edge apparaten geïmplementeerd en lokaal op deze apparaten uitgevoerd.
-* De **IOT Edge runtime** wordt op elk IOT edge apparaat uitgevoerd en beheert de modules die op elk apparaat zijn geïmplementeerd.
-* Met een **cloudinterface** kunt u op afstand de IoT Edge-apparaten controleren en beheren. IoT Central is de Cloud interface.
+* *IOT Edge modules* zijn containers waarop Azure-Services, partner services of uw eigen code worden uitgevoerd. Modules worden op IoT Edge apparaten geïmplementeerd en lokaal op deze apparaten uitgevoerd. Zie [Azure IOT Edge-modules begrijpen](../../iot-edge/iot-edge-modules.md)voor meer informatie.
+* De *IOT Edge runtime* wordt op elk IOT edge apparaat uitgevoerd en beheert de modules die op elk apparaat zijn geïmplementeerd. De runtime bestaat uit twee IoT Edge modules: *IOT Edge agent* en *IOT Edge hub*. Zie [inzicht krijgen in de Azure IOT Edge runtime en de bijbehorende architectuur](../../iot-edge/iot-edge-runtime.md)voor meer informatie.
+* Met een *cloudinterface* kunt u op afstand de IoT Edge-apparaten controleren en beheren. IoT Central is een voor beeld van een Cloud interface.
 
-Een **Azure IOT Edge** apparaat kan een gateway apparaat zijn, met downstream-apparaten die verbinding maken met het IOT edge apparaat. In dit artikel wordt meer informatie over verbindings patronen voor downstream-apparaten gedeeld.
+Een IoT Edge apparaat kan zijn:
 
-Met een **apparaatprofiel** worden de mogelijkheden van uw apparaat en IOT Edge modules gedefinieerd. Mogelijkheden zijn onder andere telemetrie die de module verzendt, module-eigenschappen en de opdrachten die een module beantwoordt.
+* Een zelfstandig apparaat dat bestaat uit modules.
+* Een *gateway apparaat* met downstream-apparaten waarmee verbinding wordt gemaakt.
 
-## <a name="downstream-device-relationships-with-a-gateway-and-modules"></a>De relaties van downstream-apparaten met een gateway en modules
+## <a name="iot-edge-as-a-gateway"></a>IoT Edge als gateway
 
-Downstream-apparaten kunnen via de module verbinding maken met een IoT Edge gateway-apparaat `$edgeHub` . Dit IoT Edge apparaat wordt in dit scenario een transparante gateway.
+Een IoT Edge apparaat kan worden gebruikt als gateway die een verbinding biedt tussen andere downstream-apparaten in het netwerk en uw IoT Central toepassing.
 
-![Diagram van transparante gateway](./media/concepts-iot-edge/gateway-transparent.png)
+Er zijn twee gateway patronen:
 
-Downstream-apparaten kunnen ook via een aangepaste module verbinding maken met een IoT Edge gateway-apparaat. In het volgende scenario maken downstream-apparaten verbinding via een aangepaste Modbus-module.
+* In het *transparante gateway* patroon gedraagt de IOT Edge hub-module zich als IOT Central en verwerkt verbindingen van apparaten die zijn geregistreerd in IOT Central. Berichten worden door gegeven vanaf downstream-apparaten naar IoT Central alsof er geen gateway is.
 
-![Diagram van de verbinding van de aangepaste module](./media/concepts-iot-edge/gateway-module.png)
+* In het patroon van de *Vertaal gateway* worden apparaten die geen verbinding kunnen maken met IOT Central zelf, in plaats daarvan verbinding maken met een aangepaste IOT Edge module. Met de module in het IoT Edge apparaat worden binnenkomende downstream-apparaten verwerkt en vervolgens doorgestuurd naar IoT Central.
 
-In het volgende diagram ziet u een verbinding met een IoT Edge gateway apparaat via beide typen modules (aangepast en `$edgeHub` ).  
+De transparante en vertaal gateway patronen sluiten elkaar niet uit. Eén IoT Edge apparaat kan worden gebruikt als een transparante gateway en een Vertaal gateway.
 
-![Diagram van verbinding maken via beide verbindings modules](./media/concepts-iot-edge/gateway-module-transparent.png)
+Zie [hoe een IOT edge apparaat kan worden gebruikt als een gateway](../../iot-edge/iot-edge-as-gateway.md)voor meer informatie over de IOT Edge gateway-patronen.
 
-Ten slotte kunnen downstream-apparaten via meerdere aangepaste modules verbinding maken met een IoT Edge gateway-apparaat. In het volgende diagram ziet u downstream-apparaten die verbinding maken via een aangepaste Modbus-module, een afgeleide aangepaste module en de `$edgeHub` module. 
+### <a name="downstream-device-relationships-with-a-gateway-and-modules"></a>De relaties van downstream-apparaten met een gateway en modules
 
-![Diagram van verbinding maken via meerdere aangepaste modules](./media/concepts-iot-edge/gateway-module2-transparent.png)
+Downstream-apparaten kunnen verbinding maken met een IoT Edge gateway-apparaat via de *IOT Edge hub*  -module. In dit scenario is het IoT Edge apparaat een transparante gateway:
 
-## <a name="deployment-manifests-and-device-templates"></a>Implementatie manifesten en Device-sjablonen
+:::image type="content" source="media/concepts-iot-edge/gateway-transparent.png" alt-text="Diagram van transparante gateway" border="false":::
 
-In IoT Edge kunt u bedrijfs logica implementeren en beheren in de vorm van modules. IoT Edge modules zijn de kleinste reken eenheid die wordt beheerd door IoT Edge en kunnen Azure-Services (zoals Azure Stream Analytics) of uw eigen oplossings code bevatten. Zie [IOT Edge modules](../../iot-edge/iot-edge-modules.md)voor informatie over hoe modules worden ontwikkeld, geïmplementeerd en onderhouden.
+Downstream-apparaten kunnen ook via een aangepaste module verbinding maken met een IoT Edge gateway-apparaat. In het volgende scenario maken downstream-apparaten verbinding via een aangepaste *Modbus* -module. In dit scenario is het IoT Edge apparaat een Vertaal gateway:
 
-Op hoog niveau is een implementatie manifest een lijst met module apparaatdubbels die zijn geconfigureerd met de gewenste eigenschappen. Een implementatie manifest vertelt een IoT Edge apparaat (of een groep apparaten) welke modules moeten worden geïnstalleerd en hoe ze kunnen worden geconfigureerd. Implementatie manifesten bevatten de gewenste eigenschappen voor elke module dubbele. IoT Edge-apparaten melden de gerapporteerde eigenschappen voor elke module terug.
+:::image type="content" source="media/concepts-iot-edge/gateway-module.png" alt-text="Diagram van de verbinding van de aangepaste module" border="false":::
 
-Visual Studio code gebruiken om een implementatie manifest te maken. Zie [Azure IOT Edge voor Visual Studio code voor](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge)meer informatie.
+In het volgende diagram ziet u verbindingen met een IoT Edge gateway apparaat via beide typen modules. In dit scenario is het IoT Edge apparaat zowel een transparante als een Vertaal gateway:
 
-In azure IoT Central kunt u een implementatie manifest importeren om een sjabloon voor een apparaat te maken. In het volgende stroom diagram ziet u de levens cyclus van het implementatie manifest in IoT Central.
+:::image type="content" source="media/concepts-iot-edge/gateway-module-transparent.png" alt-text="Diagram van verbinding maken met behulp van beide verbindings modules" border="false":::
 
-![De levens cyclus van het stroom diagram van het implementatie manifest](./media/concepts-iot-edge/dmflow.png)
+Downstream-apparaten kunnen via meerdere aangepaste modules verbinding maken met een IoT Edge gateway-apparaat. In het volgende diagram worden downstream-apparaten weer gegeven die verbinding maken via een aangepaste Modbus-module, een afgeleide aangepaste module en de module *IOT Edge hub*  :
 
-IoT Central modellen een IoT Edge apparaat als volgt:
+:::image type="content" source="media/concepts-iot-edge/gateway-two-modules-transparent.png" alt-text="Diagram van verbinding maken met behulp van meerdere aangepaste modules" border="false":::
 
-* Elke IoT Edge-apparaatprofiel heeft een model apparaat.
-* Voor elke aangepaste module die wordt vermeld in het implementatie manifest, wordt een module mogelijkheidsprofiel gegenereerd.
-* Er wordt een relatie tot stand gebracht tussen elk module functionaliteits model en een model apparaat.
-* Een module-functionaliteits model implementeert module interfaces.
-* Elke module interface bevat telemetrie, eigenschappen en opdrachten.
+<!-- To do: add link to how to configure gateway article? -->
 
-![Diagram van IoT Edge modellen](./media/concepts-iot-edge/edgemodelling.png)
+## <a name="iot-edge-devices-and-iot-central"></a>IoT Edge apparaten en IoT Central
+
+IoT Edge apparaten kunnen *Shared Access Signature* -tokens of X. 509-certificaten gebruiken voor verificatie met IOT Central. U kunt uw IoT Edge-apparaten hand matig registreren in IoT Central voordat ze voor de eerste keer verbinding maken, of de Device Provisioning Service gebruiken om de registratie te verwerken. Zie [Get connected to Azure IoT Central](concepts-get-connected.md) (Verbinding maken met Azure IoT Central) voor meer informatie.
+
+IoT Central maakt gebruik van [device-sjablonen](concepts-device-templates.md) om te definiëren hoe IOT Central interactie met een apparaat. Een sjabloon voor een apparaat geeft bijvoorbeeld het volgende op:
+
+* De typen telemetrie en eigenschappen die een apparaat verzendt zodat IoT Central ze kunnen interpreteren en visualisaties kunt maken.
+* De opdrachten waarmee een apparaat reageert, zodat IoT Central een gebruikers interface kan weer geven voor een operator die wordt gebruikt om de opdrachten aan te roepen.
+
+Een IoT Edge apparaat kan telemetrie verzenden, eigenschapwaarden synchroniseren en op dezelfde manier reageren op opdrachten als een standaard apparaat. Een IoT Edge apparaat heeft dus een sjabloon nodig in IoT Central.
+
+### <a name="iot-edge-deployment-manifests-and-iot-central-device-templates"></a>IoT Edge implementatie manifesten en IoT Central-sjablonen
+
+In IoT Edge kunt u bedrijfs logica in de vorm van modules implementeren en beheren. IoT Edge modules zijn de kleinste reken eenheid die wordt beheerd door IoT Edge en die Azure-Services, zoals Azure Stream Analytics, of uw eigen oplossings code kunnen bevatten.
+
+Een IoT Edge *implementatie manifest* bevat een lijst met IOT Edge modules die op het apparaat moeten worden geïmplementeerd en hoe ze kunnen worden geconfigureerd. Zie [informatie over het implementeren van modules en het tot stand brengen van routes in IOT Edge](../../iot-edge/module-composition.md)voor meer informatie.
+
+In azure IoT Central importeert u een implementatie manifest om een sjabloon voor het IoT Edge apparaat te maken.
+
+Het volgende code fragment toont een voor beeld IoT Edge implementatie manifest:
+
+```json
+{
+  "modulesContent": {
+    "$edgeAgent": {
+      "properties.desired": {
+        "schemaVersion": "1.0",
+        "runtime": {
+          "type": "docker",
+          "settings": {
+            "minDockerVersion": "v1.25",
+            "loggingOptions": "",
+            "registryCredentials": {}
+          }
+        },
+        "systemModules": {
+          "edgeAgent": {
+            "type": "docker",
+            "settings": {
+              "image": "mcr.microsoft.com/azureiotedge-agent:1.0.9",
+              "createOptions": "{}"
+            }
+          },
+          "edgeHub": {
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "mcr.microsoft.com/azureiotedge-hub:1.0.9",
+              "createOptions": "{}"
+            }
+          }
+        },
+        "modules": {
+          "SimulatedTemperatureSensor": {
+            "version": "1.0",
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0",
+              "createOptions": "{}"
+            }
+          }
+        }
+      }
+    },
+    "$edgeHub": {
+      "properties.desired": {
+        "schemaVersion": "1.0",
+        "routes": {
+            "route": "FROM /* INTO $upstream"
+        },
+        "storeAndForwardConfiguration": {
+          "timeToLiveSecs": 7200
+        }
+      }
+    },
+    "SimulatedTemperatureSensor": {
+      "properties.desired": {
+           "SendData": true,
+           "SendInterval": 10
+      }
+    }
+  }
+}
+```
+
+In het vorige code fragment ziet u het volgende:
+
+* Er zijn drie modules. De *IOT Edge agent* -en *IOT Edge hub* -systeem modules die aanwezig zijn in elk implementatie manifest. De aangepaste **SimulatedTemperatureSensor** -module.
+* De installatie kopieën van de open bare module worden opgehaald uit een Azure Container Registry-opslag plaats waarvoor geen referenties zijn vereist om verbinding te maken. Stel voor installatie kopieën van persoonlijke modules de container register referenties in voor gebruik in de `registryCredentials` instelling voor de module *IOT Edge agent* .
+* De aangepaste **SimulatedTemperatureSensor** -module heeft twee eigenschappen `"SendData": true` en `"SendInterval": 10` .
+
+Wanneer u dit implementatie manifest in een IoT Central-toepassing importeert, wordt de volgende Device-sjabloon gegenereerd:
+
+:::image type="content" source="media/concepts-iot-edge/device-template.png" alt-text="Scherm afbeelding met de sjabloon die is gemaakt in het implementatie manifest.":::
+
+In de vorige scherm afbeelding ziet u het volgende:
+
+* Een module met de naam **SimulatedTemperatureSensor**. De systeem modules *IOT Edge agent* en *IOT Edge hub* worden niet weer gegeven in de sjabloon.
+* Een interface met de naam **beheer** met twee Beschrijf bare eigenschappen met de naam **SendData** en **SendInterval**.
+
+Het implementatie manifest bevat geen informatie over de telemetrie die de **SimulatedTemperatureSensor** -module verzendt of de opdrachten waarop deze reageert. Voeg deze definities hand matig toe aan de sjabloon voor het apparaat voordat u het publiceert.
+
+Zie [zelf studie: een Azure IOT edge apparaat toevoegen aan uw Azure IOT Central-toepassing](tutorial-add-edge-as-leaf-device.md)voor meer informatie.
+
+### <a name="update-a-deployment-manifest"></a>Een implementatie manifest bijwerken
+
+Als u een nieuwe [versie](howto-version-device-template.md) van de sjabloon voor het apparaat maakt, kunt u het implementatie manifest vervangen door een nieuwe versie:
+
+Wanneer u het implementatie manifest vervangt, downloaden alle verbonden IoT Edge-apparaten het nieuwe manifest en updaten hun modules. Met IoT Central worden de interfaces in de sjabloon van het apparaat echter niet bijgewerkt met wijzigingen in de configuratie van de module. Als u bijvoorbeeld het manifest in het vorige code fragment vervangt door het volgende manifest, ziet u niet automatisch de eigenschap **SendUnits** in de **beheer** interface in de sjabloon van het apparaat. Voeg de nieuwe eigenschap hand matig toe aan de **beheer** interface voor IOT Central om deze te herkennen:
+
+```json
+{
+  "modulesContent": {
+    "$edgeAgent": {
+      "properties.desired": {
+        "schemaVersion": "1.0",
+        "runtime": {
+          "type": "docker",
+          "settings": {
+            "minDockerVersion": "v1.25",
+            "loggingOptions": "",
+            "registryCredentials": {}
+          }
+        },
+        "systemModules": {
+          "edgeAgent": {
+            "type": "docker",
+            "settings": {
+              "image": "mcr.microsoft.com/azureiotedge-agent:1.0.9",
+              "createOptions": "{}"
+            }
+          },
+          "edgeHub": {
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "mcr.microsoft.com/azureiotedge-hub:1.0.9",
+              "createOptions": "{}"
+            }
+          }
+        },
+        "modules": {
+          "SimulatedTemperatureSensor": {
+            "version": "1.0",
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0",
+              "createOptions": "{}"
+            }
+          }
+        }
+      }
+    },
+    "$edgeHub": {
+      "properties.desired": {
+        "schemaVersion": "1.0",
+        "routes": {
+            "route": "FROM /* INTO $upstream"
+        },
+        "storeAndForwardConfiguration": {
+          "timeToLiveSecs": 7200
+        }
+      }
+    },
+    "SimulatedTemperatureSensor": {
+      "properties.desired": {
+           "SendData": true,
+           "SendInterval": 10,
+           "SendUnits": "Celsius"
+      }
+    }
+  }
+}
+```
+
+## <a name="deploy-the-iot-edge-runtime"></a>De IoT Edge-runtime implementeren
+
+Zie [Azure IOT Edge ondersteunde systemen](../../iot-edge/support.md)voor meer informatie over het uitvoeren van de IOT Edge runtime.
+
+U kunt de IoT Edge runtime ook installeren in de volgende omgevingen:
+
+* [Azure IoT Edge voor Linux installeren of verwijderen](../../iot-edge/how-to-install-iot-edge.md)
+* [Azure IoT Edge voor Linux installeren en inrichten op een Windows-apparaat (preview)](../../iot-edge/how-to-install-iot-edge-on-windows.md)
+* [Azure IoT Edge uitvoeren op Ubuntu Virtual Machines in azure](../../iot-edge/how-to-install-iot-edge-ubuntuvm.md)
 
 ## <a name="iot-edge-gateway-devices"></a>IoT Edge gateway-apparaten
 
 Als u een IoT Edge apparaat hebt geselecteerd om een gateway apparaat te zijn, kunt u downstream-relaties toevoegen aan apparaten modellen voor apparaten die u wilt verbinden met het gateway apparaat.
 
+<!-- TODO - add link to Edge Gateway how-to -->
+
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u een ontwikkelaar van een apparaat bent, kunt u de volgende stap vinden [in IOT Central](./tutorial-define-gateway-device-type.md).
+Als u een ontwikkelaar van een apparaat bent, is een voorgestelde volgende stap het [ontwikkelen van uw eigen IOT Edge-modules](../../iot-edge/module-development.md).

@@ -9,12 +9,12 @@ ms.workload: azure-vs
 ms.topic: tutorial
 ms.date: 10/5/2020
 ms.author: ghogen
-ms.openlocfilehash: b12f8beeee054e547a6b58750d8482d32ee14453
-ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
+ms.openlocfilehash: 80aa160c53b278137467dba2afa41384c7c4f378
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98747254"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101722667"
 ---
 # <a name="create-and-deploy-a-azure-cloud-service-extended-support-using-visual-studio"></a>Een Azure-Cloud service (uitgebreide ondersteuning) maken en implementeren met behulp van Visual Studio
 
@@ -63,7 +63,7 @@ Het Visual Studio Azure-project bevat koppelingen met de rol projecten in de opl
 - **Service definitie bestand** : definieert de runtime-instellingen voor uw toepassing, met inbegrip van de vereiste functies, eind punten en grootte van de virtuele machine.
 - **Service configuratie bestand** : Hiermee configureert u hoeveel exemplaren van een rol worden uitgevoerd en de waarden van de instellingen die zijn gedefinieerd voor een rol.
 
-Zie [de functies voor een Azure-Cloud service configureren met Visual Studio](https://docs.microsoft.com/visualstudio/azure/vs-azure-tools-configure-roles-for-cloud-service)voor meer informatie over deze bestanden.
+Zie [de functies voor een Azure-Cloud service configureren met Visual Studio](/visualstudio/azure/vs-azure-tools-configure-roles-for-cloud-service)voor meer informatie over deze bestanden.
 
 ## <a name="publish-a-cloud-service"></a>Een Cloud service publiceren
 
@@ -75,7 +75,7 @@ Zie [de functies voor een Azure-Cloud service configureren met Visual Studio](ht
 
 1. **Account** : Selecteer een account of selecteer **een account toevoegen** in de vervolg keuzelijst account.
 
-1. **Kies uw abonnement** : Kies het abonnement dat u voor uw implementatie wilt gebruiken. Het abonnement dat u gebruikt voor de implementatie van Cloud Services (uitgebreide ondersteuning) moet eigenaar of Inzender rollen hebben die zijn toegewezen via op rollen gebaseerd toegangs beheer (RBAC). Als uw abonnement niet een van deze rollen heeft, raadpleegt [u stappen om een roltoewijzing](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-steps) toe te voegen voordat u verder gaat.
+1. **Kies uw abonnement** : Kies het abonnement dat u voor uw implementatie wilt gebruiken. Het abonnement dat u gebruikt voor de implementatie van Cloud Services (uitgebreide ondersteuning) moet eigenaar of Inzender rollen hebben die zijn toegewezen via op rollen gebaseerd toegangs beheer (RBAC). Als uw abonnement niet een van deze rollen heeft, raadpleegt [u stappen om een roltoewijzing](../role-based-access-control/role-assignments-steps.md) toe te voegen voordat u verder gaat.
 
 1. Klik op **volgende** om naar de pagina **instellingen** te gaan.
 
@@ -105,7 +105,7 @@ Zie [de functies voor een Azure-Cloud service configureren met Visual Studio](ht
 
    ![Diagnostische instellingen](./media/diagnostics-settings.png)
 
-   Met diagnostische gegevens kunt u problemen met een Azure-Cloud service (of virtuele machine van Azure) oplossen. Zie voor informatie over diagnostische gegevens over het [configureren van diagnostische gegevens voor Azure Cloud Services en virtual machines](https://docs.microsoft.com/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines). Zie [Wat is Application Insights?](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview)voor informatie over Application Insights.
+   Met diagnostische gegevens kunt u problemen met een Azure-Cloud service (of virtuele machine van Azure) oplossen. Zie voor informatie over diagnostische gegevens over het [configureren van diagnostische gegevens voor Azure Cloud Services en virtual machines](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines). Zie [Wat is Application Insights?](../azure-monitor/app/app-insights-overview.md)voor informatie over Application Insights.
 
 1. Klik op **volgende** om naar de pagina **samen vatting** te gaan.
 
@@ -126,4 +126,4 @@ Als u de Azure-resources wilt opschonen die u hebt gemaakt door deze zelf studie
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Stel doorlopende integratie in (CI) met behulp van de knop **configureren** op het scherm **publiceren** . Zie de [documentatie van Azure pipelines](https://docs.microsoft.com/azure/devops/pipelines)voor meer informatie.
+Stel doorlopende integratie in (CI) met behulp van de knop **configureren** op het scherm **publiceren** . Zie de [documentatie van Azure pipelines](/azure/devops/pipelines)voor meer informatie.

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/08/2020
 ms.author: jeedes
-ms.openlocfilehash: 286dc20ba70c78f8248f611abd75e0acc303c068
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 81b57563899fe4babecbdb66cf1dbd876ec5bdf9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736185"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101689008"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-amazon-web-services-aws"></a>Zelfstudie: Integratie van eenmalige aanmelding in Azure Active Directory met Amazon Web Services (AWS)
 
@@ -26,9 +26,26 @@ In deze zelfstudie leert u hoe u Amazon Web Services (AWS) kunt integreren met A
 * Uw gebruikers zich automatisch laten aanmelden bij Amazon Web Services (AWS) met hun Azure Active Directory-account.
 * Uw accounts op één centrale locatie beheren: de Azure-portal.
 
-> [!Note]
-> Azure AD biedt geen ondersteuning voor de integratie van eenmalige aanmelding met AWS SSO, dit is een ander product van AWS. Hoewel AWS dit [hier](https://docs.aws.amazon.com/singlesignon/latest/userguide/azure-ad-idp.html) vermeldt, raadt Azure AD klanten aan om in de plaats daarvan AWS IAM-integratie te gebruiken zodat u betere beveiligingscontroles kunt bekomen met behulp van beleid voor voorwaardelijke toegang op individuele accounts, en deze toepassingen ook beter kunt beheren.
+## <a name="understanding-the-different-aws-applications-in-the-azure-ad-application-gallery"></a>Meer informatie over de verschillende AWS-toepassingen in de Azure AD-toepassings galerie
+Gebruik de onderstaande informatie om een beslissing te nemen tussen het gebruik van de AWS single Sign-On en AWS Single-Account toegang tot toepassingen in de Azure AD-toepassings galerie.
 
+**AWS eenmalige aanmelding**
+
+[AWS eenmalige aanmelding](https://docs.microsoft.com/azure/active-directory/saas-apps/aws-single-sign-on-tutorial) is toegevoegd aan de Azure AD-toepassings galerie in februari 2021. Zo kunt u eenvoudig toegang centraal beheren met meerdere AWS-accounts en AWS-toepassingen, waarbij u zich aanmeldt via Microsoft Azure AD. Microsoft Azure AD eenmaal met AWS SSO en gebruik AWS SSO om machtigingen voor al uw AWS-accounts van één locatie te beheren. AWS SSO voorziet automatisch in machtigingen en houdt deze actueel wanneer u beleids regels en toegangs toewijzingen bijwerkt. Eind gebruikers kunnen zich verifiëren met hun Azure AD-referenties voor toegang tot de AWS-console, de opdracht regel interface en geïntegreerde SSO-toepassingen met AWS.
+
+**AWS-toegang Single-Account**
+
+[AWS Single-Account Access](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-web-service-tutorial) is in de afgelopen jaren door klanten gebruikt en maakt het u mogelijk om Azure ad te deactiveren naar één AWS-account en Azure ad te gebruiken om de toegang tot AWS iam-rollen te beheren. AWS IAM-beheerders definiëren rollen en beleids regels in elk AWS-account. Voor elk AWS-account kunnen Azure AD-beheerders AWS IAM, gebruikers of groepen toewijzen aan het account en Azure AD configureren voor het verzenden van bevestigingen die de toegang van rollen toestaan.  
+
+| Functie | AWS enkele Sign-On | AWS-toegang Single-Account |
+|:--- |:---:|:---:|
+|Voorwaardelijke toegang| Ondersteunt één beleid voor voorwaardelijke toegang voor alle AWS-accounts. | Ondersteunt één beleid voor voorwaardelijke toegang voor alle accounts of aangepaste beleids regels per account|
+| CLI-toegang | Ondersteund | Ondersteund|
+| Privileged Identity Management | Nog niet ondersteund | Nog niet ondersteund |
+| Account beheer centraliseren | Account beheer centraliseren in AWS. | Centraliseren account beheer in azure AD (er is waarschijnlijk een Azure AD-bedrijfs toepassing per account vereist). |
+| SAML-certificaat| Eén certificaat| Afzonderlijke certificaten per app/account | 
+
+## <a name="aws-single-account-access-architecture"></a>Toegangs architectuur voor AWS-Single-Account
 ![Diagram van de relatie tussen Azure Active Directory en AWS](./media/amazon-web-service-tutorial/tutorial_amazonwebservices_image.png)
 
 U kunt meerdere id's voor meerdere instanties configureren. Bijvoorbeeld:

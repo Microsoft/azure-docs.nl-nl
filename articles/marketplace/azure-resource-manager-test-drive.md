@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 06/19/2020
 ms.author: trkeya
 author: trkeya
-ms.openlocfilehash: fd3fa04d2d7e868476838788dd9cf0e27c07aeca
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 2addf415c39691b4e662f304522a418aa8a778c2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461766"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101730368"
 ---
 # <a name="azure-resource-manager-test-drive"></a>Azure Resource Manager test drive
 
@@ -75,7 +75,7 @@ U kunt een geldige naam voor de para meters gebruiken. test drive herkent parame
 
 | Meta gegevens type   | Parameter type  | Beschrijving     | Voorbeeld waarde    |
 |---|---|---|---|
-| **baseuri**     | tekenreeks          | Basis-URI van uw implementatie pakket| `https:\//\<\..\>.blob.core.windows.net/\<\..\>` |
+| **baseuri**     | tekenreeks          | Basis-URI van uw implementatie pakket| `https://<..>.blob.core.windows.net/<..>` |
 | **gebruikers**    | tekenreeks          | Nieuwe wille keurige gebruikers naam.| admin68876      |
 | **password**    | beveiligde teken reeks    | Nieuw wille keurig wacht woord | LP! ACS \^ 2kh     |
 | **sessie-id**   | tekenreeks          | Unieke test drive sessie-ID (GUID)    | b8c8693e-5673-449c-badd-257a405a6dee |
@@ -240,7 +240,7 @@ En gebruik deze locatie voor elke resource voor een specifiek Lab-exemplaar:
 
 Zorg ervoor dat uw abonnement alle gewenste resources in elk van de geselecteerde regio's mag implementeren. Zorg er ook voor dat uw installatie kopieën voor virtuele machines beschikbaar zijn in alle regio's die u gaat inschakelen. anders werkt uw implementatie sjabloon niet voor bepaalde regio's.
 
-### <a name="outputs"></a>Uitvoer
+### <a name="outputs"></a>Uitvoerwaarden
 
 Normaal gesp roken kunt u met Resource Manager-sjablonen implementeren zonder dat er uitvoer wordt geproduceerd. Dit komt doordat u alle waarden kent die u gebruikt om sjabloon parameters te vullen en u kunt altijd hand matig eigenschappen van een resource controleren.
 
@@ -300,7 +300,7 @@ De laatste sectie die u moet volt ooien, is om automatisch de test stations te k
 
    ![Azure-abonnementen](media/test-drive/azure-subscriptions.png)
 
-2. Vraag een **Azure AD-Tenant-id** op. Als u al een Tenant-id beschikbaar hebt, kunt u deze vinden in de map met de **Azure Active Directory**  >  **Properties**  >  **-** eigenschappen:
+2. Vraag een **Azure AD-Tenant-id** op. Als u al een Tenant-id beschikbaar hebt, kunt u deze vinden in de map met de **Azure Active Directory**  >    >  **-** eigenschappen:
 
    ![Azure Active Directory eigenschappen](media/test-drive/azure-active-directory-properties.png)
 

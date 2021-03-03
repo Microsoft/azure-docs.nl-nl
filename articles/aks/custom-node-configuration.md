@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 12/03/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 589081149d08983d3cd5a4a8822873f5a6cfca0e
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 7b39242a7d7208b33a070e86088b25e9414ead04
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99559437"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101714626"
 ---
 # <a name="customize-node-configuration-for-azure-kubernetes-service-aks-node-pools-preview"></a>De knooppunt configuratie voor Azure Kubernetes service (AKS)-knooppunt Pools aanpassen (preview-versie)
 
@@ -198,7 +198,7 @@ az aks nodepool add --name mynodepool1 --cluster-name myAKSCluster --resource-gr
 [aks-scale-apps]: tutorial-kubernetes-scale.md
 [aks-support-policies]: support-policies.md
 [aks-upgrade]: upgrade-cluster.md
-[aks-view-master-logs]: ./view-master-logs.md#enable-resource-logs
+[aks-view-master-logs]: ./view-control-plane-logs.md#enable-resource-logs
 [autoscaler-profile-properties]: #using-the-autoscaler-profile
 [azure-cli-install]: /cli/azure/install-azure-cli
 [az-aks-show]: /cli/azure/aks#az-aks-show

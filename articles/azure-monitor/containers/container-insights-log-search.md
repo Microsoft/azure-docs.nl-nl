@@ -1,22 +1,22 @@
 ---
-title: Logboeken van Azure Monitor voor containers opvragen | Microsoft Docs
-description: Azure Monitor voor containers worden metrische gegevens en logboek registraties verzameld, en in dit artikel worden de records beschreven en worden voorbeeld query's opgenomen.
+title: Logboeken zoeken vanuit container Insights | Microsoft Docs
+description: In container Insights worden metrische gegevens en logboek registraties verzameld en in dit artikel worden de records beschreven en worden voorbeeld query's opgenomen.
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: 8f02d900ba931768c7f8acebc1b124aff777da18
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 79efa714548adbde67774cab741bf953a4ff1e83
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612327"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711107"
 ---
-# <a name="how-to-query-logs-from-azure-monitor-for-containers"></a>Logboeken van Azure Monitor voor containers opvragen
+# <a name="how-to-query-logs-from-container-insights"></a>Logboeken vanuit container Insights doorzoeken
 
-Azure Monitor voor containers verzamelt prestatie gegevens, inventaris gegevens en informatie over de status van container hosts en containers. De gegevens worden elke drie minuten verzameld en doorgestuurd naar de Log Analytics-werk ruimte in Azure Monitor. Deze gegevens zijn beschikbaar voor [query's](../log-query/log-query-overview.md) in azure monitor. U kunt deze gegevens Toep assen op scenario's met inbegrip van migratie planning, capaciteits analyse, detectie en prestatie problemen oplossen op aanvraag.
+In container Insights worden metrische gegevens over prestaties, inventaris gegevens en status informatie van container hosts en containers verzameld. De gegevens worden elke drie minuten verzameld en doorgestuurd naar de Log Analytics-werk ruimte in Azure Monitor. Deze gegevens zijn beschikbaar voor [query's](../logs/log-query-overview.md) in azure monitor. U kunt deze gegevens Toep assen op scenario's met inbegrip van migratie planning, capaciteits analyse, detectie en prestatie problemen oplossen op aanvraag.
 
 ## <a name="container-records"></a>Container records
 
-In de volgende tabel worden de details van de records die worden verzameld door Azure Monitor voor containers gegeven. Zie de naslag informatie voor de tabellen [ContainerInventory](/azure/azure-monitor/reference/tables/containerinventory) en [ContainerLog](/azure/azure-monitor/reference/tables/containerlog) voor een overzicht van de kolom beschrijvingen.
+In de volgende tabel worden de details van de records die door container Insights zijn verzameld gegeven. Zie de naslag informatie voor de tabellen [ContainerInventory](/azure/azure-monitor/reference/tables/containerinventory) en [ContainerLog](/azure/azure-monitor/reference/tables/containerlog) voor een overzicht van de kolom beschrijvingen.
 
 | Gegevens | Gegevensbron | Gegevenstype | Velden |
 |------|-------------|-----------|--------|
@@ -47,7 +47,7 @@ De container logboeken uitvoer die wordt doorgestuurd naar uw werk ruimte zijn S
 
 Het is vaak handig om query's te bouwen die beginnen met een voor beeld of twee en deze vervolgens te wijzigen zodat ze aan uw vereisten voldoen. Om geavanceerdere query's te kunnen bouwen, kunt u experimenteren met de volgende voorbeeld query's:
 
-| Query’s uitvoeren | Description | 
+| Query’s uitvoeren | Beschrijving | 
 |-------|-------------|
 | ContainerInventory<br> &#124; project computer, name, Image, ImageTag, ContainerState, CreatedTime, StartedTime, FinishedTime<br> &#124; weergave tabel | Alle levenscyclus gegevens van een container weer geven| 
 | KubeEvents_CL<br> &#124; waar niet (IsEmpty (Namespace_s))<br> &#124; sorteren op TimeGenerated desc<br> &#124; weergave tabel | Kubernetes-gebeurtenissen|
@@ -110,4 +110,4 @@ De uitvoer toont resultaten die vergelijkbaar zijn met het volgende voor beeld:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Azure Monitor voor containers bevat geen vooraf gedefinieerde set met waarschuwingen. Raadpleeg de procedures [voor het maken van prestatie waarschuwingen met Azure monitor voor containers](./container-insights-log-alerts.md) voor meer informatie over het maken van aanbevolen waarschuwingen voor hoog CPU-en geheugen gebruik ter ondersteuning van uw DevOps-of operationele processen en procedures.
+Container Insights bevat geen vooraf gedefinieerde set met waarschuwingen. Bekijk de [prestatie waarschuwingen maken met container Insights](./container-insights-log-alerts.md) voor meer informatie over het maken van aanbevolen waarschuwingen voor hoog CPU-en geheugen gebruik ter ondersteuning van uw DevOps-of operationele processen en procedures.

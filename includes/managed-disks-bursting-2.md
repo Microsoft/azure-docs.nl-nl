@@ -5,30 +5,81 @@ services: virtual-machines
 author: albecker1
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 04/27/2020
+ms.date: 02/12/2021
 ms.author: albecker1
 ms.custom: include file
-ms.openlocfilehash: 801f0f03b49d20c84a4531bd0daad7630a0ed01d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 54c29d76757916a8eea54af16babdae21b809a19
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100585098"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750127"
 ---
-## <a name="common-scenarios"></a>Algemene scenario's
-De volgende scenario's kunnen aanzienlijk van bursting profiteren:
-- Het verbeteren van de **opstart tijd** – met bursting, wordt uw exemplaar met een aanzienlijk sneller systeem opgestart. Zo is de standaard besturingssysteem schijf voor Premium ingeschakelde Vm's de P4-schijf. Dit is een ingerichte snelheid van Maxi maal 120 IOPS en 25 MB/s. Met bursting kan de P4 tot 3500 IOPS en 170 MB/s gaan, waardoor een opstart tijd kan worden versneld door 6X.
-- **Verwerken van batch-taken** : de werk belastingen van sommige toepassingen zijn van elkaar afnemen en vereisen een optimale prestaties voor de meeste tijd en vereisen een korte periode. Een voor beeld hiervan is een boekhoud programma waarmee dagelijks trans acties worden verwerkt waarvoor een kleine hoeveelheid schijf verkeer nodig is. Aan het einde van de maand worden rapporten die een veel grotere hoeveelheid schijf verkeer nodig hebben, afgestemd.
-- **Voor bereiding op het verkeer van verkeers pieken** : webservers en hun toepassingen kunnen op elk gewenst moment verkeer in pieken ondervinden. Als uw webserver wordt ondersteund door Vm's of schijven met behulp van burstisatie, zijn de servers beter uitgerust voor het afhandelen van verkeers pieken. 
+## <a name="disk-level-bursting"></a>Bursting op schijf niveau
+
+### <a name="on-demand-bursting-preview"></a>Bursting op aanvraag (preview-versie)
+
+Schijven met behulp van het burst-model op aanvraag van schijf bursting kunnen de oorspronkelijke ingerichte doelen Afsplitsen, zo vaak als nodig is voor de werk belasting, tot het maximum aantal burst-doelen. Bijvoorbeeld: op een P30-schijf van 1 TiB is de ingerichte IOPS 5000 IOPS. Als schijf bursting is ingeschakeld op deze schijf, kunnen uw workloads IOs aan deze schijf door geven tot de maximale burst-prestaties van 30.000 IOPS en 1.000 MBps.
+
+Als u verwacht dat uw werk belastingen vaak worden uitgevoerd buiten het ingerichte prestatie doel, is de schijf bursting niet kosten effectief. In dit geval is het raadzaam om de prestatie tier van uw schijf te wijzigen in een [hogere laag](../articles/virtual-machines/disks-performance-tiers.md) , voor betere prestaties van de basis lijn. Bekijk uw facturerings gegevens en Beoordeel deze voor het verkeers patroon van uw workloads.
+
+Voordat u bursting op aanvraag inschakelt, moet u het volgende weten:
+
+[!INCLUDE [managed-disk-bursting-regions-limitations](managed-disk-bursting-regions-limitations.md)]
+
+#### <a name="regional-availability"></a>Regionale beschikbaarheid
+
+[!INCLUDE [managed-disk-bursting-availability](managed-disk-bursting-availability.md)]
+
+#### <a name="billing"></a>Billing
+
+Schijven die gebruikmaken van het burst-model op aanvraag, worden in rekening gebracht met een burst-activerings kosten per uur en de transactie kosten zijn van toepassing op alle burst-trans acties buiten het ingerichte doel. De transactie kosten worden in rekening gebracht met behulp van het betalen naar gebruik-model, op basis van de niet-opgeslagen schijf IOs, inclusief Lees-en schrijf bewerkingen die de ingerichte doelen overschrijden. Hier volgt een voor beeld van patronen voor schijf verkeer via een facturerings-uur:
+
+Schijf configuratie: Premium-SSD – 1 TiB (P30), schijf bursting ingeschakeld.
+
+- 00:00:00 – 00:10:00 schijf-IOPS onder ingericht doel van 5.000 IOPS 
+- 00:10:01 – 00:10:10 toepassing heeft een batch-taak uitgegeven, waardoor de schijf-IOPS gedurende 10 seconden wordt gesplitst bij 6.000 IOPS 
+- 00:10:11 – 00:59:00 schijf-IOPS onder ingericht doel van 5.000 IOPS 
+- 00:59:01 – 01:00:00 toepassing heeft een andere batch taak uitgegeven waardoor het IOPS van de schijf gedurende 60 seconden bij 7.000 IOPS wordt veroorzaakt 
+
+In dit factuur uur zijn de kosten voor burstisatie twee kosten:
+
+De eerste kosten zijn de burst-inflate-kosten van $X (bepaald door uw regio). Deze vaste kosten worden altijd in rekening gebracht op de schijf die de status koppelen negeert totdat deze is uitgeschakeld. 
+
+Seconde is de kosten voor de burst-trans actie. Schijf bursting is opgetreden in twee tijd sleuven. Van 00:10:01 – 00:10:10 is de geaccumuleerde burst-trans actie (6.000 – 5.000) X 10 = 10.000. Van 00:59:01 – 01:00:00 is de geaccumuleerde burst-trans actie (7.000 – 5.000) X 60 = 120.000. Het totaal aantal burst-trans acties is 10.000 + 120.000 = 130.000. De kosten voor burst-trans acties worden in rekening gebracht op $Y op basis van 13 eenheden van 10.000 trans acties (op basis van regionale prijzen).
+
+De totale kosten voor de schijf bursting van dit facturerings uur zijn dus gelijk aan $X + $Y. Dezelfde berekening is van toepassing voor bursting over het ingerichte doel van MBps. We vertalen de overschrijding van MB naar trans acties met een i/o-grootte van 256 KB. Als uw schijf verkeer het ingerichte IOPS-en MBps-doel overschrijdt, kunt u het onderstaande voor beeld raadplegen om de burst-trans acties te berekenen. 
+
+Schijf configuratie: Premium-SSD – 1 TB (P30), schijf bursting ingeschakeld.
+
+- 00:00:01 – 00:00:05 toepassing heeft een batch-taak uitgegeven, waardoor de schijf-IOPS voor Maxi maal 10.000 IOPS en 300 MBps gedurende vijf seconden wordt veroorzaakt.
+- 00:00:06 – 00:00:10 toepassing heeft een herstel taak uitgegeven waardoor de schijf-IOPS op 6.000 IOPS en 600 MBps gedurende vijf seconden wordt gegenereerd.
+
+De burst-trans actie wordt verwerkt als het maximum aantal trans acties van IOPS of MBps bursting. Van 00:00:01 – 00:00:05 is de geaccumuleerde burst-trans actie Max ((10.000 – 5.000), (300-200) * 1024/256)) * 5 = 25.000 trans acties. Van 00:00:06 – 00:00:10 is de geaccumuleerde burst-trans actie Max ((6.000 – 5.000), (600-200) * 1024/256)) * 5 = 8.000 trans acties. Daarnaast neemt u de burst-mogelijkheid vast voor het vaste tarief om de totale kosten voor het inschakelen van op aanvraag gebaseerde schijf bursting op te halen. 
+
+Raadpleeg de [pagina met prijzen voor Managed disks](https://azure.microsoft.com/pricing/details/managed-disks/) voor meer informatie over prijzen en gebruik [Azure prijs calculator](https://azure.microsoft.com/pricing/calculator/?service=storage) om de evaluatie voor uw werk belasting uit te voeren. 
+
+### <a name="credit-based-bursting"></a>Op Credit gebaseerde burstisatie
+
+Op Credit gebaseerde bursting is beschikbaar voor P20 en kleinere schijven in alle regio's in azure Public-, Government-en China-Clouds. Schijf bursting is standaard ingeschakeld voor alle nieuwe en bestaande implementaties van ondersteunde schijf grootten. Met burstisatie op VM-niveau wordt alleen op Credit gebaseerde burstisatie gebruikt.
+
+### <a name="virtual-machine-level-bursting"></a>Burstisatie op virtuele machine niveau
+Ondersteuning voor burstisatie op VM-niveau is ingeschakeld in alle regio's in de open bare Cloud op de volgende ondersteunde grootten: 
+- [Lsv2-serie](../articles/virtual-machines/lsv2-series.md)
+
+Burstisatie op VM-niveau is ook beschikbaar in West-Centraal VS voor de volgende ondersteunde grootten:
+- [Dv3- en DSv3-serie](../articles/virtual-machines/dv3-dsv3-series.md)
+- [Ev3- en Esv3-serie](../articles/virtual-machines/ev3-esv3-series.md)
+
+Bursting is standaard ingeschakeld voor virtuele machines die dit ondersteunen.
 
 ## <a name="bursting-flow"></a>Bursting-stroom
-Het bursting-krediet systeem is op dezelfde manier van toepassing op het niveau van de virtuele machine en op het schijf niveau. Uw bron, ofwel een virtuele machine of schijf, begint met volledig in voor Raad gecrediteerd tegoed. Met deze tegoeden kunt u 30 minuten op het maximum aantal bursts bellen. Bursting-tegoeden worden verzameld wanneer uw resource wordt uitgevoerd onder de opslag limieten voor de prestaties van de schijf. Voor alle IOPS en MB/s die door uw resource worden gebruikt, is de prestatie limiet die u begint om tegoed te accumuleren. Als uw resource transitorische tegoeden heeft om te gebruiken voor burstisatie en uw werk belasting de extra prestaties nodig heeft, kan uw resource die tegoeden gebruiken om de prestaties van de schijf te verhalen om aan de vraag te voldoen.
 
+Het bursting-krediet systeem is op dezelfde manier van toepassing op het niveau van de virtuele machine en op het schijf niveau. Uw bron, ofwel een virtuele machine of schijf, begint met volledig gecrediteerd tegoed in een eigen burst-Bucket. Met deze tegoeden kunt u tot wel 30 minuten op het maximum aantal bursts bellen. U accumuleert tegoed wanneer de IOPS van de bron of de MB/s worden gebruikt onder het prestatie doel van de resource. Als uw resource gepaarde burst-tegoeden heeft en uw werk belasting de extra prestaties nodig heeft, kan uw resource deze tegoeden gebruiken om de prestatie limieten te overschrijden en de prestaties te verhogen om te voldoen aan de vereisten van de werk belasting.
 
+![Het Bucket diagram wordt gebursteerd.](media/managed-disks-bursting/bucket-diagram.jpg)
 
-![Bucket diagram voor burstisatie](media/managed-disks-bursting/bucket-diagram.jpg)
-
-U kunt het beste de 30 minuten van de bursting gebruiken. U kunt deze gedurende 30 minuten opeenvolgend of per dag gebruiken. Wanneer het product wordt geïmplementeerd, is het gratis met een volledig tegoed en wanneer het de tegoeden afneemt, neemt het minder dan een dag in beslag. U kunt hun burstse tegoeden verzamelen en best Eden aan uw keuze en de Bucket van 30 minuten hoeft niet opnieuw te worden gevuld naar burst. Een ding om te weten over burst accumulatie is dat deze verschilt voor elke resource, omdat deze is gebaseerd op de ongebruikte IOPS en MB/s onder hun prestatie aantallen. Dit betekent dat hogere prestatie producten met een basis lijn hun burst-bedragen sneller kunnen samen voegen dan lagere basis producten. Bijvoorbeeld: een P1-schijf stationair draaien zonder activiteit zal 120 IOPS per seconde toenemen, terwijl een P20-schijf 2.300 IOPS per seconde toeneemt tijdens het stationair draaien zonder activiteit.
+Hoe u uw beschik bare tegoeden uitgeeft. U kunt uw 30 minuten aan burst-tegoed opeenvolgend of sporadisch gedurende de dag gebruiken. Wanneer resources worden geïmplementeerd, worden ze geleverd met een volledige toewijzing van tegoed. Als deze uitvalt, duurt het minder dan een dag om de voor Raad te raden. Tegoeden kunnen naar keuze worden besteed, de burst-Bucket hoeft niet volledig te zijn om resources te kunnen burstiseren. Burst accumulatie is afhankelijk van elke resource, omdat deze is gebaseerd op ongebruikte IOPS en MB/s onder hun prestatie doelen. Hogere prestatie bronnen voor de basis lijn kunnen hun burst-tegoed sneller samen voegen dan resources met een lagere basis tijd. Een P1-schijf in het stationaire wordt bijvoorbeeld 120 IOPS per seconde toegerekend, terwijl een stationaire P20-schijf 2.300 IOPS per seconde zou toenemen.
 
 ## <a name="bursting-states"></a>Bursting-statussen
 Er zijn drie statussen die uw resource kan hebben met bursting ingeschakeld:
@@ -36,7 +87,7 @@ Er zijn drie statussen die uw resource kan hebben met bursting ingeschakeld:
 - **Bursting** : het verkeer van de resource gebruikt meer dan het prestatie doel. In het burst-verkeer wordt onafhankelijk van de tegoeden van IOPS of band breedte verbruikt.
 - **Constante** : het verkeer van de resource heeft precies betrekking op het prestatie doel.
 
-## <a name="examples-of-bursting"></a>Voor beelden van bursting
+## <a name="bursting-examples"></a>Bursting-voor beelden
 
 In de volgende voor beelden ziet u hoe bursting werkt met verschillende combi Naties van VM'S en schijven. Om ervoor te zorgen dat de voor beelden gemakkelijk te volgen zijn, zullen we de focus richten op MB/s, maar dezelfde logica wordt onafhankelijk toegepast op IOPS.
 
@@ -53,15 +104,15 @@ In de volgende voor beelden ziet u hoe bursting werkt met verschillende combi Na
 
  Wanneer de virtuele machine wordt opgestart, worden gegevens opgehaald van de besturingssysteem schijf. Omdat de besturingssysteem schijf deel uitmaakt van een VM die wordt opgestart, is de besturingssysteem schijf vol met burst-tegoed. Met deze tegoeden kan het opstarten van de besturingssysteem schijf tot 170 MB/s seconde worden gestart.
 
-![VM verzendt een aanvraag voor 192 MB/s van de door voer naar de besturingssysteem schijf. de besturingssysteem schijf reageert met 170 MB/s-gegevens.](media/managed-disks-bursting/nonbursting-vm-busting-disk/nonbusting-vm-bursting-disk-startup.jpg)
+![VM verzendt een aanvraag voor 192 MB/s van de door voer naar de besturingssysteem schijf. de besturingssysteem schijf reageert met 170 MB/s-gegevens.](media/managed-disks-bursting/nonbursting-vm-bursting-disk/nonbursting-vm-bursting-disk-startup.jpg)
 
 Nadat het opstarten is voltooid, wordt een toepassing uitgevoerd op de VM en heeft deze een niet-kritieke werk belasting. Voor deze workload is 15 MB/S vereist die gelijkmatig over alle schijven wordt verdeeld.
 
-![De toepassing verzendt een aanvraag voor 15 MB/s van de door voer naar een virtuele machine. de VM haalt een aanvraag en stuurt elke schijf een aanvraag voor 5 MB/s. op deze schijven wordt 5 MB/s als resultaat gegeven. VM retourneert 15 MB/s voor de toepassing.](media/managed-disks-bursting/nonbursting-vm-busting-disk/nonbusting-vm-bursting-disk-idling.jpg)
+![De toepassing verzendt een aanvraag voor 15 MB/s van de door voer naar een virtuele machine. de VM haalt een aanvraag en stuurt elke schijf een aanvraag voor 5 MB/s. op deze schijven wordt 5 MB/s als resultaat gegeven. VM retourneert 15 MB/s voor de toepassing.](media/managed-disks-bursting/nonbursting-vm-bursting-disk/nonbursting-vm-bursting-disk-idling.jpg)
 
 Vervolgens moet de toepassing een batch taak verwerken die 192 MB/s vereist. 2 MB/s worden gebruikt door de besturingssysteem schijf en de rest wordt evenredig verdeeld over de gegevens schijven.
 
-![De toepassing verzendt een aanvraag voor 192 MB/s van de door voer naar de virtuele machine, voert een aanvraag uit en stuurt het grote deel van de aanvraag naar de gegevens schijven (95 MB/s) en 2 MB/s naar de besturingssysteem schijf, de gegevens schijven die aan de vraag voldoen en alle schijven retour neren de aangevraagde door voer naar de virtuele machine.](media/managed-disks-bursting/nonbursting-vm-busting-disk/nonbusting-vm-bursting-disk-bursting.jpg)
+![De toepassing verzendt een aanvraag voor 192 MB/s van de door voer naar de virtuele machine, voert een aanvraag uit en stuurt het grote deel van de aanvraag naar de gegevens schijven (95 MB/s) en 2 MB/s naar de besturingssysteem schijf, de gegevens schijven die aan de vraag voldoen en alle schijven retour neren de aangevraagde door voer naar de virtuele machine.](media/managed-disks-bursting/nonbursting-vm-bursting-disk/nonbursting-vm-bursting-disk-bursting.jpg)
 
 ### <a name="burstable-virtual-machine-with-non-burstable-disks"></a>Burstable virtuele machine met niet-Burstable schijven
 **Combi natie van VM en schijf:** 

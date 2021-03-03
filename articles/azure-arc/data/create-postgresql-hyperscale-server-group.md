@@ -1,6 +1,6 @@
 ---
-title: Een Azure Database for PostgreSQL grootschalige-Server groep maken op Azure Arc
-description: Een Azure Database for PostgreSQL grootschalige-Server groep maken op Azure Arc
+title: Een PostgreSQL Hyperscale-servergroep met Azure Arc maken
+description: Een PostgreSQL Hyperscale-servergroep met Azure Arc maken
 services: azure-arc
 ms.service: azure-arc
 ms.subservice: azure-arc-data
@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 02/11/2021
 ms.topic: how-to
-ms.openlocfilehash: 4ff45eea8e07a282d8529c745344c11706bc27bb
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 046f9d80c034e1ac1f2e7ffe144b4f389861b043
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100387985"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101687937"
 ---
 # <a name="create-an-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Een PostgreSQL Hyperscale-servergroep met Azure Arc maken
 
@@ -25,14 +25,14 @@ In dit document worden de stappen beschreven voor het maken van een PostgreSQL g
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
 ## <a name="getting-started"></a>Aan de slag
-Als u al bekend bent met de onderwerpen onder kunt u deze alinea overs Laan.
+Als u al bekend bent met de onderstaande onderwerpen, kunt u deze alinea overs Laan.
 Er zijn belang rijke onderwerpen die u mogelijk wilt lezen voordat u doorgaat met maken:
 - [Overzicht van gegevens services die zijn ingeschakeld voor Azure Arc](overview.md)
 - [Connectiviteitsmodi en -vereisten](connectivity.md)
 - [Opslag configuraties en Kubernetes opslag concepten](storage-configuration.md)
 - [Kubernetes-resource model](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/resources.md#resource-quantities)
 
-Als u liever zonder zelf een volledige omgeving hoeft in te richten, kunt u snel aan de slag met [Azure Arc](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_data/) op Azure Kubernetes service (AKS), AWS elastische Kubernetes service (EKS), Google Cloud Kubernetes Engine (GKE) of in een Azure-VM.
+Als u liever dingen wilt proberen zonder zelf een volledige omgeving in te richten, kunt u snel aan de slag met [Azure Arc](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_data/) op Azure Kubernetes service (AKS), AWS elastische Kubernetes service (EKS), Google Cloud Kubernetes Engine (GKE) of in een Azure-VM.
 
 
 ## <a name="login-to-the-azure-arc-data-controller"></a>Meld u aan bij de Azure-Arc-gegevens controller
@@ -55,51 +55,95 @@ Logged in successfully to `https://10.0.0.4:30080` in namespace `arc`. Setting a
 ```
 
 ## <a name="preliminary-and-temporary-step-for-openshift-users-only"></a>Voorlopige en tijdelijke stap voor alleen openshift-gebruikers
+Implementeer deze stap voordat u verdergaat met de volgende stap. Als u een PostgreSQL grootschalige-Server groep wilt implementeren op Red Hat open Shift in een ander project dan de standaard, moet u de volgende opdrachten uitvoeren op uw cluster om de beveiligings beperkingen bij te werken. Met deze opdracht worden de benodigde bevoegdheden verleend aan de service accounts die uw PostgreSQL grootschalige-Server groep zullen uitvoeren. De beveiligings context constraint (SCC) Arc-data-SCC is het account dat u hebt toegevoegd tijdens de implementatie van de Azure Arc-gegevens controller.
 
-Implementeer deze stap voordat u verdergaat met de volgende stap. Als u een PostgreSQL grootschalige-Server groep wilt implementeren op Red Hat open Shift in een ander project dan de standaard, moet u de volgende opdrachten uitvoeren op uw cluster om de beveiligings beperkingen bij te werken. Met deze opdracht worden de benodigde bevoegdheden verleend aan de service accounts die uw PostgreSQL grootschalige-Server groep zullen uitvoeren. De beveiligings context constraint (SCC) **_Arc-data-SCC_** is het account dat u hebt toegevoegd tijdens de implementatie van de Azure Arc-gegevens controller.
-
-```console
+```Console
 oc adm policy add-scc-to-user arc-data-scc -z <server-group-name> -n <namespace name>
 ```
 
-_**Server-group-name** is de naam van de Server groep die u tijdens de volgende stap gaat maken._
-   
-Raadpleeg voor meer informatie over SCCs in open Shift de documentatie van open [SHIFT](https://docs.openshift.com/container-platform/4.2/authentication/managing-security-context-constraints.html).
-U kunt nu de volgende stap implementeren.
+**Server-group-name is de naam van de Server groep die u tijdens de volgende stap gaat maken.**
 
-## <a name="create-an-azure-database-for-postgresql-hyperscale-server-group"></a>Een Azure Database for PostgreSQL grootschalige-Server groep maken
+Raadpleeg voor meer informatie over SCCs in open Shift de documentatie van open [SHIFT](https://docs.openshift.com/container-platform/4.2/authentication/managing-security-context-constraints.html). U kunt nu de volgende stap implementeren.
 
-Als u een Azure Database for PostgreSQL grootschalige-Server groep wilt maken op Azure Arc, gebruikt u de volgende opdracht:
+
+## <a name="create-an-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Een PostgreSQL Hyperscale-servergroep met Azure Arc maken
+
+Als u een Azure-PostgreSQL grootschalige-Server groep wilt maken op uw Arc-gegevens controller, gebruikt u de opdracht `azdata arc postgres server create` voor het door geven van verschillende para meters.
+
+Bekijk de uitvoer van de opdracht voor meer informatie over de para meters die u kunt instellen tijdens het aanmaak tijdstip:
+```console
+azdata arc postgres server create --help
+```
+
+De belangrijkste para meters moeten rekening houden met het volgende:
+- **de naam van de Server groep** die u wilt implementeren. Geef aan `--name` of `-n` gevolgd door een naam waarvan de lengte mag niet langer zijn dan 11 tekens.
+
+- **de versie van de postgresql-engine** die u wilt implementeren: standaard is dit versie 12. Als u versie 12 wilt implementeren, kunt u deze para meter weglaten of een van de volgende para meters door geven: `--engine-version 12` of `-ev 12` . Geef of op om versie 11 te implementeren `--engine-version 11` `-ev 11` .
+
+- **het aantal worker-knoop punten** dat u wilt implementeren om uit te schalen en mogelijk betere prestaties te bereiken. Lees de [concepten over post gres grootschalige](concepts-distributed-postgres-hyperscale.md)voordat u verder gaat. Als u het aantal worker-knoop punten wilt opgeven dat moet worden geïmplementeerd, gebruikt u de para meter `--workers` of `-w` gevolgd door een geheel getal dat groter is dan of gelijk is aan 2. Als u bijvoorbeeld een server groep wilt implementeren met twee worker-knoop punten, geeft u op `--workers 2` of `-w 2` . Hiermee maakt u drie verschillende versies, een voor het coördinator knooppunt/-exemplaar en twee voor de worker-knoop punten/instanties (één voor elk van de werk nemers).
+
+- **de opslag klassen** die u wilt gebruiken voor uw server groep. Het is belang rijk dat u de opslag klasse instelt op het moment dat u een server groep implementeert, omdat deze niet kan worden gewijzigd nadat u de implementatie hebt geïmplementeerd. Als u na de implementatie de opslag klasse wilde wijzigen, moet u de gegevens extra heren, uw server groep verwijderen, een nieuwe server groep maken en de gegevens importeren. U kunt opgeven welke opslag klassen moeten worden gebruikt voor de gegevens, logboeken en de back-ups. Als u geen opslag klassen opgeeft, worden standaard de opslag klassen van de gegevens controller gebruikt.
+    - Als u de opslag klasse voor de gegevens wilt instellen, geeft u de para meter op `--storage-class-data` of `-scd` gevolgd door de naam van de opslag klasse.
+    - Als u de opslag klasse voor de logboeken wilt instellen, geeft u de para meter op `--storage-class-logs` of `-scl` gevolgd door de naam van de opslag klasse.
+    - de opslag klasse voor de back-ups instellen: in deze preview van de Azure Arc enabled PostgreSQL grootschalige zijn er twee manieren om opslag klassen in te stellen, afhankelijk van welke typen back-up-en herstel bewerkingen u wilt uitvoeren. We werken eraan om deze ervaring te vereenvoudigen. U geeft een opslag klasse of een volume claim koppeling op. Een volume claim koppeling is een combi natie van een bestaande permanente volume claim (in dezelfde naam ruimte) en het volume type (en optionele meta gegevens, afhankelijk van het type volume), gescheiden door een dubbele punt. Het permanente volume wordt in elke pod voor de PostgreSQL-Server groep gekoppeld.
+        - Als u wilt dat alleen volledige data base wordt teruggezet, stelt u de para meter in `--storage-class-backups` of `-scb` gevolgd door de naam van de opslag klasse.
+        - Als u van plan bent om zowel de volledige data base opnieuw op te slaan als herstel punt in tijd, stelt u de para meter in `--volume-claim-mounts` of `-vcm` gevolgd door de naam van een volume claim en een volume type.
+
+Houd er rekening mee dat wanneer u de opdracht maken uitvoert, u wordt gevraagd het wacht woord van de standaard gebruiker met beheerders rechten in te voeren `postgres` . De naam van die gebruiker kan niet worden gewijzigd in deze preview. U kunt de interactieve prompt overs Laan door de `AZDATA_PASSWORD` sessie omgevings variabele in te stellen voordat u de opdracht maken uitvoert.
+
+### <a name="examples"></a>Voorbeelden
+
+**Voer de volgende opdracht uit om een server groep van post gres versie 12 met de naam postgres01 te implementeren met twee worker-knoop punten die dezelfde opslag klassen gebruiken als de gegevens controller:**
+```console
+azdata arc postgres server create -n postgres01 --workers 2
+```
+
+**Voer de volgende stappen uit om een server groep van post gres versie 12 met de naam postgres01 te implementeren met twee worker-knoop punten die dezelfde opslag klassen gebruiken als de gegevens controller voor gegevens en Logboeken, maar de specifieke opslag klasse voor het uitvoeren van zowel volledige herstel bewerkingen als herstel tijdstippen.**
+
+ In dit voor beeld wordt ervan uitgegaan dat uw server groep wordt gehost in een Azure Kubernetes service-cluster (AKS). In dit voor beeld wordt azurefile-Premium als opslag klassen naam gebruikt. U kunt het onderstaande voor beeld aanpassen zodat dit overeenkomt met uw omgeving. Houd er rekening mee dat **AccessModes ReadWriteMany is vereist** voor deze configuratie.  
+
+Maak eerst een YAML-bestand dat de onderstaande beschrijving van het back-uppvc bevat en geef het de naam CreateBackupPVC. yml bijvoorbeeld:
+```console
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: backup-pvc
+  namespace: arc
+spec:
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 100Gi
+  storageClassName: azurefile-premium
+```
+
+Maak vervolgens een PVC met behulp van de definitie die is opgeslagen in het YAML-bestand:
 
 ```console
-azdata arc postgres server create -n <name> --workers <# worker nodes with #>=2> --storage-class-data <storage class name> --storage-class-logs <storage class name> --storage-class-backups <storage class name>
+kubectl create -f e:\CreateBackupPVC.yml -n arc
+``` 
 
-#Example
-#azdata arc postgres server create -n postgres01 --workers 2
+Maak vervolgens de Server groep:
+
+```console
+azdata arc postgres server create -n postgres01 --workers 2 -vcm backup-pvc:backup
 ```
 
 > [!IMPORTANT]
-> - De opslag klasse die wordt gebruikt voor back-ups (_--Storage-Class-backups-SCB_) wordt standaard ingesteld op de gegevens opslag klasse van de gegevens controller als deze niet is ingevoerd.
-> - Als u een server groep wilt herstellen naar een afzonderlijke server groep (zoals herstel op tijdstip van punt), moet u uw server groep configureren om Pvc's te gebruiken met de ReadWriteMany-toegangs modus. Dit is vereist om dit te doen bij het maken van de Server groep. Het kan niet worden gewijzigd nadat het is gemaakt. Lees voor meer informatie:
->    - [Een server groep maken die gereed is voor back-ups en herstel bewerkingen](backup-restore-postgresql-hyperscale.md#create-a-server-group-that-is-ready-for-backups-and-restores)
->    - [Beperkingen van Azure Arc enabled PostgreSQL grootschalige](limitations-postgresql-hyperscale.md)
+> - Lees de [huidige beperkingen met betrekking tot het maken/herstellen van back-ups](limitations-postgresql-hyperscale.md#backup-and-restore).
 
 
-> [!NOTE]
-> - **Er zijn andere opdracht regel parameters beschikbaar.  Bekijk de volledige lijst met opties door uit te voeren `azdata arc postgres server create --help` .**
->
-> - De eenheid die wordt geaccepteerd door de para meter--volume-size-* is een Kubernetes-resource hoeveelheid (een geheel getal gevolgd door een van deze SI-toereikende waarden (T, G, M, K, m) of hun kracht van twee equivalenten (TI, GI, MI, ki)).
-> - Namen moeten uit 12 tekens of minder bestaan en voldoen aan de naamgevings regels voor DNS.
-> - U wordt gevraagd het wacht woord voor de _post gres_ Standard-gebruiker met beheerders rechten in te voeren.  U kunt de interactieve prompt overs Laan door de `AZDATA_PASSWORD` sessie omgevings variabele in te stellen voordat u de opdracht maken uitvoert.
-> - Als u de gegevens controller hebt geïmplementeerd met behulp van AZDATA_USERNAME en AZDATA_PASSWORD sessie omgevingsvariabelen in dezelfde terminal sessie, worden de waarden voor AZDATA_PASSWORD ook gebruikt voor het implementeren van de Server groep PostgreSQL grootschalige. Als u liever een ander wacht woord gebruikt, moet u (1) de waarde voor AZDATA_PASSWORD bijwerken of (2) de AZDATA_PASSWORD omgevings variabele verwijderen of de waarde ervan verwijderen wordt gevraagd een wacht woord interactief in te voeren wanneer u een server groep maakt.
-> - De naam van de standaard gebruiker van de beheerder voor de PostgreSQL grootschalige-data base-engine is _post gres_ en kan op dit moment niet worden gewijzigd.
+> [!NOTE]  
+> - Als u de gegevens controller hebt geïmplementeerd `AZDATA_USERNAME` met `AZDATA_PASSWORD` de variabelen voor de sessie omgeving in dezelfde terminal sessie, worden de waarden voor `AZDATA_PASSWORD` gebruikt voor het implementeren van de postgresql grootschalige-Server groep. Als u liever een ander wacht woord gebruikt, moet u (1) de waarde bijwerken voor `AZDATA_PASSWORD` of (2) de `AZDATA_PASSWORD` omgevings variabele verwijderen of (3) de waarde verwijderen om een wacht woord interactief in te voeren wanneer u een server groep maakt.
 > - Als u een PostgreSQL grootschalige-Server groep maakt, worden resources in azure niet direct geregistreerd. Als onderdeel van het proces van het uploaden van [resource-inventaris](upload-metrics-and-logs-to-azure-monitor.md)  -of [gebruiks gegevens](view-billing-data-in-azure.md) naar Azure, worden de resources in azure gemaakt en kunt u uw resources in de Azure Portal bekijken.
 
 
 
-## <a name="list-your-azure-database-for-postgresql-server-groups-created-in-your-arc-setup"></a>Uw Azure Database for PostgreSQL Server groepen weer geven die zijn gemaakt in uw Arc-installatie
+## <a name="list-the-postgresql-hyperscale-server-groups-deployed-in-your-arc-data-controller"></a>De PostgreSQL grootschalige-Server groepen weer geven die zijn geïmplementeerd in uw Arc-gegevens controller
 
-Als u de PostgreSQL grootschalige-Server groepen op Azure Arc wilt weer geven, gebruikt u de volgende opdracht:
+Voer de volgende opdracht uit om een lijst te geven van de PostgreSQL grootschalige-Server groepen die zijn geïmplementeerd in uw Arc-gegevens controller:
 
 ```console
 azdata arc postgres server list
@@ -112,9 +156,9 @@ Name        State     Workers
 postgres01  Ready     2
 ```
 
-## <a name="get-the-endpoints-to-connect-to-your-azure-database-for-postgresql-server-groups"></a>De eind punten ophalen om verbinding te maken met uw Azure Database for PostgreSQL Server-groepen
+## <a name="get-the-endpoints-to-connect-to-your-azure-arc-enabled-postgresql-hyperscale-server-groups"></a>Haal de eind punten op om verbinding te maken met uw PostgreSQL grootschalige-Server groepen van Azure Arc.
 
-Als u de eind punten voor een PostgreSQL-exemplaar wilt weer geven, voert u de volgende opdracht uit:
+Als u de eind punten voor een PostgreSQL-Server groep wilt weer geven, voert u de volgende opdracht uit:
 
 ```console
 azdata arc postgres endpoint list -n <server group name>
@@ -137,9 +181,7 @@ Bijvoorbeeld:
 ]
 ```
 
-U kunt het eind punt PostgreSQL-exemplaar gebruiken om verbinding te maken met de PostgreSQL grootschalige-Server groep vanuit uw favoriete hulp programma:  [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio), [Pgcli](https://www.pgcli.com/) psql, pgAdmin, enzovoort.
-
-Als u een virtuele machine van Azure gebruikt om te testen, volgt u de onderstaande instructies:
+U kunt het eind punt PostgreSQL-exemplaar gebruiken om verbinding te maken met de PostgreSQL grootschalige-Server groep vanuit uw favoriete hulp programma:  [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio), [Pgcli](https://www.pgcli.com/) psql, pgAdmin, enzovoort. Wanneer u dit doet, maakt u verbinding met het coördinator knooppunt/-exemplaar, waarmee de query wordt doorgestuurd naar de juiste worker-knoop punten/-instanties als u gedistribueerde tabellen hebt gemaakt. Lees de [concepten van Azure Arc enabled postgresql grootschalige](concepts-distributed-postgres-hyperscale.md)voor meer informatie.
 
 ## <a name="special-note-about-azure-virtual-machine-deployments"></a>Speciale opmerking over implementaties van virtuele Azure-machines
 
@@ -192,7 +234,7 @@ psql postgresql://postgres:<EnterYourPassword>@10.0.0.4:30655
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Lees de concepten en instructies van Azure Database for PostgreSQL grootschalige om uw gegevens over meerdere grootschalige-knoop punten van PostgreSQL te verdelen en om te profiteren van de kracht van Azure Database for PostgreSQL grootschalige. :
+- Lees de concepten en hand leidingen van Azure Database for PostgreSQL grootschalige om uw gegevens over meerdere grootschalige-knoop punten van PostgreSQL te verdelen en om te profiteren van betere prestaties mogelijk:
     * [Knooppunten en tabellen](../../postgresql/concepts-hyperscale-nodes.md)
     * [Toepassingstype bepalen](../../postgresql/concepts-hyperscale-app-type.md)
     * [Een distributiekolom kiezen](../../postgresql/concepts-hyperscale-choose-distribution-column.md)
@@ -203,7 +245,7 @@ psql postgresql://postgres:<EnterYourPassword>@10.0.0.4:30655
 
     > \* In de bovenstaande documenten slaat u de secties **voor het aanmelden bij de Azure Portal**, & **een Azure database for PostgreSQL-grootschalige maken (Citus)**. Implementeer de resterende stappen in de implementatie van Azure Arc. Deze secties zijn specifiek voor de Azure Database for PostgreSQL grootschalige (Citus) die worden aangeboden als een PaaS-service in de Azure-Cloud, maar de andere onderdelen van de documenten zijn rechtstreeks van toepassing op uw PostgreSQL grootschalige van Azure Arc.
 
-- [Uw Azure Database for PostgreSQL Hyperscale-servergroep uitschalen](scale-out-postgresql-hyperscale-server-group.md)
+- [Uitschalen van uw Azure-boog ingeschakeld voor PostgreSQL grootschalige-Server groep](scale-out-postgresql-hyperscale-server-group.md)
 - [Opslag configuraties en Kubernetes opslag concepten](storage-configuration.md)
 - [Claims voor permanente volumes uitbreiden](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#expanding-persistent-volumes-claims)
 - [Kubernetes-resource model](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/resources.md#resource-quantities)

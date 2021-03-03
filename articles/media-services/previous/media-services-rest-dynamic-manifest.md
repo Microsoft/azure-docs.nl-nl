@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.reviewr: cenkdin
-ms.openlocfilehash: 04a9776ca2686aebbb7668c86f5afcd61f5f9238
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2b0271edbbd119e1d60f30cc149ba7772fd0cfa9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90530179"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101730215"
 ---
 # <a name="creating-filters-with-azure-media-services-rest-api"></a>Filters maken met Azure Media Services REST API
 
@@ -32,7 +32,7 @@ ms.locfileid: "90530179"
 > 
 > 
 
-Met ingang van 2,17 versie Media Services kunt u filters voor uw assets definiëren. Deze filters zijn regels aan de server zijde waarmee uw klanten kunnen kiezen voor het uitvoeren van dingen als: alleen een sectie van een video afspelen (in plaats van de volledige video afspelen), of alleen een subset van audio-en video weergaven opgeven die het apparaat van de klant kan verwerken (in plaats van alle vertoningen die aan de Asset zijn gekoppeld). Dit filter van uw assets wordt gearchiveerd via de **dynamische manifesten**die worden gemaakt op de aanvraag van uw klant om een video te streamen op basis van opgegeven filter (s).
+Met ingang van 2,17 versie Media Services kunt u filters voor uw assets definiëren. Deze filters zijn regels aan de server zijde waarmee uw klanten kunnen kiezen voor het uitvoeren van dingen als: alleen een sectie van een video afspelen (in plaats van de volledige video afspelen), of alleen een subset van audio-en video weergaven opgeven die het apparaat van de klant kan verwerken (in plaats van alle vertoningen die aan de Asset zijn gekoppeld). Dit filter van uw assets wordt gearchiveerd via de **dynamische manifesten** die worden gemaakt op de aanvraag van uw klant om een video te streamen op basis van opgegeven filter (s).
 
 Zie [overzicht van dynamische manifesten](media-services-dynamic-manifest-overview.md)voor meer informatie over filters en dynamische manifesten.
 
@@ -174,7 +174,7 @@ HTTP/1.1 201 Created
 ```
 
 ## <a name="list-filters"></a>Filters weer geven
-### <a name="get-all-global-filters-in-the-ams-account"></a>Alle globale **filter**s ophalen in het AMS-account
+### <a name="get-all-global-filters-in-the-ams-account"></a>Alle globale **filter** s ophalen in het AMS-account
 Als u filters wilt weer geven, gebruikt u de volgende HTTP-aanvragen: 
 
 #### <a name="http-request"></a>HTTP-aanvraag
@@ -190,7 +190,7 @@ x-ms-version: 2.19
 Host: media.windows.net 
 ```
 
-### <a name="get-assetfilters-associated-with-an-asset"></a>**AssetFilter**s ophalen die aan een Asset zijn gekoppeld
+### <a name="get-assetfilters-associated-with-an-asset"></a>**AssetFilter** s ophalen die aan een Asset zijn gekoppeld
 #### <a name="http-request"></a>HTTP-aanvraag
 
 ```console
@@ -363,7 +363,7 @@ In de volgende voor beelden ziet u hoe u filters kunt toevoegen aan uw streaming
 
 **Smooth Streaming**
 
-`http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(filter=MyFilter)`
+`http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(filter=MyFilter)`
 
     
 ## <a name="media-services-learning-paths"></a>Media Services-leertrajecten

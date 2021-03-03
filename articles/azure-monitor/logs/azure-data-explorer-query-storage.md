@@ -7,12 +7,12 @@ ms.author: bwren
 ms.reviewer: bwren
 ms.topic: conceptual
 ms.date: 10/13/2020
-ms.openlocfilehash: 5a26e5d045be78772ee5dc940fcfecd3cfde9dc7
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: f24947eba71588d8b97afafea35f9a0bcab33c86
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611418"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711005"
 ---
 # <a name="query-exported-data-from-azure-monitor-using-azure-data-explorer-preview"></a>Gegevens van Azure Monitor geëxporteerd met Azure Data Explorer (preview-versie)
 Bij het exporteren van gegevens uit Azure Monitor naar een Azure Storage-account is een lage Bewaar periode en de mogelijkheid om Logboeken opnieuw toe te wijzen aan verschillende regio's. Gebruik Azure Data Explorer om query's uit te voeren op gegevens die zijn geëxporteerd uit uw Log Analytics-werk ruimten. Eenmaal geconfigureerd, worden ondersteunde tabellen die vanuit uw werk ruimten worden verzonden naar een Azure-opslag account, beschikbaar als gegevens bron voor Azure-Data Explorer.
@@ -30,9 +30,9 @@ De proces stroom is als volgt:
 ## <a name="send-data-to-azure-storage"></a>Gegevens naar Azure Storage verzenden
 Azure Monitor-logboeken kunnen worden geëxporteerd naar een Azure Storage-account met behulp van een van de volgende opties.
 
-- Als u alle gegevens uit uw Log Analytics-werk ruimte wilt exporteren naar een Azure-opslag account of Event Hub, gebruikt u de functie Log Analytics werkruimte gegevens exporteren van Azure Monitor Logboeken. Zie [log Analytics werk ruimte gegevens exporteren in azure monitor (preview-versie)](../platform/logs-data-export.md)
-- Geplande export vanuit een logboek query met behulp van een logische app. Dit is vergelijkbaar met de functie voor gegevens export, maar u kunt gefilterde of geaggregeerde gegevens verzenden naar Azure Storage. Deze methode is afhankelijk van de [query limieten](../service-limits.md#log-analytics-workspaces)  van het logboek Zie [gegevens van log Analytics werk ruimte archiveren in azure Storage met behulp van een logische app](../platform/logs-export-logic-app.md).
-- Eenmalig exporteren met behulp van een logische app. Zie [Azure monitor logs connector voor Logic apps en energie automatisering](../platform/logicapp-flow-connector.md).
+- Als u alle gegevens uit uw Log Analytics-werk ruimte wilt exporteren naar een Azure-opslag account of Event Hub, gebruikt u de functie Log Analytics werkruimte gegevens exporteren van Azure Monitor Logboeken. Zie [log Analytics werk ruimte gegevens exporteren in azure monitor (preview-versie)](./logs-data-export.md)
+- Geplande export vanuit een logboek query met behulp van een logische app. Dit is vergelijkbaar met de functie voor gegevens export, maar u kunt gefilterde of geaggregeerde gegevens verzenden naar Azure Storage. Deze methode is afhankelijk van de [query limieten](../service-limits.md#log-analytics-workspaces)  van het logboek Zie [gegevens van log Analytics werk ruimte archiveren in azure Storage met behulp van een logische app](./logs-export-logic-app.md).
+- Eenmalig exporteren met behulp van een logische app. Zie [Azure monitor logs connector voor Logic apps en energie automatisering](./logicapp-flow-connector.md).
 - Eenmalig exporteren naar een lokale computer met behulp van Power shell-script. Zie [invoke-AzOperationalInsightsQueryExport](https://www.powershellgallery.com/packages/Invoke-AzOperationalInsightsQueryExport).
 
 > [!TIP]

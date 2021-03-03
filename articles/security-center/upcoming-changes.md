@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/25/2021
+ms.date: 02/17/2021
 ms.author: memildin
-ms.openlocfilehash: a2c29049decc056f0d3c8083d21574456610c124
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 375e8a748e8833e9483d92353ed04add287e90fb
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99555140"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101705089"
 ---
 # <a name="important-upcoming-changes-to-azure-security-center"></a>Belangrijke aanstaande wijzigingen aan Azure Security Center
 
@@ -31,9 +31,25 @@ Als u op zoek bent naar de nieuwste opmerkingen bij de release, vindt u deze in 
 
 ## <a name="planned-changes"></a>Geplande wijzigingen
 
+- [Met twee oudere aanbevelingen worden gegevens niet meer rechtstreeks naar Azure-activiteiten logboek geschreven](#two-legacy-recommendations-will-no-longer-write-data-directly-to-azure-activity-log)
 - [Twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft](#two-recommendations-from-apply-system-updates-security-control-being-deprecated)
 - [Verbeteringen in aanbeveling voor SQL-gegevens classificatie](#enhancements-to-sql-data-classification-recommendation)
 - [Afschaffing van 11 Azure Defender-waarschuwingen](#deprecation-of-11-azure-defender-alerts)
+
+
+### <a name="two-legacy-recommendations-will-no-longer-write-data-directly-to-azure-activity-log"></a>Met twee oudere aanbevelingen worden gegevens niet meer rechtstreeks naar Azure-activiteiten logboek geschreven 
+
+**Geschatte datum voor wijziging:** 2021 maart
+
+Security Center geeft de gegevens voor bijna alle beveiligings aanbevelingen door aan Azure Advisor die op zijn beurt deze naar het [Azure-activiteiten logboek](../azure-monitor/essentials/activity-log.md)schrijven.
+
+Voor twee aanbevelingen worden de gegevens tegelijkertijd rechtstreeks naar het Azure-activiteiten logboek geschreven. Met deze wijziging stopt Security Center het schrijven van gegevens voor deze verouderde beveiligings aanbevelingen rechtstreeks in het activiteiten logboek. In plaats daarvan exporteren we de gegevens naar Azure Advisor zoals we voor alle andere aanbevelingen doen. 
+
+De twee oudere aanbevelingen zijn:
+- Statusproblemen met eindpuntbescherming moeten worden opgelost voor uw machines
+- Beveiligingsproblemen in de beveiligingsconfiguratie op uw computers moeten worden hersteld
+
+Als u toegang hebt tot informatie voor deze twee aanbevelingen in de categorie ' aanbeveling van type TaskDiscovery ' van het activiteiten logboek, is dit niet langer beschikbaar.
 
 ### <a name="two-recommendations-from-apply-system-updates-security-control-being-deprecated"></a>Twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft 
 

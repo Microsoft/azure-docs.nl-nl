@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 01/20/2021
 ms.author: aahi
 ms.reviewer: assafi
-ms.openlocfilehash: 6e71d9b4006d0353b094306424ba0fe99c581279
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 12838eb2cd8437b2c3b3c225651b51991625fd78
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99090707"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750955"
 ---
 <a name="HOLTop"></a>
 
@@ -25,10 +25,6 @@ ms.locfileid: "99090707"
 # <a name="version-30"></a>[Versie 3.0](#tab/version-3)
 
 [v3-referentiedocumentatie](/dotnet/api/azure.ai.textanalytics?preserve-view=true&view=azure-dotnet) | [Broncode voor v3-bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.TextAnalytics_5.0.0/sdk/textanalytics/Azure.AI.TextAnalytics) | [v3-pakket (NuGet)](https://www.nuget.org/packages/Azure.AI.TextAnalytics) | [v3-voorbeelden](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.TextAnalytics_5.0.0/sdk/textanalytics/Azure.AI.TextAnalytics/samples)
-
-# <a name="version-21"></a>[Versie 2.1](#tab/version-2)
-
-[v2-referentiedocumentatie](/dotnet/api/overview/azure/cognitiveservices/client) | [Broncode voor v2-bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Language.TextAnalytics) | [v2-pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.TextAnalytics/) | [v2-voorbeelden](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples)
 
 ---
 
@@ -57,14 +53,7 @@ Installeer de clientbibliotheek door met de rechtermuisknop op de oplossing te k
 
 
 > [!TIP]
-> Wilt u het codebestand voor de quickstart in één keer weergeven? Ga dan naar [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/TextAnalytics/program.cs), waar u de codevoorbeelden uit deze quickstart kunt vinden. 
-
-# <a name="version-21"></a>[Versie 2.1](#tab/version-2)
-
-Installeer de clientbibliotheek door met de rechtermuisknop op de oplossing te klikken in **Solution Explorer** en **NuGet-pakketten beheren** te selecteren. Selecteer in de package manager die wordt geopend de optie **Bladeren** en zoek naar `Microsoft.Azure.CognitiveServices.Language.TextAnalytics`. Klik erop en vervolgens op **Install**. U kunt ook de [Package Manager-console](/nuget/consume-packages/install-use-packages-powershell#find-and-install-a-package) gebruiken.
-
-> [!TIP]
-> Wilt u het codebestand voor de quickstart in één keer weergeven? U kunt het vinden [op GitHub](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/blob/master/samples/TextAnalytics/synchronous/Program.cs), dat de codevoorbeelden in deze quickstart bevat. 
+> Wilt u het codebestand voor de quickstart in één keer weergeven? U kunt het vinden [op GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/TextAnalytics/program.cs), dat de codevoorbeelden in deze quickstart bevat. 
 
 ---
 
@@ -146,25 +135,6 @@ static void Main(string[] args)
 }
 ```
 
-# <a name="version-21"></a>[Versie 2.1](#tab/version-2)
-
-Open het bestand *program.cs* en voeg de volgende `using`-instructies toe:
-
-[!code-csharp[Import directives](~/cognitive-services-dotnet-sdk-samples/samples/TextAnalytics/synchronous/Program.cs?name=imports)]
-
-Maak in de klasse `Program` van de toepassing variabelen voor de sleutel en het eindpunt van uw resource. 
-
-[!INCLUDE [text-analytics-find-resource-information](../find-azure-resource-info.md)]
-
-```csharp
-private static readonly string key = "<replace-with-your-text-analytics-key-here>";
-private static readonly string endpoint = "<replace-with-your-text-analytics-endpoint-here>";
-```
-
-Vervang de methode `Main` van de toepassing. U definieert later de methoden die hier worden aangeroepen.
-
-[!code-csharp[main method](~/cognitive-services-dotnet-sdk-samples/samples/TextAnalytics/synchronous/Program.cs?name=main)]
-
 ---
 
 ## <a name="object-model"></a>Objectmodel
@@ -199,16 +169,6 @@ Zorg ervoor dat met uw eerdere main-methode een nieuw clientobject wordt gemaakt
 ```csharp
 var client = new TextAnalyticsClient(endpoint, credentials);
 ```
-
-# <a name="version-21"></a>[Versie 2.1](#tab/version-2)
-
-Maak een nieuwe klasse `ApiKeyServiceClientCredentials` om de referenties op te slaan en deze toe te voegen aan de aanvragen van de client. Maak binnen de klasse een overschrijving voor `ProcessHttpRequestAsync()` waarmee uw sleutel wordt toegevoegd aan de header `Ocp-Apim-Subscription-Key`.
-
-[!code-csharp[Client class](~/cognitive-services-dotnet-sdk-samples/samples/TextAnalytics/synchronous/Program.cs?name=clientClass)]
-
-Maak een methode voor het instantiëren van het [TextAnalyticsClient](/dotnet/api/microsoft.azure.cognitiveservices.language.textanalytics.textanalyticsclient)-object met uw eindpunt en een `ApiKeyServiceClientCredentials`-object dat uw sleutel bevat.
-
-[!code-csharp[Client authentication](~/cognitive-services-dotnet-sdk-samples/samples/TextAnalytics/synchronous/Program.cs?name=authentication)]
 
 ---
 
@@ -381,18 +341,6 @@ Document sentiment: Positive
         Neutral score: 0.77
 ```
 
-# <a name="version-21"></a>[Versie 2.1](#tab/version-2)
-
-Maak een nieuwe functie met de naam `SentimentAnalysisExample()` waarvoor de client wordt gebruikt die u eerder hebt gemaakt en roep de functie [Sentiment()](/dotnet/api/microsoft.azure.cognitiveservices.language.textanalytics.textanalyticsclientextensions.sentiment) van de nieuwe functie aan. Het geretourneerde [SentimentResult](/dotnet/api/microsoft.azure.cognitiveservices.language.textanalytics.models.sentimentresult)-object bevat het sentiment `Score` als de aanroep is gelukten een `errorMessage` als dat niet het geval is. 
-
-Een score dichter bij 0 wijst op een negatief gevoel, terwijl een score dichter bij 1 op een positief gevoel wijst.
-
-[!code-csharp[Sentiment analysis](~/cognitive-services-dotnet-sdk-samples/samples/TextAnalytics/synchronous/Program.cs?name=sentiment)]
-
-```console
-Sentiment Score: 0.87
-```
-
 ---
 
 ## <a name="language-detection"></a>Taaldetectie
@@ -445,20 +393,6 @@ Language:
         French, ISO-6391: fr
 ```
 
-# <a name="version-21"></a>[Versie 2.1](#tab/version-2)
-
-Maak een nieuwe functie met de naam `languageDetectionExample()` waarvoor de client wordt gebruikt die u eerder hebt gemaakt en roep de functie [DetectLanguage()](/dotnet/api/microsoft.azure.cognitiveservices.language.textanalytics.textanalyticsclientextensions.detectlanguage#Microsoft_Azure_CognitiveServices_Language_TextAnalytics_TextAnalyticsClientExtensions_DetectLanguage_Microsoft_Azure_CognitiveServices_Language_TextAnalytics_ITextAnalyticsClient_System_String_System_String_System_Nullable_System_Boolean__System_Threading_CancellationToken_) aan van de nieuwe functie. Het geretourneerde [LanguageResult](/dotnet/api/microsoft.azure.cognitiveservices.language.textanalytics.models.languageresult)-object bevat de lijst met gedetecteerde talen in `DetectedLanguages` als de aanroep is gelukt en een `errorMessage` als dat niet het geval is. Gebruik print met de eerste geretourneerde taal.
-
-> [!Tip]
-> In sommige gevallen kan het lastig zijn om talen ondubbelzinnig te karakteriseren op basis van de invoer. U kunt parameter `countryHint` gebruiken om een land- of regionummer van twee letters op te geven. Standaard gebruikt de API de standaard-countryHint US. Als u dit gedrag wilt verwijderen, kunt u deze parameter opnieuw instellen door deze waarde in te stellen op de lege tekenreeks `countryHint = ""`.
-
-[!code-csharp[Language Detection example](~/cognitive-services-dotnet-sdk-samples/samples/TextAnalytics/synchronous/Program.cs?name=languageDetection)]
-
-### <a name="output"></a>Uitvoer
-
-```console
-Language: English
-```
 
 ---
 
@@ -723,15 +657,6 @@ Linked Entities:
                 Score: 0.33
 ```
 
-# <a name="version-21"></a>[Versie 2.1](#tab/version-2)
-
-> [!NOTE]
-> In versie 2.1 wordt entiteitskoppeling opgenomen in het NER-antwoord.
-
-Maak een nieuwe functie met de naam `RecognizeEntitiesExample()` waarvoor de client wordt gebruikt die u eerder hebt gemaakt en roep de bijbehorende functie [Entities()](/dotnet/api/microsoft.azure.cognitiveservices.language.textanalytics.textanalyticsclientextensions.entities#Microsoft_Azure_CognitiveServices_Language_TextAnalytics_TextAnalyticsClientExtensions_Entities_Microsoft_Azure_CognitiveServices_Language_TextAnalytics_ITextAnalyticsClient_System_String_System_String_System_Nullable_System_Boolean__System_Threading_CancellationToken_) aan. Herhaal de resultaten. Het geretourneerde object [EntitiesResult](/dotnet/api/microsoft.azure.cognitiveservices.language.textanalytics.models.entitiesresult) bevat de lijst met gedetecteerde entiteiten in `Entities` als de aanroep is gelukt en een `errorMessage` als dat niet het geval is. Voor elke gedetecteerde entiteit wordt het type, subtype en de Wikipedia-naam (indien deze bestaan) weergegeven, evenals de locaties in de oorspronkelijke tekst.
-
-[!code-csharp[Entity Recognition example](~/cognitive-services-dotnet-sdk-samples/samples/TextAnalytics/synchronous/Program.cs?name=entityRecognition)]
-
 --- 
 
 
@@ -782,21 +707,6 @@ static void KeyPhraseExtractionExample(TextAnalyticsClient client)
     }
 }
 ```
-
-### <a name="output"></a>Uitvoer
-
-```console
-Key phrases:
-    cat
-    veterinarian
-```
-
-# <a name="version-21"></a>[Versie 2.1](#tab/version-2)
-
-Maak een nieuwe functie met de naam `KeyPhraseExtractionExample()` waarvoor de client wordt gebruikt die u eerder hebt gemaakt en roep de bijbehorende functie [KeyPhrases()](/dotnet/api/microsoft.azure.cognitiveservices.language.textanalytics.textanalyticsclientextensions.keyphrases#Microsoft_Azure_CognitiveServices_Language_TextAnalytics_TextAnalyticsClientExtensions_KeyPhrases_Microsoft_Azure_CognitiveServices_Language_TextAnalytics_ITextAnalyticsClient_System_String_System_String_System_Nullable_System_Boolean__System_Threading_CancellationToken_) aan. Het resultaat bevat de lijst met gedetecteerde sleuteltermen in `KeyPhrases` als de aanroep is gelukt en een `errorMessage` als dat niet het geval is. Geef alle gedetecteerde sleuteltermen weer.
-
-[!code-csharp[Key phrase extraction example](~/cognitive-services-dotnet-sdk-samples/samples/TextAnalytics/synchronous/Program.cs?name=keyPhraseExtraction)]
-
 
 ### <a name="output"></a>Uitvoer
 
@@ -898,9 +808,5 @@ U kunt ook de bewerking Analyseren ook gebruiken om persoonsgegevens en extracti
 # <a name="version-30"></a>[Versie 3.0](#tab/version-3)
 
 Deze functie is niet beschikbaar in versie 3.0.
-
-# <a name="version-21"></a>[Versie 2.1](#tab/version-2)
-
-Deze functie is niet beschikbaar in versie 2.1.
 
 ---

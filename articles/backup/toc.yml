@@ -68,6 +68,8 @@
           href: azure-file-share-support-matrix.md
         - name: Azure Disck Backup-ondersteuningsmatrix
           href: disk-backup-support-matrix.md
+        - name: Matrix voor back-upondersteuning voor Azure blobs
+          href: blob-backup-support-matrix.md
         - name: Active Directory-domeincontrollers
           href: active-directory-backup-restore.md
         - name: Ondersteunde VM-SKU's voor Azure Policy
@@ -132,6 +134,8 @@
           href: backup-center-govern-environment.md
         - name: Acties uitvoeren
           href: backup-center-actions.md
+        - name: Communitybronnen
+          href: backup-center-community.md
     - name: Azure VM Backup
       items:
         - name: Overzicht
@@ -224,6 +228,14 @@
           href: backup-managed-disks.md
         - name: Herstellen
           href: restore-managed-disks.md
+    - name: Back-ups van Azure-blobs
+      items:
+        - name: Overzicht
+          href: blob-backup-overview.md
+        - name: Configureren en beheren
+          href: blob-backup-configure-manage.md
+        - name: Herstellen
+          href: blob-restore.md
     - name: Back-up van Azure-bestandsshare
       items:
         - name: Overzicht
@@ -437,6 +449,10 @@
           href: ./security-controls-policy.md
         - name: Beveiligingsbasislijn
           href: security-baseline.md
+    - name: Toegangslaag
+      items:
+        - name: Laag van archief
+          href: archive-tier-support.md
     - name: Problemen oplossen
       items:
         - name: Azure VM

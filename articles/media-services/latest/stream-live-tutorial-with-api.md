@@ -9,7 +9,7 @@ MS. service: Media-Services MS. workload: medium ms.tgt_pltfrm: na MS. devlang: 
 # <a name="tutorial-stream-live-with-media-services"></a>Zelfstudie: Live streamen met Media Services
 
 > [!NOTE]
-> Hoewel in deze zelfstudie [.NET SDK](/dotnet/api/microsoft.azure.management.media.models.liveevent?view=azure-dotnet)-voorbeelden worden gebruikt, zijn de algemene stappen hetzelfde voor [REST API-](/rest/api/media/liveevents), [CLI-](/cli/azure/ams/live-event?view=azure-cli-latest) of andere ondersteunde [SDK's](media-services-apis-overview.md#sdks).
+> Hoewel in deze zelfstudie [.NET SDK](/dotnet/api/microsoft.azure.management.media.models.liveevent?view=azure-dotnet)-voorbeelden worden gebruikt, zijn de algemene stappen hetzelfde voor [REST API-](/rest/api/media/liveevents), [CLI-](/cli/azure/ams/live-event?view=azure-cli-latest) of andere ondersteunde [SDK's](media-services-apis-overview.md#sdks). 
 
 In Azure Media Services zijn [livegebeurtenissen](/rest/api/media/liveevents) verantwoordelijk voor het verwerken inhoud voor live streamen. Een livegebeurtenis biedt een invoereindpunt (de URL voor opnemen) dat u vervolgens doorgeeft aan een live-encoder. De livegebeurtenis ontvangt live-invoerstromen van de live-encoder en maakt deze beschikbaar voor streaming via een of meer [streaming-eindpunten](/rest/api/media/streamingendpoints). Livegebeurtenissen bieden ook een preview-eindpunt (voorbeeld-URL) dat u kunt gebruiken om een voorbeeld van de stream te bekijken en deze te valideren voordat deze verder wordt verwerkt en geleverd. In deze zelfstudie ziet u hoe u .NET Core gebruikt om een **pass-through**-type van een live-gebeurtenis te maken.
 
@@ -31,7 +31,8 @@ Hieronder wordt aangegeven wat de vereisten zijn om de zelfstudie te voltooien:
 - [Een Azure Media Services-account maken](./create-account-howto.md).<br/>Vergeet niet welke waarden u gebruikt voor de namen van de resourcegroep en het Media Services-account.
 - Volg de stappen in [Access Azure Media Services API with the Azure CLI](./access-api-howto.md) (Toegang tot de Azure Media Services-API met de Azure CLI) en sla de referenties op. U hebt deze nodig voor toegang tot de API.
 - Een camera of een apparaat (zoals een laptop) die wordt gebruikt om een gebeurtenis uit te zenden.
-- Een on-premises live-encoder die signalen van de camera converteert naar stromen die naar een Media Service-service voor live streamen worden verzonden. Zie [Aanbevolen on-premises coderingsprogramma's](recommended-on-premises-live-encoders.md) voor meer informatie. De stroom moet de **RTMP**- of **Smooth Streaming**-indeling hebben.
+- Een on-premises live-encoder die signalen van de camera converteert naar stromen die naar een Media Service-service voor live streamen worden verzonden. Zie [Aanbevolen on-premises coderingsprogramma's](recommended-on-premises-live-encoders.md) voor meer informatie. De stroom moet de **RTMP**- of **Smooth Streaming**-indeling hebben.  
+- Voor dit voor beeld is het raadzaam om te beginnen met een software encoder zoals de IB Studio live streaming-software om aan de slag te gaan. 
 
 > [!TIP]
 > Zorg dat u [Live streamen met Media Services v3](live-streaming-overview.md) hebt gelezen voordat u verder gaat. 
@@ -41,19 +42,19 @@ Hieronder wordt aangegeven wat de vereisten zijn om de zelfstudie te voltooien:
 Gebruik de volgende opdracht om een GitHub-opslagplaats te klonen op uw computer die het .NET-voorbeeld voor het streamen van video bevat:  
 
  ```bash
- git clone https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials.git
+ git clone https://github.com/Azure-Samples/media-services-v3-dotnet.git
  ```
 
-Het voorbeeld voor live streamen staat in de map [Live](https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials/tree/master/NETCore/Live/MediaV3LiveApp).
+Het voorbeeld voor live streamen staat in de map [Live](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/main/Live).
 
-Open [appsettings.json](https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials/blob/master/NETCore/Live/MediaV3LiveApp/appsettings.json) in het project dat u hebt gedownload. Vervang de waarden door de referenties die u hebt verkregen via [toegang tot API's](./access-api-howto.md).
+Open [appsettings.json](https://github.com/Azure-Samples/media-services-v3-dotnet/blob/main/Live/LiveEventWithDVR/appsettings.json) in het project dat u hebt gedownload. Vervang de waarden door de referenties die u hebt verkregen via [toegang tot API's](./access-api-howto.md).
 
 > [!IMPORTANT]
 > In dit voorbeeld wordt een uniek achtervoegsel voor elke resource gebruikt. Als u de foutopsporing annuleert of de app beëindigt zonder deze helemaal door te lopen, blijven er meerdere livegebeurtenissen in uw account staan. <br/>Zorg dat u de actieve livegebeurtenissen stopt. Anders worden deze **in rekening gebracht**.
 
 ## <a name="examine-the-code-that-performs-live-streaming"></a>De code bestuderen die live streamen uitvoert
 
-In dit gedeelte worden de functies bekeken die zijn gedefinieerd in het bestand [Program.cs](https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials/blob/master/NETCore/Live/MediaV3LiveApp/Program.cs) van het project *MediaV3LiveApp*.
+In deze sectie worden de functies onderzocht die zijn gedefinieerd in het [Program.cs](https://github.com/Azure-Samples/media-services-v3-dotnet/blob/main/Live/LiveEventWithDVR/Program.cs) -bestand van het *LiveEventWithDVR* -project.
 
 In het voorbeeld wordt een uniek achtervoegsel voor elke resource gemaakt, zodat er geen naamconflicten optreden als u het voorbeeld meerdere keren uitvoert zonder dat er wordt opgeschoond.
 
@@ -65,7 +66,7 @@ In het voorbeeld wordt een uniek achtervoegsel voor elke resource gemaakt, zodat
 
 Als u wilt starten met Media Services API's met .NET, moet u een **AzureMediaServicesClient**-object maken. Als u het object wilt maken, moet u referenties opgeven die de client nodig heeft om verbinding te maken met Azure met behulp van Microsoft Azure Active Directory. In de code die u aan het begin van het artikel hebt gekloond, wordt met de functie **GetCredentialsAsync** het object ServiceClientCredentials gemaakt op basis van de referenties die zijn opgegeven in het lokale configuratiebestand. 
 
-[!code-csharp[Main](../../../media-services-v3-dotnet-core-tutorials/NETCore/Live/MediaV3LiveApp/Program.cs#CreateMediaServicesClient)]
+[!code-csharp[Main](../../../media-services-v3-dotnet/blob/main/Live/LiveEventWithDVR/Program.cs#CreateMediaServicesClient)]
 
 ### <a name="create-a-live-event"></a>Een livegebeurtenis maken
 
@@ -79,13 +80,13 @@ U kunt een aantal zaken opgeven bij het maken van de livegebeurtenis:
 * Bij het maken van de gebeurtenis kunt u opgeven dat deze automatisch wordt gestart. <br/>Wanneer autostart is ingesteld op True, wordt de Live gebeurtenis gestart na het maken ervan. Dit betekent dat facturering begint zodra de livegebeurtenis begint. U moet expliciet Stop aanroepen in de resource van de livegebeurtenis om verdere facturering stop te zetten. Zie [Live Event states and billing](live-event-states-billing.md) (Statussen en facturering voor livegebeurtenissen) voor meer informatie.
 * Stel de vanity-modus in om een URL voor opnemen voorspellend te maken. Zie [URL's voor opnemen van livegebeurtenissen](live-events-outputs-concept.md#live-event-ingest-urls) voor gedetailleerde informatie.
 
-[!code-csharp[Main](../../../media-services-v3-dotnet-core-tutorials/NETCore/Live/MediaV3LiveApp/Program.cs#CreateLiveEvent)]
+[!code-csharp[Main](../../../media-services-v3-dotnet/blob/main/Live/LiveEventWithDVR/Program.cs#CreateLiveEvent)]
 
 ### <a name="get-ingest-urls"></a>URL’s voor opnemen ophalen
 
 Wanneer de livegebeurtenis is gemaakt, kunt u URL's voor opnemen ophalen die u aan de live-encoder levert. Het coderingsprogramma gebruikt deze URL's voor het invoeren van een live stream.
 
-[!code-csharp[Main](../../../media-services-v3-dotnet-core-tutorials/NETCore/Live/MediaV3LiveApp/Program.cs#GetIngestURL)]
+[!code-csharp[Main](../../../media-services-v3-dotnet/blob/main/Live/LiveEventWithDVR/Program.cs#GetIngestURL)]
 
 ### <a name="get-the-preview-url"></a>De voorbeeld-URL ophalen
 
@@ -94,7 +95,7 @@ Gebruik het previewEndpoint als u een voorbeeld wilt bekijken en wilt controlere
 > [!IMPORTANT]
 > Controleer voordat u verder gaat of video naar de voorbeeld-URL stroomt.
 
-[!code-csharp[Main](../../../media-services-v3-dotnet-core-tutorials/NETCore/Live/MediaV3LiveApp/Program.cs#GetPreviewURLs)]
+[!code-csharp[Main](../../../media-services-v3-dotnet/blob/main/Live/LiveEventWithDVR/Program.cs#GetPreviewURLs)]
 
 ### <a name="create-and-manage-live-events-and-live-outputs"></a>Livegebeurtenissen en live-uitvoer maken en beheren
 
@@ -104,13 +105,13 @@ Wanneer de stream naar de livegebeurtenis stroomt, kunt u de streaming-gebeurten
 
 Maak een Asset die u met de live-uitvoer wilt gebruiken.
 
-[!code-csharp[Main](../../../media-services-v3-dotnet-core-tutorials/NETCore/Live/MediaV3LiveApp/Program.cs#CreateAsset)]
+[!code-csharp[Main](../../../media-services-v3-dotnet/blob/main/Live/LiveEventWithDVR/Program.cs#CreateAsset)]
 
 #### <a name="create-a-live-output"></a>Een live-uitvoer maken
 
 Live-uitvoer starten zodra ze zijn gemaakt en stoppen wanneer ze worden verwijderd. Wanneer u de live-uitvoer verwijdert, verwijdert u de onderliggende Asset en de inhoud van de Asset niet.
 
-[!code-csharp[Main](../../../media-services-v3-dotnet-core-tutorials/NETCore/Live/MediaV3LiveApp/Program.cs#CreateLiveOutput)]
+[!code-csharp[Main](../../../media-services-v3-dotnet/blob/main/Live/LiveEventWithDVR/Program.cs#CreateLiveOutput)]
 
 #### <a name="create-a-streaming-locator"></a>Een streaming-locator maken
 
@@ -119,7 +120,7 @@ Live-uitvoer starten zodra ze zijn gemaakt en stoppen wanneer ze worden verwijde
 
 Als u de Asset van de live-uitvoer publiceert met een streaming-locator, blijft de livegebeurtenis (tot de maximale DVR-duur) zichtbaar tot de streaming-locator verloopt of wordt verwijderd (welke het eerst van toepassing is).
 
-[!code-csharp[Main](../../../media-services-v3-dotnet-core-tutorials/NETCore/Live/MediaV3LiveApp/Program.cs#CreateStreamingLocator)]
+[!code-csharp[Main](../../../media-services-v3-dotnet/blob/main/Live/LiveEventWithDVR/Program.cs#CreateStreamingLocator)]
 
 ```csharp
 
@@ -145,9 +146,9 @@ Als u klaar bent met het streamen van gebeurtenissen en de resources wilt opruim
 * Stop de livegebeurtenis. Zodra de livegebeurtenis is gestopt, worden hiervoor geen kosten meer in rekening gebracht. Als u het kanaal opnieuw wilt starten, wordt dezelfde URL voor opnemen gebruikt, zodat u het coderingsprogramma niet opnieuw hoeft te configureren.
 * U kunt uw streaming-eindpunt stoppen, tenzij u het archief van uw live gebeurtenis wilt blijven leveren als stream op aanvraag. Voor een livegebeurtenis die is gestopt, worden geen kosten meer in rekening gebracht.
 
-[!code-csharp[Main](../../../media-services-v3-dotnet-core-tutorials/NETCore/Live/MediaV3LiveApp/Program.cs#CleanupLiveEventAndOutput)]
+[!code-csharp[Main](../../../media-services-v3-dotnet/blob/main/Live/LiveEventWithDVR/Program.cs#CleanupLiveEventAndOutput)]
 
-[!code-csharp[Main](../../../media-services-v3-dotnet-core-tutorials/NETCore/Live/MediaV3LiveApp/Program.cs#CleanupLocatorAssetAndStreamingEndpoint)]
+[!code-csharp[Main](../../../media-services-v3-dotnet/blob/main/Live/LiveEventWithDVR/Program.cs#CleanupLocatorAssetAndStreamingEndpoint)]
 
 ## <a name="watch-the-event"></a>De gebeurtenis bekijken
 

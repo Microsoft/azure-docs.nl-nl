@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/21/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 53fc01839ef522afaffe52cd8a3126e40ba94a05
-ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.openlocfilehash: e32b9c690db70baeda7dec2f9f1270f82c6881bd
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99809758"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733292"
 ---
 # <a name="configure-azure-defender-for-iot-agent-based-solution"></a>Azure Defender voor IoT-oplossing op basis van een agent configureren  
 
@@ -87,7 +87,7 @@ Als u na de configuratie toegang wilt krijgen tot uw waarschuwingen in uw Log An
 
 1. Selecteer **aanbevelingen onderzoeken in log Analytics werk ruimte**. 
  
-Zie [aan de slag met query's in log Analytics](../azure-monitor/log-query/get-started-queries.md)voor meer informatie over het opvragen van gegevens uit log Analytics. 
+Zie [aan de slag met query's in log Analytics](../azure-monitor/logs/get-started-queries.md)voor meer informatie over het opvragen van gegevens uit log Analytics. 
 
 ## <a name="turn-off-defender-for-iot"></a>Defender uitschakelen voor IoT 
 
@@ -99,4 +99,4 @@ Een Defender voor IoT-service inschakelen of uitschakelen op een specifieke IoT 
 
 ## <a name="next-steps"></a>Volgende stappen 
 
-Ga naar het volgende artikel om [uw oplossing te configureren](quickstart-configure-your-solution.md). 
+Ga naar het volgende artikel om [uw oplossing te configureren](quickstart-configure-your-solution.md).

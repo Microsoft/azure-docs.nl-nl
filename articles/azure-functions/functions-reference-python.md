@@ -4,12 +4,12 @@ description: Meer informatie over het ontwikkelen van functies met python
 ms.topic: article
 ms.date: 11/4/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: a13b4463d2a9c32a3487f839c0bf53b4c5bd2963
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 78965a1a09272663c52469b8ccd91988f30b53cc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735840"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708693"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Ontwikkelaarshandleiding voor Azure Functions Python
 
@@ -20,6 +20,9 @@ Als een python-ontwikkelaar bent u mogelijk ook geïnteresseerd in een van de vo
 | Aan de slag | Concepten| Scenario's/voor beelden |
 | -- | -- | -- | 
 | <ul><li>[Python-functie met Visual Studio code](./create-first-function-vs-code-csharp.md?pivots=programming-language-python)</li><li>[Python-functie met Terminal/opdracht prompt](./create-first-function-cli-csharp.md?pivots=programming-language-python)</li></ul> | <ul><li>[Ontwikkelaarsgids](functions-reference.md)</li><li>[Hostingopties](functions-scale.md)</li><li>[Prestatie &nbsp; overwegingen](functions-best-practices.md)</li></ul> | <ul><li>[Classificatie van afbeeldingen met PyTorch](machine-learning-pytorch.md)</li><li>[Voor beeld van Azure Automation](/samples/azure-samples/azure-functions-python-list-resource-groups/azure-functions-python-sample-list-resource-groups/)</li><li>[Machine Learning met TensorFlow](functions-machine-learning-tensorflow.md)</li><li>[Bladeren door python-voor beelden](/samples/browse/?products=azure-functions&languages=python)</li></ul> |
+
+> [!NOTE]
+> Hoewel u [uw python-Azure functions lokaal kunt ontwikkelen in Windows](./azure-functions/create-first-function-vs-code-python#run-the-function-locally), wordt python alleen ondersteund in een hosting abonnement op basis van Linux wanneer het wordt uitgevoerd in Azure. Bekijk de lijst met ondersteunde combi Naties van [besturings systemen en runtime](./azure-functions/functions-scale#operating-systemruntime) .
 
 ## <a name="programming-model"></a>Programmeermodel
 

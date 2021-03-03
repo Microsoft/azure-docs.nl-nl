@@ -4,12 +4,12 @@ description: Meer informatie over het schalen van uw resource web-app, Cloud ser
 ms.topic: conceptual
 ms.date: 07/07/2017
 ms.subservice: autoscale
-ms.openlocfilehash: 6ac3ebb4cf007141967786f51243c741a6045c83
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 081e06fbd6506c76a068d7207e29efb66502a9dd
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610902"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101726050"
 ---
 # <a name="get-started-with-autoscale-in-azure"></a>Aan de slag met Automatische schaalaanpassing in Azure
 In dit artikel wordt beschreven hoe u uw instellingen voor automatisch schalen instelt voor uw resource in de Microsoft Azure-portal.
@@ -128,7 +128,7 @@ In deze sectie wordt beschreven hoe u een automatische schaal aanpassing van Azu
 ### <a name="move"></a>Verplaatsen
 Gebruik [rest API](/rest/api/monitor/autoscalesettings/createorupdate) om een instelling voor automatisch schalen te maken in de nieuwe omgeving. De instelling voor automatisch schalen die in de doel regio wordt gemaakt, is een kopie van de instelling voor automatisch schalen in de bron regio.
 
-[Diagnostische instellingen](../platform/diagnostic-settings.md) die zijn gemaakt in samen hang met de instelling voor automatisch schalen in de bron regio, kunnen niet worden verplaatst. U moet de diagnostische instellingen opnieuw maken in de doel regio nadat het maken van de instellingen voor automatisch uitverkoop is voltooid. 
+[Diagnostische instellingen](../essentials/diagnostic-settings.md) die zijn gemaakt in samen hang met de instelling voor automatisch schalen in de bron regio, kunnen niet worden verplaatst. U moet de diagnostische instellingen opnieuw maken in de doel regio nadat het maken van de instellingen voor automatisch uitverkoop is voltooid. 
 
 ### <a name="learn-more-about-moving-resources-across-azure-regions"></a>Meer informatie over het verplaatsen van resources tussen Azure-regio's
 Raadpleeg [resources verplaatsen naar een nieuwe resource groep of een nieuw abonnement](../../azure-resource-manager/management/move-resource-group-and-subscription.md) voor meer informatie over het verplaatsen van resources tussen regio's en herstel na nood gevallen in Azure.

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/20/2020
-ms.openlocfilehash: bef7db19142f0387077af1487230e7891c255aa1
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 09df1c2ecb94089f23a88dd36c5343bb4cf2feea
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610821"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101710937"
 ---
 # <a name="monitor-health-of-log-analytics-workspace-in-azure-monitor"></a>De status van de Log Analytics werk ruimte in Azure Monitor bewaken
 Als u de prestaties en beschik baarheid van uw Log Analytics-werk ruimte in Azure Monitor wilt behouden, moet u alle problemen die zich voordoen, proactief kunnen detecteren. In dit artikel wordt beschreven hoe u de status van uw Log Analytics-werk ruimte kunt controleren met behulp van gegevens in de [bewerkings](/azure/azure-monitor/reference/tables/operation) tabel. Deze tabel is opgenomen in elke Log Analytics-werk ruimte en bevat fout-en waarschuwingen die zich in uw werk ruimte voordoen. U moet deze gegevens regel matig bekijken en waarschuwingen maken om proactief te worden gewaarschuwd wanneer er belang rijke incidenten in uw werk ruimte zijn.
@@ -58,10 +58,10 @@ Opname bewerkingen zijn problemen die zich hebben voorgedaan tijdens het opnemen
 | Aangepast logboek | Fout   | De kolom limiet voor aangepaste velden is bereikt. | [Servicebeperkingen van Azure Monitor](../service-limits.md#log-analytics-workspaces) |
 | Aangepast logboek | Fout   | Opname van aangepaste Logboeken is mislukt. | |
 | Metagegevensarchiefmethode. | Fout | Er is een configuratie fout gedetecteerd. | |
-| Gegevens verzamelen | Fout   | De gegevens zijn verwijderd omdat de aanvraag eerder is gemaakt dan het aantal ingestelde dagen. | [Gebruik en kosten beheren met Azure Monitor-logboeken](../platform/manage-cost-storage.md#alert-when-daily-cap-reached)
+| Gegevens verzamelen | Fout   | De gegevens zijn verwijderd omdat de aanvraag eerder is gemaakt dan het aantal ingestelde dagen. | [Gebruik en kosten beheren met Azure Monitor-logboeken](./manage-cost-storage.md#alert-when-daily-cap-reached)
 | Gegevens verzamelen | Info    | De configuratie van de verzamelings machine is gedetecteerd.| |
-| Gegevens verzamelen | Info    | Het verzamelen van gegevens is gestart vanwege een nieuwe dag. | [Gebruik en kosten beheren met Azure Monitor-logboeken](../platform/manage-cost-storage.md#alert-when-daily-cap-reached) |
-| Gegevens verzamelen | Waarschuwing | Het verzamelen van gegevens is gestopt omdat de dagelijkse limiet is bereikt.| [Gebruik en kosten beheren met Azure Monitor-logboeken](../platform/manage-cost-storage.md#alert-when-daily-cap-reached) |
+| Gegevens verzamelen | Info    | Het verzamelen van gegevens is gestart vanwege een nieuwe dag. | [Gebruik en kosten beheren met Azure Monitor-logboeken](./manage-cost-storage.md#alert-when-daily-cap-reached) |
+| Gegevens verzamelen | Waarschuwing | Het verzamelen van gegevens is gestopt omdat de dagelijkse limiet is bereikt.| [Gebruik en kosten beheren met Azure Monitor-logboeken](./manage-cost-storage.md#alert-when-daily-cap-reached) |
 | Gegevensverwerking | Fout   | Ongeldige JSON-indeling. | [Logboek gegevens naar Azure Monitor verzenden met de HTTP-gegevens verzamelaar-API (open bare preview)](../logs/data-collector-api.md#request-body) | 
 | Gegevensverwerking | Waarschuwing | Waarde is afgekapt tot de Maxi maal toegestane grootte. | [Servicebeperkingen van Azure Monitor](../service-limits.md#log-analytics-workspaces) |
 | Gegevensverwerking | Waarschuwing | Veld waarde is afgekapt omdat de maximale grootte is bereikt. | [Servicebeperkingen van Azure Monitor](../service-limits.md#log-analytics-workspaces) | 
@@ -125,4 +125,4 @@ In het volgende voor beeld wordt een waarschuwing gegeven wanneer de gegevens ve
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over [waarschuwingen voor logboeken](../alerts/alerts-log.md).
-- [Query controle gegevens verzamelen](../log-query/query-audit.md) voor uw werk ruimte.
+- [Query controle gegevens verzamelen](./query-audit.md) voor uw werk ruimte.

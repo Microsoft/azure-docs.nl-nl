@@ -7,12 +7,12 @@ ms.author: pariks
 ms.custom: mvc
 ms.topic: overview
 ms.date: 3/18/2020
-ms.openlocfilehash: 51c194ca9b091bc685f293320750da55925ad49d
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 20b54afdfbb5641def921ffc17b3c38f6650acab
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91565612"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101736216"
 ---
 # <a name="what-is-azure-database-for-mysql"></a>Wat is Azure Database for MySQL?
 
@@ -50,7 +50,7 @@ Zie [overzicht van één server](single-server-overview.md)voor een gedetailleer
 
 ### <a name="azure-database-for-mysql---flexible-server-preview"></a>Azure Database for MySQL Flexible Server (Preview)
 
-Azure Database for MySQL Flexible Server is een volledig beheerde databaseservice die is ontworpen om nauwkeurige controle en flexibiliteit te bieden als het gaat om databasebeheerfuncties en configuratie-instellingen. Over het algemeen biedt de service meer flexibiliteit en aanpassingen op basis van de gebruikersvereisten. Met de flexibele-serverarchitectuur kunnen gebruikers kiezen voor hoge beschikbaarheid binnen één beschikbaarheidszone en tussen meerdere beschikbaarheidszones. Flexibele servers bieden betere besturingselementen voor kostenoptimalisatie, met de mogelijkheid om de server en burstable compute-laag te stoppen of te starten, wat ideaal is voor workloads die niet voortdurend volledige rekencapaciteit nodig hebben. De service ondersteunt momenteel de community-versie van MySQL 5.7, met plannen om binnenkort nieuwere versies toe te voegen. De service is momenteel beschikbaar openbare preview, en is beschikbaar in allerlei [Azure-regio's](https://azure.microsoft.com/global-infrastructure/services/).
+Azure Database for MySQL Flexible Server is een volledig beheerde databaseservice die is ontworpen om nauwkeurige controle en flexibiliteit te bieden als het gaat om databasebeheerfuncties en configuratie-instellingen. Over het algemeen biedt de service meer flexibiliteit en aanpassingen op basis van de gebruikersvereisten. Met de flexibele-serverarchitectuur kunnen gebruikers kiezen voor hoge beschikbaarheid binnen één beschikbaarheidszone en tussen meerdere beschikbaarheidszones. Flexibele servers bieden betere besturingselementen voor kostenoptimalisatie, met de mogelijkheid om de server en burstable compute-laag te stoppen of te starten, wat ideaal is voor workloads die niet voortdurend volledige rekencapaciteit nodig hebben. De service ondersteunt de Community-versie van MySQL 5,7 en 8,0. De service is momenteel beschikbaar openbare preview, en is beschikbaar in allerlei [Azure-regio's](https://azure.microsoft.com/global-infrastructure/services/).
 
 Flexibele servers zijn het best geschikt voor 
 - Ontwikkeling van toepassingen die betere controle en aanpassingen vereisen.

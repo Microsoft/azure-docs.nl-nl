@@ -3,16 +3,16 @@ title: Service-eind punten aanroepen met behulp van HTTP of HTTPS
 description: Uitgaande HTTP-of HTTPS-aanvragen verzenden naar service-eind punten van Azure Logic Apps
 services: logic-apps
 ms.suite: integration
-ms.reviewer: jonfan, logicappspm
+ms.reviewer: estfan, logicappspm, azla
 ms.topic: conceptual
-ms.date: 09/14/2020
+ms.date: 02/18/2021
 tags: connectors
-ms.openlocfilehash: f2835bda8ac7242b7a3ea4ea63401f26b9c8e426
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: dab5b755347e46d8d509e8014bba8f496ca9c900
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99062992"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719437"
 ---
 # <a name="call-service-endpoints-over-http-or-https-from-azure-logic-apps"></a>Service-eindpunten aanroepen via HTTP of HTTPS vanuit Azure Logic Apps
 
@@ -104,7 +104,7 @@ Met deze ingebouwde actie wordt een HTTP-aanroep naar de opgegeven URL voor een 
 
 Hier vindt u meer informatie over de uitvoer van een HTTP-trigger of actie, waarmee deze gegevens worden geretourneerd:
 
-| Eigenschap | Type | Description |
+| Eigenschap | Type | Beschrijving |
 |----------|------|-------------|
 | `headers` | JSON-object | De headers van de aanvraag |
 | `body` | JSON-object | Het object met de inhoud van de hoofd tekst van de aanvraag |
@@ -249,8 +249,8 @@ Als een HTTP-trigger of actie deze headers bevat, verwijdert Logic Apps deze hea
 
 * `Accept-*` headers, behalve voor `Accept-version`
 * `Allow`
-* `Content-*` kopteksten behalve voor `Content-Disposition` , `Content-Encoding` en `Content-Type` Wanneer u post-en put-bewerkingen gebruikt, maar die niet zijn opgenomen voor Get-bewerkingen
-* `Cookie`
+* `Content-*` headers, met uitzonde ring van `Content-Disposition` , `Content-Encoding` en `Content-Type` , die worden geaccepteerd wanneer u de post-en put-bewerkingen gebruikt. Als u de GET-bewerking gebruikt, worden deze headers echter door Logic Apps neergezet.
+* `Cookie` header, maar Logic Apps voldoet aan elke waarde die u opgeeft met behulp van de eigenschap **cookie** .
 * `Expires`
 * `Host`
 * `Last-Modified`

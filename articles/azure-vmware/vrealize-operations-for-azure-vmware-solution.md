@@ -3,12 +3,12 @@ title: VRealize-bewerkingen voor Azure VMware-oplossing instellen
 description: Meer informatie over het instellen van vRealize-bewerkingen voor uw persoonlijke cloud van Azure VMware-oplossingen.
 ms.topic: how-to
 ms.date: 01/26/2021
-ms.openlocfilehash: c2470ecde0874b46da1236ca6e99e6b0b3eb990d
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 3d2617f893c34fde6a154f9f93b5bda520c5a91a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98880688"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738426"
 ---
 # <a name="set-up-vrealize-operations-for-azure-vmware-solution"></a>VRealize-bewerkingen voor Azure VMware-oplossing instellen
 
@@ -37,7 +37,7 @@ Controleer eerst [voordat u](#before-you-begin) aan de slag gaat en voordat u aa
 ## <a name="on-premises-vrealize-operations-managing-azure-vmware-solution-deployment"></a>On-premises vRealize-bewerkingen Azure VMware-oplossings implementatie beheren
 De meeste klanten hebben een bestaande on-premises implementatie van vRealize-bewerkingen voor het beheren van een of meer on-premises vCenter-domeinen. Wanneer ze een privécloud van Azure VMware-oplossing inrichten, verbinden ze hun on-premises omgeving met hun privécloud met behulp van een Azure ExpressRoute of een Layer 3 VPN-oplossing.  
 
-:::image type="content" source="media/vrealize-operations-manager/vrealize-operations-deployment-option-1.png" alt-text="On-premises vRealize-bewerkingen Azure VMware-oplossings implementatie beheren"  border="false":::
+:::image type="content" source="media/vrealize-operations-manager/vrealize-operations-deployment-option-1.png" alt-text="On-premises vRealize-bewerkingen Azure VMware-oplossings implementatie beheren" border="false":::
 
 Als u de vRealize-bewerkingen wilt uitbreiden naar de privécloud van Azure VMware-oplossing, maakt u een [instantie van een adapter voor de persoonlijke cloud resources](https://docs.vmware.com/en/vRealize-Operations-Manager/8.1/com.vmware.vcom.config.doc/GUID-640AD750-301E-4D36-8293-1BFEB67E2600.html). Het verzamelt gegevens uit de privécloud van de Azure VMware-oplossing en brengt deze over in on-premises vRealize-bewerkingen. De on-premises vRealize Operations Manager-exemplaar kunnen rechtstreeks verbinding maken met de vCenter-en NSX-T-manager in de Azure VMware-oplossing. U kunt desgewenst een externe Collector van vRealize-bewerkingen implementeren in de privécloud van Azure VMware-oplossing. De Collector comprimeert en versleutelt de gegevens die zijn verzameld uit de privécloud voordat deze via het ExpressRoute-of VPN-netwerk worden verzonden naar de vRealize-Operations Manager die on-premises wordt uitgevoerd. 
 

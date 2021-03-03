@@ -2,17 +2,17 @@
 title: 'Zelfstudie: netwerken configureren voor uw VMware-privécloud in Azure'
 description: Meer informatie over het maken en configureren van de netwerken die nodig zijn voor het implementeren van uw privécloud in Azure
 ms.topic: tutorial
-ms.date: 09/21/2020
-ms.openlocfilehash: 6aff39284f3ea786080055552ac001ac5dd7b394
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.date: 02/23/2021
+ms.openlocfilehash: b3afdffa127c23a3be3d247f12acc31604370ef6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91578344"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738443"
 ---
 # <a name="tutorial-configure-networking-for-your-vmware-private-cloud-in-azure"></a>Zelfstudie: Netwerken configureren voor uw VMware-privécloud in Azure
 
-Voor een Azure VMware Solution-privécloud is een virtueel Azure-netwerk vereist. Azure VMware Solution biedt geen ondersteuning voor uw on-premises vCenter, dus zijn er aanvullende stappen nodig voor de integratie met uw on-premises omgeving. Het instellen van een ExpressRoute-circuit en een gateway voor een virtueel netwerk zijn ook vereist.
+Voor een Azure VMware Solution-privécloud is een virtueel Azure-netwerk vereist. Azure VMware Solution biedt geen ondersteuning voor uw on-premises vCenter, dus zijn er aanvullende stappen nodig voor de integratie met uw on-premises omgeving. Het instellen van een ExpressRoute-circuit en een virtuele netwerk gateway is ook vereist.
 
 In deze zelfstudie leert u het volgende:
 
@@ -37,7 +37,7 @@ Een virtueel netwerk waarin u een [Azure VMware Solution-privécloud](tutorial-c
 
 1. Voer op de pagina **Virtueel netwerk maken** de gegevens voor uw virtuele netwerk in.
 
-1. Voer op het tabblad **Basisinformatie** een naam in voor het virtuele netwerk, selecteer de gewenste regio en selecteer **Volgende: IP-adressen**.
+1. Op het tabblad **basis beginselen** voert u een naam in voor het virtuele netwerk, selecteert u de gewenste regio en selecteert u **volgende: IP-adressen**.
 
 1. Voer op het tabblad **IP-adressen**, onder **IPv4-adresruimte**, de adresruimte in die u in de vorige zelfstudie hebt gemaakt.
 
@@ -72,11 +72,11 @@ Nu u in de vorige sectie een virtueel netwerk hebt gemaakt, gaat u een gateway v
    | **Regio** | Selecteer de geografische locatie van de gateway voor het virtuele netwerk. |
    | **Gatewaytype** | Selecteer **ExpressRoute**. |
    | **SKU** | Laat de standaardwaarde staan: **standaard**. |
-   | **Virtueel netwerk** | Selecteer het virtuele netwerk dat u eerder hebt gemaakt. Als u het virtuele netwerk niet ziet, controleert u of de regio van de gateway overeenkomt met de regio van het virtuele netwerk. |
+   | **Virtueel netwerk** | Selecteer het virtuele netwerk dat u eerder hebt gemaakt. Als u het virtuele netwerk niet ziet, zorg er dan voor dat de regio van de gateway overeenkomt met de regio van het virtuele netwerk. |
    | **Adresbereik gatewaysubnet** | Deze waarde wordt ingevuld wanneer u het virtuele netwerk selecteert. Wijzig de standaardwaarde niet. |
    | **Openbaar IP-adres** | Selecteer **Nieuw maken**. |
 
-   :::image type="content" source="./media/tutorial-configure-networking/create-virtual-network-gateway.png" alt-text="Controleren en maken" border="true":::
+   :::image type="content" source="./media/tutorial-configure-networking/create-virtual-network-gateway.png" alt-text="Geef waarden op voor de velden en selecteer Controleren en maken." border="true":::
 
 1. Controleer of de gegevens juist zijn en selecteer **Maken** om de implementatie van de gateway voor uw virtuele netwerk te starten. 
 1. Zodra de implementatie is voltooid, gaat u naar de volgende sectie om uw ExpressRoute-verbinding te verbinden met de gateway van het virtuele netwerk dat uw Azure VMware Solution-privécloud bevat.
@@ -90,15 +90,15 @@ Nu u een gateway voor het virtueel netwerk hebt geïmplementeerd, voegt u een ve
 
 ## <a name="locate-the-urls-for-vcenter-and-nsx-manager"></a>De URL's voor vCenter en NSX Manager zoeken
 
-Als u zich wilt aanmelden bij vCenter en NSX Manager, hebt u de URL's nodig voor de vCenter-webclient en de NSX-T-beheersite. 
+Als u zich wilt aanmelden bij vCenter en NSX Manager, hebt u de Url's nodig voor de vCenter-webclient en de NSX-T-beheer site. 
 
 Ga naar uw Azure VMware Solution-privécloud en selecteer onder **Beheren** de optie **Identiteit**. Hier vindt u de vereiste informatie.
 
-:::image type="content" source="./media/tutorial-configure-networking/locate-urls.png" alt-text="Controleren en maken" border="true":::
+:::image type="content" source="./media/tutorial-access-private-cloud/ss4-display-identity.png" alt-text="Scherm afbeelding van de vCenter-en NSX-T-referenties en web client-Url's." border="true":::
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u het volgende geleerd:
+In deze zelfstudie heeft u het volgende geleerd:
 
 > [!div class="checklist"]
 > * Een virtueel netwerk maken

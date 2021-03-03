@@ -2,13 +2,14 @@
 title: Zone-redundant REGI ster voor hoge Beschik baarheid
 description: Meer informatie over het inschakelen van zone redundantie in Azure Container Registry. Maak een container register of replicatie in een Azure-beschikbaarheids zone. Zone redundantie is een functie van de service laag Premium.
 ms.topic: article
-ms.date: 01/07/2021
-ms.openlocfilehash: 7de8ed101d2df9e491c475f522a56580798c49a9
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.date: 02/23/2021
+ms.custom: references_regions
+ms.openlocfilehash: 931adcf8258c48d7df42bd5927e8789d7cc871db
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98696275"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738103"
 ---
 # <a name="enable-zone-redundancy-in-azure-container-registry-for-resiliency-and-high-availability"></a>Zone redundantie inschakelen in Azure Container Registry voor tolerantie en hoge Beschik baarheid
 
@@ -20,7 +21,7 @@ Zone redundantie is een **Preview** -functie van de service tier van het Premium
 
 ## <a name="preview-limitations"></a>Preview-beperkingen
 
-* Momenteel ondersteund in de volgende regio's: VS-Oost, VS-Oost 2 en VS-West 2.
+* Momenteel ondersteund in de volgende regio's: VS-Oost, VS-Oost 2, VS-West 2, Europa-noord, Europa-west, Japan-Oost.
 * Regionale conversies naar beschikbaarheids zones worden momenteel niet ondersteund. Als u ondersteuning voor beschikbaarheids zones in een regio wilt inschakelen, moet u het REGI ster in de gewenste regio maken, waarbij ondersteuning voor beschikbaarheids zone is ingeschakeld, of dat er een gerepliceerde regio moet worden toegevoegd met ondersteuning voor beschikbaarheids zone ingeschakeld.
 * Zone redundantie kan niet worden uitgeschakeld in een regio.
 * [ACR-taken](container-registry-tasks-overview.md) bieden nog geen ondersteuning voor beschikbaarheids zones.

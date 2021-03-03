@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/03/2020
-ms.openlocfilehash: abad5a0146f98993cd02425b33466c447f9d97ca
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 50bfed0ee4346955a9e478e7567f00610d8184f1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609192"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708659"
 ---
 # <a name="install-log-analytics-agent-on-windows-computers"></a>Log Analytics-agent installeren op Windows-computers
 In dit artikel vindt u informatie over het installeren van de Log Analytics-agent op Windows-computers met behulp van de volgende methoden:
@@ -20,7 +20,7 @@ In dit artikel vindt u informatie over het installeren van de Log Analytics-agen
 * [Azure Automation desired state Configuration (DSC)](#install-agent-using-dsc-in-azure-automation). 
 
 >[!IMPORTANT]
-> De installatie methoden die in dit artikel worden beschreven, worden doorgaans gebruikt voor virtuele machines, on-premises of in andere Clouds. Zie [installatie opties](../platform/log-analytics-agent.md#installation-options) voor efficiëntere opties die u kunt gebruiken voor virtuele machines van Azure.
+> De installatie methoden die in dit artikel worden beschreven, worden doorgaans gebruikt voor virtuele machines, on-premises of in andere Clouds. Zie [installatie opties](./log-analytics-agent.md#installation-options) voor efficiëntere opties die u kunt gebruiken voor virtuele machines van Azure.
 
 > [!NOTE]
 > Als u de agent moet configureren om te rapporteren aan meer dan één werk ruimte, kan deze niet worden uitgevoerd tijdens de eerste installatie, maar u kunt de instellingen ook bijwerken via configuratie scherm of Power shell, zoals beschreven in [een werk ruimte toevoegen of verwijderen](agent-manage.md#adding-or-removing-a-workspace).  
@@ -42,12 +42,12 @@ De Windows-agent gaat exclusief SHA-2-ondertekening gebruiken op 17 augustus 202
 4. Aanbevolen om de agent te configureren voor het [gebruik van TLS 1,2](agent-windows.md#configure-agent-to-use-tls-12). 
 
 ## <a name="network-requirements"></a>Netwerkvereisten
-Zie [overzicht van log Analytics agent](../platform/log-analytics-agent.md#network-requirements) voor de netwerk vereisten voor de Windows-agent.
+Zie [overzicht van log Analytics agent](./log-analytics-agent.md#network-requirements) voor de netwerk vereisten voor de Windows-agent.
 
 
    
 ## <a name="configure-agent-to-use-tls-12"></a>Agent configureren voor het gebruik van TLS 1,2
-[TLS 1,2](/windows-server/security/tls/tls-registry-settings#tls-12) -protocol waarborgt de beveiliging van gegevens die onderweg zijn voor communicatie tussen de Windows-agent en de log Analytics service. Als u op een [besturings systeem installeert zonder dat tls 1,2 standaard is ingeschakeld](../platform/data-security.md#sending-data-securely-using-tls-12), moet u TLS 1,2 configureren aan de hand van de onderstaande stappen.
+[TLS 1,2](/windows-server/security/tls/tls-registry-settings#tls-12) -protocol waarborgt de beveiliging van gegevens die onderweg zijn voor communicatie tussen de Windows-agent en de log Analytics service. Als u op een [besturings systeem installeert zonder dat tls 1,2 standaard is ingeschakeld](../logs/data-security.md#sending-data-securely-using-tls-12), moet u TLS 1,2 configureren aan de hand van de onderstaande stappen.
 
 1. Zoek de volgende registersubsleutel: **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols**
 2. Een subsleutel maken onder **protocollen** voor TLS 1,2 **HKLM\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1,2**

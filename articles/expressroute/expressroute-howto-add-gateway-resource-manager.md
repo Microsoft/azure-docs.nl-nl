@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/05/2020
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: 9f01961ec7c7f8e0a4e2d72e28e6def50e93ad5d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 2b75e6e0a8b79f374900e6cb2dfc49680d3d0190
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91854304"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101739055"
 ---
 # <a name="tutorial-configure-a-virtual-network-gateway-for-expressroute-using-powershell"></a>Zelfstudie: Een virtuele netwerkgateway configureren voor ExpressRoute met behulp van PowerShell
 > [!div class="op_single_selector"]
@@ -40,7 +40,7 @@ In de stappen voor deze taak gebruiken we een VNet dat is gebaseerd op de waarde
 | ---                       | ---                                                |
 | Naam van virtueel netwerk | *TestVNet* |    
 | Adresruimte van virtueel netwerk | *192.168.0.0/16* |
-| Resource Group | *TestRG* |
+| Resourcegroep | *TestRG* |
 | Naam van Subnet1 | *FrontEnd* |   
 | Adresruimte van Subnet1 | *192.168.1.0/24* |
 | Naam van Subnet1 | *FrontEnd* |
@@ -52,6 +52,11 @@ In de stappen voor deze taak gebruiken we een VNet dat is gebaseerd op de waarde
 | Naam van IP-configuratie gateway | *gwipconf* |
 | Type | *ExpressRoute* |
 | Naam van openbare IP van gateway  | *gwpip* |
+
+> [!IMPORTANT]
+> IPv6-ondersteuning voor persoonlijke peering is momenteel beschikbaar als **open bare preview**. Als u uw virtuele netwerk wilt verbinden met een ExpressRoute-circuit met op IPv6 gebaseerde privé-peering geconfigureerd, zorgt u ervoor dat uw virtuele netwerk dual stack is en volgt u de richt lijnen die [hier](https://docs.microsoft.com/azure/virtual-network/ipv6-overview)worden beschreven.
+> 
+> 
 
 ## <a name="add-a-gateway"></a>Een gateway toevoegen
 
@@ -77,6 +82,11 @@ In de stappen voor deze taak gebruiken we een VNet dat is gebaseerd op de waarde
    ```azurepowershell-interactive
    Add-AzVirtualNetworkSubnetConfig -Name GatewaySubnet -VirtualNetwork $vnet -AddressPrefix 192.168.200.0/26
    ```
+    Als u een virtueel netwerk met dubbele stack gebruikt en op IPv6 gebaseerde privé-peering wilt gebruiken via ExpressRoute, maakt u in plaats daarvan een dual stack gateway-subnet.
+
+   ```azurepowershell-interactive
+   Add-AzVirtualNetworkSubnetConfig -Name GatewaySubnet -VirtualNetwork $vnet -AddressPrefix "10.0.0.0/26","ace:daa:daaa:deaa::/64"
+   ```
 1. Stel de configuratie in.
 
    ```azurepowershell-interactive
@@ -97,11 +107,15 @@ In de stappen voor deze taak gebruiken we een VNet dat is gebaseerd op de waarde
    ```azurepowershell-interactive
    $ipconf = New-AzVirtualNetworkGatewayIpConfig -Name $GWIPconfName -Subnet $subnet -PublicIpAddress $pip
    ```
-1. Maak de gateway. In deze stap is **-GatewayType** erg belangrijk. U moet hiervoor de waarde **ExpressRoute**gebruiken. Na het uitvoeren van deze cmdlets kan het 45 minuten of langer duren voordat de gateway is gemaakt.
+1. Maak de gateway. In deze stap is **-GatewayType** erg belangrijk. U moet hiervoor de waarde **ExpressRoute** gebruiken. Na het uitvoeren van deze cmdlets kan het 45 minuten of langer duren voordat de gateway is gemaakt.
 
    ```azurepowershell-interactive
    New-AzVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG -Location $Location -IpConfigurations $ipconf -GatewayType Expressroute -GatewaySku Standard
    ```
+> [!IMPORTANT]
+> Als u van plan bent om op IPv6 gebaseerde privé-peering te gebruiken via ExpressRoute, moet u ervoor zorgen dat u een AZ SKU (ErGw1AZ, ErGw2AZ, ErGw3AZ) voor **-GatewaySku** selecteert.
+> 
+> 
 
 ## <a name="verify-the-gateway-was-created"></a>Controleren of de gateway is gemaakt
 Gebruik de volgende opdrachten om te controleren of de gateway is gemaakt:

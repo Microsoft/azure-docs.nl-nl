@@ -15,12 +15,12 @@ ms.topic: how-to
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99ad0963677b9ef536deacc2122130186afe0726
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 37e41a00c1489d5b7b4822fec8bb4da35e917826
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98016963"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686458"
 ---
 # <a name="azure-active-directory-connect-health-operations"></a>Azure Active Directory Connect Health bewerkingen
 In dit onderwerp worden de verschillende bewerkingen beschreven die u kunt uitvoeren met behulp van Azure Active Directory (Azure AD) Connect Health.
@@ -46,8 +46,6 @@ U kunt de Azure AD Connect Health-Service configureren om e-mail meldingen te ve
 > Wanneer er problemen zijn met de verwerking van synchronisatie aanvragen in onze back-end-service, verzendt deze service een e-mail bericht met de details van de fout naar het e-mail adres (sen) van de beheerder van uw Tenant. We hebben feedback van klanten gehoord die in bepaalde gevallen het volume van deze berichten prohibitively groot zijn zodat we de manier wijzigen waarop we deze berichten verzenden. 
 >
 > In plaats van elke keer dat er een bericht wordt verzonden voor elke synchronisatie fout, verzenden we een dagelijks overzicht van alle fouten die de back-end-service heeft geretourneerd. Hierdoor kunnen klanten deze fouten op een efficiëntere manier verwerken en het aantal dubbele fout berichten verminderen.
->
-> We plannen dat deze wijziging wordt geïmplementeerd op 15 januari 2020.
 
 ## <a name="delete-a-server-or-service-instance"></a>Een server-of service-exemplaar verwijderen
 

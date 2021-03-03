@@ -1,20 +1,20 @@
 ---
-title: Bewaking configureren in gaststatus van Azure Monitor voor VM's (preview)
-description: Hierin wordt beschreven hoe u de standaard bewaking voor Azure Monitor voor VM's gast status (preview) wijzigt met behulp van de Azure Portal.
+title: Bewaking configureren in VM Insights-gast status (preview-versie)
+description: Hierin wordt beschreven hoe u de standaard bewaking voor VM Insights-gast status (preview-versie) wijzigt met behulp van de Azure Portal.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 12/14/2020
-ms.openlocfilehash: 427bdec2b5e5ab14d566375d5ad8f9da9dc3e81b
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 8c15a44fc086c9c686e75879b3086436ea327560
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612669"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719590"
 ---
-# <a name="configure-monitoring-in-azure-monitor-for-vms-guest-health-preview"></a>Bewaking configureren in gaststatus van Azure Monitor voor VM's (preview)
-Met Azure Monitor voor VM's gast status kunt u de status van een virtuele machine weer geven zoals gedefinieerd door een set prestatie metingen die regel matig worden steek proeven. In dit artikel wordt beschreven hoe u de standaard bewaking kunt wijzigen met behulp van de Azure Portal. Hierin worden ook de basis concepten beschreven van monitors die zijn vereist voor [het configureren van bewaking met behulp van een gegevens verzamelings regel](vminsights-health-configure-dcr.md).
+# <a name="configure-monitoring-in-vm-insights-guest-health-preview"></a>Bewaking configureren in VM Insights-gast status (preview-versie)
+Met de VM Insights-gast status kunt u de status van een virtuele machine bekijken, zoals gedefinieerd door een set prestatie metingen die regel matig worden steek proeven. In dit artikel wordt beschreven hoe u de standaard bewaking kunt wijzigen met behulp van de Azure Portal. Hierin worden ook de basis concepten beschreven van monitors die zijn vereist voor [het configureren van bewaking met behulp van een gegevens verzamelings regel](vminsights-health-configure-dcr.md).
 
 ## <a name="open-monitor-configuration"></a>Monitor configuratie openen
 Open de Azure Portal bin configuratie-lade bewaken door de monitor te selecteren en vervolgens op het tabblad **configuratie** .

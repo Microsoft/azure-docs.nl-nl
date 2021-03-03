@@ -1,35 +1,36 @@
 ---
-title: Voor beelden van telemetrie-processors-Azure Monitor Application Insights voor Java
-description: Voor beelden van telemetrie-processors in Azure Monitor Application Insights voor Java
+title: Voor beelden van telemetrie-processor-Azure Monitor Application Insights voor Java
+description: Bekijk voor beelden waarin telemetrie-processors in Azure Monitor Application Insights voor Java worden weer gegeven.
 ms.topic: conceptual
 ms.date: 12/29/2020
 author: kryalama
 ms.custom: devx-track-java
 ms.author: kryalama
-ms.openlocfilehash: 9b29c9611359c97c4097ad0b90ee2673bb28f37c
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: 0978bd669855d264ed6dfa5eeddc45ad499aa2a5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98696309"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734584"
 ---
-# <a name="telemetry-processors-examples---azure-monitor-application-insights-for-java"></a>Voor beelden van telemetrie-processors-Azure Monitor Application Insights voor Java
+# <a name="telemetry-processor-examples---azure-monitor-application-insights-for-java"></a>Voor beelden van telemetrie-processor-Azure Monitor Application Insights voor Java
 
-## <a name="includeexclude-samples"></a>Voor beelden opnemen/uitsluiten
+In dit artikel vindt u voor beelden van telemetrie-processors in Application Insights voor Java. U vindt voor beelden voor het opnemen en uitsluiten van configuraties. U vindt ook voor beelden voor kenmerk-processors en-processors.
+## <a name="include-and-exclude-samples"></a>Voor beelden opnemen en uitsluiten
 
-### <a name="1-include-spans"></a>1. insluitingen bevatten
+In deze sectie ziet u hoe u reeksen kunt opnemen en uitsluiten. U ziet ook hoe u meerdere reeksen uitsluit en selectieve verwerking toepast.
+### <a name="include-spans"></a>Omvat reeksen
 
-Hieronder ziet u een voor beeld van reeksen voor deze kenmerken processor. Alle andere reeksen die niet overeenkomen met de eigenschappen, worden niet verwerkt door deze processor.
+In deze sectie wordt beschreven hoe u reeksen voor een kenmerk processor opneemt. De reeksen die niet overeenkomen met de eigenschappen, worden niet verwerkt door de processor.
 
-Aan de volgende voor waarden moet worden voldaan:
-* De span-naam moet gelijk zijn aan "spana" of "spanB" 
+Voor een match moet de bereik naam gelijk zijn aan `spanA` of `spanB` . 
 
-Hier volgen enkele reeksen die overeenkomen met de include-eigenschappen en de processor acties worden toegepast.
+Deze reeksen komen overeen met de include-eigenschappen en de processor acties worden toegepast:
 * Span1 naam: ' spana ' Attributes: {env: dev, test_request: 123, credit_card: 1234}
 * Span2 naam: spanB Attributes: {env: dev, test_request: False}
 * Span3 naam: ' spana ' Attributes: {env: 1, test_request: dev, credit_card: 1234}
 
-De volgende reeks komt niet overeen met de include-eigenschappen en de processor acties worden niet toegepast.
+Deze reeks komt niet overeen met de include-eigenschappen en de processor acties worden niet toegepast:
 * Span4 naam: spanC Attributes: {env: dev, test_request: False}
 
 ```json
@@ -58,19 +59,18 @@ De volgende reeks komt niet overeen met de include-eigenschappen en de processor
 }
 ```
 
-### <a name="2-exclude-spans"></a>2. uitgesloten reeksen
+### <a name="exclude-spans"></a>Uitgesloten reeksen
 
-Hieronder ziet u een uitzonde ring van reeksen voor deze kenmerken processor. Alle reeksen die overeenkomen met de eigenschappen, worden niet verwerkt door deze processor.
+In deze sectie wordt gedemonstreerd hoe u reeksen voor een kenmerk processor uitsluit. Reeksen die overeenkomen met de eigenschappen, worden niet verwerkt door deze processor.
 
-Aan de volgende voor waarden moet worden voldaan:
-* De span-naam moet gelijk zijn aan "spana" of "spanB" 
+Voor een match moet de bereik naam gelijk zijn aan `spanA` of `spanB` .
 
-Hier volgen enkele reeksen die overeenkomen met de uitsluitings eigenschappen en de processor acties worden niet toegepast.
+De volgende reeksen komen overeen met de eigenschappen exclude en de processor acties worden niet toegepast:
 * Span1 naam: ' spana ' Attributes: {env: dev, test_request: 123, credit_card: 1234}
 * Span2 naam: spanB Attributes: {env: dev, test_request: False}
 * Span3 naam: ' spana ' Attributes: {env: 1, test_request: dev, credit_card: 1234}
 
-De volgende reeks komt niet overeen met de exclude-eigenschappen en de processor acties worden toegepast.
+Deze reeks komt niet overeen met de eigenschappen exclude en de processor acties worden toegepast:
 * Span4 naam: spanC Attributes: {env: dev, test_request: False}
 
 ```json
@@ -99,19 +99,19 @@ De volgende reeks komt niet overeen met de exclude-eigenschappen en de processor
 }
 ```
 
-### <a name="3-excludemulti-spans"></a>3. ExcludeMulti omvat
+### <a name="exclude-spans-by-using-multiple-criteria"></a>Sluit reeksen uit met behulp van meerdere criteria
 
-Hieronder ziet u een uitzonde ring van reeksen voor deze kenmerken processor. Alle reeksen die overeenkomen met de eigenschappen, worden niet verwerkt door deze processor.
+In deze sectie wordt gedemonstreerd hoe u reeksen voor een kenmerk processor uitsluit. Reeksen die overeenkomen met de eigenschappen, worden niet verwerkt door deze processor.
 
-Aan de volgende voor waarden moet worden voldaan:
-* Er moet een kenmerk (' env ', ' dev ') aanwezig zijn in de reeks voor een overeenkomst.
-* Zolang er een-kenmerk met sleutel test_request is, is er een overeenkomst.
+Voor een overeenkomst moeten aan de volgende voor waarden worden voldaan:
+* Een kenmerk (bijvoorbeeld `env` of `dev` ) moet in de reeks bestaan.
+* De reeks moet een kenmerk hebben met een sleutel `test_request` .
 
-Hier volgen enkele reeksen die overeenkomen met de uitsluitings eigenschappen en de processor acties worden niet toegepast.
+De volgende reeksen komen overeen met de eigenschappen exclude en de processor acties worden niet toegepast.
 * Span1 name: spanB Attributes: {env: dev, test_request: 123, credit_card: 1234}
 * Span2 naam: ' spana ' Attributes: {env: dev, test_request: False}
 
-De volgende reeks komt niet overeen met de exclude-eigenschappen en de processor acties worden toegepast.
+De volgende reeks komt niet overeen met de eigenschappen exclude en de processor acties worden toegepast:
 * Span3 naam: spanB Attributes: {env: 1, test_request: dev, credit_card: 1234}
 * Span4 naam: spanC Attributes: {env: dev, dev_request: False}
 
@@ -151,16 +151,16 @@ De volgende reeks komt niet overeen met de exclude-eigenschappen en de processor
 }
 ```
 
-### <a name="4-selective-processing"></a>4. selectief verwerken
+### <a name="selective-processing"></a>Selectief verwerken
 
-Hieronder ziet u hoe u de set eigenschappen van de reeks opgeeft om aan te geven op welke voor waarde deze processor moet worden toegepast. `include`Met de eigenschappen ervan wordt aangegeven welke items moeten worden opgenomen en de `exclude` eigenschappen moeten verder worden uitgefilterd die niet hoeven te worden verwerkt.
+In deze sectie wordt beschreven hoe u de set eigenschappen van de reeks opgeeft waarmee wordt aangegeven op welke voor waarde deze processor moet worden toegepast. De include-eigenschappen geven aan welke reeksen moeten worden verwerkt. De uitsluitings eigenschappen zijn uitzonde ringen die niet hoeven te worden verwerkt.
 
-Met de onderstaande configuratie worden de volgende reeksen die overeenkomen met de eigenschappen en processor acties toegepast:
+In de volgende configuratie worden deze reeksen overeenkomen met de eigenschappen en worden er processor acties toegepast:
 
 * Span1 name: spanB Attributes: {env: Production, test_request: 123, credit_card: 1234, redact_trace: "false"}
 * Span2 naam: ' spana ' Attributes: {env: staging, test_request: False, redact_trace: True}
 
-De volgende reeksen komen niet overeen met de include-eigenschappen en processor acties worden niet toegepast:
+Deze reeksen komen niet overeen met de include-eigenschappen, en er worden geen processor acties toegepast:
 * Span3 name: spanB Attributes: {env: Production, test_request: True, credit_card: 1234, redact_trace: False}
 * Span4 naam: spanC Attributes: {env: dev, test_request: False}
 
@@ -206,7 +206,7 @@ De volgende reeksen komen niet overeen met de include-eigenschappen en processor
 
 ### <a name="insert"></a>Invoegen
 
-Met de volgende code wordt een nieuw kenmerk {"attribute1": "attributeValue1"} ingevoegd als de sleutel "attribute1" niet bestaat.
+In het volgende voor beeld wordt het nieuwe kenmerk ingevoegd `{"attribute1": "attributeValue1"}` in de spans waar de sleutel `attribute1` niet bestaat.
 
 ```json
 {
@@ -230,7 +230,7 @@ Met de volgende code wordt een nieuw kenmerk {"attribute1": "attributeValue1"} i
 
 ### <a name="insert-from-another-key"></a>Invoegen vanuit een andere sleutel
 
-In het volgende wordt de waarde van het kenmerk ' anotherkey ' gebruikt om een nieuw kenmerk {' newKey ': ' in te voegen van het kenmerk ' anotherkey '}, zodat er sprake is van de sleutel ' newKey '. Als het kenmerk anotherkey niet bestaat, wordt er geen nieuw kenmerk ingevoegd in-reeksen.
+In het volgende voor beeld wordt het kenmerk waarde van gebruikt `anotherkey` om het nieuwe kenmerk in te voegen `{"newKey": "<value from attribute anotherkey>"}` in een spans waar de sleutel `newKey` niet bestaat. Als het kenmerk `anotherkey` niet bestaat, wordt er geen nieuw kenmerk in de reeksen ingevoegd.
 
 ```json
 {
@@ -254,7 +254,7 @@ In het volgende wordt de waarde van het kenmerk ' anotherkey ' gebruikt om een n
 
 ### <a name="update"></a>Bijwerken
 
-De volgende update van het kenmerk op {"db. Secret": "redactied"} en werkt het kenmerk installatiekopie bij met de waarde van het kenmerk foo. Reeksen zonder het kenmerk ' installatiekopie ' worden niet gewijzigd.
+In het volgende voor beeld wordt het kenmerk bijgewerkt naar `{"db.secret": "redacted"}` . Het kenmerk wordt bijgewerkt met `boo` behulp van de waarde van het kenmerk `foo` . De reeksen die niet het kenmerk hebben, worden `boo` niet gewijzigd.
 
 ```json
 {
@@ -283,7 +283,7 @@ De volgende update van het kenmerk op {"db. Secret": "redactied"} en werkt het k
 
 ### <a name="delete"></a>Verwijderen
 
-Hieronder ziet u een voor beeld van het verwijderen van het kenmerk met de sleutel credit_card.
+In het volgende voor beeld ziet u hoe u een kenmerk met de sleutel verwijdert `credit_card` .
 
 ```json
 {
@@ -306,7 +306,7 @@ Hieronder ziet u een voor beeld van het verwijderen van het kenmerk met de sleut
 
 ### <a name="hash"></a>Hash
 
-Hieronder ziet u een voor beeld van hash-bestaande kenmerk waarden.
+In het volgende voor beeld ziet u hoe u bestaande kenmerk waarden hashert.
 
 ```json
 {
@@ -329,13 +329,13 @@ Hieronder ziet u een voor beeld van hash-bestaande kenmerk waarden.
 
 ### <a name="extract"></a>Extraheren
 
-In het volgende voor beeld wordt gedemonstreerd met behulp van regex om nieuwe kenmerken te maken op basis van de waarde van een ander kenmerk.
-Bijvoorbeeld http. URL = ' http://example.com/path?queryParam1=value1 , queryParam2 = waarde2 ' de volgende kenmerken worden ingevoegd:
-* httpProtocol: http
-* httpDomain: example.com
-* httpPath: pad
-* httpQueryParams: queryParam1 = waarde1, queryParam2 = waarde2
-* http. URL-waarde wordt niet gewijzigd.
+In het volgende voor beeld ziet u hoe u een reguliere expressie (regex) kunt gebruiken om nieuwe kenmerken te maken op basis van de waarde van een ander kenmerk.
+U kunt bijvoorbeeld `http.url = http://example.com/path?queryParam1=value1,queryParam2=value2` de volgende kenmerken invoegen:
+* httpProtocol: `http`
+* httpDomain: `example.com`
+* httpPath: `path`
+* httpQueryParams: `queryParam1=value1,queryParam2=value2`
+* http. URL: *geen* wijziging
 
 ```json
 {
@@ -357,8 +357,8 @@ Bijvoorbeeld http. URL = ' http://example.com/path?queryParam1=value1 , queryPar
 }
 ```
 
-In het volgende voor beeld ziet u hoe u reeksen kunt verwerken die een bereik naam hebben die overeenkomt met regexp-patronen.
-Met deze processor wordt het kenmerk ' token ' verwijderd en wordt het kenmerk ' password ' verborgen in de spans waarbij de bereik naam overeenkomt \* met ' auth '. en waarbij de naam van de span niet overeenkomt met "login. \* ".
+In het volgende voor beeld ziet u hoe reeksen worden verwerkt die een span-naam hebben die overeenkomt met regex-patronen.
+Deze processor verwijdert het `token` kenmerk. Het `password` kenmerk wordt in een bereik van de reeks naam vergeleken `auth.*` en de naam van de span komt overeen `login.*` .
 
 ```json
 {
@@ -401,7 +401,7 @@ Met deze processor wordt het kenmerk ' token ' verwijderd en wordt het kenmerk '
 
 ### <a name="name-a-span"></a>Een reeks een naam
 
-In het volgende voor beeld worden de waarden van het kenmerk db. SVC, Operation en id gevormd door de nieuwe naam van de reeks, in die volg orde, gescheiden door de waarde "::".
+In het volgende voor beeld worden de waarden van kenmerken `db.svc` , `operation` en opgegeven `id` . De nieuwe naam van de reeks wordt met behulp van die kenmerken, in die volg orde, gescheiden door de waarde `::` .
 ```json
 {
   "connectionString": "InstrumentationKey=00000000-0000-0000-0000-000000000000",
@@ -423,9 +423,9 @@ In het volgende voor beeld worden de waarden van het kenmerk db. SVC, Operation 
 }
 ```
 
-### <a name="extract-attributes-from-span-name"></a>Kenmerken uit de span-naam extra heren
+### <a name="extract-attributes-from-a-span-name"></a>Kenmerken extra heren uit een span-naam
 
-We gaan ervan uitgaan dat de naam van de invoer periode/API/v1/document/12345678/update. is Als de volgende resultaten worden toegepast in de naam van de uitvoer periode/api/v1/document/{documentId}/update, wordt er een nieuw kenmerk "documentId" = "12345678" aan de reeks toegevoegd.
+We gaan ervan uitgaan dat de naam van het invoer bereik is `/api/v1/document/12345678/update` . In het volgende voor beeld wordt de naam van de uitvoer periode in beslag genomen `/api/v1/document/{documentId}/update` . Het nieuwe kenmerk wordt toegevoegd `documentId=12345678` aan de reeks.
 ```json
 {
   "connectionString": "InstrumentationKey=00000000-0000-0000-0000-000000000000",
@@ -446,11 +446,11 @@ We gaan ervan uitgaan dat de naam van de invoer periode/API/v1/document/12345678
 }
 ```
 
-### <a name="extract-attributes-from-span-name-with-include-and-exclude"></a>Kenmerken extra heren uit een span name met include en exclude
+### <a name="extract-attributes-from-a-span-name-by-using-include-and-exclude"></a>Attributes van een span name extra heren met behulp van opnemen en uitsluiten
 
-In het volgende voor beeld ziet u hoe u de naam van de span wijzigt in {operation_website} en het kenmerk {Key: operation_website, waarde: oldSpanName} toevoegt wanneer de reeks de volgende eigenschappen heeft:
-- De span-naam bevat '/' overal in de teken reeks.
-- De naam van de span is niet donot/Change.
+In het volgende voor beeld ziet u hoe u de naam van de span wijzigt in `{operation_website}` . Er wordt een kenmerk met sleutel `operation_website` en waarde toegevoegd `{oldSpanName}` wanneer de reeks de volgende eigenschappen heeft:
+- De span-naam bevat `/` een wille keurige plaats in de teken reeks.
+- De naam van de span is niet `donot/change` .
 ```json
 {
   "connectionString": "InstrumentationKey=00000000-0000-0000-0000-000000000000",

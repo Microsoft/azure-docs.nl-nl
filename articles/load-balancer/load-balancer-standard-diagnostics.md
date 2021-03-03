@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/25/2021
 ms.author: allensu
-ms.openlocfilehash: fbde2b95b7aca205f164dc45c1f0170cc4da74fb
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 29584a9453fa052745f417cba0bbe940766c30e9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100581894"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699076"
 ---
 # <a name="standard-load-balancer-diagnostics-with-metrics-alerts-and-resource-health"></a>Diagnose van Standard Load Balancer met metrische gegevens, meldingen en status van resources
 
@@ -34,7 +34,7 @@ Azure Load Balancer biedt multidimensionale metrische gegevens via de metrische 
 
 De verschillende Standard Load Balancer configuraties bieden de volgende metrische gegevens:
 
-| Metrisch | Resourcetype | Description | Aanbevolen aggregatie |
+| Metrisch | Resourcetype | Beschrijving | Aanbevolen aggregatie |
 | --- | --- | --- | --- |
 | Gegevenspadbeschikbaarheid | Openbare en interne load balancer | Standard Load Balancer oefent doorlopend het gegevenspad vanuit een regio naar de front-end van de load balancer, helemaal tot de SDN-stack die ondersteuning biedt voor de VM. Zolang de gezonde instanties blijven bestaan, volgt de meting hetzelfde pad als het verkeer met gelijke taak verdeling van uw toepassing. Het gegevenspad dat uw klanten gebruiken, wordt ook gevalideerd. De meting is onzichtbaar voor de toepassing en heeft geen invloed op andere bewerkingen.| Average |
 | Status van statustest | Openbare en interne load balancer | Standard Load Balancer maakt gebruik van een gedistribueerde status-probing-service die de status van uw toepassings eindpunt bewaakt volgens de configuratie-instellingen. Deze metriek biedt een gefilterde weergave van een aggregatie of per-eindpunt van elk exemplaareindpunt in de load balancer-groep. U ziet hoe in Load Balancer de status van de toepassing wordt weergegeven, zoals aangeduid via de statustestconfiguratie. |  Average |
@@ -72,18 +72,7 @@ De metrische gegevens voor uw Standard Load Balancer resources weer geven:
 
 ### <a name="retrieve-multi-dimensional-metrics-programmatically-via-apis"></a>Via Api's multi-dimensionale metrieken ophalen
 
-Zie [Azure Monitoring rest API-overzicht](../azure-monitor/essentials/rest-api-walkthrough.md#retrieve-metric-definitions-multi-dimensional-api)voor API-richt lijnen voor het ophalen van multi-dimensionale metrische definities en waarden. Deze metrische gegevens kunnen naar een opslag account worden geschreven door een [Diagnostische instelling](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings) voor de categorie alle metrische gegevens toe te voegen. 
-
-### <a name="configure-alerts-for-multi-dimensional-metrics"></a>Waarschuwingen voor multi-dimensionale metrische gegevens configureren ###
-
-Azure Standard Load Balancer ondersteunt eenvoudig Configureer bare waarschuwingen voor multi-dimensionale metrische gegevens. Configureer aangepaste drempel waarden voor specifieke metrische gegevens om waarschuwingen met verschillende ernst niveaus te activeren om een touch-ervaring voor het bijhouden van bronnen mogelijk te houden.
-
-Waarschuwingen configureren:
-1. Ga naar de vervolg-Blade van de waarschuwing voor de load balancer
-1. Nieuwe waarschuwingsregel maken
-    1.  Waarschuwings voorwaarde configureren
-    1.  Beschrijving Actie groep toevoegen voor automatisch herstellen
-    1.  Ernst, naam en beschrijving van de waarschuwing toewijzen die intuïtieve reactie mogelijk maakt
+Zie [Azure Monitoring rest API-overzicht](../azure-monitor/essentials/rest-api-walkthrough.md#retrieve-metric-definitions-multi-dimensional-api)voor API-richt lijnen voor het ophalen van multi-dimensionale metrische definities en waarden. Deze metrische gegevens kunnen naar een opslag account worden geschreven door een [Diagnostische instelling](../azure-monitor/essentials/diagnostic-settings.md) voor de categorie alle metrische gegevens toe te voegen. 
 
 ### <a name="common-diagnostic-scenarios-and-recommended-views"></a><a name = "DiagnosticScenarios"></a>Veelvoorkomende diagnostische scenario's en aanbevolen weer gaven
 
@@ -228,15 +217,41 @@ In het diagram wordt de volgende informatie weer gegeven:
 Met de grafiek kunnen klanten de implementatie zelf oplossen zonder dat ze hoeven te raden of om ondersteuning te vragen of er andere problemen optreden. De service is niet beschikbaar omdat de status controles zijn mislukt vanwege een onjuiste configuratie of een mislukte toepassing.
 </details>
 
+## <a name="configure-alerts-for-multi-dimensional-metrics"></a>Waarschuwingen voor multi-dimensionale metrische gegevens configureren ###
+
+Azure Standard Load Balancer ondersteunt eenvoudig Configureer bare waarschuwingen voor multi-dimensionale metrische gegevens. Configureer aangepaste drempel waarden voor specifieke metrische gegevens om waarschuwingen met verschillende ernst niveaus te activeren om een touch-ervaring voor het bijhouden van bronnen mogelijk te houden.
+
+Waarschuwingen configureren:
+1. Ga naar de vervolg-Blade van de waarschuwing voor de load balancer
+1. Nieuwe waarschuwingsregel maken
+    1.  Waarschuwings voorwaarde configureren
+    1.  Beschrijving Actie groep toevoegen voor automatisch herstellen
+    1.  Ernst, naam en beschrijving van de waarschuwing toewijzen die intuïtieve reactie mogelijk maakt
+
+### <a name="inbound-availability-alerting"></a>Waarschuwingen voor inkomende Beschik baarheid
+Als u een waarschuwing wilt ontvangen voor inkomende Beschik baarheid, kunt u twee afzonderlijke waarschuwingen maken met behulp van de metrische gegevens van het gegevenspad en de status van de Health probe. Klanten hebben mogelijk verschillende scenario's waarvoor specifieke logica voor waarschuwingen is vereist, maar de onderstaande voor beelden zijn handig voor de meeste configuraties.
+
+Door de beschik baarheid van gegevenspaden te gebruiken, kunt u waarschuwingen activeren wanneer een specifieke taakverdelings regel niet meer beschikbaar is. U kunt deze waarschuwing configureren door een waarschuwings voorwaarde in te stellen voor de beschik baarheid van het gegevenspad en te splitsen door alle huidige waarden en toekomstige waarden voor zowel de frontend-en front-end-IP-adres. Als u instelt dat de waarschuwings logica kleiner dan of gelijk aan 0 is, wordt deze waarschuwing geactiveerd wanneer een regel voor taak verdeling niet meer reageert. Stel de granulatie van de aggregatie en de frequentie van de evaluatie in op basis van de gewenste evaluatie. 
+
+Met Health probe status kunt u een waarschuwing ontvangen wanneer een bepaalde back-end-instantie gedurende een aanzienlijke hoeveelheid tijd niet op de status test reageert. Stel uw waarschuwings voorwaarde in om de metrische gegevens voor de status test te gebruiken en te splitsen op back-end-IP-adres en backend-poort. Dit zorgt ervoor dat u afzonderlijk kunt waarschuwen voor elke afzonderlijke back-end-instantie om verkeer op een specifieke poort te kunnen verwerken. Gebruik het **gemiddelde** aggregatie type en stel de drempel waarde in op basis van hoe vaak uw back-end-exemplaar wordt gecontroleerd en wat u beschouwt als uw gezonde drempel. 
+
+U kunt ook een waarschuwing op een back-endadresgroep maken door niet te splitsen op dimensies en het **gemiddelde** aggregatie type te gebruiken. Zo kunt u waarschuwings regels instellen, zoals een waarschuwing wanneer 50% van de leden van mijn back-endadresgroep een slechte status heeft.
+
+### <a name="outbound-availability-alerting"></a>Waarschuwingen voor uitgaande Beschik baarheid
+Als u wilt configureren voor uitgaande Beschik baarheid, kunt u twee afzonderlijke waarschuwingen configureren met behulp van het aantal SNAT-verbindingen en de gebruikte statistieken voor de SNAT-poort.
+
+Als u uitgaande verbindings fouten wilt detecteren, configureert u een waarschuwing met het aantal SNAT-verbindingen en filteren op verbindings status = mislukt. Gebruik de **totale** aggregatie. U kunt deze vervolgens ook splitsen op back-end-IP-adres ingesteld op alle huidige en toekomstige waarden om afzonderlijk te worden gewaarschuwd voor elk back-end-exemplaar dat mislukte verbindingen ondervindt. Stel de drempel waarde in op groter dan nul of een hoger getal als u verwacht dat sommige uitgaande verbindings fouten worden weer geven.
+
+Via de gebruikte SNAT-poorten kunt u een waarschuwing krijgen over een hoger risico op overschrijding van de SNAT en de uitgaande verbindings fout. Zorg ervoor dat u op back-end-IP-adres en-protocol splitst wanneer u deze waarschuwing gebruikt en de **gemiddelde** aggregatie gebruikt. Stel de drempel waarde in op hoger dan een percentage van het aantal poorten dat u hebt toegewezen per exemplaar dat u als onveilig wordt beschouwd. U kunt bijvoorbeeld een waarschuwing met een lage Ernst configureren wanneer een back-end-exemplaar gebruikmaakt van 75% van de toegewezen poorten en een hoge Ernst wanneer het 90% of 100% van de toegewezen poorten gebruikt.  
 ## <a name="resource-health-status"></a><a name = "ResourceHealth"></a>Status van resource status
 
 De integriteits status voor de Standard Load Balancer bronnen wordt weer gegeven via de bestaande **resource status** onder **monitor > service Health**. Het wordt elke **twee minuten** geëvalueerd door de beschik baarheid van het gegevenspad te meten. Dit bepaalt of uw frontend-taakverdelings eindpunten beschikbaar zijn.
 
-| Status van resource status | Description |
+| Status van resource status | Beschrijving |
 | --- | --- |
 | Beschikbaar | Uw standaard load balancer resource is in orde en beschikbaar. |
-| Verminderd beschikbaar | Uw standaard load balancer heeft platform of door de gebruiker gestarte gebeurtenissen die invloed hebben op de prestaties. De metriek voor het gegevenspad heeft een beschikbaarheid van minder dan 90% en meer dan 25% gerapporteerd gedurende ten minste twee minuten. U ondervindt aanzienlijke invloed op de prestaties. [Volg de RHC-hand leiding voor probleem oplossing](https://docs.microsoft.com/azure/load-balancer/troubleshoot-rhc) om te bepalen of er door de gebruiker geïnitieerde gebeurtenissen zijn die invloed hebben op uw Beschik baarheid.
-| Niet beschikbaar | Uw standaard load balancer resource is niet in orde. De metriek voor DataPath-Beschik baarheid heeft minder dan 25% status gerapporteerd voor ten minste twee minuten. U ondervindt aanzienlijke gevolgen voor de prestaties of gebrek aan Beschik baarheid voor binnenkomende verbindingen. Er zijn mogelijk gebruikers-of platform gebeurtenissen waardoor er geen Beschik baarheid wordt veroorzaakt. [Volg de RHC-gids voor probleem oplossing](https://docs.microsoft.com/azure/load-balancer/troubleshoot-rhc) om te bepalen of er door de gebruiker gestarte gebeurtenissen van invloed zijn op uw Beschik baarheid. |
+| Verminderd beschikbaar | Uw standaard load balancer heeft platform of door de gebruiker gestarte gebeurtenissen die invloed hebben op de prestaties. De metriek voor het gegevenspad heeft een beschikbaarheid van minder dan 90% en meer dan 25% gerapporteerd gedurende ten minste twee minuten. U ondervindt aanzienlijke invloed op de prestaties. [Volg de RHC-hand leiding voor probleem oplossing](./troubleshoot-rhc.md) om te bepalen of er door de gebruiker geïnitieerde gebeurtenissen zijn die invloed hebben op uw Beschik baarheid.
+| Niet beschikbaar | Uw standaard load balancer resource is niet in orde. De metriek voor DataPath-Beschik baarheid heeft minder dan 25% status gerapporteerd voor ten minste twee minuten. U ondervindt aanzienlijke gevolgen voor de prestaties of gebrek aan Beschik baarheid voor binnenkomende verbindingen. Er zijn mogelijk gebruikers-of platform gebeurtenissen waardoor er geen Beschik baarheid wordt veroorzaakt. [Volg de RHC-gids voor probleem oplossing](./troubleshoot-rhc.md) om te bepalen of er door de gebruiker gestarte gebeurtenissen van invloed zijn op uw Beschik baarheid. |
 | Onbekend | De resource status voor uw standaard load balancer resource is nog niet bijgewerkt of heeft niet de beschikbaarheids gegevens van het gegevenspad ontvangen voor de afgelopen 10 minuten. Dit hoort slechts tijdelijk het geval te zijn. De juiste status wordt weergegeven zodra er gegevens worden ontvangen. |
 
 De status van uw open bare Standard Load Balancer-resources weer geven:
@@ -263,7 +278,7 @@ De beschrijving van de algemene resource status is beschikbaar in de [RHC-docume
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het gebruik van [inzichten](https://docs.microsoft.com/azure/load-balancer/load-balancer-insights) voor het weer geven van deze metrische gegevens die vooraf zijn geconfigureerd voor uw Load Balancer
+- Meer informatie over het gebruik van [inzichten](./load-balancer-insights.md) voor het weer geven van deze metrische gegevens die vooraf zijn geconfigureerd voor uw Load Balancer
 - Meer informatie over [Standard Load Balancer](./load-balancer-overview.md).
 - Meer informatie over de [uitgaande connectiviteit van de Load Balancer](./load-balancer-outbound-connections.md).
 - Meer informatie over [Azure monitor](../azure-monitor/overview.md).

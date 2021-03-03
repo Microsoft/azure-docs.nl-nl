@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/08/2021
-ms.openlocfilehash: 902b13c947cb005189e23dee943867100809564e
-ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
+ms.openlocfilehash: 0a9a58e91202d42640264aba00e1a583be1cde70
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99988552"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101705650"
 ---
 # <a name="archived-release-notes"></a>Gearchiveerde releaseopmerkingen
 
@@ -34,7 +34,7 @@ HDInsight maakt nu gebruik van virtuele machines van Azure om het cluster in te 
 
 ### <a name="deprecation"></a>Afschaffing
 #### <a name="deprecation-of-hdinsight-36-ml-services-cluster"></a>Afschaffing van HDInsight 3,6 ML Services-cluster
-Het cluster type van HDInsight 3,6 ML-Services is de eind datum van de ondersteuning van december 31 2020. Klanten kunnen na december 31 2020 geen nieuwe clusters van 3,6 ML-services meer maken. Bestaande clusters worden uitgevoerd zonder de ondersteuning van micro soft. Controleer [hier](./hdinsight-component-versioning.md#available-versions)het ondersteunings verloop voor HDInsight-versies en cluster typen.
+Het cluster type van HDInsight 3,6 ML-Services is de eind datum van de ondersteuning van december 31 2020. Klanten kunnen na december 31 2020 geen nieuwe clusters van 3,6 ML-services meer maken. Bestaande clusters worden uitgevoerd zonder de ondersteuning van micro soft. Controleer [hier](./hdinsight-component-versioning.md)het ondersteunings verloop voor HDInsight-versies en cluster typen.
 
 #### <a name="disabled-vm-sizes"></a>Uitgeschakelde VM-grootten
 Vanaf november 16 2020 worden nieuwe klanten die clusters maken met behulp van standand_A8, standand_A9 standand_A10 en standand_A11 VM-grootten geblokkeerd door HDInsight. Bestaande klanten die deze VM-grootten in de afgelopen drie maanden hebben gebruikt, worden niet beïnvloed. Formulier wordt gestart 9 2021. HDInsight blokkeert alle klanten die clusters maken met behulp van standand_A8, standand_A9, standand_A10 en standand_A11 VM-grootten. Bestaande clusters worden uitgevoerd. Overweeg om over te stappen op HDInsight 4,0 om mogelijke onderbreking van systeem/ondersteuning te voor komen.
@@ -62,7 +62,7 @@ HDInsight maakt nu gebruik van virtuele machines van Azure om het cluster in te 
 
 ### <a name="deprecation"></a>Afschaffing
 #### <a name="deprecation-of-hdinsight-36-ml-services-cluster"></a>Afschaffing van HDInsight 3,6 ML Services-cluster
-Het cluster type van HDInsight 3,6 ML-Services is de eind datum van de ondersteuning van december 31 2020. Klanten maken geen nieuwe 3,6 ML-clusters na december 31 2020. Bestaande clusters worden uitgevoerd zonder de ondersteuning van micro soft. Controleer [hier](./hdinsight-component-versioning.md#available-versions)het ondersteunings verloop voor HDInsight-versies en cluster typen.
+Het cluster type van HDInsight 3,6 ML-Services is de eind datum van de ondersteuning van december 31 2020. Klanten maken geen nieuwe 3,6 ML-clusters na december 31 2020. Bestaande clusters worden uitgevoerd zonder de ondersteuning van micro soft. Controleer [hier](./hdinsight-component-versioning.md#supported-hdinsight-versions)het ondersteunings verloop voor HDInsight-versies en cluster typen.
 
 #### <a name="disabled-vm-sizes"></a>Uitgeschakelde VM-grootten
 Vanaf november 16 2020 worden nieuwe klanten die clusters maken met behulp van standand_A8, standand_A9 standand_A10 en standand_A11 VM-grootten geblokkeerd door HDInsight. Bestaande klanten die deze VM-grootten in de afgelopen drie maanden hebben gebruikt, worden niet beïnvloed. Formulier wordt gestart 9 2021. HDInsight blokkeert alle klanten die clusters maken met behulp van standand_A8, standand_A9, standand_A10 en standand_A11 VM-grootten. Bestaande clusters worden uitgevoerd. Overweeg om over te stappen op HDInsight 4,0 om mogelijke onderbreking van systeem/ondersteuning te voor komen.
@@ -77,7 +77,7 @@ De volgende wijzigingen worden uitgevoerd in toekomstige releases.
 HDInsight biedt geen ondersteuning voor het aanpassen van de grootte van Zookeeper-knoop punten voor de cluster typen Spark, Hadoop en ML Services. De standaard instelling is dat de grootte van de virtuele machines van/a2 wordt A2_v2, die gratis worden meegeleverd. In de aanstaande release kunt u de grootte van een virtuele Zookeeper-machine selecteren die het meest geschikt is voor uw scenario. Zookeeper-knoop punten met een andere grootte dan A2_v2/a2 worden in rekening gebracht. A2_v2 en a2 virtuele machines worden nog gratis beschikbaar gesteld.
 
 #### <a name="default-cluster-version-will-be-changed-to-40"></a>De standaard versie van het cluster wordt gewijzigd in 4,0
-Vanaf februari 2021 wordt de standaard versie van het HDInsight-cluster gewijzigd van 3,6 in 4,0. Zie [beschik bare versies](./hdinsight-component-versioning.md#available-versions)voor meer informatie over de beschik bare versies. Meer informatie over wat er nieuw is in [HDInsight 4,0](./hdinsight-version-release.md)
+Vanaf februari 2021 wordt de standaard versie van het HDInsight-cluster gewijzigd van 3,6 in 4,0. Zie [ondersteunde versies](./hdinsight-component-versioning.md#supported-hdinsight-versions)voor meer informatie over de beschik bare versies. Meer informatie over wat er nieuw is in [HDInsight 4,0](./hdinsight-version-release.md)
 
 #### <a name="hdinsight-36-end-of-support-on-june-30-2021"></a>HDInsight 3,6 end of support op 30 2021 juni
 HDInsight 3,6 wordt beëindigd. Het formulier wordt gestart 30 2021, klanten kunnen geen nieuwe HDInsight 3,6-clusters maken. Bestaande clusters worden uitgevoerd zonder de ondersteuning van micro soft. Overweeg om over te stappen op HDInsight 4,0 om mogelijke onderbreking van systeem/ondersteuning te voor komen.
@@ -103,7 +103,7 @@ HDInsight maakt nu gebruik van virtuele machines van Azure om het cluster in te 
 
 ### <a name="deprecation"></a>Afschaffing
 #### <a name="deprecation-of-hdinsight-36-ml-services-cluster"></a>Afschaffing van HDInsight 3,6 ML Services-cluster
-Het cluster type van HDInsight 3,6 ML-Services is einde van ondersteuning door DEC 31 2020. Klanten maken hierna geen nieuwe 3,6 ML-Services-clusters. Bestaande clusters worden uitgevoerd zonder de ondersteuning van micro soft. Controleer [hier](./hdinsight-component-versioning.md#available-versions)het ondersteunings verloop voor HDInsight-versies en cluster typen.
+Het cluster type van HDInsight 3,6 ML-Services is einde van ondersteuning door DEC 31 2020. Klanten maken hierna geen nieuwe 3,6 ML-Services-clusters. Bestaande clusters worden uitgevoerd zonder de ondersteuning van micro soft. Controleer [hier](./hdinsight-component-versioning.md#supported-hdinsight-versions)het ondersteunings verloop voor HDInsight-versies en cluster typen.
 
 ### <a name="behavior-changes"></a>Gedrags wijzigingen
 Er is geen wijziging van het gedrag voor deze versie.

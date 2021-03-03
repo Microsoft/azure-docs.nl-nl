@@ -1,33 +1,33 @@
 ---
-title: Azure Monitor voor VM's inschakelen met behulp van PowerShell
-description: Hierin wordt beschreven hoe u Azure Monitor voor VM's voor virtuele machines of virtuele-machine schaal sets in azure inschakelt met behulp van Azure PowerShell.
+title: VM Insights inschakelen met Power shell
+description: Hierin wordt beschreven hoe u VM Insights voor virtuele machines van Azure of virtuele-machine schaal sets inschakelt met behulp van Azure PowerShell.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
-ms.openlocfilehash: 83b17e021ce8003b5dbd279886edfdc199f58ce3
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 47ac71797684f82dfd94acff2d18bca11b2f50d1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612180"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717074"
 ---
-# <a name="enable-azure-monitor-for-vms-using-powershell"></a>Azure Monitor voor VM's inschakelen met behulp van PowerShell
-In dit artikel wordt beschreven hoe u Azure Monitor voor VM's op virtuele Azure-machines inschakelt met behulp van Power shell. Deze procedure kan worden gebruikt voor het volgende:
+# <a name="enable-vm-insights-using-powershell"></a>VM Insights inschakelen met Power shell
+In dit artikel wordt beschreven hoe u VM-inzichten op Azure virtual machines inschakelt met behulp van Power shell. Deze procedure kan worden gebruikt voor het volgende:
 
 - Azure virtuele machine
 - Schaalset voor virtuele Azure-machines
 
 ## <a name="prerequisites"></a>Vereisten
 
-- [Een log Analytics-werk ruimte maken en configureren](../insights/vminsights-configure-workspace.md).
-- Zie [ondersteunde besturings systemen](../insights/vminsights-enable-overview.md#supported-operating-systems) om ervoor te zorgen dat het besturings systeem van de virtuele machine of virtuele-machine schaalset die u inschakelt, wordt ondersteund. 
+- [Een log Analytics-werk ruimte maken en configureren](./vminsights-configure-workspace.md).
+- Zie [ondersteunde besturings systemen](./vminsights-enable-overview.md#supported-operating-systems) om ervoor te zorgen dat het besturings systeem van de virtuele machine of virtuele-machine schaalset die u inschakelt, wordt ondersteund. 
 
 
 ## <a name="powershell-script"></a>PowerShell-script
 
-Als u Azure Monitor voor VM's wilt inschakelen voor meerdere Vm's of virtuele-machine schaal sets, gebruikt u het Power shell-script [Install-VMInsights.ps1](https://www.powershellgallery.com/packages/Install-VMInsights), dat beschikbaar is via de Azure PowerShell galerie. Dit script doorloopt over:
+Als u VM Insights wilt inschakelen voor meerdere Vm's of virtuele-machine schaal sets, gebruikt u het Power shell-script [Install-VMInsights.ps1](https://www.powershellgallery.com/packages/Install-VMInsights), dat beschikbaar is via de Azure PowerShell galerie. Dit script doorloopt over:
 
 - Alle virtuele machines en virtuele-machine schaal sets in uw abonnement.
 - Het bereik van de resource groep die is opgegeven door *ResourceGroup*.
@@ -139,7 +139,7 @@ PARAMETERS
     Specify to use a PolicyAssignmentName for source and to reinstall (move to a new workspace)
 ```
 
-In het volgende voor beeld ziet u hoe u de Power shell-opdrachten in de map kunt gebruiken om Azure Monitor voor VM's te maken en de verwachte uitvoer te begrijpen:
+In het volgende voor beeld ziet u hoe u de Power shell-opdrachten in de map gebruikt voor het inschakelen van VM Insights en het begrijpen van de verwachte uitvoer:
 
 ```powershell
 $WorkspaceId = "<GUID>"
@@ -190,5 +190,5 @@ Failed: (0)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [Azure monitor voor VM's toewijzing gebruiken](vminsights-maps.md) om gedetecteerde toepassings afhankelijkheden weer te geven. 
+* Zie [VM Insights-toewijzing gebruiken](vminsights-maps.md) om gedetecteerde toepassings afhankelijkheden weer te geven. 
 * Zie [Azure-VM-prestaties weer geven](vminsights-performance.md) om knel punten, algemeen gebruik en de prestaties van uw virtuele machine te identificeren.

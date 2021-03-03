@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 01/25/2021
+ms.date: 03/01/2021
 ms.author: alkohli
-ms.openlocfilehash: ebadfc889eb648b734747e5a2a45662e82aab643
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 0b4a31200b99062a72a02ca62ac8f3bf1206f9c9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100546802"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101722089"
 ---
 # <a name="connect-to-azure-resource-manager-on-your-azure-stack-edge-pro-device"></a>Verbinding maken met Azure Resource Manager op uw Azure Stack Edge Pro-apparaat
 
@@ -130,7 +130,7 @@ De Windows-client waar u de Azure Resource Manager-Api's aanroept, moet een vert
 
 Uw Windows-client moet aan de volgende vereisten voldoen:
 
-1. Voer Power shell-versie 5,0. U moet Power shell-versie 5,0 of hoger hebben. Als u de versie van Power shell op uw systeem wilt controleren, voert u de volgende cmdlet uit:
+1. Voer Power shell-versie 5,0. U moet Power shell-versie 5,0 hebben. Power shell core wordt niet ondersteund. Als u de versie van Power shell op uw systeem wilt controleren, voert u de volgende cmdlet uit:
 
     ```powershell
     $PSVersionTable.PSVersion

@@ -3,16 +3,16 @@ title: Voor beeld van Azure Security Bench Mark Foundation blauw druk-overzicht
 description: Overzicht en architectuur van het voor beeld van Azure Security Bench Mark Foundation Blue.
 ms.date: 02/17/2020
 ms.topic: sample
-ms.openlocfilehash: b3b58f2fb603e23e4b188e527fa4fc60f4041a29
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: ed497eff85e07b6a51939907bc751f3b40c99b30
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101095276"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101741868"
 ---
 # <a name="overview-of-the-azure-security-benchmark-foundation-blueprint-sample"></a>Overzicht van het voor beeld van Azure Security Bench Mark Foundation blauw druk
 
-Het voor beeld van Azure Security Bench Mark Foundation Blue bevat een reeks patronen in de basislijn infrastructuur waarmee u een veilige en compatibele Azure-omgeving kunt bouwen. De blauw druk helpt u bij het implementeren van een Cloud architectuur die oplossingen biedt aan scenario's die betrekking hebben op accreditatie-of nalevings vereisten. Deze voor beeld van een basis-blauw druk is een uitbrei ding van de [blauw druk van Azure Security Bench Mark](../azure-security-benchmark/index.md). Het implementeert en configureert netwerk grenzen, bewaking en andere resources in uitlijning met het beleid en andere Guardrails die zijn gedefinieerd in de [Azure Security-benchmark](../../../../security/benchmarks/index.yml)waarde.
+Het voor beeld van Azure Security Bench Mark Foundation Blue bevat een reeks patronen in de basislijn infrastructuur waarmee u een veilige en compatibele Azure-omgeving kunt bouwen. De blauw druk helpt u bij het implementeren van een Cloud architectuur die oplossingen biedt aan scenario's die betrekking hebben op accreditatie-of nalevings vereisten. Deze voor beeld van een basis-blauw druk is een uitbrei ding van de [blauw druk van Azure Security Bench Mark](../azure-security-benchmark.md). Het implementeert en configureert netwerk grenzen, bewaking en andere resources in uitlijning met het beleid en andere Guardrails die zijn gedefinieerd in de [Azure Security-benchmark](../../../../security/benchmarks/index.yml)waarde.
 
 ## <a name="architecture"></a>Architectuur
 
@@ -23,7 +23,7 @@ De blauw druk implementeert een hub-virtueel netwerk dat algemene en gedeelde br
 
 Met deze blauw druk worden verschillende Azure-Services geïmplementeerd om een beveiligde, bewaakte, bedrijfs klare basis te bieden. De omgeving bestaat uit de volgende elementen:
 
-- [Azure monitor logboeken](../../../../azure-monitor/platform/data-platform-logs.md) en een Azure Storage-account om ervoor te zorgen dat bron logboeken, activiteiten logboeken, metrische gegevens en netwerk verkeer stromen worden opgeslagen op een centrale locatie voor eenvoudige query's, analyses, archivering en waarschuwingen.
+- [Azure monitor logboeken](../../../../azure-monitor/logs/data-platform-logs.md) en een Azure Storage-account om ervoor te zorgen dat bron logboeken, activiteiten logboeken, metrische gegevens en netwerk verkeer stromen worden opgeslagen op een centrale locatie voor eenvoudige query's, analyses, archivering en waarschuwingen.
 - [Azure Security Center](../../../../security-center/security-center-introduction.md) (standaard versie) om beveiliging tegen bedreigingen te bieden voor Azure-resources.
 - [Azure Virtual Network](../../../../virtual-network/virtual-networks-overview.md) in de hub ondersteunen subnetten om een verbinding te maken met een on-premises netwerk, een ingang en uitgangs stack naar/voor Internet connectiviteit en optionele subnetten voor de implementatie van extra administratieve of beheer Services. Virtual Network in de spoke bevat subnetten voor het hosten van toepassings werkbelastingen. Extra subnetten kunnen worden gemaakt na de implementatie naar behoefte ter ondersteuning van toepasselijke scenario's.
 - [Azure firewall](../../../../firewall/overview.md) alle uitgaande Internet verkeer te routeren en inkomend Internet verkeer via Jump box in te scha kelen. (Standaard firewall regels blok keren het binnenkomende en uitgaande verkeer van Internet en regels moeten na de implementatie worden geconfigureerd, indien van toepassing.)

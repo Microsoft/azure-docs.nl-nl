@@ -6,12 +6,12 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: conceptual
 ms.date: 1/28/2020
-ms.openlocfilehash: 27d357279a54d7abc351370e7afda3a7961bac33
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 4564e28f76aebe7f708c2b6f68903fe67bcefe26
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99428551"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101698855"
 ---
 # <a name="bring-your-own-key-customer-managed-keys-with-media-services"></a>Uw eigen sleutel (door de klant beheerde sleutels) meenemen met Media Services
 
@@ -42,7 +42,7 @@ U kunt een sleutel naam en sleutel versie opgeven, of alleen een sleutel naam. W
 Media Services ondersteunt automatisch dubbele versleuteling. Voor Data-at-rest gebruikt de eerste laag van versleuteling een door de klant beheerde sleutel of een door micro soft beheerde sleutel, afhankelijk van de `AccountEncryption` instelling van het account.  De tweede laag versleuteling voor Data-at-rest wordt automatisch met een afzonderlijke beheerde sleutel van micro soft gegeven. Zie voor meer informatie over dubbele versleuteling [Azure Double Encryption](../../security/fundamentals/double-encryption.md)(Engelstalig).
 
 > [!NOTE]
-> Dubbele versleuteling wordt automatisch ingeschakeld voor het Media Services-account. U moet de door de klant beheerde sleutel en dubbele versleuteling echter afzonderlijk configureren voor uw opslag account. Zie [Storege-versleuteling](https://docs.microsoft.com/azure/storage/common/storage-service-encryption).
+> Dubbele versleuteling wordt automatisch ingeschakeld voor het Media Services-account. U moet de door de klant beheerde sleutel en dubbele versleuteling echter afzonderlijk configureren voor uw opslag account. Zie [Storege-versleuteling](../../storage/common/storage-service-encryption.md).
 
 ## <a name="tutorials"></a>Zelfstudies
 

@@ -3,18 +3,18 @@ title: Sjabloon structuur en syntaxis
 description: Hierin worden de structuur en eigenschappen van Azure Resource Manager sjablonen (ARM-sjablonen) beschreven met declaratieve JSON-syntaxis.
 ms.topic: conceptual
 ms.date: 12/17/2020
-ms.openlocfilehash: 4c08612325d2776f8f1a7fe4486e6f592ca474a0
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 31576c72fb845677f132fd9cd6ee776db922d436
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934693"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101722701"
 ---
 # <a name="understand-the-structure-and-syntax-of-arm-templates"></a>Informatie over de structuur en de syntaxis van ARM-sjablonen
 
 In dit artikel wordt de structuur van een Azure Resource Manager sjabloon (ARM-sjabloon) beschreven. Het biedt de verschillende secties van een sjabloon en de eigenschappen die beschikbaar zijn in deze secties.
 
-Dit artikel is bedoeld voor gebruikers met een zekere kennis van ARM-sjablonen. Het bevat gedetailleerde informatie over de structuur van de sjabloon. Zie [zelf studie: uw eerste arm-sjabloon maken en implementeren](template-tutorial-create-first-template.md)voor een stapsgewijze zelf studie waarin u door het proces van het maken van een sjabloon wordt geleid. Zie [resources implementeren en beheren in azure met behulp van arm-sjablonen](/learn/paths/deploy-manage-resource-manager-templates/)voor meer informatie over arm-sjablonen via een begeleide set modules op Microsoft learn.
+Dit artikel is bedoeld voor gebruikers met een zekere kennis van ARM-sjablonen. Het bevat gedetailleerde informatie over de structuur van de sjabloon. Zie [zelf studie: uw eerste arm-sjabloon maken en implementeren](template-tutorial-create-first-template.md)voor een stapsgewijze zelf studie waarin u door het proces van het maken van een sjabloon wordt geleid. Raadpleeg [Resources implementeren en beheren in Azure met behulp van ARM-sjablonen](/learn/paths/deploy-manage-resource-manager-templates/) voor meer informatie over ARM-sjablonen via een begeleide set modules.
 
 ## <a name="template-format"></a>Sjabloonindeling
 
@@ -74,8 +74,8 @@ De volgende sjabloon toont de indeling voor de gegevens typen. Elk type heeft ee
       "defaultValue": 1
     },
     "boolParameter": {
-        "type": "bool",
-        "defaultValue": true
+      "type": "bool",
+      "defaultValue": true
     },
     "objectParameter": {
       "type": "object",

@@ -2,14 +2,14 @@
 title: De beschikbaarheid en reactiesnelheid van een website bewaken | Microsoft Docs
 description: Stel webtests in Application Insights in. Ontvang een waarschuwing wanneer een website niet meer beschikbaar is of traag reageert.
 ms.topic: conceptual
-ms.date: 09/16/2019
+ms.date: 02/14/2021
 ms.reviewer: sdash
-ms.openlocfilehash: 41338760034918dce30ffb45c738588a2aa29786
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 0ea44aad43a3dd6f11656a45dc7d0e619187fc22
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100585940"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101729025"
 ---
 # <a name="monitor-the-availability-of-any-website"></a>Beschik baarheid van alle websites bewaken
 
@@ -72,7 +72,6 @@ Als u uw eerste beschikbaarheids aanvraag wilt maken, opent u het deel venster B
 |Instelling| Uitleg
 |----|----|----|
 |**Bijna realtime (preview-versie)** | We raden u aan bijna realtime waarschuwingen te gebruiken. Het configureren van dit type waarschuwing wordt uitgevoerd nadat de beschikbaarheids test is gemaakt.  |
-|**Klassieke** | Het gebruik van klassieke waarschuwingen voor nieuwe beschikbaarheids tests wordt niet meer aanbevolen.|
 |**Drempel waarde voor waarschuwings locatie**|We raden aan dat er mini maal 3/5 locaties zijn. De optimale relatie tussen de drempel waarde van de waarschuwings locatie en het aantal test locaties is drempel waarde voor **waarschuwings locaties**  =  **aantal test locaties-2, met een minimum van vijf test locaties.**|
 
 ### <a name="location-population-tags"></a>Locatie populatie Tags

@@ -221,9 +221,9 @@
         - name: Docker-hosts verharden
           displayName: containers
           href: harden-docker-hosts.md
-        - name: Azure Defender voor SQL gebruiken
-          href: defender-for-sql-usage.md
-          displayName: 'hybrid, arc'
+    - name: Azure Defender voor SQL gebruiken
+      href: defender-for-sql-usage.md
+      displayName: 'hybrid, arc'
     - name: Azure Defender voor containerregisters gebruiken
       items:
         - name: Scan uw registerafbeeldingen op kwetsbaarheden
@@ -269,8 +269,6 @@
     - name: Kubernetes-workloads beveiligen
       displayName: 'k8s, containers, aks'
       href: kubernetes-workload-protections.md
-    - name: Onderzoek gebruikersgegevens beheren
-      href: security-center-investigation-user-data.md
     - name: Zichtbaarheid in de hele tenant verkrijgen
       href: security-center-management-groups.md
     - name: Uw SQL-informatiebeschermingsbeleid aanpassen
@@ -292,7 +290,7 @@
           href: faq-vms.md
         - name: Bestaande gebruikers van Azure Log Analytics
           href: faq-azure-monitor-logs.md
-    - name: Ingebouwd beveiligingsbeleid
+    - name: Ingebouwde modules voor Azure Policy
       displayName: 'samples, policy'
       href: policy-reference.md
     - name: Azure-roadmapblog

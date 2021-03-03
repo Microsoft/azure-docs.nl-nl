@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 971a3063ff86e2a6b7d1b11f72ff0a257f459da0
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: d6866361b78656d99888c4df70cc0c92ed096425
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609098"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737049"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-classic-cloud-services"></a>Metrische gegevens van het gast besturingssysteem verzenden naar de klassieke Azure Monitor voor metrische gegevens Cloud Services 
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Met de Azure Monitor [Diagnostics-extensie](../agents/diagnostics-extension-overview.md)kunt u metrische gegevens en logboeken verzamelen van het gast besturingssysteem (gast besturingssysteem) dat wordt uitgevoerd als onderdeel van een virtuele machine, Cloud service of service Fabric cluster. De uitbrei ding kan telemetrie verzenden naar een [groot aantal verschillende locaties.](../platform/data-platform.md?toc=/azure/azure-monitor/toc.json)
+Met de Azure Monitor [Diagnostics-extensie](../agents/diagnostics-extension-overview.md)kunt u metrische gegevens en logboeken verzamelen van het gast besturingssysteem (gast besturingssysteem) dat wordt uitgevoerd als onderdeel van een virtuele machine, Cloud service of service Fabric cluster. De uitbrei ding kan telemetrie verzenden naar een [groot aantal verschillende locaties.](../data-platform.md?toc=%2fazure%2fazure-monitor%2ftoc.json)
 
 In dit artikel wordt het proces beschreven voor het verzenden van gegevens over prestaties van gast besturingssystemen voor klassieke Azure-Cloud Services naar de Azure Monitor metrische opslag. Te beginnen met diagnostische gegevens van versie 1,11, kunt u metrische gegevens rechtstreeks naar de opslag voor metrische gegevens van Azure Monitor schrijven, waar de metrische gegevens van het standaard platform al zijn verzameld. 
 
@@ -34,7 +34,7 @@ Het proces dat wordt beschreven in dit artikel, werkt alleen voor prestatie mete
 
 - U moet [Azure PowerShell](/powershell/azure) of [Azure Cloud shell](../../cloud-shell/overview.md) hebben geïnstalleerd.
 
-- Uw Cloud service moet zich in een [regio bevinden die aangepaste metrische gegevens ondersteunt](../platform/metrics-custom-overview.md#supported-regions).
+- Uw Cloud service moet zich in een [regio bevinden die aangepaste metrische gegevens ondersteunt](./metrics-custom-overview.md#supported-regions).
 
 ## <a name="provision-a-cloud-service-and-storage-account"></a>Een Cloud service-en opslag account inrichten 
 
@@ -191,4 +191,4 @@ U gebruikt de functies voor het filteren en splitsen van dimensies om het totale
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [aangepaste metrische gegevens](../platform/metrics-custom-overview.md).
+- Meer informatie over [aangepaste metrische gegevens](./metrics-custom-overview.md).

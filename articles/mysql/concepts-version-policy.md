@@ -7,12 +7,12 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 11/03/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 4903f1e48eb2f33c68d62c635201474b841ed146
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 6acb3268ba40399612940b395437fde3beffda1a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94591509"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101732867"
 ---
 # <a name="azure-database-for-mysql-versioning-policy"></a>Beleid voor Azure Database for MySQL-versie
 
@@ -20,13 +20,18 @@ Op deze pagina wordt het Azure Database for MySQL-versie beleid beschreven en is
 
 ## <a name="supported--mysql-versions"></a>Ondersteunde MySQL-versies
 
-Azure Database for MySQL ondersteunt de volgende database versies.
+Azure Database for MySQL is ontwikkeld vanuit de [MySQL Community Edition](https://www.mysql.com/products/community/), met behulp van de InnoDB-opslag engine. De service ondersteunt alle huidige primaire versie die wordt ondersteund door de community, namelijk MySQL 5,6, 5,7 en 8,0. MySQL maakt gebruik van het schema X. Y. Z waarbij X de primaire versie is, Y de secundaire versie en Z de release van de fout correctie. Zie de [MySQL-documentatie](https://dev.mysql.com/doc/refman/5.7/en/which-version.html)voor meer informatie over het schema.
 
-| Versie | Single Server | Flexible Server (preview) |
-| ----- | :------: | :----: |
-| MySQL 8 | X |  | 
-| MySQL 5,7 | X | X |
-| MySQL 5,6| X |  |
+> [!NOTE]
+> In de implementatie optie voor één server wordt een gateway gebruikt om de verbindingen met Server exemplaren om te leiden. Nadat de verbinding tot stand is gebracht, wordt in de MySQL-client de versie van MySQL weergegeven die in de gateway is ingesteld, niet de feitelijke versie die wordt uitgevoerd op de MySQL-serverinstantie. Als u de versie van uw MySQL-serverinstantie wilt vaststellen, gebruikt u de `SELECT VERSION();`-opdracht bij de MySQL-prompt.
+
+Azure Database for MySQL ondersteunt momenteel de volgende primaire en secundaire versies van MySQL:
+
+| Versie | Enkele server <br/> Huidige secundaire versie |Flexibele server (preview) <br/> Huidige secundaire versie  |
+|:-------------------|:-------------------------------------------|:---------------------------------------------|
+|MySQL-versie 5,6 |  [5.6.47](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-47.html) | Niet ondersteund|
+|MySQL-versie 5,7 | [5.7.29](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-29.html) | [5.7.29](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-29.html)|
+|MySQL-versie 8,0 | [8.0.15](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-15.html) | [8.0.21](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-21.html)|
 
 
 ## <a name="major-version-support"></a>Ondersteuning voor primaire versie
@@ -50,7 +55,7 @@ De volgende tabel bevat de details van de buiten gebruiks telling van de primair
 Als u na de datum van uittreding voor elke MySQL-database versie doorgaat, moet u rekening houden met de volgende beperkingen:
 - Aangezien de community geen verdere oplossingen voor problemen of beveiligingsfixes uitbrengt, zal Azure Database for MySQL de buiten gebruik gestelde data base-engine niet voor eventuele fouten of beveiliging bijwerken of anderszins beveiligings maatregelen treffen met betrekking tot de buiten gebruik gestelde data base-engine. Azure blijft echter periodiek onderhoud en patches uitvoeren voor de host, het besturings systeem, containers en andere service-gerelateerde onderdelen.
 - Als er mogelijk ondersteunings problemen optreden met betrekking tot de MySQL-data base, kunnen we u mogelijk geen ondersteuning bieden voor u. In dergelijke gevallen moet u uw data base upgraden om u te helpen bij het verlenen van ondersteuning.
-- U kunt geen nieuwe database servers maken voor de buiten gebruik gestelde versie. U kunt echter herstel naar een bepaald tijdstip uitvoeren en voor uw bestaande servers Lees replica's maken...
+<!-- - You will not be able to create new database servers for the retired version. However, you will be able to perform point-in-time recoveries and create read replicas for your existing servers. -->
 - Nieuwe service functies die zijn ontwikkeld door Azure Database for MySQL, zijn mogelijk alleen beschikbaar voor ondersteunde database server versies.
 - Beschik baarheid van de uptime geldt alleen voor het Azure Database for MySQL van problemen met de service en niet voor uitval tijd die wordt veroorzaakt door fouten met betrekking tot de data base-engine.  
 - In het uitzonderlijke geval van een ernstige bedreiging van de service die wordt veroorzaakt door het beveiligingslek met betrekking tot de MySQL-data base-engine die is geïdentificeerd in de buiten gebruik gestelde versie van de data base, kan Azure ervoor kiezen het reken knooppunt van uw database server te stoppen om de service eerst te beveiligen. U wordt gevraagd de server bij te werken voordat u de server online brengt. Tijdens het upgrade proces worden uw gegevens altijd beveiligd met automatische back-ups die worden uitgevoerd op de service, die kan worden gebruikt om terug te zetten naar de oudere versie. 

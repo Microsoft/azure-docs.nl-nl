@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/15/2020
 ms.author: memildin
-ms.openlocfilehash: 30744ab97549d585cb6893dc2e2e12009e8cd3fb
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 754e9516c5fd47668cbff5bdc64b8dfdeed050d8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100595765"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101705128"
 ---
 # <a name="faq---questions-about-data-collection-agents-and-workspaces"></a>Veelgestelde vragen: vragen over het verzamelen van gegevens, agents en werk ruimten
 
@@ -146,7 +146,7 @@ Als de Log Analytics-agent rechtstreeks op de VM is geïnstalleerd (niet als een
 
 De agent die is geïnstalleerd, blijft rapporteren aan de al geconfigureerde werk ruimte (n) en rapporteert bovendien aan de werk ruimte die is geconfigureerd in Security Center (multi-multihoming wordt ondersteund op Windows-computers).
 
-Als de geconfigureerde werk ruimte een gebruikers werkruimte is (niet Security Center de standaardwerk ruimte), moet u de oplossing ' Security/' SecurityCenterFree ' installeren voor Security Center om te beginnen met het verwerken van gebeurtenissen van Vm's en computers die aan die werk ruimte rapporteren.
+Als de geconfigureerde werk ruimte een gebruikers werkruimte is (niet Security Center de standaard werkruimte), moet u de oplossing ' Security ' of ' SecurityCenterFree ' installeren voor Security Center om te beginnen met het verwerken van gebeurtenissen van Vm's en computers die aan die werk ruimte rapporteren.
 
 Voor Linux-machines wordt Agent-multihoming nog niet ondersteund. Als er een bestaande agentinstallatie wordt gedetecteerd, treedt er geen automatische inrichting op en wordt de configuratie van de machine niet gewijzigd.
 
@@ -207,7 +207,7 @@ Wanneer de migratie is voltooid, kan Security Center geen beveiligings gegevens 
 
 Installeer de Log Analytics agent-extensie hand matig zodat Security Center beveiligings gegevens van uw virtuele machines kan verzamelen en aanbevelingen en waarschuwingen kunt geven. Zie [installatie van de agent voor](../virtual-machines/extensions/oms-windows.md) de installatie van de Windows-VM of de [agent voor Linux VM](../virtual-machines/extensions/oms-linux.md) voor meer informatie over de installatie.
 
-U kunt de agent verbinden met een bestaande aangepaste werk ruimte of Security Center gemaakte werk ruimte. Als voor een aangepaste werk ruimte de oplossingen Security of SecurityCenterFree niet zijn ingeschakeld, moet u een oplossing Toep assen. Als u wilt Toep assen, selecteert u de aangepaste werk ruimte of het abonnement en past u een prijs categorie toe via de pagina **beveiligings beleid – prijs categorie** .
+U kunt de agent verbinden met een bestaande aangepaste werk ruimte of Security Center gemaakte werk ruimte. Als voor een aangepaste werk ruimte de oplossingen ' Beveiliging ' of ' SecurityCenterFree ' niet zijn ingeschakeld, moet u een oplossing Toep assen. Als u wilt Toep assen, selecteert u de aangepaste werk ruimte of het abonnement en past u een prijs categorie toe via de pagina **beveiligings beleid – prijs categorie** .
 
 :::image type="content" source="./media/security-center-platform-migration-faq/pricing-tier.png" alt-text="Azure Defender in-of uitschakelen":::
 

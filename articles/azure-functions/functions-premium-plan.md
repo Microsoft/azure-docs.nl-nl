@@ -9,12 +9,12 @@ ms.custom:
 - references_regions
 - fasttrack-edit
 - devx-track-azurecli
-ms.openlocfilehash: 26dd3f7df5a71c687bfb4935f290e7a54b4e01fe
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 3061329ad9dcb368dab586acc2146e6fb4e23028
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98610264"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708710"
 ---
 # <a name="azure-functions-premium-plan"></a>Azure Functions Premium-abonnement
 
@@ -41,7 +41,7 @@ Wanneer u een functie-app maakt in de Azure Portal, is het verbruiks abonnement 
 
 In de volgende artikelen ziet u hoe u een functie-app kunt maken met een Premium-abonnement, hetzij programmatisch, hetzij in de Azure Portal:
 
-+ [Azure Portal](create-premium-plan-function-app-portal.md)
++ [Azure-portal](create-premium-plan-function-app-portal.md)
 + [Azure-CLI](scripts/functions-cli-create-premium-plan.md)
 + [Azure Resource Manager-sjabloon](functions-infrastructure-as-code.md#deploy-on-premium-plan)
 
@@ -154,7 +154,7 @@ Het uitvoeren op een computer met meer geheugen betekent niet altijd dat uw func
 
 Een Java script-functie-app is bijvoorbeeld beperkt door de standaard limiet voor geheugen in Node.js. Als u deze limiet voor vaste geheugen wilt verhogen, voegt u de app-instelling `languageWorkers:node:arguments` met de waarde `--max-old-space-size=<max memory in MB>` .
 
-En voor abonnementen met meer dan 4 GB geheugen, moet u ervoor zorgen dat de platform instelling Bitness is ingesteld op `64 Bit` onder [algemene instellingen](/azure/app-service/configure-common#configure-general-settings).
+En voor abonnementen met meer dan 4 GB geheugen, moet u ervoor zorgen dat de platform instelling Bitness is ingesteld op `64 Bit` onder [algemene instellingen](../app-service/configure-common.md#configure-general-settings).
 
 ## <a name="region-max-scale-out"></a>Schaal van regio Maxi maal
 
@@ -162,7 +162,7 @@ Hieronder vindt u de momenteel ondersteunde maximum waarden voor scale-out voor 
 
 Bekijk de volledige regionale Beschik baarheid van functies op de [Azure-website](https://azure.microsoft.com/global-infrastructure/services/?products=functions).
 
-|Regio| Windows | Linux |
+|Region| Windows | Linux |
 |--| -- | -- |
 |Australië - centraal| 100 | Niet beschikbaar |
 |Australië - centraal 2| 100 | Niet beschikbaar |
@@ -200,7 +200,7 @@ Bekijk de volledige regionale Beschik baarheid van functies op de [Azure-website
 |India - west| 100 | 20 |
 |VS - west-centraal| 100 | 20 |
 |VS - west| 100 | 20 |
-|West US 2| 100 | 20 |
+|VS - west 2| 100 | 20 |
 
 ## <a name="next-steps"></a>Volgende stappen
 

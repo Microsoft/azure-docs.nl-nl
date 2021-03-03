@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/10/2020
 ms.custom: lyrana
-ms.openlocfilehash: 940f7efc7130ef80817be3b42e3c0eff83588a90
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: a46ddeddfcefcd4d6e7f87747fe36cfc6ec82e35
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100587989"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101737559"
 ---
 # <a name="monitoring-time-series-insights"></a>Bewakings Time Series Insights
 
@@ -63,7 +63,7 @@ U kunt Logboeken verzamelen uit de volgende categorieën voor Azure Time Series 
 
 ## <a name="analyzing-metrics"></a>Metrische gegevens analyseren
 
-U kunt metrische gegevens voor Azure Time Series Insights analyseren, samen met metrische gegevens uit andere Azure-Services, door metrische gegevens te openen in het menu Azure Monitor. Zie [aan de slag met Azure Metrics Explorer](../azure-monitor/platform/metrics-getting-started.md) voor meer informatie over het gebruik van dit hulp programma.
+U kunt metrische gegevens voor Azure Time Series Insights analyseren, samen met metrische gegevens uit andere Azure-Services, door metrische gegevens te openen in het menu Azure Monitor. Zie [aan de slag met Azure Metrics Explorer](../azure-monitor/essentials/metrics-getting-started.md) voor meer informatie over het gebruik van dit hulp programma.
 
 Zie [Monitoring Azure time series Insights data Reference](how-to-monitor-tsi-reference.md#metrics) (Engelstalig) voor een lijst met de metrische gegevens van het platform.
 
@@ -115,7 +115,7 @@ Hieronder vindt u query's die u kunt gebruiken om uw Azure Time Series Insights-
 
 ## <a name="alerts"></a>Waarschuwingen
 
-Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Hiermee kunt u problemen in uw systeem identificeren en oplossen voordat uw klanten ze opmerken. U kunt waarschuwingen instellen voor [metrische gegevens](../azure-monitor/platform/alerts-metric-overview.md), [Logboeken](../azure-monitor/platform/alerts-unified-log.md)en het [activiteiten logboek](../azure-monitor/platform/activity-log-alerts.md). Verschillende soorten waarschuwingen hebben voor delen en nadelen.
+Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Hiermee kunt u problemen in uw systeem identificeren en oplossen voordat uw klanten ze opmerken. U kunt waarschuwingen instellen voor [metrische gegevens](../azure-monitor/alerts/alerts-metric-overview.md), [Logboeken](../azure-monitor/alerts/alerts-unified-log.md)en het [activiteiten logboek](../azure-monitor/alerts/activity-log-alerts.md). Verschillende soorten waarschuwingen hebben voor delen en nadelen.
 
 Wanneer u een waarschuwings regel maakt op basis van de metrische gegevens van het platform, moet u er rekening mee houden dat voor Time Series Insights-platform metrische gegevens die worden verzameld in aantal eenheden, sommige aggregaties mogelijk niet beschikbaar of bruikbaar zijn.
 

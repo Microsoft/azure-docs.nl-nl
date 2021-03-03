@@ -4,14 +4,14 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 03/06/2020
 ms.author: glenga
-ms.openlocfilehash: b4b2409928b6a4196738c7cc6c7040e781d34686
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: bff2f05a95faf9c475189cb5a8003cb7fd9f69be
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "80056641"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701387"
 ---
-1. Als u de functie wilt uitvoeren, drukt u op F5 in Visual Studio. Mogelijk moet u ook een firewall-uitzondering maken, zodat de hulpprogramma's HTTP-aanvragen kunnen afhandelen. Er worden geen autorisatieniveaus afgedwongen wanneer u een functie lokaal uitvoert.
+1. Als u de functie wilt uitvoeren, drukt u op <kbd>F5</kbd> in Visual Studio. Mogelijk moet u ook een firewall-uitzondering maken, zodat de hulpprogramma's HTTP-aanvragen kunnen afhandelen. Er worden geen autorisatieniveaus afgedwongen wanneer u een functie lokaal uitvoert.
 
 2. Kopieer de URL van uw functie vanuit de uitvoer van de Azure Functions-runtime.
 
@@ -21,4 +21,4 @@ ms.locfileid: "80056641"
 
     ![De reactie van de lokale host van de functie in de browser](./media/functions-run-function-test-local-vs/functions-run-browser-local-vs.png)
 
-4. Druk op Shift + F5 in VS Code als u het opsporen van fouten wilt stoppen.
+4. Als u het fout opsporingsprogramma wilt stoppen, drukt u op <kbd>SHIFT</kbd> + <kbd>F5</kbd> in Visual Studio.

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/31/2020
-ms.openlocfilehash: 678a6f0dc19d966f3d15e713008c19c8fbb96f5e
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 5eaa2d686ecd38c006a720e9ffb97a4604f18ba8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612795"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101708863"
 ---
 # <a name="using-functions-in-azure-monitor-log-queries"></a>Functies in Azure Monitor-logboek query's gebruiken
 
@@ -35,7 +35,7 @@ Maak een functie met Log Analytics in het Azure Portal door op **Opslaan** te kl
 Gebruik een functie door de bijbehorende alias in een andere query op te nemen. Het kan worden gebruikt als elke andere tabel.
 
 ## <a name="function-parameters"></a>Functie parameters 
-U kunt para meters toevoegen aan een functie, zodat u waarden voor bepaalde variabelen kunt opgeven wanneer u deze aanroept. De enige manier om momenteel een functie met para meters te maken, is het gebruik van een resource manager-sjabloon. Zie voor [beelden van Resource Manager-sjablonen voor logboek query's in azure monitor](../samples/resource-manager-log-queries.md#parameterized-function) voor een voor beeld.
+U kunt para meters toevoegen aan een functie, zodat u waarden voor bepaalde variabelen kunt opgeven wanneer u deze aanroept. De enige manier om momenteel een functie met para meters te maken, is het gebruik van een resource manager-sjabloon. Zie voor [beelden van Resource Manager-sjablonen voor logboek query's in azure monitor](./resource-manager-log-queries.md#parameterized-function) voor een voor beeld.
 
 ## <a name="example"></a>Voorbeeld
 De volgende voorbeeld query retourneert alle ontbrekende beveiligings updates die in de afgelopen dag zijn gerapporteerd. Sla deze query op als een functie met de alias _security_updates_last_day_. 

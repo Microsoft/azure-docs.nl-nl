@@ -8,12 +8,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 02/18/2021
 ms.author: amsriva
-ms.openlocfilehash: f992f7d4295f380e4b1f2b13cc5da33df89354ab
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: c2edf11939996156c2b589b0b7876ae1b01466e5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101098961"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101740814"
 ---
 # <a name="configure-https-on-a-front-door-standardpremium-sku-preview-custom-domain-using-the-azure-portal"></a>Configureer HTTPS op een aangepast domein voor de voor deur standaard/Premium SKU (preview) met behulp van de Azure Portal
 
@@ -78,7 +78,7 @@ Registreer de service-principal voor Azure Front Door als een app in uw Azure Ac
 
 1. Voer in PowerShell de volgende opdracht uit:
 
-     `New-AzADServicePrincipal -ApplicationId 205478c0-bd83-4e1b-a9d6-db63a3e1e1c8""`              
+     `New-AzADServicePrincipal -ApplicationId "205478c0-bd83-4e1b-a9d6-db63a3e1e1c8"`              
 
 #### <a name="grant-azure-front-door-access-to-your-key-vault"></a>Azure Front Door toegang verlenen tot uw sleutelkluis
  

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/18/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: d129890cc63e5a0e4cbc6139e1de2df7a31f6f77
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 81a44d4d0025c841cf56e19d6afee5e95bd44a55
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101094558"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101730504"
 ---
 # <a name="secure-azure-digital-twins"></a>Azure Digital Apparaatdubbels beveiligen
 
@@ -92,7 +92,7 @@ Azure ondersteunt twee typen beheerde identiteiten: systeem toegewezen en door d
 
 U kunt een door het systeem toegewezen beheerde identiteit voor uw Azure Digital-instantie gebruiken om te verifiëren bij een [aangepast eind punt](concepts-route-events.md#create-an-endpoint). Azure Digital Apparaatdubbels ondersteunt door het systeem toegewezen verificatie op basis van een id voor eind punten voor [Event hub](../event-hubs/event-hubs-about.md) en [Service Bus](../service-bus-messaging/service-bus-messaging-overview.md)   doelen, en naar een [Azure storage container](../storage/blobs/storage-blobs-introduction.md)   eindpunt voor gebeurtenissen met een [onbestelbare letter](concepts-route-events.md#dead-letter-events). [Event grid](../event-grid/overview.md)   eind punten worden momenteel niet ondersteund voor beheerde identiteiten.
 
-Zie [*How-to: een beheerde identiteit inschakelen voor routerings gebeurtenissen (preview)*](how-to-enable-managed-identities.md)voor instructies over het inschakelen van een door een systeem beheerde identiteit voor Azure Digital apparaatdubbels en het gebruik ervan om gebeurtenissen te routeren.
+Zie [*How-to: een beheerde identiteit inschakelen voor routerings gebeurtenissen (preview)*](./how-to-enable-managed-identities-portal.md)voor instructies over het inschakelen van een door een systeem beheerde identiteit voor Azure Digital apparaatdubbels en het gebruik ervan om gebeurtenissen te routeren.
 
 ## <a name="private-network-access-with-azure-private-link-preview"></a>Toegang tot privé netwerk met persoonlijke Azure-koppeling (preview-versie)
 
@@ -106,7 +106,7 @@ Het persoonlijke eind punt gebruikt een IP-adres uit uw Azure VNet-adres ruimte.
 
 Als u een persoonlijk eind punt voor uw Azure Digital Apparaatdubbels-exemplaar configureert, kunt u uw Azure Digital Apparaatdubbels-exemplaar beveiligen en de open bare bloot stelling elimineren, en gegevens exfiltration van uw VNet voor komen.
 
-Voor instructies over het instellen van een persoonlijke koppeling voor Azure Digital Apparaatdubbels raadpleegt u [*How to: persoonlijke toegang inschakelen met persoonlijke koppeling (preview)*](how-to-enable-private-link.md).
+Voor instructies over het instellen van een persoonlijke koppeling voor Azure Digital Apparaatdubbels raadpleegt u [*How to: persoonlijke toegang inschakelen met persoonlijke koppeling (preview)*](./how-to-enable-private-link-portal.md).
 
 ### <a name="design-considerations"></a>Overwegingen bij het ontwerpen 
 

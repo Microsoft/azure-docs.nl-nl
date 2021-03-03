@@ -55,7 +55,7 @@
             - name: Azure Monitor configureren voor containers voor ARO 4 (preview)
               href: ../azure-monitor/insights/container-insights-azure-redhat4-setup.md
             - name: Azure Monitor uitschakelen voor containers in ARO 4 (preview)
-              href: ../azure-monitor/insights/container-insights-optout-openshift-v4.md
+              href: ../azure-monitor/containers/container-insights-optout-openshift-v4.md
     - name: Toepassingen ontwikkelen en uitvoeren
       items:
         - name: Een Open Liberty-/WebSphere Liberty-app implementeren
@@ -80,10 +80,10 @@
             - name: Azure Monitor voor containers in Azure Red Hat OpenShift 3.11 (preview-versie)
               items:
                 - name: Azure Monitor configureren voor containers in Azure Red Hat OpenShift 3.11 (preview-versie)
-                  href: ../azure-monitor/insights/container-insights-azure-redhat-setup.md
+                  href: ../azure-monitor/containers/container-insights-azure-redhat-setup.md
                   maintainContext: true
                 - name: Azure Monitor uitschakelen voor containers in Azure Red Hat OpenShift 3.11
-                  href: ../azure-monitor/insights/container-insights-optout-openshift-v3.md
+                  href: ../azure-monitor/containers/container-insights-optout-openshift-v3.md
                   maintainContext: true
         - name: Bevoorrechte containers uitvoeren in Azure Red Hat OpenShift 3.11
           href: howto-run-privileged-containers.md

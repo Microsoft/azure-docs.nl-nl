@@ -5,13 +5,13 @@ author: rahulg1190
 ms.author: rahugup
 manager: bsiva
 ms.topic: tutorial
-ms.date: 02/10/2021
-ms.openlocfilehash: 006b2838a4e593397f8968e53ba2364d16753a40
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.date: 03/02/2021
+ms.openlocfilehash: 24dd33495915a9f4d47a00fbbfe9e894df839d4d
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100547057"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101715068"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless---powershell"></a>VMware-VM's migreren naar Azure (zonder agent) - PowerShell
 
@@ -37,22 +37,18 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 Voordat u aan deze zelfstudie begint, dient u eerst:
 
 1. Voltooi de [zelf studie: Analyseer virtuele VMware-machines met server evaluatie](tutorial-discover-vmware.md) om Azure en VMware voor te bereiden voor migratie.
-1. Voltooi de [zelf studie: Evalueer virtuele VMware-machines voor migratie naar virtuele Azure-machines](./tutorial-assess-vmware-azure-vm.md) voordat u ze naar Azure migreert.
-1. [De AZ Power shell-module installeren](/powershell/azure/install-az-ps)
+2. Voltooi de [zelf studie: Evalueer virtuele VMware-machines voor migratie naar virtuele Azure-machines](./tutorial-assess-vmware-azure-vm.md) voordat u ze naar Azure migreert.
+3. [De AZ Power shell-module installeren](/powershell/azure/install-az-ps)
 
 ## <a name="2-install-azure-migrate-powershell-module"></a>2. Installeer Azure Migrate Power shell-module
 
-De Azure Migrate Power shell-module is beschikbaar als preview-versie. U moet de PowerShell-module installeren met behulp van de volgende opdracht.
-
-```azurepowershell-interactive
-Install-Module -Name Az.Migrate
-```
+Azure Migrate Power shell-module is beschikbaar als onderdeel van Azure PowerShell ( `Az` ). Voer de `Get-InstalledModule -Name Az.Migrate` opdracht uit om te controleren of de Azure migrate Power shell-module op uw computer is geïnstalleerd.  
 
 ## <a name="3-sign-in-to-your-microsoft-azure-subscription"></a>3. Meld u aan bij uw Microsoft Azure-abonnement
 
 Meld u aan bij uw Azure-abonnement met de cmdlet [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) .
 
-```azurepowershell
+```azurepowershell-interactive
 Connect-AzAccount
 ```
 
@@ -88,12 +84,10 @@ Azure Migrate maakt gebruik van een lichtgewicht [Azure Migrate-apparaat](migrat
 
 Als u een specifieke VMware-VM in een Azure Migrate project wilt ophalen, geeft u de naam van het Azure Migrate-project (`ProjectName`), de resourcegroep van het Azure Migrate-project (`ResourceGroupName`) en de naam van de VM (`DisplayName`) op.
 
-> [!IMPORTANT]
-> **De parameterwaarde van de VM-naam (`DisplayName`) is hoofdlettergevoelig**.
 
 ```azurepowershell-interactive
 # Get a specific VMware VM in an Azure Migrate project
-$DiscoveredServer = Get-AzMigrateDiscoveredServer -ProjectName $MigrateProject.Name -ResourceGroupName $ResourceGroup.ResourceGroupName -DisplayName MyTestVM
+$DiscoveredServer = Get-AzMigrateDiscoveredServer -ProjectName $MigrateProject.Name -ResourceGroupName $ResourceGroup.ResourceGroupName -DisplayName MyTestVM | Format-Table DisplayName, Name, Type
 
 # View discovered server details
 Write-Output $DiscoveredServer
@@ -101,14 +95,14 @@ Write-Output $DiscoveredServer
 
 We migreren deze VM als onderdeel van deze zelfstudie.
 
-U kunt ook alle virtuele VMware-machines in een Azure Migrate project ophalen met behulp van de para meters **ProjectName** en **ResourceGroupName** .
+U kunt ook alle virtuele VMware-machines in een Azure Migrate project ophalen met behulp van de `ProjectName` para meters () en ( `ResourceGroupName` ).
 
 ```azurepowershell-interactive
 # Get all VMware VMs in an Azure Migrate project
 $DiscoveredServers = Get-AzMigrateDiscoveredServer -ProjectName $MigrateProject.Name -ResourceGroupName $ResourceGroup.ResourceGroupName
 ```
 
-Als u meerdere apparaten in een Azure Migrate project hebt, kunt u de para meters **ProjectName**, **ResourceGroupName** en **apparaatnaam** gebruiken om alle vm's op te halen die zijn gedetecteerd met een specifiek Azure migrate apparaat.
+Als u meerdere apparaten in een Azure migrate project hebt, kunt u `ProjectName` de para meters (), () en () gebruiken `ResourceGroupName` `ApplianceName` om alle vm's op te halen die zijn gedetecteerd met een specifiek Azure migrate apparaat.
 
 ```azurepowershell-interactive
 # Get all VMware VMs discovered by an Azure Migrate Appliance in an Azure Migrate project
@@ -125,41 +119,42 @@ $DiscoveredServers = Get-AzMigrateDiscoveredServer -ProjectName $MigrateProject.
 - **Logboekopslagaccount**: Het Azure Migrate-apparaat uploadt replicatielogboeken voor VM's naar een logboekopslagaccount. Azure Migrate past de replicatiegegevens toe op door de replica beheerde schijven.
 - **Sleutelkluis**: Het Azure Migrate-apparaat gebruikt de sleutelkluis voor het beheren van verbindingsreeksen voor de Service Bus en toegangssleutels voor de opslagaccounts die worden gebruikt voor replicatie.
 
-Voordat u de eerste VM in het Azure Migrate-project repliceert, voert u het volgende script uit om de replicatie-infrastructuur in te richten. Met dit script worden de eerder genoemde resources ingericht en geconfigureerd, zodat u kunt beginnen met het migreren van uw VMware-VM's.
+Voordat u de eerste VM repliceert in het Azure Migrate project, voert u de volgende opdracht uit om de replicatie-infra structuur in te richten. Met deze opdracht worden de genoemde bronnen ingericht en geconfigureerd, zodat u kunt beginnen met het migreren van uw virtuele VMware-machines.
 
 > [!NOTE]
 > Per Azure Migrate-project worden alleen migraties naar één Azure-regio ondersteund. Als u dit script uitvoert, kunt u de doelregio voor de migratie van de VMware-VM's niet meer wijzigen.
-> Als u een nieuw apparaat in uw Azure Migrate-project configureert, moet u het script `Initialize-AzMigrateReplicationInfrastructure` uitvoeren.
+> U moet de `Initialize-AzMigrateReplicationInfrastructure` opdracht uitvoeren als u een nieuw apparaat in uw Azure migrate-project configureert.
 
-In het artikel initialiseren we de replicatie-infrastructuur, zodat we onze VM's naar de regio `Central US` kunnen migreren. U kunt [het bestand downloaden](https://github.com/Azure/azure-docs-powershell-samples/tree/master/azure-migrate/migrate-at-scale-vmware-agentles) uit de GitHub-opslagplaats of uitvoeren met behulp van het volgende fragment.
+In het artikel initialiseren we de replicatie-infrastructuur, zodat we onze VM's naar de regio `Central US` kunnen migreren.
 
 ```azurepowershell-interactive
-# Download the script from Azure Migrate GitHub repository
-Invoke-WebRequest https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/azure-migrate/migrate-at-scale-vmware-agentles/Initialize-AzMigrateReplicationInfrastructure.ps1 -OutFile .\AzMigrateReplicationinfrastructure.ps1
+# Initialize replication infrastructure for the current Migrate project
+Initialize-AzMigrateReplicationInfrastructure -ResourceGroupName $ResourceGroup.ResourceGroupName -ProjectName $MigrateProject. Name -Scenario agentlessVMware -TargetRegion "CentralUS" 
 
-# Run the script for initializing replication infrastructure for the current Migrate project
-.\AzMigrateReplicationInfrastructure.ps1 -ResourceGroupName $ResourceGroup.ResourceGroupName -ProjectName $MigrateProject.Name -Scenario agentlessVMware -TargetRegion CentralUS
 ```
 
 ## <a name="7-replicate-vms"></a>7. Vm's repliceren
 
-Na het voltooien van de detectie en initialisatie van de replicatie-infrastructuur, kunt u beginnen met de replicatie van VMware-VM's naar Azure. U kunt maximaal 300 replicaties tegelijk uitvoeren.
+Na het voltooien van de detectie en initialisatie van de replicatie-infrastructuur, kunt u beginnen met de replicatie van VMware-VM's naar Azure. U kunt Maxi maal 500 replicaties tegelijk uitvoeren.
 
 U kunt de replicatie-eigenschappen als volgt opgeven.
 
-- **Abonnement en resourcegroep van doel**: geef het abonnement en de resourcegroep op waarnaar de VM moet worden gemigreerd. Hiertoe geeft u de id van de resourcegroep op met behulp van de parameter `TargetResourceGroupId`.
-- **Virtueel netwerk en subnet van doel**: geef de id van het Azure Virtual Network en de naam van het subnet waarnaar de VM moet worden gemigreerd respectievelijk op met de parameters `TargetNetworkId` en `TargetSubnetName`.
-- **Naam van de doel-VM**: geef de naam van de Azure-VM die u wilt maken op met behulp van de parameter `TargetVMName`.
-- **Grootte van de doel-VM**: geef de grootte van de Azure-VM op die moet worden gebruikt voor de replicatie van de virtuele machine met behulp van de parameter `TargetVMSize`. Als u bijvoorbeeld een VM wilt migreren naar een D2_v2-VM in Azure, geeft u Standard_D2_v2 op als waarde voor `TargetVMSize`.
-- **Licentie**: als u Azure Hybrid Benefit wilt gebruiken voor uw Windows Server-computers die zijn gedekt met actieve Software Assurance of Windows Server-abonnementen, geeft u WindowsServer op als waarde voor de parameter `LicenseType`. Als dat niet het geval is, geeft u NoLicenseType op als waarde voor de parameter `LicenseType`.
-- **Besturingssysteemschijf**: geef de unieke id op van de schijf die de bootloader en het installatieprogramma van het besturingssysteem bevat. De schijf-id die moet worden gebruikt, is de unieke id (UUID) voor de schijf die wordt opgehaald met behulp van de cmdlet `Get-AzMigrateServer`.
-- **Schijftype**: geef de waarde voor de parameter `DiskType` als volgt op.
-    - Als u Premium beheerde schijven wilt gebruiken, geeft u Premium_LRS op als waarde voor de parameter `DiskType`.
-    - Als u standaard SSD-schijven wilt gebruiken, geeft u StandardSSD_LRS op als waarde voor de parameter `DiskType`.
-    - Als u standaard HDD-schijven wilt gebruiken, geeft u Standard_LRS op als waarde voor de parameter `DiskType`.
+- **Doel abonnement en resource groep** : Geef het abonnement en de resource groep op waarnaar de virtuele machine moet worden gemigreerd door de resource groep-ID op te geven met behulp van de ( `TargetResourceGroupId` )-para meter.
+- **Virtueel netwerk en subnet** : Geef de id op van de Azure-Virtual Network en de naam van het subnet waarnaar de virtuele machine moet worden gemigreerd met behulp van `TargetNetworkId` respectievelijk de para meter () en ( `TargetSubnetName` ).
+- **Doel-VM-naam** : Geef de naam op van de virtuele Azure-machine die moet worden gemaakt met behulp van de `TargetVMName` para meter ().
+- **Grootte** van de doel-VM: Geef de grootte van de Azure VM op die moet worden gebruikt voor de replicatie van de virtuele machine met behulp van ( `TargetVMSize` )-para meter. Als u bijvoorbeeld een VM wilt migreren naar D2_v2 VM in azure, geeft u de waarde voor ( `TargetVMSize` ) op als ' Standard_D2_v2 '.
+- **Licentie** : als u Azure Hybrid Benefit wilt gebruiken voor uw Windows Server-computers die worden gedekt door actieve Software Assurance-of Windows Server-abonnementen, geeft u de waarde voor de `LicenseType` para meter () op als **Windowsserver**. Geef anders de waarde voor de `LicenseType` para meter () op als ' NoLicenseType '.
+- **Besturingssysteemschijf**: geef de unieke id op van de schijf die de bootloader en het installatieprogramma van het besturingssysteem bevat. De schijf-ID die moet worden gebruikt, is de GUID-eigenschap (unieke id) voor de schijf die wordt opgehaald met behulp van de cmdlet [Get-AzMigrateDiscoveredServer](/powershell/module/az.migrate/get-azmigratediscoveredserver) .
+- **Schijf type** : Geef de waarde voor de `DiskType` para meter () als volgt op.
+    - Als u Premium-beheerde schijven wilt gebruiken, geeft u de para meter Premium_LRS als waarde voor ( `DiskType` ) op.
+    - Als u standaard SSD-schijven wilt gebruiken, geeft u de para meter StandardSSD_LRS als waarde voor ( `DiskType` ) op.
+    - Als u standaard HDD-schijven wilt gebruiken, geeft u de para meter Standard_LRS als waarde voor ( `DiskType` ) op.
 - **Infrastructuurredundantie**: geef de optie voor infrastructuurredundantie als volgt op.
-    - Beschikbaarheidszone, om de gemigreerde computer vast te maken aan een specifieke beschikbaarheidszone in de regio. Gebruik deze optie om servers te distribueren die een toepassingslaag met meerdere knooppunten in de beschikbaarheidszones vormen. Deze optie is alleen beschikbaar als de doelregio die voor de migratie is geselecteerd, ondersteuning biedt voor beschikbaarheidszones. Als u beschikbaarheidszones wilt gebruiken, geeft u de beschikbaarheidszone op als waarde voor de parameter `TargetAvailabilityZone`.
-    - Beschikbaarheidsset, om de gemigreerde machine in een beschikbaarheidsset te plaatsen. De doelresourcegroep die is geselecteerd, moet een of meer beschikbaarheidssets bevatten om deze optie te kunnen gebruiken. Als u een beschikbaarheidsset wilt gebruiken, geeft u de beschikbaarheidsset-id op voor de parameter `TargetAvailabilitySet`.
+    - Beschikbaarheidszone, om de gemigreerde computer vast te maken aan een specifieke beschikbaarheidszone in de regio. Gebruik deze optie om servers te distribueren die een toepassingslaag met meerdere knooppunten in de beschikbaarheidszones vormen. Deze optie is alleen beschikbaar als de doelregio die voor de migratie is geselecteerd, ondersteuning biedt voor beschikbaarheidszones. Als u beschikbaarheids zones wilt gebruiken, geeft u de para meter (waarde van de beschikbaarheids zone op `TargetAvailabilityZone` ) op.
+    - Beschikbaarheidsset, om de gemigreerde machine in een beschikbaarheidsset te plaatsen. De doelresourcegroep die is geselecteerd, moet een of meer beschikbaarheidssets bevatten om deze optie te kunnen gebruiken. Als u de beschikbaarheidsset wilt gebruiken, geeft u de para meter Availability set ID voor ( `TargetAvailabilitySet` ) op.
+ - **Opslag account voor diagnostische gegevens over opstarten** : als u een opslag account voor diagnostische gegevens over opstarten wilt gebruiken, geeft u de para meter id op ( `TargetBootDiagnosticStorageAccount` ).
+    -  Het opslag account dat wordt gebruikt voor diagnostische gegevens over opstarten moet zich in hetzelfde abonnement bevindt waarnaar u uw virtuele machines migreert.  
+    - Standaard is geen waarde ingesteld voor deze para meter. 
 
 ### <a name="replicate-vms-with-all-disks"></a>VM's repliceren met alle schijven
 
@@ -187,11 +182,11 @@ Write-Output $MigrateJob.State
 
 ### <a name="replicate-vms-with-select-disks"></a>VM's repliceren met specifieke schijven
 
-U kunt ook de schijven van de gedetecteerde virtuele machine selectief repliceren met behulp van de cmdlet [New-AzMigrateDiskMapping](/powershell/module/az.migrate/new-azmigratediskmapping) en als invoer voor de para meter **DiskToInclude** in de cmdlet [New-AzMigrateServerReplication](/powershell/module/az.migrate/new-azmigrateserverreplication) . U kunt de cmdlet `New-AzMigrateDiskMapping` ook gebruiken om verschillende doelschijftypen op te geven voor elke afzonderlijke schijf die moet worden gerepliceerd.
+U kunt ook de schijven van de gedetecteerde virtuele machine selectief repliceren met behulp van de cmdlet [New-AzMigrateDiskMapping](/powershell/module/az.migrate/new-azmigratediskmapping) en als invoer voor de `DiskToInclude` para meter () opgeven in de cmdlet [New-AzMigrateServerReplication](/powershell/module/az.migrate/new-azmigrateserverreplication) . U kunt ook de cmdlet [New-AzMigrateDiskMapping](/powershell/module/az.migrate/new-azmigratediskmapping) gebruiken om verschillende doel schijf typen op te geven voor elke afzonderlijke schijf die moet worden gerepliceerd.
 
-Geef waarden op voor de volgende parameters van de cmdlet `New-AzMigrateDiskMapping`.
+Geef waarden op voor de volgende para meters van de cmdlet [New-AzMigrateDiskMapping](/powershell/module/az.migrate/new-azmigratediskmapping) .
 
-- **DiskId** : geef de unieke id op voor de schijf die moet worden gemigreerd. De schijf-id die moet worden gebruikt, is de unieke id (UUID) voor de schijf die wordt opgehaald met behulp van de cmdlet `Get-AzMigrateServer`.
+- **DiskId** : geef de unieke id op voor de schijf die moet worden gemigreerd. De schijf-ID die moet worden gebruikt, is de GUID-eigenschap (unieke id) voor de schijf die wordt opgehaald met behulp van de cmdlet [Get-AzMigrateDiscoveredServer](/powershell/module/az.migrate/get-azmigratediscoveredserver) .
 - **IsOSDisk**: geef true (waar) op als de schijf die moet worden gemigreerd, de besturingssysteemschijf van de virtuele machine is, anders false (niet waar).
 - **DiskType**: geef het type schijf op dat moet worden gebruikt in Azure.
 
@@ -224,7 +219,7 @@ while (($MigrateJob.State -eq 'InProgress') -or ($MigrateJob.State -eq 'NotStart
         sleep 10;
         $MigrateJob = Get-AzMigrateJob -InputObject $MigrateJob
 }
-#Check if the Job completed successfully. The updated job state of a successfully completed job should be "Succeeded".
+# Check if the Job completed successfully. The updated job state of a successfully completed job should be "Succeeded".
 Write-Output $MigrateJob.State
 ```
 
@@ -238,24 +233,13 @@ Replicatie vindt als volgt plaats:
 
 Volg de status van de replicatie met behulp van de cmdlet [Get-AzMigrateServerReplication](/powershell/module/az.migrate/get-azmigrateserverreplication) .
 
-> [!NOTE]
-> De id van de gedetecteerde VM en de id van de replicatie-VM zijn twee verschillende unieke id's. Deze id's kunnen worden gebruikt voor het ophalen van gegevens van een replicatieserver.
 
-### <a name="monitor-replication-using-discovered-vm-identifier"></a>Replicatie controleren met behulp van de id van de gedetecteerde VM
 
 ```azurepowershell-interactive
-# Retrieve the replicating VM details by using the discovered VM identifier
-$ReplicatingServer = Get-AzMigrateServerReplication -DiscoveredMachineId $DiscoveredServer.ID
-```
+# List replicating VMs and filter the result for selecting a replicating VM. This cmdlet will not return all properties of the replicating VM.
+$ReplicatingServer = Get-AzMigrateServerReplication -ProjectName $MigrateProject.Name -ResourceGroupName $ResourceGroup.ResourceGroupName -MachineName MyTestVM
 
-### <a name="monitor-replication-using-replicating-vm-identifier"></a>Replicatie controleren met behulp van de id van de replicatie-VM
-
-```azurepowershell-interactive
-# List all replicating VMs in an Azure Migrate project and filter the result for selecting the replication VM. This cmdlet will not return all properties of the replicating VM.
-$ReplicatingServer = Get-AzMigrateServerReplication -ProjectName $MigrateProject.Name -ResourceGroupName $ResourceGroup.ResourceGroupName |
-                     Where-Object MachineName -eq $DiscoveredServer.DisplayName
-
-# Retrieve replicating VM details using replicating VM identifier
+# Retrieve all properties of a replicating VM 
 $ReplicatingServer = Get-AzMigrateServerReplication -TargetObjectID $ReplicatingServer.Id
 ```
 
@@ -336,25 +320,28 @@ Met [Azure Migrate-servermigratie](migrate-services-overview.md#azure-migrate-se
 
 De volgende eigenschappen kunnen worden bijgewerkt voor een VM.
 
-- **VM-naam** : Geef de naam op van de virtuele Azure-machine die moet worden gemaakt met behulp van de para meter **TargetVMName** .
-- **VM-grootte** : Geef de grootte van de Azure VM op die moet worden gebruikt voor de replicatie van de virtuele machine met behulp van de para meter **TargetVMSize** . Als u bijvoorbeeld een VM wilt migreren naar D2_v2 VM in azure, geeft u de waarde voor **TargetVMSize** als op `Standard_D2_v2` .
-- **Virtual Network** : Geef de id op van de Azure-Virtual Network waarnaar de virtuele machine moet worden gemigreerd met behulp van de para meter **TargetNetworkId** .
-- **Resource groep** : Geef de id op van de resource groep waarnaar de virtuele machine moet worden gemigreerd door de resource groep-ID op te geven met behulp van de para meter **TargetResourceGroupId** .
-- **Netwerk interface** -NIC-configuratie kan worden opgegeven met de cmdlet [New-AzMigrateNicMapping](/powershell/module/az.migrate/new-azmigratenicmapping) . Het object wordt vervolgens door gegeven aan de para meter **NicToUpdate** in de cmdlet [set-AzMigrateServerReplication](/powershell/module/az.migrate/set-azmigrateserverreplication) .
+- **VM-naam** : Geef de naam op van de virtuele machine van Azure die moet worden gemaakt met behulp van de `TargetVMName` para meter [].
+- **VM-grootte** : Geef de grootte van de Azure VM op die moet worden gebruikt voor de replicatie van de virtuele machine met behulp van de `TargetVMSize` para meter []. Als u bijvoorbeeld een virtuele machine naar D2_v2 virtuele machine in azure wilt migreren, geeft u de waarde voor [ `TargetVMSize` ] als op `Standard_D2_v2` .
+- **Virtual Network** : Geef de id op van de Azure-Virtual Network waarnaar de virtuele machine moet worden gemigreerd met behulp van de `TargetNetworkId` para meter [].
+- **Resource groep** : Geef de id op van de resource groep waarnaar de virtuele machine moet worden gemigreerd door de id van de resource groep op te geven met behulp van de `TargetResourceGroupId` para meter [].
+- **Netwerk interface** -NIC-configuratie kan worden opgegeven met de cmdlet [New-AzMigrateNicMapping](/powershell/module/az.migrate/new-azmigratenicmapping) . Het object wordt vervolgens een invoer door gegeven aan de `NicToUpdate` para meter [] in de cmdlet [set-AzMigrateServerReplication](/powershell/module/az.migrate/set-azmigrateserverreplication) .
 
-    - **IP-toewijzing wijzigen** : Geef het IPv4-adres op dat moet worden gebruikt als vaste IP voor de virtuele machine met behulp van de para meter **TargetNicIP** om een statisch IP-adressen voor een NIC op te geven. Als u een IP-adres voor een NIC dynamisch wilt toewijzen, geeft u `auto` de waarde voor de para meter **TargetNicIP** op.
-    - Gebruik waarden `Primary` `Secondary` of `DoNotCreate` voor de para meter **TargetNicSelectionType** om op te geven of de NIC primair of secundair moet zijn of niet moet worden gemaakt op de gemigreerde virtuele machine. Er kan slechts één NIC worden opgegeven als primaire NIC voor de VM.
+    - **IP-toewijzing wijzigen** : Geef het IPv4-adres op dat moet worden gebruikt als vaste IP voor de virtuele machine met behulp van de para meter [] om een statisch IP-adressen voor een NIC op te geven `TargetNicIP` . Als u een IP-adres voor een NIC dynamisch wilt toewijzen, geeft u `auto` de waarde voor de para meter **TargetNicIP** op.
+    - Gebruik waarden `Primary` `Secondary` of `DoNotCreate` `TargetNicSelectionType` para meter [] om op te geven of de NIC primair of secundair moet zijn of niet moet worden gemaakt op de gemigreerde VM. Er kan slechts één NIC worden opgegeven als primaire NIC voor de VM.
     - Als u een NIC primair wilt maken, moet u ook de NIC's opgeven die secundair of niet moeten worden gemaakt op de gemigreerde VM.
-    - Als u het subnet voor de NIC wilt wijzigen, geeft u de naam van het subnet op met behulp van de para meter **TargetNicSubnet** .
+    - Als u het subnet voor de NIC wilt wijzigen, geeft u de naam van het subnet op met behulp van de `TargetNicSubnet` para meter [].
 
- - **Beschikbaarheids zone** : Geef de waarde voor de beschikbaarheids zone op voor de para meter **TargetAvailabilityZone** om beschikbaarheids zones te gebruiken.
- - Beschikbaarheidsset voor het gebruik van **beschik** baarheid, geeft u de BESCHIKBAARHEIDSSET-id op voor de para meter **TargetAvailabilitySet** .
+ - **Beschikbaarheids zone** : als u beschikbaarheids zones wilt gebruiken, geeft u de waarde voor de beschikbaarheids zone op voor [ `TargetAvailabilityZone` ] para meter.
+ - **Beschik baarheid instellen: Geef** de BESCHIKBAARHEIDSSET-id voor de para meter [] op voor het gebruik van de beschikbaarheidsset `TargetAvailabilitySet` .
 
-De `Get-AzMigrateServerReplication` cmdlet retourneert een taak die kan worden gevolgd om de status van de bewerking te controleren.
+De cmdlet [Get-AzMigrateServerReplication](/powershell/module/az.migrate/get-azmigrateserverreplication) retourneert een taak die kan worden gevolgd om de status van de bewerking te controleren.
 
 ```azurepowershell-interactive
-# Retrieve the replicating VM details by using the discovered VM identifier
-$ReplicatingServer = Get-AzMigrateServerReplication -DiscoveredMachineId $DiscoveredServer.ID
+# List replicating VMs and filter the result for selecting a replicating VM. This cmdlet will not return all properties of the replicating VM.
+$ReplicatingServer = Get-AzMigrateServerReplication -ProjectName $MigrateProject.Name -ResourceGroupName $ResourceGroup.ResourceGroupName -MachineName MyTestVM
+
+# Retrieve all properties of a replicating VM 
+$ReplicatingServer = Get-AzMigrateServerReplication -TargetObjectID $ReplicatingServer.Id
 
 # View NIC details of the replicating server
 Write-Output $ReplicatingServer.ProviderSpecificDetail.VMNic
@@ -380,20 +367,11 @@ while (($UpdateJob.State -eq 'InProgress') -or ($UpdateJob.State -eq 'NotStarted
         sleep 10;
         $UpdateJob = Get-AzMigrateJob -InputObject $UpdateJob
 }
-#Check if the Job completed successfully. The updated job state of a successfully completed job should be "Succeeded".
+# Check if the Job completed successfully. The updated job state of a successfully completed job should be "Succeeded".
 Write-Output $UpdateJob.State
 ```
 
-U kunt ook alle replicatieservers in een Azure Migrate-project weergeven en vervolgens de replicatie-id van de VM gebruiken om de VM-eigenschappen bij te werken.
 
-```azurepowershell-interactive
-# List all replicating VMs in an Azure Migrate project and filter the result for selecting the replication VM. This cmdlet will not return all properties of the replicating VM.
-$ReplicatingServer = Get-AzMigrateServerReplication -ProjectName $MigrateProject.Name -ResourceGroupName $ResourceGroup.ResourceGroupName |
-                     Where-Object MachineName -eq $DiscoveredServer.DisplayName
-
-# Retrieve replicating VM details using replicating VM identifier
-$ReplicatingServer = Get-AzMigrateServerReplication -TargetObjectID $ReplicatingServer.Id
-```
 
 ## <a name="11-run-a-test-migration"></a>11. een test migratie uitvoeren
 
@@ -403,7 +381,7 @@ Wanneer de replicatie van verschillen begint, kunt u een testmigratie voor de vi
 - Met een testmigratie wordt de migratie gesimuleerd door een Azure-VM te maken met behulp van gerepliceerde gegevens (die meestal worden gemigreerd naar een niet-productie-VNet in uw Azure-abonnement).
 - U kunt de gerepliceerde Azure-VM gebruiken om de migratie te valideren, apps te testen en problemen op te lossen voordat u de volledige migratie uitvoert.
 
-Selecteer de Azure-Virtual Network die moet worden gebruikt voor het testen door de ID van het virtuele netwerk op te geven met behulp van de para meter **TestNetworkID** .
+Selecteer de Azure-Virtual Network die moet worden gebruikt voor het testen door de ID van het virtuele netwerk op te geven met behulp van de `TestNetworkID` para meter [].
 
 ```azurepowershell-interactive
 # Retrieve the Azure virtual network created for testing
@@ -418,7 +396,7 @@ while (($TestMigrationJob.State -eq 'InProgress') -or ($TestMigrationJob.State -
         sleep 10;
         $TestMigrationJob = Get-AzMigrateJob -InputObject $TestMigrationJob
 }
-#Check if the Job completed successfully. The updated job state of a successfully completed job should be "Succeeded".
+# Check if the Job completed successfully. The updated job state of a successfully completed job should be "Succeeded".
 Write-Output $TestMigrationJob.State
 ```
 
@@ -434,7 +412,7 @@ while (($CleanupTestMigrationJob.State -eq "InProgress") -or ($CleanupTestMigrat
         sleep 10;
         $CleanupTestMigrationJob = Get-AzMigrateJob -InputObject $CleanupTestMigrationJob
 }
-#Check if the Job completed successfully. The updated job state of a successfully completed job should be "Succeeded".
+# Check if the Job completed successfully. The updated job state of a successfully completed job should be "Succeeded".
 Write-Output $CleanupTestMigrationJob.State
 ```
 
@@ -442,7 +420,7 @@ Write-Output $CleanupTestMigrationJob.State
 
 Nadat u hebt geverifieerd dat de testmigratie naar verwachting werkt, kunt u de replicatieserver migreren met de volgende cmdlet. De cmdlet retourneert een taak die kan worden gevolgd om de status van de bewerking te controleren.
 
-Als u de bron server niet wilt uitschakelen, gebruikt u de para meter **TurnOffSourceServer** niet.
+Als u de bron server niet wilt uitschakelen, gebruikt u de `TurnOffSourceServer` para meter [] niet.
 
 ```azurepowershell-interactive
 # Start migration for a replicating server and turn off source server as part of migration
@@ -472,7 +450,7 @@ Write-Output $MigrateJob.State
            sleep 10;
            $StopReplicationJob = Get-AzMigrateJob -InputObject $StopReplicationJob
    }
-   #Check if the Job completed successfully. The updated job state of a successfully completed job should be "Succeeded".
+   # Check if the Job completed successfully. The updated job state of a successfully completed job should be "Succeeded".
    Write-Output $StopReplicationJob.State
    ```
 

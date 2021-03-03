@@ -9,12 +9,12 @@ ms.date: 09/08/2020
 ms.topic: how-to
 ms.author: nitinme
 author: nitinme
-ms.openlocfilehash: 8a4b86fb8fa5a87283178d957e07617b908e6286
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: aeb84fca47dbf2922f17a3e8931e3158f9ee2cca
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98790898"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101706772"
 ---
 # <a name="sign-in-to-luis-portal"></a>Aanmelden bij de LUIS-portal
 
@@ -48,7 +48,7 @@ Gebruik dit artikel om aan de slag te gaan met de LUIS-Portal en een ontwerp bro
     * **Naam van de Azure-resource groep** : een aangepaste naam voor de resource groep die u in uw abonnement hebt gekozen. Met resourcegroepen kunt u Azure-resources groeperen voor toegang en beheer. Als u momenteel geen resource groep in uw abonnement hebt, mag u er geen in de LUIS-portal maken. Ga naar [Azure Portal](https://ms.portal.azure.com/#create/Microsoft.ResourceGroup) om er nog een te maken, gaat u naar Luis om door te gaan met het aanmeldings proces.
     * **Azure-resource naam** : een aangepaste naam die u kiest, die wordt gebruikt als onderdeel van de URL voor uw ontwerp transacties. De resource naam mag alleen alfanumerieke tekens bevatten `-` en mag niet beginnen of eindigen met `-` . Als er andere symbolen in de naam zijn opgenomen, mislukt het maken van een resource.
     * **Locatie** : Kies voor het schrijven van uw toepassingen op een van de [drie ontwerp locaties](./luis-reference-regions.md) die momenteel worden ondersteund door Luis, waaronder: West-VS, Europa-West en Oost-Australië
-    * **Prijs categorie** : standaard wordt de prijs categorie F0 authoring geselecteerd, omdat dit de aanbevolen instelling is. Maak een door de [klant beheerde sleutel](./luis-encryption-of-data-at-rest.md#customer-managed-keys-for-language-understanding) van de Azure portal als u op zoek bent naar een extra beveiligingslaag.
+    * **Prijs categorie** : standaard wordt de prijs categorie F0 authoring geselecteerd, omdat dit de aanbevolen instelling is. Maak een door de [klant beheerde sleutel](./encrypt-data-at-rest.md#customer-managed-keys-for-language-understanding) van de Azure portal als u op zoek bent naar een extra beveiligingslaag.
 8. U bent nu aangemeld bij LUIS. U kunt nu beginnen met het maken van toepassingen.
 
 ## <a name="troubleshooting"></a>Problemen oplossen

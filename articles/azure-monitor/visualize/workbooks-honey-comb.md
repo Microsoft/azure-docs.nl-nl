@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 09/18/2020
 ms.author: lagayhar
-ms.openlocfilehash: 0c657d84144ee7bd69a6de1d5d2e1e769dc59f4d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: c91912f711b912c54c1673f2f92e998b4d9ea9db
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609284"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101736930"
 ---
 # <a name="honey-comb-visualizations"></a>Honing kam-visualisaties
 
@@ -95,4 +95,4 @@ Honing kam-auteurs kunnen opgeven welke inhoud wordt verplaatst naar de verschil
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over het maken [van een samengestelde balk renderer in werkmappen](workbooks-composite-bar.md).
-- Meer informatie over het [importeren van Azure monitor logboek gegevens in Power bi](../platform/powerbi.md).
+- Meer informatie over het [importeren van Azure monitor logboek gegevens in Power bi](./powerbi.md).

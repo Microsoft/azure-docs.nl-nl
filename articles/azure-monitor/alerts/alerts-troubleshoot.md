@@ -6,18 +6,18 @@ ms.author: ofmanor
 ms.topic: reference
 ms.date: 03/16/2020
 ms.subservice: alerts
-ms.openlocfilehash: 3ee29e6c65dcd2b2226dc4dc7844b3b02a571a4f
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: d3f8da7e985e62ce0b40c6dddcd137cce8561e59
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609565"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717856"
 ---
 # <a name="troubleshooting-problems-in-azure-monitor-alerts"></a>Problemen met Azure Monitor waarschuwingen oplossen
 
 In dit artikel worden veelvoorkomende problemen met Azure Monitor waarschuwingen en meldingen besproken.
 
-Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Hiermee kunt u problemen identificeren en verhelpen voordat de gebruikers van uw systeem ze merken. Zie [overzicht van waarschuwingen in Microsoft Azure](../platform/alerts-overview.md)voor meer informatie over waarschuwingen.
+Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Hiermee kunt u problemen identificeren en verhelpen voordat de gebruikers van uw systeem ze merken. Zie [overzicht van waarschuwingen in Microsoft Azure](./alerts-overview.md)voor meer informatie over waarschuwingen.
 
 Raadpleeg de onderstaande artikelen als u een probleem ondervindt met het activeren van een waarschuwing of het niet starten van de verwachte. U kunt ' geactiveerde ' waarschuwingen weer geven in de Azure Portal.
 
@@ -36,7 +36,7 @@ Als u een geactiveerde waarschuwing in de Azure-portal ziet, maar u het e-mailbe
 
 1. **Is de e-mail onderdrukt door een [actie regel](../alerts/alerts-action-rules.md)**?
 
-    Controleer door op de geactiveerde waarschuwing in de portal te klikken en bekijk het tabblad geschiedenis voor onderdrukte [actiegroepen](../platform/action-groups.md):
+    Controleer door op de geactiveerde waarschuwing in de portal te klikken en bekijk het tabblad geschiedenis voor onderdrukte [actiegroepen](./action-groups.md):
 
     ![Geschiedenis van onderdrukking van waarschuwings actie regel](media/alerts-troubleshoot/history-action-rule.png)
 
@@ -92,7 +92,7 @@ Als u een geactiveerde waarschuwing in de portal ziet, maar geen sms-bericht, sp
 
 1. **Is de actie onderdrukt door een [actie regel](../alerts/alerts-action-rules.md)?**
 
-    Controleer door op de geactiveerde waarschuwing in de portal te klikken en bekijk het tabblad geschiedenis voor onderdrukte [actiegroepen](../platform/action-groups.md): 
+    Controleer door op de geactiveerde waarschuwing in de portal te klikken en bekijk het tabblad geschiedenis voor onderdrukte [actiegroepen](./action-groups.md): 
 
     ![Geschiedenis van onderdrukking van waarschuwings actie regel](media/alerts-troubleshoot/history-action-rule.png)
 
@@ -125,7 +125,7 @@ Als u een geactiveerde waarschuwing in de portal ziet, maar de geconfigureerde a
 
 1. **Is de actie onderdrukt door een actie regel?**
 
-    Controleer door op de geactiveerde waarschuwing in de portal te klikken en bekijk het tabblad geschiedenis voor onderdrukte [actiegroepen](../platform/action-groups.md):
+    Controleer door op de geactiveerde waarschuwing in de portal te klikken en bekijk het tabblad geschiedenis voor onderdrukte [actiegroepen](./action-groups.md):
 
     ![Geschiedenis van onderdrukking van waarschuwings actie regel](media/alerts-troubleshoot/history-action-rule.png)
  
@@ -133,15 +133,15 @@ Als u een geactiveerde waarschuwing in de portal ziet, maar de geconfigureerde a
 
 1. **Is er geen webhook geactiveerd?**
 
-    1. **Zijn de bron-IP-adressen geblokkeerd?**
+    1. **Zijn de IP-bronadressen geblokkeerd?**
     
-       Voeg de [IP-adressen](../platform/action-groups.md#action-specific-information) waarvan de webhook wordt aangeroepen toe aan uw acceptatie lijst.
+       Voeg de [IP-adressen](./action-groups.md#action-specific-information) waarvan de webhook wordt aangeroepen toe aan uw acceptatie lijst.
 
-    1. **Werkt uw webhook-eind punt correct?**
+    1. **Werkt uw webhook-eindpunt correct?**
 
        Controleer of het geconfigureerde webhook-eindpunt correct is en of het eindpunt correct werkt. Controleer de logboeken van uw webhook of instrumenteer de code ervan, zodat u deze kunt onderzoeken (bijvoorbeeld de binnenkomende nettolading registreren).
 
-    1. **Kunt u vertraging of micro soft-teams aanroepen?**  
+    1. **Roept u Slack of Microsoft Teams aan?**  
     Elk van deze eindpunten verwacht een specifieke JSON-indeling. Volg [deze instructies](../alerts/action-groups-logic-app.md) om in plaats daarvan een actie van een logische app te configureren.
 
     1. **Is uw webhook niet meer reageert of fouten geretourneerd?** 
@@ -180,12 +180,12 @@ Als u de waarschuwing hebt ontvangen, maar denkt dat sommige velden ontbreken of
 
     Controleer of de indeling die u voor de actie hebt opgegeven, overeenkomt met uw verwachting. Het is bijvoorbeeld mogelijk dat u code hebt ontwikkeld die reageert op waarschuwingen (webhook, functie, logische app, enzovoort), en waarvoor u een bepaalde indeling verwacht, maar u of iemand anders later in de actie een andere indeling opgeeft.  
 
-    Controleer ook de payload-indeling (JSON) voor [waarschuwingen voor activiteitenlogboeken](../alerts/activity-log-alerts-webhook.md), voor [zoekwaarschuwingen voor logboeken](../alerts/alerts-log-webhook.md) (zowel Application Insights als Log Analytics), voor [metrische waarschuwingen](alerts-metric-near-real-time.md#payload-schema), voor het [algemene schema voor waarschuwingen](../alerts/alerts-common-schema-definitions.md), en voor de afgeschafte [klassieke metrische waarschuwingen](../platform/alerts-webhooks.md).
+    Controleer ook de payload-indeling (JSON) voor [waarschuwingen voor activiteitenlogboeken](../alerts/activity-log-alerts-webhook.md), voor [zoekwaarschuwingen voor logboeken](../alerts/alerts-log-webhook.md) (zowel Application Insights als Log Analytics), voor [metrische waarschuwingen](alerts-metric-near-real-time.md#payload-schema), voor het [algemene schema voor waarschuwingen](../alerts/alerts-common-schema-definitions.md), en voor de afgeschafte [klassieke metrische waarschuwingen](./alerts-webhooks.md).
 
  
 1. **Waarschuwingen voor activiteiten logboeken: is de informatie beschikbaar in het activiteiten logboek?** 
 
-    [Waarschuwingen voor activiteiten logboeken](../platform/activity-log-alerts.md) zijn waarschuwingen die zijn gebaseerd op gebeurtenissen die worden geschreven naar het Azure-activiteiten logboek, zoals gebeurtenissen over het maken, bijwerken of verwijderen van Azure-resources, service status-en resource status gebeurtenissen of bevindingen van Azure Advisor en Azure Policy. Als u een waarschuwing hebt ontvangen op basis van het activiteitenlogboek, maar sommige velden die u nodig hebt ontbreken of onjuist zijn, moet u eerst de gebeurtenissen in het activiteitenlogboek zelf controleren. Als de Azure-resource de velden die u zoekt niet in de gebeurtenis in het activiteitenlogboek heeft geregistreerd, worden deze velden niet opgenomen in de bijbehorende waarschuwing. 
+    [Waarschuwingen voor activiteiten logboeken](./activity-log-alerts.md) zijn waarschuwingen die zijn gebaseerd op gebeurtenissen die worden geschreven naar het Azure-activiteiten logboek, zoals gebeurtenissen over het maken, bijwerken of verwijderen van Azure-resources, service status-en resource status gebeurtenissen of bevindingen van Azure Advisor en Azure Policy. Als u een waarschuwing hebt ontvangen op basis van het activiteitenlogboek, maar sommige velden die u nodig hebt ontbreken of onjuist zijn, moet u eerst de gebeurtenissen in het activiteitenlogboek zelf controleren. Als de Azure-resource de velden die u zoekt niet in de gebeurtenis in het activiteitenlogboek heeft geregistreerd, worden deze velden niet opgenomen in de bijbehorende waarschuwing. 
 
 ## <a name="action-rule-is-not-working-as-expected"></a>Actieregel werkt niet zoals verwacht 
 
@@ -250,4 +250,4 @@ Als er een fout is opgetreden bij het maken, bijwerken of verwijderen van een [a
 
 ## <a name="next-steps"></a>Volgende stappen
 - Als u een logboek waarschuwing gebruikt, raadpleegt u ook [logboek waarschuwingen voor problemen oplossen](./alerts-troubleshoot-log.md).
-- Ga terug naar de [Azure Portal](https://portal.azure.com) om te controleren of u het probleem hebt opgelost met bovenstaande richt lijnen 
+- Ga terug naar de [Azure Portal](https://portal.azure.com) om te controleren of u het probleem hebt opgelost met bovenstaande richt lijnen

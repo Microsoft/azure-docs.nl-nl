@@ -4,12 +4,12 @@ description: In dit artikel vindt u informatie over de bewakings-en meldings mog
 ms.topic: conceptual
 ms.date: 03/05/2019
 ms.assetid: 86ebeb03-f5fa-4794-8a5f-aa5cbbf68a81
-ms.openlocfilehash: 74669a1347fac9f61d028d9cb1f3da174bb71f96
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 2273b66be88cb22a15d0779ed2918ba3d94da1ce
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99550337"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101713368"
 ---
 # <a name="monitoring-azure-backup-workloads"></a>Bewaking Azure Backup werk belastingen
 
@@ -119,6 +119,18 @@ Als de frequentie is ingesteld op een samen vatting per uur en er binnen een uur
 Als u een actieve waarschuwing wilt inactief maken/oplossen, kunt u het lijst item selecteren dat overeenkomt met de waarschuwing die u wilt deactiveren. Hiermee opent u een scherm waarin gedetailleerde informatie over de waarschuwing wordt weer gegeven, met een knop **actief** aan de bovenkant. Als u deze knop selecteert, wordt de status van de waarschuwing gewijzigd in **inactief**. U kunt ook een waarschuwing inactief maken door met de rechter muisknop te klikken op het item in de lijst dat overeenkomt met die waarschuwing en **inactief** te selecteren.
 
 ![Waarschuwing voor RS-kluis inactivering](media/backup-azure-monitoring-laworkspace/vault-alert-inactivation.png)
+
+## <a name="azure-monitor-alerts-for-azure-backup-preview"></a>Azure Monitor waarschuwingen voor Azure Backup (preview-versie)
+
+Azure Backup biedt ook waarschuwingen via Azure Monitor, zodat gebruikers een consistente ervaring kunnen hebben voor waarschuwings beheer in verschillende Azure-Services, inclusief back-ups. Met Azure Monitor waarschuwingen kunt u waarschuwingen routeren naar elk meldings kanaal dat wordt ondersteund door Azure Backup zoals e-mail, ITSM, webhook, logische app, enzovoort.
+
+Deze functie is momenteel beschikbaar voor Azure-data bases voor PostgreSQL-server, Azure-blobs en Azure Managed Disks. Er worden waarschuwingen gegenereerd voor de volgende scenario's en kunnen worden geopend door naar een back-upkluis te gaan en te klikken op het menu-item **waarschuwingen** :
+
+- Back-upgegevens verwijderen
+- Back-upfout (als u waarschuwingen wilt ontvangen voor een back-upfout, moet u de AFEC-markering met de naam **EnableAzureBackupJobFailureAlertsToAzureMonitor** registreren via de preview-Portal)
+- Fout bij het herstellen (als u waarschuwingen wilt ontvangen voor het herstellen is mislukt, moet u de AFEC-markering met de naam **EnableAzureBackupJobFailureAlertsToAzureMonitor** registreren via de preview-Portal)
+
+Zie [overzicht van waarschuwingen in azure](https://docs.microsoft.com/azure/azure-monitor/alerts/alerts-overview)voor meer informatie over Azure monitor waarschuwingen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

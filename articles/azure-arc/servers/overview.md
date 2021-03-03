@@ -4,12 +4,12 @@ description: Lees meer informatie over het gebruik van Azure Arc voor servers om
 keywords: azure automation, DSC, powershell, configuratie van gewenste status, updatebeheer, bijhouden van wijzigingen, inventaris, runbooks, python, grafisch, hybride
 ms.date: 02/18/2021
 ms.topic: overview
-ms.openlocfilehash: 615835e5a11fac0b09a56e10084249ea493d794d
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 5692dfaceb15086b04ee951b8ecdf88f73c7d122
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101651107"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686220"
 ---
 # <a name="what-is-azure-arc-enabled-servers"></a>Wat zijn servers met Azure Arc?
 
@@ -57,7 +57,7 @@ Als de machine bijvoorbeeld is geregistreerd bij Azure Arc in de regio VS - oost
 
 ### <a name="supported-environments"></a>Ondersteunde omgevingen
 
-Arc ingeschakelde servers ondersteunen het beheer van fysieke servers en virtuele machines die *buiten* Azure worden gehost. Zie [agent-overview. MD # supported-environments] (Engelstalig) voor specifieke details over welke hybride Cloud omgevingen die virtuele machines hosten, worden ondersteund.
+Arc ingeschakelde servers ondersteunen het beheer van fysieke servers en virtuele machines die *buiten* Azure worden gehost. Zie [verbonden computer agent-vereisten](agent-overview.md#supported-environments)voor specifieke details over de hybride Cloud omgevingen die virtuele machines hosten.
 
 > [!NOTE]
 > Arc ingeschakelde servers zijn niet ontworpen of worden ondersteund om het beheer van virtuele machines die in Azure worden uitgevoerd, in te scha kelen.

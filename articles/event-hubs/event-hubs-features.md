@@ -2,13 +2,13 @@
 title: Overzicht van functies-Azure Event Hubs | Microsoft Docs
 description: In dit artikel vindt u informatie over de functies en terminologie van Azure Event Hubs.
 ms.topic: article
-ms.date: 06/23/2020
-ms.openlocfilehash: 8860a8aa83a17b12236dd47d79479a82846fa8a8
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.date: 02/19/2021
+ms.openlocfilehash: 8bb63bfdbeb5b875b1e461fbd93fb48dcbb43054
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98791943"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101739072"
 ---
 # <a name="features-and-terminology-in-azure-event-hubs"></a>Functies en terminologie in azure Event Hubs
 
@@ -47,7 +47,12 @@ Event Hubs zorgt ervoor dat alle gebeurtenissen die een partitie sleutel waarde 
 
 ### <a name="event-retention"></a>Bewaren van gebeurtenissen
 
-Gepubliceerde gebeurtenissen worden verwijderd uit een event hub op basis van een configureerbaar Bewaar beleid op basis van tijd. De standaard waarde en de kortst mogelijke Bewaar periode is 1 dag (24 uur). Voor Event Hubs Standard geldt een maximale Bewaar periode van 7 dagen. Voor Event Hubs Dedicated is de maximale Bewaar periode 90 dagen.
+Gepubliceerde gebeurtenissen worden verwijderd uit een event hub op basis van een configureerbaar Bewaar beleid op basis van tijd. Hier volgen enkele belang rijke punten:
+
+- De **standaard** waarde en de **kortst** mogelijke Bewaar periode is **1 dag (24 uur)**.
+- Voor Event Hubs **Standard** geldt een maximale Bewaar periode van **7 dagen**. 
+- Voor Event Hubs **toegewezen**, is de maximale bewaar periode **90 dagen**.
+- Als u de Bewaar periode wijzigt, is dit van toepassing op alle berichten, met inbegrip van berichten die al in de Event Hub staan. 
 
 > [!NOTE]
 > Event Hubs is een real-time engine voor gebeurtenis stroom en is niet ontworpen om te worden gebruikt in plaats van een Data Base en/of als een permanente Store voor oneindige gebeurtenis stromen. 
@@ -117,6 +122,9 @@ Een *Offset* is de positie van een gebeurtenis binnen een partitie. U kunt een o
 *Het plaatsen van controlepunten* is een proces waarbij lezers hun positie binnen de gebeurtenisvolgorde van een partitie markeren of vastleggen. Het plaatsen van controlepunten is de verantwoordelijkheid van de consumer en vindt plaats per partitie binnen een consumergroep. Deze verantwoordelijkheid houdt in dat elke partitielezer voor elke consumergroep de huidige positie in de gebeurtenisstroom moet bijhouden en de service kan informeren wanneer de gegevensstroom is voltooid.
 
 Als een lezer van een partitie is losgekoppeld en er vervolgens weer verbinding wordt gemaakt, begint het lezen bij het controlepunt dat eerder is verzonden door de laatste lezer van de betreffende partitie in de consumergroep. Wanneer de lezer verbinding maakt, wordt de offset aan de Event Hub door gegeven om de locatie op te geven waar u wilt beginnen met lezen. Op deze manier kunt u het plaatsen van controlepunten gebruiken om gebeurtenissen te markeren als 'voltooid' door downstream-toepassingen. Bovendien beschikt u met controlepunten over tolerantie bij een failover tussen lezers die op verschillende apparaten worden uitgevoerd. Het is mogelijk om terug te keren naar de oudere gegevens door een lagere offset van dit controlepuntproces op te geven. Via dit mechanisme zorgt het plaatsen van controlepunten voor failover-tolerantie en voor herhaling van gebeurtenisstromen.
+
+> [!IMPORTANT]
+> Offsets worden verzorgd door de Event Hubs-service. Het is de verantwoordelijkheid van de gebruiker om een controle punt te maken wanneer gebeurtenissen worden verwerkt.
 
 > [!NOTE]
 > Als u Azure Blob Storage gebruikt als controlepunt opslag in een omgeving die ondersteuning biedt voor een andere versie van de Storage BLOB SDK dan die welke meestal beschikbaar zijn op Azure, moet u code gebruiken om de API-versie van de opslag service te wijzigen in de specifieke versie die wordt ondersteund door die omgeving. Als u bijvoorbeeld [Event hubs uitvoert op een Azure stack hub versie 2002](/azure-stack/user/event-hubs-overview), is de hoogste beschik bare versie van de opslag service versie 2017-11-09. In dit geval moet u code gebruiken om de API-versie van de Storage-service te richten op 2017-11-09. Zie voor een voor beeld van het richten op een specifieke opslag-API-versie de volgende voor beelden op GitHub: 

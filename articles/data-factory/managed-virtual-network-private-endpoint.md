@@ -9,12 +9,12 @@ ms.custom:
 - seo-lt-2019
 - references_regions
 ms.date: 07/15/2020
-ms.openlocfilehash: d950b05dd34788c2c5ef0b34b8ec8ac0b20ad4b6
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: b6000d8ff3eb35d678a94adc021efcadf8a77f81
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100379570"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699625"
 ---
 # <a name="azure-data-factory-managed-virtual-network-preview"></a>Beheerde Virtual Network Azure Data Factory (preview-versie)
 
@@ -43,7 +43,7 @@ Voor delen van het gebruik van beheerde Virtual Network:
 
 ## <a name="managed-private-endpoints"></a>Beheerde privé-eindpunten
 
-Beheerde privé-eind punten zijn particuliere eind punten die zijn gemaakt in de Azure Data Factory beheerde Virtual Network een persoonlijke koppeling naar Azure-resources tot stand brengen. Azure Data Factory deze privé-eind punten in uw naam beheert. 
+Beheerde privé-eind punten zijn particuliere eind punten die zijn gemaakt in de Azure Data Factory beheerde Virtual Network een persoonlijke koppeling naar Azure-resources tot stand brengen. Deze privé-eindpunten worden namens u beheerd in Azure Data Factory. 
 
 ![Nieuw Beheerd privé-eindpunt](./media/tutorial-copy-data-portal-private/new-managed-private-endpoint.png)
 
@@ -108,11 +108,13 @@ De onderstaande gegevens bronnen worden ondersteund om verbinding te maken via e
 
 ### <a name="outbound-communications-through-public-endpoint-from-adf-managed-virtual-network"></a>Uitgaande communicatie via het open bare eind punt van de Virtual Network voor ADF beheerd
 - Alleen poort 443 wordt geopend voor uitgaande communicatie.
-- Azure Storage en Azure Data Lake Gen2 worden niet ondersteund om te worden verbonden via een openbaar eind punt van Virtual Network met ADF-beheer.
+- Azure Storage en Azure Data Lake Gen2 worden niet ondersteund om te worden verbonden via een openbaar eindpunt vanuit door ADF beheerd Virtual Network.
 
 ### <a name="linked-service-creation-of-azure-key-vault"></a>Het maken van een gekoppelde service van Azure Key Vault 
 - Wanneer u een gekoppelde service voor Azure Key Vault maakt, is er geen Azure Integration Runtime-verwijzing. U kunt geen persoonlijk eind punt maken tijdens het maken van de gekoppelde service van Azure Key Vault. Maar wanneer u een gekoppelde service maakt voor gegevens archieven die verwijst naar Azure Key Vault gekoppelde service en deze gekoppelde service verwijst naar Azure Integration Runtime met beheerde Virtual Network ingeschakeld, kunt u tijdens het maken een persoonlijk eind punt voor de gekoppelde Azure Key Vault-service maken. 
 - **Test verbindings** bewerking voor de gekoppelde Service van Azure Key Vault valideert alleen de URL-indeling, maar voert geen netwerk bewerking uit.
+- De kolom **die gebruikmaakt van een persoonlijk eind punt** , wordt altijd weer gegeven als leeg, zelfs als u een persoonlijk eind punt maakt voor Azure Key Vault.
+![Persoonlijk eind punt voor Azure](./media/managed-vnet/akv-pe.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 

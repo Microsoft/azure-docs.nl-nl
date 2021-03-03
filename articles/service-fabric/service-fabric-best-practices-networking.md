@@ -5,12 +5,12 @@ author: chrpap
 ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: chrpap
-ms.openlocfilehash: b8db69792b31fd82646757423e669e39e8539d06
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: caba864e77822ccab649f694df7e63e0ee5d6e51
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91630699"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101732561"
 ---
 # <a name="networking"></a>Netwerken
 
@@ -39,7 +39,7 @@ Maximaliseer de prestaties van uw virtuele machine met versneld netwerken door d
 ```
 Service Fabric cluster kan worden ingericht op [Linux met versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md)en [Windows met versneld netwerken](../virtual-network/create-vm-accelerated-networking-powershell.md).
 
-Versnelde netwerken worden ondersteund voor virtuele machines uit de Azure-machine serie: D/DSv2, D/DSv3, E/ESv3, F/FS, FSv2 en MS/MMS. Versneld netwerken zijn getest met behulp van de Standard_DS8_v3 SKU op 01/23/2019 voor een Service Fabric Windows-cluster en gebruiken Standard_DS12_v2 op 01/29/2019 voor een Service Fabric Linux-cluster.
+Versnelde netwerken worden ondersteund voor virtuele machines uit de Azure-machine serie: D/DSv2, D/DSv3, E/ESv3, F/FS, FSv2 en MS/MMS. Versneld netwerken zijn getest met behulp van de Standard_DS8_v3 SKU op 01/23/2019 voor een Service Fabric Windows-cluster en gebruiken Standard_DS12_v2 op 01/29/2019 voor een Service Fabric Linux-cluster. Houd er rekening mee dat versneld netwerken ten minste 4 Vcpu's nodig hebben. 
 
 Als u versneld netwerken op een bestaand Service Fabric cluster wilt inschakelen, moet u eerst [een service Fabric cluster uitschalen door een schaalset voor virtuele machines toe te voegen](./virtual-machine-scale-set-scale-node-type-scale-out.md), zodat u het volgende kunt doen:
 1. Een NodeType inrichten met versneld netwerken ingeschakeld
@@ -62,7 +62,7 @@ Er is een uitbrei ding van de infra structuur vereist om versnelde netwerken in 
 De basis regels hier zijn het minimum voor een beveiligings vergrendeling van een door Azure beheerd Service Fabric cluster. Het openen van de volgende poorten of het goed keuren van de IP/URL verhindert de juiste werking van het cluster en wordt mogelijk niet ondersteund. Als deze regel is ingesteld, is deze strikt vereist voor het gebruik van [automatische upgrades van besturings systeem installatie kopieën](../virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade.md), anders moeten extra poorten worden geopend.
 
 ### <a name="inbound"></a>Inkomend 
-|Prioriteit   |Naam               |Poort        |Protocol  |Bron             |Doel       |Bewerking   
+|Prioriteit   |Name               |Poort        |Protocol  |Bron             |Doel       |Bewerking   
 |---        |---                |---         |---       |---                |---               |---
 |3900       |Azure              |19080       |TCP       |Internet           |VirtualNetwork    |Toestaan
 |3910       |Client             |19000       |TCP       |Internet           |VirtualNetwork    |Toestaan
@@ -83,7 +83,7 @@ Meer informatie over de regels voor binnenkomende beveiliging:
 
 * **Cluster**. Gebruikt voor communicatie tussen knoop punten; mag nooit worden geblokkeerd.
 
-* **Tijdelijke**. Service Fabric gebruikt een deel van deze poorten als toepassings poorten en het resterende onderdeel is beschikbaar voor het besturings systeem. Dit bereik wordt ook toegewezen aan het bestaande bereik in het besturings systeem, dus voor alle doel einden kunt u de bereiken in het voor beeld gebruiken. Zorg ervoor dat het verschil tussen de begin-en eind poort ten minste 255 is. U kunt conflicten ondertreden als dit verschil te laag is, omdat dit bereik wordt gedeeld met het besturings systeem. Als u het geconfigureerde dynamische poort bereik wilt zien, voert u *netsh int IPv4 dynamische poort TCP weer geven*uit. Deze poorten zijn niet nodig voor Linux-clusters.
+* **Tijdelijke**. Service Fabric gebruikt een deel van deze poorten als toepassings poorten en het resterende onderdeel is beschikbaar voor het besturings systeem. Dit bereik wordt ook toegewezen aan het bestaande bereik in het besturings systeem, dus voor alle doel einden kunt u de bereiken in het voor beeld gebruiken. Zorg ervoor dat het verschil tussen de begin-en eind poort ten minste 255 is. U kunt conflicten ondertreden als dit verschil te laag is, omdat dit bereik wordt gedeeld met het besturings systeem. Als u het geconfigureerde dynamische poort bereik wilt zien, voert u *netsh int IPv4 dynamische poort TCP weer geven* uit. Deze poorten zijn niet nodig voor Linux-clusters.
 
 * **Toepassing**. Het bereik van de toepassings poort moet groot genoeg zijn om de eindpunt vereiste van uw toepassingen te kunnen voorzien. Dit bereik moet exclusief zijn van het dynamische poort bereik op de computer, dat wil zeggen, het ephemeralPorts-bereik dat is ingesteld in de configuratie. Service Fabric maakt gebruik van deze poorten wanneer er nieuwe poorten zijn vereist en zorgt ervoor dat de firewall voor deze poorten op de knoop punten wordt geopend.
 
@@ -97,7 +97,7 @@ Meer informatie over de regels voor binnenkomende beveiliging:
 
 ### <a name="outbound"></a>Uitgaand
 
-|Prioriteit   |Naam               |Poort        |Protocol  |Bron             |Doel       |Bewerking   
+|Prioriteit   |Name               |Poort        |Protocol  |Bron             |Doel       |Bewerking   
 |---        |---                |---         |---       |---                |---               |---
 |3900       |Netwerk            |Alle         |TCP       |VirtualNetwork     |VirtualNetwork    |Toestaan
 |3910       |Resourceprovider  |443         |TCP       |VirtualNetwork     |ServiceFabric     |Toestaan

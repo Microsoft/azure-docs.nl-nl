@@ -5,12 +5,12 @@ author: nicolela
 ms.topic: article
 ms.date: 02/04/2021
 ms.author: nicolela
-ms.openlocfilehash: 8d5356f7fd2661d9743d1058a147a0b20f62850e
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 530597a72b19afa1e80b5c7640b105d86479b1c1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100373705"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101740100"
 ---
 # <a name="set-up-a-lab-for-arcmaparcgis-desktop"></a>Een Lab instellen voor ArcMap\ArcGIS Desktop
 
@@ -24,7 +24,7 @@ Nadat u een Azure-abonnement hebt ontvangen, kunt u een nieuw Lab-account maken 
 
 ### <a name="lab-account-settings"></a>Instellingen van Lab-account
 
-Schakel de instellingen voor uw Lab-account in, zoals wordt beschreven in de volgende tabel.  Zie voor meer informatie over het inschakelen van installatie kopieën van Azure Marketplace [de Azure Marketplace-installatie kopieën opgeven die beschikbaar zijn voor Lab-makers](https://docs.microsoft.com/azure/lab-services/specify-marketplace-images).
+Schakel de instellingen voor uw Lab-account in, zoals wordt beschreven in de volgende tabel.  Zie voor meer informatie over het inschakelen van installatie kopieën van Azure Marketplace [de Azure Marketplace-installatie kopieën opgeven die beschikbaar zijn voor Lab-makers](./specify-marketplace-images.md).
 
 | Account instelling Lab | Instructies |
 | ------------------- | ------------ |
@@ -34,7 +34,7 @@ Schakel de instellingen voor uw Lab-account in, zoals wordt beschreven in de vol
 
 Eén type licentie voor ArcGIS Desktop-aanbiedingen is [gelijktijdig gebruik van licenties](https://desktop.arcgis.com/en/license-manager/latest/license-manager-basics.htm).  Hiervoor moet u ArcGIS-licentie beheer installeren op uw licentie server.  De licentie beheerder houdt het aantal exemplaren van de software bij dat tegelijkertijd kan worden uitgevoerd.  Zie de [hand leiding voor licentie beheer](https://desktop.arcgis.com/en/license-manager/latest/welcome.htm)voor meer informatie over het instellen van licentie beheer op uw server.
 
-De licentie server bevindt zich doorgaans in uw on-premises netwerk of wordt gehost op een virtuele machine van Azure in een virtueel Azure-netwerk.  Nadat de licentie server is ingesteld, moet u [het virtuele netwerk](https://docs.microsoft.com/azure/lab-services/how-to-connect-peer-virtual-network) koppelen aan uw [Lab-account](https://docs.microsoft.com/azure/lab-services/tutorial-setup-lab-account).  U moet de netwerk peering uitvoeren voordat u het Lab maakt, zodat uw Lab-Vm's toegang hebben tot de licentie server en vice versa.
+De licentie server bevindt zich doorgaans in uw on-premises netwerk of wordt gehost op een virtuele machine van Azure in een virtueel Azure-netwerk.  Nadat de licentie server is ingesteld, moet u [het virtuele netwerk](./how-to-connect-peer-virtual-network.md) koppelen aan uw [Lab-account](./tutorial-setup-lab-account.md).  U moet de netwerk peering uitvoeren voordat u het Lab maakt, zodat uw Lab-Vm's toegang hebben tot de licentie server en vice versa.
 
 Zie [een licentie server instellen als een gedeelde bron](how-to-create-a-lab-with-shared-resource.md)voor meer informatie.
 

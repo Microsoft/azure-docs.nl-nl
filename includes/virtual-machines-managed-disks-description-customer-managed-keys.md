@@ -5,15 +5,15 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 06/05/2020
+ms.date: 03/02/2021
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: ba50def51bcea4f477bea5cecbe5b1ed0409b01a
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 52b9bee1d43c0f136889a6a54277d4bb45dd4a45
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98792312"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750613"
 ---
 U kunt ervoor kiezen om versleuteling te beheren op het niveau van elke beheerde schijf, met uw eigen sleutels. Versleuteling aan de server zijde voor Managed disks met door de klant beheerde sleutels biedt een geïntegreerde ervaring met Azure Key Vault. U kunt [uw RSA-sleutels](../articles/key-vault/keys/hsm-protected-keys.md) importeren naar uw Key Vault of nieuwe RSA-sleutels in azure Key Vault genereren. 
 
@@ -43,3 +43,7 @@ In de volgende lijst wordt het diagram gedetailleerd beschreven:
 1. Voor het lezen of schrijven van gegevens, worden met beheerde schijven aanvragen verzonden naar Azure Key Vault om de gegevens versleutelings sleutel te versleutelen en ontsleutelen (uitpakken), zodat de gegevens kunnen worden versleuteld en ontsleuteld. 
 
 Zie [Azure Key Vault Power shell](/powershell/module/azurerm.keyvault/) en [Azure Key Vault cli](/cli/azure/keyvault)voor meer informatie over het intrekken van de toegang tot door de klant beheerde sleutels. Als u toegang intrekt, wordt de toegang tot alle gegevens in het opslag account effectief geblokkeerd, omdat de versleutelings sleutel niet toegankelijk is voor Azure Storage.
+
+#### <a name="automatic-key-rotation-of-customer-managed-keys-preview"></a>Automatische rotatie van de sleutel van door de klant beheerde sleutels (preview-versie)
+
+U kunt ervoor kiezen om de automatische rotatie van de sleutel in te scha kelen naar de nieuwste sleutel versie. Een schijf verwijst naar een sleutel via de bijbehorende schijf versleuteling. Wanneer u automatisch draaien inschakelt voor een schijf versleutelings, worden alle beheerde schijven, moment opnamen en installatie kopieën die verwijzen naar de schijf versleuteling, automatisch bijgewerkt om de nieuwe versie van de sleutel binnen één uur te gebruiken. De functie is momenteel beschikbaar in beperkte regio's in de preview-versie. Zie de sectie [ondersteunde regio's](#supported-regions) voor regionale Beschik baarheid.

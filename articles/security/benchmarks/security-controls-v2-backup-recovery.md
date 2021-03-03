@@ -4,19 +4,21 @@ description: Back-up en herstel van Azure Security Bench Mark v2
 author: msmbaldwin
 ms.service: security
 ms.topic: conceptual
-ms.date: 09/20/2020
+ms.date: 02/22/2021
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 089cf521a7c5428833be340001c88b870c568a8f
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: fd9a01868230efd9e9078171359d81302b472cd3
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97368882"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101724418"
 ---
 # <a name="security-control-v2-backup-and-recovery"></a>Beveiligings controle v2: back-up en herstel
 
 Back-up en herstel bestrijkt de controles om ervoor te zorgen dat de gegevens en configuratie back-ups in de verschillende service lagen worden uitgevoerd, gevalideerd en beveiligd.
+
+Voor een overzicht van de toepasselijke ingebouwde Azure Policy raadpleegt u [de details van het ingebouwde initiatief voor Azure Security Bench Mark-naleving: back-up en herstel](../../governance/policy/samples/azure-security-benchmark#backup-and-recovery)
 
 ## <a name="br-1-ensure-regular-automated-backups"></a>BR-1: controleren op regel matige automatische back-ups
 
@@ -26,9 +28,9 @@ Back-up en herstel bestrijkt de controles om ervoor te zorgen dat de gegevens en
 
 Zorg ervoor dat u een back-up van systemen en gegevens maakt om de bedrijfs continuïteit na een onverwachte gebeurtenis te hand haven. Dit moet worden gedefinieerd op basis van de doel stellingen voor herstel punt doelstelling (RPO) en de beoogde herstel tijd (RTO).
 
-Schakel Azure Backup in en configureer de back-upbron (bijvoorbeeld Azure Vm's, SQL Server, HANA-data bases of bestands shares), evenals de gewenste frequentie en retentie periode.  
+Schakel Azure Backup in en configureer de back-upbron (zoals Azure Vm's, SQL Server, HANA-data bases of bestands shares), evenals de gewenste frequentie en retentie periode.
 
-Voor een hoger beveiligings niveau kunt u geografisch redundante opslag optie inschakelen om back-upgegevens naar een secundaire regio te repliceren en te herstellen met behulp van een herstel bewerking voor meerdere regio's.
+Voor een hoger beveiligings niveau kunt u de geo-redundante opslag optie inschakelen om back-upgegevens naar een secundaire regio te repliceren en te herstellen met behulp van een herstel bewerking voor meerdere regio's.
 
 - [Bedrijfscontinuïteit en herstel na noodgevallen](/azure/cloud-adoption-framework/ready/enterprise-scale/business-continuity-and-disaster-recovery)
 
@@ -54,9 +56,9 @@ Voor een hoger beveiligings niveau kunt u geografisch redundante opslag optie in
 |--|--|--|--|
 | BR-2 | 10,2 | CP-9 |
 
-Zorg ervoor dat uw back-ups worden beschermd tegen aanvallen. Hierbij moet de back-ups worden versleuteld om te worden beveiligd tegen verlies van vertrouwelijkheid.   
+Zorg ervoor dat uw back-ups worden beschermd tegen aanvallen. Hierbij moet de back-ups worden versleuteld om te worden beveiligd tegen verlies van vertrouwelijkheid.
 
-Voor on-premises back-ups met Azure Backup, wordt versleuteling op rest aangeboden met de wachtwoordzin die u opgeeft. Voor reguliere back-ups van Azure-Services worden back-upgegevens automatisch versleuteld met door Azure-platforms beheerde sleutels. U kunt ervoor kiezen om de back-ups te versleutelen met de door de klant beheerde sleutel. Zorg er in dit geval voor dat deze door de klant beheerde sleutel in de sleutel kluis zich ook in het back-upbereik bevindt. 
+Voor on-premises back-ups met Azure Backup, wordt versleuteling op rest aangeboden met de wachtwoordzin die u opgeeft. Voor reguliere back-ups van Azure-Services worden back-upgegevens automatisch versleuteld met door Azure-platforms beheerde sleutels. U kunt ervoor kiezen om de back-ups te versleutelen met de door de klant beheerde sleutel. Zorg er in dit geval voor dat deze door de klant beheerde sleutel in de sleutel kluis zich ook in het back-upbereik bevindt.
 
 Gebruik Azure op rollen gebaseerd toegangs beheer in Azure Backup, Azure Key Vault of andere bronnen voor het beveiligen van back-ups en door de klant beheerde sleutels. Daarnaast kunt u geavanceerde beveiligings functies inschakelen om MFA te vereisen voordat back-ups kunnen worden gewijzigd of verwijderd.
 
@@ -82,7 +84,7 @@ Gebruik Azure op rollen gebaseerd toegangs beheer in Azure Backup, Azure Key Vau
 
 | Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
-| BR-3 | 10,3 | CP-4, CP-9 |
+| BR-3 | 10.3 | CP-4, CP-9 |
 
 Maak regel matig gegevens herstel van uw back-up. Zorg ervoor dat u een back-up van door de klant beheerde sleutels kunt herstellen.
 
@@ -104,7 +106,7 @@ Maak regel matig gegevens herstel van uw back-up. Zorg ervoor dat u een back-up 
 |--|--|--|--|
 | BR-4 | 10.4 | CP-9 |
 
-Zorg ervoor dat u maat regelen hebt om te voor komen en te herstellen van het verlies van sleutels. Schakel voorlopig verwijderen en bescherming tegen opschonen in Azure Key Vault in om sleutels te beschermen tegen onbedoelde of kwaadwillige verwijdering.  
+Zorg ervoor dat u maat regelen hebt om te voor komen en te herstellen van het verlies van sleutels. Schakel voorlopig verwijderen en bescherming tegen opschonen in Azure Key Vault in om sleutels te beschermen tegen onbedoelde of kwaadwillige verwijdering.
 
 - [Voorlopig verwijderen en bescherming tegen opschonen in Azure Key Vault inschakelen](../../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 

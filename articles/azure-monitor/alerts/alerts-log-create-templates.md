@@ -6,18 +6,18 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.subservice: alerts
-ms.openlocfilehash: 6b1403b12c05420c6296cbafd0d4ee0bc02f8dd4
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 665137688a000433a9101a77342fa6f9350d7141
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611178"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101714320"
 ---
 # <a name="create-a-log-alert-with-a-resource-manager-template"></a>Een waarschuwing voor een logboek maken met een Resource Manager-sjabloon
 
-Met logboek waarschuwingen kunnen gebruikers een [log Analytics](../log-query/log-analytics-tutorial.md) query gebruiken om resources te evalueren elke ingestelde frequentie, en wordt een waarschuwing gestart op basis van de resultaten. Regels kunnen een of meer acties uitvoeren met [actie groepen](../platform/action-groups.md). [Meer informatie over de functionaliteit en termen van logboek waarschuwingen](../platform/alerts-unified-log.md).
+Met logboek waarschuwingen kunnen gebruikers een [log Analytics](../logs/log-analytics-tutorial.md) query gebruiken om resources te evalueren elke ingestelde frequentie, en wordt een waarschuwing gestart op basis van de resultaten. Regels kunnen een of meer acties uitvoeren met [actie groepen](./action-groups.md). [Meer informatie over de functionaliteit en termen van logboek waarschuwingen](./alerts-unified-log.md).
 
-In dit artikel wordt beschreven hoe u een [Azure Resource Manager sjabloon](../../azure-resource-manager/templates/template-syntax.md) kunt gebruiken voor het configureren van [logboek waarschuwingen](../platform/alerts-unified-log.md) in azure monitor. Met Resource Manager-sjablonen kunt u via programma code waarschuwingen instellen op een consistente en reproduceer bare manier in uw omgevingen. Logboek waarschuwingen worden gemaakt in de `Microsoft.Insights/scheduledQueryRules` resource provider. Zie API-verwijzing voor [geplande query regels-API](/rest/api/monitor/scheduledqueryrules/).
+In dit artikel wordt beschreven hoe u een [Azure Resource Manager sjabloon](../../azure-resource-manager/templates/template-syntax.md) kunt gebruiken voor het configureren van [logboek waarschuwingen](./alerts-unified-log.md) in azure monitor. Met Resource Manager-sjablonen kunt u via programma code waarschuwingen instellen op een consistente en reproduceer bare manier in uw omgevingen. Logboek waarschuwingen worden gemaakt in de `Microsoft.Insights/scheduledQueryRules` resource provider. Zie API-verwijzing voor [geplande query regels-API](/rest/api/monitor/scheduledqueryrules/).
 
 De basis stappen zijn als volgt:
 
@@ -26,15 +26,15 @@ De basis stappen zijn als volgt:
 4. Implementeer de sjabloon met een implementatie methode.
 
 > [!NOTE]
-> Logboek gegevens van een [log Analytics-werk ruimte](../log-query/log-analytics-tutorial.md) kunnen worden verzonden naar de Azure monitor metrische gegevens opslag. Waarschuwingen voor metrische gegevens hebben een [ander gedrag](../platform/alerts-metric-overview.md), wat wenselijker is, afhankelijk van de data waarmee u werkt. Zie [metrische waarschuwingen voor logboeken](../platform/alerts-metric-logs.md)voor meer informatie over hoe en hoe u Logboeken kunt routeren naar metrische gegevens.
+> Logboek gegevens van een [log Analytics-werk ruimte](../logs/log-analytics-tutorial.md) kunnen worden verzonden naar de Azure monitor metrische gegevens opslag. Waarschuwingen voor metrische gegevens hebben een [ander gedrag](./alerts-metric-overview.md), wat wenselijker is, afhankelijk van de data waarmee u werkt. Zie [metrische waarschuwingen voor logboeken](./alerts-metric-logs.md)voor meer informatie over hoe en hoe u Logboeken kunt routeren naar metrische gegevens.
 
 > [!NOTE]
-> Logboek waarschuwingen voor Log Analytics die worden beheerd met behulp van de verouderde [log Analytics waarschuwings-API](../platform/api-alerts.md) en verouderde sjablonen van [log Analytics opgeslagen Zoek opdrachten en waarschuwingen](../insights/solutions.md). [Meer informatie over overschakelen naar de huidige ScheduledQueryRules-API](alerts-log-api-switch.md).
+> Logboek waarschuwingen voor Log Analytics die worden beheerd met behulp van de verouderde [log Analytics waarschuwings-API](./api-alerts.md) en verouderde sjablonen van [log Analytics opgeslagen Zoek opdrachten en waarschuwingen](../insights/solutions.md). [Meer informatie over overschakelen naar de huidige ScheduledQueryRules-API](alerts-log-api-switch.md).
 
 
 ## <a name="simple-template-up-to-api-version-2018-04-16"></a>Eenvoudige sjabloon (tot API-versie 2018-04-16)
 
-Sjabloon voor het [maken van geplande query regels](/rest/api/monitor/scheduledqueryrules/createorupdate) op basis van een waarschuwing voor het [aantal logboeken van de resultaten](../platform/alerts-unified-log.md#count-of-the-results-table-rows) (voor beeld van gegevensset als variabelen):
+Sjabloon voor het [maken van geplande query regels](/rest/api/monitor/scheduledqueryrules/createorupdate) op basis van een waarschuwing voor het [aantal logboeken van de resultaten](./alerts-unified-log.md#count-of-the-results-table-rows) (voor beeld van gegevensset als variabelen):
 
 ```json
 {
@@ -109,7 +109,7 @@ Deze JSON kan worden opgeslagen en geïmplementeerd met behulp [van Azure Resour
 
 ## <a name="template-with-cross-resource-query-up-to-api-version-2018-04-16"></a>Sjabloon met query op meerdere bronnen (tot API-versie 2018-04-16)
 
-Sjabloon voor het [maken van geplande query regels](/rest/api/monitor/scheduledqueryrules/createorupdate) op basis van [metrische maat eenheden](../platform/alerts-unified-log.md#calculation-of-measure-based-on-a-numeric-column-such-as-cpu-counter-value) die query's uitvoeren op [meerdere resources](../log-query/cross-workspace-query.md) (voor beelden van gegevensset als variabelen):
+Sjabloon voor het [maken van geplande query regels](/rest/api/monitor/scheduledqueryrules/createorupdate) op basis van [metrische maat eenheden](./alerts-unified-log.md#calculation-of-measure-based-on-a-numeric-column-such-as-cpu-counter-value) die query's uitvoeren op [meerdere resources](../logs/cross-workspace-query.md) (voor beelden van gegevensset als variabelen):
 
 ```json
 {
@@ -432,7 +432,7 @@ Deze JSON kan worden opgeslagen en geïmplementeerd met behulp [van Azure Resour
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over [logboek waarschuwingen](../platform/alerts-unified-log.md)
-* Meer informatie over het [beheren van logboek waarschuwingen](../platform/alerts-log.md)
-* Informatie [over webhook-acties voor logboek waarschuwingen](../platform/alerts-log-webhook.md)
-* Meer informatie over [logboek query's](../log-query/log-query-overview.md).
+* Meer informatie over [logboek waarschuwingen](./alerts-unified-log.md)
+* Meer informatie over het [beheren van logboek waarschuwingen](./alerts-log.md)
+* Informatie [over webhook-acties voor logboek waarschuwingen](./alerts-log-webhook.md)
+* Meer informatie over [logboek query's](../logs/log-query-overview.md).

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2021
 ms.author: terrylan
-ms.openlocfilehash: d85b1fdd433c372bb41adec6e3d33013f19363f0
-ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
+ms.openlocfilehash: f87ea1e1c9f43de4e9e0f94d1cd855615a0a880c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98747170"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101712042"
 ---
 # <a name="azure-security-management-and-monitoring-overview"></a>Overzicht van Azure-beveiligings beheer en-bewaking
 Dit artikel bevat een overzicht van de beveiligings functies en-services die Azure biedt om u te helpen bij het beheer en de bewaking van Azure-Cloud Services en virtuele machines.
@@ -48,7 +48,7 @@ Meer informatie:
 
 * [Deploying Antimalware Solutions on Azure Virtual Machines](https://azure.microsoft.com/blog/deploying-antimalware-solutions-on-azure-virtual-machines/) (Antimalware-oplossingen implementeren op virtuele machines van Azure)
 * [Micro soft antimalware voor Azure Cloud Services en Virtual Machines](antimalware.md)
-* [Trend Micro diepe Security als een service op een Windows-VM installeren en configureren](../../virtual-machines/extensions/trend.md)
+* [Trend Micro diepe Security als een service op een Windows-VM installeren en configureren](/previous-versions/azure/virtual-machines/extensions/trend)
 * [Symantec-Endpoint Protection installeren en configureren op een Windows-VM](../../virtual-machines/extensions/symantec.md)
 * [Nieuwe antimalware-opties voor het beveiligen van Azure Virtual Machines](https://azure.microsoft.com/blog/new-antimalware-options-for-protecting-azure-virtual-machines/)
 

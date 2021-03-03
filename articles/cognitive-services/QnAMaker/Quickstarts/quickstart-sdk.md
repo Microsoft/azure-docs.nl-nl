@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 06/18/2020
 ms.custom: devx-track-python, devx-track-js, devx-track-csharp
 zone_pivot_groups: qnamaker-quickstart
-ms.openlocfilehash: de237c1bba699165e63fc0b2e4bfb58d25518bd9
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 5fd200fcd1d48b533e629fe4429f5bafb5fde817
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98701280"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101730966"
 ---
 # <a name="quickstart-qna-maker-client-library"></a>Quickstart: QnA Maker-clientbibliotheek
 
@@ -56,7 +56,7 @@ Als u een Cognitive Services-abonnement wilt opschonen en verwijderen, kunt u de
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
->[Zelfstudie: Uw Knowledge Base testen met batchbestand](../index.yml)
+>[Zelfstudie: Uw Knowledge Base testen met batchbestand](../how-to/test-knowledge-base.md#batch-test-with-tool)
 
 * [Wat is de QnA Maker-API?](../Overview/overview.md)
 * [Een Knowledge Base bewerken](../how-to/edit-knowledge-base.md)

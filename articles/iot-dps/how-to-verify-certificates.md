@@ -7,12 +7,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: 2020205357c68e007a1a375c4853e8c04afd2019
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 0326eef86b42fa8b06c336bbf2b1c6f2f9df0bcf
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98789057"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101730351"
 ---
 # <a name="how-to-do-proof-of-possession-for-x509-ca-certificates-with-your-device-provisioning-service"></a>Een bewijs van het bezit van de X. 509 CA-certificaten met uw Device Provisioning Service
 
@@ -72,14 +72,4 @@ De Power shell-en bash-scripts die zijn opgenomen in de documentatie en Sdk's, z
 ## <a name="next-steps"></a>Volgende stappen
 
 - Zie [inschrijving van apparaten beheren met Azure Portal](how-to-manage-enrollments.md)voor meer informatie over het gebruik van de portal voor het maken van een registratie groep.
-- Zie [apparaatregistratie beheren met Service-sdk's](how-to-manage-enrollments-sdks.md)voor meer informatie over het gebruik van de service-sdk's voor het maken van een registratie groep.
-
-
-
-
-
-
-
-
-
-
+- Zie [apparaatregistratie beheren met Service-sdk's](./quick-enroll-device-x509-java.md)voor meer informatie over het gebruik van de service-sdk's voor het maken van een registratie groep.

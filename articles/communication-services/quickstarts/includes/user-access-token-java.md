@@ -10,12 +10,12 @@ ms.date: 08/20/2020
 ms.topic: include
 ms.custom: include file
 ms.author: tchladek
-ms.openlocfilehash: 6946f5fcf6da86c89c1863f2f180047abd765e1d
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 1881b05c32fb0a7206ba6439db5c44ad909de798
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101657074"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750004"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -44,7 +44,7 @@ Open het bestand **pom.xml** in uw teksteditor. Voeg het volgende afhankelijkhei
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-communication-identity</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-beta.3</version> 
 </dependency>
 ```
 
@@ -85,7 +85,7 @@ Instanteer een `CommunicationIdentityClient` met de toegangssleutel en het eindp
 Voeg de volgende code aan de `main` methode toe:
 
 ```java
-// Your can find your endpoint and access key from your resource in the Azure portal
+// Your can find your endpoint and access key from your resource in the Azure Portal
 String endpoint = "https://<RESOURCE_NAME>.communication.azure.com";
 String accessKey = "SECRET";
 
@@ -103,30 +103,11 @@ CommunicationIdentityClient communicationIdentityClient = new CommunicationIdent
     .buildClient();
 ```
 
-Als u beheerde identiteit hebt ingesteld, raadpleegt u beheerde identiteiten [gebruiken](../managed-identity.md), kunt u beheerde identiteit gebruiken voor het initialiseren en verifiëren met de identiteits service.
-```java
-// Your can find your endpoint from your resource in the Azure portal
-String endpoint = "https://<RESOURCE_NAME>.communication.azure.com";
-
-// Create an HttpClient builder of your choice and customize it
-// Use com.azure.core.http.netty.NettyAsyncHttpClientBuilder if that suits your needs
-// -> Add "import com.azure.core.http.netty.*;"
-// -> Add azure-core-http-netty dependency to file pom.xml
-
-HttpClient httpClient = new NettyAsyncHttpClientBuilder().build();
-
-CommunicationIdentityClient communicationIdentityClient = new CommunicationIdentityClientBuilder()
-    .endpoint(endpoint)
-    .credential(new DefaultAzureCredentialBuilder().build())
-    .httpClient(httpClient)
-    .buildClient();
-```
-
 U kunt de client initialiseren met een aangepaste HTTP-client. Hiermee implementeert u de `com.azure.core.http.HttpClient`-interface. De bovenstaande code toont het gebruik van de [Azure Core Netty HTTP-client](/java/api/overview/azure/core-http-netty-readme?preserve-view=true&view=azure-java-stable) die wordt verschaft door `azure-core`.
 
-U kunt ook de volledige connection string opgeven met behulp `connectionString()` van de functie in plaats van het eind punt en de toegangs sleutel op te geven.
+U kunt ook de volledige verbindingsreeks opgeven met behulp van de functie connectionString() in plaats van het eindpunt en de toegangssleutel op te geven. 
 ```java
-// Your can find your connection string from your resource in the Azure portal
+// Your can find your connection string from your resource in the Azure Portal
 String connectionString = "<connection_string>";
 CommunicationIdentityClient communicationIdentityClient = new CommunicationIdentityClientBuilder()
     .connectionString(connectionString)
@@ -139,57 +120,42 @@ CommunicationIdentityClient communicationIdentityClient = new CommunicationIdent
 Azure Communication Services onderhoudt een lichte identiteitsmap. Gebruik de methode `createUser` om een nieuwe vermelding in de map te maken met een unieke `Id`. Sla de ontvangen identiteit op met een toewijzing aan gebruikers van uw toepassing. U kunt dit bijvoorbeeld doen door ze op te slaan in de database van uw toepassingsserver. De identiteit is later vereist voor het uitgeven van toegangstokens.
 
 ```java
-CommunicationUserIdentifier user = communicationIdentityClient.createUser();
-System.out.println("\nCreated an identity with ID: " + user.getId());
+CommunicationUser identity = communicationIdentityClient.createUser();
+System.out.println("\nCreated an identity with ID: " + identity.getId());
 ```
 
 ## <a name="issue-access-tokens"></a>Toegangstokens uitgeven
 
-Gebruik de methode `getToken` om een toegangstoken voor de al bestaande Communication Services-identiteit uit te geven. Met de parameter `scopes` wordt een set primitieven gedefinieerd, waarmee dit toegangstoken wordt geautoriseerd. Raadpleeg de [lijst met ondersteunde acties](../../concepts/authentication.md). Er kan een nieuw exemplaar van de parameter `user` worden samengesteld op basis van de tekenreeksweergave van de Azure Communication Service-identiteit.
+Gebruik de methode `issueToken` om een toegangstoken voor de al bestaande Communication Services-identiteit uit te geven. Met de parameter `scopes` wordt een set primitieven gedefinieerd, waarmee dit toegangstoken wordt geautoriseerd. Raadpleeg de [lijst met ondersteunde acties](../../concepts/authentication.md). Er kan een nieuw exemplaar van de parameter `user` worden samengesteld op basis van de tekenreeksweergave van de Azure Communication Service-identiteit.
 
 ```java
-// Issue an access token with the "voip" scope for a user identity
-List<String> scopes = new ArrayList<>(Arrays.asList(CommunicationTokenScope.VOIP));
-AccessToken accessToken = communicationIdentityClient.getToken(user, scopes);
-OffsetDateTime expiresAt = accessToken.getExpiresAt();
-String token = accessToken.getToken();
-System.out.println("\nIssued an access token with 'voip' scope that expires at: " + expiresAt + ": " + token);
+// Issue an access token with the "voip" scope for an identity
+List<String> scopes = new ArrayList<>(Arrays.asList("voip"));
+CommunicationUserToken response = communicationIdentityClient.issueToken(identity, scopes);
+OffsetDateTime expiresOn = response.getExpiresOn();
+String token = response.getToken();
+System.out.println("\nIssued an access token with 'voip' scope that expires at: " + expiresOn + ": " + token);
 ```
 
-## <a name="create-an-identity-and-issue-token-in-one-call"></a>Een identiteits-en uitgifte token in één aanroep maken
-
-U kunt ook de methode ' createUserWithToken ' gebruiken om een nieuw item in de Directory te maken met een unieke naam en om een `Id` toegangs token uit te geven.
-
-```java
-List<CommunicationTokenScope> scopes = Arrays.asList(CommunicationTokenScope.CHAT);
-CommunicationUserIdentifierWithTokenResult result = client.createUserWithToken(scopes);
-CommunicationUserIdentifier user = result.getUser();
-System.out.println("\nCreated a user identity with ID: " + user.getId());
-AccessToken accessToken = result.getUserToken();
-OffsetDateTime expiresAt = accessToken.getExpiresAt();
-String token = accessToken.getToken();
-System.out.println("\nIssued an access token with 'chat' scope that expires at: " + expiresAt + ": " + token);
-```
-
-Toegangstokens zijn kortdurende referenties die opnieuw moeten worden uitgegeven. Als u dit niet doet, kan dit leiden tot onderbrekingen van de gebruikerservaring van uw toepassing. De `expiresAt` eigenschap geeft de levens duur van het toegangs token aan.
+Toegangstokens zijn kortdurende referenties die opnieuw moeten worden uitgegeven. Als u dit niet doet, kan dit leiden tot onderbrekingen van de gebruikerservaring van uw toepassing. De antwoordeigenschap `expiresAt` geeft de levensduur van het toegangstoken aan.
 
 ## <a name="refresh-access-tokens"></a>Toegangstokens vernieuwen
 
-Als u een toegangstoken wilt vernieuwen, gebruikt u het `CommunicationUserIdentifier`-object om het opnieuw uit te geven:
+Als u een toegangstoken wilt vernieuwen, gebruikt u het `CommunicationUser`-object om het opnieuw uit te geven:
 
-```java
+```java  
 // Value existingIdentity represents identity of Azure Communication Services stored during identity creation
-CommunicationUserIdentifier identity = new CommunicationUserIdentifier(existingIdentity);
-response = communicationIdentityClient.getToken(identity, scopes);
+CommunicationUser identity = new CommunicationUser(existingIdentity);
+response = communicationIdentityClient.issueToken(identity, scopes);
 ```
 
 ## <a name="revoke-access-tokens"></a>Toegangstokens intrekken
 
 In sommige gevallen kunt u toegangstokens expliciet intrekken. Wanneer de gebruiker van een toepassing bijvoorbeeld het wachtwoord wijzigt dat wordt gebruikt voor verificatie bij uw service. Met de methode `revokeTokens` worden alle actieve toegangstokens die zijn verleend aan de identiteit ongeldig gemaakt.
 
-```java
-communicationIdentityClient.revokeTokens(user);
-System.out.println("\nSuccessfully revoked all access tokens for user identity with ID: " + user.getId());
+```java  
+communicationIdentityClient.revokeTokens(identity, OffsetDateTime.now());
+System.out.println("\nSuccessfully revoked all access tokens for identity with ID: " + identity.getId());
 ```
 
 ## <a name="delete-an-identity"></a>Een identiteit verwijderen
@@ -197,8 +163,8 @@ System.out.println("\nSuccessfully revoked all access tokens for user identity w
 Als u een identiteit verwijdert, worden alle actieve toegangstokens ingetrokken en wordt voorkomen dat er toegangstokens voor de identiteit worden uitgegeven. Ook wordt alle persistente inhoud verwijderd die aan de identiteit is gekoppeld.
 
 ```java
-communicationIdentityClient.deleteUser(user);
-System.out.println("\nDeleted the user identity with ID: " + user.getId());
+communicationIdentityClient.deleteUser(identity);
+System.out.println("\nDeleted the identity with ID: " + identity.getId());
 ```
 
 ## <a name="run-the-code"></a>De code uitvoeren

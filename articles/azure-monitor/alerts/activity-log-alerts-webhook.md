@@ -4,19 +4,19 @@ description: Meer informatie over het schema van de JSON dat wordt gepost naar e
 ms.topic: conceptual
 ms.date: 03/31/2017
 ms.subservice: alerts
-ms.openlocfilehash: bdac71655ca0c517624f8aa033ee5bc7fcc9d12a
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 9f5fbc6b0c7ae77181c8c5afdbaffb4e62dccd12
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609700"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701141"
 ---
 # <a name="webhooks-for-azure-activity-log-alerts"></a>Webhooks voor Azure-activiteiten logboek waarschuwingen
 Als onderdeel van de definitie van een actie groep kunt u webhook-eind punten configureren voor het ontvangen van waarschuwings meldingen voor activiteiten Logboeken. Met webhooks kunt u deze meldingen naar andere systemen sturen voor nabewerkingen of aangepaste acties. In dit artikel ziet u hoe de payload voor het HTTP POST-bericht naar een webhook eruit ziet.
 
-Zie [waarschuwingen voor Azure-activiteiten logboeken maken](../platform/activity-log-alerts.md)voor meer informatie over waarschuwingen voor activiteiten Logboeken.
+Zie [waarschuwingen voor Azure-activiteiten logboeken maken](./activity-log-alerts.md)voor meer informatie over waarschuwingen voor activiteiten Logboeken.
 
-Zie voor meer informatie over actie groepen [actie groepen maken](../platform/action-groups.md).
+Zie voor meer informatie over actie groepen [actie groepen maken](./action-groups.md).
 
 > [!NOTE]
 > U kunt ook het [schema common alert](./alerts-common-schema.md)gebruiken. Dit biedt het voor deel van het gebruik van een enkele uitbreid bare en Unified payload van waarschuwingen voor alle waarschuwings services in azure monitor voor uw webhook-integraties. [Meer informatie over de algemene schema definities voor waarschuwingen.](./alerts-common-schema-definitions.md)
@@ -298,10 +298,10 @@ Zie [service Health Notifications](../../service-health/service-notifications.md
 | status |Tekenreeks. De status van de bewerking. Veelvoorkomende waarden zijn gestart, in uitvoering, geslaagd, mislukt, actief en opgelost. |
 | subStatus |Bevat meestal de HTTP-status code van de bijbehorende REST-aanroep. Het kan ook andere teken reeksen bevatten die een substatus beschrijven. Algemene substatus waarden zijn onder andere OK (HTTP-status code: 200), gemaakt (HTTP-status code: 201), geaccepteerd (HTTP-status code: 202), geen inhoud (HTTP-status code: 204), ongeldige aanvraag (HTTP-status code: 400), niet gevonden (HTTP-status code: 404), conflict (HTTP-status code: 409), interne server fout (HTTP-status code: 500), service niet beschikbaar (HTTP-status code: 503) : 504). |
 
-Zie [overzicht van het Azure-activiteiten logboek](../platform/platform-logs-overview.md)voor specifieke schema Details over alle andere waarschuwingen voor activiteiten Logboeken.
+Zie [overzicht van het Azure-activiteiten logboek](../essentials/platform-logs-overview.md)voor specifieke schema Details over alle andere waarschuwingen voor activiteiten Logboeken.
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer [informatie over het activiteiten logboek](../platform/platform-logs-overview.md).
+* Meer [informatie over het activiteiten logboek](../essentials/platform-logs-overview.md).
 * [Voer Azure Automation-scripts (Runbooks) uit in azure-waarschuwingen](https://go.microsoft.com/fwlink/?LinkId=627081).
 * [Gebruik een logische app voor het verzenden van een SMS via Twilio vanuit een Azure-waarschuwing](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app). Dit voor beeld is voor metrische waarschuwingen, maar kan worden gewijzigd om te werken met een waarschuwing voor een activiteiten logboek.
 * [Gebruik een logische app voor het verzenden van een bericht met een toegestane vertraging van een Azure-waarschuwing](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app). Dit voor beeld is voor metrische waarschuwingen, maar kan worden gewijzigd om te werken met een waarschuwing voor een activiteiten logboek.

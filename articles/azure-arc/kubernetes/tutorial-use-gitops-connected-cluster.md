@@ -7,12 +7,12 @@ ms.service: azure-arc
 ms.topic: tutorial
 ms.date: 03/02/2021
 ms.custom: template-tutorial
-ms.openlocfilehash: 0ff300a90876841e5a25e4e44ffdaecab2eaee95
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: cf079c009e5f6c3ef1ba6f8b22636b9a53b51348
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101664624"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101689229"
 ---
 # <a name="tutorial-deploy-configurations-using-gitops-on-an-azure-arc-enabled-kubernetes-cluster"></a>Zelf studie: configuraties implementeren met behulp van GitOps op een Azure Arc enabled Kubernetes-cluster 
 
@@ -26,7 +26,7 @@ In deze zelf studie past u configuraties toe met behulp van GitOps op een Azure 
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Een Azure-account met een actief abonnement. [Een account gratis maken] (https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 - Er is een bestaand Kubernetes-verbonden Azure-Arc-cluster ingeschakeld.
     - Als u nog geen cluster hebt verbonden, doorloopt u [de Snelstartgids een Azure Arc enabled Kubernetes-cluster maken](quickstart-connect-cluster.md).
 - Een goed idee van de voor delen en architectuur van deze functie. Meer informatie vindt u in [configuraties en GitOps-Azure Arc enabled Kubernetes-artikel](conceptual-configurations.md).
@@ -152,7 +152,7 @@ Pas de configuratie aan met de volgende optionele para meters:
 | ------------- | ------------- |
 | `--enable-helm-operator`| Schakel deze optie in om ondersteuning voor helm-grafiek implementaties in te scha kelen. |
 | `--helm-operator-params` | Grafiek waarden voor de operator helm (indien ingeschakeld). Bijvoorbeeld `--set helm.versions=v3`. |
-| `--helm-operator-version` | Grafiek versie voor de helm-operator (indien ingeschakeld). Gebruik versie 1.2.0 +. Standaard: ' 1.2.0 '. |
+| `--helm-operator-chart-version` | Grafiek versie voor de helm-operator (indien ingeschakeld). Gebruik versie 1.2.0 +. Standaard: ' 1.2.0 '. |
 | `--operator-namespace` | Naam voor de operator naam ruimte. Standaard: standaard. Max.: 23 tekens. |
 | `--operator-params` | Para meters voor operator. Moet binnen enkele aanhalings tekens worden opgegeven. Bijvoorbeeld: ```--operator-params='--git-readonly --sync-garbage-collection --git-branch=main'``` 
 

@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 01/13/2021
+ms.date: 03/02/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: f76aecc80537e6db55c8c4f2e5a7a240be6b1415
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: dcd0ccdc42a820f1e264b739cb0063516a0cb53e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98675743"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101688549"
 ---
 # <a name="user-profile-attributes"></a>Kenmerken van gebruikersprofiel
 
@@ -50,7 +50,7 @@ In de volgende tabel worden de kenmerken van het [bron type](/graph/api/resource
 |country         |Tekenreeks|Het land/de regio waarin de gebruiker zich bevindt. Voor beeld: "US" of "UK". Maximale lengte van 128.|Ja|Ja|Persistent gemaakt, uitvoer|
 |createdDateTime|DateTime|De datum waarop het gebruikers object is gemaakt. Alleen-lezen.|Nee|Nee|Persistent gemaakt, uitvoer|
 |creationType    |Tekenreeks|Als het gebruikers account is gemaakt als een lokaal account voor een Azure Active Directory B2C Tenant, is de waarde LocalAccount of nameCoexistence. Alleen-lezen.|Nee|Nee|Persistent gemaakt, uitvoer|
-|dateOfBirth     |Date|Geboortedatum.|Nee|Nee|Persistent gemaakt, uitvoer|
+|dateOfBirth     |Datum|Geboortedatum.|Nee|Nee|Persistent gemaakt, uitvoer|
 |department      |Tekenreeks|De naam van de afdeling waarin de gebruiker werkt. Maximale lengte van 64.|Ja|Nee|Persistent gemaakt, uitvoer|
 |displayName     |Tekenreeks|De weergave naam voor de gebruiker. Maximale lengte van 256.|Ja|Ja|Persistent gemaakt, uitvoer|
 |facsimileTelephoneNumber<sup>1</sup>|Tekenreeks|Het telefoon nummer van de zakelijke faxmachine van de gebruiker.|Ja|Nee|Persistent gemaakt, uitvoer|
@@ -63,8 +63,8 @@ In de volgende tabel worden de kenmerken van het [bron type](/graph/api/resource
 |mailNickName    |Tekenreeks|De e-mail alias voor de gebruiker. Maximale lengte van 64.|Nee|Nee|Persistent gemaakt, uitvoer|
 |mobiel (mobilePhone) |Tekenreeks|Het primaire mobiele telefoon nummer voor de gebruiker. Maximale lengte van 64.|Ja|Nee|Persistent gemaakt, uitvoer|
 |netId           |Tekenreeks|Net-ID.|Nee|Nee|Persistent gemaakt, uitvoer|
-|objectId        |Tekenreeks|Een Globally Unique Identifier (GUID) die de unieke id voor de gebruiker is. Voor beeld: 12345678-9abc-def0-1234-56789abcde. Alleen-lezen, onveranderbaar.|Alleen-lezen|Yes|Invoer, persistent, uitvoer|
-|otherMails      |Tekenreeksverzameling|Een lijst met andere e-mail adressen voor de gebruiker. Voor beeld: [" bob@contoso.com ", " Robert@fabrikam.com "].|Ja (alternatief e-mail adres)|No|Persistent gemaakt, uitvoer|
+|objectId        |Tekenreeks|Een Globally Unique Identifier (GUID) die de unieke id voor de gebruiker is. Voor beeld: 12345678-9abc-def0-1234-56789abcde. Alleen-lezen, onveranderbaar.|Alleen-lezen|Ja|Invoer, persistent, uitvoer|
+|otherMails      |Tekenreeksverzameling|Een lijst met andere e-mail adressen voor de gebruiker. Voor beeld: [" bob@contoso.com ", " Robert@fabrikam.com "].|Ja (alternatief e-mail adres)|Nee|Persistent gemaakt, uitvoer|
 |wachtwoord        |Tekenreeks|Het wacht woord voor het lokale account tijdens het maken van de gebruiker.|Nee|Nee|Persistente|
 |passwordPolicies     |Tekenreeks|Het beleid van het wacht woord. Het is een teken reeks die bestaat uit een andere beleids naam, gescheiden door komma's. Bijvoorbeeld, DisablePasswordExpiration, DisableStrongPassword.|Nee|Nee|Persistent gemaakt, uitvoer|
 |physicalDeliveryOfficeName (officeLocation)|Tekenreeks|De kantoor locatie in de bedrijfs plaats van de gebruiker. Maximale lengte van 128.|Ja|Nee|Persistent gemaakt, uitvoer|
@@ -84,7 +84,7 @@ In de volgende tabel worden de kenmerken van het [bron type](/graph/api/resource
 |telephoneNumber (eerste vermelding van businessPhones)|Tekenreeks|Het primaire telefoon nummer van de bedrijfs plaats van de gebruiker.|Ja|Nee|Persistent gemaakt, uitvoer|
 |userPrincipalName    |Tekenreeks|De UPN (user Principal name) van de gebruiker. De UPN is een aanmeldings naam voor Internet-stijl voor de gebruiker op basis van Internet Standard RFC 822. Het domein moet aanwezig zijn in de verzameling van geverifieerde domeinen van de Tenant. Deze eigenschap is vereist wanneer een account wordt gemaakt. Onveranderbare.|Nee|Nee|Invoer, persistent, uitvoer|
 |usageLocation   |Tekenreeks|Vereist voor gebruikers aan wie licenties moeten worden toegewezen als gevolg van wettelijke vereisten om te controleren of de services beschikbaar zijn in landen/regio's. Geen Null-waarden. Een land/regio code van twee letters (ISO-standaard 3166). Voor beelden: "US", "JP" en "GB".|Ja|Nee|Persistent gemaakt, uitvoer|
-|userType        |Tekenreeks|Een teken reeks waarde die kan worden gebruikt voor het classificeren van gebruikers typen in uw Directory. Waarde moet lid zijn. Alleen-lezen.|Alleen-lezen|No|Persistent gemaakt, uitvoer|
+|userType        |Tekenreeks|Een teken reeks waarde die kan worden gebruikt voor het classificeren van gebruikers typen in uw Directory. Waarde moet lid zijn. Alleen-lezen.|Alleen-lezen|Nee|Persistent gemaakt, uitvoer|
 |userState (externalUserState)<sup>3</sup>|Tekenreeks|Alleen voor Azure AD B2B-account geeft aan of de uitnodiging wordt PendingAcceptance of geaccepteerd.|Nee|Nee|Persistent gemaakt, uitvoer|
 |userStateChangedOn (externalUserStateChangeDateTime)<sup>2</sup>|DateTime|Toont de tijds tempel voor de laatste wijziging van de eigenschap UserState.|Nee|Nee|Persistent gemaakt, uitvoer|
 
@@ -137,7 +137,7 @@ Voor federatieve identiteiten, afhankelijk van de ID-provider, is het **issuerAs
 
 ## <a name="password-profile-property"></a>Eigenschap voor wachtwoord profiel
 
-Voor een lokale identiteit is het kenmerk **passwordProfile** vereist en bevat het wacht woord van de gebruiker. Het `forceChangePasswordNextSignIn` kenmerk moet worden ingesteld op `false` .
+Voor een lokale identiteit is het kenmerk **passwordProfile** vereist en bevat het wacht woord van de gebruiker. Het `forceChangePasswordNextSignIn` kenmerk geeft aan of een gebruiker het wacht woord opnieuw moet instellen bij de volgende aanmelding. [Stel geforceerde wachtwoord herstel stroom](force-password-reset.md)in om een geforceerde wachtwoord herstel af te handelen.
 
 Voor een federatieve (sociale) identiteit is het **passwordProfile** -kenmerk niet vereist.
 

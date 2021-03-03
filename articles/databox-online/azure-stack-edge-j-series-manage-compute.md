@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 01/27/2021
 ms.author: alkohli
-ms.openlocfilehash: 4c4fbef807d31e03a79f80db7fd29580074fb8bd
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: bd49edcfaca781ac3d36fbf871ec146b32c64ae3
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98955451"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733411"
 ---
 # <a name="manage-compute-on-your-azure-stack-edge-pro-gpu"></a>Reken kracht beheren op uw Azure Stack Edge Pro GPU
 
@@ -21,11 +21,6 @@ ms.locfileid: "98955451"
 
 In dit artikel wordt beschreven hoe u Compute beheert via IoT Edge-service op uw Azure Stack Edge Pro GPU-apparaat. U kunt de compute beheren via de Azure Portal of via de lokale web-UI. Gebruik de Azure Portal om modules, triggers en IoT Edge configuratie te beheren, en de lokale web-UI voor het beheren van de instellingen van het reken netwerk.
 
-In dit artikel leert u het volgende:
-
-> [!div class="checklist"]
-> * Triggers beheren
-> * IoT Edge configuratie beheren
 
 
 ## <a name="manage-triggers"></a>Triggers beheren
@@ -130,6 +125,22 @@ Voer de volgende stappen uit in de Azure Portal om de toegangs sleutels voor uw 
     ![Selecteer Ja wanneer u hierom wordt gevraagd](media/azure-stack-edge-j-series-manage-compute/refresh-configuration-2.png)
 
 3. Sluit het dialoogvenster wanneer de synchronisatie is voltooid.
+
+## <a name="change-external-service-ips-for-containers"></a>Externe service Ip's voor containers wijzigen
+
+Kubernetes External service Ip's worden gebruikt om te bereiken naar services die buiten het Kubernetes-cluster worden weer gegeven. Nadat het apparaat is geactiveerd, kunt u de IP-adressen van de externe service voor het apparaat in containers instellen of wijzigen door de lokale gebruikers interface te openen.
+
+
+1. Ga in de lokale gebruikers interface van het apparaat naar **Compute**.
+1. Selecteer de poort waarvan het netwerk is geconfigureerd voor compute. Op de Blade die wordt geopend, geeft u (nieuw) of wijzigen (indien bestaande) de Kubernetes externe service Ip's. Deze IP-adressen worden gebruikt voor alle services die buiten het Kubernetes-cluster moeten worden weer gegeven. 
+    - U hebt mini maal 1 service-IP nodig voor de `edgehub` service die op uw apparaat wordt uitgevoerd en wordt gebruikt door IOT Edge modules. 
+    - U hebt een IP-adres nodig voor elke aanvullende IoT Edge module of container die u wilt implementeren. 
+    - Dit zijn statische, aaneengesloten IP-adressen.
+
+    ![Ip's van Kubernetes-service wijzigen](media/azure-stack-edge-j-series-manage-compute/change-service-ips-1.png)
+
+1. Selecteer **Toepassen**. Nadat de IP-adressen zijn toegepast, hoeft het apparaat niet opnieuw te worden opgestart of opnieuw op te starten. De nieuwe IP-adressen worden onmiddellijk van kracht.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 02/09/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 32cbe31f95c03f9b0b5eb1a31a28033dce18b112
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 035d782321feb5d467638159fc191f65573b1042
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417916"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101716122"
 ---
 # <a name="enable-a-managed-identity-for-routing-azure-digital-twins-events-preview-azure-cli"></a>Een beheerde identiteit inschakelen voor het routeren van Azure Digital Apparaatdubbels-gebeurtenissen (preview): Azure CLI
 
@@ -87,8 +87,7 @@ Zie voor meer informatie over eind punten, routes en de typen bestemmingen die w
 
 ### <a name="assign-the-role"></a>De rol toewijzen
 
->[!NOTE]
-> Deze sectie moet worden uitgevoerd door een Azure-gebruiker met machtigingen voor het beheren van de gebruikers toegang tot Azure-resources (inclusief het verlenen en delegeren van machtigingen). Algemene rollen die aan deze vereiste voldoen, zijn *eigenaar*, *account beheerder* of de combi natie van beheerder en *mede werker* van de *gebruikers toegang* . Zie [*How-to: instance en Authentication instellen*](how-to-set-up-instance-portal.md#prerequisites-permission-requirements)voor meer informatie over machtigings vereisten voor Azure Digital apparaatdubbels-rollen.
+[!INCLUDE [digital-twins-permissions-required.md](../../includes/digital-twins-permissions-required.md)]
 
 U kunt de `--scopes` para meter toevoegen aan de `az dt create` opdracht, zodat de identiteit kan worden toegewezen aan een of meer bereiken met een opgegeven rol. Dit kan worden gebruikt bij het maken van het exemplaar of later door door gegeven in de naam van een exemplaar dat al bestaat.
 
@@ -102,7 +101,7 @@ Zie de [naslag documentatie **AZ DT maken**](/cli/azure/ext/azure-iot/dt?view=az
 
 U kunt ook de opdracht [**AZ Role Assignment**](/cli/azure/role/assignment?view=azure-cli-latest&preserve-view=true) gebruiken om rollen te maken en te beheren. Dit kan worden gebruikt ter ondersteuning van aanvullende scenario's waarin u de roltoewijzing niet wilt groeperen met de opdracht Create.
 
-## <a name="create-an-endpoint-with-identity-based-authorization"></a>Een eind punt maken met autorisatie op basis van een identiteit
+## <a name="create-an-endpoint-with-identity-based-authentication"></a>Een eind punt maken met verificatie op basis van een identiteit
 
 Nadat u een door een systeem beheerde identiteit hebt ingesteld voor uw Azure Digital Apparaatdubbels-exemplaar en de juiste rol (len) hebt toegewezen, kunt u Azure Digital Apparaatdubbels- [eind punten](how-to-manage-routes-portal.md#create-an-endpoint-for-azure-digital-twins) maken die de identiteit kunnen gebruiken voor verificatie. Deze optie is alleen beschikbaar voor Event hub-en Service Bus-type-eind punten (wordt niet ondersteund voor Event Grid).
 

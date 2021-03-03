@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 07/14/2020
 ms.author: v-demjoh
 ms.custom: devx-track-js
-ms.openlocfilehash: 25a3613f2aa45d31f47a8a4f288abbb1e9ee78fa
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 305536b8af9888e5fe3965cabd05f48ad4e93086
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98947349"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750570"
 ---
 Een van de belangrijkste functies van de speech-service is de mogelijkheid om menselijke spraak te herkennen en te vertalen naar andere talen. In deze Snelstartgids leert u hoe u de Speech SDK in uw apps en producten kunt gebruiken om spraak vertalingen van hoge kwaliteit uit te voeren. In deze Quick Start vindt u onderwerpen, waaronder:
 
@@ -20,7 +20,7 @@ Een van de belangrijkste functies van de speech-service is de mogelijkheid om me
 
 ## <a name="skip-to-samples-on-github"></a>Naar voorbeelden op GitHub
 
-Raadpleeg de [JavaScript-quickstartvoorbeelden](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/node) op GitHub als u direct naar voorbeeldcode wilt gaan.
+Raadpleeg de [JavaScript-quickstartvoorbeelden](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/browser/translate-speech-to-text) op GitHub als u direct naar voorbeeldcode wilt gaan.
 
 ## <a name="prerequisites"></a>Vereisten
 

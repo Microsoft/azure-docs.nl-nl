@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/24/2020
 ms.author: duau
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 2742b03bcacd73e7e602666b898417f295905f19
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 24ad325cae2ee71ad49ee8ee055a83ceb8fa7ef2
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97034068"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101721732"
 ---
 # <a name="expressroute-workflows-for-circuit-provisioning-and-circuit-states"></a>ExpressRoute-werkstromen voor circuitinrichting en -statussen
 
@@ -77,8 +77,12 @@ Routerings domeinen configureren. Als uw connectiviteits provider de laag-3 conf
 
 Schakel privé-peering in om verbinding te maken met Vm's en Cloud Services die zijn geïmplementeerd in het virtuele Azure-netwerk.
 
-* Peering-subnet voor pad 1 (/30)
-* Peering-subnet voor pad 2 (/30)
+* IPv4-subnetten:
+    * Peering-subnet voor pad 1 (/30)
+    * Peering-subnet voor pad 2 (/30)
+* IPv6-subnetten (optioneel):
+    * Peering-subnet voor pad 1 (/126)
+    * Peering-subnet voor pad 2 (/126)
 * VLAN-ID voor peering
 * ASN voor peering
 * ExpressRoute ASN = 12076
@@ -88,8 +92,12 @@ Schakel privé-peering in om verbinding te maken met Vm's en Cloud Services die 
 
 Schakel dit in om toegang te krijgen tot micro soft onlineservices, zoals Microsoft 365. Daarnaast zijn alle Azure PaaS-services toegankelijk via micro soft-peering. U moet ervoor zorgen dat u een afzonderlijke proxy/Edge gebruikt om verbinding te maken met micro soft dan het account dat u voor Internet gebruikt. Het gebruik van dezelfde rand voor zowel ExpressRoute als het internet zorgt voor asymmetrische route ring en veroorzaakt connectiviteits storingen voor uw netwerk.
 
-* Peering-subnet voor pad 1 (/30)-moet openbaar IP-adres zijn
-* Peering-subnet voor pad 2 (/30)-moet openbaar IP-adres zijn
+* IPv4-subnetten:
+    * Peering-subnet voor pad 1 (/30)-moet openbaar IP-adres zijn
+    * Peering-subnet voor pad 2 (/30)-moet openbaar IP-adres zijn
+* IPv6-subnetten (optioneel):
+    * Peering-subnet voor pad 1 (/126): dit moet een openbaar IP-adres zijn
+    * Peering-subnet voor pad 2 (/126)-moet openbaar IP-adres zijn
 * VLAN-ID voor peering
 * ASN voor peering
 * Aangekondigde voor voegsels-moeten open bare IP-voor voegsels zijn

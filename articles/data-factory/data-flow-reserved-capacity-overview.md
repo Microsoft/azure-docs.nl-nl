@@ -6,12 +6,12 @@ author: kromerm
 ms.author: makromer
 ms.service: data-factory
 ms.date: 02/05/2021
-ms.openlocfilehash: d41646ef1ef964db38245009717554eaeb783824
-ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
+ms.openlocfilehash: c4d6ebc8d57857deeb2a5cc71867484bd3519ea6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100526303"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101699671"
 ---
 # <a name="save-costs-for-resources-with-reserved-capacity---azure-data-factory-data-flows"></a>Bespaar kosten voor resources met gereserveerde capaciteit-Azure Data Factory gegevens stromen
 
@@ -21,12 +21,12 @@ Bespaar geld met Azure Data Factory kosten voor de gegevens stroom door het door
 
 U hoeft de reserve ring niet toe te wijzen aan een specifieke Factory of Integration runtime. Bestaande fabrieken of nieuwe geïmplementeerde fabrieken krijgen automatisch het voor deel. Door een reserve ring te kopen, legt u het gebruik van de reken kosten voor de gegevens stroom gedurende een periode van één of drie jaar voor. Zodra u een reserve ring koopt, worden de reken kosten die overeenkomen met de reserverings kenmerken niet meer in rekening gebracht tegen de betalen naar gebruik-tarieven. 
 
-U kunt [gereserveerde capaciteit](https://portal.azure.com) kopen door reserve ringen [vooraan of met maandelijkse betalingen](https://docs.microsoft.com/azure/cost-management-billing/reservations/prepare-buy-reservation.md)te kiezen. Gereserveerde capaciteit kopen:
+U kunt [gereserveerde capaciteit](https://portal.azure.com) kopen door reserve ringen [vooraan of met maandelijkse betalingen](../cost-management-billing/reservations/prepare-buy-reservation.md)te kiezen. Gereserveerde capaciteit kopen:
 
 - U moet de rol van eigenaar zijn voor minstens één bedrijf of een afzonderlijk abonnement met betalen per gebruik-tarieven.
 - Voor Enterprise Agreements moet de optie **Gereserveerde instanties toevoegen** zijn ingeschakeld in de [EA Portal](https://ea.azure.com). Als deze instelling is uitgeschakeld, moet u een EA-beheerder zijn voor het abonnement. Gereserveerde capaciteit.
 
-Zie het [gebruik van Azure-reserve ringen voor uw Enter prise-inschrijving](https://docs.microsoft.com/azure/cost-management-billing/reservations/understand-reserved-instance-usage-ea) en [inzicht krijgen in het gebruik van Azure-reserve ringen voor uw abonnement voor betalen per gebruik](https://docs.microsoft.com/azure/cost-management-billing/reservations/understand-reserved-instance-usage)voor meer informatie over hoe klanten en betalen per gebruik in rekening worden gebracht voor reserverings aankopen.
+Zie het [gebruik van Azure-reserve ringen voor uw Enter prise-inschrijving](../cost-management-billing/reservations/understand-reserved-instance-usage-ea.md) en [inzicht krijgen in het gebruik van Azure-reserve ringen voor uw abonnement voor betalen per gebruik](../cost-management-billing/reservations/understand-reserved-instance-usage.md)voor meer informatie over hoe klanten en betalen per gebruik in rekening worden gebracht voor reserverings aankopen.
 
 > [!NOTE]
 > Bij gereserveerde capaciteit van aankopen worden geen specifieke infrastructuur resources (virtuele machines of clusters) voor uw gebruik toegewezen of gereserveerd.
@@ -49,7 +49,7 @@ Stel bijvoorbeeld dat u per uur een pijp lijn uitvoert met behulp van geheugen d
 
 ## <a name="cancel-exchange-or-refund-reservations"></a>Reserveringen annuleren, ruilen of terugbetalen
 
-Annulering, ruiling of terugbetaling van reserveringen is mogelijk met bepaalde beperkingen. Zie [Selfserviceopties voor inwisselen en retourneren van Azure-reserveringen](https://docs.microsoft.com/azure/cost-management-billing/reservations/exchange-and-refund-azure-reservations) voor meer informatie.
+Annulering, ruiling of terugbetaling van reserveringen is mogelijk met bepaalde beperkingen. Zie [Selfserviceopties voor inwisselen en retourneren van Azure-reserveringen](../cost-management-billing/reservations/exchange-and-refund-azure-reservations.md) voor meer informatie.
 
 ## <a name="need-help-contact-us"></a>Hebt u hulp nodig? Contact opnemen
 

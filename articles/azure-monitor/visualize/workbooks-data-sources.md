@@ -8,12 +8,12 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 06/29/2020
-ms.openlocfilehash: ee4436d2b8445f2a1d368fb6c76e04d1ec790d98
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 862c6c5253c1bb4481476b67c7cfb203c2568e24
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612744"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101700572"
 ---
 # <a name="azure-monitor-workbooks-data-sources"></a>Gegevens bronnen Azure Monitor werkmappen
 
@@ -34,7 +34,7 @@ Ontwerpers van werkmappen kunnen eenvoudig een query uitvoeren op meerdere resou
 
 ## <a name="metrics"></a>Metrische gegevens
 
-Azure-resources verzenden [metrische gegevens](../platform/data-platform-metrics.md) die via werkmappen kunnen worden geopend. Metrische gegevens kunnen worden geopend in werkmappen via een gespecialiseerd besturings element waarmee u de doel resources, de gewenste metrische gegevens en de aggregatie kunt opgeven. Deze gegevens kunnen vervolgens worden getekend in grafieken of rasters.
+Azure-resources verzenden [metrische gegevens](../essentials/data-platform-metrics.md) die via werkmappen kunnen worden geopend. Metrische gegevens kunnen worden geopend in werkmappen via een gespecialiseerd besturings element waarmee u de doel resources, de gewenste metrische gegevens en de aggregatie kunt opgeven. Deze gegevens kunnen vervolgens worden getekend in grafieken of rasters.
 
 ![Scherm afbeelding van metrische werkmap grafieken van CPU-gebruik](./media/workbooks-data-sources/metrics-graph.png)
 
@@ -145,6 +145,6 @@ Deze provider ondersteunt [JSONPath](workbooks-jsonpath.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Ga](../platform/workbooks-overview.md#visualizations) voor meer informatie over werkmappen veel uitgebreide visualisaties opties.
-* De toegang tot uw werkmap resources [beheren](../platform/workbooks-access-control.md) en delen.
-* [Tips voor het optimaliseren van query's Log Analytics](../log-query/query-optimization.md)
+* [Ga](./workbooks-overview.md#visualizations) voor meer informatie over werkmappen veel uitgebreide visualisaties opties.
+* De toegang tot uw werkmap resources [beheren](./workbooks-access-control.md) en delen.
+* [Tips voor het optimaliseren van query's Log Analytics](../logs/query-optimization.md)

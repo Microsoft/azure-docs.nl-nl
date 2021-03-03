@@ -7,21 +7,21 @@ ms.topic: reference
 ms.date: 09/30/2020
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: a050e9832537dd9b6690c7f9409bfbb5b795af2c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: c2cea95dba3be02b9db584b0650761cb2d640283
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609173"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728770"
 ---
 # <a name="azure-activity-log-event-schema"></a>Azure-gebeurtenisschema in het activiteitenlogboek
-Het [Azure-activiteiten logboek](../platform/platform-logs-overview.md) biedt inzicht in alle gebeurtenissen op abonnements niveau die zich in azure hebben voorgedaan. In dit artikel worden de categorieën en het schema voor activiteiten Logboeken beschreven. 
+Het [Azure-activiteiten logboek](./platform-logs-overview.md) biedt inzicht in alle gebeurtenissen op abonnements niveau die zich in azure hebben voorgedaan. In dit artikel worden de categorieën en het schema voor activiteiten Logboeken beschreven. 
 
 Het schema is afhankelijk van hoe u het logboek opent:
  
 - De schema's die in dit artikel worden beschreven, zijn wanneer u het activiteiten logboek opent vanuit het [rest API](/rest/api/monitor/activitylogs). Dit is ook het schema dat wordt gebruikt wanneer u de **JSON** -optie selecteert bij het weer geven van een gebeurtenis in de Azure Portal.
-- Zie het laatste sectie [schema van het opslag account en de Event hubs](#schema-from-storage-account-and-event-hubs) voor het schema wanneer u een [Diagnostische instelling](../platform/diagnostic-settings.md) gebruikt om het activiteiten logboek te verzenden naar Azure Storage of Azure Event hubs.
-- Zie [Azure monitor gegevens referentie](/azure/azure-monitor/reference/) voor het schema wanneer u een [Diagnostische instelling](../platform/diagnostic-settings.md) gebruikt om het activiteiten logboek naar een log Analytics-werk ruimte te verzenden.
+- Zie het laatste sectie [schema van het opslag account en de Event hubs](#schema-from-storage-account-and-event-hubs) voor het schema wanneer u een [Diagnostische instelling](./diagnostic-settings.md) gebruikt om het activiteiten logboek te verzenden naar Azure Storage of Azure Event hubs.
+- Zie [Azure monitor gegevens referentie](/azure/azure-monitor/reference/) voor het schema wanneer u een [Diagnostische instelling](./diagnostic-settings.md) gebruikt om het activiteiten logboek naar een log Analytics-werk ruimte te verzenden.
 
 ## <a name="severity-level"></a>Ernstniveau
 Elk item in het activiteiten logboek heeft een Ernst niveau. Het Ernst niveau kan een van de volgende waarden hebben:  
@@ -36,7 +36,7 @@ Elk item in het activiteiten logboek heeft een Ernst niveau. Het Ernst niveau ka
 De devlopers van elke resource provider kiezen de ernst niveaus van hun resource vermeldingen. Als gevolg hiervan kan de daad werkelijke ernst variëren, afhankelijk van hoe uw toepassing is gebouwd. Zo zijn items die ' kritiek ' zijn voor een bepaalde bron die in isolatie wordt opgenomen, mogelijk niet zo belang rijk als ' fouten ' in een resource type dat is gecentraliseerd voor uw Azure-toepassing. Houd rekening met dit feit bij het bepalen van de gebeurtenissen die moeten worden gewaarschuwd.  
 
 ## <a name="categories"></a>Categorieën
-Elke gebeurtenis in het activiteiten logboek heeft een bepaalde categorie die wordt beschreven in de volgende tabel. Zie de secties hieronder voor meer informatie over elke categorie en het bijbehorende schema wanneer u het activiteiten logboek opent vanuit de portal, Power shell, CLI en REST API. Het schema is anders wanneer u [het activiteiten logboek streamt naar Storage of event hubs](../platform/resource-logs.md#send-to-azure-event-hubs). In de laatste sectie van het artikel is een toewijzing van de eigenschappen aan het [schema voor bron logboeken](../platform/resource-logs-schema.md) opgenomen.
+Elke gebeurtenis in het activiteiten logboek heeft een bepaalde categorie die wordt beschreven in de volgende tabel. Zie de secties hieronder voor meer informatie over elke categorie en het bijbehorende schema wanneer u het activiteiten logboek opent vanuit de portal, Power shell, CLI en REST API. Het schema is anders wanneer u [het activiteiten logboek streamt naar Storage of event hubs](./resource-logs.md#send-to-azure-event-hubs). In de laatste sectie van het artikel is een toewijzing van de eigenschappen aan het [schema voor bron logboeken](./resource-logs-schema.md) opgenomen.
 
 | Categorie | Beschrijving |
 |:---|:---|
@@ -141,7 +141,7 @@ Deze categorie bevat de record van alle bewerkingen voor maken, bijwerken, verwi
 ```
 
 ### <a name="property-descriptions"></a>Beschrijvingen van eigenschappen
-| Naam van element | Description |
+| Naam van element | Beschrijving |
 | --- | --- |
 | autorisatie |BLOB van de Azure RBAC-eigenschappen van de gebeurtenis. Bevat meestal de eigenschappen ' Action ', ' Role ' en ' scope '. |
 | aanroeper |Het e-mail adres van de gebruiker die de bewerking, UPN-claim of SPN-claim heeft uitgevoerd op basis van Beschik baarheid. |
@@ -288,7 +288,7 @@ Deze categorie bevat de record van de resource status gebeurtenissen die zijn op
 ```
 
 ### <a name="property-descriptions"></a>Beschrijvingen van eigenschappen
-| Naam van element | Description |
+| Naam van element | Beschrijving |
 | --- | --- |
 | detailhandelkanalen | Altijd ' admin, bewerking ' |
 | correlationId | Een GUID in de teken reeks indeling. |
@@ -381,7 +381,7 @@ Deze categorie bevat de registratie van alle activeringen van klassieke Azure-wa
 ```
 
 ### <a name="property-descriptions"></a>Beschrijvingen van eigenschappen
-| Naam van element | Description |
+| Naam van element | Beschrijving |
 | --- | --- |
 | aanroeper | Altijd micro soft. Insights/alertRules |
 | detailhandelkanalen | Altijd ' admin, bewerking ' |
@@ -407,7 +407,7 @@ Deze categorie bevat de registratie van alle activeringen van klassieke Azure-wa
 Het veld eigenschappen bevat verschillende waarden, afhankelijk van de bron van de waarschuwings gebeurtenis. Twee veelvoorkomende waarschuwings gebeurtenis providers zijn activiteiten logboek waarschuwingen en metrische waarschuwingen.
 
 #### <a name="properties-for-activity-log-alerts"></a>Eigenschappen voor waarschuwingen voor activiteiten logboeken
-| Naam van element | Description |
+| Naam van element | Beschrijving |
 | --- | --- |
 | Eigenschappen. subscriptionId | De abonnements-ID van de gebeurtenis in het activiteiten logboek, waardoor de waarschuwings regel voor het activiteiten logboek wordt geactiveerd. |
 | Eigenschappen. eventDataId | De gebeurtenis gegevens-ID van de gebeurtenis in het activiteiten logboek, waardoor de waarschuwings regel voor het activiteiten logboek is geactiveerd. |
@@ -418,7 +418,7 @@ Het veld eigenschappen bevat verschillende waarden, afhankelijk van de bron van 
 | Eigenschappen. status | De status van de gebeurtenis in het activiteiten logboek die de waarschuwings regel voor het activiteiten logboek heeft veroorzaakt dat deze wordt geactiveerd.|
 
 #### <a name="properties-for-metric-alerts"></a>Eigenschappen voor metrische waarschuwingen
-| Naam van element | Description |
+| Naam van element | Beschrijving |
 | --- | --- |
 | eigenschappen. RuleUri | Resource-ID van de metrische waarschuwings regel zelf. |
 | eigenschappen. RuleName | De naam van de waarschuwings regel voor metrische gegevens. |
@@ -491,7 +491,7 @@ Deze categorie bevat een overzicht van alle gebeurtenissen die betrekking hebben
 ```
 
 ### <a name="property-descriptions"></a>Beschrijvingen van eigenschappen
-| Naam van element | Description |
+| Naam van element | Beschrijving |
 | --- | --- |
 | aanroeper | Altijd micro soft. Insights/autoscaleSettings |
 | detailhandelkanalen | Altijd ' admin, bewerking ' |
@@ -581,7 +581,7 @@ Deze categorie bevat alle waarschuwingen die door Azure Security Center worden g
 ```
 
 ### <a name="property-descriptions"></a>Beschrijvingen van eigenschappen
-| Naam van element | Description |
+| Naam van element | Beschrijving |
 | --- | --- |
 | detailhandelkanalen | Altijd ' bewerking ' |
 | correlationId | Een GUID in de teken reeks indeling. |
@@ -662,7 +662,7 @@ Deze categorie bevat de record met nieuwe aanbevelingen die voor uw services wor
 
 ```
 ### <a name="property-descriptions"></a>Beschrijvingen van eigenschappen
-| Naam van element | Description |
+| Naam van element | Beschrijving |
 | --- | --- |
 | detailhandelkanalen | Altijd ' bewerking ' |
 | correlationId | Een GUID in de teken reeks indeling. |
@@ -772,7 +772,7 @@ Deze categorie bevat records van alle bewerkingen voor effect acties die worden 
 
 ### <a name="policy-event-property-descriptions"></a>Beschrijvingen van eigenschap beleids gebeurtenis
 
-| Naam van element | Description |
+| Naam van element | Beschrijving |
 | --- | --- |
 | autorisatie | Matrix van eigenschappen van Azure RBAC van de gebeurtenis. Voor nieuwe resources zijn dit de actie en het bereik van de aanvraag die de evaluatie heeft geactiveerd. Voor bestaande resources is de actie ' micro soft. resources/checkPolicyCompliance/lezen '. |
 | aanroeper | Voor nieuwe resources, de identiteit die een implementatie heeft gestart. Voor bestaande resources, de GUID van de Microsoft Azure Policy Insights RP. |
@@ -804,10 +804,10 @@ Deze categorie bevat records van alle bewerkingen voor effect acties die worden 
 
 
 ## <a name="schema-from-storage-account-and-event-hubs"></a>Schema van opslag account en Event hubs
-Wanneer u het Azure-activiteiten logboek streamt naar een opslag account of Event Hub, volgen de gegevens het schema van het [resource logboek](../platform/resource-logs-schema.md). De volgende tabel bevat een overzicht van de eigenschappen van de bovenstaande schema's aan het schema voor bron Logboeken.
+Wanneer u het Azure-activiteiten logboek streamt naar een opslag account of Event Hub, volgen de gegevens het schema van het [resource logboek](./resource-logs-schema.md). De volgende tabel bevat een overzicht van de eigenschappen van de bovenstaande schema's aan het schema voor bron Logboeken.
 
 > [!IMPORTANT]
-> De indeling van activiteiten logboek gegevens die naar een opslag account zijn geschreven, is gewijzigd in JSON-regels op nov. 1, 2018. Zie [voor bereiding voor het wijzigen van de indeling in azure monitor bron logboeken die zijn gearchiveerd in een opslag account](../platform/resource-logs-blob-format.md) voor meer informatie over deze indelings wijziging.
+> De indeling van activiteiten logboek gegevens die naar een opslag account zijn geschreven, is gewijzigd in JSON-regels op nov. 1, 2018. Zie [voor bereiding voor het wijzigen van de indeling in azure monitor bron logboeken die zijn gearchiveerd in een opslag account](./resource-logs-blob-format.md) voor meer informatie over deze indelings wijziging.
 
 
 | Schema-eigenschap van bron logboeken | REST API schema-eigenschap van activiteiten logboek | Notities |
@@ -894,5 +894,5 @@ Hieronder volgt een voor beeld van een gebeurtenis die gebruikmaakt van dit sche
 
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Meer informatie over het activiteiten logboek](../platform/platform-logs-overview.md)
-* [Een diagnostische instelling maken om het activiteiten logboek te verzenden naar Log Analytics-werk ruimte, Azure-opslag of event hubs](../platform/diagnostic-settings.md)
+* [Meer informatie over het activiteiten logboek](./platform-logs-overview.md)
+* [Een diagnostische instelling maken om het activiteiten logboek te verzenden naar Log Analytics-werk ruimte, Azure-opslag of event hubs](./diagnostic-settings.md)

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/09/2021
 ms.author: bagol
-ms.openlocfilehash: 90646339ef41d0629a4d1ce8efed4b50427d3b2b
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 25f83088bdc55dbafe7ccf0ff06b0c6595c9ea71
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417906"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101724350"
 ---
 # <a name="resources-for-creating-azure-sentinel-custom-connectors"></a>Resources voor het maken van aangepaste Azure Sentinel-connectors
 
@@ -36,12 +36,12 @@ De volgende tabel vergelijkt de essentiële details van elke methode voor het ma
 
 |Beschrijving van methode  |Mogelijkheid | Serverloos    |Complexiteit  |
 |---------|---------|---------|---------|
-|**[Log Analytics-agent](#connect-with-the-log-analytics-agent)** <br>Het beste voor het verzamelen van bestanden van on-premises en IaaS bronnen   | Alleen bestanden verzamelen  |   No      |Beperkt         |
+|**[Log Analytics-agent](#connect-with-the-log-analytics-agent)** <br>Het beste voor het verzamelen van bestanden van on-premises en IaaS bronnen   | Alleen bestanden verzamelen  |   Nee      |Beperkt         |
 |**[Logstash](#connect-with-logstash)** <br>De beste optie voor on-premises en IaaS-bronnen, een bron waarvoor een invoeg toepassing beschikbaar is en organisaties die al bekend zijn met Logstash  | Beschik bare invoeg toepassingen, plus aangepaste invoeg toepassing, bieden een aanzienlijke flexibiliteit.   |   Geen vereist dat een VM of VM-cluster wordt uitgevoerd           |   Gebrek ondersteunt veel scenario's met plugins      |
-|**[Logic Apps](#connect-with-logic-apps)** <br>Hoge kosten; Vermijd gegevens met een hoog volume <br>Geschikt voor Cloud bronnen met weinig volume  | Programmeerloze programmering biedt beperkte flexibiliteit, zonder ondersteuning voor het implementeren van algoritmen.<br><br> Als geen beschik bare actie uw vereisten al ondersteunt, kan het maken van een aangepaste actie leiden tot complexiteit.    |    Yes         |   Gebrek eenvoudige, code ontwikkeling      |
-|**[PowerShell](#connect-with-powershell)** <br>Beste voor het maken van prototypen en periodieke uploads van bestanden | Rechtstreekse ondersteuning voor bestands verzameling. <br><br>Power shell kan worden gebruikt voor het verzamelen van meer bronnen, maar vereist het coderen en configureren van het script als een service.      |No               |  Beperkt       |
+|**[Logic Apps](#connect-with-logic-apps)** <br>Hoge kosten; Vermijd gegevens met een hoog volume <br>Geschikt voor Cloud bronnen met weinig volume  | Programmeerloze programmering biedt beperkte flexibiliteit, zonder ondersteuning voor het implementeren van algoritmen.<br><br> Als geen beschik bare actie uw vereisten al ondersteunt, kan het maken van een aangepaste actie leiden tot complexiteit.    |    Ja         |   Gebrek eenvoudige, code ontwikkeling      |
+|**[Zo](#connect-with-powershell)** <br>Beste voor het maken van prototypen en periodieke uploads van bestanden | Rechtstreekse ondersteuning voor bestands verzameling. <br><br>Power shell kan worden gebruikt voor het verzamelen van meer bronnen, maar vereist het coderen en configureren van het script als een service.      |Nee               |  Beperkt       |
 |**[Log Analytics-API](#connect-with-the-log-analytics-api)** <br>Beste voor Isv's die integratie implementeren en voor unieke verzamelings vereisten   | Ondersteunt alle mogelijkheden die beschikbaar zijn met de code.  | Is afhankelijk van de implementatie           |     Hoog    |
-|**[Azure functions](#connect-with-azure-functions)** Geschikt voor Cloud bronnen met een hoog volume en voor unieke verzamelings vereisten  | Ondersteunt alle mogelijkheden die beschikbaar zijn met de code.  |  Yes             |     Hogesnelheidsnet vereist programmeer kennis    |
+|**[Azure functions](#connect-with-azure-functions)** Geschikt voor Cloud bronnen met een hoog volume en voor unieke verzamelings vereisten  | Ondersteunt alle mogelijkheden die beschikbaar zijn met de code.  |  Ja             |     Hogesnelheidsnet vereist programmeer kennis    |
 |     |         |                |
 
 > [!TIP]
@@ -55,9 +55,9 @@ De volgende tabel vergelijkt de essentiële details van elke methode voor het ma
 
 Als uw gegevens bron gebeurtenissen in bestanden levert, raden wij u aan de Azure Monitor Log Analytics agent te gebruiken om uw aangepaste connector te maken.
 
-- Zie [aangepaste logboeken verzamelen in azure monitor](/azure/azure-monitor/platform/data-sources-custom-logs)voor meer informatie.
+- Zie [aangepaste logboeken verzamelen in azure monitor](../azure-monitor/agents/data-sources-custom-logs.md)voor meer informatie.
 
-- Zie voor een voor beeld van deze methode [aangepaste JSON-gegevens bronnen verzamelen met de log Analytics agent voor Linux in azure monitor](/azure/azure-monitor/platform/data-sources-json).
+- Zie voor een voor beeld van deze methode [aangepaste JSON-gegevens bronnen verzamelen met de log Analytics agent voor Linux in azure monitor](../azure-monitor/agents/data-sources-json.md).
 
 ## <a name="connect-with-logstash"></a>Verbinding maken met Logstash
 
@@ -83,7 +83,7 @@ Voor voor beelden van handige Logstash-invoeg toepassingen raadpleegt u:
 
 ## <a name="connect-with-logic-apps"></a>Verbinding maken met Logic Apps
 
-Een [Azure Logic-app](/azure/logic-apps/) gebruiken om een serverloze, aangepaste connector voor Azure Sentinel te maken.
+Een [Azure Logic-app](../logic-apps/index.yml) gebruiken om een serverloze, aangepaste connector voor Azure Sentinel te maken.
 
 > [!NOTE]
 > Bij het maken van serverloze connectors met behulp van Logic Apps kan het handig zijn om de Logic Apps voor uw connectors te gebruiken voor grote hoeveel heden gegevens.
@@ -93,11 +93,11 @@ Een [Azure Logic-app](/azure/logic-apps/) gebruiken om een serverloze, aangepast
 
 1. **Gebruik een van de volgende triggers om uw Logic apps te starten**:
 
-    |Trigger  |Description  |
+    |Trigger  |Beschrijving  |
     |---------|---------|
-    |**Een terugkerende taak**     |   Plan bijvoorbeeld uw logische app om gegevens regel matig op te halen uit specifieke bestanden, data bases of externe Api's. <br>Zie [terugkerende taken en werk stromen maken, plannen en uitvoeren in azure Logic apps](/azure/connectors/connectors-native-recurrence)voor meer informatie.      |
-    |**Activeren op aanvraag**     | Voer uw logische app op aanvraag uit voor het hand matig verzamelen en testen van gegevens. <br>Zie  [Logic apps aanroepen, activeren of nesten met behulp van HTTPS-eind punten](/azure/logic-apps/logic-apps-http-endpoint)voor meer informatie.        |
-    |**HTTP/S-eind punt**     |  Aanbevolen voor streaming en als het bron systeem de gegevens overdracht kan starten. <br>Zie [service-eind punten aanroepen via http of https](/azure/connectors/connectors-native-http)voor meer informatie.       |
+    |**Een terugkerende taak**     |   Plan bijvoorbeeld uw logische app om gegevens regel matig op te halen uit specifieke bestanden, data bases of externe Api's. <br>Zie [terugkerende taken en werk stromen maken, plannen en uitvoeren in azure Logic apps](../connectors/connectors-native-recurrence.md)voor meer informatie.      |
+    |**Activeren op aanvraag**     | Voer uw logische app op aanvraag uit voor het hand matig verzamelen en testen van gegevens. <br>Zie  [Logic apps aanroepen, activeren of nesten met behulp van HTTPS-eind punten](../logic-apps/logic-apps-http-endpoint.md)voor meer informatie.        |
+    |**HTTP/S-eind punt**     |  Aanbevolen voor streaming en als het bron systeem de gegevens overdracht kan starten. <br>Zie [service-eind punten aanroepen via http of https](../connectors/connectors-native-http.md)voor meer informatie.       |
     |     |         |
 
 1. **Gebruik een van de logische app-connectors die informatie lezen om uw gebeurtenissen op te halen**. Bijvoorbeeld:
@@ -112,9 +112,9 @@ Een [Azure Logic-app](/azure/logic-apps/) gebruiken om een serverloze, aangepast
 
 1. **Bereid de informatie voor die u wilt ophalen**.
 
-    Gebruik bijvoorbeeld de [actie JSON parseren](/azure/logic-apps/logic-apps-perform-data-operations#parse-json-action) om toegang te krijgen tot eigenschappen in JSON-inhoud, zodat u deze eigenschappen kunt selecteren in de lijst met dynamische inhoud wanneer u invoer opgeeft voor uw logische app.
+    Gebruik bijvoorbeeld de [actie JSON parseren](../logic-apps/logic-apps-perform-data-operations.md#parse-json-action) om toegang te krijgen tot eigenschappen in JSON-inhoud, zodat u deze eigenschappen kunt selecteren in de lijst met dynamische inhoud wanneer u invoer opgeeft voor uw logische app.
 
-    Zie [gegevens bewerkingen uitvoeren in azure Logic apps](/azure/logic-apps/logic-apps-perform-data-operations)voor meer informatie.
+    Zie [gegevens bewerkingen uitvoeren in azure Logic apps](../logic-apps/logic-apps-perform-data-operations.md)voor meer informatie.
 
 1. **Schrijf de gegevens naar log Analytics**.
 
@@ -174,14 +174,14 @@ U kunt gebeurtenissen streamen naar Azure Sentinel met behulp van de Log Analyti
 
 Hoewel het aanroepen van een REST-eind punt rechtstreeks meer Program meren vereist, biedt het ook meer flexibiliteit.
 
-Zie voor meer informatie de [log Analytics Data Collector API](/azure/azure-monitor/platform/data-collector-api), met name de volgende voor beelden:
+Zie voor meer informatie de [log Analytics Data Collector API](../azure-monitor/logs/data-collector-api.md), met name de volgende voor beelden:
 
-- [C#](https://docs.microsoft.com/azure/azure-monitor/platform/data-collector-api#c-sample)
-- [Python 2](https://docs.microsoft.com/azure/azure-monitor/platform/data-collector-api#python-2-sample)
+- [C#](../azure-monitor/logs/data-collector-api.md#c-sample)
+- [Python 2](../azure-monitor/logs/data-collector-api.md#python-2-sample)
 
 ## <a name="connect-with-azure-functions"></a>Verbinding maken met Azure Functions
 
-Gebruik Azure Functions in combi natie met een REST API en verschillende coderings talen, zoals [Power shell](/azure/azure-functions/functions-reference-powershell), om een serverloze aangepaste connector te maken.
+Gebruik Azure Functions in combi natie met een REST API en verschillende coderings talen, zoals [Power shell](../azure-functions/functions-reference-powershell.md), om een serverloze aangepaste connector te maken.
 
 Zie voor voor beelden van deze methode:
 
@@ -189,7 +189,7 @@ Zie voor voor beelden van deze methode:
 - [Verbind uw Okta single Sign-On met Azure Sentinel met Azure function](connect-okta-single-sign-on.md)
 - [Uw Proofpoint-taak tikken met Azure Sentinel met Azure function](connect-proofpoint-tap.md)
 - [Uw Qualys-VM verbinden met Azure Sentinel met Azure function](connect-qualys-vm.md)
-- [XML, CSV of andere gegevens indelingen opnemen](/azure/azure-monitor/platform/create-pipeline-datacollector-api#ingesting-xml-csv-or-other-formats-of-data)
+- [XML, CSV of andere gegevens indelingen opnemen](../azure-monitor/logs/create-pipeline-datacollector-api.md#ingesting-xml-csv-or-other-formats-of-data)
 - [Inzoomen met Azure Sentinel](https://techcommunity.microsoft.com/t5/azure-sentinel/monitoring-zoom-with-azure-sentinel/ba-p/1341516) (blog)
 - [Een functie-app implementeren voor het verkrijgen van Office 365-beheer-API-gegevens in azure Sentinel](https://github.com/Azure/Azure-Sentinel/tree/master/DataConnectors/O365%20Data) (Azure Sentinel github Community)
 

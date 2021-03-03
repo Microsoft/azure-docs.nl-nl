@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: fbed48dda3d6b022d30bb9fb0507c3f9f203771d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 4274f976a04a9694c0429a2a4794d645304a9e97
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609077"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728804"
 ---
 # <a name="collect-custom-metrics-for-a-linux-vm-with-the-influxdata-telegraf-agent"></a>Aangepaste metrische gegevens verzamelen voor een virtuele Linux-machine met de InfluxData-Telegraf-agent
 
@@ -25,7 +25,7 @@ U kunt met behulp van Azure Monitor aangepaste metrische gegevens verzamelen via
  ![Overzicht van de Telegraaf agent](./media/collect-custom-metrics-linux-telegraf/telegraf-agent-overview.png)
 
 > [!NOTE]  
-> Aangepaste metrische gegevens worden niet ondersteund in alle regio's. [Hier](../platform/metrics-custom-overview.md#supported-regions) worden ondersteunde regio's vermeld
+> Aangepaste metrische gegevens worden niet ondersteund in alle regio's. [Hier](./metrics-custom-overview.md#supported-regions) worden ondersteunde regio's vermeld
 
 ## <a name="send-custom-metrics"></a>Aangepaste metrische gegevens verzenden 
 
@@ -136,4 +136,4 @@ Daarnaast hebt u in dit overzicht de telegrafa-agent gebruikt voor het verzenden
 Wanneer u deze niet meer nodig hebt, kunt u de resource groep, de virtuele machine en alle gerelateerde resources verwijderen. Als u dit wilt doen, selecteert u de resource groep voor de virtuele machine en selecteert u **verwijderen**. Bevestig vervolgens de naam van de resource groep die u wilt verwijderen. 
 
 ## <a name="next-steps"></a>Volgende stappen
-- Meer informatie over [aangepaste metrische gegevens](../platform/metrics-custom-overview.md).
+- Meer informatie over [aangepaste metrische gegevens](./metrics-custom-overview.md).

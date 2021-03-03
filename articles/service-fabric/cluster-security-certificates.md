@@ -3,12 +3,12 @@ title: X. 509 authenticatie op basis van certificaten in een Service Fabric clus
 description: Meer informatie over verificatie op basis van certificaten in Service Fabric clusters en het detecteren, beperken en oplossen van aan certificaten gerelateerde problemen.
 ms.topic: conceptual
 ms.date: 03/16/2020
-ms.openlocfilehash: 8af0246e0e576f9877c4c5e3b1f1a4314ae29827
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 2d94e5cc78afbabde38eb38e0c4f89381bd67167
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97901246"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101729688"
 ---
 # <a name="x509-certificate-based-authentication-in-service-fabric-clusters"></a>X. 509 authenticatie op basis van certificaten in Service Fabric clusters
 
@@ -182,7 +182,7 @@ Voorheen werd vermeld dat de beveiligings instellingen van een Service Fabric cl
 
 Zoals vermeld, houdt certificaat validatie altijd in voor het bouwen en evalueren van de keten van het certificaat. Voor certificaten die door de certificerings instantie worden verleend, worden meestal enkele uitgaande aanroepen naar verschillende eind punten van de uitgevende PKI, het opslaan van antwoorden in de cache, uitgevoerd. Gezien de prevalentie van certificaat validatie aanroepen in een Service Fabric-cluster, kunnen eventuele problemen in de eind punten van de PKI leiden tot een lagere Beschik baarheid van het cluster of uitsplitsing. De uitgaande aanroepen kunnen niet worden onderdrukt (zie hieronder in het gedeelte met veelgestelde vragen voor meer informatie): de volgende instellingen kunnen worden gebruikt om validatie fouten te maskeren die worden veroorzaakt door mislukte CRL-aanroepen.
 
-  * CrlCheckingFlag: de teken reeks die is geconverteerd naar UINT in het gedeelte Security. De waarde van deze instelling wordt door Service Fabric gebruikt om status fouten in de certificaat keten te maskeren door het gedrag van het bouwen van de keten te wijzigen. het wordt door gegeven aan de Win32 CryptoAPI [CertGetCertificateChain](/windows/win32/api/wincrypt/nf-wincrypt-certgetcertificatechain) -aanroep als de para meter dwFlags en kan worden ingesteld op een geldige combi natie van vlaggen die worden geaccepteerd door de functie. Met de waarde 0 wordt de Service Fabric runtime gedwongen om status fouten van vertrouwens relaties te negeren. dit wordt niet aanbevolen, omdat het gebruik hiervan een belang rijke beveiligings risico vormt. De standaard waarde is 0x40000000 (CERT_CHAIN_REVOCATION_CHECK_CHAIN_EXCLUDE_ROOT).
+  * CrlCheckingFlag: de teken reeks die is geconverteerd naar UINT in het gedeelte Security van. De waarde van deze instelling wordt door Service Fabric gebruikt om status fouten in de certificaat keten te maskeren door het gedrag van het bouwen van de keten te wijzigen. het wordt door gegeven aan de Win32 CryptoAPI [CertGetCertificateChain](/windows/win32/api/wincrypt/nf-wincrypt-certgetcertificatechain) -aanroep als de para meter dwFlags en kan worden ingesteld op een geldige combi natie van vlaggen die worden geaccepteerd door de functie. Met de waarde 0 wordt de Service Fabric runtime gedwongen om status fouten van vertrouwens relaties te negeren. dit wordt niet aanbevolen, omdat het gebruik hiervan een belang rijke beveiligings risico vormt. De standaard waarde is 0x40000000 (CERT_CHAIN_REVOCATION_CHECK_CHAIN_EXCLUDE_ROOT).
 
   Wanneer gebruikt u: voor lokale tests met zelfondertekende certificaten of ontwikkelaars certificaten die niet volledig zijn opgemaakt/geen juiste open bare-sleutel infrastructuur hebben ter ondersteuning van de certificaten. Kan ook worden gebruikt als oplossing in gapped omgevingen tijdens de overgang tussen Pki's.
 
@@ -208,7 +208,7 @@ Zoals vermeld, houdt certificaat validatie altijd in voor het bouwen en evaluere
     </Section>
   ```
 
-  Andere belang rijke instellingen (allemaal onder het gedeelte Security):
+  Andere belang rijke instellingen (alle onder het gedeelte Beveiliging):
   * AcceptExpiredPinnedClusterCertificate: besproken in de sectie die is gericht op certificaat validatie op basis van een vinger afdruk. Hiermee kunt u verlopen zelfondertekende cluster certificaten accepteren. 
   * CertificateExpirySafetyMargin-interval, uitgedrukt in minuten voorafgaand aan het NotAfter-tijds tempel van het certificaat, en gedurende welke het certificaat wordt beschouwd als risico voor de verval datum. Service Fabric bewaakt cluster certificaten en verzendt periodiek status rapporten over hun resterende Beschik baarheid. Binnen het veiligheids interval worden deze status rapporten verhoogd naar de status ' warning '. De standaard waarde is 30 dagen.
   * CertificateHealthReportingInterval: Hiermee bepaalt u de frequentie van status rapporten met betrekking tot de resterende geldigheids duur van cluster certificaten. Rapporten worden slechts één keer per dit interval verzonden. De waarde wordt uitgedrukt in seconden, met een standaard instelling van 8 uur.

@@ -3,18 +3,18 @@ title: Overzicht van gespecialiseerde Event hubs-Azure Event Hubs | Microsoft Do
 description: Dit artikel bevat een overzicht van toegewezen Azure-Event Hubs, dat implementaties met één Tenant van Event hubs biedt.
 ms.topic: article
 ms.date: 10/23/2020
-ms.openlocfilehash: 1a15206fc35f0d536c7105aa73dfdcfc9967124d
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 721acf354c7d14c1362b4f760982af37d59115f9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358861"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101715612"
 ---
 # <a name="overview-of-event-hubs-dedicated"></a>Overzicht van Event Hubs Dedicated
 
 *Event hubs-clusters* bieden implementaties met één Tenant voor klanten met de meest veeleisende streaming behoeften. Deze aanbieding met één Tenant heeft een gegarandeerde 99,99%-SLA en is alleen beschikbaar in onze specifieke prijs categorie. Een Event Hubs-cluster kan miljoenen gebeurtenissen per seconde opnemen met gegarandeerde capaciteit en latentie van minder dan een seconde. Naam ruimten en Event hubs die zijn gemaakt in het toegewezen cluster, bevatten alle functies van de Standard-aanbieding en meer, maar zonder ingangs limieten. Het bevat ook de populaire functie voor het [vastleggen van Event hubs](event-hubs-capture-overview.md) zonder extra kosten. Met deze functie kunt u automatisch gegevens stromen vastleggen en registreren voor Azure Storage of Azure Data Lake. 
 
-Clusters worden ingericht en gefactureerd op basis van **capaciteits eenheden (CUs)** , een vooraf toegewezen hoeveelheid CPU-en geheugen bronnen. U kunt voor elk cluster 1, 2, 4, 8, 12, 16 of 20 capaciteitseenheden kopen. Hoeveel u kunt opnemen en streamen per CU is afhankelijk van verschillende factoren, zoals de volgende: 
+Clusters worden ingericht en gefactureerd op basis van **capaciteits eenheden (CUs)**, een vooraf toegewezen hoeveelheid CPU-en geheugen bronnen. U kunt voor elk cluster 1, 2, 4, 8, 12, 16 of 20 capaciteitseenheden kopen. Hoeveel u kunt opnemen en streamen per CU is afhankelijk van verschillende factoren, zoals de volgende: 
 
 - Aantal producenten en consumenten
 - De shape Payload
@@ -44,15 +44,15 @@ De Event Hubs Dedicated-aanbieding wordt gefactureerd tegen een vaste maandelijk
 
 | Functie | Standard | Toegewezen |
 | --- |:---|:---|
-| Bandbreedte | 20 TUs (Maxi maal 40 TUs) | 20 CU's |
+| Bandbreedte | 20 TU's (tot 40 TU's) | 20 CU's |
 | Naamruimten |  1 | 50 per CU |
-| Event Hubs |  10 per naam ruimte | 1000 per naamruimte |
+| Event Hubs |  10 per naamruimte | 1000 per naamruimte |
 | Ingangsgebeurtenissen | Betalen per miljoen gebeurtenissen | Inbegrepen |
-| Berichtgrootte | 1.000.000 bytes | 1.000.000 bytes |
-| Partities | 32 per Event hub | 1024 per Event Hub<br/>2000 per CU |
-| Consumentengroepen | 20 per Event hub | Geen limiet per CU, 1000 per event hub |
-| Brokered verbindingen | 1.000 inbegrepen, 5.000 Maxi maal | 100 K inbegrepen en Max. |
-| Bewaarperiode van berichten | 7 dagen, 84 GB inbegrepen per di | 90 dagen, 10 TB inbegrepen per CU |
+| Berichtgrootte | 1\.000.000 bytes | 1\.000.000 bytes |
+| Partities | 32 per Event Hub | 1024 per Event Hub<br/>2000 per CU |
+| Consumentengroepen | 20 per Event Hub | Geen limiet per CU, 1000 per event hub |
+| Brokered verbindingen | 1000 inbegrepen, maximaal 5000 | 100K inbegrepen en max. |
+| [Bewaren van gebeurtenissen](event-hubs-features.md#event-retention) | 7 dagen, 84 GB inbegrepen per CU | 90 dagen, 10 TB inbegrepen per CU |
 | Vastleggen | Betalen per uur | Inbegrepen |
 
 Zie [Event hubs quota's en limieten](event-hubs-quotas.md) voor meer quota's en limieten

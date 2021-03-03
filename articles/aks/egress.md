@@ -5,12 +5,12 @@ description: Meer informatie over het maken en gebruiken van een statisch openba
 services: container-service
 ms.topic: article
 ms.date: 03/04/2019
-ms.openlocfilehash: 81b99478358ec3d670e8d783fba27603483614ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2eefeecfa550683dafcf66d936837e2a891c4c84
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87563242"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101726543"
 ---
 # <a name="use-a-static-public-ip-address-for-egress-traffic-with-a-basic-sku-load-balancer-in-azure-kubernetes-service-aks"></a>Een statisch openbaar IP-adres gebruiken voor uitgaand verkeer met een *basis* -SKU Load Balancer in azure Kubernetes service (AKS)
 
@@ -24,7 +24,7 @@ In dit artikel wordt ervan uitgegaan dat u de Azure Basic-Load Balancer gebruikt
 
 In dit artikel wordt ervan uitgegaan dat u beschikt over een bestaand AKS-cluster. Als u een AKS-cluster nodig hebt, raadpleegt u de AKS Quick Start [met behulp van de Azure cli][aks-quickstart-cli] of [met behulp van de Azure Portal][aks-quickstart-portal].
 
-Ook moet de Azure CLI-versie 2.0.59 of hoger zijn geïnstalleerd en geconfigureerd. Voer  `az --version` uit om de versie te bekijken. Als u wilt installeren of upgraden, raadpleegt u [Azure cli installeren][install-azure-cli].
+Ook moet de Azure CLI-versie 2.0.59 of hoger zijn geïnstalleerd en geconfigureerd. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][install-azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 > [!IMPORTANT]
 > In dit artikel wordt gebruikgemaakt van de *basis* -SKU Load Balancer met één knooppunt groep. Deze configuratie is niet beschikbaar voor meerdere knooppunt groepen, aangezien de *basis* -SKU Load Balancer niet wordt ondersteund met meerdere knooppunt groepen. Zie [een open bare Standard Load Balancer gebruiken in azure Kubernetes service (AKS)][slb] voor meer informatie over het gebruik van de *standaard* -SKU Load Balancer.
@@ -33,7 +33,7 @@ Ook moet de Azure CLI-versie 2.0.59 of hoger zijn geïnstalleerd en geconfiguree
 
 Uitgaand verkeer van een AKS-cluster volgt [Azure Load Balancer conventies][outbound-connections]. Voordat de eerste Kubernetes-service van het type `LoadBalancer` wordt gemaakt, maken de agent knooppunten in een AKS-cluster geen deel uit van een Azure Load Balancer groep. In deze configuratie hebben de knoop punten geen openbaar IP-adres op exemplaar niveau. Azure zet de uitgaande stroom om naar een IP-adres van een open bare bron dat niet configureerbaar of deterministisch is.
 
-Zodra een Kubernetes-service van het type `LoadBalancer` is gemaakt, worden er agent knooppunten toegevoegd aan een Azure Load Balancer groep. Voor uitgaande stromen wordt de stroom door Azure omgezet naar het eerste open bare IP-adres dat is geconfigureerd op de load balancer. Dit open bare IP-adres is alleen geldig voor de levens duur van die resource. Als u de Kubernetes Load Balancer-service verwijdert, worden de gekoppelde load balancer en het IP-adres ook verwijderd. Als u een specifiek IP-adres wilt toewijzen of een IP-adres voor opnieuw geïmplementeerde Kubernetes-Services wilt behouden, kunt u een statisch openbaar IP-adres maken en gebruiken.
+Zodra een Kubernetes-service van het type `LoadBalancer` is gemaakt, worden er agent knooppunten toegevoegd aan een Azure Load Balancer groep. Load Balancer Basic kiest voor een eenmalige front-end voor uitgaande stromen wanneer meerdere (open bare) IP-frontends kandidaten voor uitgaande stromen zijn. Deze selectie kan niet worden geconfigureerd. u kunt het selectie algoritme het beste wille keurig beschouwen. Dit open bare IP-adres is alleen geldig voor de levens duur van die resource. Als u de Kubernetes Load Balancer-service verwijdert, worden de gekoppelde load balancer en het IP-adres ook verwijderd. Als u een specifiek IP-adres wilt toewijzen of een IP-adres voor opnieuw geïmplementeerde Kubernetes-Services wilt behouden, kunt u een statisch openbaar IP-adres maken en gebruiken.
 
 ## <a name="create-a-static-public-ip"></a>Een statisch openbaar IP-adres maken
 

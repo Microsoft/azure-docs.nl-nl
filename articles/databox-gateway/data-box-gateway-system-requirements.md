@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: article
-ms.date: 05/08/2019
+ms.date: 03/01/2021
 ms.author: alkohli
-ms.openlocfilehash: aadaedfd2c9ecf544d142e42a0fbeb410324b7d8
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: e7c8653b39a3e0333ff6e98783a6e9a1437dba22
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96582430"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101739208"
 ---
 # <a name="azure-data-box-gateway-system-requirements"></a>Systeem vereisten voor Azure Data Box Gateway
 
@@ -32,7 +32,7 @@ Het onderliggende hostsysteem voor het Data Box Gateway kan de volgende resource
 | Specificaties                                          | Beschrijving              |
 |---------------------------------------------------------|--------------------------|
 | Virtuele processors (kernen)   | Minimaal 4 |
-| Geheugen  | Minimaal 8 GB|
+| Geheugen  | Mini maal 8 GB. We raden u ten zeerste aan minstens 16 GB. |
 | Beschikbaarheid|Eén knooppunt|
 | Disks| Besturingssysteemschijf: 250 GB <br> Gegevensschijf: minimaal 2 TB, thin-provisioned en moet worden ondersteund door SSD's|
 | Netwerkinterfaces|1 of meer virtuele netwerkinterfaces|

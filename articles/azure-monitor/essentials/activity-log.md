@@ -7,17 +7,17 @@ ms.topic: conceptual
 ms.date: 06/12/2020
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: 200c4c536df4a3e32b59945ae4ad97d7b770f269
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 38f5743e8a80af1ec824b07833f66ad50d67b91f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609157"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723296"
 ---
 # <a name="azure-activity-log"></a>Azure-activiteitenlogboek
-Het activiteitenlogboek is een [platformlogboek](../platform/platform-logs-overview.md) in Azure dat inzicht biedt in gebeurtenissen op abonnementsniveau. Dit geldt ook voor gegevens zoals wanneer een resource wordt gewijzigd of wanneer een virtuele machine wordt gestart. U kunt het activiteitenlogboek weergeven in de Azure-portal, of items ophalen met PowerShell en CLI. Voor aanvullende functionaliteit moet u een diagnostische instelling maken om het activiteiten logboek naar [Azure monitor logboeken](../platform/data-platform-logs.md)te verzenden naar Azure Event hubs om buiten Azure door te sturen, of om Azure Storage te archiveren. In dit artikel vindt u informatie over het weer geven van het activiteiten logboek en het verzenden ervan naar verschillende bestemmingen.
+Het activiteitenlogboek is een [platformlogboek](./platform-logs-overview.md) in Azure dat inzicht biedt in gebeurtenissen op abonnementsniveau. Dit geldt ook voor gegevens zoals wanneer een resource wordt gewijzigd of wanneer een virtuele machine wordt gestart. U kunt het activiteitenlogboek weergeven in de Azure-portal, of items ophalen met PowerShell en CLI. Voor aanvullende functionaliteit moet u een diagnostische instelling maken om het activiteiten logboek naar [Azure monitor logboeken](../logs/data-platform-logs.md)te verzenden naar Azure Event hubs om buiten Azure door te sturen, of om Azure Storage te archiveren. In dit artikel vindt u informatie over het weer geven van het activiteiten logboek en het verzenden ervan naar verschillende bestemmingen.
 
-Zie [Diagnostische instellingen maken om platform logboeken en metrische gegevens naar verschillende bestemmingen te verzenden](../platform/diagnostic-settings.md) voor meer informatie over het maken van een diagnostische instelling.
+Zie [Diagnostische instellingen maken om platform logboeken en metrische gegevens naar verschillende bestemmingen te verzenden](./diagnostic-settings.md) voor meer informatie over het maken van een diagnostische instelling.
 
 > [!NOTE]
 > Vermeldingen in het activiteitenlogboek worden door het systeem gegenereerd en kunnen niet worden gewijzigd of verwijderd.
@@ -43,13 +43,13 @@ Als er wijzigingen zijn aangebracht aan de gebeurtenis, ziet u een lijst met wij
 ### <a name="other-methods-to-retrieve-activity-log-events"></a>Andere methoden om gebeurtenissen in het activiteiten logboek op te halen
 U kunt activiteiten logboek gebeurtenissen ook openen met behulp van de volgende methoden.
 
-- Gebruik de cmdlet [Get-AzLog](/powershell/module/az.monitor/get-azlog) om het activiteiten logboek van Power shell op te halen. Zie [Azure monitor Power shell](../samples/powershell-samples.md#retrieve-activity-log)-voor beelden.
-- Gebruik [AZ monitor Activity-Log](/cli/azure/monitor/activity-log) om het activiteiten logboek op te halen uit de cli.  Zie [Azure monitor cli](../samples/cli-samples.md#view-activity-log)-voor beelden.
+- Gebruik de cmdlet [Get-AzLog](/powershell/module/az.monitor/get-azlog) om het activiteiten logboek van Power shell op te halen. Zie [Azure monitor Power shell](../powershell-samples.md#retrieve-activity-log)-voor beelden.
+- Gebruik [AZ monitor Activity-Log](/cli/azure/monitor/activity-log) om het activiteiten logboek op te halen uit de cli.  Zie [Azure monitor cli](../cli-samples.md#view-activity-log)-voor beelden.
 - Gebruik de [Azure Monitor rest API](/rest/api/monitor/) om het activiteiten logboek van een rest-client op te halen. 
 
 
 ## <a name="send-to-log-analytics-workspace"></a>Verzenden naar Log Analytics-werkruimte
- Verzend het activiteiten logboek naar een Log Analytics-werk ruimte om de functies van [Azure monitor logboeken](../platform/data-platform-logs.md) in te scha kelen. Dit omvat het volgende:
+ Verzend het activiteiten logboek naar een Log Analytics-werk ruimte om de functies van [Azure monitor logboeken](../logs/data-platform-logs.md) in te scha kelen. Dit omvat het volgende:
 
 - Correleer activiteiten logboek gegevens met andere bewakings gegevens die zijn verzameld door Azure Monitor.
 - Consolideer logboek vermeldingen van meerdere Azure-abonnementen en-tenants naar één locatie voor analyse tegelijk.
@@ -59,9 +59,9 @@ U kunt activiteiten logboek gebeurtenissen ook openen met behulp van de volgende
 - Geen kosten voor gegevens opname voor activiteiten logboek gegevens die zijn opgeslagen in een Log Analytics-werk ruimte.
 - Er worden geen kosten in rekening gebracht tot 90 dagen voor activiteiten logboek gegevens die zijn opgeslagen in een Log Analytics-werk ruimte.
 
-[Een diagnostische instelling maken](../platform/diagnostic-settings.md) om het activiteiten logboek naar een log Analytics-werk ruimte te verzenden. U kunt het activiteiten logboek vanuit elk abonnement verzenden naar Maxi maal vijf werk ruimten. Voor het verzamelen van logboeken tussen tenants is [Azure Lighthouse](../../lighthouse/index.yml) vereist.
+[Een diagnostische instelling maken](./diagnostic-settings.md) om het activiteiten logboek naar een log Analytics-werk ruimte te verzenden. U kunt het activiteiten logboek vanuit elk abonnement verzenden naar Maxi maal vijf werk ruimten. Voor het verzamelen van logboeken tussen tenants is [Azure Lighthouse](../../lighthouse/index.yml) vereist.
 
-Gegevens van activiteiten logboek in een Log Analytics werkruimte worden opgeslagen in een tabel met de naam *AzureActivity* die u kunt ophalen met een [logboek query](../log-query/log-query-overview.md) in [log Analytics](../log-query/log-analytics-tutorial.md). De structuur van deze tabel is afhankelijk van de [categorie van de logboek vermelding](activity-log-schema.md). Zie de [Azure monitor gegevens referentie](/azure/azure-monitor/reference/tables/azureactivity)voor een beschrijving van de tabel eigenschappen.
+Gegevens van activiteiten logboek in een Log Analytics werkruimte worden opgeslagen in een tabel met de naam *AzureActivity* die u kunt ophalen met een [logboek query](../logs/log-query-overview.md) in [log Analytics](../logs/log-analytics-tutorial.md). De structuur van deze tabel is afhankelijk van de [categorie van de logboek vermelding](activity-log-schema.md). Zie de [Azure monitor gegevens referentie](/azure/azure-monitor/reference/tables/azureactivity)voor een beschrijving van de tabel eigenschappen.
 
 Als u bijvoorbeeld een aantal records in het activiteiten logboek voor elke categorie wilt weer geven, gebruikt u de volgende query.
 
@@ -202,12 +202,12 @@ Als er al een logboek profiel bestaat, moet u eerst het bestaande logboek profie
 
     | Eigenschap | Vereist | Beschrijving |
     | --- | --- | --- |
-    | Name |Yes |De naam van het logboek profiel. |
-    | StorageAccountId |No |De resource-ID van het opslag account waarin het activiteiten logboek moet worden opgeslagen. |
-    | Servicebusruleid kunnen |No |Service Bus regel-ID voor de Service Bus naam ruimte waarin u Event hubs wilt maken. Dit is een teken reeks met de volgende indeling: `{service bus resource ID}/authorizationrules/{key name}` . |
+    | Name |Ja |De naam van het logboek profiel. |
+    | StorageAccountId |Nee |De resource-ID van het opslag account waarin het activiteiten logboek moet worden opgeslagen. |
+    | Servicebusruleid kunnen |Nee |Service Bus regel-ID voor de Service Bus naam ruimte waarin u Event hubs wilt maken. Dit is een teken reeks met de volgende indeling: `{service bus resource ID}/authorizationrules/{key name}` . |
     | Locatie |Ja |Een door komma's gescheiden lijst met regio's waarvoor u activiteiten logboek gebeurtenissen wilt verzamelen. |
-    | RetentionInDays |Yes |Aantal dagen dat gebeurtenissen moeten worden bewaard in het opslag account, tussen 1 en 365. Met de waarde nul worden de logboeken voor onbepaalde tijd opgeslagen. |
-    | Categorie |No |Een door komma's gescheiden lijst met gebeurtenis categorieën die moeten worden verzameld. Mogelijke waarden zijn _schrijven_, _verwijderen_ en _actie_. |
+    | RetentionInDays |Ja |Aantal dagen dat gebeurtenissen moeten worden bewaard in het opslag account, tussen 1 en 365. Met de waarde nul worden de logboeken voor onbepaalde tijd opgeslagen. |
+    | Categorie |Nee |Een door komma's gescheiden lijst met gebeurtenis categorieën die moeten worden verzameld. Mogelijke waarden zijn _schrijven_, _verwijderen_ en _actie_. |
 
 ### <a name="example-script"></a>Voorbeeldscript
 Hier volgt een voor beeld van een Power shell-script voor het maken van een logboek profiel waarmee het activiteiten logboek naar zowel een opslag account als Event Hub wordt geschreven.
@@ -245,12 +245,12 @@ Als er al een logboek profiel bestaat, moet u eerst het bestaande logboek profie
 
     | Eigenschap | Vereist | Beschrijving |
     | --- | --- | --- |
-    | naam |Yes |De naam van het logboek profiel. |
-    | Storage-account-id |Yes |De resource-ID van het opslag account waarnaar de activiteiten logboeken moeten worden opgeslagen. |
-    | locaties |Yes |Een door spaties gescheiden lijst met regio's waarvoor u activiteiten logboek gebeurtenissen wilt verzamelen. U kunt een lijst weer geven met alle regio's voor uw abonnement met behulp van `az account list-locations --query [].name` . |
-    | resterende |Yes |Aantal dagen dat gebeurtenissen moeten worden bewaard, tussen 1 en 365. Met de waarde nul worden de logboeken voor onbepaalde tijd opgeslagen (permanent).  Als de waarde nul is, moet de para meter ingeschakeld worden ingesteld op ONWAAR. |
-    |enabled | Yes |Waar of Niet waar.  Wordt gebruikt om het Bewaar beleid in of uit te scha kelen.  Indien waar, moet de para meter Days een waarde zijn die groter is dan 0.
-    | categorieën |Yes |Een door spaties gescheiden lijst met gebeurtenis categorieën die moeten worden verzameld. Mogelijke waarden zijn schrijven, verwijderen en actie. |
+    | naam |Ja |De naam van het logboek profiel. |
+    | Storage-account-id |Ja |De resource-ID van het opslag account waarnaar de activiteiten logboeken moeten worden opgeslagen. |
+    | locaties |Ja |Een door spaties gescheiden lijst met regio's waarvoor u activiteiten logboek gebeurtenissen wilt verzamelen. U kunt een lijst weer geven met alle regio's voor uw abonnement met behulp van `az account list-locations --query [].name` . |
+    | resterende |Ja |Aantal dagen dat gebeurtenissen moeten worden bewaard, tussen 1 en 365. Met de waarde nul worden de logboeken voor onbepaalde tijd opgeslagen (permanent).  Als de waarde nul is, moet de para meter ingeschakeld worden ingesteld op ONWAAR. |
+    |enabled | Ja |Waar of Niet waar.  Wordt gebruikt om het Bewaar beleid in of uit te scha kelen.  Indien waar, moet de para meter Days een waarde zijn die groter is dan 0.
+    | categorieën |Ja |Een door spaties gescheiden lijst met gebeurtenis categorieën die moeten worden verzameld. Mogelijke waarden zijn schrijven, verwijderen en actie. |
 
 
 ### <a name="log-analytics-workspace"></a>Log Analytics-werkruimte
@@ -400,6 +400,6 @@ U kunt de activiteiten logboek analyse niet meer aan uw abonnement toevoegen met
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Een overzicht van de platform logboeken lezen](../platform/platform-logs-overview.md)
+* [Een overzicht van de platform logboeken lezen](./platform-logs-overview.md)
 * [Gebeurtenis schema voor activiteiten logboek controleren](activity-log-schema.md)
-* [Diagnostische instelling maken om activiteiten logboeken te verzenden naar andere bestemmingen](../platform/diagnostic-settings.md)
+* [Diagnostische instelling maken om activiteiten logboeken te verzenden naar andere bestemmingen](./diagnostic-settings.md)

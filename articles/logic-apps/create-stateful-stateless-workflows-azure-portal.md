@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
-ms.date: 12/07/2020
-ms.openlocfilehash: a7e19894a4688fe270422e93f7081f98e0b699a3
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.date: 03/02/2021
+ms.openlocfilehash: 3cf5047dbb79f6d8b35b0fe089069a20ab4a50a6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936529"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101736336"
 ---
 # <a name="create-stateful-and-stateless-workflows-in-the-azure-portal-with-azure-logic-apps-preview"></a>Stateful en stateless werk stromen maken in de Azure Portal met Azure Logic Apps Preview
 
@@ -34,7 +34,7 @@ In dit artikel wordt uitgelegd hoe u uw logische app en werk stroom in de Azure 
 
 * Een uitvoering van een werk stroom activeren.
 
-* De uitvoerings geschiedenis van de werk stroom weer geven.
+* De uitvoerings-en trigger geschiedenis van de werk stroom weer geven.
 
 * Schakel de Application Insights na de implementatie in of open deze.
 
@@ -51,6 +51,8 @@ In dit artikel wordt uitgelegd hoe u uw logische app en werk stroom in de Azure 
 
   > [!NOTE]
   > [Stateful Logic apps](logic-apps-overview-preview.md#stateful-stateless) voeren opslag transacties uit, zoals het gebruiken van wacht rijen voor het plannen en opslaan van werk stroom statussen in tabellen en blobs. Bij deze trans acties worden [Azure Storage kosten](https://azure.microsoft.com/pricing/details/storage/)in rekening gebracht. Zie [stateful versus stateless](logic-apps-overview-preview.md#stateful-stateless)voor meer informatie over hoe stateful Logic apps gegevens opslaat in externe opslag.
+
+* Als u wilt implementeren in een docker-container, hebt u een bestaande docker-container installatie kopie nodig. U kunt deze installatie kopie bijvoorbeeld maken via [Azure container Registry](../container-registry/container-registry-intro.md), [app service](../app-service/overview.md)of [Azure container instance](../container-instances/container-instances-overview.md). 
 
 * Als u in dit artikel dezelfde voorbeeld logische app wilt maken, hebt u een Office 365 Outlook-e-mail account nodig dat gebruikmaakt van een werk-of school account van micro soft om u aan te melden.
 
@@ -77,7 +79,7 @@ In dit artikel wordt uitgelegd hoe u uw logische app en werk stroom in de Azure 
    | **Abonnement** | Ja | <*Azure-subscription-name*> | Het Azure-abonnement dat moet worden gebruikt voor uw logische app. |
    | **Resourcegroep** | Ja | <*Naam-van-Azure-resourcegroep*> | De Azure-resource groep waar u uw logische app en gerelateerde resources maakt. Deze resource naam moet uniek zijn tussen regio's en mag alleen letters, cijfers, afbreek streepjes ( **-** ), onderstrepings tekens (**_**), haakjes (**()**) en punten (**.**) bevatten. <p><p>In dit voor beeld wordt een resource groep met de naam gemaakt `Fabrikam-Workflows-RG` . |
    | **Naam van logische app** | Ja | <*naam-van-logische-app*> | De te gebruiken naam voor uw logische app. Deze resource naam moet uniek zijn tussen regio's en mag alleen letters, cijfers, afbreek streepjes ( **-** ), onderstrepings tekens (**_**), haakjes (**()**) en punten (**.**) bevatten. <p><p>In dit voor beeld wordt een logische app met de naam gemaakt `Fabrikam-Workflows` . <p><p>**Opmerking**: de naam van de logische app haalt automatisch het achtervoegsel op, `.azurewebsites.net` omdat de resource van de **logische app (preview)** wordt ingeschakeld door Azure functions, die gebruikmaakt van dezelfde app-naam Conventie. |
-   | **Publiceren** | Ja | <*implementatie-omgeving*> | De implementatie bestemming voor uw logische app. U kunt implementeren in azure door een **werk stroom** of een docker-container te selecteren. <p><p>In dit voor beeld wordt de **werk stroom** gebruikt. Dit is de **logische app (preview)** -resource in Azure. <p><p>Als u **docker-container** selecteert, [geeft u de container op die u wilt gebruiken in de instellingen van de logische app](#set-docker-container). |
+   | **Publiceren** | Ja | <*implementatie-omgeving*> | De implementatie bestemming voor uw logische app. U kunt implementeren in azure door een **werk stroom** of **docker-container** te selecteren. <p><p>In dit voor beeld wordt de **werk stroom** gebruikt, waarmee de **logische app (preview-resource)** wordt geïmplementeerd op de Azure Portal. <p><p>**Opmerking**: voordat u **docker-container** selecteert, moet u ervoor zorgen dat u de docker-container installatie kopie maakt. U kunt deze installatie kopie bijvoorbeeld maken via [Azure container Registry](../container-registry/container-registry-intro.md), [app service](../app-service/overview.md)of [Azure container instance](../container-instances/container-instances-overview.md). Op die manier kunt u, nadat u **docker-container** hebt geselecteerd, [de container opgeven die u wilt gebruiken in de instellingen van de logische app](#set-docker-container). |
    | **Regio** | Ja | <*Azure-regio*> | De Azure-regio die moet worden gebruikt bij het maken van uw resource groep en resources. <p><p>In dit voorbeeld wordt **US - west** gebruikt. |
    |||||
 
@@ -90,8 +92,8 @@ In dit artikel wordt uitgelegd hoe u uw logische app en werk stroom in de Azure 
    | Eigenschap | Vereist | Waarde | Beschrijving |
    |----------|----------|-------|-------------|
    | **Opslagaccount** | Ja | <*Azure-storage-account-name*> | Het [Azure Storage-account](../storage/common/storage-account-overview.md) dat moet worden gebruikt voor opslag transacties. Deze resource naam moet uniek zijn voor alle regio's en mag 3-24 tekens bevatten met alleen cijfers en kleine letters. Selecteer een bestaand account of maak een nieuw account. <p><p>In dit voor beeld wordt een opslag account gemaakt met de naam `fabrikamstorageacct` . |
-   | **Plantype** | Ja | <*Azure-hosting-plan*> | Het [hosting plan](../app-service/overview-hosting-plans.md) dat moet worden gebruikt voor het implementeren van uw logische app. Dit is een [**Premium**](../azure-functions/functions-premium-plan.md) -of [**app service-plan**](../azure-functions/dedicated-plan.md). Uw keuze is van invloed op de prijs categorieën die u later kunt kiezen. <p><p>In dit voor beeld wordt het **app service-abonnement** gebruikt. <p><p>**Opmerking**: dit is vergelijkbaar met Azure functions. voor het resource type **Logic app (preview)** is een hosting plan en een prijs categorie vereist. Verbruiks hosting plannen worden niet ondersteund of zijn niet beschikbaar voor dit resource type. Raadpleeg de volgende onderwerpen voor meer informatie: <p><p>- [Azure Functions schalen en hosten](../azure-functions/functions-scale.md) <br>- [Prijs informatie voor App Service](https://azure.microsoft.com/pricing/details/app-service/) <p><p> |
-   | **Windows Plan** | Ja | <*plan-naam*> | De naam van het plan dat moet worden gebruikt. Selecteer een bestaand plan of geef de naam voor een nieuw plan op. <p><p>In dit voor beeld wordt de naam gebruikt `Fabrikam-Service-Plan` . |
+   | **Plantype** | Ja | <*Azure-hosting-plan*> | Het [hosting plan](../app-service/overview-hosting-plans.md) dat moet worden gebruikt voor het implementeren van uw logische app, een van de [**functies Premium**](../azure-functions/functions-premium-plan.md) of [ **app service-plan** (toegewezen)](../azure-functions/dedicated-plan.md). Uw keuze heeft invloed op de mogelijkheden en prijs categorieën die later beschikbaar zijn voor u. <p><p>In dit voor beeld wordt het **app service-abonnement** gebruikt. <p><p>**Opmerking**: dit is vergelijkbaar met Azure functions. voor het resource type **Logic app (preview)** is een hosting plan en een prijs categorie vereist. Verbruiks abonnementen worden niet ondersteund of zijn niet beschikbaar voor dit resource type. Raadpleeg de volgende onderwerpen voor meer informatie: <p><p>- [Azure Functions schalen en hosten](../azure-functions/functions-scale.md) <br>- [Prijs informatie voor App Service](https://azure.microsoft.com/pricing/details/app-service/) <p><p>Het plan functions Premium biedt bijvoorbeeld toegang tot netwerk mogelijkheden, zoals verbinding maken en integreren met Azure Virtual Networks, vergelijkbaar met Azure Functions wanneer u uw Logic apps maakt en implementeert. Raadpleeg de volgende onderwerpen voor meer informatie: <p><p>- [Azure Functions-netwerk opties](../azure-functions/functions-networking-options.md) <br>- [Azure Logic Apps Anywhere-netwerk mogelijkheden uitvoeren met Azure Logic Apps Preview](https://techcommunity.microsoft.com/t5/integrations-on-azure/logic-apps-anywhere-networking-possibilities-with-logic-app/ba-p/2105047) |
+   | **Windows-abonnement** | Ja | <*plan-naam*> | De naam van het plan dat moet worden gebruikt. Selecteer een bestaand plan of geef de naam voor een nieuw plan op. <p><p>In dit voor beeld wordt de naam gebruikt `Fabrikam-Service-Plan` . |
    | **SKU en grootte** | Ja | <*prijs categorie*> | De [prijs categorie](../app-service/overview-hosting-plans.md) die moet worden gebruikt voor het hosten van uw logische app. Uw keuzes worden beïnvloed door het type abonnement dat u eerder hebt gekozen. Als u de standaardlaag wilt wijzigen, selecteert u **grootte wijzigen**. U kunt vervolgens andere prijs categorieën selecteren op basis van de werk belasting die u nodig hebt. <p><p>In dit voor beeld wordt de gratis **F1-prijs categorie** gebruikt voor werk belastingen voor ontwikkelen **en testen** . Bekijk [app service prijs informatie](https://azure.microsoft.com/pricing/details/app-service/)voor meer informatie. |
    |||||
 
@@ -107,9 +109,12 @@ In dit artikel wordt uitgelegd hoe u uw logische app en werk stroom in de Azure 
 
    ![Scherm afbeelding met de Azure Portal en de nieuwe logische app-resource-instellingen.](./media/create-stateful-stateless-workflows-azure-portal/check-logic-app-resource-settings.png)
 
+   > [!TIP]
+   > Als er een validatie fout optreedt nadat u **maken**, openen en de fout details controleren hebt geselecteerd. Als de geselecteerde regio bijvoorbeeld een quotum bereikt voor resources die u probeert te maken, moet u mogelijk een andere regio proberen.
+
    Nadat de implementatie van Azure is voltooid, wordt uw logische app automatisch Live en uitgevoerd, maar nog niets, omdat er geen werk stromen zijn.
 
-1. Selecteer op de pagina voltooiing van implementatie de optie **Ga naar resource** zodat u kunt beginnen met het bouwen van uw werk stroom.
+1. Selecteer op de pagina voltooiing van implementatie de optie **Ga naar resource** zodat u kunt beginnen met het bouwen van uw werk stroom. Als u **docker-container** voor het implementeren van uw logische app hebt geselecteerd, gaat u door met de [stappen om informatie over die docker-container op te geven](#set-docker-container).
 
    ![Scherm opname van de Azure Portal en de voltooide implementatie.](./media/create-stateful-stateless-workflows-azure-portal/logic-app-completed-deployment.png)
 
@@ -117,15 +122,13 @@ In dit artikel wordt uitgelegd hoe u uw logische app en werk stroom in de Azure 
 
 ## <a name="specify-docker-container-for-deployment"></a>Docker-container voor implementatie opgeven
 
-Als u **docker-container** hebt geselecteerd tijdens het maken van uw logische app, moet u ervoor zorgen dat u informatie geeft over de container die u voor implementatie wilt gebruiken nadat de Azure Portal uw **logische app-resource (preview)** heeft gemaakt.
+Voordat u met deze stappen begint, hebt u een docker-container installatie kopie nodig. U kunt deze installatie kopie bijvoorbeeld maken via [Azure container Registry](../container-registry/container-registry-intro.md), [app service](../app-service/overview.md)of [Azure container instance](../container-instances/container-instances-overview.md). U kunt vervolgens informatie over uw docker-container opgeven nadat u uw logische app hebt gemaakt.
 
 1. Ga in het Azure Portal naar de resource van de logische app.
 
-1. Selecteer **container instellingen** onder **instellingen** in het menu van de logische app. Geef de details en locatie op voor de docker-container installatie kopie.
+1. Selecteer in het menu van de logische app onder **instellingen** de optie **implementatie centrum**.
 
-   ![Scherm opname van het menu van de logische app met de optie container instellingen geselecteerd.](./media/create-stateful-stateless-workflows-azure-portal/logic-app-deploy-container-settings.png)
-
-1. Wanneer u klaar bent, slaat u de instellingen op.
+1. Volg de instructies in het deel venster **implementatie centrum** om de Details voor uw docker-container op te geven en te beheren.
 
 <a name="add-workflow"></a>
 
@@ -135,7 +138,7 @@ Als u **docker-container** hebt geselecteerd tijdens het maken van uw logische a
 
    ![Scherm opname van het resource menu van de logische app waarin "werk stromen" is geselecteerd en vervolgens op de werk balk, "toevoegen" is geselecteerd.](./media/create-stateful-stateless-workflows-azure-portal/logic-app-add-blank-workflow.png)
 
-1. Wanneer het deel venster **nieuwe werk stroom** wordt geopend, geeft u een naam op voor uw werk stroom en kiest u het werk stroom type [ **stateful** of **stateless**](logic-apps-overview-preview.md#stateful-stateless) . Als u gereed bent, selecteert u **Maken**.
+1. Wanneer het deel venster **nieuwe werk stroom** wordt geopend, geeft u een naam op voor uw werk stroom en kiest u het werk stroom type [ **stateful** of **stateless**](logic-apps-overview-preview.md#stateful-stateless) . Selecteer **Maken** als u klaar bent.
 
    In dit voor beeld wordt een lege stateful werk stroom met de naam toegevoegd `Fabrikam-Stateful-Workflow` . De werk stroom is standaard ingeschakeld, maar doet niets totdat u een trigger en acties toevoegt.
 
@@ -286,9 +289,11 @@ In dit voor beeld wordt de werk stroom uitgevoerd wanneer de trigger van de aanv
 
       ![Scherm opname van Outlook-e-mail, zoals beschreven in het voor beeld](./media/create-stateful-stateless-workflows-azure-portal/workflow-app-result-email.png)
 
+<a name="view-run-history"></a>
+
 ## <a name="review-run-history"></a>Uitvoeringsgeschiedenis controleren
 
-Voor een stateful werk stroom kunt u na elke uitvoering van elke workflow de uitvoerings geschiedenis bekijken, met inbegrip van de status van de algemene uitvoering, voor de trigger en voor elke actie samen met de invoer en uitvoer.
+Voor een stateful werk stroom kunt u na elke uitvoering van elke workflow de uitvoerings geschiedenis bekijken, met inbegrip van de status van de algemene uitvoering, voor de trigger en voor elke actie samen met de invoer en uitvoer. In de Azure Portal worden de uitvoerings geschiedenis en trigger GESCHIEDENISS weer gegeven op werk stroom niveau, niet op het niveau van de logische app. Zie [trigger geschiedenis controleren](#view-trigger-histories)als u de trigger geschiedenis wilt bekijken buiten de context van de uitvoerings historie.
 
 1. Selecteer in het Azure Portal, in het menu van de werk stroom, de optie **monitor**.
 
@@ -320,15 +325,15 @@ Voor een stateful werk stroom kunt u na elke uitvoering van elke workflow de uit
 
    | Actie status | Pictogram | Beschrijving |
    |---------------|------|-------------|
-   | Aborted | ![Pictogram voor de actie status ' afgebroken '][aborted-icon] | De actie is gestopt of niet voltooid vanwege externe problemen, bijvoorbeeld een systeem storing of een vervallen Azure-abonnement. |
-   | Geannuleerd | ![Pictogram voor de actie status geannuleerd][cancelled-icon] | De actie is uitgevoerd, maar er is een annulerings aanvraag ontvangen. |
-   | Mislukt | ![Pictogram voor de actie status ' mislukt '][failed-icon] | De actie is mislukt. |
-   | Wordt uitgevoerd | ![Pictogram voor de actie status ' actief '][running-icon] | De actie wordt momenteel uitgevoerd. |
-   | Overgeslagen | ![Pictogram voor de actie status "overgeslagen"][skipped-icon] | De actie is overgeslagen omdat de onmiddellijk voorafgaande actie is mislukt. Een actie heeft een `runAfter` voor waarde die vereist dat de voorafgaande actie is voltooid voordat de huidige actie kan worden uitgevoerd. |
-   | Geslaagd | ![Pictogram voor de actie status geslaagd][succeeded-icon] | De actie is geslaagd. |
-   | Geslaagd met nieuwe pogingen | ![Pictogram voor de actie status geslaagd met nieuwe pogingen][succeeded-with-retries-icon] | De actie is voltooid, maar alleen na een of meer pogingen. Als u de geschiedenis van de nieuwe poging wilt bekijken, selecteert u in de detail weergave uitvoerings geschiedenis die actie zodat u de invoer en uitvoer kunt bekijken. |
-   | Time-out opgetreden | ![Pictogram voor de actie status time-out][timed-out-icon] | De actie is gestopt vanwege de time-outlimiet die is opgegeven door de instellingen van die actie. |
-   | Wachten | ![Pictogram voor de actie status ' wachten '][waiting-icon] | Is van toepassing op een webhook-actie die wordt gewacht op een inkomende aanvraag van een aanroeper. |
+   | **Aborted** | ![Pictogram voor de actie status ' afgebroken '][aborted-icon] | De actie is gestopt of niet voltooid vanwege externe problemen, bijvoorbeeld een systeem storing of een vervallen Azure-abonnement. |
+   | **Gevraagd** | ![Pictogram voor de actie status geannuleerd][cancelled-icon] | De actie is uitgevoerd, maar er is een annulerings aanvraag ontvangen. |
+   | **Mislukt** | ![Pictogram voor de actie status ' mislukt '][failed-icon] | De actie is mislukt. |
+   | **Wordt uitgevoerd** | ![Pictogram voor de actie status ' actief '][running-icon] | De actie wordt momenteel uitgevoerd. |
+   | **Overgeslagen** | ![Pictogram voor de actie status "overgeslagen"][skipped-icon] | De actie is overgeslagen omdat de onmiddellijk voorafgaande actie is mislukt. Een actie heeft een `runAfter` voor waarde die vereist dat de voorafgaande actie is voltooid voordat de huidige actie kan worden uitgevoerd. |
+   | **Geslaagd** | ![Pictogram voor de actie status geslaagd][succeeded-icon] | De actie is geslaagd. |
+   | **Geslaagd met nieuwe pogingen** | ![Pictogram voor de actie status geslaagd met nieuwe pogingen][succeeded-with-retries-icon] | De actie is voltooid, maar alleen na een of meer pogingen. Als u de geschiedenis van de nieuwe poging wilt bekijken, selecteert u in de detail weergave uitvoerings geschiedenis die actie zodat u de invoer en uitvoer kunt bekijken. |
+   | **Time-out opgetreden** | ![Pictogram voor de actie status time-out][timed-out-icon] | De actie is gestopt vanwege de time-outlimiet die is opgegeven door de instellingen van die actie. |
+   | **Wachten** | ![Pictogram voor de actie status ' wachten '][waiting-icon] | Is van toepassing op een webhook-actie die wordt gewacht op een inkomende aanvraag van een aanroeper. |
    ||||
 
    [aborted-icon]: ./media/create-stateful-stateless-workflows-azure-portal/aborted.png
@@ -346,6 +351,18 @@ Voor een stateful werk stroom kunt u na elke uitvoering van elke workflow de uit
    ![Scherm opname van de invoer en uitvoer in de geselecteerde actie een e-mail verzenden.](./media/create-stateful-stateless-workflows-azure-portal/review-step-inputs-outputs.png)
 
 1. Selecteer onbewerkte **invoer weer geven** of **onbewerkte uitvoer weer geven** om de onbewerkte invoer en uitvoer voor die stap verder te bekijken.
+
+<a name="view-trigger-histories"></a>
+
+## <a name="review-trigger-histories"></a>Trigger GESCHIEDENISS controleren
+
+Voor een stateful werk stroom kunt u de trigger geschiedenis voor elke uitvoering bekijken, met inbegrip van de trigger status en de invoer en uitvoer, los van de context van de [uitvoerings geschiedenis](#view-run-history). In de Azure Portal worden de trigger geschiedenis en de uitvoerings geschiedenis weer gegeven op werk stroom niveau, niet op het niveau van de logische app. Voer de volgende stappen uit om deze historische gegevens te vinden:
+
+1. Selecteer in het Azure Portal, in het menu van uw werk stroom, onder **ontwikkelaar**, de optie **trigger GESCHIEDENISS**.
+
+   In het deel venster **trigger geschiedenis** worden de trigger GESCHIEDENISS weer gegeven voor de uitvoeringen van uw werk stroom.
+
+1. Als u een specifieke trigger geschiedenis wilt bekijken, selecteert u de ID voor die uitvoering.
 
 <a name="enable-open-application-insights"></a>
 
@@ -365,7 +382,10 @@ Ga als volgt te werk om Application Insights in te scha kelen op een geïmplemen
 
    Als Application Insights is ingeschakeld, selecteert u in het deel venster **Application Insights** **Application Insights gegevens weer geven**.
 
-Nadat Application Insights is geopend, kunt u verschillende metrische gegevens voor uw logische app bekijken.
+Nadat Application Insights is geopend, kunt u verschillende metrische gegevens voor uw logische app bekijken. Raadpleeg de volgende onderwerpen voor meer informatie:
+
+* [Azure Logic Apps Anywhere-monitor uitvoeren met Application Insights-deel 1](https://techcommunity.microsoft.com/t5/integrations-on-azure/azure-logic-apps-running-anywhere-monitor-with-application/ba-p/1877849)
+* [Azure Logic Apps Anywhere-monitor uitvoeren met Application Insights-deel 2](https://techcommunity.microsoft.com/t5/integrations-on-azure/azure-logic-apps-running-anywhere-monitor-with-application/ba-p/2003332)
 
 <a name="enable-run-history-stateless"></a>
 

@@ -1,17 +1,20 @@
 ---
 title: Iteratieve ontwikkeling en fout opsporing in Azure Data Factory
 description: Meer informatie over het ontwikkelen en fouten opsporen Data Factory pijp lijnen iteratief in de ADF UX
-ms.date: 10/29/2020
+ms.date: 02/23/2021
 ms.topic: conceptual
 ms.service: data-factory
-author: dcstwh
-ms.author: weetok
-ms.openlocfilehash: 90f3f57fa527c8aaeb32a7dcf41f461ff5f0bf77
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+services: data-factory
+documentationcenter: ''
+ms.workload: data-services
+author: kromerm
+ms.author: makromer
+ms.openlocfilehash: ef47d311f5f096db962ea27792e7871dbf0ef81a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100392524"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101712943"
 ---
 # <a name="iterative-development-and-debugging-with-azure-data-factory"></a>Iteratief ontwikkelen en fouten opsporen met Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -73,6 +76,8 @@ Met toewijzing van gegevens stromen kunt u een code maken voor de vrije gegevens
 U kunt fouten bij het opsporen van actieve gegevens stromen in een fabriek controleren in de **monitor** ervaring.
 
 ![Fout opsporingsgegevens voor gegevens stromen weer geven](media/iterative-development-debugging/view-dataflow-debug-sessions.png)
+
+De voorbeeld weergave van gegevens in de ontwerp functie voor gegevens stromen en het opsporen van pijp lijnen voor gegevens stromen is bedoeld om te werken met kleine voor beelden van gegevens. Als u echter uw logica in een pijp lijn of gegevens stroom wilt testen met grote hoeveel heden gegevens, verg root u de Azure Integration Runtime die worden gebruikt in de foutopsporingssessie met meer kernen en een minimale reken kracht voor algemeen gebruik.
  
 ### <a name="debugging-a-pipeline-with-a-data-flow-activity"></a>Fouten opsporen in een pijp lijn met een gegevens stroom activiteit
 
@@ -83,7 +88,7 @@ Als u een bestaande foutopsporingssessie gebruikt, wordt de start tijd van de ge
 Met de activity runtime wordt een nieuw cluster gemaakt op basis van de instellingen die zijn opgegeven in de Integration runtime van elke gegevens stroom activiteit. Hierdoor kan elke taak worden geïsoleerd en moet deze worden gebruikt voor complexe werk belastingen of prestatie testen. U kunt ook de TTL beheren in de Azure IR zodat de cluster bronnen die voor fout opsporing worden gebruikt, nog steeds beschikbaar zijn voor die periode om extra taak aanvragen te kunnen uitvoeren.
 
 > [!NOTE]
-> Als u een pijp lijn hebt met gegevens stromen die parallel worden uitgevoerd, kiest u activiteit runtime gebruiken zodat Data Factory de Integration Runtime kunt gebruiken die u hebt geselecteerd in uw gegevens stroom activiteit. Hierdoor kunnen de gegevens stromen op meerdere clusters worden uitgevoerd en kan de parallelle gegevens stroom worden uitgevoerd.
+> Als u een pijp lijn hebt met gegevens stromen die worden uitgevoerd in parallelle of gegevens stromen die moeten worden getest met grote gegevens sets, kiest u activiteit runtime gebruiken zodat Data Factory de Integration Runtime kunt gebruiken die u hebt geselecteerd in de gegevens stroom activiteit. Hierdoor kunnen de gegevens stromen op meerdere clusters worden uitgevoerd en kan de parallelle gegevens stroom worden uitgevoerd.
 
 ![Een pijp lijn uitvoeren met een gegevensstroom](media/iterative-development-debugging/iterative-development-dataflow.png)
 

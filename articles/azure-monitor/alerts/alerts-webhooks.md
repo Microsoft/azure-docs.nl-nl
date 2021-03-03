@@ -4,19 +4,19 @@ description: Meer informatie over het omleiden van Azure-metrische waarschuwinge
 author: harelbr
 ms.author: harelbr
 ms.topic: conceptual
-ms.date: 04/03/2017
+ms.date: 02/14/2021
 ms.subservice: alerts
-ms.openlocfilehash: 93b8a9935e1a26df5aa76ca45c890036589a48ff
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 1ead28618582ff670aca048bb92803d61c6ca938
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611127"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723517"
 ---
 # <a name="call-a-webhook-with-a-classic-metric-alert-in-azure-monitor"></a>Een webhook met een klassieke waarschuwing voor metrische gegevens in Azure Monitor aanroepen
 
 > [!WARNING]
-> In dit artikel wordt beschreven hoe u oudere klassieke metrische waarschuwingen gebruikt. Azure Monitor ondersteunt nu [nieuwere bijna realtime waarschuwingen voor metrische gegevens en een nieuwe meldings ervaring](../platform/alerts-overview.md). Klassieke waarschuwingen worden [buiten gebruik gesteld](../platform/monitoring-classic-retirement.md) voor open bare Cloud gebruikers, maar zijn nog steeds beperkt in beperkte mate voor resources die de nieuwe waarschuwingen nog niet ondersteunen.
+> In dit artikel wordt beschreven hoe u oudere klassieke metrische waarschuwingen gebruikt. Azure Monitor ondersteunt nu [nieuwere bijna realtime waarschuwingen voor metrische gegevens en een nieuwe meldings ervaring](./alerts-overview.md). Klassieke waarschuwingen worden [buiten gebruik gesteld](./monitoring-classic-retirement.md) voor open bare Cloud gebruikers, maar blijven beperkt tot **31 mei 2021**. Klassieke waarschuwingen voor Azure Government Cloud en Azure China 21Vianet worden op **29 februari 2024** buiten gebruik gesteld.
 >
 
 U kunt webhooks gebruiken om een Azure-waarschuwings melding naar andere systemen te routeren voor nabewerkingen of aangepaste acties. U kunt een webhook gebruiken voor een waarschuwing om deze te routeren naar services die SMS-berichten verzenden, fouten in het logboek registreren, een team informeren via chat-of bericht Services of voor verschillende andere acties. 
@@ -30,7 +30,7 @@ Als u de webhook-URI wilt toevoegen of bijwerken, gaat u in het [Azure Portal](h
 
 ![Een waarschuwings regel deel venster toevoegen](./media/alerts-webhooks/Alertwebhook.png)
 
-U kunt ook een waarschuwing configureren voor het plaatsen van een bericht naar een webhook-URI door gebruik te maken van [Azure PowerShell-cmdlets](../samples/powershell-samples.md#create-metric-alerts), een [cross-platform-cli](../samples/cli-samples.md#work-with-alerts)of [Azure monitor rest-api's](/rest/api/monitor/alertrules).
+U kunt ook een waarschuwing configureren voor het plaatsen van een bericht naar een webhook-URI door gebruik te maken van [Azure PowerShell-cmdlets](../powershell-samples.md#create-metric-alerts), een [cross-platform-cli](../cli-samples.md#work-with-alerts)of [Azure monitor rest-api's](/rest/api/monitor/alertrules).
 
 ## <a name="authenticate-the-webhook"></a>De webhook verifiëren
 De webhook kan worden geverifieerd met behulp van autorisatie op basis van tokens. De webhook-URI wordt opgeslagen met een token-ID. Bijvoorbeeld: `https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue`

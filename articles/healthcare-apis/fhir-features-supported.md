@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 1/30/2021
 ms.author: cavoeg
-ms.openlocfilehash: e75cf8d6660bf6f2630b83e0c2c812fa7cf59057
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 19f051320aaa675ebe5ff148fb6580c2a5d8770c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430239"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719131"
 ---
 # <a name="features"></a>Functies
 
@@ -35,7 +35,7 @@ Eerdere versies die momenteel worden ondersteund, zijn onder andere: `3.0.2`
 | bijwerken met optimistische vergren deling | Ja       | Ja       | Ja       |                                                     |
 | Update (voorwaardelijk)           | Ja       | Ja       | Ja       |                                                     |
 | verzenden                          | Nee        | Nee        | Nee        |                                                     |
-| delete                         | Ja       | Ja       | Ja       |                                                     |
+| delete                         | Ja       | Ja       | Ja       |  Zie de opmerking hieronder                                                   |
 | verwijderen (voorwaardelijk)           | Nee        | Nee        | Nee        |                                                     |
 | geschiedenis                        | Ja       | Ja       | Ja       |                                                     |
 | maken                         | Ja       | Ja       | Ja       | Ondersteuning voor zowel POST/PUT                               |
@@ -49,7 +49,10 @@ Eerdere versies die momenteel worden ondersteund, zijn onder andere: `3.0.2`
 | haalt                         | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | `self` en `next` worden ondersteund                     |
 | schakels                 | Nee        | Nee        | Nee        |                                                     |
 
-## <a name="search"></a>Zoeken
+> [!Note]
+> Verwijderd door de FHIR spec vereist dat na het verwijderen van de volgende niet-versie specifieke Lees bewerkingen van een resource een 410 HTTP-status code retourneert en de resource niet meer kan worden gevonden via zoeken. Met de Azure-API voor FHIR kunt u ook de resource volledig verwijderen (inclusief alle geschiedenis). Als u de resource volledig wilt verwijderen, kunt u een parameter instelling door geven `hardDelete` aan True ( `DELETE {server}/{resource}/{id}?hardDelete=true` ). Als u deze para meter niet doorgeeft of instelt `hardDelete` op False, zullen de historische versies van de resource nog steeds beschikbaar zijn.
+
+## <a name="search"></a>Search
 
 Alle typen zoek parameters worden ondersteund. 
 
@@ -89,7 +92,7 @@ Alle typen zoek parameters worden ondersteund.
 | `_list`                 | Ja       | Ja       | Ja       |         |
 | `_type`                 | Ja       | Ja       | Ja       | Probleem [#1562](https://github.com/microsoft/fhir-server/issues/1562)        |
 | `_security`             | Ja       | Ja       | Ja       |         |
-| `_profile`              | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | Alleen ondersteund in STU3, geen ondersteuning in R4 |
+| `_profile`              | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | Ondersteund in STU3. Als u de Data Base hebt gemaakt **na** 20 februari, 2021, hebt u ook ondersteuning in R4. We zijn bezig om _profile in te scha kelen voor data bases die zijn gemaakt vóór 20 februari, 2021. |
 | `_text`                 | Nee        | Nee        | Nee        |         |
 | `_content`              | Nee        | Nee        | Nee        |         |
 | `_has`                  | Nee        | Nee        | Nee        |         |
@@ -99,7 +102,7 @@ Alle typen zoek parameters worden ondersteund.
 | Zoek resultaat parameters | Ondersteund-PaaS | Ondersteund-OSS (SQL) | Ondersteund-OSS (Cosmos DB) | Opmerking |
 |-------------------------|-----------|-----------|-----------|---------|
 | `_elements`             | Ja       | Ja       | Ja       | Probleem [#1256](https://github.com/microsoft/fhir-server/issues/1256)        |
-| `_count`                | Ja       | Ja       | Ja       | `_count` is beperkt tot 100 tekens. Als deze waarde hoger is dan 100, wordt alleen 100 geretourneerd en wordt er een waarschuwing in de bundel geretourneerd. |
+| `_count`                | Ja       | Ja       | Ja       | `_count` is beperkt tot 1000 tekens. Als deze waarde hoger is dan 1000, wordt alleen 1000 geretourneerd en wordt er een waarschuwing in de bundel geretourneerd. |
 | `_include`              | Ja       | Ja       | Ja       |Opgenomen items zijn beperkt tot 100. Include op PaaS en OSS on Cosmos DB omvat niet: ITER-ondersteuning.|
 | `_revinclude`           | Ja       | Ja       | Ja       | Opgenomen items zijn beperkt tot 100. Include op PaaS en OSS on Cosmos DB [omvat niet: ITER-ondersteuning](https://github.com/microsoft/fhir-server/issues/1313). Probleem [#1319](https://github.com/microsoft/fhir-server/issues/1319)|
 | `_summary`              | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | `_summary=count` wordt ondersteund |

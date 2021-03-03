@@ -6,12 +6,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: cf3a3d3fdfcd03f068224c93643d364cd2646290
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 7446b2050fdd7bbc7704953c053da0629231191c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98895625"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101715119"
 ---
 # <a name="select-a-vmware-migration-option"></a>Selecteer een VMware-migratie optie
 
@@ -28,7 +28,7 @@ Gebruik deze geselecteerde vergelijkingen om u te helpen beslissen welke methode
 **Instelling** | **Zonder agent** | **Op basis van een agent**
 --- | --- | ---
 **Azure-machtigingen** | U hebt machtigingen nodig voor het maken van een Azure Migrate project en voor het registreren van Azure AD-apps die zijn gemaakt bij het implementeren van het Azure Migrate apparaat. | U hebt Inzender machtigingen nodig voor het Azure-abonnement. 
-**Replicatie** | Er kunnen Maxi maal 300 Vm's gelijktijdig worden gerepliceerd vanuit een vCenter Server.<br/> Als u meer dan 50 Vm's voor migratie hebt, maakt u meerdere batches met virtuele machines.<br/> Het repliceren van meer dan één keer is van invloed op de prestaties.<br/><br/> U kunt in de portal maximaal 10 machines tegelijk selecteren voor replicatie. Als u meer machines wilt repliceren, voegt u die toe in batches van 10.| De replicatie capaciteit wordt verhoogd door het replicatie apparaat te schalen.
+**Replicatie** | Er kunnen Maxi maal 500 Vm's gelijktijdig worden gerepliceerd vanuit een vCenter Server. U kunt in de portal maximaal 10 machines tegelijk selecteren voor replicatie. Als u meer machines wilt repliceren, voegt u die toe in batches van 10.| De replicatie capaciteit wordt verhoogd door het replicatie apparaat te schalen.
 **Implementatie van het apparaat** | Het [Azure migrate apparaat](migrate-appliance.md) wordt on-premises geïmplementeerd. | Het [Azure migrate replicatie apparaat](migrate-replication-appliance.md) wordt on-premises geïmplementeerd.
 **Site Recovery compatibiliteit** | Browsercompatibele. | U kunt niet repliceren met Azure Migrate server migratie als u replicatie voor een machine hebt ingesteld met behulp van Site Recovery.
 **Doel schijf** | Managed Disks | Managed Disks

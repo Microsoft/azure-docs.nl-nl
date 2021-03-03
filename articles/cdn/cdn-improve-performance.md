@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 02/28/2018
 ms.author: allensu
-ms.openlocfilehash: ceed62d466627d6a23554229bd6f4b96c674c7e9
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7c84d8129e1d0d88601495dec41883077784bb71
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95993666"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728192"
 ---
 # <a name="improve-performance-by-compressing-files-in-azure-cdn"></a>De prestaties verbeteren door bestanden in Azure CDN te comprimeren
 Bestands compressie is een eenvoudige en efficiënte methode om de snelheid van de bestands overdracht te verbeteren en de prestaties van de pagina belasting te verhogen door de grootte van een bestand te verkleinen voordat het wordt verzonden vanaf de-server. Bestands compressie kan de bandbreedte kosten verlagen en biedt uw gebruikers een meer reactie tijd.
@@ -153,10 +153,10 @@ In de volgende tabellen wordt Azure CDN compressie gedrag voor elk scenario besc
 ### <a name="compression-is-enabled-and-file-is-eligible-for-compression"></a>Compressie is ingeschakeld en het bestand komt in aanmerking voor compressie
 | Door de client aangevraagde indeling (via Accept-Encoding header) | Cache-bestands indeling | CDN-antwoord naar de client | Notities |
 | --- | --- | --- | --- |
-| Gecomprimeerd |Gecomprimeerd |Gecomprimeerd |CDN transcodeert tussen ondersteunde indelingen. |
+| Gecomprimeerd |Gecomprimeerd |Gecomprimeerd |CDN transcodeert tussen ondersteunde indelingen. <br/>**Azure CDN van micro soft** ondersteunt geen transcode ring tussen indelingen en haalt gegevens op uit de bron, comprimeert en caches afzonderlijk voor de indeling. |
 | Gecomprimeerd |Gecomprimeerde |Gecomprimeerd |CDN voert een compressie uit. |
 | Gecomprimeerd |Niet in cache |Gecomprimeerd |CDN voert een compressie uit als de oorsprong een niet-gecomprimeerd bestand retourneert. <br/>**Azure CDN van Verizon** geeft het ongecomprimeerde bestand in de eerste aanvraag door en comprimeert het bestand voor volgende aanvragen en slaat het op in het cache geheugen. <br/>Bestanden met de `Cache-Control: no-cache` header worden nooit gecomprimeerd. |
-| Gecomprimeerde |Gecomprimeerd |Gecomprimeerde |CDN voert een decompressie uit. |
+| Gecomprimeerde |Gecomprimeerd |Gecomprimeerde |CDN voert een decompressie uit. <br/>**Azure CDN van micro soft** biedt geen ondersteuning voor decompressie en haalt in plaats daarvan gegevens op uit de bron en caches afzonderlijk voor niet-gecomprimeerde clients. |
 | Gecomprimeerde |Gecomprimeerde |Gecomprimeerde | |
 | Gecomprimeerde |Niet in cache |Gecomprimeerde | |
 

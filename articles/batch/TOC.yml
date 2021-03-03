@@ -158,9 +158,6 @@
           href: batch-sig-images.md
         - name: Een groep maken met een resource voor een beheerde installatiekopie
           href: batch-custom-images.md
-        - name: Een groep maken in Beschikbaarheidszones
-          displayName: 'region, zonal policy'
-          href: create-pool-availability-zones.md
         - name: Een pool maken met schijfversleuteling ingeschakeld
           href: disk-encryption.md
         - name: Een pool in een virtueel netwerk maken
@@ -172,8 +169,6 @@
         - name: Een groep zonder openbare IP-adressen maken
           displayName: private
           href: batch-pool-no-public-ip-address.md
-        - name: Extensies gebruiken met groepen
-          href: create-pool-extensions.md
         - name: Beheerde identiteiten configureren
           displayName: user-assigned
           href: managed-identity-pools.md

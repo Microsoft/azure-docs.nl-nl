@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/22/2020
+ms.date: 02/22/2021
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 8827171788bd83a202b3607537204c71c34f29e0
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
-ms.translationtype: HT
+ms.openlocfilehash: 13726009e07172c9038bc8b45001e390c5b7ad70
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97511838"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101709773"
 ---
 # <a name="quickstart-create-a-public-load-balancer-to-load-balance-vms-using-the-azure-portal"></a>Quickstart: Een openbare load balancer maken om taken van VM's te verdelen via Azure Portal
 
@@ -49,26 +49,29 @@ In deze sectie maakt u een load balancer die taken van virtuele machines verdeel
 
 Wanneer u een openbare load balancer maakt, maakt u een nieuw openbaar IP-adres dat als de front-end (standaard **LoadBalancerFrontend** genoemd) voor de load balancer wordt geconfigureerd.
 
-1. Selecteer linksboven in het scherm de optie **Een resource maken** > **Netwerken** > **Load balancer**.
-
-2. Typ of selecteer de volgende informatie op het tabblad **Basisbeginselen** van de pagina **Load balancer maken**: 
+1. Selecteer **Een resource maken**. 
+2. Voer in het zoekvak **Load Balancer** in. Selecteer **Load Balancer** in de zoek resultaten.
+3. Selecteer op de pagina **Load Balancer** de optie **maken**.
+4. Op de pagina **Load Balancer maken** voert u de volgende informatie in: 
 
     | Instelling                 | Waarde                                              |
     | ---                     | ---                                                |
     | Abonnement               | Selecteer uw abonnement.    |    
     | Resourcegroep         | Selecteer **Nieuwe maken** en voer **CreatePubLBQS-rg** in het tekstvak in.|
     | Naam                   | Voer **myLoadBalancer** in                                   |
-    | Regio         | Selecteer **Europa - west**.                                        |
+    | Regio         | Selecteer **(Europe) Europa-West**.                                        |
     | Type          | Selecteer **Openbaar**.                                        |
-    | SKU           | selecteer **Standard** |
+    | SKU           | De standaard **standaard** behouden. |
+    | Laag          | De standaard **regio** behouden. |
     | Openbaar IP-adres | Selecteer **Nieuw maken**. Als u een bestaand openbaar IP-adres hebt dat u wilt gebruiken, selecteert u **Bestaande gebruiken**. |
     | Naam openbaar IP-adres | Typ **myPublicIP** in het tekstvak.|
     | Beschikbaarheidszone | Selecteer **Zone-redundant** om een tolerante load balancer te maken. Als u een zonegebonden load balancer wilt maken, selecteert u een specifieke zone uit 1, 2 of 3 |
     | Een openbaar IPv6-adres toevoegen | Selecteer **Nee**. </br> Zie [Wat is IPv6 voor Azure Virtual Network?](../virtual-network/ipv6-overview.md) voor meer informatie over IPv6-adressen en load balancer.  |
+    | Routeringsvoorkeur | De standaard instelling van het **micro soft-netwerk** behouden. </br> Zie [Wat is routerings voorkeur (preview)?](./routing-preference-overview.md)voor meer informatie over routerings voorkeur. |
 
-3. Accepteer de standaardwaarden voor de overige instellingen en selecteer **Beoordelen en maken**.
+5. Accepteer de standaardwaarden voor de overige instellingen en selecteer **Beoordelen en maken**.
 
-4. Selecteer in het deelvenster **Beoordelen en maken** de optie **Maken**.   
+6. Selecteer in het deelvenster **Beoordelen en maken** de optie **Maken**.   
     
     :::image type="content" source="./media/quickstart-load-balancer-standard-public-portal/create-standard-load-balancer.png" alt-text="Een standaardversie van een load balancer maken" border="true":::
  
@@ -334,9 +337,10 @@ In deze sectie maakt u een load balancer die taken van virtuele machines verdeel
 
 Wanneer u een openbare load balancer maakt, maakt u een nieuw openbaar IP-adres dat als de front-end (standaard **LoadBalancerFrontend** genoemd) voor de load balancer wordt geconfigureerd.
 
-1. Selecteer linksboven in het scherm de optie **Een resource maken** > **Netwerken** > **Load balancer**.
-
-2. Typ of selecteer de volgende informatie op het tabblad **Basisbeginselen** van de pagina **Load balancer maken**: 
+1. Selecteer **Een resource maken**. 
+2. Voer in het zoekvak **Load Balancer** in. Selecteer **Load Balancer** in de zoek resultaten.
+3. Selecteer op de pagina **Load Balancer** de optie **maken**.
+4. Op de pagina **Load Balancer maken** voert u de volgende informatie in: 
 
     | Instelling                 | Waarde                                              |
     | ---                     | ---                                                |
@@ -351,9 +355,9 @@ Wanneer u een openbare load balancer maakt, maakt u een nieuw openbaar IP-adres 
     | Toewijzing | **Dynamisch** selecteren |
     | Een openbaar IPv6-adres toevoegen | Selecteer **Nee**. </br> Zie [Wat is IPv6 voor Azure Virtual Network?](../virtual-network/ipv6-overview.md) voor meer informatie over IPv6-adressen en load balancer.  |
 
-3. Accepteer de standaardwaarden voor de overige instellingen en selecteer **Beoordelen en maken**.
+5. Accepteer de standaardwaarden voor de overige instellingen en selecteer **Beoordelen en maken**.
 
-4. Selecteer in het deelvenster **Beoordelen en maken** de optie **Maken**.   
+6. Selecteer in het deelvenster **Beoordelen en maken** de optie **Maken**.   
 
     :::image type="content" source="./media/quickstart-load-balancer-standard-public-portal/create-basic-load-balancer.png" alt-text="Een Basic load balancer maken" border="true":::
 

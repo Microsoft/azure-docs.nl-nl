@@ -10,12 +10,12 @@ ms.custom: ''
 ms.workload: infrastructure-services
 ms.date: 7/16/2020
 ms.author: jonbeck
-ms.openlocfilehash: d805fb926131e047572887758b10506e4edd5944
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.openlocfilehash: 1e2eddd821bb7a9d2050913efef3d73b406e32f7
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183376"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101733207"
 ---
 # <a name="tutorial-creating-a-new-child-dns-zone"></a>Zelfstudie: Een nieuwe onderliggende DNS-zone maken
 
@@ -81,7 +81,8 @@ U kunt ook een nieuwe onderliggende DNS-zone maken en deze in de bovenliggende D
 1.  Selecteer **Volgende: Tags** en vervolgens **Volgende: Beoordelen en maken**.
 1.  Controleer het overzicht op het tabblad **Beoordelen en maken**, corrigeer eventuele validatiefouten en selecteer vervolgens **Maken**.
 
-    :::image type="content" source="./media/dns-delegate-domain-azure-dns/create-dns-zone-child-inline.png" alt-text="Schermopname van geselecteerde onderliggende zone" border="true"  lightbox="./media/dns-delegate-domain-azure-dns/create-dns-zone-child-expanded.png":::
+    :::image type="content" source="./media/dns-delegate-domain-azure-dns/create-dns-zone-child-inline.png" alt-text="Schermopname van geselecteerde onderliggende zone" border="true" lightbox="./media/dns-delegate-domain-azure-dns/create-dns-zone-child-expanded.png":::
+
 ## <a name="verify-child-dns-zone"></a>Onderliggende DNS-zone verifiëren
 U hebt nu een nieuwe onderliggende DNS-zone gemaakt: *subdomain.contoso.com*. Als u wilt controleren of de delegatie op de juiste wijze is uitgevoerd, controleert u of de records van de naamserver (NS) voor de onderliggende zone zich in de bovenliggende zone bevinden, zoals hieronder beschreven.  
 

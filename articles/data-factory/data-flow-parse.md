@@ -6,18 +6,20 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/08/2021
-ms.openlocfilehash: a81676b9985b134a8214f7f5f97d85d27259b71f
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 4db9503ea84ae13148a89a03048c73399413e5cc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417215"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101710189"
 ---
 # <a name="parse-transformation-in-mapping-data-flow"></a>Trans formatie parseren in gegevens stroom toewijzen
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Gebruik de parseren trans formatie om kolommen in uw gegevens in de document vorm te parseren. De huidige ondersteunde typen van Inge sloten documenten die kunnen worden geparseerd, zijn JSON en tekst met scheidings tekens.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWykdO]
 
 ## <a name="configuration"></a>Configuratie
 

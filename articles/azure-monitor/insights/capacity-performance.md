@@ -1,17 +1,16 @@
 ---
 title: Capaciteit en prestaties oplossing in Azure Monitor | Microsoft Docs
 description: Gebruik de Capaciteit en prestaties oplossing in monitor om inzicht te krijgen in de capaciteit van uw Hyper-V-servers.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/13/2017
-ms.openlocfilehash: 9fce67c0ffe1951b0bfc325603b6d8f985dd804d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: aa08b9f5db5e6371bcd20b473a0c755db3199e7c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100592205"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101704290"
 ---
 # <a name="plan-hyper-v-virtual-machine-capacity-with-the-capacity-and-performance-solution-deprecated"></a>Virtuele Hyper-V-machine capaciteit plannen met de Capaciteit en prestaties oplossing (afgeschaft)
 
@@ -39,12 +38,12 @@ De oplossing:
 
 De volgende tabel beschrijft de verbonden bronnen die worden ondersteund door deze oplossing.
 
-| Verbonden bron | Ondersteuning | Description |
+| Verbonden bron | Ondersteuning | Beschrijving |
 |---|---|---|
-| [Windows-agents](../agents/agent-windows.md) | Yes | De oplossing verzamelt informatie over capaciteits-en prestatie gegevens van Windows-agents. |
-| [Linux-agents](../vm/quick-collect-linux-computer.md) | No    | De oplossing verzamelt geen gegevens over de capaciteits-en prestatie gegevens van direct Linux-agents.|
-| [SCOM-beheer groep](../agents/om-agents.md) | Yes |De oplossing verzamelt capaciteits-en prestatie gegevens van agents in een verbonden SCOM-beheer groep. Er is geen rechtstreekse verbinding van de SCOM-agent naar Log Analytics vereist.|
-| [Azure Storage-account](../essentials/resource-logs.md#send-to-log-analytics-workspace) | No | Azure Storage omvat geen capaciteits-en prestatie gegevens.|
+| [Windows-agents](../agents/agent-windows.md) | Ja | De oplossing verzamelt informatie over capaciteits-en prestatie gegevens van Windows-agents. |
+| [Linux-agents](../vm/quick-collect-linux-computer.md) | Nee    | De oplossing verzamelt geen gegevens over de capaciteits-en prestatie gegevens van direct Linux-agents.|
+| [SCOM-beheer groep](../agents/om-agents.md) | Ja |De oplossing verzamelt capaciteits-en prestatie gegevens van agents in een verbonden SCOM-beheer groep. Er is geen rechtstreekse verbinding van de SCOM-agent naar Log Analytics vereist.|
+| [Azure Storage-account](../essentials/resource-logs.md#send-to-log-analytics-workspace) | Nee | Azure Storage omvat geen capaciteits-en prestatie gegevens.|
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -117,7 +116,7 @@ Als samen vatting van de oplossing worden gegevens over capaciteit en prestaties
 De volgende tabel bevat voor beelden van zoek opdrachten in het logboek voor de capaciteits-en prestatie gegevens die door deze oplossing worden verzameld en berekend.
 
 
-| Query’s uitvoeren | Description |
+| Query’s uitvoeren | Beschrijving |
 |:--- |:--- |
 | Alle geheugen configuraties van host | Perf &#124; waarbij ObjectName = = "Capaciteit en prestaties" en CounterName = = "host assigned Memory MB" &#124; vat MB = AVG (CounterValue) door INSTANCENAME |
 | Alle VM-geheugen configuraties | Perf &#124; waarbij ObjectName = = "Capaciteit en prestaties" en CounterName = = "aan VM toegewezen geheugen MB" &#124; een samen vatting van MB = Gem (CounterValue) door INSTANCENAME |

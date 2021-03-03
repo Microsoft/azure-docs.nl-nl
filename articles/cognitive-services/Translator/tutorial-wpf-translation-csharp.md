@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 05/26/2020
 ms.author: lajanuar
 ms.custom: devx-track-csharp
-ms.openlocfilehash: dd5b83908ae7c6d62acd3391933028685facf755
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 0665dcbc8de518c5759c52a8fc3aec26859566d6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98927473"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728005"
 ---
 # <a name="tutorial-create-a-translation-app-with-wpf"></a>Zelfstudie: Een vertaal-app maken met WPF
 
@@ -41,7 +41,7 @@ Deze lijst bevat de Cognitive Services in deze zelfstudie worden gebruikt. Klik 
 | Service | Functie | Beschrijving |
 |---------|---------|-------------|
 | Translator | [Talen ophalen](./reference/v3-0-languages.md) | Hiermee haalt u een volledige lijst ondersteunde talen op voor het vertalen van tekst. |
-| Translator | [Vertalen](./reference/v3-0-translate.md) | Hiermee vertaalt u tekst naar meer dan 70 talen. |
+| Translator | [Vertalen](./reference/v3-0-translate.md) | Vertaal tekst in 90 talen en dialecten. |
 | Translator | [Detecteren](./reference/v3-0-detect.md) | Hiermee detecteert u de taal van ingevoerde tekst. Biedt ook een betrouwbaarheidsscore voor de detectie. |
 | Bing Spellingcontrole | [Spellingscontrole](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference) | Hiermee corrigeert u spelfouten om de nauwkeurigheid van de vertaling te vergroten. |
 
@@ -264,7 +264,7 @@ Tot slot is er code toegevoegd om methoden aan te roepen voor het ophalen van de
 
 ## <a name="get-supported-languages"></a>Ondersteunde talen ophalen
 
-Translator ondersteunt op dit moment meer dan 70 talen. In de loop van de tijd wordt er ondersteuning voor verschillende talen toegevoegd; daarom wordt het aanbevolen de talenresource van Translator aan te roepen in plaats van de lijst talen vast te leggen in uw app.
+De vertaler ondersteunt momenteel 90 talen en dialecten. In de loop van de tijd wordt er ondersteuning voor verschillende talen toegevoegd; daarom wordt het aanbevolen de talenresource van Translator aan te roepen in plaats van de lijst talen vast te leggen in uw app.
 
 In deze sectie maken we een `GET`-aanvraag voor de talenresource. Hierbij geven we op dat we een lijst willen zien van de talen die beschikbaar zijn voor vertaling.
 

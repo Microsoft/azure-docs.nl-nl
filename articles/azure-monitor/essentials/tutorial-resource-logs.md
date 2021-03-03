@@ -6,12 +6,12 @@ ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 12/15/2019
-ms.openlocfilehash: 88138cc1366dcef68aeccf652af05704e72c8e15
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: d3c3eff32120438fd891cb32fe98d73424f82b7f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100627199"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734142"
 ---
 # <a name="tutorial-collect-and-analyze-resource-logs-from-an-azure-resource"></a>Zelfstudie: Resourcelogboeken van een Azure-resource verzamelen en analyseren
 
@@ -93,7 +93,7 @@ U kunt gegevens ophalen uit een Log Analytics-werkruimte met behulp van een logb
 
 
 5. Typ een query en klik op **Uitvoeren** om de resultaten te bekijken. 
-6. Zie [Aan de slag met logboekquery's in Azure Monitor](../log-query/get-started-queries.md) voor een zelfstudie over het schrijven van logboekquery's.
+6. Zie [Aan de slag met logboekquery's in Azure Monitor](../logs/get-started-queries.md) voor een zelfstudie over het schrijven van logboekquery's.
 
     ![Logboekquery](media/tutorial-resource-logs/log-query-1.png)
 
@@ -104,4 +104,4 @@ U kunt gegevens ophalen uit een Log Analytics-werkruimte met behulp van een logb
 U weet nu hoe u resourcelogboeken kunt verzamelen in een Log Analytics-werkruimte. De volgende stap is het volgen van een zelfstudie voor het schrijven van logboekquery's om deze gegevens te analyseren.
 
 > [!div class="nextstepaction"]
-> [Aan de slag met logboekquery’s in Azure Monitor](../log-query/get-started-queries.md)
+> [Aan de slag met logboekquery’s in Azure Monitor](../logs/get-started-queries.md)

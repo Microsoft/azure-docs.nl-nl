@@ -13,18 +13,16 @@ ms.tgt_pltfrm: na
 ms.date: 01/13/2021
 ms.author: jenhayes
 ms.custom: include file
-ms.openlocfilehash: 08e7463f4657b2ae5d6da1017c14226e97af7605
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
-ms.translationtype: HT
+ms.openlocfilehash: c625253585cc99c035852b8b9042f939284bad19
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165736"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101750965"
 ---
 ### <a name="general-requirements"></a>Algemene vereisten
 
 * Het VNet moet in hetzelfde abonnement en dezelfde regio voorkomen als het Batch-account dat u gebruikt om de pool te maken.
-
-* De pool die van het VNet gebruikmaakt, kan een maximum van 4096 knooppunten bevatten.
 
 * Het subnet dat is opgegeven voor de pool moet voldoende vrije IP-adressen hebben voor het aantal virtuele machines voor de pool, ofwel de som van de `targetDedicatedNodes`- en `targetLowPriorityNodes`-eigenschappen van de pool. Als het subnet onvoldoende vrije IP-adressen heeft, wijst de pool de rekenknooppunten gedeeltelijk toe en wordt een fout weergegeven voor het aanpassen van de grootte.
 
@@ -67,23 +65,29 @@ U hoeft geen NSG's op het subnet van het virtuele netwerk op te geven, omdat met
 
 Configureer binnenkomend verkeer op poort 3389 (Windows) of 22 (Linux) alleen als u externe toegang tot rekenknooppunten vanaf externe bronnen wilt toestaan. Mogelijk moet u regels voor poort 22 inschakelen op Linux als u ondersteuning nodig hebt voor taken met meerdere instanties met bepaalde MPI-runtimes. Het toestaan van verkeer op deze poorten is niet strikt vereist om de rekenknooppunten van de pool te kunnen gebruiken.
 
+> [!WARNING]
+> De IP-adressen van de Batch-service kunnen na verloop van tijd worden gewijzigd. Daarom wordt u ten zeerste aangeraden de servicetag `BatchNodeManagement` (of een regionale variant) te gebruiken voor de NSG-regels die in de volgende tabellen worden aangegeven. Vermijd het vullen van NSG-regels met specifieke IP-adressen voor batchservices.
+
 **Inkomende beveiligingsregels**
 
 | IP-adressen van bron | Bronservicetag | Bronpoorten | Doel | Doelpoorten | Protocol | Bewerking |
 | --- | --- | --- | --- | --- | --- | --- |
-| N.v.t. | `BatchNodeManagement` [Servicetag](../articles/virtual-network/network-security-groups-overview.md#service-tags) (bij gebruik van een regionale variant in dezelfde regio als uw Batch-account) | * | Alle | 29876-29877 | TCP | Toestaan |
+| N.v.t. | `BatchNodeManagement`[servicetag (als](../articles/virtual-network/network-security-groups-overview.md#service-tags) u een regionale variant gebruikt, in dezelfde regio als uw batch-account) | * | Alle | 29876-29877 | TCP | Toestaan |
 | IP-adressen van gebruikersbronnen voor het op afstand verkrijgen van toegang tot rekenknooppunten en/of het subnet van rekenknooppunten voor Linux-taken voor meerdere exemplaren, indien nodig. | N.v.t. | * | Alle | 3389 (Windows), 22 (Linux) | TCP | Toestaan |
-
-> [!WARNING]
-> De IP-adressen van de Batch-service kunnen na verloop van tijd worden gewijzigd. Daarom is het raadzaam om de `BatchNodeManagement` servicetag (of regionale variant) te gebruiken voor NSG-regels. Vermijd het vullen van NSG-regels met specifieke IP-adressen voor batchservices.
 
 **Uitgaande beveiligingsregels**
 
 | Bron | Bronpoorten | Doel | Doelservicetag | Doelpoorten | Protocol | Bewerking |
 | --- | --- | --- | --- | --- | --- | --- |
 | Alle | * | [Servicetag](../articles/virtual-network/network-security-groups-overview.md#service-tags) | `Storage` (bij gebruik van een regionale variant in dezelfde regio als uw Batch-account) | 443 | TCP | Toestaan |
+| Alle | * | [Servicetag](../articles/virtual-network/network-security-groups-overview.md#service-tags) | `BatchNodeManagement` (bij gebruik van een regionale variant in dezelfde regio als uw Batch-account) | 443 | TCP | Toestaan |
+
+Uitgaand naar `BatchNodeManagement` is vereist voor het maken van contact met de batch-service van de reken knooppunten, zoals voor taak beheer taken.
 
 ### <a name="pools-in-the-cloud-services-configuration"></a>Pools die zijn gemaakt in de Cloud Services-configuratie
+
+> [!WARNING]
+> De configuratie groepen van de Cloud service zijn afgeschaft. Gebruik in plaats daarvan configuratie groepen voor virtuele machines.
 
 **Ondersteunde VNets**: klassieke VNets
 

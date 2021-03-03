@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/05/2020
 ms.author: allensu
-ms.openlocfilehash: 7a456057bc088264cefb91be9f3e5069b29474a1
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 36937ace82d2bd8d4317f90a375042de10fe719f
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100596803"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101709815"
 ---
 # <a name="azure-monitor-logs-for-azure-standard-load-balancer"></a>Azure Monitor logboeken voor Azure Standard Load Balancer
 
@@ -74,7 +74,7 @@ Activiteitenlogboekregistratie is automatisch ingeschakeld voor elke Resource Ma
 
 ## <a name="view-and-analyze-the-activity-log"></a>Het activiteitenlogboek bekijken en analyseren
 
-Het activiteiten logboek wordt standaard gegenereerd. U kunt de sjabloon zo configureren dat deze wordt geëxporteerd op abonnements niveau door [de instructies in dit artikel te volgen](../azure-monitor/platform/activity-log.md). Lees voor meer informatie over deze logboeken de [activiteiten logboeken weer geven om acties op het artikel resources te controleren](../azure-resource-manager/management/view-activity-logs.md) .
+Het activiteiten logboek wordt standaard gegenereerd. U kunt de sjabloon zo configureren dat deze wordt geëxporteerd op abonnements niveau door [de instructies in dit artikel te volgen](../azure-monitor/essentials/activity-log.md). Lees voor meer informatie over deze logboeken de [activiteiten logboeken weer geven om acties op het artikel resources te controleren](../azure-resource-manager/management/view-activity-logs.md) .
 
 U kunt activiteiten logboek gegevens weer geven en analyseren met behulp van een van de volgende methoden:
 
@@ -113,4 +113,4 @@ De functie voor het exporteren van metrische gegevens naar Logboeken voor Azure 
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Bekijk de beschik bare metrische gegevens voor uw load balancer](./load-balancer-standard-diagnostics.md)
-* [Query's maken en testen door Azure Monitor instructies te volgen](../azure-monitor/log-query/log-query-overview.md)
+* [Query's maken en testen door Azure Monitor instructies te volgen](../azure-monitor/logs/log-query-overview.md)

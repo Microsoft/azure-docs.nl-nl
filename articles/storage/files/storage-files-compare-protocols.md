@@ -8,12 +8,12 @@ ms.date: 12/04/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: e914bcece9a30270d12d5c2cc09d3fd1014783c6
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 482e6c9f2e25b867574090a1f34e95f466916ba9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916504"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711838"
 ---
 # <a name="azure-file-share-protocols"></a>Protocollen voor Azure-bestands shares
 
@@ -26,6 +26,7 @@ Azure Files biedt twee protocollen voor het koppelen en koppelen van uw Azure-be
 |Toegangs protocollen     |NFS 4,1         |SMB 2,1, SMB 3,0         |
 |Aanbevolen besturings systeem     |Linux-kernel versie 4.3 +         |Windows 2008 R2 +, Linux-kernel versie 4.11 +         |
 |[Beschikbare lagen](storage-files-planning.md#storage-tiers)     |Premium Storage         |Premium-opslag, geoptimaliseerde trans actie, hot, cool         |
+|Facturerings model         |[Betalen voor ingerichte capaciteit](https://docs.microsoft.com/azure/storage/files/understanding-billing#provisioned-model)         |[Betaal de ingerichte capaciteit](https://docs.microsoft.com/azure/storage/files/understanding-billing#provisioned-model)voor de Premium-laag, betalen naar gebruik [voor de Standard-laag](https://docs.microsoft.com/azure/storage/files/understanding-billing#pay-as-you-go-model)         |
 |[Redundantie](storage-files-planning.md#redundancy)     |LRS, ZRS         |LRS, ZRS, GRS         |
 |Verificatie     |Alleen voor de host gebaseerde verificatie        |Verificatie op basis van identiteit, verificatie op basis van een gebruiker         |
 |Machtigingen     |UNIX-stijl machtigingen         |NTFS-machtigingen         |

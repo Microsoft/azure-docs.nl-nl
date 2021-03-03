@@ -4,14 +4,14 @@ description: Wijzig de standaard ontvangers voor meldingen van Slimme detectie. 
 ms.topic: conceptual
 author: harelbr
 ms.author: harelbr
-ms.date: 03/13/2019
+ms.date: 02/14/2021
 ms.reviewer: mbullwin
-ms.openlocfilehash: 0bf3a95814aadf687efcc27294b760e14f7d45d8
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: fa14f0dd40a30a4750d9bb102d8e67608f958135
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100585640"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734499"
 ---
 # <a name="smart-detection-e-mail-notification-change"></a>Wijziging e-mail melding voor slimme detectie
 
@@ -27,7 +27,7 @@ Deze wijziging is van invloed op alle slimme detectie regels, met uitzonde ring 
 
 * Slimme detectie regels zijn gemarkeerd als preview. Deze slimme detectie regels ondersteunen vandaag nog geen e-mail meldingen.
 
-* Regel voor afwijkingen van de fout. Deze regel begint met het richten op de nieuwe standaard rollen, zodra deze zijn gemigreerd van een klassieke waarschuwing naar het Unified Alerts-platform (meer informatie is [hier](../alerts/monitoring-classic-retirement.md)beschikbaar.)
+* Regel voor afwijkingen van de fout.
 
 ## <a name="how-to-prepare-for-this-change"></a>Hoe bereidt u zich voor op deze wijziging?
 

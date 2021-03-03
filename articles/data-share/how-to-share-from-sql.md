@@ -5,13 +5,13 @@ author: jifems
 ms.author: jife
 ms.service: data-share
 ms.topic: how-to
-ms.date: 11/12/2020
-ms.openlocfilehash: bdbbf3e808e1dda0970aaf87d154ee79bea4dcb1
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.date: 02/24/2021
+ms.openlocfilehash: f87ad76e9bb1db4d71716bf860d5fee2d413e8e9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97964164"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101740372"
 ---
 # <a name="share-and-receive-data-from-azure-sql-database-and-azure-synapse-analytics"></a>Gegevens delen en ontvangen van Azure SQL Database en Azure Synapse Analytics
 
@@ -275,7 +275,7 @@ Volg de onderstaande stappen om te configureren waar u gegevens wilt ontvangen.
 ### <a name="trigger-a-snapshot"></a>Een momentopname activeren
 Deze stappen zijn alleen van toepassing bij delen op basis van momentopnamen.
 
-1. U kunt een momentopname activeren door **Momentopname activeren** te selecteren op het tabblad **Details**. Hier kunt u een volledige of incrementele momentopname van uw gegevens activeren. Als dit de eerste keer is dat u gegevens van uw gegevensprovider ontvangt, selecteert u volledig kopiëren. Voor SQL-bronnen wordt alleen volledige moment opname ondersteund.
+1. U kunt een momentopname activeren door **Momentopname activeren** te selecteren op het tabblad **Details**. Hier kunt u een volledige of incrementele momentopname van uw gegevens activeren. Als dit de eerste keer is dat u gegevens van uw gegevensprovider ontvangt, selecteert u volledig kopiëren. Voor SQL-bronnen wordt alleen volledige moment opname ondersteund. Wanneer een moment opname wordt uitgevoerd, worden volgende moment opnamen niet gestart totdat de vorige is voltooid.
 
    ![Momentopname activeren](./media/trigger-snapshot.png "Momentopname activeren") 
 

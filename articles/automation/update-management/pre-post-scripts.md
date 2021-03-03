@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 12/17/2020
 ms.topic: conceptual
-ms.openlocfilehash: 4c37fe107d9256461e5aa632f859ae02c5dc42f5
-ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
+ms.openlocfilehash: 3ca1dec1b6139f3192edb09f8748c8f23a9d399e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97683411"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701498"
 ---
 # <a name="manage-pre-scripts-and-post-scripts"></a>Scripts voorafgaand aan de back-up en scripts die erop volgen, beheren
 
@@ -59,31 +59,31 @@ Naast uw standaard runbook-para meters `SoftwareUpdateConfigurationRunContext` w
 Het volgende voor beeld is een JSON-teken reeks die is door gegeven aan de para meter **SoftwareUpdateConfigurationRunContext** :
 
 ```json
-"SoftwareUpdateConfigurationRunContext":{
-      "SoftwareUpdateConfigurationName":"sampleConfiguration",
-      "SoftwareUpdateConfigurationRunId":"00000000-0000-0000-0000-000000000000",
-      "SoftwareUpdateConfigurationSettings":{
-         "operatingSystem":"Windows",
-         "duration":"PT2H0M",
-         "windows":{
-            "excludedKbNumbers":[
-               "168934",
-               "168973"
-            ],
-            "includedUpdateClassifications":"Critical",
-            "rebootSetting":"IfRequired"
-         },
-         "azureVirtualMachines":[
-            "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myresources/providers/Microsoft.Compute/virtualMachines/vm-01",
-            "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myresources/providers/Microsoft.Compute/virtualMachines/vm-02",
-            "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myresources/providers/Microsoft.Compute/virtualMachines/vm-03"
-         ],
-         "nonAzureComputerNames":[
-            "box1.contoso.com",
-            "box2.contoso.com"
-         ]
-      }
-   }
+"SoftwareUpdateConfigurationRunContext": {
+    "SoftwareUpdateConfigurationName": "sampleConfiguration",
+    "SoftwareUpdateConfigurationRunId": "00000000-0000-0000-0000-000000000000",
+    "SoftwareUpdateConfigurationSettings": {
+      "operatingSystem": "Windows",
+      "duration": "PT2H0M",
+      "windows": {
+        "excludedKbNumbers": [
+          "168934",
+          "168973"
+        ],
+        "includedUpdateClassifications": "Critical",
+        "rebootSetting": "IfRequired"
+      },
+      "azureVirtualMachines": [
+        "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myresources/providers/Microsoft.Compute/virtualMachines/vm-01",
+        "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myresources/providers/Microsoft.Compute/virtualMachines/vm-02",
+        "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myresources/providers/Microsoft.Compute/virtualMachines/vm-03"
+      ],
+      "nonAzureComputerNames": [
+        "box1.contoso.com",
+        "box2.contoso.com"
+      ]
+    }
+  }
 ```
 
 Een volledig voor beeld met alle eigenschappen vindt u op: [Software-update configuratie op naam ophalen](/rest/api/automation/softwareupdateconfigurations/getbyname#examples).

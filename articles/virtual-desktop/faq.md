@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 10/15/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: b915445b74e202f010c5505cc240b6f36e9da77c
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 3bdb38b8a9590cf6191c75fdef024543c2b1c190
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108504"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101720270"
 ---
 # <a name="windows-virtual-desktop-faq"></a>Veelgestelde vragen over Windows Virtual Desktop
 
@@ -125,7 +125,7 @@ Deze factoren kunnen invloed hebben op de schaal limiet voor hostgroepen:
 
 - De Azure-sjabloon is beperkt tot 800-objecten. Zie [Azure-abonnement en service limieten, quota's en beperkingen](../azure-resource-manager/management/azure-subscription-service-limits.md#template-limits)voor meer informatie. Elke VM maakt ook ongeveer zes objecten, wat betekent dat u elke keer dat u de sjabloon uitvoert rondom 132 Vm's kunt maken.
 
-- Er gelden beperkingen voor het aantal kernen dat u per regio en per abonnement kunt maken. Als u bijvoorbeeld een Enterprise Agreement-abonnement hebt, kunt u 350 kernen maken. U moet 350 delen met behulp van het standaard aantal kernen per VM of uw eigen kern limiet om te bepalen hoeveel Vm's u kunt maken telkens wanneer u de sjabloon uitvoert. Meer informatie over [virtual machines limieten-Azure Resource Manager](../azure-resource-manager/management/azure-subscription-service-limits.md#virtual-machines-limits---azure-resource-manager).
+- Er gelden beperkingen voor het aantal kernen dat u per regio en per abonnement kunt maken. Als u bijvoorbeeld een Enterprise Overeenkomst-abonnement hebt, kunt u 350 kernen maken. U moet 350 delen met behulp van het standaard aantal kernen per VM of uw eigen kern limiet om te bepalen hoeveel Vm's u kunt maken telkens wanneer u de sjabloon uitvoert. Meer informatie over [virtual machines limieten-Azure Resource Manager](../azure-resource-manager/management/azure-subscription-service-limits.md#virtual-machines-limits---azure-resource-manager).
 
 - De naam van het VM-voor voegsel en het aantal Vm's zijn minder dan 15 tekens. Zie [naamgevings regels en beperkingen voor Azure-resources](../azure-resource-manager/management/resource-name-rules.md#microsoftcompute)voor meer informatie.
 
@@ -136,3 +136,7 @@ Azure Lighthouse biedt geen volledige ondersteuning voor het beheren van virtuee
 U kunt ook geen CSP sandbox-abonnementen gebruiken met de virtueel-bureaublad service van Windows. Zie voor meer informatie het [account sandbox-integratie](/partner-center/develop/set-up-api-access-in-partner-center#integration-sandbox-account).
 
 Ten slotte, als u de resource provider van het CSP-eigenaars account hebt ingeschakeld, kunnen de CSP-klant accounts de resource provider niet wijzigen.
+
+## <a name="how-often-should-i-turn-my-vms-on-to-prevent-registration-issues"></a>Hoe vaak moet ik mijn Vm's inschakelen om registratie problemen te voor komen?
+
+Nadat u een virtuele machine hebt geregistreerd bij een hostgroep in de virtueel-bureaublad service van Windows, vernieuwt de agent regel matig het token van de virtuele machine wanneer de VM actief is. Het certificaat voor het registratie token is 90 dagen geldig. Als gevolg van deze limiet van 90 dagen raden we u aan om elke 90 dagen uw Vm's te starten. Als uw virtuele machine binnen deze tijds limiet wordt ingesteld, kan het registratie token verlopen of ongeldig worden. Als u de virtuele machine na 90 dagen hebt gestart en registratie problemen ondervindt, volgt u de instructies in de [Windows-hand leiding voor het oplossen van problemen met Virtual Desktop agent](troubleshoot-agent.md#your-issue-isnt-listed-here-or-wasnt-resolved) om de virtuele machine uit de hostgroep te verwijderen, installeert u de agent opnieuw en registreert u deze opnieuw in de groep.

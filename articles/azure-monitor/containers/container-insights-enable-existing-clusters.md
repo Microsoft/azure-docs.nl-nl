@@ -1,19 +1,19 @@
 ---
 title: Een AKS-cluster (Azure Kubernetes service) bewaken dat is geïmplementeerd | Microsoft Docs
-description: Meer informatie over het inschakelen van bewaking van een Azure Kubernetes service-cluster (AKS) met Azure Monitor voor containers die al zijn geïmplementeerd in uw abonnement.
+description: Meer informatie over het inschakelen van bewaking van een Azure Kubernetes service-cluster (AKS) met container Insights die al is geïmplementeerd in uw abonnement.
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-terraform, devx-track-azurecli
-ms.openlocfilehash: 547c22e4d82aa728009a2fdb42f2c3b481b7a625
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: e84e1c4ad3aa3950a433218255ccac3d91435231
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612348"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101717669"
 ---
 # <a name="enable-monitoring-of-azure-kubernetes-service-aks-cluster-already-deployed"></a>Bewaking van het cluster van Azure Kubernetes service (AKS) inschakelen dat al is geïmplementeerd
 
-In dit artikel wordt beschreven hoe u Azure Monitor instelt voor containers voor het bewaken van beheerde Kubernetes-clusters die worden gehost op de [Azure Kubernetes-service](../../aks/index.yml) die al is geïmplementeerd in uw abonnement.
+In dit artikel wordt beschreven hoe u container Insights instelt voor het bewaken van beheerde Kubernetes-clusters die worden gehost op de [Azure Kubernetes-service](../../aks/index.yml) die al is geïmplementeerd in uw abonnement.
 
 U kunt de bewaking van een AKS-cluster inschakelen dat al is geïmplementeerd met een van de ondersteunde methoden:
 
@@ -113,13 +113,13 @@ Ga als volgt te werk om de bewaking van uw AKS-cluster in de Azure Portal van Az
 
 4. Zoek in de lijst met niet-bewaakte clusters de container in de lijst en klik op **inschakelen**.
 
-5. Als u een bestaande Log Analytics-werk ruimte hebt in hetzelfde abonnement als het cluster, selecteert u in de vervolg keuzelijst de pagina **onboarding to Azure monitor voor containers** .
+5. Als u een bestaande Log Analytics-werk ruimte hebt in hetzelfde abonnement als het cluster, selecteert u op de pagina **onboarding naar container Insights** de optie in de vervolg keuzelijst.
     De lijst preselecteert de standaard werkruimte en de locatie waar de AKS-container in het abonnement is geïmplementeerd.
 
     ![AKS container Insights-bewaking inschakelen](./media/container-insights-onboard/kubernetes-onboard-brownfield-01.png)
 
     >[!NOTE]
-    >Als u een nieuwe Log Analytics-werk ruimte wilt maken voor het opslaan van de bewakings gegevens uit het cluster, volgt u de instructies in [een log Analytics-werk ruimte maken](../learn/quick-create-workspace.md). Zorg ervoor dat u de werk ruimte maakt in hetzelfde abonnement waarin de AKS-container is geïmplementeerd.
+    >Als u een nieuwe Log Analytics-werk ruimte wilt maken voor het opslaan van de bewakings gegevens uit het cluster, volgt u de instructies in [een log Analytics-werk ruimte maken](../logs/quick-create-workspace.md). Zorg ervoor dat u de werk ruimte maakt in hetzelfde abonnement waarin de AKS-container is geïmplementeerd.
 
 Nadat u bewaking hebt ingeschakeld, kan het ongeveer 15 minuten duren voordat u de metrische gegevens van de status voor het cluster kunt weer geven.
 
@@ -137,13 +137,13 @@ Ga als volgt te werk om bewaking rechtstreeks vanuit een van uw AKS-clusters in 
 
 5. Selecteer op de pagina overzicht van Kubernetes-service de optie **bewaking-Insights**.
 
-6. Als u een bestaande Log Analytics-werk ruimte hebt in hetzelfde abonnement als het cluster, selecteert u in de vervolg keuzelijst de pagina **onboarding to Azure monitor voor containers** .
+6. Als u een bestaande Log Analytics-werk ruimte hebt in hetzelfde abonnement als het cluster, selecteert u op de pagina **onboarding naar container Insights** de optie in de vervolg keuzelijst.
     De lijst preselecteert de standaard werkruimte en de locatie waar de AKS-container in het abonnement is geïmplementeerd.
 
     ![Status controle van AKS-container inschakelen](./media/container-insights-onboard/kubernetes-onboard-brownfield-02.png)
 
     >[!NOTE]
-    >Als u een nieuwe Log Analytics-werk ruimte wilt maken voor het opslaan van de bewakings gegevens uit het cluster, volgt u de instructies in [een log Analytics-werk ruimte maken](../learn/quick-create-workspace.md). Zorg ervoor dat u de werk ruimte maakt in hetzelfde abonnement waarin de AKS-container is geïmplementeerd.
+    >Als u een nieuwe Log Analytics-werk ruimte wilt maken voor het opslaan van de bewakings gegevens uit het cluster, volgt u de instructies in [een log Analytics-werk ruimte maken](../logs/quick-create-workspace.md). Zorg ervoor dat u de werk ruimte maakt in hetzelfde abonnement waarin de AKS-container is geïmplementeerd.
 
 Nadat u bewaking hebt ingeschakeld, kan het ongeveer 15 minuten duren voordat u de operationele gegevens voor het cluster kunt weer geven.
 
@@ -158,7 +158,7 @@ Deze methode bevat twee JSON-sjablonen. Met één sjabloon geeft u de configurat
 >De sjabloon moet worden geïmplementeerd in dezelfde resource groep als het cluster.
 >
 
-De Log Analytics-werk ruimte moet worden gemaakt voordat u bewaking met behulp van Azure PowerShell of CLI inschakelt. Als u de werk ruimte wilt maken, kunt u deze instellen via [Azure Resource Manager](../samples/resource-manager-workspace.md), via [Power shell](../scripts/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json)of in de [Azure Portal](../learn/quick-create-workspace.md).
+De Log Analytics-werk ruimte moet worden gemaakt voordat u bewaking met behulp van Azure PowerShell of CLI inschakelt. Als u de werk ruimte wilt maken, kunt u deze instellen via [Azure Resource Manager](../logs/resource-manager-workspace.md), via [Power shell](../logs/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json)of in de [Azure Portal](../logs/quick-create-workspace.md).
 
 Als u niet bekend bent met het concept van het implementeren van resources met behulp van een sjabloon, raadpleegt u:
 
@@ -380,4 +380,4 @@ Na enkele minuten is de opdracht voltooid en retourneert deze informatie over de
 
 * Als u problemen ondervindt bij het voorbereiden van de oplossing, raadpleegt u de [hand leiding](container-insights-troubleshoot.md) voor het oplossen van problemen
 
-* Als controle is ingeschakeld voor het verzamelen van het status-en resource gebruik van uw AKS-cluster en werk belastingen die erop worden uitgevoerd, leert [u hoe u Azure monitor gebruikt](container-insights-analyze.md) voor containers.
+* Als controle is ingeschakeld voor het verzamelen van het status-en resource gebruik van uw AKS-cluster en werk belastingen die erop worden uitgevoerd, leert [u hoe u container Insights kunt gebruiken](container-insights-analyze.md) .

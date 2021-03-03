@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 06/21/2018
 ms.author: allensu
-ms.openlocfilehash: ff205069c31d50813a4fad71a3c9e2f8e2462844
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: ccf55e0e3986de8afe23cb646d4df743b576900c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92778129"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101725319"
 ---
 # <a name="using-azure-cdn-with-sas"></a>Azure CDN gebruiken met SAS
 
@@ -77,10 +77,10 @@ Deze optie is alleen beschikbaar voor **Azure CDN Premium van Verizon** -profiel
 
    ![Knop voor de engine voor CDN-regels](./media/cdn-sas-storage-support/cdn-rules-engine-btn.png)
 
-   De volgende regel voor het herschrijven van een URL-voor beeld maakt gebruik van een reguliere-expressie patroon met een opname groep en een eind punt met de naam *sasstoragedemo* :
+   De volgende regel voor het herschrijven van een URL-voor beeld maakt gebruik van een reguliere-expressie patroon met een opname groep en een eind punt met de naam *sasstoragedemo*:
    
    Bron:   
-   `(container1\/.*)`
+   `(container1/.*)`
 
 
    Bestemming:   
@@ -116,10 +116,10 @@ Als u Azure CDN verificatie van beveiligings tokens wilt gebruiken, moet u een *
  
 2. Gebruik de [engine regels](./cdn-verizon-premium-rules-engine.md) om een regel voor het opnieuw schrijven van een URL te maken om SAS-token toegang tot alle blobs in de container in te scha kelen. Het kan Maxi maal vier uur duren voordat nieuwe regels worden door gegeven.
 
-   De volgende regel voor het herschrijven van een URL-voor beeld maakt gebruik van een reguliere-expressie patroon met een opname groep en een eind punt met de naam *sasstoragedemo* :
+   De volgende regel voor het herschrijven van een URL-voor beeld maakt gebruik van een reguliere-expressie patroon met een opname groep en een eind punt met de naam *sasstoragedemo*:
    
    Bron:   
-   `(container1\/.*)`
+   `(container1/.*)`
    
    Bestemming:   
    ```

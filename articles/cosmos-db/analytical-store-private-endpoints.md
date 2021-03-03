@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 03/02/2021
 ms.author: anithaa
-ms.openlocfilehash: 26c99beb95d60b476fff255321d85c0db8aa7363
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 9b07af72983931e0e1cab9e7d5093fd845b363bc
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101679219"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101692195"
 ---
 # <a name="configure-private-endpoints-for-azure-cosmos-db-analytical-store"></a>Persoonlijke eind punten configureren voor Azure Cosmos DB-analytische opslag
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -22,7 +22,7 @@ In dit artikel vindt u informatie over het instellen van beheerde privé-eind pu
 
 ### <a name="set-up-an-azure-synapse-analytics-workspace-with-a-managed-virtual-network"></a>Een Azure Synapse Analytics-werk ruimte met een beheerd virtueel netwerk instellen
 
-[Een werk ruimte maken in azure Synapse Analytics met data-exfiltration ingeschakeld.](../synapse-analytics/security/how-to-create-a-workspace-with-data-exfiltration-protection.md). Met [beveiliging tegen gegevens exfiltration](../synapse-analytics/security/workspace-data-exfiltration-protection.md)kunt u ervoor zorgen dat kwaadwillende gebruikers geen gegevens van uw Azure-resources kunnen kopiëren of overdragen naar locaties buiten het bereik van uw organisatie.
+[Maak een werk ruimte in azure Synapse Analytics met data-exfiltration ingeschakeld.](../synapse-analytics/security/how-to-create-a-workspace-with-data-exfiltration-protection.md) Met [beveiliging tegen gegevens exfiltration](../synapse-analytics/security/workspace-data-exfiltration-protection.md)kunt u ervoor zorgen dat kwaadwillende gebruikers geen gegevens van uw Azure-resources kunnen kopiëren of overdragen naar locaties buiten het bereik van uw organisatie.
 
 De volgende toegangs beperkingen zijn van toepassing wanneer de exfiltration-beveiliging is ingeschakeld voor een Azure Synapse Analytics-werk ruimte:
 

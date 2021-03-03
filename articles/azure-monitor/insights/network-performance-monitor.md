@@ -1,24 +1,23 @@
 ---
 title: Netwerkprestatiemeter oplossing in azure | Microsoft Docs
 description: Netwerkprestatiemeter in azure helpt u bij het bewaken van de prestaties van uw netwerken, in bijna realtime, om knel punten in netwerk prestaties te detecteren en te vinden.
-ms.subservice: logs
 ms.topic: conceptual
 author: vinynigam
 ms.author: vinigam
 ms.date: 02/20/2018
-ms.openlocfilehash: 92326ea4d3de896a67b2953fb612b79948044d08
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: dd9f35a0b7c3bb5c2c5888765e4ebac436b4cde1
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100573429"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711124"
 ---
 # <a name="network-performance-monitor-solution-in-azure"></a>Netwerkprestatiemeter oplossing in azure
 
 ![Netwerkprestatiemeter-symbool](./media/network-performance-monitor/npm-symbol.png)
 
 > [!IMPORTANT]
-> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor](https://docs.microsoft.com/azure/network-watcher/migrate-to-connection-monitor-from-network-performance-monitor) in azure Network Watcher vóór 29 februari 2024.
+> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor](../../network-watcher/migrate-to-connection-monitor-from-network-performance-monitor.md) in azure Network Watcher vóór 29 februari 2024.
 
 Netwerkprestatiemeter is een op de cloud gebaseerde oplossing voor hybride netwerk bewaking waarmee u de netwerk prestaties tussen verschillende punten in uw netwerk infrastructuur kunt bewaken. Daarnaast kunt u hiermee de netwerkverbinding met de service en toepassingseindpunten bewaken, evenals de prestaties van Azure ExpressRoute. 
 
@@ -301,4 +300,4 @@ Informatie over prijzen is [online](network-performance-monitor-pricing-faq.md)b
 * **Doe mee aan ons cohort:** We zijn altijd geïnteresseerd in het toevoegen van nieuwe klanten aan onze cohort. Als onderdeel hiervan krijgt u vroegtijdig toegang tot nieuwe functies en een kans om ons te helpen bij het verbeteren van Netwerkprestatiemeter. Als u wilt deel nemen, vult u deze [snelle enquête](https://aka.ms/npmcohort)in. 
 
 ## <a name="next-steps"></a>Volgende stappen 
-Meer informatie over [prestatie meter](network-performance-monitor-performance-monitor.md), [service Connectivity monitor](network-performance-monitor-performance-monitor.md)en [ExpressRoute monitor](network-performance-monitor-expressroute.md). 
+Meer informatie over [prestatie meter](network-performance-monitor-performance-monitor.md), [service Connectivity monitor](network-performance-monitor-performance-monitor.md)en [ExpressRoute monitor](network-performance-monitor-expressroute.md).

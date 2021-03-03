@@ -6,12 +6,12 @@ ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 09/11/2020
-ms.openlocfilehash: 87951c0366090c1ea4eba490d114771e47bf452c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 304c359296c4fbff79dd367facd8bbb98c8903b5
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100627209"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101731439"
 ---
 # <a name="resource-manager-template-samples-for-diagnostic-settings-in-azure-monitor"></a>Resource Manager-voorbeeldsjablonen voor diagnostische instellingen in Azure Monitor
 Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het maken van diagnostische instellingen voor een Azure-resource. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.
@@ -349,7 +349,7 @@ In het volgende voorbeeld wordt een diagnostische instelling voor een Azure SQL-
 ```
 
 ## <a name="diagnostic-setting-for-recovery-services-vault"></a>Diagnostische instelling voor Recovery Services-kluis
-In het volgende voorbeeld wordt een diagnostische instelling voor een Azure Recovery Services-kluis gemaakt door een resource van het type `microsoft.recoveryservices/vaults/providers/diagnosticSettings` aan de sjabloon toe te voegen. In dit voorbeeld wordt de verzamelmodus opgegeven, zoals beschreven in [Azure-resourcelogboeken](../platform/resource-logs.md#send-to-log-analytics-workspace). Geef `Dedicated` of `AzureDiagnostics` op voor de eigenschap `logAnalyticsDestinationType`.
+In het volgende voorbeeld wordt een diagnostische instelling voor een Azure Recovery Services-kluis gemaakt door een resource van het type `microsoft.recoveryservices/vaults/providers/diagnosticSettings` aan de sjabloon toe te voegen. In dit voorbeeld wordt de verzamelmodus opgegeven, zoals beschreven in [Azure-resourcelogboeken](./resource-logs.md#send-to-log-analytics-workspace). Geef `Dedicated` of `AzureDiagnostics` op voor de eigenschap `logAnalyticsDestinationType`.
 
 ### <a name="template-file"></a>Sjabloonbestand
 
@@ -812,5 +812,5 @@ In het volgende voorbeeld wordt een diagnostische instelling gemaakt voor elk op
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Meer voorbeeldsjablonen voor Azure Monitor](../samples/resource-manager-samples.md).
+* [Meer voorbeeldsjablonen voor Azure Monitor](../resource-manager-samples.md).
 * [Meer informatie over diagnostische instellingen](../essentials/diagnostic-settings.md).

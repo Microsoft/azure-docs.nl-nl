@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 11/17/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: d5bd62dad5be7f6a6df5b6b037e8eeae13ee48e3
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 6c22d1bae4f1d116aa52846880498c7c2a425174
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98887171"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738715"
 ---
 # <a name="expose-applications-to-the-internet-using-application-gateway-and-azure-firewall"></a>Toepassingen beschikbaar stellen op internet met behulp van Application Gateway en Azure Firewall
 
@@ -20,7 +20,7 @@ In dit document wordt uitgelegd hoe u toepassingen beschikbaar maakt op internet
 
 ## <a name="prerequisites"></a>Vereisten
 
-- [Azure CLI-versie 2.0.4 of hoger](https://docs.microsoft.com/cli/azure/install-azure-cli).
+- [Azure CLI-versie 2.0.4 of hoger](/cli/azure/install-azure-cli).
 
 ## <a name="define-variables"></a>Variabelen definiëren
 

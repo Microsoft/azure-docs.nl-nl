@@ -4,12 +4,12 @@ description: Bewaak ASP.NET Core webtoepassingen voor Beschik baarheid, prestati
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 04/30/2020
-ms.openlocfilehash: 93f72b7e2f709f32942564dc7322a4c5d1064cfc
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: be4cbe5f95fa6901ae4299662750c232d4700a8a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100589908"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711498"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights voor ASP.NET Core toepassingen
 
@@ -30,9 +30,6 @@ Met de [Application INSIGHTS SDK voor ASP.net core](https://nuget.org/packages/M
 
 > [!NOTE]
 > ASP.NET Core 3,1 vereist [Application Insights 2.8.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.8.0) of hoger.
-
-> [!IMPORTANT]
-> De volgende versies van ASP.NET Core worden ondersteund: ASP.NET Core 2,1 en 3,1. Versies 2,0, 2,2 en 3,0 zijn buiten gebruik gesteld en worden niet meer ondersteund.
 
 ## <a name="prerequisites"></a>Vereisten
 

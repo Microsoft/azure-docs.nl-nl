@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 96d1c4c0ad210352be94255609a3a373b408ed23
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: d8ef3efcda55868abec188c10ef904ae40a56722
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100593301"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101728141"
 ---
 # <a name="azure-security-baseline-for-batch"></a>Azure-beveiligings basislijn voor batch
 
@@ -140,7 +140,7 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 **Hulp**: Azure-activiteiten logboek gebruiken om netwerk resource configuraties te bewaken en wijzigingen te detecteren voor netwerk bronnen die betrekking hebben op uw Azure batch groepen. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke netwerk bronnen plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log) 
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log) 
 
 - [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
@@ -516,7 +516,7 @@ Diagnostische instellingen configureren voor opslag accounts die zijn gekoppeld 
 
 - [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
-- [Aanvullende logboek registratie/controle voor een Azure Storage account inschakelen](../storage/common/storage-monitor-storage-account.md)
+- [Aanvullende logboek registratie/controle voor een Azure Storage account inschakelen](../storage/common/manage-storage-analytics-logs.md)
 
 **Monitoring door Azure Security Center**: Ja
 

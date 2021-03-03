@@ -13,12 +13,12 @@ author: williamdassafMSFT
 ms.author: wiassaf
 ms.reviewer: ''
 ms.date: 2/1/2021
-ms.openlocfilehash: 942698e5c42e1f46ff05dacdacdb0d124135a6c4
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 1f4bd28d2b95aeebe07fcad84d757327622d51f0
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100390756"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101690427"
 ---
 # <a name="automate-management-tasks-using-elastic-jobs-preview"></a>Beheer taken automatiseren met behulp van elastische taken (preview-versie)
 
@@ -56,7 +56,7 @@ Elastische taken kunnen worden gericht op [Azure SQL-data bases](sql-database-pa
 
 Voor T-SQL-script taak automatisering in SQL Server en Azure SQL Managed Instance kunt u [SQL Agent](job-automation-managed-instances.md)overwegen. 
 
-Voor T-SQL-script taak automatisering in azure Synapse Analytics kunt u [pijp lijnen met terugkerende triggers](/azure/synapse-analytics/data-integration/concepts-data-factory-differences.md)overwegen, [op basis van Azure Data Factory](/azure/synapse-analytics/data-integration/concepts-data-factory-differences).
+Voor T-SQL-script taak automatisering in azure Synapse Analytics kunt u [pijp lijnen met terugkerende triggers](../../synapse-analytics/data-integration/concepts-data-factory-differences.md)overwegen, [op basis van Azure Data Factory](../../synapse-analytics/data-integration/concepts-data-factory-differences.md).
 
 Er zijn verschillen tussen de SQL-Agent (beschikbaar in SQL Server en als onderdeel van het SQL Managed instance) en de data base-agent voor elastische taken (waarmee u T-SQL kunt uitvoeren op Azure SQL-data bases of data bases in SQL Server en Azure SQL Managed instance, Azure Synapse Analytics).
 

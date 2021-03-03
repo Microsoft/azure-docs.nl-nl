@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/29/2020
-ms.openlocfilehash: a319dbce2502f35272cf9b70da2022f581d64275
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 6af183c16238c6630b194b112f0c09fd4399d443
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96553091"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101694067"
 ---
 # <a name="azure-purview-data-catalog-lineage-user-guide"></a>Gebruikers handleiding voor Azure controle sfeer liggen Data Catalog afkomst
 
@@ -74,39 +74,47 @@ Azure controle sfeer liggen ondersteunt afkomst op activa niveau voor de gegeven
 
    :::image type="content" source="./media/catalog-lineage-user-guide/view-columns-from-lineage.png" alt-text="Scherm afbeelding die laat zien hoe u weergave kolommen selecteert op de pagina afkomst" border="true":::
 
-## <a name="column-level-lineage"></a>Afkomst op kolom niveau
+## <a name="dataset-column-lineage"></a>Gegevensset-kolom afkomst
 
-Azure controle sfeer liggen ondersteunt afkomst op kolom niveau voor de gegevens sets. Als u afkomst op kolom niveau wilt zien, gaat u naar het tabblad **afkomst** van de huidige asset in de catalogus en volgt u de onderstaande stappen:
+Als u afkomst op kolom niveau van een gegevensset wilt zien, gaat u naar het tabblad **afkomst** van de huidige asset in de catalogus en volgt u de onderstaande stappen:
 
 1. Als u zich op het tabblad afkomst bevindt, schakelt u in het linkerdeel venster het selectie vakje in naast elke kolom die u wilt weer geven in de gegevens afkomst.
 
    :::image type="content" source="./media/catalog-lineage-user-guide/select-columns-to-show-in-lineage.png" alt-text="Scherm afbeelding die laat zien hoe u kolommen selecteert om weer te geven op de pagina afkomst." lightbox="./media/catalog-lineage-user-guide/select-columns-to-show-in-lineage.png":::
 
-1. Beweeg de muis aanwijzer over een geselecteerde kolom in het linkerdeel venster of in de gegevensset van het afkomst-canvas om de kolom toewijzing te bekijken. Alle kolom instanties zijn gemarkeerd.
+2. Beweeg de muis aanwijzer over een geselecteerde kolom in het linkerdeel venster of in de gegevensset van het afkomst-canvas om de kolom toewijzing te bekijken. Alle kolom instanties zijn gemarkeerd.
 
    :::image type="content" source="./media/catalog-lineage-user-guide/show-column-flow-in-lineage.png" alt-text="Scherm afbeelding die laat zien hoe u de muis aanwijzer boven een kolom naam houdt om de kolom stroom in een pad naar een Data afkomst te markeren." lightbox="./media/catalog-lineage-user-guide/show-column-flow-in-lineage.png":::
 
-1. Als het aantal kolommen groter is dan wat er in het linkerdeel venster kan worden weer gegeven, gebruikt u de filter optie om een specifieke kolom op naam te selecteren. U kunt ook de muis gebruiken om door de lijst te bladeren.
+3. Als het aantal kolommen groter is dan wat er in het linkerdeel venster kan worden weer gegeven, gebruikt u de filter optie om een specifieke kolom op naam te selecteren. U kunt ook de muis gebruiken om door de lijst te bladeren.
 
    :::image type="content" source="./media/catalog-lineage-user-guide/filter-columns-by-name.png" alt-text="Scherm afbeelding die laat zien hoe u kolommen op kolom naam kunt filteren op de pagina afkomst." lightbox="./media/catalog-lineage-user-guide/filter-columns-by-name.png":::
 
-1. Als het afkomst-canvas meer knoop punten en randen bevat, gebruikt u het filter om gegevens activa te selecteren of knoop punten verwerken op naam. U kunt ook de muis gebruiken om het afkomst-venster te pannen.
+4. Als het afkomst-canvas meer knoop punten en randen bevat, gebruikt u het filter om gegevens activa te selecteren of knoop punten verwerken op naam. U kunt ook de muis gebruiken om het afkomst-venster te pannen.
 
    :::image type="content" source="./media/catalog-lineage-user-guide/filter-assets-by-name.png" alt-text="Scherm opname van gegevens Asset knooppunten op naam op de pagina afkomst." lightbox="./media/catalog-lineage-user-guide/filter-assets-by-name.png":::
 
-1. Gebruik de wissel knop in het linkerdeel venster om de lijst met gegevens sets in het afkomst-canvas te markeren. Als u de wissel knop uitschakelt, wordt alle activa weer gegeven die ten minste één van de geselecteerde kolommen bevatten. Als u de wissel knop inschakelt, worden alleen gegevens sets weer gegeven die alle kolommen bevatten.
+5. Gebruik de wissel knop in het linkerdeel venster om de lijst met gegevens sets in het afkomst-canvas te markeren. Als u de wissel knop uitschakelt, wordt alle activa weer gegeven die ten minste één van de geselecteerde kolommen bevatten. Als u de wissel knop inschakelt, worden alleen gegevens sets weer gegeven die alle kolommen bevatten.
 
    :::image type="content" source="./media/catalog-lineage-user-guide/use-toggle-to-filter-nodes.png" alt-text="Scherm afbeelding die laat zien hoe u de wissel knop kunt gebruiken om de lijst met knoop punten op de pagina afkomst te filteren." lightbox="./media/catalog-lineage-user-guide/use-toggle-to-filter-nodes.png":::
 
+## <a name="process-column-lineage"></a>Proces kolom afkomst
+Het gegevens proces kan een of meer invoer gegevens sets hebben voor het produceren van een of meer uitvoer. In controle sfeer liggen is op kolom niveau afkomst beschikbaar voor proces knooppunten. 
+1. Scha kelen tussen invoer-en uitvoer gegevens sets vanuit een vervolg keuzelijst in het deel venster kolommen.
+2. Selecteer kolommen uit een of meer tabellen om de afkomst-stroom van de invoer gegevensset naar de bijbehorende uitvoer gegevensset weer te geven.
+
+   :::image type="content" source="./media/catalog-lineage-user-guide/process-column-lineage.png" alt-text="Scherm opname met de kolommen afkomst van een proces knooppunt." lightbox="./media/catalog-lineage-user-guide/process-column-lineage.png":::
+
+## <a name="browse-assets-in-lineage"></a>Door assets bladeren in afkomst
 1. Selecteer **overschakelen naar activa** op een wille keurige Asset om de bijbehorende meta gegevens te bekijken in de weer gave afkomst. Dit is een doel matige manier om naar een ander activum in de catalogus te bladeren vanuit de weer gave afkomst.
 
    :::image type="content" source="./media/catalog-lineage-user-guide/select-switch-to-asset.png" alt-text="Scherm opname van het selecteren van een overschakeling naar een activum in een afkomst-gegevens Asset." lightbox="./media/catalog-lineage-user-guide/select-switch-to-asset.png":::
 
-1. Het afkomst-canvas kan complex worden voor populaire gegevens sets. De standaard weergave geeft alleen vijf afkomst weer voor de activa in de focus om wirwar te voor komen. De rest van de afkomst kan worden uitgebreid door te klikken op de bellen op het canvas afkomst. Gegevens gebruikers kunnen ook de activa verbergen op het canvas die geen belang hebben. Als u de wirwar verder wilt beperken, schakelt u de wissel knop **meer afkomst** boven aan het canvas afkomst uit. Met deze actie worden alle bellen in afkomst-canvas verborgen.
+2. Het afkomst-canvas kan complex worden voor populaire gegevens sets. De standaard weergave geeft alleen vijf afkomst weer voor de activa in de focus om wirwar te voor komen. De rest van de afkomst kan worden uitgebreid door te klikken op de bellen op het canvas afkomst. Gegevens gebruikers kunnen ook de activa verbergen op het canvas die geen belang hebben. Als u de wirwar verder wilt beperken, schakelt u de wissel knop **meer afkomst** boven aan het canvas afkomst uit. Met deze actie worden alle bellen in afkomst-canvas verborgen.
 
    :::image type="content" source="./media/catalog-lineage-user-guide/use-toggle-to-hide-bubbles.png" alt-text="Scherm afbeelding die laat zien hoe u meer afkomst kunt in-of uitschakelen." lightbox="./media/catalog-lineage-user-guide/use-toggle-to-hide-bubbles.png":::
 
-1. Gebruik de slimme knoppen in het afkomst-canvas om een optimale weer gave van de afkomst te krijgen. Automatisch indelen, passend maken, in-en uitzoomen, volledig scherm en navigatie kaart zijn beschikbaar voor een overweldigende afkomste ervaring in de catalogus.
+3. Gebruik de slimme knoppen in het afkomst-canvas om een optimale weer gave van de afkomst te krijgen. Automatisch indelen, passend maken, in-en uitzoomen, volledig scherm en navigatie kaart zijn beschikbaar voor een overweldigende afkomste ervaring in de catalogus.
 
    :::image type="content" source="./media/catalog-lineage-user-guide/use-lineage-smart-buttons.png" alt-text="Scherm afbeelding die laat zien hoe u de afkomst-slimme knoppen selecteert." lightbox="./media/catalog-lineage-user-guide/use-lineage-smart-buttons.png":::
 

@@ -1,6 +1,6 @@
 ---
-title: Include-bestand
-description: Include-bestand
+title: bestand opnemen
+description: bestand opnemen
 services: azure-monitor
 author: rboucher
 tags: azure-service-management
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/07/2019
 ms.author: robb
 ms.custom: include file
-ms.openlocfilehash: 56afc81794bb18bfb7c9146eeb4ed61a0a75ea0f
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: c55314764f973a5a015a2bfc02815a58ce659901
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100587003"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734027"
 ---
 **Volume gegevensverzameling en gegevensretentie** 
 
@@ -72,11 +72,11 @@ ms.locfileid: "100587003"
 
 **<a name="data-ingestion-volume-rate">Gegevensopnamevolume</a>**
 
-Azure Monitor is een grootschalige gegevensservice die elke maand een groeiend aantal terabytes aan gegevens van duizenden klanten verwerkt. De limiet voor het opnamevolume moet de klanten van Azure Monitor isoleren tegen plotselinge opnamepieken in een multitenancy-omgeving. Er is een standaarddrempel van 500 MB (gecomprimeerd) voor het opnamevolume gedefenieerd in werkruimtes. Dit staat gelijk aan een niet-gecomprimeerd volume van ongeveer **6 GB/min**. De werkelijke grootte kan per gegevenstype variëren afhankelijk van de logboeklengte en de compressieratio ervan. De limiet voor volumesnelheid is van toepassing op gegevens die worden opgenomen vanuit Azure-resource via [Diagnostische instellingen](../articles/azure-monitor/platform/diagnostic-settings.md). Wanneer het volumelimiet is bereikt, probeert een mechanisme voor nieuwe pogingen de gegevens vier keer op te nemen in een periode van 30 minuten. Als dat niet lukt, mislukt de bewerking. De limiet is niet van toepassingen op gegevens van [agents](../articles/azure-monitor/agents/agents-overview.md) of de [Data Collector-API](../articles/azure-monitor/platform/data-collector-api.md).
+Azure Monitor is een grootschalige gegevensservice die elke maand een groeiend aantal terabytes aan gegevens van duizenden klanten verwerkt. De limiet voor het opnamevolume moet de klanten van Azure Monitor isoleren tegen plotselinge opnamepieken in een multitenancy-omgeving. Er is een standaarddrempel van 500 MB (gecomprimeerd) voor het opnamevolume gedefenieerd in werkruimtes. Dit staat gelijk aan een niet-gecomprimeerd volume van ongeveer **6 GB/min**. De werkelijke grootte kan per gegevenstype variëren afhankelijk van de logboeklengte en de compressieratio ervan. De limiet voor volumesnelheid is van toepassing op gegevens die worden opgenomen vanuit Azure-resource via [Diagnostische instellingen](../articles/azure-monitor/essentials/diagnostic-settings.md). Wanneer het volumelimiet is bereikt, probeert een mechanisme voor nieuwe pogingen de gegevens vier keer op te nemen in een periode van 30 minuten. Als dat niet lukt, mislukt de bewerking. De limiet is niet van toepassingen op gegevens van [agents](../articles/azure-monitor/agents/agents-overview.md) of de [Data Collector-API](../articles/azure-monitor/logs/data-collector-api.md).
 
 Als naar een werkruimte verzonden gegevens een volumesnelheid heeft die hoger is dan 80 % van de drempel die in uw werkruimte is geconfigureerd, wordt er om de zes uur een gebeurtenis verzonden naar de *bewerkingstabel* in uw werkruimte, zolang de drempel nog steeds wordt overschreden. Als het opnamevolume hoger is dan de drempel, worden sommige gegevens verwijderd en wordt er om de zes uur een gebeurtenis verzonden naar de *bewerkingstabel* in uw werkruimte, zolang de drempel wordt overschreden. Als uw opnamevolume de drempel blijft overschrijden of als u verwacht de drempel binnenkort te bereiken, kunt u een verhoging aanvragen door een ondersteuningsaanvraag te openen. 
 
-Zie [De status van de Log Analytics-werkruimte in Azure Monitor bewaken](../articles/azure-monitor/platform/monitor-workspace.md) voor het maken van waarschuwingsregels om proactief te worden gewaarschuwd wanneer u eventuele opnamelimieten bereikt.
+Zie [De status van de Log Analytics-werkruimte in Azure Monitor bewaken](../articles/azure-monitor/logs/monitor-workspace.md) voor het maken van waarschuwingsregels om proactief te worden gewaarschuwd wanneer u eventuele opnamelimieten bereikt.
 
 >[!NOTE]
->Afhankelijk van hoe lang u logboekanalyse hebt gebruikt, hebt u mogelijk toegang tot verouderde prijscategorieën. Meer informatie over [verouderde prijscategorieën van logboekanalyse](../articles/azure-monitor/platform/manage-cost-storage.md#legacy-pricing-tiers).
+>Afhankelijk van hoe lang u logboekanalyse hebt gebruikt, hebt u mogelijk toegang tot verouderde prijscategorieën. Meer informatie over [verouderde prijscategorieën van logboekanalyse](../articles/azure-monitor/logs/manage-cost-storage.md#legacy-pricing-tiers).

@@ -6,15 +6,15 @@ ms.topic: quickstart
 author: bwren
 ms.author: bwren
 ms.date: 06/25/2020
-ms.openlocfilehash: 2e6dc55b54bc3abaea22544d457f98307596c5dd
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 1316512badd69b545e39a47ea5da3ca6a0902482
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100628703"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101734278"
 ---
 # <a name="send-azure-activity-log-to-log-analytics-workspace-using-azure-portal"></a>Azure-activiteitenlogboek verzenden naar Log Analytics-werkruimte met behulp van een Azure-portal
-Het activiteitenlogboek is een platformlogboek in Azure dat inzicht biedt in gebeurtenissen op abonnementsniveau. Dit geldt ook voor gegevens zoals wanneer een resource wordt gewijzigd of wanneer een virtuele machine wordt gestart. U kunt het activiteitenlogboek weergeven in de Azure-portal, of items ophalen met PowerShell en CLI. Deze Quick Start laat zien hoe u de Azure-portal kunt gebruiken voor het maken van een Log Analytics-werkruimte en een diagnostische instelling om het activiteitenlogboek te verzenden naar Azure Monitor-logboeken waar u het kunt analyseren met behulp van [logboekquery's](../log-query/log-query-overview.md) en om andere functies, zoals [logboekwaarschuwingen](../alerts/alerts-log-query.md) en [werkmappen](../visualize/workbooks-overview.md), in te schakelen. 
+Het activiteitenlogboek is een platformlogboek in Azure dat inzicht biedt in gebeurtenissen op abonnementsniveau. Dit geldt ook voor gegevens zoals wanneer een resource wordt gewijzigd of wanneer een virtuele machine wordt gestart. U kunt het activiteitenlogboek weergeven in de Azure-portal, of items ophalen met PowerShell en CLI. Deze Quick Start laat zien hoe u de Azure-portal kunt gebruiken voor het maken van een Log Analytics-werkruimte en een diagnostische instelling om het activiteitenlogboek te verzenden naar Azure Monitor-logboeken waar u het kunt analyseren met behulp van [logboekquery's](../logs/log-query-overview.md) en om andere functies, zoals [logboekwaarschuwingen](../alerts/alerts-log-query.md) en [werkmappen](../visualize/workbooks-overview.md), in te schakelen. 
 
 ## <a name="sign-in-to-azure-portal"></a>Meld u aan bij Azure Portal
 Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azure.com). 
@@ -73,7 +73,7 @@ Probeer een complexere query, zoals `AzureActivity | summarize count() by Catego
 
 
 ## <a name="next-steps"></a>Volgende stappen
-In deze quickstart hebt u het activiteitenlogboek geconfigureerd om te worden verzonden naar een Log Analytics-werkruimte. U kunt nu andere gegevens configureren die moeten worden verzameld in de werkruimte, waar u ze kunt analyseren met [logboekquery's](../log-query/log-query-overview.md) in Azure Monitor, en gebruikmaken van functies zoals [logboekwaarschuwingen](../alerts/alerts-log-query.md) en [werkmappen](../visualize/workbooks-overview.md). Vervolgens moet u de [resourcelogboeken](../essentials/resource-logs.md) uit uw Azure-resources verzamelen, die de gegevens in het Activiteitenlogboek aanvullen en die inzicht geven in de bewerkingen die binnen elke resource zijn uitgevoerd.
+In deze quickstart hebt u het activiteitenlogboek geconfigureerd om te worden verzonden naar een Log Analytics-werkruimte. U kunt nu andere gegevens configureren die moeten worden verzameld in de werkruimte, waar u ze kunt analyseren met [logboekquery's](../logs/log-query-overview.md) in Azure Monitor, en gebruikmaken van functies zoals [logboekwaarschuwingen](../alerts/alerts-log-query.md) en [werkmappen](../visualize/workbooks-overview.md). Vervolgens moet u de [resourcelogboeken](../essentials/resource-logs.md) uit uw Azure-resources verzamelen, die de gegevens in het Activiteitenlogboek aanvullen en die inzicht geven in de bewerkingen die binnen elke resource zijn uitgevoerd.
 
 
 > [!div class="nextstepaction"]

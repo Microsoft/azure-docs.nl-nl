@@ -3,12 +3,12 @@ title: Dubbele bericht detectie Azure Service Bus | Microsoft Docs
 description: In dit artikel wordt uitgelegd hoe u dubbele items kunt detecteren in Azure Service Bus berichten. Het duplicaat bericht kan worden genegeerd en verwijderd.
 ms.topic: article
 ms.date: 01/13/2021
-ms.openlocfilehash: 8ff98b3a052be6004a2dc070f10d6f8c9ca0617f
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 527c2dea34b02733907372b6e75a40a5ef5fc289
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684805"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101711922"
 ---
 # <a name="duplicate-detection"></a>Detectie van duplicaten
 
@@ -48,7 +48,7 @@ In de portal is de functie ingeschakeld tijdens het maken van de entiteit met he
 
 Via een programma kunt u de markering instellen met de eigenschap [QueueDescription. requiresDuplicateDetection](/dotnet/api/microsoft.servicebus.messaging.queuedescription.requiresduplicatedetection#Microsoft_ServiceBus_Messaging_QueueDescription_RequiresDuplicateDetection) in de volledige Framework .net API. Met de Azure Resource Manager-API wordt de waarde ingesteld met de eigenschap [queueProperties. requiresDuplicateDetection](/azure/templates/microsoft.servicebus/namespaces/queues#property-values) .
 
-De geschiedenis van de duplicaten detectie tijd wordt standaard ingesteld op 30 seconden voor wacht rijen en onderwerpen, met een maximale waarde van zeven dagen. U kunt deze instelling wijzigen in het venster Eigenschappen van de wachtrij en het onderwerp in de Azure Portal.
+De geschiedenis van de duplicaten detectie tijd wordt standaard ingesteld op 10 minuten voor wacht rijen en onderwerpen, met een minimum waarde van 20 seconden tot de maximale waarde van 7 dagen. U kunt deze instelling wijzigen in het venster Eigenschappen van de wachtrij en het onderwerp in de Azure Portal.
 
 ![Scherm afbeelding van de functie Service Bus met de instelling eigenschappen gemarkeerd en de optie geschiedenis van duplicaten detectie wordt rood beschreven.][2]
 

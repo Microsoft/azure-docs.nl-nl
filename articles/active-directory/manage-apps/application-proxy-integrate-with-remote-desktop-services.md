@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 11/30/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: b6879d4869604af5232088063a6153a01208e7d0
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 5e5d5370057449d1877c31b249d3fe47fd60bf2a
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99259335"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101687665"
 ---
 # <a name="publish-remote-desktop-with-azure-ad-application-proxy"></a>Remote Desktop publiceren met Azure AD-toepassingsproxy
 
@@ -57,7 +57,7 @@ Nadat u RDS-en Azure-AD-toepassingsproxy voor uw omgeving hebt ingesteld, volgt 
 ### <a name="publish-the-rd-host-endpoint"></a>Het eind punt van de extern bureau blad-host publiceren
 
 1. [Publiceer een nieuwe toepassing voor toepassings proxy](application-proxy-add-on-premises-application.md) met de volgende waarden:
-   - Interne URL: `https://\<rdhost\>.com/` , waarbij `\<rdhost\>` de algemene hoofdmap is die extern bureau blad-Web en RD-gateway delen.
+   - Interne URL: `https://<rdhost>.com/` , waarbij `<rdhost>` de algemene hoofdmap is die extern bureau blad-Web en RD-gateway delen.
    - Externe URL: dit veld wordt automatisch ingevuld op basis van de naam van de toepassing, maar u kunt deze wijzigen. De gebruikers gaan naar deze URL wanneer ze toegang krijgen tot RDS.
    - Methode voor verificatie vooraf: Azure Active Directory
    - URL-headers vertalen: Nee
@@ -69,7 +69,7 @@ Nadat u RDS-en Azure-AD-toepassingsproxy voor uw omgeving hebt ingesteld, volgt 
 
 4. Selecteer **Azure Active Directory** en klik vervolgens op **app-registraties**. Kies uw app in de lijst.
 5. Selecteer onder **beheren** de optie **huis stijl**.
-6. Werk het URL-veld van de **Start pagina** zo aan dat deze naar uw extern bureau blad-webeindpunt verwijst (bijvoorbeeld `https://\<rdhost\>.com/RDWeb` ).
+6. Werk het URL-veld van de **Start pagina** zo aan dat deze naar uw extern bureau blad-webeindpunt verwijst (bijvoorbeeld `https://<rdhost>.com/RDWeb` ).
 
 ### <a name="direct-rds-traffic-to-application-proxy"></a>Direct RDS-verkeer naar toepassings proxy
 

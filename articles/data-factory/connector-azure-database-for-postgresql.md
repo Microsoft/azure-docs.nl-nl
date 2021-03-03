@@ -6,13 +6,13 @@ author: linda33wj
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 02/01/2021
-ms.openlocfilehash: 32c65a3e1063b29ab6458151aec42e4415a73b62
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 02/25/2021
+ms.openlocfilehash: ec4ea645e325ef48d4cb5951cd39fd4e9cbe1617
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100381321"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101738052"
 ---
 # <a name="copy-and-transform-data-in-azure-database-for-postgresql-by-using-azure-data-factory"></a>Gegevens in Azure Database for PostgreSQL kopiëren en transformeren met behulp van Azure Data Factory
 
@@ -30,6 +30,8 @@ Deze Azure Database for PostgreSQL-connector wordt ondersteund voor de volgende 
 - [Gegevens stroom toewijzen](concepts-data-flow-overview.md)
 - [Activiteit Lookup](control-flow-lookup-activity.md)
 
+Op dit moment ondersteunt gegevens stroom Azure Data Base voor PostgreSQL één server, maar niet flexibele server-of grootschalige (Citus).
+
 ## <a name="getting-started"></a>Aan de slag
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
@@ -43,15 +45,15 @@ De volgende eigenschappen worden ondersteund voor de Azure Database for PostgreS
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
 | type | De eigenschap type moet worden ingesteld op: **AzurePostgreSql**. | Ja |
-| connectionString | Een ODBC-connection string om verbinding te maken met Azure Database for PostgreSQL.<br/>U kunt ook een wacht woord in Azure Key Vault plaatsen en de `password` configuratie uit de Connection String halen. Raadpleeg de volgende voor beelden en [Sla referenties op in azure Key Vault](store-credentials-in-key-vault.md) voor meer informatie. | Yes |
-| connectVia | Deze eigenschap vertegenwoordigt de [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt Azure Integration Runtime of zelf-hostende Integration Runtime gebruiken (als uw gegevens archief zich in een particulier netwerk bevindt). Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |No |
+| connectionString | Een ODBC-connection string om verbinding te maken met Azure Database for PostgreSQL.<br/>U kunt ook een wacht woord in Azure Key Vault plaatsen en de `password` configuratie uit de Connection String halen. Raadpleeg de volgende voor beelden en [Sla referenties op in azure Key Vault](store-credentials-in-key-vault.md) voor meer informatie. | Ja |
+| connectVia | Deze eigenschap vertegenwoordigt de [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt Azure Integration Runtime of zelf-hostende Integration Runtime gebruiken (als uw gegevens archief zich in een particulier netwerk bevindt). Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |Nee |
 
 Een typische connection string is `Server=<server>.postgres.database.azure.com;Database=<database>;Port=<port>;UID=<username>;Password=<Password>` . Hier vindt u meer eigenschappen die u per case kunt instellen:
 
 | Eigenschap | Beschrijving | Opties | Vereist |
 |:--- |:--- |:--- |:--- |
-| EncryptionMethod (EM)| De methode die het stuur programma gebruikt voor het versleutelen van gegevens die worden verzonden tussen het stuur programma en de database server. Bijvoorbeeld:  `EncryptionMethod=<0/1/6>;`| 0 (geen versleuteling) **(standaard)** /1 (SSL)/6 (RequestSSL) | No |
-| ValidateServerCertificate (VSC) | Hiermee wordt bepaald of het stuur programma het certificaat valideert dat door de database server wordt verzonden wanneer SSL-versleuteling is ingeschakeld (versleutelings methode = 1). Bijvoorbeeld:  `ValidateServerCertificate=<0/1>;`| 0 (uitgeschakeld) **(standaard)** /1 (ingeschakeld) | No |
+| EncryptionMethod (EM)| De methode die het stuur programma gebruikt voor het versleutelen van gegevens die worden verzonden tussen het stuur programma en de database server. Bijvoorbeeld:  `EncryptionMethod=<0/1/6>;`| 0 (geen versleuteling) **(standaard)** /1 (SSL)/6 (RequestSSL) | Nee |
+| ValidateServerCertificate (VSC) | Hiermee wordt bepaald of het stuur programma het certificaat valideert dat door de database server wordt verzonden wanneer SSL-versleuteling is ingeschakeld (versleutelings methode = 1). Bijvoorbeeld:  `ValidateServerCertificate=<0/1>;`| 0 (uitgeschakeld) **(standaard)** /1 (ingeschakeld) | Nee |
 
 **Voorbeeld**:
 
@@ -99,7 +101,7 @@ Als u gegevens wilt kopiëren uit Azure Database for PostgreSQL, stelt u de eige
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de DataSet moet worden ingesteld op **AzurePostgreSqlTable** | Yes |
+| type | De eigenschap type van de DataSet moet worden ingesteld op **AzurePostgreSqlTable** | Ja |
 | tableName | Naam van de tabel | Nee (als "query" in activiteit bron is opgegeven) |
 
 **Voorbeeld**:
@@ -128,7 +130,7 @@ Als u gegevens wilt kopiëren uit Azure Database for PostgreSQL, stelt u het bro
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **AzurePostgreSqlSource** | Yes |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **AzurePostgreSqlSource** | Ja |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `SELECT * FROM mytable` of `SELECT * FROM "MyTable"` . Opmerking in PostgreSQL wordt de naam van de entiteit beschouwd als niet-hoofdletter gevoelig als deze niet in een aanhalings teken wordt vermeld. | Nee (als de eigenschap TableName in de gegevensset is opgegeven) |
 
 **Voorbeeld**:
@@ -169,9 +171,9 @@ Als u gegevens wilt kopiëren naar Azure Database for PostgreSQL, worden de volg
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de Sink voor kopieer activiteiten moet worden ingesteld op **AzurePostgreSQLSink**. | Yes |
-| preCopyScript | Geef een SQL-query op voor de Kopieer activiteit die moet worden uitgevoerd voordat u in elke uitvoering gegevens in Azure Database for PostgreSQL schrijft. U kunt deze eigenschap gebruiken om de vooraf geladen gegevens op te schonen. | No |
-| writeMethod | De methode die wordt gebruikt om gegevens naar Azure Database for PostgreSQL te schrijven.<br>Toegestane waarden zijn: **CopyCommand** (preview, meer presteert), **BulkInsert** (standaard). | No |
+| type | De eigenschap type van de Sink voor kopieer activiteiten moet worden ingesteld op **AzurePostgreSQLSink**. | Ja |
+| preCopyScript | Geef een SQL-query op voor de Kopieer activiteit die moet worden uitgevoerd voordat u in elke uitvoering gegevens in Azure Database for PostgreSQL schrijft. U kunt deze eigenschap gebruiken om de vooraf geladen gegevens op te schonen. | Nee |
+| writeMethod | De methode die wordt gebruikt om gegevens naar Azure Database for PostgreSQL te schrijven.<br>Toegestane waarden zijn: **CopyCommand** (preview, meer presteert), **BulkInsert** (standaard). | Nee |
 | writeBatchSize | Het aantal rijen dat in Azure Database for PostgreSQL per batch wordt geladen.<br>Toegestane waarde is een geheel getal dat het aantal rijen vertegenwoordigt. | Nee (de standaard waarde is 1.000.000) |
 | writeBatchTimeout | Wacht tijd voordat de batch INSERT-bewerking is voltooid voordat er een time-out optreedt.<br>Toegestane waarden zijn time span-teken reeksen. Een voor beeld is 00:30:00 (30 minuten). | Nee (de standaard waarde is 00:30:00) |
 
@@ -219,10 +221,10 @@ De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteun
 
 | Naam | Beschrijving | Vereist | Toegestane waarden | Eigenschap gegevens stroom script |
 | ---- | ----------- | -------- | -------------- | ---------------- |
-| Tabel | Als u tabel als invoer selecteert, haalt de gegevens stroom alle gegevens op uit de tabel die is opgegeven in de gegevensset. | No | - |*(alleen voor inline-gegevensset)*<br>tableName |
+| Tabel | Als u tabel als invoer selecteert, haalt de gegevens stroom alle gegevens op uit de tabel die is opgegeven in de gegevensset. | Nee | - |*(alleen voor inline-gegevensset)*<br>tableName |
 | Query’s uitvoeren | Als u query als invoer selecteert, geeft u een SQL-query op om gegevens op te halen uit de bron, waardoor elke tabel die u in dataset opgeeft, wordt overschreven. Het gebruik van query's is een uitstekende manier om rijen te verminderen voor testen of lookups.<br><br>**Order by** -component wordt niet ondersteund, maar u kunt een volledige Select from-instructie instellen. U kunt ook door de gebruiker gedefinieerde tabel functies gebruiken. **Select * from udfGetData ()** is een UDF in SQL waarmee een tabel wordt geretourneerd die u in de gegevens stroom kunt gebruiken.<br>Query voorbeeld: `select * from mytable where customerId > 1000 and customerId < 2000` or `select * from "MyTable"` . Opmerking in PostgreSQL wordt de naam van de entiteit beschouwd als niet-hoofdletter gevoelig als deze niet in een aanhalings teken wordt vermeld.| Nee | Tekenreeks | query |
-| Batchgrootte | Geef een batch grootte op om grote hoeveel heden gegevens naar batches te segmenteren. | No | Geheel getal | batchSize |
-| Isolatie niveau | Kies een van de volgende isolatie niveaus:<br>-Doorgevoerde lezen<br>-Niet-doorgevoerde lezen (standaard)<br>-Herhaal bare Lees bewerking<br>-Serialiseerbaar<br>-Geen (isolatie niveau negeren) | No | <small>READ_COMMITTED<br/>READ_UNCOMMITTED<br/>REPEATABLE_READ<br/>SERIALIZABLE<br/>GEEN</small> |isolationLevel |
+| Batchgrootte | Geef een batch grootte op om grote hoeveel heden gegevens naar batches te segmenteren. | Nee | Geheel getal | batchSize |
+| Isolatie niveau | Kies een van de volgende isolatie niveaus:<br>-Doorgevoerde lezen<br>-Niet-doorgevoerde lezen (standaard)<br>-Herhaal bare Lees bewerking<br>-Serialiseerbaar<br>-Geen (isolatie niveau negeren) | Nee | <small>READ_COMMITTED<br/>READ_UNCOMMITTED<br/>REPEATABLE_READ<br/>SERIALIZABLE<br/>GEEN</small> |isolationLevel |
 
 #### <a name="azure-database-for-postgresql-source-script-example"></a>Voor beeld van Azure Database for PostgreSQL-bron script
 
@@ -242,11 +244,11 @@ De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteun
 
 | Naam | Beschrijving | Vereist | Toegestane waarden | Eigenschap gegevens stroom script |
 | ---- | ----------- | -------- | -------------- | ---------------- |
-| Update methode | Geef op welke bewerkingen zijn toegestaan voor uw database bestemming. De standaard instelling is alleen invoegen toestaan.<br>Als u rijen wilt bijwerken, upsert of verwijderen, is een [ALTER Row Transform](data-flow-alter-row.md) vereist om rijen voor die acties te labelen. | Yes | `true` of `false` | verwijderd <br/>invoegen <br/>bij te werken <br/>upsertable |
-| Sleutel kolommen | Voor updates, upsert en verwijderen moeten de sleutel kolom (men) worden ingesteld om te bepalen welke rij moet worden gewijzigd.<br>De kolom naam die u kiest als de sleutel, wordt gebruikt als onderdeel van de volgende update, upsert, verwijderen. Daarom moet u een kolom kiezen die in de Sink-toewijzing voor komt. | No | Matrix | keys |
-| Schrijf sleutel kolommen overs Laan | Als u de waarde niet naar de sleutel kolom wilt schrijven, selecteert u "schrijven van sleutel kolommen overs Laan". | No | `true` of `false` | skipKeyWrites |
-| Tabel actie |Hiermee wordt bepaald of alle rijen van de doel tabel opnieuw moeten worden gemaakt of verwijderd voordat er wordt geschreven.<br>- **Geen**: er wordt geen actie uitgevoerd voor de tabel.<br>- **Opnieuw maken**: de tabel wordt verwijderd en opnieuw gemaakt. Vereist als er dynamisch een nieuwe tabel wordt gemaakt.<br>- **Afkappen**: alle rijen uit de doel tabel worden verwijderd. | No | `true` of `false` | opnieuw maken<br/>afkappen |
-| Batchgrootte | Geef op hoeveel rijen er in elke batch worden geschreven. Grotere batch grootten verbeteren de compressie en Optima Lise ring van het geheugen, maar er zijn geen uitzonde ringen in het geheugen bij het opslaan van gegevens. | No | Geheel getal | batchSize |
+| Update methode | Geef op welke bewerkingen zijn toegestaan voor uw database bestemming. De standaard instelling is alleen invoegen toestaan.<br>Als u rijen wilt bijwerken, upsert of verwijderen, is een [ALTER Row Transform](data-flow-alter-row.md) vereist om rijen voor die acties te labelen. | Ja | `true` of `false` | verwijderd <br/>invoegen <br/>bij te werken <br/>upsertable |
+| Sleutel kolommen | Voor updates, upsert en verwijderen moeten de sleutel kolom (men) worden ingesteld om te bepalen welke rij moet worden gewijzigd.<br>De kolom naam die u kiest als de sleutel, wordt gebruikt als onderdeel van de volgende update, upsert, verwijderen. Daarom moet u een kolom kiezen die in de Sink-toewijzing voor komt. | Nee | Matrix | keys |
+| Schrijf sleutel kolommen overs Laan | Als u de waarde niet naar de sleutel kolom wilt schrijven, selecteert u "schrijven van sleutel kolommen overs Laan". | Nee | `true` of `false` | skipKeyWrites |
+| Tabel actie |Hiermee wordt bepaald of alle rijen van de doel tabel opnieuw moeten worden gemaakt of verwijderd voordat er wordt geschreven.<br>- **Geen**: er wordt geen actie uitgevoerd voor de tabel.<br>- **Opnieuw maken**: de tabel wordt verwijderd en opnieuw gemaakt. Vereist als er dynamisch een nieuwe tabel wordt gemaakt.<br>- **Afkappen**: alle rijen uit de doel tabel worden verwijderd. | Nee | `true` of `false` | opnieuw maken<br/>afkappen |
+| Batchgrootte | Geef op hoeveel rijen er in elke batch worden geschreven. Grotere batch grootten verbeteren de compressie en Optima Lise ring van het geheugen, maar er zijn geen uitzonde ringen in het geheugen bij het opslaan van gegevens. | Nee | Geheel getal | batchSize |
 | SQL-scripts vooraf en na | Geef meerdere SQL-scripts op die moeten worden uitgevoerd vóór (vóór verwerking) en nadat (na verwerking) gegevens naar uw Sink-Data Base zijn geschreven. | Nee | Tekenreeks | preSQLs<br>postSQLs |
 
 #### <a name="azure-database-for-postgresql-sink-script-example"></a>Voor beeld van Azure Database for PostgreSQL-Sink-script

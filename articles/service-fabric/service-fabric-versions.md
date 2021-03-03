@@ -3,12 +3,12 @@ title: De versie van uw Azure Service Fabric-cluster bijwerken
 description: Meer informatie over cluster versies in azure Service Fabric, met inbegrip van een koppeling naar de nieuwste releases van de Service Fabric-team blog.
 ms.topic: troubleshooting
 ms.date: 06/15/2020
-ms.openlocfilehash: 9c7e5e3778c9a38190be210ebb391bc8b0b58c76
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 7cb9a739572c667e0821a7a60f5c5d8cceb97957
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652051"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101698379"
 ---
 # <a name="upgrade-your-azure-service-fabric-cluster-version"></a>De versie van uw Azure Service Fabric-cluster bijwerken
 
@@ -63,9 +63,9 @@ Azure Service Fabric-clusters die worden uitgevoerd op niet-verouderde versies v
   
   - **Voor clusters met een versie van service Fabric hoger dan 6,3, die niet gebruikmaken van de open-netwerk functie**, blijft het cluster actief.
 
- - **Voor clusters met een versie van service Fabric hoger dan 6,3 en met de [open-netwerk functie voor containers](https://docs.microsoft.com/azure/service-fabric/service-fabric-networking-modes#set-up-open-networking-mode)** , kan het cluster niet meer beschikbaar zijn en werkt het niet meer, waardoor er service onderbrekingen kunnen ontstaan voor uw workloads.
+ - **Voor clusters met een versie van service Fabric hoger dan 6,3 en met de [open-netwerk functie voor containers](./service-fabric-networking-modes.md#set-up-open-networking-mode)** , kan het cluster niet meer beschikbaar zijn en werkt het niet meer, waardoor er service onderbrekingen kunnen ontstaan voor uw workloads.
  
- -   **Voor clusters met [Windows-versies tussen 7.0.457 en 7.0.466 (beide versies inbegrepen)](https://docs.microsoft.com/azure/service-fabric/service-fabric-versions#supported-version-names) en Windows-besturings systeem is de functie Windows-containers ingeschakeld. Opmerking: Linux-versies 7.0.457, 7.0.464 en 7.0.465 worden niet beïnvloed**.
+ -   **Voor clusters met [Windows-versies tussen 7.0.457 en 7.0.466 (beide versies inbegrepen)](#supported-version-names) en Windows-besturings systeem is de functie Windows-containers ingeschakeld. Opmerking: Linux-versies 7.0.457, 7.0.464 en 7.0.465 worden niet beïnvloed**.
     - **Impact**: het cluster werkt niet meer, waardoor er service onderbrekingen kunnen ontstaan voor uw workloads.
     
 #### <a name="required-action"></a>Vereiste actie

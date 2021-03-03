@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/19/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 449fc686fb30cde0d15759036b58fea3bcfc6723
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 69234d7c22f1725f6f21fe52a455e64d743f052e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100596899"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101709849"
 ---
 # <a name="azure-security-baseline-for-azure-lighthouse"></a>Azure-beveiligings basislijn voor Azure Lighthouse
 
@@ -406,7 +406,7 @@ In Azure Monitor kunt u de Bewaar periode voor uw Log Analytics werk ruimte inst
 
 - [De Bewaar periode voor gegevens wijzigen in Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
-- [Bewaar beleid configureren voor logboeken van Azure Storage-account](../storage/common/storage-monitor-storage-account.md#configure-logging)
+- [Bewaar beleid configureren voor logboeken van Azure Storage-account](../storage/common/manage-storage-analytics-logs.md#configure-logging)
 
 - [Azure Security Center waarschuwingen en aanbevelingen exporteren](../security-center/continuous-export.md) configureren en de klant kan geen logboek retentie instellen.
 

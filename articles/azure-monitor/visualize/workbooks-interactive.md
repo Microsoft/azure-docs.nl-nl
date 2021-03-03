@@ -7,12 +7,12 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 07/20/2020
-ms.openlocfilehash: a70f2cff1df5d0f5d1d4a36bbc2a440518ce5ed4
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 2cb284e1978ad6c890835318c51c6095891397cd
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610205"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101723007"
 ---
 # <a name="interactive-workbooks"></a>Interactieve workbooks
 
@@ -188,5 +188,5 @@ Hoewel het standaard gedrag bestaat uit het exporteren van een para meter als te
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Ga](../platform/workbooks-overview.md#visualizations) voor meer informatie over werkmappen veel uitgebreide visualisaties opties.
-* De toegang tot uw werkmap resources [beheren](../platform/workbooks-access-control.md) en delen.
+* [Ga](./workbooks-overview.md#visualizations) voor meer informatie over werkmappen veel uitgebreide visualisaties opties.
+* De toegang tot uw werkmap resources [beheren](./workbooks-access-control.md) en delen.

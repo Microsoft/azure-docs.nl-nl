@@ -3,12 +3,12 @@ title: Veelgestelde vragen over live video Analytics op IoT Edge-Azure
 description: In dit artikel vindt u antwoorden op veelgestelde vragen over live video Analytics op IoT Edge.
 ms.topic: conceptual
 ms.date: 12/01/2020
-ms.openlocfilehash: 0cb378bf614582070dd1bdd0a11706b26437af53
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 72a07a1a509aebcd7ba4048d0c84e913481c978e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98880047"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101702246"
 ---
 # <a name="live-video-analytics-on-iot-edge-faq"></a>Veelgestelde vragen over live video Analytics op IoT Edge
 
@@ -230,7 +230,7 @@ Ja. U kunt metrische gegevens over Prometheus gebruiken en deze publiceren naar 
 
 **Kan ik Azure Monitor gebruiken om de status, metrische gegevens en prestaties van mijn media grafieken in de Cloud of aan de rand weer te geven?**
 
-Ja, we ondersteunen deze methode. Zie [Azure monitor metrische gegevens overzicht](../../azure-monitor/platform/data-platform-metrics.md)voor meer informatie.
+Ja, we ondersteunen deze methode. Zie [Azure monitor metrische gegevens overzicht](../../azure-monitor/essentials/data-platform-metrics.md)voor meer informatie.
 
 **Zijn er hulpprogram ma's waarmee u de Media Services IoT Edge module gemakkelijker kunt bewaken?**
 

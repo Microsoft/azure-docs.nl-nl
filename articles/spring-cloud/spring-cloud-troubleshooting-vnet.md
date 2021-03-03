@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 09/19/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 8491eb02fd61f291904d57990b3785ce93239964
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: b2369a6380c7b74302d32366d0604fca616fc3ed
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98935263"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101698226"
 ---
 # <a name="troubleshooting-azure-spring-cloud-in-virtual-networks"></a>Problemen met Azure lente-Cloud in virtuele netwerken oplossen
 
@@ -24,20 +24,20 @@ Als u een exemplaar van Azure lente Cloud wilt maken, moet u voldoende machtigin
 
 Als u de Azure Portal gebruikt voor het instellen van het Azure lente-Cloud service-exemplaar, worden de machtigingen door de Azure Portal gevalideerd.
 
-Als u het Azure lente Cloud service-exemplaar wilt instellen met behulp van de [Azure cli](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli), controleert u het volgende:
+Als u het Azure lente Cloud service-exemplaar wilt instellen met behulp van de [Azure cli](/cli/azure/get-started-with-azure-cli), controleert u het volgende:
 
 - Het abonnement is actief.
 - De locatie wordt ondersteund door de Azure lente-Cloud.
 - De resource groep voor het exemplaar is al gemaakt.
 - De resource naam voldoet aan de naamgevings regel. De naam mag alleen kleine letters, cijfers en afbreek streepjes bevatten. Het eerste teken moet een letter zijn. Het eerste teken moet een letter of cijfer zijn. De waarde moet tussen 2 en 32 tekens bevatten.
 
-Zie de [structuur en syntaxis van Azure Resource Manager sjablonen](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates)voor meer informatie over het instellen van het Azure veer Cloud service-exemplaar met behulp van de Resource Manager-sjabloon.
+Zie de [structuur en syntaxis van Azure Resource Manager sjablonen](../azure-resource-manager/templates/template-syntax.md)voor meer informatie over het instellen van het Azure veer Cloud service-exemplaar met behulp van de Resource Manager-sjabloon.
 
 ### <a name="common-creation-issues"></a>Veelvoorkomende problemen met maken
 
 | Foutbericht | Problemen oplossen |
 |------|------|
-| Resources die zijn gemaakt door de Azure lente-Cloud, zijn niet toegestaan door het beleid. | Er worden netwerk bronnen gemaakt wanneer u Azure lente-Cloud in uw eigen virtuele netwerk implementeert. Controleer of u [Azure Policy](https://docs.microsoft.com/azure/governance/policy/overview) hebt gedefinieerd om deze maken te blok keren. Resources kunnen niet worden gemaakt in het fout bericht. |
+| Resources die zijn gemaakt door de Azure lente-Cloud, zijn niet toegestaan door het beleid. | Er worden netwerk bronnen gemaakt wanneer u Azure lente-Cloud in uw eigen virtuele netwerk implementeert. Controleer of u [Azure Policy](../governance/policy/overview.md) hebt gedefinieerd om deze maken te blok keren. Resources kunnen niet worden gemaakt in het fout bericht. |
 | De beschik bare subnetten zijn gekoppeld aan route tabellen. koppel deze toe. | Het is momenteel niet mogelijk om Azure lente-Cloud te implementeren in een subnet dat is gekoppeld aan bestaande route tabellen. Maak de koppeling los en probeer het opnieuw. |
 | Het vereiste verkeer is niet allowlisted. | Raadpleeg de [verantwoordelijkheden van de klant voor het uitvoeren van Azure lente-Cloud in VNET](spring-cloud-vnet-customer-responsibilities.md) om ervoor te zorgen dat het vereiste verkeer allowlisted is. |
 
@@ -47,4 +47,4 @@ Dit probleem treedt op als het virtuele netwerk is geconfigureerd met aangepaste
 
 ## <a name="other-issues"></a>Overige problemen
 
-[Veelvoorkomende problemen met Azure lente-Cloud oplossen](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-troubleshoot).
+[Veelvoorkomende problemen met Azure lente-Cloud oplossen](./spring-cloud-troubleshoot.md).

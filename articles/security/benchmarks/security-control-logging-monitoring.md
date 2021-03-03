@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: cfa2548abb28fa6f84178a1fb5716d0c03b163f1
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: d30d8cdfe6ee93f54dfd560987ac8b6a78517fd8
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100570727"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101718689"
 ---
 # <a name="security-control-logging-and-monitoring"></a>Beveiligings beheer: logboek registratie en controle
 
@@ -82,7 +82,7 @@ Stel binnen Azure Monitor uw Bewaar periode voor Log Analytics werk ruimte in vo
 
 - [De Bewaar periode voor gegevens wijzigen in Log Analytics](../../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
-- [Bewaar beleid configureren voor logboeken van Azure Storage-account](../../storage/common/storage-monitor-storage-account.md#configure-logging)
+- [Bewaar beleid configureren voor logboeken van Azure Storage-account](../../storage/common/manage-storage-analytics-logs.md#configure-logging)
 
 ## <a name="26-monitor-and-review-logs"></a>2,6: Logboeken bewaken en controleren
 

@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/21/2020
-ms.openlocfilehash: c29e952e22aaccf31c10de8f6e16d240b4660a23
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 4f9cc8321d5d1d19dbcb8294ad6205b01337ee72
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93240712"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101715051"
 ---
 # <a name="overview-of-business-continuity-with-azure-database-for-mysql---flexible-server-preview"></a>Overzicht van bedrijfs continuïteit met Azure Database for MySQL-flexibele server (preview-versie)
 
@@ -27,7 +27,7 @@ In de volgende tabel ziet u de functies van flexibele server aanbiedingen.
 | **Back-up & herstellen** | Flexibele server voert automatisch dagelijkse back-ups van uw database bestanden uit en maakt voortdurend back-ups van transactie Logboeken. Back-ups kunnen worden bewaard gedurende elke periode tussen 1 en 35 dagen. U kunt uw database server herstellen naar elk gewenst moment binnen de retentie periode van de back-up. De herstel tijd is afhankelijk van de grootte van de gegevens die moeten worden hersteld en het tijdstip waarop de logboek herstel bewerking moet worden uitgevoerd. Raadpleeg [concepten: back-up maken en herstellen](./concepts-backup-restore.md) voor meer informatie. |Back-upgegevens blijven binnen de regio |
 | **Lokale redundante back-up** | Flexibele server back-ups worden automatisch en veilig opgeslagen in een lokale redundante opslag binnen een regio en in dezelfde beschikbaarheids zone. De lokaal redundante back-ups repliceren de gegevens bestanden van de server back-up drie keer binnen één fysieke locatie in de primaire regio. Lokaal redundante back-upopslag biedt ten minste 99,999999999% (11 Nines) duurzaamheid van objecten in een bepaald jaar. Raadpleeg [concepten: back-up maken en herstellen](./concepts-backup-restore.md) voor meer informatie.| Van toepassing in alle regio's |
 | **Zone-redundante hoge beschikbaarheid** | Flexibele servers kunnen worden geïmplementeerd in de modus voor hoge Beschik baarheid, waarmee primaire en stand-by servers in twee verschillende beschikbaarheids zones in een regio worden geïmplementeerd. Dit beschermt tegen storingen op zone niveau en helpt ook bij het verminderen van de uitval tijd van toepassingen tijdens geplande en ongeplande downtime-gebeurtenissen. Gegevens van de primaire server worden synchroon gerepliceerd naar de stand-by replica. Tijdens een downtime-gebeurtenis wordt automatisch een failover naar de stand-by replica uitgevoerd voor de database server. Raadpleeg [concepten-hoge Beschik baarheid](./concepts-high-availability.md) voor meer informatie. | Ondersteund in reken lagen voor algemeen gebruik en geoptimaliseerd voor geheugen. Alleen beschikbaar in regio's waar meerdere zones beschikbaar zijn.|
-| **Premiumbestandsshares** | Database bestanden worden opgeslagen in een zeer duurzame en betrouw bare Azure Premium-bestands shares die gegevens redundantie bieden met drie kopieën van replica's die zijn opgeslagen in een beschikbaarheids zone met automatische gegevens herstel mogelijkheden. Raadpleeg [Premium-bestands shares](../../storage/files/storage-how-to-create-premium-fileshare.md) voor meer informatie. | Gegevens die zijn opgeslagen in een beschikbaarheids zone |
+| **Premiumbestandsshares** | Database bestanden worden opgeslagen in een zeer duurzame en betrouw bare Azure Premium-bestands shares die gegevens redundantie bieden met drie kopieën van replica's die zijn opgeslagen in een beschikbaarheids zone met automatische gegevens herstel mogelijkheden. Raadpleeg [Premium-bestands shares](../../storage/files/storage-how-to-create-file-share.md) voor meer informatie. | Gegevens die zijn opgeslagen in een beschikbaarheids zone |
 
 > [!IMPORTANT]
 > Er worden geen uptime-, RTO-en RPO-SLA tijdens de preview-periode geboden. Details die op deze pagina worden verstrekt, alleen voor uw gegevens en plannings doeleinden.
@@ -42,7 +42,7 @@ Hier volgen enkele geplande onderhouds scenario's voor uitval tijd:
 | **Nieuwe software-implementatie (Azure)** | Nieuwe functies implementatie-of fout oplossingen worden automatisch uitgevoerd als onderdeel van het geplande onderhoud van de service, en u kunt plannen wanneer deze activiteiten plaatsvinden. Raadpleeg de [documentatie](https://aka.ms/servicehealthpm)voor meer informatie en Controleer ook uw [Portal](https://aka.ms/servicehealthpm) |
 | **Secundaire versie-upgrades (Azure)** | Azure Database for MySQL worden database servers automatisch aan de secundaire versie door Azure door berekend. Deze treedt op als onderdeel van het geplande onderhoud van de service. Dit leidt tot een korte downtime in seconden en de database server wordt automatisch opnieuw opgestart met de nieuwe secundaire versie. Raadpleeg de [documentatie](../concepts-monitoring.md#planned-maintenance-notification)voor meer informatie en Controleer ook uw [Portal](https://aka.ms/servicehealthpm).|
 
-Wanneer de flexibele server is geconfigureerd met een **zone redundant hoge Beschik baarheid** , voert de flexibele server eerst bewerkingen uit op de stand-by-server en vervolgens op de primaire server zonder failover. Raadpleeg [concepten-hoge Beschik baarheid](./concepts-high-availability.md) voor meer informatie.
+Wanneer de flexibele server is geconfigureerd met een **zone redundant hoge Beschik baarheid**, voert de flexibele server eerst bewerkingen uit op de stand-by-server en vervolgens op de primaire server zonder failover. Raadpleeg [concepten-hoge Beschik baarheid](./concepts-high-availability.md) voor meer informatie.
 
 ## <a name="unplanned-downtime-mitigation"></a>Ongeplande downtime-beperking
 

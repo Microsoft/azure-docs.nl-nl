@@ -4,35 +4,26 @@ description: Meer informatie over het gebruik van het hulp programma voor vrijwi
 author: yanivlavi
 ms.author: yalavi
 ms.topic: conceptual
-ms.date: 03/19/2018
+ms.date: 02/14/2020
 ms.subservice: alerts
-ms.openlocfilehash: 28ccdde85f2873839fbe977c3c991177ac8bb3bb
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 644346c7355df581843fa8a838eea50cfeccefd6
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609537"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101729093"
 ---
 # <a name="use-the-voluntary-migration-tool-to-migrate-your-classic-alert-rules"></a>Gebruik het hulp programma voor vrijwillige migratie om uw klassieke waarschuwings regels te migreren
 
-Zoals [eerder aangekondigd](../platform/monitoring-classic-retirement.md), worden klassieke waarschuwingen in azure monitor buiten gebruik gesteld voor open bare Cloud gebruikers, maar nog steeds beperkt in beperkte mate van resources die de nieuwe waarschuwingen nog niet ondersteunen. Er is een hulp programma voor migratie beschikbaar in de Azure Portal voor klanten die klassieke waarschuwings regels hebben gebruikt en die migratie zelf willen activeren. In dit artikel wordt uitgelegd hoe u het hulp programma voor migratie gebruikt, dat ook wordt gebruikt voor de resterende waarschuwingen die in behandeling zijn.
+Zoals [eerder aangekondigd](monitoring-classic-retirement.md), worden klassieke waarschuwingen in azure monitor buiten gebruik gesteld voor open bare Cloud gebruikers, maar nog maar in beperkte mate, tot **31 mei 2021**. Klassieke waarschuwingen voor Azure Government Cloud en Azure China 21Vianet worden op **29 februari 2024** buiten gebruik gesteld.
 
-## <a name="benefits-of-new-alerts"></a>Voor delen van nieuwe waarschuwingen
-
-Klassieke waarschuwingen worden vervangen door nieuwe, Unified Alerting in Azure Monitor. Het nieuwe waarschuwings platform heeft de volgende voor delen:
-
-- U kunt een waarschuwing ontvangen over diverse multidimensionale metrische gegevens voor [veel meer Azure-Services](alerts-metric-near-real-time.md#metrics-and-dimensions-supported).
-- De nieuwe metrische gegevens ondersteunen [waarschuwings regels voor meerdere bronnen](alerts-metric-overview.md#monitoring-at-scale-using-metric-alerts-in-azure-monitor) waarmee de overhead van het beheren van veel regels aanzienlijk wordt verminderd.
-- Het uniforme meldings mechanisme, dat ondersteuning biedt voor:
-  - [Actie groepen](../platform/action-groups.md), een mechanisme voor modulaire meldingen dat werkt met alle nieuwe waarschuwings typen (metrische gegevens, logboeken en activiteiten Logboeken).
-  - Nieuwe meldings mechanismen, zoals SMS, Voice en ITSM-connector.
-- De [Unified alert-ervaring](../platform/alerts-overview.md) brengt alle waarschuwingen op verschillende signalen (metrische gegevens, logboeken en activiteiten Logboeken) op één plek.
+Er is een hulp programma voor migratie beschikbaar in de Azure Portal voor klanten die klassieke waarschuwings regels gebruiken en zelf migratie willen activeren. In dit artikel wordt uitgelegd hoe u het hulp programma voor migratie gebruikt.
 
 ## <a name="before-you-migrate"></a>Voordat u migreert
 
 Het migratie proces converteert klassieke waarschuwings regels naar nieuwe, gelijkwaardige waarschuwings regels en maakt actie groepen. Houd rekening met de volgende punten in voor bereiding:
 
-- De indeling van de meldings lading en de Api's voor het maken en beheren van nieuwe waarschuwings regels verschillen van die van de regels van de klassieke waarschuwing, omdat deze meer functies ondersteunen. [Meer informatie over het voorbereiden van de migratie](alerts-prepare-migration.md).
+- De indeling van de meldings lading en de Api's voor het maken en beheren van nieuwe waarschuwings regels zijn anders dan de regels voor de klassieke waarschuwing, omdat deze meer functies ondersteunen. [Meer informatie over het voorbereiden van de migratie](alerts-prepare-migration.md).
 
 - Sommige klassieke waarschuwings regels kunnen niet worden gemigreerd met het hulp programma. [Meer informatie over welke regels niet kunnen worden gemigreerd en wat u ermee kunt doen](alerts-understand-migration.md#manually-migrating-classic-alerts-to-newer-alerts).
 

@@ -11,23 +11,26 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: e95495e48725a68ab1fe3f37d235e5765b2c8015
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 3be8682b3a12f06aa83db1791cb0ed125bbcee7e
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99806236"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101719233"
 ---
 # <a name="test-through-simulations"></a>Testen via simulaties
 
 Het is een goed idee om uw hypo Thesen te testen op de manier waarop uw services reageren op aanvallen door periodieke simulaties uit te voeren. Controleer tijdens het testen of uw services of toepassingen op de verwachte manier blijven functioneren en er geen onderbreking is voor de gebruikers ervaring. Identificeer hiaten uit een technologie en proces oogpunt en neem ze op in de DDoS-respons strategie. We raden u aan om dergelijke tests uit te voeren in faserings omgevingen of tijdens niet-piek uren om de impact op de productie omgeving te minimaliseren.
 
-We hebben een partnerschap gemaakt met [BreakingPoint Cloud](https://www.ixiacom.com/products/breakingpoint-cloud), een self-service Traffic generator, om een interface te bouwen waarin Azure-klanten verkeer kunnen genereren voor open bare eind punten van DDoS Protection voor simulaties. U kunt de simulatie gebruiken voor het volgende:
+We zijn een partnerschap aangegaan met [BreakingPoint Cloud](https://www.ixiacom.com/products/breakingpoint-cloud), een selfservice-generator voor verkeer, om een interface te bouwen waarin Azure-klanten verkeer kunnen genereren via openbare eindpunten met DDoS Protection, voor simulaties. U kunt de simulatie gebruiken voor het volgende:
 
-- Valideer hoe Azure DDoS Protection uw Azure-resources helpt beschermen tegen DDoS-aanvallen.
-- Optimaliseer uw incidenten respons proces tijdens DDoS-aanval.
-- Conformiteit van document DDoS.
-- Train uw netwerk beveiligings teams.
+- Valideren hoe Azure DDoS Protection uw Azure-resources kan beschermen tegen DDoS-aanvallen.
+- Uw proces van incidentreacties optimaliseren tijdens een DDoS-aanval.
+- Naleving van DDoS documenteren.
+- Uw netwerkbeveiligingsteams trainen.
+
+> [!NOTE]
+> BreakingPoint Cloud is alleen beschikbaar voor de open bare Cloud.
 
 ## <a name="prerequisites"></a>Vereisten
 

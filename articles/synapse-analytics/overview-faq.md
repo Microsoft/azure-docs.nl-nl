@@ -9,12 +9,12 @@ ms.subservice: overview
 ms.date: 10/25/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: a7ee4e205851a751f7a50ac0ddadfb4e4c7eb81a
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.openlocfilehash: 9a0fb8ed8ac54fa866b6db7d8f808c011c0c6758
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98247400"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101695818"
 ---
 # <a name="azure-synapse-analytics-frequently-asked-questions"></a>Veelgestelde vragen over Azure Synapse Analytics
 
@@ -45,7 +45,7 @@ Als u uw Synapse-werkruimte wilt beveiligen, wijst u de RBAC-rollen toe aan deze
 
 Daarnaast beschikt u met toegewezen SQL-pools over alle beveiligingsfuncties die u kent en waardeert.
 
-### <a name="q-how-do-i-control-cont-dedicated-sql-pools-serverless-sql-pools-and-serverless-spark-pools"></a>V: Hoe kan ik toegewezen SQL-groepen, serverloze SQL-groepen en serverloze Spark-pools beheren?
+### <a name="q-how-do-i-control-dedicated-sql-pools-serverless-sql-pools-and-serverless-spark-pools"></a>V: Hoe kan ik specifieke SQL-groepen, serverloze SQL-groepen en serverloze Spark-Pools beheren?
 
 A: Om te beginnen werkt Azure Synapse samen met de ingebouwde kostenanalyse en kostenwaarschuwingen die beschikbaar zijn op het niveau van het Azure-abonnement.
 

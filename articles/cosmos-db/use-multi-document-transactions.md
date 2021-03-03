@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-mongo
 ms.topic: how-to
 ms.date: 03/02/2021
 ms.author: gahllevy
-ms.openlocfilehash: 4d7dcc829f25b7f1b7c6cb6b1d13a664d301bfe6
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: f319db76c8aee5a2a35ff8ca9670c42089350ede
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662672"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101692467"
 ---
 # <a name="use-multi-document-transactions-in-azure-cosmos-db-api-for-mongodb"></a>Multi-document transacties gebruiken in Azure Cosmos DB-API voor MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -32,11 +32,13 @@ Multi-document transacties volgen **zure** semantiek:
 
 ## <a name="requirements"></a>Vereisten
 
-Multi-document transacties worden ondersteund in een unsharded-verzameling in versie 4,0. Multi-document transacties worden niet ondersteund in verzamelingen of in Shard-verzamelingen.
+Multi-document transacties worden ondersteund in een unsharded-verzameling in API-versie 4,0. Multi-document transacties worden niet ondersteund voor verzamelingen of in Shard-verzamelingen in 4,0. De time-out voor trans acties is een vaste periode van 5 seconden.
 
 Alle Stuur Programma's die ondersteuning bieden voor wire-protocol versie 4,0 of hoger, ondersteunen Azure Cosmos DB-API voor MongoDB multi-document transacties.
 
 ## <a name="run-multi-document-transactions-in-mongodb-shell"></a>Multi-document transacties uitvoeren in de MongoDB-shell
+> [!Note]
+> Dit voor beeld werkt niet in de MongoSH Beta (shell) embedded in MongoDB kompas.
 
 1. Open een opdracht prompt en ga naar de map waarin Mongo shell versie 4,0 en hoger is geïnstalleerd:
 

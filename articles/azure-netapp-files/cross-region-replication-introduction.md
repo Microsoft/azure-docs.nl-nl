@@ -12,15 +12,15 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/29/2021
+ms.date: 02/25/2021
 ms.author: b-juche
 ms.custom: references_regions
-ms.openlocfilehash: fd3e8295820cd9388bd7999d3008b4c583dbf295
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 4d4cf7a0dc73070f4f48ed87f60a2458bc925b13
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99220901"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101707350"
 ---
 # <a name="cross-region-replication-of-azure-netapp-files-volumes"></a>Replicatie tussen regio's van Azure NetApp Files volumes
 
@@ -31,7 +31,7 @@ De functionaliteit van Azure NetApp Files replicatie biedt gegevens beveiliging 
 
 ## <a name="supported-cross-region-replication-pairs"></a><a name="supported-region-pairs"></a>Ondersteunde replicatie paren tussen regio's
 
-Azure NetApp Files volume replicatie wordt ondersteund tussen verschillende [Azure-regionale paren](/azure/best-practices-availability-paired-regions#azure-regional-pairs) en niet-paren. Azure NetApp Files volume replicatie momenteel beschikbaar is tussen de volgende regio's:  
+Azure NetApp Files volume replicatie wordt ondersteund tussen verschillende [Azure-regionale paren](../best-practices-availability-paired-regions.md#azure-regional-pairs) en niet-paren. Azure NetApp Files volume replicatie momenteel beschikbaar is tussen de volgende regio's:  
 
 ### <a name="azure-regional-pairs"></a>Azure-regionale paren
 
@@ -52,6 +52,7 @@ Azure NetApp Files volume replicatie wordt ondersteund tussen verschillende [Azu
 *   Zuid-Centraal VS en VS-Oost
 *   VS Zuid-Centraal en VS-Oost 2
 *   VS-Oost en VS-Oost 2
+*   VS-Oost 2 en VS-West 2
 *   Australië-oost en Zuidoost-Azië 
 *   Duitsland-west-centraal en UK-zuid
 
@@ -125,5 +126,3 @@ De kosten voor de opslag capaciteit van de vaste Azure NetApp Files voor maand 2
 * [Metrische gegevens van de volume replicatie](azure-netapp-files-metrics.md#replication)
 * [Volumereplicaties of volumes verwijderen](cross-region-replication-delete.md)
 * [Problemen met replicatie tussen regio's oplossen](troubleshoot-cross-region-replication.md)
-
-

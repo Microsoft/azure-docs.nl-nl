@@ -1,14 +1,14 @@
 ---
 title: Azure Sentinel-werk ruimten op schaal beheren
 description: Meer informatie over het effectief beheren van Azure Sentinel op gedelegeerde klant resources.
-ms.date: 09/30/2020
+ms.date: 03/02/2021
 ms.topic: how-to
-ms.openlocfilehash: 91e2f875aa2fc067420c0c6eda4e7dd56bd2b088
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 009edaefe021dedb5d9a40a8cc3bac2c2974ae10
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424088"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101702518"
 ---
 # <a name="manage-azure-sentinel-workspaces-at-scale"></a>Azure Sentinel-werk ruimten op schaal beheren
 
@@ -80,9 +80,9 @@ Maak en sla Log Analytics query's voor bedreigingen detectie centraal op in de T
 
 U kunt Automation gebruiken voor het beheren van meerdere Azure Sentinel-werk ruimten en het configureren van [jacht-query's](../../sentinel/hunting.md), playbooks en werkmappen. Zie [beheer op meerdere werk ruimten met Automation](../../sentinel/extend-sentinel-across-workspaces-tenants.md#cross-workspace-management-using-automation)voor meer informatie.
 
-## <a name="manage-security-of-office-365-environments"></a>Beveiliging van Office 365-omgevingen beheren
+## <a name="monitor-security-of-office-365-environments"></a>Beveiliging van Office 365-omgevingen bewaken
 
-Gebruik Azure Lighthouse in combi natie met Azure Sentinel voor het beheren van de beveiliging van Office 365-omgevingen met meerdere tenants. Eerst moeten kant-en-klare [Office 365-gegevens connectors zijn ingeschakeld in de beheerde Tenant](../../sentinel/connect-office-365.md) , zodat informatie over gebruikers-en beheer activiteiten in Exchange en share point (inclusief OneDrive) kan worden opgenomen in een Azure Sentinel-werk ruimte binnen de beheerde Tenant. Dit omvat Details over acties zoals het downloaden van bestanden, het verzenden van toegangs aanvragen, wijzigingen in groeps gebeurtenissen en Postvak bewerkingen, samen met informatie over de gebruikers die de acties hebben uitgevoerd. [Office 365 DLP-waarschuwingen](https://techcommunity.microsoft.com/t5/azure-sentinel/ingest-office-365-dlp-events-into-azure-sentinel/ba-p/1031820) worden ook ondersteund als onderdeel van de ingebouwde Office 365-connector.
+Gebruik Azure Lighthouse in combi natie met Azure Sentinel voor het bewaken van de beveiliging van Office 365-omgevingen op tenants. Eerst moeten kant-en-klare [Office 365-gegevens connectors zijn ingeschakeld in de beheerde Tenant](../../sentinel/connect-office-365.md) , zodat informatie over gebruikers-en beheer activiteiten in Exchange en share point (inclusief OneDrive) kan worden opgenomen in een Azure Sentinel-werk ruimte binnen de beheerde Tenant. Dit omvat Details over acties zoals het downloaden van bestanden, het verzenden van toegangs aanvragen, wijzigingen in groeps gebeurtenissen en Postvak bewerkingen, samen met informatie over de gebruikers die de acties hebben uitgevoerd. [Office 365 DLP-waarschuwingen](https://techcommunity.microsoft.com/t5/azure-sentinel/ingest-office-365-dlp-events-into-azure-sentinel/ba-p/1031820) worden ook ondersteund als onderdeel van de ingebouwde Office 365-connector.
 
 U kunt de [Microsoft Cloud app Security-connector (MCAS)](../../sentinel/connect-cloud-app-security.md) inschakelen voor het streamen van waarschuwingen en Cloud Discovery Logboeken in azure Sentinel. Op die manier krijgt u inzicht in Cloud-apps, kunt u geavanceerde analyses verkrijgen om Cyber dreigingen te identificeren en te bestrijden en te bepalen hoe gegevens worden verplaatst. Activiteiten logboeken voor MCAS kunnen worden [verbruikt met behulp van de algemene gebeurtenis indeling (CEF)](https://techcommunity.microsoft.com/t5/azure-sentinel/ingest-box-com-activity-events-via-microsoft-cloud-app-security/ba-p/1072849).
 

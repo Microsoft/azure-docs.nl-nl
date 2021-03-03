@@ -4,12 +4,12 @@ description: De Java-berichten service (JMS) gebruiken met Azure Service Bus
 ms.topic: article
 ms.date: 07/17/2020
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: b7e4bf0ad69b6cd183296a7245ad3f720ced76c5
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 894821444f74248b73578595df943cb3a0025360
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652600"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101698396"
 ---
 # <a name="use-java-message-service-20-api-with-azure-service-bus-premium"></a>De API voor Java-berichten Service 2,0 met Azure Service Bus Premium gebruiken
 
@@ -34,7 +34,7 @@ Voor het ontwikkelen van Java-toepassingen moet u de juiste ontwikkel omgeving i
    * De JDK of JRE wordt toegevoegd aan het build-pad en de relevante systeem variabelen.
    * Er wordt een Java IDE geïnstalleerd om gebruik te maken van de JDK of JRE. Bijvoorbeeld: eclips of IntelliJ.
 
-Gebruik [deze hand leiding](https://docs.microsoft.com/azure/developer/java/fundamentals/)voor meer informatie over het voorbereiden van uw ontwikkel omgeving voor Java op Azure.
+Gebruik [deze hand leiding](/azure/developer/java/fundamentals/)voor meer informatie over het voorbereiden van uw ontwikkel omgeving voor Java op Azure.
 
 ## <a name="what-jms-features-are-supported"></a>Welke JMS-functies worden ondersteund?
 

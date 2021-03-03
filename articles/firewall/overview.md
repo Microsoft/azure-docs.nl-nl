@@ -6,15 +6,15 @@ ms.service: firewall
 services: firewall
 ms.topic: overview
 ms.custom: mvc, contperf-fy21q1
-ms.date: 02/16/2021
+ms.date: 02/24/2021
 ms.author: victorh
 Customer intent: As an administrator, I want to evaluate Azure Firewall so I can determine if I want to use it.
-ms.openlocfilehash: 56d04abe73020cef09383d4f79a58f037c266a93
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 6e5b553ea3be7e5b4b1d8cb396b35fdf2d5796a9
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100547993"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101721766"
 ---
 # <a name="what-is-azure-firewall"></a>Wat is Azure Firewall?
 
@@ -55,7 +55,8 @@ Azure Firewall heeft de volgende bekende problemen:
 
 |Probleem  |Beschrijving  |Oplossing  |
 |---------|---------|---------|
-Netwerkfilterregels voor niet-TCP/UDP-protocollen (bijvoorbeeld ICMP) werken niet voor internetverkeer|Netwerkfilterregels voor niet-TCP/UDP-protocollen werken niet met SNAT naar uw openbare IP-adres. Niet-TCP/UDP-protocollen worden ondersteund tussen spoke-subnetten en VNets.|Azure Firewall maakt gebruik van de standaardversie van Standard Load Balancer, [die momenteel geen ondersteuning biedt voor SNAT voor IP-protocollen](../load-balancer/load-balancer-overview.md). We onderzoeken mogelijkheden om dit scenario in een toekomstige release te ondersteunen.|
+|Als u een regel van het IP-adres naar de IP-groep of vice versa bijwerkt met behulp van de portal, worden beide typen opgeslagen, maar er wordt slechts één item weer gegeven in de portal.|Dit probleem treedt op met klassieke regels.<br><br>Wanneer u de portal gebruikt voor het bijwerken van een NAT-regel bron type van IP-adres naar IP-groep of andersom, worden beide typen opgeslagen in de back-end, maar wordt alleen het zojuist bijgewerkte type weer gegeven.<br><br>Hetzelfde probleem treedt op wanneer u een netwerk-of toepassings regel doel type bijwerkt van het IP-adres naar het type IP-groep of andersom.|Een portal oplossing is gericht op maart 2021.<br><br>In de tussen tijd gebruikt u Azure PowerShell, Azure CLI of API om een regel te wijzigen van IP-adres in IP-groep of andersom.|
+|Netwerkfilterregels voor niet-TCP/UDP-protocollen (bijvoorbeeld ICMP) werken niet voor internetverkeer|Netwerkfilterregels voor niet-TCP/UDP-protocollen werken niet met SNAT naar uw openbare IP-adres. Niet-TCP/UDP-protocollen worden ondersteund tussen spoke-subnetten en VNets.|Azure Firewall maakt gebruik van de standaardversie van Standard Load Balancer, [die momenteel geen ondersteuning biedt voor SNAT voor IP-protocollen](../load-balancer/load-balancer-overview.md). We onderzoeken mogelijkheden om dit scenario in een toekomstige release te ondersteunen.|
 |Ontbrekende PowerShell- en CLI-ondersteuning voor ICMP|Azure PowerShell en CLI bieden geen ondersteuning voor ICMP als een geldig protocol in netwerkregels.|Het is nog steeds mogelijk om ICMP als een protocol te gebruiken via de portal en de REST-API. Er wordt aan gewerkt om ICMP binnenkort toe te voegen in PowerShell en CLI.|
 |FQDN-tags vereisen instelling van een protocol: poort|Voor toepassingsregels met FQDN-tags is definitie van poort: protocol vereist.|U kunt **https** gebruiken als de waarde voor poort:protocol. Er wordt aan gewerkt om dit veld optioneel te maken wanneer FQDN-tags worden gebruikt.|
 |Het verplaatsen van een firewall naar een andere resourcegroep of een ander abonnement wordt niet ondersteund|Het verplaatsen van een firewall naar een andere resourcegroep of een ander abonnement wordt niet ondersteund.|Ondersteuning van deze functionaliteit staat op de planning. Om een firewall naar een andere resourcegroep of ander abonnement verplaatsen, moet u het huidige exemplaar verwijderen en deze vervolgens opnieuw maken in de nieuwe resourcegroep of het nieuwe abonnement.|

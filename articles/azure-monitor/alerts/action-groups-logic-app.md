@@ -4,14 +4,14 @@ description: Meer informatie over het maken van een actie voor een logische app 
 author: dkamstra
 ms.author: dukek
 ms.topic: conceptual
-ms.date: 07/18/2018
+ms.date: 02/19/2021
 ms.subservice: alerts
-ms.openlocfilehash: d74d77abbc0d105e6772240b8a6d7f463e8d94f7
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: adef1f729cbecd08b2cf99231423287bdc4c6ae0
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612495"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101701175"
 ---
 # <a name="how-to-trigger-complex-actions-with-azure-monitor-alerts"></a>Complexe acties met Azure Monitor waarschuwingen activeren
 
@@ -19,7 +19,7 @@ Dit artikel laat u zien hoe u een logische app kunt instellen en activeren om ee
 
 ## <a name="overview"></a>Overzicht
 
-Wanneer een Azure Monitor waarschuwing wordt geactiveerd, wordt een [actie groep](../platform/action-groups.md)aangeroepen. Met actie groepen kunt u een of meer acties activeren om anderen op de hoogte te stellen van een waarschuwing en deze ook te herstellen.
+Wanneer een Azure Monitor waarschuwing wordt geactiveerd, wordt een [actie groep](./action-groups.md)aangeroepen. Met actie groepen kunt u een of meer acties activeren om anderen op de hoogte te stellen van een waarschuwing en deze ook te herstellen.
 
 Het algemene proces is:
 
@@ -35,29 +35,15 @@ Het proces is vergelijkbaar als u wilt dat de logische app een andere actie uitv
 
 ## <a name="create-an-activity-log-alert-administrative"></a>Een waarschuwing voor een activiteiten logboek maken: beheer
 
-1.  Selecteer in de Azure Portal **een resource maken** in de linkerbovenhoek.
+1. [Een logische app maken](~/articles/logic-apps/quickstart-create-first-logic-app-workflow.md)
 
-2.  Zoek en selecteer een **logische app** en selecteer vervolgens **maken**.
+2.  Selecteer de trigger: **Wanneer een HTTP-aanvraag wordt ontvangen**.
 
-3.  Geef een **naam** op voor uw logische app, kies een **resource groep**, enzovoort.
+1. Selecteer in het dialoogvenster **Wanneer een HTTP-aanvraag wordt ontvangen** de optie **Voorbeeldpayload gebruiken om schema te genereren**.
 
-    ![Een logische app maken](media/action-groups-logic-app/create-logic-app-dialog.png "Een logische app maken")
+    ![Schermopname van het dialoogvenster wanneer een H T T P-aanvraag wordt ontvangen waarin de optie Voorbeeld-payload gebruiken om schema te genereren is geselecteerd. ](~/articles/app-service/media/tutorial-send-email/generate-schema-with-payload.png)
 
-4.  Selecteer **Maken** om de logische app te maken. Een pop-upbericht geeft aan dat de logische app is gemaakt. Selecteer **bron starten** om de **Logic apps Designer** te openen.
-
-5.  Selecteer de trigger: **Wanneer een HTTP-aanvraag wordt ontvangen**.
-
-    ![Triggers voor logische app](media/action-groups-logic-app/logic-app-triggers.png "Triggers voor logische app")
-
-6.  Selecteer **bewerken** om de HTTP-aanvraag trigger te wijzigen.
-
-    ![HTTP-aanvraag triggers](media/action-groups-logic-app/http-request-trigger-shape.png "HTTP-aanvraag triggers")
-
-7.  Selecteer **Voorbeeldnettolading om een schema te genereren**.
-
-    ![Een voor beeld-nettolading gebruiken](media/action-groups-logic-app/use-sample-payload-button.png "Een voor beeld-nettolading gebruiken")
-
-8.  Kopieer en plak de volgende voor beeld-nettolading in het dialoog venster:
+3.  Kopieer en plak de volgende voor beeld-nettolading in het dialoog venster:
 
     ```json
         {
@@ -128,7 +114,7 @@ Het proces is vergelijkbaar als u wilt dat de logische app een andere actie uitv
 
 14. Selecteer op de pagina **Logic apps Designer** de optie **Opslaan** om uw logische app op te slaan.
 
-15. Open uw bestaande actie groep en voeg een actie toe om te verwijzen naar de logische app. Als u geen bestaande actie groep hebt, raadpleegt u [actie groepen maken en beheren in de Azure Portal](../platform/action-groups.md) om er een te maken. Vergeet niet om uw wijzigingen op te slaan.
+15. Open uw bestaande actie groep en voeg een actie toe om te verwijzen naar de logische app. Als u geen bestaande actie groep hebt, raadpleegt u [actie groepen maken en beheren in de Azure Portal](./action-groups.md) om er een te maken. Vergeet niet om uw wijzigingen op te slaan.
 
     ![De actie groep bijwerken](media/action-groups-logic-app/update-action-group.png "De actie groep bijwerken")
 
@@ -138,8 +124,8 @@ De volgende keer dat een waarschuwing uw actie groep aanroept, wordt uw logische
 
 Azure Service Health vermeldingen maken deel uit van het activiteiten logboek. Het proces voor het maken van de waarschuwing is vergelijkbaar met het [maken van een waarschuwing voor een activiteiten logboek](#create-an-activity-log-alert-administrative), maar met een paar wijzigingen:
 
-- De stappen 1 tot en met 7 zijn hetzelfde.
-- Gebruik voor stap 8 de volgende voor beeld-nettolading voor de HTTP-aanvraag trigger:
+- De stappen 1 tot en met 3 zijn hetzelfde.
+- Gebruik voor stap 4 de volgende voor beeld-nettolading voor de HTTP-aanvraag trigger:
 
     ```json
     {
@@ -183,8 +169,8 @@ Azure Service Health vermeldingen maken deel uit van het activiteiten logboek. H
     }
     ```
 
--  De stappen 9 en 10 zijn hetzelfde.
--  Gebruik voor stap 11 tot en met 14 het volgende proces:
+-  Stap 5 en 6 zijn hetzelfde.
+-  Gebruik het volgende proces voor stap 7 tot en met 11:
 
    1. Selecteer **+** **nieuwe stap** en kies vervolgens **een voor waarde toevoegen**. Stel de volgende voor waarden in zodat de logische app alleen wordt uitgevoerd wanneer de invoer gegevens overeenkomen met de waarden hieronder.  Wanneer u de versie waarde in het tekstvak invoert, plaatst u een aanhalings teken ("0.1.1") om ervoor te zorgen dat deze wordt geëvalueerd als een reeks en niet als een numeriek type.  Het systeem geeft de aanhalings tekens niet weer als u terugkeert naar de pagina, maar de onderliggende code blijft het teken reeks type behouden.   
        - `schemaId == Microsoft.Insights/activityLogs`
@@ -226,8 +212,8 @@ Azure Service Health vermeldingen maken deel uit van het activiteiten logboek. H
 
 Het proces voor het maken van een metrische waarschuwing is vergelijkbaar met het [maken van een waarschuwing voor een activiteiten logboek](#create-an-activity-log-alert-administrative), maar met een paar wijzigingen:
 
-- De stappen 1 tot en met 7 zijn hetzelfde.
-- Gebruik voor stap 8 de volgende voor beeld-nettolading voor de HTTP-aanvraag trigger:
+- De stappen 1 tot en met 3 zijn hetzelfde.
+- Gebruik voor stap 4 de volgende voor beeld-nettolading voor de HTTP-aanvraag trigger:
 
     ```json
     {
@@ -271,8 +257,8 @@ Het proces voor het maken van een metrische waarschuwing is vergelijkbaar met he
     }
     ```
 
-- De stappen 9 en 10 zijn hetzelfde.
-- Gebruik voor stap 11 tot en met 14 het volgende proces:
+- Stap 5 en 6 zijn hetzelfde.
+- Gebruik het volgende proces voor stap 7 tot en met 11:
 
   1. Selecteer **+** **nieuwe stap** en kies vervolgens **een voor waarde toevoegen**. Stel de volgende voor waarden in zodat de logische app alleen wordt uitgevoerd wanneer de invoer gegevens overeenkomen met deze waarden. Wanneer u de versie waarde in het tekstvak invoert, plaatst u aanhalings tekens ("2,0") om ervoor te zorgen dat deze wordt geëvalueerd als een teken reeks en niet als numeriek type.  Het systeem geeft de aanhalings tekens niet weer als u terugkeert naar de pagina, maar de onderliggende code blijft het teken reeks type behouden. 
      - `schemaId == AzureMonitorMetricAlert`
@@ -294,7 +280,6 @@ Het proces voor het maken van een metrische waarschuwing is vergelijkbaar met he
 Logic Apps heeft een aantal verschillende connectors waarmee u acties kunt activeren in een breed scala aan toepassingen en data bases. Toegestane vertraging, SQL Server, Oracle, Sales Force, zijn slechts enkele voor beelden. Zie [Logic app-connectors](../../connectors/apis-list.md)voor meer informatie over connectors.  
 
 ## <a name="next-steps"></a>Volgende stappen
-* Bekijk een [overzicht van de waarschuwingen voor Azure-activiteiten logboeken](../platform/alerts-overview.md) en lees hoe u waarschuwingen kunt ontvangen.  
+* Bekijk een [overzicht van de waarschuwingen voor Azure-activiteiten logboeken](./alerts-overview.md) en lees hoe u waarschuwingen kunt ontvangen.  
 * Meer informatie over het [configureren van waarschuwingen wanneer een Azure service Health-melding wordt geplaatst](../../service-health/alerts-activity-log-service-notifications-portal.md).
-* Meer informatie over [actiegroepen](../platform/action-groups.md).
-
+* Meer informatie over [actiegroepen](./action-groups.md).

@@ -6,12 +6,12 @@ ms.topic: include
 ms.date: 03/10/2020
 ms.author: sstein
 ms.reviewer: vanto
-ms.openlocfilehash: 15209bc9dae1f10e1158c805ba7903b9f946766f
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
-ms.translationtype: HT
+ms.openlocfilehash: 57f504b15c0a9c72a2cb0f17b486846f44171a25
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94593944"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682438"
 ---
 In deze stap maakt u een [logische SQL-server](../database/logical-servers.md) en een [individuele database](../database/single-database-overview.md) waarin AdventureWorksLT-voorbeeldgegevens worden gebruikt. U kunt de database maken met behulp van menu's en schermen in de Azure-portal, of met behulp van een Azure CLI- of PowerShell-script in Azure Cloud Shell.
 
@@ -32,20 +32,20 @@ Een resourcegroep, server en afzonderlijke database maken in de Azure-portal:
 
    ![Individuele database maken](./media/sql-database-create-single-database/create-single-database.png)
 
-1. Selecteer op het tabblad **Basisinformatie** van het formulier **SQL-database maken** , onder **Projectgegevens** , het juiste Azure **-abonnement** als dit nog niet is geselecteerd.
-1. Selecteer onder **Resourcegroep** de optie **Nieuwe maken** , voer *myResourceGroup* in en selecteer **OK**.
+1. Selecteer op het tabblad **Basisinformatie** van het formulier **SQL-database maken**, onder **Projectgegevens**, het juiste Azure **-abonnement** als dit nog niet is geselecteerd.
+1. Selecteer onder **Resourcegroep** de optie **Nieuwe maken**, voer *myResourceGroup* in en selecteer **OK**.
 1. Voer onder **Databasedetails** voor **Databasenaam** in: *mySampleDatabase*.
-1. Selecteer voor **Server** de optie **Nieuwe maken** , en vul het formulier **Nieuwe server** als volgt in:
-   - **Servernaam** : Voer *MySqlServer* in en wat extra tekens om de naam uniek te maken.
-   - **Aanmeldgegevens van serverbeheerder** : Voer *azureuser* in.
-   - **Wachtwoord** : Voer een wachtwoord in dat voldoet aan de vereisten en voer dit opnieuw in bij **Wachtwoord bevestigen**.
-   - **Locatie** : Vervolgkeuzelijst en kies een locatie, zoals **(VS) VS - Oost**.
+1. Selecteer voor **Server** de optie **Nieuwe maken**, en vul het formulier **Nieuwe server** als volgt in:
+   - **Servernaam**: Voer *MySqlServer* in en wat extra tekens om de naam uniek te maken.
+   - **Aanmeldgegevens van serverbeheerder**: Voer *azureuser* in.
+   - **Wachtwoord**: Voer een wachtwoord in dat voldoet aan de vereisten en voer dit opnieuw in bij **Wachtwoord bevestigen**.
+   - **Locatie**: Vervolgkeuzelijst en kies een locatie, zoals **(VS) VS - Oost**.
 
    Selecteer **OK**.
 
    ![Nieuwe server](./media/sql-database-create-single-database/new-server.png)
 
-   Noteer de aanmeldgegevens en het wachtwoord van de server zodat u zich bij de server en bijbehorende databases kunt aanmelden. Als u uw aanmeldgegevens of wachtwoord vergeet, kunt u de aanmeldingsnaam ophalen of het wachtwoord opnieuw instellen op de pagina **SQL Server** , nadat de database is gemaakt. U kunt de pagina **SQL Server** openen door de servernaam te selecteren op de **Overzichtspagina** van de database.
+   Noteer de aanmeldgegevens en het wachtwoord van de server zodat u zich bij de server en bijbehorende databases kunt aanmelden. Als u uw aanmeldgegevens of wachtwoord vergeet, kunt u de aanmeldingsnaam ophalen of het wachtwoord opnieuw instellen op de pagina **SQL Server**, nadat de database is gemaakt. U kunt de pagina **SQL Server** openen door de servernaam te selecteren op de **Overzichtspagina** van de database.
 
 1. Als u de standaardinstellingen opnieuw wilt configureren, selecteert u onder **Compute en opslag** de optie **Database configureren**.
 
@@ -68,7 +68,9 @@ Een resourcegroep, server en afzonderlijke database maken in de Azure-portal:
   
    Zie [Azure-services en -resources toegang verlenen tot deze server](../database/network-access-controls-overview.md) en [Een privé-eindpunt toevoegen](../database/private-endpoint-overview.md) voor meer informatie over firewallinstellingen.
 
-1. Selecteer op het tabblad **Aanvullende instellingen** , in de sectie **Gegevensbron** , voor **Bestaande gegevens gebruiken** , de optie **Voorbeeld**.
+1. Selecteer op het tabblad **Aanvullende instellingen**, in de sectie **Gegevensbron**, voor **Bestaande gegevens gebruiken**, de optie **Voorbeeld**.
+1. Schakel desgewenst [Azure Defender voor SQL](../database/azure-defender-for-sql.md)in.
+1. U kunt het [onderhouds venster](../database/maintenance-window.md) zo instellen dat gepland onderhoud op het beste moment wordt uitgevoerd voor uw data base.
 1. Selecteer **Controleren en maken** onderaan de pagina.
 
    ![Tabblad Aanvullende instellingen](./media/sql-database-create-single-database/additional-settings.png)

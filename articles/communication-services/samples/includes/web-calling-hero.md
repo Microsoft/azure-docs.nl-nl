@@ -10,15 +10,13 @@ ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 61b3b3abace5c7a1cd846c1e3c1e7ac166efd5c7
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: eb420a8d5242cb6a122e7f7062e457b64f1fb5db
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99475647"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682382"
 ---
-[!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
-
 Het **hero-voorbeeld van groepsgesprekken** laat zien hoe de webclientbibliotheek van Communication Services-aanroepen kan worden gebruikt voor het bouwen van een groepsgesprekservaring.
 
 In deze quickstart over hero-voorbeelden komt u te weten hoe het voorbeeld werkt voordat u het op uw lokale computer gaat uitvoeren. Vervolgens gaat u het voorbeeld in Azure implementeren met behulp van uw eigen Azure Communication Services-resources.
@@ -29,7 +27,7 @@ Zoek de voltooide code voor deze Quick Start op [github](https://github.com/Azur
 
 ## <a name="overview"></a>Overzicht
 
-Het voorbeeld heeft zowel een toepassing aan de clientzijde als een toepassing aan de serverzijde. De **toepassing** aan de clientzijde is een React/Redux-webtoepassing die gebruikmaakt van het Fluent UI-framework van Microsoft. Met deze toepassing worden aanvragen verzonden naar een ASP.NET Core-**toepassing aan de serverzijde** zodat de toepassing aan de clientzijde kan worden verbonden met Azure. 
+Het voorbeeld heeft zowel een toepassing aan de clientzijde als een toepassing aan de serverzijde. De **toepassing** aan de clientzijde is een React/Redux-webtoepassing die gebruikmaakt van het Fluent UI-framework van Microsoft. Met deze toepassing worden aanvragen verzonden naar een ASP.NET Core-**toepassing aan de serverzijde** zodat de toepassing aan de clientzijde kan worden verbonden met Azure.
 
 Het voorbeeld ziet er als volgt uit:
 
@@ -91,7 +89,7 @@ Als u een Communication Services-abonnement wilt opschonen en verwijderen, kunt 
 
 ## <a name="next-steps"></a>Volgende stappen
 
->[!div class="nextstepaction"] 
+>[!div class="nextstepaction"]
 >[Het voorbeeld downloaden uit GitHub](https://github.com/Azure-Samples/communication-services-web-calling-hero)
 
 Raadpleeg voor meer informatie de volgende artikelen:

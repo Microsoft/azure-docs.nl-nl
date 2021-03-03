@@ -9,18 +9,18 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: b5025aa322ae26f9dd7c683d0e54762fd33eb355
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: d299afca0bd8070a1da738e02812b64c41a7101c
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735378"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101675050"
 ---
 # <a name="query-storage-files-with-serverless-sql-pool-in-azure-synapse-analytics"></a>Query's op opslagbestanden uitvoeren met een serverloze SQL-pool in Azure Synapse Analytics
 
 Met een serverloze SQL-pool kunt u query's uitvoeren op uw gegevens in uw data lake. Het biedt een T-SQL query-surface area dat geschikt is voor semi-gestructureerde en ongestructureerde gegevensquery's. Voor het uitvoeren van query's worden de volgende T-SQL-aspecten ondersteund:
 
-- Volledige [SELECT](/sql/t-sql/queries/select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)-surface area, met inbegrip van de meeste [SQL-functies en -operatoren](overview-features.md).
+- Volledige [SELECT](/sql/t-sql/queries/select-transact-sql?view=azure-sqldw-latest&preserve-view=true)-surface area, met inbegrip van de meeste [SQL-functies en -operatoren](overview-features.md).
 - Met CREATE EXTERNAL TABLE AS SELECT ([CETAS](develop-tables-cetas.md)) wordt een [externe tabel](develop-tables-external-tables.md) gemaakt en parallel de resultaten van een Transact-SQL SELECT-instructie geëxporteerd naar Azure Storage.
 
 Lees het artikel [Overzicht van serverloze SQL-pools](on-demand-workspace-overview.md) voor meer informatie over wat momenteel niet wordt ondersteund, of lees de volgende artikelen:
@@ -184,21 +184,21 @@ De functie `OPENROWSET` zoekt standaard naar overeenkomsten van de bronveldnaam 
 - Voor alle Parquet-types die zich niet in de groep Genest type bevinden, retourneert deze functie een scalaire waarde, zoals integer, decimaal en varchar van het opgegeven element en op het opgegeven pad.
 - Als het pad wijst naar een element van het Geneste type, retourneert de functie een JSON-fragment dat begint met het hoogste element in het opgegeven pad. Het JSON-fragment is van het type varchar(8000).
 - Als de eigenschap niet kan worden gevonden in de opgegeven kolomnaam, retourneert de functie een fout.
-- Als de eigenschap niet kan worden gevonden in de opgegeven kolomnaam, retourneert de functie, afhankelijk van [Padmodus](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true#PATHMODE), een fout in de strict-modus of null in de lax-modus.
+- Als de eigenschap niet kan worden gevonden in de opgegeven kolomnaam, retourneert de functie, afhankelijk van [Padmodus](/sql/relational-databases/json/json-path-expressions-sql-server?view=azure-sqldw-latest&preserve-view=true#PATHMODE), een fout in de strict-modus of null in de lax-modus.
 
 Raadpleeg de sectie Elementen benaderen vanuit geneste kolommen in het artikel [Query uitvoeren op met Parquet geneste typen](query-parquet-nested-types.md#read-properties-from-nested-object-columns) voor voorbeelden van query's.
 
 #### <a name="access-elements-from-repeated-columns"></a>Elementen benaderen vanuit herhaalde kolommen
 
-Gebruik de functie [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) voor elk scalair element dat u wilt projecteren om elementen van een herhaalde kolom te benaderen, zoals een element van een Matrix of Map en geef het volgende op:
+Gebruik de functie [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?view=azure-sqldw-latest&preserve-view=true) voor elk scalair element dat u wilt projecteren om elementen van een herhaalde kolom te benaderen, zoals een element van een Matrix of Map en geef het volgende op:
 
 - als eerste parameter Geneste of herhaalde kolom
-- als tweede parameter een [JSON-pad](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) dat de elementen of de eigenschappen opgeeft die moeten worden benaderd
+- als tweede parameter een [JSON-pad](/sql/relational-databases/json/json-path-expressions-sql-server?view=azure-sqldw-latest&preserve-view=true) dat de elementen of de eigenschappen opgeeft die moeten worden benaderd
 
-Gebruik de functie [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) voor elk niet-scalair element dat u wilt projecteren om niet-scalaire elementen van een herhaalde kolom te benaderen en geef het volgende op:
+Gebruik de functie [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?view=azure-sqldw-latest&preserve-view=true) voor elk niet-scalair element dat u wilt projecteren om niet-scalaire elementen van een herhaalde kolom te benaderen en geef het volgende op:
 
 - als eerste parameter Geneste of herhaalde kolom
-- als tweede parameter een [JSON-pad](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) dat de elementen of de eigenschappen opgeeft die moeten worden benaderd
+- als tweede parameter een [JSON-pad](/sql/relational-databases/json/json-path-expressions-sql-server?view=azure-sqldw-latest&preserve-view=true) dat de elementen of de eigenschappen opgeeft die moeten worden benaderd
 
 Zie hieronder een syntaxis-fragment:
 

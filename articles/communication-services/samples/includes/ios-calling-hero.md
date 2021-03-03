@@ -10,12 +10,12 @@ ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 618efc8d2c3784a487c302661f35d5a284c68178
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 7d39decaa6376c614e48b65ad2fc1b3043aa0a3c
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99475629"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101682407"
 ---
 [!INCLUDE [Private Preview Notice](../../includes/private-preview-include.md)]
 
@@ -74,8 +74,8 @@ Voor demonstratie doeleinden gebruikt dit voor beeld een openbaar toegankelijk e
 Met aanvullende configuratie biedt dit voor beeld ondersteuning voor het verbinden met een met **Azure Active Directory** (Azure AD) beveiligd eind punt, zodat gebruikers zich kunnen aanmelden om een Azure Communication Services-token op te halen. Zie de onderstaande stappen:
 
 1. Schakel Azure Active Directory verificatie in uw app in.  
-   - [Uw app registreren onder Azure Active Directory (met iOS/macOS-platform instellingen)](https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-ios) 
-    - [Uw App Service of Azure Functions app configureren voor het gebruik van Azure AD-aanmelding](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-aad)
+   - [Uw app registreren onder Azure Active Directory (met iOS/macOS-platform instellingen)](../../../active-directory/develop/tutorial-v2-ios.md) 
+    - [Uw App Service of Azure Functions app configureren voor het gebruik van Azure AD-aanmelding](../../../app-service/configure-authentication-provider-aad.md)
 2. Ga naar de pagina overzicht van geregistreerde apps onder Azure Active Directory app-registraties. Noteer de `Application (client) ID` , `Directory (tenant) ID` , `Application ID URI`
 
 :::image type="content" source="../media/calling/aad-overview.png" alt-text="Azure Active Directory configuratie op Azure Portal.":::

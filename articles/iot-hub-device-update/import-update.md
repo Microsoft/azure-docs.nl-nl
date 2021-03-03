@@ -1,0 +1,170 @@
+---
+title: Een nieuwe update importeren | Microsoft Docs
+description: How-To hand leiding voor het importeren van een nieuwe update in IoT Hub apparaat bijwerken voor IoT Hub.
+author: andbrown
+ms.author: andbrown
+ms.date: 2/11/2021
+ms.topic: how-to
+ms.service: iot-hub-device-update
+ms.openlocfilehash: d8757f3076f784576f95bbdfc30abf578446c776
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101662516"
+---
+# <a name="import-new-update"></a>Nieuwe update importeren
+Meer informatie over het importeren van een nieuwe update voor het bijwerken van apparaten in IoT Hub.
+
+## <a name="prerequisites"></a>Vereisten
+
+* [Toegang tot een IOT hub met het bijwerken van het apparaat voor IOT hub ingeschakeld](create-device-update-account.md). U kunt het beste een S1 (standaard)-laag of hoger gebruiken voor uw IoT Hub. 
+* Een IoT-apparaat (of simulator) dat is ingericht voor het bijwerken van het apparaat binnen IoT Hub.
+   * Als u een echt apparaat gebruikt, hebt u een update-installatie kopie bestand voor het bijwerken van de installatie kopie of het [apt-manifest bestand](device-update-apt-manifest.md) voor pakket updates nodig.
+* [Power shell 5](https://docs.microsoft.com/powershell/scripting/install/installing-powershell) of hoger.
+* Ondersteunde browsers:
+  * [Microsoft Edge](https://www.microsoft.com/edge)
+  * Google Chrome
+
+> [!NOTE]
+> Sommige gegevens die naar deze service worden verzonden, kunnen worden verwerkt in een regio buiten de regio waarin deze instantie is gemaakt.
+
+## <a name="create-device-update-import-manifest"></a>Manifest voor het importeren van het apparaat maken
+
+1. Zorg ervoor dat het bestand met de update-afbeelding of het APT-manifest bestand zich bevindt in een map die toegankelijk is vanuit Power shell.
+
+2. Kopieer de [Update van het apparaat voor IOT hub opslag plaats](https://github.com/azure/iot-hub-device-update)of down load het als een zip-bestand naar een locatie die toegankelijk is vanuit Power shell (zodra het zip-bestand is gedownload, klikt u met de rechter muisknop op > tab om te voor `Properties`  >  `General` `Unblock` komen dat `Security` Power shell-beveiligings waarschuwingen worden gevraagd).
+
+3. Ga in Power shell naar `tools/AduCmdlets` map en voer uit:
+
+    ```powershell
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+    Import-Module .\AduUpdate.psm1
+    ```
+
+4. Voer de volgende opdrachten uit door de voorbeeld parameter waarden te vervangen om een import manifest te genereren, een JSON-bestand dat de update beschrijft:
+    ```powershell
+    $compat = New-AduUpdateCompatibility -DeviceManufacturer 'deviceManufacturer' -DeviceModel 'deviceModel'
+
+    $importManifest = New-AduImportManifest -Provider 'updateProvider' -Name 'updateName' -Version 'updateVersion' `
+                                            -UpdateType 'updateType' -InstalledCriteria 'installedCriteria' `
+                                            -Compatibility $compat -Files 'updateFilePath(s)'
+
+    $importManifest | Out-File '.\importManifest.json' -Encoding UTF8
+    ```
+
+    Hier volgen enkele voorbeeld waarden voor de bovenstaande para meters. Zie voor volledige documentatie het volledige schema voor het importeren van manifesten hieronder.
+
+    | Parameter | Beschrijving |
+    | --------- | ----------- |
+    | deviceManufacturer | Fabrikant van het apparaat waarmee de update compatibel is, bijvoorbeeld contoso
+    | deviceModel | Model van het apparaat waarmee de update compatibel is, bijvoorbeeld een pop-
+    | updateProvider | Provider onderdeel van update-identiteit, bijvoorbeeld fabrikam
+    | updatenaam | Noem een deel van de update-identiteit, bijvoorbeeld ImageUpdate
+    | updateVersion | Update versie, bijvoorbeeld 2,0
+    | updateType | <ul><li>Opgeven `microsoft/swupdate:1` voor bijwerken van installatie kopie</li><li>Opgeven `microsoft/apt:1` voor pakket update</li></ul>
+    | installedCriteria | <ul><li>Geef de waarde van SWVersion voor het `microsoft/swupdate:1` Update type op</li><li>Geef de aanbevolen waarde voor het `microsoft/apt:1` Update type op.
+    | updateFilePath (s) | Pad naar de update bestand (en) op uw computer
+
+    Manifest schema voor volledige import
+
+    | Naam | Type | Beschrijving | Beperkingen |
+    | --------- | --------- | --------- | --------- |
+    | UpdateId | `UpdateId` object | Identiteit bijwerken. |
+    | UpdateType | tekenreeks | Type update: <ul><li>Geef `microsoft/apt:1` op wanneer u een update op basis van een pakket uitvoert met behulp van referentie agent.</li><li>Geef `microsoft/swupdate:1` op wanneer u een update op basis van een installatie kopie uitvoert met behulp van referentie agent.</li><li>Geef op `microsoft/simulator:1` Wanneer u voorbeeld agent Simulator gebruikt.</li><li>Geef een aangepast type op bij het ontwikkelen van een aangepaste agent.</li></ul> | <ul><li>Formatteer `{provider}/{type}:{typeVersion}`</li><li>Maxi maal 32 tekens in totaal</li></ul> |
+    | InstalledCriteria | tekenreeks | De teken reeks die door de agent wordt geïnterpreteerd om te bepalen of de update is toegepast:  <ul><li>Geef de **waarde** van SWVersion voor het update type op `microsoft/swupdate:1` .</li><li>Geef op `{name}-{version}` voor het update type `microsoft/apt:1` , waarvan de naam en versie worden opgehaald uit het apt-bestand.</li><li>Geef de hash van het update bestand voor het update type op `microsoft/simulator:1` .</li><li>Geef een aangepaste teken reeks op als u een aangepaste Agent ontwikkelt.</li></ul> | Maxi maal 64 tekens |
+    | Compatibiliteit | Matrix van `CompatibilityInfo` objecten | Compatibiliteits informatie van een apparaat dat compatibel is met deze update. | Maxi maal 10 items |
+    | CreatedDateTime | datum en tijd | De datum en tijd waarop de update is gemaakt. | Gescheiden ISO 8601-datum-en tijd notatie, in UTC |
+    | ManifestVersion | tekenreeks | Versie van manifest schema importeren. Geef `2.0` op dat compatibel is met `urn:azureiot:AzureDeviceUpdateCore:1` interface en `urn:azureiot:AzureDeviceUpdateCore:4` interface.</li></ul> | Moet `2.0` |
+    | Bestanden | Matrix van `File` objecten | Payload-bestanden bijwerken | Maxi maal 5 bestanden |
+
+Opmerking: alle velden zijn verplicht.
+
+## <a name="review-generated-import-manifest"></a>Gegenereerd import manifest controleren
+
+Voorbeeld:
+```json
+{
+  "updateId": {
+    "provider": "Microsoft",
+    "name": "Toaster",
+    "version": "2.0"
+  },
+  "updateType": "microsoft/swupdate:1",
+  "installedCriteria": "5",
+  "compatibility": [
+    {
+      "deviceManufacturer": "Fabrikam",
+      "deviceModel": "Toaster"
+    },
+    {
+      "deviceManufacturer": "Contoso",
+      "deviceModel": "Toaster"
+    }
+  ],
+  "files": [
+    {
+      "filename": "file1.json",
+      "sizeInBytes": 7,
+      "hashes": {
+        "sha256": "K2mn97qWmKSaSaM9SFdhC0QIEJ/wluXV7CoTlM8zMUo="
+      }
+    },
+    {
+      "filename": "file2.zip",
+      "sizeInBytes": 11,
+      "hashes": {
+        "sha256": "gbG9pxCr9RMH2Pv57vBxKjm89uhUstD06wvQSioLMgU="
+      }
+    }
+  ],
+  "createdDateTime": "2020-10-08T03:32:52.477Z",
+  "manifestVersion": "2.0"
+}
+```
+
+## <a name="import-update"></a>Update importeren
+
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com) en navigeer naar uw IOT hub met het bijwerken van het apparaat.
+
+2. Selecteer aan de linkerkant van de pagina ' apparaat bijwerken ' onder Automatische Apparaatbeheer.
+
+   :::image type="content" source="media/import-update/import-updates-3.png" alt-text="Updates importeren" lightbox="media/import-update/import-updates-3.png":::
+
+3. Boven aan het scherm worden verschillende tabbladen weer gegeven. Selecteer het tabblad updates.
+
+   :::image type="content" source="media/import-update/updates-tab.png" alt-text="Updates" lightbox="media/import-update/updates-tab.png":::
+
+4. Selecteer ' + nieuwe update importeren ' onder de header gereed om te implementeren.
+
+   :::image type="content" source="media/import-update/import-new-update-2.png" alt-text="Nieuwe update importeren" lightbox="media/import-update/import-new-update-2.png":::
+
+5. Selecteer het mappictogram of het tekstvak onder ' Selecteer een manifest bestand voor importeren '. U ziet een dialoog venster voor het kiezen van een bestand. Selecteer het import manifest dat u eerder hebt gemaakt met behulp van de Power shell-cmdlet. Selecteer vervolgens het mappictogram of het tekstvak onder ' Selecteer een of meer update bestanden '. U ziet een dialoog venster voor het kiezen van een bestand. Selecteer uw update bestand (en).
+
+   :::image type="content" source="media/import-update/select-update-files.png" alt-text="Update bestanden selecteren" lightbox="media/import-update/select-update-files.png":::
+
+6. Selecteer het mappictogram of tekstvak onder "een opslag container selecteren". Selecteer vervolgens het gewenste opslag account. De opslag container wordt gebruikt om de update bestanden tijdelijk te stage.
+
+   :::image type="content" source="media/import-update/storage-account.png" alt-text="Opslagaccount" lightbox="media/import-update/storage-account.png":::
+
+7. Als u al een container hebt gemaakt, kunt u deze opnieuw gebruiken. (Selecteer anders "+ container" om een nieuwe opslag container voor updates te maken.).  Selecteer de container die u wilt gebruiken en klik op selecteren.
+
+   :::image type="content" source="media/import-update/container.png" alt-text="Container selecteren" lightbox="media/import-update/container.png":::
+
+8. Selecteer verzenden om het import proces te starten.
+
+   :::image type="content" source="media/import-update/publish-update.png" alt-text="Update publiceren" lightbox="media/import-update/publish-update.png":::
+
+9. Het import proces wordt gestart en het scherm wordt overgeschakeld naar de sectie Geschiedenis importeren. Selecteer vernieuwen om de voortgang weer te geven totdat het import proces is voltooid (afhankelijk van de grootte van de update, dit kan binnen een paar minuten worden voltooid, maar kan langer duren).
+
+   :::image type="content" source="media/import-update/update-publishing-sequence-2.png" alt-text="Sequentiëren van import bewerking bijwerken" lightbox="media/import-update/update-publishing-sequence-2.png":::
+
+10. Wanneer de status kolom aangeeft dat het importeren is geslaagd, selecteert u de header gereed om te implementeren. U ziet nu de geïmporteerde update in de lijst.
+
+   :::image type="content" source="media/import-update/update-ready.png" alt-text="Taak status" lightbox="media/import-update/update-ready.png":::
+
+## <a name="next-steps"></a>Volgende stappen
+
+[Groepen maken](create-update-group.md)
+
+[Meer informatie over het importeren van concepten](import-concepts.md)

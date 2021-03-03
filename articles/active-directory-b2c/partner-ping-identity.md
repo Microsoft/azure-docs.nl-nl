@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 01/20/2021
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 430629f94695f0689422434c8d80fe4e1876e5dd
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 94e7ae93d05ae8ee35028882e14d8da74814d833
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98900176"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101650223"
 ---
 # <a name="tutorial-configure-ping-identity-with-azure-active-directory-b2c-for-secure-hybrid-access"></a>Zelf studie: ping-identiteit configureren met Azure Active Directory B2C voor beveiligde hybride toegang
 
@@ -80,7 +80,7 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 - Een Azure-abonnement. Als u er nog geen hebt, kunt u een [gratis account](https://azure.microsoft.com/free/)aanvragen.
 
-- Een [Azure AD B2C-Tenant](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) die is gekoppeld aan uw Azure-abonnement.
+- Een [Azure AD B2C-Tenant](./tutorial-create-tenant.md) die is gekoppeld aan uw Azure-abonnement.
 
 - PingAccess en PingFederate zijn geïmplementeerd in docker-containers of rechtstreeks op virtuele Azure-machines.
 
@@ -107,7 +107,7 @@ Als u dit Verdrag wilt volgen, moet u de update van de Azure AD B2C verlener bij
 
 ![afbeelding toont de token instellingen](./media/partner-ping/token-setting.png)
 
-In het geavanceerde beleid kan dit worden geconfigureerd met behulp van de **IssuanceClaimPattern** -meta gegevenselement naar **AuthorityWithTfp** -waarde in het [JWT-token certificaat](https://docs.microsoft.com/azure/active-directory-b2c/jwt-issuer-technical-profile)voor de uitgever van het product.
+In het geavanceerde beleid kan dit worden geconfigureerd met behulp van de **IssuanceClaimPattern** -meta gegevenselement naar **AuthorityWithTfp** -waarde in het [JWT-token certificaat](./jwt-issuer-technical-profile.md)voor de uitgever van het product.
 
 ## <a name="configure-pingaccesspingfederate"></a>PingAccess/PingFederate configureren
 
@@ -160,7 +160,7 @@ Volg deze stappen om een websessie te maken:
 
 7. Voer in het veld **client geheim** de **sleutel** in die u hebt gegenereerd voor de toepassing in azure AD.
 
-8. Optioneel: u kunt aangepaste claims maken en gebruiken met de Microsoft Graph-API. Als u ervoor kiest om dit te doen, selecteert u **Geavanceerd** en schakelt u de opties **profiel aanvragen** en **gebruikers kenmerken vernieuwen** . Zie [een aangepaste claim gebruiken](https://docs.microsoft.com/azure/active-directory/application-proxy-ping-access#optional---use-a-custom-claim)voor meer informatie over het gebruik van aangepaste claims.
+8. Optioneel: u kunt aangepaste claims maken en gebruiken met de Microsoft Graph-API. Als u ervoor kiest om dit te doen, selecteert u **Geavanceerd** en schakelt u de opties **profiel aanvragen** en **gebruikers kenmerken vernieuwen** . Zie [een aangepaste claim gebruiken](../active-directory/manage-apps/application-proxy-configure-single-sign-on-with-headers.md)voor meer informatie over het gebruik van aangepaste claims.
 
 9. Selecteer **Opslaan**.
 
@@ -265,6 +265,6 @@ Configureer het PingFederate-verificatie beleid om te communiceren met de meerde
 
 Raadpleeg de volgende artikelen voor meer informatie
 
-- [Aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

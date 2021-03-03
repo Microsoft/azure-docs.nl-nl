@@ -1,21 +1,21 @@
 ---
-title: Helm-grafieken implementeren met behulp van GitOps op Kubernetes-cluster waarvoor Arc is ingeschakeld (preview)
+title: Helm-grafieken implementeren met behulp van GitOps op Kubernetes-cluster waarvoor Arc is ingeschakeld
 services: azure-arc
 ms.service: azure-arc
-ms.date: 02/15/2021
+ms.date: 03/02/2021
 ms.topic: article
 author: mlearned
 ms.author: mlearned
-description: GitOps gebruiken met helm voor een Azure Arc-cluster configuratie (preview-versie)
+description: GitOps gebruiken met helm voor een Azure Arc-cluster configuratie
 keywords: GitOps, Kubernetes, K8s, azure, helm, Arc, AKS, Azure Kubernetes service, containers
-ms.openlocfilehash: 2dfb516487d1064f29b4018cc8b322e8db44e53a
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 117fc8dabdce2fdf23cbc2b9fe78137db1c656a5
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100558525"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101647639"
 ---
-# <a name="deploy-helm-charts-using-gitops-on-arc-enabled-kubernetes-cluster-preview"></a>Helm-grafieken implementeren met behulp van GitOps op Kubernetes-cluster waarvoor Arc is ingeschakeld (preview)
+# <a name="deploy-helm-charts-using-gitops-on-an-arc-enabled-kubernetes-cluster"></a>Helm-grafieken implementeren met behulp van GitOps op een Kubernetes-cluster dat is ingeschakeld voor Arc
 
 Helm is een opensource-inpakprogramma waarmee u Kubernetes-toepassingen kunt installeren en de levenscyclus hiervan kunt beheren. Net als Linux-pakket beheer, zoals APT en yum, wordt helm gebruikt voor het beheren van Kubernetes-grafieken, die pakketten van vooraf geconfigureerde Kubernetes-resources zijn.
 
@@ -23,7 +23,7 @@ In dit artikel wordt beschreven hoe u helm configureert en gebruikt met Azure Ar
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Controleer of er een bestaand Kubernetes-verbonden Azure-Arc-cluster is ingeschakeld. Als u een verbonden cluster nodig hebt, gaat u naar de [Snelstartgids een Azure-Kubernetes-cluster verbinden](./connect-cluster.md).
+Controleer of er een bestaand Kubernetes-verbonden Azure-Arc-cluster is ingeschakeld. Als u een verbonden cluster nodig hebt, gaat u naar de [Snelstartgids een Azure-Kubernetes-cluster verbinden](./quickstart-connect-cluster.md).
 
 ## <a name="overview-of-using-gitops-and-helm-with-azure-arc-enabled-kubernetes"></a>Overzicht van het gebruik van GitOps en helm met Azure Arc enabled Kubernetes
 
@@ -64,12 +64,12 @@ spec:
 
 De helm-release configuratie bevat de volgende velden:
 
-| Veld | Description |
+| Veld | Beschrijving |
 | ------------- | ------------- | 
 | `metadata.name` | Verplicht veld. De naam conventies van Kubernetes moeten volgen. |
 | `metadata.namespace` | Optioneel veld. Bepaalt waar de release wordt gemaakt. |
 | `spec.releaseName` | Optioneel veld. Als u niets opgeeft, wordt de naam van de release `$namespace-$name` . |
-| `spec.chart.path` | De map met de grafiek, opgegeven ten opzichte van de hoofdmap van de opslag plaats. |
+| `spec.chart.path` | De map met de grafiek (ten opzichte van de hoofdmap van de opslag plaats). |
 | `spec.values` | Gebruikers aanpassingen van standaard parameter waarden in de grafiek zelf. |
 
 De opties die zijn opgegeven in de HelmRelease `spec.values` , overschrijven de opties die zijn opgegeven in `values.yaml` uit de grafiek bron.
@@ -78,30 +78,27 @@ Meer informatie over de HelmRelease vindt u in de officiële [helm-operator docu
 
 ## <a name="create-a-configuration"></a>Een configuratie maken
 
-Koppel uw verbonden cluster met de Azure CLI-extensie voor `k8sconfiguration` aan de voor beeld van de Git-opslag plaats. Geef deze configuratie de naam `azure-arc-sample` en implementeer de stroom operator in de `arc-k8s-demo` naam ruimte.
+Koppel uw verbonden cluster met de Azure CLI-extensie voor `k8s-configuration` aan de voor beeld van de Git-opslag plaats. Geef deze configuratie de naam `azure-arc-sample` en implementeer de stroom operator in de `arc-k8s-demo` naam ruimte.
 
 ```console
-az k8sconfiguration create --name azure-arc-sample --cluster-name AzureArcTest1 --resource-group AzureArcTest --operator-instance-name flux --operator-namespace arc-k8s-demo --operator-params='--git-readonly --git-path=releases' --enable-helm-operator --helm-operator-version='1.2.0' --helm-operator-params='--set helm.versions=v3' --repository-url https://github.com/Azure/arc-helm-demo.git --scope namespace --cluster-type connectedClusters
+az k8s-configuration create --name azure-arc-sample --cluster-name AzureArcTest1 --resource-group AzureArcTest --operator-instance-name flux --operator-namespace arc-k8s-demo --operator-params='--git-readonly --git-path=releases' --enable-helm-operator --helm-operator-version='1.2.0' --helm-operator-params='--set helm.versions=v3' --repository-url https://github.com/Azure/arc-helm-demo.git --scope namespace --cluster-type connectedClusters
 ```
 
 ### <a name="configuration-parameters"></a>Configuratie parameters
 
-[Meer informatie over aanvullende para meters die u kunt gebruiken](./use-gitops-connected-cluster.md#additional-parameters)om het maken van de configuratie aan te passen.
+Als u het maken van de configuratie wilt aanpassen, kunt u [meer te weten komen over aanvullende para meters](./tutorial-use-gitops-connected-cluster.md#additional-parameters).
 
 ## <a name="validate-the-configuration"></a>De configuratie valideren
 
-Controleer of de is gemaakt met behulp van de Azure CLI `sourceControlConfiguration` .
+Controleer met behulp van de Azure CLI of de configuratie is gemaakt.
 
 ```console
-az k8sconfiguration show --name azure-arc-sample --cluster-name AzureArcTest1 --resource-group AzureArcTest --cluster-type connectedClusters
+az k8s-configuration show --name azure-arc-sample --cluster-name AzureArcTest1 --resource-group AzureArcTest --cluster-type connectedClusters
 ```
 
-De `sourceControlConfiguration` resource wordt bijgewerkt met de nalevings status, berichten en informatie over fout opsporing.
+De configuratie bron wordt bijgewerkt met de nalevings status, berichten en informatie over fout opsporing.
 
-**Uitvoer**
-
-```console
-Command group 'k8sconfiguration' is in preview. It may be changed/removed in a future release.
+```output
 {
   "complianceStatus": {
     "complianceState": "Installed",

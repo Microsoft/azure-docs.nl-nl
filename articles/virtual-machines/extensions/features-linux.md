@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: akjosh
-ms.openlocfilehash: 129897d3288a900803efbfba8abf86c276077fa8
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 66687f5954894d962a67767669081de15a30c7c3
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966068"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101672616"
 ---
 # <a name="virtual-machine-extensions-and-features-for-linux"></a>Extensies en functies van virtuele machines voor Linux
 
@@ -33,7 +33,7 @@ Dit artikel bevat een overzicht van VM-extensies, vereisten voor het gebruik van
 Er zijn verschillende verschillende Azure VM-extensies beschikbaar, elk met een specifieke use-case. Voorbeelden zijn:
 
 - Pas Power shell desired state configurations toe aan een virtuele machine met de DSC-extensie voor Linux. Zie [Azure desired state Configuration extension](https://github.com/Azure/azure-linux-extensions/tree/master/DSC)(Engelstalig) voor meer informatie.
-- De bewaking van een virtuele machine configureren met de VM-extensie van micro soft monitoring agent. Zie [een virtuele Linux-machine controleren](../linux/tutorial-monitor.md)voor meer informatie.
+- De bewaking van een virtuele machine configureren met de VM-extensie van micro soft monitoring agent. Zie [een virtuele Linux-machine controleren](/previous-versions/azure/virtual-machines/linux/tutorial-monitor)voor meer informatie.
 - Configureer de bewaking van uw Azure-infra structuur met de extensie chef of Datadog. Zie de blog met chef- [documenten](https://docs.chef.io/azure_portal.html) of [Datadog](https://www.datadoghq.com/blog/introducing-azure-monitoring-with-one-click-datadog-deployment/)voor meer informatie.
 
 Naast verwerkings-specifieke uitbrei dingen is een aangepaste script extensie beschikbaar voor virtuele Windows-en Linux-machines. Met de aangepaste script extensie voor Linux kan elk bash-script worden uitgevoerd op een virtuele machine. Aangepaste scripts zijn handig voor het ontwerpen van Azure-implementaties waarvoor configuratie moet worden opgegeven dan wat er door het systeem eigen Azure-hulp programma kan worden geboden. Zie [aangepaste script extensie voor Linux VM](custom-script-linux.md)voor meer informatie.
@@ -50,12 +50,12 @@ Zie [Azure virtual machine agent](agent-linux.md)voor meer informatie over onder
 
 #### <a name="supported-agent-versions"></a>Ondersteunde agent versies
 
-Er zijn minimale versies van de agent om de best mogelijke ervaring te bieden. Zie [dit artikel](https://support.microsoft.com/en-us/help/4049215/extensions-and-virtual-machine-agent-minimum-version-support)voor meer informatie.
+Er zijn minimale versies van de agent om de best mogelijke ervaring te bieden. Raadpleeg [dit artikel](https://support.microsoft.com/en-us/help/4049215/extensions-and-virtual-machine-agent-minimum-version-support) voor meer informatie.
 
 #### <a name="supported-oses"></a>Ondersteunde besturings systemen
 
-De Linux-agent wordt uitgevoerd op meerdere besturings systemen, maar het Framework Extensions heeft een limiet voor de besturings systemen die uitbrei dingen. Zie [dit artikel](https://support.microsoft.com/en-us/help/4078134/azure-extension-supported-operating-systems
-)voor meer informatie.
+De Linux-agent wordt uitgevoerd op meerdere besturings systemen, maar het Framework Extensions heeft een limiet voor de besturings systemen die uitbrei dingen. Raadpleeg [dit artikel](https://support.microsoft.com/en-us/help/4078134/azure-extension-supported-operating-systems
+) voor meer informatie.
 
 Sommige extensies worden niet ondersteund in alle besturings systemen en kunnen *Fout Code 51, ' niet-ondersteund besturings systeem ',* verzenden. Raadpleeg de documentatie van de afzonderlijke extensie voor ondersteuning.
 
@@ -222,7 +222,7 @@ De agents en uitbrei dingen delen hetzelfde update mechanisme. Voor sommige upda
 Wanneer er een update beschikbaar is, wordt deze alleen geïnstalleerd op de virtuele machine wanneer er een wijziging is aangebracht in extensies en andere VM-modellen, zoals:
 
 - Gegevensschijven
-- Extensies
+- Uitbreidingen
 - Container voor diagnostische gegevens over opstarten
 - Geheimen voor gast besturingssystemen
 - VM-grootte

@@ -10,17 +10,17 @@ ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: af42b83fc005397d4564b7570eedaff0305a8bc8
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 18282bbe902599c471775a853704e459ea44bac1
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653542"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101661643"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
 
-- Maak een Azure-account met een actief abonnement. Zie [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voor meer informatie. 
+- Maak een Azure-account met een actief abonnement. Zie [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voor meer informatie.
 - Installeer [Node.js](https://nodejs.org/en/download/) Active LTS- en Maintenance LTS-versies (8.11.1 en 10.14.1 aanbevolen).
 - Maak een Azure Communication Services-resource. Zie [Een Azure Communication-resource maken](../../create-communication-resource.md) voor meer informatie. U moet **uw resource-eind punt vastleggen** voor deze Quick Start.
 - Maak *drie* ACS-gebruikers en geef ze een toegangs [token](../../access-tokens.md)voor gebruikers toegangs token. Zorg ervoor dat u het bereik instelt op **Chat** en **Noteer de token teken reeks, evenals de teken reeks GebruikersID**. In de volledige demo wordt een thread met twee eerste deel nemers gemaakt en vervolgens een derde deel nemer aan de thread toegevoegd.
@@ -34,7 +34,7 @@ Open eerst uw terminal of opdrachtvenster, maak een nieuwe map voor uw app en na
 ```console
 mkdir chat-quickstart && cd chat-quickstart
 ```
-   
+
 Voer `npm init -y` uit om een **package.json**-bestand te maken met de standaardinstellingen.
 
 ```console
@@ -48,7 +48,7 @@ Gebruik de opdracht `npm install` voor het installeren van de onderstaande Commu
 ```console
 npm install @azure/communication-common --save
 
-npm install @azure/communication-administration --save
+npm install @azure/communication-identity --save
 
 npm install @azure/communication-signaling --save
 
@@ -86,7 +86,7 @@ Maak een bestand in de hoofdmap van uw project met de naam **client.js** om de t
 
 ### <a name="create-a-chat-client"></a>Een chat-client maken
 
-Als u een chat-client in uw web-app wilt maken, gebruikt u het **eind punt** van de communicatie service en het **toegangs token** dat is gegenereerd als onderdeel van de vereiste stappen. 
+Als u een chat-client in uw web-app wilt maken, gebruikt u het **eind punt** van de communicatie service en het **toegangs token** dat is gegenereerd als onderdeel van de vereiste stappen.
 
 Met toegangstokens voor gebruikers kunt u clienttoepassingen maken die zich rechtstreeks verifiëren bij Azure Communication Services. Deze Snelstartgids heeft geen betrekking op het maken van een servicelaag voor het beheren van tokens voor uw chat toepassing. Zie [Chat concepten](../../../concepts/chat/concepts.md) voor meer informatie over de chat architectuur en [gebruikers toegangs tokens](../../access-tokens.md) voor meer informatie over toegangs tokens.
 
@@ -122,7 +122,7 @@ In de console voor ontwikkelaarshulpprogramma’s in uw browser zou u het volgen
 Azure Communication Chat client created!
 ```
 
-## <a name="object-model"></a>Objectmodel 
+## <a name="object-model"></a>Objectmodel
 De volgende klassen en interfaces verwerken enkele van de belangrijkste functies van de Azure Communication Services chat-clientbibliotheek voor JavaScript.
 
 | Naam                                   | Beschrijving                                                                                                                                                                           |
@@ -137,7 +137,7 @@ Gebruik de methode `createThread` om een chat-thread te maken.
 
 `createThreadRequest` wordt gebruikt om de thread-aanvraag te beschrijven:
 
-- Gebruik `topic` om een onderwerp te geven aan deze chat. Het onderwerp kan worden bijgewerkt nadat de chat-thread is gemaakt met behulp van de functie `UpdateThread`. 
+- Gebruiken `topic` om een onderwerp te geven aan deze chat sessie. Onderwerpen kunnen worden bijgewerkt nadat de chat thread is gemaakt met behulp van de `UpdateThread` functie.
 - Gebruik `participants` om de deel nemers weer te geven die moeten worden toegevoegd aan de chat-thread.
 
 Indien opgelost, `createChatThread` retourneert methode een `CreateChatThreadResponse` . Dit model bevat een `chatThread` eigenschap waar u toegang hebt tot de `id` van de zojuist gemaakte thread. Vervolgens kunt u de gebruiken `id` om een exemplaar van een te verkrijgen `ChatThreadClient` . De `ChatThreadClient` kan vervolgens worden gebruikt om de bewerking uit te voeren binnen de thread, zoals het verzenden van berichten of het weer geven van deel nemers.
@@ -203,7 +203,7 @@ Gebruik de methode `sendMessage` om een chatbericht te verzenden naar de thread 
 
 `sendMessageOptions` beschrijft de optionele velden van de chatberichtaanvraag:
 
-- Gebruik `priority` om het prioriteitsniveau van het chatbericht op te geven, zoals ‘Normaal’ of ‘Hoog’. Deze eigenschap kan worden gebruikt om een UI-indicator te hebben voor de ontvangende gebruiker in uw app, om de aandacht te vestigen op het bericht of aangepaste bedrijfslogica uit te voeren.   
+- Gebruik `priority` om het prioriteits niveau voor chat berichten op te geven, zoals normaal of hoog. Deze eigenschap kan worden gebruikt om een UI-indicator weer te geven voor de ontvanger van de gebruiker in uw app om de aandacht te vestigen op het bericht of aangepaste bedrijfs logica uit te voeren.
 - Gebruik `senderDisplayName` om de weergavenaam van de afzender op te geven.
 
 Het antwoord `sendChatMessageResult` bevat een id. Dit is de unieke id van het bericht.
@@ -246,7 +246,7 @@ chatClient.on("chatMessageReceived", (e) => {
 Voeg deze code toe in plaats van de opmerking `<RECEIVE A CHAT MESSAGE FROM A CHAT THREAD>` in **client.js**.
 Wanneer u uw browsertabblad vernieuwt, zou u in de console een bericht `Notification chatMessageReceived` moeten zien.
 
-U kunt chatberichten ook ophalen door de methode `listMessages` op opgegeven intervallen te pollen. 
+U kunt chatberichten ook ophalen door de methode `listMessages` op opgegeven intervallen te pollen.
 
 ```JavaScript
 

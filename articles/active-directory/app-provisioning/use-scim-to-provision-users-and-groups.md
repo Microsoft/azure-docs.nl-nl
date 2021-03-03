@@ -12,12 +12,12 @@ ms.date: 02/01/2021
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 35efcd4059ab654178fb87c133a6f64721caf7d2
-ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
+ms.openlocfilehash: 1445e7959906966c58730521123ae03590bef1b3
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99989054"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101652093"
 ---
 # <a name="tutorial-develop-and-plan-provisioning-for-a-scim-endpoint"></a>Zelf studie: inrichten opstellen en plannen voor een SCIM-eind punt
 
@@ -882,7 +882,7 @@ In de voorbeeldcode worden aanvragen geverifieerd met het pakket Microsoft.AspNe
 
 Er is ook een Bearer-token vereist voor het gebruik van de verstrekte [postman tests](https://github.com/AzureAD/SCIMReferenceCode/wiki/Test-Your-SCIM-Endpoint) en om lokale foutopsporing uit te voeren met localhost. De voorbeeldcode maakt gebruik van ASP.NET Core-omgevingen om de verificatie-opties tijdens de ontwikkelingsfase te wijzigen en het gebruik van een zelfondertekend token in te schakelen.
 
-Zie voor meer informatie over meerdere omgevingen in ASP.NET Core [meerdere omgevingen gebruiken in ASP.net core](https://docs.microsoft.com/aspnet/core/fundamentals/environments).
+Zie voor meer informatie over meerdere omgevingen in ASP.NET Core [meerdere omgevingen gebruiken in ASP.net core](/aspnet/core/fundamentals/environments).
 
 De volgende code dwingt af dat aanvragen voor een van de service-eindpunten worden geverifieerd met behulp van een Bearer-token dat is ondertekend met een aangepaste sleutel:
 

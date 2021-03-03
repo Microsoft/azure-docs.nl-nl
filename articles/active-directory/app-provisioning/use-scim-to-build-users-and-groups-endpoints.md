@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/27/2021
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: 9fac8db6747d1e081fa884ed794e55b98f44577f
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: b69e701177c6f017388521ed05c37de1271c7e60
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652034"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101650155"
 ---
 # <a name="tutorial-develop-a-sample-scim-endpoint"></a>Zelf studie: een voor beeld van een SCIM-eind punt ontwikkelen
 
@@ -33,7 +33,7 @@ In deze zelfstudie leert u het volgende:
 
 ## <a name="deploy-your-scim-endpoint-in-azure"></a>Uw SCIM-eind punt implementeren in azure
 
-Met de stappen implementeert u het SCIM-eind punt voor een service met behulp van [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) en [Azure app service](https://docs.microsoft.com/azure/app-service/). De SCIM-referentie code kan ook lokaal worden uitgevoerd, worden gehost door een on-premises server of worden geïmplementeerd in een andere externe service.
+Met de stappen implementeert u het SCIM-eind punt voor een service met behulp van [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) en [Azure app service](../../app-service/index.yml). De SCIM-referentie code kan ook lokaal worden uitgevoerd, worden gehost door een on-premises server of worden geïmplementeerd in een andere externe service.
 
 1. Ga naar de [referentie code](https://github.com/AzureAD/SCIMReferenceCode) van github en selecteer **klonen of downloaden**.
 

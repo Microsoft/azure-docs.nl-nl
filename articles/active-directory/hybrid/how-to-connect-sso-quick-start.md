@@ -16,12 +16,12 @@ ms.date: 04/16/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59cc50274b291c23aeec4620ec7a09312cc0c1fb
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: e49ed356f294baca6e339faeebe92ca02b2723df
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762254"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101644779"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quickstart"></a>Azure Active Directory naadloze eenmalige aanmelding: Quick Start
 
@@ -161,10 +161,10 @@ Er zijn twee manieren om de intranet zone-instellingen van gebruikers te wijzige
     ![Scherm opname van het geselecteerde "REGI ster" en "register item" geselecteerd.](./media/how-to-connect-sso-quick-start/sso15.png)
 
 4. Voer de volgende waarden in de juiste velden in en klik op **OK**.
-   - **Sleutelpad: ****_Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\microsoftazuread-SSO.com\autologon_* _
-   - _* Waardenaam * *: **_https_*_
-   - _* Waardetype * *: **_REG_DWORD_*_
-   - _* Waardegegevens * *: **_00000001_*_
+   - **Sleutelpad:** **_Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\microsoftazuread-SSO.com\autologon_**
+   - **Waardenaam**: **_https_**
+   - **Waardetype**: **_REG_DWORD_**
+   - **Waardegegevens**: **_00000001_**
  
      ![Scherm opname van het venster ' nieuwe register eigenschappen '.](./media/how-to-connect-sso-quick-start/sso16.png)
  
@@ -176,7 +176,7 @@ Er zijn twee manieren om de intranet zone-instellingen van gebruikers te wijzige
 
 In Mozilla Firefox wordt niet automatisch Kerberos-verificatie gebruikt. Elke gebruiker moet de URL van Azure AD hand matig toevoegen aan hun Firefox-instellingen door de volgende stappen te volgen:
 1. Voer Firefox uit en voer `about:config` in de adres balk in. Sluit alle meldingen die u ziet.
-2. Zoek naar de _ *Network. Negotiate-auth. Trusted-uri's** preference. In deze voor keur worden vertrouwde sites van Firefox voor Kerberos-verificatie weer gegeven.
+2. Zoek naar de voor keuren **netwerk. Negotiate-auth. Trusted-uri's** . In deze voor keur worden vertrouwde sites van Firefox voor Kerberos-verificatie weer gegeven.
 3. Klik met de rechter muisknop en selecteer **wijzigen**.
 4. Voer `https://autologon.microsoftazuread-sso.com` in het veld in.
 5. Selecteer **OK** en open vervolgens de browser opnieuw.
@@ -205,7 +205,7 @@ Het gebruik van groepsbeleid Active Directory uitbrei dingen van derden voor het
 
 #### <a name="known-browser-limitations"></a>Bekende browser beperkingen
 
-Naadloze SSO werkt niet in de modus voor persoonlijke navigatie in Firefox en micro soft Edge-browsers. Het werkt ook niet in Internet Explorer als de browser wordt uitgevoerd in de uitgebreide beveiligde modus. Voor de volgende versie van micro soft Edge, die is gebaseerd op chroom, werkt deze niet in de privé-en gast modus door te ontwerpen.
+Naadloze SSO werkt niet in de modus voor persoonlijke navigatie in Firefox-browsers en micro soft Edge (verouderd). Het werkt ook niet in Internet Explorer als de browser wordt uitgevoerd in de uitgebreide beveiligde modus. Naadloze SSO ondersteunt de volgende versie van micro soft Edge op basis van chroom en werkt in de InPrivate-en gast modus door te ontwerpen.
 
 ## <a name="step-4-test-the-feature"></a>Stap 4: de functie testen
 
@@ -216,10 +216,10 @@ Als u de functie voor een specifieke gebruiker wilt testen, moet u ervoor zorgen
   - U hebt [de functie](#step-3-roll-out-the-feature) door Groepsbeleid naar deze gebruiker samengevouwen.
 
 Het scenario testen waarbij de gebruiker alleen de gebruikers naam invoert, maar niet het wacht woord:
-   - Meld u aan bij `https://myapps.microsoft.com/` een nieuwe persoonlijke browser sessie.
+   - Meld u aan bij https://myapps.microsoft.com/ . Zorg ervoor dat u de browser cache wist of een nieuwe persoonlijke browser sessie gebruikt met een van de ondersteunde browsers in de privé modus.
 
 Als u het scenario wilt testen waarbij de gebruiker de gebruikers naam of het wacht woord niet hoeft in te voeren, gebruikt u een van de volgende stappen: 
-   - Meld u aan bij `https://myapps.microsoft.com/contoso.onmicrosoft.com` een nieuwe persoonlijke browser sessie. Vervang *Contoso* door de naam van uw Tenant.
+   - Meld u aan om `https://myapps.microsoft.com/contoso.onmicrosoft.com` ervoor te zorgen dat u de browser cache wist of een nieuwe persoonlijke browser sessie gebruikt met een van de ondersteunde browsers in de persoonlijke modus. Vervang *Contoso* door de naam van uw Tenant.
    - Meld u aan bij `https://myapps.microsoft.com/contoso.com` een nieuwe persoonlijke browser sessie. Vervang *contoso.com* door een geverifieerd domein (niet een federatief domein) in uw Tenant.
 
 ## <a name="step-5-roll-over-keys"></a>Stap 5: toetsen met rollen

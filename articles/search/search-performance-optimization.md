@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/01/2021
 ms.custom: references_regions
-ms.openlocfilehash: 5e8b873e0e4e89979769183cfbf0ad473069e897
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 60371888dbc4f0cbc33f1ad1b2a685dbb071c01a
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101096430"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101670710"
 ---
 # <a name="scale-for-performance-on-azure-cognitive-search"></a>Schaal voor prestaties op Azure Cognitive Search
 
@@ -91,7 +91,7 @@ Aangezien replica's kopieën zijn van uw gegevens, kunnen met meerdere replica's
 
 ### <a name="availability-zones"></a>Beschikbaarheidszones
 
-[Beschikbaarheidszones](https://docs.microsoft.com/azure/availability-zones/az-overview) de data centers van een regio in verschillende fysieke locatie groepen te delen om hoge Beschik baarheid te bieden binnen dezelfde regio. Voor Cognitive Search zijn afzonderlijke replica's de eenheden voor zone toewijzing. Een zoek service wordt binnen één regio uitgevoerd; de replica's worden uitgevoerd in verschillende zones.
+[Beschikbaarheidszones](../availability-zones/az-overview.md) de data centers van een regio in verschillende fysieke locatie groepen te delen om hoge Beschik baarheid te bieden binnen dezelfde regio. Voor Cognitive Search zijn afzonderlijke replica's de eenheden voor zone toewijzing. Een zoek service wordt binnen één regio uitgevoerd; de replica's worden uitgevoerd in verschillende zones.
 
 U kunt Beschikbaarheidszones met Azure Cognitive Search gebruiken door twee of meer replica's aan uw zoek service toe te voegen. Elke replica wordt in een andere beschikbaarheids zone in de regio geplaatst. Als u meer replica's hebt dan Beschikbaarheidszones, worden de replica's zo gelijkmatig mogelijk verdeeld over Beschikbaarheidszones.
 

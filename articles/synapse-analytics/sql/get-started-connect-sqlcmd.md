@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: b78c2d5c03c95249c7f708f2d660d32c834f123e
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 7d6675f9584f90b67d8520091dcd4b04dd89e462
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98676092"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101667588"
 ---
 # <a name="connect-to-synapse-sql-with-sqlcmd"></a>Verbinding maken met Synapse SQL via sqlcmd
 
@@ -25,10 +25,10 @@ ms.locfileid: "98676092"
 > * [sqlcmd](../sql/get-started-connect-sqlcmd.md)
 > * [SSMS](get-started-ssms.md)
 
-U kunt het opdrachtregelprogramma [sqlcmd](/sql/tools/sqlcmd-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) binnen Synapse SQL gebruiken om verbinding te maken met serverloze SQL-pools en toegewezen SQL-pools, en er query's op uit te voeren.  
+U kunt het opdrachtregelprogramma [sqlcmd](/sql/tools/sqlcmd-utility?view=azure-sqldw-latest&preserve-view=true) binnen Synapse SQL gebruiken om verbinding te maken met serverloze SQL-pools en toegewezen SQL-pools, en er query's op uit te voeren.  
 
 ## <a name="1-connect"></a>1. Verbinding maken
-U gaat als volgt aan de slag met [sqlcmd](/sql/tools/sqlcmd-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true): open de opdrachtprompt en voer **sqlcmd** in, gevolgd door de verbindingstekenreeks voor uw Synapse SQL-database. De verbindingstekenreeks moet de volgende parameters bevatten:
+U gaat als volgt aan de slag met [sqlcmd](/sql/tools/sqlcmd-utility?view=azure-sqldw-latest&preserve-view=true): open de opdrachtprompt en voer **sqlcmd** in, gevolgd door de verbindingstekenreeks voor uw Synapse SQL-database. De verbindingstekenreeks moet de volgende parameters bevatten:
 
 * **Server (-S):** Server in de notatie `<`Servernaam`>`.database.windows.net
 * **Database (-d):** Databasenaam
@@ -78,7 +78,7 @@ C:\>sqlcmd -S MySqlDw.database.windows.net -d Adventure_Works -G -I
 
 ### <a name="use-dedicated-sql-pool"></a>Een toegewezen SQL-pool gebruiken
 
-Wanneer verbinding is gemaakt, kunt u elke ondersteunde [Transact-SQL](/sql/t-sql/language-reference?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)-instructie (T-SQL) voor het exemplaar uitvoeren. In dit voorbeeld worden query's in de interactieve modus verzonden.
+Wanneer verbinding is gemaakt, kunt u elke ondersteunde [Transact-SQL](/sql/t-sql/language-reference?view=azure-sqldw-latest&preserve-view=true)-instructie (T-SQL) voor het exemplaar uitvoeren. In dit voorbeeld worden query's in de interactieve modus verzonden.
 
 ```sql
 C:\>sqlcmd -S MySqlDw.database.windows.net -d Adventure_Works -U myuser -P myP@ssword -I
@@ -99,7 +99,7 @@ sqlcmd -S MySqlDw.database.windows.net -d Adventure_Works -U myuser -P myP@sswor
 
 ### <a name="use-serverless-sql-pool"></a>Serverloze SQL-pools gebruiken
 
-Wanneer verbinding is gemaakt, kunt u elke ondersteunde [Transact-SQL](/sql/t-sql/language-reference?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)-instructie (T-SQL) voor het exemplaar uitvoeren.  In het volgende voorbeeld worden query's in de interactieve modus verzonden.
+Wanneer verbinding is gemaakt, kunt u elke ondersteunde [Transact-SQL](/sql/t-sql/language-reference?view=azure-sqldw-latest&preserve-view=true)-instructie (T-SQL) voor het exemplaar uitvoeren.  In het volgende voorbeeld worden query's in de interactieve modus verzonden.
 
 ```sql
 C:\>sqlcmd -S partyeunrt.database.windows.net -d demo -U Enter_Your_Username_Here -P Enter_Your_Password_Here -I
@@ -120,4 +120,4 @@ sqlcmd -S partyeunrt.database.windows.net -d demo -U Enter_Your_Username_Here -P
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie de [sqlcmd-documentatie](/sql/tools/sqlcmd-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) voor meer informatie over sqlcmd-opties.
+Zie de [sqlcmd-documentatie](/sql/tools/sqlcmd-utility?view=azure-sqldw-latest&preserve-view=true) voor meer informatie over sqlcmd-opties.

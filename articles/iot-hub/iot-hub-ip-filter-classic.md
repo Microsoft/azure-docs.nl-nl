@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/16/2020
 ms.author: jlian
-ms.openlocfilehash: 70cea7a388c07bee9caa2e25e4061a3d3bb2b460
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 6f326bafb311acedc48c5a349c78f1cd6bcebc87
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98633901"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101661151"
 ---
 # <a name="iot-hub-classic-ip-filter-and-how-to-upgrade"></a>IoT Hub klassiek IP-filter en hoe een upgrade 
 
@@ -30,7 +30,7 @@ Om te voor komen dat de service wordt onderbroken, moet u de begeleide upgrade u
 5.  Omdat het nieuwe IP-filter standaard alle IP-adressen blokkeert, verwijdert de upgrade uw afzonderlijke regels voor weigeren, maar krijgt u de mogelijkheid om deze te bekijken voordat u opslaat. Controleer de regels aandachtig om er zeker van te zijn dat ze voor u werken.
 6.  Volg de aanwijzingen om de upgrade te volt ooien.
 
-## <a name="whats-new"></a>Nieuwe functies
+## <a name="whats-new"></a>Nieuw
 
 ### <a name="secure-by-default"></a>Standaardbeveiliging
 
@@ -88,7 +88,7 @@ Beveiliging is een belang rijk aspect van elke IoT-oplossing op basis van Azure 
 
 Er zijn twee specifieke use-cases wanneer het handig is om de IoT Hub-eind punten voor bepaalde IP-adressen te blok keren:
 
-* Uw IoT-hub mag alleen verkeer ontvangen van een opgegeven bereik van IP-adressen en alle andere gegevens weigeren. U gebruikt bijvoorbeeld uw IoT-hub met [Azure Express route](https://azure.microsoft.com/documentation/articles/expressroute-faqs/#supported-services) om particuliere verbindingen te maken tussen een IOT-hub en uw on-premises infra structuur.
+* Uw IoT-hub mag alleen verkeer ontvangen van een opgegeven bereik van IP-adressen en alle andere gegevens weigeren. U gebruikt bijvoorbeeld uw IoT-hub met [Azure Express route](../expressroute/expressroute-faqs.md#supported-services) om particuliere verbindingen te maken tussen een IOT-hub en uw on-premises infra structuur.
 
 * U moet het verkeer afwijzen van IP-adressen die zijn geïdentificeerd als verdacht door de IoT hub-beheerder.
 
@@ -141,7 +141,7 @@ Als u een IP-filterregel wilt verwijderen, selecteert u het prullenbakpictogram 
 
 ### <a name="retrieve-and-update-ip-filters-using-azure-cli"></a>IP-filters ophalen en bijwerken met behulp van Azure CLI
 
-De IP-filters van uw IoT Hub kunnen worden opgehaald en bijgewerkt via [Azure cli](https://docs.microsoft.com/cli/azure/).
+De IP-filters van uw IoT Hub kunnen worden opgehaald en bijgewerkt via [Azure cli](/cli/azure/).
 
 Als u de huidige IP-filters van uw IoT Hub wilt ophalen, voert u de volgende handelingen uit:
 
@@ -215,7 +215,7 @@ $iothubResource | Set-AzResource -Force
 
 ### <a name="update-ip-filter-rules-using-rest"></a>IP-filter regels bijwerken met REST
 
-U kunt ook het IP-filter van uw IoT Hub ophalen en wijzigen met behulp van het REST-eind punt van de Azure-resource provider. Zie `properties.ipFilterRules` in de [createorupdate-methode](https://docs.microsoft.com/rest/api/iothub/iothubresource/createorupdate).
+U kunt ook het IP-filter van uw IoT Hub ophalen en wijzigen met behulp van het REST-eind punt van de Azure-resource provider. Zie `properties.ipFilterRules` in de [createorupdate-methode](/rest/api/iothub/iothubresource/createorupdate).
 
 ### <a name="ip-filter-rule-evaluation"></a>Evaluatie van IP-filterregel
 

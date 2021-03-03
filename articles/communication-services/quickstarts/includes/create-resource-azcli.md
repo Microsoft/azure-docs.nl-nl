@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 1/28/2021
 ms.author: mikben
-ms.openlocfilehash: d70d53da48f41f0a6a37da6154d29696d3824325
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: 32d869e6285e76b57a7b8e462e8110a43de82dd9
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99819997"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101656569"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -17,7 +17,7 @@ ms.locfileid: "99819997"
 
 ## <a name="create-azure-communication-resource"></a>Azure Communication-resource maken
 
-Als u een Azure Communication Services-resource wilt maken, [meldt u zich aan bij Azure cli](https://docs.microsoft.com/cli/azure/authenticate-azure-cli)en voert u de volgende opdracht uit:
+Als u een Azure Communication Services-resource wilt maken, [meldt u zich aan bij Azure cli](/cli/azure/authenticate-azure-cli)en voert u de volgende opdracht uit:
 
 ```azurecli
 az communication create --name "<communicationName>" --location "Global" --data-location "United States" --resource-group "<resourceGroup>"
@@ -41,4 +41,4 @@ az communication update --name "<communicationName>" --tags newTag="newVal" --re
 az communication show --name "<communicationName>" --resource-group "<resourceGroup>"
 ```
 
-Zie [AZ Communication](https://docs.microsoft.com/cli/azure/ext/communication/communication)(Engelstalig) voor meer informatie over aanvullende opdrachten.
+Zie [AZ Communication](/cli/azure/ext/communication/communication)(Engelstalig) voor meer informatie over aanvullende opdrachten.

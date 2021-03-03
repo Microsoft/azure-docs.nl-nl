@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c73bcd8fb4c6b594633abd1ac268bd8dfd78202
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: bd4c1adddbf4b13f8e299bd656443c9aaab1d55b
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417184"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101644824"
 ---
 # <a name="securing-group-managed-service-accounts"></a>Door groepen beheerde service accounts beveiligen
 
@@ -41,7 +41,7 @@ Gmsa's bieden één identiteits oplossing met betere beveiliging en vermindert d
 Gebruik Gmsa's als het voorkeurs account voor on-premises Services, tenzij een service, zoals failover clustering, dit niet ondersteunt.
 
 > [!IMPORTANT]
-> U moet uw service testen met Gmsa's voordat u de implementatie in productie neemt. U doet dit door een test omgeving in te stellen en ervoor te zorgen dat de toepassing de gMSA kan gebruiken en toegang heeft tot de bronnen die nodig zijn voor toegang. Zie [ondersteuning voor door groepen beheerde service accounts](https://docs.microsoft.com/system-center/scom/support-group-managed-service-accounts?view=sc-om-2019)voor meer informatie.
+> U moet uw service testen met Gmsa's voordat u de implementatie in productie neemt. U doet dit door een test omgeving in te stellen en ervoor te zorgen dat de toepassing de gMSA kan gebruiken en toegang heeft tot de bronnen die nodig zijn voor toegang. Zie [ondersteuning voor door groepen beheerde service accounts](/system-center/scom/support-group-managed-service-accounts?view=sc-om-2019)voor meer informatie.
 
 
 Als een service het gebruik van Gmsa's niet ondersteunt, kunt u het beste een zelfstandig beheerd service account (sMSA) gebruiken. sMSAs bieden dezelfde functionaliteit als een gMSA, maar zijn alleen bedoeld voor implementatie op één server.
@@ -108,18 +108,18 @@ U kunt de volgende Active Directory Power shell-cmdlets gebruiken voor het beher
 `Uninstall-ADServiceAccount`
 
 > [!NOTE]
-> Vanaf Windows Server 2012 werken de cmdlets *-ADServiceAccount standaard met Gmsa's. Zie aan de slag [**met door groep beheerde service accounts**](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/getting-started-with-group-managed-service-accounts)voor meer informatie over het gebruik van de bovenstaande cmdlets.
+> Vanaf Windows Server 2012 werken de cmdlets *-ADServiceAccount standaard met Gmsa's. Zie aan de slag [**met door groep beheerde service accounts**](/windows-server/security/group-managed-service-accounts/getting-started-with-group-managed-service-accounts)voor meer informatie over het gebruik van de bovenstaande cmdlets.
 
 ## <a name="move-to-a-gmsa"></a>Naar een gMSA verplaatsen
 Gmsa's zijn het veiligste type service account voor on-premises behoeften. Als u naar een andere kunt gaan, moet u. U kunt ook uw Services verplaatsen naar Azure en uw service accounts naar Azure Active Directory.
 
-1.  Zorg ervoor dat de [basis sleutel KDS in het forest is geïmplementeerd](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/create-the-key-distribution-services-kds-root-key). Dit is een eenmalige bewerking.
+1.  Zorg ervoor dat de [basis sleutel KDS in het forest is geïmplementeerd](/windows-server/security/group-managed-service-accounts/create-the-key-distribution-services-kds-root-key). Dit is een eenmalige bewerking.
 
-2. [Maak een nieuwe gMSA](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/getting-started-with-group-managed-service-accounts).
+2. [Maak een nieuwe gMSA](/windows-server/security/group-managed-service-accounts/getting-started-with-group-managed-service-accounts).
 
 3. Installeer de nieuwe gMSA op elke host waarop de service wordt uitgevoerd.
    > [!NOTE] 
-   > Zie aan de slag [met door groep beheerde service accounts](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj128431(v=ws.11)) voor meer informatie over het maken en installeren van gMSA op een host voordat u de service configureert voor het gebruik van gMSA.
+   > Zie aan de slag [met door groep beheerde service accounts](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj128431(v=ws.11)) voor meer informatie over het maken en installeren van gMSA op een host voordat u de service configureert voor het gebruik van gMSA.
 
  
 4. Wijzig uw service-identiteit in gMSA en geef een leeg wacht woord op.

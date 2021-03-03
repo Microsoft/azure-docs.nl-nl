@@ -2,18 +2,18 @@
 title: In-place upgrade van Red Hat Enterprise Linux-installatie kopieën op Azure
 description: Meer informatie over het in-place upgrade van Red Hat Enter prise 7. x-installatie kopieën naar de meest recente versie van 8. x.
 author: mathapli
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines
+ms.subservice: redhat
+ms.collection: linux
 ms.topic: article
 ms.date: 04/16/2020
 ms.author: alsin
-ms.reviewer: cynthn
-ms.openlocfilehash: 9b35a3cbe23af91f7f0b8aceecfb8ba3c9720461
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 1be0904cc640eff5af7a77bba3abd6aa062991a8
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96484410"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101676076"
 ---
 # <a name="red-hat-enterprise-linux-in-place-upgrades"></a>Red Hat Enterprise Linux in-place Upgrades
 

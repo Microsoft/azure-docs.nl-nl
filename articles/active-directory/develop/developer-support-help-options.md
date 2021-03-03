@@ -12,12 +12,12 @@ ms.date: 05/23/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
-ms.openlocfilehash: bce9479d063d091eb4fa68d2452d8a4218d45db9
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: c72a305a7000052be4f11c9c24a76db94de47ace
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99219940"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101650104"
 ---
 # <a name="support-and-help-options-for-developers"></a>Ondersteunings- en Help-opties voor ontwikkelaars
 
@@ -30,13 +30,13 @@ Als u net begint met de integratie met Azure Active Directory (Azure AD), micro 
 > * Als u een probleem met een van onze verificatie bibliotheken tegen komt, kunt u een *github* -probleem veroorzaken
 > * Ten slotte, als u met iemand moet praten, wilt u mogelijk een ondersteunings aanvraag openen
 
-## <a name="search"></a>Zoeken
+## <a name="search"></a>Search
 
-Als u een vraag hebt over de ontwikkeling, kunt u het antwoord mogelijk vinden in de documentatie, github-voor [beelden](https://github.com/azure-samples)of antwoorden op [micro soft Q&een](https://docs.microsoft.com/answers/products/) vragen.
+Als u een vraag hebt over de ontwikkeling, kunt u het antwoord mogelijk vinden in de documentatie, github-voor [beelden](https://github.com/azure-samples)of antwoorden op [micro soft Q&een](/answers/products/) vragen.
 
 ### <a name="scoped-search"></a>Zoek opdracht in bereik
 
-Voor snellere resultaten kunt u uw zoek opdracht bereiken naar [micro soft Q&](https://docs.microsoft.com/answers/products/)de documentatie en de code voorbeelden met behulp van de volgende query in uw favoriete zoek machine:
+Voor snellere resultaten kunt u uw zoek opdracht bereiken naar [micro soft Q&](/answers/products/)de documentatie en de code voorbeelden met behulp van de volgende query in uw favoriete zoek machine:
 
 ```
 {Your Search Terms} (site:http://www.docs.microsoft.com/answers/products/ OR site:docs.microsoft.com OR site:github.com/azure-samples OR site:cloudidentity.com OR site:developer.microsoft.com/graph)
@@ -53,24 +53,24 @@ Waar *{uw zoek termen}* overeenkomen met uw zoek woorden.
 
 ## <a name="post-a-question-to-microsoft-qa"></a>Een vraag stellen aan micro soft Q&A
 
-[Micro soft Q&A](https://docs.microsoft.com/answers/products/) is het voorkeurs kanaal voor vragen met betrekking tot ontwikkeling. Hier zijn leden van de ontwikkelaars community en micro soft-team leden rechtstreeks betrokken bij het helpen om uw problemen op te lossen.
+[Micro soft Q&A](/answers/products/) is het voorkeurs kanaal voor vragen met betrekking tot ontwikkeling. Hier zijn leden van de ontwikkelaars community en micro soft-team leden rechtstreeks betrokken bij het helpen om uw problemen op te lossen.
 
-Als u via zoeken geen antwoord op uw vraag kunt vinden, kunt u een nieuwe vraag verzenden naar [micro soft Q&a](https://docs.microsoft.com/answers/products/) . Gebruik een van de volgende tags bij het stellen van vragen om de community te helpen uw vraag sneller te identificeren en te beantwoorden:
+Als u via zoeken geen antwoord op uw vraag kunt vinden, kunt u een nieuwe vraag verzenden naar [micro soft Q&a](/answers/products/) . Gebruik een van de volgende tags bij het stellen van vragen om de community te helpen uw vraag sneller te identificeren en te beantwoorden:
 
 |Onderdeel/gebied  | Tags |
 |---------|---------|
-| ADAL-bibliotheek | [adal](https://docs.microsoft.com/answers/topics/azure-ad-adal-deprecation.html) |
-| MSAL-bibliotheek     | [msal](https://docs.microsoft.com/answers/topics/azure-ad-msal.html) |
-| OWIN-middleware  | [[Azure-Active-Directory]](https://docs.microsoft.com/answers/topics/azure-active-directory.html) |
-| [Azure B2B](../external-identities/what-is-b2b.md)  | [[Azure-AD-B2B]](https://docs.microsoft.com/answers/topics/azure-ad-b2b.html) |
-| [Azure-B2C](https://azure.microsoft.com/services/active-directory-b2c/)  | [[Azure-AD-B2C]](https://docs.microsoft.com/answers/topics/azure-ad-b2c.html) |
-| [Microsoft Graph API](https://developer.microsoft.com/graph/) | [[Azure-AD-Graph]](https://docs.microsoft.com/answers/topics/azure-ad-graph.html) |
-| Elk ander gebied dat betrekking heeft op verificatie-of autorisatie-onderwerpen | [[Azure-Active-Directory]](https://docs.microsoft.com/answers/topics/azure-active-directory.html) |
+| ADAL-bibliotheek | [adal](/answers/topics/azure-ad-adal-deprecation.html) |
+| MSAL-bibliotheek     | [msal](/answers/topics/azure-ad-msal.html) |
+| OWIN-middleware  | [[Azure-Active-Directory]](/answers/topics/azure-active-directory.html) |
+| [Azure B2B](../external-identities/what-is-b2b.md)  | [[Azure-AD-B2B]](/answers/topics/azure-ad-b2b.html) |
+| [Azure-B2C](https://azure.microsoft.com/services/active-directory-b2c/)  | [[Azure-AD-B2C]](/answers/topics/azure-ad-b2c.html) |
+| [Microsoft Graph API](https://developer.microsoft.com/graph/) | [[Azure-AD-Graph]](/answers/topics/azure-ad-graph.html) |
+| Elk ander gebied dat betrekking heeft op verificatie-of autorisatie-onderwerpen | [[Azure-Active-Directory]](/answers/topics/azure-active-directory.html) |
 
-De volgende berichten van [micro soft Q&A](https://docs.microsoft.com/answers/products/) bevatten tips voor het stellen van vragen en het toevoegen van de bron code. Volg deze richt lijnen om de kans te verg Roten dat leden van de Community uw vraag snel kunnen beoordelen en beantwoorden:
+De volgende berichten van [micro soft Q&A](/answers/products/) bevatten tips voor het stellen van vragen en het toevoegen van de bron code. Volg deze richt lijnen om de kans te verg Roten dat leden van de Community uw vraag snel kunnen beoordelen en beantwoorden:
 
-* [Hoe kan ik een goede vraag stellen](https://docs.microsoft.com/answers/articles/24951/how-to-write-a-quality-question.html)
-* [Een mini maal, volledig en verifieerbaar voor beeld maken](https://docs.microsoft.com/answers/articles/24907/how-to-write-a-quality-answer.html)
+* [Hoe kan ik een goede vraag stellen](/answers/articles/24951/how-to-write-a-quality-question.html)
+* [Een mini maal, volledig en verifieerbaar voor beeld maken](/answers/articles/24907/how-to-write-a-quality-answer.html)
 
 ## <a name="create-a-github-issue"></a>Een GitHub-probleem maken
 

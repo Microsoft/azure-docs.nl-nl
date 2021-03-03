@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 42b3c3d4d474c61cbe472b4122ac2f80f218bf8d
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: 74bfa4987f584bbd3490bc5f4f187dee5bc1bd87
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98797256"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101646279"
 ---
 # <a name="conditional-access-for-b2b-collaboration-users"></a>Voorwaardelijke toegang voor B2B-samenwerkings gebruikers
 
@@ -42,7 +42,7 @@ In het volgende diagram ziet u de stroom: ![ afbeelding toont de verificatie str
 | Stap | Beschrijving |
 |--------------|-----------------------|
 | 1. |De gebruiker vraagt om toegang tot een bron in een andere Tenant. De resource leidt de gebruiker naar de resource Tenant, een vertrouwde IdP.|
-| 2. | De resource-Tenant identificeert de gebruiker als een [externe e-mail met een eenmalige wachtwoord code (OTP)](https://docs.microsoft.com/azure/active-directory/external-identities/one-time-passcode) en stuurt een e-mail met het otp-e-mail bericht naar de gebruiker.|
+| 2. | De resource-Tenant identificeert de gebruiker als een [externe e-mail met een eenmalige wachtwoord code (OTP)](./one-time-passcode.md) en stuurt een e-mail met het otp-e-mail bericht naar de gebruiker.|
 | 3. | De gebruiker haalt de OTP op en verzendt de code. De resource-Tenant evalueert de gebruiker aan de hand van het CA-beleid.
 | 4. | Als aan alle CA-beleids regels wordt voldaan, geeft de resource-Tenant een token door en wordt de gebruiker omgeleid naar de bijbehorende resource. |
 
@@ -64,7 +64,7 @@ De resource-Tenant is altijd verantwoordelijk voor Azure AD-Multi-Factor Authent
 
 5. Dit scenario werkt voor elke identiteit: Azure AD of persoonlijk micro soft-account (MSA). Bijvoorbeeld, als gebruiker in contoso verifieert met sociale ID.
 
-6. Fabrikam moet voldoende Premium Azure AD-licenties hebben die Azure AD-Multi-Factor Authentication ondersteunen. De gebruiker van Contoso gebruikt deze licentie vervolgens van fabrikam. Zie het [facturerings model voor externe Azure AD-identiteiten](https://docs.microsoft.com/azure/active-directory/external-identities/external-identities-pricing) voor informatie over de B2B-licentie verlening.
+6. Fabrikam moet voldoende Premium Azure AD-licenties hebben die Azure AD-Multi-Factor Authentication ondersteunen. De gebruiker van Contoso gebruikt deze licentie vervolgens van fabrikam. Zie het [facturerings model voor externe Azure AD-identiteiten](./external-identities-pricing.md) voor informatie over de B2B-licentie verlening.
 
 >[!NOTE]
 >Azure AD Multi-Factor Authentication wordt uitgevoerd bij de resource pacht om voorspel baarheid te garanderen.
@@ -115,44 +115,43 @@ Er zijn verschillende factoren die van invloed zijn op CA-beleid voor B2B-gast g
 
 ### <a name="device-based-conditional-access"></a>Voorwaardelijke toegang op basis van het apparaat
 
-In CA is er een optie vereist om te vereisen dat het apparaat van een gebruiker [compatibel of hybride Azure AD is toegevoegd](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#device-state-preview). B2B-gast gebruikers kunnen alleen voldoen aan de naleving als de resource Tenant het apparaat kan beheren. Apparaten kunnen niet door meer dan één organisatie tegelijk worden beheerd. B2B-gast gebruikers kunnen niet voldoen aan de hybride Azure AD-deelname omdat ze geen on-premises AD-account hebben. Alleen als het apparaat van de gast gebruiker niet-beheerd is, kunnen ze hun apparaat registreren of inschrijven bij de resource Tenant en vervolgens het apparaat compatibel maken. De gebruiker kan dan voldoen aan het besturings element Grant.
+In CA is er een optie vereist om te vereisen dat het apparaat van een gebruiker [compatibel of hybride Azure AD is toegevoegd](../conditional-access/concept-conditional-access-conditions.md#device-state-preview). B2B-gast gebruikers kunnen alleen voldoen aan de naleving als de resource Tenant het apparaat kan beheren. Apparaten kunnen niet door meer dan één organisatie tegelijk worden beheerd. B2B-gast gebruikers kunnen niet voldoen aan de hybride Azure AD-deelname omdat ze geen on-premises AD-account hebben. Alleen als het apparaat van de gast gebruiker niet-beheerd is, kunnen ze hun apparaat registreren of inschrijven bij de resource Tenant en vervolgens het apparaat compatibel maken. De gebruiker kan dan voldoen aan het besturings element Grant.
 
 >[!Note]
 >Het is niet raadzaam een beheerd apparaat voor externe gebruikers te vereisen.
 
 ### <a name="mobile-application-management-policies"></a>Beleidsregels voor Mobile Application Management
 
-De CA verleent besturings elementen zoals **goedgekeurde client-apps vereisen** en **vereisen dat** het apparaat in de Tenant wordt geregistreerd. Deze besturings elementen kunnen alleen worden toegepast op [IOS-en Android-apparaten](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#device-platforms). Geen van deze besturings elementen kan echter worden toegepast op B2B-gast gebruikers als het apparaat van de gebruiker al wordt beheerd door een andere organisatie. Een mobiel apparaat kan niet in meer dan één Tenant tegelijk worden geregistreerd. Als het mobiele apparaat wordt beheerd door een andere organisatie, wordt de gebruiker geblokkeerd. Alleen als het apparaat van de gast gebruiker niet-beheerd is, kunnen ze hun apparaat registreren in de resource-Tenant. De gebruiker kan dan voldoen aan het besturings element Grant.  
+De CA verleent besturings elementen zoals **goedgekeurde client-apps vereisen** en **vereisen dat** het apparaat in de Tenant wordt geregistreerd. Deze besturings elementen kunnen alleen worden toegepast op [IOS-en Android-apparaten](../conditional-access/concept-conditional-access-conditions.md#device-platforms). Geen van deze besturings elementen kan echter worden toegepast op B2B-gast gebruikers als het apparaat van de gebruiker al wordt beheerd door een andere organisatie. Een mobiel apparaat kan niet in meer dan één Tenant tegelijk worden geregistreerd. Als het mobiele apparaat wordt beheerd door een andere organisatie, wordt de gebruiker geblokkeerd. Alleen als het apparaat van de gast gebruiker niet-beheerd is, kunnen ze hun apparaat registreren in de resource-Tenant. De gebruiker kan dan voldoen aan het besturings element Grant.  
 
 >[!NOTE]
 >Het is niet raadzaam om een beveiligings beleid voor apps voor externe gebruikers te vereisen.
 
 ### <a name="location-based-conditional-access"></a>Voorwaardelijke toegang op basis van locatie
 
-Het op [locatie gebaseerde beleid](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#locations) op basis van IP-adresbereiken kan worden afgedwongen als de uitgenodigde organisatie een vertrouwd IP-adres bereik kan maken dat de partner organisaties definieert.
+Het op [locatie gebaseerde beleid](../conditional-access/concept-conditional-access-conditions.md#locations) op basis van IP-adresbereiken kan worden afgedwongen als de uitgenodigde organisatie een vertrouwd IP-adres bereik kan maken dat de partner organisaties definieert.
 
 Beleids regels kunnen ook worden afgedwongen op basis van **geografische locaties**.
 
 ### <a name="risk-based-conditional-access"></a>Voorwaardelijke toegang op basis van risico
 
-Het [beleid voor aanmeldings Risico's](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#sign-in-risk) wordt afgedwongen als de B2B-gast gebruiker voldoet aan de granting Control. Een organisatie kan bijvoorbeeld Azure AD Multi-Factor Authentication vereisen voor gemiddeld of hoog aanmeld risico. Als een gebruiker echter niet eerder is geregistreerd voor Azure AD-Multi-Factor Authentication in de resource-Tenant, wordt de gebruiker geblokkeerd. Dit wordt gedaan om te voor komen dat kwaadwillende gebruikers hun eigen Azure AD-Multi-Factor Authentication referenties registreren in de gebeurtenis die ze het wacht woord van een rechtmatig gebruikers veroorzaken.
+Het [beleid voor aanmeldings Risico's](../conditional-access/concept-conditional-access-conditions.md#sign-in-risk) wordt afgedwongen als de B2B-gast gebruiker voldoet aan de granting Control. Een organisatie kan bijvoorbeeld Azure AD Multi-Factor Authentication vereisen voor gemiddeld of hoog aanmeld risico. Als een gebruiker echter niet eerder is geregistreerd voor Azure AD-Multi-Factor Authentication in de resource-Tenant, wordt de gebruiker geblokkeerd. Dit wordt gedaan om te voor komen dat kwaadwillende gebruikers hun eigen Azure AD-Multi-Factor Authentication referenties registreren in de gebeurtenis die ze het wacht woord van een rechtmatig gebruikers veroorzaken.
 
-Het [beleid voor gebruikers Risico's](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#user-risk) kan echter niet worden omgezet in de resource-Tenant. Als u bijvoorbeeld een wacht woord moet wijzigen voor gast gebruikers met een hoog risico, worden ze geblokkeerd omdat het niet mogelijk is om wacht woorden opnieuw in te stellen in de resource directory.
+Het [beleid voor gebruikers Risico's](../conditional-access/concept-conditional-access-conditions.md#user-risk) kan echter niet worden omgezet in de resource-Tenant. Als u bijvoorbeeld een wacht woord moet wijzigen voor gast gebruikers met een hoog risico, worden ze geblokkeerd omdat het niet mogelijk is om wacht woorden opnieuw in te stellen in de resource directory.
 
 ### <a name="conditional-access-client-apps-condition"></a>Voor waarde voor client-apps voor voorwaardelijke toegang
 
-De voor [waarden voor client-apps](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#client-apps) gedragen zich hetzelfde voor B2B-gast gebruikers als voor elk ander type gebruiker. U kunt bijvoorbeeld voor komen dat gast gebruikers verouderde verificatie protocollen gebruiken.
+De voor [waarden voor client-apps](../conditional-access/concept-conditional-access-conditions.md#client-apps) gedragen zich hetzelfde voor B2B-gast gebruikers als voor elk ander type gebruiker. U kunt bijvoorbeeld voor komen dat gast gebruikers verouderde verificatie protocollen gebruiken.
 
 ### <a name="conditional-access-session-controls"></a>Sessie besturings elementen voor voorwaardelijke toegang
 
-[Sessie besturings elementen](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-session) gedragen zich hetzelfde voor B2B-gast gebruikers als voor elk ander type gebruiker.
+[Sessie besturings elementen](../conditional-access/concept-conditional-access-session.md) gedragen zich hetzelfde voor B2B-gast gebruikers als voor elk ander type gebruiker.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Zie voor meer informatie de volgende artikelen over Azure AD B2B-samen werking:
 
-- [Wat is Azure AD B2B-samenwerking?](https://docs.microsoft.com/azure/active-directory/external-identities/what-is-b2b)
-- [Identiteitsbeveiliging en B2B-gebruikers](https://docs.microsoft.com/azure/active-directory/identity-protection/concept-identity-protection-b2b)
+- [Wat is Azure AD B2B-samenwerking?](./what-is-b2b.md)
+- [Identiteitsbeveiliging en B2B-gebruikers](../identity-protection/concept-identity-protection-b2b.md)
 - [Prijzen van externe identiteiten](https://azure.microsoft.com/pricing/details/active-directory/)
-- [Veelgestelde vragen (FAQ)](https://docs.microsoft.com/azure/active-directory/external-identities/faq)
-
+- [Veelgestelde vragen (FAQ)](./faq.md)

@@ -6,15 +6,18 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.author: mjbrown
-ms.openlocfilehash: db6721754802a3eeda387339498dadb9d25b3685
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 813bb99be0d072ebc9b21dba07ed85671a925910
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526938"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101659440"
 ---
 # <a name="azure-role-based-access-control-in-azure-cosmos-db"></a>Toegangs beheer op basis van rollen in Azure in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
+
+> [!NOTE]
+> Dit artikel heeft betrekking op op rollen gebaseerd toegangs beheer voor beheer vlak bewerkingen in Azure Cosmos DB. Zie [Azure Cosmos DB RBAC](how-to-setup-rbac.md) voor op rollen gebaseerd toegangs beheer dat wordt toegepast op uw gegevenslaag bewerkingen als u gegevens vlak bewerkingen gebruikt.
 
 Azure Cosmos DB biedt ingebouwde Azure-functies voor op rollen gebaseerd toegangs beheer (Azure RBAC) voor algemene beheer scenario's in Azure Cosmos DB. Een persoon die een profiel in Azure Active Directory heeft, kan deze Azure-rollen toewijzen aan gebruikers, groepen, service-principals of beheerde identiteiten voor het verlenen of weigeren van toegang tot resources en bewerkingen op Azure Cosmos DB-resources. Roltoewijzingen zijn alleen gericht op toegangs beheer, waaronder toegang tot Azure Cosmos-accounts, data bases, containers en aanbiedingen (door Voer).
 
@@ -69,7 +72,7 @@ Met deze instelling wordt voor komen dat alle Cosmos-bronnen worden gewijzigd va
 
 - Opgeslagen procedures, triggers of door de gebruiker gedefinieerde functies wijzigen.
 
-Als uw toepassingen (of gebruikers via Azure Portal) een van deze acties uitvoeren, moeten ze worden gemigreerd om te worden uitgevoerd via [arm-sjablonen](./manage-with-templates.md), [Power shell](manage-with-powershell.md), [Azure cli](manage-with-cli.md), rest of [Azure Management Library](https://github.com/Azure-Samples/cosmos-management-net). Houd er rekening mee dat Azure Management beschikbaar is in [meerdere talen](/azure/?product=featured#languages-and-tools).
+Als uw toepassingen (of gebruikers via Azure Portal) een van deze acties uitvoeren, moeten ze worden gemigreerd om te worden uitgevoerd via [arm-sjablonen](./manage-with-templates.md), [Power shell](manage-with-powershell.md), [Azure cli](manage-with-cli.md), rest of [Azure Management Library](https://github.com/Azure-Samples/cosmos-management-net). Houd er rekening mee dat Azure Management beschikbaar is in [meerdere talen](../index.yml?product=featured#languages-and-tools).
 
 ### <a name="set-via-arm-template"></a>Instellen via ARM-sjabloon
 

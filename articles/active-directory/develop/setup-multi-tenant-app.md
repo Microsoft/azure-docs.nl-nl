@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 07/15/2019
 ms.author: ryanwi
 ROBOTS: NOINDEX
-ms.openlocfilehash: 9564727cfe59f243fd1096c93d7eadf1d830be9e
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 9c6272901600886958d4339d067ca75bb9a73793
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99052546"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101649118"
 ---
 # <a name="how-to-configure-a-new-multi-tenant-application"></a>Een nieuwe toepassing met meerdere tenants configureren
 
@@ -29,4 +29,4 @@ Hier volgt een lijst met aanbevolen onderwerpen voor meer informatie over multi 
 - Meer informatie over [hoe een toepassing met meerdere tenants is geconfigureerd en end-to-end heeft gedecodeerd](./howto-convert-app-to-be-multi-tenant.md), met inbegrip van de registratie, het gebruik van het ' algemene ' eind punt, het implementeren van de toestemming ' gebruiker ' en ' beheerder ', het implementeren van geavanceerde scenario's met meerdere lagen
 
 ## <a name="next-steps"></a>Volgende stappen
-[AzureAD micro soft Q&A](https://docs.microsoft.com/answers/topics/azure-active-directory.html)
+[AzureAD micro soft Q&A](/answers/topics/azure-active-directory.html)

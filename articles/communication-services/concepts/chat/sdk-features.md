@@ -9,16 +9,14 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 93f90520f9a5f6ec424a7558418abfa4de4699ee
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: ef013d97be8a5decbee46d25752ced7bd622a646
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100364831"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101657771"
 ---
 # <a name="chat-client-library-overview"></a>Overzicht van de chat-clientbibliotheek
-
-[!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
 
 Chat-clientbibliotheken van Azure Communication Services kunnen worden gebruikt om uitgebreide realtime chatmogelijkheden aan uw toepassingen toe te voegen.
 
@@ -26,7 +24,7 @@ Chat-clientbibliotheken van Azure Communication Services kunnen worden gebruikt 
 
 De volgende lijst bevat de set van functies die momenteel beschikbaar zijn in de Communication Services die chat-clientbibliotheken aanroepen.
 
-| Groep functies | Mogelijkheid                                                                                                          | JS  | Java | .NET | Python |
+| Groep van functies | Mogelijkheid                                                                                                          | JS  | Java | .NET | Python |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------- | --- | ----- | ---- | -----  |
 | Belangrijkste mogelijkheden | Een chatgesprek maken tussen 2 of meer gebruikers (max. 250 gebruikers)                                                       | ✔️   | ✔️  | ✔️    | ✔️   |
 |                   | Het onderwerp van een chatgesprek bijwerken                                                                              | ✔️   | ✔️ | ✔️    | ✔️   |

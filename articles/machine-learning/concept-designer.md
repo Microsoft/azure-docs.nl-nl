@@ -10,14 +10,14 @@ ms.author: peterlu
 author: peterclu
 ms.date: 06/28/2020
 ms.custom: designer
-ms.openlocfilehash: 059b521461969d8148ced90cb3ceffd14a00c4bb
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: b439c5f084c762d3a256806d2e45dab96832bb78
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322259"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101661083"
 ---
-# <a name="what-is-azure-machine-learning-designer"></a>Wat is Azure Machine Learning Designer? 
+# <a name="what-is-azure-machine-learning-designer"></a>Wat is de Azure Machine Learning-ontwerpfunctie? 
 
 
 Met Azure Machine Learning Designer kunt u [gegevens sets](#datasets) en [modules](#module) op een interactief canvas visueel verbinden om machine learning modellen te maken. Voor meer informatie over hoe u aan de slag kunt gaan met de ontwerp functie, Zie [zelf studie: prijs van auto Mobile voors pellen met de ontwerper](tutorial-designer-automobile-price-train-score.md)
@@ -28,7 +28,7 @@ De ontwerp functie maakt gebruik van uw Azure Machine Learning- [werk ruimte](co
 
 + [Pijplijnen](#pipeline)
 + [Gegevenssets](#datasets)
-+ [Rekenresources](#compute)
++ [Reken resources](#compute)
 + [Geregistreerde modellen](concept-azure-machine-learning-architecture.md#models)
 + [Gepubliceerde pijp lijnen](#publish)
 + [Realtime-eind punten](#deploy)
@@ -81,7 +81,7 @@ Een module is een algoritme dat u met uw gegevens kunt uitvoeren. De designer he
 
 Een module kan een reeks parameters hebben waarmee u de interne algoritmen van de module kunt configureren. Wanneer u een module op het canvas selecteert, worden de parameters van de module weergegeven in het deelvenster Properties, rechts van het canvas. U kunt de parameters in dit deelvenster wijzigen om het model af te stemmen. U kunt de reken resources voor afzonderlijke modules in de ontwerp functie instellen. 
 
-:::image type="content" source="./media/concept-designer/properties.png"alt-text="Eigenschappen van module":::
+:::image type="content" source="./media/concept-designer/properties.png" alt-text="Eigenschappen van module":::
 
 
 Zie voor meer informatie over de beschik bare bibliotheek met machine learning algoritmen [overzicht van algoritme & module](algorithm-module-reference/module-reference.md). Zie het overzicht van [Azure machine learning Algorithm Cheat](algorithm-cheat-sheet.md)voor meer informatie over het kiezen van een algoritme.

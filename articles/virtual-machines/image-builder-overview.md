@@ -6,14 +6,14 @@ ms.author: danis
 ms.date: 05/02/2019
 ms.topic: conceptual
 ms.service: virtual-machines
-ms.subservice: imaging
+ms.subservice: image-builder
 ms.reviewer: cynthn
-ms.openlocfilehash: fb596352011bcce3130d22b7277444bc45679f4c
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 1c70edfc3bad2be70d26c71736ca06fcc4a8dcdb
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96841482"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101672511"
 ---
 # <a name="preview-azure-image-builder-overview"></a>Voor beeld: overzicht van Azure Image Builder
 

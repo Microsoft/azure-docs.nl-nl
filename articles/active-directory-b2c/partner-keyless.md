@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 1/17/2021
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: c8a5666d373852da5ff79490f435b2d66d5cc6e0
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: b817cfc347ee79ff7c9cbb4124e3f2b7e4d2b7ee
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99090363"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101644252"
 ---
 # <a name="tutorial-configure-keyless-with-azure-active-directory-b2c"></a>Zelf studie: met Azure Active Directory B2C configureren
 
@@ -30,7 +30,7 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 - Een Azure-abonnement. Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
 
-- Een [Azure AD B2C-Tenant](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant). De Tenant moet worden gekoppeld aan uw Azure-abonnement.
+- Een [Azure AD B2C-Tenant](./tutorial-create-tenant.md). De Tenant moet worden gekoppeld aan uw Azure-abonnement.
 
 - Een onverminderde Cloud Tenant, een gratis [proef account](https://keyless.io/go)ophalen.
 
@@ -157,6 +157,6 @@ U ziet nu een nieuwe OIDC-ID-provider die wordt vermeld in uw B2C-id-providers.
 
 Raadpleeg de volgende artikelen voor meer informatie:
 
-- [Aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

@@ -10,19 +10,19 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 294870d3448886b9cea573a0e79b3ac436941f89
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: b1c03bafd6d97dd6a60defee00d4efe854315631
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98696486"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101648081"
 ---
 # <a name="tutorial-configuring-netsuite-for-automatic-user-provisioning"></a>Zelfstudie: NetSuite configureren voor automatische inrichting van gebruikers
 
 Het doel van deze zelfstudie is om u te laten zien welke stappen u moet uitvoeren in NetSuite OneWorld en Azure AD om automatisch gebruikersaccounts van Azure AD in te richten in NetSuite, of de inrichting ervan ongedaan te maken.
 
 > [!WARNING]
-> Deze inrichtings integratie werkt niet meer in februari 2020 vanwege een wijziging in de NetSuite-Api's die door micro soft worden gebruikt om gebruikers in te richten in Netsuite. Als gevolg hiervan wordt de inrichtings functionaliteit van de toepassing NetSuite in de galerie met Azure Active Directory Enter prise-apps binnenkort verwijderd. De SSO-functionaliteit van de toepassing blijft intact. Micro soft werkt samen met NetSuite om een nieuwe moderne inrichtings integratie te bouwen, maar er is op dit moment geen sprake van een afronding wanneer dit wordt voltooid.
+> Deze inrichtings integratie stopt met de release van de lente 2021-update van het NetSuite vanwege een wijziging in de NetSuite-Api's die door micro soft worden gebruikt om gebruikers in te richten in Netsuite.  Met deze update worden de klanten van NetSuite tussen februari en april 2021 bereikt. Als gevolg hiervan wordt de inrichtings functionaliteit van de toepassing NetSuite in de galerie met Azure Active Directory Enter prise-apps binnenkort verwijderd. De SSO-functionaliteit van de toepassing blijft intact. Micro soft werkt samen met NetSuite om een nieuwe moderne inrichtings integratie te bouwen, maar er is op dit moment geen sprake van een afronding wanneer dit wordt voltooid.
 
 ## <a name="prerequisites"></a>Vereisten
 

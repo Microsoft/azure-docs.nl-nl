@@ -8,22 +8,22 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: reference
-ms.date: 5/4/2020
+ms.date: 2/22/2021
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 94c34e6f7cb24ff749e5de95f1c28a496700af80
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: c5e7f556f37a1d6d53e0a938490f1099a7be776a
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96348718"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101647418"
 ---
 # <a name="whats-new-for-authentication"></a>Wat is er nieuw voor verificatie?
 
 > Ontvang een melding van updates op deze pagina door deze URL in uw RSS feed-lezer te plakken:<br/>`https://docs.microsoft.com/api/search/rss?search=%22whats%20new%20for%20authentication%22&locale=en-us`
 
-Het verificatie systeem wijzigt en voegt voortdurend functies toe om de naleving van de beveiliging en standaarden te verbeteren. Om up-to-date te blijven met de meest recente ontwikkelingen, vindt u in dit artikel informatie over de volgende details:
+Het verificatie systeem wijzigt en voegt voortdurend functies toe om de naleving van de beveiliging en standaarden te verbeteren. Dit artikel bevat informatie over de volgende gegevens om op de hoogte te blijven van de meest recente ontwikkelingen:
 
 - Recentste functies
 - Bekende problemen
@@ -35,7 +35,28 @@ Het verificatie systeem wijzigt en voegt voortdurend functies toe om de naleving
 
 ## <a name="upcoming-changes"></a>Aanstaande wijzigingen
 
-Geen gepland op dit moment.  Hieronder vindt u een overzicht van de wijzigingen die in of beschikbaar zijn voor productie.
+### <a name="conditional-access-will-only-trigger-for-explicitly-requested-scopes"></a>Voorwaardelijke toegang wordt alleen geactiveerd voor expliciet aangevraagde bereiken
+
+**Ingangs datum**: maart 2021
+
+**Beïnvloede eind punten**: v 2.0
+
+**Beïnvloede protocollen**: alle stromen die gebruikmaken van [dynamische toestemming](v2-permissions-and-consent.md#requesting-individual-user-consent)
+
+Toepassingen die momenteel gebruikmaken van dynamische toestemming, krijgen alle machtigingen waarvoor ze toestemming hebben, zelfs als ze niet met de naam zijn aangevraagd in de `scope` para meter.  Dit kan ertoe leiden dat een app die bijvoorbeeld alleen `user.read` wordt aangevraagd, maar met toestemming tot `files.read` , wordt geforceerd dat de voorwaardelijke toegang die is toegewezen aan de machtiging, wordt door gegeven `files.read` . 
+
+Azure AD wijzigt de manier waarop niet-aangevraagde scopes worden geleverd aan toepassingen, zodat alleen expliciete aangevraagde scopes voorwaardelijke toegang activeren, om het aantal onnodige voorwaardelijke toegangs prompts te verminderen. Deze wijziging kan ertoe leiden dat apps die afhankelijk zijn van het vorige gedrag van Azure AD (met andere woorden, zelfs wanneer ze niet werden aangevraagd), kunnen worden onderbroken, aangezien de tokens die ze aanvragen, ontbrekende machtigingen hebben.
+
+Apps ontvangen nu toegangs tokens met een combi natie van machtigingen in dit-verzoek en de gebruikers die toestemming hebben voor waarvoor geen prompts voor voorwaardelijke toegang zijn vereist.  De bereiken van het toegangs token worden weer gegeven in de para meter van de token reactie `scope` . 
+
+**Voorbeelden**
+
+Een app heeft toestemming voor `user.read` , `files.readwrite` , en `tasks.read` . `files.readwrite` Er is beleid voor voorwaardelijke toegang toegepast, terwijl de andere twee niet. Als een app een token aanvraag maakt voor en `scope=user.read` de momenteel aangemelde gebruiker geen beleids regels voor voorwaardelijke toegang heeft door gegeven, is het resulterende token voor de en- `user.read` `tasks.read` machtigingen. `tasks.read` is opgenomen omdat de app hiervoor toestemming heeft en hiervoor geen beleid voor voorwaardelijke toegang moet worden afgedwongen. 
+
+Als de app vervolgens vraagt `scope=files.readwrite` , wordt de voorwaardelijke toegang die door de Tenant wordt vereist, geactiveerd, waardoor de app wordt gedwongen een interactieve verificatie prompt weer te geven waarin kan worden voldaan aan het beleid voor voorwaardelijke toegang.  Het geretourneerde token bevat alle drie de scopes. 
+
+Als de app vervolgens één laatste aanvraag voor een van de drie bereiken (zegt, `scope=tasks.read` ), wordt in azure AD weer geven dat de gebruiker al het vereiste beleid voor voorwaardelijke toegang heeft voltooid `files.readwrite` en vervolgens een token met alle drie de machtigingen erin heeft uitgegeven. 
+
 
 ## <a name="may-2020"></a>Mei 2020
 

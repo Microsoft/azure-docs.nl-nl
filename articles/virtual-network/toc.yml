@@ -4,7 +4,7 @@
   items:
     - name: Over Virtual Network
       href: virtual-networks-overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
     - name: Een virtueel netwerk maken - Portal
       href: quick-create-portal.md
@@ -99,6 +99,8 @@
           href: ipv6-public-ip-address-prefix.md
         - name: Routeringsvoorkeur
           href: routing-preference-overview.md
+        - name: Routerings voorkeur niet in data limiet
+          href: routing-preference-unmetered.md
         - name: Beveiligingsbasislijn voor openbaar IP-adres
           href: public-ip-security-baseline.md
     - name: Beveiliging
@@ -274,6 +276,10 @@
                       href: configure-routing-preference-virtual-machine-powershell.md
                     - name: Azure CLI
                       href: configure-routing-preference-virtual-machine-cli.md
+                - name: Gemengde routerings voorkeur voor een virtuele machine configureren
+                  href: routing-preference-mixed-network-adapter-portal.md
+                - name: Routerings voorkeur configureren voor een AKS-cluster
+                  href: routing-preference-azure-kubernetes-service-cli.md
     - name: Beveiliging
       items:
         - name: Netwerkverkeer filteren

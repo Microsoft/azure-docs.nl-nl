@@ -6,20 +6,19 @@ documentationcenter: ''
 author: hermanndms
 manager: juergent
 editor: ''
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines-sap
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/10/2018
 ms.author: hermannd
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 88b1cd2a5bf33d6401f0d2e15237400e27c72e54
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 990274f34dac0234c2c2d521ca6a260f999671bb
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967649"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101674515"
 ---
 # <a name="set-up-smt-server-for-suse-linux"></a>Een SMT-server instellen voor SUSE Linux
 Grote instanties van SAP HANA hebben geen directe verbinding met internet. Het is geen eenvoudig proces om een dergelijke eenheid te registreren bij de provider van het besturings systeem en om updates te downloaden en toe te passen. Een oplossing voor SUSE Linux is het instellen van een SMT-server in een virtuele machine van Azure. Host de virtuele machine in een virtueel Azure-netwerk dat is verbonden met de HANA grote instantie. Met een dergelijke SMT-server kan de HANA-eenheid voor grote instanties updates registreren en downloaden. 
@@ -35,7 +34,7 @@ De vereisten voor het installeren van een SMT-server die voldoet aan de taak voo
 
 Meld u eerst aan bij het [SuSE-klanten centrum](https://scc.suse.com/).
 
-Ga naar de referenties van de **organisatie**  >  **Organization Credentials**. In deze sectie vindt u de referenties die nodig zijn voor het instellen van de SMT-server.
+Ga naar de referenties van de **organisatie**  >  . In deze sectie vindt u de referenties die nodig zijn voor het instellen van de SMT-server.
 
 Installeer vervolgens een SUSE Linux-VM in het virtuele Azure-netwerk. Als u de virtuele machine wilt implementeren, maakt u een SLES 12 SP2 galerie-afbeelding van Azure (Selecteer BYOS SUSE-afbeelding). In het implementatie proces definieert u geen DNS-naam en gebruikt u geen statische IP-adressen.
 

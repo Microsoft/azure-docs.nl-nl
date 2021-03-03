@@ -9,17 +9,18 @@ ms.service: cognitive-search
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/09/2021
-ms.openlocfilehash: c992693bfb278ac559feb6fa82fa947086ceafbb
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 111424ab3a3bd6020e70a08ddf2c494996f6f0ea
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100381134"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101676684"
 ---
 # <a name="manage-your-azure-cognitive-search-service-with-powershell"></a>Uw Azure Cognitive Search-service beheren met Power shell
 > [!div class="op_single_selector"]
 > * [Portal](search-manage.md)
 > * [PowerShell](search-manage-powershell.md)
+> * [Azure-CLI](search-manage-azure-cli.md)
 > * [REST API](/rest/api/searchmanagement/)
 > * [.NET SDK](/dotnet/api/microsoft.azure.management.search)
 > * [Python](https://pypi.python.org/pypi/azure-mgmt-search/0.1.0)
@@ -316,7 +317,7 @@ New-AzPrivateDnsZoneGroup `
     -PrivateDnsZoneConfig $config
 ```
 
-Zie voor meer informatie over het maken van privé-eind punten in Power shell deze [koppeling Quick](https://docs.microsoft.com/azure/private-link/create-private-endpoint-powershell) start
+Zie voor meer informatie over het maken van privé-eind punten in Power shell deze [koppeling Quick](../private-link/create-private-endpoint-powershell.md) start
 
 ### <a name="manage-private-endpoint-connections"></a>Verbindingen met privé-eind punten beheren
 
@@ -410,7 +411,7 @@ Een volledige lijst met de Azure-resources waarvoor u uitgaande privé-eind punt
 [New-AzSearchSharedPrivateLinkResource](/powershell/module/az.search/New-AzSearchSharedPrivateLinkResource) wordt gebruikt om de gedeelde persoonlijke koppelings bron te maken. Houd er rekening mee dat er mogelijk een configuratie vereist is voor de gegevens bron voordat u deze opdracht uitvoert.
 
 ```azurepowershell-interactive
-New-AzSearchSharedPrivateLinkResource -ResourceGroupName <resource-group-name> -ServiceName <search-service-name> -Name <spl-name> -PrivateLinkResourceId /subscriptions/<alphanumeric-subscription-ID>/resourcegroups/<resource-group-name>/providers/Microsoft.Storage/storageAccounts/myBlobStorage -GroupId <group-id> -RequestMessage "Please approve" 
+New-AzSearchSharedPrivateLinkResource -ResourceGroupName <resource-group-name> -ServiceName <search-service-name> -Name <spl-name> -PrivateLinkResourceId /subscriptions/<alphanumeric-subscription-ID>/resourceGroups/<resource-group-name>/providers/Microsoft.Storage/storageAccounts/myBlobStorage -GroupId <group-id> -RequestMessage "Please approve" 
 ```
 
 Met [Get-AzSearchSharedPrivateLinkResource](/powershell/module/az.search/Get-AzSearchSharedPrivateLinkResource) kunt u de gedeelde persoonlijke koppelings resources ophalen en hun status weer geven.

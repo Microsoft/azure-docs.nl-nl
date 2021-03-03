@@ -6,23 +6,23 @@ ms.author: bagol
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
-ms.date: 11/24/2020
-ms.openlocfilehash: 246a9dcfa35498d99fd403f10e5c17d7707efe84
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.date: 01/17/2021
+ms.openlocfilehash: 5cbfb41d50e055f745864e4d5f8bc15a55d925e7
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202620"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101668566"
 ---
 # <a name="file-extension-insights-about-your-data-from-azure-purview"></a>Inzichten over uw gegevens van Azure controle sfeer liggen 
 
 In deze hand leiding wordt beschreven hoe u toegang kunt krijgen tot inzichten over de bestands extensies of bestands typen die in uw gegevens worden gevonden, kunt lezen, bekijken en filteren.
 
-Ondersteunde gegevens bronnen zijn onder andere: Azure Blob Storage, Azure Data Lake Storage (ADLS) GEN 1, Azure Data Lake Storage (ADLS) GEN 2
+Ondersteunde gegevens bronnen zijn onder andere: Azure Blob Storage, Azure Data Lake Storage (ADLS) GEN 1, Azure Data Lake Storage (ADLS) GEN 2, Amazon S3 buckets
 
 In deze hand leiding leert u het volgende:
 > [!div class="checklist"]
-> * Start uw controle sfeer liggen-account vanuit Azure. 
+> * Start uw controle sfeer liggen-account vanuit Azure 
 > - Bekijk de bestands extensie inzichten op uw gegevens
 > - Inzoomen voor meer informatie over de bestands extensie voor uw gegevens
 
@@ -32,7 +32,7 @@ Voordat u aan de slag gaat met controle sfeer liggen Insights, moet u ervoor zor
 
 - Stel uw Azure-resources in en vul de relevante accounts in met test gegevens
 
-- Een scan voor de test gegevens in elke gegevens bron instellen en volt ooien
+- Een scan voor de test gegevens in elke gegevens bron instellen en volt ooien. Zie voor meer informatie [gegevens bronnen beheren in azure controle sfeer liggen (preview)](manage-data-sources.md) en [een set met scan regels maken](create-a-scan-rule-set.md).
 
 - Meld u aan bij controle sfeer liggen met een account met een [gegevens lezer of gegevens curator rol](catalog-permissions.md#azure-purviews-pre-defined-data-plane-roles).
 

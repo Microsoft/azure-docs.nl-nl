@@ -1,29 +1,29 @@
 ---
 title: Een aangepaste voor keur maken in azure automanage voor Vm's
-description: Meer informatie over het aanpassen van het configuratie profiel in azure automanage voor Vm's en het instellen van uw eigen voor keuren.
+description: Meer informatie over het aanpassen van de omgevings configuratie in azure automanage en het instellen van uw eigen voor keuren.
 author: ju-shim
 ms.service: virtual-machines
 ms.subservice: automanage
 ms.workload: infrastructure
 ms.topic: how-to
-ms.date: 09/04/2020
+ms.date: 02/22/2021
 ms.author: jushiman
-ms.openlocfilehash: 377677c9e5e81487059241db68baff639a3de033
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 584a3503bf736fcf727a169611e6c79e0c374c90
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91715045"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101647928"
 ---
 # <a name="create-a-custom-preference-in-azure-automanage-for-vms"></a>Een aangepaste voor keur maken in azure automanage voor Vm's
 
-Het automatisch beheren van Azure voor de aanbevolen procedures voor virtuele machines bevat standaard configuratie profielen die zo nodig kunnen worden aangepast. In dit artikel wordt uitgelegd hoe u uw eigen configuratie profiel voorkeuren kunt instellen wanneer u automatisch beheer inschakelt op een nieuwe of bestaande virtuele machine.
+Het automatisch beheren van Azure voor de aanbevolen procedures voor virtuele machines bevat standaard omgevingen die zo nodig kunnen worden aangepast. In dit artikel wordt uitgelegd hoe u uw eigen voor keuren kunt instellen wanneer u automatisch beheer inschakelt op een nieuwe of bestaande virtuele machine.
 
 Momenteel worden aanpassingen op [Azure backup](..\backup\backup-azure-arm-vms-prepare.md#create-a-custom-policy) en [micro soft antimalware](../security/fundamentals/antimalware.md#default-and-custom-antimalware-configuration)ondersteund.
 
 
 > [!NOTE]
-> U kunt het configuratie profiel of de voor keur op uw virtuele machine niet wijzigen terwijl automanage is ingeschakeld. U moet automatisch beheer voor die virtuele machine uitschakelen en vervolgens automanage opnieuw inschakelen met het gewenste configuratie profiel en voor keuren.
+> U kunt de omgeving of voor keur op uw virtuele machine niet wijzigen terwijl automanage is ingeschakeld. U moet automatisch beheer voor die virtuele machine uitschakelen en vervolgens automanage opnieuw inschakelen met de gewenste configuratie omgeving en voor keuren.
 
 
 ## <a name="prerequisites"></a>Vereisten
@@ -44,7 +44,7 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 ## <a name="enable-automanage-for-vms-on-an-existing-vm"></a>Automanage inschakelen voor virtuele machines op een bestaande virtuele machine
 
-1. Zoek in de zoekbalk naar **Automatisch beheer: aanbevolen procedures voor virtuele Azure-machines** en selecteer deze optie.
+1. Zoek in de zoek balk naar en selecteer automatisch **beheer – aanbevolen procedures voor Azure-machines**.
 
 2. Selecteer **Op bestaande VM inschakelen**.
 
@@ -55,30 +55,33 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
     :::image type="content" source="media\virtual-machine-custom-preferences\existing-vm-select-machine.png" alt-text="Bestaande virtuele machine selecteren in de lijst met beschikbare virtuele machines.":::
 
-4. Klik onder **Configuratieprofiel**op **Bladeren en profielen en voorkeuren wijzigen**.
+    > [!NOTE]
+    > Klik op de computers die niet **in aanmerking komen weer geven** om de lijst met niet-ondersteunde machines en de reden te bekijken. 
 
-    :::image type="content" source="media\virtual-machine-custom-preferences\existing-vm-quick-create.png" alt-text="Bestaande virtuele machine selecteren in de lijst met beschikbare virtuele machines.":::
+4. Klik onder **configuratie** op **omgevingen vergelijken**.
 
-5. Selecteer op de Blade **configuratie profiel selecteren + voor keuren** een profiel aan de linkerkant: *dev/test* voor testen, *Prod* voor productie.
+    :::image type="content" source="media\virtual-machine-custom-preferences\existing-vm-quick-create.png" alt-text="Omgevingen vergelijken.":::
 
-    :::image type="content" source="media\virtual-machine-custom-preferences\browse-production-profile.png" alt-text="Bestaande virtuele machine selecteren in de lijst met beschikbare virtuele machines.":::
+5. Selecteer op de Blade **omgevings Details** een omgeving in de vervolg keuzelijst: *dev/test* voor testen, *Prod* voor productie en klik op **OK**
 
-6. Op het gekozen profiel bevat de voor **keuren voor configuratie** een vervolg keuzelijst waarin u kunt aanpassen voor bepaalde services.
+    :::image type="content" source="media\virtual-machine-custom-preferences\browse-production-profile.png" alt-text="Blader door de productie omgeving.":::
+
+6. Nadat u uw omgeving hebt geselecteerd, kunt u **configuratie voorkeuren** selecteren. Standaard wordt de voor keuren voor aanbevolen procedures van Azure gebruikt. Deze voor keur bevat de aanbevolen instellingen voor elke service. Wijzig deze instellingen door een aangepaste voor keur te maken: 
     1. Klik op **nieuwe voor keuren maken**.
     1. Vul op de Blade **een configuratie voorkeur maken** het tabblad basis beginselen in:
         1. Abonnement
         1. Resourcegroep
         1. Voorkeurs naam
-        1. Regio
+        1. Region
 
-    :::image type="content" source="media\virtual-machine-custom-preferences\create-preference.png" alt-text="Bestaande virtuele machine selecteren in de lijst met beschikbare virtuele machines.":::
+    :::image type="content" source="media\virtual-machine-custom-preferences\create-preference.png" alt-text="Vul de configuratie voorkeuren in.":::
 
-7. Ga naar het tabblad voor keuren en pas de gewenste configuratie voorkeuren aan.
+7. Pas de gewenste configuratie voorkeuren aan.
         
     > [!NOTE]
-    > Alleen aanpassingen die nog steeds binnen onze aanbevolen procedures passen, zijn toegestaan bij het wijzigen van de profiel configuraties.
+    > Alleen aanpassingen die nog steeds binnen onze aanbevolen procedures vallen, zijn toegestaan bij het wijzigen van omgevings configuraties.
 
-8. Controleer uw configuratie profiel.
+8. Controleer uw configuratie gegevens.
 9. Klik op de knop **Maken**.
 
 10. Klik op de knop **Inschakelen**.
@@ -88,7 +91,7 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 Stop snel het gebruik van Azure Automanage voor virtuele machines door automatisch beheer uit te schakelen.
 
-:::image type="content" source="media\virtual-machine-custom-preferences\disable-step-1.png" alt-text="Bestaande virtuele machine selecteren in de lijst met beschikbare virtuele machines.":::
+:::image type="content" source="media\virtual-machine-custom-preferences\disable-step-1.png" alt-text="Automanage uitschakelen op een virtuele machine.":::
 
 1. Ga naar de pagina **Automatisch beheer: aanbevolen procedures voor virtuele Azure-machines**. U vindt daar een lijst met alle automatisch beheerde virtuele machines.
 1. Schakel het selectievakje in naast de virtuele machine die u wilt uitschakelen.

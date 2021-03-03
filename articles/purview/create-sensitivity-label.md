@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 01/19/2021
-ms.openlocfilehash: 70aaa528fc86c9e543267b68b5b4cf157ec2dc65
-ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
+ms.openlocfilehash: c8d0ea43410b8d191d3d0b08c2f232bd72c80b20
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100535260"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101669621"
 ---
 # <a name="automatically-label-your-data-in-azure-purview"></a>Voorzie uw gegevens automatisch in azure controle sfeer liggen
 
@@ -218,5 +218,3 @@ Zoek inzichten op uw geclassificeerde en gelabelde gegevens in azure controle sf
 
 > [!div class="nextstepaction"]
 > [Gevoeligheids label Insights](sensitivity-insights.md)
-
-

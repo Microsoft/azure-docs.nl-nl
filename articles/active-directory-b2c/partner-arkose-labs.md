@@ -1,185 +1,237 @@
 ---
-title: Arkose Labs met Azure Active Directory B2C
+title: Zelf studie voor het configureren van Azure Active Directory B2C Met arkose Labs
 titleSuffix: Azure AD B2C
-description: Meer informatie over het integreren van Azure AD B2C-verificatie Met arkose Labs om bescherming te bieden tegen bot-aanvallen, aanvallen op account-inkomend en frauduleuze account openingen.
+description: Zelf studie voor het configureren van Azure Active Directory B2C Met arkose Labs om Risk ante en frauduleuze gebruikers te identificeren
 services: active-directory-b2c
-author: msmimart
-manager: celestedg
+author: gargi-sinha
+manager: martinco
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 06/08/2020
-ms.author: mimart
+ms.date: 02/18/2021
+ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 2c7eea87101a36edb0d77026489ea351b601158b
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 04492abc0f235c2dc6139adbe543bcce82f7f7b3
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97584592"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101646858"
 ---
-# <a name="tutorial-for-configuring-arkose-labs-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van arkose Labs met Azure Active Directory B2C
+# <a name="tutorial-configure-arkose-labs-with-azure-active-directory-b2c"></a>Zelf studie: arkose Labs configureren met Azure Active Directory B2C
 
-In deze zelf studie leert u hoe u Azure AD B2C-verificatie kunt integreren met arkose Labs. Met arkose Labs kunnen organisaties tegen bot-aanvallen, inbreuk op account overname en frauduleuze accounts worden geopend.  
+In deze zelf studie leert u hoe u Azure Active Directory (AD) B2C-verificatie kunt integreren met [arkose Labs](https://www.arkoselabs.com/). Met arkose Labs kunnen organisaties tegen bot-aanvallen, inbreuk op account overname en frauduleuze accounts worden geopend.  
 
 ## <a name="prerequisites"></a>Vereisten
 
 Om aan de slag te gaan, hebt u het volgende nodig:
 
-* Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
-* [Een Azure AD B2C-Tenant](tutorial-create-tenant.md) die is gekoppeld aan uw Azure-abonnement.
+- Een Azure-abonnement. Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
+
+- [Een Azure AD B2C-Tenant](tutorial-create-tenant.md) die is gekoppeld aan uw Azure-abonnement.
+
+- Een [arkose Labs](https://www.arkoselabs.com/book-a-demo/) -account.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
+Arkose Labs-integratie omvat de volgende onderdelen:
+
+- **Arkose Labs** : een fraude-en misbruik service om te beschermen tegen bots en andere geautomatiseerd misbruik.
+
+- **Azure AD B2C gebruikers stroom voor registratie** : de registratie-ervaring die gebruikmaakt van de arkose Labs-service. Maakt gebruik van de aangepaste HTML en Java script en API-Connect oren om te integreren met de arkose Labs-service.
+
+- **Azure functions** -API-eind punt gehost door u dat werkt met de API-connectors-functie. Deze API is verantwoordelijk voor het uitvoeren van de validatie aan de server zijde van het arkose Labs-sessie token.
+
 In het volgende diagram wordt beschreven hoe arkose Labs kan worden geïntegreerd met Azure AD B2C.
 
-![Arkose Labs-architectuur diagram](media/partner-arkose-labs/arkose-architecture-diagram.png)
+![Afbeelding toont het architectuur diagram van arkose Labs](media/partner-arkose-labs/arkose-labs-architecture-diagram.png)
 
 | Stap  | Beschrijving |
 |---|---|
-|1     | Een gebruiker meldt zich aan met een eerder gemaakt account. Wanneer de gebruiker verzenden selecteert, wordt er een arkose Labs Enforcement-test weer gegeven. Nadat de gebruiker de uitdaging heeft voltooid, wordt de status verzonden naar arkose Labs om een token te genereren.        |
-|2     |  Arkose Labs stuurt het token terug naar Azure AD B2C.       |
-|3     |  Voordat het aanmeldings formulier wordt verzonden, wordt het token naar arkose Labs verzonden voor verificatie.       |
-|4     |  Arkose stuurt een geslaagd of mislukt resultaat van de uitdaging terug.       |
-|5     |  Als de uitdaging is voltooid, wordt een aanmeldings formulier verzonden naar Azure AD B2C en Azure AD B2C de verificatie voltooid.       |
-|   |   |
+|1     | Een gebruiker meldt zich aan en maakt een account. Wanneer de gebruiker verzenden selecteert, wordt er een arkose Labs Enforcement-test weer gegeven.         |
+|2     |  Nadat de gebruiker de uitdaging heeft voltooid, stuurt Azure AD B2C de status naar arkose Labs om een token te genereren. |
+|3     |  Arkose Labs genereert een token en stuurt het terug naar Azure AD B2C.   |
+|4     |  Azure AD B2C roept een tussenliggende Web-API aan om het aanmeldings formulier door te geven.      |
+|5     |  De tussenliggende Web-API verzendt het registratie formulier naar arkose Lab voor token verificatie.    |
+|6     | Arkose Lab-processen en de verificatie resultaten worden teruggestuurd naar de tussenliggende Web-API.|
+|7     | De tussenliggende Web-API verzendt het slagen of mislukken van de uitdaging om Azure AD B2C. |
+|8     | Als de uitdaging is voltooid, wordt een aanmeldings formulier verzonden naar Azure AD B2C en Azure AD B2C de verificatie voltooid.|
 
 ## <a name="onboard-with-arkose-labs"></a>Onboarding Met arkose Labs
 
-1. Neem contact op met [arkose Labs](https://www.arkoselabs.com/book-a-demo/) en maak een account.
+1. Neem contact op met [arkose](https://www.arkoselabs.com/book-a-demo/) en maak een account.
 
-2. Wanneer uw account is gemaakt, gaat u naar https://dashboard.arkoselabs.com/login .
+2. Zodra het account is gemaakt, gaat u naar https://dashboard.arkoselabs.com/login  
 
-3. Navigeer in het dash board naar site-instellingen om uw open bare sleutel en persoonlijke sleutel te vinden. Deze informatie is later nodig om Azure AD B2C te configureren.
+3. Navigeer in het dash board naar site-instellingen om uw open bare sleutel en persoonlijke sleutel te vinden. Deze informatie is later nodig om Azure AD B2C te configureren. De waarden van open bare en persoonlijke sleutels worden aangeduid als `ARKOSE_PUBLIC_KEY` en `ARKOSE_PRIVATE_KEY` in de [voorbeeld code](https://github.com/Azure-Samples/active-directory-b2c-node-sign-up-user-flow-arkose).
 
 ## <a name="integrate-with-azure-ad-b2c"></a>Integreren met Azure AD B2C
 
-### <a name="part-1--create-blob-storage-to-store-the-custom-html"></a>Deel 1: Blob-opslag maken om de aangepaste HTML op te slaan
+### <a name="part-1--create-a-arkosesessiontoken-custom-attribute"></a>Deel 1: een aangepast ArkoseSessionToken-kenmerk maken
 
-Als u een opslag account wilt maken, voert u de volgende stappen uit:  
+Voer de volgende stappen uit om een aangepast kenmerk te maken:  
 
-1. Meld u aan bij de Azure Portal.
+1. Ga naar **Azure Portal**  >  **Azure AD B2C**
 
-2. Zorg ervoor dat u de map gebruikt die uw Azure-abonnement bevat. Selecteer het filter **Directory + abonnement** in het bovenste menu en kies de map die uw abonnement bevat. Dit is een andere map dan de map met uw Azure B2C-tenant.
+2. **Gebruikers kenmerken** selecteren
 
-3. Kies **alle services** in de linkerbovenhoek van de Azure Portal en zoek en selecteer  **opslag accounts**.
+3. Selecteer **Toevoegen**
 
-4. Selecteer **Toevoegen**.
+4. Voer **ArkoseSessionToken** in als kenmerk naam
 
-5. Selecteer onder  **resource groep** de optie  **nieuwe maken**, voer een naam in voor de nieuwe resource groep en selecteer **OK**.
+5. Selecteer **Maken**
 
-6. Voer een naam in voor het opslagaccount. De naam die u kiest, moet uniek zijn in Azure, moet tussen de 3 en 24 tekens lang zijn en mag alleen cijfers en kleine letters bevatten.
+Meer informatie over [aangepaste kenmerken](https://docs.microsoft.com/azure/active-directory-b2c/user-flow-custom-attributes?pivots=b2c-user-flow).
 
-7. Selecteer de locatie van het opslagaccount of accepteer de standaardlocatie.
+### <a name="part-2---create-a-user-flow"></a>Deel 2: een gebruikers stroom maken
 
-8. Accepteer alle andere standaard waarden, selecteer   **beoordeling &** Create  >  **Create**.
+De gebruikers stroom kan **zich aanmelden** en **Aanmelden** **of u kunt zich aanmelden.** De arkose Labs-gebruikers stroom wordt alleen weer gegeven tijdens het aanmelden.
 
-9. Nadat het opslagaccount is gemaakt, selecteert u  **Naar de resource gaan**.
+1. Zie de [instructies](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-user-flows) voor het maken van een gebruikers stroom. Als u een bestaande gebruikers stroom gebruikt, moet dit het versie type van het **Aanbevolen (volgende generatie preview)** zijn.
 
-#### <a name="create-a-container"></a>Een container maken
+2. Ga in de instellingen van de gebruikers stroom naar **gebruikers kenmerken** en selecteer de claim **ArkoseSessionToken** .
 
-1. Selecteer op de pagina overzicht van het opslag account  **blobs**.
+![Afbeelding laat zien hoe u aangepaste kenmerken selecteert](media/partner-arkose-labs/select-custom-attribute.png)
 
-2. Selecteer   **container**, voer een naam in voor de container, kies   **BLOB** (anonieme lees toegang alleen voor blobs) en selecteer vervolgens **OK**.
+### <a name="part-3---configure-custom-html-javascript-and-page-layouts"></a>Deel 3: aangepaste HTML, java script en pagina-indelingen configureren
 
-#### <a name="enable-cross-origin-resource-sharing-cors"></a>Cross-Origin-resource delen (CORS) inschakelen
+Ga naar het [HTML-script](https://github.com/Azure-Samples/active-directory-b2c-node-sign-up-user-flow-arkose/blob/main/Assets/selfAsserted.html)dat u hebt ontvangen. Het bestand bevat een HTML-sjabloon met Java script- `<script>` Tags die drie dingen doen:
 
-In browsers maakt Azure AD B2C-code gebruik van een moderne en gestandaardiseerde benadering om aangepaste inhoud te laden vanaf een URL die u in een gebruikersstroom opgeeft. Met CORS kunnen beperkte bronnen op een webpagina worden aangevraagd vanuit andere domeinen.
+1. Laad het arkose Labs-script, waarin de arkose Labs-widget wordt weer gegeven en de arkose Labs-validatie aan de client zijde.
 
-1. Selecteer  **CORS** in het menu.
+2. Verberg het `extension_ArkoseSessionToken` invoer element en het label, dat overeenkomt met het `ArkoseSessionToken` aangepaste kenmerk, vanuit de gebruikers interface die wordt weer gegeven aan de gebruiker.
 
-2. Voer in voor  **toegestane oorsprongen**  `https://your-tenant-name.b2clogin.com` . Vervang uw-Tenant naam door de naam van uw Azure AD B2C-Tenant. Bijvoorbeeld  `https://fabrikam.b2clogin.com`. Gebruik alleen kleine letters bij het invoeren van de naam van uw Tenant.
+3. Wanneer een gebruiker de arkose Labs-uitdaging voltooit, wordt het antwoord van de gebruiker door arkose Labs gecontroleerd en wordt een token gegenereerd. Met de call back `arkoseCallback` in de aangepaste Java script wordt de waarde van ingesteld `extension_ArkoseSessionToken` op de gegenereerde token waarde. Deze waarde wordt verzonden naar het API-eind punt, zoals wordt beschreven in de volgende sectie.
 
-3. Voor  **toegestane methoden** selecteert u  **ophalen**, **plaatsen** en  **Opties**.
+    Raadpleeg [dit artikel](https://arkoselabs.atlassian.net/wiki/spaces/DG/pages/214176229/Standard+Setup) voor meer informatie over arkose Labs-validatie aan de client zijde.
 
-4. Voer bij **Toegestane headers** een asterisk (*) in.
+Volg de stappen die worden beschreven om de aangepaste HTML en Java script te gebruiken voor uw gebruikers stroom.
 
-5. Voer een asterisk (*) in voor **weer gegeven headers**.
+1. Wijzig [selfAsserted.html](https://github.com/Azure-Samples/active-directory-b2c-node-sign-up-user-flow-arkose/blob/main/Assets/selfAsserted.html) -bestand zodat dit `<ARKOSE_PUBLIC_KEY>` overeenkomt met de waarde die u hebt gegenereerd voor de validatie aan de client zijde en gebruikt om het arkose Labs-script voor uw account te laden.
 
-6. Voer bij **Maximumleeftijd** 200 in.
+2. Host de HTML-pagina op een webeindpunt waarvoor cross-Origin Resource Sharing (CORS) is ingeschakeld. [Maak een Azure Blob-opslag account](https://docs.microsoft.com/azure/storage/common/storage-account-create?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal) en [Configureer CORS](https://docs.microsoft.com/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services).
 
-   ![Aanmelden bij arkose Labs en aanmelden](media/partner-arkose-labs/signup-signin-arkose.png)
+  >[!NOTE]
+  >Als u uw eigen aangepaste HTML hebt, kopieert en plakt u de `<script>` elementen op uw HTML-pagina.
 
-7. Selecteer **Opslaan**.
+3. Volg deze stappen om de pagina-indelingen te configureren
 
-### <a name="part-2--set-up-a-back-end-server"></a>Deel 2: een back-endserver instellen
+   a. Ga vanuit het Azure Portal naar **Azure AD B2C**
 
-Down load Git Bash en voer de volgende stappen uit:
+   b. Navigeer naar **gebruikers stromen** en selecteer uw gebruikers stroom
 
-1. Volg de instructies voor het [maken van een web-app](../app-service/quickstart-php.md), totdat het bericht ' Gefeliciteerd!U hebt uw eerste PHP-app geïmplementeerd op App Service.
+   c. **Pagina-indelingen** selecteren
 
-2. Open uw lokale map en wijzig de naam van het bestand **index. php** in **verify-token. php**.
+   d. **Een lokale account selecteren pagina-indeling voor aanmelden**
 
-3. Open het bestand verify-token. php waarvan u de naam hebt gewijzigd en:
+   e. **Aangepaste pagina-inhoud** in-/uitschakelen met **Ja**
 
-   a. Vervang de inhoud door de inhoud van het bestand verify-token. php dat is gevonden in de [github-opslag plaats](https://github.com/ArkoseLabs/Azure-AD-B2C).
+   f. Plak de URI waar uw aangepaste HTML in **gebruik is aangepaste pagina-inhoud gebruiken**
 
-   b. Vervang <private_key> op regel 3 door uw persoonlijke sleutel die is verkregen van het arkose Labs-dash board.
+   g. Als u sociale-id-providers gebruikt, herhaalt u **stap e** en **f** voor de lay-out van de pagina voor het **registreren van sociale accounts** .
 
-4. Voer in het lokale terminal venster uw wijzigingen door in Git en push de code wijzigingen naar Azure door het volgende te typen in Git Bash:
+   ![afbeelding met pagina-indelingen](media/partner-arkose-labs/page-layouts.png)
 
-   ``git commit -am "updated output"``
+4. Ga vanuit uw gebruikers stroom naar **Eigenschappen** en selecteer pagina-indeling voor het afdwingen van **Java script inschakelen** (preview). Raadpleeg dit [artikel](https://docs.microsoft.com/azure/active-directory-b2c/javascript-and-page-layout?pivots=b2c-user-flow) voor meer informatie.
 
-   ``git push azure main``  
+### <a name="part-4---create-and-deploy-your-api"></a>Deel 4: uw API maken en implementeren
 
-### <a name="part-3---final-setup"></a>Deel 3 – laatste installatie
+Installeer de [Azure functions-extensie](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) voor Visual Studio code.
 
-#### <a name="store-the-custom-html"></a>Sla de aangepaste HTML op
+>[!Note]
+>In de stappen die in dit gedeelte worden beschreven, wordt ervan uitgegaan dat u Visual Studio code gebruikt om de Azure-functie te implementeren. U kunt ook Azure Portal, Terminal of opdracht prompt of een andere code-editor gebruiken om te implementeren.
 
-1. Open het bestand index.html dat is opgeslagen in de [github-opslag plaats](https://github.com/ArkoseLabs/Azure-AD-B2C).
+#### <a name="run-the-api-locally"></a>De API lokaal uitvoeren
 
-2. Vervang alle instanties van `<tenantname>` door de naam van uw b2C-Tenant (met andere woorden `<tenantname>.b2clogin.com` ). Er moeten vier instanties zijn.
+1. Navigeer naar de Azure-extensie in Visual Studio code op de navigatie balk aan de linkerkant. Selecteer de **lokale projectmap** die uw lokale Azure-functie weergeeft.
 
-3. Vervang de `<appname>` door de naam van de app die u hebt gemaakt in deel 2, stap 1.
+2. Druk op **F5** of gebruik **het menu fout opsporing**  >  **starten** om het fout opsporingsprogramma te starten en aan de Azure functions-host te koppelen. Met deze opdracht wordt automatisch de single debug-configuratie gebruikt die door Azure-functie is gemaakt.
 
-   ![Scherm afbeelding Met arkose Labs Azure CLI](media/partner-arkose-labs/arkose-azure-cli.png)
+3. De functie-uitbrei ding van Azure genereert automatisch een aantal bestanden voor lokale ontwikkeling, installeert afhankelijkheden en installeer de functie kern hulpprogramma's als deze nog niet aanwezig is. Deze hulpprogram ma's helpen bij het oplossen van problemen.
 
-4. Vervang de `<public_key>` op regel 64 door de open bare sleutel die u hebt verkregen via het arkose Labs-dash board.
+4. Uitvoer van het hulp programma voor de functie kern wordt weer gegeven in het deel venster Visual Studio code **Terminal** . Als de host is gestart, **Alt + klikken op** de lokale URL die wordt weer gegeven in de uitvoer om de browser te openen en de functie uit te voeren. Klik in Azure Functions Verkenner met de rechter muisknop op de functie om de URL van de lokaal gehoste functie weer te geven.
 
-5. Upload het index.html-bestand naar de Blob-opslag die hierboven is gemaakt.
+Herhaal de stappen 1 tot en met 4 als u het lokale exemplaar tijdens het testen opnieuw wilt implementeren.
 
-6. Ga naar **opslag**  >  **container**  >  **uploaden**.
+#### <a name="add-environment-variables"></a>Omgevings variabelen toevoegen
 
-#### <a name="set-up-azure-ad-b2c"></a>Azure AD B2C instellen
+Dit voor beeld beschermt het web API-eind punt met behulp van [http-basis verificatie](https://tools.ietf.org/html/rfc7617).
 
-> [!NOTE]
-> Als u nog geen account hebt, [maakt u een Azure AD B2C-Tenant](tutorial-create-tenant.md) die is gekoppeld aan uw Azure-abonnement.
+Gebruikers naam en wacht woord worden opgeslagen als omgevings variabelen en niet als onderdeel van de opslag plaats. Zie [local.settings.jsin](https://docs.microsoft.com/azure/azure-functions/functions-run-local?tabs=macos%2Ccsharp%2Cbash#local-settings-file) het bestand voor meer informatie.
 
-1. Maak een gebruikers stroom op basis van de [informatie.](tutorial-create-user-flows.md) Stop bij het bereiken van de sectie **de gebruikers stroom testen**.
+1. Een local.settings.jsmaken voor het bestand in de hoofdmap
 
-2. Schakel Java script in uw [gebruikers stroom](javascript-and-page-layout.md)in.
+2. Kopieer en plak de onderstaande code op het bestand:
 
-3. Schakel op de pagina dezelfde gebruikers stroom de URL voor de aangepaste pagina in: Ga naar de pagina-indeling **gebruikers stroom**  >    >  **Gebruik aangepaste pagina-inhoud**  =  **Ja**  >  **Invoegen aangepaste pagina-URL**.
-Deze URL voor de aangepaste pagina wordt opgehaald uit de locatie van het index.html-bestand in de Blob-opslag  
+```
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "BASIC_AUTH_USERNAME": "<USERNAME>",
+    "BASIC_AUTH_PASSWORD": "<PASSWORD>",
+    "ARKOSE_PRIVATE_KEY": "<ARKOSE_PRIVATE_KEY>",
+    "B2C_EXTENSIONS_APP_ID": "<B2C_EXTENSIONS_APP_ID>"
+  }
+}
+```
+De waarden voor **BASIC_AUTH_USERNAME** en **BASIC_AUTH_PASSWORD** zijn de referenties die worden gebruikt voor het verifiëren van de API-aanroep voor uw Azure-functie. Kies de gewenste waarden.
 
-   ![Scherm opname van de opslag-URL van arkose Labs](media/partner-arkose-labs/arkose-storage-url.png)
+De `<ARKOSE_PRIVATE_KEY>` is het geheim aan de server zijde dat u hebt gegenereerd in de arkose Labs-service. Het wordt gebruikt om de [arkose Labs-validatie-API aan de server zijde](https://arkoselabs.atlassian.net/wiki/spaces/DG/pages/266214758/Server-Side+Instructions) aan te roepen om de waarde van de `ArkoseSessionToken` gegenereerde door de front-end te valideren.
+
+De `<B2C_EXTENSIONS_APP_ID>` is de toepassings-id van de app die door Azure AD B2C wordt gebruikt voor het opslaan van aangepaste kenmerken in de Directory. U kunt deze toepassings-ID vinden door te navigeren naar App-registraties, te zoeken naar B2C-Extensions-app en de toepassings-ID (client) te kopiëren vanuit het deel venster **overzicht** . Verwijder de `-` tekens.
+
+![Afbeelding toont zoeken op app-id](media/partner-arkose-labs/search-app-id.png)
+
+#### <a name="deploy-the-application-to-the-web"></a>De toepassing implementeren op het web
+
+1. Volg de stappen in [deze](https://docs.microsoft.com/azure/javascript/tutorial-vscode-serverless-node-04) hand leiding om uw Azure-functie in de cloud te implementeren. Kopieer de web-URL van het eind punt van uw Azure-functie.
+
+2. Zodra de implementatie is geïmplementeerd, selecteert u de optie **Upload instellingen** . De omgevings variabelen worden geüpload naar de [Toepassings instellingen](https://docs.microsoft.com/azure/azure-functions/functions-develop-vs-code?tabs=csharp#application-settings-in-azure) van de app service. Deze toepassings instellingen kunnen ook worden geconfigureerd of [beheerd via de Azure Portal.](https://docs.microsoft.com/azure/azure-functions/functions-how-to-use-azure-function-app-settings)
+
+Raadpleeg [dit artikel](https://docs.microsoft.com/azure/azure-functions/functions-develop-vs-code?tabs=csharp#republish-project-files) voor meer informatie over Visual Studio code development voor Azure functions.
+
+#### <a name="configure-and-enable-the-api-connector"></a>De API-connector configureren en inschakelen
+
+[Maak een API-connector](https://docs.microsoft.com/azure/active-directory-b2c/add-api-connector) en schakel deze in voor uw gebruikers stroom. De configuratie van de API-connector moet er als volgt uitzien:
+
+![Afbeelding toont zoeken op app-id](media/partner-arkose-labs/configure-api-connector.png)
+
+- **Eind punt-URL** : is de functie-URL die u eerder hebt gekopieerd tijdens de implementatie van Azure function.
+
+- **Gebruikers naam en wacht woord** : zijn de gebruikers naam en het wacht woord die u eerder hebt gedefinieerd als omgevings variabelen.
+
+Als u de API-connector wilt inschakelen, selecteert u in de **API-connector** instellingen voor uw gebruikers stroom de API-connector die moet worden aangeroepen **voordat de gebruikers** stap wordt gemaakt. Hiermee wordt de API opgeroepen wanneer een gebruiker **maken** in de registratie stroom selecteert. De API voert een validatie aan de server zijde uit van de `ArkoseSessionToken` waarde die is ingesteld door de call back van de arkose-widget `arkoseCallback` .
+
+![Afbeelding toont API-connector inschakelen](media/partner-arkose-labs/enable-api-connector.png)
 
 ## <a name="test-the-user-flow"></a>De gebruikersstroom testen
 
-1. Open de Azure AD B2C-Tenant en selecteer onder **beleids regels** **gebruikers stromen**.
+1. Open de Azure AD B2C Tenant en selecteer onder beleids regels **gebruikers stromen**.
 
 2. Selecteer de eerder gemaakte gebruikers stroom.
 
 3. Selecteer **gebruikers stroom uitvoeren** en selecteer de instellingen:
 
-   a. **Toepassing** -Selecteer de geregistreerde app (voor beeld is JWT).
+   a. Toepassing: Selecteer de geregistreerde app (voor beeld is JWT)
 
-   b. **Antwoord-URL** : Selecteer de omleidings-URL.
+   b. Antwoord-URL: de omleidings-URL selecteren
 
    c. Selecteer **Gebruikersstroom uitvoeren**.
 
-4. Ga door naar de registratie stroom en maak een account.
+4. De registratie stroom door lopen en een account maken
 
-5. Meld u af.
+5. Afmelden
 
-6. Ga door naar de aanmeldings stroom.
+6. De aanmeldings stroom door lopen  
 
 7. Wanneer u **door gaan** selecteert, wordt er een arkose Labs-puzzel weer gegeven.
 
-## <a name="next-steps"></a>Volgende stappen
+## <a name="additional-resources"></a>Aanvullende bronnen
 
-Raadpleeg de volgende artikelen voor meer informatie:
+- [Voorbeeld codes](https://github.com/Azure-Samples/active-directory-b2c-node-sign-up-user-flow-arkose) voor Azure AD B2Cs stroom voor het registreren van gebruikers
 
-- [Aangepast beleid in Azure AD B2C](custom-policy-overview.md)
+- [Aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](custom-policy-get-started.md?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)

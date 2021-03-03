@@ -6,34 +6,33 @@ ms.author: thweiss
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 11/30/2020
+ms.date: 02/11/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6dd95fc8fd0ab0099ac7404d4ca4e4b1851f650f
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 8a16ecd2ee6ed939b2afd0e51e9cf531e419c8af
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359602"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101656394"
 ---
 # <a name="secure-access-to-data-in-azure-cosmos-db"></a>Beveiligde toegang tot gegevens in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
-Dit artikel bevat een overzicht van het beveiligen van de toegang tot gegevens die zijn opgeslagen in [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/).
+Dit artikel bevat een overzicht van Data Access Control in Azure Cosmos DB.
 
-Azure Cosmos DB gebruikt twee typen sleutels om gebruikers te verifiëren en toegang te bieden tot de gegevens en bronnen van de gebruiker. 
+Azure Cosmos DB biedt drie manieren om de toegang tot uw gegevens te beheren.
 
-|Type sleutel|Resources|
+| Type toegangs beheer | Kenmerken |
 |---|---|
-|[Primaire sleutels](#primary-keys) |Gebruikt voor administratieve resources: database accounts, data bases, gebruikers en machtigingen|
-|[Bron tokens](#resource-tokens)|Gebruikt voor toepassings resources: containers, documenten, bijlagen, opgeslagen procedures, triggers en Udf's|
+| [Primaire sleutels](#primary-keys) | Gedeeld geheim waarmee beheer-of gegevens bewerkingen kunnen worden uitgevoerd. Het is afkomstig uit zowel lees-/schrijftoegang als alleen-lezen varianten. |
+| [Op rollen gebaseerd toegangs beheer](#rbac) (preview-versie) | Op rollen gebaseerd machtigings model met Azure Active Directory (AAD)-identiteiten voor authenticatie. |
+| [Bron tokens](#resource-tokens)| Nauw keurig machtigings model op basis van systeem eigen Azure Cosmos DB gebruikers en machtigingen. |
 
-<a id="primary-keys"></a>
+## <a name="primary-keys"></a><a id="primary-keys"></a> Primaire sleutels
 
-## <a name="primary-keys"></a>Primaire sleutels
+Primaire sleutels bieden toegang tot alle beheer resources voor het database account. Elk account bestaat uit twee primaire sleutels: een primaire sleutel en secundaire sleutel. Het doel van dubbele sleutels is om u te laten versleutelen of sleutels te rollen, zodat u voortdurend toegang hebt tot uw account en gegevens. Zie het artikel over de [Data Base-beveiliging](database-security.md#primary-keys) voor meer informatie over primaire sleutels.
 
-Primaire sleutels bieden toegang tot alle beheer resources voor het database account. Elk account bestaat uit twee primaire sleutels: een primaire sleutel en secundaire sleutel. Het doel van dubbele sleutels is dat u de sleutel opnieuw kunt genereren of sleutels moet voorzien van een continue toegang tot uw account en gegevens. Zie het artikel over de [Data Base-beveiliging](database-security.md#primary-keys) voor meer informatie over primaire sleutels.
-
-### <a name="key-rotation"></a>Sleutel rotatie<a id="key-rotation"></a>
+### <a name="key-rotation"></a><a id="key-rotation"></a> Sleutel rotatie
 
 Het proces voor het draaien van uw primaire sleutel is eenvoudig. 
 
@@ -64,7 +63,23 @@ In het volgende code voorbeeld ziet u hoe u het Azure Cosmos DB account-eind pun
 
 :::code language="python" source="~/cosmosdb-python-sdk/sdk/cosmos/azure-cosmos/samples/access_cosmos_with_resource_token.py" id="configureConnectivity":::
 
-## <a name="resource-tokens"></a>Bron tokens <a id="resource-tokens"></a>
+## <a name="role-based-access-control-preview"></a><a id="rbac"></a> Op rollen gebaseerd toegangs beheer (preview-versie)
+
+Azure Cosmos DB biedt een ingebouwd systeem voor op rollen gebaseerd toegangs beheer (RBAC) waarmee u het volgende kunt doen:
+
+- Verifieer uw gegevens aanvragen met een Azure Active Directory AAD-identiteit.
+- Autoriseer uw gegevens aanvragen met een verfijnd, op rollen gebaseerd machtigings model.
+
+Azure Cosmos DB RBAC de ideale methode voor toegangs beheer is in situaties waarin:
+
+- U wilt geen gedeeld geheim gebruiken zoals de primaire sleutel en u wilt liever vertrouwen op een verificatie mechanisme op basis van tokens.
+- U Azure AD-identiteiten wilt gebruiken om uw aanvragen te verifiëren,
+- U hebt een nauw keurig machtigings model nodig om nauw keurig te beperken welke database bewerkingen uw identiteiten mogen uitvoeren,
+- U wilt uw beleid voor toegangs beheer realiseren als rollen die u aan meerdere identiteiten kunt toewijzen.
+
+Zie op [rollen gebaseerd toegangs beheer configureren voor uw Azure Cosmos DB-account](how-to-setup-rbac.md) voor meer informatie over Azure Cosmos DB RBAC.
+
+## <a name="resource-tokens"></a><a id="resource-tokens"></a> Bron tokens
 
 Bron tokens bieden toegang tot de toepassings resources binnen een Data Base. Bron tokens:
 
@@ -97,7 +112,7 @@ Het genereren en beheren van bron tokens worden verwerkt door de systeem eigen C
 
 Zie de [resource token Broker-app](https://github.com/Azure/azure-cosmos-dotnet-v2/tree/master/samples/xamarin/UserItems/ResourceTokenBroker/ResourceTokenBroker/Controllers)voor een voor beeld van een middle-tier service die wordt gebruikt om resource tokens te genereren of Broker.
 
-## <a name="users"></a>Gebruikers<a id="users"></a>
+### <a name="users"></a>Gebruikers<a id="users"></a>
 
 Azure Cosmos DB gebruikers zijn gekoppeld aan een Cosmos-data base.  Elke Data Base kan nul of meer Cosmos DB gebruikers bevatten. In het volgende code voorbeeld ziet u hoe u een Cosmos DB gebruiker maakt met behulp van de [Azure Cosmos db .NET SDK v3](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/UserManagement).
 
@@ -111,7 +126,7 @@ User user = await database.CreateUserAsync("User 1");
 > [!NOTE]
 > Elke Cosmos DB gebruiker heeft een ReadAsync ()-methode die kan worden gebruikt voor het ophalen van de lijst met [machtigingen](#permissions) die aan de gebruiker zijn gekoppeld.
 
-## <a name="permissions"></a>Machtigingen<a id="permissions"></a>
+### <a name="permissions"></a>Machtigingen<a id="permissions"></a>
 
 Een machtigings resource is gekoppeld aan een gebruiker en toegewezen aan de container en het niveau van de partitie sleutel. Elke gebruiker kan nul of meer machtigingen bevatten. Een machtigings bron biedt toegang tot een beveiligings token dat de gebruiker nodig heeft om toegang te krijgen tot een specifieke container of gegevens in een specifieke partitie sleutel. Er zijn twee toegangs niveaus beschikbaar die kunnen worden gegeven door een machtigings Bron:
 
@@ -127,7 +142,7 @@ Als u de [Diagnostische logboeken op gegevens vlak-aanvragen](cosmosdb-monitor-r
 
 * **resourceTokenPermissionMode** : deze eigenschap geeft de machtigings modus aan die u hebt ingesteld bij het maken van het bron token. De machtigings modus kan waarden bevatten zoals "all" of "Read".
 
-### <a name="code-sample-to-create-permission"></a>Code voorbeeld voor het maken van machtigingen
+#### <a name="code-sample-to-create-permission"></a>Code voorbeeld voor het maken van machtigingen
 
 In het volgende code voorbeeld ziet u hoe u een machtigings bron maakt, het bron token van de machtigings resource leest en de machtigingen koppelt aan de [gebruiker](#users) die hierboven is gemaakt.
 
@@ -142,7 +157,7 @@ user.CreatePermissionAsync(
         resourcePartitionKey: new PartitionKey("012345")));
 ```
 
-### <a name="code-sample-to-read-permission-for-user"></a>Code voorbeeld voor het lezen van de machtiging voor gebruiker
+#### <a name="code-sample-to-read-permission-for-user"></a>Code voorbeeld voor het lezen van de machtiging voor gebruiker
 
 In het volgende code fragment ziet u hoe u de machtigingen kunt ophalen die zijn gekoppeld aan de gebruiker die hierboven is gemaakt en een nieuwe CosmosClient namens de gebruiker maakt, binnen het bereik van één partitie sleutel.
 
@@ -152,6 +167,15 @@ PermissionProperties permissionProperties = await user.GetPermission("permission
 
 CosmosClient client = new CosmosClient(accountEndpoint: "MyEndpoint", authKeyOrResourceToken: permissionProperties.Token);
 ```
+
+## <a name="differences-between-rbac-and-resource-tokens"></a>Verschillen tussen RBAC en bron tokens
+
+| Onderwerp | RBAC | Bron tokens |
+|--|--|--|
+| Verificatie  | Met Azure Active Directory (Azure AD). | Op basis van de systeem eigen Azure Cosmos DB gebruikers<br>Het integreren van resource-tokens met Azure AD vereist extra werk voor het overbruggen van Azure AD-identiteiten en Azure Cosmos DB gebruikers. |
+| Autorisatie | Op basis van rollen: Role Definitions zijn gemachtigd acties toe te wijzen en kunnen worden toegewezen aan meerdere identiteiten. | Op basis van machtigingen: voor elke Azure Cosmos DB gebruiker moet u machtigingen voor gegevens toegang toewijzen. |
+| Token bereik | Een AAD-token bevat de identiteit van de aanvrager. Deze identiteit wordt afgestemd op alle toegewezen roldefinities om autorisatie uit te voeren. | Een bron token bevat de machtiging die is toegewezen aan een specifieke Azure Cosmos DB gebruiker op een specifieke Azure Cosmos DB resource. Voor autorisatie aanvragen voor verschillende resources zijn mogelijk verschillende tokens vereist. |
+| Token vernieuwen | Het AAD-token wordt automatisch vernieuwd door de Azure Cosmos DB Sdk's wanneer het is verlopen. | Het vernieuwen van het resource token wordt niet ondersteund. Wanneer een bron token verloopt, moet er een nieuw certificaat worden uitgegeven. |
 
 ## <a name="add-users-and-assign-roles"></a>Gebruikers toevoegen en rollen toewijzen
 

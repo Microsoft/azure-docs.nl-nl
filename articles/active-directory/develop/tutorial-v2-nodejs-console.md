@@ -8,14 +8,14 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
-ms.date: 01/12/2021
+ms.date: 02/17/2021
 ms.author: v-doeris
-ms.openlocfilehash: 3d4211acbf6b65ef8f04d00b3936d70bb930ed9e
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 33d3712e25a06419e0ccc5914cdddfae7d85a371
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100562103"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101645786"
 ---
 # <a name="tutorial-call-the-microsoft-graph-api-in-a-nodejs-console-app"></a>Zelf studie: de Microsoft Graph-API aanroepen in een Node.js-console-app
 
@@ -125,9 +125,9 @@ Maak in de map *bin* een ander bestand met de naam *auth.js* en voeg de volgende
 const msal = require('@azure/msal-node');
 
 /**
- * Configuration object to be passed to MSAL instance on creation. 
+ * Configuration object to be passed to MSAL instance on creation.
  * For a full list of MSAL Node configuration parameters, visit:
- * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-node/docs/configuration.md 
+ * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-node/docs/configuration.md
  */
 const msalConfig = {
     auth: {
@@ -139,8 +139,8 @@ const msalConfig = {
 
 /**
  * With client credentials flows permissions need to be granted in the portal by a tenant administrator.
- * The scope is always in the format '<resource>/.default'. For more, visit: 
- * https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow 
+ * The scope is always in the format '<resource>/.default'. For more, visit:
+ * https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow
  */
 const tokenRequest = {
     scopes: [process.env.GRAPH_ENDPOINT + '.default'],
@@ -158,7 +158,7 @@ const cca = new msal.ConfidentialClientApplication(msalConfig);
 
 /**
  * Acquires token with client credentials.
- * @param {object} tokenRequest 
+ * @param {object} tokenRequest
  */
 async function getToken(tokenRequest) {
     return await cca.acquireTokenByClientCredential(tokenRequest);
@@ -212,8 +212,8 @@ const axios = require('axios');
 
 /**
  * Calls the endpoint with authorization bearer token.
- * @param {string} endpoint 
- * @param {string} accessToken 
+ * @param {string} endpoint
+ * @param {string} accessToken
  */
 async function callApi(endpoint, accessToken) {
 
@@ -239,7 +239,7 @@ module.exports = {
 };
 ```
 
-Hier wordt de `callApi` methode gebruikt om een HTTP-aanvraag te doen `GET` tegen een beveiligde bron waarvoor een toegangs token is vereist. De aanvraag retourneert vervolgens de inhoud naar de aanroeper. Met deze methode wordt het verkregen token toegevoegd in de *HTTP-autorisatie-header*. De beveiligde bron hier is het [eind punt](https://docs.microsoft.com/graph/api/user-list) van de Microsoft Graph API-gebruikers. Hiermee worden de gebruikers weer gegeven in de Tenant waarin deze app is geregistreerd.
+Hier wordt de `callApi` methode gebruikt om een HTTP-aanvraag te doen `GET` tegen een beveiligde bron waarvoor een toegangs token is vereist. De aanvraag retourneert vervolgens de inhoud naar de aanroeper. Met deze methode wordt het verkregen token toegevoegd in de *HTTP-autorisatie-header*. De beveiligde bron hier is het [eind punt](/graph/api/user-list) van de Microsoft Graph API-gebruikers. Hiermee worden de gebruikers weer gegeven in de Tenant waarin deze app is geregistreerd.
 
 ## <a name="test-the-app"></a>De app testen
 
@@ -278,7 +278,7 @@ request made to web API at: Fri Jan 22 2021 09:31:52 GMT-0800 (Pacific Standard 
 
 ## <a name="how-the-application-works"></a>Hoe de toepassing werkt
 
-Deze toepassing maakt gebruik van [OAuth 2,0-client referenties toewijzen](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow). Dit type toekenning wordt meestal gebruikt voor server-naar-server-interacties die op de achtergrond moeten worden uitgevoerd, zonder directe interactie met een gebruiker. Met de referenties overdracht stroom kan een webservice (vertrouwelijke client) eigen referenties gebruiken, in plaats van een gebruiker te imiteren, om te verifiëren wanneer een andere webservice wordt aangeroepen. Het type toepassingen dat met dit verificatie model wordt ondersteund, zijn meestal **daemons** of **service accounts**.
+Deze toepassing maakt gebruik van [OAuth 2,0-client referenties toewijzen](./v2-oauth2-client-creds-grant-flow.md). Dit type toekenning wordt meestal gebruikt voor server-naar-server-interacties die op de achtergrond moeten worden uitgevoerd, zonder directe interactie met een gebruiker. Met de referenties overdracht stroom kan een webservice (vertrouwelijke client) eigen referenties gebruiken, in plaats van een gebruiker te imiteren, om te verifiëren wanneer een andere webservice wordt aangeroepen. Het type toepassingen dat met dit verificatie model wordt ondersteund, zijn meestal **daemons** of **service accounts**.
 
 Het bereik dat moet worden aangevraagd voor een client referentie stroom is de naam van de resource gevolgd door `/.default` . Deze notatie vertelt Azure Active Directory (Azure AD) voor het gebruik van de machtigingen op toepassings niveau die statisch zijn gedeclareerd tijdens de registratie van de toepassing. Daarnaast moeten deze API-machtigingen worden verleend door een **Tenant beheerder**.
 

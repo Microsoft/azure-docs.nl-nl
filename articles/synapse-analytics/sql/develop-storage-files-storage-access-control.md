@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 06/11/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: c9a5be358c40c3411115d8c2ee3f9471c68771b8
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 116fb10956b02b5f6fe578565b9049d9fad54837
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576207"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101674206"
 ---
 # <a name="control-storage-account-access-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Toegang tot opslagaccounts beheren voor serverloze SQL-pools in Azure Synapse Analytics
 
@@ -192,16 +192,14 @@ Om de referentie te gebruiken, moet een gebruiker de machtiging `REFERENCES` heb
 GRANT REFERENCES ON CREDENTIAL::[storage_credential] TO [specific_user];
 ```
 
-Om een soepele Pass-Through Azure AD-ervaring te garanderen, hebben alle gebruikers standaard het om de referentie `UserIdentity` te gebruiken.
-
 ## <a name="server-scoped-credential"></a>Referentie binnen serverbereik
 
-Referenties binnen het bereik van de server worden gebruikt wanneer de SQL-aanmelding de functie `OPENROWSET` aanroept zonder `DATA_SOURCE` om bestanden te lezen in een opslagaccount. De naam van de referentie binnen serverbereik **moet** overeenkomen met de URL van Azure Storage. U kunt een referentie toevoegen door [CREATE CREDENTIAL](/sql/t-sql/statements/create-credential-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) uit te voeren. U moet als argument een naam voor de referentie opgeven. Deze moet overeenkomen met een deel van het pad of het volledige pad naar gegevens in Storage (zie hieronder).
+Referenties binnen het bereik van de server worden gebruikt wanneer de SQL-aanmelding de functie `OPENROWSET` aanroept zonder `DATA_SOURCE` om bestanden te lezen in een opslagaccount. De naam van de server-scope referentie **moet** overeenkomen met de basis-URL van Azure Storage (eventueel gevolgd door een container naam). U kunt een referentie toevoegen door [CREATE CREDENTIAL](/sql/t-sql/statements/create-credential-transact-sql?view=azure-sqldw-latest&preserve-view=true) uit te voeren. U moet als argument een naam voor de referentie opgeven.
 
 > [!NOTE]
 > Het argument `FOR CRYPTOGRAPHIC PROVIDER` wordt niet ondersteund.
 
-De naam van de referentie op serverniveau moet overeenkomen met het volledige pad naar het opslagaccount (en eventueel container) in de volgende indeling: `<prefix>://<storage_account_path>/<storage_path>`. Paden naar opslagaccounts worden beschreven in de volgende tabel:
+De naam van de referentie op serverniveau moet overeenkomen met het volledige pad naar het opslagaccount (en eventueel container) in de volgende indeling: `<prefix>://<storage_account_path>[/<container_name>]`. Paden naar opslagaccounts worden beschreven in de volgende tabel:
 
 | Externe gegevensbron       | Voorvoegsel | Pad van opslagaccount                                |
 | -------------------------- | ------ | --------------------------------------------------- |
@@ -224,11 +222,13 @@ Met het volgende script maakt u een referentie op serverniveau die kan worden ge
 U moet <*mystorageaccountname*> vervangen door de werkelijke naam van uw opslagaccount en <*mystorageaccountcontainername*> door de naam van de container:
 
 ```sql
-CREATE CREDENTIAL [https://<storage_account>.dfs.core.windows.net/<container>]
+CREATE CREDENTIAL [https://<mystorageaccountname>.dfs.core.windows.net/<mystorageaccountcontainername>]
 WITH IDENTITY='SHARED ACCESS SIGNATURE'
 , SECRET = 'sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-04-18T20:42:12Z&st=2019-04-18T12:42:12Z&spr=https&sig=lQHczNvrk1KoYLCpFdSsMANd0ef9BrIPBNJ3VYEIq78%3D';
 GO
 ```
+
+U kunt desgewenst alleen de basis-URL van het opslag account gebruiken, zonder container naam.
 
 ### <a name="managed-identity"></a>[Beheerde identiteit](#tab/managed-identity)
 
@@ -238,6 +238,8 @@ Met het volgende script maakt u een referentie op serverniveau die kan worden ge
 CREATE CREDENTIAL [https://<storage_account>.dfs.core.windows.net/<container>]
 WITH IDENTITY='Managed Identity'
 ```
+
+U kunt desgewenst alleen de basis-URL van het opslag account gebruiken, zonder container naam.
 
 ### <a name="public-access"></a>[Openbare toegang](#tab/public-access)
 

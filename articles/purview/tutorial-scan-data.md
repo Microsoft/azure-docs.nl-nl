@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/01/2020
-ms.openlocfilehash: a88c837c986db346bcb4fbb1b15ceab6a304347d
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 16692ac75f0ab6df0c8ee1bebef393848ca066b8
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99806220"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101676547"
 ---
 # <a name="tutorial-scan-data-with-azure-purview-preview"></a>Zelfstudie: Gegevens scannen met Azure Purview (preview)
 
@@ -55,7 +55,7 @@ In deze sectie voert u de scripts van de starterkit uit om een gesimuleerd gegev
 
 Volg deze stappen om de clientsoftware van de starterkit op uw Windows-computer in te stellen:
 
-1. [Download de starterkit](https://download.microsoft.com/download/9/7/9/979db3b1-0916-4997-a7fb-24e3d8f83174/PurviewStarterKitV4.zip) en extraheer de inhoud ervan naar de gewenste locatie.
+1. [Download de starterkit](https://github.com/Azure/Purview-Samples/blob/master/PurviewStarterKitV4.zip) en extraheer de inhoud ervan naar de gewenste locatie.
 
 
 1. Voer op uw computer **PowerShell** in het zoekvak op de Windows-taakbalk in. Klik met de rechtermuisknop in de zoeklijst op **Windows PowerShell** en selecteer **Als beheerder uitvoeren**.

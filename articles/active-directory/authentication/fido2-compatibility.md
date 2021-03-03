@@ -11,16 +11,16 @@ author: knicholasa
 manager: martinco
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8ed99338a10eb226823c4bd4857d812038ff632
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 039dd8b6fa0769b6798630e666bfbf6de48ccf14
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101094509"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101649237"
 ---
 # <a name="browser-support-of-fido2-passwordless-authentication"></a>Browser ondersteuning voor FIDO2-verificatie met wacht woord
 
-Azure Active Directory kunnen [FIDO2-beveiligings sleutels](https://docs.microsoft.com/azure/active-directory/authentication/concept-authentication-passwordless#fido2-security-keys) worden gebruikt als een apparaat met een wacht woord. De beschik baarheid van FIDO2-verificatie voor micro soft-accounts werd [aangekondigd in 2018](https://techcommunity.microsoft.com/t5/identity-standards-blog/all-about-fido2-ctap2-and-webauthn/ba-p/288910). Zoals besproken in de aankondiging, moeten bepaalde optionele functies en uitbrei dingen voor de FIDO2 CTAP-specificatie worden geïmplementeerd ter ondersteuning van beveiligde verificatie met micro soft-en Azure Active Directory-accounts. Het volgende diagram laat zien welke browsers en combi Naties van besturings systemen verificatie zonder wacht woord ondersteunen met behulp van FIDO2-verificatie sleutels met Azure Active Directory.
+Azure Active Directory kunnen [FIDO2-beveiligings sleutels](./concept-authentication-passwordless.md#fido2-security-keys) worden gebruikt als een apparaat met een wacht woord. De beschik baarheid van FIDO2-verificatie voor micro soft-accounts werd [aangekondigd in 2018](https://techcommunity.microsoft.com/t5/identity-standards-blog/all-about-fido2-ctap2-and-webauthn/ba-p/288910). Zoals besproken in de aankondiging, moeten bepaalde optionele functies en uitbrei dingen voor de FIDO2 CTAP-specificatie worden geïmplementeerd ter ondersteuning van beveiligde verificatie met micro soft-en Azure Active Directory-accounts. Het volgende diagram laat zien welke browsers en combi Naties van besturings systemen verificatie zonder wacht woord ondersteunen met behulp van FIDO2-verificatie sleutels met Azure Active Directory.
 
 ## <a name="supported-browsers"></a>Ondersteunde browsers
 
@@ -35,7 +35,7 @@ In deze tabel wordt de ondersteuning voor het verifiëren van Azure Active Direc
 
 ## <a name="unsupported-browsers"></a>Niet-ondersteunde browsers
 
-De volgende combi Naties van besturings systemen en browsers worden niet ondersteund, maar toekomstige ondersteuning en tests worden onderzocht. Als u aanvullende besturings systemen en browser ondersteuning wilt zien, geeft u feedback via het hulp programma voor product feedback onder aan de pagina.
+De volgende combi Naties van besturings systemen en browsers worden niet ondersteund, maar toekomstige ondersteuning en tests worden onderzocht. Als u andere besturings systemen en browser ondersteuning wilt zien, kunt u feedback geven via het hulp programma voor product feedback onder aan de pagina.
 
 | Besturingssysteem | Browser |
 | ---- | ---- |
@@ -44,18 +44,21 @@ De volgende combi Naties van besturings systemen en browsers worden niet onderst
 | Android | Chrome |
 | ChromeOS | Chrome |
 
-## <a name="operating-system-versions-tested"></a>Geteste besturings systeem versies
+## <a name="minimum-browser-version"></a>Minimale browserversie
 
-De informatie in de bovenstaande tabel is getest op de volgende versies van het besturings systeem.
+Hier volgen de minimale vereisten voor de browser versie. 
 
-| Besturingssysteem | Nieuwste test versie |
-| --- | --- |
-| Windows | Windows 10-20H2 |
-| macOS | OS X 11 Big sur |
-| Linux | Fedora 32-werk station |
+| Browser | Minimale versie |
+| ---- | ---- |
+| Chrome | 76 |
+| Edge | Windows 10 versie 1903<sup>1</sup> |
+| Firefox | Chrome |
+| ChromeOS | 66 |
+
+<sup>1</sup> Alle versies van de nieuwe op chroom gebaseerde micro soft Edge ondersteunen Fido2. Ondersteuning voor micro soft Edge verouderd is toegevoegd in 1903.
 
 ## <a name="next-steps"></a>Volgende stappen
-[Aanmelden zonder wacht woord voor beveiligings sleutel inschakelen (preview)](https://docs.microsoft.com/azure/active-directory/authentication/howto-authentication-passwordless-security-key)
+[Aanmelden zonder wacht woord voor beveiligings sleutel inschakelen (preview)](./howto-authentication-passwordless-security-key.md)
 
 <!--Image references-->
 [y]: ./media/fido2-compatibility/yes.png

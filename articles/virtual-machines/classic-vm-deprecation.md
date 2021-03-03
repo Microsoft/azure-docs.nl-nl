@@ -4,16 +4,17 @@ description: Dit artikel bevat een globaal overzicht van de buiten gebruiks tell
 author: tanmaygore
 manager: vashan
 ms.service: virtual-machines
+ms.subservice: classic-to-arm-migration
 ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: tagore
-ms.openlocfilehash: 004a84cd98381af027c554a7ef40e27e69ec6dbc
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 2fb710bab03d595d6e54bc8dd8fbda38c57123e7
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100587911"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101668201"
 ---
 # <a name="migrate-your-iaas-resources-to-azure-resource-manager-by-march-1-2023"></a>Migreer uw IaaS-resources naar Azure Resource Manager op 1 maart 2023 
 
@@ -30,10 +31,20 @@ Vm's die zijn gemaakt met het klassieke implementatie model, volgen het [moderne
 - Op 1 maart 2023 worden abonnementen die niet naar Azure Resource Manager worden gemigreerd, op de hoogte gesteld van tijd lijnen voor het verwijderen van alle resterende Vm's (klassiek).  
 
 Deze buiten gebruiks telling heeft *geen* invloed op de volgende Azure-Services en-functionaliteit: 
-- [Azure Cloud Services (klassiek)](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me)
+- [Azure Cloud Services (klassiek)](../cloud-services/cloud-services-choose-me.md)
 - Opslag accounts die *niet* worden gebruikt door virtuele machines (klassiek) 
 - Virtuele netwerken die *niet* worden gebruikt door virtuele machines (klassiek) 
 - Andere klassieke resources
+
+## <a name="what-resources-are-available-for-this-migration"></a>Welke resources zijn er beschikbaar voor deze migratie?
+
+- [Micro soft Q&A](/answers/topics/azure-virtual-machines-migration.html): micro soft en Community-ondersteuning voor migratie.
+
+- [Azure-migratie ondersteuning](https://ms.portal.azure.com/#create/Microsoft.Support/Parameters/{"pesId":"6f16735c-b0ae-b275-ad3a-03479cfa1396","supportTopicId":"1135e3d0-20e2-aec5-4ef0-55fd3dae2d58"}): specifiek ondersteunings team voor technische ondersteuning tijdens de migratie. Klanten die geen technische ondersteuning hebben, kunnen [gratis ondersteuning](https://ms.portal.azure.com/#create/Microsoft.Support/Parameters/%7B%0A%20%20%20%20%22pesId%22%3A%20%22f3dc5421-79ef-1efa-41a5-42bf3cbb52c6%22%2C%0A%20%20%20%20%22supportTopicId%22%3A%20%22794bb734-af1b-e2d5-a757-dac7438009ab%22%2C%0A%20%20%20%20%22contextInfo%22%3A%20%22Migrate%20IAAS%20resources%20from%20Classic%20%28ASM%29%20to%20Azure%20Resource%20Manager%20%28ARM%29%22%2C%0A%20%20%20%20%22caller%22%3A%20%22NoSupportPlanASM2ARM%22%2C%0A%20%20%20%20%22severity%22%3A%20%222%22%0A%7D) gebruiken die specifiek is voor deze migratie. 
+
+- [Micro soft Fast track](https://www.microsoft.com/fasttrack): met Fast track kunt u in aanmerking komende klanten helpen bij het plannen van & uitvoering van deze migratie. [Noem uzelf](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fprograms%2Fazure-fasttrack%2F%23nomination&data=02%7C01%7CTanmay.Gore%40microsoft.com%7C3e75bbf3617944ec663a08d85c058340%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637360526032558561&sdata=CxWTVQQPVWNwEqDZKktXzNV74pX91uyJ8dY8YecIgGc%3D&reserved=0) voor het migratie programma voor domein controller.  
+
+- Als uw bedrijf/organisatie is gekoppeld aan micro soft of werkt met micro soft-vertegenwoordigers (zoals Cloud Solution Architects (CSAs) of Technical Account Manager (TAMs)), kunt u het beste met hen samen werken voor aanvullende bronnen voor migratie.
 
 ## <a name="what-actions-should-i-take"></a>Welke acties moet ik ondernemen? 
 
@@ -43,7 +54,7 @@ Begin met het plannen van de migratie naar Azure Resource Manager, vandaag.
 
    - De Vm's van het type **virtuele machines (klassiek)** in het [deel venster VM](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.ClassicCompute%2FVirtualMachines) van de Azure Portal zijn alle betrokken vm's in het abonnement. 
    - U kunt ook een query uitvoeren op Azure-resource grafiek door de [Portal](https://portal.azure.com/#blade/HubsExtension/ArgQueryBlade/query/resources%0A%7C%20where%20type%20%3D%3D%20%22microsoft.classiccompute%2Fvirtualmachines%22) of [Power shell](../governance/resource-graph/concepts/work-with-data.md) te gebruiken om de lijst met alle gemarkeerde vm's (klassiek) en gerelateerde informatie voor de geselecteerde abonnementen weer te geven. 
-   - Op 8 februari en 2 september 2020 hebben we e-mail berichten verzonden naar abonnements eigenaren met een lijst met alle abonnementen die deze Vm's (klassiek) bevatten. Gebruik ze om deze lijst samen te stellen. 
+   - Op 8 februari en 2 september 2020 hebben we e-mail berichten verzonden met het onderwerp ' Start de migratie van uw IaaS-VM naar Azure Resource Manager ' om de eigen aars van het abonnement te plannen. Het e-mail bericht bevat een lijst met alle abonnementen en Vm's (klassieke) Vm's. Gebruik ze om deze lijst samen te stellen. 
 
 1. Meer [informatie](./migration-classic-resource-manager-overview.md) over het migreren van uw [Linux](./migration-classic-resource-manager-plan.md) -en [Windows](./migration-classic-resource-manager-plan.md) -vm's (klassiek) naar Azure Resource Manager. Zie [Veelgestelde vragen over klassieke Azure Resource Manager migratie](./migration-classic-resource-manager-faq.md)voor meer informatie.
 
@@ -58,13 +69,3 @@ Begin met het plannen van de migratie naar Azure Resource Manager, vandaag.
 1. [Neem contact op met de ondersteuning](https://ms.portal.azure.com/#create/Microsoft.Support/Parameters/{"pesId":"6f16735c-b0ae-b275-ad3a-03479cfa1396","supportTopicId":"8a82f77d-c3ab-7b08-d915-776b4ff64ff4"})voor technische vragen, problemen en hulp bij het toevoegen van abonnementen aan de acceptatie lijst.
 
 1. Voltooi de migratie zo snel mogelijk om bedrijfs impact te voor komen en te profiteren van de verbeterde prestaties, beveiliging en nieuwe functies van Azure Resource Manager. 
-
-## <a name="what-resources-are-available-for-this-migration"></a>Welke resources zijn er beschikbaar voor deze migratie?
-
-- [Micro soft Q&A](/answers/topics/azure-virtual-machines-migration.html): micro soft en Community-ondersteuning voor migratie.
-
-- [Azure-migratie ondersteuning](https://ms.portal.azure.com/#create/Microsoft.Support/Parameters/{"pesId":"6f16735c-b0ae-b275-ad3a-03479cfa1396","supportTopicId":"1135e3d0-20e2-aec5-4ef0-55fd3dae2d58"}): specifiek ondersteunings team voor technische ondersteuning tijdens de migratie.
-
-- [Micro soft Fast track](https://www.microsoft.com/fasttrack): met Fast track kunt u in aanmerking komende klanten helpen bij het plannen van & uitvoering van deze migratie. [Noem uzelf](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fprograms%2Fazure-fasttrack%2F%23nomination&data=02%7C01%7CTanmay.Gore%40microsoft.com%7C3e75bbf3617944ec663a08d85c058340%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637360526032558561&sdata=CxWTVQQPVWNwEqDZKktXzNV74pX91uyJ8dY8YecIgGc%3D&reserved=0) voor het migratie programma voor domein controller.  
-
-- Als uw bedrijf/organisatie is gekoppeld aan micro soft of werkt met micro soft-vertegenwoordigers (zoals Cloud Solution Architects (CSAs) of Technical Account Manager (TAMs)), kunt u het beste met hen samen werken voor aanvullende bronnen voor migratie.

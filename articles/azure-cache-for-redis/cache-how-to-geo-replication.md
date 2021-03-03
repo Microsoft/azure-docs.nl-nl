@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 02/08/2021
 ms.author: yegu
-ms.openlocfilehash: 27ccc81ddf0a771de9fb15f60820dfd3efa6146e
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: a04ffbcec8eda6663a12a8a08a81e00c5d0b5c7f
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100386869"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101646962"
 ---
 # <a name="configure-geo-replication-for-premium-azure-cache-for-redis-instances"></a>Geo-replicatie voor Premium Azure cache configureren voor redis-instanties
 
@@ -199,3 +199,4 @@ Ja, u kunt een [firewall](./cache-configure.md#firewall) met geo-replicatie conf
 Meer informatie over Azure cache voor redis-functies.
 
 * [Azure-cache voor redis-service lagen](cache-overview.md#service-tiers)
+* [Hoge Beschik baarheid voor Azure cache voor redis](cache-high-availability.md)

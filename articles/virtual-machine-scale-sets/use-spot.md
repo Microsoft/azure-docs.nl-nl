@@ -6,15 +6,15 @@ ms.author: jagaveer
 ms.topic: how-to
 ms.service: virtual-machine-scale-sets
 ms.subservice: spot
-ms.date: 03/25/2020
+ms.date: 02/26/2021
 ms.reviewer: cynthn
-ms.custom: jagaveer, devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 265f78970f17fe7321db8786c2fb8dd2304bb578
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: 33aa553e688b595551c20e8b1432163152865537
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100558676"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101675011"
 ---
 # <a name="azure-spot-virtual-machines-for-virtual-machine-scale-sets"></a>Azure Spot Virtual Machines voor schaal sets voor virtuele machines 
 
@@ -46,19 +46,38 @@ De volgende [aanbiedings typen](https://azure.microsoft.com/support/legal/offer-
 -   Enterprise Agreement
 -   Betalen per gebruik-aanbieding code 003P
 -   Gesponsorde
-- Neem contact op met uw partner voor Cloud service provider (CSP)
+- Voor Cloud serviceprovider (CSP) raadpleegt u het [partner centrum](https://docs.microsoft.com/partner-center/azure-plan-get-started) of neemt u rechtstreeks contact op met uw partner.
 
 ## <a name="eviction-policy"></a>Verwijderingsbeleid
 
-Bij het maken van virtuele-machine schaal sets van Azure, kunt u het verwijderings beleid zo instellen dat de *toewijzing wordt opheffen* (standaard) of *verwijderen*. 
+Wanneer u een schaalset maakt met behulp van Azure Spot Virtual Machines, kunt u het verwijderings beleid zo instellen dat de *toewijzing wordt opheffen* (standaard) of *verwijderen*. 
 
 Het beleid voor het *opheffen* van de toewijzing verplaatst de verwijderde exemplaren naar de status stopped-disallocated, zodat u verwijderde exemplaren opnieuw kunt implementeren. Er is echter geen garantie dat de toewijzing slaagt. De toegewezen Vm's worden geteld voor het quotum van uw schaalset-exemplaar en er worden kosten in rekening gebracht voor de onderliggende schijven. 
 
-Als u wilt dat uw instanties in uw Azure spot-schaalset voor virtuele machines worden verwijderd wanneer ze worden gewist, kunt u het verwijderings beleid instellen op *verwijderen*. Als het verwijderings beleid is ingesteld op verwijderen, kunt u nieuwe virtuele machines maken door de eigenschap aantal exemplaren van de schaalset te verhogen. De verwijderde Vm's worden samen met de onderliggende schijven verwijderd en daarom worden er geen kosten in rekening gebracht voor de opslag. U kunt ook de functie voor automatisch schalen van schaal sets gebruiken om automatisch te proberen en te compenseren voor verwijderde Vm's, maar er is echter geen garantie dat de toewijzing slaagt. U wordt aangeraden alleen de functie voor automatisch schalen te gebruiken in schaal sets voor virtuele machines van Azure steun wanneer u het verwijderings beleid instelt op verwijderen om de kosten van uw schijven te vermijden en quotum limieten te bepalen. 
+Als u wilt dat uw instanties worden verwijderd wanneer ze worden gewist, kunt u het verwijderings beleid instellen op *verwijderen*. Als het verwijderings beleid is ingesteld op verwijderen, kunt u nieuwe virtuele machines maken door de eigenschap aantal exemplaren van de schaalset te verhogen. De verwijderde Vm's worden samen met de onderliggende schijven verwijderd en daarom worden er geen kosten in rekening gebracht voor de opslag. U kunt ook de functie voor automatisch schalen van schaal sets gebruiken om automatisch te proberen en te compenseren voor verwijderde Vm's, maar er is echter geen garantie dat de toewijzing slaagt. U wordt aangeraden alleen de functie voor automatisch schalen te gebruiken in schaal sets voor virtuele machines van Azure steun wanneer u het verwijderings beleid instelt op verwijderen om de kosten van uw schijven te vermijden en quotum limieten te bepalen. 
 
 Gebruikers kunnen zich aanmelden om in-VM-meldingen te ontvangen via [Azure Scheduled Events](../virtual-machines/linux/scheduled-events.md). Hiermee wordt u op de hoogte gesteld als uw Vm's worden verwijderd en u 30 seconden hebt om taken te volt ooien en afsluit taken uit te voeren vóór de verwijdering. 
 
+<a name="bkmk_try"></a>
+## <a name="try--restore-preview"></a>Probeer & herstellen (preview-versie)
+
+Deze nieuwe functie op platform niveau gebruikt AI om automatisch te proberen verwijderde Azure spot-exemplaren van virtuele machines in een schaalset te herstellen om het aantal doel instanties te behouden. 
+
+> [!IMPORTANT]
+> Probeer & herstellen momenteel beschikbaar is als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+Probeer & herstel voordelen:
+- Standaard ingeschakeld bij het implementeren van een virtuele Azure-machine in een schaalset.
+- Pogingen om Azure spot te herstellen Virtual Machines verwijderd als gevolg van capaciteit.
+- De herstelde Azure Spot-Virtual Machines worden naar verwachting uitgevoerd voor een langere duur met een lagere kans op activering van capaciteit.
+- Verbetert de levens duur van een virtuele machine met Azure-steun, zodat workloads gedurende een langere periode worden uitgevoerd.
+- Helpt Virtual Machine Scale Sets om het aantal doelen voor Azure Spot Virtual Machines te onderhouden, vergelijkbaar met het onderhouden van de functie aantal doelen die al bestaan voor Vm's met betalen per gebruik.
+
+Probeer & herstellen is uitgeschakeld in schaal sets die gebruikmaken van [automatisch schalen](virtual-machine-scale-sets-autoscale-overview.md). Het aantal virtuele machines in de schaalset wordt bepaald door de regels voor automatisch schalen.
+
 ## <a name="placement-groups"></a>Plaatsings groepen
+
 Plaatsing groep is een construct die vergelijkbaar is met een Azure-beschikbaarheidsset, met een eigen fout domeinen en upgrade domeinen. Standaard bestaat een schaalset uit één plaatsingsgroep met een omvang van maximaal 100 virtuele machines. Als de eigenschap Scale set met de naam `singlePlacementGroup` is ingesteld op *False*, kan de schaalset bestaan uit meerdere plaatsings groepen en een bereik van 0-1000 vm's hebben. 
 
 > [!IMPORTANT]
@@ -136,6 +155,24 @@ Voeg de `priority` Eigenschappen en toe `evictionPolicy` `billingProfile` aan de
 ```
 
 Als u het exemplaar wilt verwijderen nadat het is verwijderd, wijzigt `evictionPolicy` u de para meter in `Delete` .
+
+
+## <a name="simulate-an-eviction"></a>Een verwijdering simuleren
+
+U kunt een virtuele machine van Azure spot [simuleren](https://docs.microsoft.com/rest/api/compute/virtualmachines/simulateeviction) om te testen hoe goed uw toepassing reageert op een plotselinge verwijdering. 
+
+Vervang het volgende door uw gegevens: 
+
+- `subscriptionId`
+- `resourceGroupName`
+- `vmName`
+
+
+```rest
+POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/simulateEviction?api-version=2020-06-01
+```
+
+`Response Code: 204` betekent dat de gesimuleerde verwijdering is geslaagd. 
 
 ## <a name="faq"></a>Veelgestelde vragen
 

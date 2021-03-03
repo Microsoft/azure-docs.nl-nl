@@ -1,5 +1,5 @@
 ---
-title: Een service-principal voor het voorbereiden van Azure-Arc maken (preview)
+title: Een onboarding-service-principal maken voor Azure Arc enabled Kubernetes
 services: azure-arc
 ms.service: azure-arc
 ms.date: 02/09/2021
@@ -8,20 +8,20 @@ author: mlearned
 ms.author: mlearned
 description: 'Een service-principal maken die geschikt is voor Azure-Arc '
 keywords: Kubernetes, Arc, Azure, containers
-ms.openlocfilehash: 8772cf7634d9a833af120784e3e7868b41d202c4
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: bda088bdae5c866493718db94c9a2da89cada8c9
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100390484"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101650343"
 ---
-# <a name="create-an-azure-arc-enabled-onboarding-service-principal-preview"></a>Een service-principal voor het voorbereiden van Azure-Arc maken (preview)
+# <a name="create-an-onboarding-service-principal-for-azure-arc-enabled-kubernetes"></a>Een onboarding-service-principal maken voor Azure Arc enabled Kubernetes
 
 ## <a name="overview"></a>Overzicht
 
-U kunt Kubernetes-clusters aan Azure Arc toevoegen met Service-principals met beperkte bevoegdheden voor roltoewijzingen. Deze mogelijkheid is handig voor continue integratie en doorlopende implementatie-pijp lijnen (CI/CD), zoals Azure-pijp lijnen en GitHub acties.
+U kunt Kubernetes-clusters verbinden met Azure Arc met Service-principals met beperkte bevoegdheden voor roltoewijzingen. Deze mogelijkheid is handig voor continue integratie en doorlopende implementatie-pijp lijnen (CI/CD), zoals Azure-pijp lijnen en GitHub acties.
 
-Volg de volgende stappen voor informatie over het gebruik van service-principals voor onboarding van Kubernetes-clusters naar Azure Arc.
+Volg de volgende stappen voor informatie over het gebruik van service-principals voor het verbinden van Kubernetes-clusters met Azure Arc.
 
 ## <a name="create-a-new-service-principal"></a>Een nieuwe service-principal maken
 
@@ -49,11 +49,11 @@ Wijs de rol ' Kubernetes cluster-Azure Arc-onboarding ' toe aan de zojuist gemaa
 
 Op basis van de beperkte mogelijkheden kunnen klanten deze principal eenvoudig opnieuw gebruiken om meerdere clusters uit te breiden.
 
-U kunt de machtigingen verder beperken door het juiste argument door te geven `--scope` bij het toewijzen van de rol. Hierdoor kunnen klanten de cluster registratie beperken. De volgende scenario's worden ondersteund door verschillende `--scope` para meters:
+U kunt de machtigingen verder beperken door het juiste argument door te geven `--scope` bij het toewijzen van de rol. Hiermee kunnen beheerders de cluster registratie beperken tot het abonnement of het bereik van de resource groep. De volgende scenario's worden ondersteund door verschillende `--scope` para meters:
 
 | Resource  | Argument voor `scope`| Effect |
 | ------------- | ------------- | ------------- |
-| Abonnement | `--scope /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333` | Service-Principal kan elk cluster in een bestaande resource groep in het opgegeven abonnement registreren. |
+| Abonnement | `--scope /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333` | Service-Principal kan cluster in elke resource groep onder dat abonnement registreren. |
 | Resourcegroep | `--scope /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333/resourceGroups/myGroup`  | Service-Principal kan clusters __alleen__ registreren in de resource groep `myGroup` . |
 
 ```console

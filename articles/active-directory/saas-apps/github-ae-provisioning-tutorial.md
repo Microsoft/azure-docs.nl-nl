@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/29/2020
 ms.author: Zhchia
-ms.openlocfilehash: 4e43ebba9f5f3d0c52d1d03bbf6baca92d5b87a4
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: c3384effc961c6c588bc2d7f4f75bc386d63076b
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96178684"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101651570"
 ---
 # <a name="tutorial-configure-github-ae-for-automatic-user-provisioning"></a>Zelf studie: GitHub AE configureren voor het automatisch inrichten van gebruikers
 
@@ -66,7 +66,7 @@ Met de Azure AD-inrichtings service kunt u bereiken die worden ingericht op basi
 
 ## <a name="step-5-configure-automatic-user-provisioning-to-github-ae"></a>Stap 5. Automatische gebruikers inrichting configureren voor GitHub AE 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in BlogIn te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in TestApp te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
 ### <a name="to-configure-automatic-user-provisioning-for-github-ae-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor GitHub AE in azure AD:
 
@@ -111,17 +111,27 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
    |name.formatted|Tekenreeks|
    |displayName|Tekenreeks|
 
-10. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory groepen synchroniseren naar github AE**.
 
-11. Als u de Azure AD-inrichtings service voor GitHub AE wilt inschakelen, **wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+11. Controleer de groeps kenmerken die zijn gesynchroniseerd vanuit Azure AD naar GitHub AE in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om de groepen in github AE te vergelijken voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+
+      |Kenmerk|Type|
+      |---|---|
+      |displayName|Tekenreeks|
+      |externalId|Tekenreeks|
+      |leden|Naslaginformatie|
+
+12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+
+13. Als u de Azure AD-inrichtings service voor GitHub AE wilt inschakelen, **wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-12. Definieer de gebruikers en/of groepen die u wilt inrichten voor GitHub AE door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
+14. Definieer de gebruikers en/of groepen die u wilt inrichten voor GitHub AE door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 
-13. Wanneer u klaar bent om in te richten, klikt u op **Opslaan**.
+15. Wanneer u klaar bent om in te richten, klikt u op **Opslaan**.
 
     ![Inrichtingsconfiguratie opslaan](common/provisioning-configuration-save.png)
 
@@ -133,6 +143,10 @@ Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om u
 1. Gebruik de [inrichtingslogboeken](../reports-monitoring/concept-provisioning-logs.md) om te bepalen welke gebruikers al dan niet met succes zijn ingericht
 2. Controleer de [voortgangsbalk](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) om de status van de inrichtingscyclus weer te geven en te zien of deze al bijna is voltooid
 3. Als het configureren van de inrichting een foutieve status lijkt te hebben, wordt de toepassing in quarantaine geplaatst. [Klik hier](../app-provisioning/application-provisioning-quarantine-status.md) voor meer informatie over quarantainestatussen.  
+
+## <a name="change-log"></a>Wijzigingenlogboek
+
+* 02/18/2021-ondersteuning toegevoegd voor het inrichten van groepen.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

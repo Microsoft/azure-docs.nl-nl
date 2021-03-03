@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: ryanwi
 ROBOTS: NOINDEX
-ms.openlocfilehash: cd55375f2c5970ff0620e753923f369d40478cef
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 9fa910dee2830f6749f0fbd36f065c31dafa6757
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99052022"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101646245"
 ---
 # <a name="how-application-consent-works"></a>Hoe toepassingstoestemming werkt
 
@@ -31,4 +31,4 @@ In dit artikel vindt u meer informatie over de werking van het Azure AD instemmi
 - Meer informatie over [hoe toestemming wordt ondersteund op de OAuth 2,0-protocol laag tijdens de autorisatie code toekenning stroom.](../azuread-dev/v1-protocols-oauth-code.md#request-an-authorization-code)
 
 ## <a name="next-steps"></a>Volgende stappen
-[AzureAD micro soft Q&A](https://docs.microsoft.com/answers/topics/azure-active-directory.html)
+[AzureAD micro soft Q&A](/answers/topics/azure-active-directory.html)

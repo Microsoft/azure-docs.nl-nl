@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 12/03/2020
-ms.openlocfilehash: b13d03f05b7225a1c88f6b10b454749bd7b42477
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 4cb3965d359980856c238cd563ed8b761754660b
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100588348"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101667736"
 ---
 # <a name="azure-purview-metrics-in-azure-monitor"></a>De metrische gegevens voor Azure controle sfeer liggen in Azure Monitor
 
@@ -62,7 +62,7 @@ Om vertrouwd te raken met het gebruik van de sectie metric in de Azure Portal de
 
 De volgende tabel bevat de lijst met metrische gegevens die u kunt verkennen in de Azure Portal:
 
-| Naam meetwaarde | Metrische naamruimte | Type aggregatie | Description |
+| Naam meetwaarde | Metrische naamruimte | Type aggregatie | Beschrijving |
 | ------------------- | ------------------- | ------------------- | ----------------- |
 | De scan is geannuleerd | Automatische scan | Sum <br> Count | De geannuleerde gegevens bron wordt gecontroleerd op basis van de tijds periode |
 | De scan is voltooid | Automatische scan | Sum <br> Count | De voltooide scan van gegevens bronnen samen voegen gedurende een bepaalde periode |
@@ -83,7 +83,7 @@ Volg de stappen voor het maken van een diagnostische instelling voor uw Azure co
 
    :::image type="content" source="./media/how-to-monitor-with-azure-monitor/step-two-diagnostic-setting.png" alt-text="Scherm opname van het toewijzen van een opslag account voor Diagnostische logboeken." lightbox="./media/how-to-monitor-with-azure-monitor/step-two-diagnostic-setting.png":::
 
-Het duurt Maxi maal 15 minuten om logboeken te ontvangen in het zojuist gemaakte opslag account. [Zie gegevens retentie en schema van bron Logboeken in azure Storage-account](../azure-monitor/platform/resource-logs.md#send-to-azure-storage). Zodra de diagnostische logboeken zijn geconfigureerd, stroomt de gebeurtenissen naar het opslag account.
+Het duurt Maxi maal 15 minuten om logboeken te ontvangen in het zojuist gemaakte opslag account. [Zie gegevens retentie en schema van bron Logboeken in azure Storage-account](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage). Zodra de diagnostische logboeken zijn geconfigureerd, stroomt de gebeurtenissen naar het opslag account.
 
 ### <a name="scanstatuslogevent"></a>ScanStatusLogEvent
 

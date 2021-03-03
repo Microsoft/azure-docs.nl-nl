@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
-ms.openlocfilehash: 6fbc4179bcfc36f094b36966c8e5dd0acac66075
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 03144d478be0053ac77709132b08cdf17b062fb0
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98683019"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101666286"
 ---
 # <a name="synapse-sql-resource-consumption"></a>Synapse SQL-resourceverbruik
 
@@ -38,7 +38,7 @@ De prestaties van DWU's zijn gebaseerd op de metrische gegevens van de workload 
 
 - Hoe snel een standaarddatawarehousequery een groot aantal rijen kan scannen en vervolgens een complexe aggregatie kan uitvoeren. Dit is een I/O-bewerking waarbij de CPU intensief wordt belast.
 - Hoe snel het datawarehouse gegevens kan opnemen uit Azure Storage Blobs of Azure Data Lake. Dit is een netwerkbewerking waarbij de CPU intensief wordt belast.
-- Hoe snel de [`CREATE TABLE AS SELECT`](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) T-SQL-opdracht een tabel kan kopiëren. Deze bewerking omvat het lezen van gegevens uit de opslag, het verdelen van de gegevens over de knooppunten van het systeem en het weer terugschrijven van de gegevens naar de opslag. Dit is een bewerking waarbij de CPU, de IO en het netwerk intensief worden belast.
+- Hoe snel de [`CREATE TABLE AS SELECT`](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=azure-sqldw-latest&preserve-view=true) T-SQL-opdracht een tabel kan kopiëren. Deze bewerking omvat het lezen van gegevens uit de opslag, het verdelen van de gegevens over de knooppunten van het systeem en het weer terugschrijven van de gegevens naar de opslag. Dit is een bewerking waarbij de CPU, de IO en het netwerk intensief worden belast.
 
 DWU's verhogen:
 
@@ -78,7 +78,7 @@ Naarmate u datawarehouse-eenheden vergroot, vergroot u de rekenresources lineair
 
 #### <a name="capacity-limits"></a>Capaciteitslimieten
 
-Elke SQL-server (bijvoorbeeld myserver.database.windows.net) heeft een [DTU-quotum (Database Transaction Unit)](../../azure-sql/database/service-tiers-dtu.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) dat een specifiek aantal DWU's toestaat. Zie de [Capaciteitslimieten voor workloadbeheer](../sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#workload-management) voor meer informatie.
+Elke SQL-server (bijvoorbeeld myserver.database.windows.net) heeft een [DTU-quotum (Database Transaction Unit)](../../azure-sql/database/service-tiers-dtu.md) dat een specifiek aantal DWU's toestaat. Zie de [Capaciteitslimieten voor workloadbeheer](../sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#workload-management) voor meer informatie.
 
 ### <a name="assess-the-number-of-data-warehouse-units-you-need"></a>Bepaal het aantal datawarehouse-eenheden dat u nodig hebt
 
@@ -98,7 +98,7 @@ SQL-pool is een scale-outsysteem waarmee u grote hoeveelheden reken- en querygeg
 
 ### <a name="permissions"></a>Machtigingen
 
-Voor het wijzigen van de DWU's zijn de machtigingen vereist die worden beschreven in [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
+Voor het wijzigen van de DWU's zijn de machtigingen vereist die worden beschreven in [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?view=azure-sqldw-latest&preserve-view=true).
 
 Ingebouwde Azure-rollen, zoals Inzender voor SQL-databases en Inzender voor SQL Server, kunnen DWU-instellingen wijzigen.
 
@@ -135,7 +135,7 @@ DWU's wijzigen:
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Als u de DWU's wilt wijzigen, gebruikt u de PowerShell-cmdlet [Set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json). In het volgende voorbeeld wordt de serviceniveaudoelstelling ingesteld op DW1000 voor de database MijnSQLDW die wordt gehost op server MijnServer.
+Als u de DWU's wilt wijzigen, gebruikt u de PowerShell-cmdlet [Set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase). In het volgende voorbeeld wordt de serviceniveaudoelstelling ingesteld op DW1000 voor de database MijnSQLDW die wordt gehost op server MijnServer.
 
 ```Powershell
 Set-AzSqlDatabase -DatabaseName "MySQLDW" -ServerName "MyServer" -RequestedServiceObjectiveName "DW1000c"
@@ -150,7 +150,7 @@ Met T-SQL kunt u de huidige DWU-instellingen weergeven, de instellingen wijzigen
 De DWU's wijzigen:
 
 1. Maak verbinding met de hoofddatabase die aan uw server is gekoppeld.
-2. Gebruik de TSQL-instructie [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). In het volgende voorbeeld wordt de serviceniveaudoelstelling ingesteld op DW1000c voor de database MijnSQLDW.
+2. Gebruik de TSQL-instructie [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?view=azure-sqldw-latest&preserve-view=true). In het volgende voorbeeld wordt de serviceniveaudoelstelling ingesteld op DW1000c voor de database MijnSQLDW.
 
 ```Sql
 ALTER DATABASE MySQLDW
@@ -160,7 +160,7 @@ MODIFY (SERVICE_OBJECTIVE = 'DW1000c')
 
 #### <a name="rest-apis"></a>REST-API’s
 
-Als u de DWU's wilt wijzigen, gebruikt u de REST API [Database maken of bijwerken](/sql/t-sql/statements/alter-database-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). In het volgende voorbeeld wordt de serviceniveaudoelstelling ingesteld op DW1000c voor de database MijnSQLDW die wordt gehost op server MijnServer. De server bevindt zich in een Azure-resourcegroep met de naam ResourceGroep1.
+Als u de DWU's wilt wijzigen, gebruikt u de REST API [Database maken of bijwerken](/sql/t-sql/statements/alter-database-transact-sql?view=azure-sqldw-latest&preserve-view=true). In het volgende voorbeeld wordt de serviceniveaudoelstelling ingesteld op DW1000c voor de database MijnSQLDW die wordt gehost op server MijnServer. De server bevindt zich in een Azure-resourcegroep met de naam ResourceGroep1.
 
 ```
 PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}/databases/{database-name}?api-version=2014-04-01-preview HTTP/1.1

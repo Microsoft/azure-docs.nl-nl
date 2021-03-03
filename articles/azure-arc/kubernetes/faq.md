@@ -2,18 +2,18 @@
 title: Veelgestelde vragen over Azure Arc enabled Kubernetes
 services: azure-arc
 ms.service: azure-arc
-ms.date: 02/17/2021
+ms.date: 02/19/2021
 ms.topic: conceptual
 author: shashankbarsin
 ms.author: shasb
 description: Dit artikel bevat een lijst met veelgestelde vragen met betrekking tot Azure Arc enabled Kubernetes
 keywords: Kubernetes, Arc, azure, containers, configuratie, GitOps, veelgestelde vragen
-ms.openlocfilehash: e0d7501dc1a82940571d0168222c396f61a70bce
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: dc12294b5d53372be5f2e1dd71436973fefbb194
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652493"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101647860"
 ---
 # <a name="frequently-asked-questions---azure-arc-enabled-kubernetes"></a>Veelgestelde vragen: Azure Arc enabled Kubernetes
 
@@ -32,6 +32,8 @@ Nee. Alle Azure Arc ingeschakelde Kubernetes-functies, waaronder Azure Monitor e
 ## <a name="should-i-connect-my-aks-hci-cluster-and-kubernetes-clusters-on-azure-stack-hub-and-azure-stack-edge-to-azure-arc"></a>Moet ik mijn AKS-HCI-cluster en Kubernetes-clusters op Azure Stack hub en Azure Stack Edge verbinden met Azure Arc?
 
 Ja, u kunt uw AKS-HCI-cluster of Kubernetes-clusters op Azure Stack Edge-of Azure Stack-hub met Azure Arc verbinden met clusters met resource weergave in Azure Resource Manager. Deze resource weergave breidt mogelijkheden, zoals cluster configuratie, Azure Monitor en Azure Policy (gate keeper), uit voor verbonden Kubernetes-clusters.
+
+Als het Kubernetes-cluster van Azure Arc zich op Azure Stack Edge bevindt, AKS op Azure Stack HCI (>= april 2021 update) of AKS op Windows Server 2019 Data Center (>= update van april 2021), is de Kubernetes-configuratie kosteloos opgenomen.
 
 ## <a name="how-to-address-expired-azure-arc-enabled-kubernetes-resources"></a>Hoe kan ik de verlopen Azure Arc-Kubernetes-resources adresseren?
 
@@ -70,6 +72,6 @@ Deze functie past basislijn configuraties (zoals netwerk beleid, Pod en beveilig
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Een cluster verbinden met Azure Arc](./connect-cluster.md)
+* [Een cluster verbinden met Azure Arc](./quickstart-connect-cluster.md)
 * [Configuraties maken op uw Kubernetes-cluster met Arc-functionaliteit](./use-gitops-connected-cluster.md)
 * [Azure Policy gebruiken om configuraties op schaal toe te passen](./use-azure-policy.md)

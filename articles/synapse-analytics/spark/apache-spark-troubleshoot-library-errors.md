@@ -8,12 +8,12 @@ ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: conceptual
 ms.date: 01/04/2021
-ms.openlocfilehash: 60ea97ea2df271f867febec3fa0f0826a18dbbbf
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: e812fa47d35889a9cf8c671a4df6034812272a6a
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417172"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101670635"
 ---
 # <a name="troubleshoot-library-installation-errors"></a>Problemen met de bibliotheek installatie oplossen 
 Als u een derde of lokaal gemaakte code beschikbaar wilt maken voor uw toepassingen, kunt u een bibliotheek installeren op een van de serverloze Apache Spark groepen. De pakketten die in het requirements.txt-bestand worden weer gegeven, worden vanaf PyPi gedownload op het moment dat de pool wordt gestart. Dit vereisten bestand wordt gebruikt wanneer een Spark-exemplaar wordt gemaakt vanuit die Spark-groep. Zodra een bibliotheek is geïnstalleerd voor een Spark-groep, is deze beschikbaar voor alle sessies die gebruikmaken van dezelfde groep. 
@@ -54,7 +54,7 @@ df = spark.createDataFrame(data=data2,schema=schema)
 df.write.csv("abfss://<<ENTER NAME OF FILE SYSTEM>>@<<ENTER NAME OF PRIMARY STORAGE ACCOUNT>>.dfs.core.windows.net/validate_permissions.csv")
 
 ```
-Als er een fout bericht wordt weer gegeven, mist u waarschijnlijk de vereiste machtigingen. Ga voor meer informatie over het verkrijgen van de vereiste machtigingen naar dit document: [toegang tot Inzender voor opslag-blobs of gegevens eigenaar](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal#assign-an-azure-built-in-role)van de opslag-BLOB toewijzen.
+Als er een fout bericht wordt weer gegeven, mist u waarschijnlijk de vereiste machtigingen. Ga voor meer informatie over het verkrijgen van de vereiste machtigingen naar dit document: [toegang tot Inzender voor opslag-blobs of gegevens eigenaar](../../storage/common/storage-auth-aad-rbac-portal.md#assign-an-azure-built-in-role)van de opslag-BLOB toewijzen.
 
 Bovendien, als u een pijp lijn uitvoert, moet de werk ruimte-MSI-gegevens eigenaar van de opslag-BLOB of de gegevensfactory van de opslag-BLOB ook zijn. Ga voor meer informatie over het verlenen van de identiteit van uw werk ruimte aan deze machtiging naar: [machtigingen verlenen aan beheerde identiteit van werk ruimte](../security/how-to-grant-workspace-managed-identity-permissions.md).
 
@@ -98,4 +98,3 @@ De omgeving opnieuw maken en uw updates valideren:
 
 ## <a name="next-steps"></a>Volgende stappen
 - De standaard bibliotheken weer geven: [ondersteuning van Apache Spark-versie](apache-spark-version-support.md)
-

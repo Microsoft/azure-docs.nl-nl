@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08a919338789a02d50cbb6976ee50b214cb0d612
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: d081754616b40a21b3b842758844eb13e2752569
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417179"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101650954"
 ---
 # <a name="securing-standalone-managed-service-accounts"></a>Zelfstandige beheerde service accounts beveiligen
 
@@ -44,7 +44,7 @@ sMSAs bieden betere beveiliging dan gebruikers accounts die worden gebruikt als 
 
    * De DNS-naam van de hostcomputer wordt gewijzigd.
 
-   * Bij het toevoegen of verwijderen van een extra SAM-account-of DNS-hostname-para meters met behulp van [Power shell](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)
+   * Bij het toevoegen of verwijderen van een extra SAM-account-of DNS-hostname-para meters met behulp van [Power shell](/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)
 
 ## <a name="when-to-use-smsas"></a>Wanneer u sMSAs gebruikt
 
@@ -53,7 +53,7 @@ sMSAs kunnen beheer-en beveiligings taken vereenvoudigen. Gebruik sMSAs wanneer 
 > [!NOTE] 
 > Hoewel u sMSAs kunt gebruiken voor meer dan één service, is het raadzaam dat elke service een eigen identiteit voor controle doeleinden heeft. 
 
-Als de maker van de software u niet kan vertellen of een MSA kan worden gebruikt, moet u de toepassing testen. Als u dit wilt doen, maakt u een test omgeving en zorgt u ervoor dat deze toegang heeft tot alle vereiste resources. Zie [een sMSA maken en installeren](https://docs.microsoft.com/archive/blogs/askds/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting) voor stapsgewijze instructies.
+Als de maker van de software u niet kan vertellen of een MSA kan worden gebruikt, moet u de toepassing testen. Als u dit wilt doen, maakt u een test omgeving en zorgt u ervoor dat deze toegang heeft tot alle vereiste resources. Zie [een sMSA maken en installeren](/archive/blogs/askds/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting) voor stapsgewijze instructies.
 
 ### <a name="assess-security-posture-of-smsas"></a>Beveiligings postuur van sMSAs beoordelen
 
@@ -112,7 +112,7 @@ U kunt de volgende Active Directory Power shell-cmdlets gebruiken voor het beher
 
 ## <a name="move-to-smsas"></a>Naar sMSAs
 
-Als een toepassings service sMSA ondersteunt, maar niet Gmsa's, en momenteel een gebruikers account of computer account gebruikt voor de beveiligings context, [maakt en installeert u een sMSA](https://docs.microsoft.com/archive/blogs/askds/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting) op de-server. 
+Als een toepassings service sMSA ondersteunt, maar niet Gmsa's, en momenteel een gebruikers account of computer account gebruikt voor de beveiligings context, [maakt en installeert u een sMSA](/archive/blogs/askds/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting) op de-server. 
 
 Verplaats resources in het ideale geval naar Azure en gebruik Azure beheerde identiteiten of service-principals.
 
@@ -133,4 +133,3 @@ Raadpleeg de volgende artikelen over het beveiligen van service accounts
 
 * [On-premises service accounts beheren](service-accounts-govern-on-premises.md)
 
- 

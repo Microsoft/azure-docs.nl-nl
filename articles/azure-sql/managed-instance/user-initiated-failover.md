@@ -9,13 +9,13 @@ ms.topic: how-to
 author: danimir
 ms.author: danil
 ms.reviewer: douglas, sstein
-ms.date: 02/17/2021
-ms.openlocfilehash: ecd97efbf12fb149037a94749bc899169f2c5a92
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.date: 02/23/2021
+ms.openlocfilehash: c154699b7701b584e465ebea7950d4fe50be961f
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101096522"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101660794"
 ---
 # <a name="user-initiated-manual-failover-on-sql-managed-instance"></a>User-initiated manual failover on SQL Managed Instance (Door gebruiker geïnitieerde handmatige failover op een SQL Managed Instance)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -34,7 +34,7 @@ U kunt overwegen om een van de volgende redenen een [hand matige failover](../da
 - In sommige gevallen van prestatie vermindering van query's kan hand matige failover het prestatie probleem oplossen.
 
 > [!NOTE]
-> Om ervoor te zorgen dat uw toepassingen flexibeler zijn dan de implementatie van de productie, kunt u het risico op toepassings fouten in de productie verminderen en bijdragen aan de beschik baarheid van toepassingen voor uw klanten.
+> Om ervoor te zorgen dat uw toepassingen flexibeler zijn dan de implementatie van de productie, kunt u het risico op toepassings fouten in de productie verminderen en bijdragen aan de beschik baarheid van toepassingen voor uw klanten. Meer informatie over het testen van uw toepassingen voor de Cloud gereedheid met het [testen van de Cloud gereedheids voor failover met een SQL Managed instance](https://youtu.be/FACWYLgYDL8) -video opnieuw coderen.
 
 ## <a name="initiate-manual-failover-on-sql-managed-instance"></a>Hand matige failover initiëren op een SQL-beheerd exemplaar
 
@@ -43,7 +43,7 @@ U kunt overwegen om een van de volgende redenen een [hand matige failover](../da
 Gebruikers die een failover initiëren, moeten een van de volgende Azure-rollen hebben:
 
 - De rol van abonnements eigenaar of
-- Rol van beheerde instantie Inzender of
+- Rol van [beheerde instantie Inzender](../../role-based-access-control/built-in-roles.md#sql-managed-instance-contributor) of
 - Aangepaste rol met de volgende machtiging:
   - `Microsoft.Sql/managedInstances/failover/action`
 
@@ -153,6 +153,6 @@ Het kort verlies van de connectiviteit van uw client tijdens de failover, doorga
 > - Failover is pas toegestaan als de eerste volledige back-up voor een nieuwe Data Base is voltooid door automatische back-upsystemen.
 
 ## <a name="next-steps"></a>Volgende stappen
-
+- Meer informatie over het testen van uw toepassingen voor de Cloud gereedheid met het [testen van de Cloud gereedheids voor failover met een SQL Managed instance](https://youtu.be/FACWYLgYDL8) -video opnieuw coderen.
 - Meer informatie over hoge Beschik baarheid van hoge Beschik baarheid van beheerde exemplaren [voor Azure SQL Managed instance](../database/high-availability-sla.md).
 - Zie [Wat is Azure SQL Managed instance?](sql-managed-instance-paas-overview.md)voor een overzicht.

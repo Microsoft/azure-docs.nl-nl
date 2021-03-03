@@ -2,18 +2,18 @@
 title: Microsoft Azure integreren met Oracle-Cloud infrastructuur | Microsoft Docs
 description: Meer informatie over oplossingen voor het integreren van Oracle-apps die worden uitgevoerd op Microsoft Azure met data bases in Oracle Cloud Infrastructure (OCI).
 author: dbakevlar
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines
+ms.subservice: oracle
+ms.collection: linux
 ms.topic: article
 ms.date: 06/01/2020
 ms.author: kegorman
-ms.reviewer: cynthn
-ms.openlocfilehash: e8e9bf23c236f805135d7d46b969c564975448ac
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: b27db94775e2ba8275dbdab4bf5bd61cc0fdf5c8
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965405"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101666872"
 ---
 # <a name="oracle-application-solutions-integrating-microsoft-azure-and-oracle-cloud-infrastructure"></a>Oracle-toepassings oplossingen die Microsoft Azure en Oracle-Cloud infrastructuur integreren
 

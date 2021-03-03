@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: de04be2495c6e81e9c5f8d32f9d876b49482c5fe
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 9f52c3fd1284ce7e55680d051c5292361067fad9
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98678369"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101673999"
 ---
 # <a name="t-sql-views-with-dedicated-sql-pool-and-serverless-sql-pool-in-azure-synapse-analytics"></a>T-SQL-weer gaven met een toegewezen SQL-groep en een serverloze SQL-groep in azure Synapse Analytics
 
@@ -27,11 +27,11 @@ Weer gaven kunnen op verschillende manieren worden gebruikt om de kwaliteit van 
 ### <a name="sql-pool---create-view"></a>SQL-groep-weer gave maken
 
 > [!NOTE]
-> De syntaxis voor de weer gave CREATE wordt niet beschreven in dit artikel. Zie de documentatie voor het [maken van weer gaven](/sql/t-sql/statements/create-view-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) voor meer informatie.
+> De syntaxis voor de weer gave CREATE wordt niet beschreven in dit artikel. Zie de documentatie voor het [maken van weer gaven](/sql/t-sql/statements/create-view-transact-sql?view=azure-sqldw-latest&preserve-view=true) voor meer informatie.
 
 ## <a name="architectural-abstraction"></a>Samen vatting van architectuur
 
-Een algemeen toepassings patroon is het opnieuw maken van tabellen met [Create Table als Select](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (CTAS), gevolgd door een patroon voor het wijzigen van de naam van een object tijdens het laden van gegevens.
+Een algemeen toepassings patroon is het opnieuw maken van tabellen met [Create Table als Select](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=azure-sqldw-latest&preserve-view=true) (CTAS), gevolgd door een patroon voor het wijzigen van de naam van een object tijdens het laden van gegevens.
 
 In het volgende voor beeld worden nieuwe datum records toegevoegd aan een datum dimensie. U ziet dat een nieuwe tabel, DimDate_New, eerst wordt gemaakt en de naam ervan wordt gewijzigd om de oorspronkelijke versie van de tabel te vervangen.
 

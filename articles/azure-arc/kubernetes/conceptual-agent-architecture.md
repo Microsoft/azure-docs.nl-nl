@@ -2,18 +2,18 @@
 title: Architectuur van Azure Arc enabled Kubernetes-agent
 services: azure-arc
 ms.service: azure-arc
-ms.date: 02/17/2021
+ms.date: 02/19/2021
 ms.topic: conceptual
 author: shashankbarsin
 ms.author: shasb
 description: Dit artikel bevat een overzicht van de architectuur van Azure Arc enabled Kubernetes-agents
 keywords: Kubernetes, Arc, Azure, containers
-ms.openlocfilehash: 287ffdd40dc9ffdb91abb58b305d8b35b0bc3674
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: b4fb836cc7782f4026a28f4af0ca372c76486a31
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652561"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101650529"
 ---
 # <a name="azure-arc-enabled-kubernetes-agent-architecture"></a>Architectuur van Azure Arc enabled Kubernetes-agent
 
@@ -42,7 +42,7 @@ De meeste on-premises data centers dwingen strikte netwerk regels af waarmee bin
 
         | Agent | Description |
         | ----- | ----------- |
-        | `deployment.apps/clusteridentityoperator` | Azure Arc enabled Kubernetes ondersteunt momenteel alleen door het [systeem toegewezen identiteiten](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview). `clusteridentityoperator` initieert de eerste uitgaande communicatie. Deze eerste communicatie haalt het Managed Service Identity (MSI)-certificaat op dat door andere agents wordt gebruikt voor communicatie met Azure. |
+        | `deployment.apps/clusteridentityoperator` | Azure Arc enabled Kubernetes ondersteunt momenteel alleen door het [systeem toegewezen identiteiten](../../active-directory/managed-identities-azure-resources/overview.md). `clusteridentityoperator` initieert de eerste uitgaande communicatie. Deze eerste communicatie haalt het Managed Service Identity (MSI)-certificaat op dat door andere agents wordt gebruikt voor communicatie met Azure. |
         | `deployment.apps/config-agent` | Controleert het verbonden cluster op configuratie bronnen voor broncode beheer die op het cluster zijn toegepast. Hiermee wordt de nalevings status bijgewerkt. |
         | `deployment.apps/controller-manager` | Een operator van Opera tors die de interacties tussen onderdelen van Azure Arc indeelt. |    
         | `deployment.apps/metrics-agent` | Hiermee worden metrische gegevens van andere Arc-agents verzameld om de optimale prestaties te controleren. |
@@ -85,7 +85,7 @@ De meeste on-premises data centers dwingen strikte netwerk regels af waarmee bin
 
 ## <a name="understand-connectivity-modes"></a>Connectiviteits modi begrijpen
 
-| Connectiviteits modus | Description |
+| Connectiviteits modus | Beschrijving |
 | ----------------- | ----------- |
 | Volledig verbonden | Agents kunnen consistent communiceren met Azure met weinig vertraging bij het door geven van GitOps-configuraties, het afdwingen van Azure Policy-en gate keeper-beleid en het verzamelen van metrische gegevens over werk belasting en Logboeken in Azure Monitor. |
 | Semi-verbonden | Het MSI-certificaat dat door de `clusteridentityoperator` is opgehaald, is Maxi maal 90 dagen geldig voordat het certificaat verloopt. Na verloop van tijd werkt de Azure Arc-Kubernetes-resource niet meer. Als u alle functies van Azure-Arc op het cluster opnieuw wilt activeren, verwijdert u de Azure-Kubernetes-resource en-agents en maakt u deze opnieuw. Sluit het cluster gedurende de 90 dagen ten minste één keer per 30 dagen aan. |
@@ -93,5 +93,5 @@ De meeste on-premises data centers dwingen strikte netwerk regels af waarmee bin
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Een cluster verbinden met Azure Arc](./connect-cluster.md)
+* [Een cluster verbinden met Azure Arc](./quickstart-connect-cluster.md)
 * [Conceptueel overzicht van configuraties](./conceptual-configurations.md)

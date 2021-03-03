@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/27/2021
 ms.author: jeedes
-ms.openlocfilehash: 37a59d6da6fdc844b0b3647c029d716429b50ef6
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 6e281931eb4646e09bb9aa3226ed7d0735c84e3f
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430832"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101643776"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-everbridge"></a>Zelfstudie: Integratie van Azure Active Directory met Everbridge
 
@@ -25,7 +25,7 @@ Wanneer u Everbridge integreert met Azure AD, kunt u het volgende doen:
 
 * In Azure AD beheren wie toegang heeft tot Everbridge.
 * Ervoor zorgen dat gebruikers zich automatisch met hun Azure AD-account kunnen aanmelden bij Everbridge. Dit toegangsbeheerelement wordt eenmalige aanmelding (SSO) genoemd.
-* U kunt uw accounts vanaf één locatie beheren: de Azure-portal.
+* Uw accounts op een centrale locatie beheren, namelijk met behulp van Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -179,8 +179,8 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Klik op test deze toepassing in Azure Portal en u moet automatisch worden aangemeld bij de Everbridge waarvoor u de SSO hebt ingesteld.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Everbridge in de mijn apps klikt, moet u automatisch worden aangemeld bij de Everbridge waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Everbridge in de mijn apps klikt, moet u automatisch worden aangemeld bij de Everbridge waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nadat u Everbridge hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+Nadat u Everbridge hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

@@ -7,17 +7,38 @@ author: luiscabrer
 ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 09/08/2020
-ms.openlocfilehash: d16eefc8dd3f693e108e457782dc9d076180ba8e
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.date: 03/02/2021
+ms.openlocfilehash: 72243f896b2cf7dbab61a42514bee634da28d4c6
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100520592"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101676327"
 ---
 # <a name="similarity-and-scoring-in-azure-cognitive-search"></a>Gelijkenis en score in azure Cognitive Search
 
-Score verwijst naar de berekening van een zoek score voor elk item dat wordt geretourneerd in Zoek resultaten voor Zoek opdrachten in volledige tekst. De score is een indicatie van de relevantie van een item in de context van de huidige zoekbewerking. Hoe hoger de score, hoe relevanter het item. In Zoek resultaten worden items gerangschikt van hoog naar laag, op basis van de zoek scores die voor elk item worden berekend. 
+In dit artikel worden de twee overeenkomst classificatie algoritmen in azure Cognitive Search beschreven. Daarnaast worden er twee verwante functies geïntroduceerd: *Score profielen* (criteria voor het aanpassen van een zoek Score) en de para meter *featuresMode* (Hiermee wordt een zoek Score uitgepakt om meer details weer te geven). 
+
+Een derde semantische, herclassificaties algoritme is momenteel beschikbaar als open bare preview. Voor meer informatie gaat u naar [overzicht van semantisch zoeken](semantic-search-overview.md).
+
+## <a name="similarity-ranking-algorithms"></a>Classificatie algoritmen voor gelijkenis
+
+Azure Cognitive Search ondersteunt twee gelijkenis classificatie algoritmen.
+
+| Algoritme | Score | Beschikbaarheid |
+|-----------|-------|--------------|
+| ClassicSimilarity | @search.score | Wordt gebruikt door alle zoek services tot en met 15 juli 2020. |
+| BM25Similarity | @search.score | Wordt gebruikt door alle zoek services die zijn gemaakt na 15 juli. Oudere services die standaard klassiek gebruiken, kunnen [zich aanmelden bij BM25](index-ranking-similarity.md). |
+
+Zowel de klassieke als de BM25 zijn TF-IDF-achtige ophaal functies die gebruikmaken van de term frequentie (TF) en de inverse document frequentie (IDF) als variabelen voor het berekenen van relevantie scores voor elk document-query paar, dat vervolgens wordt gebruikt voor de classificatie, terwijl het concept lijkt op klassieke, BM25 de hoofdmap in Probabilistic gegevens ophalen om deze te verbeteren. BM25 biedt ook geavanceerde aanpassings opties, zoals het toestaan van de gebruiker om te bepalen hoe de relevantie score wordt geschaald met de term frequentie van overeenkomende voor waarden.
+
+Het volgende video segment is een snelle doorstuur naar een uitleg van de algemeen beschik bare classificatie algoritmen die worden gebruikt in azure Cognitive Search. U kunt de volledige video bekijken voor meer achtergrond.
+
+> [!VIDEO https://www.youtube.com/embed/Y_X6USgvB1g?version=3&start=322&end=643]
+
+## <a name="relevance-scoring"></a>Relevantiescore
+
+Score verwijst naar de berekening van een zoek score voor elk item dat wordt geretourneerd in Zoek resultaten voor Zoek opdrachten in volledige tekst. De score is een indicatie van de relevantie van een item in de context van de huidige query. Hoe hoger de score, hoe relevanter het item. In Zoek resultaten worden items gerangschikt van hoog naar laag, op basis van de zoek scores die voor elk item worden berekend. De score wordt in het antwoord geretourneerd @search.score op elk document.
 
 Standaard worden de bovenste 50 geretourneerd in het antwoord, maar u kunt de para meter **$Top** gebruiken om een kleiner of groter aantal items te retour neren (maxi maal 1000 in één antwoord) en **$Skip** om de volgende set resultaten op te halen.
 
@@ -25,16 +46,10 @@ De zoek score wordt berekend op basis van de statistische eigenschappen van de g
 
 Zoek Score waarden kunnen worden herhaald in een resultatenset. Wanneer meerdere treffers dezelfde Zoek score hebben, wordt de volg orde van dezelfde gescoorde items niet gedefinieerd en is deze niet stabiel. Voer de query opnieuw uit en u kunt de positie van items verschuiving zien, met name als u de gratis service of een factureer bare service met meerdere replica's gebruikt. Als er twee items met een identieke Score worden opgegeven, is er geen garantie dat er eerst een wordt weer gegeven.
 
-Als u het koppelen tussen herhaalde scores wilt verstoren, kunt u een **$OrderBy** -component toevoegen aan de eerste order by-Score en vervolgens sorteren op een ander sorteerbaar veld (bijvoorbeeld `$orderby=search.score() desc,Rating desc` ). Zie [$OrderBy](./search-query-odata-orderby.md)voor meer informatie.
+Als u het koppelen tussen herhaalde scores wilt verstoren, kunt u een **$OrderBy** -component toevoegen aan de eerste order by-Score en vervolgens sorteren op een ander sorteerbaar veld (bijvoorbeeld `$orderby=search.score() desc,Rating desc` ). Zie [$OrderBy](search-query-odata-orderby.md)voor meer informatie.
 
 > [!NOTE]
-> Een `@search.score = 1.00` geeft een niet-gescoorde of niet-geclassificeerde resultatenset aan. De score is gelijkmatig verdeeld over alle resultaten. Niet-gescoorde resultaten treden op wanneer het query formulier fuzzy zoeken, joker tekens of regex-query's of een **$filter** expressie is. 
-
-## <a name="scoring-profiles"></a>Scoreprofielen
-
-U kunt de manier aanpassen waarop verschillende velden worden gerangschikt door een aangepast *Score profiel* te definiëren. Score profielen geven u meer controle over de rang schikking van items in Zoek resultaten. U kunt bijvoorbeeld items verhogen op basis van hun omzet potentieel, nieuwere items promoten of mogelijk objecten verhogen die in de voor Raad te lang zijn. 
-
-Een score profiel maakt deel uit van de definitie van de index, die bestaat uit gewogen velden, functies en para meters. Zie [Score profielen](index-add-scoring-profiles.md)voor meer informatie over het definiëren van een.
+> Een `@search.score = 1.00` geeft een niet-gescoorde of niet-geclassificeerde resultatenset aan. De score is gelijkmatig verdeeld over alle resultaten. Niet-gescoorde resultaten treden op wanneer het query formulier fuzzy zoeken, joker tekens of regex-query's of een **$filter** expressie is.
 
 <a name="scoring-statistics"></a>
 
@@ -51,6 +66,7 @@ GET https://[service name].search.windows.net/indexes/[index name]/docs?scoringS
   Content-Type: application/json
   api-key: [admin or query key]  
 ```
+
 Als u scoringStatistics gebruikt, zorgt u ervoor dat alle Shards in dezelfde replica dezelfde resultaten hebben. Dat wil zeggen dat verschillende replica's enigszins verschillen van elkaar, aangezien ze altijd worden bijgewerkt met de laatste wijzigingen in uw index. In sommige scenario's wilt u mogelijk dat uw gebruikers tijdens een query sessie meer consistente resultaten krijgen. In dergelijke scenario's kunt u een `sessionId` als onderdeel van uw query's opgeven. De `sessionId` is een unieke teken reeks die u maakt om te verwijzen naar een unieke gebruikers sessie.
 
 ```http
@@ -58,20 +74,17 @@ GET https://[service name].search.windows.net/indexes/[index name]/docs?sessionI
   Content-Type: application/json
   api-key: [admin or query key]  
 ```
+
 Zolang hetzelfde `sessionId` wordt gebruikt, wordt er een poging gedaan om op dezelfde replica te richten, waardoor de consistentie van de resultaten die uw gebruikers worden weer gegeven, wordt verhoogd. 
 
 > [!NOTE]
 > Als u dezelfde `sessionId` waarden herhaaldelijk opnieuw gebruikt, kan dit de taak verdeling van de aanvragen tussen replica's beïnvloeden en de prestaties van de zoek service nadelig beïnvloeden. De waarde die wordt gebruikt als sessionId mag niet beginnen met een ' _ '-teken.
 
-## <a name="similarity-ranking-algorithms"></a>Classificatie algoritmen voor gelijkenis
+## <a name="scoring-profiles"></a>Scoreprofielen
 
-Azure Cognitive Search ondersteunt twee verschillende classificatie algoritmen voor gelijkenis: een *klassiek soortgelijk* algoritme en de officiële implementatie van het *Okapi BM25* -algoritme (momenteel in preview-versie). Het klassieke gelijkenis algoritme is het standaard algoritme, maar vanaf 15 juli zullen alle nieuwe services die na die datum zijn gemaakt, gebruikmaken van het nieuwe BM25-algoritme. Dit is het enige algoritme dat op nieuwe services beschikbaar is.
+U kunt de manier aanpassen waarop verschillende velden worden gerangschikt door een *Score profiel* te definiëren. Score profielen geven u meer controle over de rang schikking van items in Zoek resultaten. U kunt bijvoorbeeld items verhogen op basis van hun omzet potentieel, nieuwere items promoten of mogelijk objecten verhogen die in de voor Raad te lang zijn. 
 
-U kunt voor Taan opgeven welk classificatie algoritme voor overeenkomsten u wilt gebruiken. Zie voor meer informatie [classificatie algoritme](index-ranking-similarity.md).
-
-Het volgende video segment is een snelle doorstuur naar een uitleg van de classificatie algoritmen die worden gebruikt in azure Cognitive Search. U kunt de volledige video bekijken voor meer achtergrond.
-
-> [!VIDEO https://www.youtube.com/embed/Y_X6USgvB1g?version=3&start=322&end=643]
+Een score profiel maakt deel uit van de definitie van de index, die bestaat uit gewogen velden, functies en para meters. Zie [Score profielen](index-add-scoring-profiles.md)voor meer informatie over het definiëren van een.
 
 <a name="featuresMode-param"></a>
 
@@ -104,7 +117,9 @@ Een antwoord dat is opgenomen in de velden Beschrijving en titel, `@search.featu
 
 U kunt deze gegevens punten gebruiken in [aangepaste Score oplossingen](https://github.com/Azure-Samples/search-ranking-tutorial) of met de informatie voor fout opsporing in relevantie problemen.
 
-
 ## <a name="see-also"></a>Zie ook
 
- [Score profielen](index-add-scoring-profiles.md) [rest API naslag informatie](/rest/api/searchservice/) [zoeken documenten API](/rest/api/searchservice/search-documents) [Azure Cognitive Search .NET SDK](/dotnet/api/overview/azure/search)
++ [Score profielen](index-add-scoring-profiles.md)
++ [REST API referentie](/rest/api/searchservice/)
++ [Documenten zoeken-API](/rest/api/searchservice/search-documents)
++ [Azure Cognitive Search .NET SDK](/dotnet/api/overview/azure/search)

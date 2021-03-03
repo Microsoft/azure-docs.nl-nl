@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: tisande
-ms.openlocfilehash: 09148e65e446d723fbfe7a54602db59ee0739f83
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 4711401172c4a2b224c231db4a773e0c4219d3a7
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98599356"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101659831"
 ---
 # <a name="keywords-in-azure-cosmos-db"></a>Tref woorden in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -113,7 +113,7 @@ SELECT COUNT(1) FROM (SELECT DISTINCT f.lastName FROM f)
 Retourneert een Booleaanse waarde, afhankelijk van het feit of een specifieke teken reeks overeenkomt met een opgegeven patroon. Een patroon kan bestaan uit gewone tekens en Joker tekens. U kunt logische equivalente query's schrijven met behulp van het `LIKE` sleutel woord of de systeem functie [RegexMatch](sql-query-regexmatch.md) . U ziet hetzelfde index gebruik, ongeacht wat u kiest. Daarom moet u gebruiken `LIKE` Als u de syntaxis meer dan reguliere expressies gebruikt.
 
 > [!NOTE]
-> Omdat `LIKE` kan gebruikmaken van een index, moet u [een bereik index maken](indexing-policy.md) voor eigenschappen die u vergelijkt met `LIKE` .
+> Omdat `LIKE` kan gebruikmaken van een index, moet u [een bereik index maken](./index-policy.md) voor eigenschappen die u vergelijkt met `LIKE` .
 
 U kunt de volgende joker tekens gebruiken, bijvoorbeeld:
 

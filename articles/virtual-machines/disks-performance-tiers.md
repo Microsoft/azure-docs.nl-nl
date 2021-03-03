@@ -4,16 +4,16 @@ description: Meer informatie over het wijzigen van prestatie lagen voor bestaand
 author: roygara
 ms.service: virtual-machines
 ms.topic: how-to
-ms.date: 01/05/2021
+ms.date: 03/02/2021
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: f67113b2e2afa16456321b0ee2a94ce80fab4d81
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 161aafce1c04e5d09cf08529bcbf1baf6b8a86b1
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97900957"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101674928"
 ---
 # <a name="change-your-performance-tier-using-the-azure-powershell-module-or-the-azure-cli"></a>Uw prestatie niveau wijzigen met behulp van de Azure PowerShell-module of de Azure CLI
 
@@ -114,6 +114,36 @@ $disk = Get-AzDisk -ResourceGroupName $resourceGroupName -DiskName $diskName
 $disk.Tier
 ```
 ---
+
+## <a name="change-the-performance-tier-of-a-disk-without-downtime-preview"></a>De prestatie laag van een schijf zonder downtime wijzigen (preview)
+
+U kunt de prestatie tier ook zonder downtime wijzigen. u hoeft de toewijzing van de virtuele machine niet ongedaan te maken of uw schijf te ontkoppelen om de laag te wijzigen. Zie de sectie [prestatie niveau wijzigen zonder downtime (preview)](#changing-performance-tier-without-downtime-preview) voor meer informatie en de registratie koppeling voor de preview-versie.
+
+
+Met het volgende script wordt de laag van een schijf die hoger is dan de basislijn laag, bijgewerkt met behulp van de voorbeeld sjabloon [CreateUpdateDataDiskWithTier.jsop](https://github.com/Azure/azure-managed-disks-performance-tiers/blob/main/CreateUpdateDataDiskWithTier.json). Vervang `<yourSubScriptionID>` ,,, `<yourResourceGroupName>` `<yourDiskName>` `<yourDiskSize>` en `<yourDesiredPerformanceTier>` Voer het script uit:
+
+ ```cli
+subscriptionId=<yourSubscriptionID>
+resourceGroupName=<yourResourceGroupName>
+diskName=<yourDiskName>
+diskSize=<yourDiskSize>
+performanceTier=<yourDesiredPerformanceTier>
+region=EastUS2EUAP
+
+ az login
+
+ az account set --subscription $subscriptionId
+
+ az group deployment create -g $resourceGroupName \
+--template-uri "https://raw.githubusercontent.com/Azure/azure-managed-disks-performance-tiers/main/CreateUpdateDataDiskWithTier.json" \
+--parameters "region=$region" "diskName=$diskName" "performanceTier=$performanceTier" "dataDiskSizeInGb=$diskSize"
+```
+
+Het kan tot vijf tien minuten duren voordat een wijziging in de laag is voltooid. Als u wilt controleren of de schijf is gewijzigd, gebruikt u de volgende opdracht:
+
+```cli
+az resource show -n $diskName -g $resourceGroupName --namespace Microsoft.Compute --resource-type disks --api-version 2020-12-01 --query [properties.tier] -o tsv
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 

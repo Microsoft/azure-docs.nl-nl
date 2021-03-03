@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 07/09/2020
 ms.author: justinha
-ms.openlocfilehash: 00ab5c85a477c9c4080acf252cbbde9d4ce816a9
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 15dba02d3db45d663b8ba0aa7eb93bbc3f388532
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96620236"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101645871"
 ---
 # <a name="known-issues-service-principal-alerts-in-azure-active-directory-domain-services"></a>Bekende problemen: waarschuwingen voor service-principals in Azure Active Directory Domain Services
 
@@ -37,7 +37,7 @@ Als een vereiste service-principal is verwijderd, kan het Azure-platform geen ge
 Voer de volgende stappen uit om te controleren welke service-principal ontbreekt en opnieuw moet worden gemaakt:
 
 1. Selecteer in de Azure Portal **Azure Active Directory** in het navigatie menu aan de linkerkant.
-1. Selecteer **bedrijfs toepassingen**. Kies *alle toepassingen* in de vervolg keuzelijst **toepassings type** en selecteer vervolgens **Toep assen**.
+1. Selecteer **Enterprise-toepassingen**. Kies *alle toepassingen* in de vervolg keuzelijst **toepassings type** en selecteer vervolgens **Toep assen**.
 1. Zoek naar elk van de volgende toepassings-Id's. Als er geen bestaande toepassing wordt gevonden, volgt u *de stappen voor het maken* van de service-principal of het opnieuw registreren van de naam ruimte.
 
     | Toepassings-id | Oplossing |
@@ -70,7 +70,7 @@ De status van het beheerde domein wordt automatisch bijgewerkt binnen twee uur e
 
 Als de toepassings-ID *443155a6-77f3-45e3-882b-22b3a8d431fb*, *abba844e-bc0e-44b0-947a-dc74e5d09022* of *D87DCBC6-A371-462E-88E3-28AD15EC4E64* ontbreekt in uw Azure AD-adres lijst, voert u de volgende stappen uit om de *micro soft. Aad* -resource provider opnieuw te registreren:
 
-1. Zoek in het Azure Portal naar en selecteer **abonnementen**.
+1. Zoek en selecteer **Abonnementen** in Azure Portal.
 1. Kies het abonnement dat is gekoppeld aan uw beheerde domein.
 1. Kies **resource providers** in de linkernavigatiebalk.
 1. Zoek naar *micro soft. Aad* en selecteer **opnieuw registreren**.

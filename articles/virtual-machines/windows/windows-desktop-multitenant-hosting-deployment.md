@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.date: 2/2/2021
 ms.author: mimckitt
 ms.custom: rybaker, chmimckitt
-ms.openlocfilehash: 744f265251e9f58ce91085f0e5dd5d1ad13eec69
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: 6e6f6ced1cdba429abd914354a5eba861ab127ec
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99625108"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101670047"
 ---
 # <a name="how-to-deploy-windows-10-on-azure-with-multitenant-hosting-rights"></a>Windows 10 implementeren op Azure met multi tenant-hosting rechten 
 Voor klanten met Windows 10 Enter prise E3/E5 per gebruiker of Windows Virtual Desktop Access per gebruiker (licenties voor gebruikers abonnement of licenties voor gebruikers abonnementen), kunt u met multi tenant hosting rechten voor Windows 10 uw Windows 10-licenties naar de Cloud brengen en Windows 10-Virtual Machines op Azure uitvoeren zonder dat u voor een andere licentie betaalt. Multi tenant-hosting rechten zijn alleen beschikbaar voor Windows 10 (versie 1703 of hoger).
@@ -26,7 +26,7 @@ Zie [multi tenant-hosting voor Windows 10](https://www.microsoft.com/en-us/Cloud
 
 ## <a name="subscription-licenses-that-qualify-for-multitenant-hosting-rights"></a>Abonnements licenties die in aanmerking komen voor multi tenant-hosting rechten
 
-Met het [micro soft-beheer centrum](https://docs.microsoft.com/microsoft-365/admin/admin-overview/about-the-admin-center?view=o365-worldwide&preserve-view=true)kunt u controleren of aan een gebruiker een door Windows 10 ondersteund licentie is toegewezen.
+Met het [micro soft-beheer centrum](/microsoft-365/admin/admin-overview/about-the-admin-center?preserve-view=true&view=o365-worldwide)kunt u controleren of aan een gebruiker een door Windows 10 ondersteund licentie is toegewezen.
 
 > [!IMPORTANT]
 > Gebruikers moeten een van de volgende abonnements licenties hebben om Windows 10-installatie kopieën in azure te kunnen gebruiken. Als u niet over een van deze abonnements licenties beschikt, kunnen ze worden aangeschaft via uw [Cloud service partner](https://azure.microsoft.com/overview/choosing-a-cloud-service-provider/) of rechtstreeks via [micro soft](https://www.microsoft.com/microsoft-365?rtc=1).

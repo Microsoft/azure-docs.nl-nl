@@ -11,12 +11,12 @@ ms.date: 10/26/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 937041bbb48f112e2c8ed7d222dc7c7ef7ea8d81
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: e5168d5e5e3935da267fb26f38735a88bdfd7837
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92631390"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101654473"
 ---
 # <a name="request-an-access-token-in-azure-active-directory-b2c"></a>Een toegangstoken aanvragen in Azure Active Directory B2C
 
@@ -50,7 +50,7 @@ In het volgende voorbeeld ziet u de bereiken die in een URL zijn gecodeerd:
 scope=https%3A%2F%2Fcontoso.onmicrosoft.com%2Fapi%2Fread%20openid%20offline_access
 ```
 
-Als u meer bereiken aanvraagt dan voor uw clienttoepassing worden verleend, wordt de aanroep uitgevoerd als er ten minste één machtiging wordt verleend. De **scp** -claim in het resulterende toegangstoken is gevuld met alleen de machtigingen die zijn verleend. 
+Als u meer bereiken aanvraagt dan voor uw clienttoepassing worden verleend, wordt de aanroep uitgevoerd als er ten minste één machtiging wordt verleend. De **scp**-claim in het resulterende toegangstoken is gevuld met alleen de machtigingen die zijn verleend. 
 
 ### <a name="openid-connect-scopes"></a>OpenID Connect Connect-scopes
 
@@ -91,7 +91,7 @@ https://jwt.ms/?code=eyJraWQiOiJjcGltY29yZV8wOTI1MjAxNSIsInZlciI6IjEuMC...
 Nadat u de autorisatiecode hebt ontvangen, kunt u deze gebruiken om een toegangstoken aan te vragen:
 
 ```http
-POST <tenant-name>.onmicrosoft.com/<policy-name>/oauth2/v2.0/token HTTP/1.1
+POST <tenant-name>.b2clogin.com/<tenant-name>.onmicrosoft.com/<policy-name>/oauth2/v2.0/token HTTP/1.1
 Host: <tenant-name>.b2clogin.com
 Content-Type: application/x-www-form-urlencoded
 

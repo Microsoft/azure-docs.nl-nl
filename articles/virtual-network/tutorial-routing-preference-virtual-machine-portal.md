@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 12/02/2020
+ms.date: 02/01/2021
 ms.author: mnayak
-ms.openlocfilehash: beb670106690645a80aa12b930e3a005efb4282a
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 0559d02ec603d12578fa46d9790d0711fde5e38b
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98221643"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101670899"
 ---
 # <a name="configure-routing-preference-for-a-vm-using-the-azure-portal"></a>Routerings voorkeur configureren voor een virtuele machine met behulp van de Azure Portal
 
@@ -25,13 +25,9 @@ In dit artikel wordt beschreven hoe u routerings voorkeur configureert voor een 
 
 In dit artikel wordt beschreven hoe u een virtuele machine maakt met een openbaar IP-adres dat is ingesteld om verkeer via het open bare Internet te routeren met behulp van de Azure Portal.
 
-> [!IMPORTANT]
-> De voor keuren voor route ring is momenteel beschikbaar als open bare preview.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
-
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
-Meld u aan bij de [Azure-portal](https://preview.portal.azure.com/).
+Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 ## <a name="create-a-virtual-machine"></a>Een virtuele machine maken
 

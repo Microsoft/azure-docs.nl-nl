@@ -6,19 +6,19 @@ ms.topic: conceptual
 author: vladvino
 ms.author: apimpm
 ms.date: 11/27/2020
-ms.openlocfilehash: 72e91715398b4920c62afae5f36aa09954a577f9
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: e2842f3e428abb4f0eb628dbb8e446f2714d5d89
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97092139"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101652382"
 ---
 # <a name="api-management-soft-delete-preview"></a>API Management zacht verwijderen (preview-versie)
 
 Met API Management zacht verwijderen (preview) kunt u recent verwijderde API Management-exemplaren (APIM) herstellen en herstellen.
 
 > [!IMPORTANT]
-> Alleen API Management exemplaren die worden verwijderd met `2020-01-01-preview` en latere versies van de API, worden zacht verwijderd en kunnen worden hersteld aan de hand van de stappen die in dit artikel worden beschreven. APIM-exemplaren die zijn verwijderd met eerdere API-versies, blijven permanent worden verwijderd. Azure PowerShell en Azure CLI maken momenteel geen gebruik `2020-06-01-preview` van de versie en resulteren ook in het gedrag van het permanent verwijderen.
+> Alleen API Management exemplaren die worden verwijderd met `2020-06-01-preview` en latere versies van de API, worden zacht verwijderd en kunnen worden hersteld aan de hand van de stappen die in dit artikel worden beschreven. APIM-exemplaren die zijn verwijderd met eerdere API-versies, blijven permanent worden verwijderd. Azure PowerShell en Azure CLI maken momenteel geen gebruik `2020-06-01-preview` van de versie en resulteren ook in het gedrag van het permanent verwijderen.
 
 ## <a name="supporting-interfaces"></a>Ondersteunende interfaces
 
@@ -31,14 +31,14 @@ De functie voor voorlopig verwijderen is beschikbaar via [rest API](/rest/api/ap
 |--|--|--|--|
 | [Maken of bijwerken](/rest/api/apimanagement/2020-06-01-preview/apimanagementservice/createorupdate) | Hiermee wordt een API Management service gemaakt of bijgewerkt.  | API Management-service | Alle |
 | [Maken of bijwerken](/rest/api/apimanagement/2020-06-01-preview/apimanagementservice/createorupdate) met `restore` eigenschap ingesteld op **waar** | Hiermee wordt de verwijdering van API Management-service ongedaan gemaakt als deze eerder zacht werd verwijderd. Als `restore` is opgegeven en ingesteld op `true` alle andere eigenschappen, wordt genegeerd.  | API Management-service |  2020-06-01-preview |
-| [Verwijderen](/rest/api/apimanagement/2020-06-01-preview/apimanagementservice/delete) | Hiermee verwijdert u een bestaande API Management-service. | API Management-service | 2020-01-01-preview|
+| [Verwijderen](/rest/api/apimanagement/2020-06-01-preview/apimanagementservice/delete) | Hiermee verwijdert u een bestaande API Management-service. | API Management-service | 2020-06-01-preview|
 | [Ophalen op naam](/rest/api/apimanagement/2020-06-01-preview/deletedservices/getbyname) | De voorlopig verwijderde API Management-service op naam ophalen. | Verwijderde Services | 2020-06-01-preview |
 | [Lijst op abonnement](/rest/api/apimanagement/2020-06-01-preview/deletedservices/listbysubscription) | Een lijst met alle voorlopig verwijderde services die beschikbaar zijn voor verwijdering ongedaan maken voor het opgegeven abonnement. | Verwijderde Services | 2020-06-01-preview
 | [Opschonen](/rest/api/apimanagement/2020-06-01-preview/deletedservices/purge) | Hiermee wordt API Management service gewist (deze wordt verwijderd zonder optie om de verwijdering ongedaan te maken). | Verwijderde Services | 2020-06-01-preview
 
-## <a name="soft-delete-behavior"></a>Gedrag bij zacht verwijderen
+## <a name="soft-delete-behavior"></a>Gedrag bij voorlopig verwijderen
 
-U kunt een wille keurige API-versie gebruiken om uw API Management-exemplaar te maken, maar u moet `2020-01-01-preview` of hogere versies gebruiken om uw APIM-exemplaar te verwijderen (en de optie om het te herstellen).
+U kunt een wille keurige API-versie gebruiken om uw API Management-exemplaar te maken, maar u moet `2020-06-01-preview` of hogere versies gebruiken om uw APIM-exemplaar te verwijderen (en de optie om het te herstellen).
 
 Wanneer u een API Management exemplaar verwijdert, bestaat de service in een verwijderde staat, waardoor deze niet toegankelijk is voor APIM bewerkingen. In deze status kan het APIM-exemplaar alleen worden vermeld, hersteld of verwijderd (permanent verwijderd).
 

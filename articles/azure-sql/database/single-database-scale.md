@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sstein
-ms.date: 09/16/2020
-ms.openlocfilehash: da3c70baccc3c86f2ac57d61539456464e3042b6
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 02/22/2021
+ms.openlocfilehash: 2aba44f6c2f10ead1827e1b1411f3824a0ec2d6c
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96493403"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101658551"
 ---
 # <a name="scale-single-database-resources-in-azure-sql-database"></a>Resources van een individuele database schalen in Azure SQL Database
 
@@ -78,7 +78,7 @@ WHERE s.type_desc IN ('ROWS', 'LOG');
 
 Een wijzigings-of COMPUTE-bewerking voor het opnieuw schalen van een service tier kan worden geannuleerd.
 
-### <a name="the-azure-portal"></a>De Azure-portal
+### <a name="the-azure-portal"></a>Azure Portal
 
 Ga op de Blade database overzicht naar **meldingen** en klik op de tegel die aangeeft dat er een doorlopende bewerking is:
 
@@ -112,6 +112,7 @@ else {
 - Bij het downgradeen van een Data Base met [geo-replicatie](active-geo-replication-configure-portal.md) is ingeschakeld, downgradet u de primaire data bases naar de gewenste servicelaag en reken grootte voordat u de secundaire data base downgradet (algemene richt lijnen voor de beste prestaties). Bij downgrade naar een andere editie is het een vereiste dat de primaire data base het eerst downgradet.
 - De mogelijkheden om de service te herstellen verschillen voor de verschillende servicelagen. Als u downgradet naar de **basis** -laag, hebt u een lagere Bewaar periode voor back-ups. Zie [Azure SQL database back-ups](automated-backups-overview.md).
 - De nieuwe eigenschappen voor de Data Base worden pas toegepast als de wijzigingen zijn voltooid.
+- Wanneer het kopiëren van gegevens vereist is voor het schalen van een Data Base (Zie [latentie](#latency)) bij het wijzigen van de servicelaag, kan het hoge bron gebruik voor de schaal bewerking langer duren. Met [versneld database herstel (ADR)](/sql/relational-databases/accelerated-database-recovery-concepts.md)is het terugdraaien van langlopende trans acties geen aanzienlijke vertragings bron, maar met het hoge gelijktijdige gebruik van bronnen kunnen minder compute-, opslag-en netwerk bandbreedte bronnen worden gebruikt voor schalen, met name voor kleinere reken grootten.
 
 ## <a name="billing"></a>Billing
 

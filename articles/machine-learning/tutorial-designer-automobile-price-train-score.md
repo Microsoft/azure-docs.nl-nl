@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 09/28/2020
 ms.custom: designer
-ms.openlocfilehash: 46098b2b7ebbf219a3c17b4fa40e1fd52344f683
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 7f602f82063e2a8092eecf533a75449231c1e900
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879794"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101660981"
 ---
 # <a name="tutorial-predict-automobile-price-with-the-designer"></a>Zelfstudie: Autoprijzen voorspellen met de ontwerpfunctie
 
@@ -176,7 +176,7 @@ Er ontbreken nog steeds waarden in uw gegevensset nadat u de kolom **normalized-
 
     Uw pijplijn ziet er als volgt uit:
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-clean.png"alt-text="Selecteer-kolom":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-clean.png" alt-text="Selecteer-kolom":::
 
 ## <a name="train-a-machine-learning-model"></a>Een machine learning-model trainen
 
@@ -224,7 +224,7 @@ Train het model door hiervoor een gegevensset te gebruiken waarin de prijs een v
     > [!IMPORTANT]
     > Controleer of de linkeruitvoerpoort van **Split Data** inderdaad aan **Train Model** wordt gekoppeld. De linkerpoort bevat de trainingsset. De rechterpoort bevat de testset.
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-model.png"alt-text="Schermopname met de juiste configuratie van de module Train Model. De module Linear Regression wordt gekoppeld aan de linkerpoort van de module Train Model en de module Split Data wordt gekoppeld aan de rechterpoort van Train Model.":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-model.png" alt-text="Schermopname met de juiste configuratie van de module Train Model. De module Linear Regression wordt gekoppeld aan de linkerpoort van de module Train Model en de module Split Data wordt gekoppeld aan de rechterpoort van Train Model.":::
 
 1. Selecteer de module **Train Model**.
 
@@ -239,7 +239,7 @@ Train het model door hiervoor een gegevensset te gebruiken waarin de prijs een v
 
     Uw pijplijn ziet er als volgt uit:
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-graph.png"alt-text="Schermopname met de juiste configuratie van de pijplijn nadat de module Train Model is toegevoegd.":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-graph.png" alt-text="Schermopname met de juiste configuratie van de pijplijn nadat de module Train Model is toegevoegd.":::
 
 ### <a name="add-the-score-model-module"></a>De module Score Model toevoegen
 
@@ -259,7 +259,7 @@ Gebruik de module **Evaluate Model** om te evalueren hoe goed uw model heeft ges
 
     De uiteindelijke pijplijn ziet er als volgt uit:
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-final-graph.png"alt-text="Schermopname met de juiste configuratie van de pijplijn.":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-final-graph.png" alt-text="Schermopname met de juiste configuratie van de pijplijn.":::
 
 ## <a name="submit-the-pipeline"></a>De pijplijn indienen
 
@@ -288,7 +288,7 @@ Nadat de uitvoering is voltooid, kunt u de resultaten van de pijplijnuitvoering 
 
     Hier ziet u de voorspelde prijzen en de daadwerkelijke prijzen van de testgegevens.
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/score-result.png"alt-text="Schermopname van de uitvoervisualisatie, waarin de kolom Gescoorde label is gemarkeerd":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/score-result.png" alt-text="Schermopname van de uitvoervisualisatie, waarin de kolom Gescoorde label is gemarkeerd":::
 
 ### <a name="evaluate-models"></a>Modellen evalueren
 

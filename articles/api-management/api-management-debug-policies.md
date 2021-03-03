@@ -12,21 +12,18 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 09/22/2020
 ms.author: apimpm
-ms.openlocfilehash: a8ed834c9ab093ae063e386978bca4d73fa46543
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 2e45d1274cf7332dbca70eaa8fc51f0ac98e5359
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400723"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101648013"
 ---
 # <a name="debug-azure-api-management-policies-in-visual-studio-code"></a>Fouten opsporen in azure API Management-beleid in Visual Studio code
 
 [Beleids regels](api-management-policies.md) in azure API management bieden krachtige mogelijkheden die API-uitgevers helpen bij het oplossen van problemen, zoals verificatie, autorisatie, beperking, caching en trans formatie. Beleidsregels zijn een verzameling instructies die sequentieel worden uitgevoerd op de aanvraag of het antwoord van een API. 
 
 In dit artikel wordt beschreven hoe u fouten opspoort in API Management-beleid met behulp [van de Azure API Management-extensie voor Visual Studio code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-apimanagement). 
-
-> [!NOTE]
-> Deze functie is beschikbaar voor openbare preview.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -36,7 +33,7 @@ In dit artikel wordt beschreven hoe u fouten opspoort in API Management-beleid m
 
 * Importeer een API naar uw API Management-exemplaar. Zie voor beelden van [de stappen zelf studie: de API Management extensie voor Visual Studio code gebruiken om api's te importeren en te beheren](visual-studio-code-tutorial.md).
 
-## <a name="restrictions-and-limitations"></a>Beperkingen en beperkingen
+## <a name="restrictions-and-limitations"></a>Beperkingen en limieten
 
 Deze functie is alleen beschikbaar in de Developer-laag van API Management. Elk API Management-exemplaar ondersteunt slechts één gelijktijdige foutopsporingssessie.
 

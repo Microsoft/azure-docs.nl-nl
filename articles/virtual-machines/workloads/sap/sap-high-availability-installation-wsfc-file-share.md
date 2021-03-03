@@ -9,20 +9,19 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.assetid: 71296618-673b-4093-ab17-b7a80df6e9ac
-ms.service: virtual-machines-windows
-ms.subservice: workloads
+ms.service: virtual-machines-sap
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/04/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c7df3934862efa9798735d0c163f7fb1bac98423
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: d5fa4cba67e279f66c090c8cb30eadf099f3c998
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94951040"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101673561"
 ---
 # <a name="install-sap-netweaver-high-availability-on-a-windows-failover-cluster-and-file-share-for-sap-ascsscs-instances-on-azure"></a>Een hoge Beschik baarheid van SAP NetWeaver installeren op een Windows-failovercluster en een bestands share voor SAP ASCS/SCS-exemplaren in azure
 
@@ -300,7 +299,7 @@ Maak een SAP ASCS/SCS-cluster netwerk naam (bijvoorbeeld **PR1-ASCS [10.0.6.7]**
 
 Installeer een SAP ASCS/SCS-exemplaar op het eerste cluster knooppunt. Als u het exemplaar wilt installeren, gaat u in het SAP SWPM-installatie programma naar:
 
-**\<Product>** > **\<DBMS>** > **Installatie**  >  **Application Server ABAP** (of **Java**) > het eerste cluster-exemplaar van het systeem ASCS/SCS met **hoge Beschik baarheid**  >  **ASCS/SCS instance**  >  **First cluster node**.
+**\<Product>** > **\<DBMS>** > **Installatie**  >  **Application Server ABAP** (of **Java**) > het eerste cluster-exemplaar van het systeem ASCS/SCS met **hoge Beschik baarheid**  >    >  .
 
 ### <a name="add-a-probe-port"></a>Een test poort toevoegen
 
@@ -310,7 +309,7 @@ Configureer een SAP-cluster bron, de SAP-SID-IP-test poort, met behulp van Power
 
 Installeer een SAP ASCS/SCS-exemplaar op het tweede cluster knooppunt. Als u het exemplaar wilt installeren, gaat u in het SAP SWPM-installatie programma naar:
 
-**\<Product>** > **\<DBMS>** > **Installatie**  >  **Application Server ABAP** (of **Java**) > een systeem ASCS/SCS met **hoge Beschik baarheid**  >  **ASCS/SCS instance**  >  **extra cluster knooppunt**.
+**\<Product>** > **\<DBMS>** > **Installatie**  >  **Application Server ABAP** (of **Java**) > een systeem ASCS/SCS met **hoge Beschik baarheid**  >    >  **extra cluster knooppunt**.
 
 
 ## <a name="update-the-sap-ascsscs-instance-profile"></a>Het SAP ASCS/SCS-exemplaar profiel bijwerken
@@ -321,7 +320,7 @@ Werk de para meters bij in het SAP ASCS/SCS-exemplaar profiel \<SID> _ASCS/SCS \
 | Parameternaam | Parameterwaarde |
 | --- | --- |
 | gw/netstat_once | **0** |
-| enque/encni/set_so_keepalive  | **waar** |
+| enque/encni/set_so_keepalive  | **echte** |
 | Service/ha_check_node | **1** |
 
 De para meter `enque/encni/set_so_keepalive` is alleen nodig als ENSA1 wordt gebruikt.  

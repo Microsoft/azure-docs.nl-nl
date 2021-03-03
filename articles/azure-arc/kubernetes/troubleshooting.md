@@ -1,36 +1,38 @@
 ---
-title: Veelvoorkomende problemen met Azure Arc enabled Kubernetes oplossen (preview-versie)
+title: Veelvoorkomende problemen met Azure Arc enabled Kubernetes oplossen
 services: azure-arc
 ms.service: azure-arc
-ms.date: 05/19/2020
+ms.date: 03/02/2020
 ms.topic: article
 author: mlearned
 ms.author: mlearned
 description: Veelvoorkomende problemen met Kubernetes-clusters met Arc-functionaliteit oplossen.
 keywords: Kubernetes, Arc, Azure, containers
-ms.openlocfilehash: 0827386eb6ec089cf7951e8fa513a77fc78aef22
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: e1f4e84f16c6b584f1ffbd918a86c251f47efcca
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684086"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101653997"
 ---
-# <a name="azure-arc-enabled-kubernetes-troubleshooting-preview"></a>Probleem oplossing voor Azure Arc ingeschakeld Kubernetes (preview)
+# <a name="azure-arc-enabled-kubernetes-troubleshooting"></a>Problemen met Azure Arc enabled Kubernetes oplossen
 
-Dit document bevat een aantal veelvoorkomende scenario's voor probleem oplossing met connectiviteit, machtigingen en agents.
+Dit document bevat richt lijnen voor probleem oplossing voor problemen met connectiviteit, machtigingen en agents.
 
 ## <a name="general-troubleshooting"></a>Algemene probleem oplossing
 
-### <a name="azure-cli-set-up"></a>Azure CLI instellen
-Voordat u AZ connectedk8s of AZ k8sconfiguration CLI-opdrachten gebruikt, moet u ervoor zorgen dat AZ is ingesteld om te werken aan het juiste Azure-abonnement.
+### <a name="azure-cli"></a>Azure CLI
+
+Controleer voordat `az connectedk8s` u `az k8s-configuration` de-of cli-opdrachten gebruikt of Azure cli is ingesteld om te werken aan het juiste Azure-abonnement.
 
 ```azurecli
 az account set --subscription 'subscriptionId'
 az account show
 ```
 
-### <a name="azure-arc-agents"></a>Azure-Arc-agents
-Alle agents voor Azure Arc enabled Kubernetes worden in de naam ruimte als een Peul geïmplementeerd `azure-arc` . Onder normale bewerkingen moeten alle peulen worden uitgevoerd en moeten hun status controles worden door gegeven.
+### <a name="azure-arc-agents"></a>Azure Arc-agents
+
+Alle agents voor Azure Arc enabled Kubernetes worden in de naam ruimte als een Peul geïmplementeerd `azure-arc` . Alle peulen moeten worden uitgevoerd en hun status controles worden door gegeven.
 
 Controleer eerst de Azure Arc helm-release:
 
@@ -44,9 +46,9 @@ REVISION: 5
 TEST SUITE: None
 ```
 
-Als de helm-release niet wordt gevonden of ontbreekt, probeert u het cluster opnieuw voor te bereiden.
+Als de helm-release niet wordt gevonden of ontbreekt, probeert [u het cluster opnieuw te verbinden met Azure Arc](./connect-cluster.md) .
 
-Als de helm-release aanwezig is en `STATUS: deployed` de status van de agents bepaalt met `kubectl` :
+Als de helm-release aanwezig is bij `STATUS: deployed` , controleert u de status van de agents met behulp van `kubectl` :
 
 ```console
 $ kubectl -n azure-arc get deployments,pods
@@ -69,45 +71,42 @@ pod/metrics-agent-58b765c8db-n5l7k              2/2     Running  0       16h
 pod/resource-sync-agent-5cf85976c7-522p5        3/3     Running  0       16h
 ```
 
-Alle peulen moeten `STATUS` worden weer gegeven als `Running` en `READY` moeten ofwel `3/3` of zijn `2/2` . Logboeken ophalen en de peulen beschrijven die worden geretourneerd `Error` of `CrashLoopBackOff` . Als een van deze peulen in `Pending` staat is, kan dit worden veroorzaakt door onvoldoende bronnen op cluster knooppunten. Als u [het cluster omhoog schaalt](https://kubernetes.io/docs/tasks/administer-cluster/) , krijgen deze peulen de `Running` status.
+Alle peulen moeten worden weer gegeven `STATUS` als `Running` met `3/3` of `2/2` onder de `READY` kolom. Logboeken ophalen en het gehele resultaat van een or-bewerking beschrijven `Error` `CrashLoopBackOff` . Als er een wille keurig peul in `Pending` staat is, zijn er mogelijk onvoldoende resources op cluster knooppunten. Als u [de schaal van uw cluster omhoog](https://kubernetes.io/docs/tasks/administer-cluster/) laat, kan dit een overgang zijn naar de `Running` status.
 
 ## <a name="connecting-kubernetes-clusters-to-azure-arc"></a>Kubernetes-clusters verbinden met Azure Arc
 
-Voor het verbinden van clusters met Azure is toegang vereist tot zowel een Azure-abonnement als `cluster-admin` toegang tot een doel cluster. Als het cluster niet kan worden bereikt of als de onboarding van onvoldoende machtigingen kan worden uitgevoerd.
+Voor het verbinden van clusters met Azure is toegang tot een Azure-abonnement en `cluster-admin` toegang tot een doel cluster vereist. Als u het cluster niet kunt bereiken of als u onvoldoende machtigingen hebt, mislukt het verbinden van het cluster met Azure Arc.
 
 ### <a name="insufficient-cluster-permissions"></a>Onvoldoende cluster machtigingen
 
-Als het meegeleverde kubeconfig-bestand niet voldoende machtigingen heeft om de Azure Arc-agents te installeren, retourneert de Azure CLI-opdracht een fout bij het aanroepen van de Kubernetes-API.
+Als het meegeleverde kubeconfig-bestand niet voldoende machtigingen heeft om de Azure Arc-agents te installeren, wordt er een fout geretourneerd door de Azure CLI-opdracht.
 
 ```azurecli
 $ az connectedk8s connect --resource-group AzureArc --name AzureArcCluster
-Command group 'connectedk8s' is in preview. It may be changed/removed in a future release.
 Ensure that you have the latest helm version installed before proceeding to avoid unexpected errors.
 This operation might take a while...
 
 Error: list: failed to list: secrets is forbidden: User "myuser" cannot list resource "secrets" in API group "" at the cluster scope
 ```
 
-De cluster eigenaar moet een Kubernetes-gebruiker met de machtigingen voor cluster beheer gebruiken.
+Aan de gebruiker die verbinding maakt met het cluster met Azure Arc moet de `cluster-admin` rol aan hen zijn toegewezen in het cluster.
 
 ### <a name="installation-timeouts"></a>Installatie-time-outs
 
-Voor de installatie van de Azure Arc-agent moet een set containers op het doel cluster worden uitgevoerd. Als het cluster wordt uitgevoerd via een trage Internet verbinding, kan het verzamelen van de container installatie kopie langer duren dan de Azure CLI-time-outs.
+Voor het verbinden van een Kubernetes-cluster met Azure Arc enabled Kubernetes is de installatie van Azure Arc-agents op het cluster vereist. Als het cluster wordt uitgevoerd via een trage Internet verbinding, kan de container installatie kopie die voor agents wordt opgehaald langer duren dan de Azure CLI-time-outs.
 
 ```azurecli
 $ az connectedk8s connect --resource-group AzureArc --name AzureArcCluster
-Command group 'connectedk8s' is in preview. It may be changed/removed in a future release.
 Ensure that you have the latest helm version installed before proceeding to avoid unexpected errors.
 This operation might take a while...
 ```
 
 ### <a name="helm-issue"></a>Helm probleem
 
-Helm- `v3.3.0-rc.1` versie heeft een [probleem](https://github.com/helm/helm/pull/8527) waarbij helm install/upgrade (die wordt gebruikt onder de schermen van de connectedk8s cli-extensie) resulteert in het uitvoeren van alle hooks die leiden tot de volgende fout:
+Helm- `v3.3.0-rc.1` versie heeft een [probleem](https://github.com/helm/helm/pull/8527) waarbij de installatie/upgrade van helm (gebruikt door `connectedk8s` de CLI-extensie) resulteert in het uitvoeren van alle hooks waardoor de volgende fout wordt veroorzaakt:
 
 ```console
 $ az connectedk8s connect -n shasbakstest -g shasbakstest
-Command group 'connectedk8s' is in preview. It may be changed/removed in a future release.
 Ensure that you have the latest helm version installed before proceeding.
 This operation might take a while...
 
@@ -117,7 +116,7 @@ ValidationError: Unable to install helm release: Error: customresourcedefinition
 
 Voer de volgende stappen uit om dit probleem op te lossen:
 
-1. Verwijder de Kubernetes-bron van Azure Arc enabled in het Azure Portal.
+1. Verwijder de Azure Arc enabled Kubernetes-resource in de Azure Portal.
 2. Voer de volgende opdrachten uit op de computer:
     
     ```console
@@ -132,15 +131,16 @@ Voer de volgende stappen uit om dit probleem op te lossen:
 ## <a name="configuration-management"></a>Configuratiebeheer
 
 ### <a name="general"></a>Algemeen
-Voor hulp bij het oplossen van problemen met de configuratie van broncode beheer voert u AZ-opdrachten uit met de schakel optie--debug.
+Voor hulp bij het oplossen van problemen met de configuratie bron voert u AZ-opdrachten uit met de `--debug` opgegeven para meter.
 
 ```console
 az provider show -n Microsoft.KubernetesConfiguration --debug
-az k8sconfiguration create <parameters> --debug
+az k8s-configuration create <parameters> --debug
 ```
 
-### <a name="create-source-control-configuration"></a>Broncode beheer configuratie maken
-De rol Inzender voor de resource micro soft. Kubernetes/connectedCluster is nood zakelijk en voldoende voor het maken van een resource van micro soft. KubernetesConfiguration/sourceControlConfiguration.
+### <a name="create-configurations"></a>Configuraties maken
+
+Schrijf machtigingen voor de Azure Arc enabled Kubernetes-resource ( `Microsoft.Kubernetes/connectedClusters/Write` ) zijn nood zakelijk en voldoende voor het maken van configuraties op dat cluster.
 
 ### <a name="configuration-remains-pending"></a>Configuratie blijft `Pending`
 

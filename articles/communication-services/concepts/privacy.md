@@ -8,16 +8,14 @@ ms.author: chpalm
 ms.date: 10/03/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 5ea4e4fcce380a3bd9c30312639f7aa10bf0bb90
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 8e08c531cd46d5112138a3feedf97b27307e3dca
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653462"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101656190"
 ---
 # <a name="region-availability-and-data-residency"></a>Regiobeschikbaarheid en gegevenslocatie
-
-[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
 Azure Communication Services is toegewijd aan het helpen van onze klanten bij het voldoen aan hun vereisten voor privacy en persoonlijke gegevens. Als ontwikkelaar die gebruikmaakt van Communication Services met een directe relatie met mensen die de toepassing gebruiken, bent u mogelijk een controller van hun gegevens. Omdat Azure Communication Services deze gegevens namens u opslaat, zijn wij waarschijnlijk een verwerker van deze gegevens. Deze pagina geeft een overzicht van de manier waarop de service gegevens bewaart en hoe u deze gegevens kunt identificeren, exporteren en verwijderen.
 
@@ -65,7 +63,7 @@ Chatgesprekken en -berichten worden bewaard totdat ze expliciet worden verwijder
 
 ### <a name="sms"></a>Sms
 
-Verzonden en ontvangen SMS-berichten worden kortstondig verwerkt door de service en worden niet bewaard. 
+Verzonden en ontvangen SMS-berichten worden kortstondig verwerkt door de service en worden niet bewaard.
 
 ### <a name="pstn-voice-calling"></a>PSTN-spraakoproepen
 

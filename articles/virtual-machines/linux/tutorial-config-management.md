@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 09/27/2019
 ms.author: magoedte
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: c4dc7e4d3c19a341daaf8e75844e175451a91f03
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: de038fe087e479ef1e9212c21197fbe1844d5e3b
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100592982"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101670374"
 ---
 # <a name="tutorial-monitor-changes-and-update-a-linux-virtual-machine-in-azure"></a>Zelfstudie: Wijzigingen bewaken en een virtuele Linux-machine bijwerken in Azure
 
@@ -201,4 +201,4 @@ In deze zelfstudie hebt u Wijzigingen bijhouden en Updatebeheer voor uw virtuele
 Ga naar de volgende zelfstudie voor meer informatie over het bewaken van uw VM.
 
 > [!div class="nextstepaction"]
-> [Virtuele machines bewaken](tutorial-monitor.md)
+> [Virtuele machines bewaken](/previous-versions/azure/virtual-machines/linux/tutorial-monitor)

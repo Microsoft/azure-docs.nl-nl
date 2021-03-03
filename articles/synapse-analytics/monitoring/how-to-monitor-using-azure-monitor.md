@@ -9,12 +9,12 @@ ms.subservice: monitoring
 ms.date: 11/30/2020
 ms.author: mahi
 ms.reviewer: mahi
-ms.openlocfilehash: 33cd19f7bb1881b17f1ca9080a9634162014808a
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: f801d25a0d0f70daaaac1ade3e8966cf5f53affc
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100574293"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101672750"
 ---
 # <a name="use-azure-monitor-with-your-azure-synapse-analytics-workspace"></a>Azure Monitor gebruiken met uw Azure Synapse Analytics-werk ruimte
 
@@ -103,7 +103,7 @@ Meld u aan bij de Azure Portal en selecteer **monitor**  >  **waarschuwingen** o
 
 Dit zijn de logboeken die worden gegenereerd door Azure Synapse Analytics-werk ruimten:
 
-| Naam van Log Analytics tabel | Naam van logboek categorie                 | Description |
+| Naam van Log Analytics tabel | Naam van logboek categorie                 | Beschrijving |
 |-------------------------------|-------------------------------------------------|-------------|
 | SynapseGatewayApiRequests     | GatewayApiRequests             | API-aanvragen van Azure Synapse gateway. |
 | SynapseRbacOperations         | SynapseRbacOperations          | Azure Synapse (SRBAC)-bewerkingen op basis van op rollen gebaseerde toegangs beheer. |
@@ -112,7 +112,7 @@ Dit zijn de logboeken die worden gegenereerd door Azure Synapse Analytics-werk r
 
 Dit zijn de logboeken die worden gegenereerd door toegewezen SQL-groepen:
 
-| Naam van Log Analytics tabel        | Naam van logboek categorie             | Description |
+| Naam van Log Analytics tabel        | Naam van logboek categorie             | Beschrijving |
 |----------------------|--------------------------------------|-------------|
 | SynapseSqlPoolExecRequests  | ExecRequests | Informatie over SQL-aanvragen/-query's in een door Azure Synapse toegewezen SQL-groep.
 | SynapseSqlPoolDmsWorkers    | DmsWorkers   | Informatie over werk nemers die de DMS-stappen in een door Azure Synapse toegewezen SQL-pool volt ooien.
@@ -121,17 +121,17 @@ Dit zijn de logboeken die worden gegenereerd door toegewezen SQL-groepen:
 | SynapseSqlPoolWaits         | Wacht        | Informatie over de wachtende statussen tijdens het uitvoeren van een SQL-aanvraag/-query in een door Azure Synapse toegewezen SQL-pool, met inbegrip van vergren delingen en wacht rijen op verzen ding.
 
 Raadpleeg de volgende informatie voor meer informatie over deze logboeken:
-- [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
-- [sys.dm_pdw_request_steps](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
-- [sys.dm_pdw_dms_workers](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-dms-workers-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
-- [sys.dm_pdw_waits](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-waits-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
-- [sys.dm_pdw_sql_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-sql-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
+- [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?view=azure-sqldw-latest&preserve-view=true)
+- [sys.dm_pdw_request_steps](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql?view=azure-sqldw-latest&preserve-view=true)
+- [sys.dm_pdw_dms_workers](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-dms-workers-transact-sql?view=azure-sqldw-latest&preserve-view=true)
+- [sys.dm_pdw_waits](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-waits-transact-sql?view=azure-sqldw-latest&preserve-view=true)
+- [sys.dm_pdw_sql_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-sql-requests-transact-sql?view=azure-sqldw-latest&preserve-view=true)
 
 ### <a name="apache-spark-pool-log"></a>Groeps logboek Apache Spark
 
 Hier volgt het logboek dat wordt verzonden door Apache Spark Pools:
 
-| Naam van Log Analytics tabel               | Naam van logboek categorie              | Description                 |
+| Naam van Log Analytics tabel               | Naam van logboek categorie              | Beschrijving                 |
 |-----------------------------|---------------------------------------|-----------------------------|
 | SynapseBigDataPoolApplicationsEnded | BigDataPoolAppsEnded | Informatie over beëindigde Apache Spark-toepassingen |
 

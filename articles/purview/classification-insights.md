@@ -6,19 +6,19 @@ ms.author: bagol
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
-ms.date: 11/24/2020
-ms.openlocfilehash: a0eed27636a3f65d68489d1f2249db784ba1d722
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.date: 01/17/2021
+ms.openlocfilehash: b6ea3e762ad098e373baa8487d8926105820f226
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98196534"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101666508"
 ---
 # <a name="classification-insights-about-your-data-from-azure-purview"></a>Inzicht in de classificatie van uw gegevens vanuit Azure controle sfeer liggen
 
 In deze hand leiding wordt beschreven hoe u controle sfeer liggen classificatie Insight-rapporten kunt openen, bekijken en filteren voor uw gegevens.
 
-Ondersteunde gegevens bronnen zijn: Azure Blob Storage, Azure Data Lake Storage (ADLS) GEN 1, Azure Data Lake Storage (ADLS) GEN 2, Azure Cosmos DB (SQL API), Azure Synapse Analytics (voorheen SQL DW), Azure SQL Database, Azure SQL Managed instance, SQL Server
+Ondersteunde gegevens bronnen zijn: Azure Blob Storage, Azure Data Lake Storage (ADLS) GEN 1, Azure Data Lake Storage (ADLS) GEN 2, Azure Cosmos DB (SQL API), Azure Synapse Analytics (voorheen SQL DW), Azure SQL Database, Azure SQL Managed instance, SQL Server, Amazon S3-buckets
 
 In deze hand leiding leert u het volgende:
 
@@ -33,7 +33,7 @@ Voordat u aan de slag gaat met controle sfeer liggen Insights, moet u ervoor zor
 
 - Stel uw Azure-resources in en vul de relevante accounts in met test gegevens
 
-- Een scan voor de test gegevens in elke gegevens bron instellen en volt ooien
+- Een scan voor de test gegevens in elke gegevens bron instellen en volt ooien. Zie voor meer informatie [gegevens bronnen beheren in azure controle sfeer liggen (preview)](manage-data-sources.md) en [een set met scan regels maken](create-a-scan-rule-set.md).
 
 - Meld u aan bij controle sfeer liggen met een account met een [gegevens lezer of gegevens curator rol](catalog-permissions.md#azure-purviews-pre-defined-data-plane-roles).
 

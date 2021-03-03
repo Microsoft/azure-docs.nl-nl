@@ -3,15 +3,15 @@ title: Integratie beleid voor Azure API Management Dapr | Microsoft Docs
 description: Meer informatie over Azure API Management-beleid voor interactie met Dapr micro Services-extensies.
 author: vladvino
 ms.author: vlvinogr
-ms.date: 10/23/2020
+ms.date: 02/18/2021
 ms.topic: article
 ms.service: api-management
-ms.openlocfilehash: b8e253f75f56f961a24a441188b7a8e571622667
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 051bf4398555f318f613c66d58ec65be1d30e215
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99560228"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101646806"
 ---
 # <a name="api-management-dapr-integration-policies"></a>API Management-integratie beleid voor Dapr
 
@@ -45,21 +45,21 @@ template:
 
 ## <a name="send-request-to-a-service"></a><a name="invoke"></a> Aanvraag verzenden naar een service
 
-Met dit beleid wordt de doel-URL ingesteld voor de huidige aanvraag om `http://localhost:3500/v1.0/invoke/{app-id}/method/{method-name}` sjabloon parameters te vervangen door waarden die zijn opgegeven in de-beleids verklaring.
+Met dit beleid wordt de doel-URL ingesteld voor de huidige aanvraag om `http://localhost:3500/v1.0/invoke/{app-id}[.{ns-name}]/method/{method-name}` sjabloon parameters te vervangen door waarden die zijn opgegeven in de-beleids verklaring.
 
 In het beleid wordt ervan uitgegaan dat Dapr wordt uitgevoerd in een zijspan container in dezelfde pod als de gateway. Wanneer de aanvraag wordt ontvangen, voert Dapr runtime service detectie en werkelijke aanroep uit, inclusief mogelijke protocol omzetting tussen HTTP en gRPC, nieuwe pogingen, gedistribueerde tracering en fout afhandeling.
 
 ### <a name="policy-statement"></a>Beleids verklaring
 
 ```xml
-<set-backend-service backend-id="dapr" dapr-app-id="app-id" dapr-method="method-name" />
+<set-backend-service backend-id="dapr" dapr-app-id="app-id" dapr-method="method-name" dapr-namespace="ns-name" />
 ```
 
 ### <a name="examples"></a>Voorbeelden
 
 #### <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld ziet u het aanroepen van de methode ' back ' op de micro service met de naam ' echo '. Het `set-backend-service` beleid stelt de doel-URL in. Het `forward-request` beleid verzendt de aanvraag naar de Dapr-runtime, waardoor deze naar de micro service wordt geleverd.
+In het volgende voor beeld ziet u het aanroepen van de methode ' back ' op de micro service met de naam ' echo '. Het `set-backend-service` beleid stelt de doel-URL in op `http://localhost:3500/v1.0/invoke/echo.echo-app/method/back` . Het `forward-request` beleid verzendt de aanvraag naar de Dapr-runtime, waardoor deze naar de micro service wordt geleverd.
 
 Het `forward-request` beleid wordt hier weer gegeven voor duidelijkheid. Het beleid wordt doorgaans overgenomen van het globale bereik via het `base` sleutel woord.
 
@@ -67,7 +67,7 @@ Het `forward-request` beleid wordt hier weer gegeven voor duidelijkheid. Het bel
 <policies>
     <inbound>
         <base />
-        <set-backend-service backend-id="dapr" dapr-app-id="echo" dapr-method="back" />
+        <set-backend-service backend-id="dapr" dapr-app-id="echo" dapr-method="back" dapr-namespace="echo-app" />
     </inbound>
     <backend>
         <forward-request />
@@ -85,15 +85,16 @@ Het `forward-request` beleid wordt hier weer gegeven voor duidelijkheid. Het bel
 
 | Element             | Beschrijving  | Vereist |
 |---------------------|--------------|----------|
-| set-back-end-service | Hoofd element | Yes      |
+| set-back-end-service | Hoofd element | Ja      |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Kenmerk        | Beschrijving                     | Vereist | Standaard |
 |------------------|---------------------------------|----------|---------|
-| back-end-id       | Moet worden ingesteld op ' dapr '           | Yes      | N.v.t.     |
-| dapr-app-id      | De naam van de doel-micro service. Wordt toegewezen aan de [AppID](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/service_invocation_api.md) -para meter in Dapr.| Yes | N.v.t. |
-| dapr-methode      | De naam van de methode of een URL die moet worden aangeroepen voor de doel-micro service. Wordt toegewezen aan de para meter [method-name](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/service_invocation_api.md) in Dapr.| Yes | N.v.t. |
+| back-end-id       | Moet worden ingesteld op ' dapr '           | Ja      | N.v.t.     |
+| dapr-app-id      | De naam van de doel-micro service. Wordt gebruikt om de [AppID](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/service_invocation_api.md) -para meter in Dapr op te maken.| Ja | N.v.t. |
+| dapr-methode      | De naam van de methode of een URL die moet worden aangeroepen voor de doel-micro service. Wordt toegewezen aan de para meter [method-name](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/service_invocation_api.md) in Dapr.| Ja | N.v.t. |
+| dapr-naam ruimte   | De naam van de naam ruimte waarin de doel-micro service zich bevindt. Wordt gebruikt om de [AppID](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/service_invocation_api.md) -para meter in Dapr op te maken.| Nee | N.v.t. |
 
 ### <a name="usage"></a>Gebruik
 
@@ -153,19 +154,19 @@ De sectie back-end is leeg en de aanvraag wordt niet doorgestuurd naar de back-e
 
 | Element             | Beschrijving  | Vereist |
 |---------------------|--------------|----------|
-| publiceren naar dapr     | Hoofd element | Yes      |
+| publiceren naar dapr     | Hoofd element | Ja      |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Kenmerk        | Beschrijving                     | Vereist | Standaard |
 |------------------|---------------------------------|----------|---------|
-| pubsub-naam      | De naam van het doel-PubSub-onderdeel. Wordt toegewezen aan de para meter [pubsubname](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/pubsub_api.md) in Dapr. Als dat niet het geval is, moet de waarde van het __onderwerp__ worden opgegeven in de vorm van `pubsub-name/topic-name` .    | No       | Geen    |
-| onderwerp            | De naam van het onderwerp. Wordt toegewezen aan de [onderwerp](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/pubsub_api.md) -para meter in Dapr.               | Yes      | N.v.t.     |
-| negeren-fout     | Als deze instelling is ingesteld op `true` , wordt het beleid niet geactiveerd om de sectie ["On-Error"](api-management-error-handling-policies.md) te activeren bij het ontvangen van een fout vanuit Dapr runtime | No | `false` |
-| reactie-variabele-naam | Naam van de verzamelings vermelding van de [variabelen](api-management-policy-expressions.md#ContextVariables) die moet worden gebruikt voor het opslaan van de reactie van Dapr runtime | No | Geen |
-| timeout | Tijd (in seconden) die moet worden gewacht voordat Dapr runtime reageert. U kunt een waarde tussen 1 en 240 seconden opgeven. | No | 5 |
-| sjabloon | De sjabloon-engine die moet worden gebruikt voor het transformeren van de bericht inhoud. "Liquid" is de enige ondersteunde waarde. | No | Geen |
-| inhouds type | Het type van de bericht inhoud. ' application/json ' is de enige ondersteunde waarde. | No | Geen |
+| pubsub-naam      | De naam van het doel-PubSub-onderdeel. Wordt toegewezen aan de para meter [pubsubname](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/pubsub_api.md) in Dapr. Als dat niet het geval is, moet de waarde van het __onderwerp__ worden opgegeven in de vorm van `pubsub-name/topic-name` .    | Nee       | Geen    |
+| onderwerp            | De naam van het onderwerp. Wordt toegewezen aan de [onderwerp](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/pubsub_api.md) -para meter in Dapr.               | Ja      | N.v.t.     |
+| negeren-fout     | Als deze instelling is ingesteld op `true` , wordt het beleid niet geactiveerd om de sectie ["On-Error"](api-management-error-handling-policies.md) te activeren bij het ontvangen van een fout vanuit Dapr runtime | Nee | `false` |
+| reactie-variabele-naam | Naam van de verzamelings vermelding van de [variabelen](api-management-policy-expressions.md#ContextVariables) die moet worden gebruikt voor het opslaan van de reactie van Dapr runtime | Nee | Geen |
+| timeout | Tijd (in seconden) die moet worden gewacht voordat Dapr runtime reageert. U kunt een waarde tussen 1 en 240 seconden opgeven. | Nee | 5 |
+| sjabloon | De sjabloon-engine die moet worden gebruikt voor het transformeren van de bericht inhoud. "Liquid" is de enige ondersteunde waarde. | Nee | Geen |
+| inhouds type | Het type van de bericht inhoud. ' application/json ' is de enige ondersteunde waarde. | Nee | Geen |
 
 ### <a name="usage"></a>Gebruik
 
@@ -236,22 +237,22 @@ De sectie back-end is leeg en de aanvraag wordt niet doorgestuurd naar de back-e
 
 | Element             | Beschrijving  | Vereist |
 |---------------------|--------------|----------|
-| invoke-dapr-binding | Hoofd element | Yes      |
-| metagegevens            | Bindende specifieke meta gegevens in de vorm van sleutel/waarde-paren. Wordt toegewezen aan de [meta gegevens](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/bindings_api.md#invoking-output-bindings) eigenschap in Dapr. | No |
-| gegevens            | De inhoud van het bericht. Wordt toegewezen aan de eigenschap [Data](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/bindings_api.md#invoking-output-bindings) in Dapr. | No |
+| invoke-dapr-binding | Hoofd element | Ja      |
+| metagegevens            | Bindende specifieke meta gegevens in de vorm van sleutel/waarde-paren. Wordt toegewezen aan de [meta gegevens](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/bindings_api.md#invoking-output-bindings) eigenschap in Dapr. | Nee |
+| gegevens            | De inhoud van het bericht. Wordt toegewezen aan de eigenschap [Data](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/bindings_api.md#invoking-output-bindings) in Dapr. | Nee |
 
 
 ### <a name="attributes"></a>Kenmerken
 
 | Kenmerk        | Beschrijving                     | Vereist | Standaard |
 |------------------|---------------------------------|----------|---------|
-| naam            | Doel binding naam. Moet overeenkomen met de naam van de bindingen die zijn [gedefinieerd](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/bindings_api.md#bindings-structure) in Dapr.           | Yes      | N.v.t.     |
-| bewerking       | Doel bewerkings naam (binding specifiek). Wordt toegewezen aan de [bewerkings](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/bindings_api.md#invoking-output-bindings) eigenschap in Dapr. | No | Geen |
-| negeren-fout     | Als deze instelling is ingesteld op `true` , wordt het beleid niet geactiveerd om de sectie ["On-Error"](api-management-error-handling-policies.md) te activeren bij het ontvangen van een fout vanuit Dapr runtime | No | `false` |
-| reactie-variabele-naam | Naam van de verzamelings vermelding van de [variabelen](api-management-policy-expressions.md#ContextVariables) die moet worden gebruikt voor het opslaan van de reactie van Dapr runtime | No | Geen |
-| timeout | Tijd (in seconden) die moet worden gewacht voordat Dapr runtime reageert. U kunt een waarde tussen 1 en 240 seconden opgeven. | No | 5 |
-| sjabloon | De sjabloon-engine die moet worden gebruikt voor het transformeren van de bericht inhoud. "Liquid" is de enige ondersteunde waarde. | No | Geen |
-| inhouds type | Het type van de bericht inhoud. ' application/json ' is de enige ondersteunde waarde. | No | Geen |
+| naam            | Doel binding naam. Moet overeenkomen met de naam van de bindingen die zijn [gedefinieerd](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/bindings_api.md#bindings-structure) in Dapr.           | Ja      | N.v.t.     |
+| bewerking       | Doel bewerkings naam (binding specifiek). Wordt toegewezen aan de [bewerkings](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/bindings_api.md#invoking-output-bindings) eigenschap in Dapr. | Nee | Geen |
+| negeren-fout     | Als deze instelling is ingesteld op `true` , wordt het beleid niet geactiveerd om de sectie ["On-Error"](api-management-error-handling-policies.md) te activeren bij het ontvangen van een fout vanuit Dapr runtime | Nee | `false` |
+| reactie-variabele-naam | Naam van de verzamelings vermelding van de [variabelen](api-management-policy-expressions.md#ContextVariables) die moet worden gebruikt voor het opslaan van de reactie van Dapr runtime | Nee | Geen |
+| timeout | Tijd (in seconden) die moet worden gewacht voordat Dapr runtime reageert. U kunt een waarde tussen 1 en 240 seconden opgeven. | Nee | 5 |
+| sjabloon | De sjabloon-engine die moet worden gebruikt voor het transformeren van de bericht inhoud. "Liquid" is de enige ondersteunde waarde. | Nee | Geen |
+| inhouds type | Het type van de bericht inhoud. ' application/json ' is de enige ondersteunde waarde. | Nee | Geen |
 
 ### <a name="usage"></a>Gebruik
 

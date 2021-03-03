@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 01/11/2021
+ms.date: 02/23/2021
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 2687141ea870b0af0a4405ebef2261c5a303c767
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: aeed031025b9c494b35886861c273e2a7f9d2ac4
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99584109"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101653725"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-authorization-code-flow"></a>Micro soft Identity platform en OAuth 2,0-autorisatie code stroom
 
@@ -68,19 +68,19 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 > Klik op de onderstaande koppeling om deze aanvraag uit te voeren. Nadat u zich hebt aangemeld, moet uw browser worden omgeleid naar `https://localhost/myapp/` met een `code` in de adres balk.
 > <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=query&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&state=12345" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>
 
-| Parameter    | Vereist/optioneel | Description |
+| Parameter    | Vereist/optioneel | Beschrijving |
 |--------------|-------------|--------------|
 | `tenant`    | vereist    | De `{tenant}` waarde in het pad van de aanvraag kan worden gebruikt om te bepalen wie zich kan aanmelden bij de toepassing. De toegestane waarden zijn `common` , `organizations` , `consumers` en Tenant-id's. Zie [basis beginselen van protocollen](active-directory-v2-protocols.md#endpoints)voor meer informatie.  |
 | `client_id`   | vereist    | De **client-id** van de toepassing die de [Azure Portal – app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) ervaring die aan uw app is toegewezen.  |
 | `response_type` | vereist    | Moet `code` de autorisatie code stroom bevatten. Kan ook `id_token` `token` de [hybride stroom](#request-an-id-token-as-well-hybrid-flow)bevatten of gebruiken. |
-| `redirect_uri`  | vereist | De redirect_uri van uw app, waar verificatie reacties kunnen worden verzonden en ontvangen door uw app. Het moet exact overeenkomen met een van de redirect_uris die u in de portal hebt geregistreerd, behalve het moet een URL-code ring zijn. Voor systeem eigen & mobiele apps moet u de standaard waarde van gebruiken `https://login.microsoftonline.com/common/oauth2/nativeclient` .   |
+| `redirect_uri`  | vereist | De redirect_uri van uw app, waar verificatie reacties kunnen worden verzonden en ontvangen door uw app. Het moet exact overeenkomen met een van de redirect_uris die u in de portal hebt geregistreerd, behalve het moet een URL-code ring zijn. Voor eigen mobiele apps van & moet u een van de aanbevolen waarden gebruiken:  `https://login.microsoftonline.com/common/oauth2/nativeclient` (voor apps die gebruikmaken van Inge sloten browsers) of `http://localhost` (voor apps die gebruikmaken van systeem browsers). |
 | `scope`  | vereist    | Een lijst met door spaties gescheiden [bereiken](v2-permissions-and-consent.md) waarvan u wilt dat de gebruiker toestemming geeft.  In het `/authorize` gedeelte van de aanvraag kan dit meerdere resources omvatten, zodat uw app toestemming kan krijgen voor meerdere web-api's die u wilt aanroepen. |
 | `response_mode`   | aanbevelingen | Hiermee geeft u de methode op die moet worden gebruikt om het resulterende token terug naar uw app te verzenden. Dit kan een van de volgende zijn:<br/><br/>- `query`<br/>- `fragment`<br/>- `form_post`<br/><br/>`query` levert de code als een query reeks parameter op de omleidings-URI. Als u een ID-token met behulp van de impliciete stroom aanvraagt, kunt u niet gebruiken `query` zoals opgegeven in de [OpenID Connect-specificatie](https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html#Combinations). Als u alleen de code wilt aanvragen, kunt u `query` , `fragment` of gebruiken `form_post` . `form_post` Hiermee wordt een bericht met de code uitgevoerd naar de omleidings-URI. |
 | `state`                 | aanbevelingen | Een waarde die in de aanvraag is opgenomen en die ook wordt geretourneerd in de token reactie. Dit kan een teken reeks zijn van alle inhoud die u wilt. Een wille keurig gegenereerde unieke waarde wordt doorgaans gebruikt om [vervalsing van aanvragen op meerdere sites](https://tools.ietf.org/html/rfc6749#section-10.12)te voor komen. Met de waarde kan ook informatie over de status van de gebruiker in de app worden gecodeerd voordat de verificatie aanvraag is uitgevoerd, zoals de pagina of weer gave waarin ze zich bevonden. |
 | `prompt`  | optioneel    | Hiermee wordt het type gebruikers interactie aangegeven dat vereist is. De enige geldige waarden op dit moment zijn `login` , `none` , en `consent` .<br/><br/>- `prompt=login` dwingt de gebruiker de referenties op die aanvraag in te voeren, waarbij eenmalige aanmelding wordt genegeerd.<br/>- `prompt=none` is het tegenovergestelde: Hiermee zorgt u ervoor dat de gebruiker niet in een interactieve prompt wordt weer gegeven. Als de aanvraag niet op de achtergrond kan worden voltooid via eenmalige aanmelding, wordt een fout geretourneerd door het micro soft Identity-platform `interaction_required` .<br/>- `prompt=consent` het dialoog venster OAuth-toestemming wordt geactiveerd nadat de gebruiker zich heeft aangemeld, waarbij de gebruiker wordt gevraagd om machtigingen te verlenen aan de app.<br/>- `prompt=select_account` onderbreekt eenmalige aanmelding voor het aanbieden van accounts selectie alle accounts in een sessie of een eventueel onthouden account of een optie om ervoor te kiezen om een ander account samen te gebruiken.<br/> |
 | `login_hint`  | optioneel    | Kan worden gebruikt om het veld gebruikers naam/e-mail adres vooraf in te vullen op de aanmeldings pagina voor de gebruiker, als u de gebruikers naam van tevoren kent. Vaak gebruiken apps deze para meter tijdens het opnieuw verifiëren, waarbij de gebruikers naam al is geëxtraheerd van een eerdere aanmelding met de `preferred_username` claim.   |
 | `domain_hint`  | optioneel    | Indien opgenomen, wordt het op e-mail gebaseerde detectie proces overs Laan dat door de gebruiker wordt uitgevoerd op de aanmeldings pagina, waardoor er iets meer gestroomlijnde gebruikers ervaring is, bijvoorbeeld door deze te verzenden naar hun federatieve id-provider. Vaak gebruiken apps deze para meter tijdens het opnieuw verifiëren door de `tid` van een vorige aanmelding uit te pakken. Als de `tid` claim waarde is `9188040d-6c67-4c5b-b112-36a304b66dad` , moet u gebruiken `domain_hint=consumers` . Gebruik anders `domain_hint=organizations` .  |
-| `code_challenge`  | Aanbevolen/vereist | Wordt gebruikt voor het beveiligen van autorisatie code subsidies via de bewijs code voor code Exchange (PKCE). Vereist als `code_challenge_method` is opgenomen. Zie [PKCE RFC](https://tools.ietf.org/html/rfc7636)(Engelstalig) voor meer informatie. Dit wordt nu aanbevolen voor alle toepassings typen: systeem eigen apps, SPAs en vertrouwelijke clients, zoals web-apps. |
+| `code_challenge`  | Aanbevolen/vereist | Wordt gebruikt voor het beveiligen van autorisatie code subsidies via de bewijs code voor code Exchange (PKCE). Vereist als `code_challenge_method` is opgenomen. Zie [PKCE RFC](https://tools.ietf.org/html/rfc7636)(Engelstalig) voor meer informatie. Dit wordt nu aanbevolen voor alle toepassings typen: zowel open bare als vertrouwelijke clients, en vereist door het micro soft Identity-platform voor [apps met één pagina met behulp van de autorisatie code stroom](reference-third-party-cookies-spas.md). |
 | `code_challenge_method` | Aanbevolen/vereist | De methode die wordt gebruikt voor het coderen `code_verifier` van de voor de `code_challenge` para meter. Dit *moet* zijn `S256` , maar de spec staat het gebruik van toe `plain` als de client om de een of andere reden sha256 niet kan ondersteunen. <br/><br/>Als deze is uitgesloten, `code_challenge` wordt ervan uitgegaan dat de tekst zonder opmaak wordt gebruikt `code_challenge` . Het micro soft Identity-platform ondersteunt zowel `plain` als `S256` . Zie [PKCE RFC](https://tools.ietf.org/html/rfc7636)(Engelstalig) voor meer informatie. Dit is vereist voor [apps van één pagina die gebruikmaken van de autorisatie code stroom](reference-third-party-cookies-spas.md).|
 
 
@@ -93,7 +93,7 @@ Zodra de gebruiker de verificatie heeft uitgevoerd en toestemming verleent, stuu
 Een geslaagde reactie met `response_mode=query` ziet eruit als:
 
 ```HTTP
-GET https://login.microsoftonline.com/common/oauth2/nativeclient?
+GET http://localhost?
 code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...
 &state=12345
 ```
@@ -110,7 +110,7 @@ U kunt ook een ID-token ontvangen als u er een hebt aangevraagd en de impliciete
 Fout reacties kunnen ook worden verzonden naar de `redirect_uri` zodat de app deze op de juiste wijze kan afhandelen:
 
 ```HTTP
-GET https://login.microsoftonline.com/common/oauth2/nativeclient?
+GET http://localhost?
 error=access_denied
 &error_description=the+user+canceled+the+authentication
 ```
@@ -124,7 +124,7 @@ error=access_denied
 
 In de volgende tabel worden de verschillende fout codes beschreven die kunnen worden geretourneerd in de `error` para meter van het fout bericht.
 
-| Foutcode  | Description    | Client actie   |
+| Foutcode  | Beschrijving    | Client actie   |
 |-------------|----------------|-----------------|
 | `invalid_request` | Protocol fout, zoals een ontbrekende vereiste para meter. | Corrigeer en verzend de aanvraag opnieuw. Dit is een ontwikkelings fout die doorgaans tijdens de eerste test is opgetreden. |
 | `unauthorized_client` | De client toepassing mag geen autorisatie code aanvragen. | Deze fout treedt meestal op wanneer de client toepassing niet is geregistreerd in azure AD of niet is toegevoegd aan de Azure AD-Tenant van de gebruiker. De toepassing kan de gebruiker vragen met instructies voor het installeren van de toepassing en het toevoegen aan Azure AD. |
@@ -162,9 +162,9 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |`response_type`| Vereist | Het toevoegen van `id_token` geeft aan de server aan dat de toepassing een ID-token zou hebben in de reactie van het `/authorize` eind punt.  |
 |`scope`| Vereist | Voor ID-tokens moet worden bijgewerkt met de ID-token bereik- `openid` , en optioneel `profile` en `email` . |
 |`nonce`| Vereist|     Een waarde die is opgenomen in de aanvraag, gegenereerd door de app, die wordt opgenomen in de resulterende id_token als een claim. De app kan vervolgens deze waarde verifiëren om token replay-aanvallen te verhelpen. De waarde is doorgaans een wille keurige, unieke teken reeks die kan worden gebruikt om de oorsprong van de aanvraag te identificeren. |
-|`response_mode`| Aanbevolen | Hiermee geeft u de methode op die moet worden gebruikt om het resulterende token terug naar uw app te verzenden. De standaard instelling `query` is alleen voor een autorisatie code, maar `fragment` als de aanvraag een id_token bevat `response_type` .|
+|`response_mode`| Aanbevolen | Hiermee geeft u de methode op die moet worden gebruikt om het resulterende token terug naar uw app te verzenden. De standaard instelling `query` is alleen voor een autorisatie code, maar `fragment` als de aanvraag een id_token bevat `response_type` .  Apps worden echter aanbevolen `form_post` , vooral wanneer ze worden gebruikt `http:/localhost` als een omleidings-URI. |
 
-Het gebruik van `fragment` als antwoord modus kan problemen veroorzaken voor web-apps die de code van de omleiding lezen, omdat browsers het fragment niet door geven aan de webserver.  In deze situaties wordt het aanbevolen dat apps de `form_post` antwoord modus gebruiken om ervoor te zorgen dat alle gegevens naar de server worden verzonden. 
+Het gebruik van `fragment` als antwoord modus veroorzaakt problemen voor web-apps die de code van de omleiding lezen, omdat browsers het fragment niet door geven aan de webserver.  In deze situaties moeten apps de `form_post` antwoord modus gebruiken om ervoor te zorgen dat alle gegevens naar de server worden verzonden. 
 
 #### <a name="successful-response"></a>Geslaagde reactie
 
@@ -206,7 +206,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 > [!TIP]
 > Probeer deze aanvraag uit te voeren in postman! (Vergeet niet om de te vervangen `code` ) [ ![ Probeer deze aanvraag uit te voeren in postman](./media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d)
 
-| Parameter  | Vereist/optioneel | Description     |
+| Parameter  | Vereist/optioneel | Beschrijving     |
 |------------|-------------------|----------------|
 | `tenant`   | vereist   | De `{tenant}` waarde in het pad van de aanvraag kan worden gebruikt om te bepalen wie zich kan aanmelden bij de toepassing. De toegestane waarden zijn `common` , `organizations` , `consumers` en Tenant-id's. Zie [basis beginselen van protocollen](active-directory-v2-protocols.md#endpoints)voor meer informatie.  |
 | `client_id` | vereist  | De client-ID van de toepassing die de [Azure Portal-app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) pagina die is toegewezen aan uw app. |
@@ -269,7 +269,7 @@ Fout reacties zien er als volgt uit:
 
 ### <a name="error-codes-for-token-endpoint-errors"></a>Fout codes voor token eindpunt fouten
 
-| Foutcode         | Description        | Client actie    |
+| Foutcode         | Beschrijving        | Client actie    |
 |--------------------|--------------------|------------------|
 | `invalid_request`  | Protocol fout, zoals een ontbrekende vereiste para meter. | De aanvraag of app-registratie verhelpen en de aanvraag opnieuw verzenden   |
 | `invalid_grant`    | De verificatie code of PKCE code Verifier is ongeldig of is verlopen. | Probeer een nieuwe aanvraag naar het `/authorize` eind punt en controleer of de para meter code_verifier juist is.  |
@@ -328,7 +328,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 > Probeer deze aanvraag uit te voeren in postman! (Vergeet niet om de te vervangen `refresh_token` ) [ ![ Probeer deze aanvraag uit te voeren in postman](./media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d)
 >
 
-| Parameter     | Type           | Description        |
+| Parameter     | Type           | Beschrijving        |
 |---------------|----------------|--------------------|
 | `tenant`        | vereist     | De `{tenant}` waarde in het pad van de aanvraag kan worden gebruikt om te bepalen wie zich kan aanmelden bij de toepassing. De toegestane waarden zijn `common` , `organizations` , `consumers` en Tenant-id's. Zie [basis beginselen van protocollen](active-directory-v2-protocols.md#endpoints)voor meer informatie.   |
 | `client_id`     | vereist    | De **client-id** van de toepassing die de [Azure Portal – app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) ervaring die aan uw app is toegewezen. |

@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 02/11/2021
-ms.openlocfilehash: 9ffc450294f186b77cc7a6c44c10eecf266161d3
-ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
+ms.openlocfilehash: 1857eab485e8651c05959f82cf11e69b6353c575
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100526686"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101673511"
 ---
 # <a name="credentials-for-source-authentication-in-azure-purview"></a>Referenties voor de verificatie van de bron in azure controle sfeer liggen
 
@@ -85,8 +85,9 @@ Deze referentie typen worden ondersteund in controle sfeer liggen:
 - Service-Principal: u voegt de sleutel van de **Service-Principal** toe als geheim in de sleutel kluis.
 - SQL-verificatie: u voegt het **wacht woord** toe als geheim in de sleutel kluis.
 - Account sleutel: u voegt de **account sleutel** toe als geheim in de sleutel kluis.
+- Role ARN: Voeg uw **rol Arn** toe aan AWS voor een Amazon S3-gegevens bron. 
 
-Zie [een geheim toevoegen aan Key Vault](../key-vault/secrets/quick-create-portal.md#add-a-secret-to-key-vault)voor meer informatie.
+Zie [een geheim toevoegen aan Key Vault](../key-vault/secrets/quick-create-portal.md#add-a-secret-to-key-vault) en [een nieuwe AWS-rol maken voor controle sfeer liggen](register-scan-amazon-s3.md#create-a-new-aws-role-for-purview)voor meer informatie.
 
 Na het opslaan van uw geheimen in de sleutel kluis:
 

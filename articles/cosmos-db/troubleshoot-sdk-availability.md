@@ -3,17 +3,17 @@ title: De beschik baarheid van Azure Cosmos-Sdk's in multiregionale omgevingen v
 description: Meer informatie over de beschik baarheid van Azure Cosmos SDK als u in meerdere regionale omgevingen werkt.
 author: ealsur
 ms.service: cosmos-db
-ms.date: 02/16/2021
+ms.date: 02/18/2021
 ms.author: maquaran
 ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: 641b7d44407f8f3760c673f45d69dcfdc8b363b8
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 0720eb01920e39a9bee27e4d00d97acba55b0ad5
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100650980"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101661423"
 ---
 # <a name="diagnose-and-troubleshoot-the-availability-of-azure-cosmos-sdks-in-multiregional-environments"></a>De beschik baarheid van Azure Cosmos-Sdk's in multiregionale omgevingen vaststellen en oplossen
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -47,13 +47,13 @@ Als u **geen voorkeurs regio instelt**, wordt de SDK-client standaard ingesteld 
 > Als de waarden die zijn opgegeven als regionale voor keur niet overeenkomen met een van de bestaande Azure-regio's, worden ze genegeerd. Als ze overeenkomen met een bestaande regio, maar het account niet naar dit gebied wordt gerepliceerd, zal de client verbinding maken met de volgende voorkeurs regio die overeenkomt met of aan de primaire regio.
 
 > [!WARNING]
-> Het uitschakelen van de herdetectie van het eind punt (dat wil zeggen instellen op false) bij de client configuratie zorgt voor het uitschakelen van alle failover-en beschikbaarheids logica die in dit document wordt beschreven.
-> Deze configuratie kan worden gebruikt door de volgende para meters in elke Azure Cosmos-SDK:
+> De logica voor failover en beschik baarheid die in dit document wordt beschreven, kan worden uitgeschakeld op de client configuratie. dit wordt niet aanbevolen, tenzij de gebruikers toepassing beschikbaarheids fouten zelf gaat verwerken. Dit kan worden bereikt door:
 >
-> * De eigenschap [Connection Policy. EnableEndpointRediscovery](/dotnet/api/microsoft.azure.documents.client.connectionpolicy.enableendpointdiscovery) in de .NET v2-SDK.
-> * De methode [CosmosClientBuilder. endpointDiscoveryEnabled](/java/api/com.azure.cosmos.cosmosclientbuilder.endpointdiscoveryenabled) in Java v4 SDK.
-> * De [CosmosClient.enable_endpoint_discovery](/python/api/azure-cosmos/azure.cosmos.cosmos_client.cosmosclient) -para meter in de PYTHON-SDK.
-> * De [CosmosClientOptions. Connection Policy. enableEndpointDiscovery](/javascript/api/@azure/cosmos/connectionpolicy#enableEndpointDiscovery) -para meter in de JS-SDK.
+> * Stel de eigenschap [Connection Policy. EnableEndpointRediscovery](/dotnet/api/microsoft.azure.documents.client.connectionpolicy.enableendpointdiscovery) in de .NET v2-SDK in op false.
+> * Stel de eigenschap [CosmosClientOptions. LimitToEndpoint](/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.limittoendpoint) in de .net v3-SDK in op waar.
+> * Stel de methode [CosmosClientBuilder. endpointDiscoveryEnabled](/java/api/com.azure.cosmos.cosmosclientbuilder.endpointdiscoveryenabled) in de Java v4-SDK in op false.
+> * Stel de [CosmosClient.enable_endpoint_discovery](/python/api/azure-cosmos/azure.cosmos.cosmos_client.cosmosclient) -para meter in de PYTHON-SDK in op false.
+> * Stel de para meter [CosmosClientOptions. Connection Policy. enableEndpointDiscovery](/javascript/api/@azure/cosmos/connectionpolicy#enableEndpointDiscovery) in de JS-SDK in op false.
 
 Onder normale omstandigheden zal de SDK-client verbinding maken met de voorkeurs regio (als een regionale voor keur is ingesteld) of aan de primaire regio (als er geen voor keur is ingesteld), en de bewerkingen worden beperkt tot die regio, tenzij een van de onderstaande scenario's zich voordoet.
 

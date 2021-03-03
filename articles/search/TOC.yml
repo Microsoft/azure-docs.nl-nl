@@ -96,6 +96,8 @@
   items:
     - name: Zoekopdracht in volledige tekst
       href: search-lucene-query-architecture.md
+    - name: Semantische zoekopdrachten
+      href: semantic-search-overview.md
     - name: Relevantiescore
       href: index-similarity-and-scoring.md
     - name: Indexeerfuncties
@@ -218,6 +220,8 @@
           href: search-howto-schedule-indexers.md
         - name: Veld toewijzingen definiëren
           href: search-indexer-field-mappings.md
+        - name: Eigenschappen van meta gegevens van inhoud
+          href: search-blob-metadata-properties.md
         - name: Verbinding maken met beheerde identiteiten
           items:
             - name: Overzicht van beheerde identiteiten
@@ -228,6 +232,8 @@
               href: search-howto-managed-identities-cosmos-db.md
             - name: SQL Database
               href: search-howto-managed-identities-sql.md
+        - name: SharePoint Online
+          href: search-howto-index-sharepoint-online.md
         - name: Azure-blobs
           items:
             - name: Zoeken in blobs
@@ -248,8 +254,6 @@
               href: search-howto-index-json-blobs.md
             - name: Versleutelde blobs indexeren
               href: search-howto-index-encrypted-blobs.md
-            - name: Eigenschappen van meta gegevens voor blob-inhoud
-              href: search-blob-metadata-properties.md
         - name: Azure-tabellen
           href: search-howto-indexing-azure-tables.md
         - name: Azure Cosmos DB
@@ -306,6 +310,10 @@
       items:
         - name: Een basisquery maken
           href: search-query-create.md
+        - name: Een semantische query maken
+          href: semantic-how-to-query-request.md
+        - name: Spelling controle aan query's toevoegen
+          href: speller-how-to-add.md
         - name: Querytypen en querysamenstelling
           href: search-query-overview.md
         - name: Eenvoudige syntaxis gebruiken (voorbeelden)
@@ -348,6 +356,8 @@
       items:
         - name: Werken met resultaten
           href: search-pagination-page-layout.md
+        - name: Een semantisch antwoord structureren
+          href: semantic-how-to-query-response.md
         - name: Scoreprofielen
           href: index-add-scoring-profiles.md
         - name: Vergelijkbaarheidsalgoritme
@@ -388,6 +398,8 @@
           href: search-manage.md
         - name: PowerShell
           href: search-manage-powershell.md
+        - name: Azure CLI
+          href: search-manage-azure-cli.md
         - name: Service verplaatsen tussen regio's
           href: search-howto-move-across-regions.md
         - name: Op rollen gebaseerde beheerderstoegang

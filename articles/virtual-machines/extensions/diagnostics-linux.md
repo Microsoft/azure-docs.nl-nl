@@ -10,19 +10,19 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 02/05/2021
 ms.author: akjosh
-ms.openlocfilehash: d45535f11568fddd10130d506af3329dcdfb0484
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 741db5ea10847e2fe6711e7ca01d65efb1f09dea
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100580279"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101667322"
 ---
 # <a name="use-linux-diagnostic-extension-40-to-monitor-metrics-and-logs"></a>Linux Diagnostic extension 4,0 gebruiken voor het bewaken van metrische gegevens en Logboeken
 
 In dit document wordt versie 4,0 en nieuwer van de Linux Diagnostic-extensie beschreven.
 
 > [!IMPORTANT]
-> Zie  [dit document](https://docs.microsoft.com/azure/virtual-machines/extensions/diagnostics-linux-v3)voor meer informatie over versie 3. *. Zie [dit document](/previous-versions/azure/virtual-machines/linux/classic/diagnostic-extension-v2)voor meer informatie over versie 2,3 en ouder.
+> Zie  [dit document](./diagnostics-linux-v3.md)voor meer informatie over versie 3. *. Zie [dit document](/previous-versions/azure/virtual-machines/linux/classic/diagnostic-extension-v2)voor meer informatie over versie 2,3 en ouder.
 
 ## <a name="introduction"></a>Introductie
 
@@ -108,7 +108,7 @@ Het uitvoer bare bestand van python2 moet zijn alias voor *python*. Hier volgt e
 Met de voorbeeld configuratie die in deze voor beelden is gedownload, wordt een set standaard gegevens verzameld en naar Table Storage verzonden. De URL voor de voorbeeld configuratie en de inhoud ervan kunnen worden gewijzigd. In de meeste gevallen moet u een kopie van het JSON-bestand van de Portal-instellingen downloaden en aanpassen aan uw behoeften. vervolgens moet u de eigen versie van het configuratie bestand gebruiken in plaats van dat elke keer dat URL wordt gedownload.
 
 > [!NOTE]
-> Voor het inschakelen van de nieuwe Azure Monitor Sink moet aan de virtuele machines systeem identiteiten zijn ingeschakeld voor het genereren van MSI-verificatie tokens. Dit kan worden gedaan tijdens het maken van de virtuele machine of nadat de VM is gemaakt. Stappen voor het inschakelen van door het systeem toegewezen identiteit via de portal, CLI, Power shell en Resource Manager.  worden [hier](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm)gedetailleerd weer gegeven. 
+> Voor het inschakelen van de nieuwe Azure Monitor Sink moet aan de virtuele machines systeem identiteiten zijn ingeschakeld voor het genereren van MSI-verificatie tokens. Dit kan worden gedaan tijdens het maken van de virtuele machine of nadat de VM is gemaakt. Stappen voor het inschakelen van door het systeem toegewezen identiteit via de portal, CLI, Power shell en Resource Manager.  worden [hier](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md)gedetailleerd weer gegeven. 
 
 #### <a name="azure-cli-sample"></a>Voor beeld van Azure CLI
 
@@ -490,7 +490,7 @@ Voor beelden zijn `LinuxSyslog20170410` en `LinuxSyslog20170609` .
 Deze optionele sectie bepaalt het verzenden van metrische gegevens aan de Azure Monitor-Sink naast het opslag account en de standaard Blade metrische gegevens voor gasten.
 
 > [!NOTE]
-> Hiervoor moet de toegewezen identiteit van het systeem worden ingeschakeld op de Vm's/VMSS. Dit kan worden gedaan via de portal, CLI, Power shell en Resource Manager. De stappen worden [hier](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm)gedetailleerd weer gegeven. De stappen om dit in te scha kelen, worden ook vermeld in de installatie voorbeelden voor AZ CLI, Power shell, enzovoort. 
+> Hiervoor moet de toegewezen identiteit van het systeem worden ingeschakeld op de Vm's/VMSS. Dit kan worden gedaan via de portal, CLI, Power shell en Resource Manager. De stappen worden [hier](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md)gedetailleerd weer gegeven. De stappen om dit in te scha kelen, worden ook vermeld in de installatie voorbeelden voor AZ CLI, Power shell, enzovoort. 
 
 ```json
   "sinksConfig": {

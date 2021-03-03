@@ -3,20 +3,21 @@ title: Problemen met de implementatie van open Shift container platform 3,11 in 
 description: Problemen met de implementatie van open Shift container platform 3,11 in azure oplossen.
 author: haroldwongms
 manager: mdotson
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines
+ms.subservice: openshift
+ms.collection: linux
 ms.topic: troubleshooting
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 9595627e9d7ca2de577aa83ebba3dd58d69e6750
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b6dfb4cb697e7d66c7db323df9786ff7ad45e1d7
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87373552"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101672324"
 ---
 # <a name="troubleshoot-openshift-container-platform-311-deployment-in-azure"></a>Problemen met de implementatie van open Shift container platform 3,11 in azure oplossen
 
@@ -42,7 +43,7 @@ De logboek bestanden (stderr en stdout) voor de host-voorbereidings scripts bevi
 
 Als de voorbereidings scripts met succes worden uitgevoerd, moeten de logboek bestanden in de `/var/lib/waagent/custom-script/download/1` map van de ansible Playbook-host worden onderzocht. Als de fout is opgetreden tijdens de werkelijke installatie van open Shift, wordt de fout weer gegeven in het stdout-bestand. Gebruik deze informatie om contact op te nemen met de ondersteuning voor verdere ondersteuning.
 
-Voorbeeld uitvoer
+Voorbeelduitvoer
 
 ```json
 TASK [openshift_storage_glusterfs : Load heketi topology] **********************

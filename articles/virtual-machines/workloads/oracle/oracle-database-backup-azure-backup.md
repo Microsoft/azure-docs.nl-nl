@@ -2,18 +2,19 @@
 title: Back-ups maken en herstellen van een Oracle Database 19c-Data Base op een virtuele Azure Linux-machine met Azure Backup
 description: Meer informatie over het maken van een back-up en het herstellen van een Oracle Database 19c-data base via de Azure Backup-service.
 author: cro27
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines
+ms.subservice: oracle
+ms.collection: linux
 ms.topic: article
 ms.date: 01/28/2021
 ms.author: cholse
 ms.reviewer: dbakevlar
-ms.openlocfilehash: ac045694e8975509635e03221a8cb9cc84446b55
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 90f86a198ad36c2961f77336092d863953ee45ba
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99806406"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101673892"
 ---
 # <a name="back-up-and-recover-an-oracle-database-19c-database-on-an-azure-linux-vm-using-azure-backup"></a>Back-ups maken en herstellen van een Oracle Database 19c-Data Base op een virtuele Azure Linux-machine met Azure Backup
 
@@ -199,13 +200,13 @@ Bij deze stap wordt ervan uitgegaan dat u een Oracle-exemplaar (*test*) hebt dat
      RMAN> backup as compressed backupset database plus archivelog;
      ```
 
-## <a name="using-azure-backup"></a>Azure Backup gebruiken
+## <a name="using-azure-backup-preview"></a>Azure Backup gebruiken (preview-versie)
 
 De Azure Backup-service biedt eenvoudige, beveiligde en kosteneffectieve oplossingen om een back-up te maken van uw gegevens en die te herstellen vanuit Microsoft Azure-cloud. Azure Backup biedt onafhankelijke en geïsoleerde back-ups om te voorkomen dat oorspronkelijke gegevens per ongeluk worden vernietigd. Back-ups worden opgeslagen in een Recovery Services-kluis met ingebouwd beheer van herstelpunten. Configuratie en schaalbaarheid zijn eenvoudig, back-ups zijn geoptimaliseerd en kunt u eenvoudig naar behoefte herstellen.
 
-Azure Backup-service biedt een [Framework](../../../backup/backup-azure-linux-app-consistent.md) om toepassings consistentie te krijgen tijdens het maken van back-ups van Windows-en Linux-vm's voor diverse toepassingen, zoals Oracle, MySQL, Mongo DB, SAP Hana en postgresql. Dit omvat het aanroepen van een pre-script (om de toepassingen stil te leggen) voordat een moment opname van schijven wordt gemaakt en het aanroepen van post script (opdrachten voor het opheffen van de toepassingen) nadat de moment opname is voltooid, om de toepassingen te retour neren naar de normale modus. Hoewel voor beelden van pre-scripts en post-scripts worden gegeven in GitHub, is het maken en onderhouden van deze scripts uw verantwoordelijkheid. 
+Azure Backup-service biedt een [Framework](../../../backup/backup-azure-linux-app-consistent.md) om toepassings consistentie te krijgen tijdens het maken van back-ups van Windows-en Linux-vm's voor diverse toepassingen, zoals Oracle, MySQL, Mongo DB en postgresql. Dit omvat het aanroepen van een pre-script (om de toepassingen stil te leggen) voordat een moment opname van schijven wordt gemaakt en het aanroepen van post script (opdrachten voor het opheffen van de toepassingen) nadat de moment opname is voltooid, om de toepassingen te retour neren naar de normale modus. Hoewel voor beelden van pre-scripts en post-scripts worden gegeven in GitHub, is het maken en onderhouden van deze scripts uw verantwoordelijkheid.
 
-Azure Backup is nu voorzien van een verbeterd pre-scripts en post-script-Framework, waarbij de Azure Backup-Service vooraf gebundelde pre-scripts en post scripts voor geselecteerde toepassingen biedt. Azure Backup gebruikers hoeven alleen de naam van de toepassing te noemen en vervolgens wordt de relevante pre-post scripts automatisch door Azure VM-back-up aangeroepen. De verpakte pre-scripts en post-scripts worden onderhouden door het Azure Backup-team, zodat gebruikers kunnen worden verzekerd van de ondersteuning, het eigendom en de geldigheid van deze scripts. Momenteel zijn de ondersteunde toepassingen voor het uitgebreide Framework *Oracle* en *MySQL*.
+Azure Backup is nu voorzien van een verbeterd pre-scripts en post script-Framework (**dat momenteel als preview-versie beschikbaar is**), waarbij de Azure backup-service vooraf gepakte pre-scripts en post scripts voor geselecteerde toepassingen bevat. Azure Backup gebruikers hoeven alleen de naam van de toepassing te noemen en vervolgens wordt de relevante pre-post scripts automatisch door Azure VM-back-up aangeroepen. De verpakte pre-scripts en post-scripts worden onderhouden door het Azure Backup-team, zodat gebruikers kunnen worden verzekerd van de ondersteuning, het eigendom en de geldigheid van deze scripts. Momenteel zijn de ondersteunde toepassingen voor het uitgebreide Framework *Oracle* en *MySQL*.
 
 In deze sectie gaat u Azure Backup verbeterd Framework gebruiken om toepassings consistente moment opnamen van uw actieve virtuele machine en Oracle Data Base te maken. De data base wordt in de back-upmodus geplaatst, zodat er een transactionele, consistente online back-up wordt uitgevoerd terwijl Azure Backup een moment opname van de VM-schijven maakt. De moment opname is een volledige kopie van de opslag en niet een incrementele of gekopieerde moment opname van een schrijf bewerking. het is dus een effectief medium om uw data base van te herstellen. Het voor deel van het gebruik van Azure Backup toepassings consistente moment opnamen is dat ze zeer snel te maken krijgen, hoe groot uw data base is en dat een moment opname kan worden gebruikt voor herstel bewerkingen zodra deze worden uitgevoerd, zonder dat u hoeft te wachten totdat de gegevens naar de Recovery Services kluis worden overgebracht.
 
@@ -314,7 +315,7 @@ Voer de volgende stappen uit om Azure Backup te gebruiken voor het maken van een
    sudo su -
    ```
 
-2. Maak de toepassings consistente werkmap voor back-ups:
+2. Controleer op de map ' etc/Azure '. Als dat niet het geval is, maakt u de toepassings consistente werkmap voor back-up:
 
    ```bash
    if [ ! -d "/etc/azure" ]; then
@@ -322,7 +323,7 @@ Voer de volgende stappen uit om Azure Backup te gebruiken voor het maken van een
    fi
    ```
 
-3. Maak een bestand in de */etc/Azure* -map met de naam *workload. conf* met de volgende inhoud, die moet beginnen met `[workload]` . Met de volgende opdracht wordt het bestand gemaakt en wordt de inhoud gevuld:
+3. Controleer in de map op workload. conf. Als dat niet aanwezig is, maakt u een bestand in de */etc/Azure* -map met de naam *workload. conf* met de volgende inhoud, die moet beginnen met `[workload]` . Als het bestand al aanwezig is, bewerkt u alleen de velden die overeenkomen met de volgende inhoud. Anders wordt het bestand door de volgende opdracht gemaakt en wordt de inhoud gevuld:
 
    ```bash
    echo "[workload]
@@ -330,14 +331,6 @@ Voer de volgende stappen uit om Azure Backup te gebruiken voor het maken van een
    command_path = /u01/app/oracle/product/19.0.0/dbhome_1/bin/
    timeout = 90
    linux_user = azbackup" > /etc/azure/workload.conf
-   ```
-
-4. Down load de scripts preOracleMaster. SQL en postOracleMaster. SQL van de [github-opslag plaats](https://github.com/Azure/azure-linux-extensions/tree/master/VMBackup/main/workloadPatch/DefaultScripts) en kopieer deze naar de map */etc/Azure* .
-
-5. De bestands machtigingen wijzigen
-
-```bash
-   chmod 744 workload.conf preOracleMaster.sql postOracleMaster.sql 
    ```
 
 ### <a name="trigger-an-application-consistent-backup-of-the-vm"></a>Een toepassings consistente back-up van de virtuele machine activeren
@@ -970,4 +963,4 @@ az group delete --name rg-oracle
 
 [Zelf studie: Maxi maal beschik bare Vm's maken](../../linux/create-cli-complete.md)
 
-[Azure CLI-voor beelden van VM-implementatie verkennen](../../linux/cli-samples.md)
+[Azure CLI-voor beelden van VM-implementatie verkennen](https://github.com/Azure-Samples/azure-cli-samples/tree/master/virtual-machine)

@@ -9,16 +9,14 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 30cb023b8ca78f252dbf087a604a61b8aa5c6659
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 88948f757c41550124acf20ac1cf0e33cdb3e5ba
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100577393"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101660154"
 ---
 # <a name="communication-services-notifications"></a>Communication Services-meldingen
-
-[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
 De Azure Communication Services-clientbibliotheken voor chatten en bellen maken een realtime berichtenkanaal waarmee het mogelijk is om op een efficiënte, betrouwbare manier signaleringsberichten naar verbonden clients te pushen. Zo kunt u uitgebreide, realtime communicatiefuncties in uw toepassingen inbouwen zonder dat u complexe logica voor HTTP-polling moet implementeren. In mobiele apps blijft dit kanaal echter slechts verbonden zolang uw app actief is op de voorgrond. Als u wilt dat uw gebruikers inkomende oproepen of chatberichten ontvangen wanneer uw app op de achtergrond staat, moet u pushmeldingen gebruiken.
 
@@ -34,7 +32,7 @@ Lees meer over [verwerking van gebeurtenissen in Azure Communication Services](.
 
 ## <a name="deliver-push-notifications-via-azure-notification-hubs"></a>Pushmeldingen versturen via Azure Notification Hubs
 
-U kunt een Azure Notification Hub verbinden met uw Communication Services-resource om automatisch pushmeldingen naar het mobiele apparaat van een gebruiker te verzenden wanneer ze een inkomende oproep ontvangen. U gebruikt deze pushmeldingen om uw toepassing te activeren vanaf de achtergrond en de gebruikersinterface weer te geven waarmee de gebruiker de oproep kan aannemen of weigeren. 
+U kunt een Azure Notification Hub verbinden met uw Communication Services-resource om automatisch pushmeldingen naar het mobiele apparaat van een gebruiker te verzenden wanneer ze een inkomende oproep ontvangen. U gebruikt deze pushmeldingen om uw toepassing te activeren vanaf de achtergrond en de gebruikersinterface weer te geven waarmee de gebruiker de oproep kan aannemen of weigeren.
 
 :::image type="content" source="./media/notifications/acs-anh-int.png" alt-text="Diagram waarin wordt getoond hoe Communication Services integreert met de Azure Notification Hubs.":::
 
@@ -43,13 +41,13 @@ Communication Services maakt gebruik van Azure Notification Hub als een doorgeef
 > [!NOTE]
 > Momenteel worden alleen pushmeldingen ondersteund.
 
-### <a name="notification-hub-provisioning"></a>Notification Hub-inrichting 
+### <a name="notification-hub-provisioning"></a>Notification Hub-inrichting
 
 Als u pushmeldingen wilt aanbieden met behulp van Notification Hubs, [maak dan een Notification Hub aan](../../notification-hubs/create-notification-hub-portal.md) in hetzelfde abonnement als uw Communication Services-resource. Configureer Azure Notification Hub voor het Platform Notification System dat u wilt gebruiken. Zie [Aan de slag met Notification Hubs](../../notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started.md) en selecteer uw doelclientplatform in de vervolgkeuzelijst aan de bovenkant van de pagina voor meer informatie over het ophalen van pushmeldingen in uw client-app van Notification Hubs.
 
 > [!NOTE]
-> Momenteel worden de APNs- en FCM-platforms ondersteund.  
-Het APNs-platform moet zijn geconfigureerd met de modus voor tokenverificatie. De verificatiemodus voor certificaten wordt momenteel niet ondersteund. 
+> Momenteel worden de APNs- en FCM-platforms ondersteund.
+Het APNs-platform moet zijn geconfigureerd met de modus voor tokenverificatie. De verificatiemodus voor certificaten wordt momenteel niet ondersteund.
 
 Zodra uw Notification Hub is geconfigureerd, kunt u deze koppelen met uw Communication Services-resource door een verbindingsreeks voor de hub op te geven met behulp van de Azure Resource Manager-client of via de Azure-portal. De verbindingsreeks moet `Send`-machtigingen bevatten. U wordt aangeraden een ander toegangsbeleid te maken met machtigingen voor `Send` alleen, specifiek voor uw hub. Meer informatie over het [beveiligings- en toegangsbeleid van Notification Hubs](../../notification-hubs/notification-hubs-push-notification-security.md)
 
@@ -74,10 +72,10 @@ Navigeer in het portaal naar uw Azure Communication Services-resource. Selecteer
 :::image type="content" source="./media/notifications/acs-anh-portal-int.png" alt-text="Schermopname met de instellingen voor pushmeldingen in Azure Portal.":::
 
 > [!NOTE]
-> Als de Azure Notification Hub-verbindingsreeks wordt bijgewerkt, moet de Azure Communication Services-resource ook worden bijgewerkt.  
+> Als de Azure Notification Hub-verbindingsreeks wordt bijgewerkt, moet de Azure Communication Services-resource ook worden bijgewerkt.
 Eventuele wijzigingen in de manier waarop de hub is gekoppeld, worden weergegeven in het gegevensvlak (d.w.z. bij het verzenden van een melding) binnen een maximum periode van ``10`` minuten. Dit is ook van toepassing wanneer de hub is gekoppeld voor de eerste keer **als** er eerder meldingen zijn verzonden.
 
-### <a name="device-registration"></a>Apparaatregistratie 
+### <a name="device-registration"></a>Apparaatregistratie
 
 Raadpleeg de [quickstart spraakoproepen](../quickstarts/voice-video-calling/getting-started-with-calling.md) voor meer informatie over de registratie van uw apparaat bij Communication Services.
 

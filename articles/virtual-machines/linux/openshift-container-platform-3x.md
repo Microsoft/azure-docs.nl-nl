@@ -3,18 +3,19 @@ title: Open Shift container platform 3,11 implementeren in azure
 description: Implementeer het open Shift container platform 3,11 in Azure.
 author: haroldwongms
 manager: mdotson
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines
+ms.subservice: openshift
+ms.collection: linux
 ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 04/05/2020
 ms.author: haroldw
-ms.openlocfilehash: fab8f88a39730411503af273902a53f169e3fe57
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: 054fb2ffc65b44d5436282eab5327f0facf39c06
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97703732"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101671182"
 ---
 # <a name="deploy-openshift-container-platform-311-in-azure"></a>Open Shift container platform 3,11 implementeren in azure
 
@@ -295,9 +296,9 @@ Verschillende releases kunnen verschillende para meters hebben, dus controleer d
 | `existingInfraSubnetReference` | Volledige verwijzing naar het bestaande subnet voor infra structuur knooppunten. Niet nodig bij het maken van een nieuw vNet/subnet |  |  |
 | `existingCnsSubnetReference` | Volledige verwijzing naar het bestaande subnet voor de CNS-knoop punten. Niet nodig bij het maken van een nieuw vNet/subnet |  |  |
 | `existingNodeSubnetReference` | Volledige verwijzing naar het bestaande subnet voor reken knooppunten. Niet nodig bij het maken van een nieuw vNet/subnet |  |  |
-| `masterClusterType` | Geef op of het cluster particuliere of open bare hoofd knooppunten gebruikt. Als privé is gekozen, worden de hoofd knooppunten niet blootgesteld aan Internet via een openbaar IP-adres. In plaats daarvan wordt het privé-IP-adres gebruikt dat is opgegeven in de `masterPrivateClusterIp` | openbaar <br> eigen | openbaar |
+| `masterClusterType` | Geef op of het cluster particuliere of open bare hoofd knooppunten gebruikt. Als privé is gekozen, worden de hoofd knooppunten niet blootgesteld aan Internet via een openbaar IP-adres. In plaats daarvan wordt het privé-IP-adres gebruikt dat is opgegeven in de `masterPrivateClusterIp` | Open <br> eigen | Open |
 | `masterPrivateClusterIp` | Als er knoop punten van een persoonlijke Master zijn geselecteerd, moet u een privé-IP-adres opgeven voor gebruik door de interne load balancer voor hoofd knooppunten. Dit statische IP-adres moet zich in het CIDR-blok bevinden voor het hoofd-subnet en wordt niet al gebruikt. Als er open bare hoofd knooppunten zijn geselecteerd, wordt deze waarde niet gebruikt, maar moet deze wel worden opgegeven |  | 10.1.0.200 |
-| `routerClusterType` | Geef op of het cluster particuliere of open bare infra structuur knooppunten gebruikt. Als privé is gekozen, worden de infra structuur niet via een openbaar IP-adres blootgesteld aan Internet. In plaats daarvan wordt het privé-IP-adres gebruikt dat is opgegeven in de `routerPrivateClusterIp` | openbaar <br> eigen | openbaar |
+| `routerClusterType` | Geef op of het cluster particuliere of open bare infra structuur knooppunten gebruikt. Als privé is gekozen, worden de infra structuur niet via een openbaar IP-adres blootgesteld aan Internet. In plaats daarvan wordt het privé-IP-adres gebruikt dat is opgegeven in de `routerPrivateClusterIp` | Open <br> eigen | Open |
 | `routerPrivateClusterIp` | Als er particuliere infra structuur knooppunten zijn geselecteerd, moet er een privé-IP-adres worden opgegeven voor gebruik door de interne load balancer voor infra structuur knooppunten. Dit statische IP-adres moet zich in het CIDR-blok bevinden voor het infra structuur-subnet en niet al in gebruik. Als open bare-infra structuur knooppunten zijn geselecteerd, wordt deze waarde niet gebruikt, maar moet deze wel worden opgegeven |  | 10.2.0.200 |
 | `routingCertType` | Aangepast certificaat voor routerings domein of het standaard zelfondertekende certificaat gebruiken-volg de instructies in de sectie **aangepaste certificaten** | selfsigned <br> aangepast | selfsigned |
 | `masterCertType` | Aangepast certificaat voor hoofd domein of het standaard zelfondertekende certificaat gebruiken-volg de instructies in de sectie **aangepaste certificaten** | selfsigned <br> aangepast | selfsigned |

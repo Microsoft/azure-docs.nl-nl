@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f2b059bb6ae63d7f427ce970b2538da922e2dec
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 46cc8ef1158c02190f905cbe8eb1d12ea7be50a2
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94837260"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101644932"
 ---
 # <a name="what-is-a-primary-refresh-token"></a>Wat is een primair vernieuwingstoken?
 
@@ -103,7 +103,7 @@ Een PRT wordt beveiligd door deze te binden aan het apparaat waarmee de gebruike
 * **Tijdens de eerste aanmelding**: tijdens de eerste aanmelding wordt een PRT uitgegeven door aanvragen te ondertekenen met behulp van de apparaatcode die cryptografisch is gegenereerd tijdens de apparaatregistratie. Op een apparaat met een geldige en werkende TPM wordt de apparaatcode beveiligd door de TPM, waardoor er geen kwaad aardige toegang is. Er wordt geen PRT uitgegeven als de bijbehorende hand tekening van de sleutel van het apparaat niet kan worden gevalideerd.
 * **Tijdens token aanvragen en-vernieuwing**: wanneer er een PRT wordt uitgegeven, geeft Azure AD ook een versleutelde sessie sleutel aan het apparaat door. Het is versleuteld met de open bare transport sleutel (tkpub) die wordt gegenereerd en verzonden naar Azure AD als onderdeel van de registratie van het apparaat. Deze sessie sleutel kan alleen worden ontsleuteld door de privé transport sleutel (tkpriv) die wordt beveiligd door de TPM. De sessie sleutel is de toets-of-eigendoms sleutel (POP) voor alle aanvragen die worden verzonden naar Azure AD.  De sessie sleutel wordt ook beveiligd door de TPM en geen ander OS-onderdeel heeft hiervoor toegang. Token aanvragen of PRT-vernieuwings aanvragen worden door deze sessie sleutel via de TPM beveiligd en kunnen daarom niet worden gewijzigd. Azure AD valideert aanvragen van het apparaat dat niet is ondertekend door de bijbehorende sessie sleutel.
 
-Door deze sleutels met de TPM te beveiligen, kunnen kwaadwillende actors de sleutels niet stelen en de PRT niet opnieuw afspelen als de TPM niet toegankelijk is, zelfs als een aanvaller het apparaat fysiek bezit.  Daardoor is het gebruik van een TPM een grote verbetering van de beveiliging van Azure AD join, hybride Azure AD en geregistreerde Azure AD-apparaten tegen referentie diefstal. Voor prestaties en betrouw baarheid is TPM 2,0 de aanbevolen versie voor alle scenario's voor het registreren van Azure AD-apparaten in Windows 10.
+Door deze sleutels met de TPM te beveiligen, verbeteren we de beveiliging voor PRT van kwaad aardige Actors die proberen de sleutels te stelen of de PRT opnieuw af te spelen.  Met een TPM wordt de beveiliging van Azure AD join, hybride Azure AD toegevoegd en geregistreerde Azure AD-apparaten aanzienlijk uitgebreid met referentie diefstal. Voor prestaties en betrouw baarheid is TPM 2,0 de aanbevolen versie voor alle scenario's voor het registreren van Azure AD-apparaten in Windows 10. Het starten van Windows 10, 1903 update, gebruikt Azure AD geen TPM 1,2 voor een van de bovenstaande sleutels als gevolg van problemen met de betrouw baarheid. 
 
 ### <a name="how-are-app-tokens-and-browser-cookies-protected"></a>Hoe worden app-tokens en browser cookies beveiligd?
 
@@ -111,7 +111,7 @@ Door deze sleutels met de TPM te beveiligen, kunnen kwaadwillende actors de sleu
 
 **Browser cookies**: in Windows 10 ondersteunt Azure AD de browser-SSO in Internet Explorer en micro soft Edge zelf of in Google Chrome via de uitbrei ding voor Windows 10-accounts. De beveiliging is niet alleen ontworpen om de cookies te beveiligen, maar ook de eind punten waarnaar de cookies worden verzonden. Browser cookies zijn op dezelfde manier beveiligd als een PRT, door gebruik te maken van de sessie sleutel om de cookies te ondertekenen en te beveiligen.
 
-Wanneer een gebruiker een browser interactie initieert, roept de browser (of extensie) een COM native client-host aan. De native client-host zorgt ervoor dat de pagina afkomstig is uit een van de toegestane domeinen. De browser kan andere para meters naar de native client-host verzenden, met inbegrip van een nonce, maar de host van de native client garandeert de validatie van de hostnaam. De host van de native client vraagt een PRT-cookie op uit CloudAP-invoeg toepassing, waarmee deze wordt gemaakt en ondertekend met de met TPM beveiligde sessie sleutel. Omdat de PRT-cookie is ondertekend door de sessie sleutel, kan niet worden geknoeid met. Deze PRT cookie is opgenomen in de aanvraag header voor Azure AD om te controleren of het apparaat afkomstig is van. Als u de Chrome-browser gebruikt, kan alleen de extensie die expliciet is gedefinieerd in het manifest van de native client, deze aanroepen om te voor komen dat een wille keurige uitbrei ding deze aanvragen doet. Zodra Azure AD de PRT cookie heeft gevalideerd, wordt een sessie cookie op de browser uitgegeven. Deze sessie cookie bevat ook dezelfde sessie sleutel die is uitgegeven met een PRT. Tijdens de volgende aanvragen wordt de sessie sleutel gevalideerd, waarbij de cookie op het apparaat daad werkelijk wordt gebonden en wordt voor komen dat er elders wordt afgespeeld.
+Wanneer een gebruiker een browser interactie initieert, roept de browser (of extensie) een COM native client-host aan. De native client-host zorgt ervoor dat de pagina afkomstig is uit een van de toegestane domeinen. De browser kan andere para meters naar de native client-host verzenden, met inbegrip van een nonce, maar de host van de native client garandeert de validatie van de hostnaam. De host van de native client vraagt een PRT-cookie op uit CloudAP-invoeg toepassing, waarmee deze wordt gemaakt en ondertekend met de met TPM beveiligde sessie sleutel. Omdat de PRT-cookie is ondertekend door de sessie sleutel, is het moeilijk te knoeien met. Deze PRT cookie is opgenomen in de aanvraag header voor Azure AD om te controleren of het apparaat afkomstig is van. Als u de Chrome-browser gebruikt, kan alleen de extensie die expliciet is gedefinieerd in het manifest van de native client, deze aanroepen om te voor komen dat een wille keurige uitbrei ding deze aanvragen doet. Zodra Azure AD de PRT cookie heeft gevalideerd, wordt een sessie cookie op de browser uitgegeven. Deze sessie cookie bevat ook dezelfde sessie sleutel die is uitgegeven met een PRT. Tijdens de volgende aanvragen wordt de sessie sleutel gevalideerd, waarbij de cookie op het apparaat daad werkelijk wordt gebonden en wordt voor komen dat er elders wordt afgespeeld.
 
 ## <a name="when-does-a-prt-get-an-mfa-claim"></a>Wanneer krijgt een PRT een MFA-claim?
 
@@ -196,7 +196,7 @@ In de volgende diagrammen ziet u de onderliggende details van het uitgeven, vern
 | A | De gebruiker meldt zich aan bij Windows met hun referenties voor het verkrijgen van een PRT. Zodra de gebruiker de browser opent, worden de Url's vanuit het REGI ster geladen door de browser (of de extensie). |
 | B | Wanneer een gebruiker een aanmeldings-URL voor Azure AD opent, valideert de browser of extensie de URL met de url's die zijn verkregen uit het REGI ster. Als ze overeenkomen, roept de browser de native client host op om een token op te halen. |
 | C | De native client-host valideert dat de Url's horen bij de micro soft-identiteits providers (Microsoft-account of Azure AD), extraheert een nonce die vanuit de URL wordt verzonden en maakt een aanroep naar de CloudAP-invoeg toepassing om een PRT-cookie op te halen. |
-| D | De CloudAP-invoeg toepassing maakt de PRT-cookie, Meld u aan met de TPM-gebonden sessie sleutel en stuurt deze terug naar de host van de native client. Omdat de cookie is ondertekend door de sessie sleutel, kan niet worden geknoeid met. |
+| D | De CloudAP-invoeg toepassing maakt de PRT-cookie, Meld u aan met de TPM-gebonden sessie sleutel en stuurt deze terug naar de host van de native client. |
 | E | De host van de native client retourneert deze PRT-cookie naar de browser, waarin deze wordt opgenomen als onderdeel van de aanvraag header x-MS-RefreshTokenCredential en aanvraag tokens van Azure AD. |
 | F | Azure AD valideert de hand tekening van de sessie sleutel op de PRT cookie, valideert de nonce, controleert of het apparaat geldig is in de Tenant en geeft een ID-token voor de webpagina en een versleutelde sessie cookie voor de browser. |
 

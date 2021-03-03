@@ -7,18 +7,18 @@ author: vladvino
 ms.author: apimpm
 ms.topic: quickstart
 ms.date: 09/14/2020
-ms.openlocfilehash: fdf7e842959e09a8ec35017031f745cb16d13c6d
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
-ms.translationtype: HT
+ms.openlocfilehash: 3105b6f34d7ece81e8145fdd9e89568e66360ddb
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400400"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101649509"
 ---
 # <a name="quickstart-create-a-new-azure-api-management-service-instance-using-visual-studio-code"></a>Quickstart: Een nieuw exemplaar van het Azure API Management-service-exemplaar maken met Visual Studio Code
 
 APIM (API Management) helpt organisaties bij het publiceren van API's naar externe en interne ontwikkelaars, en naar partnerontwikkelaars om alle mogelijkheden van hun gegevens en services te ontsluiten. API Management beschikt over de competenties die belangrijk zijn voor een geslaagd API-programma via ontwikkelaarsbetrokkenheid, zakelijke inzichten, analytische gegevens, beveiliging en bescherming. Met APIM kunt u moderne API-gateways maken en beheren voor bestaande back-endservices die op elke willekeurige locatie worden gehost. Bekijk het [Overzicht](api-management-key-concepts.md) voor meer informatie.
 
-In deze quickstart worden de stappen beschreven voor het maken van een nieuw API Management-exemplaar met behulp van de *preview van de Azure API Management-extensie* voor Visual Studio Code. U kunt de extensie ook gebruiken om veelgebruikte beheerbewerkingen uit te voeren op uw API Management-exemplaar.
+In deze Quick Start worden de stappen beschreven voor het maken van een nieuw API Management-exemplaar met behulp van de *Azure API Management-extensie* voor Visual Studio code. U kunt de extensie ook gebruiken om veelgebruikte beheerbewerkingen uit te voeren op uw API Management-exemplaar.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -28,7 +28,7 @@ Zorg er bovendien voor dat u het volgende hebt geïnstalleerd:
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 
-- [Azure API Management Extension for Visual Studio Code (Preview)](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-apimanagement&ssr=false#overview) (Azure API Management-extensie voor Visual Studio Code (preview))
+- [Azure API Management-extensie voor Visual Studio code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-apimanagement&ssr=false#overview)
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 

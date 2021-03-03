@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/30/2020
+ms.date: 02/22/2021
 ms.author: baselden
 author: justinha
 manager: daveba
 ms.reviewer: baselden, librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24d04c148e8a96e3b1d72c5301f6226df6d9a569
-ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
+ms.openlocfilehash: dc5916cf4277935f6d7d7f453fd4dd76d7909ef2
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100530345"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101651124"
 ---
 # <a name="plan-a-passwordless-authentication-deployment-in-azure-active-directory"></a>Een authenticatie-implementatie met een wacht woord plannen in Azure Active Directory
 
@@ -149,7 +149,7 @@ Er zijn drie soorten aanmeld implementaties met een wacht woord die beschikbaar 
 
 -    Azure Active Directory Web-apps in een ondersteunde browser
 -    Azure Active Directory gekoppelde Windows 10-apparaten
--    Hybride Azure Active Directory gekoppelde Windows 10-apparaten (preview-versie)
+-    Hybride Azure Active Directory-gekoppelde Windows 10-apparaten
      -    Biedt toegang tot bronnen op basis van de Cloud en on-premises. Zie voor meer informatie over toegang tot on-premises resources [SSO to on-premises resources met behulp van FIDO2-sleutels](./howto-authentication-passwordless-security-key-on-premises.md)
 
 U moet **compatibele FIDO2-beveiligings sleutels** inschakelen. Micro soft introduceert [belang rijke partnerschappen met FIDO2-sleutel leveranciers](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Microsoft-passwordless-partnership-leads-to-innovation-and-great/ba-p/566493).
@@ -193,7 +193,7 @@ Als u aanmelden met Windows 10 wilt inschakelen met behulp van FIDO2-beveiliging
 
 #### <a name="enable-on-premises-integration"></a>On-premises integratie inschakelen
 
-Als u toegang tot on-premises resources wilt inschakelen, volgt u de stappen voor het [inschakelen van wacht woordloze beveiligings sleutel aanmelden bij on-premises resources (preview-versie)](howto-authentication-passwordless-security-key-on-premises.md).
+Als u toegang tot on-premises resources wilt inschakelen, volgt u de stappen voor het [inschakelen van wacht woordloze beveiligings sleutel aanmelden bij on-premises resources](howto-authentication-passwordless-security-key-on-premises.md).
 
 > [!IMPORTANT]
 > Deze stappen moeten ook worden uitgevoerd voor alle hybride Azure AD-apparaten die zijn toegevoegd aan het gebruik van FIDO2-beveiligings sleutels voor Windows 10-aanmelding.

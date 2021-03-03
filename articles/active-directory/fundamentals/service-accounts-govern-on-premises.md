@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 503d5c5c8d605e56ca510f12cd9c6f5a1f21c0bc
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 88fdfa1f449a0b65861ee09f2e78055a606c99d3
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417187"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101649203"
 ---
 # <a name="governing-on-premises-service-accounts"></a>On-premises service accounts beheren
 
@@ -60,11 +60,11 @@ Gebruik de volgende criteria bij het maken van een nieuw service account.
 
 Gebruik de volgende instellingen met gebruikers accounts die worden gebruikt als service accounts:
 
-* [**Verlopen account**](https://docs.microsoft.com/powershell/module/activedirectory/set-adaccountexpiration?view=winserver2012-ps): Stel het service account in om automatisch een ingestelde tijd te laten verlopen na de beoordelings periode, tenzij wordt vastgesteld dat deze moet door gaan
+* [**Verlopen account**](/powershell/module/activedirectory/set-adaccountexpiration?view=winserver2012-ps): Stel het service account in om automatisch een ingestelde tijd te laten verlopen na de beoordelings periode, tenzij wordt vastgesteld dat deze moet door gaan
 
 *  **LogonWorkstations**: machtigingen beperken voor waar het service account zich kan aanmelden. Als het lokaal op een computer wordt uitgevoerd en alleen bronnen op die computer worden geopend, moet u de logboek registratie op elke wille keurige locatie anders uitvoeren.
 
-* [**Kan het wacht woord niet wijzigen**](https://docs.microsoft.com/powershell/module/addsadministration/set-aduser?view=win10-ps): voor komen dat het service account een eigen wacht woord wijzigt door de para meter in te stellen op false.
+* [**Kan het wacht woord niet wijzigen**](/powershell/module/addsadministration/set-aduser?view=win10-ps): voor komen dat het service account een eigen wacht woord wijzigt door de para meter in te stellen op false.
 
  
 ## <a name="build-a-lifecycle-management-process"></a>Een levenscyclus beheer proces bouwen
@@ -149,17 +149,17 @@ De risico beoordeling, nadat deze is uitgevoerd en gedocumenteerd, kan gevolgen 
 
 U kunt alleen een service account maken als de relevante informatie wordt gedocumenteerd in uw CMDB en u een risico analyse uitvoert. Account beperkingen moeten worden afgestemd op de risico analyse. Houd rekening met de volgende beperkingen wanneer dit van toepassing is op uw beoordeling.:
 
-* [Verlopen van account](https://docs.microsoft.com/powershell/module/activedirectory/set-adaccountexpiration?view=winserver2012-ps)
+* [Verlopen van account](/powershell/module/activedirectory/set-adaccountexpiration?view=winserver2012-ps)
 
-   * Voor alle gebruikers accounts die worden gebruikt als service accounts, definieert u een realistische en eind datum voor gebruik. Stel dit in met de vlag ' account Expires '. Raadpleeg[ set-ADAccountExpiration](https://docs.microsoft.com/powershell/module/addsadministration/set-adaccountexpiration?view=win10-ps)voor meer informatie. 
+   * Voor alle gebruikers accounts die worden gebruikt als service accounts, definieert u een realistische en eind datum voor gebruik. Stel dit in met de vlag ' account Expires '. Raadpleeg[ set-ADAccountExpiration](/powershell/module/addsadministration/set-adaccountexpiration?view=win10-ps)voor meer informatie. 
 
-* Aanmelden bij ([LogonWorkstation](https://docs.microsoft.com/powershell/module/addsadministration/set-aduser?view=win10-ps))
+* Aanmelden bij ([LogonWorkstation](/powershell/module/addsadministration/set-aduser?view=win10-ps))
 
-* Vereisten voor [wachtwoord beleid](https://docs.microsoft.com/azure/active-directory-domain-services/password-policy)
+* Vereisten voor [wachtwoord beleid](../../active-directory-domain-services/password-policy.md)
 
-* Maken op een [OE-locatie](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/delegating-administration-of-account-ous-and-resource-ous) waarmee beheer alleen voor bevoegde gebruikers wordt gegarandeerd
+* Maken op een [OE-locatie](/windows-server/identity/ad-ds/plan/delegating-administration-of-account-ous-and-resource-ous) waarmee beheer alleen voor bevoegde gebruikers wordt gegarandeerd
 
-* Het instellen en verzamelen van controle die wijzigingen in het service account en het [Service account-gebruik](https://www.manageengine.com/products/active-directory-audit/how-to/audit-kerberos-authentication-events.html) [detecteert](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-directory-service-changes) .
+* Het instellen en verzamelen van controle die wijzigingen in het service account en het [Service account-gebruik](https://www.manageengine.com/products/active-directory-audit/how-to/audit-kerberos-authentication-events.html) [detecteert](/windows/security/threat-protection/auditing/audit-directory-service-changes) .
 
 Wanneer u klaar bent om in productie te worden gebracht, moet u het service account veilig verlenen. 
 
@@ -193,7 +193,7 @@ Nadat u alle machtigingen hebt verwijderd, gebruikt u dit proces voor het verwij
 
 3. Verwijder het service account nadat het beleid voor uitgeschakeld is afgehandeld. 
 
-   * Voor Msa's kunt u [deze verwijderen](https://docs.microsoft.com/powershell/module/activedirectory/uninstall-adserviceaccount?view=winserver2012-ps) met behulp van Power shell of hand matig verwijderen uit de container van een beheerde service account.
+   * Voor Msa's kunt u [deze verwijderen](/powershell/module/activedirectory/uninstall-adserviceaccount?view=winserver2012-ps) met behulp van Power shell of hand matig verwijderen uit de container van een beheerde service account.
 
    * Voor computer-of gebruikers accounts kunt u het account hand matig verwijderen uit in Active Directory.
 

@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/22/2021
+ms.date: 02/22/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: 1459dd41fcdc30a29a5f9f93ec9704083767a342
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 0bbaf5fa4f3404b0e4fdb4dc016b703c58910457
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98725668"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101652076"
 ---
 # <a name="what-authentication-and-verification-methods-are-available-in-azure-active-directory"></a>Welke authenticatie- en verificatiemethoden zijn er beschikbaar in Azure Active Directory?
 
@@ -42,8 +42,8 @@ De volgende tabel bevat een overzicht van de beveiligings overwegingen voor de b
 |--------------------------------|:--------:|:---------:|:------------:|
 | Windows Hello voor Bedrijven     | Hoog     | Hoog      | Hoog         |
 | Microsoft Authenticator-app    | Hoog     | Hoog      | Hoog         |
-| FIDO2-beveiligings sleutel (preview-versie)   | Hoog     | Hoog      | Hoog         |
-| OATH-hardware-tokens (preview-versie) | Gemiddeld   | Gemiddeld    | Hoog         |
+| FIDO2-beveiligings sleutel             | Hoog     | Hoog      | Hoog         |
+| OATH-hardwaretokens           | Gemiddeld   | Gemiddeld    | Hoog         |
 | OATH-software tokens           | Gemiddeld   | Gemiddeld    | Hoog         |
 | Sms                            | Normaal   | Hoog      | Gemiddeld       |
 | Spraak                          | Gemiddeld   | Gemiddeld    | Gemiddeld       |
@@ -66,9 +66,9 @@ De volgende tabel geeft een overzicht van de wijze waarop een verificatie method
 | Methode                         | Primaire authenticatie | Secundaire verificatie  |
 |--------------------------------|:----------------------:|:-------------------------:|
 | Windows Hello voor Bedrijven     | Ja                    | MFA                       |
-| Microsoft Authenticator-app    | Ja (preview-versie)          | MFA en SSPR              |
-| FIDO2-beveiligings sleutel (preview-versie)   | Ja                    | MFA                       |
-| OATH-hardware-tokens (preview-versie) | Nee                     | MFA                       |
+| Microsoft Authenticator-app    | Ja                    | MFA en SSPR              |
+| FIDO2-beveiligings sleutel             | Ja                    | MFA                       |
+| OATH-hardwaretokens           | Nee                     | MFA                       |
 | OATH-software tokens           | Nee                     | MFA                       |
 | Sms                            | Ja                    | MFA en SSPR              |
 | Spraakoproep                     | Nee                     | MFA en SSPR              |
@@ -80,8 +80,8 @@ Raadpleeg de volgende afzonderlijke conceptuele artikelen voor meer informatie o
 
 * [Windows hello voor bedrijven](/windows/security/identity-protection/hello-for-business/hello-overview)
 * [Microsoft Authenticator-app](concept-authentication-authenticator-app.md)
-* [FIDO2-beveiligings sleutel (preview-versie)](concept-authentication-passwordless.md#fido2-security-keys)
-* [OATH-hardware-tokens (preview-versie)](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview)
+* [FIDO2-beveiligings sleutel](concept-authentication-passwordless.md#fido2-security-keys)
+* [OATH-hardwaretokens](concept-authentication-oath-tokens.md#oath-hardware-tokens)
 * [OATH-software tokens](concept-authentication-oath-tokens.md#oath-software-tokens)
 * [SMS-aanmelding](howto-authentication-sms-signin.md) en [verificatie](concept-authentication-phone-options.md#mobile-phone-verification)
 * [Verificatie van spraak oproep](concept-authentication-phone-options.md)

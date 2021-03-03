@@ -8,16 +8,14 @@ ms.author: nmurav
 ms.date: 01/03/2012
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 4655a20ddd419993f5a73ec54420abec96d32a62
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: d682524ae3ff5b82233a69959a309a7495e30bed
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100546173"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101658060"
 ---
 # <a name="tutorial-prepare-a-web-app-for-azure-communication-services-nodejs"></a>Zelf studie: een web-app voorbereiden voor Azure Communication Services (Node.js)
-
-[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
 Met Azure Communication Services kunt u realtime-communicatie aan uw toepassingen toevoegen. In deze zelf studie leert u hoe u een webtoepassing kunt instellen die Azure Communication Services ondersteunt. Dit is een inleidende zelf studie die is bedoeld voor nieuwe ontwikkel aars die aan de slag willen gaan met realtime-communicatie.
 
@@ -38,12 +36,12 @@ In deze zelfstudie leert u het volgende:
 - [Visual Studio code](https://code.visualstudio.com/): we gebruiken dit om code te bewerken in uw lokale ontwikkel omgeving.
 - [webpack](https://webpack.js.org/): dit wordt gebruikt om uw code te bundelen en lokaal te hosten.
 - [Node.js](https://nodejs.org/en/): dit wordt gebruikt voor het installeren en beheren van afhankelijkheden zoals Azure Communication Services-client bibliotheken en webpack.
-- [NVM en NPM](https://docs.microsoft.com/windows/nodejs/setup-on-windows) voor het afhandelen van versie beheer.
-- De [uitbrei ding](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage) van de Azure Storage voor Visual Studio code. Deze extensie is vereist voor het publiceren van uw toepassing in Azure Storage. [Meer informatie over het hosten van statische websites in Azure Storage](https://docs.microsoft.com/azure/storage/blobs/storage-blob-static-website)
+- [NVM en NPM](/windows/nodejs/setup-on-windows) voor het afhandelen van versie beheer.
+- De [uitbrei ding](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage) van de Azure Storage voor Visual Studio code. Deze extensie is vereist voor het publiceren van uw toepassing in Azure Storage. [Meer informatie over het hosten van statische websites in Azure Storage](../../storage/blobs/storage-blob-static-website.md)
 - De [uitbrei ding Azure app service](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice). Met de uitbrei ding kunnen websites worden geïmplementeerd (vergelijkbaar met de vorige), maar met de optie voor het configureren van de volledig beheerde continue integratie en continue levering (CI/CD).
 - De [Azure function-extensie](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) voor het bouwen van uw eigen serverloze toepassingen. U kunt bijvoorbeeld uw verificatie toepassing hosten in azure functions.
 - Een actieve Communication Services-resource en verbindingsreeks. [Een Communication Services-resource maken](../quickstarts/create-communication-resource.md).
-- Een token voor gebruikers toegang. Zie de [Snelstartgids voor toegangs tokens](https://docs.microsoft.com/azure/communication-services/quickstarts/access-tokens?pivots=programming-language-javascript) of de [zelf studie voor vertrouwde services](https://docs.microsoft.com/azure/communication-services/tutorials/trusted-service-tutorial) voor instructies.
+- Een token voor gebruikers toegang. Zie de [Snelstartgids voor toegangs tokens](../quickstarts/access-tokens.md?pivots=programming-language-javascript) of de [zelf studie voor vertrouwde services](./trusted-service-tutorial.md) voor instructies.
 
 
 ## <a name="configure-your-development-environment"></a>Uw ontwikkel omgeving configureren
@@ -57,7 +55,7 @@ Uw lokale ontwikkel omgeving wordt als volgt geconfigureerd:
 
 We gebruiken Node.js voor het downloaden en installeren van verschillende afhankelijkheden die we nodig hebben voor onze toepassing aan de client zijde. We gebruiken deze voor het genereren van statische bestanden die we vervolgens in azure hosten, zodat u zich geen zorgen hoeft te maken over de configuratie op uw server.
 
-Windows-ontwikkel aars kunnen [deze NodeJS-zelf studie](https://docs.microsoft.com/windows/nodejs/setup-on-windows) volgen voor het configureren van node, NVM en NPM. 
+Windows-ontwikkel aars kunnen [deze NodeJS-zelf studie](/windows/nodejs/setup-on-windows) volgen voor het configureren van node, NVM en NPM.
 
 Deze zelf studie is getest met behulp van de LTS 12.20.0-versie. Nadat u NVM hebt geïnstalleerd, gebruikt u de volgende Power shell-opdracht voor het implementeren van de versie die u wilt gebruiken:
 
@@ -161,7 +159,7 @@ module.exports ={
     output: {
         filename:'app.js',
         path: path.resolve(__dirname, 'dist'),
-    }     
+    }
 }
 ```
 
@@ -218,7 +216,7 @@ Het bestand moet er nu als volgt uitzien:
 }
 ```
 
-U hebt de opdracht toegevoegd die kan worden gebruikt vanuit NPM. 
+U hebt de opdracht toegevoegd die kan worden gebruikt vanuit NPM.
 
 :::image type="content" source="./media/step-one-pic-12.png" alt-text="package.jswijzigen op":::
 
@@ -279,13 +277,13 @@ npm run build:dev
 In de-console ziet u waar de-server wordt uitgevoerd. Standaard is dit `http://localhost:8080` . De opdracht build: dev is de opdracht die we eerder hebben toegevoegd `package.json` .
 
  :::image type="content" source="./media/step-one-pic-16.png" alt-text="Een ontwikkelings server starten":::
- 
+
  Navigeer naar het adres in uw browser en controleer de pagina en waarschuwing, die zijn geconfigureerd in de vorige stappen.
- 
+
   :::image type="content" source="./media/step-one-pic-17.png" alt-text="HTML-pagina":::
-  
- 
-Terwijl de server wordt uitgevoerd, kunt u de code wijzigen en de server en de HTML-pagina worden automatisch opnieuw geladen. 
+
+
+Terwijl de server wordt uitgevoerd, kunt u de code wijzigen en de server en de HTML-pagina worden automatisch opnieuw geladen.
 
 Ga vervolgens naar het `app.js` bestand in Visual Studio code en Verwijder `alert('Hello world alert!');` . Sla het bestand op en controleer of de waarschuwing verdwijnt uit uw browser.
 
@@ -323,11 +321,11 @@ const { merge } = require('webpack-merge');
  ```
 
 Opmerking: deze configuratie wordt samengevoegd met de webpack.common.js (waarbij het invoer bestand is opgegeven en waar de resultaten worden opgeslagen) en de modus wordt ingesteld op ' productie '.
- 
+
 Voeg in `package.json` de volgende code toe:
 
 ```JavaScript
-"build:prod": "webpack --config webpack.prod.js" 
+"build:prod": "webpack --config webpack.prod.js"
 ```
 
 Uw bestand ziet er als volgt uit:
@@ -341,14 +339,14 @@ Uw bestand ziet er als volgt uit:
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "webpack-dev-server --config webpack.dev.js",
-    "build:prod": "webpack --config webpack.prod.js" 
+    "build:prod": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@azure/communication-calling": "^1.0.0-beta.3",
-    "@azure/communication-common": "^1.0.0-beta.3"
+    "@azure/communication-calling": "^1.0.0-beta.6",
+    "@azure/communication-common": "^1.0.0"
   },
   "devDependencies": {
     "webpack": "^4.42.0",
@@ -368,13 +366,13 @@ Voer de volgende handelingen uit in de terminal:
 npm run build:prod
 ```
 
-Met deze opdracht maakt `dist` `app.js` u een statisch bestand in de map en productie gereed. 
+Met deze opdracht maakt `dist` `app.js` u een statisch bestand in de map en productie gereed.
 
  :::image type="content" source="./media/step-one-pic-21.png" alt-text="Productie-build":::
- 
- 
+
+
 ### <a name="deploy-your-app-to-azure-storage"></a>Uw app implementeren naar Azure Storage
- 
+
 Kopieer `index.html` en `app.css` naar de `dist` map.
 
 `dist`Maak een nieuw bestand met de naam in de map `404.html` . Kopieer de volgende opmaak in dat bestand:
@@ -399,45 +397,45 @@ Sla het bestand op (CTRL + S).
 Klik met de rechter muisknop en selecteer implementeren naar statische website via Azure Storage.
 
 :::image type="content" source="./media/step-one-pic-22.png" alt-text="Implementatie naar Azure starten":::
- 
+
 Selecteer in het `Select subscription` veld aanmelden bij Azure (of een gratis Azure-account maken als u nog geen abonnement hebt gemaakt)
- 
+
 :::image type="content" source="./media/step-one-pic-23.png" alt-text="Aanmelden bij Azure":::
- 
+
 Selecteer `Create new Storage Account`  >  `Advanced` :
 
  :::image type="content" source="./media/step-one-pic-24.png" alt-text="De opslag account groep maken":::
- 
+
  Geef de naam van de opslag groep op:
- 
+
  :::image type="content" source="./media/step-one-pic-25.png" alt-text="Een naam voor het account toevoegen":::
- 
+
 Maak indien nodig een nieuwe resource groep:
- 
+
   :::image type="content" source="./media/step-one-pic-26.png" alt-text="Nieuwe groep maken":::
-  
+
   Antwoord ' ja ' wilt u een statische website-hosting inschakelen? '
-  
+
   :::image type="content" source="./media/step-one-pic-27.png" alt-text="Optie selecteren om statische website-hosting in te scha kelen":::
-  
+
 Accepteer de standaard naam van het bestand in ' Voer de naam van het index document in ' tijdens het maken van het bestand `index.html` .
 
-Typ het `404.html` voor ' Voer het 404-fout document in het pad ' in.  
-  
-Selecteer de locatie van de toepassing. Op de locatie die u selecteert, wordt gedefinieerd welke media processor wordt gebruikt in uw toekomstige aanroepende toepassing in groeps aanroepen. 
+Typ het `404.html` voor ' Voer het 404-fout document in het pad ' in.
+
+Selecteer de locatie van de toepassing. Op de locatie die u selecteert, wordt gedefinieerd welke media processor wordt gebruikt in uw toekomstige aanroepende toepassing in groeps aanroepen.
 
 Azure Communication Services selecteert de media processor op basis van de locatie van de toepassing.
 
 :::image type="content" source="./media/step-one-pic-28.png" alt-text="Locatie selecteren":::
-  
-Wacht tot de resource en uw website zijn gemaakt. 
- 
+
+Wacht tot de resource en uw website zijn gemaakt.
+
 Klik op Bladeren naar website:
 
 :::image type="content" source="./media/step-one-pic-29.png" alt-text="Implementatie is voltooid":::
- 
+
 Vanuit de ontwikkel hulpprogramma's van uw browser kunt u de bron inspecteren en ons bestand zien, dat is voor bereid voor productie.
- 
+
 :::image type="content" source="./media/step-one-pic-30.png" alt-text="Website":::
 
 Ga naar de [Azure Portal](https://portal.azure.com/#home), selecteer uw resource groep, selecteer de toepassing die u hebt gemaakt en ga naar `Settings`  >  `Static website` . U kunt zien dat statische websites zijn ingeschakeld en noteert het primaire eind punt, het index document en de fout paden document bestanden.
@@ -448,7 +446,7 @@ Onder Blob service selecteert u de containers en ziet u twee containers die zijn
 
 :::image type="content" source="./media/step-one-pic-32.png" alt-text="Container configuratie":::
 
-Als u naar wilt gaan `$web` , ziet u uw bestanden die u in Visual Studio hebt gemaakt en die zijn geïmplementeerd in Azure. 
+Als u naar wilt gaan `$web` , ziet u uw bestanden die u in Visual Studio hebt gemaakt en die zijn geïmplementeerd in Azure.
 
 :::image type="content" source="./media/step-one-pic-33.png" alt-text="Implementatie":::
 

@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 01/15/2021
 ms.custom: designer
-ms.openlocfilehash: e93f912915303ce903a32ceba4f079593657a4ac
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: ec563371ab505113117707f56c31f506f7fdf377
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576055"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101659500"
 ---
 # <a name="tutorial-deploy-a-machine-learning-model-with-the-designer"></a>Zelfstudie: Een Machine Learning-model implementeren met de ontwerpfunctie
 
@@ -42,7 +42,7 @@ Voor het implementeren van uw pijplijn moet u de trainingspijplijn eerst convert
 
 1. Selecteer boven het pijplijncanvas **Deductiepijplijn maken** > **Realtime deductiepijplijn**.
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-deploy/tutorial2-create-inference-pipeline.png"alt-text="Schermopname waarin wordt weergegeven waar de knop pijplijn maken zich bevindt":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-deploy/tutorial2-create-inference-pipeline.png" alt-text="Schermopname waarin wordt weergegeven waar de knop pijplijn maken zich bevindt":::
 
     Uw pijplijn ziet er nu als volgt uit: 
 
@@ -97,13 +97,13 @@ Wanneer de inrichting van uw AKS-service is voltooid, gaat u terug naar de realt
 
 1. Selecteer de AKS-cluster die u hebt gemaakt.
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-deploy/setup-endpoint.png"alt-text="Schermopname waarin het instellen van een nieuw realtime-eindpunt wordt weergegeven":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-deploy/setup-endpoint.png" alt-text="Schermopname waarin het instellen van een nieuw realtime-eindpunt wordt weergegeven":::
 
     U kunt ook **Geavanceerde** instellingen voor uw realtime-eind punt wijzigen.
     
-    |Geavanceerde instelling|Description|
+    |Geavanceerde instelling|Beschrijving|
     |---|---|
-    |Application Insights diagnose en gegevens verzameling inschakelen| Hiermee wordt aangegeven of Azure-toepassing Ingishts moet worden ingeschakeld voor het verzamelen van gegevens van de geïmplementeerde eind punten. </br> Standaard: onwaar |
+    |Application Insights diagnose en gegevens verzameling inschakelen| Hiermee wordt aangegeven of Azure-toepassing Insights moet worden ingeschakeld voor het verzamelen van gegevens van de geïmplementeerde eind punten. </br> Standaard: onwaar |
     |Score-time-out| Een time-out in milliseconden voor het afdwingen van een score voor het bepalen van aanroepen naar de webservice.</br>Standaard: 60000|
     |Automatisch schalen ingeschakeld|   Hiermee wordt aangegeven of automatische schaalaanpassing moet worden ingeschakeld voor de webservice.</br>Standaard: True|
     |Minimale replica's| Het minimale aantal containers dat moet worden gebruikt wanneer deze webservice automatisch wordt geschaald.</br>Standaard: 1|
@@ -137,6 +137,22 @@ Nadat de implementatie is voltooid, kunt u uw realtime-eindpunt bekijken door na
 1. Ga naar het tabblad **testen** om het eind punt te testen. Hier kunt u test gegevens invoeren en **testen** selecteren Controleer de uitvoer van uw eind punt.
 
 Zie [Een Azure Machine Learning-model gebruiken dat als een webservice is geïmplementeerd](how-to-consume-web-service.md) voor meer informatie over het gebruiken van uw webservice
+
+## <a name="limitations"></a>Beperkingen
+
+Als u een aantal wijzigingen aanbrengt in uw trainings pijplijn, moet u de trainings pijplijn opnieuw indienen, de pijp lijn voor de detrainer **bijwerken** en de uitstel pijp lijn opnieuw uitvoeren.
+
+Houd er rekening mee dat alleen getrainde modellen worden bijgewerkt in de pijp lijn voor de defactoriteit, terwijl de gegevens transformatie niet wordt bijgewerkt.
+
+Als u de bijgewerkte trans formatie in een pijp lijn wilt gebruiken, moet u de trans formatie-uitvoer van de transformatie module registreren als gegevensset.
+
+![Scherm afbeelding die laat zien hoe u de transformatie gegevensverzameling kunt registreren](./media/tutorial-designer-automobile-price-deploy/register-transformation-dataset.png)
+
+Vervang vervolgens hand matig de **TD-** module in deinterferentie pijp lijn met de geregistreerde gegevensset.
+
+![Scherm afbeelding die laat zien hoe de transformatie module moet worden vervangen](./media/tutorial-designer-automobile-price-deploy/replace-td-module.png)
+
+Vervolgens kunt u de pijp lijn voor de deinterferentie verzenden met het bijgewerkte model en trans formatie en implementeren.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

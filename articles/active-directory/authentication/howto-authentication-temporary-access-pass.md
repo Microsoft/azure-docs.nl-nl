@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/12/2021
+ms.date: 02/19/2021
 ms.author: justinha
 author: inbarckms
 manager: daveba
 ms.reviewer: inbarckms
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 56d45119fa86ab47e6a625c628d8cb9763db83bd
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: b0f49f39e6bc291c3242fe739866a015ac154a8b
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100520917"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101651158"
 ---
 # <a name="configure-temporary-access-pass-in-azure-ad-to-register-passwordless-authentication-methods-preview"></a>Tijdelijke toegangs fase configureren in azure AD om verificatie methoden met een wacht woord (preview-versie) te registreren
 
@@ -75,6 +75,9 @@ Een tik maken:
 1. Klik onder **methode kiezen** op **tijdelijke toegang door geven (preview-versie)**.
 1. Definieer een aangepaste activerings tijd of-duur en klik op **toevoegen**.
 
+   >[!NOTE]
+   >Het eenmalige tikken wordt niet afgedwongen wanneer aangemeld blijven (KMSI) is ingeschakeld in de Tenant. Als u een eenmalige tik maakt, moet u ervoor zorgen dat u KMSI uitschakelt.
+
    ![Scherm afbeelding van het maken van een tik](./media/how-to-authentication-temporary-access-pass/create.png)
 
 1. Zodra de gegevens zijn toegevoegd, worden deze weer gegeven. Noteer de werkelijke TAP-waarde. U geeft deze waarde aan de gebruiker. U kunt deze waarde niet weer geven nadat u op **OK** hebt geklikt.
@@ -125,6 +128,7 @@ Houd u aan de volgende beperkingen:
 - Gast gebruikers kunnen zich niet aanmelden met een tik.
 - Gebruikers binnen het bereik voor selfservice voor wachtwoord herstel (SSPR) moeten een van de SSPR-methoden registreren nadat ze zich hebben aangemeld met tikken. Als de gebruiker alleen de FIDO2-sleutel gaat gebruiken, moet u deze uitsluiten van het SSPR-beleid of het SSPR-registratie beleid uitschakelen. 
 - Tik kan niet worden gebruikt met de extensie Network Policy Server (NPS) en Active Directory Federation Services (AD FS).
+- Het eenmalige tikken wordt niet afgedwongen wanneer KMSI is ingeschakeld op de Tenant.
 - Wanneer naadloze SSO is ingeschakeld op de Tenant, wordt de gebruiker gevraagd een wacht woord in te voeren. De koppeling **gebruik van uw tijdelijke toegang in plaats daarvan** is beschikbaar voor de gebruiker om u aan te melden met tikken.
 
 ![Scherm opname van in plaats daarvan een tik gebruiken](./media/how-to-authentication-temporary-access-pass/alternative.png)

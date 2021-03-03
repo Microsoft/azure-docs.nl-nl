@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: b5f1fc7f877854dd06fbbe09ff82e47208fa12d0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f47ca56fa1b40422edeb0d4e11c24be6f60e49e5
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "72792047"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101666366"
 ---
 # <a name="conditional-cognitive-skill"></a>Voorwaardelijke cognitieve vaardigheid
 
@@ -134,7 +134,7 @@ Met de volgende uitvoer wordt een aantekening ("/document/languageWithDefault") 
 
 ### <a name="sample-skill-definition-3-merge-values-from-two-fields-into-one"></a>Voor beeld van vaardigheids definitie 3: waarden uit twee velden samen voegen tot één
 
-In dit voor beeld hebben sommige zinnen een eigenschap *frenchSentiment* . Wanneer de eigenschap *frenchSentiment* null is, willen we de *englishSentiment* -waarde gebruiken. We wijzen de uitvoer toe aan een lid met de naam *sentiment* ("/document/sentiment/*/sentiment").
+In dit voor beeld hebben sommige zinnen een eigenschap *frenchSentiment* . Wanneer de eigenschap *frenchSentiment* null is, willen we de *englishSentiment* -waarde gebruiken. We wijzen de uitvoer toe aan een lid met de naam *sentiment* ("/document/sentences/*/sentiment").
 
 ```json
 {
@@ -154,7 +154,7 @@ In dit voor beeld hebben sommige zinnen een eigenschap *frenchSentiment* . Wanne
 
 In dit voor beeld ontvangen we een *sentiment* tussen 0 en 1. We willen deze transformeren tussen-1 en 1. We kunnen de voorwaardelijke vaardigheid gebruiken om deze secundaire trans formatie uit te voeren.
 
-In dit voor beeld gebruiken we niet het voorwaardelijke aspect van de vaardigheid, omdat de voor waarde altijd *waar*is.
+In dit voor beeld gebruiken we niet het voorwaardelijke aspect van de vaardigheid, omdat de voor waarde altijd *waar* is.
 
 ```json
 {

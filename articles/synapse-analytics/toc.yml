@@ -419,7 +419,7 @@
           items:
             - name: Herstelpunten maken
               href: ./backuprestore/sqlpool-create-restore-point.md
-            - name: Een Synapse SQL-pool herstellen
+            - name: Een toegewezen SQL-groep herstellen
               href: ./backuprestore/restore-sql-pool.md
         - name: Beheren en bewaken
           items:

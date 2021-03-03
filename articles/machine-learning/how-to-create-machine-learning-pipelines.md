@@ -11,12 +11,12 @@ author: NilsPohlmann
 ms.date: 12/10/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: 168e5340842dca3c26e4fa48d2f14b8ade529cd9
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 18d93a1a6ac9661b18054611015b02e41219bc14
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505719"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101659644"
 ---
 # <a name="create-and-run-machine-learning-pipelines-with-azure-machine-learning-sdk"></a>machine learning-pijp lijnen maken en uitvoeren met Azure Machine Learning SDK
 
@@ -92,6 +92,7 @@ from azureml.core import Dataset
 
 my_dataset = Dataset.File.from_files([(def_blob_store, 'train-images/')])
 ```
+
 Tussenliggende gegevens (of uitvoer van een stap) worden vertegenwoordigd door een [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?preserve-view=true&view=azure-ml-py) -object. `output_data1` wordt geproduceerd als uitvoer van een stap en wordt gebruikt als invoer van een of meer toekomstige stappen. `PipelineData` introduceert een gegevens afhankelijkheid tussen de stappen en maakt een impliciete uitvoerings volgorde in de pijp lijn. Dit object wordt later gebruikt bij het maken van pijplijn stappen.
 
 ```python
@@ -108,7 +109,7 @@ output_data1 = PipelineData(
 > Het persistent maken van tussenliggende gegevens tussen pijplijn stappen is ook mogelijk met de open bare preview-klasse [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) . `OutputFileDatasetConfig`Zie [een pijp lijn met twee stappen maken](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/pipeline-with-datasets/pipeline-for-image-classification.ipynb)voor een code voorbeeld met behulp van de-klasse.
 
 > [!TIP]
-> Upload alleen bestanden die relevant zijn voor de taak bij de hand. Wijzigingen in bestanden in de data directory worden gezien als de reden voor het opnieuw uitvoeren van de stap de volgende keer dat de pijp lijn wordt uitgevoerd, zelfs als hergebruik is opgegeven. 
+> Upload alleen bestanden die relevant zijn voor de huidige taak. Wijzigingen in bestanden in de data directory worden gezien als de reden voor het opnieuw uitvoeren van de stap de volgende keer dat de pijp lijn wordt uitgevoerd, zelfs als hergebruik is opgegeven. 
 
 ## <a name="set-up-a-compute-target"></a>Een reken doel instellen
 
@@ -116,7 +117,7 @@ output_data1 = PipelineData(
 In Azure Machine Learning verwijst de term __Compute__ (of __Compute target__) naar de computers of clusters die de reken stappen in uw machine learning pijp lijn uitvoeren.   Zie [Compute-doelen voor model training](concept-compute-target.md#train) voor een volledige lijst met Compute-doelen en [Maak reken doelen](how-to-create-attach-compute-studio.md) voor het maken en koppelen aan uw werk ruimte.   Het proces voor het maken en of koppelen van een reken doel is hetzelfde, of u nu een model traint of een pijplijn stap uitvoert. Nadat u het reken doel hebt gemaakt en gekoppeld, gebruikt u het `ComputeTarget` object in de [pijplijn stap](#steps).
 
 > [!IMPORTANT]
-> Het uitvoeren van beheer bewerkingen op Compute-doelen wordt niet ondersteund vanuit externe taken. Omdat machine learning-pijp lijnen worden verzonden als een externe taak, mag u geen beheer bewerkingen gebruiken op reken doelen vanuit de pijp lijn.
+> Het uitvoeren van beheerbewerkingen op rekendoelen wordt niet ondersteund vanuit externe taken. Omdat machinelearning-pijplijnen als een externe taak worden verzonden, mag u geen beheerbewerkingen op rekendoelen gebruiken vanuit de pijplijn.
 
 ### <a name="azure-machine-learning-compute"></a>Azure Machine Learning compute
 

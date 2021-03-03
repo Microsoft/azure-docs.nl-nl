@@ -9,12 +9,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.custom: data4ml
-ms.openlocfilehash: 4b2777bfd9905a1caa8b69b78ff892b661e4dc4b
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 62801d40295762b0066f0d2887d7d528ee7b7c2a
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99097537"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101656819"
 ---
 # <a name="create-a-data-labeling-project-and-export-labels"></a>Een gegevenslabelproject maken en labels exporteren 
 
@@ -107,12 +107,9 @@ Als u van plan bent nieuwe afbeeldingen toe te voegen aan uw gegevensset, gebrui
 
 Als u meer afbeeldingen aan uw project wilt toevoegen, gebruikt u [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) om te uploaden naar de juiste map in de Blob-opslag. 
 
-Schakel het selectievakje voor **Incrementele vernieuwing inschakelen** in wanneer u wilt dat het project doorlopend controleert op nieuwe gegevens in de gegevensopslag. Deze gegevens worden één keer per dag naar uw project gehaald als dit is ingeschakeld.
+Schakel het selectievakje voor **Incrementele vernieuwing inschakelen** in wanneer u wilt dat het project doorlopend controleert op nieuwe gegevens in de gegevensopslag. Deze gegevens worden eenmaal per dag in het project geplaatst, zodat u na het toevoegen van nieuwe gegevens aan het gegevens archief moet wachten voordat deze in uw project worden weer gegeven.  U kunt een tijds tempel bekijken voor wanneer de gegevens voor het laatst zijn vernieuwd in het gedeelte **Incrementeel vernieuwen** van het tabblad **Details** van het project.
 
 Schakel dit selectievakje uit als u niet wilt dat nieuwe afbeeldingen die worden weergegeven in de gegevensopslag, worden toegevoegd aan het project.
-
-U vindt de tijdstempel voor de laatste vernieuwing in de sectie **Incrementeel vernieuwen** van het tabblad **Details** voor het project.
-
 
 ## <a name="specify-label-classes"></a>Labelklassen opgeven
 

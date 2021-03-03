@@ -1,0 +1,45 @@
+- name: Documentatie voor route server
+  href: index.yml
+- name: Overzicht
+  items:
+    - name: Wat is Azure route server (preview)?
+      href: overview.md
+- name: Quickstarts
+  items:
+    - name: Een route server configureren-Power shell
+      href: quickstart-configure-route-server-powershell.md
+    - name: Een route server configureren-CLI
+      href: quickstart-configure-route-server-cli.md
+  expanded: true
+- name: Concepten
+  items:
+    - name: Veelgestelde vragen over route server
+      href: route-server-faq.md
+    - name: ExpressRoute en Azure VPN-ondersteuning
+      href: expressroute-vpn-support.md
+- name: Instructiegidsen
+  items:
+    - name: Problemen met route Server oplossen
+      href: troubleshoot-route-server.md
+- name: Naslaginformatie
+  items:
+    - name: Azure PowerShell
+      href: /powershell/module/az.network/?view=azps-5.5.0#route
+    - name: Azure CLI
+      href: /cli/azure/network/routeserver?view=azure-cli-latest
+    - name: REST
+      href: /rest/api/virtualwan/virtualhubipconfiguration
+- name: Resources
+  items:
+    - name: Azure-roadmap
+      href: 'https://azure.microsoft.com/roadmap/?category=networking'
+    - name: Netwerkblog
+      href: 'https://azure.microsoft.com/blog/topics/networking/'
+    - name: Prijzen
+      href: 'https://azure.microsoft.com/pricing/details/routeserver/'
+    - name: Prijscalculator
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Service-updates
+      href: 'https://azure.microsoft.com/updates/?product=routeserver'
+    - name: SLA
+      href: 'https://azure.microsoft.com/support/legal/sla/'

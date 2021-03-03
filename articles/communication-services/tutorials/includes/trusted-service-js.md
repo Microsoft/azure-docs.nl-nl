@@ -8,12 +8,12 @@ ms.author: dademath
 ms.date: 07/28/2020
 ms.topic: include
 ms.service: azure-communication-services
-ms.openlocfilehash: 3bf0831084b9dd6f16d8208def87033fc0be2900
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 6790335e5aa63f515cd125f31a8ccd7877132c10
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100645391"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101661326"
 ---
 ## <a name="download-code"></a>Download code
 
@@ -23,8 +23,8 @@ De voltooide code voor deze Quick Start vinden op [github](https://github.com/Az
 
 - Een Azure-account met een actief abonnement. Zie [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voor meer informatie.
 - [Visual Studio Code](https://code.visualstudio.com/) op een van de [ondersteunde platforms](https://code.visualstudio.com/docs/supporting/requirements#_platforms).
-- [Node.js](https://nodejs.org/), Active LTS en Maintenance LTS-versies (10.14.1 aanbevolen). Gebruik de opdracht `node --version` om uw versie te controleren. 
-- De [Azure Functions-extensie](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) voor Visual Studio Code. 
+- [Node.js](https://nodejs.org/), Active LTS en Maintenance LTS-versies (10.14.1 aanbevolen). Gebruik de opdracht `node --version` om uw versie te controleren.
+- De [Azure Functions-extensie](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) voor Visual Studio Code.
 - Een actieve Communication Services-resource en verbindingsreeks. [Een Communication Services-resource maken](../../quickstarts/create-communication-resource.md).
 
 ## <a name="overview"></a>Overzicht
@@ -76,7 +76,7 @@ We gaan nu verder met het installeren van Azure Communication Services-bibliothe
 
 We gaan bibliotheek gebruiken `Identity` om `User Access Tokens` te genereren.
 
-Gebruik de opdracht `npm install` om de Azure Communication Services Administration-clientbibliotheek voor JavaScript te installeren.
+Gebruik de `npm install` opdracht voor het installeren van de Azure Communication Services Identity client-bibliotheek voor Java script.
 
 ```console
 
@@ -102,7 +102,7 @@ Ga naar de [quickstart over het inrichten van resources](../../quickstarts/creat
 const connectionString = 'INSERT YOUR RESOURCE CONNECTION STRING'
 ```
 
-U gaat nu uw oorspronkelijke functie aanpassen om `User Access Tokens` te genereren. 
+U gaat nu uw oorspronkelijke functie aanpassen om `User Access Tokens` te genereren.
 
 `User Access Tokens` worden gegenereerd door een gebruiker te maken met behulp van de methode `createUser`. Zodra de gebruiker is gemaakt, kan de methode `issueToken` worden gebruikt om een token te genereren voor de gebruiker die door de Azure-functie wordt geretourneerd.
 

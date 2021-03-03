@@ -9,16 +9,14 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: b4e600581880ccca4f8716db02064e5bb353787c
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: cb253ebfd8269779adf02dcbc01d7998590ce78c
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653778"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101657159"
 ---
 # <a name="event-handling-in-azure-communication-services"></a>Afhandeling van gebeurtenissen in Azure Communication Services
-
-[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
 Azure Communication Services kan worden geïntegreerd met [Azure Event Grid](https://azure.microsoft.com/services/event-grid/) voor het leveren van real-time gebeurtenismeldingen op een betrouwbare, schaalbare en veilige manier. Het doel van dit artikel is om u te helpen uw toepassingen te configureren om te luisteren naar Communication Services-gebeurtenissen. U kunt bijvoorbeeld een database bijwerken, een werk-item maken en een push-melding verzenden wanneer een SMS-bericht wordt ontvangen door een telefoonnummer dat is gekoppeld aan uw Communication Service-resource.
 
@@ -31,7 +29,7 @@ Azure Event Grid is een volledig beheerde service voor gebeurtenisrouting, die g
 
 ## <a name="events-types"></a>Gebeurtenistypen
 
-Gebeurtenisraster maakt gebruik van [gebeurtenisabonnementen](../../event-grid/concepts.md#event-subscriptions) om gebeurtenisberichten te routen naar abonnees. 
+Gebeurtenisraster maakt gebruik van [gebeurtenisabonnementen](../../event-grid/concepts.md#event-subscriptions) om gebeurtenisberichten te routen naar abonnees.
 
 Azure Communication Services verzendt de volgende gebeurtenistypen:
 
@@ -207,7 +205,7 @@ Deze sectie bevat een voorbeeld van hoe de gegevens voor elke gebeurtenis eruitz
 }]
 ```
 
-### <a name="microsoftcommunicationchatthreadcreatedwithuser-event"></a>Microsoft.Communication.ChatThreadCreatedWithUser-gebeurtenis 
+### <a name="microsoftcommunicationchatthreadcreatedwithuser-event"></a>Microsoft.Communication.ChatThreadCreatedWithUser-gebeurtenis
 
 ```json
 [{
@@ -265,7 +263,7 @@ Deze sectie bevat een voorbeeld van hoe de gegevens voor elke gebeurtenis eruitz
 }]
 ```
 
-### <a name="microsoftcommunicationchatthreadpropertiesupdatedperuser-event"></a>Microsoft.Communication.ChatThreadPropertiesUpdatedPerUser-gebeurtenis 
+### <a name="microsoftcommunicationchatthreadpropertiesupdatedperuser-event"></a>Microsoft.Communication.ChatThreadPropertiesUpdatedPerUser-gebeurtenis
 
 ```json
 [{

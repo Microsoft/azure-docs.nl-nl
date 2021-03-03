@@ -5,25 +5,25 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.devlang: nodejs
 ms.topic: how-to
-ms.date: 01/08/2020
+ms.date: 03/02/2021
 author: timsander1
 ms.author: tisande
 ms.custom: devx-track-js
-ms.openlocfilehash: 34caca47746814046a894494ec43d9b5c977389a
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 8d19a5dadffdfa26ccb2d84e6dab278ad272c7b0
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060070"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101658043"
 ---
 # <a name="manage-indexing-in-azure-cosmos-dbs-api-for-mongodb"></a>Indexering beheren voor de API voor MongoDB van Azure Cosmos DB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
 
 Azure Cosmos DB-API voor MongoDB maakt gebruik van de belangrijkste mogelijkheden voor index beheer van Azure Cosmos DB. In dit artikel wordt uitgelegd hoe u indexen toevoegt met behulp van de API van Azure Cosmos DB voor MongoDB. U kunt ook een [overzicht van het indexeren in azure Cosmos DB](index-overview.md) lezen dat relevant is voor alle api's.
 
-## <a name="indexing-for-mongodb-server-version-36"></a>Indexering voor MongoDB-Server versie 3,6
+## <a name="indexing-for-mongodb-server-version-36-and-higher"></a>Indexering voor MongoDB Server versie 3,6 en hoger
 
-De API van Azure Cosmos DB voor MongoDB-Server versie 3,6 indexeert automatisch het `_id` veld dat niet kan worden verwijderd. De unieke waarde van het veld wordt automatisch afgedwongen `_id` per Shard-sleutel. In Azure Cosmos DB API voor MongoDB, sharding en indexering, zijn afzonderlijke concepten. U hoeft uw Shard-sleutel niet te indexeren. Maar net als bij een andere eigenschap in uw document, wordt u aangeraden de Shard-sleutel te indexeren als deze eigenschap een gemeen schappelijk filter is in uw query's.
+De API van Azure Cosmos DB voor MongoDB-Server versie 3.6 + indexeert automatisch het `_id` veld dat niet kan worden verwijderd. De unieke waarde van het veld wordt automatisch afgedwongen `_id` per Shard-sleutel. In Azure Cosmos DB API voor MongoDB, sharding en indexering, zijn afzonderlijke concepten. U hoeft uw Shard-sleutel niet te indexeren. Maar net als bij een andere eigenschap in uw document, wordt u aangeraden de Shard-sleutel te indexeren als deze eigenschap een gemeen schappelijk filter is in uw query's.
 
 Als u extra velden wilt indexeren, past u de opdrachten voor MongoDB-indexbeheer toe. Net als in MongoDB indexeert Azure Cosmos DB-API voor MongoDB automatisch het `_id` veld. Dit standaard indexeringsbeleid wijkt af van de Azure Cosmos DB SQL-API, waarmee standaard alle velden worden geïndexeerd.
 
@@ -53,9 +53,9 @@ U kunt dezelfde enkelvoudige veld index maken op `name` in de Azure portal:
 
 Bij een query worden meerdere enkelvoudige veld indexen gebruikt, waar beschikbaar. U kunt Maxi maal 500 enkelvoudige veld indexen per container maken.
 
-### <a name="compound-indexes-mongodb-server-version-36"></a>Samengestelde indexen (MongoDB Server versie 3,6)
+### <a name="compound-indexes-mongodb-server-version-36"></a>Samengestelde indexen (MongoDB-Server versie 3.6 +)
 
-Azure Cosmos DB-API voor MongoDB ondersteunt samengestelde indexen voor accounts die gebruikmaken van versie 3,6 wire protocol. U kunt Maxi maal acht velden in een samengestelde index toevoegen. In tegens telling tot in MongoDB moet u alleen een samengestelde index maken als uw query efficiënt moet worden gesorteerd op meerdere velden tegelijk. Voor query's met meerdere filters die niet hoeven te worden gesorteerd, maakt u meerdere enkelvoudige veld indexen in plaats van één samengestelde index. 
+Azure Cosmos DB-API voor MongoDB ondersteunt samengestelde indexen voor accounts die gebruikmaken van versie 3,6 en 4,0 wire protocol. U kunt Maxi maal acht velden in een samengestelde index toevoegen. In tegens telling tot in MongoDB moet u alleen een samengestelde index maken als uw query efficiënt moet worden gesorteerd op meerdere velden tegelijk. Voor query's met meerdere filters die niet hoeven te worden gesorteerd, maakt u meerdere enkelvoudige veld indexen in plaats van één samengestelde index. 
 
 > [!NOTE]
 > U kunt geen samengestelde indexen maken voor geneste eigenschappen of matrices.
@@ -102,30 +102,31 @@ U kunt joker tekens gebruiken om query's te ondersteunen op onbekende velden. St
 Hier maakt deel uit van een voorbeeld document in die verzameling:
 
 ```json
-  "children": [
-     {
-         "firstName": "Henriette Thaulow",
-         "grade": "5"
-     }
-  ]
+"children": [
+   {
+     "firstName": "Henriette Thaulow",
+     "grade": "5"
+   }
+]
 ```
 
 Hier volgt nog een voor beeld met een iets andere set eigenschappen in `children` :
 
 ```json
-  "children": [
-      {
-        "familyName": "Merriam",
-        "givenName": "Jesse",
-        "pets": [
-            { "givenName": "Goofy" },
-            { "givenName": "Shadow" }
-      },
-      {
-        "familyName": "Merriam",
-        "givenName": "John",
-      }
-  ]
+"children": [
+    {
+     "familyName": "Merriam",
+     "givenName": "Jesse",
+     "pets": [
+         { "givenName": "Goofy" },
+         { "givenName": "Shadow" }
+         ]
+   },
+   {
+     "familyName": "Merriam",
+     "givenName": "John",
+   }
+]
 ```
 
 In deze verzameling kunnen documenten verschillende mogelijke eigenschappen hebben. Als u alle gegevens in de matrix wilt indexeren `children` , hebt u twee opties: Maak afzonderlijke indexen voor elke afzonderlijke eigenschap of maak één Joker teken index voor de volledige `children` matrix.
@@ -140,8 +141,8 @@ Met de volgende opdracht maakt u een Joker teken index voor alle eigenschappen i
 
 U kunt de volgende index typen maken met de syntaxis Joker teken:
 
-- Eén veld
-- Georuimtelijk
+* Eén veld
+* Georuimtelijk
 
 ### <a name="indexing-all-properties"></a>Alle eigenschappen indexeren
 
@@ -162,41 +163,45 @@ Documenten met veel velden kunnen een hoge aanvraag eenheid (RU) in rekening bre
 
 Joker tekens bieden geen ondersteuning voor een van de volgende index typen of eigenschappen:
 
-- Samenstelling
-- TTL
-- Uniek
+* Samenstelling
+* TTL
+* Uniek
 
 In **tegens telling tot in MongoDb**, in de API van Azure Cosmos DB voor MongoDb **kunt u geen** Joker teken indexen gebruiken voor:
 
-- Een jokertekenindex maken die meerdere specifieke velden bevat
+* Een jokertekenindex maken die meerdere specifieke velden bevat
 
-`db.coll.createIndex(
-    { "$**" : 1 },
-    { "wildcardProjection " :
-        {
-           "children.givenName" : 1,
-           "children.grade" : 1
-        }
-    }
-)`
+  ```json
+  db.coll.createIndex(
+      { "$**" : 1 },
+      { "wildcardProjection " :
+          {
+             "children.givenName" : 1,
+             "children.grade" : 1
+          }
+      }
+  )
+  ```
 
-- Een jokertekenindex maken die geen meerdere specifieke velden bevat
+* Een jokertekenindex maken die geen meerdere specifieke velden bevat
 
-`db.coll.createIndex(
-    { "$**" : 1 },
-    { "wildcardProjection" :
-        {
-           "children.givenName" : 0,
-           "children.grade" : 0
-        }
-    }
-)`
+  ```json
+  db.coll.createIndex(
+      { "$**" : 1 },
+      { "wildcardProjection" :
+          {
+             "children.givenName" : 0,
+             "children.grade" : 0
+          }
+      }
+  )
+  ```
 
 Als alternatief kunt u meerdere jokertekenindexen maken.
 
 ## <a name="index-properties"></a>Indexeigenschappen
 
-De volgende bewerkingen zijn gebruikelijk voor accounts die zijn gereserveerd van wire-protocol versie 3,6 en accounts die eerdere versies bieden. Meer informatie over [ondersteunde indexen en geïndexeerde eigenschappen](mongodb-feature-support-36.md#indexes-and-index-properties)vindt u hier.
+De volgende bewerkingen zijn gebruikelijk voor accounts die zijn gereserveerd van wire-protocol versie 4,0 en accounts die eerdere versies bieden. Meer informatie over [ondersteunde indexen en geïndexeerde eigenschappen](mongodb-feature-support-40.md#indexes-and-index-properties)vindt u hier.
 
 ### <a name="unique-indexes"></a>Unieke indexen
 
@@ -210,11 +215,11 @@ Met de volgende opdracht maakt u een unieke index voor het veld `student_id` :
 ```shell
 globaldb:PRIMARY> db.coll.createIndex( { "student_id" : 1 }, {unique:true} )
 {
-        "_t" : "CreateIndexesResponse",
-        "ok" : 1,
-        "createdCollectionAutomatically" : false,
-        "numIndexesBefore" : 1,
-        "numIndexesAfter" : 4
+    "_t" : "CreateIndexesResponse",
+    "ok" : 1,
+    "createdCollectionAutomatically" : false,
+    "numIndexesBefore" : 1,
+    "numIndexesAfter" : 4
 }
 ```
 
@@ -225,23 +230,23 @@ Met de volgende opdrachten maakt u een Shard ```coll``` -verzameling (de Shard-s
 ```shell
 globaldb:PRIMARY> db.runCommand({shardCollection: db.coll._fullName, key: { university: "hashed"}});
 {
-        "_t" : "ShardCollectionResponse",
-        "ok" : 1,
-        "collectionsharded" : "test.coll"
+    "_t" : "ShardCollectionResponse",
+    "ok" : 1,
+    "collectionsharded" : "test.coll"
 }
 globaldb:PRIMARY> db.coll.createIndex( { "university" : 1, "student_id" : 1 }, {unique:true});
 {
-        "_t" : "CreateIndexesResponse",
-        "ok" : 1,
-        "createdCollectionAutomatically" : false,
-        "numIndexesBefore" : 3,
-        "numIndexesAfter" : 4
+    "_t" : "CreateIndexesResponse",
+    "ok" : 1,
+    "createdCollectionAutomatically" : false,
+    "numIndexesBefore" : 3,
+    "numIndexesAfter" : 4
 }
 ```
 
 In het voor gaande voor beeld wordt met het weglaten van de ```"university":1``` component een fout geretourneerd met het volgende bericht:
 
-```"cannot create unique index over {student_id : 1.0} with shard key pattern { university : 1.0 }"```
+*kan geen unieke index maken via {student_id: 1,0} met Shard-sleutel patroon {University: 1,0}*
 
 ### <a name="ttl-indexes"></a>TTL indexen
 
@@ -260,7 +265,7 @@ Met de voor gaande opdracht worden alle documenten in de ```db.coll``` verzameli
 
 ## <a name="track-index-progress"></a>Voortgang van index bijhouden
 
-Versie 3,6 van de API van Azure Cosmos DB voor MongoDB ondersteunt de `currentOp()` opdracht voor het bijhouden van de voortgang van de index voor een Data Base-exemplaar. Met deze opdracht wordt een document geretourneerd dat informatie bevat over bewerkingen die worden uitgevoerd op een Data Base-exemplaar. U gebruikt de `currentOp` opdracht om alle bewerkingen in uitvoering bij te houden in systeem eigen MongoDb. In de API van Azure Cosmos DB voor MongoDB ondersteunt deze opdracht alleen het volgen van de index bewerking.
+Versie 3.6 + van Azure Cosmos DB API voor MongoDB ondersteunen de `currentOp()` opdracht voor het bijhouden van de voortgang van de index voor een Data Base-exemplaar. Met deze opdracht wordt een document geretourneerd dat informatie bevat over bewerkingen die worden uitgevoerd op een Data Base-exemplaar. U gebruikt de `currentOp` opdracht om alle bewerkingen in uitvoering bij te houden in systeem eigen MongoDb. In de API van Azure Cosmos DB voor MongoDB ondersteunt deze opdracht alleen het volgen van de index bewerking.
 
 Hier volgen enkele voor beelden van het gebruik van de `currentOp` opdracht voor het volgen van de voortgang van de index:
 
@@ -286,7 +291,7 @@ Hier volgen enkele voor beelden van het gebruik van de `currentOp` opdracht voor
 
 In de details van de index voortgang wordt het percentage voortgang van de huidige index bewerking weer gegeven. Hier volgt een voor beeld waarin de indeling van het uitvoer document wordt weer gegeven voor de verschillende stadia van de index voortgang:
 
-- Een index bewerking op een ' foo '-verzameling en ' bar '-data base die 60 procent is voltooid, heeft het volgende uitvoer document. `Inprog[0].progress.total`In het veld wordt 100 weer gegeven als het voltooiings percentage van het doel.
+* Een index bewerking op een ' foo '-verzameling en ' bar '-data base die 60 procent is voltooid, heeft het volgende uitvoer document. `Inprog[0].progress.total`In het veld wordt 100 weer gegeven als het voltooiings percentage van het doel.
 
    ```json
    {
@@ -310,7 +315,7 @@ In de details van de index voortgang wordt het percentage voortgang van de huidi
    }
    ```
 
-- Als een index bewerking zojuist is gestart op een ' foo '-verzameling en een staaf-data base, kan het uitvoer document 0 procent van de voortgang weer geven totdat het een meetbaar niveau bereikt.
+* Als een index bewerking zojuist is gestart op een ' foo '-verzameling en een staaf-data base, kan het uitvoer document 0 procent van de voortgang weer geven totdat het een meetbaar niveau bereikt.
 
    ```json
    {
@@ -334,7 +339,7 @@ In de details van de index voortgang wordt het percentage voortgang van de huidi
    }
    ```
 
-- Wanneer de index bewerking in uitvoering is voltooid, worden in het uitvoer document lege `inprog` bewerkingen weer gegeven.
+* Wanneer de index bewerking in uitvoering is voltooid, worden in het uitvoer document lege `inprog` bewerkingen weer gegeven.
 
    ```json
    {
@@ -407,26 +412,26 @@ Op dit moment kunt u alleen unieke indexen maken als de verzameling geen documen
 
 Beschik bare indexerings functies en standaard waarden zijn anders voor Azure Cosmos-accounts die compatibel zijn met versie 3,2 van het MongoDB wire-protocol. U kunt [de versie van uw account controleren](mongodb-feature-support-36.md#protocol-support) en [upgraden naar versie 3,6](mongodb-version-upgrade.md).
 
-Als u versie 3,2 gebruikt, geeft deze sectie een overzicht van de belangrijkste verschillen met versie 3,6.
+Als u versie 3,2 gebruikt, geeft deze sectie een overzicht van de belangrijkste verschillen met versie 3.6 +.
 
 ### <a name="dropping-default-indexes-version-32"></a>Standaard indexen verwijderen (versie 3,2)
 
-In tegens telling tot de 3,6-versie van de API van Azure Cosmos DB voor MongoDB, indexeert versie 3,2 standaard elke eigenschap. U kunt de volgende opdracht gebruiken om deze standaard indexen voor een verzameling te verwijderen ( ```coll``` ):
+In tegens telling tot de versie van versie 3,2 van Azure Cosmos DB van de API voor MongoDB, indexeren standaard elke eigenschap. U kunt de volgende opdracht gebruiken om deze standaard indexen voor een verzameling te verwijderen ( ```coll``` ):
 
 ```JavaScript
 > db.coll.dropIndexes()
 { "_t" : "DropIndexesResponse", "ok" : 1, "nIndexesWas" : 3 }
 ```
 
-Nadat u de standaard indexen hebt verwijderd, kunt u meer indexen toevoegen zoals u dat zou doen in versie 3,6.
+Nadat u de standaard indexen hebt verwijderd, kunt u meer indexen toevoegen zoals u dat in versie 3.6 + zou doen.
 
 ### <a name="compound-indexes-version-32"></a>Samengestelde indexen (versie 3,2)
 
-Samengestelde indexen bevatten verwijzingen naar meerdere velden van een document. Als u een samengestelde index wilt maken, moet u een [upgrade uitvoeren naar versie 3,6](mongodb-version-upgrade.md).
+Samengestelde indexen bevatten verwijzingen naar meerdere velden van een document. Als u een samengestelde index wilt maken, moet u een [upgrade uitvoeren naar versie 3,6 of 4,0](mongodb-version-upgrade.md).
 
 ### <a name="wildcard-indexes-version-32"></a>Joker tekens-indexen (versie 3,2)
 
-Als u een Joker teken index wilt maken, [moet u een upgrade uitvoeren naar versie 3,6](mongodb-version-upgrade.md).
+Als u een Joker teken index wilt maken, [moet u een upgrade uitvoeren naar versie 4,0 of 3,6](mongodb-version-upgrade.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

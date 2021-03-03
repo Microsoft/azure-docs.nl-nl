@@ -9,13 +9,13 @@ ms.topic: how-to
 author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
-ms.date: 11/06/2020
-ms.openlocfilehash: 9afe50e419f9c180b0b5efcd6182eb693dc6622a
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.date: 02/18/2020
+ms.openlocfilehash: 5485d97638679651a3890e0b7578787e481437c6
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99093940"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101656275"
 ---
 # <a name="migration-overview-sql-server-to-sql-managed-instance"></a>Migratie overzicht: SQL Server naar een beheerd exemplaar van SQL
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -90,6 +90,7 @@ De volgende tabel bevat de aanbevolen migratie hulpprogramma's:
 |---------|---------|
 |[Azure Database Migration Service (DMS)](../../../dms/tutorial-sql-server-to-managed-instance.md)  | Azure-service van de eerste partij die migratie in de offline modus ondersteunt voor toepassingen die downtime tijdens het migratie proces kunnen veroorloven. In tegens telling tot de continue migratie in de online modus, voert migratie van de offline modus eenmalige herstel van een volledige database back-up uit van de bron naar het doel. | 
 |[Systeem eigen back-up en herstel](../../managed-instance/restore-sample-database-quickstart.md) | SQL Managed instance biedt ondersteuning voor herstel van systeem eigen SQL Server database back-ups (. bak-bestanden), waardoor het de eenvoudigste migratie optie is voor klanten die volledige database back-ups naar Azure Storage kunnen leveren. Volledige en differentiële back-ups worden ook ondersteund en beschreven in de [sectie migratie-assets](#migration-assets) verderop in dit artikel.| 
+|[Replay-service voor logboeken (LRS)](../../managed-instance/log-replay-service-migrate.md) | Dit is een Cloud service die is ingeschakeld voor beheerde exemplaren op basis van de SQL Server technieken voor het vastleggen van logboek bestanden, waardoor het een migratie optie is voor klanten die volledige, differentiële en logboek database back-ups naar Azure Storage kunnen leveren. LRS wordt gebruikt om back-upbestanden van Azure Blob Storage te herstellen naar een door SQL beheerd exemplaar.| 
 | | |
 
 ### <a name="alternative-tools"></a>Alternatieve hulpprogram ma's
@@ -116,6 +117,7 @@ In de volgende tabel worden de aanbevolen migratie opties vergeleken:
 |---------|---------|---------|
 |[Azure Database Migration Service (DMS)](../../../dms/tutorial-sql-server-to-managed-instance.md) | -Migreer afzonderlijke data bases of meerdere data bases op schaal. </br> -Kan downtime tijdens het migratie proces inpassen. </br> </br> Ondersteunde bronnen: </br> -SQL Server (2005-2019) on-premises of Azure VM </br> -AWS EC2 </br> -AWS RDS </br> -GCP Compute SQL Server-VM |  -Migraties op schaal kunnen worden geautomatiseerd via [Power shell](../../../dms/howto-sql-server-to-azure-sql-mi-powershell.md). </br> -Het volt ooien van de migratie is afhankelijk van de grootte van de data base en van invloed op back-up-en herstel tijd. </br> -Er is mogelijk voldoende downtime vereist. |
 |[Systeem eigen back-up en herstel](../../managed-instance/restore-sample-database-quickstart.md) | -Een afzonderlijke line-of-Business-toepassings database (s) migreren.  </br> -Snelle en eenvoudige migratie zonder een afzonderlijke migratie service of een afzonderlijk hulp programma.  </br> </br> Ondersteunde bronnen: </br> -SQL Server (2005-2019) on-premises of Azure VM </br> -AWS EC2 </br> -AWS RDS </br> -GCP Compute SQL Server-VM | -Database back-up gebruikt meerdere threads voor het optimaliseren van gegevens overdracht naar Azure Blob-opslag, maar ISV-band breedte en grootte van de data base kunnen de overdrachts frequentie beïnvloeden. </br> -Downtime moet voldoen aan de tijd die nodig is voor het uitvoeren van een volledige back-up en herstel (dit is een omvang van de gegevens bewerking).| 
+|[Replay-service voor logboeken (LRS)](../../managed-instance/log-replay-service-migrate.md) | -Een afzonderlijke line-of-Business-toepassings database (s) migreren.  </br> -Er is meer controle nodig voor database migraties.  </br> </br> Ondersteunde bronnen: </br> -SQL Server (2008-2019) on-premises of Azure VM </br> -AWS EC2 </br> -AWS RDS </br> -GCP Compute SQL Server-VM | -De migratie omvat het maken van volledige database back-ups op SQL Server en het kopiëren van back-upbestanden naar Azure Blob Storage. LRS wordt gebruikt om back-upbestanden van Azure Blob Storage te herstellen naar een door SQL beheerd exemplaar. </br> -Data bases die tijdens het migratie proces worden hersteld, bevinden zich in een herstel modus en kunnen niet worden gebruikt om te lezen of te schrijven totdat het proces is voltooid.| 
 | | | |
 
 ### <a name="alternative-options"></a>Alternatieve opties
@@ -203,7 +205,7 @@ Sommige functies zijn alleen beschikbaar als het [compatibiliteits niveau van de
 
 Raadpleeg de volgende bronnen die zijn ontwikkeld voor de echte wereld wijde migratie projecten voor meer hulp.
 
-|Asset  |Description  |
+|Asset  |Beschrijving  |
 |---------|---------|
 |[Beoordelings model en hulp programma voor gegevens workload](https://github.com/Microsoft/DataMigrationTeam/tree/master/Data%20Workload%20Assessment%20Model%20and%20Tool)| Dit hulp programma biedt voorgestelde ' Best passend ' doel platformen, Cloud gereedheids en toepassings-en database herstel niveau voor een bepaalde werk belasting. U kunt met één klik berekeningen en rapporten genereren waarmee u grote voor-en hand-evaluaties versnelt door het besluitvormings proces voor een geautomatiseerd en uniform doel platform te bieden.|
 |[Hulp programma DBLoader](https://github.com/microsoft/DataMigrationTeam/tree/master/DBLoader%20Utility)|De DBLoader kan worden gebruikt voor het laden van gegevens uit tekst bestanden met scheidings tekens naar SQL Server. Dit Windows-console hulpprogramma maakt gebruik van de SQL Server Native Client bulkload-interface, die werkt op alle versies van SQL Server, waaronder Azure SQL MI.|

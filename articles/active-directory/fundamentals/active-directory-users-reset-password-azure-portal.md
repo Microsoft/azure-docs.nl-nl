@@ -14,12 +14,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 397c74203aae2f52ce81844695266cc36fdf3042
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 0b42ac7b4e379559d86942279eaa19fe58533840
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370896"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101651884"
 ---
 # <a name="reset-a-users-password-using-azure-active-directory"></a>Het wachtwoord van een gebruiker opnieuw instellen met Azure Active Directory
 
@@ -41,7 +41,7 @@ Als beheerder kunt u het wacht woord van een gebruiker opnieuw instellen als het
 
     ![De profiel pagina van de gebruiker, met de optie wacht woord opnieuw instellen gemarkeerd](media/active-directory-users-reset-password-azure-portal/user-profile-reset-password-link.png)
 
-3. Selecteer **wacht woord opnieuw instellen**op de pagina **wacht woord opnieuw instellen** .
+3. Selecteer **wacht woord opnieuw instellen** op de pagina **wacht woord opnieuw instellen** .
 
     > [!Note]
     > Wanneer u Azure Active Directory gebruikt, wordt er automatisch een tijdelijk wacht woord voor de gebruiker gegenereerd. Wanneer u Active Directory on-premises gebruikt, maakt u het wacht woord voor de gebruiker.
@@ -50,6 +50,10 @@ Als beheerder kunt u het wacht woord van een gebruiker opnieuw instellen als het
 
     >[!Note]
     >Het tijdelijke wacht woord verloopt nooit. De volgende keer dat de gebruiker zich aanmeldt, zal het wacht woord nog steeds werken, ongeacht hoeveel tijd er is verstreken sinds het tijdelijke wacht woord is gegenereerd.
+
+> [!IMPORTANT]
+> Als een beheerder het wacht woord van de gebruiker niet opnieuw kan instellen, en in de gebeurtenis logboeken van de toepassing op de Azure AD Connect server, wordt de volgende fout code HR = 80231367 weer gegeven, raadpleegt u de kenmerken van de gebruiker in Active Directory.  Als het kenmerk **AdminCount** is ingesteld op 1, kan een beheerder het wacht woord van de gebruiker niet opnieuw instellen.  Het kenmerk **AdminCount** moet worden ingesteld op 0, zodat een beheerder het wacht woord van de gebruiker opnieuw kan instellen.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/09/2021
-ms.openlocfilehash: 06f9d336bb04aa26cea4ebcdae1cfd045e1c2a1b
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: bf8a4e51e23f438265af706914a6bc73ec30f64d
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100361244"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101667666"
 ---
 # <a name="how-to-run-or-reset-indexers-skills-or-documents"></a>Indexeer functies, vaardig heden of documenten uitvoeren of opnieuw instellen
 
@@ -101,7 +101,7 @@ Als er geen vaardig heden zijn opgegeven, wordt de volledige vaardig heden uitge
 > [!IMPORTANT] 
 > Het [opnieuw instellen van documenten](/rest/api/searchservice/preview-api/reset-documents) is in open bare preview, die alleen beschikbaar is via de preview-versie rest API. Preview-functies worden onder [aanvullende gebruiks voorwaarden](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)aangeboden.
 
-De [API voor het opnieuw instellen van documenten](https://docs.microsoft.com/rest/api/searchservice/preview-api/reset-documents) accepteert een lijst met document sleutels zodat u specifieke documenten kunt vernieuwen. Indien opgegeven, worden de para meters opnieuw instellen de enige determinant van wat er wordt verwerkt, ongeacht andere wijzigingen in de onderliggende gegevens. Als er bijvoorbeeld 20 blobs zijn toegevoegd of bijgewerkt nadat de laatste Indexeer functie is uitgevoerd, maar u slechts één document opnieuw hebt ingesteld, wordt alleen het ene document verwerkt.
+De [API voor het opnieuw instellen van documenten](/rest/api/searchservice/preview-api/reset-documents) accepteert een lijst met document sleutels zodat u specifieke documenten kunt vernieuwen. Indien opgegeven, worden de para meters opnieuw instellen de enige determinant van wat er wordt verwerkt, ongeacht andere wijzigingen in de onderliggende gegevens. Als er bijvoorbeeld 20 blobs zijn toegevoegd of bijgewerkt nadat de laatste Indexeer functie is uitgevoerd, maar u slechts één document opnieuw hebt ingesteld, wordt alleen het ene document verwerkt.
 
 Alle velden in dat Zoek document worden per document vernieuwd met waarden uit de gegevens bron. U kunt niet kiezen en selecteren welke velden u wilt vernieuwen. 
 

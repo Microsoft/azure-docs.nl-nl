@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 02/17/2021
-ms.openlocfilehash: 517b07eecdbc63754f46fcf1051bf5b987dbc20e
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 8d7d482f38d58c8d6a8959acb51c94c0fb814697
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100654202"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101668432"
 ---
 # <a name="create-scoped-resource-set-configuration-rules"></a>Configuratie regels voor het bereik van de bron maken
 
@@ -43,7 +43,7 @@ Volg de onderstaande stappen om een nieuwe configuratie voor het configureren va
 
 Wanneer u regels voor het instellen van een resourceset maakt, gebruikt u de volgende syntaxis om op te geven welke assets regels van toepassing zijn op.
 
-### <a name="static-replacers-single-brackets"></a>Statische vervangingen (enkele haken)
+### <a name="dynamic-replacers-single-brackets"></a>Dynamische vervangingen (enkele haken)
 
 Enkele haken worden gebruikt als **dynamische vervangingen** in een regel voor het bereik van een resource. Geef een dynamische vervangings functie op in de gekwalificeerde naam met de indeling `{<replacerName:<replacerType>}` . Als er overeenkomsten worden gevonden, worden dynamische vervangingen gebruikt als een groeperings voorwaarde die aangeeft dat activa moeten worden weer gegeven als een resourceset. Als de activa zijn gegroepeerd in een resourceset, bevat het gekwalificeerde pad van de resource `{replacerName}` die de vervangings functie heeft opgegeven.
 
@@ -92,7 +92,7 @@ Hieronder ziet u de volg orde van bewerkingen voor het Toep assen van regels voo
 
 SAP-gegevens extractie in volledige en Delta belasting
 
-*Invoerwaarden*
+#### <a name="inputs"></a>Invoerwaarden
 
 Logbestanden
 -   `https://myazureblob.blob.core.windows.net/bar/customer/full/2020/01/13/saptable_customer_20200101_20200102_01.txt`
@@ -102,7 +102,7 @@ Logbestanden
 -   `https://myazureblob.blob.core.windows.net/bar/customer/full/2020/01/17/saptable_customer_20200101_20200102_02.txt`
 
 
-*Regel voor het bereik van de Resourceset*
+#### <a name="scoped-resource-set-rule"></a>Regel voor het bereik van de Resourceset 
 
 **Bereik:**https://myazureblob.blob.core.windows.net/bar/
 
@@ -112,7 +112,7 @@ Logbestanden
 
 **Resource set:** waar
 
-*Uitvoer*
+#### <a name="output"></a>Uitvoer 
 
 Eén resource set-Asset
 
@@ -124,7 +124,7 @@ Eén resource set-Asset
 
 IoT-gegevens in de Avro-indeling
 
-*Invoerwaarden*
+#### <a name="inputs"></a>Invoerwaarden 
 
 Logbestanden
 -   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/01-01-2020/22:33:22-001.avro`
@@ -132,7 +132,7 @@ Logbestanden
 -   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/02-01-2020/22:33:22-001.avro`
 -   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-90/01-01-2020/22:33:22-001.avro`
 
-*Regels voor het bereik van bron sets*
+#### <a name="scoped-resource-set-rules"></a>Regels voor het bereik van bron sets 
 
 **Bereik:**https://myazureblob.blob.core.windows.net/bar/
 
@@ -150,9 +150,9 @@ Regel 2
 
 **Gekwalificeerde naam:**`raw/machinename-90/{date:date}/{time:time}-{id:int}.avro`
 
-**Resource set: waar**
+#### <a name="resource-set-true"></a>*Resource set: waar* 
 
-*Uitvoerwaarden*
+#### <a name="outputs"></a>Uitvoerwaarden 
 
 2 resource sets 
 
@@ -172,7 +172,7 @@ Resource set 2
 
 IoT-gegevens in de Avro-indeling
 
-*Invoerwaarden*
+#### <a name="inputs"></a>Invoerwaarden 
 
 Logbestanden
 -   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/01-01-2020/22:33:22-001.avro`
@@ -180,7 +180,7 @@ Logbestanden
 -   `https://myazureblob.blob.core.windows.netbar/raw/machinename-89/02-01-2020/22:33:22-001.avro`
 -   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-90/01-01-2020/22:33:22-001.avro`
 
-*Regel voor het bereik van de Resourceset*
+#### <a name="scoped-resource-set-rule"></a>Regel voor het bereik van de Resourceset 
 
 **Bereik:**https://myazureblob.blob.core.windows.net/bar/
 
@@ -190,7 +190,7 @@ Logbestanden
 
 **Resource set:** waar
 
-*Uitvoerwaarden*
+#### <a name="outputs"></a>Uitvoerwaarden 
 
 Resource set 1
 
@@ -208,7 +208,7 @@ Resource set 2
 
 Niet groeperen in resource sets
 
-*Invoerwaarden*
+#### <a name="inputs"></a>Invoerwaarden 
 
 Logbestanden
 -   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/01-01-2020/22:33:22-001.avro`
@@ -216,7 +216,7 @@ Logbestanden
 -   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/02-01-2020/22:33:22-001.avro`
 -   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-90/01-01-2020/22:33:22-001.avro`
 
-*Regel voor het bereik van de Resourceset*
+#### <a name="scoped-resource-set-rule"></a>Regel voor het bereik van de Resourceset 
 
 **Bereik:**https://myazureblob.blob.core.windows.net/bar/
 
@@ -226,7 +226,7 @@ Logbestanden
 
 **Resource set:** False
 
-*Uitvoerwaarden*
+#### <a name="outputs"></a>Uitvoerwaarden 
 
 4 afzonderlijke assets
 

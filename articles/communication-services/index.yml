@@ -1,20 +1,20 @@
 ### YamlMime:Landing
 title: Azure Communication Services
-summary: Azure Communication Services is een communicatieservice in de cloud waarmee u spraak, video, chat en telefonie aan uw apps kunt toevoegen. Houd er rekening mee dat Azure Communication Services momenteel beschikbaar is als openbare preview.
+summary: Azure Communication Services is een communicatieservice in de cloud waarmee u spraak, video, chat en telefonie aan uw apps kunt toevoegen.
 metadata:
   title: Azure Communication Services
-  description: Azure Communication Services is een communicatieservice in de cloud waarmee u spraak, video, chat en telefonie aan uw apps kunt toevoegen. Houd er rekening mee dat Azure Communication Services momenteel beschikbaar is als openbare preview.
+  description: Azure Communication Services is een communicatieservice in de cloud waarmee u spraak, video, chat en telefonie aan uw apps kunt toevoegen.
   ms.service: azure-communication-services
   ms.topic: landing-page
   author: mikben
   ms.author: mikben
   ms.date: 08/10/2020
-  ms.openlocfilehash: a39493fd0a1487602fd9cd2ad81fa81900f860d2
-  ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+  ms.openlocfilehash: dd6e3a7685ded2d7f5b292d9436694eddc95163c
+  ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 02/18/2021
-  ms.locfileid: "100652697"
+  ms.lasthandoff: 03/02/2021
+  ms.locfileid: "101657584"
 landingContent:
 - title: Informatie over Azure Communication Services
   linkLists:
@@ -26,6 +26,8 @@ landingContent:
     links:
     - text: Clientbibliotheekopties
       url: concepts/sdk-options.md
+    - text: Teams Interop
+      url: concepts/teams-interop.md
 - title: Aan de slag
   linkLists:
   - linkListType: quickstart

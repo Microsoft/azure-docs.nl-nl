@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 02/12/2021
+ms.date: 03/02/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: elisol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08f560f076caf90c9c930cedfd6a7ba9c6c8b37d
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 95c7ca826eaf7d72cb35985b154458f149ef4a0e
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100365443"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101649309"
 ---
 # <a name="azure-active-directory-b2b-collaboration-invitation-redemption"></a>Uitnodigingsinwisseling voor Azure Active Directory B2B-samenwerking
 
@@ -28,21 +28,19 @@ Wanneer u een gast gebruiker aan uw Directory toevoegt, heeft het gast gebruiker
    > - **Vanaf 4 januari 2021** wordt [ondersteuning voor WebView-aanmelding afgeschaft](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html) in Google. Als u gebruikmaakt van Google-federatie of selfserviceregistratie met Gmail, moet u [de compatibiliteit van uw systeemeigen Line-of-Business-toepassingen testen](google-federation.md#deprecation-of-webview-sign-in-support).
    > - **Vanaf 2021 oktober** heeft micro soft geen ondersteuning meer voor het aflossen van uitnodigingen door het maken van niet-beheerde Azure AD-accounts en-tenants voor B2B-samenwerkings scenario's. In de voorbereiding raden wij klanten aan om te kiezen voor de [verificatie van de eenmalige wachtwoordcode e-mailen](one-time-passcode.md). We waarderen uw feedback over deze openbare preview-functie en willen graag nog meer manieren te maken om samen te werken.
 
-## <a name="redemption-through-the-invitation-email"></a>Inwisselen via e-mail met uitnodiging
+## <a name="redemption-and-sign-in-through-a-common-endpoint"></a>Inwisselen en aanmelden via een gemeen schappelijk eind punt
 
-Wanneer u een gast gebruiker aan uw Directory toevoegt met [behulp van de Azure Portal](./b2b-quickstart-add-guest-users-portal.md), wordt er een e-mail uitnodiging verzonden naar de gast in het proces. U kunt er ook voor kiezen om e-mail berichten te verzenden wanneer u [Power shell gebruikt](./b2b-quickstart-invite-powershell.md) om gast gebruikers toe te voegen aan uw Directory. Hier volgt een beschrijving van de ervaring van de gast bij het inwisselen van de koppeling in het e-mail bericht.
+Gast gebruikers kunnen zich nu aanmelden bij uw apps voor meerdere tenants of micro soft van derden via een gemeen schappelijk eind punt (URL), bijvoorbeeld `https://myapps.microsoft.com` . Voorheen zou een gemeen schappelijke URL een gast gebruiker omleiden naar hun eigen Tenant in plaats van de bron Tenant voor verificatie, zodat een Tenant-specifieke koppeling is vereist (bijvoorbeeld `https://myapps.microsoft.com/?tenantid=<tenant id>` ). De gast gebruiker kan nu naar de algemene URL van de toepassing gaan, **aanmeldings opties** kiezen en vervolgens **Aanmelden bij een organisatie** selecteren. De gebruiker typt vervolgens de naam van uw organisatie.
 
-1. De gast ontvangt een [uitnodigings-e-mail](./invitation-email-elements.md) die wordt verzonden vanuit **uitnodigingen van micro soft**.
-2. De gast selecteert **uitnodiging accepteren** in het e-mail bericht.
-3. De gast gebruikt hun eigen referenties om u aan te melden bij uw Directory. Als de gast geen account heeft dat federatief kan zijn voor uw directory en de OTP-functie [(one-time wachtwoord code) voor e-mail](./one-time-passcode.md) niet is ingeschakeld; de gast wordt gevraagd om een persoonlijk [MSA](https://support.microsoft.com/help/4026324/microsoft-account-how-to-create) [-of Azure AD Self-Service-account](../enterprise-users/directory-self-service-signup.md)te maken. Raadpleeg de [uitbestedings stroom voor uitnodigingen](#invitation-redemption-flow) voor meer informatie.
-4. De gast wordt geleid door de [toestemming](#consent-experience-for-the-guest) die hieronder wordt beschreven.
+![Aanmelding voor een gemeen schappelijk eind punt](media/redemption-experience/common-endpoint-flow-small.png)
 
+De gebruiker wordt vervolgens omgeleid naar uw getenantd eind punt, waar ze zich kunnen aanmelden met hun e-mail adres of een door u geconfigureerde ID-provider selecteren.
 ## <a name="redemption-through-a-direct-link"></a>Inkopen via een directe koppeling
 
-Als alternatief voor de uitnodigings-e-mail kunt u een gast een rechtstreekse koppeling geven naar uw app of portal. U moet eerst de gast gebruiker toevoegen aan uw directory via de [Azure Portal](./b2b-quickstart-add-guest-users-portal.md) of [Power shell](./b2b-quickstart-invite-powershell.md). Vervolgens kunt u een van de [aanpas bare manieren gebruiken om toepassingen te implementeren voor gebruikers](../manage-apps/end-user-experiences.md), waaronder directe aanmeldings koppelingen. Wanneer een gast gebruikmaakt van een directe koppeling in plaats van het e-mail bericht met de uitnodiging, worden ze nog steeds door gegeven via de eerste toestemmings ervaring.
+Als alternatief voor de uitnodigings-e-mail of de gemeen schappelijke URL van een toepassing kunt u een gast een rechtstreekse koppeling geven naar uw app of portal. U moet eerst de gast gebruiker toevoegen aan uw directory via de [Azure Portal](./b2b-quickstart-add-guest-users-portal.md) of [Power shell](./b2b-quickstart-invite-powershell.md). Vervolgens kunt u een van de [aanpas bare manieren gebruiken om toepassingen te implementeren voor gebruikers](../manage-apps/end-user-experiences.md), waaronder directe aanmeldings koppelingen. Wanneer een gast gebruikmaakt van een directe koppeling in plaats van het e-mail bericht met de uitnodiging, worden ze nog steeds door gegeven via de eerste toestemmings ervaring.
 
-> [!IMPORTANT]
-> De directe koppeling moet Tenant-specifiek zijn. Met andere woorden, het moet een Tenant-ID of geverifieerd domein bevatten zodat de gast kan worden geverifieerd in uw Tenant, waar de gedeelde app zich bevindt. Een gemeen schappelijke URL https://myapps.microsoft.com kan niet worden gebruikt voor een gast omdat deze wordt omgeleid naar hun eigen Tenant voor authenticatie. Hier volgen enkele voor beelden van directe koppelingen met de context van de Tenant:
+> [!NOTE]
+> Een directe koppeling is specifiek voor een Tenant. Met andere woorden, het bevat een Tenant-ID of een geverifieerd domein, zodat de gast kan worden geverifieerd in uw Tenant, waar de gedeelde app zich bevindt. Hier volgen enkele voor beelden van directe koppelingen met de context van de Tenant:
  > - Toegangs venster voor apps: `https://myapps.microsoft.com/?tenantid=<tenant id>`
  > - Toegangs venster voor apps voor een geverifieerd domein: `https://myapps.microsoft.com/<;verified domain>`
  > - Azure Portal: `https://portal.azure.com/<tenant id>`
@@ -53,6 +51,14 @@ Er zijn enkele gevallen waarin de e-mail uitnodiging wordt aanbevolen via een di
  - Soms heeft het uitgenodigde gebruikers object mogelijk geen e-mail adres vanwege een conflict met een contact object (bijvoorbeeld een Outlook-contact object). In dit geval moet de gebruiker op de opname-URL in het e-mail bericht met de uitnodiging klikken.
  - De gebruiker kan zich aanmelden met een alias van het e-mail adres dat is uitgenodigd. (Een alias is een aanvullend e-mail adres dat is gekoppeld aan een e-mail account.) In dit geval moet de gebruiker op de opname-URL in het e-mail bericht met de uitnodiging klikken.
 
+## <a name="redemption-through-the-invitation-email"></a>Inwisselen via e-mail met uitnodiging
+
+Wanneer u een gast gebruiker aan uw Directory toevoegt met [behulp van de Azure Portal](./b2b-quickstart-add-guest-users-portal.md), wordt er een e-mail uitnodiging verzonden naar de gast in het proces. U kunt er ook voor kiezen om e-mail berichten te verzenden wanneer u [Power shell gebruikt](./b2b-quickstart-invite-powershell.md) om gast gebruikers toe te voegen aan uw Directory. Hier volgt een beschrijving van de ervaring van de gast bij het inwisselen van de koppeling in het e-mail bericht.
+
+1. De gast ontvangt een [uitnodigings-e-mail](./invitation-email-elements.md) die wordt verzonden vanuit **uitnodigingen van micro soft**.
+2. De gast selecteert **uitnodiging accepteren** in het e-mail bericht.
+3. De gast gebruikt hun eigen referenties om u aan te melden bij uw Directory. Als de gast geen account heeft dat federatief kan zijn voor uw directory en de OTP-functie [(one-time wachtwoord code) voor e-mail](./one-time-passcode.md) niet is ingeschakeld; de gast wordt gevraagd om een persoonlijk [MSA](https://support.microsoft.com/help/4026324/microsoft-account-how-to-create) [-of Azure AD Self-Service-account](../enterprise-users/directory-self-service-signup.md)te maken. Raadpleeg de [uitbestedings stroom voor uitnodigingen](#invitation-redemption-flow) voor meer informatie.
+4. De gast wordt geleid door de [toestemming](#consent-experience-for-the-guest) die hieronder wordt beschreven.
 ## <a name="invitation-redemption-flow"></a>Aflossings stroom uitnodiging
 
 Wanneer een gebruiker op de koppeling **uitnodiging accepteren** in een [e-mail uitnodiging](invitation-email-elements.md)klikt, wordt de uitnodiging automatisch door Azure AD ingewisseld op basis van de aflossings stroom zoals hieronder wordt weer gegeven:

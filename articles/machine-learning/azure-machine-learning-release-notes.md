@@ -8,17 +8,48 @@ ms.subservice: core
 ms.topic: reference
 ms.author: larryfr
 author: BlackMist
-ms.date: 09/10/2020
-ms.openlocfilehash: c54034ef927bb49a955ef6121f5a8d56b57f0bd3
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 02/18/2021
+ms.openlocfilehash: b19c5e8ca1f7984f33a5cedf37a2774532c79350
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100375558"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101661100"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
 In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga voor de volledige SDK-referentie-inhoud naar de hoofd pagina van de hand leiding van de Azure Machine Learning van de [**SDK voor python**](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) .
+
+__RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de volgende URL in uw feedlezer te kopiëren en plakken: `https://docs.microsoft.com/api/search/rss?search=%22Azure+machine+learning+release+notes%22&locale=en-us`
+
+## <a name="2021-02-16"></a>2021-02-16
+
+### <a name="azure-machine-learning-sdk-for-python-v1230"></a>Azure Machine Learning SDK voor python v-1.23.0
++ **Nieuwe functies**
+  + **azureml-core**
+    + [Experimentele functie] Voeg ondersteuning toe om Synapse-werk ruimte te koppelen aan AML als een gekoppelde service
+    + [Experimentele functie] Voeg ondersteuning toe voor het koppelen van een Synapse Spark-pool in AML als reken kracht
+    + [Experimentele functie] Voeg ondersteuning toe voor toegang op basis van identiteits gegevens. Gebruikers kunnen gegevens opslag of gegevens sets registreren zonder referenties op te geven. In dat geval wordt het AAD-token van de gebruiker of de beheerde identiteit van het Compute-doel gebruikt voor verificatie. Klik [hier](https://aka.ms/data-access) voor meer informatie.
+  + **azureml-pipeline-steps**
+    + [Experimentele functie] Ondersteuning voor [SynapseSparkStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.synapsesparkstep?preserve-view=true&view=azure-ml-py) toevoegen
+  + **azureml-synapse**
+    + [Experimentele functie] Voeg ondersteuning toe van Spark Magic voor het uitvoeren van een interactieve sessie in een Synapse Spark-pool.
++ **Oplossingen en verbeteringen voor oplossingen**
+  + **azureml-automl-runtime**
+    + In deze update hebben we Holt winters exponentiële smoothing toegevoegd aan de voor spellingen van de werkset van AutoML SDK. Op basis van een tijd reeks wordt het beste model geselecteerd door [AICc (gecorrigeerd Akaike Information criterium)](https://otexts.com/fpp3/selecting-predictors.html#selecting-predictors) en geretourneerd.
+    + AutoML genereert nu twee logboek bestanden in plaats van één. De instructies van het logboek gaan naar een of de andere, afhankelijk van het proces waarin de logboek instructie is gegenereerd.
+    + Verwijder onnodige voor beeld-voor spelling tijdens model training met kruis validaties. Dit kan in sommige gevallen de trainings tijd van het model verlagen, met name voor het maken van prognose modellen voor time-series.
+  + **azureml-contrib-fairness**
+    + Voeg een JSON-schema toe voor de dashboardDictionary-uploads.
+  + **azureml-contrib-interpret**
+    + het contrib-Leesmij-bestand voor het interpreteren van azureml is bijgewerkt met het pakket dat in de volgende update wordt verwijderd nadat dit is afgeschaft sinds oktober, gebruikt u in plaats daarvan het pakket azureml-interpret
+  + **azureml-core**
+    + Voorheen was het mogelijk een inrichtings configuratie te maken met het minimum aantal knoop punten dat kleiner is dan het maximum aantal knoop punten. Dit is nu opgelost. Als u nu probeert een inrichtings configuratie te maken met `min_nodes < max_nodes` de SDK, wordt er een gegenereerd `ComputeTargetException` .
+    +  Hiermee wordt een fout opgelost in wait_for_completion in AmlCompute, waardoor de functie de controle stroom heeft geretourneerd voordat de bewerking daad werkelijk is voltooid
+    + Run. Fail () is nu afgeschaft, gebruik run. tag () om Run as-bewerking te markeren als mislukt of gebruik run. Cancel () om de run as canceld te markeren.
+    + Fout bericht weer geven ' omgevings naam verwachte Str, {} gevonden ' wanneer de gegeven omgevings naam geen teken reeks is.
+  + **azureml-train-automl-client**
+    + Er is een fout opgelost die verhindert dat er AutoML experimenten worden uitgevoerd op Azure Databricks clusters worden geannuleerd.
 
 
 ## <a name="2021-02-09"></a>2021-02-09
@@ -54,11 +85,11 @@ In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga
 ### <a name="azure-machine-learning-studio-notebooks-experience-january-update"></a>Ervaring met Azure Machine Learning Studio notitie blokken (update van januari)
 + **Nieuwe functies**
   + Systeem eigen prijs verkortings editor in AzureML. Gebruikers kunnen nu afprijsingen van bestanden in AzureML Studio weer geven en bewerken.
-  + De [knop uitvoeren voor scripts (. py,. R en. v)](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#run-a-notebook-or-python-script). Gebruikers kunnen nu python-, R-en bash-script uitvoeren in AzureML
-  + [Variabele Explorer](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#explore-variables-in-the-notebook). De inhoud van variabelen en gegevens frames in een pop-updeelvenster verkennen. Gebruikers kunnen eenvoudig gegevens type, grootte en inhoud controleren.
-  + [Inhouds opgave](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#navigate-with-a-toc). Navigeer naar secties van uw notitie blok, aangegeven door de kopteksten van de prijs opgave.
+  + De [knop uitvoeren voor scripts (. py,. R en. v)](./how-to-run-jupyter-notebooks.md#run-a-notebook-or-python-script). Gebruikers kunnen nu python-, R-en bash-script uitvoeren in AzureML
+  + [Variabele Explorer](./how-to-run-jupyter-notebooks.md#explore-variables-in-the-notebook). De inhoud van variabelen en gegevens frames in een pop-updeelvenster verkennen. Gebruikers kunnen eenvoudig gegevens type, grootte en inhoud controleren.
+  + [Inhouds opgave](./how-to-run-jupyter-notebooks.md#navigate-with-a-toc). Navigeer naar secties van uw notitie blok, aangegeven door de kopteksten van de prijs opgave.
   + Exporteer uw notebook als latex/HTML/py. Eenvoudig te delen notebook-bestanden maken door deze te exporteren naar LaTex, HTML of. py
-  + Intellicode. ML-krachtige resultaten bieden een verbeterde slimme functie voor automatisch [aanvullen](https://docs.microsoft.com/visualstudio/intellicode/overview).
+  + Intellicode. ML-krachtige resultaten bieden een verbeterde slimme functie voor automatisch [aanvullen](/visualstudio/intellicode/overview).
 
 + **Oplossingen en verbeteringen voor oplossingen**
   + Verbeterde laad tijden voor pagina's
@@ -971,7 +1002,7 @@ U kunt nu machine learning-notitie blokken en bestanden rechtstreeks maken, bewe
 
 Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio:
     
-| Webgebaseerd hulp programma  |     Description  |
+| Webgebaseerd hulp programma  |     Beschrijving  |
 |---|---|
 | Azure ML Studio-notebooks   |     Eerste in-class ontwerpen voor notebook-bestanden en biedt ondersteuning voor alle bewerkingen die beschikbaar zijn in de Azure ML python SDK. | 
 
@@ -1483,7 +1514,7 @@ Vanuit de Studio kunt u Azure Machine Learning assets trainen, testen, implement
 
 Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio:
 
-| Webgebaseerd hulp programma | Description | 
+| Webgebaseerd hulp programma | Beschrijving | 
 |-|-|-|
 | VM van notebook (preview-versie) | Volledig beheerd werk station in de Cloud | 
 | [Automatische machine learning](tutorial-first-experiment-automated-ml.md) (preview-versie) | Geen code-ervaring voor het automatiseren van de ontwikkeling van machine learning modellen | 

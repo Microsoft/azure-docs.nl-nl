@@ -3,17 +3,18 @@ title: Een Azure Image Builder-sjabloon maken (preview)
 description: Meer informatie over het maken van een sjabloon voor gebruik met Azure Image Builder.
 author: danielsollondon
 ms.author: danis
-ms.date: 08/13/2020
+ms.date: 02/18/2021
 ms.topic: reference
 ms.service: virtual-machines
-ms.subservice: imaging
+ms.subservice: image-builder
+ms.collection: linux
 ms.reviewer: cynthn
-ms.openlocfilehash: 9ae477dd04237e285915157615dcb6a6b841ca99
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: c2e4a2c2700af99a074dfd640177a6baefe763e2
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98678252"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101670433"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Voor beeld: een Azure Image Builder-sjabloon maken 
 
@@ -308,11 +309,28 @@ Eigenschappen aanpassen:
 - **sha256Checksum** -waarde van de sha256-controlesom van het bestand, u genereert dit lokaal en vervolgens wordt de opbouw functie voor installatie kopieën gecontroleerd en gevalideerd.
     * De sha256Checksum genereren met behulp van een Terminal op Mac/Linux-uitvoering: `sha256sum <fileName>`
 
-
-Om opdrachten uit te voeren met super gebruikers bevoegdheden, moeten ze worden voorafgegaan door `sudo` .
-
 > [!NOTE]
 > Inline-opdrachten worden opgeslagen als onderdeel van de definitie van de afbeeldings sjabloon, maar u kunt deze zien wanneer u de definitie van de installatie kopie dumpen. deze zijn ook zichtbaar voor Microsoft Ondersteuning in het geval van een ondersteunings aanvraag voor het oplossen van problemen. Als u gevoelige opdrachten of waarden hebt, wordt het ten zeerste aangeraden deze naar scripts te verplaatsen en een gebruikers-id te gebruiken voor het verifiëren van Azure Storage.
+
+#### <a name="super-user-privileges"></a>Super gebruikers privileges
+Om opdrachten uit te voeren met super gebruikers bevoegdheden, moeten ze worden voorafgegaan door `sudo` , kunt u deze toevoegen aan scripts of de inline-opdrachten gebruiken, bijvoorbeeld:
+```json
+                "type": "Shell",
+                "name": "setupBuildPath",
+                "inline": [
+                    "sudo mkdir /buildArtifacts",
+                    "sudo cp /tmp/index.html /buildArtifacts/index.html"
+```
+Voor beeld van een script met sudo dat u kunt raadplegen met behulp van scriptUri:
+```bash
+#!/bin/bash -e
+
+echo "Telemetry: creating files"
+mkdir /myfiles
+
+echo "Telemetry: running sudo 'as-is' in a script"
+sudo touch /myfiles/somethingElevated.txt
+```
 
 ### <a name="windows-restart-customizer"></a>Aanpassings venster voor Windows opnieuw starten 
 Met de aanpassings functie voor opnieuw opstarten kunt u een Windows-VM opnieuw opstarten en wachten totdat deze weer online is. Hierdoor kunt u software installeren waarvoor opnieuw moet worden opgestart.  
@@ -397,6 +415,10 @@ Ondersteuning voor besturings systeem: Linux en Windows
 Eigenschappen van bestands aanpassing:
 
 - **sourceUri** : een toegankelijk eind punt dat kan worden github of Azure Storage. U kunt slechts één bestand downloaden, niet een volledige map. Als u een map wilt downloaden, gebruikt u een gecomprimeerd bestand en comprimeert u het met de shell-of Power shell-aanpassingen. 
+
+> [!NOTE]
+> Als de sourceUri een Azure Storage-account is, ongeacht of de blob is gemarkeerd als openbaar, moet u de beheerde gebruikers identiteits machtigingen verlenen om toegang te krijgen tot de blob. Raadpleeg dit [voor beeld](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-user-assigned-identity#create-a-resource-group) om de machtigingen voor opslag in te stellen.
+
 - **doel** : dit is het volledige doelpad en de bestands naam. Elk pad en submappen waarnaar wordt verwezen moeten bestaan, de shell-of Power shell-aanpassingen gebruiken om deze vooraf in te stellen. U kunt de script Customizers gebruiken om het pad te maken. 
 
 Dit wordt ondersteund door Windows-mappen en Linux-paden, maar er zijn enkele verschillen: 
@@ -408,8 +430,6 @@ Als er een fout optreedt bij het downloaden van het bestand of in een opgegeven 
 
 > [!NOTE]
 > De bestands aanpassing is alleen geschikt voor kleine bestands downloads, < 20 MB. Voor grotere bestands downloads kunt u een script of inline opdracht gebruiken, de code gebruiken om bestanden te downloaden, zoals Linux `wget` of `curl` Windows, `Invoke-WebRequest` .
-
-Bestanden in file Customize kunnen worden gedownload van Azure Storage met [MSI](https://github.com/danielsollondon/azvmimagebuilder/tree/master/quickquickstarts/7_Creating_Custom_Image_using_MSI_to_Access_Storage).
 
 ### <a name="windows-update-customizer"></a>Windows Update aanpassing
 Deze aanpassings is gebaseerd op de [community Windows Update inrichting](https://packer.io/docs/provisioners/community-supported.html) voor de verpakker, een open-source project dat wordt beheerd door de Packer-community. Micro soft test en valideert de inrichtings functie met de service voor installatie kopie maken, en ondersteunt problemen met onderzoeken, en werkt om problemen op te lossen, maar het open-source project wordt niet officieel ondersteund door micro soft. Raadpleeg de project opslagplaats voor gedetailleerde documentatie over en hulp bij de Windows Update-inrichting.

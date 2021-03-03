@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: overview
-ms.date: 02/12/2021
+ms.date: 03/02/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e02cb23188b552b1779d184a2384835f4195762
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 8bee6a007004253106703ae2c19b940bf3de5d44
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100365375"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101649288"
 ---
 # <a name="what-is-guest-user-access-in-azure-active-directory-b2b"></a>Wat is gastgebruikerstoegang in Azure Active Directory B2B?
 
@@ -85,7 +85,7 @@ Azure AD biedt ondersteuning voor externe ID-providers, zoals Facebook, Microsof
 ![Schermopname van de pagina Id-providers](media/what-is-b2b/identity-providers.png)
 
 
-## <a name="create-a-self-service-sign-up-user-flow-preview"></a>Een selfservice voor registreren van gasten via gebruikersstromen maken (preview)
+## <a name="create-a-self-service-sign-up-user-flow"></a>Een self-service-aanmeldings stroom maken
 
 Met een selfservice voor het registreren van gebruikers kunt u een aanmeldingservaring maken voor externe gebruikers die toegang willen ontvangen tot uw apps. Als onderdeel van de registratiestroom kunt u opties bieden voor verschillende sociale of zakelijke id-providers, en informatie over de gebruiker verzamelen. Meer informatie over [selfserviceregistratie en hoe u deze kunt instellen](self-service-sign-up-overview.md).
 

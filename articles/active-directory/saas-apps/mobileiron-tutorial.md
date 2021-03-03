@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 01/12/2021
+ms.date: 02/15/2021
 ms.author: jeedes
-ms.openlocfilehash: 5561a4cdeef725eba7e48d7767aa0ee5d3c6d9cf
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: c47092b1488a79805db69308bcb9a8efde1c0d58
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625445"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101653019"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mobileiron"></a>Zelfstudie: Azure Active Directory-integratie met MobileIron
 
@@ -28,16 +28,16 @@ ms.locfileid: "98625445"
 
 ## <a name="prerequisites"></a>Vereisten
 
-Om Azure AD-integratie te configureren met MobileIron hebt u het volgende nodig:
+U hebt het volgende nodig om aan de slag te gaan:
 
-* Een Azure AD-abonnement Als u geen Azure AD-omgeving hebt, kunt u [hier](https://azure.microsoft.com/pricing/free-trial/) de proefversie van één maand krijgen.
-* Een abonnement op MobileIron waarvoor eenmalige aanmelding is ingeschakeld
+* Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
+* Mobile Iron-abonnement dat is ingeschakeld voor eenmalige aanmelding (SSO).
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* MobileIron ondersteunt door **SP en IDP** geïnitieerde eenmalige aanmelding
+* Mobile Iron ondersteunt door **SP en IDP** geïnitieerde SSO.
 
 ## <a name="add-mobileiron-from-the-gallery"></a>Mobile Iron toevoegen vanuit de galerie
 
@@ -131,7 +131,7 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
     ![Eenmalige aanmelding configureren](./media/MobileIron-tutorial/tutorial_MobileIron_adminmetadata.png)
 
 
-##  <a name="create-mobileiron-test-user"></a>Een testgebruiker maken voor MobileIron
+### <a name="create-mobileiron-test-user"></a>Een testgebruiker maken voor MobileIron
 
 Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij MobileIron, moeten ze worden ingericht voor MobileIron.  
 In het geval van MobileIron is dat een handmatige taak.
@@ -157,15 +157,16 @@ In het geval van MobileIron is dat een handmatige taak.
     d. Klik op **Gereed**.
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen
+
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-## <a name="sp-initiated"></a>Met SP geïnitieerd:
+### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
 * Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de URL voor Mobile Iron-aanmelding, waar u de aanmeldings stroom kunt initiëren.  
 
 * Ga rechtstreeks naar de URL voor Mobile Iron-aanmelding en start de aanmeldings stroom vanaf daar.
 
-##  <a name="idp-initiated"></a>Met IDP geïnitieerd:
+### <a name="idp-initiated"></a>Met IDP geïnitieerd:
 
 * Klik op **test deze toepassing** in azure Portal en u moet automatisch worden aangemeld bij de Mobile Iron waarvoor u de SSO hebt ingesteld.
 

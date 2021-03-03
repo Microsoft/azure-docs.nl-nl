@@ -5,15 +5,16 @@ author: danielsollondon
 ms.author: danis
 ms.date: 08/10/2020
 ms.topic: how-to
-ms.service: virtual-machines-linux
-ms.subservice: imaging
+ms.service: virtual-machines
+ms.subservice: image-builder
+ms.collection: linux
 ms.reviewer: danis
-ms.openlocfilehash: cbff2358dcf8685298e31f18c430c35ec7de4948
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 0b2f5f7881ab9c07320eba323e690de109eab8c7
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96437334"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101673393"
 ---
 # <a name="use-azure-image-builder-for-linux-vms-allowing-access-to-an-existing-azure-vnet"></a>Azure Image Builder voor Linux-Vm's gebruiken om toegang te krijgen tot een bestaand Azure VNET
 
@@ -75,7 +76,7 @@ Maak de resourcegroep.
 az group create -n $imageResourceGroup -l $location
 ```
 
-## <a name="configure-networking"></a>Netwerk configureren
+## <a name="configure-networking"></a>Netwerken configureren
 
 Als u geen bestaande VNET\Subnet\NSG hebt, gebruikt u het volgende script om er een te maken.
 
@@ -316,4 +317,4 @@ Als u een VNET hebt gemaakt voor deze Quick Start, kunt u het VNET verwijderen a
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over de [Galerie met gedeelde installatie kopieën van Azure](shared-image-galleries.md).
+Meer informatie over de [Galerie met gedeelde installatie kopieën van Azure](../shared-image-galleries.md).

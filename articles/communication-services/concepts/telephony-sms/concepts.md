@@ -9,16 +9,15 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: a3a082b0143d315284483b44d61f10e40c60448e
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: c66ca0b61e00ad8259b8d3e06366bfc58d304fe6
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100651082"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101660913"
 ---
 # <a name="sms-concepts"></a>Sms-concepten
 
-[!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
 [!INCLUDE [Regional Availability Notice](../../includes/regional-availability-include.md)]
 
 Met Azure Communication Services kunt u sms-tekstberichten verzenden en ontvangen met behulp van de sms-clientbibliotheken van Communication Services. Deze clientbibliotheken kunnen worden gebruikt ter ondersteuning van klantenservicescenario's, afspraakherinneringen, tweeledige verificatie en andere communicatie in real time. Met sms in Communication Services kunt u op een betrouwbare manier berichten verzenden en inzicht krijgen in de bezorgings- en responspercentages voor uw campagnes.

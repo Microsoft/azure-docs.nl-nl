@@ -11,16 +11,16 @@ author: nibaccam
 ms.author: nibaccam
 ms.date: 08/31/2020
 ms.custom: devx-track-python, data4ml
-ms.openlocfilehash: 9e4722933ec224712c8d649c0d9d850a9ee3e322
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 1c2a917712cbde95fda9321e56fe1c033ad444aa
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98872006"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101659712"
 ---
 # <a name="secure-data-access-in-azure-machine-learning"></a>Beveiligde toegang tot gegevens in Azure Machine Learning
 
-Met Azure Machine Learning kunt u eenvoudig verbinding maken met uw gegevens in de Cloud.  Het biedt een abstracte laag voor de onderliggende opslag service, zodat u veilig toegang hebt tot uw gegevens en deze kunt gebruiken zonder dat u code hoeft te schrijven die specifiek zijn voor uw opslag type. Azure Machine Learning biedt ook de volgende gegevens mogelijkheden:
+Met Azure Machine Learning kunt u eenvoudig verbinding maken met uw gegevens in de Cloud. Het biedt een abstracte laag voor de onderliggende opslag service, zodat u veilig toegang hebt tot uw gegevens en deze kunt gebruiken zonder dat u code hoeft te schrijven die specifiek zijn voor uw opslag type. Azure Machine Learning biedt ook de volgende gegevens mogelijkheden:
 
 *    Interoperabiliteit met Panda-en Spark-DataFrames
 *    Versie beheer en het bijhouden van gegevens afkomst
@@ -53,7 +53,7 @@ Het volgende diagram biedt een visuele demonstratie van deze aanbevolen werk str
 <a name="datastores"></a>
 ## <a name="connect-to-storage-with-datastores"></a>Verbinding maken met opslag met data stores
 
-Azure Machine Learning gegevens opslag Bewaar de verbindings gegevens veilig naar uw Azure-opslag, zodat u deze niet in uw scripts hoeft te coderen. [Registreer en maak een gegevens opslag](how-to-access-data.md) om eenvoudig verbinding te maken met uw opslag account en om toegang te krijgen tot de gegevens in uw onderliggende Azure Storage-service. 
+Azure Machine Learning data stores beveiligen de verbindings gegevens veilig naar uw gegevens opslag in azure, zodat u deze niet in uw scripts hoeft te coderen. [Registreer en maak een gegevens opslag](how-to-access-data.md) om eenvoudig verbinding te maken met uw opslag account en om toegang te krijgen tot de gegevens in uw onderliggende opslag service. 
 
 Ondersteunde cloud-gebaseerde opslag Services in azure die als gegevens opslag kunnen worden geregistreerd:
 
@@ -65,6 +65,9 @@ Ondersteunde cloud-gebaseerde opslag Services in azure die als gegevens opslag k
 + Azure Database for PostgreSQL
 + Databricks-bestandssysteem
 + Azure Database for MySQL
+
+>[!TIP]
+> De algemeen beschik bare functionaliteit voor het maken van opslag plaatsen vereist verificatie op basis van referenties voor toegang tot opslag Services, zoals een service-principal of SAS-token (Shared Access Signature). Deze referenties zijn toegankelijk voor gebruikers die *lezers* toegang tot de werk ruimte hebben. <br><br>Als dit een probleem is,  [maakt u een gegevens opslag die gebruikmaakt van op identiteit gebaseerde gegevens toegang tot Storage-services (preview)](how-to-identity-based-data-access.md). Deze mogelijkheid is een [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) preview-functie en kan op elk gewenst moment worden gewijzigd.
 
 <a name="datasets"></a>
 ## <a name="reference-data-in-storage-with-datasets"></a>Referentie gegevens in de opslag met gegevens sets
@@ -100,7 +103,7 @@ Met gegevens sets kunt u een aantal machine learning taken uitvoeren via een naa
 + Machine learning modellen trainen:
      + [automatische ML experimenten](how-to-use-automated-ml-for-ml-models.md)
      + de [ontwerper](tutorial-designer-automobile-price-train-score.md#import-data)
-     + [-](how-to-train-with-datasets.md)
+     + [notebooks](how-to-train-with-datasets.md)
      + [Azure Machine Learning pijp lijnen](./how-to-create-machine-learning-pipelines.md)
 + Toegang tot gegevens sets voor het afgeven van een [batch-deinterferentie](./tutorial-pipeline-batch-scoring-classification.md) in [machine learning pijp lijnen](./how-to-create-machine-learning-pipelines.md).
 + Stel een monitor voor gegevensset in voor de detectie van [gegevens drift](#drift) .

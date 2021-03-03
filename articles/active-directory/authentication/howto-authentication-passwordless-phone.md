@@ -1,6 +1,6 @@
 ---
 title: Aanmelding zonder wacht woord met de app-Azure Active Directory Microsoft Authenticator
-description: Aanmelding zonder wacht woord inschakelen voor Azure AD met behulp van de Microsoft Authenticator-app (preview)
+description: Aanmelding zonder wacht woord inschakelen voor Azure AD met behulp van de Microsoft Authenticator-app
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,14 +11,14 @@ author: justinha
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 62dea67f139857befc7ca24b8b8a105241b5c949
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: 51e6cd7efcd0e851c15975aba5ff9b99c615eb7d
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99626152"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101653470"
 ---
-# <a name="enable-passwordless-sign-in-with-the-microsoft-authenticator-app-preview"></a>Aanmelding zonder wacht woord inschakelen met de Microsoft Authenticator-app (preview)
+# <a name="enable-passwordless-sign-in-with-the-microsoft-authenticator-app"></a>Aanmelden zonder wacht woord inschakelen met de app Microsoft Authenticator 
 
 De Microsoft Authenticator-app kan worden gebruikt om u aan te melden bij een Azure AD-account zonder gebruik te maken van een wacht woord. Microsoft Authenticator maakt gebruik van verificatie op basis van een sleutel om een gebruikers referentie in te scha kelen die is gekoppeld aan een apparaat, waarbij het apparaat een pincode of biometrische gebruikt. [Windows hello voor bedrijven](/windows/security/identity-protection/hello-for-business/hello-identity-verification) maakt gebruik van een vergelijk bare technologie.
 
@@ -40,7 +40,7 @@ Als u aanmelden zonder wacht woord met de app Microsoft Authenticator wilt gebru
 - Nieuwste versie van Microsoft Authenticator geïnstalleerd op apparaten met iOS 8,0 of hoger, of Android 6,0 of hoger.
 
 > [!NOTE]
-> Als u Microsoft Authenticator aanmeldings voorbeeld zonder wacht woord hebt ingeschakeld met behulp van Azure AD Power shell, is deze ingeschakeld voor uw hele directory. Als u het gebruik van deze nieuwe methode inschakelt, wordt het Power shell-beleid vervangen. U wordt aangeraden voor alle gebruikers in uw Tenant in te scha kelen via het menu nieuwe *authenticatie methoden* , anders kunnen gebruikers die geen deel uitmaken van het nieuwe beleid zich niet meer aanmelden zonder een wacht woord.
+> Als u Microsoft Authenticator aanmelding zonder wacht woord hebt ingeschakeld met behulp van Azure AD Power shell, is deze ingeschakeld voor uw hele directory. Als u het gebruik van deze nieuwe methode inschakelt, wordt het Power shell-beleid vervangen. U wordt aangeraden voor alle gebruikers in uw Tenant in te scha kelen via het menu nieuwe *authenticatie methoden* , anders kunnen gebruikers die geen deel uitmaken van het nieuwe beleid zich niet meer aanmelden zonder een wacht woord.
 
 ## <a name="enable-passwordless-authentication-methods"></a>Verificatie methoden met een wacht woord inschakelen
 
@@ -58,7 +58,7 @@ Voer de volgende stappen uit om de verificatie methode in te scha kelen voor aan
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) met een *Algemeen beheerders* account.
 1. Zoek en selecteer *Azure Active Directory* en blader vervolgens naar beleid voor **beveiligings**  >  **verificatie methoden**  >  .
-1. Onder **Microsoft Authenticator (preview)** kiest u de volgende opties:
+1. Kies onder **Microsoft Authenticator** de volgende opties:
    1. **Inschakelen** -ja of Nee
    1. **Doel** -alle gebruikers of Selecteer gebruikers
 1. Elke toegevoegde groep of gebruiker is standaard ingeschakeld voor het gebruik van Microsoft Authenticator in zowel de modus voor zowel wacht woorden als push meldingen (' any '). Als u dit wilt wijzigen, voor elke rij:
@@ -104,7 +104,7 @@ Nadat de gebruiker aanmelding zonder wacht woord heeft gebruikt, blijft de gebru
 
 ## <a name="known-issues"></a>Bekende problemen
 
-De volgende bekende problemen bevinden zich in de huidige preview-versie.
+De volgende bekende problemen bestaan.
 
 ### <a name="not-seeing-option-for-passwordless-phone-sign-in"></a>Optie niet weer geven voor aanmelding met wacht woordloos aanmelden
 

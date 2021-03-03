@@ -8,12 +8,12 @@ ms.author: bobazile
 ms.date: 02/09/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: b258f2ef82e74073e3e4f1aa61b036d423c30300
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 432a9dab851bda65ecf8736d725b08c5e726ac16
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100422464"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101659253"
 ---
 # <a name="sip-interface-infrastructure-requirements"></a>Vereisten voor de infra structuur van de SIP-interface 
 
@@ -31,7 +31,7 @@ De vereisten voor de infra structuur voor de ondersteunde SBCs-, domein-en ander
 |Sessie rand controller (SBC)|Een ondersteunde SBC. Zie [ondersteunde SBCs](#supported-session-border-controllers-sbcs)voor meer informatie.|
 |Telefonie-Trunks die zijn verbonden met de SBC|Een of meer telefoon schachten die zijn verbonden met de SBC. Aan de ene kant maakt de SBC verbinding met de Azure communication service via de SIP-interface. De SBC kan ook verbinding maken met Telephony-entiteiten van derden, zoals PBXs, analoge telefoon adapters, enzovoort. Een PSTN-connectiviteits optie die is verbonden met de SBC, werkt. (Voor de configuratie van de PSTN-trunks naar de SBC, verwijzen wij u naar de SBC-leveranciers of-trunk-providers.)|
 |Azure-abonnement|Een Azure-abonnement dat u gebruikt voor het maken van een ACS-resource en de configuratie en verbinding met de SBC.|
-|Toegangs token voor communicatie Services|Als u aanroepen wilt maken, hebt u een geldig toegangs token met de `voip` Scope nodig. [Toegangs tokens](https://docs.microsoft.com/azure/communication-services/concepts/identity-model#access-tokens) bekijken|
+|Toegangs token voor communicatie Services|Als u aanroepen wilt maken, hebt u een geldig toegangs token met de `voip` Scope nodig. [Toegangs tokens](../identity-model.md#access-tokens) bekijken|
 |Openbaar IP-adres voor de SBC|Een openbaar IP-adres dat kan worden gebruikt om verbinding te maken met de SBC. Op basis van het type SBC kan de SBC NAT gebruiken.|
 |FQDN-naam (Fully Qualified Domain Name) voor de SBC|Een FQDN voor de SBC, waarbij het domein gedeelte van de FQDN niet overeenkomt met geregistreerde domeinen in uw Microsoft 365 of Office 365-organisatie. Zie voor meer informatie [SBC-domein namen](#sbc-domain-names).|
 |Open bare DNS-vermelding voor de SBC |Een open bare DNS-vermelding die de SBC-FQDN aan het open bare IP-adres toewijst. |
@@ -47,8 +47,8 @@ De volgende tabel bevat voor beelden van DNS-namen die zijn geregistreerd voor d
 
 |DNS-naam|Kan worden gebruikt voor SBC FQDN|Voor beelden van FQDN-namen|
 |:--- |:--- |:--- |
-contoso.com|Yes|**Geldige namen:**<br/>sbc1.contoso.com<br/>ssbcs15.contoso.com<br/>europe.contoso.com|
-|contoso.onmicrosoft.com|No|Het gebruik van *. onmicrosoft.com-domeinen wordt niet ondersteund voor SBC-namen
+contoso.com|Ja|**Geldige namen:**<br/>sbc1.contoso.com<br/>ssbcs15.contoso.com<br/>europe.contoso.com|
+|contoso.onmicrosoft.com|Nee|Het gebruik van *. onmicrosoft.com-domeinen wordt niet ondersteund voor SBC-namen
 
 Als u een Office 365-klant bent, mag de SBC-domein naam niet overeenkomen met de geregistreerde domeinen van de Office 365-Tenant. Hieronder ziet u een voor beeld van een samen werking tussen Office 365 en Azure communication service:
 
@@ -187,7 +187,7 @@ De arm tussen de Cloud media processor en ACS SDK-app van zijde of G. 722 wordt 
 
 ## <a name="supported-session-border-controllers-sbcs"></a>Ondersteunde sessie rand controllers (SBCs)
 
-De certificering wordt uitgevoerd. Ondertussen kunnen klanten teams van [gecertificeerde sessie-controllers](https://docs.microsoft.com/MicrosoftTeams/direct-routing-border-controllers)gebruiken. 
+De certificering wordt uitgevoerd. Ondertussen kunnen klanten teams van [gecertificeerde sessie-controllers](/MicrosoftTeams/direct-routing-border-controllers)gebruiken. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

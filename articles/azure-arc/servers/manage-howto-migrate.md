@@ -3,12 +3,12 @@ title: Servers voor Azure-Arc migreren tussen regio's
 description: Meer informatie over het migreren van een Azure Arc-server van de ene regio naar een andere.
 ms.date: 02/10/2021
 ms.topic: conceptual
-ms.openlocfilehash: d4e0f1e41e928ab489f7c2c167eea31785d9bc21
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 251a347205d93af715add52db293d8000438df44
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417767"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101650172"
 ---
 # <a name="how-to-migrate-azure-arc-enabled-servers-across-regions"></a>Servers voor Azure-Arc migreren tussen regio's
 
@@ -36,4 +36,4 @@ Als u een Azure Arc-server wilt migreren van de ene Azure-regio naar een andere,
 
 * Informatie over probleem oplossing vindt u in de [hand leiding problemen met verbonden machine agent oplossen](troubleshoot-agent-onboard.md).
 
-* Meer informatie over het beheren van uw machine met [Azure Policy](../../governance/policy/overview.md), voor zaken als VM- [gast configuratie](../../governance/policy/concepts/guest-configuration.md), controleert u of de computer rapporteert aan de verwachte log Analytics-werk ruimte, de bewaking met [Azure monitor inschakelen met](../../azure-monitor/insights/vminsights-enable-policy.md) het beleid voor vm's en nog veel meer.
+* Meer informatie over het beheren van uw machine met [Azure Policy](../../governance/policy/overview.md), voor zaken als VM- [gast configuratie](../../governance/policy/concepts/guest-configuration.md), controleert u of de computer rapporteert aan de verwachte log Analytics-werk ruimte, de bewaking met [Azure monitor inschakelen met](../../azure-monitor/vm/vminsights-enable-policy.md) het beleid voor vm's en nog veel meer.

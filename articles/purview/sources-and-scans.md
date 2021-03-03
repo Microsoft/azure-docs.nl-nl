@@ -8,12 +8,12 @@ ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/24/2020
 ms.custom: references_regions
-ms.openlocfilehash: 9a73f9b734d5404d07e05dd37d5ad8571c1aab2e
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 3b19fab33d0c8f53025605fd14fe65f08e660392
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100383888"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101677917"
 ---
 # <a name="supported-data-sources-and-file-types-in-azure-purview"></a>Ondersteunde gegevens bronnen en bestands typen in azure controle sfeer liggen
 
@@ -43,9 +43,12 @@ Azure controle sfeer liggen ondersteunt de volgende bronnen:
 
 De volgende bestands typen worden ondersteund voor het scannen, voor schema-extractie en-classificatie waar van toepassing:
 
-- Gestructureerde bestands indelingen die worden ondersteund door uitbrei ding: AVRO, ORC, PARQUET, CSV, JSON, PSV, SSV, TSV, TXT, XML
+- Gestructureerde bestands indelingen die worden ondersteund door uitbrei ding: AVRO, ORC, PARQUET, CSV, JSON, PSV, SSV, TSV, TXT, XML, GZIP
 - Bestands indelingen van documenten die worden ondersteund door extensie: DOC, DOCM, DOCX, DOT, ODP, ODS, ODT, PDF, POT, PPS, PPSX, PPT, PPTM, PPTX, XLC, XLS, XLSB, XLSM, XLSX, XLT
 - Controle sfeer liggen biedt ook ondersteuning voor aangepaste bestands extensies en aangepaste parsers.
+ 
+> [!Note]
+> Elk gzip-bestand moet worden toegewezen aan één CSV-bestand in. Voor gzip-bestanden gelden systeem-en aangepaste classificatie regels. Het scannen van een gzip-bestand dat is toegewezen aan meerdere bestanden in of een ander bestands type dan CSV, wordt momenteel niet ondersteund. 
 
 ## <a name="sampling-within-a-file"></a>Bemonstering in een bestand
 

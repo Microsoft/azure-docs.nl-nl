@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 12/02/2020
+ms.date: 02/22/2021
 ms.author: mnayak
-ms.openlocfilehash: 2c6295db96f951abd1fd069535b98639e723d93a
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: f445eab65e8d2448e57bad19c52a4b72732016bb
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98217563"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101672926"
 ---
 # <a name="configure-routing-preference-for-a-public-ip-address-using-the-azure-portal"></a>Routerings voorkeur configureren voor een openbaar IP-adres met behulp van de Azure Portal
 
@@ -32,20 +32,26 @@ In dit artikel wordt beschreven hoe u [routerings voorkeur](./routing-preference
 
 De routerings voorkeur voor openbaar IP-adres is standaard ingesteld op het micro soft Global Network voor alle Azure-Services en kan worden gekoppeld aan elke Azure-service.
 
-> [!IMPORTANT]
-> De voor keuren voor route ring is momenteel beschikbaar als open bare preview.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
-
 Als u nog geen abonnement op Azure hebt, maak dan nu een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 ## <a name="create-a-public-ip-address-with-a-routing-preference"></a>Een openbaar IP-adres maken met een routerings voorkeur
-1. Meld u aan bij de [Azure-portal](https://preview.portal.azure.com/).
-2. Selecteer **Een resource maken**. 
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+2. Selecteer **Een resource maken**.
 3. Typ *openbaar IP-adres* in het zoekvak.
 3. Selecteer **openbaar IP-adres** in de zoek resultaten. Selecteer vervolgens op de pagina **openbaar IP-adres** **maken**.
-3. Selecteer **Internet** in de **Voorkeurs instellingen voor route ring** .
+1. Selecteer voor SKU de optie **standaard**.
+1. Selecteer voor **routerings voorkeur** **Internet**.
 
-      ![Een openbaar IP-adres maken](./media/routing-preference-portal/pip-new.png)
+      ![Een openbaar IP-adres maken](./media/routing-preference-portal/public-ip-new.png)
+1. Voer in het gedeelte **IP-adres configuratie van IPv4** de volgende gegevens in of Selecteer deze:
+
+    | Instelling | Waarde |
+    | ------- | ----- |
+    | Abonnement | Selecteer uw abonnement.|
+    | Resourcegroep | Selecteer **nieuwe maken**, Voer *RoutingPreferenceResourceGroup* in en selecteer **OK**. |
+    | Locatie | Selecteer **VS - oost**.|
+    | Beschikbaarheidszone | Behoud de standaard waarde- **zone-redundant**. |
+1. Selecteer **Maken**.
 
     > [!NOTE]
     > Openbare IP-adressen worden gemaakt met een IPv4- of IPv6-adres. Routerings voorkeur ondersteunt momenteel echter alleen IPV4.

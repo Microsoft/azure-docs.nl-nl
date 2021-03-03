@@ -15,12 +15,12 @@ ms.date: 04/07/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9c8f5a75fea6ddd85026407fe4784c8a4589e33
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 70e5c7e5fa428d5a71ca1a7468bbaab2fc94078e
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89278306"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101643834"
 ---
 # <a name="hybrid-identity-directory-integration-tools-comparison"></a>Vergelijking van hulpprogramma’s voor directory-integratie voor hybride identiteit
 In de afgelopen jaren hebben de hulpprogramma's voor directory-integratie zich enorm ontwikkeld.  
@@ -28,9 +28,9 @@ In de afgelopen jaren hebben de hulpprogramma's voor directory-integratie zich e
 
 - [FIM](/previous-versions/windows/desktop/forefront-2010/ff182370(v=vs.100)) en [MIM](/microsoft-identity-manager/microsoft-identity-manager-2016) worden nog steeds ondersteund en scha kelen voornamelijk de synchronisatie tussen on-premises systemen.   De [FIM Windows Azure AD-connector](/previous-versions/mim/dn511001(v=ws.10)) wordt ondersteund in FIM en MIM, maar wordt niet aanbevolen voor nieuwe implementaties: klanten met on-premises bronnen zoals Notes of SAP HCM moeten MIM Active Directory Domain Services (AD DS) gebruiken en vervolgens Azure AD Connect sync of Azure AD Connect Cloud inrichting gebruiken om te synchroniseren vanaf AD DS met Azure AD.
 - [Azure AD Connect-synchronisatie](how-to-connect-sync-whatis.md) bevat de onderdelen en functionaliteit die eerder in DirSync en Azure AD Sync zijn uitgebracht, voor het synchroniseren tussen AD DS forests en Azure AD.  
-- [Azure AD Connect Cloud inrichting](../cloud-provisioning/what-is-cloud-provisioning.md) is een nieuwe micro soft-agent voor synchronisatie van AD DS naar Azure AD, die nuttig is voor scenario's zoals fusie en acquisitie, waarbij de AD-forests van het overgenomen bedrijf zijn geïsoleerd van de AD-forests van het bovenliggende bedrijf.
+- [Azure AD Connect Cloud inrichting](../cloud-sync/what-is-cloud-sync.md) is een nieuwe micro soft-agent voor synchronisatie van AD DS naar Azure AD, die nuttig is voor scenario's zoals fusie en acquisitie, waarbij de AD-forests van het overgenomen bedrijf zijn geïsoleerd van de AD-forests van het bovenliggende bedrijf.
 
-Zie het artikel [Wat is Azure AD Connect Cloud inrichting?](../cloud-provisioning/what-is-cloud-provisioning.md) voor meer informatie over de verschillen tussen Azure AD Connect synchronisatie en Azure AD Connect Cloud inrichting?
+Zie het artikel [Wat is Azure AD Connect Cloud inrichting?](../cloud-sync/what-is-cloud-sync.md) voor meer informatie over de verschillen tussen Azure AD Connect synchronisatie en Azure AD Connect Cloud inrichting?
 
 ## <a name="next-steps"></a>Volgende stappen
 Lees meer over het [integreren van uw on-premises identiteiten met Azure Active Directory](whatis-hybrid-identity.md).

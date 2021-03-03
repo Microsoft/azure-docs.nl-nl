@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 654e1c163a16f427958320ea081c38338e0ab4e1
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 4206ba7617032e34310682d1468e6b1b661b8c8a
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98725389"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101648584"
 ---
 # <a name="transition-to-governed-collaboration-with-azure-active-directory-b2b-collaboration"></a>Overgang naar beheerste samen werking met Azure Active Directory B2B-samen werking 
 
@@ -100,7 +100,7 @@ Bepaal wie gast gebruikers kunnen uitnodigen om toegang te krijgen tot bronnen.
 
 Als u gebruikmaakt van het beheer van rechten van Azure AD, kunt u vragen voor externe gebruikers configureren om te beantwoorden. De vragen worden vervolgens weer gegeven aan goed keurders om hen te helpen bij het nemen van een beslissing. U kunt verschillende sets met vragen configureren voor elk [toegangs pakket beleid](../governance/entitlement-management-access-package-approval-policy.md) zodat goed keurders relevante informatie kunnen hebben voor de toegang die ze goed keuren. Als bijvoorbeeld één toegangs pakket bedoeld is voor toegang tot de leverancier, kan de aanvrager worden gevraagd om het leveranciers contract nummer. Een ander toegangs pakket dat is bedoeld voor leveranciers, kan vragen om het land van oorsprong.
 
-Als u een Self-Service Portal gebruikt, kunt u [API-connectors](../external-identities/api-connectors-overview.md) gebruiken om extra kenmerken over gebruikers te verzamelen wanneer ze zich registreren. U kunt deze kenmerken vervolgens gebruiken om toegang toe te wijzen. Als u bijvoorbeeld tijdens het registratie proces de leveranciers-ID verzamelt, kunt u dat kenmerk gebruiken om ze dynamisch toe te wijzen aan een groep of toegangs pakket voor die leverancier. U kunt aangepaste kenmerken in de Azure Portal maken en deze gebruiken in uw eigen service-aanmeld gebruikers stromen. U kunt deze kenmerken ook lezen en schrijven met behulp van de [Microsoft Graph-API](../../active-directory-b2c/manage-user-accounts-graph-api.md). 
+Als u een Self-Service Portal gebruikt, kunt u [API-connectors](../external-identities/api-connectors-overview.md) gebruiken om extra kenmerken over gebruikers te verzamelen wanneer ze zich registreren. U kunt deze kenmerken vervolgens gebruiken om toegang toe te wijzen. Als u bijvoorbeeld tijdens het registratie proces de leveranciers-ID verzamelt, kunt u dat kenmerk gebruiken om ze dynamisch toe te wijzen aan een groep of toegangs pakket voor die leverancier. U kunt aangepaste kenmerken in de Azure Portal maken en deze gebruiken in uw eigen service-aanmeld gebruikers stromen. U kunt deze kenmerken ook lezen en schrijven met behulp van de [Microsoft Graph-API](../../active-directory-b2c/microsoft-graph-operations.md). 
 
 ### <a name="troubleshoot-invitation-redemption-to-azure-ad-users"></a>Problemen met inwisseling van een uitnodiging met Azure AD-gebruikers oplossen
 

@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: spark
 ms.date: 04/15/2020
-ms.openlocfilehash: 04faaa05cf51f740958238ece0a9a211c43fca41
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: a4512a8f75d59f617058a50846d7578a90b9d062
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98935450"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101675818"
 ---
 # <a name="tutorial-create-an-apache-spark-application-with-intellij-using-a-synapse-workspace"></a>Zelfstudie: een Apache Spark-toepassing met IntelliJ maken met behulp van een Synapse-werkruimte
 
@@ -34,7 +34,7 @@ In deze zelfstudie leert u het volgende:
 ## <a name="prerequisites"></a>Vereisten
 
 - [IntelliJ IDEA-communityversie](https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows&code=IIC).
-- Invoegtoepassing Azure-toolkit 3.27.0-2019.2 – Installeren vanuit [Opslagplaats voor IntelliJ-invoegtoepassingen](/java/azure/intellij/azure-toolkit-for-intellij-installation?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
+- Invoegtoepassing Azure-toolkit 3.27.0-2019.2 – Installeren vanuit [Opslagplaats voor IntelliJ-invoegtoepassingen](/java/azure/intellij/azure-toolkit-for-intellij-installation)
 - [JDK (versie 1.8)](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 - Scala-invoegtoepassing – Installeren vanuit [Opslagplaats voor IntelliJ-invoegtoepassingen](../../hdinsight/spark/apache-spark-intellij-tool-plugin.md#install-scala-plugin-for-intellij-idea).
 - De volgende vereiste geldt alleen voor Windows-gebruikers:
@@ -145,7 +145,7 @@ Nadat u een Scala-toepassing hebt gemaakt, kunt u deze extern uitvoeren.
     |Hoofdklassenaam|De standaardwaarde is de hoofdklasse uit het geselecteerde bestand. U kunt de klasse wijzigen door het beletselteken ( **...** ) te selecteren en een andere klasse te kiezen.|
     |Taakconfiguraties|U kunt de standaardsleutel en -waarden wijzigen. Zie [Apache Livy REST API](http://livy.incubator.apache.org./docs/latest/rest-api.html) voor meer informatie.|
     |Opdrachtregelargumenten|U kunt voor de hoofdklasse argumenten invoeren, gescheiden door een spatie, indien nodig.|
-    |JAR’s en bestanden waarnaar wordt verwezen|U kunt de paden invoeren voor de JAR’s en bestanden waarnaar wordt verwezen, indien aanwezig. U kunt ook bladeren door bestanden in het virtuele Azure-bestandssysteem, dat momenteel alleen ADLS Gen2-cluster ondersteunt. Voor meer informatie: [Apache Spark-configuratie]https://spark.apache.org/docs/2.4.5/configuration.html#runtime-environment) en [Resources uploaden naar cluster](../../storage/blobs/storage-quickstart-blobs-storage-explorer.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).|
+    |JAR’s en bestanden waarnaar wordt verwezen|U kunt de paden invoeren voor de JAR’s en bestanden waarnaar wordt verwezen, indien aanwezig. U kunt ook bladeren door bestanden in het virtuele Azure-bestandssysteem, dat momenteel alleen ADLS Gen2-cluster ondersteunt. Voor meer informatie: [Apache Spark-configuratie]https://spark.apache.org/docs/2.4.5/configuration.html#runtime-environment) en [Resources uploaden naar cluster](../../storage/blobs/storage-quickstart-blobs-storage-explorer.md).|
     |Opslag van taakuploads|Vouw uit om aanvullende opties te onthullen.|
     |Opslagtype|Selecteer **Azure Blob gebruiken voor uploaden** of **Standaardopslagaccount van cluster gebruiken voor uploaden** in de vervolgkeuzelijst.|
     |Opslagaccount|Voer uw opslagaccount in.|

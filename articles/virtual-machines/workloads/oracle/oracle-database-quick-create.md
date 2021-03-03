@@ -2,18 +2,18 @@
 title: Een Oracle-database maken in een Azure-VM | Microsoft Docs
 description: Richt snel een Oracle Database 12c-database in in uw Azure-omgeving.
 author: dbakevlar
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines
+ms.subservice: oracle
+ms.collection: linux
 ms.topic: quickstart
 ms.date: 10/05/2020
 ms.author: kegorman
-ms.reviewer: cynthn
-ms.openlocfilehash: a202c8d176d6b9a8893a7bc5aaad6771942dda04
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: ec6a8382e2c0ce2cb359a62dd3f80fc977c4b1c2
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99063059"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101674654"
 ---
 # <a name="create-an-oracle-database-in-an-azure-vm"></a>Een Oracle-database maken in een Azure-VM
 
@@ -188,16 +188,16 @@ In deze taak moet u een aantal externe eind punten voor de data base-listener en
    echo "/dev/sdc1               /u02                    ext4    defaults        0 0" >> /etc/fstab
    ```
    
-10. Werk het bestand ***bestand/etc/hosts** _ bij met het open bare IP-adres en de hostnaam.
+10. Werk het ***bestand/etc/hosts*** -bestand bij met het open bare IP-adres en de hostnaam.
 
-    Wijzig het _*_open bare IP-adres en de VMname_*_ om uw werkelijke waarden weer te geven:
+    Wijzig het ***open bare IP-adres en de VMname*** om uw werkelijke waarden weer te geven:
   
     ```bash
     echo "<Public IP> <VMname>.eastus.cloudapp.azure.com <VMname>" >> /etc/hosts
     ```
 11. Het hostname-bestand bijwerken
     
-    Gebruik de volgende opdracht om de domein naam van de virtuele machine toe te voegen aan het bestand _ */etc/hostname**. Hierbij wordt ervan uitgegaan dat u de resource groep en VM in de regio **oostus** hebt gemaakt:
+    Gebruik de volgende opdracht om de domein naam van de virtuele machine toe te voegen aan het **/etc/hostname** -bestand. Hierbij wordt ervan uitgegaan dat u de resource groep en VM in de regio **oostus** hebt gemaakt:
     
     ```bash
     sed -i 's/$/\.eastus\.cloudapp\.azure\.com &/' /etc/hostname

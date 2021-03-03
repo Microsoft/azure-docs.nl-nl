@@ -7,19 +7,19 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/14/2020
+ms.date: 02/23/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: ad9bd8dec94660d94cf3a106d31dafdad06f47a8
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 85d00b393ad169764a2f26e324295308ef49d3ba
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97584507"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101646572"
 ---
-# <a name="configure-session-behavior-in-azure-active-directory-b2c"></a>Sessie gedrag in Azure Active Directory B2C configureren
+# <a name="configure-session-behavior-in-azure-active-directory-b2c"></a>Sessiegedrag in Azure Active Directory B2C configureren
 
 [!INCLUDE [active-directory-b2c-choose-user-flow-or-custom-policy](../../includes/active-directory-b2c-choose-user-flow-or-custom-policy.md)]
 
@@ -71,9 +71,9 @@ De toepassings sessie kan een op cookies gebaseerde sessie zijn die is opgeslage
 
 U kunt het gedrag van de Azure AD B2C-sessie configureren, met inbegrip van:
 
-- **Levens duur van de web-app (minuten)** : de hoeveelheid tijd die de cookie van de Azure AD B2C sessie wordt opgeslagen in de browser van de gebruiker nadat de verificatie is geslaagd. U kunt de tijds duur van de sessie instellen op een waarde tussen 15 en 720 minuten.
+- **Levens duur van de web-app (minuten)** : de hoeveelheid tijd die de cookie van de Azure AD B2C sessie wordt opgeslagen in de browser van de gebruiker nadat de verificatie is geslaagd. U kunt de levens duur van de sessie instellen op een waarde tussen 15 en 720 minuten.
 
-- **Sessietime-out van web-app** : Hiermee wordt aangegeven hoe een sessie wordt uitgebreid met de instelling voor de duur van de sessie en de instelling aangemeld blijven.
+- **Sessietime-out van web-app** : Hiermee wordt aangegeven hoe een sessie wordt uitgebreid met de instelling voor de duur van de sessie of de instelling aangemeld blijven (KMSI).
   - **Rolling** -geeft aan dat de sessie wordt uitgebreid telkens wanneer de gebruiker een verificatie op basis van cookies uitvoert (standaard).
   - **Absoluut** : geeft aan dat de gebruiker na de opgegeven tijds periode opnieuw moet worden geverifieerd.
 
@@ -82,15 +82,13 @@ U kunt het gedrag van de Azure AD B2C-sessie configureren, met inbegrip van:
   - **Toepassing** : met deze instelling kunt u een gebruikers sessie alleen voor een toepassing, onafhankelijk van andere toepassingen, onderhouden. U kunt deze instelling bijvoorbeeld gebruiken als u wilt dat de gebruiker zich aanmeldt bij Contoso apotheek, ongeacht of de gebruiker al is aangemeld bij Contoso-boodschappen.
   - **Beleid** : met deze instelling kunt u een gebruikers sessie alleen voor een gebruikers stroom onderhouden, onafhankelijk van de toepassingen die er gebruik van maken. Als de gebruiker zich al heeft aangemeld en een MFA-stap (multi-factor Authentication) heeft voltooid, kan de gebruiker toegang krijgen tot hogere beveiligings onderdelen van meerdere toepassingen, zolang de sessie die aan de gebruikers stroom is gekoppeld, niet verloopt.
   - **Uitgeschakeld** : deze instelling zorgt ervoor dat de gebruiker tijdens elke uitvoering van het beleid de hele gebruikers stroom uitvoert.
-::: zone pivot="b2c-custom-policy"
-- **Aangemeld blijven** : de levens duur van de sessie uitbreiden door het gebruik van een permanente cookie. De sessie blijft actief nadat de gebruiker de browser heeft gesloten en opnieuw opent. De sessie wordt alleen ingetrokken wanneer een gebruiker zich afmeldt. De functie aangemeld blijven is alleen van toepassing op aanmelden met lokale accounts. De functie aangemeld blijven heeft voor rang op de duur van de sessie. Als de functie aangemeld blijven is ingeschakeld en de gebruiker deze selecteert, wordt in deze functie bepaald wanneer de sessie verloopt. 
-::: zone-end
+- **Aangemeld blijven (KMSI)** : Hiermee breidt u de levens duur van de sessie uit door het gebruik van een permanente cookie. Als deze functie is ingeschakeld en de gebruiker deze selecteert, blijft de sessie actief, zelfs nadat de gebruiker de browser heeft gesloten en opnieuw opent. De sessie wordt alleen ingetrokken wanneer de gebruiker zich afmeldt. De functie KMSI is alleen van toepassing op aanmelden met lokale accounts. De functie KMSI heeft voor rang op de levens duur van de sessie.
 
 ::: zone pivot="b2c-user-flow"
 
 Het gedrag van de sessie configureren:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Zorg ervoor dat u de map met uw Azure AD B2C-Tenant gebruikt door het filter **Directory + abonnement** te selecteren in het bovenste menu en de map te kiezen die uw Azure AD B2C Tenant bevat.
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Selecteer **gebruikers stromen**.
@@ -112,12 +110,43 @@ Als u uw sessie-en SSO-configuraties wilt wijzigen, voegt u een **UserJourneyBeh
    <SessionExpiryInSeconds>86400</SessionExpiryInSeconds>
 </UserJourneyBehaviors>
 ```
+::: zone-end
 
 ## <a name="enable-keep-me-signed-in-kmsi"></a>Aangemeld blijven inschakelen (KMSI)
 
-U kunt de functie aangemeld blijven inschakelen voor gebruikers van uw web-en systeem eigen toepassingen met lokale accounts in uw Azure Active Directory B2C (Azure AD B2C)-map. Deze functie verleent toegang aan gebruikers die terugkeren naar uw toepassing zonder dat ze de gebruikers naam en het wacht woord opnieuw moeten invoeren. Deze toegang wordt ingetrokken wanneer een gebruiker zich afmeldt.
+U kunt de functie KMSI inschakelen voor gebruikers van uw web-en systeem eigen toepassingen die lokale accounts hebben in uw Azure AD B2C Directory. Wanneer u de functie inschakelt, kunnen gebruikers ervoor kiezen om aangemeld te blijven, zodat de sessie actief blijft nadat de browser is gesloten. Vervolgens kunnen ze de browser opnieuw openen zonder dat u wordt gevraagd om de gebruikers naam en het wacht woord opnieuw in te voeren. Deze toegang wordt ingetrokken wanneer een gebruiker zich afmeldt.
 
 ![Voor beeld van aanmeldings pagina voor aanmelding met het selectie vakje aangemeld blijven](./media/session-behavior/keep-me-signed-in.png)
+
+
+::: zone pivot="b2c-user-flow"
+
+KMSI kan worden geconfigureerd op het niveau van de afzonderlijke gebruikers stroom. Voordat u KMSI inschakelt voor uw gebruikers stromen, moet u rekening houden met het volgende:
+
+- KMSI wordt alleen ondersteund voor de **Aanbevolen** versies van registratie en aanmelding (Susi), aanmelding en profiel bewerkings gebruikers stromen. Als u momenteel **een preview-** versie van de **standaard** -of oudere versies van deze gebruikers stromen hebt en u KMSI wilt inschakelen, moet u nieuwe, **Aanbevolen** versies van deze gebruikers stromen maken.
+- KMSI wordt niet ondersteund bij het opnieuw instellen van het wacht woord of het registreren van gebruikers stromen.
+- Als u KMSI wilt inschakelen voor alle toepassingen in uw Tenant, raden we u aan om KMSI in te scha kelen voor alle gebruikers stromen in uw Tenant. Omdat een gebruiker tijdens een sessie meerdere beleids regels kan weer gegeven, is het mogelijk dat ze een KMSI hebben die niet is ingeschakeld, waardoor de KMSI cookie uit de sessie wordt verwijderd.
+- KMSI moet niet zijn ingeschakeld op open bare computers.
+
+### <a name="configure-kmsi-for-a-user-flow"></a>KMSI voor een gebruikers stroom configureren
+
+KMSI inschakelen voor uw gebruikers stroom:
+
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+2. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-Tenant bevat. Selecteer het filter **Directory + abonnement**   in het bovenste menu en kies de map die uw Azure AD B2C Tenant bevat.
+3. Kies **alle services**   in de linkerbovenhoek van de Azure Portal en zoek en selecteer **Azure AD B2C**.
+4. Selecteer **gebruikers stromen (beleid)**.
+5. Open de gebruikers stroom die u eerder hebt gemaakt.
+6. Selecteer **Eigenschappen**.
+
+7. Onder  **gedrag van sessie** selecteert u aanmelden **bij sessie inschakelen**. Voer een waarde tussen 1 en 90 **in om het** aantal dagen op te geven dat een sessie geopend mag blijven.
+
+
+   ![Aangemelde sessie inschakelen](media/session-behavior/enable-keep-me-signed-in.png)
+
+::: zone-end
+
+::: zone pivot="b2c-custom-policy"
 
 Gebruikers moeten deze optie niet inschakelen op open bare computers.
 
@@ -293,7 +322,7 @@ Na afmelden wordt de gebruiker omgeleid naar de URI die is opgegeven in de `post
 
 Een ID-token in afmeldings aanvragen vereisen:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Zorg ervoor dat u de map met uw Azure AD B2C-Tenant gebruikt door het filter **Directory + abonnement** te selecteren in het bovenste menu en de map te kiezen die uw Azure AD B2C Tenant bevat.
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Selecteer **gebruikers stromen**.
@@ -321,7 +350,7 @@ Als u een ID-token in afmeldings aanvragen wilt vereisen, voegt u een **UserJour
 
 De afmeldings-URL van de toepassing configureren:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Zorg ervoor dat u de map met uw Azure AD B2C-Tenant gebruikt door het filter **Directory + abonnement** te selecteren in het bovenste menu en de map te kiezen die uw Azure AD B2C Tenant bevat.
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Selecteer **app-registraties** en selecteer vervolgens uw toepassing.

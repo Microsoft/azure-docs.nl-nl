@@ -7,21 +7,18 @@ manager: celestedg
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 05/06/2020
+ms.date: 03/02/2021
 ms.author: mimart
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cddb40a6a43c38079906699d9fa4865c4daf558
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: a199c207e8ea35f1471df9bfd0c4134551b9995f
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94837087"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101653487"
 ---
-# <a name="language-customization-in-azure-active-directory-preview"></a>Taal aanpassing in Azure Active Directory (preview-versie)
-
-> [!NOTE]
-> Aanmelden via self-service is een open bare preview-functie van Azure Active Directory. Zie [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+# <a name="language-customization-in-azure-active-directory"></a>Taal aanpassing in Azure Active Directory
 
 Door de taal aanpassing in Azure Active Directory (Azure AD) kan uw gebruikers stroom voorzien van verschillende talen die aan de behoeften van uw gebruiker voldoen. Micro soft biedt de vertalingen voor [36 talen](#supported-languages). Zelfs als uw ervaring slechts voor één taal wordt gegeven, kunt u de kenmerk namen aanpassen op de pagina kenmerk verzameling.
 
@@ -39,7 +36,7 @@ Door taal aanpassing kunt u een wille keurige teken reeks in uw gebruikers stroo
 1. Meld u als een Azure AD-administrator aan bij de [Azure Portal](https://portal.azure.com).
 2. Onder **Azure-Services** selecteert u **Azure Active Directory**.
 3. Selecteer in het linkermenu **externe identiteiten**.
-4. **Gebruikers stromen selecteren (preview-versie)**.
+4. Selecteer **gebruikers stromen**.
 3. Selecteer de gebruikers stroom die u wilt inschakelen voor vertalingen.
 4. Selecteer **talen**.
 5. Selecteer op de pagina **talen** voor de gebruikers stroom de taal die u wilt aanpassen.

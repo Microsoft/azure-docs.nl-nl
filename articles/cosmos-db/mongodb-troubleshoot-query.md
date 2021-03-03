@@ -5,15 +5,15 @@ author: timsander1
 ms.service: cosmos-db
 ms.topic: troubleshooting
 ms.subservice: cosmosdb-mongo
-ms.date: 10/12/2020
+ms.date: 03/02/2021
 ms.author: tisande
 ms.reviewer: sngun
-ms.openlocfilehash: 88ef081c75a64b5cb7517ba6994834b3a64a0e6f
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 5302cb7bb3f4683d200f6f9ea106991bb934fc17
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340886"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101659899"
 ---
 # <a name="troubleshoot-query-issues-when-using-the-azure-cosmos-db-api-for-mongodb"></a>Problemen met query's oplossen bij het gebruik van de Azure Cosmos DB-API voor MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -30,7 +30,7 @@ Als u de RU-kosten van een query reduceert, vermindert u doorgaans ook de latent
 In dit artikel vindt u voor beelden die u opnieuw kunt maken met behulp van de [voedings gegevensset](https://github.com/CosmosDB/labs/blob/master/dotnet/setup/NutritionData.json).
 
 > [!NOTE] 
-> In dit artikel wordt ervan uitgegaan dat u versie 3,6 van Azure Cosmos DB ' s API voor MongoDB gebruikt. Sommige query's die slecht in versie 3,2 worden uitgevoerd, hebben aanzienlijke verbeteringen in versie 3,6. Voer een upgrade uit naar versie 3,6 door een [ondersteunings aanvraag](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)in te dienen.
+> In dit artikel wordt ervan uitgegaan dat u de API van Azure Cosmos DB gebruikt voor MongoDB-accounts met versie 3,6 en hoger. Sommige query's die slecht in versie 3,2 worden uitgevoerd, hebben aanzienlijke verbeteringen in versies 3.6 +. Voer een upgrade uit naar versie 3,6 door een [ondersteunings aanvraag](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)in te dienen.
 
 ## <a name="use-explain-command-to-get-metrics"></a>$explain opdracht gebruiken om metrische gegevens op te halen
 
@@ -113,7 +113,7 @@ db.coll.find({foodGroup: "Baby Foods"}).explain({"executionStatistics": true })
 
 De `$explain` uitvoer van de opdracht is lang en bevat gedetailleerde informatie over het uitvoeren van query's. Over het algemeen zijn er echter enkele secties waarin u zich kunt richten bij het optimaliseren van de query prestaties:
 
-| Gegevens | Beschrijving | 
+| Metrisch | Beschrijving | 
 | ------ | ----------- |
 | `timeInclusiveMS` | Query wachttijd back-end |
 | `pathsIndexed` | Bevat indexen die de query gebruikt | 
@@ -348,4 +348,4 @@ De waarde `estimatedDelayFromRateLimitingInMilliseconds` geeft een beeld van de 
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Problemen met query prestaties oplossen (SQL-API)](troubleshoot-query-performance.md)
-* [Indexering beheren in de API van Azure Cosmos DB voor MongoDB](mongodb-indexing.md)
+* [Indexering beheren voor de API voor MongoDB van Azure Cosmos DB](mongodb-indexing.md)

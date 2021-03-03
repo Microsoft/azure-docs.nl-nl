@@ -3,16 +3,16 @@ title: NP-serie-Azure Virtual Machines
 description: Specificaties voor de virtuele machines in de NP-serie.
 author: vikancha-MSFT
 ms.service: virtual-machines
-ms.subservice: sizes
+ms.subservice: hpc
 ms.topic: conceptual
 ms.date: 02/09/2021
 ms.author: vikancha
-ms.openlocfilehash: 0b73697097e13f26a83eeaa72837fc00c31ef826
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 8d350e248d09f29496f4461b902eba96d8375732
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100557193"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101668279"
 ---
 # <a name="np-series-preview"></a>NP-serie (preview-versie)
 

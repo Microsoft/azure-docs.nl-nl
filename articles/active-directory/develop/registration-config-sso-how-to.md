@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 07/15/2019
 ms.author: ryanwi
 ROBOTS: NOINDEX
-ms.openlocfilehash: ba1e4305785d0ff4db85f805a780719ce179ab94
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 60a07145e38c19f577ad9864efb599e7b244aa83
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99050293"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101653708"
 ---
 # <a name="how-to-configure-single-sign-on-for-an-application"></a>Eenmalige aanmelding voor een toepassing configureren
 
@@ -43,4 +43,4 @@ Zie [SSO van meerdere apps inschakelen in Ios](../azuread-dev/howto-v1-enable-ss
 
 [Machtigingen en toestemming in het micro soft Identity-platform](./v2-permissions-and-consent.md)<br>
 
-[AzureAD micro soft Q&A](https://docs.microsoft.com/answers/topics/azure-active-directory.html)
+[AzureAD micro soft Q&A](/answers/topics/azure-active-directory.html)

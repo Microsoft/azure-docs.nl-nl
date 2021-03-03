@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: alsin
-ms.openlocfilehash: 13388bf289c1d10a2e7da04a4dd5d26be109535e
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: df5133ad4bb3155afdc9d43e595591d9cfda4ea0
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98697816"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101644439"
 ---
 # <a name="troubleshoot-common-automanage-onboarding-errors"></a>Veelvoorkomende fouten bij het onboarden van problemen oplossen
 Automatisch beheer kan een machine niet op de service voorbereiden. In dit document wordt uitgelegd hoe u implementatie fouten oplost, delen enkele veelvoorkomende oorzaken van het mislukken van implementaties en een beschrijving van mogelijke volgende stappen bij een oplossing.
@@ -37,7 +37,7 @@ Als er geen mislukte implementaties worden weer geven in de resource groep of he
 Fout |  Oplossing
 :-----|:-------------|
 Fout met onvoldoende machtigingen voor het account voor automanaged | Dit kan gebeuren als u onlangs een abonnement met een nieuwe account voor automanage hebt verplaatst naar een nieuwe Tenant. Stappen om dit op te lossen, vindt u [hier](./repair-automanage-account.md).
-Werkruimte regio komt niet overeen met vereisten voor de toewijzing van regio's | Automatisch beheer kan de computer niet vrijgeven, maar de Log Analytics werk ruimte waaraan de machine momenteel is gekoppeld, is niet toegewezen aan een ondersteunde automatiserings regio. Zorg ervoor dat uw bestaande Log Analytics-werk ruimte en het Automation-account zich in een [ondersteunde regio toewijzing](https://docs.microsoft.com/azure/automation/how-to/region-mappings)bevinden.
+Werkruimte regio komt niet overeen met vereisten voor de toewijzing van regio's | Automatisch beheer kan de computer niet vrijgeven, maar de Log Analytics werk ruimte waaraan de machine momenteel is gekoppeld, is niet toegewezen aan een ondersteunde automatiserings regio. Zorg ervoor dat uw bestaande Log Analytics-werk ruimte en het Automation-account zich in een [ondersteunde regio toewijzing](../automation/how-to/region-mappings.md)bevinden.
 De toewijzing is mislukt; Er is geen aanvullende informatie beschikbaar. | Open een aanvraag met Microsoft Azure ondersteuning.
 
 ## <a name="next-steps"></a>Volgende stappen
@@ -46,4 +46,3 @@ De toewijzing is mislukt; Er is geen aanvullende informatie beschikbaar. | Open 
 
 > [!div class="nextstepaction"]
 > [Schakel automanage in voor virtuele machines in de Azure Portal](quick-create-virtual-machines-portal.md)
-

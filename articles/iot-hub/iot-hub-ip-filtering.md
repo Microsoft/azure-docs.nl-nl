@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/19/2020
 ms.author: jlian
-ms.openlocfilehash: c6544e8ac00744602476207a89567aea5afe5b1d
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 6f83421d4ee56d56875e13ffbdd8ac9dbbf4b6bb
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98632362"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101656360"
 ---
 # <a name="use-ip-filters"></a>IP-filters gebruiken
 
@@ -20,7 +20,7 @@ Beveiliging is een belang rijk aspect van elke IoT-oplossing op basis van Azure 
 
 ## <a name="when-to-use"></a>Wanneer gebruikt u dit?
 
-Gebruik IP-filter om alleen verkeer van een opgegeven IP-adres bereik te ontvangen en om alles te weigeren. U gebruikt bijvoorbeeld uw IoT-hub met [Azure Express route](https://azure.microsoft.com/documentation/articles/expressroute-faqs/#supported-services) om particuliere verbindingen te maken tussen een IOT-hub en uw on-premises infra structuur.
+Gebruik IP-filter om alleen verkeer van een opgegeven IP-adres bereik te ontvangen en om alles te weigeren. U gebruikt bijvoorbeeld uw IoT-hub met [Azure Express route](../expressroute/expressroute-faqs.md#supported-services) om particuliere verbindingen te maken tussen een IOT-hub en uw on-premises infra structuur.
 
 ## <a name="default-setting"></a>Standaardinstelling
 
@@ -164,7 +164,7 @@ $iothubResource | Set-AzResource -Force
 ## <a name="update-ip-filter-rules-using-rest"></a>IP-filter regels bijwerken met REST
 
 
-U kunt ook het IP-filter van uw IoT Hub ophalen en wijzigen met behulp van het REST-eind punt van de Azure-resource provider. Zie `properties.networkRuleSets` in de [createorupdate-methode](https://docs.microsoft.com/rest/api/iothub/iothubresource/createorupdate).
+U kunt ook het IP-filter van uw IoT Hub ophalen en wijzigen met behulp van het REST-eind punt van de Azure-resource provider. Zie `properties.networkRuleSets` in de [createorupdate-methode](/rest/api/iothub/iothubresource/createorupdate).
 
 ## <a name="ip-filter-classic-retirement"></a>IP-filter (klassiek) buiten gebruik gesteld
 
@@ -174,7 +174,7 @@ Het klassieke IP-filter is buiten gebruik gesteld. Zie [IOT hub klassiek IP-filt
 
 Zie voor meer informatie over de mogelijkheden van IoT Hub:
 
-* [IoT Hub metrische gegevens](iot-hub-metrics.md)
+* [IoT Hub metrische gegevens](./monitor-iot-hub.md)
 * [Ondersteuning voor virtuele netwerken IoT Hub met persoonlijke koppelingen en beheerde identiteit](virtual-network-support.md)
 * [Open bare netwerk toegang beheren voor uw IoT-hub](iot-hub-public-network-access.md)
 * [IoT Hub bewaken](monitor-iot-hub.md)

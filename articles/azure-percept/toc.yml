@@ -1,0 +1,110 @@
+- name: Documentatie voor Azure percept
+  href: index.yml
+- name: Overzicht
+  items:
+    - name: Azure percept-platform
+      href: overview-azure-percept.md
+    - name: Azure percept Studio
+      href: overview-azure-percept-studio.md
+    - name: Azure percept DK
+      href: overview-azure-percept-dk.md
+    - name: Azure percept-audio
+      href: overview-azure-percept-audio.md
+    - name: Azure percept AI-modellen
+      href: overview-ai-models.md
+    - name: Geavanceerde ontwikkeling
+      href: overview-advanced-code.md
+    - name: Azure percept-beveiliging
+      href: overview-percept-security.md
+    - name: 80/20-integratie
+      href: overview-8020-integration.md
+    - name: Uw percept-apparaten bijwerken
+      href: overview-update-experience.md
+- name: Quickstarts
+  items:
+    - name: Uw Azure percept-apparaten instellen
+      items:
+        - name: Unbox en uw Azure percept DK verzamelen
+          href: quickstart-percept-dk-unboxing.md
+        - name: De Setup-ervaring van Azure percept DK volt ooien
+          href: quickstart-percept-dk-set-up.md
+        - name: Setup van Azure percept-audio
+          href: quickstart-percept-audio-setup.md
+- name: Zelfstudies
+  items:
+    - name: Begin met het prototypen met Azure percept
+      items:
+        - name: Bouw en implementeer een oplossing voor No-code Vision
+          href: tutorial-nocode-vision.md
+        - name: Een oplossing zonder code maken en implementeren
+          href: tutorial-no-code-speech.md
+    - name: Geavanceerde ontwikkeling
+      items:
+        - name: Zelf studie voor geavanceerde ontwikkel aars (Cloud)
+          href: advanced-development-cloud.md
+        - name: Zelf studie voor geavanceerde ontwikkel aars (lokaal)
+          href: advanced-development-local.md
+- name: Concepten
+  items:
+    - name: Azure percept-audio
+      items:
+        - name: LED-en knop gedrag
+          href: audio-button-led-behavior.md
+- name: Instructiegidsen
+  items:
+    - name: Ontwikkeling van Vision-oplossingen met Azure percept DK
+      items:
+        - name: De video stroom van uw Devkit weer geven
+          href: how-to-view-video-stream.md
+        - name: Een AI-model naar uw Devkit implementeren
+          href: how-to-deploy-model.md
+        - name: Afbeeldingen vastleggen voor een Vision-project
+          href: how-to-capture-images.md
+        - name: De telemetrie van uw Devkit weer geven
+          href: how-to-view-telemetry.md
+    - name: Ontwikkeling van spraak oplossingen met Azure percept DK
+      items:
+        - name: Uw Voice Assistant configureren in azure percept Studio
+          href: how-to-configure-voice-assistant.md
+        - name: Uw Voice Assistant configureren in IoT Hub
+          href: how-to-manage-voice-assistant.md
+    - name: Uw Azure percept-apparaten bijwerken
+      items:
+        - name: Over-the-Air-updates instellen
+          href: how-to-set-up-over-the-air-updates.md
+        - name: Uw Azure percept DK over-the-Air bijwerken
+          href: how-to-update-over-the-air.md
+        - name: Uw Azure percept DK bijwerken via USB
+          href: how-to-update-via-usb.md
+    - name: Verbinding maken met uw Azure percept DK
+      items:
+        - name: Verbinding maken via SSH
+          href: how-to-ssh-into-percept-dk.md
+        - name: Verbinding maken via serieel
+          href: how-to-connect-to-percept-dk-over-serial.md
+    - name: Hulpprogramma's
+      items:
+        - name: Installatie programma voor het devtools-pakket
+          href: dev-tools-installer.md
+    - name: Problemen oplossen
+      items:
+        - name: Problemen met Setup oplossen
+          href: how-to-troubleshoot-setup.md
+        - name: Problemen oplossen met algemeen Azure percept DK
+          href: troubleshoot-dev-kit.md
+        - name: Problemen met Vision-oplossingen oplossen
+          href: vision-solution-troubleshooting.md
+        - name: Problemen met Azure percept-audio oplossen
+          href: troubleshoot-audio-accessory-speech-module.md
+- name: Referentie
+  items:
+    - name: Gegevens bladen van het Azure percept-apparaat
+      items:
+        - name: Azure percept DK-gegevens blad
+          href: azure-percept-dk-datasheet.md
+        - name: Azure percept Vision-gegevens blad
+          href: azure-percept-vision-datasheet.md
+        - name: Azure percept-audio gegevens blad
+          href: azure-percept-audio-datasheet.md
+- name: Resources
+  items: null

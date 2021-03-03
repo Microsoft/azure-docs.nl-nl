@@ -12,12 +12,12 @@ ms.date: 01/13/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
 adobe-target: true
-ms.openlocfilehash: d8c6a9cc000d307490745b923a1f1ba6c93abf53
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: f8865c9e6726a19e5e215886f92507734ebf0662
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652221"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101657312"
 ---
 # <a name="deploy-machine-learning-models-to-azure"></a>machine learning modellen implementeren in azure
 
@@ -315,22 +315,22 @@ Tijdens de implementatie van het model ziet u mogelijk de wijziging van de servi
 
 In de volgende tabel worden de verschillende service statussen beschreven:
 
-| Status van webservice | Description | Eind status?
+| Status van webservice | Beschrijving | Eind status?
 | ----- | ----- | ----- |
-| Overstappen | De service is in het implementatie proces. | No |
-| Niet in orde | De service is geïmplementeerd, maar is momenteel niet bereikbaar.  | No |
-| Unschedulable | De service kan op dit moment niet worden geïmplementeerd vanwege een gebrek aan resources. | No |
-| Mislukt | De implementatie van de service is mislukt vanwege een fout of een crash. | Yes |
-| In orde | De service is in orde en het eind punt is beschikbaar. | Yes |
+| Overstappen | De service is in het implementatie proces. | Nee |
+| Niet in orde | De service is geïmplementeerd, maar is momenteel niet bereikbaar.  | Nee |
+| Unschedulable | De service kan op dit moment niet worden geïmplementeerd vanwege een gebrek aan resources. | Nee |
+| Mislukt | De implementatie van de service is mislukt vanwege een fout of een crash. | Ja |
+| In orde | De service is in orde en het eind punt is beschikbaar. | Ja |
 
 > [!TIP]
 > Tijdens de implementatie worden docker-installatie kopieën voor Compute-doelen gemaakt en geladen van Azure Container Registry (ACR). Azure Machine Learning maakt standaard een ACR die gebruikmaakt van de *Basic* -servicelaag. Het wijzigen van de ACR voor uw werk ruimte in de standaard-of Premium-laag kan de tijd verminderen die nodig is om installatie kopieën te bouwen en implementeren in uw reken doelen. Zie [Azure container Registry service lagen](../container-registry/container-registry-skus.md)voor meer informatie.
 
 > [!NOTE]
-> Als u een model implementeert in azure Kubernetes service (AKS), raden wij u aan [Azure monitor](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-enable-existing-clusters) voor dat cluster in te scha kelen. Dit helpt u bij het begrijpen van het totale cluster status-en resource gebruik. U kunt ook de volgende bronnen nuttig vinden:
+> Als u een model implementeert in azure Kubernetes service (AKS), raden wij u aan [Azure monitor](../azure-monitor/containers/container-insights-enable-existing-clusters.md) voor dat cluster in te scha kelen. Dit helpt u bij het begrijpen van het totale cluster status-en resource gebruik. U kunt ook de volgende bronnen nuttig vinden:
 >
-> * [Controleren op Resource Health gebeurtenissen die van invloed zijn op uw AKS-cluster](https://docs.microsoft.com/azure/aks/aks-resource-health)
-> * [Diagnostische gegevens voor Azure Kubernetes-service](https://docs.microsoft.com/azure/aks/concepts-diagnostics)
+> * [Controleren op Resource Health gebeurtenissen die van invloed zijn op uw AKS-cluster](../aks/aks-resource-health.md)
+> * [Diagnostische gegevens voor Azure Kubernetes-service](../aks/concepts-diagnostics.md)
 >
 > Als u probeert een model te implementeren in een beschadigde of overbelast cluster, worden er waarschijnlijk problemen ondervinden. Neem contact op met de ondersteuning van AKS als u hulp nodig hebt bij het oplossen van problemen met AKS-clusters.
 

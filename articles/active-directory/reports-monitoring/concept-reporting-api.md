@@ -17,12 +17,12 @@ ms.date: 01/21/2021
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2027f713baf2b8039187e933ffc7bb0b68b5cc5f
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: b6ef122cd36c3d4e9135876647075f22158df0d1
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98631958"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101653232"
 ---
 # <a name="get-started-with-the-azure-active-directory-reporting-api"></a>Aan de slag met de API voor Azure Active Directory rapportage
 
@@ -51,7 +51,7 @@ Het Microsoft Graph API-eind punt voor audit Logboeken is `https://graph.microso
 
 U kunt de [API voor risico detectie van identiteits beveiliging](/graph/api/resources/identityriskevent?view=graph-rest-beta) gebruiken om programmatisch toegang te krijgen tot beveiligings detecties met behulp van Microsoft Graph. Zie [aan de slag met Azure Active Directory Identity Protection en Microsoft Graph](../identity-protection/howto-identity-protection-graph-api.md)voor meer informatie. 
   
-U kunt ook de API voor het [inrichtings logboek](https://docs.microsoft.com/graph/api/resources/provisioningobjectsummary?view=graph-rest-beta) gebruiken om programmatisch toegang te krijgen tot het inrichtings gebeurtenissen in uw Tenant. 
+U kunt ook de API voor het [inrichtings logboek](/graph/api/resources/provisioningobjectsummary?view=graph-rest-beta) gebruiken om programmatisch toegang te krijgen tot het inrichtings gebeurtenissen in uw Tenant. 
 
 ## <a name="apis-with-microsoft-graph-explorer"></a>Api's met Microsoft Graph Explorer
 

@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 02/10/2021
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 599cf17e1ab2b85aac77893e8b2d520d412e1cea
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 5d43d6f56b48a34fa34baf727508ad8f1c151aa7
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417787"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101674322"
 ---
 # <a name="connect-to-a-secure-azure-storage-account-from-your-synapse-workspace"></a>Verbinding maken met een beveiligd Azure Storage-account vanuit uw Synapse-werk ruimte
 
@@ -21,7 +21,7 @@ In dit artikel leert u hoe u verbinding kunt maken met een beveiligd Azure Stora
 
 
 ## <a name="secured-azure-storage-accounts"></a>Beveiligde Azure Storage-accounts
-Azure Storage biedt een gelaagd beveiligings model waarmee u de toegang tot uw opslag accounts kunt beveiligen en beheren. U kunt IP-firewall regels configureren om verkeer toe te kennen van geselecteerde open bare IP-adresbereiken toegang tot uw opslag account. U kunt ook netwerk regels configureren om verkeer van geselecteerde virtuele netwerken toegang tot uw opslag account te verlenen. U kunt IP-firewall regels combi neren die toegang toestaan vanaf geselecteerde IP-adresbereiken en netwerk regels die toegang verlenen vanuit geselecteerde virtuele netwerken op hetzelfde opslag account. Deze regels zijn van toepassing op het open bare eind punt van een opslag account. U hebt geen toegangs regels nodig om verkeer toe te staan van beheerde privé-eind punten die in uw werk ruimte zijn gemaakt in een opslag account. Opslag firewall regels kunnen worden toegepast op bestaande opslag accounts of op nieuwe opslag accounts wanneer u deze maakt. U vindt [hier](https://docs.microsoft.com/azure/storage/common/storage-network-security)meer informatie over het beveiligen van uw opslag account.
+Azure Storage biedt een gelaagd beveiligings model waarmee u de toegang tot uw opslag accounts kunt beveiligen en beheren. U kunt IP-firewall regels configureren om verkeer toe te kennen van geselecteerde open bare IP-adresbereiken toegang tot uw opslag account. U kunt ook netwerk regels configureren om verkeer van geselecteerde virtuele netwerken toegang tot uw opslag account te verlenen. U kunt IP-firewall regels combi neren die toegang toestaan vanaf geselecteerde IP-adresbereiken en netwerk regels die toegang verlenen vanuit geselecteerde virtuele netwerken op hetzelfde opslag account. Deze regels zijn van toepassing op het open bare eind punt van een opslag account. U hebt geen toegangs regels nodig om verkeer toe te staan van beheerde privé-eind punten die in uw werk ruimte zijn gemaakt in een opslag account. Opslag firewall regels kunnen worden toegepast op bestaande opslag accounts of op nieuwe opslag accounts wanneer u deze maakt. U vindt [hier](../../storage/common/storage-network-security.md)meer informatie over het beveiligen van uw opslag account.
 
 ## <a name="synapse-workspaces-and-virtual-networks"></a>Synapse-werk ruimten en virtuele netwerken
 Wanneer u een Synapse-werk ruimte maakt, kunt u ervoor kiezen om een beheerd virtueel netwerk in te scha kelen om eraan te koppelen. Als u beheerd virtueel netwerk niet inschakelt voor uw werk ruimte wanneer u deze maakt, bevindt uw werk ruimte zich in een gedeeld virtueel netwerk, samen met andere Synapse-werk ruimten waaraan geen beheerd virtueel netwerk is gekoppeld. Als u beheerd virtueel netwerk hebt ingeschakeld tijdens het maken van de werk ruimte, wordt uw werk ruimte gekoppeld aan een toegewezen virtueel netwerk dat wordt beheerd door Azure Synapse. Deze virtuele netwerken worden niet gemaakt in uw klant abonnement. Daarom is het niet mogelijk om verkeer van deze virtuele netwerken toegang te verlenen tot uw beveiligde opslag account met behulp van de hierboven beschreven netwerk regels.  

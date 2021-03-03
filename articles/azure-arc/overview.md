@@ -1,18 +1,18 @@
 ---
 title: Overzicht van Azure Arc
 description: Lees meer over wat Azure Arc is en hoe het klanten helpt om het beheer en de governance van hun hybride resources met andere Azure-services en -functies mogelijk te maken.
-ms.date: 09/23/2020
+ms.date: 03/02/2021
 ms.topic: overview
-ms.openlocfilehash: 8f39dff16037b5f52a050b7d07193b0ad7cab93d
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
-ms.translationtype: HT
+ms.openlocfilehash: 33c9d6ca87c3d8d2d8920ff429902f5876bbdc59
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97672683"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101650189"
 ---
 # <a name="azure-arc-overview"></a>Overzicht van Azure Arc
 
-Vandaag de dag hebben bedrijven moeite om een omgeving te controleren en te beheren die steeds complexer wordt. Deze omgevingen omvatten datacentra, meerdere clouds en de rand. Alle omgevingen en clouds hebben hun eigen set beheerprogramma's waarmee u moet leren werken en die u moet gebruiken.
+Tegenwoordig hebben bedrijven moeite om steeds complexe omgevingen te beheren en te bepalen. Deze omgevingen omvatten datacentra, meerdere clouds en de rand. Elke omgeving en Cloud beschikt over een eigen set van niet-aaneengesloten beheer hulpprogramma's die u nodig hebt om te leren en te werken.
 
 Tegelijkertijd is het moeilijk nieuwe operationele DevOps- en ITOps-modellen te implementeren, omdat de bestaande hulpprogramma's de nieuwe cloudeigen patronen niet ondersteunen.
 
@@ -36,11 +36,11 @@ Belangrijke functies van Azure Arc zijn:
 
 * Kubernetes-clusters op schaal beheren.
 
-* Configuratie op basis van GitOps gebruiken als codebeheer om toepassingen en configuratie in een of meer clusters rechtstreeks vanuit broncodebeheer, zoals GitHub, te implementeren.
+* Gebruik GitOps voor het implementeren van configuratie over een of meer clusters van Git-opslag plaatsen.
 
-* 'Zero touch' compatibiliteit en configuratie van uw Kubernetes-clusters met behulp van Azure Policy.
+*  Zero-Touch-compatibiliteit en configuratie voor uw Kubernetes-clusters met behulp van Azure Policy.
 
-* Azure-gegevensservices uitvoeren in elke Kubernetes-omgeving, in het bijzonder Azure SQL Managed Instance en Azure Database for PostgreSQL Hyperscale, met voordelen zoals upgrades/updates, beveiliging en bewaking alsof het in Azure wordt uitgevoerd. Profiteren van elastisch schalen, updates toepassen, zonder downtime van toepassingen, zelfs zonder voortdurende verbinding met Azure.
+* Voer Azure Data Services uit op elke Kubernetes-omgeving alsof deze wordt uitgevoerd in azure (met name Azure SQL Managed instance en Azure Database for PostgreSQL grootschalige, met voor delen zoals upgrades, updates, beveiliging en controle). Elastisch schalen gebruiken en updates Toep assen zonder uitval tijd van toepassingen, zelfs zonder doorlopende verbinding met Azure
 
 * Een uniforme ervaring voor het weergeven van uw Azure Arc-resources, ongeacht of u de Azure-portal, de Azure CLI, Azure PowerShell of Azure REST API gebruikt.
 
@@ -50,7 +50,7 @@ Hieronder vindt u de prijsinformatie voor de functies die momenteel beschikbaar 
 
 ### <a name="arc-enabled-servers"></a>Servers met ingeschakelde Arc
 
-De functionaliteit van het beheerpaneel van Azure Arc wordt gratis aangeboden. Dit omvat:
+De volgende functionaliteit voor het beheer vlak van Azure Arc wordt gratis aangeboden:
 
 * Resource-organisatie via Azure-beheergroepen en -tags.
 
@@ -62,15 +62,15 @@ De functionaliteit van het beheerpaneel van Azure Arc wordt gratis aangeboden. D
 
 * Updatebeheer
 
-Elke Azure-service die wordt gebruikt op servers met Arc-functionaliteit, bijvoorbeeld Azure Security Center of Azure Monitor, wordt in rekening gebracht volgens de prijzen voor die service. Zie de pagina [Azure-prijzen](https://azure.microsoft.com/pricing/) voor meer informatie.
+Elke Azure-service die wordt gebruikt op servers met Arc-functionaliteit, bijvoorbeeld Azure Security Center of Azure Monitor, wordt in rekening gebracht volgens de prijzen voor die service. Zie de pagina met prijzen voor [Azure](https://azure.microsoft.com/pricing/)voor meer informatie.
 
 ### <a name="azure-arc-enabled-kubernetes"></a>Kubernetes met Azure Arc
 
-In de huidige preview-fase wordt Kubernetes met Azure Arc aangeboden zonder extra kosten.
+Voor elke Azure-service die wordt gebruikt op Kubernetes met Arc-functionaliteit, bijvoorbeeld Azure Security Center of Azure Monitor, wordt in rekening gebracht volgens de prijzen voor die service. Zie de [pagina met prijzen voor Azure](https://azure.microsoft.com/pricing/)voor meer informatie over de prijzen voor configuraties boven op Azure Arc enabled Kubernetes.
 
 ### <a name="azure-arc-enabled-data-services"></a>Azure Arc-gegevensservices
 
-In de huidige preview-fase worden gegevensservices met Azure Arc aangeboden zonder extra kosten.
+In de huidige preview-fase worden gegevens services van Azure Arc ingeschakeld zonder extra kosten.
 
 ## <a name="next-steps"></a>Volgende stappen
 

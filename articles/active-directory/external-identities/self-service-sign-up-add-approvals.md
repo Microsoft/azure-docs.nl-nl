@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: article
-ms.date: 06/16/2020
+ms.date: 03/02/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3165bc28e6d6283bf8578d9c10b11f7b19981002
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: b447873df882847f052125254ea52b5ae6ab9ec4
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97355236"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101644864"
 ---
 # <a name="add-a-custom-approval-workflow-to-self-service-sign-up"></a>Een aangepaste goedkeurings werk stroom toevoegen aan self-service registratie
 
@@ -28,7 +28,7 @@ Dit artikel bevat een voor beeld van hoe u kunt integreren met een goedkeurings 
 - Activeer hand matige beoordeling. Als de aanvraag is goedgekeurd, gebruikt het goedkeurings systeem Microsoft Graph om het gebruikers account in te richten. Het goedkeurings systeem kan ook de gebruiker laten weten dat hun account is gemaakt.
 
 > [!IMPORTANT]
->**Vanaf 4 januari 2021** wordt de [ondersteuning voor webweergave van de WEBMODULE voor webmeldingen afgemeld](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). Als u gebruikmaakt van Google Federation of Self-Service-aanmelding bij Gmail, moet u [uw line-of-business-toepassingen testen voor compatibiliteit](google-federation.md#deprecation-of-webview-sign-in-support).
+>**Vanaf 4 januari 2021** wordt [ondersteuning voor WebView-aanmelding afgeschaft](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html) in Google. Als u gebruikmaakt van Google-federatie of selfserviceregistratie met Gmail, moet u [de compatibiliteit van uw systeemeigen Line-of-Business-toepassingen testen](google-federation.md#deprecation-of-webview-sign-in-support).
 
 ## <a name="register-an-application-for-your-approval-system"></a>Een toepassing registreren voor uw goedkeurings systeem
 
@@ -81,7 +81,7 @@ Nu voegt u de API-Connect oren toe aan een self-service voor het aanmelden van e
 1. Meld u als een Azure AD-administrator aan bij de [Azure Portal](https://portal.azure.com/).
 2. Onder **Azure-Services** selecteert u **Azure Active Directory**.
 3. Selecteer in het linkermenu **externe identiteiten**.
-4. Selecteer **gebruikers stromen (preview)** en selecteer vervolgens de gebruikers stroom waarvoor u de API-connector wilt inschakelen.
+4. Selecteer **gebruikers stromen** en selecteer vervolgens de gebruikers stroom waarvoor u de API-connector wilt inschakelen.
 5. Selecteer **API-connectors** en selecteer vervolgens de API-eind punten die u wilt aanroepen met de volgende stappen in de gebruikers stroom:
 
    - **Nadat u zich hebt aangemeld met een id-provider**: Selecteer uw goedkeurings status API-connector, bijvoorbeeld _goedkeurings status controleren_.
@@ -323,13 +323,13 @@ Content-type: application/json
 
 | Parameter                                           | Vereist | Beschrijving                                                                                                                                                            |
 | --------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| userPrincipalName                                   | Yes      | Kan worden gegenereerd door de `email` claim te verzenden naar de API, het teken te vervangen door `@` `_` en vooraf in behandeling te nemen tot `#EXT@<tenant-name>.onmicrosoft.com` . |
-| accountEnabled                                      | Yes      | Moet worden ingesteld op `true`.                                                                                                                                                 |
-| mail                                                | Yes      | Gelijk aan de `email` claim die wordt verzonden naar de API.                                                                                                               |
-| userType                                            | Yes      | Moet zijn `Guest` . Hiermee wordt deze gebruiker aangeduid als een gast gebruiker.                                                                                                                 |
-| identiteit                                          | Yes      | De gegevens voor federatieve identiteiten.                                                                                                                                    |
-| \<otherBuiltInAttribute>                            | No       | Andere ingebouwde kenmerken `displayName` , zoals, `city` en anderen. Parameter namen zijn hetzelfde als de para meters die worden verzonden door de API-connector.                            |
-| \<extension\_\{extensions-app-id}\_CustomAttribute> | No       | Aangepaste kenmerken van de gebruiker. Parameter namen zijn hetzelfde als de para meters die worden verzonden door de API-connector.                                                            |
+| userPrincipalName                                   | Ja      | Kan worden gegenereerd door de `email` claim te verzenden naar de API, het teken te vervangen door `@` `_` en vooraf in behandeling te nemen tot `#EXT@<tenant-name>.onmicrosoft.com` . |
+| accountEnabled                                      | Ja      | Moet worden ingesteld op `true`.                                                                                                                                                 |
+| mail                                                | Ja      | Gelijk aan de `email` claim die wordt verzonden naar de API.                                                                                                               |
+| userType                                            | Ja      | Moet zijn `Guest` . Hiermee wordt deze gebruiker aangeduid als een gast gebruiker.                                                                                                                 |
+| identiteit                                          | Ja      | De gegevens voor federatieve identiteiten.                                                                                                                                    |
+| \<otherBuiltInAttribute>                            | Nee       | Andere ingebouwde kenmerken `displayName` , zoals, `city` en anderen. Parameter namen zijn hetzelfde als de para meters die worden verzonden door de API-connector.                            |
+| \<extension\_\{extensions-app-id}\_CustomAttribute> | Nee       | Aangepaste kenmerken van de gebruiker. Parameter namen zijn hetzelfde als de para meters die worden verzonden door de API-connector.                                                            |
 
 ### <a name="for-a-federated-azure-active-directory-user"></a>Voor een federatieve Azure Active Directory gebruiker
 
@@ -357,8 +357,8 @@ POST https://graph.microsoft.com/v1.0/invitations
 Content-type: application/json
 
 {
-    "invitedUserEmailAddress":"johnsmith@fabrikam.onmicrosoft.com",
-    "inviteRedirectUrl" : "https://myapp.com"
+    "invitedUserEmailAddress": "johnsmith@fabrikam.onmicrosoft.com",
+    "inviteRedirectUrl" : "https://myapp.com"
 }
 ```
 
@@ -370,9 +370,9 @@ Content-type: application/json
 
 {
     ...
-    "invitedUser": {
-        "id": "<generated-user-guid>"
-    }
+    "invitedUser": {
+        "id": "<generated-user-guid>"
+    }
 }
 ```
 

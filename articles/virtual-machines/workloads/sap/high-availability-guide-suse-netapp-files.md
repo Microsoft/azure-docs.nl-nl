@@ -9,19 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.assetid: 5e514964-c907-4324-b659-16dd825f6f87
-ms.service: virtual-machines-windows
-ms.subservice: workloads
+ms.service: virtual-machines-sap
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/22/2020
 ms.author: radeltch
-ms.openlocfilehash: b8f2054296c5b4e567699924305b7f3385f30835
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 83e770cb7eb1aace49745253dac3c757cebb4047
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96486212"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101668670"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-with-azure-netapp-files-for-sap-applications"></a>Hoge Beschik baarheid voor SAP NetWeaver op Azure Vm's op SUSE Linux Enterprise Server met Azure NetApp Files voor SAP-toepassingen
 
@@ -105,7 +104,7 @@ SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS en de SAP HANA-Data Bas
   * IP-adres 10.1.1.20
 * Test poort
   * Poort 620<strong> &lt; Nr &gt; </strong>
-* Taakverdelings regels
+* Taakverdelingsregels
   * Als u Standard Load Balancer gebruikt, selecteert u **ha-poorten**
   * Als u basis Load Balancer gebruikt, maakt u regels voor taak verdeling voor de volgende poorten
     * 32<strong> &lt; Nr &gt; </strong> TCP
@@ -122,7 +121,7 @@ SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS en de SAP HANA-Data Bas
   * IP-adres 10.1.1.21
 * Test poort
   * Poort 621<strong> &lt; Nr &gt; </strong>
-* Taakverdelings regels
+* Taakverdelingsregels
   * Als u Standard Load Balancer gebruikt, selecteert u **ha-poorten**
   * Als u basis Load Balancer gebruikt, maakt u regels voor taak verdeling voor de volgende poorten
     * 32<strong> &lt; Nr &gt; </strong> TCP
@@ -269,7 +268,7 @@ Eerst moet u de Azure NetApp Files volumes maken. Implementeer de Vm's. Daarna m
          1. Klik op OK
       1. Poort 621 **01** voor ASCS ers
             * Herhaal de bovenstaande stappen onder ' c ' om een status test te maken voor de ERS (bijvoorbeeld 621 **01** en **status. QAS. ERS**)
-   1. Taakverdelings regels
+   1. Taakverdelingsregels
       1. Een back-end-pool maken voor de ASCS
          1. Open de load balancer, selecteer taakverdelings regels en klik op toevoegen
          1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld **lb. QAS. ASCS**)
@@ -303,7 +302,7 @@ Eerst moet u de Azure NetApp Files volumes maken. Implementeer de Vm's. Daarna m
          1. Klik op OK
       1. Poort 621 **01** voor ASCS ers
             * Herhaal de bovenstaande stappen onder ' c ' om een status test te maken voor de ERS (bijvoorbeeld 621 **01** en **status. QAS. ERS**)
-   1. Taakverdelings regels
+   1. Taakverdelingsregels
       1. 32 **00** TCP voor ASCS
          1. Open de load balancer, selecteer taakverdelings regels en klik op toevoegen
          1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld **lb. QAS. ASCS. 3200**)

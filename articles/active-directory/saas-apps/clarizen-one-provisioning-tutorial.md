@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/01/2020
 ms.author: Zhchia
-ms.openlocfilehash: 3754a56d1520118937a9d4aad406ae657b4dd23b
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
-ms.translationtype: HT
+ms.openlocfilehash: f3a19d3c3bf3e4340bb36fd683453541fa15eb6c
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673661"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101650825"
 ---
 # <a name="tutorial-configure-clarizen-one-for-automatic-user-provisioning"></a>Zelfstudie: Clarizen One configureren voor automatische inrichting van gebruikers
 
@@ -137,8 +137,8 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
    |externalId|Tekenreeks|
    |nickName|Tekenreeks|
    |landinstelling|Tekenreeks|
-   |roles[primary eq"True".type]|Tekenreeks|
-   |roles[primary eq"True".value]|Tekenreeks|
+   |rollen [Primary EQ "True". type]|Tekenreeks|
+   |rollen [Primary EQ "True". waarde]|Tekenreeks|
    |timezone|Tekenreeks|
    |userType|Tekenreeks|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Tekenreeks|

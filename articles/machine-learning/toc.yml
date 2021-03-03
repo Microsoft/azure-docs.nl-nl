@@ -321,11 +321,14 @@
             - name: Gegevensset maken met labels
               displayName: 'data, labels, torchvision'
               href: how-to-use-labeled-dataset.md
-        - name: Gegevens ophalen
+        - name: Gegevens ophalen & voorbereiden
           items:
             - name: Gegevensopname met Azure Data Factory
               displayName: 'data, ingestion, adf'
               href: how-to-data-ingest-adf.md
+            - name: Gegevens voorbereiding met Azure Synapse
+              displayName: 'data, data prep, spark, spark pool, cluster, spark cluster,dataset, datastore'
+              href: how-to-data-prep-synapse-spark-pool.md
             - name: DevOps voor gegevensopname
               displayName: 'data, ingestion, devops'
               href: how-to-cicd-data-ingestion.md
@@ -337,6 +340,9 @@
             - name: Verbinding maken met Azure-opslag (Python)
               displayName: 'blob, get, fileshare, access, mount, download, data lake, datastore'
               href: how-to-access-data.md
+            - name: Gegevens toegang tot opslag op basis van identiteiten
+              displayName: 'blob, access, data lake, datastore, managed identity'
+              href: how-to-identity-based-data-access.md
             - name: Gegevens uit gegevensarchief ophalen (Python)
               displayName: 'data, data set, register, access data'
               href: how-to-create-register-datasets.md
@@ -385,8 +391,8 @@
             - name: Logboeken inschakelen
               displayName: 'troubleshoot, log, files, tracing'
               href: how-to-track-experiments.md
-            - name: Logboeken weergeven
-              displayName: 'troubleshoot, log, files, tracing'
+            - name: Logboeken en metrische gegevens voor uitvoeringen weer geven
+              displayName: 'troubleshoot, log, files, tracing, metrics'
               href: how-to-monitor-view-training-logs.md
             - name: Uitvoeringen visualiseren met TensorBoard
               displayName: 'log, monitor, metrics'
@@ -531,6 +537,8 @@
           href: how-to-move-data-in-out-of-pipelines.md
         - name: ML-pijplijnen implementeren (Python)
           href: how-to-deploy-pipelines.md
+        - name: Azure Synapse Apache Spark-Pools gebruiken in een ML-pijp lijn (python)
+          href: how-to-use-synapsesparkstep.md
         - name: Een pijplijn activeren
           href: how-to-trigger-published-pipeline.md
         - name: Designer (slepen en neerzetten)

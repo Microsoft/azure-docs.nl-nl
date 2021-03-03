@@ -2,18 +2,19 @@
 title: Oracle Database in azure Virtual Machines back-upstrategieen
 description: Opties voor het maken van back-ups van Oracle-data bases in een Azure Linux VM-omgeving.
 author: cro27
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines
+ms.subservice: oracle
+ms.collection: linux
 ms.topic: article
 ms.date: 01/28/2021
 ms.author: cholse
 ms.reviewer: dbakevlar
-ms.openlocfilehash: adb455e7a49ead1e8ba8e9845a4e56542528d0b1
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: 8a1eb1c21663e0294cd384daa0ba644adf78007a
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99063856"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101673216"
 ---
 # <a name="oracle-database-in-azure-linux-vm-backup-strategies"></a>Oracle Database in azure Linux VM-back-upstrategieën
 

@@ -11,12 +11,12 @@ ms.date: 10/30/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df199afd85c788299334087321c3edac8482698d
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.openlocfilehash: 4246bc4c62fd8e5e73ff18e383b8bf115d25ede8
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96168505"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101643829"
 ---
 # <a name="what-is-inter-directory-provisioning"></a>Wat is directory-inrichting?
 
@@ -33,7 +33,7 @@ Azure AD biedt momenteel ondersteuning voor drie methoden voor het uitvoeren van
 
 - [Azure AD Connect](../hybrid/whatis-azure-ad-connect.md) - het Microsoft-hulpprogramma dat is ontworpen om uw hybride identiteit te realiseren, waaronder inter-directory-inrichten van Active Directory naar Azure AD.
 
-- [Azure AD Connect Cloud-inrichten](../cloud-provisioning/what-is-cloud-provisioning.md) - een nieuwe Microsoft-agent die is ontworpen om uw doelstellingen voor een hybride identiteit te realiseren.  Het biedt een lichtgewicht inter-directory-inrichtingservaring tussen Active Directory en Azure AD.
+- [Azure AD Connect Cloud-inrichten](../cloud-sync/what-is-cloud-sync.md) - een nieuwe Microsoft-agent die is ontworpen om uw doelstellingen voor een hybride identiteit te realiseren.  Het biedt een lichtgewicht inter-directory-inrichtingservaring tussen Active Directory en Azure AD.
 
 - [Microsoft Identity Manager](/microsoft-identity-manager/microsoft-identity-manager-2016) - de on-premises oplossing voor identiteits- en toegangsbeheer van Microsoft waarmee u de gebruikers, referenties, het beleid en de toegang binnen uw organisatie kunt beheren. Daarnaast biedt MIM geavanceerde mogelijkheden voor inter-directory-inrichting om hybride identiteitsomgevingen te maken voor Active Directory, Azure AD en andere directory's.
 

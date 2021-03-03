@@ -6,12 +6,12 @@ author: curib
 ms.author: cauribeg
 ms.topic: quickstart
 ms.service: cache
-ms.openlocfilehash: 615f3b023ded6583dfedca99f561d09689b86b51
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 0ab959d531ff1080e5e6a640410b4955e4cfeff7
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99055514"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101652195"
 ---
 # <a name="quickstart-route-azure-cache-for-redis-events-to-web-endpoint-with-powershell"></a>Snelstartgids: Azure cache voor redis-gebeurtenissen naar een webeindpunt door sturen met Power shell
 
@@ -73,7 +73,7 @@ New-AzRedisCache
    [-Confirm]
    [<CommonParameters>]
 ```
-Zie de [Azure PowerShell-verwijzing](https://docs.microsoft.com/powershell/module/az.rediscache/new-azrediscache?view=azps-5.2.0)voor meer informatie over het maken van een cache-exemplaar in Power shell. 
+Zie de [Azure PowerShell-verwijzing](/powershell/module/az.rediscache/new-azrediscache?view=azps-5.2.0)voor meer informatie over het maken van een cache-exemplaar in Power shell. 
 
 ## <a name="create-a-message-endpoint"></a>Het eindpunt van een bericht maken
 
@@ -132,7 +132,7 @@ Import-AzRedisCache
       [-Confirm]
       [<CommonParameters>]
 ```
-Zie voor meer informatie over importeren in Power shell de [referentie Azure PowerShell](https://docs.microsoft.com/powershell/module/az.rediscache/import-azrediscache?view=azps-5.2.0). 
+Zie voor meer informatie over importeren in Power shell de [referentie Azure PowerShell](/powershell/module/az.rediscache/import-azrediscache?view=azps-5.2.0). 
 
 U hebt de gebeurtenis geactiveerd en Event Grid heeft het bericht verzonden naar het eindpunt dat u hebt geconfigureerd toen u zich abonneerde. Bekijk uw web-app om de gebeurtenis te zien die u zojuist hebt verzonden.
 

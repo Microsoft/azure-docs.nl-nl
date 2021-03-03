@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 02/29/2020
 ms.author: kenwith
 ms.reviewer: baselden
-ms.openlocfilehash: 10e548eb87b7ac4254fa916f804a6710252be7fc
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: f63a8fd05e1a6ed5e41eeb64aa852ff01db295af
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99830716"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101645464"
 ---
 # <a name="plan-azure-active-directory-my-apps-configuration"></a>Azure Active Directory mijn apps-configuratie plannen
 
@@ -143,7 +143,7 @@ Als u deze toepassingen moet integreren, moet u een mechanisme definiëren om de
 
 * [Door de gebruiker gestuurde down load en configuratie voor Chrome, Firefox, micro soft Edge of IE](../user-help/my-apps-portal-end-user-access.md)
 
-* [Configuration Manager voor Internet Explorer](https://docs.microsoft.com/mem/configmgr/core/clients/deploy/deploy-clients-to-windows-computers)
+* [Configuration Manager voor Internet Explorer](/mem/configmgr/core/clients/deploy/deploy-clients-to-windows-computers)
 
 Met de uitbrei ding kunnen gebruikers elke app vanuit de zoek balk starten, toegang krijgen tot recent gebruikte toepassingen en een koppeling hebben met de pagina mijn apps.
 
@@ -271,4 +271,3 @@ U kunt [privileged Identity Management](../privileged-identity-management/pim-co
 
 [Een implementatie van een toepassingsproxy plannen](application-proxy-deployment-plan.md)
 
- 

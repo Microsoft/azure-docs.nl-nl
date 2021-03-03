@@ -3,16 +3,17 @@ title: Implementeer uw eigen Azure-hosts met behulp van de Azure Portal
 description: Implementeer Vm's en schaal sets op toegewezen hosts met behulp van de Azure Portal.
 author: cynthn
 ms.service: virtual-machines
+ms.subservice: dedicated-hosts
 ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 12/07/2020
 ms.author: cynthn
-ms.openlocfilehash: b166363a8c64a4a4c5d34efa55dcaefa09d6df49
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 3bc7909f38e63256d7d708ec189c628662cf8837
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97007939"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101667326"
 ---
 # <a name="deploy-vms-and-scale-sets-to-dedicated-hosts-using-the-portal"></a>Vm's en schaal sets implementeren op toegewezen hosts met behulp van de portal 
 

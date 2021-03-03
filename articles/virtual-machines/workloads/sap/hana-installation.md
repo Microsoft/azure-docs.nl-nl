@@ -6,20 +6,19 @@ documentationcenter: ''
 author: hermanndms
 manager: juergent
 editor: ''
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines-sap
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 01/16/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 81d44dae0fed45d4a4df76973c7e233fd71baff1
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 20a2639716048a8c549ec6d584e807cb209f83d9
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98198965"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101670955"
 ---
 # <a name="how-to-install-and-configure-sap-hana-large-instances-on-azure"></a>SAP HANA (grote instanties) installeren en configureren in azure
 
@@ -125,7 +124,7 @@ Voor SAP HANA op Azure (grote instanties), is de tijd synchronisatie die wordt u
 Als gevolg hiervan moet u een afzonderlijke tijd server instellen die kan worden gebruikt door SAP-toepassings servers die worden uitgevoerd op virtuele Azure-machines en op de SAP HANA data base-exemplaren die worden uitgevoerd op HANA grote instanties. De opslag infrastructuur in grote instantie stempels is tijd gesynchroniseerd met NTP-servers.
 
 
-## <a name="networking"></a>Networking
+## <a name="networking"></a>Netwerken
 We gaan ervan uit dat u de aanbevelingen bij het ontwerpen van uw virtuele Azure-netwerken hebt gevolgd en dat deze virtuele netwerken worden verbonden met de HANA grote instanties, zoals beschreven in de volgende documenten:
 
 - [Overzicht en architectuur van SAP HANA (grote instanties) op Azure](./hana-overview-architecture.md)
@@ -143,7 +142,7 @@ De ruwe grootte van de verschillende volumes met de verschillende HANA grote ins
 
 De naam conventies van de opslag volumes worden weer gegeven in de volgende tabel:
 
-| Opslag gebruik | Naam van koppeling | Volume naam | 
+| Opslag gebruik | Naam van koppeling | Volumenaam | 
 | --- | --- | ---|
 | HANA-gegevens | /hana/data/SID/mnt0000\<m> | Opslag-IP:/hana_data_SID_mnt00001_tenant_vol |
 | HANA-logboek | /hana/log/SID/mnt0000\<m> | Opslag-IP:/hana_log_SID_mnt00001_tenant_vol |

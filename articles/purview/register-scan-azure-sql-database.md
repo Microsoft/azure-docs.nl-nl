@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 10/02/2020
-ms.openlocfilehash: b3503dead21eeca32d82e896f889b99d11435642
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 62f4b6c76cafab5c6cc46a73851abce1e38551a1
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879728"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101677727"
 ---
 # <a name="register-and-scan-an-azure-sql-database"></a>Een Azure SQL Database registeren en scannen
 
@@ -149,9 +149,7 @@ Ga als volgt te werk om een nieuwe Azure SQL Database in uw gegevenscatalogus te
 Ga als volgt te werk op het scherm **Bronnen registreren (Azure SQL Database)** :
 
 1. Voer een **Naam** in waarvan de gegevensbron wordt vermeld in de catalogus.
-1. Kies hoe u wilt verwijzen naar het gewenste opslagaccount:
-   1. Selecteer **In Azure-abonnement**, selecteer het juiste abonnement in de vervolgkeuzelijst van het **Azure-abonnement** en de juiste server in de vervolgkeuzelijst **Servernaam**.
-   1. U kunt ook **Handmatig invoeren** selecteren en een **Servernaam** invoeren.
+1. Selecteer **In Azure-abonnement**, selecteer het juiste abonnement in de vervolgkeuzelijst van het **Azure-abonnement** en de juiste server in de vervolgkeuzelijst **Servernaam**.
 1. **Voltooi** om de gegevensbron te registreren.
 
 :::image type="content" source="media/register-scan-azure-sql-database/add-azure-sql-database.png" alt-text="opties voor bronnen registreren" border="true":::

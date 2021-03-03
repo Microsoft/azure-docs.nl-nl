@@ -6,13 +6,13 @@ ms.author: daperlov
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
-ms.date: 12/01/2020
-ms.openlocfilehash: f778a55c206e012884b44c1fea0a63e2de6b481a
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
-ms.translationtype: HT
+ms.date: 02/22/2020
+ms.openlocfilehash: 5285d5b2c7cbe6845fb6043fa1096f94254602e7
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97693349"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101677835"
 ---
 # <a name="tutorial-navigate-the-azure-purview-preview-home-page-and-search-for-an-asset"></a>Zelfstudie: Ga naar de startpagina van Azure Purview (preview) en zoek naar een asset
 
@@ -45,7 +45,7 @@ De volgende stappen helpen u door de startpagina van Azure Purview.
 
 1. Navigeer naar uw Azure Purview-resource in Azure Portal en selecteer **Purview Studio openen**. U wordt automatisch naar de startpagina van Purview Studio geleid.
 
-   Bovenaan de startpagina ziet u de naam van uw catalogus en een set met catalogusanalyses. Inbegrepen zijn het aantal gebruikers, gegevensassets en woordenlijsttermen. In de samenvatting ziet u dat er in totaal meer dan 200 assets zijn en 113 woordenlijsttermen. Dit aantal wordt bijgewerkt als uw organisatie meer termen scant en toevoegt aan Azure Purview.
+   Bovenaan de startpagina ziet u de naam van uw catalogus en een set met catalogusanalyses. Inbegrepen zijn het aantal bronnen, gegevensassets en woordenlijst termen. In de samenvatting ziet u dat er in totaal meer dan 200 assets zijn en 113 woordenlijsttermen. Dit aantal wordt bijgewerkt als uw organisatie meer termen scant en toevoegt aan Azure Purview.
 
    :::image type="content" source="./media/tutorial-asset-search/purview-home-page.png" alt-text="Schermopname van de startpagina van Azure Purview.":::
 

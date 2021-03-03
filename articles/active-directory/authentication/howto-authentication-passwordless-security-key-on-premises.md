@@ -1,29 +1,26 @@
 ---
-title: Wacht woord voor een beveiligde sleutel aanmelden bij on-premises resources (preview)-Azure Active Directory
-description: Meer informatie over het inschakelen van aanmelding met een wacht woord voor een beveiligde sleutel naar on-premises resources met behulp van Azure Active Directory (preview-versie)
+title: Wacht woord voor een beveiligde sleutel aanmelden bij on-premises resources-Azure Active Directory
+description: Meer informatie over het inschakelen van aanmelding met een wacht woord voor een beveiligde sleutel naar on-premises resources met behulp van Azure Active Directory
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/09/2020
+ms.date: 02/22/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1459442f7d99d1de88a685eed34493da530c1a4
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: db1b559bb4f6a1f8866116c287df5b814500210b
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743476"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101647469"
 ---
-# <a name="enable-passwordless-security-key-sign-in-to-on-premises-resources-with-azure-active-directory-preview"></a>Aanmeldings wachtwoord zonder wacht woord inschakelen voor on-premises resources met Azure Active Directory (preview-versie)
+# <a name="enable-passwordless-security-key-sign-in-to-on-premises-resources-with-azure-active-directory"></a>Aanmeldings wachtwoord zonder wacht woord inschakelen voor on-premises resources met Azure Active Directory 
 
 Dit document richt zich op het inschakelen van verificatie zonder wacht woord voor on-premises resources voor omgevingen met zowel **Azure AD join** als **hybride Azure AD gekoppelde** Windows 10-apparaten. Deze functionaliteit biedt naadloze eenmalige aanmelding (SSO) voor on-premises resources met behulp van met micro soft compatibele beveiligings sleutels.
-
-> [!NOTE]
-> FIDO2-beveiligings sleutels zijn een open bare preview-functie van Azure Active Directory. Zie [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="sso-to-on-premises-resources-using-fido2-keys"></a>Eenmalige aanmelding voor on-premises resources met behulp van FIDO2-sleutels
 
@@ -42,7 +39,7 @@ Er wordt een Azure AD Kerberos-server object gemaakt in uw on-premises Active Di
 
 ## <a name="requirements"></a>Vereisten
 
-Organisaties moeten de stappen voor het [inschakelen van een wacht woord met wachtwoord beveiliging voor Windows 10-apparaten (preview-versie)](howto-authentication-passwordless-security-key.md) volt ooien voordat u de stappen in dit artikel uitvoert.
+Organisaties moeten de stappen voor het [inschakelen van een wacht woord met wachtwoord beveiliging voor Windows 10-apparaten](howto-authentication-passwordless-security-key.md) volt ooien voordat u de stappen in dit artikel uitvoert.
 
 Organisaties moeten ook voldoen aan de volgende software vereisten.
 
@@ -156,13 +153,13 @@ Aanmelden met FIDO wordt geblokkeerd als uw wacht woord is verlopen. De verwacht
 
 ## <a name="troubleshooting-and-feedback"></a>Probleemoplossing en feedback
 
-Als u feedback wilt delen of problemen ondervindt tijdens het vooraf bekijken van deze functie, kunt u met de volgende stappen delen via de Windows feedback hub-app:
+Als u feedback wilt delen of problemen ondervindt met deze functie, kunt u via de Windows feedback hub-app delen door de volgende stappen uit te voeren:
 
 1. Start de **feedback-hub** en zorg ervoor dat u bent aangemeld.
 1. Feedback verzenden in de volgende categorisatie:
    - Categorie: beveiliging en privacy
    - Subcategorie: FIDO
-1. Als u logboeken wilt vastleggen, gebruikt u de optie om **mijn probleem opnieuw te maken**
+1. Als u logboeken wilt vastleggen, gebruikt u de optie om **mijn probleem opnieuw te maken**.
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 

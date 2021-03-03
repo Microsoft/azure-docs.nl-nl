@@ -9,19 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.assetid: 1c4f1951-3613-4a5a-a0af-36b85750c84e
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines-sap
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/16/2020
 ms.author: sedusch
-ms.openlocfilehash: c70de186468eb3efacc82c1d5c8802612475fd4d
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: fe98ef297c6bed5ef3d982ed09db361244f75216
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232791"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101675693"
 ---
 # <a name="azure-virtual-machines-deployment-for-sap-netweaver"></a>Azure Virtual Machines-implementatie voor SAP NetWeaver
 
@@ -1510,7 +1509,7 @@ Volg de stappen in hoofd stuk [de Azure-extensie voor SAP configureren][deployme
 
 Als de fouten niet verdwijnen, [neemt u contact op met de ondersteuning][deployment-guide-contact-support].
 
-#### <a name="contact-support"></a><a name="3ba34cfc-c9bb-4648-9c3c-88e8b9130ca2"></a>Contact met ondersteuning
+#### <a name="contact-support"></a><a name="3ba34cfc-c9bb-4648-9c3c-88e8b9130ca2"></a>Contact opnemen met ondersteuning
 
 Er is een onverwachte fout opgetreden of er is geen bekende oplossing. Verzamel het bestand AzureEnhancedMonitoring_service. log dat zich in de map C:\Packages\Plugins\Microsoft.AzureCAT.AzureEnhancedMonitoring.AzureCATExtensionHandler \\ \<version\> \Drop (Windows) of/var/log/Azure/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux (Linux) bevindt en neem contact op met SAP-ondersteuning voor verdere ondersteuning.
 

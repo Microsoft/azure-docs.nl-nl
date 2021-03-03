@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/05/2021
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 16d2bf39d61961e2f83910735db1d0ddf1c91849
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: f22d97f8a4ab5e5b6e275c405cce523e8a7b8e72
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99627362"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101656547"
 ---
 # <a name="how-does-azure-cosmos-db-provide-high-availability"></a>Hoe biedt Azure Cosmos DB hoge Beschik baarheid?
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -80,7 +80,7 @@ Voor zeldzame gevallen van regionale uitval zorgt Azure Cosmos DB ervoor dat uw 
 
 * Tijdens een onderbreking van de Lees regio worden Azure Cosmos-accounts die gebruikmaken van een consistentie niveau of sterke consistentie met drie of meer Lees regio's, Maxi maal beschikbaar voor lees-en schrijf bewerkingen.
 
-* Azure Cosmos-accounts die gebruikmaken van sterke consistentie met drie of minder totale regio's (één schrijven, twee gelezen), verliezen de schrijf beschikbaarheid tijdens een onderbreking van de Lees regio. Klanten met vier of meer totaal regio's kunnen zich echter aanmelden voor het gebruik van dynamische Lees quorums door een ondersteunings ticket in te dienen. Accounts die ten minste twee Lees regio's in deze configuratie onderhouden, behouden de beschik baarheid van schrijf bewerkingen.
+* Azure Cosmos-accounts die gebruikmaken van sterke consistentie met drie regio's (één schrijven, twee gelezen), behouden de beschik baarheid van schrijven tijdens een onderbreking van de Lees regio. Voor accounts waarvoor twee regio's en automatische failover zijn ingeschakeld, accepteert het account geen schrijf bewerkingen meer totdat de regio is gemarkeerd als mislukt en er een automatische failover wordt uitgevoerd.
 
 * De verbinding met het betrokken gebied wordt automatisch verbroken en wordt offline gemarkeerd. De [Azure Cosmos DB sdk's](sql-api-sdk-dotnet.md) omleiden Lees aanroepen naar de volgende beschik bare regio in de lijst voorkeurs regio.
 
@@ -110,7 +110,7 @@ De volgende tabel bevat een overzicht van de mogelijkheden voor hoge Beschik baa
 |SLA voor Beschik baarheid lezen  | 99,99% | 99,995% | 99,995% | 99,999% |
 |Zone fouten – gegevens verlies | Gegevensverlies | Geen gegevens verlies | Geen gegevens verlies | Geen gegevens verlies |
 |Zone fouten-Beschik baarheid | Beschikbaarheids verlies | Geen beschikbaar verlies | Geen beschikbaar verlies | Geen beschikbaar verlies |
-|Regionale storing – gegevens verlies | Gegevensverlies |  Gegevensverlies | Afhankelijk van consistentie niveau. Bekijk [consistentie, Beschik baarheid en prestaties](consistency-levels-tradeoffs.md) voor meer informatie. | Afhankelijk van consistentie niveau. Bekijk [consistentie, Beschik baarheid en prestaties](consistency-levels-tradeoffs.md) voor meer informatie.
+|Regionale storing – gegevens verlies | Gegevensverlies |  Gegevensverlies | Afhankelijk van consistentie niveau. Bekijk [consistentie, Beschik baarheid en prestaties](./consistency-levels.md) voor meer informatie. | Afhankelijk van consistentie niveau. Bekijk [consistentie, Beschik baarheid en prestaties](./consistency-levels.md) voor meer informatie.
 |Regionale storingen-Beschik baarheid | Beschikbaarheids verlies | Beschikbaarheids verlies | Geen Beschik baarheid in het geval van een storing in de Lees regio, tijdelijke fout bij het schrijven van regio's | Geen beschikbaar verlies |
 |Prijs (***1** _) | N.v.t. | Ingericht aantal RU/s x 1,25 | Ingericht aantal RU/s x 1,25 (_ *_2_* *) | Schrijf frequentie voor meerdere regio's |
 

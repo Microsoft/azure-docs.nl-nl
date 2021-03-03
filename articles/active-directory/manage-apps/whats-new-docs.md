@@ -9,12 +9,12 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: daveba
-ms.openlocfilehash: 53339623ee435362d248b794776681972000173e
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 9de518f53a6054a47a72e40ebe546a32dd48aabe
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99258571"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101647269"
 ---
 # <a name="azure-active-directory-application-management-whats-new"></a>Azure Active Directory toepassings beheer: wat is er nieuw
 
@@ -34,7 +34,7 @@ Welkom bij wat er nieuw is in Azure Active Directory documentatie voor toepassin
 - [Veelgestelde vragen over de toepassings proxy van Active Directory (Azure AD)](application-proxy-faq.md)
 - [Zelfstudie: Een on-premises toepassing voor externe toegang toevoegen via Application Proxy in Azure Active Directory](application-proxy-add-on-premises-application.md)
 - [Werken met bestaande on-premises proxyservers](application-proxy-configure-connectors-with-proxy-servers.md)
-- [Line-of-Business-Apps ontwikkelen voor Azure Active Directory](developer-guidance-for-integrating-applications.md)
+- [Line-of-Business-Apps ontwikkelen voor Azure Active Directory](../develop/v2-overview.md)
 - [Azure AD-toepassingsproxy-connectors begrijpen](application-proxy-connectors.md)
 - [Informatie over gekoppelde aanmelding](configure-linked-sign-on.md)
 - [Informatie over eenmalige aanmelding op basis van wacht woorden](configure-password-single-sign-on-non-gallery-applications.md)

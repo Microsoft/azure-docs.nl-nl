@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 01/18/2021
+ms.date: 02/15/2021
 ms.author: jeedes
-ms.openlocfilehash: 745a82300cbbc87070a117cd8dd094236821aee7
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 390ccfa828ebaa0d3dec15990ffeb60cbb24360e
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625395"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101648574"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-overdrive"></a>Zelfstudie: Azure Active Directory-integratie met Overdrive
 
@@ -37,9 +37,9 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* Overdrive biedt ondersteuning voor door **SP** geïnitieerde eenmalige aanmelding
+* Sturing ondersteunt door **SP** geïnitieerde SSO.
 
-* Overdrive biedt ondersteuning voor het **Just-In-Time** inrichten van gebruikers
+* Sturing ondersteunt **just-in-time** -gebruikers inrichting.
 
 ## <a name="add-overdrive-from-the-gallery"></a>Sturing toevoegen vanuit de galerie
 
@@ -65,7 +65,7 @@ Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met st
     1. **[Maak een sturing-test gebruiker](#create-overdrive-test-user)** -om een equivalent van B. Simon in sturing te hebben dat is gekoppeld aan de Azure AD-representatie van de gebruiker.
 1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-### <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
+## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
@@ -121,7 +121,7 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
 7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-### <a name="configure-overdrive-sso"></a>Sturing SSO configureren
+## <a name="configure-overdrive-sso"></a>Sturing SSO configureren
 
 Als u eenmalige aanmelding aan de zijde van **Overdrive** wilt configureren, moet u het gedownloade **XML-bestand met federatieve metagegevens** en de correcte uit Azure Portal gekopieerde URL's verzenden naar het [Overdrive-ondersteuningsteam](https://help.overdrive.com/). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
@@ -133,7 +133,7 @@ In deze sectie wordt een gebruiker met de naam Britta Simon gemaakt in Overdrive
 >U kunt ook alle andere hulpprogramma's voor het maken van gebruikersaccounts of API's van Overdrive gebruiken om Azure AD-gebruikersaccounts in te richten.
 >
 
-### <a name="test-sso"></a>Eenmalige aanmelding testen
+## <a name="test-sso"></a>Eenmalige aanmelding testen
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
@@ -141,8 +141,8 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Ga rechtstreeks naar de URL voor sturing-aanmelding en start de aanmeldings stroom vanaf daar.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel sturing in de mijn apps klikt, wordt dit omgeleid naar de sturing-aanmeldings-URL. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel sturing in de mijn apps klikt, wordt dit omgeleid naar de sturing-aanmeldings-URL. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nadat u sturing hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+Nadat u sturing hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

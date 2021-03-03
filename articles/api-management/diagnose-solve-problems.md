@@ -6,16 +6,16 @@ ms.service: api-management
 ms.topic: article
 ms.date: 02/05/2021
 ms.author: rongzhang
-ms.openlocfilehash: d41dcb939f981ce9cb6d3eae328cb2eb9adc20c2
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: d8ec04227316088983977f5b487abfa81fb5c525
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100654109"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101652399"
 ---
 # <a name="azure-api-management-diagnostics-overview"></a>Overzicht van diagnostische gegevens over Azure API Management
 
-Wanneer u een API hebt gemaakt en beheerd in azure API Management, wilt u voor bereid zijn op eventuele problemen die zich kunnen voordoen, van 404 niet gevonden fouten tot 502 onjuiste gateway fout. API Management Diagnostics is een intelligente en interactieve ervaring om u te helpen bij het oplossen van uw API die in APIM is gepubliceerd zonder dat hiervoor configuratie is vereist. Wanneer u problemen ondervindt met uw gepubliceerde Api's, wordt door API Management Diagnostics nagegaan wat er mis is en leidt u naar de juiste informatie om snel problemen op te lossen en het probleem op te lossen.
+Wanneer u een API in azure API Management bouwt en beheert, moet u worden voor bereid op eventuele problemen die zich voordoen, van 404 niet gevonden fouten tot 502 onjuiste gateway fout. API Management Diagnostics is een intelligente en interactieve ervaring om u te helpen bij het oplossen van uw API die in APIM is gepubliceerd zonder dat hiervoor configuratie is vereist. Wanneer u problemen ondervindt met uw gepubliceerde Api's, wordt door API Management Diagnostics nagegaan wat er mis is en leidt u naar de juiste informatie om snel problemen op te lossen en het probleem op te lossen.
 
 Hoewel deze ervaring het handigst is wanneer u in de afgelopen 24 uur problemen ondervindt met uw API, zijn alle diagnostische grafieken altijd beschikbaar om te analyseren.
 

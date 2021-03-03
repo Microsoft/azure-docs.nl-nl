@@ -11,12 +11,12 @@ ms.author: peterlu
 author: peterclu
 ms.date: 07/16/2020
 ms.custom: contperf-fy20q4, tracking-python, contperf-fy21q1
-ms.openlocfilehash: 9a937336e1628add54ab5f52cdd6ef475d463f7d
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 6a89d225b747f116ed75bbe2e6928ec2a74f9c5e
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100515985"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101655952"
 ---
 # <a name="secure-an-azure-machine-learning-training-environment-with-virtual-networks"></a>Een Azure Machine Learning-trainings omgeving beveiligen met virtuele netwerken
 
@@ -74,7 +74,7 @@ Als u een [beheerd Azure machine learning __Compute-doel__](concept-compute-targ
 > * Een load balancer
 > 
 > In het geval van clusters worden deze bronnen verwijderd (en opnieuw gemaakt) elke keer dat het cluster wordt geschaald naar 0 knoop punten, maar voor een instantie waarvan de bronnen worden vastgehouden, is het exemplaar volledig verwijderd (stoppen wordt niet verwijderd uit de resources). 
-> De beperkingen die voor deze resources gelden, worden bepaald door de [resourcequota](../azure-resource-manager/management/azure-subscription-service-limits.md) van het abonnement. Als de resource groep van het virtuele netwerk is vergrendeld, mislukt de verwijdering van het reken cluster of het exemplaar. De Load Balancer kan pas worden verwijderd als het berekenings cluster/exemplaar is verwijderd.
+> De beperkingen die voor deze resources gelden, worden bepaald door de [resourcequota](../azure-resource-manager/management/azure-subscription-service-limits.md) van het abonnement. Als de resource groep van het virtuele netwerk is vergrendeld, mislukt de verwijdering van het reken cluster of het exemplaar. De Load Balancer kan pas worden verwijderd als het berekenings cluster/exemplaar is verwijderd. Zorg er ook voor dat er geen Azure-beleid is dat het maken van netwerk beveiligings groepen verhindert.
 
 
 ### <a name="required-ports"></a><a id="mlcports"></a> Vereiste poorten
@@ -83,7 +83,7 @@ Als u van plan bent het virtuele netwerk te beveiligen door het netwerk verkeer 
 
 De batch-service voegt netwerk beveiligings groepen (Nsg's) toe op het niveau van netwerk interfaces (Nic's) die zijn gekoppeld aan Vm's. Met deze netwerkbeveiligingsgroepen worden automatisch binnenkomende en uitgaande regels geconfigureerd om het volgende verkeer toe te staan:
 
-- Binnenkomend TCP-verkeer op de poorten 29876 en 29877 van een __service label__ van __BatchNodeManagement__.
+- Binnenkomend TCP-verkeer op de poorten 29876 en 29877 van een __service label__ van __BatchNodeManagement__. Verkeer via deze poorten wordt versleuteld en wordt gebruikt door Azure Batch voor de communicatie van scheduler/knoop punten.
 
     ![Een regel voor binnenkomende verbindingen die gebruikmaakt van het BatchNodeManagement-service label](./media/how-to-enable-virtual-network/batchnodemanagement-service-tag.png)
 
@@ -93,7 +93,7 @@ De batch-service voegt netwerk beveiligings groepen (Nsg's) toe op het niveau va
 
 - Uitgaand verkeer op een willekeurige poort naar internet.
 
-- Voor het binnenkomende TCP-verkeer van reken instanties op poort 44224 van een __service-tag__ van __AzureMachineLearning__.
+- Voor het binnenkomende TCP-verkeer van reken instanties op poort 44224 van een __service-tag__ van __AzureMachineLearning__. Verkeer via deze poort wordt versleuteld en wordt gebruikt door Azure Machine Learning voor communicatie met toepassingen die worden uitgevoerd op Compute-exemplaren.
 
 > [!IMPORTANT]
 > Wees voorzichtig als u binnenkomende of uitgaande regels toevoegt of wijzigt in netwerkbeveiligingsgroepen die door Batch zijn geconfigureerd. Als een NSG communicatie met de reken knooppunten blokkeert, stelt de compute-service de status van de reken knooppunten in op onbruikbaar.

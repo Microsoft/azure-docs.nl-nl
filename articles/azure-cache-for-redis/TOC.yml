@@ -100,8 +100,10 @@
           href: cache-private-link.md
         - name: Zone-redundantie inschakelen
           href: cache-how-to-zone-redundancy.md
-        - name: Geo-replicatie instellen
+        - name: Een installatie van een OSS-geo-replicatie instellen
           href: cache-how-to-geo-replication.md
+        - name: Actieve geo-replicatie voor onderneming instellen
+          href: cache-how-to-active-geo-replication.md
         - name: Besparen met gereserveerde capaciteit
           href: cache-reserved-pricing.md
         - name: Migreren naar Azure Cache voor Redis

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: d029f033a3c452587dbeeadf69c46cc99f604031
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 58cd69ebe97d9d0965d7e648b0ded012ac71cd0d
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99053812"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101646118"
 ---
 # <a name="tutorial-configure-bluejeans-for-automatic-user-provisioning"></a>Zelfstudie: BlueJeans configureren voor automatische gebruikersinrichting
 
@@ -27,7 +27,7 @@ In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel B
 > * Gebruikers maken in BlueJeans
 > * Gebruikers in BlueJeans verwijderen wanneer ze niet meer toegang nodig hebben
 > * Gebruikers kenmerken gesynchroniseerd laten tussen Azure AD en BlueJeans
-> * [Eenmalige aanmelding](https://docs.microsoft.com/azure/active-directory/saas-apps/bluejeans-tutorial) bij BlueJeans (aanbevolen)
+> * [Eenmalige aanmelding](./bluejeans-tutorial.md) bij BlueJeans (aanbevolen)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -141,7 +141,7 @@ Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers di
 Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om uw implementatie te bewaken:
 
 1. Gebruik de [inrichtingslogboeken](../reports-monitoring/concept-provisioning-logs.md) om te bepalen welke gebruikers al dan niet met succes zijn ingericht
-2. Controleer de [voortgangsbalk](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user) om de status van de inrichtingscyclus weer te geven en te zien of deze al bijna is voltooid
+2. Controleer de [voortgangsbalk](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) om de status van de inrichtingscyclus weer te geven en te zien of deze al bijna is voltooid
 3. Als het configureren van de inrichting een foutieve status lijkt te hebben, wordt de toepassing in quarantaine geplaatst. [Klik hier](../app-provisioning/application-provisioning-quarantine-status.md) voor meer informatie over quarantainestatussen.  
 
 ## <a name="connector-limitations"></a>Connectorbeperkingen

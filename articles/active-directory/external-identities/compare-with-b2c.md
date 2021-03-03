@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: overview
-ms.date: 10/23/2020
+ms.date: 03/02/2021
 ms.custom: project-no-code
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6be0720b7eafb251b262d5cd182bdf06e201402d
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.openlocfilehash: 78fd91e2ba7badb1936b8603c8ed089130b29ffb
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173070"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101644062"
 ---
 # <a name="what-are-external-identities-in-azure-active-directory"></a>Wat zijn externe identiteiten in Azure Active Directory?
 
@@ -27,7 +27,7 @@ Met externe identiteiten in Azure AD kunt u personen buiten uw organisatie toega
 
 Externe identiteiten van Azure Active Directory focussen minder op de relatie van een gebruiker met uw organisatie en meer op de manier waarop de gebruiker zich wil aanmelden bij uw apps en resources. Binnen dit kader ondersteunt Azure Active Directory diverse scenario's van business-to-business (B2B)-samenwerking tot toegangsbeheer voor consumenten-/klantentoepassingen of burgergerichte toepassingen (business-to-customer of B2C).
 
-- **Deel uw apps en resources met externe gebruikers (B2B-samenwerking)** . Nodig externe gebruikers in uw eigen tenant uit in als 'gastgebruikers' aan wie u machtigingen kunt toewijzen (voor autorisatie), terwijl ze hun bestaande referenties kunnen gebruiken (voor verificatie). Gebruikers melden zich aan bij de gedeelde resources met behulp van een eenvoudige uitnodiging en een inwisselproces met hun werk- of school-account of een andere e-mailaccount. U kunt [Azure AD-rechtenbeheer](../governance/entitlement-management-overview.md) ook gebruiken om beleidsregels te configureren die [de toegang voor externe gebruikers beheren](../governance/entitlement-management-external-users.md#how-access-works-for-external-users). En nu met de beschikbaarheid van [stromen voor selfservice voor het registreren van gebruikers (preview)](self-service-sign-up-overview.md), kunt u externe gebruikers toestaan zich zelf aan te melden voor toepassingen. De ervaring kan worden aangepast om het registreren met een werk-, school- of sociale identiteit (zoals Google of Facebook) toe te staan. U kunt ook informatie over de gebruiker verzamelen tijdens het registratieproces. Zie de [Azure AD-B2B-documentatie](index.yml) voor meer informatie.
+- **Deel uw apps en resources met externe gebruikers (B2B-samenwerking)** . Nodig externe gebruikers in uw eigen tenant uit in als 'gastgebruikers' aan wie u machtigingen kunt toewijzen (voor autorisatie), terwijl ze hun bestaande referenties kunnen gebruiken (voor verificatie). Gebruikers melden zich aan bij de gedeelde resources met behulp van een eenvoudige uitnodiging en een inwisselproces met hun werk- of school-account of een andere e-mailaccount. U kunt [Azure AD-rechtenbeheer](../governance/entitlement-management-overview.md) ook gebruiken om beleidsregels te configureren die [de toegang voor externe gebruikers beheren](../governance/entitlement-management-external-users.md#how-access-works-for-external-users). En nu de beschik baarheid van [gebruikers stromen voor selfservice registratie](self-service-sign-up-overview.md), kunt u externe gebruikers toestaan zich aan te melden voor toepassingen. De ervaring kan worden aangepast om het registreren met een werk-, school- of sociale identiteit (zoals Google of Facebook) toe te staan. U kunt ook informatie over de gebruiker verzamelen tijdens het registratieproces. Zie de [Azure AD-B2B-documentatie](index.yml) voor meer informatie.
 
 - **Bouw gebruikersbelevingen met een white-label-oplossing voor identiteitsbeheer voor consument- en klantgerichte apps (Azure Active Directory B2C)** . Als u een bedrijf of ontwikkelaar bent die klantgerichte apps maakt, kunt u schalen naar miljoenen consumenten, klanten of burgers door gebruik te maken van Azure Active Directory B2C. Ontwikkel aars kunnen Azure Active Directory gebruiken als het volledige CIAM-systeem (Customer Identity and Access Management) voor hun toepassingen. Klanten kunnen zich aanmelden met een identiteit die zij al hebben ingesteld (zoals Facebook of Gmail). Met Azure AD B2C kunt u volledig aanpassen en beheren hoe klanten zich registreren en aanmelden en hoe zij hun profielen beheren wanneer ze uw toepassingen gebruiken. Zie de [Azure AD-B2C-documentatie](../../active-directory-b2c/index.yml) voor meer informatie.
 

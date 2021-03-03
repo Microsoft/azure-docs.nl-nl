@@ -7,20 +7,32 @@ ms.author: chpalm
 ms.date: 10/10/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 48b9e1139ecae3deed513c954bf4faa7022a88a1
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
-ms.translationtype: HT
+zone_pivot_groups: acs-plat-web-ios-android
+ms.openlocfilehash: 6da700fdd8149a7fff92ed0edef2015e354eca05
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936682"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101660048"
 ---
 # <a name="quickstart-join-your-calling-app-to-a-teams-meeting"></a>Quickstart: Voeg u aanroepende app toe aan een Teams-meeting
 
-[!INCLUDE [Private Preview Notice](../../includes/private-preview-include.md)]
+> [!IMPORTANT]
+> Vul [dit formulier](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR21ouQM6BHtHiripswZoZsdURDQ5SUNQTElKR0VZU0VUU1hMOTBBMVhESS4u)in om [teams Tenant interoperabiliteit](../concepts/teams-interop.md)in of uit te scha kelen.
 
 Ga aan de slag met Azure Communication Services door de aanroepende oplossing te verbinden met Microsoft Teams met behulp van de JavaScript-clientbibliotheek.
 
-[!INCLUDE [Join Teams meetings](./includes/teams-interop-javascript.md)]
+::: zone pivot="platform-web"
+[!INCLUDE [Calling with JavaScript](./includes/teams-interop-javascript.md)]
+::: zone-end
+
+::: zone pivot="platform-android"
+[!INCLUDE [Calling with Android](./includes/teams-interop-android.md)]
+::: zone-end
+
+::: zone pivot="platform-ios"
+[!INCLUDE [Calling with iOS](./includes/teams-interop-ios.md)]
+::: zone-end
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

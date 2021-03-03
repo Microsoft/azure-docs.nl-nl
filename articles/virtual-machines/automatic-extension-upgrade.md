@@ -3,16 +3,17 @@ title: Automatische extensie-upgrade voor Vm's en schaal sets in azure
 description: Meer informatie over het inschakelen van de automatische extensie-upgrade voor uw virtuele machines en virtuele-machine schaal sets in Azure.
 author: mayanknayar
 ms.service: virtual-machines
+ms.subservice: automatic-extension-upgrades
 ms.workload: infrastructure
 ms.topic: how-to
 ms.date: 02/12/2020
 ms.author: manayar
-ms.openlocfilehash: acc014785105d14c3109cfa420f0e9402ca3f534
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 104eada6dc342c21b8da2f409756e9f34c103936
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417212"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101668330"
 ---
 # <a name="preview-automatic-extension-upgrade-for-vms-and-scale-sets-in-azure"></a>Preview: automatische upgrade van de extensie voor Vm's en schaal sets in azure
 
@@ -21,7 +22,7 @@ Automatische extensie-upgrades zijn beschikbaar als preview-versie van Azure Vm'
  Automatische extensie-upgrade heeft de volgende functies:
 - Ondersteund voor Azure-Vm's en Azure-Virtual Machine Scale Sets. Service Fabric Virtual Machine Scale Sets worden momenteel niet ondersteund.
 - Upgrades worden toegepast in een Beschik baarheid-eerste implementatie model (hieronder beschreven).
-- Wanneer de toepassing wordt toegepast op een Virtual Machine Scale Sets, wordt er niet meer dan 20% van de Virtual Machine Scale Sets virtuele machines in één batch bijgewerkt (onderhevig aan mini maal één virtuele machine per batch).
+- Voor een Schaalset voor een virtuele machine wordt niet meer dan 20% van de virtuele machines van de schaalset in één batch bijgewerkt. De minimale Batch grootte is één virtuele machine.
 - Werkt voor alle VM-grootten en voor Windows-en Linux-uitbrei dingen.
 - U kunt op elk gewenst moment automatische upgrades afmelden.
 - Automatische extensie-upgrades kunnen worden ingeschakeld voor een Virtual Machine Scale Sets van elke grootte.
@@ -36,24 +37,9 @@ Automatische extensie-upgrades zijn beschikbaar als preview-versie van Azure Vm'
 
 
 ## <a name="how-does-automatic-extension-upgrade-work"></a>Hoe werkt automatische extensie-upgrade?
-Het upgrade proces van de uitbrei ding werkt door de bestaande extensie versie op een virtuele machine te vervangen door de nieuwe extensie versie die wordt gepubliceerd door de extensie Uitgever. De status van de virtuele machine wordt gecontroleerd nadat de nieuwe uitbrei ding is geïnstalleerd. Als de virtuele machine binnen vijf minuten na de voltooiing van de upgrade niet in orde is, wordt de nieuwe extensie versie teruggezet naar de vorige versie.
+Het upgrade proces van de extensie vervangt de bestaande extensie versie op een virtuele machine door een nieuwe versie van dezelfde extensie wanneer deze door de extensie uitgever wordt gepubliceerd. De status van de virtuele machine wordt gecontroleerd nadat de nieuwe uitbrei ding is geïnstalleerd. Als de virtuele machine binnen vijf minuten na de voltooiing van de upgrade niet in orde is, wordt de versie van de uitbrei ding teruggezet naar de vorige versie.
 
 Er wordt automatisch een mislukte extensie-update uitgevoerd. Een nieuwe poging wordt om de paar dagen automatisch uitgevoerd zonder tussen komst van de gebruiker.
-
-
-## <a name="upgrade-process-for-virtual-machine-scale-sets"></a>Upgrade proces voor Virtual Machine Scale Sets
-1. Voordat u met het upgrade proces begint, zorgt u ervoor dat niet meer dan 20% van de virtuele machines in de gehele schaalset een slechte status heeft (om welke reden dan ook).
-
-2. De upgrade Orchestrator identificeert de batch van de VM-exemplaren die moeten worden geüpgraded, met een batch van Maxi maal 20% van het totale aantal VM'S, afhankelijk van een minimale Batch grootte van één virtuele machine.
-
-3. Voor schaal sets met geconfigureerde status tests voor toepassingen of de uitbrei ding van de toepassings status, wacht de upgrade tot vijf minuten (of de gedefinieerde status test configuratie), zodat de virtuele machine in orde is, voordat u doorgaat met de upgrade van de volgende batch. Als een virtuele machine de status niet herstelt na een upgrade, wordt de vorige uitbrei ding versie voor de VM standaard opnieuw geïnstalleerd.
-
-4. De upgrade Orchestrator houdt ook het percentage Vm's bij dat na een upgrade niet meer in orde is. De upgrade wordt gestopt als er meer dan 20% van de bijgewerkte exemplaren een slechte status krijgt tijdens het upgrade proces.
-
-Het bovenstaande proces wordt voortgezet totdat alle exemplaren in de schaalset zijn bijgewerkt.
-
-Met de upgrade functie van de schaalset wordt de status van de algehele schaalset gecontroleerd voordat elke batch wordt geüpgraded. Tijdens het bijwerken van een batch kunnen er andere gelijktijdige geplande of niet-geplande onderhouds activiteiten optreden die van invloed kunnen zijn op de status van de virtuele machines van uw schaalset. Als er in dergelijke gevallen meer dan 20% van de instanties van de schaalset een slechte status heeft, stopt de upgrade van de schaalset aan het einde van de huidige batch.
-
 
 ### <a name="availability-first-updates"></a>Beschik baarheid-eerste updates
 Het model Beschik baarheid-eerste voor platform gemodelleerde updates zorgt ervoor dat beschikbaarheids configuraties in Azure worden geëerbiedigd op meerdere beschikbaarheids niveaus.
@@ -62,9 +48,9 @@ Voor een groep virtuele machines die een update ondergaat, worden de updates doo
 
 **In verschillende regio's:**
 - Een update gaat overal in azure wereld wijd over om te voor komen dat implementatie fouten in azure optreden.
-- Een ' fase ' kan een of meer regio's vormen en een update wordt alleen over fasen verplaatst als de in aanmerking komende Vm's in een fase met succes zijn bijgewerkt.
+- Een ' fase ' kan een of meer regio's hebben en een update wordt alleen over fasen verplaatst als de in aanmerking komende virtuele machines in de vorige fase zijn bijgewerkt.
 - Geografisch gekoppelde regio's worden niet gelijktijdig bijgewerkt en kunnen zich niet in dezelfde regionale fase betreden.
-- Het slagen van een update wordt gemeten door de status van een update van een VM na te houden. De status van de virtuele machine wordt getraceerd via platform status indicatoren voor de virtuele machine. In het geval van Virtual Machine Scale Sets wordt de status van de virtuele machine gevolgd door de status tests van de toepassing of de uitbrei ding van de toepassings status, indien toegepast op de schaalset.
+- Het slagen van een update wordt gemeten door de status van een update van een VM na te houden. De status van de virtuele machine wordt getraceerd via platform status indicatoren voor de virtuele machine. Voor Virtual Machine Scale Sets wordt de status van de virtuele machine gevolgd door de status tests van de toepassing of de uitbrei ding van de toepassings status, indien toegepast op de schaalset.
 
 **Binnen een regio:**
 - Vm's in verschillende Beschikbaarheidszones worden niet gelijktijdig bijgewerkt.
@@ -75,6 +61,18 @@ Voor een groep virtuele machines die een update ondergaat, worden de updates doo
 - Vm's in een gemeen schappelijke beschikbaarheidsset worden bijgewerkt binnen update domein grenzen en Vm's in meerdere update domeinen worden niet gelijktijdig bijgewerkt.  
 - Vm's in een gemeen schappelijke schaalset voor virtuele machines worden gegroepeerd in batches en bijgewerkt binnen de grenzen van het update domein.
 
+### <a name="upgrade-process-for-virtual-machine-scale-sets"></a>Upgrade proces voor Virtual Machine Scale Sets
+1. Voordat u met het upgrade proces begint, zorgt u ervoor dat niet meer dan 20% van de virtuele machines in de gehele schaalset een slechte status heeft (om welke reden dan ook).
+
+2. De upgrade Orchestrator identificeert de batch van de VM-exemplaren die moeten worden bijgewerkt. Een upgrade batch kan Maxi maal 20% van het totale aantal VM'S bevatten, afhankelijk van een minimale Batch grootte van één virtuele machine.
+
+3. Voor schaal sets met geconfigureerde status tests voor toepassingen of een uitbrei ding van de toepassings status, wacht de upgrade tot vijf minuten (of de gedefinieerde status test configuratie) zodat de virtuele machine in orde is voordat de volgende batch wordt bijgewerkt. Als een virtuele machine de status niet herstelt na een upgrade, wordt de vorige uitbrei ding versie op de VM standaard opnieuw geïnstalleerd.
+
+4. De upgrade Orchestrator houdt ook het percentage Vm's bij dat na een upgrade niet meer in orde is. De upgrade wordt gestopt als er meer dan 20% van de bijgewerkte exemplaren een slechte status krijgt tijdens het upgrade proces.
+
+Het bovenstaande proces wordt voortgezet totdat alle exemplaren in de schaalset zijn bijgewerkt.
+
+Met de upgrade functie van de schaalset wordt de status van de algehele schaalset gecontroleerd voordat elke batch wordt geüpgraded. Tijdens het bijwerken van een batch kunnen er andere gelijktijdige geplande of niet-geplande onderhouds activiteiten optreden die van invloed kunnen zijn op de status van de virtuele machines van uw schaalset. Als er in dergelijke gevallen meer dan 20% van de instanties van de schaalset een slechte status heeft, stopt de upgrade van de schaalset aan het einde van de huidige batch.
 
 ## <a name="supported-extensions"></a>Ondersteunde extensies
 De preview-versie van automatische extensie-upgrades ondersteunt de volgende extensies (en er worden regel matig meer toegevoegd):
@@ -258,13 +256,13 @@ az vmss extension set \
 
 ## <a name="extension-upgrades-with-multiple-extensions"></a>Extensie-upgrades met meerdere extensies
 
-Een virtuele machine of VM-Schaalset kan meerdere uitbrei dingen hebben waarvoor automatische extensie-upgrade is ingeschakeld, naast andere uitbrei dingen zonder automatische extensie-upgrades.  
+Een VM-of virtuele-machine Schaalset kan meerdere uitbrei dingen hebben waarvoor automatische extensie-upgrade is ingeschakeld. Dezelfde VM of schaalset kan ook andere uitbrei dingen hebben zonder dat automatische extensie-upgrade is ingeschakeld.  
 
-Als er meerdere extensie-upgrades beschikbaar zijn voor een virtuele machine, kunnen de upgrades samen worden opgenomen in batches. Elke upgrade van de extensie wordt echter afzonderlijk toegepast op een virtuele machine. Een fout in de ene extensie heeft geen invloed op de andere uitbrei dingen die kunnen worden bijgewerkt. Als er bijvoorbeeld twee uitbrei dingen zijn gepland voor een upgrade en de eerste upgrade van de extensie mislukt, wordt de tweede uitbrei ding nog steeds bijgewerkt.
+Als er meerdere uitbreidings uitbreidingen beschikbaar zijn voor een virtuele machine, kunnen de upgrades samen worden gebatcheerd, maar elke upgrade van de uitbrei ding wordt afzonderlijk toegepast op een virtuele machine. Een fout in de ene extensie heeft geen invloed op de andere uitbrei dingen die kunnen worden bijgewerkt. Als er bijvoorbeeld twee uitbrei dingen zijn gepland voor een upgrade en de eerste upgrade van de extensie mislukt, wordt de tweede uitbrei ding nog steeds bijgewerkt.
 
-Automatische extensie-upgrades kunnen ook worden toegepast wanneer een VM-of virtuele-machine schaalset meerdere extensies heeft geconfigureerd met [uitbrei ding van extensie](../virtual-machine-scale-sets/virtual-machine-scale-sets-extension-sequencing.md). Extensie volgorde bepaling is van toepassing op de eerste implementatie van de virtuele machine en eventuele volgende uitbreidings upgrades voor een uitbrei ding worden onafhankelijk toegepast.
+Automatische extensie-upgrades kunnen ook worden toegepast wanneer een VM-of virtuele-machine schaalset meerdere extensies heeft geconfigureerd met [uitbrei ding van extensie](../virtual-machine-scale-sets/virtual-machine-scale-sets-extension-sequencing.md). Extensie volgorde bepaling is van toepassing op de eerste implementatie van de virtuele machine, en eventuele toekomstige verlengings upgrades voor een uitbrei ding worden onafhankelijk toegepast.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 > [!div class="nextstepaction"]
-> [Meer informatie over de toepassings status uitbreiding](./windows/automatic-vm-guest-patching.md)
+> [Meer informatie over de toepassings status uitbreiding](../virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension.md)

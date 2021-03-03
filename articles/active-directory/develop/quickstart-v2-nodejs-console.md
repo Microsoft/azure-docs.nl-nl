@@ -1,21 +1,21 @@
 ---
 title: 'Snelstartgids: Microsoft Graph aanroepen vanuit een Node.js-console-app | Azure'
 titleSuffix: Microsoft identity platform
-description: In deze Quick Start leert u hoe een Node.js-console toepassing een toegangs token kan verkrijgen en een API aanroept die wordt beveiligd door een micro soft Identity platform-eind punt, met behulp van de eigen identiteit van de app
+description: In deze Snelstartgids downloadt en voert u een code voorbeeld uit die laat zien hoe een Node.js-console toepassing een toegangs token kan ophalen en een API aanroept die wordt beveiligd door een micro soft Identity platform-eind punt, met behulp van de eigen identiteit van de app
 services: active-directory
 author: derisen
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
-ms.date: 02/11/2021
+ms.date: 02/17/2021
 ms.author: v-doeris
-ms.openlocfilehash: c550cc8009f0138b9f1803399fbc592b34efbfab
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 4360810d460c5fc8598ce302ad8b82f65d2d819e
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100562197"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101653742"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-nodejs-console-app-using-apps-identity"></a>Quick Start: een token verkrijgen en Microsoft Graph-API aanroepen vanuit een Node.js console-app met behulp van de identiteit van de app
 
@@ -29,12 +29,12 @@ Deze Snelstartgids maakt gebruik van de [micro soft-verificatie bibliotheek voor
 * [Visual Studio Code](https://code.visualstudio.com/download) of een andere code-editor
 
 > [!div renderon="docs"]
-> ## <a name="register-and-download-your-quickstart-application"></a>De quickstart-toepassing registreren en downloaden
+> ## <a name="register-and-download-the-sample-application"></a>De voorbeeld toepassing registreren en downloaden
 >
 > Volg de onderstaande stappen om aan de slag te gaan.
 >
 > [!div renderon="docs"]
-> #### <a name="step-1-register-your-application"></a>Stap 1: Uw toepassing registreren
+> #### <a name="step-1-register-the-application"></a>Stap 1: Registreer de toepassing
 > Volg deze stappen om de toepassing te registreren en de registratiegegevens van de app handmatig toe te voegen aan uw oplossing:
 >
 > 1. Meld u aan bij de <a href="https://portal.azure.com/" target="_blank">Azure-portal</a>.
@@ -50,9 +50,9 @@ Deze Snelstartgids maakt gebruik van de [micro soft-verificatie bibliotheek voor
 > 1. Selecteer onder het knooppunt **Gebruiker** de optie **User.Read.All**. Selecteer vervolgens **Machtigingen toevoegen**.
 
 > [!div class="sxs-lookup" renderon="portal"]
-> ### <a name="download-and-configure-your-quickstart-app"></a>Uw snelstart-app downloaden en configureren
+> ### <a name="download-and-configure-the-sample-app"></a>De voor beeld-app downloaden en configureren
 >
-> #### <a name="step-1-configure-your-application-in-azure-portal"></a>Stap 1: uw toepassing configureren in Azure Portal
+> #### <a name="step-1-configure-the-application-in-azure-portal"></a>Stap 1: de toepassing configureren in Azure Portal
 > Om ervoor te zorgen dat het codevoorbeeld voor deze quickstart werkt, moet u een clientgeheim maken en de toepassingstoestemming **User.Read.All** van Graph API toevoegen.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Breng deze wijzigingen voor mij aan]()
@@ -60,7 +60,7 @@ Deze Snelstartgids maakt gebruik van de [micro soft-verificatie bibliotheek voor
 > > [!div id="appconfigured" class="alert alert-info"]
 > > ![Al geconfigureerd](media/quickstart-v2-netcore-daemon/green-check.png) Uw toepassing is al geconfigureerd met deze kenmerken.
 
-#### <a name="step-2-download-your-nodejs-project"></a>Stap 2: het Node.js-project downloaden
+#### <a name="step-2-download-the-nodejs-sample-project"></a>Stap 2: het voorbeeld project van Node.js downloaden
 
 > [!div renderon="docs"]
 > [Het codevoorbeeld downloaden](https://github.com/azure-samples/ms-identity-javascript-nodejs-console/archive/main.zip)
@@ -73,7 +73,7 @@ Deze Snelstartgids maakt gebruik van de [micro soft-verificatie bibliotheek voor
 > > `Enter_the_Supported_Account_Info_Here`
 
 > [!div renderon="docs"]
-> #### <a name="step-3-configure-your-nodejs-project"></a>Stap 3: uw Node.js project configureren
+> #### <a name="step-3-configure-the-nodejs-sample-project"></a>Stap 3: het Node.js-voorbeeld project configureren
 >
 > 1. Pak het zip-bestand uit naar een lokale map dicht bij de hoofdmap van de schijf, bijvoorbeeld *C:/Azure-samples*.
 > 1. Bewerk *. env* en vervang de waarden van de velden `TENANT_ID` , `CLIENT_ID` en `CLIENT_SECRET` met het volgende code fragment:
@@ -172,7 +172,7 @@ const msalConfig = {
         clientId: "Enter_the_Application_Id_Here",
         authority: "https://login.microsoftonline.com/Enter_the_Tenant_Id_Here",
         clientSecret: "Enter_the_Client_Secret_Here",
-   } 
+   }
 };
 const cca = new msal.ConfidentialClientApplication(msalConfig);
 ```

@@ -1,5 +1,5 @@
 ### YamlMime:Landing
-title: Kubernetes met Azure Arc (preview)
+title: Kubernetes met Azure Arc
 summary: Meer informatie over hoe u Kubernetes-clusters beheert met Azure Arc
 metadata:
   title: Kubernetes met Azure Arc
@@ -7,14 +7,14 @@ metadata:
   author: shashankbarsin
   ms.service: azure-arc
   ms.topic: landing-page
-  ms.date: 02/15/2021
+  ms.date: 03/02/2021
   ms.author: shasb
-  ms.openlocfilehash: 97343e8c23e202e70ec30bb0a522105889ea08b3
-  ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+  ms.openlocfilehash: f97b1560e062d1849f726baff8cd66d8e75f8b7f
+  ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 02/17/2021
-  ms.locfileid: "100560230"
+  ms.lasthandoff: 03/02/2021
+  ms.locfileid: "101647843"
 landingContent:
 - title: Kubernetes-clusters verbinden met Azure met behulp van Azure Arc
   linkLists:
@@ -22,6 +22,8 @@ landingContent:
     links:
     - text: Wat is Kubernetes met Azure Arc?
       url: overview.md
+    - text: Azure Arc-validatie programma
+      url: validation-program.md
   - linkListType: concept
     links:
     - text: Agent architectuur
@@ -34,14 +36,18 @@ landingContent:
   linkLists:
   - linkListType: quickstart
     links:
-    - text: Cluster verbinden
-      url: connect-cluster.md
+    - text: Een cluster verbinden met Azure Arc
+      url: quickstart-connect-cluster.md
+- title: Configuraties implementeren met GitOps
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Configuraties implementeren met GitOps
+      url: tutorial-use-gitops-connected-cluster.md
 - title: Clusters configureren, beheren en bewaken
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Configuraties implementeren met GitOps
-      url: use-gitops-connected-cluster.md
     - text: Helm-grafieken implementeren met GitOps
       url: use-gitops-with-helm.md
     - text: GitOps afdwingen met Azure Policy

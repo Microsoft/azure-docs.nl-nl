@@ -7,18 +7,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/30/2020
 ms.reviewer: sngun
-ms.openlocfilehash: ed909cf3feb17930b045dee1031ed5a6209b63d2
-ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
+ms.openlocfilehash: 1b8c0c5bf533765e589e022233af14855b26d29c
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98029012"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101656938"
 ---
 # <a name="what-is-azure-synapse-link-for-azure-cosmos-db"></a>Wat is Azure Synapse Link voor Azure Cosmos DB?
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
-
-> [!IMPORTANT]
-> Er is momenteel een preview-versie van Synapse-SQL-pool ondersteuning voor Azure Synapse-koppeling voor de Azure Cosmos DB. Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Zie voor meer informatie [aanvullende gebruiks voorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 De Azure Synapse-koppeling voor Azure Cosmos DB is een Cloud-native hybride transactionele en analytische verwerking (HTAP) waarmee u bijna realtime analyses kunt uitvoeren via operationele gegevens in Azure Cosmos DB. Met Azure Synapse link maakt u een naadloze integratie tussen Azure Cosmos DB en Azure Synapse Analytics.
 
@@ -101,6 +98,20 @@ Deze integratie maakt de volgende HTAP-scenario's mogelijk voor verschillende ge
 
 Zie [Azure Synapse Analytics for Cosmos DB-ondersteuning](../synapse-analytics/synapse-link/concept-synapse-link-cosmos-db-support.md)voor meer informatie over Azure Synapse Analytics runtime-ondersteuning voor Azure Cosmos db.
 
+## <a name="security"></a>Beveiliging
+
+Met Synapse link kunt u bijna realtime analyses uitvoeren over uw essentiële gegevens in Azure Cosmos DB. Het is essentieel om ervoor te zorgen dat kritieke Bedrijfs gegevens veilig worden opgeslagen in zowel transactionele als analytische archieven. De koppeling van Azure Synapse voor Azure Cosmos DB is ontworpen om aan deze beveiligings vereisten te voldoen met de volgende functies:
+
+* **Netwerk isolatie met behulp van privé-eind punten** : u kunt de netwerk toegang tot de gegevens in de transactionele en analytische archieven onafhankelijk beheren. Netwerk isolatie wordt uitgevoerd met behulp van afzonderlijke beheerde persoonlijke eind punten voor elke opslag plaats in beheerde virtuele netwerken in azure Synapse-werk ruimten. Zie voor meer informatie over het [configureren van privé-eind punten voor een analytisch archief](analytical-store-private-endpoints.md) -artikel.
+
+* **Gegevens versleuteling met door de klant beheerde sleutels** : u kunt de gegevens in transactionele en analytische archieven naadloos versleutelen met behulp van dezelfde door de klant beheerde sleutels op een automatische en transparante manier. Zie het artikel door de [klant beheerde sleutels configureren](how-to-setup-cmk.md) voor meer informatie.
+
+* **Beveiligd sleutel beheer** : voor toegang tot de gegevens in de analytische opslag van Synapse Spark-en Synapse SERVERloze SQL-groepen is het beheren van Azure Cosmos DB sleutels in Synapse Analytics-werk ruimten vereist. In plaats van de Azure Cosmos DB account sleutels inline te gebruiken in Spark-taken of SQL-scripts, biedt de koppeling van Azure Synapse meer veilige mogelijkheden.
+
+  * Wanneer u Synapse serverloze SQL-groepen gebruikt, kunt u een query uitvoeren op de Azure Cosmos DB Analytical Store door de SQL-referenties vooraf te maken, waarbij u de account sleutels opslaat en ernaar verwijst in de `OPENROWSET` functie. Zie voor meer informatie [query uitvoeren met een serverloze SQL-groep in azure Synapse link](../synapse-analytics/sql/query-cosmos-db-analytical-store.md) -artikel.
+
+  * Wanneer u Synapse Spark gebruikt, kunt u de account sleutels in gekoppelde service objecten opslaan die naar een Azure Cosmos DB-Data Base verwijzen en hiernaar verwijzen in de Spark-configuratie tijdens runtime. Zie [gegevens kopiëren naar een speciale SQL-groep met behulp van Apache Spark](../synapse-analytics/synapse-link/how-to-copy-to-sql-pool.md) artikel voor meer informatie.
+
 ## <a name="when-to-use-azure-synapse-link-for-azure-cosmos-db"></a>Wanneer gebruik ik de Azure Synapse-koppeling voor Azure Cosmos DB?
 
 De koppeling Synapse wordt aanbevolen in de volgende gevallen:
@@ -117,15 +128,13 @@ Synapse-koppeling wordt niet aanbevolen als u op zoek bent naar traditionele Dat
 
 ## <a name="limitations"></a>Beperkingen
 
-* De koppeling van Azure Synapse voor Azure Cosmos DB wordt ondersteund voor SQL API en Azure Cosmos DB API voor MongoDB. Het wordt niet ondersteund voor Gremlin-API, Cassandra-API en Table-API. 
+* Azure Synapse Link voor Azure Cosmos DB wordt ondersteund voor SQL API en Azure Cosmos DB voor MongoDB-API. Het wordt niet ondersteund voor Gremlin-API, Cassandra-API en Table-API.
 
 * Analytische opslag kan alleen worden ingeschakeld voor nieuwe containers. Als u een analytische archief wilt gebruiken voor bestaande containers, migreert u gegevens vanuit uw bestaande containers naar nieuwe containers met [Azure Cosmos DB-migratie hulpprogramma's](cosmosdb-migrationchoices.md). U kunt de Synapse-koppeling inschakelen voor nieuwe en bestaande Azure Cosmos DB accounts.
 
-* Voor de containers waarop het analytische archief is ingeschakeld, wordt automatische back-up en herstel van uw gegevens in de analytische opslag op dit moment niet ondersteund. Wanneer de Synapse-koppeling is ingeschakeld voor een database account, blijven Azure Cosmos DB automatisch [back-ups](./online-backup-and-restore.md) van uw gegevens in het transactionele archief (alleen) van containers maken op het geplande back-upinterval, zoals altijd. Het is belang rijk te weten dat wanneer een container waarop een analytische opslag is ingeschakeld, wordt hersteld naar een nieuw account, de container wordt hersteld met alleen transactionele opslag en er geen analytische opslag is ingeschakeld. 
+* Voor de containers waarop het analytische archief is ingeschakeld, wordt automatische back-up en herstel van uw gegevens in de analytische opslag op dit moment niet ondersteund. Wanneer de Synapse-koppeling is ingeschakeld voor een database account, blijven Azure Cosmos DB automatisch [back-ups](./online-backup-and-restore.md) van uw gegevens in het transactionele archief (alleen) van containers maken op het geplande back-upinterval, zoals altijd. Het is belang rijk te weten dat wanneer een container waarop een analytische opslag is ingeschakeld, wordt hersteld naar een nieuw account, de container wordt hersteld met alleen transactionele opslag en er geen analytische opslag is ingeschakeld.
 
 * Het is momenteel niet mogelijk om toegang te krijgen tot de Azure Cosmos DB Analytics Store met Synapse SQL provisioned.
-
-* Netwerk isolatie voor Azure Cosmso DB-analytische opslag met behulp van beheerde privé-eind punten in azure Synapse Analytics wordt momenteel niet ondersteund.
 
 ## <a name="pricing"></a>Prijzen
 
@@ -135,7 +144,7 @@ Het facturerings model van de koppeling Azure Synapse bevat de kosten die zijn g
 
 Raadpleeg de volgende documenten voor meer informatie:
 
-* [Overzicht van analytische opslag van Azure Cosmos DB](analytical-store-introduction.md)
+* [Overzicht van Azure Cosmos DB Analytical Store](analytical-store-introduction.md)
 
 * [Aan de slag met Azure Synapse Link voor Azure Cosmos DB](configure-synapse-link.md)
  

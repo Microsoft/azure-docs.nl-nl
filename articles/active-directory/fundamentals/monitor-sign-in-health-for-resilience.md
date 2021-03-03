@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40bfa27dba905cb2e9a363c7739f0a43e7c2afdf
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: ad99c8d319a22f8b5388838b9d537de2f610478a
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100101239"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101650988"
 ---
 # <a name="monitoring-application-sign-in-health-for-resilience"></a>De status van de aanmelding van een toepassing voor tolerantie controleren
 
@@ -51,7 +51,7 @@ In dit artikel wordt beschreven hoe u de werk stroom voor het aanmelden instelt 
 
 * Een Log Analytics-werk ruimte in uw Azure-abonnement voor het verzenden van logboeken naar Azure Monitor-Logboeken. 
 
-   * Meer informatie over het [maken van een log Analytics-werk ruimte](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace)
+   * Meer informatie over het [maken van een log Analytics-werk ruimte](../../azure-monitor/logs/quick-create-workspace.md)
 
 * Azure AD-logboeken geïntegreerd met Azure Monitor-logboeken
 
@@ -94,7 +94,7 @@ Gebruik de volgende instructies om e-mail waarschuwingen te maken op basis van d
 
  Voer de volgende stappen uit om de onderliggende query te configureren en waarschuwingen in te stellen. U gebruikt de voorbeeld query als basis voor uw configuratie. Aan het einde van deze sectie wordt een uitleg van de query structuur weer gegeven.
 
-Zie [logboek waarschuwingen beheren](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log)voor meer informatie over het maken, weer geven en beheren van logboek waarschuwingen met behulp van Azure monitor.
+Zie [logboek waarschuwingen beheren](../../azure-monitor/alerts/alerts-log.md)voor meer informatie over het maken, weer geven en beheren van logboek waarschuwingen met behulp van Azure monitor.
 
  
 1. Selecteer in de werkmap **bewerken** en selecteer vervolgens het **query pictogram** aan de rechter kant van de grafiek.   
@@ -280,10 +280,9 @@ Nadat u de query en waarschuwingen hebt ingesteld, maakt u bedrijfs processen om
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Meer informatie over werkmappen](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-use-azure-monitor-workbooks)
+[Meer informatie over werkmappen](../reports-monitoring/howto-use-azure-monitor-workbooks.md)
 
  
 
  
 
- 

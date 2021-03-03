@@ -9,20 +9,19 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.assetid: d7c59cc1-b2d0-4d90-9126-628f9c7a5538
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines-sap
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 11/26/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6982b782fdd6b5b269c1562c54be3478c58bbce9
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 329e09221467c2602355e091876c95f305db3578
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500994"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101673745"
 ---
 # <a name="azure-storage-types-for-sap-workload"></a>Azure Storage-typen voor SAP-workload
 Azure heeft talloze opslag typen die in de mogelijkheden, door Voer, latentie en prijzen aanzienlijk verschillen. Sommige opslag typen zijn niet of zijn beperkt bruikbaar voor SAP-scenario's. Dat zijn verschillende Azure Storage-typen goed geschikt of geoptimaliseerd voor specifieke SAP-werkbelasting scenario's. Met name voor SAP HANA hebben sommige Azure Storage-typen gecertificeerd voor het gebruik met SAP HANA. In dit document gaan we de verschillende soorten opslag door lopen en de mogelijkheden en bruikbaarheid van SAP-workloads en SAP-onderdelen beschrijven.
@@ -337,8 +336,8 @@ In het tegenovergestelde van on-premises scenario's speelt het afzonderlijke VM-
 
 | Opslagtype| Linux | Windows | Opmerkingen |
 | --- | --- | --- | --- |
-| Standard - HDD | [Grootten voor virtuele Linux-machines in azure](../../sizes.md) | [Grootten voor virtuele Windows-machines in azure](../../sizes.md) | De opslag limieten van medium of grote Vm's zijn waarschijnlijk hard. |
-| Standard - SSD | [Grootten voor virtuele Linux-machines in azure](../../sizes.md) | [Grootten voor virtuele Windows-machines in azure](../../sizes.md) | De opslag limieten van medium of grote Vm's zijn waarschijnlijk hard. |
+| Standard HDD | [Grootten voor virtuele Linux-machines in azure](../../sizes.md) | [Grootten voor virtuele Windows-machines in azure](../../sizes.md) | De opslag limieten van medium of grote Vm's zijn waarschijnlijk hard. |
+| Standard SSD | [Grootten voor virtuele Linux-machines in azure](../../sizes.md) | [Grootten voor virtuele Windows-machines in azure](../../sizes.md) | De opslag limieten van medium of grote Vm's zijn waarschijnlijk hard. |
 | Premium Storage | [Grootten voor virtuele Linux-machines in azure](../../sizes.md) | [Grootten voor virtuele Windows-machines in azure](../../sizes.md) | Onbeperkte limieten voor IOPS of VM-doorvoer opslag met opslag configuratie |
 | Ultra Disk-opslag | [Grootten voor virtuele Linux-machines in azure](../../sizes.md) | [Grootten voor virtuele Windows-machines in azure](../../sizes.md) | Onbeperkte limieten voor IOPS of VM-doorvoer opslag met opslag configuratie |
 | Azure NetApp Files | [Grootten voor virtuele Linux-machines in azure](../../sizes.md) | [Grootten voor virtuele Windows-machines in azure](../../sizes.md) | Opslag verkeer maakt gebruik van netwerk doorvoer bandbreedte en geen opslag bandbreedte. |

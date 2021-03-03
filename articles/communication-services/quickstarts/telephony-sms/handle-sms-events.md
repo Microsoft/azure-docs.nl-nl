@@ -9,26 +9,25 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: d6409c005e006372f55e77aeb4d977e6b1c45832
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
-ms.translationtype: HT
+ms.openlocfilehash: b3bdbef5680561d60ab4db6ee42033553e691ed3
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96936269"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101660120"
 ---
 # <a name="quickstart-handle-sms-events"></a>Quickstart: SMS-gebeurtenissen verwerken
 
-[!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
 [!INCLUDE [Regional Availability Notice](../../includes/regional-availability-include.md)]
 
-Aan de slag met Azure Communication Services met Azure Event Grid om SMS-gebeurtenissen van Communication Services te verwerken. 
+Aan de slag met Azure Communication Services met Azure Event Grid om SMS-gebeurtenissen van Communication Services te verwerken.
 
 ## <a name="about-azure-event-grid"></a>Over Azure Event Grid
 
 [Azure Event Grid](../../../event-grid/overview.md) is een gebeurtenisservice in de cloud. In dit artikel leert u hoe u zich abonneert op gebeurtenissen voor [Communication Service-gebeurtenissen](../../concepts/event-handling.md) en hoe u een gebeurtenis activeert om het resultaat weer te geven. Normaal gesproken verzendt u gebeurtenissen naar een eindpunt dat de gebeurtenisgegevens verwerkt en vervolgens in actie komt. In dit artikel sturen we de gebeurtenissen naar een web-app die de berichten verzamelt en weergeeft.
 
 ## <a name="prerequisites"></a>Vereisten
-- Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) 
+- Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 - Een Azure Communication Service-resource. Meer informatie vindt u in de quickstart [Een Azure Communication-resource maken](../create-communication-resource.md).
 - Een telefoonnummer met sms-functionaliteit. [Een telefoonnummer aanvragen](./get-phone-number.md).
 
@@ -44,13 +43,13 @@ In Azure Portal:
 2. Selecteer het abonnement dat u voor Event Grid gebruikt.
 3. Selecteer onder **Instellingen** in het menu links de optie **Resourceproviders**.
 4. Zoek **Microsoft.EventGrid**.
-5. Als deze niet is geregistreerd, selecteert u **Registreren**. 
+5. Als deze niet is geregistreerd, selecteert u **Registreren**.
 
 Het kan even duren voordat de registratie is voltooid. Selecteer **Vernieuwen** om de status bij te werken. Wanneer de **Status****Geregistreerde** is, bent u klaar om verder te gaan.
 
 ### <a name="event-grid-viewer-deployment"></a>Event Grid Viewer-implementatie
 
-Voor deze quickstart gebruiken we het [Azure Event Grid Viewer-voorbeeld](/samples/azure-samples/azure-event-grid-viewer/azure-event-grid-viewer/) om bijna in realtime gebeurtenissen te bekijken. Zo krijgt de gebruiker ervaring met een realtime feed. Bovendien moet de payload voor elke gebeurtenis ook beschikbaar zijn voor inspectie.  
+Voor deze quickstart gebruiken we het [Azure Event Grid Viewer-voorbeeld](/samples/azure-samples/azure-event-grid-viewer/azure-event-grid-viewer/) om bijna in realtime gebeurtenissen te bekijken. Zo krijgt de gebruiker ervaring met een realtime feed. Bovendien moet de payload voor elke gebeurtenis ook beschikbaar zijn voor inspectie.
 
 ## <a name="subscribe-to-the-sms-events-using-web-hooks"></a>Abonneren op SMS-gebeurtenissen via webhooks
 
@@ -62,7 +61,7 @@ Druk op **Gebeurtenisabonnement toevoegen** om de wizard te openen.
 
 Voer op de pagina **Gebeurtenisabonnement maken** een **naam** in voor het gebeurtenisabonnement.
 
-U kunt zich op specifieke gebeurtenissen abonneren om Event Grid te laten weten welke SMS-gebeurtenissen u wilt volgen en waar die gebeurtenissen naartoe moeten worden gestuurd. Selecteer de gebeurtenissen waarvoor u zich wilt abonneren in het vervolgkeuzemenu. Voor SMS hebt u de optie `SMS Received` en `SMS Delivery Report Received`. 
+U kunt zich op specifieke gebeurtenissen abonneren om Event Grid te laten weten welke SMS-gebeurtenissen u wilt volgen en waar die gebeurtenissen naartoe moeten worden gestuurd. Selecteer de gebeurtenissen waarvoor u zich wilt abonneren in het vervolgkeuzemenu. Voor SMS hebt u de optie `SMS Received` en `SMS Delivery Report Received`.
 
 Als u wordt gevraagd om de naam van een **Systeemonderwerp** op te geven, kunt u een unieke tekenreeks opgeven. Dit veld heeft geen invloed op uw ervaring en wordt gebruikt voor interne telemetrie.
 
@@ -70,7 +69,7 @@ Bekijk de volledige lijst [door Azure Communication Services ondersteunde gebeur
 
 :::image type="content" source="./media/handle-sms-events/select-events-create-eventsub.png" alt-text="Schermafbeelding met het ontvangen SMS-bericht en SMS-rapport met ontvangen gebeurtenistypen.":::
 
-Selecteer **Webhook** voor het **Eindpunttype**. 
+Selecteer **Webhook** voor het **Eindpunttype**.
 
 :::image type="content" source="./media/handle-sms-events/select-events-create-linkwebhook.png" alt-text="Schermopname met het veld Eindpunttype dat wordt ingesteld op Webhook.":::
 
@@ -111,7 +110,7 @@ Als u een Communication Services-abonnement wilt opschonen en verwijderen, kunt 
 
 In deze quickstart leert u hoe u SMS-gebeurtenis gebruikt. U kunt SMS-berichten ontvangen door een Event Grid-abonnement te maken.
 
-> [!div class="nextstepaction"] 
+> [!div class="nextstepaction"]
 > [SMS verzenden](../telephony-sms/send.md)
 
 U wilt mogelijk ook:

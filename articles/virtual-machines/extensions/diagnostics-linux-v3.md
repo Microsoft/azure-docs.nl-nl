@@ -10,12 +10,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 12/13/2018
 ms.author: akjosh
-ms.openlocfilehash: 88f8d62a6321deae8a46d32441625c5960547694
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 6b03d4fb51021019da4c7d31fccf28b0ee157f32
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99982102"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101670537"
 ---
 # <a name="use-linux-diagnostic-extension-30-to-monitor-metrics-and-logs"></a>Linux Diagnostic extension 3,0 gebruiken voor het bewaken van metrische gegevens en Logboeken
 
@@ -229,7 +229,7 @@ Deze set configuratie-informatie bevat gevoelige informatie die moet worden beve
 }
 ```
 
-Naam | Waarde
+Name | Waarde
 ---- | -----
 storageAccountName | De naam van het opslag account waarin de gegevens worden geschreven door de extensie.
 storageAccountEndPoint | Beschrijving Het eind punt dat de Cloud aanduidt waarin het opslag account zich bevindt. Als deze instelling niet aanwezig is, LAD standaard ingesteld op de open bare Azure-Cloud `https://core.windows.net` . Als u een opslag account in azure Duitsland, Azure Government of Azure China wilt gebruiken, stelt u deze waarde dienovereenkomstig in.
@@ -825,6 +825,6 @@ Raadpleeg de relevante [Event hubs-documentatie](../../event-hubs/event-hubs-abo
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Maak metrische waarschuwingen in [Azure monitor](../../azure-monitor/platform/alerts-classic-portal.md) voor de metrische gegevens die u verzamelt.
-* Maak [bewakings grafieken](../../azure-monitor/platform/data-platform.md) voor uw metrische gegevens.
+* Maak metrische waarschuwingen in [Azure monitor](../../azure-monitor/alerts/alerts-classic-portal.md) voor de metrische gegevens die u verzamelt.
+* Maak [bewakings grafieken](../../azure-monitor/data-platform.md) voor uw metrische gegevens.
 * Informatie over het [maken van een schaalset voor virtuele machines](../linux/tutorial-create-vmss.md) met behulp van uw metrische gegevens voor het beheren van automatisch schalen.

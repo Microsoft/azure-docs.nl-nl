@@ -33,6 +33,16 @@
           href: database/features-comparison.md
         - name: Multi-modelfuncties
           href: multi-model-features.md
+        - name: Gepland onderhoud
+          items:
+            - name: Onderhoudsvenster
+              href: database/maintenance-window.md
+            - name: Onderhouds venster configureren
+              href: database/maintenance-window-configure.md
+            - name: Veelgestelde vragen over onderhouds Vensters
+              href: database/maintenance-window-faq.yml
+            - name: Voorafgaande meldingen
+              href: database/advance-notifications.md
         - name: OLTP in het geheugen
           href: in-memory-oltp-overview.md
         - name: Tijdelijke tabellen

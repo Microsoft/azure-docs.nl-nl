@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 12/09/2020
 ms.topic: how-to
-ms.openlocfilehash: 22ad2d65710a3fc149f5a83fb511244ac3be2203
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 2b35abf7f318d4db6166dd48c4f7bd35aaf4d98a
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98733236"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101644405"
 ---
 # <a name="create-data-controller-in-azure-data-studio"></a>Gegevens controller maken in Azure Data Studio
 
@@ -49,7 +49,7 @@ Volg deze stappen om een Azure-Arc-gegevens controller te maken met behulp van d
    
    De Azure-locatie die u hier selecteert, is de locatie in azure waar de *meta gegevens* van de gegevens controller en de data base-exemplaren die worden beheerd, worden opgeslagen. De gegevens controller-en data base-instanties worden in werkelijkheid crewted in uw Kubernetes-cluster waar dit mogelijk is.
 
-10. Selecteer de juiste connectiviteits modus. Meer informatie over [connectiviteits modi](https://docs.microsoft.com/azure/azure-arc/data/connectivity). **Klik op volgende**.
+10. Selecteer de juiste connectiviteits modus. Meer informatie over [connectiviteits modi](./connectivity.md). **Klik op volgende**.
 
     Als u de Service-Principal-referenties voor de directe connectiviteits modus selecteert zoals beschreven in [Create Service Principal](upload-metrics-and-logs-to-azure-monitor.md#create-service-principal).
 

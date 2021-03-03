@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/02/2021
+ms.date: 02/22/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af2c848fe06d9ebc44443bdcce61af0c8de08b2d
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 2270ff360c7bb923555c9b4ffb0c35ccd4382d0e
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99536998"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101647486"
 ---
 # <a name="authentication-methods-in-azure-active-directory---oath-tokens"></a>Verificatie methoden in Azure Active Directory OATH-tokens
 
@@ -29,15 +29,13 @@ De verificator-app genereert automatisch codes bij het instellen van push meldin
 
 Sommige software-tokens van OATH mobiele TOTP zijn programmeerbaar, wat betekent dat ze niet worden geleverd met een geheime sleutel of een vooraf geprogrammeerd Zaai zaad. Deze Programmeer bare hardware-tokens kunnen worden ingesteld met behulp van de geheime sleutel of Seed die is verkregen van de installatie stroom van het software token. Klanten kunnen deze tokens aanschaffen bij de leverancier van hun keuze en de geheime sleutel of het Seed gebruiken in het installatie proces van de leverancier.
 
-## <a name="oath-hardware-tokens-preview"></a>OATH-hardware-tokens (preview-versie)
+## <a name="oath-hardware-tokens"></a>OATH-hardwaretokens
 
 Azure AD ondersteunt het gebruik van OATH-mobiele TOTP SHA-1-tokens waarmee codes elke 30 of 60 seconden worden vernieuwd. Klanten kunnen deze tokens aanschaffen bij de leverancier van hun keuze.
 
 OATH mobiele TOTP-hardware-tokens worden doorgaans geleverd met een geheime sleutel, of Seed, vooraf geprogrammeerd in het token. Deze sleutels moeten worden ingevoerd in azure AD, zoals beschreven in de volgende stappen. Geheime sleutels zijn beperkt tot 128 tekens, die mogelijk niet compatibel zijn met alle tokens. De geheime sleutel mag alleen de tekens *a-z* of *a-* z en cijfers *2-7* bevatten en moet worden gecodeerd in *Base32*.
 
 Programmeer bare OATH-mobiele TOTP die kunnen worden geseedd, kunnen ook worden ingesteld met Azure AD in de instellings stroom van het software token.
-
-OATH-hardware-tokens worden ondersteund als onderdeel van een open bare preview. Zie [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ![OATH-tokens uploaden naar de Blade MFA OATH-tokens](media/concept-authentication-methods/mfa-server-oath-tokens-azure-ad.png)
 

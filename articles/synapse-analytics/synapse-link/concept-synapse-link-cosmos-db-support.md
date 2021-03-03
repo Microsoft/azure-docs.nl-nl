@@ -1,20 +1,20 @@
 ---
-title: Ondersteunde functies van Azure Synapse Link (preview) voor Azure Cosmos DB
+title: Ondersteunde functies van Azure Synapse Link voor Azure Cosmos DB
 description: Krijg meer informatie over de huidige lijst met acties die worden ondersteund in Azure Synapse Link voor Azure Cosmos DB
 services: synapse-analytics
 author: ArnoMicrosoft
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: synapse-link
-ms.date: 09/15/2020
+ms.date: 03/02/2021
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: b58474758ac4d26b347dc72d84be401d15a3846b
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: cb2cadadacd914bfa5473b512255c1ab0f856150
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98119812"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101666307"
 ---
 # <a name="azure-synapse-link-for-azure-cosmos-db-supported-features"></a>Ondersteunde functies van Azure Synapse Link voor Azure Cosmos DB
 
@@ -33,7 +33,7 @@ U kunt verbinding maken met een Azure Cosmos DB-container zonder de Synapse-kopp
 
 | Categorie              | Beschrijving |[Apache Spark-pool](../sql/on-demand-workspace-overview.md) | [Serverloze SQL-pool](../sql/on-demand-workspace-overview.md) |
 | -------------------- | ----------------------------------------------------------- |----------------------------------------------------------- | ----------------------------------------------------------- |
-| **Ondersteuning tijdens uitvoeringen** |Ondersteunde Azure Synapse runtime voor toegang tot Azure Cosmos DB| ✓ | Preview |
+| **Ondersteuning tijdens uitvoeringen** |Ondersteunde Azure Synapse runtime voor toegang tot Azure Cosmos DB| ✓ | ✓ |
 | **API-ondersteuning voor Azure Cosmos DB** | Ondersteund Azure Cosmos DB-API-soort | SQL / MongoDB | SQL / MongoDB |
 | **Object**  |Objecten, zoals een tabel, die kunnen worden gemaakt en rechtstreeks naar de Azure Cosmos DB-container verwijzen| Data frame, weer gave, tabel | Weergave |
 | **Lezen**    | Type Azure Cosmos DB container dat kan worden gelezen | OLTP / HTAP | HTAP  |
@@ -51,7 +51,6 @@ U kunt verbinding maken met een Azure Cosmos DB-container zonder de Synapse-kopp
 | **Dataframe naar een container schrijven** |Gegevens naar een container schrijven|✓| ✓ |
 | **Streaming-dataframe laden vanuit een container** |Gegevens streamen met behulp van de wijzigingenfeed in Azure Cosmos DB|✓| ✓ |
 | **Streaming-dataframe naar een container schrijven** |Gegevens streamen met behulp van de wijzigingenfeed in Azure Cosmos DB|✓| ✓ |
-
 
 ## <a name="supported-code-generated-actions-for-serverless-sql-pool"></a>Ondersteunde door code gegenereerde acties voor een serverloze SQL-groep
 

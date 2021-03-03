@@ -2,18 +2,18 @@
 title: Overzicht van Red Hat-workloads op Azure | Microsoft Docs
 description: Meer informatie over de productaanbiedingen van Red Hat die beschikbaar zijn op Azure.
 author: asinn826
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines
+ms.subservice: redhat
+ms.collection: linux
 ms.topic: overview
 ms.date: 02/10/2020
 ms.author: alsin
-ms.reviewer: cynthn
-ms.openlocfilehash: 09612ff3d86c669801f9e824d367a2b9a5bb10ac
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
-ms.translationtype: HT
+ms.openlocfilehash: bd8f2e5b825f88d1b0e04ed231b85296ac47e998
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97830646"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101676051"
 ---
 # <a name="red-hat-workloads-on-azure"></a>Red Hat-workloads op Azure
 

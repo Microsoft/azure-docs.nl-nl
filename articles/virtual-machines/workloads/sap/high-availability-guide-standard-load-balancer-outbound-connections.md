@@ -8,20 +8,19 @@ manager: juergent
 editor: ''
 tags: azure-resource-manager
 keywords: ''
-ms.service: virtual-machines-windows
-ms.subservice: workloads
+ms.service: virtual-machines-sap
 ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 12/01/2020
 ms.author: radeltch
-ms.openlocfilehash: 62b235fa9ea84409a5c29609a5dc0fde1671684c
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 6f2268ae9a86978e9266ea0e35411727b238d4b4
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878762"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101671650"
 ---
 # <a name="public-endpoint-connectivity-for-virtual-machines-using-azure-standard-load-balancer-in-sap-high-availability-scenarios"></a>Connectiviteit van open bare eind punten voor Virtual Machines met behulp van Azure Standard Load Balancer in scenario's met hoge Beschik baarheid van SAP
 
@@ -165,7 +164,7 @@ De architectuur ziet er als volgt uit:
    De firewall regel ziet er als volgt uit: ![ diagram dat laat zien hoe de firewall eruitziet.](./media/high-availability-guide-standard-load-balancer/high-availability-guide-standard-load-balancer-firewall-rule.png)
 
 6. Een door de gebruiker gedefinieerde route maken op basis van het subnet van uw Vm's naar het privé-IP-adres van **MyAzureFirewall**.
-   1. Wanneer u op de route tabel hebt gepositioneerd, klikt u op routes. Selecteer Toevoegen. 
+   1. Wanneer u op de route tabel hebt gepositioneerd, klikt u op routes. Selecteer toevoegen. 
    1. Route naam: ToMyAzureFirewall, adres voorvoegsel: **0.0.0.0/0**. Type volgende hop: Selecteer een virtueel apparaat. Adres van volgende hop: Voer het privé-IP-adres in van de firewall die u hebt geconfigureerd: **11.97.1.4**.  
    1. Opslaan
 

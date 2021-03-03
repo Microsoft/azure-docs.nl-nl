@@ -6,14 +6,14 @@ ms.service: virtual-machines
 ms.subservice: automanage
 ms.workload: infrastructure
 ms.topic: quickstart
-ms.date: 09/04/2020
+ms.date: 02/17/2021
 ms.author: jushiman
-ms.openlocfilehash: 69f43b626bb50171ceaca1b7a8761bec040d1dd6
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
-ms.translationtype: HT
+ms.openlocfilehash: 6e0e582ed37230ba3f379f193a229cfec06f066c
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897225"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101648030"
 ---
 # <a name="quickstart-enable-azure-automanage-for-virtual-machines-in-the-azure-portal"></a>Quickstart: Azure Automanage inschakelen voor virtuele machines in de Azure Portal
 
@@ -33,18 +33,31 @@ Als u geen Azure-abonnement hebt, [maakt u een account](https://azure.microsoft.
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
-Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+Meld u aan bij de [Azure-portal](https://aka.ms/AutomanagePortal-Ignite21).
 
+## <a name="enable-automanage-for-a-single-vm"></a>Automanage inschakelen voor één virtuele machine
 
-## <a name="enable-automanage-for-vms-on-an-existing-vm"></a>Automanage inschakelen voor virtuele machines op een bestaande virtuele machine
+1. Blader naar de virtuele machine die u wilt inschakelen.
 
-1. Zoek in de zoekbalk naar **Automatisch beheer: aanbevolen procedures voor virtuele Azure-machines** en selecteer deze optie.
+2. Klik op de vermelding voor **auto beheer (preview)** in de inhouds opgave onder **bewerkingen**.
+
+3. Selecteer **aan de slag**.
+
+    :::image type="content" source="media\quick-create-virtual-machine-portal\VMManage-GetStarted.png" alt-text="Aan de slag met één VM.":::
+
+4. Kies uw instellingen voor automanage (omgeving, voor keuren, automanage-account) en klik op **inschakelen**.
+
+    :::image type="content" source="media\quick-create-virtual-machine-portal\VMManage-Enable.png" alt-text="Schakel deze optie in op één virtuele machine.":::
+
+## <a name="enable-automanage-for-multiple-vms"></a>Automanage inschakelen voor meerdere Vm's
+
+1. Zoek in de zoek balk naar en selecteer automatisch **beheer – aanbevolen procedures voor Azure-machines**.
 
 2. Selecteer **Op bestaande VM inschakelen**.
 
     :::image type="content" source="media\quick-create-virtual-machine-portal\zero-vm-list-view.png" alt-text="Op bestaande VM inschakelen.":::
 
-3. Ga als volgt te werk op de blade **Machines selecteren** :
+3. Ga als volgt te werk op de blade **Machines selecteren**:
     1. Filter de lijst met virtuele machines op uw **Abonnement** en **Resourcegroep**.
     1. Schakel het selectievakje in van elke virtuele machine die u wilt onboarden.
     1. Klik op de knop **Selecteren**.
@@ -55,7 +68,7 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
     :::image type="content" source="media\quick-create-virtual-machine-portal\existing-vm-quick-create.png" alt-text="Bladeren en profielen en voorkeuren wijzigen.":::
 
-5. Ga als volgt te werk op de blad **Configuratieprofiel + voorkeuren selecteren** :
+5. Ga als volgt te werk op de blad **Configuratieprofiel + voorkeuren selecteren**:
     1. Selecteer een profiel aan de linkerkant: *Dev/test* voor het testen, *Prod* voor productie.
     1. Klik op de knop **Selecteren**.
 
@@ -64,31 +77,29 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 6. Klik op de knop **Inschakelen**.
 
 
-## <a name="enable-automanage-for-vms-on-a-new-vm"></a>Automanage inschakelen voor virtuele machines op een nieuwe virtuele machine
+## <a name="enable-automanage-for-a-new-vm"></a>Automanage inschakelen voor een nieuwe virtuele machine
 
-Meld u [hier](https://aka.ms/automanageportalnextstep) aan bij het Azure-portaal om een nieuwe virtuele machine te maken en Automatisch beheer in te schakelen.
+Meld u [hier](https://aka.ms/AutomanagePortal-Ignite21) aan bij het Azure-portaal om een nieuwe virtuele machine te maken en Automatisch beheer in te schakelen.
 
-1. Volg de stappen voor het maken in [Quickstart: Een Windows-VM maken in de Azure Portal](..\virtual-machines\windows\quick-create-portal.md).
+1. Kies in de linkerbovenhoek van de Azure-portal **Een resource maken**.
 
-2. Nadat uw virtuele machine is geïmplementeerd, gaat u naar de pagina met de implementatiestatus, die wordt aanbevolen onder **Volgende stappen** onderaan.
+2. In het zoekvak boven de lijst met resources van Azure Marketplace zoekt en selecteert u de installatie kopie die u wilt gebruiken en kiest u **maken**.
 
-    :::image type="content" source="media\quick-create-virtual-machine-portal\create-next-steps.png" alt-text="De sectie Volgende stappen onder aan de implementatiepagina.":::
+> [!NOTE]
+> Controleer de ondersteunde [Linux distributies](automanage-linux.md#supported-linux-distributions-and-versions) -en [Windows Server-versies](automanage-windows-server.md#supported-windows-server-versions).
 
-3. Selecteer onder **Volgende stappen** de optie **Aanbevolen procedures voor het inschakelen van automatisch beheren**.
+3. Vul de details van uw virtuele machine in op het tabblad **basis beginselen** .
 
-4. Op de pagina **Automatisch beheer: aanbevolen procedures voor virtuele Azure-machines** wordt **Machines** automatisch ingevuld door de zojuist gemaakte virtuele machine.
+> [!NOTE]
+> Controleer de [ondersteunde regio's](automanage-virtual-machines#supported-regions)die worden beheerd.
 
-    :::image type="content" source="media\quick-create-virtual-machine-portal\create-new-enable-overview.png" alt-text="De zojuist gemaakte virtuele machine wordt weergegeven als geselecteerde machine.":::
+4. Ga naar het tabblad **beheer** en kies uw **omgeving** voor zelf beheer.
 
-5. Klik onder **Configuratieprofiel** op **Bladeren en profielen en voorkeuren wijzigen**.
+    :::image type="content" source="media\quick-create-virtual-machine-portal\VMCreate-Management-Tab.png" alt-text="Schakel het tabblad beheer van automanage in.":::
 
-6. Ga als volgt te werk op de blad **Configuratieprofiel + voorkeuren selecteren** :
-    1. Selecteer een profiel aan de linkerkant: *Dev/test* voor het testen, *Prod* voor productie.
-    1. Klik op de knop **Selecteren**.
+5. Laat de resterende standaardwaarden staan ​​en selecteer vervolgens de knop **Beoordelen en maken** aan de onderkant van de pagina.
 
-    :::image type="content" source="media\quick-create-virtual-machine-portal\browse-production-profile.png" alt-text="Bladeren naar productieconfiguratieprofiel.":::
-
-7. Klik op de knop **Inschakelen**.
+6. Wanneer u het bericht ziet dat de validatie is voltooid, selecteert u **maken**.
 
 ## <a name="disable-automanage-for-vms"></a>Automanage uitschakelen voor virtuele machines
 
@@ -115,9 +126,9 @@ Azure Automanage maakt standaard resourcegroepen voor het opslaan van resources.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze quickstart hebt u Azure Automanage ingeschakeld voor virtuele machines. 
+In deze quickstart hebt u Azure Automanage ingeschakeld voor virtuele machines.
 
-Ontdek hoe u aangepaste voorkeuren kunt maken en toepassen wanneer u automatisch beheer op uw virtuele machine inschakelt. 
+Ontdek hoe u aangepaste voorkeuren kunt maken en toepassen wanneer u automatisch beheer op uw virtuele machine inschakelt.
 
 > [!div class="nextstepaction"]
-> [Azure Automanage voor virtuele machines - Aangepast configuratieprofiel](virtual-machines-custom-preferences.md)
+> [Azure automanage voor Vm's-aangepast configuratie profiel](virtual-machines-custom-preferences.md)

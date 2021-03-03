@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c60d54a905f460eb5c26c2f183cd22b175a5b3c4
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
-ms.translationtype: HT
+ms.openlocfilehash: 8ca000e105f70f1a4940e7fc9a0292061e94b5ea
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96860810"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101648642"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Dynamische lidmaatschapsregels voor groepen in Azure Active Directory
 
@@ -178,7 +178,7 @@ De waarden die in een expressie worden gebruikt, kunnen bestaan uit verschillend
 
 * Tekenreeksen
 * Booleaans – true, false
-* Cijfers
+* Getallen
 * Matrices – nummermatrix, tekenreeksmatrix
 
 Wanneer u een waarde in een expressie opgeeft, is het belangrijk dat u de juiste syntaxis gebruikt om fouten te voorkomen. Enkele syntaxistips zijn:
@@ -213,7 +213,7 @@ Hier volgen enkele voorbeelden van goed samengestelde lidmaatschapsregels met me
 (user.department -eq "Sales") -and -not (user.jobTitle -contains "SDE")
 ```
 
-### <a name="operator-precedence"></a>Operatorprioriteit
+### <a name="operator-precedence"></a>Bewerkingsvolgorde van operators
 
 Alle operators worden hieronder weergegeven in volgorde van prioriteit van hoog naar laag. Operators op dezelfde regel hebben dezelfde prioriteit:
 
@@ -277,6 +277,14 @@ Met de volgende uitdrukking selecteert u alle gebruikers die een serviceplan heb
 
 ```
 user.assignedPlans -any (assignedPlan.service -eq "SCO" -and assignedPlan.capabilityStatus -eq "Enabled")
+```
+
+#### <a name="example-3"></a>Voorbeeld 3
+
+Met de volgende expressie worden alle gebruikers geselecteerd die geen asigned-service plan hebben:
+
+```
+user.assignedPlans -all (assignedPlan.servicePlanId -eq "")
 ```
 
 ### <a name="using-the-underscore-_-syntax"></a>De onderstrepingssyntaxis (\_) gebruiken

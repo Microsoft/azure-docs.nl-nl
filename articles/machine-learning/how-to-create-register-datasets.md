@@ -12,12 +12,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 07/31/2020
-ms.openlocfilehash: 39973fe8c15364dc214392985cecd8b8bc7834ed
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 9a50d8402515cb7aafa9a1b02c8b8c18412f6618
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878202"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101659389"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Azure Machine Learning-gegevenssets maken
 
@@ -25,7 +25,7 @@ In dit artikel leert u hoe u Azure Machine Learning gegevens sets maakt om toega
 
 Als u een gegevensset maakt, maakt u ook een verwijzing naar de locatie van de gegevensbron, samen met een kopie van de bijbehorende metagegevens. Omdat de gegevens zich op de bestaande locatie blijven, ontstaan er geen extra opslag kosten en wordt de integriteit van uw gegevens bronnen niet bedreigd. Ook gegevens sets worden geëvalueerd in vertraagd, die hulp middelen in de snelheid van werk stroom prestaties. U kunt gegevens sets maken op basis van gegevens opslag, open bare Url's en [Azure open gegevens sets](../open-datasets/how-to-create-azure-machine-learning-dataset-from-open-dataset.md).
 
-Voor een ervaring met weinig code [maakt u Azure machine learning gegevens sets met de Azure machine learning Studio.](how-to-connect-data-ui.md#create-datasets).
+Maak voor een ervaring met weinig code [Azure machine learning gegevens sets met de Azure machine learning Studio.](how-to-connect-data-ui.md#create-datasets)
 
 Met Azure Machine Learning gegevens sets kunt u het volgende doen:
 
@@ -82,7 +82,7 @@ Met TabularDatasets kunt u een tijds tempel opgeven van een kolom in de gegevens
 Maak een TabularDataset met [de python-SDK](#create-a-tabulardataset) of [Azure machine learning Studio](how-to-connect-data-ui.md#create-datasets).
 
 >[!NOTE]
-> AutoML-werk stromen die zijn gegenereerd via de Azure Machine Learning Studio ondersteunen momenteel alleen TabularDatasets. 
+> [Automated ml](concept-automated-ml.md) werk stromen die zijn gegenereerd via de Azure machine learning Studio ondersteunen momenteel alleen TabularDatasets. 
 
 ## <a name="access-datasets-in-a-virtual-network"></a>Toegang tot gegevens sets in een virtueel netwerk
 
@@ -90,15 +90,20 @@ Als uw werk ruimte zich in een virtueel netwerk bevindt, moet u de gegevensset c
 
 <a name="datasets-sdk"></a>
 
-## <a name="create-datasets"></a>Gegevenssets maken
+## <a name="create-datasets-from-datastores"></a>Gegevens sets maken op basis van gegevens opslag
 
-Gegevens sets moeten worden gemaakt op basis van paden in [Azure-data stores](how-to-access-data.md) of open bare Web-url's, zodat deze door Azure machine learning toegankelijk zijn. 
+Gegevens sets moeten worden gemaakt op basis van paden in [Azure machine learning data stores](how-to-access-data.md) of Web-url's, zodat deze door Azure machine learning toegankelijk zijn. 
 
-Gegevens sets maken op basis van een [Azure-gegevens archief](how-to-access-data.md) met de PYTHON-SDK:
+> [!TIP] 
+> U kunt rechtstreeks gegevens sets maken op basis van opslag-url's die toegang hebben tot de identiteit. Meer informatie over [verbinding maken met opslag met op identiteit gebaseerde gegevens toegang (preview)](how-to-identity-based-data-access.md)<br><br>
+Deze mogelijkheid is een [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) preview-functie en kan op elk gewenst moment worden gewijzigd. 
 
-1. Controleer of u toegang hebt tot `contributor` `owner` het geregistreerde Azure-gegevens archief.
+ 
+Gegevens sets maken op basis van een gegevens opslag met de python-SDK:
 
-2. Maak de gegevensset door te verwijzen naar de paden in het gegevens archief. U kunt een gegevensset maken op basis van meerdere paden in meerdere gegevens opslag. Er is geen vaste limiet voor het aantal bestanden of gegevens grootte waaruit u een gegevensset kunt maken. 
+1. Controleer of u toegang hebt tot `contributor` `owner` de onderliggende opslag service van uw geregistreerde Azure machine learning Data Store. [Controleer de machtigingen van uw opslag account in de Azure Portal](../role-based-access-control/check-access.md).
+
+1. Maak de gegevensset door te verwijzen naar de paden in het gegevens archief. U kunt een gegevensset maken op basis van meerdere paden in meerdere gegevens opslag. Er is geen vaste limiet voor het aantal bestanden of gegevens grootte waaruit u een gegevensset kunt maken. 
 
 > [!NOTE]
 > Voor elk gegevenspad worden enkele aanvragen verzonden naar de opslag service om te controleren of deze naar een bestand of map verwijst. Deze overhead kan leiden tot slechtere prestaties of storingen. Een gegevensset die verwijst naar één map met 1000 bestanden in, wordt beschouwd als verwijzingen naar één gegevenspad. U kunt het beste een gegevensset maken die verwijst naar minder dan 100 paden in gegevens opslag voor optimale prestaties.
@@ -169,7 +174,7 @@ titanic_ds = Dataset.Tabular.from_delimited_files(path=web_path, set_column_type
 titanic_ds.take(3).to_pandas_dataframe()
 ```
 
-|TabIndex|PassengerId|Dummy tekst|Pclass|Naam|Seks|Leeftijd|SibSp|Parch|Ticket|Tickets|Hand|Ingeschepend
+|TabIndex|PassengerId|Dummy tekst|Pclass|Name|Seks|Leeftijd|SibSp|Parch|Ticket|Tickets|Hand|Ingeschepend
 -|-----------|--------|------|----|---|---|-----|-----|------|----|-----|--------|
 0|1|Niet waar|3|Braund, Mr. Owen Harris|man|22,0|1|0|A/5 21171|7,2500||S
 1|2|Waar|1|Cumings, Mevr. John Bradley (Florence Briggs th...|vrouwelijk|38,0|1|0|PC 17599|71,2833|C85|C
@@ -203,7 +208,7 @@ Gebruik voor TabularDatasets de [`to_pandas_dataframe()`](/python/api/azureml-co
 titanic_ds.take(3).to_pandas_dataframe()
 ```
 
-|TabIndex|PassengerId|Dummy tekst|Pclass|Naam|Seks|Leeftijd|SibSp|Parch|Ticket|Tickets|Hand|Ingeschepend
+|TabIndex|PassengerId|Dummy tekst|Pclass|Name|Seks|Leeftijd|SibSp|Parch|Ticket|Tickets|Hand|Ingeschepend
 -|-----------|--------|------|----|---|---|-----|-----|------|----|-----|--------|
 0|1|Niet waar|3|Braund, Mr. Owen Harris|man|22,0|1|0|A/5 21171|7,2500||S
 1|2|Waar|1|Cumings, Mevr. John Bradley (Florence Briggs th...|vrouwelijk|38,0|1|0|PC 17599|71,2833|C85|C
@@ -261,7 +266,7 @@ Er zijn een aantal sjablonen op [https://github.com/Azure/azure-quickstart-templ
 Zie [een Azure Resource Manager sjabloon gebruiken om een werk ruimte voor Azure machine learning te maken](how-to-create-workspace-template.md)voor meer informatie over het gebruik van deze sjablonen.
 
 
-## <a name="create-datasets-with-azure-open-datasets"></a>Gegevens sets maken met Azure open gegevens sets
+## <a name="create-datasets-from-azure-open-datasets"></a>Gegevens sets maken op basis van Azure open gegevens sets
 
 [Azure Open Datasets](https://azure.microsoft.com/services/open-datasets/) zijn samengestelde openbare gegevenssets die u kunt gebruiken om scenariospecifieke functies toe te voegen aan machine learning-oplossingen voor nauwkeurigere modellen. Gegevenssets omvatten gegevens uit het openbare domein voor weer, tellingen, vakanties, publieke veiligheid en locaties die u helpen machine learning-modellen te trainen en voorspellende oplossingen te verrijken. Open gegevens sets bevinden zich in de Cloud op Microsoft Azure en zijn opgenomen in zowel de SDK als de Studio.
 
@@ -269,7 +274,7 @@ Meer informatie over het maken [van Azure machine learning gegevens sets van Azu
 
 ## <a name="train-with-datasets"></a>Trainen met gegevenssets
 
-Gebruik uw gegevens sets in uw machine learning experimenten voor trainings ML-modellen. [Meer informatie over het trainen van gegevens sets](how-to-train-with-datasets.md)
+Gebruik uw gegevens sets in uw machine learning experimenten voor trainings ML-modellen. Meer [informatie over het trainen van gegevens sets](how-to-train-with-datasets.md).
 
 ## <a name="version-datasets"></a>Versie gegevens sets
 

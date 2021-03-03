@@ -1,42 +1,39 @@
 ---
-title: Aanmeld wachtwoord voor een beveiligings sleutel (preview)-Azure Active Directory
-description: Aanmeldings wachtwoord zonder wacht woord inschakelen voor Azure AD met behulp van FIDO2-beveiligings sleutels (preview-versie)
+title: Aanmeldings wachtwoord zonder wacht woord Azure Active Directory
+description: Aanmeldings wachtwoord zonder wacht woord inschakelen voor Azure AD met behulp van FIDO2-beveiligings sleutels
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/14/2020
+ms.date: 02/22/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ac8cf172a13e7198233170634ee4a3954793cd2
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 71a29a2a7e379e253b52813eb7a76f669abbf668
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743425"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101653827"
 ---
-# <a name="enable-passwordless-security-key-sign-in-preview"></a>Aanmelden zonder wacht woord voor beveiligings sleutel inschakelen (preview)
+# <a name="enable-passwordless-security-key-sign-in"></a>Aanmeldings wachtwoord zonder wacht woord inschakelen 
 
 Voor ondernemingen die tegenwoordig wacht woorden gebruiken en een gedeelde PC-omgeving hebben, bieden beveiligings sleutels een naadloze manier voor het verifiëren van werk nemers zonder een gebruikers naam of wacht woord in te voeren. Beveiligings sleutels bieden een verbeterde productiviteit voor werk nemers en hebben betere beveiliging.
 
 Dit document is gericht op het inschakelen van op wacht woord gebaseerde verificatie op basis van een sleutel. Aan het einde van dit artikel kunt u zich met behulp van een FIDO2-beveiligings sleutel aanmelden bij webtoepassingen met uw Azure AD-account.
 
-> [!NOTE]
-> FIDO2-beveiligings sleutels zijn een open bare preview-functie van Azure Active Directory. Zie [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews) voor meer informatie.
-
 ## <a name="requirements"></a>Vereisten
 
 - [Azure AD Multi-Factor Authentication](howto-mfa-getstarted.md)
-- [Voor beeld van registratie van gecombineerde beveiligings gegevens](concept-registration-mfa-sspr-combined.md) inschakelen
+- [Registratie van gecombineerde beveiligings gegevens](concept-registration-mfa-sspr-combined.md) inschakelen
 - Compatibele [FIDO2-beveiligings sleutels](concept-authentication-passwordless.md#fido2-security-keys)
 - Webauthn vereist Windows 10 versie 1903 of hoger * *
 
 Als u beveiligings sleutels wilt gebruiken om u aan te melden bij Web-apps en-services, moet u een browser hebben die het webauthn-protocol ondersteunt. Dit zijn onder andere micro soft Edge, Chrome, Firefox en Safari.
 
-## <a name="prepare-devices-for-preview"></a>Apparaten voorbereiden voor de preview-versie
+## <a name="prepare-devices"></a>Apparaten voorbereiden
 
 Voor apparaten die lid zijn van Azure AD is de beste ervaring met Windows 10 versie 1903 of hoger.
 
@@ -46,12 +43,12 @@ Voor hybride Azure AD gekoppelde apparaten moet Windows 10 versie 2004 of hoger 
 
 ### <a name="enable-the-combined-registration-experience"></a>De gecombineerde registratie-ervaring inschakelen
 
-Registratie functies voor verificatie methoden met een wacht woord zijn afhankelijk van de functie voor gecombineerde registratie. Volg de stappen in het artikel [registratie van gecombineerde beveiligings gegevens inschakelen (preview)](howto-registration-mfa-sspr-combined.md)om gecombineerde registratie in te scha kelen.
+Registratie functies voor verificatie methoden met een wacht woord zijn afhankelijk van de functie voor gecombineerde registratie. Volg de stappen in het artikel [registratie van gecombineerde beveiligings gegevens inschakelen](howto-registration-mfa-sspr-combined.md)om gecombineerde registratie in te scha kelen.
 
 ### <a name="enable-fido2-security-key-method"></a>FIDO2-beveiligings sleutel methode inschakelen
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-1. Blader naar **Azure Active Directory**  >  **Security**  >  **Authentication methods**  >  **beleid voor verificatie methode** voor beveiligings verificatie methoden (preview).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Blader naar **Azure Active Directory** beleid voor de  >    >    >  **verificatie methode** voor beveiligings verificatie methoden.
 1. Kies onder de **beveiligings sleutel methode FIDO2** de volgende opties:
    1. **Inschakelen** -ja of Nee
    1. **Doel** -alle gebruikers of Selecteer gebruikers
@@ -59,7 +56,7 @@ Registratie functies voor verificatie methoden met een wacht woord zijn afhankel
 
 ## <a name="user-registration-and-management-of-fido2-security-keys"></a>Gebruikers registratie en het beheer van FIDO2-beveiligings sleutels
 
-1. Ga naar [https://myprofile.microsoft.com](https://myprofile.microsoft.com) .
+1. Blader naar [https://myprofile.microsoft.com](https://myprofile.microsoft.com).
 1. Meld u aan als dat nog niet het geval is.
 1. Klik op **beveiligings gegevens**.
    1. Als de gebruiker al ten minste één Azure AD Multi-Factor Authentication-methode heeft geregistreerd, kunnen ze onmiddellijk een FIDO2-beveiligings sleutel registreren.
@@ -79,19 +76,19 @@ In het voor beeld onder een gebruiker heeft de FIDO2-beveiligings sleutel al ing
 
 ## <a name="troubleshooting-and-feedback"></a>Probleemoplossing en feedback
 
-Als u feedback wilt delen of problemen ondervindt tijdens het vooraf bekijken van deze functie, kunt u met de volgende stappen delen via de Windows feedback hub-app:
+Als u feedback wilt delen of problemen ondervindt met deze functie, kunt u via de Windows feedback hub-app delen door de volgende stappen uit te voeren:
 
 1. Start de **feedback-hub** en zorg ervoor dat u bent aangemeld.
 1. Feedback verzenden in de volgende categorisatie:
    - Categorie: beveiliging en privacy
    - Subcategorie: FIDO
-1. Als u logboeken wilt vastleggen, gebruikt u de optie om **mijn probleem opnieuw te maken**
+1. Als u logboeken wilt vastleggen, gebruikt u de optie om **mijn probleem opnieuw te maken**.
 
 ## <a name="known-issues"></a>Bekende problemen
 
 ### <a name="security-key-provisioning"></a>Inrichten van beveiligings sleutel
 
-Het inrichten van de beheerder en het ongedaan maken van de inrichting van beveiligings sleutels is niet beschikbaar in de open bare preview.
+Het inrichten van de beheerder en het ongedaan maken van de inrichting van beveiligings sleutels is niet beschikbaar.
 
 ### <a name="upn-changes"></a>UPN-wijzigingen
 

@@ -7,15 +7,15 @@ ms.service: machine-learning
 ms.subservice: core
 ms.author: keli19
 author: likebupt
-ms.date: 09/09/2020
+ms.date: 02/05/2020
 ms.topic: conceptual
 ms.custom: how-to, designer
-ms.openlocfilehash: 2ef125f65e13f7a9fa756553b1de148d4849babc
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: dda47d3ff561d4d57045dbb28f8c411e193086d5
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94553943"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101657355"
 ---
 # <a name="run-batch-predictions-using-azure-machine-learning-designer"></a>Batch voorspellingen uitvoeren met behulp van Azure Machine Learning Designer
 
@@ -144,6 +144,22 @@ Wanneer u een pijp lijn publiceert, kunt u ervoor kiezen om deze te maken als de
 U kunt ook een nieuwe standaard pijplijn instellen op het tabblad **gepubliceerde pijp lijnen** van het eind punt.
 
 ![Standaard pijplijn instellen op de gepubliceerde pijplijn pagina](./media/how-to-run-batch-predictions-designer/set-new-default-pipeline.png)
+
+## <a name="limitations"></a>Beperkingen
+
+Als u een aantal wijzigingen aanbrengt in uw trainings pijplijn, moet u de trainings pijplijn opnieuw indienen, de pijp lijn voor de detrainer **bijwerken**  en de pijp lijn voor de deinterferentie opnieuw uitvoeren.
+
+Houd er rekening mee dat alleen modellen worden bijgewerkt in de defactorion-pijp lijn, terwijl de gegevens transformatie niet wordt bijgewerkt.
+
+Als u de bijgewerkte trans formatie in een pijp lijn wilt gebruiken, moet u de trans formatie-uitvoer van de transformatie module registreren als gegevensset.
+
+![Scherm afbeelding die laat zien hoe u de transformatie gegevensverzameling kunt registreren](./media/how-to-run-batch-predictions-designer/register-transformation-dataset.png)
+
+Vervang vervolgens hand matig de **TD-** module in deinterferentie pijp lijn met de geregistreerde gegevensset.
+
+![Scherm afbeelding die laat zien hoe de transformatie module moet worden vervangen](./media/how-to-run-batch-predictions-designer/replace-td-module-batch-inference-pipeline.png)
+
+Vervolgens kunt u de pijp lijn met het bijgewerkte model en trans formatie verzenden en publiceren.
 
 ## <a name="next-steps"></a>Volgende stappen
 

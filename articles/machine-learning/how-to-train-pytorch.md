@@ -11,12 +11,12 @@ ms.reviewer: peterlu
 ms.date: 01/14/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 962054943a68aa61ac681de97eeebc10fe3f2b0a
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: cb556466a5a76cbb9447538e98a5a2385f7b5614
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98216628"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101660998"
 ---
 # <a name="train-pytorch-models-at-scale-with-azure-machine-learning"></a>PyTorch-modellen op schaal trainen met Azure Machine Learning
 
@@ -285,35 +285,90 @@ Zie [gedistribueerde PyTorch met Horovod](https://github.com/Azure/MachineLearni
 ### <a name="distributeddataparallel"></a>DistributedDataParallel
 Als u de ingebouwde [DistributedDataParallel](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html) -module van PyTorch gebruikt die is gebouwd met behulp van het **Torch. distributed** -pakket in uw trainings code, kunt u de gedistribueerde taak ook starten via Azure ml.
 
-Als u een gedistribueerde PyTorch-taak wilt uitvoeren met DistributedDataParallel, geeft u een [PyTorchConfiguration](/python/api/azureml-core/azureml.core.runconfig.pytorchconfiguration?preserve-view=true&view=azure-ml-py) op voor de `distributed_job_config` para meter van de ScriptRunConfig-constructor. Als u de NCCL-back-end voor Torch. distributed wilt gebruiken, geeft u `communication_backend='Nccl'` in de PyTorchConfiguration op. Met de onderstaande code wordt een gedistribueerde taak van 2 knoop punten geconfigureerd. De NCCL-back-end is de aanbevolen back-end voor PyTorch Distributed GPU training.
+Als u een gedistribueerde PyTorch-taak op Azure ML wilt starten, hebt u twee opties:
+1. Starten per proces: Geef het totale aantal werk processen op dat u wilt uitvoeren en Azure ML voert elk proces uit.
+2. Starten per knoop punt met `torch.distributed.launch` : Geef de `torch.distributed.launch` opdracht op die u wilt uitvoeren op elk knoop punt. Het hulp programma Torch Launch zorgt voor het starten van de werk processen op elk knoop punt.
 
-Voor gedistribueerde PyTorch-taken die zijn geconfigureerd via PyTorchConfiguration, worden in azure ML de volgende omgevings variabelen ingesteld voor de knoop punten van het Compute-doel:
+Er zijn geen fundamentele verschillen tussen deze start opties; het is grotendeels de voor keur van de gebruiker of de conventies van de frameworks/bibliotheken die zijn gebouwd boven op vanille PyTorch (zoals bliksem of hugging gezicht).
 
-* `AZ_BATCHAI_PYTORCH_INIT_METHOD`: URL voor de initialisatie van het gedeelde bestands systeem van de proces groep
-* `AZ_BATCHAI_TASK_INDEX`: globale positie van het werk proces
+#### <a name="per-process-launch"></a>Starten per proces
+Ga als volgt te werk om deze optie te gebruiken om een gedistribueerde PyTorch-taak uit te voeren:
+1. Het trainings script en de argumenten opgeven
+2. Maak een [PyTorchConfiguration](/python/api/azureml-core/azureml.core.runconfig.pytorchconfiguration?preserve-view=true&view=azure-ml-py) en geef de en op `process_count` `node_count` . De `process_count` komt overeen met het totale aantal processen dat u wilt uitvoeren voor uw taak. Dit moet doorgaans gelijk zijn aan het aantal Gpu's per knoop punt vermenigvuldigd met het aantal knoop punten. Als `process_count` niet is opgegeven, wordt door Azure ml standaard één proces per knoop punt gestart.
 
-U kunt deze omgevings variabelen opgeven voor de bijbehorende argumenten van het trainings script via de `arguments` para meter ScriptRunConfig.
+Met Azure ML worden de volgende omgevings variabelen ingesteld:
+* `MASTER_ADDR` -IP-adres van de computer die als host fungeert voor het proces met positie 0.
+* `MASTER_PORT` -Een gratis poort op de computer waarop het proces wordt gehost met de positie 0.
+* `NODE_RANK` -De positie van het knoop punt voor training met meerdere knoop punten. De mogelijke waarden zijn 0 tot (totaal aantal knoop punten-1).
+* `WORLD_SIZE` -Het totale aantal processen. Dit moet gelijk zijn aan het totale aantal apparaten (GPU) dat wordt gebruikt voor gedistribueerde training.
+* `RANK` -De (globale) positie van het huidige proces. De mogelijke waarden zijn 0 tot (wereld wijde grootte-1).
+* `LOCAL_RANK` -De lokale (relatieve) positie van het proces binnen het knoop punt. De mogelijke waarden zijn 0 tot (aantal processen op het knoop punt-1).
+
+Aangezien de vereiste omgevings variabelen voor u door Azure ML worden ingesteld, kunt u [de standaard methode voor het initialiseren van omgevings](https://pytorch.org/docs/stable/distributed.html#environment-variable-initialization) variabelen gebruiken om de proces groep in uw trainings code te initialiseren.
+
+Met het volgende code fragment wordt een PyTorch-taak van 2 knoop punten, per knoop punt, geconfigureerd:
+```python
+from azureml.core import ScriptRunConfig
+from azureml.core.runconfig import PyTorchConfiguration
+
+curated_env_name = 'AzureML-PyTorch-1.6-GPU'
+pytorch_env = Environment.get(workspace=ws, name=curated_env_name)
+distr_config = PyTorchConfiguration(process_count=4, node_count=2)
+
+src = ScriptRunConfig(
+  source_directory='./src',
+  script='train.py',
+  arguments=['--epochs', 25],
+  compute_target=compute_target,
+  environment=pytorch_env,
+  distributed_job_config=distr_config,
+)
+
+run = Experiment(ws, 'experiment_name').submit(src)
+```
+
+> [!WARNING]
+> Als u deze optie wilt gebruiken voor trainingen met meerdere processen per knoop punt, moet u Azure ML python SDK >= 1.22.0 gebruiken, zoals `process_count` is geïntroduceerd in 1.22.0.
+
+> [!TIP]
+> Als uw trainings script informatie als lokale positie of rang geeft als script argumenten, kunt u verwijzen naar de omgevings variabele (n) in de argumenten: `arguments=['--epochs', 50, '--local_rank', $LOCAL_RANK]` .
+
+#### <a name="per-node-launch-with-torchdistributedlaunch"></a>Starten per knoop punt met `torch.distributed.launch`
+PyTorch biedt een start hulpprogramma in [Torch. distributed. Launch](https://pytorch.org/docs/stable/distributed.html#launch-utility) dat gebruikers kunnen gebruiken om meerdere processen per knoop punt te starten. `torch.distributed.launch`In de module worden meerdere trainings processen op elk van de knoop punten gestart.
+
+De volgende stappen laten zien hoe u een PyTorch-taak configureert met een Launcher per knoop punt op Azure ML, waarmee het equivalent van het uitvoeren van de volgende opdracht wordt bereikt:
+
+```shell
+python -m torch.distributed.launch --nproc_per_node <num processes per node> \
+  --nnodes <num nodes> --node_rank $NODE_RANK --master_addr $MASTER_ADDR \
+  --master_port $MASTER_PORT --use_env \
+  <your training script> <your script arguments>
+```
+
+1. Geef de `torch.distributed.launch` opdracht op voor de `command` para meter van de `ScriptRunConfig` constructor. Azure ML voert deze opdracht uit op elk knoop punt van uw trainings cluster. `--nproc_per_node` moet kleiner zijn dan of gelijk zijn aan het aantal Gpu's dat op elk knoop punt beschikbaar is. `MASTER_ADDR`, `MASTER_PORT` en `NODE_RANK` zijn allemaal ingesteld door Azure ml, dus u kunt alleen verwijzen naar de omgevings variabelen in de opdracht. Azure ML wordt ingesteld `MASTER_PORT` op 6105, maar u kunt desgewenst een andere waarde door geven aan het `--master_port` argument van de `torch.distributed.launch` opdracht. (Met het hulp programma starten worden de omgevings variabelen opnieuw ingesteld.)
+2. Maak een `PyTorchConfiguration` en geef de op `node_count` . U hoeft niet in te stellen `process_count` als Azure ml om één proces per knoop punt te starten, waarmee de door u opgegeven start opdracht wordt uitgevoerd.
 
 ```python
 from azureml.core import ScriptRunConfig
 from azureml.core.runconfig import PyTorchConfiguration
 
-args = ['--dist-backend', 'nccl',
-        '--dist-url', '$AZ_BATCHAI_PYTORCH_INIT_METHOD',
-        '--rank', '$AZ_BATCHAI_TASK_INDEX',
-        '--world-size', 2]
+curated_env_name = 'AzureML-PyTorch-1.6-GPU'
+pytorch_env = Environment.get(workspace=ws, name=curated_env_name)
+distr_config = PyTorchConfiguration(node_count=2)
+launch_cmd = "python -m torch.distributed.launch --nproc_per_node 2 --nnodes 2 --node_rank $NODE_RANK --master_addr $MASTER_ADDR --master_port $MASTER_PORT --use_env train.py --epochs 50".split()
 
-src = ScriptRunConfig(source_directory=project_folder,
-                      script='pytorch_mnist.py',
-                      arguments=args,
-                      compute_target=compute_target,
-                      environment=pytorch_env,
-                      distributed_job_config=PyTorchConfiguration(communication_backend='Nccl', node_count=2))
+src = ScriptRunConfig(
+  source_directory='./src',
+  command=launch_cmd,
+  compute_target=compute_target,
+  environment=pytorch_env,
+  distributed_job_config=distr_config,
+)
+
+run = Experiment(ws, 'experiment_name').submit(src)
 ```
 
-Als u in plaats daarvan de Gloo-back-end voor gedistribueerde trainingen wilt gebruiken, geeft u `communication_backend='Gloo'` in plaats daarvan op. De Gloo-back-end wordt aanbevolen voor gedistribueerde CPU-training.
-
-Zie [gedistribueerde PyTorch met DistributedDataParallel](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/pytorch/distributed-pytorch-with-nccl-gloo)voor een volledige zelf studie over het uitvoeren van gedistribueerde PyTorch in azure ml.
+Zie [gedistribueerde PyTorch met DistributedDataParallel](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/pytorch/distributed-pytorch-with-distributeddataparallel)voor een volledige zelf studie over het uitvoeren van gedistribueerde PyTorch in azure ml.
 
 ### <a name="troubleshooting"></a>Problemen oplossen
 

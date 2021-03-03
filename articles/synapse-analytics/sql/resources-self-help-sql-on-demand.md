@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: c67b0bab554f363b8389c5557eadeac6e4c577a2
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: f94134b2a06155b1b1f390175578e501a840038b
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625228"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101669420"
 ---
 # <a name="self-help-for-serverless-sql-pool"></a>Zelfondersteuning voor serverloze SQL-pools
 
@@ -30,7 +30,7 @@ Als Synapse Studio geen verbinding kan maken met een serverloze SQL-pool, ziet u
 ## <a name="query-fails-because-file-cannot-be-opened"></a>De query is mislukt omdat het bestand niet kan worden geopend
 
 Als uw query mislukt met het foutbericht 'Bestand kan niet worden geopend omdat het niet bestaat of wordt gebruikt door een ander proces' en u zeker weet dat het bestand bestaat en dat het niet wordt gebruikt door een ander proces, betekent dit dat de serverloze SQL-pool geen toegang kan krijgen tot het bestand. Dit probleem treedt meestal op omdat uw Azure Active Directory-identiteit geen rechten heeft om het bestand te openen. Een serverloze SQL-pool probeert standaard toegang tot het bestand met uw Azure Active Directory-identiteit te krijgen. Om dit probleem op te lossen, moet u de juiste rechten hebben voor toegang tot het bestand. De eenvoudigste manier is om uzelf de rol 'Bijdrager voor opslagblobgegevens' toe te kennen voor het opslagaccount waarnaar u een query wilt uitvoeren. 
-- [Ga naar de volledige handleiding over toegangsbeheer voor opslag via Azure Active Directory voor meer informatie](../../storage/common/storage-auth-aad-rbac-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json). 
+- [Ga naar de volledige handleiding over toegangsbeheer voor opslag via Azure Active Directory voor meer informatie](../../storage/common/storage-auth-aad-rbac-portal.md). 
 - [Ga naar beheer toegang tot opslag accounts voor serverloze SQL-groepen in azure Synapse Analytics](develop-storage-files-storage-access-control.md)
 
 ## <a name="query-fails-because-it-cannot-be-executed-due-to-current-resource-constraints"></a>De query is mislukt omdat deze niet kan worden uitgevoerd vanwege huidige resourcebeperkingen 

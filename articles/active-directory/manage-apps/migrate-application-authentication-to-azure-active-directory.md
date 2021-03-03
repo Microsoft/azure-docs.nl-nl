@@ -14,12 +14,12 @@ ms.date: 02/05/2021
 ms.author: kenwith
 ms.reviewer: baselden
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dd33f9e0b249db6b7c6bd0a0a556d0bb4cf79312
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: 0c1a0be0b7834632ba79af7dfe6c3a4fa25c0316
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100101275"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101645508"
 ---
 # <a name="migrate-application-authentication-to-azure-active-directory"></a>Toepassings verificatie migreren naar Azure Active Directory
 
@@ -55,13 +55,13 @@ Uw toepassingen gebruiken waarschijnlijk de volgende typen verificatie:
 
 **Om ervoor te zorgen dat de gebruikers eenvoudig en veilig toegang kunnen krijgen tot toepassingen, is het doel om één set toegangs beheer en-beleid te hebben in uw on-premises en Cloud omgevingen.**
 
-[Azure Active Directory (Azure AD)](/azure/active-directory/fundamentals/active-directory-whatis) biedt een universeel identiteits platform waarmee uw gebruikers, partners en klanten één identiteit kunnen gebruiken om toegang te krijgen tot de gewenste toepassingen en om vanaf elk platform en apparaat te kunnen samen werken.
+[Azure Active Directory (Azure AD)](../fundamentals/active-directory-whatis.md) biedt een universeel identiteits platform waarmee uw gebruikers, partners en klanten één identiteit kunnen gebruiken om toegang te krijgen tot de gewenste toepassingen en om vanaf elk platform en apparaat te kunnen samen werken.
 
 ![Een diagram van Azure Active Directory connectiviteit](media/migrating-application-authentication-to-azure-active-directory-1.jpg)
 
-Azure AD heeft een [volledige reeks mogelijkheden voor identiteits beheer](/azure/active-directory/fundamentals/active-directory-whatis#which-features-work-in-azure-ad). Door uw app-verificatie en-autorisatie te standaardiseren in azure AD, kunt u profiteren van de voor delen van deze mogelijkheden.
+Azure AD heeft een [volledige reeks mogelijkheden voor identiteits beheer](../fundamentals/active-directory-whatis.md#which-features-work-in-azure-ad). Door uw app-verificatie en-autorisatie te standaardiseren in azure AD, kunt u profiteren van de voor delen van deze mogelijkheden.
 
-Zie aanvullende migratie bronnen op [https://aka.ms/migrateapps](https://aka.ms/migrateapps)
+Zie aanvullende migratie bronnen op [https://aka.ms/migrateapps](./migration-resources.md)
 
 ## <a name="benefits-of-migrating-app-authentication-to-azure-ad"></a>Voor delen van het migreren van app-verificatie naar Azure AD
 
@@ -71,9 +71,9 @@ Door app-verificatie naar Azure AD te verplaatsen, kunt u Risico's en kosten beh
 
 Voor het beveiligen van uw apps moet u een volledig overzicht van alle risico factoren hebben. Door uw apps naar Azure AD te migreren, worden uw beveiligings oplossingen geconsolideerd. Met deze oplossing kunt u:
 
-- Verbeter de veilige gebruikers toegang tot toepassingen en gekoppelde Bedrijfs gegevens met behulp van het [beleid voor voorwaardelijke toegang](/azure/active-directory/active-directory-conditional-access-azure-portal), [multi-factor Authentication](/azure/active-directory/authentication/concept-mfa-howitworks)en op risico gebaseerde technologieën voor [identiteits bescherming](/azure/active-directory/active-directory-identityprotection) met realtime.
+- Verbeter de veilige gebruikers toegang tot toepassingen en gekoppelde Bedrijfs gegevens met behulp van het [beleid voor voorwaardelijke toegang](../conditional-access/overview.md), [multi-factor Authentication](../authentication/concept-mfa-howitworks.md)en op risico gebaseerde technologieën voor [identiteits bescherming](../identity-protection/overview-identity-protection.md) met realtime.
 
-- De toegang van bevoegde gebruikers tot uw omgeving beschermen met [just-in-time](/azure/managed-applications/request-just-in-time-access) beheerders toegang.
+- De toegang van bevoegde gebruikers tot uw omgeving beschermen met [just-in-time](../../azure-resource-manager/managed-applications/request-just-in-time-access.md) beheerders toegang.
 
 - Gebruik het [ontwerp met hoge Beschik baarheid, geografisch gedistribueerd,](https://cloudblogs.microsoft.com/enterprisemobility/2014/09/02/azure-ad-under-the-hood-of-our-geo-redundant-highly-available-distributed-cloud-directory/)voor uw belangrijkste zakelijke behoeften van Azure AD.
 
@@ -85,30 +85,30 @@ Uw organisatie heeft mogelijk meerdere IAM-oplossingen (Identity Access Manageme
 
 **Met Azure AD kunt u de infrastructuur kosten verlagen door:**
 
-- Veilige externe toegang bieden tot on-premises apps met behulp van [Azure AD-toepassingsproxy](/azure/active-directory/manage-apps/application-proxy).
+- Veilige externe toegang bieden tot on-premises apps met behulp van [Azure AD-toepassingsproxy](./application-proxy.md).
 
-- Het loskoppelen van apps van de on-premises referentie benadering in uw Tenant door [Azure AD in te stellen als de vertrouwde universele-ID-provider](/azure/active-directory/hybrid/plan-connect-user-signin#choosing-the-user-sign-in-method-for-your-organization).
+- Het loskoppelen van apps van de on-premises referentie benadering in uw Tenant door [Azure AD in te stellen als de vertrouwde universele-ID-provider](../hybrid/plan-connect-user-signin.md#choosing-the-user-sign-in-method-for-your-organization).
 
 ### <a name="increase-productivity"></a>Productiviteit verhogen
 
 Organisaties en veiligheids voordelen dragen bij aan het verbeteren van Azure AD, maar de volledige acceptatie en naleving zijn waarschijnlijker als gebruikers er ook voor doen. Met Azure AD kunt u het volgende doen:
 
-- De [eenmalige Sign-On (SSO)](/azure/active-directory/manage-apps/what-is-single-sign-on) van de eind gebruiker verbeteren via naadloze en veilige toegang tot elke toepassing, vanaf elk apparaat en elke locatie.
+- De [eenmalige Sign-On (SSO)](./what-is-single-sign-on.md) van de eind gebruiker verbeteren via naadloze en veilige toegang tot elke toepassing, vanaf elk apparaat en elke locatie.
 
-- Gebruik self-service IAM-mogelijkheden, zoals [selfservice voor het opnieuw instellen van wacht woorden](/azure/active-directory/authentication/concept-sspr-howitworks) en [groeps beheer voor selfservice](/azure/active-directory/users-groups-roles/groups-self-service-management).
+- Gebruik self-service IAM-mogelijkheden, zoals [selfservice voor het opnieuw instellen van wacht woorden](../authentication/concept-sspr-howitworks.md) en [groeps beheer voor selfservice](../enterprise-users/groups-self-service-management.md).
 
 - Verminder de administratieve overhead door slechts één identiteit te beheren voor elke gebruiker in de Cloud-en on-premises omgevingen:
 
-  - Het inrichten van gebruikers accounts (in de [Azure AD-galerie](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps)) [automatiseren](/azure/active-directory/active-directory-saas-app-provisioning) op basis van Azure AD-identiteiten
+  - Het inrichten van gebruikers accounts (in de [Azure AD-galerie](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps)) [automatiseren](../app-provisioning/user-provisioning.md) op basis van Azure AD-identiteiten
   - Open al uw apps vanuit het paneel MyApps in de [Azure Portal ](https://portal.azure.com/)
 
-- Ontwikkel aars in staat stellen om toegang tot hun apps te beveiligen en de gebruikers ervaring te verbeteren door gebruik te maken van het [micro soft-identiteits platform](/azure/active-directory/develop/about-microsoft-identity-platform) met de micro soft Authentication Library (MSAL).
+- Ontwikkel aars in staat stellen om toegang tot hun apps te beveiligen en de gebruikers ervaring te verbeteren door gebruik te maken van het [micro soft-identiteits platform](../develop/v2-overview.md) met de micro soft Authentication Library (MSAL).
 
-- Bied uw partners toegang tot cloud resources met behulp van [Azure AD B2B-samen werking](/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b). Hiermee verwijdert u de overhead van het configureren van punt-naar-punt Federatie met uw partners.
+- Bied uw partners toegang tot cloud resources met behulp van [Azure AD B2B-samen werking](../external-identities/what-is-b2b.md). Hiermee verwijdert u de overhead van het configureren van punt-naar-punt Federatie met uw partners.
 
 ### <a name="address-compliance-and-governance"></a>Naleving en beheer van adressen
 
-Zorg ervoor dat u voldoet aan de wettelijke vereisten door het beleid voor bedrijfs toegang af te dwingen en de gebruikers toegang tot toepassingen en gekoppelde gegevens te controleren met behulp van geïntegreerde controle hulpprogramma's en Api's. Met Azure AD kunt u toepassings aanmeldingen bewaken via rapporten die gebruikmaken van [hulpprogram ma's voor beveiligings incidenten en Event monitoring (Siem)](/azure/active-directory/reports-monitoring/plan-monitoring-and-reporting). U kunt de rapporten openen vanuit de portal of Api's, en programmatisch controleren wie toegang heeft tot uw toepassingen en de toegang tot inactieve gebruikers verwijderen via toegangs Beoordelingen.
+Zorg ervoor dat u voldoet aan de wettelijke vereisten door het beleid voor bedrijfs toegang af te dwingen en de gebruikers toegang tot toepassingen en gekoppelde gegevens te controleren met behulp van geïntegreerde controle hulpprogramma's en Api's. Met Azure AD kunt u toepassings aanmeldingen bewaken via rapporten die gebruikmaken van [hulpprogram ma's voor beveiligings incidenten en Event monitoring (Siem)](../reports-monitoring/plan-monitoring-and-reporting.md). U kunt de rapporten openen vanuit de portal of Api's, en programmatisch controleren wie toegang heeft tot uw toepassingen en de toegang tot inactieve gebruikers verwijderen via toegangs Beoordelingen.
 
 ## <a name="plan-your-migration-phases-and-project-strategy"></a>Plan uw migratie fasen en project strategie
 
@@ -214,11 +214,11 @@ Het eerste beslissings punt in een toepassings migratie is welke apps moeten wor
 
 **Active Directory Federation Services (AD FS) gebruiken om een juiste app-inventaris te verzamelen:**
 
-- **Gebruik Azure AD Connect Health.** Als u een Azure AD Premium licentie hebt, kunt u het beste [Azure AD Connect Health](/azure/active-directory/hybrid/how-to-connect-health-adfs) implementeren om het app-gebruik in uw on-premises omgeving te analyseren. U kunt het [AD FS-toepassings rapport](/azure/active-directory/manage-apps/migrate-adfs-application-activity) (preview) gebruiken voor het detecteren van ADFS-toepassingen die kunnen worden gemigreerd en evalueren van de gereedheid van de toepassing die moet worden gemigreerd. Nadat u de migratie hebt voltooid, implementeert u [Cloud Discovery](/cloud-app-security/set-up-cloud-discovery) waarmee u de schaduw kopie in uw organisatie voortdurend kunt bewaken zodra u zich in de Cloud bevindt.
+- **Gebruik Azure AD Connect Health.** Als u een Azure AD Premium licentie hebt, kunt u het beste [Azure AD Connect Health](../hybrid/how-to-connect-health-adfs.md) implementeren om het app-gebruik in uw on-premises omgeving te analyseren. U kunt het [AD FS-toepassings rapport](./migrate-adfs-application-activity.md) (preview) gebruiken voor het detecteren van ADFS-toepassingen die kunnen worden gemigreerd en evalueren van de gereedheid van de toepassing die moet worden gemigreerd. Nadat u de migratie hebt voltooid, implementeert u [Cloud Discovery](/cloud-app-security/set-up-cloud-discovery) waarmee u de schaduw kopie in uw organisatie voortdurend kunt bewaken zodra u zich in de Cloud bevindt.
 
-- **AD FS voor het parseren van Logboeken**. Als u geen Azure AD Premium-licenties hebt, kunt u het beste de AD FS-hulpprogram ma's voor het migratie programma ADFS gebruiken op basis van [Power shell.](https://github.com/AzureAD/Deployment-Plans/tree/master/ADFS%20to%20AzureAD%20App%20Migration) Raadpleeg de [hand leiding voor oplossingen](https://aka.ms/migrateapps/adfssolutionguide):
+- **AD FS voor het parseren van Logboeken**. Als u geen Azure AD Premium-licenties hebt, kunt u het beste de AD FS-hulpprogram ma's voor het migratie programma ADFS gebruiken op basis van [Power shell.](https://github.com/AzureAD/Deployment-Plans/tree/master/ADFS%20to%20AzureAD%20App%20Migration) Raadpleeg de [hand leiding voor oplossingen](./migrate-adfs-apps-to-azure.md):
 
-[Apps migreren van Active Directory Federation Services (AD FS) naar Azure AD.](https://aka.ms/migrateapps/adfssolutionguide)
+[Apps migreren van Active Directory Federation Services (AD FS) naar Azure AD.](./migrate-adfs-apps-to-azure.md)
 
 ### <a name="using-other-identity-providers-idps"></a>Andere id-providers (id) gebruiken
 
@@ -270,7 +270,7 @@ Wanneer u uw apps hebt gevonden, kunt u deze typen apps in uw organisatie identi
 
 De al moderne apps zijn het meest waarschijnlijk om te worden verplaatst naar Azure AD. Deze apps maken al gebruik van moderne verificatie protocollen (zoals SAML of OpenID Connect Connect) en kunnen opnieuw worden geconfigureerd voor verificatie met Azure AD.
 
-Naast de opties in de [Azure AD-App-galerie,](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps) kunnen dit apps zijn die al bestaan in uw organisatie of apps van derden van een leverancier die geen deel uitmaakt van de Azure AD-galerie ([niet-galerie toepassingen)](/azure/active-directory/manage-apps/add-non-gallery-app).
+Naast de opties in de [Azure AD-App-galerie,](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps) kunnen dit apps zijn die al bestaan in uw organisatie of apps van derden van een leverancier die geen deel uitmaakt van de Azure AD-galerie ([niet-galerie toepassingen)](./add-application-portal.md).
 
 Verouderde apps die u wilt moderniseren
 
@@ -288,13 +288,13 @@ Voor bepaalde apps die gebruikmaken van verouderde verificatie protocollen, is h
 
 - Apps die zijn ontwikkeld met behulp van on-premises verificatie normen waarvoor u geen plannen hebt om te verplaatsen
 
-Azure AD kan profiteren van de voor delen van deze verouderde apps, omdat u Azure AD-beveiligings-en beheer functies zoals [multi-factor Authentication](/azure/active-directory/authentication/concept-mfa-howitworks), [voorwaardelijke toegang](/azure/active-directory/conditional-access/overview), [identiteits beveiliging](/azure/active-directory/identity-protection/), [gedelegeerde toegang tot toepassingen](/azure/active-directory/manage-apps/access-panel-manage-self-service-access)en [toegangs beoordelingen](https://docs.microsoft.com/azure/active-directory/governance/manage-user-access-with-access-reviews#create-and-perform-an-access-review) voor deze apps kunt inschakelen zonder dat u de app helemaal hoeft aan te raken.
+Azure AD kan profiteren van de voor delen van deze verouderde apps, omdat u Azure AD-beveiligings-en beheer functies zoals [multi-factor Authentication](../authentication/concept-mfa-howitworks.md), [voorwaardelijke toegang](../conditional-access/overview.md), [identiteits beveiliging](../identity-protection/index.yml), [gedelegeerde toegang tot toepassingen](./access-panel-manage-self-service-access.md)en [toegangs beoordelingen](../governance/manage-user-access-with-access-reviews.md#create-and-perform-an-access-review) voor deze apps kunt inschakelen zonder dat u de app helemaal hoeft aan te raken.
 
-Begin door **deze apps uit te breiden naar de Cloud** [met behulp van](/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-password-vaulting) eenvoudige verificatie methoden (zoals wachtwoord kluizen), zodat uw gebruikers snel kunnen worden gemigreerd, of via onze [partner integraties](https://azure.microsoft.com/services/active-directory/sso/secure-hybrid-access/) met bezorgings controllers voor toepassingen die u mogelijk al hebt geïmplementeerd.
+Begin door **deze apps uit te breiden naar de Cloud** [met behulp van](./application-proxy-configure-single-sign-on-password-vaulting.md) eenvoudige verificatie methoden (zoals wachtwoord kluizen), zodat uw gebruikers snel kunnen worden gemigreerd, of via onze [partner integraties](https://azure.microsoft.com/services/active-directory/sso/secure-hybrid-access/) met bezorgings controllers voor toepassingen die u mogelijk al hebt geïmplementeerd.
 
 ### <a name="new-line-of-business-lob-apps"></a>Nieuwe LoB-apps (line-of-Business)
 
-U ontwikkelt doorgaans LoB-apps voor intern gebruik in uw organisatie. Als u nieuwe apps in de pijp lijn hebt, raden we u aan het [micro soft Identity-platform](/azure/active-directory/develop/about-microsoft-identity-platform) te gebruiken voor het implementeren van OpenID Connect Connect.
+U ontwikkelt doorgaans LoB-apps voor intern gebruik in uw organisatie. Als u nieuwe apps in de pijp lijn hebt, raden we u aan het [micro soft Identity-platform](../develop/v2-overview.md) te gebruiken voor het implementeren van OpenID Connect Connect.
 
 ### <a name="apps-to-deprecate"></a>Te afschaffing apps
 
@@ -316,10 +316,10 @@ U bent in deze fase geslaagd met:
 
   - Op welke systemen deze apps verbinding maken met o van waar en op welke apparaten gebruikers ze gebruiken
 
-  - Of ze worden gemigreerd, afgeschaft of verbonden met [Azure AD Connect](/azure/active-directory/hybrid/whatis-azure-ad-connect).
+  - Of ze worden gemigreerd, afgeschaft of verbonden met [Azure AD Connect](../hybrid/whatis-azure-ad-connect.md).
 
 > [!NOTE]
-> U kunt het [werk blad toepassings detectie](https://download.microsoft.com/download/2/8/3/283F995C-5169-43A0-B81D-B0ED539FB3DD/Application%20Discovery%20worksheet.xlsx) downloaden om de toepassingen vast te leggen die u wilt migreren naar Azure AD-verificatie en die u wilt verlaten, maar wilt beheren met behulp van [Azure AD Connect](/azure/active-directory/hybrid/whatis-azure-ad-connect).
+> U kunt het [werk blad toepassings detectie](https://download.microsoft.com/download/2/8/3/283F995C-5169-43A0-B81D-B0ED539FB3DD/Application%20Discovery%20worksheet.xlsx) downloaden om de toepassingen vast te leggen die u wilt migreren naar Azure AD-verificatie en die u wilt verlaten, maar wilt beheren met behulp van [Azure AD Connect](../hybrid/whatis-azure-ad-connect.md).
 
 ## <a name="phase-2-classify-apps-and-plan-pilot"></a>Fase 2: apps classificeren en prototype plannen
 
@@ -351,7 +351,7 @@ U kunt ervoor kiezen om de app-migratie te starten met de apps met de laagste pr
 
 In een scenario waarin u mogelijk geen ervaring hebt met het gebruik van Azure AD en identiteits Services, kunt u overwegen om eerst uw apps met de **laagste prioriteit** naar Azure ad te verplaatsen. Zo wordt de impact van uw bedrijf tot een minimum beperkt en kunt u een momentum bouwen. Zodra u deze apps hebt verplaatst en het vertrouwen van de belanghebbende hebt opgedaan, kunt u door gaan met het migreren van de andere apps.
 
-Als er geen duidelijke prioriteit is, kunt u overwegen om de apps die in de [Azure AD-galerie](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps) zijn opgenomen eerst te verplaatsen en meerdere id-providers (ADFS of Okta) te ondersteunen, omdat ze gemakkelijker te integreren zijn. Waarschijnlijk zijn deze apps de apps met de **hoogste prioriteit** in uw organisatie. Voor het integreren van uw SaaS-toepassingen met Azure AD hebben we een verzameling [zelf studies](/azure/active-directory/saas-apps/tutorial-list) ontwikkeld waarmee u de configuratie kunt door lopen.
+Als er geen duidelijke prioriteit is, kunt u overwegen om de apps die in de [Azure AD-galerie](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps) zijn opgenomen eerst te verplaatsen en meerdere id-providers (ADFS of Okta) te ondersteunen, omdat ze gemakkelijker te integreren zijn. Waarschijnlijk zijn deze apps de apps met de **hoogste prioriteit** in uw organisatie. Voor het integreren van uw SaaS-toepassingen met Azure AD hebben we een verzameling [zelf studies](../saas-apps/tutorial-list.md) ontwikkeld waarmee u de configuratie kunt door lopen.
 
 Wanneer u de apps hebt gemigreerd, zal deze app-Bucket met de hoogste prioriteit de grote werk belasting opvolgen. U kunt uiteindelijk de apps met een lagere prioriteit selecteren, omdat ze de kosten niet wijzigen, zelfs als u de deadline hebt verplaatst. Zelfs als u de licentie moet verlengen, geldt een kleine hoeveelheid.
 
@@ -399,7 +399,7 @@ Nadat u uw toepassing hebt geclassificeerd en de details hebt gedocumenteerd, mo
 
 ### <a name="plan-a-pilot"></a>Een pilot plannen
 
-De app (s) die u voor de pilot selecteert, moeten de sleutel identiteit en beveiligings vereisten van uw organisatie vertegenwoordigen en u moet een duidelijke aankoop van de toepassings eigenaren hebben. Pilots worden doorgaans uitgevoerd in een afzonderlijke test omgeving. Zie [Aanbevolen procedures voor Pilots](/azure/active-directory/fundamentals/active-directory-deployment-plans#best-practices-for-a-pilot) op de pagina implementatie plannen.
+De app (s) die u voor de pilot selecteert, moeten de sleutel identiteit en beveiligings vereisten van uw organisatie vertegenwoordigen en u moet een duidelijke aankoop van de toepassings eigenaren hebben. Pilots worden doorgaans uitgevoerd in een afzonderlijke test omgeving. Zie [Aanbevolen procedures voor Pilots](../fundamentals/active-directory-deployment-plans.md#best-practices-for-a-pilot) op de pagina implementatie plannen.
 
 **Vergeet niet over uw externe partners.** Zorg ervoor dat ze deel nemen aan migratie planningen en testen. Ten slotte moet u ervoor zorgen dat ze toegang hebben tot de Help Desk in het geval van problemen.
 
@@ -409,7 +409,7 @@ Hoewel sommige apps eenvoudig kunnen worden gemigreerd, kunnen anderen langer du
 
 Veel SaaS-app-leveranciers brengen kosten in rekening voor het wijzigen van de SSO-verbinding. Neem contact met hen op en plan dit.
 
-Azure AD heeft ook [service limieten en beperkingen](/azure/active-directory/users-groups-roles/directory-service-limits-restrictions) waar u rekening mee moet houden.
+Azure AD heeft ook [service limieten en beperkingen](../enterprise-users/directory-service-limits-restrictions.md) waar u rekening mee moet houden.
 
 ### <a name="app-owner-sign-off"></a>Afmelding van de app-eigenaar
 
@@ -421,9 +421,9 @@ Voordat u het migratie proces start, neemt u de tijd om de beveiligings postuur 
 
 ### <a name="identities-and-data"></a>Identiteiten en gegevens
 
-De meeste organisaties hebben specifieke vereisten met betrekking tot identiteiten en gegevens bescherming die variëren per branche segment en taak functies binnen organisaties. Raadpleeg de [configuraties voor identiteits-en toegangs apparaten](/microsoft-365/enterprise/microsoft-365-policies-configurations) voor onze aanbevelingen, waaronder een vereiste set [beleids regels voor voorwaardelijke toegang](/azure/active-directory/active-directory-conditional-access-azure-portal) en gerelateerde mogelijkheden.
+De meeste organisaties hebben specifieke vereisten met betrekking tot identiteiten en gegevens bescherming die variëren per branche segment en taak functies binnen organisaties. Raadpleeg de [configuraties voor identiteits-en toegangs apparaten](/microsoft-365/enterprise/microsoft-365-policies-configurations) voor onze aanbevelingen, waaronder een vereiste set [beleids regels voor voorwaardelijke toegang](../conditional-access/overview.md) en gerelateerde mogelijkheden.
 
-U kunt deze informatie gebruiken voor het beveiligen van de toegang tot alle services die zijn geïntegreerd met Azure AD. Deze aanbevelingen zijn afgestemd op de beveiligings Score van micro soft en de [identiteits Score in azure AD](/azure/active-directory/fundamentals/identity-secure-score). De score helpt bij het volgende:
+U kunt deze informatie gebruiken voor het beveiligen van de toegang tot alle services die zijn geïntegreerd met Azure AD. Deze aanbevelingen zijn afgestemd op de beveiligings Score van micro soft en de [identiteits Score in azure AD](../fundamentals/identity-secure-score.md). De score helpt bij het volgende:
 
 - Objectief meten van het beveiligingspostuur van uw identiteit
 
@@ -431,7 +431,7 @@ U kunt deze informatie gebruiken voor het beveiligen van de toegang tot alle ser
 
 - Evalueren van het succes van uw verbeteringen
 
-Dit helpt u ook bij het implementeren van de [vijf stappen voor het beveiligen van uw identiteits infrastructuur](/azure/security/azure-ad-secure-steps). Gebruik de richt lijnen als uitgangs punt voor uw organisatie en pas het beleid aan om te voldoen aan de specifieke vereisten van uw organisatie.
+Dit helpt u ook bij het implementeren van de [vijf stappen voor het beveiligen van uw identiteits infrastructuur](../../security/fundamentals/steps-secure-identity.md). Gebruik de richt lijnen als uitgangs punt voor uw organisatie en pas het beleid aan om te voldoen aan de specifieke vereisten van uw organisatie.
 
 ### <a name="who-is-accessing-your-data"></a>Wie heeft toegang tot uw gegevens?
 
@@ -439,11 +439,11 @@ Er zijn twee hoofd categorieën van gebruikers van uw apps en resources die door
 
 - **Intern:** Werk nemers, contract ANTEN en leveranciers die accounts hebben binnen uw ID-provider. Dit heeft mogelijk verdere draaiing nodig met verschillende regels voor managers of leiders en andere mede werkers.
 
-- **Extern:** Leveranciers, leveranciers, distributeurs of andere zakelijke partners die communiceren met uw organisatie in het kader van een reguliere periode van het bedrijf met [Azure AD B2B-samen werking.](/azure/active-directory/b2b/what-is-b2b)
+- **Extern:** Leveranciers, leveranciers, distributeurs of andere zakelijke partners die communiceren met uw organisatie in het kader van een reguliere periode van het bedrijf met [Azure AD B2B-samen werking.](../external-identities/what-is-b2b.md)
 
-U kunt groepen voor deze gebruikers definiëren en deze groepen op verschillende manieren vullen. U kunt ervoor kiezen om een beheerder in staat te stellen leden hand matig toe te voegen aan een groep of door selfservice-groepslid maatschap in te scha kelen. Er kunnen regels worden gemaakt waarmee leden automatisch worden toegevoegd aan groepen op basis van de opgegeven criteria met [dynamische groepen](/azure/active-directory/users-groups-roles/groups-dynamic-membership).
+U kunt groepen voor deze gebruikers definiëren en deze groepen op verschillende manieren vullen. U kunt ervoor kiezen om een beheerder in staat te stellen leden hand matig toe te voegen aan een groep of door selfservice-groepslid maatschap in te scha kelen. Er kunnen regels worden gemaakt waarmee leden automatisch worden toegevoegd aan groepen op basis van de opgegeven criteria met [dynamische groepen](../enterprise-users/groups-dynamic-membership.md).
 
-Externe gebruikers kunnen ook verwijzen naar klanten die speciale aandacht vereisen. [Azure AD B2C](/azure/active-directory-b2c/active-directory-b2c-overview)biedt een afzonderlijk product ondersteuning voor klant verificatie. Het valt echter buiten het bereik van dit artikel.
+Externe gebruikers kunnen ook verwijzen naar klanten die speciale aandacht vereisen. [Azure AD B2C](../../active-directory-b2c/overview.md)biedt een afzonderlijk product ondersteuning voor klant verificatie. Het valt echter buiten het bereik van dit artikel.
 
 ### <a name="devicelocation-used-to-access-data"></a>Apparaat/locatie die wordt gebruikt voor toegang tot gegevens
 
@@ -451,7 +451,7 @@ Het apparaat en de locatie die een gebruiker gebruikt voor toegang tot een app z
 
 ![Een diagram van de relatie tussen de locatie van de gebruiker en gegevens toegang](media/migrating-application-authentication-to-azure-active-directory-6.jpg)
 
-Met deze aspecten van resources, gebruikers en apparaten kunt u ervoor kiezen om [voorwaardelijke toegang tot Azure AD](/azure/active-directory/active-directory-conditional-access-azure-portal) te gebruiken. Voorwaardelijke toegang gaat verder dan gebruikers machtigingen: het is gebaseerd op een combi natie van factoren, zoals de identiteit van een gebruiker of groep, het netwerk waarmee de gebruiker is verbonden, het apparaat en de toepassing die ze gebruiken, en het type gegevens waartoe ze toegang hebben. De toegang die aan de gebruiker wordt verleend, wordt aangepast aan deze bredere set voor waarden.
+Met deze aspecten van resources, gebruikers en apparaten kunt u ervoor kiezen om [voorwaardelijke toegang tot Azure AD](../conditional-access/overview.md) te gebruiken. Voorwaardelijke toegang gaat verder dan gebruikers machtigingen: het is gebaseerd op een combi natie van factoren, zoals de identiteit van een gebruiker of groep, het netwerk waarmee de gebruiker is verbonden, het apparaat en de toepassing die ze gebruiken, en het type gegevens waartoe ze toegang hebben. De toegang die aan de gebruiker wordt verleend, wordt aangepast aan deze bredere set voor waarden.
 
 ### <a name="exit-criteria"></a>Afsluit criteria
 
@@ -475,13 +475,13 @@ Zodra u de aanschaf van het bedrijf hebt verworven, is de volgende stap het migr
 
 Gebruik de onderstaande hulpprogram ma's en richt lijnen om de stappen te volgen die nodig zijn om uw toepassingen te migreren naar Azure AD:
 
-- **Algemene richt lijnen voor migratie** : gebruik het Witboek, hulpprogram ma's, e-mail sjablonen en sollicitatie vragenlijst in de [Azure AD Apps Migration Toolkit](https://aka.ms/migrateapps) om uw apps te detecteren, classificeren en migreren.
+- **Algemene richt lijnen voor migratie** : gebruik het Witboek, hulpprogram ma's, e-mail sjablonen en sollicitatie vragenlijst in de [Azure AD Apps Migration Toolkit](./migration-resources.md) om uw apps te detecteren, classificeren en migreren.
 
-- **SaaS-toepassingen** – Bekijk onze lijst met [honderden SaaS-app-zelf studies](/azure/active-directory/active-directory-saas-tutorial-list) en het volledige [implementatie plan voor Azure AD SSO](https://aka.ms/ssodeploymentplan) om het proces te door lopen.
+- **SaaS-toepassingen** – Bekijk onze lijst met [honderden SaaS-app-zelf studies](../saas-apps/tutorial-list.md) en het volledige [implementatie plan voor Azure AD SSO](https://aka.ms/ssodeploymentplan) om het proces te door lopen.
 
-- **Toepassingen die on-premises worden uitgevoerd** : meer informatie [over Azure AD-toepassingsproxy](/azure/active-directory/manage-apps/application-proxy) en het volledige [implementatie plan van Azure AD-toepassingsproxy](https://aka.ms/AppProxyDPDownload) gebruiken om snel aan de slag te gaan.
+- **Toepassingen die on-premises worden uitgevoerd** : meer informatie [over Azure AD-toepassingsproxy](./application-proxy.md) en het volledige [implementatie plan van Azure AD-toepassingsproxy](https://aka.ms/AppProxyDPDownload) gebruiken om snel aan de slag te gaan.
 
-- **Apps die u ontwikkelt** – Lees onze stapsgewijze [integratie](/azure/active-directory/develop/active-directory-integrating-applications) -en [registratie](/azure/active-directory/develop/active-directory-v2-app-registration) richtlijnen.
+- **Apps die u ontwikkelt** – Lees onze stapsgewijze [integratie](../develop/quickstart-register-app.md) -en [registratie](../develop/quickstart-register-app.md) richtlijnen.
 
 Na de migratie kunt u ervoor kiezen om communicatie te verzenden die de gebruikers van de geslaagde implementatie informeert en u eraan te herinneren dat er nieuwe stappen moeten worden uitgevoerd.
 
@@ -489,7 +489,7 @@ Na de migratie kunt u ervoor kiezen om communicatie te verzenden die de gebruike
 
 Tijdens het proces van de migratie bevat uw app mogelijk al een test omgeving die wordt gebruikt tijdens reguliere implementaties. U kunt deze omgeving blijven gebruiken voor het testen van de migratie. Als er op dit moment geen test omgeving beschikbaar is, kunt u er mogelijk een instellen met behulp van Azure App Service of Azure Virtual Machines, afhankelijk van de architectuur van de toepassing. U kunt ervoor kiezen om een afzonderlijke test van Azure AD-Tenant in te stellen om te gebruiken tijdens het ontwikkelen van uw app-configuraties. Deze Tenant wordt in een schone status gestart en wordt niet geconfigureerd om te synchroniseren met een systeem.
 
-U kunt elke app testen door u aan te melden met een test gebruiker en ervoor te zorgen dat alle functionaliteit hetzelfde is als vóór de migratie. Als u tijdens het testen bepaalt dat gebruikers hun [MFA](/active-directory/authentication/howto-mfa-userstates) -of [SSPR](/azure/active-directory/authentication/quickstart-sspr)-instellingen moeten bijwerken of als u deze functionaliteit tijdens de migratie toevoegt, moet u deze toevoegen aan uw communicatie plan voor eind gebruikers. Zie [MFA](https://aka.ms/mfatemplates) en [SSPR](https://aka.ms/ssprtemplates) -communicatie sjablonen voor eind gebruikers.
+U kunt elke app testen door u aan te melden met een test gebruiker en ervoor te zorgen dat alle functionaliteit hetzelfde is als vóór de migratie. Als u tijdens het testen bepaalt dat gebruikers hun [MFA](/active-directory/authentication/howto-mfa-userstates) -of [SSPR](../authentication/tutorial-enable-sspr.md)-instellingen moeten bijwerken of als u deze functionaliteit tijdens de migratie toevoegt, moet u deze toevoegen aan uw communicatie plan voor eind gebruikers. Zie [MFA](https://aka.ms/mfatemplates) en [SSPR](https://aka.ms/ssprtemplates) -communicatie sjablonen voor eind gebruikers.
 
 Nadat u de apps hebt gemigreerd, gaat u naar [Azure Portal](https://aad.portal.azure.com/) om te testen of de migratie is geslaagd. Volg de onderstaande instructies:
 
@@ -497,20 +497,21 @@ Nadat u de apps hebt gemigreerd, gaat u naar [Azure Portal](https://aad.portal.a
 
 - Selecteer **&gt; gebruikers en groepen beheren** om ten minste één gebruiker of groep aan de app toe te wijzen.
 
-- Selecteer **&gt; voorwaardelijke toegang beheren**. Controleer uw lijst met beleids regels en zorg ervoor dat u de toegang tot de toepassing niet blokkeert met een [beleid voor voorwaardelijke toegang](/azure/active-directory/active-directory-conditional-access-azure-portal).
+- Selecteer **&gt; voorwaardelijke toegang beheren**. Controleer uw lijst met beleids regels en zorg ervoor dat u de toegang tot de toepassing niet blokkeert met een [beleid voor voorwaardelijke toegang](../conditional-access/overview.md).
 
 Afhankelijk van hoe u uw app configureert, controleert u of SSO goed werkt.
 
 | Verificatietype      | Testen                                             |
 | ------------------------ | --------------------------------------------------- |
 | **OAuth/OpenID Connect Connect** | Selecteer **zakelijke toepassings &gt; machtigingen** en zorg ervoor dat u hebt ingestemd met de toepassing die in uw organisatie moet worden gebruikt in de gebruikers instellingen voor uw app. |
-| **Op SAML gebaseerde SSO** | U kunt de knop [SAML-instellingen testen](/azure/active-directory/develop/howto-v1-debug-saml-sso-issues) vinden onder **eenmalige aanmelding.** |
-| **Eenmalige aanmelding op basis van wacht woorden** | Down load en installeer de [MyApps Secure Sign-in extension](/azure/active-directory/user-help/active-directory-saas-access-panel-introduction#my-apps-secure-sign-in-extension). Deze uitbrei ding helpt u bij het starten van de Cloud-apps van uw organisatie waarvoor u een SSO-proces moet gebruiken. |
-| **[Toepassingsproxy](/azure/active-directory/manage-apps/application-proxy)** | Zorg ervoor dat uw connector wordt uitgevoerd en aan uw toepassing is toegewezen. Ga naar de [probleemoplossings gids voor toepassings proxy](/azure/active-directory/manage-apps/application-proxy-troubleshoot) voor verdere ondersteuning. |
+| **Op SAML gebaseerde SSO** | U kunt de knop [SAML-instellingen testen](./debug-saml-sso-issues.md) vinden onder **eenmalige aanmelding.** |
+| **Eenmalige aanmelding op basis van wacht woorden** | Down load en installeer de [MyApps Secure Sign-in extension](../user-help/my-apps-portal-end-user-access.md#download-and-install-the-my-apps-secure-sign-in-extension). Deze uitbrei ding helpt u bij het starten van de Cloud-apps van uw organisatie waarvoor u een SSO-proces moet gebruiken. |
+
+| **[Toepassings proxy](./application-proxy.md)** | Zorg ervoor dat uw connector wordt uitgevoerd en aan uw toepassing is toegewezen. Ga naar de [probleemoplossings gids voor toepassings proxy](./application-proxy-troubleshoot.md) voor verdere ondersteuning. |
 
 ### <a name="troubleshoot"></a>Problemen oplossen
 
-Als u problemen ondervindt, raadpleegt u onze [probleemoplossings gids voor apps](https://aka.ms/troubleshoot-apps) om hulp te krijgen. Zie ook [problemen met aanmelden bij een aangepaste toepassing](/azure/active-directory/manage-apps/application-sign-in-problem-custom-dev).
+Als u problemen ondervindt, raadpleegt u onze [probleemoplossings gids voor apps](../app-provisioning/isv-automatic-provisioning-multi-tenant-apps.md) om hulp te krijgen. Zie ook [problemen met aanmelden bij een aangepaste toepassing](./application-sign-in-problem-federated-sso-gallery.md).
 
 ### <a name="plan-rollback"></a>Plan terugdraai actie
 
@@ -554,19 +555,21 @@ Zodra u de apps hebt gemigreerd, kunt u de gebruikers ervaring op verschillende 
 
 **Apps kunnen worden gedetecteerd**
 
-Ga naar de [MyApps](/azure/active-directory/user-help/my-apps-portal-end-user-access#my-apps-secure-sign-in-extension)-Portal-ervaring van **uw gebruiker** . Hier hebben ze toegang tot alle apps op basis van de Cloud, apps die u beschikbaar maakt met behulp van [Azure AD Connect](/azure/active-directory/hybrid/whatis-azure-ad-connect), en apps die [toepassings proxy](/azure/active-directory/manage-apps/application-proxy) gebruiken, op voor waarde dat ze machtigingen hebben voor toegang tot deze apps.
+Ga naar de [MyApps](../user-help/my-apps-portal-end-user-access.md#download-and-install-the-my-apps-secure-sign-in-extension)-Portal-ervaring van **uw gebruiker** . Hier hebben ze toegang tot alle apps op basis van de Cloud, apps die u beschikbaar maakt met behulp van [Azure AD Connect](../hybrid/whatis-azure-ad-connect.md), en apps die [toepassings proxy](./application-proxy.md) gebruiken, op voor waarde dat ze machtigingen hebben voor toegang tot deze apps.
+
 
 U kunt uw gebruikers helpen bij het detecteren van hun apps:
 
-- De bestaande functie voor [eenmalige aanmelding](/azure/active-directory/active-directory-saas-custom-apps#existing-single-sign-on) gebruiken om **uw gebruikers aan elke app te koppelen**
+- De bestaande functie voor [eenmalige aanmelding](./view-applications-portal.md) gebruiken om **uw gebruikers aan elke app te koppelen**
 
-- [Self-service toepassingen toegang](/azure/active-directory/application-access-self-service-how-to)tot een app inschakelen en **gebruikers apps toevoegen die u aan de curator hebt**
 
-- [Verberg toepassingen van eind gebruikers](/azure/active-directory/manage-apps/hide-application-from-user-portal) (standaard micro soft-apps of andere apps) om **ervoor te zorgen dat de apps die ze nodig** hebben, beter kunnen worden gedetecteerd
+- [Self-service toepassingen toegang](./manage-self-service-access.md)tot een app inschakelen en **gebruikers apps toevoegen die u aan de curator hebt**
+
+- [Verberg toepassingen van eind gebruikers](./hide-application-from-user-portal.md) (standaard micro soft-apps of andere apps) om **ervoor te zorgen dat de apps die ze nodig** hebben, beter kunnen worden gedetecteerd
 
 ### <a name="make-apps-accessible"></a>Apps toegankelijk maken
 
-**Gebruikers toegang bieden tot apps vanaf hun mobiele apparaten**. Gebruikers hebben toegang tot de MyApps-Portal met intune-Managed browser op hun [iOS](/azure/active-directory/manage-apps/hide-application-from-user-portal) 7,0-of later-of [Android](/azure/active-directory/manage-apps/hide-application-from-user-portal) -apparaten.
+**Gebruikers toegang bieden tot apps vanaf hun mobiele apparaten**. Gebruikers hebben toegang tot de MyApps-Portal met intune-Managed browser op hun [iOS](./hide-application-from-user-portal.md) 7,0-of later-of [Android](./hide-application-from-user-portal.md) -apparaten.
 
 Gebruikers kunnen een door **intune beheerde browser** downloaden:
 
@@ -580,7 +583,7 @@ Gebruikers kunnen [de uitbrei ding voor beveiligde aanmelding van MyApps](https:
 
 - **Zoeken naar hun apps en de meest recent gebruikte apps weer geven**
 
-- **Interne url's** die u hebt geconfigureerd in de [toepassings proxy](/azure/active-directory/manage-apps/application-proxy) automatisch converteren naar de juiste externe url's. Uw gebruikers kunnen nu werken met de koppelingen die ze kennen, ongeacht waar ze zich bevinden.
+- **Interne url's** die u hebt geconfigureerd in de [toepassings proxy](./application-proxy.md) automatisch converteren naar de juiste externe url's. Uw gebruikers kunnen nu werken met de koppelingen die ze kennen, ongeacht waar ze zich bevinden.
 
 **Laat gebruikers hun apps openen vanuit Office.com.**
 
@@ -590,11 +593,11 @@ Gebruikers kunnen naar [Office.com](https://www.office.com/) gaan om naar **hun 
 
 Azure AD biedt een gecentraliseerde toegangs locatie voor het beheren van uw gemigreerde apps. Ga naar de [Azure Portal](https://portal.azure.com/) en schakel de volgende mogelijkheden in:
 
-- **Gebruikers toegang tot apps beveiligen.** [Beleids regels voor voorwaardelijke toegang](/azure/active-directory/active-directory-conditional-access-azure-portal)of [identiteits beveiliging](/azure/active-directory/active-directory-identityprotection)inschakelen voor het beveiligen van gebruikers toegang tot toepassingen op basis van de status van het apparaat, de locatie en meer.
+- **Gebruikers toegang tot apps beveiligen.** [Beleids regels voor voorwaardelijke toegang](../conditional-access/overview.md)of [identiteits beveiliging](../identity-protection/overview-identity-protection.md)inschakelen voor het beveiligen van gebruikers toegang tot toepassingen op basis van de status van het apparaat, de locatie en meer.
 
-- **Automatische inrichting.** Stel [automatische inrichting in van gebruikers](/azure/active-directory/manage-apps/user-provisioning) met diverse SaaS-apps van derden waartoe gebruikers toegang moeten hebben. Naast het maken van gebruikers identiteiten, omvat het het onderhoud en de verwijdering van gebruikers identiteiten als status of rollen worden gewijzigd.
+- **Automatische inrichting.** Stel [automatische inrichting in van gebruikers](../app-provisioning/user-provisioning.md) met diverse SaaS-apps van derden waartoe gebruikers toegang moeten hebben. Naast het maken van gebruikers identiteiten, omvat het het onderhoud en de verwijdering van gebruikers identiteiten als status of rollen worden gewijzigd.
 
-- **Beheer** van **gebruikers toegang delegeren** . Schakel, indien van toepassing, selfservice toegang in voor uw apps en *Wijs een zakelijke goed keurder toe om de toegang tot deze apps goed te keuren*. Gebruik [self-service groeps beheer](/azure/active-directory/users-groups-roles/groups-self-service-management)voor groepen die zijn toegewezen aan verzamelingen apps.
+- **Beheer** van **gebruikers toegang delegeren** . Schakel, indien van toepassing, selfservice toegang in voor uw apps en *Wijs een zakelijke goed keurder toe om de toegang tot deze apps goed te keuren*. Gebruik [self-service groeps beheer](../enterprise-users/groups-self-service-management.md)voor groepen die zijn toegewezen aan verzamelingen apps.
 
 - **Beheerders toegang delegeren.** Gebruik **Directory-rol** om een beheerdersrol (zoals toepassings beheerder, Cloud toepassings beheerder of toepassings ontwikkelaar) aan uw gebruiker toe te wijzen.
 
@@ -602,13 +605,13 @@ Azure AD biedt een gecentraliseerde toegangs locatie voor het beheren van uw gem
 
 U kunt ook de [Azure Portal](https://portal.azure.com/) gebruiken om al uw apps te controleren vanaf een centrale locatie,
 
-- **Controleer uw app** met behulp van **bedrijfs toepassingen, Controleer** of toegang tot dezelfde informatie van de [Azure AD Reporting-API](/azure/active-directory/active-directory-reporting-api-getting-started-azure-portal) om te integreren in uw favoriete hulpprogram ma's.
+- **Controleer uw app** met behulp van **bedrijfs toepassingen, Controleer** of toegang tot dezelfde informatie van de [Azure AD Reporting-API](../reports-monitoring/concept-reporting-api.md) om te integreren in uw favoriete hulpprogram ma's.
 
 - **De machtigingen voor een app weer geven** met behulp van **bedrijfs toepassingen, machtigingen** voor apps die gebruikmaken van OAuth/OpenID Connect Connect.
 
-- **Meld u aan voor aanmelding** met **bedrijfs toepassingen, aanmeldingen**. Toegang tot dezelfde informatie van de [Azure AD Reporting-API.](/azure/active-directory/active-directory-reporting-api-getting-started-azure-portal)
+- **Meld u aan voor aanmelding** met **bedrijfs toepassingen, aanmeldingen**. Toegang tot dezelfde informatie van de [Azure AD Reporting-API.](../reports-monitoring/concept-reporting-api.md)
 
-- Het **gebruik van uw app visualiseren** vanuit het [Azure AD PowerBI-inhouds pakket](/azure/active-directory/active-directory-reporting-power-bi-content-pack-how-to)
+- Het **gebruik van uw app visualiseren** vanuit het [Azure AD PowerBI-inhouds pakket](../reports-monitoring/howto-use-azure-monitor-workbooks.md)
 
 ### <a name="exit-criteria"></a>Afsluit criteria
 
@@ -622,7 +625,7 @@ U bent in deze fase geslaagd wanneer u:
 
 Implementatie plannen begeleiden u bij de bedrijfs waarde, planning, implementatie stappen en het beheer van Azure AD-oplossingen, waaronder scenario's voor het migreren van apps. Ze bieden alles wat u nodig hebt om te beginnen met de implementatie en de waarde van Azure AD-mogelijkheden te verkrijgen. De implementatie handleidingen bevatten inhoud zoals micro soft aanbevolen procedures, communicatie van eind gebruikers, plannings handleidingen, implementaties tappen en meer.
 
-Er zijn veel [implementatie plannen](https://aka.ms/deploymentplans) beschikbaar voor uw gebruik en we maken er altijd meer uit.
+Er zijn veel [implementatie plannen](../fundamentals/active-directory-deployment-plans.md) beschikbaar voor uw gebruik en we maken er altijd meer uit.
 
 ### <a name="contact-support"></a>Contact opnemen met ondersteuning
 

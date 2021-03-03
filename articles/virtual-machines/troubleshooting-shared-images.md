@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 10/27/2020
 ms.author: olayemio
 ms.reviewer: cynthn
-ms.openlocfilehash: 9a905dd61bcc267b47dcd075f54a0ed6563a3797
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 507dd224ddeb935cc8b3718bb2e2628be36066f4
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879626"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101676010"
 ---
 # <a name="troubleshoot-shared-image-galleries-in-azure"></a>Problemen met gedeelde afbeeldings galerieën in azure oplossen
 
@@ -52,9 +52,13 @@ Als u problemen ondervindt bij het uitvoeren van bewerkingen in de gedeelde afbe
 **Oorzaak**: u hebt geprobeerd een galerie te verwijderen die ten minste één bestaande afbeeldings definitie bevat. Een galerie moet leeg zijn voordat deze kan worden verwijderd.  
 **Tijdelijke oplossing**: Verwijder alle afbeeldings definities in de galerie en ga vervolgens door met het verwijderen van de galerie. Als de definitie van de installatie kopie installatie kopieën bevat, moet u de installatie kopie versies verwijderen voordat u de afbeeldings definities verwijdert.
 
+*De galerie naam <Gallery \> is niet uniek binnen het abonnement <subscriptionId> . Kies een andere naam voor de galerie.*  
+**Oorzaak**: u hebt een bestaande galerie met dezelfde naam en hebt geprobeerd een andere galerie met dezelfde naam te maken.  
+**Tijdelijke oplossing**: Kies een andere naam voor de galerie.
+
 *De resource <Gallery \> bestaat al in de locatie <regio \_ 1 \> in de resource groep <resourceGroup \> . Een resource met dezelfde naam kan niet worden gemaakt op locatie <regio \_ 2 \> . Selecteer een nieuwe resource naam.*  
-**Oorzaak**: u hebt een bestaande galerie in de resource groep met dezelfde naam en hebt geprobeerd een andere galerie te maken met dezelfde naam maar in een andere regio.  
-**Tijdelijke oplossing**: gebruik een andere galerie of gebruik een andere resource groep.
+**Oorzaak**: u hebt een bestaande galerie met dezelfde naam en hebt geprobeerd een andere galerie met dezelfde naam te maken.  
+**Tijdelijke oplossing**: Kies een andere naam voor de galerie.
 
 ## <a name="creating-or-modifying-image-definitions"></a>Afbeeldings definities maken of wijzigen ##
 

@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.date: 11/27/2018
 ms.author: cynthn
 ms.topic: conceptual
-ms.openlocfilehash: b7f6d30ffa849f78b0f7baa2d84e4fb01f3bf192
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 291b9a210bf5f8cc18ccf8a523e282d3fc85aa28
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500339"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101673348"
 ---
 # <a name="secure-and-use-policies-on-virtual-machines-in-azure"></a>Beveiligen en beleidsregels gebruiken op virtuele machines in Azure
 
@@ -73,4 +73,4 @@ Met [op rollen gebaseerd toegangs beheer (Azure RBAC) van Azure](../role-based-a
 
 
 ## <a name="next-steps"></a>Volgende stappen
-- Door loop de stappen voor het bewaken van de beveiliging van virtuele machines met behulp van Azure Security Center voor [Linux](../security/fundamentals/overview.md) of [Windows](./tutorial-azure-security.md).
+- Door loop de stappen voor het bewaken van de beveiliging van virtuele machines met behulp van Azure Security Center voor [Linux](../security/fundamentals/overview.md) of [Windows](/previous-versions/azure/virtual-machines/tutorial-azure-security).

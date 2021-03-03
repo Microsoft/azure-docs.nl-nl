@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/14/2020
 ms.author: jeedes
-ms.openlocfilehash: ed136d06f18190124abe4598d580f40e41bf8592
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 20f49c174dde90bc7f1a9b34f3dea3132e9b177e
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98704217"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101644677"
 ---
 # <a name="tutorial-integrate-azure-active-directory-single-sign-on-sso-with-splan-visitor"></a>Zelf studie: Azure Active Directory eenmalige aanmelding (SSO) integreren met Splan-bezoeker
 
@@ -120,8 +120,8 @@ Maak een test gebruiker met de naam **Julia Simon** in Splan-bezoeker. Werk same
 Test uw Azure AD-configuratie voor eenmalige aanmelding met een van de volgende opties:
 
 * **Azure Portal**: Selecteer **deze toepassing testen** om automatisch aan te melden bij de Splan-bezoeker waarvoor u SSO hebt ingesteld.
-* **Micro soft my apps-Portal**: Selecteer de tegel **Splan** om automatisch aan te melden bij de Splan-bezoeker waarvoor u SSO hebt ingesteld. Zie [Aanmelden bij en het starten van apps vanuit de Mijn apps-portal](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) voor meer informatie over de portal Mijn apps.
+* **Micro soft my apps-Portal**: Selecteer de tegel **Splan** om automatisch aan te melden bij de Splan-bezoeker waarvoor u SSO hebt ingesteld. Zie [Aanmelden bij en het starten van apps vanuit de Mijn apps-portal](../user-help/my-apps-portal-end-user-access.md) voor meer informatie over de portal Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nadat u Splan-bezoeker hebt geconfigureerd, kunt u [leren hoe u sessie besturings elementen afdwingt in Microsoft Cloud app Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app). Met sessie besturings elementen kunt u exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time beveiligen. Sessiebeheer is een uitbreiding van voorwaardelijke toegang.
+Nadat u Splan-bezoeker hebt geconfigureerd, kunt u [leren hoe u sessie besturings elementen afdwingt in Microsoft Cloud app Security](/cloud-app-security/proxy-deployment-any-app). Met sessie besturings elementen kunt u exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time beveiligen. Sessiebeheer is een uitbreiding van voorwaardelijke toegang.

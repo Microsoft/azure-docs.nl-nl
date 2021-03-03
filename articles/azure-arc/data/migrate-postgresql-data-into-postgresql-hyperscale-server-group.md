@@ -10,12 +10,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 521fd61f18d6673e21c23dbca4cfc12d2ee4bf0b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d9cbfc30b10373ad2a4f4304987dac426b5dcabe
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90936333"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101643572"
 ---
 # <a name="migrate-postgresql-database-to-azure-arc-enabled-postgresql-hyperscale-server-group"></a>PostgreSQL-data base migreren naar Azure Arc enabled PostgreSQL grootschalige-Server groep
 
@@ -53,20 +53,20 @@ Houd rekening met de volgende instellingen:
 
 - **Beoogde**  
     Een post gres-server die wordt uitgevoerd in een Azure-Arc-omgeving en met de naam postgres01. Het is van versie 12. Deze bevat geen data base, met uitzonde ring van de standaard post gres-data base.  
-    :::image type="content" source="media/postgres-hyperscale/migrate-pg-destination.jpg" alt-text="migreren-bron":::
+    :::image type="content" source="media/postgres-hyperscale/migrate-pg-destination.jpg" alt-text="Migratie-bestemming":::
 
 
 ### <a name="take-a-backup-of-the-source-database-on-premises"></a>Maak een back-up van de bron database op locatie
 
-:::image type="content" source="media/postgres-hyperscale/Migrate-PG-Source-Backup.jpg" alt-text="migreren-bron":::
+:::image type="content" source="media/postgres-hyperscale/Migrate-PG-Source-Backup.jpg" alt-text="Migreren-bron-back-up":::
 
 Configureren:
 1. Geef een bestands naam op: **MySourceBackup**
 2. De indeling instellen op **aangepaste** 
- :::image type="content" source="media/postgres-hyperscale/Migrate-PG-Source-Backup2.jpg" alt-text="migreren-bron":::
+ :::image type="content" source="media/postgres-hyperscale/Migrate-PG-Source-Backup2.jpg" alt-text="migratie-bron-back-up-configureren":::
 
 De back-up is voltooid:  
-:::image type="content" source="media/postgres-hyperscale/Migrate-PG-Source-Backup3.jpg" alt-text="migreren-bron":::
+:::image type="content" source="media/postgres-hyperscale/Migrate-PG-Source-Backup3.jpg" alt-text="Migreren-bron-back-up-voltooid":::
 
 ### <a name="create-an-empty-database-on-the-destination-system-in-your-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Een lege data base maken op het doel systeem in uw PostgreSQL grootschalige-Server groep voor Azure-Arc
 
@@ -94,21 +94,23 @@ Hiermee wordt een uitvoer als resultaat gegeven als:
 ]
 ```
 
-We noemen de doel database **RESTORED_MyOnPremPostgresDB**  
-:::image type="content" source="media/postgres-hyperscale/migrate-pg-destination-dbcreate.jpg" alt-text="Migreren-bestemming-DB-maken"lightbox="media/postgres-hyperscale/migrate-pg-destination-dbcreate.jpg":::
+We noemen de doel database **RESTORED_MyOnPremPostgresDB**.
+
+:::image type="content" source="media/postgres-hyperscale/migrate-pg-destination-dbcreate.jpg" alt-text="Migreren-bestemming-DB-maken" lightbox="media/postgres-hyperscale/migrate-pg-destination-dbcreate.jpg":::
 
 ### <a name="restore-the-database-in-your-arc-setup"></a>De data base in uw Arc-installatie herstellen
-:::image type="content" source="media/postgres-hyperscale/migrate-pg-destination-dbrestore.jpg" alt-text="migreren-bron":::
+
+:::image type="content" source="media/postgres-hyperscale/migrate-pg-destination-dbrestore.jpg" alt-text="Migratre-DB-herstellen":::
 
 Het herstel configureren:
 1. Wijs naar het bestand met de back-up die u wilt herstellen: **MySourceBackup**
 2. Zorg ervoor dat de indeling is ingesteld op **aangepast of tar** 
-    :::image type="content" source="media/postgres-hyperscale/migrate-pg-destination-dbrestore2.jpg" alt-text="migreren-bron":::
+    :::image type="content" source="media/postgres-hyperscale/migrate-pg-destination-dbrestore2.jpg" alt-text="migrate-data base-Restore-configure":::
 
 3. Klik op **herstellen**.  
 
    De herstel bewerking is voltooid.  
-   :::image type="content" source="media/postgres-hyperscale/migrate-pg-destination-dbrestore3.jpg" alt-text="migreren-bron":::
+   :::image type="content" source="media/postgres-hyperscale/migrate-pg-destination-dbrestore3.jpg" alt-text="Migreren-DB-herstellen-voltooid":::
 
 ### <a name="verify-that-the-database-was-successfully-restored-in-your-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Controleer of de data base is hersteld in uw PostgreSQL grootschalige-Server groep voor Azure-Arc
 
@@ -118,7 +120,20 @@ Gebruik een van de volgende methoden:
 
 Vouw het post gres-exemplaar dat wordt gehost in uw Azure Arc Setup uit. U ziet de tabel in de data base die u hebt hersteld en wanneer u de gegevens selecteert, wordt dezelfde rij weer gegeven als in het on-premises exemplaar:
 
-   :::image type="content" source="media/postgres-hyperscale/migrate-pg-destination-dbrestoreverif.jpg" alt-text="migreren-bron"
+   :::image type="content" source="media/postgres-hyperscale/migrate-pg-destination-dbrestoreverif.jpg" alt-text="Migreren-DB-herstellen-verificatie":::
+
+**Vanuit `psql` uw Azure Arc-installatie:**  
+
+In de Arc-installatie kunt u gebruiken `psql` om verbinding te maken met uw post gres-exemplaar, de database context in te stellen op `RESTORED_MyOnPremPostgresDB` en de gegevens op te vragen:
+
+1. Vermeld de eind punten voor hulp van uw `psql` Connection String:
+
+   ```console
+   azdata arc postgres endpoint list -n postgres01
+   [
+     {
+       "Description": "PostgreSQL Instance",
+       "Endpoint": "postgresql://postgres:<replace with password>@12.345.123.456:1234"
      },
      {
        "Description": "Log Search Dashboard",
@@ -179,6 +194,6 @@ Vouw het post gres-exemplaar dat wordt gehost in uw Azure Arc Setup uit. U ziet 
     * [Een multi tenant-data base ontwerpen](../../postgresql/tutorial-design-database-hyperscale-multi-tenant.md)*
     * [Een real-time analyse dashboard ontwerpen](../../postgresql/tutorial-design-database-hyperscale-realtime.md)*
 
-> * Sla in deze documenten de secties over van **de Azure Portal**en **Maak een Azure-Data Base voor post gres-grootschalige (Citus)**. Implementeer de resterende stappen in de implementatie van Azure Arc. Deze secties zijn specifiek voor de Azure Database for PostgreSQL grootschalige (Citus) die worden aangeboden als een PaaS-service in de Azure-Cloud, maar de andere onderdelen van de documenten zijn rechtstreeks van toepassing op uw PostgreSQL grootschalige van Azure Arc.
+> * Sla in deze documenten de secties over van **de Azure Portal** en **Maak een Azure-Data Base voor post gres-grootschalige (Citus)**. Implementeer de resterende stappen in de implementatie van Azure Arc. Deze secties zijn specifiek voor de Azure Database for PostgreSQL grootschalige (Citus) die worden aangeboden als een PaaS-service in de Azure-Cloud, maar de andere onderdelen van de documenten zijn rechtstreeks van toepassing op uw PostgreSQL grootschalige van Azure Arc.
 
 - [Uw Azure Database for PostgreSQL Hyperscale-servergroep uitschalen](scale-out-postgresql-hyperscale-server-group.md)

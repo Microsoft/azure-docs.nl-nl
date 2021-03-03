@@ -9,16 +9,14 @@ ms.author: dademath
 ms.date: 07/20/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 80fdedb29f70c961431c987558a42d5fa46dfa7d
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 1a28ca967404bf6a5329f8d590a8f1f4f8715407
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98760799"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101657023"
 ---
 # <a name="get-started-with-the-group-chat-hero-sample"></a>Aan de slag met het hero-voorbeeld van groeps-chat
-
-[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
 <!----
 > [!WARNING]
@@ -36,13 +34,13 @@ In deze quickstart over hero-voorbeelden komt u te weten hoe het voorbeeld werkt
 
 ## <a name="overview"></a>Overzicht
 
-Het voorbeeld heeft zowel een toepassing aan de clientzijde als een toepassing aan de serverzijde. De **toepassing** aan de clientzijde is een React/Redux-webtoepassing die gebruikmaakt van het Fluent UI-framework van Microsoft. Met deze toepassing worden aanvragen verzonden naar een ASP.NET Core-**toepassing aan de serverzijde** zodat de toepassing aan de clientzijde kan worden verbonden met Azure. 
+Het voorbeeld heeft zowel een toepassing aan de clientzijde als een toepassing aan de serverzijde. De **toepassing** aan de clientzijde is een React/Redux-webtoepassing die gebruikmaakt van het Fluent UI-framework van Microsoft. Met deze toepassing worden aanvragen verzonden naar een ASP.NET Core-**toepassing aan de serverzijde** zodat de toepassing aan de clientzijde kan worden verbonden met Azure.
 
 Het voorbeeld ziet er als volgt uit:
 
 :::image type="content" source="./media/chat/landing-page.png" alt-text="Schermopname van de landingspagina van de voorbeeldtoepassing.":::
 
-Wanneer u op de knop 'Chat starten' klikt, wordt er met de webtoepassing een token voor gebruikerstoegang opgehaald bij de toepassing aan de serverzijde. Dit token wordt vervolgens gebruikt om de client-app te verbinden met Azure Communication Services. Zodra het token is opgehaald, wordt u gevraagd om uw weergavenaam en emoji op te geven die tijdens chatsessies waaraan u deelneemt, worden weergeven. 
+Wanneer u op de knop 'Chat starten' klikt, wordt er met de webtoepassing een token voor gebruikerstoegang opgehaald bij de toepassing aan de serverzijde. Dit token wordt vervolgens gebruikt om de client-app te verbinden met Azure Communication Services. Zodra het token is opgehaald, wordt u gevraagd om uw weergavenaam en emoji op te geven die tijdens chatsessies waaraan u deelneemt, worden weergeven.
 
 :::image type="content" source="./media/chat/pre-chat.png" alt-text="Schermopname van het venster van de toepassing vóór de chatsessie.":::
 
@@ -54,7 +52,7 @@ Onderdelen van het belangrijkste chatscherm:
 
 - **Belangrijkste chatgebied**: Dit is het belangrijkste gebied van een chatsessie, waarin gebruikers berichten kunnen verzenden en ontvangen. Als u berichten wilt verzenden, kunt u daarvoor het invoergebied gebruiken en op Enter drukken (of de verzendknop gebruiken). Ontvangen chatberichten worden gecategoriseerd op afzender met behulp van de juiste naam en emoji. U ziet twee typen meldingen in het chatgebied: 1) Typmeldingen die laten zien dat een gebruiker typt, en 2) meldingen met betrekking tot het verzenden en lezen van berichten.
 - **Header**: Hier ziet de gebruiker de titel van de chatthread en de besturingselementen voor het schakelen tussen zijbalken voor deelnemers en instellingen, evenals een knop om de chatsessie af te sluiten.
-- **Zijbalk**: Hier worden gegevens over de deelnemers en de instellingen weergegeven wanneer u de besturingselementen in de header gebruikt om heen en weer te schakelen. De zijbalk met de deelnemers bevat een lijst met de deelnemers aan de chatsessie en een koppeling om deelnemers uit te nodigen voor de chatsessie. Via de zijbalk voor de instellingen kunt u de titel van de chatthread configureren. 
+- **Zijbalk**: Hier worden gegevens over de deelnemers en de instellingen weergegeven wanneer u de besturingselementen in de header gebruikt om heen en weer te schakelen. De zijbalk met de deelnemers bevat een lijst met de deelnemers aan de chatsessie en een koppeling om deelnemers uit te nodigen voor de chatsessie. Via de zijbalk voor de instellingen kunt u de titel van de chatthread configureren.
 
 Hieronder vindt u meer informatie over de vereisten en stappen voor het instellen van het voorbeeld.
 
@@ -104,7 +102,7 @@ Als u een Communication Services-abonnement wilt opschonen en verwijderen, kunt 
 
 ## <a name="next-steps"></a>Volgende stappen
 
->[!div class="nextstepaction"] 
+>[!div class="nextstepaction"]
 >[Het voorbeeld downloaden uit GitHub](https://github.com/Azure-Samples/communication-services-web-chat-hero)
 
 Raadpleeg voor meer informatie de volgende artikelen:

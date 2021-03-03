@@ -11,18 +11,37 @@ author: justinha
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd9b07f1f7aed479e94e77a5641130cb784dd69e
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 32ad7199360ca0acc8674f7a4e34bd206f8b335f
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741963"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101648761"
 ---
 # <a name="azure-ad-password-protection-agent-version-history"></a>Versie geschiedenis van de Azure AD-wachtwoord beveiligings agent
 
+## <a name="121720"></a>1.2.172.0
+
+Release datum: februari 22 2021
+
+Het is bijna twee jaar geleden dat de GA-versies van de on-premises Azure AD-agenten voor wachtwoord beveiliging zijn uitgebracht. Er is nu een nieuwe update beschikbaar: zie beschrijving van wijzigingen hieronder. Hartelijk dank voor iedereen die ons feedback over het product heeft gegeven. 
+
+* Voor de DC-agent en de proxy-agent software moet .NET 4.7.2 nu worden geïnstalleerd.
+  * Als .NET 4.7.2 nog niet is geïnstalleerd, downloadt en voert u het installatie programma uit dat is gevonden op [het .NET Framework 4.7.2 offline-installatie programma voor Windows](https://support.microsoft.com/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2).
+* De AzureADPasswordProtection Power shell-module wordt nu ook geïnstalleerd door de DC-agent software.
+* Er zijn twee nieuwe aan de Health gerelateerde Power shell-cmdlets toegevoegd: Test-AzureADPasswordProtectionDCAgent en test-AzureADPasswordProtectionProxy.
+* De AzureADPasswordProtection DC-agent wachtwoord filter-dll wordt nu geladen en uitgevoerd op computers waar lsass.exe is geconfigureerd om te worden uitgevoerd in de PPL-modus.
+* Fout oplossing voor wachtwoord algoritme waarbij verboden wacht woorden die minder dan vijf tekens lang zijn, onjuist kunnen worden geaccepteerd.
+  * Deze bug is alleen van toepassing als het beleid voor de minimale wachtwoord lengte van uw on-premises AD zo is geconfigureerd dat er voor de eerste locatie minder dan vijf teken wachtwoorden zijn toegestaan.
+* Andere kleine oplossingen voor problemen.
+
+De nieuwe installatie Programma's upgraden oudere versies van de software automatisch. Als u zowel de DC-agent als de proxy software op één computer hebt geïnstalleerd (alleen aanbevolen voor test omgevingen), moet u beide op hetzelfde moment upgraden.
+
+Het wordt ondersteund om oudere en nieuwere versies van de DC-agent en proxy software binnen een domein of forest uit te voeren, hoewel het aanbevolen wordt om alle agents bij te werken naar de meest recente versie als best practice. Elke volg orde van agent upgrades wordt ondersteund: nieuwe DC-agents kunnen communiceren via oudere proxy-agents en oudere DC-agents kunnen communiceren via nieuwere proxy-agents.
+
 ## <a name="121250"></a>1.2.125.0
 
-Release datum: 3/22/2019
+Release datum: maart 22 2019
 
 * Kleine fout type fouten in gebeurtenis logboek berichten oplossen
 * GEBRUIKSRECHT overeenkomst bijwerken naar definitieve versie van algemene Beschik baarheid
@@ -38,9 +57,9 @@ Release datum: 3/13/2019
   * Software versie en Azure-Tenant gegevens zijn alleen beschikbaar voor DC-agents en-proxy's waarop versie 1.2.116.0 of hoger wordt uitgevoerd.
   * Azure-Tenant gegevens worden mogelijk pas gerapporteerd als er een nieuwe registratie (of verlenging) van de proxy of het forest is opgetreden.
 * Voor de proxy service moet .NET 4,7 nu zijn geïnstalleerd.
-  * .NET 4,7 moet al zijn geïnstalleerd op een volledig bijgewerkte Windows-Server. Als dat niet het geval is, downloadt en voert u het installatie programma uit dat is gevonden op [het .NET Framework 4,7 offline-installatie programma voor Windows](https://support.microsoft.com/help/3186497/the-net-framework-4-7-offline-installer-for-windows).
+  * Als .NET 4,7 nog niet is geïnstalleerd, downloadt en voert u het installatie programma uit dat is gevonden in [het offline-installatie programma van .NET Framework 4,7 voor Windows](https://support.microsoft.com/help/3186497/the-net-framework-4-7-offline-installer-for-windows).
   * Op Server Core-systemen kan het nodig zijn om de/q-vlag door te geven aan het .NET 4,7-installatie programma om deze te laten slagen.
-* De proxy service ondersteunt nu automatische upgrades. Automatische upgrade maakt gebruik van de Microsoft Azure AD connect agent Updater-service die naast de proxy service is geïnstalleerd. Automatische upgrade is standaard ingeschakeld.
+* De proxy service ondersteunt nu automatische upgrades. Bij automatische upgrade wordt de Microsoft Azure AD connect agent Updater-Service gebruikt, die naast de proxy service wordt geïnstalleerd. Automatische upgrade is standaard ingeschakeld.
 * Automatische upgrades kunnen worden ingeschakeld of uitgeschakeld met behulp van de cmdlet Set-AzureADPasswordProtectionProxyConfiguration. De huidige instelling kan worden opgevraagd met behulp van de cmdlet Get-AzureADPasswordProtectionProxyConfiguration.
 * De naam van de service-binary voor de DC-Agent service is gewijzigd in AzureADPasswordProtectionDCAgent.exe.
 * De naam van de binaire service voor de proxy service is gewijzigd in AzureADPasswordProtectionProxy.exe. Firewall regels moeten mogelijk dienovereenkomstig worden gewijzigd als een firewall van een derde partij in gebruik is.
@@ -50,14 +69,14 @@ Release datum: 3/13/2019
 
 ## <a name="12650"></a>1.2.65.0
 
-Release datum: 2/1/2019
+Release datum: 1 februari 2019
 
 Gewijzigde
 
 * DC-agent en proxy service worden nu ondersteund op Server Core. Mininimum OS-vereisten zijn niet gewijzigd ten opzichte van vóór: Windows Server 2012 voor DC-agents en Windows Server 2012 R2 voor proxy's.
 * De cmdlets Register-AzureADPasswordProtectionProxy en Register-AzureADPasswordProtectionForest bieden nu ondersteuning voor Azure-verificatie modi op basis van een apparaatcode.
-* Met de cmdlet Get-AzureADPasswordProtectionDCAgent worden vervormde en/of ongeldige service verbindings punten genegeerd. Hiermee wordt de bug opgelost waarbij domein controllers soms meerdere keren in de uitvoer worden weer gegeven.
-* Met de cmdlet Get-AzureADPasswordProtectionSummaryReport worden vervormde en/of ongeldige service verbindings punten genegeerd. Hiermee wordt de bug opgelost waarbij domein controllers soms meerdere keren in de uitvoer worden weer gegeven.
+* Met de cmdlet Get-AzureADPasswordProtectionDCAgent worden vervormde en/of ongeldige service verbindings punten genegeerd. Met deze wijziging wordt de fout opgelost waarbij domein controllers soms meerdere keren worden weer gegeven in de uitvoer.
+* Met de cmdlet Get-AzureADPasswordProtectionSummaryReport worden vervormde en/of ongeldige service verbindings punten genegeerd. Met deze wijziging wordt de fout opgelost waarbij domein controllers soms meerdere keren worden weer gegeven in de uitvoer.
 * De module proxy Power shell is nu geregistreerd bij%ProgramFiles%\WindowsPowerShell\Modules. De omgevings variabele PSModulePath van de machine wordt niet meer gewijzigd.
 * Er is een nieuwe Get-AzureADPasswordProtectionProxy cmdlet toegevoegd ter ondersteuning bij het detecteren van geregistreerde proxy's in een forest of domein.
 * De DC-agent gebruikt een nieuwe map in de SYSVOL-share voor het repliceren van wachtwoord beleid en andere bestanden.
@@ -79,7 +98,7 @@ Gewijzigde
 * Elke DC-agent zal regel matig vervormde en verlopen service verbindings punten in het domein verwijderen voor zowel DC-agent-als proxy service-verbindings punten. De verbindings punten van de DC-agent en de proxy service worden als verouderd beschouwd als de heartbeat-tijds tempel ouder is dan zeven dagen.
 * De DC-agent zal het forest-certificaat nu vernieuwen als dat nodig is.
 * De proxy-service zal het proxy certificaat nu vernieuwen als dat nodig is.
-* Updates voor het algoritme voor wachtwoord validatie: de algemene lijst met geblokkeerde wacht woorden en de klantspecifieke lijst met geblokkeerde wacht woorden (indien geconfigureerd) worden gecombineerd voor validatie van wacht woorden. Een gegeven wacht woord kan nu worden geweigerd (alleen mislukt of alleen controleren) als het tokens uit de algemene en klantspecifieke lijst bevat. De documentatie van het gebeurtenis logboek is bijgewerkt, zodat deze kan worden weer gegeven. Zie [Azure AD-wachtwoord beveiliging controleren](howto-password-ban-bad-on-premises-monitor.md).
+* Updates voor het algoritme voor wachtwoord validatie: de algemene lijst met geblokkeerde wacht woorden en de klantspecifieke lijst met geblokkeerde wacht woorden (indien geconfigureerd) worden gecombineerd voor validatie van wacht woorden. Een gegeven wacht woord kan nu worden geweigerd (alleen mislukt of alleen controleren) als het tokens uit de algemene en klantspecifieke lijst bevat. De documentatie van het gebeurtenis logboek is bijgewerkt, zodat deze kan worden weer gegeven. Zie [Azure AD-wachtwoord beveiliging bewaken](howto-password-ban-bad-on-premises-monitor.md).
 * Oplossingen voor prestaties en robuustheid
 * Verbeterde logboek registratie
 
@@ -88,12 +107,12 @@ Gewijzigde
 
 ## <a name="12250"></a>1.2.25.0
 
-Release datum: 11/01/2018
+Release datum: 1 november 2018
 
 Dit
 
 * DC-agent en proxy service mogen niet meer mislukken als gevolg van fouten in de certificaat vertrouwen.
-* DC-agent en proxy service hebben extra oplossingen voor FIPS-compatibele computers.
+* DC-agent en proxy service hebben oplossingen voor FIPS-compatibele computers.
 * Proxy service werkt nu goed in een TLS 1,2-only-netwerk omgeving.
 * Kleine prestaties en robuustheid van oplossingen
 * Verbeterde logboek registratie
@@ -102,11 +121,11 @@ Gewijzigde
 
 * Het mini maal vereiste besturingssysteem niveau voor de proxy service is nu Windows Server 2012 R2. Het mini maal vereiste besturingssysteem niveau voor de DC-Agent service blijft Windows Server 2012.
 * Voor de proxy service is nu .NET versie 4.6.2 vereist.
-* De wachtwoord validatie algoritme maakt gebruik van een verbreede teken normalisatie tabel. Dit kan ertoe leiden dat wacht woorden worden afgewezen die in eerdere versies zijn geaccepteerd.
+* De wachtwoord validatie algoritme maakt gebruik van een verbreede teken normalisatie tabel. Deze wijziging kan ertoe leiden dat wacht woorden worden afgewezen die in eerdere versies zijn geaccepteerd.
 
 ## <a name="12100"></a>1.2.10.0
 
-Release datum: 8/17/2018
+Release datum: augustus 17 2018
 
 Dit
 
@@ -130,7 +149,7 @@ Dit
 
 ## <a name="11103"></a>1.1.10.3
 
-Release datum: 6/15/2018
+Release datum: 15 juni 2018
 
 Eerste open bare preview-versie
 

@@ -2,18 +2,18 @@
 title: Red Hat Enterprise Linux installatie kopieën die beschikbaar zijn in azure
 description: Meer informatie over Red Hat Enterprise Linux installatie kopieën in Microsoft Azure
 author: asinn826
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines
+ms.subservice: redhat
+ms.collection: linux
 ms.topic: article
 ms.date: 04/16/2020
 ms.author: alsin
-ms.reviewer: cynthn
-ms.openlocfilehash: ea0e8c148a847ecc23bab5e87a1dc60a626cf0c1
-ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
+ms.openlocfilehash: 0a4d2ef5b7f367130151fabda3f1d97b65605931
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95411611"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101676039"
 ---
 # <a name="red-hat-enterprise-linux-rhel-images-available-in-azure"></a>Red Hat Enterprise Linux-installatie kopieën (RHEL) die beschikbaar zijn in azure
 Azure biedt een aantal RHEL-installatie kopieën voor verschillende use cases.
@@ -27,7 +27,7 @@ Dit is een lijst met RHEL-installatie kopieën die beschikbaar zijn in Azure. Te
 > [!NOTE]
 > Onbewerkte afbeeldingen worden niet meer geproduceerd in het voor deel van LVM-gepartitioneerde installatie kopieën. LVM biedt verschillende voor delen ten opzichte van het oudere schema voor onbewerkte (niet-LVM), waaronder aanzienlijk meer flexibele opties voor het wijzigen van de partitie.
 
-Aanbieding| SKU | Partitionering | Inrichten | Opmerkingen
+Aanbieding| SKU | Partitionering | Inrichten | Notities
 :----|:----|:-------------|:-------------|:-----
 RHEL          | 6.7      | UITGANG    | Linux-agent | Uitgebreide levenscyclus ondersteuning die vanaf 1 december verkrijgbaar is. [Meer informatie vindt u hier.](redhat-extended-lifecycle-support.md)
 |             | 6.8      | UITGANG    | Linux-agent | Uitgebreide levenscyclus ondersteuning die vanaf 1 december verkrijgbaar is. [Meer informatie vindt u hier.](redhat-extended-lifecycle-support.md)
@@ -36,7 +36,7 @@ RHEL          | 6.7      | UITGANG    | Linux-agent | Uitgebreide levenscyclus o
 |             | 7-RAW    | UITGANG    | Linux-agent | RHEL 7. x-familie van installatie kopieën. <br> Standaard gekoppeld aan reguliere opslag plaatsen (niet EUS).
 |             | 7-LVM    | LVM    | Linux-agent | RHEL 7. x-familie van installatie kopieën. <br> Standaard gekoppeld aan reguliere opslag plaatsen (niet EUS). Als u op zoek bent naar een standaard RHEL-installatie kopie die u wilt implementeren, gebruikt u deze set installatie kopieën en/of de generatie 2.
 |             | 7lvm-Gen2| LVM    | Linux-agent | Generatie 2, RHEL 7. x-familie van installatie kopieën. <br> Standaard gekoppeld aan reguliere opslag plaatsen (niet EUS). Als u op zoek bent naar een standaard RHEL-installatie kopie die u wilt implementeren, gebruikt u deze set installatie kopieën en/of het equivalent van de eerste generatie.
-|             | 7-RAW-CI | RAW-CI | Cloud-init  | RHEL 7. x-familie van installatie kopieën. <br> Standaard gekoppeld aan reguliere opslag plaatsen (niet EUS).
+|             | 7-RAW-CI | RAW-CI | cloud-init  | RHEL 7. x-familie van installatie kopieën. <br> Standaard gekoppeld aan reguliere opslag plaatsen (niet EUS).
 |             | 7.2      | UITGANG    | Linux-agent |
 |             | 7.3      | UITGANG    | Linux-agent |
 |             | 7.4      | UITGANG    | Linux-agent | Is vanaf april 2019 standaard gekoppeld aan EUS-opslag plaatsen.

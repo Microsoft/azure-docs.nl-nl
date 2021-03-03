@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: sample
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 8642f4284770df54704a4e7066054d3bb4640486
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
-ms.translationtype: HT
+ms.openlocfilehash: a75896dde7a23ea346e0af73ed145094e78812ca
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96545865"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101654490"
 ---
 # <a name="azure-active-directory-b2c-code-samples"></a>Azure Active Directory B2C: codevoorbeelden
 
@@ -27,8 +27,8 @@ In de volgende tabellen ziet u koppelingen naar voorbeelden voor toepassingen, w
 |--------| ----------- |
 | [ios-swift-native-msal](https://github.com/Azure-Samples/active-directory-b2c-ios-swift-native-msal) | Een iOS-voorbeeld in Swift waarmee Azure AD B2C-gebruikers worden geverifieerd en een API wordt aangeroepen met behulp van OAuth 2.0 |
 | [android-native-msal](https://github.com/Azure-Samples/ms-identity-android-java#b2cmodefragment-class) | Een eenvoudige Android-app die laat zien hoe u MSAL kunt gebruiken om gebruikers te verifiëren via Active Directory B2C en toegang kunt krijgen tot een Web-API met behulp van de resulterende tokens. |
-| [ios-native-appauth](https://github.com/Azure-Samples/active-directory-b2c-ios-native-appauth) | Een voorbeeld van hoe u een bibliotheek van derden kunt gebruiken om een iOS-toepassing te bouwen in Objective-C waarmee Microsoft-id-gebruikers kunnen worden geverifieerd bij de Azure AD B2C-id-service. |
-| [android-native-appauth](https://github.com/Azure-Samples/active-directory-b2c-android-native-appauth) | Een voorbeeld van hoe u een bibliotheek van derden kunt gebruiken om een Android-toepassing te bouwen waarmee Microsoft-id-gebruikers kunnen worden geverifieerd bij de B2C-id-service, en waarmee een Web-API wordt aangeroepen met behulp van OAuth 2.0-toegangstokens. |
+| [ios-native-appauth](https://github.com/Azure-Samples/active-directory-b2c-ios-native-appauth) | Een voor beeld van hoe u een bibliotheek van derden kunt gebruiken om een iOS-toepassing te bouwen in doelstelling-C waarmee micro soft-identiteits gebruikers worden geverifieerd bij onze Azure AD B2C-identiteits service. |
+| [android-native-appauth](https://github.com/Azure-Samples/active-directory-b2c-android-native-appauth) | Een voor beeld van hoe u een bibliotheek van derden kunt gebruiken om een Android-toepassing te bouwen die micro soft-identiteits gebruikers verifieert bij onze B2C Identity-service en een web-API aanroept met OAuth 2,0-toegangs tokens. |
 | [dotnet-desktop](https://github.com/Azure-Samples/active-directory-b2c-dotnet-desktop) | Een voorbeeld van hoe een gebruiker wordt aangemeld bij een WPF-toepassing (Windows Desktop .NET) via Azure AD B2C, een toegangstoken wordt verkregen met behulp van MSAL.NET en een API wordt aangeroepen. |
 | [xamarin-native](https://github.com/Azure-Samples/active-directory-b2c-xamarin-native) | Een eenvoudige Xamarin Forms-app die laat zien hoe u MSAL kunt gebruiken om gebruikers te verifiëren via Active Directory B2C en toegang kunt krijgen tot een Web-API met behulp van de resulterende tokens. |
 
@@ -47,8 +47,16 @@ In de volgende tabellen ziet u koppelingen naar voorbeelden voor toepassingen, w
 
 | Voorbeeld | Beschrijving |
 |--------| ----------- |
-| [ms-identity-b2c-javascript-spa](https://github.com/Azure-Samples/ms-identity-b2c-javascript-spa) | Een toepassing met één pagina (SPA) waarmee een Web-API wordt aangeroepen. Verificatie wordt uitgevoerd met Azure AD B2C door gebruik te maken van MSAL.js. In dit voorbeeld wordt de autorisatiecodestroom met PKCE gebruikt. |
-| [javascript-msal-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp) | Een toepassing met één pagina (SPA) waarmee een Web-API wordt aangeroepen. Verificatie wordt uitgevoerd met Azure AD B2C door gebruik te maken van MSAL.js. In dit voorbeeld wordt de impliciete stroom gebruikt.|
+| [ms-identity-b2c-javascript-spa](https://github.com/Azure-Samples/ms-identity-b2c-javascript-spa) | Een toepassing met één pagina (SPA) die een web-API aanroept. Verificatie wordt uitgevoerd met Azure AD B2C door gebruik te maken van MSAL.js. In dit voorbeeld wordt de autorisatiecodestroom met PKCE gebruikt. |
+| [Java script-nodejs-beheer](https://github.com/Azure-Samples/ms-identity-b2c-javascript-nodejs-management/tree/main/Chapter1) | Een toepassing met één pagina (SPA) die Microsoft Graph aanroept voor het beheren van gebruikers in een B2C-map. Verificatie wordt uitgevoerd met Azure AD B2C door gebruik te maken van MSAL.js. In dit voorbeeld wordt de autorisatiecodestroom met PKCE gebruikt.|
+| [javascript-msal-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp) | Een toepassing met één pagina (SPA) die een web-API aanroept. Verificatie wordt uitgevoerd met Azure AD B2C door gebruik te maken van MSAL.js. In dit voor beeld wordt de impliciete stroom gebruikt.|
+
+## <a name="consoledaemon-apps"></a>Console/daemon-apps
+
+| Voorbeeld | Beschrijving |
+|--------| ----------- |
+| [Java script-nodejs-beheer](https://github.com/Azure-Samples/ms-identity-b2c-javascript-nodejs-management/tree/main/Chapter2) | Een Node.js en Express console daemon-toepassing die Microsoft Graph aanroept met een eigen identiteit voor het beheren van gebruikers in een B2C Directory. De verificatie wordt uitgevoerd met Azure AD B2C met behulp van het knoop punt MSAL. In dit voor beeld wordt de autorisatie code stroom gebruikt.|
+| [dotnetcore-B2C-account-beheer](https://github.com/Azure-Samples/ms-identity-dotnetcore-b2c-account-management) | Een .NET core-console toepassing die Microsoft Graph aanroept met een eigen identiteit voor het beheren van gebruikers in een B2C Directory. De verificatie wordt uitgevoerd met Azure AD B2C met behulp van MSAL.NET. In dit voor beeld wordt de autorisatie code stroom gebruikt.|
 
 ## <a name="saml-test-application"></a>SAML-testtoepassing
 
@@ -72,8 +80,8 @@ De volgende tabellen bieden koppelingen naar codevoorbeelden voor het gebruik va
 ### <a name="automated-fraud-protection-services--captcha"></a>Automatische fraudebeschermingsservices & CAPTCHA
 | Voorbeeld                                                                                                            | Beschrijving                                                                                                                          |
 | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| [Fraude- en misbruikbescherming van Arkose Labs](https://github.com/Azure-Samples/active-directory-b2c-node-sign-up-user-flow-arkose) | In dit voorbeeld ziet u hoe u de aanmeldingen van uw gebruikers kunt beveiligen met behulp van de Arkose Labs-service voor fraude- en misbruikbescherming. |
-| [reCAPTCHA](https://github.com/Azure-Samples/active-directory-b2c-node-sign-up-user-flow-captcha) | Dit voorbeeld laat zien hoe u de aanmeldingen van uw gebruikers kunt beveiligen met behulp van een reCAPTCHA-test om geautomatiseerd misbruik te voorkomen. |
+| [Fraude- en misbruikbescherming van Arkose Labs](https://github.com/Azure-Samples/active-directory-b2c-node-sign-up-user-flow-arkose) | In dit voor beeld ziet u hoe u uw gebruikers aanmelding kunt beveiligen met de arkose Labs-service voor fraude bestrijding en misbruik. |
+| [reCAPTCHA](https://github.com/Azure-Samples/active-directory-b2c-node-sign-up-user-flow-captcha) | Dit voor beeld laat zien hoe u uw gebruikers aanmelding kunt beveiligen met behulp van een reCAPTCHA-uitdaging om geautomatiseerd misbruik te voor komen. |
 
 
 ### <a name="identity-verification"></a>Identiteitverificatie

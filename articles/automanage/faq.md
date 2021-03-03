@@ -6,14 +6,14 @@ ms.service: virtual-machines
 ms.subservice: automanage
 ms.workload: infrastructure
 ms.topic: troubleshooting
-ms.date: 09/04/2020
+ms.date: 02/22/2021
 ms.author: deanwe
-ms.openlocfilehash: b8f2b3e1ffde49c8df3c3a6d7c0b9b3751fda5fa
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: 214730733780ef3492048f697b1c5e180434a527
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98696173"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101654014"
 ---
 # <a name="frequently-asked-questions-for-azure-automanage-for-vms"></a>Veelgestelde vragen over Azure automanage voor Vm's
 
@@ -27,7 +27,7 @@ Als uw Azure-probleem niet in dit artikel wordt behandeld, gaat u naar de Azure-
 **Wat zijn de vereisten die nodig zijn om Azure automanage in te scha kelen?**
 
 Hier volgen de vereisten voor het inschakelen van Azure automanage:
-- Alleen Windows Server Vm's
+- Ondersteunde [Windows Server-versies](automanage-windows-server.md#supported-windows-server-versions) en [Linux-distributies](automanage-linux.md#supported-linux-distributions-and-versions)
 - Vm's moeten zich in een ondersteunde regio bevinden
 - De gebruiker moet over de juiste machtigingen beschikken
 - Alleen virtuele machines die geen schaal zijn ingesteld
@@ -42,12 +42,12 @@ Als u een nieuw account voor automanage gebruikt wanneer u dit inschakelt, moet 
 
 **Welke regio's worden ondersteund?**
 
-Virtuele machines in de volgende regio's worden ondersteund: Europa-west, VS-Oost, VS-West 2, Canada-centraal, VS-West-Centraal, Japan-Oost.
+De volledige lijst met ondersteunde regio's is [hier](./automanage-virtual-machines.md#supported-regions)beschikbaar.
 
 
 **Welke mogelijkheden automatiseert Azure automatisch beheren?**
 
-Automatisch beheer registreert, configureert en bewaakt gedurende de levens cyclus van de virtuele machine die [hier](virtual-machines-best-practices.md)wordt vermeld.
+Automatisch beheer registreert, configureert en bewaakt gedurende de levens cyclus van de virtuele machine die [hier](automanage-virtual-machines.md)wordt vermeld.
 
 **Werkt Azure automanage met virtuele machines met de Arc-functionaliteit van Azure?**
 
@@ -55,12 +55,12 @@ Automanage biedt momenteel geen ondersteuning voor virtuele machines met Arc-fun
 
 **Kan ik configuraties aanpassen voor Azure automanage?**
 
-Klanten kunnen instellingen voor specifieke services, zoals Azure Backup retentie, aanpassen via configuratie voorkeuren. Zie [onze documentatie voor](virtual-machines-best-practices.md)een volledige lijst met instellingen die kunnen worden gewijzigd.
+Klanten kunnen instellingen voor specifieke services, zoals Azure Backup retentie, aanpassen via configuratie voorkeuren. Zie [onze documentatie voor](automanage-virtual-machines.md#customizing-an-environment-using-preferences)een volledige lijst met instellingen die kunnen worden gewijzigd.
 
 
 **Werkt Azure automanage met zowel Linux-als Windows-Vm's?**
 
-Op dit moment ondersteunt automanage Windows Server Azure Vm's.
+Ja, zie de ondersteunde [Windows Server-versies](automanage-windows-server.md#supported-windows-server-versions) en [Linux-distributies](automanage-linux.md#supported-linux-distributions-and-versions).
 
 
 **Kan ik automanage selectief Toep assen op een verzameling Vm's?**

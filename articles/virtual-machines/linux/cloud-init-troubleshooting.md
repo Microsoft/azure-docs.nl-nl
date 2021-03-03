@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.date: 07/06/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: 6412036e3f16e2efb3bbf6669f6a31e9dc6e3584
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a18899ffc6b19be6226d9e0a3efd9a9519434601
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89434636"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101666230"
 ---
 # <a name="troubleshooting-vm-provisioning-with-cloud-init"></a>Problemen met VM-inrichting oplossen met Cloud-init
 
@@ -58,7 +58,7 @@ Terwijl de virtuele machine actief is, hebt u de logboeken van de virtuele machi
 
 - [Seriële console](../troubleshooting/serial-console-grub-single-user-mode.md)
 
-- [Schakel diagnostische gegevens over opstarten in](./tutorial-monitor.md#enable-boot-diagnostics) voordat u de virtuele machine maakt en [weer geven](./tutorial-monitor.md#view-boot-diagnostics) tijdens het opstarten.
+- [Schakel diagnostische gegevens over opstarten in](/previous-versions/azure/virtual-machines/linux/tutorial-monitor#enable-boot-diagnostics) voordat u de virtuele machine maakt en [weer geven](/previous-versions/azure/virtual-machines/linux/tutorial-monitor#view-boot-diagnostics) tijdens het opstarten.
 
 - [Voer AZ VM Repair uit](../troubleshooting/repair-linux-vm-using-azure-virtual-machine-repair-commands.md) om de besturingssysteem schijf te koppelen en koppelen, zodat u deze logboeken kunt verzamelen:
 ```bash
@@ -133,4 +133,4 @@ Niet elke fout in de Cloud-init resulteert in een fatale inrichtings fout. Als u
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u nog steeds niet kunt isoleren waarom de configuratie van de Cloud-init niet is uitgevoerd, moet u beter kijken wat er gebeurt in elke Cloud-init-fase en wanneer de modules worden uitgevoerd. Zie meer informatie over de [configuratie van Cloud-init](./cloud-init-deep-dive.md) . 
+Als u nog steeds niet kunt isoleren waarom de configuratie van de Cloud-init niet is uitgevoerd, moet u beter kijken wat er gebeurt in elke Cloud-init-fase en wanneer de modules worden uitgevoerd. Zie meer informatie over de [configuratie van Cloud-init](./cloud-init-deep-dive.md) .

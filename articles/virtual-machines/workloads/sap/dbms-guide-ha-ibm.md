@@ -2,18 +2,17 @@
 title: IBM Db2 HADR instellen op Azure virtual machines (Vm's) | Microsoft Docs
 description: Stel hoge Beschik baarheid in van IBM Db2 LUW op Azure virtual machines (Vm's).
 author: msjuergent
-ms.service: virtual-machines
-ms.subservice: workloads
+ms.service: virtual-machines-sap
 ms.topic: article
 ms.date: 10/16/2020
 ms.author: juergent
 ms.reviewer: cynthn
-ms.openlocfilehash: 54bde8c9dd47e88ffdc831ccb9f7833720583238
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: faafce32c3452a5c4ff08783ec2edd28f7f961e9
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96621379"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101671882"
 ---
 # <a name="high-availability-of-ibm-db2-luw-on-azure-vms-on-suse-linux-enterprise-server-with-pacemaker"></a>Hoge Beschik baarheid van IBM Db2 LUW op Azure Vm's op SUSE Linux Enterprise Server met pacemaker
 
@@ -171,7 +170,7 @@ Het primaire exemplaar van de IBM Db2 LUW-data base instellen:
 
 Voer de volgende stappen uit om de stand-by-database server in te stellen met behulp van de SAP-procedure voor het kopiëren van een systeem:
 
-1. Selecteer de optie **kopiëren** van het systeem > **Target systems**  >  **gedistribueerd**  >  **Data Base-exemplaar** van het doel systeem.
+1. Selecteer de optie **kopiëren** van het systeem >   >  **gedistribueerd**  >  **Data Base-exemplaar** van het doel systeem.
 1. Als Kopieer methode selecteert u **homo geen systeem** zodat u back-up kunt gebruiken om een back-up te herstellen op het stand-by-Server exemplaar.
 1. Wanneer u de stap afsluiten hebt bereikt om de data base te herstellen voor een homogene systeem kopie, sluit u het installatie programma af. Zet de data base terug vanuit een back-up van de primaire host. Alle volgende installatie fasen zijn al uitgevoerd op de primaire database server.
 1. Stel HADR in voor IBM Db2.

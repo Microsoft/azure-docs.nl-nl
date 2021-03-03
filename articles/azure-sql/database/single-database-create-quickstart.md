@@ -10,13 +10,13 @@ ms.topic: quickstart
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-ms.date: 09/03/2020
-ms.openlocfilehash: cb7a441a6d86cd64847300d1e597cf6f86067282
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
-ms.translationtype: HT
+ms.date: 01/27/2021
+ms.openlocfilehash: c0e86cad252da1b5484944c12351d4ee1e39edbe
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740943"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101656297"
 ---
 # <a name="quickstart-create-an-azure-sql-database-single-database"></a>Quickstart: Een individuele database maken in Azure SQL Database
 
@@ -70,6 +70,8 @@ Als u één database wilt maken in Azure Portal begint deze quickstart op de Azu
   
 
 1. Selecteer op het tabblad **Aanvullende instellingen**, in de sectie **Gegevensbron**, voor **Bestaande gegevens gebruiken**, de optie **Voorbeeld**. Hiermee maakt u een AdventureWorksLT-voorbeelddatabase, zodat er een aantal tabellen en gegevens zijn voor het uitvoeren van query's en het experimenteren hiermee, in tegenstelling tot een lege database.
+1. Schakel desgewenst [Azure Defender voor SQL](../database/azure-defender-for-sql.md)in.
+1. U kunt het [onderhouds venster](../database/maintenance-window.md) zo instellen dat gepland onderhoud op het beste moment wordt uitgevoerd voor uw data base.
 1. Selecteer **Controleren en maken** onderaan de pagina:
 
    ![Tabblad Aanvullende instellingen](./media/single-database-create-quickstart/additional-settings.png)

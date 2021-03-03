@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 02/08/2021
 ms.author: yegu
-ms.openlocfilehash: d9c8f5dd8b2647756087ce6f36ff3a25b2aaaadc
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 2005b24e9a5692adda8c8e3a5100a6450c67663c
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100387968"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101653844"
 ---
 # <a name="high-availability-for-azure-cache-for-redis"></a>Hoge Beschik baarheid voor Azure cache voor redis
 
@@ -23,7 +23,7 @@ Azure cache voor redis implementeert hoge Beschik baarheid door gebruik te maken
 | ------------------- | ------- | ------- | :------: | :---: | :---: |
 | [Standaard replicatie](#standard-replication)| Configuratie met twee knoop punten gerepliceerd in één Data Center met automatische failover | 99,9% |✔|✔|-|
 | [Zoneredundantie](#zone-redundancy) | Gerepliceerde configuratie met meerdere knoop punten op AZs, met automatische failover | 99,95% (Premium-laag), 99,99% (ondernemings lagen) |-|Preview|Preview|
-| [Geo-replicatie](#geo-replication) | Gekoppelde cache-instanties in twee regio's met door de gebruiker beheerde failover | 99,9% (Premium-laag, één regio) |-|✔|-|
+| [Geo-replicatie](#geo-replication) | Gekoppelde cache-instanties in twee regio's met door de gebruiker beheerde failover | 99,999% (bedrijfs laag) |-|✔|-|
 
 ## <a name="standard-replication"></a>Standaard replicatie
 
@@ -45,7 +45,7 @@ Een primair knoop punt kan buiten gebruik worden genomen als onderdeel van een g
 >
 >
 
-Bovendien kunnen met Azure cache voor redis extra replica knooppunten worden toegevoegd aan de Premium-laag. Een [cache met meerdere replica's](cache-how-to-multi-replicas.md) kan worden geconfigureerd met Maxi maal drie replica knooppunten. Als u meer replica's hebt, wordt de tolerantie in het algemeen verbeterd vanwege de extra knoop punten die een back-up maken van de primaire. Zelfs met meer replica's kan een Azure-cache voor redis-exemplaar nog steeds ernstige gevolgen ondervinden van een storing in een Data Center of AZ-Wide. U kunt de beschik baarheid van de cache verhogen met behulp van meerdere replica's in combi natie met [zone redundantie](#zone-redundancy).
+Bovendien kunnen met Azure cache voor redis extra replica knooppunten worden toegevoegd aan de Premium-laag. Een [cache met meerdere replica's](cache-how-to-multi-replicas.md) kan worden geconfigureerd met Maxi maal drie replica knooppunten. Als u meer replica's hebt, wordt de tolerantie in het algemeen verbeterd vanwege de extra knoop punten die een back-up maken van de primaire. Zelfs met meer replica's kan een Azure-cache voor redis-exemplaar nog steeds zwaar worden beïnvloed door een Data Center-of AZ-level-onderbreking. U kunt de beschik baarheid van de cache verhogen met behulp van meerdere replica's in combi natie met [zone redundantie](#zone-redundancy).
 
 ## <a name="zone-redundancy"></a>Zoneredundantie
 
@@ -66,7 +66,7 @@ Met Azure cache voor redis worden knoop punten in een zone-redundante cache gedi
 
 Een zone-redundante cache biedt automatische failover. Wanneer het huidige primaire knoop punt niet beschikbaar is, gaat een van de replica's over. Uw toepassing kan de reactie tijd van de cache verhogen als het nieuwe primaire knoop punt zich in een andere AZ bevindt. AZs zijn geografisch gescheiden. Als u overschakelt van de ene AZ naar een andere, verandert de fysieke afstand tussen de locatie waar uw toepassing en cache wordt gehost. Deze wijziging is van invloed op netwerk latenties van uw toepassing naar de cache. De extra latentie wordt verwacht binnen een acceptabel bereik voor de meeste toepassingen. We raden u aan uw toepassing te testen om er zeker van te zijn dat deze goed kan worden uitgevoerd met een zone-redundante cache.
 
-### <a name="enterprise-and-enterprise-flash-tiers"></a>Flash-lagen voor Enter prise en Enter prise
+### <a name="enterprise-tiers"></a>Enterprise-lagen
 
 Een cache in de Enter prise-laag wordt uitgevoerd op een redis-bedrijfs cluster. Hiervoor is een oneven aantal server knooppunten altijd vereist om een quorum te vormen. Deze bestaat standaard uit drie knoop punten, die allemaal worden gehost op een specifieke virtuele machine. Een ondernemings cache heeft twee *gegevens knooppunten* met dezelfde grootte en één kleiner *quorum knooppunt*. Een Enter prise Flash-cache heeft drie gegevens knooppunten met dezelfde grootte. Het bedrijfs cluster deelt redis gegevens intern op in partities. Elke partitie heeft een *primair* en ten minste één *replica*. Elk gegevens knooppunt bevat een of meer partities. Het ondernemings cluster zorgt ervoor dat de primaire en replica (s) van een wille keurige partitie nooit op hetzelfde gegevens knooppunt staan. Partities repliceren gegevens asynchroon van Primaries naar de bijbehorende replica's.
 
@@ -74,9 +74,27 @@ Wanneer een gegevens knooppunt niet beschikbaar is of als er een netwerk splitsi
 
 ## <a name="geo-replication"></a>Geo-replicatie
 
-[Geo-replicatie](cache-how-to-geo-replication.md) is een mechanisme voor het koppelen van twee Azure-caches voor redis-instanties, die meestal twee Azure-regio's omspannen. Eén cache is geselecteerd als de primaire gekoppelde cache en de andere als de secundaire gekoppelde cache. Alleen de primaire gekoppelde cache accepteert Lees-en schrijf aanvragen. Gegevens die naar de primaire cache zijn geschreven, worden gerepliceerd naar de secundaire gekoppelde cache. De secundaire gekoppelde cache kan worden gebruikt om Lees aanvragen te verwerken. Gegevens overdracht tussen de primaire en secundaire cache-instanties wordt beveiligd door TLS.
+[Geo-replicatie](cache-how-to-geo-replication.md) is een mechanisme voor het koppelen van twee of meer Azure-cache voor redis-instanties, met doorgaans twee Azure-regio's. 
 
-Geo-replicatie is hoofd zakelijk ontworpen voor herstel na nood gevallen. Het biedt u de mogelijkheid om een back-up van uw cache gegevens te maken in een andere regio. Standaard schrijft uw toepassing naar en leest de primaire regio. Het kan eventueel worden geconfigureerd om te lezen uit de secundaire regio. Geo-replicatie biedt geen automatische failover vanwege problemen met de toegevoegde netwerk latentie tussen regio's als de rest van uw toepassing in de primaire regio blijft. U moet de failover beheren en initiëren door de secundaire cache te ontkoppelen. Hiermee wordt het niveau verhoogd als het nieuwe primaire exemplaar.
+### <a name="premium-tier"></a>Premium-laag
+
+>[!NOTE]
+>Geo-replicatie in de Premium-laag is hoofd zakelijk ontworpen voor herstel na nood gevallen.
+>
+>
+
+Er kunnen twee exemplaren van de Premium-laag cache worden verbonden via [geo-replicatie](cache-how-to-geo-replication.md) , zodat u een back-up van uw cache gegevens kunt maken in een andere regio. Zodra het samen is gekoppeld, wordt één exemplaar aangeduid als de primaire gekoppelde cache en de andere als de secundaire gekoppelde cache. Alleen de primaire cache accepteert Lees-en schrijf aanvragen. Gegevens die naar de primaire cache zijn geschreven, worden gerepliceerd naar de secundaire cache. Een toepassing heeft toegang tot de cache via afzonderlijke eind punten voor de primaire en secundaire caches. De toepassing moet alle schrijf aanvragen verzenden naar de primaire cache wanneer deze in meerdere Azure-regio's wordt geïmplementeerd. Het kan worden gelezen van de primaire of secundaire cache. Over het algemeen wilt u de reken instanties van uw toepassing lezen van de meest overeenkomende caches om de latentie te verminderen. De gegevens overdracht tussen de twee cache-instanties wordt beveiligd door TLS.
+
+Geo-replicatie biedt geen automatische failover als gevolg van problemen met het toevoegen van de netwerk retour tijd tussen regio's als de rest van uw toepassing in de primaire regio blijft. U moet de failover beheren en initiëren door de secundaire cache te ontkoppelen. Hiermee wordt het niveau verhoogd als het nieuwe primaire exemplaar.
+
+### <a name="enterprise-tiers"></a>Enterprise-lagen
+
+>[!NOTE]
+>Dit is beschikbaar als een preview-versie.
+>
+>
+
+De ondernemings lagen bieden ondersteuning voor een geavanceerdere vorm van geo-replicatie, die [actieve geo-replicatie](cache-how-to-active-geo-replication.md)wordt genoemd. Het gebruik van niet-gratis gerepliceerde gegevens typen, de redis Enter prise-software ondersteunt schrijf bewerkingen naar meerdere cache-instanties en zorgt voor het samen voegen van wijzigingen en het oplossen van conflicten, indien nodig. Twee of meer exemplaren van de cache voor de Enter prise-laag in verschillende Azure-regio's kunnen worden gekoppeld om een actieve geo-gerepliceerde cache te vormen. Een toepassing die een dergelijke cache gebruikt, kan lees-en schrijf bewerkingen naar de geo-gedistribueerde cache-instanties via de bijbehorende eind punten. Het moet worden gebruikt wat het meest overeenkomt met elke reken instantie, waardoor de laagste latentie wordt geboden. De toepassing moet ook de cache-instanties bewaken en overschakelen naar een andere regio als een van de exemplaren niet meer beschikbaar is. Zie voor meer informatie over hoe actieve geo-replicatie werkt, [actief-actief Geo-Distriubtion (CRDTs)](https://redislabs.com/redis-enterprise/technology/active-active-geo-distribution/).
 
 ## <a name="next-steps"></a>Volgende stappen
 

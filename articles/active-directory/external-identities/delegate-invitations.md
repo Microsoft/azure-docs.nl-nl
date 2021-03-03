@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 02/12/2021
+ms.date: 03/02/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68ed67afc949b3a67936f20a098bca8b6906a598
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 747fa3005930414832878757664f4787157302d5
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100365545"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101645820"
 ---
 # <a name="enable-b2b-external-collaboration-and-manage-who-can-invite-guests"></a>Externe B2B-samenwerking inschakelen en beheren wie gasten kan uitnodigen
 
@@ -78,11 +78,11 @@ Standaard kunnen alle gebruikers, inclusief gasten, gast gebruikers uitnodigen.
    >
    >![Eenmalige E-mail inschakelen wacht woord voor wachtwoord registratie](media/delegate-invitations/enable-email-otp-opted-in.png)
 
-7. Onder **gast self-service inschakelen aanmelden via gebruikers stromen (preview)**, selecteert u **Ja** als u gebruikers stromen wilt maken waarmee gebruikers zich kunnen registreren voor apps. Zie [een self-service-aanmeldings stroom toevoegen aan een app (preview)](self-service-sign-up-user-flow.md)voor meer informatie over deze instelling.
+7. Onder **gast self-service inschakelen aanmelden via de gebruikers stromen**, selecteert u **Ja** als u gebruikers stromen wilt maken waarmee gebruikers zich kunnen registreren voor apps. Zie [een self-service-aanmeldings stroom toevoegen aan een app](self-service-sign-up-user-flow.md)voor meer informatie over deze instelling.
 
     ![Aanmelden via self-service via de instelling gebruikers stromen](./media/delegate-invitations/self-service-sign-up-setting.png)
 
-7. Kies onder **samenwerkings beperkingen** of u uitnodigingen wilt toestaan of weigeren aan de domeinen die u opgeeft. Zie [uitnodigingen voor B2B-gebruikers van specifieke organisaties toestaan of blok keren](allow-deny-list.md)voor meer informatie.
+7. Onder **samenwerkings beperkingen** kunt u kiezen of u uitnodigingen wilt toestaan of weigeren aan de domeinen die u opgeeft en voert u specifieke domein namen in de tekst vakken in. Voer voor meerdere domeinen elk domein in op een nieuwe regel. Zie [uitnodigingen voor B2B-gebruikers van specifieke organisaties toestaan of blok keren](allow-deny-list.md)voor meer informatie.
 
     ![Instellingen voor samenwerkings beperkingen](./media/delegate-invitations/collaboration-restrictions.png)
 ## <a name="assign-the-guest-inviter-role-to-a-user"></a>De rol van de gast-uitnodiging toewijzen aan een gebruiker

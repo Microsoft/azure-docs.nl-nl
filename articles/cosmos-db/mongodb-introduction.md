@@ -4,15 +4,15 @@ description: Meer informatie over hoe u Azure Cosmos DB kunt gebruiken voor het 
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: overview
-ms.date: 11/25/2020
+ms.date: 03/02/2021
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: ab335c8cc682f6b33dcb30509d682186a178c676
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
-ms.translationtype: HT
+ms.openlocfilehash: 5820592bf06cc9427e12aa0cd79c54dc1f0156e6
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97861069"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101657992"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb"></a>Azure Cosmos DB-API voor MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -24,9 +24,9 @@ ms.locfileid: "97861069"
 
 ## <a name="wire-protocol-compatibility"></a>Compatibiliteit met wire-protocollen
 
-Azure Cosmos DB implementeert het wire-protocol voor MongoDB. Deze implementatie maakt transparante compatibiliteit mogelijk met de systeemeigen SDK's, stuurprogramma's en hulpprogramma's van de MongoDB-client. Azure Cosmos DB fungeert niet als host voor de MongoDB-database-engine. De details van de functies die worden ondersteund door MongoDB vindt u hier: 
-- [Azure Cosmos DB's API for Mongo DB-engine versie 3.6](mongodb-feature-support-36.md)
-- [Azure Cosmos DB's API for Mongo DB-engine versie 3.2](mongodb-feature-support.md)
+Azure Cosmos DB implementeert het wire-protocol voor MongoDB. Deze implementatie maakt transparante compatibiliteit mogelijk met de systeemeigen SDK's, stuurprogramma's en hulpprogramma's van de MongoDB-client. Azure Cosmos DB fungeert als host voor de MongoDB-database-engine. De details van de functies die worden ondersteund door MongoDB vindt u hier: 
+- [API van Azure Cosmos DB voor Mongo DB versie 4,0](mongodb-feature-support-40.md)
+- [API van Azure Cosmos DB voor Mongo DB versie 3,6](mongodb-feature-support-36.md)
 
 Nieuwe accounts die met de API van Azure Cosmos DB voor MongoDB zijn gemaakt, zijn standaard compatibel met versie 3.6 van het wire-protocol van MongoDB. Elk clientstuurprogramma van MongoDB dat geschikt is voor deze protocolversie, kan een systeemeigen verbinding maken met Cosmos DB.
 

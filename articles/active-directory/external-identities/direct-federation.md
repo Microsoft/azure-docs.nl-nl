@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 06/24/2020
+ms.date: 03/02/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c9afb5a078d5359ed236b44c0a6712985bf8c305
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: d07aa283c40a54ba02faa13b07e466e519bd68ae
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99257182"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101649418"
 ---
 # <a name="direct-federation-with-ad-fs-and-third-party-providers-for-guest-users-preview"></a>Directe Federatie met AD FS en providers van derden voor gast gebruikers (preview-versie)
 
@@ -26,9 +26,7 @@ ms.locfileid: "99257182"
 
 In dit artikel wordt beschreven hoe u directe Federatie kunt instellen met een andere organisatie voor B2B-samen werking. U kunt directe Federatie instellen met elke organisatie waarvan de ID-provider (IdP) het SAML 2,0-of WS-Fed-protocol ondersteunt.
 Wanneer u directe Federatie instelt met de IdP van een partner, kunnen nieuwe gast gebruikers uit dat domein hun eigen door IdP beheerd organisatie account gebruiken om zich aan te melden bij uw Azure AD-Tenant en samen met u aan de slag te gaan. De gast gebruiker hoeft geen afzonderlijk Azure AD-account te maken.
-> [!NOTE]
-> Gebruikers met een directe Federatie gast moeten zich aanmelden met behulp van een koppeling die de Tenant context bevat (bijvoorbeeld `https://myapps.microsoft.com/?tenantid=<tenant id>` of `https://portal.azure.com/<tenant id>` , of in het geval van een geverifieerd domein `https://myapps.microsoft.com/\<verified domain>.onmicrosoft.com` ). Directe koppelingen naar toepassingen en bronnen werken ook zolang ze de context van de Tenant bevatten. Directe Federatie gebruikers kunnen zich momenteel niet aanmelden met algemene eind punten die geen Tenant context hebben. Als bijvoorbeeld, `https://myapps.microsoft.com` `https://portal.azure.com` of wordt gebruikt, `https://teams.microsoft.com` resulteert dit in een fout.
- 
+
 ## <a name="when-is-a-guest-user-authenticated-with-direct-federation"></a>Wanneer is een gast gebruiker geverifieerd met directe Federatie?
 Nadat u directe Federatie hebt ingesteld met een organisatie, worden nieuwe gast gebruikers die u uitnodigt, geverifieerd met behulp van directe Federatie. Het is belang rijk te weten dat het instellen van directe Federatie de verificatie methode niet wijzigt voor gast gebruikers die al een uitnodiging van u hebben ingewisseld. Hier volgen enkele voorbeelden:
  - Als gast gebruikers al uitnodigingen van u hebben ingewisseld en u vervolgens direct Federation hebt ingesteld met hun organisatie, blijven deze gast gebruikers dezelfde verificatie methode gebruiken die ze hebben gebruikt voordat u directe Federatie hebt ingesteld.
@@ -42,10 +40,28 @@ Directe Federatie is gekoppeld aan domein naam ruimten, zoals contoso.com en fab
 ## <a name="end-user-experience"></a>Ervaring voor de eindgebruiker 
 Met directe Federatie melden gast gebruikers zich aan bij uw Azure AD-Tenant met behulp van hun eigen organisatie account. Wanneer ze toegang krijgen tot gedeelde bronnen en worden gevraagd om zich aan te melden, worden directe Federatie gebruikers omgeleid naar hun IdP. Nadat het aanmelden is geslaagd, worden deze geretourneerd naar Azure AD om toegang te krijgen tot resources. De vernieuwings tokens van de directe Federatie gebruikers zijn 12 uur geldig, de [standaard lengte voor het passthrough-vernieuwings token](../develop/active-directory-configurable-token-lifetimes.md#exceptions) in azure AD. Als voor de federatieve IdP SSO is ingeschakeld, ondervindt de gebruiker SSO en wordt er geen aanmeldings prompt weer gegeven na de eerste verificatie.
 
+## <a name="sign-in-endpoints"></a>Aanmeld-eind punten
+
+Gebruikers met een directe Federatie gast kunnen zich nu aanmelden bij uw apps voor meerdere tenants of micro soft-toepassingen met behulp van een [gemeen schappelijk eind punt](redemption-experience.md#redemption-and-sign-in-through-a-common-endpoint) (met andere woorden, een algemene app-URL die uw Tenant context niet bevat). Hier volgen enkele voor beelden van algemene eind punten:
+
+- `https://teams.microsoft.com`
+- `https://myapps.microsoft.com`
+- `https://portal.azure.com`
+
+Tijdens het aanmeldings proces kiest de gast gebruiker de **aanmeldings opties** en selecteert vervolgens **Aanmelden bij een organisatie**. De gebruiker typt vervolgens de naam van uw organisatie en blijft aanmelden met behulp van hun eigen referenties.
+
+Gebruikers met een directe Federatie gast kunnen ook toepassings eindpunten gebruiken die uw Tenant gegevens bevatten, bijvoorbeeld:
+
+  * `https://myapps.microsoft.com/?tenantid=<your tenant ID>`
+  * `https://myapps.microsoft.com/<your verified domain>.onmicrosoft.com`
+  * `https://portal.azure.com/<your tenant ID>`
+
+U kunt ook directe Federatie-gast gebruikers een directe koppeling naar een toepassing of resource geven door bijvoorbeeld uw Tenant gegevens op te nemen `https://myapps.microsoft.com/signin/Twitter/<application ID?tenantId=<your tenant ID>` .
+
 ## <a name="limitations"></a>Beperkingen
 
 ### <a name="dns-verified-domains-in-azure-ad"></a>Door DNS geverifieerde domeinen in azure AD
-Het domein waarmee u wilt communiceren, moet ***niet** _ door DNS worden geverifieerd in azure AD. U mag directe Federatie met niet-beheerde (e-mail berichten geverifieerde of ' virale ') Azure AD-tenants instellen, omdat deze niet zijn geverifieerd voor DNS.
+Het domein waarmee u wilt communiceren, mag ***niet*** door DNS worden geverifieerd in azure AD. U mag directe Federatie met niet-beheerde (e-mail berichten geverifieerde of ' virale ') Azure AD-tenants instellen, omdat deze niet zijn geverifieerd voor DNS.
 
 ### <a name="authentication-url"></a>Verificatie-URL
 Directe Federatie is alleen toegestaan voor beleids regels waarbij het domein van de authenticatie-URL overeenkomt met het doel domein of waarbij de verificatie-URL een van deze toegestane id-providers is (deze lijst kan worden gewijzigd):
@@ -60,7 +76,7 @@ Directe Federatie is alleen toegestaan voor beleids regels waarbij het domein va
 -   federation.exostar.com
 -   federation.exostartest.com
 
-Als u bijvoorbeeld directe Federatie instelt voor _ * fabrikam. com * *, wordt de verificatie-URL `https://fabrikam.com/adfs` door gegeven. Er wordt bijvoorbeeld ook een host in hetzelfde domein door gegeven `https://sts.fabrikam.com/adfs` . De verificatie-URL `https://fabrikamconglomerate.com/adfs` of `https://fabrikam.com.uk/adfs` voor hetzelfde domein wordt echter niet door gegeven.
+Wanneer u bijvoorbeeld directe Federatie voor **fabrikam.com** instelt, wordt de verificatie-URL `https://fabrikam.com/adfs` door gegeven aan de validatie. Er wordt bijvoorbeeld ook een host in hetzelfde domein door gegeven `https://sts.fabrikam.com/adfs` . De verificatie-URL `https://fabrikamconglomerate.com/adfs` of `https://fabrikam.com.uk/adfs` voor hetzelfde domein wordt echter niet door gegeven.
 
 ### <a name="signing-certificate-renewal"></a>Certificaat vernieuwing ondertekenen
 Als u de meta gegevens-URL in de instellingen van de identiteits provider opgeeft, wordt het handtekening certificaat door Azure AD automatisch vernieuwd wanneer het verloopt. Als het certificaat echter om een of andere reden vóór de verloop tijd wordt geroteerd, of als u geen meta gegevens-URL opgeeft, kan Azure AD deze niet vernieuwen. In dit geval moet u het handtekening certificaat hand matig bijwerken.
@@ -147,7 +163,7 @@ Vervolgens configureert u Federatie met de ID-provider die is geconfigureerd in 
 
 1. Ga naar de [Azure Portal](https://portal.azure.com/). Selecteer de knop **Azure Active Directory** in het linkerdeelvenster. 
 2. Selecteer **externe identiteiten**  >  **alle id-providers**.
-3. Selecteer en selecteer vervolgens **nieuwe SAML/WS-IDP**.
+3. Selecteer **nieuwe SAML/WS-IDP**.
 
     ![Scherm afbeelding met de knop voor het toevoegen van een nieuwe SAML-of WS-Fed IdP](media/direct-federation/new-saml-wsfed-idp.png)
 

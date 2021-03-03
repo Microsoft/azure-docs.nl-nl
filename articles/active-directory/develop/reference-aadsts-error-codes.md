@@ -12,12 +12,12 @@ ms.date: 02/01/2021
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: b948de6ad9e07a650df98ef38104c02462ab532d
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 78f844295c16d15be65f345881ec92fa15a9734a
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99428028"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101649220"
 ---
 # <a name="azure-ad-authentication-and-authorization-error-codes"></a>Verificatie- en autorisatiefoutcodes in Azure AD
 
@@ -95,7 +95,7 @@ Als u bijvoorbeeld de fout code ' AADSTS50058 ' hebt ontvangen, voert u een zoek
 | AADSTS50000 | TokenIssuanceError: er is een probleem met de aanmeldings service. [Open een ondersteuningsticket](../fundamentals/active-directory-troubleshooting-support-howto.md) om dit probleem op te lossen. |
 | AADSTS50001 | InvalidResource: de resource is uitgeschakeld of bestaat niet. Controleer de code van de app om te controleren of u de exacte resource-URL hebt opgegeven voor de resource die u wilt openen.  |
 | AADSTS50002 | NotAllowedTenant-aanmelden is mislukt vanwege een beperkte proxy toegang op de Tenant. Als het uw eigen tenantbeleid is, kunt u de instellingen voor de beperkte tenant wijzigen om dit probleem op te lossen. |
-| AADSTS500021 | De toegang tot de Tenant {Tenant} is geweigerd. AADSTS500021 geeft aan dat de functie voor Tenant beperking is geconfigureerd en dat de gebruiker toegang probeert te krijgen tot een Tenant die niet voor komt in de lijst met toegestane tenants die in de header is opgegeven `Restrict-Access-To-Tenant` . Zie [Tenant beperkingen gebruiken voor het beheren van toegang tot SaaS-Cloud toepassingen](/azure/active-directory/manage-apps/tenant-restrictions)voor meer informatie.|
+| AADSTS500021 | De toegang tot de Tenant {Tenant} is geweigerd. AADSTS500021 geeft aan dat de functie voor Tenant beperking is geconfigureerd en dat de gebruiker toegang probeert te krijgen tot een Tenant die niet voor komt in de lijst met toegestane tenants die in de header is opgegeven `Restrict-Access-To-Tenant` . Zie [Tenant beperkingen gebruiken voor het beheren van toegang tot SaaS-Cloud toepassingen](../manage-apps/tenant-restrictions.md)voor meer informatie.|
 | AADSTS50003 | MissingSigningKey-aanmelden is mislukt vanwege een ontbrekende handtekening sleutel of certificaat. Dit kan zijn omdat er geen handtekening sleutel is geconfigureerd in de app. Bekijk de oplossingen die worden beschreven op [.. /Manage-apps/Application-Sign-in-problem-Federated-SSO-Gallery.MD # certificaat-of-sleutel-niet geconfigureerd](../manage-apps/application-sign-in-problem-federated-sso-gallery.md#certificate-or-key-not-configured). Als u nog steeds problemen ziet, neemt u contact op met de eigenaar van de app of een app-beheerder. |
 | AADSTS50005 | DevicePolicyError: gebruiker heeft geprobeerd zich aan te melden bij een apparaat vanaf een platform dat momenteel niet wordt ondersteund via het beleid voor voorwaardelijke toegang. |
 | AADSTS50006 | InvalidSignature-handtekening verificatie is mislukt vanwege een ongeldige hand tekening. |
@@ -168,6 +168,7 @@ Als u bijvoorbeeld de fout code ' AADSTS50058 ' hebt ontvangen, voert u een zoek
 | AADSTS50168 | ChromeBrowserSsoInterruptRequired: de client kan een SSO-token verkrijgen via de uitbrei ding voor Windows 10-accounts, maar het token is niet gevonden in de aanvraag of het opgegeven token is verlopen. |
 | AADSTS50169 | InvalidRequestBadRealm-de realm is geen geconfigureerde realm van de huidige service naam ruimte. |
 | AADSTS50170 | MissingExternalClaimsProviderMapping-de toewijzing van externe besturings elementen ontbreekt. |
+| AADSTS50173 | FreshTokenNeeded-de verleende toekenning is verlopen omdat deze is ingetrokken en er een nieuw verificatie token nodig is. Een beheerder of een gebruiker heeft de tokens voor deze gebruiker ingetrokken, waardoor volgende token vernieuwingen mislukken en opnieuw moeten worden geverifieerd. Meld u opnieuw aan bij de gebruiker. |
 | AADSTS50177 | ExternalChallengeNotSupportedForPassthroughUsers: externe uitdaging wordt niet ondersteund voor passthrough-gebruikers. |
 | AADSTS50178 | SessionControlNotSupportedForPassthroughUsers: sessie beheer wordt niet ondersteund voor passthrough-gebruikers. |
 | AADSTS50180 | Geïntegreerde Windows-verificatie is vereist voor WindowsIntegratedAuthMissing. Schakel de tenant in voor een naadloze eenmalige aanmelding (SSO). |

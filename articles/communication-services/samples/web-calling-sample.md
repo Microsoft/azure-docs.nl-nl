@@ -9,22 +9,20 @@ ms.author: mariusu
 ms.date: 10/15/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: fbd5d3c4489d124014e0d956359f64a8ec9c568a
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: 5752f20cb433a417a684076338214cd2ea80bc8b
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99592786"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101658094"
 ---
 # <a name="get-started-with-the-web-calling-sample"></a>Aan de slag met het voorbeeld van aanroeping
 
-Het voorbeeld van webaanroeping is een webtoepassing die als stapsgewijze instructie dient voor de verschillende mogelijkheden van de Communication Services-clientbibliotheek voor webaanroeping. 
+Het voorbeeld van webaanroeping is een webtoepassing die als stapsgewijze instructie dient voor de verschillende mogelijkheden van de Communication Services-clientbibliotheek voor webaanroeping.
 
 Dit voorbeeld is gebouwd voor ontwikkelaars en maakt het eenvoudig om aan de slag te gaan met Communication Services. De gebruikersinterface is onderverdeeld in meerdere secties, elk met de knop 'Code weergeven' waarmee u rechtstreeks vanuit uw browser codes kunt kopiëren naar uw eigen Communication Services-toepassing.
 
 ## <a name="get-started-with-the-web-calling-sample"></a>Aan de slag met het voorbeeld van aanroeping
-
-[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
 > [!IMPORTANT]
 > [Dit voorbeeld is beschikbaar op GitHub.](https://github.com/Azure-Samples/communication-services-web-calling-tutorial/).
@@ -36,7 +34,7 @@ Zodra het [webonderdeel](https://github.com/Azure-Samples/communication-services
 
 :::image type="content" source="./media/web-calling-tutorial-page-2.png" alt-text="Zelfstudie voor webaanroeping 2" lightbox="./media/web-calling-tutorial-page-2.png":::
 
-## <a name="user-provisioning-and-sdk-initialization"></a>Gebruikersinrichting en SDK-initialisatie 
+## <a name="user-provisioning-and-sdk-initialization"></a>Gebruikersinrichting en SDK-initialisatie
 
 Klik op ‘Gebruiker inrichten en SDK initialiseren’ om uw SDK te initialiseren met behulp van een token dat is ingericht door de service voor het inrichten van de back-end-token. Deze back-end-service is te vinden in `/project/webpack.config.js`.
 
@@ -52,7 +50,7 @@ U bent nu klaar om te beginnen met het plaatsen van oproepen met uw Communicatio
 
 De weboproep-SDK van Communication Services maakt de volgende oproepen **1:1**, **1: N** en **groep**.
 
-Voor 1:1 of 1: N uitgaande oproepen kunt u meerdere gebruikersidentiteiten voor Communication Services opgeven om aan te roepen met door komma's gescheiden waarden. U kunt ook traditionele (PSTN) telefoonnummers opgeven om aan te roepen met door komma's gescheiden waarden. 
+Voor 1:1 of 1: N uitgaande oproepen kunt u meerdere gebruikersidentiteiten voor Communication Services opgeven om aan te roepen met door komma's gescheiden waarden. U kunt ook traditionele (PSTN) telefoonnummers opgeven om aan te roepen met door komma's gescheiden waarden.
 
 Wanneer u PSTN-telefoonnummers belt, geeft u uw alternatieve beller-ID op. Klik op de knop ‘Oproep doen’ om een uitgaande oproep te plaatsen:
 
@@ -80,7 +78,7 @@ Dit voorbeeld bevat ook codefragmenten voor de volgende mogelijkheden:
 
 ## <a name="next-steps"></a>Volgende stappen
 
->[!div class="nextstepaction"] 
+>[!div class="nextstepaction"]
 >[Het voorbeeld downloaden uit GitHub](https://github.com/Azure-Samples/communication-services-web-calling-tutorial/)
 
 Raadpleeg voor meer informatie de volgende artikelen:

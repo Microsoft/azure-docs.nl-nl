@@ -1,0 +1,94 @@
+- name: Documentatie over het bijwerken van apparaten voor IoT Hub
+  href: index.yml
+- name: Overzicht
+  items:
+    - name: Wat is apparaat bijwerken voor IoT Hub?
+      href: understand-device-update.md
+- name: Zelfstudies
+  items:
+    - name: Update van de installatie kopie op Raspberry pi
+      href: device-update-raspberry-pi.md
+    - name: Update van het apparaat op een simulator gebruiken
+      href: device-update-simulator.md
+    - name: 'Pakket update op Ubuntu Server 18,04 x64'
+      href: device-update-ubuntu-agent.md
+- name: Concepten
+  items:
+    - name: Account en exemplaar van het apparaat bijwerken
+      href: device-update-resources.md
+    - name: Gebruikers rollen en-toegang voor het apparaat bijwerken
+      href: device-update-control-access.md
+    - name: Apt-manifest voor het bijwerken van het apparaat
+      href: device-update-apt-manifest.md
+    - name: Naleving van apparaat bijwerken
+      href: device-update-compliance.md
+    - name: Update groepen voor apparaten
+      href: device-update-groups.md
+    - name: Het gebruik van Plug en Play voor het bijwerken van apparaten
+      href: device-update-plug-and-play.md
+    - name: Netwerk vereisten voor apparaat bijwerken
+      href: device-update-networking.md
+    - name: Update-Agent van apparaat
+      href: device-update-agent-overview.md
+    - name: Configuratie bestand voor het bijwerken van het apparaat
+      href: device-update-configuration-file.md
+    - name: Manifest voor het bijwerken van het apparaat
+      href: update-manifest.md
+    - name: Hoe de update van het apparaat is beveiligd
+      href: device-update-security.md
+    - name: Ondersteuning voor niet-verbonden apparaten
+      href: connected-cache-disconnected-device-update.md
+    - name: Micro soft Connected cache configureren voor updates van het apparaat voor IoT Hub
+      href: connected-cache-configure.md
+- name: Instructiegidsen
+  items:
+    - name: Een update account voor een apparaat maken
+      href: create-device-update-account.md
+    - name: Update-Agent van apparaat inrichten
+      href: device-update-agent-provisioning.md
+    - name: Een update importeren
+      href: import-update.md
+    - name: Een update groep voor een apparaat maken
+      href: create-update-group.md
+    - name: Een update voor een apparaat implementeren
+      href: deploy-update.md
+    - name: Een update voor een apparaat implementeren
+      href: deploy-update.md
+    - name: Micro soft Connected cache op één niveau
+      href: connected-cache-single-level.md
+    - name: Door micro soft verbonden cache op genest niveau
+      href: connected-cache-nested-level.md
+    - name: Met micro soft verbonden cache voor industriële IoT (IIOT)
+      href: connected-cache-industrial-iot-nested.md
+    - name: Problemen oplossen
+      items:
+        - name: Problemen met updates van apparaten oplossen
+          href: troubleshoot-device-update.md
+- name: Referentie
+  items:
+    - name: Fout codes voor het bijwerken van het apparaat
+      href: device-update-error-codes.md
+- name: Resources
+  items:
+    - name: Opties voor ondersteuning en hulp
+      href: ../iot-fundamentals/iot-support-help.md
+    - name: Azure IoT-services
+      items:
+        - name: IoT Hub
+          href: ./index.yml
+        - name: IoT Hub Device Provisioning Service
+          href: ../iot-dps/index.yml
+        - name: IoT Central
+          href: /microsoft-iot-central/
+        - name: IoT Edge
+          href: ../iot-edge/index.yml
+        - name: IoT-oplossingsversnellers
+          href: ../iot-accelerators/index.yml
+        - name: IoT Plug en Play
+          href: ../iot-pnp/index.yml
+        - name: Azure Maps
+          href: ../azure-maps/index.yml
+        - name: Time Series Insights
+          href: ../time-series-insights/index.yml
+    - name: Delivery optimization
+      href: 'https://github.com/microsoft/do-client'

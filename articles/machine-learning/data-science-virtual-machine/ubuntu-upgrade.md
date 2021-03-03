@@ -4,18 +4,17 @@ titleSuffix: Azure Data Science Virtual Machine
 description: Meer informatie over het upgraden van CentOS en Ubuntu 16,04 naar de nieuwste Ubuntu 18,04 Data Science Virtual Machine.
 keywords: diep leren, AI, data Science tools, data Science virtual machine, team data Science process
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 author: samkemp
 ms.author: samkemp
 ms.topic: conceptual
 ms.date: 10/07/2020
-ms.openlocfilehash: 5b98384d4d735f4c124c6af40d6edbff896900ce
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 5b897ff7527d2d60234162ccbdeb08a00260bb1d
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93320978"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101659457"
 ---
 # <a name="upgrade-your-data-science-virtual-machine-to-ubuntu-1804"></a>Werk uw Data Science Virtual Machine bij naar Ubuntu 18.04
 
@@ -38,7 +37,7 @@ Gebruik in de Azure Portal de zoek balk om de functionaliteit van **moment opnam
 
 :::image type="content" source="media/ubuntu_upgrade/azure-portal-search-bar.png" alt-text="Scherm opname met Azure Portal en zoek balk, met * * moment opnamen * * gemarkeerd":::
 
-1. Selecteer **toevoegen** , waarmee u naar de pagina **moment opname maken** gaat. Selecteer het abonnement en de resource groep van de virtuele machine. Selecteer voor **regio** dezelfde regio waarin de doel opslag zich bevindt. Selecteer de DSVM-opslag schijf en aanvullende back-upopties. **Standard-HDD** is een geschikt opslag type voor dit back-upscenario.
+1. Selecteer **toevoegen**, waarmee u naar de pagina **moment opname maken** gaat. Selecteer het abonnement en de resource groep van de virtuele machine. Selecteer voor **regio** dezelfde regio waarin de doel opslag zich bevindt. Selecteer de DSVM-opslag schijf en aanvullende back-upopties. **Standard-HDD** is een geschikt opslag type voor dit back-upscenario.
 
 :::image type="content" source="media/ubuntu_upgrade/create-snapshot-options.png" alt-text="Scherm opname met opties voor het maken van een moment opname":::
 
@@ -65,7 +64,7 @@ Het duurt even voordat het upgrade proces is voltooid. Wanneer dit het geval is,
 
 Nadat uw VM is bijgewerkt en opnieuw is opgestart, probeert u deze opnieuw via SSH. Het IP-adres is mogelijk gewijzigd tijdens het opnieuw opstarten, dus bevestig het voordat u probeert verbinding te maken.
 
-Als u het fout bericht **externe host-id is gewijzigd** , moet u uw SSH-referenties opnieuw genereren.
+Als u het fout bericht **externe host-id is gewijzigd**, moet u uw SSH-referenties opnieuw genereren.
 
 :::image type="content" source="media/ubuntu_upgrade/remote-host-warning.png" alt-text="Power shell-scherm opname met externe host-id waarschuwing gewijzigd":::
 
@@ -103,11 +102,11 @@ U kunt ervoor kiezen om de onderdelen van het besturings systeem van het bestand
 
 Als u nog geen VM-moment opname hebt gemaakt zoals eerder beschreven, doet u dat nu. 
 
-1. In de Azure Portal zoekt u naar **schijven** en selecteert u **toevoegen** , waarmee de **schijf** pagina wordt geopend.
+1. In de Azure Portal zoekt u naar **schijven** en selecteert u **toevoegen**, waarmee de **schijf** pagina wordt geopend.
 
 :::image type="content" source="media/ubuntu_upgrade/portal-disks-search.png" alt-text="Scherm opname van Azure Portal weer geven van de pagina zoeken naar schijven en de knop toevoegen":::
 
-2. Stel het **abonnement** , de **resource groep** en de **regio** in op de waarden van uw VM-moment opname. Kies een **naam** voor de schijf die u wilt maken.
+2. Stel het **abonnement**, de **resource groep** en de **regio** in op de waarden van uw VM-moment opname. Kies een **naam** voor de schijf die u wilt maken.
 
 3. Selecteer **bron type** als **moment opname** en selecteer de moment opname van de virtuele machine als **moment opname** van de bron. Controleer de schijf en maak deze. 
 

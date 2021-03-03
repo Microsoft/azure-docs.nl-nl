@@ -6,19 +6,19 @@ ms.author: bagol
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
-ms.date: 11/24/2020
-ms.openlocfilehash: dffecb48a8faa869cb3df450cc220e86195bbc87
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.date: 01/17/2021
+ms.openlocfilehash: bb8ac82b2e59ec86db89c7eba0ce607fcfc0ac2d
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98199373"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101676555"
 ---
 # <a name="sensitivity-label-insights-about-your-data-in-azure-purview"></a>Gevoeligheid label inzichten over uw gegevens in azure controle sfeer liggen
 
 In deze hand leiding wordt beschreven hoe u beveiligings inzichten kunt openen, weer geven en filteren op basis van gevoeligheids labels die op uw gegevens zijn toegepast.
 
-Ondersteunde gegevens bronnen zijn: Azure Blob Storage, Azure Data Lake Storage (ADLS) GEN 1, Azure Data Lake Storage (ADLS) GEN 2, SQL Server, Azure SQL Database, Azure SQL Managed instance
+Ondersteunde gegevens bronnen zijn: Azure Blob Storage, Azure Data Lake Storage (ADLS) GEN 1, Azure Data Lake Storage (ADLS) GEN 2, SQL Server, Azure SQL Database, Azure SQL Managed instance, Amazon S3-buckets
 
 In deze hand leiding leert u het volgende:
 
@@ -40,7 +40,7 @@ Voordat u aan de slag gaat met controle sfeer liggen Insights, moet u ervoor zor
 
 - [Uitgebreide Microsoft 365 gevoeligheids labels naar assets in azure controle sfeer liggen](create-sensitivity-label.md), en u hebt de labels gemaakt of geselecteerd die u wilt Toep assen op uw gegevens.
 
-- Een scan voor de test gegevens in elke gegevens bron instellen en volt ooien
+- Een scan voor de test gegevens in elke gegevens bron instellen en volt ooien. Zie voor meer informatie [gegevens bronnen beheren in azure controle sfeer liggen (preview)](manage-data-sources.md) en [een set met scan regels maken](create-a-scan-rule-set.md).
 
 - Meld u aan bij controle sfeer liggen met een account met een [gegevens lezer of gegevens curator rol](catalog-permissions.md#azure-purviews-pre-defined-data-plane-roles).
 

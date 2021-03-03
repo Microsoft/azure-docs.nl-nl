@@ -7,20 +7,19 @@ author: msjuergent
 manager: juergent
 editor: ''
 keywords: HLI, HANA, Sku's, S896, S224, S448, S672, Optane, SAP
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines-sap
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 12/21/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 886cd57b59bd4103ced9d496021e54ab0bdc99ad
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 25a11bf96ba680608e5bb22835becf80fadee4f3
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97723283"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101668921"
 ---
 # <a name="available-skus-for-hana-large-instances"></a>Beschik bare Sku's voor HANA grote instanties
 
@@ -33,14 +32,14 @@ SAP HANA op Azure (grote exemplaren) service op basis van alleen revisie 3 stem 
 
 SAP HANA op Azure (grote exemplaren) service op basis van revisie 4 stem pels is beschikbaar in verschillende configuraties in de Azure-regio's van:
 
-- West US 2
+- VS - west 2
 - VS - oost
 
 BareMetal-infra structuur (gecertificeerd voor SAP HANA workload) op basis van de revisie 4,2-stem pels. Het is beschikbaar in verschillende configuraties in de Azure-regio's van:
 - Europa -west
 - Europa - noord
 - VS - oost 2
-- South Central US
+- VS - zuid-centraal
 
 
 
@@ -52,7 +51,7 @@ De lijst met beschik bare grote Azure-instanties die als volgt worden aangeboden
 
 
 
-| SAP HANA gecertificeerd | Model | Totaal geheugen | DRAM-geheugen | Geheugen Optane | Opslag | Beschikbaarheid |
+| SAP HANA gecertificeerd | Model | Totaal geheugen | DRAM-geheugen | Geheugen Optane | Storage | Beschikbaarheid |
 | --- | --- | --- | --- | --- | --- | --- |
 | JA <br />[OLAP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2185), [OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2265) | SAP HANA op Azure S96<br /> – 2 x Intel® Xeon® processor E7-8890 v4 <br /> 48 CPU-kernen en 96 CPU-threads |  768 GB | 768 GB | --- | 3,0 TB | Beschikbaar |
 | JA <br /> [OLAP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2186), [OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2269) | SAP HANA op Azure S224<br /> – 4 x Intel® Xeon® Platinum 8276-processor <br /> 112 CPU-kernen en 224 CPU-threads |  3,0 TB | 3,0 TB | --- | 6,3 TB | Beschikbaar |

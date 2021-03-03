@@ -2,18 +2,18 @@
 title: Configuraties en GitOps-Kubernetes van Azure Arc ingeschakeld
 services: azure-arc
 ms.service: azure-arc
-ms.date: 02/17/2021
+ms.date: 03/02/2021
 ms.topic: conceptual
 author: shashankbarsin
 ms.author: shasb
 description: Dit artikel bevat een conceptueel overzicht van de GitOps-en configuratie mogelijkheden van Azure Arc enabled Kubernetes.
 keywords: Kubernetes, Arc, azure, containers, configuratie, GitOps
-ms.openlocfilehash: f8fe1522eee4cc855ae1f396d9c98323114a25ce
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: d016e2bae9fcef21642f00cf6f25a8b595d54710
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652544"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101650364"
 ---
 # <a name="configurations-and-gitops-with-azure-arc-enabled-kubernetes"></a>Configuraties en GitOps met Azure Arc enabled Kubernetes
 
@@ -27,20 +27,20 @@ Ten aanzien van Kubernetes is GitOps de praktijk van het declareren van de gewen
 
 [![Configuratie architectuur ](./media/conceptual-configurations.png)](./media/conceptual-configurations.png#lightbox)
 
-De verbinding tussen uw cluster en een Git-opslag plaats wordt gemaakt als een `Microsoft.KubernetesConfiguration/sourceControlConfigurations` uitbreidings resource boven op de Azure-Kubernetes-resource (vertegenwoordigd door `Microsoft.Kubernetes/connectedClusters` ) in azure Resource Manager. 
+De verbinding tussen uw cluster en een Git-opslag plaats wordt gemaakt als een configuratie bron ( `Microsoft.KubernetesConfiguration/sourceControlConfigurations` ) boven op de Azure Arc enabled Kubernetes-resource (vertegenwoordigd door `Microsoft.Kubernetes/connectedClusters` ) in azure Resource Manager. 
 
-De `sourceControlConfiguration` resource-eigenschappen worden gebruikt voor het implementeren van de stroom operator op het cluster met de juiste para meters, zoals de Git-opslag plaats waaruit manifesten moeten worden opgehaald en het polling-interval waarmee ze moeten worden opgehaald. De `sourceControlConfiguration` gegevens worden versleuteld en op rest in een Azure Cosmos DB Data Base opgeslagen om de vertrouwelijkheid van gegevens te garanderen.
+De eigenschappen van de configuratie bron worden gebruikt voor het implementeren van de stroom operator op het cluster met de juiste para meters, zoals de Git-opslag plaats van waaruit manifesten moeten worden opgehaald en het polling-interval waarmee ze moeten worden opgehaald. De configuratie bron gegevens worden in een Azure Cosmos DB-Data Base opgeslagen en versleuteld op rest van gegevens.
 
 De `config-agent` uitvoering in uw cluster is verantwoordelijk voor:
-* Het bijhouden van nieuwe of bijgewerkte `sourceControlConfiguration` uitbreidings resources op de Azure Arc enabled Kubernetes-resource.
-* Implementeer een stroom operator om de Git-opslag plaats voor elk te bekijken `sourceControlConfiguration` .
-* Het Toep assen van updates die zijn aangebracht in een `sourceControlConfiguration` . 
+* Het bijhouden van nieuwe of bijgewerkte configuratie resources op de Azure Arc enabled Kubernetes-resource.
+* Implementeer een stroom operator om de Git-opslag plaats voor elke configuratie bron te bekijken.
+* Het Toep assen van updates die zijn aangebracht in een configuratie resource. 
 
-U kunt meerdere naam ruimte-bronnen maken `sourceControlConfiguration` op hetzelfde Azure Arc-Kubernetes-cluster om multitenancy te bereiken.
+U kunt meerdere configuratie bronnen met een naam ruimte bereik maken op hetzelfde Azure Arc enabled Kubernetes-cluster om multitenancy te bereiken.
 
 > [!NOTE]
-> * `config-agent` doorlopend monitors voor nieuwe of bijgewerkte `sourceControlConfiguration` uitbreidings bronnen die beschikbaar zijn op de Azure Arc enabled Kubernetes-resource. Daarom vereisen agents consistente connectiviteit om de gewenste status eigenschappen naar het cluster te halen. Als agents geen verbinding kunnen maken met Azure, wordt de gewenste status niet toegepast op het cluster.
-> * Gevoelige klant invoer zoals een persoonlijke sleutel, bekende hosts-inhoud, HTTPS-gebruikers naam en Token of wacht woord worden opgeslagen voor Maxi maal 48 uur in de Azure-Kubernetes Services. Als u gebruikmaakt van gevoelige invoer voor configuraties, moet u de clusters zo vaak mogelijk online brengen.
+> * `config-agent` monitors voor nieuwe of bijgewerkte configuratie bronnen die beschikbaar zijn op de Kubernetes-resource die is ingeschakeld voor Arc. Agents vereisen dat de connectiviteit voor de gewenste status wordt opgetrokken naar het cluster. Als agents geen verbinding kunnen maken met Azure, is er een vertraging bij het door geven van de gewenste status aan het cluster.
+> * Gevoelige klant invoer zoals een persoonlijke sleutel, bekende hosts-inhoud, HTTPS-gebruikers naam en Token/wacht woord worden niet meer dan 48 uur opgeslagen in de Azure-Kubernetes Services. Als u gebruikmaakt van gevoelige invoer voor configuraties, moet u de clusters zo vaak mogelijk online brengen.
 
 ## <a name="apply-configurations-at-scale"></a>Configuraties op schaal Toep assen
 
@@ -50,6 +50,6 @@ Deze uitbreiige afdwinging zorgt ervoor dat een gemeen schappelijke basislijn co
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Een cluster verbinden met Azure Arc](./connect-cluster.md)
+* [Een cluster verbinden met Azure Arc](./quickstart-connect-cluster.md)
 * [Configuraties maken op uw Kubernetes-cluster met Arc-functionaliteit](./use-gitops-connected-cluster.md)
 * [Azure Policy gebruiken om configuraties op schaal toe te passen](./use-azure-policy.md)

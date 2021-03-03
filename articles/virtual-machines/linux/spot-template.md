@@ -3,17 +3,18 @@ title: Een sjabloon gebruiken voor het implementeren van Azure-steun Virtual Mac
 description: Meer informatie over het gebruik van een sjabloon voor het implementeren van Azure Spot Virtual Machines om kosten te besparen.
 author: cynthn
 ms.service: virtual-machines
+ms.subservice: spot
 ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 03/25/2020
 ms.author: cynthn
 ms.reviewer: jagaveer
-ms.openlocfilehash: 44134e73f2e654d7bfdb9119942a5c3982859c7a
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 04319066c59dda5d240f527d86894674a505eaed
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100557754"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101669362"
 ---
 # <a name="deploy-azure-spot-virtual-machines-using-a-resource-manager-template"></a>Azure Spot Virtual Machines implementeren met behulp van een resource manager-sjabloon
 

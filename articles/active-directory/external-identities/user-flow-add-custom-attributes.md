@@ -7,25 +7,22 @@ manager: celestedg
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 06/16/2020
+ms.date: 03/02/2021
 ms.author: mimart
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e64ab70fed13d4ca907b2bfb3aa448acdedc39e9
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 46b498f8b8512d0202f47dd31ba25cc851ca71e6
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92441450"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101644099"
 ---
-# <a name="define-custom-attributes-for-user-flows-preview"></a>Aangepaste kenmerken definiëren voor gebruikers stromen (preview-versie)
-
-> [!NOTE]
-> De functie aangepaste gebruikers kenmerken is een open bare preview-functie van Azure Active Directory. Zie [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+# <a name="define-custom-attributes-for-user-flows"></a>Aangepaste kenmerken voor gebruikersstromen definiëren
 
 Voor elke toepassing hebt u mogelijk verschillende vereisten voor de gegevens die u wilt verzamelen tijdens de registratie. Azure AD wordt geleverd met een ingebouwde set met informatie die is opgeslagen in kenmerken, zoals de naam, de voor waarde, de plaats en de post code. Met Azure AD kunt u de set met kenmerken die zijn opgeslagen op een gast account uitbreiden wanneer de externe gebruiker zich aanmeldt via een gebruikers stroom.
 
-U kunt aangepaste kenmerken in de Azure Portal maken en deze gebruiken in uw eigen service-aanmeld gebruikers stromen. U kunt deze kenmerken ook lezen en schrijven met behulp van de [Microsoft Graph-API](../../active-directory-b2c/manage-user-accounts-graph-api.md). Microsoft Graph-API ondersteunt het maken en bijwerken van een gebruiker met extensie kenmerken. Extensie kenmerken in de Graph API worden genoemd met behulp van de Conventie `extension_<extensions-app-id>_attributename` . Bijvoorbeeld:
+U kunt aangepaste kenmerken in de Azure Portal maken en deze gebruiken in uw eigen service-aanmeld gebruikers stromen. U kunt deze kenmerken ook lezen en schrijven met behulp van de [Microsoft Graph-API](../../active-directory-b2c/microsoft-graph-operations.md). Microsoft Graph-API ondersteunt het maken en bijwerken van een gebruiker met extensie kenmerken. Extensie kenmerken in de Graph API worden genoemd met behulp van de Conventie `extension_<extensions-app-id>_attributename` . Bijvoorbeeld:
 
 ```JSON
 "extension_831374b3bd5041bfaa54263ec9e050fc_loyaltyNumber": "212342"
@@ -36,17 +33,17 @@ De `<extensions-app-id>` is specifiek voor uw Tenant. Om deze id te vinden, gaat
 ## <a name="create-a-custom-attribute"></a>Een aangepast kenmerk maken
 
 1. Meld u als een Azure AD-administrator aan bij de [Azure Portal](https://portal.azure.com).
-2. Onder **Azure-Services**selecteert u **Azure Active Directory**.
+2. Onder **Azure-Services** selecteert u **Azure Active Directory**.
 3. Selecteer in het linkermenu **externe identiteiten**.
-4. Selecteer **aangepaste gebruikers kenmerken (preview-versie)**. De beschik bare gebruikers kenmerken worden weer gegeven.
+4. Selecteer **aangepaste gebruikers kenmerken**. De beschik bare gebruikers kenmerken worden weer gegeven.
 
    ![Gebruikers kenmerken selecteren voor registratie](media/user-flow-add-custom-attributes/user-attributes.png)
 
-5. Selecteer **toevoegen**om een kenmerk toe te voegen.
+5. Selecteer **toevoegen** om een kenmerk toe te voegen.
 6. Voer in het deel venster **een kenmerk toevoegen** de volgende waarden in:
 
    - **Naam** : Geef een naam op voor het aangepaste kenmerk (bijvoorbeeld ' Shoesize ').
-   - **Gegevens type** : Kies een gegevens type (**teken reeks**, **Booleaanse waarde**of **int**).
+   - **Gegevens type** : Kies een gegevens type (**teken reeks**, **Booleaanse waarde** of **int**).
    - **Beschrijving** : Voer eventueel een beschrijving in van het aangepaste kenmerk voor intern gebruik. Deze beschrijving is niet zichtbaar voor de gebruiker.
 
    ![Een kenmerk toevoegen](media/user-flow-add-custom-attributes/add-an-attribute.png)

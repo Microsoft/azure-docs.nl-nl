@@ -1,0 +1,117 @@
+### YamlMime:Landing
+title: Documentatie voor Azure percept
+summary: Azure percept is een end-to-end oplossing voor het bouwen en implementeren van op de rand gebaseerde AI.
+metadata:
+  title: Documentatie voor Azure percept
+  description: Azure percept is een end-to-end Edge AI-platform.
+  services: azure-percept
+  ms.service: azure-percept
+  ms.topic: landing-page
+  author: elqu20
+  ms.author: v-elqu
+  ms.date: 02/11/2021
+  ms.openlocfilehash: 6c7479b33a78432d5b6aea2c02656e8b250b70c7
+  ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+  ms.translationtype: MT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 03/02/2021
+  ms.locfileid: "101665752"
+landingContent:
+- title: Wat is Azure percept?
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Overzicht van Azure percept
+      url: overview-azure-percept.md
+    - text: Overzicht van Azure percept DK
+      url: overview-azure-percept-dk.md
+    - text: Overzicht van Azure percept audio
+      url: overview-azure-percept-audio.md
+    - text: Overzicht van Azure percept Studio
+      url: overview-azure-percept-studio.md
+    - text: Overzicht van Azure percept-beveiliging
+      url: overview-percept-security.md
+- title: Aan de slag met Azure percept DK
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Unbox en uw Azure percept DK verzamelen
+      url: quickstart-percept-dk-unboxing.md
+    - text: Verbinding maken tussen Azure percept DK en Azure en een Vision AI-model implementeren
+      url: quickstart-percept-dk-set-up.md
+  - linkListType: reference
+    links:
+    - text: Azure percept DK-gegevens blad
+      url: azure-percept-dk-datasheet.md
+    - text: Azure percept Vision-gegevens blad
+      url: azure-percept-vision-datasheet.md
+    - text: Azure percept-audio gegevens blad
+      url: azure-percept-audio-datasheet.md
+- title: Een visueel prototype zonder code maken
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Een oplossing voor No-code Vision maken
+      url: tutorial-nocode-vision.md
+  - linkListType: how-to-guide
+    links:
+    - text: De video stroom van uw Devkit weer geven
+      url: how-to-view-video-stream.md
+    - text: Een AI-model naar uw Devkit implementeren
+      url: how-to-deploy-model.md
+    - text: Afbeeldingen vastleggen voor een Vision-project
+      url: how-to-capture-images.md
+    - text: De telemetrie van uw Devkit weer geven
+      url: how-to-view-telemetry.md
+- title: Aan de slag met Azure percept-audio
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Azure percept-Audio instellen
+      url: quickstart-percept-audio-setup.md
+  - linkListType: reference
+    links:
+    - text: Azure percept-audio gegevens blad
+      url: azure-percept-audio-datasheet.md
+    - text: Problemen met Azure percept-audio oplossen
+      url: troubleshoot-audio-accessory-speech-module.md
+    - text: LED en knop voor Azure percept-audio
+      url: audio-button-led-behavior.md
+- title: Een oplossing voor een no-code Voice Assistant bouwen
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Een assistent zonder code maken
+      url: tutorial-no-code-speech.md
+  - linkListType: how-to-guide
+    links:
+    - text: Uw Voice Assistant configureren
+      url: how-to-configure-voice-assistant.md
+    - text: Uw Voice Assistant beheren
+      url: how-to-manage-voice-assistant.md
+- title: Geavanceerde ontwikkeling met Azure percept
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Overzicht van geavanceerde ontwikkeling
+      url: overview-advanced-code.md
+  - linkListType: tutorial
+    links:
+    - text: Geavanceerde ontwikkeling met Cloud Services
+      url: advanced-development-cloud.md
+    - text: Geavanceerde ontwikkeling met behulp van lokale hulpprogram ma's
+      url: advanced-development-local.md
+- title: Uw Azure percept DK up-to-date houden
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Overzicht van Azure percept DK update-ervaring
+      url: overview-update-experience.md
+  - linkListType: how-to-guide
+    links:
+    - text: Updates instellen
+      url: how-to-set-up-over-the-air-updates.md
+    - text: Over-the-Air-updates
+      url: how-to-update-over-the-air.md
+    - text: Bijwerken via USB
+      url: how-to-update-via-usb.md

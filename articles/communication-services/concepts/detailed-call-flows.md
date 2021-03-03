@@ -8,12 +8,12 @@ ms.author: nmurav
 ms.date: 12/11/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 1333bd08f8a79969817bcb21aa4580d1994d09ce
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: d2df7255980ca00d405cf80a9fff69ff0511bd17
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99594721"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101659304"
 ---
 # <a name="call-flow-topologies"></a>Topologieën voor oproep stromen
 In dit artikel worden de topologieën van Azure Communication Services-aanroep flow beschreven. Dit is een geweldig artikel om te controleren of u een zakelijke klant bent die communicatie Services integreert in een netwerk dat u beheert. Ga naar de [conceptuele documentatie van oproep stromen](./call-flows.md)voor een inleiding tot communicatie services aanroepen.
@@ -26,7 +26,7 @@ Voordat u de topologie van de aanroep flow bekijkt, definieert u een aantal voor
 
 Een **klant netwerk** bevat netwerk segmenten die u beheert. Dit kan bekabelde en draadloze netwerken binnen uw kantoor of tussen kant oren, data centers en Internet serviceproviders zijn.
 
-Een klant netwerk heeft meestal verschillende netwerk verbindingen met firewalls en/of proxy servers die het beveiligings beleid van uw organisatie afdwingen. We raden u aan een [uitgebreide netwerk beoordeling](https://docs.microsoft.com/microsoftteams/3-envision-evaluate-my-environment) uit te voeren om optimale prestaties en kwaliteit van uw communicatie oplossing te garanderen.
+Een klant netwerk heeft meestal verschillende netwerk verbindingen met firewalls en/of proxy servers die het beveiligings beleid van uw organisatie afdwingen. We raden u aan een [uitgebreide netwerk beoordeling](/microsoftteams/3-envision-evaluate-my-environment) uit te voeren om optimale prestaties en kwaliteit van uw communicatie oplossing te garanderen.
 
 Het **communicatie Services-netwerk** is het netwerk segment dat Azure Communication Services ondersteunt. Dit netwerk wordt beheerd door micro soft en wordt wereld wijd gedistribueerd met randen dicht bij de meeste netwerken van de klant. Dit netwerk is verantwoordelijk voor transport relay, media verwerking voor groeps aanroepen en andere onderdelen die ondersteuning bieden voor uitgebreide realtime media communicatie.
 
@@ -199,4 +199,3 @@ De volgende documenten zijn mogelijk interessant voor u:
 
 - Meer informatie over [oproeptypen](../concepts/voice-video-calling/about-call-types.md)
 - Meer informatie over [Client-serverarchitectuur](./client-and-server-architecture.md)
-

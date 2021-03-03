@@ -1,20 +1,20 @@
 ---
-title: Verbinding maken met Azure Synapse Link (preview) voor Azure Cosmos DB
+title: Verbinding maken met Azure Synapse Link voor Azure Cosmos DB
 description: Een Azure Cosmos DB-database verbinden met een Azure Synapse-werkruimte met behulp van Azure Synapse Link.
 services: synapse-analytics
 author: ArnoMicrosoft
 ms.service: synapse-analytics
 ms.topic: quickstart
 ms.subservice: synapse-link
-ms.date: 04/21/2020
+ms.date: 03/02/2021
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 5316f74ee38f597592ae4582aef31837f0f05fda
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.openlocfilehash: 5850644aac9c3324d9ffb17817195cbaaa6020ae
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98119829"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101667559"
 ---
 # <a name="connect-to-azure-synapse-link-for-azure-cosmos-db"></a>Verbinding maken met Azure Synapse Link voor Azure Cosmos DB
 
@@ -26,9 +26,6 @@ Voordat u een Azure Cosmos DB-database verbindt met uw werkruimte, hebt u het vo
 
 * Een bestaande Azure Cosmos DB-database, of u kunt een nieuw account maken door de stappen te volgen in: [Quickstart: Een Azure Cosmos DB-account beheren](../../cosmos-db/how-to-manage-database-account.md).
 * Een bestaande Azure Synapse-werkruimte, of u kunt een nieuwe werkruimte maken door de stappen te volgen in [Quickstart: Een Synapse-werkruimte maken](../quickstart-create-workspace.md).
-
-> [!IMPORTANT]
-> Azure Synapse Link voor Azure Cosmos DB wordt momenteel ondersteund voor werkruimten waarvoor geen beheerd virtueel netwerk is ingeschakeld.
 
 ## <a name="enable-synapse-link-on-an-azure-cosmos-db-database-account"></a>Synapse Link op een Azure Cosmos DB-database-account inschakelen
 
@@ -70,4 +67,5 @@ Als u met de rechtermuisknop op een container klikt, ziet u een lijst met gebare
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Krijg inzicht in wat wordt ondersteund tussen Azure Synapse en Azure Cosmos DB](./concept-synapse-link-cosmos-db-support.md)
+* [Persoonlijke eind punten configureren voor Azure Cosmos DB-analytische opslag](../cosmos-db/analytical-store-private-endpoints.md)
 * [Leer hoe u de analytische opslag doorzoekt met Spark](./how-to-query-analytical-store-spark.md)

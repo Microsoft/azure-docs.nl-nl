@@ -8,12 +8,12 @@ ms.author: arjagann
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: 762db9d165358f3347fc9b7f3aaaf39f0c762308
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: 0b30cb1767e733861d8418ea29e564bc90a5bc70
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99063193"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101676518"
 ---
 # <a name="make-indexer-connections-through-a-private-endpoint"></a>Indexeer verbindingen maken via een persoonlijk eind punt
 
@@ -47,7 +47,7 @@ De volgende tabel bevat de Azure-resources waarvoor u uitgaande privé-eind punt
 
 U kunt ook een query uitvoeren op de Azure-resources waarvoor uitgaande privé-eindpunt verbindingen worden ondersteund met behulp [van de lijst met ondersteunde api's](/rest/api/searchmanagement/privatelinkresources/listsupported).
 
-In de rest van dit artikel wordt een combi natie van de [Azure cli](https://docs.microsoft.com/cli/azure/) (of [ARMClient](https://github.com/projectkudu/ARMClient) indien gewenst) en [postman](https://www.postman.com/) (of een andere HTTP-client [, zoals uw](https://curl.se/) voor keur), gebruikt om de rest API-aanroepen te demonstreren.
+In de rest van dit artikel wordt een combi natie van de [Azure cli](/cli/azure/) (of [ARMClient](https://github.com/projectkudu/ARMClient) indien gewenst) en [postman](https://www.postman.com/) (of een andere HTTP-client [, zoals uw](https://curl.se/) voor keur), gebruikt om de rest API-aanroepen te demonstreren.
 
 > [!NOTE]
 > De voor beelden in dit artikel zijn gebaseerd op de volgende veronderstellingen:
@@ -69,7 +69,7 @@ Configureer het opslag account zodanig [dat alleen toegang is toegestaan vanuit 
 
 ### <a name="step-1-create-a-shared-private-link-resource-to-the-storage-account"></a>Stap 1: een gedeelde persoonlijke koppelings bron maken naar het opslag account
 
-Als u Azure Cognitive Search wilt aanvragen om een uitgaand privé-eind punt verbinding te maken met het opslag account, maakt u de volgende API-aanroep, bijvoorbeeld met [Azure cli](https://docs.microsoft.com/cli/azure/): 
+Als u Azure Cognitive Search wilt aanvragen om een uitgaand privé-eind punt verbinding te maken met het opslag account, maakt u de volgende API-aanroep, bijvoorbeeld met [Azure cli](/cli/azure/): 
 
 `az rest --method put --uri https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/contoso/providers/Microsoft.Search/searchServices/contoso-search/sharedPrivateLinkResources/blob-pe?api-version=2020-08-01 --body @create-pe.json`
 

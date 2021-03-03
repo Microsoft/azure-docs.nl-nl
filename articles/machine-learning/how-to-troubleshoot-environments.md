@@ -10,12 +10,12 @@ ms.author: sagopal
 ms.date: 12/3/2020
 ms.topic: troubleshooting
 ms.custom: devx-track-python
-ms.openlocfilehash: 7ddd5dec87a122a0b36fee17b5434c8a49dcf434
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 5b2f62e8e04bddadc7068eb75405bcf1568f5713
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881632"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101657295"
 ---
 # <a name="troubleshoot-environment-image-builds"></a>Problemen met omgevings afbeeldingen oplossen
 
@@ -153,8 +153,8 @@ Raadpleeg de volgende scenario's om mogelijke storingen aan de service zijde op 
 
 Mogelijke problemen:
 - De naam van het pad naar het container register is mogelijk niet juist opgelost. Controleer of de naam van de installatie kopie dubbele slashes en de richting van slashes op Linux versus Windows-hosts juist is.
-- Als een container register achter een virtueel netwerk een persoonlijk eind punt in [een niet-ondersteunde regio](/azure/private-link/private-link-overview#availability)gebruikt, configureert u het container register met behulp van het service-eind punt (open bare toegang) vanuit de portal en probeert u het opnieuw.
-- Nadat u het container register achter een virtueel netwerk hebt geplaatst, voert u de [Azure Resource Manager sjabloon](/azure/machine-learning/how-to-enable-virtual-network#azure-container-registry) uit zodat de werk ruimte kan communiceren met het container register exemplaar.
+- Als een container register achter een virtueel netwerk een persoonlijk eind punt in [een niet-ondersteunde regio](../private-link/private-link-overview.md#availability)gebruikt, configureert u het container register met behulp van het service-eind punt (open bare toegang) vanuit de portal en probeert u het opnieuw.
+- Nadat u het container register achter een virtueel netwerk hebt geplaatst, voert u de [Azure Resource Manager sjabloon](./how-to-network-security-overview.md) uit zodat de werk ruimte kan communiceren met het container register exemplaar.
 
 ### <a name="you-get-a-401-error-from-a-workspace-container-registry"></a>Er wordt een 401-fout weer geven in een werkruimte container register
 
@@ -166,7 +166,7 @@ Wanneer er een installatie kopie wordt gemaakt, wordt Conda vergrendeld door de 
 
 ### <a name="your-custom-docker-image-isnt-in-the-registry"></a>Uw aangepaste docker-installatie kopie bevindt zich niet in het REGI ster
 
-Controleer of de [juiste tag](/azure/machine-learning/how-to-use-environments#create-an-environment) wordt gebruikt en dat `user_managed_dependencies = True` . `Environment.python.user_managed_dependencies = True` Hiermee wordt Conda uitgeschakeld en worden de geïnstalleerde pakketten van de gebruiker gebruikt.
+Controleer of de [juiste tag](./how-to-use-environments.md#create-an-environment) wordt gebruikt en dat `user_managed_dependencies = True` . `Environment.python.user_managed_dependencies = True` Hiermee wordt Conda uitgeschakeld en worden de geïnstalleerde pakketten van de gebruiker gebruikt.
 
 ### <a name="you-get-one-of-the-following-common-virtual-network-issues"></a>U krijgt een van de volgende algemene problemen met het virtuele netwerk
 
@@ -184,9 +184,9 @@ Controleer of de [juiste tag](/azure/machine-learning/how-to-use-environments#cr
 
 ### <a name="you-cant-run-experiments-when-storage-has-network-security-enabled"></a>U kunt geen experimenten uitvoeren wanneer de functie netwerk beveiliging is ingeschakeld voor opslag
 
-Als u gebruikmaakt van standaard-docker-installatie kopieën en door gebruikers beheerde afhankelijkheden in te scha kelen, gebruikt u de MicrosoftContainerRegistry-en AzureFrontDoor. FirstParty- [service Tags](/azure/machine-learning/how-to-enable-virtual-network) voor allowlist Azure container Registry en de bijbehorende afhankelijkheden.
+Als u gebruikmaakt van standaard-docker-installatie kopieën en door gebruikers beheerde afhankelijkheden in te scha kelen, gebruikt u de MicrosoftContainerRegistry-en AzureFrontDoor. FirstParty- [service Tags](./how-to-network-security-overview.md) voor allowlist Azure container Registry en de bijbehorende afhankelijkheden.
 
- Zie [virtuele netwerken inschakelen](/azure/machine-learning/how-to-enable-virtual-network#azure-container-registry)voor meer informatie.
+ Zie [virtuele netwerken inschakelen](./how-to-network-security-overview.md)voor meer informatie.
 
 ### <a name="you-need-to-create-an-icm"></a>U moet een ICM maken
 

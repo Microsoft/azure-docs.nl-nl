@@ -5,14 +5,14 @@ author: TheovanKraay
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: troubleshooting
-ms.date: 12/01/2020
+ms.date: 03/02/2021
 ms.author: thvankra
-ms.openlocfilehash: 6d9a74729768a326379b5efddb864a4fee02fa59
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: f9b6e586879b8697660ced7aa6f1e75083e3ee29
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493210"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101658568"
 ---
 # <a name="troubleshoot-common-issues-in-azure-cosmos-db-cassandra-api"></a>Veelvoorkomende problemen in Azure Cosmos DB Cassandra-API oplossen
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -32,7 +32,7 @@ Enkele populaire oorzaken en oplossingen zijn als volgt:
 Deze fout kan worden weer geven: `Cannot connect to any host, scheduling retry in 600000 milliseconds` . 
 
 ### <a name="solution"></a>Oplossing
-Dit kan leiden tot een SNAT-uitputting aan de client zijde. Volg de stappen op [SNAT voor uitgaande verbindingen](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) om dit probleem op te lossen. Dit kan ook een probleem met een niet-actieve time-out zijn waarbij de Azure-load balancer standaard 4 minuten time-out voor inactiviteit heeft. Zie de documentatie in de [time-out voor inactiviteit van Load Balancer](../load-balancer/load-balancer-tcp-idle-timeout.md?tabs=tcp-reset-idle-portal). Schakel TCP-keep in voor de instellingen van het stuur programma (Zie [hieronder](#enable-keep-alive-for-java-driver)) en stel het `keepAlive` interval van het besturings systeem in op minder dan 4 minuten.
+Dit kan leiden tot een SNAT-uitputting aan de client zijde. Volg de stappen op [SNAT voor uitgaande verbindingen](../load-balancer/load-balancer-outbound-connections.md) om dit probleem op te lossen. Dit kan ook een probleem met een niet-actieve time-out zijn waarbij de Azure-load balancer standaard 4 minuten time-out voor inactiviteit heeft. Zie de documentatie in de [time-out voor inactiviteit van Load Balancer](../load-balancer/load-balancer-tcp-idle-timeout.md?tabs=tcp-reset-idle-portal). Schakel TCP-keep in voor de instellingen van het stuur programma (Zie [hieronder](#enable-keep-alive-for-java-driver)) en stel het `keepAlive` interval van het besturings systeem in op minder dan 4 minuten.
 
  
 

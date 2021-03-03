@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 03/02/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ead05598c6ca4d096e1a68c8d640938ecd771c2
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 42ed42a1fc9a2750cc928b5fd03eb4b32f770276
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97355508"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101644082"
 ---
 # <a name="identity-providers-for-external-identities"></a>Id-providers voor externe identiteiten
 
@@ -26,10 +26,7 @@ U kunt gebruikers echter in staat stellen zich aan te melden met verschillende i
 
 - **Google**: met Google Federation kunnen externe gebruikers uitnodigingen van u inwisselen door zich aan te melden bij uw apps met hun eigen Gmail-accounts. Google Federation kan ook worden gebruikt in uw Self-service registratie gebruikers stromen.
    > [!IMPORTANT]
-   > **Vanaf 4 januari 2021** wordt de [ondersteuning voor webweergave van de WEBMODULE voor webmeldingen afgemeld](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). Als u gebruikmaakt van Google Federation of Self-Service-aanmelding bij Gmail, moet u [uw line-of-business-toepassingen testen voor compatibiliteit](google-federation.md#deprecation-of-webview-sign-in-support).
-
-   > [!NOTE]
-   > Als een gebruikers stroom is gekoppeld aan een app en u een uitnodiging voor een gebruiker naar deze app stuurt, kan de gebruiker in het huidige selfservice-aanmeldings voorbeeld geen Gmail-account gebruiken om de uitnodiging te inwisselen. Als tijdelijke oplossing kan de gebruiker het aanmeldings proces voor de self-service door lopen. Of ze kunnen de uitnodiging inwisselen door toegang te krijgen tot een andere app of door gebruik te maken van de portal mijn apps op https://myapps.microsoft.com .
+   > **Vanaf 4 januari 2021** wordt [ondersteuning voor WebView-aanmelding afgeschaft](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html) in Google. Als u gebruikmaakt van Google-federatie of selfserviceregistratie met Gmail, moet u [de compatibiliteit van uw systeemeigen Line-of-Business-toepassingen testen](google-federation.md#deprecation-of-webview-sign-in-support).
 
 - **Facebook**: wanneer u een app bouwt, kunt u self-service registratie configureren en Facebook-Federatie inschakelen zodat gebruikers zich kunnen aanmelden voor uw app met hun eigen Facebook-accounts. Facebook kan alleen worden gebruikt voor Self-service-aanmeld gebruikers stromen en is niet beschikbaar als aanmeldings optie wanneer gebruikers uitnodigingen van u inwisselen.
 

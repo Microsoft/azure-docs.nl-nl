@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 02/09/2021
-ms.openlocfilehash: 75ea473c8669e9d50d2e9971a20a5fc1c3070779
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 7a6213528f204ac31fbcf8a29625787fc73d5153
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100368010"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101656802"
 ---
 # <a name="configure-azure-private-link-for-an-azure-machine-learning-workspace"></a>Een persoonlijke Azure-koppeling configureren voor een Azure Machine Learning-werk ruimte
 
@@ -172,7 +172,12 @@ Raadpleeg de [virtual machines documentatie](../virtual-machines/index.yml)voor 
 
 ## <a name="enable-public-access"></a>Open bare toegang inschakelen
 
-Nadat u een werk ruimte met een persoonlijk eind punt hebt geconfigureerd, kunt u eventueel open bare toegang tot de werk ruimte inschakelen. Als u dit doet, wordt het persoonlijke eind punt niet verwijderd. Hiermee wordt open bare toegang tot de persoonlijke toegang ingeschakeld. Als u open bare toegang tot een werk ruimte met persoonlijke koppelingen wilt inschakelen, gebruikt u de volgende stappen:
+In sommige gevallen wilt u mogelijk toestaan dat iemand verbinding maakt met uw beveiligde werk ruimte via een openbaar eind punt, in plaats van via het VNet. Nadat u een werk ruimte met een persoonlijk eind punt hebt geconfigureerd, kunt u eventueel open bare toegang tot de werk ruimte inschakelen. Als u dit doet, wordt het persoonlijke eind punt niet verwijderd. Alle communicatie tussen onderdelen achter het VNet is nog steeds beveiligd. Hiermee wordt alleen open bare toegang tot de werk ruimte ingeschakeld, naast de persoonlijke toegang via het VNet.
+
+> [!WARNING]
+> Wanneer u verbinding maakt via het open bare eind punt, hebben sommige functies van Studio geen toegang tot uw gegevens. Dit probleem treedt op wanneer de gegevens worden opgeslagen in een service die is beveiligd achter het VNet. Bijvoorbeeld een Azure Storage-account.
+
+Als u open bare toegang tot een werk ruimte met persoonlijke koppelingen wilt inschakelen, gebruikt u de volgende stappen:
 
 # <a name="python"></a>[Python](#tab/python)
 

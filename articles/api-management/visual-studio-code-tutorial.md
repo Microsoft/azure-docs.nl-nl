@@ -6,16 +6,16 @@ author: dlepow
 ms.author: apimpm
 ms.topic: tutorial
 ms.date: 12/10/2020
-ms.openlocfilehash: 6cf5c6f716912689b39264ed71f6a7c55f944ad2
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
-ms.translationtype: HT
+ms.openlocfilehash: 0dea8e43d5f09b84c5795bc257cf3331ad919fcb
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97410039"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101649543"
 ---
 # <a name="tutorial-use-the-api-management-extension-for-visual-studio-code-to-import-and-manage-apis"></a>Zelfstudie: Gebruik de API Management-extensie voor Visual Studio Code om API's te importeren en te beheren
 
-In deze zelfstudie leert u hoe u de preview-versie van de API Management-extensie voor Visual Studio Code gebruikt voor algemene bewerkingen in API Management. Gebruik de vertrouwde Visual Studio Code-omgeving om API's te importeren, te testen en te beheren.
+In deze zelf studie leert u hoe u de API Management-extensie voor Visual Studio code kunt gebruiken voor algemene bewerkingen in API Management. Gebruik de vertrouwde Visual Studio Code-omgeving om API's te importeren, te testen en te beheren.
 
 In deze zelfstudie leert u procedures om het volgende te doen:
 
@@ -32,7 +32,7 @@ Raadpleeg de zelfstudies voor API Management met behulp van de [Azure-portal](im
 
 ## <a name="prerequisites"></a>Vereisten
 - Kennis van de [terminologie van Azure API Management](api-management-terminology.md)
-- Zorg ervoor dat u [Visual Studio Code](https://code.visualstudio.com/) en de nieuwste [Azure API Management-extensie voor Visual Studio code (preview)](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-apimanagement&ssr=false#overview) hebt geïnstalleerd
+- Zorg ervoor dat u [Visual Studio code](https://code.visualstudio.com/) en de nieuwste [Azure API Management-extensie voor Visual Studio code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-apimanagement&ssr=false#overview) hebt geïnstalleerd
 - [Een API Management-exemplaar maken](vscode-create-service-instance.md)
 
 ## <a name="import-an-api"></a>Een API importeren

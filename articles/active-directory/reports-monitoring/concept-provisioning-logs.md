@@ -17,12 +17,12 @@ ms.date: 1/29/2021
 ms.author: markvi
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad69df37d2635156873dc59d6fbf700a67ade548
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 284b554581534a8493225fba0b70b074fb7dd982
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99091929"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101651934"
 ---
 # <a name="overview-of-provisioning-logs-in-the-azure-portal-preview"></a>Overzicht van het inrichtings logboek in de Azure Portal (preview-versie)
 
@@ -60,8 +60,8 @@ Als u het rapport inrichtings activiteit wilt weer geven, moet aan uw Tenant een
 Klanten kunnen op vier manieren communiceren met de inrichtings logboeken:
 
 - Toegang tot de logboeken vanuit de Azure Portal, zoals beschreven in de volgende sectie.
-- De inrichtings logboeken streamen naar [Azure monitor](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-log-analytics). Met deze methode kunt u uitgebreide gegevens retentie en aangepaste Dash boards, waarschuwingen en query's bouwen.
-- Query's uitvoeren op de [Microsoft Graph-API](https://docs.microsoft.com/graph/api/resources/provisioningobjectsummary?view=graph-rest-beta) voor de inrichtings Logboeken.
+- De inrichtings logboeken streamen naar [Azure monitor](../app-provisioning/application-provisioning-log-analytics.md). Met deze methode kunt u uitgebreide gegevens retentie en aangepaste Dash boards, waarschuwingen en query's bouwen.
+- Query's uitvoeren op de [Microsoft Graph-API](/graph/api/resources/provisioningobjectsummary?view=graph-rest-beta) voor de inrichtings Logboeken.
 - De inrichtings logboeken worden gedownload als een CSV-of JSON-bestand.
 
 ## <a name="access-the-logs-from-the-azure-portal"></a>Toegang tot de logboeken vanuit de Azure Portal
@@ -207,7 +207,7 @@ Het JSON-bestand wordt gedownload in de minified-indeling om de download grootte
 
 Hier volgen enkele voorbeeld opdrachten voor het gebruik van het JSON-bestand met behulp van Power shell. U kunt elke programmeer taal gebruiken waarmee u vertrouwd bent.  
 
-Lees eerst [het JSON-bestand](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-7.1) door deze opdracht uit te voeren:
+Lees eerst [het JSON-bestand](/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-7.1) door deze opdracht uit te voeren:
 
 ` $JSONContent = Get-Content -Path "<PATH TO THE PROVISIONING LOGS FILE>" | ConvertFrom-JSON`
 

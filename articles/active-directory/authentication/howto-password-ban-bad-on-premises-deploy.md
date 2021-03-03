@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f17f6eb913d1ea54e8db6acd369d165553e16ec
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: c8cae19bd07e1cc87a0aaa25e47cf5f431d566ba
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100091037"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101653810"
 ---
 # <a name="plan-and-deploy-on-premises-azure-active-directory-password-protection"></a>On-premises Azure Active Directory wachtwoord beveiliging plannen en implementeren
 
@@ -102,7 +102,8 @@ De volgende vereisten zijn van toepassing op de Azure AD-agent voor wachtwoord b
 
 * Op alle computers waarop de Azure AD-agent software voor wachtwoord beveiliging wordt geïnstalleerd, moet Windows Server 2012 of hoger worden uitgevoerd, met inbegrip van Windows Server Core-edities.
     * Het Active Directory domein of forest hoeft niet te zijn op het Windows Server 2012-domein functionaliteits niveau (DFL) of forestfunctionaliteitsniveau (FFL). Zoals vermeld in [ontwerp principes](concept-password-ban-bad-on-premises.md#design-principles), is er geen mini maal DFL of FFL vereist voor het uitvoeren van de DC-agent of proxy software.
-* Op alle computers waarop de Azure AD-agent voor wachtwoord beveiliging wordt uitgevoerd, moet .NET 4,5 zijn geïnstalleerd.
+* Op alle computers waarop de Azure AD-proxy service voor wachtwoord beveiliging wordt geïnstalleerd, moet .NET 4.7.2 zijn geïnstalleerd.
+    * Als .NET 4.7.2 nog niet is geïnstalleerd, downloadt en voert u het installatie programma uit dat is gevonden op [het .NET Framework 4.7.2 offline-installatie programma voor Windows](https://support.microsoft.com/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2).
 * Een Active Directory domein waarop de Azure AD-service voor wachtwoord beveiliging van de domein controller wordt uitgevoerd, moet Distributed File System replicatie (DFSR) voor SYSVOL-replicatie gebruiken.
    * Als DFSR nog niet wordt gebruikt voor uw domein, moet u migreren voordat u Azure AD-wachtwoord beveiliging installeert. Zie [SYSVOL-replicatie migratie handleiding: FRS naar DSF-replicatie](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd640019(v=ws.10)) voor meer informatie
 
@@ -122,8 +123,8 @@ De volgende vereisten zijn van toepassing op de Azure AD-proxy service voor wach
     > [!NOTE]
     > De implementatie van de Azure AD-service voor wachtwoord beveiliging is een verplichte vereiste voor het implementeren van Azure AD-wachtwoord beveiliging, zelfs als de domein controller mogelijk uitgaande directe Internet connectiviteit heeft.
 
-* Op alle computers waarop de Azure AD-proxy service voor wachtwoord beveiliging wordt geïnstalleerd, moet .NET 4,7 zijn geïnstalleerd.
-    * .NET 4,7 moet al zijn geïnstalleerd op een volledig bijgewerkte Windows-Server. Als dat nodig is, downloadt en voert u het installatie programma uit dat is gevonden op [het .NET Framework 4,7 offline-installatie programma voor Windows](https://support.microsoft.com/help/3186497/the-net-framework-4-7-offline-installer-for-windows).
+* Op alle computers waarop de Azure AD-proxy service voor wachtwoord beveiliging wordt geïnstalleerd, moet .NET 4.7.2 zijn geïnstalleerd.
+    * Als .NET 4.7.2 nog niet is geïnstalleerd, downloadt en voert u het installatie programma uit dat is gevonden op [het .NET Framework 4.7.2 offline-installatie programma voor Windows](https://support.microsoft.com/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2).
 * Alle computers die de Azure AD-proxy service voor wachtwoord beveiliging hosten, moeten worden geconfigureerd om domein controllers de mogelijkheid te geven zich aan te melden bij de proxy service. Deze mogelijkheid wordt bepaald via de toewijzing van de bevoegdheid toegang tot deze computer vanaf het netwerk.
 * Alle computers die de Azure AD-proxy service voor wachtwoord beveiliging hosten, moeten zo worden geconfigureerd dat HTTP-verkeer van uitgaande TLS 1,2 is toegestaan.
 * Een *globale beheerder* of *beveiligings beheerders* account voor het registreren van de Azure AD-service voor wachtwoord beveiliging proxy en het forest met Azure AD.
@@ -157,7 +158,7 @@ In de volgende sectie installeert u de Azure AD-wachtwoord beveiliging DC-agente
 Kies een of meer servers om de Azure AD-proxy service voor wachtwoord beveiliging te hosten. De volgende overwegingen zijn van toepassing op de server (s):
 
 * Elke service kan alleen wachtwoord beleid bieden voor één forest. De hostmachine moet lid zijn van een domein in dat forest.
-* Het wordt ondersteund om de proxy van de service te installeren in de hoofdmap of in de onderliggende domeinen of een combi natie hiervan.
+* U kunt de proxy service installeren in de hoofdmap of in het onderliggende domein of een combi natie hiervan.
 * U hebt een netwerk verbinding nodig tussen ten minste één domein controller in elk domein van het forest en een proxy server voor wachtwoord beveiliging.
 * U kunt de Azure AD-proxy service voor wachtwoord beveiliging uitvoeren op een domein controller om te testen, maar die domein controller vereist vervolgens Internet verbinding. Deze connectiviteit kan een beveiligings probleem zijn. We raden u aan deze configuratie alleen te testen.
 * We raden ten minste twee Azure AD-wachtwoord beveiligings proxy servers per forest aan voor redundantie, zoals vermeld in de vorige sectie over [overwegingen met betrekking tot hoge Beschik baarheid](#high-availability-considerations).
@@ -200,7 +201,7 @@ Voer de volgende stappen uit om de Azure AD-proxy service voor wachtwoord beveil
 
     Deze cmdlet vereist *globale beheerder* of *beveiligings beheerder* referenties voor uw Azure-Tenant. Deze cmdlet moet ook worden uitgevoerd met een account met lokale Administrator bevoegdheden.
 
-    Wanneer deze opdracht eenmaal is uitgevoerd voor een Azure AD-proxy service voor wachtwoord beveiliging, worden er aanvullende aanroepen van de functie geslaagd, maar dit is niet nodig.
+    Wanneer deze opdracht eenmaal is uitgevoerd, worden extra aanroepen ook uitgevoerd, maar zijn ze niet nodig.
 
     De `Register-AzureADPasswordProtectionProxy` cmdlet ondersteunt de volgende drie verificatie modi. De eerste twee modi ondersteunen Azure AD Multi-Factor Authentication, maar de derde modus niet.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/27/2021
 ms.author: jeedes
-ms.openlocfilehash: e1cf12d676de84bc18a123fbdf05b1170725eda8
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: 3c1ec38e792987f4bd7208c3bf57a882a05f4f46
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99072877"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101648047"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-samsung-knox-and-business-services"></a>Zelf studie: Azure Active Directory SSO-integratie (single sign-on) met Samsung Knox en Business Services
 
@@ -31,7 +31,7 @@ In deze zelf studie leert u hoe u Samsung Knox en Business Services integreert m
 U hebt het volgende nodig om aan de slag te gaan:
 
 * Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
-* Samsung Knox en Business Services-abonnement voor eenmalige aanmelding (SSO) ingeschakeld.
+* Een Samsung Knox-account.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -55,7 +55,7 @@ Als u de integratie van Samsung Knox en Business Services wilt configureren in a
 
 ## <a name="configure-and-test-azure-ad-sso-for-samsung-knox-and-business-services"></a>Azure AD SSO configureren en testen voor Samsung Knox en Business Services
 
-Azure AD SSO configureren en testen met Samsung Knox en Business Services met behulp van een test gebruiker met de naam **B. Simon**. Voor het werken met SSO moet u een koppelings relatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Samsung Knox en Business Services.
+Azure AD SSO configureren en testen met Samsung Knox en Business Services met behulp van een test gebruiker met de naam **B. Simon**. Voor het werken met SSO moet u een koppelings relatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in [SamsungKnox.com](https://samsungknox.com/).
 
 Als u Azure AD SSO wilt configureren en testen met Samsung Knox en Business Services, voert u de volgende stappen uit:
 
@@ -78,7 +78,10 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
 
-    In het tekstvak **Aanmeldings-URL** typt u de URL: `https://www.samsungknox.com`
+    * In het tekstvak **Aanmeldings-URL** typt u de URL: `https://www.samsungknox.com`
+    * Typ in het tekstvak **URL van antwoord (ASSERTION Consumer Service URL)** de URL: `https://central.samsungknox.com/ams/ad/saml/acs`
+    
+    ![Basis-SAML-configuratie waarden](https://docs.samsungknox.com/assets/merge/ad-sso/basic-saml-configuration.png)
 
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u in de sectie **SAML-handtekeningcertificaat** op de kopieerknop om de **URL voor federatieve metagegevens van de app** te kopiëren en slaat u deze op uw computer op.
 
@@ -110,7 +113,7 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
 
 ## <a name="configure-samsung-knox-and-business-services-sso"></a>Samsung Knox en Business Services SSO configureren
 
-1. Meld u in een ander webbrowser venster aan bij uw bedrijfs site met Samsung Knox en Business Services als beheerder.
+1. Meld u in een ander browser venster aan bij [SamsungKnox.com](https://samsungknox.com/) als beheerder.
 
 1. Klik op de **avatar** in de rechter bovenhoek.
 
@@ -118,7 +121,7 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
 
 1. Klik in de zijbalk links op **Active Directory-instellingen** en voer de volgende stappen uit.
 
-    ![ACTIVE DIRECTORY-INSTELLINGEN](./media/samsung-knox-and-business-services-tutorial/sso-settings.png)
+    ![ACTIVE DIRECTORY-INSTELLINGEN](https://docs.samsungknox.com/assets/merge/ad-sso/ad-5.png)
 
     a. Plak in het tekstvak **id (Entiteits-ID)** de **id** -waarde die u hebt ingevoerd in de Azure Portal.
 
@@ -128,21 +131,18 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
 
 ### <a name="create-samsung-knox-and-business-services-test-user"></a>Test gebruiker voor Samsung Knox en Business Services maken
 
-In deze sectie maakt u een gebruiker met de naam Julia Simon in Samsung Knox en Business Services. Werk samen met het [ondersteunings team voor Samsung Knox en Business Services](mailto:noreplyk.sec@samsung.com) om de gebruikers toe te voegen aan het Samsung Knox-en Business Services-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
+In deze sectie maakt u een gebruiker met de naam Julia Simon in Samsung Knox en Business Services. Raadpleeg de beheerders handleidingen voor de [Knox configure](https://docs.samsungknox.com/admin/knox-configure/Administrators.htm) of [Knox Mobile Enrollment](https://docs.samsungknox.com/admin/knox-mobile-enrollment/kme-add-an-admin.htm) voor instructies over het uitnodigen van een subbeheerder of test gebruiker naar uw Samsung Knox-organisatie. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de aanmeldings-URL van Samsung Knox en Business Services, waar u de aanmeldings stroom kunt initiëren. 
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar [SamsungKnox.com](https://samsungknox.com/), waar u de aanmeldings stroom kunt initiëren. 
 
-* Ga rechtstreeks naar de aanmeldings-URL van Samsung Knox en Business Services en begin met de aanmeldings stroom.
+* Ga rechtstreeks naar [SamsungKnox.com](https://samsungknox.com/) en start de aanmeldings stroom vanaf daar.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Samsung Knox en Business Services in de mijn apps klikt, wordt dit omgeleid naar de aanmeldings-URL van Samsung Knox en Business Services. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
-
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Samsung Knox en Business Services in de mijn apps klikt, wordt dit doorgestuurd naar [SamsungKnox.com](https://samsungknox.com/). Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Wanneer u Samsung Knox en Business Services hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+Wanneer u Samsung Knox en Business Services hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

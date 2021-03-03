@@ -11,12 +11,12 @@ ms.author: shipatel
 author: shivp950
 ms.reviewer: larryfr
 ms.date: 05/11/2020
-ms.openlocfilehash: 1fd177273c9dafb04add64d8a8bfef1d81cc65d0
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 06b871d29c26241c38be27c4ace8ab7461834fd1
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93319321"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101655714"
 ---
 # <a name="trigger-applications-processes-or-cicd-workflows-based-on-azure-machine-learning-events-preview"></a>Toepassingen, processen of CI/CD-werk stromen activeren op basis van Azure Machine Learning gebeurtenissen (preview)
 
@@ -29,9 +29,6 @@ Wanneer u Event Grid moet gebruiken voor door gebeurtenis gestuurde acties:
 * Een Azure-functie gebruiken nadat een model is geregistreerd
 * Gebeurtenissen streamen van Azure Machine Learning naar verschillende eind punten
 * Een ML-pijp lijn activeren als er een drift wordt gedetecteerd
-
-> [!NOTE] 
-> Momenteel worden runStatusChanged-gebeurtenissen alleen geactiveerd wanneer de uitvoerings status is **mislukt**
 
 ## <a name="prerequisites"></a>Vereisten
 Als u Event Grid wilt gebruiken, moet u Inzender of eigenaar toegang hebben tot de Azure Machine Learning-werk ruimte waarvoor u gebeurtenissen gaat maken.
@@ -84,7 +81,7 @@ Abonnementen voor Azure Machine Learning gebeurtenissen worden beveiligd door Az
   | `Microsoft.MachineLearningServices.DatasetDriftDetected` | `datadrift/{data.DataDriftId}/run/{data.RunId}` | `datadrift/4e694bf5-712e-4e40-b06a-d2a2755212d4/run/my_driftrun1_1550564444_fbbcdc0f` |
   | `Microsoft.MachineLearningServices.RunStatusChanged` | `experiments/{ExperimentId}/runs/{RunId}` | `experiments/b1d7966c-f73a-4c68-b846-992ace89551f/runs/my_exp1_1554835758_38dbaa94` | 
 
-+ **Geavanceerd filteren** : Azure Event grid ondersteunt ook geavanceerde filtering op basis van het gepubliceerde gebeurtenis schema. Details van Azure Machine Learning gebeurtenis schema vindt u in [Azure Event grid-gebeurtenis schema voor Azure machine learning](../event-grid/event-schema-machine-learning.md).  Voor beelden van geavanceerde filters die u kunt uitvoeren zijn:
++ **Geavanceerd filteren**: Azure Event grid ondersteunt ook geavanceerde filtering op basis van het gepubliceerde gebeurtenis schema. Details van Azure Machine Learning gebeurtenis schema vindt u in [Azure Event grid-gebeurtenis schema voor Azure machine learning](../event-grid/event-schema-machine-learning.md).  Voor beelden van geavanceerde filters die u kunt uitvoeren zijn:
 
   Voor `Microsoft.MachineLearningServices.ModelRegistered` gebeurtenis: als u de label waarde van het model wilt filteren.
 
@@ -120,7 +117,7 @@ Met Azure Event Grid kunnen klanten ongekoppelde bericht-handlers bouwen, die ku
 
     ![select-events-in-workspace.png](./media/how-to-use-event-grid/select-event.png)
 
-1. Selecteer het gebeurtenis type dat u wilt gebruiken. De volgende scherm afbeelding is bijvoorbeeld geselecteerd __model geregistreerd__ , __model geïmplementeerd__ , __uitvoering voltooid__ en gegevensset- __drift gedetecteerd__ :
+1. Selecteer het gebeurtenis type dat u wilt gebruiken. De volgende scherm afbeelding is bijvoorbeeld geselecteerd __model geregistreerd__, __model geïmplementeerd__, __uitvoering voltooid__ en gegevensset- __drift gedetecteerd__:
 
     ![Add-Event-type](./media/how-to-use-event-grid/add-event-type-updated.png)
 

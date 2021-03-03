@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 10/24/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 128e053016faf3ed2a9c53ad21f35a13f3ac1265
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 4abef9c848a32d9fa6a34eabe407c4d10f913797
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99258164"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101643793"
 ---
 # <a name="header-based-authentication-for-single-sign-on-with-application-proxy-and-pingaccess"></a>Op headers gebaseerde verificatie voor eenmalige aanmelding met de toepassingsproxy en PingAccess
 
@@ -175,7 +175,8 @@ Deze gegevens verzamelen:
 Met optionele claims kunt u Standard-maar niet-inbegrepen standaard claims toevoegen die elke gebruiker en Tenant heeft. U kunt optionele claims voor uw toepassing configureren door het toepassings manifest te wijzigen. Zie het [artikel over het Azure AD-toepassings manifest](../develop/reference-app-manifest.md) voor meer informatie
 
 Voor beeld om e-mail adres op te nemen in de access_token die PingAccess worden gebruikt:
-```
+
+```json
     "optionalClaims": {
         "idToken": [],
         "accessToken": [

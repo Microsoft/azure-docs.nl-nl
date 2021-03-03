@@ -5,13 +5,13 @@ author: cynthn
 ms.author: cynthn
 ms.service: virtual-machines
 ms.topic: conceptual
-ms.date: 05/10/2019
-ms.openlocfilehash: a0ea9a0871dd57088473999b28553258ff210038
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.date: 02/18/2021
+ms.openlocfilehash: 6601cd31cf6e332bf292cd887b498a92946d8af7
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628761"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101668296"
 ---
 # <a name="availability-options-for-virtual-machines-in-azure"></a>Beschikbaarheidsopties voor virtuele machines in Azure
 
@@ -52,6 +52,10 @@ Met behulp van schaalsets voor virtuele Azure-machines kunt u een groep VM's met
 **Fout domeinen en update domeinen**
 
 Virtuele-machine schaal sets vereenvoudigen het ontwerpen voor hoge Beschik baarheid door het uitlijnen van fout domeinen en update domeinen. U hoeft alleen het aantal fout domeinen voor de schaalset te definiëren. Het aantal fout domeinen dat beschikbaar is voor de schaal sets kan per regio verschillen. Zie [de beschik baarheid van virtuele machines in azure beheren](./manage-availability.md).
+
+**Orchestration-modi voor schaal sets**
+
+Met de indelings modi voor virtuele-machine schaal sets kunt u meer controle over de manier waarop exemplaren van virtuele machines worden beheerd door de schaalset. U kunt een uniforme of flexibele Orchestration-modus inschakelen in uw schaalset. Uniforme indeling is geoptimaliseerd voor grootschalige workloads met een hoge schaal met identieke exemplaren. Flexibele indeling (preview) is bedoeld voor hoge Beschik baarheid op schaal met identieke of meerdere typen virtuele machines. Meer informatie over deze [Orchestration-modi](./virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes.md) en hoe u deze kunt inschakelen.
 
 
 ## <a name="availability-sets"></a>Beschikbaarheidssets

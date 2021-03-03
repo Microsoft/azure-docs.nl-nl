@@ -6,7 +6,7 @@
   items:
     - name: Wat is de Data Science Virtual Machine (DSVM)?
       href: overview.md
-    - name: Hulpprogramma's die zijn opgenomen in de Data Science Virtual Machine
+    - name: Hulpprogram ma's in de Data Science Virtual Machine
       href: tools-included.md
 - name: Snelstartgidsen
   expanded: true

@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 8dc07a3aa954a74ba594eb99da1ea3ee59610c9b
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 56d9c621579e19cf2c32562560e40fe42ff3989b
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98678318"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101677507"
 ---
 # <a name="query-json-files-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Een query uitvoeren op JSON-bestanden met serverloze SQL-groep in azure Synapse Analytics
 
@@ -126,7 +126,7 @@ De query voorbeelden lezen *JSON* -bestanden met documenten met de volgende stru
 
 ### <a name="query-json-files-using-json_value"></a>Een query uitvoeren op JSON-bestanden met JSON_VALUE
 
-De onderstaande query laat zien hoe u [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) kunt gebruiken om scalaire waarden (titel, uitgever) op te halen uit een JSON-document:
+De onderstaande query laat zien hoe u [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?view=azure-sqldw-latest&preserve-view=true) kunt gebruiken om scalaire waarden (titel, uitgever) op te halen uit een JSON-document:
 
 ```sql
 select
@@ -146,7 +146,7 @@ order by JSON_VALUE(doc, '$.geo_id') desc
 
 ### <a name="query-json-files-using-openjson"></a>Een query uitvoeren op JSON-bestanden met openjson
 
-De volgende query maakt gebruik van [openjson](/sql/t-sql/functions/openjson-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). Er worden COVID statistieken opgehaald die zijn gerapporteerd in Servië:
+De volgende query maakt gebruik van [openjson](/sql/t-sql/functions/openjson-transact-sql?view=azure-sqldw-latest&preserve-view=true). Er worden COVID statistieken opgehaald die zijn gerapporteerd in Servië:
 
 ```sql
 select

@@ -1,0 +1,76 @@
+### YamlMime:Landing
+title: Documentatie over het bijwerken van apparaten voor IoT Hub
+summary: Update van het apparaat voor IoT Hub is een service waarmee u over-the-Air-updates (OTA) kunt implementeren op uw IoT-apparaten.
+metadata:
+  title: Documentatie over het bijwerken van apparaten voor IoT Hub
+  description: Update van het apparaat voor IoT Hub is een service waarmee u over-the-Air-updates (OTA) kunt implementeren op uw IoT-apparaten.
+  services: iot-hub
+  ms.service: iot-hub
+  ms.topic: landing-page
+  author: philmea
+  ms.author: philmea
+  manager: philmea
+  ms.date: 2/17/2021
+  ms.openlocfilehash: 2b47f8b51cf4150659c1d5b8ed1dc145997252ef
+  ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+  ms.translationtype: MT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 03/02/2021
+  ms.locfileid: "101665760"
+landingContent:
+- title: Over het bijwerken van het apparaat
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is apparaat bijwerken voor IoT Hub?
+      url: understand-device-update.md
+  - linkListType: concept
+    links:
+    - text: Het gebruik van Plug en Play voor het bijwerken van apparaten
+      url: device-update-plug-and-play.md
+    - text: De verificatie en autorisatie van het apparaat bijwerken
+      url: device-update-control-access.md
+    - text: Informatie over de Update Agent van het apparaat
+      url: device-update-agent-overview.md
+    - text: Informatie over het importeren van het apparaat bijwerken
+      url: import-concepts.md
+    - text: Informatie over update groepen voor apparaten
+      url: device-update-groups.md
+- title: Verken met de zelf studies
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Apparaat bijwerken op Raspberry pi
+      url: device-update-raspberry-pi.md
+  - linkListType: tutorial
+    links:
+    - text: Apparaat bijwerken op een simulator
+      url: device-update-simulator.md
+  - linkListType: tutorial
+    links:
+    - text: Apparaat bijwerken op Ubuntu Server 18,04 x64-pakket agent
+      url: device-update-ubuntu-agent.md
+- title: Meer informatie over het bijwerken van apparaten
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Een update account voor een apparaat maken
+      url: create-device-update-account.md
+  - linkListType: how-to-guide
+    links:
+    - text: Een update importeren
+      url: import-update.md
+  - linkListType: how-to-guide
+    links:
+    - text: Een update groep maken
+      url: create-update-group.md
+  - linkListType: how-to-guide
+    links:
+    - text: Een update implementeren
+      url: deploy-update.md
+- title: Ontwikkelaarsgids
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Update Agent voor apparaten bouwen, uitvoeren en wijzigen
+      url: device-update-agent-provisioning.md

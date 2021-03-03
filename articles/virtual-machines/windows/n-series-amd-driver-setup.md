@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 12/4/2019
 ms.author: vikancha
-ms.openlocfilehash: b62095a3dc48480d8b1d33328d2d0dc25470d763
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 78971a92f1815236bd4b360e8df01b02b4c40626
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461087"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101677221"
 ---
 # <a name="install-amd-gpu-drivers-on-n-series-vms-running-windows"></a>AMD GPU-Stuur Programma's installeren op Vm's met N-serie waarop Windows wordt uitgevoerd
 
@@ -31,7 +31,13 @@ Zie [GPU Windows VM-grootten](../sizes-gpu.md?toc=/azure/virtual-machines/window
 
 | Besturingssysteem | Stuurprogramma |
 | -------- |------------- |
-| Windows 10 Enter prise multi-session-build 1903 <br/><br/>Windows 10-build 1809<br/><br/>Windows Server 2016<br/><br/>Windows Server 2019 | [20. q 1.17](https://download.microsoft.com/download/d/e/f/def0fb44-15ab-4b83-959a-8094eb9d0dfe/AMD-Azure-NVv4-Driver-20Q1-Hotfix3.exe) (. exe) |
+| Windows 10 Enter prise multi-session-build 1909 <br/><br/>Windows 10-build 1909<br/><br/>Windows Server 2016<br/><br/>Windows Server 2019 | [20. Q4](https://download.microsoft.com/download/f/1/6/f16e6275-a718-40cd-a366-9382739ebd39/AMD-Azure-NVv4-Driver-20Q4.exee) (. exe) |
+
+ > [!NOTE]
+   >  Als u build 1903/1909 gebruikt, moet u mogelijk het volgende groeps beleid bijwerken voor optimale prestaties. Deze wijzigingen zijn niet nodig voor andere Windows-builds.
+   >  
+   >  [Computer configuratie->beleid->Windows-instellingen: >Beheersjablonen->Windows-onderdelen->Extern bureaublad-services->Extern bureaublad sessiemap->externe sessie omgeving], stel het beleid in [gebruik het WDDM-stuur programma voor het weer geven van Extern bureaublad-verbindingen] in op uitgeschakeld.
+   >  
 
 
 ## <a name="driver-installation"></a>Installatie van Stuur Programma's

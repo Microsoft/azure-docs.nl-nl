@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66958e275a6dee13244f0f283b1ee1dbb5d40470
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: ee392666a6c6807497eeac2a2291dac915c4e136
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101093456"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101644303"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Aanmelden bij een virtuele Windows-machine in azure met Azure Active Directory authenticatie (preview-versie)
 
@@ -62,10 +62,10 @@ De volgende Azure-regio's worden momenteel ondersteund tijdens de preview-versie
 
 Als u Azure AD-verificatie wilt inschakelen voor uw Windows-Vm's in azure, moet u ervoor zorgen dat de netwerk configuratie van uw Vm's uitgaande toegang tot de volgende eind punten via TCP-poort 443 toestaat:
 
-- https: \/ /enterpriseregistration.Windows.net
-- https:\//login.microsoftonline.com
-- https: \/ /device.login.microsoftonline.com
-- https: \/ /pas.Windows.net
+- `https://enterpriseregistration.windows.net`
+- `https://login.microsoftonline.com`
+- `https://device.login.microsoftonline.com`
+- `https://pas.windows.net`
 
 ## <a name="enabling-azure-ad-login-in-for-windows-vm-in-azure"></a>Aanmelden bij Azure AD inschakelen voor Windows VM in azure
 
@@ -98,9 +98,9 @@ Een Windows Server 2019 Data Center-VM maken in azure met Azure AD-aanmelding:
 
 Azure Cloud Shell is een gratis interactieve shell waarmee u de stappen in dit artikel kunt uitvoeren. Er zijn vooraf algemene Azure-hulpprogramma's geïnstalleerd en geconfigureerd in Cloud Shell die u kunt gebruiken bij uw account. Selecteer de knop Kopiëren om de code te kopiëren, plak deze in Cloud Shell en druk op Enter om de code uit te voeren. U kunt Cloud Shell op verschillende manieren openen:
 
-Selecteer Nu proberen in de rechterbovenhoek van een codeblok.
-Open Cloud Shell in uw browser.
-Klik op de knop Cloud Shell in het menu in de hoek rechtsboven in de [Azure Portal](https://portal.azure.com).
+- Selecteer **Nu proberen** in de rechterbovenhoek van een codeblok.
+- Open Cloud Shell in uw browser.
+- Klik op de knop Cloud Shell in het menu in de hoek rechtsboven in de [Azure Portal](https://portal.azure.com).
 
 Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u voor dit artikel de Azure CLI-versie 2.0.31 of hoger uitvoeren. Voer az --version uit om de versie te zoeken. Als u wilt installeren of upgraden, raadpleegt u het artikel [Azure cli installeren](/cli/azure/install-azure-cli).
 
@@ -127,7 +127,7 @@ az vm create \
 
 Het maken van de virtuele machine en de ondersteunende resources duurt enkele minuten.
 
-Installeer ten slotte de Azure AD-extensie voor VM-aanmelding om Azure AD-aanmelding voor Windows VM in te scha kelen. VM-extensies zijn kleine toepassingen die configuratie en automatiserings taken na de implementatie bieden op virtuele machines van Azure. Gebruik [AZ VM extension](/cli/azure/vm/extension#az-vm-extension-set) set om de AADLoginForWindows-extensie te installeren op de virtuele machine met de naam myVM in de resource groep myResourceGroup:
+Installeer ten slotte de Azure AD-extensie voor VM-aanmelding om Azure AD-aanmelding voor Windows VM in te scha kelen. VM-extensies zijn kleine toepassingen die configuratie en automatiserings taken na de implementatie bieden op virtuele machines van Azure. Gebruik [AZ VM extension](/cli/azure/vm/extension#az-vm-extension-set) set om de AADLoginForWindows-extensie te installeren op de virtuele machine `myVM` met de naam in de `myResourceGroup` resource groep:
 
 > [!NOTE]
 > U kunt de AADLoginForWindows-extensie installeren op een bestaande Windows Server 2019-of Windows 10 1809-en hoger-VM om deze in te scha kelen voor Azure AD-verificatie. Hieronder ziet u een voor beeld van AZ CLI.
@@ -200,7 +200,7 @@ Raadpleeg de volgende artikelen voor meer informatie over het gebruik van Azure 
 
 ## <a name="using-conditional-access"></a>Voorwaardelijke toegang gebruiken
 
-U kunt beleid voor voorwaardelijke toegang afdwingen, zoals multi-factor Authentication of aanmeldings risico voor gebruikers, voordat u toegang verleent tot Windows-Vm's in azure die zijn ingeschakeld met aanmelden bij Azure AD. Als u beleid voor voorwaardelijke toegang wilt Toep assen, moet u de app ' Azure Windows VM Sign-in ' selecteren bij de optie voor de toewijzing van Cloud-apps of acties en vervolgens aanmeldings risico als voor waarde gebruiken en/of multi-factor Authentication vereisen als Grant Access Control. 
+U kunt beleid voor voorwaardelijke toegang afdwingen, zoals multi-factor Authentication of aanmeldings risico voor gebruikers, voordat u toegang verleent tot Windows-Vm's in azure die zijn ingeschakeld met aanmelden bij Azure AD. Als u beleid voor voorwaardelijke toegang wilt Toep assen, moet u de app ' Azure Windows VM Sign-in ' selecteren in de optie voor de toewijzing van Cloud-apps of acties en vervolgens aanmeldings risico gebruiken als voor waarde en/of multi-factor Authentication vereisen als Grant Access Control. 
 
 > [!NOTE]
 > Als u ' multi-factor Authentication vereisen ' gebruikt als Grant Access Control voor het aanvragen van toegang tot de app Azure Windows VM-aanmelding, moet u multi-factor Authentication claim opgeven als onderdeel van de client die de RDP-sessie initieert naar de doel-Windows-VM in Azure. De enige manier om dit te doen op een Windows 10-client is het gebruik van Windows hello voor bedrijven pincode of biometrische verificatie met de RDP-client. Ondersteuning voor biometrische verificatie is toegevoegd aan de RDP-client in Windows 10 versie 1809. Extern bureau blad met Windows hello voor bedrijven-verificatie is alleen beschikbaar voor implementaties die gebruikmaken van het vertrouwens model certificaat en die momenteel niet beschikbaar zijn voor het sleutel vertrouwens model.
@@ -211,7 +211,7 @@ U kunt beleid voor voorwaardelijke toegang afdwingen, zoals multi-factor Authent
 ## <a name="log-in-using-azure-ad-credentials-to-a-windows-vm"></a>Meld u aan met Azure AD-referenties voor een Windows-VM
 
 > [!IMPORTANT]
-> Externe verbinding met Vm's die zijn gekoppeld aan Azure AD is alleen toegestaan vanaf Windows 10-Pc's die zijn geregistreerd voor Azure AD (mini maal vereiste build is 20H1) of Azure AD is toegevoegd aan **dezelfde** map als de virtuele machine. Daarnaast moet de gebruiker bij RDP met behulp van Azure AD-referenties lid zijn van een van de twee Azure-rollen, de aanmelding van de virtuele-machine beheerder of de gebruikers aanmelding van de virtuele machine. Als u een Azure AD-geregistreerde Windows 10-PC gebruikt, moet u referenties opgeven in de AzureAD\UPN-indeling (bijvoorbeeld AzureAD\john@contoso.com ). Op dit moment kan Azure Bastion niet worden gebruikt om u aan te melden met behulp van Azure Active Directory-verificatie met de uitbrei ding AADLoginForWindows. alleen directe RDP wordt ondersteund.
+> Externe verbinding met Vm's die zijn gekoppeld aan Azure AD is alleen toegestaan vanaf Windows 10-Pc's die zijn geregistreerd voor Azure AD (mini maal vereiste build is 20H1) of Azure AD is toegevoegd aan **dezelfde** map als de virtuele machine. Daarnaast moet de gebruiker bij RDP met behulp van Azure AD-referenties lid zijn van een van de twee Azure-rollen, de aanmelding van de virtuele-machine beheerder of de gebruikers aanmelding van de virtuele machine. Als u een Azure AD-geregistreerde Windows 10-PC gebruikt, moet u referenties opgeven in de `AzureAD\UPN` indeling (bijvoorbeeld `AzureAD\john@contoso.com` ). Op dit moment kan Azure Bastion niet worden gebruikt om u aan te melden met behulp van Azure Active Directory-verificatie met de uitbrei ding AADLoginForWindows. alleen directe RDP wordt ondersteund.
 
 Meld u als volgt aan bij uw virtuele Windows Server 2019-machine met Azure AD: 
 
@@ -233,12 +233,12 @@ U bent nu aangemeld bij de virtuele machine met Windows Server 2019 Azure met de
 
 De AADLoginForWindows-extensie moet worden geïnstalleerd om de virtuele machine te kunnen volt ooien. Voer de volgende stappen uit als de extensie van de virtuele machine niet correct kan worden geïnstalleerd.
 
-1. RDP naar de virtuele machine met behulp van het lokale beheerders account en controleer het CommandExecuti'n. log onder  
+1. RDP naar de virtuele machine met het lokale beheerders account en controleer het `CommandExecution.log` bestand onder:
    
-   C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.ActiveDirectory.AADLoginForWindows\0.3.1.0. 
+   `C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.ActiveDirectory.AADLoginForWindows\0.3.1.0.`
 
    > [!NOTE]
-   > Als de extensie opnieuw wordt opgestart na de eerste fout, wordt het logboek met de implementatie fout opgeslagen als CommandExecution_YYYYMMDDHHMMSSSSS. log. "
+   > Als de extensie opnieuw wordt opgestart na de eerste fout, wordt het logboek met de implementatie fout opgeslagen als `CommandExecution_YYYYMMDDHHMMSSSSS.log` . "
 1. Open een Power shell-opdracht prompt op de VM en controleer of deze query's op het IMDS-eind punt (Instance Metadata Service) dat wordt uitgevoerd op de Azure-host:
 
    | Opdracht die moet worden uitgevoerd | Verwachte uitvoer |
@@ -248,61 +248,61 @@ De AADLoginForWindows-extensie moet worden geïnstalleerd om de virtuele machine
    | `curl -H @{"Metadata"="true"} "http://169.254.169.254/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01"` | Geldig toegangs token dat is uitgegeven door Azure Active Directory voor de beheerde identiteit die aan deze VM is toegewezen |
 
    > [!NOTE]
-   > Het toegangs token kan worden gedecodeerd met een hulp programma als [http://calebb.net/](http://calebb.net/) . Controleer of de ' AppID ' in het toegangs token overeenkomt met de beheerde identiteit die is toegewezen aan de virtuele machine.
+   > Het toegangs token kan worden gedecodeerd met een hulp programma zoals [calebb.net](http://calebb.net/). Controleer of de `appid` in het toegangs token overeenkomt met de beheerde identiteit die is toegewezen aan de virtuele machine.
 
 1. Zorg ervoor dat de vereiste eind punten toegankelijk zijn vanaf de virtuele machine met behulp van de opdracht regel:
    
-   - krul https: \/ /login.microsoftonline.com/-D –
-   - krul https: \/ /login.microsoftonline.com/ `<TenantID>` /-D –
+   - `curl https://login.microsoftonline.com/ -D -`
+   - `curl https://login.microsoftonline.com/<TenantID>/ -D -`
 
    > [!NOTE]
    > Vervang door `<TenantID>` de id van de Azure AD-Tenant die is gekoppeld aan het Azure-abonnement.
 
-   - krul https: \/ /enterpriseregistration.Windows.net/-D-
-   - krul https: \/ /device.login.microsoftonline.com/-D-
-   - krul https: \/ /pas.Windows.net/-D-
+   - `curl https://enterpriseregistration.windows.net/ -D -`
+   - `curl https://device.login.microsoftonline.com/ -D -`
+   - `curl https://pas.windows.net/ -D -`
 
 1. De apparaatstatus kan worden weer gegeven door uit te voeren `dsregcmd /status` . Het doel is om de status van het apparaat weer te geven `AzureAdJoined : YES` .
 
    > [!NOTE]
-   > Azure AD-deelname activiteiten worden vastgelegd in Logboeken onder het Registration\Admin-logboek van de gebruiker.
+   > Azure AD-deelname activiteiten worden vastgelegd in Logboeken onder het `User Device Registration\Admin` logboek.
 
 Als AADLoginForWindows-extensie mislukt met bepaalde fout code, kunt u de volgende stappen uitvoeren:
 
 #### <a name="issue-1-aadloginforwindows-extension-fails-to-install-with-terminal-error-code-1007-and-exit-code--2145648574"></a>Probleem 1: de AADLoginForWindows-extensie kan niet worden geïnstalleerd met de Terminal fout code ' 1007 ' en de afsluit code:-2145648574.
 
-Deze afsluit code wordt omgezet naar DSREG_E_MSI_TENANTID_UNAVAILABLE omdat de extensie geen query kan uitvoeren op de gegevens van de Azure AD-Tenant.
+Deze afsluit code wordt omgezet naar `DSREG_E_MSI_TENANTID_UNAVAILABLE` omdat de extensie geen query kan uitvoeren op de gegevens van de Azure AD-Tenant.
 
 1. Controleer of de virtuele machine van Azure de TenantID kan ophalen uit de Instance Metadata Service.
 
    - RDP naar de virtuele machine als lokale beheerder en controleer of het eind punt een geldige Tenant-ID retourneert door deze opdracht uit te voeren vanaf een opdracht regel met verhoogde bevoegdheid op de virtuele machine:
       
-      - krul-H meta gegevens: True http://169.254.169.254/metadata/identity/info?api-version=2018-02-01
+      - `curl -H Metadata:true http://169.254.169.254/metadata/identity/info?api-version=2018-02-01`
 
 1. De VM-beheerder probeert de AADLoginForWindows-uitbrei ding te installeren, maar een door het systeem toegewezen beheerde identiteit heeft de virtuele machine niet eerst ingeschakeld. Ga naar de Blade identiteit van de virtuele machine. Controleer op het tabblad toegewezen systeem of de status is in-of uitgeschakeld.
 
 #### <a name="issue-2-aadloginforwindows-extension-fails-to-install-with-exit-code--2145648607"></a>Probleem 2: de AADLoginForWindows-extensie kan niet worden geïnstalleerd met de afsluit code:-2145648607
 
-Deze afsluit code wordt omgezet naar DSREG_AUTOJOIN_DISC_FAILED omdat de extensie het eind punt niet kan bereiken `https://enterpriseregistration.windows.net` .
+Deze afsluit code wordt omgezet in `DSREG_AUTOJOIN_DISC_FAILED` , omdat de extensie het eind punt niet kan bereiken `https://enterpriseregistration.windows.net` .
 
 1. Controleer of de vereiste eind punten toegankelijk zijn vanaf de virtuele machine met behulp van de opdracht regel:
 
-   - krul https: \/ /login.microsoftonline.com/-D –
-   - krul https: \/ /login.microsoftonline.com/ `<TenantID>` /-D –
+   - `curl https://login.microsoftonline.com/ -D -`
+   - `curl https://login.microsoftonline.com/<TenantID>/ -D -`
    
    > [!NOTE]
-   > Vervang door `<TenantID>` de id van de Azure AD-Tenant die is gekoppeld aan het Azure-abonnement. Als u de Tenant-ID moet vinden, kunt u met de muis aanwijzer over uw account naam bewegen om de map/Tenant-ID op te halen, of Azure Active Directory > eigenschappen > Directory-ID selecteren in het Azure Portal.
+   > Vervang door `<TenantID>` de id van de Azure AD-Tenant die is gekoppeld aan het Azure-abonnement. Als u de Tenant-ID moet vinden, kunt u met de muis aanwijzer over uw account naam bewegen om de map/Tenant-ID op te halen, of **Azure Active Directory > eigenschappen > Directory-id** selecteren in het Azure Portal.
 
-   - krul https: \/ /enterpriseregistration.Windows.net/-D-
-   - krul https: \/ /device.login.microsoftonline.com/-D-
-   - krul https: \/ /pas.Windows.net/-D-
+   - `curl https://enterpriseregistration.windows.net/ -D -`
+   - `curl https://device.login.microsoftonline.com/ -D -`
+   - `curl https://pas.windows.net/ -D -`
 
 1. Als een van de opdrachten mislukt met de melding ' kan de host niet oplossen `<URL>` ', voert u deze opdracht uit om te bepalen welke DNS-server wordt gebruikt door de virtuele machine.
    
    `nslookup <URL>`
 
    > [!NOTE] 
-   > Vervang door de `<URL>` volledig gekwalificeerde domein namen die worden gebruikt door de eind punten, zoals ' login.microsoftonline.com '.
+   > Vervang door de `<URL>` volledig gekwalificeerde domein namen die worden gebruikt door de eind punten, zoals `login.microsoftonline.com` .
 
 1. Bekijk vervolgens of het opgeven van een open bare DNS-server toestaat dat de opdracht slaagt:
 
@@ -322,7 +322,7 @@ Enkele veelvoorkomende fouten wanneer u RDP probeert te gebruiken met Azure AD-r
 
 Het apparaat en de SSO-status kunnen worden weer gegeven door uit te voeren `dsregcmd /status` . Het doel is om de status van het apparaat weer te geven `AzureAdJoined : YES` en `SSO State` weer te geven `AzureAdPrt : YES` .
 
-Daarnaast wordt RDP-aanmelding met Azure AD-accounts vastgelegd in Logboeken onder de gebeurtenis logboeken van AAD\Operational.
+Daarnaast wordt RDP-aanmelding met Azure AD-accounts vastgelegd in Logboeken onder de `AAD\Operational` gebeurtenis Logboeken.
 
 #### <a name="azure-role-not-assigned"></a>De Azure-rol is niet toegewezen
 
@@ -341,18 +341,18 @@ Controleer of u het [Azure RBAC-beleid](../../virtual-machines/linux/login-using
 
 Als het volgende fout bericht wordt weer gegeven wanneer u een verbinding met een extern bureau blad met uw VM initieert: 
 
-- Uw referenties werken niet
+- Uw referenties werken niet.
 
 ![Uw referenties werken niet](./media/howto-vm-sign-in-azure-ad-windows/your-credentials-did-not-work.png)
 
 Controleer of de Windows 10-computer die u gebruikt voor het initiëren van de verbinding met een extern bureau blad, een Azure AD-lid is, of dat hybride Azure AD is toegevoegd aan dezelfde Azure AD-directory waar de virtuele machine is gekoppeld. Zie het artikel [Wat is een apparaat-id](./overview.md)? voor meer informatie over de identiteit van het apparaat.
 
 > [!NOTE]
-> Windows 10 build 20H1 heeft ondersteuning toegevoegd voor een Azure AD-geregistreerde computer om de RDP-verbinding met uw virtuele machine te initiëren. Wanneer u een Azure AD-PC (niet toegevoegd aan Azure AD of hybride Azure AD) als de RDP-client gebruikt om verbindingen met uw virtuele machine te initiëren, moet u referenties opgeven in de notatie AzureAD\UPn (bijvoorbeeld AzureAD\john@contoso.com ).
+> Windows 10 build 20H1 heeft ondersteuning toegevoegd voor een Azure AD-geregistreerde computer om de RDP-verbinding met uw virtuele machine te initiëren. Wanneer u een Azure AD-PC (niet toegevoegd aan Azure AD of hybride Azure AD) als de RDP-client gebruikt om verbindingen met uw virtuele machine te initiëren, moet u referenties opgeven in de indeling `AzureAD\UPN` (bijvoorbeeld `AzureAD\john@contoso.com` ).
 
 Controleer of de AADLoginForWindows-extensie niet is verwijderd nadat de Azure AD-deelname is voltooid.
 
-Zorg er ook voor dat het beveiligings beleid ' netwerk beveiliging: PKU2U-verificatie aanvragen op deze computer voor het gebruik van online-identiteiten toestaan ' is ingeschakeld op zowel de server *als* de client.
+Zorg er ook voor dat het beveiligings beleid ' netwerk beveiliging: PKU2U-verificatie aanvragen op deze computer voor het gebruik van online-identiteiten toestaan ' is ingeschakeld op zowel de server **als** de client.
  
 #### <a name="mfa-sign-in-method-required"></a>De MFA-aanmeldings methode is vereist
 
@@ -375,4 +375,4 @@ Deel uw feedback over deze preview-functie of Meld problemen met het gebruik erv
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [Wat is Azure Active Directory](../fundamentals/active-directory-whatis.md) voor meer informatie over Azure Active Directory
+Zie [Wat is Azure Active Directory](../fundamentals/active-directory-whatis.md)voor meer informatie over Azure Active Directory.

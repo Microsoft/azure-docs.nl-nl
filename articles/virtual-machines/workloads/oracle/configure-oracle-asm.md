@@ -2,18 +2,18 @@
 title: Oracle ASM op een virtuele Azure Linux-machine instellen | Microsoft Docs
 description: Krijg snel en eenvoudig Oracle-ASM in uw Azure-omgeving.
 author: dbakevlar
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines
+ms.subservice: oracle
+ms.collection: linux
 ms.topic: article
 ms.date: 08/02/2018
 ms.author: kegorman
-ms.reviewer: cynthn
-ms.openlocfilehash: 6f0b58374ae3eb972993b544117d8cbb98371ce5
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: b180a0f148db5222a288958724ad248acd18b565
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602611"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101673863"
 ---
 # <a name="set-up-oracle-asm-on-an-azure-linux-virtual-machine"></a>Oracle ASM op een virtuele Azure Linux-machine instellen  
 
@@ -421,7 +421,7 @@ Voor het configureren van Oracle ASM is een grafische interface vereist om de in
    > De sleutel moet de teken reeks bevatten `ssh-rsa` . De inhoud van de sleutel moet ook één tekst regel zijn.
    >  
 
-6. Start PuTTy op het client systeem. Ga in het deel venster **categorie** naar **Connection**  >  **SSH**-  >  **verificatie** voor verbindingen. Blader in het vak **persoonlijk sleutel bestand voor verificatie** naar de sleutel die u eerder hebt gegenereerd.
+6. Start PuTTy op het client systeem. Ga in het deel venster **categorie** naar   >  **SSH**-  >  **verificatie** voor verbindingen. Blader in het vak **persoonlijk sleutel bestand voor verificatie** naar de sleutel die u eerder hebt gegenereerd.
 
    ![Scherm afbeelding van de opties voor SSH-verificatie](./media/oracle-asm/setprivatekey.png)
 

@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: 26e39b8f0429995bfa336c4971c76f90d903ff55
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: 3b2fb1c4e7a08619a0321e188b54bb581f97fd6d
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99628879"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101661522"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -21,6 +21,9 @@ ms.locfileid: "99628879"
 ## <a name="setting-up"></a>Instellen
 
 ### <a name="install-the-package"></a>Het pakket installeren
+
+> [!NOTE]
+> Dit document maakt gebruik van versie 1.0.0-Beta. 8 van de aanroepende client bibliotheek.
 
 <!-- TODO: update with instructions on how to download, install and add package to project -->
 Zoek de build.gradle op projectniveau op en vergeet niet `mavenCentral()` toe te voegen aan de lijst met opslagplaatsen onder `buildscript` en `allprojects`
@@ -48,7 +51,7 @@ Voeg vervolgens in het module niveau build. gradle de volgende regels toe aan de
 ```groovy
 dependencies {
     ...
-    implementation 'com.azure.android:azure-communication-calling:1.0.0-beta.2'
+    implementation 'com.azure.android:azure-communication-calling:1.0.0-beta.8'
     ...
 }
 
@@ -62,7 +65,8 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 | ------------------------------------- | ------------------------------------------------------------ |
 | CallClient| De CallClient is het belangrijkste ingangspunt voor de clientbibliotheek voor oproepen.|
 | CallAgent | De CallAgent wordt gebruikt om oproepen te starten en te beheren. |
-| CommunicationUserCredential | De CommunicationUserCredential wordt als de tokenreferentie gebruikt om de CallAgent te instantiëren.|
+| CommunicationTokenCredential | De CommunicationTokenCredential wordt gebruikt als de token referentie voor het instantiëren van de CallAgent.|
+| CommunicationIdentifier | De CommunicationIdentifier wordt gebruikt als een ander type deel nemer dat zou kunnen deel nemen aan een aanroep.|
 
 ## <a name="initialize-the-callclient-create-a-callagent-and-access-the-devicemanager"></a>Initialiseer de CallClient, maak een CallAgent en open de DeviceManager
 
@@ -73,28 +77,28 @@ Als u toegang wilt krijgen tot de `DeviceManager` , moet u eerst een callAgent-e
 ```java
 String userToken = '<user token>';
 CallClient callClient = new CallClient();
-CommunicationUserCredential tokenCredential = new CommunicationUserCredential(userToken);
+CommunicationTokenCredential tokenCredential = new CommunicationTokenCredential(userToken);
 android.content.Context appContext = this.getApplicationContext(); // From within an Activity for instance
-CallAgent callAgent = await callClient.createCallAgent((appContext, tokenCredential).get();
-DeviceManage deviceManager = await callClient.getDeviceManager().get();
+CallAgent callAgent = callClient.createCallAgent((appContext, tokenCredential).get();
+DeviceManage deviceManager = callClient.getDeviceManager().get();
 ```
 Als u een weergave naam voor de oproepende functie wilt instellen, gebruikt u deze alternatieve methode:
 
 ```java
 String userToken = '<user token>';
 CallClient callClient = new CallClient();
-CommunicationUserCredential tokenCredential = new CommunicationUserCredential(userToken);
+CommunicationTokenCredential tokenCredential = new CommunicationTokenCredential(userToken);
 android.content.Context appContext = this.getApplicationContext(); // From within an Activity for instance
 CallAgentOptions callAgentOptions = new CallAgentOptions();
 callAgentOptions.setDisplayName("Alice Bob");
-CallAgent callAgent = await callClient.createCallAgent((appContext, tokenCredential, callAgentOptions).get();
-DeviceManage deviceManager = await callClient.getDeviceManager().get();
+CallAgent callAgent = callClient.createCallAgent((appContext, tokenCredential, callAgentOptions).get();
+DeviceManage deviceManager = callClient.getDeviceManager().get();
 ```
 
 
 ## <a name="place-an-outgoing-call-and-join-a-group-call"></a>Een uitgaande oproep plaatsen en toevoegen aan een groeps oproep
 
-Als u een gesprek wilt maken en starten, moet u de-methode aanroepen `CallAgent.call()` en het van de genodigden opgeven `Identifier` .
+Als u een gesprek wilt maken en starten, moet u de-methode aanroepen `CallAgent.startCall()` en het van de genodigden opgeven `Identifier` .
 Als u lid wilt worden van een groeps oproep, moet u de methode aanroepen `CallAgent.join()` en de groupid opgeven. Groeps-Id's moeten de GUID-of UUID-indeling hebben.
 
 Het maken van aanroepen en starten synchroon zijn. Met het gesprek exemplaar kunt u zich abonneren op alle gebeurtenissen in de aanroep.
@@ -104,9 +108,9 @@ Als u een aanroep naar een andere communicatie Services-gebruiker wilt plaatsen,
 ```java
 StartCallOptions startCallOptions = new StartCallOptions();
 Context appContext = this.getApplicationContext();
-CommunicationUser acsUserId = new CommunicationUser(<USER_ID>);
-CommunicationUser participants[] = new CommunicationUser[]{ acsUserId };
-call oneToOneCall = callAgent.call(appContext, participants, startCallOptions);
+CommunicationUserIdentifier acsUserId = new CommunicationUserIdentifier(<USER_ID>);
+CommunicationUserIdentifier participants[] = new CommunicationUserIdentifier[]{ acsUserId };
+call oneToOneCall = callAgent.startCall(appContext, participants, startCallOptions);
 ```
 
 ### <a name="place-a-1n-call-with-users-and-pstn"></a>Een aanroep van 1: n met gebruikers en PSTN plaatsen
@@ -116,17 +120,17 @@ call oneToOneCall = callAgent.call(appContext, participants, startCallOptions);
 Als u wilt een aanroep van 1: n naar een gebruiker en een PSTN-nummer, moet u het telefoon nummer van de genodigde opgeven.
 Uw communicatie service-resource moet worden geconfigureerd om PSTN-aanroepen mogelijk te maken:
 ```java
-CommunicationUser acsUser1 = new CommunicationUser(<USER_ID>);
-PhoneNumber acsUser2 = new PhoneNumber("<PHONE_NUMBER>");
+CommunicationUserIdentifier acsUser1 = new CommunicationUserIdentifier(<USER_ID>);
+PhoneNumberIdentifier acsUser2 = new PhoneNumberIdentifier("<PHONE_NUMBER>");
 CommunicationIdentifier participants[] = new CommunicationIdentifier[]{ acsUser1, acsUser2 };
 StartCallOptions startCallOptions = new StartCallOptions();
 Context appContext = this.getApplicationContext();
-Call groupCall = callAgent.call(participants, startCallOptions);
+Call groupCall = callAgent.startCall(participants, startCallOptions);
 ```
 
 ### <a name="place-a-11-call-with-video-camera"></a>Een 1:1-oproep met video camera plaatsen
 > [!WARNING]
-> Momenteel wordt slechts één uitgaande lokale video stroom ondersteund om een gesprek met video te plaatsen die u nodig hebt om lokale camera's op te sommen met behulp van de `deviceManager` `getCameraList` API.
+> Momenteel wordt slechts één uitgaande lokale video stroom ondersteund om een gesprek met video te plaatsen die u nodig hebt om lokale camera's op te sommen met behulp van de `deviceManager` `getCameras` API.
 Wanneer u een gewenste camera hebt geselecteerd, gebruikt u deze om een instantie te maken `LocalVideoStream` en door `videoOptions` te geven als een item in de `localVideoStream` matrix naar een `call` methode.
 Zodra de oproep verbinding maakt, begint automatisch met het verzenden van een video stroom van de geselecteerde camera naar een andere deel nemer (s).
 
@@ -135,7 +139,7 @@ Zodra de oproep verbinding maakt, begint automatisch met het verzenden van een v
 Zie de [voor beeld van een lokale camera](#local-camera-preview) voor meer informatie.
 ```java
 Context appContext = this.getApplicationContext();
-VideoDeviceInfo desiredCamera = callClient.getDeviceManager().get().getCameraList().get(0);
+VideoDeviceInfo desiredCamera = callClient.getDeviceManager().get().getCameras().get(0);
 LocalVideoStream currentVideoStream = new LocalVideoStream(desiredCamera, appContext);
 VideoOptions videoOptions = new VideoOptions(currentVideoStream);
 
@@ -145,20 +149,20 @@ View uiView = previewRenderer.createView(new RenderingOptions(ScalingMode.Fit));
 // Attach the uiView to a viewable location on the app at this point
 layout.addView(uiView);
 
-CommunicationUser[] participants = new CommunicationUser[]{ new CommunicationUser("<acs user id>") };
+CommunicationUserIdentifier[] participants = new CommunicationUserIdentifier[]{ new CommunicationUserIdentifier("<acs user id>") };
 StartCallOptions startCallOptions = new StartCallOptions();
 startCallOptions.setVideoOptions(videoOptions);
-Call call = callAgent.call(context, participants, startCallOptions);
+Call call = callAgent.startCall(context, participants, startCallOptions);
 ```
 
 ### <a name="join-a-group-call"></a>Deelnemen aan een groepsgesprek
 Als u een nieuwe groeps oproep wilt starten of lid wilt worden van een doorlopende groeps oproep, moet u de methode ' samen voegen ' aanroepen en een object door geven aan een `groupId` eigenschap. De waarde moet een GUID zijn.
 ```java
 Context appContext = this.getApplicationContext();
-GroupCallContext groupCallContext = new groupCallContext("<GUID>");
+GroupCallLocator groupCallLocator = new GroupCallLocator("<GUID>");
 JoinCallOptions joinCallOptions = new JoinCallOptions();
 
-call = callAgent.join(context, groupCallContext, joinCallOptions);
+call = callAgent.join(context, groupCallLocator, joinCallOptions);
 ```
 
 ### <a name="accept-a-call"></a>Een gesprek accepteren
@@ -166,37 +170,31 @@ Als u een aanroep wilt accepteren, roept u de methode accept aan voor een aanroe
 
 ```java
 Context appContext = this.getApplicationContext();
-Call incomingCall = retrieveIncomingCall();
-incomingCall.accept(context).get();
+IncomingCall incomingCall = retrieveIncomingCall();
+Call call = incomingCall.accept(context).get();
 ```
 
 Een gesprek met video camera accepteren op:
 
 ```java
 Context appContext = this.getApplicationContext();
-Call incomingCall = retrieveIncomingCall();
+IncomingCall incomingCall = retrieveIncomingCall();
 AcceptCallOptions acceptCallOptions = new AcceptCallOptions();
 VideoDeviceInfo desiredCamera = callClient.getDeviceManager().get().getCameraList().get(0);
 acceptCallOptions.setVideoOptions(new VideoOptions(new LocalVideoStream(desiredCamera, appContext)));
-incomingCall.accept(context, acceptCallOptions).get();
+Call call = incomingCall.accept(context, acceptCallOptions).get();
 ```
 
-De inkomende oproep kan worden verkregen door zich te abonneren op de `CallsUpdated` gebeurtenis op het `callAgent` object en door de toegevoegde aanroepen door te lopen:
+De inkomende oproep kan worden verkregen door zich te abonneren op de `onIncomingCall` gebeurtenis op het `callAgent` object:
 
 ```java
 // Assuming "callAgent" is an instance property obtained by calling the 'createCallAgent' method on CallClient instance 
 public Call retrieveIncomingCall() {
-    Call incomingCall;
-    callAgent.addOnCallsUpdatedListener(new CallsUpdatedListener() {
-        void onCallsUpdated(CallsUpdatedEvent callsUpdatedEvent) {
+    IncomingCall incomingCall;
+    callAgent.addOnIncomingCallListener(new IncomingCallListener() {
+        void onIncomingCall(IncomingCall inboundCall) {
             // Look for incoming call
-            List<Call> calls = callsUpdatedEvent.getAddedCalls();
-            for (Call call : calls) {
-                if (call.getState() == CallState.Incoming) {
-                    incomingCall = call;
-                    break;
-                }
-            }
+            incomingCall = inboundCall;
         }
     });
     return incomingCall;
@@ -320,11 +318,12 @@ Voeg de volgende service definitie toe aan het `AndroidManifest.xml` bestand in 
         </service>
 ```
 
-- Zodra de payload is opgehaald, kan deze worden door gegeven aan de *communicatie Services* -client bibliotheek die moet worden verwerkt door de methode *handlePushNotification* aan te roepen voor een *CallAgent* -exemplaar. Er `CallAgent` wordt een exemplaar gemaakt door de `createCallAgent(...)` methode aan te roepen voor de `CallClient` klasse.
+- Zodra de payload is opgehaald, kan deze worden door gegeven aan de *communicatie Services* -client bibliotheek die moet worden geparseerd naar een intern *IncomingCallInformation* -object dat wordt verwerkt door de *handlePushNotification* -methode aan te roepen voor een *CallAgent* -exemplaar. Er `CallAgent` wordt een exemplaar gemaakt door de `createCallAgent(...)` methode aan te roepen voor de `CallClient` klasse.
 
 ```java
 try {
-    callAgent.handlePushNotification(pushNotificationMessageDataFromFCM).get();
+    IncomingCallInformation notification = IncomingCallInformation.fromMap(pushNotificationMessageDataFromFCM);
+    Future handlePushNotificationFuture = callAgent.handlePushNotification(notification).get();
 }
 catch(Exception e) {
     System.out.println("Something went wrong while handling the Incoming Calls Push Notifications.");
@@ -354,7 +353,7 @@ U hebt toegang tot de oproep eigenschappen en kunt verschillende bewerkingen uit
 De unieke ID voor deze aanroep ophalen:
 
 ```java
-String callId = call.getCallId();
+String callId = call.getId();
 ```
 
 Voor meer informatie over andere deel nemers in de verzameling aanroep inspectie `remoteParticipant` op het `call` exemplaar:
@@ -377,12 +376,12 @@ CallState callState = call.getState();
 
 Er wordt een teken reeks geretourneerd die de huidige status van een aanroep vertegenwoordigt:
 * Geen '-initiële gespreks status
-* ' Binnenkomend ': geeft aan dat de aanroep inkomend moet worden geaccepteerd of geweigerd
 * ' Verbinding maken '-initiële overgangs status zodra de aanroep is geplaatst of geaccepteerd
-* ' Rinkelend ': voor een uitgaande oproep wordt aangegeven dat de aanroep wordt opgeroepen voor externe deel nemers, het is een incoming-zijde
+* ' Rinkelend ': voor een uitgaande oproep wordt aangegeven dat de aanroep wordt opgeroepen voor externe deel nemers
 * ' EarlyMedia ': geeft een status aan waarin een aankondiging wordt afgespeeld voordat de aanroep is verbonden
 * Verbonden: de oproep is verbonden
-* Hold-aanroep is in de wacht stand gezet, geen medium loopt tussen het lokale eind punt en de externe deel nemer (s)
+* ' LocalHold ': de aanroep wordt door de lokale deel nemer in de wacht geplaatst, geen medium loopt tussen het lokale eind punt en de externe deel nemer (s)
+* ' RemoteHold ': de aanroep wordt door een externe deel nemer in de wacht geplaatst. er wordt geen medium stromen tussen het lokale eind punt en de externe deel nemer (s)
 * ' Verbinding verbreken van '-de status van de overgang voor de aanroep is verbroken
 * ' Verbinding verbroken '-laatste gespreks status
 
@@ -395,16 +394,24 @@ int code = callEndReason.getCode();
 int subCode = callEndReason.getSubCode();
 ```
 
-Als u wilt zien of de huidige aanroep een binnenkomende oproep is, controleert u de `isIncoming` eigenschap:
+Inspecteer de eigenschap om te zien of de huidige aanroep een binnenkomende of uitgaande oproep is `callDirection` :
 
 ```java
-boolean isIncoming = call.getIsIncoming();
+CallDirection callDirection = call.getCallDirection(); 
+// callDirection == CallDirection.Incoming for incoming call
+// callDirection == CallDirection.Outgoing for outgoing call
 ```
 
 Als u wilt zien of de huidige microfoon is gedempt, inspecteert u de `muted` eigenschap:
 
 ```java
 boolean muted = call.getIsMicrophoneMuted();
+```
+
+Als u wilt zien of de huidige aanroep wordt vastgelegd, inspecteert u de `isRecordingActive` eigenschap:
+
+```java
+boolean recordinggActive = call.getIsRecordingActive();
 ```
 
 Als u actieve video stromen wilt controleren, controleert u de `localVideoStreams` verzameling:
@@ -429,27 +436,27 @@ Als u een video wilt starten, moet u camera's opsommen met behulp `getCameraList
 ```java
 VideoDeviceInfo desiredCamera = <get-video-device>;
 Context appContext = this.getApplicationContext();
-currentVideoStream = new LocalVideoStream(desiredCamera, appContext);
-videoOptions = new VideoOptions(currentVideoStream);
-Future startVideoFuture = call.startVideo(currentVideoStream);
+LocalVideoStream currentLocalVideoStream = new LocalVideoStream(desiredCamera, appContext);
+VideoOptions videoOptions = new VideoOptions(currentLocalVideoStream);
+Future startVideoFuture = call.startVideo(currentLocalVideoStream);
 startVideoFuture.get();
 ```
 
 Zodra u de video hebt verzonden, `LocalVideoStream` wordt een exemplaar toegevoegd aan de `localVideoStreams` verzameling op het aanroep exemplaar.
 
 ```java
-currentVideoStream == call.getLocalVideoStreams().get(0);
+currentLocalVideoStream == call.getLocalVideoStreams().get(0);
 ```
 
-Als u lokale video wilt stoppen, geeft u het `localVideoStream` exemplaar dat beschikbaar is in de `localVideoStreams` verzameling door.
+Als u lokale video wilt stoppen, geeft u het `LocalVideoStream` exemplaar dat beschikbaar is in de `localVideoStreams` verzameling door.
 
 ```java
-call.stopVideo(localVideoStream).get();
+call.stopVideo(currentLocalVideoStream).get();
 ```
 
-U kunt overschakelen naar een ander camera apparaat terwijl de video wordt verzonden door aan te roepen `switchSource` op een `localVideoStream` exemplaar:
+U kunt overschakelen naar een ander camera apparaat terwijl de video wordt verzonden door aan te roepen `switchSource` op een `LocalVideoStream` exemplaar:
 ```java
-localVideoStream.switchSource(source).get();
+currentLocalVideoStream.switchSource(source).get();
 ```
 
 ## <a name="remote-participants-management"></a>Beheer van externe deel nemers
@@ -468,7 +475,7 @@ Aan alle gegeven externe deel nemers is een set eigenschappen en verzamelingen g
 * De id voor deze externe deel nemer ophalen.
 Identiteit is een van de typen ' identifier '
 ```java
-CommunicationIdentifier participantIdentity = remoteParticipant.getIdentifier();
+CommunicationIdentifier participantIdentifier = remoteParticipant.getIdentifier();
 ```
 
 * De status van deze externe deel nemer ophalen.
@@ -477,10 +484,12 @@ ParticipantState state = remoteParticipant.getState();
 ```
 Status kan een van
 * ' Inactief '-initiële status
+* ' EarlyMedia ': de aankondiging wordt afgespeeld voordat de deel nemer is verbonden met de oproep
+* ' Belsignaal ': deel nemer oproept ring
 * ' Verbinding maken '-transitie status terwijl deel nemer verbinding maakt met de aanroep
 * Verbonden: de deel nemer is verbonden met de oproep
 * Hold-deel nemer is in de wacht stand
-* ' EarlyMedia ': de aankondiging wordt afgespeeld voordat de deel nemer is verbonden met de oproep
+* ' Inlobby ': de deel nemer wacht op de lobby om te worden toegelaten. Momenteel alleen gebruikt in teams Interop-scenario
 * ' Verbinding verbroken ': eind status-de deel nemer is losgekoppeld van de aanroep
 
 
@@ -510,10 +519,11 @@ List<RemoteVideoStream> videoStreams = remoteParticipant.getVideoStreams(); // [
 Als u een deel nemer wilt toevoegen aan een aanroep (een gebruiker of een telefoon nummer), kunt u deze aanroepen `addParticipant` . Hiermee wordt het exemplaar van de externe deel nemer synchroon geretourneerd.
 
 ```java
-const acsUser = new CommunicationUser("<acs user id>");
-const acsPhone = new PhoneNumber("<phone number>");
+const acsUser = new CommunicationUserIdentifier("<acs user id>");
+const acsPhone = new PhoneNumberIdentifier("<phone number>");
 RemoteParticipant remoteParticipant1 = call.addParticipant(acsUser);
-RemoteParticipant remoteParticipant2 = call.addParticipant(acsPhone);
+AddPhoneNumberOptions addPhoneNumberOptions = new AddPhoneNumberOptions(new PhoneNumberIdentifier("<alternate phone number>"));
+RemoteParticipant remoteParticipant2 = call.addParticipant(acsPhone, addPhoneNumberOptions);
 ```
 
 ### <a name="remove-participant-from-a-call"></a>Deel nemer uit een gesprek verwijderen
@@ -521,9 +531,10 @@ Als u een deel nemer wilt verwijderen uit een aanroep (een gebruiker of een tele
 Dit wordt asynchroon opgelost zodra de deel nemer is verwijderd uit de aanroep.
 De deel nemer wordt ook uit de `remoteParticipants` verzameling verwijderd.
 ```java
-RemoteParticipant remoteParticipant = call.getParticipants().get(0);
-call.removeParticipant(acsUser).get();
-call.removeParticipant(acsPhone).get();
+RemoteParticipant acsUserRemoteParticipant = call.getParticipants().get(0);
+RemoteParticipant acsPhoneRemoteParticipant = call.getParticipants().get(1);
+call.removeParticipant(acsUserRemoteParticipant).get();
+call.removeParticipant(acsPhoneRemoteParticipant).get();
 ```
 
 ## <a name="render-remote-participant-video-streams"></a>Video stromen voor externe deel nemers weer geven
@@ -635,13 +646,13 @@ Voor toegang tot lokale apparaten kunt u inventarisatie methoden gebruiken op de
 
 ```java
 //  Get a list of available video devices for use.
-List<VideoDeviceInfo> localCameras = deviceManager.getCameraList(); // [VideoDeviceInfo, VideoDeviceInfo...]
+List<VideoDeviceInfo> localCameras = deviceManager.getCameras(); // [VideoDeviceInfo, VideoDeviceInfo...]
 
 // Get a list of available microphone devices for use.
-List<AudioDeviceInfo> localMicrophones = deviceManager.getMicrophoneList(); // [AudioDeviceInfo, AudioDeviceInfo...]
+List<AudioDeviceInfo> localMicrophones = deviceManager.getMicrophones(); // [AudioDeviceInfo, AudioDeviceInfo...]
 
 // Get a list of available speaker devices for use.
-List<AudioDeviceInfo> localSpeakers = deviceManager.getSpeakerList(); // [AudioDeviceInfo, AudioDeviceInfo...]
+List<AudioDeviceInfo> localSpeakers = deviceManager.getSpeakers(); // [AudioDeviceInfo, AudioDeviceInfo...]
 ```
 
 ### <a name="set-default-microphonespeaker"></a>Standaard microfoon/-spreker instellen
@@ -652,13 +663,13 @@ Als de standaard waarden van de client niet zijn ingesteld, worden de standaard 
 ```java
 
 // Get the microphone device that is being used.
-AudioDeviceInfo defaultMicrophone = deviceManager.getMicrophoneList().get(0);
+AudioDeviceInfo defaultMicrophone = deviceManager.getMicrophones().get(0);
 
 // Set the microphone device to use.
 deviceManager.setMicrophone(defaultMicrophone);
 
 // Get the speaker device that is being used.
-AudioDeviceInfo defaultSpeaker = deviceManager.getSpeakerList().get(0);
+AudioDeviceInfo defaultSpeaker = deviceManager.getSpeakers().get(0);
 
 // Set the speaker device to use.
 deviceManager.setSpeaker(defaultSpeaker);
@@ -697,10 +708,10 @@ PropertyChangedListener callStateChangeListener = new PropertyChangedListener()
         Log.d("The call state has changed.");
     }
 }
-call.addOnCallStateChangedListener(callStateChangeListener);
+call.addOnStateChangedListener(callStateChangeListener);
 
 //unsubscribe
-call.removeOnCallStateChangedListener(callStateChangeListener);
+call.removeOnStateChangedListener(callStateChangeListener);
 ```
 
 ### <a name="collections"></a>Verzamelingen

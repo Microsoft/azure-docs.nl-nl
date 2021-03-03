@@ -5,22 +5,20 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 06/16/2020
+ms.date: 03/02/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51602e97a8424bade542eec6f88b673130fee8b5
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: a08cc9f5b6bf7f02666406bcc541edb677196eeb
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97586020"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101647333"
 ---
-# <a name="add-a-self-service-sign-up-user-flow-to-an-app-preview"></a>Een self-service-aanmeldings stroom voor gebruikers toevoegen aan een app (preview)
-> [!NOTE]
-> Aanmelden via self-service is een open bare preview-functie van Azure Active Directory. Zie [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+# <a name="add-a-self-service-sign-up-user-flow-to-an-app"></a>Een self-service-aanmeldings stroom voor een gebruiker toevoegen aan een app
 
 U kunt gebruikers stromen maken voor apps die zijn gebouwd door uw organisatie. Als u uw gebruikers stroom aan een toepassing koppelt, kunt u zich aanmelden op die app inschakelen. U kunt ervoor kiezen om meer dan één toepassing te koppelen aan de gebruikers stroom. Wanneer u de gebruikers stroom aan een of meer toepassingen koppelt, kunnen gebruikers die de app bezoeken zich registreren en een gast account krijgen met de opties die in de gebruikers stroom zijn geconfigureerd.
 
@@ -36,9 +34,6 @@ Azure AD is de standaard id-provider voor aanmelden via self-service. Dit beteke
 - [Facebook toevoegen aan uw lijst met sociale id-providers](facebook-federation.md)
 - [Google toevoegen aan uw lijst met sociale id-providers](google-federation.md)
 
-> [!NOTE]
-> Als er in de huidige preview een self-service-aanmeldings stroom is gekoppeld aan een app en u een uitnodiging voor een gebruiker naar deze app stuurt, kan de gebruiker geen Gmail-account gebruiken om de uitnodiging te inwisselen. Als tijdelijke oplossing kan de gebruiker het aanmeldings proces voor de self-service door lopen. Of ze kunnen de uitnodiging inwisselen door toegang te krijgen tot een andere app of door gebruik te maken van de portal mijn apps op https://myapps.microsoft.com .
-
 ### <a name="define-custom-attributes-optional"></a>Aangepaste kenmerken definiëren (optioneel)
 
 Gebruikers kenmerken zijn waarden die worden verzameld door de gebruiker tijdens het aanmelden met een self-service. Azure AD wordt geleverd met een ingebouwde set kenmerken, maar u kunt aangepaste kenmerken maken voor gebruik in uw gebruikers stroom. U kunt deze kenmerken ook lezen en schrijven met behulp van de Microsoft Graph-API. Zie [aangepaste kenmerken definiëren voor gebruikers stromen](user-flow-add-custom-attributes.md).
@@ -50,7 +45,7 @@ Voordat u een self-service registratie voor gebruikers stroom kunt toevoegen aan
 1. Meld u als een Azure AD-administrator aan bij de [Azure Portal](https://portal.azure.com).
 2. Onder **Azure-Services** selecteert u **Azure Active Directory**.
 3. Selecteer **gebruikers instellingen** en selecteer vervolgens **externe instellingen voor samen werking beheren** onder **externe gebruikers**.
-4. Stel de **Schakel optie aanmelden via selfservice inschakelen via gebruikers stromen (preview)** in op **Ja**.
+4. Stel de **self-service registratie voor gasten inschakelen via gebruikers stromen** in op **Ja**.
 
    ![Aanmelden via self-service voor gasten inschakelen](media/self-service-sign-up-user-flow/enable-self-service-sign-up.png)
 5. Selecteer **Opslaan**.
@@ -61,7 +56,7 @@ Vervolgens maakt u de gebruikers stroom voor de Self-Service-aanmelding en voegt
 1. Meld u als een Azure AD-administrator aan bij de [Azure Portal](https://portal.azure.com).
 2. Onder **Azure-Services** selecteert u **Azure Active Directory**.
 3. Selecteer in het linkermenu **externe identiteiten**.
-4. Selecteer **gebruikers stromen (preview)** en selecteer vervolgens **nieuwe gebruikers stroom**.
+4. Selecteer **gebruikers stromen** en selecteer vervolgens **nieuwe gebruikers stroom**.
 
    ![Knop een nieuwe gebruikers stroom toevoegen](media/self-service-sign-up-user-flow/new-user-flow.png)
 
@@ -75,14 +70,14 @@ Vervolgens maakt u de gebruikers stroom voor de Self-Service-aanmelding en voegt
 > U kunt alleen kenmerken verzamelen wanneer een gebruiker zich voor de eerste keer aanmeldt. Wanneer een gebruiker zich heeft aangemeld, wordt niet langer gevraagd om kenmerk gegevens te verzamelen, zelfs niet als u de gebruikers stroom wijzigt.
 
 8. Selecteer **Maken**.
-9. De nieuwe gebruikers stroom wordt weer gegeven in de lijst **gebruikers stromen (preview)** . Vernieuw, indien nodig, de pagina.
+9. De nieuwe gebruikers stroom wordt weer gegeven in de lijst **gebruikers stromen** . Vernieuw, indien nodig, de pagina.
 
 ## <a name="select-the-layout-of-the-attribute-collection-form"></a>De indeling van het formulier kenmerk verzameling selecteren
 
 U kunt de volg orde kiezen waarin de kenmerken worden weer gegeven op de registratie pagina. 
 
 1. Selecteer **Azure Active Directory** in de [Azure-portal](https://portal.azure.com).
-2. Selecteer **externe identiteiten**, selecteer **gebruikers stromen (preview-versie)**.
+2. Selecteer **externe identiteiten**, selecteer **gebruikers stromen**.
 3. Selecteer de self-service voor het registreren van de gebruikers stroom in de lijst.
 4. Onder **aanpassen** selecteert u **pagina-indelingen**.
 5. De kenmerken die u hebt gekozen om te verzamelen, worden weer gegeven. Als u de volg orde van de weer gave wilt wijzigen, selecteert u een kenmerk **en selecteert u omhoog,** **omlaag**, **verplaatsen naar de bovenkant** of **gaat u naar beneden**.
@@ -95,7 +90,7 @@ U kunt nu toepassingen koppelen aan de gebruikers stroom.
 1. Meld u als een Azure AD-administrator aan bij de [Azure Portal](https://portal.azure.com).
 2. Onder **Azure-Services** selecteert u **Azure Active Directory**.
 3. Selecteer in het linkermenu **externe identiteiten**.
-4. Selecteer **gebruikers stromen (preview)** onder **self-service registreren**.
+4. Selecteer **gebruikers stromen** onder **self-service registreren**.
 5. Selecteer de self-service voor het registreren van de gebruikers stroom in de lijst.
 6. Selecteer in het menu links onder **gebruiken** de optie **toepassingen**.
 7. Selecteer **Toepassing toevoegen**.

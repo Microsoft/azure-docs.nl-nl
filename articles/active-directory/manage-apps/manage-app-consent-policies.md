@@ -12,12 +12,12 @@ ms.date: 06/01/2020
 ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 68ff89191a4e9b11c2d84ec016090f76b8ea11b7
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 5b0542bbcc4d1acd37f7eeb333a53fb6826a4eea
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99258113"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101643589"
 ---
 # <a name="manage-app-consent-policies"></a>Beleid voor app-toestemming beheren
 
@@ -152,4 +152,4 @@ Zie voor meer informatie:
 * [Machtigingen en toestemming in het micro soft Identity-platform](../develop/v2-permissions-and-consent.md)
 
 Om hulp te krijgen of antwoorden op uw vragen te vinden:
-* [Azure AD op micro soft Q&A](https://docs.microsoft.com/answers/products/)
+* [Azure AD op micro soft Q&A](/answers/products/)

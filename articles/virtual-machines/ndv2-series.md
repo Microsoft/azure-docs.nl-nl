@@ -3,16 +3,16 @@ title: NDv2-serie
 description: Specificaties voor de virtuele machines uit de NDv2-serie.
 author: vikancha-MSFT
 ms.service: virtual-machines
-ms.subservice: sizes
+ms.subservice: hpc
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 97eb134a22bbf2304c39fe7c55457e394467f1d2
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 7a417def30fcb3a2b429151b9d4c9ba4152220a1
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99095271"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101669163"
 ---
 # <a name="updated-ndv2-series"></a>Bijgewerkte NDv2-serie
 

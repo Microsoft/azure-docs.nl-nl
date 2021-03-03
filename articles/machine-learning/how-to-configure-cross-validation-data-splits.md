@@ -10,13 +10,13 @@ ms.custom: how-to, automl
 ms.author: cesardl
 author: CESARDELATORRE
 ms.reviewer: nibaccam
-ms.date: 06/16/2020
-ms.openlocfilehash: a781900534156e455c125dffe3b1334820fdf4d5
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.date: 02/23/2021
+ms.openlocfilehash: add84c2cb53a362fc78fc50a6df13b4976e3868d
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98599063"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101661032"
 ---
 # <a name="configure-data-splits-and-cross-validation-in-automated-machine-learning"></a>Gegevenssplitsingen en kruisvalidatie configureren in geautomatiseerde machine learning
 
@@ -26,7 +26,7 @@ Wanneer u in Azure Machine Learning gebruikmaakt van automatische ML om meerdere
 
 Automatische ML experimenten voeren automatisch model validatie uit. In de volgende secties wordt beschreven hoe u validatie-instellingen verder kunt aanpassen met behulp van de [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py). 
 
-Zie [uw geautomatiseerde machine learning experimenten in azure machine learning Studio maken](how-to-use-automated-ml-for-ml-models.md)voor een programma met weinig code of zonder code. 
+Zie [uw geautomatiseerde machine learning experimenten in azure machine learning Studio maken](how-to-use-automated-ml-for-ml-models.md#create-and-run-experiment)voor een programma met weinig code of zonder code. 
 
 > [!NOTE]
 > De Studio ondersteunt momenteel trainings-en validatie gegevens en opties voor kruis validatie, maar biedt geen ondersteuning voor het opgeven van afzonderlijke gegevens bestanden voor uw validatieset. 
@@ -73,6 +73,9 @@ Als u een `validation_data` of `n_cross_validation` -para meter niet expliciet o
 
 In dit geval kunt u beginnen met één gegevens bestand en deze splitsen in trainings gegevens en validatie gegevens sets, of u kunt een afzonderlijk gegevens bestand voor de validatieset opgeven. In beide gevallen `validation_data` wijst de para meter in uw `AutoMLConfig` object welke gegevens moeten worden gebruikt als uw validatieset. Deze para meter accepteert alleen gegevens sets in de vorm van een [Azure machine learning dataset](how-to-create-register-datasets.md) of een Panda data frame.   
 
+> [!NOTE]
+> De `validation_size` para meter wordt niet ondersteund in prognose scenario's.
+
 In het volgende code voorbeeld wordt expliciet aangegeven welk gedeelte van de gegeven gegevens in `dataset` moet worden gebruikt voor training en validatie.
 
 ```python
@@ -93,7 +96,12 @@ automl_config = AutoMLConfig(compute_target = aml_remote_compute,
 
 ## <a name="provide-validation-set-size"></a>Grootte van validatieset opgeven
 
-In dit geval wordt er slechts één gegevensset voor het experiment gegeven. Dat wil zeggen, de `validation_data` para meter is **niet** opgegeven en de opgegeven gegevensset wordt toegewezen aan de  `training_data` para meter.  In uw `AutoMLConfig` object kunt u de `validation_size` para meter instellen om een deel van de trainings gegevens voor validatie op te slaan. Dit betekent dat de validatieset wordt gesplitst door AutoML van de oorspronkelijke `training_data` waarde. Deze waarde moet tussen 0,0 en 1,0 niet inclusief (bijvoorbeeld 0,2 betekent dat er 20% van de gegevens voor validatie gegevens wordt uitgecheckt).
+In dit geval wordt er slechts één gegevensset voor het experiment gegeven. Dat wil zeggen, de `validation_data` para meter is **niet** opgegeven en de opgegeven gegevensset wordt toegewezen aan de  `training_data` para meter.  
+
+In uw `AutoMLConfig` object kunt u de `validation_size` para meter instellen om een deel van de trainings gegevens voor validatie op te slaan. Dit betekent dat de validatieset wordt gesplitst door middel van automatische MILLILITERs van de oorspronkelijke `training_data` waarde. Deze waarde moet tussen 0,0 en 1,0 niet inclusief (bijvoorbeeld 0,2 betekent dat er 20% van de gegevens voor validatie gegevens wordt uitgecheckt).
+
+> [!NOTE]
+> De `validation_size` para meter wordt niet ondersteund in prognose scenario's. 
 
 Zie het volgende code voorbeeld:
 
@@ -111,10 +119,13 @@ automl_config = AutoMLConfig(compute_target = aml_remote_compute,
                             )
 ```
 
-## <a name="set-the-number-of-cross-validations"></a>Het aantal Kruis validaties instellen
+## <a name="k-fold-cross-validation"></a>Kruis validatie met K-vouwen
 
-Als u kruis validatie wilt uitvoeren, neemt u de `n_cross_validations` para meter op en stelt u deze in op een waarde. Deze para meter bepaalt hoeveel Kruis validaties worden uitgevoerd op basis van hetzelfde aantal vouwen.
+Als u kruis validatie met k-vouwen wilt uitvoeren, neemt u de `n_cross_validations` para meter op en stelt u deze in op een waarde. Deze para meter bepaalt hoeveel Kruis validaties worden uitgevoerd op basis van hetzelfde aantal vouwen.
 
+> [!NOTE]
+> De `n_cross_validations` para meter wordt niet ondersteund in classificatie scenario's die gebruikmaken van diepe Neural-netwerken.
+ 
 In de volgende code worden vijf vouwen voor kruis validatie gedefinieerd. Daarom gebruiken vijf verschillende trainingen, elke training met 4/5 van de gegevens en elke validatie met behulp van 1/5 van de gegevens met een andere evaluatie vouwen.
 
 Als gevolg hiervan worden metrische gegevens berekend met het gemiddelde van de vijf validatie-metrische gegevens.
@@ -129,6 +140,31 @@ automl_config = AutoMLConfig(compute_target = aml_remote_compute,
                              primary_metric = 'AUC_weighted',
                              training_data = dataset,
                              n_cross_validations = 5
+                             label_column_name = 'Class'
+                            )
+```
+## <a name="monte-carlo-cross-validation"></a>Monte Carlo-Kruis validatie
+
+Als u een Monte Carlo-Kruis validatie wilt uitvoeren, moet u zowel de `validation_size` als- `n_cross_validations` para meters in uw `AutoMLConfig` object opgeven. 
+
+Voor Monte Carlo-Kruis validatie, wordt het gedeelte van de trainings gegevens dat is opgegeven door de `validation_size` para meter voor validatie, door geautomatiseerd ml gereserveerd en worden vervolgens de rest van de gegevens voor de training toegewezen. Dit proces wordt vervolgens herhaald op basis van de waarde die is opgegeven in de `n_cross_validations` para meter, waardoor er wille keurig nieuwe trainingen en validatie splitsingen worden gegenereerd.
+
+> [!NOTE]
+> De Monte Carlo-Kruis validatie wordt niet ondersteund in prognose scenario's.
+
+De volgende code definieert, 7 vouwen voor kruis validatie en 20% van de trainings gegevens moeten worden gebruikt voor validatie. 7 verschillende trainingen maakt daarom gebruik van 80% van de gegevens en elke validatie gebruikt elke keer 20% van de gegevens met een andere evaluatie vouwen.
+
+```python
+data = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/creditcard.csv"
+
+dataset = Dataset.Tabular.from_delimited_files(data)
+
+automl_config = AutoMLConfig(compute_target = aml_remote_compute,
+                             task = 'classification',
+                             primary_metric = 'AUC_weighted',
+                             training_data = dataset,
+                             n_cross_validations = 7
+                             validation_size = 0.2,
                              label_column_name = 'Class'
                             )
 ```

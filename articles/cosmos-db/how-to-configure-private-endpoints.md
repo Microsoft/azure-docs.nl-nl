@@ -4,15 +4,15 @@ description: Meer informatie over het instellen van een persoonlijke Azure-koppe
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 12/16/2020
+ms.date: 03/02/2021
 ms.author: thweiss
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9a6db0d25165059581d7ffafa5b8e7fd19330c87
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: c684bd38f5e82cc53da002278495c2d4a859edc2
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629643"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101661287"
 ---
 # <a name="configure-azure-private-link-for-an-azure-cosmos-account"></a>Een persoonlijke Azure-koppeling configureren voor een Azure Cosmos-account
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -22,11 +22,11 @@ Met behulp van een persoonlijke Azure-koppeling kunt u verbinding maken met een 
 > [!NOTE]
 > Persoonlijke koppeling verhindert niet dat uw Azure Cosmos-eind punten worden omgezet door open bare DNS. Het filteren van binnenkomende aanvragen gebeurt op toepassings niveau, niet op Trans Port of op netwerk niveau.
 
-Met persoonlijke koppeling kunnen gebruikers toegang krijgen tot een Azure Cosmos-account vanuit het virtuele netwerk of via een peered virtueel netwerk. Resources die zijn toegewezen aan een privé koppeling, zijn ook on-premises toegankelijk via privé-peering via VPN of Azure ExpressRoute. 
+Met persoonlijke koppeling kunnen gebruikers toegang krijgen tot een Azure Cosmos-account vanuit het virtuele netwerk of via een peered virtueel netwerk. Resources die zijn toegewezen aan een privé koppeling, zijn ook on-premises toegankelijk via privé-peering via VPN of Azure ExpressRoute.
 
-U kunt verbinding maken met een Azure Cosmos-account dat is geconfigureerd met een persoonlijke koppeling met behulp van de automatische of hand matige goedkeurings methode. Zie de sectie [goedkeurings werk stroom](../private-link/private-endpoint-overview.md#access-to-a-private-link-resource-using-approval-workflow) van de documentatie van de persoonlijke koppeling voor meer informatie. 
+U kunt verbinding maken met een Azure Cosmos-account dat is geconfigureerd met een persoonlijke koppeling met behulp van de automatische of hand matige goedkeurings methode. Zie de sectie [goedkeurings werk stroom](../private-link/private-endpoint-overview.md#access-to-a-private-link-resource-using-approval-workflow) van de documentatie van de persoonlijke koppeling voor meer informatie.
 
-In dit artikel worden de stappen beschreven voor het maken van een privé-eindpunt. Hierbij wordt ervan uitgegaan dat u de automatische goedkeurings methode gebruikt.
+In dit artikel wordt beschreven hoe u privé-eind punten instelt voor Azure Cosmos DB transactionele opslag. Hierbij wordt ervan uitgegaan dat u de automatische goedkeurings methode gebruikt. Als u de analytische Store gebruikt, raadpleegt u [privé-eind punten voor het artikel in de analytische winkel](analytical-store-private-endpoints.md) .
 
 ## <a name="create-a-private-endpoint-by-using-the-azure-portal"></a>Een persoonlijk eind punt maken met behulp van de Azure Portal
 
@@ -47,7 +47,7 @@ Gebruik de volgende stappen om een persoonlijk eind punt te maken voor een besta
     | Resourcegroep | Selecteer een resourcegroep.|
     | **Exemplaardetails** |  |
     | Naam | Voer een naam in voor uw privé-eindpunt. Als deze naam wordt gebruikt, maakt u er een. |
-    |Regio| Selecteer de regio waar u een persoonlijke koppeling wilt implementeren. Maak het persoonlijke eind punt op de locatie waar het virtuele netwerk zich bevindt.|
+    |Region| Selecteer de regio waar u een persoonlijke koppeling wilt implementeren. Maak het persoonlijke eind punt op de locatie waar het virtuele netwerk zich bevindt.|
     |||
 1. Selecteer **Volgende: Resource**.
 1. Typ of selecteer in **Een privé-eindpunt maken – Resource** de volgende gegevens:
@@ -74,7 +74,7 @@ Gebruik de volgende stappen om een persoonlijk eind punt te maken voor een besta
     |Privé-DNS-zone |Selecteer **privatelink.documents.Azure.com**. <br><br/> De privé-DNS-zone wordt automatisch bepaald. U kunt deze niet wijzigen met behulp van de Azure Portal.|
     |||
 
-1. Selecteer **Controleren en maken**. Op de pagina **controleren en maken** valideert Azure uw configuratie.
+1. Selecteer **Controleren + maken**. Op de pagina **controleren en maken** valideert Azure uw configuratie.
 1. Als u het bericht **Validatie geslaagd** ziet, selecteert u **Maken**.
 
 Wanneer u een persoonlijke koppeling hebt goedgekeurd voor een Azure Cosmos-account, is de optie **alle netwerken** in het deel venster **firewall en virtuele netwerken** niet beschikbaar in de Azure Portal.
@@ -671,7 +671,7 @@ De volgende beperkingen zijn van toepassing wanneer u een privé-verbinding met 
 
 * Wanneer u de API van Azure Cosmos DB gebruikt voor MongoDB-accounts, wordt een persoonlijk eind punt alleen ondersteund voor accounts op Server versie 3,6 (dat wil zeggen, accounts die gebruikmaken van het eind punt in de indeling `*.mongo.cosmos.azure.com` ). Privé koppeling wordt niet ondersteund voor accounts op Server versie 3,2 (dat wil zeggen, accounts die gebruikmaken van het eind punt in de indeling `*.documents.azure.com` ). Als u een persoonlijke koppeling wilt gebruiken, moet u oude accounts migreren naar de nieuwe versie.
 
-* Wanneer u de API van een Azure Cosmos DB gebruikt voor een MongoDB-account met een persoonlijke koppeling, werken sommige hulpprogram ma's of bibliotheken mogelijk niet wanneer ze de `appName` para meter automatisch uit de Connection String verwijderen. Deze para meter is vereist om verbinding te maken met het account via een persoonlijk eind punt. Sommige hulpprogram ma's, zoals Visual Studio code, verwijderen deze para meter niet uit de connection string en zijn daarom compatibel.
+* Wanneer u de API van een Azure Cosmos DB gebruikt voor MongoDB-account met een persoonlijke koppeling, moeten de hulpprogram ma's/bibliotheken service naam identificatie (SNI) ondersteunen of de `appName` para meter door geven van de Connection String om een juiste verbinding te maken. Sommige oudere hulpprogram ma's/bibliotheken zijn mogelijk niet compatibel met het gebruik van de functie voor persoonlijke koppelingen.
 
 * Aan een netwerk beheerder moet ten minste de `Microsoft.DocumentDB/databaseAccounts/PrivateEndpointConnectionsApproval/action` machtiging voor het bereik van het Azure Cosmos-account worden verleend om automatisch goedgekeurde privé-eind punten te maken.
 

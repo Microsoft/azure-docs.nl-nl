@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: aamalvea
 ms.author: aamalvea
 ms.reviewer: sstein
-ms.date: 08/25/2020
-ms.openlocfilehash: 3f87f47f652f71a57796d1cacd047b0448b49b7c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 1/21/2021
+ms.openlocfilehash: d38ac9731959cf9a23052753b09c9e7819846705
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91333032"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101664114"
 ---
 # <a name="plan-for-azure-maintenance-events-in-azure-sql-database-and-azure-sql-managed-instance"></a>Azure-onderhouds gebeurtenissen plannen in Azure SQL Database en Azure SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -31,7 +31,7 @@ Voor elke Data Base bewaart Azure SQL Database en Azure SQL Managed instance een
 
 ## <a name="what-to-expect-during-a-planned-maintenance-event"></a>Wat u kunt verwachten tijdens een geplande onderhouds gebeurtenis
 
-Onderhouds gebeurtenis kan één of meerdere failovers veroorzaken, afhankelijk van de Constellation van de primaire en secundaire replica's aan het begin van de onderhouds gebeurtenis. Gemiddeld worden er 1,7 failovers uitgevoerd per geplande onderhouds gebeurtenis. Opnieuw configureren/failovers worden over het algemeen binnen 30 seconden voltooid. Het gemiddelde is 8 seconden. Als er al een verbinding is gemaakt, moet uw toepassing opnieuw verbinding maken met de nieuwe primaire replica van uw data base. Als er een nieuwe verbinding tot stand wordt gebracht terwijl de Data Base een herconfiguratie ondergaat voordat de nieuwe primaire replica online is, krijgt u de fout 40613 (Data Base niet beschikbaar): *' data base {DATABASENAME} ' op server ' {servername} ' is momenteel niet beschikbaar. Probeer de verbinding later opnieuw. "* Als uw data base een langlopende query heeft, wordt deze query onderbroken tijdens een herconfiguratie en moet deze opnieuw worden gestart.
+Onderhouds gebeurtenis kan één of meerdere failovers veroorzaken, afhankelijk van de Constellation van de primaire en secundaire replica's aan het begin van de onderhouds gebeurtenis. Gemiddeld worden er 1,7 failovers uitgevoerd per geplande onderhouds gebeurtenis. Opnieuw configureren/failovers worden over het algemeen binnen 30 seconden voltooid. Het gemiddelde is acht seconden. Als er al een verbinding is gemaakt, moet uw toepassing opnieuw verbinding maken met de nieuwe primaire replica van uw data base. Als er een nieuwe verbinding tot stand wordt gebracht terwijl de Data Base een herconfiguratie ondergaat voordat de nieuwe primaire replica online is, krijgt u de fout 40613 (Data Base niet beschikbaar): *' data base {DATABASENAME} ' op server ' {servername} ' is momenteel niet beschikbaar. Probeer de verbinding later opnieuw. "* Als uw data base een langlopende query heeft, wordt deze query onderbroken tijdens een herconfiguratie en moet deze opnieuw worden gestart.
 
 ## <a name="how-to-simulate-a-planned-maintenance-event"></a>Een geplande onderhouds gebeurtenis simuleren
 
@@ -45,7 +45,12 @@ Bij elke client productie toepassing die verbinding maakt met een Cloud database
 
 Als uw data base aanmeldings fouten ondervindt, controleert u het [resource Health](../../service-health/resource-health-overview.md#get-started) venster in het [Azure Portal](https://portal.azure.com) voor de huidige status. De sectie status geschiedenis bevat de downtime-reden voor elke gebeurtenis (indien beschikbaar).
 
+## <a name="maintenance-window-feature"></a>Onderhouds venster functie
+
+Met de functie onderhouds venster kunt u de configuratie van voorspel bare onderhouds Vensters plannen voor in aanmerking komende Azure SQL-data bases en SQL Managed instances. Zie [onderhouds venster](maintenance-window.md) voor meer informatie.
+
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over [resource Health](resource-health-to-troubleshoot-connectivity.md) voor Azure SQL database en Azure SQL Managed instance.
 - Zie voor meer informatie over logica voor opnieuw proberen [logica voor tijdelijke fouten](troubleshoot-common-connectivity-issues.md#retry-logic-for-transient-errors).
+- Onderhouds venster schema's configureren met de functie [onderhouds venster](maintenance-window.md) .

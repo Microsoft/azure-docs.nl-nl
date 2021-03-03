@@ -5,14 +5,14 @@ author: christopheranderson
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: how-to
-ms.date: 09/01/2020
+ms.date: 03/02/2021
 ms.author: chrande
-ms.openlocfilehash: 72e89a67f2d767c8a104982dbe9eb9e47aec015a
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: ced795385fdf00e706ea897db80f558b513a9f9d
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100574651"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101656955"
 ---
 # <a name="pre-migration-steps-for-data-migrations-from-mongodb-to-azure-cosmos-dbs-api-for-mongodb"></a>Stappen voorafgaand aan de migratie voor gegevens migraties van MongoDB naar de API van Azure Cosmos DB voor MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -80,7 +80,7 @@ Op dezelfde manier wordt met de partitionering automatisch capaciteit toegevoegd
 
 ## <a name="index-your-data"></a><a id="indexing"></a>Uw gegevens indexeren
 
-Met de API van Azure Cosmos DB voor MongoDB-Server versie 3,6 wordt het `_id` veld alleen automatisch geïndexeerd. Dit veld kan niet worden verwijderd. De unieke waarde van het veld wordt automatisch afgedwongen `_id` per Shard-sleutel. Als u extra velden wilt indexeren, past u de opdrachten voor MongoDB-indexbeheer toe. Dit standaard indexeringsbeleid wijkt af van de Azure Cosmos DB SQL-API, waarmee standaard alle velden worden geïndexeerd.
+Met de API van Azure Cosmos DB voor MongoDB-server versies 3,6 en hoger wordt het `_id` veld alleen automatisch geïndexeerd. Dit veld kan niet worden verwijderd. De unieke waarde van het veld wordt automatisch afgedwongen `_id` per Shard-sleutel. Als u extra velden wilt indexeren, past u de [MongoDb-index beheer opdrachten](mongodb-indexing.md)toe. Dit standaard indexeringsbeleid wijkt af van de Azure Cosmos DB SQL-API, waarmee standaard alle velden worden geïndexeerd.
 
 De indexerings mogelijkheden van Azure Cosmos DB zijn onder andere het toevoegen van samengestelde indexen, unieke indexen en TTL-indexen (time-to-Live). De index beheer-interface wordt toegewezen aan de `createIndex()` opdracht. Meer informatie vindt u [in indexering in azure Cosmos DB-API voor MongoDb](mongodb-indexing.md)-artikel.
 

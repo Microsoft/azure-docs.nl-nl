@@ -13,12 +13,12 @@ ms.date: 1/15/2020
 ms.author: hahamil
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 981d3a0c5d01d70625fc0d022318c5bc866f23a0
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
-ms.translationtype: HT
+ms.openlocfilehash: 6a173ed4dae9237d8aae991c943817ed70246eea
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95756397"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101649052"
 ---
 # <a name="tutorial-use-shared-device-mode-in-your-android-application"></a>Zelfstudie: Modus voor gedeelde apparaten gebruiken in een Android-toepassing
 
@@ -96,7 +96,7 @@ Gebruik `isSharedDevice()` om te bepalen of een app actief is op een apparaat da
 Hier volgt een codefragment waarin wordt weergegeven hoe u `isSharedDevice()` kunt gebruiken.  Het is afkomstig uit de klasse `SingleAccountModeFragment` in de voorbeeld-app:
 
 ```Java
-deviceModeTextView.setText(mSingleAccountApp.isSharedDevice() ?"Shared" :"Non-Shared");
+deviceModeTextView.setText(mSingleAccountApp.isSharedDevice() ? "Shared" : "Non-Shared");
 ```
 
 ### <a name="initialize-the-publicclientapplication-object"></a>Het PublicClientApplication-object initialiseren

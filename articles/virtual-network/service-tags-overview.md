@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: 41db671e4ab76dc56dc2c01f4852640acfe3fd83
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 1186715003abef387343bb2b6cb71d56490c519d
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100389736"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101667836"
 ---
 # <a name="virtual-network-service-tags"></a>Service tags van virtueel netwerk
 <a name="network-service-tags"></a>
@@ -53,6 +53,7 @@ Service Tags geven standaard de bereiken weer voor de hele Cloud. Sommige servic
 | **AzureActiveDirectory** | Azure Active Directory. | Uitgaand | Nee | Ja |
 | **AzureActiveDirectoryDomainServices** | Beheer verkeer voor implementaties die zijn toegewezen aan Azure Active Directory Domain Services. | Beide | Nee | Ja |
 | **AzureAdvancedThreatProtection** | Azure Advanced Threat Protection. | Uitgaand | Nee | Nee |
+| **AzureAPIForFHIR** | Azure API voor FHIR (snelle samenwerkings bronnen voor de gezondheids zorg).<br/><br/> *Opmerking: deze tag kan momenteel niet worden geconfigureerd via Azure Portal.*| Uitgaand | Nee | Nee |
 | **AzureArcInfrastructure** | Servers met Azure-Arc, ingeschakelde Kubernetes en gast configuratie verkeer.<br/><br/>*Opmerking:* Deze tag heeft een afhankelijkheid van de **AzureActiveDirectory**-,**AzureTrafficManager**-en **AzureResourceManager** -Tags. *Deze tag kan momenteel niet worden geconfigureerd via Azure Portal*.| Uitgaand | Nee | Ja |
 | **AzureBackup** |Azure Backup.<br/><br/>*Opmerking:* Deze tag bevat een afhankelijkheid van de **opslag** -en **AzureActiveDirectory** -Tags. | Uitgaand | Nee | Ja |
 | **AzureBotService** | Azure Bot Service. | Uitgaand | Nee | Nee |

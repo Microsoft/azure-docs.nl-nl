@@ -11,16 +11,16 @@ ms.topic: how-to
 ms.date: 02/10/2021
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 629daa968d548c06d176e6349382ad51349a37a0
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: cf441108c9fd0ae87f265604f6f0706d92516746
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417155"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101646551"
 ---
 # <a name="tutorial-configure-microsoft-dynamics-365-fraud-protection-with-azure-active-directory-b2c"></a>Zelf studie: micro soft Dynamics 365 fraude beveiliging configureren met Azure Active Directory B2C
 
-In deze voorbeeld zelfstudie bieden we richt lijnen voor het integreren van [micro soft Dynamics 365 fraude Protection](https://docs.microsoft.com/dynamics365/fraud-protection/overview) (DFP) met de Azure Active Directory (AD) B2C.
+In deze voorbeeld zelfstudie bieden we richt lijnen voor het integreren van [micro soft Dynamics 365 fraude Protection](/dynamics365/fraud-protection/overview) (DFP) met de Azure Active Directory (AD) B2C.
 
 Micro soft DFP biedt clients de mogelijkheid om te beoordelen of het risico van pogingen om nieuwe accounts te maken en om zich aan te melden bij het ecosysteem van de client frauduleus is. De evaluatie van micro soft DFP kan door de klant worden gebruikt om verdachte pogingen om nieuwe valse accounts te maken of om bestaande accounts te misbruiken. Account beveiliging omvat kunst matige intelligentie voor het bewaken van apparaten, Api's voor realtime risico beoordeling, regel-en lijst ervaring om de risico strategie te optimaliseren zoals de bedrijfs behoeften van de client, en een score card voor het controleren van de effectiviteit en tendensen van fraude beveiliging in het ecosysteem van de client.
 
@@ -32,7 +32,7 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 - Een Azure-abonnement. Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
 
-- Een [Azure AD B2C-Tenant](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant). De Tenant is gekoppeld aan uw Azure-abonnement.
+- Een [Azure AD B2C-Tenant](./tutorial-create-tenant.md). De Tenant is gekoppeld aan uw Azure-abonnement.
 
 - Een micro soft DFPe- [abonnement](https://dynamics.microsoft.com/pricing/#Sales)ophalen. U kunt ook een [proef versie](https://dynamics.microsoft.com/ai/fraud-protection/signin/?RU=https%3A%2F%2Fdfp.microsoft.com%2Fsignin) van de client instellen.
 
@@ -67,36 +67,36 @@ In het volgende architectuur diagram wordt de implementatie weer gegeven.
 
 ## <a name="set-up-the-solution"></a>De oplossing instellen
 
-1. [Maak een Facebook-toepassing](https://docs.microsoft.com/azure/active-directory-b2c/identity-provider-facebook#create-a-facebook-application) die is geconfigureerd om Federatie Azure AD B2C toe te staan.
-2. [Voeg het Facebook-geheim toe](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started#create-the-facebook-key) dat u hebt gemaakt als een framework-beleids sleutel voor identiteits ervaring.
+1. [Maak een Facebook-toepassing](./identity-provider-facebook.md#create-a-facebook-application) die is geconfigureerd om Federatie Azure AD B2C toe te staan.
+2. [Voeg het Facebook-geheim toe](./custom-policy-get-started.md#create-the-facebook-key) dat u hebt gemaakt als een framework-beleids sleutel voor identiteits ervaring.
 
 ## <a name="configure-your-application-under-microsoft-dfp"></a>Uw toepassing configureren onder micro soft DFP
 
-[Stel uw Azure AD-Tenant](https://docs.microsoft.com/dynamics365/fraud-protection/integrate-real-time-api) in om micro soft DFP te gebruiken.
+[Stel uw Azure AD-Tenant](/dynamics365/fraud-protection/integrate-real-time-api) in om micro soft DFP te gebruiken.
 
 ## <a name="deploy-to-the-web-application"></a>Implementeren in de webtoepassing
 
 ### <a name="implement-microsoft-dfp-service-fingerprinting"></a>Micro soft DFP service-vinger afdruk implementeren
 
-[Micro soft DFP vinger afdruk van apparaten](https://docs.microsoft.com/dynamics365/fraud-protection/device-fingerprinting) is een vereiste voor de beveiliging van micro soft DFP-accounts.
+[Micro soft DFP vinger afdruk van apparaten](/dynamics365/fraud-protection/device-fingerprinting) is een vereiste voor de beveiliging van micro soft DFP-accounts.
 
 >[!NOTE]
 >Naast Azure AD B2C-UI-pagina's kan de klant ook de vingerafdruk service in app-code implementeren voor uitgebreidere profilering van apparaten. De service voor het maken van vinger afdrukken in app code is niet opgenomen in dit voor beeld.
 
 ### <a name="deploy-the-azure-ad-b2c-api-code"></a>De API-code van de Azure AD B2C implementeren
 
-Implementeer de [meegeleverde API-code](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Dynamics-Fraud-Protection/API) voor een Azure-service. De code kan worden [gepubliceerd vanuit Visual Studio](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+Implementeer de [meegeleverde API-code](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Dynamics-Fraud-Protection/API) voor een Azure-service. De code kan worden [gepubliceerd vanuit Visual Studio](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
 
 CORS instellen, **toegestane oorsprong** toevoegen `https://{your_tenant_name}.b2clogin.com`
 
 >[!NOTE]
 >Later hebt u de URL van de geïmplementeerde service nodig om Azure AD te configureren met de vereiste instellingen.
 
-Raadpleeg de [documentatie van app service](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api) voor meer informatie.
+Raadpleeg de [documentatie van app service](../app-service/app-service-web-tutorial-rest-api.md) voor meer informatie.
 
 ### <a name="add-context-dependent-configuration-settings"></a>Context afhankelijke configuratie-instellingen toevoegen
 
-Configureer de toepassings instellingen in de [app service in azure](https://docs.microsoft.com/azure/app-service/configure-common#configure-app-settings). Hierdoor kunnen instellingen veilig worden geconfigureerd zonder dat deze in een opslag plaats worden gecontroleerd. De rest-API moet de volgende instellingen hebben:
+Configureer de toepassings instellingen in de [app service in azure](../app-service/configure-common.md#configure-app-settings). Hierdoor kunnen instellingen veilig worden geconfigureerd zonder dat deze in een opslag plaats worden gecontroleerd. De rest-API moet de volgende instellingen hebben:
 
 | Toepassingsinstellingen | Bron | Notities |
 | :-------- | :------------| :-----------|
@@ -135,7 +135,7 @@ Zoek in het meegeleverde [aangepaste beleid](https://github.com/azure-ad-b2c/par
 
 ### <a name="call-microsoft-dfp-label-api"></a>Micro soft DFP-label-API aanroepen
 
-Klanten moeten [Label-API implementeren](https://docs.microsoft.com/dynamics365/fraud-protection/integrate-ap-api). Zie [micro soft DFP API](https://apidocs.microsoft.com/services/dynamics365fraudprotection#/AccountProtection/v1.0) voor meer informatie.
+Klanten moeten [Label-API implementeren](/dynamics365/fraud-protection/integrate-ap-api). Zie [micro soft DFP API](https://apidocs.microsoft.com/services/dynamics365fraudprotection#/AccountProtection/v1.0) voor meer informatie.
 
 `URI: < API Endpoint >/v1.0/label/account/create/<userId>`
 
@@ -148,7 +148,7 @@ De waarde van de gebruikers-id moet hetzelfde zijn als het item in de bijbehoren
 
 1. Ga naar het [Azure AD B2C-beleid](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Dynamics-Fraud-Protection/Policies) in de map beleid.
 
-2. Volg dit [document](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications#custom-policy-starter-pack) om [LocalAccounts Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/LocalAccounts) te downloaden
+2. Volg dit [document](./custom-policy-get-started.md?tabs=applications#custom-policy-starter-pack) om [LocalAccounts Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/LocalAccounts) te downloaden
 
 3. Configureer het beleid voor de Azure AD B2C Tenant.
 
@@ -174,7 +174,7 @@ De waarde van de gebruikers-id moet hetzelfde zijn als het item in de bijbehoren
 5. De service micro soft DFP wordt aangeroepen tijdens de stroom, nadat het gebruikers kenmerk is gemaakt. Als de stroom onvolledig is, controleert u of de gebruiker niet is opgeslagen in de map.
 
 >[!NOTE]
->Regels rechtstreeks bijwerken in micro soft DFP portal als u de [micro soft DFP-regel engine](https://docs.microsoft.com/dynamics365/fraud-protection/rules)gebruikt.
+>Regels rechtstreeks bijwerken in micro soft DFP portal als u de [micro soft DFP-regel engine](/dynamics365/fraud-protection/rules)gebruikt.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -182,6 +182,6 @@ Raadpleeg de volgende artikelen voor meer informatie:
 
 - [Voor beelden van micro soft DFP](https://github.com/Microsoft/Dynamics-365-Fraud-Protection-Samples)
 
-- [Aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

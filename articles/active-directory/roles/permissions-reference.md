@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0211388f3b638080c79a58330ba1fff1989def7d
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 41a63d7d0c5844e7837be44b359b6d04a9009eb4
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101095862"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101651822"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Machtigingen voor beheerdersrollen in Azure Active Directory
 
@@ -99,7 +99,7 @@ De rol [authenticatie beleids beheerder](#authentication-policy-administrator) h
 >* Niet-beheerders als leidinggevenden, juridisch adviseur en Human Resources-werk nemers die mogelijk toegang tot gevoelige of persoonlijke informatie hebben.
 
 > [!IMPORTANT]
-> Deze rol is momenteel niet in staat om MFA per gebruiker te beheren in de verouderde MFA-beheer Portal. Dezelfde functies kunnen worden bereikt met de module [set-MsolUser](https://docs.microsoft.com/powershell/module/msonline/set-msoluser) COMMANDLET Azure AD Power shell.
+> Deze rol is momenteel niet in staat om MFA per gebruiker te beheren in de verouderde MFA-beheer Portal. Dezelfde functies kunnen worden bereikt met de module [set-MsolUser](/powershell/module/msonline/set-msoluser) COMMANDLET Azure AD Power shell.
 
 ### <a name="authentication-policy-administrator"></a>[Verificatie beleids beheerder](#authentication-policy-administrator-permissions)
 
@@ -406,7 +406,7 @@ De rol [authenticatie beleids beheerder](#authentication-policy-administrator) h
 
 
 > [!IMPORTANT]
-> Deze rol is momenteel niet in staat om MFA per gebruiker te beheren in de verouderde MFA-beheer Portal. Dezelfde functies kunnen worden bereikt met de module [set-MsolUser](https://docs.microsoft.com/powershell/module/msonline/set-msoluser) COMMANDLET Azure AD Power shell.
+> Deze rol is momenteel niet in staat om MFA per gebruiker te beheren in de verouderde MFA-beheer Portal. Dezelfde functies kunnen worden bereikt met de module [set-MsolUser](/powershell/module/msonline/set-msoluser) COMMANDLET Azure AD Power shell.
 
 ### <a name="privileged-role-administrator"></a>[Beheerder voor bevoorrechte rollen](#privileged-role-administrator-permissions)
 

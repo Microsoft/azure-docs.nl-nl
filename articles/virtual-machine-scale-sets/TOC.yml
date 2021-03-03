@@ -164,6 +164,8 @@
     - name: Goedgekeurde Linux-versies
       href: ../virtual-machines/linux/endorsed-distros.md
       maintainContext: true
+    - name: Orchestration-modi (preview-versie)
+      href: virtual-machine-scale-sets-orchestration-modes.md
     - name: Onderhoud en updates
       items:
         - name: Overzicht
@@ -210,7 +212,7 @@
           href: security-baseline.md
       maintainContext: true
     - name: Bewaking
-      href: ../azure-monitor/insights/monitor-vm-azure.md
+      href: ../azure-monitor/vm/monitor-vm-azure.md
       maintainContext: true
     - name: Overwegingen bij de implementatie
       items:
@@ -304,7 +306,7 @@
             - name: Azure Portal gebruiken
               href: virtual-machine-scale-sets-autoscale-portal.md
             - name: Geavanceerd automatisch schalen
-              href: ../azure-monitor/platform/autoscale-virtual-machine-scale-sets.md
+              href: ../azure-monitor/autoscale/autoscale-virtual-machine-scale-sets.md
               maintainContext: true
             - name: Problemen met automatisch schalen oplossen
               href: virtual-machine-scale-sets-troubleshoot.md

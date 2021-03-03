@@ -6,12 +6,12 @@ ms.author: rosouz
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.openlocfilehash: cef5f178ea879ba98df90da36ec9c4b639dd100a
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: 885aab68c769c0705994bad34bee6aaa4fdc3f3d
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99627769"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101658466"
 ---
 # <a name="frequently-asked-questions-about-azure-synapse-link-for-azure-cosmos-db"></a>Veelgestelde vragen over Azure Synapse Link voor Azure Cosmos DB
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -67,6 +67,12 @@ Ja, de analytische opslag kan worden ingeschakeld op containers met de door Voer
 ### <a name="is-there-any-effect-on-azure-cosmos-db-transactional-store-provisioned-rus"></a>Is er een effect op Azure Cosmos DB transactionele opslag met het RUs-aanbod?
 
 Azure Cosmos DB garandeert de prestaties van de isolatie tussen transactionele en analytische werk belastingen. Het inschakelen van het analytische archief in een container heeft geen invloed op de RU/s die zijn ingericht in de Azure Cosmos DB transactionele Store. De trans acties (Lees & schrijven) en opslag kosten voor de analytische opslag worden afzonderlijk in rekening gebracht. Zie de [prijzen voor de Azure Cosmos DB-analytische opslag](analytical-store-introduction.md#analytical-store-pricing) voor meer informatie.
+
+### <a name="can-i-restrict-access-to-azure-cosmos-db-analytical-store"></a>Kan ik de toegang tot Azure Cosmos DB analytische archief beperken?
+
+Ja, u kunt een [beheerd privé-eind punt](analytical-store-private-endpoints.md) configureren en netwerk toegang tot de analytische opslag beperken tot het virtuele Azure Synapse-netwerk dat wordt beheerd. Beheerde persoonlijke eind punten maken een persoonlijke koppeling naar uw analytische opslag. Dit persoonlijke eind punt beperkt ook schrijf toegang tot transactionele Store, onder andere Azure Data Services.
+
+U kunt zowel transactionele opslag als persoonlijke eind punten van een analytische opslag toevoegen aan hetzelfde Azure Cosmos DB-account in een Azure Synapse Analytics-werk ruimte. Als u alleen analytische query's wilt uitvoeren, wilt u mogelijk alleen het analytische persoonlijke eind punt toewijzen.
 
 ### <a name="are-delete-and-update-operations-on-the-transactional-store-reflected-in-the-analytical-store"></a>Worden de bewerkingen voor verwijderen en bijwerken in de transactionele Store weer gegeven in de analytische opslag?
 

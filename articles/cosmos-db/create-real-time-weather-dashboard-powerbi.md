@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 09/04/2019
 ms.reviewer: sngun
-ms.openlocfilehash: b3ec3e96aa1ba4bce3893c1af2446bb509a867b6
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 07a3deaf67c4f269b01d62ea25ddb212c1e01f6f
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93333593"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101657533"
 ---
 # <a name="create-a-real-time-dashboard-using-azure-cosmos-db-and-power-bi"></a>Maak een realtime-dash board met behulp van Azure Cosmos DB en Power BI
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -48,7 +48,7 @@ Azure Analysis Services biedt een volledig beheerd platform als een service die 
 
 ### <a name="ingest-weather-data-into-azure-cosmos-db"></a>Weer gegevens opnemen in Azure Cosmos DB
 
-Stel een opname pijplijn in om [weer gegevens](https://catalog.data.gov/dataset/local-weather-archive/resource/c28974a2-fc83-4722-8977-9a701323f729) naar Azure Cosmos DB te laden. U kunt een Azure Data Factory-taak [(ADF)](../data-factory/connector-azure-cosmos-db.md) instellen om periodiek de meest recente weer gegevens in azure Cosmos DB te laden met behulp van de HTTP-bron en Cosmos DB sink.
+Stel een opname pijplijn in om [weer gegevens](https://catalog.data.gov/dataset?groups=climate5434&#topic=climate_navigation) naar Azure Cosmos DB te laden. U kunt een Azure Data Factory-taak [(ADF)](../data-factory/connector-azure-cosmos-db.md) instellen om periodiek de meest recente weer gegevens in azure Cosmos DB te laden met behulp van de HTTP-bron en Cosmos DB sink.
 
 
 ### <a name="connect-power-bi-to-azure-cosmos-db"></a>Power BI verbinden met Azure Cosmos DB
@@ -70,7 +70,7 @@ Stel een opname pijplijn in om [weer gegevens](https://catalog.data.gov/dataset/
    Afhankelijk van welke kolom en welk gegevens type aanwezig zijn in de bron-gegevensset, kunt u de velden Range Start en RangeEnd dienovereenkomstig wijzigen
 
    
-   |Eigenschap  |Gegevenstype  |Filteren  |
+   |Eigenschap  |Gegevenstype  |Filter  |
    |---------|---------|---------|
    |_ts     |   Numeriek      |  [_ts] > duration. TotalSeconds (Range Start-#datetime (1970, 1, 1, 0, 0, 0)) en [_ts] < duration. TotalSeconds (RangeEnd-#datetime (1970, 1, 1, 0, 0, 0))       |
    |Datum (bijvoorbeeld:-2019-08-19)     |   Tekenreeks      | [Document. date] > DateTime. ToText (Range Start, "JJJJ-MM-DD") en [document. date] < DateTime. ToText (RangeEnd, "JJJJ-MM-DD")        |
@@ -94,7 +94,7 @@ Stel een opname pijplijn in om [weer gegevens](https://catalog.data.gov/dataset/
 
 ### <a name="ingest-weather-data-into-azure-cosmos-db"></a>Weer gegevens opnemen in Azure Cosmos DB 
 
-Stel een opname pijplijn in om [weer gegevens](https://catalog.data.gov/dataset/local-weather-archive/resource/c28974a2-fc83-4722-8977-9a701323f729) naar Azure Cosmos DB te laden. U kunt een Azure Data Factory-taak (ADF) instellen om periodiek de meest recente weer gegevens in Azure Cosmos DB te laden met behulp van de HTTP-bron en Cosmos DB sink.
+Stel een opname pijplijn in om [weer gegevens](https://catalog.data.gov/dataset?groups=climate5434&#topic=climate_navigation) naar Azure Cosmos DB te laden. U kunt een Azure Data Factory-taak (ADF) instellen om periodiek de meest recente weer gegevens in Azure Cosmos DB te laden met behulp van de HTTP-bron en Cosmos DB sink.
 
 ### <a name="connect-azure-analysis-services-to-azure-cosmos-account"></a>Azure Analysis Services verbinden met een Azure Cosmos-account
 
@@ -112,7 +112,7 @@ Stel een opname pijplijn in om [weer gegevens](https://catalog.data.gov/dataset/
 
    :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/add-data-source.png" alt-text="Cosmos DB gegevens bron toevoegen":::
 
-   Maak verbinding met Azure Cosmos DB door de **account-URI** , de naam van de **Data Base** en de **container naam** op te geven. U kunt nu zien dat de gegevens uit de Azure Cosmos-container worden geïmporteerd in Power BI.
+   Maak verbinding met Azure Cosmos DB door de **account-URI**, de naam van de **Data Base** en de **container naam** op te geven. U kunt nu zien dat de gegevens uit de Azure Cosmos-container worden geïmporteerd in Power BI.
 
    :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/preview-cosmosdb-data.png" alt-text="Azure Cosmos DB gegevens bekijken":::
 

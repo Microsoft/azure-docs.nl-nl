@@ -13,12 +13,12 @@ ms.date: 10/07/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5bc638eec174a52d501120d5e53bb2dc9e35b688
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: eef58f6e84fb3b4dec947fa3614b6ec1043ff89e
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97591171"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101644643"
 ---
 # <a name="troubleshoot-azure-active-directory-seamless-single-sign-on"></a>Problemen met Azure Active Directory naadloze single Sign-On oplossen
 
@@ -32,6 +32,7 @@ In dit artikel vindt u informatie over het oplossen van problemen met bekende pr
 - Microsoft 365 Win32-clients (Outlook, Word, Excel en andere) met versies 16.0.8730. xxxx en hoger worden ondersteund met behulp van een niet-interactieve stroom. Andere versies worden niet ondersteund. op deze versies voeren gebruikers hun gebruikers namen in, maar geen wacht woorden, om zich aan te melden. Voor OneDrive moet u de [functie voor stil configuratie van onedrive](https://techcommunity.microsoft.com/t5/Microsoft-OneDrive-Blog/Previews-for-Silent-Sync-Account-Configuration-and-Bandwidth/ba-p/120894) activeren voor een stille aanmeldings ervaring.
 - Naadloze SSO werkt niet in de modus voor persoonlijke navigatie op Firefox.
 - Naadloze SSO werkt niet in Internet Explorer wanneer de uitgebreide beveiligde modus is ingeschakeld.
+- Naadloze SSO werkt niet in de modus voor persoonlijke navigatie op micro soft Edge (verouderd).
 - Naadloze SSO werkt niet op mobiele browsers op iOS en Android.
 - Als een gebruiker deel uitmaakt van te veel groepen in Active Directory, is het Kerberos-ticket van de gebruiker waarschijnlijk te groot om te verwerken, waardoor naadloze SSO niet kan worden uitgevoerd. HTTPS-aanvragen van Azure AD kunnen kopteksten hebben met een maximale grootte van 50 KB. Kerberos-tickets moeten kleiner zijn dan die limiet voor andere Azure AD-artefacten (meestal 2-5 KB), zoals cookies. U kunt het beste de groepslid maatschappen van de gebruiker verminderen en het opnieuw proberen.
 - Als u 30 of meer Active Directory-forests wilt synchroniseren, kunt u naadloze eenmalige aanmelding via Azure AD Connect niet inschakelen. Als tijdelijke oplossing kunt u de functie [hand matig inschakelen](#manual-reset-of-the-feature) op uw Tenant.

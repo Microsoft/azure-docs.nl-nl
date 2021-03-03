@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 55de24975dadf27293f305611c6ba07522e8aa90
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: a9024bc9fbd460f403db2da8a65af1e9bd2e771b
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417183"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101645613"
 ---
 # <a name="introduction-to-active-directory-service-accounts"></a>Inleiding tot Active Directory-service accounts
 
@@ -34,7 +34,7 @@ Op basis van uw use-case kunt u een beheerde service account (MSA), een computer
 
 ### <a name="group-msa-accounts"></a>MSA-accounts groeperen
 
-Gebruik waar mogelijk [groeps-beheerde service accounts](service-accounts-group-managed.md) (gmsa's) voor services die worden uitgevoerd in uw on-premises omgeving. Gmsa's bieden één identiteits oplossing voor een service die wordt uitgevoerd op een server farm of achter een netwerk load balancer. Ze kunnen ook worden gebruikt voor een service die wordt uitgevoerd op één server. [Gmsa's hebben specifieke vereisten waaraan moet worden voldaan](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/getting-started-with-group-managed-service-accounts)
+Gebruik waar mogelijk [groeps-beheerde service accounts](service-accounts-group-managed.md) (gmsa's) voor services die worden uitgevoerd in uw on-premises omgeving. Gmsa's bieden één identiteits oplossing voor een service die wordt uitgevoerd op een server farm of achter een netwerk load balancer. Ze kunnen ook worden gebruikt voor een service die wordt uitgevoerd op één server. [Gmsa's hebben specifieke vereisten waaraan moet worden voldaan](/windows-server/security/group-managed-service-accounts/getting-started-with-group-managed-service-accounts)
 
 ### <a name="standalone-msa-accounts"></a>Zelfstandige MSA-accounts
 
@@ -138,4 +138,3 @@ Raadpleeg de volgende artikelen over het beveiligen van service accounts
 
 * [On-premises service accounts beheren](service-accounts-govern-on-premises.md)
 
- 

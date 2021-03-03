@@ -8,12 +8,12 @@ ms.topic: sample
 ms.service: virtual-machine-scale-sets
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 493f479a09fc7b21bb857ebd98c35824c548b5d0
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 1abdf7ae15753d78ac8728f57e9b0cd5dcd9165e
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99539775"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101672599"
 ---
 # <a name="create-and-manage-virtual-machine-scale-set"></a>Een schaalset voor virtuele machines maken en beheren
 
@@ -66,7 +66,7 @@ az disk update --resource-group MyResourceGroup --name myDataDisk --size-gb 200
 az vmss restart --resource-group MyResourceGroup --name myScaleSet --instance-ids 0
 ```
 
-Als u de uitgevouwen schijf wilt gebruiken, vouwt u de onderliggende partitie uit. Zie [een schijf partitie en bestands systeem uitbreiden](/azure/virtual-machines/linux/expand-disks#expand-a-disk-partition-and-filesystem)voor meer informatie.
+Als u de uitgevouwen schijf wilt gebruiken, vouwt u de onderliggende partitie uit. Zie [een schijf partitie en bestands systeem uitbreiden](../../virtual-machines/linux/expand-disks.md#expand-a-disk-partition-and-filesystem)voor meer informatie.
 
 In dit voor beeld wordt de grootte van een gegevens schijf gewijzigd. U kunt dezelfde procedure gebruiken om een besturingssysteem schijf bij te werken. Zie [het station van het besturings systeem van een virtuele machine uitbreiden](../../virtual-machines/windows/expand-os-disk.md)voor meer informatie over een virtuele Windows-machine. Zie voor meer informatie over virtuele Linux-machines [virtuele harde schijven op een Linux-VM uitbreiden met de Azure cli](../../virtual-machines/linux/expand-disks.md).
 

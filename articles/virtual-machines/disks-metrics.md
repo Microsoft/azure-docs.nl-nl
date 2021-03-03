@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/12/2021
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 8f5b7f8b5cd563f8b265d7051a57b0ac22598d1c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 60486c41ad843cf193ee0648dfcfef66f7668e47
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100610734"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101674976"
 ---
 # <a name="disk-performance-metrics"></a>Metrische schijf prestaties
 Azure biedt metrische gegevens in de Azure Portal die inzicht bieden in de manier waarop uw virtuele machines (VM) en schijven worden uitgevoerd. De metrische gegevens kunnen ook worden opgehaald via een API-aanroep. Dit artikel is onderverdeeld in drie subsecties:
@@ -129,6 +129,6 @@ Met deze metrische gegevens wordt aangegeven dat aan de aan LUN 3 en 2 gekoppeld
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Overzicht van Azure Monitor metrische gegevens](../azure-monitor/platform/data-platform-metrics.md)
-- [Uitleg bij aggregatie van metrische gegevens](../azure-monitor/platform/metrics-aggregation-explained.md)
-- [Metrische waarschuwing maken, bekijken en beheren met Azure Monitor](../azure-monitor/platform/alerts-metric.md)
+- [Overzicht van Azure Monitor metrische gegevens](../azure-monitor/essentials/data-platform-metrics.md)
+- [Uitleg bij aggregatie van metrische gegevens](../azure-monitor/essentials/metrics-aggregation-explained.md)
+- [Metrische waarschuwing maken, bekijken en beheren met Azure Monitor](../azure-monitor/alerts/alerts-metric.md)

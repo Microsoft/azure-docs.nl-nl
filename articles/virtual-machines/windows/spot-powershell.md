@@ -3,17 +3,18 @@ title: Power shell gebruiken voor het implementeren van Azure Spot Virtual Machi
 description: Meer informatie over het gebruik van Azure PowerShell voor het implementeren van Azure Spot Virtual Machines om kosten op te slaan.
 author: cynthn
 ms.service: virtual-machines
+ms.subservice: spot
 ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 06/26/2020
 ms.author: cynthn
 ms.reviewer: jagaveer
-ms.openlocfilehash: 3554068d75d2581411dd89a1dc876984710bc439
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: b7a4dc65a3f9285c27b4bf34f65244c37aaf850c
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100557152"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101672137"
 ---
 # <a name="deploy-azure-spot-virtual-machines-using-azure-powershell"></a>Azure Spot Virtual Machines implementeren met behulp van Azure PowerShell
 

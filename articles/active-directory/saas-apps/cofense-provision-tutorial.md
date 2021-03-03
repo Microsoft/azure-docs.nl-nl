@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/11/2020
 ms.author: Zhchia
-ms.openlocfilehash: 084592a8db47a94a0fcd683105f749f514c05ea3
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
-ms.translationtype: HT
+ms.openlocfilehash: 70766fd93f0a70ecf6b5ee54dbdba3571f783878
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98247570"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101646041"
 ---
 # <a name="tutorial-configure-cofense-recipient-sync-for-automatic-user-provisioning"></a>Zelfstudie: Cofense Recipient Sync configureren voor automatische inrichting van gebruikers
 
@@ -117,19 +117,19 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
    |name.givenName|Tekenreeks|
    |name.familyName|Tekenreeks|
    |name.honorificSuffix|Tekenreeks|
-   |phoneNumbers[type eq"work"].value|Tekenreeks|
-   |phoneNumbers[type eq"home"].value|Tekenreeks|
-   |phoneNumbers[type eq"other"].value|Tekenreeks|
-   |phoneNumbers[type eq"pager"].value|Tekenreeks|
-   |phoneNumbers[type eq"mobile"].value|Tekenreeks|
-   |phoneNumbers[type eq"fax"].value|Tekenreeks|
-   |addresses[type eq"other"].formatted|Tekenreeks|
-   |addresses[type eq"work"].formatted|Tekenreeks|
-   |addresses[type eq"work"].streetAddress|Tekenreeks|
-   |addresses[type eq"work"].locality|Tekenreeks|
-   |addresses[type eq"work"].region|Tekenreeks|
-   |addresses[type eq"work"].postalCode|Tekenreeks|
-   |addresses[type eq"work"].country|Tekenreeks|
+   |phoneNumbers[type eq "work"].value|Tekenreeks|
+   |phoneNumbers[type eq "home"].value|Tekenreeks|
+   |phoneNumbers[type eq "other"].value|Tekenreeks|
+   |phoneNumbers[type eq "pager"].value|Tekenreeks|
+   |phoneNumbers[type eq "mobile"].value|Tekenreeks|
+   |phoneNumbers[type eq "fax"].value|Tekenreeks|
+   |addresses[type eq "other"].formatted|Tekenreeks|
+   |addresses[type eq "work"].formatted|Tekenreeks|
+   |addresses[type eq "work"].streetAddress|Tekenreeks|
+   |addresses[type eq "work"].locality|Tekenreeks|
+   |addresses[type eq "work"].region|Tekenreeks|
+   |addresses[type eq "work"].postalCode|Tekenreeks|
+   |addresses[type eq "work"].country|Tekenreeks|
    |title|Tekenreeks|
    |emails[type eq "work"].value|Tekenreeks|
    |emails[type eq "home"].value|Tekenreeks|

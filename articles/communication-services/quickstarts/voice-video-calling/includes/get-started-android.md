@@ -6,14 +6,17 @@ ms.author: marobert
 ms.date: 08/11/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 02cf175fc0a29795428ce1b3651469532ff3867c
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
-ms.translationtype: HT
+ms.openlocfilehash: b4719fcf046ce7ef5d74ccf1863b0400c2c52845
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92438247"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101656612"
 ---
 In deze quickstart leert u hoe u een oproep start met behulp van de clientbibliotheek voor oproepen van Azure Communication Services voor Android.
+
+> [!NOTE]
+> Dit document maakt gebruik van versie 1.0.0-Beta. 8 van de aanroepende client bibliotheek.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -32,11 +35,11 @@ Selecteer Een nieuw Android Studio-project starten in Android Studio.
 
 Selecteer de projectsjabloon Lege activiteit onder Telefoon en tablet.
 
-:::image type="content" source="../media/android/studio-blank-activity.png" alt-text="Schermopname waarin de knop Een nieuw Android Studio-project starten is geselecteerd in Android Studio.":::
+:::image type="content" source="../media/android/studio-blank-activity.png" alt-text="Schermopname waarin de optie Lege activiteit is geselecteerd op het scherm Projectsjabloon.":::
 
 Selecteer ten minste clientbibliotheek API 26: Android 8.0 (Oreo) of hoger.
 
-:::image type="content" source="../media/android/studio-calling-min-api.png" alt-text="Schermopname waarin de knop Een nieuw Android Studio-project starten is geselecteerd in Android Studio.":::
+:::image type="content" source="../media/android/studio-calling-min-api.png" alt-text="Schermopname waarin de optie Lege activiteit is geselecteerd op het scherm Projectsjabloon 2.":::
 
 
 ### <a name="install-the-package"></a>Het pakket installeren
@@ -78,7 +81,7 @@ android {
 
 dependencies {
     ...
-    implementation 'com.azure.android:azure-communication-calling:1.0.0-beta.2'
+    implementation 'com.azure.android:azure-communication-calling:1.0.0-beta.8'
     ...
 }
 ```
@@ -180,8 +183,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.azure.android.communication.common.CommunicationUser;
-import com.azure.android.communication.common.CommunicationUserCredential;
+import com.azure.android.communication.common.CommunicationUserIdentifier;
+import com.azure.android.communication.common.CommunicationTokenCredential;
 import com.azure.communication.calling.CallAgent;
 import com.azure.communication.calling.CallClient;
 import com.azure.communication.calling.StartCallOptions;
@@ -261,9 +264,10 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 
 | Naam                                  | Beschrijving                                                  |
 | ------------------------------------- | ------------------------------------------------------------ |
-| CallClient| De CallClient is het belangrijkste invoerpunt voor de clientbibliotheek voor aanroepen.|
-| CallAgent | De CallAgent wordt gebruikt om aanroepen te starten en te beheren. |
+| CallClient| De CallClient is het belangrijkste ingangspunt voor de clientbibliotheek voor oproepen.|
+| CallAgent | De CallAgent wordt gebruikt om oproepen te starten en te beheren. |
 | CommunicationUserCredential | De CommunicationUserCredential wordt als de tokenreferentie gebruikt om de CallAgent te instantiëren.|
+| CommunicationIdentifier | De CommunicationIdentifier wordt gebruikt als een ander type deel nemer dat zou kunnen deel nemen aan een aanroep.|
 
 ## <a name="create-an-agent-from-the-user-access-token"></a>Een agent maken op basis van het toegangstoken voor gebruikers
 
@@ -278,7 +282,7 @@ private void createAgent() {
     String userToken = "<User_Access_Token>";
 
     try {
-        CommunicationUserCredential credential = new CommunicationUserCredential(userToken);
+        CommunicationTokenCredential credential = new CommunicationTokenCredential(userToken);
         callAgent = new CallClient().createCallAgent(getApplicationContext(), credential).get();
     } catch (Exception ex) {
         Toast.makeText(getApplicationContext(), "Failed to create call agent.", Toast.LENGTH_SHORT).show();
@@ -303,7 +307,7 @@ private void startCall() {
 
     callAgent.call(
         getApplicationContext(),
-        new CommunicationUser[] {new CommunicationUser(calleeId)},
+        new CommunicationUserIdentifier[] {new CommunicationUserIdentifier(calleeId)},
         options);
 }
 ```
@@ -313,7 +317,7 @@ private void startCall() {
 
 De app kan nu worden gestart met behulp van de knop App uitvoeren op de werkbalk (Shift + F10). Roep `8:echo123` aan om te controleren of u aanroepen kunt plaatsen. Er wordt een vooraf opgenomen bericht afgespeeld en vervolgens wordt uw bericht aan u herhaald.
 
-:::image type="content" source="../media/android/quickstart-android-call-echobot.png" alt-text="Schermopname waarin de knop Een nieuw Android Studio-project starten is geselecteerd in Android Studio.":::
+:::image type="content" source="../media/android/quickstart-android-call-echobot.png" alt-text="Schermopname met de voltooide toepassing.":::
 
 ## <a name="sample-code"></a>Voorbeeldcode
 

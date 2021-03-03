@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.topic: tutorial
 ms.date: 02/10/2021
 ms.reviewer: sngun
-ms.openlocfilehash: 2b52a9227e8bd487a8929df11047eef4672f7f4a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 2e9f3c877a5c4650d3e31fa414cac76837f4c9e8
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100421822"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101655748"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-offline-using-mongodb-native-tools"></a>Zelf studie: MongoDB migreren naar de API van Azure Cosmos DB voor MongoDB offline met MongoDB systeem eigen hulpprogram ma's
 
@@ -31,7 +31,7 @@ In deze zelf studie migreert u een gegevensset in MongoDB die wordt gehost op ee
 
 Met de MongoDB-systeem eigen hulpprogram ma's kunnen gegevens alleen worden verplaatst als de host-hardware deze toestaat; de systeem eigen hulpprogram ma's kunnen de eenvoudigste oplossing zijn voor kleine gegevens sets, waarbij de totale migratie tijd geen betrekking heeft. De [MongoDb Spark-connector](https://docs.mongodb.com/spark-connector/current/), de [Azure data MIGRATION service (DMS)](../dms/tutorial-mongodb-cosmos-db.md)of [Azure Data Factory (ADF)](../data-factory/connector-azure-cosmos-db-mongodb-api.md) kan beter als u een schaal bare migratie pijplijn nodig hebt.
 
-Als u nog geen MongoDB-bron hebt ingesteld, raadpleegt u het artikel over het [installeren en configureren van MongoDB op een Windows-VM in Azure](../virtual-machines/windows/install-mongodb.md).
+Als u nog geen MongoDB-bron hebt ingesteld, raadpleegt u het artikel over het [installeren en configureren van MongoDB op een Windows-VM in Azure](/previous-versions/azure/virtual-machines/windows/install-mongodb).
 
 ## <a name="prerequisites"></a>Vereisten
 

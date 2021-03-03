@@ -10,12 +10,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 11/09/2018
 ms.author: edprice
-ms.openlocfilehash: 711c1ba49ad0f347d30f2c8c40352ed95c1fd057
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 29150f229f1bd6adbbe6a335fdb91a44f3a2345b
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99221618"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101675672"
 ---
 # <a name="ibm-db2-purescale-on-azure"></a>IBM DB2 pureScale op Azure
 
@@ -96,9 +96,9 @@ Een groot DB2 pureScale-cluster kan 200 terabytes (TB) of meer extra Premium-ops
 
 IBM beveelt InfiniBand-netwerken aan voor alle leden in een DB2 pureScale-cluster. DB2 pureScale maakt ook gebruik van RDMA (Remote Direct Memory Access), waar beschikbaar, voor de CFs.
 
-Tijdens de installatie maakt u een Azure- [resource groep](https://docs.microsoft.com/azure/azure-resource-manager/management/overview) die alle virtuele machines bevat. Over het algemeen kunt u resources groeperen op basis van hun levens duur en wie ze beheert. Voor de virtuele machines in deze architectuur is [versneld netwerken](https://azure.microsoft.com/blog/maximize-your-vm-s-performance-with-accelerated-networking-now-generally-available-for-both-windows-and-linux/)vereist. Het is een Azure-functie die consistente, uiterst lage netwerk latentie biedt via I/O-virtualisatie met één hoofdmap (SR-IOV) naar een virtuele machine.
+Tijdens de installatie maakt u een Azure- [resource groep](../../../../azure-resource-manager/management/overview.md) die alle virtuele machines bevat. Over het algemeen kunt u resources groeperen op basis van hun levens duur en wie ze beheert. Voor de virtuele machines in deze architectuur is [versneld netwerken](https://azure.microsoft.com/blog/maximize-your-vm-s-performance-with-accelerated-networking-now-generally-available-for-both-windows-and-linux/)vereist. Het is een Azure-functie die consistente, uiterst lage netwerk latentie biedt via I/O-virtualisatie met één hoofdmap (SR-IOV) naar een virtuele machine.
 
-Elke virtuele machine van Azure wordt geïmplementeerd in een virtueel netwerk dat subnetten heeft: Main, Gluster FS front end (gfsfe), Gluster FS back end (bfsbe), DB2 pureScale (db2be) en DB2 pureScale front end (db2fe). Het installatie script maakt ook de primaire [nic's](https://docs.microsoft.com/azure/virtual-machines/windows/multiple-nics) op de virtuele machines in het hoofd subnet.
+Elke virtuele machine van Azure wordt geïmplementeerd in een virtueel netwerk dat subnetten heeft: Main, Gluster FS front end (gfsfe), Gluster FS back end (bfsbe), DB2 pureScale (db2be) en DB2 pureScale front end (db2fe). Het installatie script maakt ook de primaire [nic's](../../../windows/multiple-nics.md) op de virtuele machines in het hoofd subnet.
 
 Gebruik [netwerk beveiligings groepen](../../../../virtual-network/virtual-network-vnet-plan-design-arm.md) om netwerk verkeer binnen het virtuele netwerk te beperken en de subnetten te isoleren.
 

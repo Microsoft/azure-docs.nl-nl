@@ -1,33 +1,33 @@
 ---
 title: Eigenschappen van meta gegevens van inhoud
 titleSuffix: Azure Cognitive Search
-description: Meta gegevens eigenschappen van blobs kunnen inhoud leveren aan velden in een zoek index of informatie die tijdens runtime het indexerings gedrag informeert. Dit artikel bevat een lijst met eigenschappen van meta gegevens die worden ondersteund in azure Cognitive Search.
+description: Meta gegevens eigenschappen van documenten kunnen inhoud leveren aan velden in een zoek index of informatie die tijdens runtime het indexerings gedrag informeert. Dit artikel bevat een lijst met eigenschappen van meta gegevens die worden ondersteund in azure Cognitive Search.
 manager: nitinme
 author: MarkHeff
 ms.author: maheff
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 02/03/2021
-ms.openlocfilehash: 79443785dbd8619e22358631c9c36a3da4ef2e84
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.date: 02/22/2021
+ms.openlocfilehash: cbb35f596a1d32816d1a73b462bf590d9dde0d52
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99477299"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101668415"
 ---
-# <a name="content-metadata-properties-used-in-blob-indexing-in-azure-cognitive-search"></a>Eigenschappen van meta gegevens van inhoud die worden gebruikt voor het indexeren van blobs in azure Cognitive Search
+# <a name="content-metadata-properties-used-in-azure-cognitive-search"></a>Eigenschappen van meta gegevens van inhoud die worden gebruikt in azure Cognitive Search
 
-Blobs kunnen diverse inhoud bevatten en veel van deze inhouds typen hebben eigenschappen van meta gegevens die nuttig kunnen zijn bij het indexeren van blobs. Net zoals u zoek velden kunt maken voor de standaard eigenschappen van blobs **`metadata_storage_name`** , kunt u velden maken voor eigenschappen van meta gegevens die specifiek zijn voor een document indeling.
+Share point online en Azure Blob-opslag kunnen diverse inhoud bevatten en veel van deze inhouds typen hebben eigenschappen van meta gegevens die nuttig kunnen zijn voor indexering. Net zoals u zoek velden kunt maken voor de standaard eigenschappen van blobs **`metadata_storage_name`** , kunt u velden maken voor eigenschappen van meta gegevens die specifiek zijn voor een document indeling.
 
 ## <a name="supported-document-formats"></a>Ondersteunde documentindelingen
 
-Cognitive Search ondersteunt het indexeren van blobs voor de volgende document indelingen:
+Cognitive Search ondersteunt het indexeren van blobs en het indexeren van share point online-documenten voor de volgende document indelingen:
 
 [!INCLUDE [search-blob-data-sources](../../includes/search-blob-data-sources.md)]
 
 ## <a name="properties-by-document-format"></a>Eigenschappen op document indeling
 
-De volgende tabel geeft een overzicht van de verwerking die wordt uitgevoerd voor elke document indeling en beschrijft de eigenschappen van meta gegevens die zijn geëxtraheerd door een BLOB-indexer.
+De volgende tabel geeft een overzicht van de verwerking die wordt uitgevoerd voor elke document indeling en beschrijft de eigenschappen van meta gegevens die zijn geëxtraheerd door een BLOB-indexer en de share point online-indexer.
 
 | Document indeling/inhouds type | Geëxtraheerde meta gegevens | Details verwerken |
 | --- | --- | --- |
@@ -62,3 +62,4 @@ De volgende tabel geeft een overzicht van de verwerking die wordt uitgevoerd voo
 * [Indexeerfuncties in Azure Cognitive Search](search-indexer-overview.md)
 * [Blobs begrijpen met AI](search-blob-ai-integration.md)
 * [Overzicht van BLOB-indexering](search-blob-storage-integration.md)
+* [Share point online indexeren](search-howto-index-sharepoint-online.md)

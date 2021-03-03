@@ -15,12 +15,12 @@ ms.date: 08/23/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1fa195fd8d40c6b67a9c446f0b2320fe47d75259
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 29c0ae8ec210356f6027a46ed01f2a7126ea4a49
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99092663"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101644728"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Veelgestelde vragen over Azure Active Directory Connect
 
@@ -201,7 +201,7 @@ Afhankelijk van de grootte van de omgeving kan het proces enkele uren duren. Ter
 **V: Ik heb een e-mail bericht ontvangen waarin staat dat mijn automatische upgrade niet meer werkt en dat ik een nieuwe versie moet installeren. Waarom moet ik dit doen?**  
 Vorig jaar hebben we een versie van Azure AD Connect uitgebracht die in bepaalde omstandigheden de functie voor automatisch bijwerken op uw server heeft uitgeschakeld. We hebben het probleem opgelost in Azure AD Connect versie 1.1.750.0. Als het probleem zich heeft voorgedaan, kunt u dit verhelpen door een Power shell-script uit te voeren om het te herstellen of door hand matig een upgrade naar de nieuwste versie van Azure AD Connect. 
 
-Als u het Power shell-script wilt uitvoeren, [downloadt u het script](https://aka.ms/repairaadconnect) en voert u dit uit op uw Azure AD Connect server in een beheer-Power shell-venster. [Bekijk deze korte video](https://aka.ms/repairaadcau)voor meer informatie over het uitvoeren van het script.
+Als u het Power shell-script wilt uitvoeren, [downloadt u het script](/samples/browse/?redirectedfrom=TechNet-Gallery) en voert u dit uit op uw Azure AD Connect server in een beheer-Power shell-venster. [Bekijk deze korte video](https://aka.ms/repairaadcau)voor meer informatie over het uitvoeren van het script.
 
 Als u hand matig wilt bijwerken, moet u de nieuwste versie van het AADConnect.msi-bestand downloaden en uitvoeren.
  

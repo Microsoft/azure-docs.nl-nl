@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: ea96e1056e6157cfddbdc2f0b6451ed55a74d1de
-ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
+ms.openlocfilehash: 8b2a61a92a25e1c0da9f85439438e75969fcfbf0
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97756055"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101661015"
 ---
 # <a name="monitor-and-view-ml-run-logs-and-metrics"></a>MILLILITERs logboeken en-metrische gegevens bewaken en weer geven
 
@@ -78,6 +78,17 @@ Wanneer u **ScriptRunConfig** gebruikt, kunt u gebruiken ```run.wait_for_complet
 
 <a id="queryrunmetrics"></a>
 
+### <a name="logging-run-metrics"></a>Metrische gegevens over logboek registratie uitvoeren 
+
+Gebruik de volgende methoden in de logboek registratie-Api's om de metrische visualisaties te beïnvloeden. Noteer de [service limieten](https://docs.microsoft.com/azure/machine-learning/resource-limits-quotas-capacity#metrics) voor deze vastgelegde metrische gegevens. 
+
+|Geregistreerde waarde|Voorbeeldcode| Indeling in Portal|
+|----|----|----|
+|Een matrix met numerieke waarden vastleggen in een logboek| `run.log_list(name='Fibonacci', value=[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89])`|lijn diagram met één variabele|
+|Een enkele numerieke waarde met dezelfde metrische naam in het logboek vastleggen, herhaaldelijk gebruikt (bijvoorbeeld van binnen een for-lus)| `for i in tqdm(range(-10, 10)):    run.log(name='Sigmoid', value=1 / (1 + np.exp(-i))) angle = i / 2.0`| Lijn diagram met één variabele|
+|Een rij met 2 numerieke kolommen herhaaldelijk vastleggen|`run.log_row(name='Cosine Wave', angle=angle, cos=np.cos(angle))   sines['angle'].append(angle)      sines['sine'].append(np.sin(angle))`|Lijn diagram met twee variabelen|
+|Logboek tabel met 2 numerieke kolommen|`run.log_table(name='Sine Wave', value=sines)`|Lijn diagram met twee variabelen|
+
 ## <a name="query-run-metrics"></a>Metrische gegevens van query uitvoeren
 
 U kunt de metrische gegevens van een getraind model weer geven met behulp van ```run.get_metrics()``` . U kunt dit bijvoorbeeld gebruiken met het bovenstaande voor beeld om het beste model te bepalen door te zoeken naar het model met de laagste waarde voor de kwadraat fout (MSE).
@@ -95,18 +106,6 @@ Selecteer in de weer gave individueel experiment het tabblad **alle experimenten
 U kunt ook de tabel uitvoerings lijst bewerken om meerdere uitvoeringen te selecteren en de laatste, minimale of maximale vastgelegde waarde voor uw uitvoeringen weer te geven. Pas uw grafieken aan om de vastgelegde metrische waarden en aggregaties over meerdere uitvoeringen te vergelijken. 
 
 ![Details uitvoeren in de Azure Machine Learning Studio](media/how-to-track-experiments/experimentation-tab.gif)
-
-### <a name="format-charts"></a>Grafieken opmaken 
-
-Gebruik de volgende methoden in de logboek registratie-Api's om de metrische visualisaties te beïnvloeden.
-
-|Geregistreerde waarde|Voorbeeldcode| Indeling in Portal|
-|----|----|----|
-|Een matrix met numerieke waarden vastleggen in een logboek| `run.log_list(name='Fibonacci', value=[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89])`|lijn diagram met één variabele|
-|Een enkele numerieke waarde met dezelfde metrische naam in het logboek vastleggen, herhaaldelijk gebruikt (bijvoorbeeld van binnen een for-lus)| `for i in tqdm(range(-10, 10)):    run.log(name='Sigmoid', value=1 / (1 + np.exp(-i))) angle = i / 2.0`| Lijn diagram met één variabele|
-|Een rij met 2 numerieke kolommen herhaaldelijk vastleggen|`run.log_row(name='Cosine Wave', angle=angle, cos=np.cos(angle))   sines['angle'].append(angle)      sines['sine'].append(np.sin(angle))`|Lijn diagram met twee variabelen|
-|Logboek tabel met 2 numerieke kolommen|`run.log_table(name='Sine Wave', value=sines)`|Lijn diagram met twee variabelen|
-
 
 ### <a name="view-log-files-for-a-run"></a>Logboek bestanden weer geven voor een uitvoering 
 

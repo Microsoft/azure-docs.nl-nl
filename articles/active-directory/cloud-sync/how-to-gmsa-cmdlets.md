@@ -11,12 +11,12 @@ ms.date: 11/16/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d97128c15d974bfb704fdd446dbd9c727d7fa469
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 411a8e46151a762bcd270fb676f78a91f760ac4f
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98613360"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101653793"
 ---
 # <a name="azure-ad-connect-cloud-provisioning-agent-gmsa-powershell-cmdlets"></a>Azure AD Connect Power shell-cmdlets voor gMSA Cloud Provisioning agent
 
@@ -36,7 +36,7 @@ De volgende vereisten zijn vereist voor het gebruik van deze cmdlets.
 2. Importeer de PS-module van de inrichtings agent in een Power shell-sessie. 
 
  ```PowerShell
- Import-Module "C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\Microsoft.CloudSync.Powershell.dll"  
+ Import-Module "C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\Microsoft.CloudSync.Powershell.dll"  
  ```
 3. Bestaande machtigingen verwijderen.  Alle bestaande machtigingen voor het service account verwijderen, behalve zelf gebruiken: `Set-AADCloudSyncRestrictedPermission` .  
 
@@ -61,7 +61,7 @@ De volgende vereisten zijn vereist voor het gebruik van deze cmdlets.
 ## <a name="using-set-aadcloudsyncpermissions"></a>Set-AADCloudSyncPermissions gebruiken 
 `Set-AADCloudSyncPermissions` ondersteunt de volgende machtigings typen die identiek zijn aan de machtigingen die door Azure AD Connect worden gebruikt. De volgende machtigings typen worden ondersteund: 
 
-|Machtigings type|Description|
+|Machtigings type|Beschrijving|
 |-----|-----|
 |BasicRead| Zie [BasicRead](../../active-directory/hybrid/how-to-connect-configure-ad-ds-connector-account.md#configure-basic-read-only-permissions) -machtigingen voor Azure AD Connect|
 |PasswordHashSync|Zie [PasswordHashSync](../../active-directory/hybrid/how-to-connect-configure-ad-ds-connector-account.md#permissions-for-password-hash-synchronization) -machtigingen voor Azure AD Connect|

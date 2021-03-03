@@ -13,12 +13,12 @@ ms.date: 08/07/2020
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: f32c81d4d247eb6c819adf5015cf36c846f4e83b
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 6517cdd7aafa7ae2fe351b349e62a66104469dcd
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99218227"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101653776"
 ---
 # <a name="migrate-applications-to-the-microsoft-authentication-library-msal"></a>Toepassingen migreren naar de micro soft Authentication Library (MSAL)
 
@@ -73,7 +73,7 @@ __V: Hoe werkt MSAL samen met AD FS?__
 A: MSAL.NET ondersteunt bepaalde scenario's voor het verifiëren van AD FS 2019. Als uw app tokens rechtstreeks uit een eerdere versie van AD FS moet verkrijgen, blijft u op ADAL. [Meer informatie](msal-net-adfs-support.md).
 
 __V: Hoe kan ik hulp krijgen bij het migreren van mijn toepassing?__  
-A: Zie de sectie [migratie richtlijnen](#migration-guidance) van dit artikel. Als u na het lezen van de hand leiding voor het platform van uw app nog meer vragen hebt, kunt u een bericht plaatsen op [micro soft Q&A](https://docs.microsoft.com/answers/topics/azure-ad-adal-deprecation.html) met de tag `[azure-ad-adal-deprecation]` of een probleem openen in de GitHub-opslag plaats van de bibliotheek. Zie de sectie [talen en frameworks](msal-overview.md#languages-and-frameworks) van het artikel overzicht van MSAL voor koppelingen naar de opslag plaats van elke bibliotheek.
+A: Zie de sectie [migratie richtlijnen](#migration-guidance) van dit artikel. Als u na het lezen van de hand leiding voor het platform van uw app nog meer vragen hebt, kunt u een bericht plaatsen op [micro soft Q&A](/answers/topics/azure-ad-adal-deprecation.html) met de tag `[azure-ad-adal-deprecation]` of een probleem openen in de GitHub-opslag plaats van de bibliotheek. Zie de sectie [talen en frameworks](msal-overview.md#languages-and-frameworks) van het artikel overzicht van MSAL voor koppelingen naar de opslag plaats van elke bibliotheek.
 
 ## <a name="next-steps"></a>Volgende stappen
 

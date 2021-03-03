@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 10/15/2020
 ms.author: euang
 ms.reviewer: euang
-ms.openlocfilehash: 94c30cad1e09a01686a9042a6271a152d0f433fd
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4471fed7b423fe05147db30afe57f6c845fe640e
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995383"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101670704"
 ---
 # <a name="use-extended-apache-spark-history-server-to-debug-and-diagnose-apache-spark-applications"></a>Uitgebreide Apache Spark geschiedenis server gebruiken om fouten op te sporen en op te sporen Apache Spark toepassingen
 
@@ -22,7 +22,7 @@ Dit artikel bevat richt lijnen voor het gebruik van de uitgebreide Apache Spark-
 
 De uitbrei ding bevat een tabblad gegevens, het tabblad grafiek en het tabblad diagnose. Gebruik het tabblad **gegevens** om de invoer-en uitvoer gegevens van de Spark-taak te controleren. Op het tabblad **grafiek** ziet u de gegevens stroom en het opnieuw afspelen van de taak grafiek. Het tabblad **diagnose** toont u  **gegevens scheefheid**, **tijds scheefheid** en **gebruiks analyse**.
 
-## <a name="access-the-apache-spark-history-server"></a>De Apache Spark-geschiedenis server openen
+## <a name="access-the-apache-spark-history-server"></a>Toegang tot de Apache Spark History Server
 
 Apache Spark geschiedenis server is de webgebruikersinterface voor voltooide en actieve Spark-toepassingen. U kunt de Apache Spark geschiedenis server-webinterface openen vanuit de Azure Synapse Analytics.
 
@@ -120,13 +120,13 @@ Het grafiek knooppunt geeft de kleuren weer die in de heatmap-legenda worden wee
 
 Selecteer **afspelen** om de taak af te spelen. U kunt op elk gewenst moment **stoppen** selecteren om te stoppen. De taak kleuren tonen verschillende statussen bij het afspelen van:
 
-|Color|Betekenis|
+|Kleur|Betekenis|
 |-|-|
 |Green|Geslaagd: de taak is voltooid.|
 |Oranje|Opnieuw geprobeerd: exemplaren van taken die zijn mislukt, maar die geen invloed hebben op het uiteindelijke resultaat van de taak. Deze taken bevatten dubbele of nieuwe instanties die later kunnen slagen.|
 |Blue|Uitvoeren: de taak wordt uitgevoerd.|
 |Wit|Wachtend of overgeslagen: de taak wacht op het uitvoeren of het stadium is overgeslagen.|
-|Rood|Mislukt: de taak is mislukt.|
+|Red|Mislukt: de taak is mislukt.|
 
 De volgende afbeelding toont de kleuren groen, oranje en blauw.
 
@@ -157,9 +157,9 @@ Beweeg de muis aanwijzer op het grafiek knooppunt om de knop Info weer te geven 
 
 Op het tabblad taak grafiek worden de knop Info en een klein pictogram weer gegeven als er taken zijn die voldoen aan de volgende voor waarden:
 
-|Conditie|Description|
+|Voorwaarde|Beschrijving|
 |-|-|
-|Gegevens scheef trekken|gegevens lezen grootte > gemiddelde grootte van het lezen van gegevens van alle taken in deze fase * 2 en grootte van gegevens lezen > 10 MB|
+|Ongelijkheid in gegevens|gegevens lezen grootte > gemiddelde grootte van het lezen van gegevens van alle taken in deze fase * 2 en grootte van gegevens lezen > 10 MB|
 |Tijd verschil|uitvoerings tijd > gemiddelde uitvoerings tijd van alle taken in deze fase * 2 en uitvoerings tijd > 2 minuten|
    
 ![Pictogram van Spark-toepassing en taak grafiek scheefheid](./media/apache-spark-history-server/sparkui-graph-skew-icon.png)
@@ -239,5 +239,5 @@ Invoer-en uitvoer gegevens met behulp van robuuste gedistribueerde gegevens sets
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Azure Synapse Analytics](../overview-what-is.md)
-- [Documentatie voor .NET voor Apache Spark](/dotnet/spark?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
+- [Documentatie voor .NET voor Apache Spark](/dotnet/spark)
 

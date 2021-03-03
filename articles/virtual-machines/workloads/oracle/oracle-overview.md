@@ -1,24 +1,24 @@
 ---
 title: Oracle-oplossingen op Microsoft Azure | Microsoft Docs
 description: Meer informatie over opties voor het implementeren van Oracle-toepassingen en-oplossingen op Microsoft Azure, waaronder het uitvoeren van volledig op Azure-infra structuur of het gebruik van verbinding tussen de Cloud met Oracle Cloud Infrastructure (OCI).
-services: virtual-machines-linux
 documentationcenter: ''
 author: dbakevlar
 tags: azure-resource-management
 ms.assetid: ''
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines
+ms.subservice: oracle
+ms.collection: linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/05/2020
 ms.author: kegorman
-ms.openlocfilehash: d9b032bbd89f8b6d300650ac54567b07ae3307b8
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 971f7c919595f915451faf9266ee3bb18b35087e
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94948388"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101677168"
 ---
 # <a name="overview-of-oracle-applications-and-solutions-on-azure"></a>Overzicht van Oracle-toepassingen en-oplossingen op Azure
 
@@ -102,4 +102,4 @@ De implementatie van Oracle-toepassingen in Azure is gebaseerd op een model voor
 
 * Meer informatie over het [verbinden van Azure met OCI](oracle-oci-overview.md).
 
-* Bekijk de [overzichts sessie van Oracle op Azure](https://myignite.techcommunity.microsoft.com/sessions/82915) vanuit Ignite 2019. 
+* Bekijk de [overzichts sessie van Oracle op Azure](https://www.pluralsight.com/courses/microsoft-ignite-session-57) vanuit Ignite 2019. 

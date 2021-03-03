@@ -10,18 +10,18 @@ ms.author: luquinta
 author: luisquintanilla
 ms.date: 01/26/2021
 ms.custom: responsible-ml
-ms.openlocfilehash: 6daa03728a5f323f6f8b749975d31fbca24d5602
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 276c91ad7fb5b09dbe18d989741f0f54b8b0eb09
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98871499"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101659678"
 ---
 # <a name="mitigate-unfairness-in-machine-learning-models-preview"></a>Oneerlijkheid in machine learning modellen beperken (preview-versie)
 
 Meer informatie over verdeling in machine learning en over hoe het open-source python-pakket van [Fairlearn](https://fairlearn.github.io/) u kunt helpen bij het oplossen van problemen met oneerlijkheid in machine learning modellen. Als u geen moeite hebt om verdeling problemen te begrijpen en verdeling te beoordelen bij het bouwen van machine learning modellen, kunt u modellen bouwen die oneerlijke resultaten opleveren.
 
-In de volgende samen vatting van de [Gebruikers handleiding](https://fairlearn.github.io/master/user_guide/index.html) voor het open-source pakket Fairlearn wordt beschreven hoe u dit kunt gebruiken om de verdeling te beoordelen van de AI-systemen die u bouwt.  Het open-source pakket Fairlearn kan ook opties bieden voor het beperken of helpen verminderen van verdeling-problemen die u kunt waarnemen.  Bekijk de [instructies](how-to-machine-learning-fairness-aml.md) en voor [beelden van notebooks](https://github.com/Azure/MachineLearningNotebooks/tree/master/contrib/fairness) voor het inschakelen van verdeling-evaluatie van AI-systemen tijdens de training van Azure machine learning.
+In de volgende samen vatting van de [Gebruikers handleiding](https://fairlearn.github.io/main/user_guide/index.html) voor het open-source pakket Fairlearn wordt beschreven hoe u dit kunt gebruiken om de verdeling te beoordelen van de AI-systemen die u bouwt.  Het open-source pakket Fairlearn kan ook opties bieden voor het beperken of helpen verminderen van verdeling-problemen die u kunt waarnemen.  Bekijk de [instructies](how-to-machine-learning-fairness-aml.md) en voor [beelden van notebooks](https://github.com/Azure/MachineLearningNotebooks/tree/master/contrib/fairness) voor het inschakelen van verdeling-evaluatie van AI-systemen tijdens de training van Azure machine learning.
 
 
 ## <a name="what-is-fairness-in-machine-learning-models"></a>Wat is verdeling in machine learning modellen?
@@ -109,6 +109,6 @@ Het open-source pakket Fairlearn biedt postprocessing en reductie algoritmen voo
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het gebruik van de verschillende onderdelen door de Fairlearn van de [github](https://github.com/fairlearn/fairlearn/), de [Gebruikers handleiding](https://fairlearn.github.io/master/user_guide/index.html), [voor beelden](https://fairlearn.github.io/master/auto_examples/)en de [voorbeeld notitieblokken](https://github.com/fairlearn/fairlearn/tree/master/notebooks)te controleren.
+- Meer informatie over het gebruik van de verschillende onderdelen door de Fairlearn van de [github](https://github.com/fairlearn/fairlearn/), de [Gebruikers handleiding](https://fairlearn.github.io/main/user_guide/index.html), [voor beelden](https://fairlearn.github.io/main/auto_examples/index.html)en de [voorbeeld notitieblokken](https://github.com/fairlearn/fairlearn/tree/master/notebooks)te controleren.
 - Meer informatie [over het](how-to-machine-learning-fairness-aml.md) inschakelen van verdeling-evaluatie van machine learning-modellen in azure machine learning.
 - Raadpleeg de [voorbeeld notitieblokken](https://github.com/Azure/MachineLearningNotebooks/tree/master/contrib/fairness) voor aanvullende verdeling-evaluatie scenario's in azure machine learning. 

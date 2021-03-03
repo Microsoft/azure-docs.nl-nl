@@ -10,12 +10,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: xiaoyul
 ms.reviewer: nibruno; jrasnick
-ms.openlocfilehash: d10b7084cfc49d60e9d14c3c857d1ade839398ac
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: e6c3987e2de7f9592a1f7f6086657592e1bf0c16
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305107"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101676595"
 ---
 # <a name="performance-tuning-with-materialized-views-using-dedicated-sql-pool-in-azure-synapse-analytics"></a>Prestaties afstemmen met gerealiseerde weer gaven met exclusieve SQL-groep in azure Synapse Analytics
 
@@ -29,7 +29,7 @@ Een standaard weergave berekent de gegevens telkens wanneer de weer gave wordt g
 
 Een gerealiseerde weer gave van vooraf berekende, opgeslagen en onderhoudt de gegevens in een exclusieve SQL-groep, net als een tabel.  Herberekening is niet nodig wanneer een gerealiseerde weer gave wordt gebruikt.  Daarom kunnen query's die gebruikmaken van alle of een subset van de gegevens in gerealiseerde weer gaven, betere prestaties krijgen.  Daarnaast kunt u met query's gebruikmaken van een gerealiseerde weer gave zonder dat hiervoor direct een verwijzing wordt gemaakt. u hoeft geen toepassings code te wijzigen.  
 
-De meeste standaard weergave vereisten zijn nog steeds van toepassing op een gerealiseerde weer gave. Zie [gerealiseerde weer gave maken als selecteren](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)voor meer informatie over de syntaxis van gerealiseerde weer gaven en andere vereisten.
+De meeste standaard weergave vereisten zijn nog steeds van toepassing op een gerealiseerde weer gave. Zie [gerealiseerde weer gave maken als selecteren](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?view=azure-sqldw-latest&preserve-view=true)voor meer informatie over de syntaxis van gerealiseerde weer gaven en andere vereisten.
 
 | Vergelijking                     | Weergave                                         | Gerealiseerde weergave
 |:-------------------------------|:---------------------------------------------|:--------------------------------------------------------------|
@@ -38,7 +38,7 @@ De meeste standaard weergave vereisten zijn nog steeds van toepassing op een ger
 |Gegevensvernieuwing                    | Altijd bijgewerkt                               | Altijd bijgewerkt
 |Snelheid om weergave gegevens op te halen uit complexe query's     | Langzaam                                         | Snel  
 |Extra opslag ruimte                   | Nee                                           | Ja
-|Syntaxis                          | CREATE VIEW                                  | GEREALISEERDE WEER GAVE MAKEN ALS SELECTEREN
+|Syntax                          | CREATE VIEW                                  | GEREALISEERDE WEER GAVE MAKEN ALS SELECTEREN
 
 ## <a name="benefits-of-materialized-views"></a>Voor delen van gerealiseerde weer gaven
 
@@ -55,8 +55,8 @@ Een goed ontworpen gerealiseerde weer gave biedt de volgende voor delen:
 In vergelijking met andere data warehouse-providers bieden de gerealiseerde weer gaven die in de toegewezen SQL-pool worden geïmplementeerd ook de volgende extra voor delen:
 
 - Automatische en synchrone gegevens vernieuwing met gegevens wijzigingen in basis tabellen. Er is geen gebruikers actie vereist.
-- Ondersteuning voor uitgebreide statistische functies. Zie [gerealiseerde weer gave maken als Select (Transact-SQL)](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
-- De ondersteuning voor query-specifieke gerealiseerde weergave aanbeveling.  Zie [uitleggen (Transact-SQL)](/sql/t-sql/queries/explain-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
+- Ondersteuning voor uitgebreide statistische functies. Zie [gerealiseerde weer gave maken als Select (Transact-SQL)](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?view=azure-sqldw-latest&preserve-view=true).
+- De ondersteuning voor query-specifieke gerealiseerde weergave aanbeveling.  Zie [uitleggen (Transact-SQL)](/sql/t-sql/queries/explain-transact-sql?view=azure-sqldw-latest&preserve-view=true).
 
 ## <a name="common-scenarios"></a>Algemene scenario's  
 
@@ -147,7 +147,7 @@ De optimalisatie van het Data Warehouse kan automatisch geïmplementeerde gereal
 
 Een gerealiseerde weer gave wordt in het Data Warehouse opgeslagen net als een tabel met geclusterde column store-index (CCI).  Het lezen van gegevens vanuit een gerealiseerde weer gave omvat het scannen van de index en het Toep assen van wijzigingen in het Delta-archief.  Wanneer het aantal rijen in de Delta opslag te hoog is, kan het oplossen van een query vanuit een gerealiseerde weer gave langer duren dan het rechtstreeks opvragen van query's in de basis tabellen.  
 
-Om te voor komen dat de prestaties van query's worden vertraagd, is het een goed idee om [DBCC PDW_SHOWMATERIALIZEDVIEWOVERHEAD](/sql/t-sql/database-console-commands/dbcc-pdw-showmaterializedviewoverhead-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) uit te voeren om de overhead_ratio van de weer gave te bewaken (total_rows/base_view_row).  Als de overhead_ratio te hoog is, kunt u de gerealiseerde weer gave opnieuw samen stellen, zodat alle rijen in het Delta archief worden verplaatst naar de column store-index.  
+Om te voor komen dat de prestaties van query's worden vertraagd, is het een goed idee om [DBCC PDW_SHOWMATERIALIZEDVIEWOVERHEAD](/sql/t-sql/database-console-commands/dbcc-pdw-showmaterializedviewoverhead-transact-sql?view=azure-sqldw-latest&preserve-view=true) uit te voeren om de overhead_ratio van de weer gave te bewaken (total_rows/base_view_row).  Als de overhead_ratio te hoog is, kunt u de gerealiseerde weer gave opnieuw samen stellen, zodat alle rijen in het Delta archief worden verplaatst naar de column store-index.  
 
 **Gerealiseerde weer gave en caching van resultaten sets**
 

@@ -1,0 +1,41 @@
+### YamlMime:Landing
+title: Documentatie voor Azure route server
+summary: Informatie over het gebruik van Azure route server voor het vereenvoudigen van dynamische route ring tussen uw virtuele netwerk apparaten en uw virtuele netwerk.
+metadata:
+  title: Documentatie voor Azure route server
+  description: Meer informatie over Azure route server
+  services: route-server
+  ms.service: route-server
+  ms.topic: landing-page
+  author: duongau
+  ms.author: duau
+  ms.date: 03/02/2021
+  ms.openlocfilehash: f235d7118ce207d793c4ba03d357e2db09662c1f
+  ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+  ms.translationtype: MT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 03/02/2021
+  ms.locfileid: "101680670"
+landingContent:
+- title: Over Azure route server (preview-versie)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is Azure route server (preview)?
+      url: overview.md
+- title: Aan de slag
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Een route server maken en configureren-Power shell
+      url: quickstart-configure-route-server-powershell.md
+    - text: Een route server maken en configureren-CLI
+      url: quickstart-configure-route-server-cli.md
+- title: Planning
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Ondersteuning voor ExpressRoute en VPN Gateway
+      url: expressroute-vpn-support.md
+    - text: Veelgestelde vragen over route server
+      url: route-server-faq.md

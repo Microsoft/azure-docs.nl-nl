@@ -9,17 +9,14 @@ ms.author: mikben
 ms.date: 09/29/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 883be25716d94130984baef5e7a1eab80888a2b9
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: bf255837a08a4810321f2f03cb97838e31a7cddc
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100558468"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101657754"
 ---
 # <a name="pricing-scenarios"></a>Prijsscenario's
-
-[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
-
 
 Prijzen voor Azure Communication Services zijn doorgaans gebaseerd op een model voor betalen per gebruik. De prijzen in de volgende voor beelden zijn bedoeld ter illustratie en komen mogelijk niet overeen met de nieuwste prijzen voor Azure.
 
@@ -50,7 +47,7 @@ Alice heeft een groepsoproep gemaakt met haar collega's, Bob en Charlie. Alice e
 
 ### <a name="pricing-example-a-user-of-the-communication-services-js-client-library-joins-a-scheduled-microsoft-teams-meeting"></a>Prijs voorbeeld: een gebruiker van de JS-client bibliotheek van Communication Services maakt deel uit van een geplande micro soft teams-vergadering
 
-Anja is een dokters bijeenkomst met haar patiënt, Bob. Anja wordt toegevoegd aan het bezoek vanuit de team bureau blad-toepassing. Bob ontvangt een koppeling met de website van de gezondheids zorg die verbinding maakt met de vergadering via de client bibliotheek van de Communication Services JS. Bob gebruikt zijn mobiele telefoon om de vergadering in te voeren met een webbrowser (iPhone met Safari). Chatten is beschikbaar op het virtuele bezoek. 
+Anja is een dokters bijeenkomst met haar patiënt, Bob. Anja wordt toegevoegd aan het bezoek vanuit de team bureau blad-toepassing. Bob ontvangt een koppeling met de website van de gezondheids zorg die verbinding maakt met de vergadering via de client bibliotheek van de Communication Services JS. Bob gebruikt zijn mobiele telefoon om de vergadering in te voeren met een webbrowser (iPhone met Safari). Chatten is beschikbaar op het virtuele bezoek.
 
 - De aanroep duurt een totaal van 30 minuten.
 - Anne en Robert nemen deel aan de volledige oproep. Anne draait haar video vijf minuten nadat het gesprek is gestart en deelt het scherm gedurende 13 minuten. Bob heeft zijn video aan voor de hele oproep.
@@ -60,15 +57,15 @@ Anja is een dokters bijeenkomst met haar patiënt, Bob. Anja wordt toegevoegd aa
 **Kostenberekeningen**
 
 - 1 deel nemer (Bob) x 30 minuten x $0,004 per deel nemer per minuut = $0,12 [zowel video als audio worden in rekening gebracht tegen hetzelfde tarief]
-- 1 deel nemer (Alice) x 30 minuten x $0,000 per deel nemer per minuut = $0,0 *. 
+- 1 deel nemer (Alice) x 30 minuten x $0,000 per deel nemer per minuut = $0,0 *.
 - 1 deel nemer (Bob) x 3 chat berichten x $0,0008 = $0,0024.
-- 1 deel nemer (Alice) x 5 chat berichten x $0,000 = $0,0 *. 
+- 1 deel nemer (Alice) x 5 chat berichten x $0,000 = $0,0 *.
 
 * De deelname van Alice valt onder de licentie van haar teams. In uw Azure-factuur worden de notulen en chat berichten weer gegeven die gebruikers van teams hebben met communicatie Services-gebruikers voor uw gemak, maar die minuten en berichten die afkomstig zijn van de teams-client, worden niet op prijs.
 
-**Totale kosten voor het bezoek**: 
+**Totale kosten voor het bezoek**:
 - Gebruiker die lid is van de communicatie Services JS-client bibliotheek: $0,12 + $0,0024 = $0,1224
-- Gebruiker die deelneemt aan teams bureaublad toepassing: $0 (gedekt door teams licentie) 
+- Gebruiker die deelneemt aan teams bureaublad toepassing: $0 (gedekt door teams licentie)
 
 
 ## <a name="chat"></a>Chat
@@ -79,27 +76,27 @@ Met communicatie Services kunt u uw toepassing uitbreiden met de mogelijkheid om
 
 Er wordt $0,0008 in rekening gebracht voor elk verzonden chatbericht.
 
-### <a name="pricing-example-chat-between-two-users"></a>Prijsvoorbeeld: Chat tussen twee gebruikers 
+### <a name="pricing-example-chat-between-two-users"></a>Prijsvoorbeeld: Chat tussen twee gebruikers
 
 Geeta start een chatthread met Emily om een update te delen en verzendt 5 berichten. De chat sessie duurt 10 minuten. Geeta en Elsje verzenden elk nog 15 berichten.
 
-**Kostenberekeningen** 
+**Kostenberekeningen**
 - Aantal verzonden berichten (5 + 15 + 15) x $0,0008 = $0,028
 
-### <a name="pricing-example-group-chat-with-multiple-users"></a>Prijsvoorbeeld: Groepschat met meerdere gebruikers 
+### <a name="pricing-example-group-chat-with-multiple-users"></a>Prijsvoorbeeld: Groepschat met meerdere gebruikers
 
-Charlie start een chatthread met zijn vrienden Casey en Jasmine om een vakantie te plannen. Ze chatten een tijdje, waarbij Charlie, Casey en Jasmine respectievelijk 20, 30 en 18 berichten verzenden. Ze realiseren zich dat hun vriendin Rose wellicht ook mee op vakantie zou willen, dus ze voegen haar toe aan de chatthread en delen de berichtgeschiedenis met haar. 
+Charlie start een chatthread met zijn vrienden Casey en Jasmine om een vakantie te plannen. Ze chatten een tijdje, waarbij Charlie, Casey en Jasmine respectievelijk 20, 30 en 18 berichten verzenden. Ze realiseren zich dat hun vriendin Rose wellicht ook mee op vakantie zou willen, dus ze voegen haar toe aan de chatthread en delen de berichtgeschiedenis met haar.
 
 Rose ziet de berichten en mengt zich in de chat. Casey ontvangt ondertussen een oproep en besluit de conversatie te verlaten om later weer aan te haken. Charlie, Jasmine en Rose overleggen over de reisdatums en verzenden nog eens respectievelijk 30, 25 en 35 berichten.
 
-**Kostenberekeningen** 
+**Kostenberekeningen**
 
 - Aantal verzonden berichten (20 + 30 + 18 + 30 + 25 + 35) x $0,0008 = $0,1264
 
 
 ## <a name="telephony-and-sms"></a>Telefonie en sms
 
-## <a name="price"></a>Prijs 
+## <a name="price"></a>Prijs
 
 Telefoonservices worden per minuut berekend, en sms-berichten worden per bericht berekend. De prijzen zijn afhankelijk van het type en de locatie van het nummer dat u gebruikt, evenals de bestemming van uw oproepen en sms-berichten.
 

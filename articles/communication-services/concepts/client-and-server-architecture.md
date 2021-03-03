@@ -9,20 +9,18 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.service: azure-communication-services
-ms.openlocfilehash: 2cc7e1d0c108d45383a68258fb6f62fcab87d1f7
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 0dbd1770030eeee8768c0b610171f5f27456ed70
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653812"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101656224"
 ---
 # <a name="client-and-server-architecture"></a>Client-en server architectuur
 
-[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
-
 <!--
 > [!WARNING]
-> This document is under construction and needs the following items to be addressed: 
+> This document is under construction and needs the following items to be addressed:
 > - Need to add security best practices for token management here
 > - Reference docs:
 > - https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/create-a-token-object
@@ -56,7 +54,7 @@ Veel scenario's worden het beste geleverd met systeem eigen toepassingen. Azure 
 Door te communiceren via het telefoon systeem kan het bereik van uw toepassing aanzienlijk toenemen. Ter ondersteuning van PSTN-spraak-en SMS-scenario's kunt u met Azure Communication Services [telefoon nummers](../quickstarts/telephony-sms/get-phone-number.md) rechtstreeks van de Azure Portal ophalen of rest-api's en client bibliotheken gebruiken. Zodra de telefoon nummers zijn verkregen, kunnen ze worden gebruikt om klanten te bereiken met behulp van PSTN-aanroepen en SMS-berichten in zowel binnenkomende als uitgaande scenario's. Hieronder vindt u een voor beeld van een architectuur stroom:
 
 > [!Note]
-> Tijdens de open bare preview is de inrichting van telefoon nummers in de Verenigde Staten beschikbaar voor klanten met facturerings adressen die zich binnen de Verenigde Staten en Canada bevinden. 
+> Tijdens de open bare preview is de inrichting van telefoon nummers in de Verenigde Staten beschikbaar voor klanten met facturerings adressen die zich binnen de Verenigde Staten en Canada bevinden.
 
 :::image type="content" source="../media/scenarios/archdiagram-pstn.png" alt-text="Diagram dat de PSTN-architectuur van communicatie Services weergeeft.":::
 

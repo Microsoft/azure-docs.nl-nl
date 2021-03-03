@@ -1,24 +1,24 @@
 ---
 title: Veelgestelde vragen over de implementatie van de hybride FIDO2-beveiligings sleutel-Azure Active Directory
-description: Meer informatie over enkele veelgestelde vragen over aanmelding met een wacht woord met een hybride FIDO2-beveiligings sleutel met behulp van Azure Active Directory (preview-versie)
+description: Meer informatie over enkele veelgestelde vragen over aanmelding met een wacht woord met een hybride FIDO2-beveiligings sleutel met behulp van Azure Active Directory
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 08/19/2020
+ms.date: 02/22/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 98cb990ede7c4d6e261bba05b0b8c97d758e6c32
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: ca4943293f9474d4089267d05460d6d8766b79e6
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743527"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101646381"
 ---
-# <a name="deployment-frequently-asked-questions-faqs-for-hybrid-fido2-security-keys-in-azure-ad-preview"></a>Veelgestelde vragen over de implementatie van hybride FIDO2 in azure AD (preview)
+# <a name="deployment-frequently-asked-questions-faqs-for-hybrid-fido2-security-keys-in-azure-ad"></a>Veelgestelde vragen over de implementatie van hybride FIDO2-beveiligings sleutels in azure AD 
 
 Dit artikel heeft betrekking op veelgestelde vragen over de implementatie van hybride Azure AD-apparaten en aanmelden met een wacht woord voor on-premises bronnen. Met deze functie zonder wacht woord kunt u Azure AD-verificatie op Windows 10-apparaten inschakelen voor hybride Azure AD-apparaten die zijn toegevoegd met FIDO2-beveiligings sleutels. Gebruikers kunnen zich aanmelden bij Windows op hun apparaten met moderne referenties zoals FIDO2-sleutels en toegang hebben tot traditionele Active Directory Domain Services (AD DS) resources met een naadloze SSO-ervaring (eenmalige aanmelding) voor hun on-premises resources.
 
@@ -32,9 +32,6 @@ Om aan de slag te gaan met FIDO2-beveiligings sleutels en hybride toegang tot on
 * [FIDO2-beveiligingssleutels zonder wachtwoord](howto-authentication-passwordless-security-key.md)
 * [Windows 10 zonder wachtwoord](howto-authentication-passwordless-security-key-windows.md)
 * [On-premises zonder wachtwoord](howto-authentication-passwordless-security-key-on-premises.md)
-
-> [!NOTE]
-> FIDO2-beveiligings sleutels zijn een open bare preview-functie van Azure Active Directory. Zie [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="security-keys"></a>Beveiligings sleutels
 
@@ -160,7 +157,7 @@ Controleer op een Windows Server 2016-of 2019-domein controller of de volgende p
 
 Nee, deze functie wordt niet ondersteund voor on-premises apparaten. De FIDO2-referentie provider wordt niet weer gegeven.
 
-### <a name="fido2-security-key-sign-in-isnt-working-for-my-domain-admin-or-other-high-privilege-accounts-why"></a>Het aanmelden van de FIDO2-beveiligings sleutel werkt niet voor mijn domein beheerder of andere accounts met een hoge bevoegdheid. Waarom?
+### <a name="fido2-security-key-sign-in-isnt-working-for-my-domain-admin-or-other-high-privilege-accounts-why"></a>Het aanmelden van de FIDO2-beveiligings sleutel werkt niet voor mijn domein beheerder of andere accounts met een hoge bevoegdheid. Hoe komt dat?
 
 Het standaard beveiligings beleid verleent geen Azure AD-machtiging voor het ondertekenen van accounts met hoge bevoegdheden voor on-premises resources.
 

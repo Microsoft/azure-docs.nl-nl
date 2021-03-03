@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e2e87196f9d4d38743847ee68983216b8790e0b
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 9913132ca6ff3ce2840b55aa771f7bd9be2404ea
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99257267"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101650971"
 ---
 # <a name="protecting-microsoft-365-from-on-premises-attacks"></a>Microsoft 365 beveiligen tegen on-premises aanvallen
 
@@ -141,7 +141,7 @@ We raden u aan de volgende inrichtings methoden aan te bieden:
 
     *   Toegang tot de Azure Portal blok keren. U kunt zeldzame nood zakelijke uitzonde ringen maken.  Maak een beleid voor voorwaardelijke toegang dat alle gasten en externe gebruikers bevat. [Implementeer vervolgens een beleid om de toegang te blok keren](../../role-based-access-control/conditional-access-azure-management.md). 
 
-* Niet- **verbonden forests**: gebruik [Azure AD Cloud inrichting](../cloud-provisioning/what-is-cloud-provisioning.md). Met deze methode kunt u verbinding maken met niet-verbonden forests, zodat u niet hoeft te zorgen voor connectiviteit tussen forests of vertrouwens relaties, waardoor het effect van een on-premises inbreuk kan worden uitgebreid. 
+* Niet- **verbonden forests**: gebruik [Azure AD Cloud inrichting](../cloud-sync/what-is-cloud-sync.md). Met deze methode kunt u verbinding maken met niet-verbonden forests, zodat u niet hoeft te zorgen voor connectiviteit tussen forests of vertrouwens relaties, waardoor het effect van een on-premises inbreuk kan worden uitgebreid. 
  
 ### <a name="limitations-and-tradeoffs"></a>Beperkingen en nadelen
 

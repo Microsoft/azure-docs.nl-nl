@@ -158,6 +158,8 @@
       href: howto-authentication-temporary-access-pass.md
     - name: Verificatie op basis van SMS gebruiken
       href: howto-authentication-sms-signin.md
+    - name: Twee richtings-SMS niet ondersteund
+      href: how-to-authentication-two-way-sms-unsupported.md
     - name: E-mail adres aanmelden gebruiken
       href: howto-authentication-use-email-signin.md
     - name: Slimme vergrendeling van Azure AD
@@ -173,7 +175,7 @@
               href: active-directory-certificate-based-authentication-ios.md
     - name: Rapportage
       items:
-        - name: Gebruik en inzichten
+        - name: Activiteit verificatie methoden
           href: howto-authentication-methods-usage-insights.md
         - name: Rapportage van selfservice voor wachtwoordherstel
           href: howto-sspr-reporting.md

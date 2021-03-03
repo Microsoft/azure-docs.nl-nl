@@ -11,31 +11,33 @@ author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 11/03/2020
 ms.custom: how-to, contperf-fy21q1, devx-track-python, data4ml
-ms.openlocfilehash: bb63ac6de6c48bb3853bd235d908ee745ff5279d
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 0bc247e473ea96f2f9301eeaebb543b3317c84c7
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032844"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101659661"
 ---
 # <a name="connect-to-storage-services-on-azure"></a>Verbinding maken met Storage services in azure
 
-In dit artikel leert u hoe u **verbinding kunt maken met Storage services op Azure via Azure machine learning gegevens opslag**. Data stores maken een beveiligde verbinding met uw Azure Storage-service zonder dat uw verificatie referenties en de integriteit van de oorspronkelijke gegevens bron risico lopen. Er worden verbindings gegevens opgeslagen, zoals uw abonnements-ID en Token autorisatie in uw [Key Vault](https://azure.microsoft.com/services/key-vault/) die aan de werk ruimte zijn gekoppeld, zodat u veilig toegang kunt krijgen tot uw opslag zonder dat u deze hoeft te coderen in uw scripts. U kunt de [Azure machine learning python-SDK](#python) of de [Azure machine learning Studio](how-to-connect-data-ui.md) gebruiken om gegevens opslag te maken en te registreren.
+In dit artikel leert u hoe u verbinding kunt maken met de services voor gegevens opslag in azure met Azure Machine Learning gegevens opslag en de [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py).
 
-Als u gegevens opslag wilt maken en beheren met behulp van de Azure Machine Learning VS code-extensie; Ga naar de [bron beheer handleiding voor het VS code-overzicht](how-to-manage-resources-vscode.md#datastores) voor meer informatie.
-
-U kunt gegevens opslag maken op basis van [deze Azure Storage-oplossingen](#matrix). **Voor niet-ondersteunde opslag oplossingen** en voor het opslaan van de kosten voor de uitvoer van gegevens tijdens ml experimenten, [verplaatst u uw gegevens](#move) naar een ondersteunde Azure Storage-oplossing.  
+Data stores maken een beveiligde verbinding met uw opslag service op Azure zonder dat u uw verificatie referenties en de integriteit van de oorspronkelijke gegevens bron risico. Er worden verbindings gegevens opgeslagen, zoals uw abonnements-ID en Token autorisatie in uw [Key Vault](https://azure.microsoft.com/services/key-vault/) dat is gekoppeld aan de werk ruimte, zodat u veilig toegang kunt krijgen tot uw opslag zonder dat u ze in uw scripts hoeft te coderen. U kunt gegevens opslag maken die verbinding maakt met [deze Azure Storage-oplossingen](#matrix).
 
 Zie het artikel over [beveiligde toegang](concept-data.md#data-workflow) als u wilt weten waar gegevens opslag in de werk stroom van Azure machine learning van de gehele Data Access passen.
 
+Zie de [Azure machine learning Studio gebruiken om gegevens opslag te maken en te registreren](how-to-connect-data-ui.md#create-datastores)voor een lage code-ervaring.
+
+>[!TIP]
+> In dit artikel wordt ervan uitgegaan dat u verbinding wilt maken met uw opslag service met verificatie referenties op basis van referenties, zoals een service-principal of een SAS-token (Shared Access Signature). Als er referenties zijn geregistreerd bij data stores, kunnen alle gebruikers met de rol van werkruimte *lezer* deze referenties ophalen. [Meer informatie over de rol van werkruimte *lezer* .](how-to-assign-roles.md#default-roles) <br><br>Als dit een probleem is, leert u hoe u [verbinding kunt maken met opslag Services met toegang op basis van identiteiten](how-to-identity-based-data-access.md). <br><br>Deze mogelijkheid is een [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) preview-functie en kan op elk gewenst moment worden gewijzigd. 
+
 ## <a name="prerequisites"></a>Vereisten
 
-U hebt het volgende nodig:
 - Een Azure-abonnement. Als u geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer de [gratis of betaalde versie van Azure machine learning](https://aka.ms/AMLFree).
 
 - Een Azure-opslag account met een [ondersteund opslag type](#matrix).
 
-- De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py)of toegang tot [Azure machine learning Studio](https://ml.azure.com/).
+- De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py).
 
 - Een Azure Machine Learning-werkruimte.
   
@@ -59,7 +61,10 @@ U hebt het volgende nodig:
 
 ## <a name="supported-data-storage-service-types"></a>Ondersteunde service typen voor gegevens opslag
 
-Data stores ondersteunen momenteel het opslaan van verbindings gegevens naar de opslag services die in de volgende matrix worden weer gegeven.
+Data stores ondersteunen momenteel het opslaan van verbindings gegevens naar de opslag services die in de volgende matrix worden weer gegeven. 
+
+> [!TIP]
+> **Voor niet-ondersteunde opslag oplossingen** en voor het opslaan van de kosten voor de uitvoer van gegevens tijdens ml experimenten, [verplaatst u uw gegevens](#move) naar een ondersteunde Azure Storage-oplossing. 
 
 | Opslag &nbsp; type | Verificatie &nbsp; type | [Azure &nbsp; machine &nbsp; Learning Studio](https://ml.azure.com/) | [Azure &nbsp; machine &nbsp; Learning &nbsp; python SDK](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) |  [Azure &nbsp; machine &nbsp; Learning cli](reference-azure-machine-learning-cli.md) | [&nbsp;Rest API voor Azure machine &nbsp; Learning &nbsp;](/rest/api/azureml/) | VS-code
 ---|---|---|---|---|---|---
@@ -88,7 +93,16 @@ Om ervoor te zorgen dat u veilig verbinding maakt met uw Azure Storage-service, 
 
 ### <a name="virtual-network"></a>Virtueel netwerk 
 
-Als uw gegevens opslag account zich in een **virtueel netwerk** bevindt, moet u extra configuratie stappen uitvoeren om ervoor te zorgen dat Azure machine learning toegang heeft tot uw gegevens. Zie [Azure machine learning Studio gebruiken in een virtueel Azure-netwerk](how-to-enable-studio-virtual-network.md) om ervoor te zorgen dat de juiste configuratie stappen worden toegepast wanneer u uw gegevens opslag maakt en registreert.  
+Azure Machine Learning kan standaard niet communiceren met een opslag account dat zich achter een firewall of binnen een virtueel netwerk bevindt. Als uw gegevens opslag account zich in een **virtueel netwerk** bevindt, moet u extra configuratie stappen uitvoeren om ervoor te zorgen dat Azure machine learning toegang heeft tot uw gegevens. 
+
+> [!NOTE]
+> Deze richt lijnen zijn ook van toepassing op gegevens opslag die is [gemaakt met op identiteit gebaseerde gegevens toegang (preview-versie)](how-to-identity-based-data-access.md). 
+
+**Voor PYTHON SDK-gebruikers** moet het Compute-doel zich in hetzelfde virtuele netwerk en subnet van de opslag bevinden om toegang te krijgen tot uw gegevens via uw trainings script op een compute-doel.  
+
+**Voor Azure machine learning Studio-gebruikers** zijn verschillende functies afhankelijk van de mogelijkheid om gegevens te lezen uit een gegevensset. zoals gegevensset-previews, profielen en automatische machine learning. Om ervoor te zorgen dat deze functies werken met opslag achter virtuele netwerken, gebruikt u een door een [werk ruimte beheerde identiteit in de Studio](how-to-enable-studio-virtual-network.md) om Azure machine learning toegang te geven tot het opslag account van buiten het virtuele netwerk. 
+
+Azure Machine Learning kan aanvragen ontvangen van clients die zich buiten het virtuele netwerk bevinden. Om ervoor te zorgen dat de entiteit die gegevens aanvraagt van de service veilig is, stelt u een [persoonlijke Azure-koppeling in voor uw werk ruimte](how-to-configure-private-link.md).
 
 ### <a name="access-validation"></a>Toegangs validatie
 
@@ -204,18 +218,27 @@ adlsgen2_datastore = Datastore.register_azure_data_lake_gen2(workspace=ws,
                                                              client_secret=client_secret) # the secret of service principal
 ```
 
-<a name="arm"></a>
 
-## <a name="create-datastores-using-azure-resource-manager"></a>Gegevens opslag maken met behulp van Azure Resource Manager
+
+## <a name="create-datastores-with-other-azure-tools"></a>Gegevens opslag maken met andere Azure-hulpprogram ma's
+Naast het maken van gegevens opslag met de python-SDK en de Studio, kunt u ook Azure Resource Manager sjablonen of de Azure Machine Learning VS code-extensie gebruiken. 
+
+<a name="arm"></a>
+### <a name="azure-resource-manager"></a>Azure Resource Manager
 
 Er zijn een aantal sjablonen op [https://github.com/Azure/azure-quickstart-templates/tree/master/101-machine-learning-datastore-create-*](https://github.com/Azure/azure-quickstart-templates/tree/master/) die kunnen worden gebruikt voor het maken van gegevens opslag.
 
 Zie [een Azure Resource Manager sjabloon gebruiken om een werk ruimte voor Azure machine learning te maken](how-to-create-workspace-template.md)voor meer informatie over het gebruik van deze sjablonen.
 
+### <a name="vs-code-extension"></a>VS Code-extensie
+
+Als u de gegevens opslag wilt maken en beheren met behulp van de Azure Machine Learning VS code-uitbrei ding, gaat u naar de [hand leiding voor het bron beheer over de VS-code](how-to-manage-resources-vscode.md#datastores) voor meer informatie.
 <a name="train"></a>
 ## <a name="use-data-in-your-datastores"></a>Gegevens in uw gegevens opslag gebruiken
 
-Nadat u een gegevens opslag hebt gemaakt, [maakt u een Azure machine learning gegevensset](how-to-create-register-datasets.md) om te communiceren met uw gegevens. Met gegevens sets kunt u in een vertraagd geëvalueerd voor machine learning-taken, zoals training. Ze bieden ook de mogelijkheid om bestanden te [downloaden of te koppelen](how-to-train-with-datasets.md#mount-vs-download) van een wille keurige indeling vanuit Azure Storage-services, zoals Azure Blob Storage en ADLS gen 2. U kunt ze ook gebruiken voor het laden van gegevens in tabel vorm in een Panda of Spark-data frame.
+Nadat u een gegevens opslag hebt gemaakt, [maakt u een Azure machine learning gegevensset](how-to-create-register-datasets.md) om te communiceren met uw gegevens. Met gegevens sets kunt u in een vertraagd geëvalueerd voor machine learning-taken, zoals training. 
+
+Met gegevens sets kunt u bestanden van elke indeling [downloaden of koppelen](how-to-train-with-datasets.md#mount-vs-download) van Azure Storage-services voor model trainingen op een reken doel. Meer [informatie over het trainen van ml-modellen met gegevens sets](how-to-train-with-datasets.md).
 
 <a name="get"></a>
 
@@ -254,7 +277,7 @@ Azure Machine Learning biedt verschillende manieren om uw modellen te gebruiken 
 | Methode | Toegang tot Data Store | Beschrijving |
 | ----- | :-----: | ----- |
 | [Batchvoorspelling](./tutorial-pipeline-batch-scoring-classification.md) | ✔ | Doe asynchroon voorspellingen op grote hoeveelheden gegevens. |
-| [-Webservice](how-to-deploy-and-where.md) | &nbsp; | Implementeer modellen als een webservice. |
+| [Webservice](how-to-deploy-and-where.md) | &nbsp; | Implementeer modellen als een webservice. |
 | [Module Azure IoT Edge](how-to-deploy-and-where.md) | &nbsp; | Implementeer modellen om apparaten te IoT Edge. |
 
 In situaties waarin de SDK geen toegang biedt tot gegevens opslag, kunt u mogelijk aangepaste code maken met behulp van de relevante Azure SDK om toegang te krijgen tot de data. De [Azure Storage SDK voor python](https://github.com/Azure/azure-storage-python) is bijvoorbeeld een client bibliotheek die u kunt gebruiken om toegang te krijgen tot gegevens die zijn opgeslagen in blobs of bestanden.

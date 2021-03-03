@@ -3,19 +3,20 @@ title: Open Shift container platform 3,11 Self-Managed Marketplace-aanbieding im
 description: Implementeer het Self-Managed Marketplace-aanbod van open Shift container platform 3,11 in Azure.
 author: haroldwongms
 manager: mdotson
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines
+ms.subservice: openshift
+ms.collection: linux
 ms.topic: how-to
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
-ms.openlocfilehash: 36adf35c5fbfc3e88b7d9af425ebabc852707e69
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f257ed1097f49074d70f45f59e9040265f6cedef
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87374096"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101670435"
 ---
 # <a name="configure-prerequisites"></a>Vereisten configureren
 
@@ -48,7 +49,7 @@ De resultaten pagina wordt geopend met het **Red Hat open Shift container Platfo
    ![Zoek resultaat van nieuwe resource](media/openshift-marketplace-self-managed/ocp-searchresult.png)  
 <br>
 
-Klik op de aanbieding om de details van de aanbieding te bekijken. Klik op **maken**om deze aanbieding te implementeren. De gebruikers interface voor het invoeren van de vereiste para meters wordt weer gegeven. Het eerste scherm is de Blade **basis beginselen** .
+Klik op de aanbieding om de details van de aanbieding te bekijken. Klik op **maken** om deze aanbieding te implementeren. De gebruikers interface voor het invoeren van de vereiste para meters wordt weer gegeven. Het eerste scherm is de Blade **basis beginselen** .
 
    ![Titel pagina aanbieding](media/openshift-marketplace-self-managed/ocp-titlepage.png)  
 <br>
@@ -64,7 +65,7 @@ Voer waarden in voor de invoer parameters en klik op **OK**.
 | Gebruikers naam voor de VM-beheerder | De gebruikers beheerder die moet worden gemaakt op alle VM-exemplaren |
 | Open bare SSH-sleutel voor gebruiker met beheerders rechten | Open bare SSH-sleutel die wordt gebruikt voor aanmelding bij de virtuele machine-mag geen wachtwoordzin hebben |
 | Abonnement | Azure-abonnement voor het implementeren van het cluster in |
-| Resource Group | Maak een nieuwe resource groep of selecteer een bestaande lege resource groep voor cluster resources |
+| Resourcegroep | Maak een nieuwe resource groep of selecteer een bestaande lege resource groep voor cluster resources |
 | Locatie | Azure-regio voor het implementeren van het cluster in |
 
    ![Blade basis beginselen aanbieding](media/openshift-marketplace-self-managed/ocp-basics.png)  
@@ -93,7 +94,7 @@ Voer waarden in voor de invoer parameters en klik op **OK**.
 
 **Grootte wijzigen**
 
-Als u een andere VM-grootte wilt selecteren, klikt u op ***grootte wijzigen***.  Het venster VM-selectie wordt geopend.  Selecteer de gewenste VM-grootte en klik op **selecteren**.
+Als u een andere VM-grootte wilt selecteren, klikt u op ***grootte wijzigen** _.  Het venster VM-selectie wordt geopend.  Selecteer de gewenste VM-grootte en klik op _ * Selecteer * *.
 
    ![VM-grootte selecteren](media/openshift-marketplace-self-managed/ocp-selectvmsize.png)  
 <br>

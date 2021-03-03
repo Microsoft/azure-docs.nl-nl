@@ -6,14 +6,14 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.workload: infrastructure-services
 ms.topic: how-to
-ms.date: 08/28/2020
+ms.date: 02/26/2021
 ms.author: jushiman
-ms.openlocfilehash: 61897a790da8a5f52b1b8f8e208629e7755690fa
-ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
+ms.openlocfilehash: dcc599daaa8d124c7188165ff5e024767a5e3cd7
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97759735"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101672636"
 ---
 # <a name="support-for-generation-2-vms-on-azure"></a>Ondersteuning voor Generatie 2-VM’s in Azure
 
@@ -79,11 +79,13 @@ Azure biedt momenteel geen ondersteuning voor enkele van de functies die on-prem
 
 | Functie van de 2e generatie                | On-premises Hyper-V | Azure |
 |-------------------------------------|---------------------|-------|
-| Beveiligd opstarten                         | :heavy_check_mark:  | BxDxH   |
+| Beveiligd opstarten                         | :heavy_check_mark:  | Met vertrouwde start (preview-versie)   |
 | Afgeschermde VM                         | :heavy_check_mark:  | BxDxH   |
-| vTPM                                | :heavy_check_mark:  | BxDxH   |
-| Beveiliging op basis van virtualisatie (VBS) | :heavy_check_mark:  | BxDxH   |
+| vTPM                                | :heavy_check_mark:  | Met vertrouwde start (preview-versie)  |
+| Beveiliging op basis van virtualisatie (VBS) | :heavy_check_mark:  | Met vertrouwde start (preview-versie)   |
 | VHDX-indeling                         | :heavy_check_mark:  | BxDxH   |
+
+Zie [Trusted Launch (preview)](trusted-launch.md)voor meer informatie.
 
 ## <a name="features-and-capabilities"></a>Functies en mogelijkheden
 
@@ -105,7 +107,7 @@ Azure biedt momenteel geen ondersteuning voor enkele van de functies die on-prem
 | Azure Site Recovery               | :heavy_check_mark: | :heavy_check_mark: |
 | Back-up/herstel                    | :heavy_check_mark: | :heavy_check_mark: |
 | Galerie met gedeelde afbeeldingen              | :heavy_check_mark: | :heavy_check_mark: |
-| [Azure Disk Encryption](../security/fundamentals/azure-disk-encryption-vms-vmss.md)             | :heavy_check_mark: | BxDxH                |
+| [Azure Disk Encryption](../security/fundamentals/azure-disk-encryption-vms-vmss.md)             | :heavy_check_mark: | :heavy_check_mark:                |
 | [Versleuteling aan de serverzijde](disk-encryption.md)            | :heavy_check_mark: | :heavy_check_mark: |
 
 ## <a name="creating-a-generation-2-vm"></a>Een virtuele machine van de tweede generatie maken
@@ -206,7 +208,7 @@ U kunt ook virtuele machines van de tweede generatie maken met behulp van schaal
     Ja. Zie [een virtuele machine maken met versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md)voor meer informatie.
 
 * **Ondersteunen virtuele machines van generatie 2 beveiligde opstart-of vTPM in azure?**
-    Virtuele machines van de 1e generatie en van de 2e generatie in azure bieden geen ondersteuning voor beveiligd opstarten of vTPM. 
+    Zowel vTPM als beveiligd opstarten zijn functies van vertrouwde start (preview) voor Vm's van generatie 2. Zie [Trusted Launch](trusted-launch.md)(Engelstalig) voor meer informatie.
     
 * **Wordt VHDX ondersteund voor generatie 2?**  
     Nee; Vm's van generatie 2 ondersteunen alleen VHD.
@@ -225,5 +227,7 @@ U kunt ook virtuele machines van de tweede generatie maken met behulp van schaal
     1. Controleer of u zoekt naar een [VM-grootte die Gen2 vm's ondersteunt](#generation-2-vm-sizes).
 
 ## <a name="next-steps"></a>Volgende stappen
+
+Meer informatie over het [vertrouwde start (preview)](trusted-launch-portal.md) met virtuele machines van generatie 2.
 
 Meer informatie over [virtuele machines van de 2e generatie in Hyper-V](/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v).

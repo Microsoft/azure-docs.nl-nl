@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: overview
 ms.date: 02/08/2021
-ms.openlocfilehash: 9b1176f579754d714490297e9ff960d7808bd834
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 5a0389b1074737728bd0ffa5d6db90d077a9f45f
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100383157"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101652163"
 ---
 # <a name="about-azure-cache-for-redis"></a>Over Azure Cache voor Redis
 Azure Cache voor Redis biedt gegevensopslag in het geheugen op basis van de [Redis](https://redis.io/)-software. Redis verbetert de prestaties en schaalbaarheid van toepassingen die gebruik maken van back-end-gegevensarchieven. Het kan grote hoeveelheden toepassingsaanvragen verwerken door vaak gebruikte gegevens in het servergeheugen te bewaren zodat deze snel kunnen worden geschreven en gelezen. Redis is een essentiële oplossing voor gegevensopslag met lage latentie en hoge doorvoer voor moderne toepassingen.
@@ -44,8 +44,8 @@ Azure Cache voor Redis is beschikbaar in de volgende lagen:
 | Basic | Een OSS Redis-cache die op één VM wordt uitgevoerd. Deze laag heeft geen service level agreement (SLA) en is ideaal voor ontwikkeling/test en niet-essentiële werkbelastingen. |
 | Standard | Een OSS Redis-cache die wordt uitgevoerd op twee VM’s in een gerepliceerde configuratie. |
 | Premium | Krachtige OSS Redis-caches. Deze laag biedt hogere doorvoer, lagere latentie, betere beschikbaarheid en meer functies. Premium-caches worden geïmplementeerd op krachtigere VM's vergeleken met die voor Basic-of Standard-caches. |
-| Enter prise (preview-versie) | Krachtige caches worden mogelijk gemaakt door de Redis Enterprise-software van Redis Labs. Deze laag ondersteunt Redis-modules, waaronder RediSearch, RedisBloom en RedisTimeSeries. Daarnaast biedt het een nog hogere beschikbaarheid dan de Premium-laag. |
-| Enter prise Flash (preview-versie) | Rendabele grote caches mogelijk gemaakt door Redis Enterprise-software van Redis Labs. Deze laag breidt Redis-gegevensopslag uit naar niet-vluchtig geheugen, wat goedkoper is dan DRAM, op een VM. Dit vermindert de totale kosten per GB geheugen. |
+| Enterprise | Krachtige caches worden mogelijk gemaakt door de Redis Enterprise-software van Redis Labs. Deze laag ondersteunt Redis-modules, waaronder RediSearch, RedisBloom en RedisTimeSeries. Daarnaast biedt het een nog hogere beschikbaarheid dan de Premium-laag. |
+| Enterprise Flash | Rendabele grote caches mogelijk gemaakt door Redis Enterprise-software van Redis Labs. Deze laag breidt Redis-gegevensopslag uit naar niet-vluchtig geheugen, wat goedkoper is dan DRAM, op een VM. Dit vermindert de totale kosten per GB geheugen. |
 
 ### <a name="feature-comparison"></a>Vergelijking van functies
 [Prijzen van Azure Cache voor Redis](https://azure.microsoft.com/pricing/details/cache/) bevat een gedetailleerde vergelijking van elke laag. In de volgende tabel worden de functies beschreven die door elke laag worden ondersteund:
@@ -55,11 +55,11 @@ Azure Cache voor Redis is beschikbaar in de volgende lagen:
 | [Service Level Agreement (SLA)](https://azure.microsoft.com/support/legal/sla/cache/v1_0/) |-|✔|✔|✔|✔|
 | Gegevensversleuteling |✔|✔|✔|✔|✔|
 | [Netwerkisolatie](cache-how-to-premium-vnet.md) |✔|✔|✔|✔|✔|
-| [Schalen](cache-how-to-scale.md) |✔|✔|✔|-|-|
+| [Schalen](cache-how-to-scale.md) |✔|✔|✔|✔|✔|
 | [OSS-cluster](cache-how-to-premium-clustering.md) |-|-|✔|✔|✔|
-| [Gegevenspersistentie](cache-how-to-premium-persistence.md) |-|-|✔|-|-|
-| [Zoneredundantie](cache-how-to-zone-redundancy.md) |-|-|Preview|Preview|Preview|
-| [Geo-replicatie](cache-how-to-geo-replication.md) |-|-|✔|-|-|
+| [Gegevenspersistentie](cache-how-to-premium-persistence.md) |-|-|✔|Preview|Preview|
+| [Zoneredundantie](cache-how-to-zone-redundancy.md) |-|-|Preview|✔|✔|
+| [Geo-replicatie](cache-how-to-geo-replication.md) |-|-|✔|Preview|Preview|
 | [Modules](https://redis.io/modules) |-|-|-|✔|✔|
 | [Import/export](cache-how-to-import-export-data.md) |-|-|✔|✔|✔|
 | [Geplande updates](cache-administration.md#schedule-updates) |✔|✔|✔|-|-|
@@ -73,19 +73,25 @@ Houd rekening met het volgende bij het kiezen van een laag voor Azure Cache voor
 * **Netwerkprestaties**: Als u een werkbelasting hebt waarvoor hoge doorvoer is vereist, bieden de Premium- of Enterprise-lagen meer bandbreedte vergeleken met Standard of Basic. Daarnaast hebben grotere caches in elke laag meer bandbreedte vanwege de onderliggende virtuele machine die als host fungeert voor de cache. Zie [Prestaties van Azure Cache voor Redis](cache-planning-faq.md#azure-cache-for-redis-performance) voor meer informatie.
 * **Maximumaantal clientverbindingen**: De laag Premium biedt het maximumaantal clients dat verbinding kan maken met Redis, met een groter aantal verbindingen voor caches met een grotere omvang. Bij clustering wordt het aantal beschikbare verbindingen voor een geclusterde cache niet verhoogd. Zie [Prijzen van Azure Cache voor Redis](https://azure.microsoft.com/pricing/details/cache/) voor meer informatie.
 * **Hoge beschikbaarheid**: Azure Cache voor Redis biedt meerdere opties voor [hoge beschikbaarheid](cache-high-availability.md). Het garandeert dat een Standard-, Premium-, of Enterprise-cache beschikbaar is volgens onze [SLA](https://azure.microsoft.com/support/legal/sla/cache/v1_0/). De SLA heeft alleen betrekking op connectiviteit met de cache-eindpunten. De SLA heeft geen betrekking op beveiliging tegen gegevensverlies. We raden u aan de redis-functie voor gegevens persistentie te gebruiken in de Premium-en bedrijfs lagen om de tolerantie te verg Roten tegen gegevens verlies.
-* **Gegevens persistentie**: de Premium-en Enter prise-laag bieden u de mogelijkheid om de cache gegevens naar een Azure Storage account en een beheerde schijf te behouden. Onderliggende problemen met de infrastructuur kunnen leiden tot mogelijk gegevensverlies. We raden u aan de redis-functie voor gegevens persistentie te gebruiken in deze lagen om de tolerantie te verg Roten tegen gegevens verlies. Azure cache voor redis biedt zowel de opties RDB als AOF (preview). Gegevens persistentie is standaard ingeschakeld voor ondernemings lagen. Zie [persistentie configureren voor een Premium Azure-cache voor redis](cache-how-to-premium-persistence.md)voor de Premium-laag.
+* **Gegevens persistentie**: de Premium-en Enter prise-laag bieden u de mogelijkheid om de cache gegevens naar een Azure Storage account en een beheerde schijf te behouden. Onderliggende problemen met de infrastructuur kunnen leiden tot mogelijk gegevensverlies. We raden u aan de redis-functie voor gegevens persistentie te gebruiken in deze lagen om de tolerantie te verg Roten tegen gegevens verlies. Azure cache voor redis biedt zowel de opties RDB als AOF (preview). Gegevens persistentie kan worden ingeschakeld via Azure Portal en CLI. Zie [persistentie configureren voor een Premium Azure-cache voor redis](cache-how-to-premium-persistence.md)voor de Premium-laag.
 * **Netwerkisolatie**: Azure Private Link en Virtual Network (VNET)-implementaties bieden verbeterde beveiliging en verkeersisolatie voor uw Azure Cache voor Redis. Met VNET kunt u de toegang verder beperken via beleid voor netwerktoegangsbeheer. Zie voor meer informatie [Azure Cache voor Redis met Azure Private Link](cache-private-link.md) en [Hoe u Virtual Network-ondersteuning kunt configureren voor een Premium Azure Cache voor Redis](cache-how-to-premium-vnet.md).
 * **Uitbreid baarheid**: ondernemings lagen bieden ondersteuning voor [RediSearch](https://docs.redislabs.com/latest/modules/redisearch/), [RedisBloom](https://docs.redislabs.com/latest/modules/redisbloom/) en [RedisTimeSeries](https://docs.redislabs.com/latest/modules/redistimeseries/). Met deze modules worden nieuwe gegevens typen en functionaliteit toegevoegd aan redis.
 
 U kunt uw cache schalen van de Basic-laag tot aan Premium, nadat deze is gemaakt. Het omhoog schalen naar een lagere laag wordt momenteel niet ondersteund. Zie voor stapsgewijze instructies [De schaal aanpassen van Azure Cache voor Redis](cache-how-to-scale.md) en [Een schaalbewerking automatiseren](cache-how-to-scale.md#how-to-automate-a-scaling-operation).
 
-### <a name="enterprise-and-enterprise-flash-tier-requirements"></a>Vereisten voor de Flash-laag voor Enter prise en Enter prise
+### <a name="special-considerations-for-enterprise-tiers"></a>Speciale overwegingen voor bedrijfs lagen
 
 De Enter prise-lagen zijn gebaseerd op redis Enter prise, een commerciële variant van redis van redis Labs. Klanten ontvangen en betalen voor een licentie voor deze software via een Azure Marketplace-aanbieding. Azure Cache voor Redis faciliteert de aanschaf van de licentie, zodat u dit niet afzonderlijk hoeft te doen. Als u wilt kopen op Azure Marketplace, moet u over de volgende vereisten beschikken:
 * Uw Azure-abonnement heeft een geldig betaal middel. Azure-tegoeden of gratis MSDN-abonnementen worden niet ondersteund.
-* U bent Eigenaar of Inzender van het abonnement.
 * Uw organisatie staat [Azure Marketplace-aankopen](../cost-management-billing/manage/ea-azure-marketplace.md#enabling-azure-marketplace-purchases) toe.
 * Als u een privé Marketplace gebruikt, moet deze de Redis Labs Enterprise-aanbieding bevatten.
+
+> [!IMPORTANT]
+> Voor Azure cache voor redis Enter prise cache zijn standaard netwerk taak verdelers vereist die afzonderlijk van cache-instanties worden gefactureerd. Raadpleeg de [Load Balancer prijzen](https://azure.microsoft.com/pricing/details/load-balancer/) voor meer informatie. Als een ondernemings cache is geconfigureerd voor meerdere Beschikbaarheidszones, wordt de gegevens overdracht gefactureerd op basis van de [standaard tarieven voor netwerk bandbreedte](https://azure.microsoft.com/pricing/details/bandwidth/) vanaf 1 juli 2021.
+>
+> Daarnaast voegt gegevens persistentie Managed Disks toe. Het gebruik van deze resources is gratis tijdens de open bare preview van Bedrijfs gegevens persistentie. Dit kan veranderen wanneer de functie algemeen beschikbaar wordt.
+>
+>
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Een open-source redis-cache maken](quickstart-create-redis.md)

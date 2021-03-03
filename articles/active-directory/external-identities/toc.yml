@@ -41,7 +41,7 @@
           href: b2b-fundamentals.md
         - name: Extern delen B2B en Office 365
           href: o365-external-user.md
-        - name: Uitnodiging inwisselen
+        - name: Uitnodiging inwisselen en aanmelden
           href: redemption-experience.md
         - name: Uitnodigingse-mail
           href: invitation-email-elements.md
@@ -57,9 +57,9 @@
           href: hybrid-organizations.md
         - name: Id-provider voor externe identiteiten
           href: identity-providers.md
-        - name: Self-service voor registreren van gasten via gebruikersstromen (preview)
+        - name: Self-service voor registratie van gebruikers stromen
           href: self-service-sign-up-overview.md
-        - name: Self-service voor registratie van API-connectors (preview)
+        - name: Aanmeld-API-connectors voor Self-service
           href: api-connectors-overview.md
         - name: Azure AD-rechtenbeheer
           href: self-service-portal.md
@@ -68,23 +68,25 @@
     - name: Instructiegidsen
       expanded: true
       items:
-        - name: Instellingen voor externe samenwerking configureren
-          href: delegate-invitations.md
+        - name: B2B-samen werking instellen
+          items:
+            - name: Instellingen voor externe samenwerking configureren
+              href: delegate-invitations.md
+            - name: Domeinen toestaan of blok keren
+              href: allow-deny-list.md
         - name: Gastgebruikers uitnodigen
           items:
-            - name: Beheerders die B2B-gebruikers toevoegen
+            - name: Gast gebruikers toevoegen en uitnodigen (voor beheerders)
               href: add-users-administrator.md
-            - name: Informatiewerkers die B2B-gebruikers toevoegen
+            - name: Gast gebruikers uitnodigen voor een app (voor app-eigen aren)
               href: add-users-information-worker.md
             - name: Interne gebruikers uitnodigen voor B2B
               href: invite-internal-users.md
-            - name: Uitnodigingen toestaan of blokkeren
-              href: allow-deny-list.md
             - name: B2B-gebruikers zonder uitnodiging toevoegen
               href: add-user-without-invite.md
-            - name: Uitnodigings-API en aanpassingen
+            - name: Uitnodigingen aanpassen met behulp van API
               href: customize-invitation-api.md
-        - name: Federatie met id-providers
+        - name: Communiceren met externe ID-providers
           items:
             - name: Google-federatie
               href: google-federation.md
@@ -94,9 +96,9 @@
               href: direct-federation.md
             - name: Voorbeeld van directe federatie met AD FS
               href: direct-federation-adfs.md
-        - name: Verificatie met eenmalige wachtwoordcode
+        - name: Eenmalige wachtwoord code (OTP) inschakelen
           href: one-time-passcode.md
-        - name: Selfservice-registratie voor gastgebruikers (preview)
+        - name: Aanmelden voor een self-service voor gast gebruikers toevoegen
           items:
             - name: Een self-service voor registreren van gasten via gebruikersstromen toevoegen
               href: self-service-sign-up-user-flow.md

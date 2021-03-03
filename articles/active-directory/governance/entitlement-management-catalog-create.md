@@ -3,7 +3,7 @@ title: Een catalogus met resources maken & beheren-Azure AD
 description: Meer informatie over het maken van een nieuwe container met resources en toegangs pakketten in Azure Active Directory rechten beheer.
 services: active-directory
 documentationCenter: ''
-author: barclayn
+author: ajburnle
 manager: daveba
 editor: HANKI
 ms.service: active-directory
@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: how-to
 ms.subservice: compliance
 ms.date: 12/23/2020
-ms.author: barclayn
+ms.author: ajburnle
 ms.reviewer: hanki
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b87fdd7c73d089c46d456491c02d49cb6f8883d
-ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
+ms.openlocfilehash: 8ae3ee8cb96453bae1ce581ea92bdb77854c02d8
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97745960"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101644137"
 ---
 # <a name="create-and-manage-a-catalog-of-resources-in-azure-ad-entitlement-management"></a>Een catalogus met resources maken en beheren in azure AD-rechts beheer
 
@@ -80,6 +80,14 @@ Als u resources wilt toevoegen aan een toegangs pakket, moeten de resources aanw
 1. Wanneer u klaar bent, klikt u op **toevoegen**.
 
     Deze resources kunnen nu worden opgenomen in toegangs pakketten in de catalogus.
+
+### <a name="add-a-multi-geo-sharepoint-site"></a>Een multi-geo share point-site toevoegen
+
+1. Als u [multi-geo](https://docs.microsoft.com/microsoft-365/enterprise/multi-geo-capabilities-in-onedrive-and-sharepoint-online-in-microsoft-365?view=o365-worldwide) hebt ingeschakeld voor share point, selecteert u de omgeving waarin u de sites wilt selecteren.
+    
+    :::image type="content" source="media/entitlement-management-catalog-create/sharepoint-multigeo-select.png" alt-text="Toegangs pakket-resource rollen toevoegen-Selecteer share point-sites met meerdere geografische locaties":::
+
+1. Selecteer vervolgens de sites die u wilt toevoegen aan de catalogus. 
 
 ### <a name="adding-a-resource-to-a-catalog-programmatically"></a>Een resource via een programma aan een catalogus toevoegen
 

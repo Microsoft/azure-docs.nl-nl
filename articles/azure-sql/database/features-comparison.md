@@ -8,16 +8,16 @@ ms.subservice: features
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: jovanpop-msft
-ms.author: jovanpop
+author: danimir
+ms.author: danil
 ms.reviewer: bonova, sstein, danil
-ms.date: 12/25/2020
-ms.openlocfilehash: 7bdde57c1d33118fd7d3c8e04a2507d8997c36d0
-ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
+ms.date: 02/21/2021
+ms.openlocfilehash: 7acb891cc887fb118a338cc837c5c5c4c98a63d8
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97809510"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101655935"
 ---
 # <a name="features-comparison-azure-sql-database-and-azure-sql-managed-instance"></a>Vergelijking van functies: Azure SQL Database en Azure SQL Managed instance
 
@@ -77,7 +77,7 @@ De volgende tabel geeft een overzicht van de belangrijkste functies van SQL Serv
 | [Taalelementen](/sql/t-sql/language-elements/language-elements-transact-sql) | De meeste-Zie afzonderlijke elementen |  Ja, Zie [T-SQL-verschillen](../managed-instance/transact-sql-tsql-differences-sql-server.md) |
 | [Gekoppelde servers](/sql/relational-databases/linked-servers/linked-servers-database-engine) | Nee, Zie [elastische query's](elastic-query-horizontal-partitioning.md) | Ja. Alleen voor [SQL Server en SQL database](../managed-instance/transact-sql-tsql-differences-sql-server.md#linked-servers) zonder gedistribueerde trans acties. |
 | [Gekoppelde servers](/sql/relational-databases/linked-servers/linked-servers-database-engine) die van bestanden worden gelezen (CSV, Excel)| Nee. Gebruik [Bulk Insert](/sql/t-sql/statements/bulk-insert-transact-sql#e-importing-data-from-a-csv-file) of [OpenRowSet](/sql/t-sql/functions/openrowset-transact-sql#g-accessing-data-from-a-csv-file-with-a-format-file) als alternatief voor CSV-indeling. | Nee. Gebruik [Bulk Insert](/sql/t-sql/statements/bulk-insert-transact-sql#e-importing-data-from-a-csv-file) of [OpenRowSet](/sql/t-sql/functions/openrowset-transact-sql#g-accessing-data-from-a-csv-file-with-a-format-file) als alternatief voor CSV-indeling. Deze aanvragen volgen voor het feedback-item van een [SQL Managed instance](https://feedback.azure.com/forums/915676-sql-managed-instance/suggestions/35657887-linked-server-to-non-sql-sources)|
-| [Logboek verzending](/sql/database-engine/log-shipping/about-log-shipping-sql-server) | [Hoge Beschik baarheid](high-availability-sla.md) is opgenomen in elke Data Base. Herstel na nood gevallen wordt beschreven in [overzicht van bedrijfs continuïteit](business-continuity-high-availability-disaster-recover-hadr-overview.md). | Systeem eigen gemaakt als onderdeel van het migratie proces van Azure Data Migration service. Niet beschikbaar als oplossing met hoge Beschik baarheid, omdat andere methoden voor [hoge Beschik baarheid](high-availability-sla.md) zijn opgenomen in elke Data Base en het wordt afgeraden om gebruik te maken van log-shipping als ha-alternatief. Herstel na nood gevallen wordt beschreven in [overzicht van bedrijfs continuïteit](business-continuity-high-availability-disaster-recover-hadr-overview.md). Niet beschikbaar als replicatie mechanisme tussen data bases: Gebruik secundaire replica's op [bedrijfskritiek laag](service-tier-business-critical.md), [groepen met automatische failover](auto-failover-group-overview.md)of [transactionele replicatie](../managed-instance/replication-transactional-overview.md) als alternatief. |
+| [Logboek verzending](/sql/database-engine/log-shipping/about-log-shipping-sql-server) | [Hoge Beschik baarheid](high-availability-sla.md) is opgenomen in elke Data Base. Herstel na nood gevallen wordt beschreven in [overzicht van bedrijfs continuïteit](business-continuity-high-availability-disaster-recover-hadr-overview.md). | Systeem eigen gemaakt als onderdeel van het migratie proces van [Azure Data Migration service (DMS)](../../dms/tutorial-sql-server-to-managed-instance.md) . Systeem eigen gemaakt voor aangepaste gegevens migratie projecten als een externe service voor het opnieuw [afspelen van Logboeken (LRS)](../managed-instance/log-replay-service-migrate.md).<br /> Niet beschikbaar als oplossing met hoge Beschik baarheid, omdat andere methoden voor [hoge Beschik baarheid](high-availability-sla.md) zijn opgenomen in elke Data Base en het wordt afgeraden om gebruik te maken van log-shipping als ha-alternatief. Herstel na nood gevallen wordt beschreven in [overzicht van bedrijfs continuïteit](business-continuity-high-availability-disaster-recover-hadr-overview.md). Niet beschikbaar als replicatie mechanisme tussen data bases: Gebruik secundaire replica's op [bedrijfskritiek laag](service-tier-business-critical.md), [groepen met automatische failover](auto-failover-group-overview.md)of [transactionele replicatie](../managed-instance/replication-transactional-overview.md) als alternatief. |
 | [Aanmeldingen en gebruikers](/sql/relational-databases/security/authentication-access/principals-database-engine) | Ja, maar `CREATE` en `ALTER` aanmeldings instructies bieden niet alle opties (geen Azure Active Directory-aanmeldingen op Windows en server niveau). `EXECUTE AS LOGIN` wordt niet ondersteund. Gebruik `EXECUTE AS USER` in plaats daarvan.  | Ja, met enkele [verschillen](../managed-instance/transact-sql-tsql-differences-sql-server.md#logins-and-users). Windows-aanmeldingen worden niet ondersteund en moeten worden vervangen door Azure Active Directory aanmeldingen. |
 | [Minimale bulkimport voor aanmelden](/sql/relational-databases/import-export/prerequisites-for-minimal-logging-in-bulk-import) | Nee, alleen het volledige herstel model wordt ondersteund. | Nee, alleen het volledige herstel model wordt ondersteund. |
 | [Systeemgegevens wijzigen](/sql/relational-databases/databases/system-databases) | Nee | Ja |
@@ -140,7 +140,7 @@ Het Azure-platform biedt een aantal PaaS-mogelijkheden die als extra waarde word
 | Resourcegroepen | Ja, als [elastische Pools](elastic-pool-overview.md) | Ja. Eén exemplaar van een SQL-beheerd exemplaar kan meerdere data bases hebben die dezelfde groep resources delen. Daarnaast kunt u meerdere exemplaren van SQL Managed instance implementeren in [exemplaar groepen (preview)](../managed-instance/instance-pools-overview.md) die de bronnen kunnen delen. |
 | Omhoog of omlaag schalen (online) | Ja, u kunt DTU of gereserveerde vCores of maximale opslag ruimte wijzigen met de minimale downtime. | Ja, u kunt gereserveerde vCores of maximale opslag ruimte wijzigen met de minimale downtime. |
 | [SQL-alias](/sql/database-engine/configure-windows/create-or-delete-a-server-alias-for-use-by-a-client) | Nee, [DNS-alias](dns-alias-overview.md) gebruiken | Nee, gebruik [Clicongf](https://techcommunity.microsoft.com/t5/Azure-Database-Support-Blog/Lesson-Learned-33-How-to-make-quot-cliconfg-quot-to-work-with/ba-p/369022) om aliassen op de client computers in te stellen. |
-| [SQL Analytics](../../azure-monitor/insights/azure-sql.md) | Ja | Ja |
+| [SQL-analyse](../../azure-monitor/insights/azure-sql.md) | Ja | Ja |
 | [SQL Data Sync](sql-data-sync-sql-server-configure.md) | Ja | Nee |
 | [SQL Server Analysis Services (SSAS)](/sql/analysis-services/analysis-services) | Nee, [Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/) is een afzonderlijke Azure-Cloud service. | Nee, [Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/) is een afzonderlijke Azure-Cloud service. |
 | [SQL Server Integration Services (SSIS)](/sql/integration-services/sql-server-integration-services) | Ja, met een beheerde SSIS in Azure Data Factory-omgeving (ADF), waarbij pakketten worden opgeslagen in SSISDB die worden gehost door Azure SQL Database en worden uitgevoerd op Azure SSIS Integration Runtime (IR), raadpleegt u [Azure-SSIS IR maken in ADF](../../data-factory/create-azure-ssis-integration-runtime.md). <br/><br/>Zie [compare SQL database to SQL Managed instance](../../data-factory/create-azure-ssis-integration-runtime.md#comparison-of-sql-database-and-sql-managed-instance)(Engelstalig) om de SSIS-functies in SQL database en SQL Managed instance te vergelijken. | Ja, met een beheerde SSIS in Azure Data Factory-omgeving (ADF), waarbij pakketten worden opgeslagen in SSISDB die worden gehost door SQL Managed instance en uitgevoerd op Azure SSIS Integration Runtime (IR), Zie [Azure-SSIS IR maken in ADF](../../data-factory/create-azure-ssis-integration-runtime.md). <br/><br/>Zie [compare SQL database to SQL Managed instance](../../data-factory/create-azure-ssis-integration-runtime.md#comparison-of-sql-database-and-sql-managed-instance)(Engelstalig) om de SSIS-functies in SQL database en SQL Managed instance te vergelijken. |
@@ -159,7 +159,7 @@ Azure SQL Database en Azure SQL Managed instance ondersteunen verschillende hulp
 | Azure Portal | Ja | Ja |
 | Azure CLI | Ja | Ja|
 | [Azure Data Studio](/sql/azure-data-studio/what-is) | Ja | Ja |
-| Azure Powershell | Ja | Ja |
+| Azure PowerShell | Ja | Ja |
 | [BACPAC-bestand (exporteren)](/sql/relational-databases/data-tier-applications/export-a-data-tier-application) | Ja, Zie [SQL database exporteren](database-export.md) | Ja, Zie [SQL Managed instance export](database-export.md) |
 | [BACPAC-bestand (importeren)](/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database) | Ja, Zie [SQL database importeren](database-import.md) | Ja, Zie [SQL Managed instance import](database-import.md) |
 | [Data Quality Services (DQS)](/sql/data-quality-services/data-quality-services) | Nee | Nee |
@@ -169,7 +169,7 @@ Azure SQL Database en Azure SQL Managed instance ondersteunen verschillende hulp
 | [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) | Ja | Ja [, versie 18,0 en hoger](/sql/ssms/download-sql-server-management-studio-ssms) |
 | [SQL Server PowerShell](/sql/relational-databases/scripting/sql-server-powershell) | Ja | Ja |
 | [SQL Server Profiler](/sql/tools/sql-server-profiler/sql-server-profiler) | Geen-Zie [uitgebreide gebeurtenissen](xevent-db-diff-from-svr.md) | Ja |
-| [System Center Operations Manager (SCOM)](/system-center/scom/welcome) | [Ja](https://www.microsoft.com/download/details.aspx?id=38829) | Ja, [in preview-versie](https://www.microsoft.com/download/details.aspx?id=38829) |
+| [System Center Operations Manager (SCOM)](/system-center/scom/welcome) | [Ja](https://www.microsoft.com/download/details.aspx?id=38829) | [Ja](https://www.microsoft.com/en-us/download/details.aspx?id=101203) |
 
 ## <a name="migration-methods"></a>Migratie methoden
 

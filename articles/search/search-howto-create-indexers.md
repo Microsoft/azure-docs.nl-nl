@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/28/2021
-ms.openlocfilehash: 5381c12253f3f301099d469639cc75e390ebceff
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 596eca0d73ffc4a590fae9b346658a2c31a1d68c
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100360955"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101676480"
 ---
 # <a name="creating-indexers-in-azure-cognitive-search"></a>Indexeer functies maken in azure Cognitive Search
 
@@ -155,7 +155,7 @@ Hoe een Indexeer functie de detectie van wijzigingen ondersteunt, verschilt per 
 
 Voor grote indexerings belastingen houdt een Indexeer functie ook het laatste document bij dat is verwerkt via een intern ' hoog water merk '. De markering wordt nooit weer gegeven in de API, maar intern houdt de Indexeer functie bij hoe deze is gestopt. Wanneer het indexeren wordt hervat door middel van een geplande uitvoering of een aanroep op aanvraag, verwijst de Indexeer functie naar het hoge water merk zodat het kan worden opgehaald waar het is gebleven.
 
-Als u het hoge water merk moet wissen om de index volledig opnieuw te indexeren, kunt u de [Reset Indexeer functie](https://docs.microsoft.com/rest/api/searchservice/reset-indexer)gebruiken. Gebruik [vaardig heden opnieuw instellen](https://docs.microsoft.com/rest/api/searchservice/preview-api/reset-skills) of [documenten opnieuw instellen](https://docs.microsoft.com/rest/api/searchservice/preview-api/reset-documents)voor meer selectief opnieuw indexeren. Via de reset-Api's kunt u de interne status wissen en ook de cache leegmaken als u [incrementele verrijking](search-howto-incremental-index.md)hebt ingeschakeld. Zie [Indexeer functies, vaardig heden en documenten opnieuw instellen of herstellen](search-howto-run-reset-indexers.md)voor meer achtergrond en vergelijking van elke reset optie.
+Als u het hoge water merk moet wissen om de index volledig opnieuw te indexeren, kunt u de [Reset Indexeer functie](/rest/api/searchservice/reset-indexer)gebruiken. Gebruik [vaardig heden opnieuw instellen](/rest/api/searchservice/preview-api/reset-skills) of [documenten opnieuw instellen](/rest/api/searchservice/preview-api/reset-documents)voor meer selectief opnieuw indexeren. Via de reset-Api's kunt u de interne status wissen en ook de cache leegmaken als u [incrementele verrijking](search-howto-incremental-index.md)hebt ingeschakeld. Zie [Indexeer functies, vaardig heden en documenten opnieuw instellen of herstellen](search-howto-run-reset-indexers.md)voor meer achtergrond en vergelijking van elke reset optie.
 
 ## <a name="know-your-data"></a>Uw gegevens weten
 
@@ -165,7 +165,7 @@ Als u relationele gegevens wilt samen voegen in een rij-set, moet u een SQL-weer
 
 Naast het samen voegen van gegevens is het belang rijk dat u alleen Doorzoek bare gegevens ophaalt. Doorzoek bare gegevens zijn alfanumeriek. Cognitive Search kunt niet in een wille keurige indeling zoeken naar binaire gegevens, maar kan ook tekst beschrijvingen van afbeeldings bestanden ophalen en afleiden (Zie [AI-verrijking](cognitive-search-concept-intro.md)) om Doorzoek bare inhoud te maken. Op dezelfde manier kan grote tekst met behulp van AI-verrijking worden geanalyseerd door middel van natuurlijke taal modellen om structuur of relevante informatie te vinden en nieuwe inhoud te genereren die u aan een zoek document kunt toevoegen.
 
-Op voor waarde dat Indexeer functies geen gegevens problemen oplossen, is het mogelijk dat er andere vormen van het opruimen of manipuleren van gegevens nodig zijn. Raadpleeg voor meer informatie de product documentatie van uw [Azure data base-product](/azure/?product=databases).
+Op voor waarde dat Indexeer functies geen gegevens problemen oplossen, is het mogelijk dat er andere vormen van het opruimen of manipuleren van gegevens nodig zijn. Raadpleeg voor meer informatie de product documentatie van uw [Azure data base-product](../index.yml?product=databases).
 
 ## <a name="know-your-index"></a>Ken uw index
 

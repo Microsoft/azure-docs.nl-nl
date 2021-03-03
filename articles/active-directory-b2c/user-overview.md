@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: c3e6c1d6bfa83ef238ef38b25b189510cf142a38
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: c42b79cb8b92b5f96f31eb58f091ff0ce79b84f5
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98661082"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101652127"
 ---
 # <a name="overview-of-user-accounts-in-azure-active-directory-b2c"></a>Overzicht van gebruikers accounts in Azure Active Directory B2C
 
@@ -49,21 +49,21 @@ Wanneer u een nieuw werk account toevoegt, moet u rekening houden met de volgend
 
 U kunt de volgende informatie gebruiken om een nieuw werk account te maken:
 
-- [Azure Portal](../active-directory/fundamentals/add-users-azure-active-directory.md)
+- [Azure-portal](../active-directory/fundamentals/add-users-azure-active-directory.md)
 - [Microsoft Graph](/graph/api/user-post-users)
 
 ### <a name="update-a-user-profile"></a>Een gebruikers profiel bijwerken
 
 U kunt de volgende informatie gebruiken om het profiel van een gebruiker bij te werken:
 
-- [Azure Portal](../active-directory/fundamentals/active-directory-users-profile-azure-portal.md)
+- [Azure-portal](../active-directory/fundamentals/active-directory-users-profile-azure-portal.md)
 - [Microsoft Graph](/graph/api/user-update)
 
 ### <a name="reset-a-password-for-a-user"></a>Een wacht woord voor een gebruiker opnieuw instellen
 
 U kunt de volgende informatie gebruiken om het wacht woord van een gebruiker opnieuw in te stellen:
 
-- [Azure Portal](../active-directory/fundamentals/active-directory-users-reset-password-azure-portal.md)
+- [Azure-portal](../active-directory/fundamentals/active-directory-users-reset-password-azure-portal.md)
 - [Microsoft Graph](/graph/api/user-update)
 
 ## <a name="guest-user"></a>Gast gebruiker
@@ -80,8 +80,8 @@ De consumenten gebruiker kan zich aanmelden bij toepassingen die zijn beveiligd 
 
 U kunt de gegevens opgeven die worden verzameld wanneer een gebruikers account van een consument wordt gemaakt. Zie [gebruikers kenmerken toevoegen en gebruikers invoer aanpassen](configure-user-input.md)voor meer informatie.
 
-Zie [Azure AD B2C gebruikers accounts beheren met Microsoft Graph](manage-user-accounts-graph-api.md)voor meer informatie over het beheren van consumenten accounts.
+Zie [Azure AD B2C gebruikers accounts beheren met Microsoft Graph](./microsoft-graph-operations.md)voor meer informatie over het beheren van consumenten accounts.
 
 ### <a name="migrate-consumer-user-accounts"></a>Gebruikers accounts van consumenten migreren
 
-Mogelijk moet u bestaande consumenten gebruikers accounts van een id-provider migreren naar Azure AD B2C. Zie [Gebruikers migreren naar Azure AD B2C](user-migration.md)voor meer informatie.
+Mogelijk moet u bestaande consumenten gebruikers accounts van een id-provider migreren naar Azure AD B2C. Raadpleeg [Gebruikers migreren naar Azure AD B2C](user-migration.md) voor meer informatie.

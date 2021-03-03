@@ -5,15 +5,15 @@ author: christopheranderson
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: how-to
-ms.date: 05/28/2020
+ms.date: 03/02/2021
 ms.author: chrande
 ms.custom: devx-track-js
-ms.openlocfilehash: 2fd2fa7620e57c58f72dad73c1012a19190e8fbc
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: deba6696eb71287902fa3970ed2d83d0b09ac08d
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93359643"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101658483"
 ---
 # <a name="use-mongodb-extension-commands-to-manage-data-stored-in-azure-cosmos-dbs-api-for-mongodb"></a>Gebruik MongoDB-extensie opdrachten voor het beheren van gegevens die zijn opgeslagen in de API van Azure Cosmos DB voor MongoDB 
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -24,11 +24,11 @@ Met de API van de Azure Cosmos DB voor MongoDB kunt u profiteren van de voor del
 
 ## <a name="mongodb-protocol-support"></a>Ondersteuning voor MongoDB-Protocol
 
-De API van Azure Cosmos DB voor MongoDB is compatibel met MongoDB Server versie 3,2 en 3,6. Zie [ondersteunde functies en syntaxis](mongodb-feature-support.md) voor meer informatie. 
+De API van Azure Cosmos DB voor MongoDB is compatibel met MongoDB-Server versie 4,0, 3,6 en 3,2. Zie Ondersteunde functies en syntaxis in [4,0](mongodb-feature-support-40.md), [3,6](mongodb-feature-support-36.md)en [3,2](mongodb-feature-support.md) artikelen voor meer informatie. 
 
 De volgende extensie opdrachten bieden de mogelijkheid om Azure Cosmos DB-specifieke resources te maken en te wijzigen via database aanvragen:
 
-* [Database maken](#create-database)
+* [Data base maken](#create-database)
 * [Data base bijwerken](#update-database)
 * [Data base ophalen](#get-database)
 * [Verzameling maken](#create-collection)
@@ -90,7 +90,7 @@ db.runCommand({customAction: "CreateDatabase", autoScaleSettings: { maxThroughpu
 
 ## <a name="update-database"></a><a id="update-database"></a> Data base bijwerken
 
-Met de opdracht data base-extensie bijwerken worden de eigenschappen bijgewerkt die zijn gekoppeld aan de opgegeven Data Base. In de volgende tabel worden de para meters in de opdracht beschreven:
+Met de opdracht data base-extensie bijwerken worden de eigenschappen bijgewerkt die zijn gekoppeld aan de opgegeven Data Base. Het wijzigen van de data base van de ingerichte door voer naar automatisch schalen en vice versa wordt alleen ondersteund in azure Portal. In de volgende tabel worden de para meters in de opdracht beschreven:
 
 |**Veld**|**Type** |**Beschrijving** |
 |---------|---------|---------|
@@ -206,8 +206,8 @@ Met de opdracht verzamelings extensie maken maakt u een nieuwe MongoDB-verzameli
   customAction: "CreateCollection",
   collection: "<Collection Name>",
   shardKey: "<Shard key path>",
-  offerThroughput: (int), // Amount of throughput allocated to a specific collection
-
+  // Replace the line below with "autoScaleSettings: { maxThroughput: (int) }" to use Autoscale instead of Provisioned Throughput. Fill the required Autoscale max throughput setting.
+  offerThroughput: (int) // Provisioned Throughput enabled with required throughput amount set
 }
 ```
 
@@ -292,13 +292,14 @@ db.runCommand({customAction: "CreateCollection", collection: "testCollection", s
 
 ## <a name="update-collection"></a><a id="update-collection"></a> Verzameling bijwerken
 
-Met de opdracht verzamelings extensie bijwerken worden de eigenschappen bijgewerkt die zijn gekoppeld aan de opgegeven verzameling.
+Met de opdracht verzamelings extensie bijwerken worden de eigenschappen bijgewerkt die zijn gekoppeld aan de opgegeven verzameling. Het wijzigen van uw verzameling van ingerichte door voer naar automatisch schalen en vice versa wordt alleen ondersteund in azure Portal.
 
 ```javascript
 {
   customAction: "UpdateCollection",
   collection: "<Name of the collection that you want to update>",
-  offerThroughput: (int) // New throughput that will be set to the collection
+  // Replace the line below with "autoScaleSettings: { maxThroughput: (int) }" if using Autoscale instead of Provisioned Throughput. Fill the required Autoscale max throughput setting. Changing between Autoscale and Provisioned throughput is only supported in the Azure Portal.
+  offerThroughput: (int) // Provisioned Throughput enabled with required throughput amount set
 }
 ```
 

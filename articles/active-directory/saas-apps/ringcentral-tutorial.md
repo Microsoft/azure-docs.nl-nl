@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/24/2019
+ms.date: 02/09/2021
 ms.author: jeedes
-ms.openlocfilehash: a64abfbdb33a30b41853023af14f54bb88e42c8f
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.openlocfilehash: 20e59f134c51662f9530862790d5a47b8bb21d6d
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92520707"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101650719"
 ---
 # <a name="tutorial-integrate-ringcentral-with-azure-active-directory"></a>Zelfstudie: RingCentral integreren met Azure Active Directory
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u RingCentral integreert met Azure Active Directo
 * Beheer in Azure AD wie toegang heeft tot RingCentral.
 * Ervoor zorgen dat gebruikers zich automatisch met hun Azure AD-account kunnen aanmelden bij RingCentral.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
-
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -42,24 +40,24 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* RingCentral ondersteunt door **IDP** geïnitieerde eenmalige aanmelding
+* RingCentral ondersteunt door **IDP** geïnitieerde SSO.
 
-## <a name="adding-ringcentral-from-the-gallery"></a>RingCentral toevoegen uit de galerie
+## <a name="add-ringcentral-from-the-gallery"></a>RingCentral toevoegen vanuit de galerie
 
 Voor het configureren van de integratie van RingCentral met Azure AD moet u RingCentral uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak: **RingCentral** .
+1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak: **RingCentral**.
 1. Selecteer **RingCentral** in het paneel resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
+## <a name="configure-and-test-azure-ad-sso-for-ringcentral"></a>Azure AD SSO voor RingCentral configureren en testen
 
-Configureer en test Azure AD-eenmalige aanmelding met RingCentral met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in RingCentral.
+Configureer en test Azure AD-eenmalige aanmelding met RingCentral met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in RingCentral.
 
-Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met RingCentral te configureren en te testen:
+Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met RingCentral:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     * **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
@@ -68,35 +66,35 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met RingCentral
     * **[Een RingCentral-testgebruiker maken](#create-ringcentral-test-user)** : als u een equivalent van B.Simon in RingCentral wilt hebben dat is gekoppeld aan de Azure AD-weergave van de gebruiker.
 1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-### <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
+## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **RingCentral** de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Zoek in het Azure Portal op de pagina Toepassings integratie van **RingCentral** de sectie **beheren** en selecteer **eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
-1. Voer in de sectie **Standaard SAML-configuratie** de volgende stappen uit als u beschikt over een **bestand met metagegevens van de serviceprovider** :
+1. Voer in de sectie **Standaard SAML-configuratie** de volgende stappen uit als u beschikt over een **bestand met metagegevens van de serviceprovider**:
 
-    1. Klik op **Metagegevensbestand uploaden** .
-    1. Klik op het **mappictogram** om het metagegevensbestand te selecteren en klik op **Uploaden** .
-    1. Nadat het bestand met metagegevens is geüpload, worden de waarden voor **Id** en **antwoord-URL** automatisch ingevuld in de sectie **Standaard SAML-configuratie** .
+    1. Klik op **Metagegevensbestand uploaden**.
+    1. Klik op het **mappictogram** om het metagegevensbestand te selecteren en klik op **Uploaden**.
+    1. Nadat het bestand met metagegevens is geüpload, worden de waarden voor **Id** en **antwoord-URL** automatisch ingevuld in de sectie **Standaard SAML-configuratie**.
 
     > [!Note]
     > U krijgt het **metagegevensbestand van de service provider** op de pagina RingCentral SSO-configuratie die verderop in de zelfstudie wordt beschreven.
 
-1. Als u geen **metagegevensbestand van service provider hebt** , voert u de waarden voor de volgende velden in:
+1. Als u geen **metagegevensbestand van service provider hebt**, voert u de waarden voor de volgende velden in:
 
-    a. Typ een URL in het tekstvak **Id** :
+    a. Typ een van de Url's in het tekstvak **id** :
   
     | Id |
     |--|
     |  `https://sso.ringcentral.com` |
     | `https://ssoeuro.ringcentral.com` |
 
-    b. Typ een URL in het tekstvak **Antwoord-URL** :
+    b. Typ een van de Url's in het tekstvak **antwoord-URL** :
 
     | Antwoord-URL |
     |--|
@@ -111,31 +109,25 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam Britta Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`Britta Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `BrittaSimon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
-In dit gedeelte hebt u Britta Simon in staat gesteld gebruik te maken van Azure-eenmalige aanmelding door haar toegang te geven tot RingCentral.
+In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen aan RingCentral.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **RingCentral** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
-
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
-
-    ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
-
-1. Selecteer in het dialoogvenster **Gebruikers en groepen** **Britta Simon** in de lijst Gebruikers en klik op de knop **Selecteren** onder aan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-ringcentral-sso"></a>RingCentral met eenmalige aanmelding configureren
 
@@ -149,58 +141,56 @@ In dit gedeelte hebt u Britta Simon in staat gesteld gebruik te maken van Azure-
 
 1. Als u RingCentral handmatig wilt instellen, opent u een nieuw browservenster en meldt u zich als beheerder aan bij de RingCentral-bedrijfssite. Voer daarna de volgende stappen uit:
 
-1. Klik bovenaan op **Extra** .
+1. Klik bovenaan op **Extra**.
 
-    ![Schermopname met Extra geselecteerd op de bedrijfssite van RingCentral.](./media/ringcentral-tutorial/ringcentral1.png)
+    ![Schermopname met Extra geselecteerd op de bedrijfssite van RingCentral.](./media/ringcentral-tutorial/ringcentral-1.png)
 
-1. Ga naar **eenmalige aanmelding** .
+1. Ga naar **eenmalige aanmelding**.
 
-    ![Schermopname met Eenmalige aanmelding geselecteerd in het menu Extra.](./media/ringcentral-tutorial/ringcentral2.png)
+    ![Schermopname met Eenmalige aanmelding geselecteerd in het menu Extra.](./media/ringcentral-tutorial/ringcentral-2.png)
 
 1. Klik op de pagina **eenmalige aanmelding** onder **configuratie van de SSO** in **Stap 1** op **Bewerken** en voer de volgende stappen uit:
 
-    ![Schermopname van de pagina SSO-configuratie waarin u Bewerken kunt selecteren.](./media/ringcentral-tutorial/ringcentral3.png)
+    ![Schermopname van de pagina SSO-configuratie waarin u Bewerken kunt selecteren.](./media/ringcentral-tutorial/ringcentral-3.png)
 
 1. Voer op de pagina **Eenmalige aanmelding instellen** de volgende stappen uit:
 
-    ![Schermopname van de pagina Eenmalige aanmelding instellen, waar u I D P-metagegevens kunt uploaden.](./media/ringcentral-tutorial/ringcentral4.png)
+    ![Schermopname van de pagina Eenmalige aanmelding instellen, waar u I D P-metagegevens kunt uploaden.](./media/ringcentral-tutorial/ringcentral-4.png)
 
     a. Klik op **Browse** om het bestand met metagegevens dat u hebt gedownload van de Azure-portal te uploaden.
 
-    b. Na het uploaden van metagegevens worden de waarden automatisch ingevuld in de sectie **Algemene informatie over eenmalige aanmelding** .
+    b. Na het uploaden van metagegevens worden de waarden automatisch ingevuld in de sectie **Algemene informatie over eenmalige aanmelding**.
 
     c. Selecteer in sectie **Kenmerktoewijzing** **E-mailkenmerk toewijzen** als `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`
 
-    d. Klik op **Opslaan** .
+    d. Klik op **Opslaan**.
 
     e. Vanaf **Stap 2** klikt u op **Downloaden** om de **metagegevens van de serviceprovider** te downloaden en deze te uploaden naar de sectie **Basic SAML Configuration** om de waarden **Identifier** en **Reply URL** automatisch in de Azure-portal in te vullen.
 
-    ![Schermopname van de pagina SSO-configuratie waar u Downloaden kunt selecteren.](./media/ringcentral-tutorial/ringcentral6.png) 
+    ![Schermopname van de pagina SSO-configuratie waar u Downloaden kunt selecteren.](./media/ringcentral-tutorial/ringcentral-6.png) 
 
     f. Ga op dezelfde pagina naar de sectie **SSO inschakelen** en voer de volgende stappen uit:
 
-    ![Schermopname toont de sectie S S O inschakelen waar u de configuratie kunt voltooien.](./media/ringcentral-tutorial/ringcentral5.png)
+    ![Schermopname toont de sectie S S O inschakelen waar u de configuratie kunt voltooien.](./media/ringcentral-tutorial/ringcentral-5.png)
 
-    * Selecteer **SSO-service inschakelen** .
+    * Selecteer **SSO-service inschakelen**.
 
-    * Selecteer **Gebruikers toestaan zich aan te melden met een SSO-of RingCentral-referentie** .
+    * Selecteer **Gebruikers toestaan zich aan te melden met een SSO-of RingCentral-referentie**.
 
-    * Klik op **Opslaan** .
+    * Klik op **Opslaan**.
 
 ### <a name="create-ringcentral-test-user"></a>RingCentral-testgebruiker maken
 
 In deze sectie maakt u een gebruiker met de naam Britta Simon in RingCentral. Werk samen met het [ondersteuningsteam van RingCentral](https://success.ringcentral.com/RCContactSupp) om de gebruikers toe te voegen in het RingCentral-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
 
-### <a name="test-sso"></a>Eenmalige aanmelding testen
+## <a name="test-sso"></a>Eenmalige aanmelding testen
 
-Wanneer u de tegel RingCentral selecteert in het toegangsvenster, zou u automatisch moeten worden aangemeld bij het exemplaar van RingCentral toegangsvenster waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties.
 
-## <a name="additional-resources"></a>Aanvullende resources
+* Klik op test deze toepassing in Azure Portal en u moet automatisch worden aangemeld bij de RingCentral waarvoor u de SSO hebt ingesteld.
 
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel RingCentral in de mijn apps klikt, moet u automatisch worden aangemeld bij de RingCentral waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
+## <a name="next-steps"></a>Volgende stappen
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
-
-- [Probeer RingCentral met Azure AD](https://aad.portal.azure.com/)
+Nadat u RingCentral hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

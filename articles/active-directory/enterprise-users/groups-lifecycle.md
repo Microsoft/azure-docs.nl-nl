@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60d71c44ebaba5b0cbcb03afa41ad15237dceaef
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 1e40ad90910f7b2244401386fb01a4e4fefe03ca
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96547471"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101647401"
 ---
 # <a name="configure-the-expiration-policy-for-microsoft-365-groups"></a>Het verloop beleid voor Microsoft 365 groepen configureren
 
@@ -42,7 +42,7 @@ Zie [Azure Active Directory Power shell for graph 2.0.0.137](https://www.powersh
 
 ## <a name="activity-based-automatic-renewal"></a>Automatische verlenging op basis van activiteit
 
-Met Azure AD Intelligence worden groepen nu automatisch vernieuwd op basis van het feit of ze onlangs zijn gebruikt. Deze functie elimineert de nood zaak voor hand matige actie door groeps eigenaren, omdat deze is gebaseerd op gebruikers activiteit in groepen tussen Microsoft 365 services zoals Outlook, share point of teams. Als een eigenaar of een groepslid bijvoorbeeld een document uploadt in share point, gaat u naar een teams-kanaal of stuurt u een e-mail naar de groep in Outlook, wordt de groep automatisch vernieuwd en worden er geen meldingen over verlenging ontvangen.
+Met Azure AD Intelligence worden groepen nu automatisch vernieuwd op basis van het feit of ze onlangs zijn gebruikt. Deze functie elimineert de nood zaak voor hand matige actie door groeps eigenaren, omdat deze is gebaseerd op gebruikers activiteit in groepen tussen Microsoft 365 services zoals Outlook, share point of teams. Als een eigenaar of een groepslid bijvoorbeeld een document uploadt in share point, gaat u naar een teams kanaal of stuurt u een e-mail naar de groep in Outlook, wordt de groep automatisch vernieuwd rond 35 dagen voordat de groep verloopt en ontvangt de eigenaar geen verlengings meldingen.
 
 ### <a name="activities-that-automatically-renew-group-expiration"></a>Activiteiten die het verlopen van groepen automatisch vernieuwen
 

@@ -2,18 +2,18 @@
 title: Overzicht van servers met Azure Arc
 description: Lees meer informatie over het gebruik van Azure Arc voor servers om servers te beheren die buiten Azure worden gehost alsof het Azure-resources zijn.
 keywords: azure automation, DSC, powershell, configuratie van gewenste status, updatebeheer, bijhouden van wijzigingen, inventaris, runbooks, python, grafisch, hybride
-ms.date: 11/12/2020
+ms.date: 02/18/2021
 ms.topic: overview
-ms.openlocfilehash: be5955e9bf02e591fdbba3f080d034c126379c2f
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 615835e5a11fac0b09a56e10084249ea493d794d
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100584787"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101651107"
 ---
 # <a name="what-is-azure-arc-enabled-servers"></a>Wat zijn servers met Azure Arc?
 
-Met servers met Azure Arc kunt u uw Windows- en Linux-machines die buiten Azure worden gehost, in uw bedrijfsnetwerk of via een andere cloudprovider, beheren op eenzelfde manier als systeemeigen Azure-VM's. Wanneer een hybride machine aan Azure wordt gekoppeld, wordt deze een gekoppelde machine en wordt deze behandeld als een resource in Azure. Elke gekoppelde machine heeft een resource-id, is opgenomen in een resourcegroep en profiteert van standaard Azure-constructies, zoals Azure Policy en het toepassen van tags. Serviceproviders die de on-premises infrastructuur van een klant beheren, kunnen met behulp van [Azure Lighthouse](../../lighthouse/how-to/manage-hybrid-infrastructure-arc.md) met Azure Arc hun hybride machines beheren in meerdere klantomgevingen, net als ze vandaag de dag met systeemeigen Azure-resources doen.
+Met Azure Arc ingeschakelde servers kunt u uw fysieke Windows-en Linux-servers en virtuele machines die worden gehost *buiten* Azure, op uw bedrijfs netwerk of een andere Cloud provider beheren. Deze beheer ervaring is ontworpen om consistent te zijn met de manier waarop u systeem eigen Azure virtual machines beheert. Wanneer een hybride machine aan Azure wordt gekoppeld, wordt deze een gekoppelde machine en wordt deze behandeld als een resource in Azure. Elke gekoppelde machine heeft een resource-id, is opgenomen in een resourcegroep en profiteert van standaard Azure-constructies, zoals Azure Policy en het toepassen van tags. Serviceproviders die de on-premises infrastructuur van een klant beheren, kunnen met behulp van [Azure Lighthouse](../../lighthouse/how-to/manage-hybrid-infrastructure-arc.md) met Azure Arc hun hybride machines beheren in meerdere klantomgevingen, net als ze vandaag de dag met systeemeigen Azure-resources doen.
 
 Om deze ervaring te bieden voor hybride machines die buiten Azure worden gehost, moet de Azure Connected Machine-agent worden geïnstalleerd op elke machine die u aan Azure wilt koppelen. Deze agent levert geen andere functionaliteit en vervangt de [Log Analytics-agent](../../azure-monitor/agents/log-analytics-agent.md) van Azure niet. De Log Analytics-agent voor Windows en Linux is vereist wanneer u het besturingssysteem en workloads op de machine proactief wilt monitoren, deze wilt beheren met Automation-runbooks of oplossingen zoals Updatebeheer, of andere Azure-services zoals [Azure Security Center](../../security-center/security-center-introduction.md) wilt gebruiken.
 
@@ -44,7 +44,7 @@ Aanmeldingsgegevens die zijn verzameld en opgeslagen in een Log Analytics-werkru
 
 Zie de pagina met [Azure-producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=azure-arc) voor een definitieve lijst met ondersteunde regio's voor servers met Azure Arc.
 
-In de meeste gevallen moet de locatie die u selecteert bij het maken van het installatiescript de Azure-regio zijn die geografisch het dichtst bij de locatie van uw machine ligt. Data-at-rest worden opgeslagen in de Azure-geografie die de door u opgegeven regio bevat. Dit kan ook van invloed zijn op welke regio u kiest als u gegevenslocatievereisten hebt. Als de Azure-regio waaraan uw machine is gekoppeld, wordt getroffen door een storing, heeft dit geen invloed op de gekoppelde machine, maar beheerbewerkingen die gebruikmaken van Azure kunnen mogelijk niet worden voltooid. Als u meerdere locaties hebt die een geografisch redundante service ondersteunen, kunt u bij een regionale storing het beste de machines in elke locatie aan een andere Azure-regio koppelen.
+In de meeste gevallen moet de locatie die u selecteert bij het maken van het installatiescript de Azure-regio zijn die geografisch het dichtst bij de locatie van uw machine ligt. Data-at-rest worden opgeslagen in de Azure-geografie die de door u opgegeven regio bevat. Dit kan ook van invloed zijn op welke regio u kiest als u gegevenslocatievereisten hebt. Als de Azure-regio waaraan uw machine is gekoppeld, wordt getroffen door een storing, heeft dit geen invloed op de gekoppelde machine, maar beheerbewerkingen die gebruikmaken van Azure kunnen mogelijk niet worden voltooid. Als er sprake is van een regionale storing en als u meerdere locaties hebt die een geografisch redundante service ondersteunen, is het raadzaam om de computers op elke locatie te verbinden met een andere Azure-regio.
 
 De volgende metagegevens over de verbonden machine worden verzameld en opgeslagen in de regio waarin de Azure Arc-machine is geconfigureerd:
 
@@ -54,6 +54,13 @@ De volgende metagegevens over de verbonden machine worden verzameld en opgeslage
 - Versie van Connected Machine-agent
 
 Als de machine bijvoorbeeld is geregistreerd bij Azure Arc in de regio VS - oost, worden deze gegevens opgeslagen in deze VS-regio.
+
+### <a name="supported-environments"></a>Ondersteunde omgevingen
+
+Arc ingeschakelde servers ondersteunen het beheer van fysieke servers en virtuele machines die *buiten* Azure worden gehost. Zie [agent-overview. MD # supported-environments] (Engelstalig) voor specifieke details over welke hybride Cloud omgevingen die virtuele machines hosten, worden ondersteund.
+
+> [!NOTE]
+> Arc ingeschakelde servers zijn niet ontworpen of worden ondersteund om het beheer van virtuele machines die in Azure worden uitgevoerd, in te scha kelen.
 
 ### <a name="agent-status"></a>Agenstatus
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 1/29/2021
 ms.author: nichola
 ms.custom: aaddev
-ms.openlocfilehash: 5abece0e272d4b72ba6f787ad44b091df5d45226
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: e7193ee5d076538689078ce634b8170926df20b6
+ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417207"
+ms.lasthandoff: 03/02/2021
+ms.locfileid: "101653249"
 ---
 # <a name="support-passwordless-authentication-with-fido2-keys-in-apps-you-develop"></a>Ondersteuning voor verificatie zonder wacht woord met FIDO2-sleutels in apps die u ontwikkelt
 
@@ -47,7 +47,7 @@ De aanmeldings methode die het meest recent door een gebruiker is gebruikt, word
 De aanbevolen opties voor het implementeren van verificatie zijn in volg orde:
 
 - .NET-desktop toepassingen die gebruikmaken van de micro soft Authentication Library (MSAL), moeten gebruikmaken van de Windows Authentication Manager (WAM). Deze integratie en de voor delen ervan zijn [beschreven op github](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/wam).
-- Gebruik [WebView2](https://docs.microsoft.com/microsoft-edge/webview2/) om FIDO2 te ondersteunen in een Inge sloten browser.
+- Gebruik [WebView2](/microsoft-edge/webview2/) om FIDO2 te ondersteunen in een Inge sloten browser.
 - Gebruik de systeem browser. De MSAL-bibliotheken voor desktop platforms gebruiken deze methode standaard. U kunt onze pagina in FIDO2 browser compatibiliteit raadplegen om te controleren of de browser die u gebruikt FIDO2-verificatie ondersteunt.
 
 ### <a name="mobile"></a>Mobiel

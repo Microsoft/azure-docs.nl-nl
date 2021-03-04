@@ -6,12 +6,12 @@ ms.author: lichris
 ms.date: 2/17/2021
 ms.topic: troubleshooting
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 6329e93bb5e628d68afbb2700ce0b9e3a2a711ad
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 3c1f60b214397b1f97e0157b5beca32d504102d6
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101679226"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102030627"
 ---
 # <a name="device-update-for-iot-hub-troubleshooting-guide"></a>Gids voor het oplossen van problemen met updates voor IoT Hub
 
@@ -46,7 +46,7 @@ _Het kan tot vijf minuten duren om de nalevings status van het apparaat te verni
 ### <a name="q-my-devices-deployment-status-shows-incompatible-what-should-i-do"></a>V: de implementatie status van mijn apparaat geeft incompatibel, wat moet ik doen?
 _De fabrikant en model eigenschappen van een doel apparaat zijn mogelijk gewijzigd nadat het apparaat is verbonden met IoT Hub, waardoor het apparaat nu als incompatibel wordt beschouwd met de update-inhoud van de huidige implementatie._
 
-_Controleer de [Adu core-interface](./device-update-plug-and-play) om te zien welke fabrikant en welk model uw apparaat rapporteert aan de Device Update-service en zorg ervoor dat het overeenkomt met de fabrikant en het model dat u hebt opgegeven in het [import manifest](./import-concepts.md) van de update-inhoud die wordt geïmplementeerd. U kunt deze eigenschappen voor een bepaald apparaat wijzigen met behulp van het [configuratie bestand](./device-update-cofiguration-file.md)voor het bijwerken van het apparaat._
+_Controleer de [Adu core-interface](./device-update-plug-and-play.md) om te zien welke fabrikant en welk model uw apparaat rapporteert aan de Device Update-service en zorg ervoor dat het overeenkomt met de fabrikant en het model dat u hebt opgegeven in het [import manifest](./import-concepts.md) van de update-inhoud die wordt geïmplementeerd. U kunt deze eigenschappen voor een bepaald apparaat wijzigen met behulp van het [configuratie bestand](./device-update-configuration-file.md)voor het bijwerken van het apparaat._
 
 ### <a name="q-i-see-my-deployment-is-in-active-stage-but-none-of-my-devices-are-in-progress-with-the-update-what-should-i-do"></a>V: Ik zie mijn implementatie in de fase actief, maar geen van mijn apparaten wordt uitgevoerd met de update. Wat moet ik doen?
 _Zorg ervoor dat de start datum van de implementatie niet in de toekomst is ingesteld. Wanneer u een nieuwe implementatie maakt, wordt de begin datum van de implementatie standaard ingesteld op de volgende dag als beveiliging, tenzij u deze expliciet wijzigt. U kunt wachten tot de start datum van de implementatie is bereikt, of de doorlopende implementatie annuleren en een nieuwe implementatie met de gewenste begin datum maken._

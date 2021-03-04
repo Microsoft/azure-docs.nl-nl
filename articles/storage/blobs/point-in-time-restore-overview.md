@@ -6,22 +6,22 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 02/01/2021
+ms.date: 03/03/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 1df2f12d6947734314609dc50787a59a2fa88731
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 4e6dac1ab7350caeb29e23b21eace433568b38ea
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99980508"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031630"
 ---
 # <a name="point-in-time-restore-for-block-blobs"></a>Herstel naar een bepaald tijdstip voor blok-blobs
 
 Herstel naar een bepaald tijdstip biedt beveiliging tegen onbedoeld verwijderen of beschadiging door u in staat te stellen de blok-BLOB-gegevens terug te zetten naar een eerdere status. Herstel naar een bepaald tijdstip is handig in scenario's waarbij een gebruiker of toepassing per ongeluk gegevens verwijdert of een toepassings fout beschadigde gegevens verstuurt. Herstel naar een bepaald tijdstip biedt ook ondersteuning voor test scenario's waarbij een gegevensset naar een bekende status moet worden teruggedraaid voordat verdere tests worden uitgevoerd.
 
-Herstel naar een bepaald tijdstip wordt alleen ondersteund voor v2-opslag accounts voor algemeen gebruik. Alleen gegevens in de warme en coolbar-toegangs lagen kunnen worden hersteld met herstel naar een bepaald tijdstip.
+Herstel naar een bepaald tijdstip wordt alleen ondersteund voor algemeen gebruik v2-opslag accounts in de laag standaard prestatie. Alleen gegevens in de warme en coolbar-toegangs lagen kunnen worden hersteld met herstel naar een bepaald tijdstip.
 
 Zie [een herstel bewerking op een bepaald tijdstip uitvoeren op blok-BLOB-gegevens](point-in-time-restore-manage.md)voor meer informatie over het inschakelen van een herstel punt voor een opslag account.
 

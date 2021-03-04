@@ -1,18 +1,17 @@
 ---
 title: Gegevens van Azure Monitor geëxporteerd met Azure Data Explorer (preview-versie)
 description: Gebruik Azure Data Explorer om query's uit te voeren op gegevens die vanuit uw Log Analytics-werk ruimte zijn geëxporteerd naar een Azure-opslag account.
-ms.subservice: logs
 author: osalzberg
 ms.author: bwren
 ms.reviewer: bwren
 ms.topic: conceptual
 ms.date: 10/13/2020
-ms.openlocfilehash: f24947eba71588d8b97afafea35f9a0bcab33c86
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 5eff593075db118b23d74147e33b40eb4402193c
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101711005"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031154"
 ---
 # <a name="query-exported-data-from-azure-monitor-using-azure-data-explorer-preview"></a>Gegevens van Azure Monitor geëxporteerd met Azure Data Explorer (preview-versie)
 Bij het exporteren van gegevens uit Azure Monitor naar een Azure Storage-account is een lage Bewaar periode en de mogelijkheid om Logboeken opnieuw toe te wijzen aan verschillende regio's. Gebruik Azure Data Explorer om query's uit te voeren op gegevens die zijn geëxporteerd uit uw Log Analytics-werk ruimten. Eenmaal geconfigureerd, worden ondersteunde tabellen die vanuit uw werk ruimten worden verzonden naar een Azure-opslag account, beschikbaar als gegevens bron voor Azure-Data Explorer.

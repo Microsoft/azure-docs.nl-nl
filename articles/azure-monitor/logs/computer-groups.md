@@ -1,17 +1,16 @@
 ---
 title: Computer groepen in Azure Monitor-logboek query's | Microsoft Docs
 description: Met computer groepen in Azure Monitor kunt u logboek query's op een bepaalde set computers bereiken.  In dit artikel worden de verschillende methoden beschreven die u kunt gebruiken voor het maken van computer groepen en het gebruik ervan in een logboek query.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/05/2019
-ms.openlocfilehash: 3dffab040b8ee17760e23aa8b1d8fb65aa0417e7
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: d8702b498e08561175aa7ee975c7b6b46fdf1687
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101734125"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031086"
 ---
 # <a name="computer-groups-in-azure-monitor-log-queries"></a>Computer groepen in Azure Monitor-logboek query's
 Met computer groepen in Azure Monitor kunt u [logboek query's](./log-query-overview.md) op een bepaalde set computers bereiken.  Elke groep wordt gevuld met computers met behulp van een query die u definieert of door groepen te importeren uit verschillende bronnen.  Wanneer de groep is opgenomen in een logboek query, zijn de resultaten beperkt tot records die overeenkomen met de computers in de groep.

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/20/2019
-ms.openlocfilehash: ed9690a750ad6e1167ba0a0ae4a87b603c4a1f15
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a889275782388781eadffb7cf0a24771bf6e9e4f
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101717397"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102030831"
 ---
 # <a name="designing-your-azure-monitor-logs-deployment"></a>De implementatie van uw Azure Monitor-logboeken ontwerpen
 
@@ -87,9 +87,9 @@ Gebruikers hebben twee opties om toegang tot de gegevens te krijgen:
 
     > [!NOTE]
     > Logboeken zijn alleen beschikbaar voor resource context query's als ze goed zijn gekoppeld aan de betreffende resource. Momenteel hebben de volgende resources beperkingen:
-    > - Computers buiten Azure
+    > - Computers die buiten Azure worden ondersteund voor resource-context, alleen via [Azure Arc voor servers](../../azure-arc/servers/index.yml)
     > - Service Fabric
-    > - Application Insights
+    > - Application Insights-wordt alleen ondersteund voor resource-context wanneer u [Application Insights resource op basis van werk ruimte](../app/create-workspace-resource.md) gebruikt
     >
     > U kunt testen of Logboeken goed zijn gekoppeld aan hun resource door een query uit te voeren en de records te controleren waarin u bent geïnteresseerd. Als de juiste resource-ID wordt weer gegeven in de eigenschap [_ResourceId](./log-standard-columns.md#_resourceid) , zijn de gegevens beschikbaar voor resource gerichte query's.
 

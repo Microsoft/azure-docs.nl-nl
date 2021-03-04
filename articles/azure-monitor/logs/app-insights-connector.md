@@ -1,17 +1,16 @@
 ---
 title: Azure-toepassing Insights-app-gegevens weer geven | Microsoft Docs
 description: U kunt de Application Insights-connector-oplossing gebruiken om prestatie problemen vast te stellen en inzicht te krijgen in wat gebruikers met uw app doen wanneer ze met Application Insights worden bewaakt.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/13/2019
-ms.openlocfilehash: 2dda18232e0cf3afa63a01814e776b90988e0b10
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: c21ed461280dfa617c852fe6c18c30e5d697b704
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101704341"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031273"
 ---
 # <a name="application-insights-connector-management-solution-deprecated"></a>Application Insights-connector-beheer oplossing (afgeschaft)
 

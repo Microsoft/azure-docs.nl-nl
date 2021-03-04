@@ -5,12 +5,12 @@ ms.reviewer: jasonh
 ms.service: data-lake-analytics
 ms.topic: troubleshooting
 ms.date: 10/10/2019
-ms.openlocfilehash: 41b7c80c85331f288343351749e6b2e5292b30c6
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 1236b83b410057e55015391772e37bd461a448d0
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95241604"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102030610"
 ---
 # <a name="learn-how-to-troubleshoot-u-sql-runtime-failures-due-to-runtime-changes"></a>Meer informatie over het oplossen van problemen met U-SQL-runtime als gevolg van runtime wijzigingen
 
@@ -55,7 +55,7 @@ Er zijn twee mogelijke runtime-versie problemen die kunnen optreden:
 
 ## <a name="known-issues"></a>Bekende problemen
 
-* Als u verwijst naar Newtonsoft.Jsin File Version 12.0.3 of gaat u in een USQL-script, treedt de volgende compilatie fout op:
+1. Als u verwijst naar Newtonsoft.Jsin File Version 12.0.3 of gaat u in een USQL-script, treedt de volgende compilatie fout op:
 
     *"We vinden het jammer. taken die worden uitgevoerd in uw Data Lake Analytics-account, zullen waarschijnlijk langzamer worden uitgevoerd of niet worden voltooid. Deze functionaliteit kan niet automatisch worden hersteld naar uw Azure Data Lake Analytics-account vanwege een onverwacht probleem. Er is contact gemaakt met Azure Data Lake engineers om te onderzoeken. "*  
 
@@ -65,6 +65,10 @@ Er zijn twee mogelijke runtime-versie problemen die kunnen optreden:
     `...`
 
     **Oplossing**: gebruik Newtonsoft.Jsop File v 12.0.2 of lager.
+2. Klanten zien mogelijk tijdelijke bestanden en mappen in de Store. Deze worden geproduceerd als onderdeel van de normale taak uitvoering, maar worden doorgaans verwijderd voordat de klanten ze zien. Onder bepaalde omstandigheden, die zeldzame en wille keurig zijn, kunnen ze gedurende een bepaalde tijd zichtbaar blijven. Ze worden uiteindelijk verwijderd en worden nooit geteld als onderdeel van de opslag van de gebruiker of er worden ook kosten in rekening gebracht. Afhankelijk van de taak logica van de klant kunnen deze problemen veroorzaken. Als de taak bijvoorbeeld alle bestanden in de map inventariseert en vervolgens bestands lijsten vergelijkt, kan dit mislukken omdat er onverwachte tijdelijke bestanden aanwezig zijn. Als een stroomafwaartse taak alle bestanden uit een bepaalde map inventariseert voor verdere verwerking, kan deze ook de tijdelijke bestanden opsommen.  
+
+    **Oplossing**: er wordt een oplossing geïdentificeerd in de runtime waarbij de tijdelijke bestanden worden opgeslagen in de tijdelijke map op account niveau dan de huidige uitvoermap. De tijdelijke bestanden worden geschreven in deze nieuwe tijdelijke map en worden verwijderd aan het einde van de taak uitvoering.  
+    Omdat deze oplossing de klant gegevens verwerkt, is het uiterst belang rijk om deze oplossing goed te valideren binnen MSFT voordat deze wordt uitgebracht. In het midden van het jaar 2021 en als standaard runtime in de tweede helft van het jaar 2021 wordt deze oplossing naar verwachting als bèta runtime beschikbaar gesteld. 
 
 
 ## <a name="see-also"></a>Zie ook

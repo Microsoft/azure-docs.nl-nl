@@ -1,17 +1,16 @@
 ---
 title: app ()-expressie in Azure Monitor logboek query's | Microsoft Docs
 description: De app-expressie wordt gebruikt in een Azure Monitor logboek query om gegevens op te halen uit een specifieke Application Insights-app in dezelfde resource groep, een andere resource groep of een ander abonnement.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/09/2019
-ms.openlocfilehash: 4789594cef0f7e900582dd9aad231b81547d3b3e
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 235a6bf4a0dd9afcac8751067b2eac3ddb37c0cd
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101728413"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031239"
 ---
 # <a name="app-expression-in-azure-monitor-query"></a>app ()-expressie in Azure Monitor query
 

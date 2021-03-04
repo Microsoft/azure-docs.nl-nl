@@ -4,12 +4,12 @@ description: Systeem-en aangepaste .NET-prestatie meter items bewaken in Applica
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5f1bd3ac4542dcce0d41f69a9c1664b747214554
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 423e17ef2b44286c28b464836075284929d8644c
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100583887"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031358"
 ---
 # <a name="system-performance-counters-in-application-insights"></a>Systeem prestatie meter items in Application Insights
 
@@ -21,7 +21,7 @@ In het deel venster metrische gegevens ziet u de standaard set prestatie meter i
 
 ![Prestatie meter items die zijn gerapporteerd in Application Insights](./media/performance-counters/performance-counters.png)
 
-De huidige standaard prestatie meter items die zijn geconfigureerd om te worden verzameld voor ASP.NET/ASP.NET core-webtoepassingen zijn:
+De huidige standaard prestatie meter items die zijn geconfigureerd om te worden verzameld voor ASP.NET-webtoepassingen zijn:
 - Percentage \\ processor tijd van proces
 - % Process \\ processor tijd genormaliseerd
 - Geheugen \\ beschik bare bytes
@@ -31,6 +31,14 @@ De huidige standaard prestatie meter items die zijn geconfigureerd om te worden 
 - \\Privé-bytes verwerken
 - \\I/o-gegevens bytes verwerken per seconde
 - Aanvragen voor ASP.NET-toepassingen \\ in de toepassings wachtrij
+- Processor (_Total) \\ % processor tijd
+
+De huidige standaard prestatie meter items die zijn geconfigureerd om te worden verzameld voor ASP.NET Core webtoepassingen zijn:
+- Percentage \\ processor tijd van proces
+- % Process \\ processor tijd genormaliseerd
+- Geheugen \\ beschik bare bytes
+- \\Privé-bytes verwerken
+- \\I/o-gegevens bytes verwerken per seconde
 - Processor (_Total) \\ % processor tijd
 
 ## <a name="add-counters"></a>Items toevoegen

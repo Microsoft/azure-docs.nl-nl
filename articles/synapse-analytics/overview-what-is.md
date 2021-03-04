@@ -9,12 +9,12 @@ ms.subservice: overview
 ms.date: 10/28/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: 7882fc6a6823a93d09c04a8ae2c19005df4843d8
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 37768b994d4b61ee728e04352f027a6f5a478341
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98917090"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031613"
 ---
 # <a name="what-is-azure-synapse-analytics"></a>Wat is Azure Synapse Analytics?
 
@@ -64,13 +64,13 @@ Azure Synapse biedt ondernemingen één manier om analyse-resources te beheren, 
 * Nauwkeurig toegangsbeheer voor gegevens en code
 * Eén dashboard voor het bewaken van resources, gebruik en gebruikers in SQL en Spark
 
-### <a name="synapse-studio"></a>Synapse Studio
+### <a name="unified-experience"></a>Uniforme ervaring
 
-**Synapse Studio** is de websysteem-eigen ervaring die alles verbindt de data engineers, zodat ze op één locatie elke taak kunnen uitvoeren die ze nodig hebben om een volledige oplossing te bouwen.
+**Synapse Studio** is de gebruikers ervaring die alles samen met gegevens technici verbindt. Hiermee kunnen ze elke taak uitvoeren die ze nodig hebben om een volledige analyse oplossing te bouwen.
 
-* Bouw een end-to-end-analyse-oplossing op één locatie: opnemen, verkennen, voorbereiden, organiseren, visualiseren
-* Toonaangevende productiviteit voor data engineers die SQL-of Spark-code schrijven: ontwerpen, foutopsporing en prestaties optimaliseren
-* Integreren met zakelijke CI/CD-processen
+* Belang rijke gegevens engingeer taken op één locatie: opnemen, verkennen, voorbereiden, indelen, visualiseren
+* Toonaangevende productiviteit voor het schrijven van SQL-of Spark-code: ontwerpen, fout opsporing en optimalisatie van prestaties
+* Integreren met Enter prise CI/CD-proces
 
 ## <a name="engage-with-the-synapse-engineering-team"></a>Contact met het technische team van Synapse
 

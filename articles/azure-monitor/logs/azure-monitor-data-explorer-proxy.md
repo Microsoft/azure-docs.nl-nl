@@ -4,15 +4,14 @@ description: Gebruik Azure Monitor om query's in meerdere producten uit te voere
 author: osalzberg
 ms.author: bwren
 ms.reviewer: bwren
-ms.subservice: logs
 ms.topic: conceptual
 ms.date: 12/02/2020
-ms.openlocfilehash: 8bc47eb2a6a22224f4df186136da2c184979ea24
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 1857f0e39cd5d9ddc616eed1db18cd58b98721a4
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611403"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031120"
 ---
 # <a name="cross-resource-query-azure-data-explorer-by-using-azure-monitor"></a>Meerdere resources: query's uitvoeren op Azure Data Explorer met behulp van Azure Monitor
 Azure Monitor ondersteunt query's tussen de verschillende services van Azure Data Explorer, [Application Insights](../app/app-insights-overview.md)en [log Analytics](../logs/data-platform-logs.md). U kunt vervolgens een query uitvoeren op uw Azure Data Explorer-cluster met behulp van Log Analytics/Application Insights-hulpprogram ma's en hiernaar verwijzen in een query's voor meerdere services. In dit artikel wordt beschreven hoe u een query voor meerdere services maakt.

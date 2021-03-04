@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 11/04/2020
 ms.custom: devx-track-python
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 19a8a73428bef3c29c5bf9e56b45750adf5fb2dd
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 42f07b76cefed38aad53caba9ba35c74238540fe
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101748480"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031732"
 ---
 # <a name="quickstart-create-a-function-in-azure-with-python-using-visual-studio-code"></a>Quickstart: Een functie maken in Azure met Python met behulp van Visual Studio Code
 
@@ -90,12 +90,12 @@ De meest voorkomende problemen bij het maken van een project met lokale functies
 
 1. In het deel venster **Terminal** raadpleegt u het URL-eind punt van de functie die lokaal wordt uitgevoerd.
 
-    ![Lokale functie versus code-uitvoer](./media/functions-run-function-test-local-vs-code/functions-vscode-f5.png)
+    ![Lokale functie versus code-uitvoer](../../includes/media/functions-run-function-test-local-vs-code/functions-vscode-f5.png)
 
 
 1. Ga naar het gedeelte **functies van Azure:** als u kern hulpprogramma's uitvoert. Vouw onder **functies** **lokale project**  >  **functies** uit. Klik met de rechter muisknop (Windows) of <kbd>CTRL</kbd> (macOS) op de `HttpExample` functie en kies **functie nu uitvoeren...**.
 
-    :::image type="content" source="media/functions-run-function-test-local-vs-code/execute-function-now.png" alt-text="De functie nu uitvoeren vanuit Visual Studio code":::
+    :::image type="content" source="../../includes/media/functions-run-function-test-local-vs-code/execute-function-now.png" alt-text="De functie nu uitvoeren vanuit Visual Studio code":::
 
 1. In de **hoofd tekst** van de aanvraag ziet u de waarde van de aanvraag bericht hoofdtekst van `{ "name": "Azure" }` . Druk op ENTER om dit aanvraag bericht naar uw functie te verzenden.  
 

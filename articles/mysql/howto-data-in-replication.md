@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 01/13/2021
-ms.openlocfilehash: 29ac0c5991964de48cedd15622d15e929bc9d733
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: d5a013fc4e4ef931579da4fa13f400d5f4fcff0d
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101709543"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102030746"
 ---
 # <a name="how-to-configure-azure-database-for-mysql-data-in-replication"></a>Azure Database for MySQL Replicatie van inkomende gegevens configureren
 
@@ -102,7 +102,7 @@ De volgende stappen maken en configureren van de MySQL-server die on-premises wo
 
    Als de variabele [`log_bin`](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_log_bin) wordt geretourneerd met de waarde ' on ', wordt de binaire logboek registratie ingeschakeld op de server.
    
-   Als `log_bin` wordt geretourneerd met de waarde uit, 
+    Als `log_bin` wordt geretourneerd met de waarde uit en op de bron server on-premises of op virtuele machines waarop u toegang hebt tot het configuratie bestand (My. cnf), kunt u de onderstaande stappen volgen:
    1. Zoek uw MySQL-configuratie bestand (My. cnf) op de bron server. Bijvoorbeeld:/etc/my.cnf
    2. Open het configuratie bestand om het te bewerken en de sectie **mysqld** in het bestand te zoeken.
    3.  Voeg in de sectie mysqld de volgende regel toe:

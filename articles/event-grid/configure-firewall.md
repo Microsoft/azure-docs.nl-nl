@@ -2,13 +2,13 @@
 title: IP-Firewall configureren voor Azure Event Grid onderwerpen of domeinen
 description: In dit artikel wordt beschreven hoe u Firewall instellingen configureert voor Event Grid onderwerpen of domeinen.
 ms.topic: conceptual
-ms.date: 07/07/2020
-ms.openlocfilehash: fd190a13a177b6b6d0f6b0dbcaa35d63dccd93c9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 03/02/2021
+ms.openlocfilehash: 178b9d84ea8b2e0f764f7584526db8dbcf5284f3
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91324158"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031834"
 ---
 # <a name="configure-ip-firewall-for-azure-event-grid-topics-or-domains"></a>IP-Firewall configureren voor Azure Event Grid onderwerpen of domeinen 
 Het onderwerp en het domein zijn standaard toegankelijk vanaf internet, zolang de aanvraag geldig is voor verificatie en autorisatie. Met IP-firewall kunt u dit nog verder beperken tot een aantal IPv4-adressen of IPv4-adresbereiken in CIDR-notatie [(klasseloze Inter-Domain route ring)](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) . Uitgevers die afkomstig zijn van een ander IP-adres, worden geweigerd en ontvangen een 403 (verboden)-antwoord. Zie [netwerk beveiliging voor Event grid](network-security.md)voor meer informatie over de beveiligings functies van het netwerk die door Event grid worden ondersteund.
@@ -16,7 +16,7 @@ Het onderwerp en het domein zijn standaard toegankelijk vanaf internet, zolang d
 In dit artikel wordt beschreven hoe u IP-Firewall instellingen configureert voor Azure Event Grid onderwerpen of domeinen.
 
 ## <a name="use-azure-portal"></a>Azure Portal gebruiken
-In deze sectie wordt beschreven hoe u de Azure Portal gebruikt voor het maken van binnenkomende IP-firewall regels. De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om inkomende IP-regels voor **domeinen**te maken. 
+In deze sectie wordt beschreven hoe u de Azure Portal gebruikt voor het maken van binnenkomende IP-firewall regels. De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om inkomende IP-regels voor **domeinen** te maken. 
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar het onderwerp of het domein van het gebeurtenis raster en schakel over naar het tabblad **netwerken** .
 2. Selecteer **open bare netwerken** om alle netwerken, inclusief Internet, toegang te geven tot de resource. 
@@ -32,21 +32,8 @@ In deze sectie wordt beschreven hoe u de Azure Portal gebruikt voor het maken va
 
 
 ## <a name="use-azure-cli"></a>Azure CLI gebruiken
-In deze sectie wordt beschreven hoe u Azure CLI-opdrachten gebruikt om onderwerpen te maken met inkomende IP-regels. De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om inkomende IP-regels voor **domeinen**te maken. 
+In deze sectie wordt beschreven hoe u Azure CLI-opdrachten gebruikt om onderwerpen te maken met inkomende IP-regels. De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om inkomende IP-regels voor **domeinen** te maken. 
 
-
-### <a name="prerequisites"></a>Vereisten
-Werk de Azure Event Grid extensie voor CLI bij door de volgende opdracht uit te voeren: 
-
-```azurecli-interactive
-az extension update -n eventgrid
-```
-
-Als de extensie niet is geïnstalleerd, voert u de volgende opdracht uit om deze te installeren: 
-
-```azurecli-interactive
-az extension add -n eventgrid
-```
 
 ### <a name="enable-or-disable-public-network-access"></a>Open bare netwerk toegang in-of uitschakelen
 De toegang tot het open bare netwerk is standaard ingeschakeld voor onderwerpen en domeinen. U kunt deze ook expliciet inschakelen of uitschakelen. U kunt het verkeer beperken door binnenkomende IP-firewall regels te configureren. 
@@ -160,7 +147,7 @@ az eventgrid topic update \
 
 
 ## <a name="use-powershell"></a>PowerShell gebruiken
-In deze sectie wordt beschreven hoe u Azure PowerShell-opdrachten gebruikt om Azure Event Grid onderwerpen te maken met binnenkomende IP-firewall regels. De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om inkomende IP-regels voor **domeinen**te maken. 
+In deze sectie wordt beschreven hoe u Azure PowerShell-opdrachten gebruikt om Azure Event Grid onderwerpen te maken met binnenkomende IP-firewall regels. De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om inkomende IP-regels voor **domeinen** te maken. 
 
 ### <a name="prerequisites"></a>Vereisten
 Volg de instructies [voor het maken van een Azure AD-toepassing en Service-Principal](../active-directory/develop/howto-create-service-principal-portal.md) met behulp van de portal om een Azure Active Directory-toepassing te maken en noteer de volgende waarden:

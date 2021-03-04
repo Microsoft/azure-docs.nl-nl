@@ -4,12 +4,12 @@ description: Leer hoe u een Java-functie maakt en publiceer vervolgens het lokal
 ms.topic: quickstart
 ms.date: 11/03/2020
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 38ed05d8bf9f7714b9cd58449f565cf94cb481e5
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 6c84bf4ebc73857fa0280ffbcbf46b68c2da630f
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101748435"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031715"
 ---
 # <a name="quickstart-create-a-java-function-in-azure-using-visual-studio-code"></a>Quickstart: Een Java-functie maken in Azure met behulp van Visual Studio Code
 
@@ -140,7 +140,7 @@ Uw eerste implementatie van uw code omvat het maken van een functie resource in 
 
     + **Selecteer abonnement**: Kies het abonnement dat u wilt gebruiken. Dit ziet u niet als u maar één abonnement hebt.
 
-    + **Selecteer functie-app in Azure**: Kies `- Create new Function App`.
+    + **Selecteer functie-app in Azure**: Kies `Create new Function App`.
 
     + **Voer een globaal unieke naam in voor de functie-app**: Typ een naam die uniek is voor Azure in een URL-pad. De naam die u typt, wordt gevalideerd om wereld wijd uniek te zijn.
 

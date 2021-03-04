@@ -1,17 +1,17 @@
 ---
 title: Een nieuwe update importeren | Microsoft Docs
 description: How-To hand leiding voor het importeren van een nieuwe update in IoT Hub apparaat bijwerken voor IoT Hub.
-author: andbrown
+author: andrewbrownmsft
 ms.author: andbrown
 ms.date: 2/11/2021
 ms.topic: how-to
 ms.service: iot-hub-device-update
-ms.openlocfilehash: d8757f3076f784576f95bbdfc30abf578446c776
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: c83221743e0566d783c38c40aaf92111a0cd80f7
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662516"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102030729"
 ---
 # <a name="import-new-update"></a>Nieuwe update importeren
 Meer informatie over het importeren van een nieuwe update voor het bijwerken van apparaten in IoT Hub.
@@ -53,7 +53,7 @@ Meer informatie over het importeren van een nieuwe update voor het bijwerken van
     $importManifest | Out-File '.\importManifest.json' -Encoding UTF8
     ```
 
-    Hier volgen enkele voorbeeld waarden voor de bovenstaande para meters. Zie voor volledige documentatie het volledige schema voor het importeren van manifesten hieronder.
+    Hier volgen enkele voorbeeld waarden voor de bovenstaande para meters. U kunt ook het volledige schema voor het importeren van het [manifest](import-schema.md) bekijken voor meer informatie.
 
     | Parameter | Beschrijving |
     | --------- | ----------- |
@@ -66,19 +66,6 @@ Meer informatie over het importeren van een nieuwe update voor het bijwerken van
     | installedCriteria | <ul><li>Geef de waarde van SWVersion voor het `microsoft/swupdate:1` Update type op</li><li>Geef de aanbevolen waarde voor het `microsoft/apt:1` Update type op.
     | updateFilePath (s) | Pad naar de update bestand (en) op uw computer
 
-    Manifest schema voor volledige import
-
-    | Naam | Type | Beschrijving | Beperkingen |
-    | --------- | --------- | --------- | --------- |
-    | UpdateId | `UpdateId` object | Identiteit bijwerken. |
-    | UpdateType | tekenreeks | Type update: <ul><li>Geef `microsoft/apt:1` op wanneer u een update op basis van een pakket uitvoert met behulp van referentie agent.</li><li>Geef `microsoft/swupdate:1` op wanneer u een update op basis van een installatie kopie uitvoert met behulp van referentie agent.</li><li>Geef op `microsoft/simulator:1` Wanneer u voorbeeld agent Simulator gebruikt.</li><li>Geef een aangepast type op bij het ontwikkelen van een aangepaste agent.</li></ul> | <ul><li>Formatteer `{provider}/{type}:{typeVersion}`</li><li>Maxi maal 32 tekens in totaal</li></ul> |
-    | InstalledCriteria | tekenreeks | De teken reeks die door de agent wordt geïnterpreteerd om te bepalen of de update is toegepast:  <ul><li>Geef de **waarde** van SWVersion voor het update type op `microsoft/swupdate:1` .</li><li>Geef op `{name}-{version}` voor het update type `microsoft/apt:1` , waarvan de naam en versie worden opgehaald uit het apt-bestand.</li><li>Geef de hash van het update bestand voor het update type op `microsoft/simulator:1` .</li><li>Geef een aangepaste teken reeks op als u een aangepaste Agent ontwikkelt.</li></ul> | Maxi maal 64 tekens |
-    | Compatibiliteit | Matrix van `CompatibilityInfo` objecten | Compatibiliteits informatie van een apparaat dat compatibel is met deze update. | Maxi maal 10 items |
-    | CreatedDateTime | datum en tijd | De datum en tijd waarop de update is gemaakt. | Gescheiden ISO 8601-datum-en tijd notatie, in UTC |
-    | ManifestVersion | tekenreeks | Versie van manifest schema importeren. Geef `2.0` op dat compatibel is met `urn:azureiot:AzureDeviceUpdateCore:1` interface en `urn:azureiot:AzureDeviceUpdateCore:4` interface.</li></ul> | Moet `2.0` |
-    | Bestanden | Matrix van `File` objecten | Payload-bestanden bijwerken | Maxi maal 5 bestanden |
-
-Opmerking: alle velden zijn verplicht.
 
 ## <a name="review-generated-import-manifest"></a>Gegenereerd import manifest controleren
 

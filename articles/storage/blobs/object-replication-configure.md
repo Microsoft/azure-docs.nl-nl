@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 11/09/2020
+ms.date: 03/02/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 226601eadf922a9d834ab84520fd1edf964348fa
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 2b6855d72b644a3fe1fa46c883eb7414383a1a57
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762936"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031698"
 ---
 # <a name="configure-object-replication-for-block-blobs"></a>Object replicatie configureren voor blok-blobs
 
@@ -238,10 +238,10 @@ Houd er rekening mee dat u de rol Azure Resource Manager **Inzender** moet zijn 
 
 De volgende tabel bevat een overzicht van de waarden die moeten worden gebruikt voor de beleids-ID en regel-Id's in het JSON-bestand in elk scenario.
 
-| Wanneer u het JSON-bestand voor dit account maakt... | Stel de beleids-ID en regel-Id's in op deze waarde... |
-|-|-|
-| Doel account | De *standaard* waarde voor de teken reeks. Azure Storage maakt de beleids-ID en de regel-Id's voor u. |
-| Bron account | De waarden van de beleids-ID en regel-Id's die worden geretourneerd wanneer u het beleid dat is gedefinieerd op het doel account downloadt als een JSON-bestand. |
+| Wanneer u het JSON-bestand voor dit account maakt... | De beleids-ID instellen op deze waarde | Regel-Id's instellen op deze waarde |
+|-|-|-|
+| Doel account | De *standaard* waarde voor de teken reeks. Azure Storage wordt de waarde voor de beleids-ID voor u gemaakt. | Een lege teken reeks. Azure Storage worden de regel-ID-waarden voor u gemaakt. |
+| Bron account | De waarde van de beleids-ID die wordt geretourneerd wanneer u het beleid dat is gedefinieerd op het doel account downloadt als een JSON-bestand. | De waarden van de regel-Id's die worden geretourneerd bij het downloaden van het beleid dat is gedefinieerd op het doel account als een JSON-bestand. |
 
 In het volgende voor beeld wordt een replicatie beleid gedefinieerd voor het doel account met één regel die overeenkomt met het voor voegsel *b* en wordt de minimale aanmaak tijd ingesteld voor blobs die moeten worden gerepliceerd. Vergeet niet om waarden tussen punt haken te vervangen door uw eigen waarden:
 
@@ -253,7 +253,7 @@ In het volgende voor beeld wordt een replicatie beleid gedefinieerd voor het doe
     "destinationAccount": "<dest-account>",
     "rules": [
       {
-        "ruleId": "default",
+        "ruleId": "",
         "sourceContainer": "<source-container>",
         "destinationContainer": "<destination-container>",
         "filters": {
@@ -272,7 +272,7 @@ In het volgende voor beeld wordt een replicatie beleid gedefinieerd voor het doe
 
 Voer de volgende stappen uit om de object replicatie te configureren voor het doel account met een JSON-bestand in de Azure Portal:
 
-1. Maak een lokaal JSON-bestand dat het replicatie beleid voor het doel account definieert. Stel het veld **policyId** in op **standaard** zodat Azure Storage de beleids-id definieert.
+1. Maak een lokaal JSON-bestand dat het replicatie beleid voor het doel account definieert. Stel het veld **policyId** in op *standaard* zodat Azure Storage de beleids-id definieert.
 
     Een eenvoudige manier om een JSON-bestand te maken dat een replicatie beleid definieert, is om eerst een test replicatie beleid te maken tussen twee opslag accounts in de Azure Portal. U kunt vervolgens de replicatie regels downloaden en het JSON-bestand zo nodig wijzigen.
 

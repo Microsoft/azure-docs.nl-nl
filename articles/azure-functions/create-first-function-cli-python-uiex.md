@@ -7,12 +7,12 @@ ms.custom:
 - devx-track-python
 - devx-track-azurecli
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 76ec99e5f892438aaa637b15bb7382843d90f334
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: da7f6fdaedd8105363cc62bf55bae2cb5f72f234
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101748543"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031647"
 ---
 # <a name="quickstart-create-a-python-function-in-azure-from-the-command-line"></a>Quickstart: Een Python-functie maken in Azure vanaf de opdrachtregel
 
@@ -62,7 +62,7 @@ Controleer uw vereisten, afhankelijk van of u de Azure CLI of Azure PowerShell g
 
 # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
-+ Voer in een terminal- of opdrachtvenster `func --version` uit om te controleren of de Azure Functions Core Tools versie 3.x zijn.
++ Voer in een Terminal-of opdracht venster uit `func --version` om te controleren of de <abbr title="De set opdracht regel Programma's voor het werken met Azure Functions op uw lokale computer.">Azure Functions Core Tools</abbr> zijn versie 3. x.
 
 + Voer `(Get-Module -ListAvailable Az).Version` uit en controleer of u versie 5.0 of hoger gebruikt. 
 
@@ -292,7 +292,7 @@ Voordat u uw functie code kunt implementeren in azure, moet u een maken <abbr ti
 
     ---
 
-    Vervang door `<STORAGE_NAME>` een naam die geschikt is voor u en <abbr title="De naam moet uniek zijn voor alle opslag accounts die worden gebruikt door alle Azure-klanten wereld wijd. U kunt bijvoorbeeld een combi natie van uw persoonlijke of bedrijfs naam, toepassings naam en een numerieke id gebruiken, zoals in contosobizappstorage20">uniek in Azure Storage</abbr>. Namen mogen drie tot 24 tekens bevatten en u mag alleen kleine letters gebruiken. Met `Standard_LRS` geeft u een account voor algemeen gebruik op dat wordt [ondersteund door Functions](storage-considerations.md#storage-account-requirements).
+    Vervang door `<STORAGE_NAME>` een naam die geschikt is voor u en <abbr title="De naam moet uniek zijn voor alle opslag accounts die worden gebruikt door alle Azure-klanten wereld wijd. U kunt bijvoorbeeld een combi natie van uw persoonlijke of bedrijfs naam, toepassings naam en een numerieke id gebruiken, zoals in contosobizappstorage20.">uniek in Azure Storage</abbr>. Namen mogen drie tot 24 tekens bevatten en u mag alleen kleine letters gebruiken. Met `Standard_LRS` geeft u een account voor algemeen gebruik op dat wordt [ondersteund door Functions](storage-considerations.md#storage-account-requirements).
     
     Voor het opslagaccount worden gedurende deze quickstart slechts een paar dollarcenten in rekening gebracht.
 

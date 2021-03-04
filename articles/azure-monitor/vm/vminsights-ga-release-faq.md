@@ -1,17 +1,16 @@
 ---
 title: Veelgestelde vragen over VM Insights (GA) | Microsoft Docs
 description: VM Insights is een oplossing in azure met een combi natie van de status-en prestatie bewaking van het Azure VM-besturings systeem, evenals het automatisch detecteren van toepassings onderdelen en afhankelijkheden met andere resources en het toewijzen van de communicatie tussen de toepassingen. In dit artikel vindt u antwoorden op veelgestelde vragen over de GA-versie.
-ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/31/2020
-ms.openlocfilehash: 0c55463847e0bf55cf14db2a35de1de16526cd90
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: fbef73bfe8058110277b200b8c4091fcde110c04
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101710750"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031863"
 ---
 # <a name="vm-insights-generally-available-ga-frequently-asked-questions"></a>VM Insights algemeen beschikbaar (GA) Veelgestelde vragen
 Deze veelgestelde vragen over algemene Beschik baarheid omvatten wijzigingen die zijn aangebracht in Q4 2019 en Q1 2020 van voor bereiding op GA.
@@ -20,15 +19,15 @@ Deze veelgestelde vragen over algemene Beschik baarheid omvatten wijzigingen die
 We hebben in januari 2020 een nieuwe versie van de VM-inzichten uitgebracht, vóór onze GA aankondiging. Klanten die VM Insights inschakelen, ontvangen nu de GA-versie, maar bestaande klanten die gebruikmaken van de versie van VM Insights van Q4 2019 en eerder, worden gevraagd om bij te werken. Deze veelgestelde vragen bieden richt lijnen voor het uitvoeren van een upgrade op schaal als u grote implementaties in meerdere werk ruimten hebt.
 
 
-Bij deze upgrade worden Azure Monitor voor VM's prestatie gegevens opgeslagen in dezelfde *InsightsMetrics* -tabel als [container Insights](../containers/container-insights-overview.md), waardoor het gemakkelijker wordt om de twee gegevens sets op te vragen. U kunt ook meer diverse gegevens sets opslaan die niet kunnen worden opgeslagen in de tabel die eerder is gebruikt. 
+Met deze upgrade worden de prestatie gegevens van de VM-inzichten opgeslagen in dezelfde *InsightsMetrics* -tabel als [container Insights](../containers/container-insights-overview.md), waardoor het gemakkelijker wordt om de twee gegevens sets op te vragen. U kunt ook meer diverse gegevens sets opslaan die niet kunnen worden opgeslagen in de tabel die eerder is gebruikt. 
 
 Onze prestatie weergaven gebruiken nu de gegevens die we opslaan in de tabel *InsightsMetrics* .  Als u nog niet hebt bijgewerkt voor het gebruik van de meest recente VMInsights-oplossing in uw werk ruimte, worden er geen gegevens meer weer gegeven in uw grafieken.  U kunt een upgrade uitvoeren van de pagina **aan de slag** zoals hieronder wordt beschreven.
 
 
 ## <a name="what-is-changing"></a>Wat wordt er gewijzigd?
-We hebben een nieuwe oplossing met de naam VMInsights, die aanvullende mogelijkheden bevat voor het verzamelen van gegevens, samen met een nieuwe locatie voor het opslaan van deze gegevens in uw Log Analytics-werk ruimte. 
+We hebben een nieuwe oplossing met de naam VMInsights, die meer mogelijkheden bevat voor het verzamelen van gegevens, samen met een nieuwe locatie voor het opslaan van deze gegevens in uw Log Analytics-werk ruimte. 
 
-In het verleden hebben we de ServiceMap-oplossing ingeschakeld in uw werk ruimte en de prestatie meter items in uw Log Analytics-werk ruimte om de gegevens naar de *prestatie* tabel te verzenden. Deze nieuwe oplossing verzendt de gegevens naar een tabel met de naam *InsightsMetrics* die ook wordt gebruikt door container Insights. Met dit tabel schema kunnen we aanvullende metrische gegevens en servicegegevens sets opslaan die niet compatibel zijn met de indeling van de *prestatie* tabel.
+In het verleden hebben we de ServiceMap-oplossing ingeschakeld in uw werk ruimte en de prestatie meter items in uw Log Analytics-werk ruimte om de gegevens naar de *prestatie* tabel te verzenden. Deze nieuwe oplossing verzendt de gegevens naar een tabel met de naam *InsightsMetrics* die ook wordt gebruikt door container Insights. Met dit tabel schema kunnen we meer metrische gegevens en servicegegevens sets opslaan die niet compatibel zijn met de indeling van de *prestatie* tabel.
 
 We hebben onze prestatie grafieken bijgewerkt voor het gebruik van de gegevens die we opslaan in de *InsightsMetrics* -tabel. U kunt een upgrade uitvoeren om de tabel *InsightsMetrics* te gebruiken op de pagina **aan** de slag zoals hieronder wordt beschreven.
 
@@ -58,7 +57,7 @@ Als u [logboek waarschuwingen](../alerts/alerts-unified-log.md) hebt gemaakt die
 
 Deze veelgestelde vragen worden bijgewerkt en onze documentatie bevat voor beelden van waarschuwings regels voor logboek zoeken in de gegevens sets die worden verzameld.
 
-## <a name="how-will-this-affect-my-bill"></a>Wat is van invloed op mijn factuur?
+## <a name="how-will-this-change-affect-my-bill"></a>Wat is de invloed van deze wijziging op mijn factuur?
 
 Facturering is nog steeds gebaseerd op gegevens die zijn opgenomen en bewaard in uw Log Analytics-werk ruimte.
 
@@ -90,7 +89,7 @@ Nee, de twee oplossingen delen de kaart gegevens sets die worden opgeslagen in `
 
 ## <a name="health-feature-is-in-limited-public-preview"></a>Health-functie heeft een beperkte open bare preview
 
-We hebben een groot aantal fantastische feedback ontvangen van klanten over onze VM-status functie ingesteld. Er is veel belang aan deze functie en de kans op het ondersteunen van bewakings werk stromen. We zijn van plan een reeks wijzigingen aan te brengen om functionaliteit toe te voegen en de ontvangen feedback te verhelpen. 
+We hebben een groot aantal fantastische feedback ontvangen van klanten over onze VM-status functie ingesteld. Er is asignificant belang stelling voor deze functie en de mogelijkheden voor het ondersteunen van bewakings werk stromen. We zijn van plan een reeks wijzigingen aan te brengen om functionaliteit toe te voegen en de ontvangen feedback te verhelpen. 
 
 Om de gevolgen van deze wijzigingen aan nieuwe klanten te beperken, hebben we deze functie verplaatst naar een **beperkte open bare preview**. Deze update is opgetreden in oktober 2019.
 
@@ -108,7 +107,7 @@ Als een bestaande klant kunt u de status functie blijven gebruiken op virtuele m
 
 ## <a name="i-use-vm-health-now-with-one-environment-and-would-like-to-deploy-it-to-a-new-one"></a>Ik gebruik nu VM-status met één omgeving en wil deze implementeren in een nieuw abonnement
 
-Als u een bestaande klant bent die gebruikmaakt van de Health-functie en deze wilt gebruiken voor een nieuwe implementatie, kunt u contact met ons opnemen vminsights@microsoft.com om instructies aan te vragen.
+Als u een bestaande klant bent die gebruikmaakt van de Health-functie en deze wilt gebruiken voor een nieuwe implementatie, neemt u contact met ons op vminsights@microsoft.com om instructies aan te vragen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

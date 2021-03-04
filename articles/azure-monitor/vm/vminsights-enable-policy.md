@@ -1,17 +1,16 @@
 ---
 title: VM Insights inschakelen met behulp van Azure Policy
 description: Hierin wordt beschreven hoe u VM Insights inschakelt voor meerdere virtuele machines van Azure of virtuele-machine schaal sets met behulp van Azure Policy.
-ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
-ms.openlocfilehash: a63a647f3d76e3cc2616f05fe96d86dbdd36e74d
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 51baf009543208fbbfe091238d0215a24761641d
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101707537"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031953"
 ---
 # <a name="enable-vm-insights-by-using-azure-policy"></a>VM Insights inschakelen met behulp van Azure Policy
 In dit artikel wordt uitgelegd hoe u met Azure Policy VM-inzichten kunt inschakelen voor virtuele Azure-machines of een hybride virtuele machine die is verbonden met Azure Arc (preview). Met Azure Policy kunt u beleids definities toewijzen waarmee de vereiste agents voor VM-inzichten in uw Azure-omgeving worden geïnstalleerd en de bewaking voor Vm's automatisch wordt ingeschakeld wanneer elke virtuele machine wordt gemaakt. VM Insights biedt een functie waarmee niet-compatibele Vm's in uw omgeving kunnen worden gedetecteerd en hersteld. Gebruik deze functie in plaats van rechtstreeks te werken met Azure Policy.
@@ -19,7 +18,7 @@ In dit artikel wordt uitgelegd hoe u met Azure Policy VM-inzichten kunt inschake
 Als u niet bekend bent met Azure Policy, kunt u een korte inleiding vinden op de [implementatie Azure monitor op schaal met behulp van Azure Policy](../deploy-scale.md).
 
 > [!NOTE]
-> Als u Azure Policy wilt gebruiken met virtuele-machine schaal sets van Azure, of als u rechtstreeks met Azure Policy wilt werken om virtuele Azure-machines in te scha kelen, raadpleegt u [Azure monitor op schaal implementeren met behulp van Azure Policy](../deploy-scale.md#azure-monitor-for-vms).
+> Als u Azure Policy wilt gebruiken met virtuele-machine schaal sets van Azure, of als u rechtstreeks met Azure Policy wilt werken om virtuele Azure-machines in te scha kelen, raadpleegt u [Azure monitor op schaal implementeren met behulp van Azure Policy](../deploy-scale.md#vm-insights).
 
 ## <a name="prerequisites"></a>Vereisten
 - [Een log Analytics-werk ruimte maken en configureren](./vminsights-configure-workspace.md).

@@ -7,12 +7,12 @@ ms.service: cache
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 02/08/2021
-ms.openlocfilehash: 50535ab9ac2a3541ade7b9abd8f355bbeaf6d4b3
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 37496b9358ec72c79f8d26e32a92485f001e0e9d
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100365001"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031664"
 ---
 # <a name="quickstart-create-a-redis-enterprise-cache-preview"></a>Quick Start: een redis Enter prise-cache maken (preview)
 
@@ -22,7 +22,7 @@ De Enterprise-lagen voor Azure Cache voor Redis bieden het volledig geïntegreer
 
 ## <a name="prerequisites"></a>Vereisten
 
-U hebt een Azure-abonnement nodig voordat u kunt beginnen. Als u nog geen account hebt, kunt u [een account maken](https://azure.microsoft.com/). Zie [Enterprise-laagvereisten](cache-overview.md#enterprise-and-enterprise-flash-tier-requirements) voor meer informatie.
+U hebt een Azure-abonnement nodig voordat u kunt beginnen. Als u nog geen account hebt, kunt u [een account maken](https://azure.microsoft.com/). Zie [speciale overwegingen voor bedrijfs lagen](cache-overview.md#special-considerations-for-enterprise-tiers)voor meer informatie.
 
 ## <a name="create-a-cache"></a>Een cache maken
 1. Meld u aan bij de Azure-portal via de link in uw preview-uitnodiging en selecteer **Een resource maken** om een cache te maken.
@@ -41,7 +41,7 @@ U hebt een Azure-abonnement nodig voordat u kunt beginnen. Als u nog geen accoun
    | **Locatie** | Open de vervolgkeuzelijst en selecteer een locatie. | Tijdens de preview-fase zijn Enterprise-lagen in een beperkt aantal Azure-regio's beschikbaar. |
    | **Cachetype** | Open de vervolgkeuzelijst en selecteer een *Enterprise*- of *Enterprise Flash*-laag, en een grootte. |  De grootte, prestaties en functies die beschikbaar zijn voor de cache, zijn afhankelijk van de gekozen laag. |
    
-   :::image type="content" source="media/cache-create/enterprise-tier-basics.png" alt-text="Enterprise-laag Basisinstellingen":::
+   :::image type="content" source="media/cache-create/enterprise-tier-basics.png" alt-text="Tabblad basis principes van de Enter prise-laag":::
 
    > [!NOTE] 
    > Zorg ervoor dat u het selectievakje onder 'Voorwaarden' inschakelt voordat u doorgaat.
@@ -57,17 +57,13 @@ U hebt een Azure-abonnement nodig voordat u kunt beginnen. Als u nog geen accoun
    
    U kunt de standaardinstellingen behouden of deze indien nodig aanpassen. Als u **Alleen toegang via TLS toestaan** inschakelt, moet u TLS gebruiken om vanuit uw toepassing toegang te krijgen tot de nieuwe cache.
 
-   :::image type="content" source="media/cache-create/enterprise-tier-advanced.png" alt-text="Enterprise-laag Geavanceerd":::
+   :::image type="content" source="media/cache-create/enterprise-tier-advanced.png" alt-text="Tabblad Geavanceerd van de Enter prise-laag":::
 
-   > [!NOTE] 
-   > Redis-modules worden nog niet ondersteund in de Enterprise Flash-laag. Kies een Enterprise-cache als u van plan bent een Redis-module te gebruiken.
-   >
-   
 1. Selecteer **Volgende: Tags** en ga door.
 
 1. Selecteer **Volgende: Beoordelen en maken**.
 
-   :::image type="content" source="media/cache-create/enterprise-tier-summary.png" alt-text="Enterprise-laag Samenvatting":::
+   :::image type="content" source="media/cache-create/enterprise-tier-summary.png" alt-text="Het tabblad controleren op bedrijfs niveau + maken":::
 
 1. Controleer de instellingen en klik op **Maken**.
    

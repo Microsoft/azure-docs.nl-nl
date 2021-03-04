@@ -7,15 +7,15 @@ author: aahill
 manager: nitinme
 keywords: cognitieve services, cognitieve intelligentie, cognitieve oplossingen, AI-services
 ms.service: cognitive-services
-ms.topic: conceptual
+ms.topic: quickstart
 ms.date: 09/14/2020
 ms.author: aahi
-ms.openlocfilehash: 3fd1d9e708a5f1a500440f20c2947ddfe4bc7460
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 0ad2d0a10b20aa049147d61bd4e8168ea956392c
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94368913"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031919"
 ---
 # <a name="quickstart-create-a-cognitive-services-resource-using-the-azure-portal"></a>Snelstartgids: een Cognitive Services resource maken met behulp van de Azure Portal
 
@@ -64,9 +64,9 @@ Azure Cognitive Services bestaat uit cloudservices met REST API's en clientbibli
     | [Ink Recognizer](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesInkRecognizer)        |                         | [Tekstanalyse](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics)                |  [Metrics Advisor](https://go.microsoft.com/fwlink/?linkid=2142156)                    | [Bing Spellingcontrole](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingSpellCheck-v7)   |
     |           |                         | [Translator](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextTranslation)               |                      | [Bing Automatische suggesties](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingAutosuggest-v7)                       |
 
-    **_
+    ***
 
-3. Geef op de pagina _ *maken* * de volgende informatie op:
+3. Geef op de pagina **maken** de volgende informatie op:
 
     #### <a name="multi-service-resource"></a>[Resource voor meerdere services](#tab/multiservice)
 
@@ -96,13 +96,13 @@ Azure Cognitive Services bestaat uit cloudservices met REST API's en clientbibli
 
     Klik op **Create**.
 
-    **_
+    ***
 
 [!INCLUDE [Register Azure resource for subscription](./includes/register-resource-subscription.md)]
 
 ## <a name="get-the-keys-for-your-resource"></a>De sleutels voor uw resource ophalen
 
-1. Nadat de implementatie van de resource is voltooid, klikt u in de **volgende stappen** op _ *Ga naar resource* *.
+1. Nadat de implementatie van de resource is voltooid, klikt u in de **volgende stappen** op **Ga naar resource** .
 
     ![Zoeken naar Cognitive Services](media/cognitive-services-apis-create-account/resource-next-steps.png)
 

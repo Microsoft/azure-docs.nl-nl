@@ -6,14 +6,14 @@ ms.service: virtual-machines
 ms.subservice: reserved-instances
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 02/02/2021
+ms.date: 03/01/2021
 ms.author: yashar
-ms.openlocfilehash: 6b04caec380a481569de4a33ea0159fd641c000f
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 9270b7fb135eddd78a7aeb30cf88af4d704e176e
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101673957"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102030699"
 ---
 # <a name="virtual-machine-size-flexibility-with-reserved-vm-instances"></a>Flexibiliteit van de VM-grootte met gereserveerde VM-instanties
 
@@ -48,7 +48,13 @@ Hieronder ziet u de flexibiliteits groepen, ArmSkuName en de verhoudingen van de
 
 [Flexibiliteits verhouding van instantie grootte](https://isfratio.blob.core.windows.net/isfratio/ISFRatio.csv)
 
-De bestands-URL en het schema worden hersteld, zodat u dit bestand programmatisch kunt gebruiken. De gegevens zijn binnenkort ook beschikbaar via API.
+Azure houdt koppelingen en schema's bijgewerkt zodat u het bestand programmatisch kunt gebruiken.
+
+## <a name="view-vm-size-recommendations"></a>Aanbevelingen voor de VM-grootte weer geven
+
+Azure toont aanbevelingen voor de VM-grootte in de aankoop ervaring. Als u de aanbevelingen voor de kleinste grootte wilt weer geven, selecteert u **groeperen op kleinste grootte**.
+
+:::image type="content" source="./media/reserved-vm-instance-size-flexibility/select-product-recommended-quantity.png" alt-text="Scherm opname met aanbevolen aantallen." lightbox="./media/reserved-vm-instance-size-flexibility/select-product-recommended-quantity.png" :::
 
 ## <a name="next-steps"></a>Volgende stappen
 

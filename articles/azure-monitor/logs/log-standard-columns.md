@@ -1,17 +1,16 @@
 ---
 title: Standaard kolommen in Azure Monitor logboek records | Microsoft Docs
 description: Hierin worden kolommen beschreven die gemeen schappelijk zijn voor meerdere gegevens typen in Azure Monitor-Logboeken.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/25/2021
-ms.openlocfilehash: c479f525435139b2f92838bf15edf4563aeed4e2
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 3e12bef7569110084cd059b0dfde8562bd914823
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101704120"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102030763"
 ---
 # <a name="standard-columns-in-azure-monitor-logs"></a>Standaard kolommen in Azure Monitor-logboeken
 Gegevens in Azure Monitor logboeken worden [opgeslagen als een set records in een log Analytics werk ruimte of Application Insights toepassing](../logs/data-platform-logs.md), elk met een bepaald gegevens type met een unieke set kolommen. Veel gegevens typen hebben standaard kolommen die gemeen schappelijk zijn voor meerdere typen. In dit artikel worden deze kolommen beschreven en vindt u voor beelden van hoe u deze kunt gebruiken in query's.

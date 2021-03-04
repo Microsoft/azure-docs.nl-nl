@@ -1,17 +1,16 @@
 ---
 title: Voor beelden van Azure Monitor-logboek query | Microsoft Docs
 description: Voor beelden van logboek query's in Azure Monitor met behulp van de Kusto-query taal.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/16/2020
-ms.openlocfilehash: e2050784d03b1f01e743df9b00916ec286a3e7ef
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 56866d8e255f15a93aaa9133f9cda9de4fdd9fd5
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101736947"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102030797"
 ---
 # <a name="azure-monitor-log-query-examples"></a>Voor beelden van Azure Monitor-logboek query
 Dit artikel bevat verschillende voor beelden van [query's](./log-query-overview.md) met behulp van de [Kusto-query taal](/azure/kusto/query/) om verschillende soorten logboek gegevens op te halen uit Azure monitor. Er worden verschillende methoden gebruikt om gegevens samen te voegen en te analyseren. u kunt deze voor beelden gebruiken om verschillende strategieën te identificeren die u voor uw eigen vereisten kunt gebruiken.  

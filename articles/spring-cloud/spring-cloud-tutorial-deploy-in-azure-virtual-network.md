@@ -4,15 +4,15 @@ description: Azure Spring Cloud implementeren in een virtueel netwerk (VNet-inje
 author: MikeDodaro
 ms.author: brendm
 ms.service: spring-cloud
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 07/21/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 73dd60dba50d3bd29cda0f538462884822054cf9
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 82dcd8c59c55a2866b51fd6dee896ea1298b6cf6
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98880593"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102031800"
 ---
 # <a name="deploy-azure-spring-cloud-in-a-virtual-network"></a>Azure lente-Cloud in een virtueel netwerk implementeren
 
@@ -50,7 +50,7 @@ Het virtuele netwerk waarin u het Azure Spring Cloud-exemplaar implementeert, mo
     * Eén voor uw Spring Boot-microservicetoepassingen.
     * Er is een een-op-een-relatie tussen deze subnetten en een Azure Spring Cloud-exemplaar. Gebruik een nieuw subnet voor elk service-exemplaar dat u implementeert. Elk subnet kan slechts één service-exemplaar bevatten.
 * **Adresruimte**: CIDR blokkeert maximaal */28* voor het subnet van de serviceruntime en het subnet van de Spring Boot-microservicetoepassingen.
-* **Routeringstabel**: Aan de subnetten mag geen bestaande routeringstabel zijn gekoppeld.
+* **Route tabel**: standaard moeten aan de subnetten geen bestaande route tabellen zijn gekoppeld. U kunt [uw eigen route tabel meenemen](#bring-your-own-route-table).
 
 In de volgende procedures wordt de installatie van het virtuele netwerk voor het Azure Spring Cloud-exemplaar beschreven.
 
@@ -179,6 +179,26 @@ In deze tabel wordt het maximum aantal app-exemplaren weer gegeven dat wordt ond
 Voor subnetten zijn vijf IP-adressen gereserveerd in Azure, en er zijn minstens vier adressen vereist voor Azure Spring Cloud. Er zijn minstens negen IP-adressen vereist. /29 en /30 zijn dus niet-operationeel.
 
 Voor een subnet voor een serviceruntime is /28 de minimale grootte. De grootte heeft geen invloed op het aantal app-exemplaren.
+
+## <a name="bring-your-own-route-table"></a>Uw eigen route tabel meenemen
+
+Azure lente Cloud ondersteunt het gebruik van bestaande subnetten en route tabellen.
+
+Als uw aangepaste subnetten geen route tabellen bevatten, maakt Azure lente-Cloud deze voor elk van de subnetten en voegt er regels aan toe tijdens de levens cyclus van het exemplaar. Als uw aangepaste subnetten route tabellen bevatten, erkent Azure lente-Cloud de bestaande route tabellen tijdens de bewerkingen van het exemplaar en worden er dienovereenkomstig/updates en/of regels toegevoegd voor bewerkingen.
+
+> [!Warning] 
+> Aangepaste regels kunnen worden toegevoegd aan de aangepaste route tabellen en worden bijgewerkt. Regels worden echter toegevoegd door de Azure lente-Cloud en ze mogen niet worden bijgewerkt of verwijderd. Regels, zoals 0.0.0.0/0, moeten altijd voor komen in een bepaalde route tabel en worden toegewezen aan het doel van uw Internet gateway, zoals een NVA of een andere uitgangs gateway. Wees voorzichtig wanneer u regels bijwerkt wanneer alleen uw aangepaste regels worden gewijzigd.
+
+
+### <a name="route-table-requirements"></a>Vereisten voor de route tabel
+
+De route tabellen waaraan uw aangepaste vnet is gekoppeld, moeten voldoen aan de volgende vereisten:
+
+* U kunt uw Azure-route tabellen alleen koppelen aan uw vnet wanneer u een nieuw Azure lente-Cloud service-exemplaar maakt. U kunt niet wijzigen om een andere route tabel te gebruiken nadat de Azure lente-Cloud is gemaakt.
+* Zowel het subnet van de micro service-toepassing als het runtime-subnet van de service moet worden gekoppeld aan verschillende route tabellen of geen van beide.
+* Machtigingen moeten worden toegewezen voordat het exemplaar kan worden gemaakt. Zorg ervoor dat u de Azure *lente-Cloud eigenaar* toestemming verleent voor uw route tabellen.
+* De gekoppelde resource van de route tabel kan niet worden bijgewerkt nadat het cluster is gemaakt. De resource van de route tabel kan niet worden bijgewerkt, maar aangepaste regels kunnen worden gewijzigd in de route tabel.
+* U kunt een route tabel met meerdere exemplaren niet opnieuw gebruiken vanwege mogelijke conflicterende routerings regels.
 
 ## <a name="next-steps"></a>Volgende stappen
 

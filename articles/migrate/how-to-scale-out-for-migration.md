@@ -6,12 +6,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.topic: how-to
 ms.date: 03/02/2021
-ms.openlocfilehash: fda9026adf46a26927912b9e1983a537470c37ee
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 6e81b3d62fb5b208c88257d7660f74ac25f099b8
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101745583"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102047937"
 ---
 # <a name="scale-agentless-migration-of-vmware-virtual-machines-to-azure"></a>De migratie van virtuele VMware-machines in een agent schalen naar Azure
 
@@ -153,7 +153,7 @@ Op dit moment moet u opnieuw valideren of het scale-out-apparaat verbinding kan 
 :::image type="content" source="./media/how-to-scale-out-for-migration/view-sources.png" alt-text="Het importeren is voltooid":::
 
 > [!IMPORTANT]
-> Als u de vCenter Server referenties op het primaire apparaat bewerkt, moet u ervoor zorgen dat u de configuratie bestanden opnieuw importeert naar het scale-out-apparaat om de nieuwste configuratie op te halen en doorlopende replicaties voort te zetten.<br/> Als u het scale-out-apparaat niet langer nodig hebt, moet u ervoor zorgen dat u het scale-out apparaat uitschakelt. Meer [**informatie**](./common-questions-appliance) over het uitschakelen van het scale-out toestel wanneer dit niet nodig is.
+> Als u de vCenter Server referenties op het primaire apparaat bewerkt, moet u ervoor zorgen dat u de configuratie bestanden opnieuw importeert naar het scale-out-apparaat om de nieuwste configuratie op te halen en doorlopende replicaties voort te zetten.<br/> Als u het scale-out-apparaat niet langer nodig hebt, moet u ervoor zorgen dat u het scale-out apparaat uitschakelt. Meer [**informatie**](./common-questions-appliance.md) over het uitschakelen van het scale-out toestel wanneer dit niet nodig is.
 
 ## <a name="replicate"></a>Repliceren
 

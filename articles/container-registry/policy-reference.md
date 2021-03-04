@@ -7,12 +7,12 @@ author: dlepow
 ms.author: danlep
 ms.service: container-registry
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 4f3210fb46d5b4a772cdbb125cc5481d7cdd5995
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: 5dc5d27d0364bf64d9f8b695213c2f71cc822949
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100092997"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102048485"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-container-registry"></a>Ingebouwde Azure Policy-definities voor Azure Container Registry
 
@@ -26,6 +26,7 @@ De naam van elke ingebouwde beleidsdefinitie linkt naar de beleidsdefinitie in d
 
 ## <a name="next-steps"></a>Volgende stappen
 
+- Zie de richt lijnen voor het [toewijzen van beleid en het controleren van naleving](container-registry-azure-policy.md).
 - Bekijk de inbouwingen op de [Azure Policy GitHub-opslagplaats](https://github.com/Azure/azure-policy).
 - Lees over de [structuur van Azure Policy-definities](../governance/policy/concepts/definition-structure.md).
 - Lees [Informatie over de effecten van het beleid](../governance/policy/concepts/effects.md).

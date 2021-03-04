@@ -1,17 +1,16 @@
 ---
 title: Bewaking uitschakelen in VM Insights
 description: In dit artikel wordt beschreven hoe u de bewaking van uw virtuele machines in VM Insights stopt.
-ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/12/2020
-ms.openlocfilehash: 7eca08abf1ef3bed1aa7fdd806853b94d5615854
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 2de0dcd52745ebadb02ab8dbb563e28abf2822dc
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101717057"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102046479"
 ---
 # <a name="disable-monitoring-of-your-vms-in-vm-insights"></a>Bewaking van uw Vm's in VM Insights uitschakelen
 

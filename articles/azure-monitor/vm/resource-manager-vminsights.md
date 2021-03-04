@@ -1,17 +1,16 @@
 ---
 title: Voor beelden van Resource Manager-sjablonen voor VM Insights
 description: Voor beelden van Azure Resource Manager sjablonen voor het implementeren en configureVM van inzichten.
-ms.subservice: logs
 ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 05/18/2020
-ms.openlocfilehash: fa18a5f2af79d75c4eba8c6822f1a7ed8ca4efa8
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 2ee447b1e5f72ce916808a5832f999eea493994c
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101733751"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102046836"
 ---
 # <a name="resource-manager-template-samples-for-vm-insights"></a>Voor beelden van Resource Manager-sjablonen voor VM Insights
 In dit artikel vindt u voor beelden van [Azure Resource Manager sjablonen](../../azure-resource-manager/templates/template-syntax.md) voor het inschakelen van VM Insights op virtuele machines. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.

@@ -1,17 +1,16 @@
 ---
 title: Waarschuwingen van VM Insights
 description: Hierin wordt beschreven hoe u waarschuwings regels maakt op basis van prestatie gegevens die worden verzameld door VM Insights.
-ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/10/2020
-ms.openlocfilehash: e3b5f49d9a4ed7af40afba5b267ba0c7bb9cd73a
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 06c58b7081ed68724a3c907f8fe76dcf5f7b8057
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101704052"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102046802"
 ---
 # <a name="how-to-create-alerts-from-vm-insights"></a>Waarschuwingen maken op basis van VM Insights
 [Waarschuwingen in azure monitor](../alerts/alerts-overview.md) proactief u op de hoogte stellen van interessante gegevens en patronen in uw bewakings gegevens. VM Insights bevat geen vooraf geconfigureerde waarschuwings regels, maar u kunt uw eigen waarschuwing maken op basis van de gegevens die worden verzameld. Dit artikel bevat richt lijnen voor het maken van waarschuwings regels, met inbegrip van een aantal voorbeeld query's.

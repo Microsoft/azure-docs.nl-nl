@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 040fcde35707074ffaf102ed6c224b2f47a084bb
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 1706b60a61bd3b507d9fbcf555e478b388f51168
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97679352"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102047567"
 ---
 # <a name="add-a-symbol-layer-android-sdk"></a>Een Symbol-laag toevoegen (Android SDK)
 
@@ -132,6 +132,52 @@ De volgende scherm afbeelding toont de bovenstaande code rending een punt functi
 
 > [!TIP]
 > Als u alleen tekst wilt weer geven met een symbool-laag, kunt u het pictogram verbergen door de `iconImage` eigenschap van de pictogram opties in te stellen op `"none"` .
+
+## <a name="modify-symbol-colors"></a>Symbool kleuren wijzigen
+
+De Azure Maps Android SDK wordt geleverd met een set vooraf gedefinieerde kleur variaties van het pictogram standaard markering. `marker-red`Kan bijvoorbeeld worden door gegeven in de `iconImage` optie van een symbool laag om een rode versie van het markerings pictogram in die laag weer te geven. 
+
+```java
+SymbolLayer layer = new SymbolLayer(source,
+    iconImage("marker-red")
+);
+```
+
+In de volgende tabel worden alle beschik bare namen van de ingebouwde pictogram afbeeldingen weer gegeven. Al deze markeringen halen de kleuren van kleur bronnen die u kunt overschrijven. Naast het overschrijven van de hoofd kleur van deze markering. Houd er echter rekening mee dat het overschrijven van de kleur van een van deze markeringen van toepassing is op alle lagen die die pictogram afbeelding gebruiken.
+
+| Naam van pictogram afbeelding | Resource naam van kleur |
+|-----------------|---------------------|
+| `marker-default` | `mapcontrol_marker_default` |
+| `marker-black` | `mapcontrol_marker_black` |
+| `marker-blue` | `mapcontrol_marker_blue` |
+| `marker-darkblue` | `mapcontrol_marker_darkblue` |
+| `marker-red` | `mapcontrol_marker_red` |
+| `marker-yellow` | `mapcontrol_marker_yellow` |
+
+U kunt ook de rand kleur van alle markeringen overschrijven met de `mapcontrol_marker_border` kleur resource naam. De kleuren van deze markeringen kunnen worden overschreven door een kleur met dezelfde naam toe te voegen aan het `colors.xml` bestand van uw app. Het volgende `colors.xml` bestand zou bijvoorbeeld de standaard kleur van de markering helder groen maken.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mapcontrol_marker_default">#00FF00</color>
+</resources>
+```
+
+Hier volgt een aangepaste versie van de standaard markerings vector-XML die u kunt wijzigen om extra aangepaste versies van de standaard markering te maken. De gewijzigde versie kan worden toegevoegd aan de `drawable` map van uw app en worden toegevoegd aan de toewijzings afbeelding sprite met behulp `map.images.add` van en vervolgens gebruikt met een symbool laag.
+
+```xml
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24.5dp"
+    android:height="36.5dp"
+    android:viewportWidth="24.5"
+    android:viewportHeight="36.5">
+    <path
+        android:pathData="M12.25,0.25a12.2543,12.2543 0,0 0,-12 12.4937c0,6.4436 6.4879,12.1093 11.059,22.5641 0.5493,1.2563 1.3327,1.2563 1.882,0C17.7621,24.8529 24.25,19.1857 24.25,12.7437A12.2543,12.2543 0,0 0,12.25 0.25Z"
+        android:strokeWidth="0.5"
+        android:fillColor="@color/mapcontrol_marker_default"
+        android:strokeColor="@color/mapcontrol_marker_border"/>
+</vector>
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 

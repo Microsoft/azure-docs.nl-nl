@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: 43de832095e2c2dd674a156da914ed26f1e472d0
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: f0c24940e606020dc45e5a000cfcb030fd806d4b
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92892941"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102047482"
 ---
 # <a name="add-an-image-layer-to-a-map"></a>Een afbeelding slaag toevoegen aan een kaart
 
@@ -70,6 +70,9 @@ De code maakt gebruik van de statische `getCoordinatesFromEdges` functie van de 
 
 <iframe height='500' scrolling='no' title='KML-oppervlak overlay als afbeelding slaag' src='//codepen.io/azuremaps/embed/EOJgpj/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Bekijk de KML-bedekking van de pen <a href='https://codepen.io/azuremaps/pen/EOJgpj/'>als afbeelding slaag</a> door Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) op <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+> [!TIP]
+> Gebruik de `getPixels` `getPositions` functies en van de klasse afbeelding slaag om te converteren tussen geografische coördinaten van de gepositioneerde afbeelding slaag en de pixel coördinaten van de lokale afbeelding.
 
 ## <a name="customize-an-image-layer"></a>Een afbeelding slaag aanpassen
 

@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 03/02/2021
 ms.author: anithaa
-ms.openlocfilehash: 9b07af72983931e0e1cab9e7d5093fd845b363bc
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 2f15b397fbceb9e097d94080ba03fba50a96ed06
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101692195"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102048502"
 ---
 # <a name="configure-private-endpoints-for-azure-cosmos-db-analytical-store"></a>Persoonlijke eind punten configureren voor Azure Cosmos DB-analytische opslag
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -118,7 +118,8 @@ Netwerk isolatie configureren voor dit account vanuit een Synapse-werk ruimte:
    az cosmosdb update --name MyCosmosDBDatabaseAccount --resource-group MyResourceGroup --network-acl-bypass AzureServices --network-acl-bypass-resource-ids "/subscriptions/subId/resourceGroups/rgName/providers/Microsoft.Synapse/workspaces/wsName"
    ```
 
-   > ERAAN Azure Cosmos DB-account en de Azure Synapse Analytics-werk ruimte moeten zich onder dezelfde Azure Active Directory (AD) Tenant bevinden.
+   > [!NOTE]
+   > Azure Cosmos DB-account en de Azure Synapse Analytics-werk ruimte moeten zich onder dezelfde Azure Active Directory (AD) Tenant bevinden.
 
 2. U hebt nu toegang tot het account vanuit SQL-groepen zonder server, met behulp van T-SQL-query's via Azure Synapse link. Als u echter zeker wilt zijn van netwerk isolatie voor de gegevens in de analytische opslag, moet u een door **analytisch** beheerd particulier eind punt toevoegen voor dit account. Anders worden de gegevens in het analytische archief niet geblokkeerd voor open bare toegang.
 

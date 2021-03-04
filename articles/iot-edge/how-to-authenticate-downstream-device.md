@@ -8,12 +8,12 @@ ms.date: 10/15/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 13ac18abd0a557d02435c3805e1ab86bcbf1ff84
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: d9e3e0f96d235829928c1f7c79864b1dc732f9e4
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100391980"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102046343"
 ---
 # <a name="authenticate-a-downstream-device-to-azure-iot-hub"></a>Een downstream-apparaat verifiëren voor Azure IoT Hub
 
@@ -35,7 +35,7 @@ Voer de stappen in [een IOT edge apparaat configureren om te fungeren als transp
 
 Als u X. 509-verificatie gebruikt, kunt u certificaten voor het downstream-apparaat genereren. Hebben hetzelfde basis-CA-certificaat en het certificaat voor het genereren van certificaten dat u hebt gebruikt voor het transparante gateway artikel dat u opnieuw kunt gebruiken.
 
-Dit artikel verwijst naar de *hostnaam* van de gateway op verschillende punten. De hostnaam van de gateway wordt gedeclareerd in de para meter **hostname** van het bestand config. yaml op de IOT Edge gateway-apparaat. In de connection string van het downstream-apparaat waarnaar wordt verwezen. De hostnaam van de gateway moet kunnen worden omgezet in een IP-adres, hetzij met behulp van DNS of een vermelding in een hostbestand op het downstream-apparaat.
+Dit artikel verwijst naar de *hostnaam* van de gateway op verschillende punten. De hostnaam van de gateway wordt gedeclareerd in de para meter **hostname** van het configuratie bestand op het IOT Edge gateway-apparaat. In de connection string van het downstream-apparaat waarnaar wordt verwezen. De hostnaam van de gateway moet kunnen worden omgezet in een IP-adres, hetzij met behulp van DNS of een vermelding in een hostbestand op het downstream-apparaat.
 
 ## <a name="register-device-with-iot-hub"></a>Apparaat registreren bij IoT Hub
 
@@ -192,7 +192,7 @@ Verbindings reeksen voor downstream-apparaten hebben de volgende onderdelen nodi
 * De verificatie methode, of symmetrische sleutel of X. 509-certificaten
   * Als symmetrische sleutel verificatie wordt gebruikt, geeft u de primaire of secundaire sleutel: `SharedAccessKey={key}`
   * Als u X. 509-certificaat verificatie gebruikt, geeft u een vlag op: `x509=true`
-* Het gateway apparaat waarmee het apparaat verbinding maakt. Geef de waarde van de **hostnaam** op uit het bestand config. yaml van IOT Edge gateway-apparaat: `GatewayHostName={gateway hostname}`
+* Het gateway apparaat waarmee het apparaat verbinding maakt. Geef de **hostnaam** -waarde op uit het configuratie bestand van het IOT Edge gateway-apparaat: `GatewayHostName={gateway hostname}`
 
 Alle samen, een volledig connection string ziet er als volgt uit:
 

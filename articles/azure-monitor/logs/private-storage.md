@@ -1,17 +1,16 @@
 ---
 title: Door de klant beheerde opslagaccounts gebruiken in Azure Monitor Log Analytics
 description: Uw eigen opslag account gebruiken voor Log Analytics scenario's
-ms.subservice: logs
 ms.topic: conceptual
 author: noakup
 ms.author: noakuper
 ms.date: 09/03/2020
-ms.openlocfilehash: 4161f2f4ced848eb02d395dfb2da35d64f0c0fb6
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 69b5927c73dac14c76b94a4ee5bbb21449f8ec98
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101723058"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102047449"
 ---
 # <a name="using-customer-managed-storage-accounts-in-azure-monitor-log-analytics"></a>Door de klant beheerde opslagaccounts gebruiken in Azure Monitor Log Analytics
 
@@ -23,7 +22,7 @@ Log Analytics is afhankelijk van Azure Storage in verschillende scenario's. Dit 
 ## <a name="ingesting-azure-diagnostics-extension-logs-wadlad"></a>Azure Diagnostics extensie logboeken opnemen (WAD/LAD)
 De Azure Diagnostics extensie agents (ook wel WAD-en LAD voor Windows-en Linux-agents genoemd) verzamelen verschillende besturings systeem logboeken en slaan ze op in een door de klant beheerd opslag account. U kunt deze logboeken vervolgens opnemen in Log Analytics om ze te bekijken en te analyseren.
 ### <a name="how-to-collect-azure-diagnostics-extension-logs-from-your-storage-account"></a>Azure Diagnostics extensie logboeken van uw opslag account verzamelen
-Verbind het opslag account met uw Log Analytics-werk ruimte als een opslag gegevens bron met behulp van [de Azure Portal](../essentials/diagnostics-extension-logs.md#collect-logs-from-azure-storage) of door de [opslag Insights-API](/rest/api/loganalytics/storage%20insights/createorupdate)aan te roepen.
+Verbind het opslag account met uw Log Analytics-werk ruimte als een opslag gegevens bron met behulp van [de Azure Portal](../agents/diagnostics-extension-logs.md#collect-logs-from-azure-storage) of door de [opslag Insights-API](/rest/api/loganalytics/storage%20insights/createorupdate)aan te roepen.
 
 Ondersteunde gegevens typen:
 * Syslog

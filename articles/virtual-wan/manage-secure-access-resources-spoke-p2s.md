@@ -6,14 +6,14 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: how-to
-ms.date: 12/11/2020
+ms.date: 03/03/2021
 ms.author: cherylmc
-ms.openlocfilehash: c2efd9ac137c226c1d3a77e2cb6ebe17d75cb496
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 751d11fcd4b5d4c33145ee7f2b7b49971b8927ae
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98051527"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102048252"
 ---
 # <a name="manage-secure-access-to-resources-in-spoke-vnets-for-user-vpn-clients"></a>Veilige toegang tot bronnen in spoke VNets voor VPN-clients van gebruikers beheren
 
@@ -50,8 +50,6 @@ Wanneer u de verificatie methode selecteert, hebt u drie opties. Voor elke metho
 * **RADIUS-gebaseerde verificatie:** Haal het IP-adres, het RADIUS-server geheim en de certificaat gegevens van de RADIUS-server op.
 
 * **Azure-certificaten:** Voor deze configuratie zijn certificaten vereist. U moet certificaten genereren of ophalen. Voor elke client is een client certificaat vereist. Daarnaast moeten de gegevens van het basis certificaat (open bare sleutel) worden geüpload. Zie [certificaten genereren en exporteren](../vpn-gateway/vpn-gateway-certificates-point-to-site.md)voor meer informatie over de vereiste certificaten.
-
-In het volgende voor beeld ziet u Azure-certificaat verificatie.
 
 [!INCLUDE [Define parameters](../../includes/virtual-wan-p2s-configuration-include.md)]
 

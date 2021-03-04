@@ -1,17 +1,16 @@
 ---
 title: Prestaties presen teren met VM Insights
 description: Prestaties is een functie van de VM-inzichten die automatisch toepassings onderdelen op Windows-en Linux-systemen detecteert en de communicatie tussen services toewijst. In dit artikel vindt u informatie over het gebruik ervan in verschillende scenario's.
-ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/31/2020
-ms.openlocfilehash: 9c69ea3da71063d7e20ebf31ae2eb3df9a51e2c2
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 02cb6a0c69fef1a33dd9327ddbd86e02b376a60e
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101725438"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102046462"
 ---
 # <a name="how-to-chart-performance-with-vm-insights"></a>Prestaties presen teren met VM Insights
 

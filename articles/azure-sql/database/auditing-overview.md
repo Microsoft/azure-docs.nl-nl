@@ -8,14 +8,14 @@ ms.topic: conceptual
 author: DavidTrigano
 ms.author: datrigan
 ms.reviewer: vanto
-ms.date: 02/28/2021
+ms.date: 03/03/2021
 ms.custom: azure-synapse, sqldbrb=1
-ms.openlocfilehash: 8635e3590d4196e407dfc591a55ee240806358ed
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: e01f44d363d038bd2ea4b985e12c9afc200f2c20
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101691515"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102046445"
 ---
 # <a name="auditing-for-azure-sql-database-and-azure-synapse-analytics"></a>Controleren op Azure SQL Database en Azure Synapse Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -58,6 +58,11 @@ Er kan een controle beleid worden gedefinieerd voor een specifieke data base of 
 
 - Als *Server controle is ingeschakeld*, *is deze altijd van toepassing op de data base*. De data base wordt gecontroleerd, ongeacht de controle-instellingen voor de data base.
 
+- Wanneer het controle beleid op database niveau is gedefinieerd voor een Log Analytics-werk ruimte of een event hub-doel, blijft het controle beleid op database niveau voor de volgende bewerkingen:
+    - [Database-kopie](database-copy.md)
+    - [Herstel naar een bepaald tijdstip](recovery-using-backups.md)
+    - [Geo-replicatie](active-geo-replication-overview.md) (secundaire data base heeft geen controle op database niveau)
+
 - Als u controle inschakelt voor de data base en deze op de server inschakelt, worden de instellingen van de server controle *niet* overschreven of gewijzigd. Beide controles bestaan naast elkaar. Met andere woorden, de data base wordt twee keer parallel gecontroleerd. eenmaal door het Server beleid en eenmaal door het database beleid.
 
    > [!NOTE]
@@ -94,7 +99,8 @@ Azure SQL Database-en Azure Synapse audit slaat 4000 tekens aan gegevens op voor
 In de volgende sectie wordt de configuratie van de controle met behulp van de Azure Portal beschreven.
 
   > [!NOTE]
-  > Het is niet mogelijk om controle in te scha kelen op een onderbroken toegewezen SQL-groep. Als u de controle wilt inschakelen, moet u de exclusieve SQL-groep verwijderen. Meer informatie over een [toegewezen SQL-groep](../..//synapse-analytics/sql/best-practices-sql-pool.md).
+  > - Het is niet mogelijk om controle in te scha kelen op een onderbroken toegewezen SQL-groep. Als u de controle wilt inschakelen, moet u de exclusieve SQL-groep verwijderen. Meer informatie over een [toegewezen SQL-groep](../..//synapse-analytics/sql/best-practices-sql-pool.md).
+  > - Als controle is geconfigureerd voor een Log Analytics-werk ruimte of een even hub-doel via de Azure Portal-of Power shell-cmdlet, wordt een [Diagnostische instelling](../../azure-monitor/essentials/diagnostic-settings.md) gemaakt met de categorie ' SQLSecurityAuditEvents ' ingeschakeld.
 
 1. Ga naar de [Azure Portal](https://portal.azure.com).
 2. Navigeer naar **controle** onder de kop beveiliging in het deel venster **SQL database** of **SQL Server** .
@@ -104,18 +110,18 @@ In de volgende sectie wordt de configuratie van de controle met behulp van de Az
 
 4. Als u de controle wilt inschakelen op het niveau van de data base, schakelt u **controle** in **op** aan. Als server controle is ingeschakeld, is de door de data base geconfigureerde controle naast de server controle aanwezig.
 
-5. U hebt meerdere opties voor het configureren van de locatie waar audit logboeken worden geschreven. U kunt Logboeken schrijven naar een Azure-opslag account, naar een Log Analytics-werk ruimte voor het gebruik van Azure Monitor-Logboeken (preview) of Event Hub voor het gebruik van Event Hub (preview). U kunt een wille keurige combi natie van deze opties configureren en er worden controle logboeken naar elke optie geschreven.
+5. U hebt meerdere opties voor het configureren van de locatie waar audit logboeken worden geschreven. U kunt Logboeken schrijven naar een Azure-opslag account, naar een Log Analytics-werk ruimte voor het gebruik van Azure Monitor-Logboeken of Event Hub voor gebruik met Event Hub. U kunt een wille keurige combi natie van deze opties configureren en er worden controle logboeken naar elke optie geschreven.
   
    ![opslag opties](./media/auditing-overview/auditing-select-destination.png)
 
-### <a name="auditing-of-microsoft-support-operations-preview"></a><a id="auditing-of-microsoft-support-operations"></a>Controle van Microsoft Ondersteuning bewerkingen (preview-versie)
+### <a name="auditing-of-microsoft-support-operations"></a><a id="auditing-of-microsoft-support-operations"></a>Controle van Microsoft Ondersteuning bewerkingen
 
-Door de controle van Microsoft Ondersteuning-bewerkingen (preview) voor Azure SQL Server kunt u bewerkingen van micro soft-ondersteunings medewerkers controleren wanneer ze toegang nodig hebben tot uw server tijdens een ondersteunings aanvraag. Het gebruik van deze mogelijkheid, samen met uw controle, zorgt voor meer transparantie in uw werk nemers en maakt anomalie detectie, trend visualisatie en preventie van gegevens verlies mogelijk.
+Door de controle van Microsoft Ondersteuning-bewerkingen voor Azure SQL Server kunt u de bewerkingen van micro soft-ondersteunings medewerkers controleren wanneer ze toegang nodig hebben tot uw server tijdens een ondersteunings aanvraag. Het gebruik van deze mogelijkheid, samen met uw controle, zorgt voor meer transparantie in uw werk nemers en maakt anomalie detectie, trend visualisatie en preventie van gegevens verlies mogelijk.
 
-Als u de controle van Microsoft Ondersteuning bewerkingen (preview) wilt inschakelen, navigeert u naar **controle** onder de kop beveiliging in het deel venster van de **Azure SQL-Server** en schakelt u de **controle van micro soft-ondersteunings bewerkingen (preview)** in **op aan**.
+Als u de controle van Microsoft Ondersteuning bewerkingen wilt inschakelen, navigeert u naar **controle** onder de kop beveiliging in het deel venster van de **Azure SQL-Server** en schakelt u de **controle van micro soft-ondersteunings bewerkingen** naar **in**.
 
   > [!IMPORTANT]
-  > Controle van micro soft-ondersteunings bewerkingen (preview) biedt geen ondersteuning voor opslag account bestemming. Als u de mogelijkheid wilt inschakelen, moet een Log Analytics-werk ruimte of een event hub-doel worden geconfigureerd.
+  > Controle van micro soft-ondersteunings bewerkingen biedt geen ondersteuning voor opslag account bestemming. Als u de mogelijkheid wilt inschakelen, moet een Log Analytics-werk ruimte of een event hub-doel worden geconfigureerd.
 
 ![Scherm opname van Microsoft Ondersteuning bewerkingen](./media/auditing-overview/support-operations.png)
 
@@ -137,7 +143,7 @@ Als u het schrijven van audit logboeken naar een opslag account wilt configurere
 
 ### <a name="audit-to-log-analytics-destination"></a><a id="audit-log-analytics-destination"></a>Controleren op Log Analytics bestemming
   
-Als u het schrijven van audit logboeken naar een Log Analytics-werk ruimte wilt configureren, selecteert u **log Analytics (preview)** en opent u **log Analytics Details**. Selecteer of maak de Log Analytics-werk ruimte waar de logboeken worden geschreven en klik vervolgens op **OK**.
+Als u het schrijven van audit logboeken naar een Log Analytics-werk ruimte wilt configureren, selecteert u **log Analytics** en opent u **log Analytics Details**. Selecteer of maak de Log Analytics-werk ruimte waar de logboeken worden geschreven en klik vervolgens op **OK**.
 
    ![LogAnalyticsworkspace](./media/auditing-overview/auditing_select_oms.png)
 
@@ -145,7 +151,7 @@ Zie [de implementatie van uw Azure monitor-logboeken ontwerpen](../../azure-moni
    
 ### <a name="audit-to-event-hub-destination"></a><a id="audit-event-hub-destination"></a>Controleren op Event hub-doel
 
-Als u het schrijven van audit logboeken naar een Event Hub wilt configureren, selecteert u **Event hub (preview)** en opent u **Details van Event hub**. Selecteer de Event Hub waar de logboeken worden geschreven en klik vervolgens op **OK**. Zorg ervoor dat de Event Hub zich in dezelfde regio bevindt als de-data base en-server.
+Als u audit logboeken wilt configureren voor een Event Hub, selecteert u **Event hub** en opent u **Details van Event hub**. Selecteer de Event Hub waar de logboeken worden geschreven en klik vervolgens op **OK**. Zorg ervoor dat de Event Hub zich in dezelfde regio bevindt als de-data base en-server.
 
    ![Eventhub](./media/auditing-overview/auditing_select_event_hub.png)
 

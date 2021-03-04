@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 1712cedab9cef23108fcc48b8e09bdc3e33065c4
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 25785ae7a214d6122fb90b80e8f0725a3468c48d
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97679483"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102047593"
 ---
 # <a name="add-a-polygon-layer-to-the-map-android-sdk"></a>Een polygoon laag toevoegen aan de kaart (Android SDK)
 
@@ -97,6 +97,47 @@ In de volgende scherm afbeelding ziet u de bovenstaande code waarmee een veelhoe
 > [!TIP]
 > Als u een veelhoek met een laag wilt belichten, sluit u alle ringen in veelhoeken zodanig dat elke matrix met punten hetzelfde begin-en eind punt heeft. Als dat niet het geval is, wordt het laatste punt van de veelhoek niet met het eerste punt verbonden met de laag.
 
+## <a name="fill-a-polygon-with-a-pattern"></a>Een veelhoek met een patroon vullen
+
+Naast het vullen van een veelhoek met een kleur, kunt u een afbeeldings patroon gebruiken om de veelhoek op te vullen. Laad een afbeeldings patroon in de Maps-afbeelding sprite-resources en verwijs vervolgens naar deze installatie kopie met de `fillPattern` optie van de polygoon laag.
+
+```java
+//Load an image pattern into the map image sprite.
+map.images.add("fill-checker-red", R.drawable.fill_checker_red);
+
+//Create a data source and add it to the map.
+DataSource source = new DataSource();
+map.sources.add(source);
+
+//Create a polygon.
+source.add(Polygon.fromLngLats(
+    Arrays.asList(
+        Arrays.asList(
+            Point.fromLngLat(-50, -20),
+            Point.fromLngLat(0, 40),
+            Point.fromLngLat(50, -20),
+            Point.fromLngLat(-50, -20)
+        )
+    )
+));
+
+//Create and add a polygon layer to render the polygon on the map, below the label layer.
+map.layers.add(new PolygonLayer(source,
+        fillPattern("fill-checker-red"),
+        fillOpacity(0.5f)
+), "labels");
+```
+
+Voor dit voor beeld is de volgende afbeelding geladen in de map drawable van de app.
+
+| ![Afbeelding van het pictogram met paarse pijl](media/how-to-add-shapes-to-android-map/fill-checker-red.png)|
+|:-----------------------------------------------------------------------:|
+| fill_checker_red.png                                                    |
+
+Hier volgt een scherm opname van de bovenstaande code waarmee een veelhoek met een opvul patroon op de kaart wordt weer gegeven.
+
+![Veelhoek met een opvul patroon dat wordt weer gegeven op de kaart](media/how-to-add-shapes-to-android-map/android-polygon-pattern.jpg)
+
 ## <a name="next-steps"></a>Volgende stappen
 
 Raadpleeg de volgende artikelen voor meer code voorbeelden om toe te voegen aan uw kaarten:
@@ -109,3 +150,6 @@ Raadpleeg de volgende artikelen voor meer code voorbeelden om toe te voegen aan 
 
 > [!div class="nextstepaction"]
 > [Een lijnlaag toevoegen](android-map-add-line-layer.md)
+
+> [!div class="nextstepaction"]
+> [Een laag met een polygooneffect toevoegen](map-extruded-polygon-android.md)

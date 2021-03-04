@@ -1,6 +1,6 @@
 - name: Toegewezen SQL-pool (voorheen SQL DW)
   href: sql-data-warehouse-overview-what-is.md
-- name: Overschakelen naar Azure Synapse
+- name: Overschakelen naar Azure Synapse >
   href: ../overview-what-is.md
 - name: Overzicht
   items:

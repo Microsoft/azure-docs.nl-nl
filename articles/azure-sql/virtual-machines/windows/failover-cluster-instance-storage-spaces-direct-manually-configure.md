@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/18/2020
 ms.author: mathoma
-ms.openlocfilehash: 6ed5e11a8492314e99b9f105d259fa910dcdb77d
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: aa19cf6b59b1efa4b14501fbf64e319da3e4c0b3
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97357803"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102048638"
 ---
 # <a name="create-an-fci-with-storage-spaces-direct-sql-server-on-azure-vms"></a>Een FCI maken met Opslagruimten Direct (SQL Server op Azure Vm's)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -236,9 +236,11 @@ New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $v
 
 Als u verkeer op de juiste manier wilt door sturen naar het huidige primaire knoop punt, configureert u de connectiviteits optie die geschikt is voor uw omgeving. U kunt een [Azure Load Balancer](failover-cluster-instance-vnn-azure-load-balancer-configure.md) maken of als u SQL Server 2019 Cu2 (of hoger) en Windows Server 2016 (of hoger) gebruikt, kunt u in plaats daarvan de functie [gedistribueerde netwerk naam](failover-cluster-instance-distributed-network-name-dnn-configure.md) gebruiken. 
 
+Raadpleeg [HADR-verbindingen routeren naar SQL Server in Azure-VM's](hadr-cluster-best-practices.md#connectivity) voor meer informatie over opties voor clusterconnectiviteit. 
+
 ## <a name="limitations"></a>Beperkingen
 
-- Azure virtual machines ondersteunen micro soft Distributed Transaction Coordinator (MSDTC) op Windows Server 2019 met opslag op Csv's en een [standaard Load Balancer](../../../load-balancer/load-balancer-overview.md).
+- Azure virtual machines ondersteunen micro soft gedistribueerde transactie (MSDTC) op Windows Server 2019 met opslag op Csv's en een [standaard Load Balancer](../../../load-balancer/load-balancer-overview.md).
 - Schijven die zijn gekoppeld als schijven met NTFS-indeling kunnen alleen worden gebruikt met Opslagruimten Direct als de optie voor de geschiktheid van de schijf is uitgeschakeld, of als deze is gewist, wanneer opslag wordt toegevoegd aan het cluster. 
 - Alleen registreren met de SQL IaaS agent-extensie in de [Lightweight-beheer modus](sql-server-iaas-agent-extension-automate-management.md#management-modes) wordt ondersteund.
 

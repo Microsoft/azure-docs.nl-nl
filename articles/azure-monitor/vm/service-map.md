@@ -1,17 +1,16 @@
 ---
 title: Servicetoewijzing oplossing gebruiken in azure | Microsoft Docs
 description: Serviceoverzicht is een oplossing in Azure die automatisch toepassingsonderdelen op Windows- en Linux-systemen detecteert en de communicatie tussen services toewijst. In dit artikel vindt u informatie over het implementeren van Servicetoewijzing in uw omgeving en het gebruik ervan in verschillende scenario's.
-ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/24/2019
-ms.openlocfilehash: 688adcf0012f8871c4034cbba6ce2ddcacdbcc43
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: ad3f8821189e6e7aabb5653e5f938bb73f57a34b
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101717142"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102046990"
 ---
 # <a name="using-service-map-solution-in-azure"></a>Servicetoewijzing gebruiken in Azure
 
@@ -26,7 +25,7 @@ In dit artikel worden de details van het voorbereiden en gebruiken van Serviceto
 * De [afhankelijkheids agent](vminsights-enable-overview.md#agents) die is geïnstalleerd op de Windows-computer of de Linux-server.
 
 >[!NOTE]
->Als u Servicetoewijzing al hebt geïmplementeerd, kunt u nu ook uw kaarten bekijken in VM Insights, waaronder aanvullende functies voor het controleren van de status en prestaties van de virtuele machine. Zie [overzicht van VM Insights](../vm/vminsights-overview.md)voor meer informatie. Zie de volgende [Veelgestelde vragen](../faq.md#azure-monitor-for-vms)voor meer informatie over de verschillen tussen de servicetoewijzing oplossing en de functie van de VM Insights-kaart.
+>Als u Servicetoewijzing al hebt geïmplementeerd, kunt u nu ook uw kaarten bekijken in VM Insights, waaronder aanvullende functies voor het controleren van de status en prestaties van de virtuele machine. Zie [overzicht van VM Insights](../vm/vminsights-overview.md)voor meer informatie. Zie de volgende [Veelgestelde vragen](../faq.md#vm-insights)voor meer informatie over de verschillen tussen de servicetoewijzing oplossing en de functie van de VM Insights-kaart.
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 

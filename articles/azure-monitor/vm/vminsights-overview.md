@@ -1,23 +1,22 @@
 ---
 title: Wat is VM Insights?
 description: Overzicht van VM Insights, waarmee de status en prestaties van de virtuele Azure-machines worden bewaakt en automatisch toepassings onderdelen en hun afhankelijkheden worden gedetecteerd en toegewezen.
-ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/22/2020
-ms.openlocfilehash: 967ff9672f55af3e9c5d2e7c3c3dbc7d2ff6cb3c
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 18e1fdcdee347a057c452f6170f36ec7f1f43244
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101707367"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102046411"
 ---
 # <a name="overview-of-vm-insights"></a>Overzicht van VM Insights
 
 Met VM Insights worden de prestaties en de status van uw virtuele machines en virtuele-machine schaal sets gecontroleerd, met inbegrip van de processen en afhankelijkheden van andere resources. Het kan helpen om voorspel bare prestaties en beschik baarheid van essentiële toepassingen te leveren door prestatie knelpunten en netwerk problemen te identificeren en u te helpen begrijpen of een probleem is gerelateerd aan andere afhankelijkheden.
 
-VM Insights ondersteunt Windows-en Linux-besturings systemen op het volgende:
+VM Insights ondersteunt Windows-en Linux-besturings systemen op de volgende machines:
 
 - Azure-VM's
 - Virtuele-machineschaalsets van Azure
@@ -39,7 +38,7 @@ Er zijn geen directe kosten voor VM-inzichten, maar u betaalt voor de activiteit
 - Waarschuwings regels gebaseerd op logboek-en status gegevens.
 - Meldingen die worden verzonden vanuit waarschuwings regels.
 
-De logboek grootte is afhankelijk van de teken reeks lengte van prestatie meter items en kan toenemen met het aantal logische schijven en netwerk adapters dat aan de virtuele machine is toegewezen. Als u Servicetoewijzing al gebruikt, ziet u alleen de aanvullende prestatie gegevens die worden verzonden naar het `InsightsMetrics` gegevens type Azure monitor.
+De logboek grootte is afhankelijk van de teken reeks lengte van prestatie meter items en kan toenemen met het aantal logische schijven en netwerk adapters dat aan de virtuele machine is toegewezen. Als u Servicetoewijzing al gebruikt, ziet u alleen de extra prestatie gegevens die worden verzonden naar het `InsightsMetrics` gegevens type Azure monitor.
 
 
 ## <a name="configuring-vm-insights"></a>VM Insights configureren

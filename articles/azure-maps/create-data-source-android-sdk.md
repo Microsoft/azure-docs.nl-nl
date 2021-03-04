@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 78b0cbbdccc7d6853d4ce2821bf659e888680a5f
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: fc68dc25aad3671a55e5c11cbee094b4027e7070
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98674640"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102047669"
 ---
 # <a name="create-a-data-source-android-sdk"></a>Een gegevens bron maken (Android SDK)
 
@@ -360,14 +360,17 @@ Azure Maps voldoet aan de [tegel specificatie Mapbox vector](https://github.com/
 - Details van [](/rest/api/maps/traffic/gettrafficflowtile)de  |  [gegevens indeling](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-flow/vector-flow-tiles) van de verkeers stroom
 - Azure Maps Maker kunnen ook aangepaste vector tegels maken en openen via de [weer gave tegel ophalen v2](/rest/api/maps/renderv2/getmaptilepreview)
 
+> [!TIP]
+> Wanneer u gebruikmaakt van vector-of raster afbeeldings tegels van de Azure Maps render-service met de Web-SDK, kunt u vervangen door `atlas.microsoft.com` de tijdelijke aanduiding `azmapsdomain.invalid` . Deze tijdelijke aanduiding wordt vervangen door het domein dat wordt gebruikt door de kaart en zal ook automatisch dezelfde verificatie gegevens toevoegen. Dit vereenvoudigt de verificatie met de render-service aanzienlijk wanneer u Azure Active Directory-verificatie gebruikt.
+
 Als u gegevens uit een vector tegel bron op de kaart wilt weer geven, verbindt u de bron met een van de gegevens weergave lagen. Alle lagen die gebruikmaken van een vector bron moeten een `sourceLayer` waarde in de opties opgeven. Met de volgende code wordt de Azure Maps traffic flow vector-tegel service als een vector tegel bron geladen en vervolgens weer gegeven op een kaart met behulp van een laag. Deze vector tegel bron heeft één set gegevens in de bron laag met de naam ' verkeers stroom '. De regel gegevens in deze gegevensset hebben een eigenschap `traffic_level` met de naam die wordt gebruikt in deze code om de kleur te selecteren en de grootte van regels te schalen.
 
 ```java
 //Formatted URL to the traffic flow vector tiles, with the maps subscription key appended to it.
-String trafficFlowUrl = "https://atlas.microsoft.com/traffic/flow/tile/pbf?api-version=1.0&style=relative&zoom={z}&x={x}&y={y}&subscription-key=" + AzureMaps.getSubscriptionKey();
+String trafficFlowUrl = "https://azmapsdomain.invalid/traffic/flow/tile/pbf?api-version=1.0&style=relative&zoom={z}&x={x}&y={y}";
 
 //Create a vector tile source and add it to the map.
-VectorTileSource source = new VectorTileSource("flowLayer",
+VectorTileSource source = new VectorTileSource(
     tiles(new String[] { trafficFlowUrl }),
     maxSourceZoom(22)
 );

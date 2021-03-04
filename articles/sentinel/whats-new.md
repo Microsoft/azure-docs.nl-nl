@@ -7,13 +7,13 @@ ms.author: bagol
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: conceptual
-ms.date: 02/22/2021
-ms.openlocfilehash: 887245bbbefa1c0232313b638203206b623d506b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/03/2021
+ms.openlocfilehash: c466d7717dd1dad0ea9ee3f44088d1400cee083f
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101729705"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102048179"
 ---
 # <a name="whats-new-in-azure-sentinel"></a>Wat is er nieuw in azure Sentinel
 
@@ -32,8 +32,44 @@ Genoteerde functies zijn momenteel beschikbaar als PREVIEW-versie. De [Aanvullen
 
 ## <a name="february-2021"></a>Februari 2021
 
+- [Gegevens connectors van derden](#third-party-data-connectors)
 - [UEBA Insights op de pagina entiteit](#ueba-insights-in-the-entity-page)
 - [Verbeterde incidenten zoeken](#improved-incident-search)
+
+### <a name="third-party-data-connectors"></a>Gegevens connectors van derden
+
+Onze verzameling integraties van derden blijft groeien, met dertig Connect oren die in de afgelopen twee maanden worden toegevoegd. Hier volgt een lijst:
+
+- [Agari phishing-verdediging en merk beveiliging](connect-agari-phishing-defense.md)
+- [Akamai-beveiligings gebeurtenissen](connect-akamai-security-events.md)
+- [Alsid voor Active Directory](connect-alsid-active-directory.md)
+- [Apache HTTP-server](connect-apache-http-server.md)
+- [Aruba ClearPass](connect-aruba-clearpass.md)
+- [BlackBerry CylancePROTECT](connect-data-sources.md)
+- [DLP van Broadcom Symantec](connect-broadcom-symantec-dlp.md)
+- [Cisco Firepower eStreamer](connect-data-sources.md)
+- [Cisco Meraki](connect-cisco-meraki.md)
+- [Cisco Umbrella](connect-cisco-umbrella.md)
+- [Cisco Unified computing System (UCS)](connect-cisco-ucs.md)
+- [ESET Enter prise Inspector](connect-data-sources.md)
+- [ESET Security Management Center](connect-data-sources.md)
+- [Google-werk ruimte (voorheen G suite)](connect-google-workspace.md)
+- [Imperva WAF-gateway](connect-imperva-waf-gateway.md)
+- [Juniper SRX](connect-juniper-srx.md)
+- [Netskope](connect-data-sources.md)
+- [NXLog DNS-logboeken](connect-nxlog-dns.md)
+- [NXLog Linux-audit](connect-nxlog-linuxaudit.md)
+- [Onapsis-platform](connect-data-sources.md)
+- [Proofpoint on demand-e-mail beveiliging (POD)](connect-proofpoint-pod.md)
+- [Knowledge Base voor beveiligings beheer van Qualys](connect-data-sources.md)
+- [Salesforce Service Cloud](connect-salesforce-service-cloud.md)
+- [SonicWall-firewall](connect-data-sources.md)
+- [Sophos Cloud Optix](connect-sophos-cloud-optix.md)
+- [Squid Proxy](connect-squid-proxy.md)
+- [Symantec Endpoint Protection](connect-data-sources.md)
+- [Thycotic Secret Server](connect-thycotic-secret-server.md)
+- [Trend Micro XDR](connect-data-sources.md)
+- [VMWare-ESXi](connect-vmware-esxi.md)
 
 ### <a name="ueba-insights-in-the-entity-page"></a>UEBA Insights op de pagina entiteit
 
@@ -66,6 +102,7 @@ Bij het zoeken naar incidenten in azure Sentinel kunt u nu zoeken op de volgende
 - [Wizard analyse regel: verbeterde mogelijkheden voor het bewerken van query's (open bare preview)](#analytics-rule-wizard-improved-query-editing-experience-public-preview)
 - [AZ. SecurityInsights Power shell-module (open bare preview)](#azsecurityinsights-powershell-module-public-preview)
 - [SQL database-connector](#sql-database-connector)
+- [Dynamics 365-connector](#dynamics-365-connector)
 - [Verbeterde reacties op incidenten](#improved-incident-comments)
 - [Toegewezen Log Analytics clusters](#dedicated-log-analytics-clusters)
 - [Beheerde identiteiten van Logic apps](#logic-apps-managed-identities)
@@ -81,7 +118,7 @@ De Azure Sentinel Scheduled Analytics regel wizard biedt nu de volgende verbeter
 -   Uitgebreide ondersteuning voor automatisch aanvullen.
 -   Validatie van query's in realtime. Fouten in uw query worden nu weer gegeven als een rood blok in de schuif balk en als een rode stip op de naam van het tabblad **regel logica instellen** . Daarnaast kan een query met fouten niet worden opgeslagen.
 
-Zie voor meer informatie [zelf studie: Threats out-of-the-box detecteren](tutorial-detect-threats-built-in.md).
+Zie [zelf studie: aangepaste analyse regels maken voor het detecteren van bedreigingen](tutorial-detect-threats-custom.md)voor meer informatie.
 ### <a name="azsecurityinsights-powershell-module-public-preview"></a>AZ. SecurityInsights Power shell-module (open bare preview)
 
 Azure Sentinel ondersteunt nu de nieuwe [AZ. SecurityInsights](https://www.powershellgallery.com/packages/Az.SecurityInsights/) Power shell-module.
@@ -99,6 +136,12 @@ Azure Sentinel biedt nu een Azure SQL database-connector, waarmee u de controle-
 Azure SQL is een volledig beheerde PaaS-data base-engine (platform-as-a-Service) die de meeste database beheer functies, zoals upgrades, patches, back-ups en bewaking, afhandelt, zonder tussen komst van de gebruiker.
 
 Zie voor meer informatie [verbinding maken tussen Azure SQL database-diagnose en controle logboeken](connect-azure-sql-logs.md).
+
+### <a name="dynamics-365-connector"></a>Dynamics 365-connector
+
+Azure Sentinel biedt nu een connector voor micro soft Dynamics 365, waarmee u uw Dynamics 365-toepassingen van de gebruiker, de beheerder en de activiteiten logboeken voor ondersteuning kunt verzamelen in azure Sentinel. U kunt deze gegevens gebruiken om u te helpen bij het controleren van de volledige gegevens verwerkings acties en om deze te analyseren op mogelijke beveiligings schendingen.
+
+Zie [verbinding maken met Dynamics 365-activiteiten logboeken met Azure Sentinel](connect-dynamics-365.md)voor meer informatie.
 
 ### <a name="improved-incident-comments"></a>Verbeterde reacties op incidenten
 
@@ -185,15 +228,14 @@ Azure Sentinel gebruikt de Log Analytics-agent voor het verzenden van gebeurteni
 Zie de [documentatie van log Analytics](../azure-monitor/agents/log-analytics-agent.md) en de [release opmerkingen voor log Analytics agent](https://github.com/microsoft/OMS-Agent-for-Linux/releases)voor meer informatie.
 ## <a name="november-2020"></a>November 2020
 
-- [Uw Logic Apps Playbooks in azure-Sentinel controleren](#monitor-your-logic-apps-playbooks-in-azure-sentinel)
+- [De status van uw Playbooks in azure-Sentinel controleren](#monitor-your-playbooks-health-in-azure-sentinel)
 - [Microsoft 365 Defender-connector (open bare preview)](#microsoft-365-defender-connector-public-preview)
-### <a name="monitor-your-logic-apps-playbooks-in-azure-sentinel"></a>Uw Logic Apps Playbooks in azure-Sentinel controleren
 
-Azure Sentinel kan nu worden geïntegreerd met [Azure-logboek-apps](../logic-apps/index.yml), een Cloud service die u helpt bij het plannen, automatiseren en organiseren van taken, bedrijfs processen en werk stromen.
+### <a name="monitor-your-playbooks-health-in-azure-sentinel"></a>De status van uw Playbooks in azure-Sentinel controleren
 
-Gebruik een Azure Logic-app in azure Sentinel als een Playbook, die automatisch kan worden aangeroepen wanneer een incident wordt gemaakt, of wanneer uitsorteren en werken met incidenten. 
+Azure Sentinel playbooks zijn gebaseerd op werk stromen die zijn ingebouwd in [Azure-logboek-apps](../logic-apps/index.yml), een Cloud service die u helpt bij het plannen, automatiseren en organiseren van taken, bedrijfs processen en werk stromen. Playbooks kan automatisch worden aangeroepen wanneer een incident wordt gemaakt, of wanneer uitsorteren en werken met incidenten. 
 
-Om inzicht te krijgen in de status, prestaties en het gebruik van uw playbooks, inclusief alle die u toevoegt met Azure Logic Apps, hebben we een [Azure-werkmap](../azure-monitor/visualize/workbooks-overview.md) met de naam **playbooks Health Monitoring** toegevoegd. 
+Als u inzicht wilt krijgen in de status, prestaties en het gebruik van uw playbooks, hebt u een [werkmap](../azure-monitor/visualize/workbooks-overview.md) met de naam **playbooks Health Monitoring** toegevoegd. 
 
 Gebruik de **Playbooks-status controle** werkmap om de status van uw Playbooks te controleren of om afwijkingen op te sporen in de hoeveelheid geslaagde of mislukte uitvoeringen. 
 

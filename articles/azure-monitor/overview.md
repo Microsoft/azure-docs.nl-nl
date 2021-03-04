@@ -1,17 +1,16 @@
 ---
 title: Overzicht van Azure Monitor | Microsoft Docs
 description: Overzicht van Microsoft-services en -functionaliteiten die bijdragen aan een complete bewakingsstrategie voor uw Azure-services en -toepassingen.
-ms.subservice: ''
 ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 11/17/2019
-ms.openlocfilehash: 00f1bec4d4117d9ccebb4440e3649dd9dff32058
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 544d6937e412e3e1cfc2cf4e520c02f3f804fc8c
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101717346"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102047159"
 ---
 # <a name="azure-monitor-overview"></a>Overzicht van Azure Monitor
 
@@ -145,7 +144,7 @@ Naast de toegang tot gegenereerde waarschuwingen zijn er meerdere API's beschikb
 ## <a name="next-steps"></a>Volgende stappen
 Meer informatie over:
 
-* [Metrische gegevens en logboeken](data-platform.md) voor de gegevens die worden verzameld door Azure Monitor.
+* [Metrische gegevens en logboeken](https://docs.microsoft.com/azure/azure-monitor/data-platform#metrics) voor de gegevens die worden verzameld door Azure Monitor.
 * [Gegevensbronnen](agents/data-sources.md) voor de manier waarop de verschillende onderdelen van uw toepassing telemetrie verzenden.
 * [Logboekquery's](logs/log-query-overview.md) voor het analyseren van verzamelde gegevens.
 * [Aanbevolen procedures](/azure/architecture/best-practices/monitoring) voor het bewaken van cloudtoepassingen en -services.

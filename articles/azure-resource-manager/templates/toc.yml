@@ -4,6 +4,8 @@
   items:
     - name: Wat zijn ARM-sjablonen?
       href: overview.md
+    - name: Overzicht van Bicep
+      href: bicep-overview.md
 - name: Quickstarts
   items:
     - name: Sjablonen maken - portal
@@ -324,9 +326,7 @@
       href: template-best-practices.md
     - name: Bicep
       items:
-        - name: Overzicht
-          href: bicep-overview.md
-        - name: Van JSON naar Bicep
+        - name: JSON vergelijken met Bicep
           href: compare-template-syntax.md
     - name: Veelgestelde vragen
       href: frequently-asked-questions.md

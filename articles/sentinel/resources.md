@@ -13,81 +13,52 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/27/2021
+ms.date: 03/03/2021
 ms.author: yelevin
-ms.openlocfilehash: c404aa93669cd95dccb0ad185d71d2ec16256d0d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 30cd0181ff2c5fbb8918921be3515818128a98d0
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100570440"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102048230"
 ---
 # <a name="useful-resources-for-working-with-azure-sentinel"></a>Nuttige bronnen voor het werken met Azure Sentinel
 
-
-
 Dit artikel bevat een lijst met bronnen die u kunnen helpen om meer informatie te krijgen over het werken met Azure Sentinel.
 
-- **Azure Logic apps-connectors**: <https://docs.microsoft.com/connectors/>
+## <a name="learn-more-about-creating-queries"></a>Meer informatie over het maken van query's
 
+Azure Sentinel maakt gebruik van de Kusto query language (KQL) van Azure Monitor Log Analytics om query's te bouwen. Zie voor meer informatie:
 
-## <a name="auditing-and-reporting"></a>Controle en rapportage
-Audit logboeken van Azure Sentinel worden onderhouden in [Azure-activiteiten logboeken](../azure-monitor/essentials/platform-logs-overview.md).
+- [KQL-concepten](/azure/data-explorer/kusto/concepts/)
+- [KQL query's](/azure/data-explorer/kusto/query/)
+- [KQL-Naslag Gids](/azure/data-explorer/kql-quick-reference).
+- [Aan de slag met KQL-query's](../azure-monitor/logs/get-started-queries.md)
 
-De volgende ondersteunde bewerkingen kunnen worden gecontroleerd.
+## <a name="learn-more-about-creating-automation"></a>Meer informatie over het maken van Automation
 
-|Naam van bewerking|    Resourcetype|
-|----|----|
-|Werkmap maken of bijwerken  |Micro soft. Insights/werkmappen|
-|Werkmap verwijderen    |Micro soft. Insights/werkmappen|
-|Werk stroom instellen   |Microsoft.Logic/workflows|
-|Werk stroom verwijderen    |Microsoft.Logic/workflows|
-|Opgeslagen zoek opdracht maken    |Micro soft. OperationalInsights/werk ruimten/savedSearches|
-|Opgeslagen zoek opdracht verwijderen    |Micro soft. OperationalInsights/werk ruimten/savedSearches|
-|Waarschuwings regels bijwerken |Micro soft. SecurityInsights/alertRules|
-|Waarschuwings regels verwijderen |Micro soft. SecurityInsights/alertRules|
-|Reactie acties van waarschuwings regel bijwerken |Micro soft. SecurityInsights/alertRules/acties|
-|Reactie acties voor waarschuwings regels verwijderen |Micro soft. SecurityInsights/alertRules/acties|
-|Blad wijzers bijwerken   |Micro soft. SecurityInsights/blad wijzers|
-|Blad wijzers verwijderen   |Micro soft. SecurityInsights/blad wijzers|
-|Cases bijwerken   |Micro soft. SecurityInsights/cases|
-|Case-onderzoek bijwerken  |Micro soft. SecurityInsights/cases/onderzoeken|
-|Case-opmerkingen maken   |Micro soft. SecurityInsights/cases/opmerkingen|
-|Gegevens connectors bijwerken |Micro soft. SecurityInsights/dataConnectors|
-|Gegevens connectors verwijderen |Micro soft. SecurityInsights/dataConnectors|
-|Instellingen bijwerken    |Micro soft. SecurityInsights/Settings|
+Maak Automation in azure Sentinel met behulp van Azure Logic Apps, met een groeiende galerie met ingebouwde playbooks. 
 
-### <a name="view-audit-and-reporting-data-in-azure-sentinel"></a>Audit-en rapportage gegevens weer geven in azure Sentinel
+Zie [Azure Logic apps connectors](https://docs.microsoft.com/connectors/)voor meer informatie.
 
-U kunt deze gegevens weer geven door deze vanuit het Azure-activiteiten logboek te streamen naar Azure Sentinel, waar u vervolgens onderzoek en analyses kunt uitvoeren.
+## <a name="comment-on-our-blogs-and-forums"></a>Opmerkingen over onze blogs en forums
 
-1. Verbind de gegevens bron van de [Azure-activiteit](connect-azure-activity.md) . Nadat u dit hebt gedaan, worden controle gebeurtenissen gestreamd naar een nieuwe tabel in het scherm **Logboeken** met de naam AzureActivity.
+We horen graag van onze gebruikers.
 
-1. Vervolgens voert u een query uit op de gegevens met behulp van KQL, zoals u zou doen met een andere tabel.
+In de TechCommunity ruimte voor Azure Sentinel:
 
-    Als u bijvoorbeeld wilt weten wie de laatste gebruiker was voor het bewerken van een bepaalde analyse regel, gebruikt u de volgende query (vervangen `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` door de regel-id van de regel die u wilt controleren):
+- [Bekijk en geef opmerkingen over recente blog berichten](https://techcommunity.microsoft.com/t5/Azure-Sentinel/bg-p/AzureSentinelBlog)
+- [Post uw eigen vragen over Azure Sentinel](https://techcommunity.microsoft.com/t5/Azure-Sentinel/bd-p/AzureSentinel)
 
-    ```kusto
-    AzureActivity
-    | where OperationNameValue startswith "MICROSOFT.SECURITYINSIGHTS/ALERTRULES/WRITE"
-    | where Properties contains "alertRules/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    | project Caller , TimeGenerated , Properties
-    ```
+U kunt ook suggesties voor verbeteringen verzenden via ons [gebruikers spraak](https://feedback.azure.com/forums/920458-azure-sentinel) programma.
 
+## <a name="join-the-azure-sentinel-github-community"></a>Word lid van de Azure Sentinel GitHub-Community
 
-## <a name="blogs-and-forums"></a>Blogs en forums
+De [Azure Sentinel github-opslag plaats](https://github.com/Azure/Azure-Sentinel) is een krachtige bron voor detectie van bedreigingen en automatisering. 
 
-Onze gebruikers horen graag!
+Onze Microsoft-beveiligingsanalisten werken voortdurend aan het maken en toevoegen van nieuwe werkmappen, playbooks, opsporingsquery's en meer en plaatsen deze in de community zodat u ze in uw omgeving kunt gebruiken. 
 
-- Plaats **uw vragen** op de [TechCommunity ruimte](https://techcommunity.microsoft.com/t5/Azure-Sentinel/bd-p/AzureSentinel) voor Azure Sentinel. 
-
-- **Suggesties voor verbeteringen verzenden** via ons [gebruikers spraak](https://feedback.azure.com/forums/920458-azure-sentinel) programma.
-
-- **Bekijk en geef een opmerking** over onze onderverklikker blog berichten van Azure:
-
-    - [TechCommunity](https://techcommunity.microsoft.com/t5/Azure-Sentinel/bg-p/AzureSentinelBlog) 
-    - [Microsoft Azure](https://azure.microsoft.com/blog/tag/azure-sentinel/)
-
+Down load voorbeeld inhoud van de GitHub-opslag plaats van de privé-community om aangepaste werkmappen, jacht-query's, notitie blokken en playbooks voor Azure-Sentinel te maken.
 
 ## <a name="next-steps"></a>Volgende stappen
 

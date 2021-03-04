@@ -36,6 +36,8 @@
           items:
             - name: VMware-VM's evalueren voor migratie naar Azure-VM's
               href: tutorial-assess-vmware-azure-vm.md
+            - name: SQL-exemplaren evalueren voor migratie naar Azure SQL
+              href: tutorial-assess-sql.md
             - name: VMware-VM's evalueren voor migratie naar AVS
               href: tutorial-assess-vmware-azure-vmware-solution.md
         - name: Hyper-V-VM's evalueren voor migratie naar Azure
@@ -102,6 +104,8 @@
       items:
         - name: Evaluatieoverzicht (migreren naar Azure-VM's)
           href: concepts-assessment-calculation.md
+        - name: Overzicht van beoordelingen (migreren naar Azure SQL)
+          href: concepts-azure-sql-assessment-calculation.md
         - name: Overzicht van evaluaties (migreren naar AVS)
           href: concepts-azure-vmware-solution-assessment-calculation.md
         - name: Best practices voor evaluaties
@@ -144,8 +148,12 @@
               href: deploy-appliance-script-government.md
         - name: Detectiebereik beperken voor VMware-VM's
           href: set-discovery-scope.md
+        - name: Server referenties toevoegen
+          href: add-server-credentials.md
         - name: Toepassingen/rollen/functies detecteren
           href: how-to-discover-applications.md
+        - name: SQL-exemplaren in een bestaand project detecteren
+          href: how-to-discover-sql-existing-project.md
         - name: Machine-afhankelijkheden analyseren (op basis van agents)
           href: how-to-create-group-machine-dependencies.md
         - name: Machine-afhankelijkheden analyseren (zonder agents)
@@ -158,6 +166,8 @@
           href: how-to-create-a-group.md
         - name: Een Azure VM-evaluatie maken
           href: how-to-create-assessment.md
+        - name: Een Azure SQL-evaluatie maken
+          href: how-to-create-azure-sql-assessment.md
         - name: Een AVS-evaluatie maken
           href: how-to-create-azure-vmware-solution-assessment.md
         - name: Een SQL Server-database evalueren
@@ -176,6 +186,8 @@
       items:
         - name: Migratiehulpprogramma's toevoegen
           href: how-to-migrate.md
+        - name: Repliceren met behulp van ExpressRoute
+          href: replicate-using-expressroute.md
         - name: Machines op migratie voorbereiden
           href: prepare-for-migration.md
         - name: Windows 2003-servers voorbereiden voor migratie

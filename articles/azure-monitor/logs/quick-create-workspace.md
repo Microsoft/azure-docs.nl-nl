@@ -1,17 +1,16 @@
 ---
 title: Een Log Analytics-werk ruimte maken in de Azure Portal | Microsoft Docs
 description: Meer informatie over het maken van een Log Analytics-werk ruimte om beheer oplossingen en gegevens verzameling in te scha kelen vanuit uw Cloud-en on-premises omgevingen in de Azure Portal.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/26/2020
-ms.openlocfilehash: 4129605d043f93a79b4e3a7d5f70ffaa80edb659
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 3c5df095cccec7509084f122c9a42f3b113d1c95
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612021"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102047312"
 ---
 # <a name="create-a-log-analytics-workspace-in-the-azure-portal"></a>Een Log Analytics-werkruimte in Azure Portal maken
 Gebruik het menu **log Analytics werk ruimten** om een log Analytics-werk ruimte te maken met behulp van de Azure Portal. Een Log Analytics-werk ruimte is een unieke omgeving voor Azure Monitor logboek gegevens. Elke werk ruimte heeft een eigen gegevens opslagplaats en-configuratie, en gegevens bronnen en-oplossingen zijn geconfigureerd om hun gegevens op te slaan in een bepaalde werk ruimte. U hebt een Log Analytics-werk ruimte nodig als u van plan bent om gegevens te verzamelen uit de volgende bronnen:

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 61d7a295d86fd7da74dee03cd35c79feea0218ed
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 7e4af0647a2810a27001c15a5030fca660828147
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97681578"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102047737"
 ---
 # <a name="data-driven-style-expressions-android-sdk"></a>Gegevensgestuurde stijl expressies (Android SDK)
 
@@ -662,7 +662,7 @@ HeatMapLayer layer = new HeatMapLayer(dataSource,
 
 Naast het gebruik van een glad verloop om een heatmap in te vullen, kunnen kleuren worden opgegeven in een set bereiken met behulp van een `step` expressie. Als u een `step` expressie gebruikt voor het inkleuren van de hitte kaart, wordt de densiteit in bereiken weer gegeven die lijken op een contour-of radar stijl kaart.  
 
-```java 
+```java
 HeatMapLayer layer = new HeatMapLayer(dataSource,
     heatmapColor(
         step(
@@ -679,6 +679,36 @@ HeatMapLayer layer = new HeatMapLayer(dataSource,
 ```
 
 Zie de documentatie [een hitte kaart toevoegen](map-add-heat-map-layer-android.md) voor meer informatie.
+
+### <a name="line-progress-expression"></a>Expressie voor voortgangs lijn
+
+Met een expressie voor de voortgangs lijn wordt de voortgang van een verloop lijn in een line-laag opgehaald en gedefinieerd als `lineProgress()` . Deze waarde is een getal tussen 0 en 1. Deze wordt gebruikt in combi natie met een `interpolation` or- `step` expressie. Deze expressie kan alleen worden gebruikt met de `strokeGradient` optie van de laag.
+
+> [!NOTE]
+> Voor de `strokeGradient` optie van de laag moet de `lineMetrics` optie van de gegevens bron worden ingesteld op `true` .
+
+**Voorbeeld**
+
+In dit voor beeld wordt de `lineProgress()` expressie gebruikt om een kleur overgang toe te passen op de lijn van een regel.
+
+```javascript
+LineLayer layer = new LineLayer(source,
+    strokeGradient(
+        interpolate(
+            linear(),
+            lineProgress(),
+            stop(0, color(Color.BLUE)),
+            stop(0.1, color(Color.argb(255, 65, 105, 225))), //Royal Blue
+            stop(0.3, color(Color.CYAN)),
+            stop(0.5, color(Color.argb(255,0, 255, 0))), //Lime
+            stop(0.7, color(Color.YELLOW)),
+            stop(1, color(Color.RED))
+        )
+    )
+);
+```
+
+[Zie Live voor beeld](map-add-line-layer.md#line-stroke-gradient)
 
 ### <a name="text-field-format-expression"></a>Expressie voor tekst veld notatie
 
@@ -792,7 +822,7 @@ BubbleLayer layer = new BubbleLayer(dataSource,
 Meer informatie over de lagen die expressies ondersteunen:
 
 > [!div class="nextstepaction"]
-> [Een symbool laag toevoegen](how-to-add-symbol-to-android-map.md)
+> [Een symboollaag toevoegen](how-to-add-symbol-to-android-map.md)
 
 > [!div class="nextstepaction"]
 > [Een Bubble laag toevoegen](map-add-bubble-layer-android.md)

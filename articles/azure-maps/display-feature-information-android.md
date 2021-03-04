@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 37b5ab1c144ed81d995da40b87edeaccdcad7253
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 4e84bd821d53048b134db635c7ec541db74fbf11
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680013"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102047707"
 ---
 # <a name="display-feature-information"></a>Functie-informatie weergeven
 
@@ -76,6 +76,81 @@ Naast pop-upberichten zijn er nog vele andere manieren om de meta gegevens eigen
 - Een [fragment](https://developer.android.com/guide/components/fragments) toevoegen aan de huidige activiteit.
 - Navigeer naar een andere activiteit of weer gave.
 
+## <a name="display-a-popup"></a>Een pop-upvenster weer geven
+
+De Azure Maps Android SDK biedt een `Popup` klasse waarmee u eenvoudig ui-aantekeningen elementen kunt maken die zijn gekoppeld aan een positie op de kaart. Voor pop-ups moet u in een weer gave met een relatieve indeling door geven in de `content` optie van de pop-up. Hier volgt een eenvoudige indelings voorbeeld waarin donkere tekst boven op een achtergrond wordt weer gegeven.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:layout_margin="8dp"
+    android:padding="10dp"
+
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:text=""
+        android:textSize="18dp"
+        android:textColor="#222"
+        android:layout_height="wrap_content"
+        android:width="200dp"/>
+
+</RelativeLayout>
+```
+
+Ervan uitgaande dat de bovenstaande indeling wordt opgeslagen in een bestand met de naam `popup_text.xml` in de `res -> layout` map van een app, wordt met de volgende code een pop-upvenster gemaakt en toegevoegd aan de kaart. Wanneer er op een functie wordt geklikt, `title` wordt de eigenschap weer gegeven met behulp van de `popup_text.xml` lay-out, met het onderste midden van de lay-out, verankerd op de opgegeven positie op de kaart.
+
+```java
+//Create a popup and add it to the map.
+Popup popup = new Popup();
+map.popups.add(popup);
+
+map.events.add((OnFeatureClick)(feature) -> {
+    //Get the first feature and it's properties.
+    Feature f = feature.get(0);
+    JsonObject props = f.properties();
+
+    //Retrieve the custom layout for the popup.
+    View customView = LayoutInflater.from(this).inflate(R.layout.popup_text, null);
+
+    //Access the text view within the custom view and set the text to the title property of the feature.
+    TextView tv = customView.findViewById(R.id.message);
+    tv.setText(props.get("title").getAsString());
+
+    //Get the coordinates from the clicked feature and create a position object.
+    List<Double> c = ((Point)(f.geometry())).coordinates();
+    Position pos = new Position(c.get(0), c.get(1));
+
+    //Set the options on the popup.
+    popup.setOptions(
+        //Set the popups position.
+        position(pos),
+
+        //Set the anchor point of the popup content.
+        anchor(AnchorType.BOTTOM),
+
+        //Set the content of the popup.
+        content(customView)
+
+        //Optionally, hide the close button of the popup.
+        //, closeButton(false)
+    );
+
+    //Open the popup.
+    popup.open();
+});
+
+```
+
+In de volgende scherm opname ziet u pop-ups die worden weer gegeven wanneer onderdelen worden geklikt en naar de opgegeven locatie op de kaart worden geankerd wanneer deze worden verplaatst.
+
+![Animatie van een pop-upvenster dat wordt weer gegeven en de kaart is verplaatst met het pop-upvenster naar een positie op de kaart](./media/display-feature-information-android/android-popup.gif)
+
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer gegevens toevoegen aan uw kaart:
@@ -87,7 +162,7 @@ Meer gegevens toevoegen aan uw kaart:
 > [Een gegevensbron maken](create-data-source-android-sdk.md)
 
 > [!div class="nextstepaction"]
-> [Een symbool laag toevoegen](how-to-add-symbol-to-android-map.md)
+> [Een symboollaag toevoegen](how-to-add-symbol-to-android-map.md)
 
 > [!div class="nextstepaction"]
 > [Een Bubble laag toevoegen](map-add-bubble-layer-android.md)

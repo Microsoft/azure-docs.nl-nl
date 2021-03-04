@@ -2,13 +2,13 @@
 title: Overzicht van sjablonen
 description: Beschrijft de voor delen van het gebruik van Azure Resource Manager sjablonen (ARM-sjablonen) voor de implementatie van resources.
 ms.topic: conceptual
-ms.date: 01/20/2021
-ms.openlocfilehash: dd9207ca1d0397b7dce63eb826567f07b1d0b892
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.date: 03/03/2021
+ms.openlocfilehash: 7f850d06066a6892db9f17ae86a6bba9496bad58
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98621836"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102046377"
 ---
 # <a name="what-are-arm-templates"></a>Wat zijn ARM-sjablonen?
 
@@ -17,6 +17,8 @@ Dankzij de overstap naar de Cloud hebben veel teams flexibele ontwikkelings meth
 Om aan deze uitdagingen te voldoen, kunt u implementaties automatiseren en de infra structuur als code gebruiken. In code definieert u de infra structuur die moet worden geïmplementeerd. De code van de infra structuur wordt onderdeel van het project. Net als bij de toepassings code slaat u de infrastructuur code op in een bron opslagplaats en maakt u er een versie van. Een van uw team leden kan de code uitvoeren en vergelijk bare omgevingen implementeren.
 
 Gebruik Azure Resource Manager sjablonen (ARM-sjablonen) om de infra structuur te implementeren als code voor uw Azure-oplossingen. De sjabloon is een JavaScript Object Notation-bestand (JSON) waarmee de infra structuur en configuratie voor uw project worden gedefinieerd. De sjabloon gebruikt een declaratieve syntaxis. Dit is een syntaxis waarmee u kunt aangeven wat u wilt implementeren zonder hiervoor de nodige reeks programmeeropdrachten te hoeven maken. In de sjabloon geeft u de resources op die u wilt implementeren en de eigenschappen voor deze resources.
+
+We hebben een nieuwe taal geïntroduceerd voor het ontwikkelen van ARM-sjablonen. De taal heeft de naam Bicep en is momenteel beschikbaar als preview-versie. Bicep en JSON-sjablonen bieden dezelfde mogelijkheden. U kunt de sjabloon tussen de twee talen converteren. Bicep biedt een syntaxis die eenvoudiger is te gebruiken voor het maken van sjablonen. Zie [Wat is Bicep (preview)?](bicep-overview.md)voor meer informatie.
 
 ## <a name="why-choose-arm-templates"></a>Waarom kiest u ARM-sjablonen?
 
@@ -68,7 +70,7 @@ De sjabloon heeft de volgende secties:
 
 * Door de [gebruiker gedefinieerde functies](template-user-defined-functions.md) : Maak aangepaste functies waarmee uw sjabloon wordt vereenvoudigd.
 
-* [Resources](template-syntax.md#resources) : Geef de resources op die u wilt implementeren.
+* [Resources](resource-declaration.md) : Geef de resources op die u wilt implementeren.
 
 * [Outputs](template-outputs.md) : retourneert waarden van de geïmplementeerde resources.
 

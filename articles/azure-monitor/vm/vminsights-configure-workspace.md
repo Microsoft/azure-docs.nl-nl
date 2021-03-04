@@ -1,18 +1,17 @@
 ---
 title: Log Analytics werkruimte configureren voor VM Insights
 description: Hierin wordt beschreven hoe u de Log Analytics werkruimte maakt en configureert die wordt gebruikt door VM Insights.
-ms.subservice: ''
 ms.topic: conceptual
 ms.custom: references_regions
 author: bwren
 ms.author: bwren
 ms.date: 12/22/2020
-ms.openlocfilehash: dc7e6c42837ccaa56c7a211deb646c934ec137a4
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 5a0e04772cfc1c9be77c0ad8b32b0e93be8b9f54
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101717125"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102046717"
 ---
 # <a name="configure-log-analytics-workspace-for-vm-insights"></a>Log Analytics werkruimte configureren voor VM Insights
 Met VM Insights worden gegevens verzameld uit een of meer Log Analytics-werk ruimten in Azure Monitor. Voordat u agents voorbereidt, moet u een werk ruimte maken en configureren. In dit artikel worden de vereisten van de werk ruimte beschreven en voor het configureren van deze voor VM Insights.

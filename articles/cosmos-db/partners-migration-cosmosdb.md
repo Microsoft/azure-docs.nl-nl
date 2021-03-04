@@ -6,12 +6,12 @@ ms.author: sngun
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/28/2019
-ms.openlocfilehash: 7fe0817abfac3070f77303bb0d2d662d18010862
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 66f26cfa14d51a985e2bb420bec294f7ef3a6cd1
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99090466"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102048128"
 ---
 # <a name="azure-cosmos-db-nosql-migration-and-application-development-partners"></a>Azure Cosmos DB NoSQL-migratie en partners voor toepassings ontwikkeling
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -31,7 +31,6 @@ Van NoSQL-migratie naar toepassings ontwikkeling, kunt u kiezen uit een groot aa
 | [Capgemini](https://www.capgemini.com/) | Retail (inventarisatie), IoT, Operational Analytics (Spark), app-ontwikkeling | USA, Frank rijk, UK, Nederland, Finland  |
 | [Cognizant](https://www.cognizant.com/) | IoT, personalisatie, Retail (inventarisatie), Operational Analytics (Spark), app-ontwikkeling |Verenigde Staten, Canada, UK, Denemarken, Nederland, Zwitser land, Australië, Japan |
 |[Infosys](https://www.infosys.com/)     | Ontwikkeling van apps      |    VS    |  
-| [Lagash-systemen](https://www.devex.com/organizations/lagash-systems-131346) | IoT, Serverloze architectuur, app-ontwikkeling | Argentinië, Chili, Colombia, Mexico|
 | [Lambda3 informatica](https://www.lambda3.com.br/) | Real-time personalisatie, voorraad inventarisatie, app-ontwikkeling | Brazilië|
 |[Neal-analyse](https://www.nealanalytics.com/)    |     Personalisatie, Retail (inventarisatie), Operational Analytics (Spark), app-ontwikkeling  |    VS     |  
 |[Pragmatic Works Software Inc](https://www.pragmaticworks.com/)    |   NoSQL-migratie      |   VS      |

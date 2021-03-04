@@ -3,17 +3,18 @@ title: Een tegel laag toevoegen aan Android-kaarten | Microsoft Azure kaarten
 description: Meer informatie over het toevoegen van een tegel laag aan een kaart. Bekijk een voor beeld waarin de Azure Maps Android-SDK wordt gebruikt om een weers radar-overlay toe te voegen aan een kaart.
 author: rbrundritt
 ms.author: richbrun
-ms.date: 12/08/2020
+ms.date: 2/26/2021
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 8ea6f44c47c5cd4d223b053640f65827f46db482
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+zone_pivot_groups: azure-maps-android
+ms.openlocfilehash: 6a920dc222cae4aedd77b667644de317637bbb69
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97679305"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102047499"
 ---
 # <a name="add-a-tile-layer-to-a-map-android-sdk"></a>Een laag voor een tegel toevoegen aan een kaart (Android SDK)
 
@@ -36,6 +37,7 @@ De tegel-URL die wordt door gegeven aan een tegel laag moet een HTTP/HTTPS-URL z
 * `{quadkey}` -Tegel quadkey-id gebaseerd op de naam Conventie voor Bing Maps-tegel systeem.
 * `{bbox-epsg-3857}` -Een teken reeks voor selectie kader met de indeling `{west},{south},{east},{north}` in het EPSG 3857 Spatial Reference System.
 * `{subdomain}` -Een tijdelijke aanduiding voor de waarden van het subdomein als de subdomeinwaarde is opgegeven.
+* `azmapsdomain.invalid` -Een tijdelijke aanduiding voor het uitlijnen van het domein en de verificatie van Tegel aanvragen met dezelfde waarden die worden gebruikt door de kaart. Gebruik deze methode wanneer u een tegel service aanroept die wordt gehost door Azure Maps.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -44,6 +46,8 @@ Om het proces in dit artikel te volt ooien, moet u [Azure Maps ANDROID SDK](how-
 ## <a name="add-a-tile-layer-to-the-map"></a>Een tegel laag aan de kaart toevoegen
 
 Dit voor beeld laat zien hoe u een tegel laag maakt die verwijst naar een set tegels. In dit voor beeld wordt het tegel systeem x, y, Zoom gebruikt. De bron van deze laag voor tegels is het [OpenSeaMap-project](https://openseamap.org/index.php), dat prosourced zeemijl-grafieken bevat. Bij het weer geven van Tegel lagen is het wenselijk om de labels van steden op de kaart duidelijk zichtbaar te maken. Dit gedrag kan worden bereikt door de laag van de tegel onder de kaart label lagen in te voegen.
+
+::: zone pivot="programming-language-java-android"
 
 ```java
 TileLayer layer = new TileLayer(
@@ -57,16 +61,31 @@ TileLayer layer = new TileLayer(
 map.layers.add(layer, "labels");
 ```
 
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+val layer = TileLayer(
+    tileUrl("https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png"),
+    opacity(0.8f),
+    tileSize(256),
+    minSourceZoom(7),
+    maxSourceZoom(17)
+)
+
+map.layers.add(layer, "labels")
+```
+
+::: zone-end
+
 Op de volgende scherm afbeelding ziet u de bovenstaande code met een tegel laag met zeemijl over een kaart met een donkere grijs waarde.
 
 ![Android-kaart met weer gave van laag van Tegel](media/how-to-add-tile-layer-android-map/xyz-tile-layer-android.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg het volgende artikel voor meer informatie over manieren om kaart stijlen in te stellen
+Raadpleeg het volgende artikel voor meer informatie over de manieren waarop u beelden kunt bedekken op een kaart.
 
 > [!div class="nextstepaction"]
-> [De kaart stijl wijzigen](set-android-map-styles.md)
-
-> [!div class="nextstepaction"]
-> [Een heatmap toevoegen](map-add-heat-map-layer-android.md)
+> [Afbeeldingslaag](map-add-image-layer-android.md)

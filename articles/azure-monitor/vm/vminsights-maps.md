@@ -1,17 +1,16 @@
 ---
 title: App-afhankelijkheden weer geven met VM Insights
 description: De kaart is een functie van VM Insights. Het detecteert automatisch toepassings onderdelen op Windows-en Linux-systemen en wijst de communicatie tussen services toe. In dit artikel vindt u informatie over het gebruik van de kaart functie in verschillende scenario's.
-ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/20/2020
-ms.openlocfilehash: 19da3e3e02581ce9fad080bb23bc48dcb9a3ceb3
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 267ec0ed01fb85e9e29b0b8c9294d20d610db8fb
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101719641"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102046564"
 ---
 # <a name="use-the-map-feature-of-vm-insights-to-understand-application-components"></a>De toewijzings functie van VM Insights gebruiken om inzicht te krijgen in toepassings onderdelen
 In VM Insights kunt u gedetecteerde toepassings onderdelen weer geven op virtuele Windows-en Linux-machines (Vm's) die worden uitgevoerd in azure of in uw omgeving. U kunt de virtuele machines op twee manieren bekijken. Een kaart rechtstreeks vanuit een virtuele machine weer geven of een kaart van Azure Monitor weer geven om de onderdelen van verschillende Vm's te bekijken. In dit artikel vindt u meer informatie over deze twee weergave methoden en over het gebruik van de kaart functie. 

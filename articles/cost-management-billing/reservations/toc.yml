@@ -11,14 +11,16 @@
       href: ../../virtual-machines/reserved-vm-instance-size-flexibility.md?toc=/azure/cost-management-billing/reservations/toc.json
     - name: Aanbevelingen voor reserveringen
       href: reserved-instance-purchase-recommendations.md?toc=/azure/cost-management-billing/reservations/toc.json
-    - name: Toepassen van een Azure-reserveringskorting
-      href: reservation-discount-application.md?toc=/azure/cost-management-billing/reservations/toc.json
     - name: Korting toepassen
       items:
+        - name: Toepassen van een Azure-reserveringskorting
+          href: reservation-discount-application.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: App Service
           href: reservation-discount-app-service.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Azure Cache voor Redis
           href: understand-azure-cache-for-redis-reservation-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Azure Data Factory
+          href: ../../data-factory/data-flow-understand-reservation-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Cosmos DB
           href: understand-cosmosdb-reservation-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Database for MariaDB
@@ -68,6 +70,8 @@
           href: prepay-app-service.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Azure Cache voor Redis-reservering
           href: ../../azure-cache-for-redis/cache-reserved-pricing.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Azure Data Factory
+          href: ../../data-factory/data-flow-reserved-capacity-overview.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Azure Database for MariaDB
           href: ../../mariadb/concept-reserved-pricing.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Azure Database for MySQL
@@ -120,6 +124,8 @@
           href: reservation-renew.md?toc=/azure/cost-management-billing/reservations/toc.json
     - name: Problemen oplossen
       items:
+        - name: Problemen met overdrachten tussen tenants oplossen
+          href: troubleshoot-reservation-transfers-between-tenants.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Geen geschikte abonnementen
           href: troubleshoot-no-eligible-subscriptions.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Problemen met reserveringsgebruik oplossen

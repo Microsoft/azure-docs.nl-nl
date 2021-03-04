@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: 9cf2f4876d62572ace118562fe5760f2b4010fa5
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: fedf1bc37661100404106859d3aef52b3eddf06d
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92891156"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102048134"
 ---
 # <a name="add-a-line-layer-to-the-map"></a>Een laagmap toevoegen aan de kaart
 
@@ -66,7 +66,7 @@ Zie de <a href='https://codepen.io/azuremaps/pen/drBJwX/'>pijl weer geven naast 
 
 ## <a name="add-a-stroke-gradient-to-a-line"></a>Een lijn kleur overgang toevoegen aan een lijn
 
-U kunt één lijn kleur op een regel Toep assen. U kunt ook een lijn vullen met een kleur overgang om de overgang van het ene lijn segment naar het volgende lijn segment weer te geven. Lijn kleur overgangen kunnen bijvoorbeeld worden gebruikt om wijzigingen in de loop van de tijd en afstand te vertegenwoordigen, of verschillende Tempe raturen over een verbonden object regel. Als u deze functie op een regel wilt Toep assen, moet de optie zijn ingesteld op True voor de gegevens bron `lineMetrics` . vervolgens kan een kleur verloop expressie worden door gegeven aan de `strokeColor` optie van de regel. De expressie voor de kleur overgang van de lijn moet verwijzen naar de `['line-progress']` gegevens expressie die de berekende regel metrieken voor de expressie beschrijft.
+U kunt één lijn kleur op een regel Toep assen. U kunt ook een lijn vullen met een kleur overgang om de overgang van het ene lijn segment naar het volgende lijn segment weer te geven. Lijn kleur overgangen kunnen bijvoorbeeld worden gebruikt om wijzigingen in de loop van de tijd en afstand te vertegenwoordigen, of verschillende Tempe raturen over een verbonden object regel. Als u deze functie op een regel wilt Toep assen, moet de optie zijn ingesteld op de gegevens bron `lineMetrics` `true` en vervolgens een expressie voor kleur verloop kunnen worden door gegeven aan de `strokeColor` optie van de regel. De expressie voor de kleur overgang van de lijn moet verwijzen naar de `['line-progress']` gegevens expressie die de berekende regel metrieken voor de expressie beschrijft.
 
 <br/>
 

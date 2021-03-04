@@ -2,17 +2,16 @@
 title: Virtuele Azure-machines bewaken met Azure Monitor
 description: Hierin wordt beschreven hoe u bewakings gegevens van virtuele machines in azure verzamelt en analyseert met behulp van Azure Monitor.
 ms.service: azure-monitor
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/05/2020
-ms.openlocfilehash: 6209389843b19d933bdce2726b55946b8839a264
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 2c93471436030f9260f4fa0d95d656c27d382346
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101731371"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102047040"
 ---
 # <a name="monitoring-azure-virtual-machines-with-azure-monitor"></a>Virtuele Azure-machines bewaken met Azure Monitor
 In dit artikel wordt beschreven hoe u Azure Monitor kunt gebruiken om bewakings gegevens van virtuele Azure-machines te verzamelen en analyseren om hun status te behouden. Virtuele machines kunnen worden bewaakt voor Beschik baarheid en prestaties met Azure Monitor zoals elke [andere Azure-resource](../essentials/monitor-azure-resource.md), maar ze zijn uniek van andere resources, aangezien u ook de gast besturingssystemen en het systeem en de werk belastingen die hierop worden uitgevoerd, moet bewaken. 
@@ -56,7 +55,7 @@ Als u alle functies van Azure Monitor voor het bewaken van een virtuele machine 
 | Configuratie stap | Acties voltooid | Functies ingeschakeld |
 |:---|:---|:---|
 | Geen configuratie | -De metrische platform gegevens die worden verzameld voor metrische gegevens van de host.<br>-Verzamelde activiteiten Logboeken. | -Metrics Explorer voor de host.<br>-Metrische waarschuwingen voor de host.<br>-Waarschuwingen voor activiteiten Logboeken. |
-| [VM Insights inschakelen](#enable-azure-monitor-for-vms) | -Log Analytics-agent geïnstalleerd.<br>-De agent voor afhankelijkheden is geïnstalleerd.<br>-Gast prestatie gegevens die worden verzameld voor Logboeken.<br>-Proces en afhankelijkheids details die zijn verzameld voor Logboeken. | -Prestatie diagrammen en werkmappen voor prestatie gegevens van de gast.<br>-Query's vastleggen voor prestatie gegevens van de gast.<br>-Waarschuwingen in logboek registreren voor prestatie gegevens van de gast.<br>-Afhankelijkheids toewijzing. |
+| [VM Insights inschakelen](#enable-vm-insights) | -Log Analytics-agent geïnstalleerd.<br>-De agent voor afhankelijkheden is geïnstalleerd.<br>-Gast prestatie gegevens die worden verzameld voor Logboeken.<br>-Proces en afhankelijkheids details die zijn verzameld voor Logboeken. | -Prestatie diagrammen en werkmappen voor prestatie gegevens van de gast.<br>-Query's vastleggen voor prestatie gegevens van de gast.<br>-Waarschuwingen in logboek registreren voor prestatie gegevens van de gast.<br>-Afhankelijkheids toewijzing. |
 | [De diagnostische uitbrei ding en de telegrafie agent installeren](#enable-diagnostics-extension-and-telegraf-agent) | -De prestatie gegevens voor de gast die worden verzameld voor de meet waarden. | -Metrics Explorer voor gast.<br>-Metrische waarschuwingen voor gast.  |
 | [Log Analytics-werkruimte configureren](#configure-log-analytics-workspace) | -Gebeurtenissen die worden verzameld van de gast. | -Query's vastleggen voor gast gebeurtenissen.<br>-Waarschuwingen vastleggen voor gast gebeurtenissen. |
 | [Diagnostische instelling voor virtuele machine maken](#collect-platform-metrics-and-activity-log) | -Metrische platform gegevens die worden verzameld voor Logboeken.<br>-Het activiteiten logboek dat is verzameld voor Logboeken. | -Query's vastleggen voor metrische gegevens van de host.<br>-Waarschuwingen vastleggen voor metrische gegevens van de host.<br>-Query's vastleggen voor het activiteiten logboek.

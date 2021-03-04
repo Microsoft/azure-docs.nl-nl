@@ -1,17 +1,16 @@
 ---
 title: Resource Manager-voorbeeldsjablonen voor logboekquerywaarschuwingen
 description: Azure Resource Manager-voorbeeldsjablonen voor het implementeren van Azure Monitor-logboekquerywaarschuwingen.
-ms.subservice: logs
 ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 09/22/2020
-ms.openlocfilehash: 8dac947aea95dc79118032eb0996b6ba14f16363
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 19bbeba3db7e3df5ea5120d3562f24b447848f7f
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101714104"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102044031"
 ---
 # <a name="resource-manager-template-samples-for-log-alert-rules-in-azure-monitor"></a>Resource Manager-voorbeeldsjablonen voor logboekwaarschuwingsregels in Azure Monitor
 Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het maken en configureren van logboekquerywaarschuwingen in Azure Monitor. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.

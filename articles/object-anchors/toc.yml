@@ -14,7 +14,7 @@
   expanded: true
   items:
     - name: Een model maken
-      href: quickstarts/get-started-model-ingestion.md
+      href: quickstarts/get-started-model-conversion.md
     - name: Een Unity-app maken
       expanded: true
       items:

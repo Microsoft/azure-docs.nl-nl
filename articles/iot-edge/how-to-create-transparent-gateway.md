@@ -4,19 +4,19 @@ description: Een Azure IoT Edge apparaat gebruiken als een transparante gateway 
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 10/15/2020
+ms.date: 03/01/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 9ecb1c50fe99cc93417a37e892049e03585945a5
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 431c116fee22da27ed0487fc6d2fe3644575491f
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100370424"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102046020"
 ---
 # <a name="configure-an-iot-edge-device-to-act-as-a-transparent-gateway"></a>Een IoT Edge apparaat configureren om te fungeren als transparante gateway
 
@@ -26,10 +26,9 @@ In dit artikel vindt u gedetailleerde instructies voor het configureren van een 
 ::: moniker range="iotedge-2018-06"
 
 >[!NOTE]
->Dat
+>In IoT Edge versies 1,1 en ouder kan een IoT Edge-apparaat niet worden downstream van een IoT Edge gateway.
 >
-> * Apparaten met rand mogelijkheden kunnen geen verbinding maken met IoT Edge gateways.
-> * Downstream-apparaten kunnen het uploaden van bestanden niet gebruiken.
+>Downstream-apparaten kunnen het uploaden van bestanden niet gebruiken.
 
 ::: moniker-end
 
@@ -37,9 +36,7 @@ In dit artikel vindt u gedetailleerde instructies voor het configureren van een 
 ::: moniker range=">=iotedge-2020-11"
 
 >[!NOTE]
->Dat
->
-> * Downstream-apparaten kunnen het uploaden van bestanden niet gebruiken.
+>Downstream-apparaten kunnen het uploaden van bestanden niet gebruiken.
 
 ::: moniker-end
 
@@ -51,7 +48,17 @@ Er zijn drie algemene stappen voor het instellen van een geslaagde transparante 
 
 Een apparaat kan alleen als gateway fungeren als het een veilige verbinding met de downstream-apparaten heeft. Met Azure IoT Edge kunt u een PKI (Public Key Infrastructure) gebruiken om beveiligde verbindingen tussen apparaten in te stellen. In dit geval kunnen we een downstream-apparaat verbinding laten maken met een IoT Edge apparaat dat als transparante gateway fungeert. Om redelijke beveiliging te behouden, moet het downstream-apparaat de identiteit van het gateway-apparaat bevestigen. Met deze identiteits controle voor komt u dat uw apparaten verbinding maken met mogelijk schadelijke gateways.
 
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
 Een downstream-apparaat kan een toepassing of platform zijn met een identiteit die is gemaakt met de [Azure IOT hub](../iot-hub/index.yml) -Cloud service. In deze toepassingen wordt vaak gebruikgemaakt van de [Azure IOT Device SDK](../iot-hub/iot-hub-devguide-sdks.md). Een downstream-apparaat kan zelfs een toepassing zijn die wordt uitgevoerd op het IoT Edge gateway-apparaat zelf. Een IoT Edge apparaat kan echter niet worden downstream van een IoT Edge gateway.
+:::moniker-end
+<!-- end 1.1 -->
+
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+Een downstream-apparaat kan een toepassing of platform zijn met een identiteit die is gemaakt met de [Azure IOT hub](../iot-hub/index.yml) -Cloud service. In deze toepassingen wordt vaak gebruikgemaakt van de [Azure IOT Device SDK](../iot-hub/iot-hub-devguide-sdks.md). Een downstream-apparaat kan zelfs een toepassing zijn die wordt uitgevoerd op het IoT Edge gateway-apparaat zelf.
+:::moniker-end
+<!-- end 1.2 -->
 
 U kunt een certificaat infrastructuur maken waarmee de vertrouwens relatie die is vereist voor de gateway topologie van uw apparaat wordt ingeschakeld. In dit artikel wordt ervan uitgegaan dat u dezelfde certificaat instelling gebruikt voor het inschakelen van [x. 509 ca-beveiliging](../iot-hub/iot-hub-x509ca-overview.md) in IOT hub, waarbij een x. 509 CA-certificaat is gekoppeld aan een specifieke IOT-hub (de basis-CA van de IOT-hub), een reeks certificaten die zijn ondertekend met deze certificerings instantie en een certificerings instantie voor het IOT edge apparaat.
 
@@ -64,7 +71,7 @@ De volgende stappen leiden u door het proces van het maken van de certificaten e
 
 Een Linux-of Windows-apparaat met IoT Edge geïnstalleerd.
 
-Als u nog geen apparaat hebt, kunt u er een maken in een virtuele Azure-machine. Volg de stappen in [uw eerste IOT Edge-module implementeren op een virtueel Linux-apparaat](quickstart-linux.md) om een IOT hub te maken, een virtuele machine te maken en de IOT Edge runtime te configureren. 
+Als u nog geen apparaat hebt, kunt u er een maken in een virtuele Azure-machine. Volg de stappen in [uw eerste IOT Edge-module implementeren op een virtueel Linux-apparaat](quickstart-linux.md) om een IOT hub te maken, een virtuele machine te maken en de IOT Edge runtime te configureren.
 
 ## <a name="set-up-the-device-ca-certificate"></a>Het CA-certificaat van het apparaat instellen
 
@@ -72,7 +79,7 @@ Voor alle IoT Edge gateways moet een CA-certificaat van een apparaat zijn geïns
 
 ![Installatie van Gateway certificaat](./media/how-to-create-transparent-gateway/gateway-setup.png)
 
-Het basis-CA-certificaat en het CA-certificaat (met de persoonlijke sleutel) moeten aanwezig zijn op het IoT Edge gateway-apparaat en worden geconfigureerd in het bestand IoT Edge config. yaml. Houd er rekening mee dat in dit geval het *basis-CA-certificaat* de bovenste certificerings instantie voor dit IOT Edge scenario aangeeft. Het CA-certificaat van de gateway-apparaat en de certificaten van het downstream-apparaat moeten worden getotaliseerd op hetzelfde basis-CA-certificaat.
+Het basis-CA-certificaat en het certificaat van de CERTIFICERINGs instantie (met de persoonlijke sleutel) moeten aanwezig zijn op het IoT Edge gateway-apparaat en worden geconfigureerd in het IoT Edge config-bestand. Houd er rekening mee dat in dit geval het *basis-CA-certificaat* de bovenste certificerings instantie voor dit IOT Edge scenario aangeeft. Het CA-certificaat van de gateway-apparaat en de certificaten van het downstream-apparaat moeten worden getotaliseerd op hetzelfde basis-CA-certificaat.
 
 >[!TIP]
 >Het proces voor het installeren van het basis-CA-certificaat en het CA-certificaat van het apparaat op een IoT Edge apparaat wordt ook gedetailleerd beschreven in [certificaten op een IOT edge apparaat beheren](how-to-manage-device-certificates.md).
@@ -85,7 +92,7 @@ De volgende bestanden zijn gereed:
 
 Voor productie scenario's moet u deze bestanden met uw eigen certificerings instantie genereren. Voor ontwikkelings-en test scenario's kunt u demo certificaten gebruiken.
 
-1. Als u demo certificaten gebruikt, volgt u de instructies in [demo certificaten maken om IOT Edge apparaatfuncties te testen](how-to-create-test-certificates.md) om uw bestanden te maken. Op die pagina moet u de volgende stappen uitvoeren:
+Als u geen eigen certificerings instantie hebt en demo certificaten wilt gebruiken, volgt u de instructies in [demo certificaten maken om IOT Edge apparaatfuncties te testen](how-to-create-test-certificates.md) om uw bestanden te maken. Op die pagina moet u de volgende stappen uitvoeren:
 
    1. Stel de scripts voor het genereren van certificaten op het apparaat in om te starten.
    2. Maak een basis-CA-certificaat. Aan het einde van deze instructies hebt u een basis-CA-certificaat bestand:
@@ -94,24 +101,55 @@ Voor productie scenario's moet u deze bestanden met uw eigen certificerings inst
       * `<path>/certs/iot-edge-device-<cert name>-full-chain.cert.pem` maar
       * `<path>/private/iot-edge-device-<cert name>.key.pem`
 
-2. Als u de certificaten op een andere computer hebt gemaakt, kopieert u deze naar uw IoT Edge-apparaat.
+Als u de certificaten op een andere machine hebt gemaakt, kopieert u deze naar uw IoT Edge-apparaat en gaat u verder met de volgende stappen.
 
-3. Open het configuratie bestand van de beveiligings-daemon op uw IoT Edge-apparaat.
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
+
+1. Open het configuratie bestand van de beveiligings-daemon op uw IoT Edge-apparaat.
+
    * Windows: `C:\ProgramData\iotedge\config.yaml`
    * Linux: `/etc/iotedge/config.yaml`
 
-4. Zoek de sectie **certificaat instellingen** van het bestand. Verwijder opmerkingen bij de vier regels die beginnen met **certificaten:** en geef de bestands-uri's op uw drie bestanden op als waarden voor de volgende eigenschappen:
+1. Zoek de sectie **certificaat instellingen** van het bestand. Verwijder opmerkingen bij de vier regels die beginnen met **certificaten:** en geef de bestands-uri's op uw drie bestanden op als waarden voor de volgende eigenschappen:
    * **device_ca_cert**: CA-certificaat van apparaat
    * **device_ca_pk**: privé sleutel van de apparaat-ca
    * **trusted_ca_certs**: basis-CA-certificaat
 
    Zorg ervoor dat er geen voor gaande witruimte op de **certificaten:** regel is en dat de andere regels worden inge sprongen met twee spaties.
 
-5. Sla het bestand op en sluit het.
+1. Sla het bestand op en sluit het.
 
-6. Start IoT Edge opnieuw.
+1. Start IoT Edge opnieuw.
    * Windows: `Restart-Service iotedge`
    * Linux: `sudo systemctl restart iotedge`
+:::moniker-end
+<!-- end 1.1 -->
+
+<!--1.2 -->
+:::moniker range=">=iotedge-2020-11"
+
+1. Open het configuratie bestand op uw IoT Edge-apparaat: `/etc/aziot/config.toml`
+
+   >[!TIP]
+   >Als het configuratie bestand nog niet op uw apparaat aanwezig is, gebruikt `/etc/aziot/config.toml.edge.template` u als sjabloon om er een te maken.
+
+1. Zoek de `trust_bundle_cert` para meter. Verwijder deze regel en geef de bestands-URI op het basis-CA-certificaat bestand op uw apparaat op.
+
+1. Zoek de `[edge_ca]` sectie van het bestand. Verwijder de opmerking bij de drie regels in deze sectie en geef de bestands-Uri's van uw certificaat en de sleutel bestanden op als waarden voor de volgende eigenschappen:
+   * **certificaat: ca**-certificaat van apparaat
+   * **PK**: privé sleutel van de apparaat-ca
+
+1. Sla het bestand op en sluit het.
+
+1. Start IoT Edge opnieuw.
+
+   ```bash
+   sudo iotedge system restart
+   ```
+
+:::moniker-end
+<!-- end 1.2 -->
 
 ## <a name="deploy-edgehub-and-route-messages"></a>EdgeHub en router berichten implementeren
 

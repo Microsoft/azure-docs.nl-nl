@@ -3,17 +3,17 @@ title: Azure-kosten analyseren met de Power BI-app
 description: In dit artikel wordt uitgelegd hoe de Azure Cost Management Power BI-app wordt geïnstalleerd en gebruikt.
 author: bandersmsft
 ms.author: banders
-ms.date: 1/29/2021
+ms.date: 02/19/2021
 ms.topic: how-to
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: benshy
-ms.openlocfilehash: d3439f5a86c445898d95191a32496b5f0c86be0b
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: b08ff57f964ef7bc3712c930c222a10ed0f89ef4
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99070154"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102045049"
 ---
 # <a name="analyze-cost-with-the-azure-cost-management-power-bi-app-for-enterprise-agreements-ea"></a>Analyseer kosten met de Azure Cost Management Power BI-app voor Enterprise Agreements (EA)
 
@@ -36,24 +36,23 @@ De app beperkt aanpassings mogelijkheden. Als u de standaard filters, weer gaven
 De app installeren:
 
 1. Open [Azure Cost Management Power BI-app](https://aka.ms/costmgmt/ACMApp).
-2. Selecteer **Nu downloaden** op de pagina Power BI AppSource.
-3. Selecteer **Doorgaan** om de gebruiksvoorwaarden en het privacybeleid te accepteren.
-4. Selecteer in het vak **Deze Power BI-app installeren** de optie **Installeren**.
-5. Maak zo nodig een werkruimte en selecteer **Doorgaan**.
-6. Wanneer de installatie is voltooid, wordt er een melding weergegeven dat de nieuwe app gereed is.
-7. Selecteer **Ga naar app**.
-8. Selecteer in **Aan de slag met uw nieuwe app-** , onder **Verbinding maken met uw gegevens** de optie **Verbinding maken**.  
-  ![Aan de slag met uw nieuwe app - Verbinding maken](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/connect-data2.png)
-9. Voer in het weergegeven dialoogvenster uw EA-inschrijvingsnummer in voor **BillingProfileIdOrEnrollmentNumber**. Geef het aantal maanden aan gegevens op dat moet worden opgehaald. Behoud de standaardwaarde voor **Bereik** van **Inschrijvingsnummer** en selecteer **Volgende**.  
-  ![Informatie over EA-inschrijving invoeren](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ea-number.png)  
-10. Het volgende dialoogvenster maakt verbinding met Azure en haalt gegevens op die nodig zijn voor gereserveerde instantieaanbevelingen. *Laat de standaardwaarden zoals ze geconfigureerd zijn* en selecteer **Aanmelden**.  
-  ![Schermopname van het dialoogvenster Verbinding maken met Azure Cost Management met standaardwaarden.](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/autofit.png)  
-11. De laatste installatiestap maakt verbinding met uw EA-inschrijving en vereist een [Enterprise Administrator](../manage/understand-ea-roles.md)-account. Selecteer **Aanmelden** voor verificatie met uw EA-inschrijving. Met deze stap wordt ook een actie voor gegevensvernieuwing in Power BI gestart.  
-  ![Verbinding maken met EA-inschrijving](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ea-auth.png)  
+1. Selecteer **Nu downloaden** op de pagina Power BI AppSource.
+1. Selecteer **Doorgaan** om de gebruiksvoorwaarden en het privacybeleid te accepteren.
+1. Selecteer in het vak **Deze Power BI-app installeren** de optie **Installeren**.
+1. Maak zo nodig een werkruimte en selecteer **Doorgaan**.
+1. Wanneer de installatie is voltooid, wordt er een melding weergegeven dat de nieuwe app gereed is.
+1. Selecteer de app die u hebt geïnstalleerd.
+1. Selecteer op de pagina aan de slag **de optie verbinding maken met uw gegevens**.
+    :::image type="content" source="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/connect-your-data.png" alt-text="Scherm opname van de koppeling uw gegevens verbinden." lightbox="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/connect-your-data.png" :::
+1. Voer in het weergegeven dialoogvenster uw EA-inschrijvingsnummer in voor **BillingProfileIdOrEnrollmentNumber**. Geef het aantal maanden aan gegevens op dat moet worden opgehaald. Behoud de standaardwaarde voor **Bereik** van **Inschrijvingsnummer** en selecteer **Volgende**.  
+    :::image type="content" source="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ea-number.png" alt-text="Scherm afbeelding die laat zien waar u uw E registratie gegevens invoert." lightbox="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ea-number.png" :::
+1. In het volgende dialoog venster wordt verbinding gemaakt met Azure en worden gegevens opgehaald. *Wijzig de standaard waarden zoals geconfigureerd* en selecteer **Aanmelden en door gaan**.  
+    :::image type="content" source="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/autofit.png" alt-text="Scherm opname van het dialoog venster verbinding maken met Azure Cost Management-App met standaard waarden." lightbox="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/autofit.png" :::
+1. De laatste installatiestap maakt verbinding met uw EA-inschrijving en vereist een [Enterprise Administrator](../manage/understand-ea-roles.md)-account. Alle standaard waarden behouden. Selecteer **Aanmelden en verbinden**.  
+    :::image type="content" source="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ea-auth.png" alt-text="Scherm opname van het dialoog venster verbinding maken met Azure Cost Management App met standaard waarden om verbinding mee te maken." lightbox="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ea-auth.png" :::
+1. U wordt gevraagd om u te verifiëren met uw EA-inschrijving. Verifiëren met Power BI. Nadat u bent geverifieerd, wordt het vernieuwen van gegevens Power BI gestart.
     > [!NOTE]
     > Het proces voor gegevensvernieuwing kan enige tijd duren. De duur is afhankelijk van het aantal opgegeven maanden en de hoeveelheid gegevens die nodig is om te synchroniseren.
-12. Als u de status van het vernieuwen van gegevens wilt controleren, selecteert u het tabblad **Gegevenssets** in de werkruimte. Kijk naast het vernieuwde tijdstempel. Als deze nog steeds wordt bijgewerkt, geeft een indicator aan dat het vernieuwen wordt uitgevoerd.  
-  ![Gegevens vernieuwen](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/data-refresh2.png)
 
 Nadat het vernieuwen van de gegevens is voltooid, selecteert u de Azure Cost Management-app om de vooraf gemaakte rapporten weer te geven.
 
@@ -78,11 +77,11 @@ De volgende rapporten zijn beschikbaar in de app.
 
 **Gebruik van Windows Server AHB**: het rapport bevat het aantal virtuele machines waarvoor Azure Hybrid Benefit is ingeschakeld. Ook wordt het aantal kernen/vCPU's weergegeven dat door de virtuele machines wordt gebruikt.
 
-![Volledig rapport Azure Hybrid Benefits](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ahb-report-full.png)
+:::image type="content" source="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ahb-report-full.png" alt-text="Scherm afbeelding met het volledige Azure Hybrid bene fits-rapport." lightbox="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ahb-report-full.png" :::
 
 Het rapport identificeert ook Windows-VM's waarvoor Hybrid Benefit is **ingeschakeld**, maar wanneer er _minder dan_ 8 vCPU's zijn. Het rapport laat ook zien waar Hybrid Benefit **niet is ingeschakeld** met 8 _of meer_ vcPU's. Deze informatie helpt u om volledig gebruik te kunnen maken van Hybrid Benefit. Pas het voordeel toe op uw duurste virtuele machines voor een maximale besparing.
 
-![Azure Hybrid Benefit: minder dan 8 vCPU's en vCPU's niet ingeschakeld](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ahb-report.png)
+:::image type="content" source="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ahb-report.png" alt-text="Scherm afbeelding met het gebied minder dan 8 Vcpu's en Vcpu's niet ingeschakeld van het Azure Hybrid bene fits-rapport." lightbox="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ahb-report.png" :::
 
 **Toerekenen aan een gereserveerde instantie**: het rapport laat zien waar en hoeveel van een gereserveerde instantie (RI) voordeel wordt toegepast per regio, abonnement, resourcegroep of resource. In het rapport wordt voor de weergave gebruikgemaakt van afgeschreven gebruiksgegevens.
 
@@ -105,7 +104,7 @@ U kunt met de gegevens over afgeschreven gebruik de gegevens verder uitbouwen.
 
 U gebruikt het rapport door het filter voor inzoomen te selecteren.
 
-![Rapport over VM-RI-dekking – inzoomen selecteren](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ri-drill-down2.png)
+:::image type="content" source="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ri-drill-down2.png" alt-text="Scherm afbeelding met de optie Inzoomen selecteren in het VM-gebied voor de behoefte planning." lightbox="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ri-drill-down2.png" :::
 
 Selecteer de regio die u wilt analyseren. Selecteer vervolgens de groep voor flexibiliteit van instantiegrootte, enzovoort.
 
@@ -118,7 +117,7 @@ De tabel met aanbevelingen bevat aanbevelingen voor de aankoop van de reserverin
 
 Met de _Genormaliseerde grootte_ en de waarden voor _Aanbevolen genormaliseerd aantal_ kunt u de aankoop normaliseren tot de kleinste grootte voor de flexibiliteitsgroep van de instantiegrootte. De informatie is handig als u van plan bent om slechts één reservering te kopen voor alle grootten in de flexibiliteitsgroep van de instantiegrootte.
 
-![Aanbevelingen voor gereserveerde instanties](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ri-recomendations.png)
+:::image type="content" source="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ri-recommendations.png" alt-text="Scherm afbeelding van het rapport met aanbevelingen voor de RI." lightbox="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ri-recommendations.png" :::
 
 **VM-RI-dekking (één aanbeveling)** : het rapport wordt opgesplitst tussen het gebruik van VM's op aanvraag en het gebruik van RI-VM'S gedurende de geselecteerde periode. Het rapport bevat aanbevelingen voor aankoop van VMI-RI's bij een abonnementsbereik.
 
@@ -151,7 +150,7 @@ De standaardwaarde `Enrollment Number` van **Bereik** is veranderd in de verbind
 
 Maak opnieuw verbinding met Cost Management en stel de waarde voor **Bereik** in op `Enrollment Number`. Voer het inschrijvingsnummer van uw organisatie niet in. Typ in plaats daarvan `Enrollment Number` exact zoals dit in de volgende afbeelding verschijnt.
 
-![Informatie over EA-inschrijving invoeren](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ea-number.png)  
+:::image type="content" source="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ea-number-troubleshoot.png" alt-text="Scherm opname waarin wordt getoond dat de standaard tekst van het inschrijvings nummer niet mag worden gewijzigd." lightbox="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ea-number-troubleshoot.png" :::
 
 ### <a name="budgetamount-error"></a>Fout in BudgetAmount
 
@@ -166,12 +165,11 @@ Data source error: The 'budgetAmount' column does not exist in the rowset. Table
 
 #### <a name="cause"></a>Oorzaak
 
-Deze fout treedt op door een fout in de onderliggende metagegevens. Het probleem treedt op omdat er geen budget beschikbaar is onder **Cost Management > Budget** in de Azure-portal. Deze fout wordt geïmplementeerd in de Power BI Desktop en Power BI-service. 
+Deze fout treedt op door een fout in de onderliggende metagegevens. Het probleem treedt op omdat er geen budget beschikbaar is onder **Cost Management > Budget** in de Azure-portal. Deze fout wordt geïmplementeerd in de Power BI Desktop en Power BI-service.
 
 #### <a name="solution"></a>Oplossing
 
 - Tot de fout is opgelost, kunt u om het probleem heen werken door een testbudget toe te voegen in de Azure-portal op het factureringsrekening-/EA-registrateniveau. Het testbudget kunt u weer verbinding maken met Power BI. Raadpleeg voor meer informatie over een budget maken [Zelfstudie: Azure-budgetten maken en beheren](tutorial-acm-create-budgets.md).
-
 
 ### <a name="invalid-credentials-for-azureblob-error"></a>Ongeldige referenties voor AzureBlob-fout
 
@@ -183,15 +181,14 @@ Failed to update data source credentials: The credentials provided for the Azure
 
 #### <a name="cause"></a>Oorzaak
 
-Deze fout treedt op als u de verificatiemethode voor de AutoFitComboMeter-blobverbinding wijzigt.
+Deze fout treedt op als u de verificatie methode voor de gegevens bron verbinding wijzigt.
 
 #### <a name="solution"></a>Oplossing
 
 1. Maak verbinding met uw gegevens.
 1. Nadat u uw EA-registratie en aantal maanden invoert, moet u ervoor zorgen dat u de standaardwaarden **Anoniem** voor Verificatiemethode en **Geen** voor Privacyniveau behoudt.  
-  ![Schermopname van het dialoogvenster Verbinding maken met Azure Cost Management met de ingevoerde waarden Anoniem en Geen.](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/autofit-troubleshoot.png)  
+  :::image type="content" source="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/autofit-troubleshoot.png" alt-text="Schermopname van het dialoogvenster Verbinding maken met Azure Cost Management met de ingevoerde waarden Anoniem en Geen." lightbox="./media/analyze-cost-data-azure-cost-management-power-bi-template-app/autofit-troubleshoot.png" :::
 1. Stel op de volgende pagina **OAuth2** voor de verificatiemethode in en **Geen** voor het Privacyniveau. Meld vervolgens aan om uw inschrijving te verifiëren. Met deze stap wordt ook een gegevensvernieuwing in Power BI gestart.
-
 
 ## <a name="data-reference"></a>Verwijzing naar gegevens
 

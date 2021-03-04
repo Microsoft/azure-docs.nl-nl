@@ -1,17 +1,16 @@
 ---
 title: Azure Monitor op schaal implementeren met behulp van Azure Policy
 description: Implementeer Azure Monitor-functies op schaal met behulp van Azure Policy.
-ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/08/2020
-ms.openlocfilehash: bcd56e464419312e74aec01cf22ae56f797991ad
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: cc55cd17a547b9c63f2c26479d5797fae016d8d7
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101731762"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102044065"
 ---
 # <a name="deploy-azure-monitor-at-scale-using-azure-policy"></a>Azure Monitor op schaal implementeren met behulp van Azure Policy
 Hoewel sommige Azure Monitor functies eenmaal of een beperkt aantal keren worden geconfigureerd, moeten andere worden herhaald voor elke resource die u wilt bewaken. In dit artikel worden methoden beschreven voor het gebruik van Azure Policy om Azure Monitor op schaal te implementeren om ervoor te zorgen dat de bewaking consistent en correct is geconfigureerd voor al uw Azure-resources.

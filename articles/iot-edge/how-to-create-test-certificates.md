@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: c5af77da0ed2c579a478c8ebaaa924882d9a15c6
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: d82f1cac6e437663fa0b1c3e21c65036f3c1d4eb
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92927699"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102046037"
 ---
 # <a name="create-demo-certificates-to-test-iot-edge-device-features"></a>Democertificaten maken om IoT Edge-apparaatfuncties te testen
 
@@ -32,7 +32,7 @@ Volg deze stappen om demo certificaten te maken voor het testen van uw IoT Edge 
 1. [Stel scripts](#set-up-scripts) in voor het genereren van certificaten op het apparaat.
 2. [Maak het basis-CA-certificaat](#create-root-ca-certificate) dat u gebruikt om alle andere certificaten voor uw scenario te ondertekenen.
 3. Genereer de certificaten die u nodig hebt voor het scenario dat u wilt testen:
-   * [IOT Edge certificaten voor apparaat-Id's maken](#create-iot-edge-device-identity-certificates) voor automatische inrichting met de IOT hub Device Provisioning Service.
+   * [IOT Edge certificaten voor apparaat-Id's maken](#create-iot-edge-device-identity-certificates) voor het inrichten van apparaten met X. 509-certificaat verificatie, hetzij hand matig of met de IOT hub Device Provisioning Service.
    * [Maak IOT Edge CA-certificaten](#create-iot-edge-device-ca-certificates) voor IOT edge apparaten in Gateway scenario's.
    * [Stroomafwaartse certificaten maken](#create-downstream-device-certificates) voor het verifiëren van downstream-apparaten in een gateway scenario.
 
@@ -78,13 +78,13 @@ In deze sectie kloont u de IoT Edge opslag plaats en voert u de scripts uit.
 
 1. Open een Power shell-venster in de beheerders modus.
 
-2. Kloon de IoT Edge Git opslag plaats, die scripts bevat voor het genereren van demo certificaten. Gebruik de `git clone` opdracht of [down load de zip](https://github.com/Azure/iotedge/archive/master.zip).
+2. Kloon de IoT Edge git-opslagplaats, die scripts bevat om democertificaten te genereren. Gebruik de `git clone` opdracht of [down load de zip](https://github.com/Azure/iotedge/archive/master.zip).
 
    ```powershell
    git clone https://github.com/Azure/iotedge.git
    ```
 
-3. Ga naar de map waarin u wilt werken. In dit artikel noemen we deze directory *\<WRKDIR>* . Alle certificaten en sleutels worden gemaakt in deze werkmap.
+3. Navigeer naar de map waarin u wilt werken. In dit artikel noemen we deze directory *\<WRKDIR>* . Alle certificaten en sleutels worden gemaakt in deze werkmap.
 
 4. Kopieer de configuratie en script bestanden van de gekloonde opslag plaats naar uw werkmap.
 
@@ -119,15 +119,15 @@ In deze sectie kloont u de IoT Edge opslag plaats en voert u de scripts uit.
 
 Als u demo certificaten wilt maken op een Windows-apparaat, moet u de generatie scripts klonen en instellen om lokaal uit te voeren in bash.
 
-1. Kloon de IoT Edge Git opslag plaats, die scripts bevat voor het genereren van demo certificaten.
+1. Kloon de IoT Edge git-opslagplaats, die scripts bevat om democertificaten te genereren.
 
    ```bash
    git clone https://github.com/Azure/iotedge.git
    ```
 
-2. Ga naar de map waarin u wilt werken. In het hele artikel wordt naar deze map verwezen *\<WRKDIR>* . Alle certificaat-en sleutel bestanden worden in deze map gemaakt.
+2. Navigeer naar de map waarin u wilt werken. In het hele artikel wordt naar deze map verwezen *\<WRKDIR>* . Alle certificaat- en sleutelbestanden worden in deze map gemaakt.
   
-3. Kopieer de configuratie-en script bestanden van de gekloonde IoT Edge opslag plaats naar uw werkmap.
+3. Kopieer de config- en scriptbestanden van de gekloonde IoT Edge-opslagplaats in uw werkmap.
 
    ```bash
    cp <path>/iotedge/tools/CACertificates/*.cnf .
@@ -163,7 +163,7 @@ Voordat u verdergaat met de stappen in deze sectie, volgt u de stappen in de sec
    New-CACertsCertChain rsa
    ```
 
-   Met deze script opdracht worden verschillende certificaat-en sleutel bestanden gemaakt, maar wanneer artikelen worden gevraagd voor het **basis-CA-certificaat** , gebruikt u het volgende bestand:
+   Met deze script opdracht worden verschillende certificaat-en sleutel bestanden gemaakt, maar wanneer artikelen worden gevraagd voor het **basis-CA-certificaat**, gebruikt u het volgende bestand:
 
    * `<WRKDIR>\certs\azure-iot-test-only.root.ca.cert.pem`
 
@@ -177,15 +177,15 @@ Voordat u verdergaat met de stappen in deze sectie, volgt u de stappen in de sec
    ./certGen.sh create_root_and_intermediate
    ```
 
-   Met deze script opdracht worden verschillende certificaat-en sleutel bestanden gemaakt, maar wanneer artikelen worden gevraagd voor het **basis-CA-certificaat** , gebruikt u het volgende bestand:
+   Met deze script opdracht worden verschillende certificaat-en sleutel bestanden gemaakt, maar wanneer artikelen worden gevraagd voor het **basis-CA-certificaat**, gebruikt u het volgende bestand:
 
    * `<WRKDIR>/certs/azure-iot-test-only.root.ca.cert.pem`  
 
 ## <a name="create-iot-edge-device-identity-certificates"></a>Certificaten voor de identiteit van IoT Edge-apparaten maken
 
-Certificaten voor apparaat-id's worden gebruikt om IoT Edge-apparaten in te richten via de Azure IoT Hub Device Provisioning Service (DPS).
+Certificaten voor apparaat-id's worden gebruikt om IoT Edge-apparaten in te richten als u ervoor kiest om X. 509-certificaat verificatie te gebruiken. Deze certificaten werken of u hand matige inrichting of automatische inrichting via Azure IoT Hub Device Provisioning Service (DPS) gebruikt.
 
-Certificaten voor identiteiten van apparaten gaan in de **inrichtings** sectie van het bestand config. yaml op het IOT edge-apparaat.
+Certificaten voor identiteiten van apparaten gaan in de **inrichtings** sectie van het configuratie bestand op het IOT edge-apparaat.
 
 Volg de stappen in de secties [scripts instellen](#set-up-scripts) en [basis-CA-certificaat maken](#create-root-ca-certificate) voordat u doorgaat met de stappen in deze sectie.
 
@@ -223,11 +223,19 @@ Het script maakt verschillende certificaat-en sleutel bestanden, waaronder drie 
 
 ## <a name="create-iot-edge-device-ca-certificates"></a>CA-certificaten voor IoT Edge-apparaten maken
 
-Elk IoT Edge apparaat dat naar productie gaat, moet een CA-certificaat van het apparaat bevatten waarnaar wordt verwezen vanuit het bestand config. yaml.
+Elk IoT Edge apparaat dat naar productie gaat, moet een CA-certificaat van het apparaat bevatten waarnaar wordt verwezen vanuit het configuratie bestand.
 Het CA-certificaat van het apparaat is verantwoordelijk voor het maken van certificaten voor modules die op het apparaat worden uitgevoerd.
 Het is ook nodig voor gateway-scenario's, omdat het CA-certificaat van het apparaat de identiteit van de IoT Edge apparaat controleert op downstream-apparaten.
 
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
 CA-certificaten van apparaten gaan in het gedeelte **certificaat** van het bestand config. yaml op het IOT edge-apparaat.
+:::moniker-end
+
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+CA-certificaten voor apparaten worden in de sectie met de **rand-ca** van het bestand config. toml op het apparaat van IOT Edge.
+:::moniker-end
 
 Volg de stappen in de secties [scripts instellen](#set-up-scripts) en [basis-CA-certificaat maken](#create-root-ca-certificate) voordat u doorgaat met de stappen in deze sectie.
 
@@ -241,12 +249,12 @@ Volg de stappen in de secties [scripts instellen](#set-up-scripts) en [basis-CA-
    New-CACertsEdgeDevice "<CA cert name>"
    ```
 
-   Met deze opdracht worden verschillende certificaat-en sleutel bestanden gemaakt. Het volgende certificaat en sleutel paar moeten worden gekopieerd naar een IoT Edge apparaat en waarnaar wordt verwezen in het bestand config. yaml:
+   Met deze opdracht worden verschillende certificaat-en sleutel bestanden gemaakt. Het volgende certificaat en sleutel paar moeten naar een IoT Edge apparaat worden gekopieerd en in het configuratie bestand worden verwezen:
 
    * `<WRKDIR>\certs\iot-edge-device-<CA cert name>-full-chain.cert.pem`
    * `<WRKDIR>\private\iot-edge-device-<CA cert name>.key.pem`
 
-De naam die is door gegeven aan de opdracht **New-CACertsEdgeDevice** , mag niet hetzelfde zijn als de para meter hostname in config. yaml, of de id van het apparaat in IOT hub.
+De naam die is door gegeven aan de opdracht **New-CACertsEdgeDevice** , mag niet hetzelfde zijn als de para meter hostname in het configuratie bestand of de id van het apparaat in IOT hub.
 
 ### <a name="linux"></a>Linux
 
@@ -258,12 +266,12 @@ De naam die is door gegeven aan de opdracht **New-CACertsEdgeDevice** , mag niet
    ./certGen.sh create_edge_device_ca_certificate "<CA cert name>"
    ```
 
-   Met deze script opdracht maakt u een aantal certificaat-en sleutel bestanden. Het volgende certificaat en sleutel paar moeten worden gekopieerd naar een IoT Edge apparaat en waarnaar wordt verwezen in het bestand config. yaml:
+   Met deze script opdracht maakt u een aantal certificaat-en sleutel bestanden. Het volgende certificaat en sleutel paar moeten naar een IoT Edge apparaat worden gekopieerd en in het configuratie bestand worden verwezen:
 
    * `<WRKDIR>/certs/iot-edge-device-<CA cert name>-full-chain.cert.pem`
    * `<WRKDIR>/private/iot-edge-device-<CA cert name>.key.pem`
 
-De naam die is door gegeven aan de **create_edge_device_ca_certificate** opdracht mag niet hetzelfde zijn als de para meter hostname in config. yaml of de id van het apparaat in IOT hub.
+De naam die is door gegeven aan de **create_edge_device_ca_certificate** opdracht mag niet hetzelfde zijn als de para meter hostname in het configuratie bestand of de id van het apparaat in IOT hub.
 
 ## <a name="create-downstream-device-certificates"></a>Stroomafwaartse certificaten van het apparaat maken
 

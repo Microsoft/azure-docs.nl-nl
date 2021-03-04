@@ -5,25 +5,25 @@ author: kgremban
 manager: philmea
 ms.author: kgremban
 ms.reviewer: mrohera
-ms.date: 4/3/2020
+ms.date: 03/01/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: bfb61a5434089fffab9d8ceb9c7b0fbca528cac5
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 73d1d873df58c672e9db6b9e4e17ed58e1a6397e
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430608"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102046190"
 ---
 # <a name="create-and-provision-an-iot-edge-device-using-symmetric-key-attestation"></a>Een IoT Edge apparaat maken en inrichten met behulp van symmetrische sleutel attest
 
 Azure IoT Edge apparaten kunnen automatisch worden ingericht met behulp van de [Device Provisioning Service](../iot-dps/index.yml) , net zoals apparaten die niet Edge-ingeschakeld zijn. Als u niet bekend bent met het proces van automatische inrichting, bekijkt u het overzicht voor [inrichting](../iot-dps/about-iot-dps.md#provisioning-process) voordat u verdergaat.
 
-In dit artikel wordt beschreven hoe u een individuele inschrijving voor een Device Provisioning Service kunt maken met behulp van symmetrische sleutel attest op een IoT Edge apparaat, met de volgende stappen:
+In dit artikel wordt beschreven hoe u een individuele of groeps registratie service voor het inrichten van een apparaat voor de inrichting van symmetrische sleutels op een IoT Edge apparaat maakt met de volgende stappen:
 
 * Maak een instantie van IoT Hub Device Provisioning Service (DPS).
-* Een afzonderlijke inschrijving voor het apparaat maken.
+* Een inschrijving voor het apparaat maken.
 * Installeer de IoT Edge runtime en maak verbinding met de IoT Hub.
 
 Symmetrische-sleutel attest is een eenvoudige benadering voor het verifiëren van een apparaat met een Device Provisioning service-exemplaar. Deze Attestation-methode vertegenwoordigt een ' Hello World '-ervaring voor ontwikkel aars die nieuw zijn voor het inrichten van apparaten of waarvoor geen strikte beveiligings vereisten gelden. Attestation van apparaten met behulp van een [TPM](../iot-dps/concepts-tpm-attestation.md) of [X. 509-certificaten](../iot-dps/concepts-x509-attestation.md) is veiliger en moet worden gebruikt voor strengere beveiligings vereisten.
@@ -72,8 +72,8 @@ Wanneer u een inschrijving in DPS maakt, hebt u de mogelijkheid om een **eerste 
 
    1. Selecteer **waar** om te declareren dat de inschrijving voor een IOT edge apparaat is. Voor de registratie van een groep moeten alle apparaten worden IoT Edge apparaten of geen van beide.
 
-   > [!TIP]
-   > In de Azure CLI kunt u een [inschrijving](/cli/azure/ext/azure-iot/iot/dps/enrollment) of een [registratie groep](/cli/azure/ext/azure-iot/iot/dps/enrollment-group) maken en de vlag voor **rand ingeschakeld** gebruiken om op te geven dat een apparaat, of groep apparaten, een IOT edge apparaat is.
+      > [!TIP]
+      > In de Azure CLI kunt u een [inschrijving](/cli/azure/ext/azure-iot/iot/dps/enrollment) of een [registratie groep](/cli/azure/ext/azure-iot/iot/dps/enrollment-group) maken en de vlag voor **rand ingeschakeld** gebruiken om op te geven dat een apparaat, of groep apparaten, een IOT edge apparaat is.
 
    1. Accepteer de standaard waarde van het toewijzings beleid van de Device Provisioning Service voor de **manier waarop u apparaten aan hubs wilt toewijzen** of kies een andere waarde die specifiek is voor deze inschrijving.
 
@@ -169,10 +169,12 @@ De volgende informatie is gereed:
 * De **primaire sleutel** die u hebt gekopieerd uit de DPS-inschrijving
 
 > [!TIP]
-> Voor groeps registraties hebt u de [afgeleide sleutel](#derive-a-device-key) van elk apparaat nodig in plaats van de registratie sleutel voor DPS.
+> Voor groeps registraties hebt u de [afgeleide sleutel](#derive-a-device-key) van elk apparaat nodig in plaats van de primaire sleutel voor de DPS-registratie.
 
 ### <a name="linux-device"></a>Linux-apparaat
 
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
 1. Open het configuratie bestand op het IoT Edge-apparaat.
 
    ```bash
@@ -197,15 +199,66 @@ De volgende informatie is gereed:
    #  dynamic_reprovisioning: false
    ```
 
-   Gebruik eventueel de `always_reprovision_on_startup` `dynamic_reprovisioning` regels of om het herinrichtings gedrag van uw apparaat te configureren. Als een apparaat is ingesteld op het opnieuw inrichten bij het opstarten, wordt altijd geprobeerd eerst met DPS in te richten en vervolgens terug te vallen naar de inrichtings back-up als dat mislukt. Als een apparaat is ingesteld op dynamisch opnieuw inrichten, wordt IoT Edge opnieuw opgestart en wordt het opnieuw ingericht als er een herinrichtings gebeurtenis wordt gedetecteerd. Zie IoT Hub voor het opnieuw [inrichten van apparaten](../iot-dps/concepts-device-reprovision.md)voor meer informatie.
-
 1. De waarden van `scope_id` , `registration_id` en `symmetric_key` met uw DPS en apparaatgegevens bijwerken.
+
+1. Gebruik eventueel de `always_reprovision_on_startup` `dynamic_reprovisioning` regels of om het herinrichtings gedrag van uw apparaat te configureren. Als een apparaat is ingesteld op het opnieuw inrichten bij het opstarten, wordt altijd geprobeerd eerst met DPS in te richten en vervolgens terug te vallen naar de inrichtings back-up als dat mislukt. Als een apparaat is ingesteld op dynamisch opnieuw inrichten, wordt IoT Edge opnieuw opgestart en wordt het opnieuw ingericht als er een herinrichtings gebeurtenis wordt gedetecteerd. Zie IoT Hub voor het opnieuw [inrichten van apparaten](../iot-dps/concepts-device-reprovision.md)voor meer informatie.
 
 1. Start de IoT Edge-runtime opnieuw zodat alle configuratie wijzigingen die u op het apparaat hebt aangebracht, worden opgehaald.
 
    ```bash
    sudo systemctl restart iotedge
    ```
+
+:::moniker-end
+<!-- end 1.1 -->
+
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+
+1. Maak een configuratie bestand voor uw apparaat op basis van een sjabloon bestand dat wordt meegeleverd als onderdeel van de IoT Edge installatie.
+
+   ```bash
+   sudo cp /etc/aziot/config.toml.edge.template /etc/aziot/config.toml
+   ```
+
+1. Open het configuratie bestand op het IoT Edge-apparaat.
+
+   ```bash
+   sudo nano /etc/aziot/config.toml
+   ```
+
+1. De **inrichtings** sectie van het bestand zoeken. Verwijder de opmerkingen bij de regels voor DPS inrichten met symmetrische sleutel en zorg ervoor dat andere inrichtings regels worden uitgeoefend.
+
+   ```toml
+   # DPS provisioning with symmetric key
+   [provisioning]
+   source = "dps"
+   global_endpoint = "https://global.azure-devices-provisioning.net"
+   id_scope = "<SCOPE_ID>"
+   
+   [provisioning.attestation]
+   method = "symmetric_key"
+   registration_id = "<REGISTRATION_ID>"
+
+   symmetric_key = "<PRIMARY_KEY OR DERIVED_KEY>"
+   ```
+
+1. De waarden van `id_scope` , `registration_id` en `symmetric_key` met uw DPS en apparaatgegevens bijwerken.
+
+   De para meter voor de symmetrische sleutel kan een waarde van een inline-sleutel, een bestands-URI of een PKCS # 11-URI accepteren. Verwijder slechts één symmetrische-sleutel regel, op basis van de indeling die u gebruikt.
+
+   Als u een PKCS # 11-Uri's gebruikt, zoekt u de sectie **PKCS # 11** in het configuratie bestand en geeft u informatie op over de PKCS # 11-configuratie.
+
+1. Sla het bestand config. toml op en sluit het af.
+
+1. De configuratie wijzigingen Toep assen die u hebt aangebracht in IoT Edge.
+
+   ```bash
+   sudo iotedge config apply
+   ```
+
+:::moniker-end
+<!-- end 1.2 -->
 
 ### <a name="windows-device"></a>Windows-apparaat
 
@@ -228,6 +281,9 @@ Als de runtime is gestart, kunt u naar uw IoT Hub gaan en IoT Edge modules op he
 
 ### <a name="linux-device"></a>Linux-apparaat
 
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
+
 Controleer de status van de IoT Edge-service.
 
 ```cmd/sh
@@ -245,6 +301,31 @@ Een lijst met actieve modules weer geven.
 ```cmd/sh
 iotedge list
 ```
+
+:::moniker-end
+
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+
+Controleer de status van de IoT Edge-service.
+
+```cmd/sh
+sudo iotedge system status
+```
+
+Bekijk service Logboeken.
+
+```cmd/sh
+sudo iotedge system logs
+```
+
+Een lijst met actieve modules weer geven.
+
+```cmd/sh
+sudo iotedge list
+```
+
+:::moniker-end
 
 ### <a name="windows-device"></a>Windows-apparaat
 

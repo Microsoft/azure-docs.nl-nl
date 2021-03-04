@@ -1,17 +1,16 @@
 ---
 title: Azure Monitor implementeren
 description: Beschrijft de verschillende stappen die vereist zijn voor een volledige implementatie van Azure Monitor voor het bewaken van alle resources in uw Azure-abonnement.
-ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
-ms.openlocfilehash: f5855d7ab1f7ba8e11334f1373fb10166f47003a
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 7656efeb26a8a8b3c752ea996c8e644c68a48626
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101708251"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102043997"
 ---
 # <a name="deploy-azure-monitor"></a>Azure Monitor implementeren
 Het inschakelen van Azure Monitor voor het bewaken van al uw Azure-resources is een combi natie van het configureren van Azure Monitor onderdelen en het configureren van Azure-resources voor het genereren van bewakings gegevens voor Azure Monitor voor het verzamelen van In dit artikel worden de verschillende stappen beschreven die nodig zijn voor een volledige implementatie van Azure Monitor met behulp van een gemeen schappelijke configuratie om alle resources in uw Azure-abonnement te controleren. De basis beschrijvingen voor elke stap worden verstrekt met koppelingen naar andere documentatie voor gedetailleerde configuratie vereisten.

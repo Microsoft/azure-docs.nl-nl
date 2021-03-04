@@ -1,17 +1,16 @@
 ---
 title: SCSM verbinden met IT Service Management-connector
 description: In dit artikel vindt u informatie over het SCSM van de IT Service Management-connector (ITSMC) in Azure Monitor om de ITSM-werk items centraal te controleren en te beheren.
-ms.subservice: logs
 ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 12/21/2020
-ms.openlocfilehash: 32cc45f318e6310ca89f3341add7164a0712f416
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 3f80c42be217d062510c687075cf46b4e7539419
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611082"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102045340"
 ---
 # <a name="connect-system-center-service-manager-with-it-service-management-connector"></a>System Center Service Manager verbinden met IT Service Management-connector
 

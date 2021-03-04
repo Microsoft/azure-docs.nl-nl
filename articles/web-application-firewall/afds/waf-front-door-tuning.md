@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/11/2020
 ms.author: mohitku
 ms.reviewer: tyao
-ms.openlocfilehash: 4c710792dd7966fad76b33954fdf7c2253cf18f0
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 8752886bc5304de420083212d29ccd3e1cb14084
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96488235"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102043691"
 ---
 # <a name="tuning-web-application-firewall-waf-for-azure-front-door"></a>Retuning Web Application firewall (WAF) voor Azure front deur
  
@@ -38,9 +38,17 @@ UserId=20&captchaId=7&captchaId=15&comment="1=1"&rating=3
 
 Als u de aanvraag probeert, blokkeert de WAF het verkeer dat uw reeks van *1 = 1* in een para meter of veld bevat. Dit is een teken reeks die vaak is gekoppeld aan een SQL-injectie aanval. U kunt de logboeken bekijken en de tijds tempel van de aanvraag bekijken en de regels die zijn geblokkeerd/overeenkomen.
  
-In het volgende voor beeld verkennen we een `FrontdoorWebApplicationFirewallLog` logboek dat is gegenereerd als gevolg van een overeenkomst van een regel.
+In het volgende voor beeld verkennen we een `FrontdoorWebApplicationFirewallLog` logboek dat is gegenereerd als gevolg van een overeenkomst van een regel. De volgende Log Analytics query kan worden gebruikt om aanvragen te vinden die in de afgelopen 24 uur zijn geblokkeerd:
+
+```kusto
+AzureDiagnostics
+| where Category == 'FrontdoorWebApplicationFirewallLog'
+| where TimeGenerated > ago(1d)
+| where action_s == 'Block'
+
+```
  
-In het veld ' requestUri ' ziet u dat de aanvraag specifiek is gedaan `/api/Feedbacks/` . Verder vinden we de regel-ID `942110` in het veld Naam regel. Als u de regel-ID weet, kunt u naar de [OWASP ModSecurity core-regel set officiële opslag plaats](https://github.com/coreruleset/coreruleset) gaan en deze [regel-id](https://github.com/coreruleset/coreruleset/blob/v3.1/dev/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf) doorzoeken om de code te controleren en precies te begrijpen waarvoor deze regel overeenkomt. 
+In het `requestUri` veld ziet u dat de aanvraag specifiek is gemaakt `/api/Feedbacks/` . Verder vinden we de regel-ID `942110` in het `ruleName` veld. Als u de regel-ID weet, kunt u naar de [OWASP ModSecurity core-regel set officiële opslag plaats](https://github.com/coreruleset/coreruleset) gaan en deze [regel-id](https://github.com/coreruleset/coreruleset/blob/v3.1/dev/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf) doorzoeken om de code te controleren en precies te begrijpen waarvoor deze regel overeenkomt. 
  
 Vervolgens ziet u door het `action` veld te controleren of deze regel is ingesteld op het blok keren van aanvragen bij het vergelijken en bevestigen we dat de aanvraag wordt geblokkeerd door de WAF omdat de `policyMode` is ingesteld op `prevention` . 
  
@@ -197,6 +205,9 @@ Als u Azure PowerShell wilt gebruiken om een beheerde regel uit te scha kelen, r
 
 ![WAF-regels](../media/waf-front-door-tuning/waf-rules.png)
 
+> [!TIP]
+> Het is een goed idee om de wijzigingen die u in uw WAF-beleid aanbrengt, te documenteren. Voeg voorbeeld aanvragen toe om de foutieve positieve detectie te illustreren en leg duidelijk uit waarom u een aangepaste regel hebt toegevoegd, een regel of regelset hebt uitgeschakeld of een uitzonde ring hebt toegevoegd. Deze documentatie kan handig zijn als u uw toepassing in de toekomst opnieuw ontwerpt en u wilt controleren of uw wijzigingen nog geldig zijn. Het kan ook helpen als u ooit hebt gecontroleerd of als u wilt uitvullen waarom u het WAF-beleid opnieuw hebt geconfigureerd op basis van de standaard instellingen.
+
 ## <a name="finding-request-fields"></a>Aanvraag velden zoeken
 
 Met een browser proxy zoals [Fiddler](https://www.telerik.com/fiddler)kunt u afzonderlijke aanvragen controleren en bepalen welke specifieke velden van een webpagina worden genoemd. Dit is handig wanneer we bepaalde velden moeten uitsluiten van inspectie met behulp van uitsluitings lijsten in WAF.
@@ -256,7 +267,7 @@ Fiddler is opnieuw een handig hulp programma om namen van aanvraag headers te vi
 
 ![Fiddler-aanvraag met koptekst](../media/waf-front-door-tuning/fiddler-request-header-name.png)
 
-Een andere manier om aanvraag-en antwoord headers weer te geven, is door te zoeken in de ontwikkel hulpprogramma's van uw browser, zoals Edge of Chrome. U kunt op F12 drukken of met de rechter muisknop > Ontwikkelhulpprogramma's **inspecteren**  ->  **Developer Tools** en het tabblad **netwerk** selecteren. Laad een webpagina en klik op de aanvraag die u wilt inspecteren.
+Een andere manier om aanvraag-en antwoord headers weer te geven, is door te zoeken in de ontwikkel hulpprogramma's van uw browser, zoals Edge of Chrome. U kunt op F12 drukken of met de rechter muisknop > Ontwikkelhulpprogramma's **inspecteren**  ->  en het tabblad **netwerk** selecteren. Laad een webpagina en klik op de aanvraag die u wilt inspecteren.
 
 ![Netwerk controle-aanvraag](../media/waf-front-door-tuning/network-inspector-request.png)
 

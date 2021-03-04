@@ -4,16 +4,16 @@ description: Test certificaten maken, installeren en beheren op een Azure IoT Ed
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 06/02/2020
+ms.date: 03/01/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 1f07f9d481ca8ede29c8b8443dad81a442962a71
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 6a4cade6a740bffc33695c40663609df38ba6e7a
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92044136"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102044898"
 ---
 # <a name="manage-certificates-on-an-iot-edge-device"></a>Certificaten op een IoT Edge apparaat beheren
 
@@ -51,8 +51,13 @@ U moet uw eigen certificerings instantie gebruiken om de volgende bestanden te m
 
 In dit artikel wordt verwezen naar de *basis-CA* , maar niet de hoogste certificerings instantie voor een organisatie. Het is de bovenste certificerings instantie voor het IoT Edge scenario, die door de IoT Edge hub-module, gebruikers modules en downstream-apparaten wordt gebruikt om een vertrouwens relatie tussen elkaar te leggen.
 
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
+
 > [!NOTE]
 > Op dit moment wordt een beperking in libiothsm voor komen dat certificaten worden gebruikt die op of na 1 januari 2038 verlopen.
+
+:::moniker-end
 
 Als u een voor beeld van deze certificaten wilt zien, bekijkt u de scripts die demo certificaten maken bij het [beheren van test-CA-certificaten voor voor beelden en zelf studies](https://github.com/Azure/iotedge/tree/master/tools/CACertificates).
 
@@ -60,20 +65,21 @@ Als u een voor beeld van deze certificaten wilt zien, bekijkt u de scripts die d
 
 Installeer uw certificaat keten op het IoT Edge apparaat en configureer de IoT Edge-runtime om te verwijzen naar de nieuwe certificaten.
 
+Kopieer de drie certificaat-en sleutel bestanden naar uw IoT Edge-apparaat. U kunt een service zoals [Azure Key Vault](../key-vault/index.yml) of een functie zoals [Secure Copy Protocol](https://www.ssh.com/ssh/scp/) gebruiken om de certificaat bestanden te verplaatsen.  Als u de certificaten op het IoT Edge apparaat zelf hebt gegenereerd, kunt u deze stap overs Laan en het pad naar de werkmap gebruiken.
+
 Als u bijvoorbeeld de voorbeeld scripts hebt gebruikt om [demo certificaten te maken](how-to-create-test-certificates.md), kopieert u de volgende bestanden naar uw IoT-Edge-apparaat:
 
 * CA-certificaat van apparaat: `<WRKDIR>\certs\iot-edge-device-MyEdgeDeviceCA-full-chain.cert.pem`
 * Persoonlijke sleutel van de apparaat-CA: `<WRKDIR>\private\iot-edge-device-MyEdgeDeviceCA.key.pem`
 * Basis-CA: `<WRKDIR>\certs\azure-iot-test-only.root.ca.cert.pem`
 
-1. Kopieer de drie certificaat-en sleutel bestanden naar uw IoT Edge-apparaat.
-
-   U kunt een service zoals [Azure Key Vault](../key-vault/index.yml) of een functie zoals [Secure Copy Protocol](https://www.ssh.com/ssh/scp/) gebruiken om de certificaat bestanden te verplaatsen.  Als u de certificaten op het IoT Edge apparaat zelf hebt gegenereerd, kunt u deze stap overs Laan en het pad naar de werkmap gebruiken.
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
 
 1. Open het IoT Edge Security daemon config-bestand.
 
-   * Windows `C:\ProgramData\iotedge\config.yaml`
-   * Spreek `/etc/iotedge/config.yaml`
+   * Windows: `C:\ProgramData\iotedge\config.yaml`
+   * Linux: `/etc/iotedge/config.yaml`
 
 1. Stel de **certificaat** eigenschappen in config. yaml in op het pad naar het bestand-URI naar het certificaat en de sleutel bestanden op het IOT edge apparaat. Verwijder het `#` teken vóór de eigenschappen van het certificaat om de vier regels op te heffen. Zorg ervoor dat de regel **certificaten:** geen voor gaande witruimte heeft en dat geneste items met twee spaties worden inge sprongen. Bijvoorbeeld:
 
@@ -102,41 +108,74 @@ Als u bijvoorbeeld de voorbeeld scripts hebt gebruikt om [demo certificaten te m
    * Windows: `C:\ProgramData\iotedge\hsm\certs` en `C:\ProgramData\iotedge\hsm\cert_keys`
 
    * Linux: `/var/lib/iotedge/hsm/certs` en `/var/lib/iotedge/hsm/cert_keys`
+:::moniker-end
+<!-- end 1.1 -->
+
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+
+1. Open het IoT Edge Security daemon configuratie bestand: `/etc/aziot/config.toml`
+
+1. Zoek de `trust_bundle_cert` para meter aan het begin van het bestand. Verwijder de opmerking over deze regel en geef de bestands-URI op het basis-CA-certificaat op uw apparaat op.
+
+   ```toml
+   trust_bundle_cert = "file:///<path>/<root CA cert>"
+   ```
+
+1. Zoek de `[edge_ca]` sectie in het bestand config. toml. Verwijder de opmerkingen in de regels in deze sectie en geef de bestands-URI-paden op voor het certificaat en de sleutel bestanden op het IoT Edge-apparaat.
+
+   ```toml
+   [edge_ca]
+   cert = "file:///<path>/<device CA cert>"
+   pk = "file:///<path>/<device CA key>"
+   ```
+
+1. Zorg ervoor dat de gebruiker **iotedge** Lees machtigingen heeft voor de directory die de certificaten bevat.
+
+1. Als u eerder andere certificaten voor IoT Edge op het apparaat hebt gebruikt, verwijdert u de bestanden in de volgende twee directory's voordat u IoT Edge start of opnieuw opstart:
+
+   * `/var/lib/aziot/certd/certs`
+   * `/var/lib/aziot/keyd/keys`
+
+:::moniker-end
+<!-- end 1.2 -->
+
+<!-- 1.1. -->
+<!-- Temporarily, customizable certificate lifetime not available in 1.2. Update before GA. -->
+:::moniker range="iotedge-2018-06"
 
 ## <a name="customize-certificate-lifetime"></a>Levens duur van certificaten aanpassen
 
 IoT Edge automatisch certificaten op het apparaat genereren in verschillende gevallen, waaronder:
 
-* Als u geen eigen productie certificaten opgeeft wanneer u IoT Edge installeert en inricht, wordt door de IoT Edge Security Manager automatisch een **CA-certificaat**voor een apparaat gegenereerd. Dit zelfondertekende certificaat is alleen bedoeld voor ontwikkelings-en test scenario's, niet voor productie. Dit certificaat verloopt na 90 dagen.
+* Als u geen eigen productie certificaten opgeeft wanneer u IoT Edge installeert en inricht, wordt door de IoT Edge Security Manager automatisch een **CA-certificaat** voor een apparaat gegenereerd. Dit zelfondertekende certificaat is alleen bedoeld voor ontwikkelings-en test scenario's, niet voor productie. Dit certificaat verloopt na 90 dagen.
 * De IoT Edge Security Manager genereert ook een **CA-certificaat** dat is ondertekend door het CA-certificaat van de apparaat
 
 Zie [begrijpen hoe Azure IOT Edge certificaten gebruikt](iot-edge-certs.md)voor meer informatie over de functie van de verschillende certificaten op een IOT edge apparaat.
 
-Voor deze twee automatisch gegenereerde certificaten hebt u de optie om de **auto_generated_ca_lifetime_days** vlag in config. yaml in te stellen om het aantal dagen voor de levens duur van de certificaten te configureren.
+Voor deze twee automatisch gegenereerde certificaten hebt u de optie om de **auto_generated_ca_lifetime_days** vlag in het configuratie bestand in te stellen om het aantal dagen voor de levens duur van de certificaten te configureren.
 
 >[!NOTE]
 >Er is een derde automatisch gegenereerd certificaat dat IoT Edge Security Manager maakt, het **IOT Edge hub-server certificaat**. Dit certificaat heeft altijd een levens duur van 90 dagen, maar wordt automatisch verlengd voordat het verloopt. De waarde van de **auto_generated_ca_lifetime_days** heeft geen invloed op dit certificaat.
 
-Als u het verlopen van het certificaat wilt configureren naar een andere waarde dan de standaard 90 dagen, voegt u het gedeelte dagen aan de sectie **certificaten** van het bestand **config. yaml** toe.
+Na het verlopen van het opgegeven aantal dagen moet IoT Edge opnieuw worden gestart om het CA-certificaat van het apparaat opnieuw te genereren. Het CA-certificaat van het apparaat wordt niet automatisch vernieuwd.
 
-Na het verlopen van het opgegeven aantal dagen moet de IoT Edge Security daemon opnieuw worden gestart om het CA-certificaat van het apparaat opnieuw te genereren, wordt het niet automatisch vernieuwd.
+1. Als u het verlopen van het certificaat wilt configureren naar een andere waarde dan de standaard 90 dagen, voegt u het gedeelte dagen toe aan de sectie **certificaten** van het configuratie bestand.
 
-```yaml
-certificates:
-  device_ca_cert: "<ADD URI TO DEVICE CA CERTIFICATE HERE>"
-  device_ca_pk: "<ADD URI TO DEVICE CA PRIVATE KEY HERE>"
-  trusted_ca_certs: "<ADD URI TO TRUSTED CA CERTIFICATES HERE>"
-  auto_generated_ca_lifetime_days: <value>
-```
+   ```yaml
+   certificates:
+     device_ca_cert: "<ADD URI TO DEVICE CA CERTIFICATE HERE>"
+     device_ca_pk: "<ADD URI TO DEVICE CA PRIVATE KEY HERE>"
+     trusted_ca_certs: "<ADD URI TO TRUSTED CA CERTIFICATES HERE>"
+     auto_generated_ca_lifetime_days: <value>
+   ```
 
-> [!NOTE]
-> Op dit moment wordt een beperking in libiothsm voor komen dat certificaten worden gebruikt die op of na 1 januari 2038 verlopen.
+   > [!NOTE]
+   > Op dit moment wordt een beperking in libiothsm voor komen dat certificaten worden gebruikt die op of na 1 januari 2038 verlopen.
 
-Nadat u de waarde in het bestand config. yaml hebt opgegeven, voert u de volgende stappen uit:
+1. Verwijder de inhoud van de `hsm` map om eerder gegenereerde certificaten te verwijderen.
 
-1. De inhoud van de `hsm` map verwijderen.
-
-   Windows: `C:\ProgramData\iotedge\hsm\certs and C:\ProgramData\iotedge\hsm\cert_keys` Linux: `/var/lib/iotedge/hsm/certs and /var/lib/iotedge/hsm/cert_keys`
+   Windows: `C:\ProgramData\iotedge\hsm\certs` en `C:\ProgramData\iotedge\hsm\cert_keys` Linux: `/var/lib/iotedge/hsm/certs` en `/var/lib/iotedge/hsm/cert_keys`
 
 1. Start de IoT Edge-service opnieuw.
 
@@ -167,6 +206,42 @@ Nadat u de waarde in het bestand config. yaml hebt opgegeven, voert u de volgend
    ```
 
    Controleer de uitvoer van de **gereedheid voor productie: certificaten** controle, waarin het aantal dagen wordt vermeld waarna de automatisch GEGENEREERDe CA-certificaten verlopen.
+
+:::moniker-end
+<!-- end 1.1 -->
+
+<!-- 
+<!-- 1.2 --
+:::moniker range=">=iotedge-2020-11"
+
+1. To configure the certificate expiration to something other than the default 90 days, add the value in days to the **certificates** section of the config file.
+
+   ```toml
+   [certificates]
+   device_ca_cert = "<ADD URI TO DEVICE CA CERTIFICATE HERE>"
+   device_ca_pk = "<ADD URI TO DEVICE CA PRIVATE KEY HERE>"
+   trusted_ca_certs = "<ADD URI TO TRUSTED CA CERTIFICATES HERE>"
+   auto_generated_ca_lifetime_days = <value>
+   ```
+
+1. Delete the contents of the `certd` and `keyd` folders to remove any previously generated certificates: `/var/lib/aziot/certd/certs` `/var/lib/aziot/keyd/keys`
+
+1. Restart IoT Edge.
+
+   ```bash
+   sudo iotedge system restart
+   ```
+
+1. Confirm the new lifetime setting.
+
+   ```bash
+   sudo iotedge check --verbose
+   ```
+
+   Check the output of the **production readiness: certificates** check, which lists the number of days until the automatically generated device CA certificates expire.
+:::moniker-end
+<!-- end 1.2 --
+-->
 
 ## <a name="next-steps"></a>Volgende stappen
 

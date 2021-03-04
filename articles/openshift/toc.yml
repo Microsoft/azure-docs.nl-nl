@@ -28,6 +28,8 @@
           href: dns-forwarding.md
     - name: Storage
       items:
+        - name: Pvc's versleutelen met door de klant beheerde sleutel (preview-versie)
+          href: howto-encrypt-data-disks.md
         - name: Een Azure Files-opslagklasse maken
           href: howto-create-a-storageclass.md
         - name: Het ingebouwde containerregister gebruiken

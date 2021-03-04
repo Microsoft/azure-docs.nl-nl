@@ -1,17 +1,16 @@
 ---
 title: Resource Manager-voorbeeldsjablonen voor gegevensverzamelingsregels
 description: Voorbeelden van Azure Resource Manager-sjablonen voor het maken van koppelingen tussen regels voor gegevensverzameling en virtuele machines in Azure Monitor.
-ms.subservice: logs
 ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 11/17/2020
-ms.openlocfilehash: 60de25231f5fad3e7b1ddec21048d048e31f3416
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 5ceaaa7ed9288299019f3e87d8c214e53013f5ec
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101737321"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102045748"
 ---
 # <a name="resource-manager-template-samples-for-data-collection-rules-in-azure-monitor"></a>Resource Manager-voorbeeldsjablonen voor gegevensverzamelingsregels in Azure Monitor
 Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het implementeren en configureren van de [Log Analytics-agent](./log-analytics-agent.md) en [de diagnostische extensie](./diagnostics-extension-overview.md) voor virtuele machines in Azure Monitor. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.

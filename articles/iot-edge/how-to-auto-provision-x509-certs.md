@@ -5,17 +5,17 @@ author: kgremban
 manager: philmea
 ms.author: kgremban
 ms.reviewer: kevindaw
-ms.date: 04/09/2020
+ms.date: 03/01/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: ee51b31246760e4619eef1e16e800b16ea886de0
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: f4b33b0156f1a5e27f71509cad637684a0332413
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430710"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102046156"
 ---
 # <a name="create-and-provision-an-iot-edge-device-using-x509-certificates"></a>Een IoT Edge apparaat maken en inrichten met X. 509-certificaten
 
@@ -52,10 +52,14 @@ U hebt de volgende bestanden nodig om automatische inrichting in te stellen met 
 * Een volledig keten certificaat dat ten minste de apparaat-id en de tussenliggende certificaten moet bevatten. Het volledige keten certificaat wordt door gegeven aan de IoT Edge runtime.
 * Een tussenliggend of basis-CA-certificaat van de certificaat vertrouwens keten. Dit certificaat wordt geüpload naar DPS als u een groeps registratie maakt.
 
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
 > [!NOTE]
 > Op dit moment wordt een beperking in libiothsm voor komen dat certificaten worden gebruikt die op of na 1 januari 2038 verlopen.
 
-### <a name="use-test-certificates"></a>Test certificaten gebruiken
+:::moniker-end
+
+### <a name="use-test-certificates-optional"></a>Test certificaten gebruiken (optioneel)
 
 Als u geen certificerings instantie beschikbaar hebt om nieuwe identiteits certificaten te maken en dit scenario wilt proberen, bevat de Azure IoT Edge Git-opslag plaats scripts die u kunt gebruiken voor het genereren van test certificaten. Deze certificaten zijn alleen bedoeld voor ontwikkelings tests en mogen niet worden gebruikt in de productie omgeving.
 
@@ -227,18 +231,21 @@ De volgende informatie is gereed:
 
 ### <a name="linux-device"></a>Linux-apparaat
 
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
+
 1. Open het configuratie bestand op het IoT Edge-apparaat.
 
    ```bash
    sudo nano /etc/iotedge/config.yaml
    ```
 
-1. Zoek de sectie inrichtings configuraties van het bestand. Verwijder de opmerkingen van de regels voor de inrichting van de symmetrische DPS-sleutel en zorg ervoor dat alle andere inrichtings regels worden afgemeld.
+1. Zoek de sectie inrichtings configuraties van het bestand. Verwijder de opmerkingen bij de regels voor DPS X. 509 Certificate Provisioning en zorg ervoor dat andere inrichtings regels worden uitgeoefend.
 
    De `provisioning:` regel mag geen voor gaande witruimte hebben en geneste items moeten worden inge sprongen met twee spaties.
 
    ```yml
-   # DPS TPM provisioning configuration
+   # DPS X.509 provisioning configuration
    provisioning:
      source: "dps"
      global_endpoint: "https://global.azure-devices-provisioning.net"
@@ -252,8 +259,6 @@ De volgende informatie is gereed:
    #  dynamic_reprovisioning: false
    ```
 
-   Gebruik eventueel de `always_reprovision_on_startup` `dynamic_reprovisioning` regels of om het herinrichtings gedrag van uw apparaat te configureren. Als een apparaat is ingesteld op het opnieuw inrichten bij het opstarten, wordt altijd geprobeerd eerst met DPS in te richten en vervolgens terug te vallen naar de inrichtings back-up als dat mislukt. Als een apparaat is ingesteld op dynamisch opnieuw inrichten, wordt IoT Edge opnieuw opgestart en wordt het opnieuw ingericht als er een herinrichtings gebeurtenis wordt gedetecteerd. Zie IoT Hub voor het opnieuw [inrichten van apparaten](../iot-dps/concepts-device-reprovision.md)voor meer informatie.
-
 1. De waarden van `scope_id` , `identity_cert` en `identity_pk` met uw DPS en apparaatgegevens bijwerken.
 
    Wanneer u het X. 509-certificaat en de sleutel gegevens toevoegt aan het bestand config. yaml, moeten de paden worden verstrekt als bestands-Uri's. Bijvoorbeeld:
@@ -261,13 +266,74 @@ De volgende informatie is gereed:
    `file:///<path>/identity_certificate_chain.pem`
    `file:///<path>/identity_key.pem`
 
-1. Geef een `registration_id` voor het apparaat op als u wilt, of verlaat deze regel om het apparaat te registreren met de CN-naam van het identiteits certificaat.
+1. Geef eventueel een `registration_id` voor het apparaat op. Als dat niet het geval is, geeft u deze regel om het apparaat te registreren bij de CN-naam van het identiteits certificaat.
+
+1. Gebruik eventueel de `always_reprovision_on_startup` `dynamic_reprovisioning` regels of om het herinrichtings gedrag van uw apparaat te configureren. Als een apparaat is ingesteld op het opnieuw inrichten bij het opstarten, wordt altijd geprobeerd eerst met DPS in te richten en vervolgens terug te vallen naar de inrichtings back-up als dat mislukt. Als een apparaat is ingesteld op dynamisch opnieuw inrichten, wordt IoT Edge opnieuw opgestart en wordt het opnieuw ingericht als er een herinrichtings gebeurtenis wordt gedetecteerd. Zie IoT Hub voor het opnieuw [inrichten van apparaten](../iot-dps/concepts-device-reprovision.md)voor meer informatie.
+
+1. Sla het bestand config. yaml op en sluit het af.
 
 1. Start de IoT Edge-runtime opnieuw zodat alle configuratie wijzigingen die u op het apparaat hebt aangebracht, worden opgehaald.
 
    ```bash
    sudo systemctl restart iotedge
    ```
+
+:::moniker-end
+<!-- end 1.1. -->
+
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+
+1. Maak een configuratie bestand voor uw apparaat op basis van een sjabloon bestand dat wordt meegeleverd als onderdeel van de IoT Edge installatie.
+
+   ```bash
+   sudo cp /etc/aziot/config.toml.edge.template /etc/aziot/config.toml
+   ```
+
+1. Open het configuratie bestand op het IoT Edge-apparaat.
+
+   ```bash
+   sudo nano /etc/aziot/config.toml
+   ```
+
+1. De **inrichtings** sectie van het bestand zoeken. Verwijder de opmerkingen bij de regels voor DPS inrichten met het 509-certificaat en zorg ervoor dat er andere inrichtings regels zijn.
+
+   ```toml
+   # DPS provisioning with X.509 certificate
+   [provisioning]
+   source = "dps"
+   global_endpoint = "https://global.azure-devices-provisioning.net"
+   id_scope = "<SCOPE_ID>"
+   
+   [provisioning.attestation]
+   method = "x509"
+   # registration_id = "<OPTIONAL REGISTRATION ID. LEAVE COMMENTED OUT TO REGISTER WITH CN OF identity_cert>"
+
+   identity_cert = "<REQUIRED URI TO DEVICE IDENTITY CERTIFICATE>"
+
+   identity_pk = "<REQUIRED URI TO DEVICE IDENTITY PRIVATE KEY>"
+   ```
+
+1. De waarden van `id_scope` , `identity_cert` en `identity_pk` met uw DPS en apparaatgegevens bijwerken.
+
+   De waarde van het identiteits certificaat kan worden opgegeven als een bestands-URI of kan dynamisch worden uitgegeven via EST of een lokale certificerings instantie. Maak een opmerking van slechts één regel, op basis van de indeling die u wilt gebruiken.
+
+   De waarde van de persoonlijke identiteits sleutel kan worden verschaft als een bestands-URI of een PKCS # 11-URI. Maak een opmerking van slechts één regel, op basis van de indeling die u wilt gebruiken.
+
+   Als u een PKCS # 11-Uri's gebruikt, zoekt u de sectie **PKCS # 11** in het configuratie bestand en geeft u informatie op over de PKCS # 11-configuratie.
+
+1. Geef eventueel een `registration_id` voor het apparaat op. Als dat niet het geval is, moet u deze regel laten weten dat u het apparaat met de algemene naam van het identiteits certificaat wilt registreren.
+
+1. Sla het bestand op en sluit het.
+
+1. De configuratie wijzigingen Toep assen die u hebt aangebracht in IoT Edge.
+
+   ```bash
+   sudo iotedge config apply
+   ```
+
+:::moniker-end
+<!-- end 1.2 -->
 
 ### <a name="windows-device"></a>Windows-apparaat
 
@@ -287,7 +353,7 @@ De volgende informatie is gereed:
    ```
 
    >[!TIP]
-   >In het bestand config. yaml worden uw certificaat en sleutel gegevens opgeslagen als bestands-Uri's. De Initialize-IoTEdge-opdracht verwerkt echter deze opmaak stap voor u, zodat u het absolute pad naar het certificaat en de sleutel bestanden op uw apparaat kunt opgeven.
+   >In het configuratie bestand worden uw certificaat en sleutel gegevens opgeslagen als bestands-Uri's. De Initialize-IoTEdge-opdracht verwerkt echter deze opmaak stap voor u, zodat u het absolute pad naar het certificaat en de sleutel bestanden op uw apparaat kunt opgeven.
 
 ## <a name="verify-successful-installation"></a>Geslaagde installatie controleren
 
@@ -298,6 +364,9 @@ U kunt controleren of de afzonderlijke registratie die u hebt gemaakt in Device 
 Gebruik de volgende opdrachten op het apparaat om te controleren of de runtime is geïnstalleerd en is gestart.
 
 ### <a name="linux-device"></a>Linux-apparaat
+
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
 
 Controleer de status van de IoT Edge-service.
 
@@ -316,6 +385,29 @@ Een lijst met actieve modules weer geven.
 ```cmd/sh
 iotedge list
 ```
+:::moniker-end
+
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+
+Controleer de status van de IoT Edge-service.
+
+```cmd/sh
+sudo iotedge system status
+```
+
+Bekijk service Logboeken.
+
+```cmd/sh
+sudo iotedge system logs
+```
+
+Een lijst met actieve modules weer geven.
+
+```cmd/sh
+sudo iotedge list
+```
+:::moniker-end
 
 ### <a name="windows-device"></a>Windows-apparaat
 

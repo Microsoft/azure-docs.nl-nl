@@ -9,12 +9,12 @@ ms.subservice: extensions
 ms.date: 02/12/2021
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 1a276915f8132f2941bfb4425011c2d34454093b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 3350ff7aa05232173e5fd3b21451a76a0a40683d
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101693880"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102043708"
 ---
 # <a name="preview-orchestration-modes-for-virtual-machine-scale-sets-in-azure"></a>Voor beeld: Orchestration-modi voor virtuele-machine schaal sets in azure 
 
@@ -73,7 +73,7 @@ De aanbevolen methode is om Azure resource Graph te gebruiken voor het opvragen 
 | order by resourceGroup desc, name desc 
 ```
 
-Het opvragen van resources met [Azure resource Graph](../governance/resource-graph/overview) is een handige en efficiënte manier om een query uit te voeren op Azure-resources en API-aanroepen naar de resource provider te minimaliseren. Azure resource Graph is een uiteindelijk consistente cache waar nieuwe of bijgewerkte bronnen niet meer dan 60 seconden worden weer gegeven. U kunt:
+Het opvragen van resources met [Azure resource Graph](../governance/resource-graph/overview.md) is een handige en efficiënte manier om een query uit te voeren op Azure-resources en API-aanroepen naar de resource provider te minimaliseren. Azure resource Graph is een uiteindelijk consistente cache waar nieuwe of bijgewerkte bronnen niet meer dan 60 seconden worden weer gegeven. U kunt:
 - Een lijst met virtuele machines in een resource groep of een abonnement.
 - Gebruik de Uitvouw optie om de weer gave van het exemplaar (fout domein toewijzing, energie-en inrichtings status) op te halen voor alle virtuele machines in uw abonnement.
 - Gebruik de API en opdrachten voor het ophalen van de model-en instantie weergave voor één exemplaar.

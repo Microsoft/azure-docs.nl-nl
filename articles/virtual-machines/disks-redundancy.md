@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 6cafbff86a55ad0bed7da17fcef1aea2b0a53d1b
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: f0f3baf1bf56f958408f789961812c0555f289f1
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101679710"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102043640"
 ---
 # <a name="redundancy-options-for-managed-disks"></a>Redundantie opties voor beheerde schijven
 
@@ -34,7 +34,7 @@ Als uw werk stroom geen synchrone schrijf bewerkingen op toepassings niveau onde
 
 Zone-redundante opslag (ZRS) repliceert uw Azure Managed Disk synchroon over drie Azure-beschikbaarheids zones in de geselecteerde regio. Elke beschikbaarheidszone is een afzonderlijke fysieke locatie met onafhankelijke voeding, koeling en netwerken. 
 
-Met ZRS-schijven kunt u fouten in beschikbaarheids zones herstellen. Als een hele zone is uitgeschakeld, kan een ZRS-schijf worden gekoppeld aan een virtuele machine in een andere zone. U kunt ook ZRS schijven in combi natie met gedeelde schijven gebruiken om de beschik baarheid te verbeteren voor geclusterde of gedistribueerde toepassingen zoals SQL FCI, SAP ASCS/SCS of GFS2. U kunt een gedeelde ZRS-schijf koppelen aan primaire en secundaire Vm's in verschillende zones om gebruik te maken van zowel ZRS als [Beschikbaarheidszones](../availability-zones/az-overview.md). Als uw primaire zone mislukt, kunt u snel een failover uitvoeren naar de secundaire virtuele machine met behulp van [permanente SCSI-reserve ring](disks-shared-enable.md#supported-scsi-pr-commands).
+Met ZRS-schijven kunt u fouten in beschikbaarheids zones herstellen. Als een hele zone is uitgeschakeld, kan een ZRS-schijf worden gekoppeld aan een virtuele machine in een andere zone. U kunt ZRS-schijven ook gebruiken als een gedeelde schijf om de beschik baarheid te verbeteren voor geclusterde of gedistribueerde toepassingen zoals SQL FCI, SAP ASCS/SCS of GFS2. U kunt een gedeelde ZRS-schijf koppelen aan primaire en secundaire Vm's in verschillende zones om gebruik te maken van zowel ZRS als [Beschikbaarheidszones](../availability-zones/az-overview.md). Als uw primaire zone mislukt, kunt u snel een failover uitvoeren naar de secundaire virtuele machine met behulp van [permanente SCSI-reserve ring](disks-shared-enable.md#supported-scsi-pr-commands).
 
 ### <a name="limitations"></a>Beperkingen
 
@@ -56,7 +56,7 @@ Behalve voor meer schrijf latentie, zijn schijven met ZRS identiek aan schijven 
 
 ### <a name="create-zrs-managed-disks"></a>ZRS Managed disks maken
 
-U moet de `2020-12-01` API met uw Azure Resource Manager-sjabloon gebruiken om een ZRS-schijf te maken.
+Gebruik de `2020-12-01` API met uw Azure Resource Manager-sjabloon om een ZRS-schijf te maken.
 
 #### <a name="create-a-vm-with-zrs-disks"></a>Een virtuele machine maken met ZRS-schijven
 
@@ -120,3 +120,7 @@ New-AzResourceGroupDeployment -ResourceGroupName zrstesting `
 -osDiskType "StandardSSD_LRS" `
 -dataDiskType "Premium_ZRS" `
 ```
+
+## <a name="next-steps"></a>Volgende stappen
+
+- Gebruik deze voorbeeld [Azure Resource Manager sjablonen voor het maken van een virtuele machine met ZRS-schijven](https://github.com/Azure-Samples/managed-disks-powershell-getting-started/tree/master/ZRSDisks).

@@ -13,14 +13,14 @@ ms.service: virtual-machines-sap
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 08/12/2020
+ms.date: 02/18/2021
 ms.author: radeltch
-ms.openlocfilehash: e8d58a74f9ce8489465934398014dd4af3309a9e
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: a4c4631a0a1263e5a5398c44a8570f92571102e8
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101669828"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102045833"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-windows-with-azure-netapp-filessmb-for-sap-applications"></a>Hoge Beschik baarheid voor SAP NetWeaver op Azure Vm's in Windows met Azure NetApp Files (SMB) voor SAP-toepassingen
 
@@ -82,6 +82,9 @@ Lees eerst de volgende SAP-opmerkingen en-documenten:
 * [Installatie van een (A) SCS-exemplaar op een failovercluster](https://www.sap.com/documents/2017/07/f453332f-c97c-0010-82c7-eda71af511fa.html)
 * [Een SMB-volume maken voor Azure NetApp Files](../../../azure-netapp-files/create-active-directory-connections.md#requirements-for-active-directory-connections)
 * [NetApp SAP-toepassingen op Microsoft Azure met behulp van Azure NetApp Files][anf-sap-applications-azure]
+
+> [!IMPORTANT]
+> Let op: Houd er rekening mee dat de installatie van een SAP-systeem met SWPM op de SMB-share, die wordt gehost op [Azure NetApp files][anf-azure-doc] SMB-volume, kan mislukken met de installatie fout voor onvoldoende machtigingen als ' warningPerm is niet gedefinieerd '. Om de fout te voor komen, heeft de gebruiker onder welke context SWPM wordt uitgevoerd, een verhoogde bevoegdheid ' domein beheerder ' nodig tijdens de installatie van het SAP-systeem.  
 
 ## <a name="overview"></a>Overzicht
 

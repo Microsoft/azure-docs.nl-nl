@@ -4,12 +4,12 @@ description: Afhankelijkheids aanroepen bewaken vanaf uw on-premises of Microsof
 ms.topic: conceptual
 ms.date: 08/26/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 05b6c29b121cbf42cf0ebe12b2879e50735db7ea
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 124b8d3de59d1645379d50360e69a5fdbd5587e5
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652000"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102045289"
 ---
 # <a name="dependency-tracking-in-azure-application-insights"></a>Afhankelijkheden bijhouden in Azure-toepassing Insights 
 
@@ -88,6 +88,9 @@ Als u de standaard tracerings module voor afhankelijkheden wilt uitschakelen, ve
 Voor webpagina's worden Application Insights java script SDK automatisch AJAX-aanroepen verzameld als afhankelijkheden.
 
 ## <a name="advanced-sql-tracking-to-get-full-sql-query"></a>Geavanceerde SQL-tracking voor het verkrijgen van een volledige SQL-query
+
+> [!NOTE]
+> Als Azure Functions afzonderlijke instellingen nodig hebt om SQL-tekst verzameling in te scha kelen, raadpleegt u [controle voor Azure functions configureren](../../azure-functions/configure-monitoring.md) voor meer informatie.
 
 Voor SQL-aanroepen wordt de naam van de server en data base altijd verzameld en opgeslagen als de naam van de verzamelde `DependencyTelemetry` . Er is een extra veld met de naam ' gegevens ', dat de volledige SQL-query tekst kan bevatten.
 

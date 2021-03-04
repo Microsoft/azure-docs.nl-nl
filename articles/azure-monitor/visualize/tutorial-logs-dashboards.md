@@ -1,18 +1,17 @@
 ---
 title: Dashboards van Azure Log Analytics-gegevens maken en delen | Microsoft Docs
 description: In deze zelfstudie leert u hoe u met Log Analytics-dashboards al uw opgeslagen logboekquery's kunt visualiseren, zodat u door één lens naar uw omgeving kunt kijken.
-ms.subservice: logs
 ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 05/28/2020
 ms.custom: mvc
-ms.openlocfilehash: e268ae3a48117d7b1cf6ad00b22cbe3e4d37b5f4
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 84c710e44fbbccdefd5bf811477e1fa4c3989114
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100627188"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102043453"
 ---
 # <a name="create-and-share-dashboards-of-log-analytics-data"></a>Dashboards van Log Analytics-gegevens maken en delen
 

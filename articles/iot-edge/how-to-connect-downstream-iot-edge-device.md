@@ -4,7 +4,7 @@ description: Een IoT Edge apparaat configureren om verbinding te maken met Azure
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 11/10/2020
+ms.date: 03/01/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
@@ -12,12 +12,12 @@ ms.custom:
 - amqp
 - mqtt
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: 1258fd4b5c69b399b70d1f2db1be63765771e631
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 709b986cc06aada45a0f541142b89fc3537f8ba8
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98629400"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102046088"
 ---
 # <a name="connect-a-downstream-iot-edge-device-to-an-azure-iot-edge-gateway-preview"></a>Een downstream-IoT Edge apparaat verbinden met een Azure IoT Edge gateway (preview-versie)
 
@@ -25,6 +25,8 @@ Dit artikel bevat instructies voor het tot stand brengen van een vertrouwde verb
 
 >[!NOTE]
 >Voor deze functie is IoT Edge versie 1.2, in openbare preview, met Linux-containers vereist.
+>
+>Dit artikel heeft betrekking op de nieuwste preview-versie van IoT Edge versie 1,2. Zorg ervoor dat versie [1.2.0-RC4](https://github.com/Azure/azure-iotedge/releases/tag/1.2.0-rc4) of hoger op uw apparaat wordt uitgevoerd. Zie voor stappen voor het verkrijgen van de nieuwste preview-versie op uw apparaat [installeren Azure IOT Edge voor Linux (versie 1,2)](how-to-install-iot-edge.md) of [Update IoT Edge naar versie 1,2](how-to-update-iot-edge.md#special-case-update-from-10-or-11-to-12).
 
 In een gateway scenario kan een IoT Edge apparaat zowel een gateway als een downstream-apparaat zijn. Meerdere IoT Edge gateways kunnen worden gelaagd om een hiërarchie van apparaten te maken. De downstream-(of onderliggende) apparaten kunnen berichten verifiëren en verzenden of ontvangen via hun gateway-(of bovenliggende) apparaat.
 
@@ -103,9 +105,6 @@ Maak de volgende certificaten:
 * Alle **tussenliggende certificaten** die u wilt toevoegen aan de basis certificaat keten.
 * Een **CA-certificaat** van het apparaat en de bijbehorende **persoonlijke sleutel**, gegenereerd door de basis-en tussenliggende certificaten. U hebt één uniek CA-certificaat voor apparaten nodig voor elk IoT Edge apparaat in de gateway-hiërarchie.
 
->[!NOTE]
->Op dit moment wordt een beperking in libiothsm voor komen dat certificaten worden gebruikt die op of na 1 januari 2038 verlopen.
-
 U kunt een zelfondertekende certificerings instantie gebruiken of een certificaat aanschaffen bij een vertrouwde commerciële certificerings instantie, zoals Baltimore, VeriSign, Digicert of GlobalSign.
 
 Als u geen eigen certificaten hebt om te gebruiken, kunt u [demo certificaten maken om IOT Edge apparaatfuncties te testen](how-to-create-test-certificates.md). Volg de stappen in dat artikel om één set basis-en tussen certificaten te maken en vervolgens IoT Edge voor elk apparaat een CA-certificaat voor apparaten te maken.
@@ -124,7 +123,7 @@ De stappen in deze sectie verwijzen naar het **basis-CA-certificaat** en de **ce
 
 Gebruik de volgende stappen om IoT Edge op het apparaat te configureren.
 
-Zorg er in Linux voor dat de gebruiker **iotedge** Lees machtigingen heeft voor de directory met de certificaten en sleutels.
+Zorg ervoor dat de gebruiker **iotedge** Lees machtigingen heeft voor de directory met de certificaten en sleutels.
 
 1. Installeer het **basis-CA-certificaat** op dit IOT edge apparaat.
 
@@ -140,19 +139,16 @@ Zorg er in Linux voor dat de gebruiker **iotedge** Lees machtigingen heeft voor 
 
    Met deze opdracht moet worden uitgevoerd dat er één certificaat is toegevoegd aan/etc/ssl/certs.
 
-1. Open het configuratie bestand van de IoT Edge beveiligings-daemon.
+1. Open het IoT Edge-configuratiebestand.
 
    ```bash
-   sudo nano /etc/iotedge/config.yaml
+   sudo nano /etc/aziot/config.toml
    ```
 
-1. Zoek de sectie **certificaten** in het bestand config. yaml. Werk de drie certificaat velden bij zodat deze naar uw certificaten verwijzen. Geef de bestands-URI-paden op, die de indeling `file:///<path>/<filename>` hebben.
+   >[!TIP]
+   >Als het configuratie bestand nog niet op uw apparaat aanwezig is, gebruikt `/etc/aziot/config.toml.edge.template` u als sjabloon om er een te maken.
 
-   * **device_ca_cert**: het pad naar de BESTANDS-URI naar het CA-certificaat van het apparaat dat uniek is voor dit apparaat.
-   * **device_ca_pk**: het pad naar de BESTANDS-URI naar de persoonlijke sleutel van de apparaat-CA die uniek is voor dit apparaat.
-   * **trusted_ca_certs**: het pad naar de BESTANDS-URI naar het basis-CA-certificaat dat wordt gedeeld door alle apparaten in de gateway hiërarchie.
-
-1. Zoek de para meter **hostname** in het bestand config. yaml. Werk de hostnaam bij naar de Fully Qualified Domain Name (FQDN) of het IP-adres van het IoT Edge apparaat.
+1. Zoek de sectie **hostname** in het configuratie bestand. Verwijder de opmerking over de regel die de `hostname` para meter bevat en werk de waarde bij om de Fully Qualified Domain Name (FQDN) of het IP-adres van het IOT edge apparaat.
 
    De waarde van deze para meter is wat downstream-apparaten gebruiken om verbinding te maken met deze gateway. De hostnaam krijgt standaard de computer naam, maar de FQDN of het IP-adres is vereist om downstream-apparaten te verbinden.
 
@@ -160,33 +156,38 @@ Zorg er in Linux voor dat de gebruiker **iotedge** Lees machtigingen heeft voor 
 
    Consistent zijn met het hostname-patroon in een gateway-hiërarchie. Gebruik FQDN-of IP-adressen, maar niet beide.
 
-1. **Als dit apparaat een onderliggend apparaat is**, zoekt u de para meter **parent_hostname** . Werk het **parent_hostname** veld bij naar de FQDN of het IP-adres van het bovenliggende apparaat, dat overeenkomt met wat er is gegeven als de hostnaam in het bestand config. yaml van de bovenliggende map.
+1. *Als dit apparaat een onderliggend apparaat is*, gaat u naar de sectie **bovenliggende hostnaam** . Verwijder de opmerking en werk de `parent_hostname` para meter bij naar de FQDN of het IP-adres van het bovenliggende apparaat, die overeenkomt met wat er is gegeven als de hostnaam in het configuratie bestand van het bovenliggende apparaat.
+
+1. Zoek het gedeelte **Trust bundel CERT** . Verwijder de opmerking en werk de `trust_bundle_cert` para meter bij met de bestands-URI naar het basis-CA-certificaat op uw apparaat.
 
 1. Hoewel deze functie in de open bare preview is, moet u uw IoT Edge-apparaat configureren om de open bare preview-versie van de IoT Edge agent te gebruiken wanneer deze wordt gestart.
 
-   Zoek de sectie **agent** yaml en werk de afbeeldings waarde bij naar de open bare voorbeeld installatie kopie:
+   Zoek de sectie **standaard rand agent** en werk de afbeeldings waarde bij naar de open bare voorbeeld installatie kopie:
 
-   ```yml
-   agent:
-     name: "edgeAgent"
-     type: "docker"
-     env: {}
-     config:
-       image: "mcr.microsoft.com/azureiotedge-agent:1.2.0-rc2"
-       auth: {}
+   ```toml
+   [agent.config]
+   image: "mcr.microsoft.com/azureiotedge-agent:1.2.0-rc4"
    ```
 
-1. Sla `Ctrl+O` `Ctrl+X` het bestand config. yaml op en sluit het.
+1. Zoek het gedeelte **CA-certificaat** voor de rand in het configuratie bestand. Verwijder de opmerkingen in de regels in deze sectie en geef de bestands-URI-paden op voor het certificaat en de sleutel bestanden op het IoT Edge-apparaat.
+
+   ```toml
+   [edge_ca]
+   cert = "file:///<path>/<device CA cert>"
+   pk = "file:///<path>/<device CA key>"
+   ```
+
+1. Sla `Ctrl+O` het configuratie bestand op () en sluit ( `Ctrl+X` ).
 
 1. Als u eerder andere certificaten voor IoT Edge hebt gebruikt, verwijdert u de bestanden in de volgende twee mappen om er zeker van te zijn dat uw nieuwe certificaten worden toegepast:
 
-   * `/var/lib/iotedge/hsm/certs`
-   * `/var/lib/iotedge/hsm/cert_keys`
+   * `/var/lib/aziot/certd/certs`
+   * `/var/lib/aziot/keyd/keys`
 
-1. Start de IoT Edge-service opnieuw om uw wijzigingen toe te passen.
+1. Pas de wijzigingen toe.
 
    ```bash
-   sudo systemctl restart iotedge
+   sudo iotedge config apply
    ```
 
 1. Controleer of er fouten zijn opgetreden in de configuratie.
@@ -202,7 +203,7 @@ Zorg er in Linux voor dat de gebruiker **iotedge** Lees machtigingen heeft voor 
 
 Hoewel deze functie in de open bare preview is, moet u uw IoT Edge-apparaat configureren voor het gebruik van de open bare Preview-versies van de IoT Edge runtime-modules. De vorige sectie bevat stappen voor het configureren van edgeAgent bij het opstarten. U moet ook de runtime modules configureren in implementaties voor uw apparaat.
 
-1. De edgeHub-module configureren voor het gebruik van de open bare voorbeeld installatie kopie: `mcr.microsoft.com/azureiotedge-hub:1.2.0-rc2` .
+1. De edgeHub-module configureren voor het gebruik van de open bare voorbeeld installatie kopie: `mcr.microsoft.com/azureiotedge-hub:1.2.0-rc4` .
 
 1. Configureer de volgende omgevings variabelen voor de module edgeHub:
 
@@ -211,7 +212,7 @@ Hoewel deze functie in de open bare preview is, moet u uw IoT Edge-apparaat conf
    | `experimentalFeatures__enabled` | `true` |
    | `experimentalFeatures__nestedEdgeEnabled` | `true` |
 
-1. De edgeAgent-module configureren voor het gebruik van de open bare voorbeeld installatie kopie: `mcr.microsoft.com/azureiotedge-hub:1.2.0-rc2` .
+1. De edgeAgent-module configureren voor het gebruik van de open bare voorbeeld installatie kopie: `mcr.microsoft.com/azureiotedge-hub:1.2.0-rc4` .
 
 ## <a name="network-isolate-downstream-devices"></a>Downstream-apparaten netwerk isoleren
 
@@ -356,21 +357,20 @@ Als u niet wilt dat een module pull-aanvragen maakt via een gateway hiërarchie,
 
 De IoT Edge-agent is het eerste runtime onderdeel dat op een IoT Edge apparaat kan worden gestart. U moet ervoor zorgen dat downstream IoT Edge-apparaten toegang kunnen krijgen tot de installatie kopie van de edgeAgent-module wanneer ze worden opgestart, en ze kunnen vervolgens toegang krijgen tot implementaties en de rest van de module installatie kopieën starten.
 
-Wanneer u naar het bestand config. yaml gaat op een IoT Edge apparaat om de verificatie gegevens, certificaten en bovenliggende hostnamen op te geven, moet u ook de edgeAgent-container installatie kopie bijwerken.
+Wanneer u op een IoT Edge apparaat naar het configuratie bestand gaat om de verificatie gegevens, certificaten en bovenliggende hostnamen op te geven, moet u ook de edgeAgent-container installatie kopie bijwerken.
 
 Als het gateway apparaat op het hoogste niveau is geconfigureerd voor het afhandelen van container installatie kopie aanvragen, vervangt u door `mcr.microsoft.com` de bovenliggende hostnaam en de API proxy Luister poort. In het implementatie manifest kunt u `$upstream` als een snelkoppeling gebruiken, maar hiervoor moet de module edgeHub de route ring afhandelen en die module op dit moment nog niet is gestart. Bijvoorbeeld:
 
-```yml
-agent:
-  name: "edgeAgent"
-  type: "docker"
-  env: {}
-  config:
-    image: "{Parent FQDN or IP}:443/azureiotedge-agent:1.2.0-rc2"
-    auth: {}
+```toml
+[agent]
+name = "edgeAgent"
+type = "docker"
+
+[agent.config]
+image: "{Parent FQDN or IP}:443/azureiotedge-agent:1.2.0-rc4"
 ```
 
-Als u een lokaal container register gebruikt of de container installatie kopieën hand matig op het apparaat opgeeft, werkt u het bestand config. yaml dienovereenkomstig bij.
+Als u een lokaal container register gebruikt of de container installatie kopieën hand matig op het apparaat opgeeft, moet u het configuratie bestand dienovereenkomstig bijwerken.
 
 #### <a name="configure-runtime-and-deploy-proxy-module"></a>Runtime configureren en proxy module implementeren
 

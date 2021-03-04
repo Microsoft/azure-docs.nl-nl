@@ -1,17 +1,16 @@
 ---
 title: Provance verbinden met IT Service Management-connector
 description: In dit artikel vindt u informatie over het Provance van de IT Service Management-connector (ITSMC) in Azure Monitor om de ITSM-werk items centraal te controleren en te beheren.
-ms.subservice: logs
 ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 12/21/2020
-ms.openlocfilehash: 38aff6bf0851e97558fb8870a08f33bb0bcb0392
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 542b127823a73058f319e6a39c001bd563f042ae
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611112"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102045374"
 ---
 # <a name="connect-provance-with-it-service-management-connector"></a>Provance verbinden met IT Service Management-connector
 

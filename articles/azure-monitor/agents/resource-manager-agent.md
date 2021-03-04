@@ -1,17 +1,16 @@
 ---
 title: Resource Manager-voorbeeldsjablonen voor agents
 description: Azure Resource Manager-voorbeeldsjablonen voor het implementeren en configureren virtuele machine agents in Azure Monitor.
-ms.subservice: logs
 ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 11/17/2020
-ms.openlocfilehash: 4d4f9b7caed81f8c01e7e2d7e9f94ec3acf3ba92
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 9aae62b9f4ca74b11c4f62c44f6d310628d36316
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101737338"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102045765"
 ---
 # <a name="resource-manager-template-samples-for-agents-in-azure-monitor"></a>Resource Manager-voorbeeldsjablonen voor agents in Azure Monitor
 Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het implementeren en configureren van de [Log Analytics-agent](./log-analytics-agent.md) en [de diagnostische extensie](./diagnostics-extension-overview.md) voor virtuele machines in Azure Monitor. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 3e68be79a4405af103512a9009187857a0d9af39
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 62002b776262e97dd34db1d9ecd3b7b0e09f46f3
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97681584"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102044222"
 ---
 # <a name="add-a-line-layer-to-the-map-android-sdk"></a>Een laagmap toevoegen aan de kaart (Android SDK)
 
@@ -110,20 +110,21 @@ De volgende scherm afbeelding toont de bovenstaande code om twee regels in een l
 
 ![Kaart met gegevens stations met stijl lijnen die worden weer gegeven in een lijn-laag](media/android-map-add-line-layer/android-line-layer-data-drive-style.png)
 
-## <a name="add-symbols-along-a-line"></a>Symbolen toevoegen langs een regel
+## <a name="add-a-stroke-gradient-to-a-line"></a>Een lijn kleur overgang toevoegen aan een lijn
 
-In dit voor beeld ziet u hoe u pijl pictogrammen kunt toevoegen langs een regel op de kaart. Wanneer u een symbool-laag gebruikt, stelt `symbolPlacement` u de optie in op `SymbolPlacement.LINE` . Met deze optie worden de symbolen op de regel weer gegeven en de pictogrammen geroteerd (0 graden = rechts).
+U kunt één lijn kleur op een regel Toep assen. U kunt ook een lijn vullen met een kleur overgang om de overgang van het ene lijn segment naar het volgende lijn segment weer te geven. Lijn kleur overgangen kunnen bijvoorbeeld worden gebruikt om wijzigingen in de loop van de tijd en afstand te vertegenwoordigen, of verschillende Tempe raturen over een verbonden object regel. Als u deze functie op een regel wilt Toep assen, moet de optie zijn ingesteld op de gegevens bron `lineMetrics` `true` en vervolgens een expressie voor kleur verloop kunnen worden door gegeven aan de `strokeColor` optie van de regel. De expressie voor de kleur overgang van de lijn moet verwijzen naar de `lineProgress` gegevens expressie die de berekende regel metrieken voor de expressie beschrijft.
 
 ```java
 //Create a data source and add it to the map.
-DataSource source = new DataSource();
+source = new DataSource(
+    //Enable line metrics on the data source. This is needed to enable support for strokeGradient.
+    withLineMetrics(true)
+);
 map.sources.add(source);
 
-//Load a image of an arrow into the map image sprite and call it "arrow-icon".
-map.images.add("arrow-icon", R.drawable.purple-arrow-right);
-
-//Create and add a line to the data source.
-source.add(LineString.fromLngLats(Arrays.asList(
+//Create a line and add it to the data source.
+source.add(LineString.fromLngLats(
+    Arrays.asList(
         Point.fromLngLat(-122.18822, 47.63208),
         Point.fromLngLat(-122.18204, 47.63196),
         Point.fromLngLat(-122.17243, 47.62976),
@@ -139,7 +140,65 @@ source.add(LineString.fromLngLats(Arrays.asList(
         Point.fromLngLat(-122.11595, 47.66712),
         Point.fromLngLat(-122.11063, 47.66735),
         Point.fromLngLat(-122.10668, 47.67035),
-        Point.fromLngLat(-122.10565, 47.67498))));
+        Point.fromLngLat(-122.10565, 47.67498)
+    )
+));
+
+//Create a line layer and pass in a gradient expression for the strokeGradient property.
+map.layers.add(new LineLayer(source,
+    strokeWidth(6f),
+
+    //Pass an interpolate or step expression that represents a gradient.
+    strokeGradient(
+        interpolate(
+            linear(),
+            lineProgress(),
+            stop(0, color(Color.BLUE)),
+            stop(0.1, color(Color.argb(255, 65, 105, 225))), //Royal Blue
+            stop(0.3, color(Color.CYAN)),
+            stop(0.5, color(Color.argb(255,0, 255, 0))), //Lime
+            stop(0.7, color(Color.YELLOW)),
+            stop(1, color(Color.RED))
+        )
+    )
+));
+```
+
+In de volgende scherm afbeelding ziet u de bovenstaande code waarmee een regel wordt weer gegeven met behulp van een kleur overgang.
+
+![Toewijzen met een regel die wordt weer gegeven als een verloop traject in een line-laag](media/android-map-add-line-layer/android-line-layer-gradient.jpg)
+
+## <a name="add-symbols-along-a-line"></a>Symbolen toevoegen langs een regel
+
+In dit voor beeld ziet u hoe u pijl pictogrammen kunt toevoegen langs een regel op de kaart. Wanneer u een symbool-laag gebruikt, stelt `symbolPlacement` u de optie in op `SymbolPlacement.LINE` . Met deze optie worden de symbolen op de regel weer gegeven en de pictogrammen geroteerd (0 graden = rechts).
+
+```java
+//Create a data source and add it to the map.
+DataSource source = new DataSource();
+map.sources.add(source);
+
+//Load a image of an arrow into the map image sprite and call it "arrow-icon".
+map.images.add("arrow-icon", R.drawable.purple-arrow-right);
+
+//Create and add a line to the data source.
+source.add(LineString.fromLngLats(Arrays.asList(
+    Point.fromLngLat(-122.18822, 47.63208),
+    Point.fromLngLat(-122.18204, 47.63196),
+    Point.fromLngLat(-122.17243, 47.62976),
+    Point.fromLngLat(-122.16419, 47.63023),
+    Point.fromLngLat(-122.15852, 47.62942),
+    Point.fromLngLat(-122.15183, 47.62988),
+    Point.fromLngLat(-122.14256, 47.63451),
+    Point.fromLngLat(-122.13483, 47.64041),
+    Point.fromLngLat(-122.13466, 47.64422),
+    Point.fromLngLat(-122.13844, 47.65440),
+    Point.fromLngLat(-122.13277, 47.66515),
+    Point.fromLngLat(-122.12779, 47.66712),
+    Point.fromLngLat(-122.11595, 47.66712),
+    Point.fromLngLat(-122.11063, 47.66735),
+    Point.fromLngLat(-122.10668, 47.67035),
+    Point.fromLngLat(-122.10565, 47.67498)))
+);
 
 //Create a line layer and add it to the map.
 map.layers.add(new LineLayer(source,
@@ -175,7 +234,7 @@ Voor dit voor beeld is de volgende afbeelding geladen in de map drawable van de 
 |:-----------------------------------------------------------------------:|
 |                                                  |
 
-In de onderstaande scherm afbeelding ziet u de bovenstaande code waarmee een lijn met pijl pictogrammen wordt weer gegeven.
+In de onderstaande scherm afbeelding ziet u de bovenstaande code met een lijn met pijl pictogrammen die er samen worden weer gegeven.
 
 ![Toewijzen aan gegevens stations met stijl lijnen met pijlen die worden weer gegeven in een lijn-laag](media/android-map-add-line-layer/android-symbols-along-line-path.png)
 

@@ -8,12 +8,12 @@ ms.date: 11/12/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: c5f28e2c2d370329dbee0fb76284a4b76b2b945e
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: d46ad8238faa42ca657b18b3997407d91a224537
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100376507"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102045918"
 ---
 # <a name="troubleshoot-your-iot-edge-device"></a>Problemen met uw IoT Edge apparaat oplossen
 
@@ -42,7 +42,7 @@ iotedge check
 
 Het hulp programma voor probleem oplossing voert veel controles uit die in deze drie categorieën worden gesorteerd:
 
-* Met *configuratie controles* wordt informatie onderzocht waarmee kan worden voor komen dat IOT edge apparaten verbinding maken met de Cloud, met inbegrip van problemen met *config. yaml* en de container engine.
+* Met *configuratie controles* wordt informatie onderzocht die kan verhinderen dat IOT edge-apparaten verbinding maken met de Cloud, met inbegrip van problemen met het configuratie bestand en de container engine.
 * *Verbindings controles* Controleer of de IOT Edge runtime toegang kan krijgen tot poorten op het hostapparaat en dat alle IOT Edge onderdelen verbinding kunnen maken met de IOT hub. Met deze set controles worden fouten geretourneerd als het IoT Edge apparaat zich achter een proxy bevindt.
 * De *productie gereedheids controles controleren* op aanbevolen productie best practices, zoals de status van certificerings instanties voor certificaten en de configuratie van het logboek bestand van de module.
 
@@ -102,6 +102,9 @@ De [IOT Edge Security Manager](iot-edge-security-manager.md) is verantwoordelijk
 
 Op Linux:
 
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
+
 * Bekijk de status van de IoT Edge Security Manager:
 
    ```bash
@@ -110,32 +113,68 @@ Op Linux:
 
 * Raadpleeg de logboeken van de IoT Edge Security Manager:
 
-    ```bash
-    sudo journalctl -u iotedge -f
-    ```
+   ```bash
+   sudo journalctl -u iotedge -f
+   ```
 
 * Meer gedetailleerde logboeken van de IoT Edge Security Manager weer geven:
 
-  * Bewerk de IoT Edge daemon-instellingen:
+  1. Bewerk de IoT Edge daemon-instellingen:
 
-      ```bash
-      sudo systemctl edit iotedge.service
-      ```
+     ```bash
+     sudo systemctl edit iotedge.service
+     ```
 
-  * Werk de volgende regels bij:
+  2. Werk de volgende regels bij:
 
-      ```bash
-      [Service]
-      Environment=IOTEDGE_LOG=edgelet=debug
-      ```
+     ```bash
+     [Service]
+     Environment=IOTEDGE_LOG=edgelet=debug
+     ```
 
-  * Start de IoT Edge-beveiligings-daemon opnieuw op:
+  3. Start de IoT Edge-beveiligings-daemon opnieuw op:
 
-      ```bash
-      sudo systemctl cat iotedge.service
-      sudo systemctl daemon-reload
-      sudo systemctl restart iotedge
-      ```
+     ```bash
+     sudo systemctl cat iotedge.service
+     sudo systemctl daemon-reload
+     sudo systemctl restart iotedge
+     ```
+<!--end 1.1 -->
+:::moniker-end
+
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+
+* Bekijk de status van de IoT Edge-systeem services:
+
+   ```bash
+   sudo iotedge system status
+   ```
+
+* Bekijk de logboeken van de IoT Edge-systeem services:
+
+   ```bash
+   sudo iotedge system logs -- -f
+   ```
+
+* Schakel logboeken voor fout opsporing in om meer gedetailleerde logboeken van de IoT Edge-systeem services weer te geven:
+
+  1. Schakel logboeken voor fout opsporing in.
+
+     ```bash
+     sudo iotedge system set-log-level debug
+     sudo iotedge system restart
+     ```
+
+  1. Ga terug naar de standaard logboeken voor info niveau na het opsporen van fouten.
+
+     ```bash
+     sudo iotedge system set-log-level info
+     sudo iotedge system restart
+     ```
+
+<!-- end 1.2 -->
+:::moniker-end
 
 In Windows:
 
@@ -159,52 +198,17 @@ In Windows:
 
 * Meer gedetailleerde logboeken van de IoT Edge Security Manager weer geven:
 
-  * Een omgevings variabele op systeem niveau toevoegen:
+  1. Een omgevings variabele op systeem niveau toevoegen:
 
-      ```powershell
-      [Environment]::SetEnvironmentVariable("IOTEDGE_LOG", "debug", [EnvironmentVariableTarget]::Machine)
-      ```
+     ```powershell
+     [Environment]::SetEnvironmentVariable("IOTEDGE_LOG", "debug", [EnvironmentVariableTarget]::Machine)
+     ```
 
-  * Start de IoT Edge-beveiligings-daemon opnieuw op:
+  2. Start de IoT Edge-beveiligings-daemon opnieuw op:
 
-      ```powershell
-      Restart-Service iotedge
-      ```
-
-### <a name="if-the-iot-edge-security-manager-is-not-running-verify-your-yaml-configuration-file"></a>Als IoT Edge Security Manager niet wordt uitgevoerd, controleert u het configuratie bestand van uw yaml
-
-> [!WARNING]
-> YAML-bestanden kunnen geen tabbladen als inspringing bevatten. Gebruik in plaats daarvan 2 spaties. Elementen op het hoogste niveau mogen geen voorloop spaties bevatten.
-
-Op Linux:
-
-   ```bash
-   sudo nano /etc/iotedge/config.yaml
-   ```
-
-In Windows:
-
-   ```cmd
-   notepad C:\ProgramData\iotedge\config.yaml
-   ```
-
-### <a name="restart-the-iot-edge-security-manager"></a>Start IoT Edge Security Manager opnieuw
-
-Als er nog steeds een probleem blijft bestaan, kunt u proberen om de IoT Edge Security Manager opnieuw op te starten.
-
-Op Linux:
-
-   ```cmd
-   sudo systemctl restart iotedge
-   ```
-
-In Windows:
-
-   ```powershell
-   Stop-Service iotedge -NoWait
-   sleep 5
-   Start-Service iotedge
-   ```
+     ```powershell
+     Restart-Service iotedge
+     ```
 
 ## <a name="check-container-logs-for-issues"></a>Raadpleeg container logboeken voor problemen
 
@@ -217,6 +221,9 @@ iotedge logs <container name>
 U kunt ook een [directe methode](how-to-retrieve-iot-edge-logs.md#upload-module-logs) aanroep naar een module op uw apparaat gebruiken om de logboeken van die module te uploaden naar Azure Blob Storage.
 
 ## <a name="view-the-messages-going-through-the-iot-edge-hub"></a>De berichten weer geven die via de IoT Edge hub worden verzonden
+
+<!--1.1 -->
+:::moniker range="iotedge-2018-06"
 
 U kunt de berichten van de IoT Edge hub bekijken en inzichten verzamelen uit uitgebreide logboeken van de runtime-containers. Als u uitgebreide logboeken op deze containers wilt inschakelen, stelt u `RuntimeLogLevel` in het configuratie bestand van uw yaml in. Het bestand openen:
 
@@ -256,7 +263,29 @@ Vervangen `env: {}` door:
 
 Sla het bestand op en start het IoT Edge Security Manager opnieuw.
 
-U kunt ook de berichten controleren die worden verzonden tussen IoT Hub en de IoT Edge-apparaten. Bekijk deze berichten met behulp van de [Azure IOT hub-extensie voor Visual Studio code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit). Zie [het handige hulp programma bij het ontwikkelen met Azure IOT](https://blogs.msdn.microsoft.com/iotdev/2017/09/01/handy-tool-when-you-develop-with-azure-iot/)voor meer informatie.
+<!-- end 1.1 -->
+:::moniker-end
+
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+
+U kunt de berichten bekijken die via de IoT Edge hub worden verzonden en inzichten verzamelen van uitgebreide logboeken van de runtime-containers. Als u uitgebreide logboeken op deze containers wilt inschakelen, stelt u de `RuntimeLogLevel` omgevings variabele in het implementatie manifest in.
+
+Als u berichten wilt weer geven die via de IoT Edge hub worden verzonden, stelt `RuntimeLogLevel` u de omgevings variabele in op `debug` voor de edgeHub-module.
+
+Zowel de edgeHub-als edgeAgent-modules hebben deze omgevings variabele voor runtime-logboeken, waarbij de standaard waarde is ingesteld op `info` . Deze omgevings variabele kan de volgende waarden hebben:
+
+* fatale
+* fout
+* waarschuwing
+* Info
+* debug
+* verbose
+
+<!-- end 1.2 -->
+:::moniker-end
+
+U kunt ook de berichten controleren die worden verzonden tussen IoT Hub en IoT-apparaten. Bekijk deze berichten met behulp van de [Azure IOT hub-extensie voor Visual Studio code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit). Zie [het handige hulp programma bij het ontwikkelen met Azure IOT](https://blogs.msdn.microsoft.com/iotdev/2017/09/01/handy-tool-when-you-develop-with-azure-iot/)voor meer informatie.
 
 ## <a name="restart-containers"></a>Containers opnieuw opstarten
 

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: e80465cf8d43918e6ed6da8ebb3b96f3f197e887
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 0af327f624d0fed648012ce1d12bacabca688cec
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97679950"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102044184"
 ---
 # <a name="clustering-point-data"></a>Clustering Point-gegevens
 
@@ -26,17 +26,17 @@ Bij het visualiseren van veel gegevens punten op de kaart kunnen gegevens punten
 
 ## <a name="enabling-clustering-on-a-data-source"></a>Clustering inschakelen op een gegevens bron
 
-Schakel clustering in de `DataSource` klasse in door de `cluster` optie in te stellen op True. Instellen `ClusterRadius` om nabijgelegen punten te selecteren en deze te combi neren in een cluster. De waarde van `ClusterRadius` is in pixels. Gebruik `clusterMaxZoom` om een zoom niveau op te geven waarmee de cluster logica wordt uitgeschakeld. Hier volgt een voor beeld van het inschakelen van clustering in een gegevens bron.
+Schakel clustering in de `DataSource` klasse in door de `cluster` optie in te stellen op True. Instellen `clusterRadius` om nabijgelegen punten te selecteren en deze te combi neren in een cluster. De waarde van `clusterRadius` is in pixels. Gebruik `clusterMaxZoom` om een zoom niveau op te geven waarmee de cluster logica wordt uitgeschakeld. Hier volgt een voor beeld van het inschakelen van clustering in een gegevens bron.
 
 ```javascript
 //Create a data source and enable clustering.
 var datasource = new atlas.source.DataSource(null, {
     //Tell the data source to cluster point data.
     cluster: true,
-
+    
     //The radius in pixels to cluster points together.
     clusterRadius: 45,
-
+    
     //The maximum zoom level in which clustering occurs.
     //If you zoom in more than this, all points are rendered as symbols.
     clusterMaxZoom: 15
@@ -46,7 +46,7 @@ var datasource = new atlas.source.DataSource(null, {
 > [!TIP]
 > Als twee gegevens punten dicht bij elkaar staan, is het mogelijk dat het cluster nooit gesplitst is, ongeacht hoe dicht de gebruiker in-of uitzoomt. Als u dit wilt oplossen, kunt u de `clusterMaxZoom` optie voor het uitschakelen van de cluster logica instellen en alleen alles weer geven.
 
-Hier volgen enkele aanvullende methoden die de `DataSource` klasse voor clustering biedt:
+De `DataSource` klasse biedt ook de volgende methoden met betrekking tot clustering.
 
 | Methode | Retourtype | Beschrijving |
 |--------|-------------|-------------|
@@ -146,7 +146,7 @@ Zie code voorbeelden om functionaliteit toe te voegen aan uw app:
 > [Een Bubble laag toevoegen](map-add-bubble-layer.md)
 
 > [!div class="nextstepaction"]
-> [Een symbool laag toevoegen](map-add-pin.md)
+> [Een symboollaag toevoegen](map-add-pin.md)
 
 > [!div class="nextstepaction"]
 > [Een heatmap-laag toevoegen](map-add-heat-map-layer.md)

@@ -6,17 +6,17 @@ author: tamram
 ms.service: storage
 ms.devlang: java
 ms.topic: article
-ms.date: 05/11/2017
+ms.date: 02/18/2021
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-java
-ms.openlocfilehash: fafce52f9d760fac0d5c3f0ea1be2480547c5d4d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 78baaa3f794bed870b40fb3975f6b80ff37e90f0
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91817520"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102043725"
 ---
 # <a name="client-side-encryption-and-azure-key-vault-with-java-for-microsoft-azure-storage"></a>Client-Side versleuteling en Azure Key Vault met Java voor Microsoft Azure Storage
 [!INCLUDE [storage-selector-client-side-encryption-include](../../../includes/storage-selector-client-side-encryption-include.md)]
@@ -48,7 +48,7 @@ Ontsleuteling via de envelop techniek werkt op de volgende manier:
 De Storage-client bibliotheek gebruikt [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) om gebruikers gegevens te versleutelen. Met name de [CBC-modus (Cipher Block Chaining)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher-block_chaining_.28CBC.29) met AES. Elke service werkt enigszins anders, dus we bespreken deze hier.
 
 ### <a name="blobs"></a>Blobs
-De client bibliotheek ondersteunt momenteel alleen versleuteling van hele blobs. Versleuteling wordt met name ondersteund wanneer gebruikers de methoden **Upload*** of de methode **openOutputStream** gebruiken. Voor down loads worden zowel volledige als bereik downloads ondersteund.  
+De client bibliotheek ondersteunt momenteel alleen versleuteling van hele blobs. Versleuteling wordt met name ondersteund wanneer gebruikers de methoden **Upload** _ of de methode _ *openOutputStream** gebruiken. Voor down loads worden zowel volledige als bereik downloads ondersteund.  
 
 Tijdens het versleutelen genereert de client bibliotheek een wille keurige initialisatie vector (IV) van 16 bytes, samen met een wille keurige inhouds versleutelings sleutel (CEK) van 32 bytes en voert u een envelop versleuteling van de BLOB-gegevens uit met deze gegevens. De verpakte CEK en andere versleutelings-meta gegevens worden vervolgens opgeslagen als blob-meta gegevens, samen met de versleutelde Blob in de service.
 
@@ -57,7 +57,7 @@ Tijdens het versleutelen genereert de client bibliotheek een wille keurige initi
 > 
 > 
 
-Voor het downloaden van een versleutelde BLOB moet u de inhoud van de hele BLOB ophalen met behulp van de methoden voor het **downloaden**van / **openInputStream** . De ingepakte CEK is gewrappt en gebruikt samen met de IV (opgeslagen als blob-meta gegevens in dit geval) om de ontsleutelde gegevens te retour neren aan de gebruikers.
+Voor het downloaden van een versleutelde BLOB moet u de inhoud van de hele BLOB ophalen met behulp van de methoden voor het **downloaden** van / **openInputStream** . De ingepakte CEK is gewrappt en gebruikt samen met de IV (opgeslagen als blob-meta gegevens in dit geval) om de ontsleutelde gegevens te retour neren aan de gebruikers.
 
 Als u een wille keurig bereik (**downloadRange** -methoden) in de versleutelde BLOB downloadt, moet u het bereik dat door de gebruikers wordt verstrekt, aanpassen om een klein aantal extra gegevens te krijgen dat kan worden gebruikt om het aangevraagde bereik te ontsleutelen.  
 
@@ -154,6 +154,12 @@ Gebruik bijvoorbeeld **CloudBlobClient. getDefaultRequestOptions (). setRequireE
 ### <a name="blob-service-encryption"></a>Versleuteling Blob service
 Maak een **BlobEncryptionPolicy** -object en stel dit in de aanvraag opties in (per API of op client niveau met behulp van **DefaultRequestOptions**). Alle overige worden intern door de client bibliotheek verwerkt.
 
+# <a name="java-v12"></a>[Java-V12](#tab/java)
+
+We werken momenteel om code fragmenten te maken die overeenkomen met versie 12. x van de Azure Storage-client bibliotheken. Zie [de Azure Storage V12-client bibliotheken aankondigen](https://techcommunity.microsoft.com/t5/azure-storage/announcing-the-azure-storage-v12-client-libraries/ba-p/1482394)voor meer informatie.
+
+# <a name="java-v8"></a>[Java-V8](#tab/java8)
+
 ```java
 // Create the IKey used for encryption.
 RsaKey key = new RsaKey("private:key1" /* key identifier */);
@@ -172,9 +178,16 @@ blob.upload(stream, size, null, options, null);
 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 blob.download(outputStream, null, options, null);
 ```
+---
 
 ### <a name="queue-service-encryption"></a>Versleuteling Queue-service
 Maak een **QueueEncryptionPolicy** -object en stel dit in de aanvraag opties in (per API of op client niveau met behulp van **DefaultRequestOptions**). Alle overige worden intern door de client bibliotheek verwerkt.
+
+# <a name="java-v12"></a>[Java-V12](#tab/java)
+
+We werken momenteel om code fragmenten te maken die overeenkomen met versie 12. x van de Azure Storage-client bibliotheken. Zie [de Azure Storage V12-client bibliotheken aankondigen](https://techcommunity.microsoft.com/t5/azure-storage/announcing-the-azure-storage-v12-client-libraries/ba-p/1482394)voor meer informatie.
+
+# <a name="java-v8"></a>[Java-V8](#tab/java8)
 
 ```java
 // Create the IKey used for encryption.
@@ -192,11 +205,18 @@ queue.addMessage(message, 0, 0, options, null);
 // Retrieve message
 CloudQueueMessage retrMessage = queue.retrieveMessage(30, options, null);
 ```
+---
 
 ### <a name="table-service-encryption"></a>Versleuteling Table service
-Naast het maken van een versleutelings beleid en het instellen ervan op aanvraag opties, moet u een **EncryptionResolver** opgeven in **TableRequestOptions**of het kenmerk [encryption] instellen op de getter en setter van de entiteit.
+Naast het maken van een versleutelings beleid en het instellen ervan op aanvraag opties, moet u een **EncryptionResolver** opgeven in **TableRequestOptions** of het kenmerk [encryption] instellen op de getter en setter van de entiteit.
 
 ### <a name="using-the-resolver"></a>De resolver gebruiken
+
+# <a name="java-v12"></a>[Java-V12](#tab/java)
+
+We werken momenteel om code fragmenten te maken die overeenkomen met versie 12. x van de Azure Storage-client bibliotheken. Zie [de Azure Storage V12-client bibliotheken aankondigen](https://techcommunity.microsoft.com/t5/azure-storage/announcing-the-azure-storage-v12-client-libraries/ba-p/1482394)voor meer informatie.
+
+# <a name="java-v8"></a>[Java-V8](#tab/java8)
 
 ```java
 // Create the IKey used for encryption.
@@ -228,9 +248,16 @@ retrieveOptions.setEncryptionPolicy(policy);
 TableOperation operation = TableOperation.retrieve(ent.PartitionKey, ent.RowKey, DynamicTableEntity.class);
 TableResult result = currentTable.execute(operation, retrieveOptions, null);
 ```
+---
 
 ### <a name="using-attributes"></a>Kenmerken gebruiken
-Zoals hierboven vermeld, als de entiteit TableEntity implementeert, kan de eigenschappen getter en setter worden gedecoreerd met het kenmerk [encryption] in plaats van de **EncryptionResolver**op te geven.
+Zoals hierboven vermeld, als de entiteit TableEntity implementeert, kan de eigenschappen getter en setter worden gedecoreerd met het kenmerk [encryption] in plaats van de **EncryptionResolver** op te geven.
+
+# <a name="java-v12"></a>[Java-V12](#tab/java)
+
+We werken momenteel om code fragmenten te maken die overeenkomen met versie 12. x van de Azure Storage-client bibliotheken. Zie [de Azure Storage V12-client bibliotheken aankondigen](https://techcommunity.microsoft.com/t5/azure-storage/announcing-the-azure-storage-v12-client-libraries/ba-p/1482394)voor meer informatie.
+
+# <a name="java-v8"></a>[Java-V8](#tab/java8)
 
 ```java
 private string encryptedProperty1;
@@ -245,6 +272,7 @@ public void setEncryptedProperty1(final String encryptedProperty1) {
     this.encryptedProperty1 = encryptedProperty1;
 }
 ```
+---
 
 ## <a name="encryption-and-performance"></a>Versleuteling en prestaties
 

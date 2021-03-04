@@ -3,15 +3,15 @@ title: Inhoud implementeren met FTP/S
 description: Meer informatie over het implementeren van uw app naar Azure App Service met FTP of FTPS. Verbeter de beveiliging van websites door onversleutelde FTP uit te scha kelen.
 ms.assetid: ae78b410-1bc0-4d72-8fc4-ac69801247ae
 ms.topic: article
-ms.date: 09/18/2019
+ms.date: 02/26/2021
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: cfec5ec5f14afc8c4eba5c21c5904687c9b187cc
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: c7427a1f8f528fdf405b22c4e91941ea7a915ffa
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98209250"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102045799"
 ---
 # <a name="deploy-your-app-to-azure-app-service-using-ftps"></a>Uw app implementeren op Azure App Service met behulp van FTP/S
 
@@ -19,35 +19,49 @@ In dit artikel leest u hoe u FTP of FTPS gebruikt om uw web-app, back-end voor m
 
 Het FTP/S-eind punt voor uw app is al actief. Er is geen configuratie nodig om de implementatie van FTP/S in te scha kelen.
 
-## <a name="open-ftp-dashboard"></a>FTP-dash board openen
-
-1. Zoek in het [Azure Portal](https://portal.azure.com)naar en selecteer **app Services**.
-
-    ![Zoeken naar app-Services.](media/app-service-continuous-deployment/search-for-app-services.png)
-
-2. Selecteer de web-app die u wilt implementeren.
-
-    ![Selecteer uw app.](media/app-service-continuous-deployment/select-your-app.png)
-
-3. Selecteer het  >  **FTP-**  >  **dash board** van het implementatie centrum.
-
-    ![FTP-dash board openen](./media/app-service-deploy-ftp/open-dashboard.png)
-
-## <a name="get-ftp-connection-information"></a>FTP-verbindings gegevens ophalen
-
-Selecteer in het FTP-dash board **kopiëren** om het FTPS-eind punt en de app-referenties te kopiëren.
-
-![FTP-gegevens kopiëren](./media/app-service-deploy-ftp/ftp-dashboard.png)
-
-Het is raadzaam om app- **referenties** te gebruiken voor het implementeren van uw app, omdat deze uniek is voor elke app. Als u echter op **gebruikers referenties** klikt, kunt u referenties op gebruikers niveau instellen die u voor FTP/S-aanmelding kunt gebruiken voor alle app service-apps in uw abonnement.
-
 > [!NOTE]
-> Verificatie bij een FTP-FTPS-eind punt met referenties op gebruikers niveau vereist een gebruikers naam in de volgende indeling: 
->
->`<app-name>\<user-name>`
->
-> Omdat referenties op gebruikers niveau zijn gekoppeld aan de gebruiker en niet aan een specifieke resource, moet de gebruikers naam de volgende indeling hebben om de aanmeldings actie door te sturen naar het juiste app-eind punt.
->
+> De pagina **Development Center (klassiek)** in de Azure Portal, die de oude implementatie-ervaring is, wordt in maart 2021 afgeschaft. Deze wijziging is niet van invloed op bestaande implementatie-instellingen in uw app en u kunt de implementatie van apps blijven beheren op de pagina **implementatie centrum** .
+
+## <a name="get-deployment-credentials"></a>Implementatie referenties ophalen
+
+1. Volg de instructies op [implementatie referenties configureren voor Azure app service](deploy-configure-credentials.md) om de referenties voor het toepassings bereik te kopiëren of de referenties voor het gebruikers bereik in te stellen. U kunt verbinding maken met het FTP/S-eind punt van uw app met behulp van de referenties.
+
+1. Maak de FTP-gebruikers naam in de volgende indeling, afhankelijk van uw keuze van het referentie bereik:
+
+    | Toepassings bereik | Gebruikers bereik |
+    | - | - |
+    |`<app-name>\$<app-name>`|`<app-name>\<deployment-user>`|
+
+    ---
+
+    In App Service wordt het FTP/S-eind punt gedeeld tussen apps. Omdat de referenties van het gebruikers bereik niet zijn gekoppeld aan een specifieke resource, moet u de gebruikers naam van de gebruiker laten voorafgaan door met de app-naam zoals hierboven wordt weer gegeven.
+
+## <a name="get-ftps-endpoint"></a>FTP/S-eind punt ophalen
+    
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+
+Kopieer het FTPS-eind punt op dezelfde beheer pagina voor uw app waar ude implementatie referenties (  >  **FTP-referenties** voor het implementatie centrum) hebt gekopieerd.
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/cli)
+
+Voer de opdracht [AZ webapp Deployment List-Publishing-Profiles](/cli/azure/webapp/deployment#az_webapp_deployment_list_publishing_profiles) uit. In het volgende voor beeld wordt een [JMES-pad](https://jmespath.org/) gebruikt om de FTP/S-eind punten uit de uitvoer op te halen.
+
+```azurecli-interactive
+az webapp deployment list-publishing-profiles --name <app-name> --resource-group <group-name> --query "[?ends_with(profileName, 'FTP')].{profileName: profileName, publishUrl: publishUrl}"
+```
+
+Elke app heeft twee FTP/S-eind punten, een is lezen/schrijven, terwijl de andere alleen-lezen ( `profileName` contains `ReadOnly` ) is en is voor scenario's voor gegevens herstel. Als u bestanden wilt implementeren met FTP, kopieert u de URL van het eind punt voor lezen/schrijven.
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
+
+Voer de opdracht [Get-AzWebAppPublishingProfile](/powershell/module/az.websites/get-azwebapppublishingprofile) uit. In het volgende voor beeld wordt het FTP/S-eind punt geëxtraheerd uit de XML-uitvoer.
+
+```azurepowershell-interactive
+$xml = [xml](Get-AzWebAppPublishingProfile -Name <app-name> -ResourceGroupName <group-name> -OutputFile null)
+$xml.SelectNodes("//publishProfile[@publishMethod=`"FTP`"]/@publishUrl").value
+```
+
+-----
 
 ## <a name="deploy-files-to-azure"></a>Bestanden implementeren in azure
 
@@ -56,7 +70,7 @@ Het is raadzaam om app- **referenties** te gebruiken voor het implementeren van 
 3. Blader naar de URL van uw app om te controleren of de app correct wordt uitgevoerd. 
 
 > [!NOTE] 
-> In tegens telling tot [op Git gebaseerde implementaties](deploy-local-git.md)biedt FTP-implementatie geen ondersteuning voor de volgende implementatie Automatiseringen: 
+> In tegens telling tot [op Git gebaseerde implementaties](deploy-local-git.md) en een [zip-implementatie](deploy-zip.md)biedt FTP-implementatie geen ondersteuning voor het bouwen van automatisering, zoals: 
 >
 > - afhankelijkheden herstellen (zoals NuGet, NPM, PIP en Composer automatisering)
 > - compilatie van .NET binaire bestanden
@@ -69,36 +83,45 @@ Het is raadzaam om app- **referenties** te gebruiken voor het implementeren van 
 
 Voor een betere beveiliging moet u FTP alleen toestaan via TLS/SSL. U kunt ook FTP-en FTPS uitschakelen als u geen FTP-implementatie gebruikt.
 
-Op de resource pagina van uw app in [Azure Portal](https://portal.azure.com)selecteert u   >  **algemene instellingen** voor configuratie in het linkernavigatievenster.
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
-Als u niet-versleutelde FTP wilt uitschakelen, selecteert u **FTPS alleen** in **FTP-status**. Als u zowel FTP als FTPS volledig wilt uitschakelen, selecteert u **uitgeschakeld**. Klik op **Opslaan** als u klaar bent. Als u **alleen FTPS** gebruikt, moet u TLS 1,2 of hoger afdwingen door te navigeren naar de Blade **TLS/SSL-instellingen** van uw web-app. TLS 1,0 en 1,1 worden alleen ondersteund met **FTPS**.
+1. Op de resource pagina van uw app in [Azure Portal](https://portal.azure.com)selecteert u   >  **algemene instellingen** voor configuratie in het linkernavigatievenster.
 
-![FTP/S uitschakelen](./media/app-service-deploy-ftp/disable-ftp.png)
+2. Als u niet-versleutelde FTP wilt uitschakelen, selecteert u **FTPS alleen** in **FTP-status**. Als u zowel FTP als FTPS volledig wilt uitschakelen, selecteert u **uitgeschakeld**. Klik op **Opslaan** als u klaar bent. Als u **alleen FTPS** gebruikt, moet u TLS 1,2 of hoger afdwingen door te navigeren naar de Blade **TLS/SSL-instellingen** van uw web-app. TLS 1,0 en 1,1 worden alleen ondersteund met **FTPS**.
 
-## <a name="automate-with-scripts"></a>Automatiseren met scripts
+    ![FTP/S uitschakelen](./media/app-service-deploy-ftp/disable-ftp.png)
 
-Zie [een web-app maken en bestanden implementeren met FTP (Azure CLI) voor een](./scripts/cli-deploy-ftp.md)FTP-implementatie met behulp van [Azure cli](/cli/azure).
+# <a name="azure-cli"></a>[Azure-CLI](#tab/cli)
 
-Zie [bestanden uploaden naar een web-app met FTP (Power shell) voor een](./scripts/powershell-deploy-ftp.md)FTP-implementatie met behulp van [Azure PowerShell](/cli/azure).
+Voer de opdracht [AZ webapp config set](/cli/azure/webapp/deployment#az_webapp_deployment_list_publishing_profiles) uit met het `--ftps-state` argument.
+
+```azurecli-interactive
+az webapp config set --name <app-name> --resource-group <group-name> --ftps-state FtpsOnly
+```
+
+Mogelijke waarden voor `--ftps-state` zijn `AllAllowed` (FTP en FTPS ingeschakeld), `Disabled` (FTP en FTPS uitgeschakeld) en `FtpsOnly` (alleen FTPS).
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
+
+Voer de opdracht [set-AzWebApp](/powershell/module/az.websites/set-azwebapp) uit met de `-FtpsState` para meter.
+
+```azurepowershell-interactive
+Set-AzWebApp -Name <app-name> -ResourceGroupName <group-name> -FtpsState FtpsOnly
+```
+
+Mogelijke waarden voor `--ftps-state` zijn `AllAllowed` (FTP en FTPS ingeschakeld), `Disabled` (FTP en FTPS uitgeschakeld) en `FtpsOnly` (alleen FTPS).
+
+-----
 
 [!INCLUDE [What happens to my app during deployment?](../../includes/app-service-deploy-atomicity.md)]
 
 ## <a name="troubleshoot-ftp-deployment"></a>Problemen met FTP-implementatie oplossen
 
-- [Uw app implementeren op Azure App Service met behulp van FTP/S](#deploy-your-app-to-azure-app-service-using-ftps)
-  - [FTP-dash board openen](#open-ftp-dashboard)
-  - [FTP-verbindings gegevens ophalen](#get-ftp-connection-information)
-  - [Bestanden implementeren in azure](#deploy-files-to-azure)
-  - [FTPS afdwingen](#enforce-ftps)
-  - [Automatiseren met scripts](#automate-with-scripts)
-  - [Problemen met FTP-implementatie oplossen](#troubleshoot-ftp-deployment)
-    - [Hoe kan ik problemen met FTP-implementatie oplossen?](#how-can-i-troubleshoot-ftp-deployment)
-    - [Ik kan niet FTP en mijn code publiceren. Hoe kan ik het probleem oplossen?](#im-not-able-to-ftp-and-publish-my-code-how-can-i-resolve-the-issue)
-    - [Hoe kan ik verbinding maken met FTP in Azure App Service via de passieve modus?](#how-can-i-connect-to-ftp-in-azure-app-service-via-passive-mode)
-  - [Volgende stappen](#next-steps)
-  - [Meer bronnen](#more-resources)
+- [Hoe kan ik problemen met FTP-implementatie oplossen?](#how-can-i-troubleshoot-ftp-deployment)
+- [Ik kan niet FTP en mijn code publiceren. Hoe kan ik het probleem oplossen?](#im-not-able-to-ftp-and-publish-my-code-how-can-i-resolve-the-issue)
+- [Hoe kan ik verbinding maken met FTP in Azure App Service via de passieve modus?](#how-can-i-connect-to-ftp-in-azure-app-service-via-passive-mode)
 
-### <a name="how-can-i-troubleshoot-ftp-deployment"></a>Hoe kan ik problemen met FTP-implementatie oplossen?
+#### <a name="how-can-i-troubleshoot-ftp-deployment"></a>Hoe kan ik problemen met FTP-implementatie oplossen?
 
 De eerste stap voor het oplossen van problemen met FTP-implementatie is het isoleren van een implementatie probleem van een runtime-toepassings probleem.
 
@@ -108,19 +131,18 @@ Een runtime-toepassings probleem resulteert doorgaans in de juiste set met besta
 
 Zie implementatie-en [runtime problemen](https://github.com/projectkudu/kudu/wiki/Deployment-vs-runtime-issues)als u een probleem met de implementatie of de uitvoering wilt vaststellen.
 
-### <a name="im-not-able-to-ftp-and-publish-my-code-how-can-i-resolve-the-issue"></a>Ik kan FTP niet gebruiken en mijn code niet publiceren. Hoe kan ik het probleem oplossen?
-Controleer of u de juiste hostnaam en [referenties](#open-ftp-dashboard)hebt ingevoerd. Controleer ook of de volgende FTP-poorten op uw computer niet zijn geblokkeerd door een firewall:
+#### <a name="im-not-able-to-ftp-and-publish-my-code-how-can-i-resolve-the-issue"></a>Ik kan FTP niet gebruiken en mijn code niet publiceren. Hoe kan ik het probleem oplossen?
+Controleer of u de juiste [hostnaam](#get-ftps-endpoint) en [referenties](#get-deployment-credentials)hebt ingevoerd. Controleer ook of de volgende FTP-poorten op uw computer niet zijn geblokkeerd door een firewall:
 
 - Verbindings poort voor FTP-besturings element: 21, 990
 - FTP-gegevens verbindings poort: 989, 10001-10300
  
-### <a name="how-can-i-connect-to-ftp-in-azure-app-service-via-passive-mode"></a>Hoe kan ik verbinding maken met FTP in Azure App Service via de passieve modus?
+#### <a name="how-can-i-connect-to-ftp-in-azure-app-service-via-passive-mode"></a>Hoe kan ik verbinding maken met FTP in Azure App Service via de passieve modus?
 Azure App Service ondersteunt verbinding via de actieve en passieve modus. De passieve modus verdient de voor keur omdat uw implementatie computers zich doorgaans achter een firewall bevinden (in het besturings systeem of als onderdeel van een thuis-of bedrijfs netwerk). Bekijk een [voor beeld in de WinSCP-documentatie](https://winscp.net/docs/ui_login_connection). 
-
-## <a name="next-steps"></a>Volgende stappen
-
-Probeer [te implementeren naar Azure met git](deploy-local-git.md)voor meer geavanceerde implementatie scenario's. Met op Git gebaseerde implementatie naar Azure kunt u versie beheer, pakket herstel, MSBuild en meer.
 
 ## <a name="more-resources"></a>Meer bronnen
 
+* [Lokale Git-implementatie in Azure App Service](deploy-local-git.md)
 * [Implementatie referenties Azure App Service](deploy-configure-credentials.md)
+* Voor [Beeld: een web-app maken en bestanden implementeren met FTP (Azure CLI)](./scripts/cli-deploy-ftp.md).
+* Voor [Beeld: bestanden uploaden naar een web-app met FTP (Power shell)](./scripts/powershell-deploy-ftp.md).

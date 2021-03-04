@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 2/9/2021
 ms.author: duau
-ms.openlocfilehash: c305ee78abac7e175dc086666dfd1e2926f8da2b
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: ef6ea9017a9aaa98e153df0d67f0b54fe5a2b64d
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102097819"
+ms.locfileid: "102124156"
 ---
 # <a name="add-ipv6-support-for-private-peering-using-the-azure-portal-preview"></a>IPv6-ondersteuning voor privé-peering toevoegen met behulp van de Azure Portal (preview-versie)
 
@@ -88,7 +88,7 @@ Volg de onderstaande stappen als u van plan bent om verbinding te maken met een 
 
 2. [Maak het subnet met dubbele stack-gateways](https://docs.microsoft.com/azure/expressroute/expressroute-howto-add-gateway-portal-resource-manager#create-the-gateway-subnet).
 
-3. [Maak de gateway van het virtuele netwerk](https://docs.microsoft.com/azure/expressroute/expressroute-howto-add-gateway-portal-resource-manager#create-the-virtual-network-gateway) met behulp van een zone-redundante SKU (ErGw1AZ, ErGw2AZ, ErGw3AZ). Als u van plan bent FastPath te gebruiken, gebruikt u ErGw3AZ.
+3. [Maak de gateway van het virtuele netwerk](https://docs.microsoft.com/azure/expressroute/expressroute-howto-add-gateway-portal-resource-manager#create-the-virtual-network-gateway) met behulp van een zone-redundante SKU (ErGw1AZ, ErGw2AZ, ErGw3AZ). Als u van plan bent FastPath te gebruiken, gebruikt u ErGw3AZ (Houd er rekening mee dat dit alleen beschikbaar is voor circuits met behulp van ExpressRoute direct).
 
 4. [Koppel uw virtuele netwerk aan uw ExpressRoute-circuit](https://docs.microsoft.com/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager).
 
@@ -99,6 +99,8 @@ Hoewel IPv6-ondersteuning beschikbaar is voor verbindingen met implementaties in
 * Verbindingen met implementaties in niet-AZ regio's
 * Global Reach verbindingen tussen ExpressRoute-circuits
 * Gebruik van ExpressRoute met Virtual WAN
+* FastPath met niet-ExpressRoute directe circuits
+* Samen werking met VPN Gateway
 
 ## <a name="next-steps"></a>Volgende stappen
 

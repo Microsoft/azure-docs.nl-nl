@@ -8,12 +8,12 @@ ms.date: 01/04/2021
 ms.author: chhenk
 ms.reviewer: azmetadatadev
 ms.custom: references_regions
-ms.openlocfilehash: fcdccf6701afe73ab0f11a7a907072b01a9d5aa4
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: b720e98fc83fd12744c289cb99814748b469b15d
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100373301"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102123680"
 ---
 # <a name="azure-instance-metadata-service"></a>Azire Instance Metadata Service
 
@@ -42,13 +42,13 @@ Hier volgt een voorbeeld code voor het ophalen van alle meta gegevens voor een e
 #### <a name="windows"></a>[Windows](#tab/windows/)
 
 ```powershell
-Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri "http://169.254.169.254/metadata/instance?api-version=2020-09-01" | ConvertTo-Json -Depth 64
+Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Proxy $Null -Uri "http://169.254.169.254/metadata/instance?api-version=2020-09-01" | ConvertTo-Json -Depth 64
 ```
 
 #### <a name="linux"></a>[Linux](#tab/linux/)
 
 ```bash
-curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance?api-version=2020-09-01"
+curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance?api-version=2020-09-01" | jq
 ```
 
 ---
@@ -88,7 +88,7 @@ Over het algemeen zijn aanvragen voor IMDS beperkt tot 5 aanvragen per seconde. 
 
 De volgende HTTP-termen worden momenteel ondersteund:
 
-| Verb | Description |
+| Verb | Beschrijving |
 |------|-------------|
 | `GET` | De aangevraagde resource ophalen
 
@@ -196,7 +196,7 @@ Om toegang te krijgen tot een niet-standaard antwoord indeling, geeft u de aange
 #### <a name="windows"></a>[Windows](#tab/windows/)
 
 ```powershell
-Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri "http://169.254.169.254/metadata/instance?api-version=2017-08-01&format=text" | ConvertTo-Json
+Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Proxy $Null -Uri "http://169.254.169.254/metadata/instance?api-version=2017-08-01&format=text"
 ```
 
 #### <a name="linux"></a>[Linux](#tab/linux/)
@@ -248,9 +248,7 @@ Wanneer u geen versie opgeeft, krijgt u een fout melding met een lijst met de ni
 - 2020-07-15
 - 2020-09-01
 - 2020-10-01
-
-> [!NOTE]
-> Versie 2020-10-01 wordt momenteel geïmplementeerd en is mogelijk nog niet beschikbaar in elke regio.
+- 2020-12-01
 
 ### <a name="swagger"></a>Swagger
 
@@ -268,11 +266,12 @@ Het hoofd eindpunt is `http://169.254.169.254/metadata` .
 
 De IMDS-API bevat meerdere eindpunt categorieën die verschillende gegevens bronnen vertegenwoordigen, waarvan elk een of meer eind punten bevat. Zie elke categorie voor meer informatie.
 
-| Hoofdmap van categorie | Description | Geïntroduceerde versie |
+| Hoofdmap van categorie | Beschrijving | Geïntroduceerde versie |
 |---------------|-------------|--------------------|
 | `/metadata/attested` | Zie [attested data](#attested-data) | 2018-10-01
 | `/metadata/identity` | Zie [beheerde identiteit via IMDS](#managed-identity) | 2018-02-01
 | `/metadata/instance` | Zie [meta gegevens van instantie](#instance-metadata) | 2017-04-02
+| `/metadata/loadbalancer` | Zie [Load Balancer meta gegevens ophalen via IMDS](#load-balancer-metadata) | 2020-10-01
 | `/metadata/scheduledevents` | Zie [Scheduled Events via IMDS](#scheduled-events) | 2017-08-01
 | `/metadata/versions` | [Versies](#versions) weer geven | N.v.t.
 
@@ -332,10 +331,11 @@ Schema-uitsplitsing:
 
 **Compute**
 
-| Gegevens | Description | Geïntroduceerde versie |
+| Gegevens | Beschrijving | Geïntroduceerde versie |
 |------|-------------|--------------------|
 | `azEnvironment` | Azure-omgeving waarin de virtuele machine wordt uitgevoerd | 2018-10-01
 | `customData` | Deze functie is momenteel uitgeschakeld. Deze documentatie wordt bijgewerkt wanneer deze beschikbaar wordt | 2019-02-01
+| `evictionPolicy` | Hiermee stelt u in hoe een [Spot-VM](../articles/virtual-machines/spot-vms.md) wordt verwijderd. | 2020-12-01
 | `isHostCompatibilityLayerVm` | Hiermee wordt aangegeven of de virtuele machine wordt uitgevoerd op de compatibiliteit slaag van de host | 2020-06-01
 | `licenseType` | Het type licentie voor de [Azure Hybrid Benefit](https://azure.microsoft.com/pricing/hybrid-benefit). Dit is alleen aanwezig voor Vm's met AHB-functionaliteit | 2020-09-01
 | `location` | Azure-regio waarin de virtuele machine wordt uitgevoerd | 2017-04-02
@@ -349,6 +349,7 @@ Schema-uitsplitsing:
 | `plan` | [Plan](/rest/api/compute/virtualmachines/createorupdate#plan) met naam, product en uitgever voor een virtuele machine als dit een Azure Marketplace-installatie kopie is | 2018-04-02
 | `platformUpdateDomain` |  [Domein bijwerken](../articles/virtual-machines/manage-availability.md) waarop de VM wordt uitgevoerd | 2017-04-02
 | `platformFaultDomain` | [Fout domein](../articles/virtual-machines/manage-availability.md) waarop de VM wordt uitgevoerd | 2017-04-02
+| `priority` | De prioriteit van de virtuele machine. Raadpleeg [Spot vm's](../articles/virtual-machines/spot-vms.md) voor meer informatie | 2020-12-01
 | `provider` | Provider van de virtuele machine | 2018-10-01
 | `publicKeys` | [Verzameling van open bare sleutels](/rest/api/compute/virtualmachines/createorupdate#sshpublickey) die zijn toegewezen aan de virtuele machine en de paden | 2018-04-02
 | `publisher` | Uitgever van de VM-installatie kopie | 2017-04-02
@@ -373,7 +374,7 @@ Het opslag profiel van een virtuele machine is onderverdeeld in drie categorieë
 
 Het verwijzings object voor de afbeelding bevat de volgende informatie over de installatie kopie van het besturings systeem:
 
-| Gegevens | Description |
+| Gegevens | Beschrijving |
 |------|-------------|
 | `id` | Resource-id
 | `offer` | Aanbieding van de installatie kopie van het platform of de Marketplace
@@ -383,7 +384,7 @@ Het verwijzings object voor de afbeelding bevat de volgende informatie over de i
 
 Het object van de besturingssysteem schijf bevat de volgende informatie over de besturingssysteem schijf die wordt gebruikt door de virtuele machine:
 
-| Gegevens | Description |
+| Gegevens | Beschrijving |
 |------|-------------|
 | `caching` | Cache vereisten
 | `createOption` | Informatie over de manier waarop de virtuele machine is gemaakt
@@ -398,7 +399,7 @@ Het object van de besturingssysteem schijf bevat de volgende informatie over de 
 
 De matrix gegevens schijven bevat een lijst met gegevens schijven die zijn gekoppeld aan de VM. Elk gegevens schijf object bevat de volgende informatie:
 
-Gegevens | Description |
+Gegevens | Beschrijving |
 -----|-------------|
 | `caching` | Cache vereisten
 | `createOption` | Informatie over de manier waarop de virtuele machine is gemaakt
@@ -414,7 +415,7 @@ Gegevens | Description |
 
 **Netwerk**
 
-| Gegevens | Description | Geïntroduceerde versie |
+| Gegevens | Beschrijving | Geïntroduceerde versie |
 |------|-------------|--------------------|
 | `ipv4.privateIpAddress` | Lokaal IPv4-adres van de virtuele machine | 2017-04-02
 | `ipv4.publicIpAddress` | Openbaar IPv4-adres van de virtuele machine | 2017-04-02
@@ -422,13 +423,6 @@ Gegevens | Description |
 | `subnet.prefix` | Subnetvoorvoegsel, voor beeld 24 | 2017-04-02
 | `ipv6.ipAddress` | Lokaal IPv6-adres van de virtuele machine | 2017-04-02
 | `macAddress` | Mac-adres van VM | 2017-04-02
-
-**VM-Tags**
-
-VM-Tags zijn opgenomen in de exemplaar-API onder instance/Compute/Tags-eind punt.
-Labels zijn mogelijk toegepast op uw virtuele Azure-machine om ze logisch in een taxonomie te organiseren. De labels die aan een virtuele machine zijn toegewezen, kunnen worden opgehaald met behulp van de onderstaande aanvraag.
-
-Het `tags` veld is een teken reeks met de Tags gescheiden door punt komma's. Deze uitvoer kan een probleem zijn als punt komma's worden gebruikt in de labels zelf. Als een parser is geschreven om de Tags programmatisch uit te pakken, moet u vertrouwen op het `tagsList` veld. Het `tagsList` veld is een JSON-matrix met geen scheidings tekens, en kan daarom gemakkelijker worden geparseerd.
 
 
 #### <a name="sample-1-tracking-vm-running-on-azure"></a>Voor beeld 1: een virtuele machine volgen die wordt uitgevoerd op Azure
@@ -440,7 +434,7 @@ Als service provider kan het nodig zijn om het aantal Vm's waarop de software wo
 #### <a name="windows"></a>[Windows](#tab/windows/)
 
 ```powershell
-Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri "http://169.254.169.254/metadata/instance/compute/vmId?api-version=2017-08-01&format=text"| ConvertTo-Json
+Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Proxy $Null -Uri "http://169.254.169.254/metadata/instance/compute/vmId?api-version=2017-08-01&format=text"
 ```
 
 #### <a name="linux"></a>[Linux](#tab/linux/)
@@ -468,7 +462,7 @@ U kunt deze gegevens rechtstreeks opvragen via IMDS.
 #### <a name="windows"></a>[Windows](#tab/windows/)
 
 ```powershell
-Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri "http://169.254.169.254/metadata/instance/compute/platformFaultDomain?api-version=2017-08-01&format=text" | ConvertTo-Json
+Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Proxy $Null -Uri "http://169.254.169.254/metadata/instance/compute/platformFaultDomain?api-version=2017-08-01&format=text"
 ```
 
 #### <a name="linux"></a>[Linux](#tab/linux/)
@@ -485,7 +479,98 @@ curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/co
 0
 ```
 
-#### <a name="sample-3-get-more-information-about-the-vm-during-support-case"></a>Voor beeld 3: meer informatie over de VM ophalen tijdens de ondersteunings Case
+#### <a name="sample-3-get-vm-tags"></a>Voor beeld 3: VM-labels ophalen
+
+VM-Tags zijn opgenomen in de exemplaar-API onder instance/Compute/Tags-eind punt.
+Labels zijn mogelijk toegepast op uw virtuele Azure-machine om ze logisch in een taxonomie te organiseren. De labels die aan een virtuele machine zijn toegewezen, kunnen worden opgehaald met behulp van de onderstaande aanvraag.
+
+**Aanvraag**
+
+#### <a name="windows"></a>[Windows](#tab/windows/)
+
+```powershell
+Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Proxy $Null -Uri "http://169.254.169.254/metadata/instance/compute/tags?api-version=2017-08-01&format=text"
+```
+
+#### <a name="linux"></a>[Linux](#tab/linux/)
+
+```bash
+curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/compute/platformFaultDomain?api-version=2017-08-01&format=text"
+```
+
+---
+
+**Response**
+
+```
+Department:IT;ReferenceNumber:123456;TestStatus:Pending
+```
+
+Het `tags` veld is een teken reeks met de Tags gescheiden door punt komma's. Deze uitvoer kan een probleem zijn als punt komma's worden gebruikt in de labels zelf. Als een parser is geschreven om de Tags programmatisch uit te pakken, moet u vertrouwen op het `tagsList` veld. Het `tagsList` veld is een JSON-matrix met geen scheidings tekens, en kan daarom gemakkelijker worden geparseerd. De tagsList die is toegewezen aan een virtuele machine kan worden opgehaald met behulp van de onderstaande aanvraag.
+
+**Aanvraag**
+
+#### <a name="windows"></a>[Windows](#tab/windows/)
+
+```powershell
+Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Proxy $Null -Uri "http://169.254.169.254/metadata/instance/compute/tagsList?api-version=2019-06-04" | ConvertTo-Json -Depth 64
+```
+
+#### <a name="linux"></a>[Linux](#tab/linux/)
+
+```bash
+curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/compute/tagsList?api-version=2019-06-04" | jq
+```
+
+---
+
+**Response**
+
+#### <a name="windows"></a>[Windows](#tab/windows/)
+
+```json
+{
+    "value":  [
+                  {
+                      "name":  "Department",
+                      "value":  "IT"
+                  },
+                  {
+                      "name":  "ReferenceNumber",
+                      "value":  "123456"
+                  },
+                  {
+                      "name":  "TestStatus",
+                      "value":  "Pending"
+                  }
+              ],
+    "Count":  3
+}
+```
+
+#### <a name="linux"></a>[Linux](#tab/linux/)
+
+```json
+[
+  {
+    "name": "Department",
+    "value": "IT"
+  },
+  {
+    "name": "ReferenceNumber",
+    "value": "123456"
+  },
+  {
+    "name": "TestStatus",
+    "value": "Pending"
+  }
+]
+```
+
+---
+
+
+#### <a name="sample-4-get-more-information-about-the-vm-during-support-case"></a>Voor beeld 4: meer informatie over de VM ophalen tijdens de ondersteunings Case
 
 Als service provider kunt u een ondersteunings oproep krijgen waarin u meer informatie over de virtuele machine wilt weten. Als u de klant vraagt om de berekenings-meta gegevens te delen, kan de ondersteunings medewerker basis informatie geven over het type virtuele machine op Azure.
 
@@ -494,7 +579,7 @@ Als service provider kunt u een ondersteunings oproep krijgen waarin u meer info
 #### <a name="windows"></a>[Windows](#tab/windows/)
 
 ```powershell
-Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri "http://169.254.169.254/metadata/instance/compute?api-version=2020-09-01" | ConvertTo-Json -Depth 64
+Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Proxy $Null -Uri "http://169.254.169.254/metadata/instance/compute?api-version=2020-09-01" | ConvertTo-Json -Depth 64
 ```
 
 #### <a name="linux"></a>[Linux](#tab/linux/)
@@ -510,6 +595,7 @@ curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/co
 > [!NOTE]
 > Het antwoord is een JSON-teken reeks. Het volgende voor beeld is een mooie afdruk van de Lees baarheid.
 
+#### <a name="windows"></a>[Windows](#tab/windows/)
 ```json
 {
     "azEnvironment": "AZUREPUBLICCLOUD",
@@ -517,13 +603,13 @@ curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/co
     "licenseType":  "Windows_Client",
     "location": "westus",
     "name": "examplevmname",
-    "offer": "Windows",
+    "offer": "WindowsServer",
     "osProfile": {
         "adminUsername": "admin",
         "computerName": "examplevmname",
         "disablePasswordAuthentication": "true"
     },
-    "osType": "linux",
+    "osType": "Windows",
     "placementGroupId": "f67c14ab-e92c-408c-ae2d-da15866ec79a",
     "plan": {
         "name": "planName",
@@ -548,7 +634,108 @@ curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/co
         "secureBootEnabled": "true",
         "virtualTpmEnabled": "false"
     },
-    "sku": "Windows-Server-2012-R2-Datacenter",
+    "sku": "2019-Datacenter",
+    "storageProfile": {
+        "dataDisks": [{
+            "caching": "None",
+            "createOption": "Empty",
+            "diskSizeGB": "1024",
+            "image": {
+                "uri": ""
+            },
+            "lun": "0",
+            "managedDisk": {
+                "id": "/subscriptions/xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx/resourceGroups/macikgo-test-may-23/providers/Microsoft.Compute/disks/exampledatadiskname",
+                "storageAccountType": "Standard_LRS"
+            },
+            "name": "exampledatadiskname",
+            "vhd": {
+                "uri": ""
+            },
+            "writeAcceleratorEnabled": "false"
+        }],
+        "imageReference": {
+            "id": "",
+            "offer": "WindowsServer",
+            "publisher": "MicrosoftWindowsServer",
+            "sku": "2019-Datacenter",
+            "version": "latest"
+        },
+        "osDisk": {
+            "caching": "ReadWrite",
+            "createOption": "FromImage",
+            "diskSizeGB": "30",
+            "diffDiskSettings": {
+                "option": "Local"
+            },
+            "encryptionSettings": {
+                "enabled": "false"
+            },
+            "image": {
+                "uri": ""
+            },
+            "managedDisk": {
+                "id": "/subscriptions/xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx/resourceGroups/macikgo-test-may-23/providers/Microsoft.Compute/disks/exampleosdiskname",
+                "storageAccountType": "Standard_LRS"
+            },
+            "name": "exampleosdiskname",
+            "osType": "Windows",
+            "vhd": {
+                "uri": ""
+            },
+            "writeAcceleratorEnabled": "false"
+        }
+    },
+    "subscriptionId": "xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
+    "tags": "baz:bash;foo:bar",
+    "version": "15.05.22",
+    "vmId": "02aab8a4-74ef-476e-8182-f6d2ba4166a6",
+    "vmScaleSetName": "crpteste9vflji9",
+    "vmSize": "Standard_A3",
+    "zone": ""
+}
+```
+
+#### <a name="linux"></a>[Linux](#tab/linux/)
+```json
+{
+    "azEnvironment": "AZUREPUBLICCLOUD",
+    "isHostCompatibilityLayerVm": "true",
+    "licenseType":  "Windows_Client",
+    "location": "westus",
+    "name": "examplevmname",
+    "offer": "UbuntuServer",
+    "osProfile": {
+        "adminUsername": "admin",
+        "computerName": "examplevmname",
+        "disablePasswordAuthentication": "true"
+    },
+    "osType": "Linux",
+    "placementGroupId": "f67c14ab-e92c-408c-ae2d-da15866ec79a",
+    "plan": {
+        "name": "planName",
+        "product": "planProduct",
+        "publisher": "planPublisher"
+    },
+    "platformFaultDomain": "36",
+    "platformUpdateDomain": "42",
+    "publicKeys": [{
+            "keyData": "ssh-rsa 0",
+            "path": "/home/user/.ssh/authorized_keys0"
+        },
+        {
+            "keyData": "ssh-rsa 1",
+            "path": "/home/user/.ssh/authorized_keys1"
+        }
+    ],
+    "publisher": "Canonical",
+    "resourceGroupName": "macikgo-test-may-23",
+    "resourceId": "/subscriptions/xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx/resourceGroups/macikgo-test-may-23/providers/Microsoft.Compute/virtualMachines/examplevmname",
+    "securityProfile": {
+        "secureBootEnabled": "true",
+        "virtualTpmEnabled": "false"
+    },
+    "sku": "18.04-LTS",
     "storageProfile": {
         "dataDisks": [{
             "caching": "None",
@@ -593,7 +780,7 @@ curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/co
                 "storageAccountType": "Standard_LRS"
             },
             "name": "exampleosdiskname",
-            "osType": "Linux",
+            "osType": "linux",
             "vhd": {
                 "uri": ""
             },
@@ -610,7 +797,9 @@ curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/co
 }
 ```
 
-#### <a name="sample-4-get-the-azure-environment-where-the-vm-is-running"></a>Voor beeld 4: de Azure-omgeving waar de virtuele machine wordt uitgevoerd, ophalen
+---
+
+#### <a name="sample-5-get-the-azure-environment-where-the-vm-is-running"></a>Voor beeld 5: de Azure-omgeving waar de virtuele machine wordt uitgevoerd, ophalen
 
 Azure heeft verschillende soevereine Clouds, zoals [Azure Government](https://azure.microsoft.com/overview/clouds/government/). Soms hebt u de Azure-omgeving nodig om enkele runtime beslissingen te nemen. In het volgende voor beeld ziet u hoe u dit gedrag kunt behaalt.
 
@@ -619,7 +808,7 @@ Azure heeft verschillende soevereine Clouds, zoals [Azure Government](https://az
 #### <a name="windows"></a>[Windows](#tab/windows/)
 
 ```powershell
-Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri "http://169.254.169.254/metadata/instance/compute/azEnvironment?api-version=2018-10-01&format=text" | ConvertTo-Json
+Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Proxy $Null -Uri "http://169.254.169.254/metadata/instance/compute/azEnvironment?api-version=2018-10-01&format=text"
 ```
 
 #### <a name="linux"></a>[Linux](#tab/linux/)
@@ -646,14 +835,14 @@ De Cloud en de waarden van de Azure-omgeving worden hier weer gegeven.
 | [Azure Duitsland](https://azure.microsoft.com/overview/clouds/germany/) | AzureGermanCloud
 
 
-#### <a name="sample-5-retrieve-network-information"></a>Voor beeld 5: netwerk gegevens ophalen
+#### <a name="sample-6-retrieve-network-information"></a>Voor beeld 6: netwerk gegevens ophalen
 
 **Aanvraag**
 
 #### <a name="windows"></a>[Windows](#tab/windows/)
 
 ```powershell
-Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri "http://169.254.169.254/metadata/instance/network?api-version=2017-08-01" | ConvertTo-Json  -Depth 64
+Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Proxy $Null -Uri "http://169.254.169.254/metadata/instance/network?api-version=2017-08-01" | ConvertTo-Json  -Depth 64
 ```
 
 #### <a name="linux"></a>[Linux](#tab/linux/)
@@ -693,12 +882,12 @@ curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/ne
 }
 ```
 
-#### <a name="sample-6-retrieve-public-ip-address"></a>Voor beeld 6: openbaar IP-adres ophalen
+#### <a name="sample-7-retrieve-public-ip-address"></a>Voor beeld 7: openbaar IP-adres ophalen
 
 #### <a name="windows"></a>[Windows](#tab/windows/)
 
 ```powershell
-Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri "http://169.254.169.254/metadata/instance/network/interface/0/ipv4/ipAddress/0/publicIpAddress?api-version=2017-08-01&format=text" | ConvertTo-Json
+Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Proxy $Null -Uri "http://169.254.169.254/metadata/instance/network/interface/0/ipv4/ipAddress/0/publicIpAddress?api-version=2017-08-01&format=text"
 ```
 
 #### <a name="linux"></a>[Linux](#tab/linux/)
@@ -746,7 +935,7 @@ Voor virtuele machines die zijn gemaakt met behulp van het klassieke implementat
 
 Het gedecodeerde document bevat de volgende velden:
 
-| Gegevens | Description | Geïntroduceerde versie |
+| Gegevens | Beschrijving | Geïntroduceerde versie |
 |------|-------------|--------------------|
 | `licenseType` | Het type licentie voor de [Azure Hybrid Benefit](https://azure.microsoft.com/pricing/hybrid-benefit). Dit is alleen aanwezig voor Vm's met AHB-functionaliteit. | 2020-09-01
 | `nonce` | Een teken reeks die optioneel kan worden meegeleverd met de aanvraag. Als er geen `nonce` is opgegeven, wordt de huidige UTC (Coordinated Universal Time Time Stamp) gebruikt. | 2018-10-01
@@ -792,7 +981,7 @@ Leveranciers in azure Marketplace willen ervoor zorgen dat hun software een lice
 
 ```powershell
 # Get the signature
-$attestedDoc = Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri http://169.254.169.254/metadata/attested/document?api-version=2020-09-01
+$attestedDoc = Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Proxy $Null -Uri http://169.254.169.254/metadata/attested/document?api-version=2020-09-01
 # Decode the signature
 $signature = [System.Convert]::FromBase64String($attestedDoc.signature)
 ```
@@ -913,8 +1102,12 @@ Vervolgens kunt u tokens aanvragen voor beheerde identiteiten vanuit IMDS. Gebru
 
 Zie [een toegangs token verkrijgen](../articles/active-directory/managed-identities-azure-resources/how-to-use-vm-token.md)voor gedetailleerde stappen om deze functie in te scha kelen.
 
+## <a name="load-balancer-metadata"></a>Meta gegevens Load Balancer
+Wanneer u exemplaren van een virtuele machine of een virtuele machine instelt achter een Azure-Standard Load Balancer, kunt u IMDS gebruiken om meta gegevens op te halen die zijn gerelateerd aan de load balancer en de instanties. Zie [Load Balancer-informatie ophalen](../articles/load-balancer/instance-metadata-service-load-balancer.md)voor meer informatie.
+
 ## <a name="scheduled-events"></a>Geplande gebeurtenissen
 U kunt de status van de geplande gebeurtenissen verkrijgen met behulp van IMDS. Vervolgens kan de gebruiker een reeks acties opgeven die moeten worden uitgevoerd op deze gebeurtenissen. Zie [geplande gebeurtenissen voor Linux](../articles/virtual-machines/linux/scheduled-events.md) of [geplande gebeurtenissen voor Windows](../articles/virtual-machines/windows/scheduled-events.md)voor meer informatie.
+
 
 ## <a name="sample-code-in-different-languages"></a>Voorbeeld code in verschillende talen
 

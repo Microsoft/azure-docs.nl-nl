@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/20/2020
 ms.author: duau
-ms.openlocfilehash: 77cc509a9fac2a24b3cd70675c1ee4160ecdb24d
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 06ad8bf169e2b4b44f4f6a8ec5155aa6722a038c
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101741851"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102124054"
 ---
 # <a name="frequently-asked-questions-for-azure-front-door"></a>Veelgestelde vragen over de voor deur van Azure
 
@@ -99,7 +99,7 @@ Als u uw toepassing wilt vergren delen om alleen verkeer van uw specifieke voor 
 
 - Zoek naar de `Front Door ID` waarde in het gedeelte Overzicht van de front-deur portal pagina. U kunt vervolgens filteren op de inkomende header '**X-Azure-FDID**' die door de voor deur naar uw back-end wordt verzonden met die waarde om ervoor te zorgen dat alleen uw eigen instantie voor de voor deur is toegestaan (omdat de IP-bereiken hierboven worden gedeeld met andere exemplaren van andere klanten aan de voor zijde).
 
-- Regel filtering Toep assen op uw back-end-webserver om verkeer te beperken op basis van de resulterende waarde ' X-Azure-FDID '. Houd er rekening mee dat sommige services, zoals Azure App Service, deze [op header gebaseerde filter](../app-service/app-service-ip-restrictions#restrict-access-to-a-specific-azure-front-door-instance-preview) mogelijkheden bieden zonder dat u uw toepassing of host hoeft te wijzigen.
+- Regel filtering Toep assen op uw back-end-webserver om verkeer te beperken op basis van de resulterende waarde ' X-Azure-FDID '. Houd er rekening mee dat sommige services, zoals Azure App Service, deze [op header gebaseerde filter](../app-service/app-service-ip-restrictions.md#restrict-access-to-a-specific-azure-front-door-instance-preview) mogelijkheden bieden zonder dat u uw toepassing of host hoeft te wijzigen.
 
   Hier volgt een voor beeld van [micro soft Internet Information Services (IIS)](https://www.iis.net/):
 

@@ -9,12 +9,12 @@ ms.date: 03/01/2020
 ms.author: midesa
 ms.reviewer: jrasnick
 ms.subservice: spark
-ms.openlocfilehash: 76d3bdc8a6eb133daa2d241bdf4c3b73271f0173
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 38826451bbb8ec9303f61db53544cfe8ca2fcd41
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102100199"
+ms.locfileid: "102123085"
 ---
 # <a name="manage-libraries-for-apache-spark-in-azure-synapse-analytics"></a>Bibliotheken voor Apache Spark beheren in azure Synapse Analytics
 Bibliotheken bieden herbruikbare code die u mogelijk wilt toevoegen aan uw Program ma's of projecten. 
@@ -38,6 +38,7 @@ Bij het ontwikkelen van aangepaste toepassingen of modellen kan uw team verschil
 In Synapse kunnen werkruimte pakketten aangepaste of privé-wielen of jar-bestanden zijn. U kunt deze pakketten uploaden naar uw werk ruimte en deze later toewijzen aan een specifieke Spark-groep. Na de toewijzing worden deze werkruimte pakketten automatisch geïnstalleerd op alle Spark-groeps sessies.
 
 Voor meer informatie over het beheren van werkruimte bibliotheken raadpleegt u de volgende hand leidingen:
+
 - [Python-werkruimte pakketten (preview-versie): ](./apache-spark-manage-python-packages.md#install-wheel-files) Upload python-wiel bestanden als een werkruimte pakket en voeg deze pakketten later toe aan specifieke serverloze Apache Spark groepen.
 - [Scala/Java Workspace-pakketten (preview): ](./apache-spark-manage-scala-packages.md#workspace-packages) Upload scala-en java jar-bestanden als een werkruimte pakket en voeg deze pakketten later toe aan specifieke serverloze Apache Spark groepen.
 
@@ -61,6 +62,7 @@ Bij het uitvoeren van interactieve gegevens analyse of machine learning, kunt u 
 Met pakketten met sessie bereik kunnen gebruikers aan het begin van hun sessie pakket afhankelijkheden definiëren. Wanneer u een pakket met sessie bereik installeert, heeft alleen de huidige sessie toegang tot de opgegeven pakketten. Als gevolg hiervan zijn deze pakketten met sessie bereik niet van invloed op andere sessies of taken die gebruikmaken van dezelfde Apache Spark pool. Daarnaast worden deze bibliotheken boven op de basis-runtime-en pool level-pakketten geïnstalleerd. 
 
 Voor meer informatie over het beheren van pakketten met sessie bereik raadpleegt u de volgende hand leidingen:
+
 - [Python-sessie pakketten (preview-versie):](./apache-spark-manage-python-packages.md) Aan het begin van een sessie geeft u een Conda- *omgeving. yml* extra Python-pakketten installeren vanuit populaire opslag plaatsen. 
 - [Scala/Java-sessie pakketten: ](./apache-spark-manage-scala-packages.md) Aan het begin van uw sessie geeft u een lijst van jar-bestanden op die moeten worden geïnstalleerd met ```%%configure``` .
 

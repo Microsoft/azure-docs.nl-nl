@@ -147,6 +147,8 @@
       items:
         - name: Problemen zelf vaststellen en oplossen
           href: spring-cloud-howto-self-diagnose-solve.md
+        - name: Zelf diagnose uitvoeren in VNET
+          href: spring-cloud-howto-self-diagnose-running-in-vnet.md
         - name: Handleiding voor het oplossen van problemen
           href: spring-cloud-troubleshoot.md
     - name: Migreren

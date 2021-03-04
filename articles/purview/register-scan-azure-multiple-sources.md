@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 2/26/2021
-ms.openlocfilehash: c57ac9ddbebcf02cb0118705b63f97fd1880b0f2
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 098f62365971fd634001706ab99fd414a6b25056
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101695960"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102123561"
 ---
 # <a name="register-and-scan-azure-multiple-sources"></a>Azure meerdere bronnen registreren en scannen
 
@@ -95,12 +95,12 @@ Doe het volgende om een nieuwe scan te maken en uit te voeren:
     1. U kunt een **referentie op het bovenliggende niveau** als MSI of een bepaalde service principal-type referentie selecteren, die u kunt gebruiken voor alle resource typen onder het abonnement of de resource groep.
     1. U kunt ook specifiek **het bron type selecteren en een andere referentie** voor het bron type Toep assen
     1. Elke referentie wordt beschouwd als de verificatie methode voor alle resources onder een bepaald type
-    1. U moet de gekozen referentie instellen op de resources om ze te kunnen scannen zoals beschreven in deze [sectie](#Setting-up-authentication-to-scan-resources-under-a-subscription-or-resource-group) .
+    1. U moet de gekozen referentie instellen op de resources om ze te kunnen scannen zoals beschreven in deze [sectie](#setting-up-authentication-to-scan-resources-under-a-subscription-or-resource-group) .
 1. U kunt binnen elk type selecteren om alle resources of een subset ervan te scannen op naam.
     1. Als u de optie hebt ingeschakeld **, worden** toekomstige resources van dat type ook gescand in toekomstige scans
     1. Als u specifieke opslag accounts of SQL-data bases selecteert, worden toekomstige resources die zijn gemaakt van dat type binnen dit abonnement of deze resource groep niet opgenomen voor scans, tenzij de scan in de toekomst expliciet wordt bewerkt
  
-1.  Klik op **Doorgaan** om door te gaan. U kunt de toegang testen om te controleren of u de controle sfeer liggen MSI hebt toegepast als lezer voor het abonnement of de resource groep. Als er een fout bericht wordt gegenereerd, volgt u de instructies [hier](#Setting-up-authentication-for-enumerating-resources-under-a-subscription-or-resource-group)
+1.  Klik op **Doorgaan** om door te gaan. U kunt de toegang testen om te controleren of u de controle sfeer liggen MSI hebt toegepast als lezer voor het abonnement of de resource groep. Als er een fout bericht wordt gegenereerd, volgt u de instructies [hier](#setting-up-authentication-for-enumerating-resources-under-a-subscription-or-resource-group)
 
 1.  Selecteer **regel sets scannen** voor elk resource type dat u in de vorige stap hebt gekozen. U kunt ook inline scan regel sets maken.
   :::image type="content" source="media/register-scan-azure-multiple-sources/multiple-scan-rule-set.png" alt-text="Selectie van regelset van meerdere Azure-scans":::

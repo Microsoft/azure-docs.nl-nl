@@ -3,12 +3,12 @@ title: Variabelen in sjablonen
 description: Hierin wordt beschreven hoe u variabelen definieert in een Azure Resource Manager sjabloon (ARM-sjabloon) en Bicep-bestand.
 ms.topic: conceptual
 ms.date: 02/19/2021
-ms.openlocfilehash: e00a9e8e1801725707bac2abdc67512477e2cf07
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 3ab14c9acfcc2d6c9edd23fb3bc4d876cd5ac756
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101700334"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102123374"
 ---
 # <a name="variables-in-arm-templates"></a>Variabelen in ARM-sjablonen
 
@@ -20,7 +20,7 @@ Met Resource Manager worden variabelen omgezet voordat de implementatie bewerkin
 
 ## <a name="define-variable"></a>Variabele definiëren
 
-Wanneer u een variabele definieert, geeft u geen [gegevens type](template-syntax.md#data-types) op voor de variabele. Geef in plaats daarvan een waarde of sjabloon expressie op. Het type variabele wordt afgeleid van de omgezette waarde. In het volgende voor beeld wordt een variabele ingesteld op een teken reeks.
+Wanneer u een variabele definieert, geeft u geen [gegevens type](data-types.md) op voor de variabele. Geef in plaats daarvan een waarde of sjabloon expressie op. Het type variabele wordt afgeleid van de omgezette waarde. In het volgende voor beeld wordt een variabele ingesteld op een teken reeks.
 
 # <a name="json"></a>[JSON](#tab/json)
 

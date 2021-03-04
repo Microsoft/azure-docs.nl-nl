@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: 90d526a58f4223fc70be5414ce5722238ce2c735
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: b09c36f1dce3c394ff24e3e601d773279a6ac510
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101733428"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102123306"
 ---
 # <a name="best-practices-of-a-qna-maker-knowledge-base"></a>Aanbevolen procedures voor een QnA Maker Knowledge Base
 
@@ -43,7 +43,7 @@ Uw gebruiker kan vragen invoeren met een spreek stijl `How do I add a toner cart
 
 De beste antwoorden zijn eenvoudige antwoorden, maar niet te eenvoudig. Gebruik geen antwoorden zoals `yes` en `no` . Als uw antwoord moet worden gekoppeld aan andere bronnen of als u een uitgebreide ervaring met media en koppelingen wilt bieden, gebruikt u [labels voor meta gegevens](../how-to/edit-knowledge-base.md#add-metadata) om onderscheid te maken tussen antwoorden. vervolgens [verzendt u de query](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration) met de tags voor meta gegevens in de `strictFilters` eigenschap om de juiste antwoord versie te verkrijgen.
 
-|Antwoord|Follup vragen|
+|Antwoord|Opvolgings aanwijzingen|
 |--|--|
 |Schakel de Surface-laptop uit met de knop aan/uit op het toetsen bord.|* Toetsen combinaties die in de slaap stand worden gezet, afgesloten en opnieuw starten.<br>* Een oppervlakte laptop hard opstarten<br>* Het BIOS voor een Surface-laptop wijzigen<br>* Verschillen tussen de slaap stand, afsluiten en opnieuw opstarten|
 |Klanten service is 24 uur per dag beschikbaar via telefoon-, Skype-en SMS-berichten.|* Neem contact op met de verkoop gegevens.<br> * Kantoor-en opslag locaties en-uren voor een persoonlijk bezoek.<br> * Accessoires voor een Surface-laptop.|

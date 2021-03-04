@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 02/1/2021
 ms.author: miwithro
-ms.openlocfilehash: 78eed4086c04ceca677a96f03875481e56206e0c
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 070b2e3b88c1ff20b52d2c5cade7ad42c6d4d734
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101723978"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102122422"
 ---
 # <a name="aks-managed-azure-active-directory-integration"></a>AKS-beheerde Azure Active Directory-integratie
 
@@ -25,6 +25,7 @@ Meer informatie over de Azure AD-integratie stroom vindt u in de [documentatie o
 ## <a name="limitations"></a>Beperkingen 
 
 * AKS-beheerde Azure AD-integratie kan niet worden uitgeschakeld
+* Het wijzigen van een door AKS beheerd Azure AD geïntegreerd cluster in verouderde AAD wordt niet ondersteund
 * niet-Kubernetes RBAC ingeschakelde clusters worden niet ondersteund voor door AKS beheerde Azure AD-integratie
 * Het wijzigen van de Azure AD-Tenant die is gekoppeld aan AKS beheerde Azure AD-integratie, wordt niet ondersteund
 

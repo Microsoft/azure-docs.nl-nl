@@ -3,12 +3,12 @@ title: Kubernetes bewaking met container Insights | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u de prestaties van een Kubernetes-cluster met container Insights kunt bekijken en analyseren.
 ms.topic: conceptual
 ms.date: 03/26/2020
-ms.openlocfilehash: 432de02d22a418e92a7487001ae8c128323f3685
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 865a21e8c54d2cf569e04534fab6ec14f5519f34
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101711345"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102124309"
 ---
 # <a name="monitor-your-kubernetes-cluster-performance-with-container-insights"></a>De prestaties van uw Kubernetes-cluster bewaken met container Insights
 
@@ -20,7 +20,7 @@ Zie voor meer informatie over het inschakelen van container Insights [onboarding
 
 Azure Monitor biedt een weer gave met meerdere clusters waarin de status van alle bewaakte Kubernetes-clusters met Linux-en Windows Server 2019-implementaties in uw abonnementen worden weer gegeven. Er worden clusters weer gegeven die zijn gedetecteerd in alle omgevingen die niet worden bewaakt door de oplossing. U kunt de cluster status direct begrijpen en u kunt hier inzoomen op de prestaties van het knoop punt en de controller of navigeren om prestatie grafieken voor het cluster weer te geven. Voor AKS-clusters die zijn gedetecteerd en geïdentificeerd als niet-bewaakt, kunt u op elk gewenst moment de bewaking inschakelen.
 
-De belangrijkste verschillen in het bewaken van een Windows Server-cluster met container Insights in vergelijking met een Linux-cluster worden [hier](container-insights-overview.md#what-does-azure-monitor-for-containers-provide) beschreven in het overzichts artikel.
+De belangrijkste verschillen in het bewaken van een Windows Server-cluster met container Insights in vergelijking met een Linux-cluster worden [hier](container-insights-overview.md#what-does-container-insights-provide) beschreven in het overzichts artikel.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
 

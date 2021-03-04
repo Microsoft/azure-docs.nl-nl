@@ -12,12 +12,12 @@ ms.date: 2/23/2021
 ms.author: kenwith
 ms.reviewer: hpsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bdcdd387575faec87656430860e24fee56387775
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: a9a884cbe9ad30ce298318d217aa9ed1947c8f21
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102050899"
+ms.locfileid: "102123017"
 ---
 # <a name="use-tenant-restrictions-to-manage-access-to-saas-cloud-applications"></a>Tenant beperkingen gebruiken om de toegang tot SaaS-Cloud toepassingen te beheren
 
@@ -178,9 +178,9 @@ Fiddler is een gratis proxy voor webfoutopsporing die kan worden gebruikt om HTT
       }
    ```
 
-Als u meerdere tenants wilt toestaan, gebruikt u een komma om de namen van de tenants van elkaar te scheiden. Bijvoorbeeld:
+   Als u meerdere tenants wilt toestaan, gebruikt u een komma om de namen van de tenants van elkaar te scheiden. Bijvoorbeeld:
 
-      `oSession.oRequest["Restrict-Access-To-Tenants"] = "contoso.onmicrosoft.com,fabrikam.onmicrosoft.com";`
+   `oSession.oRequest["Restrict-Access-To-Tenants"] = "contoso.onmicrosoft.com,fabrikam.onmicrosoft.com";`
 
 4. Sla het CustomRules-bestand op en sluit het.
 

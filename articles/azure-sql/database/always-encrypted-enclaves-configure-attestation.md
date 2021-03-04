@@ -11,12 +11,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviwer: vanto
 ms.date: 01/15/2021
-ms.openlocfilehash: 664733f3d4c4e4bf17440db0323580c5d2c8c2ce
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: fb42a0428f0439053375027481d38977b068e356
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100555663"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102122575"
 ---
 # <a name="configure-azure-attestation-for-your-azure-sql-logical-server"></a>Azure Attestation configureren voor uw logische Azure SQL-Server
 
@@ -66,10 +66,14 @@ authorizationrules
 
 Met het bovenstaande beleid wordt gecontroleerd:
 
-- De enclave in Azure SQL Database biedt geen ondersteuning voor fout opsporing (waardoor het beveiligings niveau van de enclave wordt verminderd).
-- De product-ID van de bibliotheek in de enclave is de product-ID die is toegewezen aan Always Encrypted met Secure enclaves (4639).
-- De versie-ID (SVN) van de bibliotheek is groter dan 0.
+- De enclave in Azure SQL Database biedt geen ondersteuning voor fout opsporing. 
+  > Enclaves kan worden geladen met fout opsporing uitgeschakeld of ingeschakeld. De ondersteuning voor fout opsporing is ontworpen om ontwikkel aars in staat te stellen de code die wordt uitgevoerd in een enclave op te lossen. In een productie systeem kan fout opsporing een beheerder in staat stellen om de inhoud van de enclave te onderzoeken, waardoor het beveiligings niveau dat door de enclave wordt geboden, wordt verminderd. Met het aanbevolen beleid wordt fout opsporing uitgeschakeld om er zeker van te zijn dat als een kwaadwillende beheerder probeert fout opsporing in te scha kelen door over te nemen van de enclave computer, de Attestation mislukt. 
+- De product-ID van de enclave komt overeen met de product-ID die is toegewezen aan Always Encrypted met beveiligde enclaves.
+  > Elke enclave heeft een unieke product-ID die de enclave van andere enclaves onderscheidt. De product-ID die is toegewezen aan de Always Encrypted enclave is 4639. 
+- Het nummer van de beveiligings versie (SVN) van de bibliotheek is groter dan 0.
+  > Met de SVN kan micro soft reageren op mogelijke beveiligings fouten die zijn geïdentificeerd in de enclave-code. Als er een beveiligings probleem wordt dicovered en opgelost, implementeert micro soft een nieuwe versie van de enclave met een nieuwe (incremented) SVN. Het hierboven aanbevolen beleid wordt bijgewerkt om de nieuwe SVN weer te geven. Als u uw beleid bijwerkt zodat dit overeenkomt met het aanbevolen beleid, kunt u ervoor zorgen dat als een kwaadwillende beheerder een oudere en onveilige enclave probeert te laden, de Attestation mislukt.
 - De bibliotheek in het enclave is ondertekend met behulp van de micro soft-handtekening sleutel (de waarde van de x-MS-SGX-mrsigner-claim is de hash van de ondertekeningssleutel).
+  > Een van de belangrijkste doel stellingen is het overtuigen van clients dat de binaire waarde die in de enclave wordt uitgevoerd, het binaire bestand is dat moet worden uitgevoerd. Attestation-beleid voorziet in twee mechanismen voor dit doel. Een is de **mrenclave** -claim die de hash is van het binaire bestand dat moet worden uitgevoerd in een enclave. Het probleem met de **mrenclave** is dat de binaire hash zelfs wordt gewijzigd met trivial wijzigingen in de code, waardoor het lastig is om de code die in de enclave wordt uitgevoerd, ongedaan te maken. Daarom raden wij het gebruik van de **mrsigner** aan. Dit is een hash van een sleutel die wordt gebruikt om de binaire enclave te ondertekenen. Wanneer micro soft Revs de enclave, blijft de **mrsigner** hetzelfde zolang de handtekening sleutel niet verandert. Op deze manier wordt het haalbaar om bijgewerkte binaire bestanden te implementeren zonder de toepassingen van klanten te verbreken. 
 
 > [!IMPORTANT]
 > Er wordt een Attestation-provider gemaakt met het standaard beleid voor Intel SGX enclaves, waarmee de code die niet binnen de enclave wordt uitgevoerd, niet wordt gevalideerd. Micro soft adviseert u ten zeerste het aanbevolen beleid in te stellen en het standaard beleid niet te gebruiken voor Always Encrypted met beveiligde enclaves.

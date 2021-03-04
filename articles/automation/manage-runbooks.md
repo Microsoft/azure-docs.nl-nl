@@ -3,14 +3,14 @@ title: Runbooks in Azure Automation beheren
 description: In dit artikel leest u hoe u runbooks beheert in Azure Automation.
 services: automation
 ms.subservice: process-automation
-ms.date: 10/23/2020
+ms.date: 02/24/2021
 ms.topic: conceptual
-ms.openlocfilehash: ed5eda668f6bd52ba144aa664119ab613fdb7742
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: af767ab37e8e77195b7d13b24ea78f4fb88485fb
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183580"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102122133"
 ---
 # <a name="manage-runbooks-in-azure-automation"></a>Runbooks in Azure Automation beheren
 
@@ -23,6 +23,7 @@ Een nieuw runbook maken in Azure Automation met behulp van de Azure Portal of Wi
 * [Tekst runbook bewerken in Azure Automation](automation-edit-textual-runbook.md)
 * [Meer informatie over belang rijke Windows Power shell-werk stroom concepten voor Automation-runbooks](automation-powershell-workflow.md)
 * [Python 2-pakketten beheren in Azure Automation](python-packages.md)
+* [Python 3-pakketten (preview) in Azure Automation beheren](python-3-packages.md)
 
 ### <a name="create-a-runbook-in-the-azure-portal"></a>Een runbook maken in de Azure Portal
 
@@ -45,7 +46,7 @@ New-AzAutomationRunbook -AutomationAccountName MyAccount `
 
 ## <a name="import-a-runbook"></a>Een runbook importeren
 
-U kunt een Power shell-of Power shell workflow-script (**. ps1**), een grafisch runbook (**. graphrunbook**) of een python 2-script (**. py**) importeren om uw eigen runbook te maken. U moet het [type runbook](automation-runbook-types.md) opgeven dat tijdens het importeren wordt gemaakt, waarbij rekening wordt gehouden met de volgende overwegingen.
+U kunt een Power shell-of Power shell workflow-script (**. ps1**), een grafisch runbook (**. graphrunbook**) of een python 2-of python 3-script (**. py**) importeren om uw eigen runbook te maken. U moet het [type runbook](automation-runbook-types.md) opgeven dat tijdens het importeren wordt gemaakt, waarbij rekening wordt gehouden met de volgende overwegingen.
 
 * U kunt een **. ps1** -bestand importeren dat geen werk stroom bevat in een [Power shell-Runbook](automation-runbook-types.md#powershell-runbooks) of een [Power shell workflow-runbook](automation-runbook-types.md#powershell-workflow-runbooks). Als u deze importeert in een Power shell workflow-runbook, wordt dit geconverteerd naar een werk stroom. In dit geval worden opmerkingen in het runbook opgenomen om de aangebrachte wijzigingen te beschrijven.
 

@@ -9,18 +9,36 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 02/18/2021
-ms.openlocfilehash: b19c5e8ca1f7984f33a5cedf37a2774532c79350
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 69313b48b505bd0b53df6f15f636e2903f41ebfd
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101661100"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102124003"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
 In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga voor de volledige SDK-referentie-inhoud naar de hoofd pagina van de hand leiding van de Azure Machine Learning van de [**SDK voor python**](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) .
 
 __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de volgende URL in uw feedlezer te kopiëren en plakken: `https://docs.microsoft.com/api/search/rss?search=%22Azure+machine+learning+release+notes%22&locale=en-us`
+
+## <a name="2021-02-28"></a>2021-02-28
+### <a name="azure-machine-learning-studio-notebooks-experience-february-update"></a>Ervaring met Azure Machine Learning Studio notitie blokken (update voor februari)
++ **Nieuwe functies**
+  + [Systeem eigen terminal (ga)](https://docs.microsoft.com/azure/machine-learning/how-to-access-terminal). Gebruikers hebben nu toegang tot een geïntegreerde Terminal en een Git-bewerking via de geïntegreerde Terminal.
+  + [Notitieblok fragmenten (preview-versie)](https://azure.github.io/azureml-web/docs/vs-code-snippets/snippets). Algemene code fragmenten van Azure ML zijn nu beschikbaar in uw hand bereik. Navigeer naar het paneel code fragmenten dat toegankelijk is via de werk balk of Activeer het menu met code fragmenten met Ctrl + spatie.  
+  + [Sneltoetsen](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#shortcut-keys). Volledige pariteit met sneltoetsen die beschikbaar zijn in Jupyter. 
+  + Geef de para meters van de cel aan. Toont gebruikers met een cel in een notitie blok is een para meter-cel en kan notitie blokken met para meters uitvoeren via [Papermill](https://github.com/nteract/papermill) op het reken proces.
+  + Terminal en kernel Session Manager: gebruikers kunnen alle kernels en Terminal sessies beheren die op uw computer worden uitgevoerd.
+  + Knop delen. Gebruikers kunnen nu bestanden in het notebook bestand Verkenner delen door met de rechter muisknop op het bestand te klikken en de knop delen te gebruiken.
+
+
++ **Oplossingen en verbeteringen voor oplossingen**
+  + Verbeterde laad tijden voor pagina's
+  + Verbeterde prestaties 
+  + Verbeterde snelheid en kernel-betrouw baarheid
+  + Het draai wiel is toegevoegd om de voortgang weer te geven voor alle actieve [reken activiteiten](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#status-indicators).
+  + Klik met de rechter muisknop in Verkenner. Als u met de rechter muisknop op een bestand klikt, worden nu Bestands bewerkingen geopend. 
 
 ## <a name="2021-02-16"></a>2021-02-16
 

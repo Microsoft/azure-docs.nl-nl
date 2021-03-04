@@ -7,17 +7,17 @@ ms.author: askaur
 ms.date: 12/08/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 336b12f7000b70c424f1165976370300bc8c85e0
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 8c4753b2041c2ab15fd586a8b1add6c4dd1a167b
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101656113"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102124020"
 ---
 # <a name="quickstart-join-your-chat-app-to-a-teams-meeting"></a>Quickstart: Voeg u chat-app toe aan een Teams-meeting
 
 > [!IMPORTANT]
-> Vul [dit formulier](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR21ouQM6BHtHiripswZoZsdURDQ5SUNQTElKR0VZU0VUU1hMOTBBMVhESS4u)in om [teams Tenant interoperabiliteit](../concepts/teams-interop.md)in of uit te scha kelen.
+> Vul [dit formulier](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR21ouQM6BHtHiripswZoZsdURDQ5SUNQTElKR0VZU0VUU1hMOTBBMVhESS4u)in om [teams Tenant interoperabiliteit](../../concepts/teams-interop.md)in of uit te scha kelen.
 
 Ga aan de slag met Azure Communication Services door uw chatoplossing te verbinden met Microsoft Teams, met behulp van de JavaScript-clientbibliotheek. 
 

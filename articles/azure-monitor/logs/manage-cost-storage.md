@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 01/31/2021
+ms.date: 03/03/2021
 ms.author: bwren
-ms.openlocfilehash: 32a34acb454dc87a46e59e8c1231d043a55b7cab
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 1ec8c65a1babe707175eb891592694dd0524711b
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102051086"
+ms.locfileid: "102123595"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Gebruik en kosten beheren met Azure Monitor-logboeken    
 
@@ -39,17 +39,17 @@ De standaard prijs voor Log Analytics is een model voor **betalen naar gebruik**
   
 Naast het betalen naar gebruik-model is Log Analytics **capaciteits reserverings** lagen waarmee u Maxi maal 25% kunt besparen op basis van de betalen naar gebruik-prijs. Met de prijzen voor capaciteits reservering kunt u een reserve ring kopen vanaf 100 GB per dag. Elk gebruik boven het reserverings niveau wordt gefactureerd op basis van het betalen naar gebruik-tarief. De lagen voor capaciteits reservering hebben een toezeggings periode van 31 dagen. Tijdens de toezeggings periode kunt u overschakelen naar een reserverings tier op een hoger niveau (waardoor de dag van 31 dagen opnieuw wordt opgestart), maar u kunt niet teruggaan naar betalen naar gebruik of naar een reserverings laag met een lagere capaciteit totdat de toezeggings periode is voltooid. Facturering voor de reserverings lagen voor capaciteit wordt dagelijks uitgevoerd. Meer [informatie](https://azure.microsoft.com/pricing/details/monitor/) over log Analytics prijzen voor betalen per gebruik en capaciteits reservering. 
 
-In alle prijs categorieën wordt de gegevens grootte van een gebeurtenis berekend op basis van een teken reeks representatie van de eigenschappen die in Log Analytics voor deze gebeurtenis zijn opgeslagen, ongeacht of de gegevens worden verzonden vanuit een agent of worden toegevoegd tijdens het opname proces. Dit omvat alle [aangepaste velden](../logs/custom-fields.md) die worden toegevoegd wanneer gegevens worden verzameld en vervolgens worden opgeslagen in log Analytics. Diverse eigenschappen die worden gebruikt voor alle gegevens typen, inclusief enkele [log Analytics standaard eigenschappen](../logs/log-standard-columns.md), worden uitgesloten in de berekening van de gebeurtenis grootte. Dit omvat `_ResourceId` , `_ItemId` , `_IsBillable` en `_BilledSize` `Type` . Alle andere eigenschappen die zijn opgeslagen in Log Analytics, worden opgenomen in de berekening van de gebeurtenis grootte. Sommige gegevens typen zijn gratis van gegevens opname kosten, bijvoorbeeld de AzureActivity-, heartbeat-en gebruiks typen. Als u wilt bepalen of een gebeurtenis is uitgesloten van facturering voor gegevens opname, kunt u de `_IsBillable` eigenschap gebruiken zoals [hieronder](#data-volume-for-specific-events)wordt weer gegeven. Gebruik wordt gerapporteerd in GB (1.0 E9 bytes). 
+In alle prijs categorieën wordt de gegevens grootte van een gebeurtenis berekend op basis van een teken reeks representatie van de eigenschappen die in Log Analytics voor deze gebeurtenis zijn opgeslagen, ongeacht of de gegevens worden verzonden vanuit een agent of worden toegevoegd tijdens het opname proces. Dit omvat alle [aangepaste velden](custom-fields.md) die worden toegevoegd wanneer gegevens worden verzameld en vervolgens worden opgeslagen in log Analytics. Diverse eigenschappen die worden gebruikt voor alle gegevens typen, inclusief enkele [log Analytics standaard eigenschappen](./log-standard-columns.md), worden uitgesloten in de berekening van de gebeurtenis grootte. Dit omvat `_ResourceId` , `_SubscriptionId` ,, en `_ItemId` `_IsBillable` `_BilledSize` `Type` . Alle andere eigenschappen die zijn opgeslagen in Log Analytics, worden opgenomen in de berekening van de gebeurtenis grootte. Sommige gegevens typen zijn gratis van gegevens opname kosten, bijvoorbeeld de AzureActivity-, heartbeat-en gebruiks typen. Als u wilt bepalen of een gebeurtenis is uitgesloten van facturering voor gegevens opname, kunt u de `_IsBillable` eigenschap gebruiken zoals [hieronder](#data-volume-for-specific-events)wordt weer gegeven. Gebruik wordt gerapporteerd in GB (1.0 E9 bytes). 
 
 Houd er ook rekening mee dat sommige oplossingen, zoals [Azure Security Center](https://azure.microsoft.com/pricing/details/security-center/), [Azure Sentinel](https://azure.microsoft.com/pricing/details/azure-sentinel/) en [Configuration Management](https://azure.microsoft.com/pricing/details/automation/) hun eigen prijs modellen hebben. 
 
 ### <a name="log-analytics-dedicated-clusters"></a>Log Analytics toegewezen clusters
 
-Log Analytics toegewezen clusters zijn verzamelingen van werk ruimten in één beheerd Azure Data Explorer-cluster ter ondersteuning van geavanceerde scenario's zoals door de [klant beheerde sleutels](../logs/customer-managed-keys.md).  Log Analytics toegewezen clusters maken gebruik van een prijs model voor capaciteits reservering, dat moet worden geconfigureerd op ten minste 1000 GB per dag. Voor dit capaciteits niveau geldt een korting van 25% ten opzichte van de prijzen voor betalen per gebruik. Elk gebruik boven het reserverings niveau wordt gefactureerd op basis van het betalen naar gebruik-tarief. De reserve ring van de cluster capaciteit heeft een toezeggings periode van 31 dagen nadat het reserverings niveau is verhoogd. Tijdens de toezeggings periode kan het capaciteits reserverings niveau niet worden verminderd, maar het kan op elk gewenst moment worden verhoogd. Wanneer werk ruimten zijn gekoppeld aan een cluster, wordt de facturering van gegevens opname voor deze werk ruimten uitgevoerd op het cluster niveau met het geconfigureerde capaciteits reserverings niveau. Meer informatie over het [maken van een log Analytics clusters](../logs/customer-managed-keys.md#create-cluster) en [het koppelen van werk ruimten aan het](../logs/customer-managed-keys.md#link-workspace-to-cluster)cluster. De prijs informatie voor capaciteits reservering is beschikbaar op de [pagina met Azure monitor prijzen]( https://azure.microsoft.com/pricing/details/monitor/).  
+Log Analytics toegewezen clusters zijn verzamelingen van werk ruimten in één beheerd Azure Data Explorer-cluster ter ondersteuning van geavanceerde scenario's zoals door de [klant beheerde sleutels](customer-managed-keys.md).  Log Analytics toegewezen clusters maken gebruik van een prijs model voor capaciteits reservering, dat moet worden geconfigureerd op ten minste 1000 GB per dag. Voor dit capaciteits niveau geldt een korting van 25% ten opzichte van de prijzen voor betalen per gebruik. Elk gebruik boven het reserverings niveau wordt gefactureerd op basis van het betalen naar gebruik-tarief. De reserve ring van de cluster capaciteit heeft een toezeggings periode van 31 dagen nadat het reserverings niveau is verhoogd. Tijdens de toezeggings periode kan het capaciteits reserverings niveau niet worden verminderd, maar het kan op elk gewenst moment worden verhoogd. Wanneer werk ruimten zijn gekoppeld aan een cluster, wordt de facturering van gegevens opname voor deze werk ruimten uitgevoerd op het cluster niveau met het geconfigureerde capaciteits reserverings niveau. Meer informatie over het [maken van een log Analytics clusters](customer-managed-keys.md#create-cluster) en [het koppelen van werk ruimten aan het](customer-managed-keys.md#link-workspace-to-cluster)cluster. De prijs informatie voor capaciteits reservering is beschikbaar op de [pagina met Azure monitor prijzen]( https://azure.microsoft.com/pricing/details/monitor/).  
 
-Het reserverings niveau voor cluster capaciteit wordt via een programma geconfigureerd met Azure Resource Manager met behulp van de `Capacity` para meter onder `Sku` . De `Capacity` is opgegeven in eenheden van GB en kan waarden hebben van 1000 GB/dag of meer in stappen van 100 GB/dag. Dit is een gedetailleerde beschrijving van Azure Monitor door de [klant beheerde sleutel](../logs/customer-managed-keys.md#create-cluster). Als voor uw cluster een reserve ring nodig is die hoger is dan 2000 GB/dag, neemt u contact met ons op [LAIngestionRate@microsoft.com](mailto:LAIngestionRate@microsoft.com) .
+Het reserverings niveau voor cluster capaciteit wordt via een programma geconfigureerd met Azure Resource Manager met behulp van de `Capacity` para meter onder `Sku` . De `Capacity` is opgegeven in eenheden van GB en kan waarden hebben van 1000 GB/dag of meer in stappen van 100 GB/dag. Dit is een gedetailleerde beschrijving van Azure Monitor door de [klant beheerde sleutel](customer-managed-keys.md#create-cluster). Als voor uw cluster een reserve ring nodig is die hoger is dan 2000 GB/dag, neemt u contact met ons op [LAIngestionRate@microsoft.com](mailto:LAIngestionRate@microsoft.com) .
 
-Er zijn twee facturerings methoden voor gebruik in een cluster. Deze kunnen worden opgegeven met de `billingType` para meter bij het [configureren van uw cluster](../logs/customer-managed-keys.md#customer-managed-key-operations). De twee modi zijn: 
+Er zijn twee facturerings methoden voor gebruik in een cluster. Deze kunnen worden opgegeven met de `billingType` para meter bij het [configureren van uw cluster](customer-managed-keys.md#customer-managed-key-operations). De twee modi zijn: 
 
 1. **Cluster**: in dit geval (dit is de standaard instelling), wordt de facturering voor opgenomen gegevens uitgevoerd op het cluster niveau. De opgenomen gegevens aantallen uit elke werk ruimte die aan een cluster is gekoppeld, worden geaggregeerd voor het berekenen van de dagelijkse factuur voor het cluster. Houd er rekening mee dat toewijzingen per knoop punt van [Azure Security Center](../../security-center/index.yml) worden toegepast op het niveau van de werk ruimte vóór deze aggregatie van geaggregeerde gegevens in alle werk ruimten in het cluster. 
 
@@ -79,7 +79,7 @@ Log Analytics kosten worden toegevoegd aan uw Azure-factuur. U kunt de details v
 
 Azure biedt een groot aantal handige functies in de hub [Azure Cost Management en facturering](../../cost-management-billing/costs/quick-acm-cost-analysis.md?toc=%2fazure%2fbilling%2fTOC.json) . Zo kunt u met de functionaliteit ' cost analysis ' uw uitgaven voor Azure-resources weer geven. Voeg eerst een filter toe op resource type (aan micro soft. operationalinsights/Workspace voor Log Analytics en micro soft. operationalinsights/cluster for Log Analytics-clusters) zodat u uw Log Analytics uitgaven kunt volgen. Selecteer vervolgens ' groeperen op ' om ' meter categorie ' of ' meter ' te selecteren.  Houd er rekening mee dat andere services, zoals Azure Security Center en Azure-Sentinel, hun gebruik ook voor Log Analytics werkruimte resources kunnen factureren. Als u de toewijzing aan service naam wilt zien, kunt u de tabel weergave selecteren in plaats van een grafiek. 
 
-Meer informatie over uw gebruik kan worden verkregen door [uw gebruik te downloaden uit de Azure-portal](../../cost-management-billing/manage/download-azure-invoice-daily-usage-date.md#download-usage-in-azure-portal). In de gedownloade spreadsheet kunt u het gebruik per Azure-resource (bijvoorbeeld Log Analytics-werkruimte) per dag zien. In dit Excel-werk blad kunt u het gebruik van uw Log Analytics-werk ruimten vinden door eerst te filteren op de kolom meter categorie om ' Log Analytics ' weer te geven. inzichten en analyses ' (gebruikt door enkele van de verouderde prijs categorieën) en ' Azure Monitor ' (gebruikt door prijs categorieën voor capaciteits reservering) en voegt vervolgens een filter toe aan de kolom ' instance ID ' die is ingesteld op ' bevat werk ruimte ' of ' contains cluster ' (de laatste voor het toevoegen van Log Analytics cluster gebruik). Het gebruik wordt weer gegeven in de kolom verbruikte hoeveelheid en de eenheid voor elk item wordt weer gegeven in de kolom eenheid.  Er is meer informatie beschikbaar om u te helpen [inzicht te krijgen in uw Microsoft Azure-factuur](../../cost-management-billing/understand/review-individual-bill.md). 
+Meer informatie over uw gebruik kan worden verkregen door [uw gebruik te downloaden uit de Azure-portal](../../cost-management-billing/manage/download-azure-invoice-daily-usage-date.md#download-usage-in-azure-portal). In de gedownloade spreadsheet kunt u het gebruik per Azure-resource (bijvoorbeeld Log Analytics-werkruimte) per dag zien. In dit Excel-werk blad kunt u het gebruik van uw Log Analytics-werk ruimten vinden door eerst te filteren op de kolom meter categorie om ' Log Analytics ' weer te geven. Insight and Analytics ' (gebruikt door enkele van de verouderde prijs categorieën) en ' Azure Monitor ' (gebruikt door prijs categorieën voor capaciteits reservering) en voegt vervolgens een filter toe aan de kolom ' instance ID ' die is ingesteld op ' bevat werk ruimte ' of ' contains cluster ' (de laatste voor het toevoegen van Log Analytics cluster gebruik). Het gebruik wordt weer gegeven in de kolom verbruikte hoeveelheid en de eenheid voor elk item wordt weer gegeven in de kolom eenheid.  Er is meer informatie beschikbaar om u te helpen [inzicht te krijgen in uw Microsoft Azure-factuur](../../cost-management-billing/understand/review-individual-bill.md). 
 
 ## <a name="changing-pricing-tier"></a>Prijs categorie wijzigen
 
@@ -93,7 +93,7 @@ Als u de Log Analytics prijs categorie van uw werk ruimte wilt wijzigen,
     
 3. Als u de prijs categorie hebt gecontroleerd op basis van de laatste 31 dagen van gebruik, klikt u op **selecteren**.  
 
-U kunt [de prijs categorie ook instellen via Azure Resource Manager](../logs/resource-manager-workspace.md) met behulp `sku` van de para meter ( `pricingTier` in de Azure Resource Manager sjabloon). 
+U kunt [de prijs categorie ook instellen via Azure Resource Manager](../samples/resource-manager-workspace.md) met behulp `sku` van de para meter ( `pricingTier` in de Azure Resource Manager sjabloon). 
 
 ## <a name="legacy-pricing-tiers"></a>Verouderde prijscategorieën
 
@@ -127,7 +127,7 @@ Geen van de verouderde prijs categorieën heeft prijzen op basis van regionaal.
 
 ## <a name="log-analytics-and-security-center"></a>Log Analytics en Security Center
 
-[Azure Security Center](../../security-center/index.yml) facturering is nauw verbonden met log Analytics facturering. Security Center biedt een toewijzing van 500 MB/knoop punten op basis van een set [typen beveiligings gegevens](/azure/azure-monitor/reference/tables/tables-category#security) (WindowsEvent, SecurityAlert, Security Baseline baseline, Summary, SecurityDetection, SecurityEvent, WindowsFirewall, MaliciousIPCommunication, LinuxAuditLog, SysmonEvent, ProtectionStatus) en de gegevens typen update en update Summary wanneer de updatebeheer oplossing niet wordt uitgevoerd op de werk ruimte of de doel groep van de oplossing is ingeschakeld. Als de werk ruimte in de prijs categorie verouderd per knoop punt staat, worden de Security Center-en Log Analytics toewijzingen gecombineerd en gezamenlijk toegepast op alle factureer bare opgenomen gegevens.  
+[Azure Security Center](../../security-center/index.yml) facturering is nauw verbonden met log Analytics facturering. Security Center biedt een toewijzing van 500 MB/knoop punten voor de volgende subset van [beveiligings gegevens typen](/azure/azure-monitor/reference/tables/tables-category#security) (WindowsEvent, SecurityAlert, Security Baseline baseline, Summary, SecurityDetection, SecurityEvent, WindowsFirewall, MaliciousIPCommunication, LinuxAuditLog, SysmonEvent, ProtectionStatus) en de gegevens typen update en update Summary wanneer de updatebeheer oplossing niet wordt uitgevoerd op de werk ruimte of de doel groep van de oplossing is ingeschakeld. Als de werk ruimte in de prijs categorie verouderd per knoop punt staat, worden de Security Center-en Log Analytics toewijzingen gecombineerd en gezamenlijk toegepast op alle factureer bare opgenomen gegevens.  
 
 ## <a name="change-the-data-retention-period"></a>De gegevensretentieperiode wijzigen
 
@@ -145,7 +145,7 @@ Als u de standaard retentie voor uw werk ruimte wilt instellen,
 
 Als de retentie is verlaagd, is er een respijt periode van een enkele dag voordat de gegevens die ouder zijn dan de nieuwe Bewaar instelling worden verwijderd. 
 
-Op de pagina **gegevens behoud** kunnen Bewaar instellingen van 30, 31, 60, 90, 120, 180, 270, 365, 550 en 730 dagen worden bewaard. Als een andere instelling vereist is, kan deze worden geconfigureerd met behulp van [Azure Resource Manager](../logs/resource-manager-workspace.md) met de `retentionInDays` para meter. Wanneer u de Bewaar periode van de gegevens instelt op 30 dagen, kunt u een onmiddellijke verwijdering van oudere gegevens activeren met behulp van de `immediatePurgeDataOn30Days` para meter (waardoor de enige dag wordt uitgesteld). Dit kan handig zijn voor nalevings scenario's waarbij onmiddellijke gegevens verwijdering nood zakelijk is. Deze functie direct opschonen wordt alleen weer gegeven via Azure Resource Manager. 
+Op de pagina **gegevens behoud** kunnen Bewaar instellingen van 30, 31, 60, 90, 120, 180, 270, 365, 550 en 730 dagen worden bewaard. Als een andere instelling vereist is, kan deze worden geconfigureerd met behulp van [Azure Resource Manager](../samples/resource-manager-workspace.md) met de `retentionInDays` para meter. Wanneer u de Bewaar periode van de gegevens instelt op 30 dagen, kunt u een onmiddellijke verwijdering van oudere gegevens activeren met behulp van de `immediatePurgeDataOn30Days` para meter (waardoor de enige dag wordt uitgesteld). Dit kan handig zijn voor nalevings scenario's waarbij onmiddellijke gegevens verwijdering nood zakelijk is. Deze functie direct opschonen wordt alleen weer gegeven via Azure Resource Manager. 
 
 Werk ruimten met een Bewaar periode van 30 dagen kunnen de gegevens gedurende 31 dagen werkelijk bewaren. Als het van cruciaal belang is dat gegevens slechts gedurende 30 dagen worden bewaard, gebruikt u de Azure Resource Manager om de Bewaar periode in te stellen op 30 dagen en met de `immediatePurgeDataOn30Days` para meter.  
 
@@ -215,7 +215,7 @@ Zodra de dagelijkse limiet is bereikt, stopt het verzamelen van factureer bare g
 > Het dagelijks kapje kan het verzamelen van gegevens niet met precies het opgegeven Cap-niveau stoppen en er worden een aantal overtollige gegevens verwacht, met name als de werk ruimte grote hoeveel heden gegevens ontvangt. [Hieronder](#view-the-effect-of-the-daily-cap) vindt u een overzicht van de informatie die nuttig is voor het bestudeert van het dagelijkse Cap-gedrag. 
 
 > [!WARNING]
-> Het dagelijks kapje stopt niet het verzamelen van gegevens typen die zijn opgenomen in de [Azure Security Center dagelijks per knoop punt](#log-analytics-and-security-center) (WindowsEvent, SecurityAlert, Security Baseline baseline, Summary, SecurityDetection, SecurityEvent, WindowsFirewall, MaliciousIPCommunication, LinuxAuditLog, SysmonEvent, ProtectionStatus, update en update Summary), met uitzonde ring van werk ruimten waarin Azure Security Center is geïnstalleerd vóór 19 juni 2017. 
+> Het dagelijks kapje stopt niet het verzamelen van gegevens typen WindowsEvent, SecurityAlert, Security Baseline baseline, Summary, SecurityDetection, SecurityEvent, WindowsFirewall, MaliciousIPCommunication, LinuxAuditLog, SysmonEvent, ProtectionStatus, update en update Summary, met uitzonde ring van werk ruimten waarin Azure Security Center is geïnstalleerd vóór 19 juni 2017. 
 
 ### <a name="identify-what-daily-data-limit-to-define"></a>Identificeren welke dagelijkse gegevens limiet moet worden gedefinieerd
 
@@ -258,7 +258,7 @@ Om aan de slag te gaan, zijn hier de aanbevolen instellingen voor de waarschuwin
 - Doel: Selecteer uw Log Analytics resource
 - Gezocht 
    - Signaal naam: aangepaste zoek opdracht in Logboeken
-   - Zoek query: `_LogOperation | where Category == "Ingestion" | where Operation == "Ingestion rate" | where Level == "Warning"`
+   - Zoek query: `_LogOperation | where Operation == "Data Collection Status" | where Detail contains "OverQuota"`
    - Gebaseerd op: aantal resultaten
    - Voor waarde: groter dan
    - Drempel waarde: 0
@@ -322,7 +322,7 @@ Het aantal eenheden op uw factuur is in eenheden van het knoop punt * maanden da
 
 
 > [!TIP]
-> Gebruik deze `find` query's spaarzaam als scans over gegevens typen [veel resources](../logs/query-optimization.md#query-performance-pane) zijn om uit te voeren. Als u geen resultaten **per computer** nodig hebt, voert u een query uit op het type gebruiks gegevens (zie hieronder).
+> Gebruik deze `find` query's spaarzaam als scans over gegevens typen [veel resources](../log-query/query-optimization.md#query-performance-pane) zijn om uit te voeren. Als u geen resultaten **per computer** nodig hebt, voert u een query uit op het type gebruiks gegevens (zie hieronder).
 
 ## <a name="understanding-ingested-data-volume"></a>Meer informatie over opgenomen gegevens volume
 
@@ -340,7 +340,7 @@ Event
 | summarize count(), Bytes=sum(_BilledSize) by EventID, bin(TimeGenerated, 1d)
 ``` 
 
-Houd er rekening mee dat met de component `where _IsBillable = true` gegevens typen worden gefilterd van bepaalde oplossingen waarvoor geen opname kosten worden berekend. Meer [informatie](../logs/log-standard-columns.md#_isbillable) over `_IsBillable` .
+Houd er rekening mee dat met de component `where _IsBillable = true` gegevens typen worden gefilterd van bepaalde oplossingen waarvoor geen opname kosten worden berekend. Meer [informatie](./log-standard-columns.md#_isbillable) over `_IsBillable` .
 
 ### <a name="data-volume-by-solution"></a>Gegevensvolume per oplossing
 
@@ -383,7 +383,7 @@ Usage
 
 ### <a name="data-volume-by-computer"></a>Gegevens volume per computer
 
-Het `Usage` gegevens type bevat geen informatie op computer niveau. Als u de **grootte** van opgenomen gegevens per computer wilt zien, gebruikt u de `_BilledSize` [eigenschap](../logs/log-standard-columns.md#_billedsize), die de grootte in bytes levert:
+Het `Usage` gegevens type bevat geen informatie op computer niveau. Als u de **grootte** van opgenomen gegevens per computer wilt zien, gebruikt u de `_BilledSize` [eigenschap](./log-standard-columns.md#_billedsize), die de grootte in bytes levert:
 
 ```kusto
 find where TimeGenerated > ago(24h) project _BilledSize, _IsBillable, Computer
@@ -393,7 +393,7 @@ find where TimeGenerated > ago(24h) project _BilledSize, _IsBillable, Computer
 | sort by BillableDataBytes nulls last
 ```
 
-De `_IsBillable` [eigenschap](../logs/log-standard-columns.md#_isbillable) geeft aan of de opgenomen gegevens kosten in rekening worden gebracht. 
+De `_IsBillable` [eigenschap](./log-standard-columns.md#_isbillable) geeft aan of de opgenomen gegevens kosten in rekening worden gebracht. 
 
 Voor een overzicht van het **aantal** factureer bare gebeurtenissen dat per computer is opgenomen, gebruikt u 
 
@@ -406,11 +406,11 @@ find where TimeGenerated > ago(24h) project _IsBillable, Computer
 ```
 
 > [!TIP]
-> Gebruik deze `find` query's spaarzaam als scans over gegevens typen [veel resources](../logs/query-optimization.md#query-performance-pane) zijn om uit te voeren. Als u geen resultaten **per computer** nodig hebt, voert u een query uit op het gegevens type gebruik.
+> Gebruik deze `find` query's spaarzaam als scans over gegevens typen [veel resources](../log-query/query-optimization.md#query-performance-pane) zijn om uit te voeren. Als u geen resultaten **per computer** nodig hebt, voert u een query uit op het gegevens type gebruik.
 
 ### <a name="data-volume-by-azure-resource-resource-group-or-subscription"></a>Gegevens volume per Azure-resource, resource groep of abonnement
 
-Voor gegevens van knoop punten die worden gehost in azure, kunt u de **grootte** van opgenomen gegevens __per computer__ verkrijgen, met behulp van de [eigenschap](../logs/log-standard-columns.md#_resourceid)_ResourceId, die het volledige pad naar de bron bevat:
+Voor gegevens van knoop punten die worden gehost in azure, kunt u de **grootte** van opgenomen gegevens __per computer__ verkrijgen, met behulp van de [eigenschap](./log-standard-columns.md#_resourceid)_ResourceId, die het volledige pad naar de bron bevat:
 
 ```kusto
 find where TimeGenerated > ago(24h) project _ResourceId, _BilledSize, _IsBillable
@@ -445,7 +445,7 @@ U kunt ook de `_ResourceId` volledigere, indien nodig, parseren en gebruiken
 ```
 
 > [!TIP]
-> Gebruik deze `find` query's spaarzaam als scans over gegevens typen [veel resources](../logs/query-optimization.md#query-performance-pane) zijn om uit te voeren. Als u geen resultaten per abonnement, resource groep of bron naam nodig hebt, voert u vervolgens een query uit op het gegevens type gebruik.
+> Gebruik deze `find` query's spaarzaam als scans over gegevens typen [veel resources](../log-query/query-optimization.md#query-performance-pane) zijn om uit te voeren. Als u geen resultaten per abonnement, resource groep of bron naam nodig hebt, voert u vervolgens een query uit op het gegevens type gebruik.
 
 > [!WARNING]
 > Sommige velden van het gegevens type gebruik, terwijl ze nog steeds in het schema zijn, zijn afgeschaft en hun waarden worden niet meer ingevuld. Dit zijn zowel **computers** als velden met betrekking tot opname (**TotalBatches**, **BatchesWithinSla**, **BatchesOutsideSla**, **BatchesCapped** en **AverageProcessingTimeMs**.
@@ -479,7 +479,7 @@ Hieronder vindt u enkele suggesties voor het verkleinen van het aantal logboeken
 
 | Bron van hoog gegevensvolume | Het gegevensvolume verminderen |
 | -------------------------- | ------------------------- |
-| Container Insights         | [Configureer container Insights](../containers/container-insights-cost.md#controlling-ingestion-to-reduce-cost) om alleen de gegevens te verzamelen die u nodig hebt. |
+| Container Insights         | [Configureer container Insights](../insights/container-insights-cost.md#controlling-ingestion-to-reduce-cost) om alleen de gegevens te verzamelen die u nodig hebt. |
 | Beveiligingsgebeurtenissen            | Selecteer [normale of minimale beveiligingsgebeurtenissen](../../security-center/security-center-enable-data-collection.md#data-collection-tier) <br> Wijzig het beleid voor beveiligingscontrole zodat alleen de gewenste gebeurtenissen worden verzameld. Controleer vooral de noodzaak voor het verzamelen van gebeurtenissen voor <br> - [filterplatform controleren](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772749(v=ws.10)) <br> - [register controleren](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941614(v%3dws.10))<br> - [bestandssysteem controleren](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772661(v%3dws.10))<br> - [kernel-object controleren](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941615(v%3dws.10))<br> - [greepbewerking controleren](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772626(v%3dws.10))<br> -Verwissel bare opslag controleren |
 | Prestatiemeteritems       | Wijzig de [Prestatiemeteritemconfiguratie](../agents/data-sources-performance-counters.md) in: <br> - Frequentie van het verzamelen van gegevens beperken <br> - Aantal prestatiemeteritems beperken |
 | Gebeurtenislogboeken                 | Wijzig [Configuratie van gebeurtenislogboek](../agents/data-sources-windows-events.md) in: <br> - Aantal verzamelde gebeurtenislogboeken beperken <br> - Alleen vereiste gebeurtenisniveaus verzamelen. Bijvoorbeeld, gebeurtenissen op *informatie* niveau niet verzamelen |
@@ -487,12 +487,12 @@ Hieronder vindt u enkele suggesties voor het verkleinen van het aantal logboeken
 | AzureDiagnostics           | Wijzig de [resource logboek verzameling](../essentials/diagnostic-settings.md#create-in-azure-portal) in: <br> - Het aantal resources dat logboeken naar Log Analytics verzendt te verkleinen <br> - Alleen vereiste logboeken te verzamelen |
 | Oplossingsgegevens van computers die de oplossing niet nodig hebben | Gebruik een [oplossing als doel](../insights/solution-targeting.md) voor het verzamelen van gegevens van alleen vereiste groepen computers. |
 | Application Insights | Beoordelings opties voor [https://docs.microsoft.com/azure/azure-monitor/app/pricing#managing-your-data-volume](managing Application Insights data volume) |
-| [SQL-analyse](../insights/azure-sql.md) | Gebruik [set-AzSqlServerAudit](/powershell/module/az.sql/set-azsqlserveraudit) om de controle-instellingen af te stemmen. |
-| Azure Sentinel | Bekijk alle [Sentinel-gegevens bronnen](../../sentinel/connect-data-sources.md) die u onlangs hebt ingeschakeld als bronnen van extra gegevens volume. |
+| [SQL-analyse](https://docs.microsoft.com/azure/azure-monitor/insights/azure-sql) | Gebruik [set-AzSqlServerAudit](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserveraudit) om de controle-instellingen af te stemmen. |
+| Azure Sentinel | Bekijk alle [Sentinel-gegevens bronnen](https://docs.microsoft.com/azure/sentinel/connect-data-sources) die u onlangs hebt ingeschakeld als bronnen van extra gegevens volume. |
 
 ### <a name="getting-nodes-as-billed-in-the-per-node-pricing-tier"></a>Knoop punten ophalen als gefactureerd in de prijs categorie per knoop punt
 
-Als u een lijst wilt ophalen met computers die worden gefactureerd als knoop punten als de werk ruimte zich in de prijs categorie verouderd per knoop punt bevindt, zoekt u naar knoop punten waarnaar **gefactureerde gegevens typen** worden verzonden (sommige gegevens typen zijn gratis). Als u dit wilt doen, gebruikt u de `_IsBillable` [eigenschap](../logs/log-standard-columns.md#_isbillable) en gebruikt u het meest linkse veld van de Fully Qualified Domain name. Hiermee wordt het aantal computers met gefactureerde gegevens per uur geretourneerd (de granulatie van de knoop punten die worden geteld en gefactureerd):
+Als u een lijst wilt ophalen met computers die worden gefactureerd als knoop punten als de werk ruimte zich in de prijs categorie verouderd per knoop punt bevindt, zoekt u naar knoop punten waarnaar **gefactureerde gegevens typen** worden verzonden (sommige gegevens typen zijn gratis). Als u dit wilt doen, gebruikt u de `_IsBillable` [eigenschap](./log-standard-columns.md#_isbillable) en gebruikt u het meest linkse veld van de Fully Qualified Domain name. Hiermee wordt het aantal computers met gefactureerde gegevens per uur geretourneerd (de granulatie van de knoop punten die worden geteld en gefactureerd):
 
 ```kusto
 find where TimeGenerated > ago(24h) project Computer, TimeGenerated
@@ -502,8 +502,6 @@ find where TimeGenerated > ago(24h) project Computer, TimeGenerated
 ```
 
 ### <a name="getting-security-and-automation-node-counts"></a>Aantal knoop punten voor beveiliging en automatisering ophalen
-
-Als u gebruikmaakt van de prijs categorie per knoop punt (OMS), worden de kosten berekend op basis van het aantal knoop punten en oplossingen dat u gebruikt. het aantal inzichten en analyse knooppunten waarvoor u wordt gefactureerd, wordt weer gegeven in de tabel op de pagina **gebruik en geschatte kosten** .  
 
 U kunt de query gebruiken om het aantal afzonderlijke beveiligings knooppunten te bekijken:
 
@@ -559,11 +557,17 @@ Dit is de query voor de aanbeveling prijs categorie:
 
 ```kusto
 // Set these parameters before running query
-let workspaceHasSecurityCenter = true;  // Specify if the workspace has Azure Security Center
+// Pricing details available at https://azure.microsoft.com/en-us/pricing/details/monitor/
+let daysToEvaluate = 7; // Enter number of previous days to analyze (reduce if the query is taking too long)
+let workspaceHasSecurityCenter = false;  // Specify if the workspace has Azure Security Center
 let PerNodePrice = 15.; // Enter your montly price per monitored nodes
 let PerNodeOveragePrice = 2.30; // Enter your price per GB for data overage in the Per Node pricing tier
 let PerGBPrice = 2.30; // Enter your price per GB in the Pay-as-you-go pricing tier
-let daysToEvaluate = 7; // Enter number of previous days look at (reduce if the query is taking too long)
+let CarRes100Price = 196.; // Enter your price for the 100 GB/day Capacity Reservation
+let CarRes200Price = 368.; // Enter your price for the 200 GB/day Capacity Reservation
+let CarRes300Price = 540.; // Enter your price for the 300 GB/day Capacity Reservation
+let CarRes400Price = 704.; // Enter your price for the 400 GB/day Capacity Reservation
+let CarRes500Price = 865.; // Enter your price for the 500 GB/day Capacity Reservation
 // ---------------------------------------
 let SecurityDataTypes=dynamic(["SecurityAlert", "SecurityBaseline", "SecurityBaselineSummary", "SecurityDetection", "SecurityEvent", "WindowsFirewall", "MaliciousIPCommunication", "LinuxAuditLog", "SysmonEvent", "ProtectionStatus", "WindowsEvent", "Update", "UpdateSummary"]);
 let StartDate = startofday(datetime_add("Day",-1*daysToEvaluate,now()));
@@ -591,16 +595,35 @@ union *
     | summarize DataGB=sum(Quantity)/1000., NonSecurityDataGB=sum(NonSecurityData)/1000., SecurityDataGB=sum(SecurityData)/1000. by day=bin(StartTime, 1d)  
 ) on day
 | extend AvgGbPerNode =  NonSecurityDataGB / nodesPerDay
-| extend PerGBDailyCost = iff(workspaceHasSecurityCenter,
-             (NonSecurityDataGB + max_of(SecurityDataGB - 0.5*ASCnodesPerDay, 0.)) * PerGBPrice,
-             DataGB * PerGBPrice)
 | extend OverageGB = iff(workspaceHasSecurityCenter, 
              max_of(DataGB - 0.5*nodesPerDay - 0.5*ASCnodesPerDay, 0.), 
              max_of(DataGB - 0.5*nodesPerDay, 0.))
 | extend PerNodeDailyCost = nodesPerDay * PerNodePrice / 31. + OverageGB * PerNodeOveragePrice
-| extend Recommendation = iff(PerNodeDailyCost < PerGBDailyCost, "Per Node tier", 
-             iff(NonSecurityDataGB > 85., "Capacity Reservation tier", "Pay-as-you-go (Per GB) tier"))
-| project day, nodesPerDay, ASCnodesPerDay, NonSecurityDataGB, SecurityDataGB, OverageGB, AvgGbPerNode, PerGBDailyCost, PerNodeDailyCost, Recommendation | sort by day asc
+| extend billableGB = iff(workspaceHasSecurityCenter,
+             (NonSecurityDataGB + max_of(SecurityDataGB - 0.5*ASCnodesPerDay, 0.)), DataGB )
+| extend PerGBDailyCost = billableGB * PerGBPrice
+| extend CapRes100DailyCost = CarRes100Price + max_of(billableGB - 100, 0.)* PerGBPrice
+| extend CapRes200DailyCost = CarRes200Price + max_of(billableGB - 200, 0.)* PerGBPrice
+| extend CapRes300DailyCost = CarRes300Price + max_of(billableGB - 300, 0.)* PerGBPrice
+| extend CapRes400DailyCost = CarRes400Price + max_of(billableGB - 400, 0.)* PerGBPrice
+| extend CapResLevel500AndAbove = max_of(floor(billableGB, 100),500)
+| extend CapRes500AndAboveDailyCost = CarRes500Price*CapResLevel500AndAbove/500 + max_of(billableGB - CapResLevel500AndAbove, 0.)* PerGBPrice
+| extend MinCost = min_of(
+    PerNodeDailyCost,PerGBDailyCost,CapRes100DailyCost,CapRes200DailyCost,
+    CapRes300DailyCost, CapRes400DailyCost, CapRes500AndAboveDailyCost)
+| extend Recommendation = case(
+    MinCost == PerNodeDailyCost, "Per node tier",
+    MinCost == PerGBDailyCost, "Pay-as-you-go tier",
+    MinCost == CapRes100DailyCost, "Capacity Reservation (100 GB/day)",
+    MinCost == CapRes200DailyCost, "Capacity Reservation (200 GB/day)",
+    MinCost == CapRes300DailyCost, "Capacity Reservation (300 GB/day)",
+    MinCost == CapRes400DailyCost, "Capacity Reservation (400 GB/day)",
+    MinCost == CapRes500AndAboveDailyCost, strcat("Capacity Reservation (",CapResLevel500AndAbove," GB/day)"),
+    "Error"
+)
+| project day, nodesPerDay, ASCnodesPerDay, NonSecurityDataGB, SecurityDataGB, OverageGB, AvgGbPerNode, PerGBDailyCost, PerNodeDailyCost, 
+    CapRes100DailyCost, CapRes200DailyCost, CapRes300DailyCost, CapRes400DailyCost, CapRes500AndAboveDailyCost, Recommendation 
+| sort by day asc
 //| project day, Recommendation // Comment this line to see details
 | sort by day asc
 ```

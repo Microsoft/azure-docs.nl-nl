@@ -2,17 +2,17 @@
 title: Metrische gegevens van de Resilience4J-circuit onderbreker van Lente verzamelen
 description: Instructies voor het verzamelen van metrische gegevens over de Resilience4J-circuit onderbreker.
 author: MikeDodaro
-ms.author: brendanm
+ms.author: brendm
 ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 12/15/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 153f99d100ea1a456f960293f3806a739fe1d593
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 0227fcebd6d5a136e3306573b7b5aa0d6e39ba1f
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102038727"
+ms.locfileid: "102122796"
 ---
 # <a name="collect-spring-cloud-resilience4j-circuit-breaker-metrics-preview"></a>Metrische gegevens van de Resilience4J-circuit onderbreker van Lente verzamelen (preview-versie)
 

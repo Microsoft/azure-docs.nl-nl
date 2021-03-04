@@ -6,12 +6,12 @@ author: mlearned
 ms.topic: conceptual
 ms.date: 07/01/2020
 ms.author: mlearned
-ms.openlocfilehash: 1adf8370f55a0f6131eb4140c58fa4618e08127b
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 6c69e46ea3510476089cd932b1cd1bdf14254021
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686018"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102122371"
 ---
 # <a name="security-concepts-for-applications-and-clusters-in-azure-kubernetes-service-aks"></a>Beveiligingsconcepten voor toepassingen en clusters in Azure Kubernetes Service (AKS)
 
@@ -40,7 +40,10 @@ U kunt de toegang tot de API-server beheren met behulp van Kubernetes op basis v
 
 ## <a name="node-security"></a>Knooppunt beveiliging
 
-AKS-knoop punten zijn virtuele Azure-machines die u beheert en onderhoudt. Linux-knoop punten voeren een geoptimaliseerde Ubuntu-distributie uit met behulp van de Moby container runtime. Windows Server-knoop punten voeren een geoptimaliseerde versie van Windows Server 2019 uit en gebruiken ook de Moby-container runtime. Wanneer een AKS-cluster wordt gemaakt of geschaald, worden de knoop punten automatisch geïmplementeerd met de meest recente beveiligings updates en-configuraties van het besturings systeem.
+AKS-knoop punten zijn virtuele Azure-machines die u beheert en onderhoudt. Linux-knoop punten voeren een geoptimaliseerde Ubuntu-distributie uit met behulp van de `containerd` of Moby container runtime. Windows Server-knoop punten voeren een geoptimaliseerde versie van Windows Server 2019 uit en gebruiken ook de `containerd` of Moby container runtime. Wanneer een AKS-cluster wordt gemaakt of geschaald, worden de knoop punten automatisch geïmplementeerd met de meest recente beveiligings updates en-configuraties van het besturings systeem.
+
+> [!NOTE]
+> AKS-clusters met Kubernetes versie 1,19-knooppunt groepen en meer gebruiken `containerd` als container runtime. AKS-clusters die gebruikmaken van Kubernetes vóór v 1.19 voor knooppunt groepen gebruiken [Moby](https://mobyproject.org/) (upstream docker) als container runtime.
 
 Het Azure-platform past automatisch de beveiligings patches van het besturings systeem op een nacht in op Linux-knoop punten. Als voor een Linux-beveiligings update een host opnieuw moet worden opgestart, wordt dat opnieuw opstarten niet automatisch uitgevoerd. U kunt de Linux-knoop punten hand matig opnieuw opstarten of een gemeen schappelijke aanpak gebruiken [Kured][kured], een open source-daemon voor opnieuw opstarten voor Kubernetes. Kured wordt uitgevoerd als een [daemonset][aks-daemonsets] en bewaakt elk knoop punt voor de aanwezigheid van een bestand dat aangeeft dat de computer opnieuw moet worden opgestart. Opnieuw opstarten wordt via het cluster beheerd met hetzelfde Cordon- [en afvoer proces](#cordon-and-drain) als een cluster upgrade.
 

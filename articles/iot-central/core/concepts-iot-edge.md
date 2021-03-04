@@ -10,12 +10,12 @@ services: iot-central
 ms.custom:
 - device-developer
 - iot-edge
-ms.openlocfilehash: 91869614aef03b819a5f7fbb355004f6e802d673
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 1a464b9e039f256fae52c32d828b1ec39a20a228
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101733007"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102123272"
 ---
 # <a name="connect-azure-iot-edge-devices-to-an-azure-iot-central-application"></a>Azure IoT Edge-apparaten verbinden met een Azure IoT Central-toepassing
 
@@ -87,6 +87,20 @@ IoT Central maakt gebruik van [device-sjablonen](concepts-device-templates.md) o
 * De opdrachten waarmee een apparaat reageert, zodat IoT Central een gebruikers interface kan weer geven voor een operator die wordt gebruikt om de opdrachten aan te roepen.
 
 Een IoT Edge apparaat kan telemetrie verzenden, eigenschapwaarden synchroniseren en op dezelfde manier reageren op opdrachten als een standaard apparaat. Een IoT Edge apparaat heeft dus een sjabloon nodig in IoT Central.
+
+### <a name="iot-edge-device-templates"></a>IoT Edge
+
+IoT Central-apparaatprofielen modellen gebruiken om de mogelijkheden van apparaten te beschrijven. In het volgende diagram ziet u de structuur van het model voor een IoT Edge apparaat:
+
+:::image type="content" source="media/concepts-iot-edge/iot-edge-model.png" alt-text="Structuur van het model voor IoT Edge apparaat dat is verbonden met IoT Central" border="false":::
+
+IoT Central modellen een IoT Edge apparaat als volgt:
+
+* Elke IoT Edge-apparaatprofiel heeft een functionaliteits model.
+* Voor elke aangepaste module die wordt vermeld in het implementatie manifest, wordt een module mogelijkheidsprofiel gegenereerd.
+* Er wordt een relatie tot stand gebracht tussen elk module functionaliteits model en een model apparaat.
+* Een module-functionaliteits model implementeert een of meer module interfaces.
+* Elke module interface bevat telemetrie, eigenschappen en opdrachten.
 
 ### <a name="iot-edge-deployment-manifests-and-iot-central-device-templates"></a>IoT Edge implementatie manifesten en IoT Central-sjablonen
 

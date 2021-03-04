@@ -7,18 +7,18 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 05/29/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 9d572545f589475dc2b460db90329fe8b0a838c2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c262ba87698c04da69728f7a370040c0679ec44e
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90904295"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102122864"
 ---
 # <a name="how-to-self-diagnose-and-solve-problems-in-azure-spring-cloud"></a>Zelf diagnose en probleem oplossing in azure lente Cloud
 
 **Dit artikel is van toepassing op:** ✔️ Java ✔️ C#
 
-Azure veer Cloud diagnostiek is een interactieve ervaring om u te helpen bij het oplossen van problemen met uw app. Er is geen configuratie vereist. Wanneer u problemen ondervindt, is er een fout opgetreden in azure lente-Cloud diagnose en vindt u informatie die u helpt bij het oplossen van problemen en het oplossen van het probleem.
+Azure veer Cloud diagnostiek is een interactieve ervaring bij het oplossen van problemen met uw app zonder configuratie. Azure lente-Cloud diagnose identificeert problemen en helpt u bij het oplossen van problemen die u helpen bij de probleem oplossing.
 
 ## <a name="prerequisites"></a>Vereisten
 Voor deze zelfstudie hebt u het volgende nodig:
@@ -28,9 +28,9 @@ Voor deze zelfstudie hebt u het volgende nodig:
 * Er is al minstens één toepassing gemaakt in uw service-exemplaar.
 
 ## <a name="navigate-to-the-diagnostics-page"></a>Ga naar de pagina met diagnostische gegevens
-1. Meld u aan bij Azure Portal.
+1. Meld u aan bij de Azure-portal.
 2. Ga naar de **Overzichtspagina** van Azure Spring Cloud.
-3. Open het menu aan de linkerkant van de pagina om **problemen op te sporen en op te lossen** .
+3. Selecteer **problemen vaststellen en oplossen** in het navigatie deel venster aan de linkerkant.
 
  ![Diagnose en oplossen dialoog venster](media/spring-cloud-diagnose/diagnose-solve-dialog.png)
 
@@ -39,7 +39,7 @@ Als u een probleem wilt opsporen, kunt u zoeken door een tref woord te typen of 
 
  ![Problemen met zoeken](media/spring-cloud-diagnose/search-detectors.png)
 
-Door de selectie van de status controle van de **Configuratie server**, de **Configuratie server status**of de **Update geschiedenis van de configuratie server** worden verschillende resultaten weer gegeven.
+Door de selectie van de status controle van de **Configuratie server**, de **Configuratie server status** of de **Update geschiedenis van de configuratie server** worden verschillende resultaten weer gegeven.
 
 ![Opties voor problemen](media/spring-cloud-diagnose/detectors-options.png)
 

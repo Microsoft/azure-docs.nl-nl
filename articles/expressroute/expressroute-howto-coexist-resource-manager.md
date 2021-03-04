@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 12/11/2019
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: edbd36ad3444795ade4b3f8d29d8473b21a2fda8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b20bb4df7524c179766a2b2f7f090fccbddd7f37
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91651510"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102122609"
 ---
 # <a name="configure-expressroute-and-site-to-site-coexisting-connections-using-powershell"></a>ExpressRoute-en site-naar-site-verbindingen configureren met Power shell
 > [!div class="op_single_selector"]
@@ -42,6 +42,7 @@ In dit artikel worden de stappen beschreven voor het configureren van beide scen
 * **Statische route moet worden geconfigureerd voor de VPN-gateway.** Als uw lokale netwerk is verbonden met ExpressRoute en een site-naar-site-VPN, moet u in uw lokale netwerk een statische route hebben geconfigureerd voor het routeren van de site-naar-site-VPN-verbinding met het openbare internet.
 * **VPN Gateway standaard ingesteld op ASN 65515 als er geen waarde is opgegeven.** Azure VPN Gateway ondersteunt het BGP-routerings protocol. U kunt een ASN (als getal) opgeven voor een virtueel netwerk door de schakel optie-ASN toe te voegen. Als u deze para meter niet opgeeft, is de standaard waarde als nummer 65515. U kunt elk ASN gebruiken voor de configuratie, maar als u iets anders dan 65515 selecteert, moet u de gateway opnieuw instellen om de instelling van kracht te laten worden.
 * **Het gateway-subnet moet/27 of een kortere voor voegsel zijn**(zoals/26,/25) of u ontvangt een fout bericht wanneer u de gateway van het ExpressRoute-netwerk toevoegt.
+* **Naast elkaar in een vnet met twee stacks wordt niet ondersteund.** Als u ExpressRoute IPv6-ondersteuning en een dual stack ExpressRoute-gateway gebruikt, is samen werken met VPN Gateway niet mogelijk.
 
 ## <a name="configuration-designs"></a>Configuratie-ontwerpen
 ### <a name="configure-a-site-to-site-vpn-as-a-failover-path-for-expressroute"></a>Een site-naar-site-VPN configureren als een failoverpad voor ExpressRoute

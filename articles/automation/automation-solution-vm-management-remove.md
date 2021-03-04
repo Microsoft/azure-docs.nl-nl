@@ -3,14 +3,14 @@ title: Overzicht van Azure Automation VM's buiten bedrijfsuren starten/stoppen v
 description: In dit artikel wordt beschreven hoe u de VM's buiten bedrijfsuren starten/stoppen-functie verwijdert en een Automation-account loskoppelt vanuit de werk ruimte Log Analytics.
 services: automation
 ms.subservice: process-automation
-ms.date: 02/04/2021
+ms.date: 03/04/2021
 ms.topic: conceptual
-ms.openlocfilehash: a201274bf0c06382da790dd051bf5023337970b8
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 0bab5d8e82ce432e9b3834fe4c003316545eb338
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101723840"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102122082"
 ---
 # <a name="remove-startstop-vms-during-off-hours-from-automation-account"></a>VM's buiten bedrijfsuren starten/stoppen verwijderen uit Automation-account
 
@@ -24,21 +24,7 @@ Als u deze functie verwijdert, worden alleen de gekoppelde runbooks verwijderd, 
 
 ## <a name="delete-the-dedicated-resource-group"></a>De speciale resource groep verwijderen
 
-1. Meld u aan bij Azure op [https://portal.azure.com](https://portal.azure.com) .
-
-2. Navigeer naar uw Automation-account en selecteer **gekoppelde werk ruimte** onder **gerelateerde resources**.
-
-3. Selecteer **Ga naar werk ruimte**.
-
-4. Klik op **oplossingen** onder **Algemeen**.
-
-5. Selecteer op de pagina oplossingen **Start-Stop-VM [werk ruimte]**.
-
-6. Selecteer op de pagina **VMManagementSolution [workspace]** **verwijderen** in het menu.
-
-    ![VM-beheer functie verwijderen](media/automation-solution-vm-management/vm-management-solution-delete.png)
-
-7. Volg de stappen die worden beschreven in het artikel [Azure Resource Manager resource groep en resource verwijderen](../azure-resource-manager/management/delete-resource-group.md) om de resource groep te verwijderen die is gemaakt om VM's buiten bedrijfsuren starten/stoppen te ondersteunen.
+Als u de resource groep wilt verwijderen, voert u de stappen uit die worden beschreven in het artikel [Azure Resource Manager resource groep en resource verwijderen](../azure-resource-manager/management/delete-resource-group.md) .
 
 ## <a name="delete-the-automation-account"></a>Het Automation-account verwijderen
 

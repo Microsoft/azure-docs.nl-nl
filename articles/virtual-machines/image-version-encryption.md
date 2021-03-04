@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 11/3/2020
 ms.author: cynthn
-ms.openlocfilehash: 0f5eb6a2964cdb679c2a83bd9d9b6296e3e962ed
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: f8ea2224020e6fa6c5dae135dc575cc77510efd5
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499285"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102123935"
 ---
 # <a name="preview-use-customer-managed-keys-for-encrypting-images"></a>Voor beeld: door de klant beheerde sleutels gebruiken voor het versleutelen van installatie kopieën
 
@@ -27,7 +27,7 @@ Versleuteling aan de server zijde via door de klant beheerde sleutels maakt gebr
 
 Voor dit artikel moet u al een schijf versleuteling instellen in elke regio waar u de installatie kopie wilt repliceren:
 
-- Als u alleen een door de klant beheerde sleutel wilt gebruiken, raadpleegt u de artikelen over het inschakelen van door de klant beheerde sleutels met versleuteling aan de server zijde met behulp van de [Azure Portal](./disks-enable-customer-managed-keys-portal.md) of [Power shell](./windows/disks-enable-customer-managed-keys-powershell.md#set-up-your-azure-key-vault-and-diskencryptionset).
+- Als u alleen een door de klant beheerde sleutel wilt gebruiken, raadpleegt u de artikelen over het inschakelen van door de klant beheerde sleutels met versleuteling aan de server zijde met behulp van de [Azure Portal](./disks-enable-customer-managed-keys-portal.md) of [Power shell](./windows/disks-enable-customer-managed-keys-powershell.md#set-up-an-azure-key-vault-and-diskencryptionset-without-automatic-key-rotation).
 
 - Als u door het platform beheerde en door de klant beheerde sleutels wilt gebruiken (voor dubbele versleuteling), raadpleegt u de artikelen over het inschakelen van dubbele versleuteling in rust door gebruik te maken van de [Azure Portal](./disks-enable-double-encryption-at-rest-portal.md) of [Power shell](./windows/disks-enable-double-encryption-at-rest-powershell.md).
 

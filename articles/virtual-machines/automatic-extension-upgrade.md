@@ -3,17 +3,17 @@ title: Automatische extensie-upgrade voor Vm's en schaal sets in azure
 description: Meer informatie over het inschakelen van de automatische extensie-upgrade voor uw virtuele machines en virtuele-machine schaal sets in Azure.
 author: mayanknayar
 ms.service: virtual-machines
-ms.subservice: automatic-extension-upgrades
+ms.subservice: automatic-extension-upgrade
 ms.workload: infrastructure
 ms.topic: how-to
 ms.date: 02/12/2020
 ms.author: manayar
-ms.openlocfilehash: 104eada6dc342c21b8da2f409756e9f34c103936
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: fa4fa1c43ab9d31b879bdec8e724e896bd16e14c
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101668330"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102123893"
 ---
 # <a name="preview-automatic-extension-upgrade-for-vms-and-scale-sets-in-azure"></a>Preview: automatische upgrade van de extensie voor Vm's en schaal sets in azure
 

@@ -4,12 +4,12 @@ description: Meer informatie over de basis onderdelen van het cluster en de work
 services: container-service
 ms.topic: conceptual
 ms.date: 12/07/2020
-ms.openlocfilehash: 7485631660395e03c558167c321e6091c6fac755
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 2a1718d906ab5f51ea71be9b304028576c9fffa0
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100373229"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102122439"
 ---
 # <a name="kubernetes-core-concepts-for-azure-kubernetes-service-aks"></a>Kubernetes-kernconcepten voor Azure Kubernetes Service (AKS)
 
@@ -61,7 +61,7 @@ Als u uw toepassingen en ondersteunende services wilt uitvoeren, hebt u een Kube
 
 - De `kubelet` is de Kubernetes-agent die de Orchestration-aanvragen verwerkt vanuit het besturings vlak en de planning van het uitvoeren van de aangevraagde containers.
 - Virtuele netwerken worden verwerkt door de *uitvoeren-proxy* op elk knoop punt. De proxy routeert netwerk verkeer en beheert IP-adres sering voor services en peulen.
-- De *container runtime* is het onderdeel dat container toepassingen toestaat om uit te voeren en te communiceren met aanvullende bronnen zoals het virtuele netwerk en de opslag. In AKS wordt Moby gebruikt als container runtime.
+- De *container runtime* is het onderdeel dat container toepassingen toestaat om uit te voeren en te communiceren met aanvullende bronnen zoals het virtuele netwerk en de opslag. AKS-clusters met Kubernetes versie 1,19-knooppunt groepen en meer gebruiken `containerd` als container runtime. AKS-clusters die gebruikmaken van Kubernetes vóór v 1.19 voor knooppunt groepen gebruiken [Moby](https://mobyproject.org/) (upstream docker) als container runtime.
 
 ![Virtuele Azure-machine en ondersteunende bronnen voor een Kubernetes-knoop punt](media/concepts-clusters-workloads/aks-node-resource-interactions.png)
 
@@ -69,7 +69,7 @@ De grootte van de Azure VM voor uw knoop punten bepaalt hoeveel Cpu's, hoeveel g
 
 In AKS is de VM-installatie kopie voor de knoop punten in uw cluster momenteel gebaseerd op Ubuntu Linux of Windows Server 2019. Wanneer u een AKS-cluster maakt of het aantal knoop punten uitbreidt, wordt het aangevraagde aantal Vm's door het Azure-platform gemaakt en geconfigureerd. Er is geen hand matige configuratie die u kunt uitvoeren. Agent knooppunten worden gefactureerd als standaard virtuele machines, dus eventuele kortingen op de VM-grootte die u gebruikt (inclusief [Azure-reserve ringen][reservation-discounts]) worden automatisch toegepast.
 
-Als u een ander host-besturings systeem, container runtime of aangepaste pakketten wilt gebruiken, kunt u uw eigen Kubernetes-cluster implementeren met behulp van [AKS-engine][aks-engine]. De functies van de upstream `aks-engine` releases en bieden configuratie opties voordat ze officieel worden ondersteund in AKS-clusters. Als u bijvoorbeeld een andere container-runtime dan Moby wilt gebruiken, kunt u gebruiken `aks-engine` om een Kubernetes-cluster te configureren en implementeren dat voldoet aan uw huidige behoeften.
+Als u een ander host-besturings systeem, container runtime of aangepaste pakketten wilt gebruiken, kunt u uw eigen Kubernetes-cluster implementeren met behulp van [AKS-engine][aks-engine]. De functies van de upstream `aks-engine` releases en bieden configuratie opties voordat ze officieel worden ondersteund in AKS-clusters. Als u bijvoorbeeld een andere container-runtime dan of Moby wilt gebruiken `containerd` , kunt u gebruiken `aks-engine` om een Kubernetes-cluster te configureren en implementeren dat voldoet aan uw huidige behoeften.
 
 ### <a name="resource-reservations"></a>Resource reserveringen
 

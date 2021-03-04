@@ -1,6 +1,6 @@
 ---
-title: Een Cloud service implementeren (uitgebreide ondersteuning)-SDK
-description: Een Cloud service (uitgebreide ondersteuning) implementeren met behulp van de Azure SDK
+title: Cloud Services implementeren (uitgebreide ondersteuning)-SDK
+description: Cloud Services implementeren (uitgebreide ondersteuning) met behulp van de Azure SDK
 ms.topic: tutorial
 ms.service: cloud-services-extended-support
 author: gachandw
@@ -8,25 +8,25 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: cf8d2696732c2947ce86b9509720898fd63c1e16
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: b63f42ccc0a9d8d138e38a262db528fd36ea701a
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98887372"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102123034"
 ---
-# <a name="deploy-a-cloud-services-extended-support-using-sdk"></a>Een Cloud Services implementeren (uitgebreide ondersteuning) met behulp van SDK
+# <a name="deploy-cloud-services-extended-support-by-using-the-azure-sdk"></a>Cloud Services implementeren (uitgebreide ondersteuning) met behulp van de Azure SDK
 
-In dit artikel wordt beschreven hoe u de [Azure SDK](https://azure.microsoft.com/downloads/) gebruikt om Cloud Services te implementeren (uitgebreide ondersteuning) met meerdere rollen (webrole en WorkerRole) en de extensie extern bureau blad. 
+In dit artikel wordt beschreven hoe u de [Azure SDK](https://azure.microsoft.com/downloads/) gebruikt om een exemplaar van Cloud Services (Extended support) te implementeren dat meerdere rollen heeft (Web Role en worker Role) en de extensie extern bureau blad. Cloud Services (uitgebreide ondersteuning) is een implementatie model van Azure Cloud Services dat is gebaseerd op Azure Resource Manager.
 
 > [!IMPORTANT]
-> Cloud Services (uitgebreide ondersteuning) is momenteel beschikbaar als open bare preview. Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+> Cloud Services (uitgebreide ondersteuning) is momenteel beschikbaar als open bare preview. Deze preview-versie is beschikbaar zonder een service overeenkomst en wij raden deze niet aan voor productie werkbelastingen. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
 Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud Services (uitgebreide ondersteuning) en maak gekoppelde resources.
 
-## <a name="deploy-a-cloud-services-extended-support"></a>Een Cloud Services implementeren (uitgebreide ondersteuning)
+## <a name="deploy-cloud-services-extended-support"></a>Cloud Services implementeren (uitgebreide ondersteuning)
 1. Installeer het [Azure Compute SDK NuGet-pakket](https://www.nuget.org/packages/Microsoft.Azure.Management.Compute/43.0.0-preview) en Initialiseer de client met behulp van een standaard verificatie mechanisme.
 
     ```csharp
@@ -73,7 +73,7 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
     resourceGroup = await resourceGroups.CreateOrUpdateAsync(resourceGroupName, resourceGroup);
     ```
 
-3. Maak een opslag account en een container die wordt gebruikt voor het opslaan van het Cloud service package (. cspkg) en de service configuratie (. cscfg)-bestanden. Installeer het [Azure Storage NuGet-pakket](https://www.nuget.org/packages/Azure.Storage.Common/). Deze stap is optioneel als u een bestaand opslag account gebruikt. De naam van het opslag account moet uniek zijn.
+3. Maak een opslag account en een container waarin u de bestanden van het service pakket (. cspkg) en de service configuratie (. cscfg) opslaat. Installeer het [Azure Storage NuGet-pakket](https://www.nuget.org/packages/Azure.Storage.Common/). Deze stap is optioneel als u een bestaand opslag account gebruikt. De naam van het opslag account moet uniek zijn.
 
     ```csharp
     string storageAccountName = “ContosoSAS”
@@ -109,7 +109,7 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
     sasConstraints.Permissions = SharedAccessBlobPermissions.Read | SharedAccessBlobPermissions.Write;
     ```
 
-4. Upload het Cloud service package-bestand (. cspkg) naar het opslag account. De pakket-URL kan een Shared Access Signature SAS-URI van elk opslag account zijn.
+4. Upload het service pakket bestand (. cspkg) naar het opslag account. De pakket-URL kan een SAS-URI (Shared Access Signature) van elk opslag account zijn.
 
     ```csharp
     CloudBlockBlob cspkgblockBlob = container.GetBlockBlobReference(“ContosoApp.cspkg”);
@@ -122,7 +122,7 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
     string cspkgSASUrl = cspkgblockBlob.Uri + cspkgsasContainerToken;
     ```
 
-5. Upload uw Cloud service configuratie (. cscfg) naar het opslag account. De service configuratie kan worden opgegeven als teken reeks-XML of URL-indeling.
+5. Upload uw service configuratie bestand (. cscfg) naar het opslag account. Geef de service configuratie op als teken reeks-XML of URL-indeling.
 
     ```csharp
     CloudBlockBlob cscfgblockBlob = container.GetBlockBlobReference(“ContosoApp.cscfg”);
@@ -156,7 +156,7 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
     m_NrpClient.VirtualNetworks.CreateOrUpdate(resourceGroupName, “ContosoVNet”, vnet);
     ```
 
-7. Maak een openbaar IP-adres en (optioneel) Stel de DNS-label eigenschap van het open bare IP-adres in. Als u een statisch IP-adres gebruikt, moet er naar worden verwezen als een Gereserveerd IP in het service configuratie bestand.
+7. Maak een openbaar IP-adres en (optioneel) Stel de DNS-label eigenschap van het open bare IP-adres in. Als u een statisch IP-adres gebruikt, moet er in het service configuratie bestand naar worden verwezen als een gereserveerd IP-adres.
 
     ```csharp
     PublicIPAddress publicIPAddressParams = new PublicIPAddress(name: “ContosIp”) 
@@ -171,7 +171,7 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
     PublicIPAddress publicIpAddress = m_NrpClient.PublicIPAddresses.CreateOrUpdate(resourceGroupName, publicIPAddressName, publicIPAddressParams);
     ```
 
-8. Maak een netwerk profiel object en koppel het open bare IP-adres aan de front-end van het platform dat is gemaakt load balancer.
+8. Maak een object voor een netwerk profiel en koppel een openbaar IP-adres aan de front-end van de door het platform gemaakte load balancer.
 
     ```csharp
     LoadBalancerFrontendIPConfiguration feipConfiguration = new LoadBalancerFrontendIPConfiguration() 
@@ -206,32 +206,32 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
     
     ```
 
-9. Een sleutelkluis maken. Deze Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan de rollen van de Cloud service (uitgebreide ondersteuning). De Key Vault moet zich in dezelfde regio en hetzelfde abonnement bevinden als de Cloud service en een unieke naam hebben. Zie [certificaten met Azure Cloud Services gebruiken (uitgebreide ondersteuning)](certificates-and-key-vault.md)voor meer informatie.
+9. Een sleutelkluis maken. Deze sleutel kluis wordt gebruikt voor het opslaan van certificaten die zijn gekoppeld aan de rollen Cloud Services (uitgebreide ondersteuning). De sleutel kluis moet zich in dezelfde regio en hetzelfde abonnement bevinden als de Cloud Services (uitgebreide ondersteunings instantie) en een unieke naam hebben. Zie [certificaten met Azure Cloud Services gebruiken (uitgebreide ondersteuning)](certificates-and-key-vault.md)voor meer informatie.
 
     ```powershell
     New-AzKeyVault -Name "ContosKeyVault” -ResourceGroupName “ContosoOrg” -Location “East US”
     ```
 
-10. Het Key Vault toegangs beleid bijwerken en certificaat machtigingen verlenen aan uw gebruikers account.
+10. Het toegangs beleid van de sleutel kluis bijwerken en certificaat machtigingen verlenen aan uw gebruikers account.
 
     ```powershell
     Set-AzKeyVaultAccessPolicy -VaultName 'ContosKeyVault' -ResourceGroupName 'ContosoOrg'      -UserPrincipalName 'user@domain.com' -PermissionsToCertificates create,get,list,delete
     ```
 
-    U kunt ook toegangs beleid instellen via ObjectId (dat kan worden verkregen door Get-AzADUser) uit te voeren
+    U kunt het toegangs beleid ook instellen via de object-ID (die u kunt ophalen door uit te voeren `Get-AzADUser` ).
 
     ```powershell
     Set-AzKeyVaultAccessPolicy -VaultName 'ContosKeyVault' -ResourceGroupName 'ContosOrg' -     ObjectId 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' -PermissionsToCertificates          create,get,list,delete
     ```
 
-11. In dit voor beeld voegen we een zelfondertekend certificaat toe aan een Key Vault. De vinger afdruk van het certificaat moet worden toegevoegd in het bestand Cloud service Configuration (. cscfg) voor de implementatie van Cloud service-rollen.
+11. In dit voor beeld voegen we een zelfondertekend certificaat toe aan een sleutel kluis. De vinger afdruk van het certificaat moet worden toegevoegd aan het service configuratie bestand (. cscfg) voor de implementatie van Cloud Services-rollen (uitgebreide ondersteuning).
 
     ```powershell
     $Policy = New-AzKeyVaultCertificatePolicy -SecretContentType "application/x-pkcs12" -       SubjectName "CN=contoso.com" -IssuerName "Self" -ValidityInMonths 6 -ReuseKeyOnRenewal 
     Add-AzKeyVaultCertificate -VaultName "ContosKeyVault" -Name "ContosCert" -      CertificatePolicy $Policy
     ```
 
-12. Maak een besturingssysteem profiel object. Met het besturingssysteem profiel worden de certificaten opgegeven die zijn gekoppeld aan Cloud service rollen. Dit is hetzelfde certificaat dat u in de vorige stap hebt gemaakt.
+12. Maak een besturingssysteem profiel object. Het besturingssysteem profiel geeft de certificaten op die zijn gekoppeld aan de rollen Cloud Services (uitgebreide ondersteuning). Hier is het certificaat dat u in de vorige stap hebt gemaakt.
 
     ```csharp
     CloudServiceOsProfile cloudServiceOsProfile = 
@@ -247,7 +247,9 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
            };
     ```
 
-13. Maak een object van het type rol. Een roltype definieert een rol-SKU specifieke eigenschappen, zoals naam, capaciteit en laag. In dit voor beeld hebben we twee rollen gedefinieerd: frontendRole en backendRole. De informatie van het rolinstantie moet overeenkomen met de functie configuratie die is gedefinieerd in het configuratie bestand (cscfg) en het bestand met de service definitie (csdef).
+13. Maak een object van het type rol. Een roltype definieert specifieke eigenschappen voor een SKU, zoals naam, capaciteit en laag. 
+
+    In dit voor beeld worden twee rollen gedefinieerd: ContosoFrontend en ContosoBackend. De gegevens van het rolinstantie moeten overeenkomen met de functie configuratie die is gedefinieerd in het service configuratie bestand (. cscfg) en het service definitie bestand (. csdef).
 
     ```csharp
     CloudServiceRoleProfile cloudServiceRoleProfile = new CloudServiceRoleProfile()
@@ -281,7 +283,7 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
                     }
     ```
 
-14. Beschrijving Maak een extensie profiel object dat u wilt toevoegen aan uw Cloud service. In dit voor beeld gaan we RDP-uitbrei ding toevoegen.
+14. Beschrijving Maak een extensie profiel object dat u wilt toevoegen aan uw Cloud Services-exemplaar (uitgebreide ondersteuning). In dit voor beeld voegen we een RDP-extensie toe.
 
     ```csharp
     string rdpExtensionPublicConfig = "<PublicConfig>" +
@@ -313,7 +315,7 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
         };
     ```
 
-15. Cloud service-implementatie maken.
+15. De implementatie van het Cloud Services-exemplaar (uitgebreide ondersteuning) maken.
 
     ```csharp
     CloudService cloudService = new CloudService
@@ -322,7 +324,7 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
                 {
                     RoleProfile = cloudServiceRoleProfile
                     Configuration = < Add Cscfg xml content here>,
-                    // ConfigurationUrl = <Add you configuration URL here>,
+                    // ConfigurationUrl = <Add your configuration URL here>,
                     PackageUrl = <Add cspkg SAS url here>,
                     ExtensionProfile = cloudServiceExtensionProfile,
                     OsProfile= cloudServiceOsProfile,
@@ -337,5 +339,5 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
 
 ## <a name="next-steps"></a>Volgende stappen
 - Bekijk [Veelgestelde vragen](faq.md) over Cloud Services (uitgebreide ondersteuning).
-- Implementeer een Cloud service (uitgebreide ondersteuning) met behulp van de [Azure Portal](deploy-portal.md), [Power shell](deploy-powershell.md), [sjabloon](deploy-template.md) of [Visual Studio](deploy-visual-studio.md).
-- Ga naar de [opslag plaats voor beelden van Cloud Services (uitgebreide ondersteuning)](https://github.com/Azure-Samples/cloud-services-extended-support)
+- Implementeer Cloud Services (uitgebreide ondersteuning) met behulp van de [Azure Portal](deploy-portal.md), [Power shell](deploy-powershell.md), een [sjabloon](deploy-template.md)of [Visual Studio](deploy-visual-studio.md).
+- Ga naar de [opslag plaats samples voor Cloud Services (uitgebreide ondersteuning)](https://github.com/Azure-Samples/cloud-services-extended-support)

@@ -6,12 +6,12 @@ ms.date: 02/04/2021
 ms.service: media-services
 ms.author: faneerde
 author: fvneerden
-ms.openlocfilehash: 62787bfb586f2847d984499cf966708749184ee1
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 282ab76c34405f19e7f81b2a8069c178b17ee0c1
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102096340"
+ms.locfileid: "102124411"
 ---
 # <a name="tutorial-analyze-live-video-by-using-intel-openvino-dl-streamer--edge-ai-extension"></a>Zelf studie: Live video analyseren door gebruik te maken van Intel™ DL streamer-Edge ai-extensie 
 
@@ -327,7 +327,8 @@ Als u een ander model wilt gebruiken, moet u de implementatie sjabloon wijzigen.
 "PIPELINE_VERSION=vehicle_attributes_recognition"
 ],
 ```
-> [!TIP] Kopieer de sjabloon en sla deze onder een nieuwe naam op voor elke mogelijke pijp lijn. Op deze manier kunt u scha kelen tussen modellen door een nieuwe implementatie te maken op basis van een van deze sjablonen.
+> [!TIP]
+> Kopieer de sjabloon en sla deze onder een nieuwe naam op voor elke mogelijke pijp lijn. Op deze manier kunt u scha kelen tussen modellen door een nieuwe implementatie te maken op basis van een van deze sjablonen.
 
 Zodra u de variabelen hebt gewijzigd, kunt u de sjabloon opnieuw implementeren op het apparaat. U kunt nu de bovenstaande stappen herhalen om het voorbeeld programma opnieuw uit te voeren met de nieuwe pijp lijn. De resultaten van de deinterferentie zijn vergelijkbaar (in schema), maar er wordt meer of minder informatie weer gegeven, afhankelijk van het pijplijn model dat u hebt gekozen.
 

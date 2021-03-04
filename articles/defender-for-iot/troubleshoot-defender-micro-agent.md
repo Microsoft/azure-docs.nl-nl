@@ -1,5 +1,5 @@
 ---
-title: Oplossen van problemen met micro agent voor Defender IoT (preview-versie)
+title: Problemen oplossen met micro agent voor Defender IoT
 titleSuffix: Azure Defender for IoT
 description: Meer informatie over het afhandelen van onverwachte of niet-verklarende fouten.
 author: shhazam-ms
@@ -8,14 +8,14 @@ ms.author: shhazam
 ms.date: 1/24/2021
 ms.topic: reference
 ms.service: azure
-ms.openlocfilehash: 07198a5d0ef5d0a6c9eed97523c61826e451b7f5
-ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.openlocfilehash: dade0d0d5dc4d690ea94f20deaf956b1e079bad7
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99809748"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102124173"
 ---
-# <a name="defender-iot-micro-agent-troubleshooting-preview"></a>Oplossen van problemen met micro agent voor Defender IoT (preview-versie)
+# <a name="defender-iot-micro-agent-troubleshooting"></a>Problemen oplossen met micro agent voor Defender IoT 
 
 In het geval van onverwachte of onuitgelegde fouten gebruikt u de volgende probleemoplossings methoden om te proberen uw problemen op te lossen. U kunt ook het Azure Defender voor IoT-product team bereiken voor hulp als dat nodig is.   
 

@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: c9bc6e3822ac6c014b9ff00e9cd81bbe707628fe
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 6dc687879eb646b4abd081b40bce292d20ff3186
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101736063"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102123986"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-postgresql-single-server"></a>Informatie over de wijzigingen in de basis-CA-wijziging voor Azure Database for PostgreSQL één server
 
@@ -83,7 +83,7 @@ Onze aanbevelingen voor gebruikers is, met behulp van de volgende stappen om een
 
 ## <a name="what-if-we-removed-the-baltimorecybertrustroot-certificate"></a>Wat gebeurt er als we het BaltimoreCyberTrustRoot-certificaat hebben verwijderd?
 
-U begint verbinding te maken met de verbinding met uw Azure Database for PostgreSQL-server. U moet SSL met [BaltimoreCyberTrustRoot](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem) -certificaat opnieuw [configureren](howto-configure-ssl.md) om de connectiviteit te behouden.
+U begint verbinding te maken met de verbinding met uw Azure Database for PostgreSQL-server. U moet SSL met [BaltimoreCyberTrustRoot](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem) -certificaat opnieuw configureren om de connectiviteit te behouden.
 
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen

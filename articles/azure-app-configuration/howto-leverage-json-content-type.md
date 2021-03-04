@@ -10,12 +10,12 @@ ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 08/03/2020
 ms.author: avgupta
-ms.openlocfilehash: ee262c0eb2431085e71d8ee0035bcdab9833d1cf
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 19de46bc87b72ada221c63e36e87d0545304d344
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565769"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102122150"
 ---
 # <a name="leverage-content-type-to-store-json-key-values-in-app-configuration"></a>Maak gebruik van het inhouds type voor het opslaan van JSON-sleutel waarden in app-configuratie
 
@@ -25,9 +25,9 @@ Gegevens worden in de app-configuratie opgeslagen als sleutel waarden, waarbij w
 ## <a name="overview"></a>Overzicht
 
 In app-configuratie kunt u het JSON-media type gebruiken als het inhouds type van uw sleutel waarden om te profiteren van voor delen zoals:
-- **Eenvoudiger gegevens beheer** : het beheren van sleutel waarden, zoals matrices, is veel eenvoudiger in de Azure Portal.
-- **Verbeterde gegevens export** : primitieve typen, matrices en JSON-objecten blijven behouden tijdens het exporteren van gegevens.
-- **Systeem eigen ondersteuning met de app-configuratie provider** : sleutel waarden met JSON-inhouds type werken prima wanneer ze worden gebruikt door bibliotheken met app-configuratie providers in uw toepassingen.
+- **Eenvoudiger gegevens beheer**: het beheren van sleutel waarden, zoals matrices, is veel eenvoudiger in de Azure Portal.
+- **Verbeterde gegevens export**: primitieve typen, matrices en JSON-objecten blijven behouden tijdens het exporteren van gegevens.
+- **Systeem eigen ondersteuning met de app-configuratie provider**: sleutel waarden met JSON-inhouds type werken prima wanneer ze worden gebruikt door bibliotheken met app-configuratie providers in uw toepassingen.
 
 #### <a name="valid-json-content-type"></a>Geldig JSON-inhouds type
 
@@ -46,7 +46,7 @@ Enkele voor beelden van geldige JSON-waarden zijn:
 
 - "John Doe"
 - 723
-- false
+- onjuist
 - null
 - "2020-01-01T12:34:56.789 Z"
 - [1, 2, 3, 4]
@@ -80,13 +80,13 @@ JSON-sleutel waarden kunnen worden gemaakt met behulp van Azure Portal, Azure CL
 
 ### <a name="create-json-key-values-using-azure-portal"></a>JSON-sleutel waarden maken met behulp van Azure Portal
 
-Blader naar uw app-configuratie archief en selecteer **Configuration Explorer**  >  **Create**  >  **sleutel-waarde** maken om de volgende sleutel-waardeparen toe te voegen:
+Blader naar uw app-configuratie archief en selecteer **Configuration Explorer**  >    >  **sleutel-waarde** maken om de volgende sleutel-waardeparen toe te voegen:
 
 | Sleutel | Waarde | Type inhoud |
 |---|---|---|
 | Instellingen: BackgroundColor | Dag | application/json |
 | Instellingen: FontSize | 24 | application/json |
-| Instellingen: UseDefaultRouting | false | application/json |
+| Instellingen: UseDefaultRouting | onjuist | application/json |
 | Instellingen: BlockedUsers | null | application/json |
 | Instellingen: ReleaseDate | "2020-08-04T12:34:56.789 Z" | application/json |
 | Instellingen: RolloutPercentage | [25, 50, 75100] | application/json |
@@ -151,7 +151,7 @@ Houd rekening met deze sleutel waarden zonder JSON-inhouds type:
 | Sleutel | Waarde | Type inhoud |
 |---|---|---|
 | Instellingen: FontSize | 24 | |
-| Instellingen: UseDefaultRouting | false | |
+| Instellingen: UseDefaultRouting | onjuist | |
 
 Wanneer u deze sleutel waarden naar een JSON-bestand exporteert, worden de waarden geëxporteerd als teken reeksen:
 ```json
@@ -175,12 +175,28 @@ az appconfig kv export -d file --format json --path "~/Export.json" --separator 
 
 ## <a name="consuming-json-key-values-in-applications"></a>JSON-sleutel waarden gebruiken in toepassingen
 
-De eenvoudigste manier om JSON-sleutel waarden in uw toepassing te gebruiken, is door de bibliotheek van de app-configuratie provider. Met de provider bibliotheken hoeft u geen speciale verwerking van JSON-sleutel waarden in uw toepassing te implementeren. Ze worden altijd op dezelfde manier gedeserialiseerd voor uw toepassing als andere bibliotheken met de JSON-configuratie provider. 
+De eenvoudigste manier om JSON-sleutel waarden in uw toepassing te gebruiken, is door de bibliotheek van de app-configuratie provider. Met de provider bibliotheken hoeft u geen speciale verwerking van JSON-sleutel waarden in uw toepassing te implementeren. Ze worden geparseerd en geconverteerd zodat deze overeenkomen met de systeem eigen configuratie van uw toepassing.
+
+Als u bijvoorbeeld de volgende sleutel waarde in app-configuratie hebt:
+
+| Sleutel | Waarde | Type inhoud |
+|---|---|---|
+| Instellingen | {"FontSize": 24, "UseDefaultRouting": False} | application/json |
+
+De configuratie van uw .NET-toepassing heeft de volgende sleutel waarden:
+
+| Sleutel | Waarde |
+|---|---|
+| Instellingen: FontSize | 24 |
+| Instellingen: UseDefaultRouting | onjuist |
+
+U kunt de nieuwe sleutels rechtstreeks openen of u kunt ervoor kiezen om de [configuratie waarden te binden aan exemplaren van .net-objecten](/aspnet/core/fundamentals/configuration/#bind-hierarchical-configuration-data-using-the-options-pattern).
+
 
 > [!Important]
 > Systeem eigen ondersteuning voor JSON-sleutel waarden is beschikbaar in .NET Configuration provider versie 4.0.0 (of hoger). Zie de sectie [*volgende stappen*](#next-steps) voor meer informatie.
 
-Als u de SDK of REST API gebruikt voor het lezen van sleutel waarden van de app-configuratie, op basis van het type inhoud, is uw toepassing verantwoordelijk voor het deserialiseren van de waarde van een JSON-sleutel waarde met behulp van een standaard-JSON-deserializer.
+Als u de SDK of REST API gebruikt voor het lezen van sleutel waarden van de app-configuratie, op basis van het type inhoud, is uw toepassing verantwoordelijk voor het parseren van de waarde van een JSON-sleutel waarde.
 
 
 ## <a name="clean-up-resources"></a>Resources opschonen

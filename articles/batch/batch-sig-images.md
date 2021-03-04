@@ -2,14 +2,14 @@
 title: De galerie met gedeelde afbeeldingen gebruiken om een aangepaste installatie kopie groep te maken
 description: Aangepaste installatie kopie groepen zijn een efficiënte manier om reken knooppunten te configureren om uw batch-workloads uit te voeren.
 ms.topic: conceptual
-ms.date: 11/18/2020
+ms.date: 03/04/2021
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 98dbb965d77da43d937dccbc0f99abf12c195929
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 8623c47952540717ae50538fd7b0282c9c8629bb
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98731358"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102124241"
 ---
 # <a name="use-the-shared-image-gallery-to-create-a-custom-image-pool"></a>De galerie met gedeelde afbeeldingen gebruiken om een aangepaste installatie kopie groep te maken
 
@@ -69,12 +69,15 @@ Als u een nieuwe VM voor de installatie kopie maakt, gebruikt u een Azure Market
 > [!NOTE]
 > U kunt geen afbeelding van derden gebruiken die aanvullende licentie-en aankoop voorwaarden als uw basis installatie kopie heeft. Zie de richt lijnen voor [Linux](../virtual-machines/linux/cli-ps-findimage.md#deploy-an-image-with-marketplace-terms) -of [Windows](../virtual-machines/windows/cli-ps-findimage.md#deploy-an-image-with-marketplace-terms) -vm's voor meer informatie over deze installatie kopieën voor Marketplace.
 
+Volg deze richt lijnen bij het maken van Vm's:
+
 - Zorg ervoor dat de virtuele machine is gemaakt met een beheerde schijf. Dit is de standaard instelling voor opslag wanneer u een VM maakt.
 - Installeer geen Azure-extensies, zoals de aangepaste script extensie, op de VM. Als de installatie kopie een vooraf geïnstalleerde extensie bevat, kan Azure problemen ondervinden bij het implementeren van de batch-pool.
 - Wanneer u gekoppelde gegevens schijven gebruikt, moet u de schijven koppelen en Format teren vanuit een VM om ze te gebruiken.
 - Zorg ervoor dat de basis installatie kopie van het besturings systeem dat u opgeeft, gebruikmaakt van het standaard tijdelijke station. De batch-knooppunt agent verwacht momenteel het standaard tijdelijke station.
 - Zorg ervoor dat de besturingssysteem schijf niet is versleuteld.
-- Zodra de virtuele machine wordt uitgevoerd, maakt u verbinding met de VM via RDP (voor Windows) of SSH (voor Linux). Installeer de benodigde software of kopieer de gewenste gegevens.  
+- Zodra de virtuele machine wordt uitgevoerd, maakt u verbinding met de VM via RDP (voor Windows) of SSH (voor Linux). Installeer de benodigde software of kopieer de gewenste gegevens.
+- Voor een snellere pool inrichting gebruikt u de [cache-instelling readwrite](../virtual-machines/premium-storage-performance.md#disk-caching) voor de schijf van de virtuele machine.
 
 ### <a name="create-a-vm-snapshot"></a>Een VM-moment opname maken
 

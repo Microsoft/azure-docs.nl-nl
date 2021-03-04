@@ -9,22 +9,22 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 07/16/2019
+ms.date: 03/03/2021
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 6451368baf9c047f0318eb74d53ffac075d4a184
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 8a8aab447007eb574a7a4bc532d8177bd0d8b345
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063447"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102122473"
 ---
 # <a name="considerations-for-using-universal-windows-platform-with-msalnet"></a>Overwegingen voor het gebruik van Universeel Windows-platform met MSAL.NET
 Ontwikkel aars van toepassingen die gebruikmaken van Universeel Windows-platform (UWP) met MSAL.NET, moeten rekening houden met de concepten in dit artikel.
 
 ## <a name="the-usecorporatenetwork-property"></a>De eigenschap UseCorporateNetwork
-Op het Windows Runtime (WinRT)-platform `PublicClientApplication` heeft de Booleaanse eigenschap `UseCorporateNetwork` . Met deze eigenschap kunnen Windows 8,1-toepassingen en UWP-toepassingen profiteren van geïntegreerde Windows-authenticatie (IWA) als de gebruiker is aangemeld bij een account met een federatieve Azure Active Directory-Tenant (Azure AD). Gebruikers die zijn aangemeld bij het besturings systeem, kunnen ook gebruikmaken van eenmalige aanmelding (SSO). Wanneer u de `UseCorporateNetwork` eigenschap instelt, maakt MSAL.net gebruik van een Web authentication Broker (WAB).
+Op het Windows Runtime (WinRT)-platform `PublicClientApplication` heeft de Booleaanse eigenschap `UseCorporateNetwork` . Met deze eigenschap kunnen Windows 10-toepassingen en UWP-toepassingen profiteren van geïntegreerde Windows-authenticatie (IWA) als de gebruiker is aangemeld bij een account met een federatieve Azure Active Directory-Tenant (Azure AD). Gebruikers die zijn aangemeld bij het besturings systeem, kunnen ook gebruikmaken van eenmalige aanmelding (SSO). Wanneer u de `UseCorporateNetwork` eigenschap instelt, maakt MSAL.net gebruik van een Web authentication Broker (WAB).
 
 > [!IMPORTANT]
 > `UseCorporateNetwork`Als u de eigenschap instelt op True, wordt ervan uitgegaan dat de ontwikkelaar van de toepassing IWA in de toepassing heeft ingeschakeld. IWA inschakelen:

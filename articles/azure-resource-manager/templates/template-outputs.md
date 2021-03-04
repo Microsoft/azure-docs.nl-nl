@@ -3,18 +3,18 @@ title: Uitvoer in sjablonen
 description: Hierin wordt beschreven hoe u uitvoer waarden definieert in een Azure Resource Manager sjabloon (ARM-sjabloon) en Bicep-bestand.
 ms.topic: conceptual
 ms.date: 02/19/2021
-ms.openlocfilehash: 91feb1a0b653e4b6e96e38df57f87af27e4676f5
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 2b6a6afa127bf43102103baadae576233843f00d
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101703831"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102123408"
 ---
 # <a name="outputs-in-arm-templates"></a>Uitvoer in ARM-sjablonen
 
 In dit artikel wordt beschreven hoe u uitvoer waarden definieert in uw Azure Resource Manager sjabloon (ARM-sjabloon) en Bicep-bestand. U gebruikt uitvoer wanneer u waarden van de geïmplementeerde resources moet retour neren.
 
-De indeling van elke uitvoer waarde moet worden omgezet in een van de [gegevens typen](template-syntax.md#data-types).
+De indeling van elke uitvoer waarde moet worden omgezet in een van de [gegevens typen](data-types.md).
 
 [!INCLUDE [Bicep preview](../../../includes/resource-manager-bicep-preview.md)]
 

@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 03/02/2021
 ms.author: duau
-ms.openlocfilehash: c0d153ff8125a6ef16a69aec72a27dd4b234eab5
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 253fce7d47d694c03d470fefdf81318a6bff77b3
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102100046"
+ms.locfileid: "102123051"
 ---
 # <a name="add-ipv6-support-for-private-peering-using-azure-powershell-preview"></a>IPv6-ondersteuning voor privé-peering toevoegen met behulp van Azure PowerShell (preview-versie)
 
@@ -165,7 +165,7 @@ Volg de onderstaande stappen als u van plan bent om verbinding te maken met een 
 
 2. [Maak het subnet met dubbele stack-gateways](https://docs.microsoft.com/azure/expressroute/expressroute-howto-add-gateway-resource-manager#add-a-gateway).
 
-3. [Maak de gateway van het virtuele netwerk](https://docs.microsoft.com/azure/expressroute/expressroute-howto-add-gateway-resource-manager#add-a-gateway) met behulp van een zone-redundante SKU (ErGw1AZ, ErGw2AZ, ErGw3AZ). Als u van plan bent FastPath te gebruiken, gebruikt u ErGw3AZ.
+3. [Maak de gateway van het virtuele netwerk](https://docs.microsoft.com/azure/expressroute/expressroute-howto-add-gateway-resource-manager#add-a-gateway) met behulp van een zone-redundante SKU (ErGw1AZ, ErGw2AZ, ErGw3AZ). Als u van plan bent FastPath te gebruiken, gebruikt u ErGw3AZ (Houd er rekening mee dat dit alleen beschikbaar is voor circuits met behulp van ExpressRoute direct).
 
 4. [Koppel uw virtuele netwerk aan uw ExpressRoute-circuit](https://docs.microsoft.com/azure/expressroute/expressroute-howto-linkvnet-arm).
 
@@ -176,6 +176,8 @@ Hoewel IPv6-ondersteuning beschikbaar is voor verbindingen met implementaties in
 * Verbindingen met implementaties in niet-AZ regio's
 * Global Reach verbindingen tussen ExpressRoute-circuits
 * Gebruik van ExpressRoute met Virtual WAN
+* FastPath met niet-ExpressRoute directe circuits
+* Samen werking met VPN Gateway
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -9,12 +9,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 18b70d60ade7cd40f7ed51aa7c219c8c046abfc3
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 1c2b608107beff2a4f34325f8a6e5be3a0551053
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99584738"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102051902"
 ---
 # <a name="get-an-answer-with-the-generateanswer-api-and-metadata"></a>Een antwoord krijgen met de GenerateAnswer-API en meta gegevens
 
@@ -272,6 +272,44 @@ U kunt zoeken in de gepubliceerde KB met `isTest=false` of in de test KB met `is
   "RankerType":"QuestionOnly"
 }
 ```
+
+## <a name="return-precise-answers"></a>Nauw keurige antwoorden retour neren
+
+### <a name="generate-answer-api"></a>Antwoord-API genereren 
+
+De gebruiker kan [nauw keurige antwoorden](../reference-precise-answering.md) inschakelen wanneer de door QnA Maker beheerde resource wordt gebruikt. De para meter answerSpanRequest moet worden bijgewerkt voor dezelfde.
+
+```json
+{
+    "question": "How long it takes to charge surface pro 4?",
+    "top": 3,
+    "answerSpanRequest": {
+        "enable": true,
+        "topAnswersWithSpan": 1
+    }
+}
+```
+
+De gebruikers kunnen er ook voor kiezen om nauw keurige antwoorden uit te scha kelen door de para meter answerSpanRequest niet in te stellen.
+
+```json
+{
+    "question": "How long it takes to charge surface pro 4?",
+    "top": 3
+}
+```
+### <a name="bot-settings"></a>Bot-instellingen
+
+Als u nauw keurige antwoord instellingen voor uw bot-service wilt configureren, navigeert u naar de app service-resource voor uw bot. Vervolgens moet u de configuraties bijwerken door de volgende instelling toe te voegen.
+
+- EnablePreciseAnswer
+- DisplayPreciseAnswerOnly
+
+|Weergaveconfiguratie|EnablePreciseAnswer|DisplayPreciseAnswerOnly|
+|:--|--|--|
+|Alleen nauw keurige antwoorden|true|true|
+|Alleen lange antwoorden|onjuist|onjuist|
+|Zowel lange als nauw keurige antwoorden|waar|onjuist|
 
 ## <a name="common-http-errors"></a>Veelvoorkomende HTTP-fouten
 

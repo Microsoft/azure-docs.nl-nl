@@ -1,17 +1,16 @@
 ---
 title: VM Insights-gast status (preview-versie)
 description: Overzicht van de status functie in VM Insights, inclusief hoe u de status van uw virtuele machines kunt bekijken en hoe u waarschuwingen ontvangt wanneer een virtuele machine een slechte status krijgt.
-ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/27/2020
-ms.openlocfilehash: 3db6c2f4da28bba2d12aacc90b2fa8e420aa6fbf
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 2922ca4068531c45e6acad0ce54aa96624c6238e
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101707452"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102052123"
 ---
 # <a name="vm-insights-guest-health-preview"></a>VM Insights-gast status (preview-versie)
 Met de VM Insights-gast status kunt u de status van virtuele machines weer geven op basis van een set prestatie metingen die regel matig worden steek proeven vanuit het gast besturingssysteem. U kunt de status van alle virtuele machines in een abonnement of resource groep snel controleren, inzoomen op de gedetailleerde status van een bepaalde virtuele machine of proactief worden gewaarschuwd wanneer een virtuele machine een slechte status krijgt. 

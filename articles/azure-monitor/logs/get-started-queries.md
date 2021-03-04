@@ -1,17 +1,16 @@
 ---
 title: Aan de slag met logboekquery’s in Azure Monitor | Microsoft Docs
 description: In dit artikel vindt u een zelfstudie voor het schrijven van logboekquery's in Azure Monitor.
-ms.subservice: logs
 ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 10/24/2019
-ms.openlocfilehash: 8cbf3f00da8b647804d0f541b35d8f8c1acb4e04
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: c87b70c74a5de9cc4b6c48935b93fdd13295f0f8
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100627412"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102052327"
 ---
 # <a name="get-started-with-log-queries-in-azure-monitor"></a>Aan de slag met logboekquery’s in Azure Monitor
 
@@ -170,9 +169,9 @@ In het vorige voorbeeld wordt deze uitvoer gegenereerd:
 
 U kunt **project** ook gebruiken om de namen van kolommen te wijzigen en nieuwe te definiëren. In het volgende voorbeeld wordt project gebruikt om het volgende te doen:
 
-* Selecteer alleen de oorspronkelijke kolommen *Computer* en *TimeGenerated*.
+* Alleen de oorspronkelijke kolommen *Computer* en *TimeGenerated* selecteren.
 * De kolom *Activity* weergeven als *EventDetails*.
-* Maak een nieuwe kolom met de naam *EventCode*. De functie **subtekenreeks()** wordt gebruikt om alleen de eerste vier tekens uit het veld Activiteit op te halen.
+* Een nieuwe kolom maken met de naam *EventCode*. De functie **subtekenreeks()** wordt gebruikt om alleen de eerste vier tekens uit het veld Activiteit op te halen.
 
 
 ```Kusto

@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 12/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 0f0f3b6ffcb7ee12a692470b922cf23a3f0f40f0
-ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
+ms.openlocfilehash: ea23be06939d58b08516a00bbe8aba97c6ccc87d
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97858431"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102095269"
 ---
 # <a name="relyingparty"></a>RelyingParty
 
@@ -190,7 +190,7 @@ Het element **ContentDefinitionParameter** bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Naam | Ja | De naam van het sleutel waarde-paar. |
+| Name | Ja | De naam van het sleutel waarde-paar. |
 
 Zie [de gebruikers interface configureren met dynamische inhoud met behulp van aangepast beleid](customize-ui-with-html.md#configure-dynamic-custom-page-content-uri) voor meer informatie.
 
@@ -217,21 +217,7 @@ Het **protocol** element bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Naam | Ja | De naam van een geldig protocol dat wordt ondersteund door Azure AD B2C dat wordt gebruikt als onderdeel van het technische profiel. Mogelijke waarden: `OpenIdConnect` of `SAML2` . De `OpenIdConnect` waarde vertegenwoordigt de OpenID Connect Connect 1,0-protocol norm als per OpenID Connect Foundation-specificatie. De `SAML2` vertegenwoordigt het SAML 2,0-protocol standaard als per Oasis-specificatie. |
-
-### <a name="metadata"></a>Metagegevens
-
-Wanneer het protocol is `SAML` , bevat een meta gegevenselement de volgende elementen.
-
-| Kenmerk | Vereist | Beschrijving |
-| --------- | -------- | ----------- |
-| IdpInitiatedProfileEnabled | Nee | Hiermee wordt aangegeven of de door IDP geïnitieerde stroom wordt ondersteund. Mogelijke waarden: `true` of `false` (standaard). | 
-| XmlSignatureAlgorithm | Nee | De methode die Azure AD B2C gebruikt voor het ondertekenen van het SAML-antwoord. Mogelijke waarden: `Sha256` , `Sha384` , `Sha512` of `Sha1` . Zorg ervoor dat u het handtekening algoritme aan beide zijden met dezelfde waarde configureert. Gebruik alleen de algoritme die door uw certificaat wordt ondersteund. Zie [SAML-Uitgever van technische profielen](saml-issuer-technical-profile.md#metadata)voor meer informatie over het configureren van de SAML-bevestiging. |
-| DataEncryptionMethod | Nee | Hiermee wordt de methode aangegeven die Azure AD B2C gebruikt voor het versleutelen van de gegevens met behulp van het Advanced Encryption Standard-algoritme (AES). De meta gegevens bepalen de waarde van het `<EncryptedData>` element in het SAML-antwoord. Mogelijke waarden: `Aes256` (standaard), `Aes192` , `Sha512` of ` Aes128` . |
-| KeyEncryptionMethod| Nee | Hiermee wordt de methode aangegeven die Azure AD B2C gebruikt voor het versleutelen van de kopie van de sleutel die is gebruikt voor het versleutelen van de gegevens. De meta gegevens bepalen de waarde van het  `<EncryptedKey>` element in het SAML-antwoord. Mogelijke waarden: ` Rsa15` (standaard)-RSA-algoritme (open bare sleutel crypto grafie Standard) versie 1,5, ` RsaOaep` -RSA OAEP-versleutelings algoritme (optimale asymmetrische-coderings opvulling). |
-| UseDetachedKeys | Nee |  Mogelijke waarden: `true` , of `false` (standaard). Wanneer de waarde is ingesteld op `true` , Azure AD B2C de indeling van de versleutelde beweringen wijzigen. Als u ontkoppelde sleutels gebruikt, wordt de versleutelde bewering toegevoegd als onderliggend element van de EncrytedAssertion in plaats van de EncryptedData. |
-| WantsSignedResponses| Nee | Hiermee wordt aangegeven of Azure AD B2C de `Response` sectie van het SAML-antwoord ondertekent. Mogelijke waarden: `true` (standaard) of `false` .  |
-| RemoveMillisecondsFromDateTime| Nee | Geeft aan of de millisconds wordt verwijderd uit datum/tijd-waarden binnen het SAML-antwoord (dit zijn onder andere IssueInstant, NotBefore, NotOnOrAfter en AuthnInstant). Mogelijke waarden: `false` (standaard) of `true` .  |
+| Name | Ja | De naam van een geldig protocol dat wordt ondersteund door Azure AD B2C dat wordt gebruikt als onderdeel van het technische profiel. Mogelijke waarden: `OpenIdConnect` of `SAML2` . De `OpenIdConnect` waarde vertegenwoordigt de OpenID Connect Connect 1,0-protocol norm als per OpenID Connect Foundation-specificatie. De `SAML2` vertegenwoordigt het SAML 2,0-protocol standaard als per Oasis-specificatie. |
 
 ### <a name="outputclaims"></a>OutputClaims
 

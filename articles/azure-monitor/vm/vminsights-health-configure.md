@@ -1,17 +1,16 @@
 ---
 title: Bewaking configureren in VM Insights-gast status (preview-versie)
 description: Hierin wordt beschreven hoe u de standaard bewaking voor VM Insights-gast status (preview-versie) wijzigt met behulp van de Azure Portal.
-ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 12/14/2020
-ms.openlocfilehash: 8c15a44fc086c9c686e75879b3086436ea327560
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 0f6599bb9f379cf471dafbb83a7deefbb05c0dbe
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101719590"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102052208"
 ---
 # <a name="configure-monitoring-in-vm-insights-guest-health-preview"></a>Bewaking configureren in VM Insights-gast status (preview-versie)
 Met de VM Insights-gast status kunt u de status van een virtuele machine bekijken, zoals gedefinieerd door een set prestatie metingen die regel matig worden steek proeven. In dit artikel wordt beschreven hoe u de standaard bewaking kunt wijzigen met behulp van de Azure Portal. Hierin worden ook de basis concepten beschreven van monitors die zijn vereist voor [het configureren van bewaking met behulp van een gegevens verzamelings regel](vminsights-health-configure-dcr.md).

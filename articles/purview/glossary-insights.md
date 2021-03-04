@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/20/2020
-ms.openlocfilehash: f61d99a61cb50886d70489b586d948bfa751e196
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: eb1d59ae41b04be60dec90aaee4b2305b6d39ca6
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576771"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102095847"
 ---
 # <a name="glossary-insights-on-your-data-in-azure-purview"></a>Woorden lijst inzichten over uw gegevens in azure controle sfeer liggen
 
@@ -54,19 +54,27 @@ In azure controle sfeer liggen kunt u voor waarden voor de woorden lijst maken e
 
 1. Selecteer in het gebied **inzichten** :::image type="icon" source="media/glossary-insights/ico-insights.png" border="false"::: de optie **woorden lijst** om het rapport Insights van de controle sfeer liggen **woorden** lijst weer te geven.
 
-Op de pagina met de **woorden lijst Insights** worden de volgende gebieden weer gegeven:
-1. **Kpi's op hoog niveau** om woordenlijst termen en catalogus gebruikers weer te geven
+De **woorden lijst Insights** biedt u als zakelijke gebruiker waardevolle informatie om een goed gedefinieerde woorden lijst voor uw organisatie te onderhouden.
 
-2. De **belangrijkste termen in de woorden lijst en het aantal assets** toont de vijf termen van de woorden lijst met de hieraan gekoppelde activa. Alle andere assets worden verwerkt in de categorie ' overige ' in de grafiek.
+1. Het rapport begint met **kpi's op hoog niveau** waarin de **_totale termen_*_ in uw controle sfeer liggen-account* worden weer gegeven, met _goedgekeurde voor waarden zonder activa_*_ en _*_verlopen voor waarden met activa_**. Elk van deze waarden helpt u bij het identificeren van de status van uw woorden lijst.
 
-3. In termen van de **woorden lijst op term status** ziet u de distributie van termen in de woorden lijst op basis van de status concept, goedgekeurd, waarschuwing en verlopen. 
+   :::image type="content" source="./media/glossary-insights/glossary-kpi.png" alt-text="KPI van woorden lijst Insights weer geven"::: 
 
-1. Houd de muis aanwijzer of klik op het segment van de grafiek met een status en noteer het aantal voor waarden met die status.
 
-1. **Distributie van rollen per aantal gebruikers** toont de distributie van rollen op basis van het aantal gebruikers per rol in controle sfeer liggen.
+2. De sectie **moment opname van de voor waarden** (weer gegeven hierboven) toont u de term status als **_concept_*_, _*_goedgekeurde_*_, _*_waarschuwing_*_ en _*_verlopen_** voor termen met activa en voor waarden zonder activa.
 
-   :::image type="content" source="./media/glossary-insights/glossary-insights1.png" alt-text="Woorden lijst Insights weer geven":::
+3. Klik op **weer gave meer** om de naam van de term met de verschillende status te zien en meer informatie over de **experts *_ en _*_deskundigen_**. 
+
+   :::image type="content" source="./media/glossary-insights/glossary-view-more.png" alt-text="Moment opname van de voor waarden met en zonder assets":::  
+
+4. Wanneer u op ' meer weer geven ' klikt voor ***goedgekeurde voor waarden met activa** _, kunt u met inzichten navigeren naar de pagina met de termen voor _ *woorden lijst**, van waaruit u verder kunt navigeren naar de lijst met assets met de gekoppelde voor waarden. 
+
+   :::image type="content" source="./media/glossary-insights/navigate-to-glossary-detail.png" alt-text="Inzichten in woorden lijst"::: 
+
+4. Bekijk op de pagina terminologie Insights een distributie van **onvolledige termen** op gegevens type ontbreekt. In de grafiek wordt het aantal voor waarden weer gegeven met **_ontbrekende definitie_*_, _*_ontbrekende expert_*_, _*_ontbrekende_-*en* ontbrekende _meerdere_** velden.
+
+1. Klik op ***meer weer geven** _ van _ * onvolledige voor waarden * * om de voor waarden weer te geven waarvoor informatie ontbreekt. U kunt naar de detail pagina van de woordenlijst term navigeren om de ontbrekende gegevens in te voeren en ervoor te zorgen dat de woordenlijst term is voltooid.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over Azure controle sfeer liggen Insight-rapporten via [Asset Insights](./asset-insights.md)
+Meer informatie over het maken van een woordenlijst term via een [woorden lijst](./how-to-create-import-export-glossary.md)

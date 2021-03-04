@@ -1,17 +1,16 @@
 ---
 title: Wat is er nieuw de documentatie van Azure Monitor?
 description: Belangrijke updates voor Azure Monitor, documentatie wordt elke maand bijgewerkt.
-ms.subservice: ''
 ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 02/10/2021
-ms.openlocfilehash: b21e5ea8e25844e3e025915b0b9f15162c642f25
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: dd6c44587ce3f4e2b5de940ef831a20a4079c4ef
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101713436"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102051919"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Wat is er nieuw de documentatie van Azure Monitor?
 
@@ -48,7 +47,7 @@ In dit artikel vindt u een lijst met Azure Monitor-artikelen die nieuw of aanzie
 
 ### <a name="logs"></a>Logboeken    
 - [Azure monitor door de klant beheerde sleutel](./logs/customer-managed-keys.md) : een door de gebruiker toegewezen beheerde identiteit introduceren.
-- [Azure monitor registreert toegewezen clusters](./logs/logs-dedicated-clusters.md) -bijgewerkte respons code.
+- [Azure monitor logboeken toegewezen clusters](./logs/logs-dedicated-clusters.md) -bijgewerkte respons code.
 - [Query-Azure monitor van meerdere services en Azure Data Explorer (preview)](/azure/azure-monitor/platform/azure-data-explorer-monitor-cross-service-query) -nieuw artikel.
 
 ### <a name="metrics"></a>Metrische gegevens
@@ -721,7 +720,7 @@ Meerdere updates als onderdeel van het herschrijven van inhoud van extensie voor
 
 - [Overzicht van de Azure-bewakingsagents](agents/agents-overview.md): tabellen geherstructureerd voor verheldering van unieke eigenschappen van elke agent.
 - [Overzicht Azure-extensie voor diagnostische gegevens](agents/diagnostics-extension-overview.md): volledig herschreven.
-- [Blobopslag gebruiken voor IIS en tabelopslag voor gebeurtenissen in Azure Monitor](essentials/diagnostics-extension-logs.md): algemeen aangepast voor update en helderheid.
+- [Blobopslag gebruiken voor IIS en tabelopslag voor gebeurtenissen in Azure Monitor](agents/diagnostics-extension-logs.md): algemeen aangepast voor update en helderheid.
 - [Windows Azure-extensie voor diagnostische gegevens (WAD) installeren en configureren](agents/diagnostics-extension-windows-install.md): nieuw artikel. 
 - [Schema van Windows diagnostische extensie](agents/diagnostics-extension-schema-windows.md): gereorganiseerd.
 - [Gegevens verzenden van Windows Azure-extensie voor diagnostische gegevens naar Azure Event Hubs](agents/diagnostics-extension-stream-event-hubs.md): volledig herschreven en bijgewerkt.

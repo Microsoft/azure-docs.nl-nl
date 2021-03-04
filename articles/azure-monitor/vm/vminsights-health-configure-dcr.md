@@ -1,17 +1,16 @@
 ---
 title: Bewaking configureren in VM Insights-gast status met behulp van regels voor gegevens verzameling (preview)
 description: Hierin wordt beschreven hoe u de standaard bewaking in VM Insights-gast status op schaal wijzigt met behulp van Resource Manager-sjablonen.
-ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/15/2020
-ms.openlocfilehash: 907aea16b018fb5dd3846db546787d132f8f5a9f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 0db6ed7566c53429f8b9798ac8cdafe76ca7bd5a
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101731218"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102052140"
 ---
 # <a name="configure-monitoring-in-vm-insights-guest-health-using-data-collection-rules-preview"></a>Bewaking configureren in VM Insights-gast status met behulp van regels voor gegevens verzameling (preview)
 Met de [VM Insights-gast status](vminsights-health-overview.md) kunt u de status van een virtuele machine bekijken, zoals gedefinieerd door een set prestatie metingen die regel matig worden steek proeven. In dit artikel wordt beschreven hoe u de standaard bewaking op meerdere virtuele machines kunt wijzigen met behulp van regels voor het verzamelen van gegevens.

@@ -7,12 +7,12 @@ ms.date: 9/30/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 23d00acc03ee879036a823f0c3d7fe2f67902e31
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: aafd4c6695101042cb30a44e1d2bd30611256779
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98797016"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102096153"
 ---
 # <a name="introduction-to-azure-defender"></a>Inleiding tot Azure Defender
 
@@ -99,4 +99,4 @@ Op de volgende pagina's vindt u meer informatie:
 In dit artikel bent u meer te weten gekomen over de voordelen van Azure Defender. 
 
 > [!div class="nextstepaction"]
-> [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender)
+> [Azure Defender inschakelen](enable-azure-defender.md)

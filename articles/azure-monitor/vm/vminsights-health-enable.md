@@ -1,18 +1,17 @@
 ---
 title: VM Insights-gast status inschakelen (preview)
 description: Hierin wordt beschreven hoe u de status van een VM Insights-gast in uw abonnement kunt inschakelen en hoe u virtuele machines kunt voorbereiden.
-ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/16/2020
 ms.custom: references_regions
-ms.openlocfilehash: 3747e9190010bd3c0b88dfdbe9da01009316c275
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 5d4ff622f69445880c0de8cb74dc1aeee422c89b
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101733717"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102052157"
 ---
 # <a name="enable-vm-insights-guest-health-preview"></a>VM Insights-gast status inschakelen (preview)
 Met de VM Insights-gast status kunt u de status van een virtuele machine bekijken, zoals gedefinieerd door een set prestatie metingen die regel matig worden steek proeven. In dit artikel wordt beschreven hoe u deze functie inschakelt in uw abonnement en hoe u gast bewaking voor elke virtuele machine inschakelt.

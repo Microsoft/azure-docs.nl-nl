@@ -1,22 +1,22 @@
 ---
 title: De RTSP-video stroom van Azure percept DK weer geven
-description: Meer informatie over het weer geven van de RTSP-video stroom van het Vision-SoM van Azure percept DK
+description: Meer informatie over het weer geven van de RTSP-video stroom vanuit Azure percept DK
 author: elqu20
 ms.author: v-elqu
 ms.service: azure-percept
 ms.topic: how-to
 ms.date: 02/12/2021
 ms.custom: template-how-to
-ms.openlocfilehash: 20fb8495e17d4294351a50c3bc97436de9f03450
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 5f77e99dc5c34867fef2b0ac47c709824fa4477d
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662364"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102096000"
 ---
 # <a name="view-your-azure-percept-dks-rtsp-video-stream"></a>De RTSP-video stroom van Azure percept DK weer geven
 
-Volg deze hand leiding voor het weer geven van de RTSP-video stroom van het Vision-SoM van Azure percept DK in azure percept Studio. Het is niet meer mogelijk om te dezichpen van Vision AI-modellen die op uw apparaat zijn geïmplementeerd, zodat de webstream kan worden weer gegeven.
+Volg deze hand leiding om de RTSP-video stroom te bekijken vanuit Azure percept DK in azure percept Studio. Het is niet meer mogelijk om te voor komen dat op uw apparaat gedistribueerde AI-modellen worden weer gegeven in de webstream.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -36,15 +36,15 @@ Volg deze hand leiding voor het weer geven van de RTSP-video stroom van het Visi
 
 1. Selecteer uw Devkit in de lijst.
 
-    :::image type="content" source="./media/how-to-view-video-stream/select-device.png" alt-text="Overzichts scherm van Azure percept Studio.":::
+    :::image type="content" source="./media/how-to-view-video-stream/select-device.png" alt-text="Scherm opname van beschik bare apparaten in azure percept Studio.":::
 
 1. Klik op **de stream van uw apparaat weer geven**.
 
-    :::image type="content" source="./media/how-to-view-video-stream/view-device-stream.png" alt-text="Overzichts scherm van Azure percept Studio.":::
+    :::image type="content" source="./media/how-to-view-video-stream/view-device-stream.png" alt-text="Scherm afbeelding van de pagina apparaat met de acties beschik bare Vision-project.":::
 
-    Hiermee opent u een afzonderlijk tabblad met de Live webstream van het visioning-SoM van uw Azure percept DK.
+    Hiermee opent u een afzonderlijk tabblad met de Live webstream van uw Azure percept DK.
 
-    :::image type="content" source="./media/how-to-view-video-stream/webstream.png" alt-text="Overzichts scherm van Azure percept Studio.":::
+    :::image type="content" source="./media/how-to-view-video-stream/webstream.png" alt-text="Scherm afbeelding van de webstream van het apparaat.":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

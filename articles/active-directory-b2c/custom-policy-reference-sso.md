@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 12/07/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 453042766c427b05ec1ee1090a0702f64065542d
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: f690f4a416e86b02de0d35fc673849c1293df577
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97508047"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102095762"
 ---
 # <a name="single-sign-on-session-management-in-azure-active-directory-b2c"></a>Sessie beheer voor eenmalige aanmelding in Azure Active Directory B2C
 
@@ -120,7 +120,7 @@ Deze provider wordt gebruikt om het scherm ' ID-provider kiezen ' te onderdrukke
 
 | Kenmerk | Vereist | Beschrijving|
 | --- | --- | --- |
-| AlwaysFetchClaimsFromProvider | No | Momenteel niet gebruikt, kan worden genegeerd. |
+| AlwaysFetchClaimsFromProvider | Nee | Momenteel niet gebruikt, kan worden genegeerd. |
 
 ### <a name="oauthssosessionprovider"></a>OAuthSSOSessionProvider
 
@@ -135,7 +135,7 @@ Deze provider wordt gebruikt voor het beheren van de Azure AD B2C sessies tussen
 
 ### <a name="samlssosessionprovider"></a>SamlSSOSessionProvider
 
-Deze provider wordt gebruikt voor het beheren van de Azure AD B2C SAML-sessies tussen een Relying Party toepassing of een federatieve SAML-ID-provider. Wanneer u de SSO-provider gebruikt voor het opslaan van een SAML ID-provider sessie, `RegisterServiceProviders` moet u deze instellen op `false` . Het volgende `SM-Saml-idp` technische profiel wordt gebruikt door het [technische profiel van de SAML-identiteits provider](saml-identity-provider-technical-profile.md).
+Deze provider wordt gebruikt voor het beheren van de Azure AD B2C SAML-sessies tussen een Relying Party toepassing of een federatieve SAML-ID-provider. Wanneer u de SSO-provider gebruikt voor het opslaan van een SAML ID-provider sessie, `RegisterServiceProviders` moet u deze instellen op `false` . Het volgende `SM-Saml-idp` technische profiel wordt gebruikt door de [SAML-ID-provider](identity-provider-generic-saml.md).
 
 ```xml
 <TechnicalProfile Id="SM-Saml-idp">
@@ -149,7 +149,7 @@ Deze provider wordt gebruikt voor het beheren van de Azure AD B2C SAML-sessies t
 
 Wanneer u de provider gebruikt voor het opslaan van de B2C SAML-sessie, `RegisterServiceProviders` moet de worden ingesteld op `true` . Voor het afmelden van de SAML-sessie is de `SessionIndex` en `NameID` voltooid.
 
-Het volgende `SM-Saml-issuer` technische profiel wordt gebruikt door een [SAML-Uitgever technisch profiel](saml-issuer-technical-profile.md)
+Het volgende `SM-Saml-issuer` technische profiel wordt gebruikt door een [SAML-Uitgever technisch profiel](saml-service-provider.md)
 
 ```xml
 <TechnicalProfile Id="SM-Saml-issuer">
@@ -162,8 +162,8 @@ Het volgende `SM-Saml-issuer` technische profiel wordt gebruikt door een [SAML-U
 
 | Kenmerk | Vereist | Beschrijving|
 | --- | --- | --- |
-| IncludeSessionIndex | No | Momenteel niet gebruikt, kan worden genegeerd.|
-| RegisterServiceProviders | No | Geeft aan dat de provider alle SAML-service providers moet registreren waarvoor een bevestiging is verleend. Mogelijke waarden: `true` (standaard) of `false` .|
+| IncludeSessionIndex | Nee | Momenteel niet gebruikt, kan worden genegeerd.|
+| RegisterServiceProviders | Nee | Geeft aan dat de provider alle SAML-service providers moet registreren waarvoor een bevestiging is verleend. Mogelijke waarden: `true` (standaard) of `false` .|
 
 
 ## <a name="next-steps"></a>Volgende stappen

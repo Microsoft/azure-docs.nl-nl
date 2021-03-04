@@ -12,12 +12,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 85d00b393ad169764a2f26e324295308ef49d3ba
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: e0516c25a69f22f5e66dd3ed083805cd4a9f1a61
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101646572"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102096136"
 ---
 # <a name="configure-session-behavior-in-azure-active-directory-b2c"></a>Sessiegedrag in Azure Active Directory B2C configureren
 
@@ -251,7 +251,7 @@ Bij een afmeldings aanvraag Azure AD B2C:
 3. Pogingen om u af te melden bij federatieve id-providers:
    - OpenID Connect Connect-als het-eind punt van de ID-provider met de bekende configuratie een `end_session_endpoint` locatie aangeeft.
    - OAuth2: als de [meta gegevens van de identiteits provider](oauth2-technical-profile.md#metadata) de `end_session_endpoint` locatie bevatten.
-   - SAML: als de [meta gegevens van de identiteits provider](saml-identity-provider-technical-profile.md#metadata) de `SingleLogoutService` locatie bevatten.
+   - SAML: als de [meta gegevens van de identiteits provider](identity-provider-generic-saml.md) de `SingleLogoutService` locatie bevatten.
 4. U kunt zich optioneel afmelden bij andere toepassingen. Zie de sectie voor [eenmalige afmelding](#single-sign-out) voor meer informatie.
 
 > [!NOTE]

@@ -1,17 +1,16 @@
 ---
 title: Overzicht van Log Analytics in Azure Monitor
 description: Hierin wordt Log Analytics beschreven. Dit is een hulp programma in de Azure Portal die wordt gebruikt om logboek query's voor het analyseren van gegevens in Azure Monitor logboeken te bewerken en uit te voeren.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/04/2020
-ms.openlocfilehash: ef8be3d1fd815362971d5ae2beb27edf47766c94
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: d83cc4045f09ed0f704a0d61c6b303406835eb44
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101723160"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102052293"
 ---
 # <a name="overview-of-log-analytics-in-azure-monitor"></a>Overzicht van Log Analytics in Azure Monitor
 Log Analytics is een hulp programma in de Azure Portal dat wordt gebruikt om logboek query's met gegevens in Azure Monitor logboeken te bewerken en uit te voeren. U kunt een eenvoudige query schrijven die een set records retourneert en vervolgens functies van Log Analytics gebruiken om ze te sorteren, te filteren en te analyseren. U kunt ook een meer geavanceerde query schrijven om statistische analyses uit te voeren en de resultaten in een grafiek te visualiseren om een bepaalde trend te identificeren. Of u nu interactief met de resultaten van uw query's werkt of ze gebruikt met andere Azure Monitor functies, zoals waarschuwingen voor logboek query's of werkmappen, Log Analytics is het hulp programma dat u wilt gebruiken om ze te schrijven en te testen. 

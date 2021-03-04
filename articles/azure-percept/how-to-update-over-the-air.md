@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: how-to
 ms.date: 02/18/2021
 ms.custom: template-how-to
-ms.openlocfilehash: aa8f696b6a26e812256be4e93975844f2c721b6e
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: b8f9e6f4bc091abbd1bb08ecbd649c1411e5ab20
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662379"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102095388"
 ---
 # <a name="update-your-azure-percept-dk-over-the-air"></a>Uw Azure percept DK via de lucht bijwerken
 
@@ -92,7 +92,7 @@ Vereisten voor groeps Tags:
 1. Bevestig dat de juiste apparaatgroep is geselecteerd als de doel apparaatgroep. Selecteer een **begin datum** en **begin tijd** voor uw implementatie en klik vervolgens op **implementatie maken**. 
 
     >[!CAUTION]
-    >Als u de begin tijd van de laatste instelt, wordt de implementatie onmiddellijk geactiveerd.
+    >Als u de begin tijd in het verleden instelt, wordt de implementatie onmiddellijk geactiveerd.
  
 1. Controleer de nalevings grafiek. U ziet dat de update nu wordt uitgevoerd.
  

@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/26/2019
+ms.date: 03/03/2021
 ms.author: duau
-ms.openlocfilehash: fa8dba12a050e42e258e4224f29e379ff53f09d8
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 163436ad82ea6f5067ad41b7fdd7e315db6dc29a
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100576670"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102095014"
 ---
 # <a name="traffic-manager-frequently-asked-questions-faq"></a>Veelgestelde vragen over Traffic Manager
 
@@ -447,7 +447,18 @@ Als er geen aangepaste host-header-instelling is opgegeven, is de host-header di
 
 ### <a name="what-are-the-ip-addresses-from-which-the-health-checks-originate"></a>Wat zijn de IP-adressen waarvan de status controles afkomstig zijn?
 
-Klik [hier](https://azuretrafficmanagerdata.blob.core.windows.net/probes/azure/probe-ip-ranges.json) om het JSON-bestand weer te geven met de IP-adressen waarvan Traffic Manager status controles kunnen worden uitgevoerd. Bekijk de IP-adressen die worden vermeld in het JSON-bestand om ervoor te zorgen dat binnenkomende verbindingen van deze IP-adres op de eind punten zijn toegestaan om de status te controleren.
+Klik [hier](../virtual-network/service-tags-overview.md#use-the-service-tag-discovery-api-public-preview) voor meer informatie over het ophalen van de lijsten met IP-adressen waarvan Traffic Manager status controles kunnen zijn. U kunt REST API, Azure CLI of Azure PowerShell gebruiken om de meest recente lijst op te halen. Controleer de vermelde Ip's om ervoor te zorgen dat binnenkomende verbindingen van deze IP-adressen op de eind punten zijn toegestaan om de status te controleren.
+
+Voor beeld van het gebruik van Azure PowerShell:
+
+```azurepowershell-interactive
+$serviceTags = Get-AzNetworkServiceTag -Location eastus
+$result = $serviceTags.Values | Where-Object { $_.Name -eq "AzureTrafficManager" }
+$result.Properties.AddressPrefixes
+```
+
+> [!NOTE]
+> Open bare IP-adressen kunnen zonder kennisgeving worden gewijzigd. Zorg ervoor dat u de meest recente informatie ophaalt met behulp van de service label detectie-API of het Download bare JSON-bestand.
 
 ### <a name="how-many-health-checks-to-my-endpoint-can-i-expect-from-traffic-manager"></a>Hoeveel status controles voor mijn eind punt kan ik verwachten van Traffic Manager?
 

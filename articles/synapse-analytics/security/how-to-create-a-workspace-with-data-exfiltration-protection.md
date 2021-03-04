@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 12/01/2020
 ms.author: NanditaV
 ms.reviewer: jrasnick
-ms.openlocfilehash: 6fd28c9392d760888eafde37471a49ffaa2e4423
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a3dc0b9e83af5a29172189f75e5a2174dc4d393d
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101694135"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102096119"
 ---
 # <a name="create-a-workspace-with-data-exfiltration-protection-enabled"></a>Een werk ruimte maken waarop data exfiltration Protection is ingeschakeld
 In dit artikel wordt beschreven hoe u een werk ruimte maakt waarop data exfiltration Protection is ingeschakeld en hoe u de goedgekeurde Azure AD-tenants voor deze werk ruimte beheert.
@@ -50,7 +50,9 @@ U kunt beheerde persoonlijke eind punten maken voor verbinding met Azure-resourc
 >Resources in andere tenants dan de Tenant van de werk ruimte mogen geen firewall regels blok keren, zodat de SQL-groepen er verbinding mee kunnen maken. Resources in het virtuele netwerk van de werk ruimte, zoals Spark-clusters, kunnen verbinding maken via beheerde persoonlijke koppelingen naar met firewalls beveiligde bronnen.
 
 ## <a name="known-limitations"></a>Bekende beperkingen
-Gebruikers kunnen een omgevings configuratie bestand opgeven om Python-pakketten te installeren vanuit open bare opslag plaatsen zoals PyPI. In data exfiltration beveiligde werk ruimten worden verbindingen met uitgaande opslag plaatsen geblokkeerd. Als gevolg hiervan worden de python-bibliotheek die is geïnstalleerd vanuit open bare opslag plaatsen, zoals PyPI, niet ondersteund. Als alternatief kunnen gebruikers een persoonlijk kanaal maken binnen hun primaire Azure Data Lake Storage account en hiernaar verwijzen in hun Conda-omgevings configuratie bestand. 
+Gebruikers kunnen een omgevings configuratie bestand opgeven om Python-pakketten te installeren vanuit open bare opslag plaatsen zoals PyPI. In data exfiltration beveiligde werk ruimten worden verbindingen met uitgaande opslag plaatsen geblokkeerd. Als gevolg hiervan worden de python-bibliotheek die is geïnstalleerd vanuit open bare opslag plaatsen, zoals PyPI, niet ondersteund. 
+
+Als alternatief kunnen gebruikers werkruimte pakketten uploaden of een persoonlijk kanaal maken binnen hun primaire Azure Data Lake Storage-account. Ga voor meer informatie naar [pakket beheer in azure Synapse Analytics](./spark/../../spark/apache-spark-azure-portal-add-libraries.md) 
   
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/28/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 682b83d7016a89b27b5c936853abda1438f59c28
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: e4e90d91b8e6ae017f00e37304c4da56cd618732
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97508013"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102095303"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Over claim resolvers in Azure Active Directory B2C aangepast beleid
 
@@ -51,7 +51,7 @@ De volgende secties bevatten een lijst met beschik bare claim resolvers.
 | {Culture: taal instelling} | De ISO-code van twee letters voor de taal. | en |
 | {Culture: LCID}   | De LCID van de taal code. | 1043 |
 | {Culture: regionaam} | De ISO-code van twee tekens voor de regio. | VS |
-| {Culture: RFC5646} | De RFC5646-taal code. | nl-NL |
+| {Culture: RFC5646} | De RFC5646-taal code. | en-US |
 
 ### <a name="policy"></a>Beleid
 
@@ -87,6 +87,7 @@ De volgende secties bevatten een lijst met beschik bare claim resolvers.
 | {Context: CorrelationId} | De correlatie-ID.  | 00000000-0000-0000-0000-000000000000 |
 | {Context: DateTimeInUtc} |De datum en tijd in UTC.  | 10/10/2018 12:00:00 UUR |
 | {Context: als Deployment mode} |De implementatie modus voor beleid.  | Productie |
+| {Context: hostnaam} | De hostnaam voor de huidige aanvraag.  | contoso.b2clogin.com |
 | {Context: IPAddress} | Het IP-adres van de gebruiker. | 11.111.111.11 |
 | {Context: KMSI} | Hiermee wordt aangegeven of het selectie vakje [aangemeld blijven](session-behavior.md?pivots=b2c-custom-policy#enable-keep-me-signed-in-kmsi) is geselecteerd. |  true |
 
@@ -141,7 +142,7 @@ U kunt claim resolvers gebruiken met de volgende elementen:
 |[OpenID Connect Connect](openid-connect-technical-profile.md) technische profiel| `InputClaim`, `OutputClaim`| 1, 2|
 |Technisch profiel voor [trans formatie van claims](claims-transformation-technical-profile.md)| `InputClaim`, `OutputClaim`| 1, 2|
 |Technisch profiel van de [Rest-provider](restful-technical-profile.md)| `InputClaim`| 1, 2|
-|Technisch profiel voor [SAML-identiteits provider](saml-identity-provider-technical-profile.md)| `OutputClaim`| 1, 2|
+|Technisch profiel voor [SAML-identiteits provider](identity-provider-generic-saml.md)| `OutputClaim`| 1, 2|
 |Een [zelf-bevestigd](self-asserted-technical-profile.md) technisch profiel| `InputClaim`, `OutputClaim`| 1, 2|
 |[ContentDefinition](contentdefinitions.md)| `LoadUri`| |
 |[ContentDefinitionParameters](relyingparty.md#contentdefinitionparameters)| `Parameter` | |
@@ -181,7 +182,7 @@ In het volgende voor beeld ziet u een onderliggend technisch profiel met dit sce
 
 ### <a name="direct-sign-in"></a>Direct aanmelden
 
-Met behulp van claim resolvers kunt u de aanmeldings naam of de directe aanmelding vooraf invullen bij een specifieke ID-provider voor sociale netwerken, zoals Facebook, LinkedIn of een Microsoft-account. Zie voor meer informatie [instellen van direct aanmelden met Azure Active Directory B2C](direct-signin.md).
+Met behulp van claim resolvers kunt u de aanmeldings naam of de directe aanmelding vooraf invullen bij een specifieke ID-provider voor sociale netwerken, zoals Facebook, LinkedIn of een Microsoft-account. Raadpleeg [Direct aanmelden met behulp van Azure Active Directory B2C instellen](direct-signin.md).
 
 ### <a name="dynamic-ui-customization"></a>Dynamische gebruikers interface aanpassen
 

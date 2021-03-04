@@ -352,13 +352,13 @@
     - name: Updates implementeren
       items:
         - name: Een update account voor een apparaat maken
-          href: /iot-hub-device-update/create-device-update-account.md
+          href: ../iot-hub-device-update/create-device-update-account.md
         - name: Een update importeren
-          href: /iot-hub-device-update/import-update.md
+          href: ../iot-hub-device-update/import-update.md
         - name: Een update groep maken
-          href: /iot-hub-device-update/create-update-group.md
+          href: ../iot-hub-device-update/create-update-group.md
         - name: Een update implementeren
-          href: /iot-hub-device-update/deploy-update.md
+          href: ../iot-hub-device-update/deploy-update.md
     - name: Een echt apparaat gebruiken
       items:
         - name: Een online simulator gebruiken

@@ -1,21 +1,24 @@
 ---
-title: Naslaginformatie over Azure Functions C# voor ontwikkelaars
-description: Meer informatie over het ontwikkelen van Azure Functions met C#.
+title: C#-functies ontwikkelen met behulp van Azure Functions
+description: Meer informatie over het gebruik van C# voor het ontwikkelen en publiceren van code die in-process wordt uitgevoerd met de Azure Functions runtime.
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 07/24/2020
-ms.openlocfilehash: 335cc3017e7b016666324306181c90a0e405a956
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: e29b250b25bdafb2b3af26f5669f2ae5ed485457
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98806326"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102041192"
 ---
-# <a name="azure-functions-c-developer-reference"></a>Naslaginformatie over Azure Functions C# voor ontwikkelaars
+# <a name="develop-c-functions-using-azure-functions"></a>C#-functies ontwikkelen met behulp van Azure Functions
 
 <!-- When updating this article, make corresponding changes to any duplicate content in functions-reference-csharp.md -->
 
 Dit artikel is een inleiding tot het ontwikkelen van Azure Functions door C# te gebruiken in .NET-klassen bibliotheken.
+
+>[!IMPORTANT]
+>Dit artikel biedt ondersteuning voor .NET-klassen bibliotheek functies die in-process worden uitgevoerd met de runtime. Functies bieden ook ondersteuning voor .NET 5. x door uw C#-functies out-of-process uit te voeren en te worden geïsoleerd van de runtime. Zie voor meer informatie [.net geïsoleerd proces-functies](dotnet-isolated-process-guide.md).
 
 Als C#-ontwikkelaar bent u mogelijk ook geïnteresseerd in een van de volgende artikelen:
 
@@ -31,9 +34,11 @@ Versies van de functions-runtime werken met specifieke versies van .NET. De volg
 
 | Runtime versie van functions | Maximum versie van .NET |
 | ---- | ---- |
-| Functies 3. x | .NET Core 3.1 |
+| Functies 3. x | .NET Core 3.1<br/>.NET 5,0<sup>*</sup> |
 | Functions 2.x | .NET Core 2.2 |
 | Functions 1.x | .NET Framework 4,7 |
+
+<sup>*</sup>[Out-of-process](dotnet-isolated-process-guide.md)moet worden uitgevoerd.
 
 Zie [Azure functions overzicht van runtime versies](functions-versions.md) voor meer informatie
 
@@ -94,9 +99,11 @@ De methode handtekening kan andere para meters bevatten dan de hand tekening die
 
 De volg orde van de para meters in de functie handtekening is hierbij niet van belang. U kunt bijvoorbeeld trigger parameters plaatsen voor of na andere bindingen en u kunt de para meter logger voor of na de trigger-of bindings parameters plaatsen.
 
-### <a name="output-binding-example"></a>Voor beeld van uitvoer binding
+### <a name="output-bindings"></a>Uitvoerbindingen
 
-In het volgende voor beeld wordt de vorige wijziging aangebracht door een uitvoer wachtrij binding toe te voegen. Met de functie wordt het wachtrij bericht geschreven dat de functie activeert naar een nieuw wachtrij bericht in een andere wachtrij.
+Een functie kan nul of één uitvoer bindingen hebben die zijn gedefinieerd met behulp van uitvoer parameters. 
+
+In het volgende voor beeld wordt de vorige wijziging aangebracht door een uitvoer wachtrij binding met de naam toe te voegen `myQueueItemCopy` . De functie schrijft de inhoud van het bericht dat de functie activeert naar een nieuw bericht in een andere wachtrij.
 
 ```csharp
 public static class SimpleExampleWithOutput
@@ -112,6 +119,8 @@ public static class SimpleExampleWithOutput
     }
 }
 ```
+
+Waarden die zijn toegewezen aan uitvoer bindingen worden geschreven wanneer de functie wordt afgesloten. U kunt meer dan één uitvoer binding in een functie gebruiken door eenvoudigweg waarden toe te wijzen aan meerdere uitvoer parameters. 
 
 De bindende referentie artikelen ([opslag wachtrijen](functions-bindings-storage-queue.md), bijvoorbeeld) geven aan welke parameter typen u kunt gebruiken met de bindings kenmerken trigger, invoer of uitvoer.
 
@@ -361,7 +370,7 @@ Hier volgt een voor beeld van een JSON-weer gave van `customDimensions` gegevens
 }
 ```
 
-## <a name="log-custom-telemetry-in-c-functions"></a>Aangepaste telemetrie voor logboeken in C#-functies
+### <a name="log-custom-telemetry"></a><a name="log-custom-telemetry-in-c-functions"></a>Aangepaste telemetrie vastleggen in logboek
 
 Er is een functie-specifieke versie van de Application Insights SDK waarmee u aangepaste telemetriegegevens van uw functies kunt verzenden naar Application Insights: [micro soft. Azure. webjobs. Logging. ApplicationInsights](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Logging.ApplicationInsights). Gebruik de volgende opdracht vanaf de opdracht prompt om dit pakket te installeren:
 

@@ -7,16 +7,20 @@ ms.author: anvar
 ms.manager: bsiva
 ms.date: 04/19/2020
 ms.custom: mvc
-ms.openlocfilehash: cc207522048e3f0491e3aa54f2ae21d2e7e63bc2
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: f50737bdefc9065c9b16633ba3360bda1d028cd6
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99834031"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102043045"
 ---
 # <a name="whats-new-in-azure-migrate"></a>Nieuwe functies in Azure Migrate
 
 [Azure Migrate](migrate-services-overview.md) helpt u bij het detecteren, evalueren en migreren van on-premises servers, apps en gegevens naar de Microsoft Azure-cloud. In dit artikel vindt u een overzicht van nieuwe releases en functies in Azure Migrate.
+
+## <a name="update-march-2021"></a>Update (maart 2021)
+- Ondersteuning voor het bieden van meerdere Server referenties op Azure Migrate apparaat om geïnstalleerde toepassingen (software-inventarisatie), afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases in uw VMware-omgeving te detecteren. [Meer informatie](tutorial-discover-vmware.md#provide-server-credentials)
+- Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. [Meer informatie](concepts-azure-sql-assessment-calculation.md)<br/>Gebruik [deze koppeling](https://aka.ms/AzureMigrate/SQL) om een project te maken in **Australië-Oost** regio om deze functie uit te proberen. Raadpleeg de zelf studies voor [detectie](tutorial-discover-vmware.md) en [beoordelingen](tutorial-assess-sql.md) om aan de slag te gaan.
 
 ## <a name="update-january-2021"></a>Update (januari 2021)
 -  Azure Migrate: met het hulp programma voor server migratie kunt u nu virtuele VMware-machines, fysieke servers en virtuele machines migreren van andere Clouds naar Azure virtual machines met schijven die zijn versleuteld met versleuteling aan de server zijde met door de klant beheerde sleutels (CMK).
@@ -84,7 +88,7 @@ Er zijn een aantal nieuwe functies toegevoegd aan Azure Migrate:
 
 Er zijn nieuwe hulpprogramma's voor evaluatie en migratie toegevoegd aan Azure Migrate:
 
-- **Rackware**: biedt cloudmigratie.
+- **RackWare**: biedt Cloud migratie.
 - **Movere**: biedt evaluatie.
 
 [Meer informatie](migrate-services-overview.md) over het gebruik van hulpprogramma's en ISV-aanbiedingen voor evaluatie en migratie in Azure Migrate.

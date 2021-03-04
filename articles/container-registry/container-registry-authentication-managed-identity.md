@@ -3,12 +3,12 @@ title: Verifiëren met beheerde identiteit
 description: Toegang bieden tot installatie kopieën in uw persoonlijke container register met behulp van een door de gebruiker toegewezen of door het systeem toegewezen beheerde Azure-identiteit.
 ms.topic: article
 ms.date: 01/16/2019
-ms.openlocfilehash: 68564cc5743b1deb43bf39f897c239dc683c334c
-ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
+ms.openlocfilehash: e6c0d21f7bdefa94241655225589a52c02110f70
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99987744"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102041464"
 ---
 # <a name="use-an-azure-managed-identity-to-authenticate-to-an-azure-container-registry"></a>Een door Azure beheerde identiteit gebruiken om te verifiëren bij een Azure container Registry 
 
@@ -107,13 +107,13 @@ Sluit de SSH-sessie af.
 
 ### <a name="create-an-identity"></a>Een identiteit maken
 
-Maak een identiteit in uw abonnement met behulp van de opdracht [AZ Identity Create](/cli/azure/identit#az-identity-create) . U kunt dezelfde resource groep gebruiken die u eerder hebt gebruikt voor het maken van het container register of de virtuele machine of een andere.
+Maak een identiteit in uw abonnement met behulp van de opdracht [AZ Identity Create](/cli/azure/identity#az_identity_create) . U kunt dezelfde resource groep gebruiken die u eerder hebt gebruikt voor het maken van het container register of de virtuele machine of een andere.
 
 ```azurecli-interactive
 az identity create --resource-group myResourceGroup --name myACRId
 ```
 
-Als u de identiteit in de volgende stappen wilt configureren, gebruikt u de opdracht [AZ Identity show][az-identity-show] om de resource-id van de identiteit en de Service-Principal-id in variabelen op te slaan.
+Als u de identiteit in de volgende stappen wilt configureren, gebruikt u de opdracht [AZ Identity Show] [az_identity_show] om de resource-ID van de identiteit en de Service-Principal-ID op te slaan in variabelen.
 
 ```azurecli
 # Get resource ID of the user-assigned identity

@@ -183,6 +183,8 @@
       href: core/concepts-telemetry-properties-commands.md
     - name: IoT Edge-apparaten verbinden
       href: core/concepts-iot-edge.md
+    - name: Aanbevolen procedures
+      href: core/concepts-best-practices.md
 - name: Instructiegidsen
   items:
     - name: Apparaten ontwikkelen en verbinden

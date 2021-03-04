@@ -1,17 +1,16 @@
 ---
 title: Log Analytics agent-gegevens bronnen in Azure Monitor
 description: Gegevens bronnen definiëren de logboek gegevens die Azure Monitor verzameld van agents en andere verbonden bronnen.  In dit artikel wordt beschreven hoe Azure Monitor gegevens bronnen gebruikt, wordt uitgelegd hoe u deze kunt configureren en wordt een overzicht gegeven van de verschillende gegevens bronnen die beschikbaar zijn.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 10/21/2020
-ms.openlocfilehash: 8b0debed6e0865f39cd42c7003347b2510600f81
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 02/26/2021
+ms.openlocfilehash: 51cdee9c899feeb003a7d6301d2da0749fad65e9
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101720015"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102041928"
 ---
 # <a name="log-analytics-agent-data-sources-in-azure-monitor"></a>Log Analytics agent-gegevens bronnen in Azure Monitor
 De gegevens die Azure Monitor verzameld van virtuele machines met de [log Analytics](./log-analytics-agent.md) -agent, worden gedefinieerd door de gegevens bronnen die u configureert in de [log Analytics-werk ruimte](../logs/data-platform-logs.md).   Elke gegevens bron maakt records van een bepaald type met elk type met een eigen set eigenschappen.
@@ -40,11 +39,11 @@ De volgende tabel geeft een lijst van de agent gegevens bronnen die op dit momen
 
 
 ## <a name="configuring-data-sources"></a>Gegevens bronnen configureren
-Als u gegevens bronnen voor Log Analytics agents wilt configureren, gaat u naar het menu **log Analytics-werk ruimten** in de Azure Portal en selecteert u een werk ruimte. Klik op **Geavanceerde instellingen** en vervolgens op **gegevens**. Selecteer de gegevens bron die u wilt configureren. U kunt de koppelingen in de bovenstaande tabel volgen voor documentatie voor elke gegevens bron en informatie over de configuratie.
+Als u gegevens bronnen voor Log Analytics agents wilt configureren, gaat u naar het menu **log Analytics-werk ruimten** in de Azure Portal en selecteert u een werk ruimte. Klik op **agents configuratie**. Selecteer het tabblad voor de gegevens bron die u wilt configureren. U kunt de koppelingen in de bovenstaande tabel volgen voor documentatie voor elke gegevens bron en informatie over de configuratie.
 
 Elke configuratie wordt afgeleverd bij alle agents die zijn verbonden met die werk ruimte.  U kunt geen verbonden agents uitsluiten van deze configuratie.
 
-![Windows-gebeurtenissen configureren](media/agent-data-sources/configure-events.png)
+[![Windows-gebeurtenissen configureren](media/agent-data-sources/configure-events.png)](media/agent-data-sources/configure-events.png#lightbox)
 
 
 

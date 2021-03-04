@@ -6,12 +6,12 @@ ms.author: vibansa
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 09/15/2020
-ms.openlocfilehash: 9badbfe6cfe12d67e07f0889d175ed32bc455321
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 5a050d9aab9e8665c6048391488e57c9b4af10a5
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96753872"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102043062"
 ---
 # <a name="azure-migrate-appliance-common-questions"></a>Azure Migrate apparaat: veelgestelde vragen
 
@@ -36,21 +36,20 @@ Meer [informatie](migrate-appliance.md) over het apparaat.
 
 ## <a name="how-can-i-deploy-the-appliance"></a>Hoe kan ik het apparaat implementeren?
 
-Het apparaat kan als volgt worden geïmplementeerd:
+Het apparaat kan worden geïmplementeerd met een aantal methoden:
 
-- Een sjabloon gebruiken voor de detectie van virtuele VMware-machines (. Bestand eicellen) en virtuele Hyper-V-machines (. VHD-bestand) om een nieuwe virtuele machine te maken die als host fungeert voor het apparaat.
-- Als u geen sjabloon wilt gebruiken, kunt u het apparaat op een bestaande fysieke of virtuele machine implementeren voor detectie van virtuele VMware-machines of Hyper-V-machines met behulp van een Power shell-installatie script, dat kan worden gedownload in een zip-bestand vanuit de portal.
-- Voor fysieke of virtuele servers van on-premises of een wille keurige Cloud implementeert u het apparaat altijd met behulp van een script op een bestaande server.
-- Voor Azure Government kunnen alle drie apparaten alleen worden geïmplementeerd met het Power shell-installatie script.
+- Het apparaat kan worden geïmplementeerd met een sjabloon voor servers die worden uitgevoerd in de VMware-of Hyper-V-omgeving ([eicellen-sjabloon voor VMware](how-to-set-up-appliance-vmware.md) of [VHD voor hyper-v](how-to-set-up-appliance-hyper-v.md)).
+- Als u geen sjabloon wilt gebruiken, kunt u het apparaat voor de VMware-of Hyper-V-omgeving implementeren met behulp van een [Power shell-installatie script](deploy-appliance-script.md).
+- In Azure Government moet u het apparaat implementeren met behulp van een Power shell-installatie script. Raadpleeg [hier](deploy-appliance-script-government.md)de stappen voor de implementatie.
+- Voor fysieke of gevirtualiseerde servers, on-premises of een andere Cloud, implementeert u het apparaat altijd met behulp van een Power shell-installatie script. Raadpleeg [hier](how-to-set-up-appliance-physical.md)de stappen voor de implementatie.
 
 ## <a name="how-does-the-appliance-connect-to-azure"></a>Hoe maakt het apparaat verbinding met Azure?
 
 Het apparaat kan verbinding maken via internet of met behulp van Azure ExpressRoute. 
 
 - Zorg ervoor dat het apparaat verbinding kan maken met deze [Azure-url's](./migrate-appliance.md#url-access). 
-- U kunt ExpressRoute gebruiken met micro soft-peering.  Open bare peering is afgeschaft en is niet beschikbaar voor nieuwe ExpressRoute-circuits.
+- U kunt ExpressRoute gebruiken met micro soft-peering. Open bare peering is afgeschaft en is niet beschikbaar voor nieuwe ExpressRoute-circuits.
 - Alleen privé-peering wordt niet ondersteund.
-
 
 
 ## <a name="does-appliance-analysis-affect-performance"></a>Is de invloed van de apparatuur op de prestaties?
@@ -109,7 +108,7 @@ Nee. Er is een een-op-een-toewijzing tussen een [Azure migrate apparaat](migrate
 
 ## <a name="can-an-azure-migrate-project-have-multiple-appliances"></a>Kan een Azure Migrate project meerdere toestellen hebben?
 
-Aan een project kunnen meerdere apparaten zijn gekoppeld. Een apparaat kan echter slechts aan één project worden gekoppeld. 
+Er kunnen meerdere apparaten worden geregistreerd voor een project. Eén apparaat kan echter slechts met één project worden geregistreerd.
 
 ## <a name="can-the-azure-migrate-appliancereplication-appliance-connect-to-the-same-vcenter"></a>Kan de Azure Migrate apparaat/replicatie apparaat verbinding maken met dezelfde vCenter?
 
@@ -135,7 +134,7 @@ U kunt ook een bestaande Azure Migrate project sleutel niet opnieuw gebruiken op
 
 ## <a name="can-i-set-up-the-appliance-on-an-azure-vm"></a>Kan ik het apparaat instellen op een virtuele Azure-machine?
 
-Nee. Deze optie wordt momenteel niet ondersteund. 
+Nee. Deze optie wordt momenteel niet ondersteund.
 
 ## <a name="can-i-discover-on-an-esxi-host"></a>Kan ik op een ESXi-host ontdekken?
 
@@ -150,6 +149,19 @@ Alleen het apparaat en de agents van het apparaat worden bijgewerkt door deze au
 ## <a name="can-i-check-agent-health"></a>Kan ik de agent status controleren?
 
 Ja. Ga in de portal naar de pagina **status van agent** voor de Azure migrate: Server evaluatie of Azure migrate: hulp programma voor server migratie. Daar kunt u de verbindings status controleren tussen Azure en de detectie-en evaluatie agenten op het apparaat.
+
+## <a name="can-i-add-multiple-server-credentials-on-vmware-appliance"></a>Kan ik meerdere Server referenties toevoegen aan VMware-apparaat?
+
+Ja, we ondersteunen nu meerdere Server referenties voor het uitvoeren van software-inventaris (detectie van geïnstalleerde toepassingen), afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases. Meer [informatie](tutorial-discover-vmware.md#provide-server-credentials) over het opgeven van referenties op het configuratie beheer van het apparaat.
+
+## <a name="what-type-of-server-credentials-can-i-add-on-the-vmware-appliance"></a>Welk type server referenties kan ik toevoegen op het VMware-apparaat?
+U kunt referenties voor domein/Windows (niet-domein)/Linux-(non-domain)/SQL Server-verificatie opgeven op het configuratie beheer van het apparaat. Meer [informatie](add-server-credentials.md) over hoe u referenties kunt opgeven en hoe u deze kunt afhandelen.
+
+## <a name="what-type-of-sql-server-connection-properties-are-supported-by-azure-migrate-for-sql-discovery"></a>Welk type SQL Server verbindings eigenschappen worden ondersteund door Azure Migrate voor SQL-detectie?
+Azure Migrate versleutelt de communicatie tussen Azure Migrate apparaat en bron SQL Server instanties (waarbij de eigenschap versleutelings verbinding is ingesteld op TRUE). Deze verbindingen worden versleuteld met [TrustServerCertificate](https://docs.microsoft.com/dotnet/api/system.data.sqlclient.sqlconnectionstringbuilder.trustservercertificate) (ingesteld op True). de transportlaag gebruikt SSL om het kanaal te versleutelen en de certificaat keten te omzeilen om de vertrouwens relatie te valideren. De toestel server moet zijn ingesteld om [de basis instantie van het certificaat te vertrouwen](https://docs.microsoft.com/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine).
+
+Als er geen certificaat is ingericht op de server wanneer het wordt gestart, SQL Server genereert een zelfondertekend certificaat dat wordt gebruikt om aanmeldings pakketten te versleutelen. [Meer informatie](https://docs.microsoft.com/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine).
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

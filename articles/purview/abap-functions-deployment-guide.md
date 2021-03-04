@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/13/2020
-ms.openlocfilehash: 1d9f1c5beafb7b54c5fd0189dd738ff8e346a3e8
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 911238efafb948b304455cf75cc4ec2c3c605c76
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101695948"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102042045"
 ---
 # <a name="deploy-the-metadata-extraction-abap-function-module-for-the-sap-r3-family-of-bridges"></a>De ABAP-functie module voor het uitpakken van meta gegevens implementeren voor de SAP R3-familie van bruggen 
 Dit artikel bevat een overzicht van de stappen voor het implementeren van de ABAP-functie module in SAP server
@@ -74,7 +74,7 @@ Wanneer de module is gemaakt, geeft u de volgende informatie op:
 
 3.  Navigeer naar het \" tabblad Bron code \" . Er zijn twee manieren om code te implementeren voor de functie:
 
-    a.  In het hoofd menu uploadt \_ u het bestand Z MITI \_DOWNLOAD.txt door Utilities = \> meer Utilities = \> Upload/down load = upload te selecteren \> .
+    a.  Upload in het hoofd menu het tekst bestand [Z \_ MITI \_ Download](https://github.com/Azure/Purview-Samples/tree/master/connectors/sap) bestand door Utilities = \> meer Utilities = \> Upload/down load = \> upload te selecteren.
 
     b.  U kunt ook het bestand openen, de inhoud ervan kopiëren en plakken in het \" bron code \" gebied.
 

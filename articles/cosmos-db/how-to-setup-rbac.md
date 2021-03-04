@@ -4,14 +4,14 @@ description: Meer informatie over het configureren van op rollen gebaseerd toega
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 03/02/2021
+ms.date: 03/03/2021
 ms.author: thweiss
-ms.openlocfilehash: d83109f380a3044073cf2dd8d10f29027ebb9f41
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: acb82a66c8ef4adcfeef0fcb527c44512ad4feaf
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101690903"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102040869"
 ---
 # <a name="configure-role-based-access-control-with-azure-active-directory-for-your-azure-cosmos-db-account-preview"></a>Op rollen gebaseerd toegangs beheer configureren met Azure Active Directory voor uw Azure Cosmos DB-account (preview-versie)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -370,6 +370,7 @@ Deze extra informatie loopt over in de logboek categorie **DataPlaneRequests** e
 - U kunt Maxi maal 100 functie definities en 2.000 roltoewijzingen per Azure Cosmos DB account maken.
 - De oplossing voor Azure AD-groepen wordt momenteel niet ondersteund voor identiteiten die deel uitmaken van meer dan 200 groepen.
 - Het Azure AD-token wordt momenteel door gegeven als een header waarbij elke afzonderlijke aanvraag wordt verzonden naar de Azure Cosmos DB-Service, waardoor de totale nettolading groter wordt.
+- Toegang tot uw gegevens met Azure AD via de [Azure Cosmos DB Explorer](data-explorer.md) wordt nog niet ondersteund. Als u de Azure Cosmos DB Explorer gebruikt, is de gebruiker nog steeds toegang tot de primaire sleutel van het account nodig.
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 

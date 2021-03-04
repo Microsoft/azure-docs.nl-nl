@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mqtt
-ms.openlocfilehash: d1d4abbcc0768915d7d2e693cfc76a699ed21a91
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e5b1950935e6279995b44c2e07931519e82359d2
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89669620"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102040631"
 ---
 # <a name="understand-how-azure-iot-edge-uses-certificates"></a>Meer informatie over het gebruik van Azure IoT Edge certificaten
 
@@ -33,8 +33,13 @@ In de volgende afbeelding ziet u het gebruik van IoT Edge van certificaten. Er k
 
 ![Diagram van typische certificaat relaties](./media/iot-edge-certs/edgeCerts-general.png)
 
+<!--1.1-->
+:::moniker range="iotedge-2018-06"
+
 > [!NOTE]
 > Op dit moment wordt een beperking in libiothsm voor komen dat certificaten worden gebruikt die op of na 1 januari 2038 verlopen. Deze beperking geldt voor het CA-certificaat van het apparaat, alle certificaten in de vertrouwens bundel en de apparaat-ID-certificaten die worden gebruikt voor X. 509-inrichtings methoden.
+
+:::moniker-end
 
 ### <a name="certificate-authority"></a>Certificeringsinstantie
 
@@ -66,7 +71,7 @@ De [IOT Edge Security Manager](iot-edge-security-manager.md) GENEREERT het CA-ce
 
 ### <a name="iot-edge-hub-server-certificate"></a>IoT Edge hub-server certificaat
 
-Het IoT Edge hub-server certificaat is het daad werkelijke certificaat dat wordt aangeboden aan Leaf-apparaten en-modules voor identiteits verificatie tijdens het instellen van de TLS-verbinding die is vereist voor IoT Edge. Dit certificaat bevat de volledige keten van handtekening certificaten die worden gebruikt voor het genereren van het basis certificaat van de certificerings instantie, die het blad IoT-apparaat moet vertrouwen. Wanneer het is gegenereerd door IoT Edge Security Manager, wordt de algemene naam (CN) van dit IoT Edge hub-certificaat ingesteld op de eigenschap hostname in het bestand config. yaml na conversie naar kleine letters. Deze configuratie is een veelvoorkomende bron van Verwar ring met IoT Edge.
+Het IoT Edge hub-server certificaat is het daad werkelijke certificaat dat wordt aangeboden aan Leaf-apparaten en-modules voor identiteits verificatie tijdens het instellen van de TLS-verbinding die is vereist voor IoT Edge. Dit certificaat bevat de volledige keten van handtekening certificaten die worden gebruikt voor het genereren van het basis certificaat van de certificerings instantie, die het blad IoT-apparaat moet vertrouwen. Wanneer het wordt gegenereerd door IoT Edge, wordt de algemene naam (CN) van dit IoT Edge hub-certificaat ingesteld op de eigenschap hostname in het configuratie bestand na conversie naar kleine letters. Deze configuratie is een veelvoorkomende bron van Verwar ring met IoT Edge.
 
 ## <a name="production-implications"></a>Gevolgen voor de productie
 
@@ -76,19 +81,19 @@ Omdat productie-en bewerkings processen worden gescheiden, moet u rekening houde
 
 * Bij elk op certificaten gebaseerd proces moeten het basis-CA-certificaat en alle tussenliggende CA-certificaten worden beveiligd en gecontroleerd tijdens het hele proces van het uitrollen van een IoT Edge apparaat. De fabrikant van het IoT Edge apparaat moet sterke processen hebben voor de juiste opslag en het gebruik van hun tussenliggende certificaten. Daarnaast moet het CA-certificaat van het apparaat als mogelijk worden bewaard op het apparaat zelf, bij voor keur een Hardware Security-module.
 
-* Het IoT Edge hub-server certificaat wordt door IoT Edge hub gepresenteerd aan de client apparaten en-modules die verbinding maken. De algemene naam (CN) van het CA-certificaat van het apparaat **mag niet hetzelfde zijn** als de hostnaam die wordt gebruikt in config. yaml op het IOT edge-apparaat. De naam die door clients wordt gebruikt om verbinding te maken met IoT Edge (bijvoorbeeld via de para meter GatewayHostName van de connection string of de opdracht CONNECT in MQTT), **mag niet hetzelfde zijn** als de algemene naam die wordt gebruikt in het certificaat van de certificerings instantie. Deze beperking is omdat de IoT Edge hub de volledige certificaat keten geeft voor verificatie door clients. Als het IoT Edge hub-server certificaat en het CA-certificaat van het apparaat dezelfde CN hebben, krijgt u een verificatie-lus en wordt het certificaat ongeldig.
+* Het IoT Edge hub-server certificaat wordt door IoT Edge hub gepresenteerd aan de client apparaten en-modules die verbinding maken. De algemene naam (CN) van het CA-certificaat van het apparaat **mag niet hetzelfde zijn** als de hostnaam die wordt gebruikt in het configuratie bestand op het IOT edge-apparaat. De naam die door clients wordt gebruikt om verbinding te maken met IoT Edge (bijvoorbeeld via de para meter GatewayHostName van de connection string of de opdracht CONNECT in MQTT), **mag niet hetzelfde zijn** als de algemene naam die wordt gebruikt in het certificaat van de certificerings instantie. Deze beperking is omdat de IoT Edge hub de volledige certificaat keten geeft voor verificatie door clients. Als het IoT Edge hub-server certificaat en het CA-certificaat van het apparaat dezelfde CN hebben, krijgt u een verificatie-lus en wordt het certificaat ongeldig.
 
 * Omdat het certificaat van de certificerings instantie van het apparaat wordt gebruikt door de IoT Edge Security daemon voor het genereren van de definitieve IoT Edge certificaten, moet het een handtekening certificaat zijn, wat betekent dat het een certificaat heeft voor de ondertekening van certificaten. Als ' v3 Basic-beperkingen CA: True ' wordt toegepast op het apparaat-CA-certificaat, worden de vereiste eigenschappen voor sleutel gebruik automatisch ingesteld.
 
 >[!Tip]
-> Als u de installatie van IoT Edge al hebt door lopen als een transparante gateway in een dev/test-scenario met behulp van onze ' gebruiks vriendelijke scripts (zie volgende sectie) en dezelfde hostnaam gebruikt bij het maken van het certificaat van de certificerings instantie voor de host in config. yaml, vraagt u zich mogelijk af waarom dit is gedaan. Om de ervaring van de ontwikkel aars te vereenvoudigen, voegt de gebruiks vriendelijke scripts een '. ca ' toe aan het einde van de naam die u doorgeeft aan het script. Als u bijvoorbeeld ' mygateway ' hebt gebruikt voor zowel de naam van het apparaat in de scripts en de hostnaam in config. yaml, wordt de eerste in mygateway.ca gezet voordat deze wordt gebruikt als de CN voor het certificaat van de CA-apparaat.
+> Als u de installatie van IoT Edge al hebt door lopen als een transparante gateway in een dev/test-scenario met behulp van onze ' gebruiks vriendelijke scripts (zie volgende sectie) en dezelfde hostnaam gebruikt bij het maken van het certificaat van de certificerings instantie van het apparaat, kunt u zich afvragen waarom dit is gedaan. Om de ervaring van de ontwikkel aars te vereenvoudigen, voegt de gebruiks vriendelijke scripts een '. ca ' toe aan het einde van de naam die u doorgeeft aan het script. Als u bijvoorbeeld ' mygateway ' hebt gebruikt voor zowel de naam van het apparaat in de scripts en de hostnaam in het configuratie bestand, wordt de eerste ingesteld op mygateway.ca voordat deze wordt gebruikt als de CN voor het CA-certificaat van het apparaat.
 
 ## <a name="devtest-implications"></a>Implicaties voor dev/test
 
 Om ontwikkel-en test scenario's te vereenvoudigen, biedt micro soft een aantal [gebruiks vriendelijke scripts](https://github.com/Azure/azure-iot-sdk-c/tree/master/tools/CACertificates) voor het genereren van niet-productie certificaten die geschikt zijn voor IOT Edge in het transparante Gateway scenario. Zie [demo certificaten maken om IOT Edge apparaatfuncties te testen](how-to-create-test-certificates.md)voor voor beelden van de werking van de scripts.
 
 >[!Tip]
-> Als u uw apparaat IoT-Leaf-apparaten en-toepassingen wilt verbinden die gebruikmaken van onze IoT Device SDK via IoT Edge, moet u de optionele para meter GatewayHostName toevoegen aan het einde van de connection string van het apparaat. Wanneer het Edge hub-server certificaat wordt gegenereerd, is het gebaseerd op een kleine versie van de hostnaam van config. yaml. Daarom moet u de para meter GatewayHostName in kleine letters invoeren om de namen te vergelijken en de verificatie van het TLS-certificaat te volt ooien.
+> Als u uw apparaat IoT-Leaf-apparaten en-toepassingen wilt verbinden die gebruikmaken van onze IoT Device SDK via IoT Edge, moet u de optionele para meter GatewayHostName toevoegen aan het einde van de connection string van het apparaat. Wanneer het Edge hub-server certificaat wordt gegenereerd, is het gebaseerd op een kleine versie van de hostnaam uit het configuratie bestand, dus als de namen overeenkomen en de verificatie van het TLS-certificaat slaagt, moet u de para meter GatewayHostName in kleine letters invoeren.
 
 ## <a name="example-of-iot-edge-certificate-hierarchy"></a>Voor beeld van een IoT Edge-certificaat hiërarchie
 
@@ -103,7 +108,7 @@ U kunt de hiërarchie van certificaat diepte zien die wordt weer gegeven in de s
 | Tussenliggend CA-certificaat | Alleen Azure IoT Hub tussenliggende certificerings test                                                                 |
 | CA-certificaat van apparaat       | iotgateway.ca ("iotgateway" is door gegeven als de hostnaam van de < gateway > aan de gebruiks scripts)   |
 | CA-certificaat voor werk belasting     | CA voor iotedge-werk belasting                                                                                       |
-| IoT Edge hub-server certificaat | iotedgegw. local (komt overeen met de hostnaam in config. yaml)                                            |
+| IoT Edge hub-server certificaat | iotedgegw. local (komt overeen met de hostnaam van het configuratie bestand)                                            |
 
 ## <a name="next-steps"></a>Volgende stappen
 

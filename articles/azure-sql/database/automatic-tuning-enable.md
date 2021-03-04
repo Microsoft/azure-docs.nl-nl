@@ -10,17 +10,16 @@ ms.topic: how-to
 author: danimir
 ms.author: danil
 ms.reviewer: wiassaf, sstein
-ms.date: 12/03/2019
-ms.openlocfilehash: 35e2a73b0cfae104cee417e7d4a159e7fd169a17
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 03/03/2021
+ms.openlocfilehash: d60810c291984e0f57df1968f69678de8179273c
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500900"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102042518"
 ---
 # <a name="enable-automatic-tuning-in-the-azure-portal-to-monitor-queries-and-improve-workload-performance"></a>Automatisch afstemmen inschakelen in de Azure Portal om query's te bewaken en de prestaties van de werk belasting te verbeteren
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
-
 
 Azure SQL Database beheert automatisch gegevens services die voortdurend uw query's bewaken en identificeert de actie die u kunt uitvoeren om de prestaties van uw workload te verbeteren. U kunt aanbevelingen bekijken en deze hand matig Toep assen of Azure SQL Database corrigerende acties automatisch Toep assen. dit wordt ook wel de **automatische afstemmings modus** genoemd.
 
@@ -111,11 +110,26 @@ Als u de afzonderlijke afstemmings optie instelt op aan, worden alle instellinge
 
 Zie [ALTER data base set Options (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current&preserve-view=true)voor meer informatie over over T-SQL-opties voor het configureren van automatisch afstemmen.
 
-## <a name="disabled-by-the-system"></a>Uitgeschakeld door het systeem
+## <a name="troubleshooting"></a>Problemen oplossen
 
-Automatisch afstemmen bewaken alle acties die ze in de Data Base uitvoeren. in sommige gevallen kan het bepalen dat automatisch afstemmen niet goed kan worden uitgevoerd op de data base. In dit geval wordt de afstemmings optie uitgeschakeld door het systeem. In de meeste gevallen gebeurt dit omdat query Store niet is ingeschakeld of de status alleen-lezen heeft voor een specifieke data base.
+### <a name="automated-recommendation-management-is-disabled"></a>Geautomatiseerd advies beheer is uitgeschakeld
 
-## <a name="permissions"></a>Machtigingen
+In het geval van fout berichten dat geautomatiseerd aanbevelings beheer is uitgeschakeld of gewoon is uitgeschakeld door het systeem, zijn de meest voorkomende oorzaken:
+- Query Store is niet ingeschakeld of
+- Het query archief bevindt zich in de modus alleen-lezen voor een opgegeven Data Base of
+- Het query archief is gestopt omdat het de toegewezen opslag ruimte gebruikt.
+
+De volgende stappen kunnen worden overwogen om dit probleem op te lossen:
+- Schoon het query archief op of wijzig de Bewaar periode voor gegevens in ' auto ' door gebruik te maken van T-SQL. Zie [Aanbevolen Bewaar-en vastleg beleid configureren voor query Store](/azure/azure-sql/database/query-performance-insight-use#recommended-retention-and-capture-policy).
+- Gebruik SQL Server Management Studio (SSMS) en voer de volgende stappen uit:
+  - Verbinding maken met de Azure SQL Database
+  - Klik met de rechter muisknop op de data base
+  - Ga naar eigenschappen en klik op query Store
+  - Wijzig de bewerkings modus in Read-Write
+  - De modus voor het vastleggen van de opslag wijzigen in automatisch
+  - Wijzig de op grootte gebaseerde opschoon modus in automatisch
+
+### <a name="permissions"></a>Machtigingen
 
 Als automatische afstemming een Azure-functie is, moet u de ingebouwde rollen van Azure gebruiken om het te gebruiken. Het gebruik van alleen SQL-verificatie is niet voldoende om de functie van de Azure Portal te gebruiken.
 
@@ -123,7 +137,7 @@ Als u automatisch afstemmen wilt gebruiken, is de mini maal vereiste machtiging 
 
 ## <a name="configure-automatic-tuning-e-mail-notifications"></a>E-mail meldingen automatisch afstemmen configureren
 
-Raadpleeg de hand leiding voor het [automatisch afstemmen van e-mail berichten](automatic-tuning-email-notifications-configure.md) .
+Raadpleeg de hand leiding voor het [automatisch afstemmen van e-mail meldingen](automatic-tuning-email-notifications-configure.md) voor het ontvangen van automatische e-mail meldingen over aanbevelingen die worden gedaan door de automatisch afstemmen
 
 ## <a name="next-steps"></a>Volgende stappen
 

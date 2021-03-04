@@ -11,12 +11,12 @@ services: iot-edge
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: f95068b66fdd7907bf06086f855473b156738847
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: ec0bf6330b7b2268db84d86dc5a0d141fc24ce74
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100371092"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102040648"
 ---
 # <a name="how-an-iot-edge-device-can-be-used-as-a-gateway"></a>Hoe een IoT Edge-apparaat kan worden gebruikt als gateway
 
@@ -95,7 +95,7 @@ Gebruik op downstream IoT-apparaten de para meter **gatewayHostname** in de Conn
 
 <!-- 1.2.0 -->
 ::: moniker range=">=iotedge-2020-11"
-Gebruik op downstream IoT Edge-apparaten de para meter **parent_hostname** in het bestand config. yaml om naar het bovenliggende apparaat te verwijzen.
+Gebruik op downstream IoT Edge-apparaten de para meter **parent_hostname** in het configuratie bestand om naar het bovenliggende apparaat te verwijzen.
 ::: moniker-end
 
 #### <a name="secure-connection"></a>Beveiligde verbinding

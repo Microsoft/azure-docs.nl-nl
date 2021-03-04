@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 12/14/2020
-ms.openlocfilehash: 7277ad060c57b44d633054c4fc4d29d151bd7192
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.date: 03/03/2021
+ms.openlocfilehash: 234a0137f0a9487a56b3e0343eaea375d2f9a1af
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400808"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102043011"
 ---
 # <a name="querying-in-azure-cognitive-search"></a>Query's uitvoeren in azure Cognitive Search
 
@@ -84,8 +84,8 @@ U hebt mogelijk ook filters nodig om een speciaal query formulier aan te roepen,
 
 | Filter scenario | Beschrijving |
 |-----------------|-------------|
-| Bereik filters | In azure Cognitive Search worden bereik query's gemaakt met behulp van de filter parameter. Zie voor meer informatie en voor beelden [Range filter voor beeld](search-query-simple-examples.md#example-4-range-filters). |
-| Geolocatie zoeken | Als een doorzoekbaar veld van het [type EDM. GeographyPoint](/rest/api/searchservice/supported-data-types)is, kunt u een filter expressie maken voor de besturings elementen "dichtbij zoeken" of op basis van een kaart. Velden die geografische zoek acties hebben, bevatten coördinaten. Zie voor meer informatie en een voor beeld een voor beeld van [geo-zoeken](search-query-simple-examples.md#example-5-geo-search). |
+| Bereik filters | In azure Cognitive Search worden bereik query's gemaakt met behulp van de filter parameter. Zie voor meer informatie en voor beelden [Range filter voor beeld](search-query-simple-examples.md#example-5-range-filters). |
+| Geolocatie zoeken | Als een doorzoekbaar veld van het [type EDM. GeographyPoint](/rest/api/searchservice/supported-data-types)is, kunt u een filter expressie maken voor de besturings elementen "dichtbij zoeken" of op basis van een kaart. Velden die geografische zoek acties hebben, bevatten coördinaten. Zie voor meer informatie en een voor beeld een voor beeld van [geo-zoeken](search-query-simple-examples.md#example-6-geo-search). |
 | Facetnavigatie | Een facet navigatie structuur wordt instrumenteel in de gebruikers gerichte navigatie wanneer u een filter aanroept in reactie op een `onclick` gebeurtenis in een facet. Als zodanig gaan facetten en filters hand matig aan de slag. Als u facet navigatie toevoegt, hebt u filters nodig om de ervaring te vervolledigen. Zie [een facet filter bouwen](search-filters-facets.md)voor meer informatie. |
 
 > [!NOTE]
@@ -101,12 +101,12 @@ Een geavanceerd query formulier is afhankelijk van de volledige lucene-parser en
 
 | Query type | Gebruik | Voor beelden en meer informatie |
 |------------|--------|------------------------------|
-| [Zoek opdracht in veld](query-lucene-syntax.md#bkmk_fields) | **`search`**  bepaalde **`queryType=full`**  | Bouw een samengestelde query-expressie die is gericht op één veld. <br/>[Voor beeld van een zoek opdracht naar een veld](search-query-lucene-examples.md#example-2-fielded-search) |
-| [Zoek actie op fuzzy](query-lucene-syntax.md#bkmk_fuzzy) | **`search`** bepaalde **`queryType=full`** | Komt overeen met de termen met een vergelijk bare constructie of spelling. <br/>[Voor beeld van fuzzy zoeken](search-query-lucene-examples.md#example-3-fuzzy-search) |
-| [Proximity Search](query-lucene-syntax.md#bkmk_proximity) | **`search`** bepaalde **`queryType=full`** | Hiermee worden zoek termen in een document in de buurt. <br/>[Voor beeld van proximity Search](search-query-lucene-examples.md#example-4-proximity-search) |
-| [term versterking](query-lucene-syntax.md#bkmk_termboost) | **`search`** bepaalde **`queryType=full`** | Hiermee wordt een document hoger gerangschikt als het de gestimuleerde term bevat, ten opzichte van andere. <br/>[Voor beeld van een betere term](search-query-lucene-examples.md#example-5-term-boosting) |
-| [reguliere expressie zoeken](query-lucene-syntax.md#bkmk_regex) | **`search`** bepaalde **`queryType=full`** | Komt overeen met de inhoud van een reguliere expressie. <br/>[Voor beeld van een reguliere expressie](search-query-lucene-examples.md#example-6-regex) |
-|  [Joker teken of voor voegsel zoeken](query-lucene-syntax.md#bkmk_wildcard) | **`search`** para meter met * *_`~`_* of **`?`** , **`queryType=full`**| Komt overeen met een voor voegsel en tilde () `~` of één teken ( `?` ). <br/>[Zoek voorbeeld voor joker tekens](search-query-lucene-examples.md#example-7-wildcard-search) |
+| [Zoek opdracht in veld](query-lucene-syntax.md#bkmk_fields) | **`search`**  bepaalde **`queryType=full`**  | Bouw een samengestelde query-expressie die is gericht op één veld. <br/>[Voor beeld van een zoek opdracht naar een veld](search-query-lucene-examples.md#example-1-fielded-search) |
+| [Zoek actie op fuzzy](query-lucene-syntax.md#bkmk_fuzzy) | **`search`** bepaalde **`queryType=full`** | Komt overeen met de termen met een vergelijk bare constructie of spelling. <br/>[Voor beeld van fuzzy zoeken](search-query-lucene-examples.md#example-2-fuzzy-search) |
+| [Proximity Search](query-lucene-syntax.md#bkmk_proximity) | **`search`** bepaalde **`queryType=full`** | Hiermee worden zoek termen in een document in de buurt. <br/>[Voor beeld van proximity Search](search-query-lucene-examples.md#example-3-proximity-search) |
+| [term versterking](query-lucene-syntax.md#bkmk_termboost) | **`search`** bepaalde **`queryType=full`** | Hiermee wordt een document hoger gerangschikt als het de gestimuleerde term bevat, ten opzichte van andere. <br/>[Voor beeld van een betere term](search-query-lucene-examples.md#example-4-term-boosting) |
+| [reguliere expressie zoeken](query-lucene-syntax.md#bkmk_regex) | **`search`** bepaalde **`queryType=full`** | Komt overeen met de inhoud van een reguliere expressie. <br/>[Voor beeld van een reguliere expressie](search-query-lucene-examples.md#example-5-regex) |
+|  [Joker teken of voor voegsel zoeken](query-lucene-syntax.md#bkmk_wildcard) | **`search`** para meter met * *_`~`_* of **`?`** , **`queryType=full`**| Komt overeen met een voor voegsel en tilde () `~` of één teken ( `?` ). <br/>[Zoek voorbeeld voor joker tekens](search-query-lucene-examples.md#example-6-wildcard-search) |
 
 ## <a name="next-steps"></a>Volgende stappen
 

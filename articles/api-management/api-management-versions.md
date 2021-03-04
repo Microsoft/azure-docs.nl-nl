@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 02/10/2021
 ms.author: jodowns
 ms.custom: fasttrack-new
-ms.openlocfilehash: 9dc44b4b898603df88d1bdd8c36ddfb6449335ac
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 55951f288314d92cf5057e7d5c1e988f65cb3e14
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100547193"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102040376"
 ---
 # <a name="versions-in-azure-api-management"></a>Versies in azure API Management
 
@@ -42,7 +42,7 @@ Wanneer het schema voor het versie beheer van het pad wordt gebruikt, moet de ve
 
 `https://apis.contoso.com/products/v1`En `https://apis.contoso.com/products/v2` kunnen bijvoorbeeld verwijzen naar dezelfde API, `products` maar naar versies `v1` en `v2` respectievelijk.
 
-De indeling van een API-aanvraag-URL bij het gebruik van versie beheer op basis van een header is: `https://{yourDomain}/{apiName}/{versionIdentifier}/{operationId}` .
+De indeling van een API-aanvraag-URL voor het gebruik van op paden gebaseerde versie beheer is: `https://{yourDomain}/{apiName}/{versionIdentifier}/{operationId}` .
 
 ### <a name="header-based-versioning"></a>Versie beheer op basis van koptekst
 

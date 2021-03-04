@@ -3,15 +3,14 @@ title: Overgangs gids voor Azure Monitor Designer naar werkmappen
 description: Overstappen van weer gaven naar werkmappen in Azure Monitor.
 author: austonli
 ms.author: aul
-ms.subservice: ''
 ms.topic: conceptual
 ms.date: 08/04/2020
-ms.openlocfilehash: 7c43d1e4dda10cca6b868ef814ec8298d6e21fd0
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 19de2a3d3f5a998c09db7c4df689b0378e2597fd
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101736964"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102043368"
 ---
 # <a name="azure-monitor-view-designer-to-workbooks-transition-guide"></a>Overgangs gids voor Azure Monitor Designer naar werkmappen
 [View Designer](view-designer.md) is een functie van Azure monitor waarmee u aangepaste weer gaven kunt maken waarmee u gegevens in uw werk ruimte log Analytics kunt visualiseren, met grafieken, lijsten en tijd lijnen. Ze zijn overgegaan naar werkmappen om een flexibel canvas te bieden voor gegevens analyse en het maken van uitgebreide visuele rapporten in de Azure Portal. Dit artikel helpt u bij het maken van de overgang van de weer gave Designer naar werkmappen. 

@@ -10,12 +10,12 @@ services: iot-central
 ms.custom:
 - mvc
 - device-developer
-ms.openlocfilehash: 326fed659be43be3115cae1d7c2b14d0708f4a96
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: f69bbecfc2acc24cd63b87212197342b28723a9f
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100377802"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102043096"
 ---
 # <a name="iot-central-device-development-guide"></a>Hand leiding voor het ontwikkelen van IoT Central apparaten
 
@@ -68,7 +68,7 @@ Met DPS kunt u het volgende doen:
 - U kunt uw eigen apparaat-id's gebruiken om apparaten te registreren in IoT Central. Het gebruik van uw eigen apparaat-id's vereenvoudigt de integratie met bestaande back-officesystemen.
 - Een enkele, consistente manier om apparaten te verbinden met IoT Central.
 
-Zie [Get connected to Azure IoT Central](./concepts-get-connected.md) (Verbinding maken met Azure IoT Central) voor meer informatie.
+Zie [Get connected to Azure IOT Central](./concepts-get-connected.md) en [Best practices](concepts-best-practices.md)(Engelstalig) voor meer informatie.
 
 ### <a name="security"></a>Beveiliging
 

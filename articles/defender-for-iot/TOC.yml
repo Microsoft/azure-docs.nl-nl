@@ -113,12 +113,12 @@
             - name: Vereiste apparaten identificeren
               displayName: 'virtual, Dell, HPE, SMB, certified, hardware, deployment'
               href: how-to-identify-required-appliances.md
-            - name: Software installeren
-              displayName: 'virtual, Dell, HPE, SMB, certified, hardware, port mirroring, ESXi, install, deploy'
-              href: how-to-install-software.md
             - name: Uw netwerk instellen
               displayName: 'passive, browsers, network access, TAP, switch, mirroring, firewall, SPAN, monitoring, tuning'
               href: how-to-set-up-your-network.md
+            - name: Software installeren
+              displayName: 'virtual, Dell, HPE, SMB, certified, hardware, port mirroring, ESXi, install'
+              href: how-to-install-software.md
         - name: Uw sensoren voorbereiden
           items:
             - name: Sensors onboarden
@@ -155,7 +155,7 @@
         - name: Sensoren in de cloud beheren
           href: how-to-manage-sensors-on-the-cloud.md
         - name: De on-premises beheerconsole beheren
-          displayName: 'upgrade, activation, certificate, SSL, TLS, connect, sync, backup, restore, software update, failure'
+          displayName: 'upgrade, activation, certificate, software update, backup, restore, proxy, password recovery'
           href: how-to-manage-the-on-premises-management-console.md
         - name: Werken met bedreigingsinformatiepakketten
           href: how-to-work-with-threat-intelligence-packages.md

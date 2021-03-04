@@ -11,19 +11,19 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.author: sstein
-ms.openlocfilehash: 607b588d3371b20c2b3fa9854e27a7ccdfe2e551
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 86687e8259e7abcb9ff0e97f8cb75d96c0abfca8
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98703764"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102042501"
 ---
 # <a name="whats-new-in-azure-sql-database--sql-managed-instance"></a>Wat is er nieuw in Azure SQL Database & SQL Managed instance?
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
 
 Dit artikel bevat een overzicht van Azure SQL Database en Azure SQL Managed instance-functies die momenteel beschikbaar zijn in de open bare preview. Zie [SQL Database & SQL Managed instance service updates](https://azure.microsoft.com/updates/?product=sql-database)voor SQL database en de updates en verbeteringen van SQL Managed instance. Zie [service-updates](https://azure.microsoft.com/updates)voor updates en verbeteringen voor andere Azure-Services.
 
-## <a name="whats-new"></a>Wat is nieuw?
+## <a name="whats-new"></a>Wat is er nieuw?
 
 Documentatie voor Azure SQL Database en Azure SQL Managed instance is in afzonderlijke secties gesplitst. We hebben ook bijgewerkt hoe we verwijzen naar een beheerd exemplaar van *Azure SQL database beheerde* instantie naar *Azure SQL Managed* instance.
 
@@ -89,7 +89,7 @@ De volgende functies zijn ingeschakeld in het implementatie model voor SQL-behee
   - Ondersteuning voor <a href="/sharepoint/administration/deploy-azure-sql-managed-instance-with-sharepoint-servers-2016-2019"> share point 2016 en share point 2019 </a> en <a href="/business-applications-release-notes/october18/dynamics365-business-central/support-for-azure-sql-database-managed-instance"> Dynamics 365 Business Central. </a>
   - Maak een beheerd exemplaar met <a href="/azure/azure-sql/managed-instance/scripts/create-powershell-azure-resource-manager-template">sortering op exemplaar niveau</a> en een <a href="https://azure.microsoft.com/updates/managed-instance-time-zone-ga/">tijd zone</a> van uw keuze.
   - Beheerde exemplaren zijn nu beveiligd met [ingebouwde firewall](../managed-instance/management-endpoint-verify-built-in-firewall.md).
-  - Configureer SQL Managed instance voor het gebruik van [open bare eind punten](../managed-instance/public-endpoint-configure.md), een [proxy onderdrukkings](connectivity-architecture.md#connection-policy) verbinding voor betere netwerk prestaties, <a href="https://aka.ms/four-cores-sql-mi-update"> 4 VCores op het genereren van GEN5-hardware</a> of <a href="/azure/azure-sql/database/automated-backups-overview">het configureren van back-ups tot 35 dagen</a> voor tijdstippen herstellen. [Lange termijn retentie van back-ups](long-term-retention-overview.md#sql-managed-instance-support) (Maxi maal 10 jaar) is momenteel een beperkte open bare preview.  
+  - Configureer SQL Managed instance voor het gebruik van [open bare eind punten](../managed-instance/public-endpoint-configure.md), een [proxy onderdrukkings](connectivity-architecture.md#connection-policy) verbinding voor betere netwerk prestaties, <a href="https://aka.ms/four-cores-sql-mi-update"> 4 VCores op het genereren van GEN5-hardware</a> of <a href="/azure/azure-sql/database/automated-backups-overview">het configureren van back-ups tot 35 dagen</a> voor tijdstippen herstellen. [Lange termijn retentie van back-ups](long-term-retention-overview.md) (Maxi maal 10 jaar) is momenteel beschikbaar als open bare preview.  
   - Dankzij nieuwe functies kunt u <a href="https://medium.com/@jocapc/geo-restore-your-databases-on-azure-sql-instances-1451480e90fa">uw data base met behulp van Power shell naar een ander Data Center herstellen, de</a> [naam van de data base wijzigen](https://azure.microsoft.com/updates/azure-sql-database-managed-instance-database-rename-is-supported/), het [virtuele cluster verwijderen](../managed-instance/virtual-cluster-delete.md).
   - Met de nieuwe [rol Inzender](../../role-based-access-control/built-in-roles.md#sql-managed-instance-contributor) voor ingebouwde instanties kunt u SoD-naleving met beveiligings principes en naleving van de bedrijfs normen.
   - SQL Managed instance is beschikbaar in de volgende Azure Government regio's voor GA (US Gov-Texas, US Gov-Arizona) en in China-noord 2 en China-oost 2. Het is ook beschikbaar in de volgende open bare regio's: Australië-centraal, Australië-centraal 2, Brazilië-zuid, Frankrijk-zuid, UAE-centraal, UAE-noord, Zuid-Afrika-noord, Zuid-Afrika-west.

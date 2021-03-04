@@ -1,26 +1,21 @@
 ---
 title: Activiteiten logboeken voor Azure RBAC-wijzigingen weer geven
-description: Activiteiten logboeken weer geven voor Azure RBAC-wijzigingen (Azure Role-based Access Control) in azure-resources voor de afgelopen 90 dagen.
+description: Bekijk de activiteiten logboeken voor Azure RBAC-wijzigingen (Azure Role-based Access Control) gedurende de afgelopen 90 dagen.
 services: active-directory
-documentationcenter: ''
 author: rolyon
 manager: mtillman
-ms.assetid: 2bc68595-145e-4de3-8b71-3a21890d13d9
 ms.service: role-based-access-control
-ms.devlang: na
 ms.topic: how-to
-ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/27/2020
+ms.date: 03/01/2021
 ms.author: rolyon
-ms.reviewer: bagovind
 ms.custom: H1Hack27Feb2017, devx-track-azurecli
-ms.openlocfilehash: 53b72ac22df845f88dc82b14aa5dfaa57973b0d1
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: d9b39bc9a2f00fe83cae0ff78c6346042967e8bf
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100595843"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102042118"
 ---
 # <a name="view-activity-logs-for-azure-rbac-changes"></a>Activiteiten logboeken voor Azure RBAC-wijzigingen weer geven
 
@@ -41,6 +36,10 @@ De eenvoudigste manier om hieraan te beginnen is door de activiteitenlogboeken i
 
 ![Activiteiten logboeken met behulp van de portal-scherm opname](./media/change-history-report/activity-log-portal.png)
 
+Klik op een vermelding om het deel venster samen vatting te openen voor meer informatie. Klik op het tabblad **JSON** om een gedetailleerd logboek op te halen.
+
+![Activiteiten logboeken met behulp van de portal met het deel venster samen vatting open scherm afbeelding](./media/change-history-report/activity-log-summary-portal.png)
+
 Het activiteiten logboek in de portal heeft verschillende filters. Dit zijn de Azure RBAC-filters:
 
 | Filter | Waarde |
@@ -50,9 +49,24 @@ Het activiteiten logboek in de portal heeft verschillende filters. Dit zijn de A
 
 Zie [activiteiten logboeken weer geven om acties op resources te controleren](../azure-resource-manager/management/view-activity-logs.md?toc=%2fazure%2fmonitoring-and-diagnostics%2ftoc.json)voor meer informatie over activiteiten Logboeken.
 
-## <a name="azure-powershell"></a>Azure PowerShell
 
-[!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
+## <a name="interpret-a-log-entry"></a>Een logboek vermelding interpreteren
+
+De logboek uitvoer van het JSON-tabblad, Azure PowerShell of Azure CLI kan veel informatie bevatten. Hier volgen enkele van de belangrijkste eigenschappen die u moet opzoeken wanneer u een logboek vermelding probeert te interpreteren. Zie de volgende secties voor manieren om de logboek uitvoer te filteren met behulp van Azure PowerShell of Azure CLI.
+
+> [!div class="mx-tableFixed"]
+> | Eigenschap | Voorbeeldwaarden | Beschrijving |
+> | --- | --- | --- |
+> | autorisatie: actie | Microsoft.Authorization/roleAssignments/write | Roltoewijzing maken |
+> |  | Micro soft. Authorization/roleAssignments/verwijderen | Roltoewijzing verwijderen |
+> |  | Micro soft. Authorization/roleDefinitions/write | Roldefinitie maken of bijwerken |
+> |  | Micro soft. Authorization/roleDefinitions/verwijderen | Roldefinitie verwijderen |
+> | autorisatie: bereik | /subscriptions/{subscriptionId}<br/>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Authorization/roleAssignments/{roleAssignmentId} | Bereik voor de actie |
+> | aanroeper | admin@example.com<br/>Id | Wie de actie heeft gestart |
+> | eventTimestamp | 2021-03-01T22:07:41.126243 Z | Tijdstip waarop de actie heeft plaatsgevonden |
+> | status: waarde | Gestart<br/>Geslaagd<br/>Mislukt | Status van de actie |
+
+## <a name="azure-powershell"></a>Azure PowerShell
 
 Als u activiteiten logboeken met Azure PowerShell wilt weer geven, gebruikt u de opdracht [Get-AzLog](/powershell/module/Az.Monitor/Get-AzLog) .
 
@@ -68,56 +82,115 @@ Met deze opdracht worden alle roldefinitie wijzigingen in een resource groep voo
 Get-AzLog -ResourceGroupName pharma-sales -StartTime (Get-Date).AddDays(-7) | Where-Object {$_.Authorization.Action -like 'Microsoft.Authorization/roleDefinitions/*'}
 ```
 
-Met deze opdracht worden alle roltoewijzings-en roldefinitie wijzigingen in een abonnement voor de afgelopen zeven dagen weer gegeven en worden de resultaten in een lijst getoond:
+### <a name="filter-log-output"></a>Logboek uitvoer filteren
+
+De logboek uitvoer kan veel informatie bevatten. Met deze opdracht worden alle roltoewijzings-en roldefinitie wijzigingen in een abonnement voor de afgelopen zeven dagen weer gegeven en wordt de uitvoer gefilterd:
 
 ```azurepowershell
 Get-AzLog -StartTime (Get-Date).AddDays(-7) | Where-Object {$_.Authorization.Action -like 'Microsoft.Authorization/role*'} | Format-List Caller,EventTimestamp,{$_.Authorization.Action},Properties
 ```
 
-```Example
-Caller                  : alain@example.com
-EventTimestamp          : 2/27/2020 9:18:07 PM
+Hieronder ziet u een voor beeld van de gefilterde logboek uitvoer bij het maken van een roltoewijzing:
+
+```azurepowershell
+Caller                  : admin@example.com
+EventTimestamp          : 3/1/2021 10:07:42 PM
 $_.Authorization.Action : Microsoft.Authorization/roleAssignments/write
 Properties              :
                           statusCode     : Created
-                          serviceRequestId: 11111111-1111-1111-1111-111111111111
+                          serviceRequestId: {serviceRequestId}
                           eventCategory  : Administrative
+                          entity         : /subscriptions/{subscriptionId}/resourceGroups/example-group/providers/Microsoft.Authorization/roleAssignments/{roleAssignmentId}
+                          message        : Microsoft.Authorization/roleAssignments/write
+                          hierarchy      : {tenantId}/{subscriptionId}
 
-Caller                  : alain@example.com
-EventTimestamp          : 2/27/2020 9:18:05 PM
+Caller                  : admin@example.com
+EventTimestamp          : 3/1/2021 10:07:41 PM
 $_.Authorization.Action : Microsoft.Authorization/roleAssignments/write
 Properties              :
-                          requestbody    : {"Id":"22222222-2222-2222-2222-222222222222","Properties":{"PrincipalId":"33333333-3333-3333-3333-333333333333","RoleDefinitionId":"/subscriptions/00000000-0000-0000-0000-000000000000/providers
-                          /Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c","Scope":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales"}}
+                          requestbody    : {"Id":"{roleAssignmentId}","Properties":{"PrincipalId":"{principalId}","PrincipalType":"User","RoleDefinitionId":"/providers/Microsoft.Authorization/roleDefinitions/fa23ad8b-c56e-40d8-ac0c-ce449e1d2c64","Scope":"/subscriptions/
+                          {subscriptionId}/resourceGroups/example-group"}}
+                          eventCategory  : Administrative
+                          entity         : /subscriptions/{subscriptionId}/resourceGroups/example-group/providers/Microsoft.Authorization/roleAssignments/{roleAssignmentId}
+                          message        : Microsoft.Authorization/roleAssignments/write
+                          hierarchy      : {tenantId}/{subscriptionId}
 
 ```
 
-Als u een Service-Principal gebruikt om roltoewijzingen te maken, is de eigenschap beller een object-ID. U kunt [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal) gebruiken om informatie over de Service-Principal op te halen.
+Als u een Service-Principal gebruikt om roltoewijzingen te maken, is de eigenschap beller een Service-Principal object-ID. U kunt [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal) gebruiken om informatie over de Service-Principal op te halen.
 
 ```Example
-Caller                  : 44444444-4444-4444-4444-444444444444
-EventTimestamp          : 6/4/2020 9:43:08 PM
+Caller                  : {objectId}
+EventTimestamp          : 3/1/2021 9:43:08 PM
 $_.Authorization.Action : Microsoft.Authorization/roleAssignments/write
 Properties              : 
                           statusCode     : Created
-                          serviceRequestId: 55555555-5555-5555-5555-555555555555
-                          category       : Administrative
+                          serviceRequestId: {serviceRequestId}
+                          eventCategory  : Administrative
 ```
 
 ## <a name="azure-cli"></a>Azure CLI
 
-Als u activiteiten logboeken wilt weer geven met de Azure CLI, gebruikt u de opdracht [AZ monitor Activity-Log List](/cli/azure/monitor/activity-log#az-monitor-activity-log-list) .
+Als u activiteiten logboeken wilt weer geven met de Azure CLI, gebruikt u de opdracht [AZ monitor Activity-Log List](/cli/azure/monitor/activity-log#az_monitor_activity_log_list) .
 
-Met deze opdracht wordt een lijst weer gegeven met de activiteiten Logboeken in een resource groep van 27 februari, op een termijn van zeven dagen:
+Met deze opdracht wordt een lijst weer gegeven met de activiteiten Logboeken in een resource groep van 1 maart, met een voorwaartse periode van zeven dagen:
 
 ```azurecli
-az monitor activity-log list --resource-group pharma-sales --start-time 2020-02-27 --offset 7d
+az monitor activity-log list --resource-group example-group --start-time 2021-03-01 --offset 7d
 ```
 
-Met deze opdracht worden de activiteiten logboeken voor de provider van de autorisatie resource van 27 februari weer gegeven, die zeven dagen kijken:
+Met deze opdracht worden de activiteiten logboeken voor de provider van de autorisatie resource van 1 maart weer gegeven, die zeven dagen kijken:
 
 ```azurecli
-az monitor activity-log list --namespace "Microsoft.Authorization" --start-time 2020-02-27 --offset 7d
+az monitor activity-log list --namespace "Microsoft.Authorization" --start-time 2021-03-01 --offset 7d
+```
+
+### <a name="filter-log-output"></a>Logboek uitvoer filteren
+
+De logboek uitvoer kan veel informatie bevatten. Met deze opdracht wordt een lijst weer gegeven met alle functie-en roldefinitie wijzigingen in een abonnement die zeven dagen worden doorzocht en de uitvoer wordt gefilterd:
+
+```azurecli
+az monitor activity-log list --namespace "Microsoft.Authorization" --start-time 2021-03-01 --offset 7d --query '[].{authorization:authorization, caller:caller, eventTimestamp:eventTimestamp, properties:properties}'
+```
+
+Hieronder ziet u een voor beeld van de gefilterde logboek uitvoer bij het maken van een roltoewijzing:
+
+```azurecli
+[
+ {
+    "authorization": {
+      "action": "Microsoft.Authorization/roleAssignments/write",
+      "role": null,
+      "scope": "/subscriptions/{subscriptionId}/resourceGroups/example-group/providers/Microsoft.Authorization/roleAssignments/{roleAssignmentId}"
+    },
+    "caller": "admin@example.com",
+    "eventTimestamp": "2021-03-01T22:07:42.456241+00:00",
+    "properties": {
+      "entity": "/subscriptions/{subscriptionId}/resourceGroups/example-group/providers/Microsoft.Authorization/roleAssignments/{roleAssignmentId}",
+      "eventCategory": "Administrative",
+      "hierarchy": "{tenantId}/{subscriptionId}",
+      "message": "Microsoft.Authorization/roleAssignments/write",
+      "serviceRequestId": "{serviceRequestId}",
+      "statusCode": "Created"
+    }
+  },
+  {
+    "authorization": {
+      "action": "Microsoft.Authorization/roleAssignments/write",
+      "role": null,
+      "scope": "/subscriptions/{subscriptionId}/resourceGroups/example-group/providers/Microsoft.Authorization/roleAssignments/{roleAssignmentId}"
+    },
+    "caller": "admin@example.com",
+    "eventTimestamp": "2021-03-01T22:07:41.126243+00:00",
+    "properties": {
+      "entity": "/subscriptions/{subscriptionId}/resourceGroups/example-group/providers/Microsoft.Authorization/roleAssignments/{roleAssignmentId}",
+      "eventCategory": "Administrative",
+      "hierarchy": "{tenantId}/{subscriptionId}",
+      "message": "Microsoft.Authorization/roleAssignments/write",
+      "requestbody": "{\"Id\":\"{roleAssignmentId}\",\"Properties\":{\"PrincipalId\":\"{principalId}\",\"PrincipalType\":\"User\",\"RoleDefinitionId\":\"/providers/Microsoft.Authorization/roleDefinitions/fa23ad8b-c56e-40d8-ac0c-ce449e1d2c64\",\"Scope\":\"/subscriptions/{subscriptionId}/resourceGroups/example-group\"}}"
+    }
+  }
+]
 ```
 
 ## <a name="azure-monitor-logs"></a>Azure Monitor-logboeken
@@ -139,7 +212,7 @@ Hier volgen de basis stappen om aan de slag te gaan:
 
    ![Optie Azure Monitor Logboeken in Portal](./media/change-history-report/azure-log-analytics-option.png)
 
-1. Gebruik eventueel de [Azure Monitor Log Analytics](../azure-monitor/logs/log-analytics-tutorial.md) om de logboeken te zoeken en weer te geven. Zie [aan de slag met Azure monitor-logboek query's](../azure-monitor/logs/get-started-queries.md)voor meer informatie.
+1. Gebruik eventueel de [Azure Monitor Log Analytics](../azure-monitor/logs/log-analytics-tutorial.md) om de logboeken te zoeken en weer te geven. Zie [aan de slag met logboek query's in azure monitor](../azure-monitor/logs/get-started-queries.md)voor meer informatie.
 
 Hier volgt een query waarmee nieuwe roltoewijzingen worden geretourneerd die zijn ingedeeld op de doel resource provider:
 
@@ -162,5 +235,5 @@ AzureActivity
 ![Activiteiten logboeken met behulp van de geavanceerde analyse portal-scherm opname](./media/change-history-report/azure-log-analytics.png)
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Gebeurtenissen in het activiteitenlogboek bekijken](../azure-resource-manager/management/view-activity-logs.md?toc=%2fazure%2fmonitoring-and-diagnostics%2ftoc.json)
-* [Abonnementactiviteit controleren met Azure-activiteitenlogboek](../azure-monitor/essentials/platform-logs-overview.md)
+* [Activiteiten logboeken weer geven om acties op resources te controleren](../azure-resource-manager/management/view-activity-logs.md?toc=%2fazure%2fmonitoring-and-diagnostics%2ftoc.json)
+* [Abonnements activiteiten controleren met het Azure-activiteiten logboek](../azure-monitor/essentials/platform-logs-overview.md)

@@ -4,19 +4,19 @@ description: Meer informatie over hoe u uw Azure IoT Edge oplossing van ontwikke
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 07/10/2020
+ms.date: 03/01/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 7850763abe2ef40aea4ab3b97187d50f7060fa18
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 65710047d5d5d1cc6b835144f7778392fb20b797
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100388767"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102042263"
 ---
 # <a name="prepare-to-deploy-your-iot-edge-solution-in-production"></a>De implementatie van uw IoT Edge oplossing in productie voorbereiden
 
@@ -38,14 +38,19 @@ IoT Edge-apparaten kunnen van een Raspberry pi van een laptop naar een virtuele 
 
 ### <a name="install-production-certificates"></a>Productiecertificaten installeren
 
-Voor elk IoT Edge apparaat in productie moet een certificaat van een apparaat voor een certificerings instantie (CA) worden geïnstalleerd. Dat CA-certificaat wordt vervolgens gedeclareerd voor de IoT Edge runtime in het bestand config. yaml. Voor ontwikkelings-en test scenario's maakt de IoT Edge-runtime tijdelijke certificaten als er geen certificaten worden gedefinieerd in het bestand config. yaml. Deze tijdelijke certificaten verlopen echter na drie maanden en zijn niet veilig voor productie scenario's. Voor productie scenario's moet u uw eigen CA-certificaat voor uw apparaat opgeven, hetzij van een zelfondertekende certificerings instantie, hetzij zijn gekocht bij een commerciële certificerings instantie.
+Voor elk IoT Edge apparaat in productie moet een certificaat van een apparaat voor een certificerings instantie (CA) worden geïnstalleerd. Dat CA-certificaat wordt vervolgens gedeclareerd voor de IoT Edge runtime in het configuratie bestand. Voor ontwikkelings-en test scenario's maakt de IoT Edge-runtime tijdelijke certificaten als er geen certificaten worden gedeclareerd in het configuratie bestand. Deze tijdelijke certificaten verlopen echter na drie maanden en zijn niet veilig voor productie scenario's. Voor productie scenario's moet u uw eigen CA-certificaat voor uw apparaat opgeven, hetzij van een zelfondertekende certificerings instantie, hetzij zijn gekocht bij een commerciële certificerings instantie.
+
+<!--1.1-->
+:::moniker range="iotedge-2018-06"
 
 > [!NOTE]
 > Op dit moment wordt een beperking in libiothsm voor komen dat certificaten worden gebruikt die op of na 1 januari 2038 verlopen.
 
+:::moniker-end
+
 Zie [How Azure IOT Edge certificaten gebruikt](iot-edge-certs.md)voor meer informatie over de rol van het CA-certificaat van het apparaat.
 
-Zie [certificaat beheren op een IOT edge apparaat](how-to-manage-device-certificates.md)voor meer informatie over het installeren van certificaten op een IOT edge apparaat en om ernaar te verwijzen vanuit het bestand config. yaml.
+Zie [certificaat beheren op een IOT edge apparaat](how-to-manage-device-certificates.md)voor meer informatie over het installeren van certificaten op een IOT edge apparaat en het verwijzen vanuit het configuratie bestand.
 
 ### <a name="have-a-device-management-plan"></a>Een plan voor Apparaatbeheer hebben
 
@@ -54,10 +59,10 @@ Voordat u een apparaat in productie plaatst, moet u weten hoe u toekomstige upda
 * Firmware van apparaat
 * Bibliotheken van het besturings systeem
 * Container engine, zoals Moby
-* IoT Edge-daemon
+* IoT Edge
 * CA-certificaten
 
-Zie [de IOT Edge runtime bijwerken](how-to-update-iot-edge.md)voor meer informatie. Voor de huidige methoden voor het bijwerken van de IoT Edge-daemon is fysieke of SSH-toegang tot het IoT Edge apparaat vereist. Als u veel apparaten wilt bijwerken, kunt u overwegen om de update stappen toe te voegen aan een script of een automatiserings programma zoals Ansible te gebruiken.
+Zie [de IOT Edge runtime bijwerken](how-to-update-iot-edge.md)voor meer informatie. Voor de huidige methoden voor het bijwerken van IoT Edge is fysieke of SSH-toegang tot het IoT Edge apparaat vereist. Als u veel apparaten wilt bijwerken, kunt u overwegen om de update stappen toe te voegen aan een script of een automatiserings programma zoals Ansible te gebruiken.
 
 ### <a name="use-moby-as-the-container-engine"></a>Moby gebruiken als de container engine
 
@@ -74,7 +79,7 @@ De twee runtime modules hebben beide een omgevings variabele **UpstreamProtocol*
 * MQTTWS
 * AMQPWS
 
-Configureer de variabele UpstreamProtocol voor de IoT Edge agent in het bestand config. yaml op het apparaat zelf. Als uw IoT Edge-apparaat bijvoorbeeld zich achter een proxy server bevindt die AMQP poorten blokkeert, moet u mogelijk de IoT Edge agent configureren voor het gebruik van AMQP via WebSocket (AMQPWS) om de eerste verbinding met IoT Hub tot stand te brengen.
+Configureer de variabele UpstreamProtocol voor de IoT Edge-agent in het configuratie bestand op het apparaat zelf. Als uw IoT Edge-apparaat bijvoorbeeld zich achter een proxy server bevindt die AMQP poorten blokkeert, moet u mogelijk de IoT Edge agent configureren voor het gebruik van AMQP via WebSocket (AMQPWS) om de eerste verbinding met IoT Hub tot stand te brengen.
 
 Zodra uw IoT Edge apparaat verbinding maakt, moet u de UpstreamProtocol-variabele voor beide runtime modules in toekomstige implementaties blijven configureren. Een voor beeld van dit proces vindt [u in een IOT edge apparaat configureren om te communiceren via een proxy server](how-to-configure-proxy-support.md).
 
@@ -203,7 +208,7 @@ Zorg er vervolgens voor dat u de afbeeldings verwijzingen in het deployment.temp
 
 ### <a name="review-outboundinbound-configuration"></a>Uitgaande/binnenkomende configuratie controleren
 
-Communicatie kanalen tussen Azure IoT Hub en IoT Edge zijn altijd geconfigureerd als uitgaand verkeer. Voor de meeste IoT Edge scenario's zijn slechts drie verbindingen nodig. De container-engine moet verbinding maken met het container register (of registers) waarin de module installatie kopieën worden bewaard. De IoT Edge runtime moet verbinding maken met IoT Hub om configuratie-informatie over het apparaat op te halen en om berichten en telemetrie te verzenden. En als u automatische inrichting gebruikt, moet de IoT Edge-daemon verbinding maken met de Device Provisioning Service. Zie [firewall-en poort configuratie regels](troubleshoot.md#check-your-firewall-and-port-configuration-rules)voor meer informatie.
+Communicatie kanalen tussen Azure IoT Hub en IoT Edge zijn altijd geconfigureerd als uitgaand verkeer. Voor de meeste IoT Edge scenario's zijn slechts drie verbindingen nodig. De container-engine moet verbinding maken met het container register (of registers) waarin de module installatie kopieën worden bewaard. De IoT Edge runtime moet verbinding maken met IoT Hub om configuratie-informatie over het apparaat op te halen en om berichten en telemetrie te verzenden. En als u automatische inrichting gebruikt, moet IoT Edge verbinding maken met Device Provisioning Service. Zie [firewall-en poort configuratie regels](troubleshoot.md#check-your-firewall-and-port-configuration-rules)voor meer informatie.
 
 ### <a name="allow-connections-from-iot-edge-devices"></a>Verbindingen van IoT Edge apparaten toestaan
 
@@ -211,7 +216,7 @@ Als uw netwerk installatie vereist dat u verbindingen die zijn gemaakt vanaf IoT
 
 * **IOT Edge agent** opent een permanente AMQP/MQTT-verbinding met IOT hub, mogelijk via websockets.
 * **IOT Edge hub** opent één permanente AMQP-verbinding of meerdere MQTT-verbindingen met IOT hub, mogelijk via websockets.
-* **IOT Edge-daemon** maakt periodieke https-aanroepen naar IOT hub.
+* **IOT Edge-service** maakt terugkerende https-aanroepen naar IOT hub.
 
 In alle drie de gevallen komt de DNS-naam overeen met het patroon \* . Azure-devices.net.
 
@@ -248,7 +253,28 @@ Als uw apparaten worden geïmplementeerd in een netwerk dat gebruikmaakt van een
 
 ### <a name="set-up-logs-and-diagnostics"></a>Logboeken en diagnostische gegevens instellen
 
-In Linux gebruikt de IoT Edge-daemon journalen als het standaard stuur programma voor logboek registratie. U kunt het opdracht regel programma gebruiken `journalctl` om de daemon-logboeken te doorzoeken. In Windows gebruikt de IoT Edge-daemon Power shell-diagnose. Gebruiken `Get-IoTEdgeLog` om logboeken vanuit de daemon te doorzoeken. IoT Edge-modules gebruiken het JSON-stuur programma voor logboek registratie. Dit is de standaard instelling.  
+In Linux gebruikt de IoT Edge-daemon journalen als het standaard stuur programma voor logboek registratie. U kunt het opdracht regel programma gebruiken `journalctl` om de daemon-logboeken te doorzoeken.
+
+<!--1.2-->
+:::moniker range=">=iotedge-2020-11"
+
+Vanaf versie 1,2 is IoT Edge afhankelijk van meerdere daemons. Hoewel de logboeken van elke daemon afzonderlijk kunnen worden doorzocht `journalctl` , `iotedge system` bieden de opdrachten een handige manier om een query uit te voeren op de gecombineerde Logboeken.
+
+* Geconsolideerde `iotedge` opdracht:
+
+  ```bash
+  sudo iotedge system logs
+  ```
+
+* Overeenkomende `journalctl` opdracht:
+
+  ```bash
+  journalctl -u aziot-edge -u aziot-identityd -u aziot-keyd -u aziot-certd -u aziot-tpmd
+  ```
+
+:::moniker-end
+
+In Windows gebruikt de IoT Edge-daemon Power shell-diagnose. Gebruiken `Get-IoTEdgeLog` om logboeken vanuit de daemon te doorzoeken. IoT Edge-modules gebruiken het JSON-stuur programma voor logboek registratie. Dit is de standaard instelling.  
 
 ```powershell
 . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; Get-IoTEdgeLog

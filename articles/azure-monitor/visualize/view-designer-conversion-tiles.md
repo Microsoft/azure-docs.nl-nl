@@ -3,15 +3,14 @@ title: De tegel conversies van Azure Monitor Designer naar Workbooks weer geven
 description: Details voor het converteren van tegels naar werkmappen bij het overstappen van weer gaven in Azure Monitor.
 author: austonli
 ms.author: aul
-ms.subservice: ''
 ms.topic: conceptual
 ms.date: 02/07/2020
-ms.openlocfilehash: 0fe1c5a4e6da1cb2955542c2651fcaf2d015b8f8
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 9b8d1840c0b1cea4c03312d38ed892fde94faa4c
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100611724"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102043334"
 ---
 # <a name="azure-monitor-view-designer-tile-conversions"></a>Conversies van de tegel Designer Azure Monitor weer geven
 [View Designer](view-designer.md) is een functie van Azure monitor waarmee u aangepaste weer gaven kunt maken waarmee u gegevens in uw werk ruimte log Analytics kunt visualiseren, met grafieken, lijsten en tijd lijnen. Ze worden gefaseerd en vervangen door werkmappen die extra functionaliteit bieden. Dit artikel bevat informatie over het converteren van verschillende tegels naar werkmappen.

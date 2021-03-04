@@ -3,12 +3,12 @@ title: Implementeren in een IoT Edge voor Linux op Windows-Azure
 description: Dit artikel bevat richt lijnen voor het implementeren van een IoT Edge voor Linux op een Windows-apparaat.
 ms.topic: how-to
 ms.date: 02/18/2021
-ms.openlocfilehash: 5cf4184857f12065d808d7b528dbfe8258950cd8
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: b635070d6a4834da2c6d82cc768684b6cde9cd71
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101745481"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102042178"
 ---
 # <a name="deploy-to-an-iot-edge-for-linux-on-windows-eflow-device"></a>Implementeren op een IoT Edge voor Linux op Windows (EFLOW)
 
@@ -107,7 +107,7 @@ Hieronder ziet u de algemene stroom van het document en in vijf eenvoudige stapp
 ## <a name="next-steps"></a>Volgende stappen
 
 * Probeer bewegings detectie samen met het opnemen van relevante Video's in de Cloud. Volg de stappen in [detectie bewegingen detecteren, video clips opnemen om Quick Start te Media Services](detect-motion-record-video-clips-media-services-quickstart.md#review-the-sample-video) .
-* [AI uitvoeren op live video](use-your-model-quickstart#overview) (u kunt de vereiste instellingen overs Laan, omdat deze al eerder is uitgevoerd)
+* [AI uitvoeren op live video](use-your-model-quickstart.md#overview) (u kunt de vereiste instellingen overs Laan, omdat deze al eerder is uitgevoerd)
 * Gebruik onze [VS code-extensie](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.live-video-analytics-edge) om aanvullende media grafieken weer te geven.
 * Gebruik een [IP-camera](https://en.wikipedia.org/wiki/IP_camera)  die RTSP ondersteunt in plaats van de RTSP-Simulator te gebruiken. U vindt IP-camera's die RTSP ondersteunen op de pagina met [ONVIF-compatibele](https://www.onvif.org/conformant-products/) producten. Zoek naar apparaten die voldoen aan de profielen G, S of T.
 

@@ -2,7 +2,6 @@
 title: API-verificatie en-autorisatie-Azure Time Series Insights | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u verificatie en autorisatie configureert voor een aangepaste toepassing die de Azure Time Series Insights-API aanroept.
 ms.service: time-series-insights
-services: time-series-insights
 author: deepakpalled
 ms.author: shresha
 manager: dpalled
@@ -12,16 +11,16 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 02/23/2021
 ms.custom: seodec18, has-adal-ref
-ms.openlocfilehash: 58c0f408e3ad80109efd3db79d6e4a0d881aed78
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 02d9edd555566f86fd8bb09cf4acef4956ae53e4
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101724168"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102041209"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Verificatie en autorisatie voor Azure Time Series Insights-API
 
-Afhankelijk van de behoeften van uw bedrijf bevat uw oplossing mogelijk een of meer client toepassingen die u gebruikt om te communiceren met de [api's](https://docs.microsoft.com/en-us/rest/api/time-series-insights/reference-data-access-overview)van uw Azure time series Insights-omgeving. Azure Time Series Insights voert verificatie uit met behulp [van Azure AD-beveiligings tokens op basis van OAUTH 2,0](../active-directory/develop/security-tokens.md#json-web-tokens-and-claims). Als u uw client (s) wilt verifiëren, moet u een Bearer-token met de juiste machtigingen krijgen en dit samen met uw API-aanroepen door geven. In dit document worden verschillende methoden voor het verkrijgen van referenties beschreven die u kunt gebruiken om een Bearer-token en verificatie te verkrijgen.
+Afhankelijk van de behoeften van uw bedrijf bevat uw oplossing mogelijk een of meer client toepassingen die u gebruikt om te communiceren met de [api's](/rest/api/time-series-insights/reference-data-access-overview)van uw Azure time series Insights-omgeving. Azure Time Series Insights voert verificatie uit met behulp [van Azure AD-beveiligings tokens op basis van OAUTH 2,0](../active-directory/develop/security-tokens.md#json-web-tokens-and-claims). Als u uw client (s) wilt verifiëren, moet u een Bearer-token met de juiste machtigingen krijgen en dit samen met uw API-aanroepen door geven. In dit document worden verschillende methoden voor het verkrijgen van referenties beschreven die u kunt gebruiken om een Bearer-token en verificatie te verkrijgen.
 
 
   een app registreren in Azure Active Directory met behulp van de nieuwe Azure Active Directory-Blade. Met apps die zijn geregistreerd in Azure Active Directory kunnen gebruikers verifiëren en worden gemachtigd om de Azure time series Insight-API te gebruiken die is gekoppeld aan een Azure Time Series Insights omgeving.
@@ -34,7 +33,7 @@ In de volgende secties wordt beschreven hoe u een beheerde identiteit van Azure 
 - U kunt de beheerde identiteiten gebruiken voor verificatie bij alle Azure-services die ondersteuning bieden voor Azure AD-verificatie, inclusief Key Vault.
 - Beheerde identiteiten kunnen worden gebruikt zonder extra kosten.
 
-Lees [wat beheerde identiteiten zijn voor Azure-resources](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) voor meer informatie over de twee typen beheerde identiteiten?
+Lees [wat beheerde identiteiten zijn voor Azure-resources](../active-directory/managed-identities-azure-resources/overview.md) voor meer informatie over de twee typen beheerde identiteiten?
 
 U kunt beheerde identiteiten gebruiken in uw:
 
@@ -44,7 +43,7 @@ U kunt beheerde identiteiten gebruiken in uw:
 - Azure container instances
 - en nog veel meer...
 
-Zie [Azure-Services die beheerde identiteiten voor Azure-resources ondersteunen](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities#azure-services-that-support-managed-identities-for-azure-resources) voor de volledige lijst.
+Zie [Azure-Services die beheerde identiteiten voor Azure-resources ondersteunen](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-managed-identities-for-azure-resources) voor de volledige lijst.
 
 ## <a name="azure-active-directory-app-registration"></a>App-registratie Azure Active Directory
 
@@ -54,9 +53,9 @@ Wanneer u de app-registratie hebt voltooid, hebt u een wereld wijd unieke instan
 
 Als u een toepassing registreert in de portal, worden er automatisch een toepassings object en een Service-Principal-object gemaakt in uw thuis Tenant. Als u een toepassing registreert/maakt met behulp van de Microsoft Graph Api's, is het maken van het Service-Principal-object een afzonderlijke stap. Een Service-Principal-object is vereist voor het aanvragen van tokens.
 
-Controleer de [beveiligings](https://docs.microsoft.com/azure/active-directory/develop/identity-platform-integration-checklist#security) Checklist voor uw toepassing. Als best practice moet u [certificaat referenties](https://docs.microsoft.com/azure/active-directory/develop/active-directory-certificate-credentials)gebruiken, niet de wachtwoord referenties (client geheimen).
+Controleer de [beveiligings](../active-directory/develop/identity-platform-integration-checklist.md#security) Checklist voor uw toepassing. Als best practice moet u [certificaat referenties](../active-directory/develop/active-directory-certificate-credentials.md)gebruiken, niet de wachtwoord referenties (client geheimen).
 
-Zie [toepassings-en Service-Principal-objecten in azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals) voor meer informatie.
+Zie [toepassings-en Service-Principal-objecten in azure Active Directory](../active-directory/develop/app-objects-and-service-principals.md) voor meer informatie.
 
 ## <a name="step-1-create-your-managed-identity-or-app-registration"></a>Stap 1: uw beheerde identiteit of app-registratie maken
 
@@ -64,16 +63,16 @@ Zodra u hebt vastgesteld of u een beheerde identiteit of app-registratie wilt ge
 
 ### <a name="managed-identity"></a>Beheerde identiteit
 
-De stappen die u gebruikt voor het maken van een beheerde identiteit variëren, afhankelijk van waar de code zich bevindt en of u nu een door het systeem toegewezen of door de gebruiker toegewezen identiteit maakt. Lees [beheerde identiteits typen](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview#managed-identity-types) om het verschil te begrijpen. Wanneer u het identiteits type hebt geselecteerd, zoekt u de juiste zelf studie in de [documentatie over](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/)door Azure AD beheerde identiteiten. Hier vindt u instructies voor het configureren van beheerde identiteiten voor:
+De stappen die u gebruikt voor het maken van een beheerde identiteit variëren, afhankelijk van waar de code zich bevindt en of u nu een door het systeem toegewezen of door de gebruiker toegewezen identiteit maakt. Lees [beheerde identiteits typen](../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) om het verschil te begrijpen. Wanneer u het identiteits type hebt geselecteerd, zoekt u de juiste zelf studie in de [documentatie over](../active-directory/managed-identities-azure-resources/index.yml)door Azure AD beheerde identiteiten. Hier vindt u instructies voor het configureren van beheerde identiteiten voor:
 
-- [Azure-VM's](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm#enable-system-assigned-managed-identity-during-creation-of-a-vm)
-- [App Service en Azure Functions](https://docs.microsoft.com/azure/app-service/overview-managed-identity)
-- [Azure Container Instances](https://docs.microsoft.com/azure/container-instances/container-instances-managed-identity)
+- [Azure-VM's](../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#enable-system-assigned-managed-identity-during-creation-of-a-vm)
+- [App Service en Azure Functions](../app-service/overview-managed-identity.md)
+- [Azure Container Instances](../container-instances/container-instances-managed-identity.md)
 - en nog veel meer...
 
 ### <a name="application-registration"></a>Een toepassing registreren
 
-Volg de stappen in [een toepassing registreren](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#register-an-application).
+Volg de stappen in [een toepassing registreren](../active-directory/develop/quickstart-register-app.md#register-an-application).
 
 [!INCLUDE [Azure Active Directory app registration](../../includes/time-series-insights-aad-registration.md)]
 
@@ -81,16 +80,16 @@ Volg de stappen in [een toepassing registreren](https://docs.microsoft.com/azure
 
 Wanneer uw Azure Time Series Insights-omgeving een aanvraag ontvangt, wordt eerst de Bearer-token van de beller gevalideerd. Als de validatie is geslaagd, is de aanroeper geverifieerd en vervolgens wordt er een andere controle uitgevoerd om te controleren of de aanroeper is gemachtigd om de aangevraagde actie uit te voeren. Als u een gebruiker of Service-Principal wilt autoriseren, moet u deze eerst toegang verlenen tot de omgeving door hen de rol lezer of Inzender toe te wijzen.
 
-- Als u toegang wilt verlenen via de [Azure Portal](https://portal.azure.com/) -gebruikers interface, volgt u de instructies in het artikel [granting Data Access to a Environment](https://docs.microsoft.com/azure/time-series-insights/concepts-access-policies) . Wanneer u de gebruiker selecteert, kunt u zoeken naar de beheerde identiteit of de registratie van de app op basis van de naam of de ID.
+- Als u toegang wilt verlenen via de [Azure Portal](https://portal.azure.com/) -gebruikers interface, volgt u de instructies in het artikel [granting Data Access to a Environment](concepts-access-policies.md) . Wanneer u de gebruiker selecteert, kunt u zoeken naar de beheerde identiteit of de registratie van de app op basis van de naam of de ID.
 
-- Als u toegang wilt verlenen met behulp van de Azure CLI, voert u de volgende opdracht uit. Raadpleeg de documentatie [hier](https://docs.microsoft.com/cli/azure/ext/timeseriesinsights/tsi/access-policy?view=azure-cli-latest) voor de volledige lijst met opdrachten die beschikbaar zijn voor het beheren van de toegang.
+- Als u toegang wilt verlenen met behulp van de Azure CLI, voert u de volgende opdracht uit. Raadpleeg de documentatie [hier](/cli/azure/ext/timeseriesinsights/tsi/access-policy) voor de volledige lijst met opdrachten die beschikbaar zijn voor het beheren van de toegang.
 
    ```azurecli-interactive
    az tsi access-policy create --name "ap1" --environment-name "env1" --description "some description" --principal-object-id "aGuid" --roles Reader Contributor --resource-group "rg1"
    ```
 
 > [!Note]
-> Voor de timeseriesinsights-extensie voor Azure CLI is versie 2.11.0 of hoger vereist. De uitbrei ding wordt automatisch geïnstalleerd wanneer u de eerste keer dat u een opdracht AZ TSI Access-Policy uitvoert. Meer [informatie](https://docs.microsoft.com/cli/azure/azure-cli-extensions-overview) over uitbrei dingen.
+> Voor de timeseriesinsights-extensie voor Azure CLI is versie 2.11.0 of hoger vereist. De uitbrei ding wordt automatisch geïnstalleerd wanneer u de eerste keer dat u een opdracht AZ TSI Access-Policy uitvoert. Meer [informatie](/cli/azure/azure-cli-extensions-overview) over uitbrei dingen.
 
 ## <a name="step-3-requesting-tokens"></a>Stap 3: tokens aanvragen
 
@@ -107,37 +106,37 @@ Zodra de beheerde identiteit of app-registratie is ingericht en een rol is toege
 
 ### <a name="managed-identities"></a>Beheerde identiteiten
 
-Volg de richt lijnen in de [tokens voor het verkrijgen van Azure-resources](https://docs.microsoft.com/azure/app-service/overview-managed-identity)wanneer u toegang hebt tot Azure app service of functies.
+Volg de richt lijnen in de [tokens voor het verkrijgen van Azure-resources](../app-service/overview-managed-identity.md)wanneer u toegang hebt tot Azure app service of functies.
 
 > [!TIP]
-> Voor .NET-toepassingen en-functies is de eenvoudigste manier om te werken met een beheerde identiteit via de [Azure Identity client-bibliotheek](https://docs.microsoft.com/dotnet/api/overview/azure/identity-readme) voor .net. 
+> Voor .NET-toepassingen en-functies is de eenvoudigste manier om te werken met een beheerde identiteit via de [Azure Identity client-bibliotheek](/dotnet/api/overview/azure/identity-readme) voor .net. 
 
-Voor .NET-toepassingen en-functies is de eenvoudigste manier om te werken met een beheerde identiteit via het pakket micro soft. Azure. Services. AppAuthentication. Dit pakket is populair vanwege de eenvoud en beveiligings voordelen. Ontwikkel aars kunnen code eenmaal schrijven en de client bibliotheek laten bepalen hoe verificatie wordt uitgevoerd op basis van de toepassings omgeving-of op een ontwikkel werkstation met behulp van een ontwikkelaars account of geïmplementeerd in azure met behulp van een beheerde service-identiteit. Voor migratie richtlijnen vanuit de voorafgaande AppAuthentication-bibliotheek Lees [AppAuthentication naar Azure. richt lijnen voor identiteits migratie](https://docs.microsoft.com/dotnet/api/overview/azure/app-auth-migration?view=azure-dotnet).
+Voor .NET-toepassingen en-functies is de eenvoudigste manier om te werken met een beheerde identiteit via het pakket micro soft. Azure. Services. AppAuthentication. Dit pakket is populair vanwege de eenvoud en beveiligings voordelen. Ontwikkel aars kunnen code eenmaal schrijven en de client bibliotheek laten bepalen hoe verificatie wordt uitgevoerd op basis van de toepassings omgeving-of op een ontwikkel werkstation met behulp van een ontwikkelaars account of geïmplementeerd in azure met behulp van een beheerde service-identiteit. Voor migratie richtlijnen vanuit de voorafgaande AppAuthentication-bibliotheek Lees [AppAuthentication naar Azure. richt lijnen voor identiteits migratie](/dotnet/api/overview/azure/app-auth-migration).
 
 Een token aanvragen voor Azure Time Series Insights met behulp van C# en de Azure Identity client-bibliotheek voor .NET:
 
-    ```csharp
-    using Azure.Identity;
-    // ...
-    var credential = new DefaultAzureCredential();
-    var token = credential.GetToken(
-    new Azure.Core.TokenRequestContext(
-        new[] { "https://api.timeseries.azure.com/" }));
-   var accessToken = token. Token
-    ```
+   ```csharp
+   using Azure.Identity;
+   // ...
+   var credential = new DefaultAzureCredential();
+   var token = credential.GetToken(
+   new Azure.Core.TokenRequestContext(
+       new[] { "https://api.timeseries.azure.com/" }));
+   var accessToken = token.Token;
+   ```
 
 ### <a name="app-registration"></a>App-registratie
 
-* Ontwikkel aars kunnen gebruikmaken van de [micro soft Authentication Library](https://docs.microsoft.com/azure/active-directory/develop/msal-overview) (MSAL) om tokens voor app-registraties te verkrijgen.
+* Ontwikkel aars kunnen gebruikmaken van de [micro soft Authentication Library](../active-directory/develop/msal-overview.md) (MSAL) om tokens voor app-registraties te verkrijgen.
 
 MSAL kan worden gebruikt in veel toepassings scenario's, waaronder, maar niet beperkt tot:
 
-* [Toepassingen met één pagina (Java script)](https://docs.microsoft.com/azure/active-directory/develop/scenario-spa-overview.md)
-* [Webtoepassing voor het aanmelden bij een gebruiker en het aanroepen van een web-API namens de gebruiker](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-call-api-overview.md)
-* [Web-API die een andere stroomafwaartse Web-API aanroept namens de aangemelde gebruiker](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-api-call-api-overview.md)
-* [Bureaublad toepassing die een web-API aanroept namens de aangemelde gebruiker](https://docs.microsoft.com/azure/active-directory/develop/scenario-desktop-overview.md)
-* [Mobiele toepassing die een web-API aanroept namens de gebruiker die zich interactief aanmeldt](https://docs.microsoft.com/azure/active-directory/develop/scenario-mobile-overview.md).
-* [Desktop/service daemon-toepassing die een web-API aanroept namens zichzelf](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-overview.md)
+* [Toepassingen met één pagina (Java script)](../active-directory/develop/scenario-spa-overview.md)
+* [Webtoepassing voor het aanmelden bij een gebruiker en het aanroepen van een web-API namens de gebruiker](../active-directory/develop/scenario-web-app-call-api-overview.md)
+* [Web-API die een andere stroomafwaartse Web-API aanroept namens de aangemelde gebruiker](../active-directory/develop/scenario-web-api-call-api-overview.md)
+* [Bureaublad toepassing die een web-API aanroept namens de aangemelde gebruiker](../active-directory/develop/scenario-desktop-overview.md)
+* [Mobiele toepassing die een web-API aanroept namens de gebruiker die zich interactief aanmeldt](../active-directory/develop/scenario-mobile-overview.md).
+* [Desktop/service daemon-toepassing die een web-API aanroept namens zichzelf](../active-directory/develop/scenario-daemon-overview.md)
 
 Voor voorbeeld code van C# die laat zien hoe u een token kunt verkrijgen als app-registratie en query's kunt uitvoeren vanuit een Gen2-omgeving, bekijkt u de voor beeld-app op [github](https://github.com/Azure-Samples/Azure-Time-Series-Insights/blob/master/gen2-sample/csharp-tsi-gen2-sample/DataPlaneClientSampleApp/Program.cs)
 

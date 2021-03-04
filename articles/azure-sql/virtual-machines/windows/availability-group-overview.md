@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 10/07/2020
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 213b973bfc93cb2237473b6bc4c7f1e138457409
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
-ms.translationtype: HT
+ms.openlocfilehash: d879039e6d3ad94e55ed7f7bd283f8b99a5b2161
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98131896"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102042450"
 ---
 # <a name="always-on-availability-group-on-sql-server-on-azure-vms"></a>AlwaysOn-beschikbaarheidsgroep op SQL Server op Azure-VM's
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -42,7 +42,7 @@ Om redundantie en de maximale beschikbaarheid te vergroten, moeten SQL Server-VM
 
 Het plaatsen van een set VM's in dezelfde beschikbaarheidsset, beschermt deze tegen storingen in een datacentrum door apparatuuruitval (VM's binnen een beschikbaarheidsset delen geen resources) of updates (VM's binnen een beschikbaarheidsset worden niet op hetzelfde moment bijgewerkt). Beschikbaarheidszones beschermen tegen storingen in een heel datacentrum, waar elke zone een set datacentra binnen een regio vertegenwoordigt.  Door ervoor te zorgen dat resources in verschillende beschikbaarheidszones worden geplaatst, kan geen storing al uw VM's offline halen.
 
-Wanneer u Azure-VM's maakt, met u kiezen tussen het configureren van beschikbaarheidssets en beschikbaarheidszones.  Een Azure-VM kan niet in beide wordt geplaatst.
+Wanneer u Azure-VM's maakt, met u kiezen tussen het configureren van beschikbaarheidssets en beschikbaarheidszones.  Een Azure-VM kan niet deel nemen aan beide.
 
 
 ## <a name="connectivity"></a>Connectiviteit 
@@ -51,6 +51,7 @@ Bij traditionele on-premises implementaties kunnen clients verbinding maken met 
 
 Bij SQL Server op virtuele Azure-machines configureert u een [load balancer](availability-group-vnn-azure-load-balancer-configure.md) om verkeer door te sturen naar de listener van uw beschikbaarheidsgroep. Als u zich op SQL Server 2019 CU8 of hoger bevindt, kunt u een [DNN-listener (gedistribueerde netwerknaam) configureren](availability-group-distributed-network-name-dnn-listener-configure.md) om de traditionele listener van de VNN-beschikbaarheidsgroep te vervangen. 
 
+Raadpleeg [HADR-verbindingen routeren naar SQL Server in Azure-VM's](hadr-cluster-best-practices.md#connectivity) voor meer informatie over opties voor clusterconnectiviteit. 
 
 ### <a name="vnn-listener"></a>VNN-listener 
 

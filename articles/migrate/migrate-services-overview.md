@@ -7,12 +7,12 @@ ms.manager: abhemraj
 ms.topic: overview
 ms.date: 04/15/2020
 ms.custom: mvc
-ms.openlocfilehash: a5fa6b1c75bee562394af42fcea9ebfabeb732f0
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 858f006de7425a9fa8bea25e356a148b877aa30d
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100389532"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102040597"
 ---
 # <a name="about-azure-migrate"></a>Over Azure Migrate
 
@@ -37,7 +37,7 @@ De Azure Migrate-hub bevat deze hulpprogramma's:
 --- | --- | ---
 **Azure Migrate: Server Assessment** | Servers evalueren. | Detecteer en evalueer on-premises VMware-VM's, Hyper-V-VM's en fysieke servers in voorbereiding op migratie naar Azure.
 **Azure Migrate: Server Migration** | Servers migreren. | Migreer VMware-VM's, Hyper-V-VM's, fysieke servers, andere gevirtualiseerde machines en VM's ui de openbare cloud naar Azure.
-**Gegevensmigratieassistent** | Evalueer SQL Server-databases voor migratie naar Azure SQL Database, Azure SQL Managed Instance of Azure-VM's waarop SQL Server wordt uitgevoerd. | Data Migration Assistant helpt bij het opsporen van mogelijke problemen die de migratie kunnen tegenhouden. De assistent identificeert niet-ondersteunde functies, nieuwe functies die na de migratie van pas kunnen komen en het juiste traject voor databasemigratie. [Meer informatie](/sql/dma/dma-overview?view=sql-server-2017).
+**Gegevensmigratieassistent** | Evalueer SQL Server-databases voor migratie naar Azure SQL Database, Azure SQL Managed Instance of Azure-VM's waarop SQL Server wordt uitgevoerd. | Data Migration Assistant helpt bij het opsporen van mogelijke problemen die de migratie kunnen tegenhouden. De assistent identificeert niet-ondersteunde functies, nieuwe functies die na de migratie van pas kunnen komen en het juiste traject voor databasemigratie. [Meer informatie](/sql/dma/dma-overview).
 **Azure Database Migration Service** | Migreer on-premises databases naar Azure-VM's waarop SQL Server, Azure SQL Database of SQL Managed Instance wordt uitgevoerd. | [Lees meer](../dms/dms-overview.md) over Database Migration Service.
 **Movere** | Servers evalueren. | [Lees meer](#movere) over Movere.
 **Web App Migration Assistant** | Hiermee kunt u on-premises web-apps beoordelen en migreren naar Azure. |  Gebruik Azure App Service Migration Assistant om on-premises websites te evalueren voor migratie naar Azure App Service.<br/><br/> Gebruik Migration Assistant om .NET- en PHP-web-apps te migreren naar Azure. [Lees meer](https://appmigration.microsoft.com/) over Azure App Service Migration Assistant.
@@ -78,6 +78,9 @@ Server Assessment maakt gebruik van een lichtgewicht [Azure Migrate-apparaat](mi
 - Het apparaat detecteert on-premises machines. Ook worden er voortdurend metagegevens en prestatiegegevens van de machine naar Azure Migrate verzonden.
 - De detectie van apparaten verloopt zonder agent. Er wordt niets geïnstalleerd op gedetecteerde machines.
 - Na de detectie van het apparaat kunt u gedetecteerde machines in groepen verzamelen en evaluaties uitvoeren voor elke groep.
+
+> [!Note]
+> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Gebruik [**deze koppeling**](https://go.microsoft.com/fwlink/?linkid=2155668) om een project te maken in **Australië-Oost** regio om deze functie uit te proberen. Als u al een project in Australië-oost hebt en u deze functie wilt uitproberen, moet u ervoor zorgen dat u deze [**vereisten**](how-to-discover-sql-existing-project.md) hebt voltooid op de portal.
 
 ## <a name="azure-migrate-server-migration-tool"></a>Azure Migrate: Hulpprogramma voor de migratie van servers
 

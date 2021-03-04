@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 11/07/2020
-ms.openlocfilehash: 1ef7943586123a1870ed9a2d0c21aa8b5fd38c1c
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 139852949a3744fd603cb197b2e27fa32679aae0
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359996"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102042416"
 ---
 # <a name="automatic-registration-with-sql-iaas-agent-extension"></a>Automatische registratie bij de SQL IaaS agent-extensie
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -30,7 +30,7 @@ Registreer uw SQL Server-VM met de [SQL IaaS agent-extensie](sql-server-iaas-age
 
 Als automatische registratie is ingeschakeld, wordt dagelijks een taak uitgevoerd om te detecteren of SQL Server is geïnstalleerd op alle niet-geregistreerde Vm's in het abonnement. Dit wordt gedaan door de binaire bestanden van de extensie van de SQL IaaS-agent naar de virtuele machine te kopiëren en vervolgens een eenmalig hulp programma uit te voeren dat controleert op het onderdeel SQL Server register. Als de SQL Server-component wordt gedetecteerd, wordt de virtuele machine geregistreerd met de uitbrei ding in de Lightweight-modus. Als er geen onderdeel SQL Server in het REGI ster bestaat, worden de binaire bestanden verwijderd.
 
-Zodra automatische registratie is ingeschakeld voor een abonnement, worden alle huidige en toekomstige Vm's waarop SQL Server zijn geïnstalleerd, geregistreerd met de SQL IaaS agent-extensie in de Lightweight-modus. U moet nog steeds [hand matig bijwerken naar de volledige beheer baarheids modus](sql-agent-extension-manually-register-single-vm.md#upgrade-to-full) om te kunnen profiteren van de volledige functieset. 
+Zodra automatische registratie is ingeschakeld voor een abonnement, worden alle huidige en toekomstige Vm's die SQL Server geïnstalleerd, geregistreerd met de SQL IaaS agent-extensie **in Lightweight mode zonder downtime, en zonder de SQL Server-service opnieuw te starten**. U moet nog steeds [hand matig bijwerken naar de volledige beheer baarheids modus](sql-agent-extension-manually-register-single-vm.md#upgrade-to-full) om te kunnen profiteren van de volledige functieset. 
 
 > [!IMPORTANT]
 > Met de SQL IaaS agent-extensie worden gegevens verzameld voor het snelle doel om klanten optionele voor delen te geven bij het gebruik van SQL Server binnen Azure Virtual Machines. Micro soft gebruikt deze gegevens niet voor licentie controles zonder voorafgaande toestemming van de klant. Raadpleeg de [SQL Server-aanvulling voor privacy](/sql/sql-server/sql-server-privacy#non-personal-data) voor meer informatie.
@@ -47,7 +47,7 @@ Als u uw SQL Server-VM wilt registreren met de extensie, hebt u het volgende nod
 
 Voer de volgende stappen uit om automatische registratie van uw SQL Server Vm's in het Azure Portal in te scha kelen:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com).
 1. Navigeer naar de resource pagina [**virtuele SQL-machines**](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.SqlVirtualMachine%2FSqlVirtualMachines) . 
 1. Selecteer **automatische SQL Server VM-registratie** om de pagina **automatische registratie** te openen. 
 
@@ -63,7 +63,7 @@ Gebruik de [Azure cli](/cli/azure/install-azure-cli) of [Azure PowerShell](/powe
 
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u automatische registratie met Azure CLI wilt uitschakelen, voert u de volgende opdracht uit: 
 

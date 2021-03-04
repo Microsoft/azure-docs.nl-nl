@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: tutorial
 ms.date: 03/02/2021
 ms.author: caya
-ms.openlocfilehash: 1daf5fef1383272f728ff3dac7557e55398f7d50
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: bfff962f6d302f589acc437550fa25f76ec7ce35
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101720219"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102040415"
 ---
 # <a name="tutorial-enable-application-gateway-ingress-controller-add-on-for-an-existing-aks-cluster-with-an-existing-application-gateway"></a>Zelf studie: invoeg toepassing Application Gateway ingangs controller inschakelen voor een bestaand AKS-cluster met een bestaande Application Gateway
 
@@ -82,7 +82,7 @@ az aks enable-addons -n myCluster -g myResourceGroup -a ingress-appgw --appgw-id
 
 Als u Azure Portal wilt gebruiken om AGIC-invoeg toepassing in te scha kelen, gaat u naar (en navigeert u naar uw AKS-cluster via de portal [- https://aka.ms/azure/portal/aks/agic) ](https://aka.ms/azure/portal/aks/agic) koppeling. Ga vanaf deze pagina naar het tabblad netwerken in uw AKS-cluster. U ziet een sectie Application Gateway ingangs controller, waarmee u de invoeg toepassing voor de ingangs controller kunt in-of uitschakelen met behulp van de portal-gebruikers interface. Schakel het selectie vakje naast de optie ingang inschakelen in en selecteer het Application Gateway dat u hebt gemaakt, *myApplicationGateway* in de vervolg keuzelijst. 
 
-![Controller portal voor Application Gateway ingang](./media/tutorial-ingress-controller-add-on-existing/portal_ingress_controller_addon.png)
+![Controller portal voor Application Gateway ingang](./media/tutorial-ingress-controller-add-on-existing/portal-ingress-controller-add-on.png)
 
 ## <a name="peer-the-two-virtual-networks-together"></a>Koppel de twee virtuele netwerken als peers
 

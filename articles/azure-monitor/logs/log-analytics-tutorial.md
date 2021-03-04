@@ -1,17 +1,16 @@
 ---
 title: Log Analytics-zelfstudie
 description: In deze zelfstudie leert u hoe u functies van Log Analytics in Azure Monitor kunt gebruiken om een logboekquery uit te voeren en de resultaten ervan in Azure Portal te analyseren.
-ms.subservice: logs
 ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 10/07/2020
-ms.openlocfilehash: a7a6ba395769677fe46ddfff675640f6e15060a0
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 06a73b495cefc361db88d80413f4f4be50e105d1
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101723177"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102041141"
 ---
 # <a name="log-analytics-tutorial"></a>Log Analytics-zelfstudie
 Log Analytics is een hulpprogramma in Azure Portal om logboekquery's te bewerken en uit te voeren op basis van gegevens die zijn verzameld door Azure Monitor-logboeken en om de resultaten interactief te analyseren. U kunt Log Analytics-query's gebruiken om records op te halen die overeenkomen met bepaalde criteria, trends te identificeren, patronen te analyseren en een verscheidenheid aan inzichten in uw gegevens te bieden. 

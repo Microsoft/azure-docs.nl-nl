@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 02/26/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: 0212ed1378dbb1d2165e9333a38fa911598c4c6d
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 768d2011ae3f2826b42befa8f0d40f0e56b993fd
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101691481"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102032684"
 ---
 # <a name="hyperparameter-tuning-a-model-with-azure-machine-learning"></a>Afstemming afstemmen op een model met Azure Machine Learning
 
@@ -332,7 +332,7 @@ hd_config = HyperDriveConfig(run_config=script_run_config,
                              max_concurrent_runs=4)
 ```
 
-`HyperDriveConfig`Hiermee stelt u de para meters die worden door gegeven aan de `ScriptRunConfig script_run_config` . De `script_run_config` , op zijn beurt geeft para meters door aan het trainings script. Het bovenstaande code fragment is afkomstig uit de voor beeld [-notebook Train, afstemming Tune en Deploy with PyTorch](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/pytorch/train-hyperparameter-tune-deploy-with-pytorch). In dit voor beeld `learning_rate` worden de `momentum` para meters en ingesteld op afgestemd. Eerdere stops van uitvoeringen worden bepaald door een `BanditPolicy` , waardoor een uitvoering wordt gestopt waarvan de primaire meet waarde buiten de ligt `slack_factor` (Zie [BanditPolicy-klassen verwijzing](python/api/azureml-train-core/azureml.train.hyperdrive.banditpolicy?view=azure-ml-py)). 
+`HyperDriveConfig`Hiermee stelt u de para meters die worden door gegeven aan de `ScriptRunConfig script_run_config` . De `script_run_config` , op zijn beurt geeft para meters door aan het trainings script. Het bovenstaande code fragment is afkomstig uit de voor beeld [-notebook Train, afstemming Tune en Deploy with PyTorch](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/pytorch/train-hyperparameter-tune-deploy-with-pytorch). In dit voor beeld `learning_rate` worden de `momentum` para meters en ingesteld op afgestemd. Eerdere stops van uitvoeringen worden bepaald door een `BanditPolicy` , waardoor een uitvoering wordt gestopt waarvan de primaire meet waarde buiten de ligt `slack_factor` (Zie [BanditPolicy-klassen verwijzing](/python/api/azureml-train-core/azureml.train.hyperdrive.banditpolicy)). 
 
 De volgende code uit het voor beeld laat zien hoe de afgestemde waarden worden ontvangen, geparseerd en worden door gegeven aan de functie van het trainings script `fine_tune_model` :
 

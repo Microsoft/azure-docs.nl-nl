@@ -2,19 +2,19 @@
 title: Rapporten in container Insights
 description: Beschrijft rapporten die beschikbaar zijn voor het analyseren van gegevens die zijn verzameld door container Insights.
 ms.topic: conceptual
-ms.date: 12/07/2020
-ms.openlocfilehash: ab704ed184d9d67ddfba5aede385899faf2a56de
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/02/2021
+ms.openlocfilehash: ca74521a08d4edaa498e00e6452d8f69912e4bb9
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101704273"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102032790"
 ---
 # <a name="reports-in-container-insights"></a>Rapporten in container Insights
 Rapporten in container Insights worden aanbevolen voor [Azure-werkmappen](../visualize/workbooks-overview.md). In dit artikel worden de verschillende rapporten beschreven die beschikbaar zijn en hoe u deze kunt openen.
 
 ## <a name="viewing-reports"></a>Rapporten weer geven
-Selecteer in het menu **Azure monitor** in het Azure Portal **containers**. Selecteer **inzichten** in de sectie **bewaking** , kies een bepaald cluster en selecteer vervolgens de pagina **rapporten (voor beeld)** . 
+Selecteer in het menu **Azure monitor** in het Azure Portal **containers**. Selecteer **inzichten** in de sectie **bewaking** , kies een bepaald cluster en selecteer vervolgens de pagina **rapporten** . 
 
 [![Pagina rapporten](media/container-insights-reports/reports-page.png)](media/container-insights-reports/reports-page.png#lightbox)
 

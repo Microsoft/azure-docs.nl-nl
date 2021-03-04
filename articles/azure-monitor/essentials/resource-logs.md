@@ -6,13 +6,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: bwren
-ms.subservice: logs
-ms.openlocfilehash: dcd6522c46b6ca35031092c634803267a8486647
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: cb4f1ecdada68218c104558a85277417641906f6
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101731456"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102033009"
 ---
 # <a name="azure-resource-logs"></a>Azure-resourcelogboeken
 Azure-resource logboeken zijn [platform logboeken](../essentials/platform-logs-overview.md) die inzicht bieden in bewerkingen die zijn uitgevoerd in een Azure-resource. De inhoud van bron Logboeken is afhankelijk van de Azure-service en het resource type. Bron logboeken worden niet standaard verzameld. U moet een diagnostische instelling maken voor elke Azure-resource om de resource logboeken te verzenden naar een Log Analytics-werk ruimte die u wilt gebruiken met [Azure monitor-logboeken](../logs/data-platform-logs.md), Azure Event hubs om buiten Azure door te sturen of om te Azure Storage voor archivering.

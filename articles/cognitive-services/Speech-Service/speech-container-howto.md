@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 11/17/2020
+ms.date: 03/02/2021
 ms.author: aahi
 ms.custom: cog-serv-seo-aug-2020
 keywords: on-premises, docker, container
-ms.openlocfilehash: 7bebaf7558de8ec5c1fcca3c9a4526330da1d695
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 4970b33d51ed7ef54727c1c15e2482ff10d70506
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575785"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102032927"
 ---
 # <a name="install-and-run-docker-containers-for-the-speech-service-apis"></a>Docker-containers voor de speech service-Api's installeren en uitvoeren 
 
@@ -455,7 +455,7 @@ Met deze opdracht gebeurt het volgende:
 * Hiermee wordt een *Custom speech-naar-tekst* -container uitgevoerd vanuit de container installatie kopie.
 * Controleer en retour neer de beschik bare basis modellen van de land instellingen voor de doel groep.
 
-De uitvoer geeft u een lijst van basis modellen met de land instellingen voor de gegevens, de model-id en de aanmaak datum en-tijd. U kunt de model-id gebruiken om het specifieke basis model dat u wilt downloaden en te gebruiken. Bijvoorbeeld:
+De uitvoer geeft u een lijst van basis modellen met de land instellingen voor de gegevens, de model-ID en de aanmaak datum en-tijd. U kunt de model-ID gebruiken om het specifieke basis model dat u wilt downloaden en te gebruiken. Bijvoorbeeld:
 ```
 Checking available base model for en-us
 2020/10/30 21:54:20 [Info] Searching available base models for en-us

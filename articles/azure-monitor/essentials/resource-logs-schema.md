@@ -1,15 +1,14 @@
 ---
 title: Ondersteunde services en schema's voor Azure-resourcelogboeken
 description: Meer informatie over de ondersteunde services en het gebeurtenis schema voor Azure-resource Logboeken.
-ms.subservice: logs
 ms.topic: reference
 ms.date: 09/01/2020
-ms.openlocfilehash: 7c426074bbeb2792f152063d938e867b86dc1f6f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 661cba2d78dbb176bb04e6831cf8e045a285535e
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101717533"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102033092"
 ---
 # <a name="common-and-service-specific-schema-for-azure-resource-logs"></a>Algemeen en specifiek service schema voor Azure-resource logboeken
 

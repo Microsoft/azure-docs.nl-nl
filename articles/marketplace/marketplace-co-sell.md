@@ -7,12 +7,12 @@ ms.topic: how-to
 author: vamahtan
 ms.author: vamahtan
 ms.date: 2/24/2021
-ms.openlocfilehash: 5d6b05b9656879f174d92d75ca8b188f7e74e5a1
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: ef90a21ab8fad0e18542c1c88ee808237ff150c5
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101721137"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102032582"
 ---
 # <a name="co-sell-with-microsoft-sales-teams-and-partners-overview"></a>Meer informatie over het verkopen van micro soft verkoop teams en partners
 
@@ -70,7 +70,7 @@ U kunt de status van een prestatie beloning voor een online-app ISV Connect Toep
 - Dynamics 365 voor klant betrokkenheid & PowerApps
 - Dynamics 365 voor bewerkingen
 
-Aanbiedingen voor het verkrijgen van _Azure IP-gemotiveerd_ of- _Premium-apps met ISV Connect_ .
+Aanbiedingen die de _gemotiveerd-status van Azure IP-co-verkoop_ verzorgen, profiteren van de volgende commerciële Marketplace:
 
 - De kosten voor Marketplace-service zijn gereduceerd van 20% tot 10%. Deze korting is van toepassing op uw IaaS-oplossing (Infrastructure as a Service) of als SaaS (Software as a Service) die wordt verkocht via de commerciële Marketplace. Zie [Commercial Marketplace service-kosten](marketplace-commercial-transaction-capabilities-and-considerations.md#commercial-marketplace-service-fees)voor meer informatie.
 - Cloud Solution Provider (CSP)-partners ontvangen een stimulans van 10% om uw IaaS-oplossing of SaaS-aanbieding te verkopen. Zie het [Cloud Solution Provider-programma](cloud-solution-providers.md)voor meer informatie over het CSP-programma.

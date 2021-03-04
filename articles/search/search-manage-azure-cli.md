@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 02/17/2021
-ms.openlocfilehash: bb132baf3e93242c1b228f0ac7f0cfb7f41e1164
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 6287215233ae9baa220df37c6b820c1d1bec7720
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101679843"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102032514"
 ---
 # <a name="manage-your-azure-cognitive-search-service-with-the-azure-cli"></a>Uw Azure Cognitive Search-service beheren met de Azure CLI
 > [!div class="op_single_selector"]
@@ -47,7 +47,7 @@ Binnen een service zijn het maken en beheren van inhoud via [Search Service rest
 
 De voor beelden in dit artikel zijn interactief en vereisen verhoogde machtigingen. De Azure CLI moet zijn geïnstalleerd. Zie [De Azure CLI installeren](/cli/azure/install-azure-cli) voor meer informatie.
 
-U kunt nu de Azure CLI uitvoeren met de `az` opdracht vanaf een Windows-opdracht prompt, Power shell of [Azure Cloud shell](../cloud-shell/overview). PowerShell biedt enkele functies voor tabvoltooiing die niet beschikbaar zijn in de opdrachtprompt van Windows. 
+U kunt nu de Azure CLI uitvoeren met de `az` opdracht vanaf een Windows-opdracht prompt, Power shell of [Azure Cloud shell](../cloud-shell/overview.md). PowerShell biedt enkele functies voor tabvoltooiing die niet beschikbaar zijn in de opdrachtprompt van Windows. 
 
 ### <a name="check-the-azure-cli-version"></a>De versie van Azure CLI controleren
 
@@ -152,7 +152,7 @@ az search service show --name <service-name> --resource-group <resource-group-na
 
 ## <a name="create-or-delete-a-service"></a>Een service maken of verwijderen
 
-Als u [een nieuwe zoek service wilt maken](search-create-service-portal), gebruikt u de opdracht [**AZ Search service Create**](/cli/azure/search/service#az_search_service_show) .
+Als u [een nieuwe zoek service wilt maken](search-create-service-portal.md), gebruikt u de opdracht [**AZ Search service Create**](/cli/azure/search/service#az_search_service_show) .
 
 ```azurecli-interactive
 az search service create \

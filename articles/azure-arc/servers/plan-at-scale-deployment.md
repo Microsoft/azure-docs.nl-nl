@@ -3,12 +3,12 @@ title: Een schaal bare implementatie van Azure Arc-servers plannen
 description: Meer informatie over het inschakelen van een groot aantal machines aan Azure Arc-servers om de configuratie van essentiële beveiligings-, beheer-en bewakings mogelijkheden in azure te vereenvoudigen.
 ms.date: 02/23/2021
 ms.topic: conceptual
-ms.openlocfilehash: fd02e7c0b4d65efde13fbc428a15d60adab174d4
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 0e77fc00f94f2f46c60bb2c5dcecc10a4e2e3bc5
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101693029"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102032225"
 ---
 # <a name="planing-for-an-at-scale-deployment-of-azure-arc-enabled-servers"></a>Een grootschalige implementatie van Azure Arc-servers plannen
 
@@ -71,7 +71,7 @@ We voegen vervolgens toe aan de basis die in fase 1 is vastgelegd door de implem
 
 |Taak |Detail |Duur |
 |-----|-------|---------|
-| Het vooraf gedefinieerde installatie script downloaden | Bekijk en pas het vooraf gedefinieerde installatie script voor de implementatie van de verbonden machine-agent voor de geautomatiseerde implementatie vereisten aan.<br><br> Voor beeld van op schaal onboarding-resources:<br><br> * [Script voor eenvoudige implementatie op basis van grootte](servers/onboard-service-principal.md)<br><br> * [Schaal bare onboarding VMware vSphere Windows Server-Vm's](https://github.com/microsoft/azure_arc/blob/master/azure_arc_servers_jumpstart/docs/vmware_scaled_powercli_win.md)<br><br> * [Voor bereiding voor onboarding VMware vSphere Linux-Vm's](https://github.com/microsoft/azure_arc/blob/master/azure_arc_servers_jumpstart/docs/vmware_scaled_powercli_linux.md)<br><br> * [AWS EC2-instanties op schaal met Ansible](https://github.com/microsoft/azure_arc/blob/master/azure_arc_servers_jumpstart/docs/aws_scale_ansible.md)<br><br> * [Implementatie op schaal met behulp van externe communicatie met Power shell](https://docs.microsoft.com/azure/azure-arc/servers/onboard-powershell) (alleen Windows)| Een of meer dagen, afhankelijk van de vereisten, bedrijfs processen (bijvoorbeeld wijzigings-en release beheer) en de gebruikte automatiserings methode. |
+| Het vooraf gedefinieerde installatie script downloaden | Bekijk en pas het vooraf gedefinieerde installatie script voor de implementatie van de verbonden machine-agent voor de geautomatiseerde implementatie vereisten aan.<br><br> Voor beeld van op schaal onboarding-resources:<br><br> <ul><li> [Script voor eenvoudige implementatie op basis van grootte](onboard-service-principal.md)</ul></li> <ul><li>[Schaal bare onboarding VMware vSphere Windows Server-Vm's](https://github.com/microsoft/azure_arc/blob/master/azure_arc_servers_jumpstart/docs/vmware_scaled_powercli_win.md)</ul></li> <ul><li>[Voor bereiding voor onboarding VMware vSphere Linux-Vm's](https://github.com/microsoft/azure_arc/blob/master/azure_arc_servers_jumpstart/docs/vmware_scaled_powercli_linux.md)</ul></li> <ul><li>[AWS EC2-instanties op schaal met Ansible](https://github.com/microsoft/azure_arc/blob/master/azure_arc_servers_jumpstart/docs/aws_scale_ansible.md)</ul></li> <ul><li>[Implementatie op schaal met behulp van externe communicatie met Power shell](https://docs.microsoft.com/azure/azure-arc/servers/onboard-powershell) (alleen Windows)</ul></li>| Een of meer dagen, afhankelijk van de vereisten, bedrijfs processen (bijvoorbeeld wijzigings-en release beheer) en de gebruikte automatiserings methode. |
 | [Een service-principal maken](onboard-service-principal.md#create-a-service-principal-for-onboarding-at-scale) |Maak een Service-Principal om machines niet-interactief te verbinden met Azure PowerShell of vanuit de portal.| Een uur |
 | De verbonden machine agent implementeren op uw doel servers en-computers |Gebruik uw automatiserings programma om de scripts te implementeren op uw servers en deze te verbinden met Azure.| Een of meer dagen, afhankelijk van uw release plan en na een gefaseerde implementatie. |
 
@@ -83,7 +83,7 @@ Fase 3 ziet beheerders of systeem technici die automatisering van hand matige ta
 |-----|-------|---------|
 |Een Resource Health waarschuwing maken |Als een server langer dan 15 minuten stopt met het verzenden van heartbeats naar Azure, kan dit betekenen dat deze offline is, de netwerk verbinding is geblokkeerd of de agent niet actief is. Ontwikkel een plan voor de manier waarop u reageert en onderzoek deze incidenten en gebruik [resource Health waarschuwingen](../..//service-health/resource-health-alert-monitor-guide.md) om een melding te ontvangen wanneer ze worden gestart.<br><br> Geef het volgende op bij het configureren van de waarschuwing:<br> **Resource type**  =  **Servers met Azure-Arc ingeschakeld**<br> **Huidige resource status**  =  **Niet beschikbaar**<br> **Vorige resource status**  =  **Beschikbaar** | Een uur |
 |Een Azure Advisor waarschuwing maken | Voor de beste ervaring en meest recente oplossingen voor beveiligings-en probleem oplossing raden we u aan de agent voor de Azure-servers die is ingeschakeld, up-to-date te houden. Verouderde agents worden aangeduid met een [Azure Advisor waarschuwing](../../advisor/advisor-alerts-portal.md).<br><br> Geef het volgende op bij het configureren van de waarschuwing:<br> **Type aanbeveling**  =  **Upgrade uitvoeren naar de nieuwste versie van de Azure Connected machine agent** | Een uur |
-|[Azure-beleid toewijzen](../../governance/policy/assign-policy-portal.md) aan uw abonnement of het bereik van de resource groep |Wijs **Azure monitor voor VM's beleid inschakelen** en andere toe die aan uw behoeften voldoen aan het abonnement of het bereik van de resource groep, om ervoor te zorgen dat alle Arc-servers automatisch worden geconfigureerd voor bewaking met Azure monitor voor VM's.| Varieert |
+|[Azure-beleid toewijzen](../../governance/policy/assign-policy-portal.md) aan uw abonnement of het bereik van de resource groep |Wijs het [beleid](../../azure-monitor/vm/vminsights-enable-policy.md) voor **Azure monitor voor VM's inschakelen** (en andere die aan uw behoeften voldoen) toe aan het bereik van het abonnement of de resource groep. Met Azure Policy kunt u beleids definities toewijzen waarmee de vereiste agents voor Azure Monitor voor VM's in uw omgeving worden geïnstalleerd.| Varieert |
 |[Updatebeheer inschakelen voor uw op Arc ingeschakelde servers](../../automation/update-management/enable-from-automation-account.md) |Updatebeheer in Azure Automation configureren voor het beheren van updates van het besturings systeem voor uw virtuele Windows-en Linux-machines die zijn geregistreerd bij servers waarop Arc is ingeschakeld. | 15 minuten |
 
 ## <a name="next-steps"></a>Volgende stappen

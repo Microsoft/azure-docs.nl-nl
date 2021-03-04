@@ -1,17 +1,16 @@
 ---
 title: Resource Manager-voorbeeldsjablonen voor diagnostische instellingen
 description: Azure Resource Manager-voorbeeldsjablonen om diagnostische Azure Monitor-instellingen toe te passen op een Azure-resource.
-ms.subservice: logs
 ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 09/11/2020
-ms.openlocfilehash: 304c359296c4fbff79dd367facd8bbb98c8903b5
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: ec44c54a00c8532ed082b6e5f9e9cb9ce84f64b5
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101731439"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102033024"
 ---
 # <a name="resource-manager-template-samples-for-diagnostic-settings-in-azure-monitor"></a>Resource Manager-voorbeeldsjablonen voor diagnostische instellingen in Azure Monitor
 Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het maken van diagnostische instellingen voor een Azure-resource. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.

@@ -150,6 +150,8 @@
           displayName: 'AD-FS, ADFS'
         - name: Amazon
           href: identity-provider-amazon.md
+        - name: Apple (preview-versie)
+          href: identity-provider-apple-id.md
         - name: Azure AD (één tenant)
           href: identity-provider-azure-ad-single-tenant.md
         - name: Azure AD (multitenant)
@@ -217,11 +219,11 @@
           href: configure-tokens.md
     - name: Aangepaste kenmerken definiëren
       href: user-flow-custom-attributes.md
-    - name: Identiteitsbescherming en voorwaardelijke toegang
+    - name: Verificatie op basis van een risico
       items:
-        - name: Identiteitsbescherming en voorwaardelijke toegang instellen
-          href: conditional-access-identity-protection-setup.md
-        - name: Voorwaardelijke toegang toevoegen
+        - name: Risico's analyseren met identiteits beveiliging
+          href: identity-protection-investigate-risk.md
+        - name: Voorwaardelijke toegang configureren
           href: conditional-access-user-flow.md
     - name: Leeftijdsbeperking configureren
       href: basic-age-gating.md
@@ -327,9 +329,6 @@
                       href: aad-sspr-technical-profile.md
                     - name: Claimstransformatie
                       href: claims-transformation-technical-profile.md
-                    - name: Voorwaardelijke toegang
-                      href: conditional-access-technical-profile.md
-                      displayName: ca
                     - name: ID-tokenhint
                       href: id-token-hint.md
                     - name: Uitgever van het JWT-token

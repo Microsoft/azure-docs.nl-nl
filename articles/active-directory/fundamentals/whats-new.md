@@ -16,12 +16,12 @@ ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c767d114ad6a1b5cb8b9c6bf4c0fe4f2ccd1dae6
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 2e0315eda72681f650172117038ff5ede9f602cc
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101650121"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102032429"
 ---
 # <a name="whats-new-in-azure-active-directory"></a>Wat is er nieuw in Azure Active Directory?
 
@@ -651,7 +651,7 @@ De ervaring voor de integratie-assistent (preview) is nu beschikbaar voor Azure 
 
 U kunt nu de sjabloon-ID van elke Azure AD-rol weer geven in de Azure Portal. Selecteer in azure AD de  **Beschrijving** van de geselecteerde rol. 
 
-Het is raadzaam om in plaats van de weergave naam rollen sjabloon-Id's te gebruiken in hun Power shell-script en code. De sjabloon-ID van de functie wordt ondersteund voor gebruik in [directoryRoles](/graph/api/resources/directoryrole) -en [roleDefinition](/graph/api/resources/unifiedroledefinition?view=graph-rest-beta) -objecten. Zie id van de [functie sjabloon](../roles/permissions-reference.md#role-template-ids)voor meer informatie over de id van de functie sjabloon.
+Het is raadzaam om in plaats van de weergave naam rollen sjabloon-Id's te gebruiken in hun Power shell-script en code. De sjabloon-ID van de functie wordt ondersteund voor gebruik in [directoryRoles](/graph/api/resources/directoryrole) -en [roleDefinition](/graph/api/resources/unifiedroledefinition?view=graph-rest-beta) -objecten. Zie [ingebouwde rollen van Azure AD](../roles/permissions-reference.md)voor meer informatie over de id van de functie sjabloon.
 
 ---
 

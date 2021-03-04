@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1c9df24a255d640c463bd62e8bdfe8a576df3b09
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: eaad4995abcf54e9ca7040d570c7a9abbdbc9cf5
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101693042"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102032388"
 ---
 # <a name="securing-service-principals"></a>Service-principals beveiligen
 
@@ -107,7 +107,7 @@ Kan aanmelden met een Service-Principal niet beheren met voorwaardelijke toegang
 ## <a name="move-from-a-user-account-to-a-service-principal"></a>Van een gebruikers account naar een Service-Principal verplaatsen  
 Als u een Azure-gebruikers account als Service-Principal gebruikt, evalueer dan of u kunt overstappen naar een [beheerde identiteit](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet) of een service-principal. Als u geen beheerde identiteit kunt gebruiken, moet u een Service-Principal inrichten die net voldoende machtigingen en bereik heeft om de vereiste taken uit te voeren. U kunt een service-principal maken door [een toepassing te registreren](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal)of met [Power shell](https://docs.microsoft.com/azure/active-directory/develop/howto-authenticate-service-principal-powershell).
 
-Wanneer u Microsoft Graph gebruikt, raadpleegt u de documentatie van de specifieke API, [zoals in dit voor beeld](https://docs.microsoft.com/powershell/azure/create-azure-service-principal-azureps?view=azps-5.0.0), en zorgt u ervoor dat het machtigings type voor de toepassing wordt weer gegeven als ondersteund.
+Wanneer u Microsoft Graph gebruikt, raadpleegt u de documentatie van de specifieke API, [zoals in dit voor beeld](/powershell/azure/create-azure-service-principal-azureps), en zorgt u ervoor dat het machtigings type voor de toepassing wordt weer gegeven als ondersteund.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -115,7 +115,7 @@ Wanneer u Microsoft Graph gebruikt, raadpleegt u de documentatie van de specifie
 
 [Een service-principal maken](../develop/howto-create-service-principal-portal.md)
 
- [Service-Principal-aanmeldingen bewaken](../reports-monitoring/concept-all-sign-ins#sign-ins-report.md)
+ [Service-Principal-aanmeldingen bewaken](../reports-monitoring/concept-all-sign-ins.md#sign-ins-report)
 
 **Meer informatie over het beveiligen van service accounts:**
 
@@ -125,4 +125,4 @@ Wanneer u Microsoft Graph gebruikt, raadpleegt u de documentatie van de specifie
 
 [Azure-service accounts beheren](service-accounts-governing-azure.md)
 
-[Inleiding tot on-premises service accounts](service-accounts-on-poremises.md)
+[Inleiding tot on-premises service accounts](service-accounts-on-premises.md)

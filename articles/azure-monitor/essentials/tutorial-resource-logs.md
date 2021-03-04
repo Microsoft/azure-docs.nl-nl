@@ -1,17 +1,16 @@
 ---
 title: Resourcelogboeken verzamelen van een Azure-resource en analyseren met Azure Monitor
 description: Zelfstudie voor het configureren van diagnostische instellingen voor het verzamelen van resourcelogboeken van een Azure-resource in een werkruimte van Log Analytics waar ze kunnen worden geanalyseerd met een logboekquery.
-ms.subservice: ''
 ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 12/15/2019
-ms.openlocfilehash: d3c3eff32120438fd891cb32fe98d73424f82b7f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 43a9c88bc64b688bfd1171e331232bb254b0eebe
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101734142"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102032871"
 ---
 # <a name="tutorial-collect-and-analyze-resource-logs-from-an-azure-resource"></a>Zelfstudie: Resourcelogboeken van een Azure-resource verzamelen en analyseren
 

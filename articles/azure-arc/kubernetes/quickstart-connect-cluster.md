@@ -5,15 +5,15 @@ author: mgoedtel
 ms.author: magoedte
 ms.service: azure-arc
 ms.topic: quickstart
-ms.date: 02/24/2021
+ms.date: 03/03/2021
 ms.custom: template-quickstart
 keywords: Kubernetes, Arc, azure, cluster
-ms.openlocfilehash: c50266ce0afd6dd3f5860e3259d2b22af817834c
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 3fc522c4bdda9eb1047d5258bcc431d0268990b9
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101689246"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102121640"
 ---
 # <a name="quickstart-connect-an-existing-kubernetes-cluster-to-azure-arc"></a>Quick Start: een bestaand Kubernetes-cluster verbinden met Azure Arc 
 
@@ -238,4 +238,4 @@ az connectedk8s delete --name AzureArcTest1 --resource-group AzureArcTest
 
 Ga naar het volgende artikel voor meer informatie over het implementeren van configuraties in uw verbonden Kubernetes-cluster met behulp van GitOps.
 > [!div class="nextstepaction"]
-> [Configuraties implementeren met behulp van Gitops](use-gitops-connected-cluster.md)
+> [Configuraties implementeren met behulp van Gitops](tutorial-use-gitops-connected-cluster.md)

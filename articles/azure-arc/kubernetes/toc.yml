@@ -6,16 +6,16 @@
       href: overview.md
     - name: Azure Arc-validatie programma
       href: validation-program.md
+- name: Quickstarts
+  items:
+    - name: Een cluster verbinden met Azure Arc
+      href: quickstart-connect-cluster.md
 - name: Zelfstudies
   items:
     - name: Configuraties implementeren met GitOps
       href: tutorial-use-gitops-connected-cluster.md
     - name: CI/CD implementeren met GitOps
       href: tutorial-gitops-ci-cd.md
-- name: Quickstarts
-  items:
-    - name: Een cluster verbinden met Azure Arc
-      href: quickstart-connect-cluster.md
 - name: Concepten
   items:
     - name: Agent architectuur

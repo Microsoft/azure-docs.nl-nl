@@ -3,26 +3,26 @@ title: Python 3-pakketten beheren in Azure Automation
 description: In dit artikel leest u hoe u python 3-pakketten (preview) in Azure Automation kunt beheren.
 services: automation
 ms.subservice: process-automation
-ms.date: 12/22/2020
+ms.date: 02/19/2021
 ms.topic: conceptual
-ms.openlocfilehash: 3f39f49ff47b935da7ffc777ee45bd219f5740b5
-ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
+ms.openlocfilehash: fd4d8ee92b670bc2544619a0dce16a26d9342c13
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97734298"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102122031"
 ---
 # <a name="manage-python-3-packages-preview-in-azure-automation"></a>Python 3-pakketten (preview) in Azure Automation beheren
 
-Met Azure Automation kunt u python 3-runbooks (preview) uitvoeren op Azure en op hybride Hybrid Runbook Workers van Linux. Om runbooks te vereenvoudigen, kunt u Python-pakketten gebruiken om de modules te importeren die u nodig hebt. In dit artikel wordt beschreven hoe u python 3-pakketten (preview) in Azure Automation kunt beheren en gebruiken.
+Met Azure Automation kunt u python 3-runbooks (preview) uitvoeren op Azure en op hybride Hybrid Runbook Workers van Linux. Om runbooks te vereenvoudigen, kunt u Python-pakketten gebruiken om de modules te importeren die u nodig hebt. Zie [een pakket importeren](#import-a-package)als u één pakket wilt importeren. Zie [een pakket met afhankelijkheden importeren](#import-a-package-with-dependencies)voor meer informatie over het importeren van een pakket met meerdere pakketten. In dit artikel wordt beschreven hoe u python 3-pakketten (preview) in Azure Automation kunt beheren en gebruiken.
 
-## <a name="import-packages"></a>Pakketten importeren
+## <a name="import-a-package"></a>Een pakket importeren
 
 Selecteer in uw Automation-account **Python-pakketten** onder **gedeelde resources**. Selecteer **+ een python-pakket toevoegen**.
 
 :::image type="content" source="media/python-3-packages/add-python-3-package.png" alt-text="Scherm opname van de python 3-pakketten pagina bevat python 3-pakketten in het linkermenu en voegt u een python 2-pakket toe dat is gemarkeerd.":::
 
-Selecteer op de pagina **python-pakket toevoegen** de optie python 3 voor de **versie** en selecteer een lokaal pakket dat u wilt uploaden. Het pakket kan een **. WHL** -of **. tar. gz** -bestand zijn. Wanneer het pakket is geselecteerd, selecteert u **OK** om het te uploaden.
+Selecteer op de pagina **python-pakket toevoegen** de optie **python 3** voor de **versie** en selecteer een lokaal pakket dat u wilt uploaden. Het pakket kan een **. WHL** -of **. tar. gz** -bestand zijn. Wanneer het pakket is geselecteerd, selecteert u **OK** om het te uploaden.
 
 :::image type="content" source="media/python-3-packages/upload-package.png" alt-text="Scherm afbeelding toont de pagina python 3-pakket toevoegen met een geüpload tar. gz-bestand dat is geselecteerd.":::
 
@@ -30,19 +30,35 @@ Zodra een pakket is geïmporteerd, wordt dit weer gegeven op de pagina Python-pa
 
 :::image type="content" source="media/python-3-packages/python-3-packages-list.png" alt-text="Scherm afbeelding toont de python 3-pakketten pagina nadat een pakket is geïmporteerd.":::
 
-## <a name="import-packages-with-dependencies"></a>Pakketten met afhankelijkheden importeren
+### <a name="import-a-package-with-dependencies"></a>Een pakket met afhankelijkheden importeren
 
-Azure Automation lost geen afhankelijkheden voor python-pakketten op tijdens het import proces. Er is echter een manier om een pakket met alle afhankelijkheden te importeren.
-
-### <a name="manually-download"></a>Hand matig downloaden
-
-Op een Windows 64-bits computer met [Python 3,8](https://www.python.org/downloads/release/python-380/) en [PIP](https://pip.pypa.io/en/stable/) , voert u de volgende opdracht uit om een pakket en alle bijbehorende afhankelijkheden te downloaden:
+U kunt een python 3-pakket en de bijbehorende afhankelijkheden importeren door het volgende python-script te importeren in een python 3-runbook en het vervolgens uit te voeren.
 
 ```cmd
-C:\Python38\Scripts\pip3.8.exe download -d <output dir> <package name>
+https://github.com/azureautomation/runbooks/blob/master/Utility/Python/import_py3package_from_pypi.py
 ```
 
-Zodra de pakketten zijn gedownload, kunt u deze importeren in uw Automation-account.
+#### <a name="importing-the-script-into-a-runbook"></a>Het script in een runbook importeren
+Zie [een Runbook importeren vanuit de Azure Portal](manage-runbooks.md#import-a-runbook-from-the-azure-portal)voor meer informatie over het importeren van het runbook. Kopieer het bestand van GitHub naar opslag waartoe de portal toegang heeft voordat u het importeren uitvoert.
+
+Op de pagina **een Runbook importeren** wordt standaard de naam van het runbook gevonden dat overeenkomt met de naam van het script. Als u toegang hebt tot het veld, kunt u de naam wijzigen. **Runbook-type** kan standaard worden ingesteld op **python 2**. Als dat het geval is, moet u deze wijzigen in **python 3**.
+
+:::image type="content" source="media/python-3-packages/import-python-3-package.png" alt-text="Scherm afbeelding toont de python 3-import pagina voor runbook.":::
+
+#### <a name="executing-the-runbook-to-import-the-package-and-dependencies"></a>Het runbook wordt uitgevoerd om het pakket en de afhankelijkheden te importeren
+
+Nadat u het runbook hebt gemaakt en gepubliceerd, voert u het uit om het pakket te importeren. Zie [een Runbook starten in azure Automation](start-runbooks.md) voor meer informatie over het uitvoeren van het runbook.
+
+Voor het script ( `import_py3package_from_pypi.py` ) zijn de volgende para meters vereist.
+
+| Parameter | Beschrijving |
+|---------------|-----------------|
+|subscription_id | Abonnements-ID van het Automation-account |
+| resource_group | Naam van de resource groep waarvoor het Automation-account is gedefinieerd |
+| automation_account | Naam van het Automation-account |
+| module_name | Naam van de module waaruit u wilt importeren `pypi.org` |
+
+Zie [werken met runbook-para meters](start-runbooks.md#work-with-runbook-parameters)voor meer informatie over het gebruik van para meters met runbooks.
 
 ## <a name="use-a-package-in-a-runbook"></a>Een pakket gebruiken in een runbook
 

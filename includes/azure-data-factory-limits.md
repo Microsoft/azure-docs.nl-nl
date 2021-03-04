@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/16/2020
 ms.author: chez
 ms.custom: include file
-ms.openlocfilehash: 1e8d13e7cf302c486bab291ef6482216122b62a3
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
-ms.translationtype: HT
+ms.openlocfilehash: 10aa9b06af439fe701c53ef736ec691167560f95
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94681113"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102109345"
 ---
 Azure Data Factory is een service met meerdere tenants met de volgende standaardlimieten om ervoor te zorgen dat klantabonnementen worden beschermd tegen elkaars werkbelastingen. Neem contact op met de ondersteuning als u de limieten wilt verhogen tot de maximumwaarde voor uw abonnement.
 
@@ -56,9 +56,9 @@ Azure Data Factory is een service met meerdere tenants met de volgende standaard
 
 | Regiogroep | Regio's |
 | -------- | ------ |
-| Regiogroep 1 | US - centraal, US - oost 2, Europa - noord, Europa - west, US - west, US - west 2 |
-| Regiogroep 2 | Australië - oost, Australië - zuidoost, Brazilië - zuid, India - centraal, Japan - oost, US - noord-centraal, US - zuid-centraal, Azië - zuidoost, US - west-centraal |
-| Regiogroep 3 | Canada - centraal, Azië - oost, Frankrijk - centraal, Korea - centraal, UK - zuid |
+| Regiogroep 1 | Verenigde Staten, VS-Oost, VS-Oost 2, Europa-noord, Europa-west, VS-West, VS-West 2 |
+| Regiogroep 2 | Australië-oost, Australië-zuidoost, Brazilië-zuid, Centraal-India, Japan-Oost, Noord-Centraal VS, Zuid-Centraal VS, Zuidoost-Azië, VS-West-Centraal |
+| Regiogroep 3 | Andere regio's |
 
 <sup>3</sup> Pijplijn-, gegevensset- en gekoppelde serviceobjecten vertegenwoordigen een logische groepering van uw werkbelasting. De limieten voor deze objecten hebben geen betrekking op de hoeveelheid gegevens die u kunt verplaatsen en verwerken met Azure Data Factory. Data Factory is ontworpen om petabytes aan gegevens te kunnen verwerken.
 

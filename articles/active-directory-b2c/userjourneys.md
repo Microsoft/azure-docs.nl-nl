@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 12/14/2020
+ms.date: 03/04/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: ce41edd2c0048a20368dd02c2dd6101248e26c14
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: aac75e7876ce59b90e27f9e87c96240755d26235
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400010"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102120739"
 ---
 # <a name="userjourneys"></a>UserJourneys
 
@@ -80,7 +80,7 @@ In het volgende voor beeld wordt een reis element van de gebruiker met autorisat
 
 Een gebruikers traject wordt weer gegeven als een indelings reeks die moet worden gevolgd door een geslaagde trans actie. Als er een stap mislukt, mislukt de trans actie. Deze indelings stappen verwijzen naar zowel de bouw stenen als de claim providers die in het beleids bestand zijn toegestaan. Een indelings stap die verantwoordelijk is voor het weer geven of renderen van een gebruikers ervaring, heeft ook een verwijzing naar de bijbehorende inhouds definitie-id.
 
-De Orchestration-stappen kunnen voorwaardelijk worden uitgevoerd op basis van de voor waarden die zijn gedefinieerd in het gedeelte van de Orchestration-stap. U kunt bijvoorbeeld alleen controleren of er een indelings stap wordt uitgevoerd als er sprake is van een specifieke claim of dat een claim gelijk is aan de opgegeven waarde.
+De Orchestration-stappen kunnen voorwaardelijk worden uitgevoerd op basis van de voor waarden die zijn gedefinieerd in het gedeelte van de Orchestration-stap. U kunt bijvoorbeeld alleen controleren of er een indelings stap wordt uitgevoerd als er een specifieke claim bestaat of als een claim gelijk is aan of niet aan de opgegeven waarde is.
 
 Als u de geordende lijst met Orchestration-stappen wilt opgeven, wordt een **OrchestrationSteps** -element toegevoegd als onderdeel van het beleid. Dit element is vereist.
 
@@ -131,7 +131,7 @@ De elementen in de **voor waarde** bevatten de volgende elementen:
 | Element | Instanties | Beschrijving |
 | ------- | ----------- | ----------- |
 | Waarde | 1: n | Er wordt een ClaimTypeReferenceId waarvoor een query moet worden uitgevoerd. Een ander value-element bevat de waarde die moet worden gecontroleerd.</li></ul>|
-| Actie | 1:1 | De actie die moet worden uitgevoerd als de voor waarde wordt gecontroleerd binnen een indelings stap waar. Als de waarde `Action` is ingesteld op `SkipThisOrchestrationStep` , moet de gekoppelde `OrchestrationStep` niet worden uitgevoerd. |
+| Bewerking | 1:1 | De actie die moet worden uitgevoerd als de voor waarde wordt gecontroleerd binnen een indelings stap waar. Als de waarde `Action` is ingesteld op `SkipThisOrchestrationStep` , moet de gekoppelde `OrchestrationStep` niet worden uitgevoerd. |
 
 #### <a name="preconditions-examples"></a>Voor beelden van voor waarden
 
@@ -189,9 +189,12 @@ Voor waarden kunnen meerdere voor waarden controleren. In het volgende voor beel
 </OrchestrationStep>
 ```
 
-## <a name="claimsproviderselection"></a>ClaimsProviderSelection
+## <a name="identity-provider-selection"></a>ID-provider selecteren
 
-Een indelings stap van type `ClaimsProviderSelection` of `CombinedSignInAndSignUp` kan een lijst bevatten met claim providers waarmee een gebruiker zich kan aanmelden. De volg orde van de elementen in de `ClaimsProviderSelections` elementen bepaalt de volg orde van de id-providers die aan de gebruiker worden gepresenteerd.
+Met de selectie van de identiteits provider kunnen gebruikers een actie selecteren in een lijst met opties. De selectie van de identiteits provider bestaat uit twee stappen: 
+
+1. **Knoppen** : deze begint met het type `ClaimsProviderSelection` of `CombinedSignInAndSignUp` bevat een lijst met opties waaruit een gebruiker kan kiezen. De volg orde van de opties in het `ClaimsProviderSelections` element bepaalt de volg orde van de knoppen die aan de gebruiker worden gepresenteerd.
+2. **Acties** : gevolgd door type `ClaimsExchange` . De ClaimsExchange bevat een lijst met acties. De actie is een verwijzing naar een technisch profiel, zoals [OAuth2](oauth2-technical-profile.md), [OpenID Connect Connect](openid-connect-technical-profile.md), [claims Transform](claims-transformation-technical-profile.md)of [zelfbevestigend](self-asserted-technical-profile.md). Wanneer een gebruiker op een van de knoppen klikt, wordt de bijbehorende actie uitgevoerd.
 
 Het element **ClaimsProviderSelections** bevat het volgende element:
 
@@ -242,7 +245,7 @@ In de volgende indelings stap kan de gebruiker kiezen om u aan te melden met Fac
   <ClaimsExchanges>
     <ClaimsExchange Id="FacebookExchange" TechnicalProfileReferenceId="Facebook-OAUTH" />
     <ClaimsExchange Id="SignUpWithLogonEmailExchange" TechnicalProfileReferenceId="LocalAccountSignUpWithLogonEmail" />
-  <ClaimsExchange Id="GoogleExchange" TechnicalProfileReferenceId="Google-OAUTH" />
+    <ClaimsExchange Id="GoogleExchange" TechnicalProfileReferenceId="Google-OAUTH" />
     <ClaimsExchange Id="LinkedInExchange" TechnicalProfileReferenceId="LinkedIn-OAUTH" />
     <ClaimsExchange Id="TwitterExchange" TechnicalProfileReferenceId="Twitter-OAUTH1" />
   </ClaimsExchanges>

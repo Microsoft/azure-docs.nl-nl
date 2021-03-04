@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 03/02/2021
+ms.date: 03/04/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: dcd0ccdc42a820f1e264b739cb0063516a0cb53e
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: db2715f0827203dac505fa4dc15c22bdab953010
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101688549"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102120212"
 ---
 # <a name="user-profile-attributes"></a>Kenmerken van gebruikersprofiel
 
@@ -101,9 +101,9 @@ Een klant account, een consument, een partner of een burger, kan worden gekoppel
 - **Lokale** identiteit: de gebruikers naam en het wacht woord worden lokaal opgeslagen in de Azure AD B2C Directory. We verwijzen vaak naar deze identiteiten als 'lokale accounts'.
 - **Federatieve** identiteit: ook wel een *sociale* of *ondernemings* account genoemd, wordt de identiteit van de gebruiker beheerd door een federatieve id-provider zoals Facebook, micro soft, ADFS of Sales Force.
 
-Een gebruiker met een klant account kan zich aanmelden met meerdere identiteiten. Bijvoorbeeld gebruikers naam, e-mail adres, werk nemer-ID, sofi-ID en anderen. Eén account kan meerdere identiteiten, zowel lokaal als sociaal, hebben met hetzelfde wacht woord.
+Een gebruiker met een klant account kan zich aanmelden met meerdere identiteiten. Bijvoorbeeld gebruikers naam, e-mail adres, werk nemer-ID, sofi-ID en anderen. Eén account kan meerdere identiteiten, zowel lokaal als sociaal, hebben met hetzelfde wacht woord. 
 
-In de Microsoft Graph-API worden lokale en federatieve identiteiten opgeslagen in het `identities` kenmerk gebruiker, dat van het type [objectIdentity] [Graph-objectIdentity] is. De `identities` verzameling vertegenwoordigt een set met identiteiten die worden gebruikt om u aan te melden bij een gebruikers account. Met deze verzameling kan de gebruiker zich aanmelden bij het gebruikers account met een van de bijbehorende identiteiten.
+In de Microsoft Graph-API worden lokale en federatieve identiteiten opgeslagen in het `identities` kenmerk gebruiker, dat van het type [objectIdentity](/graph/api/resources/objectidentity)is. De `identities` verzameling vertegenwoordigt een set met identiteiten die worden gebruikt om u aan te melden bij een gebruikers account. Met deze verzameling kan de gebruiker zich aanmelden bij het gebruikers account met een van de bijbehorende identiteiten. Het kenmerk Identities kan Maxi maal tien [objectIdentity](/graph/api/resources/objectidentity) -objecten bevatten. Elk object bevat de volgende eigenschappen:
 
 | Naam   | Type |Beschrijving|
 |:---------------|:--------|:----------|

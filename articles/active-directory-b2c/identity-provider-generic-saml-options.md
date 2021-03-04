@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/03/2021
+ms.date: 03/04/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 44a084266a083b2cc7c0609e4bfedb10a018585d
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 075b04414c752ce87365d03212fcdabab6eaa7dd
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102107554"
+ms.locfileid: "102119821"
 ---
 # <a name="configure-saml-identity-provider-options-with-azure-active-directory-b2c"></a>Opties configureren voor de SAML-ID-provider met Azure Active Directory B2C
 
@@ -43,8 +43,8 @@ U kunt ook claims toevoegen die niet worden geretourneerd door de ID-provider, z
 Het uitvoer claim element bevat de volgende kenmerken:
 
 - **ClaimTypeReferenceId** is de verwijzing naar een claim type. 
-- **PartnerClaimType** is de naam van de eigenschap die wordt weer gegeven in azure Insights. Gebruik de syntaxis `{property:NAME}` , waarbij de `NAME` eigenschap wordt toegevoegd aan de gebeurtenis.
-- **DefaultValue** is een vooraf gedefinieerde waarde die moet worden vastgelegd, zoals de naam van de gebeurtenis. Een claim die wordt gebruikt in de gebruikers traject, zoals de naam van de ID-provider. Als de claim leeg is, wordt de standaard waarde gebruikt. De `identityProvider` claim wordt bijvoorbeeld ingesteld door de technische profielen voor Federatie, zoals Facebook. Als de claim leeg is, wordt hiermee aangegeven dat de gebruiker zich aanmeldt met een lokaal account. De standaard waarde is dus ingesteld op *lokaal*. U kunt ook een [claim resolver](claim-resolver-overview.md) opnemen met een contextuele waarde, zoals de toepassings-id of het IP-adres van de gebruiker.
+- **PartnerClaimType** is de naam van de eigenschap die de SAML-bevestiging wordt weer gegeven. 
+- **DefaultValue** is een vooraf gedefinieerde standaard waarde. Als de claim leeg is, wordt de standaard waarde gebruikt. U kunt ook een [claim resolver](claim-resolver-overview.md) gebruiken met een contextuele waarde, zoals de correlatie-id of het IP-adres van de gebruiker.
 
 ### <a name="subject-name"></a>Onderwerpnaam
 

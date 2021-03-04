@@ -7,16 +7,20 @@ ms.service: cache
 ms.devlang: rust
 ms.topic: quickstart
 ms.date: 01/08/2021
-ms.openlocfilehash: b55a706aa25b21620226690c172c996fe10a84fa
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 17f38d79b75179d7a54ca5ed1d20dff18d0a0363
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98203489"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102121096"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-rust"></a>Quickstart: Azure Cache voor Redis met Rust gebruiken
 
 In dit artikel wordt beschreven hoe u de [programmeertaal Rust](https://www.rust-lang.org/) gebruikt voor interactie met [Azure Cache voor Redis](./cache-overview.md). Hierin worden voorbeelden gegeven van veelgebruikte Redis-gegevensstructuren (zoals een [tekenreeks](https://redis.io/topics/data-types-intro#redis-strings), [hash](https://redis.io/topics/data-types-intro#redis-hashes), [lijst](https://redis.io/topics/data-types-intro#redis-lists), enzovoort) met behulp van de bibliotheek [redis-rs](https://github.com/mitsuhiko/redis-rs) voor Redis. Deze client geeft API's op hoog en laag niveau weer en u kunt zien hoe beide stijlen in de praktijk werken met behulp van de voorbeeldcode in dit artikel.
+
+## <a name="skip-to-the-code-on-github"></a>Ga naar de code op GitHub
+
+Als u direct naar de code wilt gaan, raadpleegt u de [handroest Quick](https://github.com/Azure-Samples/azure-redis-cache-rust-quickstart/) start op github.
 
 ## <a name="prerequisites"></a>Vereisten
 

@@ -9,12 +9,12 @@ ms.service: azure-arc
 ms.subservice: azure-arc-data
 ms.date: 03/02/2021
 ms.topic: conceptual
-ms.openlocfilehash: d4667e8fa3a5624dddc3cb0dd792fc73ea812332
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 8100d9e12f107e0c4598876c46453b46c6ee4d0e
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101693034"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102121997"
 ---
 # <a name="known-issues---azure-arc-enabled-data-services-preview"></a>Bekende problemen: Azure Arc enabled Data Services (preview-versie)
 
@@ -22,10 +22,7 @@ ms.locfileid: "101693034"
 
 ## <a name="february-2021"></a>Februari 2021
 
-
 - De modus verbonden cluster is uitgeschakeld
-- Azure Arc enabled PostgreSQL grootschalige retourneert een onjuist fout bericht wanneer het niet kan worden teruggezet naar het relatieve punt in de tijd dat u opgeeft. Als u bijvoorbeeld een punt in de tijd hebt opgegeven om te herstellen dat ouder is dan uw back-ups bevatten, mislukt de herstel bewerking met een fout bericht als: `ERROR: (404). Reason: Not found. HTTP response body: {"code":404, "internalStatus":"NOT_FOUND", "reason":"Failed to restore backup for server...}` . Wanneer dit het geval is, start u de opdracht opnieuw op nadat u een tijdstip hebt aangegeven dat binnen het bereik van de datums valt waarvoor u back-ups hebt. Als u dit bereik wilt bepalen, vermeldt u uw back-ups en bekijkt u de datums waarop deze zijn gemaakt.
-- U moet een back-up-id opgeven wanneer u een volledige herstel bewerking uitvoert. Als u geen back-upid aangeeft, wordt standaard de meest recente back-up gebruikt. Dit werkt niet in deze release.
 
 ## <a name="introduced-prior-to-february-2021"></a>Vóór februari 2021
 

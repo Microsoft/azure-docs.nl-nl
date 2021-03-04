@@ -2,30 +2,31 @@
 title: CI/CD-werk stroom met GitOps-Azure Arc enabled Kubernetes
 services: azure-arc
 ms.service: azure-arc
-ms.date: 02/26/2021
+ms.date: 03/03/2021
 ms.topic: conceptual
 author: tcare
 ms.author: tcare
 description: Dit artikel bevat een conceptueel overzicht van een CI/CD-werk stroom met behulp van GitOps
 keywords: GitOps, Kubernetes, K8s, azure, helm, Arc, AKS, Azure Kubernetes service, containers, CI, CD, Azure DevOps
-ms.openlocfilehash: 044275db0977a20474aa1451324486ad1750a7f9
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: a51a9f2b32f1088cec390dc4d74300a38f37b160
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102054916"
+ms.locfileid: "102121776"
 ---
-# <a name="overview"></a>Overzicht
+# <a name="cicd-workflow-using-gitops---azure-arc-enabled-kubernetes"></a>CI/CD-werk stroom met GitOps-Azure Arc enabled Kubernetes
 
 Moderne Kubernetes-implementaties zijn meerdere toepassingen, clusters en omgevingen. Met GitOps kunt u deze complexe instellingen eenvoudiger beheren, waarbij u de gewenste status van de Kubernetes-omgevingen declaratief met git bijhoudt. Met het gebruik van common Git-hulp middelen voor het bijhouden van de cluster status kunt u de verantwoordelijkheid verhogen, het fout onderzoek vergemakkelijken en automatisering inschakelen om omgevingen te beheren.
 
-Dit artikel bevat een conceptueel overzicht van hoe u GitOps een werkelijkheid maakt in de volledige levens cyclus van een toepassings wijziging met Azure-Arc, Azure opslag plaatsen en Azure-pijp lijnen. Door loop een end-to-end-voor beeld van één wijziging in een toepassing van een ontwikkelaar naar GitOps Kubernetes omgevingen.
+In dit conceptuele overzicht wordt GitOps uitgelegd als een realiteit van de volledige levens cyclus van de toepassing met Azure Arc, Azure opslag plaatsen en Azure pipelines. [Ga naar een voor beeld](#example-workflow) van een enkele toepassings wijziging in GitOps Kubernetes omgevingen.
 
 ## <a name="architecture"></a>Architectuur
 
 Houd rekening met een toepassing die is geïmplementeerd in een of meer Kubernetes-omgevingen.
 
 ![GitOps CI/CD-architectuur](./media/gitops-arch.png)
+
 ### <a name="application-repo"></a>Opslag plaats van toepassing
 De opslag plaats van de toepassing bevat de toepassings code die ontwikkel aars tijdens hun interne lus gebruiken. De implementatie sjablonen van de toepassing zijn Live in deze opslag plaats in een algemeen formulier, zoals helm of Kustomize. Omgeving-specifieke waarden worden niet opgeslagen. Wijzigingen in deze opslag plaats roepen een pull-of CI-pijp lijn op waarmee het implementatie proces wordt gestart.
 ### <a name="container-registry"></a>Container Registry
@@ -39,9 +40,9 @@ Stroom is een service die in elk cluster wordt uitgevoerd en die verantwoordelij
 ### <a name="cd-pipeline"></a>CD-pijp lijn
 De CD-pijp lijn wordt automatisch geactiveerd door succes volle CI-builds. De eerder gepubliceerde sjablonen worden gebruikt, de omgevings waarden worden vervangen en er wordt een PR-waarde voor de GitOps opslag plaats om een wijziging aan te vragen voor de gewenste status van een of meer Kubernetes-clusters. Cluster beheerders controleren de status wijzigings PR en goed keuren de samen voeging naar de GitOps opslag plaats. De pijp lijn wordt vervolgens gewacht tot de PR is voltooid, waardoor de status wijziging kan worden opgehaald.
 ### <a name="gitops-repo"></a>GitOps opslag plaats
-De GitOps opslag plaats vertegenwoordigt de huidige gewenste status van alle omgevingen in clusters. Elke wijziging in deze opslag plaats wordt door de stroom service in elk cluster opgehaald en geïmplementeerd. Pull worden gemaakt met wijzigingen in de gewenste status, gecontroleerd en samengevoegd. Deze pull bevatten wijzigingen in beide implementatie sjablonen en de resulterende gerenderde Kubernetes-manifesten. De gerenderde manifesten op laag niveau geven geen verrassingen achter de vervanging van de sjabloon door een zorgvuldige inspectie van wijzigingen toe te staan die doorgaans zichtbaar zijn op sjabloon niveau.
+De GitOps opslag plaats vertegenwoordigt de huidige gewenste status van alle omgevingen in clusters. Elke wijziging in deze opslag plaats wordt door de stroom service in elk cluster opgehaald en geïmplementeerd. Pull worden gemaakt met wijzigingen in de gewenste status, gecontroleerd en samengevoegd. Deze pull bevatten wijzigingen in beide implementatie sjablonen en de resulterende gerenderde Kubernetes-manifesten. Gerenderde manifesten op laag niveau bieden een meer zorgvuldige inspectie van wijzigingen, normaal gesp roken op sjabloon niveau.
 ### <a name="kubernetes-clusters"></a>Kubernetes-clusters
-Een of meer Azure Arc-Kubernetes-clusters dienen voor de verschillende omgevingen die nodig zijn voor de toepassing. Eén cluster kan bijvoorbeeld fungeren als een ontwikkel-en QA-omgeving via verschillende naam ruimten. Een tweede cluster kan eenvoudige schei ding van omgevingen en meer nauw keurige controle bieden.
+Ten minste één Azure Arc enabled Kubernetes-clusters worden uitgevoerd op de verschillende omgevingen die nodig zijn voor de toepassing. Eén cluster kan bijvoorbeeld fungeren als een ontwikkel-en QA-omgeving via verschillende naam ruimten. Een tweede cluster kan eenvoudige schei ding van omgevingen en meer nauw keurige controle bieden.
 ## <a name="example-workflow"></a>Voorbeeld werk stroom
 Als ontwikkelaar van de toepassing, Anne:
 * Schrijft toepassings code.
@@ -73,4 +74,4 @@ Stel dat Anja een wijziging van de toepassing wil aanbrengen waarmee de docker-i
 8.  Zodra alle omgevingen geslaagde implementaties hebben ontvangen, is de pijp lijn voltooid.
 
 ## <a name="next-steps"></a>Volgende stappen
-[Configuraties en GitOps met Azure Arc enabled Kubernetes](./conceptual-configurations.md)
+Meer informatie over het maken van verbindingen tussen uw cluster en een Git-opslag plaats als een [configuratie bron waarbij Azure Arc is ingeschakeld Kubernetes](./conceptual-configurations.md)

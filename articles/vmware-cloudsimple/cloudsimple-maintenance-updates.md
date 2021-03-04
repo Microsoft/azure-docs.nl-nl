@@ -4,17 +4,17 @@ titleSuffix: Azure VMware Solution by CloudSimple
 description: Beschrijft het CloudSimple-service proces voor gepland onderhoud en updates
 author: sharaths-cs
 ms.author: dikamath
-ms.date: 08/20/2019
+ms.date: 03/04/2021
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 826fae1123b355a4143118b53ba649f0939acaf7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 814a901fba065e36ea3ba9e3a6fe1175365de6c5
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77025024"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102120705"
 ---
 # <a name="cloudsimple-maintenance-and-updates"></a>Onderhoud en updates voor CloudSimple
 
@@ -39,7 +39,7 @@ CloudSimple controleert ook de volgende taken continu voor fouten:
 * Fysieke NIC-poorten
 * Servers
 * Ventilatoren
-* Voeding
+* Stroom
 * Switches
 * Switch poorten
 
@@ -49,7 +49,7 @@ CloudSimple maakt een back-up, onderhoudt en werkt deze VMware-elementen bij in 
 
 * ESXi
 * vCenter-platform Services
-* Regelaar
+* Controller
 * vSAN
 * NSX
 
@@ -100,7 +100,7 @@ Software-updates zijn onder andere:
 * **Updates**. Wijziging van de secundaire versie van een VMware-stack onderdeel.
 * **Upgrades**. Wijziging van de hoofd versie van een VMware-stack onderdeel.
 
-CloudSimple test een kritieke beveiligings patch zodra deze beschikbaar is in VMware. Per SLA implementeert CloudSimple de beveiligings patch naar Privécloud binnen een week.
+CloudSimple test een kritieke beveiligings patch zodra deze beschikbaar is in VMware. 
 
 CloudSimple biedt updates voor het driemaandelijkse onderhoud aan VMware-software onderdelen. Wanneer er een nieuwe belang rijke versie van VMware-software beschikbaar is, werkt CloudSimple samen met klanten om een geschikt onderhouds venster voor de upgrade te coördineren.
 

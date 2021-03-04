@@ -8,16 +8,20 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.custom: devx-track-csharp, mvc
 ms.date: 06/18/2020
-ms.openlocfilehash: 762fdf0aab0077cfbf8beceeb432dc85695e4176
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: ffc5c8ea647d4cadd2d151eb880c794ac5f4ebd4
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96002449"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102121436"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-in-net-framework"></a>Quickstart: Azure Cache voor Redis in .NET Framework gebruiken
 
 In deze quickstart neemt u Azure Cache voor Redis op in een .NET Framework-app voor toegang tot een veilige, toegewezen cache die toegankelijk is vanuit elke toepassing binnen Azure. U gebruikt met name de client [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) met C#-code in een .NET-console-app.
+
+## <a name="skip-to-the-code-on-github"></a>Ga naar de code op GitHub
+
+Als u direct naar de code wilt gaan, raadpleegt u de [.NET Framework Quick](https://github.com/Azure-Samples/azure-cache-redis-samples/tree/main/quickstart/dotnet) start op github.
 
 ## <a name="prerequisites"></a>Vereisten
 

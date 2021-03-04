@@ -3,18 +3,18 @@ title: Maak een back-up van uw gegevens naar Azure met CommVault
 titleSuffix: Azure Blob Storage Docs
 description: De webpagina bevat een overzicht van factoren waarmee u rekening moet houden en de stappen die moeten worden gevolgd om Azure als opslag doel en herstel locatie te gebruiken voor CommVault complete back-up en herstel
 keywords: CommVault, back-up naar Cloud, back-up, back-up naar Azure, herstel na nood gevallen, bedrijfs continuïteit
-author: Karl Rautenstrauch
+author: karauten
 ms.author: karauten
 ms.date: 11/11/2020
 ms.topic: article
 ms.service: Storage
 ms.subservice: Blob Storage
-ms.openlocfilehash: f5b35abd58d99478014c1227b6e3c03c2fc7a177
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 381775b8cdba173cc1752a45b83670c7251e50ec
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101744619"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102101559"
 ---
 # <a name="back-up-to-azure-with-commvault"></a>Back-ups maken naar Azure met CommVault
 

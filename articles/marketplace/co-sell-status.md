@@ -7,12 +7,12 @@ ms.topic: how-to
 author: vamahtan
 ms.author: vamahtan
 ms.date: 02/24/2021
-ms.openlocfilehash: 395e1279f3578dd1ee834836dead4169d0ea281a
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 114e52884ca220635085bdbb8ab19b4f9cf810c0
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101744578"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102120093"
 ---
 # <a name="verify-co-sell-status-of-a-commercial-marketplace-offer"></a>De verkoop status van een commerciële Marketplace-aanbieding verifiëren
 
@@ -30,10 +30,10 @@ In de volgende tabel worden alle mogelijke co-sell-statussen weer gegeven. Zie [
 
 | Status | Opmerking |
 | ------------ | ------------- |
-| Klaar voor samen verkopen | Er is niet voldaan aan de minimum [vereisten voor de status gereed voor samen verkoop](#requirements-for-co-sell-ready-status) . |
-| Klaar voor samen verkopen | Er is voldaan aan alle [vereisten voor de status van de co-sell-gereedheid](#requirements-for-co-sell-ready-status) . |
-| Azure IP-gemotiveerd verkopen | In aanvulling op [deze aanvullende vereisten](#requirements-for-IP-Co-sell-incentivized-status)is voldaan aan de vereisten voor samen verkoop. |
-| Stimulans voor het stimuleren van de ISV Connect-apps  | Deze status is van toepassing op Dynamics 365 en Power Apps biedt en geeft aan dat aan alle [vereisten voor deze status](#requirements-for-biz-apps-isv-connect-premium-incentive-status) is voldaan. |
+| Klaar voor samen verkopen | Er is niet voldaan aan de minimum [vereisten voor de status gereed voor samen verkoop](co-sell-requirements.md#requirements-for-co-sell-ready-status) . |
+| Klaar voor samen verkopen | Er is voldaan aan alle [vereisten voor de status van de co-sell-gereedheid](co-sell-requirements.md#requirements-for-co-sell-ready-status) . |
+| Azure IP-gemotiveerd verkopen | In aanvulling op [deze aanvullende vereisten](co-sell-requirements.md#requirements-for-ip-co-sell-incentivized-status)is voldaan aan de vereisten voor samen verkoop. |
+| Stimulans voor het stimuleren van de ISV Connect-apps  | Deze status is van toepassing op Dynamics 365 en Power Apps biedt en geeft aan dat aan alle [vereisten voor deze status](co-sell-requirements.md#requirements-for-biz-apps-isv-connect-premium-incentive-status) is voldaan. |
 |||
 
 ## <a name="next-steps"></a>Volgende stappen

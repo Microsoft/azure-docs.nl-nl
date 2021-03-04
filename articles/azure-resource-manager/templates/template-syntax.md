@@ -2,13 +2,13 @@
 title: Sjabloon structuur en syntaxis
 description: Hierin worden de structuur en eigenschappen van Azure Resource Manager sjablonen (ARM-sjablonen) beschreven met declaratieve JSON-syntaxis.
 ms.topic: conceptual
-ms.date: 12/17/2020
-ms.openlocfilehash: 31576c72fb845677f132fd9cd6ee776db922d436
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/03/2021
+ms.openlocfilehash: da64eb8abeaf45f58933dfbddaf954cad8e66f4a
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101722701"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102120413"
 ---
 # <a name="understand-the-structure-and-syntax-of-arm-templates"></a>Informatie over de structuur en de syntaxis van ARM-sjablonen
 
@@ -46,62 +46,6 @@ In de eenvoudigste structuur heeft een sjabloon de volgende elementen:
 
 Elk element heeft eigenschappen die u kunt instellen. In dit artikel worden de secties van de sjabloon uitvoeriger beschreven.
 
-## <a name="data-types"></a>Gegevenstypen
-
-Binnen een ARM-sjabloon kunt u deze gegevens typen gebruiken:
-
-* tekenreeks
-* securestring
-* int
-* booleaans
-* object
-* secureObject
-* array
-
-De volgende sjabloon toont de indeling voor de gegevens typen. Elk type heeft een standaard waarde met de juiste indeling.
-
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "stringParameter": {
-      "type": "string",
-      "defaultValue": "option 1"
-    },
-    "intParameter": {
-      "type": "int",
-      "defaultValue": 1
-    },
-    "boolParameter": {
-      "type": "bool",
-      "defaultValue": true
-    },
-    "objectParameter": {
-      "type": "object",
-      "defaultValue": {
-        "one": "a",
-        "two": "b"
-      }
-    },
-    "arrayParameter": {
-      "type": "array",
-      "defaultValue": [ 1, 2, 3 ]
-    }
-  },
-  "resources": [],
-  "outputs": {}
-}
-```
-
-De beveiligde teken reeks maakt gebruik van dezelfde indeling als teken reeks en beveiligd object gebruikt dezelfde indeling als object. Wanneer u een para meter instelt op een beveiligde teken reeks of een beveiligd object, wordt de waarde van de para meter niet opgeslagen in de implementatie geschiedenis en niet geregistreerd. Als u deze beveiligde waarde echter instelt op een eigenschap waarvoor geen beveiligde waarde wordt verwacht, is de waarde niet beveiligd. Als u bijvoorbeeld een beveiligde teken reeks instelt op een tag, wordt die waarde opgeslagen als tekst zonder opmaak. Gebruik beveiligde teken reeksen voor wacht woorden en geheimen.
-
-Voor gehele getallen die als inline-para meters worden door gegeven, kan het bereik van waarden worden beperkt door de SDK of het opdracht regel programma dat u voor implementatie gebruikt. Als u bijvoorbeeld Power shell gebruikt voor het implementeren van een sjabloon, kunnen integerwaarden variëren van-2147483648 tot 2147483647. Als u deze beperking wilt vermijden, geeft u grote waarden voor geheel getal op in een [parameter bestand](parameter-files.md). De resource typen hebben hun eigen limieten voor eigenschappen van gehele getallen.
-
-Wanneer u Boole-waarden en integerwaarden in uw sjabloon opgeeft, plaatst u de waarde niet tussen aanhalings tekens. Begin-en eind teken reeks waarden met dubbele aanhalings tekens ( `"string value"` ).
-
-Objecten beginnen met een accolade ( `{` ) en eindigend met een haakje sluiten ( `}` ). Matrices beginnen met een haakje ( `[` ) en eindigend met een haakje ( `]` ).
-
 ## <a name="parameters"></a>Parameters
 
 In de `parameters` sectie van de sjabloon geeft u op welke waarden u kunt invoeren bij het implementeren van de resources. U kunt maximaal 256 parameters opgeven in een sjabloon. U kunt het aantal para meters verminderen door objecten te gebruiken die meerdere eigenschappen bevatten.
@@ -128,7 +72,7 @@ De eigenschappen die beschikbaar zijn voor een parameter zijn:
 | Elementnaam | Vereist | Beschrijving |
 |:--- |:--- |:--- |
 | para meter-naam |Ja |De naam van de para meter. Moet een geldige java script-id zijn. |
-| type |Ja |Type parameter waarde. De toegestane typen en waarden zijn **String**, **securestring**, **int**, **BOOL**, **object**, **secureObject** en **array**. Zie [gegevens typen](#data-types). |
+| type |Ja |Type parameter waarde. De toegestane typen en waarden zijn **String**, **securestring**, **int**, **BOOL**, **object**, **secureObject** en **array**. Zie [gegevens typen in arm-sjablonen](data-types.md). |
 | Standaard |Nee |De standaard waarde voor de para meter, als er geen waarde wordt gegeven voor de para meter. |
 | allowedValues |Nee |Matrix van toegestane waarden voor de para meter om ervoor te zorgen dat de juiste waarde wordt gegeven. |
 | minValue |Nee |De minimum waarde voor de para meters van het type int, deze waarde is inclusief. |
@@ -141,7 +85,7 @@ Zie [para meters in arm-sjablonen](template-parameters.md)voor voor beelden van 
 
 ## <a name="variables"></a>Variabelen
 
-In de `variables` sectie bouwt u waarden die in de hele sjabloon kunnen worden gebruikt. U hoeft geen variabelen te definiëren, maar ze vereenvoudigen uw sjabloon vaak door complexe expressies te reduceren. De indeling van elke variabele komt overeen met een van de [gegevens typen](#data-types).
+In de `variables` sectie bouwt u waarden die in de hele sjabloon kunnen worden gebruikt. U hoeft geen variabelen te definiëren, maar ze vereenvoudigen uw sjabloon vaak door complexe expressies te reduceren. De indeling van elke variabele komt overeen met een van de [gegevens typen](data-types.md).
 
 In het volgende voor beeld ziet u de beschik bare opties voor het definiëren van een variabele:
 

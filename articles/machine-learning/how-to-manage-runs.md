@@ -9,15 +9,15 @@ ms.author: roastala
 author: rastala
 manager: cgronlun
 ms.reviewer: nibaccam
-ms.date: 12/04/2020
+ms.date: 03/04/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 3eaab31d3948e41a216eaa402c2a11e470a6545d
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: fb877b208e6c9599347e2b45e140545e5815e695
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101691498"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102120807"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Trainings uitvoeringen in python starten, controleren en annuleren
 
@@ -113,6 +113,10 @@ U hebt de volgende items nodig:
     
         Zie [AZ ml run-script uitvoeren](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-submit-script)voor meer informatie.
 
+    # <a name="studio"></a>[Studio](#tab/azure-studio)
+
+    Voor een voor beeld van het trainen van een model in de Azure Machine Learning Designer raadpleegt u [zelf studie: prijs auto Mobile met de ontwerp functie](tutorial-designer-automobile-price-train-score.md).
+
     ---
 
 * De status van een uitvoering controleren
@@ -195,8 +199,7 @@ Een uitvoerings beschrijving kan worden toegevoegd aan een uitvoering om meer co
 
 Navigeer naar de pagina **uitvoerings Details** voor de uitvoering en selecteer het pictogram bewerken of potlood om beschrijvingen voor uw uitvoering toe te voegen, te bewerken of te verwijderen. Als u de wijzigingen in de lijst met uitvoeringen wilt behouden, slaat u de wijzigingen in uw bestaande aangepaste weer gave of een nieuwe aangepaste weer gave op. De indeling voor prijs verlaging wordt ondersteund voor uitvoerings beschrijvingen waarmee de installatie kopie kan worden inge sloten en deep linking zoals hieronder wordt weer gegeven.
 
-:::image type="content" source="media/how-to-manage-runs/rundescription.gif" alt-text="Scherm afbeelding: een beschrijving van de uitvoeringsrun maken"::: 
-    
+:::image type="content" source="media/how-to-manage-runs/run-description.gif" alt-text="Scherm afbeelding: een beschrijving van de uitvoeringsrun maken"::: 
 
 ## <a name="tag-and-find-runs"></a>Uitvoeringen coderen en zoeken
 

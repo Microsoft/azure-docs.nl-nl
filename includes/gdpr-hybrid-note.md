@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/01/2018
 ms.author: lizross
 ms.custom: include file
-ms.openlocfilehash: 5bcc770c730b53a9523415a4978b439ac0079410
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 6cbdf96571ece4f714affb13aa97d495cc84dab3
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95974053"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102109154"
 ---
->[!Note]
->Als u geïnteresseerd bent in het bekijken of verwijderen van persoonsgegevens, raadpleegt u de richtlijnen op de site [Windows Data Subject Requests for the GDPR](/microsoft-365/compliance/gdpr-data-subject-requests) (Aanvragen in het kader van de AVG voor gegevensonderwerpen van Windows). Als u op zoek bent naar algemene informatie over de AVG, raadpleegt u het [AVG-gedeelte van Service Trust Portal](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+> [!NOTE]
+> Voor informatie over het weer geven of verwijderen van persoonlijke gegevens raadpleegt u de richt lijnen van micro soft op de verzoeken van de [Windows-gegevens voor de AVG](/microsoft-365/compliance/gdpr-dsr-windows) -site. Zie de [sectie AVG van het micro soft vertrouwens centrum](https://www.microsoft.com/trust-center/privacy/gdpr-overview) en de [sectie AVG van de service Trust Portal](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted)voor algemene informatie over AVG.

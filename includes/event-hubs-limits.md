@@ -1,20 +1,8 @@
 ---
-title: bestand opnemen
-description: bestand opnemen
-services: event-hubs
-author: spelluru
-ms.service: event-hubs
-ms.topic: include
-ms.date: 02/01/2021
-ms.author: spelluru
-ms.custom: include file
-ms.openlocfilehash: 45cc5120072f2a8c7742f79cfb79161042345505
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
-ms.translationtype: MT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99427205"
+Titel: include file description: include file services: Event-hubs Author: spelluru MS. service: Event-hubs MS. topic: include MS. date: 02/01/2021 MS. Author: spelluru MS. Custom: "include file", "FastTrack-Edit", "IOT", "Event-hubs"
+
 ---
+
 De volgende tabellen bevatten quota en limieten die specifiek zijn voor [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/). Zie [Prijzen voor Event Hubs](https://azure.microsoft.com/pricing/details/event-hubs/) voor prijsinformatie over Event Hubs.
 
 ### <a name="common-limits-for-all-tiers"></a>Algemene limieten voor alle lagen
@@ -24,7 +12,6 @@ De volgende limieten gelden in alle lagen.
 | --- |  --- | --- |
 | Aantal Event Hubs-naamruimten per abonnement |- |100 |
 | Aantal event hubs per naamruimte | Volgende aanvragen voor het maken van een nieuwe event hub worden geweigerd. |10 |
-| Aantal partities per event hub |- |32 |
 | Grootte van een Event Hub-naam |- | 256 tekens |
 | Groote van de naam van een consumentengroep |- | 256 tekens |
 | Aantal niet-epoche ontvangers per consumentengroep |- |5 |
@@ -39,11 +26,17 @@ De volgende tabel geeft de limieten weer die mogelijk anders zijn voor basic- en
 
 | Limiet | Notities | Basic | Standard |
 |---|---|--|---|
-| Maximumgrootte van Event Hubs-gebeurtenis| &nbsp; | 256 kB | 1 MB |
+| Maximale grootte van Event Hubs publicatie| &nbsp; | 256 kB | 1 MB |
 | Aantal consumentengroepen per event hub | &nbsp; |1 |20 |
 | Aantal AMQP-verbindingen per naamruimte | Volgende aanvragen voor extra verbindingen worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. |100 |5.000|
 | Maximale bewaartermijn van gebeurtenisgegevens | &nbsp; |1 dag |1-7 dagen |
 | Maximum aantal doorvoereenheden |Wanneer deze limiet wordt overschreden, worden uw gegevens beperkt en wordt een [server bezet-uitzondering](/dotnet/api/microsoft.servicebus.messaging.serverbusyexception) gegenereerd. U kunt een groter aantal doorvoereenheden voor een Standard-laag aanvragen door een [ondersteuningsaanvraag](../articles/azure-portal/supportability/how-to-create-azure-support-request.md) in te dienen. [Extra doorvoereenheden](../articles/event-hubs/event-hubs-auto-inflate.md) zijn beschikbaar in blokken van 20 op basis van een vaste aankoop. |20 | 20 | 
+| Aantal partities per event hub | |32 | 32 | 
+
+> [!NOTE]
+>
+> U kunt gebeurtenissen afzonderlijk of in batch publiceren. 
+> De publicatie limiet (volgens SKU) is van toepassing ongeacht of het nu gaat om één gebeurtenis of een batch. Het publiceren van gebeurtenissen die groter zijn dan de maximale drempel waarde, wordt geweigerd.
 
 ### <a name="dedicated-tier-vs-standard-tier"></a>Toegewezen laag vs. Standard-laag
 De Event Hubs Dedicated-aanbieding wordt gefactureerd tegen een vaste maandelijkse prijs, met een minimum van 4 uur gebruik. De Dedicated-laag biedt alle functies van het Standard-abonnement, maar met schaalcapaciteit voor grote bedrijven en limieten voor klanten met veeleisende werkbelastingen. 

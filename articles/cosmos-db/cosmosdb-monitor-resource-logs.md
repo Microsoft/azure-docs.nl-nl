@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 01/06/2021
 ms.author: sngun
-ms.openlocfilehash: 561375eb41600ba1404bba2bcbf15b6cbfc61851
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 807c9961926b6f1c74f5ed1242e4272e87a98c43
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100595341"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102120365"
 ---
 # <a name="monitor-azure-cosmos-db-data-by-using-diagnostic-settings-in-azure"></a>Azure Cosmos DB-gegevens bewaken met behulp van de diagnostische instellingen in Azure
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -246,7 +246,7 @@ Zie voor gedetailleerde informatie over het maken van een diagnostische instelli
    ```Kusto
    AzureDiagnostics
    | where ResourceProvider=="MICROSOFT.DOCUMENTDB" and Category=="PartitionKeyStatistics"
-   | where todouble(sizeKb_d) > 800000
+   | where todouble(sizeKb_d) > 8000000
    ```
 
 1. Hoe kan ik P99-of P50-replicatie latentie ophalen voor bewerkingen, kosten voor aanvragen of de lengte van het antwoord?

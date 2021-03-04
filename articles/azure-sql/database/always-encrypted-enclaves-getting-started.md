@@ -11,12 +11,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviwer: vanto
 ms.date: 01/15/2021
-ms.openlocfilehash: d9c2bec575f2c7a948f3eb6e65be6a735a3c03e8
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 809ac72977b670faff984ad39effb1c70767e141
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98733806"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102120943"
 ---
 # <a name="tutorial-getting-started-with-always-encrypted-with-secure-enclaves-in-azure-sql-database"></a>Zelf studie: aan de slag met Always Encrypted met beveiligde enclaves in Azure SQL Database
 
@@ -71,40 +71,45 @@ Zie [down load SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-serve
 De vereiste minimale versie van SSMS is 18,8.
 
 
-## <a name="step-1-create-a-server-and-a-dc-series-database"></a>Stap 1: een server en een Data Base van de DC-serie maken
+## <a name="step-1-create-and-configure-a-server-and-a-dc-series-database"></a>Stap 1: een server en een DC-Series-Data Base maken en configureren
 
- In deze stap maakt u een nieuwe Azure SQL Database logische server en een nieuwe Data Base met behulp van de configuratie van de DC-serie. Always Encrypted met beveiligde enclaves in Azure SQL Database maakt gebruik van Intel SGX enclaves, die worden ondersteund in de configuratie van de DC-serie. Zie [DC-Series](service-tiers-vcore.md#dc-series)voor meer informatie.
+In deze stap maakt u een nieuwe Azure SQL Database logische server en een nieuwe Data Base met behulp van de generatie van de fabrikant van de DC-serie, die vereist is voor Always Encrypted met beveiligde enclaves. Zie [DC-Series](service-tiers-vcore.md#dc-series)voor meer informatie.
 
-1. Open een Power shell-console en meld u aan bij Azure. Als dat nodig is, [schakelt u over naar het abonnement](/powershell/azure/manage-subscriptions-azureps) dat u voor deze zelf studie gebruikt.
+1. Open een Power shell-console en importeer de vereiste versie AZ.
+
+  ```PowerShell
+  Import-Module "Az" -MinimumVersion "4.5.0"
+  ```
+  
+2. Meld u aan bij Azure. Als dat nodig is, [schakelt u over naar het abonnement](/powershell/azure/manage-subscriptions-azureps) dat u voor deze zelf studie gebruikt.
 
   ```PowerShell
   Connect-AzAccount
-  $subscriptionId = <your subscription ID>
-  Set-AzContext -Subscription $serverSubscriptionId
+  $subscriptionId = "<your subscription ID>"
+  Set-AzContext -Subscription $subscriptionId
   ```
 
-2. Maak een resource groep die de database server bevat. 
-
-  ```powershell
-  $serverResourceGroupName = "<server resource group name>"
-  $serverLocation = "<Azure region that supports DC-series in SQL Database>"
-  New-AzResourceGroup -Name $serverResourceGroupName -Location $serverLocation 
-  ```
+3. Een nieuwe resourcegroep maken. 
 
   > [!IMPORTANT]
-  > U moet de resource groep maken in een regio die de hardwareconfiguratie van de DC-serie ondersteunt. Zie [Beschik baarheid DC-Series](service-tiers-vcore.md#dc-series-1)voor een lijst met de regio's die momenteel worden ondersteund.
-
-3. Maak een database server. Wanneer u hierom wordt gevraagd, voert u de naam van de server beheerder en een wacht woord in.
+  > U moet de resource groep maken in een regio (locatie) die zowel de generatie van hardware voor de DC-serie als de Microsoft Azure attest ondersteunt. Zie [Beschik baarheid DC-Series](service-tiers-vcore.md#dc-series-1)voor een lijst met REGIO'S die DC-serie ondersteunen. [Dit](https://azure.microsoft.com/global-infrastructure/services/?products=azure-attestation) is de regionale Beschik baarheid van Microsoft Azure Attestation.
 
   ```powershell
-  $serverName = "<server name>" 
-  New-AzSqlServer -ServerName $serverName -ResourceGroupName $serverResourceGroupName -Location $serverLocation
+  $resourceGroupName = "<your new resource group name>"
+  $location = "<Azure region supporting DC-series and Microsoft Azure Attestation>"
+  New-AzResourceGroup -Name $resourceGroupName -Location $location
   ```
 
-4. Een server firewall regel maken waarmee toegang vanuit het opgegeven IP-bereik is toegestaan
+4. Maak een logische Azure SQL-Server. Wanneer u hierom wordt gevraagd, voert u de naam van de server beheerder en een wacht woord in. Zorg ervoor dat u de naam en het wacht woord van de beheerder herinnert. u hebt deze later nodig om verbinding te maken met de server.
+
+  ```powershell
+  $serverName = "<your server name>" 
+  New-AzSqlServer -ServerName $serverName -ResourceGroupName $resourceGroupName -Location $location 
+  ```
+
+5. Maak een server firewall regel waarmee toegang vanuit het opgegeven IP-bereik is toegestaan.
   
   ```powershell
-  # The ip address range that you want to allow to access your server
   $startIp = "<start of IP range>"
   $endIp = "<end of IP range>"
   $serverFirewallRule = New-AzSqlServerFirewallRule -ResourceGroupName $resourceGroupName `
@@ -112,21 +117,11 @@ De vereiste minimale versie van SSMS is 18,8.
     -FirewallRuleName "AllowedIPs" -StartIpAddress $startIp -EndIpAddress $endIp
   ```
 
-5. Wijs een beheerde systeem identiteit toe aan uw server. U hebt dit later nodig om uw server toegang te geven tot Microsoft Azure-Attestation.
-
-  ```powershell
-  Set-AzSqlServer -ServerName $serverName -ResourceGroupName $serverResourceGroupName -AssignIdentity 
-  ```
-
-6. Haal een object-ID op van de identiteit die aan uw server is toegewezen. Sla de resulterende object-ID op. U hebt de ID nodig in een latere sectie.
-
-  > [!NOTE]
-  > Het kan een paar seconden duren voordat de zojuist toegewezen beheerde systeem identiteit in Azure Active Directory wordt door gegeven. Als het onderstaande script een leeg resultaat retourneert, voert u de bewerking opnieuw uit.
+6. Wijs een beheerde systeem identiteit toe aan uw server. 
 
   ```PowerShell
-  $server = Get-AzSqlServer -ServerName $serverName -ResourceGroupName $serverResourceGroupName 
+  $server = Set-AzSqlServer -ServerName $serverName -ResourceGroupName $resourceGroupName -AssignIdentity
   $serverObjectId = $server.Identity.PrincipalId
-  $serverObjectId
   ```
 
 7. Maak een Data Base van de DC-serie.
@@ -136,12 +131,26 @@ De vereiste minimale versie van SSMS is 18,8.
   $edition = "GeneralPurpose"
   $vCore = 2
   $generation = "DC"
-  New-AzSqlDatabase -ResourceGroupName $serverResourceGroupName -ServerName $serverName -DatabaseName $databaseName -Edition $edition -Vcore $vCore -ComputeGeneration $generation
+  New-AzSqlDatabase -ResourceGroupName $resourceGroupName `
+    -ServerName $serverName `
+    -DatabaseName $databaseName `
+    -Edition $edition `
+    -Vcore $vCore `
+    -ComputeGeneration $generation
   ```
 
-## <a name="step-2-configure-an-attestation-provider"></a>Stap 2: een Attestation-provider configureren
+8. De informatie over uw server en de Data Base op te halen en op te slaan. U hebt deze informatie nodig, evenals de naam van de beheerder en het wacht woord uit stap 4 in deze sectie, in latere secties.
 
-In deze stap maakt en configureert u een Attestation-provider in Microsoft Azure Attestation. Dit is nodig om de beveiligde enclave in uw database server te verzorgen.
+  ```powershell
+  Write-Host 
+  Write-Host "Fully qualified server name: $($server.FullyQualifiedDomainName)" 
+  Write-Host "Server Object Id: $serverObjectId"
+  Write-Host "Database name: $databaseName"
+  ```
+  
+## <a name="step-2-configure-an-attestation-provider"></a>Stap 2: een Attestation-provider configureren 
+
+In deze stap maakt en configureert u een Attestation-provider in Microsoft Azure Attestation. Dit is nodig om de beveiligde enclave te bevestigen die uw data base gebruikt.
 
 1. Kopieer het onderstaande Attestation-beleid en sla het beleid op in een tekst bestand (txt). Zie [een Attestation-provider maken en configureren](always-encrypted-enclaves-configure-attestation.md#create-and-configure-an-attestation-provider)voor meer informatie over het onderstaande beleid.
 
@@ -157,60 +166,60 @@ In deze stap maakt en configureert u een Attestation-provider in Microsoft Azure
   };
   ```
 
-2. Importeer de vereiste versies van `Az.Accounts` en `Az.Attestation` .  
+2. Importeer de vereiste versie van `Az.Attestation` .  
 
   ```powershell
-  Import-Module "Az.Accounts" -MinimumVersion "1.9.2"
   Import-Module "Az.Attestation" -MinimumVersion "0.1.8"
   ```
-
-3. Maak een resource groep voor de Attestation-provider.
-
-  ```powershell
-  $attestationLocation = $serverLocation
-  $attestationResourceGroupName = "<attestation provider resource group name>"
-  New-AzResourceGroup -Name $attestationResourceGroupName -Location $location  
-  ```
-
-4. Maak een Attestation-provider. 
+  
+3. Maak een Attestation-provider. 
 
   ```powershell
-  $attestationProviderName = "<attestation provider name>" 
-  New-AzAttestation -Name $attestationProviderName -ResourceGroupName $attestationResourceGroupName -Location $attestationLocation
+  $attestationProviderName = "<your attestation provider name>" 
+  New-AzAttestation -Name $attestationProviderName -ResourceGroupName $resourceGroupName -Location $location
   ```
 
-5. Uw Attestation-beleid configureren.
+4. Uw Attestation-beleid configureren.
   
   ```powershell
-  $policyFile = "<the pathname of the file from step 1 in this section"
+  $policyFile = "<the pathname of the file from step 1 in this section>"
   $teeType = "SgxEnclave"
   $policyFormat = "Text"
   $policy=Get-Content -path $policyFile -Raw
-  Set-AzAttestationPolicy -Name $attestationProviderName -ResourceGroupName $attestationResourceGroupName -Tee $teeType -Policy $policy -PolicyFormat  $policyFormat
+  Set-AzAttestationPolicy -Name $attestationProviderName `
+    -ResourceGroupName $resourceGroupName `
+    -Tee $teeType `
+    -Policy $policy `
+    -PolicyFormat  $policyFormat
   ```
 
-6. Verleen uw logische Azure SQL-Server toegang tot uw Attestation-provider. In deze stap gebruiken we de object-ID van de beheerde service-identiteit die u eerder aan uw server hebt toegewezen.
+5. Verleen uw logische Azure SQL-Server toegang tot uw Attestation-provider. In deze stap gebruikt u de object-ID van de beheerde service-identiteit die u eerder aan uw server hebt toegewezen.
 
   ```powershell
-  New-AzRoleAssignment -ObjectId $serverObjectId -RoleDefinitionName "Attestation Reader" -ResourceGroupName $attestationResourceGroupName  
+  New-AzRoleAssignment -ObjectId $serverObjectId `
+    -RoleDefinitionName "Attestation Reader" `
+    -ResourceName $attestationProviderName `
+    -ResourceType "Microsoft.Attestation/attestationProviders" `
+    -ResourceGroupName $resourceGroupName  
   ```
 
-7. Haal de Attestation-URL op.
+6. Haal de Attestation-URL op die verwijst naar een Attestation-beleid dat u hebt geconfigureerd voor de SGX-enclave. Sla de URL op, omdat u deze later nodig hebt.
 
   ```powershell
-  $attestationProvider = Get-AzAttestation -Name $attestationProviderName -ResourceGroupName $attestationResourceGroupName 
+  $attestationProvider = Get-AzAttestation -Name $attestationProviderName -ResourceGroupName $resourceGroupName 
   $attestationUrl = $attestationProvider.AttestUri + “/attest/SgxEnclave”
-  Write-Host "Your attestation URL is: " $attestationUrl 
+  Write-Host
+  Write-Host "Your attestation URL is: $attestationUrl"
   ```
-
-8.  Sla de resulterende Attestation-URL op die verwijst naar een Attestation-beleid dat u hebt geconfigureerd voor de SGX-enclave. U hebt deze later nodig. De URL van de Attestation moet er als volgt uitzien: `https://contososqlattestation.uks.attest.azure.net/attest/SgxEnclave`
+  
+  De URL van de Attestation moet er als volgt uitzien: `https://contososqlattestation.uks.attest.azure.net/attest/SgxEnclave`
 
 ## <a name="step-3-populate-your-database"></a>Stap 3: uw data base vullen
 
 In deze stap maakt u een tabel en vult u deze met enkele gegevens die u later versleutelt en query's uitvoert.
 
 1. Open SSMS en maak verbinding met de **ContosoHR** -data base in de logische Azure SQL-Server die u hebt gemaakt **zonder** always encrypted ingeschakeld in de database verbinding.
-    1. Geef in het dialoog venster **verbinding maken met server** de server naam op (bijvoorbeeld *myserver123.database.Windows.net*) en voer de gebruikers naam en het wacht woord in die u eerder hebt geconfigureerd.
+    1. Geef in het dialoog venster **verbinding maken met server** de volledig gekwalificeerde naam op van uw server (bijvoorbeeld *myserver123.database.Windows.net*) en voer de gebruikers naam van de beheerder en het wacht woord in die u hebt opgegeven tijdens het maken van de server.
     2. Klik op **opties >>** en selecteer het tabblad **verbindings eigenschappen** . Zorg ervoor dat u de **ContosoHR** -data base selecteert (niet de standaard-data base). 
     3. Selecteer het tabblad **Always encrypted** .
     4. Zorg ervoor dat het selectie vakje **Always encrypted inschakelen (kolom versleuteling)** **niet** is ingeschakeld.
@@ -292,7 +301,7 @@ In deze stap versleutelt u de gegevens die zijn opgeslagen in de kolommen **SSN*
 
 1. Open een nieuw exemplaar van SSMS en maak verbinding met uw data base **met** always encrypted ingeschakeld voor de database verbinding.
     1. Start een nieuw exemplaar van SSMS.
-    2. Geef in het dialoog venster **verbinding maken met server** de naam van uw server op, selecteer een verificatie methode en geef uw referenties op.
+    2. Geef in het dialoog venster **verbinding maken met server** de volledig gekwalificeerde naam op van uw server (bijvoorbeeld *myserver123.database.Windows.net*) en voer de gebruikers naam van de beheerder en het wacht woord in die u hebt opgegeven tijdens het maken van de server.
     3. Klik op **opties >>** en selecteer het tabblad **verbindings eigenschappen** . Zorg ervoor dat u de **ContosoHR** -data base selecteert (niet de standaard-data base). 
     4. Selecteer het tabblad **Always encrypted** .
     5. Zorg ervoor dat het selectie vakje **Always encrypted inschakelen (kolom versleuteling)** is geselecteerd.

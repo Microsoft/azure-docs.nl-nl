@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/07/2020
 ms.author: mlottner
-ms.openlocfilehash: 8191d68f701a3be6a37d8623d2d900f6aa6c1851
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cec28f9290808836ec2dfd334b23fe8c76df03fc
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90936300"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102120059"
 ---
-# <a name="security-module-for-azure-rtos-api-preview"></a>Beveiligings module voor Azure RTO'S-API (preview)
+# <a name="security-module-for-azure-rtos-api"></a>API voor beveiligingsmodule voor Azure RTOS 
 
 Deze API is alleen bedoeld voor gebruik met de beveiligings module voor Azure RTO'S. Zie de [Security module voor Azure Rto's github resource](https://github.com/azure-rtos/azure-iot-preview/releases)voor meer informatie. 
 

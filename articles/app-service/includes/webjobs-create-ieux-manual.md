@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 10/16/2018
 ms.title: include
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 5ef61502d0b2fccc92ca606992e965b45764baa0
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 5687fb99c27b8b2141e0a2a817327cfbb124951a
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101745658"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102109368"
 ---
 ## <a name="create-a-manually-triggered-webjob"></a><a name="CreateOnDemand"></a> Een hand matig geactiveerde Webtaak maken
 
@@ -28,8 +28,8 @@ ms.locfileid: "101745658"
 
     ![Scherm afbeelding met de instellingen die moeten worden ingesteld voor het maken van een hand matig geactiveerde Webtaak.](../media/web-sites-create-web-jobs/addwjtriggered.png)
     
-    | Instelling      | Voorbeeldwaarde   | Beschrijving  |
-    | ------------ | ----------------- | ------------ |
+    | Instelling      | Voorbeeldwaarde   | 
+    | ------------ | ----------------- | 
    | <abbr title="Een naam die uniek is binnen een App Service-app. Moet beginnen met een letter of een cijfer en mag geen speciale tekens bevatten `-` , behalve en `_` .">Name</abbr> | myTriggeredWebJob | 
     | <abbr title="Een *zip* -bestand dat uw uitvoer bare bestand of script bestanden bevat, evenals alle ondersteunende bestanden die nodig zijn om het programma of script uit te voeren.">Bestand uploaden</abbr> | ConsoleApp.zip |
     | <abbr title="Typen bevatten doorlopend, geactiveerd.">Type</abbr> | Geactiveerd | 

@@ -2,18 +2,18 @@
 title: Kubernetes-agents die geschikt zijn voor Azure-Arc bijwerken
 services: azure-arc
 ms.service: azure-arc
-ms.date: 03/02/2021
+ms.date: 03/03/2021
 ms.topic: article
 author: shashankbarsin
 ms.author: shasb
 description: Besturings agent-upgrades voor Azure Arc enabled Kubernetes
 keywords: Kubernetes, Arc, azure, K8s, containers, agent, upgrade
-ms.openlocfilehash: 3a5355269db4ccfc91612f661b464556b22c1d35
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 172654f655e594c295a8807b417c32d7849bd4b1
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662265"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102121912"
 ---
 # <a name="upgrading-azure-arc-enabled-kubernetes-agents"></a>Kubernetes-agents die geschikt zijn voor Azure-Arc bijwerken
 
@@ -84,6 +84,6 @@ Eén secundaire versie van Azure Arc enabled Kubernetes-agents wordt ongeveer ee
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Een cluster verbinden met Azure Arc](./connect-cluster.md)
-* [Configuraties maken op uw Kubernetes-cluster met Arc-functionaliteit](./use-gitops-connected-cluster.md)
-* [Azure Policy gebruiken om configuraties op schaal toe te passen](./use-azure-policy.md)
+* Door loop onze Snelstartgids om [een Kubernetes-cluster te verbinden met Azure Arc](./connect-cluster.md).
+* Hebt u al een Kubernetes-cluster verbonden met Azure-Arc? [Maak configuraties op uw Kubernetes-cluster met Arc-functionaliteit](./use-gitops-connected-cluster.md).
+* Meer informatie over het [gebruik van Azure Policy om configuraties op schaal toe te passen](./use-azure-policy.md).

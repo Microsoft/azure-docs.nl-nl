@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 04/21/2020
+ms.date: 03/04/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 1ad9cc3d6d07c8d744ec667e2fffb035848121b4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c9104fb4598eb62ed96d0b21734053fa118b5237
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85203245"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102120279"
 ---
 # <a name="stringcollection-claims-transformations"></a>StringCollection-claim transformaties
 
@@ -28,10 +28,10 @@ In dit artikel vindt u voor beelden voor het gebruik van de teken reeks voor het
 
 Voegt een teken reeks claim toe aan een nieuwe unieke waarde stringCollection claim.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | item | tekenreeks | Het claim type dat aan de uitvoer claim moet worden toegevoegd. |
-| Input claim | verzameling | stringCollection | Beschrijving Als deze optie is opgegeven, worden de items uit deze verzameling gekopieerd en wordt het item toegevoegd aan het einde van de claim van de verzameling van de uitvoer. |
+| Input claim | verzameling | stringCollection | De teken reeks verzameling die moet worden toegevoegd aan de uitvoer claim. Als de verzameling items bevat, worden de items door de claim transformatie gekopieerd en wordt het item toegevoegd aan het einde van de claim van de verzameling van de uitvoer. |
 | Output claim | verzameling | stringCollection | Het claim type dat is geproduceerd nadat deze claim transformatie is aangeroepen, met de waarde die is opgegeven in de invoer claim. |
 
 Gebruik deze claim transformatie om een teken reeks toe te voegen aan een nieuwe of bestaande stringCollection. Dit wordt vaak gebruikt in een **Aad-UserWriteUsingAlternativeSecurityId-** technisch profiel. Voordat een nieuw sociaal account wordt gemaakt, leest **CreateOtherMailsFromEmail** claims Transform het claim type en voegt de waarde toe aan het **otherMails** claim type.
@@ -62,9 +62,9 @@ De volgende claim transformatie voegt het **e-mail** claim type toe aan **otherM
 
 Voegt een teken reeks parameter toe aan een nieuwe unieke waarde stringCollection claim.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
-| Input claim | verzameling | stringCollection | Beschrijving Als deze optie is opgegeven, worden de items uit deze verzameling gekopieerd en wordt het item toegevoegd aan het einde van de claim van de verzameling van de uitvoer. |
+| Input claim | verzameling | stringCollection | De teken reeks verzameling die moet worden toegevoegd aan de uitvoer claim. Als de verzameling items bevat, worden de items door de claim transformatie gekopieerd en wordt het item toegevoegd aan het einde van de claim van de verzameling van de uitvoer. |
 | Parameter | item | tekenreeks | De waarde die moet worden toegevoegd aan de uitvoer claim. |
 | Output claim | verzameling | stringCollection | Het claim type dat is geproduceerd nadat deze claim transformatie is aangeroepen, met de waarde die is opgegeven in de invoer parameter. |
 
@@ -97,7 +97,7 @@ Gebruik deze claim transformatie om een teken reeks waarde toe te voegen aan een
 
 Hiermee wordt het eerste item opgehaald uit de gegeven teken reeks verzameling.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | verzameling | stringCollection | De ClaimTypes die worden gebruikt door de claim transformatie om het item op te halen. |
 | Output claim | extractedItem | tekenreeks | De ClaimTypes die worden geproduceerd nadat deze ClaimsTransformation is aangeroepen. Het eerste item in de verzameling. |
@@ -125,16 +125,16 @@ In het volgende voor beeld wordt de **otherMails** -claim gelezen en wordt het e
 
 ## <a name="stringcollectioncontains"></a>StringCollectionContains
 
-Hiermee wordt gecontroleerd of een StringCollection claim type een-element bevat
+Hiermee wordt gecontroleerd of een StringCollection claim type een-element bevat.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | Input claim | stringCollection | Het claim type dat moet worden doorzocht. |
 |Parameter|item|tekenreeks|De waarde waarnaar moet worden gezocht.|
 |Parameter|ignoreCase|tekenreeks|Hiermee geeft u op of deze vergelijking het hoofdletter gebruik moet negeren van de teken reeksen die worden vergeleken.|
 | Output claim | Output claim | booleaans | Het claim type dat is geproduceerd nadat deze ClaimsTransformation is aangeroepen. Een Booleaanse indicator als de verzameling een dergelijke teken reeks bevat |
 
-In het volgende voor beeld wordt gecontroleerd of het `roles` stringCollection-claim type de waarde **admin**bevat.
+In het volgende voor beeld wordt gecontroleerd of het `roles` stringCollection-claim type de waarde **admin** bevat.
 
 ```xml
 <ClaimsTransformation Id="IsAdmin" TransformationMethod="StringCollectionContains">
@@ -163,7 +163,7 @@ In het volgende voor beeld wordt gecontroleerd of het `roles` stringCollection-c
 
 Hiermee wordt gecontroleerd of een StringCollection claim type een claim waarde bevat.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | verzameling | stringCollection | Het claim type dat moet worden doorzocht. |
 | Input claim | item|tekenreeks| Het claim type met de waarde die moet worden gezocht.|

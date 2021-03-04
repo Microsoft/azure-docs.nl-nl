@@ -7,12 +7,12 @@ ms.service: cache
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 02/08/2021
-ms.openlocfilehash: 37496b9358ec72c79f8d26e32a92485f001e0e9d
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 8dbde1f74c700e772823d61b3e35a464f9bbc17e
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102031664"
+ms.locfileid: "102120960"
 ---
 # <a name="quickstart-create-a-redis-enterprise-cache-preview"></a>Quick Start: een redis Enter prise-cache maken (preview)
 
@@ -49,13 +49,7 @@ U hebt een Azure-abonnement nodig voordat u kunt beginnen. Als u nog geen accoun
 
 1. Selecteer **Volgende: Netwerken** en ga door.
 
-   > [!NOTE] 
-   > De optie Private Links wordt momenteel geïmplementeerd, en is mogelijk niet beschikbaar in uw regio.
-   >
-
-1. Selecteer **Volgende: Geavanceerd** en stel **Clusterbeleid** in **Enterprise** in.
-   
-   U kunt de standaardinstellingen behouden of deze indien nodig aanpassen. Als u **Alleen toegang via TLS toestaan** inschakelt, moet u TLS gebruiken om vanuit uw toepassing toegang te krijgen tot de nieuwe cache.
+1. Selecteer **Volgende: Geavanceerd** en stel **Clusterbeleid** in **Enterprise** in. Schakel **niet-TLS-toegang alleen** in als u van plan bent om verbinding te maken met de nieuwe cache zonder TLS. Dit wordt echter niet aanbevolen.
 
    :::image type="content" source="media/cache-create/enterprise-tier-advanced.png" alt-text="Tabblad Geavanceerd van de Enter prise-laag":::
 

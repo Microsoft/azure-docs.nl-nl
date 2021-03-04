@@ -7,25 +7,29 @@ ms.topic: quickstart
 ms.date: 09/29/2020
 ms.author: yegu
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: b880762d43cd4e105b79613aadb476611228a47e
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
-ms.translationtype: HT
+ms.openlocfilehash: 342125da35868b2b0f71609c4114cc561821eb1a
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92536603"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102121130"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-an-aspnet-web-app"></a>Quickstart: Azure Cache voor Redis met ASP.NET-web-app gebruiken 
 
 In deze snelstartgids gebruikt u Visual Studio 2019 om een ASP.NET-web-app die verbinding maakt met Azure Cache voor Redis om gegevens op te slaan en op te halen uit de cache. U kunt de app vervolgens in Azure App Service implementeren.
 
+## <a name="skip-to-the-code-on-github"></a>Ga naar de code op GitHub
+
+Als u direct naar de code wilt gaan, raadpleegt u de [ASP.net Snelstartgids](https://github.com/Azure-Samples/azure-cache-redis-samples/tree/main/quickstart/aspnet) op github.
+
 ## <a name="prerequisites"></a>Vereisten
 
 - Azure-abonnement: [u kunt een gratis abonnement nemen](https://azure.microsoft.com/free/dotnet)
-- [Visual Studio 2019](https://www.visualstudio.com/downloads/) met de workloads **ASP.NET and web development** en **Azure development** .
+- [Visual Studio 2019](https://www.visualstudio.com/downloads/) met de workloads **ASP.NET and web development** en **Azure development**.
 
 ## <a name="create-the-visual-studio-project"></a>Het Visual Studio-project maken
 
-1. Open Visual Studio en selecteer vervolgens **Bestand** >**Nieuw** > **Project** .
+1. Open Visual Studio en selecteer vervolgens **Bestand** >**Nieuw** > **Project**.
 
 2. Voer in het dialoogvenster **Nieuw project** de volgende stappen uit:
 
@@ -33,19 +37,19 @@ In deze snelstartgids gebruikt u Visual Studio 2019 om een ASP.NET-web-app die v
 
     a. Vouw in de lijst **Sjablonen** het knooppunt **Visual C#** uit.
 
-    b. Selecteer **Cloud** .
+    b. Selecteer **Cloud**.
 
-    c. Selecteer **ASP.NET-webtoepassing** .
+    c. Selecteer **ASP.NET-webtoepassing**.
 
     d. Controleer of **.NET Framework 4.5.2** of hoger is geselecteerd.
 
     e. Geef in het vak **Naam** een naam op voor het project. In dit voorbeeld wordt de naam **ContosoTeamStats** gebruikt.
 
-    f. Selecteer **OK** .
+    f. Selecteer **OK**.
    
 3. Selecteer **MVC** als het projecttype.
 
-4. Zorg ervoor dat **Geen verificatie** is opgegeven voor de instellingen bij **Verificatie** . Afhankelijk van uw versie van Visual Studio wijkt de standaardinstelling voor **Verificatie** mogelijk af. Als u dit wilt wijzigen, selecteert u **Verificatie wijzigen** en vervolgens **Geen verificatie** .
+4. Zorg ervoor dat **Geen verificatie** is opgegeven voor de instellingen bij **Verificatie**. Afhankelijk van uw versie van Visual Studio wijkt de standaardinstelling voor **Verificatie** mogelijk af. Als u dit wilt wijzigen, selecteert u **Verificatie wijzigen** en vervolgens **Geen verificatie**.
 
 5. Selecteer **OK** om het project te maken.
 
@@ -59,9 +63,9 @@ Maak vervolgens de cache voor de app.
 
 #### <a name="to-edit-the-cachesecretsconfig-file"></a>Het bestand *CacheSecrets.config* bewerken
 
-1. Maak op de computer een bestand met de naam *CacheSecrets.config* . Sla dit bestand op een locatie op waar het niet wordt ingecheckt met de broncode van de voorbeeldtoepassing. Voor deze snelstart bevindt het bestand *CacheSecrets.config* zich op *C:\AppSecrets\CacheSecrets.config* .
+1. Maak op de computer een bestand met de naam *CacheSecrets.config*. Sla dit bestand op een locatie op waar het niet wordt ingecheckt met de broncode van de voorbeeldtoepassing. Voor deze snelstart bevindt het bestand *CacheSecrets.config* zich op *C:\AppSecrets\CacheSecrets.config*.
 
-1. Bewerk het bestand *CacheSecrets.config* . Voeg nu de volgende inhoud toe:
+1. Bewerk het bestand *CacheSecrets.config*. Voeg nu de volgende inhoud toe:
 
     ```xml
     <appSettings>
@@ -107,7 +111,7 @@ De ASP.NET-runtime voegt de inhoud van het externe bestand samen met de opmaak v
 
 ### <a name="to-configure-the-application-to-use-stackexchangeredis"></a>De toepassing configureren voor het gebruik van StackExchange.Redis
 
-1. Als u de app wilt configureren voor gebruik van het NuGet-pakket [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) voor Visual Studio, selecteert u **Tools > NuGet Package Manager > Package Manager Console** .
+1. Als u de app wilt configureren voor gebruik van het NuGet-pakket [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) voor Visual Studio, selecteert u **Tools > NuGet Package Manager > Package Manager Console**.
 
 2. Voer de volgende opdracht uit vanuit het venster `Package Manager Console`:
 
@@ -119,7 +123,7 @@ De ASP.NET-runtime voegt de inhoud van het externe bestand samen met de opmaak v
 
 ### <a name="to-update-the-homecontroller-and-layout"></a>De HomeController en lay-out bijwerken
 
-1. Vouw in **Solution Explorer** de map **Controllers** uit en open vervolgens het bestand *HomeController.cs* .
+1. Vouw in **Solution Explorer** de map **Controllers** uit en open vervolgens het bestand *HomeController.cs*.
 
 2. Voeg de volgende twee `using`-instructies boven aan het bestand toe ter ondersteuning van de cacheclient- en app-instellingen.
 
@@ -189,7 +193,7 @@ De ASP.NET-runtime voegt de inhoud van het externe bestand samen met de opmaak v
 
     ```
 
-4. Vouw in **Solution Explorer** de map **Views** > **Shared** uit. Open vervolgens het bestand *_Layout.cshtml* .
+4. Vouw in **Solution Explorer** de map **Views** > **Shared** uit. Open vervolgens het bestand *_Layout.cshtml*.
 
     Vervang:
     
@@ -205,9 +209,9 @@ De ASP.NET-runtime voegt de inhoud van het externe bestand samen met de opmaak v
 
 ### <a name="to-add-a-new-rediscache-view"></a>Een nieuwe RedisCache-weergave toevoegen
 
-1. Vouw in **Solution Explorer** de map **Views** uit en klik met de rechtermuisknop op de map **Home** . Kies **Add** > **View...** .
+1. Vouw in **Solution Explorer** de map **Views** uit en klik met de rechtermuisknop op de map **Home**. Kies **Add** > **View...** .
 
-2. Voer in het dialoogvenster **Add View** als weergavenaam in: **RedisCache** . Selecteer vervolgens **Toevoegen** .
+2. Voer in het dialoogvenster **Add View** als weergavenaam in: **RedisCache**. Selecteer vervolgens **Toevoegen**.
 
 3. Vervang de code in het bestand *RedisCache.cshtml* door de volgende code:
 
@@ -266,11 +270,11 @@ Nadat het lokaal testen van de app is geslaagd, implementeert u de app in Azure 
 
 ### <a name="to-publish-the-app-to-azure"></a>De app publiceren in Azure
 
-1. Klik in Visual Studio met de rechtermuisknop op het projectknooppunt in Solution Explorer. Selecteer vervolgens **Publiceren** .
+1. Klik in Visual Studio met de rechtermuisknop op het projectknooppunt in Solution Explorer. Selecteer vervolgens **Publiceren**.
 
     ![Publiceren](./media/cache-web-app-howto/cache-publish-app.png)
 
-2. Selecteer **Microsoft Azure App Service** , selecteer **Nieuwe maken** en selecteer vervolgens **Publiceren** .
+2. Selecteer **Microsoft Azure App Service**, selecteer **Nieuwe maken** en selecteer vervolgens **Publiceren**.
 
     ![Publiceren naar App Service](./media/cache-web-app-howto/cache-publish-to-app-service.png)
 
@@ -280,12 +284,12 @@ Nadat het lokaal testen van de app is geslaagd, implementeert u de app in Azure 
     | ------- | :---------------: | ----------- |
     | **Naam van app** | Gebruik de standaard. | De app-naam is de hostnaam voor de app wanneer deze is geïmplementeerd in Azure. Aan de naam is mogelijk een tijdstempel als achtervoegsel toegevoegd om deze uniek te maken, indien nodig. |
     | **Abonnement** | Kies uw Azure-abonnement. | Voor dit abonnement worden eventuele gerelateerde hostingkosten in rekening gebracht. Als u meerdere Azure-abonnementen hebt, controleert u of het gewenste abonnement is geselecteerd.|
-    | **Resourcegroep** | Gebruik dezelfde resourcegroep waar u de cache hebt gemaakt. (Bijvoorbeeld, *TestResourceGroup* .) | Met een resourcegroep kunt u alle resources als een groep beheren. Als u de app later wilt verwijderen, verwijdert u gewoon de groep. |
-    | **App Service-plan** | Selecteer **Nieuw** en maak vervolgens een nieuw App Service-plan met de naam *TestingPlan* . <br />Gebruik dezelfde **locatie** die u hebt gebruikt bij het maken van uw cache. <br />Kies **Vrij** voor de grootte. | Een App Service-plan definieert een set van rekenresources waarmee een web-app wordt uitgevoerd. |
+    | **Resourcegroep** | Gebruik dezelfde resourcegroep waar u de cache hebt gemaakt. (Bijvoorbeeld, *TestResourceGroup*.) | Met een resourcegroep kunt u alle resources als een groep beheren. Als u de app later wilt verwijderen, verwijdert u gewoon de groep. |
+    | **App Service-plan** | Selecteer **Nieuw** en maak vervolgens een nieuw App Service-plan met de naam *TestingPlan*. <br />Gebruik dezelfde **locatie** die u hebt gebruikt bij het maken van uw cache. <br />Kies **Vrij** voor de grootte. | Een App Service-plan definieert een set van rekenresources waarmee een web-app wordt uitgevoerd. |
 
     ![Dialoogvenster App Service](./media/cache-web-app-howto/cache-create-app-service-dialog.png)
 
-4. Nadat u de instellingen voor App Service-hosting hebt geconfigureerd, selecteert u **Maken** .
+4. Nadat u de instellingen voor App Service-hosting hebt geconfigureerd, selecteert u **Maken**.
 
 5. Controleer het venster **Uitvoer** in Visual Studio om de publicatiestatus te zien. Nadat de app is gepubliceerd, wordt de URL voor de app geregistreerd:
 
@@ -301,7 +305,7 @@ Nadat de nieuwe app is gepubliceerd, voegt u een nieuwe app-instelling toe. Deze
 
     ![App zoeken](./media/cache-web-app-howto/cache-find-app-service.png)
 
-2. Voeg een nieuwe app instelling met de naam **CacheConnection** toe die de app kan gebruiken om verbinding te maken met de cache. Gebruik dezelfde waarde die u hebt geconfigureerd voor `CacheConnection` in het bestand *CacheSecrets.config* . De waarde bevat de hostnaam en toegangssleutel van de cache.
+2. Voeg een nieuwe app instelling met de naam **CacheConnection** toe die de app kan gebruiken om verbinding te maken met de cache. Gebruik dezelfde waarde die u hebt geconfigureerd voor `CacheConnection` in het bestand *CacheSecrets.config*. De waarde bevat de hostnaam en toegangssleutel van de cache.
 
     ![App-instelling toevoegen](./media/cache-web-app-howto/cache-add-app-setting.png)
 
@@ -324,13 +328,13 @@ Als klaar bent met de voorbeeldtoepassing uit de snelstart, kunt u de Azure-reso
 
 ### <a name="to-delete-a-resource-group"></a>Een resourcegroep verwijderen
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com) en selecteer vervolgens **Resourcegroepen** .
+1. Meld u aan bij [Azure Portal](https://portal.azure.com) en selecteer vervolgens **Resourcegroepen**.
 
-2. Typ in het vak **Filteren op naam...** de naam van de resourcegroep. In de instructies voor dit artikel is een resourcegroep met de naam *TestResources* gebruikt. Selecteer in de resourcegroep, in de resultatenlijst, de optie **...** . Selecteer vervolgens **Resourcegroep verwijderen** .
+2. Typ in het vak **Filteren op naam...** de naam van de resourcegroep. In de instructies voor dit artikel is een resourcegroep met de naam *TestResources* gebruikt. Selecteer in de resourcegroep, in de resultatenlijst, de optie **...** . Selecteer vervolgens **Resourcegroep verwijderen**.
 
     ![Verwijderen](./media/cache-web-app-howto/cache-delete-resource-group.png)
 
-U wordt gevraagd om het verwijderen van de resourcegroep te bevestigen. Typ ter bevestiging de naam van de resourcegroep. Selecteer vervolgens **Verwijderen** .
+U wordt gevraagd om het verwijderen van de resourcegroep te bevestigen. Typ ter bevestiging de naam van de resourcegroep. Selecteer vervolgens **Verwijderen**.
 
 Na enkele ogenblikken worden de resourcegroep en alle bijbehorende resources verwijderd.
 

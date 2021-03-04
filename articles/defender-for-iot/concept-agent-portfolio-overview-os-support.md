@@ -1,5 +1,5 @@
 ---
-title: Overzicht van agent portfolio en ondersteuning van besturings systemen (preview-versie)
+title: Overzicht van agent portfolio en ondersteuning van besturings systemen
 description: Azure Defender voor IoT biedt een grote Port Folio met agents die zijn gebaseerd op het apparaattype.
 author: shhazam-ms
 manager: rkarlin
@@ -7,14 +7,14 @@ ms.author: shhazam
 ms.date: 1/20/2021
 ms.topic: quickstart
 ms.service: azure
-ms.openlocfilehash: f731b034b5d4f795bae51107e9ff4e2e90788d7d
-ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.openlocfilehash: e2897018d1695bde665e1d1aca180e5268851a0b
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99810172"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102120144"
 ---
-# <a name="agent-portfolio-overview-and-os-support-preview"></a>Overzicht van agent portfolio en ondersteuning van besturings systemen (preview-versie)
+# <a name="agent-portfolio-overview-and-os-support"></a>Overzicht van agent portfolio en ondersteuning van besturings systemen 
 
 Azure Defender voor IoT biedt een grote Port Folio met agents die zijn gebaseerd op het apparaattype. 
 
@@ -38,4 +38,4 @@ De Azure Defender voor IoT micro agent is ingebouwd als onderdeel van het Azure 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het [zelfstandige overzicht van de micro agent (preview)](concept-standalone-micro-agent-overview.md).
+Meer informatie over het [zelfstandige overzicht van de micro agent ](concept-standalone-micro-agent-overview.md).

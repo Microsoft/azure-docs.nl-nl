@@ -1,5 +1,5 @@
 ---
-title: Defender installeren voor IoT micro agent (preview)
+title: Defender voor IoT micro agent installeren
 titleSuffix: Azure Defender for IoT
 description: Meer informatie over het installeren en verifiëren van de Defender micro agent.
 author: shhazam-ms
@@ -8,20 +8,20 @@ ms.author: shhazam
 ms.date: 3/3/2021
 ms.topic: quickstart
 ms.service: azure
-ms.openlocfilehash: 4125fc3c2f03104eeca108a73d83f2fad44bebc1
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: ccf28c47e2e1438a141e2497da70d32c1832ddb9
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102051749"
+ms.locfileid: "102120433"
 ---
-# <a name="install-defender-for-iot-micro-agent-preview"></a>Defender installeren voor IoT micro agent (preview)
+# <a name="install-defender-for-iot-micro-agent"></a>Defender voor IoT micro agent installeren 
 
 Dit artikel bevat een uitleg over het installeren en verifiëren van de Defender micro agent.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voordat u de Defender voor IoT-module installeert, moet u een module-ID maken in de IoT Hub. Zie [een Defender IOT micro Agent-module maken (preview)](quickstart-create-micro-agent-module-twin.md)voor meer informatie over het maken van een module-identiteit.
+Voordat u de Defender voor IoT-module installeert, moet u een module-ID maken in de IoT Hub. Zie voor meer informatie over het maken van een module-identiteit [een Defender IOT micro Agent-module maken, twee ](quickstart-create-micro-agent-module-twin.md).
 
 ## <a name="install-the-package"></a>Het pakket installeren
 

@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 10/28/2020
+ms.date: 03/04/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e4e90d91b8e6ae017f00e37304c4da56cd618732
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: b69492dc41786a677043df5e77c9d12aa26893f6
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102095303"
+ms.locfileid: "102119770"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Over claim resolvers in Azure Active Directory B2C aangepast beleid
 
@@ -87,7 +87,7 @@ De volgende secties bevatten een lijst met beschik bare claim resolvers.
 | {Context: CorrelationId} | De correlatie-ID.  | 00000000-0000-0000-0000-000000000000 |
 | {Context: DateTimeInUtc} |De datum en tijd in UTC.  | 10/10/2018 12:00:00 UUR |
 | {Context: als Deployment mode} |De implementatie modus voor beleid.  | Productie |
-| {Context: hostnaam} | De hostnaam voor de huidige aanvraag.  | contoso.b2clogin.com |
+| {Context: hostnaam} | De hostnaam van de huidige aanvraag.  | contoso.b2clogin.com |
 | {Context: IPAddress} | Het IP-adres van de gebruiker. | 11.111.111.11 |
 | {Context: KMSI} | Hiermee wordt aangegeven of het selectie vakje [aangemeld blijven](session-behavior.md?pivots=b2c-custom-policy#enable-keep-me-signed-in-kmsi) is geselecteerd. |  true |
 

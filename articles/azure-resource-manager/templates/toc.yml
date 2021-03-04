@@ -328,6 +328,8 @@
       items:
         - name: JSON vergelijken met Bicep
           href: compare-template-syntax.md
+    - name: Gegevenstypen
+      href: data-types.md
     - name: Veelgestelde vragen
       href: frequently-asked-questions.md
     - name: Sjablonen voor de consistentie van de cloud

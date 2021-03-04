@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.date: 08/01/2020
 ms.custom: mvc, devcenter, seodec18
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 302e0dc79d13eedebf810df042dc31f78b173fb6
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 324919c1d085302e675e0bc9a370ce35f52a0f1d
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101748446"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102109124"
 ---
 <!-- advanced for windows -->
 
@@ -70,10 +70,14 @@ ms.locfileid: "101748446"
 
 1. Zodra de implementatie is voltooid, selecteert u **Bladeren door website** in de prompt, om de zojuist geïmplementeerde web-app weer te geven.
 
-<br>
+<br/>
 <details>
-<summary>Problemen oplossen</summary>
+<summary><strong>Problemen oplossen</strong></summary>
+
+Controleer het volgende als u deze stappen niet kunt volt ooien:
+
 * Zorg ervoor dat de toepassing luistert op de poort die is opgegeven met de PORT-omgevingsvariabele: `process.env.PORT`.
+
 * Als u de fout **U bent niet gemachtigd om deze map of pagina weer te geven.** ziet, is de toepassing waarschijnlijk niet juist gestart. Controleer de logboek uitvoer om de fout te vinden en op te lossen. 
 
 </details>
@@ -83,5 +87,5 @@ ms.locfileid: "101748446"
 [Een probleem melden](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azure-app-service&prepare-your-environment)
 
 
-<br>
+<br/>
 <hr/>

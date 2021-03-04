@@ -5,14 +5,14 @@ author: tcare
 ms.author: tcare
 ms.service: azure-arc
 ms.topic: tutorial
-ms.date: 3/2/2021
+ms.date: 03/03/2021
 ms.custom: template-tutorial
-ms.openlocfilehash: ac67c2b0baf923421e8699de587e0e6dbbb97e24
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 72caca47cde960eb7298ec2cf0c6994755cb3159
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102055423"
+ms.locfileid: "102121606"
 ---
 # <a name="tutorial-implement-cicd-with-gitops-using-azure-arc-enabled-kubernetes-clusters"></a>Zelf studie: CI/CD met GitOps implementeren met behulp van Azure Arc-Kubernetes-clusters
 
@@ -316,7 +316,7 @@ Uw implementatie is nu voltooid. Hiermee wordt de CI/CD-werk stroom beëindigd.
 
 Als u deze toepassing niet wilt blijven gebruiken, verwijdert u alle resources met de volgende stappen:
 
-1. Arc GitOps-verbinding
+1. De Azure Arc GitOps-configuratie verbinding verwijderen:
    ```azurecli
    az k8sconfiguration delete \
    --name cluster-config \
@@ -324,9 +324,11 @@ Als u deze toepassing niet wilt blijven gebruiken, verwijdert u alle resources m
    --resource-group myResourceGroup \
    --cluster-type connectedClusters
    ```
-2. `dev` naam ruimte
+
+2. De `dev` naam ruimte verwijderen:
    * `kubectl delete namespace dev`
-3. `stage` naam ruimte
+
+3. De `stage` naam ruimte verwijderen:
    * `kubectl delete namespace stage`
 
 ## <a name="next-steps"></a>Volgende stappen

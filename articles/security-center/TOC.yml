@@ -5,6 +5,14 @@
   items:
     - name: Wat is Azure Security Center?
       href: security-center-introduction.md
+    - name: Wat is Azure Defender?
+      href: azure-defender.md
+    - name: Wat is er nieuw?
+      displayName: 'changelog, news, release notes'
+      href: release-notes.md
+    - name: Belangrijke aanstaande wijzigingen
+      displayName: 'release notes, changelog, news'
+      href: upcoming-changes.md
     - name: Beschikbaarheid
       items:
         - name: Ondersteunde platforms
@@ -14,71 +22,22 @@
           href: security-center-services.md
         - name: Functiedekking voor Azure PaaS-resources
           href: features-paas.md
-    - name: Wat is nieuw?
-      items:
-        - name: Releaseopmerkingen
-          displayName: 'changelog, news'
-          href: release-notes.md
-        - name: Belangrijke aanstaande wijzigingen
-          displayName: 'release notes, changelog, news'
-          href: upcoming-changes.md
-        - name: Gearchiveerde releaseopmerkingen (ouder dan zes maanden)
-          displayName: 'changelog, news'
-          href: release-notes-archive.md
-    - name: Basisprincipes van Security Center
-      items:
-        - name: Overzichtspagina van Security Cente
-          href: overview-page.md
-        - name: Aanbevelingen voor beveiliging
-          href: recommendations-reference.md
-        - name: Beveiligingswaarschuwingen en de kill chain voor intentie
-          href: alerts-reference.md
-        - name: Hoe Microsoft klantgegevens beveiligt
-          href: security-center-data-security.md
-        - name: Machtigingen
+        - name: Gebruikers rollen en machtigingen
+          displayName: RBAC
           href: security-center-permissions.md
-    - name: Geavanceerde beveiliging van Azure Defender
-      items:
-        - name: Overzicht van Azure Defender
-          href: azure-defender.md
-        - name: Azure Defender voor servers
-          displayName: VM
-          href: defender-for-servers-introduction.md
-        - name: Azure Defender voor App Service
-          href: defender-for-app-service-introduction.md
-        - name: Azure Defender voor Storage
-          displayName: 'blob, adls, files'
-          href: defender-for-storage-introduction.md
-        - name: Azure Defender voor SQL
-          displayName: database
-          href: defender-for-sql-introduction.md
-        - name: Azure Defender voor Key Vault
-          displayName: 'KV, akv'
-          href: defender-for-key-vault-introduction.md
-        - name: Azure Defender voor Resource Manager
-          displayName: ARM
-          href: defender-for-resource-manager-introduction.md
-        - name: Azure Defender voor DNS
-          displayName: domain
-          href: defender-for-dns-introduction.md
-        - name: Azure Defender voor Kubernetes
-          displayName: 'clusters, k8s, aks'
-          href: defender-for-kubernetes-introduction.md
-        - name: Azure Defender voor containerregisters
-          displayName: 'ACR, registry, images'
-          href: defender-for-container-registries-introduction.md
-        - name: Aanvullende bedreigingsbeveiligingen
-          href: other-threat-protections.md
-    - name: Beveiligingsfuncties voor containers van Security Center
-      displayName: 'kubernetes, aks, acr, registries, k8s'
-      href: container-security.md
-    - name: Prijzen
-      href: security-center-pricing.md
-- name: Snelstartgidsen
+        - name: Security Center gratis VS Azure Defender ingeschakeld
+          href: security-center-pricing.md
+- name: Quickstarts
   items:
-    - name: Aan de slag
+    - name: 1. Security Center op uw abonnementen inschakelen
       href: security-center-get-started.md
-    - name: Je hybride omgeving instellen
+    - name: 2. Azure Defender inschakelen
+      href: enable-azure-defender.md
+    - name: 3. Automatische inrichting configureren
+      href: security-center-enable-data-collection.md
+    - name: 4. E-mailmeldingen instellen
+      href: security-center-provide-security-contact-details.md
+    - name: 5. Verbinding maken met uw hybride en multi-Cloud machines
       items:
         - name: Verbinding maken met niet-Azure-machines
           displayName: 'azure stack, ash, windows, linux, hybrid, arc'
@@ -89,17 +48,12 @@
         - name: Verbinding maken met GCP-accounts
           displayName: 'hybrid, multicloud, google'
           href: quickstart-onboard-gcp.md
-    - name: Onboarding automatiseren met PowerShell
-      href: security-center-powershell-onboarding.md
-    - name: Security Center inschakelen voor een beheergroep
-      href: onboard-management-group.md
-    - name: Automatische inrichting configureren
-      href: security-center-enable-data-collection.md
-    - name: E-mailmeldingen instellen
-      href: security-center-provide-security-contact-details.md
-    - name: Een automatische reactie maken op een waarschuwing met een ARM-sjabloon
-      displayName: Resource Manager
+    - name: 6. Automatische antwoorden op waarschuwingen maken
+      displayName: 'Resource Manager, ARM'
       href: quickstart-automation-alert.md
+    - name: 7. Standaarden voor uw compatibiliteitsdashboard kiezen
+      displayName: 'regulatory, regulation, CIS, PCI DSS, ISO, SOC, ASB, Benchmark, Azure Security Benchmark, HIPAA'
+      href: update-regulatory-compliance-packages.md
 - name: Zelfstudies
   items:
     - name: Handleiding voor planning en bewerking
@@ -114,74 +68,59 @@
       href: tutorial-security-policy.md
 - name: Concepten
   items:
-    - name: Cloud Security Posture Management
+    - name: Concepten van Cloud Security postuur Management
       items:
-        - name: Beheer uw resources met assetinventarissen
-          href: asset-inventory.md
-        - name: Beveiligingsscore
+        - name: 'Beleid, initiatieven en aanbevelingen'
+          href: security-policy-concept.md
+        - name: Beveiligde scores en beveiligings controles
           href: secure-score-security-controls.md
-        - name: Overzicht van beveiligingsaanbevelingen
-          href: security-center-recommendations.md
-        - name: Aanbevelingen gebruiken om de beveiliging te verbeteren
-          href: security-center-using-recommendations.md
-        - name: Beveiligingsbasislijn
-          href: security-baseline.md
-        - name: Beheer in meerdere tenants
-          href: security-center-cross-tenant-management.md
-        - name: Uw Windows Admin Center-servers beschermen
-          href: windows-admin-center-integration.md
-        - name: Beveiligingsoplossingen en gegevensbronnen integreren
-          href: security-center-partner-integration.md
+        - name: Verwijzingenlijst met aanbevelingen
+          href: recommendations-reference.md
+    - name: Concepten van beveiliging van Cloud werkbelasting
+      items:
+        - name: Beveiligings waarschuwingen en incidenten
+          href: security-center-alerts-overview.md
+        - name: Verwijzingenlijst met waarschuwingen
+          href: alerts-reference.md
+- name: Instructiegidsen
+  items:
+    - name: Het overzichts dashboard gebruiken
+      displayName: 'overview, compliance, inventory'
+      href: overview-page.md
+    - name: Het Azure Defender-dashboard gebruiken
+      href: azure-defender-dashboard.md
+    - name: Uw beveiligde Score openen en bijhouden
+      href: secure-score-access-and-track.md
+    - name: Beheer uw resources met assetinventarissen
+      href: asset-inventory.md
+    - name: Interactieve rapporten van Security Center gegevens bouwen
+      displayName: 'workbooks, Secure Score Over Time, Vulnerability Assessment Findings'
+      href: custom-dashboards-azure-workbooks.md
     - name: Beveiligingsaanbevelingen gebruiken om de beveiliging te verbeteren
       items:
+        - name: Uw beveiligings aanbevelingen controleren
+          href: security-center-recommendations.md
         - name: Aanbevelingen doorvoeren
           href: security-center-remediate-recommendations.md
         - name: Onjuiste configuraties voorkomen met afdwingen/weigeren
           displayName: recommendations
           href: prevent-misconfigurations.md
-        - name: Beveiligingspostuur verbeteren
-          href: security-center-monitoring.md
-        - name: Verwijzingenlijst met aanbevelingen
-          href: recommendations-reference.md
-        - name: Aanbevelingen voor beveiliging beheren
-          items:
-            - name: Reacties op aanbevelingen automatiseren
-              displayName: workflow
-              href: workflow-automation.md
-            - name: Een resource uitsluiten van een aanbeveling
-              href: exempt-resource.md
-        - name: Netwerkresources beschermen
-          href: security-center-network-recommendations.md
-        - name: Identiteit en toegang beveiligen
-          href: security-center-identity-access.md
-    - name: Meer informatie over beveiligingswaarschuwingen
-      items:
-        - name: Overzicht van beveiligingswaarschuwingen
-          href: security-center-alerts-overview.md
-        - name: Verwijzingenlijst met waarschuwingen
-          href: alerts-reference.md
-        - name: Schema's voor waarschuwingen
-          href: alerts-schemas.md
-        - name: Overzicht van beveiligingsincidenten
-          href: security-center-alerts-cloud-smart.md
-- name: Instructiegidsen
-  items:
-    - name: Het Azure Defender-dashboard gebruiken
-      href: azure-defender-dashboard.md
-    - name: Beveiligingsbeleid en nalevingsstandaarden configureren
-      items:
-        - name: Aangepast beveiligingsbeleid maken
+        - name: Reacties op aanbevelingen automatiseren
+          displayName: workflow
+          href: workflow-automation.md
+        - name: Een resource uitsluiten van een aanbeveling
+          href: exempt-resource.md
+        - name: Aangepaste beveiligings initiatieven en-beleid maken
           href: custom-security-policies.md
-        - name: Beleid beheren met de Azure Policy REST API
-          href: configure-security-policy-azure-policy.md
-        - name: Standaarden voor uw compatibiliteitsdashboard kiezen
-          displayName: 'regulatory, regulation, CIS, PCI DSS, ISO, SOC, Benchmark, Azure Security Benchmark, HIPAA'
-          href: update-regulatory-compliance-packages.md
-    - name: Azure Defender voor servers gebruiken
+    - name: Bescherm uw computers met Azure Defender voor servers
+      displayName: 'hybrid, arc, Azure Defender for machines'
       items:
+        - name: Overzicht van Azure Defender voor servers
+          displayName: VM
+          href: defender-for-servers-introduction.md
         - name: Scannen op beveiligingsproblemen
           items:
-            - name: Geïntegreerde VA-scanner voor machines
+            - name: Uw computers scannen met de geïntegreerde VA-scanner
               displayName: 'qualys, vulnerability, arc, hybrid'
               href: deploy-vulnerability-assessment-vm.md
             - name: Uw VM's scannen met een BYOL VA-oplossing
@@ -204,58 +143,131 @@
         - name: Geïntegreerde Microsoft Defender voor eindpuntlicentie gebruiken
           displayName: 'ATP, mdatp, wdatp'
           href: security-center-wdatp.md
-        - name: Adaptieve toepassingsregelaars beheren
-          displayName: 'aac, whitelist, allowlist, reviewgroup'
+        - name: Lijsten met veilige toepassingen voor uw machines definiëren
+          displayName: 'aac, whitelist, allowlist, reviewgroup, adaptive application controls'
           href: security-center-adaptive-application.md
-        - name: Bewaking van bestandsintegriteit gebruiken
+        - name: Wijzigingen in bestanden en registers bijhouden met bestands integriteits controle
           items:
             - name: Overzicht van bewaking van bestandsintegriteit
               displayName: 'fim, change'
               href: security-center-file-integrity-monitoring.md
-            - name: Basislijnen vergelijken met Bestandsintegriteit controleren
+            - name: Basis lijnen vergelijken met behulp van bestands integriteits controle
               displayName: 'fim, change'
               href: security-center-file-integrity-monitoring-baselines.md
-        - name: Adaptieve netwerkbeveiliging beheren
+        - name: Verbeter uw netwerk beveiligings postuur met adaptieve netwerk beveiliging
           displayName: anh
           href: security-center-adaptive-network-hardening.md
         - name: Docker-hosts verharden
           displayName: containers
           href: harden-docker-hosts.md
-    - name: Azure Defender voor SQL gebruiken
-      href: defender-for-sql-usage.md
-      displayName: 'hybrid, arc'
-    - name: Azure Defender voor containerregisters gebruiken
+    - name: Uw SQL-resources beveiligen
       items:
+        - name: Overzicht van Azure Defender voor SQL
+          displayName: database
+          href: defender-for-sql-introduction.md
+        - name: Defender inschakelen voor SQL-servers op computers
+          href: defender-for-sql-usage.md
+          displayName: 'hybrid, arc, Azure Defender'
+        - name: Uw SQL-resources scannen op beveiligings problemen
+          href: defender-for-sql-on-machines-vulnerability-assessment.md
+          displayName: 'hybrid, arc, Azure Defender'
+        - name: Het vinden van beveiligings problemen op SQL-servers uitschakelen
+          displayName: 'VA, registry, vulnerabilities'
+          href: defender-for-sql-on-machines-vulnerability-assessment.md#disable-specific-findings-preview
+        - name: SQL Information Protection-beleid aanpassen
+          displayName: 'sql, database, data discovery'
+          href: security-center-info-protection-policy.md
+    - name: Uw container omgevingen beveiligen
+      displayName: Azure Defender
+      items:
+        - name: Beveiligingsfuncties voor containers van Security Center
+          displayName: 'kubernetes, aks, acr, registries, k8s'
+          href: container-security.md
+        - name: Overzicht van Defender voor Kubernetes
+          displayName: 'clusters, k8s, aks'
+          href: defender-for-kubernetes-introduction.md
+        - name: Overzicht van Defender voor container registers
+          displayName: 'ACR, registry, images'
+          href: defender-for-container-registries-introduction.md
         - name: Scan uw registerafbeeldingen op kwetsbaarheden
           displayName: 'ACR, registry, images, qualys'
           href: defender-for-container-registries-usage.md
         - name: Specifieke ontdekkingen van beveiligingsproblemen in afbeeldingen uitschakelen
           displayName: 'ACR, registry, images, qualys'
           href: defender-for-container-registries-usage.md#disable-specific-findings-preview
-    - name: Meldingen en aanbevelingen exporteren
+        - name: Kubernetes-workloads beveiligen
+          displayName: 'k8s, containers, aks'
+          href: kubernetes-workload-protections.md
+    - name: Web-apps en API's van Azure App Service beveiligen
+      displayName: 'Azure Defender for App Service, defender for app'
+      href: defender-for-app-service-introduction.md
+    - name: Uw Azure Storage accounts beveiligen
+      displayName: 'blob, adls, files, Azure Defender for Storage, Defender for Storage'
+      href: defender-for-storage-introduction.md
+    - name: Uw Key Vault sleutels en geheimen beveiligen
       items:
-        - name: 'Exporteren naar een SIEM, SOAR of ITSM'
-          displayName: 'continuous, SIEM, SOAR, Splunk, QRadar, ServiceNow, ArcSight, Monitor, Graph, Sentinel,'
-          href: export-to-siem.md
-        - name: Exporteren naar een Log Analytics-werkruimte of Azure Event Hub
-          displayName: continuous
-          href: continuous-export.md
-        - name: Een CSV-rapport van alle waarschuwingen downloaden
-          href: continuous-export.md#manual-one-time-export-of-alerts-and-recommendations
-    - name: Beveiligingswaarschuwingen verwerken
-      items:
-        - name: Beveiligingswaarschuwingen beheren
-          href: security-center-managing-and-responding-alerts.md
-        - name: Regels voor het onderdrukken van waarschuwingen maken en beheren
-          href: alerts-suppression-rules.md
+        - name: Overzicht van Azure Defender voor Key Vault
+          displayName: 'KV, akv'
+          href: defender-for-key-vault-introduction.md
         - name: Reageren op Azure Defender voor Key Vault-waarschuwingen
           displayName: 'akv, kv'
           href: defender-for-key-vault-usage.md
-        - name: Reageren op Azure Defender voor DNS-waarschuwingen
-          href: defender-for-dns-usage.md
+    - name: Uw resource beheer bewerkingen controleren
+      items:
+        - name: Overzicht van Azure Defender voor Resource Manager
+          displayName: ARM
+          href: defender-for-resource-manager-introduction.md
         - name: Reageren op Azure Defender voor Resource Manager-waarschuwingen
           displayName: arm
           href: defender-for-resource-manager-usage.md
+    - name: DNS-query's van uw Azure-resources controleren
+      items:
+        - name: Overzicht van Azure Defender voor DNS
+          displayName: 'domain, Defender for DNS'
+          href: defender-for-dns-introduction.md
+        - name: Reageren op Azure Defender voor DNS-waarschuwingen
+          href: defender-for-dns-usage.md
+    - name: Uw Windows Admin Center-servers beschermen
+      href: windows-admin-center-integration.md
+    - name: Beveiligingsoplossingen en gegevensbronnen integreren
+      href: security-center-partner-integration.md
+    - name: Netwerkresources beschermen
+      href: security-center-network-recommendations.md
+    - name: Identiteit en toegang beveiligen
+      href: security-center-identity-access.md
+    - name: De extra bedreigingen voor beveiliging van Security Center gebruiken
+      href: other-threat-protections.md
+    - name: 'Abonnementen, gebruikers en machtigingen beheren'
+      items:
+        - name: Beheer groepen en abonnementen ordenen
+          href: security-center-management-groups.md
+        - name: Machtigingen voor de hele Tenant verlenen en aanvragen
+          displayName: 'global admin, Azure Active Directory (AD), AAD'
+          href: tenant-wide-permissions-management.md
+        - name: Security Center inschakelen voor een beheergroep
+          href: onboard-management-group.md
+        - name: Beheer van meerdere tenants instellen
+          href: security-center-cross-tenant-management.md
+        - name: Onboarding automatiseren met PowerShell
+          href: security-center-powershell-onboarding.md
+    - name: 'Waarschuwingen, incidenten en rapporten met bedreigingen beheren'
+      items:
+        - name: Reageren op beveiligingswaarschuwingen
+          href: security-center-managing-and-responding-alerts.md
+        - name: Regels voor het onderdrukken van waarschuwingen maken en beheren
+          href: alerts-suppression-rules.md
+        - name: Meldingen en aanbevelingen exporteren
+          items:
+            - name: 'Exporteren naar een SIEM, SOAR of ITSM'
+              displayName: 'continuous, SIEM, SOAR, Splunk, QRadar, ServiceNow, ArcSight, Monitor, Graph, Sentinel,'
+              href: export-to-siem.md
+            - name: Exporteren naar een Log Analytics-werkruimte of Azure Event Hub
+              displayName: continuous
+              href: continuous-export.md
+            - name: Een CSV-rapport van alle waarschuwingen downloaden
+              href: continuous-export.md#manual-one-time-export-of-alerts-and-recommendations
+            - name: Schema's voor waarschuwingen
+              href: alerts-schemas.md
         - name: Beveiligingsincidenten beheren
           href: security-center-incident.md
         - name: Bedreigingsinformatierapporten genereren
@@ -266,18 +278,17 @@
         - name: Reacties op waarschuwingen automatiseren
           displayName: workflow
           href: workflow-automation.md
-    - name: Kubernetes-workloads beveiligen
-      displayName: 'k8s, containers, aks'
-      href: kubernetes-workload-protections.md
-    - name: Zichtbaarheid in de hele tenant verkrijgen
-      href: security-center-management-groups.md
-    - name: Uw SQL-informatiebeschermingsbeleid aanpassen
-      displayName: 'sql, database, data discovery'
-      href: security-center-info-protection-policy.md
-- name: Naslaginformatie
+- name: Referentie
   items:
-    - name: REST-API’s
+    - name: Gearchiveerde releaseopmerkingen (ouder dan zes maanden)
+      displayName: 'changelog, news'
+      href: release-notes-archive.md
+    - name: Hoe Microsoft klantgegevens beveiligt
+      href: security-center-data-security.md
+    - name: Documentatie voor REST-Api's
       href: /rest/api/securitycenter/
+    - name: Beveiligingsbasislijn
+      href: security-baseline.md
     - name: Veelgestelde vragen over Azure Security Center
       items:
         - name: Algemene vragen

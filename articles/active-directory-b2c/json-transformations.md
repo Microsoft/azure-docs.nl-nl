@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 10/13/2020
+ms.date: 03/04/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 20480a252d7aedfd48a59bc05166f645e02e37e9
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.openlocfilehash: c5c8e21f2ce3f6907547bf1b2fe4681eb937864b
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91998441"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102119872"
 ---
 # <a name="json-claims-transformations"></a>JSON-claim transformaties
 
@@ -28,7 +28,7 @@ In dit artikel vindt u voor beelden voor het gebruik van de JSON-claim transform
 
 Gebruik claim waarden of constanten voor het genereren van een JSON-teken reeks. De padtekenreeks volgende punt notatie wordt gebruikt om aan te geven waar de gegevens moeten worden ingevoegd in een JSON-teken reeks. Na splitsing per punt worden alle gehele getallen geïnterpreteerd als de index van een JSON-matrix en worden niet-gehele getallen geïnterpreteerd als de index van een JSON-object.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | Wille keurige teken reeks na de punt notatie | tekenreeks | De JsonPath van de JSON waar de claim waarde wordt ingevoegd. |
 | Parameter | Wille keurige teken reeks na de punt notatie | tekenreeks | De JsonPath van de JSON waar de constante teken reeks waarde wordt ingevoegd. |
@@ -117,8 +117,8 @@ De volgende claim transformatie voert een JSON-teken reeks claim uit die de hoof
 - Invoer claims:
   - **e-mail**, transformatie claim type **customerEntity. email**: john.s@contoso.com
   - **objectId**, transformatie claim type **customerEntity. userObjectId** "01234567-89ab-cdef-0123-456789abcdef"
-  - **objectId**, transformatie claim type **customerEntity. FirstName** "John"
-  - **objectId**, transformatie claim type **customerEntity. lastName** "Smit"
+  - **opgegeven** naam, transformatie claim type **customerEntity. FirstName** "John"
+  - **Achternaam**, transformatie claim type **customerEntity. lastName** "Smith"
 - Invoer parameter:
   - **customerEntity.Role.name**: beheerder
   - **customerEntity.Role.id** 1
@@ -144,7 +144,7 @@ De volgende claim transformatie voert een JSON-teken reeks claim uit die de hoof
 
 Een opgegeven element ophalen uit een JSON-gegevens.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | inputJson | tekenreeks | De ClaimTypes die worden gebruikt door de claim transformatie om het item op te halen. |
 | Parameter | claimToExtract | tekenreeks | de naam van het JSON-element dat moet worden geëxtraheerd. |
@@ -180,7 +180,7 @@ In het volgende voor beeld heeft de claim transformatie het `emailAddress` eleme
 
 Een lijst met opgegeven elementen uit de JSON-gegevens ophalen.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | jsonSourceClaim | tekenreeks | De ClaimTypes die worden gebruikt door de claim transformatie om de claims op te halen. |
 | Parameter | errorOnMissingClaims | booleaans | Hiermee geeft u op of er een fout moet worden gegenereerd als een van de claims ontbreekt. |
@@ -234,7 +234,7 @@ In het volgende voor beeld worden met de claim transformatie de volgende claims 
 
 Hiermee wordt een opgegeven numeriek (lang)-element opgehaald uit een JSON-gegevens.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | inputJson | tekenreeks | De ClaimTypes die door de claim transformatie worden gebruikt om de claim op te halen. |
 | Parameter | claimToExtract | tekenreeks | De naam van het JSON-element dat moet worden uitgepakt. |
@@ -277,7 +277,7 @@ In het volgende voor beeld haalt de claim transformatie het `id` element uit de 
 
 Hiermee wordt het eerste element opgehaald uit een JSON-gegevens.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | inputJson | tekenreeks | De ClaimTypes die door de claim transformatie worden gebruikt voor het ophalen van het item uit de JSON-gegevens. |
 | Output claim | sleutel | tekenreeks | De eerste element sleutel in de JSON. |
@@ -310,7 +310,7 @@ In het volgende voor beeld haalt de claim transformatie het eerste element (de o
 
 Hiermee wordt het eerste element opgehaald uit een JSON-gegevens matrix.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | inputJsonClaim | tekenreeks | De ClaimTypes die door de claim transformatie worden gebruikt om het item uit de JSON-matrix op te halen. |
 | Output claim | extractedClaim | tekenreeks | Het claim type dat is geproduceerd nadat deze ClaimsTransformation is aangeroepen, het eerste element in de JSON-matrix. |
@@ -339,7 +339,7 @@ In het volgende voor beeld haalt de claim transformatie het eerste element (e-ma
 
 XML-gegevens worden geconverteerd naar de JSON-indeling.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | xml | tekenreeks | De ClaimTypes die worden gebruikt door de claim transformatie voor het converteren van de gegevens van XML naar de JSON-indeling. |
 | Output claim | json | tekenreeks | Het claim type dat is geproduceerd nadat deze ClaimsTransformation is aangeroepen, is de gegevens in JSON-indeling. |

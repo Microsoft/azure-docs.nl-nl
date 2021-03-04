@@ -553,6 +553,9 @@
     - name: Gegevens migreren met mysqldump of phpmyadmin
       href: concepts-migrate-dump-restore.md
       displayName: 'migrate, mysqldump'
+    - name: Gegevens migreren met dbForge Studio voor MySQL
+      href: concepts-migrate-dbforge-studio-for-mysql.md
+      displayName: 'migrate, dbforge'
     - name: Gegevens migreren met MySQL Workbench
       href: concepts-migrate-import-export.md
       displayName: 'import , migrate, export'

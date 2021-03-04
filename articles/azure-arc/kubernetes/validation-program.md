@@ -2,18 +2,18 @@
 title: Kubernetes-validatie programma voor Azure Arc enabled
 services: azure-arc
 ms.service: azure-arc
-ms.date: 03/02/2021
+ms.date: 03/03/2021
 ms.topic: article
 author: shashankbarsin
 ms.author: shasb
 description: Beschrijft het Arc-validatie programma voor Kubernetes-distributies
 keywords: Kubernetes, Arc, azure, K8s, validatie
-ms.openlocfilehash: 0d7756f407a3a176c8913d99bdb45a5026300569
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 819df906add6275997e01fab310fe8dd57a87b51
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101689212"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102121368"
 ---
 # <a name="azure-arc-validation-program"></a>Azure Arc-validatie programma
 
@@ -61,6 +61,6 @@ De conforme tests worden uitgevoerd als onderdeel van de Azure Arc enabled Kuber
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Een cluster verbinden met Azure Arc](./connect-cluster.md)
-* [Configuraties maken op uw Kubernetes-cluster met Arc-functionaliteit](./use-gitops-connected-cluster.md)
-* [Azure Policy gebruiken om configuraties op schaal toe te passen](./use-azure-policy.md)
+Meer informatie over het verbinden van een cluster met Azure Arc.
+> [!div class="nextstepaction"]
+> [Een cluster verbinden met Azure Arc](./quickstart-connect-cluster.md)

@@ -2,18 +2,18 @@
 title: Architectuur van Azure Arc enabled Kubernetes-agent
 services: azure-arc
 ms.service: azure-arc
-ms.date: 02/19/2021
+ms.date: 03/03/2021
 ms.topic: conceptual
 author: shashankbarsin
 ms.author: shasb
 description: Dit artikel bevat een overzicht van de architectuur van Azure Arc enabled Kubernetes-agents
 keywords: Kubernetes, Arc, Azure, containers
-ms.openlocfilehash: b4fb836cc7782f4026a28f4af0ca372c76486a31
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 5e53e99c492f08deab8dea89ec95190782661012
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101650529"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102121895"
 ---
 # <a name="azure-arc-enabled-kubernetes-agent-architecture"></a>Architectuur van Azure Arc enabled Kubernetes-agent
 
@@ -93,5 +93,5 @@ De meeste on-premises data centers dwingen strikte netwerk regels af waarmee bin
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Een cluster verbinden met Azure Arc](./quickstart-connect-cluster.md)
-* [Conceptueel overzicht van configuraties](./conceptual-configurations.md)
+* Door loop onze Snelstartgids om [een Kubernetes-cluster te verbinden met Azure Arc](./connect-cluster.md).
+* Meer informatie over het maken van verbindingen tussen uw cluster en een Git-opslag plaats als een [configuratie bron met Azure Arc enabled Kubernetes](./conceptual-configurations.md).

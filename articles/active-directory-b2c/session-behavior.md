@@ -7,17 +7,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 02/23/2021
+ms.date: 03/04/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: e0516c25a69f22f5e66dd3ed083805cd4a9f1a61
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 2d64e85576b35caa2262ad1d635fc72fc7e2d2b8
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102096136"
+ms.locfileid: "102120620"
 ---
 # <a name="configure-session-behavior-in-azure-active-directory-b2c"></a>Sessiegedrag in Azure Active Directory B2C configureren
 
@@ -71,7 +71,7 @@ De toepassings sessie kan een op cookies gebaseerde sessie zijn die is opgeslage
 
 U kunt het gedrag van de Azure AD B2C-sessie configureren, met inbegrip van:
 
-- **Levens duur van de web-app (minuten)** : de hoeveelheid tijd die de cookie van de Azure AD B2C sessie wordt opgeslagen in de browser van de gebruiker nadat de verificatie is geslaagd. U kunt de levens duur van de sessie instellen op een waarde tussen 15 en 720 minuten.
+- **Levens duur van de web-app (minuten)** : de hoeveelheid tijd die de cookie van de Azure AD B2C sessie wordt opgeslagen in de browser van de gebruiker nadat de verificatie is geslaagd. U kunt de levens duur van de sessie Maxi maal 24 uur instellen.
 
 - **Sessietime-out van web-app** : Hiermee wordt aangegeven hoe een sessie wordt uitgebreid met de instelling voor de duur van de sessie of de instelling aangemeld blijven (KMSI).
   - **Rolling** -geeft aan dat de sessie wordt uitgebreid telkens wanneer de gebruiker een verificatie op basis van cookies uitvoert (standaard).

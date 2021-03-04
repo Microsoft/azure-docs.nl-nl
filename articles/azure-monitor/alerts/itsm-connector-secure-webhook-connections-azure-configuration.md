@@ -1,24 +1,23 @@
 ---
 title: IT Service Management-connector-beveiligd exporteren in Azure Monitor-Azure-configuraties
 description: In dit artikel wordt beschreven hoe u Azure kunt configureren om uw ITSM-producten/-services te verbinden met beveiligde export in Azure Monitor om ITSM-werk items centraal te controleren en te beheren.
-ms.subservice: logs
 ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 01/03/2021
-ms.openlocfilehash: 62167b8fd72c660e50378a9492528aa5b70bbee7
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 8eb9430e3d280c52cf84c61f0a44cb12152ac054
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612810"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102037537"
 ---
 # <a name="configure-azure-to-connect-itsm-tools-using-secure-export"></a>Azure configureren om verbinding te maken met ITSM-hulpprogram ma's met behulp van beveiligde export
 
 In dit artikel vindt u informatie over het configureren van Azure om ' beveiligde export ' te gebruiken.
 Voer de volgende stappen uit om ' beveiligde export ' te gebruiken:
 
-1. [Uw app bij Azure AD registreren.](./itsm-connector-secure-webhook-connections-azure-configuration.md#register-with-azure-active-directory)
+1. [Registreer uw app bij Azure AD.](./itsm-connector-secure-webhook-connections-azure-configuration.md#register-with-azure-active-directory)
 1. [Service-Principal definiëren.](./itsm-connector-secure-webhook-connections-azure-configuration.md#define-service-principal)
 1. [Maak een beveiligde webhook-actie groep.](./itsm-connector-secure-webhook-connections-azure-configuration.md#create-a-secure-webhook-action-group)
 1. Configureer uw partner omgeving.
@@ -30,7 +29,7 @@ Voer de volgende stappen uit om ' beveiligde export ' te gebruiken:
 
 Volg deze stappen om de toepassing te registreren bij Azure AD:
 
-1. Volg de stappen in [een toepassing registreren bij het micro soft Identity-platform](../../active-directory/develop/quickstart-register-app.md).
+1. Volg de stappen in [Een toepassing registreren bij het Microsoft identity platform](../../active-directory/develop/quickstart-register-app.md).
 2. Selecteer **toepassing zichtbaar** maken in azure AD.
 3. Selecteer **instellen** voor de URI van de **toepassings-id**.
 
@@ -44,7 +43,7 @@ Als optionele stap kunt u de toepassingsrol definiëren in het manifest van de g
 
 Deze stap kan worden uitgevoerd met dezelfde [Power shell-opdrachten](../alerts/action-groups.md#secure-webhook-powershell-script).
 
-## <a name="create-a-secure-webhook-action-group"></a>Een actie groep voor een beveiligde webhook maken
+## <a name="create-a-secure-webhook-action-group"></a>Maak een actiegroep voor een beveiligde webhook
 
 Nadat uw toepassing is geregistreerd bij Azure AD, kunt u werk items maken in uw ITSM-hulp programma op basis van Azure-waarschuwingen met behulp van de actie beveiligde webhook in actie groepen.
 

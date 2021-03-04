@@ -1,17 +1,16 @@
 ---
 title: Tekst gegevens parseren in Logboeken van Azure Monitor | Microsoft Docs
 description: Beschrijft verschillende opties voor het parseren van logboek gegevens in Azure Monitor records wanneer de gegevens worden opgenomen en wanneer deze worden opgehaald in een query, waarbij de relatieve voor delen voor elk van elkaar worden vergeleken.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 12/04/2018
-ms.openlocfilehash: 8f6c35fd1bb6b46f512f9245d8e3d41df428692b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 2e2babd39dc9dadf06c9a3ca3292e021e0c1deaa
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101733938"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102037180"
 ---
 # <a name="parse-text-data-in-azure-monitor-logs"></a>Tekst gegevens parseren in Azure Monitor logboeken
 Sommige logboek gegevens die worden verzameld door Azure Monitor, bevatten meerdere stukjes informatie in één eigenschap. Het parseren van deze gegevens in meerdere eigenschappen maakt het gemakkelijker om in query's te gebruiken. Een veelvoorkomend voor beeld is een [aangepast logboek](../agents/data-sources-custom-logs.md) dat een volledige logboek vermelding met meerdere waarden in één eigenschap verzamelt. Door afzonderlijke eigenschappen voor de verschillende waarden te maken, kunt u zoeken en samen voegen.

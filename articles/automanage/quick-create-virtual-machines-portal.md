@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.topic: quickstart
 ms.date: 02/17/2021
 ms.author: jushiman
-ms.openlocfilehash: d00a9c6012da7ad8d1566ef82bce628c7d47e7a7
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 5f5f1e70d9ae309c90291ccac1e6dd61e7a9d056
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101686981"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102038373"
 ---
 # <a name="quickstart-enable-azure-automanage-for-virtual-machines-in-the-azure-portal"></a>Quickstart: Azure Automanage inschakelen voor virtuele machines in de Azure Portal
 
@@ -88,7 +88,7 @@ Meld u [hier](https://aka.ms/AzureAutomanagePreview) aan bij het Azure-portaal o
 1. Vul de details van uw virtuele machine in op het tabblad **basis beginselen** .
 
 > [!NOTE]
-> Controleer de [ondersteunde regio's](automanage-virtual-machines#supported-regions) voor automanage en de [distributies](automanage-linux.md#supported-linux-distributions-and-versions) -en [Windows Server-versies](automanage-windows-server.md#supported-windows-server-versions)die door automanage worden ondersteund.
+> Controleer de [ondersteunde regio's](automanage-virtual-machines.md#supported-regions) voor automanage en de [distributies](automanage-linux.md#supported-linux-distributions-and-versions) -en [Windows Server-versies](automanage-windows-server.md#supported-windows-server-versions)die door automanage worden ondersteund.
 
 2. Ga naar het tabblad **beheer** en kies uw **omgeving** voor zelf beheer.
 

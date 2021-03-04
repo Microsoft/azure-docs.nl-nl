@@ -8,12 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/18/2020
-ms.openlocfilehash: 09e7a39a2d97626dd01a00fdaef9bc4d711d557b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: references_regions
+ms.openlocfilehash: 22d7c1bbe03d8b3c0e3b6026c9bac039f0651548
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91828086"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102037248"
 ---
 # <a name="ai-enrichment-in-azure-cognitive-search"></a>AI-verrijking in azure Cognitive Search
 
@@ -32,6 +33,17 @@ De ingebouwde vaardig heden vallen onder de volgende categorieën:
 Ingebouwde vaardig heden in azure Cognitive Search zijn gebaseerd op vooraf getrainde machine learning modellen in Cognitive Services-API's: [Computer Vision](../cognitive-services/computer-vision/index.yml) en [Text Analytics](../cognitive-services/text-analytics/overview.md). U kunt een Cognitive Services resource koppelen als u deze resources tijdens de verwerking van inhoud wilt gebruiken.
 
 De verwerking van natuurlijke taal en afbeelding wordt toegepast tijdens de fase van gegevens opname, met resultaten die deel uitmaken van de samen stelling van een document in een Doorzoek bare index in azure Cognitive Search. Gegevens worden als een Azure-gegevensset gedistribueerd en vervolgens gepusht via een indexerings pijplijn met behulp van de [ingebouwde vaardig heden](cognitive-search-predefined-skills.md) die u nodig hebt.  
+
+## <a name="feature-availability"></a>Beschikbaarheid van functies
+
+AI-verrijking is beschikbaar in regio's waar Azure Cognitive Services ook beschikbaar zijn.  U kunt de huidige Beschik baarheid van AI-verrijking controleren op de pagina [Azure-producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=search) .  AI-verrijking is beschikbaar in alle ondersteunde regio's, met uitzonde ring van:
+
++ Australië - zuidoost
++ China - noord 2
++ Noorwegen - oost
++ Duitsland - west-centraal
+
+Als uw zoek service zich in een van deze regio's bevindt, kunt u vaardig heden niet maken en gebruiken, maar alle andere functionaliteit van de zoek service is beschikbaar en volledig ondersteund.
 
 ## <a name="when-to-use-ai-enrichment"></a>Wanneer moet u AI-verrijking gebruiken?
 
@@ -73,7 +85,7 @@ Aan het begin van de pijp lijn hebt u ongestructureerde tekst-of niet-tekst inho
 
 ### <a name="step-2-cognitive-skills-and-enrichment-phase"></a>Stap 2: cognitieve vaardig heden en verrijkings fase
 
-Verrijking wordt uitgevoerd met *cognitieve vaardig heden* die atomische bewerkingen uitvoeren. Als u bijvoorbeeld een PDF hebt gekraakt, kunt u entiteits herkenning, taal detectie of sleutel woordgroepen extractie Toep assen om nieuwe velden in uw index te maken die niet standaard beschikbaar zijn in de bron. Samen wordt de verzameling van de vaardig heden die in uw pijp lijn wordt gebruikt, een *vakkennis*genoemd.  
+Verrijking wordt uitgevoerd met *cognitieve vaardig heden* die atomische bewerkingen uitvoeren. Als u bijvoorbeeld een PDF hebt gekraakt, kunt u entiteits herkenning, taal detectie of sleutel woordgroepen extractie Toep assen om nieuwe velden in uw index te maken die niet standaard beschikbaar zijn in de bron. Samen wordt de verzameling van de vaardig heden die in uw pijp lijn wordt gebruikt, een *vakkennis* genoemd.  
 
 ![Verrijkings fase](./media/cognitive-search-intro/enrichment-phase-blowup.png "verrijkings fase")
 
@@ -107,7 +119,7 @@ Indexen worden gegenereerd op basis van een index schema waarmee de velden, kenm
 
 1. Definieer de [Indexeer functie](/rest/api/searchservice/create-indexer) die verwijst naar de gegevens bron, de vaardig heden en de index.
 
-1. Voeg in de Indexeer functie *outputFieldMappings*toe. In deze sectie wordt de uitvoer van de vaardig heden (in stap 3) toegewezen aan de invoer velden in het index schema (in stap 4).
+1. Voeg in de Indexeer functie *outputFieldMappings* toe. In deze sectie wordt de uitvoer van de vaardig heden (in stap 3) toegewezen aan de invoer velden in het index schema (in stap 4).
 
 1. *Maak Create Indexing* -aanvraag die u zojuist hebt gemaakt (een post-aanvraag met een indexers definitie in de hoofd tekst van de aanvraag) om de Indexeer functie in azure Cognitive Search te drukken. Deze stap bestaat uit het uitvoeren van de Indexeer functie en het aanroepen van de pijp lijn.
 
@@ -123,4 +135,4 @@ Indexen worden gegenereerd op basis van een index schema waarmee de velden, kenm
 + [Zelf studie: meer informatie over de AI-verrijkings Api's](cognitive-search-tutorial-blob.md)
 + [Kennisarchief](knowledge-store-concept-intro.md)
 + [Een kennis archief maken in REST](knowledge-store-create-rest.md)
-+ [Tips voor probleem oplossing](cognitive-search-concept-troubleshooting.md)
++ [Tips voor probleemoplossing](cognitive-search-concept-troubleshooting.md)

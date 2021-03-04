@@ -2,14 +2,13 @@
 title: Slimme groepen
 description: Slimme groepen zijn aggregaties van waarschuwingen waarmee u waarschuwings ruis kunt verminderen
 ms.topic: conceptual
-ms.subservice: alerts
 ms.date: 05/15/2018
-ms.openlocfilehash: 743bd1a674c034cd6a0350f959289ac3ecb568de
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 8a164fe6e5fd5be58da969d9266329755705ea82
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100609580"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102037962"
 ---
 # <a name="smart-groups"></a>Slimme groepen
 

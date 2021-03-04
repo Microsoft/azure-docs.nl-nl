@@ -1,15 +1,14 @@
 ---
 title: Log Analytics waarschuwing gebruiken REST API
 description: Met de Log Analytics waarschuwing REST API kunt u waarschuwingen maken en beheren in Log Analytics, die deel uitmaakt van Log Analytics.  In dit artikel vindt u meer informatie over de API en enkele voor beelden voor het uitvoeren van verschillende bewerkingen.
-ms.subservice: logs
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: 4acb6cdcb544e8774fb60bf1ead1a4a13140024a
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 33f5ce86a21a9aad110db162849ff3e3c7bbb2b4
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101717805"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102037486"
 ---
 # <a name="create-and-manage-alert-rules-in-log-analytics-with-rest-api"></a>Waarschuwings regels in Log Analytics maken en beheren met REST API 
 

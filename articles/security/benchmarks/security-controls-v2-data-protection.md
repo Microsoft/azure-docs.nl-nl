@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 02/22/2021
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: c8d907062835f18393946b04f1f1e9d5ec345411
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 50358eed580bbd83f25386feb0068a252060672b
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101735757"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102037112"
 ---
 # <a name="security-control-v2-data-protection"></a>Beveiligings controle v2: gegevens beveiliging
 
 Gegevens bescherming is van toepassing op controle van gegevens beveiliging op rest, onderweg en via geautoriseerde toegangs mechanismen. Dit omvat het detecteren, classificeren, beveiligen en bewaken van gevoelige gegevens assets met behulp van toegangs beheer, versleuteling en logboek registratie in Azure.
 
-Voor een overzicht van de toepasselijke ingebouwde Azure Policy raadpleegt u [de details van het ingebouwde initiatief Azure Security Bench Mark-naleving van voor Schriften: gegevens beveiliging](../../governance/policy/samples/azure-security-benchmark#data-protection)
+Voor een overzicht van de toepasselijke ingebouwde Azure Policy raadpleegt u [de details van het ingebouwde initiatief Azure Security Bench Mark-naleving van voor Schriften: gegevens beveiliging](../../governance/policy/samples/azure-security-benchmark.md#data-protection)
 
 ## <a name="dp-1-discovery-classify-and-label-sensitive-data"></a>DP-1: Detectie, classificatie en labeling van gevoelige gegevens
 

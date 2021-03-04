@@ -3,12 +3,12 @@ title: Ondersteuning voor archief lagen (preview-versie)
 description: Meer informatie over de ondersteuning van de archiefmap voor Azure Backup
 ms.topic: conceptual
 ms.date: 02/18/2021
-ms.openlocfilehash: cd9cfc5722dc644dd257738be797f162ac6dc995
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 30a7915332d1d7ecab87b0db1ddc6dacc0fa69c9
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101745850"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102050608"
 ---
 # <a name="archive-tier-support-preview"></a>Ondersteuning voor archief lagen (preview-versie)
 
@@ -35,6 +35,9 @@ Ondersteunde clients:
 
 - De mogelijkheid wordt gegeven met behulp van Power shell
 
+>[!NOTE]
+>De ondersteuning voor de archief tier voor Azure-Vm's en SQL Server in azure Vm's is beperkt tot een open bare Preview met beperkte aanmeldingen. Gebruik deze [koppeling](https://aka.ms/ArchivePreviewInterestForm)om u aan te melden voor archief ondersteuning.
+
 ## <a name="get-started-with-powershell"></a>Aan de slag met PowerShell
 
 1. Down load de [meest recente Power shell-module](https://github.com/Azure/azure-powershell/tree/Az.RecoveryServices-preview) (preview).
@@ -43,12 +46,30 @@ Ondersteunde clients:
 
    `Set-AzContext -Subscription "SubscriptionName"`
 
+1. De kluis ophalen:
+
+    `$vault =  Get-AzRecoveryServicesVault -ResourceGroupName "rgName" -Name "vaultName"`
+
+1. De lijst met back-upitems ophalen:
+
+    `$BackupItemList = Get-AzRecoveryServicesBackupItem -vaultId $vault.ID -BackupManagementType "AzureVM/AzureWorkload" -WorkloadType "AzureVM/MSSQL"`
+
+1. Het back-upitem ophalen.
+
+    - Voor virtuele machines van Azure:
+
+        `$bckItm = $BackupItemList | Where-Object {$_.Name -match '<vmName>'}`
+
+    - Voor SQL Server in azure virtual machines:
+
+        `$bckItm = $BackupItemList | Where-Object {$_.Name -match '<dbName>' -and $_.ContainerName -match '<vmName>'}`
+
 ## <a name="use-powershell"></a>PowerShell gebruiken
 
 ### <a name="check-archivable-recovery-points"></a>Herstel punten voor archivering controleren
 
 ```azurepowershell
-$rp = Get-AzRecoveryServicesBackupRecoveryPoint -StartDate (Get-Date).AddDays(-180).ToUniversalTime() -EndDate (Get-Date).AddDays(0).ToUniversalTime() -VaultId $vault.ID -Item $bckItm  -IsReadyForMove $true -TargetTier VaultArchive
+$rp = Get-AzRecoveryServicesBackupRecoveryPoint -VaultId $vault.ID -Item $bckItm  -IsReadyForMove $true -TargetTier VaultArchive
 ```
 
 Hiermee worden alle herstel punten weer geven die zijn gekoppeld aan een bepaald back-upitem dat gereed is om te worden verplaatst naar het archief.
@@ -56,7 +77,7 @@ Hiermee worden alle herstel punten weer geven die zijn gekoppeld aan een bepaald
 ### <a name="check-why-a-recovery-point-cannot-be-moved-to-archive"></a>Controleren waarom een herstel punt niet kan worden verplaatst naar het archief
 
 ```azurepowershell
-$rp.RecoveryPointMoveReadinessInfo["ArchivedRP"]
+$rp[0].RecoveryPointMoveReadinessInfo["ArchivedRP"]
 ```
 
 Waar `$rp[0]` is het herstel punt waarvoor u wilt controleren waarom het niet kan worden gearchiveerd.
@@ -79,13 +100,13 @@ Azure Backup heeft dus een aanbevolen set herstel punten die kunnen leiden tot k
 >De kosten besparingen zijn afhankelijk van een aantal redenen en zijn mogelijk niet hetzelfde voor twee exemplaren.
 
 ```azurepowershell
-$recommendedRPs = SGet-AzRecoveryServicesRecommendedArchivableRPGroup -Item $BackupItem -StartDate $Startdate.ToUniversalTime() -EndDate $Enddate.ToUniversalTime() -VaultId $vault.ID 
+$RecommendedRecoveryPointList = Get-AzRecoveryServicesBackupRecommendedArchivableRPGroup -Item $bckItm -VaultId $vault.ID
 ```
 
 ### <a name="move-to-archive"></a>Verplaatsen naar archief
 
 ```azurepowershell
-Move-AzRecoveryServicesRecoveryPoint -VaultId $vault.ID - RecoveryPoint $RecoveryPoint[10] -SourceTier VaultStandard -DestinationTier VaultArchive 
+Move-AzRecoveryServicesBackupRecoveryPoint -VaultId $vault.ID -RecoveryPoint $rp[2] -SourceTier VaultStandard -DestinationTier VaultArchive
 ```
 
 Met deze opdracht wordt een archiefbaar herstel punt verplaatst naar Archive. Er wordt een taak geretourneerd die kan worden gebruikt om de verplaatsings bewerking bij te houden van de portal en met Power shell.
@@ -95,7 +116,7 @@ Met deze opdracht wordt een archiefbaar herstel punt verplaatst naar Archive. Er
 Met deze opdracht worden alle gearchiveerde herstel punten geretourneerd.
 
 ```azurepowershell
-$rp = Get-AzRecoveryServicesBackupRecoveryPoint -StartDate (Get-Date).AddDays(-180).ToUniversalTime() -EndDate (Get-Date).AddDays(0).ToUniversalTime() -VaultId $vault.ID -Item $bckItm -Tier VaultArchive
+$rp = Get-AzRecoveryServicesBackupRecoveryPoint -VaultId $vault.ID -Item $bckItm -Tier VaultArchive
 ```
 
 ### <a name="restore-with-powershell"></a>Herstellen met Power shell
@@ -122,7 +143,7 @@ Voer [de volgende stappen uit](backup-azure-sql-automation.md#restore-sql-dbs)om
 Gebruik de volgende Power shell-cmdlet om de verplaatsings-en herstel taken weer te geven:
 
 ```azurepowershell
-Get-AzRecoveryservicesBackupJob -VaultId $targetVault.ID
+Get-AzRecoveryServicesBackupJob -VaultId $vault.ID
 ```
 
 ## <a name="use-the-portal"></a>Gebruik de portal

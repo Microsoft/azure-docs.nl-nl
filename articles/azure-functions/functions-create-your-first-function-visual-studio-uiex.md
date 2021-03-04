@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.date: 09/30/2020
 ms.custom: devx-track-csharp, mvc, devcenter, vs-azure, 23113853-34f2-4f
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: fb3ba4ad49cc78b6082d347521cd87be5409cd34
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 9e3144738bd259ab9be75059af00f125581bb37c
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101748540"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102050117"
 ---
 # <a name="quickstart-create-your-first-function-in-azure-using-visual-studio"></a>Quickstart: Uw eerste functie maken in Azure met behulp van Visual Studio
 
@@ -27,9 +27,10 @@ Het volt ooien van deze Quick Start brengt een kleine prijs van een paar USD cen
 
 ![Visual Studio installeren met de Azure-ontwikkelworkload](media/functions-create-your-first-function-visual-studio/functions-vs-workloads.png)
 
+<br/>
 <details>
-<summary>In plaats daarvan een Azure Functions project gebruiken</summary>
-Als u een wilt maken <abbr title="Een logische container voor een of meer afzonderlijke functies die samen kunnen worden geïmplementeerd en beheerd. "> Azure Functions project</abbr> in plaats daarvan moet u eerst de [nieuwste Azure functions-hulpprogram ma's](functions-develop-vs.md#check-your-tools-version)installeren met behulp van Visual Studio 2017.
+<summary><strong>In plaats daarvan een Azure Functions project gebruiken</strong></summary>
+Als u een wilt maken <abbr title="Een logische container voor een of meer afzonderlijke functies die samen kunnen worden geïmplementeerd en beheerd.">Azure Functions project</abbr> in plaats daarvan moet u eerst de [nieuwste Azure functions-hulpprogram ma's](functions-develop-vs.md#check-your-tools-version)installeren met behulp van Visual Studio 2017.
 </details>
 
 ## <a name="2-create-a-function-app-project"></a>2. een functie-app-project maken
@@ -42,13 +43,13 @@ Als u een wilt maken <abbr title="Een logische container voor een of meer afzond
 
 1. Geef de volgende informatie op voor de instellingen voor het **maken van een nieuwe Azure functions-toepassing** :
 
-    + Selecteer **<abbr title=" deze waarde maakt een functie project dat gebruikmaakt van versie 3. x runtime van Azure functions, dat .net Core 3. x ondersteunt. Azure functions 1. x ondersteunt de .NET Framework. Zie [Azure functions runtime versies Overview](functions-versions.md)(Engelstalig) voor meer informatie. "> Azure Functions v3 (.NET core) </abbr>** uit de vervolg keuzelijst function runtime
+    + Selecteer **<abbr title=" deze waarde maakt een functie project dat gebruikmaakt van versie 3. x runtime van Azure functions, dat .net Core 3. x ondersteunt. Azure functions 1. x ondersteunt de .NET Framework. "> Azure Functions v3 (.NET core) </abbr>** uit de vervolg keuzelijst functions runtime. (Zie [Azure functions runtime versies Overview](functions-versions.md)voor meer informatie.)
     
     + Selecteer **<abbr title=" deze waarde maakt een functie die wordt geactiveerd door een HTTP-aanvraag. "> HTTP- </abbr> trigger** als de functie sjabloon.
     
-    + Selecteer **<abbr = "omdat een Azure-functie een opslag account vereist, er een wordt toegewezen of gemaakt wanneer u uw project naar Azure publiceert. Een HTTP-trigger gebruikt geen Azure Storage-account connection string; voor alle andere trigger typen is een geldig Azure Storage account vereist connection string. " >Storage emulator </abbr>** uit de vervolg keuzelijst voor het opslag account.
+    + Selecteer **<abbr title=" omdat een Azure-functie een opslag account vereist, er een wordt toegewezen of gemaakt wanneer u uw project naar Azure publiceert. Een HTTP-trigger gebruikt geen Azure Storage-account connection string; voor alle andere trigger typen is een geldig Azure Storage account vereist connection string. "> Opslag emulator </abbr>** uit de vervolg keuzelijst voor het opslag account.
         
-    + Selecteer **anoniem** in het <abbr title="De gemaakte functie kan door iedere client worden geactiveerd zonder een sleutel op te geven. Met deze autorisatie-instelling kunt u eenvoudig uw nieuwe functie testen. Raadpleeg [Autorisatiesleutels](functions-bindings-http-webhook-trigger.md#authorization-keys) in de [HTTP- en webhookbindingen](functions-bindings-http-webhook.md) voor meer informatie over sleutels en autorisatie.">Autorisatieniveau</abbr> vervolgkeuzelijst
+    + Selecteer **anoniem** in het <abbr title="De gemaakte functie kan door iedere client worden geactiveerd zonder een sleutel op te geven. Met deze autorisatie-instelling kunt u eenvoudig uw nieuwe functie testen.">Autorisatieniveau</abbr> vervolg. (Zie [autorisatie sleutels](functions-bindings-http-webhook-trigger.md#authorization-keys) en [bindingen voor http en webhook](functions-bindings-http-webhook.md)voor meer informatie over sleutels en autorisatie.)
 
     + Selecteer **Maken**
         
@@ -77,8 +78,9 @@ Met het kenmerk van de `FunctionName`-methode wordt de naam van de functie inges
 
 1. Als u het fout opsporingsprogramma wilt stoppen, drukt u op <kbd>SHIFT</kbd> + <kbd>F5</kbd> in Visual Studio.
 
+<br/>
 <details>
-<summary>Problemen oplossen</summary>
+<summary><strong>Problemen oplossen</strong></summary>
  Mogelijk moet u ook een firewall-uitzondering maken, zodat de hulpprogramma's HTTP-aanvragen kunnen afhandelen. Er worden geen autorisatieniveaus afgedwongen wanneer u een functie lokaal uitvoert.
 </details>
 
@@ -102,7 +104,7 @@ Met het kenmerk van de `FunctionName`-methode wordt de naam van de functie inges
     
     + **Selecteer** een bestaande <abbr title="Een logische container voor gerelateerde Azure-resources die u kunt beheren als een eenheid.">resourcegroep</abbr> in de vervolg keuzelijst of kies **Nieuw** om een nieuwe resource groep te maken.
     
-    + **Selecteren** <abbr title="Wanneer u uw project publiceert in een functie-app die wordt uitgevoerd in een [verbruiksabonnement](consumption-plan.md), betaalt u alleen voor uitvoeringen van uw functie-app. Andere hostingabonnement kosten meer.">Verbruik</abbr> in de vervolg keuzelijst afspeel type
+    + **Selecteren** <abbr title="Wanneer u uw project publiceert in een functie-app die wordt uitgevoerd in een verbruiksabonnement, betaalt u alleen voor uitvoeringen van uw functie-app. Andere hostingabonnement kosten meer.">Verbruik</abbr> in de vervolg keuzelijst Play-type. (Zie [verbruiks abonnement](consumption-plan.md)voor meer informatie.)
     
     + **Selecteer** een  <abbr title="Een geografische verwijzing naar een specifiek Azure-Data Center waarin resources worden toegewezen. Zie [regio's](https://azure.microsoft.com/regions/) voor een lijst met beschik bare regio's.">location</abbr> in de vervolg keuzelijst.
     
@@ -116,8 +118,9 @@ Met het kenmerk van de `FunctionName`-methode wordt de naam van de functie inges
 
     :::image type="content" source="../../includes/media/functions-vstools-publish/functions-visual-studio-publish-profile-step-4.png" alt-text="Profiel maken afronden":::
 
+    <br/>
     <details>
-    <summary>Wat doet deze instelling?</summary>
+    <summary><strong>Wat doet deze instelling?</strong></summary>
     Wanneer u **uitvoeren vanaf pakket bestand** gebruikt, wordt de functie-app geïmplementeerd met behulp van [zip-implementatie](functions-deployment-technologies.md#zip-deploy) met de modus [uitvoeren vanaf pakket](run-functions-from-deployment-package.md) ingeschakeld. Dit is de aanbevolen implementatiemethode voor uw functieproject, aangezien deze leidt tot betere prestaties.    
     </details>   
 
@@ -127,14 +130,14 @@ Met het kenmerk van de `FunctionName`-methode wordt de naam van de functie inges
 
 1. Controleer op de pagina publiceren de basis-URL van de functie-app.
 
-1. Kies in het tabblad publiceren de optie **beheren in <abbr title=" Cloud Explorer om de inhoud van de site weer te geven, de functie-app te starten en te stoppen en rechtstreeks naar app-resources in Azure en in de Azure portal te bladeren. "> Cloud Explorer</>**.
+1. Kies in het tabblad publiceren de optie **beheren in <abbr title=" Cloud Explorer om de inhoud van de site weer te geven, de functie-app te starten en te stoppen en rechtstreeks naar app-resources in Azure en in de Azure portal te bladeren. "> Cloud Explorer </abbr>**.
     
     :::image type="content" source="../../includes/media/functions-vstools-publish/functions-visual-studio-publish-complete.png" alt-text="Succesbericht publiceren":::
     
 
 ## <a name="6-test-your-function-in-azure"></a>6. test uw functie in azure
 
-1. In Cloud Explorer moet de nieuwe functie-app zijn geselecteerd. Als dit niet het geval is, vouwt u uw abonnement uit > **App Services**, en selecteert u de nieuwe functie-app.
+1. In Cloud Explorer moet de nieuwe functie-app zijn geselecteerd. Als dat niet het geval is, vouwt u uw abonnement uit, vouwt u **app Services** uit en selecteert u de nieuwe functie-app.
 
 1. Klik met de rechtermuisknop op de functie-app en kies **Openen in browser**. Hiermee opent u de hoofdmap van de functie-app in uw standaardwebbrowser, en wordt de pagina geopend waarop staat aangegeven dat de functie-app actief is. 
 
@@ -154,7 +157,7 @@ Met het kenmerk van de `FunctionName`-methode wordt de naam van de functie inges
 
 Verwijder de functie-app en de bijbehorende resources om te voor komen dat er verdere kosten in rekening worden gebracht.
 
-1. Vouw in Cloud Explorer uw abonnement uit > **App Services**, klik met de rechtermuisknop op de functie-app en kies **Openen in portal**. 
+1. Vouw in Cloud Explorer uw abonnement uit, vouw **app Services** uit, klik met de rechter muisknop op de functie-app en kies **openen in portal**. 
 
 1. Selecteer op de pagina Functie-app het tabblad **Overzicht**, en selecteer vervolgens de koppeling onder **Resourcegroep**.
 

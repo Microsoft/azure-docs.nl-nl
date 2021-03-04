@@ -3,14 +3,14 @@ title: Azure Automation gegevens beveiliging
 description: In dit artikel leest u hoe Azure Automation uw privacy beschermt en uw gegevens beveiligt.
 services: automation
 ms.subservice: shared-capabilities
-ms.date: 01/08/2021
+ms.date: 03/02/2021
 ms.topic: conceptual
-ms.openlocfilehash: f2ce8d482231b4a95c322e9d495a75f89953c32a
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 2bdf25ef24f1fbf4aaf4dec154ea6af3421b915a
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100581108"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102050814"
 ---
 # <a name="management-of-azure-automation-data"></a>Beheer van Azure Automation-gegevens
 
@@ -41,7 +41,7 @@ Zie [log Analytics agent Overview-TLS 1,2](..//azure-monitor/agents/log-analytic
 
 ## <a name="data-retention"></a>Gegevensretentie
 
-Wanneer u een resource in Azure Automation verwijdert, wordt deze gedurende een aantal dagen voor controle doeleinden bewaard voordat deze definitief worden verwijderd. U kunt de resource niet zien of gebruiken tijdens deze periode. Dit beleid is ook van toepassing op bronnen die horen bij een verwijderd Automation-account.
+Wanneer u een resource in Azure Automation verwijdert, wordt deze gedurende een aantal dagen voor controle doeleinden bewaard voordat deze definitief worden verwijderd. U kunt de resource niet zien of gebruiken tijdens deze periode. Dit beleid is ook van toepassing op bronnen die horen bij een verwijderd Automation-account. Het Bewaar beleid is van toepassing op alle gebruikers en kan momenteel niet worden aangepast. Als u gegevens gedurende een langere periode wilt blijven gebruiken, kunt u de [gegevens van Azure Automation-taak naar Azure monitor-logboeken door sturen](automation-manage-send-joblogs-log-analytics.md).
 
 De volgende tabel bevat een overzicht van het Bewaar beleid voor verschillende resources.
 
@@ -54,9 +54,9 @@ De volgende tabel bevat een overzicht van het Bewaar beleid voor verschillende r
 | Modules |Een module wordt definitief verwijderd 30 dagen nadat een gebruiker deze heeft verwijderd, of 30 dagen nadat een gebruiker het account heeft verwijderd dat de module bevat. |
 | Knooppunt configuraties/MOF-bestanden |Een oude knooppunt configuratie wordt definitief verwijderd 30 dagen nadat een nieuwe knooppunt configuratie is gegenereerd. |
 | Knooppunt rapporten |Een knooppunt rapport wordt 90 dagen na het genereren van een nieuw rapport voor dat knoop punt definitief verwijderd. |
-| Runbooks |Een runbook wordt definitief verwijderd 30 dagen nadat een gebruiker de resource heeft verwijderd, of 30 dagen nadat een gebruiker het account heeft verwijderd dat de resource bevat. |
+| Runbooks |Een runbook wordt definitief verwijderd 30 dagen nadat een gebruiker de resource heeft verwijderd, of 30 dagen nadat een gebruiker het account heeft verwijderd dat de resource<sup>1</sup>bevat. |
 
-Het Bewaar beleid is van toepassing op alle gebruikers en kan momenteel niet worden aangepast. Als u gegevens gedurende een langere periode wilt blijven gebruiken, kunt u de [gegevens van Azure Automation-taak naar Azure monitor-logboeken door sturen](automation-manage-send-joblogs-log-analytics.md).
+<sup>1</sup> Het runbook kan worden hersteld in het 30-dagen venster door een ondersteunings incident voor Azure te archiveren met Microsoft Azure ondersteuning. Ga naar de [ondersteunings site van Azure](/support/options) en selecteer **een ondersteunings aanvraag indienen**.
 
 ## <a name="data-backup"></a>Gegevens back-up
 

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: devx-track-js
-ms.openlocfilehash: 2a225d4ea19cccea114e47cc61a8055d28e8cd99
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: bbcfe4935843a00bc5274273e79f4ffc72dc25ed
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895287"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102051052"
 ---
 # <a name="add-controls-to-a-map"></a>Besturings elementen aan een kaart toevoegen
 
@@ -58,11 +58,11 @@ Hieronder ziet u het volledige programma voor het uitvoeren van code van de bove
 
 ## <a name="add-compass-control"></a>Besturings element kompas toevoegen
 
-Met een kompas besturings element wordt een knop voor het draaien van de kaart toegevoegd. Met het volgende code voorbeeld maakt u een instantie van de eigenschap [kompas Control](/javascript/api/azure-maps-control/atlas.control.compasscontrol) en voegt u deze toe aan de linkerbenedenhoek van de kaart.
+Met een kompas besturings element wordt een knop voor het draaien van de kaart toegevoegd. Met het volgende code voorbeeld maakt u een instantie van de klasse [CompassControl](/javascript/api/azure-maps-control/atlas.control.compasscontrol) en voegt u deze toe aan de linkerbenedenhoek van de kaart.
 
 ```javascript
 //Construct a compass control and add it to the map.
-map.controls.add(new atlas.control.Compass(), {
+map.controls.add(new atlas.control.CompassControl(), {
     position: 'bottom-left'
 });
 ```

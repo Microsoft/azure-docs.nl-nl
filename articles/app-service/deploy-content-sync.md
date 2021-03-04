@@ -3,60 +3,84 @@ title: Inhoud vanuit een Cloud-map synchroniseren
 description: Meer informatie over het implementeren van uw app naar Azure App Service via inhouds synchronisatie vanuit een Cloud-map, waaronder OneDrive of Dropbox.
 ms.assetid: 88d3a670-303a-4fa2-9de9-715cc904acec
 ms.topic: article
-ms.date: 12/03/2018
+ms.date: 02/25/2021
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: 880edff95bb548ec5328c543a542ea5dfcfc362f
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: bfee320c7a8b4cbe8439c376350d1234b393bfb5
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150295"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102051217"
 ---
 # <a name="sync-content-from-a-cloud-folder-to-azure-app-service"></a>Inhoud vanuit een Cloud-map synchroniseren met Azure App Service
 In dit artikel wordt beschreven hoe u uw inhoud synchroniseert met [Azure app service](./overview.md) vanuit Dropbox en OneDrive. 
 
-De implementatie van inhoud op aanvraag wordt mogelijk gemaakt door de App Service [kudu-implementatie-engine](https://github.com/projectkudu/kudu/wiki). U kunt werken met uw app-code en-inhoud in een aangewezen Cloud-map en vervolgens synchroniseren met App Service met één klik op een knop. Inhouds synchronisatie maakt gebruik van de kudu-buildserver. 
+Met de methode voor de synchronisatie van de inhoud kunt u uw app-code en-inhoud in een aangewezen Cloud-map gebruiken om te controleren of deze zich in een kant-en-klaar status bevindt en vervolgens synchroniseert met App Service met één klik op een knop. 
+
+Vanwege onderliggende verschillen in de Api's, wordt **OneDrive voor bedrijven** op dit moment niet ondersteund.
+
+> [!NOTE]
+> De pagina **Development Center (klassiek)** in de Azure Portal, die de oude implementatie-ervaring is, wordt in maart 2021 afgeschaft. Deze wijziging is niet van invloed op bestaande implementatie-instellingen in uw app en u kunt de implementatie van apps blijven beheren op de pagina **implementatie centrum** .
 
 ## <a name="enable-content-sync-deployment"></a>Implementatie van inhouds synchronisatie inschakelen
 
-Als u inhouds synchronisatie wilt inschakelen, navigeert u naar de pagina App Service app in de [Azure Portal](https://portal.azure.com).
+1. Navigeer in het [Azure Portal](https://portal.azure.com)naar de beheer pagina voor uw app service-app.
 
-Klik in het linkermenu op **implementatie centrum**  >  **OneDrive** of **Dropbox**  >  **autoriseren**. Volg de autorisatie prompts. 
+1. Klik in het menu links op instellingen voor het **implementatie centrum**  >  . 
 
-![Laat zien hoe u OneDrive of Dropbox kunt autoriseren in het implementatie centrum in de Azure Portal.](media/app-service-deploy-content-sync/choose-source.png)
+1. Selecteer in **bron** **OneDrive** of **Dropbox**.
 
-U hoeft slechts één keer per OneDrive of Dropbox te autoriseren. Als u al bent gemachtigd, klikt u op **door gaan**. U kunt het geautoriseerde OneDrive-of Dropbox-account wijzigen door te klikken op **account wijzigen**.
+1. Klik op **autoriseren** en volg de autorisatie prompts. 
 
-![Laat zien hoe u het geautoriseerde OneDrive-of Dropbox-account kunt wijzigen in het implementatie centrum in de Azure Portal.](media/app-service-deploy-content-sync/continue.png)
+    ![Laat zien hoe u OneDrive of Dropbox kunt autoriseren in het implementatie centrum in de Azure Portal.](media/app-service-deploy-content-sync/choose-source.png)
 
-Selecteer op de pagina **configureren** de map die u wilt synchroniseren. Deze map wordt gemaakt onder het volgende toegewezen inhoudsdistributiepad in OneDrive of Dropbox. 
+    U hoeft slechts één keer met OneDrive of Dropbox te autoriseren voor uw Azure-account. Klik op **account wijzigen** om een ander OneDrive-of Dropbox-account voor een app te autoriseren.
+
+1. Selecteer in **map** de map die u wilt synchroniseren. Deze map wordt gemaakt onder het volgende toegewezen inhoudsdistributiepad in OneDrive of Dropbox. 
    
-* **OneDrive**: `Apps\Azure Web Apps`
-* **Dropbox**: `Apps\Azure`
-
-Wanneer u klaar bent, klikt u op **door gaan**.
-
-Controleer de opties op de pagina **samen vatting** en klik op **volt ooien**.
+    * **OneDrive**: `Apps\Azure Web Apps`
+    * **Dropbox**: `Apps\Azure`
+    
+1. Klik op **Opslaan**.
 
 ## <a name="synchronize-content"></a>Inhoud synchroniseren
 
-Als u inhoud in de map Cloud met App Service wilt synchroniseren, gaat u terug naar de pagina van het **implementatie centrum** en klikt u op **synchroniseren**.
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
-![Laat zien hoe u uw Cloud-map synchroniseert met App Service.](media/app-service-deploy-content-sync/synchronize.png)
+1. Navigeer in het [Azure Portal](https://portal.azure.com)naar de beheer pagina voor uw app service-app.
+
+1. Klik in het menu links op **implementatie centrum** opnieuw  >  **implementeren/synchroniseren**. 
+
+    ![Laat zien hoe u uw Cloud-map synchroniseert met App Service.](media/app-service-deploy-content-sync/synchronize.png)
    
-   > [!NOTE]
-   > Vanwege onderliggende verschillen in de Api's, wordt **OneDrive voor bedrijven** op dit moment niet ondersteund. 
-   > 
-   > 
+1. Klik op **OK** om de synchronisatie te bevestigen.
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/cli)
+
+Start een synchronisatie door de volgende opdracht uit te voeren en \<group-name> te vervangen en \<app-name> :
+
+```azurecli-interactive
+az webapp deployment source sync –-resource-group <group-name> –-name <app-name>
+```
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
+
+Start een synchronisatie door de volgende opdracht uit te voeren en \<group-name> te vervangen en \<app-name> :
+
+```azurepowershell-interactive
+Invoke-AzureRmResourceAction -ResourceGroupName <group-name> -ResourceType Microsoft.Web/sites -ResourceName <app-name> -Action sync -ApiVersion 2019-08-01 -Force –Verbose
+```
+
+-----
 
 ## <a name="disable-content-sync-deployment"></a>Implementatie van inhouds synchronisatie uitschakelen
 
-Als u inhouds synchronisatie wilt uitschakelen, gaat u naar de pagina App Service app in de [Azure Portal](https://portal.azure.com).
+1. Navigeer in het [Azure Portal](https://portal.azure.com)naar de beheer pagina voor uw app service-app.
 
-Klik in het linkermenu op het verbreken van het **implementatie centrum**  >  **Disconnect**.
+1. Klik in het linkermenu op instellingen van het **implementatie centrum** om de  >    >  **verbinding te verbreken**. 
 
-![Laat zien hoe u de synchronisatie van uw Cloud mappen verbreekt met uw App Service-app in de Azure Portal.](media/app-service-deploy-content-sync/disable.png)
+    ![Laat zien hoe u de synchronisatie van uw Cloud mappen verbreekt met uw App Service-app in de Azure Portal.](media/app-service-deploy-content-sync/disable.png)
 
 [!INCLUDE [What happens to my app during deployment?](../../includes/app-service-deploy-atomicity.md)]
 

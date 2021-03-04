@@ -3,12 +3,12 @@ title: Operationele back-ups voor Azure-blobs configureren
 description: Meer informatie over het configureren en beheren van operationele back-ups voor Azure-blobs (in preview-versie)
 ms.topic: conceptual
 ms.date: 02/16/2021
-ms.openlocfilehash: 7fe302de0e93575e7bb62f7c5cdefd7acc0720c3
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 0dc490842389ba9286799aef5d37c1cf7c1ba64e
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101745751"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102051069"
 ---
 # <a name="configure-operational-backup-for-azure-blobs-in-preview"></a>Operationele back-ups voor Azure-blobs configureren (in preview-versie)
 
@@ -170,4 +170,4 @@ Zie [overzicht van backup Center (preview)](backup-center-overview.md)voor meer 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure-blobs herstellen](blob-backup-support-matrix.md)
+- [Azure-blobs herstellen](blob-restore.md)

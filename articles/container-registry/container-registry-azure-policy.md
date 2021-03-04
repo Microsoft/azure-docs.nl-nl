@@ -2,13 +2,13 @@
 title: Naleving met behulp van Azure Policy
 description: Ingebouwde beleids regels toewijzen in Azure Policy om de naleving van uw Azure-container registers te controleren
 ms.topic: article
-ms.date: 06/11/2020
-ms.openlocfilehash: 26c56616bcc411063d0ebfda28ba1e6fdf44c7fb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 03/01/2021
+ms.openlocfilehash: 3f6809698171950060b54257a365889242f4636e
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89291009"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102050576"
 ---
 # <a name="audit-compliance-of-azure-container-registries-using-azure-policy"></a>Controle van de naleving van Azure-container registers met behulp van Azure Policy
 
@@ -22,7 +22,7 @@ Er worden geen kosten in rekening gebracht voor het gebruik van Azure Policy.
 
 De volgende ingebouwde beleids definities zijn specifiek voor Azure Container Registry:
 
-[!INCLUDE [azure-policy-reference-policies-container-registry](../../includes/policy/reference/bycat/policies-container-registry.md)]
+[!INCLUDE [azure-policy-reference-rp-containerreg](../../includes/policy/reference/byrp/microsoft.containerregistry.md)]
 
 Zie ook de ingebouwde Network Policy Definition: [container Registry moet een service-eind punt voor een virtueel netwerk gebruiken](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc4857be7-912a-4c75-87e6-e30292bcdf78).
 
@@ -43,7 +43,7 @@ Wanneer een resource niet-compatibel is, zijn er veel mogelijke redenen. Zie [ni
 
 ### <a name="policy-compliance-in-the-portal"></a>Beleids naleving in de portal:
 
-1. Selecteer **alle services**en zoek naar **beleid**.
+1. Selecteer **alle services** en zoek naar **beleid**.
 1. Selecteer **naleving**.
 1. Gebruik de filters om de nalevings status te beperken of om te zoeken naar beleid.
 

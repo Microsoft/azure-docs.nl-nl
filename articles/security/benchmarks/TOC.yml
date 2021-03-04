@@ -242,4 +242,4 @@
     - name: Azure Security Center
       href: ../../security-center/index.yml
     - name: Voor beeld van Azure Security Bench Mark Foundation blauw druk
-      href: ../../governance/blueprints/samples/azure-security-benchmark-foundation/index.yml
+      href: ../../governance/blueprints/samples/azure-security-benchmark-foundation/index.md

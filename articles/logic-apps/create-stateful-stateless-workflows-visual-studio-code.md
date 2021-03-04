@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
 ms.date: 03/02/2021
-ms.openlocfilehash: 43dd047738538b0dcc76904e951eccea3a327c19
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 0850830e6f8101feae80154a0e245196a690f276
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101715844"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102050236"
 ---
 # <a name="create-stateful-and-stateless-workflows-in-visual-studio-code-with-the-azure-logic-apps-preview-extension"></a>Stateful en stateless werk stromen maken in Visual Studio code met de extensie Azure Logic Apps (preview)
 
@@ -140,7 +140,8 @@ Voer de volgende stappen uit om een Azure Storage-account te maken en in te stel
 
 * Als u de [inline code bewerkingen actie](../logic-apps/logic-apps-add-run-inline-code.md) wilt gebruiken waarmee Java script wordt uitgevoerd, installeert u [Node.js versie 10. x. x, 11. x. x of 12. x. x](https://nodejs.org/en/download/releases/).
 
-  > [!TIP] Down load de MSI-versie voor Windows. Als u in plaats daarvan de ZIP-versie gebruikt, moet u Node.js hand matig beschikbaar maken met behulp van een omgevings variabele PATH voor uw besturings systeem.
+  > [!TIP] 
+  > Down load de MSI-versie voor Windows. Als u in plaats daarvan de ZIP-versie gebruikt, moet u Node.js hand matig beschikbaar maken met behulp van een omgevings variabele PATH voor uw besturings systeem.
 
 * Voor het lokaal uitvoeren van webhook-triggers en-acties, zoals de [ingebouwde HTTP-webhook-trigger](../connectors/connectors-native-webhook.md), in Visual Studio code moet u [door sturen instellen voor de call back-URL](#webhook-setup).
 

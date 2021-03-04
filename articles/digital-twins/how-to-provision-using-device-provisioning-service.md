@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/1/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 924397c9c81d2a38ae74b95a8f7133ced8bde0d4
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 24dac044982d59e93da17ee75190f378d5e3cdea
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101736539"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102050916"
 ---
 # <a name="auto-manage-devices-in-azure-digital-twins-using-device-provisioning-service-dps"></a>Apparaten in azure Digital Apparaatdubbels automatisch beheren met behulp van de Device Provisioning Service (DPS)
 
@@ -85,7 +85,7 @@ Voeg in uw functie-app-project een nieuwe functie toe. Voeg ook een nieuw NuGet-
 
 Plak de volgende code in het zojuist gemaakte functie code bestand.
 
-:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/adtIotHub_allocate.cs":::
+:::code language="csharp" source="~/digital-twins-docs-samples-dps/functions/DpsAdtAllocationFunc.cs":::
 
 Sla het bestand op en publiceer vervolgens de functie-app opnieuw. Zie het gedeelte [*de app publiceren*](tutorial-end-to-end.md#publish-the-app) van de end-to-end-zelf studie voor instructies voor het publiceren van de functie-app.
 
@@ -182,7 +182,7 @@ Deze functie maakt gebruik van de gebeurtenis levens cyclus van IoT Hub om een b
 
 Voeg in de gepubliceerde functie-app een nieuwe functie klasse van het type *Event hub-trigger* toe en plak de onderstaande code.
 
-:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/adtIotHub_delete.cs":::
+:::code language="csharp" source="~/digital-twins-docs-samples-dps/functions/DeleteDeviceInTwinFunc.cs":::
 
 Sla het project op en publiceer vervolgens de functie-app opnieuw. Zie het gedeelte [*de app publiceren*](tutorial-end-to-end.md#publish-the-app) van de end-to-end-zelf studie voor instructies voor het publiceren van de functie-app.
 
@@ -223,7 +223,7 @@ Als u het proces van het buiten gebruik wilt stellen, moet u het apparaat hand m
 
 In de [eerste helft van dit artikel](#auto-provision-device-using-device-provisioning-service)hebt u een apparaat gemaakt in IOT hub en een bijbehorende digitale twee. 
 
-Ga nu naar het IoT Hub en verwijder dat apparaat (u kunt dit doen met een [Azure cli-opdracht](/cli/azure/ext/azure-iot/iot/hub/module-identity?view=azure-cli-latest#ext_azure_iot_az_iot_hub_module_identity_delete) of in de [Azure Portal](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Devices%2FIotHubs)). 
+Ga nu naar het IoT Hub en verwijder dat apparaat (u kunt dit doen met een [Azure cli-opdracht](/cli/azure/ext/azure-iot/iot/hub/module-identity?view=azure-cli-latest&preserve-view=true#ext_azure_iot_az_iot_hub_module_identity_delete) of in de [Azure Portal](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Devices%2FIotHubs)). 
 
 Het apparaat wordt automatisch uit Azure Digital Apparaatdubbels verwijderd. 
 

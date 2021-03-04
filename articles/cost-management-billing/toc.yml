@@ -438,14 +438,6 @@
           href: manage/review-subscription-billing.md
         - name: Resourcegebruik bekijken
           href: manage/review-service-usage-api.md
-    - name: .NET-voorbeelden
-      items:
-        - name: Codevoorbeeld voor de API voor facturen
-          href: 'https://github.com/Azure-Samples/billing-dotnet-core-invoice-download'
-        - name: Codevoorbeeld voor de API voor gebruik
-          href: 'https://github.com/Azure-Samples/billing-dotnet-usage-api'
-        - name: Codevoorbeeld voor de RateCard API
-          href: 'https://github.com/Azure-Samples/billing-dotnet-ratecard-api'
 - name: Cloudyn
   items:
     - name: Overzicht

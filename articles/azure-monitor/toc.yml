@@ -416,7 +416,7 @@
                 - name: Verzenden naar Event Hubs
                   href: agents/diagnostics-extension-stream-event-hubs.md
                 - name: Verzenden naar logboeken
-                  href: essentials/diagnostics-extension-logs.md
+                  href: agents/diagnostics-extension-logs.md
                 - name: Verzenden naar Application Insights
                   href: agents/diagnostics-extension-to-application-insights.md
                 - name: Versiegeschiedenis
@@ -993,7 +993,7 @@
         - name: Veelgestelde vragen over algemene beschikbaarheid
           href: vm/vminsights-ga-release-faq.md
         - name: Veelgestelde vragen
-          href: faq.md#azure-monitor-for-vms
+          href: faq.md#vm-insights
         - name: Werkruimte configureren
           href: vm/vminsights-configure-workspace.md
         - name: Agents installeren
@@ -1045,7 +1045,7 @@
         - name: Overzicht
           href: containers/container-insights-overview.md
         - name: Veelgestelde vragen
-          href: faq.md#azure-monitor-for-containers
+          href: faq.md#container-insights
         - name: Bewaking inschakelen
           items:
             - name: Bewakingsoverzicht inschakelen

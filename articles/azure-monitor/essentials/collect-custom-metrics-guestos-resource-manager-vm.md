@@ -6,13 +6,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: bwren
-ms.subservice: metrics
-ms.openlocfilehash: 0051ec15cafc60af6a0523631f77a9b52294e69c
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 8e510cf2e6fed9f9ffdec1dcc4dacf16a866d66b
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101731711"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102049012"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-by-using-an-azure-resource-manager-template-for-a-windows-virtual-machine"></a>De metrische gegevens van het gast besturingssysteem naar het Azure Monitor metrische archief verzenden met behulp van een Azure Resource Manager sjabloon voor een virtuele Windows-machine
 Prestatie gegevens van het gast besturingssysteem van de virtuele machines van Azure worden niet automatisch verzameld, zoals andere [platform metrische gegevens](./monitor-azure-resource.md#monitoring-data). Installeer de Azure Monitor [Diagnostics-extensie](../agents/diagnostics-extension-overview.md) voor het verzamelen van metrische gegevens van het gast besturingssysteem in de data base Metrics, zodat deze kan worden gebruikt met alle functies van Azure monitor metrische gegevens, waaronder bijna realtime waarschuwingen, grafieken, route ring en toegang vanaf een rest API. In dit artikel wordt het proces beschreven voor het verzenden van de prestaties van een virtuele Windows-machine naar de metrische data base met behulp van een resource manager-sjabloon. 

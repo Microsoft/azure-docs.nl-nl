@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 141daa485fae5aba2db23647fada30ba5b621cd0
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 9194f38ddea5570d94ba6c87ea6a537cb41fb98c
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96854611"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102051375"
 ---
 # <a name="data-encryption-models"></a>Gegevensversleutelingmodellen
 
@@ -149,7 +149,7 @@ De Azure-Services die elk versleutelings model ondersteunen:
 | Azure Cognitive Search           | Ja                | Ja                | -                  |
 | Azure Cognitive Services         | Ja                | Ja                | -                  |
 | Azure Machine Learning           | Ja                | Ja                | -                  |
-| Azure Machine Learning Studio (klassiek) | Yes         | Preview, RSA 2048-bits | -               |
+| Azure Machine Learning Studio (klassiek) | Ja         | Preview, RSA 2048-bits | -               |
 | Content Moderator                | Ja                | Ja                | -                  |
 | Face                             | Ja                | Ja                | -                  |
 | Taalbegrip           | Ja                | Ja                | -                  |
@@ -157,14 +157,14 @@ De Azure-Services die elk versleutelings model ondersteunen:
 | QnA Maker                        | Ja                | Ja                | -                  |
 | Speech Services                  | Ja                | Ja                | -                  |
 | Translator Text                  | Ja                | Ja                | -                  |
-| Power BI                         | Yes                | Ja, RSA 4096-bits  | -                  |
+| Power BI                         | Ja                | Ja, RSA 4096-bits  | -                  |
 | **Analyse**                    |                    |                    |                    |
-| Azure Stream Analytics           | Yes                | Klikt\*\*            | -                  |
+| Azure Stream Analytics           | Ja                | Klikt\*\*            | -                  |
 | Event Hubs                       | Ja                | Ja                | -                  |
-| Functies                        | Ja                | Ja                | -                  |
+| Functions                        | Ja                | Ja                | -                  |
 | Azure Analysis Services          | Ja                | -                  | -                  |
-| Azure Data Catalog               | Yes                | -                  | -                  |
-| Azure HDInsight                  | Yes                | Alles                | -                  |
+| Azure Data Catalog               | Ja                | -                  | -                  |
+| Azure HDInsight                  | Ja                | Alles                | -                  |
 | Azure Monitor Application Insights | Ja                | Ja                | -                  |
 | Azure Monitor Log Analytics      | Ja                | Ja                | -                  |
 | Azure Data Explorer              | Ja                | Ja                | -                  |
@@ -178,41 +178,41 @@ De Azure-Services die elk versleutelings model ondersteunen:
 | Virtual Machines                 | Ja                | Ja                | -                  |
 | Schaalset voor virtuele machines        | Ja                | Ja                | -                  |
 | SAP HANA                         | Ja                | Ja                | -                  |
-| App Service                      | Yes                | Klikt\*\*            | -                  |
-| Automation                       | Yes                | Klikt\*\*            | -                  |
-| Azure Functions                  | Yes                | Klikt\*\*            | -                  |
-| Azure Portal                     | Yes                | Klikt\*\*            | -                  |
+| App Service                      | Ja                | Klikt\*\*            | -                  |
+| Automation                       | Ja                | Klikt\*\*            | -                  |
+| Azure Functions                  | Ja                | Klikt\*\*            | -                  |
+| Azure Portal                     | Ja                | Klikt\*\*            | -                  |
 | Logic Apps                       | Ja                | Ja                | -                  |
-| Door Azure beheerde toepassingen       | Yes                | Klikt\*\*            | -                  |
+| Door Azure beheerde toepassingen       | Ja                | Klikt\*\*            | -                  |
 | Service Bus                      | Ja                | Ja                | -                  |
 | Siteherstel                    | Ja                | Ja                | -                  |
 | **Databases**                    |                    |                    |                    |
 | SQL Server on Virtual Machines   | Ja                | Ja                | Ja                |
-| Azure SQL Database               | Ja                | Ja, RSA 3072-bits  | Yes                |
-| Azure SQL Database voor MariaDB   | Yes                | -                  | -                  |
+| Azure SQL Database               | Ja                | Ja, RSA 3072-bits  | Ja                |
+| Azure SQL Database voor MariaDB   | Ja                | -                  | -                  |
 | Azure SQL Database voor MySQL     | Ja                | Ja                | -                  |
 | Azure SQL Database voor PostgreSQL | Ja               | Ja                | -                  |
-| Azure Synapse Analytics          | Yes                | Ja, RSA 3072-bits  | -                  |
-| SQL Server Stretch Database      | Yes                | Ja, RSA 3072-bits  | Yes                |
+| Azure Synapse Analytics          | Ja                | Ja, RSA 3072-bits  | -                  |
+| SQL Server Stretch Database      | Ja                | Ja, RSA 3072-bits  | Ja                |
 | Table Storage                    | Ja                | Ja                | Ja                |
 | Azure Cosmos DB                  | Ja                | Ja                | -                  |
 | Azure Databricks                 | Ja                | Ja                | -                  |
-| Azure Database Migration Service | Yes                | n.v.t.\*              | -                  |
+| Azure Database Migration Service | Ja                | N.v.t.\*              | -                  |
 | **DevOps**                       |                    |                    |                    |
-| Azure DevOps Services            | Ja                | -                  | Ja                |
-| Azure-opslagplaatsen                      | Ja                | -                  | Ja                |
+| Azure DevOps Services            | Ja                | -                  | -                  |
+| Azure-opslagplaatsen                      | Ja                | -                  | -                  |
 | **Identiteit**                     |                    |                    |                    |
-| Azure Active Directory           | Yes                | -                  | -                  |
+| Azure Active Directory           | Ja                | -                  | -                  |
 | Azure Active Directory Domain Services | Ja          | Ja                | -                  |
 | **Integratie**                  |                    |                    |                    |
 | Service Bus                      | Ja                | Ja                | Ja                |
-| Event Grid                       | Yes                | -                  | -                  |
-| API Management                   | Yes                | -                  | -                  |
+| Event Grid                       | Ja                | -                  | -                  |
+| API Management                   | Ja                | -                  | -                  |
 | **IoT-services**                 |                    |                    |                    |
 | IoT Hub                          | Ja                | Ja                | Ja                |
 | IoT Hub Device Provisioning      | Ja                | Ja                | -                  |
 | **Beheer en governance**    |                    |                    |                    |
-| Azure Site Recovery              | Yes                | -                  | -                  |
+| Azure Site Recovery              | Ja                | -                  | -                  |
 | Azure Migrate                    | Ja                | Ja                | -                  |
 | **Media**                        |                    |                    |                    |
 | Media Services                   | Ja                | Ja                | Ja                |
@@ -229,8 +229,8 @@ De Azure-Services die elk versleutelings model ondersteunen:
 | Bestands Premium Storage             | Ja                | Ja                | -                  |
 | File Sync                        | Ja                | Ja                | -                  |
 | Queue Storage                    | Ja                | Ja                | Ja                |
-| Avere vFXT                       | Yes                | -                  | -                  |
-| Azure Cache voor Redis            | Yes                | n.v.t.\*              | -                  |
+| Avere vFXT                       | Ja                | -                  | -                  |
+| Azure Cache voor Redis            | Ja                | N.v.t.\*              | -                  |
 | Azure NetApp Files               | Ja                | Ja                | -                  |
 | Archive Storage                  | Ja                | Ja                | -                  |
 | StorSimple                       | Ja                | Ja                | Ja                |

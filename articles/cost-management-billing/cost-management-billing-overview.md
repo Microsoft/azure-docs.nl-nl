@@ -4,17 +4,17 @@ description: U gebruikt functies van Azure Kostenbeheer en facturering voor het 
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 01/28/2021
+ms.date: 03/03/2021
 ms.topic: overview
 ms.service: cost-management-billing
 ms.subservice: common
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: a070b2329777accab6f62b767f74dbc28e5d2623
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 9fe658a1755ce3731f220ec656845da1f861fa9b
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99051090"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102050529"
 ---
 # <a name="what-is-azure-cost-management--billing"></a>Wat is Azure Kostenbeheer en facturering?
 
@@ -33,6 +33,8 @@ Bij producten en services van Azure is het zo dat u alleen betaalt voor wat u ge
 
 Lees het artikel [Azure Cost Management best practices](./costs/cost-mgt-best-practices.md) voor meer informatie over kostenbeheer in een bedrijf.
 
+![Diagram van het optimalisatie proces voor Cost Management en facturering.](./media/cost-management-optimization-process.png)
+
 ## <a name="understand-azure-billing"></a>Informatie over Azure-facturering
 
 De factureringsfuncties van Azure worden gebruikt om de gefactureerde kosten te controleren en de toegang tot factureringsgegevens te beheren. In grotere organisaties worden factureringstaken normaal gesproken uitgevoerd door speciale teams.
@@ -48,32 +50,6 @@ De Azure-portal ondersteunt momenteel de volgende typen factureringsaccounts:
 - **Enterprise Overeenkomst**: Er wordt een factureringsaccount voor een Enterprise-overeenkomst gemaakt wanneer uw organisatie een Enterprise-overeenkomst (EA) ondertekent om Azure te gebruiken.
 
 - **Microsoft-klantovereenkomst**: Er wordt een factureringsaccount voor een Microsoft-klantovereenkomst aangemaakt, wanneer uw organisatie samenwerkt met een Microsoft-vertegenwoordiger om een Microsoft-klantovereenkomst te ondertekenen. Sommige klanten in bepaalde regio's, die zich via de Azure-website aanmelden voor een account met tarieven op gebruiksbasis of die hun [gratis Azure-account](./manage/create-free-services.md) upgraden, hebben mogelijk ook een factureringsaccount voor een Microsoft-klantovereenkomst.
-
-### <a name="scopes-for-billing-accounts"></a>Bereiken voor factureringsaccounts
-Een bereik is een knooppunt in een factureringsaccount waar u facturen kunt weergeven en beheren. Dit is de plek waar u factureringsgegevens, betalingen en facturen beheert en algemeen accountbeheer uitvoert.
-
-#### <a name="microsoft-online-services-program"></a>Microsoft Online Services-programma
-
-|Bereik  |Definitie  |
-|---------|---------|
-|Factureringsaccount     | Verwijst naar een enkele eigenaar (accountbeheerder) voor één of meer Azure abonnementen. Een accountbeheerder is gemachtigd om verschillende factureringstaken uit te voeren, zoals abonnementen maken, facturen inzien of de facturering voor abonnementen wijzigen.  |
-|Abonnement     |  Verwijst naar een groepering van Azure-resources. Er wordt een factuur gegenereerd voor het abonnementsbereik. Het heeft zijn eigen betalingswijzen die worden gebruikt om de factuur te betalen.|
-
-#### <a name="enterprise-agreement"></a>Enterprise Agreement
-
-|Bereik  |Definitie  |
-|---------|---------|
-|Factureringsaccount    | Verwijst naar de registratie van een Enterprise-overeenkomst. Er wordt een factuur gegenereerd voor het bereik van het factureringsaccount. Het is gestructureerd op basis van afdelingen en inschrijvingsaccounts.  |
-|Afdeling     |  Optionele groepering van inschrijvingsaccounts.      |
-|Inschrijvingsaccount     |  Verwijst naar een enkele accounteigenaar. Azure-abonnementen worden gemaakt voor het bereik van het inschrijvingsaccount.  |
-
-#### <a name="microsoft-customer-agreement"></a>Microsoft-klantovereenkomst
-
-|Bereik  |Taken  |
-|---------|---------|
-|Factureringsaccount     |   Verwijst naar een klantenovereenkomst voor meerdere Microsoft-producten en -services. Het factureringsaccount is gestructureerd op basis van factureringsprofielen en factuursecties.   |
-|Factureringsprofiel     |  Verwijst naar een factuur en de bijbehorende betalingswijzen. De factuur wordt gegenereerd in dit bereik. Het factureringsprofiel kan meerdere factuursecties hebben.      |
-|Factuursectie     |   Verwijst naar een kostengroep op een factuur. Abonnementen en andere aankopen worden gekoppeld aan de factuursectie.    |
 
 ## <a name="understand-azure-cost-management"></a>Inzicht in het werken met Azure Kostenbeheer
 

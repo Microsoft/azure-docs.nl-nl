@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b5cb7e1521c649be4abc155d9f28a49b43a11e6d
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: fea9662b6f5890c6240e91b26cf641d6166d560a
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99071258"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102051188"
 ---
 # <a name="delegate-app-registration-permissions-in-azure-active-directory"></a>Machtigingen voor app-registratie in Azure Active Directory delegeren
 
@@ -77,7 +77,7 @@ Azure AD heeft een aantal ingebouwde beheerders rollen voor het verlenen van toe
 - Toepassings beheerder: gebruikers met deze rol kunnen alle aspecten van bedrijfs toepassingen, toepassings registraties en toepassings proxy-instellingen maken en beheren. Deze rol verleent ook de mogelijkheid om toestemming te geven aan gedelegeerde machtigingen en toepassings machtigingen met uitzonde ring van Microsoft Graph. Gebruikers die aan deze rol zijn toegewezen, worden niet toegevoegd als eigen aren bij het maken van nieuwe toepassings registraties of zakelijke toepassingen.
 - Cloud toepassings beheerder: gebruikers met deze rol hebben dezelfde machtigingen als de rol van toepassings beheerder, met uitzonde ring van de mogelijkheid om toepassings proxy te beheren. Gebruikers die aan deze rol zijn toegewezen, worden niet toegevoegd als eigen aren bij het maken van nieuwe toepassings registraties of zakelijke toepassingen.
 
-Zie [beschik bare rollen](permissions-reference.md#available-roles)voor meer informatie en om de beschrijving voor deze rollen weer te geven.
+Zie [ingebouwde rollen van Azure AD](permissions-reference.md)voor meer informatie en om de beschrijving voor deze rollen weer te geven.
 
 Volg de instructies in de [rollen toewijzen aan gebruikers met Azure Active Directory](../fundamentals/active-directory-users-assign-role-azure-portal.md) instructies om de beheerders rollen van de toepassings beheerder of de Cloud toepassing toe te wijzen.
 

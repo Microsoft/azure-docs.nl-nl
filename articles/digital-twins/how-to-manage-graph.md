@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/03/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: b713a19cbe572998bb6e5050ab2d7721a844f07a
-ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
+ms.openlocfilehash: a2732c3979998ea3429833f96056b88bc2dccf75
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100530447"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102050933"
 ---
 # <a name="manage-a-graph-of-digital-twins-using-relationships"></a>Een grafiek van digitale apparaatdubbels beheren met behulp van relaties
 
@@ -30,7 +30,7 @@ Dit artikel richt zich op het beheren van relaties en de hele grafiek; Zie [*How
 
 [!INCLUDE [digital-twins-ways-to-manage.md](../../includes/digital-twins-ways-to-manage.md)]
 
-U kunt ook wijzigingen aanbrengen in uw grafiek met behulp van het ADT-voor beeld (Azure Digital Apparaatdubbels) Explorer. Hiermee kunt u uw apparaatdubbels en Graph visualiseren en de SDK achter de schermen gebruiken. In de volgende sectie wordt dit voor beeld uitvoerig beschreven.
+U kunt ook wijzigingen aanbrengen in uw grafiek met behulp van het Azure Digital Apparaatdubbels Explorer-voor beeld, waarmee u uw apparaatdubbels en Graph kunt visualiseren en het gebruik van de SDK achter de schermen. In de volgende sectie wordt dit voor beeld uitvoerig beschreven.
 
 [!INCLUDE [visualizing with Azure Digital Twins explorer](../../includes/digital-twins-visualization.md)]
 

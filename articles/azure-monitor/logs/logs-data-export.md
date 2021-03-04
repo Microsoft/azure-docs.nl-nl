@@ -1,18 +1,17 @@
 ---
 title: Log Analytics werkruimte gegevens exporteren in Azure Monitor (preview-versie)
 description: Met Log Analytics gegevens export kunt u voortdurend gegevens van geselecteerde tabellen uit uw Log Analytics-werk ruimte exporteren naar een Azure-opslag account of Azure Event Hubs wanneer het wordt verzameld.
-ms.subservice: logs
 ms.topic: conceptual
 ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 02/07/2021
-ms.openlocfilehash: df165b83a6635fbcf72c94a4d16cbdf16c337636
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: f0bbe02576323342376ad155878d575c6403cf70
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101713589"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102048808"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics werkruimte gegevens exporteren in Azure Monitor (preview-versie)
 Met Log Analytics werkruimte gegevens exporteren in Azure Monitor kunt u voortdurend gegevens exporteren uit geselecteerde tabellen in uw Log Analytics-werk ruimte naar een Azure Storage-account of Azure-Event Hubs wanneer het wordt verzameld. Dit artikel bevat informatie over deze functie en de stappen voor het configureren van gegevens export in uw werk ruimten.
@@ -36,7 +35,7 @@ Log Analytics werk ruimte gegevens exporteren doorlopend exporteert gegevens uit
 
 - Configuratie kan op dit moment worden uitgevoerd met CLI-of REST-aanvragen. Azure Portal of Power shell worden nog niet ondersteund.
 - De ```--export-all-tables``` optie in CLI en rest wordt niet ondersteund en wordt verwijderd. U moet de lijst met tabellen in regels voor exporteren expliciet opgeven.
-- Ondersteunde tabellen zijn momenteel beperkt in de sectie [ondersteunde tabellen](#supported-tables) hieronder. 
+- Ondersteunde tabellen zijn momenteel beperkt in de sectie [ondersteunde tabellen](#supported-tables) hieronder. Aangepaste logboek tabellen worden op dit moment bijvoorbeeld niet ondersteund.
 - Als de regel voor het exporteren van gegevens een niet-ondersteunde tabel bevat, wordt de bewerking uitgevoerd, maar worden er geen gegevens voor die tabel geëxporteerd totdat de tabel wordt ondersteund. 
 - Als de regel voor het exporteren van gegevens een tabel bevat die niet bestaat, mislukt de fout ```Table <tableName> does not exist in the workspace``` .
 - Uw Log Analytics-werk ruimte kan zich in elke regio bevinden, met uitzonde ring van het volgende:
@@ -76,7 +75,7 @@ Log Analytics gegevens export kan toevoeg-blobs schrijven naar onveranderlijke o
 Gegevens worden bijna in realtime naar uw Event Hub verzonden, omdat deze Azure Monitor bereikt. Er wordt een Event Hub gemaakt voor elk gegevens type dat u exporteert *,* gevolgd door de naam van de tabel. De tabel *SecurityEvent* wordt bijvoorbeeld verzonden naar een event hub met de naam *am-SecurityEvent*. Als u wilt dat de geëxporteerde gegevens een specifieke Event Hub bereiken, of als u een tabel hebt met een naam die groter is dan de limiet van 47 tekens, kunt u uw eigen Event Hub naam opgeven en alle gegevens voor gedefinieerde tabellen naar de groep exporteren.
 
 > [!IMPORTANT]
-> Het [aantal ondersteunde Event hubs per naam ruimte is 10](../../event-hubs/event-hubs-quotas#common-limits-for-all-tiers). Als u meer dan 10 tabellen exporteert, geeft u uw eigen Event Hub naam op om alle tabellen naar die Event Hub te exporteren. 
+> Het [aantal ondersteunde Event hubs per naam ruimte is 10](../../event-hubs/event-hubs-quotas.md#common-limits-for-all-tiers). Als u meer dan 10 tabellen exporteert, geeft u uw eigen Event Hub naam op om alle tabellen naar die Event Hub te exporteren. 
 
 Overwegingen:
 1. ' Basic ' Event Hub SKU ondersteunt een lagere [limiet](../../event-hubs/event-hubs-quotas.md#basic-vs-standard-tiers) voor de grootte van de gebeurtenis en sommige Logboeken in uw werk ruimte kunnen deze overschrijden en worden verwijderd. U wordt aangeraden ' Standard ' of ' dedicated ' te gebruiken Event Hub als export bestemming.

@@ -6,14 +6,14 @@ ms.reviewer: yashar
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: how-to
-ms.date: 12/15/2020
+ms.date: 02/24/2021
 ms.author: banders
-ms.openlocfilehash: 8c69f477f363654b8bd707949f0a5b4c46a4e8df
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
-ms.translationtype: HT
+ms.openlocfilehash: 477dff9db28672f8231710af34786ac387f43b71
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97561101"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102050338"
 ---
 # <a name="view-azure-reservations"></a>Azure-reserveringen weergeven
 
@@ -47,8 +47,15 @@ U hebt twee opties om toe te staan dat andere personen reserveringen beheren:
 
 ### <a name="how-billing-administrators-view-or-manage-reservations"></a>Hoe Factureringsbeheerders reserveringen weergeven of beheren
 
-1. Ga naar **Cost Management + Billing**, en selecteer vervolgens aan de linkerkant van de pagina de optie **Reserveringstransacties**.
-2. Als u beschikt over de vereiste factureringsmachtigingen, kunt u reserveringen weergeven en beheren. Als u geen reserveringen ziet, controleert u of u bent aangemeld met behulp van de Azure AD-tenant waar de reserveringen zijn gemaakt.
+Als u toegang hebt tot reserve ringen of reserverings orders met toegang tot Azure RBAC, ziet u mogelijk slechts een subset van reserverings transacties of geen wanneer u naar reserve ringen navigeert. Gebruik de volgende stappen om alle reserve ringen en reserverings transacties weer te geven en te beheren.
+
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com) en navigeer naar **Cost Management en facturering**.
+    - Als u een EA-beheerder bent, selecteert u in het linkermenu **facturerings bereik** en selecteert u in de lijst met facturerings bereiken een.
+    - Als u de eigenaar van het facturerings Profiel van een micro soft-klant bent, selecteert u in het menu links **facturerings profielen**. Selecteer in de lijst met facturerings profielen een.
+1. Selecteer **reserverings transacties** in het linkermenu. De lijst met reserverings transacties wordt weer gegeven.
+1. Een banner aan de bovenkant van de pagina leest *nu dat beheerders van de facturering reserve ringen kunnen beheren. Klik hier om de reserve ringen te beheren.* Selecteer de banner.
+1. De volledige lijst met reserve ringen voor uw EA-inschrijving of facturerings profiel wordt weer gegeven.
+1. Als u eigenaar van een reserve ring wilt worden, selecteert u deze. Selecteer vervolgens op de pagina Machtigingen instellen de optie **toegang verlenen**. U krijgt de eigenaar toegang tot de reserverings-en reserverings volgorde.
 
 ## <a name="view-reservation-and-utilization-in-the-azure-portal"></a>Reservering en gebruik bekijken in de Azure-portal
 

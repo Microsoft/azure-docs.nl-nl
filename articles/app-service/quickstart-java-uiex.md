@@ -11,12 +11,12 @@ ms.author: jafreebe
 ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019
 zone_pivot_groups: app-service-platform-windows-linux
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 03bfca6fe350612b657ad1b8b39534c43cf38db9
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 64e4c05e9439c164329dede5d714bec160bc5ae2
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101748447"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102050372"
 ---
 # <a name="quickstart-create-a-java-app-on-azure-app-service"></a>Quickstart: Een Java web-app maken in Azure App Service
 
@@ -93,7 +93,7 @@ mvn com.microsoft.azure:azure-webapp-maven-plugin:1.12.0:config
 # <a name="java-se"></a>[Java SE](#tab/javase)
 
 1. Wanneer u hierom wordt gevraagd bij de optie **Abonnement**, selecteert u het juiste `Subscription` door het getal in te voeren dat aan het begin van de regel wordt weergegeven.
-1. Wanneer u hierom wordt gevraagd bij de optie **Web-app**, accepteert u de standaardoptie `<create>` door op Enter te drukken, of selecteert u een bestaande app.
+1. Wanneer u wordt gevraagd met de optie **Web-app** , accepteert u de standaard optie `<create>` door op ENTER te drukken of een bestaande app te selecteren.
 1. Wanneer u hierom wordt gevraagd bij de optie **Besturingssysteem**, selecteert u **Windows** door `3` in te voeren.
 1. Wanneer u hierom wordt gevraagd bij de optie **Prijscategorie**, selecteert u **B2** door `2` in te voeren.
 1. Gebruik de Java-standaardversie, **Java 8**, door op Enter te drukken.
@@ -125,7 +125,7 @@ mvn com.microsoft.azure:azure-webapp-maven-plugin:1.12.0:config
 # <a name="tomcat"></a>[Tomcat](#tab/tomcat)
 
 1. Wanneer u hierom wordt gevraagd bij de optie **Abonnement**, selecteert u het juiste `Subscription` door het getal in te voeren dat aan het begin van de regel wordt weergegeven.
-1. Wanneer u hierom wordt gevraagd bij de optie **Web-app**, accepteert u de standaardoptie `<create>` door op Enter te drukken, of selecteert u een bestaande app.
+1. Wanneer u wordt gevraagd met de optie **Web-app** , accepteert u de standaard optie `<create>` door op ENTER te drukken of een bestaande app te selecteren.
 1. Wanneer u hierom wordt gevraagd bij de optie **Besturingssysteem**, selecteert u **Windows** door `3` in te voeren.
 1. Wanneer u hierom wordt gevraagd bij de optie **Prijscategorie**, selecteert u **B2** door `2` in te voeren.
 1. Gebruik de Java-standaardversie, **Java 8**, door op Enter te drukken.
@@ -163,7 +163,7 @@ mvn com.microsoft.azure:azure-webapp-maven-plugin:1.12.0:config
 ### <a name="java-se"></a>[Java SE](#tab/javase)
 
 1. Wanneer u hierom wordt gevraagd bij de optie **Abonnement**, selecteert u het juiste `Subscription` door het getal in te voeren dat aan het begin van de regel wordt weergegeven.
-1. Wanneer u hierom wordt gevraagd bij de optie **Web-app**, accepteert u de standaardoptie `<create>` door op Enter te drukken, of selecteert u een bestaande app.
+1. Wanneer u wordt gevraagd met de optie **Web-app** , accepteert u de standaard optie `<create>` door op ENTER te drukken of een bestaande app te selecteren.
 1. Wanneer u hierom wordt gevraagd bij de optie **Besturingssysteem**, selecteert u **Linux** door op Enter te drukken.
 1. Wanneer u hierom wordt gevraagd bij de optie **Prijscategorie**, selecteert u **B2** door `2` in te voeren.
 1. Gebruik de Java-standaardversie, **Java 8**, door op Enter te drukken.
@@ -192,7 +192,7 @@ mvn com.microsoft.azure:azure-webapp-maven-plugin:1.12.0:config
 ### <a name="tomcat"></a>[Tomcat](#tab/tomcat)
 
 1. Wanneer u hierom wordt gevraagd bij de optie **Abonnement**, selecteert u het juiste `Subscription` door het getal in te voeren dat aan het begin van de regel wordt weergegeven.
-1. Wanneer u hierom wordt gevraagd bij de optie **Web-app**, accepteert u de standaardoptie `<create>` door op Enter te drukken, of selecteert u een bestaande app.
+1. Wanneer u wordt gevraagd met de optie **Web-app** , accepteert u de standaard optie `<create>` door op ENTER te drukken of een bestaande app te selecteren.
 1. Wanneer u hierom wordt gevraagd bij de optie **Besturingssysteem**, selecteert u **Linux** door op Enter te drukken.
 1. Wanneer u hierom wordt gevraagd bij de optie **Prijscategorie**, selecteert u **B2** door `2` in te voeren.
 1. Gebruik de Java-standaardversie, **Java 8**, door op Enter te drukken.
@@ -228,7 +228,7 @@ U kunt de configuraties voor App Service indien nodig rechtstreeks in uw `pom.xm
 Eigenschap | Vereist | Beschrijving | Versie
 ---|---|---|---
 `<schemaVersion>` | false | Geef de versie van het configuratieschema op. Ondersteunde waarden zijn: `v1` of `v2`. | 1.5.2
-`<subscriptionId>` | false | Geef de abonnements-id op. | 0.1.0+
+`<subscriptionId>` | false | Geef de abonnements-ID op. | 0.1.0+
 `<resourceGroup>` | true | Azure <abbr title="Een logische container voor gerelateerde Azure-resources die u kunt beheren als een eenheid.">resourcegroep</abbr> voor uw web-app. | 0.1.0+
 `<appName>` | true | De naam is van uw web-app. | 0.1.0+
 `<region>` | true | Hiermee geeft u de regio op waar uw web-app wordt gehost. De standaard waarde is **westeurope**. Alle geldige regio's staan in de sectie [Ondersteunde regio's](https://azure.microsoft.com/global-infrastructure/services/?products=app-service). | 0.1.0+

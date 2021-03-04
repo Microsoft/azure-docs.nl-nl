@@ -1,14 +1,14 @@
 ---
 title: Beheerervaring in meerdere tenants
 description: Azure delegated Resource Management maakt een cross-Tenant beheer mogelijk.
-ms.date: 02/08/2021
+ms.date: 03/02/2021
 ms.topic: conceptual
-ms.openlocfilehash: 644cac70ef6459a1b0be45e9ab8f2757fafddeed
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 844ac637f9fcaed5d78520923e5f7184fcde0d25
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101699246"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102050389"
 ---
 # <a name="cross-tenant-management-experiences"></a>Beheerervaring in meerdere tenants
 
@@ -113,9 +113,11 @@ De meeste taken en services kunnen worden uitgevoerd op gedelegeerde resources i
 [Azure Policy](../../governance/policy/index.yml):
 
 - Beleids definities maken en bewerken binnen gedelegeerde abonnementen
+- Beleids definities en beleids toewijzingen op meerdere tenants implementeren
 - Door de klant gedefinieerde beleids definities toewijzen binnen gedelegeerde abonnementen
 - Klanten zien beleid dat door de service provider is ontworpen naast het beleid dat ze zelf hebben ontworpen
 - Kan [deployIfNotExists herstellen of toewijzingen wijzigen binnen de beheerde Tenant](../how-to/deploy-policy-remediation.md)
+- Houd er rekening mee dat het weer geven van de nalevings Details voor niet-compatibele resources in de tenants van de klant momenteel niet wordt ondersteund
 
 [Azure-resource grafiek](../../governance/resource-graph/index.yml):
 

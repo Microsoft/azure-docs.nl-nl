@@ -7,12 +7,12 @@ ms.service: data-catalog
 ms.subservice: data-catalog-gen2
 ms.topic: conceptual
 ms.date: 11/24/2020
-ms.openlocfilehash: 77bfa3d22d628cf179e95cd4892ec030f22ab35f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 493d3ceb596bb29da0e60ab08518375412417a0e
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101693761"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102049476"
 ---
 # <a name="how-to-bulk-edit-assets-to-tag-glossary-terms"></a>Activa bulksgewijs bewerken voor het labelen van termen in de woorden lijst
 
@@ -65,13 +65,13 @@ In dit artikel wordt beschreven hoe u meerdere woordenlijst termen in één acti
 
 7. Herhaal bovenstaande stappen voor classificaties, eigen aren en experts.
 
-    :::image type="content" source="media/how-to-bulk-edit-assets/all-list.png" alt-text="Scherm afbeelding van de voor waarden verwijderen.":::
+    :::image type="content" source="media/how-to-bulk-edit-assets/all-list.png" alt-text="Scherm afbeelding van de classificaties en contact personen.":::
 
 8. Als u klaar bent, sluit u de Blade bulksgewijs bewerken door **sluiten** of **Alles verwijderen en sluiten** te selecteren. Als u sluiten selecteert, worden de geselecteerde assets niet verwijderd. met alle verwijderen en sluiten worden alle geselecteerde assets verwijderd.
     :::image type="content" source="media/how-to-bulk-edit-assets/close-list.png" alt-text="Scherm opname van de afsluiting.":::
 
    > [!Important]
-   > Het aanbevolen aantal assets voor bulk bewerking is 15. Als u meer dan 25 selecteert, kunnen er prestatie problemen optreden.
+   > Het aanbevolen aantal assets voor bulk bewerkingen is 25. Als u meer dan 25 selecteert, kunnen er prestatie problemen optreden.
    > Het **geselecteerde vak weer geven** wordt alleen weer gegeven als er ten minste één activum is geselecteerd.
 
 

@@ -1,17 +1,16 @@
 ---
 title: IIS-logboeken met Log Analytics agent in Azure Monitor verzamelen
 description: Internet Information Services (IIS) slaat gebruikers activiteiten op in logboek bestanden die door Azure Monitor kunnen worden verzameld.  In dit artikel wordt beschreven hoe u een verzameling IIS-logboeken en-Details configureert van de records die ze in Azure Monitor maken.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 11/13/2020
-ms.openlocfilehash: 96eab2d93ae0212568f8ef23e32a35016cb17248
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 02/26/2021
+ms.openlocfilehash: 484e49219b94f5974661b1e76f533236666ebcfb
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101732051"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102050729"
 ---
 # <a name="collect-iis-logs-with-log-analytics-agent-in-azure-monitor"></a>IIS-logboeken met Log Analytics agent in Azure Monitor verzamelen
 Internet Information Services (IIS) slaat gebruikers activiteiten op in logboek bestanden die kunnen worden verzameld door de Log Analytics agent en worden opgeslagen in [Azure monitor logboeken](../data-platform.md).
@@ -26,7 +25,7 @@ Azure Monitor verzamelt vermeldingen uit logboek bestanden die zijn gemaakt door
 
 Azure Monitor biedt alleen ondersteuning voor IIS-logboekbestanden in de W3C-indeling, en biedt geen ondersteuning voor aangepast velden of geavanceerde IIS-logboekregistratie. Er worden geen logboeken verzameld in de NCSA-indeling of de systeemeigen IIS-indeling.
 
-Configureer IIS-logboeken in Azure Monitor via het [menu Geavanceerde instellingen](../agents/agent-data-sources.md#configuring-data-sources) voor de log Analytics agent.  Er is geen configuratie vereist, anders dan het selecteren van **IIS-logboek bestanden voor W3C-indeling verzamelen**.
+Configureer IIS-logboeken in Azure Monitor via het [Configuratie menu](../agents/agent-data-sources.md#configuring-data-sources) van de agent voor de log Analytics-agent.  Er is geen configuratie vereist, anders dan het selecteren van **IIS-logboek bestanden voor W3C-indeling verzamelen**.
 
 
 ## <a name="data-collection"></a>Gegevens verzamelen

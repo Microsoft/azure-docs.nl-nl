@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: how-to
 ms.date: 02/18/2021
 ms.custom: template-how-to
-ms.openlocfilehash: 1e2ad920afb55066f07430568f976154f6d7cae1
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: a3877ea680e7b4c705f127c54e0fa10c45d3b51d
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101679635"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102097972"
 ---
 # <a name="azure-percept-audio-and-speech-module-troubleshooting"></a>Problemen met de Azure percept-audio en spraak module oplossen
 
@@ -38,35 +38,32 @@ Nadat de uitvoer naar een txt-bestand is omgeleid, kopieert u het bestand naar u
 scp [remote username]@[IP address]:[remote file path]/[file name].txt [local host file path]
 ```
 
-[pad naar lokale hostbestand] verwijst naar de locatie op de host-PC waarnaar u het txt-bestand wilt kopiëren. [externe gebruikers naam] is de SSH-gebruikers naam die u hebt gekozen tijdens de [installatie-ervaring](./quickstart-percept-dk-set-up.md). Als u geen SSH-aanmelding tijdens het OOBE hebt ingesteld, is de externe gebruikers naam root.
+[pad naar lokale hostbestand] verwijst naar de locatie op de host-PC waarnaar u het txt-bestand wilt kopiëren. [externe gebruikers naam] is de SSH-gebruikers naam die u hebt gekozen tijdens de [on-boarding-ervaring](./quickstart-percept-dk-set-up.md). Als u tijdens de on-boarding-ervaring van Azure percept DK geen SSH-aanmelding hebt ingesteld, is uw externe gebruikers naam root.
 
 ## <a name="checking-runtime-status-of-the-speech-module"></a>De runtime status van de spraak module controleren
 
-Controleer of de runtime status van **azureearspeechclientmodule** wordt weer gegeven als **actief**. Als u de runtime status van de apparaat modules wilt vinden, opent u de [Azure Portal](https://portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_Iothub=aduprod&microsoft_azure_marketplace_ItemHideKey=Microsoft_Azure_ADUHidden#home) en navigeert u naar **alle resources**  ->  **\<your IoT hub>**  ->  **IOT Edge**  ->  **\<your device ID>** . Klik op het tabblad **modules** om de runtime status van alle geïnstalleerde modules weer te geven.
+Controleer of de runtime status van **azureearspeechclientmodule** wordt weer gegeven als **actief**. Als u de runtime status van de apparaat modules wilt vinden, opent u de [Azure Portal](https://portal.azure.com/) en navigeert u naar **alle resources**  ->  **\<your IoT hub>**  ->  **IOT Edge**  ->  **\<your device ID>** . Klik op het tabblad **modules** om de runtime status van alle geïnstalleerde modules weer te geven.
 
 :::image type="content" source="./media/troubleshoot-audio-accessory-speech-module/over-the-air-iot-edge-device-page.png" alt-text="De pagina rand apparaat in de Azure Portal.":::
 
 Als de runtime status van **azureearspeechclientmodule** niet wordt weer gegeven als **actief**, klikt u op **set modules**  ->  **azureearspeechclientmodule**. Stel op de pagina **module-instellingen** de **gewenste status** in op **actief** en klik op **bijwerken**.
 
-:::image type="content" source="./media/troubleshoot-audio-accessory-speech-module/firmware-desired-status-stopped.png" alt-text="Het scherm modules instellen in de Azure Portal.":::
-
 ## <a name="understanding-ear-som-led-indicators"></a>Informatie over de LED-Indica tors van het oormerk
 
 U kunt LED-indica toren gebruiken om te begrijpen in welke staat het apparaat zich bevindt. Doorgaans duurt het ongeveer twee minuten voordat de module volledig kan worden geïnitialiseerd na *inschakeling*. Tijdens de initialisatie stappen ziet u het volgende:
 
-1. 1 links groen licht: het apparaat is ingeschakeld. 
-2. 1 links groen licht en LED voor Center-knipperend groene authenticatie wordt uitgevoerd. 
+1. 1 Center-witte LED: het apparaat is ingeschakeld. 
+2. 1 midden-wit LED-knipperend-verificatie wordt uitgevoerd. 
 3. Alle drie de Led's worden gewijzigd in blauw zodra het apparaat is geverifieerd en gereed is voor gebruik.
 
-|LED-status                  |De SoM-status van het oormerk            |
-|----------------------------|---------------------------|
-|1x-groen (LED links)         |inschakelen |
-|1x-groen (LED links) <br> 1x knipperend groen (LED voor midden) |verificatie wordt uitgevoerd |
-|3x uit                      |initialisatie is voltooid |
-|3x blauw                     |klaar voor gebruik |
-|3x knipperend blauw            |sleutel woord herkend |
-|3x race Blue              |bezig |
-|3x rood                      |dempen |
+|GELEID|   LED-status|  De SoM-status van het oormerk|
+|---|------------|----------------| 
+|L02|   1x-wit, statisch op |Inschakelen |
+|L02|   1x-wit, 0,5 Hz flashen|  Verificatie wordt uitgevoerd |
+|L01 & L02 & L03|   3x blauw, statisch op|     Wachten op sleutel woord|
+|L01 & L02 & L03|   LED voor matrix flitsen, 20fps | Luis teren of spreken|
+|L01 & L02 & L03|   LED array Racing, 20fps|    Gedachten|
+|L01 & L02 & L03|   3x rood, statisch op | Dempen|
 
 ## <a name="next-steps"></a>Volgende stappen
 

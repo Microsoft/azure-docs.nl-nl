@@ -6,13 +6,13 @@ ms.service: marketplace
 ms.topic: article
 author: vikrambmsft
 ms.author: vikramb
-ms.date: 01/28/2021
-ms.openlocfilehash: 786ecbf553ace6a90515347e8138eeb6e022589b
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.date: 02/22/2021
+ms.openlocfilehash: 7c02c41379cfb886fd7e6f84486d815d3cdbfb5b
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99063093"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102097173"
 ---
 # <a name="private-offers-in-the-microsoft-commercial-marketplace"></a>Persoonlijke aanbiedingen in micro soft Commercial Marketplace
 
@@ -22,11 +22,11 @@ Persoonlijke aanbiedingen, ook wel privé-abonnementen genoemd, kunnen uitgevers
 
 Door persoonlijke aanbiedingen te maken, kunnen uitgevers persoonlijke oplossingen aanbieden aan doel klanten, met mogelijkheden die ondernemingen nodig hebben:
 
-- Met de _overeengekomen prijzen_ kunnen uitgevers kortingen en afwijkende prijzen uit openbaar beschik bare aanbiedingen uitbreiden.
-- Met _persoonlijke voor_ waarden kunnen uitgevers voor waarden aanpassen aan een specifieke klant.
-- Met _gespecialiseerde configuraties_ kunnen uitgevers hun virtual machines, Azure-toepassingen en software als een service (SaaS) aanpassen aan de behoeften van een individuele klant. Met deze optie kunnen uitgevers ook preview-toegang bieden tot nieuwe product functies, voordat ze worden gestart voor alle klanten.
+- Met de *overeengekomen prijzen* kunnen uitgevers kortingen en afwijkende prijzen uit openbaar beschik bare aanbiedingen uitbreiden.
+- Met *persoonlijke voor* waarden kunnen uitgevers voor waarden aanpassen aan een specifieke klant.
+- Met *gespecialiseerde configuraties* kunnen uitgevers hun virtual machines, Azure-toepassingen en software als een service (SaaS) aanpassen aan de behoeften van een individuele klant. Met deze optie kunnen uitgevers ook preview-toegang bieden tot nieuwe product functies, voordat ze worden gestart voor alle klanten.
 
-Met persoonlijke aanbiedingen kunnen uitgevers profiteren van de schaal en wereld wijde Beschik baarheid van een open bare Marketplace, met de flexibiliteit en controle die nodig is om te onderhandelen en aangepaste deals en configuraties te leveren. Ondernemingen kunnen nu kopen en verkopen op hun verwachte manier 
+Met persoonlijke aanbiedingen kunnen uitgevers profiteren van de schaal en wereld wijde Beschik baarheid van een open bare Marketplace, met de flexibiliteit en controle die nodig is om te onderhandelen en aangepaste deals en configuraties te leveren. Ondernemingen kunnen nu kopen en verkopen op hun verwachte manieren.
 
 ## <a name="create-private-offers-using-plans"></a>Persoonlijke aanbiedingen maken met abonnementen
 
@@ -41,7 +41,7 @@ Privé plannen zijn beschikbaar voor de volgende aanbiedings typen:
 - Beheerde service
 - SaaS-aanbiedingen
 
-Privé plannen zijn onderdelen van een aanbieding en zijn alleen zichtbaar en tevens door de doel klanten. Privé plannen zijn alleen zichtbaar en tevens door de doel klanten.  Persoonlijke abonnementen kunnen worden gemaakt voor klanten in zowel Azure Global als Azure Government.
+Privé plannen zijn onderdelen van een aanbieding en zijn alleen zichtbaar en tevens door de doel klanten. Privé plannen zijn alleen zichtbaar en tevens door de doel klanten. Persoonlijke abonnementen kunnen worden gemaakt voor klanten in zowel Azure Global als Azure Government.
 
 Privé plannen kunnen de basis installatie kopieën en/of de meta gegevens van de aanbieding die al zijn gepubliceerd voor een openbaar abonnement hergebruiken. Met deze optie kunnen uitgevers meerdere persoonlijke variaties van een open bare aanbieding maken zonder dat ze meerdere versies van dezelfde basis installatie kopie hoeven te publiceren en meta gegevens te bieden. Voor de Azure virtual machine en de Azure-toepassing bieden alleen, wanneer een privé-plan een basis installatie kopie deelt met een openbaar abonnement, alle wijzigingen in de basis installatie kopie van de aanbieding worden door gegeven aan alle open bare en persoonlijke plannen met die basis installatie kopie.
 
@@ -70,13 +70,12 @@ Wanneer klanten zich hebben aangemeld bij de Azure Portal, kunnen ze deze stappe
 
 Persoonlijke aanbiedingen worden ook weer gegeven in Zoek resultaten en kunnen worden geïmplementeerd via opdracht regel-en Azure Resource Manager sjablonen, zoals andere aanbiedingen.
 
-![[Persoonlijke aanbiedingen]](./media/marketplace-publishers-guide/private-offer.png)
+[![[Persoonlijke aanbiedingen worden weer gegeven in de zoek resultaten.]](media/marketplace-publishers-guide/private-offer.png)](media/marketplace-publishers-guide/private-offer.png#lightbox)
 
 Persoonlijke aanbiedingen worden ook weer gegeven in Zoek resultaten. U ziet gewoon de **persoonlijke** badge.
 
 >[!Note]
 >Persoonlijke aanbiedingen worden niet ondersteund met abonnementen die zijn gemaakt via een wederverkoper van het programma van de Cloud Solution Provider (CSP).
-
 
 <!---
 ## Next steps

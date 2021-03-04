@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: quickstart
 ms.date: 02/18/2021
 ms.custom: template-quickstart
-ms.openlocfilehash: 575107859f56df742ab41a299269c250511022b3
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 588ebde85b6012ddbfb88ca8305fc735b7a0ba41
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101665414"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102097989"
 ---
 # <a name="azure-percept-audio-setup"></a>Setup van Azure percept-audio
 
@@ -24,25 +24,21 @@ Azure percept-audio werkt uit de doos met Azure percept DK. Er is geen unieke in
 - Azure percept-audio
 - [Azure-abonnement](https://azure.microsoft.com/free/)
 - [Setup van Azure PERCEPT DK](./quickstart-percept-dk-set-up.md): u hebt uw Devkit met een Wi-Fi-netwerk verbonden, een IOT hub gemaakt en uw Devkit verbonden met de IOT hub
+- Spreker of hoofd telefoon waarmee verbinding kan worden gemaakt met een audio aansluiting van 3,5 mm (optioneel)
 
 ## <a name="connecting-your-devices"></a>Verbinding maken met uw apparaten
 
-1. Verbind het Azure percept-audio apparaat aan de Azure percept DK-carrier board met het meegeleverde USB-type-B naar een USB-type-een kabel. Sluit het micro type-B-uiteinde van de kabel aan op audio SoM en het type-A-einde aan het Percepta-Carrier Board van de DK.
+1. Verbind het Azure percept-audio apparaat met de Azure percept DK-carrier board met de meegeleverde micro USB naar USB-type-A-kabel. Sluit het micro USB-einde van de kabel aan op het bord (ontwikkelaar) en het type-A-end aan het Percepta-Carrier Board.
+1. (Optioneel) Verbind uw spreker of koptelefoon met uw Azure percept-audio via de audio-stekker. dit wordt ' line out ' genoemd. Hiermee kunt u de audio reacties van uw Voice-assistent horen. Als u geen spreker of hoofd telefoon verbindt, kunt u de antwoorden nog steeds zien als tekst in het demo venster. 
 
-1. Schakel de Devkit uit.
-
-    - LED L01 voor het SoM van de audio wordt gewijzigd in effen groen om aan te geven dat het apparaat is ingeschakeld.
-    - LED-L02 wordt gewijzigd in knipperend groen om aan te geven dat het audio-SoM wordt geverifieerd.
+1. Schakel de Devkit uit. LED-L02 op het inschakel bord worden gewijzigd in knipperend wit om aan te geven dat het apparaat is ingeschakeld en dat het SoM van de audio wordt geverifieerd.
 
 1. Wacht tot het verificatie proces is voltooid. Dit kan Maxi maal drie minuten duren.
 
 1. U bent klaar om te beginnen met het maken van prototypen wanneer u een van de volgende ziet:
 
-    - LED-L01 uitgeschakeld en L02 wordt wit. Dit geeft aan dat de verificatie is voltooid en dat de Devkit nog niet is geconfigureerd met een sleutel woord.
+    - LED L02 wordt gewijzigd in effen wit. Dit geeft aan dat de verificatie is voltooid en dat de Devkit nog niet is geconfigureerd met een sleutel woord.
     - Alle drie de Led's draaien blauw. Dit geeft aan dat de verificatie is voltooid en dat de Devkit is geconfigureerd met een sleutel woord.
-
-    > [!NOTE]
-    > Neem contact op met de ondersteuning als uw Devkit niet verifieert.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -3,18 +3,18 @@ title: Aan de slag met het besturings element Android map | Microsoft Azure kaar
 description: Vertrouwd raken met de Azure Maps Android SDK. Zie een project maken in Android Studio, de SDK installeren en een interactieve kaart maken.
 author: rbrundritt
 ms.author: richbrun
-ms.date: 12/10/2020
+ms.date: 2/26/2021
 ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.custom: mvc
-ms.openlocfilehash: a7533e079ca13f8ac891fa96f11f740a21c1a3dc
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+zone_pivot_groups: azure-maps-android
+ms.openlocfilehash: 5888a5f34ef65fc1015b6e73af1d03368a8329b2
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680370"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102098516"
 ---
 # <a name="getting-started-with-azure-maps-android-sdk"></a>Aan de slag met Azure Maps Android SDK
 
@@ -30,10 +30,15 @@ De Azure Maps Android SDK biedt drie verschillende manieren om de taal en de reg
 
 De eerste optie is de taal door geven en regionale informatie weer geven in de `AzureMaps` klasse met behulp van de statische `setLanguage` methode en de `setView` methoden wereld wijd. Hiermee stelt u de standaard taal en de regionale weer gave in voor alle Azure Maps besturings elementen die in uw app worden geladen.
 
+::: zone pivot="programming-language-java-android"
+
 ```java
 static {
     //Set your Azure Maps Key.
     AzureMaps.setSubscriptionKey("<Your Azure Maps Key>");
+
+    //Alternatively use Azure Active Directory authenticate.
+    //AzureMaps.setAadProperties("<Your aad clientId>", "<Your aad AppId>", "<Your aad Tenant>");
 
     //Set the language to be used by Azure Maps.
     AzureMaps.setLanguage("fr-FR");
@@ -42,6 +47,30 @@ static {
     AzureMaps.setView("Auto");
 }
 ```
+
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+companion object {
+    init {
+        //Set your Azure Maps Key.
+        AzureMaps.setSubscriptionKey("<Your Azure Maps Key>");
+
+        //Alternatively use Azure Active Directory authenticate.
+        //AzureMaps.setAadProperties("<Your aad clientId>", "<Your aad AppId>", "<Your aad Tenant>");
+    
+        //Set the language to be used by Azure Maps.
+        AzureMaps.setLanguage("fr-FR");
+    
+        //Set the regional view to be used by Azure Maps.
+        AzureMaps.setView("Auto");
+    }
+}
+```
+
+::: zone-end
 
 De tweede optie is de taal door geven en informatie weer geven in de XML van het kaart besturings element.
 
@@ -57,6 +86,8 @@ De tweede optie is de taal door geven en informatie weer geven in de XML van het
 
 De derde optie is het programmatisch instellen van de taal en de regionale weer gave van de kaart met behulp van de Maps- `setStyle` methode. Dit kan op elk gewenst moment worden gedaan om de taal en de regionale weer gave van de kaart te wijzigen.
 
+::: zone pivot="programming-language-java-android"
+
 ```java
 mapControl.onReady(map -> {
     map.setStyle(
@@ -65,6 +96,21 @@ mapControl.onReady(map -> {
     );
 });
 ```
+
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+mapControl.onReady(OnReady { map: AzureMap ->
+    map.setStyle(
+        language("fr-FR"),
+        view("Auto")
+    )
+})
+```
+
+::: zone-end
 
 Hier volgt een voor beeld van Azure Maps waarbij de taal is ingesteld op ' fr-FR ' en de regionale weer gave ingesteld op ' auto '.
 
@@ -101,9 +147,21 @@ De Azure Maps Android SDK ondersteunt de Azure Government Cloud. De Azure Maps A
 
 Op dezelfde plaats waar de Azure Maps verificatie gegevens zijn opgegeven, voegt u de volgende regel code toe om aan te geven dat de toewijzing gebruikmaakt van het Cloud domein Azure Maps Government.
 
+::: zone pivot="programming-language-java-android"
+
 ```java
 AzureMaps.setDomain("atlas.azure.us");
 ```
+
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+AzureMaps.setDomain("atlas.azure.us")
+```
+
+::: zone-end
 
 Zorg ervoor dat u Azure Maps verificatie gegevens van het Azure Government Cloud platform gebruikt wanneer u de kaart en services verifieert.
 
@@ -118,7 +176,7 @@ Meer informatie over het toevoegen van overlay-gegevens op de kaart:
 > [Kaartstijlen wijzigen in Android-kaarten](set-android-map-styles.md)
 
 > [!div class="nextstepaction"]
-> [Een symbool laag toevoegen](how-to-add-symbol-to-android-map.md)
+> [Een symboollaag toevoegen](how-to-add-symbol-to-android-map.md)
 
 > [!div class="nextstepaction"]
 > [Een lijnlaag toevoegen](android-map-add-line-layer.md)

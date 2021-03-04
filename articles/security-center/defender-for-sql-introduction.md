@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: security-center
 ms.custom: references_regions
 manager: rkarlin
-ms.openlocfilehash: 21f07ed76ef0b900a723677acc2bf576649fe861
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 532c46c50d0b422946af649801e43904b4b6ed7d
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101702008"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102096867"
 ---
 # <a name="introduction-to-azure-defender-for-sql"></a>Inleiding tot Azure Defender voor SQL
 
@@ -26,7 +26,7 @@ Azure Defender voor SQL bevat twee Azure Defender-abonnementen die het [gegevens
 |Aspect|Details|
 |----|:----|
 |Releasestatus:|**Azure Defender voor Azure SQL-databaseservers** - algemeen beschikbaar<br>**Azure Defender voor SQL-servers op computers** - algemeen beschikbaar |
-|Prijzen:|De twee abonnementen die **Azure Defender voor SQL** vormen, worden gefactureerd zoals wordt weergegeven op [de pagina met prijzen](security-center-pricing.md)|
+|Prijzen:|De twee plannen die **Azure Defender voor SQL** vormen, worden in rekening gebracht zoals weer gegeven op [Security Center prijzen](https://azure.microsoft.com/pricing/details/security-center/)|
 |Beveiligde SQL-versies:|[SQL op virtuele Azure-machines](../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md)<br>[SQL-servers met Azure Arc](/sql/sql-server/azure-arc/overview)<br>On-premises SQL-servers op Windows-computers zonder Azure Arc<br>Azure SQL [individuele databases](../azure-sql/database/single-database-overview.md) en [elastische pools](../azure-sql/database/elastic-pool-overview.md)<br>[Azure SQL Managed Instance](../azure-sql/managed-instance/sql-managed-instance-paas-overview.md)<br>[Azure Synapse Analytics (voorheen SQL DW) toegewezen SQL-pool](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md)|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Ja](./media/icons/yes-icon.png) China Gov (**Gedeeltelijk**: Subset van waarschuwingen en evaluatie van beveiligingsproblemen voor SQL-servers. Er is geen gedragsbedreigingsbeveiliging beschikbaar.)|
 |||

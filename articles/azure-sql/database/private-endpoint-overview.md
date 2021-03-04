@@ -6,15 +6,15 @@ ms.author: rohitna
 titleSuffix: Azure SQL Database and Azure Synapse Analytics
 ms.service: sql-database
 ms.topic: overview
-ms.custom: sqldbrb=1
+ms.custom: sqldbrb=1, fasttrack-edit
 ms.reviewer: vanto
 ms.date: 03/09/2020
-ms.openlocfilehash: 7bc15b369bfa4964384d4f7910d6953bdfeaa664
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
-ms.translationtype: HT
+ms.openlocfilehash: 506982a22fd53dfb4f8f3d94735c11fc491469eb
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97094162"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102097275"
 ---
 # <a name="azure-private-link-for-azure-sql-database-and-azure-synapse-analytics"></a>Azure Private Link voor Azure SQL Database en Azure Synapse Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -61,6 +61,8 @@ Met Private Link kunnen klanten cross-premises toegang tot het privé-eindpunt i
 Clients kunnen verbinding maken met het privé-eindpunt van hetzelfde virtuele netwerk, een peered virtueel netwerk in dezelfde regio, of via een verbinding van virtueel netwerk tot virtueel netwerk tussen regio's. Daarnaast kunnen clients via on-premises verbinding maken met behulp van ExpressRoute, privé peering of VPN-tunneling. Hieronder ziet u een vereenvoudigd diagram waarin de algemene gebruikscases worden weergegeven.
 
  ![Schema van connectiviteitsopties][1]
+
+Bovendien kunnen services die niet rechtstreeks in het virtuele netwerk worden uitgevoerd, maar wel met deze zijn geïntegreerd (bijvoorbeeld App Service web-apps of-functies), ook een persoonlijke verbinding met de data base bezorgen. Zie voor meer informatie over deze specifieke use-case de [Web-app met persoonlijke connectiviteit met Azure SQL database](https://docs.microsoft.com/azure/architecture/example-scenario/private-web-app/private-web-app) architectuur scenario.
 
 ## <a name="test-connectivity-to-sql-database-from-an-azure-vm-in-same-virtual-network"></a>De connectiviteit met de SQL Database testen vanaf een Azure-VM in hetzelfde virtuele netwerk
 
@@ -183,6 +185,7 @@ PolyBase en de COPY-instructie worden vaak gebruikt voor het laden van gegevens 
 
 - Zie [Uw database beveiligen](security-overview.md) voor een overzicht van Azure SQL Database security
 - Zie [Azure SQL Database Architecture](connectivity-architecture.md) voor een overzicht van Azure SQL Database connectiviteit
+- Mogelijk bent u ook geïnteresseerd in de [Web-app met een particuliere verbinding met het Azure SQL database](https://docs.microsoft.com/azure/architecture/example-scenario/private-web-app/private-web-app) Architecture-scenario, waarmee een webtoepassing buiten het virtuele netwerk wordt verbonden met het persoonlijke eind punt van een Data Base.
 
 <!--Image references-->
 [1]: media/quickstart-create-single-database/pe-connect-overview.png

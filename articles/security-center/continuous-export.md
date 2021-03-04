@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 12/24/2020
 ms.author: memildin
-ms.openlocfilehash: 9b8dc635781c96dcbd7aa423c77f60ff0556bd71
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: fc3774a01665b88ccae2e25ae8382497f8010c35
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100634057"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102096969"
 ---
 # <a name="continuously-export-security-center-data"></a>Security Center-gegevens continu exporteren
 
@@ -44,7 +44,7 @@ In dit artikel wordt beschreven hoe u doorlopend exporteren naar Log Analytics w
 |Releasestatus:|Algemene Beschik baarheid (GA)|
 |Prijzen:|Gratis|
 |Vereiste rollen en machtigingen:|<ul><li>**Beveiligings beheerder** of- **eigenaar** voor de resource groep</li><li>Schrijf machtigingen voor de doel resource</li><li>Als u het Azure Policy beleid ' DeployIfNotExist ' gebruikt dat hieronder wordt beschreven, hebt u ook machtigingen nodig voor het toewijzen van beleid</li></ul>|
-|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov, andere overheden<br>![Yes](./media/icons/yes-icon.png) Gov China (naar Event hub)|
+|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov, andere overheden<br>![Ja](./media/icons/yes-icon.png) China Gov|
 |||
 
 
@@ -65,7 +65,7 @@ Continue export kan de volgende gegevens typen exporteren wanneer ze veranderen:
 
 U kunt continue export configureren vanaf de Security Center pagina's in Azure Portal, via het Security Center REST API of op schaal met behulp van de meegeleverde Azure Policy sjablonen. Selecteer het juiste tabblad hieronder voor meer informatie.
 
-### <a name="use-the-azure-portal"></a>[**De Azure-portal gebruiken**](#tab/azure-portal)
+### <a name="use-the-azure-portal"></a>[**De Azure Portal gebruiken**](#tab/azure-portal)
 
 ### <a name="configure-continuous-export-from-the-security-center-pages-in-azure-portal"></a>Continue export configureren vanaf de Security Center pagina's in Azure Portal
 
@@ -171,7 +171,7 @@ Als u Azure Security Center gegevens in een Log Analytics werk ruimte wilt analy
 
 ### <a name="log-analytics-tables-and-schemas"></a>Log Analytics tabellen en schema's
 
-Beveiligings waarschuwingen en aanbevelingen worden respectievelijk opgeslagen in de *SecurityAlert* -en *SecurityRecommendations* -tabellen. 
+Beveiligings waarschuwingen en aanbevelingen worden respectievelijk opgeslagen in de *SecurityAlert* -en *SecurityRecommendation* -tabellen. 
 
 De naam van de Log Analytics oplossing die deze tabellen bevat, is afhankelijk van of u Azure Defender hebt ingeschakeld: Security (Beveiliging en audit) of SecurityCenterFree. 
 

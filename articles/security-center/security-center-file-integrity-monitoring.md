@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: 474bad4c3d7250d93b3e926f6e71da6734d7a4d0
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 07a36bb9b9e3baea2136c23208d268c2c196e70f
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101702042"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102099451"
 ---
 # <a name="file-integrity-monitoring-in-azure-security-center"></a>Controle van bestands integriteit in Azure Security Center
 Meer informatie over het configureren van FIM (File Integrity Monitoring) in Azure Security Center met behulp van deze procedure.
@@ -120,7 +120,7 @@ FIM is alleen beschikbaar op de pagina's van Security Center in het Azure Portal
 
     - De status en instellingen van elke werk ruimte openen en weer geven
 
-    - ![Pictogram upgrade plan ][4] de werk ruimte voor het gebruik van Azure Defender bijwerken. Dit pictogram geeft aan dat de werk ruimte of het abonnement niet is beveiligd met Azure Defender. Uw abonnement moet worden beveiligd met Azure Defender om de FIM-functies te kunnen gebruiken. Zie [Security Center Free VS Azure Defender enabled](security-center-pricing.md#security-center-free-vs-azure-defender-enabled)(Engelstalig) voor meer informatie.
+    - ![Pictogram upgrade plan ][4] de werk ruimte voor het gebruik van Azure Defender bijwerken. Dit pictogram geeft aan dat de werk ruimte of het abonnement niet is beveiligd met Azure Defender. Uw abonnement moet worden beveiligd met Azure Defender om de FIM-functies te kunnen gebruiken. Zie [Azure Security Center Free VS Azure Defender enabled](security-center-pricing.md)(Engelstalig) voor meer informatie.
 
     - ![Pictogram inschakelen][3] Schakel FIM in op alle computers onder de werk ruimte en configureer de FIM-opties. Dit pictogram geeft aan dat FIM niet is ingeschakeld voor de werk ruimte.
 

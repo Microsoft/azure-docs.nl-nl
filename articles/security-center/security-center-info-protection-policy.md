@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2020
 ms.author: memildin
-ms.openlocfilehash: ca3a1083b512709ad5ef070b6f5bd0e363baf80b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 432729417a65376533d9ecc201f2f6f52376cc58
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101720746"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102099400"
 ---
 # <a name="sql-information-protection-policy-in-azure-security-center"></a>SQL Information Protection-beleid in Azure Security Center
  
@@ -32,7 +32,7 @@ Het classificatie mechanisme is gebaseerd op de volgende twee elementen:
 De opties voor het Information Protection-beleid in Security Center bieden een vooraf gedefinieerde set labels en gegevens typen die als standaard waarden voor de classificatie-engine dienen. U kunt het beleid aanpassen op basis van de behoeften van uw organisatie, zoals hieronder wordt beschreven.
 
 > [!IMPORTANT]
-> Als u het Information Protection-beleid voor uw Azure-Tenant wilt aanpassen, moet u beheerders rechten hebben voor de hoofd beheer groep van de Tenant. Meer informatie vindt u in de [zicht baarheid van de hele Tenant voor Azure Security Center](security-center-management-groups.md).
+> Als u het Information Protection-beleid voor uw Azure-Tenant wilt aanpassen, moet u beheerders rechten hebben voor de hoofd beheer groep van de Tenant. Meer informatie vindt u in [Grant en vraagt u de zicht baarheid van de hele Tenant](tenant-wide-permissions-management.md).
 
 :::image type="content" source="./media/security-center-info-protection-policy/sql-information-protection-policy-page.png" alt-text="De pagina met uw SQL Information Protection-beleid":::
  
@@ -58,7 +58,7 @@ Elk van deze wordt weer gegeven op het relevante tabblad hieronder.
 Selecteer op de pagina **prijzen en instellingen** van Security Center de optie **SQL Information Protection**.
 
 > [!NOTE]
-> Deze optie wordt alleen weer gegeven voor gebruikers met machtigingen op Tenant niveau. [Verleen machtigingen voor de hele Tenant](./security-center-management-groups.md#grant-tenant-wide-permissions-to-yourself).
+> Deze optie wordt alleen weer gegeven voor gebruikers met machtigingen op Tenant niveau. [Verleen machtigingen voor de hele Tenant](tenant-wide-permissions-management.md#grant-tenant-wide-permissions-to-yourself).
 
 :::image type="content" source="./media/security-center-info-protection-policy/pricing-settings-link-to-information-protection.png" alt-text="Toegang tot het SQL Information Protection-beleid op de pagina prijzen en instellingen van Azure Security Center":::
 

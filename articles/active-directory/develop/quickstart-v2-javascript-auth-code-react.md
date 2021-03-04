@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 01/14/2021
 ms.author: jamesmantu
 ms.custom: aaddev, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: ae31265aee7b0919daf0fec9efbe4d5c6aa7cd91
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 3df3d4a3e87f67678833f097a1e2aa3633a5991e
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101653453"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102096425"
 ---
 # <a name="quickstart-sign-in-and-get-an-access-token-in-a-react-spa-using-the-auth-code-flow"></a>Snelstartgids: Meld u aan en ontvang een toegangs token in een beveiligd-wachtwoord verificatie met behulp van de autorisatie code stroom
 
@@ -26,6 +26,8 @@ In deze Snelstartgids downloadt en voert u een code voorbeeld uit die laat zien 
 Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 
 Deze Snelstartgids maakt gebruik van MSAL reageren met de autorisatie code stroom. Voor een vergelijk bare Snelstartgids die gebruikmaakt van MSAL.js met de impliciete stroom, raadpleegt u [Quick Start: gebruikers aanmelden in Java script-apps met één pagina](./quickstart-v2-javascript.md).
+
+Deze functie [!INCLUDE [active-directory-develop-preview](../../../includes/active-directory-develop-preview.md)]
 
 ## <a name="prerequisites"></a>Vereisten
 

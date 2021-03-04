@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: how-to
 ms.date: 02/18/2021
 ms.custom: template-how-to
-ms.openlocfilehash: 02292d4559697bc38d47811fe392dc86427515b4
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: d684311ef959ac13f3be8bac7ffbbb06a741962a
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662334"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102097700"
 ---
 # <a name="dev-tools-pack-installer-overview"></a>Overzicht van het installatie programma dev tools pack
 
@@ -84,6 +84,8 @@ Het installatie programma voor dev tools pack is een oplossing voor het oplossen
 
         > [!NOTE]
         > Docker ondersteunt docker Desktop voor de meest recente versies van macOS. Dat wil zeggen, de huidige release van macOS en de vorige twee versies. Als nieuwe primaire versies van macOS zijn algemeen beschikbaar, docker stopt met de ondersteuning van de oudste versie en ondersteunt de nieuwste versie van macOS (naast de vorige twee releases). Docker Desktop biedt momenteel ondersteuning voor macOS Mojave, macOS Catalina en macOS Big Sur.
+        > 
+        - Het installatie programma wordt niet ondersteund op Apple M1.
 
 ## <a name="instructions"></a>Instructies
 
@@ -99,7 +101,7 @@ Het installatie programma voor dev tools pack is een oplossing voor het oplossen
     
         1. Na het downloaden verplaatst u het bestand Dev-Tools-Pack-Installer. app naar de map toepassingen.
         
-        1. Klik op ' Dev-Tools-Pack-Installer. app ' om de installatie wizard te openen.
+        1. Klik op **dev-tools-Pack-Installer. app** om de installatie wizard te openen.
         
         1. Als u het beveiligings dialoogvenster ' onbekende ontwikkelaar ' krijgt:
         
@@ -123,7 +125,7 @@ Het installatie programma voor dev tools pack is een oplossing voor het oplossen
                 
             1. Typ het volgende in de terminal om het uitvoer bare bestand van AppImage te maken
             
-                1. chmod + x dev-tools-Pack-Installer. AppImage
+                1. chmod + x **dev-tools-Pack-Installer. AppImage**
                 
             1. Typ het volgende in de terminal om het installatie programma uit te voeren
             
@@ -141,11 +143,11 @@ Het installatie programma voor dev tools pack is een oplossing voor het oplossen
 
 1. Op de installatie pagina **dev tools pack installeren** klikt u op **licentie weer geven** om de licentie overeenkomsten weer te geven van elk software pakket dat is opgenomen in het installatie programma. Als u akkoord gaat met de voor waarden in de licentie overeenkomsten, schakelt u het selectie vakje in en klikt u op **volgende**.
 
-    ![Het scherm licentie overeenkomst in het installatie programma.](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/user-guides/prototyping/article_images/dev_tools_license_agreements.png)
+    :::image type="content" source="./media/dev-tools-installer/dev-tools-license-agreements.png" alt-text="Het scherm licentie overeenkomst in het installatie programma.":::
 
 1. Klik op **privacyverklaring** om de privacyverklaring van micro soft te bekijken. Als u akkoord gaat met de voor waarden van de privacyverklaring en diagnostische gegevens naar micro soft wilt verzenden, selecteert u **Ja** en klikt u op **volgende**. Als dat niet het geval is, selecteert u **Nee** en klikt u op **volgende**.
 
-    ![Het venster overeenkomst met de privacyverklaring in het installatie programma.](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/user-guides/prototyping/article_images/dev_tools_privacy_statement.png)
+    :::image type="content" source="./media/dev-tools-installer/dev-tools-privacy-statement.png" alt-text="Het venster overeenkomst met de privacyverklaring in het installatie programma.":::
 
 1. Selecteer op de pagina **onderdelen configureren** de optionele hulpprogram ma's die u wilt installeren (de verplichte hulpprogram ma's worden standaard geïnstalleerd).
 
@@ -153,11 +155,11 @@ Het installatie programma voor dev tools pack is een oplossing voor het oplossen
 
     1. Klik op **installeren** om door te gaan met de installatie.
 
-    ![Scherm van installatie programma waarin beschik bare software pakketten worden weer gegeven.](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/user-guides/prototyping/article_images/dev_tools_configure_components.png)
+    :::image type="content" source="./media/dev-tools-installer/dev-tools-configure-components.png" alt-text="Scherm van installatie programma waarin beschik bare software pakketten worden weer gegeven.":::
 
 1. Nadat de installatie van alle geselecteerde onderdelen is voltooid, gaat de wizard door naar de pagina **de wizard Setup volt ooien** . Klik op **volt ooien** om het installatie programma af te sluiten.
 
-    ![Scherm voor het volt ooien van het installatie programma.](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/user-guides/prototyping/article_images/dev_tools_finish.png)
+    :::image type="content" source="./media/dev-tools-installer/dev-tools-finish.png" alt-text="Scherm voor het volt ooien van het installatie programma.":::
 
 ## <a name="docker-status-check"></a>Controle van docker-status
 
@@ -168,12 +170,12 @@ Als het installatie programma u waarschuwt dat docker Desktop goed wordt uitgevo
       1. Verborgen pictogrammen in systeemvak uitvouwen:
       
          1. Verborgen pictogrammen in systeemvak uitvouwen indien verborgen:
-         
-            * ![Systeemvak](https://github.com/microsoft/Project-Santa-Cruz-Preview/blob/main/Sample-Scripts-and-Notebooks/Official/Machine%20Learning%20Notebooks/article_images/SystemTray.png)
+
+            :::image type="content" source="./media/dev-tools-installer/system-tray.png" alt-text="Systeemvak.":::
          
          1. Controleer of het pictogram van het docker-bureau blad wordt uitgevoerd:
-         
-            * ![Docker-status](https://github.com/microsoft/Project-Santa-Cruz-Preview/blob/main/Sample-Scripts-and-Notebooks/Official/Machine%20Learning%20Notebooks/article_images/DockerStatusRunning.png)
+
+            :::image type="content" source="./media/dev-tools-installer/docker-status-running.png" alt-text="Docker-status.":::
          
          1. Als het bovenstaande pictogram in het systeemvak niet wordt weer gegeven, start u docker Desktop vanuit het menu Start.
          
@@ -181,4 +183,4 @@ Als het installatie programma u waarschuwt dat docker Desktop goed wordt uitgevo
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Bekijk de [zelf studie over geavanceerde ontwikkel aars (lokaal)](./advanced-development-local.md)om aan de slag te gaan met geavanceerde ontwikkeling voor Azure percept DK.
+Bekijk de [Azure percept Advanced Development-opslag plaats](https://github.com/microsoft/azure-percept-advanced-development) om aan de slag te gaan met geavanceerde ontwikkeling voor Azure percept DK.

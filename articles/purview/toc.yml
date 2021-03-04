@@ -166,6 +166,10 @@ items:
             href: sensitivity-insights.md
           - name: Inzichten in bestandsextensies weergeven
             href: file-extension-insights.md
+      - name: Beveiliging & netwerken
+        items:
+          - name: Privé-eind punten beheren
+            href: catalog-private-link.md
   - name: Naslaginformatie
     items:
       - name: Ondersteunde classificaties

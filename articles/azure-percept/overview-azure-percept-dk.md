@@ -7,26 +7,27 @@ ms.service: azure-percept
 ms.topic: conceptual
 ms.date: 02/18/2021
 ms.custom: template-concept
-ms.openlocfilehash: 4fd0a7cb575a109d1393527b48de3fa4e3446167
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 4c2ace609d67cc48d1b73bdb044e7048ebda21e7
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662579"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102098329"
 ---
 # <a name="azure-percept-dk-overview"></a>Overzicht van Azure percept DK
 
-Azure percept DK is een Edge AI Development Kit die is ontworpen voor het ontwikkelen van Vision AI-proefdruk concepten. In combi natie met [Azure percept Studio](./overview-azure-percept-studio.md)wordt het een krachtig maar eenvoudig te gebruiken platform voor het bouwen van Edge AI-oplossingen voor een breed scala aan Vision AI-toepassingen. Het is beschikbaar voor aankoop in de [online winkel van micro soft](https://go.microsoft.com/fwlink/p/?LinkId=2155270).
+Azure percept DK is een Edge AI en IoT Development Kit die is ontworpen voor het ontwikkelen van Vision-en audio AI-proef versies van concepten. In combi natie met [Azure percept Studio](./overview-azure-percept-studio.md) en [Azure percept-audio](./overview-azure-percept-audio.md)wordt het een krachtig maar eenvoudig te gebruiken platform voor het bouwen van Edge AI-oplossingen voor een breed scala aan Vision-of audio AI-toepassingen. Het is beschikbaar voor aankoop in de [online winkel van micro soft](https://go.microsoft.com/fwlink/p/?LinkId=2155270).
 
-:::image type="content" source="./media/overview-azure-percept-dk/dk-image.png" alt-text="Bitmapafbeelding.":::
+:::image type="content" source="./media/overview-azure-percept-dk/dk-image.png" alt-text="Azure percept DK-apparaat.":::
 
 ## <a name="key-features"></a>Belangrijkste functies
 
 - **De mogelijkheid om AI aan de rand uit te voeren**. Met ingebouwde hardwareversnelling kan IT Vision AI-modellen uitvoeren zonder verbinding met de Cloud.
 - De **hoofdmap van de vertrouwens beveiliging van de hardware is ingebouwd**. Zie dit overzicht van [Azure percept Security](./overview-percept-security.md) voor meer informatie.
 - **Naadloze integratie met [Azure percept Studio](./overview-azure-percept-studio.md)** en andere Azure-Services. Zoals Azure IoT Hub, Azure Cognitive Services en [Live video Analytics](https://docs.microsoft.com/azure/media-services/live-video-analytics-edge/overview)
+- **Naadloze integratie met de optionele [Azure percept-audio](./overview-azure-percept-audio.md)**
 - **Ondersteuning voor de bovenste AI-platforms**. Zoals ONNX en tensor flow.
-- **Integratie met het 80/20-spoorstaaf Systeem**. U kunt eenvoudiger prototypen maken in productie omgevingen. Meer informatie over [8/20-integratie](./overview-8020-integration.md).
+- **Integratie met het 80/20-spoorstaaf Systeem**. U kunt eenvoudiger prototypen maken in productie omgevingen. Meer informatie over [80/20-integratie](./overview-8020-integration.md).
 
 ## <a name="hardware-components"></a>Hardwareonderdelen
 

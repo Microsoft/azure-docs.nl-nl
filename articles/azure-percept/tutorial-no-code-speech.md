@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: tutorial
 ms.date: 02/17/2021
 ms.custom: template-how-to
-ms.openlocfilehash: de85c4f8cdcd9781345ee1488549aab23e38ec5c
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 3c5e6fd62e4f4db9ccc1306d32d09b8338cbf963
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101664717"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102098023"
 ---
 # <a name="create-a-voice-assistant-with-azure-percept-dk-and-azure-percept-audio"></a>Een spraak assistent maken met Azure percept DK en Azure percept-audio
 
@@ -24,30 +24,11 @@ In deze hand leiding vindt u instructies voor het instellen van uw apparaten, he
 
 - Azure percept DK (Devkit)
 - Azure percept-audio
-- Spreker of hoofd telefoon (optioneel)
+- Spreker of hoofd telefoon waarmee verbinding kan worden gemaakt met een audio aansluiting van 3,5 mm (optioneel)
 - [Azure-abonnement](https://azure.microsoft.com/free/)
 - [Setup van Azure PERCEPT DK](./quickstart-percept-dk-set-up.md): u hebt uw Devkit met een Wi-Fi-netwerk verbonden, een IOT hub gemaakt en uw Devkit verbonden met de IOT hub
+- [Setup van Azure percept-audio](./quickstart-percept-audio-setup.md)
 
-## <a name="device-setup"></a>Installatie van het apparaat
-
-1. (Optioneel) Verbind uw spreker of koptelefoon met het audio-SoM via de hoofdtelefoon aansluiting, met de naam ' regel uit '. Hiermee kunt u de audio reacties van uw Voice-assistent horen. Als u geen spreker of hoofd telefoon verbindt, kunt u de antwoorden nog steeds zien als tekst in het demo venster.
-
-1. Verbind het audio-SoM met het draaggolf bord van uw Devkit met de meegeleverde USB-A to micro B-kabel.
-
-1. Schakel de Devkit uit.
-
-    - LED L01 voor het SoM van de audio wordt gewijzigd in effen groen om aan te geven dat het apparaat is ingeschakeld.
-    - LED-L02 wordt gewijzigd in knipperend groen om aan te geven dat het audio-SoM wordt geverifieerd.
-
-1. Wacht tot het verificatie proces is voltooid. Dit kan Maxi maal drie minuten duren.
-
-1. Ga naar de volgende sectie wanneer u een van de volgende opties ziet:
-
-    - LED-L01 uitgeschakeld en L02 wordt wit. Dit geeft aan dat de verificatie is voltooid en dat de Devkit nog niet is geconfigureerd met een sleutel woord.
-    - Alle drie de Led's draaien blauw. Dit geeft aan dat de verificatie is voltooid en dat de Devkit is geconfigureerd met een sleutel woord.
-
-    > [!NOTE]
-    > Neem contact op met de ondersteuning als uw Devkit niet verifieert.
 
 ## <a name="create-a-voice-assistant-using-an-available-template"></a>Een spraak assistent maken met behulp van een beschik bare sjabloon
 
@@ -119,6 +100,7 @@ De automobiel demo bevat een virtuele Seat warmere, ontontdooier en thermo staat
 * "De Tempe ratuur instellen op X graden." (X is de gewenste Tempe ratuur, bijvoorbeeld 75.)
 * "De Tempe ratuur met Y graden verg Roten/verkleinen."
 
+
 :::image type="content" source="./media/tutorial-no-code-speech/auto-demo.png" alt-text="Scherm opname van het venster met auto demonstratie.":::
 
 ### <a name="inventory-demo-commands"></a>Inventaris demo-opdrachten
@@ -131,19 +113,30 @@ De inventaris demo bevat een selectie van virtuele blauwe, gele en groene vakken
 * "Aantal Y-vakken." (Y is de kleur van de vakken, bijvoorbeeld geel.)
 * "Verzend alles op voor Raad."
 
+
 :::image type="content" source="./media/tutorial-no-code-speech/inventory-demo.png" alt-text="Scherm opname van het demo venster van de inventaris.":::
 
 ## <a name="configure-your-keyword"></a>Uw tref woord configureren
 
-Als u uw tref woord wilt wijzigen, klikt u op **wijzigen** naast **aangepast tref woord** in het demo venster. Selecteer een van de beschik bare tref woorden en klik op **Opslaan**. U kunt kiezen uit een selectie van vooraf gedefinieerde tref woorden en aangepaste tref woorden die u hebt gemaakt.
+U kunt het tref woord aanpassen voor uw Voice Assistant-toepassing.
 
-:::image type="content" source="./media/tutorial-no-code-speech/change-keyword.png" alt-text="Scherm opname van de selectie van beschik bare tref woorden.":::
+1. Klik op **wijzigen** naast **aangepast tref woord** in het demo venster.
+
+1. Selecteer een van de beschik bare tref woorden. U kunt kiezen uit een aantal voor beelden van tref woorden en aangepaste tref woorden die u hebt gemaakt.
+
+1. Klik op **Opslaan**.
 
 ### <a name="create-a-custom-keyword"></a>Een aangepast tref woord maken
 
-Als u een aangepast tref woord wilt maken, klikt u op **+ aangepast tref woord maken** boven aan het voorbeeld venster. Voer uw gewenste tref woord in. Dit kan één woord of een korte zin zijn. Selecteer uw **spraak bron** (deze wordt vermeld naast de **aangepaste opdracht** in het demo venster en het voor voegsel van de toepassing bevat) en klik op **Opslaan**. De training voor uw aangepaste tref woord kan in slechts een paar seconden worden voltooid.
+U kunt uw eigen tref woord maken voor uw spraak toepassing. De training voor uw aangepaste tref woord kan in slechts enkele minuten worden voltooid.
 
-:::image type="content" source="./media/tutorial-no-code-speech/custom-keyword.png" alt-text="Scherm opname van het venster voor het maken van aangepaste tref woorden.":::
+1. Klik op **+ aangepast tref woord maken** boven aan het voorbeeld venster. 
+
+1. Voer uw gewenste tref woord in, dat een enkel woord of een korte zin kan zijn.
+
+1. Selecteer uw **spraak bron** (deze wordt vermeld naast de **aangepaste opdracht** in het demo venster en bevat het voor voegsel van de toepassing).
+
+1. Klik op **Opslaan**. 
 
 ## <a name="create-a-custom-command"></a>Een aangepaste opdracht maken
 
@@ -185,13 +178,13 @@ Raadpleeg de documentatie van de [Speech-Service](https://docs.microsoft.com/azu
 
 ### <a name="voice-assistant-was-created-but-does-not-respond-to-commands"></a>De Voice Assistant is gemaakt maar reageert niet op opdrachten
 
-Controleer de LED-lampjes op het audio-SoM:
+Controleer de LED-lampjes op het upkaartgebied:
 
 * Drie effen blauwe lichten geven aan dat de Voice Assistant gereed is en wacht op het tref woord.
 * Als de LED van het Center (L02) wit is, is de initialisatie van de Devkit voltooid en moet deze worden geconfigureerd met een sleutel woord.
-* Een combi natie van groene lichten geeft aan dat het audio-SoM nog niet de initialisatie heeft voltooid. Het kan enkele minuten duren voordat de initialisatie is voltooid.
+* Als het middel punt (L02) wordt geknipperd op wit, wordt de initialisatie van het audio-SoM nog niet voltooid. Het kan enkele minuten duren voordat de initialisatie is voltooid.
 
-Zie het LED-artikel voor meer informatie over de audio SoM LED-Indica tors.
+Zie het [LED-artikel](./audio-button-led-behavior.md)voor meer informatie over de LED-Indica tors.
 
 ### <a name="voice-assistant-does-not-respond-to-a-custom-keyword-created-in-speech-studio"></a>De Voice Assistant reageert niet op een aangepast tref woord dat is gemaakt in speech Studio
 
@@ -207,22 +200,20 @@ Dit kan gebeuren als de spraak module verouderd is. Volg deze stappen om de spra
 
 1. Controleer de versie van de spraak module. Als er een update beschikbaar is, wordt er een knop **bijwerken** weer geven naast het versie nummer.
 
-    :::image type="content" source="./media/tutorial-no-code-speech/devkit.png" alt-text="Scherm opname van Devkit speech Settings-venster.":::
-
 1. Klik op **bijwerken** om de update van de spraak module te implementeren. Het update proces duurt over het algemeen 2-3 minuten.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
 Wanneer u klaar bent met uw Voice Assistant-toepassing, voert u de volgende stappen uit om de spraak bronnen op te schonen die u tijdens deze zelf studie hebt geïmplementeerd:
 
-1. Selecteer in de [Azure Portal](https://ms.portal.azure.com/#home) **resource groepen** in het linkerdeel venster of typ deze in de zoek balk.
+1. Selecteer in de [Azure Portal](https://portal.azure.com) **resource groepen** in het linkerdeel venster of typ deze in de zoek balk.
 
     :::image type="content" source="./media/tutorial-no-code-speech/azure-portal.png" alt-text="Scherm opname van Azure Portal start pagina met het deel venster links en resource groepen.":::
 
 1. Selecteer uw resourcegroep.
 
 1. Selecteer alle zes resources die het voor voegsel van de toepassing bevatten en klik op het pictogram **verwijderen** in het bovenste menu paneel.
-
+\
     :::image type="content" source="./media/tutorial-no-code-speech/select-resources.png" alt-text="Scherm opname van de spraak bronnen die voor verwijdering zijn geselecteerd.":::
 
 1. Als u het verwijderen wilt bevestigen, typt u **Ja** in het bevestigings venster, controleert u of u de juiste resources hebt geselecteerd en klikt u op **verwijderen**.

@@ -6,18 +6,23 @@ author: matjazl
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: reference
-ms.date: 10/12/2020
-ms.author: matjazl
-ms.openlocfilehash: cdb41f12e8f050e3c74fccddb392d7a816c15b2f
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.date: 03/03/2021
+ms.author: zxue
+ms.openlocfilehash: 5e24c7666fd2ece7d284b7705bc481866d7604de
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98621875"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102097037"
 ---
 # <a name="configure-private-link"></a>Persoonlijke koppeling configureren
 
 Met persoonlijke koppeling kunt u toegang krijgen tot de Azure-API voor FHIR via een persoonlijk eind punt, een netwerk interface waarmee u privé en veilig verbinding maakt met behulp van een privé-IP-adres van uw virtuele netwerk. Met persoonlijke koppeling kunt u onze services veilig vanuit uw Vnet openen als een eerste partij service zonder dat u een open bare DNS hoeft te door lopen. Dit artikel helpt u bij het maken, testen en beheren van uw persoonlijke eind punt voor Azure API voor FHIR.
+
+>[!Note]
+>Privé-koppeling en Azure-API voor FHIR kunnen niet worden verplaatst van een resource groep of abonnement naar een andere als de privé koppeling is ingeschakeld. Als u wilt verplaatsen, verwijdert u eerst de persoonlijke koppeling, verplaatst u de Azure-API voor FHIR en maakt u een nieuwe privé koppeling zodra de verplaatsing is voltooid. Bepaal mogelijke beveiligings implicaties voordat u een persoonlijke koppeling verwijdert.
+>
+>Als het exporteren van audit logboeken en/metrische gegevens is ingeschakeld voor Azure API voor FHIR, werkt u de export instelling bij via Diagnostische instellingen van de portal.
 
 ## <a name="prerequisites"></a>Vereisten
 

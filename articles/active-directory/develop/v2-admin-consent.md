@@ -12,12 +12,12 @@ ms.date: 12/18/2020
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 13cff9f3a6037a16d7c3b9cf233d26c6e9518bc1
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: b6fb5f680dfa5e2c87533083e3df4c2bae1ed12a
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756103"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102097020"
 ---
 # <a name="admin-consent-on-the-microsoft-identity-platform"></a>Toestemming van de beheerder op het micro soft Identity-platform
 
@@ -33,19 +33,16 @@ Wanneer u de gebruiker aan uw app ondertekent, kunt u de organisatie waarvan de 
 
 Wanneer u klaar bent om machtigingen aan te vragen bij de beheerder van uw organisatie, kunt u de gebruiker omleiden naar het micro soft Identity platform *Administrator toestemmings eindpunt*.
 
-```HTTP
-// Line breaks are for legibility only.
-GET https://login.microsoftonline.com/{tenant}/v2.0/adminconsent?
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
-&state=12345
-&redirect_uri=http://localhost/myapp/permissions
-&scope=
-https://graph.microsoft.com/calendars.read
-https://graph.microsoft.com/mail.send
+```none
+https://login.microsoftonline.com/{tenant}/v2.0/adminconsent
+        ?client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+        &scope=https://graph.microsoft.com/Calendars.Read https://graph.microsoft.com/Mail.Send
+        &redirect_uri=http://localhost/myapp/permissions
+        &state=12345
 ```
 
 | Parameter | Voorwaarde | Beschrijving |
-| ---: | ---: | :---: |
+| :--- | :--- | :--- |
 | `tenant` | Vereist | De Directory-Tenant waarvan u toestemming wilt aanvragen. Kan worden geleverd in de indeling GUID of beschrijvende naam of in `organizations` het algemeen, zoals wordt weer gegeven in het voor beeld. Gebruik ' common ' niet, omdat persoonlijke accounts geen toestemming van de beheerder kunnen bieden, behalve in de context van een Tenant. Gebruik, indien mogelijk, de Tenant-ID om te zorgen voor optimale compatibiliteit met persoonlijke accounts die tenants beheren. |
 | `client_id` | Vereist | De **client-id** van de toepassing die de [Azure Portal – app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) ervaring die aan uw app is toegewezen. |
 | `redirect_uri` | Vereist |De omleidings-URI waar u het antwoord voor uw app wilt laten afhandelen. Het moet exact overeenkomen met een van de omleidings-Uri's die u hebt geregistreerd in de app-registratie Portal. |
@@ -58,12 +55,16 @@ Op dit moment heeft Azure AD een Tenant beheerder nodig om zich aan te melden om
 
 Als de beheerder de machtigingen voor uw app goedkeurt, ziet het geslaagde antwoord er als volgt uit:
 
-```
-http://localhost/myapp/permissions?admin_consent=True&tenant=fa00d692-e9c7-4460-a743-29f2956fd429&state=12345&scope=https%3a%2f%2fgraph.microsoft.com%2fCalendars.Read+https%3a%2f%2fgraph.microsoft.com%2fMail.Send
+```none
+http://localhost/myapp/permissions
+    ?admin_consent=True
+    &tenant=fa00d692-e9c7-4460-a743-29f2956fd429
+    &scope=https://graph.microsoft.com/Calendars.Read https://graph.microsoft.com/Mail.Send
+    &state=12345
 ```
 
 | Parameter | Beschrijving |
-| ---: | :---: |
+| :--- | :--- |
 | `tenant`| De Directory-Tenant die uw toepassing heeft toegewezen aan de aangevraagde machtigingen, in GUID-indeling.|
 | `state` | Een waarde die in de aanvraag is opgenomen en die ook wordt geretourneerd in het token antwoord. Dit kan een teken reeks zijn van elke gewenste inhoud. De status wordt gebruikt voor het coderen van informatie over de status van de gebruiker in de app voordat de verificatie aanvraag is uitgevoerd, zoals de pagina of weer gave waarin ze zich bevonden.|
 | `scope` | De set machtigingen waaraan toegang is verleend voor de toepassing.|
@@ -71,12 +72,19 @@ http://localhost/myapp/permissions?admin_consent=True&tenant=fa00d692-e9c7-4460-
 
 ### <a name="error-response"></a>Fout bericht
 
-`http://localhost/myapp/permissions?error=consent_required&error_description=AADSTS65004%3a+The+resource+owner+or+authorization+server+denied+the+request.%0d%0aTrace+ID%3a+d320620c-3d56-42bc-bc45-4cdd85c41f00%0d%0aCorrelation+ID%3a+8478d534-5b2c-4325-8c2c-51395c342c89%0d%0aTimestamp%3a+2019-09-24+18%3a34%3a26Z&admin_consent=True&tenant=fa15d692-e9c7-4460-a743-29f2956fd429&state=12345`
+```none
+http://localhost/myapp/permissions
+        ?admin_consent=True
+        &tenant=fa15d692-e9c7-4460-a743-29f2956fd429
+        &error=consent_required
+        &error_description=AADSTS65004%3a+The+resource+owner+or+authorization+server+denied+the+request.%0d%0aTrace+ID%3a+d320620c-3d56-42bc-bc45-4cdd85c41f00%0d%0aCorrelation+ID%3a+8478d534-5b2c-4325-8c2c-51395c342c89%0d%0aTimestamp%3a+2019-09-24+18%3a34%3a26Z
+        &state=12345
+```
 
 Toevoegen aan de para meters die worden weer gegeven in een geslaagde reactie, worden de volgende fout parameters weer gegeven.
 
 | Parameter | Beschrijving |
-|-------------------:|:-------------------------------------------------------------------------------------------------:|
+|:-------------------|:-------------------------------------------------------------------------------------------------|
 | `error` | Een teken reeks voor fout codes die kan worden gebruikt voor het classificeren van typen fouten die optreden en kunnen worden gebruikt om te reageren op fouten.|
 | `error_description` | Een specifiek fout bericht dat een ontwikkelaar kan helpen bij het identificeren van de hoofd oorzaak van een fout.|
 | `tenant`| De Directory-Tenant die uw toepassing heeft toegewezen aan de aangevraagde machtigingen, in GUID-indeling.|

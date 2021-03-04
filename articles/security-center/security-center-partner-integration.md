@@ -2,23 +2,18 @@
 title: Beveiligingsoplossingen integreren in Azure Security Center | Microsoft Docs
 description: Leer hoe Azure Security Center kan worden geïntegreerd met partners om de algehele beveiliging van uw Azure-resources te verbeteren.
 services: security-center
-documentationcenter: na
 author: memildin
 manager: rkarlin
-ms.assetid: 6af354da-f27a-467a-8b7e-6cbcf70fdbcb
 ms.service: security-center
 ms.topic: conceptual
-ms.devlang: na
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 12/10/2020
 ms.author: memildin
-ms.openlocfilehash: ecfb4bdbd523dd1514333a2185186eab0a7e4aaa
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: ff23a1fa4b631fc10163f22d94ccdbd8cbe657c2
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032674"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102099247"
 ---
 # <a name="integrate-security-solutions-in-azure-security-center"></a>Beveiligingsoplossingen integreren in Azure Security Center
 Dit document helpt u bij het beheren van beveiligingsoplossingen die al zijn gekoppeld aan Azure Security Center en bij het toevoegen van nieuwe oplossingen.
@@ -39,7 +34,7 @@ Zie voor meer informatie over de integratie van hulpprogram ma's voor het scanne
 
 Security Center biedt ook een beveiligingslek met betrekking tot de analyse van uw:
 
-* SQL-data bases-Zie [evaluatie van beveiligings problemen analyseren in het dash board evaluatie van beveiligings problemen](defender-for-sql-usage.md#explore-vulnerability-assessment-reports)
+* SQL-data bases-Zie [evaluatie van beveiligings problemen analyseren in het dash board evaluatie van beveiligings problemen](defender-for-sql-on-machines-vulnerability-assessment.md#explore-vulnerability-assessment-reports)
 * Azure Container Registry-installatie kopieën: Zie [Azure Defender gebruiken voor container registers voor het scannen van uw installatie kopieën op beveiligings problemen](defender-for-container-registries-usage.md)
 
 ## <a name="how-security-solutions-are-integrated"></a>Beveiligingsoplossingen integreren
@@ -88,8 +83,7 @@ Selecteer **weer geven** voor meer informatie en opties, zoals:
 Security Center detecteert automatisch beveiligings oplossingen die worden uitgevoerd in azure, maar zijn niet verbonden met Security Center en de oplossingen worden weer gegeven in de sectie **gedetecteerde oplossingen** . Deze oplossingen omvatten Azure-oplossingen, zoals [Azure AD Identity Protection](../active-directory/identity-protection/overview-identity-protection.md)en partner oplossingen.
 
 > [!NOTE]
-> Schakel **Azure Defender** in op het abonnements niveau voor de functie gedetecteerde oplossingen. Bekijk de [prijzen](security-center-pricing.md) voor meer informatie over de prijs categorieën.
->
+> Schakel **Azure Defender** in op het abonnements niveau voor de functie gedetecteerde oplossingen. Meer informatie vindt u in [Quick Start: Azure Defender inschakelen](enable-azure-defender.md).
 
 Selecteer **verbinding maken** onder een oplossing om te integreren met Security Center en op de hoogte te worden gesteld van beveiligings waarschuwingen.
 
@@ -103,7 +97,4 @@ Het gedeelte **Gegevensbronnen toevoegen** bevat andere beschikbare gegevensbron
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u kunnen lezen hoe u partneroplossingen integreert in Security Center. Raadpleeg de volgende artikelen voor verwante informatie:
-
-* [Security Center gegevens voortdurend exporteren](continuous-export.md). Meer informatie over het instellen van een integratie met Azure Sentinel of andere SIEM.
-* [Beveiligingsstatus controleren in Security Center](security-center-monitoring.md). Meer informatie over het controleren van de status van uw Azure-resources.
+In dit artikel hebt u kunnen lezen hoe u partneroplossingen integreert in Security Center. Zie [continu Security Center gegevens exporteren](continuous-export.md)voor meer informatie over het instellen van een integratie met Azure Sentinel of andere Siem.

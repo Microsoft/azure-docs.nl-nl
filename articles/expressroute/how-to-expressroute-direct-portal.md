@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: duau
-ms.openlocfilehash: acbd5c3aa88c2c8c14407ebda0c42d228aa6c9e3
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: b133f1cce4af07d8d5e50e04670741fcf7c936a4
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98018935"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102097071"
 ---
 # <a name="create-expressroute-direct-using-the-azure-portal"></a>Direct ExpressRoute maken met behulp van de Azure Portal
 
@@ -21,12 +21,19 @@ Met ExpressRoute direct kunt u rechtstreeks verbinding maken met het wereld wijd
 
 ## <a name="before-you-begin"></a><a name="before"></a>Voordat u begint
 
-Voordat u ExpressRoute direct gebruikt, moet u uw abonnement eerst registreren. Als u zich wilt inschrijven, stuurt u een E-mail naar <ExpressRouteDirect@microsoft.com> met uw abonnements-id, met inbegrip van de volgende gegevens:
+Voordat u ExpressRoute direct gebruikt, moet u uw abonnement eerst registreren. Ga als volgt te werk om de registratie uit te voeren via Azure PowerShell:
+1.  Meld u aan bij Azure en selecteer het abonnement dat u wilt inschrijven.
 
-* Scenario's die u wilt uitvoeren met **ExpressRoute direct**
-* Locatie voorkeuren: Zie [partners en peering-locaties](expressroute-locations-providers.md) voor een volledige lijst met alle locaties
-* Tijdlijn voor implementatie
-* Eventuele andere vragen
+    ```azurepowershell-interactive
+    Connect-AzAccount 
+
+    Select-AzSubscription -Subscription "<SubscriptionID or SubscriptionName>"
+    ```
+
+2. Registreer uw abonnement voor open bare Preview met de volgende opdracht:
+    ```azurepowershell-interactive
+    Register-AzProviderFeature -FeatureName AllowExpressRoutePorts -ProviderNamespace Microsoft.Network
+    ```
 
 Nadat u bent Inge schreven, controleert u of de resource provider **micro soft. Network** is geregistreerd voor uw abonnement. Als u een resourceprovider registreert, wordt uw abonnement zo geconfigureerd dat dit kan worden gebruikt met de resourceprovider.
 

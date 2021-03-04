@@ -6,12 +6,12 @@ ms.author: vibansa
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 06/09/2020
-ms.openlocfilehash: 9a7a3a603944970a5e78a24ca4042f97b1c43fcc
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: d695758849fd4f7e6f595820221f6b8606fe7cf1
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102047856"
+ms.locfileid: "102096187"
 ---
 # <a name="azure-migrate-appliance-architecture"></a>Azure Migrate-apparaatarchitectuur
 
@@ -62,7 +62,7 @@ Het apparaat communiceert met de detectie bronnen met behulp van het volgende pr
 
 **Proces** | **VMware-apparaat** | **Hyper-V-apparaat** | **Fysiek apparaat**
 ---|---|---|---
-**Detectie starten**| Het apparaat communiceert standaard met de vCenter-Server op TCP-poort 443. Als de vCenter-Server op een andere poort luistert, kunt u deze configureren in het configuratie beheer van het apparaat. | Het apparaat communiceert met de Hyper-V-hosts op WinRM-poort 5985 (HTTP). | Het apparaat communiceert met Windows-servers via WinRM-poort 5985 (HTTP) met Linux-servers via poort 22 (TCP).
+**Detectie starten** | Het apparaat communiceert standaard met de vCenter-Server op TCP-poort 443. Als de vCenter-Server op een andere poort luistert, kunt u deze configureren in het configuratie beheer van het apparaat. | Het apparaat communiceert met de Hyper-V-hosts op WinRM-poort 5985 (HTTP). | Het apparaat communiceert met Windows-servers via WinRM-poort 5985 (HTTP) met Linux-servers via poort 22 (TCP).
 **Meta gegevens voor configuratie en prestaties verzamelen** | Het apparaat verzamelt de meta gegevens van servers die worden uitgevoerd op vCenter Server met behulp van vSphere-Api's door verbinding te maken met poort 443 (standaard poort) of een andere poort vCenter Server luistert aan. | Het apparaat verzamelt de meta gegevens van servers die worden uitgevoerd op Hyper-V-hosts met behulp van een Common Information Model (CIM)-sessie met hosts op poort 5985.| Het apparaat verzamelt meta gegevens van Windows-servers met behulp van Common Information Model (CIM)-sessie met servers op poort 5985 en vanaf Linux-servers met behulp van SSH-connectiviteit op poort 22.
 **Detectie gegevens verzenden** | Het apparaat verzendt de verzamelde gegevens naar Azure Migrate: Server evaluatie en Azure Migrate: Server migratie via SSL-poort 443.<br/><br/> Het apparaat kan verbinding maken met Azure via internet of via ExpressRoute (micro soft-peering is vereist). | Het apparaat verzendt de verzamelde gegevens naar Azure Migrate: Server evaluatie via SSL-poort 443.<br/><br/> Het apparaat kan verbinding maken met Azure via internet of via ExpressRoute (micro soft-peering is vereist).| Het apparaat verzendt de verzamelde gegevens naar Azure Migrate: Server evaluatie via SSL-poort 443.<br/><br/> Het apparaat kan verbinding maken met Azure via internet of via ExpressRoute (micro soft-peering is vereist).
 **Frequentie van gegevens verzameling** | Meta gegevens van de configuratie worden verzameld en verzonden om de 30 minuten. <br/><br/> Meta gegevens voor prestaties worden elke 20 seconden verzameld en worden geaggregeerd om elke 10 minuten een gegevens punt naar Azure te verzenden. <br/><br/> Software-inventarisatie gegevens worden één keer per 12 uur verzonden naar Azure. <br/><br/> Afhankelijkheids gegevens zonder agent worden elke vijf minuten verzameld, geaggregeerd op het apparaat en elke 6 uur naar Azure verzonden. <br/><br/> De SQL Server configuratie gegevens worden elke 24 uur bijgewerkt en de prestatie gegevens worden elke 30 seconden vastgelegd.| Meta gegevens van de configuratie worden verzameld en verzonden om de 30 minuten. <br/><br/> Meta gegevens voor prestaties worden elke 30 seconden verzameld en worden geaggregeerd om om de 10 minuten een gegevens punt naar Azure te verzenden.|  Meta gegevens van de configuratie worden verzameld en verzonden om de 30 minuten. <br/><br/> Meta gegevens voor prestaties worden elke vijf minuten verzameld en worden geaggregeerd om elke 10 minuten een gegevens punt naar Azure te verzenden.

@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: tutorial
 ms.date: 02/10/2021
 ms.custom: template-tutorial
-ms.openlocfilehash: 54d4f1fe983cf20b734351754bb8eba191894dbc
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 6de86cbc065b5352b3b643708dd55c6856b37dd7
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101664702"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102097904"
 ---
 # <a name="create-a-no-code-vision-solution-in-azure-percept-studio"></a>Een oplossing voor No-code Vision maken in azure percept Studio
 
@@ -23,6 +23,7 @@ Met Azure percept Studio kunt u aangepaste computer Vision-oplossingen bouwen en
 - Voorzie uw trainings afbeeldingen in [Custom Vision](https://www.customvision.ai/)
 - Uw aangepaste object detectie of classificatie model trainen
 - Implementeer uw model naar uw Devkit
+- Verbeter uw model door trainingen in te stellen
 
 Deze zelf studie is geschikt voor ontwikkel aars met weinig of geen AI-ervaring en die alleen aan de slag met Azure percept.
 
@@ -30,15 +31,13 @@ Deze zelf studie is geschikt voor ontwikkel aars met weinig of geen AI-ervaring 
 
 - Azure percept DK (Devkit)
 - [Azure-abonnement](https://azure.microsoft.com/free/)
-- Out-of-Box Experience (OOBE): u hebt uw Devkit verbonden met een Wi-Fi netwerk, een IoT Hub gemaakt en uw Devkit verbonden met de IoT Hub
+- Setup van Azure percept DK: u hebt uw Devkit met een Wi-Fi-netwerk verbonden, een IoT Hub gemaakt en uw Devkit verbonden met de IoT Hub
 
 ## <a name="create-a-vision-prototype"></a>Een visueel model maken
 
 1. Start uw browser en ga naar [Azure percept Studio](https://go.microsoft.com/fwlink/?linkid=2135819).
 
-1. Klik op de pagina overzicht op het tabblad **demo's & zelf studies** .
-
-    :::image type="content" source="./media/tutorial-nocode-vision/percept-studio-overview-inline.png" alt-text="Overzichts scherm van Azure percept Studio." lightbox="./media/tutorial-nocode-vision/percept-studio-overview.png":::
+1. Klik op de pagina overzicht op het tabblad **demo's & zelf studies** .  :::image type="content" source="./media/tutorial-nocode-vision/percept-studio-overview-inline.png" alt-text="Overzichts scherm van Azure percept Studio." lightbox="./media/tutorial-nocode-vision/percept-studio-overview.png":::
 
 1. Klik onder **visuele zelf studies en demo's** op **een visie prototype maken**.
 
@@ -142,11 +141,23 @@ Na het sluiten van dit venster kunt u op elk gewenst moment teruggaan en uw gezi
 
 :::image type="content" source="./media/tutorial-nocode-vision/vision-project-inline.png" alt-text="Vision project-pagina." lightbox="./media/tutorial-nocode-vision/vision-project.png":::
 
+## <a name="improve-your-model-by-setting-up-retraining"></a>Verbeter uw model door trainingen in te stellen
+
+Nadat u uw model hebt getraind en op het apparaat hebt geïmplementeerd, kunt u de model prestaties verbeteren door para meters voor opnieuw trainen in te stellen voor het vastleggen van meer trainings gegevens. Deze functie wordt gebruikt voor het verbeteren van de prestaties van een getraind model door u de mogelijkheid te bieden installatie kopieën op te nemen op basis van een waarschijnlijkheids bereik. U kunt bijvoorbeeld instellen dat uw apparaat alleen trainings afbeeldingen vastlegt wanneer de kans laag is. Hier vindt u een aantal [aanvullende richt lijnen](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-improving-your-classifier) voor het toevoegen van meer afbeeldingen en het verdelen van trainings gegevens.
+
+1. Als u trainingen wilt instellen, gaat u terug naar uw **project** en vervolgens naar **project Summary**
+1. Selecteer in het tabblad **vastleggen van installatie kopie** de optie **automatische installatie kopie vastleggen** en **Stel opnieuw training** in.
+1. Stel het vastleggen van automatische installatie kopieën in om een grote hoeveelheid installatie kopieën tegelijk te verzamelen door het selectie vakje voor **automatische installatie kopieën** in te scha kelen.
+1. Selecteer de gewenste Imaging-rate onder de **opname frequentie** en het totale aantal installatie kopieën dat u wilt verzamelen onder het **doel**.
+1. Selecteer in de sectie **retraining instellen** de herhaling waarvoor u meer trainings gegevens wilt vastleggen en selecteer vervolgens het waarschijnlijkheids bereik. Alleen installatie kopieën die voldoen aan het waarschijnlijkheids tempo, worden geüpload naar uw project.
+
+    :::image type="content" source="./media/tutorial-nocode-vision/vision-image-capture.png" alt-text="vastleggen van installatie kopie.":::
+
 ## <a name="clean-up-resources"></a>Resources opschonen
 
 Als u een nieuwe Azure-resource hebt gemaakt voor deze zelf studie en u uw Vision-oplossing niet meer wilt ontwikkelen of gebruiken, voert u de volgende stappen uit om de resource te verwijderen:
 
-1. Ga naar de [Azure Portal](https://ms.portal.azure.com/#home).
+1. Ga naar de [Azure Portal](https://ms.portal.azure.com/).
 1. Klik op **alle resources**.
 1. Klik op het selectie vakje naast de resource die u tijdens deze zelf studie hebt gemaakt. Het resource type wordt vermeld als **Cognitive Services**.
 1. Klik op het pictogram **verwijderen** aan de bovenkant van het scherm.

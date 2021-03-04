@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: conceptual
 ms.date: 02/16/2021
 ms.custom: template-concept
-ms.openlocfilehash: 28a8de231f179cf69342da81e6a2ae1989d2a5d6
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 8a9ed564012e8b530436152d931f5a5f6470ff98
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102041583"
+ms.locfileid: "102098363"
 ---
 # <a name="azure-percept-ai-models"></a>Azure percept AI-modellen
 
@@ -52,6 +52,8 @@ De vooraf gemaakte tref woorden en opdrachten voor spraak assistenten zijn recht
 
 ## <a name="advanced-development"></a>Geavanceerde ontwikkeling
 
-Voor geavanceerde ontwikkel aars voert de beschik bare [Jupyter-notebook](https://github.com/microsoft/Project-Santa-Cruz-Preview/blob/main/Sample-Scripts-and-Notebooks/Official/Machine%20Learning%20Notebooks/Transferlearningusing_SSDLiteV2%20Model.ipynb) overdrachts training uit met behulp van een vooraf getraind tensor flow model (MobileNetSSDV2Lite) in python met een aangepaste gegevensset voor object detectie. Het notitie blok maakt gebruik van externe Compute-exemplaren via [Azure machine learning](https://azure.microsoft.com/services/machine-learning/#product-overview) en kan worden uitgevoerd in de Cloud met behulp van de AzureML-portal of lokaal in [Visual Studio code](https://code.visualstudio.com/).
+Raadpleeg [Azure PERCEPT DK Advanced Development github](https://github.com/microsoft/azure-percept-advanced-development) voor actuele hulp, zelf studies en voor beelden voor zaken als:
 
-Ook inbegrepen zijn een aantal nuttige python- [scripts](https://github.com/microsoft/Project-Santa-Cruz-Preview/tree/main/Sample-Scripts-and-Notebooks/Official/Scripts) voor het beheren van gegevens sets en het [installatie programma dev tools pack](https://github.com/microsoft/Project-Santa-Cruz-Preview/blob/main/Sample-Scripts-and-Notebooks/Official/Machine%20Learning%20Notebooks/dev-tools-installer.md), waarmee alle hulpprogram ma's die nodig zijn voor het ontwikkelen van een geavanceerde AI-oplossing, worden geïnstalleerd en geconfigureerd.
+* Een aangepast AI-model naar het apparaat brengen
+* Een model bijwerken dat al wordt ondersteund met overboeking Learning
+* En meer

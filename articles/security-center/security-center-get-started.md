@@ -1,46 +1,41 @@
 ---
 title: Upgraden naar Azure Defender - Azure Security Center
 description: In deze quickstart wordt beschreven hoe u upgradet naar Azure Defender van Security Center voor extra beveiliging.
-services: security-center
-documentationcenter: na
 author: memildin
 manager: rkarlin
-ms.assetid: 61e95a87-39c5-48f5-aee6-6f90ddcd336e
 ms.service: security-center
-ms.devlang: na
 ms.topic: quickstart
-ms.custom: mvc
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 02/17/2021
 ms.author: memildin
-ms.openlocfilehash: 5e39093e0472705111907e72b70446db53770012
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 2f37a59d5db3883754b602b2b2525e07b57206b7
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100634482"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102099349"
 ---
 # <a name="quickstart-set-up-azure-security-center"></a>Quickstart: Azure Security Center instellen
 
-Azure Security Center biedt geïntegreerd beveiligingsbeheer en bedreigingsbeveiliging voor uw verschillende hybride cloudworkloads. De gratis functies bieden beperkte beveiliging voor alleen uw Azure-resources, maar Azure Defender biedt deze mogelijkheden ook voor on-premises en andere clouds. Azure Defender van Security Center helpt u beveiligingsproblemen te vinden en op te lossen, toegangs- en toepassingsbesturingselementen toe te passen om schadelijke activiteiten te blokkeren, bedreigingen te detecteren met behulp van analyses en gegevens en snel te reageren bij aanvallen. U kunt Azure Defender gratis uitproberen. Zie de [pagina met prijzen](https://azure.microsoft.com/pricing/details/security-center/) voor meer informatie.
+Azure Security Center biedt geïntegreerde beveiligings beheer en bedreigings beveiliging in uw hybride en meerdere Cloud werkbelastingen. De gratis functies bieden beperkte beveiliging voor alleen uw Azure-resources, maar Azure Defender biedt deze mogelijkheden ook voor on-premises en andere clouds. Azure Defender van Security Center helpt u beveiligingsproblemen te vinden en op te lossen, toegangs- en toepassingsbesturingselementen toe te passen om schadelijke activiteiten te blokkeren, bedreigingen te detecteren met behulp van analyses en gegevens en snel te reageren bij aanvallen. U kunt Azure Defender gratis uitproberen. Zie de [pagina met prijzen](https://azure.microsoft.com/pricing/details/security-center/) voor meer informatie.
 
-In deze quickstart wordt u stapsgewijs begeleid bij het inschakelen van Azure Defender voor extra beveiliging en het installeren van de Log Analytics-agent op uw machines om te controleren op beveiligingsproblemen en bedreigingen.
-
-U voert de volgende stappen uit:
+In deze snelstartgids vindt u alle aanbevolen stappen voor het inschakelen van Azure Security Center en Azure Defender. Wanneer u alle Quick Start-stappen hebt voltooid, hebt u het volgende gedaan:
 
 > [!div class="checklist"]
-> * Security Center inschakelen voor uw Azure-abonnement
-> * Azure Defender inschakelen voor uw Azure-abonnement
-> * Automatische gegevensverzameling inschakelen
+> * Security Center ingeschakeld in uw Azure-abonnementen
+> * Azure Defender is ingeschakeld voor uw Azure-abonnementen
+> * Automatische gegevens verzameling instellen
+> * E-mail meldingen die zijn ingesteld voor beveiligings waarschuwingen
+> * Uw hybride en multi-Cloud machines die zijn verbonden met Azure
 
 ## <a name="prerequisites"></a>Vereisten
 U moet over een abonnement op Microsoft Azure beschikken om met Security Center aan de slag te gaan. Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/pricing/free-trial/).
 
 Als u Azure Defender wilt inschakelen voor een abonnement, moet de rol Abonnementhouder, Inzender of Beveiligingsbeheerder aan u zijn toegewezen.
 
-
 ## <a name="enable-security-center-on-your-azure-subscription"></a>Security Center inschakelen voor uw Azure-abonnement
+
+> [!TIP]
+> Zie [Enable Security Center on multiple Azure subscriptions](onboard-management-group.md) voor het inschakelen van Security Center op alle abonnementen in een beheergroep.
 
 1. Meld u aan bij de [Azure Portal](https://azure.microsoft.com/features/azure-portal/).
 
@@ -50,7 +45,7 @@ Als u Azure Defender wilt inschakelen voor een abonnement, moet de rol Abonnemen
 
     :::image type="content" source="./media/security-center-get-started/overview.png" alt-text="Overzichtsdashboard van Security Center" lightbox="./media/security-center-get-started/overview.png":::
 
-**Security Center - overzicht** biedt een duidelijk overzicht van de beveiligingsstatus van uw hybride cloudworkloads, zodat u de beveiliging van uw workloads kunt bepalen en beoordelen en risico's kunt herkennen en verminderen. Security Center activeert automatisch, en gratis, de Azure-abonnementen waarvoor u of een andere abonnementsgebruiker niet eerder onboarding hebt uitgevoerd.
+    **Security Center - overzicht** biedt een duidelijk overzicht van de beveiligingsstatus van uw hybride cloudworkloads, zodat u de beveiliging van uw workloads kunt bepalen en beoordelen en risico's kunt herkennen en verminderen. Security Center activeert automatisch, en gratis, de Azure-abonnementen waarvoor u of een andere abonnementsgebruiker niet eerder onboarding hebt uitgevoerd.
 
 U kunt de lijst met abonnementen bekijken en filteren door het menu-item **Abonnementen** te selecteren. Security Center past de weergave aan om het beveiligingspostuur van de geselecteerde abonnementen weer te geven. 
 
@@ -59,65 +54,12 @@ Binnen enkele minuten nadat u Security Center voor het eerst hebt gestart, ziet 
 - **Aanbevelingen** voor manieren om de beveiliging van uw verbonden resources te verbeteren.
 - Een overzicht van uw resources die nu worden beoordeeld door Security Center en het beveiligingspostuur van elke resource.
 
-Voltooi de stappen hieronder om Azure Defender in te schakelen en de Log Analytics-agent te installeren om zo volledig van Security Center te profiteren.
-
-> [!TIP]
-> Zie [Enable Security Center on multiple Azure subscriptions](onboard-management-group.md) voor het inschakelen van Security Center op alle abonnementen in een beheergroep.
-
-## <a name="enable-azure-defender"></a>Azure Defender inschakelen
-
-Voor de quickstarts en zelfstudies van Security Center moet u Azure Defender inschakelen. Er is een gratis proefversie voor 30 dagen beschikbaar. Zie de [pagina met prijzen](https://azure.microsoft.com/pricing/details/security-center/) voor meer informatie. 
-
-1. Selecteer **Aan de slag** in de zijbalk van Security Center.
-
-    :::image type="content" source="./media/security-center-get-started/get-started-upgrade-tab.png" alt-text="Tabblad Upgrade van de pagina Aan de slag"::: 
-
-    Op het tabblad **Upgrade** worden abonnementen en werkruimten vermeld die in aanmerking komen voor onboarding.
-
-1. Selecteer in de lijst **Werkruimten selecteren waarvoor Azure Defender moet worden ingeschakeld** de werkruimten waarvoor een upgrade moet worden uitgevoerd.
-   - Als u abonnementen en werkruimten selecteert die niet in aanmerking komen voor een proefversie, wordt de volgende stap het uitvoeren van een upgrade en worden er kosten in rekening gebracht.
-   - Als u een werkruimte selecteert die in aanmerking komt voor een gratis proefversie, wordt in de volgende stap een proefversie gestart.
-1. Selecteer **Upgrade** om Azure Defender in te schakelen.
-
-## <a name="enable-automatic-data-collection"></a>Automatische gegevensverzameling inschakelen
-Security Center verzamelt gegevens van uw machines om deze te controleren op beveiligingsproblemen en bedreigingen. De gegevens worden verzameld met behulp van de Log Analytics-agent, die verschillende configuraties en gebeurtenislogboeken met betrekking tot beveiliging van de machine leest en de gegevens kopieert naar uw werkruimte voor analyse. Security Center maakt standaard een nieuwe werkruimte voor u.
-
-Als automatisch inrichten is ingeschakeld, installeert Security Center de Log Analytics-agent op alle ondersteunde machines en op nieuwe machines. Automatische inrichting wordt sterk aanbevolen.
-
-Automatische inrichting van de Log Analytics-agent inschakelen:
-
-1. Selecteer **Prijzen en instellingen** in het hoofdmenu van Security Center.
-1. Selecteer het betreffende abonnement.
-1. Stel op de pagina **automatische inrichting** voor de **log Analytics-agent voor Azure-vm's** de status in **op aan**.
-1. Selecteer **Opslaan**.
-
-    :::image type="content" source="./media/security-center-enable-data-collection/enable-automatic-provisioning.png" alt-text="Automatische inrichting van de Log Analytics-agent inschakelen":::
-
->[!TIP]
-> Als een werkruimte moet worden ingericht, kan de installatie van de agent tot wel 25 minuten duren.
-
-Als de agent is geïmplementeerd op uw machines, kan Security Center extra aanbevelingen doen met betrekking tot de updatestatus van het systeem, de beveiligingsconfiguraties van het besturingssysteem en de eindpuntbeveiliging. Ook kan Security Center aanvullende beveiligingswaarschuwingen genereren.
-
->[!NOTE]
-> Wanneer u automatische inrichting instelt op **Uit**, wordt de Log Analytics-agent niet verwijderd van Azure-VM's waarop de agent al is ingericht. Door automatische inrichting uit te schakelen, wordt de beveiligingsbewaking voor uw resources beperkt.
+Als u optimaal gebruik wilt maken van Security Center, gaat u door met de volgende stappen in de sectie Quick Start.
 
 
 
 ## <a name="next-steps"></a>Volgende stappen
-In deze quickstart hebt u Azure Defender ingeschakeld en de Log Analytics-agent ingericht voor geïntegreerd beveiligingsbeheer en bescherming tegen bedreigingen voor uw hybride cloudworkloads. Ga naar de snelstartgids voor het onboarden van Windows-computers die zich on-premises en in andere clouds bevinden voor meer informatie over hoe u Security Center kunt gebruiken.
+In deze Quick Start hebt u Azure Security Center ingeschakeld. De volgende stap is om Azure Defender in te scha kelen voor Unified Security Management en bedreigings beveiliging in uw hybride Cloud werkbelastingen.
 
 > [!div class="nextstepaction"]
-> [Snelstart: Niet-Azure-computers onboarden](quickstart-onboard-machines.md)
-
-Wilt u optimaliseren en op uw cloudverbruik besparen?
-
-> [!div class="nextstepaction"]
-> [Analyseer kosten met Cost Management](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
-
-<!--Image references-->
-[2]: ./media/security-center-get-started/overview.png
-[4]: ./media/security-center-get-started/get-started.png
-[5]: ./media/security-center-get-started/pricing.png
-[7]: ./media/security-center-get-started/security-alerts.png
-[8]: ./media/security-center-get-started/recommendations.png
-[9]: ./media/security-center-get-started/select-subscription.png
+> [Snelstartgids: Azure Defender inschakelen](enable-azure-defender.md)

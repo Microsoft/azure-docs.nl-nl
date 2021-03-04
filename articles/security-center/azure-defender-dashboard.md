@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: bc54cc8dfc34db8aa88690c03ef0b18991e60776
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: 16379380fc35bb2355c496dc857e9de3b41347f9
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98797116"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102096901"
 ---
 # <a name="the-azure-defender-dashboard"></a>Het Azure Defender-dash board
 
@@ -33,11 +33,11 @@ Het dash board bevat de volgende secties:
 
 1. **Azure Defender-dekking** : hier kunt u de typen resources zien die zich in uw abonnement bevinden en die in aanmerking komen voor beveiliging door Azure Defender. U kunt waar nodig ook een upgrade uitvoeren. Als u alle mogelijk in aanmerking komende resources wilt bijwerken, selecteert u **Alles bijwerken**.
 
-1. **Gebied voor beveiligings waarschuwingen** : wanneer Azure Defender een bedreiging in een wille keurig gebied van uw omgeving detecteert, wordt er een waarschuwing gegenereerd. Deze waarschuwingen bevatten details over de relevante bronnen, voorgestelde stappen voor herstel en soms ook de optie om een logische app te activeren. Als u ergens in deze grafiek selecteert, wordt de **pagina beveiligings waarschuwingen** geopend.
+2. **Beveiligings waarschuwingen** : wanneer Azure Defender een bedreiging in een wille keurig gebied van uw omgeving detecteert, wordt er een waarschuwing gegenereerd. Deze waarschuwingen bevatten details over de relevante bronnen, voorgestelde stappen voor herstel en soms ook de optie om een logische app te activeren. Als u ergens in deze grafiek selecteert, wordt de **pagina beveiligings waarschuwingen** geopend.
 
-1. **Geavanceerde beveiliging** : Azure Defender bevat veel geavanceerde mogelijkheden voor beveiliging tegen bedreigingen voor virtuele machines, SQL-data bases, containers, webtoepassingen, uw netwerk en meer. In deze sectie over geavanceerde beveiliging ziet u de status van de resources in de geselecteerde abonnementen voor elk van deze beveiligingen. Selecteer een van de gewenste items om rechtstreeks naar het configuratie gebied voor dat beveiligings type te gaan.
+3. **Geavanceerde beveiliging** : Azure Defender bevat veel geavanceerde mogelijkheden voor beveiliging tegen bedreigingen voor virtuele machines, SQL-data bases, containers, webtoepassingen, uw netwerk en meer. In deze sectie over geavanceerde beveiliging ziet u de status van de resources in de geselecteerde abonnementen voor elk van deze beveiligingen. Selecteer een van de gewenste items om rechtstreeks naar het configuratie gebied voor dat beveiligings type te gaan.
 
-1. **Inzichten** : in dit vervolg deel venster van nieuws, aanbevolen Lees bewerkingen en waarschuwingen met hoge prioriteit krijgt Security Center inzicht in de beveiligings kwesties die relevant zijn voor u en uw abonnement. Of het nu een lijst is met hoge Ernst CVEs die op uw Vm's zijn gedetecteerd door een analyse programma voor beveiligings problemen of een nieuw blog bericht door een lid van het Security Center team, vindt u dit hier in het deel venster inzichten van uw **Azure Defender-dash board**.
+4. **Inzichten** : in dit vervolg deel venster van nieuws, aanbevolen Lees bewerkingen en waarschuwingen met hoge prioriteit krijgt Security Center inzicht in de beveiligings kwesties die relevant zijn voor u en uw abonnement. Of het nu een lijst is met hoge Ernst CVEs die op uw Vm's zijn gedetecteerd door een analyse programma voor beveiligings problemen of een nieuw blog bericht door een lid van het Security Center team, vindt u dit hier in het deel venster inzichten van uw **Azure Defender-dash board**.
 
 
 
@@ -49,4 +49,4 @@ In dit artikel hebt u geleerd over het Azure Defender-dash board.
 Zie [Inleiding tot Azure Defender](azure-defender.md) voor meer informatie over Azure Defender
 
 > [!div class="nextstepaction"]
-> [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender)
+> [Azure Defender inschakelen](enable-azure-defender.md)

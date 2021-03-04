@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: overview
 ms.date: 12/01/2020
 ms.author: memildin
-ms.openlocfilehash: 668fe1436feeb0888f7d871144da6cb6b8e3864e
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
-ms.translationtype: HT
+ms.openlocfilehash: 14ee9f23379a26c1756c622efb7d739f49dd0537
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922599"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102099179"
 ---
 # <a name="permissions-in-azure-security-center"></a>Machtigingen in Azure Security Center
 
@@ -59,6 +59,5 @@ In dit artikel wordt uitgelegd hoe Security Center Azure-RBAC gebruikt om machti
 
 - [Beveiligingsbeleid instellen in Security Center](tutorial-security-policy.md)
 - [Aanbevelingen voor beveiliging beheren in Security Center](security-center-recommendations.md)
-- [De beveiligingsstatus van uw Azure-resources bewaken](security-center-monitoring.md)
 - [Beveiligingswaarschuwingen beheren en erop reageren in Security Center](security-center-managing-and-responding-alerts.md)
 - [Beveiligingsoplossingen van partners bewaken](./security-center-partner-integration.md)

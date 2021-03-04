@@ -38,12 +38,6 @@
           href: tutorial-nocode-vision.md
         - name: Een oplossing zonder code maken en implementeren
           href: tutorial-no-code-speech.md
-    - name: Geavanceerde ontwikkeling
-      items:
-        - name: Zelf studie voor geavanceerde ontwikkel aars (Cloud)
-          href: advanced-development-cloud.md
-        - name: Zelf studie voor geavanceerde ontwikkel aars (lokaal)
-          href: advanced-development-local.md
 - name: Concepten
   items:
     - name: Azure percept-audio
@@ -106,5 +100,3 @@
           href: azure-percept-vision-datasheet.md
         - name: Azure percept-audio gegevens blad
           href: azure-percept-audio-datasheet.md
-- name: Resources
-  items: null

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/31/2020
 ms.author: memildin
-ms.openlocfilehash: 4cc8130d34b5f51728fb2e7fb47c1fb0717d2138
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 83007a3c80b9604bbb10fb702cfd87e374128e7c
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100595116"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102099230"
 ---
 # <a name="supported-platforms"></a>Ondersteunde platforms 
 
@@ -37,7 +37,7 @@ Azure Security Center detecteert automatisch IaaS-resources die in het abonnemen
 
 ## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 
-Security Center is afhankelijk van de [Log Analytics-agent](../azure-monitor/agents/agents-overview.md#log-analytics-agent). Zorg ervoor dat op de computers een van de ondersteunde besturingssystemen voor deze agent wordt uitgevoerd, zoals wordt beschreven op de volgende pagina's:
+Security Center is afhankelijk van de [log Analytics-agent](../azure-monitor/agents/agents-overview.md#log-analytics-agent). Zorg ervoor dat op de computers een van de ondersteunde besturingssystemen voor deze agent wordt uitgevoerd, zoals wordt beschreven op de volgende pagina's:
 
 * [Log Analytics-agent voor door Windows ondersteunde besturingssystemen](../azure-monitor/agents/agents-overview.md#supported-operating-systems)
 * [Log Analytics-agent voor door Linux ondersteunde besturingssystemen](../azure-monitor/agents/agents-overview.md#supported-operating-systems)

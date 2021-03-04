@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 12/09/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: fe427150b15c6bccb97172ae751235d388c95c7b
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: dbeb3cd4fccf80f434e6c7ac08c658632f64b135
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98675023"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102096850"
 ---
 # <a name="tutorial-configure-zscaler-private-access-with-azure-active-directory-b2c"></a>Zelf studie: Zscaler persoonlijke toegang configureren met Azure Active Directory B2C
 
@@ -100,11 +100,11 @@ Zie aan de [slag met aangepaste beleids regels in azure Active Directory B2C](./
 
 ### <a name="step-3-register-zpa-as-a-saml-application-in-azure-ad-b2c"></a>Stap 3: ZPA registreren als een SAML-toepassing in Azure AD B2C
 
-Als u een SAML-toepassing in Azure AD B2C wilt configureren, raadpleegt u [een SAML-toepassing registreren in azure AD B2C](./connect-with-saml-service-providers.md). 
+Als u een SAML-toepassing in Azure AD B2C wilt configureren, raadpleegt u [een SAML-toepassing registreren in azure AD B2C](./saml-service-provider.md). 
 
-Kopieer of noteer de IdP SAML-meta gegevens-URL die wordt gebruikt door Azure AD B2C in stap ["3,2 uw meta gegevens voor beleid uploaden en testen"](./connect-with-saml-service-providers.md#32-upload-and-test-your-policy-metadata). U hebt deze later nodig.
+In stap [' uw beleid uploaden '](./saml-service-provider.md#upload-your-policy)kopieert of noteert u de URL van de IDP SAML-meta gegevens die wordt gebruikt door Azure AD B2C. U hebt deze later nodig.
 
-Volg de instructies in stap [4,2 het app-manifest bijwerken](./connect-with-saml-service-providers.md#42-update-the-app-manifest). Werk in stap 4,2 de eigenschappen van het app-manifest als volgt bij:
+Volg de instructies in stap [' uw toepassing configureren in azure AD B2C '](./saml-service-provider.md#configure-your-application-in-azure-ad-b2c). Werk in stap 4,2 de eigenschappen van het app-manifest als volgt bij:
 
 - Voor **identifierUris**: gebruik de ENTITEITS-id van de service provider die u eerder hebt gekopieerd of genoteerd in ' Step 1.6. b '.  
 - Voor **samlMetadataUrl**: sla deze eigenschap over, omdat ZPA geen URL voor SAML-meta gegevens host.  
@@ -150,6 +150,6 @@ Ga naar een ZPA-gebruikers portal of een toepassing voor browser toegang en test
 Raadpleeg de volgende artikelen voor meer informatie:
 
 - [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md)
-- [Een SAML-toepassing registreren in Azure AD B2C](./connect-with-saml-service-providers.md)
+- [Een SAML-toepassing registreren in Azure AD B2C](./saml-service-provider.md)
 - [Stapsgewijze configuratie handleiding voor ZPA](https://help.zscaler.com/zpa/step-step-configuration-guide-zpa)
 - [Een IdP configureren voor eenmalige aanmelding](https://help.zscaler.com/zpa/configuring-idp-single-sign)

@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/17/2021
 ms.author: memildin
-ms.openlocfilehash: a47ece762f2df3fa18cf2b79d338c28d4069c4ad
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 490f94c71611e07e765f5882cb4e3eec13033a6a
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100633471"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102099332"
 ---
 # <a name="manage-and-respond-to-security-alerts-in-azure-security-center"></a>Beveiligingswaarschuwingen beheren en erop reageren in Azure Security Center
 
 In dit onderwerp wordt beschreven hoe u de waarschuwingen van Security Center kunt weer geven en verwerken en uw resources kunt beveiligen.
 
-Geavanceerde detecties die beveiligings waarschuwingen activeren, zijn alleen beschikbaar met Azure Defender. Er is een gratis proefversie beschikbaar. Zie [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender)als u een upgrade wilt uitvoeren.
+Geavanceerde detecties die beveiligings waarschuwingen activeren, zijn alleen beschikbaar met Azure Defender. Er is een gratis proefversie beschikbaar. Zie [Azure Defender inschakelen](enable-azure-defender.md)als u een upgrade wilt uitvoeren.
 
 ## <a name="what-are-security-alerts"></a>Wat zijn beveiligingswaarschuwingen?
 Security Center verzamelt, analyseert en integreert automatisch logboekgegevens van uw Azure-resources, het netwerk en verbonden partneroplossingen, zoals firewall- en eindpuntbeveiligingsoplossingen om werkelijke dreigingen te detecteren en fout-positieven te reduceren. In Security Center wordt een lijst met beveiligingswaarschuwingen met prioriteiten weergegeven samen met de informatie die u nodig hebt om snel onderzoek te doen naar het probleem en aanbevelingen voor het herstellen van een aanval.

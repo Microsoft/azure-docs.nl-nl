@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.reviewer: dseven
 ms.author: cavoeg
 author: zxue
-ms.date: 02/24/2021
-ms.openlocfilehash: 73e1db2754749e1fb1142231e7179771bcce8e76
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/03/2021
+ms.openlocfilehash: 8dde5c6206087c8bb1c1f456a0c858abbccf0cc4
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101712772"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102096306"
 ---
 # <a name="enable-diagnostic-logging-in-azure-api-for-fhir"></a>Diagnostische logboek registratie inschakelen in azure API voor FHIR
 
@@ -50,7 +50,7 @@ U kunt de metrische gegevens bekijken onder bewaking | Metrische gegevens uit de
 
 
 > [!Note] 
-> Het kan tot vijf tien minuten duren voordat de eerste Logboeken in Log Analytics worden weer gegeven.  
+> Het kan tot vijf tien minuten duren voordat de eerste Logboeken in Log Analytics worden weer gegeven. Als Azure API voor FHIR van een resource groep of abonnement naar een andere wordt verplaatst, moet u de instelling ook bijwerken nadat de verplaatsing is voltooid. 
  
 Raadpleeg de documentatie van het [Azure-resource logboek](../azure-monitor/essentials/platform-logs-overview.md) voor meer informatie over het werken met Diagnostische logboeken
 

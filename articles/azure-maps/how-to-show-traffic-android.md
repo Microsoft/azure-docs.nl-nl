@@ -3,17 +3,18 @@ title: Verkeers gegevens weer geven op Android-kaarten | Microsoft Azure kaarten
 description: In dit artikel leert u hoe u verkeers gegevens op een kaart kunt weer geven met behulp van de Microsoft Azure Maps Android SDK.
 author: rbrundritt
 ms.author: richbrun
-ms.date: 12/04/2020
+ms.date: 2/26/2021
 ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 113f39ac2976b870c9e07851cdd0919e2578940f
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+zone_pivot_groups: azure-maps-android
+ms.openlocfilehash: 36b3666f12b48468467e76f4c281d58d8018478c
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680463"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102098533"
 ---
 # <a name="show-traffic-data-on-the-map-android-sdk"></a>Verkeers gegevens weer geven op de kaart (Android SDK)
 
@@ -39,6 +40,8 @@ Er zijn twee soorten verkeers gegevens beschikbaar in Azure Maps:
 
 De volgende code laat zien hoe verkeers gegevens op de kaart worden weer gegeven.
 
+::: zone pivot="programming-language-java-android"
+
 ```java
 //Show traffic on the map using the traffic options.
 map.setTraffic(
@@ -47,6 +50,19 @@ map.setTraffic(
 );
 ```
 
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+map.setTraffic(
+    incidents(true),
+    flow(TrafficFlow.RELATIVE)
+)
+```
+
+::: zone-end
+
 In de volgende scherm afbeelding ziet u de bovenstaande code rending in realtime verkeer op de kaart.
 
 ![Toewijzing met gegevens over realtime verkeer](media/how-to-show-traffic-android/android-show-traffic.png)
@@ -54,6 +70,8 @@ In de volgende scherm afbeelding ziet u de bovenstaande code rending in realtime
 ## <a name="get-traffic-incident-details"></a>Details van verkeers incident ophalen
 
 Meer informatie over een verkeers incident vindt u in de eigenschappen van de functie die wordt gebruikt om het incident weer te geven op de kaart. Verkeers incidenten worden toegevoegd aan de kaart met behulp van de tegel service Azure Maps traffic incident vector. De indeling van de gegevens in deze vector tegels als [hier wordt beschreven](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-incidents/vector-incident-tiles). Met de volgende code wordt een gebeurtenis Click toegevoegd aan de kaart en wordt de functie voor het verkeers incident opgehaald waarop is geklikt en wordt er een pop-upbericht weer gegeven met een aantal details.
+
+::: zone pivot="programming-language-java-android"
 
 ```java
 //Show traffic information on the map.
@@ -107,6 +125,59 @@ map.events.add((OnFeatureClick) (features) -> {
     }
 });
 ```
+
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+//Show traffic information on the map.
+map.setTraffic(
+    incidents(true),
+    flow(TrafficFlow.RELATIVE)
+)
+
+//Add a click event to the map.
+map.events.add(OnFeatureClick { features: List<Feature>? ->
+    if (features != null && features.size > 0) {
+        val incident = features[0]
+
+        //Ensure that the clicked feature is an traffic incident feature.
+        if (incident.properties() != null && incident.hasProperty("incidentType")) {
+            val sb = StringBuilder()
+            val incidentType = incident.getStringProperty("incidentType")
+
+            if (incidentType != null) {
+                sb.append(incidentType)
+            }
+
+            if (sb.length > 0) {
+                sb.append("\n")
+            }
+
+            //If the road is closed, find out where it is closed from.
+            if ("Road Closed" == incidentType) {
+                val from = incident.getStringProperty("from")
+                if (from != null) {
+                    sb.append(from)
+                }
+            } else { //Get the description of the traffic incident.
+                val description = incident.getStringProperty("description")
+                if (description != null) {
+                    sb.append(description)
+                }
+            }
+
+            val message = sb.toString()
+            if (message.length > 0) {
+                Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+})
+```
+
+::: zone-end
 
 In de volgende scherm afbeelding ziet u informatie over het rending in realtime verkeer op de kaart met een pop-upbericht waarin de details van het incident worden weer gegeven.
 

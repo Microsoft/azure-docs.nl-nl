@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: tutorial
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: 0868c99a29b8da4376b639a54988fc821433e26d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: a8b285ca0b8d0dae88bfe8dd19ac7e1bc8372e32
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100576983"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102099196"
 ---
 # <a name="planning-and-operations-guide"></a>Handleiding voor planning en bewerking
 Deze gids is bedoeld voor IT-specialisten, IT-architecten, gegevensbeveiligingsanalisten en cloudbeheerders die willen gaan werken met Azure Security Center.
@@ -232,7 +232,6 @@ In de video [Reageren op incidenten met Azure Security Center en Microsoft Opera
 In dit document hebt u kunnen lezen hoe u een planning kunt maken voor het overstappen op Security Center. Zie de volgende onderwerpen voor meer informatie over Security Center:
 
 * [Beveiligingswaarschuwingen beheren en erop reageren in Azure Security Center](security-center-managing-and-responding-alerts.md)
-* [Beveiligingsstatus bewaken in Azure Security Center](security-center-monitoring.md): meer informatie over het bewaken van de status van uw Azure-resources.
 * [Partneroplossingen bewaken met Azure Security Center](./security-center-partner-integration.md): leer hoe u de integriteitsstatus van uw partneroplossingen kunt bewaken.
 * [Azure Security Center FAQ](faq-general.md): raadpleeg veelgestelde vragen over het gebruik van de service.
 * [Azure-beveiligingsblog](/archive/blogs/azuresecurity/): lees blogberichten over de beveiliging en naleving van Azure.

@@ -1,23 +1,20 @@
 ---
 title: Referentietabel voor alle beveiligingswaarschuwingen in Azure Security Center
-description: Dit artikel bevat een overzicht van alle beveiligingswaarschuwingen die worden weergegeven in het Azure Defender-dashboard van Azure Security Center.
+description: Dit artikel bevat een overzicht van de beveiligings waarschuwingen die worden weer gegeven in het Azure Defender-dash board van Azure Security Center
 services: security-center
 documentationcenter: na
 author: memildin
 manager: rkarlin
 ms.service: security-center
-ms.devlang: na
 ms.topic: reference
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 02/21/2021
+ms.date: 03/03/2021
 ms.author: memildin
-ms.openlocfilehash: a9ba66580d6b98cfde0abe934f53f05d27edc57f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: e8ebf47420150c82c8e94299291e9ea6bd7d4d88
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101735842"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102096952"
 ---
 # <a name="security-alerts---a-reference-guide"></a>Referentiegids met beveiligingswaarschuwingen
 
@@ -278,6 +275,9 @@ Onderaan deze pagina staat een tabel met een beschrijving van de Azure Security 
 
 ## <a name="alerts-for-containers---host-level"></a><a name="alerts-containerhost"></a>Waarschuwingen voor containers - hostniveau
 
+Azure Defender-waarschuwingen voor container-hosts zijn niet beperkt tot de onderstaande waarschuwingen. Veel van de waarschuwingen die worden weer gegeven in de [waarschuwingen voor Azure-netwerklaag](#alerts-azurenetlayer), [waarschuwingen voor Windows-computers](#alerts-windows)en [waarschuwingen voor Linux-computer](#alerts-linux) tabellen kunnen ook worden geactiveerd op uw container-hosts. Het wereld wijde team van Threat Intelligence van micro soft vergelijkt voortdurend met een groot aantal soorten waarschuwingen tegen Kubernetes-clusters om de detectie te optimaliseren en om fout-positieven te verminderen.
+
+
 [Extra informatie en opmerkingen](defender-for-kubernetes-introduction.md)
 
 | Waarschuwing                                                                          | Beschrijving                                                                                                                                                                                                                                                                                                | MITRE-tactieken<br>([Meer informatie](#intentions)) | Severity |
@@ -294,9 +294,7 @@ Onderaan deze pagina staat een tabel met een beschrijving van de Azure Security 
 
 ## <a name="alerts-for-sql-database-and-azure-synapse-analytics"></a><a name="alerts-sql-db-and-warehouse"></a>Waarschuwingen voor SQL Database en Azure Synapse Analytics
 
-[Extra informatie en opmerkingen](defender-for-sql-introduction.md)
-
-| Waarschuwing                                                    | Beschrijving                                                                                                                                                                                                                                                                                                                                                                                                                               | MITRE-tactieken<br>([Meer informatie](#intentions)) | Severity |
+[Extra informatie en opmerkingen](defender-for-sql-introduction.md)| Waarschuwing                                                    | Beschrijving                                                                                                                                                                                                                                                                                                                                                                                                                               | MITRE-tactieken<br>([Meer informatie](#intentions)) | Severity |
 |----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------:|----------|
 | **A possible vulnerability to SQL Injection** (Mogelijk beveiligingslek dat mogelijkheden biedt voor SQL-injectie)            | Een toepassing heeft een onjuiste SQL-instructie gegenereerd in de database. Dit kan duiden op een mogelijke kwetsbaarheid voor SQL-injectieaanvallen. Er zijn twee mogelijke redenen voor een onjuiste instructie. Een fout in de toepassingscode waardoor de onjuiste SQL-instructie is gemaakt. Toepassingscode of opgeslagen procedures schonen gebruikersinvoer niet op tijdens het construeren van de onjuiste SQL-instructie, wat kan worden misbruikt voor SQL-injectie | -                                            | Normaal   |
 | **Poging tot aanmelden door een mogelijk schadelijke toepassing** | Een mogelijk schadelijke toepassing heeft geprobeerd toegang te krijgen tot SQL-server {name}.                                                                                                                                                                                                                                                                                                                                                               | PreAttack (Voorbereiding)                                    | Hoog     |
@@ -477,8 +475,7 @@ Onderaan deze pagina staat een tabel met een beschrijving van de Azure Security 
 
 ## <a name="security-incident-alerts"></a><a name="alerts-fusion"></a>Waarschuwingen voor beveiligingsincidenten
 
-[Extra informatie en opmerkingen](security-center-alerts-cloud-smart.md)
-
+[Extra informatie en opmerkingen](security-center-alerts-overview.md#cloud-smart-alert-correlation-in-azure-security-center-incidents)
 
 | Waarschuwing                                   | Beschrijving                                                          | MITRE-tactieken<br>([Meer informatie](#intentions)) | Severity |
 |-----------------------------------------|----------------------------------------------------------------------|:----------------------------------:|----------|

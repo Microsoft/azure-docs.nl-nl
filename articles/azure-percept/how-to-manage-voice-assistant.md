@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: how-to
 ms.date: 02/15/2021
 ms.custom: template-how-to
-ms.openlocfilehash: 593d2ccadf814cb5af27a4bb738f28132f39ab7d
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 5e41dea3b47c608b9e82ac57fa1cfe5247ea6cc2
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662400"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102099009"
 ---
 # <a name="managing-your-voice-assistant"></a>Uw Voice Assistant beheren
 
@@ -28,7 +28,7 @@ Een tref woord is een woord of korte zin die wordt gebruikt om een Voice Assista
 
 1. Klik op de pagina demo op **wijzigen** naast **aangepast tref woord** .
 
-    :::image type="content" source="./media/manage-voice-assistant/hospitality-demo.png" alt-text="Bitmapafbeelding.":::
+    :::image type="content" source="./media/manage-voice-assistant/hospitality-demo.png" alt-text="Scherm afbeelding van het horeca-demo venster.":::
 
     Als u de voorbeeld pagina niet hebt geopend, gaat u naar de pagina apparaat (zie hieronder) en klikt u op **uw Voice-assistent testen** onder **acties** om toegang te krijgen tot de demo.
 
@@ -40,17 +40,17 @@ Een tref woord is een woord of korte zin die wordt gebruikt om een Voice Assista
 
 1. Klik op de pagina overzicht van [Azure percept Studio](https://go.microsoft.com/fwlink/?linkid=2135819)op **apparaten** in het linkerdeel venster.
 
-    :::image type="content" source="./media/manage-voice-assistant/portal-overview-devices.png" alt-text="Bitmapafbeelding.":::
+    :::image type="content" source="./media/manage-voice-assistant/portal-overview-devices.png" alt-text="Scherm afbeelding van de overzichts pagina van Azure percept Studio met apparaten gemarkeerd.":::
 
 1. Selecteer het apparaat waarop uw Voice Assistant-toepassing is geïmplementeerd.
 
 1. Open het tabblad **spraak** .
 
-    :::image type="content" source="./media/manage-voice-assistant/device-page.png" alt-text="Bitmapafbeelding.":::
+    :::image type="content" source="./media/manage-voice-assistant/device-page.png" alt-text="Scherm afbeelding van de pagina rand apparaat met het tabblad spraak gemarkeerd.":::
 
 1. Klik op **wijzigen** naast **sleutel woord**.
 
-    :::image type="content" source="./media/manage-voice-assistant/change-keyword-device.png" alt-text="Bitmapafbeelding.":::
+    :::image type="content" source="./media/manage-voice-assistant/change-keyword-device.png" alt-text="Scherm afbeelding van de acties voor de beschik bare spraak oplossing.":::
 
 1. Selecteer een van de beschik bare tref woorden en klik op **Opslaan** om de wijzigingen toe te passen.
 

@@ -3,14 +3,14 @@ title: Werk belastingen uitvoeren op rendabele virtuele machines met lage priori
 description: Meer informatie over het inrichten van Vm's met lage prioriteit om de kosten van Azure Batch workloads te verminderen.
 author: mscurrell
 ms.topic: how-to
-ms.date: 02/02/2021
+ms.date: 03/03/2021
 ms.custom: seodec18
-ms.openlocfilehash: 9214ef83ec9b8bef4fb7bc7489aa0ab388f67c0d
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: cafc7216e8112640f823ecee1aea055ab78b3fc6
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99507266"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102098465"
 ---
 # <a name="use-low-priority-vms-with-batch"></a>Virtuele machines met lage prioriteit met Batch gebruiken
 
@@ -25,9 +25,9 @@ Vm's met lage prioriteit worden aangeboden tegen een aanzienlijk gereduceerde pr
 > [!NOTE]
 > [Er zijn nu virtuele machines beschikbaar](https://azure.microsoft.com/pricing/spot/) voor [virtuele machines met één exemplaar](../virtual-machines/spot-vms.md) en [VM-schaal sets](../virtual-machine-scale-sets/use-spot.md). Spot-Vm's zijn een evolutie van Vm's met lage prioriteit, maar verschillen in die prijzen kunnen variëren en een optionele maximum prijs kan worden ingesteld bij het toewijzen van spot-Vm's.
 >
-> Azure Batch-groepen beginnen met het ondersteunen van spot-Vm's binnen een paar maanden nadat ze algemeen beschikbaar zijn, met nieuwe versies van de [batch-api's en-hulpprogram ma's](./batch-apis-tools.md). Zodra er ondersteuning beschikbaar is voor virtuele machines met lage prioriteit, wordt de virtuele machine met goedkope werk worden afgeschaft. deze worden gedurende ten minste 12 maanden worden ondersteund met behulp van de huidige Api's en hulpprogram ma's van het hulp programma om voldoende tijd te bieden voor de migratie naar de locatie van virtuele machines.
+>Azure Batch-groepen zullen in de toekomst beginnen met het ondersteunen van spot-Vm's, met nieuwe versies van de [batch-api's en-hulpprogram ma's](./batch-apis-tools.md). Nadat ondersteuning van de steun-VM beschikbaar is, worden virtuele machines met lage prioriteit afgeschaft. deze worden gedurende ten minste twaalf maanden worden ondersteund met de huidige Api's en hulpprogram ma's van het hulp programma om voldoende tijd te hebben om de migratie naar de locatie van virtuele machines mogelijk te maken.
 >
-> Spot-Vm's worden niet ondersteund voor [Cloud service-configuratie](/rest/api/batchservice/pool/add#cloudserviceconfiguration) groepen. Als u gebruik wilt maken van spot-Vm's, moeten Cloud service groepen worden gemigreerd naar configuratie groepen van [virtuele machines](/rest/api/batchservice/pool/add#virtualmachineconfiguration) .
+> Spot-Vm's worden alleen ondersteund voor configuratie Pools van virtuele machines. Als u gebruik wilt maken van spot-Vm's, moeten de configuratie groepen van de Cloud service worden [gemigreerd naar configuratie groepen van virtuele machines](batch-pool-cloud-service-to-virtual-machine-configuration.md).
 
 ## <a name="batch-support-for-low-priority-vms"></a>Batch ondersteuning voor Vm's met een lage prioriteit
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/15/2021
 ms.author: memildin
-ms.openlocfilehash: b9095d78d902bf5e44bffaba5db19bf2c26e0845
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a659ea897f013e504668789a7d5671420ff70a9f
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101727002"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102099077"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Bescherm uw eind punten met de geïntegreerde EDR-oplossing van Security Center: micro soft Defender voor eind punt
 
@@ -41,7 +41,7 @@ Micro soft Defender voor eind punt is een holistische, Cloud geleverde endpoint-
 | Aspect                          | Details                                                                                                                                                                                                                                                                                                       |
 |---------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Releasestatus:                  | Algemeen verkrijgbaar (GA)                                                                                                                                                                                                                                                                                      |
-| Prijzen:                        | [Azure Defender voor servers](security-center-pricing.md) is vereist                                                                                                                                                                                                                                             |
+| Prijzen:                        | [Azure Defender voor servers](defender-for-servers-introduction.md) is vereist                                                                                                                                                                                                                                             |
 | Ondersteunde platformen:            |  • Azure-machines met Windows<br> • Azure-Arc-machines met Windows|
 | Ondersteunde versies van Windows:  |   • **Algemene Beschik baarheid (ga)-** detectie op Windows Server 2016, 2012 r2 en 2008 R2 SP1<br> • **Preview-** detectie op windows server 2019, [Windows Virtual Desktop (WVD)](../virtual-desktop/overview.md)en [Windows 10 Enter prise multi-session](../virtual-desktop/windows-10-multisession-faq.md) (voorheen Enter PRISE voor Virtual Bureau bladen (EVD)<br>Server eindpunt bewaking met behulp van deze integraties is uitgeschakeld voor Office 365 GCC-klanten|
 | Niet-ondersteunde besturings systemen:  |  • Windows 10 (met uitzonde ring van EVD of WVD)<br> • Linux|
@@ -83,8 +83,7 @@ Nadat u de locatie hebt geconfigureerd, kunt u deze niet meer wijzigen. Als u uw
         - Als u Defender naar een eind punt implementeert op een on-premises computer, verbindt u deze met Azure Arc zoals uitgelegd in [hybride computers verbinden met servers met Azure-Arc](../azure-arc/servers/learn/quick-enable-hybrid-vm.md)
     - Voor **Windows Server 2019-computers** moet u bovendien controleren of ze een geldige agent uitvoeren en de MicrosoftMonitoringAgent-extensie hebben
 
-1. Schakel **Azure Defender voor servers** in. Zie de [prijzen van Azure Security Center](security-center-pricing.md#enable-azure-defender).
-
+1. Schakel **Azure Defender voor servers** in. Zie [Quick Start: Azure Defender inschakelen](enable-azure-defender.md).
 
 1. Als u al een gelicentieerde en geïmplementeerde versie van micro soft Defender voor eind punten op uw servers hebt, verwijdert u deze met behulp van de procedure die wordt beschreven in [niet meer vrijgeven Windows-servers](/windows/security/threat-protection/microsoft-defender-atp/configure-server-endpoints#offboard-windows-servers).
 1. Selecteer **Prijzen en instellingen** in het hoofdmenu van Security Center.

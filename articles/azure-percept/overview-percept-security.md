@@ -7,25 +7,25 @@ ms.service: azure-percept
 ms.topic: conceptual
 ms.date: 02/18/2021
 ms.custom: template-concept
-ms.openlocfilehash: b5a345139114842c83cb1f11792076efb1461870
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: a08876cde9fac64c3a361b469049b4e33678a86f
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662702"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102098142"
 ---
 # <a name="azure-percept-security-overview"></a>Overzicht van Azure percept-beveiliging
 
-Azure percept DK-apparaten zijn ontworpen met een hardwarefabrikant met een ingebouwde beveiliging op elk apparaat. Het helpt u bij het beveiligen van gevoelige Sens oren, zoals camera's en microfoons, het afhandelen van gegevens en het inschakelen van verificatie en autorisatie van apparaten voor Azure percept Studio Services.
+Azure percept DK-apparaten zijn ontworpen met een hardwarefabrikant: extra ingebouwde beveiliging op elk apparaat. Het helpt u bij het beveiligen van gevoelige Sens oren, zoals camera's en microfoons, het afhandelen van gegevens en het inschakelen van verificatie en autorisatie van apparaten voor Azure percept Studio Services.
 
 > [!NOTE]
-> Azure percept DK is bedoeld voor gebruik in ontwikkel-en test omgevingen en voor haalbaarheids scenario's.
+> Azure percept DK wordt alleen in licentie gegeven voor gebruik in ontwikkel-en test omgevingen.
 
 ## <a name="devices"></a>Apparaten
 
 ### <a name="azure-percept-dk"></a>Azure percept DK
 
-Azure percept DK bevat een Trusted Platform Module (TPM) versie 2,0 die kan worden gebruikt om het apparaat veilig met Azure Device Provisioning Services te verbinden. TPM is een branchespecifieke, ISO-standaard van de Trusted Computing Group en u kunt meer lezen over TPM bij de [volledige tpm 2,0 spec](https://trustedcomputinggroup.org/resource/tpm-library-specification/) of de ISO/IEC 11889 spec. Zie [Azure IOT hub Device Provisioning Service-TPM-Attestation (Engelstalig)](https://docs.microsoft.com/azure/iot-dps/concepts-tpm-attestation)voor meer informatie over hoe DPS apparaten op een veilige manier kan inrichten.
+Azure percept DK bevat een Trusted Platform Module (TPM) versie 2,0 die kan worden gebruikt om het apparaat te verbinden met Azure Device Provisioning Services met extra beveiliging. TPM is een branchespecifieke, ISO-standaard van de Trusted Computing Group en u kunt meer lezen over TPM bij de [volledige tpm 2,0 spec](https://trustedcomputinggroup.org/resource/tpm-library-specification/) of de ISO/IEC 11889 spec. Zie [Azure IOT hub Device Provisioning Service-TPM-Attestation (Engelstalig)](https://docs.microsoft.com/azure/iot-dps/concepts-tpm-attestation)voor meer informatie over hoe DPS apparaten op een veilige manier kan inrichten.
 
 ### <a name="azure-percept-system-on-module-som"></a>Azure percept System on module (SOM)
 
@@ -37,11 +37,11 @@ Azure percept-apparaten gebruiken het vertrouwen van de hoofdmap van de hardware
 
 ### <a name="iot-edge"></a>IoT Edge
 
-Azure percept DK maakt veilig verbinding met Azure percept Studio en andere Azure-Services die gebruikmaken van Transport Layer Security (TLS)-protocol. Azure percept DK is een Azure IoT Edge ingeschakeld apparaat. IoT Edge runtime is een verzameling Program ma's die een apparaat in een IoT Edge apparaat omzetten. De IoT Edge-runtime-onderdelen maken het samen IoT Edge apparaten de mogelijkheid code te ontvangen die aan de rand worden uitgevoerd en de resultaten te communiceren. Azure percept DK maakt gebruik van docker-containers voor het isoleren van IoT Edge workloads van het hostbesturingssysteem en de Edge-toepassingen. Meer informatie over het Azure IoT Edge Security Framework vindt u in de [IOT Edge Security Manager](https://docs.microsoft.com/azure/iot-edge/iot-edge-security-manager?view=iotedge-2018-06).
+Azure percept DK maakt verbinding met Azure percept Studio met extra beveiliging en andere Azure-Services die gebruikmaken van Transport Layer Security (TLS)-protocol. Azure percept DK is een Azure IoT Edge ingeschakeld apparaat. IoT Edge runtime is een verzameling Program ma's die een apparaat in een IoT Edge apparaat omzetten. De IoT Edge-runtime-onderdelen maken het samen IoT Edge apparaten de mogelijkheid code te ontvangen die aan de rand worden uitgevoerd en de resultaten te communiceren. Azure percept DK maakt gebruik van docker-containers voor het isoleren van IoT Edge workloads van het hostbesturingssysteem en de Edge-toepassingen. Meer informatie over het Azure IoT Edge Security Framework vindt u in de [IOT Edge Security Manager](https://docs.microsoft.com/azure/iot-edge/iot-edge-security-manager?view=iotedge-2018-06).
 
 ### <a name="device-update-for-iot-hub"></a>Update van het apparaat voor IoT Hub
 
-Update van het apparaat voor IoT Hub maakt veilige, schaal bare en betrouw bare updates voor de beveiliging mogelijk waarmee Azure percept-apparaten worden verlengd. Het biedt uitgebreide beheer controles en update compatibiliteit via inzichten. Azure percept DK bevat een vooraf geïntegreerde oplossing voor het bijwerken van het apparaat, die een flexibele update (A/B) levert van firmware tot besturingssysteem lagen.
+Update van het apparaat voor IoT Hub zorgt voor meer beveiliging, schaal baarheid en betrouw bare over-the-Air update waarmee de beveiliging van Azure percept-apparaten wordt verlengd. Het biedt uitgebreide beheer controles en update compatibiliteit via inzichten. Azure percept DK bevat een vooraf geïntegreerde oplossing voor het bijwerken van het apparaat, die een flexibele update (A/B) levert van firmware tot besturingssysteem lagen.
 
 <!---I think the below topics need to be somewhere else, (i.e. not on the main page)
 --->
@@ -57,16 +57,19 @@ Deze controle lijst is een start punt voor firewall regels:
 |*. auth.azureperceptdk.azure.net|   443|    SOM van Azure DK-verificatie en-autorisatie|
 |*. auth.projectsantacruz.azure.net| 443|    SOM van Azure DK-verificatie en-autorisatie|
 
-Bekijk daarnaast de lijst met [verbindingen die worden gebruikt door Azure IOT Edge](https://docs.microsoft.com/azure/iot-edge/production-checklist?view=iotedge-2018-06#allow-connections-from-iot-edge-devices).
+Bekijk ook de lijst met [verbindingen die door Azure IOT Edge worden gebruikt](https://docs.microsoft.com/azure/iot-edge/production-checklist?view=iotedge-2018-06#allow-connections-from-iot-edge-devices).
 
-## <a name="additional-recommendations-for-deployment-to-production"></a>Aanvullende aanbevelingen voor implementatie naar productie
+<!---
+## Additional Recommendations for Deployment to Production
 
-Azure percept DK biedt een groot aantal beveiligings mogelijkheden uit het kader. Naast de krachtige beveiligings functies die deel uitmaken van de huidige versie, raadt micro soft ook de volgende richt lijnen aan bij het overwegen van productie-implementaties:
+Azure Percept DK offers a great variety of security capabilities out of the box. In addition to those powerful security features included in the current release, Microsoft also suggests the following guidelines when considering production deployments:
 
-- Sterke fysieke beveiliging van het apparaat zelf
-- Controleren of gegevens bij rest versleuteling zijn ingeschakeld
-- De postuur van het apparaat continu controleren en snel reageren op waarschuwingen
-- Het aantal beheerders beperken dat toegang heeft tot het apparaat
+- Strong physical protection of the device itself
+- Ensuring data at rest encryption is enabled
+- Continuously monitoring the device posture and quickly responding to alerts
+- Limiting the number of administrators who have access to the device
+--->
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

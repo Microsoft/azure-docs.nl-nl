@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 04/30/2020
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: be5000b6f9153839b926932c82c9f8fa3ab93f5f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a713d869a754f17f4030c531999c822a2cbb76ee
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101704834"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102039798"
 ---
 # <a name="secure-a-custom-dns-name-with-a-tlsssl-binding-in-azure-app-service"></a>Een aangepaste DNS-naam beveiligen met een TLS/SSL-binding in Azure App Service
 
@@ -42,7 +42,7 @@ Voor het volgen van deze instructiegids:
 - [Een persoonlijk certificaat toevoegen aan uw app](configure-ssl-certificate.md)
 
 > [!NOTE]
-> De eenvoudigste manier om een persoonlijk certificaat toe te voegen, is door [een gratis beheerd certificaat in App Service](configure-ssl-certificate.md#create-a-free-certificate-preview) (preview-versie) te maken.
+> De eenvoudigste manier om een persoonlijk certificaat toe te voegen, is door [een gratis beheerd certificaat in App Service](configure-ssl-certificate.md#create-a-free-managed-certificate-preview) (preview-versie) te maken.
 
 [!INCLUDE [Prepare your web app](../../includes/app-service-ssl-prepare-app.md)]
 
@@ -73,7 +73,7 @@ Als uw app geen certificaat heeft voor het geselecteerde aangepaste domein, hebt
 - **App Service-certificaat** importeren: Volg de stappen in [Een App Service-certificaat importeren](configure-ssl-certificate.md#import-an-app-service-certificate) en selecteer vervolgens deze optie.
 
 > [!NOTE]
-> U kunt ook [Een gratis certificaat maken](configure-ssl-certificate.md#create-a-free-certificate-preview) (preview) of [Een Key Vault certificaat importeren](configure-ssl-certificate.md#import-a-certificate-from-key-vault), maar u moet dit afzonderlijk doen en vervolgens terugkeren naar het dialoogvenster **TLS/SSL-binding** .
+> U kunt ook [Een gratis certificaat maken](configure-ssl-certificate.md#create-a-free-managed-certificate-preview) (preview) of [Een Key Vault certificaat importeren](configure-ssl-certificate.md#import-a-certificate-from-key-vault), maar u moet dit afzonderlijk doen en vervolgens terugkeren naar het dialoogvenster **TLS/SSL-binding** .
 
 ### <a name="create-binding"></a>Binding maken
 

@@ -5,15 +5,15 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: tutorial
-ms.date: 10/05/2020
+ms.date: 03/03/2021
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: 56e35c23eacdf98db283ba5d8c2e32687cbe0ea8
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 6c6969fdf413c4eb5e7bbcf046fc397834d6c0a2
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101740899"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102038914"
 ---
 # <a name="tutorial-configure-a-virtual-network-gateway-for-expressroute-using-the-azure-portal"></a>Zelfstudie: Een virtuele-netwerkgateway configureren voor ExpressRoute met behulp van de Azure-portal
 > [!div class="op_single_selector"]
@@ -67,9 +67,9 @@ U kunt een [video](https://azure.microsoft.com/documentation/videos/azure-expres
 
     Als u een virtueel netwerk met dubbele stack gebruikt en op IPv6 gebaseerde privé-peering via ExpressRoute wilt gebruiken, klikt u op **ip6 adres ruimte toevoegen** en waarden voor het **IPv6-adres bereik** invoeren.
 
-Selecteer vervolgens **OK** om de waarden op te slaan en het gatewaysubnet te maken.
+    Selecteer vervolgens **OK** om de waarden op te slaan en het gatewaysubnet te maken.
 
-    :::image type="content" source="./media/expressroute-howto-add-gateway-portal-resource-manager/add-subnet-gateway.png" alt-text="Adding the subnet":::
+    :::image type="content" source="./media/expressroute-howto-add-gateway-portal-resource-manager/add-subnet-gateway.png" alt-text="Het subnet toevoegen":::
 
 ## <a name="create-the-virtual-network-gateway"></a>De gateway van het virtuele netwerk maken
 

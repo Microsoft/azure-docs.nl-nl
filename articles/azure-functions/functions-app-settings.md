@@ -3,12 +3,12 @@ title: Naslaginformatie over app-instellingen voor Azure Functions
 description: Referentie documentatie voor de Azure Functions app-instellingen of omgevings variabelen.
 ms.topic: conceptual
 ms.date: 09/22/2018
-ms.openlocfilehash: 8cb3e12c48adf1273c58f4914e34590e21b9d3cc
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 6f77efc877f210455be6716f8159ee000241c62f
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100378295"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102040342"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Naslaginformatie over app-instellingen voor Azure Functions
 
@@ -80,7 +80,7 @@ Wanneer `AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES` is ingesteld op `true`
 
 ## <a name="azure_functions_environment"></a>AZURE_FUNCTIONS_ENVIRONMENT
 
-In versie 2. x en latere versies van de functions runtime configureert het app-gedrag op basis van de runtime-omgeving. Deze waarde wordt [tijdens de initialisatie gelezen](https://github.com/Azure/azure-functions-host/blob/dev/src/WebJobs.Script.WebHost/Program.cs#L43). U kunt `AZURE_FUNCTIONS_ENVIRONMENT` elke waarde instellen, maar [drie waarden](/dotnet/api/microsoft.aspnetcore.hosting.environmentname) worden ondersteund: [ontwikkeling](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development), [fase ring](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging)en [productie](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production). Als `AZURE_FUNCTIONS_ENVIRONMENT` niet is ingesteld, wordt standaard `Development` de waarde in een lokale omgeving en `Production` op Azure gebruikt. Deze instelling moet worden gebruikt in plaats van `ASPNETCORE_ENVIRONMENT` om de runtime-omgeving in te stellen. 
+In versie 2. x en latere versies van de functions runtime configureert het app-gedrag op basis van de runtime-omgeving. Deze waarde wordt gelezen tijdens de initialisatie en kan worden ingesteld op een wille keurige waarde. Alleen de waarden van `Development` , `Staging` en `Production` worden door de runtime gehonoreerd. Wanneer deze toepassings instelling niet aanwezig is als deze wordt uitgevoerd in azure, wordt ervan uitgegaan dat de omgeving `Production` . Gebruik deze instelling in plaats van `ASPNETCORE_ENVIRONMENT` Als u de runtime-omgeving in azure wilt wijzigen in een andere waarde dan `Production` . De Azure Functions Core Tools ingesteld `AZURE_FUNCTIONS_ENVIRONMENT` op `Development` wanneer deze wordt uitgevoerd op een lokale computer, en dit kan niet worden overschreven in de local.settings.jsvoor het bestand. Zie [opstart klassen en-methoden op basis van een omgeving](/aspnet/core/fundamentals/environments#environment-based-startup-class-and-methods)voor meer informatie.
 
 ## <a name="azurefunctionsjobhost__"></a>AzureFunctionsJobHost__\*
 

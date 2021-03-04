@@ -9,15 +9,15 @@ ms.custom: seodec18, cog-serv-seo-aug-2020
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 09/28/2020
+ms.date: 03/02/2021
 ms.author: aahi
 keywords: on-premises, docker, container
-ms.openlocfilehash: 2bef6aa4e624386750a4c989d7e56cc1b22aaa5e
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: e157e976186f03aa984877435c42b996ce476740
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97862005"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102040189"
 ---
 # <a name="install-and-run-docker-containers-for-luis"></a>Docker-containers voor LUIS installeren en uitvoeren
 
@@ -281,7 +281,7 @@ De query parameters configureren hoe en wat wordt geretourneerd in de query-antw
 |`staging`|booleaans|Retourneert een query van de resultaten van de faserings omgeving indien ingesteld op waar. |
 |`log`|booleaans|Registreert query's die later kunnen worden gebruikt voor [actief leren](luis-how-to-review-endpoint-utterances.md). De standaardwaarde is true.|
 
-**_
+***
 
 ### <a name="query-the-luis-app"></a>Query's uitvoeren op de LUIS-app
 
@@ -299,7 +299,7 @@ curl -G \
 "http://localhost:5000/luis/v3.0/apps/{APP_ID}/slots/production/predict"
 ```
 
-Als u query's wilt uitvoeren naar de _ *staging**-omgeving, vervangt u `production` in de route door `staging` :
+Als u query's wilt uitvoeren naar de **faserings** omgeving, vervangt u `production` in de route door `staging` :
 
 `http://localhost:5000/luis/v3.0/apps/{APP_ID}/slots/staging/predict`
 
@@ -335,7 +335,7 @@ curl -X GET \
 ```
 De versie naam mag Maxi maal 10 tekens bevatten en bevat alleen tekens die in een URL zijn toegestaan.
 
-**_
+***
 
 ## <a name="import-the-endpoint-logs-for-active-learning"></a>De eindpunt logboeken voor actief leren importeren
 
@@ -346,7 +346,7 @@ Op de volgende locatie wordt de geneste mapstructuur voor de logboek bestanden v
 /output/luis/{INSTANCE_ID}/
 ```
 
-Selecteer uw app in de LUIS-Portal en selecteer vervolgens *eind punt-logboeken importeren** als u deze logboeken wilt uploaden.
+Selecteer uw app in de LUIS-Portal en selecteer vervolgens **eindpunt logboeken importeren** om deze logboeken te uploaden.
 
 ![De logboek bestanden van de container importeren voor actief leren](./media/luis-container-how-to/upload-endpoint-log-files.png)
 

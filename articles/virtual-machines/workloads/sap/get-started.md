@@ -13,15 +13,15 @@ ms.assetid: ad8e5c75-0cf6-4564-ae62-ea1246b4e5f2
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 02/03/2021
+ms.date: 03/03/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0d759ad0ebb1aa4f1b6a5f404812ab8149ed69e2
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: a212975817eefe75443bad98ccb72e0a8c3bf58c
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101671856"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102038625"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Azure gebruiken om SAP-werkbelasting scenario's te hosten en uit te voeren
 
@@ -83,6 +83,7 @@ In deze sectie vindt u documenten over integratie van micro soft Power BI in SAP
 
 ## <a name="change-log"></a>Wijzigingslogboek
 
+- 03/03/2021: wijziging in [ha-hand leiding voor SAP ASCS/SCS met WSFC en Azure NetApp files (SMB)](./high-availability-guide-windows-netapp-files-smb.md) om een voorzichtige verklaring toe te voegen dat er verhoogde bevoegdheden zijn vereist voor de gebruiker die SWPM uitvoert, tijdens de installatie van het SAP-systeem
 - 02/11/2021: wijzigingen in [hoge Beschik baarheid van IBM DB2 LUW op Azure vm's op Red Hat Enterprise Linux server](./high-availability-guide-rhel-ibm-db2-luw.md) voor het wijzigen van pacemaker-cluster opdrachten voor RHEL 8. x
 - 02/03/2021: Wijzig bij het [instellen van pacemaker in RHEL in azure](./high-availability-guide-rhel-pacemaker.md) om pcmk_host_map bij te werken in de opdracht stonith Create
 - 02/03/2021: Wijzig bij het [instellen van pacemaker in sles in azure](./high-availability-guide-suse-pacemaker.md) om pcmk_host_map toe te voegen in de opdracht stonith Create 

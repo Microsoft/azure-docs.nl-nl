@@ -6,14 +6,14 @@ ms.reviewer: yashar
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: overview
-ms.date: 12/15/2020
+ms.date: 02/24/2021
 ms.author: banders
-ms.openlocfilehash: 0e45e9741e92bb9e1fe23af79695cae06e64e871
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 7c2cf88eed3d8b727147f57ef9e2b52afd07de59
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98602052"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102039135"
 ---
 # <a name="what-are-azure-reservations"></a>Wat zijn Azure-reserveringen?
 
@@ -91,7 +91,8 @@ Zie [Selfservice voor omruiling en terugbetaling van Azure-reserveringen](exchan
 - **Gereserveerde VM-instantie**: een reservering dekt alleen de rekenkosten van de virtuele machine en cloudservices. Aanvullende kosten voor software, Windows, netwerken of opslag vallen hier niet onder.
 - **Gereserveerde Azure Storage-capaciteit**: onder een reservering valt de opslagcapaciteit voor standaardopslagaccounts voor Blob Storage of Azure Data Lake Gen2 Storage. De tarieven voor bandbreedte of transacties vallen niet onder de reservering.
 - **Gereserveerde Azure Cosmos DB-capaciteit**: onder een reservering valt de doorvoer die voor uw resources is ingericht. De opslag- en netwerkkosten vallen hier niet onder.
-- **SQL Database gereserveerde vCore** : omvat zowel Beheerd SQL-exemplaar als SQL Database Elastische pool/individuele database. Alleen de rekenkosten worden opgenomen in een reservering. De SQL-licentie wordt afzonderlijk gefactureerd. 
+- **Azure Data Factory gegevens stromen** : een reserve ring geldt voor de kosten van Integration runtime voor het reken type en het aantal kernen dat u koopt.
+- **SQL Database gereserveerde vCore** : omvat zowel Beheerd SQL-exemplaar als SQL Database Elastische pool/individuele database. Alleen de rekenkosten worden opgenomen in een reservering. De SQL-licentie wordt afzonderlijk gefactureerd.
 - **Azure Synapse Analytics**: een reservering omvat cDWU-gebruik. Een reservering omvat geen opslag- en netwerkkosten die samenhangen met het gebruik van Azure Synapse Analytics.
 - **Azure Databricks**: onder een reservering valt alleen het DBU-gebruik. Andere kosten, bijvoorbeeld voor berekeningen, opslag en netwerken, worden afzonderlijk toegepast.
 - **App Service-zegelkosten**: onder een reservering valt het gebruik van zegels. De reservering is niet van toepassing op werkrollen, dus alle andere resources die aan de zegel zijn gekoppeld, worden afzonderlijk in rekening gebracht.

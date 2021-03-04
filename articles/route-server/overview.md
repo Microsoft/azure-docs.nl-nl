@@ -7,12 +7,12 @@ ms.service: route-server
 ms.topic: overview
 ms.date: 03/02/2021
 ms.author: duau
-ms.openlocfilehash: 98527ea5227fcdc2c35dbe3579657368e30fcdaa
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 099f9b3769179076491c7c2098ec56faff9847dd
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101680624"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102039832"
 ---
 # <a name="what-is-azure-route-server-preview"></a>Wat is Azure route server (preview)? 
 
@@ -49,5 +49,5 @@ Voor veelgestelde vragen over Azure route Server raadpleegt u [Veelgestelde vrag
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Meer informatie over het configureren van Azure route server.](quickstart-configure-route-server-portal.md)
+- [Meer informatie over het configureren van Azure route server](quickstart-configure-route-server-powershell.md)
 - [Meer informatie over de werking van Azure route server met Azure ExpressRoute en Azure VPN](expressroute-vpn-support.md)

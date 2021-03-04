@@ -7,17 +7,17 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 03/02/2021
 ms.author: dech
-ms.openlocfilehash: c7c910c7162bde2209b07eb4f1d533328bae08c3
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 58ae61bc9e1736b13bb1802e2f39d5ada045cb6a
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101693214"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102039250"
 ---
 # <a name="publish-notebooks-to-the-azure-cosmos-db-notebook-gallery"></a>Notitie blokken publiceren naar de galerie met Azure Cosmos DB notebooks
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
-Azure Cosmos DB ingebouwde Jupyter-notebooks worden rechtstreeks geïntegreerd in uw Azure Cosmos DB-accounts in de Azure Portal. Met deze notitie blokken kunt u uw gegevens uit het Azure Portal analyseren en visualiseren. Ingebouwde notitie blokken voor Azure Cosmos DB zijn momenteel beschikbaar in [29 regio's](#supported-regions). Als u notitie blokken wilt gebruiken, [maakt u een nieuw Cosmos-account](#create-a-new-cosmos-account) of [schakelt u notitie blokken in voor een bestaand account](#enable-notebooks-in-an-existing-cosmos-account) in een van deze regio's.
+Azure Cosmos DB ingebouwde Jupyter-notebooks worden rechtstreeks geïntegreerd in uw Azure Cosmos DB-accounts in de Azure Portal. Met deze notitie blokken kunt u uw gegevens uit het Azure Portal analyseren en visualiseren. Ingebouwde notitie blokken voor Azure Cosmos DB zijn momenteel beschikbaar in [veel regio's](https://azure.microsoft.com/global-infrastructure/services/?products=cosmos-db&regions=all). Als u notitie blokken wilt gebruiken, [maakt u een nieuw Cosmos-account](create-cosmosdb-resources-portal.md) of [schakelt u notitie blokken in voor een bestaand account](enable-notebooks.md) in een van deze regio's.
 
 De notitieblok omgeving in het Azure Portal bevat enkele voor beelden die zijn gepubliceerd door het Azure Cosmos DB team. Het bevat ook een open bare galerie waarin u uw eigen notitie blokken kunt publiceren en delen. Nadat een notitie blok is gepubliceerd in de galerie, is het beschikbaar voor alle Azure Cosmos DB gebruikers om het te bekijken en te gebruiken. In dit artikel leert u hoe u notitie blokken kunt gebruiken uit de open bare galerie en hoe u uw notitie blok kunt publiceren naar de galerie.
 
@@ -53,7 +53,7 @@ Gebruik de volgende stappen om een notitie blok te publiceren:
 
    U kunt ook de optie **publiceren naar galerie** vinden door de te selecteren **...** Naast de naam van het notitie blok:
 
-   :::image type="content" source="./media/publish-notebook-gallery/choose-notebook-publish.png" alt-text="Kies een notitie blok om naar de galerie te publiceren.":::
+   :::image type="content" source="./media/publish-notebook-gallery/choose-notebook-publish.png" alt-text="Een andere manier om een notitie blok te kiezen om te publiceren naar de galerie.":::
 
 1. Vul het formulier **publiceren op Galerie** in met de volgende details:
 
@@ -61,11 +61,10 @@ Gebruik de volgende stappen om een notitie blok te publiceren:
    * **Beschrijving:**  Een korte beschrijving van de werking van uw notitie blok.
    * **Tags:** Tags zijn optioneel en worden gebruikt voor het filteren van resultaten wanneer ze op een tref woord worden doorzocht.
    * **Afbeelding van voor beeld:** Een afbeelding die wordt gebruikt op het voor blad wanneer het notitie blok wordt gepubliceerd. U kunt een van de volgende opties kiezen:
-
-     * **Aangepaste installatie kopie** : u kunt een installatie kopie van uw computer uploaden. Kies een afbeeldings bestand met een hoogte-breedte verhouding 256x144.
-     * **URL** : Geef een openbaar toegankelijke URL op waar de installatie kopie zich bevindt.
-     * **Scherm opname maken** : er wordt automatisch een scherm opname van uw geopende notitie blok gemaakt en geüpload naar de preview-versie.
-     * De **eerste weer gave** -uitvoer uitvoer van de eerste cel met een weer gave-uitvoer. Cellen die alleen de prijs verlaging/tekst weer geven, tellen niet als een weergave uitvoer.
+   * **Aangepaste installatie kopie** : u kunt een installatie kopie van uw computer uploaden. Kies een afbeeldings bestand met een hoogte-breedte verhouding 256x144.
+   * **URL** : Geef een openbaar toegankelijke URL op waar de installatie kopie zich bevindt.
+   * **Scherm opname maken** : er wordt automatisch een scherm opname van uw geopende notitie blok gemaakt en geüpload naar de preview-versie.
+   * De **eerste weer gave** -uitvoer uitvoer van de eerste cel met een weer gave-uitvoer. Cellen die alleen de prijs verlaging/tekst weer geven, tellen niet als een weergave uitvoer.
 
    :::image type="content" source="./media/publish-notebook-gallery/publish-notebook.png" alt-text="Vul het formulier publiceren op Galerie in.":::
 

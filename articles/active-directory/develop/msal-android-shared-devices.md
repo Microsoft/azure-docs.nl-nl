@@ -13,12 +13,12 @@ ms.date: 03/31/2020
 ms.author: marsma
 ms.reviewer: hahamil
 ms.custom: aaddev, identitypla | Azuretformtop40
-ms.openlocfilehash: 85f8b340635354d4bb0f28f2b3d79b617bd897f8
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: ea902b8b609d226f6bb9e61ec0bfd60f75a3825d
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754879"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102038574"
 ---
 # <a name="shared-device-mode-for-android-devices"></a>Modus voor gedeeld apparaat voor Android-apparaten
 
@@ -34,7 +34,7 @@ De modus gedeeld apparaat biedt ook micro soft-identiteits beheer van het appara
 Als u een app voor gedeelde apparaten wilt maken, werken ontwikkel aars en beheerders van Cloud apparaten samen:
 
 - Ontwikkel aars schrijven een app met één account (apps met meerdere accounts worden niet ondersteund in de modus gedeeld apparaat), toevoegen `"shared_device_mode_supported": true` aan de configuratie van de app en code schrijven voor het afhandelen van dingen zoals het afmelden van gedeelde apparaten.
-- Apparaat beheerders maken het apparaat klaar om te worden gedeeld door de verificator-app te installeren en het apparaat in te stellen op de gedeelde modus met de verificator-app. Alleen gebruikers met de rol [beheerder van Cloud apparaat](../roles/permissions-reference.md#cloud-device-administrator-permissions) kunnen een apparaat in de gedeelde modus plaatsen met behulp van de [verificator-app](../user-help/user-help-auth-app-overview.md). U kunt het lidmaatschap van uw organisatie rollen in de Azure Portal configureren via: **Azure Active Directory**-  >  **rollen en-Administrators** van de  >  **Cloud apparaat-beheerder**.
+- Apparaat beheerders maken het apparaat klaar om te worden gedeeld door de verificator-app te installeren en het apparaat in te stellen op de gedeelde modus met de verificator-app. Alleen gebruikers met de rol [beheerder van Cloud apparaat](../roles/permissions-reference.md#cloud-device-administrator) kunnen een apparaat in de gedeelde modus plaatsen met behulp van de [verificator-app](../user-help/user-help-auth-app-overview.md). U kunt het lidmaatschap van uw organisatie rollen in de Azure Portal configureren via: **Azure Active Directory**-  >  **rollen en-Administrators** van de  >  **Cloud apparaat-beheerder**.
 
  In dit artikel wordt voornamelijk aandacht besteed aan ontwikkel aars.
 

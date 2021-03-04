@@ -1,17 +1,16 @@
 ---
 title: Regels voor het verzamelen van gegevens in Azure Monitor (preview-versie)
 description: Overzicht van regels voor gegevens verzameling (Dcr's) in Azure Monitor met inbegrip van de inhoud en structuur en hoe u deze kunt maken en gebruiken.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/19/2021
-ms.openlocfilehash: 0bae058804bdb1f199c39497c59e89bda8087424
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: a0c5e9f89b983871224e79c2fc4f518a15d42a6f
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100612540"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102039611"
 ---
 # <a name="data-collection-rules-in-azure-monitor-preview"></a>Regels voor het verzamelen van gegevens in Azure Monitor (preview-versie)
 Met regels voor gegevens verzameling (DCR) worden gegevens in Azure Monitor gedefinieerd en wordt aangegeven waar de gegevens moeten worden verzonden of opgeslagen. Dit artikel bevat een overzicht van regels voor het verzamelen van gegevens, inclusief de inhoud en structuur en hoe u deze kunt maken en gebruiken.
@@ -40,7 +39,7 @@ In het volgende diagram ziet u de onderdelen van een gegevens verzamelings regel
 ### <a name="data-source-types"></a>Typen gegevensbronnen
 Elke gegevens bron heeft een gegevens bron type. Elk type definieert een unieke set eigenschappen die voor elke gegevens bron moet worden opgegeven. De gegevens bron typen die momenteel beschikbaar zijn, worden weer gegeven in de volgende tabel.
 
-| Gegevens bron type | Description | 
+| Gegevens bron type | Beschrijving | 
 |:---|:---|
 | switch | Gegevens bron op basis van VM-extensie |
 | Performance Counters | Prestatie meter items voor Windows en Linux |

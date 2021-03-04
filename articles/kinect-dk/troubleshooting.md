@@ -7,12 +7,12 @@ ms.prod: kinect-dk
 ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: problemen oplossen, bijwerken, bug, kinect, feedback, herstel, logboek registratie, tips
-ms.openlocfilehash: a6e00b6c5e9e4f82bb668769aade8311896bef32
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 5f13815b8f8b26f6a08da28181a4a6164b7b89a3
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97587278"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102038817"
 ---
 # <a name="azure-kinect-known-issues-and-troubleshooting"></a>Bekende problemen met Azure Kinect en probleem oplossing
 
@@ -174,6 +174,10 @@ De Azure Kinect depth-engine op Linux maakt gebruik van OpenGL. Voor OpenGL is e
 2. Schakel het systeem uit, koppel de monitor los en schakel het systeem uit. Met automatische aanmelding wordt het maken van een x-Server sessie afgedwongen.
 2. Verbinding maken via SSH en de variabele weergave env instellen `export DISPLAY=:0`
 3. Start uw Azure Kinect-toepassing.
+
+Het hulp programma [xtrlock](http://manpages.ubuntu.com/manpages/xenial/man1/xtrlock.1x.html) kan worden gebruikt om het scherm direct na automatische aanmelding te vergren delen. Voeg de volgende opdracht toe aan de opstart toepassing of de systeemwerkte service:
+
+`bash -c “xtrlock -b”` 
 
 ## <a name="missing-c-documentation"></a>Ontbrekende C#-documentatie
 

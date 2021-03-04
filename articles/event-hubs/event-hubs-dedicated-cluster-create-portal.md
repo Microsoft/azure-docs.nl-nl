@@ -3,12 +3,12 @@ title: Een toegewezen Event Hubs-cluster maken met behulp van de Azure-portal
 description: In deze quickstart leert u hoe u met de Azure-portal een Azure Event Hubs-cluster maakt.
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.openlocfilehash: 2759d1e25519b69311c369f3f58239cc0889a9a7
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 6ff4ee1f098407ba8b3cd2727410bdfc842db89a
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88927762"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102040087"
 ---
 # <a name="quickstart-create-a-dedicated-event-hubs-cluster-using-azure-portal"></a>Quickstart: Een toegewezen Event Hubs-cluster maken met behulp van de Azure-portal 
 Event Hubs-clusters bieden implementaties met één tenant voor klanten met de meest veeleisende streaming-behoeften. Deze aanbieding heeft een gegarandeerde SLA van 99,99% en is alleen beschikbaar voor de prijscategorie Dedicated. Een [Event Hubs-cluster](event-hubs-dedicated-overview.md) kan miljoenen gebeurtenissen per seconde opnemen met gegarandeerde capaciteit en latentie van minder dan een seconde. Naamruimten en Event Hubs die in een cluster worden gemaakt, omvatten alle functies van de aanbieding voor Standard en meer, en hebben geen opnamelimieten. De Dedicated-aanbieding omvat ook de populaire functie [Event Hubs Capture](event-hubs-capture-overview.md), die gratis beschikbaar is, voor automatische batchverwerking en vastlegging van gegevensstromen in [Azure Blob Storage](../storage/blobs/storage-blobs-introduction.md) of [Azure Data Lake Storage Gen 1](../data-lake-store/data-lake-store-overview.md).
@@ -30,10 +30,13 @@ Zorg ervoor dat u over het volgende beschikt om deze snelstart te voltooien:
 ## <a name="create-an-event-hubs-dedicated-cluster"></a>Een toegewezen Event Hubs-cluster maken
 Een Event Hubs-cluster biedt een unieke scoping container waarin u een of meer naamruimten kunt maken. In deze preview-fase van de selfservice-ervaring in de portal kunt u in bepaalde regio’s clusters met 1 capaciteitseenheid maken. Als u een cluster met meer dan 1 capaciteitseenheid nodig hebt, kunt u een Azure-ondersteuningsaanvraag indienen om uw cluster omhoog te schalen nadat het is gemaakt.
 
-Voer de volgende stappen uit om een cluster in uw resourcegroep te maken met behulp van de Azure-portal:
+> [!IMPORTANT]
+> U kunt het cluster niet ten minste vier uur verwijderen nadat u het hebt gemaakt. Daarom worden er kosten in rekening gebracht voor een minimum van 4 uur gebruik van het cluster. Zie [Event hubs-prijzen](https://azure.microsoft.com/pricing/details/event-hubs/)voor meer informatie over prijzen. 
+
+Voer de volgende stappen uit om een cluster in uw resource groep te maken met behulp van de Azure Portal:
 
 1. Volg [deze koppeling](https://aka.ms/eventhubsclusterquickstart) om een cluster te maken in de Azure-portal. Of selecteer **Alle services** in het linkernavigatievenster, typ vervolgens ‘Event Hubs-clusters’ in de zoekbalk en selecteer ‘Event Hubs-clusters’ in de lijst met resultaten.
-2. Configureer het volgende op de pagina **Cluster maken**:
+2. Configureer op de pagina **cluster maken** de volgende instellingen:
     1. Voer een **naam voor het cluster** in. In het systeem wordt onmiddellijk gecontroleerd of de naam beschikbaar is.
     2. Selecteer het **abonnement** waarin u het cluster wilt maken.
     3. Selecteer de **resourcegroep** waarin u het cluster wilt maken.
@@ -55,7 +58,7 @@ Voer de volgende stappen uit om een cluster in uw resourcegroep te maken met beh
 1. Als u een naamruimte in een cluster wilt maken, selecteert u op de pagina **Event Hubs-cluster** voor uw cluster de optie **+Naamruimte** in het bovenste menu.
 
     ![De pagina Clusterbeheer - De knop Naamruimte toevoegen](./media/event-hubs-dedicated-cluster-create-portal/cluster-management-page-add-namespace-button.png)
-2. Voer op de pagina Een naamruimte maken de volgende stappen uit:
+2. Voer op de pagina **een naam ruimte maken** de volgende stappen uit:
     1. Voer een **naam in voor de naamruimte**.  In het systeem wordt gecontroleerd of de naam beschikbaar is.
     2. De naamruimte neemt de volgende eigenschappen over:
         1. Abonnements-id
@@ -70,7 +73,7 @@ Voer de volgende stappen uit om een cluster in uw resourcegroep te maken met beh
 
 ## <a name="submit-a-support-request"></a>Een ondersteuningsaanvraag indienen
 
-Als u de grootte van uw cluster wilt wijzigen nadat het is gemaakt, of als uw voorkeursregio niet beschikbaar is, kunt u een ondersteuningsaanvraag indienen door deze stappen te volgen:
+Als u de grootte van het cluster na het maken wilt wijzigen of als uw voorkeurs regio niet beschikbaar is, kunt u een ondersteunings aanvraag indienen door de volgende stappen uit te voeren:
 
 1. Selecteer in het linkermenu van de [Azure-portal](https://portal.azure.com) de optie **Help en ondersteuning**.
 2. Selecteer **+ Nieuwe ondersteuningsaanvraag** in het menu Ondersteuning.
@@ -89,9 +92,12 @@ Als u de grootte van uw cluster wilt wijzigen nadat het is gemaakt, of als uw vo
 
  ## <a name="delete-a-dedicated-cluster"></a>Een toegewezen cluster verwijderen
  
-1. Als u het cluster wilt verwijderen, selecteert u **Verwijderen** in het bovenste menu. Uw cluster wordt gefactureerd voor minimaal 4 uur gebruik nadat het is gemaakt. 
-2. Er wordt een bericht weergegeven waarin u wordt gevraagd te bevestigen dat u het cluster wilt verwijderen.
-3. Typ de **naam van het cluster** en selecteer **Verwijderen** om het cluster te verwijderen.
+1. Als u het cluster wilt verwijderen, selecteert u **Verwijderen** in het bovenste menu. 
+
+    > [!IMPORTANT]
+    > U kunt het cluster niet ten minste vier uur verwijderen nadat u het hebt gemaakt. Daarom worden er kosten in rekening gebracht voor een minimum van 4 uur gebruik van het cluster. Zie [Event hubs-prijzen](https://azure.microsoft.com/pricing/details/event-hubs/)voor meer informatie over prijzen.     
+1. Er wordt een bericht weergegeven waarin u wordt gevraagd te bevestigen dat u het cluster wilt verwijderen.
+1. Typ de **naam van het cluster** en selecteer **Verwijderen** om het cluster te verwijderen.
 
     ![De pagina Cluster verwijderen](./media/event-hubs-dedicated-cluster-create-portal/delete-cluster-page.png)
 

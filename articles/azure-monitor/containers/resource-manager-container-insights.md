@@ -1,17 +1,16 @@
 ---
 title: Voor beelden van Resource Manager-sjablonen voor container Insights
 description: Voor beelden van Azure Resource Manager sjablonen voor het implementeren en configureContainer van inzichten.
-ms.subservice: logs
 ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 05/18/2020
-ms.openlocfilehash: f75278663abde8d4b0f47c8df1dbbdbc298bcafb
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 68bad5b4bfcef4f0f633bce7e3e352486aed3fdf
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101723330"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102039186"
 ---
 # <a name="resource-manager-template-samples-for-container-insights"></a>Voor beelden van Resource Manager-sjablonen voor container Insights
 Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het implementeren en configureren van de Log Analytics-agent voor virtuele machines in Azure Monitor. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.

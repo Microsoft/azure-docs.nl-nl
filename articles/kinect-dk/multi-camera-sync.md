@@ -7,12 +7,12 @@ ms.prod: kinect-dk
 ms.date: 02/20/2020
 ms.topic: article
 keywords: Azure, kinect, specs, hardware, DK, mogelijkheden, diepte, kleur, RGB, IMU, matrix, diepte, multi, synchronisatie
-ms.openlocfilehash: 30961152b31a659cb27e91a99d6806490998d18d
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: eabf77896777f39efcfd61adb3040bca8642716e
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97592276"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102039951"
 ---
 # <a name="synchronize-multiple-azure-kinect-dk-devices"></a>Meerdere Azure Kinect DK-apparaten synchroniseren
 
@@ -36,6 +36,9 @@ Er zijn veel redenen om meerdere Azure Kinect DK-apparaten te gebruiken, waarond
 ## <a name="plan-your-multi-device-configuration"></a>De configuratie van meerdere apparaten plannen
 
 Voordat u begint, moet u ervoor zorgen dat u de [Azure KINECT DK-hardwarespecificaties](hardware-specification.md) en de [diepte camera van Azure Kinect DK](depth-camera.md)bekijkt.
+
+> [!NOTE]  
+> Verwijder de buitenste plastic dekking om de synchronisatie in en de aansluitingen te synchroniseren.
 
 ### <a name="select-a-device-configuration"></a>Configuratie van een apparaat selecteren
 
@@ -63,6 +66,9 @@ De trigger bron moet het signaal leveren aan de **synchronisatie van** het Maste
 ![Kabel configuraties voor een extern trigger signaal](./media/resources/camera-trigger-signal.jpg)
 
 Zie [Azure Kinect-recorder gebruiken met externe gesynchroniseerde apparaten](record-external-synchronized-units.md) voor meer informatie over het werken met externe apparaten
+
+> [!NOTE]  
+> Sync out is het VSync voor de RGB-camera. De tijds tempels voor alle apparaten worden ingesteld op nul en tellen tot een totaal. Micro soft heeft de minimale en maximale breedte van de sync puls niet gekenmerkt en u kunt het beste mimicking de puls die is gegenereerd door de synchronisatie uit een Azure Kinect DK.
 
 ### <a name="plan-your-camera-settings-and-software-configuration"></a>Uw camera-instellingen en software configuratie plannen
 

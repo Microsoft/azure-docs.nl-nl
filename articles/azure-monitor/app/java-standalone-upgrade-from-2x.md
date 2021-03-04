@@ -6,12 +6,12 @@ ms.date: 11/25/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: e9208e617eb73786bcb003dc1b55d0d77ca6650f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 6e1c7e15ff77fd75ff2fb70a6741ea2dd9a4cab8
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101704426"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102040240"
 ---
 # <a name="upgrading-from-application-insights-java-2x-sdk"></a>Upgraden van Application Insights Java 2. x SDK
 
@@ -219,11 +219,24 @@ Het is ook mogelijk dat u voor sommige toepassingen de voor keur geeft aan de ge
 
 Eerder in de 2. x SDK werd de naam van de bewerking van de telemetrie van de aanvraag ook ingesteld op de telemetrie van de afhankelijkheid.
 Application Insights Java 3,0 niet langer de bewerkings naam van de telemetrie van de afhankelijkheid invult.
-Als u de naam van de bewerking wilt weer geven voor de aanvraag die het bovenliggende is van de telemetrie van de afhankelijkheid, kunt u een Kusto-query (logboek registratie) schrijven om een koppeling te maken tussen de afhankelijkheids tabel en de aanvraag tabel.
+Als u de naam van de bewerking wilt weer geven voor de aanvraag die het bovenliggende is van de telemetrie van de afhankelijkheid, kunt u een Kusto-query (logboek registratie) schrijven om een koppeling te maken tussen de afhankelijkheids tabel en de aanvraag tabel, bijvoorbeeld
+
+```
+let start = datetime('...');
+let end = datetime('...');
+dependencies
+| where timestamp between (start .. end)
+| project timestamp, type, name, operation_Id
+| join (requests
+    | where timestamp between (start .. end)
+    | project operation_Name, operation_Id)
+    on $left.operation_Id == $right.operation_Id
+| summarize count() by operation_Name, type, name
+```
 
 ## <a name="2x-sdk-logging-appenders"></a>2. x SDK-logboek registratie-toevoegers
 
-De 3,0 [-agent verzamelt automatisch logboek registratie](./java-standalone-config#auto-collected-logging) zonder de nood zaak voor het configureren van toevoeg-en logboek registratie.
+De 3,0 [-agent verzamelt automatisch logboek registratie](./java-standalone-config.md#auto-collected-logging) zonder de nood zaak voor het configureren van toevoeg-en logboek registratie.
 Als u 2. x SDK-logboek registraties gebruikt, kunnen die worden verwijderd, omdat ze toch door de 3,0-agent worden onderdrukt.
 
 ## <a name="2x-sdk-spring-boot-starter"></a>2. x SDK lente boot starter

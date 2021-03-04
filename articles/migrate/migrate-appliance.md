@@ -6,97 +6,95 @@ ms.author: vibansa
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 05/04/2020
-ms.openlocfilehash: 17ac10fd4e48043b79db5448fad2f29c5eb3f2a3
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: 08cd0e9d33dd88b9bdc418f3d1bbd382b2d80632
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98986816"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102038761"
 ---
 # <a name="azure-migrate-appliance"></a>Azure Migrate-apparaat
 
-In dit artikel vindt u een overzicht van de vereisten en ondersteuning voor het Azure Migrate apparaat. 
+In dit artikel vindt u een overzicht van de vereisten en ondersteuning voor het Azure Migrate apparaat.
 
 ## <a name="deployment-scenarios"></a>Implementatiescenario's
 
 Het Azure Migrate apparaat wordt gebruikt in de volgende scenario's.
 
-**Scenario** | **Hulpprogramma** | **Gebruikt voor** 
+**Scenario** | **Hulpprogramma** | **Gebruikt om**
 --- | --- | ---
-**VMware VM-evaluatie** | Azure Migrate: Server evaluatie | VMware-VM's detecteren<br/><br/> Machine-apps en-afhankelijkheden detecteren<br/><br/> Meta gegevens en prestaties van meta gegevens van machines voor evaluaties verzamelen.
-**Migratie van VMware VM zonder agent** | Azure Migrate: Server migratie | VMware-VM's detecteren <br/><br/> Virtuele VMware-machines repliceren met migratie zonder agent.
-**Hyper-V-VM-evaluatie** | Azure Migrate: Server evaluatie | Hyper-V-VM's detecteren<br/><br/> Meta gegevens en prestaties van meta gegevens van machines voor evaluaties verzamelen.
-**Beoordeling van fysieke machine** |  Azure Migrate: Server evaluatie |  Detecteer fysieke servers (of Vm's die u als fysieke servers behandelt).<br/><br/> Meta gegevens en prestaties van meta gegevens van machines voor evaluaties verzamelen.
+**Detectie en evaluatie van servers die worden uitgevoerd in de VMware-omgeving** | Azure Migrate: Server evaluatie | Servers detecteren die in uw VMware-omgeving worden uitgevoerd<br/><br/> Voer de detectie van geïnstalleerde toepassingen, afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
+**Migratie van servers die in VMware-omgeving worden uitgevoerd zonder agent** | Azure Migrate: Server migratie | Ontdek servers die worden uitgevoerd in uw VMware-omgeving. <br/><br/> Servers repliceren zonder agents te installeren.
+**Detectie en evaluatie van servers die worden uitgevoerd in de Hyper-V-omgeving** | Azure Migrate: Server evaluatie | Detecteer servers die worden uitgevoerd in uw Hyper-V-omgeving.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
+**Detectie en evaluatie van fysieke of gevirtualiseerde on-premises servers** |  Azure Migrate: Server evaluatie |  Fysieke of gevirtualiseerde on-premises servers detecteren.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
 
 ## <a name="deployment-methods"></a>Implementatie methoden
 
 Het apparaat kan worden geïmplementeerd met een aantal methoden:
 
-- Het apparaat kan worden geïmplementeerd met een sjabloon voor virtuele VMware-machines en Hyper-V-Vm's (eicellen-sjabloon voor VMware of VHD voor Hyper-V).
-- Als u geen sjabloon wilt gebruiken, kunt u het apparaat voor VMware of Hyper-V implementeren met behulp van een Power shell-script.
-- In Azure Government moet u het apparaat implementeren met behulp van een script.
-- Voor fysieke servers implementeert u het apparaat altijd met behulp van een script.
+- Het apparaat kan worden geïmplementeerd met een sjabloon voor servers die worden uitgevoerd in de VMware-of Hyper-V-omgeving ([eicellen-sjabloon voor VMware](how-to-set-up-appliance-vmware.md) of [VHD voor hyper-v](how-to-set-up-appliance-hyper-v.md)).
+- Als u geen sjabloon wilt gebruiken, kunt u het apparaat voor de VMware-of Hyper-V-omgeving implementeren met behulp van een [Power shell-installatie script](deploy-appliance-script.md).
+- In Azure Government moet u het apparaat implementeren met behulp van een Power shell-installatie script. Raadpleeg [hier](deploy-appliance-script-government.md)de stappen voor de implementatie.
+- Voor fysieke of gevirtualiseerde servers, on-premises of een andere Cloud, implementeert u het apparaat altijd met behulp van een Power shell-installatie script. Raadpleeg [hier](how-to-set-up-appliance-physical.md)de stappen voor de implementatie.
 - Download koppelingen zijn beschikbaar in de onderstaande tabellen.
 
 
-## <a name="appliance---vmware"></a>Apparaat-VMware 
+## <a name="appliance---vmware"></a>Apparaat-VMware
 
 De volgende tabel bevat een overzicht van de Azure Migrate vereisten voor VMware.
 
+> [!Note]
+> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Gebruik [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in **Australië-Oost** regio om deze functie uit te proberen. Als u al een project in Australië-oost hebt en u deze functie wilt uitproberen, moet u ervoor zorgen dat u deze [**vereisten**](how-to-discover-sql-existing-project.md) hebt voltooid op de portal.
+
 **Vereiste** | **VMware** 
 --- | ---
-**Machtigingen** | Als u lokaal of op afstand toegang wilt krijgen tot de Web-App van het apparaat, moet u een lokaal of domein gebruikers account met beheerders bevoegdheden op de toestel server hebben.
-**Toestel onderdelen** | Het apparaat heeft de volgende onderdelen:<br/><br/> - **Beheer-app**: dit is een web-app voor gebruikers invoer tijdens de implementatie van het apparaat. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/> - **Detectie agent**: de agent verzamelt computer configuratie gegevens. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/>- **Collector agent**: de agent verzamelt prestatie gegevens. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/>- **Service voor automatische updates**: updates van de onderdelen van het apparaat (elke 24 uur wordt uitgevoerd).<br/>- **DRA-agent**: organiseert de replicatie van de virtuele machine en coördineert de communicatie tussen gerepliceerde machines en Azure. Wordt alleen gebruikt bij het repliceren van virtuele VMware-machines naar Azure met migratie zonder agent.<br/>- **Gateway**: verstuurt gerepliceerde gegevens naar Azure. Wordt alleen gebruikt bij het repliceren van virtuele VMware-machines naar Azure met migratie zonder agent.
-**Ondersteunde implementatie** | Implementeren als VMware-VM met behulp van de eicellen-sjabloon.<br/><br/> Implementeren als een VMware-VM of fysieke machine met behulp van een Power shell-installatie script.
-**Project ondersteuning** |  Een apparaat kan worden gekoppeld aan een enkel project. <br/> Een wille keurig aantal apparaten kan aan één project worden gekoppeld.<br/> 
-**Detectie limieten** | Een apparaat kan tot 10.000 VMware-Vm's detecteren op een vCenter Server.<br/> Een apparaat kan verbinding maken met één vCenter Server.
-**EICELLEN-sjabloon** | Downloaden van de portal of [hier](https://go.microsoft.com/fwlink/?linkid=2140333)<br/><br/> De download grootte is 11,9 GB.<br/><br/> De sjabloon voor het gedownloade apparaat wordt geleverd met een Windows Server 2016-evaluatie licentie, die voor 180 dagen geldig is. Als de evaluatie periode bijna is verlopen, raden wij aan dat u een nieuw apparaat downloadt en implementeert, of dat u de licentie voor het besturings systeem van de apparaat-VM activeert.
-**PowerShell-script** | Raadpleeg dit [artikel](./deploy-appliance-script.md#set-up-the-appliance-for-vmware).<br/><br/> 
-**Software/hardware** |  Het apparaat moet worden uitgevoerd op de computer met Windows Server 2016, 32-GB RAM, 8 Vcpu's, ongeveer 80 GB aan schijf opslag en een externe virtuele switch.<br/> Voor het apparaat is toegang tot internet vereist, hetzij rechtstreeks hetzij via een proxy.<br/><br/> Als u het apparaat op een virtuele VMware-machine uitvoert, hebt u voldoende resources op de vCenter Server nodig om een virtuele machine toe te wijzen die aan de vereisten voldoet.<br/><br/> Als u het apparaat op een fysieke computer uitvoert, moet u ervoor zorgen dat Windows Server 2016 wordt uitgevoerd en voldoet aan de hardwarevereisten.
-**VMware-vereisten** | Als u het apparaat als een virtuele VMware-machine implementeert, moet dit worden geïmplementeerd op een ESXi-host waarop versie 5,5 of hoger wordt uitgevoerd.<br/><br/> vCenter Server met 5,5, 6,0, 6,5 of 6,7.
-**VDDK (migratie zonder agent)** | Als u het apparaat als een virtuele VMware-machine implementeert en u een migratie zonder agent uitvoert, moet de VMware vSphere-VDDK op de apparaat-VM zijn geïnstalleerd.
-**Hashwaarde-eicellen** | [Controleer](tutorial-discover-vmware.md#verify-security) de hash-waarden van de eicellen-sjabloon.
-**Hash-waarde-Power shell-script** | [Controleer](deploy-appliance-script.md#verify-file-security) de hash-waarden van het Power shell-script.
-
-
-
+**Machtigingen** | Als u lokaal of op afstand toegang wilt krijgen tot de configuratie beheer van het apparaat, moet u een lokaal of domein gebruikers account met beheerders bevoegdheden op de toestel server hebben.
+**Toestel Services** | Het apparaat heeft de volgende services:<br/><br/> - Apparaatconfiguratie voor **Apparaatbeheer**: dit is een webtoepassing die kan worden geconfigureerd met bron Details om de detectie en evaluatie van servers te starten.<br/> - **VMware-detectie agent**: de agent verzamelt meta gegevens van de server configuratie die kunnen worden gebruikt voor het maken van on-premises evaluaties.<br/>- **VMware-evaluatie agent**: de agent verzamelt meta gegevens van de server prestaties die kunnen worden gebruikt voor het maken van evaluaties op basis van prestaties.<br/>- **Service voor automatische updates**: de service houdt alle agents die op het apparaat worden uitgevoerd up-to-date. Het wordt automatisch elke 24 uur uitgevoerd.<br/>- **DRA-agent**: organiseert Server replicatie en coördineert de communicatie tussen gerepliceerde servers en Azure. Wordt alleen gebruikt wanneer servers naar Azure worden gerepliceerd met behulp van migratie zonder agent.<br/>- **Gateway**: verstuurt gerepliceerde gegevens naar Azure. Wordt alleen gebruikt wanneer servers naar Azure worden gerepliceerd met behulp van migratie zonder agent.<br/>- **SQL-detectie en-evaluatie agent**: Hiermee worden de configuratie-en prestatie gegevens van SQL Server instanties en data bases naar Azure verzonden.
+**Project limieten** |  Een apparaat kan alleen worden geregistreerd met een enkel project.<br/> Eén project kan meerdere geregistreerde apparaten hebben.
+**Detectie limieten** | Een apparaat kan tot 10.000 servers die worden uitgevoerd op een vCenter Server detecteren.<br/> Een apparaat kan verbinding maken met één vCenter Server.
+**Ondersteunde implementatie** | Implementeren als nieuwe server die wordt uitgevoerd op vCenter Server met behulp van een eicellen-sjabloon.<br/><br/> Implementeren op een bestaande server met Windows Server 2016 met behulp van het Power shell-installatie script.
+**EICELLEN-sjabloon** | Downloaden van project of [hier](https://go.microsoft.com/fwlink/?linkid=2140333)<br/><br/> De download grootte is 11,9 GB.<br/><br/> De sjabloon voor het gedownloade apparaat wordt geleverd met een Windows Server 2016-evaluatie licentie, die voor 180 dagen geldig is.<br/>Als de evaluatie periode bijna is verlopen, raden wij aan dat u een nieuw apparaat downloadt en implementeert met behulp van de eicellen-sjabloon, of u activeert de licentie van het besturings systeem van de toestel server.
+**EICELLEN verifiëren** | [Controleer](tutorial-discover-vmware.md#verify-security) de eicellen-sjabloon die is gedownload van het project door de hash-waarden te controleren.
+**PowerShell-script** | Raadpleeg dit [artikel](./deploy-appliance-script.md#set-up-the-appliance-for-vmware) over het implementeren van een apparaat met het Power shell-installatie script.<br/><br/> 
+**Hardware-en netwerk vereisten** |  Het apparaat moet worden uitgevoerd op een server met Windows Server 2016, 32-GB RAM, 8 Vcpu's, ongeveer 80 GB aan schijf opslag en een externe virtuele switch.<br/> Voor het apparaat is toegang tot internet vereist, hetzij rechtstreeks hetzij via een proxy.<br/><br/> Als u het apparaat implementeert met behulp van de eicellen-sjabloon, hebt u voldoende resources op de vCenter Server nodig om een server te maken die voldoet aan de hardwarevereisten.<br/><br/> Als u het apparaat op een bestaande server uitvoert, moet u ervoor zorgen dat Windows Server 2016 wordt uitgevoerd en voldoet aan de hardwarevereisten.<br/>_(Momenteel wordt de implementatie van apparaten alleen ondersteund voor Windows Server 2016.)_
+**VMware-vereisten** | Als u het apparaat als een server op vCenter Server implementeert, moet het worden geïmplementeerd op een vCenter Server met 5,5, 6,0, 6,5 of 6,7 en een ESXi-host waarop versie 5,5 of hoger wordt uitgevoerd.<br/><br/> 
+**VDDK (migratie zonder agent)** | Als u gebruik wilt maken van het apparaat voor de migratie van servers zonder agent, moet de VMware vSphere VDDK worden geïnstalleerd op de toestel server.
 
 ## <a name="appliance---hyper-v"></a>Apparaat-Hyper-V
 
 **Vereiste** | **Hyper-V** 
 --- | ---
-**Machtigingen** | Als u lokaal of op afstand toegang wilt krijgen tot de Web-App van het apparaat, moet u een lokaal of domein gebruikers account met beheerders bevoegdheden op de toestel server hebben.
-**Toestel onderdelen** | Het apparaat heeft de volgende onderdelen:<br/><br/>- **Beheer-app**: dit is een web-app voor gebruikers invoer tijdens de implementatie van het apparaat. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/> - **Detectie agent**: de agent verzamelt computer configuratie gegevens. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/>- **Collector agent**: de agent verzamelt prestatie gegevens. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/>- **Service voor automatische updates**: updates van de onderdelen van het apparaat (elke 24 uur wordt uitgevoerd).
-**Ondersteunde implementatie** | Als Hyper-V-VM implementeren met behulp van een VHD-sjabloon.<br/><br/> Implementeer als een Hyper-V-VM of fysieke machine met behulp van een Power shell-installatie script.
-**Project ondersteuning** |  Een apparaat kan worden gekoppeld aan een enkel project. <br/> Een wille keurig aantal apparaten kan aan één project worden gekoppeld.<br/> 
-**Detectie limieten** | Een apparaat kan tot 5000 Hyper-V-Vm's detecteren.<br/> Een apparaat kan verbinding maken met Maxi maal 300 Hyper-V-hosts.
-**VHD-sjabloon** | Gezipte map inclusief VHD. Downloaden van de portal of [hier](https://go.microsoft.com/fwlink/?linkid=2140422).<br/><br/> De download grootte is 8,91 GB.<br/><br/> De sjabloon voor het gedownloade apparaat wordt geleverd met een Windows Server 2016-evaluatie licentie, die voor 180 dagen geldig is. Als de evaluatie periode bijna is verlopen, raden wij aan dat u een nieuw apparaat downloadt en implementeert, of dat u de licentie voor het besturings systeem van de apparaat-VM activeert.
-**PowerShell-script** | Raadpleeg dit [artikel](./deploy-appliance-script.md#set-up-the-appliance-for-hyper-v).<br/><br/> 
-**Software/hardware** _   |  Het apparaat moet worden uitgevoerd op de computer met Windows Server 2016, 16 GB RAM, 8 Vcpu's, ongeveer 80 GB aan schijf opslag en een externe virtuele switch.<br/> Het apparaat heeft een statisch of dynamisch IP-adres nodig en vereist Internet toegang, hetzij rechtstreeks hetzij via een proxy.<br/><br/> Als u het apparaat als een Hyper-V-VM uitvoert, hebt u voldoende resources op de Hyper-V-host nodig om hardwarevereisten toe te wijzen.<br/><br/> Als u het apparaat op een fysieke computer uitvoert, moet u ervoor zorgen dat Windows Server 2016 wordt uitgevoerd en voldoet aan de hardwarevereisten. 
-_ *Vereisten voor Hyper-V** | Als u het apparaat met de VHD-sjabloon implementeert, is de virtuele machine van het apparaat van Azure Migrate Hyper-V VM versie 5,0.<br/><br/> Op de Hyper-V-host moet Windows Server 2012 R2 of later worden uitgevoerd. 
-**Hashwaarde-VHD** | [Verifiëren](tutorial-discover-hyper-v.md#verify-security) Hash-waarden van VHD-sjabloon.
-**Hash-waarde-Power shell-script** | [Controleer](deploy-appliance-script.md#verify-file-security) de hash-waarden van het Power shell-script.
-
+**Machtigingen** | Als u lokaal of op afstand toegang wilt krijgen tot de configuratie beheer van het apparaat, moet u een lokaal of domein gebruikers account met beheerders bevoegdheden op de toestel server hebben.
+**Toestel Services** | Het apparaat heeft de volgende services:<br/><br/> - Apparaatconfiguratie voor **Apparaatbeheer**: dit is een webtoepassing die kan worden geconfigureerd met bron Details om de detectie en evaluatie van servers te starten.<br/> - **Detectie agent**: de agent verzamelt meta gegevens van de server configuratie die kunnen worden gebruikt voor het maken van on-premises evaluaties.<br/>- **Beoordelings agent**: de agent verzamelt meta gegevens van de server prestaties die kunnen worden gebruikt voor het maken van evaluaties op basis van prestaties.<br/>- **Service voor automatische updates**: de service houdt alle agents die op het apparaat worden uitgevoerd up-to-date. Het wordt automatisch elke 24 uur uitgevoerd.
+**Project limieten** |  Een apparaat kan alleen worden geregistreerd met een enkel project.<br/> Eén project kan meerdere geregistreerde apparaten hebben.
+**Detectie limieten** | Een apparaat kan Maxi maal 5000 servers met Hyper-V-omgeving detecteren.<br/> Een apparaat kan verbinding maken met Maxi maal 300 Hyper-V-hosts.
+**Ondersteunde implementatie** | Implementeer als server die wordt uitgevoerd op een Hyper-V-host met behulp van een VHD-sjabloon.<br/><br/> Implementeren op een bestaande server met Windows Server 2016 met behulp van het Power shell-installatie script.
+**VHD-sjabloon** | Zip-bestand dat een VHD bevat. Down load van project of [hier](https://go.microsoft.com/fwlink/?linkid=2140422).<br/><br/> De download grootte is 8,91 GB.<br/><br/> De sjabloon voor het gedownloade apparaat wordt geleverd met een Windows Server 2016-evaluatie licentie, die voor 180 dagen geldig is.<br/> Als de evaluatie periode bijna is verlopen, raden wij aan dat u een nieuw apparaat downloadt en implementeert, of dat u de licentie voor het besturings systeem van de toestel server activeert.
+**VHD-verificatie** | [Controleer](tutorial-discover-hyper-v.md#verify-security) de VHD-sjabloon die is gedownload van het project door de hash-waarden te controleren.
+**PowerShell-script** | Raadpleeg dit [artikel](./deploy-appliance-script.md#set-up-the-appliance-for-hyper-v) over het implementeren van een apparaat met het Power shell-installatie script.<br/>
+**Hardware-en netwerk vereisten**  |  Het apparaat moet worden uitgevoerd op een server met Windows Server 2016, 16 GB RAM, 8 Vcpu's, ongeveer 80 GB aan schijf opslag en een externe virtuele switch.<br/> Het apparaat heeft een statisch of dynamisch IP-adres nodig en vereist Internet toegang, hetzij rechtstreeks hetzij via een proxy.<br/><br/> Als u het apparaat uitvoert als een server die op een Hyper-V-host wordt uitgevoerd, hebt u voldoende resources op de host nodig om een server te maken die voldoet aan de hardwarevereisten.<br/><br/> Als u het apparaat op een bestaande server uitvoert, moet u ervoor zorgen dat Windows Server 2016 wordt uitgevoerd en voldoet aan de hardwarevereisten.<br/>_(Momenteel wordt de implementatie van apparaten alleen ondersteund voor Windows Server 2016.)_
+**Vereisten voor Hyper-V** | Als u het apparaat met de VHD-sjabloon implementeert, is het apparaat dat wordt meegeleverd door Azure Migrate Hyper-V VM versie 5,0.<br/><br/> Op de Hyper-V-host moet Windows Server 2012 R2 of later worden uitgevoerd.
 
 ## <a name="appliance---physical"></a>Apparaat-fysiek
 
 **Vereiste** | **Fysiek** 
 --- | ---
-**Machtigingen** | Als u lokaal of op afstand toegang wilt krijgen tot de Web-App van het apparaat, moet u een lokaal of domein gebruikers account met beheerders bevoegdheden op de toestel server hebben.
-**Toestel onderdelen** | Het apparaat heeft de volgende onderdelen: <br/><br/> - **Beheer-app**: dit is een web-app voor gebruikers invoer tijdens de implementatie van het apparaat. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/> - **Detectie agent**: de agent verzamelt computer configuratie gegevens. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/>- **Collector agent**: de agent verzamelt prestatie gegevens. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/>- **Service voor automatische updates**: updates van de onderdelen van het apparaat (elke 24 uur wordt uitgevoerd).
-**Ondersteunde implementatie** | Implementeren als een toegewezen fysieke machine, of een VM, met behulp van een Power shell-installatie script. Het script kan vanuit de portal worden gedownload.
-**Project ondersteuning** |  Een apparaat kan worden gekoppeld aan een enkel project. <br/> Een wille keurig aantal apparaten kan aan één project worden gekoppeld.<br/> 
+**Machtigingen** | Als u lokaal of op afstand toegang wilt krijgen tot de configuratie beheer van het apparaat, moet u een lokaal of domein gebruikers account met beheerders bevoegdheden op de toestel server hebben.
+**Toestel Services** | Het apparaat heeft de volgende services:<br/><br/> - Apparaatconfiguratie voor **Apparaatbeheer**: dit is een webtoepassing die kan worden geconfigureerd met bron Details om de detectie en evaluatie van servers te starten.<br/> - **Detectie agent**: de agent verzamelt meta gegevens van de server configuratie die kunnen worden gebruikt voor het maken van on-premises evaluaties.<br/>- **Beoordelings agent**: de agent verzamelt meta gegevens van de server prestaties die kunnen worden gebruikt voor het maken van evaluaties op basis van prestaties.<br/>- **Service voor automatische updates**: de service houdt alle agents die op het apparaat worden uitgevoerd up-to-date. Het wordt automatisch elke 24 uur uitgevoerd.
+**Project limieten** |  Een apparaat kan alleen worden geregistreerd met een enkel project.<br/> Eén project kan meerdere geregistreerde apparaten hebben.<br/> 
 **Detectie limieten** | Een apparaat kan Maxi maal 1000 fysieke servers detecteren.
-**PowerShell-script** | Down load het script (AzureMigrateInstaller.ps1) in een gezipte map vanuit de portal of [hier](https://go.microsoft.com/fwlink/?linkid=2140334). [Meer informatie](tutorial-discover-physical.md).<br/><br/> De download grootte is 85,8 MB.
-**Software/hardware** |  Het apparaat moet worden uitgevoerd op de computer met Windows Server 2016, 16 GB RAM, 8 Vcpu's, ongeveer 80 GB aan schijf opslag.<br/> Het apparaat heeft een statisch of dynamisch IP-adres nodig en vereist Internet toegang, hetzij rechtstreeks hetzij via een proxy.<br/><br/> Als u het apparaat op een fysieke computer uitvoert, moet u ervoor zorgen dat Windows Server 2016 wordt uitgevoerd en voldoet aan de hardwarevereisten.<br/>_(Momenteel wordt de implementatie van apparaten alleen ondersteund voor Windows Server 2016.)_
-**Hash-waarde** | [Controleer](tutorial-discover-physical.md#verify-security) de hash-waarden van het Power shell-script.
+**Ondersteunde implementatie** | Implementeren op een bestaande server met Windows Server 2016 met behulp van het Power shell-installatie script.
+**PowerShell-script** | Down load het script (AzureMigrateInstaller.ps1) in een zip-bestand uit het project of van [hier](https://go.microsoft.com/fwlink/?linkid=2140334). [Meer informatie](tutorial-discover-physical.md).<br/><br/> De download grootte is 85,8 MB.
+**Script verificatie** | [Controleer](tutorial-discover-physical.md#verify-security) het Power shell-installatie script dat is gedownload van het project door de hash-waarden te controleren.
+**Hardware-en netwerk vereisten** |  Het apparaat moet worden uitgevoerd op de server met Windows Server 2016, 16 GB RAM, 8 Vcpu's, ongeveer 80 GB aan schijf opslag.<br/> Het apparaat heeft een statisch of dynamisch IP-adres nodig en vereist Internet toegang, hetzij rechtstreeks hetzij via een proxy.<br/><br/> Als u het apparaat op een bestaande server uitvoert, moet u ervoor zorgen dat Windows Server 2016 wordt uitgevoerd en voldoet aan de hardwarevereisten.<br/>_(Momenteel wordt de implementatie van apparaten alleen ondersteund voor Windows Server 2016.)_
+
 
 ## <a name="url-access"></a>URL-toegang
 
 Het Azure Migrate-apparaat heeft verbinding met internet nodig.
 
 - Wanneer u het apparaat implementeert, controleert Azure Migrate een connectiviteits controle op de vereiste Url's.
-- U moet toegang tot alle Url's in de lijst toestaan. Als u alleen de evaluatie uitvoert, kunt u de Url's die zijn gemarkeerd als vereist voor VMware-agentloze migratie, overs Laan.
+- U moet toegang tot alle Url's in de lijst toestaan. Als u alleen analyses uitvoert, kunt u de Url's overs laan die zijn gemarkeerd als vereist voor VMware-agentloze migratie.
 -  Als u een op URL gebaseerde proxy gebruikt om verbinding te maken met internet, moet u ervoor zorgen dat de proxy alle CNAME-records verhelpt die zijn ontvangen tijdens het opzoeken van de Url's.
 
 ### <a name="public-cloud-urls"></a>Url's voor open bare Clouds
@@ -106,11 +104,11 @@ Het Azure Migrate-apparaat heeft verbinding met internet nodig.
 *.portal.azure.com  | Navigeer naar de Azure Portal.
 *.windows.net <br/> *.msftauth.net <br/> *.msauth.net <br/> *.microsoft.com <br/> *. live.com <br/> *. office.com | Meld u aan bij uw Azure-abonnement.
 *.microsoftonline.com <br/> *.microsoftonline-p.com | Maak Azure Active Directory (AD)-apps voor het apparaat om te communiceren met Azure Migrate.
-management.azure.com | Maak Azure AD-apps voor het apparaat om te communiceren met de Azure Migrate-service.
-*.services.visualstudio.com | App-logboeken uploaden die worden gebruikt voor interne bewaking.
-*.vault.azure.net | Geheimen beheren in de Azure Key Vault. Opmerking: Zorg ervoor dat computers voor replicatie toegang hebben.
-aka.ms/* | Toegang tot ook wel-koppelingen toestaan. Wordt gebruikt voor Azure Migrate apparaat-updates.
-download.microsoft.com/download | Down loads van micro soft downloaden toestaan.
+management.azure.com | Maak Azure AD-apps voor het apparaat om te communiceren met de Azure Migrate.
+*.services.visualstudio.com | Laad apparaat logboeken die worden gebruikt voor interne bewaking.
+*.vault.azure.net | Geheimen beheren in de Azure Key Vault.<br/> Opmerking: Zorg ervoor dat servers voor replicatie toegang hebben.
+aka.ms/* | Toegang tot ook wel-koppelingen toestaan; gebruikt voor het downloaden en installeren van de meest recente updates voor de apparaat-services.
+download.microsoft.com/download | Down loads van het micro soft Download centrum toestaan.
 *.servicebus.windows.net | Communicatie tussen het apparaat en de Azure Migrate service.
 *.discoverysrv.windowsazure.com <br/> *.migration.windowsazure.com | Verbinding maken met Azure Migrate service-Url's.
 *.hypervrecoverymanager.windowsazure.com | **Gebruikt voor VMware-migratie zonder agent**<br/><br/> Verbinding maken met Azure Migrate service-Url's.
@@ -124,35 +122,32 @@ download.microsoft.com/download | Down loads van micro soft downloaden toestaan.
 graph.windows.net | Meld u aan bij uw Azure-abonnement.
 login.microsoftonline.us  | Maak Azure Active Directory (AD)-apps voor het apparaat om te communiceren met Azure Migrate.
 management.usgovcloudapi.net | Maak Azure AD-apps voor het apparaat om te communiceren met de Azure Migrate-service.
-*.services.visualstudio.com | App-logboeken uploaden die worden gebruikt voor interne bewaking.
+*.services.visualstudio.com | Laad apparaat logboeken die worden gebruikt voor interne bewaking.
 *. vault.usgovcloudapi.net | Geheimen beheren in de Azure Key Vault.
-aka.ms/* | Toegang tot ook wel-koppelingen toestaan. Wordt gebruikt voor Azure Migrate apparaat-updates.
-download.microsoft.com/download | Down loads van micro soft downloaden toestaan.
+aka.ms/* | Toegang tot ook wel-koppelingen toestaan; gebruikt voor het downloaden en installeren van de meest recente updates voor de apparaat-services.
+download.microsoft.com/download | Down loads van het micro soft Download centrum toestaan.
 *. servicebus.usgovcloudapi.net  | Communicatie tussen het apparaat en de Azure Migrate service.
 *. discoverysrv.windowsazure.us <br/> *. migration.windowsazure.us | Verbinding maken met Azure Migrate service-Url's.
 *. hypervrecoverymanager.windowsazure.us | **Gebruikt voor VMware-migratie zonder agent**<br/><br/> Verbinding maken met Azure Migrate service-Url's.
 *. blob.core.usgovcloudapi.net  |  **Gebruikt voor VMware-migratie zonder agent**<br/><br/>Gegevens uploaden naar de opslag voor migratie.
-*. applicationinsights.us | App-logboeken uploaden die worden gebruikt voor interne bewaking.
-
-
-
+*. applicationinsights.us | Laad apparaat logboeken die worden gebruikt voor interne bewaking.
 
 
 ## <a name="collected-data---vmware"></a>Verzamelde gegevens-VMware
 
-Het apparaat verzamelt meta gegevens, prestatie gegevens en informatie over afhankelijkheids analyse (als [afhankelijkheids analyse](concepts-dependency-visualization.md) zonder agent wordt gebruikt).
+Het apparaat verzamelt meta gegevens van de configuratie, meta gegevens over prestaties en server afhankelijkheden (als [afhankelijkheids analyse](concepts-dependency-visualization.md) zonder agent wordt gebruikt).
 
 ### <a name="metadata"></a>Metagegevens
 
-Met de meta gegevens die door het Azure Migrate-apparaat worden gedetecteerd, kunt u nagaan of machines en apps gereed zijn voor migratie naar Azure, op de juiste manier computers en apps, kosten plannen en toepassings afhankelijkheden analyseren. Micro soft gebruikt deze gegevens niet in een controle op de naleving van licenties.
+Met meta gegevens die door het Azure Migrate-apparaat worden gedetecteerd, kunt u nagaan of servers gereed zijn voor migratie naar Azure, servers op de juiste grootte, plan kosten en toepassings afhankelijkheden analyseren. Micro soft gebruikt deze gegevens niet in een controle op de naleving van licenties.
 
-Hier ziet u de volledige lijst met virtuele VMware-VM-meta gegevens die door het apparaat worden verzameld en naar Azure worden verzonden.
+Hier volgt de volledige lijst met meta gegevens van de server die door het apparaat worden verzameld en naar Azure worden verzonden.
 
 **GEGEVENS** | **ITEM**
 --- | --- 
-**Computer Details** | 
-VM-id | vm.Config. InstanceUuid 
-VM-naam | vm.Config. Naam
+**Servergegevens** | 
+Server-ID | vm.Config. InstanceUuid 
+Servernaam | vm.Config. Naam
 vCenter Server-ID | VMwareClient. instance. uuid
 VM-beschrijving | vm.Summary.Config. Aantekening
 Licentie product naam | VM. client. ServiceContent. about. LicenseProductName
@@ -210,13 +205,13 @@ Lees doorvoer van NIC (MB per seconde) | net. received. Average | Berekening voo
 Doorvoer capaciteit van NIC (MB per seconde) | net. verzonden. gemiddeld  |Berekening voor VM-grootte
 
 
-### <a name="installed-apps-metadata"></a>Geïnstalleerde meta gegevens voor apps
+### <a name="installed-applications-data"></a>Geïnstalleerde toepassings gegevens
 
-Toepassings detectie verzamelt geïnstalleerde toepassingen en gegevens van het besturings systeem.
+Het apparaat verzamelt gegevens over geïnstalleerde toepassingen, functies en onderdelen op servers.
 
-#### <a name="windows-vm-apps-data"></a>Gegevens van Windows VM-apps
+#### <a name="windows-server-application-data"></a>Windows Server-toepassings gegevens
 
-Hier zijn de geïnstalleerde toepassings gegevens die het apparaat verzamelt van elke VM die is ingeschakeld voor toepassings detectie. Deze gegevens worden naar Azure verzonden.
+Hier vindt u de toepassings gegevens die het apparaat verzamelt van elke Windows-Server die in uw VMware-omgeving wordt gedetecteerd.
 
 **Gegevens** | **Registerlocatie** | **Sleutel**
 --- | --- | ---
@@ -224,9 +219,9 @@ Naam van de toepassing  | HKLM: \ Software\Microsoft\Windows\CurrentVersion\Unin
 Versie  | HKLM: \ Software\Microsoft\Windows\CurrentVersion\Uninstall\*  <br/> HKLM: \ Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*  | DisplayVersion 
 Provider  | HKLM: \ Software\Microsoft\Windows\CurrentVersion\Uninstall\*  <br/> HKLM: \ Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*  | Publisher
 
-#### <a name="windows-vm-features-data"></a>Windows VM-onderdelen gegevens
+#### <a name="windows-server-features-data"></a>Gegevens van Windows Server-functies
 
-Dit zijn de functies die het apparaat verzamelt van elke virtuele machine die is ingeschakeld voor toepassings detectie. Deze gegevens worden naar Azure verzonden.
+Hier vindt u de functies die het apparaat verzamelt van elke Windows-Server die in uw VMware-omgeving wordt gedetecteerd.
 
 **Gegevens**  | **Power shell-cmdlet** | **Eigenschap**
 --- | --- | ---
@@ -234,9 +229,9 @@ Name  | Get-WindowsFeature  | Name
 Onderdeel type | Get-WindowsFeature  | FeatureType
 Bovenliggend  | Get-WindowsFeature  | Bovenliggend
 
-#### <a name="windows-vm-sql-server-metadata"></a>Meta gegevens van Windows-VM SQL Server
+#### <a name="sql-server-metadata"></a>Meta gegevens SQL Server
 
-Dit zijn de SQL Server-meta gegevens die het apparaat verzamelt van Vm's waarop micro soft SQL Server wordt uitgevoerd voor toepassings detectie. Deze gegevens worden naar Azure verzonden.
+Hier vindt u de SQL Server gegevens die het apparaat verzamelt van elke Windows-Server die in uw VMware-omgeving wordt gedetecteerd.
 
 **Gegevens**  | **Registerlocatie**  | **Sleutel**
 --- | --- | ---
@@ -245,45 +240,118 @@ Editie  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Se
 Service Pack  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | SP
 Versie  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | Versie 
 
-#### <a name="windows-vm-operating-system-data"></a>Gegevens van het Windows-VM-besturings systeem
+#### <a name="windows-server-operating-system-data"></a>Gegevens van het Windows Server-besturings systeem
 
-Hier ziet u de gegevens van het besturings systeem die door het apparaat worden verzameld voor de detectie van toepassingen. Deze gegevens worden naar Azure verzonden.
+Dit zijn de gegevens van het besturings systeem die het apparaat verzamelt van elke Windows-Server die in uw VMware-omgeving wordt gedetecteerd.
 
-Gegevens  | WMI-klasse  | WMI-klasse-eigenschap
+**Gegevens**  | **WMI-klasse**  | **WMI-klasse-eigenschap**
 --- | --- | ---
 Name  | Win32_operatingsystem  | Caption
 Versie  | Win32_operatingsystem  | Versie
 Architectuur  | Win32_operatingsystem  | OSArchitecture
 
-#### <a name="linux-vm-apps-data"></a>Gegevens van Linux VM-apps
+#### <a name="linux-server-application-data"></a>Gegevens van Linux-server toepassing
 
-Hier zijn de geïnstalleerde toepassings gegevens die het apparaat verzamelt van elke VM die is ingeschakeld voor toepassings detectie. Op basis van het besturings systeem van de virtuele machine worden een of meer van de opdrachten uitgevoerd. Deze gegevens worden naar Azure verzonden.
+Hier vindt u de toepassings gegevens die het apparaat verzamelt van elke Linux-server die in uw VMware-omgeving wordt gedetecteerd. Op basis van het besturings systeem van de server worden een of meer van de opdrachten uitgevoerd.
 
-Gegevens  | Opdracht
+**Gegevens**  | **Opdrachten**
 --- | --- 
 Name | rpm, met dpkg-query, uitlijnen
 Versie | rpm, met dpkg-query, uitlijnen
 Provider | rpm, met dpkg-query, uitlijnen
 
-#### <a name="linux-vm-operating-system-data"></a>Gegevens van het Linux-VM-besturings systeem
+#### <a name="linux-server-operating-system-data"></a>Gegevens van besturings systeem van Linux-server
 
-Hier ziet u de gegevens van het besturings systeem die door het apparaat worden verzameld voor de detectie van toepassingen. Deze gegevens worden naar Azure verzonden.
+Dit zijn de gegevens van het besturings systeem die het apparaat verzamelt van elke Linux-server die in uw VMware-omgeving wordt gedetecteerd.
 
-**Gegevens**  | **Opdracht** 
---- | --- | ---
+**Gegevens**  | **Opdrachten**
+--- | --- 
 Name <br/> versie | Verzameld van een of meer van de volgende bestanden:<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version 
 Architectuur | uname
 
+### <a name="sql-server-instances-and-databases-data"></a>SQL Server instanties en data base-gegevens
 
-### <a name="app-dependencies-metadata"></a>Meta gegevens van app-afhankelijkheden
+Het apparaat verzamelt gegevens over SQL Server instanties en data bases.
 
-Bij een afhankelijkheids analyse zonder agent worden verbindings-en proces gegevens verzameld.
+> [!Note]
+> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Gebruik [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in **Australië-Oost** regio om deze functie uit te proberen. Als u al een project in Australië-oost hebt en u deze functie wilt uitproberen, moet u ervoor zorgen dat u deze [**vereisten**](how-to-discover-sql-existing-project.md) hebt voltooid op de portal.
 
-#### <a name="windows-vm-app-dependencies-data"></a>Afhankelijkheids gegevens voor Windows VM-app
+#### <a name="sql-database-metadata"></a>Meta gegevens SQL database
 
-Dit zijn de verbindings gegevens die het apparaat verzamelt van elke virtuele machine die is ingeschakeld voor een afhankelijkheids analyse zonder agent. Deze gegevens worden naar Azure verzonden.
+**Data base-meta gegevens** | **Eigenschappen van weer gaven/SQL Server**
+--- | ---
+De unieke id van de data base | sys.databases
+Door de server gedefinieerde data base-ID | sys.databases
+De naam van de data base | sys.databases
+Compatibiliteits niveau van data base | sys.databases
+Sorteer naam van data base | sys.databases
+Status van de data base | sys.databases
+Grootte van de data base (in MB) | sys.master_files
+Stationsletter van locatie met gegevens bestanden | Server Property en Software\Microsoft\MSSQLServer\MSSQLServer
+Lijst met database bestanden | sys. data bases, sys.master_files
+Service Broker is ingeschakeld of niet | sys.databases
+De data base is ingeschakeld voor change data capture | sys.databases
 
-**Gegevens** | **Gebruikte opdracht** 
+#### <a name="sql-server-metadata"></a>Meta gegevens SQL Server
+
+**Meta gegevens van server** | **Weer gaven/SQL Server-eigenschappen**
+--- | ---
+Servernaam |Server Property 
+FQDN | Verbindings reeks die is afgeleid van de detectie van geïnstalleerde toepassingen
+Installatie-ID | sys.dm_server_registry
+Serverversie | Server Property
+Server-editie | Server Property
+Server host platform (Windows/Linux) | Server Property
+Product niveau van de server (RTM SP CTP) | Server Property 
+Standaardpad voor back-ups | Server Property
+Standaardpad van de gegevens bestanden | Server Property en Software\Microsoft\MSSQLServer\MSSQLServer
+Het standaardpad van de logboek bestanden | Server Property en Software\Microsoft\MSSQLServer\MSSQLServer
+Nee. van kernen op de server | sys.dm_os_schedulers, sys.dm_os_sys_info
+Naam van server sortering | Server Property
+Nee. van kernen op de server met de status zichtbaar ONLINE | sys.dm_os_schedulers
+Unieke Server-ID | sys.dm_server_registry
+HA ingeschakeld of niet | Server Property
+De buffergroepuitbreiding is ingeschakeld of niet | sys.dm_os_buffer_pool_extension_configuration
+Het failovercluster is geconfigureerd of niet | Server Property
+Server met alleen Windows-verificatie modus | Server Property 
+Server installeert poly base | Server Property 
+Nee. van logische Cpu's op het systeem | sys.dm_server_registry, sys.dm_os_sys_info
+Verhouding van het aantal logische of fysieke kernen dat door één fysiek processor pakket wordt weer gegeven | sys.dm_os_schedulers, sys.dm_os_sys_info
+Aantal fysieke Cpu's op het systeem | sys.dm_os_schedulers, sys.dm_os_sys_info
+Datum en tijd waarop de server voor het laatst is gestart | sys.dm_server_registry
+Maxi maal gebruik van Server geheugen (in MB) | sys.dm_os_process_memory
+Totaal aantal van gebruikers in alle data bases | sys. data bases, sys. aanmeldingen
+Totale grootte van alle gebruikers databases | sys.databases
+Grootte van de tijdelijke data base | sys.master_files, sys.configurations, sys.dm_os_sys_info
+Nee. van aanmeldingen | sys. logins
+Lijst met gekoppelde servers | sys. servers
+Lijst met Agent taken | [msdb]. [dbo]. [sysjobs], [sys]. [syslogins], [msdb]. [dbo]. [syscategories]
+
+### <a name="performance-metadata"></a>Meta gegevens voor prestaties
+
+**Prestaties** | **Weer gaven/SQL Server-eigenschappen** | **Beoordelings impact**
+--- | --- | ---
+CPU-gebruik SQL Server| sys.dm_os_ring_buffers| Aanbevolen SKU-grootte (CPU-dimensie)
+Aantal logische SQL-CPU'S| sys.dm_os_sys_info| Aanbevolen SKU-grootte (CPU-dimensie)
+Fysiek in gebruik zijnde SQL-geheugen| sys.dm_os_process_memory| Vrij
+Percentage van het gebruik van het SQL-geheugen| sys.dm_os_process_memory | Vrij
+CPU-gebruik van data base| sys.dm_exec_query_stats, sys.dm_exec_plan_attributes| Aanbevolen SKU-grootte (CPU-dimensie)
+Database geheugen in gebruik (buffer groep)| sys.dm_os_buffer_descriptors| Aanbevolen SKU-grootte (geheugen dimensie)
+IO voor lezen/schrijven bestand| sys.dm_io_virtual_file_stats, sys.master_files| Aanbevolen SKU-grootte (IO-dimensie)
+Bestands aantal lees-en schrijf bewerkingen| sys.dm_io_virtual_file_stats, sys.master_files| Aanbevolen SKU-grootte (doorvoer dimensie)
+Lezen/schrijven bestand IO-cabine (MS)| sys.dm_io_virtual_file_stats, sys.master_files| Aanbevolen SKU-grootte (dimensie IO-latentie)
+Bestandsgrootte| sys.master_files| Aanbevolen SKU-grootte (opslag dimensie)
+
+
+### <a name="application-dependency-data"></a>Afhankelijkheids gegevens voor toepassingen
+
+Bij een afhankelijkheids analyse zonder agent worden de verbindings-en proces gegevens verzameld.
+
+#### <a name="windows-server-dependencies-data"></a>Windows Server-afhankelijkheids gegevens
+
+Hier vindt u de verbindings gegevens die het apparaat verzamelt van elke Windows-Server, die is ingeschakeld voor analyse van agentloze afhankelijkheden.
+
+**Gegevens** | **Opdrachten** 
 --- | --- 
 Lokale poort | netstat
 Lokaal IP-adres | netstat
@@ -293,8 +361,7 @@ TCP-verbindings status | netstat
 Proces-id | netstat
 Aantal actieve verbindingen | netstat
 
-
-Dit zijn de proces gegevens die het apparaat verzamelt van elke virtuele machine die is ingeschakeld voor een afhankelijkheids analyse zonder agent. Deze gegevens worden naar Azure verzonden.
+Hier vindt u de verbindings gegevens die het apparaat verzamelt van elke Windows-Server, die is ingeschakeld voor analyse van agentloze afhankelijkheden.
 
 **Gegevens** | **WMI-klasse** | **WMI-klasse-eigenschap**
 --- | --- | ---
@@ -302,11 +369,11 @@ Procesnaam | Win32_Process | ExecutablePath
 Proces argumenten | Win32_Process | CommandLine
 De naam van de toepassing | Win32_Process | De para meter VersionInfo. ProductName van de eigenschap ExecutablePath
 
-#### <a name="linux-vm-app-dependencies-data"></a>Afhankelijkheids gegevens voor Linux VM-app
+#### <a name="linux-server-dependencies-data"></a>Afhankelijkheids gegevens voor Linux-server
 
-Dit zijn de verbindings-en proces gegevens die het apparaat verzamelt van elke Linux-VM die is ingeschakeld voor de afhankelijkheids analyse zonder agent. Deze gegevens worden naar Azure verzonden.
+Hier vindt u de verbindings gegevens die het apparaat verzamelt van elke Linux-server, die is ingeschakeld voor analyse van agentloze afhankelijkheden.
 
-**Gegevens** | **Gebruikte opdracht** 
+**Gegevens** | **Opdrachten** 
 --- | ---
 Lokale poort | netstat 
 Lokaal IP-adres | netstat 
@@ -320,20 +387,19 @@ Proces argumenten | ps
 De naam van de toepassing | met dpkg of rpm
 
 
-
 ## <a name="collected-data---hyper-v"></a>Verzamelde gegevens-Hyper-V
 
-Het apparaat verzamelt meta gegevens, prestatie gegevens en informatie over afhankelijkheids analyse (als [afhankelijkheids analyse](concepts-dependency-visualization.md) zonder agent wordt gebruikt).
+Het apparaat verzamelt meta gegevens over de configuratie en prestaties van servers die worden uitgevoerd in de Hyper-V-omgeving.
 
 ### <a name="metadata"></a>Metagegevens
-Met de meta gegevens die door het Azure Migrate-apparaat worden gedetecteerd, kunt u nagaan of machines en apps gereed zijn voor migratie naar Azure, op de juiste manier computers en apps, kosten plannen en toepassings afhankelijkheden analyseren. Micro soft gebruikt deze gegevens niet in een controle op de naleving van licenties.
+Met de meta gegevens die door het Azure Migrate-apparaat zijn gedetecteerd, kunt u nagaan of servers gereed zijn voor migratie naar Azure, servers in de juiste grootte en abonnementen op de kosten. Micro soft gebruikt deze gegevens niet in een controle op de naleving van licenties.
 
-Hier vindt u de volledige lijst met meta gegevens van Hyper-V-VM'S die het apparaat verzamelt en verzendt naar Azure.
+Hier volgt de volledige lijst met meta gegevens van de server die door het apparaat worden verzameld en naar Azure worden verzonden.
 
-**GEGEVENS** | **WMI-KLASSE** | **WMI-KLASSE-EIGENSCHAP**
+**Gegevens** | **WMI-klasse** | **WMI-klasse-eigenschap**
 --- | --- | ---
-**Computer Details** | 
-Serie nummer van BIOS _ Msvm_BIOSElement | BIOSSerialNumber
+**Servergegevens** | 
+Serie nummer van BIOS | Msvm_BIOSElement | BIOSSerialNumber
 VM-type (gen 1 of 2) | Msvm_VirtualSystemSettingData | VirtualSystemSubType
 Weergave naam van VM | Msvm_VirtualSystemSettingData | ElementName
 VM-versie | Msvm_ProcessorSettingData | VirtualQuantity
@@ -357,7 +423,7 @@ MAC-ID van NIC (verouderde Nic's) | MsvmEmulatedEthernetPortSetting-gegevens | A
 
 ### <a name="performance-data"></a>Prestatiegegevens
 
-Dit zijn de prestatie gegevens van de Hyper-VM die het apparaat verzamelt en verzendt naar Azure.
+Dit zijn de prestatie gegevens van de server die door het apparaat worden verzameld en naar Azure worden verzonden.
 
 **Klasse prestatie meter** | **Item** | **Beoordelings impact**
 --- | --- | ---
@@ -375,15 +441,17 @@ Virtual Network Adapter voor Hyper-V | Verzonden bytes per seconde | Berekening 
 
 ## <a name="collected-data---physical"></a>Verzamelde gegevens-fysiek
 
-Het apparaat verzamelt meta gegevens, prestatie gegevens en informatie over afhankelijkheids analyse (als [afhankelijkheids analyse](concepts-dependency-visualization.md) zonder agent wordt gebruikt).
+Het apparaat verzamelt meta gegevens over de configuratie en prestaties van fysieke of virtuele servers die on-premises worden uitgevoerd.
 
-### <a name="windows-metadata"></a>Windows-meta gegevens
+### <a name="metadata"></a>Metagegevens
 
-Met de meta gegevens die door het Azure Migrate-apparaat worden gedetecteerd, kunt u nagaan of machines en apps gereed zijn voor migratie naar Azure, op de juiste manier computers en apps, kosten plannen en toepassings afhankelijkheden analyseren. Micro soft gebruikt deze gegevens niet in een controle op de naleving van licenties.
+Met de meta gegevens die door het Azure Migrate-apparaat zijn gedetecteerd, kunt u nagaan of servers gereed zijn voor migratie naar Azure, servers in de juiste grootte en abonnementen op de kosten. Micro soft gebruikt deze gegevens niet in een controle op de naleving van licenties.
+
+### <a name="windows-server-metadata"></a>Meta gegevens van Windows Server
 
 Hier volgt de volledige lijst met meta gegevens van Windows Server die door het apparaat worden verzameld en naar Azure worden verzonden.
 
-**GEGEVENS** | **WMI-KLASSE** | **WMI-KLASSE-EIGENSCHAP**
+**Gegevens** | **WMI-klasse** | **WMI-klasse-eigenschap**
 --- | --- | ---
 FQDN | Win32_ComputerSystem | Domein, naam, PartOfDomain
 Aantal processor kernen | Win32_PRocessor | NumberOfCores
@@ -400,11 +468,11 @@ NIC-lijst | Win32_NetworkAdapterConfiguration | Beschrijving, index
 IP-adres van NIC | Win32_NetworkAdapterConfiguration | IPAddress
 MAC-adres van NIC | Win32_NetworkAdapterConfiguration | MACAddress
 
-### <a name="linux-metadata"></a>Linux-meta gegevens
+### <a name="linux-server-metadata"></a>Meta gegevens van Linux-server
 
 Hier volgt de volledige lijst met meta gegevens van de Linux-server die het apparaat verzamelt en verzendt naar Azure.
 
-**GEGEVENS** | **SPREEK** 
+**Gegevens** | **Opdrachten** 
 --- | --- 
 FQDN | kat/proc/sys/kernel/hostname, hostnaam-f
 Aantal processor kernen |  /proc/cpuinfo \| awk '/^ processor/{print $3} ' \| wc-l
@@ -439,7 +507,7 @@ Details van schijf | Win32_PerfFormattedData_PerfDisk_PhysicalDisk | DiskWritesP
 
 Dit zijn de prestatie gegevens van de Linux-server die het apparaat verzamelt en verzendt naar Azure.
 
-**Gegevens** | **Linux** 
+**Gegevens** | **Opdrachten** 
 --- | --- 
 CPU-gebruik | kat/proc/stat/| grep ' CPU '/proc/stat
 Geheugengebruik | gratis \| grep \| -mem awk ' {Print $3/$ 2 * 100,0} '
@@ -452,11 +520,11 @@ Details van schijf | kat/proc/diskstats
 
 ## <a name="appliance-upgrades"></a>Toestel-upgrades
 
-Het apparaat wordt bijgewerkt wanneer de Azure Migrate agents die op het apparaat worden uitgevoerd, worden bijgewerkt. Dit gebeurt automatisch, omdat automatisch bijwerken standaard is ingeschakeld op het apparaat. U kunt deze standaard instelling wijzigen om de toestel Services hand matig bij te werken.
+Het apparaat wordt bijgewerkt wanneer de Azure Migrate services die op het apparaat worden uitgevoerd, worden bijgewerkt. Dit gebeurt automatisch, omdat automatisch bijwerken standaard is ingeschakeld op het apparaat. U kunt deze standaard instelling wijzigen om de toestel Services hand matig bij te werken.
 
 ### <a name="turn-off-auto-update"></a>Automatisch bijwerken uitschakelen
 
-1. Open de REGI ster-editor op de computer waarop het apparaat wordt uitgevoerd.
+1. Open de REGI ster-editor op de server waarop het apparaat wordt uitgevoerd.
 2. Navigeer naar **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureAppliance**.
 3. Als u automatisch bijwerken wilt uitschakelen, maakt u een register sleutel auto **Update** -sleutel met DWORD-waarde 0.
 
@@ -506,7 +574,7 @@ Controleren in het configuratie scherm:
 
 ### <a name="manually-update-an-older-version"></a>Een oudere versie hand matig bijwerken
 
-Als u een oudere versie voor een van de onderdelen uitvoert, moet u de service verwijderen en hand matig bijwerken naar de nieuwste versie.
+Als u een oudere versie gebruikt voor een van de services, moet u de service verwijderen en hand matig bijwerken naar de nieuwste versie.
 
 1. Als u de meest recente versie van de service voor apparaten wilt controleren, moet u de LatestComponents.jsin het bestand [downloaden](https://aka.ms/latestapplianceservices) .
 2.    Nadat u hebt gedownload, opent u het LatestComponents.jsbestand in Klad blok.

@@ -9,15 +9,15 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 05/07/2019
+ms.date: 03/03/2021
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: a66f0a2de1d8239baffbe53dfb5d6f2dd275d448
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 376c61f6a5ba94492cac26950465c61e3d8fe4ed
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756336"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102038557"
 ---
 # <a name="scenario-a-web-api-that-calls-web-apis"></a>Scenario: een web-API die web-Api's aanroept
 
@@ -30,9 +30,7 @@ Dit scenario, waarin een beveiligde web-API andere web-Api's aanroept, bouwt voo
 ## <a name="overview"></a>Overzicht
 
 - Een web-, Desktop-, mobiele of toepassing met één pagina (niet weer gegeven in het bijbehorende diagram) roept een beveiligde web-API aan en biedt een JSON Web Token (JWT) Bearer-token in de HTTP-header autorisatie.
-- De beveiligde web-API valideert het token en maakt gebruik van de methode micro soft Authentication Library (MSAL) `AcquireTokenOnBehalfOf` om een andere token van Azure Active Directory (Azure AD) aan te vragen, zodat de beveiligde web-API een tweede Web-API of downstream Web-API kan aanroepen namens de gebruiker.
-- De beveiligde web-API kan later ook aanroepen `AcquireTokenSilent` om tokens voor andere downstream-api's namens dezelfde gebruiker aan te vragen. `AcquireTokenSilent` Hiermee wordt het token vernieuwd wanneer dit nodig is.
-
+- De beveiligde web-API valideert het token en maakt gebruik van de methode micro soft Authentication Library (MSAL) `AcquireTokenOnBehalfOf` om een andere token van Azure Active Directory (Azure AD) aan te vragen, zodat de beveiligde web-API een tweede Web-API of downstream Web-API kan aanroepen namens de gebruiker. `AcquireTokenOnBehalfOf` Hiermee wordt het token vernieuwd wanneer dit nodig is.
 ![Diagram van een web-API die een web-API aanroept](media/scenarios/web-api.svg)
 
 ## <a name="specifics"></a>Opsporingsgegevens

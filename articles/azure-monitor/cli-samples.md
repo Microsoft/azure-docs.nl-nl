@@ -1,18 +1,17 @@
 ---
 title: CLI-voorbeelden van Azure Monitor
 description: Hier vindt u voorbeelden van CLI-opdrachten voor Azure Monitor-functies. Azure Monitor is een Microsoft Azure-service waarmee u waarschuwingen kunt verzenden of web-URL's kunt aanroepen op basis van waarden van geconfigureerde telemetriegegevens, en cloudservices, virtuele machines en web-apps automatisch kunt schalen.
-ms.subservice: ''
 ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 05/16/2018
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 196a1d580bd5888a6604c3f98b108e39c08a3412
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 8eaf8c2e140f0b323db0c20a2e9946884c51df04
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100627941"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102039169"
 ---
 # <a name="azure-monitor-cli-samples"></a>CLI-voorbeelden van Azure Monitor
 In dit artikel vindt u voorbeelden van CLI-opdrachten (Command-Line Interface), om vanaf de opdrachtregel toegang te krijgen tot Azure Monitor-functies. Met Azure Monitor kunt u cloudservices, virtuele machines en web-apps automatisch schalen en waarschuwingen verzenden of web-URL's aanroepen op basis van waarden van geconfigureerde telemetriegegevens.

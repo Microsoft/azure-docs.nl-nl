@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2019
 ms.author: terrylan
-ms.openlocfilehash: b609d8389504eb10dd35a5ab74b0c198d3da57a6
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: f69fe97c33a17ade39f67078d5b035dac4d0bfaf
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99090489"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102034163"
 ---
 # <a name="azure-identity-management-and-access-control-security-best-practices"></a>Aanbevolen procedures voor de beveiliging van Azure Identity Management en Access Control
 
@@ -102,7 +102,7 @@ Organisaties die hun on-premises identiteit niet integreren met hun Cloud identi
 > U moet kiezen in welke mappen essentiële accounts zich bevinden en of het beheer werkstation dat wordt gebruikt, wordt beheerd door nieuwe Cloud Services of bestaande processen. Het gebruik van bestaande beheer-en identiteits Provisioning-processen kan een aantal Risico's verminderen, maar kan ook het risico vormen dat een aanvaller een on-premises account in gevaar brengt en draait naar de Cloud. U kunt een andere strategie voor verschillende rollen gebruiken (bijvoorbeeld IT-beheerders en beheerders van bedrijfs eenheden). U hebt twee opties. De eerste optie is het maken van Azure AD-accounts die niet zijn gesynchroniseerd met uw on-premises Active Directory-exemplaar. Voeg uw beheer werkstation toe aan Azure AD, dat u kunt beheren en gebruiken met behulp van Microsoft Intune. Tweede optie is het gebruik van bestaande beheerders accounts door te synchroniseren met uw on-premises Active Directory-exemplaar. Gebruik bestaande werk stations in uw Active Directory domein voor beheer en beveiliging.
 
 ## <a name="manage-connected-tenants"></a>Verbonden tenants beheren
-Uw beveiligings organisatie heeft inzicht nodig om Risico's te beoordelen en te bepalen of het beleid van uw organisatie en eventuele wettelijke vereisten wordt gevolgd. Zorg ervoor dat uw beveiligings organisatie inzicht heeft in alle abonnementen die zijn verbonden met uw productie omgeving en netwerk (via [Azure ExpressRoute](../../expressroute/expressroute-introduction.md) of [site-naar-site-VPN](../../vpn-gateway/vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md)). Een [globale beheerder](../../active-directory/roles/permissions-reference.md#global-administrator-permissions) in azure AD kan hun toegang tot de rol [beheerder van gebruikers toegang](../../role-based-access-control/built-in-roles.md#user-access-administrator) verhogen en alle abonnementen en beheerde groepen zien die zijn verbonden met uw omgeving.
+Uw beveiligings organisatie heeft inzicht nodig om Risico's te beoordelen en te bepalen of het beleid van uw organisatie en eventuele wettelijke vereisten wordt gevolgd. Zorg ervoor dat uw beveiligings organisatie inzicht heeft in alle abonnementen die zijn verbonden met uw productie omgeving en netwerk (via [Azure ExpressRoute](../../expressroute/expressroute-introduction.md) of [site-naar-site-VPN](../../vpn-gateway/vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md)). Een [globale beheerder](../../active-directory/roles/permissions-reference.md#global-administrator) in azure AD kan hun toegang tot de rol [beheerder van gebruikers toegang](../../role-based-access-control/built-in-roles.md#user-access-administrator) verhogen en alle abonnementen en beheerde groepen zien die zijn verbonden met uw omgeving.
 
 Zie [toegang verhogen voor het beheer van alle Azure-abonnementen en-beheer groepen](../../role-based-access-control/elevate-access-global-admin.md) om ervoor te zorgen dat u en uw beveiligings groep alle abonnementen of beheer groepen kunnen weer geven die zijn verbonden met uw omgeving. U moet deze verhoogde toegang verwijderen nadat u de Risico's hebt beoordeeld.
 

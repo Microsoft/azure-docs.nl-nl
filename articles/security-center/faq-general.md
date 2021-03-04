@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/25/2020
 ms.author: memildin
-ms.openlocfilehash: 061b190af6e66cf0c7e8095251a3ef77d9aaf247
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 3a8429d9dc6820b1f79c49d325872b61833f988d
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341682"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102095541"
 ---
 # <a name="faq---general-questions-about-azure-security-center"></a>Veelgestelde vragen: algemene vragen over Azure Security Center
 
@@ -29,7 +29,7 @@ Security Center gebruikt de Log Analytics agent om gegevens te verzamelen en op 
 
 
 ## <a name="how-do-i-get-azure-security-center"></a>Hoe kan ik Azure Security Center ophalen?
-Azure Security Center is ingeschakeld met uw Microsoft Azure-abonnement en is toegankelijk via de [Azure Portal](https://azure.microsoft.com/features/azure-portal/). Meld u aan bij [de portal](https://portal.azure.com), selecteer **Bladeren**en schuif naar **Security Center**om het te openen.
+Azure Security Center is ingeschakeld met uw Microsoft Azure-abonnement en is toegankelijk via de [Azure Portal](https://azure.microsoft.com/features/azure-portal/). Meld u aan bij [de portal](https://portal.azure.com), selecteer **Bladeren** en schuif naar **Security Center** om het te openen.
 
 
 ## <a name="which-azure-resources-are-monitored-by-azure-security-center"></a>Welke Azure-resources worden bewaakt door Azure Security Center?
@@ -46,10 +46,10 @@ Op de pagina **overzicht van Security Center** ziet u de algemene beveiligings p
 
 
 
-## <a name="what-is-a-security-policy"></a>Wat is een beveiligings beleid?
-Een beveiligings beleid bepaalt welke set besturings elementen wordt aanbevolen voor resources binnen het opgegeven abonnement. In Azure Security Center definieert u beleid voor uw Azure-abonnementen volgens de beveiligings vereisten van uw bedrijf en het type toepassingen of de gevoeligheid van de gegevens in elk abonnement.
+## <a name="what-is-a-security-initiative"></a>Wat is een beveiligings initiatief?
+Een Security Initiative definieert de set besturings elementen (beleids regels) die worden aanbevolen voor resources binnen het opgegeven abonnement. In Azure Security Center wijst u initiatieven toe voor uw Azure-abonnementen volgens de beveiligings vereisten van uw bedrijf en het type toepassingen of de gevoeligheid van de gegevens in elk abonnement.
 
-Het beveiligings beleid dat is ingeschakeld in Azure Security Center aanbevelingen en controle van de beveiliging. Zie [beveiligings status controleren in azure Security Center](security-center-monitoring.md)voor meer informatie over beveiligings beleidsregels.
+Het beveiligings beleid dat is ingeschakeld in Azure Security Center aanbevelingen en controle van de beveiliging. Meer informatie in [Wat zijn beveiligings beleid, initiatieven en aanbevelingen?](security-policy-concept.md).
 
 
 ## <a name="who-can-modify-a-security-policy"></a>Wie kan een beveiligings beleid wijzigen?

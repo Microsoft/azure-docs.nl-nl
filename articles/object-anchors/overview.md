@@ -4,15 +4,15 @@ description: Meer informatie over hoe u met Azure object ankerpunten objecten in
 author: craigktreasure
 manager: vriveras
 ms.author: crtreasu
-ms.date: 02/18/2021
+ms.date: 03/02/2021
 ms.topic: overview
 ms.service: azure-object-anchors
-ms.openlocfilehash: 099307ba1085ff6d24bc6bb4000a592aabc8f8f6
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: cbe52004dddbe74aa02347c026028a8ffd4cf8d7
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101748552"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102034185"
 ---
 # <a name="azure-object-anchors-overview"></a>Overzicht van Azure object-ankers
 
@@ -37,7 +37,7 @@ Enkele voor beelden van use cases die worden ingeschakeld door Azure object-anke
 De volgende secties bevatten informatie over aan de slag met het gebruik en het bouwen van apps met Azure object-ankers.
 
 > [!div class="nextstepaction"]
-> [Model opname](quickstarts/get-started-model-ingestion.md)
+> [Model opname](quickstarts/get-started-model-conversion.md)
 
 > [!div class="nextstepaction"]
 > [De eenheid HoloLens](quickstarts/get-started-unity-hololens.md)

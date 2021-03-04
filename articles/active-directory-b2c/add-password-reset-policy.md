@@ -12,12 +12,12 @@ ms.date: 03/02/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: d7f597010f86e0f962f250dcd87d6c78f401a73d
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 8e4926fb228837c3ec0573af8ee5b15da5fd7431
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101688981"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102033879"
 ---
 # <a name="set-up-a-password-reset-flow-in-azure-active-directory-b2c"></a>Een wachtwoord herstel stroom instellen in Azure Active Directory B2C
 
@@ -206,7 +206,7 @@ In uw gebruikers traject kunt u de verg eten wacht woord-subtraject vertegenwoor
 
 ### <a name="set-the-user-journey-to-be-executed"></a>Instellen dat de reis van de gebruiker wordt uitgevoerd
 
-Nu u een gebruikers traject hebt gewijzigd of gemaakt, geeft u in de **relying** Party de rit op die Azure AD B2C worden uitgevoerd voor dit aangepaste beleid. Zoek het element **DefaultUserJourney** binnen het element [RelyingParty](../articles/active-directory-b2c/relyingparty.md) . Werk de  **DefaultUserJourney-ReferenceId** bij zodat deze overeenkomt met de id van de gebruikers traject waarin u de **ClaimsProviderSelections** hebt toegevoegd.
+Nu u een gebruikers traject hebt gewijzigd of gemaakt, geeft u in de **relying** Party de rit op die Azure AD B2C worden uitgevoerd voor dit aangepaste beleid. Zoek het element **DefaultUserJourney** binnen het element [RelyingParty](relyingparty.md) . Werk de  **DefaultUserJourney-ReferenceId** bij zodat deze overeenkomt met de id van de gebruikers traject waarin u de **ClaimsProviderSelections** hebt toegevoegd.
 
 ```xml
 <RelyingParty>

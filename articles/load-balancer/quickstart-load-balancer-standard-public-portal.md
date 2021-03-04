@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2021
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 13726009e07172c9038bc8b45001e390c5b7ad70
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 634f09c7862f6e3e2f147094503f5a574476ef91
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101709773"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102034384"
 ---
 # <a name="quickstart-create-a-public-load-balancer-to-load-balance-vms-using-the-azure-portal"></a>Quickstart: Een openbare load balancer maken om taken van VM's te verdelen via Azure Portal
 
@@ -67,7 +67,7 @@ Wanneer u een openbare load balancer maakt, maakt u een nieuw openbaar IP-adres 
     | Naam openbaar IP-adres | Typ **myPublicIP** in het tekstvak.|
     | Beschikbaarheidszone | Selecteer **Zone-redundant** om een tolerante load balancer te maken. Als u een zonegebonden load balancer wilt maken, selecteert u een specifieke zone uit 1, 2 of 3 |
     | Een openbaar IPv6-adres toevoegen | Selecteer **Nee**. </br> Zie [Wat is IPv6 voor Azure Virtual Network?](../virtual-network/ipv6-overview.md) voor meer informatie over IPv6-adressen en load balancer.  |
-    | Routeringsvoorkeur | De standaard instelling van het **micro soft-netwerk** behouden. </br> Zie [Wat is routerings voorkeur (preview)?](./routing-preference-overview.md)voor meer informatie over routerings voorkeur. |
+    | Routeringsvoorkeur | De standaard instelling van het **micro soft-netwerk** behouden. </br> Zie [Wat is routerings voorkeur (preview)?](../virtual-network/routing-preference-overview.md)voor meer informatie over routerings voorkeur. |
 
 5. Accepteer de standaardwaarden voor de overige instellingen en selecteer **Beoordelen en maken**.
 

@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 6dda65be98934ce90e985b241078ae8019afb7e0
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: e344d85bbdac92aa372fc5d5e59ef90b11dfac6c
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100361261"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102095728"
 ---
 # <a name="add-ad-fs-as-a-saml-identity-provider-using-custom-policies-in-azure-active-directory-b2c"></a>AD FS toevoegen als een SAML-ID-provider met behulp van aangepast beleid in Azure Active Directory B2C
 
@@ -34,7 +34,7 @@ ms.locfileid: "100361261"
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-In dit artikel wordt beschreven hoe u aanmelden voor een AD FS gebruikers account inschakelt met [aangepaste beleids regels](custom-policy-overview.md) in Azure Active Directory B2C (Azure AD B2C). U schakelt aanmelden in door een SAML- [identiteits provider technisch profiel](saml-identity-provider-technical-profile.md) toe te voegen aan een aangepast beleid.
+In dit artikel wordt beschreven hoe u aanmelden voor een AD FS gebruikers account inschakelt met [aangepaste beleids regels](custom-policy-overview.md) in Azure Active Directory B2C (Azure AD B2C). U schakelt aanmelden in door een SAML- [ID-provider](identity-provider-generic-saml.md) aan een aangepast beleid toe te voegen.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -62,7 +62,7 @@ U moet uw certificaat opslaan in uw Azure AD B2C-Tenant.
 
 Als u wilt dat gebruikers zich aanmelden met een AD FS-account, moet u het account definiëren als een claim provider waarmee Azure AD B2C met behulp van een eind punt kunt communiceren. Het eind punt biedt een set claims die wordt gebruikt door Azure AD B2C om te controleren of een specifieke gebruiker is geverifieerd.
 
-U kunt een AD FS account definiëren als een claim provider door het toe te voegen aan het **ClaimsProviders** -element in het extensie bestand van uw beleid. Zie [het technische profiel van een SAML-identiteits provider definiëren](saml-identity-provider-technical-profile.md)voor meer informatie.
+U kunt een AD FS account definiëren als een claim provider door het toe te voegen aan het **ClaimsProviders** -element in het extensie bestand van uw beleid. Zie [een SAML-ID-provider definiëren](identity-provider-generic-saml.md)voor meer informatie.
 
 1. Open de *TrustFrameworkExtensions.xml*.
 1. Zoek het element **ClaimsProviders** . Als deze niet bestaat, voegt u deze toe onder het hoofd element.
@@ -217,7 +217,7 @@ Deze fout geeft aan dat de SAML-aanvraag die door Azure AD B2C is verzonden, nie
 
 #### <a name="option-1-set-the-signature-algorithm-in-azure-ad-b2c"></a>Optie 1: het handtekening algoritme instellen in Azure AD B2C  
 
-U kunt configureren hoe de SAML-aanvraag in Azure AD B2C moet worden ondertekend. De [XmlSignatureAlgorithm](saml-identity-provider-technical-profile.md#metadata) -meta gegevens bepalen de waarde van de `SigAlg` para meter (query teken reeks of post-para meter) in de SAML-aanvraag. In het volgende voor beeld wordt Azure AD B2C geconfigureerd om het `rsa-sha256` handtekening algoritme te gebruiken.
+U kunt configureren hoe de SAML-aanvraag in Azure AD B2C moet worden ondertekend. De [XmlSignatureAlgorithm](identity-provider-generic-saml.md) -meta gegevens bepalen de waarde van de `SigAlg` para meter (query teken reeks of post-para meter) in de SAML-aanvraag. In het volgende voor beeld wordt Azure AD B2C geconfigureerd om het `rsa-sha256` handtekening algoritme te gebruiken.
 
 ```xml
 <Metadata>

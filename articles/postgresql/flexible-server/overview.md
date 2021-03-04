@@ -6,13 +6,13 @@ ms.author: sunila
 ms.custom: mvc
 ms.service: postgresql
 ms.topic: overview
-ms.date: 09/22/2020
-ms.openlocfilehash: b4df91f4654f39780f81e0a27139677431926238
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
-ms.translationtype: HT
+ms.date: 03/03/2021
+ms.openlocfilehash: d36dcfccb6843947991b2548af6dd98b81adb40e
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92532659"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102049505"
 ---
 # <a name="azure-database-for-postgresql---flexible-server"></a>Azure Database for PostgreSQL - Flexible Server
 
@@ -56,7 +56,7 @@ Onderstaande afbeelding toont de overgang voor de virtuele machine en de opslagf
 
 Als zone-redundante hoge beschikbaarheid is geconfigureerd, wordt in de service een dynamische stand-byserver voor de beschikbaarheidszone binnen dezelfde Azure-regio onderhouden. De gegevenswijzigingen op de bronserver worden synchroon gerepliceerd naar de stand-byserver om ervoor te zorgen dat er geen gegevens verloren gaan. Als de geplande of niet-geplande failovergebeurtenis wordt geactiveerd met zone-redundante hoge beschikbaarheid, komt de stand-byserver onmiddellijk online en is deze beschikbaar voor het verwerken van binnenkomende transacties. Dit geeft de service tolerantie tegen mislukking van de beschikbaarheidszone binnen een Azure-regio die ondersteuning biedt voor meerdere beschikbaarheidszones, zoals wordt weergegeven in de onderstaande afbeelding.
 
- :::image type="content" source="./media/business-continuity/concepts-zone-redundant-high-availability-architecture.png" alt-text="Flexibele Server - VM- en opslagfouten":::
+ :::image type="content" source="./media/business-continuity/concepts-zone-redundant-high-availability-architecture.png" alt-text="Zone-redundante hoge beschikbaarheid":::
 
  Zie [Document over hoge beschikbaarheid](./concepts-high-availability.md) voor meer informatie.
 
@@ -86,12 +86,30 @@ Flexibele servers bieden volledige privétoegang tot de servers met behulp van V
 
 De service voor flexibele servers is uitgerust met ingebouwde functies voor prestatiebewaking en waarschuwingen. Alle metrische gegevens van Azure hebben een frequentie van één minuut, en elke metriek bevat een geschiedenis van 30 dagen. U kunt waarschuwingen configureren voor de metrische gegevens. Met de service worden metrische gegevens van de hostserver beschikbaar gemaakt voor het bewaken van het resourcegebruik en het configureren van langzame querylogboeken. Met deze hulpprogramma's kunt u uw workloads snel optimaliseren en uw server configureren voor de beste prestaties.
 
+## <a name="azure-regions"></a>Azure-regio's
+
+Een van de voor delen van het uitvoeren van uw werkbelasting in Azure, is het wereldwijde bereik. De flexibele server is nu beschikbaar in de volgende Azure-regio's:
+
+| Region | Beschikbaarheid | Zone redundante HA | 
+| --- | --- | --- |
+| Europa -west | :heavy_check_mark: | :heavy_check_mark: |
+| Europa - noord | :heavy_check_mark: | :heavy_check_mark: |
+| Verenigd Koninkrijk Zuid | :heavy_check_mark: | :heavy_check_mark: | 
+| VS - oost 2 | :heavy_check_mark: | :heavy_check_mark: |
+| VS - west 2 | :heavy_check_mark: | :heavy_check_mark: |
+| VS - centraal | :heavy_check_mark: | :heavy_check_mark: | 
+| VS - oost | :heavy_check_mark: | :heavy_check_mark: | 
+| Azië - zuidoost | :heavy_check_mark: | :heavy_check_mark: |
+| Japan - oost | :heavy_check_mark: | :heavy_check_mark: | 
+
+We blijven nieuwe regio's toevoegen. 
+
 ## <a name="migration"></a>Migratie
 
 De service voert de communityversie van PostgreSQL uit. Dit biedt volledige toepassingscompatibiliteit en vereist minimale herstructureringskosten voor het migreren van bestaande toepassingen die zijn ontwikkeld op PostgreSQL-engine naar Flexible Server. 
 
-- **Dumpen en herstellen** : voor offline migraties, waarbij gebruikers zich enige downtime kunnen veroorloven, kan dumpen en herstellen met behulp van communityhulpprogramma's, zoals pg_dump en pg_restore, de snelste manier zijn voor migratie. Zie [Migreren met behulp van dumpen en herstellen](../howto-migrate-using-dump-and-restore.md) voor meer informatie.
-- **Azure Database Migration Service** : voor naadloze en vereenvoudigde migraties naar één server met minimale downtime kan Azure Database Migration Service worden gebruikt. Zie [DMS via portal](../../dms/tutorial-postgresql-azure-postgresql-online-portal.md) en [DMS via CLI](../../dms/tutorial-postgresql-azure-postgresql-online.md). U kunt migreren van uw Azure Database for PostgreSQL - Single Server naar Flexible Server. Zie dit [DMS-artikel](../../dms/tutorial-azure-postgresql-to-azure-postgresql-online-portal.md) voor meer informatie.
+- **Dumpen en herstellen**: voor offline migraties, waarbij gebruikers zich enige downtime kunnen veroorloven, kan dumpen en herstellen met behulp van communityhulpprogramma's, zoals pg_dump en pg_restore, de snelste manier zijn voor migratie. Zie [Migreren met behulp van dumpen en herstellen](../howto-migrate-using-dump-and-restore.md) voor meer informatie.
+- **Azure Database Migration Service**: voor naadloze en vereenvoudigde migraties naar één server met minimale downtime kan Azure Database Migration Service worden gebruikt. Zie [DMS via portal](../../dms/tutorial-postgresql-azure-postgresql-online-portal.md) en [DMS via CLI](../../dms/tutorial-postgresql-azure-postgresql-online.md). U kunt migreren van uw Azure Database for PostgreSQL - Single Server naar Flexible Server. Zie dit [DMS-artikel](../../dms/tutorial-azure-postgresql-to-azure-postgresql-online-portal.md) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

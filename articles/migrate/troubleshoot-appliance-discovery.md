@@ -6,12 +6,12 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: troubleshooting
 ms.date: 01/02/2020
-ms.openlocfilehash: 810ea58c5d88dec53463b9a2b04750169c70e137
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: f3331504540e8c23c3a83fe245bae27ca6c49385
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97704024"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102041277"
 ---
 # <a name="troubleshoot-the-azure-migrate-appliance-and-discovery"></a>Problemen met het Azure Migrate apparaat en de detectie oplossen
 
@@ -167,6 +167,19 @@ Als gedetecteerde Vm's niet worden weer gegeven in de portal of als de VM-gegeve
 
 Als u Vm's verwijdert en deze nog steeds worden weer gegeven in de portal, wacht u 30 minuten. Als deze nog steeds worden weer gegeven, moet u vernieuwen zoals hierboven wordt beschreven.
 
+## <a name="discovered-applications-and-sql-server-instances-and-databases-not-in-portal"></a>Gedetecteerde toepassingen en SQL Server instanties en data bases die zich niet in de portal bevinden
+
+Nadat u detectie hebt gestart op het apparaat, kan het tot 24 uur duren voordat de inventarisatie gegevens in de portal worden weer gegeven.
+
+Als u geen Windows-verificatie-of SQL Server authenticatie referenties hebt ingevoerd op de configuratie beheer van het apparaat, voegt u de referenties toe zodat het apparaat deze kan gebruiken om verbinding te maken met de respectieve SQL Server instanties.
+
+Zodra het apparaat is verbonden, worden configuratie-en prestatie gegevens van SQL Server instanties en data bases verzameld. De SQL Server configuratie gegevens worden elke 24 uur bijgewerkt en de prestatie gegevens worden elke 30 seconden vastgelegd. Elke wijziging in de eigenschappen van de SQL Server-instantie en data bases, zoals de database status, het compatibiliteits niveau, enzovoort, kan tot wel 24 uur duren om bij te werken op de portal.
+
+## <a name="sql-server-instance-is-showing-up-in-not-connected-state-on-portal"></a>SQL Server exemplaar wordt weer gegeven in de status ' niet verbonden ' op de portal
+Als u de problemen wilt bekijken die zijn opgetreden tijdens de detectie van SQL Server instanties en data bases, klikt u op de status niet verbonden in de kolom verbindings status op de pagina gedetecteerde servers in uw project.
+
+Het maken van een evaluatie over servers met SQL-exemplaren die niet volledig zijn gedetecteerd of die niet zijn verbonden, kan leiden tot de gereedheid om te worden gemarkeerd als ' onbekend '.
+
 ## <a name="i-do-not-see-performance-data-for-some-network-adapters-on-my-physical-servers"></a>Ik zie geen prestatie gegevens voor sommige netwerk adapters op mijn fysieke servers
 
 Dit kan gebeuren als Hyper-V-virtualisatie is ingeschakeld op de fysieke server. Als gevolg van een product hiaat wordt de netwerk doorvoer vastgelegd op de gedetecteerde virtuele netwerk adapters.
@@ -199,9 +212,9 @@ Veelvoorkomende fouten bij het detecteren van apps worden in de tabel samenvatte
 
 | **Fout** | **Oorzaak** | **Actie** |
 |--|--|--|
-| 9000: de status van het VMware-hulp programma kan niet worden gedetecteerd. | VMWare-hulpprogram ma's zijn mogelijk niet geïnstalleerd of beschadigd. | Zorg ervoor dat VMware-hulpprogram ma's zijn geïnstalleerd en worden uitgevoerd op de VM. |
-| 9001: VMware-hulpprogram ma's zijn niet geïnstalleerd. | VMWare-hulpprogram ma's zijn mogelijk niet geïnstalleerd of beschadigd. | Zorg ervoor dat VMware-hulpprogram ma's zijn geïnstalleerd en worden uitgevoerd op de VM. |
-| 9002: VMware-hulpprogram ma's worden niet uitgevoerd. | VMWare-hulpprogram ma's zijn mogelijk niet geïnstalleerd of beschadigd. | Zorg ervoor dat VMware-hulpprogram ma's zijn geïnstalleerd en worden uitgevoerd op de VM. |
+| 9000: de status van het VMware-hulp programma kan niet worden gedetecteerd. | VMware-hulpprogram ma's zijn mogelijk niet geïnstalleerd of beschadigd. | Zorg ervoor dat VMware-hulpprogram ma's zijn geïnstalleerd en worden uitgevoerd op de VM. |
+| 9001: VMware-hulpprogram ma's zijn niet geïnstalleerd. | VMware-hulpprogram ma's zijn mogelijk niet geïnstalleerd of beschadigd. | Zorg ervoor dat VMware-hulpprogram ma's zijn geïnstalleerd en worden uitgevoerd op de VM. |
+| 9002: VMware-hulpprogram ma's worden niet uitgevoerd. | VMware-hulpprogram ma's zijn mogelijk niet geïnstalleerd of beschadigd. | Zorg ervoor dat VMware-hulpprogram ma's zijn geïnstalleerd en worden uitgevoerd op de VM. |
 | 9003: het type besturings systeem wordt niet ondersteund voor de detectie van gast-VM'S. | Het besturings systeem dat op de server wordt uitgevoerd, is geen Windows of Linux. | Ondersteunde typen besturings systemen zijn alleen Windows en Linux. Als de server inderdaad Windows of Linux is, controleert u het type besturings systeem dat is opgegeven in vCenter Server. |
 | 9004: de VM wordt niet uitgevoerd. | De VM is uitgeschakeld. | Zorg ervoor dat de virtuele machine is ingeschakeld. |
 | 9005: het type besturings systeem wordt niet ondersteund voor de detectie van gast-VM'S. | Het type besturings systeem wordt niet ondersteund voor de detectie van gast-VM'S. | Ondersteunde typen besturings systemen zijn alleen Windows en Linux. |

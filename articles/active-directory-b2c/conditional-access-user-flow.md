@@ -5,122 +5,191 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: overview
-ms.date: 02/23/2021
+ms.date: 03/03/2021
 ms.custom: project-no-code
 ms.author: mimart
 author: msmimart
 manager: celested
-ms.collection: M365-identity-device-management
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: e87899010660eac11166275bdfd61151bb12c10f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 6325a890ea297a3aa2bdad76a1d95c10448a7b61
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101686934"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102033907"
 ---
 # <a name="add-conditional-access-to-user-flows-in-azure-active-directory-b2c"></a>Voorwaardelijke toegang toevoegen aan gebruikersstromen in Azure Active Directory B2C
 
+[!INCLUDE [active-directory-b2c-choose-user-flow-or-custom-policy](../../includes/active-directory-b2c-choose-user-flow-or-custom-policy.md)]
+
+Voorwaardelijke toegang kan worden toegevoegd aan uw Azure Active Directory B2C (Azure AD B2C) gebruikers stromen of aangepaste beleids regels voor het beheren van Risk ante aanmeldingen voor uw toepassingen. Azure Active Directory (Azure AD) voorwaardelijke toegang is het hulp programma dat door Azure AD B2C wordt gebruikt om signalen samen te brengen, beslissingen te nemen en organisatie beleid af te dwingen.
+
+![Stroom voor voorwaardelijke toegang](media/conditional-access-user-flow/conditional-access-flow.png)
+
+Als u een risico analyse met beleids voorwaarden automatiseert, worden Risk ante aanmeldingen onmiddellijk geïdentificeerd en vervolgens hersteld of geblokkeerd.
+
 [!INCLUDE [b2c-public-preview-feature](../../includes/active-directory-b2c-public-preview.md)]
 
-Voorwaardelijke toegang kan worden toegevoegd aan uw Azure Active Directory B2C-gebruikersstromen om riskante aanmeldingen voor uw toepassingen te beheren. Dankzij de integratie van identiteitsbeveiliging en voorwaardelijke toegang in Azure AD B2C kunt u beleidsregels instellen waarmee riskante aanmeldingen worden geïdentificeerd en beleidsregels worden afgedwongen die verdere actie van de gebruiker of beheerder vereisen. Dit zijn de onderdelen voor het inschakelen van voorwaardelijke toegang in Azure AD B2C-gebruikersstromen:
+## <a name="service-overview"></a>Overzicht van services
 
-- **Gebruikersstroom**. Maak een gebruikersstroom waarmee de gebruiker wordt begeleid via het aanmeldings- en registratieproces. Geef in de instellingen van de gebruikersstroom aan of het beleid voor voorwaardelijke toegang moet worden geactiveerd wanneer een gebruiker de gebruikersstroom volgt.
-- **Toepassing die gebruikers doorstuurt naar de gebruikersstroom**. Configureer uw app voor het doorsturen van gebruikers naar de juiste gebruikersstroom voor registratie en aanmelding door het eindpunt van de gebruikersstroom in de app op te geven.
-- **Beleid voor voorwaardelijke toegang**. [Maak een beleid voor voorwaardelijke toegang](conditional-access-identity-protection-setup.md) en geef de apps op waarop u het beleid wilt toepassen. Wanneer de gebruiker de gebruikersstroom voor aanmelden of registreren voor uw app volgt, gebruikt het beleid voor voorwaardelijke toegang signalen voor identiteitsbeveiliging om riskante aanmeldingen te identificeren en wordt zo nodig de juiste herstelactie gepresenteerd.
+Azure AD B2C evalueert elke aanmeldings gebeurtenis en zorgt ervoor dat aan alle beleids vereisten wordt voldaan voordat de gebruikers toegang wordt verleend. Tijdens deze **evaluatie** fase evalueert de voorwaardelijke toegangs service de signalen die worden verzameld door risico detecties identiteits bescherming tijdens aanmeldings gebeurtenissen. Het resultaat van dit evaluatie proces is een set claims die aangeeft of de aanmelding moet worden verleend of geblokkeerd. Het Azure AD B2C-beleid gebruikt deze claims om een actie binnen de gebruikers stroom uit te voeren, zoals het blok keren van de toegang of de gebruiker met een specifieke herbemiddeling als multi-factor Authentication (MFA). Met ' toegang blok keren ' worden alle andere instellingen overschreven.
 
-Voorwaardelijke toegang wordt ondersteund in de meest recente versies van gebruikersstromen. U kunt beleid voor voorwaardelijke toegang toevoegen aan nieuwe gebruikersstromen terwijl u ze maakt, maar u kunt ze ook toevoegen aan bestaande gebruikers, zolang de versie ondersteuning biedt voor voorwaardelijke toegang. Wanneer u voorwaardelijke toegang toevoegt aan een bestaande gebruikersstroom, zijn er twee instellingen die u moet controleren:
+::: zone pivot="b2c-custom-policy"
+In het volgende voor beeld wordt een technisch profiel voor voorwaardelijke toegang weer gegeven dat wordt gebruikt om de aanmeldings bedreiging te evalueren.
 
-- **Meervoudige verificatie (MFA)** : Gebruikers kunnen nu gebruikmaken van een eenmalige code via SMS of voice, of een eenmalig wachtwoord via e-mail voor meervoudige verificatie. MFA-instellingen zijn onafhankelijk van de instellingen voor voorwaardelijke toegang. U kunt MFA instellen op **Altijd aan** zodat MFA altijd vereist is, ongeacht de instelling van de voorwaardelijke toegang. U kunt ook MFA instellen op **Voorwaardelijk**, zodat MFA alleen vereist is wanneer een beleid voor voorwaardelijke toegang vereist is.
+```XML
+<TechnicalProfile Id="ConditionalAccessEvaluation">
+  <DisplayName>Conditional Access Provider</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.ConditionalAccessProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  <Metadata>
+    <Item Key="OperationType">Evaluation</Item>
+  </Metadata>
+  ...
+</TechnicalProfile>
+```
 
-- **Voorwaardelijke toegang**: Deze instelling moet altijd **Aan** zijn. Normaal gesproken schakelt u deze instelling alleen **Uit** tijdens het oplossen van problemen of migratie of voor verouderde implementaties.
+::: zone-end
 
-Meer informatie over [Identiteitsbeveiliging en voorwaardelijke toegang](conditional-access-identity-protection-overview.md) in Azure AD B2C, of kijk [Hoe u deze instelt](conditional-access-identity-protection-setup.md).
+In de **herstel** fase die volgt, wordt de gebruiker gevraagd met MFA. Zodra dit is voltooid, informeert Azure AD B2C identiteits beveiliging dat de geïdentificeerde aanmeldings bedreiging is hersteld en volgens welke methode. In dit voor beeld geeft Azure AD B2C aan dat de gebruiker de multi-factor Authentication-uitdaging heeft voltooid. 
+
+::: zone pivot="b2c-custom-policy"
+
+In het volgende voor beeld ziet u het technische profiel voor voorwaardelijke toegang dat wordt gebruikt om de geïdentificeerde dreiging te herstellen:
+
+```XML
+<TechnicalProfile Id="ConditionalAccessRemediation">
+  <DisplayName>Conditional Access Remediation</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.ConditionalAccessProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"/>
+  <Metadata>
+    <Item Key="OperationType">Remediation</Item>
+  </Metadata>
+  ...
+</TechnicalProfile>
+```
+
+::: zone-end
+
+## <a name="components-of-the-solution"></a>Onderdelen van de oplossing
+
+Dit zijn de onderdelen voor het inschakelen van voorwaardelijke toegang in Azure AD B2C:
+
+- **Gebruikers stroom** of **aangepast beleid** waarmee de gebruiker wordt begeleid door het aanmeldings-en aanmeldings proces.
+- **Beleid voor voorwaardelijke toegang** dat signalen samen brengt om beslissingen te nemen en organisatie beleid af te dwingen. Wanneer een gebruiker zich bij uw toepassing aanmeldt via een Azure AD B2C-beleid, gebruikt het beleid voor voorwaardelijke toegang Azure AD Identity Protection signalen om Risk ante aanmeldingen te identificeren en wordt de juiste herstel actie gepresenteerd.
+- **Geregistreerde toepassing** die gebruikers doorstuurt naar de juiste Azure AD B2C gebruikers stroom of aangepast beleid.
+- [Tor-Browser](https://www.torproject.org/download/) voor het simuleren van een Risk ante aanmelding.
+
+## <a name="service-limitations-and-considerations"></a>Service beperkingen en overwegingen
+
+Wanneer u de voorwaardelijke toegang van Azure AD gebruikt, moet u rekening houden met het volgende:
+
+- Identiteits beveiliging is beschikbaar voor zowel lokale als sociale identiteiten, zoals Google of Facebook. Voor sociale identiteiten moet u de voorwaardelijke toegang hand matig activeren. Detectie is beperkt omdat de referenties van het sociale account worden beheerd door de externe ID-provider.
+- In Azure AD B2C tenants is er slechts een subset van beleids regels voor [voorwaardelijke toegang van Azure AD](../active-directory/conditional-access/overview.md) beschikbaar.
+
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Azure AD B2C Premium 2 is vereist voor het maken van beleidsregels voor riskante aanmelding. Premium P1-tenants kunnen locatie-, app-of groepsbeleidsregels maken.
-- Voor test doeleinden kunt u [de test-webtoepassing registreren](tutorial-register-applications.md) `https://jwt.ms`, dit is een webtoepassing die eigendom is van Microsoft die de gedecodeerde inhoud van een token weergeeft (de inhoud van het token verlaat nooit uw browser). 
-- Als u een riskante aanmelding wilt simuleren, downloadt u de TOR-browser en probeert u zich aan te melden bij het eindpunt van de gebruikersstroom.
-- Met behulp van de volgende instellingen [een beleid voor voorwaardelijke toegang maken](conditional-access-identity-protection-setup.md):
-   
-  - Voor **Gebruikers en groepen** selecteert u de testgebruiker (selecteer niet **Alle gebruikers** of kunt u zich niet meer aanmelden).
-  - Kies voor **Cloud-apps of -acties** **Apps selecteren** en kies vervolgens uw Relying Party-toepassing.
-  - Selecteer als voorwaarden **Aanmeldingsrisico** en **Hoge** **Medium** en **Lage** risiconiveaus.
-  - Kies **Toegang blokkeren** voor **Verlenen**.
+[!INCLUDE [active-directory-b2c-customization-prerequisites-custom-policy](../../includes/active-directory-b2c-customization-prerequisites-custom-policy.md)]
 
-      ![Risicodetectie](media/conditional-access-identity-protection-setup/test-conditional-access-policy.png)
+## <a name="pricing-tier"></a>Prijscategorie
+
+Azure AD B2C **Premium P2** is vereist om Risk ante aanmeldings beleidsregels te maken. **Premium P1** -tenants kunnen een beleid maken dat is gebaseerd op locatie-, toepassings-, gebruikers-of groeps beleidsregels. Zie [uw Azure AD B2C prijs categorie wijzigen](billing.md#change-your-azure-ad-pricing-tier) voor meer informatie
+
+## <a name="prepare-your-azure-ad-b2c-tenant"></a>Uw Azure AD B2C-Tenant voorbereiden
+
+Schakel de standaard instellingen voor beveiliging uit om een beleid voor voorwaardelijke toegang toe te voegen:
+
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+2. Selecteer het pictogram **Map + Abonnement** in de werkbalk van de portal en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
+3. Onder **Azure-Services** selecteert u **Azure AD B2C**. Of gebruik het zoekvak om **Azure AD B2C** te zoeken en te selecteren.
+4. Selecteer **Eigenschappen** en selecteer vervolgens **Standaardinstellingen voor beveiliging beheren**.
+
+   ![Standaardinstellingen voor beveiliging uitschakelen](media/conditional-access-user-flow/disable-security-defaults.png)
+
+5. Selecteer bij **standaard instellingen voor beveiliging inschakelen** de optie **Nee**.
+
+   ![Stel de Standaardinstellingen voor beveiliging inschakelen in op Nee](media/conditional-access-user-flow/enable-security-defaults-toggle.png)
+
+## <a name="add-a-conditional-access-policy"></a>Een beleid voor voorwaardelijke toegang toevoegen
+
+Een beleid voor voorwaardelijke toegang is een if-then-instructie van toewijzingen en toegangs beheer. Een beleid voor voorwaardelijke toegang brengt signalen samen om beslissingen te nemen en organisatie beleid af te dwingen. De logische operator tussen de toewijzingen is *en*. De operator in elke toewijzing is *of*.
+
+![Voorwaardelijke toegang toewijzingen](media/conditional-access-user-flow/conditional-access-assignments.png)
+
+Een beleid voor voorwaardelijke toegang toevoegen:
+
+1. Zoek en selecteer **Azure AD B2C** in de Azure-portal.
+1. Selecteer **Voorwaardelijke toegang (preview)** onder **Beveiliging**. De pagina **Beleid voor voorwaardelijke toegang** wordt geopend.
+1. Selecteer **+ Nieuw beleid**.
+1. Voer een naam in voor het beleid, zoals het *blok keren van Risk ante aanmeldingen*.
+1. Kies onder **toewijzingen** de optie **gebruikers en groepen** en selecteer vervolgens een van de volgende ondersteunde configuraties:
+
+    |Opnemen  |Licentie | Notities  |
+    |---------|---------|---------|
+    |**Alle gebruikers** | P1, P2 |Als u ervoor kiest om **alle gebruikers** op te neemt, geldt dit beleid voor alle gebruikers. Om ervoor te zorgen dat u niet zelf kunt vergren delen, sluit u uw beheerders account uit door **uitsluiten**, **adreslijst rollen** selecteren te kiezen en vervolgens **globale beheerder** te selecteren in de lijst. U kunt ook **gebruikers en groepen** selecteren en vervolgens uw account selecteren in de lijst met **uitgesloten gebruikers selecteren** .  | 
+ 
+1. Selecteer **Cloud-apps of-acties** en **Selecteer vervolgens apps**. Blader naar uw [Relying Party-toepassing](tutorial-register-applications.md).
+
+1. Selecteer **voor waarden** en selecteer vervolgens een van de volgende voor waarden. Selecteer bijvoorbeeld **aanmeldings risico** en **hoog**, **gemiddeld** en **laag** risico niveau.
+    
+    |Voorwaarde  |Licentie  |Notities  |
+    |---------|---------|---------|
+    |**Gebruikersrisico**|P2|Gebruikers risico duidt op de kans dat een bepaalde identiteit of een account is aangetast.|
+    |**Aanmeldingsrisico**|P2|Aanmeld risico geeft aan dat de kans dat een bepaalde verificatie aanvraag niet is geautoriseerd door de eigenaar van de identiteit.|
+    |**Apparaatplatformen**|Niet ondersteund| Gekenmerkt door het besturings systeem dat op een apparaat wordt uitgevoerd. Zie [platform platforms](../active-directory/conditional-access/concept-conditional-access-conditions.md#device-platforms)voor meer informatie.|
+    |**Locaties**|P1, P2|Benoemde locaties kunnen de open bare IPv4-netwerk gegevens, het land of de regio of onbekende gebieden bevatten die niet aan specifieke landen of regio's zijn toegewezen. Zie [locaties](../active-directory/conditional-access/concept-conditional-access-conditions.md#locations)voor meer informatie. |
+ 
+1. Onder **Toegangscontroles** selecteert u **Verlenen**. Selecteer vervolgens of u toegang wilt blok keren of verlenen:
+    
+    |Optie  |Licentie |Notitie  |
+    |---------|---------|---------|
+    |**Toegang blokkeren**|P1, P2| Hiermee voor komt u toegang op basis van de voor waarden die zijn opgegeven in dit beleid voor voorwaardelijke toegang.|
+    |**Toegang verlenen** met **vereisen multi-factor Authentication**|P1, P2|Op basis van de voor waarden die zijn opgegeven in dit beleid voor voorwaardelijke toegang, moet de gebruiker Azure AD B2C multi-factor Authentication door lopen.|
+
+1. Onder **beleid inschakelen** selecteert u een van de volgende opties:
+    
+    |Optie  |Licentie |Notitie  |
+    |---------|---------|---------|
+    |**Alleen rapport**|P1, P2| Rapport: alleen beheerders kunnen de impact van beleids regels voor voorwaardelijke toegang evalueren voordat ze in hun omgeving worden ingeschakeld. U wordt aangeraden het beleid met deze status te controleren en de invloed op eind gebruikers te bepalen zonder multi-factor Authentication of gebruikers te blok keren. Zie [resultaten van voorwaardelijke toegang in het controle rapport controleren](#review-conditional-access-outcomes-in-the-audit-report) voor meer informatie.|
+    | **Aan**| P1, P2| Het toegangs beleid wordt geëvalueerd en niet afgedwongen. |
+    | **Uit** | P1, P2| Het toegangs beleid is niet geactiveerd en heeft geen invloed op de gebruikers. |
+
+1. Schakel uw testbeleid voor voorwaardelijke toegang in door **Maken** te selecteren.
+
+## <a name="add-conditional-access-to-a-user-flow"></a>Voorwaardelijke toegang toevoegen aan een gebruikers stroom
+
+Nadat u het beleid voor voorwaardelijke toegang voor Azure AD hebt toegevoegd, schakelt u voorwaardelijke toegang in uw gebruikers stroom of aangepast beleid in. Wanneer u voorwaardelijke toegang inschakelt, hoeft u geen beleids naam op te geven.
+
+Er kunnen op elk moment meerdere beleids regels voor voorwaardelijke toegang van toepassing zijn op een afzonderlijke gebruiker. In dit geval heeft het meest strikte toegangscontrole beleid prioriteit. Als voor één beleid bijvoorbeeld multi-factor Authentication (MFA) is vereist, terwijl de andere toegang blokkeert, wordt de gebruiker geblokkeerd.
+
+## <a name="enable-multi-factor-authentication-optional"></a>Multi-factor Authentication inschakelen (optioneel)
+
+Wanneer u voorwaardelijke toegang toevoegt aan een gebruikers stroom, overweeg dan het gebruik van **multi-factor Authentication (MFA)**. Gebruikers kunnen gebruikmaken van een eenmalige code via SMS of voice, of een eenmalig wacht woord via e-mail voor multi-factor Authentication. MFA-instellingen zijn onafhankelijk van de instellingen voor voorwaardelijke toegang. U kunt MFA instellen op **Altijd aan** zodat MFA altijd vereist is, ongeacht de instelling van de voorwaardelijke toegang. U kunt ook MFA instellen op **Voorwaardelijk**, zodat MFA alleen vereist is wanneer een beleid voor voorwaardelijke toegang vereist is.
+
+> [!IMPORTANT]
+> Als uw beleid voor voorwaardelijke toegang toegang verleent aan MFA, maar de gebruiker geen telefoon nummer heeft inge schreven, wordt de gebruiker mogelijk geblokkeerd.
 
 ::: zone pivot="b2c-user-flow"
 
-## <a name="add-conditional-access-to-a-new-user-flow"></a>Voorwaardelijke toegang toevoegen aan een nieuwe gebruikersstroom
-
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-1. Selecteer het pictogram **Map + Abonnement** in de werkbalk van de portal en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
-1. Zoek en selecteer **Azure AD B2C** in de Azure-portal.
-1. Selecteer onder **Beleid** de optie **Gebruikersstromen** en selecteer vervolgens **Nieuwe gebruikersstroom**.
-1. Selecteer op de pagina **Een gebruikersstroom maken** het type gebruikersstroom.
-1. Onder **Selecteer een versie** selecteert u **Aanbevolen** en vervolgens **Maken**. ([Meer informatie](user-flow-versions.md) over gebruikersstroomversies.)
-
-    ![De pagina Gebruikersstroom maken in de Azure-portal met eigenschappen gemarkeerd](./media/tutorial-create-user-flows/select-version.png)
-
-1. Voer een **Naam** in voor de gebruikersstroom. Bijvoorbeeld *signupsignin1*.
-1. Selecteer in de sectie **Id-providers** de id-providers die u voor deze gebruikersstroom wilt toestaan.
-2. Selecteer in de sectie **Meervoudige verificatie** de gewenste **MFA-methode** en selecteer vervolgens onder **MFA afdwingen** **Voorwaardelijk (aanbevolen)** .
- 
-   ![Meervoudige verificatie configureren](media/conditional-access-user-flow/configure-mfa.png)
-
-1. Schakel in de sectie **Voorwaardelijke toegang** het selectievakje **Beleid voor voorwaardelijke toegang afdwingen** in.
-
-   ![Instellingen voor voorwaardelijke toegang configureren](media/conditional-access-user-flow/configure-conditional-access.png)
-
-1. Kies in de sectie **Gebruikerskenmerken en claims** de claims en kenmerken van de gebruiker die u tijdens de registratie wilt verzamelen en verzenden. Selecteer bijvoorbeeld **Meer weergeven** en kies vervolgens kenmerken en claims voor **Land/regio** en **Weergavenaam**. Selecteer **OK**.
-
-    ![Selectiepagina voor gebruikerskenmerken en claims met drie claims geselecteerd](./media/conditional-access-user-flow/configure-user-attributes-claims.png)
-
-1. Klik op **Maken** om de gebruikersstroom toe te voegen. Het voorvoegsel *B2C_1* wordt automatisch voor de naam geplaatst.
-
-## <a name="add-conditional-access-to-an-existing-user-flow"></a>Voorwaardelijke toegang toevoegen aan een bestaande gebruikersstroom
-
-> [!NOTE]
-> De bestaande gebruikersstroom moet een versie zijn die voorwaardelijke toegang ondersteunt. Deze gebruikersstroomversies zijn gelabeld **Aanbevolen**.
+Als u voorwaardelijke toegang voor een gebruikers stroom wilt inschakelen, moet u ervoor zorgen dat de versie ondersteuning biedt voor voorwaardelijke toegang. Deze gebruikersstroomversies zijn gelabeld **Aanbevolen**.
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
 1. Selecteer het pictogram **Map + Abonnement** in de werkbalk van de portal en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
 
-1. Zoek en selecteer **Azure AD B2C** in de Azure-portal.
+1. Onder **Azure-Services** selecteert u **Azure AD B2C**. Of gebruik het zoekvak om **Azure AD B2C** te zoeken en te selecteren.
 
 1. Selecteer onder **Beleid** **Gebruikersstromen**. Selecteer daarna de gebruikersstroom.
 
-1. Selecteer **Eigenschappen** en zorg dat de gebruikersstroom voorwaardelijke toegang ondersteunt door **Eigenschappen** te selecteren en de instelling genaamd **Voorwaardelijke toegang** te zoeken.
+1. Selecteer **Eigenschappen** en zorg ervoor dat de gebruikers stroom voorwaardelijke toegang ondersteunt door te zoeken naar de instelling met de naam **voorwaardelijke toegang**.
  
    ![MFA en voorwaardelijke toegang configureren in Eigenschappen](media/conditional-access-user-flow/add-conditional-access.png)
 
-1. Selecteer in de sectie **Meervoudige verificatie** de gewenste **MFA-methode** en selecteer vervolgens onder **MFA afdwingen** **Voorwaardelijk (aanbevolen)** .
+1. Selecteer in de sectie **multi-factor Authentication** de gewenste **MFA-methode** en selecteer vervolgens onder **MFA afdwingen** **voorwaardelijk (aanbevolen)**.
  
 1. Schakel in de sectie **Voorwaardelijke toegang** het selectievakje **Beleid voor voorwaardelijke toegang afdwingen** in.
 
 1. Selecteer **Opslaan**.
 
-## <a name="test-the-user-flow"></a>De gebruikersstroom testen
-
-Als u voorwaardelijke toegang in uw gebruikersstroom wilt testen, [maakt u een beleid voor voorwaardelijke toegang](conditional-access-identity-protection-setup.md) en schakelt u voorwaardelijke toegang in uw gebruikersstroom in zoals hierboven wordt beschreven. 
-
-
-### <a name="run-the-user-flow"></a>De gebruikersstroom uitvoeren
-
-1. Selecteer de gebruikersstroom die u hebt gemaakt om de overzichtspagina te openen en selecteer **Gebruikersstroom uitvoeren**. Selecteer *webapp1* onder **Toepassing**. De **antwoord-URL** moet `https://jwt.ms` weergeven.
-
-   ![De pagina Gebruikersstroom uitvoeren in de portal met de knop Gebruikersstroom uitvoeren gemarkeerd](./media/tutorial-create-user-flows/signup-signin-run-now.PNG)
-
-1. Kopieer de URL onder **Eindpunt voor gebruikersstroom uitvoeren**.
-
-1. Als u een riskante aanmelding wilt simuleren, opent u de [Tor-Browser](https://www.torproject.org/download/) en gebruikt u de URL die u in de preview-stap hebt gekopieerd om u aan te melden bij de geregistreerde app.
-
-1. Voer de gevraagde informatie in op de aanmeldingspagina en probeer u aan te melden. Het token wordt geretourneerd aan `https://jwt.ms` en moet worden weergegeven. In het gedecodeerde token van jwt.ms moet u zien dat de aanmelding is geblokkeerd:
-
-   ![Een geblokkeerde aanmelding testen](media/conditional-access-identity-protection-setup/test-blocked-sign-in.png)
 
 ::: zone-end
 
@@ -128,11 +197,59 @@ Als u voorwaardelijke toegang in uw gebruikersstroom wilt testen, [maakt u een b
 
 ## <a name="add-conditional-access-to-your-policy"></a>Voorwaardelijke toegang toevoegen aan uw beleid
 
-In [GitHub](https://github.com/azure-ad-b2c/samples/tree/master/policies/conditional-access) vindt u een voorbeeld van beleid voor voorwaardelijke toegang.
+1. Bekijk het voor beeld van een beleid voor voorwaardelijke toegang op [github](https://github.com/azure-ad-b2c/samples/tree/master/policies/conditional-access).
+1. Vervang in elk bestand de teken reeks door `yourtenant` de naam van uw Azure AD B2C-Tenant. Als de naam van uw B2C-Tenant bijvoorbeeld *contosob2c* is, worden alle exemplaren van `yourtenant.onmicrosoft.com` `contosob2c.onmicrosoft.com` .
+1. Upload de beleids bestanden.
 
-U kunt ook meer te weten komen over het [definiëren van een technisch profiel voor voorwaardelijke toegang in een aangepast beleid](conditional-access-technical-profile.md).
+## <a name="test-your-custom-policy"></a>Uw aangepaste beleid testen
+
+1. Selecteer de `B2C_1A_signup_signin_with_ca` pagina of het `B2C_1A_signup_signin_with_ca_whatif` beleid om het overzicht te openen. Selecteer vervolgens **gebruikers stroom uitvoeren**. Selecteer *webapp1* onder **Toepassing**. De **antwoord-URL** moet `https://jwt.ms` weergeven.
+1. Kopieer de URL onder **Eindpunt voor gebruikersstroom uitvoeren**.
+
+1. Als u een Risk ante aanmelding wilt simuleren, opent u de [Tor-Browser](https://www.torproject.org/download/) en gebruikt u de URL die u in de vorige stap hebt gekopieerd om u aan te melden bij de geregistreerde app.
+
+1. Voer de gevraagde informatie in op de aanmeldingspagina en probeer u aan te melden. Het token wordt geretourneerd aan `https://jwt.ms` en moet worden weergegeven. In het gedecodeerde token van jwt.ms moet u zien dat de aanmelding is geblokkeerd.
 
 ::: zone-end
+
+::: zone pivot="b2c-user-flow"
+
+## <a name="test-your-user-flow"></a>Uw gebruikers stroom testen
+
+1. Selecteer de gebruikers stroom die u hebt gemaakt om de pagina overzicht te openen en selecteer vervolgens **gebruikers stroom uitvoeren**. Selecteer *webapp1* onder **Toepassing**. De **antwoord-URL** moet `https://jwt.ms` weergeven.
+
+1. Kopieer de URL onder **Eindpunt voor gebruikersstroom uitvoeren**.
+
+1. Als u een Risk ante aanmelding wilt simuleren, opent u de [Tor-Browser](https://www.torproject.org/download/) en gebruikt u de URL die u in de vorige stap hebt gekopieerd om u aan te melden bij de geregistreerde app.
+
+1. Voer de gevraagde informatie in op de aanmeldingspagina en probeer u aan te melden. Het token wordt geretourneerd aan `https://jwt.ms` en moet worden weergegeven. In het gedecodeerde token van jwt.ms moet u zien dat de aanmelding is geblokkeerd.
+
+::: zone-end
+
+## <a name="review-conditional-access-outcomes-in-the-audit-report"></a>Bekijk de resultaten voor voorwaardelijke toegang in het controle rapport
+
+Het resultaat van een voorwaardelijke toegangsgebeurtenis bekijken:
+
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+
+2. Selecteer het pictogram **Map + Abonnement** in de werkbalk van de portal en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
+
+3. Onder **Azure-Services** selecteert u **Azure AD B2C**. Of gebruik het zoekvak om **Azure AD B2C** te zoeken en te selecteren.
+
+4. Onder **Activiteiten** selecteert u **Controlelogboeken**.
+
+5. Filter het controlelogboek door **Categorie** in te stellen op **B2C** en **Activiteit-resourcetype** op **IdentityProtection**. Selecteer vervolgens **Toepassen**.
+
+6. Controleer de controle activiteit tot de afgelopen zeven dagen. De volgende typen activiteiten zijn opgenomen:
+
+   - **Beleidsregels voor voorwaardelijke toegang evalueren**: Deze vermelding in het controlelogboek geeft aan dat er een evaluatie van voorwaardelijke toegang is uitgevoerd tijdens een verificatie.
+   - **Gebruiker herstellen**: deze vermelding geeft aan dat aan de subsidie of vereisten van een beleid voor voorwaardelijke toegang is voldaan door de eind gebruiker, en dat deze activiteit is gerapporteerd aan de risico-Engine om het risico van de gebruiker te beperken (verminderen).
+
+7. Selecteer een **Beleid voor voorwaardelijke toegang evalueren**-logboekvermelding in de lijst om de details van **-activiteit te openen: Controlelogboek**-pagina, waarin de audit logboek-id's worden weer gegeven, samen met deze informatie in de sectie **Aanvullende details**:
+
+   - **ConditionalAccessResult**: de toekenning die is vereist voor de evaluatie van het voorwaardelijke beleid.
+   - **AppliedPolicies**: een lijst met alle beleids regels voor voorwaardelijke toegang waarin aan de voor waarden is voldaan en het beleid is ingeschakeld.
+   - **ReportingPolicies**: een lijst met beleids regels voor voorwaardelijke toegang die zijn ingesteld op de modus alleen rapport en waar aan de voor waarden is voldaan.
 
 ## <a name="next-steps"></a>Volgende stappen
 

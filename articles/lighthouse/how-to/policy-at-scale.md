@@ -1,14 +1,14 @@
 ---
 title: Azure Policy implementeren voor gedelegeerde abonnementen op de juiste schaal
 description: Meer informatie over hoe u met Azure Lighthouse een beleids definitie en beleids toewijzing in meerdere tenants kunt implementeren.
-ms.date: 11/09/2020
+ms.date: 03/02/2021
 ms.topic: how-to
-ms.openlocfilehash: 5af938c61ad3e42e36360a15c6011b54fa1e823d
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 48354c3cca7574b1d5acf71865218564591bc23e
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94412065"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102049777"
 ---
 # <a name="deploy-azure-policy-to-delegated-subscriptions-at-scale"></a>Azure Policy implementeren voor gedelegeerde abonnementen op de juiste schaal
 
@@ -51,6 +51,9 @@ foreach ($ManagedSub in $ManagedSubscriptions)
 }
 ```
 
+> [!NOTE]
+> Hoewel u beleid kunt implementeren in meerdere tenants, kunt u op dit moment geen [compatibiliteits details weer geven](../../governance/policy/how-to/determine-non-compliance.md#compliance-details) voor niet-compatibele resources in deze tenants.
+
 ## <a name="validate-the-policy-deployment"></a>De beleids implementatie valideren
 
 Nadat u de Azure Resource Manager sjabloon hebt geïmplementeerd, kunt u controleren of de beleids definitie is toegepast door te proberen een opslag account te maken waarvoor **EnableHttpsTrafficOnly** is ingesteld op **False** in een van uw gedelegeerde abonnementen. U kunt dit opslag account niet maken vanwege de beleids toewijzing.  
@@ -90,9 +93,6 @@ foreach ($ManagedSub in $ManagedSubscriptions)
     }
 }
 ```
-
-> [!NOTE]
-> Hoewel u beleid kunt implementeren in meerdere tenants, kunt u op dit moment geen [compatibiliteits details weer geven](../../governance/policy/how-to/determine-non-compliance.md#compliance-details) voor niet-compatibele resources in deze tenants.
 
 ## <a name="next-steps"></a>Volgende stappen
 

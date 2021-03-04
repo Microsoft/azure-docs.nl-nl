@@ -8,12 +8,12 @@ ms.date: 4/24/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: devx-track-js
-ms.openlocfilehash: e0c0d18dbb3596733d02430554fd40ec16180c64
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: e7239bfdca1dc464048c0db08488029b0868deb5
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99980657"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102049794"
 ---
 # <a name="create-custom-sdks-for-azure-digital-twins-using-autorest"></a>Aangepaste Sdk's voor Azure Digital Apparaatdubbels maken met auto rest
 
@@ -44,10 +44,10 @@ Voer de volgende stappen uit om auto rest te gebruiken voor het Swagger-bestand 
 3. Voer auto rest uit met de volgende opdracht. Vervang de `<language>` tijdelijke aanduiding door de taal van uw keuze: `python` ,, `java` , enzovoort `go` . (U vindt de volledige lijst met opties in het [Leesmij-bestand](https://github.com/Azure/autorest)voor auto rest.)
 
 ```cmd/sh
-autorest --input-file=digitaltwins.json --<language> --output-folder=ADTApi --add-credentials --azure-arm --namespace=ADTApi
+autorest --input-file=digitaltwins.json --<language> --output-folder=DigitalTwinsApi --add-credentials --azure-arm --namespace=DigitalTwinsApi
 ```
 
-Als gevolg hiervan ziet u een nieuwe map met de naam *ADTApi* in uw werkmap. De gegenereerde SDK-bestanden hebben de naam ruimte *ADTApi*. U kunt die naam ruimte blijven gebruiken via de rest van de voor beelden van het gebruik in dit artikel.
+Als gevolg hiervan ziet u een nieuwe map met de naam *DigitalTwinsApi* in uw werkmap. De gegenereerde SDK-bestanden hebben de naam ruimte *DigitalTwinsApi*. U kunt die naam ruimte blijven gebruiken via de rest van de voor beelden van het gebruik in dit artikel.
 
 Auto rest ondersteunt een breed scala aan taal code generators.
 
@@ -60,8 +60,8 @@ In deze sectie vindt u instructies voor het bouwen van de SDK als een klassen bi
 Dit zijn de stappen:
 
 1. Een nieuwe Visual Studio-oplossing maken voor een klassen bibliotheek
-2. *ADTApi* gebruiken als de project naam
-3. Klik in Solution Explorer met de rechter muisknop op het *ADTApi* -project van de gegenereerde oplossing en kies *> bestaand item toevoegen...*
+2. *DigitalTwinsApi* gebruiken als de project naam
+3. Klik in Solution Explorer met de rechter muisknop op het *DigitalTwinsApi* -project van de gegenereerde oplossing en kies *> bestaand item toevoegen...*
 4. Zoek de map waar u de SDK hebt gegenereerd en selecteer de bestanden op het hoofd niveau
 5. Klik op OK
 6. Voeg een map toe aan het project (Klik met de rechter muisknop op het project in Solution Explorer en kies *> nieuwe map toevoegen*)

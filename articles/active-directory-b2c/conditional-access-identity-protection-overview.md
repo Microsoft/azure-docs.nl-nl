@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: overview
-ms.date: 09/01/2020
+ms.date: 03/03/2021
 ms.author: mimart
 author: msmimart
 manager: celested
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b17706f908613336714bb7daf08fdf3bfd5eaf64
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
-ms.translationtype: HT
+ms.openlocfilehash: e2ec8af824d573493d1da743923956e587ded62e
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928389"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102033823"
 ---
 # <a name="identity-protection-and-conditional-access-for-azure-ad-b2c"></a>Identiteitsbeveiliging en voorwaardelijke toegang instellen in Azure AD B2C
 
@@ -49,21 +49,21 @@ Identiteitsbeveiliging en voorwaardelijke toegang in Azure AD B2C werken in het 
 
 - In Azure AD B2C-tenants zijn de risicodetecties voor identiteitsbeveiliging alleen beschikbaar voor lokale B2C-accounts en niet voor sociale identiteiten zoals Google of Facebook.
 
-- In Azure AD B2C-tenants is een subset van de risicodetecties voor identiteitsbeveiliging beschikbaar. Zie [Identiteitsbeveiliging instellen](conditional-access-identity-protection-setup.md#set-up-identity-protection).
+- In Azure AD B2C-tenants is een subset van de risicodetecties voor identiteitsbeveiliging beschikbaar. Zie [Risico's analyseren met identiteits beveiliging](identity-protection-investigate-risk.md)en [voorwaardelijke toegang toevoegen aan gebruikers stromen](conditional-access-user-flow.md).
 
 - De functie voor apparaatcompatibiliteit van voorwaardelijke toegang is niet beschikbaar in Azure AD B2C-tenants.
 
 
 ## <a name="integrate-conditional-access-with-user-flows-and-custom-policies"></a>Voorwaardelijke toegang integreren met gebruikersstromen en aangepaste beleidsregels
 
-In Azure AD B2C kunt u voorwaarden voor voorwaardelijke toegang activeren vanuit ingebouwde gebruikersstromen. U kunt ook voorwaardelijke toegang in aangepaste beleidsregels opnemen. Net als bij andere aspecten van de B2C-gebruikersstroom kunnen berichten over de ervaring van de eindgebruiker worden aangepast op basis van de stem, het merk en de mitigatie-alternatieven van uw organisatie. Zie [Een technisch profiel voor voorwaardelijke toegang definiëren](conditional-access-technical-profile.md).
+In Azure AD B2C kunt u voorwaarden voor voorwaardelijke toegang activeren vanuit ingebouwde gebruikersstromen. U kunt ook voorwaardelijke toegang in aangepaste beleidsregels opnemen. Net als bij andere aspecten van de B2C-gebruikersstroom kunnen berichten over de ervaring van de eindgebruiker worden aangepast op basis van de stem, het merk en de mitigatie-alternatieven van uw organisatie. Zie [voorwaardelijke toegang toevoegen aan gebruikers stromen](conditional-access-user-flow.md).
 
 ## <a name="microsoft-graph-api"></a>Microsoft Graph API
 
-U kunt beleid voor voorwaardelijke toegang ook beheren in Azure AD B2C met Microsoft Graph API. Zie voor meer informatie de [Documentatie voor voorwaardelijke toegang](../active-directory/conditional-access/overview.md) en de [Microsoft Graph-referentie](/graph/api/resources/conditionalaccesspolicy?view=graph-rest-beta).
+U kunt beleid voor voorwaardelijke toegang ook beheren in Azure AD B2C met Microsoft Graph API. Zie de [documentatie voor voorwaardelijke toegang](../active-directory/conditional-access/overview.md) en de [Microsoft Graph bewerkingen](microsoft-graph-operations.md#conditional-access)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Identiteitsbeveiliging en voorwaardelijke toegang instellen in Azure AD B2C](conditional-access-identity-protection-setup.md)
+- [Voorwaardelijke toegang toevoegen aan gebruikers stromen](conditional-access-user-flow.md)
 - [Meer informatie over Identiteitsbeveiliging](../active-directory/identity-protection/overview-identity-protection.md)
 - [Meer informatie over voorwaardelijke toegang](../active-directory/conditional-access/overview.md)

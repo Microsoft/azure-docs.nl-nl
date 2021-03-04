@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 2/12/2021
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: b53cac6e732fb568ba799534d9ad9168fd65eab1
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 3393856b25040cff603ea2ef51e8adbcba78dc26
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100561391"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102034690"
 ---
 # <a name="what-is-an-ontology"></a>Wat is een Ontology? 
 
@@ -40,7 +40,7 @@ Omdat modellen in azure Digital Apparaatdubbels worden weer gegeven in de [Digit
 
 Er zijn drie mogelijke strategieën voor het integreren van industrie-standaard Ontologies met DTDL. U kunt de naam kiezen die voor u het beste werkt, afhankelijk van uw behoeften:
 
-| Strategie | Description | Resources |
+| Strategie | Beschrijving | Resources |
 | --- | --- | --- |
 | **Adopteren** | U kunt uw oplossing starten met een open-source DTDL-Ontology dat is gebouwd op veel aangenomen industrie normen. U kunt deze model sets out-of-the-box gebruiken of ze uitbreiden met uw eigen toevoegingen voor een aangepaste oplossing. | [*Concepten: &nbsp; Ontologies van de &nbsp; industrie &nbsp; standaard aannemen*](concepts-ontologies-adopt.md)<br><br>[*Concepten: &nbsp; uitbrei ding van &nbsp; Ontologies*](concepts-ontologies-extend.md) |
 | **Noten** | Als u al bestaande modellen in een andere standaard indeling hebt weer gegeven, kunt u deze converteren naar DTDL om ze te gebruiken met Azure Digital Apparaatdubbels. | [*Concepten: &nbsp; &nbsp; Ontologies converteren*](concepts-ontologies-convert.md)<br><br>[*Concepten: &nbsp; uitbrei ding van &nbsp; Ontologies*](concepts-ontologies-extend.md) |
@@ -58,7 +58,7 @@ Ongeacht de strategie die u kiest voor het integreren van een Ontology in azure 
 
 Daarna kunt u uw modellen gebruiken in uw Azure Digital Apparaatdubbels-exemplaar. 
 
-U kunt ze visualiseren met voor beelden zoals [Azure Digital apparaatdubbels (ADT) Explorer](/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/) of [ADT model visualer](https://github.com/Azure/opendigitaltwins-building-tools/tree/master/AdtModelVisualizer), of door te gaan met het gebruik ervan om [digitale apparaatdubbels](concepts-twins-graph.md)te maken.
+U kunt ze visualiseren met voor beelden zoals [Azure Digital Apparaatdubbels Explorer](/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/) of [Azure Digital apparaatdubbels model visualer](https://github.com/Azure/opendigitaltwins-building-tools/tree/master/AdtModelVisualizer), of door over te stappen om [digitale apparaatdubbels](concepts-twins-graph.md)te maken.
 
 ## <a name="next-steps"></a>Volgende stappen
 

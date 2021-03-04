@@ -7,12 +7,12 @@ ms.author: crtreasu
 ms.date: 02/02/2021
 ms.topic: quickstart
 ms.service: azure-object-anchors
-ms.openlocfilehash: 7e71719d83426a3444435ed78d0d63a2599a9157
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 8a02bb7c70df4fed55c354638fe6662b85e6c164
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101748551"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102049622"
 ---
 # <a name="quickstart-create-a-hololens-app-with-azure-object-anchors-in-cwinrt-and-directx"></a>Snelstartgids: een HoloLens-app maken met Azure object-ankers in C++/WinRT en DirectX
 
@@ -23,7 +23,6 @@ U leert het volgende:
 > [!div class="checklist"]
 > * Een HoloLens-toepassing maken en side loads
 > * Een object detecteren en het model visualiseren
-> * Diagnostische gegevens over runtime vastleggen
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -64,7 +63,7 @@ Als u de app wilt starten en fouten wilt opsporen, selecteert u **fout opsporing
 
 ## <a name="ingest-object-model-and-detect-its-instance"></a>Object model opnemen en het exemplaar detecteren
 
-U moet een object model maken om de voor beeld-app uit te voeren. Stel dat u al een CAD-of gescand 3D-mesh model hebt van een object in uw Space. Raadpleeg [Quick Start: een 3D-model](./get-started-model-ingestion.md) opnemen over het maken van een model.
+U moet een object model maken om de voor beeld-app uit te voeren. Stel dat u al een CAD-of gescand 3D-mesh model hebt van een object in uw Space. Raadpleeg [Quick Start: een 3D-model](./get-started-model-conversion.md) opnemen over het maken van een model.
 
 Down load die model, **stoel. OE** in ons geval, naar uw computer. Selecteer vervolgens in de portal voor het HoloLens **systeem > bestanden verkenner > LocalAppData > AoaSampleApp > LocalState** en selecteer **Bladeren...**. Selecteer vervolgens uw model bestand, **Voorzitter. OE** , bijvoorbeeld en selecteer **uploaden**. Vervolgens ziet u het model bestand in de lokale cache.
 
@@ -86,7 +85,7 @@ In de app wordt een 3D-model nauw keurig uitgelijnd op het fysieke equivalent. E
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Quick Start: een 3D-model opnemen](./get-started-model-ingestion.md)
+> [Quick Start: een 3D-model opnemen](./get-started-model-conversion.md)
 
 > [!div class="nextstepaction"]
 > [Concepten: overzicht van de SDK](../concepts/sdk-overview.md)

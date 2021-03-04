@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 9abf389eb7f8862440f860c53a0dbd8b10315c67
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: d33634c08b85ad633fdad3f709b2b2182571d7de
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100558151"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102034758"
 ---
 # <a name="understand-twin-models-in-azure-digital-twins"></a>Meer informatie over dubbel-modellen in Azure Digital Twins
 
@@ -65,7 +65,7 @@ Het verschil tussen eigenschappen en telemetrie voor Azure Digital Apparaatdubbe
 
 Als gevolg hiervan zult u bij het ontwerpen van een model in azure Digital Apparaatdubbels waarschijnlijk **Eigenschappen** in de meeste gevallen gebruiken om uw apparaatdubbels te model leren. Zo kunt u de back-upopslag en de mogelijkheid om gegevens velden te lezen en er query's op uitvoeren.
 
-Telemetrie en eigenschappen werken vaak samen om het binnenbrengen van gegevens van apparaten te verwerken. Als alle inkomend verkeer naar Azure Digital Apparaatdubbels is via [api's](how-to-use-apis-sdks.md), gebruikt u meestal uw inkomende functie om de telemetrie-of eigenschaps gebeurtenissen van apparaten te lezen en een eigenschap in ADT in te stellen als antwoord. 
+Telemetrie en eigenschappen werken vaak samen om het binnenbrengen van gegevens van apparaten te verwerken. Als alle inkomend verkeer naar Azure Digital Apparaatdubbels is via [api's](how-to-use-apis-sdks.md), gebruikt u meestal uw inkomende functie om de telemetrie-of eigenschaps gebeurtenissen van apparaten te lezen en een eigenschap in te stellen in azure Digital apparaatdubbels als antwoord. 
 
 U kunt ook een telemetrie-gebeurtenis publiceren vanuit de Azure Digital Apparaatdubbels-API. Net als bij andere telemetrie is dit een gebeurtenis met een korte levens duur waarvoor een listener moet worden afgehandeld.
 
@@ -92,7 +92,7 @@ Houd er rekening mee dat plan eten ook kunnen communiceren met **manen** die hun
 
 De velden van het model zijn:
 
-| Veld | Description |
+| Veld | Beschrijving |
 | --- | --- |
 | `@id` | Een id voor het model. Moet de indeling hebben `dtmi:<domain>:<unique model identifier>;<model version number>` . |
 | `@type` | Hiermee wordt het type informatie aangegeven dat wordt beschreven. Voor een interface is het type *Interface*. |
@@ -154,7 +154,7 @@ Als u echter veel modellen wilt uploaden, of als ze veel onderlinge afhankelijkh
 
 _**Voor het visualiseren van modellen**_
 
-Zodra u modellen hebt geüpload naar uw Azure Digital Apparaatdubbels-exemplaar, kunt u de modellen weer geven in uw Azure Digital Apparaatdubbels-exemplaar, inclusief eventuele overname-en model relaties, met behulp van de [**ADT model visualer**](https://github.com/Azure/opendigitaltwins-building-tools/tree/master/AdtModelVisualizer). Dit voor beeld bevindt zich momenteel in een concept status. We raden aan de Digital apparaatdubbels Development Community uit te breiden en bijdragen te leveren aan het voor beeld. 
+Zodra u modellen hebt geüpload naar uw Azure Digital Apparaatdubbels-exemplaar, kunt u de modellen in uw Azure Digital Apparaatdubbels-instantie bekijken, inclusief eventuele overname-en model relaties, met behulp van de [**Visual Apparaatdubbels model-visualisatie van Azure**](https://github.com/Azure/opendigitaltwins-building-tools/tree/master/AdtModelVisualizer). Dit voor beeld bevindt zich momenteel in een concept status. We raden aan de Digital apparaatdubbels Development Community uit te breiden en bijdragen te leveren aan het voor beeld. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

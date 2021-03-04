@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: how-to
 ms.date: 02/17/2021
 ms.custom: template-how-to
-ms.openlocfilehash: b03cd8bc71f87e3ce7984a55d330bc116614f928
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 07abbc5f5e85c75b73774d11b6b81dd2085735b7
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662491"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102095320"
 ---
 # <a name="view-your-azure-percept-dks-model-inference-telemetry"></a>De telemetrie van het model van Azure percept DK weer geven
 
@@ -35,7 +35,7 @@ Volg deze hand leiding om het Vision model van uw Azure percept DK-telemetrie in
 
 1. Verbind uw IoT Hub met Azure IoT Explorer:
 
-    1. Ga naar de [Azure Portal](https://portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_Iothub=aduprod&microsoft_azure_marketplace_ItemHideKey=Microsoft_Azure_ADUHidden#home).
+    1. Ga naar de [Azure Portal](https://portal.azure.com).
 
     1. Selecteer **Alle resources**.
 
@@ -70,5 +70,4 @@ Volg deze hand leiding om het Vision model van uw Azure percept DK-telemetrie in
     1. Klik op **starten** om telemetriegegevens van het apparaat weer te geven.
 
 ## <a name="next-steps"></a>Volgende stappen
-
-Meer informatie over het weer geven van uw [Azure PERCEPT DK-video stroom](how-to-view-video-stream.md).
+Meer informatie over het weer geven van uw [Azure PERCEPT DK-video stroom](./how-to-view-video-stream.md).

@@ -3,12 +3,12 @@ title: Wat is er nieuw in Azure Backup
 description: Meer informatie over nieuwe functies in Azure Backup.
 ms.topic: conceptual
 ms.date: 11/11/2020
-ms.openlocfilehash: dd9546002e63072ce9631f5b8e7ac09ab0f5352b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 48c8c189d956c4003d24511a54975fe86a982832
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101728175"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102095711"
 ---
 # <a name="whats-new-in-azure-backup"></a>Wat is er nieuw in Azure Backup
 
@@ -18,6 +18,9 @@ Meer informatie over de nieuwe releases vindt u in blad wijzers op deze pagina o
 
 ## <a name="updates-summary"></a>Samen vatting van updates
 
+- 2021 maart
+  - [Back-upcentrum is nu algemeen verkrijgbaar](#backup-center-is-now-generally-available)
+  - [Ondersteuning voor de archief tier voor Azure Backup (in preview-versie)](#archive-tier-support-for-azure-backup-in-preview)
 - Februari 2021
   - [Back-ups voor Azure-blobs (in preview-versie)](#backup-for-azure-blobs-in-preview)
 - Januari 2021
@@ -36,6 +39,18 @@ Meer informatie over de nieuwe releases vindt u in blad wijzers op deze pagina o
   - [Back-SAP HANA in RHEL Azure Virtual Machines (in preview-versie)](#backup-sap-hana-in-rhel-azure-virtual-machines-in-preview)
   - [Zone redundant Storage (ZRS) voor back-upgegevens (in preview-versie)](#zone-redundant-storage-zrs-for-backup-data-in-preview)
   - [Zacht verwijderen voor SQL Server en SAP HANA workloads in azure-Vm's](#soft-delete-for-sql-server-and-sap-hana-workloads)
+
+## <a name="backup-center-is-now-generally-available"></a>Back-upcentrum is nu algemeen verkrijgbaar
+
+Backup Center vereenvoudigt het beheer van gegevens beveiliging op schaal door u in staat te stellen om back-upbeheer te detecteren, te beheren, te controleren, te bewaken en te optimaliseren vanuit één centrale console.
+
+Zie [overzicht van Back-upcentrum](backup-center-overview.md)voor meer informatie.
+
+## <a name="archive-tier-support-for-azure-backup-in-preview"></a>Ondersteuning voor de archief tier voor Azure Backup (in preview-versie)
+
+Azure Backup kunt u nu de kosten van back-ups voor lange termijn retentie verminderen met de beschik baarheid van de archief laag voor virtuele machines van Azure en SQL Server in azure virtual machines.
+
+Zie ondersteuning voor de [Archief laag (preview)](archive-tier-support.md)voor meer informatie.
 
 ## <a name="backup-for-azure-blobs-in-preview"></a>Back-ups voor Azure-blobs (in preview-versie)
 

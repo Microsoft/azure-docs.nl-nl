@@ -1,10 +1,23 @@
 ---
-Titel: lokalisatie-Azure Active Directory B2C beschrijving: Geef het lokalisatie-element van een aangepast beleid in Azure Active Directory B2C op.
-Services: Active-Directory-B2C Auteur: msmimart Manager: celestedg
-
-MS. service: Active-Directory MS. workload: id MS. topic: Naslag informatie MS. date: 10/15/2020 MS. Author: mimart MS. subservice: B2C MS. Custom: "B2C-support"
+title: Lokalisatie-Azure Active Directory B2C
+description: Geef het lokalisatie-element van een aangepast beleid in Azure Active Directory B2C op.
+services: active-directory-b2c
+author: msmimart
+manager: celestedg
+ms.service: active-directory
+ms.workload: identity
+ms.topic: reference
+ms.date: 10/15/2020
+ms.author: mimart
+ms.subservice: B2C
+ms.custom: b2c-support
+ms.openlocfilehash: c12a171faaf069cc81aa5f467642dba6616a866f
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102033721"
 ---
-
 # <a name="localization-element"></a>Lokalisatie-element
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]

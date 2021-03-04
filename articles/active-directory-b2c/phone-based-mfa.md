@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 02/01/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 3ca73e020009817001f309ddf29c2984a8541026
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: cc9e0be90c138ba33e1b4dfe11ea6f9c8b7da297
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99527348"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102033551"
 ---
 # <a name="securing-phone-based-multi-factor-authentication-mfa"></a>Multi-factor Authentication (MFA) op basis van de telefoon beveiligen
 
@@ -89,7 +89,7 @@ Voer de volgende acties uit om frauduleuze aanmeld pogingen te helpen voor komen
 - Gebruik de **Aanbevolen** versies van gebruikers stromen om het volgende te doen:
      
    - [De eenmalige e-mail wachtwoord functie (OTP)](phone-authentication-user-flows.md) voor MFA inschakelen (is van toepassing op zowel registratie-als aanmeldings stromen).
-   - [Een beleid voor voorwaardelijke toegang configureren](conditional-access-identity-protection-setup.md) om aanmeldingen te blok keren op basis van locatie (alleen van toepassing op aanmeldingen, geen stromen voor aanmelden).
+   - [Een beleid voor voorwaardelijke toegang configureren](conditional-access-user-flow.md) om aanmeldingen te blok keren op basis van locatie (alleen van toepassing op aanmeldingen, geen stromen voor aanmelden).
    - API-connectors gebruiken om te [integreren met een anti-bot-oplossing zoals reCAPTCHA](https://github.com/Azure-Samples/active-directory-b2c-node-sign-up-user-flow-captcha) (van toepassing op registratie stromen).
 
 - Verwijder land codes die niet relevant zijn voor uw organisatie in de vervolg keuzelijst waar de gebruiker hun telefoon nummer verifieert (deze wijziging is van toepassing op toekomstige aanmeldingen):

@@ -7,12 +7,12 @@ ms.author: aymarqui
 ms.date: 02/12/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 8828b2dc48a8865e43a176757dc973a5cf85b784
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a39b91304c4123b216a0b508dcea0547cae5ab43
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101702974"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102041498"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-signalr-service"></a>Azure Digital Apparaatdubbels integreren met de Azure signalerings service
 
@@ -51,7 +51,7 @@ Down load eerst de vereiste voor beeld-apps. U hebt het volgende nodig:
 
     Hiermee wordt een kopie van de voor beeld-opslag plaats gedownload naar uw computer, zoals **digital-twins-samples-master.zip**. Pak de map uit.
 * Voor beeld van een web-app voor de [**Signa lering-integratie**](/samples/azure-samples/digitaltwins-signalr-webapp-sample/digital-twins-samples/): dit is een voor beeld van een reactie op een web-app die gebruikmaakt van Azure Digital apparaatdubbels-telemetriegegevens van een Azure signalerings service.
-    -  Ga naar de voorbeeld koppeling en klik op de knop *zip downloaden* om een kopie van het voor beeld naar uw computer te downloaden, zoals _**Azure_Digital_Twins_SignalR_integration_web_app_sample.zip**_. Pak de map uit.
+    -  Ga naar de voorbeeld koppeling en gebruik hetzelfde download proces om een kopie van het voor beeld te downloaden naar uw computer, zoals _**digitaltwins-signalr-webapp-sample-main.zip**_. Pak de map uit.
 
 [!INCLUDE [Create instance](../azure-signalr/includes/signalr-quickstart-create-instance.md)]
 
@@ -139,7 +139,7 @@ Vervolgens configureert u de voor beeld-Web-App van de client. Begin met het ver
 
     :::image type="content" source="media/how-to-integrate-azure-signalr/get-function-url.png" alt-text="Azure Portal weer gave van de functie Negotiate. De knop functie-URL ophalen is gemarkeerd en het gedeelte van de URL vanaf het begin tot en met '/API '":::
 
-1. Open met behulp van Visual Studio of een wille keurige code-editor de map ungezipted _**Azure_Digital_Twins_SignalR_integration_web_app_sample**_ die u hebt gedownload in het gedeelte [*de voorbeeld toepassingen downloaden*](#download-the-sample-applications) .
+1. Open Visual Studio of een wille keurige code-editor van uw keuze door de map ungezipted _**digitaltwins-signalering-webapp-sample-main**_ te openen die u hebt gedownload in het gedeelte [*de voorbeeld toepassingen downloaden*](#download-the-sample-applications) .
 
 1. Open het bestand *src/App.js* en vervang de functie-URL in `HubConnectionBuilder` door de http-eind punt-URL van de **onderhandelings** functie die u in de vorige stap hebt opgeslagen:
 
@@ -148,7 +148,7 @@ Vervolgens configureert u de voor beeld-Web-App van de client. Begin met het ver
             .withUrl('<Function URL>')
             .build();
     ```
-1. Navigeer in de *ontwikkelaars opdracht prompt* van Visual Studio of een opdracht venster op de computer naar de map *Azure_Digital_Twins_SignalR_integration_web_app_sample \src* . Voer de volgende opdracht uit om de afhankelijke knooppunt pakketten te installeren:
+1. Navigeer in de *ontwikkelaars opdracht prompt* van Visual Studio of een opdracht venster op de computer naar de map *digitaltwins-signalr-webapp-sample-main\src* . Voer de volgende opdracht uit om de afhankelijke knooppunt pakketten te installeren:
 
     ```cmd
     npm install
@@ -175,7 +175,7 @@ U hoeft niets anders in deze console te doen, maar blijft actief terwijl u de vo
 
 ### <a name="see-the-results"></a>De resultaten weergeven
 
-Als u de resultaten in actie wilt zien, start u de voor beeld-web-app voor de **Signa lering-integratie**. U kunt dit doen vanuit elk console venster op de locatie van de *Azure_Digital_Twins_SignalR_integration_web_app_sample \src* door deze opdracht uit te voeren:
+Als u de resultaten in actie wilt zien, start u de voor beeld-web-app voor de **Signa lering-integratie**. U kunt dit doen vanuit elk console venster op de locatie van de *digitaltwins-signalr-webapp-sample-main\src* door deze opdracht uit te voeren:
 
 ```cmd
 npm start
@@ -203,7 +203,7 @@ Met de Azure Cloud Shell of lokale Azure CLI kunt u alle Azure-resources in een 
 az group delete --name <your-resource-group>
 ```
 
-Verwijder tot slot de voorbeeld mappen van het project dat u hebt gedownload naar uw lokale machine (*digital-twins-samples-master.zip* en *Azure_Digital_Twins_SignalR_integration_web_app_sample.zip*).
+Verwijder tot slot de voorbeeld mappen van het project die u hebt gedownload naar uw lokale machine (*digital-twins-samples-master.zip*, *digitaltwins-signalr-webapp-sample-main.zip* en de ongecomprimeerde tegen Hangers).
 
 ## <a name="next-steps"></a>Volgende stappen
 

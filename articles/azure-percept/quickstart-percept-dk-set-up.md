@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: quickstart
 ms.date: 02/15/2021
 ms.custom: template-quickstart
-ms.openlocfilehash: 3540204d66bb589c567514f92a9a8acb2159e343
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 77ccf09903b6cff83b52d60d43d0c52533c9c1ad
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101665420"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102041685"
 ---
 # <a name="set-up-your-azure-percept-dk-and-deploy-your-first-ai-model"></a>Stel uw Azure percept DK in en implementeer uw eerste AI-model
 
@@ -173,7 +173,7 @@ Als u een nieuw abonnement wilt maken, voert u [de volgende stappen uit](https:/
 
     :::image type="content" source="./media/quickstart-percept-dk-setup/main-19-0-warning.png" alt-text="Waarschuwing voor het instellen van de verbinding."::: 
 
-1. Ga door naar Azure Portal. Ga terug naar het venster Setup-ervaring en klik op de knop **door gaan naar de Azure Portal** om uw aangepaste AI-modellen in azure percept Studio te maken.
+1. Ga door naar het Azure Portal-keer terug naar het venster Setup-ervaring en klik op de knop **door gaan naar de Azure Portal** om uw aangepaste AI-modellen in azure percept Studio te maken.
 
     > [!NOTE]
     > Controleer of de hostcomputer niet meer is verbonden met het toegangs punt van de dev kit in uw WiFi-instellingen en of de computer nu opnieuw verbinding maakt met uw lokale WiFi.
@@ -205,8 +205,6 @@ Als u een nieuw abonnement wilt maken, voert u [de volgende stappen uit](https:/
     
 1. Implementeer een nieuw vooraf ontworpen voor beeld op het aangesloten apparaat. Selecteer een voor beeld in de bibliotheek en klik op implementeren op apparaat.
 
-    :::image type="content" source="./media/quickstart-percept-dk-setup/portal-05-1-select-prebuilt.png" alt-text="Selecteer een vooraf gemaakte.":::
-    
     :::image type="content" source="./media/quickstart-percept-dk-setup/portal-05-2-select-journey.png" alt-text="Zie object detectie in actie.":::
 
 ## <a name="next-steps"></a>Volgende stappen

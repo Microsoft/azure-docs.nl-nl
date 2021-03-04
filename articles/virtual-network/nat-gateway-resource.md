@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/28/2021
 ms.author: allensu
-ms.openlocfilehash: 5c1f52fda2edfa0a03caa72fcd7fa8dc02d0a607
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 5c70c575464d82f714022291406418cdd1ca0f8d
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954661"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102094963"
 ---
 # <a name="designing-virtual-networks-with-nat-gateway-resources"></a>Virtuele netwerken ontwerpen met NAT-gatewayresources
 
@@ -224,7 +224,7 @@ Hoewel het scenario lijkt te werken, zijn het statusmodel en de foutmodus niet g
 >De zone-eigenschap van een NAT-gatewayresource is niet veranderlijk.  Implementeer de NAT-gatewayresource opnieuw met de beoogde regionale of zonale voorkeur.
 
 >[!NOTE] 
->IP-adressen op zichzelf zijn niet zone-redundant als er geen zone is opgegeven.  De frontend van een [Standard Load Balancer is zone-redundant](../load-balancer/load-balancer-standard-availability-zones.md#frontend) als er geen IP-adres in een specifieke zone wordt gemaakt.  Dit is niet van toepassing op NAT.  Alleen regionale of zonale isolatie wordt ondersteund.
+>IP-adressen op zichzelf zijn niet zone-redundant als er geen zone is opgegeven.  De frontend van een [Standard Load Balancer is zone-redundant](../load-balancer/load-balancer-standard-availability-zones.md) als er geen IP-adres in een specifieke zone wordt gemaakt.  Dit is niet van toepassing op NAT.  Alleen regionale of zonale isolatie wordt ondersteund.
 
 ## <a name="performance"></a>Prestaties
 
@@ -350,20 +350,3 @@ We willen graag weten hoe we de service kunnen verbeteren. Mist u een mogelijkhe
 * Meer informatie over [Virtual Network NAT](nat-overview.md).
 * Meer informatie over [metrische gegevens en waarschuwingen voor NAT-gatewayresources](nat-metrics.md).
 * Meer informatie over [het oplossen van problemen met NAT-gatewayresources](troubleshoot-nat.md).
-* Zelfstudie voor het valideren van de NAT Gateway
-  - [Azure-CLI](tutorial-create-validate-nat-gateway-cli.md)
-  - [PowerShell](tutorial-create-validate-nat-gateway-powershell.md)
-  - [Portal](tutorial-create-validate-nat-gateway-portal.md)
-* Quickstart voor het implementeren van een NAT-gatewayresource
-  - [Azure-CLI](./quickstart-create-nat-gateway-cli.md)
-  - [PowerShell](./quickstart-create-nat-gateway-powershell.md)
-  - [Portal](./quickstart-create-nat-gateway-portal.md)
-  - [Sjabloon](./quickstart-create-nat-gateway-template.md)
-* Meer informatie over de NAT-gatewayresource-API
-  - [REST API](/rest/api/virtualnetwork/natgateways)
-  - [Azure-CLI](/cli/azure/network/nat/gateway)
-  - [PowerShell](/powershell/module/az.network/new-aznatgateway)
-* Meer informatie over [beschikbaarheidszones](../availability-zones/az-overview.md).
-* Meer informatie over [load balancer van het type Standard](../load-balancer/load-balancer-overview.md).
-* Meer informatie over [beschikbaarheidszones en load balancers van het type Standard](../load-balancer/load-balancer-standard-availability-zones.md).
-* [Vertel ons in UserVoice wat we verder kunnen ontwikkelen voor Virtual Network NAT](https://aka.ms/natuservoice).

@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 07/08/2020
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: c091241a4928b3f498be7944559aa5b91c6fecf0
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 8d10562c1499b9e6e8f287029173e1728abb75a0
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101705055"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102034095"
 ---
 # <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-spring-cloud-app"></a>Zelfstudie: Een beheerde identiteit gebruiken om Key Vault te koppelen met een Azure Spring Cloud-app
 
@@ -65,7 +65,7 @@ az spring-cloud create -n "myspringcloud" -g "myResourceGroup"
 In het volgende voorbeeld wordt een app met de naam `springapp` gemaakt met een door het systeem toegewezen beheerde identiteit, zoals is gevraagd met de parameter `--assign-identity`.
 
 ```azurecli
-az spring-cloud app create -n "springapp" -s "myspringcloud" -g "myResourceGroup" --is-public true --assign-identity
+az spring-cloud app create -n "springapp" -s "myspringcloud" -g "myResourceGroup" --assign-endpoint true --assign-identity
 export SERVICE_IDENTITY=$(az spring-cloud app show --name "springapp" -s "myspringcloud" -g "myResourceGroup" | jq -r '.identity.principalId')
 ```
 

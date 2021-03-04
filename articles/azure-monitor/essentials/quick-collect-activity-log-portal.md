@@ -1,17 +1,16 @@
 ---
 title: Azure-activiteitenlogboek verzenden naar Log Analytics-werkruimte met behulp van een Azure-portal
 description: Gebruik de Azure-portal om een Log Analytics-werkruimte te maken en een diagnostische instelling om het activiteitenlogboek naar Azure Monitor-logboeken te verzenden.
-ms.subservice: logs
 ms.topic: quickstart
 author: bwren
 ms.author: bwren
 ms.date: 06/25/2020
-ms.openlocfilehash: 1316512badd69b545e39a47ea5da3ca6a0902482
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: fec1f4f3ae13f6c9ed5fdd7ffbcd143e5c5e5f52
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101734278"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102033245"
 ---
 # <a name="send-azure-activity-log-to-log-analytics-workspace-using-azure-portal"></a>Azure-activiteitenlogboek verzenden naar Log Analytics-werkruimte met behulp van een Azure-portal
 Het activiteitenlogboek is een platformlogboek in Azure dat inzicht biedt in gebeurtenissen op abonnementsniveau. Dit geldt ook voor gegevens zoals wanneer een resource wordt gewijzigd of wanneer een virtuele machine wordt gestart. U kunt het activiteitenlogboek weergeven in de Azure-portal, of items ophalen met PowerShell en CLI. Deze Quick Start laat zien hoe u de Azure-portal kunt gebruiken voor het maken van een Log Analytics-werkruimte en een diagnostische instelling om het activiteitenlogboek te verzenden naar Azure Monitor-logboeken waar u het kunt analyseren met behulp van [logboekquery's](../logs/log-query-overview.md) en om andere functies, zoals [logboekwaarschuwingen](../alerts/alerts-log-query.md) en [werkmappen](../visualize/workbooks-overview.md), in te schakelen. 

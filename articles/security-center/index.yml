@@ -11,12 +11,12 @@ metadata:
   author: memildin
   ms.author: memildin
   ms.date: 08/17/2020
-  ms.openlocfilehash: 0ee97ba1d0190cfb3331372329677b8ffe740439
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-  ms.translationtype: HT
+  ms.openlocfilehash: 3049f7598990a97e6647011012bae0ddd2651944
+  ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "90883848"
+  ms.lasthandoff: 03/04/2021
+  ms.locfileid: "102095524"
 landingContent:
 - title: Over Security Center
   linkLists:
@@ -24,39 +24,39 @@ landingContent:
     links:
     - text: Wat zijn de belangrijkste mogelijkheden van Security Center?
       url: security-center-introduction.md
+    - text: Wat zijn de belangrijkste mogelijkheden van Azure Defender?
+      url: azure-defender.md
     - text: Welke versies van Windows Server en Linux worden ondersteund?
       url: security-center-os-coverage.md
-    - text: Wat is Azure Defender?
-      url: azure-defender.md
 - title: Blijf op de hoogte
   linkLists:
   - linkListType: whats-new
     links:
     - text: Releaseopmerkingen voor Security Center
       url: release-notes.md
-    - text: De nieuwe overzichtspagina verkennen
+    - text: Het overzichts dashboard verkennen
       url: overview-page.md
-    - text: Kubernetes-workloads beveiligen
-      url: kubernetes-workload-protections.md
+    - text: De rapporten van de geïntegreerde werkmappen gebruiken
+      url: custom-dashboards-azure-workbooks.md
     - text: Reageren op Azure Defender voor Key Vault-waarschuwingen
       url: defender-for-key-vault-usage.md
     - text: Beveiligingsscore-API
-      url: secure-score-security-controls.md#get-your-secure-score-from-the-rest-api
+      url: secure-score-access-and-track.md#get-your-secure-score-from-the-rest-api
 - title: Aan de slag
   linkLists:
   - linkListType: get-started
     links:
-    - text: Aan de slag met Security Center
+    - text: Security Center op uw abonnementen inschakelen
       url: security-center-get-started.md
-    - text: Uw beveiligingsbeleid configureren
-      url: tutorial-security-policy.md
-    - text: Uw beveiligingsinstelling evalueren
-      url: secure-score-security-controls.md
-    - text: Verbinding maken met uw AWS-account
-      url: quickstart-onboard-aws.md
-    - text: Verbinding maken met uw GCP-account
-      url: quickstart-onboard-gcp.md
-- title: Uw veiligheidsscore verbeteren
+    - text: Azure Defender inschakelen
+      url: enable-azure-defender.md
+    - text: Automatische inrichting configureren
+      url: security-center-enable-data-collection.md
+    - text: E-mailmeldingen instellen
+      url: security-center-provide-security-contact-details.md
+    - text: Verbinding maken met niet-Azure-machines
+      url: quickstart-onboard-machines.md
+- title: Uw secure score verbeteren
   linkLists:
   - linkListType: how-to-guide
     links:
@@ -66,10 +66,8 @@ landingContent:
       url: security-center-remediate-recommendations.md
     - text: Een resource uitsluiten van een aanbeveling
       url: exempt-resource.md
-    - text: Aanbevelingen gebruiken om de beveiliging te verbeteren
-      url: security-center-using-recommendations.md
-    - text: Bijhouden met de API voor beveiligde scores
-      url: secure-score-security-controls.md#get-your-secure-score-from-the-rest-api
+    - text: Uw scores in de loop van de tijd bijhouden
+      url: custom-dashboards-azure-workbooks.md#use-the-secure-score-over-time-report
 - title: Bedreigingen beperken
   linkLists:
   - linkListType: how-to-guide
@@ -80,7 +78,5 @@ landingContent:
       url: security-center-adaptive-application.md
     - text: Adaptieve netwerkbeveiliging implementeren
       url: security-center-adaptive-network-hardening.md
-    - text: Azure Defender gratis uitproberen gedurende 30 dagen
-      url: security-center-pricing.md#try-azure-defender-free-for-30-days
     - text: Het Azure Defender-dashboard gebruiken
       url: azure-defender-dashboard.md

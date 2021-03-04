@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 01/19/2021
-ms.openlocfilehash: b86414758c3b644725e5aa29ca3b314f489508aa
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: bcfe26bc6f637dd140776df98f8267c4c43684ba
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101693523"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102049531"
 ---
 # <a name="automatically-label-your-data-in-azure-purview"></a>Voorzie uw gegevens automatisch in azure controle sfeer liggen
 
@@ -120,7 +120,10 @@ Wanneer u labels uitbreidt naar assets in azure controle sfeer liggen, kunt u de
 
     :::image type="content" source="media/create-sensitivity-label/create-sensitivity-label-full-small.png" alt-text="Gevoeligheids labels maken in het Microsoft 365 Security and Compliance Center" lightbox="media/create-sensitivity-label/create-sensitivity-label-full.png":::
 
-1. Noem het label. Selecteer vervolgens onder **het bereik voor dit label definiëren de** optie **bestanden en e-mail berichten** en **Azure controle sfeer liggen-assets**.
+1. Noem het label. Onder **Definieer het bereik voor dit label**:
+
+    - Selecteer in alle gevallen **Azure controle sfeer liggen activa**.
+    - Als u bestanden wilt labelen, selecteert u ook **bestanden & e-mail berichten**. Deze optie is niet vereist voor het labelen van data base-assets. 
     
     :::image type="content" source="media/create-sensitivity-label/create-label-scope-small.png" alt-text="Uw etiket maken in het Microsoft 365 beveiligings-en nalevings centrum" lightbox="media/create-sensitivity-label/create-label-scope.png":::
 

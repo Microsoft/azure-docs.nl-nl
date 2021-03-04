@@ -5,15 +5,15 @@ author: craigktreasure
 manager: vriveras
 services: azure-object-anchors
 ms.author: crtreasu
-ms.date: 02/19/2021
+ms.date: 03/02/2021
 ms.topic: conceptual
 ms.service: azure-object-anchors
-ms.openlocfilehash: 020f727674449523a57a608e8930d67e0f239cf6
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 74663f05c5ff995a090c7cd35e4edf46a754da17
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101746018"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102034605"
 ---
 # <a name="runtime-sdk-overview"></a>Overzicht van runtime-SDK
 
@@ -25,7 +25,7 @@ Alle typen die hieronder worden beschreven, kunt u vinden in de naam ruimte **mi
 
 ### <a name="objectmodel"></a>ObjectModel
 
-Een [objectmodel](https://docs.microsoft.com/dotnet/api/microsoft.azure.objectanchors.objectmodel) vertegenwoordigt de geometrie van een fysiek object en codeert de benodigde para meters voor detectie en een schatting. Deze moet worden gemaakt met behulp van de [object ankers-service](../quickstarts/get-started-model-ingestion.md). Vervolgens kan een toepassing het gegenereerde model bestand laden met behulp van de object-ankers-API en een query uitvoeren op de net embedded in dat model voor visualisatie.
+Een [objectmodel](https://docs.microsoft.com/dotnet/api/microsoft.azure.objectanchors.objectmodel) vertegenwoordigt de geometrie van een fysiek object en codeert de benodigde para meters voor detectie en een schatting. Deze moet worden gemaakt met behulp van de [object ankers-service](../quickstarts/get-started-model-conversion.md). Vervolgens kan een toepassing het gegenereerde model bestand laden met behulp van de object-ankers-API en een query uitvoeren op de net embedded in dat model voor visualisatie.
 
 ### <a name="objectsearcharea"></a>ObjectSearchArea
 
@@ -103,7 +103,7 @@ if(status != ObjectObserverStatus.Allowed)
 }
 ```
 
-Vervolgens maakt de toepassing een object waarnemer en worden de benodigde modellen geladen die zijn gegenereerd door de [service voor object ankers opname](../quickstarts/get-started-model-ingestion.md).
+Vervolgens maakt de toepassing een object waarnemer en worden de benodigde modellen geladen die zijn gegenereerd door de [object-ankers model conversie service](../quickstarts/get-started-model-conversion.md).
 
 ```cs
 var observer = new ObjectObserver();

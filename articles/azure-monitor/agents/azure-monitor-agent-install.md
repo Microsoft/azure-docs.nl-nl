@@ -1,17 +1,16 @@
 ---
 title: De Azure Monitor-agent installeren
 description: Opties voor het installeren van de Azure Monitor-agent (AMA) op Azure virtual machines en Azure Arc-servers.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/17/2020
-ms.openlocfilehash: 17c7609afeef8b5129e3bfe252def74b45cb4208
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 6bf0e8b90ca50a90f84c18981ab6accae8477b46
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101719947"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102034304"
 ---
 # <a name="install-the-azure-monitor-agent-preview"></a>De Azure Monitor-agent installeren (preview-versie)
 In dit artikel vindt u de verschillende opties die momenteel beschikbaar zijn voor het installeren van de [Azure monitor-agent](azure-monitor-agent-overview.md) op virtuele machines van Azure en Azure Arc-servers en de opties voor het maken [van koppelingen met regels voor gegevens verzameling](data-collection-rule-azure-monitor-agent.md) waarmee wordt gedefinieerd welke gegevens de agent moet verzamelen.

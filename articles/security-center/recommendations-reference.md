@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 02/16/2021
 ms.author: memildin
 ms.custom: generated
-ms.openlocfilehash: ecc9279b66f7dca431cc8c33a47b07a6349d8ed6
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: d484802b35ffec26d1248e51b365ac9041fc7934
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100574517"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102100403"
 ---
 # <a name="security-recommendations---a-reference-guide"></a>Aanbevelingen voor beveiliging: een naslaggids
 
@@ -49,7 +49,7 @@ Uw beveiligde Score is gebaseerd op het aantal Security Center aanbevelingen dat
 |Aanbeveling|Beschrijving en gerelateerd beleid|Ernst|Snelle oplossing ingeschakeld? ([Meer informatie](security-center-remediate-recommendations.md#quick-fix-remediation))|Resourcetype|
 |----|----|----|----|----|
 |**Toegang tot App Services moet worden beperkt**|De toegang tot uw App Services beperken door de netwerkconfiguratie te wijzigen, om inkomend verkeer te weigeren van bereiken die te breed zijn.<br>(Gerelateerd beleid: [preview]: Toegang tot App Services moet worden beperkt)|Hoog|N|App Service|
-|**De regels voor webtoepassingen op IaaS NSG's moeten strenger worden**|De netwerkbeveiligingsgroep (NSG) van uw virtuele machines waarop webtoepassingen worden uitgevoerd, beveiligen met NSG-regels die niet streng genoeg zijn met betrekking tot poorten van webtoepassingen.<br>(Gerelateerd beleid: De regels voor NSG's ten aanzien van webtoepassingen op IaaS moeten strenger worden)|Hoog|N|Virtuele machine|
+|**De regels voor webtoepassingen op IaaS NSG's moeten strenger worden**|De netwerk beveiligings groep (NSG) van uw virtuele machines waarop webtoepassingen worden uitgevoerd, beveiligen met NSG-regels die zich te maken hebben met betrekking tot de poorten van Web Application.<br>(Gerelateerd beleid: De regels voor NSG's ten aanzien van webtoepassingen op IaaS moeten strenger worden)|Hoog|N|Virtuele machine|
 |**Beveiligingsbeleid voor pods definiëren om de aanvalsvector te verminderen door onnodige bevoegdheden voor toepassingen te verwijderen (preview)**|Definieer het beveiligingsbeleid voor pods om de aanvalsvector te verminderen door onnodige bevoegdheden voor toepassingen te verwijderen. Het wordt aanbevolen beleidsregels voor pod-beveiliging te configureren zodat pods alleen toegang hebben tot resources waartoe hen toegang is toegestaan.<br>(Gerelateerd beleid: [preview]: Beveiligingsbeleid voor pods moet worden gedefinieerd voor Kubernetes Services)|Normaal|N|Compute-resources (Containers)|
 |**Azure Security Center installeren voor de IoT-beveiligingsmodule om meer inzicht te krijgen in uw IoT-apparaten**|Azure Security Center installeren voor de IoT-beveiligingsmodule om meer inzicht te krijgen in uw IoT-apparaten.|Beperkt|N|IoT-apparaat|
 
@@ -57,5 +57,5 @@ Uw beveiligde Score is gebaseerd op het aantal Security Center aanbevelingen dat
 
 Zie het volgende voor meer informatie over aanbevelingen:
 
-- [Aanbevelingen voor beveiliging in Azure Security Center](security-center-recommendations.md)
-- [Protecting your network in Azure Security Center](security-center-network-recommendations.md) (Uw netwerk beveiligen in Azure Security Center)
+- [Wat zijn beveiligings beleid, initiatieven en aanbevelingen?](security-policy-concept.md)
+- [Uw beveiligings aanbevelingen controleren](security-center-recommendations.md)

@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 79a428c322b65bfbb982be7a7e0c8b9fab7eed18
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
-ms.translationtype: HT
+ms.openlocfilehash: 3f358bebc1cc4eb17b8c50b1e3a13366717ae98c
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132729"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102100709"
 ---
 # <a name="introduction-to-azure-defender-for-container-registries"></a>Inleiding tot Azure Defender voor containerregisters
 
@@ -76,7 +76,7 @@ Security Center filtert en classificeert de resultaten van de scanner. Wanneer e
 Ja. De resultaten staan onder [Subevaluaties REST API](/rest/api/securitycenter/subassessments/list/). U kunt ook gebruikmaken van Azure Resource Graph (ARG), de Kusto-achtige API voor al uw resources: een query kan een specifieke scan ophalen.
 
 ### <a name="what-registry-types-are-scanned-what-types-are-billed"></a>Welke registertypen worden gescand? Welke typen worden gefactureerd?
-Zie [Beschikbaarheid](defender-for-container-registries-usage.md#availability)voor een lijst met de typen containerregisters die worden ondersteund door Azure Defender voor containerregisters.
+Zie [Beschikbaarheid](#availability)voor een lijst met de typen containerregisters die worden ondersteund door Azure Defender voor containerregisters.
 
 Als u niet-ondersteunde registers verbindt met uw Azure-abonnement, worden deze niet gescand en worden er geen kosten in rekening gebracht.
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/07/2021
 ms.author: memildin
-ms.openlocfilehash: eb70a31d0fa5f231bd0db8ca27517ce43fe1db28
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.openlocfilehash: 3b5204f1d390388c2dc9a10ac2ca0234f6b0499b
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100007807"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102101338"
 ---
 # <a name="container-security-in-security-center"></a>Containerbeveiliging in Security Center
 
@@ -42,7 +42,7 @@ U leert hoe u met behulp van Security Center kunt werken met de volgende kernasp
 
 In de volgende schermopname ziet u de pagina voor de inventarisatie van activa en de verschillende containerresourcetypen die door Security Center worden beveiligd.
 
-:::image type="content" source="./media/container-security/container-security-tab.png" alt-text="Container-gerelateerde resources op de pagina voor de inventarisatie van activa van Security Center" lightbox="./media/container-security/container-security-tab.png":::
+:::image type="content" source="./media/container-security/inventory-container-resources.png" alt-text="Container-gerelateerde resources op de pagina voor de inventarisatie van activa van Security Center" lightbox="./media/container-security/inventory-container-resources.png":::
 
 ## <a name="vulnerability-management---scanning-container-images"></a>Beheer van beveiligingsproblemen - containerinstallatiekopieën scannen
 
@@ -92,7 +92,7 @@ Zie de sectie [Rekenkracht](recommendations-reference.md#recs-compute) van de na
 
 ###  <a name="workload-protection-best-practices-using-kubernetes-admission-control"></a>Aanbevolen procedures voor workloadbeveiliging met behulp van Kubernetes Admission Control
 
-Installeer de **Azure Policy-invoegtoepassing voor Kubernetes** om een set aanbevelingen te krijgen voor het beveiligen van de workloads van uw Kubernetes-containers. U kunt deze invoegtoepassing ook automatisch implementeren, zoals wordt uitgelegd in [Automatische inrichting van extensies inschakelen](security-center-enable-data-collection.md#enable-auto-provisioning-of-extensions). Als automatische inrichting voor de invoegtoepassing is ingeschakeld, wordt de uitbreiding standaard ingeschakeld in alle bestaande en toekomstige clusters (die voldoen aan de installatievereisten van de invoegtoepassing).
+Installeer de **Azure Policy-invoegtoepassing voor Kubernetes** om een set aanbevelingen te krijgen voor het beveiligen van de workloads van uw Kubernetes-containers. U kunt deze invoeg toepassing ook automatisch implementeren, zoals wordt uitgelegd in [automatische inrichting van de log Analytics agent en uitbrei dingen inschakelen](security-center-enable-data-collection.md#auto-provision-mma). Als automatische inrichting voor de invoegtoepassing is ingeschakeld, wordt de uitbreiding standaard ingeschakeld in alle bestaande en toekomstige clusters (die voldoen aan de installatievereisten van de invoegtoepassing).
 
 Zoals beschreven in deze pagina [Azure Policy for Kubernetes](../governance/policy/concepts/policy-for-kubernetes.md), vormt de invoegtoepassing een uitbreiding op de open-source webhook voor de [Gatekeeper v3](https://github.com/open-policy-agent/gatekeeper) -toegangscontroller voor  [Open Policy Agent](https://www.openpolicyagent.org/). Toegangscontrollers van Kubernetes zijn invoegtoepassingen die de gebruikswijze van uw clusters afdwingen. De invoegtoepassing wordt geregistreerd als een webhook voor Kubernetes-toegangsbeheer en maakt het mogelijk om op een gecentraliseerde, consistente manier afdwinging en beveiliging op uw clusters op schaal toe te passen. 
 

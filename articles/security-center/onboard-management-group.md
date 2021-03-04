@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/10/2020
 ms.author: memildin
-ms.openlocfilehash: 31472b0a0eedee03d5cfcb6ff47a97033a8c78e0
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: 9db276425d510316c41126f8e942a1e2a362ea35
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98796067"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102101287"
 ---
 # <a name="enable-security-center-on-all-subscriptions-in-a-management-group"></a>Security Center inschakelen voor alle abonnementen in een beheergroep
 
@@ -60,7 +60,7 @@ Er zijn verschillende manieren waarop u de Azure Policy-definitie kunt wijzigen:
     Met de geleverde definitie wordt *een van de* prijsinstellingen hieronder gedefinieerd als compatibel. Dit betekent dat een abonnement dat is ingesteld op Standard of Gratis, compatibel is.
 
     > [!TIP]
-    > Wanneer een Azure Defender-abonnement is ingeschakeld, wordt het beschreven als onderdeel van de Standard-instelling. Wanneer het is uitgeschakeld, is het Gratis. [Meer informatie over Azure Defender-abonnementen](security-center-pricing.md).
+    > Wanneer een Azure Defender-plan is ingeschakeld, wordt het beschreven in een beleids definitie die is ingesteld op de standaard instelling. Wanneer het is uitgeschakeld, is het Gratis. Zie [Security Center Free VS Azure Defender enabled](security-center-pricing.md)(Engelstalig) voor meer informatie over de verschillen tussen deze plannen. 
 
     ```
     "existenceCondition": {
@@ -98,4 +98,4 @@ Er zijn verschillende manieren waarop u de Azure Policy-definitie kunt wijzigen:
 Nu u een volledige beheergroep hebt geregistreerd, schakelt u geavanceerde bescherming van Azure Defender in. 
 
 > [!div class="nextstepaction"]
-> [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender)
+> [Azure Defender inschakelen](enable-azure-defender.md)

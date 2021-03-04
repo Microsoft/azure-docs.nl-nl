@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: memildin
-ms.openlocfilehash: ca3dd410474af0a42a3cd5b4217c3bba90b8ff1a
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: fc4207547a1f34fca1ef302626f1365572a236b9
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96511981"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102101304"
 ---
 # <a name="protect-windows-admin-center-resources-with-security-center"></a>Windows-beheer centrum-resources beveiligen met Security Center
 
@@ -21,7 +21,7 @@ Windows-beheer centrum is een beheer programma voor uw Windows-servers. Het is Ã
 
 > [!NOTE]
 > Voor uw Azure-abonnement en de bijbehorende Log Analytics-werk ruimte moet Azure Defender zijn ingeschakeld om de integratie van het Windows-beheer centrum mogelijk te maken.
-> Azure Defender is de eerste 30 dagen gratis als u deze nog niet eerder hebt gebruikt in het abonnement en de werk ruimte. Zie [de pagina met prijs informatie](security-center-pricing.md)voor meer informatie.
+> Azure Defender is de eerste 30 dagen gratis als u deze nog niet eerder hebt gebruikt in het abonnement en de werk ruimte. Zie [Security Center prijzen](https://azure.microsoft.com/pricing/details/security-center/)voor prijs informatie in de valuta van uw keuze en volgens uw regio.
 >
 
 Wanneer u een server uit het Windows-beheer centrum hebt geboardd naar Azure Security Center, kunt u het volgende doen:

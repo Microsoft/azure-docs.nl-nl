@@ -7,12 +7,12 @@ ms.date: 02/07/2021
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 0878686e203960a0b7f33c19cc64e82319997684
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 83d0215ebca9d60d61937cb20bb82c7ccb30aac1
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100590452"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102100624"
 ---
 # <a name="introduction-to-azure-defender-for-kubernetes"></a>Inleiding tot Azure Defender for Kubernetes
 
@@ -29,7 +29,7 @@ Detectie van bedreigingen op hostniveau voor uw Linux AKS-knoop punten is beschi
 |Aspect|Details|
 |----|:----|
 |Releasestatus:|Algemene Beschik baarheid (GA)|
-|Prijzen:|Voor **Azure Defender for Kubernetes** gelden de prijzen op de [pagina Prijzen](security-center-pricing.md)|
+|Prijzen:|**Azure Defender voor Kubernetes** wordt gefactureerd zoals wordt weer gegeven op [Security Center prijzen](https://azure.microsoft.com/pricing/details/security-center/)|
 |Vereiste rollen en machtigingen:|**Beveiligingsbeheerder** kan waarschuwingen negeren.<br>**Beveiligingslezer** kan bevindingen bekijken.|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) Nationaal/onafhankelijk (overheid van de VS, China, andere overheden)|
 |||
@@ -79,7 +79,7 @@ Als op uw clusters al de Azure Monitor voor containers-agent wordt uitgevoerd, k
 In dit artikel hebt u geleerd over de Kubernetes-beveiliging van Security Center, inclusief Azure Defender voor Kubernetes. 
 
 > [!div class="nextstepaction"]
-> [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender)
+> [Azure Defender inschakelen](enable-azure-defender.md)
 
 Raadpleeg de volgende artikelen voor gerelateerd materiaal: 
 

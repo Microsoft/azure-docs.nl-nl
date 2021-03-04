@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/16/2021
 ms.author: memildin
-ms.openlocfilehash: 0e1f669b6955d5c5b70f2f29ff39ba5aef0a9a56
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 1ba030ea42d3e865021aa52c651cd72eead9f1a1
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100544813"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102100267"
 ---
 # <a name="feature-coverage-for-machines"></a>Functiedekking voor machines
 
@@ -117,8 +117,8 @@ Zie [Evaluatie van eindpuntbeveiliging en aanbevelingen](security-center-endpoin
 |[Microsoft Defender for Endpoint](harden-docker-hosts.md) (1)|✔|-|
 |[Verbinding maken met AWS-accounts](quickstart-onboard-aws.md) (1)|-|-|
 |[Verbinding maken met GCP-accounts](quickstart-onboard-gcp.md) (1)|-|-|
-|[Continue export](continuous-export.md)|✔|✔ (2)|
-|[Werkstroomautomatisering](workflow-automation.md)|✔|✔ (2)|
+|[Continue export](continuous-export.md)|✔|✔|
+|[Werkstroomautomatisering](workflow-automation.md)|✔|✔|
 |[Regels voor uitzonderingen voor aanbevelingen](exempt-resource.md)|-|-|
 |[Regels voor waarschuwingsonderdrukking](alerts-suppression-rules.md)|✔|✔|
 |[E-mailmeldingen voor beveiligingswaarschuwingen](security-center-provide-security-contact-details.md)|✔|✔|
@@ -131,7 +131,7 @@ Zie [Evaluatie van eindpuntbeveiliging en aanbevelingen](security-center-endpoin
 |[Azure Defender voor DNS](defender-for-dns-introduction.md)|-|-|
 |[Azure Defender voor containerregisters](defender-for-container-registries-introduction.md)|✔ (2)|✔ (2)|
 |[Azure Defender voor Kubernetes](defender-for-kubernetes-introduction.md)|✔|✔|
-|[Beveiliging van Kubernetes-werk belasting](kubernetes-workload-protections.md)|✔ (2)|✔ (2)|
+|[Beveiliging van Kubernetes-werk belasting](kubernetes-workload-protections.md)|✔|✔|
 |||
 
 (1) vereist **Azure Defender voor servers**

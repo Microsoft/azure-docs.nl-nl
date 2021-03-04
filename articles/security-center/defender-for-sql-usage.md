@@ -1,6 +1,6 @@
 ---
-title: Azure Defender voor SQL gebruiken
-description: Meer informatie over het gebruik van het optionele Azure Defender voor SQL-abonnement van Azure Security Center
+title: Azure Defender voor SQL instellen
+description: Meer informatie over het inschakelen van het optionele Azure Defender for SQL-abonnement van Azure Security Center
 services: security-center
 documentationcenter: na
 author: memildin
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/11/2021
 ms.author: memildin
-ms.openlocfilehash: 96af34b5b68fca5ab8061c8c99f03bee094dc175
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: b82f0ca0624fcbd64f1c23f87f8f21f96d8e4d4c
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100590384"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102100573"
 ---
-# <a name="azure-defender-for-sql-servers-on-machines"></a>Azure Defender voor SQL-servers op computers 
+# <a name="enable-azure-defender-for-sql-servers-on-machines"></a>Azure Defender voor SQL-servers op computers inschakelen 
 
 Dit Azure Defender-abonnement detecteert afwijkende activiteiten die een ongebruikelijke en potentieel schadelijke pogingen om toegang te krijgen tot data bases of deze te gebruiken.
 
@@ -31,7 +31,7 @@ U ziet waarschuwingen wanneer er verdachte database activiteiten, potentiële kw
 |Aspect|Details|
 |----|:----|
 |Releasestatus:|Algemene Beschik baarheid (GA)|
-|Prijzen:|**Azure Defender voor SQL-servers op computers** wordt gefactureerd zoals wordt weer gegeven op [de pagina met prijzen](security-center-pricing.md)|
+|Prijzen:|**Azure Defender voor SQL-servers op computers** wordt gefactureerd zoals wordt weer gegeven op [Security Center prijzen](https://azure.microsoft.com/pricing/details/security-center/)|
 |Beveiligde SQL-versies:|Azure SQL Server (alle versies die worden gedekt door micro soft support)|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov|
 |||
@@ -40,11 +40,10 @@ U ziet waarschuwingen wanneer er verdachte database activiteiten, potentiële kw
 
 Dit abonnement inschakelen:
 
-* Richt de Log Analytics-agent in op de host van uw SQL-Server. Dit geeft de verbinding met Azure.
+[Stap 1. Richt de Log Analytics-agent in op de host van uw SQL-Server:](#step-1-provision-the-log-analytics-agent-on-your-sql-servers-host)
 
-* Schakel het optionele abonnement in op de pagina prijzen en instellingen van Security Center.
+[Stap 2. Schakel het optionele abonnement in op de pagina prijzen en instellingen van Security Center:](#step-2-enable-the-optional-plan-in-security-centers-pricing-and-settings-page)
 
-Beide worden hieronder beschreven.
 
 ### <a name="step-1-provision-the-log-analytics-agent-on-your-sql-servers-host"></a>Stap 1. Richt de Log Analytics-agent in op de host van uw SQL-Server:
 
@@ -81,31 +80,6 @@ Beide worden hieronder beschreven.
 1. U kunt ook e-mail meldingen configureren voor beveiligings waarschuwingen. 
     U kunt een lijst met ontvangers instellen om een e-mail melding te ontvangen wanneer Security Center waarschuwingen worden gegenereerd. Het e-mail bericht bevat een directe koppeling naar de waarschuwing in Azure Security Center met alle relevante informatie. Zie [e-mail meldingen instellen voor beveiligings waarschuwingen](security-center-provide-security-contact-details.md)voor meer informatie.
 
-
-
-## <a name="explore-vulnerability-assessment-reports"></a>Rapporten van evaluatie van beveiligings problemen verkennen
-
-De service voor evaluatie van beveiligings problemen scant uw data bases eenmaal per week. De scans worden uitgevoerd op dezelfde dag van de week waarop u de service hebt ingeschakeld.
-
-Het dash board evaluatie van beveiligings problemen biedt een overzicht van de evaluatie resultaten voor al uw data bases, samen met een samen vatting van gezonde en beschadigde data bases en een algehele samen vatting van mislukte controles volgens risico distributie.
-
-U kunt de resultaten van de evaluatie van de beveiligings problemen rechtstreeks vanuit Security Center weer geven.
-
-1. Open de pagina **aanbevelingen** vanuit de zijbalk van Security Center en selecteer de aanbevolen **beveiligings problemen op uw SQL-servers op computers moeten worden hersteld (preview)**. Zie [Security Center-aanbevelingen](security-center-recommendations.md)voor meer informatie. 
-
-    :::image type="content" source="./media/security-center-advanced-iaas-data/data-and-storage-sqldb-vulns-on-vm.png" alt-text="De resultaten van evaluatie van beveiligings problemen op uw SQL-servers op computers moeten worden hersteld (preview-versie)":::
-
-    De gedetailleerde weer gave voor deze aanbeveling wordt weer gegeven.
-
-    :::image type="content" source="./media/security-center-advanced-iaas-data/all-servers-view.png" alt-text="Gedetailleerde weer gave voor de aanbeveling":::
-
-1. Voor meer informatie, inzoomen:
-
-    * Selecteer de gewenste server voor een overzicht van gescande resources (data bases) en de lijst met beveiligings controles die zijn getest.
-
-    * Selecteer de gewenste Data Base voor een overzicht van de beveiligings problemen die zijn gegroepeerd op een specifieke SQL database.
-
-    In elke weer gave worden de beveiligings controles gesorteerd op **Ernst**. Klik op een specifieke beveiligings controle om het deel venster Details te bekijken met een **Beschrijving**, het probleem te **verhelpen** en andere gerelateerde informatie, zoals **impact** of **Bench Mark**.
 
 ## <a name="azure-defender-for-sql-alerts"></a>Azure Defender voor SQL-waarschuwingen
 Waarschuwingen worden gegenereerd door ongebruikelijke en mogelijk schadelijke pogingen om SQL-machines te openen of misbruik te maken. Deze gebeurtenissen kunnen waarschuwingen activeren die worden weer gegeven op de [pagina met waarschuwingen](alerts-reference.md#alerts-sql-db-and-warehouse).

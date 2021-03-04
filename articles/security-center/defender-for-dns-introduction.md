@@ -7,12 +7,12 @@ ms.date: 12/07/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 957e39f7629337182c3e19a1a514c42883666301
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: dffb505719e6778adfdd8e99f62790df9ebd615a
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98797004"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102100692"
 ---
 # <a name="introduction-to-azure-defender-for-dns"></a>Inleiding tot Azure Defender voor DNS
 
@@ -28,7 +28,7 @@ Azure Defender voor DNS biedt een extra beveiligingslaag voor uw cloudresources 
 |Aspect|Details|
 |----|:----|
 |Releasestatus:|Preview<br>[!INCLUDE [Legalese](../../includes/security-center-preview-legal-text.md)] |
-|Prijzen:|**Azure Defender voor DNS** wordt gefactureerd zoals wordt weergegeven op [de pagina met prijzen](security-center-pricing.md)|
+|Prijzen:|**Azure Defender voor DNS** wordt gefactureerd zoals wordt weer gegeven op [Security Center prijzen](https://azure.microsoft.com/pricing/details/security-center/)|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Nee](./media/icons/no-icon.png) Nationaal/onafhankelijk (overheid van de VS, China, andere overheden)|
 |||
 
@@ -47,7 +47,7 @@ Een volledige lijst van de waarschuwingen die door Azure Defender voor DNS worde
 
 Azure Defender voor DNS gebruikt geen agents. 
 
-Als u uw DNS-laag wilt beveiligen, schakelt u Azure Defender voor DNS in voor elk van uw abonnementen, zoals wordt beschreven in [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender).
+Als u uw DNS-laag wilt beveiligen, schakelt u Azure Defender voor DNS in voor elk van uw abonnementen, zoals wordt beschreven in [Azure Defender inschakelen](enable-azure-defender.md).
 
 
 ## <a name="next-steps"></a>Volgende stappen
@@ -57,4 +57,4 @@ In dit artikel bent u meer te weten gekomen over Azure Defender voor DNS. Raadpl
 - Beveiligingswaarschuwingen kunnen worden gegenereerd door Security Center of door Security Center worden ontvangen vanuit andere beveiligingsproducten. Als u al deze waarschuwingen wilt exporteren naar Azure Sentinel, een externe SIEM of een ander extern hulpprogramma, volgt u de instructies in [Waarschuwingen naar een SIEM exporteren](continuous-export.md).
 
 - > [!div class="nextstepaction"]
-    > [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender)
+    > [Azure Defender inschakelen](enable-azure-defender.md)

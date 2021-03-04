@@ -7,12 +7,12 @@ ms.date: 10/21/2020
 ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: a5d66e43485ec66b6297ef11ed382e8fb82b7cb3
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: ee4992e41e792b570d8937edfe31efb4c651d742
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96014568"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102100726"
 ---
 # <a name="use-azure-defender-for-container-registries-to-scan-your-images-for-vulnerabilities"></a>Azure Defender gebruiken voor containerregisters, om uw installatiekopieën te scannen op beveiligingsproblemen
 
@@ -21,8 +21,6 @@ Op deze pagina wordt uitgelegd hoe u de ingebouwde beveiligings scanner gebruikt
 Wanneer **Azure Defender voor containerregisters** is ingeschakeld, wordt elke installatiekopie die u naar het register pusht, onmiddellijk gescand. Daarnaast wordt elke afbeelding die in de afgelopen 30 dagen is opgehaald, ook gescand. 
 
 Wanneer de scanner beveiligings Security Center problemen meldt, Security Center de bevindingen en gerelateerde informatie als aanbevelingen. Daarnaast bevatten de bevindingen gerelateerde informatie zoals herbemiddelings tappen, relevante CVEs, CVSS-scores en meer. U kunt de geïdentificeerde beveiligings problemen weer geven voor een of meer abonnementen of voor een specifiek REGI ster.
-
-[!INCLUDE [Defender for container registries availability info](../../includes/security-center-availability-defender-for-container-registries.md)]
 
 
 ## <a name="identify-vulnerabilities-in-images-in-azure-container-registries"></a>Beveiligingsproblemen met installatiekopieën in Azure-containerregisters identificeren 
@@ -127,7 +125,7 @@ U kunt een van de volgende criteria gebruiken:
 - Categorie
 - Beveiligings controle 
 - CVSS v3-scores
-- Ernst 
+- Severity 
 - Patchable status 
 
 Een regel maken:

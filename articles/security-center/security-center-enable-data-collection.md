@@ -1,21 +1,37 @@
 ---
 title: Automatisch agents implementeren voor Azure Security Center | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u automatische inrichting van de Log Analytics-agent en andere agents die door Azure Security Center worden gebruikt, kunt instellen.
-services: security-center
+description: In dit artikel wordt beschreven hoe u automatische inrichting instelt van de Log Analytics agent en andere agents en extensies die worden gebruikt door Azure Security Center
 author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: quickstart
-ms.date: 11/15/2020
+ms.date: 03/04/2021
 ms.author: memildin
-ms.openlocfilehash: 6130572cedaaabb9d63758a2bc25f6ebd0396562
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: d9d0739704a9f5f16bdbde80661192b2f1ca9bb1
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101729858"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102099417"
 ---
-# <a name="auto-provisioning-agents-and-extensions-from-azure-security-center"></a>Automatische inrichting van agents en extensies van Azure Security Center
+# <a name="configure-auto-provisioning-for-agents-and-extensions-from-azure-security-center"></a>Automatische inrichting van agents en uitbrei dingen van Azure Security Center configureren
+
+Security Center verzamelt gegevens uit uw resources met behulp van de relevante agent of uitbrei dingen voor die bron en het type gegevens verzameling dat u hebt ingeschakeld. Gebruik de onderstaande precedures om ervoor te zorgen dat uw resource over het vereiste is dat in dit artikel wordt beschreven hoe u automatische inrichting van de Log Analytics agent en andere agents en extensies instelt die worden gebruikt door Azure Security Center
+
+## <a name="prerequisites"></a>Vereisten
+U moet over een abonnement op Microsoft Azure beschikken om met Security Center aan de slag te gaan. Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/pricing/free-trial/).
+
+## <a name="availability"></a>Beschikbaarheid
+
+| Aspect                  | Details                                                                                                                                                                                                                      |
+|-------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Releasestatus:          | **Functie**: Automatisch inrichten is algemeen beschikbaar (GA)<br>**Agent en extensies**: De Log Analytics-agent voor Azure-VM's is algemeen beschikbaar. De Microsoft Dependency-agent is beschikbaar in de preview-versie. De invoegtoepassing voor Kubernetes-beleid is algemeen beschikbaar                |
+| Prijzen:                | Gratis                                                                                                                                                                                                                         |
+| Ondersteunde bestemmingen: | ![Ja](./media/icons/yes-icon.png) Azure-machines<br>![Nee](./media/icons/no-icon.png) Azure Arc-machines<br>![Nee](./media/icons/no-icon.png) Kubernetes-knooppunten<br>![Nee](./media/icons/no-icon.png) Virtuele-machineschaalsets |
+| Clouds:                 | ![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov, China Gov, andere overheden                                                                                                      |
+|                         |                                                                                                                                                                                                                              |
+
+## <a name="how-does-security-center-collect-data"></a>Hoe worden gegevens Security Center verzameld?
 
 Security Center verzamelt gegevens van uw virtuele Azure-machines (VM's), virtuele-machineschaalsets, IaaS-containers en niet-Azure-computers (waaronder on-premises computers) om deze te bewaken op beveiligingsproblemen en bedreigingen. 
 
@@ -29,20 +45,6 @@ Gegevens worden verzameld met:
 > [!TIP]
 > Naarmate Security Center is gegroeid, is het ook mogelijk om meer typen resources te bewaken. Het aantal extensies is ook gegroeid. Automatische inrichting is nu uitgebreid, zodat meer resourcetypen kunnen worden ondersteund door gebruik te maken van de mogelijkheden van Azure Policy.
 
-:::image type="content" source="./media/security-center-enable-data-collection/auto-provisioning-options.png" alt-text="Pagina-instellingen voor de automatisch inrichting van Security Center":::
-
-
-## <a name="availability"></a>Beschikbaarheid
-
-| Aspect                  | Details                                                                                                                                                                                                                      |
-|-------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Releasestatus:          | **Functie**: Automatisch inrichten is algemeen beschikbaar (GA)<br>**Agent en extensies**: De Log Analytics-agent voor Azure-VM's is algemeen beschikbaar. De Microsoft Dependency-agent is beschikbaar in de preview-versie. De invoegtoepassing voor Kubernetes-beleid is algemeen beschikbaar                |
-| Prijzen:                | Gratis                                                                                                                                                                                                                         |
-| Ondersteunde bestemmingen: | ![Ja](./media/icons/yes-icon.png) Azure-machines<br>![Nee](./media/icons/no-icon.png) Azure Arc-machines<br>![Nee](./media/icons/no-icon.png) Kubernetes-knooppunten<br>![Nee](./media/icons/no-icon.png) Virtuele-machineschaalsets |
-| Clouds:                 | ![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov, China Gov, andere overheden                                                                                                      |
-|                         |                                                                                                                                                                                                                              |
-
-
 ## <a name="why-use-auto-provisioning"></a>Wat is het nut van automatische inrichting?
 Elk van de agents en extensies die op deze pagina worden beschreven *kunnen* handmatig worden geïnstalleerd. (Zie [Handmatige installatie van de Log Analytics-agent](#manual-agent).) Maar met **automatische inrichting** vermindert u de overhead voor beheer doordat alle vereiste agents en extensies op bestaande en nieuwe machines worden geïnstalleerd, waardoor een snellere beveiligingsdekking voor alle ondersteunde resources wordt gerealiseerd. 
 
@@ -54,14 +56,19 @@ De instellingen voor automatische inrichting van Security Center hebben een wiss
 > [!TIP]
 > Meer informatie over effecten van Azure Policy, zoals Implementeren indien niet aanwezig, vindt u in [Inzicht in de effecten van Azure Policy](../governance/policy/concepts/effects.md).
 
-## <a name="enable-auto-provisioning-of-the-log-analytics-agent"></a>Automatische inrichting van de Log Analytics-agent <a name="auto-provision-mma"></a> inschakelen
+
+## <a name="enable-auto-provisioning-of-the-log-analytics-agent-and-extensions"></a>Automatische inrichting van de Log Analytics agent en uitbrei dingen inschakelen <a name="auto-provision-mma"></a>
+
 Als automatisch inrichten aan staat voor de Log Analytics-agent, implementeert Security Center de agent op alle ondersteunde Azure-VM's en op alle nieuwe VM's die nog worden gemaakt. Zie [Ondersteunde platforms in Azure Security Center](security-center-os-coverage.md) voor een lijst met ondersteunde platforms.
 
 Automatische inrichting van de Log Analytics-agent inschakelen:
 
 1. Selecteer **Prijzen en instellingen** in het hoofdmenu van Security Center.
 1. Selecteer het betreffende abonnement.
-1. Stel op de pagina **Automatisch inrichten** de status van de agent in op **Aan**.
+1. Stel op de pagina **automatische inrichting** de status van de log Analytics agent in **op aan**.
+
+    :::image type="content" source="./media/security-center-enable-data-collection/enable-automatic-provisioning.png" alt-text="Automatische inrichting van de Log Analytics-agent inschakelen":::
+
 1. Definieer in het deelvenster met de configuratieopties de werkruimte die gebruikt moet worden.
 
     :::image type="content" source="./media/security-center-enable-data-collection/log-analytics-agent-deploy-options.png" alt-text="Configuratieopties voor het automatisch inrichten van Log Analytics-agents op VM's" lightbox="./media/security-center-enable-data-collection/log-analytics-agent-deploy-options.png":::
@@ -104,6 +111,22 @@ Automatische inrichting van de Log Analytics-agent inschakelen:
 
 1. Selecteer **Toepassen** in het configuratievenster.
 
+1. Voor het inschakelen van de automatische inrichting van een extensie anders dan de Log Analytics-agent, gaat u als volgt te werk: 
+
+    1. Als u automatisch inrichten inschakelt voor de micro soft-afhankelijkheids agent, moet u ervoor zorgen dat de Log Analytics-agent is ingesteld op automatisch implementeren.
+    1. Zet voor de relevante extensie de wisselknop voor de status op **Aan**.
+
+        :::image type="content" source="./media/security-center-enable-data-collection/toggle-kubernetes-add-on.png" alt-text="Stel de wisselknop zo in dat automatische inrichting is ingeschakeld voor de Policy-invoegtoepassing K8s":::
+
+    1. Selecteer **Opslaan**. Het Azure-beleid wordt toegewezen en er wordt een hersteltaak gemaakt.
+
+        |Extensie  |Beleid  |
+        |---------|---------|
+        |Policy-invoegtoepassing voor Kubernetes|[Azure Policy-invoegtoepassing implementeren op Azure Kubernetes Service-clusters](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fa8eff44f-8c92-45c3-a3fb-9880802d67a7)|
+        |Microsoft Dependency Agent (preview) (Windows-VM's)|[Dependency Agent implementeren voor Windows-VM's](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f1c210e94-a481-4beb-95fa-1571b434fb04)         |
+        |Microsoft Dependency Agent (preview) (Linux-VM's)|[Dependency Agent implementeren voor Linux-VM's](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f4da21710-ce6f-4e06-8cdb-5cc4c93ffbee)|
+        |||
+
 1. Selecteer **Opslaan**. Als een werkruimte moet worden ingericht, kan de installatie van de agent tot wel 25 minuten duren.
 
 1. U wordt gevraagd of u de bewaakte VM's die eerder waren verbonden met een standaardwerkruimte, opnieuw wilt configureren:
@@ -115,28 +138,6 @@ Automatische inrichting van de Log Analytics-agent inschakelen:
 
    > [!NOTE]
    > Als u **Ja** selecteert, moet u de werkruimten die zijn gemaakt door Security Center pas verwijderen als alle VM's opnieuw zijn verbonden met de nieuwe doelwerkruimte. Deze bewerking mislukt als een werkruimte te vroeg wordt verwijderd.
-
-
-## <a name="enable-auto-provisioning-of-extensions"></a>Automatische inrichting van extensies inschakelen
-
-Voor het inschakelen van de automatische inrichting van een extensie anders dan de Log Analytics-agent, gaat u als volgt te werk: 
-
-1. Selecteer **Prijzen en instellingen** in het hoofdmenu van Security Center in Azure Portal.
-1. Selecteer het betreffende abonnement.
-1. Selecteer **Automatische inrichting**.
-1. Als u automatisch inrichten inschakelt voor de Microsoft Dependency-agent, moet u ervoor zorgen dat de Log Analytics-agent ook op automatisch implementeren is ingesteld. 
-1. Zet voor de relevante extensie de wisselknop voor de status op **Aan**.
-
-    :::image type="content" source="./media/security-center-enable-data-collection/toggle-kubernetes-add-on.png" alt-text="Stel de wisselknop zo in dat automatische inrichting is ingeschakeld voor de Policy-invoegtoepassing K8s":::
-
-1. Selecteer **Opslaan**. Het Azure-beleid wordt toegewezen en er wordt een hersteltaak gemaakt.
-
-    |Extensie  |Beleid  |
-    |---------|---------|
-    |Policy-invoegtoepassing voor Kubernetes|[Azure Policy-invoegtoepassing implementeren op Azure Kubernetes Service-clusters](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fa8eff44f-8c92-45c3-a3fb-9880802d67a7)|
-    |Microsoft Dependency Agent (preview) (Windows-VM's)|[Dependency Agent implementeren voor Windows-VM's](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f1c210e94-a481-4beb-95fa-1571b434fb04)         |
-    |Microsoft Dependency Agent (preview) (Linux-VM's)|[Dependency Agent implementeren voor Linux-VM's](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f4da21710-ce6f-4e06-8cdb-5cc4c93ffbee)|
-
 
 
 ## <a name="windows-security-event-options-for-the-log-analytics-agent"></a>Windows-beveiligingsgebeurtenisopties voor de Log Analytics-agent <a name="data-collection-tier"></a> 
@@ -274,25 +275,11 @@ Automatische inrichting van een agent uitschakelen:
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
--   Zie [Status van agents controleren](security-center-troubleshooting-guide.md#mon-agent) als u problemen met de automatische inrichting van de installatie wilt identificeren.
-
+-   Zie [agent status problemen controleren](security-center-troubleshooting-guide.md#mon-agent)om problemen met de automatische inrichting van de installatie te identificeren.
 -  Zie [Problemen oplossen met de netwerkvereisten voor de Monitoring Agent ](security-center-troubleshooting-guide.md#mon-network-req) om de netwerkvereisten voor de bewakingsagent te identificeren.
 -   Zie [Onboarding-problemen van Operations Management Suite oplossen](https://support.microsoft.com/help/3126513/how-to-troubleshoot-operations-management-suite-onboarding-issues) voor het identificeren van problemen met handmatige onboarding.
-
-- Problemen met niet-bewaakte VM's en computers identificeren:
-
-    Een VM of computer wordt niet bewaakt door Security Center als de Log Analytics-agentextensie niet wordt uitgevoerd op de machine. Er kan al een lokale agent zijn geïnstalleerd op de machine, bijvoorbeeld de directe OMS-agent of de System Center Operations Manager-agent. Machines met deze agents worden geïdentificeerd als niet-bewaakt omdat deze agents niet volledig worden ondersteund in Security Center. De Log Analytics-agentextensie is vereist om volledig te profiteren van alle mogelijkheden van Security Center.
-
-    Zie [Problemen met de agentstatus controleren](security-center-troubleshooting-guide.md#mon-agent) voor meer informatie over de redenen waarom Security Center VM's en computers die zijn geïnitialiseerd voor automatische inrichting niet afdoende kan bewaken.
-
 
 
 
 ## <a name="next-steps"></a>Volgende stappen
-In dit artikel werd uitgelegd hoe het verzamelen van gegevens en automatisch inrichten in Security Center werkt. Zie de volgende pagina's voor meer informatie over het Security Center:
-
-- [Azure Security Center FAQ](faq-general.md): raadpleeg veelgestelde vragen over het gebruik van de service.
-- [Beveiligingsstatus bewaken in Azure Security Center](security-center-monitoring.md): meer informatie over het bewaken van de status van uw Azure-resources.
-
-In dit artikel wordt beschreven hoe u een Log Analytics-agent installeert en hoe u een Log Analytics-werkruimte instelt waarin de verzamelde gegevens worden opgeslagen. Beide bewerkingen zijn vereist om gegevensverzameling mogelijk te maken. Wanneer u gegevens opslaat in Log Analytics, ongeacht of u een nieuwe of bestaande werkruimte gebruikt, kunnen er extra kosten in rekening worden gebracht voor gegevensopslag. Zie de pagina [prijzen](https://azure.microsoft.com/pricing/details/security-center/) voor meer informatie.
-
+Op deze pagina wordt uitgelegd hoe u automatisch inrichten voor de Log Analytics agent en andere Security Center extensies inschakelt. Ook wordt beschreven hoe u een Log Analytics werk ruimte definieert waarin de verzamelde gegevens worden opgeslagen. Beide bewerkingen zijn vereist om gegevensverzameling mogelijk te maken. Wanneer u gegevens opslaat in Log Analytics, ongeacht of u een nieuwe of bestaande werkruimte gebruikt, kunnen er extra kosten in rekening worden gebracht voor gegevensopslag. Zie [Security Center prijzen](https://azure.microsoft.com/pricing/details/security-center/)voor prijs informatie in de valuta van uw keuze en volgens uw regio.

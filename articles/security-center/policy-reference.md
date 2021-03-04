@@ -7,12 +7,12 @@ author: memildin
 ms.author: memildin
 ms.service: security-center
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 3b5860cc4ada88e2e7c7813e3441db3ec89f31af
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: b80ceffe22c797d46b82ec33a47c726d68bf4cdb
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101729914"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102099825"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-security-center"></a>Ingebouwde Azure Policy-definities voor Azure Security Center
 
@@ -44,13 +44,4 @@ Zie de volgende tabel voor meer informatie over het ingebouwde beleid dat wordt 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u geleerd over Azure Policy definities voor beveiligings beleid in Security Center. Raadpleeg de volgende artikelen voor meer informatie.
-
-- Bekijk de inbouwingen op de [Azure Policy GitHub-opslagplaats](https://github.com/Azure/azure-policy).
-- Lees over de [structuur van Azure Policy-definities](../governance/policy/concepts/definition-structure.md).
-- Lees [Informatie over de effecten van het beleid](../governance/policy/concepts/effects.md).
-- [Azure Security Center plannings-en bedienings handleiding](./security-center-planning-and-operations-guide.md): informatie over het plannen en begrijpen van ontwerp overwegingen in azure Security Center.
-- [Beveiligingsstatus controleren in Azure Security Center](./security-center-monitoring.md): meer informatie over het controleren van de status van uw Azure-resources.
-- [Beveiligingswaarschuwingen beheren en erop reageren in Azure Security Center](./security-center-managing-and-responding-alerts.md): leer hoe u beveiligingswaarschuwingen kunt beheren en erop kunt reageren.
-- [Partneroplossingen controleren met Azure Security Center](./security-center-partner-integration.md): leer hoe u de integriteitsstatus van uw partneroplossingen kunt controleren.
-- [Azure Policy](../governance/policy/overview.md): meer informatie over het controleren en beheren van uw Azure-resources.
+In dit artikel hebt u geleerd over Azure Policy definities voor beveiligings beleid in Security Center. Zie [Wat zijn beveiligings beleid, initiatieven en aanbevelingen?](security-policy-concept.md)voor meer informatie over initiatieven, beleids regels en hoe deze zich verhouden tot de aanbevelingen van Security Center.

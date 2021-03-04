@@ -3,17 +3,18 @@ title: Een heatmap toevoegen aan Android-kaarten | Microsoft Azure kaarten
 description: Meer informatie over het maken van een heatmap. Zie hoe u de Azure MapsAndroid SDK gebruikt om een heatmap aan een kaart toe te voegen. Meer informatie over het aanpassen van heatmap.
 author: rbrundritt
 ms.author: richbrun
-ms.date: 12/01/2020
+ms.date: 02/26/2021
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 4de59bd0b2a9dc9b11acf55a59b82724d2c7b862
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+zone_pivot_groups: azure-maps-android
+ms.openlocfilehash: fce2c2d007f92c43e763826f9345f773324e885e
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97681603"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102100182"
 ---
 # <a name="add-a-heat-map-layer-android-sdk"></a>Een hitte kaart laag (Android SDK) toevoegen
 
@@ -43,6 +44,8 @@ Zorg ervoor dat u de stappen in de [Snelstartgids uitvoert: een Android-app](qui
 Als u een gegevens bron van punten wilt weer geven als een heatmap, geeft u uw gegevens bron door aan een instantie van de `HeatMapLayer` klasse en voegt u deze toe aan de kaart.
 
 In het volgende code voorbeeld wordt een geojson-feed van aard bevingen van de afgelopen week geladen en weer gegeven als een heatmap. Elk gegevens punt wordt weer gegeven met een straal van 10 pixels op alle zoom niveaus. Om ervoor te zorgen dat de gebruikers ervaring beter is, is de heatmap onder de label laag zodat de labels duidelijk zichtbaar blijven. De gegevens in dit voor beeld zijn afkomstig uit het [USGS aardings risico programma](https://earthquake.usgs.gov/). Met dit voor beeld worden geojson-gegevens van het web geladen met het hulp programma code blok voor het importeren van gegevens dat is opgenomen in het bestand [een gegevens bron maken](create-data-source-android-sdk.md) .
+
+::: zone pivot="programming-language-java-android"
 
 ```java
 //Create a data source and add it to the map.
@@ -80,6 +83,49 @@ Utils.importData("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_
     });
 ```
 
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+//Create a data source and add it to the map.
+val source = DataSource()
+map.sources.add(source)
+
+//Create a heat map layer.
+val layer = HeatMapLayer(
+    source,
+    heatmapRadius(10f),
+    heatmapOpacity(0.8f)
+)
+
+//Add the layer to the map, below the labels.
+map.layers.add(layer, "labels")
+
+//Import the geojson data and add it to the data source.
+Utils.importData("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson",
+    this
+) { result: String? ->
+    //Parse the data as a GeoJSON Feature Collection.
+    val fc = FeatureCollection.fromJson(result!!)
+
+    //Add the feature collection to the data source.
+    source.add(fc)
+
+    //Optionally, update the maps camera to focus in on the data.
+    //Calculate the bounding box of all the data in the Feature Collection.
+    val bbox = MapMath.fromData(fc)
+
+    //Update the maps camera so it is focused on the data.
+    map.setCamera(
+        bounds(bbox),
+        padding(20)
+    )
+}
+```
+
+::: zone-end
+
 De volgende scherm afbeelding toont een kaart die een heatmap laadt met behulp van de bovenstaande code.
 
 ![Kaart met heatmap voor warmte toewijzing van recente aard bevingen](media/map-add-heat-map-layer-android/android-heat-map-layer.png)
@@ -110,6 +156,8 @@ In het vorige voor beeld is de heatmap aangepast door de opties voor RADIUS en d
 - `visible`: Hiermee wordt de laag verborgen of weer gegeven.
 
 Hier volgt een voor beeld van een heatmap waarbij een interpolatie-expressie met een lijn wordt gebruikt om een vloeiende kleur overgang te maken. De `mag` eigenschap die in de gegevens is gedefinieerd, wordt gebruikt met een exponentiële interpolatie om het gewicht of de relevantie van elk gegevens punt in te stellen.
+
+::: zone pivot="programming-language-java-android"
 
 ```java
 HeatMapLayer layer = new HeatMapLayer(source,
@@ -143,6 +191,44 @@ HeatMapLayer layer = new HeatMapLayer(source,
 );
 ```
 
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+val layer = HeatMapLayer(source,
+    heatmapRadius(10f),
+
+    //A linear interpolation is used to create a smooth color gradient based on the heat map density.
+    heatmapColor(
+        interpolate(
+            linear(),
+            heatmapDensity(),
+            stop(0, color(Color.TRANSPARENT)),
+            stop(0.01, color(Color.BLACK)),
+            stop(0.25, color(Color.MAGENTA)),
+            stop(0.5, color(Color.RED)),
+            stop(0.75, color(Color.YELLOW)),
+            stop(1, color(Color.WHITE))
+        )
+    ),
+
+    //Using an exponential interpolation since earthquake magnitudes are on an exponential scale.
+    heatmapWeight(
+       interpolate(
+            exponential(2),
+            get("mag"),
+            stop(0,0),
+
+            //Any earthquake above a magnitude of 6 will have a weight of 1
+            stop(6, 1)
+       )
+    )
+)
+```
+
+::: zone-end
+
 In de volgende scherm afbeelding ziet u de bovenstaande aangepaste heatmap met dezelfde gegevens uit het vorige voor beeld van een heatmap.
 
 ![Kaart met aangepaste heatmap voor hitte van recente aard bevingen](media/map-add-heat-map-layer-android/android-custom-heat-map-layer.png)
@@ -156,6 +242,8 @@ De RADIUS van gegevens punten die worden weer gegeven in de laag van de heatmap 
 Gebruik een `zoom` expressie om de RADIUS voor elk zoom niveau te schalen, zodat elk gegevens punt overeenkomt met hetzelfde fysieke gebied van de kaart. Met deze expressie zorgt u ervoor dat de heatmap van de warmte kaart statisch en consistent is. Elk zoom niveau van de kaart heeft twee keer zoveel pixels verticaal en horizon taal als het vorige zoom niveau.
 
 Het schalen van de RADIUS zodat deze wordt verdubbeld met elk zoom niveau, maakt een heatmap die consistent is op alle zoom niveaus. Als u deze schaal wilt Toep assen, gebruikt u `zoom` met een basis-2- `exponential interpolation` expressie, waarbij de pixel RADIUS is ingesteld voor het minimale zoom niveau en een geschaalde RADIUS voor het maximale zoom niveau dat wordt berekend, zoals `2 * Math.pow(2, minZoom - maxZoom)` wordt weer gegeven in het volgende voor beeld. Zoom in op de kaart om te zien hoe de heatmap met het zoom niveau wordt geschaald.
+
+::: zone pivot="programming-language-java-android"
 
 ```java
 HeatMapLayer layer = new HeatMapLayer(source,
@@ -174,6 +262,30 @@ HeatMapLayer layer = new HeatMapLayer(source,
   heatmapOpacity(0.75f)
 );
 ```
+
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+val layer = HeatMapLayer(source,
+  heatmapRadius(
+    interpolate(
+      exponential(2),
+      zoom(),
+
+      //For zoom level 1 set the radius to 2 pixels.
+      stop(1, 2f),
+
+      //Between zoom level 1 and 19, exponentially scale the radius from 2 pixels to 2 * (maxZoom - minZoom)^2 pixels.
+      stop(19, Math.pow(2.0, 19 - 1.0) * 2f)
+    )
+  ),
+  heatmapOpacity(0.75f)
+)
+```
+
+::: zone-end
 
 In de volgende video ziet u een kaart met de bovenstaande code, waarmee de RADIUS wordt geschaald terwijl de kaart wordt ingezoomd om een consistente rendering van een hitte kaart te maken voor verschillende zoom niveaus.
 

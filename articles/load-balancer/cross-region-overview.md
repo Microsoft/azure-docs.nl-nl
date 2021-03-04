@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: allensu
 ms.custom: references_regions
-ms.openlocfilehash: 64432e2717057c1ff6bb09e0158ddb779d5b5373
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 272fb0a27cf57483af6c07373e35a30f7f6e1c4b
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101742599"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102101372"
 ---
 # <a name="cross-region-load-balancer-preview"></a>Load balancer voor meerdere regio's (preview-versie)
 
@@ -143,7 +143,7 @@ De load balancer over meerdere regio's stuurt het verkeer naar de juiste regiona
 
 * Een status test kan momenteel niet worden geconfigureerd. Met een standaard status test wordt automatisch elke 20 seconden beschikbaarheids gegevens over de regionale load balancer verzameld. 
 
-* Integratie met Azure Kubernetes service (AKS) is momenteel niet beschikbaar. De verbinding wordt verbroken wanneer u een load balancer voor meerdere regio's implementeert met de open bare load balancer van AKS.
+* Integratie met Azure Kubernetes service (AKS) is momenteel niet beschikbaar. De verbinding wordt verbroken bij het implementeren van een load balancer voor meerdere regio's met de standaard load balancer met het AKS-cluster dat is geïmplementeerd in de back-end.
 
 ## <a name="pricing-and-sla"></a>Prijzen en SLA
 Load balancer over meerdere regio's, deelt u de [Sla](https://azure.microsoft.com/support/legal/sla/load-balancer/v1_0/ ) van Standard Load Balancer.

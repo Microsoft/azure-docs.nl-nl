@@ -3,17 +3,18 @@ title: Besturings elementen toevoegen aan een Android-kaart | Microsoft Azure ka
 description: Het toevoegen van een zoom besturings element, besturings element pitch, Control en een stijl kiezer aan een kaart in Microsoft Azure Maps Android SDK.
 author: rbrundritt
 ms.author: richbrun
-ms.date: 02/19/2021
+ms.date: 02/26/2021
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 8224192ed0d13af2ff6ac60aac5aa928589ff01a
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+zone_pivot_groups: azure-maps-android
+ms.openlocfilehash: 90d037fc02bdc1c4d6fe682386790561c890c1e6
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102054886"
+ms.locfileid: "102100216"
 ---
 # <a name="add-controls-to-a-map-android-sdk"></a>Besturings elementen toevoegen aan een kaart (Android SDK)
 
@@ -23,9 +24,23 @@ Dit artikel laat u zien hoe u UI-besturings elementen aan de kaart kunt toevoege
 
 Een zoom besturings element voegt knoppen toe om in en uit te zoomen op de kaart. In het volgende code voorbeeld wordt een exemplaar van de `ZoomControl` klasse gemaakt en toegevoegd aan een kaart.
 
+::: zone pivot="programming-language-java-android"
+
 ```java
+//Construct a zoom control and add it to the map.
 map.controls.add(new ZoomControl());
 ```
+
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+//Construct a zoom control and add it to the map.
+map.controls.add(ZoomControl())
+```
+
+::: zone-end
 
 De onderstaande scherm afbeelding is een zoom besturings element dat is geladen op een kaart.
 
@@ -35,10 +50,23 @@ De onderstaande scherm afbeelding is een zoom besturings element dat is geladen 
 
 Met een besturings element pitch voegt u knoppen toe voor het kantelen van de hoogte om toe te wijzen aan de horizon. In het volgende code voorbeeld wordt een exemplaar van de `PitchControl` klasse gemaakt en toegevoegd aan een kaart.
 
+::: zone pivot="programming-language-java-android"
+
 ```java
 //Construct a pitch control and add it to the map.
 map.controls.add(new PitchControl());
 ```
+
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+//Construct a pitch control and add it to the map.
+map.controls.add(PitchControl())
+```
+
+::: zone-end
 
 De onderstaande scherm afbeelding is een besturings element dat op een kaart wordt geladen.
 
@@ -48,10 +76,23 @@ De onderstaande scherm afbeelding is een besturings element dat op een kaart wor
 
 Met een kompas besturings element wordt een knop voor het draaien van de kaart toegevoegd. In het volgende code voorbeeld wordt een exemplaar van de `CompassControl` klasse gemaakt en toegevoegd aan een kaart.
 
+::: zone pivot="programming-language-java-android"
+
 ```java
 //Construct a compass control and add it to the map.
 map.controls.add(new CompassControl());
 ```
+
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+//Construct a compass control and add it to the map.
+map.controls.add(CompassControl())
+```
+
+::: zone-end
 
 De onderstaande scherm afbeelding is een kompas besturings element dat is geladen op een kaart.
 
@@ -61,10 +102,23 @@ De onderstaande scherm afbeelding is een kompas besturings element dat is gelade
 
 Een verkeers controle voegt een knop toe om de zicht baarheid van verkeers gegevens op de kaart te scha kelen. In het volgende code voorbeeld wordt een exemplaar van de `TrafficControl` klasse gemaakt en toegevoegd aan een kaart.
 
+::: zone pivot="programming-language-java-android"
+
 ```java
 //Construct a traffic control and add it to the map.
 map.controls.add(new TrafficControl());
 ```
+
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+//Construct a traffic control and add it to the map.
+map.controls.add(TrafficControl())
+```
+
+::: zone-end
 
 De onderstaande scherm afbeelding is een verkeers controle die is geladen op een kaart.
 
@@ -73,6 +127,8 @@ De onderstaande scherm afbeelding is een verkeers controle die is geladen op een
 ## <a name="a-map-with-all-controls"></a>Een kaart met alle besturings elementen
 
 Meerdere besturings elementen kunnen in een matrix worden geplaatst en in één keer aan de kaart worden toegevoegd en in hetzelfde gebied van de kaart worden geplaatst om de ontwikkeling te vereenvoudigen. In het volgende voor beeld wordt de standaard navigatie besturings elementen aan de kaart toegevoegd met behulp van deze methode.
+
+::: zone pivot="programming-language-java-android"
 
 ```java
 map.controls.add(
@@ -84,6 +140,23 @@ map.controls.add(
     }
 );
 ```
+
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+map.controls.add(
+    arrayOf<Control>(
+        ZoomControl(),
+        CompassControl(),
+        PitchControl(),
+        TrafficControl()
+    )
+)
+```
+
+::: zone-end
 
 In de onderstaande scherm afbeelding ziet u alle besturings elementen die worden geladen op een kaart. De volg orde waarin ze worden toegevoegd aan de kaart is de volg orde waarin ze worden weer gegeven.
 

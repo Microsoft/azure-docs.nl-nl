@@ -3,19 +3,19 @@ title: Een nieuwe Azure-toepassing Insights-resource maken | Microsoft Docs
 description: Stel Application Insights bewaking hand matig in voor een nieuwe Live-toepassing.
 ms.topic: conceptual
 ms.date: 02/10/2021
-ms.openlocfilehash: 1ec5e929f591c0b7ada36f345d86c6de591892c8
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 459f61d9e13a2098403f3e78c7a529e49bf65e59
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100575613"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102100930"
 ---
 # <a name="create-an-application-insights-resource"></a>Een Application Insights-resource maken
 
 Met Azure-toepassing Insights worden gegevens over uw toepassing weer gegeven in een Microsoft Azure *resource*. Het maken van een nieuwe resource is daarom een onderdeel van het [instellen van Application Insights om een nieuwe toepassing te bewaken][start]. Nadat u de nieuwe resource hebt gemaakt, kunt u de bijbehorende instrumentatie sleutel ophalen en gebruiken om de Application Insights SDK te configureren. De instrumentatie sleutel koppelt uw telemetrie aan de resource.
 
 > [!IMPORTANT]
-> Klassieke Application Insights is afgeschaft. Volg deze [instructies over hoe u een upgrade uitvoert naar Application Insights op basis van een werk ruimte](convert-classic-resource.md).
+> [Klassieke Application Insights is afgeschaft](https://azure.microsoft.com/updates/we-re-retiring-classic-application-insights-on-29-february-2024/). Volg deze [instructies over hoe u een upgrade uitvoert naar Application Insights op basis van een werk ruimte](convert-classic-resource.md).
 
 ## <a name="sign-in-to-microsoft-azure"></a>Aanmelden bij Microsoft Azure
 

@@ -3,17 +3,18 @@ title: Een gegevens bron maken voor Android-kaarten | Microsoft Azure kaarten
 description: 'Meer informatie over het maken van een gegevens bron voor een kaart. Meer informatie over de gegevens bronnen die de Azure Maps Android SDK gebruikt: geojson-bronnen en vector tegels.'
 author: rbrundritt
 ms.author: richbrun
-ms.date: 12/03/2020
+ms.date: 2/26/2021
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: fc68dc25aad3671a55e5c11cbee094b4027e7070
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+zone_pivot_groups: azure-maps-android
+ms.openlocfilehash: e870134e2ecd431aa3e5c02638120027f0d47df2
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102047669"
+ms.locfileid: "102101457"
 ---
 # <a name="create-a-data-source-android-sdk"></a>Een gegevens bron maken (Android SDK)
 
@@ -25,6 +26,8 @@ De Azure Maps Android-SDK slaat gegevens op in gegevens bronnen. Het gebruik van
 ## <a name="geojson-data-source"></a>Geojson-gegevens bron
 
 Azure Maps gebruikt geojson als een van de primaire gegevens modellen. Geojson is een open georuimtelijke standaard methode voor het vertegenwoordigen van georuimtelijke gegevens in JSON-indeling. Geojson-klassen die beschikbaar zijn in de Azure Maps Android SDK om eenvoudig geojson-gegevens te maken en te serialiseren. De geojson-gegevens in de klasse laden en opslaan `DataSource` en deze weer geven met behulp van lagen. De volgende code laat zien hoe geojson-objecten kunnen worden gemaakt in Azure Maps.
+
+::: zone pivot="programming-language-java-android"
 
 ```java
 /*
@@ -53,7 +56,42 @@ feature.addStringProperty("custom-property", "value");
 source.add(feature);
 ```
 
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+/*
+    Raw GeoJSON feature
+    
+    {
+         "type": "Feature",
+         "geometry": {
+             "type": "Point",
+             "coordinates": [-100, 45]
+         },
+         "properties": {
+             "custom-property": "value"
+         }
+    }
+
+*/
+
+//Create a point feature.
+val feature = Feature.fromGeometry(Point.fromLngLat(-100, 45))
+
+//Add a property to the feature.
+feature.addStringProperty("custom-property", "value")
+
+//Add the feature to the data source.
+source.add(feature)
+```
+
+::: zone-end
+
 U kunt de eigenschappen ook in een JsonObject laden en vervolgens door geven tijdens het maken van de-functie, zoals hieronder wordt weer gegeven.
+
+::: zone pivot="programming-language-java-android"
 
 ```java
 //Create a JsonObject to store properties for the feature.
@@ -62,6 +100,20 @@ properties.addProperty("custom-property", "value");
 
 Feature feature = Feature.fromGeometry(Point.fromLngLat(-100, 45), properties);
 ```
+
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+//Create a JsonObject to store properties for the feature.
+val properties = JsonObject()
+properties.addProperty("custom-property", "value")
+
+val feature = Feature.fromGeometry(Point.fromLngLat(-100, 45), properties)
+```
+
+::: zone-end
 
 Zodra u een geojson-functie hebt gemaakt, kunt u een gegevens bron aan de kaart toevoegen via de `sources` eigenschap van de kaart. De volgende code laat zien hoe u een maakt, hoe u `DataSource` deze toevoegt aan de kaart en hoe u een functie toevoegt aan de gegevens bron.
 
@@ -75,6 +127,8 @@ source.add(feature);
 ```
 
 De volgende code toont verschillende manieren om een geojson-functie, FeatureCollection en geometrie te maken.
+
+::: zone pivot="programming-language-java-android"
 
 ```java
 //GeoJSON Point Geometry
@@ -112,9 +166,53 @@ FeatureCollection featureCollectionFromSingleFeature = FeatureCollection.fromFea
 FeatureCollection featureCollection = FeatureCollection.fromFeatures(listOfFeatures);
 ```
 
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+//GeoJSON Point Geometry
+val point = Point.fromLngLat(LONGITUDE, LATITUDE)
+
+//GeoJSON Point Geometry
+val linestring = LineString.fromLngLats(PointList)
+
+//GeoJSON Polygon Geometry
+val polygon = Polygon.fromLngLats(listOfPointList)
+
+val polygonFromOuterInner = Polygon.fromOuterInner(outerLineStringObject, innerLineStringObject)
+
+//GeoJSON MultiPoint Geometry
+val multiPoint = MultiPoint.fromLngLats(PointList)
+
+//GeoJSON MultiLineString Geometry
+val multiLineStringFromLngLat = MultiLineString.fromLngLats(listOfPointList)
+
+val multiLineString = MultiLineString.fromLineString(singleLineString)
+
+//GeoJSON MultiPolygon Geometry
+val multiPolygon = MultiPolygon.fromLngLats(listOflistOfPointList)
+
+val multiPolygonFromPolygon = MultiPolygon.fromPolygon(polygon)
+
+val multiPolygonFromPolygons = MultiPolygon.fromPolygons(PolygonList)
+
+//GeoJSON Feature
+val pointFeature = Feature.fromGeometry(Point.fromLngLat(LONGITUDE, LATITUDE))
+
+//GeoJSON FeatureCollection 
+val featureCollectionFromSingleFeature = FeatureCollection.fromFeature(pointFeature)
+
+val featureCollection = FeatureCollection.fromFeatures(listOfFeatures)
+```
+
+::: zone-end
+
 ### <a name="serialize-and-deserialize-geojson"></a>Geojson serialiseren en deserialiseren
 
 De klassen functie verzameling, functie en Geometry hebben alle `fromJson()` en `toJson()` statische methoden, die u helpen bij serialisatie. Met de geformatteerde geldige JSON-teken reeks die door de `fromJson()` methode is door gegeven, wordt het object Geometry gemaakt. Deze `fromJson()` methode betekent ook dat u Gson of andere strategieën voor serialisatie/deserialisatie kunt gebruiken. De volgende code laat zien hoe u een stringified geojson-functie kunt maken en deze kunt deserialiseren naar de functie klasse en vervolgens weer serialiseren naar een geojson-teken reeks.
+
+::: zone pivot="programming-language-java-android"
 
 ```java
 //Take a stringified GeoJSON object.
@@ -136,11 +234,39 @@ Feature feature = Feature.fromJson(GeoJSON_STRING);
 String featureString = feature.toJson();
 ```
 
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+//Take a stringified GeoJSON object.
+val GeoJSON_STRING = ("{"
+        + "      \"type\": \"Feature\","
+        + "      \"geometry\": {"
+        + "            \"type\": \"Point\""
+        + "            \"coordinates\": [-100, 45]"
+        + "      },"
+        + "      \"properties\": {"
+        + "            \"custom-property\": \"value\""
+        + "      },"
+        + "}")
+
+//Deserialize the JSON string into a feature.
+val feature = Feature.fromJson(GeoJSON_STRING)
+
+//Serialize a feature collection to a string.
+val featureString = feature.toJson()
+```
+
+::: zone-end
+
 ### <a name="import-geojson-data-from-web-or-assets-folder"></a>GeoJSON-gegevens importeren vanaf internet of uit een map met assets
 
 De meeste geojson-bestanden bevatten een FeatureCollection. Geojson-bestanden lezen als teken reeksen en de `FeatureCollection.fromJson` methode gebruiken om deze te deserialiseren.
 
 De volgende code is een herbruikbare klasse voor het importeren van gegevens uit de map web of lokale assets als teken reeks en retour neren naar de UI-thread via een call back-functie.
+
+::: zone pivot="programming-language-java-android"
 
 ```java
 import android.content.Context;
@@ -315,7 +441,78 @@ public class Utils {
 }
 ```
 
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+import android.content.Context
+import android.os.Handler
+import android.os.Looper
+import android.webkit.URLUtil
+import java.net.URL
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
+
+class Utils {
+    companion object {
+
+        /**
+            * Imports data from a web url or asset file name and returns it to a callback.
+            * @param urlOrFileName A web url or asset file name that points to data to load.
+            * @param context The context of the app.
+            * @param callback The callback function to return the data to.
+            */
+        fun importData(urlOrFileName: String?, context: Context, callback: (String?) -> Unit) {
+            importData(urlOrFileName, context, callback, null)
+        }
+
+        /**
+            * Imports data from a web url or asset file name and returns it to a callback.
+            * @param urlOrFileName A web url or asset file name that points to data to load.
+            * @param context The context of the app.
+            * @param callback The callback function to return the data to.
+            * @param error A callback function to return errors to.
+            */
+        public fun importData(urlOrFileName: String?, context: Context, callback: (String?) -> Unit, error: ((String?) -> Unit)?) {
+            if (urlOrFileName != null && callback != null) {
+                val executor: ExecutorService = Executors.newSingleThreadExecutor()
+                val handler = Handler(Looper.getMainLooper())
+                executor.execute {
+                    var data: String? = null
+                    
+                    try {
+                        data = if (URLUtil.isNetworkUrl(urlOrFileName)) {
+                            URL(urlOrFileName).readText()
+                        } else { //Assume file is in assets folder.
+                            context.assets.open(urlOrFileName).bufferedReader().use{
+                                it.readText()
+                            }
+                        }
+
+                        handler.post {
+                            //Ensure the resulting data string is not null or empty.
+                            if (data != null && !data.isEmpty()) {
+                                callback(data)
+                            } else {
+                                error!!("No data imported.")
+                            }
+                        }
+                    } catch (e: Exception) {
+                        error!!(e.message)
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+::: zone-end
+
 De volgende code laat zien hoe u dit hulp programma gebruikt om geojson-gegevens te importeren als een teken reeks en deze te retour neren aan de UI-thread via een call back. In de call back kunnen de teken reeks gegevens worden geserialiseerd in een geojson-functie verzameling en worden toegevoegd aan de gegevens bron. U kunt de kaarten camera eventueel bijwerken om te focussen op de gegevens.
+
+::: zone pivot="programming-language-java-android"
 
 ```java
 //Create a data source and add it to the map.
@@ -344,6 +541,41 @@ Utils.importData("URL_or_FilePath_to_GeoJSON_data",
     });
 ```
 
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+//Create a data source and add it to the map.
+DataSource source = new DataSource();
+map.sources.add(source);
+
+//Import the GeoJSON data and add it to the data source.
+Utils.importData("SamplePoiDataSet.json", this) { 
+    result: String? ->
+        //Parse the data as a GeoJSON Feature Collection.
+            val fc = FeatureCollection.fromJson(result!!)
+
+        //Add the feature collection to the data source.
+        source.add(fc)
+
+        //Optionally, update the maps camera to focus in on the data.
+
+        //Calculate the bounding box of all the data in the Feature Collection.
+        val bbox = MapMath.fromData(fc);
+
+        //Update the maps camera so it is focused on the data.
+        map.setCamera(
+            bounds(bbox),
+
+            //Padding added to account for pixel size of rendered points.
+            padding(20)
+        )
+    }
+```
+
+::: zone-end
+
 ## <a name="vector-tile-source"></a>Bron van vector tegel
 
 Een vector tegel bron beschrijft hoe een vector tegel laag kan worden geopend. Gebruik de- `VectorTileSource` klasse om een vector tegel bron te instantiëren. Vector tegel lagen zijn vergelijkbaar met de tegel lagen, maar ze zijn niet hetzelfde. Een tegel laag is een raster afbeelding. Vector tegel lagen zijn een gecomprimeerd bestand in de **PBF** -indeling. Dit gecomprimeerde bestand bevat gegevens van een vector kaart en een of meer lagen. Het bestand kan worden gerenderd en opgemaakt op de client, op basis van de stijl van elke laag. De gegevens in een vector tegel bevatten geografische functies in de vorm van punten, lijnen en veelhoeken. Er zijn verschillende voor delen van het gebruik van vector tegel lagen in plaats van raster tegel lagen:
@@ -364,6 +596,8 @@ Azure Maps voldoet aan de [tegel specificatie Mapbox vector](https://github.com/
 > Wanneer u gebruikmaakt van vector-of raster afbeeldings tegels van de Azure Maps render-service met de Web-SDK, kunt u vervangen door `atlas.microsoft.com` de tijdelijke aanduiding `azmapsdomain.invalid` . Deze tijdelijke aanduiding wordt vervangen door het domein dat wordt gebruikt door de kaart en zal ook automatisch dezelfde verificatie gegevens toevoegen. Dit vereenvoudigt de verificatie met de render-service aanzienlijk wanneer u Azure Active Directory-verificatie gebruikt.
 
 Als u gegevens uit een vector tegel bron op de kaart wilt weer geven, verbindt u de bron met een van de gegevens weergave lagen. Alle lagen die gebruikmaken van een vector bron moeten een `sourceLayer` waarde in de opties opgeven. Met de volgende code wordt de Azure Maps traffic flow vector-tegel service als een vector tegel bron geladen en vervolgens weer gegeven op een kaart met behulp van een laag. Deze vector tegel bron heeft één set gegevens in de bron laag met de naam ' verkeers stroom '. De regel gegevens in deze gegevensset hebben een eigenschap `traffic_level` met de naam die wordt gebruikt in deze code om de kleur te selecteren en de grootte van regels te schalen.
+
+::: zone pivot="programming-language-java-android"
 
 ```java
 //Formatted URL to the traffic flow vector tiles, with the maps subscription key appended to it.
@@ -407,6 +641,50 @@ LineLayer layer = new LineLayer(source,
 map.layers.add(layer, "labels");
 ```
 
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+//Formatted URL to the traffic flow vector tiles, with the maps subscription key appended to it.
+val trafficFlowUrl = "https://azmapsdomain.invalid/traffic/flow/tile/pbf?api-version=1.0&style=relative&zoom={z}&x={x}&y={y}"
+
+//Create a vector tile source and add it to the map.
+val source = VectorTileSource(
+    tiles(arrayOf(trafficFlowUrl)),
+    maxSourceZoom(22)
+)
+map.sources.add(source)
+
+//Create a layer for traffic flow lines.
+val layer = LineLayer(
+    source,  //The name of the data layer within the data source to pass into this rendering layer.
+    sourceLayer("Traffic flow"),  //Color the roads based on the traffic_level property.
+    strokeColor(
+        interpolate(
+            linear(),
+            get("traffic_level"),
+            stop(0, color(Color.RED)),
+            stop(0.33, color(Color.YELLOW)),
+            stop(0.66, color(Color.GREEN))
+        )
+    ),  //Scale the width of roads based on the traffic_level property.
+    strokeWidth(
+        interpolate(
+            linear(),
+            get("traffic_level"),
+            stop(0, 6),
+            stop(1, 1)
+        )
+    )
+)
+
+//Add the traffic flow layer below the labels to make the map clearer.
+map.layers.add(layer, "labels")
+```
+
+::: zone-end
+
 ![Toewijzen aan weglijnen met kleur die de verkeers stroom niveaus weer geven](media/create-data-source-android-sdk/android-vector-tile-source-line-layer.png)
 
 ## <a name="connecting-a-data-source-to-a-layer"></a>Een gegevens bron verbinden met een laag
@@ -420,6 +698,8 @@ De gegevens worden weer gegeven op de kaart met behulp van lagen renderen. Naar 
 - [Veelhoek-laag](how-to-add-shapes-to-android-map.md) : Hiermee wordt het gebied van een veelhoek gevuld met een effen kleur of een patroon voor een afbeelding.
 
 De volgende code laat zien hoe u een gegevens bron maakt, hoe u deze toevoegt aan de kaart en hoe u deze verbindt met een Bubble Layer. En importeer vervolgens geojson Point-gegevens vanaf een externe locatie naar de gegevens bron.
+
+::: zone pivot="programming-language-java-android"
 
 ```java
 //Create a data source and add it to the map.
@@ -452,6 +732,42 @@ Utils.importData("URL_or_FilePath_to_GeoJSON_data",
     });
 ```
 
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+//Create a data source and add it to the map.
+val source = DataSource()
+map.sources.add(source)
+
+//Create a layer that defines how to render points in the data source and add it to the map.
+val layer = BubbleLayer(source)
+map.layers.add(layer)
+
+//Import the geojson data and add it to the data source.
+Utils.importData("URL_or_FilePath_to_GeoJSON_data", this) { 
+    result: String? ->
+        //Parse the data as a GeoJSON Feature Collection.
+        val fc = FeatureCollection.fromJson(result!!)
+    
+        //Add the feature collection to the data source.
+        dataSource.add(fc)
+    
+        //Optionally, update the maps camera to focus in on the data.
+        //Calculate the bounding box of all the data in the Feature Collection.
+        val bbox = MapMath.fromData(fc)
+    
+        //Update the maps camera so it is focused on the data.
+        map.setCamera(
+            bounds(bbox),
+            padding(20)
+        )
+    }
+```
+
+::: zone-end
+
 Er zijn extra rendering lagen die geen verbinding maken met deze gegevens bronnen, maar ze kunnen de gegevens rechtstreeks laden voor rendering.
 
 - [Tegel laag](how-to-add-tile-layer-android-map.md) : er wordt een raster tegel laag boven op de kaart opgelegd.
@@ -465,6 +781,8 @@ Meerdere lagen kunnen worden verbonden met één gegevens bron. Er zijn veel ver
 In de meeste toewijzings platforms hebt u een veelhoek object, een lijn object en een pincode voor elke positie in de veelhoek nodig. Als de veelhoek is gewijzigd, moet u de regel en pincodes hand matig bijwerken. Dit kan snel complexer worden.
 
 Met Azure Maps hoeft u alleen maar één veelhoek in een gegevens bron te hebben, zoals in de onderstaande code wordt weer gegeven.
+
+::: zone pivot="programming-language-java-android"
 
 ```java
 //Create a data source and add it to the map.
@@ -497,8 +815,48 @@ BubbleLayer bubbleLayer = new BubbleLayer(source,
 map.layers.add(new Layer[] { polygonLayer, lineLayer, bubbleLayer });
 ```
 
+::: zone-end
+
+::: zone pivot="programming-language-kotlin"
+
+```kotlin
+//Create a data source and add it to the map.
+val source = DataSource()
+map.sources.add(source)
+
+//Create a polygon and add it to the data source.
+source.add(Polygon.fromLngLats())
+
+//Create a polygon layer to render the filled in area of the polygon.
+val polygonLayer = PolygonLayer(
+    source,
+    fillColor("rgba(255,165,0,0.2)")
+)
+
+//Create a line layer for greater control of rendering the outline of the polygon.
+val lineLayer = LineLayer(
+    source,
+    strokeColor("orange"),
+    strokeWidth(2f)
+)
+
+//Create a bubble layer to render the vertices of the polygon as scaled circles.
+val bubbleLayer = BubbleLayer(
+    source,
+    bubbleColor("orange"),
+    bubbleRadius(5f),
+    bubbleStrokeColor("white"),
+    bubbleStrokeWidth(2f)
+)
+
+//Add all layers to the map.
+map.layers.add(arrayOf<Layer>(polygonLayer, lineLayer, bubbleLayer))
+```
+
+::: zone-end
+
 > [!TIP]
-> Wanneer u met behulp van de methode lagen aan de kaart toevoegt `map.layers.add` , kan de id of het exemplaar van een bestaande laag worden door gegeven als een tweede para meter. Hiermee wordt aangegeven dat de toewijzing van de nieuwe laag onder de bestaande laag moet worden ingevoegd. In naast die in een laag-ID worden door gegeven, ondersteunt deze methode ook de volgende waarden.
+> Wanneer u met behulp van de methode lagen aan de kaart toevoegt `map.layers.add` , kan de id of het exemplaar van een bestaande laag worden door gegeven als een tweede para meter. Hiermee wordt aangegeven dat de toewijzing van de nieuwe laag onder de bestaande laag moet worden ingevoegd. Naast het door geven van een laag-ID, ondersteunt deze methode ook de volgende waarden.
 >
 > - `"labels"` -Hiermee wordt de nieuwe laag onder de kaart label lagen ingevoegd.
 > - `"transit"` -Voegt de nieuwe laag onder de lagen kaart en transit toe.

@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 03/02/2021
 ms.author: duau
-ms.openlocfilehash: 20b8e354d0c8e2e04cf22d1b8014f5b8e33a860c
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: c0d153ff8125a6ef16a69aec72a27dd4b234eab5
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102038863"
+ms.locfileid: "102100046"
 ---
 # <a name="add-ipv6-support-for-private-peering-using-azure-powershell-preview"></a>IPv6-ondersteuning voor privé-peering toevoegen met behulp van Azure PowerShell (preview-versie)
 
@@ -175,7 +175,7 @@ Hoewel IPv6-ondersteuning beschikbaar is voor verbindingen met implementaties in
 * Verbindingen met implementaties in azure via een niet-AZ ExpressRoute gateway SKU
 * Verbindingen met implementaties in niet-AZ regio's
 * Global Reach verbindingen tussen ExpressRoute-circuits
-* Gebruik van ExpressRoute met vWAN
+* Gebruik van ExpressRoute met Virtual WAN
 
 ## <a name="next-steps"></a>Volgende stappen
 

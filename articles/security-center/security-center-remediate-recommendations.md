@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/08/2020
 ms.author: memildin
-ms.openlocfilehash: dabd7e9e2c3c74225efc4611c7ad3523a6c76ba5
-ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
+ms.openlocfilehash: 6222491d35317e549a3d21f29395b9c25813ea9f
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97807987"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102100352"
 ---
 # <a name="remediate-recommendations-in-azure-security-center"></a>Aanbevelingen oplossen in Azure Security Center
 
@@ -36,7 +36,7 @@ Nadat u alle aanbevelingen hebt bekeken, moet u bepalen welke u het eerst wilt h
 
 1. Zodra dit is voltooid, wordt een melding weer gegeven waarin wordt gemeld of het probleem is opgelost.
 
-## <a name="quick-fix-remediation"></a>Snel herstel oplossen
+## <a name="quick-fix-remediation"></a>Snelle oplossingen voor herstel
 
 Om het herstel te vereenvoudigen en de beveiliging van uw omgeving te verbeteren (en uw veilige score te verg Roten), bevatten veel aanbevelingen een optie voor snel oplossen.
 
@@ -81,5 +81,5 @@ Voor de herstel bewerking wordt gebruikgemaakt van een sjabloon implementatie of
 
 In dit document hebt u geleerd hoe u aanbevelingen in Security Center kunt herstellen. Zie de volgende pagina's voor meer informatie over het Security Center:
 
-* [Beveiligings beleid instellen in azure Security Center](tutorial-security-policy.md) -meer informatie over het configureren van beveiligings beleid voor uw Azure-abonnementen en-resource groepen.
-* [Beveiligingsstatus controleren in Azure Security Center](security-center-monitoring.md): meer informatie over het controleren van de status van uw Azure-resources.
+* [Beveiligings beleid instellen in azure Security Center](tutorial-security-policy.md) -meer informatie over het configureren van beveiligings beleid voor uw Azure-abonnementen en-resource groepen
+* [Wat zijn beveiligings beleid, initiatieven en aanbevelingen?](security-policy-concept.md)

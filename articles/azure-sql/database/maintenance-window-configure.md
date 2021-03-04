@@ -8,13 +8,13 @@ ms.topic: how-to
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-ms.date: 03/02/2021
-ms.openlocfilehash: e8f7e5451b48066f52a4c1038e58b1efa99951e6
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.date: 03/04/2021
+ms.openlocfilehash: f5692f2bcaaadfc56084ec8db745eae48112ecf3
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102048591"
+ms.locfileid: "102101236"
 ---
 # <a name="configure-maintenance-window-preview"></a>Onderhouds venster configureren (preview-versie)
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -26,6 +26,8 @@ Het *systeem standaard* onderhoud van de computer is tot 17:00 uur naar 8 a.m. D
 
 De mogelijkheid om te wijzigen in een ander onderhouds venster is niet beschikbaar voor elk service niveau of in elke regio. Zie [Beschik baarheid van onderhouds venster](maintenance-window.md#availability)voor meer informatie over beschik baarheid.
 
+> [!Important]
+> Het configureren van het onderhouds venster is een langlopende asynchrone bewerking, vergelijkbaar met het wijzigen van de servicelaag van de Azure SQL-resource. De resource is beschikbaar tijdens de bewerking, met uitzonde ring van een korte failover die aan het einde van de bewerking plaatsvindt en doorgaans tot 8 seconden duurt, zelfs in het geval van langdurige langlopende trans acties. Als u de gevolgen van de failover wilt beperken, moet u de bewerking buiten de piek uren uitvoeren.
 
 ## <a name="configure-maintenance-window-during-database-creation"></a>Onderhouds venster configureren tijdens het maken van de data base 
 

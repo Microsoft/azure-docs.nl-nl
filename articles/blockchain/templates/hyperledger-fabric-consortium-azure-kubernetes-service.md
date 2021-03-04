@@ -1,15 +1,16 @@
 ---
 title: Hyperledger Fabric consortium implementeren op Azure Kubernetes service
 description: Een Hyperledger Fabric consortium-netwerk implementeren en configureren op de Azure Kubernetes-service
-ms.date: 01/08/2021
+ms.date: 03/01/2021
 ms.topic: how-to
 ms.reviewer: ravastra
-ms.openlocfilehash: c0e7f3e7ab83f64cebd990de57d48c97891edb7f
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.custom: contperf-fy21q3
+ms.openlocfilehash: 42d16adbc5e6396c8d5d38176ac7681c712f4555
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897255"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102101100"
 ---
 # <a name="deploy-hyperledger-fabric-consortium-on-azure-kubernetes-service"></a>Hyperledger Fabric consortium implementeren op Azure Kubernetes service
 
@@ -31,34 +32,6 @@ Optie | Service model | Algemeen scenario
 Oplossingssjablonen | IaaS | Oplossings sjablonen zijn Azure Resource Manager sjablonen die u kunt gebruiken om een volledig geconfigureerde Block chain-netwerk topologie in te richten. De sjablonen implementeren en configureren Microsoft Azure compute-, netwerk-en opslag Services voor een Block chain-netwerk type. Er worden oplossings sjablonen gegeven zonder een service overeenkomst. Gebruik de [pagina micro soft Q&A](/answers/topics/azure-blockchain-workbench.html) voor ondersteuning.
 [Azure Blockchain-service](../service/overview.md) | PaaS | De preview-versie van Azure Block Chain Service vereenvoudigt de vorming, het beheer en de governance van consortium Block Chain Networks. Gebruik de Azure Block Chain-Service voor oplossingen waarvoor PaaS, consortium beheer of de privacy van contracten en trans acties is vereist.
 [Azure Blockchain Workbench](../workbench/overview.md) | IaaS en PaaS | Azure Block Chain Workbench preview is een verzameling Azure-Services en-functies die u helpen bij het maken en implementeren van Block Chain-toepassingen voor het delen van bedrijfs processen en-gegevens met andere organisaties. Gebruik Azure Block Chain Workbench voor het prototypen van een Block Chain-oplossing of een proof of concept voor een Block Chain-toepassing. Azure Block Chain Workbench wordt zonder een service overeenkomst ondersteund. Gebruik de [pagina micro soft Q&A](/answers/topics/azure-blockchain-workbench.html) voor ondersteuning.
-
-## <a name="hyperledger-fabric-consortium-architecture"></a>Consortium architectuur voor Hyperledger Fabric
-
-Als u een Hyperledger-infrastructuur netwerk wilt bouwen op Azure, moet u een bestelling service en organisatie implementeren met peer knooppunten. Met behulp van de Hyperledger Fabric op de Azure Kubernetes-sjabloon voor de service oplossing kunt u order knooppunten of peer-knoop punten maken. U moet de sjabloon implementeren voor elk knoop punt dat u wilt maken.
-
-De fundamentele onderdelen die worden gemaakt als onderdeel van de sjabloon implementatie zijn:
-
-- **Orderer-knoop punten**: een knoop punt dat verantwoordelijk is voor transactie ordening in het groot boek. Naast andere knoop punten vormen de geordende knoop punten de bestel service van het Hyperledger-infrastructuur netwerk.
-
-- **Peer knooppunten**: een knoop punt dat voornamelijk als host dient voor groot boeken en slimme contracten, die fundamentele elementen van het netwerk zijn.
-
-- **Fabric-ca**: de certificerings instantie (CA) voor Hyperledger-infra structuur. Met de infrastructuur certificerings instantie kunt u een server proces voor het hosten van de certificerings instantie initialiseren en starten. Hiermee kunt u identiteiten en certificaten beheren. Elk AKS-cluster dat is geïmplementeerd als onderdeel van de sjabloon, heeft standaard een Fabric-CA pod.
-
-- **Couchdb of LevelDB**: World State data bases voor de knoop punten op hetzelfde niveau. LevelDB is de standaard status database die in het knoop punt peer is inge sloten. De chaincode-gegevens worden opgeslagen als eenvoudige sleutel-waardeparen en alleen sleutel, sleutel bereik en samengestelde sleutel query's worden ondersteund. CouchDB is een optionele alternatieve status database die Rich query's ondersteunt wanneer chaincode-gegevens waarden als JSON worden gemodelleerd.
-
-Met de sjabloon voor implementatie worden verschillende Azure-resources in uw abonnement gedraaid. De geïmplementeerde Azure-resources zijn:
-
-- **AKS-cluster**: Azure Kubernetes service-cluster dat is geconfigureerd op basis van de invoer parameters die de klant heeft opgegeven. Het AKS-cluster heeft verschillende peulen die zijn geconfigureerd voor het uitvoeren van de onderdelen van het Hyperledger Fabric-netwerk. Het gemaakte peul is:
-
-  - **Infrastructuur hulpprogramma's**: hulpprogram ma's die verantwoordelijk zijn voor het configureren van de Hyperledger Fabric-onderdelen.
-  - **Orderer/peer-peul**: de knoop punten van het Hyperledger Fabric-netwerk.
-  - **Proxy**: een NGNIX-proxy pod waarmee de client toepassingen kunnen communiceren met het AKS-cluster.
-  - **Fabric-ca**: de pod die de Fabric-CA uitvoert.
-- **Postgresql**: data base-exemplaar dat de CA-identiteiten van de Fabric onderhoudt.
-
-- **Sleutel kluis**: het exemplaar van de Azure Key Vault-service dat wordt geïmplementeerd om de CA-certificerings instantie en de basis certificaten van de klant op te slaan. De kluis wordt gebruikt in het geval van een nieuwe poging voor een sjabloon implementatie om de mechanismen van de sjabloon af te handelen.
-- **Beheerde schijf**: het exemplaar van de Azure Managed disks-service dat een permanente opslag voor het groot boek levert en voor de wereld wijde status database van het knoop punt.
-- **Openbaar IP-adres**: het eind punt van het AKS-cluster dat is geïmplementeerd voor communicatie met het cluster.
 
 ## <a name="deploy-the-orderer-and-peer-organization"></a>De orderer en peer-organisatie implementeren
 
@@ -85,10 +58,10 @@ Als u aan de slag wilt gaan met de implementatie van Hyperledger Fabric-netwerk 
     - **Organisatie naam**: Voer de naam in van de Hyperledger Fabric-organisatie, die vereist is voor diverse bewerkingen voor gegevenslaag. De naam van de organisatie moet uniek zijn per implementatie.
     - **Infrastructuur netwerk onderdeel**: Kies **bestellingen service** of **peer-knoop punten** op basis van het block chain-netwerk onderdeel dat u wilt instellen.
     - **Aantal knoop punten**: de volgende twee typen knoop punten zijn:
-        - **Bestel service**: Selecteer het aantal knoop punten om fout tolerantie voor het netwerk op te geven. Het aantal ondersteunde order knooppunten is 3, 5 en 7.
-        - **Knoop punten op hetzelfde niveau**: u kunt 1 tot 10 knoop punten kiezen op basis van uw vereiste.
-    - **Data Base voor wereld wijde status van peer-knoop punt**: Kies tussen LevelDB en couchdb. Dit veld wordt weer gegeven wanneer u **peer knooppunten** kiest in de vervolg keuzelijst **infrastructuur netwerk onderdeel** .
-    - **Fabric ca-gebruikers naam**: Voer de gebruikers naam in die wordt gebruikt voor infrastructuur verificatie van de ca.
+        - **Bestel service**: knoop punten die verantwoordelijk zijn voor transactie ordening in het groot boek. Selecteer het aantal knoop punten om fout tolerantie voor het netwerk op te geven. Het aantal ondersteunde order knooppunten is 3, 5 en 7.
+        - **Gelijkwaardige knoop punten**: knoop punten die als host dienen voor groot boeken en slimme contracten. U kunt 1 tot 10 knoop punten kiezen op basis van uw vereiste.
+    - **Data Base** van de wereld van het knoop punt met de status: wereld wijde data bases voor de peer knooppunten. LevelDB is de standaard status database die in het knoop punt peer is inge sloten. De chaincode-gegevens worden opgeslagen als eenvoudige sleutel-waardeparen en alleen sleutel, sleutel bereik en samengestelde sleutel query's worden ondersteund. CouchDB is een optionele alternatieve status database die Rich query's ondersteunt wanneer chaincode-gegevens waarden als JSON worden gemodelleerd. Dit veld wordt weer gegeven wanneer u **peer knooppunten** kiest in de vervolg keuzelijst **infrastructuur netwerk onderdeel** .
+    - **CA-certificerings instantie gebruikers naam**: met de Fabric-certificerings instantie kunt u een server proces initialiseren en starten dat als host fungeert voor de certificerings instantie. Hiermee kunt u identiteiten en certificaten beheren. Elk AKS-cluster dat is geïmplementeerd als onderdeel van de sjabloon, heeft standaard een Fabric-CA pod. Voer de gebruikers naam in die wordt gebruikt voor infrastructuur verificatie van de CA.
     - **CA-wacht woord van infrastructuur resources**: Voer het wacht woord in voor infrastructuur ca-authenticatie.
     - **Bevestig het wacht woord**: Bevestig het CA-wacht woord van de infra structuur.
     - **Certificaten**: als u uw eigen basis certificaten wilt gebruiken om de infrastructuur certificerings instantie te initialiseren, kiest u de optie **basis certificaat uploaden voor infrastructuur ca** . Anders maakt de infrastructuur certificerings instantie automatisch zelfondertekende certificaten.
@@ -96,11 +69,21 @@ Als u aan de slag wilt gaan met de implementatie van Hyperledger Fabric-netwerk 
     - **Persoonlijke sleutel van het basis certificaat**: de persoonlijke sleutel van het basis certificaat uploaden. Als u een. PEM-certificaat hebt, dat een gecombineerde open bare en persoonlijke sleutel heeft, uploadt u dit hier ook.
 
 
-6. Selecteer het tabblad **AKS cluster instellingen** om de configuratie van het Azure Kubernetes-service cluster te definiëren dat de onderliggende infra structuur is waarop de Hyperledger Fabric-netwerk onderdelen worden ingesteld.
+6. Selecteer het tabblad **AKS cluster instellingen** om de configuratie van de Azure Kubernetes-service cluster te definiëren. Het AKS-cluster heeft verschillende peulen die zijn geconfigureerd voor het uitvoeren van de onderdelen van het Hyperledger Fabric-netwerk. De geïmplementeerde Azure-resources zijn:
+
+    - **Infrastructuur hulpprogramma's**: hulpprogram ma's die verantwoordelijk zijn voor het configureren van de Hyperledger Fabric-onderdelen.
+    - **Orderer/peer-peul**: de knoop punten van het Hyperledger Fabric-netwerk.
+    - **Proxy**: een NGNIX-proxy pod waarmee de client toepassingen kunnen communiceren met het AKS-cluster.
+    - **Fabric-ca**: de pod die de Fabric-CA uitvoert.
+    - **Postgresql**: data base-exemplaar dat de CA-identiteiten van de Fabric onderhoudt.
+    - **Sleutel kluis**: het exemplaar van de Azure Key Vault-service dat wordt geïmplementeerd om de CA-certificerings instantie en de basis certificaten van de klant op te slaan. De kluis wordt gebruikt in het geval van een nieuwe poging voor een sjabloon implementatie om de mechanismen van de sjabloon af te handelen.
+    - **Beheerde schijf**: het exemplaar van de Azure Managed disks-service dat een permanente opslag voor het groot boek levert en voor de wereld wijde status database van het knoop punt.
+    - **Openbaar IP-adres**: het eind punt van het AKS-cluster dat is geïmplementeerd voor communicatie met het cluster.
+
+    Voer de volgende details in: 
 
     ![Scherm opname van het tabblad K S cluster Settings.](./media/hyperledger-fabric-consortium-azure-kubernetes-service/create-for-hyperledger-fabric-aks-cluster-settings-1.png)
 
-7. Voer de volgende details in:
     - **Kubernetes-cluster naam**: Wijzig de naam van het AKS-cluster, indien nodig. Dit veld wordt vooraf ingevuld op basis van het resource voorvoegsel dat wordt gegeven.
     - **Kubernetes-versie**: Kies de versie van Kubernetes die in het cluster wordt geïmplementeerd. Op basis van de regio die u hebt geselecteerd op het tabblad **basis beginselen** , kunnen de beschik bare ondersteunde versies worden gewijzigd.
     - **DNS-voor voegsel**: Voer een voor voegsel voor de Domain Name System (DNS)-naam in voor het AKS-cluster. U gebruikt DNS om verbinding te maken met de Kubernetes-API wanneer u containers beheert nadat u het cluster hebt gemaakt.

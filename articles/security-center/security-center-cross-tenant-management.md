@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/11/2019
 ms.author: memildin
-ms.openlocfilehash: d76ecc55c2e156199b2db789721946fd1f36de27
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 493a06e85ad6c8260c342cf8167386394835b1c6
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922915"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102099485"
 ---
 # <a name="cross-tenant-management-in-security-center"></a>Beheer van meerdere tenants in Security Center
 
@@ -41,7 +41,7 @@ Klik op het filter pictogram in de bovenste menu balk en selecteer de abonnement
 
   ![Tenants filteren](./media/security-center-cross-tenant-management/cross-tenant-filter.png)
 
-De weer gaven en acties zijn in principe hetzelfde. Enkele voorbeelden:
+De weer gaven en acties zijn in principe hetzelfde. Hier volgen enkele voorbeelden:
 
 - **Beveiligings beleid beheren**: vanuit de ene weer gave kunt u de beveiligings postuur van veel resources met [beleids regels](tutorial-security-policy.md)beheren, acties uitvoeren met aanbevelingen voor beveiliging en beveiligings gegevens verzamelen en beheren.
 - **Verbeter de beveiligde Score-en nalevings postuur**: door de zicht baarheid van meerdere tenants kunt u de algemene beveiligings-postuur van al uw tenants bekijken en waar en hoe u de [beveiligde Score](secure-score-security-controls.md) en de [nalevings postuur](security-center-compliance-dashboard.md) voor elk van hen het beste kunt verbeteren.
@@ -51,8 +51,4 @@ De weer gaven en acties zijn in principe hetzelfde. Enkele voorbeelden:
 - **Geavanceerde functies voor Cloud beveiliging en meer beheren**: beheer de verschillende beveiligings Services voor dreigingen, zoals [just-in-time-VM-toegang](security-center-just-in-time.md), [adaptieve netwerk beveiliging](security-center-adaptive-network-hardening.md), [adaptieve toepassings besturings elementen](security-center-adaptive-application.md), en meer.
  
 ## <a name="next-steps"></a>Volgende stappen
-In dit artikel wordt uitgelegd hoe cross-Tenant beheer werkt in Security Center. Zie de volgende onderwerpen voor meer informatie over Security Center:
-
-* [Breid uw beveiligings postuur uit met Azure Security Center](security-center-monitoring.md) -Leer hoe u de status van uw Azure-resources kunt bewaken.
-* [Veelgestelde](faq-general.md) vragen over Azure Security Center: vind een veelgestelde vraag over het gebruik van de service.
-* [Meer informatie over Azure Lighthouse in Enter prise-scenario's](../lighthouse/concepts/enterprise.md) : Ontdek hoe Azure Lighthouse het beheer van meerdere tenants in een onderneming kan vereenvoudigen. Dit maakt gebruik van verschillende Azure AD-tenants.
+In dit artikel wordt uitgelegd hoe cross-Tenant beheer werkt in Security Center. Zie [Azure Lighthouse in Enter prise-scenario's](../lighthouse/concepts/enterprise.md)om te ontdekken hoe Azure Lighthouse beheer van meerdere tenants kan vereenvoudigen binnen een onderneming die gebruikmaakt van verschillende Azure AD-tenants.

@@ -1,57 +1,22 @@
 ---
 title: Aanbevelingen voor beveiliging in Azure Security Center
 description: In dit document wordt uitgelegd hoe aanbevelingen in Azure Security Center u helpen uw Azure-resources te beveiligen en te blijven voldoen aan het beveiligings beleid.
-services: security-center
-documentationcenter: na
 author: memildin
 manager: rkarlin
-ms.assetid: 86c50c9f-eb6b-4d97-acb3-6d599c06133e
 ms.service: security-center
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 01/24/2021
 ms.author: memildin
-ms.openlocfilehash: 3b2f111f83dbd731b69671e58d4bf9dc648a596f
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 57760443746e111750e74ef55fc18729f6ba32c4
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526494"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102100335"
 ---
-# <a name="security-recommendations-in-azure-security-center"></a>Aanbevelingen voor beveiliging in Azure Security Center 
+# <a name="review-your-security-recommendations"></a>Uw beveiligings aanbevelingen controleren
 
 In dit onderwerp wordt uitgelegd hoe u de aanbevelingen in Azure Security Center kunt bekijken en begrijpen om u te helpen uw Azure-resources te beveiligen.
-
-
-## <a name="what-are-security-recommendations"></a>Wat zijn beveiligings aanbevelingen?
-
-Security Center analyseert periodiek de beveiligingsstatus van uw Azure-resources om mogelijke beveiligingsproblemen op te sporen. Vervolgens krijgt u aanbevelingen voor het oplossen van deze beveiligingsproblemen.
-
-Aanbevelingen zijn acties die u kunt uitvoeren om uw resources te beveiligen en te beschermen. 
-
-Elke aanbeveling biedt u het volgende:
-
-- Een korte beschrijving van het probleem
-- De herstel stappen die moeten worden uitgevoerd om de aanbeveling te implementeren
-- De betrokken resources
-
-## <a name="how-does-microsoft-decide-what-needs-securing-and-hardening"></a>Hoe beslist micro soft wat er nodig is om te beveiligen en te beschermen?
-
-De aanbevelingen van Security Center zijn gebaseerd op de beveiligings benchmark van Azure. Bijna elke aanbeveling heeft een onderliggend beleid dat is afgeleid van een vereiste in de Bench Mark.
-
-Azure Security Benchmark is de door Microsoft ontworpen, Azure-specifieke set richtlijnen voor best practices voor beveiliging en naleving op basis van algemene nalevingsframeworks. Dit algemeen gerespecteerde Bench Mark bouwt voort op de besturings elementen van het [Center voor Internet Security (CIS)](https://www.cisecurity.org/benchmark/azure/) en het [National Institute of Standards and Technology (NIST)](https://www.nist.gov/) met een focus op Cloud gerichte beveiliging. Meer informatie over [Azure Security Benchmark](../security/benchmarks/introduction.md).
-
-Wanneer u de details van een aanbeveling bekijkt, is het vaak handig om het onderliggende beleid te kunnen zien. Voor elke aanbeveling die wordt ondersteund door een beleid, gebruikt u de koppeling **beleids definitie weer geven** op de pagina aanbevelings Details om rechtstreeks naar het Azure Policy item voor het relevante beleid te gaan:
-
-:::image type="content" source="media/release-notes/view-policy-definition.png" alt-text="Koppeling naar Azure Policy pagina voor het specifieke beleid dat een aanbeveling ondersteunt":::
-
-Gebruik deze koppeling om de beleids definitie weer te geven en de evaluatie logica te controleren. 
-
-Als u de lijst met aanbevelingen in onze [Naslag Gids voor beveiligings aanbevelingen](recommendations-reference.md)bekijkt, ziet u ook koppelingen naar de pagina met beleids definities:
-
-:::image type="content" source="media/release-notes/view-policy-definition-from-documentation.png" alt-text="Toegang tot de Azure Policy-pagina voor een specifiek beleid rechtstreeks op de pagina met Azure Security Center aanbevelingen":::
 
 ## <a name="monitor-recommendations"></a>Aanbevelingen controleren <a name="monitor-recommendations"></a>
 

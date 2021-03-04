@@ -3,12 +3,12 @@ title: Partners die integreren met Azure Monitor
 description: Meer informatie over de partners van Azure Monitor en hoe u toegang kunt krijgen tot documentatie voor de integratie met deze.
 ms.topic: conceptual
 ms.date: 02/19/2021
-ms.openlocfilehash: b971aa70411212e96c39e6bf824fa9e28bd8a1f1
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: ca58023510eb9329bc8ddf1339df4d8c27aae5e6
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102052361"
+ms.locfileid: "102101015"
 ---
 # <a name="azure-monitor-partner-integrations"></a>Integraties van Azure Monitor-partner
 
@@ -291,8 +291,7 @@ Met Site24x7 Azure-bewaking kunt u het volgende doen:
 * Bewaak uw volledige micro soft-ecosphere met inbegrip van SQL, Exchange, Active Directory, Office 365, IIS en Hyper-V-toepassingen.
 * Integreer naadloos met services van derden, zoals micro soft teams, PagerDuty, Zapier en meer.
 
-[Documentatie voor site 24X7](https://www.site24x7.com/)
-
+[Documentatie voor Site24X7](https://www.site24x7.com/azure/?utm_source=microsoft-partner-page&utm_medium=webpage&utm_campaign=ms-partner)
 
 ## <a name="solarwinds"></a>SolarWinds
 

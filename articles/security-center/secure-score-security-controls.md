@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/03/2021
 ms.author: memildin
-ms.openlocfilehash: 24822777b06fadf87ca446d9b7ff8ba4df34adc5
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.openlocfilehash: b19a7c156abf32e2a0f6d70717145a6ed5ab42ce
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100007670"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102099672"
 ---
 # <a name="secure-score-in-azure-security-center"></a>Beveiligingsscore in Azure Security Center
 
@@ -42,99 +42,6 @@ Bekijk de pagina met aanbevelingen van Security Center voor de uitstaande acties
 Aanbevelingen zijn onderverdeeld in **beveiligings controles**. Elk besturings element is een logische groep gerelateerde beveiligings aanbevelingen en weerspiegelt uw kwets bare aanvals oppervlakken. Uw score is alleen verbeterd wanneer u *alle* aanbevelingen voor één resource in een besturings element herstelt. Als u wilt zien hoe goed uw organisatie elke afzonderlijke kwets baarheid beveiligt, controleert u de scores voor elk beveiligings beheer.
 
 Zie [hoe uw beveiligde score wordt berekend](secure-score-security-controls.md#how-your-secure-score-is-calculated) hieronder voor meer informatie. 
-
-
-## <a name="access-your-secure-score"></a>Toegang tot uw beveiligde Score
-
-U kunt uw algemene beveiligde Score vinden, evenals uw score per abonnement, via de Azure Portal of via het programma, zoals beschreven in de volgende secties:
-
-- [Uw beveiligde Score ophalen uit de portal](#get-your-secure-score-from-the-portal)
-- [Uw beveiligde Score ophalen uit de REST API](#get-your-secure-score-from-the-rest-api)
-- [Uw beveiligde Score ophalen uit de Azure-resource grafiek (ARG)](#get-your-secure-score-from-azure-resource-graph-arg)
-
-### <a name="get-your-secure-score-from-the-portal"></a>Uw beveiligde Score ophalen uit de portal
-
-Security Center wordt uw score prominent weer gegeven in de portal: het is de eerste hoofd tegel van de Security Center overzichts pagina. Als u deze tegel selecteert, gaat u naar de pagina speciale beveiligde Score, waar u de score kunt zien die is opgesplitst per abonnement. Selecteer één abonnement voor een overzicht van de gedetailleerde lijst met aanbevelingen met prioriteit en de mogelijke gevolgen voor het oplossen van deze voor de Score van het abonnement. 
-
-Voor samen vatting wordt uw beveiligde Score op de volgende locaties weer gegeven in de portal pagina's van Security Center.
-
-- In een tegel op het **overzicht** van Security Center (hoofd dashboard):
-
-    :::image type="content" source="./media/secure-score-security-controls/score-on-main-dashboard.png" alt-text="De beveiligde Score op het dash board van de Security Center":::
-
-- Op de pagina speciale **beveiligde Score** ziet u de beveiligde score voor uw abonnement en uw beheer groepen:
-
-    :::image type="content" source="./media/secure-score-security-controls/score-on-dedicated-dashboard.png" alt-text="De beveiligde score voor abonnementen op de pagina beveiligde Score van Security Center":::
-
-    :::image type="content" source="./media/secure-score-security-controls/secure-score-management-groups.png" alt-text="De beveiligde score voor beheer groepen op de pagina beveiligde Score van Security Center":::
-
-    > [!NOTE]
-    > Alle beheer groepen waarvoor u onvoldoende machtigingen hebt, worden weer gegeven als ' beperkt '. 
-
-- Boven aan de pagina **aanbevelingen** :
-
-    :::image type="content" source="./media/secure-score-security-controls/score-on-recommendations-page.png" alt-text="De pagina met aanbevelingen voor beveiligde scores op Security Center":::
-
-### <a name="get-your-secure-score-from-the-rest-api"></a>Uw beveiligde Score ophalen uit de REST API
-
-U krijgt toegang tot uw score via de API voor beveiligde scores. De API-methoden bieden de flexibiliteit om query's uit te voeren op de gegevens en uw eigen rapportagemechanisme te bouwen van uw beveiligingsscores in de loop van de tijd. U kunt bijvoorbeeld de [API beveiligde scores](/rest/api/securitycenter/securescores) gebruiken om de score voor een specifiek abonnement op te halen. Daarnaast kunt u de [API besturings elementen voor beveiligde scores](/rest/api/securitycenter/securescorecontrols) gebruiken om de beveiligings controles en de huidige Score van uw abonnementen weer te geven.
-
-![Het ophalen van een enkele beveiligde Score via de API](media/secure-score-security-controls/single-secure-score-via-api.png)
-
-Zie voor voor beelden van hulpprogram ma's die zijn gebouwd boven op de API voor beveiligde scores [het beveiligde Score gebied van onze github-Community](https://github.com/Azure/Azure-Security-Center/tree/master/Secure%20Score). 
-
-### <a name="get-your-secure-score-from-azure-resource-graph-arg"></a>Uw beveiligde Score ophalen uit de Azure-resource grafiek (ARG)
-
-Azure resource Graph biedt directe toegang tot resource gegevens in uw Cloud omgevingen met krachtige filters, groeperingen en sorteer mogelijkheden. Het is een snelle en efficiënte manier om via programma code of vanuit de Azure Portal informatie op te vragen over Azure-abonnementen. [Meer informatie over Azure Resource Graph](../governance/resource-graph/index.yml).
-
-Om toegang te krijgen tot de beveiligde score voor meerdere abonnementen met ARG:
-
-1. Open in de Azure Portal **Azure resource Graph Explorer**.
-
-    :::image type="content" source="./media/security-center-identity-access/opening-resource-graph-explorer.png" alt-text="De pagina aanbeveling van Azure resource Graph Explorer * * wordt gestart" :::
-
-1. Voer uw Kusto-query in (met behulp van de voor beelden hieronder voor hulp).
-
-    - Met deze query worden de abonnements-ID, de huidige score in punten en als een percentage en de maximale score voor het abonnement geretourneerd. 
-
-        ```kusto
-        SecurityResources 
-        | where type == 'microsoft.security/securescores' 
-        | extend current = properties.score.current, max = todouble(properties.score.max)
-        | project subscriptionId, current, max, percentage = ((current / max)*100)
-        ```
-
-    - Met deze query wordt de status van alle beveiligings controles geretourneerd. Voor elk besturings element krijgt u het aantal slechte resources, de huidige score en de maximale score. 
-
-        ```kusto
-        SecurityResources 
-        | where type == 'microsoft.security/securescores/securescorecontrols'
-        | extend SecureControl = properties.displayName, unhealthy = properties.unhealthyResourceCount, currentscore = properties.score.current, maxscore = properties.score.max
-        | project SecureControl , unhealthy, currentscore, maxscore
-        ```
-
-1. Selecteer **query uitvoeren**.
-
-
-
-
-## <a name="tracking-your-secure-score-over-time"></a>Uw beveiligde Score na verloop van tijd bijhouden
-
-Als u een Power BI gebruiker bent met een Pro-account, kunt u de **beveiligde Score gedurende een periode** Power bi dash board gebruiken om uw beveiligde Score na verloop van tijd bij te houden en eventuele wijzigingen te onderzoeken.
-
-> [!TIP]
-> U kunt dit dash board vinden, evenals andere hulp middelen voor het werken met een beveiligde Score, in het toegewezen gebied van de Azure Security Center Community op GitHub: https://github.com/Azure/Azure-Security-Center/tree/master/Secure%20Score
-
-Het dash board bevat de volgende twee rapporten die u helpen bij het analyseren van de beveiligings status:
-
-- **Overzicht van resources** : bevat samengevatte gegevens met betrekking tot de status van uw resources.
-- **Overzicht van beveiligde scores** : bevat samengevatte gegevens over de voortgang van uw score. Gebruik de grafiek beveiligde Score over tijd per abonnement om de wijzigingen in de Score weer te geven. Als u een aanzienlijke wijziging in uw score ziet, raadpleegt u de tabel met gedetecteerde wijzigingen die van invloed kunnen zijn op uw beveiligde score voor mogelijke wijzigingen die de wijziging zouden hebben veroorzaakt. Deze tabel bevat verwijderde resources, nieuw geïmplementeerde resources of bronnen waarvan de beveiligings status is gewijzigd voor een van de aanbevelingen.
-
-:::image type="content" source="./media/secure-score-security-controls/power-bi-secure-score-dashboard.png" alt-text="De optionele beveiligde Score in de loop van de tijd Power BI dash board voor het bijhouden van uw beveiligde Score over tijd en het onderzoeken van wijzigingen":::
-
-
-
-
 
 ## <a name="how-your-secure-score-is-calculated"></a>Hoe uw beveiligde score wordt berekend 
 
@@ -221,3 +128,7 @@ In dit artikel vindt u een beschrijving van de beveiligde Score en de beveiligin
 - [Meer informatie over de verschillende elementen van een aanbeveling](security-center-recommendations.md)
 - [Meer informatie over het oplossen van aanbevelingen](security-center-remediate-recommendations.md)
 - [De GitHub-hulpprogram ma's voor het werken met een beveiligde Score weer geven](https://github.com/Azure/Azure-Security-Center/tree/master/Secure%20Score)
+
+
+> [!div class="nextstepaction"]
+> [Uw beveiligde Score openen en bijhouden](secure-score-access-and-track.md)

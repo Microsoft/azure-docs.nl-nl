@@ -5,12 +5,12 @@ author: noakup
 ms.author: noakuper
 ms.topic: conceptual
 ms.date: 10/05/2020
-ms.openlocfilehash: bf9ffe3640c704fb1da51f6f9c2fe42ca5d46851
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 65af5810152034fd7b6014041edd07835eebd194
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102047550"
+ms.locfileid: "102101474"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-monitor"></a>Azure Private Link gebruiken om netwerken veilig te verbinden met Azure Monitor
 
@@ -172,7 +172,8 @@ Voor het persoonlijke eind punt dat u hebt gemaakt, moeten nu vier DNS-zones zij
 * privatelink-ODS-operationeel inzicht-Azure-com
 * privatelink-agentsvc-Azure-Automation-net
 
-Elk van deze zones wijst specifieke Azure Monitor-eind punten toe aan privé IP-adressen uit de groep IP-adressen van de VNet van het privé-eind punt.
+> [!NOTE]
+> Elk van deze zones wijst specifieke Azure Monitor-eind punten toe aan privé IP-adressen uit de groep Ip's van het VNet. De IP-adressen die worden weer gegeven in de onderstaande afbeeldingen zijn alleen voor beelden. In plaats daarvan moet uw configuratie persoonlijke Ip's van uw eigen netwerk weer geven.
 
 #### <a name="privatelink-monitor-azure-com"></a>Privatelink-monitor-Azure-com
 Deze zone heeft betrekking op de globale eind punten die worden gebruikt door Azure Monitor, wat betekent dat deze eind punten aanvragen behandelen waarbij alle resources worden onderzocht, niet een specifieke. Aan deze zone moeten eind punten zijn toegewezen voor:
@@ -218,7 +219,7 @@ De instellingen in het onderste gedeelte van deze pagina bepalen de toegang vana
 
 ### <a name="exceptions"></a>Uitzonderingen
 Het beperken van de toegang zoals hierboven is uitgelegd, is niet van toepassing op de Azure Resource Manager en heeft daarom de volgende beperkingen:
-* Toegang tot gegevens: Hoewel het blok keren/toestaan van query's van open bare netwerken op de meeste Log Analytics-ervaringen van toepassing is, kunnen sommige gegevens query's uitvoeren via Azure Resource Manager en daarom geen query uitvoeren op gegevens tenzij persoonlijke koppelings instellingen worden toegepast op de Resource Manager, ook al is de functie binnenkort beschikbaar. Dit omvat bijvoorbeeld Azure Monitor oplossingen, werkmappen en inzichten, en de LogicApp-connector.
+* Toegang tot gegevens: Hoewel het blok keren/toestaan van query's van open bare netwerken op de meeste Log Analytics-ervaringen van toepassing is, kunnen sommige gegevens query's uitvoeren via Azure Resource Manager en daarom geen query uitvoeren op gegevens tenzij persoonlijke koppelings instellingen worden toegepast op de Resource Manager, ook al is de functie binnenkort beschikbaar. Voor beelden zijn Azure Monitor oplossingen, werkmappen en inzichten en de LogicApp-connector.
 * Werkruimte beheer-werk ruimte-instelling en configuratie wijzigingen (waaronder het inschakelen van deze toegangs instellingen in-of uitschakelen) worden beheerd door Azure Resource Manager. Beperk de toegang tot werk ruimte beheer met de juiste rollen, machtigingen, netwerk besturings elementen en controle. Zie [Azure monitor rollen, machtigingen en beveiliging](../roles-permissions-security.md)voor meer informatie.
 
 > [!NOTE]
@@ -248,14 +249,14 @@ Ten tweede kunt u bepalen hoe deze bron bereikbaar kan zijn vanaf buiten de eerd
 > [!NOTE]
 > Niet-Portal-ervaringen moeten ook worden uitgevoerd op het persoonlijk gekoppelde VNET dat de bewaakte werk belastingen bevat.
 
-U moet resources toevoegen die de bewaakte werk belastingen hosten voor de privé-koppeling. Hier vindt u [documentatie](../../app-service/networking/private-endpoint.md) over hoe u dit kunt doen voor app Services.
+U moet resources toevoegen die de bewaakte werk belastingen hosten voor de privé-koppeling. Zie bijvoorbeeld privé- [eind punten gebruiken voor Azure-web-app](../../app-service/networking/private-endpoint.md).
 
 Het beperken van de toegang op deze manier is alleen van toepassing op gegevens in de Application Insights resource. Configuratie wijzigingen, zoals het inschakelen van deze toegangs instellingen in-of uitschakelen, worden echter beheerd door Azure Resource Manager. U moet de toegang tot Resource Manager dus beperken met behulp van de juiste rollen, machtigingen, netwerk besturings elementen en controle. Zie [Azure monitor rollen, machtigingen en beveiliging](../roles-permissions-security.md)voor meer informatie.
 
 > [!NOTE]
 > Als u op werk ruimte gebaseerde Application Insights volledig wilt beveiligen, moet u de toegang tot Application Insights resource en de onderliggende Log Analytics-werk ruimte vergren delen.
 >
-> Voor diagnostische gegevens op code niveau (Profiler/Debugger) moet u uw eigen opslag account opgeven ter ondersteuning van een persoonlijke koppeling. Hier vindt u [documentatie](../app/profiler-bring-your-own-storage.md) over hoe u dit doet.
+> Voor diagnostische gegevens op code niveau (Profiler/Debugger) moet u [uw eigen opslag account opgeven](../app/profiler-bring-your-own-storage.md) ter ondersteuning van een persoonlijke koppeling.
 
 ### <a name="handling-the-all-or-nothing-nature-of-private-links"></a>Het afhandelen van de alle-of-Nothing-aard van privé koppelingen
 Zoals beschreven in [het plannen van de instelling van uw persoonlijke koppeling](#planning-your-private-link-setup), het instellen van een persoonlijke koppeling voor een enkele resource is van invloed op alle Azure monitor bronnen in die netwerken, en in andere netwerken die dezelfde DNS delen. Dit kan een onboarding-proces lastig maken. Houd rekening met de volgende opties:

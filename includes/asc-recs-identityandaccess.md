@@ -2,15 +2,15 @@
 author: memildin
 ms.service: security-center
 ms.topic: include
-ms.date: 02/16/2021
+ms.date: 02/28/2021
 ms.author: memildin
 ms.custom: generated
-ms.openlocfilehash: 8ebd7f245205844ac4b9f35d7205fc7f28502484
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 1bce65cf0a2edbf87efd2d1d745d90c32fb004c5
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100574510"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102100386"
 ---
 Deze categorie bevat **21** aanbevelingen.
 
@@ -28,7 +28,7 @@ Deze categorie bevat **21** aanbevelingen.
 |Key Vault-sleutels moeten een vervaldatum hebben |Cryptografische sleutels moeten een gedefinieerde vervaldatum hebben en mogen niet permanent zijn. Sleutels die altijd geldig zijn, bieden een potentiële aanvaller meer tijd om misbruik van de sleutel te maken. Het wordt aanbevolen vervaldatums voor cryptografische sleutels in te stellen.<br />(Gerelateerd beleid: [Key Vault sleutels moeten een verval datum hebben](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f152b15f7-8e1f-4c1f-ab71-8c010ba5dbc0)) |Hoog |
 |Key Vault-geheimen moeten een vervaldatum hebben |Geheimen moeten een gedefinieerde vervaldatum hebben en mogen niet permanent zijn. Geheimen die altijd geldig zijn, bieden een potentiële aanvaller meer tijd om misbruik van de geheimen te maken. Het wordt aanbevolen om vervaldatums voor geheimen in te stellen.<br />(Gerelateerd beleid: [Key Vault geheimen moeten een verval datum hebben](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f98728c90-32c7-4049-8429-847dc0f4fe37)) |Hoog |
 |Beveiliging tegen leegmaken moet zijn ingeschakeld voor sleutelkluizen |Kwaadwillende verwijdering van een sleutelkluis kan leiden tot permanent gegevensverlies. Een kwaadwillende insider in uw organisatie kan sleutelkluizen verwijderen en leegmaken. Beveiliging tegen leegmaken beschermt u tegen aanvallen van insiders door een verplichte bewaarperiode tijdens voorlopige verwijdering af te dwingen voor sleutelkluizen. Gedurende de periode van voorlopige verwijdering kan niemand binnen uw organisatie of Microsoft uw sleutelkluizen leegmaken.<br />(Gerelateerd beleid: voor [sleutel kluizen moet beveiliging opschonen zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f0b60c0b2-2dc2-4e1c-b5c9-abbed971de53)) |Normaal |
-|Voorlopig verwijderen moet zijn ingeschakeld voor sleutelkluizen |Als u een sleutelkluis verwijdert zonder dat de functie voor voorlopig verwijderen is ingeschakeld, worden alle geheimen, sleutels en certificaten die zijn opgeslagen in de sleutelkluis permanent verwijderd. Onbedoeld verwijderen van een sleutelkluis kan leiden tot permanent gegevensverlies. Met voorlopig verwijderen kunt u een per ongeluk verwijderde sleutelkluis herstellen voor een configureerbare bewaarperiode.<br />(Gerelateerd beleid: voor [sleutel kluizen moet de functie voor voorlopig verwijderen zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d)) |Hoog |
+|Voorlopig verwijderen moet zijn ingeschakeld voor sleutelkluizen |Als u een sleutelkluis verwijdert zonder dat de functie voor voorlopig verwijderen is ingeschakeld, worden alle geheimen, sleutels en certificaten die zijn opgeslagen in de sleutelkluis permanent verwijderd. Onbedoeld verwijderen van een sleutelkluis kan leiden tot permanent gegevensverlies. Met zacht verwijderen kunt u een per ongeluk verwijderde sleutel kluis herstellen voor een Configureer bare Bewaar periode.<br />(Gerelateerd beleid: voor [sleutel kluizen moet de functie voor voorlopig verwijderen zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d)) |Hoog |
 |MFA moet zijn ingeschakeld voor accounts met eigenaarsmachtigingen voor uw abonnement |Schakel meervoudige verificatie (MFA) in voor alle abonnementsaccounts met eigenaarsmachtigingen om te voorkomen dat er inbreuk wordt gepleegd op accounts of resources.<br />(Gerelateerd beleid: [MFA moet zijn ingeschakeld voor accounts met eigenaarsmachtigingen voor uw abonnement](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2faa633080-8b72-40c4-a2d7-d00c03e80bed)) |Hoog |
 |MFA moet zijn ingeschakeld voor accounts met leesmachtigingen voor uw abonnement |Schakel meervoudige verificatie (MFA) in voor alle abonnementsaccounts met leesmachtigingen om te voorkomen dat er inbreuk wordt gepleegd op accounts of resources.<br />(Gerelateerd beleid: [MFA moet zijn ingeschakeld voor accounts met leesrechten voor uw abonnement](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fe3576e28-8b17-4677-84c3-db2990658d64)) |Hoog |
 |MFA moet zijn ingeschakeld voor accounts met schrijfmachtigingen voor uw abonnement |Schakel meervoudige verificatie (MFA) in voor alle abonnementsaccounts met schrijfmachtigingen om te voorkomen dat er inbreuk wordt gepleegd op accounts of resources.<br />(Gerelateerd beleid: [MFA moet zijn ingeschakeld voor accounts met schrijfrechten voor uw abonnement](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f9297c21d-2ed6-4474-b48f-163f75654ce3)) |Hoog |

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/18/2021
 ms.author: memildin
-ms.openlocfilehash: e34d5520e13d45d15079a5f11775d2ef930fc62a
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 327103df21dd34347439a833d7ac4b8a21dc66b4
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101727087"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102099842"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -277,7 +277,7 @@ Als een gebruiker geen machtigingen heeft om Security Center gegevens weer te ge
 
 :::image type="content" source="media/security-center-management-groups/request-tenant-permissions.png" alt-text="Vaandel dat een gebruiker informeert, kan de machtigingen voor de hele Tenant aanvragen.":::
 
-Meer informatie over [het aanvragen van machtigingen voor tenants wanneer dat niet het geval is](security-center-management-groups.md#request-tenant-wide-permissions-when-yours-are-insufficient) .
+Meer informatie over [het aanvragen van machtigingen voor tenants wanneer dat niet het geval is](tenant-wide-permissions-management.md#request-tenant-wide-permissions-when-yours-are-insufficient).
 
 
 ### <a name="35-preview-recommendations-added-to-increase-coverage-of-azure-security-benchmark"></a>Er zijn 35 preview-aanbevelingen toegevoegd om de dekking van Azure Security Benchmark te verhogen
@@ -339,7 +339,7 @@ Wanneer u een continue export definieert, stelt u de export frequentie in:
 - **Streaming** – beoordelingen worden in realtime verzonden wanneer de status van een resource wordt bijgewerkt (als er geen updates worden uitgevoerd, worden er geen gegevens verzonden).
 - **Moment opnamen** : er wordt elke week een moment opname gemaakt van de huidige status van alle nalevings evaluaties (dit is een preview-functie voor wekelijkse moment opnamen van beveiligde scores en nalevings gegevens voor regelgeving).
 
-Meer informatie over de volledige mogelijkheden van deze functie in het [voortdurend exporteren van Security Center gegevens](continuous-export.md)
+Meer informatie over de volledige mogelijkheden van deze functie in het [voortdurend exporteren van Security Center gegevens](continuous-export.md).
 
 ## <a name="december-2020"></a>December 2020
 
@@ -393,7 +393,7 @@ Lees meer informatie over [Azure Defender voor SQL](defender-for-sql-introductio
 
 Een gebruiker met de Azure Active Directory-rol **Globale beheerder** kan verantwoordelijkheden hebben voor de hele tenant, maar geen Azure-machtigingen om deze organisatiebrede informatie te bekijken in Azure Security Center. 
 
-Volg de instructies in [Tenantbrede machtigingen toewijzen aan uzelf](security-center-management-groups.md#grant-tenant-wide-permissions-to-yourself) om machtigingen op tenantniveau toe te wijzen aan uzelf.
+Volg de instructies in [Tenantbrede machtigingen toewijzen aan uzelf](tenant-wide-permissions-management.md#grant-tenant-wide-permissions-to-yourself) om machtigingen op tenantniveau toe te wijzen aan uzelf.
 
 
 ### <a name="two-new-azure-defender-plans-azure-defender-for-dns-and-azure-defender-for-resource-manager-in-preview"></a>Twee nieuwe Azure Defender-abonnementen: Azure Defender voor DNS en Azure Defender voor Resource Manager (in preview)

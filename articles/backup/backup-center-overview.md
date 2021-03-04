@@ -3,12 +3,12 @@ title: Overzicht van Back-upcentrum
 description: Dit artikel bevat een overzicht van Back-upcentrum voor Azure.
 ms.topic: conceptual
 ms.date: 09/30/2020
-ms.openlocfilehash: 0acf3a17e41b89b462a7fb07c5d3ebd55d4052af
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: fee7bf41d0c72238231d9c4aba52a26cac9fb960
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101725370"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102099995"
 ---
 # <a name="overview-of-backup-center"></a>Overzicht van Back-upcentrum
 
@@ -27,7 +27,7 @@ Enkele van de belangrijkste voor delen van Back-upcentrum zijn:
 
 ## <a name="get-started"></a>Aan de slag
 
-Om aan de slag te gaan met Back-upcentrum, zoekt u in het Azure Portal naar **Back-upcentrum** en gaat u naar het dash board **Backup Center (preview)** .
+Om aan de slag te gaan met Back-upcentrum, zoekt u in het Azure Portal naar **Back-upcentrum** en gaat u naar het dash board van het **Back-upcentrum** .
 
 ![Back-upcentrum zoeken](./media/backup-center-overview/backup-center-search.png)
 
@@ -37,7 +37,7 @@ Het eerste scherm dat u ziet, is het **overzicht**. Het bevat twee tegels: **tak
 
 In de tegel **taken** ziet u een overzicht van alle back-up-en herstel taken die in de afgelopen 24 uur zijn geactiveerd voor uw back-up. U kunt informatie weer geven over het aantal taken dat is voltooid, mislukt en wordt uitgevoerd. Als u een van de getallen in deze tegel selecteert, kunt u meer informatie over taken weer geven voor een bepaald gegevens bron type, bewerkings type en status.
 
-In de tegel **back-Upinstanties** ziet u een overzicht van alle back-upinstanties in uw back-up. U kunt bijvoorbeeld het aantal back-upinstanties zien die zich in de modus voor zacht verwijderen bevinden, vergeleken met het aantal exemplaren dat nog steeds is geconfigureerd voor beveiliging. Als u een van de getallen in deze tegel selecteert, kunt u meer informatie over back-upinstanties voor een bepaald gegevens bron type en beveiligings status weer geven.
+In de tegel **back-Upinstanties** ziet u een overzicht van alle back-upinstanties in uw back-up. U kunt bijvoorbeeld het aantal back-upinstanties zien die zich in de modus voor zacht verwijderen bevinden, vergeleken met het aantal exemplaren dat nog steeds is geconfigureerd voor beveiliging. Als u een van de getallen in deze tegel selecteert, kunt u meer informatie over back-upinstanties voor een bepaald gegevens bron type en beveiligings status weer geven. U kunt ook alle back-upinstanties bekijken waarvan de onderliggende gegevens bron niet is gevonden (de gegevens bron kan worden verwijderd of u hebt mogelijk geen toegang tot de gegevens bron).
 
 Bekijk de volgende video om inzicht te krijgen in de mogelijkheden van Back-upcentrum:
 

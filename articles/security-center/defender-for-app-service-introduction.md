@@ -7,31 +7,43 @@ ms.date: 01/25/2021
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 2a3253d1ed8b0814fc20b3256a0f98d3aa0949f6
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: ec4ac5d355266a46b33d89fd25c2665493773f5d
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100393306"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102100811"
 ---
-# <a name="introduction-to-azure-defender-for-app-service"></a>Inleiding tot Azure Defender voor App Service
+# <a name="protect-your-web-apps-and-apis"></a>Uw web-apps en Api's beveiligen
+
+## <a name="prerequisites"></a>Vereisten
+
+Security Center is systeemeigen geïntegreerd met App Service, waardoor implementatie en onboarding niet meer nodig is; de integratie is transparant.
+
+Als u uw Azure App Service plan wilt beveiligen met Azure Defender voor App Service, hebt u het volgende nodig:
+
+- Een ondersteund App Service-abonnement dat is gekoppeld aan toegewezen machines. Ondersteunde abonnementen worden weer gegeven in de [Beschik baarheid](#availability).
+
+- Azure Defender is ingeschakeld voor uw abonnement, zoals beschreven in [Quick Start: Azure Defender inschakelen](enable-azure-defender.md).
+
+    > [!TIP]
+    > U kunt optioneel afzonderlijke abonnementen inschakelen in azure Defender (zoals Azure Defender voor App Service).
+
+## <a name="availability"></a>Beschikbaarheid
+
+| Aspect                       | Details                                                                                                                                                                                        |
+|------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Releasestatus:               | Algemene Beschik baarheid (GA)                                                                                                                                                                      |
+| Prijzen:                     | [Azure Defender voor app service](azure-defender.md) wordt gefactureerd zoals wordt weer gegeven op [Security Center prijzen](https://azure.microsoft.com/pricing/details/security-center/)<br>De facturering is afhankelijk van het totale aantal reken instanties in alle plannen       |
+| Ondersteunde App Service-plannen: | [Alle app service plannen](https://azure.microsoft.com/pricing/details/app-service/plans/) worden ondersteund, met uitzonde ring [van Azure functions voor het verbruiks abonnement](../azure-functions/functions-scale.md). |
+| Clouds:                      | ![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Nee](./media/icons/no-icon.png) Nationaal/onafhankelijk (overheid van de VS, China, andere overheden)                                                     |
+|                              |                                                                                                                                                                                                |
+
+## <a name="what-are-the-benefits-of-azure-defender-for-app-service"></a>Wat zijn de voor delen van Azure Defender voor App Service?
 
 Azure App Service is een volledig beheerd platform voor het bouwen en hosten van uw web-apps en Api's. Omdat het platform volledig wordt beheerd, hoeft u zich geen zorgen te maken over de infra structuur. Het biedt beheer, bewaking en operationele inzichten om te voldoen aan de hoge vereisten voor prestaties, beveiliging en naleving van ondernemingen. Zie [Azure App Service](https://azure.microsoft.com/services/app-service/) voor meer informatie.
 
 **In Azure Defender voor App Service** wordt gebruikgemaakt van de schaal van de cloud om aanvallen te identificeren die gericht zijn op toepassingen die via App Service worden uitgevoerd. Aanvallers testen voortdurend webtoepassingen om zwakke plekken te vinden en daar misbruik van te maken. Aanvragen voor toepassingen die in Azure worden uitgevoerd, gaan voordat ze naar specifieke omgevingen worden doorgestuurd door verschillende gateways, waar ze worden geïnspecteerd en geregistreerd. Deze gegevens worden vervolgens gebruikt om aanvallen en aanvallers te identificeren en om nieuwe patronen te leren die later worden gebruikt.
-
-
-## <a name="availability"></a>Beschikbaarheid
-
-| Aspect                       | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Releasestatus:               | Algemene Beschik baarheid (GA)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Prijzen:                     | Voor [Azure Defender for App Service](azure-defender.md) gelden de prijzen op de [pagina Prijzen](security-center-pricing.md)<br>De facturering is afhankelijk van het totale aantal reken instanties in alle plannen|
-| Ondersteunde App Service-plannen: | Alle App Service plannen worden ondersteund (met één uitzonde ring, zie hieronder). [Meer informatie over app service-abonnementen](https://azure.microsoft.com/pricing/details/app-service/plans/).<br>Azure Functions voor het verbruiks abonnement wordt niet ondersteund. Meer [informatie over Azure functions hosting opties](../azure-functions/functions-scale.md).                                                                                                                                                                                                                                                                   |
-| Clouds:                      | ![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Nee](./media/icons/no-icon.png) Nationaal/onafhankelijk (overheid van de VS, China, andere overheden)                                                                                                                                                                                                                                                                                                                                                                                 |
-|                              |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-
-## <a name="what-are-the-benefits-of-azure-defender-for-app-service"></a>Wat zijn de voor delen van Azure Defender voor App Service?
 
 Wanneer u Azure Defender voor App Service inschakelt, kunt u direct profiteren van de volgende services die worden aangeboden door dit Azure Defender-abonnement:
 
@@ -77,19 +89,6 @@ Zie de [naslag tabel met waarschuwingen](alerts-reference.md#alerts-azureappserv
 > [!NOTE]
 > Mogelijk worden Dangling DNS-waarschuwingen niet geactiveerd als uw aangepaste domein niet rechtstreeks naar een App Service Resource verwijst, of als Defender geen verkeer naar uw website heeft bewaakt sinds de Dangling DNS-beveiliging is ingeschakeld (omdat er geen logboeken zijn om te helpen bij het identificeren van het aangepaste domein).
 
-## <a name="how-to-protect-your-azure-app-service-web-apps-and-apis"></a>Uw Azure App Service web-apps en Api's beveiligen
-
-U kunt als volgt uw Azure App Service plan beveiligen met Azure Defender voor App Service:
-
-1. Zorg ervoor dat u een ondersteund App Service-plan hebt dat is gekoppeld aan toegewezen machines. Ondersteunde abonnementen worden hierboven vermeld onder [Beschikbaarheid](#availability).
-
-2. Schakel **Azure Defender** in voor uw abonnement, zoals beschreven in de [prijs van Azure Security Center](security-center-pricing.md).
-
-    U kunt optioneel afzonderlijke abonnementen inschakelen in azure Defender (zoals Azure Defender voor App Service).
-
-    Security Center is systeemeigen geïntegreerd met App Service, waardoor implementatie en onboarding niet meer nodig is; de integratie is transparant.
-
-
 ## <a name="next-steps"></a>Volgende stappen
 
 In dit artikel bent u meer te weten gekomen over Azure Defender voor App Service. 
@@ -100,4 +99,4 @@ Raadpleeg de volgende artikelen voor gerelateerd materiaal:
 - Zie de [naslag tabel met waarschuwingen](alerts-reference.md#alerts-azureappserv)voor een lijst met de waarschuwingen voor Azure Defender voor app service.
 - Zie [App Service-plannen](https://azure.microsoft.com/pricing/details/app-service/plans/) voor meer informatie over App Service-plannen.
 > [!div class="nextstepaction"]
-> [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender)
+> [Azure Defender inschakelen](enable-azure-defender.md)

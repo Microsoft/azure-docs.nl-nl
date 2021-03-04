@@ -7,12 +7,12 @@ ms.date: 12/07/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 922189909da21aac65d1e2e898df58598868b929
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 903853f9f37921a68c918d09a94087548b5c562c
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100590466"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102100658"
 ---
 # <a name="introduction-to-azure-defender-for-resource-manager"></a>Inleiding op Azure Defender voor Resource Manager
 
@@ -20,14 +20,14 @@ ms.locfileid: "100590466"
 
 De cloudbeheerlaag is een cruciale service die is verbonden met al uw cloudresources. Daarom is het ook een potentieel doel voor aanvallers. Vandaar wordt aangeraden dat beveiligingsteams de resourcebeheerlaag nauwkeurig bewaken. 
 
-Azure Defender voor Resource Manager bewaakt automatisch de beheerbewerkingen voor resources in uw organisatie, ongeacht of ze worden uitgevoerd via Azure Portal, Azure REST API's, de Azure CLI of andere programmatische Azure-clients. Azure Defender voert geavanceerde beveiligingsanalyses uit om bedreigingen te detecteren en u te waarschuwen over verdachte activiteiten.
+Azure Defender voor Resource Manager bewaakt automatisch de beheerbewerkingen voor resources in uw organisatie, ongeacht of ze worden uitgevoerd via Azure Portal, Azure REST API's, de Azure CLI of andere programmatische Azure-clients. Azure Defender voert geavanceerde beveiligings analyses uit om bedreigingen te detecteren en u te waarschuwen over verdachte activiteiten.
 
 ## <a name="availability"></a>Beschikbaarheid
 
 |Aspect|Details|
 |----|:----|
 |Releasestatus:|Preview<br>[!INCLUDE [Legalese](../../includes/security-center-preview-legal-text.md)] |
-|Prijzen:|Voor **Azure Defender voor Resource Manager** gelden de prijzen zoals op [de pagina Prijzen](security-center-pricing.md) wordt getoond|
+|Prijzen:|**Azure Defender voor Resource Manager** wordt gefactureerd zoals wordt weer gegeven op [Security Center prijzen](https://azure.microsoft.com/pricing/details/security-center/)|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Nee](./media/icons/no-icon.png) Nationaal/onafhankelijk (overheid van de VS, China, andere overheden)|
 |||
 
@@ -75,4 +75,4 @@ In dit artikel bent u meer te weten gekomen over Azure Defender voor Resource Ma
 - Beveiligingswaarschuwingen kunnen worden gegenereerd door Security Center of door Security Center worden ontvangen vanuit andere beveiligingsproducten. Als u al deze waarschuwingen wilt exporteren naar Azure Sentinel, een externe SIEM of een ander extern hulpprogramma, volgt u de instructies in [Waarschuwingen naar een SIEM exporteren](continuous-export.md).
 
 - > [!div class="nextstepaction"]
-    > [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender)
+    > [Azure Defender inschakelen](enable-azure-defender.md)

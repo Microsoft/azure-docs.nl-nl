@@ -9,13 +9,13 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sstein
 ms.custom: references_regions
-ms.date: 03/02/2021
-ms.openlocfilehash: 9dc4d17ea95362dd915bd1dfdfd82f4cdec611b8
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/04/2021
+ms.openlocfilehash: 0a9a4b2de03c62640bb1c643d3ff3da4139d42a4
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101692807"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102101202"
 ---
 # <a name="maintenance-window-preview"></a>Onderhouds venster (preview-versie)
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -32,29 +32,31 @@ Het onderhouds venster is bedoeld voor zakelijke workloads die niet zijn overbel
 
 Het onderhouds venster kan worden geconfigureerd met behulp van de Azure Portal, Power shell, CLI of de Azure-API. Het kan worden geconfigureerd bij het maken of voor bestaande SQL-data bases en SQL Managed instances.
 
+> [!Important]
+> Het configureren van het onderhouds venster is een langlopende asynchrone bewerking, vergelijkbaar met het wijzigen van de servicelaag van de Azure SQL-resource. De resource is beschikbaar tijdens de bewerking, met uitzonde ring van een korte failover die aan het einde van de bewerking plaatsvindt en doorgaans tot 8 seconden duurt, zelfs in het geval van langdurige langlopende trans acties. Als u de gevolgen van de failover wilt beperken, moet u de bewerking buiten de piek uren uitvoeren.
+
 ### <a name="gain-more-predictability-with-maintenance-window"></a>Meer voorspel baarheid krijgen met het onderhouds venster
 
 Standaard worden alle Azure SQL-data bases en beheerde exemplaar databases alleen bijgewerkt tijdens tot 17:00 uur naar de lokale tijd van 8 A.M. om te voor komen dat er piek onderbrekingen in de kantoor uren zijn. De lokale tijd wordt bepaald door de [Azure-regio](https://azure.microsoft.com/global-infrastructure/geographies/) die als host fungeert voor de resource. U kunt de onderhouds updates verder aanpassen aan een tijd die geschikt is voor uw data base door te kiezen uit twee extra onderhouds venster sleuven:
-
-* **Standaard** venster, tot 17:00 uur naar 8 a.m. lokale tijd van maandag tot zondag 
+ 
 * Venster weekdag, 10PM naar 06.00 lokale tijd maandag – donderdag
 * Weekend Window 10PM to 06.00 local time vrijdag-zondag
 
-Zodra het onderhouds venster is geselecteerd, worden alle geplande onderhouds updates alleen uitgevoerd in het venster van uw keuze.   
+Zodra de selectie van het onderhouds venster is gemaakt en de service configuratie is voltooid, worden alle geplande onderhouds updates alleen uitgevoerd tijdens uw keuze.   
 
 > [!Note]
 > Naast geplande onderhouds updates kunnen ongeplande onderhouds gebeurtenissen niet worden Beschik baarheid veroorzaakt. 
 
 ### <a name="cost-and-eligibility"></a>Kosten en geschiktheid
 
-Het kiezen van een onderhouds venster is gratis voor de volgende [typen abonnements aanbiedingen](https://azure.microsoft.com/support/legal/offer-details/): betalen per gebruik, Cloud Solution Provider (CSP), micro soft Enter prise of micro soft-klant overeenkomst.
+Het configureren en gebruiken van het onderhouds venster is gratis voor alle typen in aanmerking komende [aanbiedingen](https://azure.microsoft.com/support/legal/offer-details/): betalen per gebruik, Cloud Solution Provider (CSP), micro soft Enter prise of micro soft-klant overeenkomst.
 
 > [!Note]
 > Een Azure-aanbieding is het type Azure-abonnement dat u hebt. Een abonnement met [betalen per gebruik-tarieven](https://azure.microsoft.com/offers/ms-azr-0003p/), [Azure in open](https://azure.microsoft.com/en-us/offers/ms-azr-0111p/)en [Visual Studio Enter prise](https://azure.microsoft.com/en-us/offers/ms-azr-0063p/) is bijvoorbeeld allemaal Azure-aanbiedingen. Elke aanbieding of elk plan heeft verschillende voor delen. Uw aanbieding of abonnement wordt weer gegeven in het overzicht van het abonnement. Zie [uw Azure-abonnement wijzigen in een andere aanbieding](/azure/cost-management-billing/manage/switch-azure-offer)voor meer informatie over het overschakelen op een ander abonnement.
 
 ## <a name="advance-notifications"></a>Voorafgaande meldingen
 
-Onderhouds meldingen kunnen worden geconfigureerd om klanten 24 uur vooraf te waarschuwen over toekomstige geplande onderhouds gebeurtenissen, op het moment van onderhoud en wanneer het onderhouds venster is voltooid. Zie [Advance Notifications](advance-notifications.md)(Engelstalig) voor meer informatie.
+Onderhouds meldingen kunnen worden geconfigureerd om u te waarschuwen over aanstaande geplande onderhouds gebeurtenissen die u 24 uur vooraf Azure SQL Database, op het moment van onderhoud en wanneer het onderhouds venster is voltooid. Zie [Advance Notifications](advance-notifications.md)(Engelstalig) voor meer informatie.
 
 ## <a name="availability"></a>Beschikbaarheid
 
@@ -62,6 +64,7 @@ Onderhouds meldingen kunnen worden geconfigureerd om klanten 24 uur vooraf te wa
 
 Het kiezen van een ander onderhouds venster dan de standaard instelling is beschikbaar op alle Slo's **, met uitzonde ring van**:
 * Hyperscale 
+* Exemplaargroepen
 * Verouderde Gen4-vCore
 * Basic, S0 en S1 
 * DC, Fsv2, M-serie
@@ -93,7 +96,7 @@ Om het maximale voor deel van onderhouds Vensters te verkrijgen, moet u ervoor z
 
 * In Azure SQL Database kunnen alle verbindingen die gebruikmaken van het beleid voor proxy verbindingen, worden beïnvloed door het gekozen onderhouds venster en een onderhouds venster voor gateway knooppunten. Client verbindingen die gebruikmaken van het aanbevolen verbindings beleid voor omleiding worden echter niet beïnvloed door een onderhouds failover voor gateway knooppunten. 
 
-* In Azure SQL Managed instance bevinden de gateway knooppunten zich [in het virtuele cluster](../../azure-sql/managed-instance/connectivity-architecture-overview.md#virtual-cluster-connectivity-architecture) en hebben hetzelfde onderhouds venster als het beheerde exemplaar, dus als u het beleid voor proxy verbindingen gebruikt, is het niet mogelijk verbindingen met een extra onderhouds venster beschikbaar te maken.
+* In Azure SQL Managed instance worden de gateway knooppunten gehost [in het virtuele cluster](../../azure-sql/managed-instance/connectivity-architecture-overview.md#virtual-cluster-connectivity-architecture) en hebben hetzelfde onderhouds venster als het beheerde exemplaar, maar het gebruik van het verbindings beleid omleiden wordt nog steeds aanbevolen om het aantal onderbrekingen tijdens de onderhouds gebeurtenis te beperken.
 
 Zie [Azure SQL database verbindings beleid](../database/connectivity-architecture.md#connection-policy)voor meer informatie over het client verbindings beleid in Azure SQL database. 
 

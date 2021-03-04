@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/03/2018
 ms.author: memildin
-ms.openlocfilehash: fcaf427c2e0ab275a5a6e08306dda785bca690d6
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: e4f905b7a08564eadb20d65d651c137ef3741376
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92784164"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102100318"
 ---
 # <a name="azure-security-center-readiness-roadmap"></a>Azure Security Center gereedheids schema
 Dit document bevat een roadmap naar gereedheid die u helpt aan de slag te gaan met Azure Security Center.
@@ -32,7 +32,7 @@ Artikelen
 - [Inleiding tot Azure Security Center](security-center-introduction.md)
 - [Snelstartgids voor Azure Security Center](security-center-get-started.md)
 
-Video 's
+Video's
 - [Korte introductievideo](https://azure.microsoft.com/resources/videos/introduction-to-azure-security-center/)
 - [Overzicht van de Security Center-preventie-, detectie- en reactiemogelijkheden](https://azure.microsoft.com/resources/videos/azurecon-2015-new-azure-security-center-helps-you-prevent-detect-and-respond-to-threats/)
 
@@ -59,7 +59,6 @@ Security Center verzamelt, analyseert en integreert automatisch logboekgegevens 
 Gebruik de volgende bronnen om u te helpen met het beheer van beveiligingswaarschuwingen en de beveiliging van uw resources.
 
 Artikelen    
-- [Beveiligingsstatus bewaken in Azure Security Center](./security-center-monitoring.md)
 - [Protecting your network in Azure Security Center](./security-center-network-recommendations.md) (Uw netwerk beveiligen in Azure Security Center)
 - [Protecting Azure SQL service and data in Azure Security Center](./security-center-remediate-recommendations.md) (Azure SQL-service en -gegevens beveiligen in Azure Security Center)
 
@@ -72,7 +71,7 @@ Om de kosten en schade te verminderen, is het belang rijk dat u een reactie plan
 
 Gebruik de volgende bronnen als u wilt weten hoe Security Center kan worden opgenomen in het incidentreactieproces.
 
-Video 's    
+Video's    
 * [Azure Security Center in Incident Response](https://channel9.msdn.com/Blogs/Azure-Security-Videos/Azure-Security-Center-in-Incident-Response) (Azure Security Center in incidentreacties)
 * [Respond quickly to threats with next-generation security operation, and investigation](https://youtu.be/e8iFCz5RM4g) (Snel op bedreigingen reageren met beveiligingsprocessen van een volgende generatie, en onderzoek)
 
@@ -86,7 +85,7 @@ Virtuele machines in Azure kunnen gebruikmaken van geavanceerde cloudverdediging
 
 Gebruik de volgende bronnen voor meer informatie over het gebruik van deze mogelijkheden in Security Center.
 
-Video 's    
+Video's    
 * [Azure Security Center: Just-in-time-VM-toegang](https://youtu.be/UOQb2FcdQnU)
 * [Azure Security Center - Adaptieve besturingselementen voor toepassingen](https://youtu.be/wWWekI1Y9ck)
 

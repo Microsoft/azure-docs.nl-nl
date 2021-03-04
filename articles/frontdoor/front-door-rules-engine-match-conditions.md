@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/14/2020
+ms.date: 03/01/2020
 ms.author: duau
-ms.openlocfilehash: 0e874ae3d29f4143a4f8a9275d5ffcde48d08e6d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: a352624fc802e4224aa1b60768c064c0054cdfd6
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91569771"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102035871"
 ---
 # <a name="azure-front-door-rules-engine-match-conditions"></a>Voorwaarden van overeenkomst van Azure Front Door-regelengine
 
@@ -142,7 +142,7 @@ Operator | Aanvraag-URL | Transformatie van hoofdletters en kleine letters
 
 #### <a name="key-information"></a>Belangrijke informatie
 
-- Wanneer u deze regelvoorwaarde gebruikt, moet u protocolgegevens toevoegen. Bijvoorbeeld: *https://www.\<yourdomain\>.com*.
+- Wanneer u deze regelvoorwaarde gebruikt, moet u protocolgegevens toevoegen. Bijvoorbeeld: `https://www.<yourdomain\>.com`.
 
 ## <a name="request-file-extension"></a>Bestandsextensie aanvragen
 
@@ -181,6 +181,10 @@ Hiermee worden aanvragen geïdentificeerd die het opgegeven pad bevatten in de a
 Operator | Waarde | Transformatie van hoofdletters en kleine letters
 ---------|-------|---------------
 [Lijst met standaardoperators](#standard-operator-list) | Tekenreeks, int | Kleine letters, hoofdletters, bijsnijden, witruimte verwijderen, URL coderen, URL decoderen
+
+#### <a name="key-information"></a>Belangrijke informatie
+
+- Wanneer u deze regel voorwaarde gebruikt, moet u er rekening mee houden dat de overeenkomst begint na de eerste `/` van het pad. Bijvoorbeeld: `https://www.<yourdomain>.com/folder/page` begint met het vergelijken van `folder/page` .
 
 ## <a name="standard-operator-list"></a>Lijst met standaardoperators
 

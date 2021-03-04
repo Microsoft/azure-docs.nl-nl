@@ -1,17 +1,16 @@
 ---
 title: Gegevens bronnen van Windows-gebeurtenis logboeken verzamelen met Log Analytics agent in Azure Monitor
 description: Hierin wordt beschreven hoe u de verzameling van Windows-gebeurtenis logboeken configureert door Azure Monitor en Details van de records die ze maken.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 10/21/2020
-ms.openlocfilehash: b747a4b58c9c460178d415d0b45ade814723d8fe
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 02/26/2021
+ms.openlocfilehash: a3baa83e2ae306f1e43aee52e29a151bad6f85d9
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101719862"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102036589"
 ---
 # <a name="collect-windows-event-log-data-sources-with-log-analytics-agent"></a>Gegevens bronnen van Windows-gebeurtenis logboeken verzamelen met Log Analytics-agent
 Windows-gebeurtenis logboeken zijn een van de meest voorkomende [gegevens bronnen](../agents/agent-data-sources.md) voor log Analytics-agents op virtuele Windows-machines, omdat veel toepassingen naar het Windows-gebeurtenis logboek schrijven.  U kunt gebeurtenissen uit standaard logboeken, zoals systeem en toepassing, verzamelen naast het opgeven van aangepaste logboeken die zijn gemaakt door toepassingen die u wilt bewaken.
@@ -22,13 +21,13 @@ Windows-gebeurtenis logboeken zijn een van de meest voorkomende [gegevens bronne
 ![Windows-gebeurtenissen](media/data-sources-windows-events/overview.png)     
 
 ## <a name="configuring-windows-event-logs"></a>Windows-gebeurtenis logboeken configureren
-Configureer Windows-gebeurtenis logboeken [in het menu Data van de geavanceerde instellingen](../agents/agent-data-sources.md#configuring-data-sources) voor de werk ruimte log Analytics.
+Configureer Windows-gebeurtenis Logboeken in het [Configuratie menu voor de agents](../agents/agent-data-sources.md#configuring-data-sources) voor de log Analytics-werk ruimte.
 
 Azure Monitor verzamelt alleen gebeurtenissen uit de Windows-gebeurtenis logboeken die zijn opgegeven in de instellingen.  U kunt een gebeurtenis logboek toevoegen door de naam van het logboek te typen en te klikken op **+** .  Voor elk logboek worden alleen de gebeurtenissen met de geselecteerde Ernst verzameld.  Controleer de ernst van het specifieke logboek dat u wilt verzamelen.  U kunt geen aanvullende criteria opgeven om gebeurtenissen te filteren.
 
 Wanneer u de naam van een gebeurtenis logboek typt, geeft Azure Monitor suggesties voor veelvoorkomende namen van gebeurtenis Logboeken. Als het logboek dat u wilt toevoegen niet in de lijst wordt weer gegeven, kunt u het nog steeds toevoegen door de volledige naam van het logboek te typen. U kunt de volledige naam van het logboek vinden met behulp van Logboeken. Open de pagina *Eigenschappen* voor het logboek in Logboeken en kopieer de teken reeks uit het veld *volledige naam* .
 
-![Windows-gebeurtenissen configureren](media/data-sources-windows-events/configure.png)
+[![Windows-gebeurtenissen configureren](media/data-sources-windows-events/configure.png)](media/data-sources-windows-events/configure.png#lightbox)
 
 > [!NOTE]
 > Kritieke gebeurtenissen van het Windows-gebeurtenis logboek hebben de ernst fout in Azure Monitor Logboeken.

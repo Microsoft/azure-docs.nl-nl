@@ -2,18 +2,18 @@
 title: Versleuteling aan de server zijde van Azure Managed disks
 description: Azure Storage beveiligt uw gegevens door deze te versleutelen voordat deze in de opslag clusters worden bewaard. U kunt door de klant beheerde sleutels gebruiken om versleuteling te beheren met uw eigen sleutels, of u kunt gebruikmaken van door micro soft beheerde sleutels voor de versleuteling van uw beheerde schijven.
 author: roygara
-ms.date: 10/22/2020
+ms.date: 03/02/2021
 ms.topic: conceptual
 ms.author: rogarana
 ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: f9152e341ac04209754bbf5f008cd56373967b9f
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: a1fbd536943023d3e6724b9c1638f7a0bd97d847
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101677442"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102036942"
 ---
 # <a name="server-side-encryption-of-azure-disk-storage"></a>Versleuteling aan de server zijde van Azure Disk Storage
 
@@ -66,6 +66,8 @@ Automatische rotatie van de sleutel is in de preview-versie en alleen beschikbaa
 > [!IMPORTANT]
 > Door de klant beheerde sleutels zijn gebaseerd op beheerde identiteiten voor Azure-resources, een functie van Azure Active Directory (Azure AD). Wanneer u door de klant beheerde sleutels configureert, wordt er automatisch een beheerde identiteit toegewezen aan uw resources onder de kaften. Als u het abonnement, de resource groep of de beheerde schijf vervolgens verplaatst van een Azure AD-Directory naar een andere, wordt de beheerde identiteit die is gekoppeld aan Managed disks niet overgedragen naar de nieuwe Tenant, zodat door de klant beheerde sleutels mogelijk niet meer werken. Zie [een abonnement overdragen tussen Azure AD-mappen](../active-directory/managed-identities-azure-resources/known-issues.md#transferring-a-subscription-between-azure-ad-directories)voor meer informatie.
 
+Als u door de klant beheerde sleutels voor beheerde schijven wilt inschakelen, raadpleegt u onze artikelen over hoe u deze kunt inschakelen met de [module Azure PowerShell](windows/disks-enable-customer-managed-keys-powershell.md), de [Azure CLI](linux/disks-enable-customer-managed-keys-cli.md) of de [Azure Portal](disks-enable-customer-managed-keys-portal.md). Zie [een Azure Key Vault en DiskEncryptionSet instellen met automatische sleutel rotatie (preview)](windows/disks-enable-customer-managed-keys-powershell.md#set-up-an-azure-key-vault-and-diskencryptionset-with-automatic-key-rotation-preview)voor meer informatie over het inschakelen van door de klant beheerde sleutels met automatische sleutel rotatie.
+
 ## <a name="encryption-at-host---end-to-end-encryption-for-your-vm-data"></a>Versleuteling van host-end-to-end-versleuteling voor uw VM-gegevens
 
 Wanneer u versleuteling op de host inschakelt, wordt die versleuteling gestart op de VM-host zelf, de Azure-server waaraan uw VM is toegewezen. De gegevens voor de caches van de tijdelijke schijf en het besturings systeem of de gegevens schijf worden opgeslagen op die VM-host. Nadat de versleuteling op de host is ingeschakeld, worden alle gegevens versleuteld in rust en stromen die zijn versleuteld naar de opslag service, waar ze worden bewaard. In wezen versleutelt versleuteling op host uw gegevens van end-to-end. Versleuteling op host maakt geen gebruik van de CPU van uw virtuele machine en heeft geen invloed op de prestaties van uw virtuele machine. 
@@ -84,6 +86,8 @@ Tijdelijke schijven en tijdelijke besturingssysteem schijven worden op rest vers
 
 [!INCLUDE [virtual-machines-disks-encryption-at-host-suported-sizes](../../includes/virtual-machines-disks-encryption-at-host-suported-sizes.md)]
 
+Als u end-to-end versleuteling wilt inschakelen met behulp van versleuteling op de host, raadpleegt u onze artikelen over hoe u deze kunt inschakelen met de [Azure PowerShell module](windows/disks-enable-host-based-encryption-powershell.md), de [Azure CLI](linux/disks-enable-host-based-encryption-cli.md)of de [Azure Portal](disks-enable-host-based-encryption-portal.md).
+
 ## <a name="double-encryption-at-rest"></a>Dubbele versleuteling bij rest
 
 Hoge beveiligings gevoelige klanten die zich zorgen maken over het risico dat is gekoppeld aan een bepaalde versleutelings algoritme, implementatie of sleutel die wordt aangetast, kunnen nu kiezen voor extra versleutelen met een ander versleutelings algoritme/dezelfde modus op de laag van de infra structuur met behulp van door het platform beheerde versleutelings sleutels. Deze nieuwe laag kan worden toegepast op blijvende besturings systeem-en gegevens schijven, moment opnamen en installatie kopieën, die allemaal worden versleuteld met dubbele versleuteling.
@@ -91,6 +95,8 @@ Hoge beveiligings gevoelige klanten die zich zorgen maken over het risico dat is
 ### <a name="supported-regions"></a>Ondersteunde regio’s
 
 Dubbele versleuteling is beschikbaar in alle regio's die beheerde schijven beschikbaar zijn.
+
+Als u dubbele versleuteling wilt inschakelen voor de rest van beheerde schijven, raadpleegt u onze artikelen over hoe u deze functie inschakelt met behulp van de [module Azure PowerShell](windows/disks-enable-double-encryption-at-rest-powershell.md), de [Azure CLI](linux/disks-enable-double-encryption-at-rest-cli.md) of de [Azure Portal](disks-enable-double-encryption-at-rest-portal.md).
 
 ## <a name="server-side-encryption-versus-azure-disk-encryption"></a>Versleuteling aan de server zijde versus Azure Disk Encryption
 

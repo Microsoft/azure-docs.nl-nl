@@ -8,18 +8,22 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 6424fc0ff49566fad949b3fba4718acb2bad4cd3
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
-ms.translationtype: HT
+ms.openlocfilehash: c3ee643d525cb5394369aba3b0e803bd1a94c852
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91362765"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102036231"
 ---
 # <a name="organize-costs-by-customizing-your-billing-account"></a>Kosten organiseren door uw factureringsrekening aan te passen
 
 Uw factureringsrekening voor uw Microsoft-klantovereenkomst biedt u de flexibiliteit om uw kosten te organiseren op basis van uw behoeften per afdeling, project of ontwikkelomgeving.
 
 In dit artikel wordt beschreven hoe u kosten kunt organiseren met behulp van de Azure-portal. Dit artikel is van toepassing op een factureringsrekening voor een Microsoft-klantovereenkomst. [Controleer of u toegang hebt tot een Microsoft-klantovereenkomst](#check-access-to-a-microsoft-customer-agreement).
+
+Bekijk de [organisatie kosten door uw micro soft-account voor de facturering van klanten](https://www.youtube.com/watch?v=7RxTfShGHwU) aan te passen om te leren hoe u de kosten voor uw facturerings account kunt indelen.
+
+>[!VIDEO https://www.youtube.com/embed/7RxTfShGHwU]
 
 ## <a name="structure-your-account-with-billing-profiles-and-invoice-sections"></a>Uw account structureren met factureringsprofielen en factuursecties
 

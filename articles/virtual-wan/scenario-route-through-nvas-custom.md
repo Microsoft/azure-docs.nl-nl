@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 02/25/2021
 ms.author: cherylmc
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 8916fbc7c2a0b9789dcc73697324cee370f1fc1c
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 6291964aff7c215df7f738ab103947dcb9b1b1d4
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101704902"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102036855"
 ---
 # <a name="scenario-route-traffic-through-nvas-by-using-custom-settings"></a>Scenario: verkeer routeren via Nva's met aangepaste instellingen
 
@@ -176,7 +176,7 @@ Als u route ring via NVA wilt instellen, kunt u de volgende stappen overwegen:
    >
    > * Gebruikers van de portal moeten ' door geven aan standaard route ' inschakelen voor verbindingen (VPN/er/P2S/VNet) om de 0.0.0.0/0-route van kracht te laten worden.
    > * PS/CLI/REST-gebruikers moeten de vlag ' enableinternetsecurity ' instellen op True als de route 0.0.0.0/0 van kracht worden.
-   >
+   > * Virtual Network-verbinding biedt geen ondersteuning voor ' multiple/unique ' van het volgende hop-IP-adres naar het ' zelfde ' netwerk virtueel apparaat in een SPOKE-VNet als ' een van de routes met de volgende hop-IP is aangeduid als openbaar IP-adressen of 0.0.0.0/0 (Internet)
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -7,16 +7,16 @@ ms.prod: kinect-dk
 ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: kinect, azure, sensor, SDK, diepte, RGB, intern, extern, synchronisatie, ringnet werk, fase verschuiving
-ms.openlocfilehash: 914a29882277c11c388d3f81f0b1fe827fc2f156
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ce0c72d3d708d5696a9775b3885f278f0c23cac1
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85277301"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102034303"
 ---
 # <a name="capture-azure-kinect-device-synchronization"></a>Synchronisatie van Azure Kinect-apparaat vastleggen
 
-Met de Kinect-hardware van Azure kunt u de opname tijd van kleur en diepte kopieën uitlijnen. De uitlijning tussen de camera's op hetzelfde apparaat is **interne synchronisatie**. De afstemming van de vastleg tijd op meerdere apparaten die zijn verbonden, is **externe synchronisatie**.
+Met de Kinect-hardware van Azure kunt u de opname tijd van kleur en diepte kopieën uitlijnen. De uitlijning tussen de camera's op hetzelfde apparaat is **interne synchronisatie**. De afstemming van de vastleg tijd op meerdere apparaten die zijn verbonden, is **externe synchronisatie**. De microfoon matrix werkt onafhankelijk van de kleur en diepte camera's.
 
 ## <a name="device-internal-synchronization"></a>Interne synchronisatie van apparaat
 

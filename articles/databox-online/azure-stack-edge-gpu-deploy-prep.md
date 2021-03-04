@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 01/22/2021
+ms.date: 03/03/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: 277b1a46ad480be8313f6971dc600d3dd911c09d
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: b108e757ed9fe9ab7038cae4240f0f749ac19675
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762349"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102036041"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-pro-with-gpu"></a>Zelfstudie: Voorbereidingen voor de implementatie van Azure Stack Edge Pro met GPU 
 
@@ -66,7 +66,7 @@ Hier volgen de configuratievereisten voor uw Azure Stack Edge-resource, uw Azure
 
 Zorg voordat u begint voor het volgende:
 
-- Uw Microsoft Azure-abonnement is ingeschakeld voor een Azure Stack Edge-resource. Zorg dat een ondersteund abonnement gebruikt zoals [Microsoft Enterprise Agreement (EA)](https://azure.microsoft.com/overview/sales-number/), [Cloud Solution Provider (CSP)](/partner-center/azure-plan-lp) of [Microsoft Azure Sponsorship](https://azure.microsoft.com/offers/ms-azr-0036p/). Abonnementen waar u betaalt per gebruik worden niet ondersteund. Zie [Wat is een Azure-aanbieding?](../cost-management-billing/manage/switch-azure-offer.md#what-is-an-azure-offer) om te achterhalen welk type Azure-abonnement u hebt.
+- Uw Microsoft Azure-abonnement is ingeschakeld voor een Azure Stack Edge-resource. Zorg dat een ondersteund abonnement gebruikt zoals [Microsoft Enterprise Agreement (EA)](https://azure.microsoft.com/overview/sales-number/), [Cloud Solution Provider (CSP)](/partner-center/azure-plan-lp) of [Microsoft Azure Sponsorship](https://azure.microsoft.com/offers/ms-azr-0036p/). Betalen per gebruik-abonnementen worden niet ondersteund. Zie [Wat is een Azure-aanbieding?](../cost-management-billing/manage/switch-azure-offer.md#what-is-an-azure-offer) om te achterhalen welk type Azure-abonnement u hebt.
 - U hebt toegang als eigenaar of inzender op het niveau van de resourcegroep voor de Azure Stack Edge Pro-/Data Box Gateway-, IoT Hub- en Azure Storage-resources.
 
     - Als u een Azure Stack Eedge / Data Box Gateway resource wilt maken, moet u machtigingen hebben als inzender (of hoger) op het niveau van de resourcegroep. 
@@ -102,6 +102,8 @@ Zorg voordat u begint voor het volgende:
 ## <a name="create-a-new-resource"></a>Een nieuwe resource maken
 
 Als u al een Azure Stack Edge-resource hebt voor het beheer van uw fysieke apparaat, kunt u deze stap overslaan en verdergaan met [Activeringscode ophalen](#get-the-activation-key).
+
+### <a name="portal"></a>[Portal](#tab/azure-portal)
 
 Voer de volgende stappen uit in de Azure-portal om een Azure Stack Edge-resource te maken.
 
@@ -143,7 +145,7 @@ Voer de volgende stappen uit in de Azure-portal om een Azure Stack Edge-resource
 
         ![Een resource maken 6](media/azure-stack-edge-gpu-deploy-prep/create-resource-6.png)
 
-    - Als dit het nieuwe apparaat is dat u bestelt, voert u de naam van de contactpersoon, het bedrijf, het adres voor het verzenden van het apparaat en contactgegevens in.
+    - Als dit het nieuwe apparaat is dat u bestelt, voert u de naam van de contact persoon, het bedrijf, het adres voor het verzenden van het apparaat en contact gegevens in.
 
         ![Een resource maken 7](media/azure-stack-edge-gpu-deploy-prep/create-resource-7.png)
 
@@ -163,7 +165,7 @@ Voer de volgende stappen uit in de Azure-portal om een Azure Stack Edge-resource
 
     ![Ga naar de Azure Stack Edge Pro-resource](media/azure-stack-edge-gpu-deploy-prep/azure-stack-edge-resource-1.png)
 
-Nadat de bestelling is geplaatst, controleert Microsoft de bestelling en neemt contact met u op (via e-mail) met verzendgegevens.
+Nadat de bestelling is geplaatst, controleert micro soft de bestelling en maakt u via e-mail contact met de verzend gegevens.
 
 <!--![Notification for review of the Azure Stack Edge Pro order](media/azure-stack-edge-gpu-deploy-prep/azure-stack-edge-resource-2.png)-->
 
@@ -171,6 +173,51 @@ Nadat de bestelling is geplaatst, controleert Microsoft de bestelling en neemt c
 > Als u meerdere bestellingen tegelijk wilt doen of een bestaande bestelling wilt klonen, kunt u de [scripts in Azure Samples](https://github.com/Azure-Samples/azure-stack-edge-order) gebruiken. Zie het Leesmij-bestand voor meer informatie.
 
 Als u problemen ondervindt tijdens het bestelproces, raadpleegt u [Problemen met de bestelling oplossen](azure-stack-edge-troubleshoot-ordering.md).
+
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Als dat nodig is, kunt u uw omgeving voorbereiden voor Azure CLI.
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+Als u een Azure Stack Edge-resource wilt maken, voert u de volgende opdrachten uit in azure CLI.
+
+1. Maak een resource groep met de opdracht [AZ Group Create](/cli/azure/group#az_group_create) of gebruik een bestaande resource groep:
+
+   ```azurecli
+   az group create --name myasepgpu1 --location eastus
+   ```
+
+1. Als u een apparaat wilt maken, gebruikt u de opdracht [AZ databoxedge Device Create](/cli/azure/databoxedge/device#az_databoxedge_device_create) :
+
+   ```azurecli
+   az databoxedge device create --resource-group myasepgpu1 \
+      --device-name myasegpu1 --location eastus --sku EdgeP_Base
+   ```
+
+   Kies een locatie die het dichtst bij de geografische regio ligt waar u uw apparaat wilt implementeren. In de regio worden alleen de metagegevens voor apparaatbeheer opgeslagen. De werkelijke gegevens kunnen worden opgeslagen in elk opslagaccount.
+
+   Zie [Azure-producten die beschikbaar zijn per regio](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all) voor een lijst met alle regio's waar de Azure Stack Edge-resource beschikbaar is. Als Azure Government wordt gebruikt, zijn alle overheidsregio's beschikbaar, zoals wordt weergegeven in de [Azure-regio's](https://azure.microsoft.com/global-infrastructure/regions/).
+
+1. Voer de opdracht [AZ databoxedge order Create](/cli/azure/databoxedge/order#az_databoxedge_order_create) uit om een order te maken:
+
+   ```azurecli 
+   az databoxedge order create --resource-group myasepgpu1 \
+      --device-name myasegpu1 --company-name "Contoso" \
+      --address-line1 "1020 Enterprise Way" --city "Sunnyvale" \
+      --state "California" --country "United States" --postal-code 94089 \
+      --contact-person "Gus Poland" --email-list gus@contoso.com --phone 4085555555
+   ```
+
+Het maken van de resource duurt enkele minuten. Voer de opdracht [AZ databoxedge order show](/cli/azure/databoxedge/order#az_databoxedge_order_show) uit om de volg orde te bekijken:
+
+```azurecli
+az databoxedge order show --resource-group myasepgpu1 --device-name myasegpu1 
+```
+
+Nadat u een bestelling hebt geplaatst, controleert micro soft de bestelling en maakt u via e-mail contact met de verzend gegevens.
+
+---
 
 ## <a name="get-the-activation-key"></a>De activeringssleutel ophalen
 

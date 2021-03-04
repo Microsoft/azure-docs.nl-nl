@@ -6,12 +6,12 @@ ms.author: cynthn
 ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/18/2021
-ms.openlocfilehash: 6601cd31cf6e332bf292cd887b498a92946d8af7
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: c336c1632cf206cdf2bf7151dc191c4de5ef820d
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101668296"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102036925"
 ---
 # <a name="availability-options-for-virtual-machines-in-azure"></a>Beschikbaarheidsopties voor virtuele machines in Azure
 
@@ -55,7 +55,7 @@ Virtuele-machine schaal sets vereenvoudigen het ontwerpen voor hoge Beschik baar
 
 **Orchestration-modi voor schaal sets**
 
-Met de indelings modi voor virtuele-machine schaal sets kunt u meer controle over de manier waarop exemplaren van virtuele machines worden beheerd door de schaalset. U kunt een uniforme of flexibele Orchestration-modus inschakelen in uw schaalset. Uniforme indeling is geoptimaliseerd voor grootschalige workloads met een hoge schaal met identieke exemplaren. Flexibele indeling (preview) is bedoeld voor hoge Beschik baarheid op schaal met identieke of meerdere typen virtuele machines. Meer informatie over deze [Orchestration-modi](./virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes.md) en hoe u deze kunt inschakelen.
+Met de indelings modi voor virtuele-machine schaal sets kunt u meer controle over de manier waarop exemplaren van virtuele machines worden beheerd door de schaalset. U kunt een uniforme of flexibele Orchestration-modus inschakelen in uw schaalset. Uniforme indeling is geoptimaliseerd voor grootschalige workloads met een hoge schaal met identieke exemplaren. Flexibele indeling (preview) is bedoeld voor hoge Beschik baarheid op schaal met identieke of meerdere typen virtuele machines. Meer informatie over deze [Orchestration-modi](../virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes.md) en hoe u deze kunt inschakelen.
 
 
 ## <a name="availability-sets"></a>Beschikbaarheidssets

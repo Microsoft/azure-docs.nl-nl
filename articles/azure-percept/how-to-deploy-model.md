@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: how-to
 ms.date: 02/12/2021
 ms.custom: template-how-to
-ms.openlocfilehash: 6e1ed39edfd3c395fbc3e4d26a4aa358d48a1d5b
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 01bd3709050d8a2b57c1bf51920308188546fb31
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662421"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102035480"
 ---
 # <a name="deploy-a-vision-ai-model-to-your-azure-percept-dk"></a>Een Vision AI-model implementeren in uw Azure percept DK
 
@@ -40,13 +40,11 @@ Volg deze hand leiding voor het implementeren van een Vision AI-model naar uw Az
 
 1. Klik op de volgende pagina op **een voorbeeld model implementeren** als u een van de vooraf getrainde voor beelden van Vision-modellen wilt implementeren. Als u een bestaande [aangepaste oplossing voor No-code Vision](./tutorial-nocode-vision.md)wilt implementeren, klikt u op **een Custom Vision project implementeren**.
 
-    :::image type="content" source="./media/how-to-deploy-model/deploy-model.png" alt-text="Lijst met percept-apparaten.":::
+    :::image type="content" source="./media/how-to-deploy-model/deploy-model.png" alt-text="Model keuzes voor implementatie.":::
 
 1. Als u hebt gekozen voor het implementeren van een no-code Vision-oplossing, selecteert u uw project en uw voorkeurs model herhaling en klikt u op **implementeren**.
 
 1. Als u hebt gekozen voor het implementeren van een voorbeeld model, selecteert u het model en klikt u op **implementeren op apparaat**.
-
-    :::image type="content" source="./media/how-to-deploy-model/select-sample-model.png" alt-text="Lijst met percept-apparaten.":::
 
 1. Wanneer de implementatie van uw model is geslaagd, wordt in de rechter bovenhoek van het scherm een status bericht weer gegeven. Als u wilt dat uw model niet meer in actie wordt weer gegeven, klikt u op de koppeling **stroom weer geven** in het status bericht om de RTSP-video stroom van het zicht bare SoM van uw Devkit weer te geven.
 

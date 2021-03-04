@@ -1,20 +1,20 @@
 ---
-title: Een Vision AI-model implementeren in uw Azure percept DK
-description: Meer informatie over het implementeren van een Vision AI-model naar uw Azure percept DK vanuit Azure percept Studio
+title: Vastleg installatie kopieën voor een niet-code Vision-oplossing in azure percept Studio
+description: Meer informatie over het vastleggen van installatie kopieën met uw Azure percept DK in azure percept Studio voor een niet-code Vision-oplossing
 author: elqu20
 ms.author: v-elqu
 ms.service: azure-percept
 ms.topic: how-to
 ms.date: 02/12/2021
 ms.custom: template-how-to
-ms.openlocfilehash: 5ad263f5ae3b0b8e91de30b620002e33086608b4
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 44bf498af52f4d8a0d880dc1f1d5874d5b444cae
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662286"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102035531"
 ---
-# <a name="capture-images-for-a-vision-project"></a>Afbeeldingen vastleggen voor een Vision-project
+# <a name="capture-images-for-a-vision-project-in-azure-percept-studio"></a>Afbeeldingen vastleggen voor een Vision-project in azure percept Studio
 
 Volg deze hand leiding voor het vastleggen van installatie kopieën met behulp van het visioning-SoM van Azure percept DK voor een bestaand gezichts project in azure percept Studio. Als u nog geen Vision-project hebt gemaakt, raadpleegt u de [zelf studie over geen code](./tutorial-nocode-vision.md).
 
@@ -56,7 +56,7 @@ Volg deze hand leiding voor het vastleggen van installatie kopieën met behulp v
         1. Selecteer uw voor keuren voor de Imaging-frequentie onder **opname frequentie**.
         1. Selecteer het totale aantal installatie kopieën dat u wilt verzamelen onder **doel**.
 
-    :::image type="content" source="./media/how-to-capture-images/take-photo.png" alt-text="Pagina percept-apparaten met beschik bare acties weer gegeven.":::
+    :::image type="content" source="./media/how-to-capture-images/take-photo.png" alt-text="Scherm voor het vastleggen van installatie kopieën.":::
 
 Alle installatie kopieën zijn toegankelijk in [Custom Vision](https://www.customvision.ai/).
 

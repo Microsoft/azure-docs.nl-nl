@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: cff40385edc89c0f6d2d105d089b66c046b0c04b
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: d46a20079919f052ed343c9702ba02ce7f109b5c
+ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100545935"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "102036130"
 ---
 # <a name="tutorial-build-out-an-end-to-end-solution"></a>Zelfstudie: Een end-to-end-oplossing bouwen
 
@@ -107,7 +107,7 @@ Terug in het Visual Studio-venster waarin het _**AdtE2ESample**_-project is geop
 
 Voordat u de app publiceert, is het handig om ervoor te zorgen dat uw afhankelijkheden zijn bijgewerkt en dat u over de nieuwste versie van alle meegeleverde pakketten beschikt.
 
-Vouw in het deelvenster *Solution Explorer* *SampleFunctionsApp > afhankelijkheden* uit. Klik met de rechter muisknop op *Pakketten* en kies *NuGet-pakketten beheren...* .
+Vouw in  het deel venster Solution Explorer _**SampleFunctionsApp** > afhankelijkheden_ uit. Klik met de rechter muisknop op *Pakketten* en kies *NuGet-pakketten beheren...* .
 
 :::image type="content" source="media/tutorial-end-to-end/update-dependencies-1.png" alt-text="Visual Studio: NuGet Packages beheren voor het SampleFunctionsApp-project" border="false":::
 
@@ -131,15 +131,17 @@ Gebruik in Azure Cloud Shell de volgende opdracht om een toepassingsinstelling i
 az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "ADT_SERVICE_URL=<your-Azure-Digital-Twins-instance-URL>"
 ```
 
-De uitvoer is de lijst met instellingen voor de Azure-functie, die nu een vermelding met de naam *ADT_SERVICE_URL* moet bevatten.
+De uitvoer is de lijst met instellingen voor de Azure-functie, die nu een vermelding met de naam **ADT_SERVICE_URL** moet bevatten.
 
-Gebruik de volgende opdracht om de door het systeem beheerde identiteit te maken. Noteer het veld *principalId* in de uitvoer.
+Gebruik de volgende opdracht om de door het systeem beheerde identiteit te maken. Zoek naar het veld **principalId** in de uitvoer.
 
 ```azurecli-interactive
 az functionapp identity assign -g <your-resource-group> -n <your-App-Service-(function-app)-name>
 ```
 
-Gebruik de waarde van *principalId* uit de uitvoer in de volgende opdracht om de identiteit van de functie-app toe te wijzen aan de rol van *Azure Digital Twins-gegevenseigenaar* voor uw exemplaar van Azure Digital Twins:
+Gebruik de waarde **principalId** uit de uitvoer in de volgende opdracht om de identiteit van de functie-app toe te wijzen aan de rol van *Azure Digital Apparaatdubbels-gegevens eigenaar* voor uw Azure Digital apparaatdubbels-exemplaar.
+
+[!INCLUDE [digital-twins-permissions-required.md](../../includes/digital-twins-permissions-required.md)]
 
 ```azurecli-interactive
 az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<principal-ID>" --role "Azure Digital Twins Data Owner"
@@ -176,7 +178,7 @@ az iot hub create --name <name-for-your-IoT-hub> -g <your-resource-group> --sku 
 
 De uitvoer van deze opdracht is informatie over de IoT-hub die is gemaakt.
 
-Sla de naam op die u aan uw IoT-hub hebt gegeven. U gebruikt dit later.
+Sla de **naam** op die u hebt gegeven aan uw IOT-hub. U gebruikt dit later.
 
 ### <a name="connect-the-iot-hub-to-the-azure-function"></a>De IoT-hub verbinden met de Azure-functie
 
@@ -269,7 +271,10 @@ Voer in het projectconsolevenster dat wordt geopend de volgende opdracht uit om 
 ObserveProperties thermostat67 Temperature
 ```
 
-U zou moeten zien dat de live bijgewerkte temperaturen *van uit Azure Digital Twins-instantie* elke 10 seconden in de console worden geregistreerd.
+U moet de Live bijgewerkte Tempe raturen *van uw Azure Digital apparaatdubbels-exemplaar* elke twee seconden registreren bij de console.
+
+>[!NOTE]
+> Het kan een paar seconden duren voordat de gegevens van het apparaat worden door gegeven aan de dubbele. De eerste paar temperatuur metingen kunnen worden weer gegeven als 0 voordat de gegevens worden aangekomen.
 
 :::image type="content" source="media/tutorial-end-to-end/console-digital-twins-telemetry.png" alt-text="Console-uitvoer met logboek van temperatuurberichten van digitale tweeling thermostat67":::
 
@@ -327,7 +332,7 @@ Zoek naar het veld `provisioningState` in de uitvoer en controleer of de waarde 
 
 :::image type="content" source="media/tutorial-end-to-end/output-endpoints.png" alt-text="Resultaat van de eindpuntquery, dat laat zien dat het eindpunt de provisioningState Geslaagd heeft":::
 
-Sla de namen op die u aan uw gebeurtenisrasteronderwerp en uw Event Grid-eindpunt in Azure Digital Twins hebt gegeven. U gebruikt deze later.
+Sla de namen die u hebt opgegeven in uw **Event grid-onderwerp** en uw event grid- **eind punt** op in azure Digital apparaatdubbels. U gebruikt deze later.
 
 ### <a name="set-up-route"></a>Route instellen
 
@@ -346,7 +351,7 @@ De uitvoer van deze opdracht is informatie over de route die u hebt gemaakt.
 
 Abonneer vervolgens de Azure-functie *ProcessDTRoutedData* op het gebeurtenisrasteronderwerp dat u eerder hebt gemaakt, zodat telemetriegegevens van de tweeling *thermostat67* door het gebeurtenisrasteronderwerp naar de functie kan stromen, die teruggaat naar Azure Digital Twins en de tweeling *room21* dienovereenkomstig bijwerkt.
 
-Hiervoor maakt u een **Event Grid-abonnement** van uw gebeurtenisrasteronderwerp naar uw *ProcessDTRoutedData*-functie als een eindpunt.
+Hiervoor maakt u een **Event grid-abonnement** waarmee gegevens worden verzonden vanuit het **Event grid-onderwerp** dat u eerder hebt gemaakt voor de Azure-functie van *ProcessDTRoutedData* .
 
 Ga in de [Azure-portal](https://portal.azure.com/)naar uw gebeurtenisrasteronderwerp door de naam ervan te zoeken in de bovenste zoekbalk. Selecteer *+ Gebeurtenisabonnement*.
 
@@ -381,7 +386,7 @@ Voer in het projectconsolevenster dat wordt geopend de volgende opdracht uit om 
 ObserveProperties thermostat67 Temperature room21 Temperature
 ```
 
-U zou moeten zien dat de live bijgewerkte temperaturen *van uit Azure Digital Twins-instantie* elke 10 seconden in de console worden geregistreerd. U ziet dat de temperatuur voor *room21* wordt bijgewerkt overeenkomstig de updates van *thermostat67*.
+U moet de Live bijgewerkte Tempe raturen *van uw Azure Digital apparaatdubbels-exemplaar* elke twee seconden registreren bij de console. U ziet dat de temperatuur voor *room21* wordt bijgewerkt overeenkomstig de updates van *thermostat67*.
 
 :::image type="content" source="media/tutorial-end-to-end/console-digital-twins-telemetry-b.png" alt-text="Console-uitvoer met logboek van temperatuurberichten van een thermostaat en een ruimte":::
 

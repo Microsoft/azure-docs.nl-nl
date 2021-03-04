@@ -2,15 +2,15 @@
 title: Veelgestelde vragen over ARM-sjablonen
 description: Veelgestelde vragen over Azure Resource Manager sjablonen (ARM-sjablonen).
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 03/03/2021
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 757dfa119649e21c6e1787671afa61ee18184300
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 24baa0dc7444f632040ddaf9fcc2266f9e4ccae5
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97561899"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102036137"
 ---
 # <a name="frequently-asked-questions-about-arm-templates"></a>Veelgestelde vragen over ARM-sjablonen
 
@@ -88,7 +88,7 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over Azure Resource Man
 
 * **Ik heb gehoord dat je aan de taal van een nieuwe sjabloon werkt. Waar kan ik meer informatie vinden?**
 
-  Voor een voor beeld van de nieuwe taal raadpleegt u [project Bicep-opslag plaats](https://github.com/Azure/bicep). Meld u aan [voor meldingen](https://aka.ms/armLangUpdates)om op de hoogte te blijven van de nieuwe taal.
+  Zie [Wat is Bicep (preview)?](bicep-overview.md)voor meer informatie over de nieuwe taal.
 
 * **Is er een plan voor de ondersteuning van het maken van sjablonen in YAML?**
 
@@ -100,7 +100,7 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over Azure Resource Man
 
 * **Kunt u een hulp programma voor het converteren van mijn JSON-sjablonen naar de taal van de nieuwe sjabloon bieden?**
 
-  Ja.
+  Ja. Zie [JSON decompileren op Bicep](compare-template-syntax.md#decompile-json-to-bicep).
 
 ## <a name="template-specs"></a>Sjabloonspecificaties
 

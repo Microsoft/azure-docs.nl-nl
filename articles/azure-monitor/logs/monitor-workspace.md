@@ -1,17 +1,16 @@
 ---
 title: De status van de Log Analytics werk ruimte in Azure Monitor bewaken
 description: Hierin wordt beschreven hoe u de status van uw Log Analytics-werk ruimte bewaakt met behulp van gegevens in de bewerkings tabel.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/20/2020
-ms.openlocfilehash: 09df1c2ecb94089f23a88dd36c5343bb4cf2feea
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 9eda0acc15badfe7bb2e754d887786aa990d6e24
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101710937"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102034962"
 ---
 # <a name="monitor-health-of-log-analytics-workspace-in-azure-monitor"></a>De status van de Log Analytics werk ruimte in Azure Monitor bewaken
 Als u de prestaties en beschik baarheid van uw Log Analytics-werk ruimte in Azure Monitor wilt behouden, moet u alle problemen die zich voordoen, proactief kunnen detecteren. In dit artikel wordt beschreven hoe u de status van uw Log Analytics-werk ruimte kunt controleren met behulp van gegevens in de [bewerkings](/azure/azure-monitor/reference/tables/operation) tabel. Deze tabel is opgenomen in elke Log Analytics-werk ruimte en bevat fout-en waarschuwingen die zich in uw werk ruimte voordoen. U moet deze gegevens regel matig bekijken en waarschuwingen maken om proactief te worden gewaarschuwd wanneer er belang rijke incidenten in uw werk ruimte zijn.

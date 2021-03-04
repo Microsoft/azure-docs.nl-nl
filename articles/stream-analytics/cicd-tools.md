@@ -7,12 +7,12 @@ ms.author: sujie
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 09/10/2020
-ms.openlocfilehash: d1a0a6ad5b45af2157b960f8990574e47d10eeb2
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 2dbb491e77f132daf7b432f27705eba9e3e3cd3c
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101718417"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102036959"
 ---
 # <a name="automate-builds-tests-and-deployments-of-an-azure-stream-analytics-job-using-cicd-tools"></a>Bouw-, test-en implementaties van een Azure Stream Analytics-taak automatiseren met CI/CD-hulpprogram ma's
 
@@ -122,6 +122,9 @@ azure-streamanalytics-cicd addtestcase -project <projectFullPath> [-testConfigPa
 |---|---|
 | `-project` | Het pad van de **asaproj.jsin** het bestand voor uw Visual Studio code-project of **[uw project naam]. Asaproj** voor Visual Studio-project. |
 | `-testConfigPath` | Het pad van het test configuratie bestand. Als deze niet is opgegeven, wordt het bestand doorzocht in **\test** onder de huidige map van de **asaproj.jsin** het bestand met de standaard bestandsnaam **testConfig.jsop**. Er wordt een nieuw bestand gemaakt als dat nog niet bestaat. |
+
+> [!NOTE]
+> De `Script` waarde in de gegenereerde **testConfig.jsin** het bestand is alleen voor het leveren van de context. Het wordt niet gebruikt in de test logica. 
 
 #### <a name="visual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 

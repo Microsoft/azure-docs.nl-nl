@@ -4,12 +4,12 @@ description: Meer informatie over het maken van een SSH-verbinding met Azure Kub
 services: container-service
 ms.topic: article
 ms.date: 07/31/2019
-ms.openlocfilehash: 96334985862c65000d783df3a205406f046be07a
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 7455b98348f2b8c40f2ffc125abe1297af88fbd8
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101740542"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102034452"
 ---
 # <a name="connect-with-ssh-to-azure-kubernetes-service-aks-cluster-nodes-for-maintenance-or-troubleshooting"></a>Via SSH verbinding maken met AKS-clusterknooppunten (Azure Kubernetes Service) voor onderhoud of probleemoplossing
 
@@ -168,7 +168,7 @@ Als u een SSH-verbinding met een AKS-knoop punt wilt maken, voert u een helper-p
 1. Ga terug naar de terminal sessie naar uw container, werk de machtigingen voor de gekopieerde `id_rsa` persoonlijke SSH-sleutel zo in dat deze alleen-lezen is:
 
     ```console
-    chmod 0600 id_rsa
+    chmod 0400 id_rsa
     ```
 
 1. Maak een SSH-verbinding met uw AKS-knoop punt. De standaard gebruikersnaam voor AKS-knoop punten is *azureuser*. Accepteer de prompt om door te gaan met de verbinding als de SSH-sleutel voor het eerst wordt vertrouwd. U wordt vervolgens weer gegeven met de bash-prompt van uw AKS-knoop punt:

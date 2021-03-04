@@ -11,13 +11,13 @@ metadata:
   ms.collection: na
   author: mumian
   ms.author: jgao
-  ms.date: 11/06/2020
-  ms.openlocfilehash: 5eb48265241bb6db312ef952e2e0cc5f0519022a
-  ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+  ms.date: 03/03/2021
+  ms.openlocfilehash: 77a0d579710a0e7f2de8928d6561e55ea5691f69
+  ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/03/2021
-  ms.locfileid: "101741086"
+  ms.lasthandoff: 03/04/2021
+  ms.locfileid: "102036156"
 landingContent:
 - title: Over ARM-sjablonen
   linkLists:
@@ -25,6 +25,8 @@ landingContent:
     links:
     - text: Wat zijn sjablonen?
       url: overview.md
+    - text: Wat is Bicep?
+      url: bicep-overview.md
   - linkListType: concept
     links:
     - text: Aanbevolen procedures
@@ -50,13 +52,15 @@ landingContent:
     - text: JSON-sjablonen maken-VS code
       url: quickstart-create-templates-use-visual-studio-code.md
     - text: Bicep-sjablonen maken-VS code
-      url: quickstart-create-bicep-templates-use-visual-studio-code.md
+      url: quickstart-create-bicep-use-visual-studio-code.md
     - text: SjabSjabloonspecificaties maken en implementeren maken en implementeren
       url: quickstart-create-template-specs.md
   - linkListType: tutorial
     links:
-    - text: Zelfstudies voor beginners
+    - text: Zelf studies voor sjablonen voor beginners
       url: template-tutorial-create-first-template.md
+    - text: Zelf studies voor beginners Bicep
+      url: bicep-tutorial-create-first-bicep.md
   - linkListType: learn
     links:
     - text: Implementeren met ARM-sjablonen

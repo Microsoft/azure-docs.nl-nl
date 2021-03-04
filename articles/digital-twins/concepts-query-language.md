@@ -8,18 +8,18 @@ ms.date: 11/19/2020
 ms.topic: conceptual
 ms.service: digital-twins
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 742cff544886a1499bccfa575684edef708da7bd
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 9549e6ea30be0cd9eb1a8c200a5af4a4721793a6
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97028356"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102034673"
 ---
 # <a name="about-the-query-language-for-azure-digital-twins"></a>Over de query taal voor Azure Digital Apparaatdubbels
 
 Het midden van Azure Digital Apparaatdubbels is het [dubbele diagram](concepts-twins-graph.md), dat is geconstrueerd op basis van digitale apparaatdubbels en relaties. 
 
-Deze grafiek kan worden opgevraagd om informatie te krijgen over de digitale apparaatdubbels en de relaties hierin. Deze query's worden geschreven in een aangepaste SQL-achtige query taal, waarnaar wordt verwezen als de **Azure Digital apparaatdubbels-query taal**. Dit is vergelijkbaar met de [IOT hub query taal](../iot-hub/iot-hub-devguide-query-language.md) met veel vergelijk bare functies.
+Deze grafiek kan worden opgevraagd om informatie te krijgen over de digitale apparaatdubbels en de relaties hierin. Deze query's worden geschreven in een aangepaste SQL-achtige querytaal, die de **Azure Digital Twins-querytaal** wordt genoemd. Dit is vergelijkbaar met de [IOT hub query taal](../iot-hub/iot-hub-devguide-query-language.md) met veel vergelijk bare functies.
 
 In dit artikel worden de basis principes van de query taal en de mogelijkheden ervan beschreven. Zie [*How-to: query the dubbele Graph*](how-to-query-graph.md)(Engelstalig) voor meer gedetailleerde voor beelden van query-syntaxis en het uitvoeren van query aanvragen.
 
@@ -33,12 +33,17 @@ U kunt de Azure Digital Apparaatdubbels-query taal gebruiken om digitale apparaa
 
 Als u een query wilt verzenden naar de service vanuit een client-app, gebruikt u de Azure Digital Apparaatdubbels- [**query-API**](/rest/api/digital-twins/dataplane/query). Eén manier om de API te gebruiken is via een van de [sdk's](how-to-use-apis-sdks.md#overview-data-plane-apis) voor Azure Digital apparaatdubbels.
 
+### <a name="considerations-for-querying"></a>Overwegingen voor het uitvoeren van query's
+
+Bij het schrijven van query's voor Azure Digital Apparaatdubbels moet u rekening houden met de volgende overwegingen:
+* **Hoofdletter gevoeligheid onthouden**: alle Azure Digital apparaatdubbels-query bewerkingen zijn hoofdletter gevoelig, dus let erop dat u de exacte namen gebruikt die in de modellen zijn gedefinieerd. Als de namen van eigenschappen verkeerd zijn gespeld of onjuist zijn, is de resultatenset leeg zonder dat er fouten worden geretourneerd.
+* **Enkele aanhalings tekens** sluiten: als de query tekst één aanhalings teken in de gegevens bevat, moet de prijs opgave met het teken worden voorafgegaan `\` . Hier volgt een voor beeld dat een eigenschaps waarde van *D'Souza* behandelt:
+
+  :::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="EscapedSingleQuote":::
+
 ## <a name="reference-expressions-and-conditions"></a>Verwijzing: expressies en voor waarden
 
 In deze sectie worden de Opera tors en functies beschreven die beschikbaar zijn voor het schrijven van Azure Digital Apparaatdubbels-query's. Zie [*How-to: query uitvoeren op de dubbele grafiek*](how-to-query-graph.md)voor voor beelden van query's die het gebruik van deze functies illustreren.
-
-> [!NOTE]
-> Alle Azure Digital Apparaatdubbels-query bewerkingen zijn hoofdletter gevoelig, dus let erop dat u de exacte namen gebruikt die in de modellen zijn gedefinieerd. Als de namen van eigenschappen verkeerd zijn gespeld of onjuist zijn, is de resultatenset leeg zonder dat er fouten worden geretourneerd.
 
 ### <a name="operators"></a>Operators
 

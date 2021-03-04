@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: d610e79773dabb9942352747f1f032b17730ffca
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 39420afbd2b1dd8a4e239b814c73e17bb258663c
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101738749"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102035200"
 ---
 # <a name="set-up-a-staging-environment-in-azure-spring-cloud"></a>Een faserings omgeving instellen in azure lente-Cloud
 
@@ -69,7 +69,7 @@ mvn clean packge -DskipTests
 ```
 5. Maak de app in uw Azure lente Cloud-exemplaar:
 ```azurecli
-az spring-cloud app create -n demo -g <resourceGroup> -s <Azure Spring Cloud instance> --is-public
+az spring-cloud app create -n demo -g <resourceGroup> -s <Azure Spring Cloud instance> --assign-endpoint
 ```
 6. De app implementeren in azure lente Cloud:
 ```azurecli

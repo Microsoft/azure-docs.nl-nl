@@ -25,8 +25,12 @@
       href: tutorial-respond-threats-playbook.md
 - name: Concepten
   items:
-    - name: Machtigingen toewijzen met behulp van rollen
-      href: roles.md
+    - name: Toegang beheren
+      items:
+        - name: Machtigingen in Azure Sentinel
+          href: roles.md
+        - name: Toegang beheren per resource
+          href: resource-context-rbac.md
     - name: Geavanceerde detectie van aanvallen met meerdere stappen
       href: fusion.md
     - name: Uw eigen machine learning-platform meenemen
@@ -236,7 +240,7 @@
           href: connect-azure-stack.md
         - name: Gegevensverbindingsstatus bewaken
           href: monitor-data-connector-health.md
-    - name: Analyse van gebruikers- en entiteitsgedrag inschakelen
+    - name: Analyse van gebruikers-en entiteits gedrag inschakelen
       href: enable-entity-behavior-analytics.md
     - name: Meerdere tenants beheren (MSSP)
       href: multiple-tenants-service-providers.md
@@ -248,6 +252,8 @@
       href: create-incidents-from-alerts.md
     - name: Uw SOC beter beheren met metrische gegevens over incidenten
       href: manage-soc-with-incident-metrics.md
+    - name: Azure-Sentinel-query's en-activiteiten controleren
+      href: audit-sentinel-data.md
     - name: Zoeken
       href: hunting.md
       items:
@@ -259,6 +265,8 @@
           href: livestream.md
     - name: Azure Sentinel verwijderen
       href: offboard.md
+    - name: Geavanceerde RBAC implementeren
+      items: null
 - name: Referentie
   items:
     - name: Azure RBAC-rollen
@@ -293,8 +301,8 @@
   items:
     - name: Nuttige informatie
       href: resources.md
-    - name: 'Blog over veiligheid, privacy en naleving met betrekking tot Azure'
-      href: /archive/blogs/azuresecurity/
+    - name: Azure-verklikker blog
+      href: 'https://techcommunity.microsoft.com/t5/azure-sentinel/bg-p/AzureSentinelBlog'
     - name: Regionale beschikbaarheid
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=azure-sentinel'
     - name: Prijzen

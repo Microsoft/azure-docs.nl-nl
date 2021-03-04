@@ -1,17 +1,16 @@
 ---
 title: Syslog-gegevens bronnen verzamelen met Log Analytics agent in Azure Monitor
 description: Syslog is een protocol voor gebeurtenis registratie dat algemeen is voor Linux. In dit artikel wordt beschreven hoe u een verzameling van syslog-berichten configureert in Log Analytics en Details van de records die ze maken.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 10/21/2020
-ms.openlocfilehash: 0d9804d088e1f193e0adf1fa26adbbe5d3680097
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 02/26/2021
+ms.openlocfilehash: e82e74f4cd325444221bbd2e1c060b7cd2f5c6c7
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101729195"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102036725"
 ---
 # <a name="collect-syslog-data-sources-with-log-analytics-agent"></a>Syslog-gegevens bronnen verzamelen met Log Analytics agent
 Syslog is een protocol voor gebeurtenis registratie dat algemeen is voor Linux. Toepassingen zullen berichten verzenden die kunnen worden opgeslagen op de lokale computer of worden geleverd aan een syslog-Collector. Wanneer de Log Analytics-agent voor Linux is geïnstalleerd, wordt de lokale syslog-daemon geconfigureerd voor het door sturen van berichten naar de agent. De agent verzendt het bericht vervolgens naar Azure Monitor waar een corresponderende record wordt gemaakt.  
@@ -48,11 +47,11 @@ Voor elke andere faciliteit [configureert u een gegevens bron met aangepaste log
 In de Log Analytics-agent voor Linux worden alleen gebeurtenissen verzameld met de faciliteiten en ernst die zijn opgegeven in de configuratie. U kunt syslog configureren via de Azure Portal of door configuratie bestanden te beheren in uw Linux-agents.
 
 ### <a name="configure-syslog-in-the-azure-portal"></a>Syslog configureren in de Azure Portal
-Configureer syslog vanuit het [menu Data in geavanceerde instellingen](../agents/agent-data-sources.md#configuring-data-sources) voor de werk ruimte log Analytics. Deze configuratie wordt op elke Linux-agent bezorgd bij het configuratie bestand.
+Configureer syslog vanuit het [Configuratie menu](../agents/agent-data-sources.md#configuring-data-sources) van de agent voor de log Analytics-werk ruimte. Deze configuratie wordt op elke Linux-agent bezorgd bij het configuratie bestand.
 
-U kunt een nieuwe faciliteit toevoegen door eerst de optie **op de onderstaande configuratie Toep assen op mijn machines te** selecteren en vervolgens de naam te typen en te klikken **+** . Voor elke faciliteit worden alleen berichten met de geselecteerde Ernst verzameld.  Controleer de ernst van de specifieke faciliteit die u wilt verzamelen. U kunt geen aanvullende criteria opgeven om berichten te filteren.
+U kunt een nieuwe faciliteit toevoegen door op **faciliteit toevoegen** te klikken. Voor elke faciliteit worden alleen berichten met de geselecteerde Ernst verzameld.  Controleer de ernst van de specifieke faciliteit die u wilt verzamelen. U kunt geen aanvullende criteria opgeven om berichten te filteren.
 
-![Syslog configureren](media/data-sources-syslog/configure.png)
+[![Syslog configureren](media/data-sources-syslog/configure.png)](media/data-sources-syslog/configure.png#lightbox)
 
 Standaard worden alle configuratie wijzigingen automatisch naar alle agents gepusht. Als u syslog hand matig op elke Linux-agent wilt configureren, schakelt u het selectie vakje de *onderstaande configuratie Toep assen op mijn machines* uit.
 

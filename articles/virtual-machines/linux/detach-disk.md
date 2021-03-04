@@ -8,12 +8,12 @@ ms.date: 07/18/2018
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 7e618475d7d0160bce5aee39c267bb191a3a9f0a
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: d8694a715e53f820556231ae6a549e98b2963fa1
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897136"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102035701"
 ---
 # <a name="how-to-detach-a-data-disk-from-a-linux-virtual-machine"></a>Een gegevensschijf loskoppelen van een virtuele Linux-machine
 
@@ -108,13 +108,10 @@ De schijf blijft in de opslag, maar is niet meer gekoppeld aan een virtuele mach
 
 1. Selecteer in het linkermenu **virtual machines**.
 1. Selecteer **schijven** op de Blade van de virtuele machine.
-1. Selecteer boven aan de Blade **schijven** de optie **bewerken**.
-1. Klik op de Blade **schijven** helemaal rechts van de gegevens schijf die u wilt loskoppelen op de ![ knop knop afbeelding loskoppelen ](./media/detach-disk/detach.png) .
-1. Nadat de schijf is verwijderd, klikt u boven aan de Blade op **Opslaan** .
+1. Selecteer op de Blade **schijven** helemaal rechts van de gegevens schijf die u wilt loskoppelen de knop **X** om de schijf los te koppelen.
+1. Nadat de schijf is verwijderd, selecteert u **Opslaan** boven aan de Blade.
 
-De schijf blijft in de opslag, maar is niet meer gekoppeld aan een virtuele machine.
-
-
+De schijf blijft in de opslag, maar is niet meer gekoppeld aan een virtuele machine. De schijf is niet verwijderd.
 
 ## <a name="next-steps"></a>Volgende stappen
 Als u de gegevens schijf opnieuw wilt gebruiken, kunt u [deze gewoon koppelen aan een andere virtuele machine](add-disk.md).

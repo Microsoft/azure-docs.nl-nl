@@ -3,12 +3,12 @@ title: Azure Service Bus geo-nood herstel | Microsoft Docs
 description: Over het gebruik van geografische regio's voor failover en herstel na nood gevallen in Azure Service Bus
 ms.topic: article
 ms.date: 02/10/2021
-ms.openlocfilehash: 86d35465e5b31514f4d215095932b857ce7dcb35
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 3e8050cdaaae7e16a0f5125292df4b89b3690ed3
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100384295"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102035391"
 ---
 # <a name="azure-service-bus-geo-disaster-recovery"></a>Azure Service Bus geo-nood herstel
 
@@ -47,11 +47,7 @@ In dit artikel worden de volgende termen gebruikt:
 -  *Alias*: de naam voor een nood herstel configuratie die u hebt ingesteld. De alias biedt een enkele stabiele FQDN-naam (Fully Qualified Domain Name) connection string. Toepassingen gebruiken deze alias connection string om verbinding te maken met een naam ruimte. Als u een alias gebruikt, zorgt u ervoor dat de connection string niet wordt gewijzigd wanneer de failover wordt geactiveerd.
 
 -  *Primaire/secundaire naam ruimte*: de naam ruimten die overeenkomen met de alias. De primaire naam ruimte is actief en ontvangt berichten (dit kan een bestaande of nieuwe naam ruimte zijn). De secundaire naam ruimte is ' passief ' en ontvangt geen berichten. De meta gegevens tussen beide zijn synchroon, zodat beide berichten zonder toepassings code of connection string wijzigingen naadloos kunnen accepteren. Om ervoor te zorgen dat alleen de actieve naam ruimte berichten ontvangt, moet u de alias gebruiken. 
-
-    > [!IMPORTANT]
-    > Voor de functie voor het maken van een geo-nood herstel moet het abonnement en de resource groep hetzelfde zijn voor de primaire en secundaire naam ruimten.
 -  *Meta gegevens*: entiteiten zoals wacht rijen, onderwerpen en abonnementen; en hun eigenschappen van de service die aan de naam ruimte zijn gekoppeld. Alleen entiteiten en hun instellingen worden automatisch gerepliceerd. Berichten worden niet gerepliceerd.
-
 -  *Failover*: het proces van het activeren van de secundaire naam ruimte.
 
 ## <a name="setup"></a>Instellen
@@ -63,13 +59,13 @@ In het volgende gedeelte vindt u een overzicht van het instellen van een koppeli
 U maakt of gebruikt eerst een bestaande primaire naam ruimte en een nieuwe secundaire naam ruimte en koppelt deze twee. Met deze koppeling krijgt u een alias die u kunt gebruiken om verbinding te maken. Omdat u een alias gebruikt, hoeft u geen verbindings reeksen te wijzigen. U kunt alleen nieuwe naam ruimten toevoegen aan uw failover-koppeling. 
 
 1. Maak de primaire naam ruimte.
-1. Maak de secundaire naam ruimte in het abonnement en de resource groep die de primaire naam ruimte heeft, maar in een andere regio. Deze stap is optioneel. U kunt de secundaire naam ruimte maken terwijl u de koppeling in de volgende stap maakt. 
+1. Maak de secundaire naam ruimte in een andere regio. Deze stap is optioneel. U kunt de secundaire naam ruimte maken terwijl u de koppeling in de volgende stap maakt. 
 1. Ga in het Azure Portal naar uw primaire naam ruimte.
 1. Selecteer **geo-Recovery** in het menu links en selecteer **koppelen starten** op de werk balk. 
 
     :::image type="content" source="./media/service-bus-geo-dr/primary-namspace-initiate-pairing-button.png" alt-text="Koppeling vanuit de primaire naam ruimte initiëren":::    
 1. Voer de volgende stappen uit op de pagina **koppeling initiëren** :
-    1. Selecteer een bestaande secundaire naam ruimte of maak er een in het abonnement en de resource groep die de primaire naam ruimte heeft. In dit voor beeld wordt een bestaande naam ruimte gebruikt als secundaire naam ruimte.  
+    1. Selecteer een bestaande secundaire naam ruimte of maak er een in een andere regio. In dit voor beeld wordt een bestaande naam ruimte gebruikt als secundaire naam ruimte.  
     1. Voer bij **alias** een alias in voor de geo-Dr-koppeling. 
     1. Ten slotte selecteert u **Create**. 
 

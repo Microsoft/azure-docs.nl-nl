@@ -1,17 +1,16 @@
 ---
 title: Windows-en Linux-prestatie gegevens bronnen met Log Analytics agent in Azure Monitor verzamelen
 description: Prestatie meter items worden verzameld door Azure Monitor om de prestaties van Windows-en Linux-agents te analyseren.  In dit artikel wordt beschreven hoe u een verzameling prestatie meter items configureert voor Windows-en Linux-agents, hoe deze worden opgeslagen in de werk ruimte en hoe u deze kunt analyseren in de Azure Portal.
-ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 10/21/2020
-ms.openlocfilehash: c06123b33c7f467e12742cf6180d821e647b5115
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 02/26/2021
+ms.openlocfilehash: f4bddc1666d1165d6a1e4c749fdbc96ede37747a
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101711549"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102036764"
 ---
 # <a name="collect-windows-and-linux-performance-data-sources-with-log-analytics-agent"></a>Windows-en Linux-prestatie gegevens bronnen met Log Analytics-agent verzamelen
 Prestatie meter items in Windows en Linux bieden inzicht in de prestaties van hardwareonderdelen, besturings systemen en toepassingen.  Azure Monitor kunt prestatie meter items van Log Analytics agents met veelvuldige intervallen verzamelen voor analyse van bijna realtime (NRT), naast het samen voegen van prestatie gegevens voor langere termijn analyse en rapportage.
@@ -22,7 +21,7 @@ Prestatie meter items in Windows en Linux bieden inzicht in de prestaties van ha
 ![Prestatiemeteritems](media/data-sources-performance-counters/overview.png)
 
 ## <a name="configuring-performance-counters"></a>Prestatie meter items configureren
-Configureer prestatie meter items [in het menu Data van geavanceerde instellingen](../agents/agent-data-sources.md#configuring-data-sources) voor de werk ruimte log Analytics.
+Configureer prestatie meter items in het [menu configuratie van agents](../agents/agent-data-sources.md#configuring-data-sources) voor de werk ruimte log Analytics.
 
 Wanneer u voor het eerst Windows-of Linux-prestatie meter items voor een nieuwe werk ruimte configureert, krijgt u de optie om snel verschillende algemene prestatie meter items te maken.  Ze worden weergegeven met een selectievakje ernaast.  Zorg ervoor dat alle items die u in eerste instantie wilt maken, worden gecontroleerd en klik vervolgens op **de geselecteerde prestatie meter items toevoegen**.
 
@@ -36,28 +35,28 @@ Voor Windows-prestatie meter items kunt u een specifiek exemplaar voor elk prest
 
 ### <a name="windows-performance-counters"></a>Windows-prestatiemeteritems
 
-![Windows-prestatie meter items configureren](media/data-sources-performance-counters/configure-windows.png)
+[![Windows-prestatie meter items configureren](media/data-sources-performance-counters/configure-windows.png)](media/data-sources-performance-counters/configure-windows.png#lightbox)
 
 Volg deze procedure om een nieuw Windows-prestatie meter item toe te voegen om te verzamelen. V2 Windows-prestatie meter items worden niet ondersteund.
 
-1. Typ de naam van de teller in het tekstvak in de indeling *object (instantie) \counter*.  Wanneer u begint te typen, wordt er een overeenkomende lijst met algemene prestatie meter items weer gegeven.  U kunt een item in de lijst selecteren of een van uw eigen items typen.  U kunt ook alle instanties voor een bepaald prestatie meter item retour neren door *object\counter* op te geven.  
+1. Klik op **prestatie meter item toevoegen**.
+2. Typ de naam van de teller in het tekstvak in de indeling *object (instantie) \counter*.  Wanneer u begint te typen, wordt er een overeenkomende lijst met algemene prestatie meter items weer gegeven.  U kunt een item in de lijst selecteren of een van uw eigen items typen.  U kunt ook alle instanties voor een bepaald prestatie meter item retour neren door *object\counter* op te geven.  
 
     Bij het verzamelen van SQL Server prestatie meter items van benoemde instanties beginnen alle benoemde exemplaar items met *MSSQL $* en gevolgd door de naam van het exemplaar.  Als u bijvoorbeeld het item cache treffers van de logboeken voor alle data bases wilt verzamelen uit het database prestatie object voor benoemde SQL-instantie INST2, geeft u op `MSSQL$INST2:Databases(*)\Log Cache Hit Ratio` .
 
-2. Klik **+** of druk op **Enter** om de teller toe te voegen aan de lijst.
-3. Wanneer u een teller toevoegt, wordt de standaard waarde van 10 seconden gebruikt voor het **steekproef interval**.  U kunt dit wijzigen in een hogere waarde van Maxi maal 1800 seconden (30 minuten) als u de opslag vereisten van de verzamelde prestatie gegevens wilt reduceren.
-4. Wanneer u klaar bent met het toevoegen van items, klikt u op de knop **Opslaan** boven aan het scherm om de configuratie op te slaan.
+4. Wanneer u een teller toevoegt, wordt de standaard waarde van 10 seconden gebruikt voor het **steekproef interval**.  U kunt dit wijzigen in een hogere waarde van Maxi maal 1800 seconden (30 minuten) als u de opslag vereisten van de verzamelde prestatie gegevens wilt reduceren.
+5. Wanneer u klaar bent met het toevoegen van items, klikt u boven aan het scherm op de knop **Toep assen** om de configuratie op te slaan.
 
 ### <a name="linux-performance-counters"></a>Linux-prestatie meter items
 
-![Linux-prestatie meter items configureren](media/data-sources-performance-counters/configure-linux-1.png)
+[![Linux-prestatie meter items configureren](media/data-sources-performance-counters/configure-linux.png)](media/data-sources-performance-counters/configure-linux.png#lightbox)
 
 Volg deze procedure om een nieuw Linux-prestatie meter item toe te voegen om te verzamelen.
 
+1. Klik op **prestatie meter item toevoegen**.
 1. Typ de naam van de teller in het tekstvak in de indeling *object (instantie) \counter*.  Wanneer u begint te typen, wordt er een overeenkomende lijst met algemene prestatie meter items weer gegeven.  U kunt een item in de lijst selecteren of een van uw eigen items typen.  
-1. Klik **+** of druk op **Enter** om de teller toe te voegen aan de lijst met andere tellers voor het object.
 1. Alle tellers voor een object gebruiken hetzelfde **steekproef interval**.  De standaardinstelling is 10 seconden.  U kunt dit wijzigen in een hogere waarde van Maxi maal 1800 seconden (30 minuten) als u de opslag vereisten van de verzamelde prestatie gegevens wilt reduceren.
-1. Wanneer u klaar bent met het toevoegen van items, klikt u op de knop **Opslaan** boven aan het scherm om de configuratie op te slaan.
+1. Wanneer u klaar bent met het toevoegen van items, klikt u boven aan het scherm op de knop **Toep assen** om de configuratie op te slaan.
 
 #### <a name="configure-linux-performance-counters-in-configuration-file"></a>Linux-prestatie meter items configureren in het configuratie bestand
 In plaats van Linux-prestatie meter items te configureren met behulp van de Azure Portal, hebt u de mogelijkheid om configuratie bestanden te bewerken in de Linux-agent.  De prestatie gegevens die moeten worden verzameld, worden bepaald door de configuratie in **/etc/opt/Microsoft/omsagent/ \<workspace id\> /conf/omsagent.conf**.

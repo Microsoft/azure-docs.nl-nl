@@ -2,21 +2,19 @@
 title: Bicep-taal voor Azure Resource Manager sjablonen
 description: Beschrijft de Bicep-taal voor het implementeren van de infra structuur naar Azure via Azure Resource Manager sjablonen.
 ms.topic: conceptual
-ms.date: 03/02/2021
-ms.openlocfilehash: 6a2750dc99e82c9cf8c9b8b97d156d3a9fe30f31
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/03/2021
+ms.openlocfilehash: 2fb13bca9e9d456889185d512ee2fc9d4cbbe673
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101746074"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102036381"
 ---
 # <a name="what-is-bicep-preview"></a>Wat is Bicep (preview)?
 
-Bicep is een taal voor declaratieve implementatie van Azure-resources. Het vereenvoudigt de ontwerp ervaring door een beknopte syntaxis te bieden, en biedt betere ondersteuning voor modulariteit en code hergebruik. Bicep is een domein-specifieke taal (DSL), wat betekent dat het is ontworpen voor een bepaald scenario of domein. Bicep is niet bedoeld als een algemene programmeer taal voor het schrijven van toepassingen.
+Bicep is een taal voor declaratieve implementatie van Azure-resources. Het vereenvoudigt de ontwerp ervaring door een beknopte syntaxis te bieden en betere ondersteuning voor hergebruik van code. Bicep is een domein-specifieke taal (DSL), wat betekent dat het is ontworpen voor een bepaald scenario of domein. Bicep is niet bedoeld als een algemene programmeer taal voor het schrijven van toepassingen.
 
-Bicep is een transparante abstractie over Azure Resource Manager sjablonen (ARM-sjablonen). Elk Bicep-bestand wordt gecompileerd naar een standaard ARM-sjabloon. Resource typen, API-versies en eigenschappen die geldig zijn in een ARM-sjabloon zijn geldig in een Bicep-bestand.
-
-[!INCLUDE [Bicep preview](../../../includes/resource-manager-bicep-preview.md)]
+In het verleden hebt u Azure Resource Manager sjablonen (ARM-sjablonen) ontwikkeld met JSON. De JSON-syntaxis voor het maken van een sjabloon kan uitgebreid zijn en gecompliceerde expressies vereisen. Bicep verbetert de ervaring zonder dat de mogelijkheden van een JSON-sjabloon verloren gaan. Het is een transparante abstractie voor de JSON voor ARM-sjablonen. Elk Bicep-bestand wordt gecompileerd naar een standaard ARM-sjabloon. Resource typen, API-versies en eigenschappen die geldig zijn in een ARM-sjabloon zijn geldig in een Bicep-bestand.
 
 ## <a name="get-started"></a>Aan de slag
 
@@ -30,7 +28,26 @@ Als u een bestaande ARM-sjabloon hebt die u wilt converteren naar Bicep, raadple
 
 ## <a name="bicep-improvements"></a>Verbeteringen in Bicep
 
-Bicep biedt een eenvoudiger en beknoptere syntaxis in vergelijking met de equivalente JSON. U gebruikt geen `[...]` expressies. In plaats daarvan roept u functies rechtstreeks aan, haalt u waarden op uit para meters en variabelen en naslag bronnen. Zie voor een volledige vergelijking van de syntaxis [JSON en Bicep vergelijken voor sjablonen](compare-template-syntax.md).
+Bicep biedt een eenvoudiger en beknoptere syntaxis in vergelijking met de equivalente JSON. U gebruikt geen `[...]` expressies. In plaats daarvan roept u functies rechtstreeks aan en haalt u waarden op uit para meters en variabelen. U geeft elke geïmplementeerde resource een symbolische naam, waardoor het gemakkelijk is om naar die resource in uw sjabloon te verwijzen.
+
+De volgende JSON retourneert bijvoorbeeld een uitvoer waarde van een bron eigenschap.
+
+```json
+"outputs": {
+  "hostname": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddressName'))).dnsSettings.fqdn]"
+    },
+}
+```
+
+De equivalente uitvoer expressie in Bicep is gemakkelijker te schrijven. In het volgende voor beeld wordt dezelfde eigenschap geretourneerd met behulp van de symbolische naam **publicIP** voor een resource die in de sjabloon is gedefinieerd:
+
+```bicep
+output hostname string = publicIP.properties.dnsSettings.fqdn
+```
+
+Zie voor een volledige vergelijking van de syntaxis [JSON en Bicep vergelijken voor sjablonen](compare-template-syntax.md).
 
 Bicep beheert automatisch afhankelijkheden tussen resources. U kunt instellen dat `dependsOn` de symbolische naam van een resource niet wordt gebruikt in een andere resource declaratie.
 

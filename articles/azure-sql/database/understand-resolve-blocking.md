@@ -13,13 +13,13 @@ ms.topic: conceptual
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ''
-ms.date: 2/24/2021
-ms.openlocfilehash: b829d7045ac520cfe908c3c8809ae17702d6175d
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 3/02/2021
+ms.openlocfilehash: 3d64336184450514d52095097343a4588213f111
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101691430"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102034894"
 ---
 # <a name="understand-and-resolve-azure-sql-database-blocking-problems"></a>Problemen met het Azure SQL Database blok keren begrijpen en oplossen
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -208,7 +208,7 @@ AND object_name(p.object_id) = '<table_name>';
 
 ## <a name="gather-information-from-extended-events"></a>Informatie verzamelen uit uitgebreide gebeurtenissen
 
-Naast de bovenstaande informatie is het vaak nodig om een tracering van de activiteiten op de server vast te leggen om een probleem met het blok keren op Azure SQL Database grondig te onderzoeken. Als een sessie bijvoorbeeld meerdere instructies binnen een trans actie uitvoert, wordt alleen de laatste ingediende instructie weer gegeven. Een van de eerdere instructies kan echter de reden zijn dat de vergren delingen nog steeds worden behouden. Met een tracering kunt u alle opdrachten weer geven die worden uitgevoerd door een sessie binnen de huidige trans actie.
+Naast de voor gaande informatie, is het vaak nodig om een tracering van de activiteiten op de server vast te leggen om een probleem met het blok keren van Azure SQL Database te onderzoeken. Als een sessie bijvoorbeeld meerdere instructies binnen een trans actie uitvoert, wordt alleen de laatste ingediende instructie weer gegeven. Een van de eerdere instructies kan echter de reden zijn dat de vergren delingen nog steeds worden behouden. Met een tracering kunt u alle opdrachten weer geven die worden uitgevoerd door een sessie binnen de huidige trans actie.
 
 Er zijn twee manieren om traceringen vast te leggen in SQL Server; Extended Events (XEvents) en Profiler-traceringen. [SQL Server Profiler](/sql/tools/sql-server-profiler/sql-server-profiler) is echter afgeschafte tracerings technologie die niet wordt ondersteund voor Azure SQL database. [Extended Events](/sql/relational-databases/extended-events/extended-events) is de nieuwere tracerings technologie die meer veelzijdigheid en minder impact op het waargenomen systeem mogelijk maakt en de interface is geïntegreerd in SQL Server Management Studio (SSMS). 
 
@@ -238,7 +238,7 @@ Raadpleeg het document waarin wordt uitgelegd hoe u de [wizard nieuwe sessie voo
 
 ## <a name="identify-and-resolve-common-blocking-scenarios"></a>Veelvoorkomende blokkerende scenario's identificeren en oplossen
 
-Door de bovenstaande informatie te bekijken, kunt u de oorzaak van de meeste blok problemen bepalen. In de rest van dit artikel leest u hoe u deze informatie gebruikt om enkele veelvoorkomende blokkerende scenario's te identificeren en op te lossen. In deze bespreking wordt ervan uitgegaan dat u de blokkerende scripts (eerder waarnaar wordt verwezen) hebt gebruikt om informatie vast te leggen over de blokkerende SPID'S en de toepassings activiteit hebt vastgelegd met behulp van een XEvent-sessie.
+Als u de voor gaande informatie bekijkt, kunt u de oorzaak van de meeste blok problemen bepalen. In de rest van dit artikel leest u hoe u deze informatie gebruikt om enkele veelvoorkomende blokkerende scenario's te identificeren en op te lossen. In deze bespreking wordt ervan uitgegaan dat u de blokkerende scripts (eerder waarnaar wordt verwezen) hebt gebruikt om informatie vast te leggen over de blokkerende SPID'S en de toepassings activiteit hebt vastgelegd met behulp van een XEvent-sessie.
 
 ## <a name="analyze-blocking-data"></a>Blokkerende gegevens analyseren 
 
@@ -334,7 +334,7 @@ De `wait_type` `open_transaction_count` kolommen, en bevatten `status` informati
 | 5 | NULL | \>0,3 | terugdraaien | Ja. | Een attentie signaal kan worden gezien in de Extended Events-sessie voor deze SPID, wat aangeeft dat er een time-out van de query is opgetreden of dat er een annulerings instructie is gegeven. |  
 | 6 | NULL | \>0,3 | staat | Na. Wanneer Windows NT vaststelt dat de sessie niet langer actief is, wordt de Azure SQL Database verbinding verbroken. | De `last_request_start_time` waarde in sys.dm_exec_sessions veel eerder zijn dan de huidige tijd. |
 
-De volgende scenario's worden in deze scenario's uitgebreid. 
+## <a name="detailed-blocking-scenarios"></a>Gedetailleerde blokkerende scenario's
 
 1.  Blok keren dat wordt veroorzaakt door een normaal uitgevoerde query met een lange uitvoerings tijd
 
@@ -366,7 +366,7 @@ De volgende scenario's worden in deze scenario's uitgebreid.
 
     De uitvoer van de tweede query geeft aan dat het nest niveau van de trans actie. Alle vergren delingen die in de trans actie zijn verkregen, blijven behouden totdat de trans actie is doorgevoerd of teruggedraaid. Als toepassingen expliciet trans acties openen en door voeren, kan een communicatie of een andere fout de sessie en de trans actie in een open status verlaten. 
 
-    Gebruik het bovenstaande script op basis van sys.dm_tran_active_transactions om momenteel niet-doorgevoerde trans acties te identificeren.
+    Gebruik het script dat eerder in dit artikel is gebaseerd op sys.dm_tran_active_transactions om momenteel niet-doorgevoerde trans acties in het exemplaar te identificeren.
 
     **Oplossingen**:
 
@@ -377,6 +377,7 @@ De volgende scenario's worden in deze scenario's uitgebreid.
             *    Voer in de fout afhandeling van de client toepassing een van de `IF @@TRANCOUNT > 0 ROLLBACK TRAN` volgende fouten uit, zelfs als de client toepassing niet van mening is dat er een trans actie is geopend. Controleren op openstaande trans acties is vereist omdat een opgeslagen procedure die is aangeroepen tijdens de batch, een trans actie kan hebben gestart zonder kennis van de client toepassing. Bepaalde voor waarden, zoals het annuleren van de query, voor komen dat de procedure wordt uitgevoerd in de huidige instructie, dus zelfs als de procedure logica heeft om `IF @@ERROR <> 0` de trans actie te controleren en af te breken, wordt deze terugdraai code niet in dergelijke gevallen uitgevoerd.  
             *    Als groepsgewijze verbindingen wordt gebruikt in een toepassing die de verbinding opent en een klein aantal query's uitvoert voordat de verbinding met de groep wordt hersteld, zoals een webtoepassing, kunt u het probleem mogelijk verhelpen door verbindings groepen tijdelijk uit te scha kelen totdat de client toepassing is gewijzigd om de fouten op de juiste wijze af te handelen. Door groepsgewijze verbindingen uit te scha kelen, zorgt u ervoor dat de verbinding wordt verbroken een fysieke verbreking van de Azure SQL Database verbinding, waardoor alle openstaande trans acties worden teruggedraaid.  
             *    Gebruiken `SET XACT_ABORT ON` voor de verbinding, of in een opgeslagen procedure die trans acties start en niet opschoont na een fout. Als er een runtime-fout optreedt, worden alle openstaande trans acties en de besturings elementen van de client door deze instelling afgebroken. Zie [SET XACT_ABORT (Transact-SQL)](/sql/t-sql/statements/set-xact-abort-transact-sql)voor meer informatie.
+
     > [!NOTE]
     > De verbinding wordt pas opnieuw ingesteld als deze opnieuw wordt gebruikt vanuit de verbindings groep. het is dus mogelijk dat een gebruiker een trans actie kan openen en vervolgens de verbinding met de verbindings groep kan vrijgeven, maar deze kan niet langer dan een paar seconden worden gebruikt, gedurende welke tijd de trans actie geopend blijft. Als de verbinding niet opnieuw wordt gebruikt, wordt de trans actie afgebroken wanneer de verbinding wordt verbroken en uit de verbindings groep wordt verwijderd. Het is dus optimaal voor de client toepassing om trans acties in hun foutafhandelingsroutine af te breken of `SET XACT_ABORT ON` om deze mogelijke vertraging te voor komen.
 
@@ -385,14 +386,14 @@ De volgende scenario's worden in deze scenario's uitgebreid.
 
 1.  Blok kering veroorzaakt door een SPID waarvan de bijbehorende client toepassing niet alle resultaat rijen heeft opgehaald voor voltooiing
 
-    Nadat een query naar de server is verzonden, moeten alle resulterende rijen onmiddellijk worden opgehaald om te worden voltooid. Als een toepassing niet alle resultaat rijen ophaalt, kunnen de vergren delingen op de tabellen worden achtergelaten en kunnen andere gebruikers worden geblokkeerd. Als u een toepassing gebruikt waarmee SQL-instructies op transparante wijze naar de server worden verzonden, moet de toepassing alle resultaat rijen ophalen. Als dat niet het geval is (en als dit niet kan worden geconfigureerd), kunt u het blokkerings probleem mogelijk niet oplossen. Om het probleem te voor komen, kunt u slecht gelaagde toepassingen beperken tot een rapportage of een beslissings-ondersteunings database.
+    Nadat een query naar de server is verzonden, moeten alle resulterende rijen onmiddellijk worden opgehaald om te worden voltooid. Als een toepassing niet alle resultaat rijen ophaalt, kunnen de vergren delingen op de tabellen worden achtergelaten en kunnen andere gebruikers worden geblokkeerd. Als u een toepassing gebruikt waarmee SQL-instructies op transparante wijze naar de server worden verzonden, moet de toepassing alle resultaat rijen ophalen. Als dat niet het geval is (en als dit niet kan worden geconfigureerd), kunt u het blokkerings probleem mogelijk niet oplossen. Om het probleem te voor komen, kunt u slecht gestarte toepassingen beperken tot een rapportage of een Data Base met beslissings ondersteuning, gescheiden van de belangrijkste OLTP-data base.
     
     > [!NOTE]
     > Zie de [richt lijnen voor logica voor nieuwe pogingen](./troubleshoot-common-connectivity-issues.md#retry-logic-for-transient-errors) voor toepassingen die verbinding maken met Azure SQL database. 
     
     **Oplossing**: de toepassing moet opnieuw worden geschreven om alle rijen van het resultaat op te halen dat moet worden voltooid. Hiermee wordt het gebruik van [Offset en ophalen in de order by-component](/sql/t-sql/queries/select-order-by-clause-transact-sql#using-offset-and-fetch-to-limit-the-rows-returned) van een query voor het uitvoeren van paginering aan de server zijde niet beschreven.
 
-1.  Blok keren dat wordt veroorzaakt door een SPID met de status rollback
+1.  Blok kering veroorzaakt door een sessie in een terugdraai status
 
     Een query voor het wijzigen van de gegevens die buiten een door de gebruiker gedefinieerde trans actie wordt gedood of geannuleerd, wordt teruggedraaid. Dit kan ook optreden als een neven effect van de client netwerk sessie verbinding verbreken of wanneer een aanvraag is geselecteerd als slacht offer van de deadlock. Dit kan vaak worden geïdentificeerd door de uitvoer van sys.dm_exec_requests te observeren. Dit kan duiden op de TERUGDRAAI **opdracht**, en de **percent_complete kolom** kan de voortgang weer geven. 
 

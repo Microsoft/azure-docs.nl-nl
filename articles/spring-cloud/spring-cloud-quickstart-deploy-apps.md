@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 08/03/2020
 ms.custom: devx-track-java, devx-track-azurecli
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 173e6541b4113a5d2e71d76b3b939a69d5224b5a
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
-ms.translationtype: HT
+ms.openlocfilehash: 7c37fbead3f7b87da16e77caeda8286d05ca628b
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92735597"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102035132"
 ---
 # <a name="quickstart-build-and-deploy-apps-to-azure-spring-cloud"></a>Quickstart: Apps bouwen en implementeren in Azure Spring Cloud
 
@@ -143,7 +143,7 @@ Als u de toepassing wilt testen, verzendt u een HTTP GET-aanvraag naar de toepas
 1. Voer de volgende opdracht uit om het eindpunt toe te wijzen.
 
    ```azurecli
-   az spring-cloud app update -n solar-system-weather --is-public true
+   az spring-cloud app update -n solar-system-weather --assign-endpoint true
    ```
 
 1. Voer de volgende opdracht uit om de URL van het eindpunt op te halen.
@@ -222,7 +222,7 @@ Het compileren van het project duurt ongeveer vijf minuten. Als u klaar bent, mo
     az configure --defaults spring-cloud=<service instance name>
     ```
 
-1. Maak Azure Spring Cloud-microservices met behulp van de JAR-bestanden die in de vorige stap zijn gemaakt. U maakt drie apps: **gateway** , **auth-service** en **account-service** .
+1. Maak Azure Spring Cloud-microservices met behulp van de JAR-bestanden die in de vorige stap zijn gemaakt. U maakt drie apps: **gateway**, **auth-service** en **account-service**.
 
     ```azurecli
     az spring-cloud app create --name gateway
@@ -245,10 +245,10 @@ We hebben een manier nodig om via een webbrowser toegang te krijgen tot de toepa
 1. Wijs het eindpunt toe met behulp van de volgende opdracht:
 
     ```azurecli
-    az spring-cloud app update -n gateway --is-public true
+    az spring-cloud app update -n gateway --assign-endpoint true
     ```
 
-2. Voer een query uit op de **gateway** -toepassing om het openbare IP-adres ervan op te halen, zodat u kunt controleren of de toepassing wordt uitgevoerd:
+2. Voer een query uit op de **gateway**-toepassing om het openbare IP-adres ervan op te halen, zodat u kunt controleren of de toepassing wordt uitgevoerd:
 
     ```azurecli
     az spring-cloud app show --name gateway --query properties.url
@@ -306,23 +306,23 @@ We hebben een manier nodig om via een webbrowser toegang te krijgen tot de toepa
 ### <a name="deploy-gateway-app-to-azure-spring-cloud"></a>Gateway-app implementeren in Azure Spring Cloud
 Als u wilt implementeren in Azure, moet u zich met uw Azure-account aanmelden bij de Azure-toolkit voor IntelliJ, en uw abonnement kiezen. Zie [Installatie en aanmelding](/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app#installation-and-sign-in) voor meer informatie over aanmelden.
 
-1. Klik met de rechtermuisknop op uw project in de projectverkenner van IntelliJ en selecteer **Azure** -> **Implementeren in Azure Spring Cloud** .
+1. Klik met de rechtermuisknop op uw project in de projectverkenner van IntelliJ en selecteer **Azure** -> **Implementeren in Azure Spring Cloud**.
 
     ![Implementeren in Azure 1](media/spring-cloud-intellij-howto/revision-deploy-to-azure-1.png)
 
-1. Voeg in het veld **Naam** het achtervoegsel *:gateway* toe aan de bestaande **Naam** .
-1. Selecteer in het tekstvak **Artefact** de optie *com.piggymetrics:gateway:1.0-SNAPSHOT* .
-1. Controleer uw abonnement in het tekstvak **Abonnement** .
+1. Voeg in het veld **Naam** het achtervoegsel *:gateway* toe aan de bestaande **Naam**.
+1. Selecteer in het tekstvak **Artefact** de optie *com.piggymetrics:gateway:1.0-SNAPSHOT*.
+1. Controleer uw abonnement in het tekstvak **Abonnement**.
 1. Selecteer in het tekstvak **Spring Cloud** het exemplaar van Azure Spring Cloud dat u hebt gemaakt in [Azure Spring Cloud-exemplaar inrichten](./spring-cloud-quickstart-provision-service-instance.md).
-1. Stel **Openbaar eindpunt** in op *Inschakelen* .
+1. Stel **Openbaar eindpunt** in op *Inschakelen*.
 1. Selecteer in het tekstvak **App:** de optie **App maken...** .
-1. Voer *gateway* in en klik vervolgens op **OK** .
+1. Voer *gateway* in en klik vervolgens op **OK**.
 
     ![Implementeren naar Azure OK](media/spring-cloud-intellij-howto/revision-deploy-to-azure-2.png)
 
-1. Dubbelklik in de sectie **Vóór het starten** van het dialoogvenster op *Maven-doel uitvoeren* .
-1. Ga in het tekstvak **Werkmap** naar de map *piggymetrics/gateway* .
-1. Voer *package-DskipTests* in het tekstvak **Opdrachtregel** in. Klik op **OK** .
+1. Dubbelklik in de sectie **Vóór het starten** van het dialoogvenster op *Maven-doel uitvoeren*.
+1. Ga in het tekstvak **Werkmap** naar de map *piggymetrics/gateway*.
+1. Voer *package-DskipTests* in het tekstvak **Opdrachtregel** in. Klik op **OK**.
 1. Start de implementatie door onder in het dialoogvenster **Azure Spring Cloud-app implementeren** op de knop **Uitvoeren** te klikken. De invoegtoepassing voert de opdracht `mvn package` uit in de app `gateway` en implementeert het JAR-bestand dat is gegenereerd met de opdracht `package`.
 
 ### <a name="deploy-auth-service-and-account-service-apps-to-azure-spring-cloud"></a>Apps voor auth-service en account-service implementeren in Azure Spring Cloud
@@ -330,8 +330,8 @@ U kunt de bovenstaande stappen herhalen om de apps `auth-service` en `account-se
 
 1. Wijzig **Naam** en **Artefact** om de app `auth-service` te identificeren.
 1. Selecteer in het tekstvak **App:** de optie **App maken...** om de apps `auth-service` te maken.
-1. Controleer of de optie **Openbaar eindpunt** is ingesteld op *Uitgeschakeld* .
-1. Schakel in de sectie **Vóór het starten** van het dialoogvenster de **Werkmap** naar de map *piggymetrics/auth-service* .
+1. Controleer of de optie **Openbaar eindpunt** is ingesteld op *Uitgeschakeld*.
+1. Schakel in de sectie **Vóór het starten** van het dialoogvenster de **Werkmap** naar de map *piggymetrics/auth-service*.
 1. Start de implementatie door onder in het dialoogvenster **Azure Spring Cloud-app implementeren** op de knop **Uitvoeren** te klikken. 
 1. Herhaal deze procedures om `account-service` te configureren en te implementeren.
 ---

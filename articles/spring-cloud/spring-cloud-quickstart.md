@@ -8,12 +8,12 @@ ms.date: 10/23/2020
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 3c07d64fd046766521e030b6ee1b88a590246e24
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 123be57566a31d9831bfd0172373d571be2bf294
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99226166"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102035166"
 ---
 # <a name="quickstart-deploy-your-first-azure-spring-cloud-application"></a>Quickstart: Uw eerste Azure Spring Cloud-toepassing implementeren
 
@@ -242,7 +242,7 @@ Met de volgende procedure wordt het project gebouwd en geïmplementeerd dat u ee
 1. Maak een app in uw Azure Spring Cloud-exemplaar met een openbaar eindpunt eraan toegewezen. Gebruik dezelfde toepassingsnaam ‘hello-world’ die u hebt opgegeven in *appsettings.json*.
 
    ```console
-   az spring-cloud app create -n hello-world -s <service instance name> -g <resource group name> --is-public --runtime-version NetCore_31
+   az spring-cloud app create -n hello-world -s <service instance name> -g <resource group name> --assign-endpoint --runtime-version NetCore_31
    ```
 
 1. Implementeer het *ZIP*-bestand in de app.
@@ -416,7 +416,7 @@ Met de volgende procedure wordt de toepassing gebouwd en geïmplementeerd met be
 1. Maak de app met een toegewezen openbaar eindpunt:
 
     ```azurecli
-    az spring-cloud app create -n hellospring -s <service instance name> -g <resource group name> --is-public true
+    az spring-cloud app create -n hellospring -s <service instance name> -g <resource group name> --assign-endpoint true
     ```
 
 1. Implementeer het JAR-bestand voor de app (`target\hellospring-0.0.1-SNAPSHOT.jar` in Windows):

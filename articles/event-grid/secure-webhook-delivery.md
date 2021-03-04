@@ -3,12 +3,12 @@ title: Secure webhook-levering met Azure AD in Azure Event Grid
 description: Hierin wordt beschreven hoe u gebeurtenissen kunt leveren aan HTTPS-eind punten die worden beveiligd door Azure Active Directory met behulp van Azure Event Grid
 ms.topic: how-to
 ms.date: 02/03/2021
-ms.openlocfilehash: b01f0342e185883c4d1552800ab9bdb30cea3040
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: be38edfb4edfee5b3a3b42d7b1c5a44c9d72ceef
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99549149"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102035442"
 ---
 # <a name="publish-events-to-azure-active-directory-protected-endpoints"></a>Gebeurtenissen publiceren naar beveiligde Azure Active Directory-eindpunten
 
@@ -26,7 +26,7 @@ Maak eerst een Azure AD-toepassing voor uw beveiligde eind punt. Zie https://doc
 In deze sectie wordt beschreven hoe u Event Grid kunt inschakelen om uw Azure AD-toepassing te gebruiken. 
 
 > [!NOTE]
-> U moet lid zijn van de [rol Azure AD-toepassings beheerder](../active-directory/roles/permissions-reference.md#available-roles) om dit script uit te voeren.
+> U moet lid zijn van de [rol Azure AD-toepassings beheerder](../active-directory/roles/permissions-reference.md#all-roles) om dit script uit te voeren.
 
 ### <a name="connect-to-your-azure-tenant"></a>Verbinding maken met uw Azure-Tenant
 Maak eerst verbinding met uw Azure-Tenant met behulp van de `Connect-AzureAD` opdracht. 

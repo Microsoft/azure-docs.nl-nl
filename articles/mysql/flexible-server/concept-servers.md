@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/21/2020
-ms.openlocfilehash: 2cce4810a9e1a4d7143e2bab384d4b26471b7238
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: b664dd406a1ab90b4ea5e85005a69935f345c609
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93240746"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102034656"
 ---
 # <a name="server-concepts-in-azure-database-for-mysql-flexible-server-preview"></a>Server concepten in Azure Database for MySQL flexibele server (preview-versie)
 
@@ -38,7 +38,7 @@ Een Azure Database for MySQL flexibele server:
 - Biedt een virtuele netwerk integratie voor de toegang tot de database server
 - Biedt een manier om kosten te besparen door de flexibele server te onderbreken wanneer deze niet wordt gebruikt
 - Voorziet in het bereik voor beheer beleid dat van toepassing is op de bijbehorende data bases: aanmelden, firewall, gebruikers, rollen, configuraties, enzovoort.
-- Wordt momenteel ondersteund met versie MySQL 5,7. Zie [ondersteunde Azure database for MySQL Engine-versies](./concepts-supported-versions.md)voor meer informatie.
+- Ondersteunt primaire versie MySQL 5,7 en MySQL 8,0. Zie [ondersteunde Azure database for MySQL Engine-versies](./../concepts-supported-versions.md)voor meer informatie.
 
 Binnen een Azure Database for MySQL flexibele server kunt u een of meer data bases maken. U kunt ervoor kiezen om één data base per server te maken voor het gebruik van alle resources of om meerdere data bases te maken om de resources te delen. De prijzen zijn gestructureerd per server, op basis van de configuratie van Compute-laag, vCores en opslag (GB). Zie [Compute and Storage](./concepts-compute-storage.md)voor meer informatie.
 

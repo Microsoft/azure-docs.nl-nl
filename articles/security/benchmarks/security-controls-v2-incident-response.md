@@ -4,21 +4,21 @@ description: Reactie van Azure Security Bench Mark v2-incident
 author: msmbaldwin
 ms.service: security
 ms.topic: conceptual
-ms.date: 002/22/2021
+ms.date: 02/22/2021
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 40a88349040482b3325e63d7035dea35df444cdb
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: b9295482c2464eb80bc49fa707744f49a2fbebfd
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101698583"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102035374"
 ---
 # <a name="security-control-v2-incident-response"></a>Beveiligings controle v2: reactie op incidenten
 
 Reactie op incidenten heeft betrekking op besturings elementen in de levens cyclus van incidenten-voor bereiding, detectie en analyse, insluiting en activiteiten na incidenten. Dit geldt ook voor het gebruik van Azure-Services, zoals Azure Security Center en Sentinel, om het respons proces van het incident te automatiseren.
 
-Als u wilt zien welke ingebouwde Azure Policy van toepassing is, raadpleegt u [de details van de Azure Security Bench Mark compliantie van de naleving van de regelgeving: reactie op incidenten](../../governance/policy/samples/azure-security-benchmark#incident-response)
+Als u wilt zien welke ingebouwde Azure Policy van toepassing is, raadpleegt u [de details van de Azure Security Bench Mark compliantie van de naleving van de regelgeving: reactie op incidenten](../../governance/policy/samples/azure-security-benchmark.md#incident-response)
 
 ## <a name="ir-1-preparation--update-incident-response-process-for-azure"></a>IR-1: Voorbereiding: responsproces voor incidenten bijwerken voor Azure
 

@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c43125edab0f5ed097b99798ca22e5543e15a2d
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 4311d0acc7c417bf31c71f46e6c25c65312b894d
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101693049"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102034525"
 ---
 # <a name="governing-azure-ad-service-accounts"></a>Azure AD-service accounts beheren
 
@@ -51,13 +51,13 @@ U wordt aangeraden de volgende procedures te gebruiken voor service account priv
 
 **Machtigingen**
 
-* Wijs geen ingebouwde rollen toe aan service accounts. Gebruik in plaats daarvan het [OAuth2 machtigings subsidie model voor Microsoft Graph](https://docs.microsoft.com/graph/api/resources/oauth2permissiongrant?view=graph-rest-1.0),
+* Wijs geen ingebouwde rollen toe aan service accounts. Gebruik in plaats daarvan het [OAuth2 machtigings subsidie model voor Microsoft Graph](/graph/api/resources/oauth2permissiongrant),
 
 * Als aan de service-principal een bevoorrechte rol moet worden toegewezen, kunt u een [aangepaste rol](https://docs.microsoft.com/azure/active-directory/roles/custom-create) met specifieke, vereiste privileges op een tijdgebonden manier toewijzen.
 
 * Neem geen service accounts op als leden van groepen met verhoogde machtigingen. 
 
-* [Gebruik Power shell voor het inventariseren van leden van geprivilegieerde rollen](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0), zoals   
+* [Gebruik Power shell voor het inventariseren van leden van geprivilegieerde rollen](/powershell/module/azuread/get-azureaddirectoryrolemember), zoals   
 `Get-AzureADDirectoryRoleMember`en filtert u op object type "Service-Principal".
 
    of gebruik  
@@ -117,7 +117,7 @@ We raden u aan om Azure AD-aanmeld logboeken te exporteren en te importeren in u
 
 Controleer regel matig de verleende machtigingen en bereiken die worden geopend door service accounts om te zien of ze kunnen worden gereduceerd.
 
-* [Power shell](https://docs.microsoft.com/powershell/module/azuread/get-azureadserviceprincipaloauth2permissiongrant?view=azureadps-2.0) gebruiken voor het [maken van Automation voor het controleren en documenteren van](https://gist.github.com/psignoret/41793f8c6211d2df5051d77ca3728c09) bereiken waaraan toestemming wordt verleend voor een service account.
+* [Power shell](/powershell/module/azuread/get-azureadserviceprincipaloauth2permissiongrant) gebruiken voor het [maken van Automation voor het controleren en documenteren van](https://gist.github.com/psignoret/41793f8c6211d2df5051d77ca3728c09) bereiken waaraan toestemming wordt verleend voor een service account.
 
 * Gebruik Power shell om de referenties van de [bestaande service-principals te controleren](https://github.com/AzureAD/AzureADAssessment) en de geldigheid ervan te controleren.
 
@@ -172,7 +172,7 @@ Stel een beoordelings proces in om ervoor te zorgen dat service accounts regel m
 
 **De processen voor het ongedaan maken van de inrichting moeten de volgende taken bevatten.**
 
-1. Zodra de inrichting van de bijbehorende toepassing of het script is opheffen, controleert u de [aanmeldingen](../reports-monitoring/concept-all-sign-ins#sign-ins-report.md) en de toegang tot bronnen door het service account.
+1. Zodra de inrichting van de bijbehorende toepassing of het script is opheffen, controleert u de [aanmeldingen](../reports-monitoring/concept-all-sign-ins.md#sign-ins-report) en de toegang tot bronnen door het service account.
 
    * Als het account nog steeds actief is, bepaalt u hoe het wordt gebruikt voordat u de volgende stappen uitvoert.
  

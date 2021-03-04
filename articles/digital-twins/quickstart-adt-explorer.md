@@ -1,24 +1,24 @@
 ---
 title: Snelstart - Een voorbeeldscenario verkennen
 titleSuffix: Azure Digital Twins
-description: Quickstart - Gebruik het ADT Explorer-voorbeeld om een vooraf ontwikkeld scenario te visualiseren en te verkennen.
+description: 'Quick Start: gebruik het Azure Digital Apparaatdubbels Explorer-voor beeld om een vooraf gebouwd scenario te visualiseren en te verkennen.'
 author: baanders
 ms.author: baanders
 ms.date: 9/24/2020
 ms.topic: quickstart
 ms.service: digital-twins
-ms.openlocfilehash: 9d09bca246938f972a212f7ee71f03a618e16ac4
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: cb501dd8e548ea2f6ce8b63fbffb1c4b2403c9a6
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575675"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102035956"
 ---
-# <a name="quickstart---explore-a-sample-azure-digital-twins-scenario-using-adt-explorer"></a>Snelstart - Een voorbeeld van een Azure Digital Twins-scenario verkennen met behulp van ADT Explorer
+# <a name="quickstart---explore-a-sample-azure-digital-twins-scenario-using-azure-digital-twins-explorer"></a>Quick Start: een voor beeld van een Azure Digital Apparaatdubbels-scenario verkennen met behulp van Azure Digital Apparaatdubbels Explorer
 
 Met Azure Digital Twins kunt u live modellen van uw echte omgevingen maken en gebruiken. Eerst modelleert u afzonderlijke elementen als *digitale dubbels*. Vervolgens koppelt u deze aan een *kennisgraaf* die kan reageren op livegebeurtenissen en waarop query's kunnen worden uitgevoerd om informatie op te halen.
 
-In deze quickstart verkent u een vooraf gebouwde Azure Digital Twins-graaf, met behulp van een voorbeeldtoepassing genaamd [Azure Digital Twins (ADT) Explorer](/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/). U gebruikt ADT Explorer om het volgende te doen:
+In deze Quick start gaat u een vooraf ontwikkelde Azure Digital Apparaatdubbels-grafiek verkennen met behulp van een voorbeeld toepassing met de naam [Azure Digital Apparaatdubbels Explorer](/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/). U gebruikt Azure Digital Apparaatdubbels Explorer voor het volgende:
 
 - Een digitale weergave van een omgeving uploaden.
 - Visuele afbeeldingen bekijken van de dubbels en de graaf die zijn gemaakt als representatie van de omgeving in Azure Digital Twins.
@@ -26,7 +26,7 @@ In deze quickstart verkent u een vooraf gebouwde Azure Digital Twins-graaf, met 
 
 De quickstart bevat de volgende hoofdstappen:
 
-1. Een Azure Digital Twins-exemplaar en ADT Explorer instellen.
+1. Stel een Azure Digital Apparaatdubbels-exemplaar en Azure Digital Apparaatdubbels Explorer in.
 1. Vooraf gemaakte modellen en graafgegevens uploaden om het voorbeeldscenario samen te stellen.
 1. De gemaakte scenariograaf verkennen.
 1. Wijzigingen aanbrengen in de graaf.
@@ -41,11 +41,11 @@ U hebt een Azure-abonnement nodig om deze quickstart te voltooien. Als u er nog 
 
 U moet ook **Node.js** op uw computer hebben. Zie [Node.js](https://nodejs.org/) als u de nieuwste versie wilt downloaden.
 
-Tenslotte moet u ook het voorbeeld downloaden om te gebruiken tijdens de quickstart. De voorbeeldtoepassing is **ADT Explorer**. Dit voorbeeld bevat de app die u in de quickstart gebruikt om een Azure Digital Twins-scenario te laden en te verkennen. Het bevat ook de voorbeeldscenariobestanden. Als u het voorbeeld wilt downloaden, gaat u naar [Azure Digital Twins (ADT) Explorer](/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/). Selecteer de knop **Download ZIP** om een zipbestand met deze voorbeeldcode naar uw machine te downloaden. Pak de map **Azure_Digital_Twins__ADT__explorer.zip** uit en extraheer de bestanden.
+Tenslotte moet u ook het voorbeeld downloaden om te gebruiken tijdens de quickstart. De voorbeeld toepassing is **Azure Digital Apparaatdubbels Explorer**. Dit voorbeeld bevat de app die u in de quickstart gebruikt om een Azure Digital Twins-scenario te laden en te verkennen. Het bevat ook de voorbeeldscenariobestanden. Als u het voor beeld wilt ontvangen, gaat u naar [Azure Digital Apparaatdubbels Explorer](/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/). Selecteer de knop **Download ZIP** om een zipbestand met deze voorbeeldcode naar uw machine te downloaden. Pak de map **Azure_Digital_Twins__ADT__explorer.zip** uit en extraheer de bestanden.
 
-## <a name="set-up-azure-digital-twins-and-adt-explorer"></a>Azure Digital Twins en ADT Explorer instellen
+## <a name="set-up-azure-digital-twins-and-azure-digital-twins-explorer"></a>Azure Digital Apparaatdubbels en Azure Digital Apparaatdubbels Explorer instellen
 
-De eerste stap bij het werken met Azure Digital Twins is het instellen van een Azure Digital Twins-instantie. Nadat u een instantie van de service hebt gemaakt en uw referenties hebt ingesteld om u te verifiëren met ADT Explorer, kunt u verbinding maken met de instantie in ADT Explorer en deze vervolgens vullen met de voorbeeldgegevens die verderop in quickstart worden vermeld.
+De eerste stap bij het werken met Azure Digital Twins is het instellen van een Azure Digital Twins-instantie. Nadat u een exemplaar van de service hebt gemaakt en uw referenties hebt ingesteld voor verificatie met Azure Digital Apparaatdubbels Explorer, kunt u verbinding maken met het exemplaar in azure Digital Apparaatdubbels Explorer en het bestand invullen met de voorbeeld gegevens verderop in de Quick Start.
 
 In de rest van deze sectie krijgt u stapsgewijze instructies.
 
@@ -55,11 +55,11 @@ In de rest van deze sectie krijgt u stapsgewijze instructies.
 
 ### <a name="set-up-local-azure-credentials"></a>Lokale Azure-referenties instellen
 
-In de ADT Explorer-toepassing wordt gebruikgemaakt van [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential?preserve-view=true&view=azure-dotnet) (onderdeel van de `Azure.Identity`-bibliotheek) om gebruikers te verifiëren bij de Azure Digital Twins-instantie wanneer u deze uitvoert op uw lokale machine. Voor meer informatie over verschillende manieren waarop een client-app kan verifiëren met Azure Digital Twins, raadpleegt u [Verificatiecode voor app schrijven](how-to-authenticate-client.md).
+De Azure Digital Apparaatdubbels Explorer-toepassing maakt gebruik van [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential?preserve-view=true&view=azure-dotnet) (onderdeel van de `Azure.Identity` bibliotheek) om gebruikers te verifiëren met de Azure Digital apparaatdubbels-instantie wanneer u deze op uw lokale computer uitvoert. Voor meer informatie over verschillende manieren waarop een client-app kan verifiëren met Azure Digital Twins, raadpleegt u [Verificatiecode voor app schrijven](how-to-authenticate-client.md).
 
-Met dit verificatietype zoekt ADT Explorer naar referenties in uw lokale omgeving, zoals een Azure-aanmelding in een lokale [Azure-CLI](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) of in Visual Studio of Visual Studio Code. Daarom moet u zich *lokaal aanmelden bij Azure* via een van deze mechanismen om referenties in te stellen voor de ADT Explorer-app.
+Met dit type verificatie zoekt Azure Digital Apparaatdubbels Explorer naar referenties in uw lokale omgeving, zoals een aanmelding bij Azure in een lokale [Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) of in Visual Studio of Visual Studio code. Daarom moet u *zich lokaal bij Azure aanmelden* via een van deze mechanismen om referenties in te stellen voor de Azure Digital apparaatdubbels Explorer-app.
 
-Als u al op een van deze manieren bent aangemeld bij Azure, kunt u doorgaan naar de [volgende sectie](#run-and-configure-adt-explorer).
+Als u al op een van deze manieren bent aangemeld bij Azure, kunt u doorgaan naar de [volgende sectie](#run-and-configure-azure-digital-twins-explorer).
 
 Als dat niet het geval is, kunt u de lokale Azure CLI installeren met de volgende stappen:
 
@@ -68,13 +68,13 @@ Als dat niet het geval is, kunt u de lokale Azure CLI installeren met de volgend
 1. Voer `az login` uit en volg de verificatieprompts om u aan te melden bij uw Azure-account.
 1. Mogelijke laatste stap: Als u meerdere Azure-abonnementen onder dit account gebruikt, stelt u de verificatiecontext in op het Azure-abonnement dat uw Azure Digital Twins-instantie bevat door `az account set --subscription "<your-subscription-name-or-ID>"` uit te voeren (zowel de naam als de id-waarde van het abonnement zijn geschikt).
 
-Nadat u zich hebt aangemeld, zouden uw Azure-referenties automatisch door ADT Explorer moeten worden opgehaald wanneer u deze in de volgende sectie gaat uitvoeren.
+Nadat u zich hebt aangemeld, moet Azure Digital Apparaatdubbels Explorer automatisch uw Azure-referenties ophalen wanneer u deze in de volgende sectie uitvoert.
 
 U kunt het verificatieconsolevenster desgewenst sluiten. U kunt het venster ook geopend laten om het te gebruiken in de volgende stap.
 
-### <a name="run-and-configure-adt-explorer"></a>ADT Explorer uitvoeren en configureren
+### <a name="run-and-configure-azure-digital-twins-explorer"></a>Azure Digital Apparaatdubbels Explorer uitvoeren en configureren
 
-Voer vervolgens de toepassing ADT Explorer uit en configureer deze voor uw Azure Digital Twins-exemplaar.
+Vervolgens voert u de toepassing Azure Digital Apparaatdubbels Explorer uit en configureert u deze voor uw Azure Digital Apparaatdubbels-exemplaar.
 
 1. Ga naar de gedownloade en uitgepakte map **Azure_Digital_Twins__ADT__explorer**.
 Open een consolevenster op de maplocatie **Azure_Digital_Twins__ADT__explorer/client/src**.
@@ -85,11 +85,11 @@ Open een consolevenster op de maplocatie **Azure_Digital_Twins__ADT__explorer/cl
 
    Na een paar seconden wordt een browservenster geopend en wordt de app weergegeven in de browser.
 
-   :::image type="content" source="media/quickstart-adt-explorer/explorer-blank.png" alt-text="Browservenster met een app die wordt uitgevoerd op localhost:3000. De app heet ADT Explorer en bevat de vakken Query Explorer, Model View, Graph View en Property Explorer. Er zijn nog geen gegevens op het scherm." lightbox="media/quickstart-adt-explorer/explorer-blank.png":::
+   :::image type="content" source="media/quickstart-adt-explorer/explorer-blank.png" alt-text="Browser venster met een app die wordt uitgevoerd op localhost: 3000. De app heet Azure Digital Apparaatdubbels Explorer en bevat vakken voor query Explorer, model weergave, grafiek weergave en eigenschappen Verkenner. Er zijn nog geen gegevens op het scherm." lightbox="media/quickstart-adt-explorer/explorer-blank.png":::
 
-1. Klik rechts bovenaan het venster (te zien in de volgende afbeelding) op de knop **Aanmelden** om ADT Explorer zo te configureren dat het werkt met het exemplaar dat u hebt ingesteld.
+1. Selecteer de knop **Aanmelden** in de rechter bovenhoek van het venster, zoals wordt weer gegeven in de volgende afbeelding, om Azure Digital apparaatdubbels Explorer te configureren om te werken met het exemplaar dat u hebt ingesteld.
 
-   :::image type="content" source="media/quickstart-adt-explorer/sign-in.png" alt-text="ADT Explorer met het pictogram Sign In (Aanmelden) gemarkeerd bovenaan het venster. Het pictogram toont een eenvoudige omtrek van een persoon met de omtrek van een sleutel erop." lightbox="media/quickstart-adt-explorer/sign-in.png":::
+   :::image type="content" source="media/quickstart-adt-explorer/sign-in.png" alt-text="Azure Digital Apparaatdubbels Explorer markeert het pictogram aanmelden aan de bovenkant van het venster. Het pictogram toont een eenvoudig silhouet van een persoon die overlapt met een silhouet van een sleutel." lightbox="media/quickstart-adt-explorer/sign-in.png":::
 
 1. Voer de URL van de Azure Digital Twins-instantie in die u eerder hebt opgehaald uit de sectie [Een Azure Digital Twins-instantie instellen](#set-up-an-azure-digital-twins-instance) in de indeling *https://{instance host name}* .
 
@@ -103,7 +103,7 @@ Als u het pop-upvenster **Aangevraagde machtigingen** van Microsoft ziet, geeft 
 
 ## <a name="add-the-sample-data"></a>De voorbeeldgegevens toevoegen
 
-Vervolgens importeert u het voorbeeldscenario en de graaf in ADT Explorer. Het voorbeeldscenario bevindt zich ook in de map **Azure_Digital_Twins__ADT__explorer** die u eerder hebt gedownload.
+Vervolgens importeert u het voorbeeld scenario en de grafiek in azure Digital Apparaatdubbels Explorer. Het voorbeeldscenario bevindt zich ook in de map **Azure_Digital_Twins__ADT__explorer** die u eerder hebt gedownload.
 
 ### <a name="models"></a>Modellen
 
@@ -138,7 +138,7 @@ Volg deze stappen om modellen te uploaden.
 >Als u het volgende foutbericht ziet: :::image type="content" source="media/quickstart-adt-explorer/error-models-popup.png" alt-text="Een pop-upvenster met de melding 'Fout: Fout bij het ophalen van modellen: ClientAuthError: Fout bij openen van pop-upvenster. Dit kan gebeuren als u Internet Explorer gebruikt, of als pop-upvensters in de browser zijn geblokkeerd.' met de knop Sluiten onderaan." border="false"::: 
 > Probeer dan de pop-upblokkering uit te schakelen of gebruik een andere browser.
 
-ADT Explorer uploadt nu deze modelbestanden naar uw Azure Digital Twins-exemplaar. Deze zouden moeten worden weergegeven in het vak **MODEL VIEW** (MODELWEERGAVE) met de beschrijvende namen en volledige model-id's. U kunt de informatiepictogrammen **View Model** (Model bekijken) selecteren om de achterliggende DTDL-code te zien.
+Azure Digital Apparaatdubbels Explorer uploadt deze model bestanden nu naar uw Azure Digital Apparaatdubbels-exemplaar. Deze zouden moeten worden weergegeven in het vak **MODEL VIEW** (MODELWEERGAVE) met de beschrijvende namen en volledige model-id's. U kunt de informatiepictogrammen **View Model** (Model bekijken) selecteren om de achterliggende DTDL-code te zien.
 
 :::row:::
     :::column:::
@@ -173,7 +173,7 @@ Voer deze stappen uit om de graaf te importeren.
 
 2. Ga in het bestandskeuzevak naar de map **Azure_Digital_Twins__ADT__explorer/client/examples** en selecteer het spreadsheetbestand **buildingScenario.xlsx**. Dit bestand bevat een beschrijving van de voorbeeldgraaf. Selecteer **OK**.
 
-   Na een paar seconden wordt in ADT Explorer een **Import**-weergave geopend met een preview van de graaf die moet worden geladen.
+   Na een paar seconden opent Azure Digital Apparaatdubbels Explorer een **import** weergave waarin een voor beeld van de grafiek wordt weer gegeven die moet worden geladen.
 
 3. Als u het uploaden van de graaf wilt bevestigen, selecteert u het pictogram **Save** (Opslaan) in de rechterbovenhoek van het vak **GRAPH VIEW** (GRAAFWEERGAVE).
 
@@ -185,7 +185,7 @@ Voer deze stappen uit om de graaf te importeren.
     :::column-end:::
    :::row-end:::
 
-4. ADT Explorer gebruikt nu het geüploade bestand om de gevraagde dubbels en relaties ertussen te maken. Als dat is voltooid, wordt er een dialoogvenster weergegeven. Selecteer **Close** (Sluiten).
+4. Azure Digital Apparaatdubbels Explorer gebruikt nu het geüploade bestand om de aangevraagde apparaatdubbels en relaties daartussen te maken. Als dat is voltooid, wordt er een dialoogvenster weergegeven. Selecteer **Close** (Sluiten).
 
    :::row:::
     :::column:::
@@ -197,11 +197,11 @@ Voer deze stappen uit om de graaf te importeren.
     :::column-end:::
    :::row-end:::
 
-5. De graaf is nu geüpload naar ADT Explorer. Om de graaf te zien, selecteert u de knop **Run Query** (Query uitvoeren) in het vak **GRAPH EXPLORER** (GRAAFVERKENNER) aan de bovenkant van het ADT Explorer-venster.
+5. De grafiek is nu geüpload naar Azure Digital Apparaatdubbels Explorer. Als u de grafiek wilt zien, selecteert u de knop **query uitvoeren** in het vak **grafiek Verkenner** , bovenaan in het venster van de Azure Digital apparaatdubbels Explorer.
 
    :::image type="content" source="media/quickstart-adt-explorer/run-query.png" alt-text="De knop Run Query (Query uitvoeren) rechtsboven in het venster is gemarkeerd." lightbox="media/quickstart-adt-explorer/run-query.png":::
 
-Met deze actie wordt de standaardquery uitgevoerd waarmee alle digitale dubbels worden geselecteerd en weergegeven. ADT Explorer haalt alle dubbels en relaties van de service op. Hiermee wordt de graaf getekend op basis van de gedefinieerde dubbels en relaties in het vak **GRAPH VIEW** (GRAAFWEERGAVE).
+Met deze actie wordt de standaardquery uitgevoerd waarmee alle digitale dubbels worden geselecteerd en weergegeven. Azure Digital Apparaatdubbels Explorer haalt alle apparaatdubbels en relaties van de service op. Hiermee wordt de graaf getekend op basis van de gedefinieerde dubbels en relaties in het vak **GRAPH VIEW** (GRAAFWEERGAVE).
 
 ## <a name="explore-the-graph"></a>De graaf verkennen
 
@@ -262,7 +262,7 @@ Eerder hebben we in de tweelingeigenschappen gezien dat Room0 de temperatuur 70 
 
 ## <a name="edit-data-in-the-graph"></a>Gegevens bewerken in de graaf
 
-U kunt ADT Explorer gebruiken om de eigenschappen van de in uw graaf weergegeven tweelingen te bewerken. In deze sectie gaan we de temperatuur van Room0 verhogen naar 76 °F.
+U kunt Azure Digital Apparaatdubbels Explorer gebruiken voor het bewerken van de eigenschappen van de apparaatdubbels die in uw grafiek worden weer gegeven. In deze sectie gaan we de temperatuur van Room0 verhogen naar 76 °F.
 
 Selecteer om te beginnen **Room0**, zodat de lijst met eigenschappen wordt weergegeven in het vak **PROPERTY EXPLORER** (EIGENSCHAPVERKENNER).
 
@@ -290,7 +290,7 @@ Nu de temperatuur van Room0 is gewijzigd van 70 in 76, moeten beide tweelingen i
 
 ## <a name="review-and-contextualize-learnings"></a>Samenvatting en context
 
-In deze quickstart hebt u een exemplaar van Azure Digital Twins gemaakt, gekoppeld aan ADT Explorer en gevuld met een voorbeeldscenario.
+In deze Quick Start hebt u een Azure Digital Apparaatdubbels-exemplaar gemaakt. Dit is verbonden met Azure Digital Apparaatdubbels Explorer en het is gevuld met een voorbeeld scenario.
 
 Vervolgens hebt u de graaf verkend door:
 
@@ -304,7 +304,7 @@ In deze quickstart hebt u de temperatuur handmatig bijgewerkt. Normaal gesproken
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u het werk voor deze quickstart wilt afronden, moet u eerst de actieve console-app afsluiten. Met deze actie wordt de verbinding met de ADT Explorer-app in de browser afgesloten. U kunt geen livegegevens meer weergeven in de browser. U kunt het browsertabblad sluiten.
+Als u het werk voor deze quickstart wilt afronden, moet u eerst de actieve console-app afsluiten. Met deze actie wordt de verbinding met de Azure Digital Apparaatdubbels Explorer-app in de browser afgesloten. U kunt geen livegegevens meer weergeven in de browser. U kunt het browsertabblad sluiten.
 
 Vervolgens kunt u kiezen welke resources u wilt verwijderen, afhankelijk van wat u nu wilt doen.
 

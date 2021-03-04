@@ -5,18 +5,28 @@ author: yashesvi
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: how-to
-ms.date: 12/15/2020
+ms.date: 02/24/2021
 ms.author: banders
-ms.openlocfilehash: 045ab35a35aa4caefb1e1bcbbf7bf78b726c09f7
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 9015cbcd669665467d3836112b152aa504176f2b
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98601453"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102035990"
 ---
 # <a name="self-service-exchanges-and-refunds-for-azure-reservations"></a>Selfserviceopties voor inruilen en retourneren voor Azure Reservations
 
-Azure-reserveringen bieden flexibiliteit om te voldoen aan uw evoluerende behoeften. U kunt een reservering inwisselen voor een andere reservering van hetzelfde type. U kunt bijvoorbeeld een virtuele machinereservering omruilen om een andere reservering te kopen voor elke andere VM-grootte of -regio. Op vergelijkbare wijze kan een SQL PaaS Database-reservering worden ingeruild om elke reservering aan te schaffen voor een SQL PaaS Database van welk type of in welke regio dan ook. U kunt ook reserveringen terugbetalen, maar het totaal van alle geannuleerde reserveringen in uw factureringsbereik (zoals EA, Microsoft Customer Agreement en Microsoft Partner-klantovereenkomst) mag niet hoger zijn dan USD 50.000 in een doorlopende periode van 12 maanden. Gereserveerde Azure Databricks-capaciteit, Azure VMware-oplossingen via een CloudSimple-reservering, Azure Red Hat Open Shift-reserveringen, Red Hat-plannen en SUSE Linux-plannen komen niet in aanmerking voor restitutie.
+Azure-reserveringen bieden flexibiliteit om te voldoen aan uw evoluerende behoeften. U kunt reserve ringen uitwisselen voor een andere reserve ring van hetzelfde type. U kunt bijvoorbeeld meerdere Compute-reserve ringen retour neren, inclusief de exclusieve Azure-host, de Azure VMware-oplossing en Azure Virtual Machines met elkaar. Met andere woorden, de reserverings producten zijn onderling verwisselbaar als ze hetzelfde type reserve ring hebben. In een ander voor beeld kunt u meerdere SQL database reserverings typen uitwisselen, inclusief beheerde instanties en Elastische pool met elkaar.
+
+U kunt echter geen ongelijksoortige reserve ringen uitwisselen. U kunt bijvoorbeeld geen Cosmos DB reserve ring uitwisselen voor SQL Database.
+
+U kunt ook een reserve ring uitwisselen om een andere reserve ring van een vergelijkbaar type in een andere regio te kopen. U kunt bijvoorbeeld een reserve ring die zich in VS-West 2 bevindt, omruilen voor een in Europa-west.
+
+Wanneer u een reserve ring uitwisselt, kunt u uw termijn wijzigen van een jaar in drie jaar.
+
+U kunt ook reserveringen terugbetalen, maar het totaal van alle geannuleerde reserveringen in uw factureringsbereik (zoals EA, Microsoft Customer Agreement en Microsoft Partner-klantovereenkomst) mag niet hoger zijn dan USD 50.000 in een doorlopende periode van 12 maanden.
+
+Gereserveerde Azure Databricks-capaciteit, Azure VMware-oplossingen via een CloudSimple-reservering, Azure Red Hat Open Shift-reserveringen, Red Hat-plannen en SUSE Linux-plannen komen niet in aanmerking voor restitutie.
 
 De selfserviceoptie voor inwisselen en annuleren is niet beschikbaar voor Enterprise Agreement-klanten van de Amerikaanse overheid. Andere abonnementstypen voor de Amerikaanse overheid, zoals Betalen per gebruik en CSP, (Cloud Solution Provider) worden wel ondersteund.
 
@@ -37,9 +47,26 @@ U kunt uw reservering inwisselen via [Azure Portal](https://portal.azure.com/#bl
 
 Voor restitutie voor een reservering gaat u naar **Reserveringsgegevens** en selecteert u **Restitutie**.
 
+## <a name="exchange-multiple-reservations"></a>Meerdere reserve ringen uitwisselen
+
+U kunt vergelijk bare typen reserve ringen in één actie retour neren.
+
+Wanneer u reserve ringen uitwisselt, moet het nieuwe bedrag in de inkoop valuta groter zijn dan het bedrag voor de terugbetaling. Als uw nieuwe aankoop bedrag lager is dan het bedrag voor restitutie, ontvangt u een fout melding. Als u de fout ziet, vermindert u de hoeveelheid die u wilt retour neren of verhoogt u het te kopen bedrag.
+
+1. Meld u aan bij de Azure Portal en navigeer naar **Reserveringen**.
+1. Schakel in de lijst met reserve ringen het selectie vakje in voor elke reserve ring die u wilt uitwisselen.
+1. Klik boven aan de pagina op **Exchange**.
+1. Wijzig indien nodig de hoeveelheid die moet worden geretourneerd voor elke reserve ring.
+1. Als u de retour hoeveelheid automatisch invullen selecteert, kunt u **alle terugbetalen** om de lijst te vullen met het volledige aantal dat u voor elke reserve ring hebt of **optimaliseert voor gebruik (7-dag)** om de lijst te vullen met een hoeveelheid die optimaliseert voor gebruik op basis van de laatste zeven dagen van gebruik. **Selecteer Toep assen**.
+1. Selecteer onder aan de pagina **volgende: kopen**.
+1. Selecteer op het tabblad aankoop de beschik bare producten waarvoor u Exchange wilt selecteren. U kunt meerdere producten van verschillende typen selecteren.
+1. Selecteer in het deel venster product selecteren dat u wilt kopen de gewenste producten en selecteer vervolgens **toevoegen aan winkel wagen** en selecteer vervolgens **sluiten**.
+1. Wanneer u klaar bent, selecteert u **volgende: controleren**.
+1. Controleer de reserve ringen om terug te gaan en nieuwe reserve ringen te kopen en selecteer vervolgens **Exchange bevestigen**.
+
 ## <a name="exchange-non-premium-storage-for-premium-storage"></a>Niet-Premium Storage inwisselen voor Premium Storage
 
-U kunt een reservering die is gekocht voor een VM-grootte die geen ondersteuning biedt voor Premium Storage inwisselen voor een bijbehorende VM-grootte die deze ondersteuning wel biedt. Bijvoorbeeld een _F1_ voor een _F1s_. Als u de inwisseling wilt maken, gaat u naar Reserveringsdetails en selecteert u **Inwisselen**. De periode van de gereserveerde instantie wordt niet opnieuw ingesteld door de inwisseling en er wordt ook geen nieuwe transactie gemaakt. 
+U kunt een reservering die is gekocht voor een VM-grootte die geen ondersteuning biedt voor Premium Storage inwisselen voor een bijbehorende VM-grootte die deze ondersteuning wel biedt. Bijvoorbeeld een _F1_ voor een _F1s_. Als u de inwisseling wilt maken, gaat u naar Reserveringsdetails en selecteert u **Inwisselen**. De periode van de gereserveerde instantie wordt niet opnieuw ingesteld door de inwisseling en er wordt ook geen nieuwe transactie gemaakt.
 
 ## <a name="how-transactions-are-processed"></a>Hoe transacties worden verwerkt
 

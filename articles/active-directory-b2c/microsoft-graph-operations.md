@@ -12,12 +12,12 @@ ms.date: 01/28/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a7e9e523d3aae7cf1444c048c023ca1d85fde41f
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: a8ff94acbd9ffd491bf628ae61ee87634a9c6dd6
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98952224"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102033619"
 ---
 # <a name="manage-azure-ad-b2c-with-microsoft-graph"></a>Azure AD B2C beheren met Microsoft Graph
 
@@ -137,6 +137,14 @@ Azure AD B2C biedt een directory die 100 aangepaste kenmerken per gebruiker kan 
 - [Audit logboeken weer geven](/graph/api/directoryaudit-list)
 
 Zie [toegang tot Azure AD B2C audit logboeken](view-audit-logs.md)voor meer informatie over het openen van Azure AD B2C controle Logboeken.
+
+## <a name="conditional-access"></a>Voorwaardelijke toegang
+
+- [Alle beleids regels voor voorwaardelijke toegang weer geven](/graph/api/resources/conditionalaccessroot-list-policies)
+- [Eigenschappen en relaties van beleid voor voorwaardelijke toegang lezen](/graph/api/conditionalaccesspolicy-get)
+- [Nieuw beleid voor voorwaardelijke toegang maken](/graph/api/resources/application)
+- [Beleid voor voorwaardelijke toegang bijwerken](/graph/api/conditionalaccesspolicy-update)
+- [Beleid voor voorwaardelijke toegang verwijderen](/graph/api/conditionalaccesspolicy-delete)
 
 ## <a name="code-sample-how-to-programmatically-manage-user-accounts"></a>Code voorbeeld: gebruikers accounts programmatisch beheren
 

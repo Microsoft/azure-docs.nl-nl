@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/14/2020
-ms.openlocfilehash: 3c0e348e62184f839ce38e4c364fb5c6b81f1131
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 90addb74811819dec563ba072e9a6aea2cf72ca4
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101726220"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102036534"
 ---
 # <a name="azure-diagnostics-extension-overview"></a>Overzicht van Azure Diagnostics-extensie
 Azure Diagnostics extensie is een [agent in azure monitor](../agents/agents-overview.md) die bewakings gegevens verzamelt van het gast besturingssysteem van Azure Compute-resources, inclusief virtuele machines. Dit artikel bevat een overzicht van Azure Diagnostics extensie, inclusief specifieke functionaliteit die wordt ondersteund en opties voor installatie en configuratie. 
@@ -78,7 +78,7 @@ Configureer een of meer *gegevens-sinks* voor het verzenden van gegevens naar an
 | Azure Storage blobs | Schrijf naast tabellen ook gegevens naar blobs in Azure Storage. |
 | Application Insights | Gegevens verzamelen van toepassingen die worden uitgevoerd in uw virtuele machine naar Application Insights om te integreren met andere toepassings bewaking. Zie [Diagnostische gegevens naar Application Insights verzenden](diagnostics-extension-to-application-insights.md). |
 
-U kunt ook WAD-gegevens uit opslag verzamelen in een Log Analytics-werk ruimte om deze te analyseren met Azure Monitor logboeken, hoewel de Log Analytics-agent doorgaans wordt gebruikt voor deze functionaliteit. Het kan gegevens rechtstreeks naar een Log Analytics-werk ruimte verzenden en ondersteunt oplossingen en inzichten die extra functionaliteit bieden.  Zie [Azure Diagnostische logboeken verzamelen van Azure Storage](../essentials/diagnostics-extension-logs.md). 
+U kunt ook WAD-gegevens uit opslag verzamelen in een Log Analytics-werk ruimte om deze te analyseren met Azure Monitor logboeken, hoewel de Log Analytics-agent doorgaans wordt gebruikt voor deze functionaliteit. Het kan gegevens rechtstreeks naar een Log Analytics-werk ruimte verzenden en ondersteunt oplossingen en inzichten die extra functionaliteit bieden.  Zie [Azure Diagnostische logboeken verzamelen van Azure Storage](../agents/diagnostics-extension-logs.md). 
 
 
 ### <a name="linux-diagnostics-extension-lad"></a>Linux-extensie voor diagnostische gegevens (LAD)

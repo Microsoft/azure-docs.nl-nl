@@ -1,17 +1,16 @@
 ---
 title: Azure Monitor inschakelen voor een enkele virtuele-machine of een virtuele-machineschaalset in Azure Portal
 description: Meer informatie over het inschakelen van VM Insights op één virtuele machine of virtuele-machine schaalset met behulp van de Azure Portal.
-ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
-ms.openlocfilehash: 47dde48e916361620a832d26e6249c4147d0f8b5
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 076fcab7b0747a7993407edd65f9d08efc27309f
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101733734"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102035582"
 ---
 # <a name="enable-azure-monitor-for-single-virtual-machine-or-virtual-machine-scale-set-in-the-azure-portal"></a>Azure Monitor inschakelen voor een enkele virtuele-machine of een virtuele-machineschaalset in Azure Portal
 In dit artikel wordt beschreven hoe u VM Insights inschakelt voor een virtuele machine of een schaalset voor virtuele machines met behulp van de Azure Portal. Deze procedure kan worden gebruikt voor het volgende:
